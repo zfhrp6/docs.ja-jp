@@ -1,12 +1,13 @@
 ---
-title: "ベスト プラクティス : データ コントラクトのバージョン管理"
-ms.custom: 
+title: 'ベスト プラクティス : データ コントラクトのバージョン管理'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - data contracts
@@ -14,19 +15,20 @@ helpviewer_keywords:
 - best practices [WCF], data contract versioning
 - Windows Communication Foundation, data contracts
 ms.assetid: bf0ab338-4d36-4e12-8002-8ebfdeb346cb
-caps.latest.revision: "24"
+caps.latest.revision: 24
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 78373d482aaaa0121a6c2708f543188d9cc9464d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: dfb3d781a570db6a929a7d984aa45c224dda66bd
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="best-practices-data-contract-versioning"></a>ベスト プラクティス : データ コントラクトのバージョン管理
-このトピックでは、長期的に容易に拡張させることのできるデータ コントラクトを作成するためのベスト プラクティスをいくつか紹介します。 [!INCLUDE[crabout](../../../includes/crabout-md.md)]データ コントラクトは、トピックを参照してください。[を使用してデータ コントラクト](../../../docs/framework/wcf/feature-details/using-data-contracts.md)です。  
+このトピックでは、長期的に容易に拡張させることのできるデータ コントラクトを作成するためのベスト プラクティスをいくつか紹介します。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] データ コントラクトは、トピックを参照してください。[を使用してデータ コントラクト](../../../docs/framework/wcf/feature-details/using-data-contracts.md)です。  
   
 ## <a name="note-on-schema-validation"></a>スキーマ検証に関する注意事項  
  データ コントラクトのバージョン管理に関してまず注意を要することは、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] がエクスポートしたデータ コントラクト スキーマには、省略可能を示すマークが既定で各要素に付けられることを除き、バージョン管理のサポートがないという点です。  
@@ -46,7 +48,7 @@ ms.lasthandoff: 12/22/2017
   
  ここまでの例では "2" を付けて名前を変えましたが、実際には、バージョン番号または日付を付加して、名前空間の方を変更するようお勧めします。 たとえば、`http://schemas.contoso.com/2005/05/21/PurchaseOrder` というデータ コントラクトを `http://schemas.contoso.com/2005/10/14/PurchaseOrder` に変更します。  
   
- [!INCLUDE[crdefault](../../../includes/crdefault-md.md)]ベスト プラクティス:[サービスのバージョン管理](../../../docs/framework/wcf/service-versioning.md)です。  
+ 詳細については、ベスト プラクティスを参照してください:[サービスのバージョン管理](../../../docs/framework/wcf/service-versioning.md)です。  
   
  アプリケーションから送信するメッセージは厳密にスキーマに適合させる必要があるが、外部から受信したメッセージがこれに適合しているとは限らない、という場合もあります。 この場合、受信したメッセージには、異質なデータが含まれているおそれがあります。 異質な値も [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]に格納され、そのまま返されるので、スキーマに適合しないというメッセージが送信される結果になります。 これを回避するには、ラウンド トリップ機能を無効にする必要があります。 これには、2 つの方法があります。  
   
@@ -54,7 +56,7 @@ ms.lasthandoff: 12/22/2017
   
 -   サービス コントラクトに <xref:System.ServiceModel.ServiceBehaviorAttribute> 属性を適用し、<xref:System.ServiceModel.ServiceBehaviorAttribute.IgnoreExtensionDataObject%2A> プロパティ値を `true` に設定する。  
   
- [!INCLUDE[crabout](../../../includes/crabout-md.md)]ラウンド トリップを参照してください[上位互換性のあるデータ コントラクト](../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md)です。  
+ [!INCLUDE[crabout](../../../includes/crabout-md.md)] ラウンド トリップを参照してください[上位互換性のあるデータ コントラクト](../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md)です。  
   
 ## <a name="versioning-when-schema-validation-is-not-required"></a>スキーマ検証が不要な場合のバージョン管理  
  スキーマへの厳密な適合が求められるケースはそれほど多くありません。 多くのプラットフォームでは、スキーマに記述されていない余分な要素が許容されています。 機能の完全なセットの説明でこれが許容可能な限り[データ コントラクトのバージョン管理](../../../docs/framework/wcf/feature-details/data-contract-versioning.md)と[上位互換性のあるデータ コントラクト](../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md)使用できます。 その場合は、以下のガイドラインに従うことをお勧めします。  
@@ -65,9 +67,9 @@ ms.lasthandoff: 12/22/2017
   
 2.  継承とデータ コントラクトを併用してもかまいませんが、バージョン管理の目的で継承を使用しないことなど、いくつかの規則に従う必要があります。 ある型が基本型から派生している場合、その型は将来のバージョンで別の基本型から派生させてはいけません (データ コントラクトが同一である場合を除きます)。 例外として、階層内で、基本型と派生したデータ コントラクト型との間に別の型を追加することは可能です。ただし追加する型に含まれるデータ メンバーの名前は、階層内の他の型のどのバージョンに含まれるメンバーとも、同じにならないようにする必要があります。 一般に、同じ継承階層の異なるレベルで同名のデータ メンバーを使用すると、バージョン管理の上で重大な問題が生じるおそれがあります。  
   
-3.  ラウンド トリップが有効になるように、データ コントラクトの最初のバージョンから、必ず <xref:System.Runtime.Serialization.IExtensibleDataObject> を実装します。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][上位互換性のあるデータ コントラクト](../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md)です。 このインターフェイスが実装されていない型の 1 つ以上のバージョンがリリース済みである場合は、この型の次のバージョンで実装します。  
+3.  ラウンド トリップが有効になるように、データ コントラクトの最初のバージョンから、必ず <xref:System.Runtime.Serialization.IExtensibleDataObject> を実装します。 詳細については、「[上位互換性のあるデータ コントラクト](../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md)」を参照してください。 このインターフェイスが実装されていない型の 1 つ以上のバージョンがリリース済みである場合は、この型の次のバージョンで実装します。  
   
-4.  新しいバージョンで、データ コントラクト名や名前空間を変更しないでください。 データ コントラクトの基になる型の名前や名前空間を変更する場合、<xref:System.Runtime.Serialization.DataContractAttribute.Name%2A> の <xref:System.Runtime.Serialization.DataContractAttribute> プロパティを使うなど、適切なメカニズムを使用して、データ コントラクト名と名前空間を残しておく必要があります。 [!INCLUDE[crabout](../../../includes/crabout-md.md)]名前付けを参照してください[データ コントラクト名](../../../docs/framework/wcf/feature-details/data-contract-names.md)です。  
+4.  新しいバージョンで、データ コントラクト名や名前空間を変更しないでください。 データ コントラクトの基になる型の名前や名前空間を変更する場合、<xref:System.Runtime.Serialization.DataContractAttribute.Name%2A> の <xref:System.Runtime.Serialization.DataContractAttribute> プロパティを使うなど、適切なメカニズムを使用して、データ コントラクト名と名前空間を残しておく必要があります。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] 名前付けを参照してください[データ コントラクト名](../../../docs/framework/wcf/feature-details/data-contract-names.md)です。  
   
 5.  新しいバージョンで、データ メンバーの名前を変更しないでください。 データ メンバーの基になるフィールド、プロパティ、イベントの名前を変更する場合は、`Name` の <xref:System.Runtime.Serialization.DataMemberAttribute> プロパティを使用して、既存のデータ メンバー名を残しておく必要があります。  
   
@@ -79,7 +81,7 @@ ms.lasthandoff: 12/22/2017
   
     1.  <xref:System.Runtime.Serialization.DataMemberAttribute.IsRequired%2A> プロパティ値は、既定値である `false` のまま変更しないでください。  
   
-    2.  メンバーの既定値として `null` または 0 を許容できない場合は、<xref:System.Runtime.Serialization.OnDeserializingAttribute> を使用してコールバック メソッドを指定する必要があります。該当するメンバーが受信ストリーム内に含まれていない場合は、このコールバック メソッドで妥当な既定値を設定します。 [!INCLUDE[crabout](../../../includes/crabout-md.md)]コールバックを参照してください[バージョン トレラントなシリアル化コールバック](../../../docs/framework/wcf/feature-details/version-tolerant-serialization-callbacks.md)です。  
+    2.  メンバーの既定値として `null` または 0 を許容できない場合は、<xref:System.Runtime.Serialization.OnDeserializingAttribute> を使用してコールバック メソッドを指定する必要があります。該当するメンバーが受信ストリーム内に含まれていない場合は、このコールバック メソッドで妥当な既定値を設定します。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] コールバックを参照してください[バージョン トレラントなシリアル化コールバック](../../../docs/framework/wcf/feature-details/version-tolerant-serialization-callbacks.md)です。  
   
     3.  `Order` の `DataMemberAttribute` プロパティを使用して、新しく追加されたデータ メンバーがすべて、既存のデータ メンバーの後に配置されるようにします。 これを実現するために、最初のバージョンのデータ コントラクトでは、どのデータ メンバーにも `Order` プロパティを設定しないことをお勧めします。 バージョン 2 のデータ コントラクトで追加されたすべてのデータ メンバーについては、`Order` プロパティを 2 に設定します。 バージョン 3 のデータ コントラクトで追加されたすべてのデータ メンバーについては、`Order` プロパティを 3 に設定します。以降のバージョンも同様にしていきます。 複数のデータ メンバーに同じ `Order` 番号を設定してかまいません。  
   
@@ -101,7 +103,7 @@ ms.lasthandoff: 12/22/2017
   
  以上の中には、状況によっては従わなくてもよいガイドラインもあります。 その判断は、シリアル化、逆シリアル化、およびスキーマのメカニズムを完全に理解したうえで行ってください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Runtime.Serialization.DataContractAttribute.Name%2A>  
  <xref:System.Runtime.Serialization.DataContractAttribute>  
  <xref:System.Runtime.Serialization.DataMemberAttribute.Order%2A>  

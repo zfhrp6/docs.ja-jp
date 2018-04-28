@@ -14,11 +14,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 2057e2b1c03a1ebcd68d7d59be8839171305707f
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: 09eb22c0c4bfaf549bd18cccae0c84957e730aa6
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="consuming-odata-feeds-from-a-workflow"></a>ワークフローからの OData フィードの利用
 WCF Data Services は [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] のコンポーネントです。このコンポーネントを使用すると、Representational State Transfer (REST) のセマンティクスを使用して、Web またはイントラネット上のデータを公開および使用するために Open Data Protocol (OData) を使用するサービスを作成できます。 OData は、URI でアドレス指定できるリソースとしてデータを公開します。 HTTP 要求を送信し、データ サービスが返す OData フィードを処理できるのであれば、どのようなアプリケーションでも OData ベースのデータ サービスと対話できます。 さらに、WCF Data Services には [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] アプリケーションから OData フィードを使用する際のプログラミング エクスペリエンスを向上させるクライアント ライブラリが含まれています。 このトピックでは、クライアント ライブラリを使用した場合と使用しない場合のワークフローでの OData フィードの使用の概要について説明します。  
@@ -37,13 +37,13 @@ WCF Data Services は [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md
  サービスによって公開されるサービス操作はなく、 **[サービス]** ボックスの一覧には Northwind データ サービスによって公開されるエンティティを表す項目が含まれていることに注意してください。 サービス参照を追加すると、これらのエンティティに対するクラスが生成され、クライアント コードで使用できるようになります。 このトピックの例ではこれらのクラスと `NorthwindEntities` クラスを使用してクエリを実行します。  
   
 > [!NOTE]
->  [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [データ サービス クライアント ライブラリ (WCF Data Services) を生成する](http://go.microsoft.com/fwlink/?LinkID=191611)です。  
+>  詳細については、次を参照してください。[データ サービス クライアント ライブラリ (WCF Data Services) を生成する](http://go.microsoft.com/fwlink/?LinkID=191611)です。  
   
 ### <a name="using-asynchronous-methods"></a>非同期メソッドの使用  
  Web のリソースにアクセスするときに発生することのある、待機時間に伴う問題に対処するために、WCF Data Services には非同期でアクセスすることをお勧めします。 WCF Data Services クライアント ライブラリは、クエリを呼び出すための非同期メソッドを含めるし、Windows Workflow Foundation (WF) の提供、<xref:System.Activities.AsyncCodeActivity>非同期アクティビティを作成するためのクラスです。 <xref:System.Activities.AsyncCodeActivity> 派生アクティビティを書き込んで、非同期メソッドを含む [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] クラスを利用するか、非同期で実行するコードをメソッドに含め、デリゲートを使用して呼び出すことができます。 ここでは、 <xref:System.Activities.AsyncCodeActivity> 派生アクティビティの例を 2 つ紹介します。1 つは WCF Data Services クライアント ライブラリの非同期メソッドを使用し、もう 1 つはデリゲートを使用しています。  
   
 > [!NOTE]
->  [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [非同期操作 (WCF Data Services)](http://go.microsoft.com/fwlink/?LinkId=193396)と[非同期アクティビティを作成する](../../../docs/framework/windows-workflow-foundation/creating-asynchronous-activities-in-wf.md)です。  
+>  詳細については、次を参照してください。[非同期操作 (WCF Data Services)](http://go.microsoft.com/fwlink/?LinkId=193396)と[非同期アクティビティを作成する](../../../docs/framework/windows-workflow-foundation/creating-asynchronous-activities-in-wf.md)です。  
   
 ### <a name="using-client-library-asynchronous-methods"></a>クライアント ライブラリの非同期メソッドの使用  
  <xref:System.Data.Services.Client.DataServiceQuery%601> クラスには、OData サービスを非同期で照会するための <xref:System.Data.Services.Client.DataServiceQuery%601.BeginExecute%2A> メソッドと <xref:System.Data.Services.Client.DataServiceQuery%601.EndExecute%2A> メソッドが用意されています。 これらのメソッドは、 <xref:System.Activities.AsyncCodeActivity.BeginExecute%2A> 派生クラスの <xref:System.Activities.AsyncCodeActivity.EndExecute%2A> オーバーライドと <xref:System.Activities.AsyncCodeActivity> オーバーライドから呼び出すことができます。 <xref:System.Activities.AsyncCodeActivity> <xref:System.Activities.AsyncCodeActivity.BeginExecute%2A> オーバーライドが戻ると、ワークフローはアイドル状態になることができ (永続化はされない)、非同期操作が完了すると、 <xref:System.Activities.AsyncCodeActivity.EndExecute%2A> がランタイムによって呼び出されます。  

@@ -1,10 +1,7 @@
 ---
 title: 文字データ型 (Visual Basic)
-ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - devlang-visual-basic
 ms.topic: article
@@ -15,14 +12,13 @@ helpviewer_keywords:
 - Char data type [Visual Basic], character data types
 - data types [Visual Basic], choosing
 ms.assetid: 902479ef-1679-47fc-9911-0c1c5008226c
-caps.latest.revision: 23
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: dca9cde0af08c4113ea9a4644efa40a721b4d9b1
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: afd368c00444f136c6d69b02a733c82f0c8eafe0
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="character-data-types-visual-basic"></a>文字データ型 (Visual Basic)
 Visual Basic では*文字データ型*文字や表示可能な文字を処理します。 Unicode 文字を扱う両者間`Char`一方、1 つの文字を保持している`String`不特定数文字にはが含まれています。  
@@ -32,7 +28,7 @@ Visual Basic では*文字データ型*文字や表示可能な文字を処理�
 ## <a name="char-type"></a>Char 型  
  `Char`データ型は単一 2 バイト (16 ビット) の Unicode 文字。 変数は、常に正確に 1 つの文字を保存する場合として宣言`Char`です。 例えば:  
   
- [!code-vb[VbVbalrCharTypes#1](../../../../visual-basic/programming-guide/language-features/data-types/codesnippet/VisualBasic/character-data-types_1.vb)]  
+ [!code-vb[VbVbalrCharTypes#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vbvbalrchartypes/vb/module1.vb#1)]
   
  使用可能な各値、`Char`または`String`変数は、*コード ポイントが*、または Unicode 文字セット内の文字コード。 Unicode 文字には、基本的な ASCII 文字セット、さまざまな他のアルファベット文字、アクセント記号、通貨記号、分数、分音文字、および数学と技術的な記号が含まれます。  
   
@@ -44,7 +40,7 @@ Visual Basic では*文字データ型*文字や表示可能な文字を処理�
 ## <a name="string-type"></a>文字列型  
  `String`データ型は、0 個以上 2 バイト (16 ビット) の Unicode 文字のシーケンス。 場合は、変数は、不特定数の文字を含めることができます、宣言として`String`です。 例えば:  
   
- [!code-vb[VbVbalrCharTypes#2](../../../../visual-basic/programming-guide/language-features/data-types/codesnippet/VisualBasic/character-data-types_2.vb)]  
+ [!code-vb[VbVbalrCharTypes#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vbvbalrchartypes/vb/module1.vb#2)]
   
  詳細については、次を参照してください。[文字列データ型](../../../../visual-basic/language-reference/data-types/string-data-type.md)です。  
   

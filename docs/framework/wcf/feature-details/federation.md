@@ -1,12 +1,13 @@
 ---
-title: "フェデレーション"
-ms.custom: 
+title: フェデレーション
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,16 +16,17 @@ helpviewer_keywords:
 - WCF, federation
 - federation [WCF]
 ms.assetid: 2f1e646f-8361-48d4-9d5d-1b961f31ede4
-caps.latest.revision: "26"
+caps.latest.revision: 26
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 3c87fa08a698350d601f72d5d19ef353bd4257a9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 0e7aef1f53675089ee311aa79a54abf60441b728
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="federation"></a>フェデレーション
 ここでは、フェデレーション セキュリティの概念について簡単に説明します。 また、フェデレーション セキュリティ アーキテクチャを展開する際の [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] のサポートについても説明します。 フェデレーションを示すサンプル アプリケーションを参照してください。[フェデレーション サンプル](../../../../docs/framework/wcf/samples/federation-sample.md)です。  
@@ -71,14 +73,14 @@ ms.lasthandoff: 12/22/2017
   
  フェデレーション セキュリティ アーキテクチャでは、組織 A のユーザーが、組織 B の Web サービスにアクセスする場合に、組織 B の STS から発行された有効なセキュリティ トークンを提示する必要があることを認識しています。この STS が、特定のサービスへのアクセスを認証および承認します。  
   
- STS B に接続したユーザーは、STS に関連付けられたポリシーから別のレベルの間接指定を受け取ります。 このユーザーは、STS B がセキュリティ トークンを発行する前に、STS A (クライアントの信頼レルム) の有効なセキュリティ トークンを提示しておく必要があります。 これは、2 つの組織間で確立された信頼関係の推論であり、組織 A. からユーザーの id を管理する組織 B がないことを意味します。実際には、STS B 通常 null に`issuerAddress`と`issuerMetadataAddress`です。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][する方法: ローカル発行者を構成する](../../../../docs/framework/wcf/feature-details/how-to-configure-a-local-issuer.md)です。 クライアントが STS A. を検索するローカル ポリシーを参照している場合は、この構成を呼び出す*ホーム レルム フェデレーション*STS B は STS A. に関する情報を保持する必要はありませんので、拡張性が、  
+ STS B に接続したユーザーは、STS に関連付けられたポリシーから別のレベルの間接指定を受け取ります。 このユーザーは、STS B がセキュリティ トークンを発行する前に、STS A (クライアントの信頼レルム) の有効なセキュリティ トークンを提示しておく必要があります。 これは、2 つの組織間で確立された信頼関係の推論であり、組織 A. からユーザーの id を管理する組織 B がないことを意味します。実際には、STS B 通常 null に`issuerAddress`と`issuerMetadataAddress`です。 詳細については、次を参照してください。[する方法: ローカル発行者を構成する](../../../../docs/framework/wcf/feature-details/how-to-configure-a-local-issuer.md)です。 クライアントが STS A. を検索するローカル ポリシーを参照している場合は、この構成を呼び出す*ホーム レルム フェデレーション*STS B は STS A. に関する情報を保持する必要はありませんので、拡張性が、  
   
  ユーザーは、組織 A の STS に接続し、組織 A 内の他のリソースにアクセスする際に通常使用する認証資格情報を提示して、セキュリティ トークンを取得します。これにより、ユーザーが複数の資格情報セットを保持する必要があるという問題や、複数のサービス サイトで同じ資格情報セットを使用するという問題が、ある程度解決されます。  
   
  STS A からセキュリティ トークンを取得したユーザーは、このトークンを STS B に提示します。組織 B はユーザーの要求の承認手順を進め、独自のセキュリティ トークン セットからユーザーにセキュリティ トークンを発行します。 ユーザーは、このトークンを組織 B のリソースに提示し、サービスにアクセスします。  
   
 ## <a name="support-for-federated-security-in-wcf"></a>WCF におけるフェデレーション セキュリティのサポート  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]では、ターンキーを通じてフェデレーション セキュリティ アーキテクチャを展開する、 [ \<wsFederationHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md)です。  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、ターンキーを通じてフェデレーション セキュリティ アーキテクチャを展開する、 [ \<wsFederationHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md)です。  
   
  [ \<WsFederationHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md)要素は、要求/応答通信のスタイル、基になるトランスポート機構として HTTP を使用する必要があります、信頼性が高く、相互運用可能なセキュリティで保護されたバインディングのエンコードするためのワイヤ形式として、テキスト、XML を採用することです。  
   
@@ -159,7 +161,7 @@ operationRequirementType="FederationSample.MyServiceOperationRequirement, MyServ
 ```  
   
 > [!NOTE]
->  `MyService` が要求するクレームについては、細かい点に注意が必要です。 2 番目の図は、`MyService` が `accessAuthorized` クレームを含む SAML トークンを要求していることを示しています。 より正確には、これで、`MyService` が必要とするクレームの種類が指定されます。 このクレームの種類の完全修飾名は http://tempuri.org:accessAuthorized (関連する名前空間を含みます) で、この名前がサービス構成ファイルで使用されます。 このクレームの値は、このクレームが存在することが示しており、STS B によって `true` に設定されると想定されます。  
+>  `MyService` が要求するクレームについては、細かい点に注意が必要です。 2 番目の図は、`MyService` が `accessAuthorized` クレームを含む SAML トークンを要求していることを示しています。 より正確には、これで、`MyService` が必要とするクレームの種類が指定されます。 この要求の種類の完全修飾名がhttp://tempuri.org:accessAuthorized(および関連付けられた名前空間)、サービス構成ファイルで使用されます。 このクレームの値は、このクレームが存在することが示しており、STS B によって `true` に設定されると想定されます。  
   
  このポリシーは、`MyServiceOperationRequirement` の一部として実装されている `MyService` クラスによって実行時に適用されます。  
   
@@ -218,7 +220,7 @@ operationRequirementType="FederationSample.MyServiceOperationRequirement, MyServ
 ```  
   
 > [!NOTE]
->  この場合も、`userAuthenticated` クレームは、STS B が必要とするクレームの種類です。このクレームの種類の完全修飾名は http://tempuri.org:userAuthenticated (関連する名前空間を含みます) で、この名前が STS 構成ファイルで使用されます。 このクレームの値は、このクレームが存在することを示しており、STS A によって `true` に設定されると想定されます。  
+>  もう一度、`userAuthenticated`の要求は、STS B に必要な要求の種類この要求の種類の完全修飾名がhttp://tempuri.org:userAuthenticated(および関連付けられた名前空間)、STS 構成ファイルで使用されます。 このクレームの値は、このクレームが存在することを示しており、STS A によって `true` に設定されると想定されます。  
   
  STS B の一部として実装されているこのポリシーは、`STS_B_OperationRequirement` クラスによって実行時に適用されます。  
   
@@ -300,5 +302,5 @@ operationRequirementType="FederationSample.MyServiceOperationRequirement, MyServ
 ## <a name="summary"></a>まとめ  
  フェデレーション セキュリティを使用すると、役割を明確に分離できるため、安全で拡張性のあるサービス アーキテクチャを構築できます。 分散アプリケーションの構築と展開を行うためのプラットフォームとして、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ではフェデレーション セキュリティの実装をネイティブにサポートをしています。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [セキュリティ](../../../../docs/framework/wcf/feature-details/security.md)

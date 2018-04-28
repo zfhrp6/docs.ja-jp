@@ -1,20 +1,17 @@
 ---
-title: "リスト (F#)"
-description: "F# でリストを同じ型の要素の順序付けられ、変更できない一連の概要を説明します。"
-keywords: "visual f#, f#, 関数型プログラミング"
+title: リスト (F#)
+description: F# でリストを同じ型の要素の順序付けられ、変更できない一連の概要を説明します。
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: a1a6075f-064d-4aee-8222-2b59ff16cc12
-ms.openlocfilehash: 5802a5a1c48ad05c1765c4c0fa2e8a81a92dee8d
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: e29dbdac5e920c009bf7758fd2cc1ad486041cad
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="lists"></a>表示内容
 
@@ -411,7 +408,7 @@ Map と filter を組み合わせた[List.choose](https://msdn.microsoft.com/lib
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lists/snippet28.fs)]
 
-`List.fold`および[List.scan](https://msdn.microsoft.com/library/21f636db-885c-4a72-970e-e3841f33a1b8)で異なる`List.fold`、余分なパラメーターの最終的な値を返しますが、`List.scan`余分なパラメーターの (と共に最終的な値) の中間値の一覧を返します。
+`List.fold` および[List.scan](https://msdn.microsoft.com/library/21f636db-885c-4a72-970e-e3841f33a1b8)で異なる`List.fold`、余分なパラメーターの最終的な値を返しますが、`List.scan`余分なパラメーターの (と共に最終的な値) の中間値の一覧を返します。
 
 これらの関数が含まれています逆引きバリエーションの 1 つ、たとえば、 [List.foldBack](https://msdn.microsoft.com/library/b9a58e66-efe1-445f-a90c-ac9ffb9d40c7)順序が異なりますリストの走査順序と引数の順序。 また、`List.fold`と`List.foldBack`のバリエーションがある[List.fold2](https://msdn.microsoft.com/library/6cfcd043-a65d-4423-805a-2ab234cb5343)と[List.foldBack2](https://msdn.microsoft.com/library/56371d3e-5271-4183-9e8c-15a02eda9aa2)、同じ長さの 2 つのリストを受け取る。 各要素に対して実行される関数では、両方のリストの対応する要素を使用して操作を実行できます。 2 つのリストの要素の型が同じである必要はありません。たとえば、次の例では、一方のリストには銀行口座の取引金額が格納され、もう一方のリストには取引の種類 (預け入れまたは引き出し) が格納されています。
 

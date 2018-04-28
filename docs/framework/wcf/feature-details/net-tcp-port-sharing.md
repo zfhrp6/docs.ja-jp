@@ -1,27 +1,29 @@
 ---
-title: "Net.TCP ポート共有"
-ms.custom: 
+title: Net.TCP ポート共有
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - port activation [WCF]
 - port sharing [WCF]
 ms.assetid: f13692ee-a179-4439-ae72-50db9534eded
-caps.latest.revision: "14"
+caps.latest.revision: 14
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 013c9e963ca75cc612d869a55b33d69aebbcad33
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: c7abf272cb1d069b0fbdcd561256580de5a82c29
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="nettcp-port-sharing"></a>Net.TCP ポート共有
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] では、高パフォーマンス通信用の新しい TCP ベースのネットワーク プロトコル (net.tcp://) が提供されます。 また、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、net.tcp ポートを複数のユーザー プロセスで共有できる新しいシステム コンポーネントとして Net.TCP ポート共有サービスが導入されています。  
@@ -49,17 +51,17 @@ ms.lasthandoff: 12/22/2017
  net.tcp:// ポート共有を使用する [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスを開くときに、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] TCP トランスポート インフラストラクチャは、アプリケーション プロセスの TCP ソケットを直接開きません。 その代わりにトランスポート インフラストラクチャは、サービスのベース アドレス URI (Uniform Resource Identifier) を Net.TCP ポート共有サービスに登録し、ポート共有サービスがトランスポート インフラストラクチャの代わりにメッセージをリッスンするまで待機します。  アプリケーション サービス宛てのメッセージが到着すると、そのメッセージはポート共有サービスによりディスパッチされます。  
   
 ## <a name="installing-port-sharing"></a>ポート共有のインストール  
- Net.TCP ポート共有サービスは、[!INCLUDE[vstecwinfx](../../../../includes/vstecwinfx-md.md)] をサポートするすべてのオペレーティング システムで利用できますが、サービスは既定では有効にされていません。 セキュリティ予防措置として、管理者は Net.TCP ポート共有サービスを初めて使用する前に手動で有効にする必要があります。 Net.TCP ポート共有サービスでは、ポート共有サービスが所有するネットワーク ソケットのいくつかの特性を操作するための構成オプションが公開されます。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][する方法: Net.TCP ポート共有サービスを有効にする](../../../../docs/framework/wcf/feature-details/how-to-enable-the-net-tcp-port-sharing-service.md)です。  
+ Net.TCP ポート共有サービスは、[!INCLUDE[vstecwinfx](../../../../includes/vstecwinfx-md.md)] をサポートするすべてのオペレーティング システムで利用できますが、サービスは既定では有効にされていません。 セキュリティ予防措置として、管理者は Net.TCP ポート共有サービスを初めて使用する前に手動で有効にする必要があります。 Net.TCP ポート共有サービスでは、ポート共有サービスが所有するネットワーク ソケットのいくつかの特性を操作するための構成オプションが公開されます。 詳細については、次を参照してください。[する方法: Net.TCP ポート共有サービスを有効にする](../../../../docs/framework/wcf/feature-details/how-to-enable-the-net-tcp-port-sharing-service.md)です。  
   
 ## <a name="using-nettcp-port-sharing-in-an-application"></a>アプリケーションでの Net.tcp ポート共有の使用  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションで net.tcp:// ポート共有を使用する最も簡単な方法は、<xref:System.ServiceModel.NetTcpBinding> を使用してサービスを公開し、<xref:System.ServiceModel.NetTcpBinding.PortSharingEnabled%2A> プロパティを使用して Net.TCP ポート共有サービスを有効にすることです。  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]を参照してください方法[する方法: ポートの共有を使用する WCF サービスを構成する](../../../../docs/framework/wcf/feature-details/how-to-configure-a-wcf-service-to-use-port-sharing.md)です。  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)] を参照してください方法[する方法: ポートの共有を使用する WCF サービスを構成する](../../../../docs/framework/wcf/feature-details/how-to-configure-a-wcf-service-to-use-port-sharing.md)です。  
   
 ## <a name="security-implications-of-port-sharing"></a>ポート共有のセキュリティへの影響  
  Net.TCP ポート共有サービスは、アプリケーションとネットワークの間に、処理を行うための 1 つの層を提供しますが、アプリケーションでポート共有を使用する場合、アプリケーションがネットワークを直接リッスンしている場合と同様に、アプリケーションをセキュリティで保護する必要があります。 具体的には、ポート共有を使用するアプリケーションでは、そのアプリケーションが実行される際のプロセス特権を評価する必要があります。 組み込みの Network Service アカウントを使用してアプリケーションを実行することを検討します。このアカウントはネットワーク通信に必要な最小限のプロセス特権のセットを使用して実行されます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Net.TCP ポート共有サービスを構成する](../../../../docs/framework/wcf/feature-details/configuring-the-net-tcp-port-sharing-service.md)  
  [ホスティング](../../../../docs/framework/wcf/feature-details/hosting.md)  
  [方法 : ポート共有を使用するように WCF サービスを構成する](../../../../docs/framework/wcf/feature-details/how-to-configure-a-wcf-service-to-use-port-sharing.md)  

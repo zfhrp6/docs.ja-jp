@@ -1,28 +1,28 @@
 ---
-title: "メタデータ アーキテクチャの概要"
-ms.custom: 
+title: メタデータ アーキテクチャの概要
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - metadata [WCF], overview
 ms.assetid: 1d37645e-086d-4d68-a358-f3c5b6e8205e
-caps.latest.revision: 
+caps.latest.revision: 24
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: a8890cc05ec6b0b889dafcb787e216b50a681876
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: bce838d9584480028c7b02d1ba19547fe208bf2c
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="metadata-architecture-overview"></a>メタデータ アーキテクチャの概要
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] には、サービス メタデータをエクスポート、公開、取得、およびインポートするためのさまざまなインフラストラクチャが用意されています。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスでは、メタデータを使用してサービスのエンドポイントとの対話方法を記述し、Svcutil.exe などのツールでサービスにアクセスするためのクライアント コードを自動的に生成できるようにします。  
@@ -39,7 +39,7 @@ ms.lasthandoff: 12/22/2017
   
 -   <xref:System.ServiceModel.Description.MetadataLocation> のインスタンス。  
   
- <xref:System.ServiceModel.Description.MetadataReference?displayProperty=nameWithType> インスタンスは別のメタデータ交換 (MEX) エンドポイントをポイントし、<xref:System.ServiceModel.Description.MetadataLocation?displayProperty=nameWithType> インスタンスは HTTP URL を使用してメタデータ ドキュメントをポイントします。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、サービスで実装するサービス エンドポイント、サービス コントラクト、バインディング、メッセージ交換パターン、メッセージ、およびエラー メッセージを記述するために WSDL ドキュメントの使用をサポートします。 サービスで使用されるデータ型は、XML スキーマを使用して WSDL ドキュメントに記述されます。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][スキーマのインポートとエクスポート](../../../../docs/framework/wcf/feature-details/schema-import-and-export.md)です。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を使用すると、サービス動作、コントラクト動作、およびバインディング要素の WSDL 拡張をエクスポートおよびインポートでき、この拡張により、サービスの機能が拡張されます。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][WCF 拡張に対するカスタム メタデータのエクスポート](../../../../docs/framework/wcf/extending/exporting-custom-metadata-for-a-wcf-extension.md)です。  
+ <xref:System.ServiceModel.Description.MetadataReference?displayProperty=nameWithType> インスタンスは別のメタデータ交換 (MEX) エンドポイントをポイントし、<xref:System.ServiceModel.Description.MetadataLocation?displayProperty=nameWithType> インスタンスは HTTP URL を使用してメタデータ ドキュメントをポイントします。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、サービスで実装するサービス エンドポイント、サービス コントラクト、バインディング、メッセージ交換パターン、メッセージ、およびエラー メッセージを記述するために WSDL ドキュメントの使用をサポートします。 サービスで使用されるデータ型は、XML スキーマを使用して WSDL ドキュメントに記述されます。 詳細については、次を参照してください。[スキーマのインポートとエクスポート](../../../../docs/framework/wcf/feature-details/schema-import-and-export.md)です。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を使用すると、サービス動作、コントラクト動作、およびバインディング要素の WSDL 拡張をエクスポートおよびインポートでき、この拡張により、サービスの機能が拡張されます。 詳細については、次を参照してください。 [WCF 拡張機能のカスタム メタデータのエクスポート](../../../../docs/framework/wcf/extending/exporting-custom-metadata-for-a-wcf-extension.md)です。  
   
 ## <a name="exporting-service-metadata"></a>サービス メタデータのエクスポート  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]、*メタデータのエクスポート*プロセス サービス エンドポイントを記述するそれらを並行してクライアントを使用してサービスを使用する方法を理解する標準化表現です。 メタデータを <xref:System.ServiceModel.Description.ServiceEndpoint> インスタンスからエクスポートするには、<xref:System.ServiceModel.Description.MetadataExporter> 抽象クラスの実装を使用します。 <xref:System.ServiceModel.Description.MetadataExporter?displayProperty=nameWithType> の実装によって、<xref:System.ServiceModel.Description.MetadataSet> インスタンスにカプセル化されたメタデータが生成されます。  
@@ -59,7 +59,7 @@ ms.lasthandoff: 12/22/2017
   
  MEX プロトコルを使用するメタデータ エンドポイントを追加するには、IMetadataExchange をという名前のサービス コントラクトを使用するサービス ホストにサービス エンドポイントを追加します。[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 定義、<xref:System.ServiceModel.Description.IMetadataExchange>このサービス コントラクト名を持つインターフェイスです。 WS-MetadataExchange のエンドポイント、つまり MEX エンドポイントは、<xref:System.ServiceModel.Description.MetadataExchangeBindings> クラスで静的ファクトリ メソッドが公開する 4 つの既定のバインディングの 1 つを使用して、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ツール (Svcutil.exe など) によって使用される既定のバインディングを照合できます。 また、カスタム バインドを使用して MEX メタデータ エンドポイントを構成することもできます。  
   
- <xref:System.ServiceModel.Description.ServiceMetadataBehavior> は <xref:System.ServiceModel.Description.WsdlExporter?displayProperty=nameWithType> を使用して、サービス内のすべてのサービス エンドポイント用のメタデータをエクスポートします。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]サービスからメタデータをエクスポートするを参照してください[エクスポートおよびインポートするメタデータ](../../../../docs/framework/wcf/feature-details/exporting-and-importing-metadata.md)です。  
+ <xref:System.ServiceModel.Description.ServiceMetadataBehavior> は <xref:System.ServiceModel.Description.WsdlExporter?displayProperty=nameWithType> を使用して、サービス内のすべてのサービス エンドポイント用のメタデータをエクスポートします。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] サービスからメタデータをエクスポートするを参照してください[エクスポートおよびインポートするメタデータ](../../../../docs/framework/wcf/feature-details/exporting-and-importing-metadata.md)です。  
   
  <xref:System.ServiceModel.Description.ServiceMetadataBehavior> は、<xref:System.ServiceModel.Description.ServiceMetadataExtension> インスタンスを拡張としてサービス ホストに追加することで、サービス ホストを拡張します。 <xref:System.ServiceModel.Description.ServiceMetadataExtension?displayProperty=nameWithType> により、メタデータ公開プロトコルを実装することができます。 また、<xref:System.ServiceModel.Description.ServiceMetadataExtension?displayProperty=nameWithType> を使用して、<xref:System.ServiceModel.Description.ServiceMetadataExtension.Metadata%2A> プロパティにアクセスすることにより、実行時にサービスのメタデータを取得できます。  
   
@@ -100,7 +100,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="dynamic-bindings"></a>動的なバインド  
  エンドポイントのバインドが変化するイベントでサービス エンドポイントへのチャネルを作成する、または、同じコントラクトを使用しているがバインドが異なるエンドポイントへのチャネルを作成するために使用するバインドを動的に更新することができます。 <xref:System.ServiceModel.Description.MetadataResolver> 静的クラスを使用して、特定のコントラクトを実装しているサービス エンドポイントのメタデータを、実行時に取得またはインポートできます。 その後、インポートした <xref:System.ServiceModel.Description.ServiceEndpoint?displayProperty=nameWithType> オブジェクトを使用して、必要なエンドポイントに対するクライアントまたはチャネル ファクトリを作成できます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Description>  
  [メタデータ形式](../../../../docs/framework/wcf/feature-details/metadata-formats.md)  
  [メタデータのエクスポートとインポート](../../../../docs/framework/wcf/feature-details/exporting-and-importing-metadata.md)  

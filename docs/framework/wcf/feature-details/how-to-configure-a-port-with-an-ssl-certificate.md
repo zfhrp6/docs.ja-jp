@@ -1,12 +1,13 @@
 ---
-title: "方法 : SSL 証明書を使用してポートを構成する"
-ms.custom: 
+title: '方法 : SSL 証明書を使用してポートを構成する'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -16,23 +17,24 @@ helpviewer_keywords:
 - WCF, security mode
 - WCF, security
 ms.assetid: b8abcc8e-a5f5-4317-aca5-01e3c40ab24d
-caps.latest.revision: "18"
+caps.latest.revision: 18
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 3fbd3b640e90ecf0ff5857bd33465e8c60135eac
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: bbf3d4b9888d07a89d1b6a8225a7f7415e8c67cc
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="how-to-configure-a-port-with-an-ssl-certificate"></a>方法 : SSL 証明書を使用してポートを構成する
-トランスポート セキュリティを使用する自己ホスト型 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスを <xref:System.ServiceModel.WSHttpBinding> クラスを使って作成する場合は、X.509 証明書でポートを構成する作業も必要になります。 自己ホスト型サービスを作成するのでなければ、インターネット インフォメーション サービス (IIS) でサービスをホストできます。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][HTTP トランスポート セキュリティ](../../../../docs/framework/wcf/feature-details/http-transport-security.md)です。  
+トランスポート セキュリティを使用する自己ホスト型 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスを <xref:System.ServiceModel.WSHttpBinding> クラスを使って作成する場合は、X.509 証明書でポートを構成する作業も必要になります。 自己ホスト型サービスを作成するのでなければ、インターネット インフォメーション サービス (IIS) でサービスをホストできます。 詳細については、次を参照してください。 [HTTP トランスポート セキュリティ](../../../../docs/framework/wcf/feature-details/http-transport-security.md)です。  
   
  ポートを構成する場合に使用するツールは、コンピューターで実行されているオペレーティング システムによって異なります。  
   
- [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] または [!INCLUDE[wxp](../../../../includes/wxp-md.md)] を実行している場合は、HttpCfg.exe ツールを使用します。 [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] では、このツールは自動的にインストールされています。 [!INCLUDE[wxp](../../../../includes/wxp-md.md)]、ツールをダウンロードする[Windows XP Service Pack 2 サポート ツール](http://go.microsoft.com/fwlink/?LinkId=88606)です。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Httpcfg の概要](http://go.microsoft.com/fwlink/?LinkId=88605)です。 [Windows サポート ツールのマニュアル](http://go.microsoft.com/fwlink/?LinkId=94840)Httpcfg.exe ツールの構文について説明します。  
+ [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] または [!INCLUDE[wxp](../../../../includes/wxp-md.md)] を実行している場合は、HttpCfg.exe ツールを使用します。 [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] では、このツールは自動的にインストールされています。 [!INCLUDE[wxp](../../../../includes/wxp-md.md)]、ツールをダウンロードする[Windows XP Service Pack 2 サポート ツール](http://go.microsoft.com/fwlink/?LinkId=88606)です。 詳細については、次を参照してください。 [Httpcfg の概要](http://go.microsoft.com/fwlink/?LinkId=88605)です。 [Windows サポート ツールのマニュアル](http://go.microsoft.com/fwlink/?LinkId=94840)Httpcfg.exe ツールの構文について説明します。  
   
  [!INCLUDE[wv](../../../../includes/wv-md.md)] を実行している場合は、Netsh.exe ツールを使用します。これは既にインストールされています。  
   
@@ -66,9 +68,9 @@ ms.lasthandoff: 12/22/2017
   
 ### <a name="to-get-a-certificates-thumbprint"></a>証明書の拇印を取得するには  
   
-1.  証明書 MMC スナップインを使用して、クライアント認証を目的として含む X.509 証明書を検索します。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][する方法: MMC スナップインで証明書を表示](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md)です。  
+1.  証明書 MMC スナップインを使用して、クライアント認証を目的として含む X.509 証明書を検索します。 詳細については、次を参照してください。[する方法: MMC スナップインで証明書の表示](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md)です。  
   
-2.  証明書の拇印にアクセスします。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][する方法: 証明書のサムプリントを取得](../../../../docs/framework/wcf/feature-details/how-to-retrieve-the-thumbprint-of-a-certificate.md)です。  
+2.  証明書の拇印にアクセスします。 詳細については、次を参照してください。[する方法: 証明書のサムプリントを取得](../../../../docs/framework/wcf/feature-details/how-to-retrieve-the-thumbprint-of-a-certificate.md)です。  
   
 3.  証明書のサムプリントを、メモ帳などのテキスト エディターにコピーします。  
   
@@ -122,7 +124,7 @@ ms.lasthandoff: 12/22/2017
     httpcfg query ssl>myMachinePorts.txt  
     ```  
   
-2.  [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)]または[!INCLUDE[wxp](../../../../includes/wxp-md.md)]を使用して、HttpCfg.exe ツールを使用して、**削除**と**ssl**キーワード。 使用して、 **-i**スイッチを指定する、 `IP`:`port`数、および**-h**スイッチ拇印を指定します。  
+2.  [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)]または[!INCLUDE[wxp](../../../../includes/wxp-md.md)]を使用して、HttpCfg.exe ツールを使用して、**削除**と**ssl**キーワード。 使用して、 **-i**スイッチを指定する、 `IP`:`port`数、および **-h**スイッチ拇印を指定します。  
   
     ```  
     httpcfg delete ssl -i 0.0.0.0:8005 -h 0000000000003ed9cd0c315bbb6dc1c08da5e6  
@@ -140,5 +142,5 @@ ms.lasthandoff: 12/22/2017
  [!code-csharp[c_WsHttpService#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_wshttpservice/cs/source.cs#3)]
  [!code-vb[c_WsHttpService#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_wshttpservice/vb/source.vb#3)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [HTTP トランスポート セキュリティ](../../../../docs/framework/wcf/feature-details/http-transport-security.md)

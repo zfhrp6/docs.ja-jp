@@ -1,28 +1,28 @@
 ---
-title: "HTTP および HTTPS の構成"
-ms.custom: 
+title: HTTP および HTTPS の構成
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - configuring HTTP [WCF]
 ms.assetid: b0c29a86-bc0c-41b3-bc1e-4eb5bb5714d4
-caps.latest.revision: 
+caps.latest.revision: 17
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 50d4f92273a3e105fb83705bc138b06350910ccf
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8d3317cd4bba7c9935bd7555f16599dc94725fbd
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="configuring-http-and-https"></a>HTTP および HTTPS の構成
 WCF サービスと WCF クライアントは、HTTP および HTTPS を介して通信できます。 HTTP または HTTPS の設定は、インターネット インフォメーション サービス (IIS) またはコマンド ライン ツールを使用して構成します。 WCF サービスが IIS でホストされている場合は、IIS 内で HTTP または HTTPS の設定を構成できます (inetmgr.exe ツールを使用)。 WCF サービスが自己ホスト型の場合は、コマンド ライン ツールを使用して HTTP または HTTPS の設定を構成します。  
@@ -31,7 +31,7 @@ WCF サービスと WCF クライアントは、HTTP および HTTPS を介し�
   
  HTTP 設定の構成に使用するツールは、コンピューターで実行されているオペレーティング システムによって異なります。  
   
- 実行しているときに[!INCLUDE[ws2003](../../../../includes/ws2003-md.md)]または[!INCLUDE[wxp](../../../../includes/wxp-md.md)]、HttpCfg.exe ツールを使用します。 [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] ではこのツールが自動的にインストールされます。 実行しているときに[!INCLUDE[wxp](../../../../includes/wxp-md.md)]、ツールをダウンロードする[Windows XP Service Pack 2 サポート ツール](http://go.microsoft.com/fwlink/?LinkId=88606)です。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Httpcfg の概要](http://go.microsoft.com/fwlink/?LinkId=88605)です。  
+ 実行しているときに[!INCLUDE[ws2003](../../../../includes/ws2003-md.md)]または[!INCLUDE[wxp](../../../../includes/wxp-md.md)]、HttpCfg.exe ツールを使用します。 [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] ではこのツールが自動的にインストールされます。 実行しているときに[!INCLUDE[wxp](../../../../includes/wxp-md.md)]、ツールをダウンロードする[Windows XP Service Pack 2 サポート ツール](http://go.microsoft.com/fwlink/?LinkId=88606)です。 詳細については、次を参照してください。 [Httpcfg の概要](http://go.microsoft.com/fwlink/?LinkId=88605)です。  
   
  [!INCLUDE[wv](../../../../includes/wv-md.md)] または Windows 7 を実行している場合は、Netsh.exe ツールを使用してこれらの設定を構成します。  
   
@@ -103,6 +103,6 @@ netsh http add iplisten ipaddress=0.0.0.0:8000
 ## <a name="issues-specific-to-windows-xp"></a>Windows XP に固有の問題  
  IIS では、[!INCLUDE[wxp](../../../../includes/wxp-md.md)] 上でのポート共有がサポートされていません。 IIS を実行していて、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスが同じポートを持つ名前空間を使用しようとすると、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスは開始に失敗します。 IIS と [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ではどちらも、既定でポート 80 が使用されます。 いずれかのサービスのポート割り当てを変更するか、IP リッスン一覧を使用して、IIS で使用されていないネットワーク アダプターに [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスを割り当てます。 IIS 6.0 以上では、HTTP Server API を使用できるように設計が変更されています。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.WSDualHttpBinding>  
  [方法 : SSL 証明書を使用してポートを構成する](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md)

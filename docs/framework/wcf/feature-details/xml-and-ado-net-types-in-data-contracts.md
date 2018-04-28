@@ -1,27 +1,29 @@
 ---
-title: "データ コントラクトの XML および ADO.NET の種類"
-ms.custom: 
+title: データ コントラクトの XML および ADO.NET の種類
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: c2ce8461-3c15-4c41-8c81-1cb78f5b59a6
-caps.latest.revision: "7"
+caps.latest.revision: 7
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c4641815687f2c510aa664a287a79f64dc86d769
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 3a1fceb1017c5225b4e1de6891d6609c9ad5062e
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="xml-and-adonet-types-in-data-contracts"></a>データ コントラクトの XML および ADO.NET の種類
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] のデータ コントラクト モデルでは、XML を直接表す特定の型がサポートされています。 シリアライザーは、これらの型を XML にシリアル化するとき、型の XML コンテンツを書き出しますが、それ以上の処理は行いません。 サポートされている型は、<xref:System.Xml.XmlElement>、<xref:System.Xml.XmlNode> の配列 (`XmlNode` 型自体はサポートされていません)、および <xref:System.Xml.Serialization.IXmlSerializable> を実装した型です。 データベース プログラミングでは、<xref:System.Data.DataSet> 型、<xref:System.Data.DataTable> 型、および型指定されたデータセットが一般的に使用されます。 これらの型は `IXmlSerializable` インターフェイスを実装するので、データ コントラクト モデルでシリアル化可能です。 この型に関する考慮事項について、このトピックの最後に説明します。  
@@ -54,7 +56,7 @@ ms.lasthandoff: 12/22/2017
   
  `XmlElement` に逆シリアル化される XML フラグメントでは、先祖要素のプレフィックス定義に依存するのではなく、使用するすべてのプレフィックスを定義しておく必要があります。 これは、`DataContractSerializer` を使用して、`DataContractSerializer` 以外の別のソースから XML にアクセスする場合にのみ考慮する必要があります。  
   
- 使用すると、 `DataContractSerializer`、`XmlElement`型のデータ メンバーにのみ、ポリモーフィックに割り当てることができます<xref:System.Object>です。 <xref:System.Collections.IEnumerable> が実装されていても、`XmlElement` をコレクション型として使用したり、<xref:System.Collections.IEnumerable> データ メンバーに割り当てることはできません。 すべてのポリモーフィックな割り当てと同様に、`DataContractSerializer` は、生成される XML にデータ コントラクト名を出力します。この場合、コントラクト名は "http://schemas.datacontract.org/2004/07/System.Xml" 名前空間の "XmlElement" です。  
+ 使用すると、 `DataContractSerializer`、`XmlElement`型のデータ メンバーにのみ、ポリモーフィックに割り当てることができます<xref:System.Object>です。 <xref:System.Collections.IEnumerable> が実装されていても、`XmlElement` をコレクション型として使用したり、<xref:System.Collections.IEnumerable> データ メンバーに割り当てることはできません。 すべてのポリモーフィックな割り当てと同様、`DataContractSerializer`データ コントラクト名を出力結果の xml – ここでは、"XmlElement"にある、"http://schemas.datacontract.org/2004/07/System.Xml"名前空間。  
   
  `NetDataContractSerializer` を使用する場合、`XmlElement` の有効なポリモーフィック割り当て (`Object` または `IEnumerable` への割り当て) がすべてサポートされます。  
   
@@ -98,7 +100,7 @@ ms.lasthandoff: 12/22/2017
   
  <xref:System.Array> の `Object` または `Array` の `IEnumerable` 型のデータ メンバーに `XmlNode` インスタンスを追加しても、そのデータ メンバーが `Array` インスタンスの `XmlNode` として扱われることはありません。 配列の各メンバーは個別にシリアル化されます。  
   
- `DataContractSerializer` を使用する場合、`XmlNode` の配列をポリモーフィックに割り当てることができますが、その対象は `Object` 型のデータ メンバーだけです。 `IEnumerable` が実装されていても、`XmlNode` の配列をコレクション型として使用したり、`IEnumerable` データ メンバーに割り当てることはできません。 すべてのポリモーフィックな割り当てと同様に、`DataContractSerializer` は、生成される XML にデータ コントラクト名を出力します。この場合、コントラクト名は "http://schemas.datacontract.org/2004/07/System.Xml" 名前空間の "ArrayOfXmlNode" です。 使用すると、`NetDataContractSerializer`の有効な割り当て、`XmlNode`配列はサポートされています。  
+ `DataContractSerializer` を使用する場合、`XmlNode` の配列をポリモーフィックに割り当てることができますが、その対象は `Object` 型のデータ メンバーだけです。 `IEnumerable` が実装されていても、`XmlNode` の配列をコレクション型として使用したり、`IEnumerable` データ メンバーに割り当てることはできません。 すべてのポリモーフィックな割り当てと同様、`DataContractSerializer`データ コントラクト名を出力結果の xml – ここでは、"ある ArrayOfXmlNode"にある、"http://schemas.datacontract.org/2004/07/System.Xml"名前空間。 使用すると、`NetDataContractSerializer`の有効な割り当て、`XmlNode`配列はサポートされています。  
   
 ### <a name="schema-considerations"></a>スキーマの考慮事項  
  XML 型のスキーマのマッピングに関する詳細については、「[データ コントラクト スキーマの参照](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md)です。 ここでは、重要な点の概要について説明します。  
@@ -148,11 +150,11 @@ ms.lasthandoff: 12/22/2017
 ### <a name="schema-considerations-for-ixmlserializable-content-types"></a>IXmlSerializable コンテンツ型のスキーマに関する考慮事項  
  `IXmlSerializable` コンテンツ型のスキーマをエクスポートすると、スキーマ プロバイダー メソッドが呼び出されます。 このスキーマ プロバイダー メソッドには、<xref:System.Xml.Schema.XmlSchemaSet> が渡されます。 このメソッドは、有効なスキーマをスキーマ セットに追加できます。 スキーマ セットには、スキーマをエクスポートした時点で既に認識されていたスキーマが格納されます。 スキーマ プロバイダー メソッドは、スキーマ セットに項目を追加する必要があるときに、適切な名前空間を持つ <xref:System.Xml.Schema.XmlSchema> がそのセットに既に存在するかどうかを確認する必要があります。 存在する場合、スキーマ プロバイダー メソッドは新しい項目を既存の `XmlSchema` に追加する必要があります。 存在しない場合、新しい `XmlSchema` インスタンスを作成する必要があります。 これは、`IXmlSerializable` 型の配列を使用する場合に重要です。 たとえば、`IXmlSerializable` 型を名前空間 "B" の "A" 型としてエクスポートする場合、スキーマ プロバイダー メソッドが呼び出される前に、"B" が "ArrayOfA" 型を保持するためのスキーマがスキーマ セットに既に存在している可能性があります。  
   
- 型を <xref:System.Xml.Schema.XmlSchemaSet> に追加する以外に、コンテンツ型のスキーマ プロバイダー メソッドは null 以外の値を返す必要があります。 このメソッドは、特定の <xref:System.Xml.XmlQualifiedName> 型で使用するスキーマ型の名前を指定する `IXmlSerializable` を返すことができます。 この修飾名は、その型のデータ コントラクト名および名前空間としても使用されます。 スキーマ プロバイダー メソッドは、スキーマ セットにまだ存在していない型であっても、復帰時に返すことができます。 ただし、関連するすべての型がエクスポートされる (<xref:System.Runtime.Serialization.XsdDataContractExporter.Export%2A> の関連するすべての型に対して <xref:System.Runtime.Serialization.XsdDataContractExporter> メソッドが呼び出され、<xref:System.Runtime.Serialization.XsdDataContractExporter.Schemas%2A> プロパティにアクセスする) までに、その型がスキーマ セットに存在している必要があります。 関連するすべての `Schemas` 呼び出しが実行される前に `Export` プロパティにアクセスすると、<xref:System.Xml.Schema.XmlSchemaException> が発生する可能性があります。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]エクスポート プロセスを参照してください[クラスからのスキーマのエクスポート](../../../../docs/framework/wcf/feature-details/exporting-schemas-from-classes.md)です。  
+ 型を <xref:System.Xml.Schema.XmlSchemaSet> に追加する以外に、コンテンツ型のスキーマ プロバイダー メソッドは null 以外の値を返す必要があります。 このメソッドは、特定の <xref:System.Xml.XmlQualifiedName> 型で使用するスキーマ型の名前を指定する `IXmlSerializable` を返すことができます。 この修飾名は、その型のデータ コントラクト名および名前空間としても使用されます。 スキーマ プロバイダー メソッドは、スキーマ セットにまだ存在していない型であっても、復帰時に返すことができます。 ただし、関連するすべての型がエクスポートされる (<xref:System.Runtime.Serialization.XsdDataContractExporter.Export%2A> の関連するすべての型に対して <xref:System.Runtime.Serialization.XsdDataContractExporter> メソッドが呼び出され、<xref:System.Runtime.Serialization.XsdDataContractExporter.Schemas%2A> プロパティにアクセスする) までに、その型がスキーマ セットに存在している必要があります。 関連するすべての `Schemas` 呼び出しが実行される前に `Export` プロパティにアクセスすると、<xref:System.Xml.Schema.XmlSchemaException> が発生する可能性があります。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] エクスポート プロセスを参照してください[クラスからのスキーマのエクスポート](../../../../docs/framework/wcf/feature-details/exporting-schemas-from-classes.md)です。  
   
  スキーマ プロバイダー メソッドは、使用する <xref:System.Xml.Schema.XmlSchemaType> を返すこともできます。 その型は、匿名の場合とそうでない場合があります。 匿名の場合、`IXmlSerializable` 型のスキーマは、`IXmlSerializable` 型がデータ メンバーとして使用されるたびに匿名型としてエクスポートされます。 `IXmlSerializable` 型には、データ コントラクト名と名前空間が引き続き保持されます  (これは」の説明に従って、決まります[データ コントラクト名](../../../../docs/framework/wcf/feature-details/data-contract-names.md)する点を除いて、<xref:System.Runtime.Serialization.DataContractAttribute>属性は、名前をカスタマイズを使用することはできません)。匿名でない場合、型は `XmlSchemaSet` に含まれている型のいずれかである必要があります。 これは、型の `XmlQualifiedName` を返す場合と同じです。  
   
- さらに、型のグローバル要素宣言がエクスポートされます。 型に <xref:System.Xml.Serialization.XmlRootAttribute> 属性が適用されていない場合、その要素にはデータ コントラクトと同じ名前と名前空間が使用され、その "nillable" プロパティは true に設定されます。 ただし、スキーマ名前空間 ("http://www.w3.org/2001/XMLSchema") だけは例外です。型のデータ コントラクトがこの名前空間にある場合は、スキーマ名前空間に新しい要素を追加することが禁止されているため、対応するグローバル要素は、空白の名前空間に属することになります。 型に `XmlRootAttribute` 属性が適用されている場合、グローバル要素宣言は、<xref:System.Xml.Serialization.XmlRootAttribute.ElementName%2A>、<xref:System.Xml.Serialization.XmlRootAttribute.Namespace%2A>、および <xref:System.Xml.Serialization.XmlRootAttribute.IsNullable%2A> の各プロパティを使用してエクスポートされます。 `XmlRootAttribute` が適用された場合の既定値は、データ コントラクト名、空白の名前空間、および true に設定された "nillable" です。  
+ さらに、型のグローバル要素宣言がエクスポートされます。 型に <xref:System.Xml.Serialization.XmlRootAttribute> 属性が適用されていない場合、その要素にはデータ コントラクトと同じ名前と名前空間が使用され、その "nillable" プロパティは true に設定されます。 唯一の例外は、スキーマ名前空間 ("http://www.w3.org/2001/XMLSchema"): 型のデータ コントラクトがこの名前空間内にある場合は、対応するグローバル要素では空白の名前空間でスキーマの名前空間に新しい要素を追加することは禁止されています。 型に `XmlRootAttribute` 属性が適用されている場合、グローバル要素宣言は、<xref:System.Xml.Serialization.XmlRootAttribute.ElementName%2A>、<xref:System.Xml.Serialization.XmlRootAttribute.Namespace%2A>、および <xref:System.Xml.Serialization.XmlRootAttribute.IsNullable%2A> の各プロパティを使用してエクスポートされます。 `XmlRootAttribute` が適用された場合の既定値は、データ コントラクト名、空白の名前空間、および true に設定された "nillable" です。  
   
  同じグローバル要素宣言の規則が、従来のデータセット型に適用されます。 `XmlRootAttribute` は、カスタム コードによって追加されたグローバル要素宣言をオーバーライドできません。これには、スキーマ プロバイダー メソッドを使用して `XmlSchemaSet` に追加された場合と、従来のデータセット型に対して `GetSchema` を使用して追加された場合があります。  
   
@@ -165,7 +167,7 @@ ms.lasthandoff: 12/22/2017
   
 -   `ReadXml` の実装では、ラッパー要素の読み取りは想定されていません。 読み取ることが想定されているのは、`WriteXml` で生成される要素 1 つのみです。  
   
--   要素型を一様にシリアル化する場合 (データ コントラクトのデータ メンバーとしてシリアル化する場合など) は、コンテンツ型の場合と同様に、`WriteXml` を呼び出す前にラッパー要素が出力されます。 ただし、`WriteXml` コンストラクターまたは `DataContractSerializer` コンストラクターによるシリアライザーの構築時にルート名と名前空間が明示的に指定されていない限り、トップ レベルで要素型をシリアル化しても、通常は `NetDataContractSerializer` で書き出される要素を囲むラッパー要素が出力されることはありません。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][シリアル化および逆シリアル化](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md)です。  
+-   要素型を一様にシリアル化する場合 (データ コントラクトのデータ メンバーとしてシリアル化する場合など) は、コンテンツ型の場合と同様に、`WriteXml` を呼び出す前にラッパー要素が出力されます。 ただし、`WriteXml` コンストラクターまたは `DataContractSerializer` コンストラクターによるシリアライザーの構築時にルート名と名前空間が明示的に指定されていない限り、トップ レベルで要素型をシリアル化しても、通常は `NetDataContractSerializer` で書き出される要素を囲むラッパー要素が出力されることはありません。 詳細については、次を参照してください。[シリアル化および逆シリアル化](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md)です。  
   
 -   構築時にルート名と名前空間を指定せずにトップ レベルで要素型をシリアル化した場合、<xref:System.Runtime.Serialization.XmlObjectSerializer.WriteStartObject%2A> と <xref:System.Runtime.Serialization.XmlObjectSerializer.WriteEndObject%2A> では基本的に何も実行されず、<xref:System.Runtime.Serialization.XmlObjectSerializer.WriteObjectContent%2A> によって `WriteXml` が呼び出されます。 このモードでは、シリアル化されるオブジェクトは null にできず、ポリモーフィックに割り当てることができません。 また、オブジェクト グラフの保存を有効化できず、`NetDataContractSerializer` も使用できません。  
   
@@ -209,11 +211,11 @@ ms.lasthandoff: 12/22/2017
   
 -   この 3 つの型 (特に、<xref:System.Data.DataSet> と型指定された派生クラス) のスキーマは、一部の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 以外のプラットフォームと相互運用できない場合があります。また、このようなプラットフォームで使用しても、結果的に使いにくい場合もあります。 また、`DataSet` 型の使用はパフォーマンスに影響を与えることがあります。 さらに、将来的にアプリケーションのバージョン管理が通常より難しくなる可能性もあります。 コントラクトでは、`DataSet` 型の代わりに、明示的に定義されたデータ コントラクト型を使用することを検討してください。  
   
--   `DataSet` スキーマまたは `DataTable` スキーマをインポートする際には、これらの型を参照することが重要です。 Svcutil.exe コマンド ライン ツールを使用してこれには、System.Data.dll アセンブリ名を渡すことによって、`/reference`スイッチします。 型指定されたデータセット スキーマをインポートする場合、その型指定されたデータセットの型を参照する必要があります。 Svcutil.exe を使用する、型指定されたデータセットのアセンブリの場所を渡す、`/reference`スイッチします。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]型を参照するを参照してください、[クラスを生成するには、スキーマのインポート](../../../../docs/framework/wcf/feature-details/importing-schema-to-generate-classes.md)です。  
+-   `DataSet` スキーマまたは `DataTable` スキーマをインポートする際には、これらの型を参照することが重要です。 Svcutil.exe コマンド ライン ツールを使用してこれには、System.Data.dll アセンブリ名を渡すことによって、`/reference`スイッチします。 型指定されたデータセット スキーマをインポートする場合、その型指定されたデータセットの型を参照する必要があります。 Svcutil.exe を使用する、型指定されたデータセットのアセンブリの場所を渡す、`/reference`スイッチします。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] 型を参照するを参照してください、[クラスを生成するには、スキーマのインポート](../../../../docs/framework/wcf/feature-details/importing-schema-to-generate-classes.md)です。  
   
  データ コントラクト モデルでは、型指定された DataSet のサポートが制限されています。 型指定された DataSet は、シリアル化と逆シリアル化が可能であり、スキーマをエクスポートすることもできます。 ただし、データ コントラクト スキーマのインポートでは、既存のスキーマの再利用のみが行われるため、型指定された新しい DataSet 型をスキーマから生成することはできません。 Svcutil.exe ツールで `/r` スイッチを使用して、型指定された既存の DataSet を指し示すことができます。 型指定されたデータセットを使用するサービスで、`/r` スイッチを指定せずに Svcutil.exe を使用しようとすると、代替のシリアライザー (XmlSerializer) が自動的に選択されます。 DataContractSerializer を使用することも、スキーマから DataSet を生成することも必要である場合は、(サービスで `/d` スイッチを指定した Xsd.exe ツールを使用して) 型指定された DataSet 型を生成し、型をコンパイルした後に、Svcutil.exe で `/r` スイッチを使用して、それらの型を指し示します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Runtime.Serialization.DataContractSerializer>  
  <xref:System.Xml.Serialization.IXmlSerializable>  
  [データ コントラクトの使用](../../../../docs/framework/wcf/feature-details/using-data-contracts.md)  

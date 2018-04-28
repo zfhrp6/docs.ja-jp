@@ -1,20 +1,17 @@
 ---
 title: 関数 (F#)
 description: F# および f# のサポートについて共通の関数型プログラミング構成要素内の関数について説明します。
-keywords: visual f#, f#, 関数型プログラミング
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: 6dea2c3e-2f9d-4c9d-97a2-d8f9a72b6f4c
-ms.openlocfilehash: adb2b0b3680c97582dfefda41c43735f9f09e6c9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4cdab85dd63cc74a4c6e7abf660f8f32cc088120
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="functions"></a>関数
 
@@ -115,7 +112,7 @@ let vol = cylinderVolume 2.0 3.0
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet107.fs)]
     
 ## <a name="recursive-functions"></a>再帰関数
-*再帰関数*はそれらの関数自体を呼び出す関数です。 再帰関数を使用するには、**let** キーワードの後に **rec** キーワードを指定する必要があります。 関数の本体から再帰関数を呼び出す方法は、他の関数呼び出しの場合と変わりません。 次の再帰関数は、計算、  *n*番目のフィボナッチ数。 フィボナッチ数列は、古代から知られている数列で、数例の各数値が、前の 2 つの連続する数値の和になります。
+*再帰関数*はそれらの関数自体を呼び出す関数です。 再帰関数を使用するには、**let** キーワードの後に **rec** キーワードを指定する必要があります。 関数の本体から再帰関数を呼び出す方法は、他の関数呼び出しの場合と変わりません。 次の再帰関数は、*n* 番目のフィボナッチ数を計算します。 フィボナッチ数列は、古代から知られている数列で、数例の各数値が、前の 2 つの連続する数値の和になります。
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet108.fs)]
 
@@ -205,7 +202,7 @@ let result4 = Pipeline2 2
 関数ではなく型のメソッドをオーバー ロードすることができます。 詳細については、「[メソッド](../members/methods.md)」を参照してください。
 
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 [値](../values/index.md)
 
 [F# 言語リファレンス](../index.md)

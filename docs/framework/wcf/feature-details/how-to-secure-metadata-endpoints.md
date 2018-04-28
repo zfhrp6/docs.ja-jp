@@ -1,32 +1,34 @@
 ---
-title: "方法 : セキュリティで保護されたメタデータ エンドポイント"
-ms.custom: 
+title: '方法 : セキュリティで保護されたメタデータ エンドポイント'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 9f71b6ae-737c-4382-8d89-0a7b1c7e182b
-caps.latest.revision: "13"
+caps.latest.revision: 13
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: 6923703230d6792d8938de149f64c41a3bf95699
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 50a62366063123de9e1773b2926f79b76a1b1c3b
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="how-to-secure-metadata-endpoints"></a>方法 : セキュリティで保護されたメタデータ エンドポイント
 サービスのメタデータには、悪意のあるユーザーに利用される可能性がある、アプリケーションに関する機密情報が含まれています。 また、サービスのコンシューマーにも、サービスのメタデータを取得するためのセキュリティで保護された機構が必要です。 したがって、状況に応じて、セキュリティで保護されたエンドポイントを使用してメタデータを公開する必要があります。  
   
- メタデータ エンドポイントは、一般に、アプリケーション エンドポイントをセキュリティで保護するために [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] に定義されている標準のセキュリティ機構を使用して保護されます  ([!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [セキュリティの概要](../../../../docs/framework/wcf/feature-details/security-overview.md))。  
+ メタデータ エンドポイントは、一般に、アプリケーション エンドポイントをセキュリティで保護するために [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] に定義されている標準のセキュリティ機構を使用して保護されます  (詳細については、次を参照してください[セキュリティの概要](../../../../docs/framework/wcf/feature-details/security-overview.md)。)。  
   
  ここでは、SSL (Secure Sockets Layer) 証明書によって保護されたエンドポイント (つまり、HTTPS エンドポイント) を作成する手順を示します。  
   
@@ -103,7 +105,7 @@ ms.lasthandoff: 12/22/2017
   
 -   <xref:System.ServiceModel.Description?displayProperty=nameWithType>  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetEnabled%2A>  
  <xref:System.ServiceModel.Description.ServiceMetadataBehavior>  
  <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetUrl%2A>  

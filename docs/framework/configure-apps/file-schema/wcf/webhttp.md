@@ -1,32 +1,34 @@
 ---
 title: '&lt;webHttp&gt;'
-ms.custom: 
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 1f9d0754-d41e-44ce-a298-e51cb3096c64
-caps.latest.revision: "5"
+caps.latest.revision: 5
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 6b488d4e4884f92b107b2b6be71827a2f8b4cdbf
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 9bf92421d09f25c760f8edc5062b7b7d6276902f
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="ltwebhttpgt"></a>&lt;webHttp&gt;
 この要素は、構成によってエンドポイントに <xref:System.ServiceModel.Description.WebHttpBehavior> を指定します。 この動作と組み合わせて使用すると、 [ \<webHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/webhttpbinding.md)の Web プログラミング モデルにより、標準のバインディング、[!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)]サービス。  
   
- \<システムです。ServiceModel >  
+ \<system.ServiceModel >  
 \<ビヘイビアー >  
-\<endpointBehaviors >  
-\<動作 >  
+\<endpointBehaviors>  
+\<behavior>  
 \<webHttp >  
   
 ## <a name="syntax"></a>構文  
@@ -43,8 +45,8 @@ ms.lasthandoff: 12/22/2017
 |属性|説明|  
 |---------------|-----------------|  
 |automaticFormatSelectionEnabled|このプロパティが `true` に設定されている場合は、使用する最適な形式が WCF インフラストラクチャで決定されます。 形式の自動選択は、既定で、下位互換性のために無効になっています。 形式の自動選択は、プログラムで有効にすることも、構成ファイルを使用して有効にすることもできます。|  
-|defaultBodyStyle|返されたメッセージの既定の本文のスタイルを指定します。 [!INCLUDE[crdefault](../../../../../includes/crdefault-md.md)]<xref:System.ServiceModel.Web.WebMessageBodyStyle>と[WCF Web HTTP 形式](../../../../../docs/framework/wcf/feature-details/wcf-web-http-formatting.md)です。|  
-|defaultOutgoingResponseFormat|メッセージの既定の送信応答形式を指定します。 [!INCLUDE[crdefault](../../../../../includes/crdefault-md.md)][WCF Web HTTP 形式](../../../../../docs/framework/wcf/feature-details/wcf-web-http-formatting.md)です。|  
+|defaultBodyStyle|返されたメッセージの既定の本文のスタイルを指定します。 詳細については、次を参照してください。<xref:System.ServiceModel.Web.WebMessageBodyStyle>と[WCF Web HTTP 書式](../../../../../docs/framework/wcf/feature-details/wcf-web-http-formatting.md)です。|  
+|defaultOutgoingResponseFormat|メッセージの既定の送信応答形式を指定します。 詳細については、次を参照してください。 [WCF Web HTTP 書式](../../../../../docs/framework/wcf/feature-details/wcf-web-http-formatting.md)です。|  
 |faultExceptionEnabled|内部サーバー エラー (HTTP ステータス コード: 500) が発生したときに FaultException が生成されるかどうかを指定するフラグを取得または設定します。|  
 |helpEnabled|ヘルプ ページが有効かどうかを示す値を取得または設定します。|  
   
@@ -55,10 +57,10 @@ ms.lasthandoff: 12/22/2017
   
 |要素|説明|  
 |-------------|-----------------|  
-|[\<動作 >](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|エンドポイントの動作のセットを指定します。|  
+|[\<behavior>](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|エンドポイントの動作のセットを指定します。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Configuration.WebHttpElement>  
  <xref:System.ServiceModel.Description.WebHttpBehavior>  
  [AJAX の統合と JSON のサポート](../../../../../docs/framework/wcf/feature-details/ajax-integration-and-json-support.md)  
- [\<webHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/webhttpbinding.md)
+ [\<webHttpBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/webhttpbinding.md)

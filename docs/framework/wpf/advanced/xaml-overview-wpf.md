@@ -33,11 +33,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 87785d6bba58442a1a5ad27f5304aa63e16c1aa9
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: ec0c7645d4d6a1affe78e23a9498ea5f5f8d5235
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="xaml-overview-wpf"></a>XAML の概要 (WPF)
 このトピックは、XAML 言語の機能について説明し、書き込む XAML を使用する方法について説明[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]アプリケーションです。 具体的には、このトピックにはによって実装される XAML について説明します[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]です。 XAML 自体よりも大きい言語の概念は、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]です。  
@@ -46,7 +46,7 @@ ms.lasthandoff: 04/26/2018
   
 <a name="what_is_xaml"></a>   
 ## <a name="what-is-xaml"></a>XAML とは何ですか。  
- XAML は、宣言型マークアップ言語です。 適用されると、[!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)]プログラミング モデル、XAML 作成を簡略化、[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]の[!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)]アプリケーションです。 表示を作成することができます[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]宣言型の XAML マークアップでとし、別の要素、[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]部分クラス定義を使用するマークアップに参加している分離コード ファイルを使用して実行時のロジックを定義します。 XAML は、直接バッキング アセンブリで定義されている型の特定のセット内のオブジェクトをインスタンス化を表します。 これは、ほとんど他のマークアップ言語には、通常、バッキング型システムに直接同順せず、解釈された言語とは異なりします。 XAML は、別のパーティがで作業できるワークフローを使用する、[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]および可能性のあるさまざまなツールを使用して、アプリケーションのロジックです。  
+ XAML は、宣言型マークアップ言語です。 .NET Framework のプログラミング モデルに適用される、XAML が作成を簡略化、 [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] .NET Framework アプリケーション用。 表示を作成することができます[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]宣言型の XAML マークアップでとし、別の要素、[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]部分クラス定義を使用するマークアップに参加している分離コード ファイルを使用して実行時のロジックを定義します。 XAML は、直接バッキング アセンブリで定義されている型の特定のセット内のオブジェクトをインスタンス化を表します。 これは、ほとんど他のマークアップ言語には、通常、バッキング型システムに直接同順せず、解釈された言語とは異なりします。 XAML は、別のパーティがで作業できるワークフローを使用する、[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]および可能性のあるさまざまなツールを使用して、アプリケーションのロジックです。  
   
  XAML ファイルは、一般にある XML ファイルでテキストとして表されている、`.xaml`拡張機能です。 任意の XML エンコードしますが、utf-8 は一般的なエンコードしてファイルをエンコードすることができます。  
   

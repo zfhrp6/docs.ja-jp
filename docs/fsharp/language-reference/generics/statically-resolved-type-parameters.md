@@ -1,20 +1,17 @@
 ---
-title: "静的に解決された型パラメーター (F#)"
-description: "F# で使用する方法について静的に解決される型パラメーターは、実行時ではなく、コンパイル時に実際の型に置き換えられています。"
-keywords: "visual f#, f#, 関数型プログラミング"
+title: 静的に解決された型パラメーター (F#)
+description: F# で使用する方法について静的に解決される型パラメーターは、実行時ではなく、コンパイル時に実際の型に置き換えられています。
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: b3797415-3e49-4f8a-a8ee-fa614c5721aa
-ms.openlocfilehash: 14c629d6223584113af47636495be61decca02ad
-ms.sourcegitcommit: 96cc82cac4650adfb65ba351506d8a8fbcd17b5c
+ms.openlocfilehash: da730014f1c40b6c79d72e4f46a18ef36f50de36
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="statically-resolved-type-parameters"></a>静的に解決される型パラメーター
 
@@ -90,7 +87,7 @@ let inline replace (a: ^a) (f: ^b): ^a0 when (CFunctor or  ^b): (static member r
     replace_instance<CFunctor, _, _, _> (a, f)
 ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 [ジェネリック](index.md)
 
 [型推論](../type-inference.md)

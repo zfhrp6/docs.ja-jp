@@ -1,24 +1,26 @@
 ---
-title: "DiscoveryClient と DynamicEndpoint"
-ms.custom: 
+title: DiscoveryClient と DynamicEndpoint
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 7cd418f0-0eab-48d1-a493-7eb907867ec3
-caps.latest.revision: "5"
+caps.latest.revision: 5
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 6e3ac334d53480ba8b63cc8e8f117dd74315963c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: c652e58b20a6fe836e647ed07c6a84328ee4631e
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="discoveryclient-and-dynamicendpoint"></a>DiscoveryClient と DynamicEndpoint
 <xref:System.ServiceModel.Discovery.DiscoveryClient> および <xref:System.ServiceModel.Discovery.DynamicEndpoint> の 2 つは、サービスの検索にクライアント側で使用されるクラスです。 <xref:System.ServiceModel.Discovery.DiscoveryClient> は、特定の条件に一致するサービスの一覧を表示し、サービスに接続できるようにします。 <xref:System.ServiceModel.Discovery.DynamicEndpoint> は同じ操作を実行するだけでなく、見つかったサービスの 1 つに自動的に接続します。 <xref:System.ServiceModel.Discovery.DynamicEndpoint> には任意のエンドポイントを指定でき、構成に検索条件も追加できます。このため、ソリューションに探索機能が必要だが、クライアント ロジックを変更したくないという場合は、<xref:System.ServiceModel.Discovery.DynamicEndpoint> を使用すると、エンドポイントを変更するだけで済み、便利です。 これに対して、<xref:System.ServiceModel.Discovery.DiscoveryClient> は、検索操作を詳細に制御する場合に使用できます。 次に、それぞれのクラスの用途と利点について詳しく説明します。  
@@ -90,7 +92,7 @@ static void discoveryClient_FindCompleted(object sender, FindCompletedEventArgs 
         }  
 ```  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]非同期呼び出しを検索を参照してください[非同期検索](../../../../docs/framework/wcf/samples/asynchronous-find-sample.md)です。  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)] 非同期呼び出しを検索を参照してください[非同期検索](../../../../docs/framework/wcf/samples/asynchronous-find-sample.md)です。  
   
  エンドポイント アドレスに基づいてサービスを検索するには、<xref:System.ServiceModel.Discovery.DiscoveryClient.Resolve%2A> メソッドおよび <xref:System.ServiceModel.Discovery.DiscoveryClient.ResolveAsync%28System.ServiceModel.Discovery.ResolveCriteria%29> メソッドを使用します。 エンドポイント アドレスをネットワーク アドレスで指定できないアドレスの場合は、これが便利です。 Resolve メソッドは、<xref:System.ServiceModel.Discovery.ResolveCriteria> のインスタンスを受け取ります。このインスタンスは、解決するサービスのエンドポイント アドレス、解決操作の最大期間、および拡張のセットを指定できるようにします。 次の例は、<xref:System.ServiceModel.Discovery.DiscoveryClient.Resolve%2A> メソッドを使用してサービスを解決する方法を示しています。  
   
@@ -102,7 +104,7 @@ EndpointAddress newEp = response.EndpointDiscoveryMetadata.Address;
 ```  
   
 ## <a name="dynamicendpoint"></a>DynamicEndpoint  
- <xref:System.ServiceModel.Discovery.DynamicEndpoint>標準エンドポイントです ([!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [標準エンドポイント](../../../../docs/framework/wcf/feature-details/standard-endpoints.md)) が検出を実行し、一致するサービスが自動的に選択します。 <xref:System.ServiceModel.Discovery.DynamicEndpoint> を作成して、検索するコントラクトおよび使用するバインディングを渡し、<xref:System.ServiceModel.Discovery.DynamicEndpoint> インスタンスを WCF クライアントに渡します。 次の例は、<xref:System.ServiceModel.Discovery.DynamicEndpoint> を作成および使用して電卓サービスを呼び出す方法を示しています。 クライアントが開かれるたびに、探索が実行されます。 構成で定義されている任意のエンドポイントにも変換できます、<xref:System.ServiceModel.Discovery.DynamicEndpoint>追加することによって、`kind ="dynamicEndpoint"`属性をエンドポイント構成要素。  
+ <xref:System.ServiceModel.Discovery.DynamicEndpoint> 標準エンドポイントです (詳細については、次を参照してください。[標準エンドポイント](../../../../docs/framework/wcf/feature-details/standard-endpoints.md)) が検出を実行し、一致するサービスが自動的に選択します。 <xref:System.ServiceModel.Discovery.DynamicEndpoint> を作成して、検索するコントラクトおよび使用するバインディングを渡し、<xref:System.ServiceModel.Discovery.DynamicEndpoint> インスタンスを WCF クライアントに渡します。 次の例は、<xref:System.ServiceModel.Discovery.DynamicEndpoint> を作成および使用して電卓サービスを呼び出す方法を示しています。 クライアントが開かれるたびに、探索が実行されます。 構成で定義されている任意のエンドポイントにも変換できます、<xref:System.ServiceModel.Discovery.DynamicEndpoint>追加することによって、`kind ="dynamicEndpoint"`属性をエンドポイント構成要素。  
   
 ```  
 DynamicEndpoint dynamicEndpoint = new DynamicEndpoint(ContractDescription.GetContract(typeof(ICalculatorService)), new WSHttpBinding());  
@@ -118,7 +120,7 @@ double result = client.Add(value1, value2);
 Console.WriteLine("Add({0},{1}) = {2}", value1, value2, result);  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [スコープを使用した探索](../../../../docs/framework/wcf/samples/discovery-with-scopes-sample.md)  
  [非同期検索](../../../../docs/framework/wcf/samples/asynchronous-find-sample.md)  
  [基本](../../../../docs/framework/wcf/samples/basic-sample.md)

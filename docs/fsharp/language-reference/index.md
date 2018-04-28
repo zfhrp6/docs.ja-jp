@@ -1,20 +1,17 @@
 ---
 title: F# 言語リファレンス
 description: 言語トークン、概念、種類、式、およびコンストラクトのコンパイラでサポートされているトピックへの参照をこの f# 言語機能情報を検索します。
-keywords: visual f#, f#, 関数型プログラミング
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: b1707be1-7b7c-4fdd-a717-d9c190bc5fb5
-ms.openlocfilehash: 0d26d5a6f47ce8a92aefe338ea8c39295d042794
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 5ab0ef364696e92064209118920dff0def21e0c8
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="f-language-reference"></a>F# 言語リファレンス
 
@@ -37,7 +34,7 @@ ms.lasthandoff: 10/18/2017
 
 
 
-|タイトル|説明|
+|Title|説明|
 |-----|-----------|
 |[関数](functions/index.md)|関数は、あらゆるプログラミング言語においてプログラムの実行の基本となる単位です。 他の言語の場合と同様に、F# の関数にもそれぞれ名前と本体があり、パラメーターや引数を受け取ることができます。 F# ではさらに、関数型プログラミング構成要素もサポートしています。たとえば、関数を値として処理したり、名前のない関数を式で使用したりできます。また、関数の合成による新しい関数の作成、カリー化関数、関数の引数の部分適用による関数の暗黙の定義などがサポートされます。|
 |[F# の型](fsharp-types.md)|F# で使用される型と、それらを指定および記述する方法について説明します。|
@@ -67,7 +64,7 @@ ms.lasthandoff: 10/18/2017
 
 
 
-|タイトル|説明|
+|Title|説明|
 |-----|-----------|
 |[値](values/index.md)|値について説明します。値は、特定の型を持つ変更不可の数量です。値は、整数または浮動小数点数、文字またはテキスト、リスト、シーケンス、配列、タプル、判別共用体、レコード、クラス型、関数値のいずれかです。|
 |[プリミティブ型](primitive-types.md)|F# 言語で使用される基本的なプリミティブ型について説明します。 また、対応する .NET 型と各型の最小値と最大値も示します。|
@@ -97,7 +94,7 @@ ms.lasthandoff: 10/18/2017
 ## <a name="f-expressions"></a>F# の式
 次の表に、F# の式を説明するトピックの一覧を示します。
 
-|タイトル|説明|
+|Title|説明|
 |-----|-----------|
 |[条件式: `if...then...else`](conditional-expressions-if-then-else.md)|`if...then...else` 式について説明します。これは、コードのさまざまな分岐を実行する機能であり、指定されたブール式に応じて異なる値に評価されます。|
 |[match 式](match-expressions.md)|`match` 式について説明します。この式により、式を一連のパターンと比較し、その比較に基づいて分岐を制御できます。|

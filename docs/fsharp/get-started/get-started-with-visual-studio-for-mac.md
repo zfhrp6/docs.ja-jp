@@ -4,15 +4,14 @@ description: 使用する方法をについて f# で Visual Studio for mac
 author: cartermp
 ms.author: phcart
 ms.date: 02/13/2017
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.topic: conceptual
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.openlocfilehash: f56d67a7ecb9c68703638cbe05d8531891c132cd
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: 232235952ec43f682dc21de4ef7dde9c1b553364
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="get-started-with-f-in-visual-studio-for-mac"></a>Mac 用 Visual Studio での f# の概要します。
 
@@ -36,7 +35,7 @@ Mac 用の Visual Studio での最も基本的なプロジェクトの 1 つは�
 
 4. プロジェクトの名前を指定し、アプリの必要なオプションを選択します。  プレビュー ウィンドウに作成されるディレクトリ構造を表示する画面の端に通知することは、選択したオプションに基づいています。  
 
-5. **[作成]**をクリックします。  ソリューション エクスプ ローラーで f# プロジェクトが表示されます。
+5. **[作成]** をクリックします。  ソリューション エクスプ ローラーで f# プロジェクトが表示されます。
 
 ## <a name="writing-your-code"></a>コードの記述
 

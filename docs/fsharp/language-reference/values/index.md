@@ -1,20 +1,17 @@
 ---
 title: 値 (F#)
 description: F# の値の特定の種類の数量の方法について説明します。
-keywords: visual f#, f#, 関数型プログラミング
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: 5e1e73c3-5adb-4bba-9976-d57f1ff6cd8d
-ms.openlocfilehash: a1e077552ba39a483be3129c89af48b547219733
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: b40e4a0409a9161a4ef48c8d4ad82b4da346538e
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="values"></a>値
 

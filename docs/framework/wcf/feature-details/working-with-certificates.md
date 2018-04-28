@@ -21,11 +21,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: ba49d990c9f067ae2c10ae2a60cbad24b30f43eb
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: e731fd31f2a247466891abbf75d67a61dba7f286
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="working-with-certificates"></a>証明書の使用
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] のセキュリティをプログラミングする場合、一般に X.509 デジタル証明書を使用して、クライアントとサーバーの認証、暗号化、およびメッセージのデジタル署名を行います。 ここでは、X.509 デジタル証明書の機能および [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] でのそれらの機能の使用方法について簡単に説明します。また、これらの概念の詳細を説明するトピックや、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] と証明書を使用した一般的なタスクの実行方法が記載されたトピックへのリンクも示します。  
@@ -37,7 +37,7 @@ ms.lasthandoff: 04/09/2018
  証明書は、証明機関によって発行される必要があります。多くの場合、証明機関はサードパーティの証明書発行者です。 Windows ドメインでは、そのドメインのコンピューターに対して証明書を発行する際に使用できる証明機関が含まれています。  
   
 ## <a name="viewing-certificates"></a>証明書の表示  
- 証明書を使用するには、多くの場合、証明書を表示し、プロパティを確認する必要があります。 Microsoft 管理コンソール (MMC: Microsoft Management Console) スナップイン ツールを使用すると、これを簡単に行うことができます。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [方法: MMC スナップインで証明書を表示](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md)です。  
+ 証明書を使用するには、多くの場合、証明書を表示し、プロパティを確認する必要があります。 Microsoft 管理コンソール (MMC: Microsoft Management Console) スナップイン ツールを使用すると、これを簡単に行うことができます。 詳細については、次を参照してください。[する方法: MMC スナップインで証明書の表示](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md)です。  
   
 ## <a name="certificate-stores"></a>証明書ストア  
  証明書はストアに格納されています。 2 つの主要なストアがあり、さらにサブストアに分かれています。 コンピューターの管理者は、MMC スナップイン ツールを使用して、両方の主要なストアを表示できます。 管理者以外のユーザーは、現在のユーザー ストアだけを表示できます。  
@@ -96,7 +96,7 @@ ms.lasthandoff: 04/09/2018
 ## <a name="custom-authentication"></a>カスタム認証  
  `CertificateValidationMode` プロパティを使用すると、証明書の認証方法をカスタマイズすることもできます。 既定では、レベルは `ChainTrust` に設定されています。 <xref:System.ServiceModel.Security.X509CertificateValidationMode.Custom> 値を使用するには、`CustomCertificateValidatorType` 属性を証明書の検証に使用するアセンブリと型に設定することも必要です。 カスタム検証を作成するには、抽象 <xref:System.IdentityModel.Selectors.X509CertificateValidator> クラスから継承する必要があります。  
   
- カスタム認証システムを作成する場合、オーバーライドする最も重要なメソッドは <xref:System.IdentityModel.Selectors.X509CertificateValidator.Validate%2A> メソッドです。 カスタム認証の例は、次を参照してください。、 [X.509 証明書検証](../../../../docs/framework/wcf/samples/x-509-certificate-validator.md)サンプルです。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [カスタム資格情報と資格情報の検証](../../../../docs/framework/wcf/extending/custom-credential-and-credential-validation.md)です。  
+ カスタム認証システムを作成する場合、オーバーライドする最も重要なメソッドは <xref:System.IdentityModel.Selectors.X509CertificateValidator.Validate%2A> メソッドです。 カスタム認証の例は、次を参照してください。、 [X.509 証明書検証](../../../../docs/framework/wcf/samples/x-509-certificate-validator.md)サンプルです。 詳細については、次を参照してください。[カスタム資格情報と資格情報の検証](../../../../docs/framework/wcf/extending/custom-credential-and-credential-validation.md)です。  
   
 ## <a name="using-makecertexe-to-build-a-certificate-chain"></a>Makecert.exe を使用した証明書チェーンの構築  
  証明書作成ツール (Makecert.exe) では、X.509 証明書および秘密キーと公開キーのペアを作成します。 秘密キーをディスクに保存し、新しい証明書の発行と署名に使用できるため、チェーンになった証明書の階層をシミュレートできます。 このツールは、サービスの開発時に支援ツールとして使用することだけを目的としています。実際の展開に使用する証明書の作成には使用しないでください。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスの開発時に、Makecert.exe を使用して信頼チェーンを構築するには、次の手順に従います。  

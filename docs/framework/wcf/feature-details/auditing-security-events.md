@@ -1,35 +1,35 @@
 ---
-title: "セキュリティ イベントの監査"
-ms.custom: 
+title: セキュリティ イベントの監査
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - auditing security events [WCF]
 ms.assetid: 5633f61c-a3c9-40dd-8070-1c373b66a716
-caps.latest.revision: 
+caps.latest.revision: 27
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
 ms.workload:
 - dotnet
-ms.openlocfilehash: cb8f112c71c743fd6650baf04b8db55ceaeef4ae
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 948ff11cf1b7ecacc6f9f5fdebfc3a0cbd1ef5b1
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="auditing-security-events"></a>セキュリティ イベントの監査
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] で作成されたアプリケーションでは、監査機能を使用してセキュリティ イベント (成功、失敗、またはその両方) をログに記録できます。 これらのイベントは Windows システム イベント ログに書き込まれ、イベント ビューアーを使用して確認できます。  
   
  監査を使用すると、管理者は既に発生した攻撃や現在進行中の攻撃を検出できます。 また、開発者がセキュリティ関連の問題をデバッグする際にも役立ちます。 たとえば、認証またはポリシー チェックの構成エラーによって承認済みユーザーへのアクセスが拒否された場合、開発者は、イベント ログを検査することによって、このエラーの原因をすばやく発見し、取り出すことができます。  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)][!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]セキュリティを参照してください[セキュリティの概要](../../../../docs/framework/wcf/feature-details/security-overview.md)です。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]プログラミング[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]を参照してください[基本的な WCF プログラミング](../../../../docs/framework/wcf/basic-wcf-programming.md)です。  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)] [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] セキュリティを参照してください[セキュリティの概要](../../../../docs/framework/wcf/feature-details/security-overview.md)です。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] プログラミング[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]を参照してください[基本的な WCF プログラミング](../../../../docs/framework/wcf/basic-wcf-programming.md)です。  
   
 ## <a name="audit-level-and-behavior"></a>監査レベルと動作  
  セキュリティ監査には次の 2 つのレベルがあります。  
@@ -41,7 +41,7 @@ ms.lasthandoff: 12/22/2017
  両方の監査の成功または失敗と呼ばれるレベルを確認することができます、*監査動作*です。  
   
 ## <a name="audit-log-location"></a>監査ログの場所  
- 監査のレベルと動作を決定したら、ユーザー (または管理者) は監査ログの場所を指定できます。 監査ログの場所は、Default、Application、および Security の 3 つから選択できます。 Default を指定した場合、ログの実際の場所は、ユーザーが使用しているシステムと、セキュリティ ログへの書き込みがサポートされているかどうかによって決まります。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]このトピックの「オペレーティング システム」を参照してください。  
+ 監査のレベルと動作を決定したら、ユーザー (または管理者) は監査ログの場所を指定できます。 監査ログの場所は、Default、Application、および Security の 3 つから選択できます。 Default を指定した場合、ログの実際の場所は、ユーザーが使用しているシステムと、セキュリティ ログへの書き込みがサポートされているかどうかによって決まります。 詳細については、このトピックの「「オペレーティング システム」セクションを参照してください。  
   
  セキュリティ ログへの書き込みを行うには、`SeAuditPrivilege` が必要です。 既定では、この権限は Local System アカウントと Network Service アカウントだけに与えられています。 セキュリティ ログの `read` および `delete` 機能を管理するには、`SeSecurityPrivilege` が必要です。 既定では、この権限は管理者だけに与えられています。  
   
@@ -86,10 +86,10 @@ ms.lasthandoff: 12/22/2017
 </configuration>  
 ```  
   
- 監査が有効になっているが、`auditLogLocation` が指定されていない場合、セキュリティ ログへの書き込みをサポートしているプラットフォームでの既定のログ名は "セキュリティ" ログになります。それ以外の場合は、"アプリケーション" ログになります。 セキュリティ ログへの書き込みをサポートしているオペレーティング システムは [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] と [!INCLUDE[wv](../../../../includes/wv-md.md)] だけです。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]このトピックの「オペレーティング システム」を参照してください。  
+ 監査が有効になっているが、`auditLogLocation` が指定されていない場合、セキュリティ ログへの書き込みをサポートしているプラットフォームでの既定のログ名は "セキュリティ" ログになります。それ以外の場合は、"アプリケーション" ログになります。 セキュリティ ログへの書き込みをサポートしているオペレーティング システムは [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] と [!INCLUDE[wv](../../../../includes/wv-md.md)] だけです。 詳細については、このトピックの「「オペレーティング システム」セクションを参照してください。  
   
 ## <a name="security-considerations"></a>セキュリティの考慮事項  
- 監査が有効になっていることが悪意のあるユーザーに知られた場合、そのユーザーは監査エントリの書き込みにつながる無効なメッセージを送信する可能性があります。 このような方法で監査ログに書き込みが行われると、監査システムに障害が発生します。 これを防ぐには、<xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior.SuppressAuditFailure%2A> プロパティを `true` に設定し、イベント ビューアーのプロパティを使用して監査動作を制御します。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]表示してで利用可能な Windows XP では、イベント ビューアーを使用して、イベント ログの管理に Microsoft サポート記事[を表示し、Windows XP でイベント ビューアーのイベント ログを管理する方法](http://go.microsoft.com/fwlink/?LinkId=89150)です。  
+ 監査が有効になっていることが悪意のあるユーザーに知られた場合、そのユーザーは監査エントリの書き込みにつながる無効なメッセージを送信する可能性があります。 このような方法で監査ログに書き込みが行われると、監査システムに障害が発生します。 これを防ぐには、<xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior.SuppressAuditFailure%2A> プロパティを `true` に設定し、イベント ビューアーのプロパティを使用して監査動作を制御します。 詳細については、上で利用可能な Windows XP では、イベント ビューアーを使用して、イベント ログの管理の表示と、Microsoft サポート記事を参照して[表示および Windows XP でイベント ビューアーでイベント ログを管理する方法](http://go.microsoft.com/fwlink/?LinkId=89150)です。  
   
  [!INCLUDE[wxp](../../../../includes/wxp-md.md)] のアプリケーション ログに書き込まれた監査イベントは、すべての認証済みユーザーに表示されます。  
   
@@ -111,12 +111,12 @@ ms.lasthandoff: 12/22/2017
 |監査ポリシーの監査|該当なし。|セキュリティ ログは、構成だけでなく、ローカル セキュリティ機関 (LSA: Local Security Authority) ポリシーによっても制御されます。 [オブジェクト アクセスの監査] カテゴリも有効にする必要があります。|  
 |既定のユーザー エクスペリエンス|すべての認証済みユーザーがアプリケーション ログに書き込むことができるため、アプリケーション プロセスでは追加のアクセス許可手順は必要ありません。|アプリケーション プロセス (コンテキスト) が `SeAuditPrivilege` を持つ必要があります。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior>  
  <xref:System.ServiceModel.AuditLogLocation>  
  [セキュリティの概要](../../../../docs/framework/wcf/feature-details/security-overview.md)  
  [基本的な WCF プログラミング](../../../../docs/framework/wcf/basic-wcf-programming.md)  
  [方法 : セキュリティ イベントを監査する](../../../../docs/framework/wcf/feature-details/how-to-audit-wcf-security-events.md)  
  [\<serviceSecurityAudit >](../../../../docs/framework/configure-apps/file-schema/wcf/servicesecurityaudit.md)  
- [\<ビヘイビアー >](../../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md)  
+ [\<behaviors>](../../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md)  
  [Windows Server App Fabric のセキュリティ モデル](http://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)

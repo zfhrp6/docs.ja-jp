@@ -22,11 +22,11 @@ ms.author: wpickett
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 6425685083c3b73d75d2d7c8a4509ae035542085
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: 34d48e7de0269449bd4ed6eedb83a7464b6d3d50
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="type-converters-and-markup-extensions-for-xaml"></a>XAML の型コンバーターおよびマークアップ拡張機能
 型コンバーターとマークアップ拡張機能は、XAML 型システムと XAML ライターが、オブジェクト グラフ コンポーネントを生成するために使用する 2 つの手法です。 型コンバーターとマークアップ拡張機能は、一部の特性を共有しますが、XAML ノード ストリームでは異なる方法で表現されます。 このドキュメント セットでは、型コンバーター、マークアップ拡張機能、およびこれに類似したコンストラクトを、値コンバーターと総称することがあります。  
@@ -45,7 +45,7 @@ ms.lasthandoff: 04/27/2018
   
 <a name="type_converters"></a>   
 ## <a name="type-converters"></a>型コンバーター  
- .NET Framework XAML サービスの定義では、型コンバーターは CLR の <xref:System.ComponentModel.TypeConverter> クラスから派生したクラスです。 <xref:System.ComponentModel.TypeConverter> は、XAML が登場する前から [!INCLUDE[TLA#tla_netframewk](../../../includes/tlasharptla-netframewk-md.md)] に存在していたクラスです。 当初の目的は、プロパティ ウィンドウや、 [!INCLUDE[TLA2#tla_ide](../../../includes/tla2sharptla-ide-md.md)] プロパティの同様のテキスト ベースの編集をサポートすることでした。 .NET Framework に導入された XAML では、 <xref:System.ComponentModel.TypeConverter> を使用して、テキスト構文 (属性値または XAML 値ノードに含まれる) をオブジェクトに変換します。 また、<xref:System.ComponentModel.TypeConverter> を使用して、オブジェクト値をテキスト構文にシリアル化することもできます。 さらに、<xref:System.ComponentModel.TypeConverter> は、 [!INCLUDE[TLA#tla_wpf](../../../includes/tlasharptla-wpf-md.md)] および [!INCLUDE[vsindigo](../../../includes/vsindigo-md.md)]といった以前のフレームワーク固有の XAML 実装でも使用されていました。 XAML の <xref:System.ComponentModel.TypeConverter> の詳細については、「 [Type Converters for XAML Overview](../../../docs/framework/xaml-services/type-converters-for-xaml-overview.md)といった以前のフレームワーク固有の XAML 実装でも使用されていました。  
+ .NET Framework XAML サービスの定義では、型コンバーターは CLR の <xref:System.ComponentModel.TypeConverter> クラスから派生したクラスです。 <xref:System.ComponentModel.TypeConverter> は、XAML が登場する前から [!INCLUDE[TLA#tla_netframewk](../../../includes/tlasharptla-netframewk-md.md)] に存在していたクラスです。 当初の目的は、プロパティ ウィンドウや、 [!INCLUDE[TLA2#tla_ide](../../../includes/tla2sharptla-ide-md.md)] プロパティの同様のテキスト ベースの編集をサポートすることでした。 .NET Framework に導入された XAML では、 <xref:System.ComponentModel.TypeConverter> を使用して、テキスト構文 (属性値または XAML 値ノードに含まれる) をオブジェクトに変換します。 また、<xref:System.ComponentModel.TypeConverter> を使用して、オブジェクト値をテキスト構文にシリアル化することもできます。 <xref:System.ComponentModel.TypeConverter> 以前のフレームワーク固有 XAML 実装でも使用されていました[!INCLUDE[TLA#tla_wpf](../../../includes/tlasharptla-wpf-md.md)]や Windows Communication Foundation (WCF)。 XAML の <xref:System.ComponentModel.TypeConverter> の詳細については、「 [Type Converters for XAML Overview](../../../docs/framework/xaml-services/type-converters-for-xaml-overview.md)といった以前のフレームワーク固有の XAML 実装でも使用されていました。  
   
 <a name="markup_extensions"></a>   
 ## <a name="markup-extensions"></a>マークアップ拡張機能  

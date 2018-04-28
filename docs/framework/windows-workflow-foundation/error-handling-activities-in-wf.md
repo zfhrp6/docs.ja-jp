@@ -1,26 +1,27 @@
 ---
-title: "WF 内のエラー処理アクティビティ"
-ms.custom: 
+title: WF 内のエラー処理アクティビティ
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 24b68bd3-cef5-4413-ab82-2e2625f209aa
-caps.latest.revision: "7"
+caps.latest.revision: 7
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 96a868cd28823c3185d1297f7709dcfdc28a14a5
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 1c0459dd562f6292a8fe9a42f8b1b48cd175516a
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="error-handling-activities-in-wf"></a>WF 内のエラー処理アクティビティ
-[!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] には、エラーの処理および回復を実装するためのシステム標準のアクティビティが用意されています。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][例外](../../../docs/framework/windows-workflow-foundation/exceptions.md)です。  
+[!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] には、エラーの処理および回復を実装するためのシステム標準のアクティビティが用意されています。 詳細については、次を参照してください。[例外](../../../docs/framework/windows-workflow-foundation/exceptions.md)です。  
   
 ## <a name="error-handling-activities"></a>エラー処理アクティビティ  
   

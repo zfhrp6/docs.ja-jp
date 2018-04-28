@@ -16,16 +16,16 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 1e81a8eb27725edeccf3e5c7489109ba47b70dec
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 4e2afa9e868c1f561aed699a2bdf7d09c17898b3
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="hosting-in-a-managed-application"></a>マネージ アプリケーションのホスト
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスは、任意の [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] アプリケーションでホストできます。 自己ホスト型サービスは、展開を要するインフラストラクチャが最も少ないので、最も柔軟なホスト オプションです。 ただし、マネージ アプリケーションは、インターネット インフォメーション サービス (IIS) や Windows サービスなど、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の他のホスト オプションが備えている高度なホスト機能と管理機能を提供しないので、堅牢さに最も乏しいホスト オプションでもあります。  
   
- 自己ホスト型サービスを作成するには、メッセージをリッスンするサービスを開始する <xref:System.ServiceModel.ServiceHost>のインスタンスを作成して開きます。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [方法: マネージ アプリケーションで WCF サービスをホスト](../../../../docs/framework/wcf/how-to-host-a-wcf-service-in-a-managed-application.md)です。  
+ 自己ホスト型サービスを作成するには、メッセージをリッスンするサービスを開始する <xref:System.ServiceModel.ServiceHost>のインスタンスを作成して開きます。 詳細については、次を参照してください。[する方法: マネージ アプリケーションで WCF サービスをホスト](../../../../docs/framework/wcf/how-to-host-a-wcf-service-in-a-managed-application.md)です。  
   
  コントラクトを定義、コントラクトを実装およびマネージ アプリケーション内部のサービスをホストする方法の完全な例については、[チュートリアル入門](../../../../docs/framework/wcf/getting-started-tutorial.md)と[自己ホスト](../../../../docs/framework/wcf/samples/self-host.md)です。  
   

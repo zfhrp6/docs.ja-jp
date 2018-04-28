@@ -1,27 +1,29 @@
 ---
-title: "メッセージ クラスの使用"
-ms.custom: 
+title: メッセージ クラスの使用
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: d1d62bfb-2aa3-4170-b6f8-c93d3afdbbed
-caps.latest.revision: "14"
+caps.latest.revision: 14
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 5c3e33f4db403fdc4ad1d4efd14282fe2beac8dc
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: c63a0a88997a1c35b24562bcca3e0fdb40ebfd41
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="using-the-message-class"></a>メッセージ クラスの使用
 <xref:System.ServiceModel.Channels.Message> クラスは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] の基盤となるものです。 クライアントとサービスの間のすべての通信は、最終的には <xref:System.ServiceModel.Channels.Message> インスタンスの送受信となります。  
@@ -172,7 +174,7 @@ ms.lasthandoff: 12/22/2017
   
  <xref:System.ServiceModel.Channels.MessageHeaders.FindHeader%2A> メソッドを使用して、特定のヘッダーを取得します。 このメソッドは、検索するヘッダーの名前と名前空間を受け取り、そのインデックスを返します。 複数のヘッダーが見つかった場合は、例外がスローされます。 ヘッダーが見つからなかい場合は、-1 が返されます。  
   
- SOAP ヘッダー モデルでは、ヘッダーに `Actor` 値を持たせ、ヘッダーの受信者を指定できます。 最も基本的な `FindHeader` オーバーロードでは、メッセージの最終受信者を表すヘッダーのみを検索します。 ただし、別のオーバーロードでは、検索に含める `Actor` 値を指定できます。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]、SOAP 仕様を参照してください。  
+ SOAP ヘッダー モデルでは、ヘッダーに `Actor` 値を持たせ、ヘッダーの受信者を指定できます。 最も基本的な `FindHeader` オーバーロードでは、メッセージの最終受信者を表すヘッダーのみを検索します。 ただし、別のオーバーロードでは、検索に含める `Actor` 値を指定できます。 詳細については、SOAP 仕様を参照してください。  
   
  ヘッダーを <xref:System.ServiceModel.Channels.MessageHeaders.CopyTo%28System.ServiceModel.Channels.MessageHeaderInfo%5B%5D%2CSystem.Int32%29> コレクションから <xref:System.ServiceModel.Channels.MessageHeaders> オブジェクトの配列にコピーする <xref:System.ServiceModel.Channels.MessageHeaderInfo> メソッドが用意されています。  
   

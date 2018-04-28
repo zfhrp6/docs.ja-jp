@@ -14,11 +14,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 90999867ee1dd678e279832d73d7ecaaa416fe7b
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: af520c1520f605d34076e6ecabdf84deb52fbfd0
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="using-workflowinvoker-and-workflowapplication"></a>WorkflowInvoker と WorkflowApplication の使用
 Windows Workflow Foundation (WF) は、ワークフローのホスティングのいくつかのメソッドを提供します。 <xref:System.Activities.WorkflowInvoker> は、メソッド呼び出しのようにワークフローを呼び出す簡単な方法を提供し、永続化を使用しないワークフローのみに使用できます。 <xref:System.Activities.WorkflowApplication> は、ライフサイクル イベントの通知、実行制御、ブックマークの再開、および永続化を含むワークフローを実行するための豊富なモデルを提供します。 <xref:System.ServiceModel.Activities.WorkflowServiceHost> は、メッセージング アクティビティをサポートし、主にワーク フロー サービスと一緒に使用されます。 このトピックでは、<xref:System.Activities.WorkflowInvoker> と <xref:System.Activities.WorkflowApplication> を使用したワークフロー ホスティングついて説明します。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] ワークフローのホスティング<xref:System.ServiceModel.Activities.WorkflowServiceHost>を参照してください[ワークフロー サービス](../../../docs/framework/wcf/feature-details/workflow-services.md)と[ワークフロー サービスの概要をホストしている](../../../docs/framework/wcf/feature-details/hosting-workflow-services-overview.md)です。  
@@ -35,7 +35,7 @@ Windows Workflow Foundation (WF) は、ワークフローのホスティング�
 > [!NOTE]
 >  <xref:System.TimeoutException> がスローされるのは、タイムアウト期間が経過してワークフローが実行中にアイドル状態になった場合だけです。 指定されたタイムアウト時間内には完了しないワークフローが正常に完了するのは、アイドル状態にならない場合です。  
   
- <xref:System.Activities.WorkflowInvoker> も非同期バージョンのメソッド呼び出しを提供します。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] <xref:System.Activities.WorkflowInvoker.InvokeAsync%2A> および<xref:System.Activities.WorkflowInvoker.BeginInvoke%2A>です。  
+ <xref:System.Activities.WorkflowInvoker> も非同期バージョンのメソッド呼び出しを提供します。 詳細については、<xref:System.Activities.WorkflowInvoker.InvokeAsync%2A> および <xref:System.Activities.WorkflowInvoker.BeginInvoke%2A> を参照してください。  
   
 ### <a name="setting-input-arguments-of-a-workflow"></a>ワークフローの入力引数の設定  
  ワークフローの入力引数にマップされ、引数名によってキー指定されている入力パラメーターの辞書を使用して、データをワークフローに渡すことができます。 次の例では、<xref:System.Activities.Statements.WriteLine> が呼び出され、その <xref:System.Activities.Statements.WriteLine.Text%2A> 引数の値は入力パラメーターの辞書を使用して指定されています。  

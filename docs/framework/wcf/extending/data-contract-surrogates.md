@@ -1,28 +1,28 @@
 ---
-title: "データ コントラクト サロゲート"
-ms.custom: 
+title: データ コントラクト サロゲート
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - data contracts [WCF], surrogates
 ms.assetid: 8c31134c-46c5-4ed7-94af-bab0ac0dfce5
-caps.latest.revision: 
+caps.latest.revision: 8
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: f6fcae1989b75a668fd6ff38596b06feca7be9e8
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e6b372b998d7b3a91189032947a9ad8c68074b5d
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="data-contract-surrogates"></a>データ コントラクト サロゲート
 データ コントラクト*サロゲート*データ コントラクト モデルに基づいて構築されている高度な機能です。 この機能は、型をシリアル化または逆シリアル化する方法や、型をメタデータに投影する方法をユーザーが変更する場合に、型のカスタマイズと置換に使用することを目的としています。 サロゲートを使用できるのは、型のデータ コントラクトが指定されていない場合、フィールドやプロパティが <xref:System.Runtime.Serialization.DataMemberAttribute> 属性でマークされていない場合、またはユーザーがスキーマのバリエーションを動的に作成することを希望している場合などです。  
@@ -46,7 +46,7 @@ ms.lasthandoff: 12/22/2017
 ### <a name="getdatacontracttype"></a>GetDataContractType  
  <xref:System.Runtime.Serialization.IDataContractSurrogate.GetDataContractType%2A> メソッドは、ある型を別の型に割り当てます。 これは、シリアル化、逆シリアル化、インポート、およびエクスポートに必須のメソッドです。  
   
- 最初のタスクとして、他の型に割り当てる型を定義します。 例:  
+ 最初のタスクとして、他の型に割り当てる型を定義します。 例えば:  
   
  [!code-csharp[C_IDataContractSurrogate#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_idatacontractsurrogate/cs/source.cs#3)]  
   
@@ -67,7 +67,7 @@ ms.lasthandoff: 12/22/2017
 ### <a name="getobjecttoserialize-method"></a>GetObjectToSerialize Method  
  <xref:System.Runtime.Serialization.IDataContractSurrogate.GetObjectToSerialize%2A> メソッドは、元の型のインスタンスをサロゲートされた型のインスタンスに変換します。 これは、シリアル化に必須のメソッドです。  
   
- 次の手順では、<xref:System.Runtime.Serialization.IDataContractSurrogate.GetObjectToSerialize%2A> メソッドを実装して、物理データを元のインスタンスからサロゲートに割り当てる方法を定義します。 例:  
+ 次の手順では、<xref:System.Runtime.Serialization.IDataContractSurrogate.GetObjectToSerialize%2A> メソッドを実装して、物理データを元のインスタンスからサロゲートに割り当てる方法を定義します。 例えば:  
   
  [!code-csharp[C_IDataContractSurrogate#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_idatacontractsurrogate/cs/source.cs#4)]  
   
@@ -75,7 +75,7 @@ ms.lasthandoff: 12/22/2017
   
  `targetType` パラメーターは、メンバーの宣言された型を指します。 このパラメーターは、<xref:System.Runtime.Serialization.IDataContractSurrogate.GetDataContractType%2A> メソッドによって返されたサロゲートされた型です。 シリアライザーは、返されるオブジェクトがこの型に割り当て可能であることを強制するわけではありません。 `obj`パラメーターはシリアル化するオブジェクトに応じてサロゲートに変換されます。 サロゲートがオブジェクトを処理しない場合、このメソッドは入力オブジェクトを返す必要があります。 それ以外の場合は、新しいサロゲート オブジェクトが返されます。 オブジェクトが null の場合、サロゲートは呼び出されません。 さまざまなインスタンスの多数のサロゲートのマッピングをこのメソッドで定義できます。  
   
- <xref:System.Runtime.Serialization.DataContractSerializer> の作成時に、オブジェクト参照を保持するように指定できます  ([!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [シリアル化および逆シリアル化](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md))。これを行うには、コンストラクターの `preserveObjectReferences` パラメーターを `true` に設定します。 この場合、サロゲートはオブジェクトに対して 1 回だけ呼び出されます。これは、以降のシリアル化では参照をストリームに書き込むだけだからです。 `preserveObjectReferences` を `false` に設定すると、インスタンスが発生するたびにサロゲートが呼び出されます。  
+ <xref:System.Runtime.Serialization.DataContractSerializer> の作成時に、オブジェクト参照を保持するように指定できます  (詳細については、次を参照してください[シリアル化および逆シリアル化](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md)。)。これを行うには、コンストラクターの `preserveObjectReferences` パラメーターを `true` に設定します。 この場合、サロゲートはオブジェクトに対して 1 回だけ呼び出されます。これは、以降のシリアル化では参照をストリームに書き込むだけだからです。 `preserveObjectReferences` を `false` に設定すると、インスタンスが発生するたびにサロゲートが呼び出されます。  
   
  シリアル化されたインスタンスの型が宣言された型と異なる場合、インスタンスをもう一方の側で逆シリアル化できるように、型情報 (`xsi:type` など) がストリームに書き込まれます。 このプロセスは、オブジェクトがサロゲートされているかどうかに関係なく発生します。  
   
@@ -84,7 +84,7 @@ ms.lasthandoff: 12/22/2017
 ### <a name="getdeserializedobject-method"></a>GetDeserializedObject Method  
  <xref:System.Runtime.Serialization.IDataContractSurrogate.GetDeserializedObject%2A> メソッドは、サロゲートされた型のインスタンスを元の型のインスタンスに変換します。 これは、逆シリアル化に必須のメソッドです。  
   
- 次のタスクとして、サロゲート インスタンスから元のインスタンスに物理データを割り当てる方法を定義します。 例:  
+ 次のタスクとして、サロゲート インスタンスから元のインスタンスに物理データを割り当てる方法を定義します。 例えば:  
   
  [!code-csharp[C_IDataContractSurrogate#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_idatacontractsurrogate/cs/source.cs#5)]  
   
@@ -97,7 +97,7 @@ ms.lasthandoff: 12/22/2017
  前の例では、`InventorySurrogated` 型のオブジェクトが最初の `Inventory` 型に変換されます。 この場合、データは `InventorySurrogated` から `Inventory` の対応するフィールドに直接転送されます。 データ操作は発生しないため、各メンバー フィールドにはシリアル化前と同じ値が格納されます。  
   
 ### <a name="getcustomdatatoexport-method"></a>GetCustomDataToExport Method  
- スキーマをエクスポートする場合、<xref:System.Runtime.Serialization.IDataContractSurrogate.GetCustomDataToExport%2A> メソッドは省略可能です。 このメソッドは、エクスポートするスキーマに追加データやヒントを挿入するために使用します。 追加データは、メンバー レベルまたは型レベルで挿入できます。 例:  
+ スキーマをエクスポートする場合、<xref:System.Runtime.Serialization.IDataContractSurrogate.GetCustomDataToExport%2A> メソッドは省略可能です。 このメソッドは、エクスポートするスキーマに追加データやヒントを挿入するために使用します。 追加データは、メンバー レベルまたは型レベルで挿入できます。 例えば:  
   
  [!code-csharp[C_IDataContractSurrogate#6](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_idatacontractsurrogate/cs/source.cs#6)]  
   
@@ -129,7 +129,7 @@ ms.lasthandoff: 12/22/2017
 ### <a name="processimportedtype-method"></a>ProcessImportedType メソッド  
  <xref:System.Runtime.Serialization.IDataContractSurrogate.ProcessImportedType%2A> メソッドは、スキーマのインポートから作成された型をカスタマイズします。 このメソッドは省略可能です。  
   
- スキーマをインポートするときに、このメソッドを使用すると、インポートする型とコンパイルの情報をカスタマイズできます。 例:  
+ スキーマをインポートするときに、このメソッドを使用すると、インポートする型とコンパイルの情報をカスタマイズできます。 例えば:  
   
  [!code-csharp[C_IDataContractSurrogate#7](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_idatacontractsurrogate/cs/source.cs#7)]  
   
@@ -144,7 +144,7 @@ ms.lasthandoff: 12/22/2017
 ### <a name="getknowncustomdatatypes-method"></a>GetKnownCustomDataTypes メソッド  
  このメソッドは、スキーマから定義済みのカスタム データ型を取得します。 スキーマのインポートでは、このメソッドは省略可能です。  
   
- このメソッドは、スキーマのエクスポートとインポートの開始時に呼び出されます。 このメソッドは、エクスポートまたはインポートするスキーマで使用されるカスタム データ型を返します。 メソッドには、型のコレクションである <xref:System.Collections.ObjectModel.Collection%601> (`customDataTypes` パラメーター) が渡されます。 このメソッドでは、既知の型をこのコレクションに追加する必要があります。 既知のカスタム データ型は、<xref:System.Runtime.Serialization.DataContractSerializer> を使用したカスタム データのシリアル化と逆シリアル化を可能にするために必要となります。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][データが既知の型をコントラクト](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)です。  
+ このメソッドは、スキーマのエクスポートとインポートの開始時に呼び出されます。 このメソッドは、エクスポートまたはインポートするスキーマで使用されるカスタム データ型を返します。 メソッドには、型のコレクションである <xref:System.Collections.ObjectModel.Collection%601> (`customDataTypes` パラメーター) が渡されます。 このメソッドでは、既知の型をこのコレクションに追加する必要があります。 既知のカスタム データ型は、<xref:System.Runtime.Serialization.DataContractSerializer> を使用したカスタム データのシリアル化と逆シリアル化を可能にするために必要となります。 詳細については、次を参照してください。[データ コントラクトの既知の型](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)です。  
   
 ## <a name="implementing-a-surrogate"></a>サロゲートの実装  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] でデータ コントラクト サロゲートを使用するには、いくつかの特別な手順に従う必要があります。  
@@ -204,7 +204,7 @@ ms.lasthandoff: 12/22/2017
   
      [!code-csharp[C_IDataContractSurrogate#10](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_idatacontractsurrogate/cs/source.cs#10)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Runtime.Serialization.DataContractSerializer>  
  <xref:System.Runtime.Serialization.IDataContractSurrogate>  
  <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior>  

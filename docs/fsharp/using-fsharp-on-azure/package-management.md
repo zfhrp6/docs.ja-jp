@@ -1,20 +1,17 @@
 ---
-title: "Azure の f# でパッケージの管理の使用"
-description: "パケットを作成または Nuget を使用して、F# で Azure の依存関係を管理するには"
-keywords: "visual f#、f#、関数型プログラミングでは、.NET では、.NET Core では、Azure"
+title: Azure の f# でパッケージの管理の使用
+description: パケットを作成または Nuget を使用して、F# で Azure の依存関係を管理するには
 author: sylvanc
 ms.author: phcart
 ms.date: 09/20/2016
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.topic: conceptual
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: dd32ef9c-5416-467e-9fa3-c9ee3bb08456
-ms.openlocfilehash: d1a807053f5c4c45492f206739922aacdf6d4122
-ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
+ms.openlocfilehash: da6938c6ee29292571f4269c68a9148c13738422
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="package-management-for-f-azure-dependencies"></a>F# の Azure の依存関係のためのパッケージ管理
 
@@ -22,7 +19,7 @@ ms.lasthandoff: 02/28/2018
 
 ## <a name="using-paket"></a>使用するパケットを作成
 
-使用する場合[パケットを作成](https://fsprojects.github.io/Paket/)の依存関係マネージャーとして使用することができます、 `paket.exe` Azure の依存関係を追加するツールです。 例:
+使用する場合[パケットを作成](https://fsprojects.github.io/Paket/)の依存関係マネージャーとして使用することができます、 `paket.exe` Azure の依存関係を追加するツールです。 例えば:
 
     > paket add nuget WindowsAzure.Storage
 
@@ -48,7 +45,7 @@ ms.lasthandoff: 02/28/2018
 
 ## <a name="using-nuget"></a>Nuget を使用します。
 
-使用する場合[NuGet](https://www.nuget.org/)の依存関係マネージャーとして使用することができます、 `nuget.exe` Azure の依存関係を追加するツールです。 例:
+使用する場合[NuGet](https://www.nuget.org/)の依存関係マネージャーとして使用することができます、 `nuget.exe` Azure の依存関係を追加するツールです。 例えば:
 
     > nuget install WindowsAzure.Storage -ExcludeVersion
 
@@ -74,7 +71,7 @@ ms.lasthandoff: 02/28/2018
 
 ## <a name="referencing-assemblies"></a>参照元のアセンブリ
 
-F# スクリプトで、パッケージを使用するのを使用してパッケージに含まれるアセンブリを参照する必要があります、`#r`ディレクティブです。 例:
+F# スクリプトで、パッケージを使用するのを使用してパッケージに含まれるアセンブリを参照する必要があります、`#r`ディレクティブです。 例えば:
 
     > #r "packages/WindowsAzure.Storage/lib/net40/Microsoft.WindowsAzure.Storage.dll"
 

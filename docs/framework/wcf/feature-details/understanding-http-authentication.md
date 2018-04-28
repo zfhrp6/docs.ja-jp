@@ -1,24 +1,26 @@
 ---
-title: "HTTP 認証の理解"
-ms.custom: 
+title: HTTP 認証の理解
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 9376309a-39e3-4819-b47b-a73982b57620
-caps.latest.revision: "11"
+caps.latest.revision: 11
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 32d7df95c6acbe34a677cbd2951fd912466d015f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 0fe72ad1aab35a8cb384248e90500cf5410c0774
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="understanding-http-authentication"></a>HTTP 認証の理解
 認証は、リソースにアクセスする権限をクライアントが持つかどうかを確認するプロセスです。 HTTP プロトコルは、セキュリティで保護されたリソースへのアクセスをネゴシエートする手段として、認証をサポートしています。  
@@ -35,7 +37,7 @@ ms.lasthandoff: 12/22/2017
 |Digest|ダイジェスト認証は、基本認証の代わりに使用できるチャレンジ レスポンス方式の認証です。 サーバーと呼ばれるランダムなデータの文字列を送信する、 *nonce*をチャレンジとしてクライアントにします。 クライアントは、ユーザー名、パスワード、nonce およびその他の追加情報を含むハッシュを使用して応答します。 この認証方式では、このようなデータの交換によってもたらされる複雑さとデータのハッシュにより、ユーザーの資格情報を盗んで再使用することがより困難になります。<br /><br /> ダイジェスト認証では、Windows ドメイン アカウントを使用する必要があります。 ダイジェスト*レルム*は Windows ドメイン名です。 そのため、Windows ドメイン、Windows XP Home Edition など、ダイジェスト認証をサポートしないオペレーティング システムで実行されているサーバーを使用することはできません。 逆に、Windows ドメインをサポートしていないオペレーティング システムでクライアントが実行されている場合は、認証時にドメイン アカウントを明示的に指定する必要があります。|  
 |NTLM|NTLM (NT LAN Manager) 認証もチャレンジ レスポンス方式の認証ですが、ダイジェスト認証よりもセキュリティが強化されています。 NTLM 認証では、エンコードされていないユーザー名とパスワードではなく、Windows 資格情報を使用してチャレンジ データが変換されます。 NTLM 認証では、クライアントとサーバー間で複数のメッセージ交換を行う必要があります。 認証を正常に完了するため、サーバーおよび介在するすべてのプロキシが永続的な接続をサポートしている必要があります。|  
 |Negotiate|ネゴシエート認証では、可用性に応じて、Kerberos プロトコルと NTLM 認証のいずれかが自動的に選択されます。 Kerberos プロトコルを使用できる場合は Kerberos プロトコルが使用され、それ以外の場合は NTLM が使用されます。 Kerberos 認証は、NTLM 認証を大幅に強化した認証方式です。 Kerberos 認証は NTLM 認証よりも高速であるだけでなく、相互認証およびリモート コンピューターへの資格情報の委任を使用できます。|  
-|Windows Live ID|基になる Windows HTTP サービスには、フェデレーション プロトコルを使用する認証が含まれます。 ただし、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の標準 HTTP トランスポートは、Microsoft Windows Live ID などのフェデレーション認証方式をサポートしていません。 現時点では、この機能をサポートするには、メッセージ セキュリティを使用する必要があります。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][フェデレーションと発行済みトークン](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)です。|  
+|Windows Live ID|基になる Windows HTTP サービスには、フェデレーション プロトコルを使用する認証が含まれます。 ただし、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の標準 HTTP トランスポートは、Microsoft Windows Live ID などのフェデレーション認証方式をサポートしていません。 現時点では、この機能をサポートするには、メッセージ セキュリティを使用する必要があります。 詳細については、次を参照してください。[フェデレーションと発行されたトークン](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)です。|  
   
 ## <a name="choosing-an-authentication-scheme"></a>認証方式の選択  
  HTTP サーバーに使用できる認証方式を選択する際には、以下の項目について検討します。  
@@ -46,7 +48,7 @@ ms.lasthandoff: 12/22/2017
   
 -   受け入れる準備ができていない認証方式、またはリソースを十分にセキュリティで保護できない認証方式をサーバーが (WWW 認証ヘッダー内で) 提示しないことを確認してください。 クライアントは、サーバーによって提示された認証方式を自由に選択します。 クライアントによっては、弱い認証方式、またはサーバーのリストにある最初の認証方式を既定で選択します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [トランスポート セキュリティの概要](../../../../docs/framework/wcf/feature-details/transport-security-overview.md)  
  [トランスポート セキュリティでの偽装の使用](../../../../docs/framework/wcf/feature-details/using-impersonation-with-transport-security.md)  
  [委任と偽装](../../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md)

@@ -1,12 +1,13 @@
 ---
-title: "方法 : WSFederationHttpBinding を作成する"
-ms.custom: 
+title: '方法 : WSFederationHttpBinding を作成する'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,16 +16,17 @@ helpviewer_keywords:
 - WCF, federation
 - federation
 ms.assetid: e54897d7-aa6c-46ec-a278-b2430c8c2e10
-caps.latest.revision: "16"
+caps.latest.revision: 16
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 22322c7b8cd03abcf3a98c49b9d43125b37d956d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 8962564bbefc3f43261a2979ae9765369b211f15
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="how-to-create-a-wsfederationhttpbinding"></a>方法 : WSFederationHttpBinding を作成する
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]、<xref:System.ServiceModel.WSFederationHttpBinding>クラス ([\<wsFederationHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md)構成で) フェデレーション サービスを公開するためのメカニズムを提供します。 これはクライアントに対して認証を要求するサービスであって、認証にはセキュリティ トークン サービスが発行するセキュリティ トークンが必要となります。 このトピックでは、必要な処理をコード中に埋め込む形、あるいは構成ファイルに必要な記述を加える形で、<xref:System.ServiceModel.WSFederationHttpBinding> の設定をする手順を説明します。 バインディングを作成すると、エンドポイントを設定してこのバインディングを使用できるようになります。  
@@ -44,9 +46,9 @@ ms.lasthandoff: 12/22/2017
   
      トークンの種類を指定しなければ、クライアント側ではその URI なしで WS-Trust のセキュリティ トークン要求 (RTS) を生成します。また、サービス側では、クライアントが既定で SAML (Security Assertions Markup Language) 1.1 のトークンを提示して認証するものと想定します。  
   
-     SAML 1.1 トークンの URI は "http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV1.1" です。  
+     SAML 1.1 トークンの URI は"http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV1.1"です。  
   
-4.  省略可能です。 フェデレーション サービスの場合、<xref:System.ServiceModel.FederatedMessageSecurityOverHttp.IssuerMetadataAddress%2A> プロパティの値として、セキュリティ トークン サービスのメタデータ URL を指定します。 メタデータ エンドポイントは、サービスがメタデータを公開するよう設定されている場合に、クライアントが適切なバインディング/エンドポイントのペアを選択するために必要です。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]メタデータの公開を参照してください[メタデータの公開](../../../../docs/framework/wcf/feature-details/publishing-metadata.md)です。  
+4.  任意。 フェデレーション サービスの場合、<xref:System.ServiceModel.FederatedMessageSecurityOverHttp.IssuerMetadataAddress%2A> プロパティの値として、セキュリティ トークン サービスのメタデータ URL を指定します。 メタデータ エンドポイントは、サービスがメタデータを公開するよう設定されている場合に、クライアントが適切なバインディング/エンドポイントのペアを選択するために必要です。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] メタデータの公開を参照してください[メタデータの公開](../../../../docs/framework/wcf/feature-details/publishing-metadata.md)です。  
   
  他に設定できるプロパティとしては、発行されたトークンの証明キーとして使用するキーの種類、クライアント/サーバー間で使用するアルゴリズム スイート、サービス資格情報をネゴシエートするか明示的に指定するか、トークンに入っていればそれに応じてサービス側で処理できるクレームの種類、クライアントがセキュリティ トークン サービスに送信する要求に追加しなければならない他の XML 要素などがあります。  
   
@@ -63,7 +65,7 @@ ms.lasthandoff: 12/22/2017
   
 4.  設定、<xref:System.ServiceModel.FederatedMessageSecurityOverHttp.IssuedKeyType%2A>プロパティを<xref:System.IdentityModel.Tokens.SecurityKeyType>`SymmetricKey`またはします。`AsymmetricKey` 必要に応じて。  
   
-5.  <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.IssuedTokenType%2A> プロパティに適切な値を設定します。 値を設定しない場合、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] によって既定値 "http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV1.1" に設定されます。これは SAML 1.1 トークンを表します。  
+5.  <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.IssuedTokenType%2A> プロパティに適切な値を設定します。 値が設定されていない場合[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]の既定値は"http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV1.1"、SAML 1.1 トークンを示します。  
   
 6.  クライアント側ではローカル発行者が指定されていなければ必須。サービス側では省略可能。 セキュリティ トークン サービスのアドレスと ID 情報が設定された <xref:System.ServiceModel.EndpointAddress> を作成し、この <xref:System.ServiceModel.EndpointAddress> インスタンスを <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.IssuerAddress%2A> プロパティに代入します。  
   
@@ -99,9 +101,9 @@ ms.lasthandoff: 12/22/2017
   
 11. 省略可能です。 `<identity>` 子要素を追加し、セキュリティ トークン サービスの識別子を指定します。  
   
-12. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Id と認証をサービス](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)です。  
+12. 詳細については、次を参照してください。[サービス Id と認証](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)です。  
   
-13. クライアント側ではローカル発行者が指定されていなければ必須。サービス側では不要。 作成、 [\<バインディング >](../../../../docs/framework/misc/binding.md)セキュリティ トークン サービスと通信するために使用できる、バインディング セクション内の要素。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]、バインディングの作成を参照してください[する方法: 構成でサービス バインディングを指定](../../../../docs/framework/wcf/how-to-specify-a-service-binding-in-configuration.md)です。  
+13. クライアント側ではローカル発行者が指定されていなければ必須。サービス側では不要。 作成、 [\<バインディング >](../../../../docs/framework/misc/binding.md)セキュリティ トークン サービスと通信するために使用できる、バインディング セクション内の要素。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] 、バインディングの作成を参照してください[する方法: 構成でサービス バインディングを指定](../../../../docs/framework/wcf/how-to-specify-a-service-binding-in-configuration.md)です。  
   
 14. `binding` 要素の `bindingConfiguration` 属性および `<issuer>` 属性に設定して、前の手順で作成したバインディングを指定します。  
   
@@ -115,7 +117,7 @@ ms.lasthandoff: 12/22/2017
  [!code-csharp[c_FederationBinding#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_federationbinding/cs/source.cs#2)] 
  [!code-vb[c_FederationBinding#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_federationbinding/vb/source.vb#2)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [フェデレーション](../../../../docs/framework/wcf/feature-details/federation.md)  
  [フェデレーション サンプル](../../../../docs/framework/wcf/samples/federation-sample.md)  
  [方法 : WSFederationHttpBinding のセキュリティで保護されたセッションを無効にする](../../../../docs/framework/wcf/feature-details/how-to-disable-secure-sessions-on-a-wsfederationhttpbinding.md)

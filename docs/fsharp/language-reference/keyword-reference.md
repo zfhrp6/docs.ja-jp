@@ -1,20 +1,17 @@
 ---
-title: "キーワード リファレンス (F#)"
-description: "F# 言語のキーワードのすべてについての情報へのリンクを検索します。"
-keywords: "visual f#, f#, 関数型プログラミング"
+title: キーワード リファレンス (F#)
+description: F# 言語のキーワードのすべてについての情報へのリンクを検索します。
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: 5795ce1f-11bf-4798-9f1f-6e44ffa1477e
-ms.openlocfilehash: cdfdd86843acf05a8b33647823f934a161f6d885
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 35a127a38db4874699ef7b43681cb967a139c81e
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="keyword-reference"></a>キーワード リファレンス
 
@@ -24,10 +21,10 @@ ms.lasthandoff: 10/18/2017
 
 次の表は、簡単な説明と詳細情報を格納する関連するトピックへのリンクのアルファベット順に f# のすべてのキーワードを示します。
 
-|キーワード|Link|説明|
+|キーワード|リンク|説明|
 |-------|----|-----------|
 |`abstract`|[メンバー](members/index.md)<br /><br />[抽象クラス](abstract-classes.md)|か、実装を持たない型で宣言されているかを仮想が既定の実装方法を示します。|
-|`and`|[`let`バインド](functions/let-bindings.md)<br /><br />[メンバー](members/index.md)<br /><br />[制約](generics/constraints.md)|相互再帰のバインディングで、ジェネリック パラメーターで複数の制約を使用して、プロパティ宣言で使用されます。|
+|`and`|[`let` バインド](functions/let-bindings.md)<br /><br />[メンバー](members/index.md)<br /><br />[制約](generics/constraints.md)|相互再帰のバインディングで、ジェネリック パラメーターで複数の制約を使用して、プロパティ宣言で使用されます。|
 |`as`|[クラス](classes.md)<br /><br />[パターン一致](Pattern-Matching.md)|現在のクラス オブジェクトのオブジェクト名を提供するために使用します。 名前を付けるパターン一致内のパターン全体にも使用されます。|
 |`assert`|[アサーション](assertions.md)|デバッグ中にコードを検証するために使用します。|
 |`base`|[クラス](classes.md)<br /><br />[継承](inheritance.md)|基底クラスのオブジェクトの名前として使用されます。|
@@ -58,7 +55,7 @@ ms.lasthandoff: 10/18/2017
 |`interface`|[インターフェイス](interfaces.md)|宣言し、のインターフェイスを実装するために使用します。|
 |`internal`|[アクセス制御](access-control.md)|メンバーが表示されているを指定するため、アセンブリ内では、外側にします。|
 |`lazy`|[遅延計算](lazy-computations.md)|結果が必要な場合にのみ実行する計算を指定するために使用します。|
-|`let`|[`let`バインド](functions/let-bindings.md)|関連付けるには、またはバインドして、値または関数名に使用します。|
+|`let`|[`let` バインド](functions/let-bindings.md)|関連付けるには、またはバインドして、値または関数名に使用します。|
 |`let!`|[非同期ワークフロー](asynchronous-workflows.md)<br /><br />[コンピュテーション式](computation-expressions.md)|非同期ワークフローする非同期計算の結果に名前をバインドするにまたは、結果は、計算の種類の名前にバインドするために使用、その他の計算式を使用します。|
 |`match`|[match 式](match-expressions.md)|パターンに値を比較することで分岐を使用します。|
 |`member`|[メンバー](members/index.md)|プロパティまたはオブジェクト型のメソッドを宣言するために使用します。|

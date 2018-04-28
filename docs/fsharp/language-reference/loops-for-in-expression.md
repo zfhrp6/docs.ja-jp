@@ -1,20 +1,17 @@
 ---
-title: "ループ: for...in 式 (F#)"
-description: "参照してくださいか f# データ型.. 式でコンス トラクターをループが使用される列挙可能なコレクション内のパターンの一致を繰り返し処理します。"
-keywords: "visual f#, f#, 関数型プログラミング"
+title: 'ループ: for...in 式 (F#)'
+description: 参照してくださいか f# データ型.. 式でコンス トラクターをループが使用される列挙可能なコレクション内のパターンの一致を繰り返し処理します。
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: f54e3228-4aec-4d0a-ae37-bc3376508284
-ms.openlocfilehash: d86aeb3bdd975261e59004d636354a740bd95c47
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: eaf0f4fc6419d8e0bff46795120ee5e42c4efe1d
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="loops-forin-expression"></a>ループ: for...in 式
 
@@ -138,7 +135,7 @@ a b c d e f g h i j k l m n o p q r s t u v w x y z
 Number of elements in list1: 5
 ```
 
-`Note`使用することができます`for...in`シーケンス式およびその他の計算式で、カスタマイズされたバージョンの場合、`for...in`式を使用します。 詳細については、次を参照してください。[シーケンス](sequences.md)、[非同期ワークフロー](asynchronous-workflows.md)、および[コンピュテーション式](computation-expressions.md)です。
+`Note` 使用することができます`for...in`シーケンス式およびその他の計算式で、カスタマイズされたバージョンの場合、`for...in`式を使用します。 詳細については、次を参照してください。[シーケンス](sequences.md)、[非同期ワークフロー](asynchronous-workflows.md)、および[コンピュテーション式](computation-expressions.md)です。
 
 
 ## <a name="see-also"></a>関連項目

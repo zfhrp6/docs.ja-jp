@@ -16,11 +16,11 @@ ms.author: wpickett
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: ec5e29ae9022470f8b583dc1b673a0b93040c862
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: ae7bd21f7dcb60f8cec3e9e4592969c63234cf13
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="default-xaml-schema-context-and-wpf-xaml-schema-context"></a>既定の XAML スキーマ コンテキストと WPF XAML スキーマ コンテキスト
 XAML スキーマ コンテキストが特定の XAML ボキャブラリを使用する XAML の運用環境が、オブジェクトの型マッピングが解決する方法、アセンブリが読み込まれているか、特定のリーダーとライターをなどの動作を記述とやり取りする方法を修飾するエンティティの概念設定が解釈されます。 このトピックでは、.NET Framework XAML サービスと関連付けられている既定の XAML スキーマ コンテキスト、CLR の型システムに基づくの機能について説明します。 このトピックでは、WPF に使用される、XAML スキーマ コンテキストも説明します。  
@@ -70,7 +70,7 @@ XAML スキーマ コンテキストが特定の XAML ボキャブラリを使�
     -   名前が、マッピング内で修飾でない場合を呼び出す<xref:System.Reflection.Assembly.LoadWithPartialName%2A?displayProperty=nameWithType>です。  
   
 #### <a name="xamlbuildtask"></a>XamlBuildTask  
- `XamlBuildTask` 使用は[!INCLUDE[vsindigo](../../../includes/vsindigo-md.md)]および Windows Workflow Foundation です。  
+ `XamlBuildTask` Windows Communication Foundation (WCF) および Windows Workflow Foundation の使用されます。  
   
  アセンブリが参照するを通じて注`XamlBuildTask`は常に完全修飾します。  
   

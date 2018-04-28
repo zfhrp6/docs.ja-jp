@@ -1,20 +1,17 @@
 ---
-title: "F# の型"
-description: "F# および f# の型をという名前し、説明されている方法で使用される型について説明します。"
-keywords: "visual f#, f#, 関数型プログラミング"
+title: F# の型
+description: F# および f# の型をという名前し、説明されている方法で使用される型について説明します。
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: c7272a0d-5ab6-4eae-bceb-e49af498b917
-ms.openlocfilehash: 9b7235637f301f91ae2cc8fbc59adc27cdfd5bd0
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 42521ed75a76753af81d3bbb9693ec5af29536ad
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="f-types"></a>F# の型
 
@@ -42,21 +39,21 @@ F# コードで多くの場合、型の名前を記述する必要です。 す�
 
 
 
-|型|型の構文|例|
+|型|型の構文|使用例|
 |----|-----------|--------|
-|プリミティブ型|*型名*|`int`<br /><br />`float`<br /><br />`string`|
-|集計の種類 (クラス、構造体、共用体、レコード、列挙型、およびなど)|*型名*|`System.DateTime`<br /><br />`Color`|
+|プリミティブ型|*type-name*|`int`<br /><br />`float`<br /><br />`string`|
+|集計の種類 (クラス、構造体、共用体、レコード、列挙型、およびなど)|*type-name*|`System.DateTime`<br /><br />`Color`|
 |型略称|*型略称名*|`bigint`|
 |完全修飾型|*namespaces.type 名*<br /><br />または<br /><br />*modules.type 名*<br /><br />または<br /><br />*namespaces.modules.type 名*|`System.IO.StreamWriter`|
 |array|*型名*、または<br /><br />*型名*配列|`int[]`<br /><br />`array<int>`<br /><br />`int array`|
 |2 次元配列|*型名*[、]|`int[,]`<br /><br />`float[,]`|
 |3 次元配列|*型名*[、]|`float[,,]`|
-|tuple|*型 name1* &#42;です。*型 name2*しています.|たとえば、`(1,'b',3)`型を持つ`int * char * int`|
+|tuple|*型 name1* &#42; *型 name2*しています.|たとえば、`(1,'b',3)`型を持つ `int * char * int`|
 |ジェネリック型|*型パラメーター* *ジェネリック型名*<br /><br />または<br /><br />*ジェネリック型名*&lt;*型のパラメーター リスト*&gt;|`'a list`<br /><br />`list<'a>`<br /><br />`Dictionary<'key, 'value>`|
 |構築された型 (を指定する特定の型引数を持つジェネリック型)|*型引数**ジェネリック型名*<br /><br />または<br /><br />*ジェネリック型名*&lt;*型引数リスト*&gt;|`int option`<br /><br />`string list`<br /><br />`int ref`<br /><br />`option<int>`<br /><br />`list<string>`<br /><br />`ref<int>`<br /><br />`Dictionary<int, string>`|
-|1 つのパラメーターを持つ関数の型|*パラメーター-type1*  - &gt; *戻り値の型*|受け取る関数、`int`を返します、`string`型を持つ`int -> string`|
-|複数のパラメーターを持つ関数の型|*パラメーター-type1*  - &gt; *パラメーター type2*  - &gt; ... -&gt; *戻り値の型*|受け取る関数、`int`と`float`を返します、`string`型を持つ`int -> float -> string`|
-|高階関数をパラメーターとして|(*関数型*)|`List.map`型があります。`('a -> 'b) -> 'a list -> 'b list`|
+|1 つのパラメーターを持つ関数の型|*パラメーター-type1*  - &gt; *戻り値の型*|受け取る関数、`int`を返します、`string`型を持つ `int -> string`|
+|複数のパラメーターを持つ関数の型|*パラメーター-type1*  - &gt; *パラメーター type2*  - &gt; ... -&gt; *戻り値の型*|受け取る関数、`int`と`float`を返します、`string`型を持つ `int -> float -> string`|
+|高階関数をパラメーターとして|(*関数型*)|`List.map` 型があります。 `('a -> 'b) -> 'a list -> 'b list`|
 |delegate|委任*関数型*|`delegate of unit -> int`|
 |フレキシブル型|#*型名*|`#System.Windows.Forms.Control`<br /><br />`#seq<int>`|
 

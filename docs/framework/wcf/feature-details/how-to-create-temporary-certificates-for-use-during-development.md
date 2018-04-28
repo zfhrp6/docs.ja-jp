@@ -1,27 +1,29 @@
 ---
-title: "方法 : 開発中に使用する一時的な証明書を作成する"
-ms.custom: 
+title: '方法 : 開発中に使用する一時的な証明書を作成する'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - certificates [WCF], creating temporary certificates
 - temporary certificates [WCF]
 ms.assetid: bc5f6637-5513-4d27-99bb-51aad7741e4a
-caps.latest.revision: "14"
+caps.latest.revision: 14
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 4d6c955c3498c830403f628b4805611fadc44d68
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: ccbc8c6fa638c674dea28c312b2dedbc9d41968a
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="how-to-create-temporary-certificates-for-use-during-development"></a>方法 : 開発中に使用する一時的な証明書を作成する
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]を使ってセキュリティ保護されたサービスやクライアントを開発する場合、資格情報として使えるように X.509 証明書を提供する必要が生じることも少なくありません。 証明書は通常、単独ではなく、いくつもの証明書が信頼チェーンとしてつながった形で存在しており、その最上位に位置するルート証明機関の証明書は、各コンピューターの [信頼されたルート証明機関] の証明書ストアに格納されています。 証明書を調べて順に信頼チェーンをたどっていくと、たとえば所属する会社や事業部門が運営する、ルート証明機関に到達します。 開発時にこの過程をエミュレートするためには、セキュリティ要件を満たす 2 種類の証明書を作る必要があります。 1 つは自己署名証明書で、[信頼されたルート証明機関] の証明書ストアに配置します。もう 1 つは、先の自己署名証明書を使って署名を施した証明書で、[ローカル コンピューター] の [個人] ストア、または [現在のユーザー] の [個人] ストアに配置します。 ここでは、 [SDK に付属する](http://go.microsoft.com/fwlink/?LinkId=248185)証明書作成ツール (MakeCert.exe) [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] を使用して、これら 2 つの証明書を作成する手順を示します。  
@@ -29,7 +31,7 @@ ms.lasthandoff: 12/22/2017
 > [!IMPORTANT]
 >  証明書作成ツールによって作成された証明書は、テスト目的にのみ使用できます。 実際にサービスやクライアントを業務に使用する際には、証明機関から取得した、適切な証明書が必要です。 所属する会社が運営している [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] 証明書サーバー、または専門の第三者機関から取得してください。  
 >   
->  既定では、 [Makecert.exe (証明書作成ツール)](http://msdn.microsoft.com/library/b0343f8e-9c41-4852-a85c-f8a0c408cf0d)がルート証明機関と呼ばれる証明書を作成"Root Agency**"。** というルート証明機関の証明書を作成します。"Root Agency" は、[信頼されたルート証明機関] の証明書ストアに含まれていないため、作成された証明書はセキュリティで保護されません。 そこで自己署名証明書を作り、[信頼されたルート証明機関] の証明書ストアに置くことにより、実際の運用環境をより忠実にシミュレートする開発環境を構築できます。  
+>  既定では、 [Makecert.exe (証明書作成ツール)](http://msdn.microsoft.com/library/b0343f8e-9c41-4852-a85c-f8a0c408cf0d)がルート証明機関と呼ばれる証明書を作成"Root Agency **"。** というルート証明機関の証明書を作成します。"Root Agency" は、[信頼されたルート証明機関] の証明書ストアに含まれていないため、作成された証明書はセキュリティで保護されません。 そこで自己署名証明書を作り、[信頼されたルート証明機関] の証明書ストアに置くことにより、実際の運用環境をより忠実にシミュレートする開発環境を構築できます。  
   
  [!INCLUDE[crabout](../../../../includes/crabout-md.md)] については、「 [Working with Certificates](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)」を参照してください。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] については、「 [Securing Services and Clients](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)」を参照してください。 Microsoft Authenticode テクノロジの使用方法については、「 [Authenticode Overviews and Tutorials (Authenticode の概要とチュートリアル)](http://go.microsoft.com/fwlink/?LinkId=88919)」を参照してください。  
   
@@ -74,13 +76,13 @@ ms.lasthandoff: 12/22/2017
   
 #### <a name="to-install-a-self-signed-certificate-in-the-trusted-root-certification-authorities"></a>自己署名証明書を信頼されたルート証明機関としてインストールするには  
   
-1.  証明書スナップインを開きます。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][する方法: MMC スナップインで証明書を表示](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md)です。  
+1.  証明書スナップインを開きます。 詳細については、次を参照してください。[する方法: MMC スナップインで証明書の表示](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md)です。  
   
-2.  証明書の格納先となる、 **[ローカル コンピューター]** または **[現在のユーザー]**のフォルダーを開きます。  
+2.  証明書の格納先となる、 **[ローカル コンピューター]** または **[現在のユーザー]** のフォルダーを開きます。  
   
 3.  **[信頼されたルート証明機関]** フォルダーを開きます。  
   
-4.  **[証明書]** フォルダーを右クリックして、 **[すべてのタスク]**メニューの **[インポート]**を実行します。  
+4.  **[証明書]** フォルダーを右クリックして、 **[すべてのタスク]** メニューの **[インポート]** を実行します。  
   
 5.  ウィザード画面が開くので、その指示に従って TempCa.cer を証明書ストアにインポートしてください。  
   
@@ -120,9 +122,9 @@ ms.lasthandoff: 12/22/2017
  WCF での証明書の使用に関する詳細については、「 [Working with Certificates](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)」を参照してください。  
   
 ## <a name="net-framework-security"></a>.NET Framework セキュリティ  
- 一時的なルート証明書は、不要になったら **[信頼されたルート証明機関]** フォルダーや **[個人]** フォルダーから確実に削除してください。削除するには、証明書を右クリックし、 **[削除]**をクリックします。  
+ 一時的なルート証明書は、不要になったら **[信頼されたルート証明機関]** フォルダーや **[個人]** フォルダーから確実に削除してください。削除するには、証明書を右クリックし、 **[削除]** をクリックします。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [証明書の使用](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)  
  [方法 : MMC スナップインを使用して証明書を参照する](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md)  
  [サービスおよびクライアントのセキュリティ保護](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)

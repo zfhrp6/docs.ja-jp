@@ -1,24 +1,26 @@
 ---
-title: "トランスポート : WSE 3.0 TCP 相互運用性"
-ms.custom: 
+title: 'トランスポート : WSE 3.0 TCP 相互運用性'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 5f7c3708-acad-4eb3-acb9-d232c77d1486
-caps.latest.revision: "18"
+caps.latest.revision: 18
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 63641f7a99b7c567e871d6a67dd72380f0c077ed
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 510d523cea78aa16a16adc8572c839e95059c068
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="transport-wse-30-tcp-interoperability"></a>トランスポート : WSE 3.0 TCP 相互運用性
 WSE 3.0 TCP 相互運用性トランスポートのサンプルでは、TCP 二重セッションを [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] カスタム トランスポートとして実装する方法を示します。 さらに、チャネル レイヤーの拡張機能を使用して、ネットワーク経由で既存の配置システムと連結する方法も示します。 この [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] カスタム トランスポートを作成する方法を、次の手順に示します。  
@@ -31,7 +33,7 @@ WSE 3.0 TCP 相互運用性トランスポートのサンプルでは、TCP 二�
   
 4.  ネットワーク固有の例外が、<xref:System.ServiceModel.CommunicationException> の適切な派生クラスに標準化されていることを確認します。  
   
-5.  チャネル スタックにカスタム トランスポートを追加するバインド要素を追加します。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][バインド要素の追加]。  
+5.  チャネル スタックにカスタム トランスポートを追加するバインド要素を追加します。 詳細については、[バインド要素の追加] を参照してください。  
   
 ## <a name="creating-iduplexsessionchannel"></a>IDuplexSessionChannel の作成  
  WSE 3.0 TCP 相互運用性トランスポートを作成するには、まず、<xref:System.ServiceModel.Channels.IDuplexSessionChannel> 上に <xref:System.Net.Sockets.Socket> の実装を作成します。 `WseTcpDuplexSessionChannel` は、<xref:System.ServiceModel.Channels.ChannelBase> から派生します。 メッセージ送信のロジックは、(1) メッセージをバイトにエンコードし、(2) それらのバイトをフレーム化してネットワーク上に送信するという、2 つの主要部分で構成されます。  
@@ -63,7 +65,7 @@ WSE 3.0 TCP 相互運用性トランスポートのサンプルでは、TCP 二�
 ## <a name="channel-factory"></a>チャネル ファクトリ  
  TCP トランスポートを記述する次の手順では、クライアント チャネルでの <xref:System.ServiceModel.Channels.IChannelFactory> の実装を作成します。  
   
--   `WseTcpChannelFactory`派生した<xref:System.ServiceModel.Channels.ChannelFactoryBase> \<IDuplexSessionChannel >。 このファクトリは、`OnCreateChannel` をオーバーライドして、クライアント チャネルを作成します。  
+-   `WseTcpChannelFactory` 派生した<xref:System.ServiceModel.Channels.ChannelFactoryBase> \<IDuplexSessionChannel >。 このファクトリは、`OnCreateChannel` をオーバーライドして、クライアント チャネルを作成します。  
   
  `protected override IDuplexSessionChannel OnCreateChannel(EndpointAddress remoteAddress, Uri via)`  
   
@@ -73,7 +75,7 @@ WSE 3.0 TCP 相互運用性トランスポートのサンプルでは、TCP 二�
   
  `}`  
   
--   `ClientWseTcpDuplexSessionChannel`ベースにロジックを追加`WseTcpDuplexSessionChannel`に TCP サーバーに接続する`channel.Open`時間。 まず、次のコードに示すようにホスト名を解決して IP アドレスに変換します。  
+-   `ClientWseTcpDuplexSessionChannel` ベースにロジックを追加`WseTcpDuplexSessionChannel`に TCP サーバーに接続する`channel.Open`時間。 まず、次のコードに示すようにホスト名を解決して IP アドレスに変換します。  
   
  `hostEntry = Dns.GetHostEntry(Via.Host);`  
   
@@ -90,7 +92,7 @@ WSE 3.0 TCP 相互運用性トランスポートのサンプルでは、TCP 二�
 ## <a name="channel-listener"></a>チャネル リスナー  
  TCP トランスポートを記述する次の手順では、サーバー チャネルを受け入れるための <xref:System.ServiceModel.Channels.IChannelListener> の実装を作成します。  
   
--   `WseTcpChannelListener`派生した<xref:System.ServiceModel.Channels.ChannelListenerBase> \<IDuplexSessionChannel > および [Begin] Open と On [Begin] の上書きに近いリッスン ソケットの有効期間を制御します。 OnOpen で、IP_ANY でリッスンするソケットを作成します。 より高度な実装では、同様に IPv6 でリッスンする 2 つ目のソケットを作成できます。 そのような実装では、IP アドレスをホスト名で指定することもできます。  
+-   `WseTcpChannelListener` 派生した<xref:System.ServiceModel.Channels.ChannelListenerBase> \<IDuplexSessionChannel > および [Begin] Open と On [Begin] の上書きに近いリッスン ソケットの有効期間を制御します。 OnOpen で、IP_ANY でリッスンするソケットを作成します。 より高度な実装では、同様に IPv6 でリッスンする 2 つ目のソケットを作成できます。 そのような実装では、IP アドレスをホスト名で指定することもできます。  
   
  `IPEndPoint localEndpoint = new IPEndPoint(IPAddress.Any, uri.Port);`  
   
@@ -206,4 +208,4 @@ Symbols:
   
     8.  TCP トランスポートのテスト クライアントが、新しいコンソールで開始します。 クライアントはサービスに株価情報を要求し、その結果がコンソール ウィンドウに表示されます。  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目

@@ -1,23 +1,24 @@
 ---
-title: "宣言の制約"
-ms.custom: 
+title: 宣言の制約
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 67001ed1-7f4d-4ada-ae57-a31176901a53
-caps.latest.revision: "12"
+caps.latest.revision: 12
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a11c62c7011d7ffb13ed0d0ebf060a3cbeb7d7f8
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: f5ab784498805473830b46962d9e02591fc3eace
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="declarative-constraints"></a>宣言の制約
 宣言の制約には、アクティビティ、およびそのアクティビティと他のアクティビティとの関係に関する検証の強力なメソッドが用意されています。 アクティビティに関する制約はプロセスの作成中に構成されますが、ワークフロー ホストによって追加の制約を指定することもできます。 ここでは、宣言の制約を使用してアクティビティを検証する方法の概要について説明します。  
@@ -146,7 +147,7 @@ public sealed class CreateState : CodeActivity
 }  
 ```  
   
- [!INCLUDE[crdefault](../../../includes/crdefault-md.md)]Windows Workflow Foundation[検証](../../../docs/framework/windows-workflow-foundation/samples/validation.md)サンプルです。  
+ 詳細については、Windows Workflow Foundation を参照してください。[検証](../../../docs/framework/windows-workflow-foundation/samples/validation.md)サンプルです。  
   
 ## <a name="additional-constraints"></a>追加の制約  
  ワークフロー ホスト作成者は、ワークフロー内のアクティビティに追加の検証の制約を指定できます。この場合、制約を作成し、それを <xref:System.Activities.Validation.ValidationSettings.AdditionalConstraints%2A> インスタンスの <xref:System.Activities.Validation.ValidationSettings> ディクショナリに追加します。 <xref:System.Activities.Validation.ValidationSettings.AdditionalConstraints%2A> の各アイテムには、制約の適用対象であるアクティビティの種類と、その種類のアクティビティに対する追加の制約一覧が含まれます。 ワークフローで検証が呼び出されると、派生クラスを含め、指定した種類の各アクティビティは制約を評価します。 この例では、前のセクションの `ActivityDisplayNameIsNotSetWarning` 制約は、ワークフロー内のすべてのアクティビティに適用されます。  
@@ -187,4 +188,4 @@ else
 }  
 ```  
   
- <xref:System.Activities.Validation.ValidationSettings.OnlyUseAdditionalConstraints%2A> の <xref:System.Activities.Validation.ValidationSettings> プロパティが `true` の場合、<xref:System.Activities.Validation.ActivityValidationServices.Validate%2A> を呼び出すことで検証が開始されると、指定した追加の制約のみが評価されます。 これは、特定の検証の構成についてワークフローを調べる場合に役立ちます。 ただし、ワークフローを呼び出すときに、ワークフロー内で構成されている検証ロジックが評価され、ワークフローが正常に開始するようにこれに合格する必要があります。 [!INCLUDE[crabout](../../../includes/crabout-md.md)]検証の呼び出しを参照してください[アクティビティの検証を呼び出す](../../../docs/framework/windows-workflow-foundation/invoking-activity-validation.md)です。
+ <xref:System.Activities.Validation.ValidationSettings.OnlyUseAdditionalConstraints%2A> の <xref:System.Activities.Validation.ValidationSettings> プロパティが `true` の場合、<xref:System.Activities.Validation.ActivityValidationServices.Validate%2A> を呼び出すことで検証が開始されると、指定した追加の制約のみが評価されます。 これは、特定の検証の構成についてワークフローを調べる場合に役立ちます。 ただし、ワークフローを呼び出すときに、ワークフロー内で構成されている検証ロジックが評価され、ワークフローが正常に開始するようにこれに合格する必要があります。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] 検証の呼び出しを参照してください[アクティビティの検証を呼び出す](../../../docs/framework/windows-workflow-foundation/invoking-activity-validation.md)です。

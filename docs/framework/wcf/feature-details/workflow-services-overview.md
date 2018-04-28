@@ -1,27 +1,29 @@
 ---
-title: "ワークフロー サービスの概要"
-ms.custom: 
+title: ワークフロー サービスの概要
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e536dda3-e286-441e-99a7-49ddc004b646
-caps.latest.revision: "30"
+caps.latest.revision: 30
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 0c38abe8ab0ac99a7e5bd0499ff826a00730b211
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: b0c59c0688fca53a7c7623330f3fdba4f5defd88
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="workflow-services-overview"></a>ワークフロー サービスの概要
-ワークフロー サービスは、ワークフローを使用して実装される [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ベースのサービスです。 ワーク フロー サービスは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] メッセージを送受信するメッセージ アクティビティを使用するワークフローです。 .NET Framework 4.5 では、ワークフロー内からメッセージを送受信できるようにする多数のメッセージ アクティビティが導入されています。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]メッセージング アクティビティ、およびそれらを使用して異なるメッセージ交換パターンを実装する方法を参照してください。[メッセージング アクティビティ](../../../../docs/framework/wcf/feature-details/messaging-activities.md)です。  
+ワークフロー サービスは、ワークフローを使用して実装される [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ベースのサービスです。 ワーク フロー サービスは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] メッセージを送受信するメッセージ アクティビティを使用するワークフローです。 .NET Framework 4.5 では、ワークフロー内からメッセージを送受信できるようにする多数のメッセージ アクティビティが導入されています。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] メッセージング アクティビティ、およびそれらを使用して異なるメッセージ交換パターンを実装する方法を参照してください。[メッセージング アクティビティ](../../../../docs/framework/wcf/feature-details/messaging-activities.md)です。  
   
 ## <a name="benefits-of-using-workflow-services"></a>ワークフロー サービスを使用する利点  
  アプリケーションが分散型になるにつれ、負荷を軽減させるために、個々のサービスが他のサービスを呼び出す役割を果たすようになっています。 これらの呼び出しを非同期操作として実装すると、コードがやや複雑になります。 エラー処理によって、例外処理と詳細な追跡情報の形式がさらに複雑になります。 一部のサービスには、長時間実行されることが多く、入力を待機する間に貴重なシステム リソースを占有するものがあります。 このような問題があるため、分散アプリケーションは、非常に複雑で、作成と保守が困難であることがよくあります。 ワークフローは、特に外部サービスへの呼び出しなど、非同期操作の連携を表す方法として最適です。 また、実行時間が長いビジネス プロセスを表す場合にも効率的です。 ワークフローが、分散環境でのサービス構築に役立つ資産となるのは、これらの特性があるためです。  
@@ -69,7 +71,7 @@ ms.lasthandoff: 12/22/2017
   
  マネージ [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] アプリケーションまたはマネージ Windows サービスでホストされるワークフロー サービスは、<xref:System.ServiceModel.Activities.WorkflowServiceHost> クラスのインスタンスを作成し、このインスタンスに、<xref:System.ServiceModel.Activities.WorkflowService> プロパティ内のワークフロー定義を含む <xref:System.ServiceModel.Activities.WorkflowService.Body%2A> のインスタンスを渡します。 メッセージ アクティビティを格納するワークフロー定義は、ワークフロー サービスとして公開されます。  
   
- ワークフロー サービスを IIS または WAS でホストするには、ワークフロー サービス定義を格納する .xamlx ファイルを仮想ディレクトリに配置します。 既定のエンドポイント (を使用して<xref:System.ServiceModel.BasicHttpBinding>) が自動的に作成[!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][簡略化された構成](../../../../docs/framework/wcf/simplified-configuration.md)です。 また、Web.config ファイルを仮想ディレクトリに配置し、独自のエンドポイントを指定することもできます。 ワークフロー定義がアセンブリ内にある場合は、.svc ファイルを仮想ディレクトリに配置し、ワークフロー アセンブリを App_Code ディレクトリに配置できます。 この .svc ファイルには、サービス ホスト ファクトリと、ワークフロー サービスを実装するクラスを指定する必要があります。 次の例に、サービス ホスト ファクトリを指定し、ワークフロー サービスを実装するクラスを指定する方法を示します。  
+ ワークフロー サービスを IIS または WAS でホストするには、ワークフロー サービス定義を格納する .xamlx ファイルを仮想ディレクトリに配置します。 既定のエンドポイント (を使用して<xref:System.ServiceModel.BasicHttpBinding>) が自動的に作成の詳細についてを参照してください[簡略化された構成](../../../../docs/framework/wcf/simplified-configuration.md)です。 また、Web.config ファイルを仮想ディレクトリに配置し、独自のエンドポイントを指定することもできます。 ワークフロー定義がアセンブリ内にある場合は、.svc ファイルを仮想ディレクトリに配置し、ワークフロー アセンブリを App_Code ディレクトリに配置できます。 この .svc ファイルには、サービス ホスト ファクトリと、ワークフロー サービスを実装するクラスを指定する必要があります。 次の例に、サービス ホスト ファクトリを指定し、ワークフロー サービスを実装するクラスを指定する方法を示します。  
   
 ```  
 <%@ServiceHost Factory=" System.ServiceModel.Activities.Activation.WorkflowServiceHostFactory  

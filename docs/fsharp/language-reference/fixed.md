@@ -1,20 +1,17 @@
 ---
-title: "Fixed キーワード (f#)"
-description: "スタックにローカルを防ぐため、f# を使用して、コレクションがキーワードを '固定' して 'ピン留めできる' 方法について説明します。"
-keywords: "visual f#, f#, 関数型プログラミング"
+title: Fixed キーワード (f#)
+description: スタックにローカルを防ぐため、f# を使用して、コレクションがキーワードを '固定' して 'ピン留めできる' 方法について説明します。
 author: cartermp
 ms.author: phcart
 ms.date: 04/24/2017
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: 5795ce1f-11bf-4798-9f1f-6e44ffa1477e
-ms.openlocfilehash: 1605603bc35941e21c798600140036fb678869b5
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 8c1d486ec754335dfbaeec439b1eb949494e4241
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="the-fixed-keyword"></a>Fixed キーワード
 
@@ -30,7 +27,7 @@ use ptr = fixed expression
 
 これは、ポインターを抽出およびを収集したり、ガベージ コレクション中に移動が回避される名にバインドすることを許可する式の構文を拡張します。  
 
-使用して、式からのポインターは固定されて、`fixed`キーワードが使用して、識別子にバインドされて、`use`キーワード。  これのセマンティクスは経由でリソースの管理に似ています、`use`キーワード。  ポインターは、スコープ内にあることと、固定が不要になったスコープ外にしたら、中に固定されています。  `fixed`コンテキストの外部で使用することはできません、`use`バインドします。  名前に、ポインターをバインドする必要があります`use`です。
+使用して、式からのポインターは固定されて、`fixed`キーワードが使用して、識別子にバインドされて、`use`キーワード。  これのセマンティクスは経由でリソースの管理に似ています、`use`キーワード。  ポインターは、スコープ内にあることと、固定が不要になったスコープ外にしたら、中に固定されています。  `fixed` コンテキストの外部で使用することはできません、`use`バインドします。  名前に、ポインターをバインドする必要があります`use`です。
 
 使用`fixed`関数またはメソッドの式内で発生する必要があります。  スクリプト レベルまたはモジュール レベルのスコープで使用することはできません。
 
@@ -68,6 +65,6 @@ let doPointerWork() =
 doPointerWork()
 ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [NativePtr モジュール](https://msdn.microsoft.com/visualfsharpdocs/conceptual/nativeinterop.nativeptr-module-%5Bfsharp%5D)

@@ -1,24 +1,26 @@
 ---
-title: "探索バインド要素のサンプル"
-ms.custom: 
+title: 探索バインド要素のサンプル
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: af513015-85bf-417b-8729-1bdff77ff6d6
-caps.latest.revision: "12"
+caps.latest.revision: 12
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: dbbaefbd32048924434342dc3f902c99a3c2448c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 624209221dc8c2745afa6b4db20df6e47c7374f1
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="discovery-binding-element-sample"></a>探索バインド要素のサンプル
 このサンプルでは、探索クライアント バインド要素を使用してサービスを探索する方法を示します。 この機能を使用すると、開発者は、探索クライアント チャネルを既存のクライアント チャネル スタックに追加することにより、プログラミング モデルをきわめて直感的にすることができます。 関連付けられたチャネルが開いている場合、サービスのアドレスは探索を使用して解決されます。 このサンプルは、次のプロジェクトで構成されています。  
@@ -93,7 +95,7 @@ static CustomBinding CreateCustomBindingWithDiscoveryElement()
             return customBinding; }  
 ```  
   
- <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement> をインスタンス化した後、サービスの検索時に使用する条件を指定します。 この場合の探索検索条件は `ICalculatorService` 型です。 さらに、<xref:System.ServiceModel.Discovery.DiscoveryEndpointProvider> を指定します。これにより、サービスの検索場所を示す <xref:System.ServiceModel.Discovery.DiscoveryEndpoint> が返されます。 <xref:System.ServiceModel.Discovery.DiscoveryEndpointProvider> は、新しい <xref:System.ServiceModel.Discovery.DiscoveryEndpoint> インスタンスを返します。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][探索クライアント チャネルで、カスタム バインディングを使用して](../../../../docs/framework/wcf/feature-details/using-a-custom-binding-with-the-discovery-client-channel.md)です。  
+ <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement> をインスタンス化した後、サービスの検索時に使用する条件を指定します。 この場合の探索検索条件は `ICalculatorService` 型です。 さらに、<xref:System.ServiceModel.Discovery.DiscoveryEndpointProvider> を指定します。これにより、サービスの検索場所を示す <xref:System.ServiceModel.Discovery.DiscoveryEndpoint> が返されます。 <xref:System.ServiceModel.Discovery.DiscoveryEndpointProvider> は、新しい <xref:System.ServiceModel.Discovery.DiscoveryEndpoint> インスタンスを返します。 詳細については、次を参照してください。[探索クライアント チャネルでのカスタム バインドの使用](../../../../docs/framework/wcf/feature-details/using-a-custom-binding-with-the-discovery-client-channel.md)です。  
   
 ```  
 // Extend DiscoveryEndpointProvider class to change the default DiscoveryEndpoint  
@@ -131,4 +133,4 @@ CalculatorServiceClient client = new CalculatorServiceClient(CreateCustomBinding
   
 4.  クライアントがサービスのアドレスを知ることなくサービスを検索できたことを確認します。  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目

@@ -1,12 +1,13 @@
 ---
-title: "WPF XAML ブラウザー アプリケーションの概要"
-ms.custom: 
+title: WPF XAML ブラウザー アプリケーションの概要
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -17,20 +18,21 @@ helpviewer_keywords:
 - XAML browser applications (XBAP)
 - browser-hosted applications [WPF]
 ms.assetid: 3a7a86a8-75d5-4898-96b9-73da151e5e16
-caps.latest.revision: "47"
+caps.latest.revision: 47
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 0f4f410f0f6c209dbc43642a15ae85a788390f4a
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: 0afdce00cc169a5be9224a7b675e4666c1349bd5
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="wpf-xaml-browser-applications-overview"></a>WPF XAML ブラウザー アプリケーションの概要
 <a name="introduction"></a>
-[!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)]Web アプリケーションおよびリッチ クライアント アプリケーションの両方の機能を結合します。 たとえば、Web アプリケーションと同様、Web サーバーに配置して、Internet Explorer または Firefox から開始できます。 また、リッチ クライアント アプリケーションと同様、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] の機能を活用することができます。 XBAP の開発方法もリッチ クライアントの開発に似ています。 このトピックでは、XBAP 開発の概要を示し、XBAP 開発が標準的なリッチ クライアント開発と異なる点について説明します。  
+[!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)] Web アプリケーションおよびリッチ クライアント アプリケーションの両方の機能を結合します。 たとえば、Web アプリケーションと同様、Web サーバーに配置して、Internet Explorer または Firefox から開始できます。 また、リッチ クライアント アプリケーションと同様、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] の機能を活用することができます。 XBAP の開発方法もリッチ クライアントの開発に似ています。 このトピックでは、XBAP 開発の概要を示し、XBAP 開発が標準的なリッチ クライアント開発と異なる点について説明します。  
   
  このトピックは、次のセクションで構成されています。  
   
@@ -63,7 +65,7 @@ ms.lasthandoff: 01/19/2018
 |アプリケーション マニフェスト (.manifest)|アプリケーションに関連付けられたメタデータが含まれます。拡張子は .manifest です。|  
 |配置マニフェスト (.xbap)|[!INCLUDE[TLA#tla_clickonce](../../../../includes/tlasharptla-clickonce-md.md)] がアプリケーションの配置に使用する情報が含まれます。拡張子は .xbap です。|  
   
- XBAP は Web サーバー ([!INCLUDE[TLA#tla_iis50](../../../../includes/tlasharptla-iis50-md.md)] 以降など) に配置します。 [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] を Web サーバーにインストールする必要はありませんが、[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] [!INCLUDE[TLA#tla_mime](../../../../includes/tlasharptla-mime-md.md)] 型とファイル名拡張子を登録する必要はあります。 詳細については、[WPF アプリケーションを配置するための IIS 5.0 および IIS 6.0 の構成](../../../../docs/framework/wpf/app-development/how-to-configure-iis-5-0-and-iis-6-0-to-deploy-wpf-applications.md)に関するページをご覧ください。  
+ XBAP は Web サーバー ([!INCLUDE[TLA#tla_iis50](../../../../includes/tlasharptla-iis50-md.md)] 以降など) に配置します。 Web サーバーで、.NET Framework をインストールする必要はありませんが、登録する必要は、 [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] [!INCLUDE[TLA#tla_mime](../../../../includes/tlasharptla-mime-md.md)]の種類とファイル名拡張子。 詳細については、[WPF アプリケーションを配置するための IIS 5.0 および IIS 6.0 の構成](../../../../docs/framework/wpf/app-development/how-to-configure-iis-5-0-and-iis-6-0-to-deploy-wpf-applications.md)に関するページをご覧ください。  
   
  XBAP を配置用に準備するには、.exe および関連付けられたマニフェストを Web サーバーにコピーします。 配置マニフェスト (拡張子が .xbap のファイル) を開くために、ハイパーリンクを含む HTML ページを作成します。 ユーザーが .xbap ファイルへのリンクをクリックすると、[!INCLUDE[TLA2#tla_clickonce](../../../../includes/tla2sharptla-clickonce-md.md)] によって、アプリケーションのダウンロードと開始が自動的に処理されます。 次のコード例は、XBAP を指定するハイパーリンクを含む HTML ページを示しています。  
   
@@ -113,7 +115,7 @@ ms.lasthandoff: 01/19/2018
   
 1.  Visual Studio でプロジェクトのプロパティを開きます。  
   
-2.  **[セキュリティ]** タブの **[詳細設定]**をクリックします。  
+2.  **[セキュリティ]** タブの **[詳細設定]** をクリックします。  
   
      [セキュリティの詳細設定] ダイアログ ボックスが表示されます。  
   
@@ -129,7 +131,7 @@ ms.lasthandoff: 01/19/2018
   
 7.  **[セキュリティ]** の下にある **[設定]** ボックスで、**[マイ コンピューターのファイルでのアクティブ コンテンツの実行を許可する]** チェック ボックスをオンにします。  
   
-8.  **[OK]**をクリックします。  
+8.  **[OK]** をクリックします。  
   
      変更は、Internet Explorer を再起動すると有効になります。  
   
@@ -152,7 +154,7 @@ ms.lasthandoff: 01/19/2018
   
 -   WPF アプリケーションが独立したスレッドで実行されるため、カスタムの ActiveX コントロールに通信の問題が発生することがあります。  
   
--   <xref:System.Windows.Interop.HwndHost.MessageHook>発生ために取得できません<xref:System.Windows.Interop.HwndHost>別のスレッドまたはプロセスで実行されているウィンドウをサブクラスにできません。  
+-   <xref:System.Windows.Interop.HwndHost.MessageHook> 発生ために取得できません<xref:System.Windows.Interop.HwndHost>別のスレッドまたはプロセスで実行されているウィンドウをサブクラスにできません。  
   
 ### <a name="creating-a-full-trust-xbap"></a>完全な信頼の XBAP の作成  
  XBAP で完全な信頼が必要な場合、プロジェクトを変更してこのアクセス許可を有効にできます。 完全な信頼を有効にする手順を次に示します。  
@@ -197,6 +199,6 @@ ms.lasthandoff: 01/19/2018
   
  さらに、[!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)] のダウンロード シーケンスの同時実行の改良によって、開始時間は最大 10% 短縮されます。 [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)] がマニフェストをダウンロードして評価した後、アプリケーションのダウンロードが始まり、進行状況バーの更新が開始されます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Visual Studio を構成して Web サービスを呼び出す XAML ブラウザー アプリケーションをデバッグする](../../../../docs/framework/wpf/app-development/configure-vs-to-debug-a-xaml-browser-to-call-a-web-service.md)  
  [WPF アプリケーションの配置](../../../../docs/framework/wpf/app-development/deploying-a-wpf-application-wpf.md)

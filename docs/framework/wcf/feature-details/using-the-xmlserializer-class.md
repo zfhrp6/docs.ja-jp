@@ -21,11 +21,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: c541c44f0043000ccd4e7edb0d38eba2c66d0844
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: 15e958a3bfe4dfdeebfaaad83130a604c56932c7
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="using-the-xmlserializer-class"></a>XmlSerializer クラスの使用
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] では、各種のシリアル化テクノロジを使用して、アプリケーション データをクライアントとサービス間で転送される XML に変換できます。この処理をシリアル化といいます。  
@@ -45,10 +45,10 @@ ms.lasthandoff: 04/27/2018
   
  多くの [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] 型は、上に記載した一覧のうち、下 2 つのカテゴリに分類され、したがってシリアル化可能です。 シリアル化可能な型の配列もシリアル化可能です。 完全な一覧についてを参照してください。[サービス コントラクトのデータ転送を指定する](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md)です。  
   
- 新しい <xref:System.Runtime.Serialization.DataContractSerializer> サービスを記述する方法としては、データ コントラクト型と共に使用される [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] が推奨されます。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [データ コントラクトを使用して](../../../../docs/framework/wcf/feature-details/using-data-contracts.md)です。  
+ 新しい <xref:System.Runtime.Serialization.DataContractSerializer> サービスを記述する方法としては、データ コントラクト型と共に使用される [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] が推奨されます。 詳細については、次を参照してください。[を使用してデータ コントラクト](../../../../docs/framework/wcf/feature-details/using-data-contracts.md)です。  
   
 ## <a name="when-to-use-the-xmlserializer-class"></a>XmlSerializer クラスを使用する場合  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は <xref:System.Xml.Serialization.XmlSerializer> クラスもサポートします。 <xref:System.Xml.Serialization.XmlSerializer> クラスは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 独自のものではありません。 これは、[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] Web サービスが使用するのと同じシリアル化エンジンです。 <xref:System.Xml.Serialization.XmlSerializer> クラスでは、<xref:System.Runtime.Serialization.DataContractSerializer> クラスよりもサポートされる型の範囲がずっと狭くなりますが、結果の XML に対する制御の柔軟性に優れています。また、XML スキーマ定義言語 (XSD) 標準のサポート範囲が広く、 シリアル化可能な型で宣言型属性が要求されません。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]、[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] のドキュメントで XML シリアル化に関するトピックを参照してください。 <xref:System.Xml.Serialization.XmlSerializer> クラスは、データ コントラクト型をサポートしません。  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は <xref:System.Xml.Serialization.XmlSerializer> クラスもサポートします。 <xref:System.Xml.Serialization.XmlSerializer> クラスは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 独自のものではありません。 これは、[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] Web サービスが使用するのと同じシリアル化エンジンです。 <xref:System.Xml.Serialization.XmlSerializer> クラスでは、<xref:System.Runtime.Serialization.DataContractSerializer> クラスよりもサポートされる型の範囲がずっと狭くなりますが、結果の XML に対する制御の柔軟性に優れています。また、XML スキーマ定義言語 (XSD) 標準のサポート範囲が広く、 シリアル化可能な型で宣言型属性が要求されません。 詳細についてで XML シリアル化に関するトピックを参照してください、[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]ドキュメント。 <xref:System.Xml.Serialization.XmlSerializer> クラスは、データ コントラクト型をサポートしません。  
   
  Svcutil.exe を使用する場合、または**サービス参照の追加**サード パーティのサービス用のクライアント コードを生成するか、適切なシリアライザー、サードパーティ スキーマを利用する Visual Studio の機能が自動的に選択します。 スキーマに <xref:System.Runtime.Serialization.DataContractSerializer> との互換性がない場合は、<xref:System.Xml.Serialization.XmlSerializer> が選択されます。  
   
@@ -150,7 +150,7 @@ ms.lasthandoff: 04/27/2018
   
 -   `ReadXml` の実装では、ラッパー要素の読み取りは想定されていません。 読み取ることが想定されているのは、`WriteXml` で生成される要素 1 つのみです。  
   
--   要素型を一様にシリアル化する場合 (データ コントラクトのデータ メンバーとしてシリアル化する場合など) は、コンテンツ型の場合と同様に、`WriteXml` を呼び出す前にラッパー要素が出力されます。 ただし、`WriteXml` コンストラクターまたは `DataContractSerializer` コンストラクターによるシリアライザーの構築時にルート名と名前空間を明示的に指定しない限り、トップ レベルで要素型をシリアル化しても、通常は `NetDataContractSerializer` で書き出される要素を囲むラッパー要素が出力されることはありません。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [シリアル化および逆シリアル化](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md)です。  
+-   要素型を一様にシリアル化する場合 (データ コントラクトのデータ メンバーとしてシリアル化する場合など) は、コンテンツ型の場合と同様に、`WriteXml` を呼び出す前にラッパー要素が出力されます。 ただし、`WriteXml` コンストラクターまたは `DataContractSerializer` コンストラクターによるシリアライザーの構築時にルート名と名前空間を明示的に指定しない限り、トップ レベルで要素型をシリアル化しても、通常は `NetDataContractSerializer` で書き出される要素を囲むラッパー要素が出力されることはありません。 詳細については、次を参照してください。[シリアル化および逆シリアル化](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md)です。  
   
 -   構築時にルート名と名前空間を指定せずにトップ レベルで要素型をシリアル化した場合、<xref:System.Runtime.Serialization.XmlObjectSerializer.WriteStartObject%2A> と <xref:System.Runtime.Serialization.XmlObjectSerializer.WriteEndObject%2A> では基本的に何も実行されず、<xref:System.Runtime.Serialization.XmlObjectSerializer.WriteObjectContent%2A> によって `WriteXml` が呼び出されます。 このモードでは、シリアル化されるオブジェクトは `null` にできず、ポリモーフィックに割り当てることができません。 また、オブジェクト グラフの保存を有効化できず、`NetDataContractSerializer` も使用できません。  
   

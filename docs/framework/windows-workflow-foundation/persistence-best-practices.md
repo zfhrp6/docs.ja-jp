@@ -1,23 +1,24 @@
 ---
-title: "永続化のベスト プラクティス"
-ms.custom: 
+title: 永続化のベスト プラクティス
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 6974c5a4-1af8-4732-ab53-7d694608a3a0
-caps.latest.revision: "7"
+caps.latest.revision: 7
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 408257d9ec51e9d60cb899c16cbef3a26cdc609f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: cfea5b8728774a4e788f3f0d866c6741d5b0bbe9
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="persistence-best-practices"></a>永続化のベスト プラクティス
 このドキュメントでは、ワークフローの永続化に関するワークフローのデザインと構成のベスト プラクティスについて説明します。  
@@ -31,7 +32,7 @@ ms.lasthandoff: 12/22/2017
   
  ワークフローが長時間ビジー状態になっている場合は、ビジー期間中、定期的にワークフロー インスタンスを永続化することをお勧めします。 永続化するには、ワークフロー インスタンスをビジー状態にする一連のアクティビティに <xref:System.Activities.Statements.Persist> アクティビティを追加します。 こうすると、アプリケーション ドメインのリサイクル、ホストの障害、またはコンピューターの障害が原因でシステムがビジー期間の始めにロールバックするのを避けることができます。 <xref:System.Activities.Statements.Persist> アクティビティをワークフローに追加すると、パフォーマンスが低下する場合があることに注意してください。  
   
- Windows Server App Fabric を使用すると、永続化の構成と使用を大幅に簡潔化できます。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Windows Server App Fabric の永続化](http://go.microsoft.com/fwlink/?LinkID=201200&clcid=0x409)  
+ Windows Server App Fabric を使用すると、永続化の構成と使用を大幅に簡潔化できます。 詳細については、次を参照してください[Windows Server App Fabric の永続化。](http://go.microsoft.com/fwlink/?LinkID=201200&clcid=0x409)  
   
 ## <a name="configuration-of-scalability-parameters"></a>スケーラビリティ パラメーターの構成  
  スケーラビリティとパフォーマンスの要件により、次のパラメーターの設定が決定されます。  

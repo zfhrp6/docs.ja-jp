@@ -1,24 +1,26 @@
 ---
-title: "セッション、インスタンス化、および同時実行"
-ms.custom: 
+title: セッション、インスタンス化、および同時実行
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 50797a3b-7678-44ed-8138-49ac1602f35b
-caps.latest.revision: "16"
+caps.latest.revision: 16
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 5d4559f177b05f7d238c9f30649a5b01af7fb6f9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 6dd96ea552bb92dd90c1c47abac744c55e2e67e5
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="sessions-instancing-and-concurrency"></a>セッション、インスタンス化、および同時実行
 *"セッション"* とは、2 つのエンドポイント間で送信されるすべてのメッセージを相互に関連付けたものです。 *"インスタンス化"* とは、ユーザー定義のサービス オブジェクトとこれらのオブジェクトに関連する <xref:System.ServiceModel.InstanceContext> オブジェクトの有効期間を制御することです。 また、*同時実行* は、 <xref:System.ServiceModel.InstanceContext> で同時に実行されるスレッドの数の制御を表す用語です。  
@@ -93,7 +95,7 @@ public class CalculatorService : ICalculatorInstance
 -   <xref:System.ServiceModel.ConcurrencyMode.Reentrant>: 各サービス インスタンスは、一度に 1 つのメッセージを処理しますが、再入操作の呼び出しを受け入れます。 サービスは、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント オブジェクトを通じて呼び出しを行う場合のみ、この呼び出しを受け入れます。  
   
 > [!NOTE]
->  複数のスレッドを安全に使用するコードを理解し、適切に記述することが困難な場合もあります。 <xref:System.ServiceModel.ConcurrencyMode.Multiple> 値や <xref:System.ServiceModel.ConcurrencyMode.Reentrant> 値を使用する前に、これらのモード用にサービスが適切に設計されていることを確認してください。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]「<xref:System.ServiceModel.ServiceBehaviorAttribute.ConcurrencyMode%2A>」を参照してください。  
+>  複数のスレッドを安全に使用するコードを理解し、適切に記述することが困難な場合もあります。 <xref:System.ServiceModel.ConcurrencyMode.Multiple> 値や <xref:System.ServiceModel.ConcurrencyMode.Reentrant> 値を使用する前に、これらのモード用にサービスが適切に設計されていることを確認してください。 詳細については、「<xref:System.ServiceModel.ServiceBehaviorAttribute.ConcurrencyMode%2A>」を参照してください。  
   
  同時実行の使用は、インスタンス化モードに関連します。 <xref:System.ServiceModel.InstanceContextMode.PerCall>インスタンス化、同時実行は使用されません、新しいで各メッセージが処理されるため<xref:System.ServiceModel.InstanceContext>と、そのため、何回も 1 つのスレッドがアクティブになって、<xref:System.ServiceModel.InstanceContext>です。  
   
@@ -118,7 +120,7 @@ public class CalculatorService : ICalculatorConcurrency
 |PerSession|のセッションフル チャネルで動作: セッションと<xref:System.ServiceModel.InstanceContext>チャネルごとにします。<br />のセッションレス チャネルで動作: 例外がスローされます。|のセッションフル チャネルで動作: セッションと<xref:System.ServiceModel.InstanceContext>チャネルごとにします。<br />のセッションレス チャネルで動作:<xref:System.ServiceModel.InstanceContext>呼び出しごとにします。|のセッションフル チャネルで動作: 例外がスローされます。<br />のセッションレス チャネルで動作:<xref:System.ServiceModel.InstanceContext>呼び出しごとにします。|  
 |Single|のセッションフル チャネルで動作: セッションと 1 つ<xref:System.ServiceModel.InstanceContext>すべての呼び出しにします。<br />のセッションレス チャネルで動作: 例外がスローされます。|のセッションフル チャネルで動作: セッションと<xref:System.ServiceModel.InstanceContext>作成またはユーザー指定のシングルトンです。<br />のセッションレス チャネルで動作:<xref:System.ServiceModel.InstanceContext>作成またはユーザー指定のシングルトンです。|のセッションフル チャネルで動作: 例外がスローされます。<br />のセッションレス チャネルで動作:<xref:System.ServiceModel.InstanceContext>各作成したシングルトンまたはユーザー指定のシングルトンです。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [セッションの使用](../../../../docs/framework/wcf/using-sessions.md)  
  [方法 : セッションを必要とするサービスを作成する](../../../../docs/framework/wcf/feature-details/how-to-create-a-service-that-requires-sessions.md)  
  [方法 : サービスのインスタンス化を制御する](../../../../docs/framework/wcf/feature-details/how-to-control-service-instancing.md)  

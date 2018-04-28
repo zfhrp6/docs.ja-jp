@@ -1,23 +1,24 @@
 ---
 title: SQL Workflow Instance Store
-ms.custom: 
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8cd2f8a5-4bf8-46ea-8909-c7fdb314fabc
-caps.latest.revision: "26"
+caps.latest.revision: 26
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 4608a91c905122a1ec4698990debbf5038599801
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 11e61e1d702572af10cf4e46b9d1b284022fa56e
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="sql-workflow-instance-store"></a>SQL Workflow Instance Store
 [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] には SQL Workflow Instance Store が含まれます。これを使用すると、ワークフロー インスタンスに関する状態情報を SQL Server 2005 または SQL Server 2008 のデータベースに永続化できます。 この機能は主に <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> クラスの形式で実装されます。このクラスは永続化フレームワークの <xref:System.Runtime.DurableInstancing.InstanceStore> 抽象クラスから派生します。 SQL Workflow Instance Store 機能によって SQL 永続性プロバイダーを構成します。このプロバイダーは、ホストが永続化コマンドをストアに送信するときに使用する永続化 API の具象実装です。  
@@ -28,7 +29,7 @@ ms.lasthandoff: 12/22/2017
   
  このセクションのトピックでは、SQL Workflow Instance Store のプロパティと機能、およびストアの構成方法の詳細を説明します。  
   
- Windows Server App Fabric には、インスタンス ストアを簡単に構成および使用できる独自のインスタンス ストアとツールが用意されています。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)]参照してください[Windows Server App Fabric のインスタンス ストア](http://go.microsoft.com/fwlink/?LinkId=201201)です。 [!INCLUDE[crabout](../../../includes/crabout-md.md)]App Fabric SQL サーバー永続性データベースを参照してください[App Fabric SQL Server 永続化データベース](http://go.microsoft.com/fwlink/?LinkId=201202)  
+ Windows Server App Fabric には、インスタンス ストアを簡単に構成および使用できる独自のインスタンス ストアとツールが用意されています。 詳細については、次を参照してください。 を参照してください[Windows Server App Fabric のインスタンス ストア](http://go.microsoft.com/fwlink/?LinkId=201201)です。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] App Fabric SQL サーバー永続性データベースを参照してください[App Fabric SQL Server 永続化データベース](http://go.microsoft.com/fwlink/?LinkId=201202)  
   
 ## <a name="in-this-section"></a>このセクションの内容  
   
@@ -46,5 +47,5 @@ ms.lasthandoff: 12/22/2017
   
 -   [SQL Server 永続性データベース](../../../docs/framework/windows-workflow-foundation/sql-server-persistence-database.md)  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [永続性のサンプル](http://go.microsoft.com/fwlink/?LinkID=177735)

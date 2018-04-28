@@ -1,27 +1,29 @@
 ---
-title: "方法 : サービス モニカーを登録および構成する"
-ms.custom: 
+title: '方法 : サービス モニカーを登録および構成する'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - COM [WCF], configure service monikers
 - COM [WCF], register service monikers
 ms.assetid: e5e16c80-8a8e-4eef-af53-564933b651ef
-caps.latest.revision: "20"
+caps.latest.revision: 20
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 6e5c57927a455b5d2a253becac35b1bf9033933f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 52b3ec27560ca2dc47b7951cb209f33f307fa7ea
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="how-to-register-and-configure-a-service-moniker"></a>方法 : サービス モニカーを登録および構成する
 COM アプリケーションの [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービス モニカーを型付きコントラクトで使うには、必要な属性を備えた型を COM に登録し、COM アプリケーションとモニカーに、必要なバインディング設定を組み込まなければなりません。  
@@ -36,7 +38,7 @@ COM アプリケーションの [!INCLUDE[indigo1](../../../../includes/indigo1-
     [assembly: ComVisible(true)]  
     ```  
   
-3.  マネージ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントを、厳密な名前のアセンブリとしてコンパイルします。 そのためには暗号キー ペアで署名する必要があります。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][厳密な名前でアセンブリに署名](http://go.microsoft.com/fwlink/?LinkId=94874).NET 開発者ガイド 』 でします。  
+3.  マネージ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントを、厳密な名前のアセンブリとしてコンパイルします。 そのためには暗号キー ペアで署名する必要があります。 詳細については、次を参照してください。[厳密な名前でアセンブリに署名](http://go.microsoft.com/fwlink/?LinkId=94874)、.NET 開発者ガイド 』 でします。  
   
 4.  アセンブリ登録 (Regasm.exe) ツールに `/tlb` オプションを指定して、アセンブリで定義されている型を COM に登録します。  
   
@@ -108,5 +110,5 @@ COM アプリケーションの [!INCLUDE[indigo1](../../../../includes/indigo1-
   
      これにより、インポートされたインターフェイス定義は、すべてのメソッドが `HResult` を返すように変更されます。 他の戻り値は、出力パラメーターに変換されます。 メソッドの実行全体は、同じままです。 このために、プロキシでメソッドを呼び出したときの例外の原因を特定できます。 この機能は C++ コードからのみ使用できます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)

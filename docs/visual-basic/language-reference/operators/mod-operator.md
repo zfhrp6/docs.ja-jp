@@ -1,9 +1,7 @@
 ---
 title: Mod 演算子 (Visual Basic)
-ms.date: 07/20/2015
+ms.date: 04/24/2018
 ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
 ms.technology:
 - devlang-visual-basic
 ms.topic: article
@@ -18,14 +16,13 @@ helpviewer_keywords:
 - arithmetic operators [Visual Basic], Mod
 - math operators [Visual Basic]
 ms.assetid: 6ff7e40e-cec8-4c77-bff6-8ddd2791c25b
-caps.latest.revision: 22
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 5464b57c993e5703c09529b527a7bc714e045870
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+author: rpetrusha
+ms.author: ronpet
+ms.openlocfilehash: cf0889cbea609b4555581fbf67cd0cba1ea889d0
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="mod-operator-visual-basic"></a>Mod 演算子 (Visual Basic)
 2 つの数値を除算し、残りの部分のみを返します。  
@@ -38,17 +35,39 @@ number1 Mod number2
   
 ## <a name="parts"></a>指定項目  
  `number1`  
- 必須です。 任意の数式。  
+ 必須。 任意の数式。  
   
  `number2`  
- 必須です。 任意の数式。  
+ 必須。 任意の数式。  
   
-## <a name="supported-types"></a>サポートされている型  
+## <a name="supported-types"></a>サポートされる型  
  すべての数値型。 これには、符号なし型と浮動小数点型が含まれますと`Decimal`です。  
   
-## <a name="result"></a>結果  
- 結果の後に残りの部分は、`number1`で割った値`number2`です。 たとえば、式`14 Mod 4`2 に評価します。  
-  
+## <a name="result"></a>結果
+
+結果の後に残りの部分は、`number1`で割った値`number2`です。 たとえば、式`14 Mod 4`2 に評価します。  
+
+> [!NOTE]
+> 間で違いがある*剰余*と*剰余*数学では、負の値ごとに異なる結果にします。 `Mod` Visual Basic、.NET Framework で演算子`op_Modulus`演算子、および基になる [rem]<xref:System.Reflection.Emit.OpCodes.Rem>剰余演算を実行する IL 命令します。
+
+結果、`Mod`操作は、被除数の符号が保持されます`number1`、ため、正または負の値があります。 結果が範囲内に常に (-`number2`、 `number2`)、排他的なです。 例えば:
+
+```vb
+Public Module Example
+   Public Sub Main()
+      Console.WriteLine($" 8 Mod  3 = {8 Mod 3}")
+      Console.WriteLine($"-8 Mod  3 = {-8 Mod 3}")
+      Console.WriteLine($" 8 Mod -3 = {8 Mod -3}")
+      Console.WriteLine($"-8 Mod -3 = {-8 Mod -3}")
+   End Sub
+End Module
+' The example displays the following output:
+'       8 Mod  3 = 2
+'      -8 Mod  3 = -2
+'       8 Mod -3 = 2
+'      -8 Mod -3 = -2
+```
+
 ## <a name="remarks"></a>コメント  
  いずれか`number1`または`number2`浮動小数点値は、浮動小数点除算の剰余が返されます。 結果のデータ型のデータ型で除算に起因するすべての値を保持できる最小のデータ型は、`number1`と`number2`です。  
   
@@ -71,7 +90,7 @@ number1 Mod number2
  `a - (b * Fix(a / b))`  
   
 ## <a name="floating-point-imprecision"></a>浮動小数点は誤差  
- 浮動小数点数を使用する場合は、ことが常に正確に表現でないメモリに注意してください。 これにより予期しない結果を比較値などの特定の操作から、`Mod`演算子。 詳細については、次を参照してください。[データ型のトラブルシューティング](../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)です。  
+ 浮動小数点数を操作するときに、常がない正確な 10 進表現メモリに注意してください。 値の比較などの特定の操作から予期しない結果につながる可能性がこれと`Mod`演算子。 詳細については、次を参照してください。[データ型のトラブルシューティング](../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)です。  
   
 ## <a name="overloading"></a>オーバーロード  
  `Mod`演算子*オーバー ロードされた*、つまり、クラスまたは構造体が、動作を再定義できます。 コードが適用される場合`Mod`クラスまたはそのようなオーバー ロードを含む構造体のインスタンスをする、再定義された動作を理解することを確認します。 詳細については、次を参照してください。[演算子プロシージャ](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)です。  

@@ -1,20 +1,17 @@
 ---
-title: "パターン マッチ (F#)"
-description: "パターンを f# で使用論理構造とデータを比較し、構成要素にデータを分解または、データから情報を抽出する方法について説明します。"
-keywords: "visual f#, f#, 関数型プログラミング"
+title: パターン マッチ (F#)
+description: パターンを f# で使用論理構造とデータを比較し、構成要素にデータを分解または、データから情報を抽出する方法について説明します。
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: 5562ee98-e2f1-4dcd-8e2f-16ae27baaade
-ms.openlocfilehash: 7c7a3110a8f34c0c96c12d4584010a9ac4b485fa
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 31a5b321e5daecdc3add9a205d60b63b2c00ccd2
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="pattern-matching"></a>パターン マッチ
 
@@ -42,11 +39,11 @@ match expression with
 |識別子パターン|判別共用体のケース値、例外ラベル、またはアクティブ パターンのケース|`Some(x)`<br /><br />`Failure(msg)`|
 |変数パターン|*identifier*|`a`|
 |`as` パターン|*パターン*として*識別子*|`(a, b) as tuple1`|
-|OR パターン|*pattern1* &#124;です。*pattern2*|<code>([h] &#124; [h; _])</code>|
+|OR パターン|*pattern1* &#124; *pattern2*|<code>([h] &#124; [h; _])</code>|
 |AND パターン|*pattern1* &amp; *pattern2*|`(a, b) & (_, "test")`|
 |Cons パターン|*識別子*::*一覧識別子*|`h :: t`|
 |リスト パターン|[ *pattern_1*;... です。*pattern_n* ]|`[ a; b; c ]`|
-|配列パターン|[&#124;です。*pattern_1*;.. です。*pattern_n* &#124;です]。|<code>[&#124; a; b; c &#124;]</code>|
+|配列パターン|[&#124; *pattern_1*;.. です。*pattern_n* &#124;]|<code>[&#124; a; b; c &#124;]</code>|
 |かっこで囲まれたパターン|(*パターン*)|`( a )`|
 |タプル パターン|( *pattern_1*,..., *pattern_n* )|`( a, b )`|
 |レコード パターン|{ *identifier1* = *pattern_1*;... です。*identifier_n* = *pattern_n* }|`{ Name = name; }`|

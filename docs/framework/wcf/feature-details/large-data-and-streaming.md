@@ -1,29 +1,29 @@
 ---
-title: "大規模データとストリーミング"
-ms.custom: 
+title: 大規模データとストリーミング
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ab2851f5-966b-4549-80ab-c94c5c0502d2
-caps.latest.revision: 
+caps.latest.revision: 27
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: e9551fcf4f302be899dcee8737b3bcfad15f1210
-ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
+ms.openlocfilehash: b37af67a3deeed4e55939ff1c1baf73752233e94
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="large-data-and-streaming"></a>大規模データとストリーミング
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] XML ベースの通信インフラストラクチャです。 XML データがで定義されている標準のテキスト形式でエンコードされたよくあるため、 [XML 1.0 仕様](http://go.microsoft.com/fwlink/?LinkId=94838)接続されている、システムの開発者と設計者が通常懸念送信されたメッセージのワイヤのフット プリント (またはサイズ) 間でネットワーク、および XML のテキストに基づくエンコーディングのバイナリ データの効率的な転送特殊な課題を招きます。  
+[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] は、XML ベースの通信インフラストラクチャです。 XML データがで定義されている標準のテキスト形式でエンコードされたよくあるため、 [XML 1.0 仕様](http://go.microsoft.com/fwlink/?LinkId=94838)接続されている、システムの開発者と設計者が通常懸念送信されたメッセージのワイヤのフット プリント (またはサイズ) 間でネットワーク、および XML のテキストに基づくエンコーディングのバイナリ データの効率的な転送特殊な課題を招きます。  
   
 ## <a name="basic-considerations"></a>基本的な考慮事項  
  後で示される [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の情報に関する背景情報として、接続されたシステムのインフラストラクチャ全般に当てはまる、エンコーディング、バイナリ データ、およびストリーミングに関する一般的な注意点や考慮事項から説明します。  
@@ -41,7 +41,7 @@ ms.lasthandoff: 02/01/2018
   
  したがって、テキストかバイナリかを決定する場合、バイナリ メッセージは常に XML テキスト メッセージよりも小さいという推測に基づいて簡単に決めることはできません。  
   
- XML テキスト メッセージは、標準ベースのメッセージであるため、きわめて広範囲な相互運用性オプションとプラットフォーム サポートが提供されるという明確な利点があります。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]、このトピックで後述する「エンコーディング」を参照してください。  
+ XML テキスト メッセージは、標準ベースのメッセージであるため、きわめて広範囲な相互運用性オプションとプラットフォーム サポートが提供されるという明確な利点があります。 詳細については、このトピックで後述する「エンコーディング」を参照してください。  
   
 ### <a name="binary-content"></a>バイナリ コンテンツ  
  写真、ビデオ、サウンド クリップのほか、サービスとコンシューマーとの間で交換される他の不透明な形式のバイナリ データなど、サイズの大きいバイナリ データ項目の場合、生成されるメッセージ サイズに関しては、テキスト ベースのエンコーディングよりバイナリ エンコーディングの方が優れています。 このようなデータを XML テキストに格納するには、Base64 エンコーディングを使用してそのデータをエンコードするのが一般的です。  
@@ -52,7 +52,7 @@ ms.lasthandoff: 02/01/2018
   
  MTOM SOAP メッセージが、エンコードされていないバージョンと異なるのは、メッセージ内でバイナリ データを含んでいた元の要素の代わりに、それぞれの MIME パートを参照している特別な要素タグが配置される点です。 つまり SOAP メッセージでは、メッセージと共に送信される MIME パートを指すことによってバイナリ コンテンツが参照されますが、含まれているのは XML テキスト データのみです。 このモデルは、広く確立している SMTP モデルに厳密に適合するように作成されています。このため、さまざまなプラットフォームで、MTOM メッセージをエンコードまたはデコードするための幅広いツール サポートが提供され、きわめて高い相互運用性が確保されています。  
   
- ただし MTOM でも Base64 の場合と同様、MIME 形式をサポートするためのオーバーヘッドが伴います。このため、MTOM を使用するメリットが現れるのは、バイナリ データ要素のサイズが約 1 KB を超える場合だけです。 バイナリ ペイロードが 1 KB を下回る場合は、このオーバーヘッドが原因で、バイナリ データに Base64 エンコーディングを使用したメッセージよりも、エンコード済みの MTOM メッセージの方が大きくなる可能性があります。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]、このトピックで後述する「エンコーディング」を参照してください。  
+ ただし MTOM でも Base64 の場合と同様、MIME 形式をサポートするためのオーバーヘッドが伴います。このため、MTOM を使用するメリットが現れるのは、バイナリ データ要素のサイズが約 1 KB を超える場合だけです。 バイナリ ペイロードが 1 KB を下回る場合は、このオーバーヘッドが原因で、バイナリ データに Base64 エンコーディングを使用したメッセージよりも、エンコード済みの MTOM メッセージの方が大きくなる可能性があります。 詳細については、このトピックで後述する「エンコーディング」を参照してください。  
   
 ### <a name="large-data-content"></a>大規模データ コンテンツ  
  ネットワーク フットプリントとは別に、前述の例のようにペイロードが 500 MB であれば、サービスとクライアントにもローカルの問題が生じます。 既定では、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]にメッセージを処理*バッファー モード*です。 つまり、メッセージ コンテンツ全体が、送信前にも受信後にもメモリに存在します。 この方式は、ほとんどのシナリオに対して有効であり、デジタル署名や信頼できる配信などのメッセージング機能には必要ですが、メッセージが大きいと、システムのリソースが使い果たされてしまう可能性があります。  
@@ -67,14 +67,14 @@ ms.lasthandoff: 02/01/2018
   
 -   転送の開始時に完全な形で準備されていないバイナリ データ オブジェクト  
   
- 通常、データにこのような制約がない場合は、1 つの大きいメッセージではなく、セッションの有効範囲内でメッセージ シーケンスを送信することをお勧めします。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]、このトピックで後述する「データのストリーミング」を参照してください。  
+ 通常、データにこのような制約がない場合は、1 つの大きいメッセージではなく、セッションの有効範囲内でメッセージ シーケンスを送信することをお勧めします。 詳細については、このトピックの「データのストリーミング」セクションを参照してください。  
   
  大量のデータを送信するときにを設定する必要があります、 `maxAllowedContentLength` IIS 設定 (詳細については、次を参照してください[IIS 要求の制限の構成](http://go.microsoft.com/fwlink/?LinkId=253165)) および`maxReceivedMessageSize`バインディング (たとえば[。System.ServiceModel.BasicHttpBinding.MaxReceivedMessageSize](xref:System.ServiceModel.HttpBindingBase.MaxReceivedMessageSize%2A)または<xref:System.ServiceModel.NetTcpBinding.MaxReceivedMessageSize%2A>)。 `maxAllowedContentLength` 28.6 M プロパティの既定値、および`maxReceivedMessageSize`プロパティの既定値を 64 KB です。  
   
 ## <a name="encodings"></a>エンコーディング  
  *エンコード*に、ネットワーク上でメッセージを表示する方法についてのルール セットを定義します。 *エンコーダー*このようなエンコーディングを実装し、担当、送信者側でオンにする、<xref:System.ServiceModel.Channels.Message>メモリ内のメッセージのバイト ストリームまたはバイト バッファー、ネットワーク経由で送信されることができます。 受信側では、バイト シーケンスがエンコーダーによってメモリ内メッセージに変換されます。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 3 つのエンコーダーが含まれていて、必要な場合に使用すると、作成して独自のエンコーダーをプラグインします。  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、3 つのエンコーダーが用意されています。開発者は、必要に応じて独自のエンコーダーを作成してプラグインすることもできます。  
   
  個々の標準バインディングには、構成済みのエンコーダーが含まれています。Net* プレフィックスで始まるバインディングでは、(<xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement> クラスを含めることで) バイナリ エンコーダーが使用されるのに対し、<xref:System.ServiceModel.BasicHttpBinding> クラスと <xref:System.ServiceModel.WSHttpBinding> クラスでは、既定で (<xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement> クラスを含めることで) テキスト メッセージ エンコーダーが使用されます。  
   
@@ -246,10 +246,10 @@ public class UploadStreamMessage
   
  そのため、この場合は、受信メッセージの最大サイズを制限するだけでは不十分です。 `MaxBufferSize` がバッファーするメモリを制限するには、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] プロパティが必要です。 ストリーミングを使用する場合は、これを安全な値に設定する (または既定値のままにしておく) ことが重要です。 たとえば、サービスでは、サイズが 4 GB までのファイルを受信し、それをローカル ディスクに格納する必要があるとします。 また、一度に 64 KB のデータしかバッファーできないようにメモリが制限されているとします。 その場合、`MaxReceivedMessageSize` を 4 GB、`MaxBufferSize` を 64 KB に設定します。 また、サービス実装において、64 KB ずつ受信ストリームから読み取り、前のデータがディスクに書き込まれ、メモリから破棄されるまで次のデータを読み取らないようにする必要があります。  
   
- このクォータは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] によって行われるバッファーのみを制限するものであり、独自のサービスまたはクライアント実装で行われるバッファーからは保護できないことを理解しておくことも重要です。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]追加のセキュリティの考慮事項を参照してください[データのセキュリティに関する考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md)です。  
+ このクォータは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] によって行われるバッファーのみを制限するものであり、独自のサービスまたはクライアント実装で行われるバッファーからは保護できないことを理解しておくことも重要です。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] 追加のセキュリティの考慮事項を参照してください[データのセキュリティに関する考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md)です。  
   
 > [!NOTE]
 >  バッファー転送とストリーミング転送のどちらを使用するかは、エンドポイントごとにローカルに決定します。 HTTP トランスポートの場合、転送モードは、接続、つまりプロキシ サーバーなどの中継局に伝達されません。 転送モードの設定は、サービス インターフェイスの記述に反映されません。 サービスに対して [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントを生成した後、ストリーミング転送で使用する予定のサービスの構成ファイルを編集し、転送モードを設定する必要があります。 TCP トランスポートと名前付きパイプ トランスポートの場合、転送モードはポリシー アサーションとして伝達されます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [方法 : ストリーミングを有効にする](../../../../docs/framework/wcf/feature-details/how-to-enable-streaming.md)

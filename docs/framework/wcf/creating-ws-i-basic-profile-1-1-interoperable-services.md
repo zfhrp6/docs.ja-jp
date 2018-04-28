@@ -21,11 +21,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: fa561e5019bcf90e93da669f93cbce51d02e89dc
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: fd08dca74ddb3f77e37a3aa4d67cf6d495bf5d16
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="creating-ws-i-basic-profile-11-interoperable-services"></a>WS-I Basic Profile 1.1 の相互運用可能サービスの作成
 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] Web サービス クライアントと相互運用できるように [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] サービス エンドポイントを構成するには、以下に従います。  
@@ -42,7 +42,7 @@ ms.lasthandoff: 04/27/2018
   
 -   <xref:System.ServiceModel.BasicHttpBinding.Security%2A?displayProperty=nameWithType> 値によって制御されるメッセージ セキュリティでは、WS-I Basic Security Profile 1.0 に準拠した WS-Security がサポートされます。 WS-Security を使用しない場合は、このプロパティを既定値 (<xref:System.ServiceModel.SecurityMode.Transport?displayProperty=nameWithType>) のままにしておきます。  
   
- メタデータを行うために、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]に利用できるサービス[!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)]、Web サービス クライアント生成ツールを使用して: [Web サービス記述言語ツール (Wsdl.exe)](http://msdn.microsoft.com/library/b9210348-8bc2-4367-8c91-d1a04b403e88)、 [Web サービス検出ツール (Disco.exe)](http://msdn.microsoft.com/library/acd88078-c581-42bc-94ca-6633e2851979)、および`Add Web Reference`Visual Studio の機能です。 メタデータの公開を有効にする必要があります。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [メタデータ エンドポイントを公開](../../../docs/framework/wcf/publishing-metadata-endpoints.md)です。  
+ メタデータを行うために、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]に利用できるサービス[!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)]、Web サービス クライアント生成ツールを使用して: [Web サービス記述言語ツール (Wsdl.exe)](http://msdn.microsoft.com/library/b9210348-8bc2-4367-8c91-d1a04b403e88)、 [Web サービス検出ツール (Disco.exe)](http://msdn.microsoft.com/library/acd88078-c581-42bc-94ca-6633e2851979)、および`Add Web Reference`Visual Studio の機能です。 メタデータの公開を有効にする必要があります。 詳細については、次を参照してください。[メタデータ エンドポイントを公開する](../../../docs/framework/wcf/publishing-metadata-endpoints.md)です。  
   
 ## <a name="example"></a>例  
   

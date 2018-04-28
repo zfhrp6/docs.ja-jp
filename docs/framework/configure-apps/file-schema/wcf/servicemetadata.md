@@ -1,32 +1,34 @@
 ---
 title: '&lt;serviceMetadata&gt;'
-ms.custom: 
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 2b4c3b4c-31d4-4908-a9b7-5bb411c221f2
-caps.latest.revision: "28"
+caps.latest.revision: 28
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 26dd46cc8915dffdafe211a33ea80e8e46d5acf5
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: b0b98c637c98c75aab5009f9a2f35b8ce6b90012
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="ltservicemetadatagt"></a>&lt;serviceMetadata&gt;
 サービス メタデータと関連情報の公開を指定します。  
   
-\<system.serviceModel >  
+\<system.serviceModel>  
 \<ビヘイビアー >  
-\<serviceBehaviors >  
-\<動作 >  
+\<serviceBehaviors>  
+\<behavior>  
 \<serviceMetadata >  
   
 ## <a name="syntax"></a>構文  
@@ -54,11 +56,11 @@ ms.lasthandoff: 12/22/2017
 |externalMetadataLocation|WSDL ファイルの位置を含む URI。これは、自動生成される WSDL の代わりに、WSDL 要求および MEX 要求に応答してユーザーに返されます。 この属性が設定されていない場合は、既定の WSDL が返されます。 既定値は空の文字列です。|  
 |httpGetBinding|HTTP GET 経由でメタデータを取得する場合に使用するバインディングの種類を指定する文字列。 この設定は省略可能です。 指定しない場合、既定のバインディングが使用されます。<br /><br /> <xref:System.ServiceModel.Channels.IReplyChannel> をサポートする内部バインディング要素を使用したバインディングでのみサポートされます。 さらに、バインディングの <xref:System.ServiceModel.Channels.MessageVersion> プロパティが <xref:System.ServiceModel.Channels.MessageVersion.None%2A> である必要があります。|  
 |httpGetBindingConfiguration|このバインディングの追加の構成情報を参照する `httpGetBinding` 属性に指定されるバインディングの名前を設定する文字列。 同じ名前を `<bindings>` セクションに定義する必要があります。|  
-|httpGetEnabled|HTTP/Get 要求を使用した取得用にサービス メタデータを公開するかどうかを指定するブール値。 既定値は、`false` です。<br /><br /> httpGetUrl 属性が指定されていない場合、メタデータが公開されるアドレスは、サービス アドレスに "?wsdl" を加えたものになります。 たとえば、サービス アドレスが "http://localhost:8080/CalculatorService" の場合、HTTP/Get メタデータ アドレスは、"http://localhost:8080/CalculatorService?wsdl" になります。<br /><br /> 場合は、このプロパティは`false`サービスのアドレスが HTTP または HTTPS に基づいていない、または"? wsdl"は無視されます。|  
+|httpGetEnabled|HTTP/Get 要求を使用した取得用にサービス メタデータを公開するかどうかを指定するブール値。 既定値は、`false` です。<br /><br /> httpGetUrl 属性が指定されていない場合、メタデータが公開されるアドレスは、サービス アドレスに "?wsdl" を加えたものになります。 たとえば、サービス アドレスが"http://localhost:8080/CalculatorService「、Http/get メタデータ アドレスは」http://localhost:8080/CalculatorService?wsdl"です。<br /><br /> 場合は、このプロパティは`false`サービスのアドレスが HTTP または HTTPS に基づいていない、または"? wsdl"は無視されます。|  
 |httpGetUrl|HTTP/Get 要求を使用した取得用にメタデータが公開されるアドレスを指定する URI。 相対 URI を指定した場合、サービスのベース アドレスに対する相対として処理されます。|  
 |httpsGetBinding|HTTPS GET 経由でメタデータを取得する場合に使用するバインディングの種類を指定する文字列。 この設定は省略可能です。 指定しない場合、既定のバインディングが使用されます。<br /><br /> <xref:System.ServiceModel.Channels.IReplyChannel> をサポートする内部バインディング要素を使用したバインディングでのみサポートされます。 さらに、バインディングの <xref:System.ServiceModel.Channels.MessageVersion> プロパティが <xref:System.ServiceModel.Channels.MessageVersion.None%2A> である必要があります。|  
 |httpsGetBindingConfiguration|このバインディングの追加の構成情報を参照する `httpsGetBinding` 属性に指定されるバインディングの名前を設定する文字列。 同じ名前を `<bindings>` セクションに定義する必要があります。|  
-|httpsGetEnabled|HTTPS/Get 要求を使用した取得用にサービス メタデータを公開するかどうかを指定するブール値。 既定値は、`false` です。<br /><br /> httpsGetUrl 属性が指定されていない場合、メタデータが公開されるアドレスは、サービス アドレスに "?wsdl" を加えたものになります。 たとえば、サービス アドレスが "https://localhost:8080/CalculatorService" の場合、HTTP/Get メタデータ アドレスは、"https://localhost:8080/CalculatorService?wsdl" になります。<br /><br /> 場合は、このプロパティは`false`サービスのアドレスが HTTP または HTTPS に基づいていない、または"? wsdl"は無視されます。|  
+|httpsGetEnabled|HTTPS/Get 要求を使用した取得用にサービス メタデータを公開するかどうかを指定するブール値。 既定値は、`false` です。<br /><br /> httpsGetUrl 属性が指定されていない場合、メタデータが公開されるアドレスは、サービス アドレスに "?wsdl" を加えたものになります。 たとえば、サービス アドレスが"https://localhost:8080/CalculatorService「、Http/get メタデータ アドレスは」https://localhost:8080/CalculatorService?wsdl"です。<br /><br /> 場合は、このプロパティは`false`サービスのアドレスが HTTP または HTTPS に基づいていない、または"? wsdl"は無視されます。|  
 |httpsGetUrl|HTTPS/Get 要求を使用した取得用にメタデータが公開されるアドレスを指定する URI。|  
 |policyVersion|使用する WS-Policy 仕様のバージョンを指定する文字列。 この属性は <xref:System.ServiceModel.Description.PolicyVersion> 型です。|  
   
@@ -69,7 +71,7 @@ ms.lasthandoff: 12/22/2017
   
 |要素|説明|  
 |-------------|-----------------|  
-|[\<動作 >](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|動作の要素を指定します。|  
+|[\<behavior>](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|動作の要素を指定します。|  
   
 ## <a name="remarks"></a>コメント  
  この構成要素を使用すると、サービスのメタデータ公開機能を制御できます。 サービスのメタデータには機密情報が含まれる可能性がありますが、意図的ではない開示を回避するために、[!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] サービスの既定の構成では、メタデータは公開されないようになっています。 この動作は、既定の設定ではセキュリティで保護されますが、同時に、サービスの構成の中でメタデータ公開の動作が明示的に有効化されない限り、サービスの呼び出しに必要なクライアント コードをメタデータ インポート ツール (Svcutil.exe など) を使用して生成できないことも意味します。 この構成要素を使用すると、サービスのこの公開動作を有効にできます。  
@@ -78,7 +80,7 @@ ms.lasthandoff: 12/22/2017
   
  オプションの `httpGetBinding` 属性および `httpsGetBinding` 属性を使用すると、HTTP GET または HTTPS GET を介してメタデータを取得するバインディングを構成できます。 これらの属性を指定しない場合、メタデータの取得には、適切な既定のバインディグ (HTTP の場合は `HttpTransportBindingElement`、HTTPS の場合は `HttpsTransportBindingElement`) が使用されます。 これらの属性は、組み込みの WCF バインディングでは使用できないことに注意してください。 <xref:System.ServiceModel.Channels.IReplyChannel> をサポートする内部バインディング要素を使用したバインディングでのみサポートされます。 さらに、バインディングの <xref:System.ServiceModel.Channels.MessageVersion> プロパティが <xref:System.ServiceModel.Channels.MessageVersion.None%2A> である必要があります。  
   
- サービスが悪意のあるユーザーに公開されないようにするために、SSL over HTTP (HTTPS) 機構を使用して転送をセキュリティで保護できます。 転送を保護するには、まず、サービスをホストしているコンピューターの特定のポートに適切な X.509 証明書をバインドする必要があります。 ([!INCLUDE[crdefault](../../../../../includes/crdefault-md.md)] [証明書の使用](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md))。次に、この要素をサービス構成に追加し、`httpsGetEnabled` 属性を `true` に設定します。 最後に、次の例に示すように、`httpsGetUrl` 属性をサービス メタデータ エンドポイントの URL に設定します。  
+ サービスが悪意のあるユーザーに公開されないようにするために、SSL over HTTP (HTTPS) 機構を使用して転送をセキュリティで保護できます。 転送を保護するには、まず、サービスをホストしているコンピューターの特定のポートに適切な X.509 証明書をバインドする必要があります。 (詳細については、次を参照してください[証明書の使用](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)。)。次に、この要素をサービス構成に追加し、`httpsGetEnabled` 属性を `true` に設定します。 最後に、次の例に示すように、`httpsGetUrl` 属性をサービス メタデータ エンドポイントの URL に設定します。  
   
 ```xml
 <behaviors>  
@@ -92,7 +94,7 @@ ms.lasthandoff: 12/22/2017
 ```  
   
 ## <a name="example"></a>例  
- 次の例を使用してメタデータを公開するサービスの構成、 \<serviceMetadata > 要素。 さらに、`IMetadataExchange` コントラクトを WS-MetadataExchange (MEX) プロトコルの実装として公開するエンドポイントも構成します。 この例では、`mexHttpBinding` を使用します。これは使いやすい標準バインドで、セキュリティ モードが `wsHttpBinding` に設定されている `None` と同等です。 エンドポイントには、相対アドレスの "mex" が使用されています。このアドレスがサービスのベース アドレスに対して解決されると、エンドポイントのアドレスは http://localhost/servicemodelsamples/service.svc/mex になります。  
+ 次の例を使用してメタデータを公開するサービスの構成、 \<serviceMetadata > 要素。 さらに、`IMetadataExchange` コントラクトを WS-MetadataExchange (MEX) プロトコルの実装として公開するエンドポイントも構成します。 この例では、`mexHttpBinding` を使用します。これは使いやすい標準バインドで、セキュリティ モードが `wsHttpBinding` に設定されている `None` と同等です。 相対アドレスの"mex"が使用されるエンドポイントには、どのに対して解決とサービスのベース アドレスのエンドポイント アドレスhttp://localhost/servicemodelsamples/service.svc/mexです。  
   
 ```xml
 <configuration>  
@@ -131,7 +133,7 @@ ms.lasthandoff: 12/22/2017
 </configuration>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Configuration.ServiceMetadataPublishingElement>  
  <xref:System.ServiceModel.Description.ServiceMetadataBehavior>  
  [セキュリティ動作](../../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)  

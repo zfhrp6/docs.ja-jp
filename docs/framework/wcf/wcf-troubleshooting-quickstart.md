@@ -1,27 +1,29 @@
 ---
-title: "WCF トラブルシューティング クイックスタート"
-ms.custom: 
+title: WCF トラブルシューティング クイックスタート
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - WCF [WCF], troubleshooting
 - Windows Communication Foundation [WCF], troubleshooting
 ms.assetid: a9ea7a53-f31a-46eb-806e-898e465a4992
-caps.latest.revision: "22"
+caps.latest.revision: 22
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: d0bcd7d08a698a2a839094204dcc5f7105ef8f6b
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: 490b756a9beae09b20a36d3fc6a20c85aad76618
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="wcf-troubleshooting-quickstart"></a>WCF トラブルシューティング クイックスタート
 このトピックでは、WCF クライアントと WCF サービスの開発時に生じるさまざまな既知の問題の一覧を示します。 発生している問題がこの一覧にない場合は、サービスに対してトレースを構成することをお勧めします。 これにより、トレース ファイル ビューアーで表示し、サービス内で発生することがある例外に関する詳細情報を取得できるトレース ファイルが生成されます。 トレースの構成の詳細については、「 [Configuring Tracing](../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)」を参照してください。 トレース ファイル ビューアーの詳細については、「 [Service Trace Viewer Tool (SvcTraceViewer.exe)](../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md)」を参照してください。  
@@ -62,11 +64,11 @@ ms.lasthandoff: 01/19/2018
   
 <a name="BKMK_q1"></a>   
 ## <a name="sometimes-i-receive-a-messagesecurityexception-on-the-second-request-if-my-client-is-idle-for-a-while-after-the-first-request-what-is-happening"></a>最初の要求の後でクライアントがしばらくアイドル状態になった場合、2 番目の要求で MessageSecurityException を受け取ることがあります。 どうしてでしょうか。  
- 2 番目の要求は、主に次の 2 つの理由から失敗する可能性があります。(1) セッションがタイムアウトした。(2) サービスをホストしている Web サーバーがリサイクルされている。 最初の理由の場合、セッションはサービスがタイムアウトするまで有効です。サービスは、サービスのバインディング (<xref:System.ServiceModel.Channels.Binding.ReceiveTimeout%2A>) で指定された期間内にクライアントから要求を受信しなかった場合、セキュリティ セッションを終了します。 それ以降のクライアント メッセージでは、 <xref:System.ServiceModel.Security.MessageSecurityException>が発生します。 クライアントは、セキュリティで保護されたセッションをサービスとの間に再度確立して、後続のメッセージを送信するか、ステートフルなセキュリティ コンテキスト トークンを使用する必要があります。 また、ステートフルなセキュリティ コンテキスト トークンによって、セキュリティで保護されたセッションは、再利用される Web サーバーで存続することができます。 [!INCLUDE[crabout](../../../includes/crabout-md.md)]セキュリティで保護されたセッションでステートフルなセキュリティ コンテキスト トークンを使用して、参照してください[する方法: セキュリティで保護されたセッションのセキュリティ コンテキスト トークンを作成](../../../docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md)です。 また、セキュリティで保護されたセッションは無効にできます。 使用すると、 [ \<wsHttpBinding >](../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) 、バインドを設定できます、`establishSecurityContext`プロパティを`false`をセキュリティで保護されたセッションを無効にします。 その他のバインディングでセキュリティで保護されたセッションを無効にするには、カスタム バインディングを作成する必要があります。 カスタム バインディングの作成の詳細については、「 [How to: Create a Custom Binding Using the SecurityBindingElement](../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)」を参照してください。 このオプションを適用する前に、アプリケーションのセキュリティ要件を確認する必要があります。  
+ 2 番目の要求は、主に次の 2 つの理由から失敗する可能性があります。(1) セッションがタイムアウトした。(2) サービスをホストしている Web サーバーがリサイクルされている。 最初の理由の場合、セッションはサービスがタイムアウトするまで有効です。サービスは、サービスのバインディング (<xref:System.ServiceModel.Channels.Binding.ReceiveTimeout%2A>) で指定された期間内にクライアントから要求を受信しなかった場合、セキュリティ セッションを終了します。 それ以降のクライアント メッセージでは、 <xref:System.ServiceModel.Security.MessageSecurityException>が発生します。 クライアントは、セキュリティで保護されたセッションをサービスとの間に再度確立して、後続のメッセージを送信するか、ステートフルなセキュリティ コンテキスト トークンを使用する必要があります。 また、ステートフルなセキュリティ コンテキスト トークンによって、セキュリティで保護されたセッションは、再利用される Web サーバーで存続することができます。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] セキュリティで保護されたセッションでステートフルなセキュリティ コンテキスト トークンを使用して、参照してください[する方法: セキュリティで保護されたセッションのセキュリティ コンテキスト トークンを作成](../../../docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md)です。 また、セキュリティで保護されたセッションは無効にできます。 使用すると、 [ \<wsHttpBinding >](../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) 、バインドを設定できます、`establishSecurityContext`プロパティを`false`をセキュリティで保護されたセッションを無効にします。 その他のバインディングでセキュリティで保護されたセッションを無効にするには、カスタム バインディングを作成する必要があります。 カスタム バインディングの作成の詳細については、「 [How to: Create a Custom Binding Using the SecurityBindingElement](../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)」を参照してください。 このオプションを適用する前に、アプリケーションのセキュリティ要件を確認する必要があります。  
   
 <a name="BKMK_q2"></a>   
 ## <a name="my-service-starts-to-reject-new-clients-after-about-10-clients-are-interacting-with-it-what-is-happening"></a>サービスと対話しているクライアントの数が約 10 個になると、サービスが新しいクライアントを拒否し始めます。 どうしてでしょうか。  
- 既定では、サービスは、10 個の同時セッションだけをサポートできます。 したがって、サービス バインディングでセッションを使用する場合、サービスは 10 個に到達するまで新しいクライアント接続を受け入れますが、その数に到達した後は、現在実行中のセッションの 1 つが終了するまで新しいクライアント接続を拒否します。 いくつかの方法で、より多くのクライアントをサポートできます。 サービスにセッションが必要ない場合、セッションの多いバインディングを使用しないでください ([!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [セッションを使用して](../../../docs/framework/wcf/using-sessions.md))。他には、<xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentSessions%2A> プロパティの値をユーザーの環境に適した数値に変更することによって、セッションの制限値を増やす方法があります。  
+ 既定では、サービスは、10 個の同時セッションだけをサポートできます。 したがって、サービス バインディングでセッションを使用する場合、サービスは 10 個に到達するまで新しいクライアント接続を受け入れますが、その数に到達した後は、現在実行中のセッションの 1 つが終了するまで新しいクライアント接続を拒否します。 いくつかの方法で、より多くのクライアントをサポートできます。 サービスにセッションが必要ない場合、セッションの多いバインディングを使用しないでください (詳細については、次を参照してください[セッションを使用した](../../../docs/framework/wcf/using-sessions.md)。)。他には、<xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentSessions%2A> プロパティの値をユーザーの環境に適した数値に変更することによって、セッションの制限値を増やす方法があります。  
   
 <a name="BKMK_q3"></a>   
 ## <a name="can-i-load-my-service-configuration-from-somewhere-other-than-the-wcf-applications-configuration-file"></a>WCF アプリケーションの構成ファイル以外の場所からサービス構成を読み込むことはできますか。  
@@ -159,13 +161,13 @@ public class MyServiceHost : ServiceHost
   
 -   標準的な方法でシリアル化している例外に依存できません。 <xref:System.Security.SecurityException>のような例外はまったくシリアル化できない可能性があります。  
   
--   クライアントに内部実装の詳細が公開されます。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][コントラクトおよびサービスでエラー指定と処理](../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md)です。  
+-   クライアントに内部実装の詳細が公開されます。 詳細については、次を参照してください。[を指定すると処理のエラー コントラクトおよびサービスの](../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md)します。  
   
  ただし、アプリケーションをデバッグしている場合、 <xref:System.ServiceModel.Description.ServiceDebugBehavior> クラスを使用することによって例外情報をシリアル化して、その情報をクライアントに返すことができます。  
   
 <a name="BKMK_q6"></a>   
 ## <a name="it-seems-like-one-way-and-request-reply-operations-return-at-roughly-the-same-speed-when-the-reply-contains-no-data-whats-happening"></a>応答にデータがない場合、一方向操作と要求/応答操作が戻る速度がほぼ同じになるようです。 どうしてでしょうか。  
- 操作を一方向に指定すると、操作コントラクトは入力メッセージを受け入れるだけで、出力メッセージを返しません。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]では、送信データがネットワークに書き込まれるか、例外がスローされたとき、すべてのクライアント呼び出しが戻ります。 一方向操作は同様に動作し、この操作では、サービスが見つからない場合は例外をスローし、サービスがネットワークからのデータの受け入れ準備を完了していない場合はブロックできます。 このため、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]では通常、一方向呼び出しは要求/応答よりも速くクライアントに戻りますが、ネットワーク上でデータの送信速度が遅くなると、一方向操作の速度も要求/応答操作の速度と同様に遅くなります。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][一方向サービス](../../../docs/framework/wcf/feature-details/one-way-services.md)と[WCF クライアントを使用してサービスにアクセスする](../../../docs/framework/wcf/feature-details/accessing-services-using-a-client.md)です。  
+ 操作を一方向に指定すると、操作コントラクトは入力メッセージを受け入れるだけで、出力メッセージを返しません。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]では、送信データがネットワークに書き込まれるか、例外がスローされたとき、すべてのクライアント呼び出しが戻ります。 一方向操作は同様に動作し、この操作では、サービスが見つからない場合は例外をスローし、サービスがネットワークからのデータの受け入れ準備を完了していない場合はブロックできます。 このため、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]では通常、一方向呼び出しは要求/応答よりも速くクライアントに戻りますが、ネットワーク上でデータの送信速度が遅くなると、一方向操作の速度も要求/応答操作の速度と同様に遅くなります。 詳細については、次を参照してください。[一方向サービス](../../../docs/framework/wcf/feature-details/one-way-services.md)と[にアクセスするサービスの WCF クライアントを使用して](../../../docs/framework/wcf/feature-details/accessing-services-using-a-client.md)です。  
   
 <a name="BKMK_q77"></a>   
 ## <a name="im-using-an-x509-certificate-with-my-service-and-i-get-a-systemsecuritycryptographycryptographicexception-whats-happening"></a>サービスで X.509 証明書を使用していますが、System.Security.Cryptography.CryptographicException を受け取ります。 どうしてでしょうか。  
@@ -248,7 +250,7 @@ public class MyServiceHost : ServiceHost
   
 <a name="BK_MK99"></a>   
 ## <a name="when-calling-a-wcf-web-http-application-from-a-wcf-soap-application-the-service-returns-the-following-error-405-method-not-allowed"></a>WCF SOAP アプリケーションから WCF Web HTTP アプリケーションを呼び出すと、サービスから "405 メソッドは許可されていません" というエラーが返されます  
- WCF Web HTTP アプリケーションを呼び出す (を使用するサービス、<xref:System.ServiceModel.WebHttpBinding>と<xref:System.ServiceModel.Description.WebHttpBehavior>) WCF からサービスは、次の例外を生成可能性があります: `Unhandled Exception: System.ServiceModel.FaultException`1[System.ServiceModel.ExceptionDetail]: リモート サーバーが、予期しない応答を返しました: (405) メソッドいない許可済みです。 '、発信 WCF が上書きされるため、この例外が発生した<xref:System.ServiceModel.OperationContext>を受信<xref:System.ServiceModel.OperationContext>です。 この問題を解決するには、WCF Web HTTP サービス操作内で <xref:System.ServiceModel.OperationContextScope> を作成します。 例:  
+ WCF Web HTTP アプリケーションを呼び出す (を使用するサービス、<xref:System.ServiceModel.WebHttpBinding>と<xref:System.ServiceModel.Description.WebHttpBehavior>) WCF からサービスは、次の例外を生成可能性があります: `Unhandled Exception: System.ServiceModel.FaultException`1[System.ServiceModel.ExceptionDetail]: リモート サーバーが、予期しない応答を返しました: (405) メソッドいない許可済みです。 '、発信 WCF が上書きされるため、この例外が発生した<xref:System.ServiceModel.OperationContext>を受信<xref:System.ServiceModel.OperationContext>です。 この問題を解決するには、WCF Web HTTP サービス操作内で <xref:System.ServiceModel.OperationContextScope> を作成します。 例えば:  
   
 ```csharp
 public string Echo(string input)  
@@ -260,5 +262,5 @@ public string Echo(string input)
 }  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Windows 認証エラーのデバッグ](../../../docs/framework/wcf/feature-details/debugging-windows-authentication-errors.md)

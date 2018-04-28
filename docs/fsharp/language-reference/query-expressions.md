@@ -1,20 +1,17 @@
 ---
-title: "クエリ式 (F#)"
-description: "F# のプログラミング言語での linq クエリ式のサポートについて説明します。"
-keywords: "visual f#, f#, 関数型プログラミング"
+title: クエリ式 (F#)
+description: F# のプログラミング言語での linq クエリ式のサポートについて説明します。
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: 35df2d80-e6d2-4873-b2de-9b45b9e9e650
-ms.openlocfilehash: 20ea7ef820dd295497ed996ce10e5a594d021f7e
-ms.sourcegitcommit: 39b65a49271e082add68cb737b48fdbe09d24718
+ms.openlocfilehash: 81b81d25b8c0d8656dedffd2f8ec7a8297ef7191
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/30/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="query-expressions"></a>クエリ式
 
@@ -680,7 +677,7 @@ query {
 </code></pre>
 
 </td></tr><tr><td>
-<code>IN</code>指定された値のセット<br/>
+<code>IN</code> 指定された値のセット<br/>
 
 <pre><code class="lang-sql">SELECT *
 FROM Student
@@ -721,7 +718,7 @@ query {
 </code></pre>
 
 </td></tr><tr><td>
-<code>LIKE</code>パターンを持つセットと一致します。<br/>
+<code>LIKE</code> パターンを持つセットと一致します。<br/>
 
 <pre><code class="lang-sql">-- '[abc]%' matches strings where the first character is
 -- 'a', 'b', 'c', 'A', 'B', or 'C'
@@ -738,7 +735,7 @@ WHERE Student.Name LIKE '[abc]%'
 </code></pre>
 
 </td></tr><tr><td>
-<code>LIKE</code>で除外パターンを設定します。<br/>
+<code>LIKE</code> で除外パターンを設定します。<br/>
 
 <pre><code class="lang-sql">-- '[^abc]%' matches strings where the first character is
 -- not 'a', 'b', 'c', 'A', 'B', or 'C'
@@ -757,7 +754,7 @@ query {
 </code></pre>
 
 </td></tr><tr><td>
-<code>LIKE</code>1 つのフィールドでは、別のフィールドを選択します。<br/>
+<code>LIKE</code> 1 つのフィールドでは、別のフィールドを選択します。<br/>
 
 <pre><code class="lang-sql">SELECT StudentID AS ID FROM Student
 WHERE Student.Name LIKE '[^abc]%'
@@ -807,7 +804,7 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td><code>LEFT JOIN</code>2 つのテーブルです。<br/>
+</td></tr><tr><td><code>LEFT JOIN</code> 2 つのテーブルです。<br/>
 
 <pre><code class="lang-sql">SELECT * FROM Student
 LEFT JOIN CourseSelection
@@ -826,7 +823,7 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td><code>JOIN</code>と<code>COUNT</code><br/>
+</td></tr><tr><td><code>JOIN</code> と <code>COUNT</code><br/>
 
 <pre><code class="lang-sql">SELECT COUNT( * ) FROM Student
 JOIN CourseSelection
@@ -909,7 +906,7 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td><code>OR</code>順序付けと<br/>
+</td></tr><tr><td><code>OR</code> 順序付けと<br/>
 
 <pre><code class="lang-sql">SELECT * FROM Student
 WHERE Student.Age = 12 OR Student.Age = 13
@@ -949,7 +946,7 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td><code>UNION</code>2 つのクエリ。<br/>
+</td></tr><tr><td><code>UNION</code> 2 つのクエリ。<br/>
 
 <pre><code class="lang-sql">SELECT * FROM Student
 UNION
@@ -998,7 +995,7 @@ let query2 =
 query1.Intersect(query2)
 </code></pre>
 
-</td></tr><tr><td><code>CASE</code>条件です。<br/>
+</td></tr><tr><td><code>CASE</code> 条件です。<br/>
 
 <pre><code class="lang-sql">SELECT student.StudentID,
 CASE Student.Age

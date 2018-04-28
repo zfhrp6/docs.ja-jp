@@ -12,11 +12,11 @@ ms.assetid: 6685467b-28fa-4cde-9516-f0e00ad08911
 caps.latest.revision: 36
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 58e63d95c2f10329f85d6150b58f196294de38d1
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: ebaa934ffaed985439ed65b9f5308404171a91bd
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="get-started-with-visual-basic"></a>Visual Basic 入門
 このセクションでは、Visual Basic によるアプリケーション開発を開始するための情報を提供します。  
@@ -64,8 +64,7 @@ Visual Basic .NET の各バージョンの新機能を一覧表示します。
  サポートの利用方法、およびフィードバックの送付方法について説明します。  
   
  [Visual Studio](/visualstudio/)  
- 
-          [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] のドキュメントへのリンクを示します。  
+ Visual Studio のドキュメントへのリンクを示します。  
   
  [C#](../../csharp/index.md) Visual C# を使用したアプリケーション開発についてのドキュメントへのリンクを示します。  
   
@@ -73,4 +72,4 @@ Visual Basic .NET の各バージョンの新機能を一覧表示します。
  Visual C++ のドキュメントへのリンクを示します。  
   
  [Office および SharePoint 開発](https://msdn.microsoft.com/library/d2tx7z6d)  
- Microsoft Office と [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] をビジネス アプリケーションの一部として使用する方法について説明します。
+ Microsoft Office と Visual Studio をビジネス アプリケーションの一部として使用する方法について説明します。

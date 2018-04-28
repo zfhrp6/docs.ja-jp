@@ -1,12 +1,13 @@
 ---
-title: "方法 : フェデレーション クライアントを作成する"
-ms.custom: 
+title: '方法 : フェデレーション クライアントを作成する'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,21 +16,22 @@ helpviewer_keywords:
 - WCF, federation
 - federation
 ms.assetid: 56ece47e-98bf-4346-b92b-fda1fc3b4d9c
-caps.latest.revision: "21"
+caps.latest.revision: 21
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 7fda534d591ae5142fb732607c7e248ef3cc71bc
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 38436a83bf58c4903a931ecafebf922800d230c1
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="how-to-create-a-federated-client"></a>方法 : フェデレーション クライアントを作成する
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]、クライアントを作成、*フェデレーション サービス*の 3 つの主要な手順で構成されています。  
   
-1.  構成、 [ \<wsFederationHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md)または同様のカスタム バインドします。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]適切なバインドを作成するを参照してください[する方法: WSFederationHttpBinding を作成](../../../../docs/framework/wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md)です。 また、実行、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)フェデレーション サービスと 1 つ以上と通信するための構成ファイルを生成するフェデレーション サービスのメタデータ エンドポイントに対してセキュリティ トークン サービスです。  
+1.  構成、 [ \<wsFederationHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md)または同様のカスタム バインドします。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] 適切なバインドを作成するを参照してください[する方法: WSFederationHttpBinding を作成](../../../../docs/framework/wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md)です。 また、実行、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)フェデレーション サービスと 1 つ以上と通信するための構成ファイルを生成するフェデレーション サービスのメタデータ エンドポイントに対してセキュリティ トークン サービスです。  
   
 2.  クライアントがセキュリティ トークン サービスと対話する際のさまざまな側面を制御する <xref:System.ServiceModel.Security.IssuedTokenClientCredential> のプロパティを設定します。  
   
@@ -38,7 +40,7 @@ ms.lasthandoff: 12/22/2017
 > [!NOTE]
 >  クライアントが、偽装された資格情報、<xref:System.Security.Cryptography.CryptographicException> バインディングやカスタムの発行済みトークン、および非対称キーを使用すると、<xref:System.ServiceModel.WSFederationHttpBinding> がスローされる可能性があります。 <xref:System.ServiceModel.WSFederationHttpBinding> プロパティと <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.IssuedKeyType%2A> プロパティをそれぞれ <xref:System.ServiceModel.Security.Tokens.IssuedSecurityTokenParameters.KeyType%2A> に設定すると、<xref:System.IdentityModel.Tokens.SecurityKeyType.AsymmetricKey> バインディングとカスタムの発行済みトークンで非対称キーが使用されます。 クライアントがメッセージを送信しようとするときに、クライアントが偽装している ID のユーザー プロファイルが存在しないと、<xref:System.Security.Cryptography.CryptographicException> がスローされます。 この問題を回避するには、クライアント コンピューターにログオンした後、または `LoadUserProfile` を呼び出した後に、メッセージを送信します。  
   
- ここでは、これらの手順について詳しく説明します。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]適切なバインドを作成するを参照してください[する方法: WSFederationHttpBinding を作成](../../../../docs/framework/wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md)です。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]フェデレーション サービスの動作を参照してください。[フェデレーション](../../../../docs/framework/wcf/feature-details/federation.md)です。  
+ ここでは、これらの手順について詳しく説明します。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] 適切なバインドを作成するを参照してください[する方法: WSFederationHttpBinding を作成](../../../../docs/framework/wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md)です。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] フェデレーション サービスの動作を参照してください。[フェデレーション](../../../../docs/framework/wcf/feature-details/federation.md)です。  
   
 ### <a name="to-generate-and-examine-the-configuration-for-a-federated-service"></a>フェデレーション サービスの構成を生成し、確認するには  
   
@@ -95,7 +97,7 @@ ms.lasthandoff: 12/22/2017
   
 2.  トークンのキャッシュが必要ない場合は、設定、`cacheIssuedTokens`属性 (の <`issuedToken`> 要素) を`false`です。  
   
-3.  キャッシュされたトークンを 制限時間が必要な場合は、設定、`maxIssuedTokenCachingTime`属性に、<`issuedToken`> 要素を適切な値です。 例:  
+3.  キャッシュされたトークンを 制限時間が必要な場合は、設定、`maxIssuedTokenCachingTime`属性に、<`issuedToken`> 要素を適切な値です。 例えば:  
     `<issuedToken maxIssuedTokenCachingTime='00:10:00' />`  
   
 4.  既定値以外の値を優先する場合、設定、`issuedTokenRenewalThresholdPercentage`属性に、<`issuedToken`> 要素例については、適切な値。  
@@ -163,15 +165,15 @@ ms.lasthandoff: 12/22/2017
 ## <a name="localissuer-required"></a>LocalIssuer が必要な場合  
  チェーン内の 2 番目から最後までのセキュリティ トークン サービスによって発行者アドレスまたは発行者メタデータ アドレスが指定されている場合、Svcutil.exe の既定の出力では、ローカル発行者が使用されません。クライアントで常にローカル発行者を使用する場合は、この点に注意が必要です。  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]設定、 <xref:System.ServiceModel.Security.IssuedTokenClientCredential.LocalIssuerAddress%2A>、 <xref:System.ServiceModel.Security.IssuedTokenClientCredential.LocalIssuerBinding%2A>、および<xref:System.ServiceModel.Security.IssuedTokenClientCredential.LocalIssuerChannelBehaviors%2A>のプロパティ、<xref:System.ServiceModel.Security.IssuedTokenClientCredential>クラスを参照してください[する方法: ローカル発行者を構成する](../../../../docs/framework/wcf/feature-details/how-to-configure-a-local-issuer.md)です。  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)] 設定、 <xref:System.ServiceModel.Security.IssuedTokenClientCredential.LocalIssuerAddress%2A>、 <xref:System.ServiceModel.Security.IssuedTokenClientCredential.LocalIssuerBinding%2A>、および<xref:System.ServiceModel.Security.IssuedTokenClientCredential.LocalIssuerChannelBehaviors%2A>のプロパティ、<xref:System.ServiceModel.Security.IssuedTokenClientCredential>クラスを参照してください[する方法: ローカル発行者を構成する](../../../../docs/framework/wcf/feature-details/how-to-configure-a-local-issuer.md)です。  
   
 ## <a name="scoped-certificates"></a>範囲指定された証明書  
  証明書ネゴシエーションを使用しないという一般的な理由により、任意のセキュリティ トークン サービスとの通信用のサービス証明書を指定する必要がある場合は、<xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential.ScopedCertificates%2A> クラスの <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential> プロパティを使用して指定できます。 <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential.SetDefaultCertificate%2A> メソッドは、パラメーターとして <xref:System.Uri> と <xref:System.Security.Cryptography.X509Certificates.X509Certificate2> を受け取ります。 指定した証明書は、指定した URI のエンドポイントと通信するときに使用されます。 または、<xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential.SetScopedCertificate%2A> メソッドを使用して、<xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential.ScopedCertificates%2A> プロパティによって返されるコレクションに証明書を追加することもできます。  
   
 > [!NOTE]
->  特定の URI に範囲指定された証明書というクライアントの概念は、該当する URI でエンドポイントを公開するサービスへの送信呼び出しを行うアプリケーションにだけ適用されます。 によって返されるコレクション内のサーバーで構成されているものなど、発行済みトークンの署名に使用される証明書には適用されません、<xref:System.ServiceModel.Security.IssuedTokenServiceCredential.KnownCertificates%2A>の<xref:System.ServiceModel.Security.IssuedTokenServiceCredential>クラスです。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][する方法: フェデレーション サービスの資格情報を構成する](../../../../docs/framework/wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md)です。  
+>  特定の URI に範囲指定された証明書というクライアントの概念は、該当する URI でエンドポイントを公開するサービスへの送信呼び出しを行うアプリケーションにだけ適用されます。 によって返されるコレクション内のサーバーで構成されているものなど、発行済みトークンの署名に使用される証明書には適用されません、<xref:System.ServiceModel.Security.IssuedTokenServiceCredential.KnownCertificates%2A>の<xref:System.ServiceModel.Security.IssuedTokenServiceCredential>クラスです。 詳細については、次を参照してください。[する方法: フェデレーション サービスの資格情報の構成](../../../../docs/framework/wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [フェデレーション サンプル](../../../../docs/framework/wcf/samples/federation-sample.md)  
  [方法 : WSFederationHttpBinding のセキュリティで保護されたセッションを無効にする](../../../../docs/framework/wcf/feature-details/how-to-disable-secure-sessions-on-a-wsfederationhttpbinding.md)  
  [方法 : WSFederationHttpBinding を作成する](../../../../docs/framework/wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md)  

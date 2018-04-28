@@ -1,20 +1,17 @@
 ---
-title: "条件式: if... then...else (F#)"
-description: "コードの別の分岐を実行するのには、f# で条件付きの式を記述する方法を説明します。"
-keywords: "visual f#, f#, 関数型プログラミング"
+title: '条件式: if... then...else (F#)'
+description: コードの別の分岐を実行するのには、f# で条件付きの式を記述する方法を説明します。
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: 16e1871c-4d4d-4691-9ab2-bd2c6f65589a
-ms.openlocfilehash: 5823e46cd13053fcd31f94f2d79d1f7470ca5118
-ms.sourcegitcommit: d3cfda0943364aaf6ccd574f55f584576c8a4fee
+ms.openlocfilehash: bfb985f09be91034894e1d3eba88cebef6bb3fd4
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="conditional-expressions-ifthenelse"></a>条件式: `if...then...else`
 
@@ -44,6 +41,6 @@ How old are you? 9
 You are only 9 years old and already learning F#? Wow!
 ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 [F# 言語リファレンス](index.md)
 

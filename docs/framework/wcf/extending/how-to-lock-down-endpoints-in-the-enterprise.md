@@ -1,29 +1,31 @@
 ---
-title: "方法 : 企業内のエンドポイントをロックダウンする"
-ms.custom: 
+title: '方法 : 企業内のエンドポイントをロックダウンする'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 1b7eaab7-da60-4cf7-9d6a-ec02709cf75d
-caps.latest.revision: "21"
+caps.latest.revision: 21
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 5b6fa36a269dec4a191417813ec9c4ee26b699ee
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: e5b10665e9a820c7057231c684769bddf9cb0c79
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="how-to-lock-down-endpoints-in-the-enterprise"></a>方法 : 企業内のエンドポイントをロックダウンする
 大規模な企業では、多くの場合、企業のセキュリティ ポリシーに準拠してアプリケーションを開発する必要があります。 ここでは、コンピューターにインストールされているすべての [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] クライアント アプリケーションを検証できるクライアント エンドポイント検証を開発してインストールする方法を説明します。  
   
- この場合、検証コントロールは、クライアント検証コントロールをクライアントにこのエンドポイントの動作が追加されるため[ \<commonBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/commonbehaviors.md) machine.config ファイル内のセクションです。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、クライアント アプリケーションだけを対象に共通のエンドポイント動作を読み込み、サービス アプリケーションだけを対象に共通のサービス動作を読み込みます。 サービス アプリケーション用のこの同じ検証コントロールをインストールするには、検証コントロールがサービス動作であることが必要です。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][ \<commonBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/commonbehaviors.md)セクションです。  
+ この場合、検証コントロールは、クライアント検証コントロールをクライアントにこのエンドポイントの動作が追加されるため[ \<commonBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/commonbehaviors.md) machine.config ファイル内のセクションです。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、クライアント アプリケーションだけを対象に共通のエンドポイント動作を読み込み、サービス アプリケーションだけを対象に共通のサービス動作を読み込みます。 サービス アプリケーション用のこの同じ検証コントロールをインストールするには、検証コントロールがサービス動作であることが必要です。 詳細については、次を参照してください。、 [ \<commonBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/commonbehaviors.md)セクションです。  
   
 > [!IMPORTANT]
 >  サービスまたはエンドポイントの動作でマークされていない、<xref:System.Security.AllowPartiallyTrustedCallersAttribute>属性 (APTCA) に追加される、 [ \<commonBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/commonbehaviors.md)部分的な信頼でアプリケーションを実行すると、構成ファイルのセクションが実行されませんこのエラーが発生、環境、および例外がスローされません。 検証コントロールなどの共通動作を強制的に実行するには、次のいずれかを行う必要があります。  
@@ -74,6 +76,6 @@ ms.lasthandoff: 12/22/2017
 ## <a name="net-framework-security"></a>.NET Framework セキュリティ  
  また、構成ファイルの要素を暗号化する必要がある場合もあります。 詳細については、「参照」を参照してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [DPAPI を使用する暗号化の構成ファイルの要素](http://go.microsoft.com/fwlink/?LinkId=94954)  
  [RSA を使用して、暗号化のための構成ファイルの要素](http://go.microsoft.com/fwlink/?LinkId=94955)

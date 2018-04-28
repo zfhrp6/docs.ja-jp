@@ -20,11 +20,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: d795008e014deaa126dac1bb978ac825f2536208
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: e6d800b35a69c08ab9f7bd90165691eab7d8743f
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="data-service-versioning-wcf-data-services"></a>データ サービスのバージョン管理 (WCF Data Services)
 [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]クライアントは、Uri を使用して、データ モデルに基づいたリソースとしてデータをアクセスできるように、データ サービスを作成することができます。 [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] では、サービス操作の定義もサポートしています。 ビジネス ニーズの変化、情報テクノロジの要件、その他の問題への対処などのさまざまな理由により、サービスの初期導入後と、場合によっては有効期間中に数回、これらのデータ サービスを変更することが必要になる場合があります。 既存のデータ サービスに変更を加える場合は、新しいバージョンのデータ サービスを定義する必要性や、既存のクライアント アプリケーションへの影響を最小限に抑える最善の方法を検討する必要があります。 ここでは、新しいバージョンのデータ サービスをいつどのように作成するかに関するガイダンスを示します。 さらに、[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] が [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] プロトコルの異なるバージョンをサポートするクライアントとデータ サービスの間の交換どのように処理するかについても説明します。  
@@ -82,7 +82,7 @@ ms.lasthandoff: 04/26/2018
 |バージョン 3|-ダウンロードしてインストールをサポートするプレリリース バージョン[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]からバージョン 3、 [Microsoft ダウンロード センター](http://go.microsoft.com/fwlink/?LinkId=203885)です。|  
   
 ### <a name="metadata-versions"></a>メタデータのバージョン  
- 既定では、[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] ではデータ モデルを表すために CSDL のバージョン 1.1 が使用されます。 リフレクション プロバイダーまたはカスタム データ サービス プロバイダーに基づくデータ モデルの場合は、常にこの CSDL バージョンが使用されます。 ただし、[!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] を使用してデータ モデルを定義している場合は、返される CSDL のバージョンは [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] で使用されるバージョンと同じになります。 CSDL のバージョンはの名前空間によって決定されます、[スキーマ要素](http://msdn.microsoft.com/library/396074d8-f99c-4f50-a073-68bce848224f)です。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] 仕様[ \[MC-CSDL\]: 概念スキーマ定義ファイル形式](http://go.microsoft.com/fwlink/?LinkId=159072)です。  
+ 既定では、[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] ではデータ モデルを表すために CSDL のバージョン 1.1 が使用されます。 リフレクション プロバイダーまたはカスタム データ サービス プロバイダーに基づくデータ モデルの場合は、常にこの CSDL バージョンが使用されます。 ただし、[!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] を使用してデータ モデルを定義している場合は、返される CSDL のバージョンは [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] で使用されるバージョンと同じになります。 CSDL のバージョンはの名前空間によって決定されます、[スキーマ要素](http://msdn.microsoft.com/library/396074d8-f99c-4f50-a073-68bce848224f)です。 詳細については、仕様を参照してください。 [ \[MC-CSDL\]: 概念スキーマ定義ファイル形式](http://go.microsoft.com/fwlink/?LinkId=159072)です。  
   
  返されたメタデータの `DataServices` 要素には `DataServiceVersion` 属性も含まれます。この属性は、応答メッセージの `DataServiceVersion` ヘッダーの値と同じです。 クライアント アプリケーションなど、**サービス参照の追加**ダイアログ ボックスを使用してクライアント データ サービスを生成するには、この情報はクラスのバージョンを正しく操作する、Visual Studio で[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]データ サービスをホストします。 詳細については、次を参照してください。 [OData: プロトコルのバージョン管理](http://go.microsoft.com/fwlink/?LinkId=186071)です。  
   

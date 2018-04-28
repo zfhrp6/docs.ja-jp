@@ -1,28 +1,28 @@
 ---
-title: "コントラクトおよびサービスのエラーの指定と処理"
-ms.custom: 
+title: コントラクトおよびサービスのエラーの指定と処理
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - handling faults [WCF]
 ms.assetid: a9696563-d404-4905-942d-1e0834c26dea
-caps.latest.revision: 
+caps.latest.revision: 22
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 57fc01b77379389ca4d86d241ec8f3d672b519b6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 70f8c1f89a5570f5b77eaba1bf72c42706d88947
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="specifying-and-handling-faults-in-contracts-and-services"></a>コントラクトおよびサービスのエラーの指定と処理
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] アプリケーションは、マネージ例外オブジェクトを SOAP エラー オブジェクトにマップし、SOAP エラー オブジェクトをマネージ例外オブジェクトにマップすることによって、エラー状態を処理します。 ここでは、エラー状態がカスタムの SOAP エラーとして公開されるようにコントラクトを設計する方法、そのエラーをサービス実装の一部として返す方法、およびクライアントがそのエラーをキャッチする方法を説明します。  
@@ -47,12 +47,12 @@ ms.lasthandoff: 12/22/2017
 ## <a name="map-exceptions-to-soap-faults"></a>SOAP エラーへの例外のマッピング  
  エラー状態の処理操作を作成するための最初の手順は、クライアント アプリケーションにエラーを通知する状態を決定することです。 一部の操作には、その機能に固有のエラー状態があります。 たとえば、`PurchaseOrder` 操作では、発注書の作成が禁止になっている顧客に特定の情報を返すことができます。 また、`Calculator` サービスなどでは、より一般的な `MathFault` SOAP エラーを使用してサービス全体のすべてのエラー状態を記述できます。 サービスのクライアントのエラー状態を特定したら、カスタム SOAP エラーを作成し、エラー状態が発生したときに SOAP エラーを返す操作として、対応する操作をマークします。  
   
- [!INCLUDE[crabout](../../../includes/crabout-md.md)]サービスまたはクライアントの開発には、この手順を参照してください[を指定するエラーの定義および](../../../docs/framework/wcf/defining-and-specifying-faults.md)です。  
+ [!INCLUDE[crabout](../../../includes/crabout-md.md)] サービスまたはクライアントの開発には、この手順を参照してください[を指定するエラーの定義および](../../../docs/framework/wcf/defining-and-specifying-faults.md)です。  
   
 ## <a name="clients-and-services-handle-soap-faults-as-exceptions"></a>クライアントとサービスによる例外としての SOAP エラーの処理  
  操作エラー状態を特定し、カスタム SOAP エラーを定義し、そのようなエラーを返す操作にマークすることは、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] アプリケーションで正常にエラーを処理するための最初の手順です。 次の手順では、このエラーの送受信を適切に実装します。 通常は、サービスがエラーを送信してクライアント アプリケーションにエラー状態を通知しますが、双方向クライアントが SOAP エラーをサービスに送信することもできます。  
   
- [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][エラーを送受信する](../../../docs/framework/wcf/sending-and-receiving-faults.md)です。  
+ 詳細については、次を参照してください。[送信と受信エラー](../../../docs/framework/wcf/sending-and-receiving-faults.md)です。  
   
 ## <a name="undeclared-soap-faults-and-debugging"></a>非宣言 SOAP エラーとデバッグ  
  宣言 SOAP エラーは、堅牢で相互運用可能な分散アプリケーションを構築するうえで便利です。 ただし、サービス (または双方向クライアント) が非宣言 SOAP エラーを送信することが役立つ場合があります。非宣言 SOAP エラーとは、その操作について Web サービス記述言語 (WSDL) で宣言されていないエラーです。 たとえば、サービスの開発時に予期しない状況が発生する可能性があります。この場合、デバッグのために情報をクライアントに送信することが役立ちます。 また、<xref:System.ServiceModel.ServiceBehaviorAttribute.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> プロパティまたは <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> プロパティを `true` に設定して、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアントが内部のサービス操作例外に関する情報を取得できるようにすることができます。 個々 のエラーの送信とデバッグ動作プロパティの設定の両方がで説明されている[送信と受信エラー](../../../docs/framework/wcf/sending-and-receiving-faults.md)です。  
@@ -68,7 +68,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="fault-serialization-issues"></a>エラーのシリアル化の問題  
  WCF では、エラー コントラクトを逆シリアル化する場合、最初に SOAP メッセージのエラー コントラクト名とエラー コントラクトの型を一致させようとします。 正しく一致しない場合、使用可能なエラー コントラクトのアルファベット順のリストで互換性のある型を検索します。 2 つのエラー コントラクトが互換性のある型である場合 (たとえば、一方のコントラクトが別のコントラクトのサブクラスである場合)、エラーを逆シリアル化するときに間違った型が使用される場合があります。 このような問題は、エラー コントラクトで名前、名前空間、およびアクションが指定されていない場合に発生します。 このような問題が発生しないようにするには、常に名前、名前空間、およびアクションの属性を指定して、エラー コントラクトを完全修飾するようにしてください。 また、共有基本クラスから派生した関連エラー コントラクトを定義している場合は、新しいメンバーを `[DataMember(IsRequired=true)]` でマークしてください。 この `IsRequired` 属性の詳細については、「<xref:System.Runtime.Serialization.DataMemberAttribute>」を参照してください。 この結果、基本クラスに互換性のある型が指定されなくなり、正しい派生型にエラーが逆シリアル化されます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.FaultException>  
  <xref:System.ServiceModel.FaultContractAttribute>  
  <xref:System.ServiceModel.FaultException>  

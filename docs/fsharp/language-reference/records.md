@@ -1,20 +1,17 @@
 ---
-title: "レコード (F#)"
-description: "F# のレコードがオプションでメンバーの名前付きの値の単純な集計を表現する方法について説明します。"
-keywords: "visual f#, f#, 関数型プログラミング"
+title: レコード (F#)
+description: F# のレコードがオプションでメンバーの名前付きの値の単純な集計を表現する方法について説明します。
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: 3a3701ea-4308-4fa1-9b5c-b955c470f17a
-ms.openlocfilehash: 478ab74ad32cc6e53daffd1bd6229729149d2a1e
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 1270bf4eaeba99a15b0f81b5477f4c3b98644f66
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="records"></a>レコード
 
@@ -114,7 +111,7 @@ Point is at (10.000000, 0.000000, -1.000000).
 ## <a name="differences-between-records-and-classes"></a>レコードおよびクラス間の相違点
 レコードのフィールドとは異なり、クラスからプロパティとして自動的に公開されているし、それらが作成時に使用され、レコードのコピー。 レコードの作成は、クラスの構築からも異なります。 レコードの種類では、コンス トラクターを定義できません。 代わりに、このトピックで説明する構築構文が適用されます。 クラスは、コンス トラクターのパラメーター、フィールド、およびプロパティ間の直接の関係のあるありません。
 
-共用体と構造体の型と同様には、レコードは、構造の等値セマンティクスを持ちます。 クラスは、参照を持つ等値セマンティクスです。 次のコード例を示します。
+共用体と構造体の型と同様には、レコードは、構造の等値セマンティクスを持ちます。 クラスは、参照を持つ等値セマンティクスです。 次のコード例はこの処理方法を示しています。
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet1911.fs)]
 
@@ -122,7 +119,7 @@ Point is at (10.000000, 0.000000, -1.000000).
 
 レコードに等しいかどうかを参照する必要がある場合、属性を追加`[<ReferenceEquality>]`レコード上。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 [F# の型](fsharp-types.md)
 
 [クラス](classes.md)

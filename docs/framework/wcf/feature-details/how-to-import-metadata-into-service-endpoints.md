@@ -1,24 +1,26 @@
 ---
-title: "方法 : メタデータをサービス エンドポイントにインポートする"
-ms.custom: 
+title: '方法 : メタデータをサービス エンドポイントにインポートする'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: b69dbe20-92a1-4911-89d8-ffbc3dad4663
-caps.latest.revision: "13"
+caps.latest.revision: 13
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 2fa1831885eb24effc5f4267c208b8bffa9f0b75
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: b86f31217812767b0fbbd785a0f3ff96c2948854
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="how-to-import-metadata-into-service-endpoints"></a>方法 : メタデータをサービス エンドポイントにインポートする
 このトピックで定義されているサービスを使用してサービス エンドポイントのコレクションにメタデータをインポートする方法について説明、[作業の開始](../../../../docs/framework/wcf/samples/getting-started-sample.md)です。 また、サービスからメタデータをインポートし、次にそのサービスに対して `Add` メソッドを呼び出すクライアント アプリケーションを作成する方法についても説明します。  
@@ -38,7 +40,7 @@ ms.lasthandoff: 12/22/2017
      [!code-csharp[UE_ImportMetadata#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/ue_importmetadata/cs/client.cs#2)]  
   
     > [!NOTE]
-    >  メタデータのインポートが完了すると、クライアント チャネルの作成もメタデータのエクスポートもできなくなります。 これは、この時点で型情報を使用できないためです。 型情報は、サービスと実際に対話する場合またはメタデータをエクスポートする場合に必要です。 型情報を生成するには、コードを生成する必要があります。これについては、手順 4. ～ 5. で説明します。 別の方法として、<xref:System.ServiceModel.Description.MetadataResolver> ヘルパー クラスを使用することもできます。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][する方法: MetadataResolver を使用してバインディング メタデータを動的に取得する](../../../../docs/framework/wcf/feature-details/how-to-use-metadataresolver-to-obtain-binding-metadata-dynamically.md)です。  
+    >  メタデータのインポートが完了すると、クライアント チャネルの作成もメタデータのエクスポートもできなくなります。 これは、この時点で型情報を使用できないためです。 型情報は、サービスと実際に対話する場合またはメタデータをエクスポートする場合に必要です。 型情報を生成するには、コードを生成する必要があります。これについては、手順 4. ～ 5. で説明します。 別の方法として、<xref:System.ServiceModel.Description.MetadataResolver> ヘルパー クラスを使用することもできます。 詳細については、次を参照してください。[する方法: 取得メタデータ動的連結を使用して MetadataResolver](../../../../docs/framework/wcf/feature-details/how-to-use-metadataresolver-to-obtain-binding-metadata-dynamically.md)です。  
   
 4.  各コントラクトに型情報を生成します。  
   
@@ -48,6 +50,6 @@ ms.lasthandoff: 12/22/2017
   
      [!code-csharp[UE_ImportMetadata#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/ue_importmetadata/cs/client.cs#4)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [メタデータ](../../../../docs/framework/wcf/feature-details/metadata.md)  
  [はじめに](../../../../docs/framework/wcf/samples/getting-started-sample.md)

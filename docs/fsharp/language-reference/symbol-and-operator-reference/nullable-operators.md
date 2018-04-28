@@ -1,20 +1,17 @@
 ---
-title: "Null 許容の演算子 (F#)"
-description: "F# のプログラミング言語で使用できる null 許容の演算子について説明します。"
-keywords: "visual f#, f#, 関数型プログラミング"
+title: Null 許容の演算子 (F#)
+description: F# のプログラミング言語で使用できる null 許容の演算子について説明します。
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: 3108c4ac-9e13-464d-a829-084a6eba038f
-ms.openlocfilehash: b3c55dcbfd70c9bcddcc4a990b19a5b92620f822
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 37025e16768b949b51f6b9f0cff32e88da110ca8
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="nullable-operators"></a>Null 許容の演算子
 
@@ -57,7 +54,7 @@ let nullableFloat = Nullable.float nullableInt
 printfn "%f" (float nullableFloat)
 ```
 
-出力は `10.000000` になります。
+出力は `10.000000`になります。
 
 など、null 許容型のデータ フィールドの演算子のクエリ`sumByNullable`クエリ式で使用する場合もあります。 非 null 許容型のクエリ演算子はありません、null 許容型で型と互換性のある null 値を許容データ値を使用しているときに、適切なクエリ演算子の null 許容バージョンを使用する必要があります。 詳細については、次を参照してください。[クエリ式](../query-expressions.md)です。
 

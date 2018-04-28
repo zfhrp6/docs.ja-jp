@@ -1,24 +1,26 @@
 ---
-title: "メッセージング アクティビティ"
-ms.custom: 
+title: メッセージング アクティビティ
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8498f215-1823-4aba-a6e1-391407f8c273
-caps.latest.revision: "13"
+caps.latest.revision: 13
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 8ba5d49f357fe1cf56a45f733e91c1dbc2208736
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 8db31e8559d22e35f0d754a44ce425e144487296
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="messaging-activities"></a>メッセージング アクティビティ
 アクティビティを管理することで、ワークフローが WCF メッセージを送受信できるようになります。 メッセージング アクティビティをワークフローに追加することで、任意に複雑なメッセージ交換パターン (MEP) をモデル化できます。  
@@ -48,7 +50,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="messaging-activities-and-message-exchange-patterns"></a>メッセージング アクティビティとメッセージ交換パターン  
  データグラム MEP には、メッセージを送信するクライアントとメッセージを受信するサービスが必要です。 クライアントがワークフローの場合は、<xref:System.ServiceModel.Activities.Send> アクティビティを使用してメッセージを送信します。 そのメッセージをワークフローで受信するには、<xref:System.ServiceModel.Activities.Receive> アクティビティを使用します。 <xref:System.ServiceModel.Activities.Send> アクティビティと <xref:System.ServiceModel.Activities.Receive> アクティビティのどちらにも、`Content` という名前のプロパティがあります。 このプロパティには、送信または受信されるデータが保持されます。 要求 - 応答 MEP を実装する場合は、クライアントとサービスの両方で、アクティビティの組を使用します。 クライアントは、<xref:System.ServiceModel.Activities.Send> アクティビティを使用してメッセージを送信し、<xref:System.ServiceModel.Activities.ReceiveReply> アクティビティを使用してサービスからの応答を受信します。 これらの 2 つのアクティビティは、<xref:System.ServiceModel.Activities.ReceiveReply.Request%2A> プロパティによって互いに関連付けられています。 このプロパティは、元のメッセージを送信した <xref:System.ServiceModel.Activities.Send> アクティビティに設定されます。 サービスも、相互に関連付けられた、<xref:System.ServiceModel.Activities.Receive> および <xref:System.ServiceModel.Activities.SendReply> というアクティビティのペアを使用します。 これらの 2 つのアクティビティは、<xref:System.ServiceModel.Activities.SendReply.Request%2A> プロパティによって関連付けられています。 このプロパティは、元のメッセージを受信した <xref:System.ServiceModel.Activities.Receive> アクティビティに設定されます。 <xref:System.ServiceModel.Activities.ReceiveReply> アクティビティおよび <xref:System.ServiceModel.Activities.SendReply> アクティビティを使用すると、<xref:System.ServiceModel.Activities.Send> アクティビティおよび <xref:System.ServiceModel.Activities.Receive> アクティビティと同様に、<xref:System.ServiceModel.Channels.Message> インスタンスまたはメッセージ コントラクト型を送信できます。  
   
- ワークフローは長時間にわたって実行されることが多いため、通信の二重パターンでは、長時間のメッセージ交換をサポートすることも重要です。 長時間のメッセージ交換をサポートするには、メッセージ交換を開始するクライアントが、後でデータが利用可能になった時点でクライアントにコールバックする機会をサービスに提供する必要があります。 たとえば、マネージャーの承認を受けるために発注書の要求が送信された場合に、この要求が、1 日、1 週間、または 1 年間処理されない可能性があるとします。この場合、マネージャーが発注書を承認するワークフローは、承認を受けた後に再開することを認識している必要があります。 この二重通信のパターンは、相関関係を使用するワークフローでサポートされています。 二重パターンを実装するには、<xref:System.ServiceModel.Activities.Send> アクティビティと <xref:System.ServiceModel.Activities.Receive> アクティビティを使用します。 <xref:System.ServiceModel.Activities.Receive>アクティビティ、相関関係の特殊なキーの値を使用して、初期化<!--zz <xref:System.ServiceModel.Activities.CorrelationHandle.CallbackHandleName%2A>-->`System.ServiceModel.Activities.CorrelationHandle.CallbackHandleName`です。 <xref:System.ServiceModel.Activities.Send> アクティビティで、その関連付けハンドルを <xref:System.ServiceModel.Activities.Send.CorrelatesWith%2A> プロパティの値として設定します。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][永続的な二重](../../../../docs/framework/wcf/feature-details/durable-duplex-correlation.md)です。  
+ ワークフローは長時間にわたって実行されることが多いため、通信の二重パターンでは、長時間のメッセージ交換をサポートすることも重要です。 長時間のメッセージ交換をサポートするには、メッセージ交換を開始するクライアントが、後でデータが利用可能になった時点でクライアントにコールバックする機会をサービスに提供する必要があります。 たとえば、マネージャーの承認を受けるために発注書の要求が送信された場合に、この要求が、1 日、1 週間、または 1 年間処理されない可能性があるとします。この場合、マネージャーが発注書を承認するワークフローは、承認を受けた後に再開することを認識している必要があります。 この二重通信のパターンは、相関関係を使用するワークフローでサポートされています。 二重パターンを実装するには、<xref:System.ServiceModel.Activities.Send> アクティビティと <xref:System.ServiceModel.Activities.Receive> アクティビティを使用します。 <xref:System.ServiceModel.Activities.Receive>アクティビティ、相関関係の特殊なキーの値を使用して、初期化<!--zz <xref:System.ServiceModel.Activities.CorrelationHandle.CallbackHandleName%2A>-->`System.ServiceModel.Activities.CorrelationHandle.CallbackHandleName`です。 <xref:System.ServiceModel.Activities.Send> アクティビティで、その関連付けハンドルを <xref:System.ServiceModel.Activities.Send.CorrelatesWith%2A> プロパティの値として設定します。 詳細については、次を参照してください。[永続的な二重](../../../../docs/framework/wcf/feature-details/durable-duplex-correlation.md)です。  
   
 > [!NOTE]
 >  双方向コールバック相関関係 ("永続的な二重") の使用のワークフローの実装は、長時間のメッセージ交換です。 これは、コールバック コントラクトを使用する WCF の二重と同じではありません。WCF の二重では、メッセージ交換が短時間 (チャネルの有効期間) で処理されます。  
@@ -106,14 +108,14 @@ Request = rcv
 ```  
   
 ## <a name="add-service-reference"></a>サービス参照の追加  
- ワークフロー アプリケーションからワークフロー サービスを呼び出すと、[!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] では、要求/応答 MEP で使用される通常の <xref:System.ServiceModel.Activities.Send> アクティビティと <xref:System.ServiceModel.Activities.ReceiveReply> アクティビティをカプセル化したカスタムのメッセージング アクティビティが生成されます。 この機能を使用するでクライアント プロジェクトを右クリックして[!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)]選択**サービス参照の追加**です。 アドレス ボックスにサービスのベース アドレスを入力し、[移動] をクリックします。 使用可能なサービスが表示されます、 **Services:**ボックス。 サービス ノードを展開して、サポートされるコントラクトを表示します。 呼び出そうとコントラクトを選択し、使用可能な操作の一覧に表示されます、 **Operations**ボックス。 生成されたアクティビティの名前空間を指定し、をクリックして**OK**です。 操作が正常に完了したことを示すダイアログが表示され、プロジェクトを再度ビルドすると、生成されたカスタム アクティビティがツールボックスに表示されます。 サービス コントラクトに定義されている操作ごとに 1 つのアクティビティがあります。 プロジェクトを再度ビルドしたら、カスタム アクティビティをワークフローにドラッグ アンド ドロップして、必要なプロパティをプロパティ ウィンドウで設定できます。  
+ ワークフロー アプリケーションからワークフロー サービスを呼び出すと、[!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] では、要求/応答 MEP で使用される通常の <xref:System.ServiceModel.Activities.Send> アクティビティと <xref:System.ServiceModel.Activities.ReceiveReply> アクティビティをカプセル化したカスタムのメッセージング アクティビティが生成されます。 この機能を使用するでクライアント プロジェクトを右クリックして[!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)]選択**サービス参照の追加**です。 アドレス ボックスにサービスのベース アドレスを入力し、[移動] をクリックします。 使用可能なサービスが表示されます、 **Services:** ボックス。 サービス ノードを展開して、サポートされるコントラクトを表示します。 呼び出そうとコントラクトを選択し、使用可能な操作の一覧に表示されます、 **Operations**ボックス。 生成されたアクティビティの名前空間を指定し、をクリックして**OK**です。 操作が正常に完了したことを示すダイアログが表示され、プロジェクトを再度ビルドすると、生成されたカスタム アクティビティがツールボックスに表示されます。 サービス コントラクトに定義されている操作ごとに 1 つのアクティビティがあります。 プロジェクトを再度ビルドしたら、カスタム アクティビティをワークフローにドラッグ アンド ドロップして、必要なプロパティをプロパティ ウィンドウで設定できます。  
   
 <!--## Messaging Activity Templates  
  To make setting up a request/response MEP on the client and service easier, [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] provides two messaging activity templates. <xref:System.ServiceModel.Activities.Design.ReceiveAndSendReply> is used on the service and <xref:System.ServiceModel.Activities.Design.SendAndReceiveReply> is used on the client. In both cases the templates add the appropriate messaging activities to your workflow. On the service, the <xref:System.ServiceModel.Activities.Design.ReceiveAndSendReply> adds a <xref:System.ServiceModel.Activities.Receive> activity followed by a <xref:System.ServiceModel.Activities.SendReply> activity. The <xref:System.ServiceModel.Activities.SendReply.Request> property is automatically set to the <xref:System.ServiceModel.Activities.Receive> activity. On the client, the <xref:System.ServiceModel.Activities.Design.SendAndReceiveReply> adds a <xref:System.ServiceModel.Activities.Send> activity followed by a <xref:System.ServiceModel.Activities.ReceiveReply>. The <xref:System.ServiceModel.Activities.ReceiveReply.Request%2A> property is automatically set to the <xref:System.ServiceModel.Activities.Send> activity. To use these templates, just drag and drop the appropriate template onto your workflow.  
 -->
 ## <a name="messaging-activities-and-transactions"></a>メッセージング アクティビティとトランザクション  
- ワークフロー サービスが呼び出されるときに、サービス操作にトランザクションをフローする必要がある場合があります。 それには、<xref:System.ServiceModel.Activities.Receive> アクティビティを <xref:System.ServiceModel.Activities.TransactedReceiveScope> アクティビティ内に配置します。 <xref:System.ServiceModel.Activities.TransactedReceiveScope> アクティビティには、`Receive` アクティビティと本体が含まれます。 サービスにフローされるトランザクションは、<xref:System.ServiceModel.Activities.TransactedReceiveScope> の本体の実行の開始から終了まで、アンビエント トランザクションのままです。 トランザクションは、本体の実行が終了した時点で完了します。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]ワークフローとトランザクションを参照してください[ワークフロー トランザクション](../../../../docs/framework/windows-workflow-foundation/workflow-transactions.md)です。  
+ ワークフロー サービスが呼び出されるときに、サービス操作にトランザクションをフローする必要がある場合があります。 それには、<xref:System.ServiceModel.Activities.Receive> アクティビティを <xref:System.ServiceModel.Activities.TransactedReceiveScope> アクティビティ内に配置します。 <xref:System.ServiceModel.Activities.TransactedReceiveScope> アクティビティには、`Receive` アクティビティと本体が含まれます。 サービスにフローされるトランザクションは、<xref:System.ServiceModel.Activities.TransactedReceiveScope> の本体の実行の開始から終了まで、アンビエント トランザクションのままです。 トランザクションは、本体の実行が終了した時点で完了します。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] ワークフローとトランザクションを参照してください[ワークフロー トランザクション](../../../../docs/framework/windows-workflow-foundation/workflow-transactions.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ワークフロー サービスでエラーを送受信する方法](http://go.microsoft.com/fwlink/?LinkId=189151)  
  [長時間のワークフロー サービスの作成](../../../../docs/framework/wcf/feature-details/creating-a-long-running-workflow-service.md)

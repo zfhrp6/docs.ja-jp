@@ -1,24 +1,26 @@
 ---
-title: "相関関係のトラブルシューティング"
-ms.custom: 
+title: 相関関係のトラブルシューティング
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 98003875-233d-4512-a688-4b2a1b0b5371
-caps.latest.revision: "11"
+caps.latest.revision: 11
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 76b6178d3190165e711f46af60a6541a82ad0bd7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 5bdf111e6802692aef893cf9dcae88f0f51aa467
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="troubleshooting-correlation"></a>相関関係のトラブルシューティング
 相関関係は、ワークフロー サービス メッセージを互いに関連付けたり、正しいワークフロー インスタンスに関連付けたりするために使用されますが、正しく構成されていないと、メッセージが受信されず、アプリケーションが正しく機能しなくなります。 ここでは、相関関係のトラブルシューティングのいくつかの方法の概要と、相関関係を使用するときに発生する一般的な問題について説明します。  
@@ -89,7 +91,7 @@ host.WorkflowExtensions.Add(new ConsoleTrackingParticipant());
   
  ConsoleTrackingParticipant などの追跡参加要素は、コンソール ウィンドウを持つ自己ホスト型ワークフロー サービスで使用できます。 Web ホスト サービスの永続的ストアに追跡情報をログに記録する追跡参加要素を使用するか、組み込みなど<xref:System.Activities.Tracking.EtwTrackingParticipant>、またはカスタムの追跡参加要素がログに記録する情報をファイルなど、 `TextWriterTrackingParticpant` から[テキスト ファイルを使用した追跡](../../../../docs/framework/windows-workflow-foundation/samples/tracking-using-a-text-file.md)サンプルです。  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]追跡と追跡、Web でホストされるワークフロー サービスの構成を参照してください[ワークフロー追跡とトレース](../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)、[ワークフローの追跡を構成する](../../../../docs/framework/windows-workflow-foundation/configuring-tracking-for-a-workflow.md)、および[追跡 &#91;。WF のサンプル &#93;](../../../../docs/framework/windows-workflow-foundation/samples/tracking.md)サンプルです。  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)] 追跡と追跡、Web でホストされるワークフロー サービスの構成を参照してください[ワークフロー追跡とトレース](../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)、[ワークフローの追跡を構成する](../../../../docs/framework/windows-workflow-foundation/configuring-tracking-for-a-workflow.md)、および[追跡&#91;WF。サンプル&#93;](../../../../docs/framework/windows-workflow-foundation/samples/tracking.md)サンプルです。  
   
 ## <a name="use-wcf-tracing"></a>WCF トレースの使用  
  WCF トレースは、ワークフロー サービスのメッセージ フローのトレースを提供します。 このトレース情報は、相関関係 (特にコンテンツ ベースの相関関係) のトラブルシューティングに役立ちます。 トレースを有効にするには、`system.diagnostics` ファイル (Web ホスト ワークフロー サービスの場合) または `web.config` ファイル (自己ホスト型ワークフロー サービスの場合) の `app.config` セクションで目的のトレース リスナーを指定します。 トレース ファイルにメッセージの内容を含めるには、`true` の `logEntireMessage` セクションの `messageLogging` 要素で `diagnostics` に対して `system.serviceModel` を指定します。 次の例では、メッセージの内容を含むトレース情報を `service.svclog` という名前のファイルに書き込むように構成しています。  
@@ -127,7 +129,7 @@ host.WorkflowExtensions.Add(new ConsoleTrackingParticipant());
 </configuration>  
 ```  
   
- 含まれるトレース情報を表示する`service.svclog`、[サービス トレース ビューアー ツール (SvcTraceViewer.exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md)を使用します。 この方法を使用すると、渡されたメッセージの内容そのものを調べてコンテンツ ベースの相関関係の <xref:System.ServiceModel.CorrelationQuery> に一致するかどうかを確認できるため、コンテンツ ベースの相関関係のトラブルシューティングで特に便利です。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]WCF トレースを参照してください[サービス トレース ビューアー ツール (SvcTraceViewer.exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md)、[トレースの構成](../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)、および[、アプリケーションのトラブルシューティングを使用してトレース](../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)です。  
+ 含まれるトレース情報を表示する`service.svclog`、[サービス トレース ビューアー ツール (SvcTraceViewer.exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md)を使用します。 この方法を使用すると、渡されたメッセージの内容そのものを調べてコンテンツ ベースの相関関係の <xref:System.ServiceModel.CorrelationQuery> に一致するかどうかを確認できるため、コンテンツ ベースの相関関係のトラブルシューティングで特に便利です。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] WCF トレースを参照してください[サービス トレース ビューアー ツール (SvcTraceViewer.exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md)、[トレースの構成](../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)、および[、アプリケーションのトラブルシューティングを使用してトレース](../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)です。  
   
 ## <a name="common-context-exchange-correlation-issues"></a>コンテキスト交換の相関関係の一般的な問題  
  相関関係の中には、特定の種類のバインドが使用されていないと正しく機能しないものがあります。 たとえば、要求/応答の相関関係には <xref:System.ServiceModel.BasicHttpBinding> などの双方向のバインドが、コンテキスト交換の相関関係には <xref:System.ServiceModel.BasicHttpContextBinding> などのコンテキスト ベースのバインドが必要です。 双方向の操作はほとんどのバインドでサポートされているため、要求/応答の相関関係ではあまり問題になりませんが、コンテキスト ベースのバインドはわずかしかなく (<xref:System.ServiceModel.BasicHttpContextBinding>、<xref:System.ServiceModel.WSHttpContextBinding>、<xref:System.ServiceModel.NetTcpContextBinding> など)、 それらのいずれかが使用されていないと、ワークフロー サービスへの最初の呼び出しは成功しますが、その後の呼び出しが次の <xref:System.ServiceModel.FaultException> で失敗します。  
@@ -141,7 +143,7 @@ supports the context protocol and has a valid context initialized.
   
  コンテキスト相関関係に使用されるコンテキスト情報は、双方向の操作が使用されている場合は <xref:System.ServiceModel.Activities.SendReply> から (コンテキスト相関関係を初期化する) <xref:System.ServiceModel.Activities.Receive> アクティビティに返され、操作が一方向の場合は呼び出し元によって指定されます。 コンテキストが呼び出し元によって送信されず、ワークフロー サービスからも返されない場合は、後続の操作が呼び出されたときに上述の <xref:System.ServiceModel.FaultException> が返されます。  
   
- [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][コンテキスト交換](../../../../docs/framework/wcf/feature-details/context-exchange-correlation.md)です。  
+ 詳細については、次を参照してください。[コンテキスト交換](../../../../docs/framework/wcf/feature-details/context-exchange-correlation.md)です。  
   
 ## <a name="common-request-reply-correlation-issues"></a>要求/応答の相関関係の一般的な問題  
  要求-応答の相関関係を併用、 <xref:System.ServiceModel.Activities.Receive> / <xref:System.ServiceModel.Activities.SendReply>ペアを使用して、ワークフロー サービスでは、双方向の操作を実装する、 <xref:System.ServiceModel.Activities.Send> / <xref:System.ServiceModel.Activities.ReceiveReply>ペアを別の web サイトでの双方向の操作を呼び出すサービス。 WCF サービスの双方向の操作を呼び出す場合、このサービスには、従来の命令型のコード ベースの [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスを使用することも、ワークフロー サービスを使用することもできます。 要求/応答の相関関係を使用するには、<xref:System.ServiceModel.BasicHttpBinding> などの双方向のバインドを使用する必要があります。操作が双方向である必要もあります。  
@@ -176,7 +178,7 @@ SendReply ReplyToStartOrder = new SendReply
   
  間で永続化は許可されていません、 <xref:System.ServiceModel.Activities.Receive> / <xref:System.ServiceModel.Activities.SendReply>ペアまたは<xref:System.ServiceModel.Activities.Send> / <xref:System.ServiceModel.Activities.ReceiveReply>ペア。 両方のアクティビティが完了するまで存続する非永続化ゾーンが作成されます。 遅延アクティビティなどのアクティビティがこの非永続化ゾーンにあって、ワークフローのアイドル状態を引き起こした場合、ホストでワークフローがアイドル状態になったときにワークフローを永続化するようにホストが構成されていても、ワークフローは永続化されません。 Persist アクティビティなどのアクティビティが非永続化ゾーンで明示的に永続化を試みた場合、致命的な例外がスローされ、ワークフローが中止されて、<xref:System.ServiceModel.FaultException> が呼び出し元に返されます。 次の致命的な例外メッセージが表示されます。"System.InvalidOperationException: 持続性のないブロックに Persist アクティビティを含めることはできません。" この例外は呼び出し元に返されませんが、追跡が有効になっている場合は確認できます。 呼び出し元に返される <xref:System.ServiceModel.FaultException> のメッセージは、"WorkflowInstance '5836145b-7da2-49d0-a052-a49162adeab6' が完了しているため、操作を実行できませんでした" です。  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]要求-応答の相関関係を参照してください[要求/応答](../../../../docs/framework/wcf/feature-details/request-reply-correlation.md)です。  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)] 要求-応答の相関関係を参照してください[要求/応答](../../../../docs/framework/wcf/feature-details/request-reply-correlation.md)です。  
   
 ## <a name="common-content-correlation-issues"></a>コンテンツ ベースの相関関係の一般的な問題  
  コンテンツ ベースの相関関係は、ワークフロー サービスが複数のメッセージを受信し、交換されるメッセージ内の一部のデータによって目的のインスタンスが識別される場合に使用されます。 コンテンツ ベースの相関関係では、顧客番号や注文 ID などのメッセージ内のデータを使用して、適切なワークフロー インスタンスにメッセージをルーティングします。 ここでは、コンテンツ ベースの相関関係を使用するときに発生するいくつかの一般的な問題について説明します。  
@@ -261,4 +263,4 @@ sm:header()/tempuri:CartId
 </Receive>  
 ```  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]コンテンツ ベースの相関関係を参照してください[コンテンツ ベース](../../../../docs/framework/wcf/feature-details/content-based-correlation.md)と[相関電卓](../../../../docs/framework/windows-workflow-foundation/samples/correlated-calculator.md)サンプルです。
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)] コンテンツ ベースの相関関係を参照してください[コンテンツ ベース](../../../../docs/framework/wcf/feature-details/content-based-correlation.md)と[相関電卓](../../../../docs/framework/windows-workflow-foundation/samples/correlated-calculator.md)サンプルです。

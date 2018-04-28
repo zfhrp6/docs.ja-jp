@@ -1,20 +1,17 @@
 ---
-title: "モジュール (F#)"
-description: "F# モジュールは、f# コード、値、型、および f# プログラムでは、関数の値などのグループ化方法について説明します。"
-keywords: "visual f#, f#, 関数型プログラミング"
+title: モジュール (F#)
+description: F# モジュールは、f# コード、値、型、および f# プログラムでは、関数の値などのグループ化方法について説明します。
 author: cartermp
 ms.author: phcart
 ms.date: 04/24/2017
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: 46de2d18-da51-40fa-a262-92edecada79d
-ms.openlocfilehash: 9b189903511f53d3ecceb30f3d056e189b00511d
-ms.sourcegitcommit: 3a96c706e4dbb4667bf3bf37edac9e1666646f93
+ms.openlocfilehash: fc7ac25902169aa39c3f7c088cd87ab58bcb7296
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="modules"></a>モジュール
 
@@ -136,7 +133,7 @@ module rec RecursiveModule =
 
 この機能ではも使用[名前空間](namespaces.md)f# 4.1 にします。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [F# 言語リファレンス](index.md)
 [名前空間](namespaces.md)

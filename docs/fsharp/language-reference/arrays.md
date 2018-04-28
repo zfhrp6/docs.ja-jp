@@ -1,20 +1,17 @@
 ---
-title: "配列 (F#)"
-description: "作成して、f# のプログラミング言語の配列を使用する方法を説明します。"
-keywords: "visual f#, f#, 関数型プログラミング"
+title: 配列 (F#)
+description: 作成して、f# のプログラミング言語の配列を使用する方法を説明します。
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: 61fa9084-abdc-4cf5-8213-91ec1211866b
-ms.openlocfilehash: 7c9d8405230f4d765d3afdeaa154ddc598d0d1ec
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 650321e864556ff0ba8591e09ffa34877c8a39b7
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="arrays"></a>配列
 
@@ -68,7 +65,7 @@ F# の配列の型はすべて、.NET Framework 型の <xref:System.Array?displa
 ライブラリ モジュール[ `Microsoft.FSharp.Collections.Array` ](https://msdn.microsoft.com/library/0cda8040-9396-40dd-8dcd-cf48542165a1) 1 次元配列の操作をサポートしています。 `Array2D`、`Array3D`、`Array4D` の各モジュールには、それぞれ、2 次元、3 次元、4 次元の配列の操作をサポートする関数があります。 4 より大きいランクの配列は、<xref:System.Array?displayProperty=nameWithType> を使用して作成できます。
 
 ### <a name="simple-functions"></a>単純な関数
-[`Array.get`](https://msdn.microsoft.com/library/dd93e85d-7e80-4d76-8de0-b6d45bcf07bc)要素を取得します。 [`Array.length`](https://msdn.microsoft.com/library/0d775b6a-4a8f-4bd1-83e5-843b3251725f)配列の長さを示します。 [`Array.set`](https://msdn.microsoft.com/library/847edc0d-4dc5-4a39-98c7-d4320c60e790)要素を指定した値に設定します。 これらの関数の使い方を次のコード例に示します。
+[`Array.get`](https://msdn.microsoft.com/library/dd93e85d-7e80-4d76-8de0-b6d45bcf07bc) 要素を取得します。 [`Array.length`](https://msdn.microsoft.com/library/0d775b6a-4a8f-4bd1-83e5-843b3251725f) 配列の長さを示します。 [`Array.set`](https://msdn.microsoft.com/library/847edc0d-4dc5-4a39-98c7-d4320c60e790) 要素を指定した値に設定します。 これらの関数の使い方を次のコード例に示します。
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/arrays/snippet9.fs)]
 
@@ -80,7 +77,7 @@ F# の配列の型はすべて、.NET Framework 型の <xref:System.Array?displa
 
 ### <a name="functions-that-create-arrays"></a>配列を作成する関数
 
-既存の配列を必要とせずに配列を作成できる関数がいくつかあります。 [`Array.empty`](https://msdn.microsoft.com/library/c3694b92-1c16-4c54-9bf2-fe398fadce32)すべての要素を含まない新しい配列を作成します。 [`Array.create`](https://msdn.microsoft.com/library/e848c8d6-1142-4080-9727-8dacc26066be)指定したサイズの配列を作成し、すべての要素を指定された値に設定します。 [`Array.init`](https://msdn.microsoft.com/library/ee898089-63b0-40aa-910c-5ae7e32f6665)ディメンションと、要素を生成する関数を指定、配列を作成します。 [`Array.zeroCreate`](https://msdn.microsoft.com/library/fa5b8e7a-1b5b-411c-8622-b58d7a14d3b2)すべての要素が配列の型の値 0 に初期化される配列を作成します。 これらの関数の例を次のコードに示します。
+既存の配列を必要とせずに配列を作成できる関数がいくつかあります。 [`Array.empty`](https://msdn.microsoft.com/library/c3694b92-1c16-4c54-9bf2-fe398fadce32) すべての要素を含まない新しい配列を作成します。 [`Array.create`](https://msdn.microsoft.com/library/e848c8d6-1142-4080-9727-8dacc26066be) 指定したサイズの配列を作成し、すべての要素を指定された値に設定します。 [`Array.init`](https://msdn.microsoft.com/library/ee898089-63b0-40aa-910c-5ae7e32f6665) ディメンションと、要素を生成する関数を指定、配列を作成します。 [`Array.zeroCreate`](https://msdn.microsoft.com/library/fa5b8e7a-1b5b-411c-8622-b58d7a14d3b2) すべての要素が配列の型の値 0 に初期化される配列を作成します。 これらの関数の例を次のコードに示します。
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/arrays/snippet91.fs)]
 
@@ -92,7 +89,7 @@ Area of floats set to 5.0: [|5.0; 5.0; 5.0; 5.0; 5.0; 5.0; 5.0; 5.0; 5.0; 5.0|]
 Array of squares: [|0; 1; 4; 9; 16; 25; 36; 49; 64; 81|]
 ```
 
-[`Array.copy`](https://msdn.microsoft.com/library/9d0202f1-1ea0-475e-9d66-4f8ccc3c5b5f)既存の配列からコピーされる要素を含む新しい配列を作成します。 コピーは簡易コピーです。つまり、要素の型が参照型である場合は、参照だけがコピーされ、基になっているオブジェクトはコピーされません。 これを次のコード例に示します。
+[`Array.copy`](https://msdn.microsoft.com/library/9d0202f1-1ea0-475e-9d66-4f8ccc3c5b5f) 既存の配列からコピーされる要素を含む新しい配列を作成します。 コピーは簡易コピーです。つまり、要素の型が参照型である場合は、参照だけがコピーされ、基になっているオブジェクトはコピーされません。 これを次のコード例に示します。
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/arrays/snippet11.fs)]
 
@@ -105,7 +102,7 @@ Array of squares: [|0; 1; 4; 9; 16; 25; 36; 49; 64; 81|]
 
 `Test1` という文字列は、最初の配列にのみ表示されます。これは、`firstArray` の参照が、新しい要素を作成する操作によって上書きされるものの、空の文字列への元の参照は影響を受けず、`secondArray` にまだ存在しているためです。 `Test2` という文字列は、両方の配列で表示されます。これは、`Insert` 型に対する <xref:System.Text.StringBuilder?displayProperty=nameWithType> 操作は基になっている <xref:System.Text.StringBuilder?displayProperty=nameWithType> オブジェクトに影響を与え、このオブジェクトは両方の配列で参照されているためです。
 
-[`Array.sub`](https://msdn.microsoft.com/library/40fb12ba-41d7-4ef0-b33a-56727deeef9d)配列のサブ範囲から新しい配列を生成します。 サブ範囲は、開始インデックスと長さで指定します。 `Array.sub` を使用したコードの例を次に示します。
+[`Array.sub`](https://msdn.microsoft.com/library/40fb12ba-41d7-4ef0-b33a-56727deeef9d) 配列のサブ範囲から新しい配列を生成します。 サブ範囲は、開始インデックスと長さで指定します。 `Array.sub` を使用したコードの例を次に示します。
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/arrays/snippet12.fs)]
 
@@ -114,7 +111,7 @@ Array of squares: [|0; 1; 4; 9; 16; 25; 36; 49; 64; 81|]
 ```
 [|5; 6; 7; 8; 9; 10; 11; 12; 13; 14|]
 ```
-[`Array.append`](https://msdn.microsoft.com/library/08836310-5036-4474-b9a2-2c73e2293911)2 つの既存の配列を組み合わせることにより新しい配列を作成します。
+[`Array.append`](https://msdn.microsoft.com/library/08836310-5036-4474-b9a2-2c73e2293911) 2 つの既存の配列を組み合わせることにより新しい配列を作成します。
 
 次のコード例**Array.append**です。
 
@@ -126,7 +123,7 @@ Array of squares: [|0; 1; 4; 9; 16; 25; 36; 49; 64; 81|]
 [|1; 2; 3; 4; 5; 6|]
 ```
 
-[`Array.choose`](https://msdn.microsoft.com/library/f5c8a5e2-637f-44d4-b35c-be96a6618b09)新しい配列に含める配列の要素を選択します。 次のコードで `Array.choose` の例を示します。 配列の要素の型は、オプションの型で返される値の型と一致している必要はありません。 この例では、要素の型は `int` ですが、オプションは多項式関数 `elem*elem - 1` の結果であり、浮動小数点数です。
+[`Array.choose`](https://msdn.microsoft.com/library/f5c8a5e2-637f-44d4-b35c-be96a6618b09) 新しい配列に含める配列の要素を選択します。 次のコードで `Array.choose` の例を示します。 配列の要素の型は、オプションの型で返される値の型と一致している必要はありません。 この例では、要素の型は `int` ですが、オプションは多項式関数 `elem*elem - 1` の結果であり、浮動小数点数です。
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/arrays/snippet14.fs)]
 
@@ -136,7 +133,7 @@ Array of squares: [|0; 1; 4; 9; 16; 25; 36; 49; 64; 81|]
 [|3.0; 15.0; 35.0; 63.0; 99.0|]
 ```
 
-[`Array.collect`](https://msdn.microsoft.com/library/c3b60c3b-9455-48c9-bc2b-e88f0434342a)既存の配列の各配列要素で指定された関数を実行し、関数によって生成された要素を収集して、新しい配列に結合します。 次のコードで `Array.collect` の例を示します。
+[`Array.collect`](https://msdn.microsoft.com/library/c3b60c3b-9455-48c9-bc2b-e88f0434342a) 既存の配列の各配列要素で指定された関数を実行し、関数によって生成された要素を収集して、新しい配列に結合します。 次のコードで `Array.collect` の例を示します。
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/arrays/snippet15.fs)]
 
@@ -146,7 +143,7 @@ Array of squares: [|0; 1; 4; 9; 16; 25; 36; 49; 64; 81|]
 [|0; 1; 0; 1; 2; 3; 4; 5; 0; 1; 2; 3; 4; 5; 6; 7; 8; 9; 10|]
 ```
 
-[`Array.concat`](https://msdn.microsoft.com/library/f7219b79-1ec8-4a25-96b1-edbedb358302)一連の配列を受け取るし、1 つの配列に結合します。 次のコードで `Array.concat` の例を示します。
+[`Array.concat`](https://msdn.microsoft.com/library/f7219b79-1ec8-4a25-96b1-edbedb358302) 一連の配列を受け取るし、1 つの配列に結合します。 次のコードで `Array.concat` の例を示します。
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/arrays/snippet16.fs)]
 
@@ -157,7 +154,7 @@ Array of squares: [|0; 1; 4; 9; 16; 25; 36; 49; 64; 81|]
 (3, 2, 6); (3, 3, 9)|]
 ```
 
-[`Array.filter`](https://msdn.microsoft.com/library/b885b214-47fc-4639-9664-b8c183a39ede)ブール条件関数を受け取りし、条件が true、入力配列の要素のみを含む新しい配列を生成します。 次のコードで `Array.filter` の例を示します。
+[`Array.filter`](https://msdn.microsoft.com/library/b885b214-47fc-4639-9664-b8c183a39ede) ブール条件関数を受け取りし、条件が true、入力配列の要素のみを含む新しい配列を生成します。 次のコードで `Array.filter` の例を示します。
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/arrays/snippet17.fs)]
 
@@ -167,7 +164,7 @@ Array of squares: [|0; 1; 4; 9; 16; 25; 36; 49; 64; 81|]
 [|2; 4; 6; 8; 10|]
 ```
 
-[`Array.rev`](https://msdn.microsoft.com/library/1bbf822c-763b-4794-af21-97d2e48ef709)既存の配列の順序を反転する新しい配列を生成します。 次のコードで `Array.rev` の例を示します。
+[`Array.rev`](https://msdn.microsoft.com/library/1bbf822c-763b-4794-af21-97d2e48ef709) 既存の配列の順序を反転する新しい配列を生成します。 次のコードで `Array.rev` の例を示します。
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/arrays/snippet18.fs)]  
 
@@ -334,7 +331,7 @@ false
 
 ### <a name="searching-arrays"></a>配列の検索
 
-[`Array.find`](https://msdn.microsoft.com/library/db6d920a-de19-4520-85a4-d83de77c1b33)ブール関数を受け取り、関数が返されますの最初の要素を返します`true`、発生させるか、<xref:System.Collections.Generic.KeyNotFoundException?displayProperty=nameWithType>条件を満たす要素が存在しない場合。 [`Array.findIndex`](https://msdn.microsoft.com/library/5ae3a8f9-7b8f-44ea-a740-d5700f4d899f)同様に、`Array.find`要素自体ではなく、要素のインデックスを返します点を除き、します。
+[`Array.find`](https://msdn.microsoft.com/library/db6d920a-de19-4520-85a4-d83de77c1b33) ブール関数を受け取り、関数が返されますの最初の要素を返します`true`、発生させるか、<xref:System.Collections.Generic.KeyNotFoundException?displayProperty=nameWithType>条件を満たす要素が存在しない場合。 [`Array.findIndex`](https://msdn.microsoft.com/library/5ae3a8f9-7b8f-44ea-a740-d5700f4d899f) 同様に、`Array.find`要素自体ではなく、要素のインデックスを返します点を除き、します。
 
 次のコードでは、`Array.find` と `Array.findIndex` を使用して、完全平方かつ完全立方である値を探しています。
 
@@ -346,7 +343,7 @@ false
 The first element that is both a square and a cube is 64 and its index is 62.
 ```
 
-[`Array.tryFind`](https://msdn.microsoft.com/library/7bd65f6c-df77-454c-ac3a-6f7baecec9d9)同様に、`Array.find`ことを除き、その結果、オプション型でありを返します、`None`要素が存在しない場合。 一致する要素が配列内にあるかどうかわからない場合は、`Array.tryFind` ではなく、`Array.find` を使用してください。 同様に、 [ `Array.tryFindIndex` ](https://msdn.microsoft.com/library/da82f7fe-95e9-4fd5-a924-cd3c9d10618a)に似ています[ `Array.findIndex` ](https://msdn.microsoft.com/library/5ae3a8f9-7b8f-44ea-a740-d5700f4d899f)いる点を除いて、オプションの種類は、戻り値。 要素が見つからない場合、オプションは `None` です。
+[`Array.tryFind`](https://msdn.microsoft.com/library/7bd65f6c-df77-454c-ac3a-6f7baecec9d9) 同様に、`Array.find`ことを除き、その結果、オプション型でありを返します、`None`要素が存在しない場合。 一致する要素が配列内にあるかどうかわからない場合は、`Array.tryFind` ではなく、`Array.find` を使用してください。 同様に、 [ `Array.tryFindIndex` ](https://msdn.microsoft.com/library/da82f7fe-95e9-4fd5-a924-cd3c9d10618a)に似ています[ `Array.findIndex` ](https://msdn.microsoft.com/library/5ae3a8f9-7b8f-44ea-a740-d5700f4d899f)いる点を除いて、オプションの種類は、戻り値。 要素が見つからない場合、オプションは `None` です。
 
 `Array.tryFind` を使用したコードの例を次に示します。 このコードでは、前に示したコードを利用しています。
 
@@ -380,7 +377,7 @@ Found an element 4096 with square root 64 and cube root 16.
 
 使用して[ `Array.max` ](https://msdn.microsoft.com/library/f03fbda0-fce6-40e2-a85d-79c9d81f710b)または[ `Array.min` ](https://msdn.microsoft.com/library/d6b3da5f-bac0-4355-9846-4b72d95bc3fd)要素の型がサポートされている場合、最大値または最小の要素を取得します。 同様に、 [ `Array.maxBy` ](https://msdn.microsoft.com/library/18dbe7c5-482e-4766-8e01-12a76f847045)と[ `Array.minBy` ](https://msdn.microsoft.com/library/24091583-be78-4cc9-9fab-de6d7506af4f)を最初に実行する、比較をサポートする型に変換する関数を許可します。
 
-[`Array.sum`](https://msdn.microsoft.com/library/4ffdb8c8-cd94-4b0b-9e5c-a7c9c17963c2)配列の要素を追加し、 [ `Array.sumBy` ](https://msdn.microsoft.com/library/41698ba6-1adc-4169-8cc5-7a0e3f8de56b)各要素に対して関数を呼び出し、結果を加算します。
+[`Array.sum`](https://msdn.microsoft.com/library/4ffdb8c8-cd94-4b0b-9e5c-a7c9c17963c2) 配列の要素を追加し、 [ `Array.sumBy` ](https://msdn.microsoft.com/library/41698ba6-1adc-4169-8cc5-7a0e3f8de56b)各要素に対して関数を呼び出し、結果を加算します。
 
 配列内の各要素に関数を実行するには、戻り値を格納することがなく、 [ `Array.iter`](https://msdn.microsoft.com/library/94eba0f1-ecd7-459f-b89f-ed2a2923e516)です。 同じ長さの 2 つの配列に関連する関数、 [ `Array.iter2`](https://msdn.microsoft.com/library/018aa9b9-f186-4142-be8a-a62462794fdc)です。 場合は、関数の結果の配列を保持する必要がありますを使用して[ `Array.map` ](https://msdn.microsoft.com/library/38cbe824-0480-47be-85fd-df3afdd97a45)または[ `Array.map2` ](https://msdn.microsoft.com/library/bb7aafe8-4a1f-45b9-92fc-1af9eafbea5c)、一度に 2 つの配列で動作します。
 
@@ -392,7 +389,7 @@ Found an element 4096 with square root 64 and cube root 16.
 
 ### <a name="modifying-arrays"></a>配列の変更
 
-[`Array.set`](https://msdn.microsoft.com/library/847edc0d-4dc5-4a39-98c7-d4320c60e790)要素を指定した値に設定します。 [`Array.fill`](https://msdn.microsoft.com/library/c83c9886-81d9-44f9-a195-61c7b87f7df2)指定した値に配列の要素の範囲を設定します。 `Array.fill` のコード例を次に示します。
+[`Array.set`](https://msdn.microsoft.com/library/847edc0d-4dc5-4a39-98c7-d4320c60e790) 要素を指定した値に設定します。 [`Array.fill`](https://msdn.microsoft.com/library/c83c9886-81d9-44f9-a195-61c7b87f7df2) 指定した値に配列の要素の範囲を設定します。 `Array.fill` のコード例を次に示します。
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/arrays/snippet28.fs)]
 
@@ -406,7 +403,7 @@ Found an element 4096 with square root 64 and cube root 16.
 
 ### <a name="converting-to-and-from-other-types"></a>他の型との相互変換
 
-[`Array.ofList`](https://msdn.microsoft.com/library/e7225239-f561-45a4-b0b5-69a1cdcae78b)リストから配列を作成します。 [`Array.ofSeq`](https://msdn.microsoft.com/library/6bedf5e0-4b22-46da-b09c-6aa09eff220c)シーケンスから配列を作成します。 [`Array.toList`](https://msdn.microsoft.com/library/4deff724-0be4-4688-92e7-9d67a1097786)および[ `Array.toSeq` ](https://msdn.microsoft.com/library/ac28dbab-406c-4fe0-ab08-c1ce5e247af4)配列型から他のこれらのコレクション型に変換します。
+[`Array.ofList`](https://msdn.microsoft.com/library/e7225239-f561-45a4-b0b5-69a1cdcae78b) リストから配列を作成します。 [`Array.ofSeq`](https://msdn.microsoft.com/library/6bedf5e0-4b22-46da-b09c-6aa09eff220c) シーケンスから配列を作成します。 [`Array.toList`](https://msdn.microsoft.com/library/4deff724-0be4-4688-92e7-9d67a1097786) および[ `Array.toSeq` ](https://msdn.microsoft.com/library/ac28dbab-406c-4fe0-ab08-c1ce5e247af4)配列型から他のこれらのコレクション型に変換します。
 
 ### <a name="sorting-arrays"></a>配列の並べ替え
 
@@ -414,7 +411,7 @@ Found an element 4096 with square root 64 and cube root 16.
 
 ### <a name="arrays-and-tuples"></a>配列とタプル
 
-関数は、 [ `Array.zip` ](https://msdn.microsoft.com/library/23e086b8-b266-4db2-8b68-e88e6a8e2187)と[ `Array.unzip` ](https://msdn.microsoft.com/library/a529b47c-2e2b-4f79-ad44-c578432d2f48)タプルのペアの配列を配列のその逆の組に変換します。 [`Array.zip3`](https://msdn.microsoft.com/library/1745744a-d2ca-4c3e-b825-3f15d9f4000d)および[ `Array.unzip3` ](https://msdn.microsoft.com/library/bc3e6db0-f334-444f-8c30-813942880677)が 3 つの要素の組または組の 3 つの配列を操作する点を除いてに似ています。
+関数は、 [ `Array.zip` ](https://msdn.microsoft.com/library/23e086b8-b266-4db2-8b68-e88e6a8e2187)と[ `Array.unzip` ](https://msdn.microsoft.com/library/a529b47c-2e2b-4f79-ad44-c578432d2f48)タプルのペアの配列を配列のその逆の組に変換します。 [`Array.zip3`](https://msdn.microsoft.com/library/1745744a-d2ca-4c3e-b825-3f15d9f4000d) および[ `Array.unzip3` ](https://msdn.microsoft.com/library/bc3e6db0-f334-444f-8c30-813942880677)が 3 つの要素の組または組の 3 つの配列を操作する点を除いてに似ています。
 
 ## <a name="parallel-computations-on-arrays"></a>配列に対する並列計算
 

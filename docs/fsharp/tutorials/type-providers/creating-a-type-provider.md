@@ -1,20 +1,17 @@
 ---
 title: 'チュートリアル: 型プロバイダー (f#) を作成します。'
 description: F# 3.0 での基本的な概念を説明するためにいくつかの単純型プロバイダーを確認するには、独自の f# 型プロバイダーを作成する方法を説明します。
-keywords: visual f#, f#, 関数型プログラミング
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: 82bec076-19d4-470c-979f-6c3a14b7c70a
-ms.openlocfilehash: b2e83218184bd1aef8258378485b99697cc8cf8d
-ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
+ms.openlocfilehash: cea71a2b71f660971c1b2dde702c9b489be48cee
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="tutorial-create-a-type-provider"></a>チュートリアル: 型プロバイダーを作成します。
 

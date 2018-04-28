@@ -14,20 +14,20 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 866fe3ebcec295b57444f937b3b6fd6677bfe0f4
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: 8fa22db7fe613279fcf8487abaf57691250b7d80
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="debugging-workflows"></a>デバッグのワークフロー
 [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] には、開発環境から実行中のワークフローをデバッグするオプションがいくつかあります。 ワークフローは、デザイナー、XAML、およびコードでデバッグできます。  
   
 ## <a name="debugging-in-the-workflow-designer"></a>ワークフロー デザイナーでのデバッグ  
- アクティビティを強調表示し、キーを押して、ワークフロー デザイナーでアクティビティにブレークポイントを設定することができます**F9**アクティビティのコンテキスト メニューを使用します。 ワークフロー ホストをデバッグ モードで実行すると、ワークフローの実行は一時停止します。 次のスクリーンショットでは、ワークフローの実行はブレークポイントで一時停止します。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [ワークフロー デザイナーにワークフローのデバッグ](/visualstudio/workflow-designer/debugging-workflows-with-the-workflow-designer)です。  
+ アクティビティを強調表示し、キーを押して、ワークフロー デザイナーでアクティビティにブレークポイントを設定することができます**F9**アクティビティのコンテキスト メニューを使用します。 ワークフロー ホストをデバッグ モードで実行すると、ワークフローの実行は一時停止します。 次のスクリーンショットでは、ワークフローの実行はブレークポイントで一時停止します。 詳細については、次を参照してください。[ワークフロー デザイナーにワークフローをデバッグ](/visualstudio/workflow-designer/debugging-workflows-with-the-workflow-designer)です。  
   
 ## <a name="debugging-in-xaml"></a>XAML でのデバッグ  
- デザイナーでワークフローがブレークポイントで一時停止すると、XAML でもワークフローをデバッグできます。 XAML での実行ポイントを表示する選択**XAML ビュー**ワークフローの実行が一時停止すると、ワークフロー デザイナーでします。 デバッグをデザイナーに切り替えるには、ソリューション エクスプローラーからデザイナーでワークフローを開き直します。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [方法: ワークフロー デザイナーで XAML をデバッグ](/visualstudio/workflow-designer/how-to-debug-xaml-with-the-workflow-designer)です。  
+ デザイナーでワークフローがブレークポイントで一時停止すると、XAML でもワークフローをデバッグできます。 XAML での実行ポイントを表示する選択**XAML ビュー**ワークフローの実行が一時停止すると、ワークフロー デザイナーでします。 デバッグをデザイナーに切り替えるには、ソリューション エクスプローラーからデザイナーでワークフローを開き直します。 詳細については、次を参照してください。[する方法: ワークフロー デザイナーで XAML をデバッグ](/visualstudio/workflow-designer/how-to-debug-xaml-with-the-workflow-designer)です。  
   
 ## <a name="debugging-in-code"></a>コードでのデバッグ  
  コードのブレークポイントは、他の命令型アプリケーションで使用する方法と同様に [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] で使用できます。 コードのブレークポイントを作成するコード ペインの左マージンをクリックしてまたはキーを押して**F9**カーソル位置にブレークポイントを配置します。  
@@ -42,4 +42,4 @@ ms.lasthandoff: 04/27/2018
 >  ワークフロー アプリケーションが x86 を対象とする場合のアーキテクチャが、64 ビットのオペレーティング システムを実行するコンピューターでホストされているリモート デバッグが機能しません、リモート コンピューターで Visual Studio がインストールされているかに、ワークフロー アプリケーションのターゲットを変更しない限り、**任意の CPU**です。  
   
 ## <a name="extending-the-workflow-debugging-service"></a>ワークフロー デバッグ サービスの拡張  
- ワークフロー デバッガー サービスは公開されるようになり、ホストを変更したデザイナーでのモニタリング、シミュレーション、デバッグなど、カスタム アプリケーションを作成するときに使用できます。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)]「<xref:System.Activities.Presentation.Debug.DebuggerService>」のトピックを参照してください。
+ ワークフロー デバッガー サービスは公開されるようになり、ホストを変更したデザイナーでのモニタリング、シミュレーション、デバッグなど、カスタム アプリケーションを作成するときに使用できます。 詳細については、「<xref:System.Activities.Presentation.Debug.DebuggerService>」を参照してください。

@@ -1,35 +1,37 @@
 ---
-title: "分析トレースの動的な有効化"
-ms.custom: 
+title: 分析トレースの動的な有効化
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 58b63cfc-307a-427d-b69d-9917ff9f44ac
-caps.latest.revision: "12"
+caps.latest.revision: 12
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 18dda3f63a12a9f9a2320f413137943e5864ad27
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: d070c66eebbf1a067254c38c6e5bfc7f40742863
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="dynamically-enabling-analytic-tracing"></a>分析トレースの動的な有効化
 Windows オペレーティング システムに付属のツールでは、ETW (Event Tracing for Windows) を使用して、トレースを動的に有効化または無効化できます。 すべての [!INCLUDE[netfx_current_long](../../../../../includes/netfx-current-long-md.md)] [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] サービスについては、アプリケーションの Web.config ファイルを変更したり、サービスを再起動したりせずに、分析トレースを動的に有効化および無効化できます。 このため、トレース イベントを生成するアプリケーションに影響が生じません。  
   
  [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] のトレース オプションも同様に構成できます。 たとえば、アプリケーションに影響を与えずに、重大度レベルを **Error** から **Information** に変更できます。 これは、次のツールで実行できます。  
   
--   **Logman** : トレース データを構成、制御、および照会するためのコマンド ライン ツールです。 [!INCLUDE[crdefault](../../../../../includes/crdefault-md.md)][Logman Create Trace](http://go.microsoft.com/fwlink/?LinkId=165426)と[Logman Update Trace](http://go.microsoft.com/fwlink/?LinkId=165427)です。  
+-   **Logman** : トレース データを構成、制御、および照会するためのコマンド ライン ツールです。 詳細については、次を参照してください。 [Logman 作成トレース](http://go.microsoft.com/fwlink/?LinkId=165426)と[Logman Update Trace](http://go.microsoft.com/fwlink/?LinkId=165427)です。  
   
--   **EventViewer** : トレース結果を表示するための、Windows のグラフィカル管理ツールです。 [!INCLUDE[crdefault](../../../../../includes/crdefault-md.md)][WCF サービスと Event Tracing for Windows](../../../../../docs/framework/wcf/samples/wcf-services-and-event-tracing-for-windows.md)と[イベント ビューアー](http://go.microsoft.com/fwlink/?LinkId=165428)です。  
+-   **EventViewer** : トレース結果を表示するための、Windows のグラフィカル管理ツールです。 詳細については、次を参照してください。 [WCF サービスと Event Tracing for Windows](../../../../../docs/framework/wcf/samples/wcf-services-and-event-tracing-for-windows.md)と[イベント ビューアー](http://go.microsoft.com/fwlink/?LinkId=165428)です。  
   
--   **Perfmon** : カウンターを使用して、トレース カウンターおよびパフォーマンス トレースの効果を監視する、Windows のグラフィカル管理ツールです。 [!INCLUDE[crdefault](../../../../../includes/crdefault-md.md)][データ コレクター セットを手動で作成](http://go.microsoft.com/fwlink/?LinkId=165429)です。  
+-   **Perfmon** : カウンターを使用して、トレース カウンターおよびパフォーマンス トレースの効果を監視する、Windows のグラフィカル管理ツールです。 詳細については、次を参照してください。 [、データ コレクター設定を手動で作成](http://go.microsoft.com/fwlink/?LinkId=165429)です。  
   
 ### <a name="keywords"></a>キーワード  
  <xref:System.ServiceModel.Activation.Configuration.ServiceModelActivationSectionGroup.Diagnostics%2A> クラスを使用するときには、通常、.NET Framework トレース メッセージが重大度レベル (エラー、警告、情報など) でフィルターされます。 ETW は、重大度レベルの概念をサポートしますが、キーワードを使用して、新しい柔軟なフィルター機構も追加されています。 キーワードは任意のテキスト値で、これによって、トレース イベントでそのイベントの意味に関する追加のコンテキストが提供されます。  
@@ -51,5 +53,5 @@ Windows オペレーティング システムに付属のツールでは、ETW (
 |`ServiceHost`|サービス ホストが生成するイベント。|  
 |`WCFMessageLogging`|[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] メッセージ ログ イベント。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [WCF サービスと Event Tracing for Windows](../../../../../docs/framework/wcf/samples/wcf-services-and-event-tracing-for-windows.md)

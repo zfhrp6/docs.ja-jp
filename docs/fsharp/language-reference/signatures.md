@@ -1,20 +1,17 @@
 ---
-title: "シグネチャ (F#)"
-description: "F# シグネチャ ファイルを使用して、型、名前空間、モジュールなど f# プログラム要素、一連のパブリック シグネチャに関する情報を保持する方法を説明します。"
-keywords: "visual f#, f#, 関数型プログラミング"
+title: シグネチャ (F#)
+description: F# シグネチャ ファイルを使用して、型、名前空間、モジュールなど f# プログラム要素、一連のパブリック シグネチャに関する情報を保持する方法を説明します。
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: 76c84a62-b2f6-44ec-8238-e687e2f7d18e
-ms.openlocfilehash: d0f71c6472852268303a2d3af2e4b0a3c256704e
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: c98ac6c62fdcee51532a162596e99309a31802ec
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="signatures"></a>シグネチャ
 

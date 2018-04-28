@@ -1,24 +1,26 @@
 ---
-title: "メッセージ セキュリティを使用したメッセージのセキュリティ保護"
-ms.custom: 
+title: メッセージ セキュリティを使用したメッセージのセキュリティ保護
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a17ebe67-836b-4c52-9a81-2c3d58e225ee
-caps.latest.revision: "16"
+caps.latest.revision: 16
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: be727fe2b69258a058ba99dc8aa40ae148d3dd99
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: be9d55e508308f23e70be81ac0d4fe0dfd0ea9cd
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="securing-messages-using-message-security"></a>メッセージ セキュリティを使用したメッセージのセキュリティ保護
 ここでは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を使用した場合の <xref:System.ServiceModel.NetMsmqBinding> メッセージ セキュリティについて説明します。  
@@ -52,7 +54,7 @@ ms.lasthandoff: 12/22/2017
   
  キューは切断されているため、クライアントとサービスが同時にオンライン状態にならない可能性があります。 したがって、クライアントとサービスは、帯域外で証明書を交換する必要があります。 特にクライアントは、信頼されたストア内にサービスの証明書 (証明機関にチェーンできる) を保持しているという理由で、正しいサービスと通信していると信じる必要があります。 クライアントを認証する場合、サービスはメッセージに添付された X509 証明書を使用し、ストア内の証明書と照合してクライアントの信頼性を確認します。 この場合も、証明書は証明機関にチェーンされている必要があります。  
   
- Windows を実行しているコンピューターでは、証明書は数種類のストアで保持されています。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]別のストアを参照してください[証明書のストア](http://go.microsoft.com/fwlink/?LinkId=87787)です。  
+ Windows を実行しているコンピューターでは、証明書は数種類のストアで保持されています。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] 別のストアを参照してください[証明書のストア](http://go.microsoft.com/fwlink/?LinkId=87787)です。  
   
 ### <a name="windows"></a>Windows  
  メッセージ資格情報の種類に Windows を設定すると、Kerberos プロトコルが使用されます。  
@@ -63,7 +65,7 @@ ms.lasthandoff: 12/22/2017
   
  この種類の資格情報を使用する場合、SERVICE アカウントでサービスが実行されている必要があります。  
   
- メッセージ資格情報を選択すると、既定で Kerberos プロトコルが使用されます。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][のプロトコルは Kerberos を検索するには、Windows 2000 のセキュリティを分散](http://go.microsoft.com/fwlink/?LinkId=87790)です。  
+ メッセージ資格情報を選択すると、既定で Kerberos プロトコルが使用されます。 詳細については、次を参照してください。[探索 Kerberos、Windows 2000 でのセキュリティの配布用のプロトコル](http://go.microsoft.com/fwlink/?LinkId=87790)です。  
   
 ### <a name="username-password"></a>ユーザー名とパスワード  
  このプロパティを使用すると、クライアントは、メッセージのセキュリティ ヘッダーに含まれるユーザー名とパスワードを使用してサーバーに認証できます。  
@@ -74,7 +76,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="using-transport-and-message-security"></a>トランスポート セキュリティとメッセージ セキュリティの使用  
  トランスポート セキュリティとメッセージ セキュリティの両方を使用する場合は、トランスポート レベルと SOAP メッセージ レベルの両方で同じ証明書を使用してメッセージを保護する必要があります。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [トランスポート セキュリティを使用したメッセージのセキュリティ保護](../../../../docs/framework/wcf/feature-details/securing-messages-using-transport-security.md)  
  [メッセージ キューを介したメッセージ セキュリティ](../../../../docs/framework/wcf/samples/message-security-over-message-queuing.md)  
  [セキュリティの概念](../../../../docs/framework/wcf/feature-details/security-concepts.md)  

@@ -1,24 +1,26 @@
 ---
-title: "インターネット インフォメーション サービスでホストされる WCF サービスの配置"
-ms.custom: 
+title: インターネット インフォメーション サービスでホストされる WCF サービスの配置
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 04ebd329-3fbd-44c3-b3ab-1de3517e27d7
-caps.latest.revision: "30"
+caps.latest.revision: 30
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 869e3b81e94e6efaa8d6cd9f4f021b52b6b43f48
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: ca37e8b3f59875ed912c02d0a8237a040bf79518
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="deploying-an-internet-information-services-hosted-wcf-service"></a>インターネット インフォメーション サービスでホストされる WCF サービスの配置
 IIS (インターネット インフォメーション サービス) でホストされている [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスの開発と展開には、次のタスクが含まれます。  
@@ -40,13 +42,13 @@ IIS (インターネット インフォメーション サービス) でホス�
   
  IIS が既にコンピューターにインストールされている場合は、 [!INCLUDE[vstecwinfx](../../../../includes/vstecwinfx-md.md)] のインストール プロセスにより、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] が IIS に自動登録されます。 [!INCLUDE[vstecwinfx](../../../../includes/vstecwinfx-md.md)]の後に IIS をインストールした場合は、追加の手順に従って、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を IIS と [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)]に登録する必要があります。 使用しているオペレーティング システムに応じて、次のように実行します。  
   
--   [!INCLUDE[wxpsp2](../../../../includes/wxpsp2-md.md)]、Windows 7、および[!INCLUDE[ws2003](../../../../includes/ws2003-md.md)]: を使用して、 [ServiceModel 登録ツール (ServiceModelReg.exe)](../../../../docs/framework/wcf/servicemodelreg-exe.md)ツールを登録して[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]iis: このツールを使用する入力**ServiceModelReg.exe/i/x**でVisual Studio コマンド プロンプトでします。 このコマンド プロンプトを開くには、[スタート] ボタンをクリックし、 **[すべてのプログラム]**, **[Microsoft Visual Studio 2012]**, **[Visual Studio ツール]**の順にポイントし、 **[Visual Studio コマンド プロンプト]**をクリックします。  
+-   [!INCLUDE[wxpsp2](../../../../includes/wxpsp2-md.md)]、Windows 7、および[!INCLUDE[ws2003](../../../../includes/ws2003-md.md)]: を使用して、 [ServiceModel 登録ツール (ServiceModelReg.exe)](../../../../docs/framework/wcf/servicemodelreg-exe.md)ツールを登録して[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]iis: このツールを使用する入力**ServiceModelReg.exe/i/x**で、Visual Studio コマンド プロンプトです。 このコマンド プロンプトを開くには、[スタート] ボタンをクリックし、 **[すべてのプログラム]**, **[Microsoft Visual Studio 2012]**, **[Visual Studio ツール]** の順にポイントし、 **[Visual Studio コマンド プロンプト]** をクリックします。  
   
 -   [!INCLUDE[wv](../../../../includes/wv-md.md)]: [!INCLUDE[vstecwinfx](../../../../includes/vstecwinfx-md.md)]のサブコンポーネントの Windows Communication Foundation アクティベーション コンポーネントをインストールします。 これを行う、コントロール パネルで、をクリックして**プログラム追加と削除**し**追加\/Windows コンポーネントの削除**です。 **Windows コンポーネント ウィザード**がアクティブになります。  
   
 -   Windows 7:  
   
- 最後に、ASP.NET が .NET Framework Version 4 を使用するように設定されていることを確認する必要があります。 これには、–i オプションを指定して ASPNET_Regiis ツールを実行します。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][ASP.NET IIS 登録ツール](http://go.microsoft.com/fwlink/?LinkId=201186)  
+ 最後に、ASP.NET が .NET Framework Version 4 を使用するように設定されていることを確認する必要があります。 これには、–i オプションを指定して ASPNET_Regiis ツールを実行します。 詳細については、次を参照してください[ASP.NET IIS 登録ツール。](http://go.microsoft.com/fwlink/?LinkId=201186)  
   
 ## <a name="create-a-new-iis-application-or-reuse-an-existing-aspnet-application"></a>新しい IIS アプリケーションの作成、または既存の ASP.NET アプリケーションの再利用  
  IIS でホストされる [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスは、IIS アプリケーションの内部に存在する必要があります。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスのみをホストする新しい IIS アプリケーションを作成できます。 または、既に [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] コンテンツ (.aspx ページや ASP.NET Web サービス (ASMX) など) をホストしている既存のアプリケーションに [!INCLUDE[vstecasplong](../../../../includes/vstecasplong-md.md)] サービスを展開することもできます。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] 、「 [WCF Services and ASP.NET](../../../../docs/framework/wcf/feature-details/wcf-services-and-aspnet.md)」を参照してください。  
@@ -89,21 +91,21 @@ new ServiceHost( typeof( MyNamespace.MyServiceImplementationTypeName ) );
 -   ホストしているアプリケーション[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]IIS の外部でのサービスは、一連のベース アドレス Uri を渡すことによって、ホストするサービスのベース アドレスを制御できます、<xref:System.ServiceModel.ServiceHost>コンス トラクターを提供したりして、 [\<ホスト >](../../../../docs/framework/configure-apps/file-schema/wcf/host.md)サービスの構成内の要素。 IIS でホストされるサービスは、それぞれのベース アドレスを制御できません。IIS でホストされるサービスのベース アドレスは、その .svc ファイルのアドレスです。  
   
 ### <a name="endpoint-addresses-for-iis-hosted-services"></a>IIS でホストされるサービスのエンドポイント アドレス  
- IIS でホストされるときのエンドポイント アドレスは、常にサービスを表す .svc ファイルのアドレスを基準にした相対アドレスと見なされます。 たとえば、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスのベース アドレスが http://localhost/Application1/MyService.svc で、次のエンドポイント構成を伴う場合  
+ IIS でホストされるときのエンドポイント アドレスは、常にサービスを表す .svc ファイルのアドレスを基準にした相対アドレスと見なされます。 たとえば場合のベース アドレス、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]サービスはhttp://localhost/Application1/MyService.svc次のエンドポイント構成を使用します。  
   
 ```xml  
 <endpoint address="anotherEndpoint" .../>  
 ```  
   
- "http://localhost/Application1/MyService.svc/anotherEndpoint" に到達できるエンドポイントが得られます。  
+ これにより、エンドポイントに到達できる"http://localhost/Application1/MyService.svc/anotherEndpoint"です。  
   
- 同様に、相対アドレスとして空の文字列を使用するエンドポイント構成要素では、ベース アドレスである http://localhost/Application1/MyService.svc に到達できるエンドポイントが得られます。  
+ 同様に、エンドポイント構成要素に到達できるエンドポイントを提供する相対アドレスとして空の文字列を使用するhttp://localhost/Application1/MyService.svc、これは、ベース アドレス。  
   
 ```xml  
 <endpoint address="" ... />  
 ```  
   
- IIS でホストされるサービスのエンドポイントには、常に相対エンドポイント アドレスを使用する必要があります。 完全修飾されたエンドポイント アドレス (http://localhost/MyService.svc など) を指定すると、エンドポイント アドレスが、エンドポイントを公開するサービスをホストする IIS アプリケーションを指さない場合、サービスの展開エラーになる可能性があります。 ホストされるサービスに相対エンドポイント アドレスを使用すると、このような競合が回避されます。  
+ IIS でホストされるサービスのエンドポイントには、常に相対エンドポイント アドレスを使用する必要があります。 完全修飾エンドポイント アドレスを提供して (たとえば、http://localhost/MyService.svc)エンドポイントのアドレスが、エンドポイントを公開するサービスをホストする IIS アプリケーションを指していない場合に、サービスの展開でエラーにつながることができます。 ホストされるサービスに相対エンドポイント アドレスを使用すると、このような競合が回避されます。  
   
 ### <a name="available-transports"></a>利用可能なトランスポート  
  IIS 5.1 および[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] でホストされる [!INCLUDE[iis601](../../../../includes/iis601-md.md)] サービスが使用できるのは、HTTP ベースの通信のみに制限されています。 これらの IIS プラットフォームでホストされるサービスで、非 HTTP バインドを使用するように構成すると、サービスをアクティブ化するときにエラーが発生します。 [!INCLUDE[iisver](../../../../includes/iisver-md.md)]でサポートされるトランスポートには、既存の MSMQ アプリケーションとの後方互換性を実現する HTTP、Net.TCP、Net.Pipe、Net.MSMQ、msmq.formatname があります。  
@@ -113,7 +115,7 @@ new ServiceHost( typeof( MyNamespace.MyServiceImplementationTypeName ) );
   
  たとえば、HTTP ダイジェスト認証を使用するように構成された [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] エンドポイントは、HTTP ダイジェスト認証を許可するように構成された IIS 仮想ディレクトリに存在する必要があります。 IIS の設定と [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] エンドポイントの設定の組み合わせが一致しない場合、サービスをアクティブ化するときにエラーが発生します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [インターネット インフォメーション サービスでのホスティング](../../../../docs/framework/wcf/feature-details/hosting-in-internet-information-services.md)  
  [インターネット インフォメーション サービス ホスティングのベスト プラクティス](../../../../docs/framework/wcf/feature-details/internet-information-services-hosting-best-practices.md)  
  [Windows Server App Fabric のホスティング機能](http://go.microsoft.com/fwlink/?LinkId=201276)

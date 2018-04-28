@@ -1,13 +1,13 @@
 ---
-title: "方法 : SecurityBindingElement を使用してカスタム バインドを作成する"
-ms.custom: 
+title: '方法 : SecurityBindingElement を使用してカスタム バインドを作成する'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,20 +15,20 @@ dev_langs:
 helpviewer_keywords:
 - security [WCF], creating custom bindings
 ms.assetid: 203a9f9e-3a73-427c-87aa-721c56265b29
-caps.latest.revision: 
+caps.latest.revision: 19
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
 ms.workload:
 - dotnet
-ms.openlocfilehash: e230c02d53f8222034dfd79872cde9c540c31963
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 3dc83697a27bf99a63305bf89a57fbcb4d459b45
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="how-to-create-a-custom-binding-using-the-securitybindingelement"></a>方法 : SecurityBindingElement を使用してカスタム バインドを作成する
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] にはシステム指定のバインディングがいくつか含まれています。これらのバインディングは構成できますが、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] がサポートするすべてのセキュリティ オプションを構成しようとする場合には十分な柔軟性が得られません。 ここでは、個別のバインド要素からカスタム バインドを直接作成する方法を説明し、このようなバインディングを作成する場合に指定できるセキュリティ設定のいくつかに焦点を当てます。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]カスタム バインディングを作成するを参照してください[バインディングの拡張](../../../../docs/framework/wcf/extending/extending-bindings.md)です。  
+[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] にはシステム指定のバインディングがいくつか含まれています。これらのバインディングは構成できますが、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] がサポートするすべてのセキュリティ オプションを構成しようとする場合には十分な柔軟性が得られません。 ここでは、個別のバインド要素からカスタム バインドを直接作成する方法を説明し、このようなバインディングを作成する場合に指定できるセキュリティ設定のいくつかに焦点を当てます。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] カスタム バインディングを作成するを参照してください[バインディングの拡張](../../../../docs/framework/wcf/extending/extending-bindings.md)です。  
   
 > [!WARNING]
 >  <xref:System.ServiceModel.Channels.SecurityBindingElement> では、<xref:System.ServiceModel.Channels.IDuplexSessionChannel> が <xref:System.ServiceModel.TransferMode> に設定されている場合に TCP トランスポートによって使用される既定のチャネル形状である <xref:System.ServiceModel.TransferMode.Buffered> チャネル形状をサポートしていません。 このシナリオで <xref:System.ServiceModel.TransferMode> を使用するには、<xref:System.ServiceModel.TransferMode.Streamed> を <xref:System.ServiceModel.Channels.SecurityBindingElement> に設定する必要があります。  
@@ -88,9 +88,9 @@ ms.lasthandoff: 12/22/2017
 |||SSL または Windows StreamSecurityBindingElement|SSL または Windows StreamSecurityBindingElement|SSL または Windows StreamSecurityBindingElement|  
 |||TcpTransportBindingElement|TcpTransportBindingElement|TcpTransportBindingElement|  
   
- SecurityBindingElements には構成可能な設定が多数あることに注意してください。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][SecurityBindingElement 認証モード](../../../../docs/framework/wcf/feature-details/securitybindingelement-authentication-modes.md)です。  
+ SecurityBindingElements には構成可能な設定が多数あることに注意してください。 詳細については、次を参照してください。 [SecurityBindingElement 認証モード](../../../../docs/framework/wcf/feature-details/securitybindingelement-authentication-modes.md)です。  
   
- [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][メッセージ交換とセッションをセキュリティで保護](../../../../docs/framework/wcf/feature-details/secure-conversations-and-secure-sessions.md)です。  
+ 詳細については、次を参照してください。[セキュリティで保護されたメッセージ交換とセキュリティで保護されたセッション](../../../../docs/framework/wcf/feature-details/secure-conversations-and-secure-sessions.md)です。  
   
 ## <a name="procedures"></a>手順  
   
@@ -119,7 +119,7 @@ ms.lasthandoff: 12/22/2017
  [!code-csharp[c_CustomBinding#20](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_custombinding/cs/c_custombinding.cs#20)]
  [!code-vb[c_CustomBinding#20](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_custombinding/vb/source.vb#20)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Channels.SecurityBindingElement>  
  <xref:System.ServiceModel.Channels.TransportSecurityBindingElement>  
  <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>  

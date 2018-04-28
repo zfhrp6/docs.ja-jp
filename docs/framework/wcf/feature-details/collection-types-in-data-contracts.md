@@ -17,17 +17,17 @@ helpviewer_keywords:
 - data contracts [WCF], collection types
 - collection types [WCF]
 ms.assetid: 9b45b28e-0a82-4ea3-8c33-ec0094aff9d5
-caps.latest.revision: ''
+caps.latest.revision: 19
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: e74bd7d90d5653890fd5cf48e76c81d0227c6172
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: 528c1661b99ff5f50d42bb7a42371c302e335c90
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="collection-types-in-data-contracts"></a>データ コントラクトのコレクション型
 *"コレクション"* は、特定の型の項目のリストです。 [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]では、このようなリストは、配列や他のさまざまな型を使用して表すことができます (ジェネリック List、ジェネリック <xref:System.ComponentModel.BindingList%601>、 <xref:System.Collections.Specialized.StringCollection>、または <xref:System.Collections.ArrayList>)。 たとえば、コレクションでは指定された顧客のアドレスのリストを保持できます。 これらのコレクションは、実際の型に関係なく、 *リスト コレクション*と呼びます。  
@@ -40,7 +40,7 @@ ms.lasthandoff: 03/26/2018
   
  `Add` というメソッドと既定のコンストラクターを持つなど、コレクション型のその他の要件については、以降のセクションで詳しく説明します。 これにより、コレクション型を確実にシリアル化および逆シリアル化できます。 これは、直接サポートされないコレクションもあることを意味します。たとえば、ジェネリック <xref:System.Collections.ObjectModel.ReadOnlyCollection%601> (既定のコンストラクターを持たないため) などは直接サポートされません。 これらの制限を回避する方法については、このトピックで後述する「コレクション インターフェイス型と読み取り専用コレクションの使用」を参照してください。  
   
- コレクションに含まれる型は、データ コントラクト型である必要があります。それ以外の場合は、シリアル化可能な型であることが必要です。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [データ コントラクト シリアライザーでサポートされる型](../../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md)です。  
+ コレクションに含まれる型は、データ コントラクト型である必要があります。それ以外の場合は、シリアル化可能な型であることが必要です。 詳細については、次を参照してください。[データ コントラクト シリアライザーでサポートされる型](../../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md)です。  
   
  有効なコレクションと見なされるものと見なされないもの、およびコレクションをシリアル化する方法[!INCLUDE[crabout](../../../../includes/crabout-md.md)] 、このトピックの「コレクションの高度な規則」でコレクションのシリアル化に関する情報を参照してください。  
   
@@ -152,7 +152,7 @@ ms.lasthandoff: 03/26/2018
 </cust_list>  
 ```  
   
- [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] このトピックで後述される「コレクションの高度な規則」を参照してください。  
+ 詳細については、このトピックの「「コレクションの高度な規則」セクションを参照してください。  
   
 ### <a name="customizing-the-repeating-element-name-in-list-collections"></a>リスト コレクション内の反復される要素名のカスタマイズ  
  リスト コレクションには、反復されるエントリが含まれています。 通常、反復される各エントリは、コレクションに含まれる型のデータ コントラクト名に従って名前が付けられた要素として表されます。  
@@ -253,7 +253,7 @@ ms.lasthandoff: 03/26/2018
   
  生成されるコードで、既定の型と異なる型を使用することが必要になる場合があります。 たとえば、データ メンバーをユーザー インターフェイス コンポーネントにバインドしやすくするために、データ メンバーの通常の配列ではなく、ジェネリック <xref:System.ComponentModel.BindingList%601> を使用することがあります。  
   
- 生成するコレクション型を選択するには、スキーマをインポートするときに、使用するコレクション型のリストを <xref:System.Runtime.Serialization.ImportOptions.ReferencedCollectionTypes%2A> オブジェクトの <xref:System.Runtime.Serialization.ImportOptions> プロパティに渡します。 これらの型は、 *"参照されるコレクション型"*と呼ばれます。  
+ 生成するコレクション型を選択するには、スキーマをインポートするときに、使用するコレクション型のリストを <xref:System.Runtime.Serialization.ImportOptions.ReferencedCollectionTypes%2A> オブジェクトの <xref:System.Runtime.Serialization.ImportOptions> プロパティに渡します。 これらの型は、 *"参照されるコレクション型"* と呼ばれます。  
   
  ジェネリック型を参照する場合は、完全なオープン ジェネリックまたは完全なクローズ ジェネリックであることが必要です。  
   

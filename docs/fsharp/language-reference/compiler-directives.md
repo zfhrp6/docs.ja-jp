@@ -1,20 +1,17 @@
 ---
-title: "コンパイラ ディレクティブ (F#)"
-description: "F# の言語プリプロセッサ ディレクティブ、条件付きコンパイル ディレクティブは、行ディレクティブとコンパイラ ディレクティブについて説明します。"
-keywords: "visual f#, f#, 関数型プログラミング"
+title: コンパイラ ディレクティブ (F#)
+description: F# の言語プリプロセッサ ディレクティブ、条件付きコンパイル ディレクティブは、行ディレクティブとコンパイラ ディレクティブについて説明します。
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: 93aef07a-6747-4ce4-a10f-a05168978af6
-ms.openlocfilehash: c7ec056f407f3af34528205a5abb1cdef7d43fef
-ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
+ms.openlocfilehash: 03fe3598f04025cf6dfaf2424b9fcb33ed4b3859
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="compiler-directives"></a>コンパイラ ディレクティブ
 
@@ -32,8 +29,8 @@ ms.lasthandoff: 03/15/2018
 |`#if` *symbol*|条件付きコンパイルをサポートします。 後のセクションのコードで、`#if`場合に値が含まれる、*シンボル*が定義されています。|
 |`#else`|条件付きコンパイルをサポートします。 前の `#if` で使用したシンボルが定義されていない場合に含めるコードのセクションをマークします。|
 |`#endif`|条件付きコンパイルをサポートします。 コードの条件付きセクションの末尾をマークします。|
-|`#`[行]*int*、<br/>`#`[line] *int* *string*,<br/>`#`[line] *int* *verbatim-string*|デバッグ用に、元のソース コードの行とファイル名を示します。 この機能は、F# ソース コードを生成するツール用に用意されています。|
-|`#nowarn` *warningcode*|コンパイラ警告を無効にします。 警告を無効にするには、コンパイラ出力で警告の番号を確認し、その番号を引用符で囲んで指定します。 "FS" プレフィックスを省略します。 1 つの行で複数の警告番号を無効にするには、それぞれの番号を引用符で囲んだうえで各文字列をスペースで区切ります。 例:
+|`#`[行]*int*、<br/>`#`[行]*int* *文字列*、<br/>`#`[line] *int* *verbatim-string*|デバッグ用に、元のソース コードの行とファイル名を示します。 この機能は、F# ソース コードを生成するツール用に用意されています。|
+|`#nowarn` *warningcode*|コンパイラ警告を無効にします。 警告を無効にするには、コンパイラ出力で警告の番号を確認し、その番号を引用符で囲んで指定します。 "FS" プレフィックスを省略します。 1 つの行で複数の警告番号を無効にするには、それぞれの番号を引用符で囲んだうえで各文字列をスペースで区切ります。 例えば:
 
 `#nowarn "9" "40"`
 
@@ -79,7 +76,7 @@ F# には、`#define` プリプロセッサ ディレクティブはありませ
 インタープリター (fsi.exe) ディレクティブは、次を参照してください。 [f# による対話型プログラミング](../tutorials/fsharp-interactive/index.md)です。
 
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 [F# 言語リファレンス](index.md)
 
 [コンパイラ オプション](compiler-options.md)

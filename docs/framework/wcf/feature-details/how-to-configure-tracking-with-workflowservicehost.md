@@ -1,24 +1,26 @@
 ---
-title: "方法: WorkflowServiceHost を使用して追跡を構成する"
-ms.custom: 
+title: '方法: WorkflowServiceHost を使用して追跡を構成する'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ed1485fe-7529-4351-bca3-8bb915260b17
-caps.latest.revision: "14"
+caps.latest.revision: 14
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 1b9bba3c589ca0232171bab58c26b19c7312a313
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 7cf4b9055334d68337e6414f25f30561b990c732
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="how-to-configure-tracking-with-workflowservicehost"></a>方法: WorkflowServiceHost を使用して追跡を構成する
 このトピックでは、[!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] でホストされている <xref:System.ServiceModel.Activities.WorkflowServiceHost> ワークフロー サービスの追跡を構成する方法について説明します。 これは、Web.config ファイルにサービスの動作を指定することによって指定します。  
@@ -38,7 +40,7 @@ ms.lasthandoff: 12/22/2017
     ```  
   
     > [!NOTE]
-    >  前の構成サンプルでは、簡略化された構成を使用しています。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][構成を簡略化](../../../../docs/framework/wcf/simplified-configuration.md)です。  
+    >  前の構成サンプルでは、簡略化された構成を使用しています。 詳細については、次を参照してください。[簡略化された構成](../../../../docs/framework/wcf/simplified-configuration.md)です。  
   
      前の構成サンプルでは、<xref:System.Activities.Tracking.EtwTrackingParticipant> を追加し、追跡プロファイル名を指定します。 追跡プロファイルは、<`trackingProfile`> 要素内の <`tracking`> 要素で作成されます。 追跡プロファイルには、実行時にワークフロー インスタンスの状態が変化したときに生成されるワークフロー イベントを追跡参加要素が定期受信できるようにする、追跡クエリが含まれています。 追跡プロファイルを作成する方法を次の例に示します。  
   
@@ -61,9 +63,9 @@ ms.lasthandoff: 12/22/2017
     </system.serviceModel>  
     ```  
   
-     [!INCLUDE[crabout](../../../../includes/crabout-md.md)]追跡プロファイルを参照してください[追跡プロファイル](../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)です。  
+     [!INCLUDE[crabout](../../../../includes/crabout-md.md)] 追跡プロファイルを参照してください[追跡プロファイル](../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)です。  
   
-     [!INCLUDE[crabout](../../../../includes/crabout-md.md)]一般に、追跡を参照してください[ワークフロー追跡とトレース](../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)です。  
+     [!INCLUDE[crabout](../../../../includes/crabout-md.md)] 一般に、追跡を参照してください[ワークフロー追跡とトレース](../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)です。  
   
 ### <a name="configure-tracking-in-code"></a>コードでの追跡の構成  
   
@@ -75,11 +77,11 @@ ms.lasthandoff: 12/22/2017
   
      前のコード サンプルでは、<xref:System.Activities.Tracking.EtwTrackingParticipant> を追加し、追跡プロファイル名を指定します。 追跡プロファイルは、前のセクションで説明したように <`trackingProfile`> 要素内の <`tracking`> 要素で作成されます。  
   
-     [!INCLUDE[crabout](../../../../includes/crabout-md.md)]追跡プロファイルを参照してください[追跡プロファイル](../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)です。  
+     [!INCLUDE[crabout](../../../../includes/crabout-md.md)] 追跡プロファイルを参照してください[追跡プロファイル](../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)です。  
   
-     [!INCLUDE[crabout](../../../../includes/crabout-md.md)]一般に、追跡を参照してください[ワークフロー追跡とトレース](../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)です。 プログラムで追跡を構成する例を参照してください。[ワークフローの追跡を構成する](../../../../docs/framework/windows-workflow-foundation/configuring-tracking-for-a-workflow.md)です。  
+     [!INCLUDE[crabout](../../../../includes/crabout-md.md)] 一般に、追跡を参照してください[ワークフロー追跡とトレース](../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)です。 プログラムで追跡を構成する例を参照してください。[ワークフローの追跡を構成する](../../../../docs/framework/windows-workflow-foundation/configuring-tracking-for-a-workflow.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [WCF サービスの簡略化された構成](../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md)  
  [ワークフロー サービス](../../../../docs/framework/wcf/feature-details/workflow-services.md)  
  [追跡プロファイル](../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)

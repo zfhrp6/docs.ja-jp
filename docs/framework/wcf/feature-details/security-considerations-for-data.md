@@ -1,27 +1,29 @@
 ---
-title: "セキュリティに関するデータの考慮事項"
-ms.custom: 
+title: セキュリティに関するデータの考慮事項
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: a7eb98da-4a93-4692-8b59-9d670c79ffb2
-caps.latest.revision: "23"
+caps.latest.revision: 23
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: bb7a40bc38a3fdf3f7be2b31e30e768e26be2d15
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: aa0692c130fdfcf3685c152cdcb73a07d041ab9b
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="security-considerations-for-data"></a>セキュリティに関するデータの考慮事項
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]でデータを処理するとき、さまざまな種類の脅威について考慮する必要があります。 データ処理に関連する最も重要な脅威の種類を次の表に示します。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、これらの脅威を軽減するためのツールが用意されています。  
@@ -44,7 +46,7 @@ ms.lasthandoff: 12/22/2017
   
  悪質なコードがさまざまな機能拡張ポイントに接続されないようにする必要があります。 これが特に関係するのは、部分信頼で実行する場合、部分信頼アセンブリの型を処理する場合、または部分信頼コードで使用できるコンポーネントを作成する場合です。 詳細については、後のセクションの「部分信頼に関する脅威」を参照してください。  
   
- 部分信頼で実行する場合、データ コントラクトのシリアル化インフラストラクチャがサポートするのは、データ コントラクト プログラミング モデルの一部のサブセットのみです。たとえば、 <xref:System.SerializableAttribute> 属性を使用するプライベート データ メンバーや型はサポートされません。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][部分信頼](../../../../docs/framework/wcf/feature-details/partial-trust.md)です。  
+ 部分信頼で実行する場合、データ コントラクトのシリアル化インフラストラクチャがサポートするのは、データ コントラクト プログラミング モデルの一部のサブセットのみです。たとえば、 <xref:System.SerializableAttribute> 属性を使用するプライベート データ メンバーや型はサポートされません。 詳細については、次を参照してください。[部分信頼](../../../../docs/framework/wcf/feature-details/partial-trust.md)です。  
   
 ## <a name="avoiding-unintentional-information-disclosure"></a>意図しない情報公開の回避  
  セキュリティを念頭に置いてシリアル化可能な型を設計するとき、情報の漏えい公開は考慮事項の 1 つです。  
@@ -121,7 +123,7 @@ ms.lasthandoff: 12/22/2017
 ### <a name="slow-stream-attacks"></a>遅いストリームによる攻撃  
  ストリーミング サービス拒否攻撃では、メモリ消費は発生しません。 代わりに、この攻撃では送信側または受信側でデータの転送が遅くなります。 データが送信または受信されるのを待っている間、スレッドや利用可能な接続などのリソースが消耗します。 この状況は、悪質な攻撃を受けた結果として、または正当な送信側または受信側が遅いネットワーク接続を使用していることが原因で起こる可能性があります。  
   
- この攻撃を軽減するには、トランスポートのタイムアウトを適切に設定します。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][トランスポート クォータ](../../../../docs/framework/wcf/feature-details/transport-quotas.md)です。 また、 `Read` でストリームを処理するときは、同期 `Write` 操作または同期 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]操作を使用しないでください。  
+ この攻撃を軽減するには、トランスポートのタイムアウトを適切に設定します。 詳細については、次を参照してください。[トランスポート クォータ](../../../../docs/framework/wcf/feature-details/transport-quotas.md)です。 また、 `Read` でストリームを処理するときは、同期 `Write` 操作または同期 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]操作を使用しないでください。  
   
 ## <a name="using-xml-safely"></a>XML の安全な使用  
   
@@ -177,7 +179,7 @@ ms.lasthandoff: 12/22/2017
   
  <xref:System.Xml.XmlDictionaryReaderQuotas.MaxNameTableCharCount%2A>、 `MaxStringContentLength`、および `MaxArrayLength` の各プロパティで制限されるのは、メモリ消費だけです。 メモリ使用量は `MaxReceivedMessageSize`によって既に制限されているため、通常、ストリーミングを使用しない状況で脅威を軽減するためにこれらのプロパティを使用する必要はありません。 ただし、 `MaxReceivedMessageSize` では、展開前のバイト数がカウントされます。 バイナリ エンコーディングを使用しているとき、メモリ消費は、 `MaxReceivedMessageSize`という因数によってのみ制限される、 <xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement.MaxSessionSize%2A>を超える可能性があります。 このため、バイナリ エンコーディングを使用するときはすべてのリーダーのクォータ (特に <xref:System.Xml.XmlDictionaryReaderQuotas.MaxStringContentLength%2A>) を必ず設定することが重要です。  
   
- <xref:System.Runtime.Serialization.DataContractSerializer>と共にバイナリ エンコーディングを使用する場合、 `IExtensibleDataObject` インターフェイスを誤用して、ディクショナリ拡大攻撃を引き起こす可能性があります。 このインターフェイスは、コントラクトの一部でない任意のデータに対して無制限のストレージを提供します。 `MaxSessionSize` に `MaxReceivedMessageSize` を掛けた値によって問題が起こらない程度に低くクォータを設定できない場合は、バイナリ エンコーディングを使用するときに `IExtensibleDataObject` 機能を無効にします。 `IgnoreExtensionDataObject` 属性では `true` プロパティを `ServiceBehaviorAttribute` に設定します。 または `IExtensibleDataObject` インターフェイスを実装しないという方法もあります。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][上位互換性のあるデータ コントラクト](../../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md)です。  
+ <xref:System.Runtime.Serialization.DataContractSerializer>と共にバイナリ エンコーディングを使用する場合、 `IExtensibleDataObject` インターフェイスを誤用して、ディクショナリ拡大攻撃を引き起こす可能性があります。 このインターフェイスは、コントラクトの一部でない任意のデータに対して無制限のストレージを提供します。 `MaxSessionSize` に `MaxReceivedMessageSize` を掛けた値によって問題が起こらない程度に低くクォータを設定できない場合は、バイナリ エンコーディングを使用するときに `IExtensibleDataObject` 機能を無効にします。 `IgnoreExtensionDataObject` 属性では `true` プロパティを `ServiceBehaviorAttribute` に設定します。 または `IExtensibleDataObject` インターフェイスを実装しないという方法もあります。 詳細については、「[上位互換性のあるデータ コントラクト](../../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md)」を参照してください。  
   
 ### <a name="quotas-summary"></a>クォータの概要  
  次の表では、クォータを使用するときのヒントを示します。  
@@ -259,7 +261,7 @@ ms.lasthandoff: 12/22/2017
   
 -   <xref:System.Runtime.Serialization.DataContractSerializer> で逆シリアル化が行われる際に、ほとんどのクラスで、コンストラクターが実行されません。 このため、コンストラクターで実行される状態管理には依存できません。  
   
--   コールバックを使用して、オブジェクトを確実に有効な状態にします。 <xref:System.Runtime.Serialization.OnDeserializedAttribute> 属性でマークされたコールバックは、逆シリアル化の完了後に実行され、全体の状態を調査して訂正できるので便利です。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][バージョン トレラントなシリアル化コールバック](../../../../docs/framework/wcf/feature-details/version-tolerant-serialization-callbacks.md)です。  
+-   コールバックを使用して、オブジェクトを確実に有効な状態にします。 <xref:System.Runtime.Serialization.OnDeserializedAttribute> 属性でマークされたコールバックは、逆シリアル化の完了後に実行され、全体の状態を調査して訂正できるので便利です。 詳細については、次を参照してください。[バージョン トレラントなシリアル化コールバック](../../../../docs/framework/wcf/feature-details/version-tolerant-serialization-callbacks.md)です。  
   
 -   データ コントラクト型は、プロパティの setter が特定の順序で呼び出されなくてもよいように設計します。  
   
@@ -267,10 +269,10 @@ ms.lasthandoff: 12/22/2017
   
 -   状態の安全性に関しては、データの存在を保証するために、 <xref:System.Runtime.Serialization.DataMemberAttribute.IsRequired%2A> 属性の `DataMemberAttribute` プロパティに依存することはできません。 データは常に `null`、`zero`、または `invalid` になります。  
   
--   信頼できないデータ ソースから逆シリアル化されたオブジェクト グラフは、検証せずに信頼してはいけません。 各オブジェクトが整合状態にあっても、オブジェクト グラフ全体としては整合状態にない場合があります。 さらに、オブジェクト グラフの保存モードが無効になっている場合でも、逆シリアル化されたグラフに、同じオブジェクトへの複数の参照または循環参照が存在することがあります。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][シリアル化および逆シリアル化](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md)です。  
+-   信頼できないデータ ソースから逆シリアル化されたオブジェクト グラフは、検証せずに信頼してはいけません。 各オブジェクトが整合状態にあっても、オブジェクト グラフ全体としては整合状態にない場合があります。 さらに、オブジェクト グラフの保存モードが無効になっている場合でも、逆シリアル化されたグラフに、同じオブジェクトへの複数の参照または循環参照が存在することがあります。 詳細については、次を参照してください。[シリアル化および逆シリアル化](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md)です。  
   
 ### <a name="using-the-netdatacontractserializer-securely"></a>NetDataContractSerializer の安全な使用  
- <xref:System.Runtime.Serialization.NetDataContractSerializer> は、型に対して密結合を使用するシリアル化エンジンです。 これは、 <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> および <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter>に類似しています。 つまり、このシリアル化エンジンでは、受信データから [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] アセンブリと型名を読み取って、インスタンス化する型を決定します。 このシリアル化エンジンは [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]の一部ですが、このエンジンにプラグインする方法は用意されていないため、カスタム コードを記述する必要があります。 `NetDataContractSerializer` は、主に、 [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] リモート処理から [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]への移行を容易にするためのものです。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]該当セクション[シリアル化および逆シリアル化](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md)です。  
+ <xref:System.Runtime.Serialization.NetDataContractSerializer> は、型に対して密結合を使用するシリアル化エンジンです。 これは、 <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> および <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter>に類似しています。 つまり、このシリアル化エンジンでは、受信データから [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] アセンブリと型名を読み取って、インスタンス化する型を決定します。 このシリアル化エンジンは [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]の一部ですが、このエンジンにプラグインする方法は用意されていないため、カスタム コードを記述する必要があります。 `NetDataContractSerializer` は、主に、 [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] リモート処理から [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]への移行を容易にするためのものです。 詳細については、の該当セクションを参照してください。[シリアル化および逆シリアル化](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md)です。  
   
  読み込むことができる型はメッセージ自身が示すことができるため、 <xref:System.Runtime.Serialization.NetDataContractSerializer> のメカニズムは本質的にセキュリティで保護されていません。このエンジンでは、信頼されたデータだけを使用してください。 <xref:System.Runtime.Serialization.NetDataContractSerializer.Binder%2A> プロパティを使用して、セキュリティで保護され、型を限定する型バインダーを記述して、安全な型の読み込みだけを許可することによって、このエンジンをセキュリティで保護された状態にすることができます。  
   
@@ -364,7 +366,7 @@ ms.lasthandoff: 12/22/2017
   
 -   通常、クォータを受け入れるコンポーネントを使用する場合は、そのセキュリティへの影響を理解し、クォータを安全な値に設定します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Runtime.Serialization.DataContractSerializer>  
  <xref:System.Xml.XmlDictionaryReader>  
  <xref:System.Xml.Serialization.XmlSerializer>  

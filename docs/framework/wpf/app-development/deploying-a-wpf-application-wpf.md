@@ -19,19 +19,19 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 3beb8ee0869384f9f453023fe549b2339c126898
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: bf92f12e415b937c36dfc518af4a4c1795c8b789
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="deploying-a-wpf-application-wpf"></a>WPF アプリケーションの配置 (WPF)
-ビルドされた [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] アプリケーションは、配置する必要があります。 [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] および [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] には、いくつかの配置テクノロジがあります。 [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] アプリケーションの配置に使用される配置テクノロジは、アプリケーションの種類によって決まります。 このトピックでは、それぞれの配置テクノロジの概要と使用法を、それぞれの [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] アプリケーションの種類の配置要件に関連して説明します。  
+ビルドされた [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] アプリケーションは、配置する必要があります。 [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] .NET Framework にはいくつかの展開テクノロジが含まれます。 [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] アプリケーションの配置に使用される配置テクノロジは、アプリケーションの種類によって決まります。 このトピックでは、それぞれの配置テクノロジの概要と使用法を、それぞれの [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] アプリケーションの種類の配置要件に関連して説明します。  
   
    
 <a name="Deployment_Technologies"></a>   
 ## <a name="deployment-technologies"></a>配置テクノロジ  
- [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] および [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] には、次のような、いくつかの配置テクノロジがあります。  
+ [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] .NET Framework など、いくつかの展開テクノロジのとおりです。  
   
 -   XCopy による配置。  
   
@@ -126,13 +126,13 @@ ms.lasthandoff: 04/26/2018
   
 <a name="Installing__NET_Framework_3_0"></a>   
 ## <a name="installing-the-net-framework"></a>.NET Framework のインストール  
- 実行する、[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]アプリケーション、Microsoft .NET Framework をクライアントにインストールする必要があります。 [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] は、ブラウザーでホストされる [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] アプリケーションが表示されるとき、クライアントに [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] がインストールされているかどうかを自動的に検出します。 [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] がインストールされていない場合、[!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] はユーザーにインストールを求めます。  
+ 実行する、[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]アプリケーション、Microsoft .NET Framework をクライアントにインストールする必要があります。 [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] .NET Framework と共にクライアントをインストールするかどうかを自動的に検出時に[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]ブラウザーによってホストされるアプリケーションを表示します。 .NET Framework がインストールされていない場合[!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)]をインストールするユーザー入力を要求します。  
   
- [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] がインストールされているかどうかを検出するために、[!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] には、.xaml、.xps、および .application の拡張子を持つコンテンツ ファイルのフォールバック [!INCLUDE[TLA#tla_mime](../../../../includes/tlasharptla-mime-md.md)] ハンドラーとして登録されているブートストラップ アプリケーションが含まれています。 これらのファイルの種類に移動するとき、[!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] がクライアントにインストールされていなかった場合、ブートス トラップ アプリケーションはインストールの許可を求めます。 許可が与えられなかった場合、[!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] もアプリケーションもインストールされません。  
+ .NET Framework がインストールされているかを検出するために[!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)]フォールバックとして登録されているブートス トラップ アプリケーションが含まれています[!INCLUDE[TLA#tla_mime](../../../../includes/tlasharptla-mime-md.md)]拡張子を持つコンテンツのファイルのハンドラー: .xaml、.xps、.xbap、および .application です。 これらのファイル タイプに移動するクライアントに .NET Framework がインストールされていない場合は、ブートス トラップ アプリケーションは、それをインストールするアクセス許可を要求します。 アクセス許可が指定されていない場合は、.NET Framework でも、アプリケーションがインストールされます。  
   
- 許可が与えられた場合、[!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] は [!INCLUDE[TLA#tla_bits](../../../../includes/tlasharptla-bits-md.md)] を使用して [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] をダウンロードし、インストールします。 [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] が正常にインストールされた後、最初に要求されたファイルが新しいブラウザー ウィンドウで開きます。  
+ アクセス許可が付与される場合[!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)]ダウンロードし、.NET Framework を使用して、インストール、[!INCLUDE[TLA#tla_bits](../../../../includes/tlasharptla-bits-md.md)]です。 .NET Framework のインストールは完了しました、最初に要求されたファイルが新しいブラウザー ウィンドウで開きます。  
   
- [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] の自動検出は、[!INCLUDE[TLA2#tla_ie7](../../../../includes/tla2sharptla-ie7-md.md)] 以降がインストールされている [!INCLUDE[TLA#tla_longhorn](../../../../includes/tlasharptla-longhorn-md.md)]、[!INCLUDE[TLA#tla_winxpsp2](../../../../includes/tlasharptla-winxpsp2-md.md)]、および [!INCLUDE[TLA#tla_winnetsvrfamsp1](../../../../includes/tlasharptla-winnetsvrfamsp1-md.md)] クライアントで利用できます。  
+ .NET framework の自動検出は[!INCLUDE[TLA#tla_longhorn](../../../../includes/tlasharptla-longhorn-md.md)]、 [!INCLUDE[TLA#tla_winxpsp2](../../../../includes/tlasharptla-winxpsp2-md.md)]、および[!INCLUDE[TLA#tla_winnetsvrfamsp1](../../../../includes/tlasharptla-winnetsvrfamsp1-md.md)]を持つクライアントを[!INCLUDE[TLA2#tla_ie7](../../../../includes/tla2sharptla-ie7-md.md)]以降がインストールされてです。  
   
  詳細については、「[.NET Framework およびアプリケーションの配置](../../../../docs/framework/deployment/index.md)」を参照してください。  
   

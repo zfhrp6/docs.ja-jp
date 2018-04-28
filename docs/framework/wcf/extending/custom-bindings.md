@@ -1,30 +1,32 @@
 ---
-title: "カスタム バインディング"
-ms.custom: 
+title: カスタム バインディング
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - Windows Communication Foundation, endpoints
 - Windows Communication Foundation, configuration
 ms.assetid: 58532b6d-4eea-4a4f-854f-a1c8c842564d
-caps.latest.revision: "33"
+caps.latest.revision: 33
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 2a3da437f742c46a2229aa00db732b5437ec15e3
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: f5fc38becb4a737ada5102c187ddeaac73aaceb1
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="custom-bindings"></a>カスタム バインディング
-システムが提供するバインディングの中にサービスの要件を満たすものがない場合は、<xref:System.ServiceModel.Channels.CustomBinding> クラスを使用できます。 すべてのバインディングは、バインド要素の順序付き集合から作成されます。 カスタム バインドは、一連のシステム指定のバインド要素から作成したり、ユーザー定義のカスタム バインド要素を含めたりできます。 カスタム バインド要素を使用すると、たとえば、新しいトランスポートまたはエンコーダーをサービス エンドポイントで使用できるようになります。 実施例については、次を参照してください。[カスタム バインディングのサンプル](http://msdn.microsoft.com/library/657e8143-beb0-472d-9cfe-ed1a19c2ab08)です。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [\<customBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md).  
+システムが提供するバインディングの中にサービスの要件を満たすものがない場合は、<xref:System.ServiceModel.Channels.CustomBinding> クラスを使用できます。 すべてのバインディングは、バインド要素の順序付き集合から作成されます。 カスタム バインドは、一連のシステム指定のバインド要素から作成したり、ユーザー定義のカスタム バインド要素を含めたりできます。 カスタム バインド要素を使用すると、たとえば、新しいトランスポートまたはエンコーダーをサービス エンドポイントで使用できるようになります。 実施例については、次を参照してください。[カスタム バインディングのサンプル](http://msdn.microsoft.com/library/657e8143-beb0-472d-9cfe-ed1a19c2ab08)です。 詳細については、次を参照してください。 [ \<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)です。  
   
 ## <a name="construction-of-a-custom-binding"></a>カスタム バインドの構築  
  カスタム バインディングは、特定の順序で "積み重ねられている" バインディング要素のコレクションから <xref:System.ServiceModel.Channels.CustomBinding.%23ctor%2A> コンストラクターを使用して作成します。  
@@ -83,7 +85,7 @@ ms.lasthandoff: 01/19/2018
   
  さらに、独自のバインド要素を定義し、それを定義済みの層のいずれかの間に挿入できます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [エンドポイントの作成の概要](../../../../docs/framework/wcf/endpoint-creation-overview.md)  
  [サービスとクライアントを構成するためのバインディングの使用](../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)  
  [システム標準のバインディング](../../../../docs/framework/wcf/system-provided-bindings.md)  

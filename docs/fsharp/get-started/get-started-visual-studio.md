@@ -1,20 +1,17 @@
 ---
-title: "F# では、Visual Studio での概要します。"
-description: "Visual Studio で f# を使用する方法を説明します。"
-keywords: "visual f#, f#, 関数型プログラミング"
+title: F# では、Visual Studio での概要します。
+description: Visual Studio で f# を使用する方法を説明します。
 author: cartermp
 ms.author: phcart
 ms.date: 02/13/2017
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.topic: conceptual
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: 8db75596-19a9-4eda-b20d-a12d517c8cc1
-ms.openlocfilehash: 818bf50507a88e1d765da8d0505ed8da4790b71f
-ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
+ms.openlocfilehash: 29e24f755e6d97c4b31c0d01b254bf90cf77bf17
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="get-started-with-f-in-visual-studio"></a>F# では、Visual Studio での概要します。
 
@@ -44,9 +41,9 @@ Visual Studio での最も基本的なプロジェクトの 1 つは、コンソ
 
 1. **ファイル** メニューのをポイント**新規**を選択し**プロジェクト**です。
 
-2.  新規のプロジェクトのダイアログ ボックスで、**テンプレート**、表示されるはず**Visual f#**です。  F# のテンプレートを表示する場合に選択します。
+2.  新規のプロジェクトのダイアログ ボックスで、**テンプレート**、表示されるはず**Visual f#** です。  F# のテンプレートを表示する場合に選択します。
 
-3. いずれかを選択**.NET Core コンソール アプリ**または**コンソール アプリ**です。
+3. いずれかを選択 **.NET Core コンソール アプリ**または**コンソール アプリ**です。
 
 3. 選択、**わかりました**f# プロジェクトを作成するボタンです。  ソリューション エクスプ ローラーで f# プロジェクトが表示されます。
 

@@ -1,20 +1,17 @@
 ---
-title: "コード クォート (F#)"
-description: "F# コード クォートを生成して f# のコード式をプログラムで使用することができます、言語の機能を説明します。"
-keywords: "visual f#, f#, 関数型プログラミング"
+title: コード クォート (F#)
+description: F# コード クォートを生成して f# のコード式をプログラムで使用することができます、言語の機能を説明します。
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: 4559e659-2b04-48bd-8a0b-8527920eec95
-ms.openlocfilehash: f7a08013bc6487b570a62576bb01ca2dd65ce8b1
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: cfa2e4b9a4ad1776315dfa8ea82fb8fc3f13a552
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="code-quotations"></a>コード クォート
 
@@ -88,7 +85,7 @@ let f = fun (x:System.Int32) -> x + 10 in f 10
 ## <a name="example"></a>例
 
 ### <a name="description"></a>説明
-次の 3 つのアクティブなパターンを使用することも、 [ExprShape モジュール](https://msdn.microsoft.com/library/7685150e-2432-4d39-9338-57292eff18de)少ないアクティブ パターンの式ツリーを走査します。 これらのアクティブ パターンは、ツリーを走査したいが、ほとんどのノード内のすべての情報が必要ない場合に役に立ちます。 これらのパターンを使用する場合は次の 3 つのパターンのいずれかの任意の f# 式と一致する:`ShapeVar`式が、変数の場合`ShapeLambda`場合は、式は、ラムダ式、または`ShapeCombination`式がそれ以外の場合。 前のコード例のようにアクティブ パターンを使用して式ツリーを走査する場合はすべて可能な f# の式の型を処理する多数の複数のパターンを使用する必要し、コードが複雑になります。 詳細については、次を参照してください。 [ExprShape.ShapeVar &#124;です。ShapeLambda &#124;です。ShapeCombination アクティブ パターン](https://msdn.microsoft.com/visualfsharpdocs/conceptual/exprshape.shapevarhshapelambdahshapecombination-active-pattern-%5bfsharp%5d)です。
+次の 3 つのアクティブなパターンを使用することも、 [ExprShape モジュール](https://msdn.microsoft.com/library/7685150e-2432-4d39-9338-57292eff18de)少ないアクティブ パターンの式ツリーを走査します。 これらのアクティブ パターンは、ツリーを走査したいが、ほとんどのノード内のすべての情報が必要ない場合に役に立ちます。 これらのパターンを使用する場合は次の 3 つのパターンのいずれかの任意の f# 式と一致する:`ShapeVar`式が、変数の場合`ShapeLambda`場合は、式は、ラムダ式、または`ShapeCombination`式がそれ以外の場合。 前のコード例のようにアクティブ パターンを使用して式ツリーを走査する場合はすべて可能な f# の式の型を処理する多数の複数のパターンを使用する必要し、コードが複雑になります。 詳細については、次を参照してください。 [ExprShape.ShapeVar&#124;ShapeLambda&#124;ShapeCombination アクティブ パターン](https://msdn.microsoft.com/visualfsharpdocs/conceptual/exprshape.shapevarhshapelambdahshapecombination-active-pattern-%5bfsharp%5d)です。
 
 次のコード例より複雑な走査の基礎として使用できます。 このコードを関数呼び出しを含む式を式ツリーを作成`add`です。 [SpecificCall](https://msdn.microsoft.com/library/05a77b21-20fe-4b9a-8e07-aa999538198d)アクティブ パターンが任意の呼び出しを検出するために使用される`add`式ツリーでします。 このアクティブ パターンへの呼び出しの引数の代入、`exprList`値。 ここでは、ある 2 つだけこれらが引き出されているため、関数の呼び出しの引数に対して再帰的にします。 呼び出しを表すコード クォートに結果が挿入されます`mul`スプライス演算子を使用して (`%%`)。 `println`前の例の関数を使用して、結果を表示します。
 

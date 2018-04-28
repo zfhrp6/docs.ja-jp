@@ -1,26 +1,26 @@
 ---
-title: "資格情報の種類の選択"
-ms.custom: 
+title: 資格情報の種類の選択
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: bf707063-3f30-4304-ab53-0e63413728a8
-caps.latest.revision: 
+caps.latest.revision: 25
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 9e6b3d84db619ba1b4b5785b134cfe87d1b15cdc
-ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
+ms.openlocfilehash: 9858475520b949d5b9ee62ecdc0994bbb9398953
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="selecting-a-credential-type"></a>資格情報の種類の選択
 *資格情報*データ[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]クレームされた id または機能のいずれかを確立するために使用します。 たとえば、パスポートは、政府によって発行される、国籍または地域籍を証明するための資格情報です。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、ユーザー名トークンや X.509 証明書など多数の形式を資格情報に使用できます。 ここでは、資格情報について説明し、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] で資格情報を使用する方法およびアプリケーションに適切な資格情報を選択する方法についても説明します。  
@@ -55,7 +55,7 @@ ms.lasthandoff: 02/01/2018
 |Windows|Windows 資格情報によって確立されたセキュリティ コンテキストで、SOAP メッセージ交換を実行できます。|  
 |[ユーザー名]|ユーザー名資格情報を使用したクライアントの認証をサービスで要求できるようにします。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、署名の生成やデータの暗号化など、ユーザー名を使用した暗号化操作が許可されていない点に注意してください。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、ユーザー名資格情報の使用時に、トランスポートが確実にセキュリティで保護されます。|  
 |証明書|X.509 証明書を使用したクライアントの認証をサービスで要求できるようにします。|  
-|IssuedToken|セキュリティ ポリシーに従って構成されるカスタム トークンです。 既定のトークンの種類は、SAML (Security Assertion Markup Language) です。 トークンは、セキュリティ トークン サービスによって発行されます。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][フェデレーションと発行済みトークン](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)です。|  
+|IssuedToken|セキュリティ ポリシーに従って構成されるカスタム トークンです。 既定のトークンの種類は、SAML (Security Assertion Markup Language) です。 トークンは、セキュリティ トークン サービスによって発行されます。 詳細については、次を参照してください。[フェデレーションと発行されたトークン](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)です。|  
   
 ### <a name="negotiation-model-of-service-credentials"></a>サービス資格情報のネゴシエーション モデル  
  *ネゴシエーション*資格情報を交換することで、クライアントとサービス間の信頼を確立するプロセスです。 このプロセスは、ネゴシエーション プロセスの次の手順に必要な情報だけを公開するために、クライアントとサービスとの間で反復して実行されます。 実際には、最後に、後続の操作で使用されるサービスの資格情報がクライアントに配信されます。  
@@ -77,7 +77,7 @@ ms.lasthandoff: 02/01/2018
  サービスをプログラミングしている場合とクライアントをプログラミングしている場合で、資格情報の値を設定する方法が少し異なります。  
   
 ### <a name="setting-service-credentials"></a>サービス資格情報の設定  
- トランスポート モードを使用し、HTTP をトランスポートとして使用する場合は、インターネット インフォメーション サービス (IIS) を使用するか、証明書でポートを構成する必要があります。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][トランスポート セキュリティの概要](../../../../docs/framework/wcf/feature-details/transport-security-overview.md)と[HTTP トランスポート セキュリティ](../../../../docs/framework/wcf/feature-details/http-transport-security.md)です。  
+ トランスポート モードを使用し、HTTP をトランスポートとして使用する場合は、インターネット インフォメーション サービス (IIS) を使用するか、証明書でポートを構成する必要があります。 詳細については、次を参照してください。[トランスポート セキュリティの概要](../../../../docs/framework/wcf/feature-details/transport-security-overview.md)と[HTTP トランスポート セキュリティ](../../../../docs/framework/wcf/feature-details/http-transport-security.md)です。  
   
  コードで資格情報をサービスに提供するには、<xref:System.ServiceModel.ServiceHost> クラスのインスタンスを作成し、<xref:System.ServiceModel.Description.ServiceCredentials> プロパティからアクセスできる <xref:System.ServiceModel.ServiceHostBase.Credentials%2A> クラスを使用して適切な資格情報を指定します。  
   
@@ -110,7 +110,7 @@ ms.lasthandoff: 02/01/2018
   
  [!INCLUDE[crabout](../../../../includes/crabout-md.md)] 資格情報とセキュリティで保護されたセッションを参照してください。[セキュリティで保護されたセッションに関する考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-for-secure-sessions.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.ClientBase%601?displayProperty=nameWithType>  
  <xref:System.ServiceModel.ClientBase%601.ClientCredentials%2A?displayProperty=nameWithType>  
  <xref:System.ServiceModel.Description.ClientCredentials.ClientCertificate%2A?displayProperty=nameWithType>  

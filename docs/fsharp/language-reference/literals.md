@@ -1,20 +1,17 @@
 ---
-title: "リテラル (F#)"
-description: "F# のプログラミング言語でリテラルの型について説明します。"
-keywords: "visual f#, f#, 関数型プログラミング"
+title: リテラル (F#)
+description: F# のプログラミング言語でリテラルの型について説明します。
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: 4b1d6e9d-f933-4cd4-966d-d643152c27e4
-ms.openlocfilehash: 6bb1f233b6846e226c4e73aee00b8cf77735fe2d
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 961d6a10122c5d5c691d394efa8d2b7b31a80453
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="literals"></a>リテラル
 
@@ -26,7 +23,7 @@ ms.lasthandoff: 10/18/2017
 ## <a name="literal-types"></a>リテラル型
 F# のリテラル型を次の表に示します。 16 進表記で桁を表す文字は、大文字と小文字を区別しません。型を識別する文字は、大文字と小文字を区別します。
 
-|型|説明|サフィックスまたはプリフィックス|例|
+|型|説明|サフィックスまたはプリフィックス|使用例|
 |----|-----------|----------------|--------|
 |sbyte|符号付き 8 ビット整数|Y|`86y`<br /><br />`0b00000101y`|
 |byte|符号なし 8 ビット自然数|uy|`86uy`<br /><br />`0b00000101uy`|
@@ -44,10 +41,10 @@ F# のリテラル型を次の表に示します。 16 進表記で桁を表す�
 |bigint|64 ビット表現に制限されない整数|I|`9999999999999999999999999999I`|
 |decimal|固定小数点数または有理数として表現される小数|M または m|`0.7833M` または `0.7833m`|
 |Char|Unicode 文字|none|`'a'`|
-|文字列型|Unicode 文字列|none|`"text\n"`<br /><br />または<br /><br />`@"c:\filename"`<br /><br />または<br /><br />`"""<book title="Paradise Lost">"""`<br /><br />または<br /><br />`"string1" + "string2"`<br /><br />関連項目[文字列](Strings.md)です。|
+|String|Unicode 文字列|none|`"text\n"`<br /><br />または<br /><br />`@"c:\filename"`<br /><br />または<br /><br />`"""<book title="Paradise Lost">"""`<br /><br />または<br /><br />`"string1" + "string2"`<br /><br />関連項目[文字列](Strings.md)です。|
 |byte|ASCII 文字|B|`'a'B`|
 |byte[]|ASCII 文字列|B|`"text"B`|
-|String または byte[]|逐語的文字列|@ プリフィックス|`@"\\server\share"`(Unicode)<br /><br />`@"\\server\share"B`(ASCII)|
+|String または byte[]|逐語的文字列|@ プリフィックス|`@"\\server\share"` (Unicode)<br /><br />`@"\\server\share"B` (ASCII)|
 
 ## <a name="remarks"></a>コメント
 Unicode 文字列を使用して指定できる明示的なエンコーディングを含めることができる`\u`後に 16 ビットの 16 進数コードまたは utf-32 エンコーディングを使用して指定できる`\U`Unicode を表す 32 ビットの 16 進数コードを続けてサロゲート ペア。

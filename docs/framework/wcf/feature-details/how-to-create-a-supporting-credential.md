@@ -1,30 +1,32 @@
 ---
-title: "方法 : サポート資格情報を作成する"
-ms.custom: 
+title: '方法 : サポート資格情報を作成する'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d0952919-8bb4-4978-926c-9cc108f89806
-caps.latest.revision: "9"
+caps.latest.revision: 9
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 4afad13300e2eb50a9625a5991bc8cb724c21dd6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: e74ba51306ba8761d916f580b21de9b3ba9cb7f4
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="how-to-create-a-supporting-credential"></a>方法 : サポート資格情報を作成する
 カスタムのセキュリティ スキームでは、複数の資格情報が必要になることがあります。 たとえば、サービスが、ユーザー名とパスワードだけでなく、クライアントが 18 歳以上であることを証明する資格情報もクライアントに要求することがあります。 2 番目の資格情報は、*資格情報をサポートする*です。 ここでは、このような資格情報を [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] クライアントで実装する方法について説明します。  
   
 > [!NOTE]
->  サポート資格情報の仕様は、WS-SecurityPolicy 仕様の一部です。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Web サービスのセキュリティ仕様](http://go.microsoft.com/fwlink/?LinkId=88537)です。  
+>  サポート資格情報の仕様は、WS-SecurityPolicy 仕様の一部です。 詳細については、次を参照してください。 [Web サービスのセキュリティ仕様](http://go.microsoft.com/fwlink/?LinkId=88537)です。  
   
 ## <a name="supporting-tokens"></a>トークンのサポート  
  メッセージ セキュリティを使用すると、簡単に言えば、*プライマリ資格情報*は常に (たとえば、X.509 証明書または Kerberos チケット) メッセージをセキュリティで保護するために使用します。  
@@ -46,7 +48,7 @@ ms.lasthandoff: 12/22/2017
 |署名および暗号化|暗号化された署名付きサポート トークンは、`wsse:SecurityHeader` に表示されたときに暗号化されている署名付きサポート トークンです。|  
   
 ## <a name="programming-supporting-credentials"></a>サポート資格情報のプログラミング  
- サポート トークンを作成する必要がありますを使用するサービスを作成する、 [ \<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)です。 ([!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [する方法: SecurityBindingElement を使用してカスタム バインディングを作成する](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md))。  
+ サポート トークンを作成する必要がありますを使用するサービスを作成する、 [ \<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)です。 (詳細については、次を参照してください[する方法: SecurityBindingElement 作成するカスタム バインドを使用して、](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)。)。  
   
  カスタム バインドを作成する最初の手順は、次の 3 種類のいずれかのセキュリティ バインド要素を作成することです。  
   
@@ -91,5 +93,5 @@ ms.lasthandoff: 12/22/2017
 ### <a name="code"></a>コード  
  [!code-csharp[c_SupportingCredential#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_supportingcredential/cs/source.cs#1)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [方法 : SecurityBindingElement を使用してカスタム バインディングを作成する](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)

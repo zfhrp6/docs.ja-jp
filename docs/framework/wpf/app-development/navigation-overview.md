@@ -38,11 +38,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 07609671d061851e6ede2f2bd90e4bee38e43159
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 7c84c5742fcbb0d1554bd6fc379fc44f3b9cb055
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="navigation-overview"></a>ナビゲーションの概要
 [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] 2 つの種類のアプリケーションで使用できるブラウザー スタイルのナビゲーションをサポートしています: スタンドアロン アプリケーションと[!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)]です。 ナビゲーションのためのパッケージのコンテンツを[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]提供、<xref:System.Windows.Controls.Page>クラスです。 1 つから移動することができます<xref:System.Windows.Controls.Page>別に宣言してを使用して、 <xref:System.Windows.Documents.Hyperlink>、またはを使用して、プログラムによって、<xref:System.Windows.Navigation.NavigationService>です。 [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] は、ナビゲート元のページを記憶し、それらのページに戻るために、履歴を使用します。  
@@ -89,7 +89,7 @@ ms.lasthandoff: 04/26/2018
   
 <a name="CreatingAXAMLPage"></a>   
 ### <a name="implementing-a-page"></a>ページの実装  
- [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]が含まれているいくつかのコンテンツの種類に移動できます[!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)]オブジェクト、カスタム オブジェクト、列挙値、ユーザー コントロール、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]ファイル、および[!INCLUDE[TLA#tla_html](../../../../includes/tlasharptla-html-md.md)]ファイル。 ただし、できたら、パッケージのコンテンツを最も一般的で便利な方法を使用して、<xref:System.Windows.Controls.Page>です。 さらに、<xref:System.Windows.Controls.Page>の外観を改善し、開発を簡略化する特定のナビゲーション機能を実装します。  
+ [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]、.NET Framework のオブジェクト、カスタム オブジェクト、列挙値、ユーザー コントロールを含むいくつかのコンテンツ タイプに移動できます[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]ファイル、および[!INCLUDE[TLA#tla_html](../../../../includes/tlasharptla-html-md.md)]ファイル。 ただし、できたら、パッケージのコンテンツを最も一般的で便利な方法を使用して、<xref:System.Windows.Controls.Page>です。 さらに、<xref:System.Windows.Controls.Page>の外観を改善し、開発を簡略化する特定のナビゲーション機能を実装します。  
   
  使用して<xref:System.Windows.Controls.Page>、宣言のナビゲート可能なページを実装することができます[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]次のようなマークアップを使用してコンテンツ。  
   

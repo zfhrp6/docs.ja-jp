@@ -10,17 +10,17 @@ ms.technology:
 ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 381fdc3a-6e6c-4890-87fe-91cca6f4b476
-caps.latest.revision: ''
+caps.latest.revision: 45
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 70d1b76108c9eab0280e6499ab2b4d0c70def853
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: ba8a2eb97b071608b16b5549ead403b578329ee5
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="wcf-web-http-programming-model-overview"></a>WCF Web HTTP プログラミング モデルの概要
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] WEB HTTP プログラミング モデルは [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] での WEB HTTP サービスの構築に必要な基本的な要素を提供します。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WEB HTTP サービスは、Web ブラウザーも含めて、最大限の幅広いクライアントからアクセスできるように設計されており、次の固有の要件があります。  
@@ -33,13 +33,13 @@ ms.lasthandoff: 03/26/2018
   
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WEB HTTP プログラミング モデルは [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の扱う範囲を拡大し、WEB HTTP サービス、AJAX および JSON サービス、配信 (ATOM および RSS) フィードを使用する Web スタイルのシナリオも対象とします。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] AJAX および JSON サービスを参照してください[AJAX の統合と JSON サポート](../../../../docs/framework/wcf/feature-details/ajax-integration-and-json-support.md)です。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] 配信を参照してください[WCF 配信の概要](../../../../docs/framework/wcf/feature-details/wcf-syndication-overview.md)です。  
   
- WEB HTTP サービスから返されるデータの種類に追加の制限はありません。 WEB HTTP サービス操作からは任意のシリアル化可能な型を返すことができます。 WEB HTTP サービス操作は Web ブラウザーによって呼び出すことができるため、URL に指定できるデータ型に制限があります。 既定でサポートされる種類の詳細については、次を参照してください。、 **UriTemplate クエリ文字列パラメーターと Url**以下のセクションです。 既定の動作は、URL で指定されたパラメーターから実際のパラメーター型への変換方法を指定する独自の T:System.ServiceModel.Dispatcher.QueryStringConverter 実装を提供することで変更できます。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] <xref:System.ServiceModel.Dispatcher.QueryStringConverter>  
+ WEB HTTP サービスから返されるデータの種類に追加の制限はありません。 WEB HTTP サービス操作からは任意のシリアル化可能な型を返すことができます。 WEB HTTP サービス操作は Web ブラウザーによって呼び出すことができるため、URL に指定できるデータ型に制限があります。 既定でサポートされる種類の詳細については、次を参照してください。、 **UriTemplate クエリ文字列パラメーターと Url**以下のセクションです。 既定の動作は、URL で指定されたパラメーターから実際のパラメーター型への変換方法を指定する独自の T:System.ServiceModel.Dispatcher.QueryStringConverter 実装を提供することで変更できます。 詳細については、「<xref:System.ServiceModel.Dispatcher.QueryStringConverter>」を参照してください。  
   
 > [!CAUTION]
 >  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WEB HTTP プログラミング モデルで記述されたサービスでは、SOAP メッセージは使用されません。 SOAP が使用されないため、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] によって提供されるセキュリティ機能を使用することはできません。 ただし、HTTPS でサービスをホストすることによってトランスポート ベースのセキュリティを使用できます。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] セキュリティを参照してください[セキュリティの概要](../../../../docs/framework/wcf/feature-details/security-overview.md)  
   
 > [!WARNING]
->  IIS の WebDAV 拡張をインストールすると、WebDAV 拡張がすべての PUT 要求を処理しようとしたときに Web HTTP サービスが HTTP 405 エラーを返すことがあります。 この問題を解決するには、WebDAV 拡張をアンインストールするか、Web サイトの WebDAV 拡張を無効にします。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [IIS および WebDav](http://learn.iis.net/page.aspx/357/webdav-for-iis-70/)  
+>  IIS の WebDAV 拡張をインストールすると、WebDAV 拡張がすべての PUT 要求を処理しようとしたときに Web HTTP サービスが HTTP 405 エラーを返すことがあります。 この問題を解決するには、WebDAV 拡張をアンインストールするか、Web サイトの WebDAV 拡張を無効にします。 詳細については、次を参照してください[IIS および WebDav。](http://learn.iis.net/page.aspx/357/webdav-for-iis-70/)  
   
 ## <a name="uri-processing-with-uritemplate-and-uritemplatetable"></a>UriTemplate および UriTemplateTable を使用した URI 処理  
  URI テンプレートには、構造的に類似する URI の大規模なセットを効率的に表現するための構文が備わっています。 たとえば、テンプレート a/{segment}/c は、中間のセグメントの値を問わず、"a" で始まり "c" で終了する 3 つのセグメントから成る URI のセットを表しています。  

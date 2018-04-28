@@ -18,18 +18,18 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 5f1c7449372ad012280b360c09017a15733fb95b
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: 46bafbb0063f72b56f647caaa9dd0fa2944f3298
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="configuring-services-using-configuration-files"></a>構成ファイルを使用してサービスを構成する方法
 構成ファイルを使用して [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービスを構成すると、デザイン時ではなく配置時にエンドポイントとサービス動作のデータを指定できるという柔軟性が生まれます。 ここでは使用可能な主要な技術について説明します。  
   
  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスは、 [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] の構成技術を使用して構成できます。 通常、XML 要素は、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスをホストするインターネット インフォメーション サービス (IIS) サイトの Web.config ファイルに追加されます。 この要素によって、コンピューターごとにエンドポイント アドレス (サービスと通信するために使用する実際のアドレス) などの詳細情報を変更できます。 また、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] には、システム指定の要素がいくつか用意されており、これらの要素によって、サービスの最も基本的な機能を簡単に選択できます。 [!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)]以降では、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] には、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] 構成要件を簡略化する新しい既定の構成モデルが付属しています。 特定のサービスに対し [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] 構成を指定しないと、ランタイムは自動的にいくつかの標準エンドポイントおよびバインディング/動作でサービスを構成します。 実際、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] アプリケーションのプログラミングにおいては、構成ファイルの記述が作業の大きな部分を占めます。  
   
- [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [サービスのバインドを構成する](../../../docs/framework/wcf/configuring-bindings-for-wcf-services.md)です。 一連の最もよく使用される要素を参照してください[システム指定のバインディング](../../../docs/framework/wcf/system-provided-bindings.md)です。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] については、「 [Simplified Configuration](../../../docs/framework/wcf/simplified-configuration.md) 」および「 [Simplified Configuration for WCF Services](../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md)。  
+ 詳細については、次を参照してください。[を構成するサービスのバインディングの](../../../docs/framework/wcf/configuring-bindings-for-wcf-services.md)します。 一連の最もよく使用される要素を参照してください[システム指定のバインディング](../../../docs/framework/wcf/system-provided-bindings.md)です。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] については、「 [Simplified Configuration](../../../docs/framework/wcf/simplified-configuration.md) 」および「 [Simplified Configuration for WCF Services](../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md)。  
   
 > [!IMPORTANT]
 >  2 つの異なるバージョンのサービスが配置される side-by-side のシナリオを配置する場合、構成ファイルで参照されるアセンブリの部分名を指定する必要があります。 これは構成ファイルがすべてのバージョンのサービスで共有されて、異なるバージョンの .NET Framework で実行される可能性があるためです。  

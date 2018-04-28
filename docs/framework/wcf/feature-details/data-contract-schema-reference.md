@@ -12,23 +12,23 @@ ms.topic: article
 helpviewer_keywords:
 - data contracts [WCF], schema reference
 ms.assetid: 9ebb0ebe-8166-4c93-980a-7c8f1f38f7c0
-caps.latest.revision: ''
+caps.latest.revision: 24
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 57ccc812aab5df0a9acd99bdcde327d56e4bad8d
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: 739046945a019541f279b15d2d1b945f526861fb
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="data-contract-schema-reference"></a>データ コントラクト スキーマの参照
 ここでは、XML シリアル化用の共通言語ランタイム (CLR) 型を表すために <xref:System.Runtime.Serialization.DataContractSerializer> が使用する XML スキーマ (XSD) のサブセットについて説明します。  
   
 ## <a name="datacontractserializer-mappings"></a>DataContractSerializer のマッピング  
- また、 `DataContractSerializer` は、メタデータ エンドポイントや [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] を使用してメタデータを [indigo1](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)サービスからエクスポートするときに、CLR 型を XSD にマッピングします。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [データ コントラクト シリアライザー](../../../../docs/framework/wcf/feature-details/data-contract-serializer.md)です。  
+ また、 `DataContractSerializer` は、メタデータ エンドポイントや [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] を使用してメタデータを [indigo1](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)サービスからエクスポートするときに、CLR 型を XSD にマッピングします。 詳細については、次を参照してください。[データ コントラクト シリアライザー](../../../../docs/framework/wcf/feature-details/data-contract-serializer.md)です。  
   
  また、 `DataContractSerializer` は、Svcutil.exe を使用して Web サービス記述言語 (WSDL) や XSD ドキュメントにアクセスし、サービスまたはクライアントのデータ コントラクトを生成するときに、XSD を CLR 型にマッピングします。  
   
@@ -78,7 +78,7 @@ ms.lasthandoff: 03/23/2018
 |`attribute`|無視されます。 `DataContractSerializer` では、 `xs:group`、 `xs:attributeGroup`、および `xs:attribute`の使用はサポートされていません。 これらの宣言は `xs:schema`の子として無視され、 `complexType` やその他のサポートされている構文内から参照できません。|  
 |`notation`|無視されます。|  
   
-## <a name="complex-types--xscomplextype"></a>Complex Types – \<xs:complexType>  
+## <a name="complex-types--xscomplextype"></a>複合型 – \<xs:complexType >  
   
 ### <a name="general-information"></a>一般情報  
  各複合型\<xs:complexType > データ コントラクトにマップします。  
@@ -221,7 +221,7 @@ ms.lasthandoff: 03/23/2018
   
 -   そのような名前を持つデータ コントラクトが既に存在する場合は、"1"、"2"、"3" などの番号が付加されて一意の名前になります。  
   
-## <a name="simple-types---xssimpletype"></a>Simple Types - \<xs:simpleType>  
+## <a name="simple-types---xssimpletype"></a>単純型 - \<xs:simpleType >  
   
 ### <a name="xssimpletype-attributes"></a>\<xs:simpleType >: 属性  
   

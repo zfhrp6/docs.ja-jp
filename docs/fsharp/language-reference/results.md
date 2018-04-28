@@ -1,20 +1,17 @@
 ---
-title: "結果 (f#)"
-description: "エラー トレラント コードを作成するのに役立つ、f# '結果' の型を使用する方法を説明します。"
-keywords: "visual f#, f#, 関数型プログラミング"
+title: 結果 (f#)
+description: エラー トレラント コードを作成するのに役立つ、f# '結果' の型を使用する方法を説明します。
 author: cartermp
 ms.author: phcart
 ms.date: 04/24/2017
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: a15b5cf1-9055-4481-918c-4c8a051b5829
-ms.openlocfilehash: e6535b11464f5de0515c05e6678f6328f48a676a
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: 35fd1d3b1590291e18aa28460cf5939606c21d3a
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="results"></a>結果
 
@@ -89,7 +86,7 @@ test()
 
 非常に簡単をすべて返すことを強制した場合は、さまざまな検証機能を連結することがわかります、`Result`です。  これによりを細かくする必要があるとコンポーザブルとしては次のような機能に分割できます。  付加価値もあります*強制*の使用[パターンに一致する](pattern-matching.md)検証のラウンドの最後に、プログラムの正確性を適用する交替でします。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [判別共用体](discriminated-unions.md)
 

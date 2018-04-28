@@ -10,17 +10,17 @@ ms.technology:
 ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8d1c5e5a-7928-4a80-95ed-d8da211b8595
-caps.latest.revision: ''
+caps.latest.revision: 29
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 8202c9f715944c6d556c0023444475838cfd5eab
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: 14b3eebb83115617ce32ab0ff45184cd6754e58c
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="poison-message-handling"></a>有害メッセージ処理
 A*有害なメッセージ*をアプリケーションに配信試行の最大数を超えたメッセージです。 この状況は、キュー ベースのアプリケーションがエラーによってメッセージを処理できないときに発生する可能性があります。 信頼性に対する要求を満たすために、キューに置かれたアプリケーションはトランザクションの下でメッセージを受信します。 キューに置かれたメッセージを受信したトランザクションを中止すると、メッセージはそのままキューに残り、新しいトランザクションの下で再試行されます。 トランザクションを中止させた問題が解決されなければ、受信側のアプリケーションは、配信試行回数の最大値を超えるまで同じメッセージの受信と中止を繰り返す悪循環に陥る可能性があり、その結果、有害メッセージが生じることになります。  
@@ -75,7 +75,7 @@ A*有害なメッセージ*をアプリケーションに配信試行の最大�
 ## <a name="best-practice-handling-msmqpoisonmessageexception"></a>ベスト プラクティス : MsmqPoisonMessageException の処理  
  メッセージが有害であるとサービスが判断した場合、キューに置かれたトランスポートは <xref:System.ServiceModel.MsmqPoisonMessageException> をスローします。この例外には、有害メッセージの `LookupId` が含まれます。  
   
- 受信側アプリケーションでは、必要な <xref:System.ServiceModel.Dispatcher.IErrorHandler> インターフェイスを実装して、すべてのエラーを処理できます。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [エラー処理およびレポートに対する制御の拡張](../../../../docs/framework/wcf/samples/extending-control-over-error-handling-and-reporting.md)です。  
+ 受信側アプリケーションでは、必要な <xref:System.ServiceModel.Dispatcher.IErrorHandler> インターフェイスを実装して、すべてのエラーを処理できます。 詳細については、次を参照してください。[を拡張するコントロールをエラーの処理とレポート](../../../../docs/framework/wcf/samples/extending-control-over-error-handling-and-reporting.md)です。  
   
  アプリケーションでは、有害メッセージを有害メッセージ キューに移動し、サービスがキュー内の残りのメッセージにアクセスできるようにする、なんらかの有害メッセージ自動処理を必要とする場合があります。 エラー処理機構を使用して有害メッセージの例外をリッスンする唯一のシナリオは、<xref:System.ServiceModel.Configuration.MsmqBindingElementBase.ReceiveErrorHandling%2A> の設定を <xref:System.ServiceModel.ReceiveErrorHandling.Fault> に設定した場合です。 メッセージ キュー 3.0 の有害メッセージ サンプルは、この動作を示しています。 ベスト プラクティスを含め、有害メッセージを処理するために必要な手順の概要を以下に示します。  
   

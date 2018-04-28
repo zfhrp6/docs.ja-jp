@@ -1,33 +1,35 @@
 ---
-title: "&lt;httpDigest&gt; 要素"
-ms.custom: 
+title: '&lt;httpDigest&gt; 要素'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3da4f276-dfd9-4247-8c07-01d83618727c
-caps.latest.revision: "12"
+caps.latest.revision: 12
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 95e6a7d31949bd7a6badb029e3f768a63fbaf924
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 75579a583b774896f43099d3cc30f1679b10a889
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="lthttpdigestgt-element"></a>&lt;httpDigest&gt; 要素
 サービスに対するクライアントの認証時に使用されるダイジェスト型の資格情報を指定します。  
   
- \<システムです。ServiceModel >  
+ \<system.ServiceModel >  
 \<ビヘイビアー >  
-\<endpointBehaviors >  
-\<動作 >  
-\<clientCredentials >  
+\<endpointBehaviors>  
+\<behavior>  
+\<clientCredentials>  
 \<httpDigest >  
   
 ## <a name="syntax"></a>構文  
@@ -52,14 +54,14 @@ ms.lasthandoff: 12/22/2017
   
 |要素|説明|  
 |-------------|-----------------|  
-|[\<clientCredentials >](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md)|サービスに対するクライアントの認証に使用される資格情報を指定します。|  
+|[\<clientCredentials>](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md)|サービスに対するクライアントの認証に使用される資格情報を指定します。|  
   
 ## <a name="remarks"></a>コメント  
  ダイジェストは、アルゴリズムと入力セットを使用して決定されるハッシュです。 認証する側と認証される側はアルゴリズムに同意し、入力として使用されるデータを交換します。 クライアントはハッシュを計算して、サービスに送信できます。 また、サービスもハッシュを計算して、値を比較します。 一致すると、クライアントが検証されます。  
   
- この機能は、Windows の Active Directory およびインターネット インフォメーション サービス (IIS) と共に有効にする必要があります。 [!INCLUDE[crdefault](../../../../../includes/crdefault-md.md)][ダイジェスト認証は IIS 6.0 で](http://go.microsoft.com/fwlink/?LinkId=88443)です。  
+ この機能は、Windows の Active Directory およびインターネット インフォメーション サービス (IIS) と共に有効にする必要があります。 詳細については、次を参照してください。 [IIS 6.0 のダイジェスト認証](http://go.microsoft.com/fwlink/?LinkId=88443)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Configuration.ClientCredentialsElement>  
  <xref:System.ServiceModel.Configuration.ClientCredentialsElement.HttpDigest%2A>  
  <xref:System.ServiceModel.Description.ClientCredentials>  

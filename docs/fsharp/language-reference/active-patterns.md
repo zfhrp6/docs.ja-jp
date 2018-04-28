@@ -1,20 +1,17 @@
 ---
-title: "アクティブ パターン (F#)"
-description: "アクティブ パターンを使用して、f# のプログラミング言語で入力データを分割する名前付きのパーティションを定義する方法を説明します。"
-keywords: "visual f#, f#, 関数型プログラミング"
+title: アクティブ パターン (F#)
+description: アクティブ パターンを使用して、f# のプログラミング言語で入力データを分割する名前付きのパーティションを定義する方法を説明します。
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: 11a724ff-f9ff-4056-b5e0-87e9ed986f4a
-ms.openlocfilehash: 845184e6150cf0b93393038ca3d39f0e6d898a2e
-ms.sourcegitcommit: a53799f81351ad9afb3007cd68846ce6aeeb10cb
+ms.openlocfilehash: 66e1e39c4822ec7262642d301ceb1deea17fcb8c
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="active-patterns"></a>アクティブ パターン
 

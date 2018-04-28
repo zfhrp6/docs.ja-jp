@@ -1,12 +1,13 @@
 ---
-title: "方法 : セキュリティ トークン サービスを作成する"
-ms.custom: 
+title: '方法 : セキュリティ トークン サービスを作成する'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,33 +16,34 @@ helpviewer_keywords:
 - WCF, federation
 - federation
 ms.assetid: 98e82101-4cff-4bb8-a220-f7abed3556e5
-caps.latest.revision: "12"
+caps.latest.revision: 12
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: 53ae64af0612cb905a2342491761b1e27ef19c06
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: e043b9b9a3b09bec0d7484fb732e33571b5aaf0c
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="how-to-create-a-security-token-service"></a>方法 : セキュリティ トークン サービスを作成する
 セキュリティ トークン サービスは、WS-Trust 仕様に定義されているプロトコルを実装します。 このプロトコルでは、セキュリティ トークンの発行、更新、キャンセル、および検証を行うためのメッセージ形式とメッセージ交換パターンが定義されています。 セキュリティ トークン サービスでは、これらの機能が 1 つ以上提供されます。 ここでは、最も一般的なシナリオであるトークンの発行の実装について説明します。  
   
 ## <a name="issuing-tokens"></a>トークンの発行  
- WS-Trust は、トークンを発行するための `RequestSecurityToken` XML スキーマ定義言語 (XSD: XML Schema Definition Language) スキーマ要素および `RequestSecurityTokenResponse` XSD スキーマ要素に基づいたメッセージ形式を定義しています。 また、関連するアクション URI (Uniform Resource Identifier) も定義しています。 `RequestSecurityToken` メッセージに関連付けられているアクション URI は http://schemas.xmlsoap.org/ws/2005/02/trust/RST/Issue です。 `RequestSecurityTokenResponse` メッセージに関連付けられているアクション URI は http://schemas.xmlsoap.org/ws/2005/02/trust/RSTR/Issue です。  
+ WS-Trust は、トークンを発行するための `RequestSecurityToken` XML スキーマ定義言語 (XSD: XML Schema Definition Language) スキーマ要素および `RequestSecurityTokenResponse` XSD スキーマ要素に基づいたメッセージ形式を定義しています。 また、関連するアクション URI (Uniform Resource Identifier) も定義しています。 URI に関連付けられたアクション、`RequestSecurityToken`メッセージはhttp://schemas.xmlsoap.org/ws/2005/02/trust/RST/Issueします。 URI に関連付けられたアクション、`RequestSecurityTokenResponse`メッセージはhttp://schemas.xmlsoap.org/ws/2005/02/trust/RSTR/Issueします。  
   
 ### <a name="request-message-structure"></a>要求メッセージの構造  
  発行要求メッセージの構造は、通常、次の項目で構成されます。  
   
--   "要求の種類" URI。値は http://schemas.xmlsoap.org/ws/2005/02/trust/Issue です。  
+-   要求の値を持つ URI を入力するhttp://schemas.xmlsoap.org/ws/2005/02/trust/Issueです。  
   
--   "トークンの種類" URI。 SAML (Security Assertions Markup Language) 1.1 トークンの場合、この URI の値は http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV1.1 です。  
+-   "トークンの種類" URI。 この URI の値は、Security Assertions Markup Language (SAML) 1.1 トークンのhttp://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV1.1します。  
   
 -   発行済みトークンに関連付けられるキーのビット数を示すキー サイズの値。  
   
--   "キーの種類" URI。 対称キーの場合、この URI の値は http://schemas.xmlsoap.org/ws/2005/02/trust/SymmetricKey です。  
+-   "キーの種類" URI。 対称キーは、この URI の値はhttp://schemas.xmlsoap.org/ws/2005/02/trust/SymmetricKeyします。  
   
  さらに、2 つの項目が含まれている必要があります。  
   
@@ -109,7 +111,7 @@ ms.lasthandoff: 12/22/2017
  [!code-csharp[c_CreateSTS#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_creatests/cs/source.cs#4)]
  [!code-vb[c_CreateSTS#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_creatests/vb/source.vb#4)]  
   
- [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][フェデレーション サンプル](../../../../docs/framework/wcf/samples/federation-sample.md)です。  
+ 詳細については、次を参照してください。[フェデレーション サンプル](../../../../docs/framework/wcf/samples/federation-sample.md)です。  
   
 ## <a name="creating-response-messages"></a>応答メッセージの作成  
  セキュリティ トークン サービスによって発行要求が処理され、発行されるトークンと証明キーが作成されたら、少なくとも、要求されたトークン、証明トークン、および発行されたトークンの参照を含む応答メッセージを作成する必要があります。 発行済みトークンは、通常、<xref:System.IdentityModel.Tokens.SamlSecurityToken> から作成された <xref:System.IdentityModel.Tokens.SamlAssertion> です。次の例を参照してください。  
@@ -122,7 +124,7 @@ ms.lasthandoff: 12/22/2017
  [!code-csharp[c_CreateSTS#6](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_creatests/cs/source.cs#6)]
  [!code-vb[c_CreateSTS#6](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_creatests/vb/source.vb#6)]  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]クライアントと、セキュリティ トークン サービスの両方と、証明トークンを作成する方法が共有キーのキー マテリアルを提供しを参照してください[フェデレーション サンプル](../../../../docs/framework/wcf/samples/federation-sample.md)です。  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)] クライアントと、セキュリティ トークン サービスの両方と、証明トークンを作成する方法が共有キーのキー マテリアルを提供しを参照してください[フェデレーション サンプル](../../../../docs/framework/wcf/samples/federation-sample.md)です。  
   
  発行済みトークンの参照を作成するには、<xref:System.IdentityModel.Tokens.SecurityKeyIdentifierClause> クラスのインスタンスを作成します。  
   
@@ -134,7 +136,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="example"></a>例  
  セキュリティ トークン サービスの完全なコードを参照してください。[フェデレーション サンプル](../../../../docs/framework/wcf/samples/federation-sample.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.IdentityModel.Tokens.SigningCredentials>  
  <xref:System.IdentityModel.Tokens.SecurityKey>  
  <xref:System.IdentityModel.Tokens.SecurityKeyIdentifier>  

@@ -14,17 +14,17 @@ helpviewer_keywords:
 - WCF security
 - WCF, security
 ms.assetid: f0ecc6f7-f4b5-42a4-9cb1-b02e28e26620
-caps.latest.revision: ''
+caps.latest.revision: 28
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
 ms.workload:
 - dotnet
-ms.openlocfilehash: 2b8e84fe75f812cdcb97dcc24a0edad2d238515b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d5fed0e842abd815d0483e26e1e1f350899d1506
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="securing-services"></a>サービスのセキュリティ保護
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービスのセキュリティは、転送セキュリティと承認という 2 つの主要要件で構成されます (3 番目の要件は、「セキュリティ イベントの監査[監査](../../../docs/framework/wcf/feature-details/auditing-security-events.md)。)簡単に説明すると、転送セキュリティは、認証 (サーバーとクライアント両方の ID の検証)、機密性 (メッセージの暗号化)、および整合性 (改ざんを検出するためのデジタル署名) で構成されます。 承認は、たとえば、特権のあるユーザーだけがファイルを読み取ることができるなど、リソースへのアクセスを制御することです。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]の機能を使用すれば、この 2 つの主要要件を簡単に実装できます。  
@@ -54,10 +54,10 @@ ms.lasthandoff: 12/22/2017
  Windows ドメインでのみ実行するアプリケーションをセキュリティで保護するには、 <xref:System.ServiceModel.WSHttpBinding> または <xref:System.ServiceModel.NetTcpBinding> バインディングの既定のセキュリティ設定を使用できます。 既定では、同じ Windows ドメインに存在するすべてのユーザーが [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスにアクセスできます。 ドメイン内にいるユーザーは、ネットワークにログオン済みなので信頼できます。 サービスとクライアントの間で交換されるメッセージは、機密性を保護するために暗号化され、整合性を保護するために署名されます。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] については、「 [方法 : Windows 資格情報でサービスをセキュリティで保護する](../../../docs/framework/wcf/how-to-secure-a-service-with-windows-credentials.md)に依存します。  
   
 ### <a name="authorization-using-the-principalpermissionattribute-class"></a>PrincipalPermissionAttribute クラスを使用した承認  
- コンピューター上のリソースへのアクセスを制限する必要がある場合、最も簡単な方法は <xref:System.Security.Permissions.PrincipalPermissionAttribute> クラスを使用することです。 この属性を使用すると、ユーザーが指定の Windows グループまたはロールに属しているか、特定のユーザーであることを要求して、サービス操作の呼び出しを制限できます。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][する方法: PrincipalPermissionAttribute クラスへのアクセスを制限する](../../../docs/framework/wcf/how-to-restrict-access-with-the-principalpermissionattribute-class.md)です。  
+ コンピューター上のリソースへのアクセスを制限する必要がある場合、最も簡単な方法は <xref:System.Security.Permissions.PrincipalPermissionAttribute> クラスを使用することです。 この属性を使用すると、ユーザーが指定の Windows グループまたはロールに属しているか、特定のユーザーであることを要求して、サービス操作の呼び出しを制限できます。 詳細については、次を参照してください。[する方法: PrincipalPermissionAttribute クラスを使用したアクセスの制限](../../../docs/framework/wcf/how-to-restrict-access-with-the-principalpermissionattribute-class.md)です。  
   
 ### <a name="impersonation"></a>偽装  
- 偽装は、リソース アクセスの制御に使用できるもう 1 つの機構です。 既定では、IIS でホストされるサービスは、ASPNET アカウントの ID で実行されます。 ASPNET アカウントは、アクセス許可のあるリソースにだけアクセスできます。 ただし、ASPNET サービス アカウントを除外し、他の特定の ID によるフォルダーへのアクセスを許可するように ACL を設定できます。 ここで問題となるのが、ASPNET アカウントがフォルダーにアクセスできない場合に、他のユーザーがフォルダーにアクセスできるようにする方法です。 これは、偽装を使用することで解決できます。偽装によって、サービスは特定のリソースにアクセスするためにクライアントの資格情報を使用できます。 もう 1 つの例は、特定のユーザーだけがアクセス許可を持つ SQL Server データベースにアクセスする場合です。 [!INCLUDE[crabout](../../../includes/crabout-md.md)]権限借用を使用して参照してください[する方法: サービスでクライアントを偽装](../../../docs/framework/wcf/how-to-impersonate-a-client-on-a-service.md)と[委任と偽装](../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md)です。  
+ 偽装は、リソース アクセスの制御に使用できるもう 1 つの機構です。 既定では、IIS でホストされるサービスは、ASPNET アカウントの ID で実行されます。 ASPNET アカウントは、アクセス許可のあるリソースにだけアクセスできます。 ただし、ASPNET サービス アカウントを除外し、他の特定の ID によるフォルダーへのアクセスを許可するように ACL を設定できます。 ここで問題となるのが、ASPNET アカウントがフォルダーにアクセスできない場合に、他のユーザーがフォルダーにアクセスできるようにする方法です。 これは、偽装を使用することで解決できます。偽装によって、サービスは特定のリソースにアクセスするためにクライアントの資格情報を使用できます。 もう 1 つの例は、特定のユーザーだけがアクセス許可を持つ SQL Server データベースにアクセスする場合です。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] 権限借用を使用して参照してください[する方法: サービスでクライアントを偽装](../../../docs/framework/wcf/how-to-impersonate-a-client-on-a-service.md)と[委任と偽装](../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md)です。  
   
 ## <a name="security-on-the-internet"></a>インターネット上のセキュリティ  
  インターネット上のセキュリティは、イントラネット上のセキュリティと同じ要件で構成されます。 サービスは、信頼性を証明するために資格情報を提示する必要があり、クライアントは、サービスに対して ID を証明する必要があります。 クライアントの ID が証明されると、サービスは、クライアントによるリソースへのアクセスを制御できます。 ただし、インターネットではさまざまな種類が混在しているので、提示される資格情報は、Windows ドメインで使用される資格情報とは異なります。 Kerberos コントローラーが資格情報のチケットを使用して、ドメインでユーザーの認証を処理するのに対し、インターネットでは、サービスとクライアントは、資格情報を提示するための複数の異なる方法のいずれかに依存します。 なお、このトピックの目的は、インターネット上でアクセスできる [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスを作成するための一般的な方法を示すことです。  
@@ -71,7 +71,7 @@ ms.lasthandoff: 12/22/2017
 ### <a name="credentials-used-by-iis"></a>IIS で使用する資格情報  
  Kerberos コントローラーによるサポートがある Windows ドメインとは異なり、インターネットには、随時ログオンしている多数のユーザーを管理するための共通のコントローラーがありません。 代わりに、インターネットの資格情報は、ほとんどの場合、X.509 証明書 (SSL (Secure Sockets Layer) 証明書とも呼ばれる) の形で提示されます。 この証明書は、通常、 *証明機関*によって発行されます。この証明機関は、証明書の信頼性を保証するサードパーティの企業および証明書が発行された個人です。 インターネット上にサービスを公開するには、このような信頼された証明書を提供して、サービスを認証する必要があります。  
   
- それでは、どのように信頼された証明書を取得するのでしょうか。 その方法の 1 つは、サービスを展開する準備とそのサービスの証明書を購入する準備ができたら、Authenticode、VeriSign などのサードパーティ証明機関に連絡する方法です。 ただし、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] の開発フェーズにおいて証明書を購入する準備ができていなくても、稼働環境への展開のシミュレーションに使用できる X.509 証明書を作成するためのツールと方法が用意されています。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][証明書の使用](../../../docs/framework/wcf/feature-details/working-with-certificates.md)です。  
+ それでは、どのように信頼された証明書を取得するのでしょうか。 その方法の 1 つは、サービスを展開する準備とそのサービスの証明書を購入する準備ができたら、Authenticode、VeriSign などのサードパーティ証明機関に連絡する方法です。 ただし、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] の開発フェーズにおいて証明書を購入する準備ができていなくても、稼働環境への展開のシミュレーションに使用できる X.509 証明書を作成するためのツールと方法が用意されています。 詳細については、次を参照してください。[証明書の使用](../../../docs/framework/wcf/feature-details/working-with-certificates.md)です。  
   
 ## <a name="security-modes"></a>セキュリティ モード  
  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] のセキュリティをプログラムする際には、いくつか重要な決定を行う必要があります。 最も基本的な決定の 1 つは、 *セキュリティ モード*を選択することです。 2 つの主要なセキュリティ モードとして、 *トランスポート モード* と *メッセージ モード*があります。  
@@ -104,14 +104,14 @@ ms.lasthandoff: 12/22/2017
  *資格情報の値* とは、サービスが使用する実際の資格情報です。 資格情報の種類を指定したら、サービスを実際の資格情報で構成する必要があります。 Windows を選択し、サービスを Windows ドメインで実行する場合は、実際の資格情報の値を指定しません。  
   
 ## <a name="identity"></a>クレーム  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]では、 *ID* という用語はサーバーとクライアントで意味が異なります。 つまり、サービスを実行しているとき、ID は認証後にセキュリティ コンテキストに割り当てられます。 実際の ID を表示するには、 <xref:System.ServiceModel.ServiceSecurityContext.WindowsIdentity%2A> クラスの <xref:System.ServiceModel.ServiceSecurityContext.PrimaryIdentity%2A> プロパティと <xref:System.ServiceModel.ServiceSecurityContext> プロパティを確認します。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][する方法: セキュリティ コンテキストを調べて](../../../docs/framework/wcf/how-to-examine-the-security-context.md)です。  
+ [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]では、 *ID* という用語はサーバーとクライアントで意味が異なります。 つまり、サービスを実行しているとき、ID は認証後にセキュリティ コンテキストに割り当てられます。 実際の ID を表示するには、 <xref:System.ServiceModel.ServiceSecurityContext.WindowsIdentity%2A> クラスの <xref:System.ServiceModel.ServiceSecurityContext.PrimaryIdentity%2A> プロパティと <xref:System.ServiceModel.ServiceSecurityContext> プロパティを確認します。 詳細については、次を参照してください。[する方法: セキュリティ コンテキストを調べて](../../../docs/framework/wcf/how-to-examine-the-security-context.md)です。  
   
- 反対に、クライアントでは、ID はサービスを検証するために使用されます。 デザイン時に、クライアントの開発者が設定できます、 [ \<identity >](../../../docs/framework/configure-apps/file-schema/wcf/identity.md)要素をサービスから取得した値にします。 実行時に、クライアントは、要素の値をサービスの実際の ID と照合してチェックします。 チェックが失敗した場合、クライアントは通信を終了します。 特定のユーザー ID でサービスを実行している場合の値はユーザー プリンシパル名 (UPN) で、コンピューター アカウントでサービスを実行している場合の値はサービス プリンシパル名 (SPN) です。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Id と認証をサービス](../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)です。 資格情報には、証明書、つまり証明書を識別する証明書内のフィールドも使用できます。  
+ 反対に、クライアントでは、ID はサービスを検証するために使用されます。 デザイン時に、クライアントの開発者が設定できます、 [ \<identity >](../../../docs/framework/configure-apps/file-schema/wcf/identity.md)要素をサービスから取得した値にします。 実行時に、クライアントは、要素の値をサービスの実際の ID と照合してチェックします。 チェックが失敗した場合、クライアントは通信を終了します。 特定のユーザー ID でサービスを実行している場合の値はユーザー プリンシパル名 (UPN) で、コンピューター アカウントでサービスを実行している場合の値はサービス プリンシパル名 (SPN) です。 詳細については、次を参照してください。[サービス Id と認証](../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)です。 資格情報には、証明書、つまり証明書を識別する証明書内のフィールドも使用できます。  
   
 ## <a name="protection-levels"></a>保護レベル  
- `ProtectionLevel` プロパティは、 <xref:System.ServiceModel.ServiceContractAttribute> クラス、 <xref:System.ServiceModel.OperationContractAttribute> クラスなどのいくつかの属性クラスで使用します。 保護レベルは、サービスをサポートするメッセージ (またはメッセージ部分) が署名されるのか、署名および暗号化されるのか、または署名と暗号化なしで送信されるのかを指定する値です。 [!INCLUDE[crabout](../../../includes/crabout-md.md)]プロパティを参照してください[について保護レベル](../../../docs/framework/wcf/understanding-protection-level.md)、プログラミング例については、次を参照してください。 および[する方法: ProtectionLevel プロパティを設定](../../../docs/framework/wcf/how-to-set-the-protectionlevel-property.md)です。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] を使用してサービス コントラクトを設計する方法の `ProtectionLevel` については、「 [Designing Service Contracts](../../../docs/framework/wcf/designing-service-contracts.md)に依存します。  
+ `ProtectionLevel` プロパティは、 <xref:System.ServiceModel.ServiceContractAttribute> クラス、 <xref:System.ServiceModel.OperationContractAttribute> クラスなどのいくつかの属性クラスで使用します。 保護レベルは、サービスをサポートするメッセージ (またはメッセージ部分) が署名されるのか、署名および暗号化されるのか、または署名と暗号化なしで送信されるのかを指定する値です。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] プロパティを参照してください[について保護レベル](../../../docs/framework/wcf/understanding-protection-level.md)、プログラミング例については、次を参照してください。 および[する方法: ProtectionLevel プロパティを設定](../../../docs/framework/wcf/how-to-set-the-protectionlevel-property.md)です。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] を使用してサービス コントラクトを設計する方法の `ProtectionLevel` については、「 [Designing Service Contracts](../../../docs/framework/wcf/designing-service-contracts.md)に依存します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel>  
  <xref:System.ServiceModel.Description.ServiceCredentials>  
  <xref:System.ServiceModel.ServiceContractAttribute>  

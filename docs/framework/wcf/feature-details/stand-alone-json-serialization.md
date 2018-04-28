@@ -1,24 +1,26 @@
 ---
-title: "スタンドアロン JSON のシリアル化"
-ms.custom: 
+title: スタンドアロン JSON のシリアル化
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 312bd7b2-1300-4b12-801e-ebe742bd2287
-caps.latest.revision: "32"
+caps.latest.revision: 32
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 8583ac00f1216e68f95c3d41d8c896b555d0aa8d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 1a0a11d613ffb8f71437edd73a8be64fb5f55a4c
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="stand-alone-json-serialization"></a>スタンドアロン JSON のシリアル化
 JSON (JavaScript Object Notation) は、ブラウザー内の Web ページで実行される JavaScript コードで使用するために特別に設計されたデータ形式です。 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] で作成される ASP.NET AJAX サービスは、既定でこのデータ形式を使用します。  
@@ -38,7 +40,7 @@ JSON (JavaScript Object Notation) は、ブラウザー内の Web ページで�
 |<xref:System.Enum>|数値|このトピックの「列挙体と JSON」を参照してください。|  
 |<xref:System.Boolean>|ブール型|--|  
 |<xref:System.String>, <xref:System.Char>|String|--|  
-|<xref:System.TimeSpan>、<xref:System.Guid>、<xref:System.Uri>|String|JSON のこれらの型の形式は、XML の場合と同じです (基本的には、TimeSpan は ISO 8601 の日付/時刻形式、GUID は "12345678-ABCD-ABCD-ABCD-1234567890AB" 形式、URI は "http://www.example.com" のような自然な文字列形式です)。 正確な情報は、次を参照してください。[データ コントラクト スキーマの参照](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md)です。|  
+|<xref:System.TimeSpan>、<xref:System.Guid>、<xref:System.Uri>|String|JSON でこれらの型の形式は XML に示すように、同じ (基本的に、ISO 8601 期間形式で TimeSpan、"12345678-ABCD-ABCD-ABCD-1234567890AB"形式の GUID と、自然な文字列形式で URI のような"http://www.example.com") です。 正確な情報は、次を参照してください。[データ コントラクト スキーマの参照](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md)です。|  
 |<xref:System.Xml.XmlQualifiedName>|String|形式は "name:namespace" です (最初のコロンの前が名前です)。 名前または名前空間が存在しない場合があります。 名前空間がない場合、コロンも省略されることがあります。|  
 |<xref:System.Array> 型の <xref:System.Byte>|数値の配列型|各数値は、1 バイトの値を表します。|  
 |<xref:System.DateTime>|DateTime 型または文字列型|このトピックの「日付/時刻と JSON」を参照してください。|  
@@ -51,7 +53,7 @@ JSON (JavaScript Object Notation) は、ブラウザー内の Web ページで�
 |任意の型の `Null` 値|Null|null 許容型もサポートされており、null 非許容型と同様に JSON にマップされます。|  
   
 ### <a name="enumerations-and-json"></a>列挙体と JSON  
- 列挙メンバー値は、JSON では数値として処理されるため、列挙メンバー値がメンバー名として含まれているデータ コントラクトでの処理方法とは異なります。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]データ コントラクトの処理を参照してください[データ コントラクトの列挙型](../../../../docs/framework/wcf/feature-details/enumeration-types-in-data-contracts.md)です。  
+ 列挙メンバー値は、JSON では数値として処理されるため、列挙メンバー値がメンバー名として含まれているデータ コントラクトでの処理方法とは異なります。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] データ コントラクトの処理を参照してください[データ コントラクトの列挙型](../../../../docs/framework/wcf/feature-details/enumeration-types-in-data-contracts.md)です。  
   
 -   たとえば、`public enum Color {red, green, blue, yellow, pink}` の場合、`yellow` をシリアル化すると、文字列の "yellow" ではなく、数字の 3 が生成されます。  
   
@@ -117,7 +119,7 @@ JSON (JavaScript Object Notation) は、ブラウザー内の Web ページで�
  ポリモーフィックなシリアル化のしくみの詳細、およびポリモーフィックなシリアル化を使用するときに留意する必要のある制限事項については、このトピックで後述する「高度な情報」を参照してください。  
   
 ### <a name="versioning"></a>バージョン管理  
- <xref:System.Runtime.Serialization.IExtensibleDataObject> インターフェイスをはじめとするデータ コントラクトのバージョン管理機能は、JSON で完全にサポートされています。 また、ほとんどの場合、ある形式 (XML など) で型を逆シリアル化した後、その型を別の形式 (JSON など) にシリアル化しても、<xref:System.Runtime.Serialization.IExtensibleDataObject> にデータを保持できます。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][上位互換性のあるデータ コントラクト](../../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md)です。 JSON は順序なしであるため、順序情報は失われることに注意してください。 また、JSON では、同じキー名を持つ複数のキーと値のペアをサポートしていません。 <xref:System.Runtime.Serialization.IExtensibleDataObject> でのすべての操作は、本質的にポリモーフィックです。つまり、派生型はすべての型の基本型である <xref:System.Object> に割り当てられます。  
+ <xref:System.Runtime.Serialization.IExtensibleDataObject> インターフェイスをはじめとするデータ コントラクトのバージョン管理機能は、JSON で完全にサポートされています。 また、ほとんどの場合、ある形式 (XML など) で型を逆シリアル化した後、その型を別の形式 (JSON など) にシリアル化しても、<xref:System.Runtime.Serialization.IExtensibleDataObject> にデータを保持できます。 詳細については、「[上位互換性のあるデータ コントラクト](../../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md)」を参照してください。 JSON は順序なしであるため、順序情報は失われることに注意してください。 また、JSON では、同じキー名を持つ複数のキーと値のペアをサポートしていません。 <xref:System.Runtime.Serialization.IExtensibleDataObject> でのすべての操作は、本質的にポリモーフィックです。つまり、派生型はすべての型の基本型である <xref:System.Object> に割り当てられます。  
   
 ## <a name="json-in-urls"></a>URL 内の JSON  
  (<xref:System.ServiceModel.Web.WebGetAttribute> 属性を使用して) HTTP GET 動詞と共に ASP.NET AJAX エンドポイントを使用する場合、受信パラメーターは、メッセージ本文ではなく要求 URL に配置されます。 JSON は、要求 URL であってもサポートされてように取得する操作がある場合、 `Int` "number"と呼ばれる、`Person`次の URL、URL である"p"と呼ばれる複合型のようになります。  
@@ -192,13 +194,13 @@ http://example.com/myservice.svc/MyOperation?number=7&p={"name":"John","age":42}
  "__type" というデータ メンバーは、型ヒントと競合する可能性があるため、禁止されています。  
   
 #### <a name="reducing-the-size-of-type-hints"></a>型ヒントのサイズの削減  
- JSON メッセージのサイズを縮小するために、既定のデータ コントラクト名前空間プレフィックス (http://schemas.datacontract.org/2004/07/) は文字 "#" に置き換えられます  (この置換を元に戻すことにするには、エスケープの規則を使用: 名前空間が「#」で始まる場合または"\\"文字は余分なを付加して、"\\"文字)。 したがって、"Circle" が .NET の "MyApp.Shapes" 名前空間の型である場合、既定のデータ コントラクト名前空間は http://schemas.datacontract.org/2004/07/MyApp になります。 形状と JSON 表現は次のようになります。  
+ JSON のサイズを減らすためにメッセージを既定のデータ コントラクト名前空間プレフィックス (http://schemas.datacontract.org/2004/07/) 「#」文字に置き換えられます。 (この置換を元に戻すことにするには、エスケープの規則を使用: 名前空間が「#」で始まる場合または"\\"文字は余分なを付加して、"\\"文字)。 したがって、"Circle"が"MyApp.Shapes"の .NET 名前空間内の型の場合は、既定のデータ コントラクト名前空間がhttp://schemas.datacontract.org/2004/07/MyAppです。 形状と JSON 表現は次のようになります。  
   
 ```json  
 {"__type":"Circle:#MyApp.Shapes","x":50,"y":70,"radius":10}  
 ```  
   
- 逆シリアル化時には、切り捨てられた名前 (#MyApp.Shapes) と完全名 (http://schemas.datacontract.org/2004/07/MyApp.Shapes) の両方が認識されます。  
+ 切り捨てられた (#MyApp.Shapes) と完全の両方 (http://schemas.datacontract.org/2004/07/MyApp.Shapes)逆シリアル化の名前が認識されます。  
   
 #### <a name="type-hint-position-in-json-objects"></a>JSON オブジェクト内での型ヒントの位置  
  JSON 表現では、型ヒントは最初に出現する必要があります。 JSON の処理でキーと値のペアの順序が重要となるのはこの場合だけです。 たとえば、型ヒントの次の指定方法は無効です。  
@@ -256,7 +258,7 @@ http://example.com/myservice.svc/MyOperation?number=7&p={"name":"John","age":42}
   
  <xref:System.Object> に逆シリアル化するときは、次の点に注意してください。  
   
--   `Shape`既知の型リストにする必要があります。 持つ<xref:System.Collections.Generic.List%601>型の`Shape`既知の型に影響を与えません。 追加する必要はありません`Shape`シリアル化時に既知の型にこの例では、この自動的に行われます。  
+-   `Shape` 既知の型リストにする必要があります。 持つ<xref:System.Collections.Generic.List%601>型の`Shape`既知の型に影響を与えません。 追加する必要はありません`Shape`シリアル化時に既知の型にこの例では、この自動的に行われます。  
   
 -   コレクションとして逆シリアル化、<xref:System.Array>型の<xref:System.Object>を格納している`Shape`インスタンス。  
   
@@ -271,5 +273,5 @@ http://example.com/myservice.svc/MyOperation?number=7&p={"name":"John","age":42}
 ### <a name="valid-json-key-names"></a>JSON の有効なキー名  
  シリアライザーは、無効な XML 名のキー名を XML エンコードします。 たとえば、「123」の名前を持つデータ メンバーには、エンコードされた名前がなど"_x0031\__x0032\__x0033\_"「123」は無効な XML 要素名 (数字で開始) であるためです。 XML 名が有効ではない一部の国際文字セットでも、同様の状況が発生する場合があります。 この JSON の処理での XML の影響の詳細については、次を参照してください。[マッピングの間で JSON および XML](../../../../docs/framework/wcf/feature-details/mapping-between-json-and-xml.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [JSON などのデータ転送形式のサポート](../../../../docs/framework/wcf/feature-details/support-for-json-and-other-data-transfer-formats.md)

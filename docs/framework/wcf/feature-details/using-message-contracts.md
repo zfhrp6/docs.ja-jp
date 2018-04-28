@@ -1,13 +1,13 @@
 ---
-title: "メッセージ コントラクトの使用"
-ms.custom: 
+title: メッセージ コントラクトの使用
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,27 +15,27 @@ dev_langs:
 helpviewer_keywords:
 - message contracts [WCF]
 ms.assetid: 1e19c64a-ae84-4c2f-9155-91c54a77c249
-caps.latest.revision: 
+caps.latest.revision: 46
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: db19b5188c98d157b98d65422ee38d4ed59f733a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e9f6d0e9d64c510b47b0697d02178f1c0a95f61b
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="using-message-contracts"></a>メッセージ コントラクトの使用
-一般に、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] アプリケーションを構築するときには、開発者はデータ構造とシリアル化の問題には細心の注意を払いますが、データを送信するメッセージ構造について懸念する必要はありません。 このようなアプリケーションでは、パラメーターまたは戻り値用にデータ コントラクトを作成するのは簡単です  ([!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [サービス コントラクトのデータ転送を指定する](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md))。  
+一般に、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] アプリケーションを構築するときには、開発者はデータ構造とシリアル化の問題には細心の注意を払いますが、データを送信するメッセージ構造について懸念する必要はありません。 このようなアプリケーションでは、パラメーターまたは戻り値用にデータ コントラクトを作成するのは簡単です  (詳細については、次を参照してください[サービス コントラクトのデータ転送を指定する](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md)。)。  
   
  ただし、SOAP メッセージの構造を完全に制御することがメッセージの内容の制御と同様に重要となる場合があります。 これが特に当てはまるのは、相互運用性が重要である場合、具体的にはメッセージまたはメッセージ部分のレベルでセキュリティの問題を制御する場合です。 このような場合は、作成することができます、*メッセージ コントラクト*必要正確な SOAP メッセージの構造を指定することができます。  
   
  ここでは、メッセージ コントラクトの各種属性を使用して、ユーザー操作に専用のメッセージ コントラクトを作成する方法について説明します。  
   
 ## <a name="using-message-contracts-in-operations"></a>処理におけるメッセージ コントラクトの使用  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]いずれかでモデル化された操作をサポートする、*リモート プロシージャ コール (RPC) スタイル*または*メッセージング スタイル*です。 RPC スタイルの操作では、シリアル化可能な任意の型を使用できます。複数のパラメーター、`ref` パラメーターと `out` パラメーターなど、ローカル呼び出しで使用できる機能を利用できます。 このスタイルでは、選択したシリアル化の形式によって基になるメッセージのデータ構造が制御されます。また、操作をサポートするために、メッセージは [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ランタイムによって作成されます。 これにより、SOAP や SOAP メッセージに不慣れな開発者でも、サービス アプリケーションを迅速かつ容易に作成し、使用できます。  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] いずれかでモデル化された操作をサポートする、*リモート プロシージャ コール (RPC) スタイル*または*メッセージング スタイル*です。 RPC スタイルの操作では、シリアル化可能な任意の型を使用できます。複数のパラメーター、`ref` パラメーターと `out` パラメーターなど、ローカル呼び出しで使用できる機能を利用できます。 このスタイルでは、選択したシリアル化の形式によって基になるメッセージのデータ構造が制御されます。また、操作をサポートするために、メッセージは [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ランタイムによって作成されます。 これにより、SOAP や SOAP メッセージに不慣れな開発者でも、サービス アプリケーションを迅速かつ容易に作成し、使用できます。  
   
  RPC スタイルでモデル化されたサービス操作のコード例を次に示します。  
   
@@ -44,7 +44,7 @@ ms.lasthandoff: 12/22/2017
 public BankingTransactionResponse PostBankingTransaction(BankingTransaction bt);  
 ```  
   
- 通常は、データ コントラクトだけでメッセージのスキーマを定義することができます。 たとえば、前の例では、`BankingTransaction` と `BankingTransactionResponse` にデータ コントラクトがあれば、ほとんどのアプリケーションで基になる SOAP メッセージの内容を定義できます。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]データ コントラクトを参照してください[を使用してデータ コントラクト](../../../../docs/framework/wcf/feature-details/using-data-contracts.md)です。  
+ 通常は、データ コントラクトだけでメッセージのスキーマを定義することができます。 たとえば、前の例では、`BankingTransaction` と `BankingTransactionResponse` にデータ コントラクトがあれば、ほとんどのアプリケーションで基になる SOAP メッセージの内容を定義できます。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] データ コントラクトを参照してください[を使用してデータ コントラクト](../../../../docs/framework/wcf/feature-details/using-data-contracts.md)です。  
   
  ただし、場合によっては、SOAP メッセージの構造がネットワーク経由でどのように転送されるかを厳密に制御する必要があります。 最も一般的なシナリオは、カスタム SOAP ヘッダーの挿入です。 もう 1 つの一般的なシナリオは、メッセージのヘッダーと本文のセキュリティ プロパティを定義すること、つまり、これらの要素にデジタル署名し、要素を暗号化するかどうかを決定することです。 最後に、一部のサードパーティの SOAP スタックでは、メッセージが特定の形式である必要があります。 この制御は、メッセージング スタイルの操作によって行うことができます。  
   
@@ -167,7 +167,7 @@ public class BankingTransaction
 >  ラップされていないメッセージにメッセージ本文の複数の部分を含めることは、WS-I Basic Profile 1.1 規格に反するため、新しいメッセージ コントラクトを設計する場合はお勧めできません。 ただし、特定の相互運用シナリオでは、複数のラップされていないメッセージ本文が必要な場合もあります。 1 つのメッセージ本文で複数のデータを転送する場合は、既定の (ラップされた) モードを使用することをお勧めします。 ラップされていないメッセージで複数のメッセージ ヘッダーを使用しても、何の問題もありません。  
   
 ## <a name="using-custom-types-inside-message-contracts"></a>メッセージ コントラクト内部でのカスタム型の使用  
- メッセージが使用されるサービス コントラクト用に選択されたシリアル化エンジンを使用して、個々のメッセージ ヘッダーとメッセージ本文がシリアル化されます (XML に変換されます)。 既定のシリアル化エンジンである `XmlFormatter` は、データ コントラクトを持つ任意の型を (<xref:System.Runtime.Serialization.DataContractAttribute?displayProperty=nameWithType> を持つことによって) 明示的に処理することも、(プリミティブ型にしたり、<xref:System.SerializableAttribute?displayProperty=nameWithType> を持ったりすることなどによって) 暗黙的に処理することもできます。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][データ コントラクトを使用して](../../../../docs/framework/wcf/feature-details/using-data-contracts.md)です。  
+ メッセージが使用されるサービス コントラクト用に選択されたシリアル化エンジンを使用して、個々のメッセージ ヘッダーとメッセージ本文がシリアル化されます (XML に変換されます)。 既定のシリアル化エンジンである `XmlFormatter` は、データ コントラクトを持つ任意の型を (<xref:System.Runtime.Serialization.DataContractAttribute?displayProperty=nameWithType> を持つことによって) 明示的に処理することも、(プリミティブ型にしたり、<xref:System.SerializableAttribute?displayProperty=nameWithType> を持ったりすることなどによって) 暗黙的に処理することもできます。 詳細については、次を参照してください。[を使用してデータ コントラクト](../../../../docs/framework/wcf/feature-details/using-data-contracts.md)です。  
   
  前の例では、`Operation` 型と `BankingTransactionData` 型は、データ コントラクトを持つ必要があります。また、`transactionDate` がプリミティブである (したがって、暗黙のデータ コントラクトを持つ) ため、<xref:System.DateTime> はシリアル化可能です。  
   
@@ -316,7 +316,7 @@ bt.documentApprover.MustUnderstand = false; // override the static default of 't
  メッセージを受信して返信するときに、これらの SOAP 属性設定は <xref:System.ServiceModel.MessageHeader%601> 型のヘッダーとして往復するだけです。  
   
 ## <a name="order-of-soap-body-parts"></a>SOAP 本文の順序  
- 状況によっては、本文の各部分の順序を制御する必要があります。 本文要素の既定の順序はアルファベット順ですが、<xref:System.ServiceModel.MessageBodyMemberAttribute.Order%2A?displayProperty=nameWithType> プロパティで制御できます。 このプロパティのセマンティクスは、継承シナリオにおける動作を除き、<xref:System.Runtime.Serialization.DataMemberAttribute.Order%2A?displayProperty=nameWithType> プロパティのセマンティクスと同じです (メッセージ コントラクトでは、派生型の本文メンバーの前に基本型の本文メンバーが並べ替えられることはありません)。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][データ メンバーの順序](../../../../docs/framework/wcf/feature-details/data-member-order.md)です。  
+ 状況によっては、本文の各部分の順序を制御する必要があります。 本文要素の既定の順序はアルファベット順ですが、<xref:System.ServiceModel.MessageBodyMemberAttribute.Order%2A?displayProperty=nameWithType> プロパティで制御できます。 このプロパティのセマンティクスは、継承シナリオにおける動作を除き、<xref:System.Runtime.Serialization.DataMemberAttribute.Order%2A?displayProperty=nameWithType> プロパティのセマンティクスと同じです (メッセージ コントラクトでは、派生型の本文メンバーの前に基本型の本文メンバーが並べ替えられることはありません)。 詳細については、次を参照してください。[データ メンバーの順序](../../../../docs/framework/wcf/feature-details/data-member-order.md)です。  
   
  次の例では、通常はアルファベット順で最初である `amount` が先頭にきますが、 <xref:System.ServiceModel.MessageBodyMemberAttribute.Order%2A> プロパティによって 3 番目の位置に挿入されます。  
   
@@ -460,6 +460,6 @@ public class OperationDetails
   
  メッセージ オブジェクトを `Result` プロパティとして受け取り、返された値をそのオブジェクトのプロパティとして取得する場合は、`/messageContract` コマンド オプションを使用します。 これにより、`Result` オブジェクトの <xref:System.EventArgs> プロパティとして応答メッセージを返すシグネチャが生成されます。 すべての内部戻り値は、応答メッセージ オブジェクトのプロパティになります。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [データ コントラクトの使用](../../../../docs/framework/wcf/feature-details/using-data-contracts.md)  
  [サービスの設計と実装](../../../../docs/framework/wcf/designing-and-implementing-services.md)

@@ -1,13 +1,13 @@
 ---
-title: "データ コントラクトの等価性"
-ms.custom: 
+title: データ コントラクトの等価性
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,17 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - data contracts [WCF], equivalence
 ms.assetid: f06f3c7e-c235-4ec1-b200-68142edf1ed1
-caps.latest.revision: 
+caps.latest.revision: 16
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 4059fa401d082f4408080cf5fd13f1331314a2d9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9d4463a04ac2113778d9ea0d315beeef7d564764
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="data-contract-equivalence"></a>データ コントラクトの等価性
 クライアントがサービスに特定の型のデータを正常に送信するために、またはサービスがクライアントにデータを正常に送信するために、送信する型が受信側に存在する必要があるとは限りません。 両方の型のデータ コントラクトが同等であるということが唯一の要件です (場合によっては、厳密に一致が必要でないで説明したよう[データ コントラクトのバージョン管理](../../../../docs/framework/wcf/feature-details/data-contract-versioning.md))。  
@@ -37,7 +37,7 @@ ms.lasthandoff: 12/22/2017
 > [!NOTE]
 >  データ コントラクト名と名前空間、およびデータ メンバー名は、大文字と小文字を区別します。  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]データ コントラクト名と名前空間、さらにデータ メンバー名を参照してください[データ コントラクト名](../../../../docs/framework/wcf/feature-details/data-contract-names.md)です。  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)] データ コントラクト名と名前空間、さらにデータ メンバー名を参照してください[データ コントラクト名](../../../../docs/framework/wcf/feature-details/data-contract-names.md)です。  
   
  2 つの型が両側 (送信者と受信者) に存在し、そのデータ コントラクトが同等でない場合 (たとえば、異なるデータ メンバーを含んでいる場合)、そのデータ コントラクトに同じ名前と名前空間を使用しないでください。 同じ名前と名前空間を使用すると、例外がスローされる可能性があります。  
   
@@ -47,7 +47,7 @@ ms.lasthandoff: 12/22/2017
  [!code-vb[C_DataContractNames#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_datacontractnames/vb/source.vb#5)]  
   
 ## <a name="data-member-order-and-data-contract-equivalence"></a>データ メンバーの順序とデータ コントラクトの等価性  
- <xref:System.Runtime.Serialization.DataMemberAttribute.Order%2A> クラスの <xref:System.Runtime.Serialization.DataMemberAttribute> プロパティの使用は、データ コントラクトの等価性に影響を与えることがあります。 データ コントラクトを同等にするには、データ メンバーが同じ順序で現れる必要があります。 既定の順序はアルファベット順です。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][データ メンバーの順序](../../../../docs/framework/wcf/feature-details/data-member-order.md)です。  
+ <xref:System.Runtime.Serialization.DataMemberAttribute.Order%2A> クラスの <xref:System.Runtime.Serialization.DataMemberAttribute> プロパティの使用は、データ コントラクトの等価性に影響を与えることがあります。 データ コントラクトを同等にするには、データ メンバーが同じ順序で現れる必要があります。 既定の順序はアルファベット順です。 詳細については、次を参照してください。[データ メンバーの順序](../../../../docs/framework/wcf/feature-details/data-member-order.md)です。  
   
  たとえば、次のコードでは、同等なデータ コントラクトが生成されます。  
   
@@ -60,7 +60,7 @@ ms.lasthandoff: 12/22/2017
  [!code-vb[C_DataContractNames#7](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_datacontractnames/vb/source.vb#7)]  
   
 ## <a name="inheritance-interfaces-and-data-contract-equivalence"></a>継承、インターフェイス、およびデータ コントラクトの等価性  
- 等価性を判断するとき、別のデータ コントラクトから継承したデータ コントラクトは、基本型のすべてのデータ メンバーを含んでいる 1 つのデータ コントラクトとして扱われます。 データ メンバーの順序が一致する必要があり、基本型のメンバーは派生型のメンバーより前に現れる必要があります。 さらに、次のコード例のように、2 つのデータ メンバーの順序の値が同じ場合、そのデータ メンバーの順序はアルファベット順になります。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][データ メンバーの順序](../../../../docs/framework/wcf/feature-details/data-member-order.md)です。  
+ 等価性を判断するとき、別のデータ コントラクトから継承したデータ コントラクトは、基本型のすべてのデータ メンバーを含んでいる 1 つのデータ コントラクトとして扱われます。 データ メンバーの順序が一致する必要があり、基本型のメンバーは派生型のメンバーより前に現れる必要があります。 さらに、次のコード例のように、2 つのデータ メンバーの順序の値が同じ場合、そのデータ メンバーの順序はアルファベット順になります。 詳細については、次を参照してください。[データ メンバーの順序](../../../../docs/framework/wcf/feature-details/data-member-order.md)です。  
   
  次の例では、型 `Employee` のデータ コントラクトは型 `Worker` のデータ コントラクトと同等です。  
   
@@ -69,11 +69,11 @@ ms.lasthandoff: 12/22/2017
   
  クライアントとサービスの間でパラメーターを渡し、値を返すとき、受信エンドポイントが派生クラスからのデータ コントラクトを予期している場合、基本クラスからのデータ コントラクトを送信できません。 これは、オブジェクト指向プログラミングの原則に基づいています。 前の例では、型のオブジェクトで`Person`ときに送信することはできません、`Employee`が必要です。  
   
- 基本クラスからのデータ コントラクトが予期されるときに派生クラスからのデータ コントラクトを送信することは可能ですが、受信エンドポイントが <xref:System.Runtime.Serialization.KnownTypeAttribute> を使用して派生型を認識している場合に限ります。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][データが既知の型をコントラクト](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)です。 上記の例では、`Employee` が予期されるときに、受信者のコードが既知の型のリストに `Person` を追加するために <xref:System.Runtime.Serialization.KnownTypeAttribute> を使用している場合のみ、型 Employee のオブジェクトを送信できます。  
+ 基本クラスからのデータ コントラクトが予期されるときに派生クラスからのデータ コントラクトを送信することは可能ですが、受信エンドポイントが <xref:System.Runtime.Serialization.KnownTypeAttribute> を使用して派生型を認識している場合に限ります。 詳細については、次を参照してください。[データ コントラクトの既知の型](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)です。 上記の例では、`Employee` が予期されるときに、受信者のコードが既知の型のリストに `Person` を追加するために <xref:System.Runtime.Serialization.KnownTypeAttribute> を使用している場合のみ、型 Employee のオブジェクトを送信できます。  
   
  アプリケーション間でパラメーターを渡し、値を返すとき、予期される型がインターフェイスの場合、その型は、型が <xref:System.Object> の予期される型と同等です。 すべての型は最終的に <xref:System.Object> から派生するので、すべてのデータ コントラクトは最終的に、<xref:System.Object> のデータ コントラクトから派生します。 したがって、インターフェイスが予期されるとき、すべてのデータ コントラクト型を渡すことができます。 インターフェイス; で正常に動作する追加手順が必要詳細については、次を参照してください。[データ コントラクトの既知の型](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Runtime.Serialization.DataContractAttribute>  
  <xref:System.Runtime.Serialization.DataMemberAttribute>  
  [データ メンバーの順序](../../../../docs/framework/wcf/feature-details/data-member-order.md)  

@@ -19,11 +19,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: f7716921be5ff97c2353b3b31d841c0c8dc01658
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: 95e27941cece3bfb96c4567516d07bcbe07c7490
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="understanding-generated-client-code"></a>生成されたクライアント コードの理解
 [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) は、クライアント アプリケーションの構築時に使用するクライアント コードとクライアント アプリケーション構成ファイルを生成します。 このトピックでは、標準サービス コントラクトのシナリオ向けに生成されたコード例について説明します。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] については、「 [WCF Client Overview](../../../../docs/framework/wcf/wcf-client-overview.md)」を参照してください。  
@@ -52,14 +52,14 @@ ms.lasthandoff: 04/27/2018
   
  [!code-csharp[C_GeneratedCodeFiles#12](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_generatedcodefiles/cs/proxycode.cs#12)]  
   
- 生成されたサービス コントラクト インターフェイスと <xref:System.ServiceModel.ChannelFactory?displayProperty=nameWithType> クラスを使用して、サービス操作の呼び出しに使用する [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] チャネル オブジェクトを作成できます。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [方法: ChannelFactory を使用して](../../../../docs/framework/wcf/feature-details/how-to-use-the-channelfactory.md)です。  
+ 生成されたサービス コントラクト インターフェイスと <xref:System.ServiceModel.ChannelFactory?displayProperty=nameWithType> クラスを使用して、サービス操作の呼び出しに使用する [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] チャネル オブジェクトを作成できます。 詳細については、次を参照してください。[する方法: ChannelFactory を使用して](../../../../docs/framework/wcf/feature-details/how-to-use-the-channelfactory.md)です。  
   
 ### <a name="finding-wcf-client-classes"></a>WCF クライアント クラスの検索  
  使用するサービス コントラクトを実装する [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント クラスを検索するには、<xref:System.ServiceModel.ClientBase%601?displayProperty=nameWithType> の拡張を検索します。ここで、型パラメーターは、以前に検索され、自身を拡張するサービス コントラクト インターフェイスです。 次のコード例は、 <xref:System.ServiceModel.ClientBase%601> 型の `ISampleService`クラスを示しています。  
   
  [!code-csharp[C_GeneratedCodeFiles#14](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_generatedcodefiles/cs/proxycode.cs#14)]  
   
- この [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント クラスを使用するには、新しいインスタンスを作成し、このクラスに実装されているメソッドを呼び出します。 これらのメソッドは、対応しているサービス操作を呼び出し、やり取りを行うように構成されています。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [WCF クライアントの概要](../../../../docs/framework/wcf/wcf-client-overview.md)です。  
+ この [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント クラスを使用するには、新しいインスタンスを作成し、このクラスに実装されているメソッドを呼び出します。 これらのメソッドは、対応しているサービス操作を呼び出し、やり取りを行うように構成されています。 詳細については、次を参照してください。 [WCF クライアントの概要](../../../../docs/framework/wcf/wcf-client-overview.md)です。  
   
 > [!NOTE]
 >  SvcUtil.exe で WCF クライアント クラスが生成されるとき、 <xref:System.Diagnostics.DebuggerStepThroughAttribute> がクライアント クラスに追加されるため、デバッガーで WCF クライアント クラスをステップ実行できなくなります。  

@@ -1,28 +1,30 @@
 ---
-title: "Windows Communication Foundation のトランザクションの概要"
-ms.custom: 
+title: Windows Communication Foundation のトランザクションの概要
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - transactions [WCF]
 - WCF, transactions
 - Windows Communication Foundation, transactions
 ms.assetid: c7757854-1207-4019-8b31-552578b7d570
-caps.latest.revision: "16"
+caps.latest.revision: 16
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 6fb90d0f93e9bdf7dd9779ffd5d4b1288ba56e7a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 76edd7cf30d9da06db6e0c2f4624bf9a6d677eca
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="windows-communication-foundation-transactions-overview"></a>Windows Communication Foundation のトランザクションの概要
 トランザクションを使用すると、一連の処理や操作を 1 つの不可分の実行単位にグループ化できます。 トランザクションとは、次の性質を持つ操作のコレクションです。  
@@ -39,7 +41,7 @@ ms.lasthandoff: 12/22/2017
   
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、WS-AtomicTransaction (WS-AT) プロトコル サポートを実装します。このプロトコルにより [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションは、サードパーティ技術を使って作成された相互運用可能な Web サービスなど、相互運用可能アプリケーションにトランザクションをフローすることができます。 また、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、OLE トランザクション プロトコル サポートも実装します。このプロトコルは、トランザクションのフローを有効にする相互運用可能な機能が必要とされないシナリオで使用することができます。  
   
- アプリケーション構成ファイルを使用してバインディングを構成し、トランザクション フローを有効にしたり無効にしたりできます。また、バインディングに目的のトランザクション プロトコルを設定できます。 さらに、構成ファイルを使用してサービス レベルでのトランザクションのタイムアウトを設定できます。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][トランザクション フローを有効にする](../../../../docs/framework/wcf/feature-details/enabling-transaction-flow.md)です。  
+ アプリケーション構成ファイルを使用してバインディングを構成し、トランザクション フローを有効にしたり無効にしたりできます。また、バインディングに目的のトランザクション プロトコルを設定できます。 さらに、構成ファイルを使用してサービス レベルでのトランザクションのタイムアウトを設定できます。 詳細については、次を参照してください。[トランザクション フローを有効にすると](../../../../docs/framework/wcf/feature-details/enabling-transaction-flow.md)です。  
   
  <xref:System.ServiceModel> 名前空間のトランザクション属性で次の設定が行えます。  
   
@@ -49,8 +51,8 @@ ms.lasthandoff: 12/22/2017
   
 -   コントラクト メソッドで <xref:System.ServiceModel.ServiceContractAttribute> 属性と <xref:System.ServiceModel.OperationContractAttribute> 属性を使用して、トランザクション フローの要求、許可、または拒否を行う。  
   
- [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][ServiceModel トランザクションの属性](../../../../docs/framework/wcf/feature-details/servicemodel-transaction-attributes.md)です。  
+ 詳細については、次を参照してください。 [ServiceModel トランザクションの属性](../../../../docs/framework/wcf/feature-details/servicemodel-transaction-attributes.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ServiceModel トランザクションの属性](../../../../docs/framework/wcf/feature-details/servicemodel-transaction-attributes.md)  
  [トランザクション フローの有効化](../../../../docs/framework/wcf/feature-details/enabling-transaction-flow.md)

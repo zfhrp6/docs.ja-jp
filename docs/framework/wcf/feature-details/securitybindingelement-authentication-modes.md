@@ -1,27 +1,29 @@
 ---
-title: "SecurityBindingElement 認証モード"
-ms.custom: 
+title: SecurityBindingElement 認証モード
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 12300bf4-c730-4405-9f65-d286f68b5a43
-caps.latest.revision: "13"
+caps.latest.revision: 13
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: 05b44d9972a393b36a97fd5afcb6581229332df9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 8ca854d6b0431b5fe4972972d9d39de934f64b4d
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="securitybindingelement-authentication-modes"></a>SecurityBindingElement 認証モード
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] には、クライアントとサービスが互いに認証するためのモードが複数あります。 <xref:System.ServiceModel.Channels.SecurityBindingElement> クラスの静的メソッドまたは構成を使用して、この認証モード用のセキュリティ バインド要素を作成できます。 このトピックでは、18 の認証モードについて簡単に説明します。  
@@ -60,7 +62,7 @@ ms.lasthandoff: 12/22/2017
      [!code-csharp[c_CustomBindingsAuthMode#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_custombindingsauthmode/cs/source.cs#3)]
      [!code-vb[c_CustomBindingsAuthMode#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_custombindingsauthmode/vb/source.vb#3)]  
   
-3.  カスタム バインドを作成するにはバインド要素を使用します。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][カスタム バインド](../../../../docs/framework/wcf/extending/custom-bindings.md)です。  
+3.  カスタム バインドを作成するにはバインド要素を使用します。 詳細については、次を参照してください。[カスタム バインディング](../../../../docs/framework/wcf/extending/custom-bindings.md)です。  
   
 ## <a name="mode-descriptions"></a>モードの説明  
   
@@ -89,7 +91,7 @@ ms.lasthandoff: 12/22/2017
  この認証モードでは、クライアントは Kerberos チケットを使用してサービスに対する認証を行います。 また、その同じチケットによってサーバーが認証されます。 セキュリティ バインド要素は、`SymmetricSecurityBindingElement` メソッドによって返される <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateKerberosBindingElement%2A> です。 代わりに、`authenticationMode` 属性に `Kerberos` を設定します。  
   
 > [!NOTE]
->  この認証モードを使用するには、サービス アカウントをサービス プリンシパル名 (SPN: Service Principal Name) に関連付ける必要があります。 この関連付けを行うには、NETWORK SERVICE アカウントまたは LOCAL SYSTEM アカウントでサービスを実行します。 または、SetSpn.exe ツールを使用して、サービス アカウントの SPN を作成します。 どちらの場合、クライアントがで正しい SPN を使用する必要があります、 [ \<servicePrincipalName >](../../../../docs/framework/configure-apps/file-schema/wcf/serviceprincipalname.md)要素、またはを使用して、<xref:System.ServiceModel.EndpointAddress>コンス トラクターです。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Id と認証をサービス](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)です。  
+>  この認証モードを使用するには、サービス アカウントをサービス プリンシパル名 (SPN: Service Principal Name) に関連付ける必要があります。 この関連付けを行うには、NETWORK SERVICE アカウントまたは LOCAL SYSTEM アカウントでサービスを実行します。 または、SetSpn.exe ツールを使用して、サービス アカウントの SPN を作成します。 どちらの場合、クライアントがで正しい SPN を使用する必要があります、 [ \<servicePrincipalName >](../../../../docs/framework/configure-apps/file-schema/wcf/serviceprincipalname.md)要素、またはを使用して、<xref:System.ServiceModel.EndpointAddress>コンス トラクターです。 詳細については、次を参照してください。[サービス Id と認証](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)です。  
   
 > [!NOTE]
 >  `Kerberos` 認証モードを使用する場合、<xref:System.Security.Principal.TokenImpersonationLevel.Anonymous> および <xref:System.Security.Principal.TokenImpersonationLevel.Delegation> の各偽装レベルはサポートされません。  
@@ -98,7 +100,7 @@ ms.lasthandoff: 12/22/2017
  この認証モードでは、クライアントは Kerberos チケットを使用してサービスに対する認証を行います。 Kerberos トークンは、保証サポート トークン、つまりメッセージ署名を行うトークンとして SOAP 層に表示されます。 サービスはトランスポート層で X.509 証明書を使用して認証されます。 セキュリティ バインド要素は、`TransportSecurityBindingElement` メソッドによって返される <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateKerberosOverTransportBindingElement%2A> です。 代わりに、`authenticationMode` 属性に `KerberosOverTransport` を設定します。  
   
 > [!NOTE]
->  この認証モードを使用するには、サービス アカウントを SPN に関連付ける必要があります。 この関連付けを行うには、NETWORK SERVICE アカウントまたは LOCAL SYSTEM アカウントでサービスを実行します。 または、SetSpn.exe ツールを使用して、サービス アカウントの SPN を作成します。 どちらの場合、クライアントがで正しい SPN を使用する必要があります、 [ \<servicePrincipalName >](../../../../docs/framework/configure-apps/file-schema/wcf/serviceprincipalname.md)要素、またはを使用して、<xref:System.ServiceModel.EndpointAddress>コンス トラクターです。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Id と認証をサービス](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)です。  
+>  この認証モードを使用するには、サービス アカウントを SPN に関連付ける必要があります。 この関連付けを行うには、NETWORK SERVICE アカウントまたは LOCAL SYSTEM アカウントでサービスを実行します。 または、SetSpn.exe ツールを使用して、サービス アカウントの SPN を作成します。 どちらの場合、クライアントがで正しい SPN を使用する必要があります、 [ \<servicePrincipalName >](../../../../docs/framework/configure-apps/file-schema/wcf/serviceprincipalname.md)要素、またはを使用して、<xref:System.ServiceModel.EndpointAddress>コンス トラクターです。 詳細については、次を参照してください。[サービス Id と認証](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)です。  
   
 ### <a name="mutualcertificate"></a>MutualCertificate  
  この認証モードでは、クライアントは、保証サポート トークン、つまりメッセージ署名を行うトークンとして SOAP 層に表示される X.509 証明書を使用して認証を行います。 また、サービスは X.509 証明書を使用して認証されます。 セキュリティ バインド要素は、`SymmetricSecurityBindingElement` メソッドによって返される <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateMutualCertificateBindingElement%2A> です。 代わりに、`authenticationMode` 属性に `MutualCertificate` を設定します。  
@@ -131,6 +133,6 @@ ms.lasthandoff: 12/22/2017
 ### <a name="usernameovertransport"></a>UserNameOverTransport  
  この認証モードでは、クライアントは、署名付きサポート トークン、つまりメッセージ署名で署名されたトークンとして SOAP 層に表示されるユーザー名トークンを使用して認証を行います。 サービスはトランスポート層で X.509 証明書を使用して認証されます。 セキュリティ バインド要素は、`TransportSecurityBindingElement` メソッドによって返される <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateUserNameOverTransportBindingElement%2A> です。 代わりに、`authenticationMode` 属性に `UserNameOverTransport` を設定します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Channels.SecurityBindingElement>  
  [方法 : 指定した認証モード用の SecurityBindingElement を作成する](../../../../docs/framework/wcf/feature-details/how-to-create-a-securitybindingelement-for-a-specified-authentication-mode.md)

@@ -18,11 +18,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: b7b9590096789af609e83d1a5ed736cf18e27700
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 2ad8a3a79967c42b8e8afdd9b9d796a7a1dfdd79
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="configuring-tracing"></a>トレースの構成
 ここでは、トレースを有効にする方法、トレースを出力し、トレース レベルを設定するようにトレース ソースを構成する方法、エンドツーエンドのトレース相関をサポートするようにアクティビティ トレースと伝達を設定する方法、およびトレースにアクセスするようにトレース リスナーを設定する方法について説明します。  
@@ -155,7 +155,7 @@ ms.lasthandoff: 04/26/2018
   
  カスタム トレース リスナーは、ネットワーク上のリモート データベースなどにトレースを送信するように構成できます。 アプリケーションを展開するユーザーは、リモート コンピューターのトレース ログに適切なアクセス制御を適用する必要があります。  
   
- また、トレース リスナーはプログラムによって構成することもできます。 [!INCLUDE[crdefault](../../../../../includes/crdefault-md.md)] [方法: を作成し、トレース リスナーを初期化](http://go.microsoft.com/fwlink/?LinkId=94648)と[カスタム TraceListener を作成する](http://go.microsoft.com/fwlink/?LinkId=96239)です。  
+ また、トレース リスナーはプログラムによって構成することもできます。 詳細については、次を参照してください。[する方法: を作成し、トレース リスナーを初期化](http://go.microsoft.com/fwlink/?LinkId=94648)と[カスタム TraceListener を作成する](http://go.microsoft.com/fwlink/?LinkId=96239)です。  
   
 > [!CAUTION]
 >  `System.Diagnostics.XmlWriterTraceListener` はスレッド セーフではないため、トレース ソースは、トレースを出力するときにリソースを排他的にロックする可能性があります。 このリスナーを使用するように構成されたトレース ソースに多くのスレッドがトレースを出力すると、リソースの競合が発生し、パフォーマンスに重大な問題が生じる場合があります。 この問題を解決するには、スレッド セーフなカスタム リスナーを実装する必要があります。  

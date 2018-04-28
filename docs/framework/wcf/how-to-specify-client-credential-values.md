@@ -1,27 +1,29 @@
 ---
-title: "方法 : クライアントの資格情報の値を指定する"
-ms.custom: 
+title: '方法 : クライアントの資格情報の値を指定する'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 82293d7f-471a-4549-8f19-0be890e7b074
-caps.latest.revision: "28"
+caps.latest.revision: 28
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: cd818a2342ff5b44e4e8ab1b237f7c657d3bf438
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 35244032a36af8d3d23fd9d88006ea032a99b44b
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="how-to-specify-client-credential-values"></a>方法 : クライアントの資格情報の値を指定する
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] では、サービスに対するクライアントの認証方法を指定できます。 たとえば、証明書を使用してクライアントを認証するように指定できます。  
@@ -32,9 +34,9 @@ ms.lasthandoff: 12/22/2017
   
 2.  XML 構成ファイルを開きます。 Svcutil.exe ツールを使用する場合、ファイルの既定の名前は、Output.config です。  
   
-3.  検索、 **\<セキュリティ >**を持つ要素、**モード**属性 (**< セキュリティ モード =** `MessageOrTransport`  **>** 場所`MessageOrTransport`セキュリティ モードのいずれかに設定されています。  
+3.  検索、 **\<セキュリティ >** を持つ要素、**モード**属性 (**< セキュリティ モード =** `MessageOrTransport` **>** 場所`MessageOrTransport`セキュリティ モードのいずれかに設定されています。  
   
-4.  mode 値に一致する子要素を見つけます。 モードが に設定されている場合など、**メッセージ**、検索、 **\<メッセージ >**要素に含まれている、 **\<セキュリティ >**要素。  
+4.  mode 値に一致する子要素を見つけます。 モードが に設定されている場合など、**メッセージ**、検索、 **\<メッセージ >** 要素に含まれている、 **\<セキュリティ >** 要素。  
   
 5.  割り当てられた値に注意してください、 **clientCredentialType**属性。 実際の値は、使用されているモード (トランスポートまたはメッセージ) に依存します。  
   
@@ -50,7 +52,7 @@ ms.lasthandoff: 12/22/2017
 ```  
   
 ## <a name="example-tcp-transport-mode-with-certificate-as-client-credential"></a>例: クライアント資格情報としての証明書による TCP トランスポート モード  
- この例では、セキュリティ モードを "Transport (トランスポート)" モードに設定し、クライアント資格情報の値を X.509 証明書に設定します。 次の手順では、クライアントでクライアント資格情報の値をコードと構成を使用して設定する方法を示します。 これを使用している前提としています。、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)をサービスからメタデータ (コードと構成) を返します。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][する方法: クライアントを作成する](../../../docs/framework/wcf/how-to-create-a-wcf-client.md)です。  
+ この例では、セキュリティ モードを "Transport (トランスポート)" モードに設定し、クライアント資格情報の値を X.509 証明書に設定します。 次の手順では、クライアントでクライアント資格情報の値をコードと構成を使用して設定する方法を示します。 これを使用している前提としています。、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)をサービスからメタデータ (コードと構成) を返します。 詳細については、次を参照してください。[する方法: クライアントを作成する](../../../docs/framework/wcf/how-to-create-a-wcf-client.md)です。  
   
 #### <a name="to-specify-the-client-credential-value-on-the-client-in-code"></a>クライアントでクライアント資格情報の値をコードによって指定するには  
   
@@ -73,7 +75,7 @@ ms.lasthandoff: 12/22/2017
   
 3.  追加、 [ \<clientCertificate >](../../../docs/framework/configure-apps/file-schema/wcf/clientcertificate-of-servicecredentials.md)要素を[ \<clientCredentials >](../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md)要素。  
   
-4.  次のコードに示すように、`storeLocation`、`storeName`、`x509FindType`、および `findValue` の各属性を適切な値に設定します。 [!INCLUDE[crabout](../../../includes/crabout-md.md)]証明書を参照してください[証明書の使用](../../../docs/framework/wcf/feature-details/working-with-certificates.md)です。  
+4.  次のコードに示すように、`storeLocation`、`storeName`、`x509FindType`、および `findValue` の各属性を適切な値に設定します。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] 証明書を参照してください[証明書の使用](../../../docs/framework/wcf/feature-details/working-with-certificates.md)です。  
   
     ```xml  
     <behaviors>  
@@ -102,7 +104,7 @@ ms.lasthandoff: 12/22/2017
     </client>  
     ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.NetTcpBinding>  
  <xref:System.ServiceModel.Security.X509CertificateRecipientServiceCredential.SetCertificate%2A>  
  <xref:System.ServiceModel.Security.X509CertificateRecipientServiceCredential>  
@@ -113,10 +115,10 @@ ms.lasthandoff: 12/22/2017
  [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)  
  [証明書の使用](../../../docs/framework/wcf/feature-details/working-with-certificates.md)  
  [方法: クライアントを作成する](../../../docs/framework/wcf/how-to-create-a-wcf-client.md)  
- [\<netTcpBinding >](../../../docs/framework/configure-apps/file-schema/wcf/nettcpbinding.md)  
- [\<セキュリティ >](../../../docs/framework/configure-apps/file-schema/wcf/security-of-nettcpbinding.md)  
- [\<メッセージ >](../../../docs/framework/configure-apps/file-schema/wcf/message-element-of-nettcpbinding.md)  
- [\<動作 >](../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)  
- [\<ビヘイビアー >](../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md)  
+ [\<netTcpBinding>](../../../docs/framework/configure-apps/file-schema/wcf/nettcpbinding.md)  
+ [\<security>](../../../docs/framework/configure-apps/file-schema/wcf/security-of-nettcpbinding.md)  
+ [\<message>](../../../docs/framework/configure-apps/file-schema/wcf/message-element-of-nettcpbinding.md)  
+ [\<behavior>](../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)  
+ [\<behaviors>](../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md)  
  [\<clientCertificate >](../../../docs/framework/configure-apps/file-schema/wcf/clientcertificate-of-servicecredentials.md)  
- [\<clientCredentials >](../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md)
+ [\<clientCredentials>](../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md)

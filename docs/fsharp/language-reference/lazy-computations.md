@@ -1,20 +1,17 @@
 ---
-title: "遅延計算 (F#)"
-description: "F# で遅延の計算が、アプリとライブラリのパフォーマンスを向上する方法について説明します。"
-keywords: "visual f#, f#, 関数型プログラミング"
+title: 遅延計算 (F#)
+description: F# で遅延の計算が、アプリとライブラリのパフォーマンスを向上する方法について説明します。
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: 3499293e-1d53-4b02-b764-f687fbdaa7fe
-ms.openlocfilehash: 984c96ab68a8919e2382eefe8260b07f191027dd
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 72dc5a14a845b52ae2512314d730516ca0cf4b9d
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="lazy-computations"></a>遅延計算
 
@@ -32,7 +29,7 @@ let identifier = lazy ( expression )
 
 遅延計算を使用すると、結果が必要とされる状況のみを計算の実行を制限することでパフォーマンスを向上させることができます。
 
-メソッドを呼び出す、計算を実行するのには、`Force`です。 `Force`1 回だけ実行する実行をします。 後続の呼び出し`Force`戻り、同じ結果を任意のコードを実行しないでください。
+メソッドを呼び出す、計算を実行するのには、`Force`です。 `Force` 1 回だけ実行する実行をします。 後続の呼び出し`Force`戻り、同じ結果を任意のコードを実行しないでください。
 
 次のコードは、限定的な計算を使用しての使用を示しています。`Force`です。 このコードの種類で`result`は`Lazy<int>`、および`Force`メソッドを返します、`int`です。
 

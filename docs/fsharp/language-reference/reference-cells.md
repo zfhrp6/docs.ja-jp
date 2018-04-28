@@ -1,20 +1,17 @@
 ---
-title: "参照セル (F#)"
-description: "F# 参照セルの記憶域の場所を有効にすると、参照セマンティクスを持つ変更可能な値を作成する方法について説明します。"
-keywords: "visual f#, f#, 関数型プログラミング"
+title: 参照セル (F#)
+description: F# 参照セルの記憶域の場所を有効にすると、参照セマンティクスを持つ変更可能な値を作成する方法について説明します。
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: 09a0b221-ea21-45c4-bae8-5e4a339750c4
-ms.openlocfilehash: c7470c9a36cf2cd24dd89ceffcf6e90c6dc4d2dd
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: e017adb2a031dff996892e2bb6585fc95f644ff9
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="reference-cells"></a>参照セル
 

@@ -21,11 +21,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 3669260d34aac0783f2ebd735c79ced91741408a
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: b0042d9b90066553d6fc962bba1b7a7b990ca242
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="wcf-client-overview"></a>WCF クライアントの概要
 このセクションでは、クライアント アプリケーションの処理、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] クライアントの構成方法、作成方法、使用方法、およびクライアント アプリケーションをセキュリティで保護する方法について説明します。  
@@ -83,7 +83,7 @@ svcutil /language:vb /out:ClientCode.vb /config:app.config http://computerName/M
   
  このクラスを、コンストラクターの 1 つを使用してローカル オブジェクトとして作成し、構成して、型 `ISampleService` のサービスへの接続に使用できます。  
   
- まず [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアント オブジェクトを作成し、それを 1 つの try/catch ブロック内で使用して閉じることをお勧めします。 使用しないで、`using`ステートメント (`Using` Visual Basic で) ため、特定のエラー モードで例外をマスクすることがあります。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] 同様に、以下のセクションとして[Using ステートメントに関する問題を回避](../../../docs/framework/wcf/samples/avoiding-problems-with-the-using-statement.md)です。  
+ まず [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアント オブジェクトを作成し、それを 1 つの try/catch ブロック内で使用して閉じることをお勧めします。 使用しないで、`using`ステートメント (`Using` Visual Basic で) ため、特定のエラー モードで例外をマスクすることがあります。 詳細については、次のセクションを参照してください。 だけでなく[Using ステートメントに関する問題を回避](../../../docs/framework/wcf/samples/avoiding-problems-with-the-using-statement.md)です。  
   
 ### <a name="contracts-bindings-and-addresses"></a>コントラクト、バインディング、およびアドレス  
  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアント オブジェクトを作成するには、クライアント オブジェクトを構成する必要があります。 具体的には、サービスがあります*エンドポイント*を使用します。 エンドポイントは、サービス コントラクト、バインディング、およびアドレスの組み合わせです  ([!INCLUDE[crabout](../../../includes/crabout-md.md)]エンドポイントを参照してください[エンドポイント: アドレス、バインディング、およびコントラクト](../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md))。通常、この情報にある、 [\<エンドポイント >](../../../docs/framework/configure-apps/file-schema/wcf/endpoint-of-client.md)もの、Svcutil.exe ツールを生成して、クライアントを作成するときに自動的に読み込まれますなど、クライアント アプリケーション構成ファイル内の要素オブジェクト。 両方の [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアント型には、この情報をプログラムで指定できるオーバーロードもあります。  
@@ -140,7 +140,7 @@ Namespace Microsoft.ServiceModel.Samples
 End Interface  
 ```  
   
- 次のコード例で示すように、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアント オブジェクトを作成し、そのメソッドを呼び出すことで操作を呼び出すことができます。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアント オブジェクトのオープン、呼び出し、クローズは、1 つの try/catch ブロック内で行われます。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [WCF クライアントを使用してサービスにアクセスする](../../../docs/framework/wcf/feature-details/accessing-services-using-a-client.md)と[Using ステートメントに関する問題の回避](../../../docs/framework/wcf/samples/avoiding-problems-with-the-using-statement.md)です。  
+ 次のコード例で示すように、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアント オブジェクトを作成し、そのメソッドを呼び出すことで操作を呼び出すことができます。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアント オブジェクトのオープン、呼び出し、クローズは、1 つの try/catch ブロック内で行われます。 詳細については、次を参照してください。[にアクセスするサービスの WCF クライアントを使用して](../../../docs/framework/wcf/feature-details/accessing-services-using-a-client.md)と[Using ステートメントに関する問題を回避](../../../docs/framework/wcf/samples/avoiding-problems-with-the-using-statement.md)です。  
   
  [!code-csharp[C_GeneratedCodeFiles#20](../../../samples/snippets/csharp/VS_Snippets_CFX/c_generatedcodefiles/cs/proxycode.cs#20)]  
   
@@ -167,7 +167,7 @@ End Interface
   
  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] の双方向クライアント オブジェクトは、対応する非双方向クライアント オブジェクトと同じように機能します。ただし、双方向クライアント オブジェクトは、コールバック サービスの構成など、コールバックのサポートに必要な機能を公開します。  
   
- たとえば、コールバック クラスの <xref:System.ServiceModel.CallbackBehaviorAttribute?displayProperty=nameWithType> 属性のプロパティを使用して、コールバック オブジェクトの実行時の動作のさまざまな局面を制御できます。 また、別の例として、<xref:System.ServiceModel.Description.CallbackDebugBehavior?displayProperty=nameWithType> クラスを使用して、例外情報をコールバック オブジェクトを呼び出したサービスに返すこともできます。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [双方向サービス](../../../docs/framework/wcf/feature-details/duplex-services.md)です。 完全なサンプルについてを参照してください。[双方向](../../../docs/framework/wcf/samples/duplex.md)です。  
+ たとえば、コールバック クラスの <xref:System.ServiceModel.CallbackBehaviorAttribute?displayProperty=nameWithType> 属性のプロパティを使用して、コールバック オブジェクトの実行時の動作のさまざまな局面を制御できます。 また、別の例として、<xref:System.ServiceModel.Description.CallbackDebugBehavior?displayProperty=nameWithType> クラスを使用して、例外情報をコールバック オブジェクトを呼び出したサービスに返すこともできます。 詳細については、次を参照してください。[双方向サービス](../../../docs/framework/wcf/feature-details/duplex-services.md)です。 完全なサンプルについてを参照してください。[双方向](../../../docs/framework/wcf/samples/duplex.md)です。  
   
  インターネット インフォメーション サービス (IIS) 5.1 を実行する Windows XP コンピューターの場合、双方向クライアントでは <xref:System.ServiceModel.WSDualHttpBinding?displayProperty=nameWithType> クラスを使用してクライアントのベース アドレスを指定する必要があります。そうしない場合は例外がスローされます。 次のコード例は、コードでこれを指定する方法を示します。  
   
@@ -179,7 +179,7 @@ End Interface
  [!code-csharp[S_DualHttp#134](../../../samples/snippets/csharp/VS_Snippets_CFX/s_dualhttp/cs/program.cs#134)]  
   
 ## <a name="calling-services-asynchronously"></a>サービスの非同期呼び出し  
- 操作の呼び出し方法は、クライアント開発者に完全に依存します。 これは、操作を構成するメッセージは、マネージ コードで表現するときに同期メソッドまたは非同期メソッドのどちらかにマップできるためです。 したがって、操作を非同期に呼び出すクライアントを作成する場合、Svcutil.exe の `/async` オプションを使用して非同期クライアント コードを生成できます。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [方法: サービス操作を非同期的に呼び出す](../../../docs/framework/wcf/feature-details/how-to-call-wcf-service-operations-asynchronously.md)です。  
+ 操作の呼び出し方法は、クライアント開発者に完全に依存します。 これは、操作を構成するメッセージは、マネージ コードで表現するときに同期メソッドまたは非同期メソッドのどちらかにマップできるためです。 したがって、操作を非同期に呼び出すクライアントを作成する場合、Svcutil.exe の `/async` オプションを使用して非同期クライアント コードを生成できます。 詳細については、次を参照してください。[する方法: サービスの操作を非同期に呼び出す](../../../docs/framework/wcf/feature-details/how-to-call-wcf-service-operations-asynchronously.md)です。  
   
 ## <a name="calling-services-using-wcf-client-channels"></a>WCF クライアント チャネルを使用したサービスの呼び出し  
  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアント型は、<xref:System.ServiceModel.ClientBase%601> インターフェイスから派生して基になるチャネル システムを公開する <xref:System.ServiceModel.IClientChannel?displayProperty=nameWithType> を拡張します。 ターゲットのサービス コントラクトと <xref:System.ServiceModel.ChannelFactory%601?displayProperty=nameWithType> クラスを使用して、サービスを呼び出すことができます。 詳細については、「 [WCF クライアント アーキテクチャ](../../../docs/framework/wcf/feature-details/client-architecture.md)です。  

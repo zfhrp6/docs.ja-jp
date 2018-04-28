@@ -31,11 +31,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: c3c1654bd63d59bf6588b1dc18593ef7a33f37c0
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: 61197255c11745c2c3f6f60db084b96dc812cb00
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="wpf-security-strategy---platform-security"></a>WPF のセキュリティ方針 - プラットフォーム セキュリティ
 [!INCLUDE[TLA#tla_wpf](../../../includes/tlasharptla-wpf-md.md)] は、さまざまなセキュリティ サービスを提供する一方で、基になるプラットフォーム (オペレーティング システム、[!INCLUDE[TLA2#tla_clr](../../../includes/tla2sharptla-clr-md.md)]、[!INCLUDE[TLA2#tla_ie](../../../includes/tla2sharptla-ie-md.md)] など) のセキュリティ機能も活用します。 これらの層を組み合わせることで、[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] に強力な多重防御のセキュリティ モデルが提供されます。このセキュリティ モデルでは、次の図に示すように、単一障害点の回避を試みます。  
@@ -123,11 +123,11 @@ ms.lasthandoff: 04/27/2018
   
  マネージ コードが信頼されたコードと見なされない限り、検証ルールに適合しないマネージ コードの実行は許可されません。  
   
- 検証可能なコードの利点は、[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] が [!INCLUDE[TLA2#tla_winfx](../../../includes/tla2sharptla-winfx-md.md)] 上に構築される主な理由になります。 検証可能なコードを使用する範囲で、起こりうる脆弱性の悪用の可能性が大幅に減少します。  
+ 検証可能なコードの利点は、主な理由、なぜ[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]を .NET Framework 上に構築します。 検証可能なコードを使用する範囲で、起こりうる脆弱性の悪用の可能性が大幅に減少します。  
   
 <a name="Code_Access_Security"></a>   
 ### <a name="code-access-security"></a>コード アクセス セキュリティ  
- クライアント コンピューターは、ファイル システム、レジストリ、印刷サービス、ユーザー インターフェイス、リフレクション、および環境変数など、マネージ アプリケーションがアクセスできる多種多様なリソースを公開します。 マネージ アプリケーションは、クライアント コンピューター上のリソースのいずれかでアクセスできますが、前に必要があります[!INCLUDE[TLA2#tla_winfx](../../../includes/tla2sharptla-winfx-md.md)][!INCLUDE[TLA#tla_cas](../../../includes/tlasharptla-cas-md.md)]で許可します。 [!INCLUDE[TLA2#tla_cas](../../../includes/tla2sharptla-cas-md.md)] のアクセス許可は、<xref:System.Security.CodeAccessPermission> のサブクラスです。[!INCLUDE[TLA2#tla_cas](../../../includes/tla2sharptla-cas-md.md)] は、マネージ アプリケーションがアクセスできるリソースごとに 1 つのサブクラスを実装します。  
+ クライアント コンピューターは、ファイル システム、レジストリ、印刷サービス、ユーザー インターフェイス、リフレクション、および環境変数など、マネージ アプリケーションがアクセスできる多種多様なリソースを公開します。 マネージ アプリケーションは、クライアント コンピューター上のリソースのいずれかでアクセスできますが、前に、そのためには .NET Framework のアクセス許可が必要です。 [!INCLUDE[TLA2#tla_cas](../../../includes/tla2sharptla-cas-md.md)] のアクセス許可は、<xref:System.Security.CodeAccessPermission> のサブクラスです。[!INCLUDE[TLA2#tla_cas](../../../includes/tla2sharptla-cas-md.md)] は、マネージ アプリケーションがアクセスできるリソースごとに 1 つのサブクラスを実装します。  
   
  マネージ アプリケーションが実行を開始する際に [!INCLUDE[TLA2#tla_cas](../../../includes/tla2sharptla-cas-md.md)] によって付与される一連のアクセス許可は、アクセス許可セットとして知られ、アプリケーションが提供する証拠によって決定されます。 [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] アプリケーションでは、提供される証拠は、アプリケーションが起動される場所またはゾーンです。 [!INCLUDE[TLA2#tla_cas](../../../includes/tla2sharptla-cas-md.md)] は次のゾーンを識別します。  
   
@@ -187,17 +187,17 @@ ms.lasthandoff: 04/27/2018
   
 <a name="ClickOnce_Deployment"></a>   
 ### <a name="clickonce-deployment"></a>ClickOnce 配置  
- [!INCLUDE[TLA#tla_clickonce](../../../includes/tlasharptla-clickonce-md.md)] 含まれている包括的な配置テクノロジは、[!INCLUDE[TLA2#tla_winfx](../../../includes/tla2sharptla-winfx-md.md)]と連携および統合[!INCLUDE[TLA#tla_visualstu](../../../includes/tlasharptla-visualstu-md.md)](を参照してください[ClickOnce の配置の概要](http://msdn.microsoft.com/library/142dbbz4.aspx)詳細な情報の)。 スタンドアロンの [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] アプリケーションは、[!INCLUDE[TLA#tla_clickonce](../../../includes/tlasharptla-clickonce-md.md)] を使用して配置できます。一方、ブラウザーでホストされるアプリケーションは [!INCLUDE[TLA2#tla_clickonce](../../../includes/tla2sharptla-clickonce-md.md)] で配置する必要があります。  
+ [!INCLUDE[TLA#tla_clickonce](../../../includes/tlasharptla-clickonce-md.md)] 包括的な展開テクノロジである .NET Framework に付属しているし、統合されています[!INCLUDE[TLA#tla_visualstu](../../../includes/tlasharptla-visualstu-md.md)](を参照してください[ClickOnce の配置の概要](http://msdn.microsoft.com/library/142dbbz4.aspx)詳細)。 スタンドアロンの [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] アプリケーションは、[!INCLUDE[TLA#tla_clickonce](../../../includes/tlasharptla-clickonce-md.md)] を使用して配置できます。一方、ブラウザーでホストされるアプリケーションは [!INCLUDE[TLA2#tla_clickonce](../../../includes/tla2sharptla-clickonce-md.md)] で配置する必要があります。  
   
  [!INCLUDE[TLA2#tla_clickonce](../../../includes/tla2sharptla-clickonce-md.md)] を使用して配置されたアプリケーションには、[!INCLUDE[TLA#tla_cas](../../../includes/tlasharptla-cas-md.md)] の上に追加のセキュリティ層が設けられます。基本的に、[!INCLUDE[TLA#tla_clickonce](../../../includes/tlasharptla-clickonce-md.md)] の配置済みのアプリケーションは、必要なアクセス許可を要求します。 これらのアプリケーションが、アプリケーションの配置元ゾーンのアクセス許可セット数を超えていない場合、これらのアプリケーションには必要なアクセス許可のみが付与されます。 アクセス許可セット数を必要な数のみに減らすことで、起動ゾーンのアクセス許可セットが提供するアクセス許可数を下回る場合でも、アプリケーションがアクセスできるリソースの数が最小限まで削減されます。 その結果、アプリケーションが乗っ取られた場合、クライアント コンピューターの損傷の可能性が低減します。  
   
 <a name="Security_Critical_Methodology"></a>   
 ### <a name="security-critical-methodology"></a>セキュリティ クリティカルな方法  
- [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] アプリケーションでインターネット ゾーンのサンド ボックスを有効にするアクセス許可を使用する [!INCLUDE[TLA2#tla_winfxwebapp](../../../includes/tla2sharptla-winfxwebapp-md.md)] コードは、セキュリティ監査および制御の程度を可能な限り高く保持する必要があります。 この要件に対応するため、[!INCLUDE[TLA2#tla_winfx](../../../includes/tla2sharptla-winfx-md.md)] は、特権を昇格するコードを管理するための新しいサポートを提供します。 具体的には、[!INCLUDE[TLA2#tla_clr](../../../includes/tla2sharptla-clr-md.md)]権限を昇格させるコードを特定し、使用してマークすることができます、 <xref:System.Security.SecurityCriticalAttribute>; 任意のコードでマークされていない<xref:System.Security.SecurityCriticalAttribute>なります*透過的*この手法を使用して。 逆に、<xref:System.Security.SecurityCriticalAttribute> でマークされていないマネージ コードは特権の昇格ができなくなります。  
+ [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] アプリケーションでインターネット ゾーンのサンド ボックスを有効にするアクセス許可を使用する [!INCLUDE[TLA2#tla_winfxwebapp](../../../includes/tla2sharptla-winfxwebapp-md.md)] コードは、セキュリティ監査および制御の程度を可能な限り高く保持する必要があります。 この要件を容易には、.NET Framework は、権限を昇格させるコードを管理するため新たにサポートを提供します。 具体的には、[!INCLUDE[TLA2#tla_clr](../../../includes/tla2sharptla-clr-md.md)]権限を昇格させるコードを特定し、使用してマークすることができます、 <xref:System.Security.SecurityCriticalAttribute>; 任意のコードでマークされていない<xref:System.Security.SecurityCriticalAttribute>なります*透過的*この手法を使用して。 逆に、<xref:System.Security.SecurityCriticalAttribute> でマークされていないマネージ コードは特権の昇格ができなくなります。  
   
  セキュリティ クリティカルな手法により、組織の[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]権限を昇格するコード*セキュリティ クリティカルなカーネル*、透過的なされている残りの部分をします。 により、セキュリティ クリティカルなコードを分離する、[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]エンジニア リング チームの標準的なセキュリティ プラクティス他に、セキュリティ クリティカルなカーネルで追加のセキュリティ分析とソース管理をフォーカス (を参照してください[WPF のセキュリティ方針-セキュリティ エンジニア リング](../../../docs/framework/wpf/wpf-security-strategy-security-engineering.md))。  
   
- なお [!INCLUDE[TLA2#tla_winfx](../../../includes/tla2sharptla-winfx-md.md)] は、開発者が [!INCLUDE[TLA2#tla_winfxwebapp](../../../includes/tla2sharptla-winfxwebapp-md.md)] (APTCA) でマークされ、ユーザーのグローバル アセンブリ キャッシュ (GAC) に配置されたマネージ アセンブリに書き込めるようにすることで、信頼されたコードが <xref:System.Security.AllowPartiallyTrustedCallersAttribute> のインターネット ゾーンのサンドボックスに拡張することを許可します。 アセンブリを APTCA でマークすることは、機密性の高いセキュリティ操作です。インターネットからの悪意のあるコードなど、いずれのコードもそのアセンブリを呼び出すことができるためです。 これを実施する際は十分注意し、ベスト プラクティスを使用する必要があります。ソフトウェアをインストールするためには、ユーザーがそのソフトウェアを信頼することを選択する必要があります。  
+ .NET Framework により、信頼されるコードを拡張することに注意してください、[!INCLUDE[TLA2#tla_winfxwebapp](../../../includes/tla2sharptla-winfxwebapp-md.md)]開発者が付けられているマネージ アセンブリを作成するようにすることで、インターネット ゾーンのサンド ボックス<xref:System.Security.AllowPartiallyTrustedCallersAttribute>(APTCA)、ユーザーのグローバル アセンブリ キャッシュ (GAC) に展開されているとします。 アセンブリを APTCA でマークすることは、機密性の高いセキュリティ操作です。インターネットからの悪意のあるコードなど、いずれのコードもそのアセンブリを呼び出すことができるためです。 これを実施する際は十分注意し、ベスト プラクティスを使用する必要があります。ソフトウェアをインストールするためには、ユーザーがそのソフトウェアを信頼することを選択する必要があります。  
   
 <a name="Microsoft_Internet_Explorer_Security"></a>   
 ## <a name="microsoft-internet-explorer-security"></a>Microsoft Internet Explorer のセキュリティ  

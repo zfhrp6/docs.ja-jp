@@ -1,27 +1,29 @@
 ---
-title: "ワークフロー サービスのホスティング"
-ms.custom: 
+title: ワークフロー サービスのホスティング
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 2d55217e-8697-4113-94ce-10b60863342e
-caps.latest.revision: "12"
+caps.latest.revision: 12
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c4a18289fcc5f6dfd68f13a006223d5870d3cd4f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: e9f8d38b97a422d2d59e2dea05d53cf6f9684d99
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="hosting-workflow-services"></a>ワークフロー サービスのホスティング
-ワークフロー サービスが受信メッセージに応答するには、ワークフロー サービスがホストされている必要があります。 ワークフロー サービスは [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] メッセージング インフラストラクチャを使用するため、これと似た方法でホストされます。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスと同様に、ワークフロー サービスは、インターネット インフォメーション サービス (IIS) または Windows プロセス アクティブ化サービス (WAS) の下で、任意のマネージ アプリケーションでホストできます。 また、ワークフロー サービスは Windows Server AppFabric でホストできます。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Windows Server App Fabric を参照してください[Windows Server App Fabric ドキュメント](http://go.microsoft.com/fwlink/?LinkId=193037)、 [AppFabric のホスティング機能](http://go.microsoft.com/fwlink/?LinkId=196494)、および[AppFabric ホスティングの概念](http://go.microsoft.com/fwlink/?LinkId=196495)です。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]ホストするさまざまな方法[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]サービスを参照してください[ホスティング サービス](../../../../docs/framework/wcf/hosting-services.md)です。  
+ワークフロー サービスが受信メッセージに応答するには、ワークフロー サービスがホストされている必要があります。 ワークフロー サービスは [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] メッセージング インフラストラクチャを使用するため、これと似た方法でホストされます。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスと同様に、ワークフロー サービスは、インターネット インフォメーション サービス (IIS) または Windows プロセス アクティブ化サービス (WAS) の下で、任意のマネージ アプリケーションでホストできます。 また、ワークフロー サービスは Windows Server AppFabric でホストできます。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] Windows Server App Fabric を参照してください[Windows Server App Fabric ドキュメント](http://go.microsoft.com/fwlink/?LinkId=193037)、 [AppFabric のホスティング機能](http://go.microsoft.com/fwlink/?LinkId=196494)、および[AppFabric ホスティングの概念](http://go.microsoft.com/fwlink/?LinkId=196495)です。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] ホストするさまざまな方法[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]サービスを参照してください[ホスティング サービス](../../../../docs/framework/wcf/hosting-services.md)です。  
   
 ## <a name="hosting-in-a-managed-application"></a>マネージ アプリケーションでのホスト  
  マネージ アプリケーションでワークフロー サービスをホストするには、<xref:System.ServiceModel.Activities.WorkflowServiceHost> クラスを使用します。 <xref:System.ServiceModel.Activities.WorkflowServiceHost> コンストラクターにより、シングルトン ワークフロー サービス インスタンス、ワークフロー サービス定義、またはワークフロー メッセージング アクティビティを使用するアクティビティを指定できます。 呼び出す <<!--zz xref:System.ServiceModel.Activities.WorkflowServiceHost.Open%2A--> `System.ServiceModel.Activities.WorkflowServiceHost.Open`> サービスが受信メッセージのリッスンを開始します。  
@@ -56,14 +58,14 @@ ms.lasthandoff: 12/22/2017
  ワークフロー サービスを定義する .xamlx ファイルを含める必要があります、<`Service`> ルート要素またはから派生した任意の型を含むルート要素<xref:System.Workflow.ComponentModel.Activity>です。 [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] アクティビティ テンプレートを使用する場合は、.xamlx ファイルが作成されます。 WCF ワークフロー サービス テンプレートを使用する場合は、.xamlx ファイルが作成されます。  
   
 ## <a name="hosting-workflow-services-under-windows-server-app-fabric"></a>Windows Server AppFabric でのワークフロー サービスのホスティング  
- Windows Server AppFabric でのワークフロー サービスのホスティングは IIS/WAS でのホスティングと同じ方法で行われます。 唯一の違いは、Windows Server AppFabric がインストールされるということです。 Windows Server AppFabric には、PowerShell コマンドと同様に、インターネット インフォメーション サービス マネージャーに追加されるツールが用意されています。 これらのツールによって、ワークフロー サービスおよび WCF サービスの配置、管理、および追跡を簡略化することができます。 である必要があります。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Windows Server App Fabric を参照してください[Windows Server App Fabric](http://go.microsoft.com/fwlink/?LinkId=193037)  
+ Windows Server AppFabric でのワークフロー サービスのホスティングは IIS/WAS でのホスティングと同じ方法で行われます。 唯一の違いは、Windows Server AppFabric がインストールされるということです。 Windows Server AppFabric には、PowerShell コマンドと同様に、インターネット インフォメーション サービス マネージャーに追加されるツールが用意されています。 これらのツールによって、ワークフロー サービスおよび WCF サービスの配置、管理、および追跡を簡略化することができます。 である必要があります。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] Windows Server App Fabric を参照してください[Windows Server App Fabric](http://go.microsoft.com/fwlink/?LinkId=193037)  
   
 ## <a name="referencing-custom-activities"></a>カスタム アクティビティの参照  
  カスタム活動項目への参照を追加する必要があります、<`Assemblies`> セクションの下にある <`System.Web.Compilation`> アプリケーション ドメインに読み込まれ、XAML デシリアライザーは、型を検索できるようにします。 これらの設定をコンピューター上のすべてのアプリケーションに適用する必要がある場合は、アプリケーション レベルまたはルートの Web.config で設定できます。  
   
 ## <a name="deployment"></a>配置  
- 配置作業を容易にするために、Web 配置ツールが作成されています。 このツールを使用すると、アプリケーションの IIS 6.0 および IIS 7.0 間での移行や、サーバー ファームの同期のほか、Web アプリケーションのパッケージ化、アーカイブ、および配置を実行できます。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][MS 配置ツール](http://go.microsoft.com/fwlink/?LinkId=178690)  
+ 配置作業を容易にするために、Web 配置ツールが作成されています。 このツールを使用すると、アプリケーションの IIS 6.0 および IIS 7.0 間での移行や、サーバー ファームの同期のほか、Web アプリケーションのパッケージ化、アーカイブ、および配置を実行できます。 詳細については、次を参照してください[MS 配置ツール。](http://go.microsoft.com/fwlink/?LinkId=178690)  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ワークフロー サービス ホストの内部](../../../../docs/framework/wcf/feature-details/workflow-service-host-internals.md)  
  [WorkflowServiceHost の構成](../../../../docs/framework/wcf/feature-details/configuring-workflowservicehost.md)

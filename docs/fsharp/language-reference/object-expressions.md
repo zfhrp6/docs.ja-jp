@@ -1,20 +1,17 @@
 ---
-title: "オブジェクト式 (F#)"
-description: "名前付きの種類を追加のコードと、新規作成に必要なオーバーヘッドを回避するときに、f# オブジェクト式を使用する方法を学習します。"
-keywords: "visual f#, f#, 関数型プログラミング"
+title: オブジェクト式 (F#)
+description: 名前付きの種類を追加のコードと、新規作成に必要なオーバーヘッドを回避するときに、f# オブジェクト式を使用する方法を学習します。
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: c6dcf4c9-e7fd-4eee-9e4e-1176f4c27f57
-ms.openlocfilehash: 28660d430473de02a8a55e37a26609827b364012
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: f5a728823e7abe18aeb604b3991087fd0252698e
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="object-expressions"></a>オブジェクト式
 

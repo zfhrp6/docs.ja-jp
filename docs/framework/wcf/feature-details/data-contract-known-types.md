@@ -1,12 +1,13 @@
 ---
-title: "既知のデータ コントラクト型"
-ms.custom: 
+title: 既知のデータ コントラクト型
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -16,23 +17,24 @@ helpviewer_keywords:
 - KnownTypeAttribute [WCF]
 - KnownTypes [WCF]
 ms.assetid: 1a0baea1-27b7-470d-9136-5bbad86c4337
-caps.latest.revision: "42"
+caps.latest.revision: 42
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 24d26358c0bf0440b2fbba143629a0e4bda21cec
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: c9c180a0f1544fa187ddb53ec79a47f908c298d7
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="data-contract-known-types"></a>既知のデータ コントラクト型
 <xref:System.Runtime.Serialization.KnownTypeAttribute> クラスを使用すると、逆シリアル化において考慮する必要のある型を事前に指定できます。 実施例については、「 [Known Types](../../../../docs/framework/wcf/samples/known-types.md) 」の例を参照してください。  
   
  通常は、クライアントとサービス間でパラメーターを渡したり、値を返したりするときに、転送するデータのデータ コントラクトのすべてが両方のエンドポイントで共有されます。 ただし、次の場合はこれが該当しません。  
   
--   送信データ コントラクトが、予想データ コントラクトから派生する場合。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]継承に関するセクション[データ コントラクトの等価性](../../../../docs/framework/wcf/feature-details/data-contract-equivalence.md))。 この場合、送信されるデータには、受信エンドポイントで予想しているデータ コントラクトが含まれません。  
+-   送信データ コントラクトが、予想データ コントラクトから派生する場合。 詳細についてでの継承に関するセクションを参照してください。[データ コントラクトの等価性](../../../../docs/framework/wcf/feature-details/data-contract-equivalence.md))。 この場合、送信されるデータには、受信エンドポイントで予想しているデータ コントラクトが含まれません。  
   
 -   クラス、構造体、または列挙とは対照的に、送信される情報の宣言型がインターフェイスである場合。 したがって、インターフェイスを実装するどの型が実際に送信されるかを事前に知ることができないため、受信エンドポイントでは送信されるデータのデータ コントラクトを事前に確認することができません。  
   
@@ -178,7 +180,7 @@ ms.lasthandoff: 12/22/2017
   
  前の構成ファイルでは、 `MyCompany.Library.Shape` というコントラクト型が `MyCompany.Library.Circle` を既知の型として持つと宣言されています。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Runtime.Serialization.KnownTypeAttribute>  
  <xref:System.Collections.Hashtable>  
  <xref:System.Object>  

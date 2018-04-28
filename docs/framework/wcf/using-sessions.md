@@ -1,13 +1,13 @@
 ---
-title: "セッションの使用"
-ms.custom: 
+title: セッションの使用
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,17 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - sessions [WCF]
 ms.assetid: 864ba12f-3331-4359-a359-6d6d387f1035
-caps.latest.revision: 
+caps.latest.revision: 32
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: f5f6df22918dedf32738a8cb9d73af2e625923a4
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 9f6a6a819b4667bc60ab0abb575d6fff397d67fe
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="using-sessions"></a>セッションの使用
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] アプリケーションでは、 *"セッション"* がメッセージのグループを相互に関連付けて通信を行います。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] セッションは、 [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] アプリケーションで使用できるセッション オブジェクトとは異なるものであり、サポートされる動作と制御する方法が異なります。 ここでは、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] アプリケーションのセッションで有効になる諸機能とそれらの使用方法について説明します。  
@@ -75,13 +75,13 @@ ms.lasthandoff: 01/19/2018
   
  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] には、次の種類のセッション ベースのアプリケーション動作が用意されています。  
   
--   2 者間の通信で特定のセキュリティ保護されたメッセージ交換について両者の合意が成立している場合、<xref:System.ServiceModel.Channels.SecurityBindingElement?displayProperty=nameWithType> は、セキュリティ ベースのセッションをサポートします。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Services のセキュリティ保護](../../../docs/framework/wcf/securing-services.md)です。 たとえば、セキュリティ セッションと信頼できるセッションの両方のサポートを含む <xref:System.ServiceModel.WSHttpBinding?displayProperty=nameWithType> バインディングは、既定では、メッセージを暗号化してデジタル署名を行うセキュリティで保護されたセッションのみを使用します。  
+-   2 者間の通信で特定のセキュリティ保護されたメッセージ交換について両者の合意が成立している場合、<xref:System.ServiceModel.Channels.SecurityBindingElement?displayProperty=nameWithType> は、セキュリティ ベースのセッションをサポートします。 詳細については、次を参照してください。 [Services のセキュリティ保護](../../../docs/framework/wcf/securing-services.md)です。 たとえば、セキュリティ セッションと信頼できるセッションの両方のサポートを含む <xref:System.ServiceModel.WSHttpBinding?displayProperty=nameWithType> バインディングは、既定では、メッセージを暗号化してデジタル署名を行うセキュリティで保護されたセッションのみを使用します。  
   
 -   <xref:System.ServiceModel.NetTcpBinding?displayProperty=nameWithType> バインディングは、TCP/IP ベースのセッションをサポートしており、すべてのメッセージがソケット レベルの接続によって関連付けられます。  
   
--   WS-ReliableMessaging 仕様を実装する <xref:System.ServiceModel.Channels.ReliableSessionBindingElement?displayProperty=nameWithType> 要素は、メッセージを順番に 1 回だけ配信するように構成できる、信頼できるセッションをサポートします。これにより、メッセージ交換時にメッセージが複数のノードを通過する場合でもメッセージが受信されます。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][信頼できるセッション](../../../docs/framework/wcf/feature-details/reliable-sessions.md)です。  
+-   WS-ReliableMessaging 仕様を実装する <xref:System.ServiceModel.Channels.ReliableSessionBindingElement?displayProperty=nameWithType> 要素は、メッセージを順番に 1 回だけ配信するように構成できる、信頼できるセッションをサポートします。これにより、メッセージ交換時にメッセージが複数のノードを通過する場合でもメッセージが受信されます。 詳細については、次を参照してください。[信頼できるセッション](../../../docs/framework/wcf/feature-details/reliable-sessions.md)です。  
   
--   <xref:System.ServiceModel.NetMsmqBinding?displayProperty=nameWithType> バインディングは、MSMQ データグラム セッションを提供します。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][WCF のキュー](../../../docs/framework/wcf/feature-details/queues-in-wcf.md)です。  
+-   <xref:System.ServiceModel.NetMsmqBinding?displayProperty=nameWithType> バインディングは、MSMQ データグラム セッションを提供します。 詳細については、次を参照してください。 [WCF のキュー](../../../docs/framework/wcf/feature-details/queues-in-wcf.md)です。  
   
  <xref:System.ServiceModel.ServiceContractAttribute.SessionMode%2A> プロパティを設定しても、コントラクトが必要とするセッションの種類は指定されず、コントラクトがセッションを必要とすることだけが指定されます。  
   
@@ -130,7 +130,7 @@ ms.lasthandoff: 01/19/2018
   
 -   <xref:System.ServiceModel.ICommunicationObject.Open%2A?displayProperty=nameWithType> の呼び出しによって返されるチャネルの <xref:System.ServiceModel.ChannelFactory%601.CreateChannel%2A?displayProperty=nameWithType>。  
   
--   <xref:System.ServiceModel.ClientBase%601.Open%2A?displayProperty=nameWithType>[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]によって生成されたクライアント オブジェクト、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)です。  
+-   <xref:System.ServiceModel.ClientBase%601.Open%2A?displayProperty=nameWithType> [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]によって生成されたクライアント オブジェクト、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)です。  
   
 -   いずれかの型の [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアント オブジェクトの開始操作 (既定では、すべての操作が開始操作です)。 最初の操作が呼び出されると、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアント オブジェクトが自動的にチャネルを開き、セッションを開始します。  
   
@@ -144,10 +144,10 @@ ms.lasthandoff: 01/19/2018
   
  例については、「 [How to: Create a Service That Requires Sessions](../../../docs/framework/wcf/feature-details/how-to-create-a-service-that-requires-sessions.md) 」、および「 [Default Service Behavior](../../../docs/framework/wcf/samples/default-service-behavior.md) 」や「 [Instancing](../../../docs/framework/wcf/samples/instancing.md) 」のサンプルを参照してください。  
   
- [!INCLUDE[crabout](../../../includes/crabout-md.md)]クライアントとのセッションを参照してください。[にアクセスするサービスの WCF クライアントを使用して](../../../docs/framework/wcf/feature-details/accessing-services-using-a-client.md)です。  
+ [!INCLUDE[crabout](../../../includes/crabout-md.md)] クライアントとのセッションを参照してください。[にアクセスするサービスの WCF クライアントを使用して](../../../docs/framework/wcf/feature-details/accessing-services-using-a-client.md)です。  
   
 ## <a name="sessions-interact-with-instancecontext-settings"></a>InstanceContext 設定と対話するセッション  
- コントラクト内の <xref:System.ServiceModel.SessionMode> 列挙と、チャネルと特定のサービス オブジェクト間の関連付けを制御する <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A?displayProperty=nameWithType> プロパティの間には相互作用があります。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][セッション、インスタンス化、および同時実行](../../../docs/framework/wcf/feature-details/sessions-instancing-and-concurrency.md)です。  
+ コントラクト内の <xref:System.ServiceModel.SessionMode> 列挙と、チャネルと特定のサービス オブジェクト間の関連付けを制御する <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A?displayProperty=nameWithType> プロパティの間には相互作用があります。 詳細については、次を参照してください。[セッション、インスタンス化、および同時実行](../../../docs/framework/wcf/feature-details/sessions-instancing-and-concurrency.md)です。  
   
 ### <a name="sharing-instancecontext-objects"></a>InstanceContext オブジェクトの共有  
  ユーザーが自ら関連付けを行うことにより、どの <xref:System.ServiceModel.InstanceContext> オブジェクトに、どのセッション ベースのチャネルまたは呼び出しを関連付けるかを制御することもできます。 完全な例では、次を参照してください。 [InstanceContextSharing](http://msdn.microsoft.com/library/4a6a46d7-b7d7-4bb5-a0dd-03ffa3cbc230)です。  
@@ -158,6 +158,6 @@ ms.lasthandoff: 01/19/2018
 > [!NOTE]
 >  この場合、利用可能になる "セッション" は 1 つしかないため、MaxConcurrentSessions は効力を失います。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.OperationContractAttribute.IsInitiating%2A>  
  <xref:System.ServiceModel.OperationContractAttribute.IsTerminating%2A>

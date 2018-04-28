@@ -1,20 +1,17 @@
 ---
-title: "リソースの管理: use キーワード (F#)"
-description: "F# キーワード 'use' と 'を使用して' の関数は、初期化とリソースの解放を制御できますについて説明します。"
-keywords: "visual f#, f#, 関数型プログラミング"
+title: 'リソースの管理: use キーワード (F#)'
+description: F# キーワード 'use' と 'を使用して' の関数は、初期化とリソースの解放を制御できますについて説明します。
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: 00c3040e-859f-4dad-a7b5-7b8d44dc232c
-ms.openlocfilehash: d4e8626f07f1c77e52e8fabd5ccc07dbf1fa8ddd
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 0e134bf5b302911324dd224316941fee693b787b
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="resource-management-the-use-keyword"></a>リソースの管理: use キーワード
 
@@ -44,7 +41,7 @@ ms.lasthandoff: 10/18/2017
 ## <a name="using-function"></a>関数を使用してください。
 `using`関数は、次の形式。
 
-`using`(*expression1*)*関数またはラムダ*
+`using` (*expression1*)*関数またはラムダ*
 
 `using`式、 *expression1*破棄する必要があるオブジェクトを作成します。 結果*expression1* (にあるオブジェクトを破棄する必要があります) では、引数になります*値*を*関数またはラムダ*、これは、1 つを期待している関数残りの値に一致する型の引数によって生成される*expression1*、またはその型の引数を受け取るラムダ式。 ランタイムが呼び出す関数の実行の最後に、`Dispose`リソースを解放し、(値がない限り、 `null`、後者 Dispose の呼び出しは行われません)。
 
@@ -56,7 +53,7 @@ ms.lasthandoff: 10/18/2017
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet6303.fs)]
 
-関数が既に適用されるいくつかの引数を持つ関数がある場合に注意してください。 次のコード例を示します。 文字列を含むファイルが作成されます`XYZ`です。
+関数が既に適用されるいくつかの引数を持つ関数がある場合に注意してください。 次のコード例はこの処理方法を示しています。 文字列を含むファイルが作成されます`XYZ`です。
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet6304.fs)]
 

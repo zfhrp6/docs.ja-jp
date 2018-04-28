@@ -21,11 +21,11 @@ ms.author: bruceper
 manager: mbaldwin
 ms.workload:
 - dotnet
-ms.openlocfilehash: cbe29ed57a7eee3a74166dabd2b8931e73cd2860
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: c754a4ec57751b2ca5a809c771b2fb5235ec0510
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="how-to-secure-a-service-with-windows-credentials"></a>方法 : Windows 資格情報でサービスをセキュリティで保護する
 このトピックでトランスポート セキュリティを有効にする方法について説明、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)]サービスを Windows ドメインに存在し、同じドメイン内のクライアントによって呼び出されます。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] このシナリオを参照してください[トランスポート セキュリティと Windows 認証](../../../docs/framework/wcf/feature-details/transport-security-with-windows-authentication.md)です。 サンプル アプリケーションについては、次を参照してください。、 [WSHttpBinding](../../../docs/framework/wcf/samples/wshttpbinding.md)サンプルです。  
@@ -87,7 +87,7 @@ ms.lasthandoff: 04/26/2018
   
 ##### <a name="to-use-a-binding-in-a-client-with-code"></a>コードによってクライアントでバインディングを使用するには  
   
-1.  SvcUtil.exe ツールを使用して、サービスのメタデータからプロキシ コードを生成します。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [方法: クライアントを作成する](../../../docs/framework/wcf/how-to-create-a-wcf-client.md)です。 生成されたプロキシ コードは <xref:System.ServiceModel.ClientBase%601> クラスから継承しているので、各クライアントには、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスとの通信に必要なコンストラクター、メソッド、およびプロパティが確実に定義されます。 この例では、生成されたコードに、`CalculatorClient` インターフェイスを実装した `ICalculator` クラスが追加されるので、サービス コードとの互換が可能になります。  
+1.  SvcUtil.exe ツールを使用して、サービスのメタデータからプロキシ コードを生成します。 詳細については、次を参照してください。[する方法: クライアントを作成する](../../../docs/framework/wcf/how-to-create-a-wcf-client.md)です。 生成されたプロキシ コードは <xref:System.ServiceModel.ClientBase%601> クラスから継承しているので、各クライアントには、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスとの通信に必要なコンストラクター、メソッド、およびプロパティが確実に定義されます。 この例では、生成されたコードに、`CalculatorClient` インターフェイスを実装した `ICalculator` クラスが追加されるので、サービス コードとの互換が可能になります。  
   
 2.  この手順のコードは、クライアント プログラムの `Main` メソッドの先頭に挿入します。  
   
@@ -140,7 +140,7 @@ ms.lasthandoff: 04/26/2018
   
 ##### <a name="to-use-a-binding-in-a-client-with-configuration"></a>構成によってクライアントでバインディングを使用するには  
   
-1.  SvcUtil.exe ツールを使用して、サービスのメタデータからプロキシ コードと構成ファイルを生成します。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [方法: クライアントを作成する](../../../docs/framework/wcf/how-to-create-a-wcf-client.md)です。  
+1.  SvcUtil.exe ツールを使用して、サービスのメタデータからプロキシ コードと構成ファイルを生成します。 詳細については、次を参照してください。[する方法: クライアントを作成する](../../../docs/framework/wcf/how-to-create-a-wcf-client.md)です。  
   
 2.  置換、 [\<バインド >](../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)前のセクションの構成コードで生成された構成ファイルのセクションです。  
   

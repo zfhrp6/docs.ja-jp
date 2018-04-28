@@ -1,23 +1,24 @@
 ---
-title: "例外"
-ms.custom: 
+title: 例外
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 065205cc-52dd-4f30-9578-b17d8d113136
-caps.latest.revision: "26"
+caps.latest.revision: 26
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: bf2c6e12dac2130a26aa01efc21b8f58f509294a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 9e78546a10e1a8cdff780c44898fd209ca829c6c
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="exceptions"></a>例外
 ワークフローは、<xref:System.Activities.Statements.TryCatch> アクティビティを使用して、ワークフローの実行中に発生した例外を処理することができます。 これらの例外は、処理することも可能ですが、<xref:System.Activities.Statements.Rethrow> アクティビティを使用して再スローすることもできます。 <xref:System.Activities.Statements.TryCatch.Finally%2A> セクションのアクティビティは、<xref:System.Activities.Statements.TryCatch.Try%2A> セクションまたは <xref:System.Activities.Statements.TryCatch.Catches%2A> セクションが完了したときに実行されます。 によってホストされるワークフロー、<xref:System.Activities.WorkflowApplication>インスタンスでも使用できます、<xref:System.Activities.WorkflowApplication.OnUnhandledException%2A>で処理されない例外を処理するイベント ハンドラー、<xref:System.Activities.Statements.TryCatch>アクティビティ。  
@@ -58,9 +59,9 @@ ms.lasthandoff: 12/22/2017
 -   例外は高レベルの <xref:System.Activities.Statements.TryCatch> では扱われず、ワークフローのルートをエスケープし、ワーク フローが完了または中止ではなく取り消すように構成されます。 <xref:System.Activities.WorkflowApplication> を使用してホストされたワークフローは、<xref:System.Activities.WorkflowApplication.OnUnhandledException%2A> を処理し <xref:System.Activities.UnhandledExceptionAction.Cancel> を返してこれを構成できます。 <xref:System.Activities.WorkflowApplication.OnUnhandledException%2A> を処理する例は、このトピックで既に提供されています。 ワークフロー サービスは <xref:System.ServiceModel.Activities.Description.WorkflowUnhandledExceptionBehavior> を使用し <xref:System.ServiceModel.Activities.Description.WorkflowUnhandledExceptionAction.Cancel> を指定してこれを構成できます。 構成の例については<xref:System.ServiceModel.Activities.Description.WorkflowUnhandledExceptionBehavior>を参照してください[ワークフロー サービス ホストの拡張機能](../../../docs/framework/wcf/feature-details/workflow-service-host-extensibility.md)します。  
   
 ## <a name="exception-handling-versus-compensation"></a>例外処理と補正の比較  
- 例外処理は、アクティビティの実行中に発生するという点で補正と異なります。 補正が発生するのは、アクティビティが正常に完了した後です。 例外処理では、アクティビティが例外を生成した後でクリーン アップを実行できます。また、補正処理では、前に完了したアクティビティの正常に完了した作業を元に戻すことが可能です。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][補正](../../../docs/framework/windows-workflow-foundation/compensation.md)です。  
+ 例外処理は、アクティビティの実行中に発生するという点で補正と異なります。 補正が発生するのは、アクティビティが正常に完了した後です。 例外処理では、アクティビティが例外を生成した後でクリーン アップを実行できます。また、補正処理では、前に完了したアクティビティの正常に完了した作業を元に戻すことが可能です。 詳細については、次を参照してください。[補正](../../../docs/framework/windows-workflow-foundation/compensation.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Activities.Statements.TryCatch>  
  <xref:System.Activities.WorkflowApplication.OnUnhandledException%2A>  
  <xref:System.Activities.Statements.CompensableActivity>

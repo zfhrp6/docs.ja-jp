@@ -15,17 +15,17 @@ helpviewer_keywords:
 - Windows Communication Foundation, security
 - bindings [WCF]
 ms.assetid: 4de03dd3-968a-4e65-af43-516e903d7f95
-caps.latest.revision: ''
+caps.latest.revision: 42
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
 ms.workload:
 - dotnet
-ms.openlocfilehash: 9e44db963a696f22f91569eb3d7c2956289a9c76
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: 5eb1019694f6228edbe3656849b85dfa7611ef18
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="bindings-and-security"></a>バインディングとセキュリティ
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] に用意されたシステム指定のバインディングを使用すると、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションをすばやくプログラミングできます。 1 つの例外を除き、すべてのバインディングにはセキュリティ スキームが含まれており、既定で有効になっています。 ここでは、セキュリティ ニーズに適した正しいバインディングの選択方法について説明します。  
@@ -56,7 +56,7 @@ ms.lasthandoff: 03/26/2018
   
 -   WS-I で定義されている基本セキュリティ プロファイル  
   
- 既定では、このバインディングはセキュリティで保護されません。 ASMX サービスと相互運用するように設計されています。 セキュリティを有効にした場合、このバインディングは、インターネット インフォメーション サービス (IIS: Internet Information Services) のセキュリティ機構 (基本認証、ダイジェスト、Windows 統合セキュリティなど) とシームレスに相互運用できるように設計されています。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [トランスポート セキュリティの概要](../../../../docs/framework/wcf/feature-details/transport-security-overview.md)です。 このバインディングでは、以下をサポートしています。  
+ 既定では、このバインディングはセキュリティで保護されません。 ASMX サービスと相互運用するように設計されています。 セキュリティを有効にした場合、このバインディングは、インターネット インフォメーション サービス (IIS: Internet Information Services) のセキュリティ機構 (基本認証、ダイジェスト、Windows 統合セキュリティなど) とシームレスに相互運用できるように設計されています。 詳細については、次を参照してください。[トランスポート セキュリティの概要](../../../../docs/framework/wcf/feature-details/transport-security-overview.md)です。 このバインディングでは、以下をサポートしています。  
   
 -   HTTPS トランスポート セキュリティ  
   
@@ -64,7 +64,7 @@ ms.lasthandoff: 03/26/2018
   
 -   WS-Security。  
   
- [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] <xref:System.ServiceModel.BasicHttpSecurity>、<xref:System.ServiceModel.BasicHttpMessageSecurity>、<xref:System.ServiceModel.BasicHttpMessageCredentialType>、および <xref:System.ServiceModel.BasicHttpSecurityMode>。  
+ 詳細については、「<xref:System.ServiceModel.BasicHttpSecurity>」、「<xref:System.ServiceModel.BasicHttpMessageSecurity>」、「<xref:System.ServiceModel.BasicHttpMessageCredentialType>」、および「<xref:System.ServiceModel.BasicHttpSecurityMode>」を参照してください。  
   
 ### <a name="wshttpbinding"></a>WSHttpBinding  
  コードを使用して、<xref:System.ServiceModel.WSHttpBinding>クラスは、構成を使用して、 [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)です。  
@@ -77,7 +77,7 @@ ms.lasthandoff: 03/26/2018
   
 -   SOAP メッセージ資格情報セキュリティを使用した、HTTPS トランスポート保護による呼び出し元の認証。  
   
- [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<xref:System.ServiceModel.WSHttpSecurity>、<xref:System.ServiceModel.MessageSecurityOverHttp>、<xref:System.ServiceModel.MessageCredentialType>、<xref:System.ServiceModel.SecurityMode>、<xref:System.ServiceModel.HttpTransportSecurity>、<xref:System.ServiceModel.HttpClientCredentialType>、および <xref:System.ServiceModel.HttpProxyCredentialType>。  
+ 詳細については、次を参照してください。 <xref:System.ServiceModel.WSHttpSecurity>、 <xref:System.ServiceModel.MessageSecurityOverHttp>、 <xref:System.ServiceModel.MessageCredentialType>、 <xref:System.ServiceModel.SecurityMode>、 <xref:System.ServiceModel.HttpTransportSecurity>、 <xref:System.ServiceModel.HttpClientCredentialType>、および<xref:System.ServiceModel.HttpProxyCredentialType>です。  
   
 ### <a name="wsdualhttpbinding"></a>WSDualHttpBinding  
  コードを使用して、<xref:System.ServiceModel.WSDualHttpBinding>クラスは、構成を使用して、 [ \<wsDualHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsdualhttpbinding.md)です。  
@@ -102,7 +102,7 @@ ms.lasthandoff: 03/26/2018
   
     -   チャネル セットアップの一部としてサービスからネゴシエートされるサービス資格情報の提供  
   
- [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] <xref:System.ServiceModel.WSDualHttpSecurity> および<xref:System.ServiceModel.WSDualHttpSecurityMode>です。  
+ 詳細については、<xref:System.ServiceModel.WSDualHttpSecurity> および <xref:System.ServiceModel.WSDualHttpSecurityMode> を参照してください。  
   
 ### <a name="nettcpbinding"></a>NetTcpBinding  
  コードを使用して、<xref:System.ServiceModel.NetTcpBinding>クラスは、構成を使用して、 [ \<netTcpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/nettcpbinding.md)です。  
@@ -125,7 +125,7 @@ ms.lasthandoff: 03/26/2018
   
 -   メッセージ資格情報を使用するトランスポート セキュリティ (TLS (Transport Layer Security) over TCP によって実現される機密性と整合性、および WS-Security によって提供される承認に使用する資格情報)  
   
- [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] <xref:System.ServiceModel.NetTcpSecurity>、<xref:System.ServiceModel.TcpTransportSecurity>、<xref:System.ServiceModel.TcpClientCredentialType>、<xref:System.ServiceModel.MessageSecurityOverTcp>、および <xref:System.ServiceModel.MessageCredentialType>。  
+ 詳細については、次を参照してください。 <xref:System.ServiceModel.NetTcpSecurity>、 <xref:System.ServiceModel.TcpTransportSecurity>、 <xref:System.ServiceModel.TcpClientCredentialType>、 <xref:System.ServiceModel.MessageSecurityOverTcp>、および<xref:System.ServiceModel.MessageCredentialType>です。  
   
 ### <a name="netnamedpipebinding"></a>NetNamedPipeBinding  
  コードを使用して、<xref:System.ServiceModel.NetNamedPipeBinding>クラスは、構成を使用して、 [ \<netNamedPipeBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/netnamedpipebinding.md)です。  
@@ -144,7 +144,7 @@ ms.lasthandoff: 03/26/2018
   
 -   Windows セキュリティを使用した認証  
   
- [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]、「<xref:System.ServiceModel.NetNamedPipeSecurity>」、「<xref:System.ServiceModel.NetNamedPipeSecurityMode>」、および「<xref:System.ServiceModel.NamedPipeTransportSecurity>」を参照してください。  
+ 詳細については、「<xref:System.ServiceModel.NetNamedPipeSecurity>「<xref:System.ServiceModel.NetNamedPipeSecurityMode>および「<xref:System.ServiceModel.NamedPipeTransportSecurity>」を参照してください。  
   
 ### <a name="msmqintegrationbinding"></a>MsmqIntegrationBinding  
  コードを使用して、<xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding>クラスは、構成を使用して、 [ \<msmqIntegrationBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/msmqintegrationbinding.md)です。  
@@ -157,7 +157,7 @@ ms.lasthandoff: 03/26/2018
   
 -   MSMQ トランスポート セキュリティ (トランスポート)。  
   
- [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] <xref:System.ServiceModel.NetMsmqSecurity> および<xref:System.ServiceModel.NetMsmqSecurityMode>です。  
+ 詳細については、<xref:System.ServiceModel.NetMsmqSecurity> および <xref:System.ServiceModel.NetMsmqSecurityMode> を参照してください。  
   
 ### <a name="netmsmqbinding"></a>NetMsmqBinding  
  コードを使用して、<xref:System.ServiceModel.NetMsmqBinding>クラスは、構成を使用して、 [ \<netMsmqBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/netmsmqbinding.md)です。  
@@ -178,17 +178,17 @@ ms.lasthandoff: 03/26/2018
   
  <xref:System.ServiceModel.MessageCredentialType.Certificate> 資格情報は、セキュリティ モードが <xref:System.ServiceModel.NetMsmqSecurityMode.Both> または <xref:System.ServiceModel.NetMsmqSecurityMode.Message> に設定されている場合にのみサポートされます。  
   
- [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] <xref:System.ServiceModel.MessageSecurityOverMsmq> および<xref:System.ServiceModel.MsmqTransportSecurity>です。  
+ 詳細については、<xref:System.ServiceModel.MessageSecurityOverMsmq> および <xref:System.ServiceModel.MsmqTransportSecurity> を参照してください。  
   
 ### <a name="wsfederationhttpbinding"></a>WSFederationHttpBinding  
  コードを使用して、<xref:System.ServiceModel.WSFederationHttpBinding>クラスは、構成を使用して、 [ \<wsFederationHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md)です。  
   
  既定では、このバインディングは WS-Security (メッセージ層セキュリティ) を使用します。  
   
- [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [フェデレーション](../../../../docs/framework/wcf/feature-details/federation.md)、 <xref:System.ServiceModel.WSFederationHttpSecurity>、および<xref:System.ServiceModel.WSFederationHttpSecurityMode>です。  
+ 詳細については、次を参照してください。[フェデレーション](../../../../docs/framework/wcf/feature-details/federation.md)、 <xref:System.ServiceModel.WSFederationHttpSecurity>、および<xref:System.ServiceModel.WSFederationHttpSecurityMode>です。  
   
 ## <a name="custom-bindings"></a>カスタム バインディング  
- システム指定のバインディングがいずれも要件を満たさない場合は、カスタム セキュリティ バインド要素を使用してカスタム バインドを作成できます。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [カスタム バインドのセキュリティ機能](../../../../docs/framework/wcf/feature-details/security-capabilities-with-custom-bindings.md)します。  
+ システム指定のバインディングがいずれも要件を満たさない場合は、カスタム セキュリティ バインド要素を使用してカスタム バインドを作成できます。 詳細については、次を参照してください。[のカスタム バインディングのセキュリティ機能](../../../../docs/framework/wcf/feature-details/security-capabilities-with-custom-bindings.md)します。  
   
 ## <a name="binding-choices"></a>バインディングの選択肢  
  次の表は、セキュリティ モード設定で提供される機能をまとめたものです。つまり、セキュリティ モードを `Transport`、`Message`、または `TransportWithMessageCredential` に設定したときに使用できる機能の一覧です。 アプリケーションで必要なセキュリティ機能を決定するときに、この表を参考にしてください。  
@@ -218,12 +218,12 @@ ms.lasthandoff: 03/26/2018
 |型|説明|  
 |----------|-----------------|  
 |なし|クライアントが資格情報を提示する必要がないことを指定します。 匿名クライアントであると解釈されます。|  
-|Basic|基本認証です。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] RFC 2617 – HTTP Authentication: Basic and Digest Authentication で利用可能な[ http://go.microsoft.com/fwlink/?LinkId=84023](http://go.microsoft.com/fwlink/?LinkId=84023)です。|  
-|Digest|ダイジェスト認証です。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] RFC 2617 – HTTP Authentication: Basic and Digest Authentication で利用可能な[ http://go.microsoft.com/fwlink/?LinkId=84023](http://go.microsoft.com/fwlink/?LinkId=84023)です。|  
+|Basic|基本認証です。 詳細についてを参照してください RFC 2617 – HTTP Authentication: Basic and Digest Authentication で利用可能な[ http://go.microsoft.com/fwlink/?LinkId=84023](http://go.microsoft.com/fwlink/?LinkId=84023)です。|  
+|Digest|ダイジェスト認証です。 詳細についてを参照してください RFC 2617 – HTTP Authentication: Basic and Digest Authentication で利用可能な[ http://go.microsoft.com/fwlink/?LinkId=84023](http://go.microsoft.com/fwlink/?LinkId=84023)です。|  
 |NTLM|NTLM (NT LAN Manager) 認証です。|  
 |Windows|Windows 認証です。|  
 |証明書|証明書を使用して実行される認証です。|  
-|IssuedToken|セキュリティ トークン サービスまたは [!INCLUDE[infocard](../../../../includes/infocard-md.md)] によって発行されたトークンを使用したクライアントの認証を、サービスが要求できるようにします。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [フェデレーションと発行済みトークン](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)です。|  
+|IssuedToken|セキュリティ トークン サービスまたは [!INCLUDE[infocard](../../../../includes/infocard-md.md)] によって発行されたトークンを使用したクライアントの認証を、サービスが要求できるようにします。 詳細については、次を参照してください。[フェデレーションと発行されたトークン](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)です。|  
   
 ### <a name="message-client-credentials-in-bindings"></a>バインディングにおけるメッセージ クライアント資格情報  
  メッセージ セキュリティ モードでバインディングを使用するときに使用できるクライアント資格情報の種類を次の表に示します。  

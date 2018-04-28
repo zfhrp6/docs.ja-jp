@@ -21,11 +21,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 94ff361e89693f53c8d1baedcac749cf5178086e
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: df3e207cdca3a40bb0cfaff1890f6e010bd0790c
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="designing-service-contracts"></a>サービス コントラクトの設計
 ここでは、サービス コントラクトの概要、定義方法、使用できる操作 (および基になるメッセージ交換の影響)、使用するデータ型、およびシナリオの要件を満たす操作を設計する際に役立つその他の問題について説明します。  
@@ -65,7 +65,7 @@ ms.lasthandoff: 04/26/2018
   
  インターフェイスを使用して、サービス コントラクトを作成する例は、次を参照してください。[する方法: コントラクト インターフェイスでサービスを作成](../../../docs/framework/wcf/feature-details/how-to-create-a-service-with-a-contract-interface.md)です。  
   
- クラスを使用すると、サービス コントラクトの定義と実装を一度に行うことができます。 <xref:System.ServiceModel.ServiceContractAttribute> と <xref:System.ServiceModel.OperationContractAttribute> をそれぞれクラスとクラスのメソッドに直接適用してサービスを作成する方法には、サービスを迅速かつ簡単に作成できるという利点があります。 欠点は、マネージ クラスでは複数の継承をサポートしていないため、サービス コントラクトを一度に 1 つしか実装できないことです。 また、クラスまたはメソッド シグネチャに変更を加えると、そのサービスのパブリック コントラクトが変更されるため、変更されていないクライアントがサービスを使用できなくなることがあります。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [サービス コントラクトを実装する](../../../docs/framework/wcf/implementing-service-contracts.md)です。  
+ クラスを使用すると、サービス コントラクトの定義と実装を一度に行うことができます。 <xref:System.ServiceModel.ServiceContractAttribute> と <xref:System.ServiceModel.OperationContractAttribute> をそれぞれクラスとクラスのメソッドに直接適用してサービスを作成する方法には、サービスを迅速かつ簡単に作成できるという利点があります。 欠点は、マネージ クラスでは複数の継承をサポートしていないため、サービス コントラクトを一度に 1 つしか実装できないことです。 また、クラスまたはメソッド シグネチャに変更を加えると、そのサービスのパブリック コントラクトが変更されるため、変更されていないクライアントがサービスを使用できなくなることがあります。 詳細については、次を参照してください。[サービス コントラクトを実装する](../../../docs/framework/wcf/implementing-service-contracts.md)です。  
   
  例については、クラスを使用して、サービス コントラクトを作成し、同時に実装する、次を参照してください。[する方法: コントラクト クラスでサービスを作成](../../../docs/framework/wcf/feature-details/how-to-create-a-wcf-contract-with-a-class.md)です。  
   
@@ -193,7 +193,7 @@ End Interface
  保護レベルは、サービスをサポートするメッセージ (またはメッセージ部分) が署名されるのか、署名および暗号化されるのか、または署名と暗号化なしで送信されるのかを指定する値です。 保護レベルは、さまざまなスコープ (サービス レベル、特定の操作、その操作内のメッセージ、またはメッセージ部分) で設定できます。 あるスコープで設定された値は、明示的にオーバーライドしない限り、そのスコープよりも小さなスコープの既定値になります。 コントラクトに必要とされる最小限の保護レベルをバインディング構成で提供できない場合は、例外がスローされます。 保護レベルの値がコントラクトで明示的に設定されていない場合、バインディングのメッセージ セキュリティが有効であれば、バインド構成によってすべてのメッセージの保護レベルが制御されます。 これが既定の動作です。  
   
 > [!IMPORTANT]
->  一般に、コントラクトのさまざまなスコープを完全な保護レベルである <xref:System.Net.Security.ProtectionLevel.EncryptAndSign?displayProperty=nameWithType> よりも下のレベルに明示的に設定するかどうかは、パフォーマンスの向上と引き換えに、ある程度のセキュリティで妥協できるかどうかという判断によって決まります。 このような場合、操作および操作で交換するデータの価値に焦点を絞って判断を下す必要があります。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [サービスのセキュリティ保護](../../../docs/framework/wcf/securing-services.md)です。  
+>  一般に、コントラクトのさまざまなスコープを完全な保護レベルである <xref:System.Net.Security.ProtectionLevel.EncryptAndSign?displayProperty=nameWithType> よりも下のレベルに明示的に設定するかどうかは、パフォーマンスの向上と引き換えに、ある程度のセキュリティで妥協できるかどうかという判断によって決まります。 このような場合、操作および操作で交換するデータの価値に焦点を絞って判断を下す必要があります。 詳細については、次を参照してください。 [Services のセキュリティ保護](../../../docs/framework/wcf/securing-services.md)です。  
   
  たとえば、次のコード例では、<xref:System.ServiceModel.ServiceContractAttribute.ProtectionLevel%2A> も、コントラクトの <xref:System.ServiceModel.OperationContractAttribute.ProtectionLevel%2A> プロパティも設定していません。  
   
@@ -273,7 +273,7 @@ End Interface
  [!INCLUDE[crabout](../../../includes/crabout-md.md)] 保護レベルと、その使用方法を参照してください。[について保護レベル](../../../docs/framework/wcf/understanding-protection-level.md)です。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] セキュリティを参照してください[Services のセキュリティ保護](../../../docs/framework/wcf/securing-services.md)です。  
   
 ##### <a name="other-operation-signature-requirements"></a>操作シグネチャのその他の要件  
- アプリケーションの一部の機能では、特定の種類の操作シグネチャを必要とします。 たとえば、<xref:System.ServiceModel.NetMsmqBinding> バインディングは、永続的なサービスとクライアントをサポートします。永続的なサービスとクライアントでは、通信の途中でアプリケーションを再起動し、メッセージを失うことなく、アプリケーションが中止された場所を検出できます  ([!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [WCF のキュー](../../../docs/framework/wcf/feature-details/queues-in-wcf.md))。ただし、永続的操作では、`in` パラメーターを 1 つしか受け取ることができず、戻り値を持つこともできません。  
+ アプリケーションの一部の機能では、特定の種類の操作シグネチャを必要とします。 たとえば、<xref:System.ServiceModel.NetMsmqBinding> バインディングは、永続的なサービスとクライアントをサポートします。永続的なサービスとクライアントでは、通信の途中でアプリケーションを再起動し、メッセージを失うことなく、アプリケーションが中止された場所を検出できます  (詳細については、次を参照してください[WCF のキュー](../../../docs/framework/wcf/feature-details/queues-in-wcf.md)。)。ただし、永続的操作では、`in` パラメーターを 1 つしか受け取ることができず、戻り値を持つこともできません。  
   
  もう 1 つの例として、操作における <xref:System.IO.Stream> 型の使用が挙げられます。 <xref:System.IO.Stream> パラメーターにはメッセージの本文全体が含まれるため、入力または出力 (つまり、`ref` パラメーター、`out` パラメーター、または戻り値) が <xref:System.IO.Stream> 型である場合、操作で指定された入力または出力に限定する必要があります。 また、パラメーターまたは戻り値の型は <xref:System.IO.Stream>、<xref:System.ServiceModel.Channels.Message?displayProperty=nameWithType>、<xref:System.Xml.Serialization.IXmlSerializable?displayProperty=nameWithType> のいずれかである必要があります。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] ストリームを参照してください[大量のデータとストリーミング](../../../docs/framework/wcf/feature-details/large-data-and-streaming.md)です。  
   

@@ -21,11 +21,11 @@ ms.author: bruceper
 manager: mbaldwin
 ms.workload:
 - dotnet
-ms.openlocfilehash: 7416f8429f347d0b8dc6227415ad366b3ff63986
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 19bb6d4a172568611f73e3a50d0c526016c65aac
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="best-practices-for-security-in-wcf"></a>WCF のセキュリティのベスト プラクティス
 以下のセクションでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] を使用してセキュリティで保護されたアプリケーションを作成する場合に考慮する必要のあるベスト プラクティスを示します。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] セキュリティを参照してください[セキュリティの考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)、[データのセキュリティに関する考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md)、および[メタデータとセキュリティに関する考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-with-metadata.md)です。  
@@ -60,7 +60,7 @@ ms.lasthandoff: 04/26/2018
  メタデータのソースが信頼できることと、メタデータが改ざんされていないことを確認します。 HTTP プロトコルを使用して取得したメタデータはクリア テキストで送信されるため、改ざんされるおそれがあります。 サービスが <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetEnabled%2A> および <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetUrl%2A> プロパティを使用している場合は、サービス作成者によって提供された URL を使用して HTTPS プロトコルを介してデータをダウンロードします。  
   
 ## <a name="publish-metadata-using-security"></a>セキュリティを使用してメタデータを公開する  
- サービスが公開したメタデータの改ざんを防ぐには、トランスポート レベルまたはメッセージ レベルのセキュリティを使用して、メタデータ交換エンドポイントをセキュリティで保護します。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [メタデータ エンドポイントを公開](../../../../docs/framework/wcf/publishing-metadata-endpoints.md)と[する方法: コードを使用して、サービスのメタデータを公開](../../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-code.md)です。  
+ サービスが公開したメタデータの改ざんを防ぐには、トランスポート レベルまたはメッセージ レベルのセキュリティを使用して、メタデータ交換エンドポイントをセキュリティで保護します。 詳細については、次を参照してください。[メタデータ エンドポイントを公開する](../../../../docs/framework/wcf/publishing-metadata-endpoints.md)と[する方法: サービスを使用してコードのメタデータを公開](../../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-code.md)です。  
   
 ## <a name="ensure-use-of-local-issuer"></a>ローカル発行者の使用を確認する  
  特定のバインディングに対して発行者アドレスとバインディングが指定されている場合、ローカル発行者はこのバインディングを使用するエンドポイントには使用されません。 ローカル発行者を常に使用する必要があるクライアントには、このようなバインディングが使用されることがないか、または発行者アドレスが null となるようにクライアントによってバインディングが変更されることが保証されている必要があります。  

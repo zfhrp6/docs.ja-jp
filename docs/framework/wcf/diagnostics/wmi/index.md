@@ -16,11 +16,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 3df15e80a550857adbfbf30ebf8b6ef902426a1a
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: e8fd88edd711513d1b143029d8088401c9945d13
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="using-windows-management-instrumentation-for-diagnostics"></a>診断用の WMI (Windows Management Instrumentation) の使用
 [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] は [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] WMI (Windows Management Instrumentation) プロバイダーを介して実行時のサービスの検査データを公開します。  
@@ -160,7 +160,7 @@ ms.lasthandoff: 04/26/2018
 Whoami /user  
 ```  
   
- これにより、現在のユーザーの SID が提供されますが、この方法を使用して任意のユーザーで SID を取得することはできません。 SID を取得する別の方法が使用するには、 [getsid.exe](http://go.microsoft.com/fwlink/?LinkId=186467)ツールから、[管理タスク用の Windows 2000 リソース キット ツール](http://go.microsoft.com/fwlink/?LinkId=178660)です。 このツールは、2 人のユーザー (ローカルまたはドメイン) の SID を比較し、副作用として、2 つの SID をコマンド ラインに出力します。 [!INCLUDE[crdefault](../../../../../includes/crdefault-md.md)] [既知の Sid](http://go.microsoft.com/fwlink/?LinkId=186468)です。  
+ これにより、現在のユーザーの SID が提供されますが、この方法を使用して任意のユーザーで SID を取得することはできません。 SID を取得する別の方法が使用するには、 [getsid.exe](http://go.microsoft.com/fwlink/?LinkId=186467)ツールから、[管理タスク用の Windows 2000 リソース キット ツール](http://go.microsoft.com/fwlink/?LinkId=178660)です。 このツールは、2 人のユーザー (ローカルまたはドメイン) の SID を比較し、副作用として、2 つの SID をコマンド ラインに出力します。 詳細については、次を参照してください。 [Well Known Sid](http://go.microsoft.com/fwlink/?LinkId=186468)です。  
   
 ## <a name="accessing-remote-wmi-object-instances"></a>リモート WMI オブジェクトのインスタンスへのアクセス  
  リモート コンピューターの [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] WMI インスタンスにアクセスする必要がある場合、アクセスに使用するツールのパケットのプライバシーを有効にする必要があります。 次のセクションでは、WMI CIM Studio、Windows Management Instrumentation テスト、および .NET SDK 2.0 を使用してこれらを実現する方法を説明します。  

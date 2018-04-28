@@ -1,20 +1,17 @@
 ---
-title: "例外: try...with 式 (F#)"
-description: "例外処理の f# 'try...with' 式を使用する方法を説明します。"
-keywords: "visual f#, f#, 関数型プログラミング"
+title: '例外: try...with 式 (F#)'
+description: 例外処理の f# 'try...with' 式を使用する方法を説明します。
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: 36721076-95cd-4636-ae43-79dd512bee6c
-ms.openlocfilehash: 163dfab49d4aaf23123800246fae2cad33e2257c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 06e40b79fc1958918dc0615ce9d1004e0a6e74a5
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="exceptions-the-trywith-expression"></a>例外: try...with 式
 
@@ -49,10 +46,10 @@ with
 |:? *例外の種類*|指定した種類の .NET 例外に一致します。|
 |:? *例外の種類*として*識別子*|指定された .NET 例外の種類と一致するが、名前付きの値は、例外を示します。|
 |*例外名*(*引数*)|F# の例外の種類に一致し、引数をバインドします。|
-|*identifier*|任意の例外に一致し、例外オブジェクトに名前をバインドします。 等価**: しますか?として System.Exception***識別子*|
+|*identifier*|任意の例外に一致し、例外オブジェクトに名前をバインドします。 等価 **: しますか?System.Exception として * * * 識別子*|
 |*識別子*とき*条件*|条件が true の場合は、任意の例外と一致します。|
 
-## <a name="examples"></a>例
+## <a name="examples"></a>使用例
 次のコード例では、さまざまな例外ハンドラーのパターンの使用を示します。
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-2/snippet5602.fs)]

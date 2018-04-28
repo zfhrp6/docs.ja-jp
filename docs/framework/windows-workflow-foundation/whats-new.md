@@ -17,11 +17,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 605e1401eb2f2fdee7bb39c6636c0245154041a4
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: 6604c4fccec50369d83cede58ff2931c2015c5b9
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="what39s-new-in-windows-workflow-foundation"></a>どのような&#39;Windows Workflow Foundation の新機能として s
 Windows Workflow Foundation (WF) で[!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)]以前のバージョンから開発パラダイムを変更します。 ワークフローでは、新しい機能のホストの作成、実行、保守、実装が簡単になっています。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] .NET 3.0 を移行して、最新バージョンを使用する .NET 3.5 ワークフロー アプリケーションを参照してください。[移行ガイダンス](../../../docs/framework/windows-workflow-foundation/migration-guidance.md)です。  
@@ -44,7 +44,7 @@ Windows Workflow Foundation (WF) で[!INCLUDE[netfx40_long](../../../includes/ne
 -   <xref:System.ServiceModel.Activities.SendContent> や <xref:System.ServiceModel.Activities.ReceiveReply> などの新しいメッセージング アクティビティ  
   
 ## <a name="explicit-activity-data-model"></a>明示的なアクティビティ データ モデル  
- [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] には、データを格納および移動するための新しいオプションがあります。 データは、<xref:System.Activities.Variable> を使用してアクティビティに格納できます。 データをアクティビティに移動したり、アクティビティから移動したりするときは、特殊な引数型を使用してデータの移動方向が判定されます。 これらの型は、<xref:System.Activities.InArgument>、<xref:System.Activities.InOutArgument>、<xref:System.Activities.OutArgument>です。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Windows Workflow Foundation のデータ モデル](../../../docs/framework/windows-workflow-foundation/data-model.md)です。  
+ [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] には、データを格納および移動するための新しいオプションがあります。 データは、<xref:System.Activities.Variable> を使用してアクティビティに格納できます。 データをアクティビティに移動したり、アクティビティから移動したりするときは、特殊な引数型を使用してデータの移動方向が判定されます。 これらの型は、<xref:System.Activities.InArgument>、<xref:System.Activities.InOutArgument>、<xref:System.Activities.OutArgument>です。 詳細については、次を参照してください。 [Windows Workflow Foundation のデータ モデル](../../../docs/framework/windows-workflow-foundation/data-model.md)です。  
   
 ## <a name="enhanced-hosting-persistence-and-tracking-options"></a>ホスティング、永続化、追跡の強化されたオプション  
  [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] には、次のような永続化の拡張機能があります。  
@@ -66,4 +66,4 @@ Windows Workflow Foundation (WF) で[!INCLUDE[netfx40_long](../../../includes/ne
 -   保留中のワークフローの再開は、<xref:System.Activities.Bookmark> オブジェクトを使用して管理されるようになりました。  
   
 ## <a name="easier-ability-to-extend-wf-designer-experience"></a>WF デザイナー エクスペリエンスの容易な拡張  
- 新しい WF デザイナーは Windows Presentation Foundation (WPF) のビルドが簡単に Visual Studio の外部で WF デザイナーを再ホストするときに使用できるモデルを提供およびもカスタム アクティビティ デザイナーを作成するための使いやすいメカニズムを提供します。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [ワークフローのデザイン エクスペリエンスのカスタマイズ](../../../docs/framework/windows-workflow-foundation/customizing-the-workflow-design-experience.md)です。
+ 新しい WF デザイナーは Windows Presentation Foundation (WPF) のビルドが簡単に Visual Studio の外部で WF デザイナーを再ホストするときに使用できるモデルを提供およびもカスタム アクティビティ デザイナーを作成するための使いやすいメカニズムを提供します。 詳細については、次を参照してください。[ワークフローのデザイン エクスペリエンスのカスタマイズ](../../../docs/framework/windows-workflow-foundation/customizing-the-workflow-design-experience.md)です。

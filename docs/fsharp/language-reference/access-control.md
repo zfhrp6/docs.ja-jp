@@ -1,20 +1,17 @@
 ---
-title: "アクセス制御 (F#)"
-description: "型、メソッド、および f# のプログラミング言語では、関数などのプログラミング要素へのアクセスを制御する方法を説明します。"
-keywords: "visual f#, f#, 関数型プログラミング"
+title: アクセス制御 (F#)
+description: 型、メソッド、および f# のプログラミング言語では、関数などのプログラミング要素へのアクセスを制御する方法を説明します。
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: 955b06fe-d1cd-431d-8db6-93e83b697453
-ms.openlocfilehash: a02e20a585a0456577901f2762a0eeb0e3ecd2f0
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: fee5f719904b61c3082d56f73448defdea39f472
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="access-control"></a>アクセス制御
 
@@ -25,11 +22,11 @@ ms.lasthandoff: 10/18/2017
 F# でのアクセス制御指定子`public`、 `internal`、および`private`モジュール、型、メソッド、値の定義、関数、プロパティ、および明示的なフィールドに適用できます。
 
 
-- `public`すべての呼び出し元によってエンティティにアクセスできることを示します。
+- `public` すべての呼び出し元によってエンティティにアクセスできることを示します。
 
-- `internal`エンティティを同じアセンブリからのみアクセスできることを示します。
+- `internal` エンティティを同じアセンブリからのみアクセスできることを示します。
 
-- `private`外側の型またはモジュールからのみ、エンティティにアクセスできることを示します。
+- `private` 外側の型またはモジュールからのみ、エンティティにアクセスできることを示します。
 
 
 >[!NOTE] 

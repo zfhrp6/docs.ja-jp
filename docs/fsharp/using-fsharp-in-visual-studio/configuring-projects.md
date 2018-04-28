@@ -1,20 +1,17 @@
 ---
-title: "プロジェクトの構成 (f#)"
-description: "Visual Studio で f# プロジェクトで作業するときに、プロジェクト デザイナーを使用する方法を説明します。"
-keywords: "visual f#, f#, 関数型プログラミング"
+title: プロジェクトの構成 (f#)
+description: Visual Studio で f# プロジェクトで作業するときに、プロジェクト デザイナーを使用する方法を説明します。
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: 8b2ed206-34e4-4256-a6ce-0c2499561165
-ms.openlocfilehash: f56fed1e16b4de1d97766f37cb1c72297d5502d5
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: eac5b61d6b61d2aa1cb7b1606d60995a0355e975
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="configuring-projects-in-visual-studio"></a>Visual Studio でプロジェクトを構成します。
 
@@ -28,9 +25,9 @@ ms.lasthandoff: 12/09/2017
 
 |プロジェクト デザイナー ページ|関連リンク|説明|
 |---------------------|-------------|-----------|
-|`Application`|[アプリケーション ページで、プロジェクト デザイナー &#40;です。C# 35; &#41;](https://msdn.microsoft.com/library/ms247046.aspx)|アプリケーション レベルの設定と、ライブラリまたは実行可能ファイル、アプリケーションが対象とする .NET Framework のバージョン、およびリソースがファイルをに関する情報を作成するかどうかなどのプロパティを指定することができます、アプリケーション使用して、格納されます。|
-|`Build`|[ビルド ページ、プロジェクト デザイナー &#40;です。C# 35; &#41;](https://msdn.microsoft.com/library/kb4wyys2.aspx)|使用すると、コードをコンパイルする方法を制御できます。|
-|`Build Events`|[ビルド イベント ページ、プロジェクト デザイナー &#40;です。C# 35; &#41;](https://msdn.microsoft.com/library/kb4wyys2.aspx)|使用すると、コンパイル時の前後に実行するコマンドを指定できます。|
+|`Application`|[アプリケーション ページで、プロジェクト デザイナー &#40;C&#35;&#41;](https://msdn.microsoft.com/library/ms247046.aspx)|アプリケーション レベルの設定と、ライブラリまたは実行可能ファイル、アプリケーションが対象とする .NET Framework のバージョン、およびリソースがファイルをに関する情報を作成するかどうかなどのプロパティを指定することができます、アプリケーション使用して、格納されます。|
+|`Build`|[[ビルド] ページ (プロジェクト デザイナー) &#40;C&#35;&#41;](https://msdn.microsoft.com/library/kb4wyys2.aspx)|使用すると、コードをコンパイルする方法を制御できます。|
+|`Build Events`|[ビルド イベント ページ (プロジェクト デザイナー) &#40;C&#35;&#41;](https://msdn.microsoft.com/library/kb4wyys2.aspx)|使用すると、コンパイル時の前後に実行するコマンドを指定できます。|
 |`Debug`|[[デバッグ] ページ (プロジェクト デザイナー)](https://msdn.microsoft.com/library/2wcdezs5.aspx)|デバッグ中にアプリケーションを実行する方法を制御できます。 新機能が含まれます、アプリケーションの開始ディレクトリを使用するコマンドラインと特殊なデバッグ モードをネイティブ コードと SQL など、有効にします。|
 |`Reference Paths`|[プロジェクト内の参照の管理](/visualstudio/ide/managing-references-in-a-project)|使用すると、コードが依存しているアセンブリを検索する場所を指定します。|
 

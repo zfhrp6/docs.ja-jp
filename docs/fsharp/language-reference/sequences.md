@@ -1,20 +1,17 @@
 ---
-title: "シーケンス (F#)"
-description: "大規模な順序付けられたデータのコレクションがあるが、必ずしもすべての要素を使用する必要がないときに、f# シーケンスを使用する方法を説明します。"
-keywords: "visual f#, f#, 関数型プログラミング"
+title: シーケンス (F#)
+description: 大規模な順序付けられたデータのコレクションがあるが、必ずしもすべての要素を使用する必要がないときに、f# シーケンスを使用する方法を説明します。
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: 23dc7d75-cd26-4df2-9be3-9d1aba5c4443
-ms.openlocfilehash: b0562a6efbd2398cd8730bb835a1833955fee1c7
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: a3521037112d40998ed00cd6fed376882c2f2c88
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="sequences"></a>シーケンス
 
@@ -50,7 +47,7 @@ A*シーケンス式*シーケンスに評価される式を指定します。 �
 
 シーケンス式で同時に複数の式を組み合わせることができます。 それぞれの式によって生成された要素の連結は次の 1 つです。 例については、このトピックの「例」セクションを参照してください。
 
-## <a name="examples"></a>例
+## <a name="examples"></a>使用例
 最初の例では、イテレーション、フィルター、および配列を生成する yield を含むシーケンス式を使用します。 このコードは、1 から 100 のコンソールに含まれる素数のシーケンスを出力します。
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet1507.fs)]
@@ -90,7 +87,7 @@ A*シーケンス式*シーケンスに評価される式を指定します。 �
 0 10 20 30 40
 ```
 
-使用して[Seq.ofArray](https://msdn.microsoft.com/library/299cd4d9-be72-4511-aac8-089e1ddaac99)と[Seq.ofList &#60;'T &#62;。関数](https://msdn.microsoft.com/visualfsharpdocs/conceptual/seq.oflist%5b%27t%5d-function-%5bfsharp%5d)配列とリストからシーケンスを作成することができます。 ただし、変換することも配列とリスト シーケンスにキャスト演算子を使用しています。 両方の手法は、次のコードに表示されます。
+使用して[Seq.ofArray](https://msdn.microsoft.com/library/299cd4d9-be72-4511-aac8-089e1ddaac99)と[Seq.ofList&#60;' T&#62;関数](https://msdn.microsoft.com/visualfsharpdocs/conceptual/seq.oflist%5b%27t%5d-function-%5bfsharp%5d)、配列とリストからシーケンスを作成することができます。 ただし、変換することも配列とリスト シーケンスにキャスト演算子を使用しています。 両方の手法は、次のコードに表示されます。
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/fssequences/snippet11.fs)]
 
@@ -102,7 +99,7 @@ A*シーケンス式*シーケンスに評価される式を指定します。 �
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/fssequences/snippet13.fs)]
 
-[Seq.unfold](https://msdn.microsoft.com/library/7d9232fc-742e-42bc-bdf7-6f130f0eff21)状態を受け取り、シーケンスの後続の各要素を生成するためにそれを変換計算関数のシーケンスを生成します。 状態は、各要素が計算されたように変更できますおよび各要素の計算に使用されている値だけです。 2 番目の引数`Seq.unfold`シーケンスを開始するために使用される初期値です。 `Seq.unfold`返すことによって、シーケンスを終了することにより、状態のオプションの種類を使用して、`None`値。 次のコードは、2 つのシーケンスの例を示しています。`seq1`と`fib`、により生成されて、`unfold`操作します。 最初、 `seq1`、100 までの番号を持つ単純なシーケンスだけです。 2 番目、`fib`を使用して`unfold`フィボナッチ シーケンスを計算します。 フィボナッチ シーケンス内の各要素は、前の 2 つのフィボナッチ数の合計であるために、状態値は、前の 2 つの数値のシーケンスで構成される組です。 初期値は`(1,1)`シーケンス内の最初の 2 つの番号。
+[Seq.unfold](https://msdn.microsoft.com/library/7d9232fc-742e-42bc-bdf7-6f130f0eff21)状態を受け取り、シーケンスの後続の各要素を生成するためにそれを変換計算関数のシーケンスを生成します。 状態は、各要素が計算されたように変更できますおよび各要素の計算に使用されている値だけです。 2 番目の引数`Seq.unfold`シーケンスを開始するために使用される初期値です。 `Seq.unfold` 返すことによって、シーケンスを終了することにより、状態のオプションの種類を使用して、`None`値。 次のコードは、2 つのシーケンスの例を示しています。`seq1`と`fib`、により生成されて、`unfold`操作します。 最初、 `seq1`、100 までの番号を持つ単純なシーケンスだけです。 2 番目、`fib`を使用して`unfold`フィボナッチ シーケンスを計算します。 フィボナッチ シーケンス内の各要素は、前の 2 つのフィボナッチ数の合計であるために、状態値は、前の 2 つの数値のシーケンスで構成される組です。 初期値は`(1,1)`シーケンス内の最初の 2 つの番号。
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/fssequences/snippet14.fs)]
 
@@ -198,7 +195,7 @@ Moving average:
 
 コードでは、最初の要素のみが計算され、検査、され、結果は-1 を指定できるようにします。
 
-[Seq.countBy](https://msdn.microsoft.com/library/721702a5-150e-4fe8-81cd-ffbf8476cc1f)と呼ばれる値を生成する関数を受け取り、*キー*要素ごとにします。 キーは、各要素の各要素に対してこの関数を呼び出すことによって生成されます。 `Seq.countBy`キーの値とキーの各値を生成した要素の数のカウントを格納しているシーケンスを返します。
+[Seq.countBy](https://msdn.microsoft.com/library/721702a5-150e-4fe8-81cd-ffbf8476cc1f)と呼ばれる値を生成する関数を受け取り、*キー*要素ごとにします。 キーは、各要素の各要素に対してこの関数を呼び出すことによって生成されます。 `Seq.countBy` キーの値とキーの各値を生成した要素の数のカウントを格納しているシーケンスを返します。
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/fssequences/snippet201.fs)]
 
@@ -210,7 +207,7 @@ Moving average:
 
 前の出力は、34 要素を 1、キーを生成した元のシーケンスの 33 生成値をキー 2、および 33 生成値をキーの 0 があったことを示しています。
 
-呼び出して、シーケンスの要素をグループ化できます[Seq.groupBy](https://msdn.microsoft.com/library/d46a04df-1a42-40cc-a368-058c9c5806fd)です。 `Seq.groupBy`シーケンスとの要素からキーを生成する関数を受け取ります。 関数は、シーケンスの各要素に対して実行されます。 `Seq.groupBy`組、それぞれの組の最初の要素がキーで、2 つ目は、そのキーを生成する要素のシーケンスのシーケンスを返します。
+呼び出して、シーケンスの要素をグループ化できます[Seq.groupBy](https://msdn.microsoft.com/library/d46a04df-1a42-40cc-a368-058c9c5806fd)です。 `Seq.groupBy` シーケンスとの要素からキーを生成する関数を受け取ります。 関数は、シーケンスの各要素に対して実行されます。 `Seq.groupBy` 組、それぞれの組の最初の要素がキーで、2 つ目は、そのキーを生成する要素のシーケンスのシーケンスを返します。
 
 次のコード例は、の使用を示しています。`Seq.groupBy`を 0、1、および 2 は、個別のキー値を持つ 3 つのグループに 1 から 100 までの番号のシーケンスをパーティション分割します。
 
@@ -224,7 +221,7 @@ Moving average:
 
 呼び出すことによって、重複する要素を除去するシーケンスを作成する[Seq.distinct](https://msdn.microsoft.com/library/99d01014-7e0e-4e7b-9d0a-41a61d93f401)です。 使用することもできます[Seq.distinctBy](https://msdn.microsoft.com/library/9293293b-9420-49c8-848f-401a9cd49b75)、各要素に対して呼び出されるキー生成関数を受け取ります。 結果のシーケンスには、固有のキーのある、元のシーケンスの要素が含まれています。以前の要素に重複するキーを生成後の要素は破棄されます。
 
-`Seq.distinct` の使用方法を次のコード例に示します。 `Seq.distinct`バイナリの番号を表すシーケンスを生成して、表示のみの個別の要素には 0 および 1 で示されます。
+`Seq.distinct` の使用方法を次のコード例に示します。 `Seq.distinct` バイナリの番号を表すシーケンスを生成して、表示のみの個別の要素には 0 および 1 で示されます。
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/fssequences/snippet22.fs)]
 
@@ -233,7 +230,7 @@ Moving average:
 [!code-fsharp[Main](../../../samples/snippets/fsharp/fssequences/snippet23.fs)]
     
 ## <a name="readonly-and-cached-sequences"></a>読み取り専用とキャッシュされたシーケンス
-[Seq.readonly](https://msdn.microsoft.com/library/88059cb4-3bb0-4126-9448-fbcd48fe13a7)シーケンスの読み取り専用コピーを作成します。 `Seq.readonly`配列などの読み取り/書き込みコレクションがあり、元のコレクションを変更したくない場合に役立ちます。 この関数は、データのカプセル化を保持するために使用できます。 次のコード例では、配列を含む型が作成されます。 プロパティは、配列を見せますが、配列を返す代わりを使用して、配列から作成されたシーケンスを返します`Seq.readonly`です。
+[Seq.readonly](https://msdn.microsoft.com/library/88059cb4-3bb0-4126-9448-fbcd48fe13a7)シーケンスの読み取り専用コピーを作成します。 `Seq.readonly` 配列などの読み取り/書き込みコレクションがあり、元のコレクションを変更したくない場合に役立ちます。 この関数は、データのカプセル化を保持するために使用できます。 次のコード例では、配列を含む型が作成されます。 プロパティは、配列を見せますが、配列を返す代わりを使用して、配列から作成されたシーケンスを返します`Seq.readonly`です。
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/fssequences/snippet24.fs)]
 

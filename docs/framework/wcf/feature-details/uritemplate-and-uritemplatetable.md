@@ -10,17 +10,17 @@ ms.technology:
 ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 5cbbe03f-4a9e-4d44-9e02-c5773239cf52
-caps.latest.revision: ''
+caps.latest.revision: 24
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: ac77fe2c83828d2cc9473417d2b29b2d2e540923
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: b0fedb812cee5cfa1e4c2ff921a78beb2a6c1beb
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="uritemplate-and-uritemplatetable"></a>UriTemplate と UriTemplateTable
 Web 開発者は、サービスの応答先となる URI の形状とレイアウトを記述できる必要があります。 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] では、開発者が URI を制御するための 2 つの新しいクラスが追加されています。 <xref:System.UriTemplate> と <xref:System.UriTemplateTable> は、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] における URI ベースのディスパッチ エンジンの基盤となります。 これらのクラスは単独で使用することもできるため、開発者は [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスを実装せずにテンプレートと URI マッピング機構を利用できます。  
@@ -51,7 +51,7 @@ Web 開発者は、サービスの応答先となる URI の形状とレイア�
   
  <xref:System.UriTemplate.PathSegmentVariableNames%2A> プロパティには、テンプレート文字列のパス セグメント内で使用される変数の名前のコレクションが格納されます。  
   
- <xref:System.UriTemplate.IsEquivalentTo%28System.UriTemplate%29> は <xref:System.UriTemplate> をパラメーターとして受け取り、2 つのテンプレートが等しいかどうかを示すブール値を返します。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]このトピックで後述する「テンプレートの等価性」を参照してください。  
+ <xref:System.UriTemplate.IsEquivalentTo%28System.UriTemplate%29> は <xref:System.UriTemplate> をパラメーターとして受け取り、2 つのテンプレートが等しいかどうかを示すブール値を返します。 詳細については、このトピックで後述するテンプレートの等価性を参照してください。  
   
  <xref:System.UriTemplate> は、HTTP URI 文法に準じるすべての URI スキームで使用できるように設計されています。 サポートされている URI スキームの例を次に示します。  
   
@@ -96,11 +96,11 @@ Web 開発者は、サービスの応答先となる URI の形状とレイア�
   
 -   "{shoe}/{boat}/bed/{quilt}"  
   
--   "shoe/{boat}"  
+-   「靴/{ボート}」  
   
--   "shoe/{boat}/*"  
+-   "靴/{ボート}/*"  
   
--   "shoe/boat?x=2"  
+-   "靴/ボート? x = 2"  
   
 -   "靴/{ボート}? x = {ベッド}"  
   
@@ -137,7 +137,7 @@ Web 開発者は、サービスの応答先となる URI の形状とレイア�
   
  無効なパス セグメントの例を次に示します。  
   
--   /{} – 変数には名前が付けられている必要があります。  
+-   /{} -変数を指定する必要があります。  
   
 -   /{shoe}{boat} – 変数はリテラルによって分割されている必要があります。  
   
@@ -202,7 +202,7 @@ foreach (string key in m1.BoundVariables.AllKeys)
 ```  
   
 > [!NOTE]
->  http://localhost:8000/// のような URI は、上記のコード内に一覧表示されるテンプレートには一致しません。一致するのは、http://localhost:8000/ のような URI です。  
+>  などの URIhttp://localhost:8000///ただし、上記のコードで表示されているテンプレートに一致しないなどの URIhttp://localhost:8000/はします。  
   
  テンプレートを使用して URI を作成する場合に、既定値のある変数がどのように処理されるかを次のコードに示します。  
   

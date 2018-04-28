@@ -1,12 +1,13 @@
 ---
-title: "セキュリティ (WPF)"
-ms.custom: 
+title: セキュリティ (WPF)
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - XAML files [WPF], sandbox behavior
@@ -20,23 +21,24 @@ helpviewer_keywords:
 - XBAP security [WPF]
 - Internet Explorer security settings [WPF]
 ms.assetid: ee1baea0-3611-4e36-9ad6-fcd5205376fb
-caps.latest.revision: "38"
+caps.latest.revision: 38
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: fae5c8553cc395268b1c6afb1b64727014756975
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 134efba11742ab9cc8da2dfab77c233b52f1bcf1
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="security-wpf"></a>セキュリティ (WPF)
-<a name="introduction"></a>開発するときに[!INCLUDE[TLA#tla_wpf](../../../includes/tlasharptla-wpf-md.md)]スタンドアロン アプリケーションとブラウザーによってホストされるアプリケーション、セキュリティ モデルを考慮する必要があります。 [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]無制限のアクセス許可を持つスタンドアロンのアプリケーションを実行 ( [!INCLUDE[TLA2#tla_cas](../../../includes/tla2sharptla-cas-md.md)] **FullTrust**アクセス許可セット) Windows インストーラー (.msi)、XCopy を使用して配置するかどうか、または[!INCLUDE[TLA2#tla_clickonce](../../../includes/tla2sharptla-clickonce-md.md)]です。 部分的に信頼されたスタンドアロンの WPF アプリケーションを ClickOnce で展開することはサポートされていません。 ただし、完全に信頼されたホスト アプリケーションが部分的に信頼を作成できます<xref:System.AppDomain>アドインの .NET Framework モデルを使用します。 詳細については、次を参照してください。 [WPF アドイン概要](../../../docs/framework/wpf/app-development/wpf-add-ins-overview.md)です。  
+<a name="introduction"></a> 開発するときに[!INCLUDE[TLA#tla_wpf](../../../includes/tlasharptla-wpf-md.md)]スタンドアロン アプリケーションとブラウザーによってホストされるアプリケーション、セキュリティ モデルを考慮する必要があります。 [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] 無制限のアクセス許可を持つスタンドアロンのアプリケーションを実行 ( [!INCLUDE[TLA2#tla_cas](../../../includes/tla2sharptla-cas-md.md)] **FullTrust**アクセス許可セット) Windows インストーラー (.msi)、XCopy を使用して配置するかどうか、または[!INCLUDE[TLA2#tla_clickonce](../../../includes/tla2sharptla-clickonce-md.md)]です。 部分的に信頼されたスタンドアロンの WPF アプリケーションを ClickOnce で展開することはサポートされていません。 ただし、完全に信頼されたホスト アプリケーションが部分的に信頼を作成できます<xref:System.AppDomain>アドインの .NET Framework モデルを使用します。 詳細については、次を参照してください。 [WPF アドイン概要](../../../docs/framework/wpf/app-development/wpf-add-ins-overview.md)です。  
   
- [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]ブラウザー ホスト アプリケーションがによってホストされている[!INCLUDE[TLA#tla_iegeneric](../../../includes/tlasharptla-iegeneric-md.md)]Firefox、またはいずれかを指定できます[!INCLUDE[TLA#tla_xbap#plural](../../../includes/tlasharptla-xbapsharpplural-md.md)]またはルース[!INCLUDE[TLA#tla_xaml](../../../includes/tlasharptla-xaml-md.md)]詳細については、ドキュメントを参照してください[WPF XAML ブラウザー アプリケーションの概要](../../../docs/framework/wpf/app-development/wpf-xaml-browser-applications-overview.md)です。  
+ [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] ブラウザー ホスト アプリケーションがによってホストされている[!INCLUDE[TLA#tla_iegeneric](../../../includes/tlasharptla-iegeneric-md.md)]Firefox、またはいずれかを指定できます[!INCLUDE[TLA#tla_xbap#plural](../../../includes/tlasharptla-xbapsharpplural-md.md)]またはルース[!INCLUDE[TLA#tla_xaml](../../../includes/tlasharptla-xaml-md.md)]詳細については、ドキュメントを参照してください[WPF XAML ブラウザー アプリケーションの概要](../../../docs/framework/wpf/app-development/wpf-xaml-browser-applications-overview.md)です。  
   
- [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]既定では、既定値に限定したブラウザーによってホストされるアプリケーションが部分信頼のセキュリティのサンド ボックス内で実行[!INCLUDE[TLA2#tla_cas](../../../includes/tla2sharptla-cas-md.md)]**インターネット**ゾーン アクセス許可セット。 これを効果的に分離[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]ことが期待する一般的な Web アプリケーションの分離と同様に、クライアント コンピューターからブラウザーでホストされるアプリケーション。 XBAP は、デプロイメント URL およびクライアントのセキュリティ構成のセキュリティ ゾーンに基づいて、完全な信頼まで特権を昇格することができます。 詳細については、次を参照してください。 [WPF 部分信頼セキュリティ](../../../docs/framework/wpf/wpf-partial-trust-security.md)です。  
+ [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] 既定では、既定値に限定したブラウザーによってホストされるアプリケーションが部分信頼のセキュリティのサンド ボックス内で実行[!INCLUDE[TLA2#tla_cas](../../../includes/tla2sharptla-cas-md.md)]**インターネット**ゾーン アクセス許可セット。 これを効果的に分離[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]ことが期待する一般的な Web アプリケーションの分離と同様に、クライアント コンピューターからブラウザーでホストされるアプリケーション。 XBAP は、デプロイメント URL およびクライアントのセキュリティ構成のセキュリティ ゾーンに基づいて、完全な信頼まで特権を昇格することができます。 詳細については、次を参照してください。 [WPF 部分信頼セキュリティ](../../../docs/framework/wpf/wpf-partial-trust-security.md)です。  
   
  このトピックでのセキュリティ モデルについて説明します[!INCLUDE[TLA#tla_wpf](../../../includes/tlasharptla-wpf-md.md)]スタンドアロンおよびブラウザーによってホストされるアプリケーション。  
   
@@ -100,9 +102,9 @@ ms.lasthandoff: 12/22/2017
 ## <a name="web-browsing-software-security-settings"></a>Web ブラウザーのセキュリティ設定  
  コンピューターのセキュリティ設定によって、Web ブラウザーに付与されるアクセス権が決まります。 Web ブラウザーでは、すべてのアプリケーションまたはを使用するコンポーネントが含まれています、 [WinINet](http://go.microsoft.com/fwlink/?LinkId=179379)または[UrlMon](http://go.microsoft.com/fwlink/?LinkId=179383) Api では、Internet Explorer、PresentationHost.exe などです。  
   
- [!INCLUDE[TLA2#tla_iegeneric](../../../includes/tla2sharptla-iegeneric-md.md)]またはを実行するのには許可されている機能を構成できますメカニズムを備えています[!INCLUDE[TLA2#tla_iegeneric](../../../includes/tla2sharptla-iegeneric-md.md)]次を含みます。  
+ [!INCLUDE[TLA2#tla_iegeneric](../../../includes/tla2sharptla-iegeneric-md.md)] またはを実行するのには許可されている機能を構成できますメカニズムを備えています[!INCLUDE[TLA2#tla_iegeneric](../../../includes/tla2sharptla-iegeneric-md.md)]次を含みます。  
   
--   [!INCLUDE[TLA2#tla_winfx](../../../includes/tla2sharptla-winfx-md.md)] 依存コンポーネント  
+-   .NET framework に依存するコンポーネント  
   
 -   ActiveX コントロールおよびプラグイン  
   
@@ -114,7 +116,7 @@ ms.lasthandoff: 12/22/2017
   
  に対して、ゾーンごとにこの方法でセキュリティで保護することができる機能のコレクションが構成されている、**インターネット**、**イントラネット**、**信頼済みサイト**、および**制限付きサイト**ゾーンです。 次の手順では、セキュリティ設定の構成方法について説明します。  
   
-1.  **[コントロール パネル]**を開きます。  
+1.  **[コントロール パネル]** を開きます。  
   
 2.  をクリックして**ネットワークとインターネット** をクリックし、**インターネット オプション**です。  
   
@@ -131,7 +133,7 @@ ms.lasthandoff: 12/22/2017
 > [!NOTE]
 >  [インターネット オプション] ダイアログ ボックスは、Internet Explorer から開くこともできます。 をクリックして**ツール** をクリックし、**インターネット オプション**です。  
   
- 以降で[!INCLUDE[TLA#tla_ie7](../../../includes/tlasharptla-ie7-md.md)]、について具体的には次のセキュリティ設定[!INCLUDE[TLA2#tla_winfx](../../../includes/tla2sharptla-winfx-md.md)]が含まれています。  
+ 以降で[!INCLUDE[TLA#tla_ie7](../../../includes/tlasharptla-ie7-md.md)]、.NET Framework について具体的には次のセキュリティ設定が含まれます。  
   
 -   **Loose XAML**。 コントロールかどうか[!INCLUDE[TLA2#tla_iegeneric](../../../includes/tla2sharptla-iegeneric-md.md)]に移動し、失われたことができます[!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)]ファイル。 ([有効]、[無効]、および [ダイアログを表示する] オプション)。  
   
@@ -231,7 +233,7 @@ ms.lasthandoff: 12/22/2017
   
  ただし、可能であれば、APTCA アセンブリにインストール後にセキュリティ上の欠陥が発生すること、[!INCLUDE[TLA2#tla_gac](../../../includes/tla2sharptla-gac-md.md)]です。 セキュリティ上の欠陥が検出されたら、アセンブリの発行者は、既存のインストールでの問題を解決し、問題発見後に発生する可能性があるインストールに備えるため、セキュリティ更新プログラムを作成できます。 更新プログラムの 1 つのオプションとして、アセンブリのアンインストールが考えられますが、その場合はこのアセンブリを使用する他の完全信頼クライアント アプリケーションを破損するおそれがあります。  
   
- [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]部分的な信頼で APTCA アセンブリを無効にするメカニズムを備えています[!INCLUDE[TLA2#tla_xbap#plural](../../../includes/tla2sharptla-xbapsharpplural-md.md)]APTCA アセンブリをアンインストールせずにします。  
+ [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] 部分的な信頼で APTCA アセンブリを無効にするメカニズムを備えています[!INCLUDE[TLA2#tla_xbap#plural](../../../includes/tla2sharptla-xbapsharpplural-md.md)]APTCA アセンブリをアンインストールせずにします。  
   
  APTCA アセンブリを無効にするには、特殊なレジストリ キーを作成する必要があります。  
   
@@ -252,7 +254,7 @@ ms.lasthandoff: 12/22/2017
  部分信頼クライアント アプリケーションに対してアセンブリを無効にする必要がある場合は、レジストリ キーおよび値を作成する更新プログラムを作成します。  
   
 > [!NOTE]
->  コア[!INCLUDE[TLA2#tla_winfx](../../../includes/tla2sharptla-winfx-md.md)]マネージ アプリケーションを実行するために必要であるために、この方法で無効にしても、アセンブリを受けません。 APTCA アセンブリの無効化のサポートは、主にサードパーティ アプリケーションを対象にしたものです。  
+>  .NET Framework のコア アセンブリには、マネージ アプリケーションを実行するために必要であるために、この方法で無効にしては受けません。 APTCA アセンブリの無効化のサポートは、主にサードパーティ アプリケーションを対象にしたものです。  
   
 <a name="LooseContentSandboxing"></a>   
 ## <a name="sandbox-behavior-for-loose-xaml-files"></a>Loose XAML ファイルに対するサンドボックスの動作  
@@ -282,7 +284,7 @@ ms.lasthandoff: 12/22/2017
 |[!INCLUDE[TLA2#tla_clickonce](../../../includes/tla2sharptla-clickonce-md.md)]|[ClickOnce のセキュリティと配置](/visualstudio/deployment/clickonce-security-and-deployment)|  
 |[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]|[WPF 部分信頼セキュリティ](../../../docs/framework/wpf/wpf-partial-trust-security.md)|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [WPF 部分信頼セキュリティ](../../../docs/framework/wpf/wpf-partial-trust-security.md)  
  [WPF のセキュリティ方針 - プラットフォーム セキュリティ](../../../docs/framework/wpf/wpf-security-strategy-platform-security.md)  
  [WPF のセキュリティ方針 - セキュリティ エンジニアリング](../../../docs/framework/wpf/wpf-security-strategy-security-engineering.md)  

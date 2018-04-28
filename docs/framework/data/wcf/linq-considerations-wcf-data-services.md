@@ -23,11 +23,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: df596093333aa35b89f8d7ed36f817a457e48fda
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: c20817e791ae95efecd00a41a44c14eedec017d4
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="linq-considerations-wcf-data-services"></a>LINQ に関する留意点 (WCF Data Services)
 このトピックでは、[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] クライアントを使用しているときに LINQ クエリを作成および実行する方法と、[!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] を実装するデータ サービスを LINQ で照会する場合の制限について説明します。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] 作成し、に対するクエリの実行、 [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]-ベースのデータ サービスを参照してください[データ サービスのクエリ](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md)です。  
@@ -36,7 +36,7 @@ ms.lasthandoff: 04/26/2018
  LINQ を使用すると、<xref:System.Collections.Generic.IEnumerable%601> を実装するオブジェクトのコレクションに対するクエリを作成できます。 両方の**サービス参照の追加**Visual Studio のダイアログ ボックスと DataSvcUtil.exe ツールは、の形式の生成に使用される、[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]サービスから継承するエンティティ コンテナー クラスとして<xref:System.Data.Services.Client.DataServiceContext>、だけでなくフィードで返されるエンティティを表すオブジェクト。 これらのツールでは、サービスによってフィードとして公開されるコレクションに対応するエンティティ コンテナー クラスのプロパティも生成されます。 データ サービスをカプセル化するクラスのこれらのプロパティは、それぞれ <xref:System.Data.Services.Client.DataServiceQuery%601> を返します。 <xref:System.Data.Services.Client.DataServiceQuery%601> クラスは LINQ で定義された <xref:System.Linq.IQueryable%601> インターフェイスを実装するので、データ サービスによって公開されるフィードに対する LINQ クエリを作成できます。作成した LINQ クエリは、クライアント ライブラリにより、実行時にデータ サービスに送信されるクエリ要求 URI に変換されます。  
   
 > [!IMPORTANT]
->  LINQ 構文で表現できるクエリのセットは、[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] データ サービスによって使用される URI 構文で有効なクエリのセットよりも範囲が広くなります。 クエリを対象データ サービスの URI にマップできない場合、<xref:System.NotSupportedException> が発生します。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [サポートされていない LINQ メソッド](../../../../docs/framework/data/wcf/linq-considerations-wcf-data-services.md#unsupportedMethods)」を参照します。  
+>  LINQ 構文で表現できるクエリのセットは、[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] データ サービスによって使用される URI 構文で有効なクエリのセットよりも範囲が広くなります。 クエリを対象データ サービスの URI にマップできない場合、<xref:System.NotSupportedException> が発生します。 詳細については、次を参照してください。、[サポートされていない LINQ メソッド](../../../../docs/framework/data/wcf/linq-considerations-wcf-data-services.md#unsupportedMethods)」を参照します。  
   
  次の例の LINQ クエリは、輸送費が 30 ドルを超える `Orders` を取得し、結果を出荷日の新しい順に並べ替えます。  
   

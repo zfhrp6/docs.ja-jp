@@ -1,29 +1,30 @@
 ---
-title: "カスタム アクティビティの設計と実装"
-ms.custom: 
+title: カスタム アクティビティの設計と実装
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 4e30e63d-6e33-4842-a7a4-ce807cef1fad
-caps.latest.revision: "22"
+caps.latest.revision: 22
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: d162635a82027d1aaa46545dabad3e103d0f339c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: bafa54764ba8b02dd05cadd65c3f3cbc64c4b081
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="designing-and-implementing-custom-activities"></a>カスタム アクティビティの設計と実装
 [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] のカスタム アクティビティを作成するには、システム標準アクティビティを複合アクティビティにアセンブルするか、<xref:System.Activities.CodeActivity>、<xref:System.Activities.AsyncCodeActivity>、または <xref:System.Activities.NativeActivity> から派生する新しい型を作成します。 ここでは、いずれかのメソッドを使用してカスタム アクティビティを作成する方法について説明します。  
   
 > [!IMPORTANT]
->  既定では、カスタム アクティビティは、ワークフロー デザイナー内で、アクティビティ名を含む単純な四角形として表示されます。 ワーク フロー デザイナーでアクティビティのカスタム ビジュアル表現を指定するには、カスタム デザイナーを作成する必要があります。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][カスタム アクティビティ デザイナーおよびテンプレートを使用して](../../../docs/framework/windows-workflow-foundation/using-custom-activity-designers-and-templates.md)です。  
+>  既定では、カスタム アクティビティは、ワークフロー デザイナー内で、アクティビティ名を含む単純な四角形として表示されます。 ワーク フロー デザイナーでアクティビティのカスタム ビジュアル表現を指定するには、カスタム デザイナーを作成する必要があります。 詳細については、次を参照してください。[を使用してカスタム アクティビティ デザイナーおよびテンプレート](../../../docs/framework/windows-workflow-foundation/using-custom-activity-designers-and-templates.md)です。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [アクティビティ作成オプション](../../../docs/framework/windows-workflow-foundation/activity-authoring-options-in-wf.md)  

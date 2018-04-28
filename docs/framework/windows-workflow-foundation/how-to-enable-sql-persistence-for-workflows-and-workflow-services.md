@@ -1,31 +1,32 @@
 ---
-title: "ワークフローとワークフロー サービスの SQL 永続性を有効にする方法"
-ms.custom: 
+title: ワークフローとワークフロー サービスの SQL 永続性を有効にする方法
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: ca7bf77f-3e5d-4b23-b17a-d0b60f46411d
-caps.latest.revision: "36"
+caps.latest.revision: 36
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 60fac3cba4da35b5146f777abd912ad15f0f29eb
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 5d687c00edd9d495f3b7715474d7eb2e107c23f0
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="how-to-enable-sql-persistence-for-workflows-and-workflow-services"></a>ワークフローとワークフロー サービスの SQL 永続性を有効にする方法
 このトピックでは、ワークフローとワークフロー サービスの永続性をプログラムと構成ファイルの両方から使用して有効にできるように、SQL Workflow Instance Store の機能を構成する方法について説明します。  
   
- Windows Server App Fabric を使用すると、永続化の構成のプロセスを簡潔化できます。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][App Fabric の永続化の構成](http://go.microsoft.com/fwlink/?LinkId=201204)  
+ Windows Server App Fabric を使用すると、永続化の構成のプロセスを簡潔化できます。 詳細については、次を参照してください[App Fabric の永続化構成。](http://go.microsoft.com/fwlink/?LinkId=201204)  
   
  SQL Workflow Instance Store 機能を使用する前に、この機能においてワークフロー インスタンスの永続化に使用するデータベースを作成します。 [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] セットアップ プログラムによって、SQL Workflow Instance Store 機能に関連する SQL スクリプト ファイルが %WINDIR%\Microsoft.NET\Framework\v4.xxx\SQL\EN フォルダーにコピーされます。 これらのスクリプト ファイルは、SQL Workflow Instance Store がワークフロー インスタンスの永続化に使用する SQL Server 2005 または SQL Server 2008 のデータベースに対して実行します。 最初に SqlWorkflowInstanceStoreSchema.sql ファイルを実行してから、SqlWorkflowInstanceStoreLogic.sql ファイルを実行します。  
   
@@ -40,7 +41,7 @@ ms.lasthandoff: 12/22/2017
 >   
 >  System.Data.SqlClient.SqlException: ストアド プロシージャ 'System.Activities.DurableInstancing.CreateLockOwner' が見つかりませんでした。  
   
- 以下のセクションでは、SQL Workflow Instance Store を使用してワークフローとワークフロー サービスの永続性を有効にする方法について説明します。 [!INCLUDE[crabout](../../../includes/crabout-md.md)]SQL Workflow Instance Store のプロパティを参照してください[SQL Workflow Instance Store のプロパティ](../../../docs/framework/windows-workflow-foundation/properties-of-sql-workflow-instance-store.md)です。  
+ 以下のセクションでは、SQL Workflow Instance Store を使用してワークフローとワークフロー サービスの永続性を有効にする方法について説明します。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] SQL Workflow Instance Store のプロパティを参照してください[SQL Workflow Instance Store のプロパティ](../../../docs/framework/windows-workflow-foundation/properties-of-sql-workflow-instance-store.md)です。  
   
 ## <a name="enabling-persistence-for-self-hosted-workflows-that-use-workflowapplication"></a>WorkflowApplication を使用する自己ホスト型ワークフローの永続化の有効化  
  <xref:System.Activities.WorkflowApplication> オブジェクト モデルを使用して、プログラムから <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> を使用する自己ホスト型ワークフローの永続化を有効にすることができます。 これを行う手順を次に示します。  

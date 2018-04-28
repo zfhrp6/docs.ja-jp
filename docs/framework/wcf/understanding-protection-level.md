@@ -1,12 +1,13 @@
 ---
-title: "保護レベルの理解"
-ms.custom: 
+title: 保護レベルの理解
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,16 +16,17 @@ helpviewer_keywords:
 - WCF, security
 - ProtectionLevel property
 ms.assetid: 0c034608-a1ac-4007-8287-b1382eaa8bf2
-caps.latest.revision: "22"
+caps.latest.revision: 22
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c379cf39f30bf7e75907dba5fb06ba4e3862e299
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 4b079d7f6e22f0c1904433c2822b92da91923ef2
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="understanding-protection-level"></a>保護レベルの理解
 `ProtectionLevel` プロパティは、<xref:System.ServiceModel.ServiceContractAttribute> クラス、<xref:System.ServiceModel.OperationContractAttribute> クラスなど、多くのクラスで使用されています。 このプロパティは、メッセージの一部または全体を保護する方法を制御します。 このトピックでは、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] の機能と動作について説明します。  
@@ -84,7 +86,7 @@ ms.lasthandoff: 12/22/2017
  階層内のいずれかの位置で `ProtectionLevel` をプログラムするには、属性の適用時にこのプロパティを適切な値に設定します。 例については、次を参照してください。[する方法: ProtectionLevel プロパティを設定](../../../docs/framework/wcf/how-to-set-the-protectionlevel-property.md)です。  
   
 > [!NOTE]
->  フォールトおよびメッセージ コントラクトにプロパティを設定するには、これらの機能を理解する必要があります。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][する方法: ProtectionLevel プロパティを設定](../../../docs/framework/wcf/how-to-set-the-protectionlevel-property.md)と[メッセージ コントラクトを使用して](../../../docs/framework/wcf/feature-details/using-message-contracts.md)です。  
+>  フォールトおよびメッセージ コントラクトにプロパティを設定するには、これらの機能を理解する必要があります。 詳細については、次を参照してください。[する方法: ProtectionLevel プロパティを設定](../../../docs/framework/wcf/how-to-set-the-protectionlevel-property.md)と[メッセージ コントラクトを使用して](../../../docs/framework/wcf/feature-details/using-message-contracts.md)です。  
   
 ## <a name="ws-addressing-dependency"></a>WS-Addressing の依存関係  
  使用して、ほとんどの場合、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)クライアントを生成するクライアントとサービス コントラクトが同じであることを確認します。 ただし、同じように見えるコントラクトによって、クライアントから例外がスローされる場合があります。 これが発生するのは、バインディングが WS-Addressing 仕様をサポートせず、コントラクトで複数レベルの保護が指定されている場合です。 たとえば、<xref:System.ServiceModel.BasicHttpBinding> クラスはこの仕様をサポートしておらず、また WS-Addressing をサポートしないカスタム バインディングが作成されている場合もあります。 `ProtectionLevel` 機能は、WS-Addressing 仕様に依存して 1 つのコントラクトでさまざまな保護レベルを有効にします。 バインディングが WS-Addressing 仕様をサポートしない場合は、すべてのレベルが同一の保護レベルに設定されます。 コントラクトのすべてのスコープに対して有効な保護レベルは、コントラクトで使用されている最も強力な保護レベルに設定されます。  
@@ -105,7 +107,7 @@ ms.lasthandoff: 12/22/2017
   
  クライアントが `Price` メソッドを呼び出し、サービスから応答を受け取ると、例外をスローします。 例外をスローするのは、クライアントが `ProtectionLevel` で `ServiceContractAttribute` を指定していないため、<xref:System.Net.Security.ProtectionLevel.EncryptAndSign> メソッドを含むすべてのメソッドに既定値 (`Price`) を使用するからです。 ただし、保護レベルが <xref:System.Net.Security.ProtectionLevel.Sign> に設定された 1 つのメソッドがサービス コントラクトで定義されているため、サービスは、<xref:System.Net.Security.ProtectionLevel.Sign> レベルを使用して値を返します。 この場合、クライアントは、サービスからの応答を検証するときにエラーをスローします。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.ServiceContractAttribute>  
  <xref:System.ServiceModel.OperationContractAttribute>  
  <xref:System.ServiceModel.FaultContractAttribute>  

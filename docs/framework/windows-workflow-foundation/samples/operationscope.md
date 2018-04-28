@@ -1,32 +1,33 @@
 ---
 title: OperationScope
-ms.custom: 
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 56206a21-1e63-422d-b92a-e5d8b713e707
-caps.latest.revision: "7"
+caps.latest.revision: 7
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 837be2de516f604dd6869449d99df238fb6dbd24
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 3bf92d7a726a53c5d625f31b0386e11c941cdde9
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="operationscope"></a>OperationScope
 このサンプルでは、メッセージング アクティビティの <xref:System.ServiceModel.Activities.Receive> および <xref:System.ServiceModel.Activities.SendReply> を使用して、既存のカスタム アクティビティをワークフロー サービス内の操作として公開する方法を示します。 このサンプルには、`OperationScope` という新しいカスタム アクティビティが含まれています。 このアクティビティは、ユーザーが操作の本文をカスタム アクティビティとして個別に作成できるようにし、それを `OperationScope` アクティビティを使用してサービス操作として簡単に公開できるようにすることで、ワークフロー サービスの開発を容易にするためのものです。 たとえば、2 つの `Add` 引数を受け取って 1 つの `in` 引数を返すカスタム `out` アクティビティは、`Add` にドロップすることでワークフロー サービスの `OperationScope` 操作として公開できます。  
   
  スコープは、本文として提供されたアクティビティを調べることによって機能します。 バインドされていない `in` 引数は、受信メッセージからの入力であると見なされます。 `out` 引数はすべて、バインドされているかどうかに関係なく、後続の応答メッセージの出力であると見なされます。 公開される操作の名前は、`OperationScope` アクティビティの表示名から取得されます。 最後に、本文アクティビティは、アクティビティの引数にバインドされたメッセージからのパラメーターを使用して、<xref:System.ServiceModel.Activities.Receive> および <xref:System.ServiceModel.Activities.SendReply> にラップされます。  
   
- このサンプルでは、HTTP エンドポイントを使用してワークフロー サービスを公開します。 サンプルを実行するには、適切な URL ACL を追加する必要があります。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][HTTP および HTTPS の構成](http://go.microsoft.com/fwlink/?LinkId=70353)です。 管理者特権のプロンプトで次のコマンドを実行する適切な Acl を追加します (% ドメインのドメインとユーザー名に置き換えられることを確認してください。\\%username%)。  
+ このサンプルでは、HTTP エンドポイントを使用してワークフロー サービスを公開します。 サンプルを実行するには、適切な URL ACL を追加する必要があります。 詳細については、次を参照してください。[を構成する HTTP および HTTPS](http://go.microsoft.com/fwlink/?LinkId=70353)です。 管理者特権のプロンプトで次のコマンドを実行する適切な Acl を追加します (% ドメインのドメインとユーザー名に置き換えられることを確認してください。\\%username%)。  
   
- **netsh http 追加 urlacl url = http://+: 8000/ユーザー ドメイン % =\\%username%**  
+ **netsh http 追加 urlacl url =http://+:8000/ユーザー ドメイン % =\\%username%**  
   
 ### <a name="to-run-the-sample"></a>サンプルを実行するには  
   

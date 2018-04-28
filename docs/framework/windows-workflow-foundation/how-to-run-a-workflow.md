@@ -1,26 +1,27 @@
 ---
-title: "ワークフローを実行する方法"
-ms.custom: 
+title: ワークフローを実行する方法
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: f814ff82-fe2b-4614-aebb-b768c3e61179
-caps.latest.revision: "33"
+caps.latest.revision: 33
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 2a41bf5c1f7a12e98ac10295af5b2608c8bf3a46
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 88c8adc74b707891a93e34aa135db82715da968e
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="how-to-run-a-workflow"></a>ワークフローを実行する方法
 このトピックでは、Windows Workflow Foundation チュートリアル入門の続きと、ワークフロー ホストを作成して、前の「 [How to: Create a Workflow](../../../docs/framework/windows-workflow-foundation/how-to-create-a-workflow.md) 」で定義したワークフローを実行する方法について説明します。  
@@ -35,7 +36,7 @@ ms.lasthandoff: 12/22/2017
   
 1.  ソリューションを開いて、前の[する方法: アクティビティを作成する](../../../docs/framework/windows-workflow-foundation/how-to-create-an-activity.md)を使用してトピック[!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)]です。  
   
-2.  **ソリューション エクスプローラー** で **WF45GettingStartedTutorial** ソリューションを右クリックし、 **[追加]**をポイントして、 **[新しいプロジェクト]**をクリックします。  
+2.  **ソリューション エクスプローラー** で **WF45GettingStartedTutorial** ソリューションを右クリックし、 **[追加]** をポイントして、 **[新しいプロジェクト]** をクリックします。  
   
     > [!TIP]
     >  **ソリューション エクスプローラー** ウィンドウが表示されない場合は、 **[表示]** メニューの **[ソリューション エクスプローラー]** をクリックします。  
@@ -45,11 +46,11 @@ ms.lasthandoff: 12/22/2017
     > [!NOTE]
     >  Visual Studio で第一言語として設定されているプログラミング言語に応じて、 **[インストール済み]** ノードの **[他の言語]** ノードの下に、 **[Visual C#]** ノードまたは **[Visual Basic]** ノードが表示されます。  
   
-     .NET Framework バージョンのドロップダウン リストで **[.NET Framework 4.5]** が選択されていることを確認します。 **[ワークフロー]** の一覧から **[ワークフロー コンソール アプリケーション]** を選択します。 `NumberGuessWorkflowHost` [名前] **ボックスに「** 」と入力し、 **[OK]**をクリックします。 これで、基本的なワークフロー ホスティングをサポートする、基本ワークフロー アプリケーションが作成されます。 この基本的なホスティング コードを変更し、ワークフロー アプリケーションの実行に使用します。  
+     .NET Framework バージョンのドロップダウン リストで **[.NET Framework 4.5]** が選択されていることを確認します。 **[ワークフロー]** の一覧から **[ワークフロー コンソール アプリケーション]** を選択します。 `NumberGuessWorkflowHost` [名前] **ボックスに「** 」と入力し、 **[OK]** をクリックします。 これで、基本的なワークフロー ホスティングをサポートする、基本ワークフロー アプリケーションが作成されます。 この基本的なホスティング コードを変更し、ワークフロー アプリケーションの実行に使用します。  
   
-4.  **ソリューション エクスプローラー** で新しく追加した **NumberGuessWorkflowHost** プロジェクトを右クリックし、 **[参照の追加]**をクリックします。 **[参照の追加]** の一覧から **[ソリューション]** を選択し、 **NumberGuessWorkflowActivities**の横にあるチェック ボックスをオンにして、 **[OK]**をクリックします。  
+4.  **ソリューション エクスプローラー** で新しく追加した **NumberGuessWorkflowHost** プロジェクトを右クリックし、 **[参照の追加]** をクリックします。 **[参照の追加]** の一覧から **[ソリューション]** を選択し、 **NumberGuessWorkflowActivities**の横にあるチェック ボックスをオンにして、 **[OK]** をクリックします。  
   
-5.  **ソリューション エクスプローラー** で **Workflow1.xaml** を右クリックし、 **[削除]**をクリックします。 **[OK]** をクリックして確定します。  
+5.  **ソリューション エクスプローラー** で **Workflow1.xaml** を右クリックし、 **[削除]** をクリックします。 **[OK]** をクリックして確定します。  
   
 ### <a name="to-modify-the-workflow-hosting-code"></a>ワークフロー ホスティング コードを変更するには  
   
@@ -133,7 +134,7 @@ ms.lasthandoff: 12/22/2017
      このハンドラーは、次の推定値を待機してワークフローがアイドル状態になるたびに呼び出され、 `idleAction` <xref:System.Threading.AutoResetEvent> が設定されます。 次の手順のコードでは、 `idleEvent` と `syncEvent` を使用して、ワークフローが次の推定値を待機しているのか、完了しているのかを判断します。  
   
     > [!NOTE]
-    >  この例では、ホスト アプリケーションは <xref:System.Activities.WorkflowApplication.Completed%2A> および <xref:System.Activities.WorkflowApplication.Idle%2A> ハンドラーの自動リセット イベントを使用して、ホスト アプリケーションとワークフローの進行状況を同期させます。 ブックマークを再開する前にワークフローがアイドル状態になるのをブロックして待機する必要はありませんが、この例では同期イベントが必要であるため、ホストはワークフローが完了しているのか、さらにユーザーの入力を待っているのかを <xref:System.Activities.Bookmark>を使用して把握します。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Bookmarks](../../../docs/framework/windows-workflow-foundation/bookmarks.md)」を完了する必要があります。  
+    >  この例では、ホスト アプリケーションは <xref:System.Activities.WorkflowApplication.Completed%2A> および <xref:System.Activities.WorkflowApplication.Idle%2A> ハンドラーの自動リセット イベントを使用して、ホスト アプリケーションとワークフローの進行状況を同期させます。 ブックマークを再開する前にワークフローがアイドル状態になるのをブロックして待機する必要はありませんが、この例では同期イベントが必要であるため、ホストはワークフローが完了しているのか、さらにユーザーの入力を待っているのかを <xref:System.Activities.Bookmark>を使用して把握します。 詳細については、次を参照してください。[ブックマーク](../../../docs/framework/windows-workflow-foundation/bookmarks.md)です。  
   
 3.  `WaitOne`への呼び出しを削除して、ユーザーからの入力を収集して <xref:System.Activities.Bookmark>を再開するためのコードに置き換えます。  
   
@@ -149,7 +150,7 @@ ms.lasthandoff: 12/22/2017
   
 ##  <a name="BKMK_ToRunTheApplication"></a> アプリケーションをビルドして実行するには  
   
-1.  **ソリューション エクスプローラー** で **NumberGuessWorkflowHost** を右クリックして **[スタートアップ プロジェクトに設定]**を選択します。  
+1.  **ソリューション エクスプローラー** で **NumberGuessWorkflowHost** を右クリックして **[スタートアップ プロジェクトに設定]** を選択します。  
   
 2.  Ctrl キーを押しながら F5 キーを押してアプリケーションをビルドし、実行します。 できるだけ早い順番の数を推測します。  
   
@@ -169,7 +170,7 @@ ms.lasthandoff: 12/22/2017
  [!code-csharp[CFX_WF_GettingStarted#12](../../../samples/snippets/csharp/VS_Snippets_CFX/cfx_wf_gettingstarted/cs/program.cs#12)]
  [!code-vb[CFX_WF_GettingStarted#12](../../../samples/snippets/visualbasic/VS_Snippets_CFX/cfx_wf_gettingstarted/vb/module1.vb#12)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Activities.WorkflowApplication>  
  <xref:System.Activities.Bookmark>  
  [Windows Workflow Foundation プログラミング](../../../docs/framework/windows-workflow-foundation/programming.md)  

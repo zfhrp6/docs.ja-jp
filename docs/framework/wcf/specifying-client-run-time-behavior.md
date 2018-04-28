@@ -1,13 +1,13 @@
 ---
-title: "クライアントのランタイム動作の指定"
-ms.custom: 
+title: クライアントのランタイム動作の指定
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,20 +15,20 @@ dev_langs:
 helpviewer_keywords:
 - behaviors [WCF], system-provided client
 ms.assetid: d16d3405-be70-4edb-8f62-b5f614ddeca5
-caps.latest.revision: 
+caps.latest.revision: 8
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: a8c05dc56ec8fac0a77b1a21536d815b5b65f830
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: fb6ba82af23f51e43da57adb0e65c77ee3436676
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="specifying-client-run-time-behavior"></a>クライアントのランタイム動作の指定
-[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] クライアントは、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービスと同様に、クライアント アプリケーションに合わせてランタイム動作を変更するように構成できます。 クライアントのランタイム動作を指定する際には、3 つの属性を使用できます。 双方向クライアント コールバック オブジェクトは、<xref:System.ServiceModel.CallbackBehaviorAttribute> 属性と <xref:System.ServiceModel.Description.CallbackDebugBehavior> 属性を使用して、そのランタイム動作を変更できます。 もう 1 つの属性 <xref:System.ServiceModel.Description.ClientViaBehavior> は、論理送信先を直接のネットワーク送信先と区別するために使用できます。 さらに、双方向クライアントのコールバック型では、サービス側の動作の一部を使用できます。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][サービス ランタイムの動作を指定する](../../../docs/framework/wcf/specifying-service-run-time-behavior.md)です。  
+[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] クライアントは、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービスと同様に、クライアント アプリケーションに合わせてランタイム動作を変更するように構成できます。 クライアントのランタイム動作を指定する際には、3 つの属性を使用できます。 双方向クライアント コールバック オブジェクトは、<xref:System.ServiceModel.CallbackBehaviorAttribute> 属性と <xref:System.ServiceModel.Description.CallbackDebugBehavior> 属性を使用して、そのランタイム動作を変更できます。 もう 1 つの属性 <xref:System.ServiceModel.Description.ClientViaBehavior> は、論理送信先を直接のネットワーク送信先と区別するために使用できます。 さらに、双方向クライアントのコールバック型では、サービス側の動作の一部を使用できます。 詳細については、次を参照してください。[サービスの実行時の動作を指定する](../../../docs/framework/wcf/specifying-service-run-time-behavior.md)です。  
   
 ## <a name="using-the-callbackbehaviorattribute"></a>CallbackBehaviorAttribute の使用  
  <xref:System.ServiceModel.CallbackBehaviorAttribute> クラスを使用して、クライアント アプリケーションのコールバック コントラクト実装の実行動作を構成または拡張できます。 この属性は、インスタンス化動作とトランザクションの設定を除き、<xref:System.ServiceModel.ServiceBehaviorAttribute> クラスと同様の機能をコールバック クラスに対して実行します。  
@@ -56,5 +56,5 @@ ms.lasthandoff: 12/22/2017
 ## <a name="using-the-clientviabehavior-behavior"></a>ClientViaBehavior 動作の使用  
  <xref:System.ServiceModel.Description.ClientViaBehavior> 動作を使用して、トランスポート チャネルを作成する対象の URI (Uniform Resource Identifier) を指定できます。 この動作は、直接のネットワーク送信先が、メッセージの処理先と異なる場合に使用します。 これにより、呼び出し側のアプリケーションが最終的な送信先を知っているとは限らないとき、または送信先の `Via` ヘッダーがアドレスでないときに、複数のホップを経由するメッセージ交換が可能になります。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [サービスのランタイム動作の指定](../../../docs/framework/wcf/specifying-service-run-time-behavior.md)

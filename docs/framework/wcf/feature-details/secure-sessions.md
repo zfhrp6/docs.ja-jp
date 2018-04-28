@@ -1,30 +1,32 @@
 ---
-title: "セキュリティで保護されたセッション"
-ms.custom: 
+title: セキュリティで保護されたセッション
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 7b50602f-d7b5-42e9-8e92-1f0413df0d8b
-caps.latest.revision: "14"
+caps.latest.revision: 14
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: 65a54c06efffb2e3167c77bd109a50a31b971add
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 9506e791cf4da947eaadaff1669e5f2f975431c8
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="secure-sessions"></a>セキュリティで保護されたセッション
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] の機能の 1 つに、送信された順序でメッセージが受信されることを保証する "信頼できるセッション" があります。 このセクションの各トピックでは、信頼できるセッションを作成する際に考慮する必要のあるセキュリティへの影響について説明します。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]信頼できるセッションを参照してください[セッションを使用した](../../../../docs/framework/wcf/using-sessions.md)です。  
+[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] の機能の 1 つに、送信された順序でメッセージが受信されることを保証する "信頼できるセッション" があります。 このセクションの各トピックでは、信頼できるセッションを作成する際に考慮する必要のあるセキュリティへの影響について説明します。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] 信頼できるセッションを参照してください[セッションを使用した](../../../../docs/framework/wcf/using-sessions.md)です。  
   
 > [!NOTE]
->  Windows XP で偽装が必要な場合は、ステートフルなセキュリティ コンテキスト トークン (SCT: Security Context Token) を使用しない、セキュリティで保護されたセッションを使用します。 ステートフル SCT が偽装と共に使用されると、<xref:System.InvalidOperationException> がスローされます。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][サポートされていないシナリオ](../../../../docs/framework/wcf/feature-details/unsupported-scenarios.md)です。  
+>  Windows XP で偽装が必要な場合は、ステートフルなセキュリティ コンテキスト トークン (SCT: Security Context Token) を使用しない、セキュリティで保護されたセッションを使用します。 ステートフル SCT が偽装と共に使用されると、<xref:System.InvalidOperationException> がスローされます。 詳細については、次を参照してください。[サポートされていないシナリオ](../../../../docs/framework/wcf/feature-details/unsupported-scenarios.md)です。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
   
@@ -45,7 +47,7 @@ ms.lasthandoff: 12/22/2017
   
  [サービスの設計と実装](../../../../docs/framework/wcf/designing-and-implementing-services.md)  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [方法 : メッセージ リプレイ検出を有効にする](../../../../docs/framework/wcf/feature-details/how-to-enable-message-replay-detection.md)  
  [リプレイ攻撃](../../../../docs/framework/wcf/feature-details/replay-attacks.md)  
  [方法 : セッションを必要とするサービスを作成する](../../../../docs/framework/wcf/feature-details/how-to-create-a-service-that-requires-sessions.md)

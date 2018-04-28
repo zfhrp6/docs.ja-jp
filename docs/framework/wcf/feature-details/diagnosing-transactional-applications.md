@@ -1,30 +1,32 @@
 ---
-title: "トランザクション アプリケーションの診断"
-ms.custom: 
+title: トランザクション アプリケーションの診断
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 4a993492-1088-4d10-871b-0c09916af05f
-caps.latest.revision: "8"
+caps.latest.revision: 8
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 0826881bac88f2bfa933ae71b798186dafc55303
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: a730daeadbed0f7453b8312612c096846d4e2cda
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="diagnosing-transactional-applications"></a>トランザクション アプリケーションの診断
 このトピックでは、トランザクションのアプリケーションをトラブルシューティングするために、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] に用意されている管理機能および診断機能の使用方法について説明します。  
   
 ## <a name="performance-counters"></a>パフォーマンス カウンター  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、トランザクション アプリケーションのパフォーマンスを測定するための、標準のパフォーマンス カウンターが用意されています。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][パフォーマンス カウンター](../../../../docs/framework/wcf/diagnostics/performance-counters/index.md)です。  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、トランザクション アプリケーションのパフォーマンスを測定するための、標準のパフォーマンス カウンターが用意されています。 詳細については、「[パフォーマンス カウンター](../../../../docs/framework/wcf/diagnostics/performance-counters/index.md)」を参照してください。  
   
  パフォーマンス カウンターには次の表に示すように、サービス、エンドポイント、操作の 3 つのレベルがあります。  
   
@@ -56,7 +58,7 @@ ms.lasthandoff: 12/22/2017
 |1 秒あたりのトランザクション フロー|毎秒ごとにこのエンドポイントでの操作に対して実行されたトランザクションの数。 このカウンターは、エンドポイントに送信されたメッセージにトランザクションがある場合は常にインクリメントされます。|  
   
 ## <a name="windows-management-instrumentation"></a>WMI (Windows Management Instrumentation)  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WMI (Windows Management Instrumentation) プロバイダーを介して実行時のサービスの検査データを公開します。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]WMI データにアクセスするを参照してください[診断の Windows Management Instrumentation を使用して](../../../../docs/framework/wcf/diagnostics/wmi/index.md)です。  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WMI (Windows Management Instrumentation) プロバイダーを介して実行時のサービスの検査データを公開します。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] WMI データにアクセスするを参照してください[診断の Windows Management Instrumentation を使用して](../../../../docs/framework/wcf/diagnostics/wmi/index.md)です。  
   
  WMI プロパティには、サービスに適用されるトランザクション設定を示す読み取り専用のプロパティが多数あります。 次の表にこれらの設定をすべて示します。  
   
@@ -100,7 +102,7 @@ ms.lasthandoff: 12/22/2017
   
 -   [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の標準トレース  
   
-     このトレースは、通常の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションのトレースと同じものです。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][トレースの構成](../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)です。  
+     このトレースは、通常の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションのトレースと同じものです。 詳細については、「 [Configuring Tracing](../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)」を参照してください。  
   
 -   WS-AtomicTransaction トレース  
   
@@ -131,7 +133,7 @@ ms.lasthandoff: 12/22/2017
   
      [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] インフラストラクチャは [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] でも使用されるので、このコードにより、<xref:System.Transactions> のトレースも有効になります。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [管理と診断](../../../../docs/framework/wcf/diagnostics/index.md)  
  [トレースの構成](../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)  
  [WS-AtomicTransaction 構成ユーティリティ (wsatConfig.exe)](../../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md)

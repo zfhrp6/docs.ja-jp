@@ -1,36 +1,38 @@
 ---
-title: "方法 : X.509 証明書を使用してサービスをセキュリティで保護する"
-ms.custom: 
+title: '方法 : X.509 証明書を使用してサービスをセキュリティで保護する'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 2d06c2aa-d0d7-4e5e-ad7e-77416aa1c10b
-caps.latest.revision: "8"
+caps.latest.revision: 8
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: e1ad7cd844ffbd3f45517f7d812ad3f5fa1ae3c3
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 31028b6fe2cc34a9ae5cabe410bef0d753fd9436
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="how-to-secure-a-service-with-an-x509-certificate"></a>方法 : X.509 証明書を使用してサービスをセキュリティで保護する
 X.509 証明書を使用してサービスをセキュリティ保護することは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] の大半のバインディングで使用される基本的な手法です。 ここでは、X.509 証明書を使用して自己ホスト サービスを構成する手順を示します。  
   
- サーバーの認証に使用できる有効な証明書があることが前提条件になります。 この証明書は、信頼された証明機関によってサーバーに対して発行される必要があります。 証明書が無効な場合、サービスの使用を試みるすべてのクライアントがサービスを信頼しなくなるため、接続が作成されません。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]証明書を使用して、参照してください[証明書の使用](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)です。  
+ サーバーの認証に使用できる有効な証明書があることが前提条件になります。 この証明書は、信頼された証明機関によってサーバーに対して発行される必要があります。 証明書が無効な場合、サービスの使用を試みるすべてのクライアントがサービスを信頼しなくなるため、接続が作成されません。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] 証明書を使用して、参照してください[証明書の使用](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)です。  
   
 ### <a name="to-configure-a-service-with-a-certificate-using-code"></a>コードにより証明書を使用してサービスを構成するには  
   
-1.  サービス コントラクトを作成し、サービスを実装します。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][サービスの実装の設計と](../../../../docs/framework/wcf/designing-and-implementing-services.md)です。  
+1.  サービス コントラクトを作成し、サービスを実装します。 詳細については、次を参照してください。 [Services の実装を設計および](../../../../docs/framework/wcf/designing-and-implementing-services.md)です。  
   
 2.  次のコードに示すように、<xref:System.ServiceModel.WSHttpBinding> クラスのインスタンスを作成し、そのセキュリティ モードを <xref:System.ServiceModel.SecurityMode.Message> に設定します。  
   
@@ -93,5 +95,5 @@ X.509 証明書を使用してサービスをセキュリティ保護するこ�
   
 -   <xref:System.Runtime.Serialization>  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [証明書の使用](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)

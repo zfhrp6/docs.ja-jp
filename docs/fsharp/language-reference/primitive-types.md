@@ -1,20 +1,17 @@
 ---
-title: "プリミティブ型 (F#)"
-description: "F# 言語で使用される基本的なプリミティブ型を検出します。"
-keywords: "visual f#, f#, 関数型プログラミング"
+title: プリミティブ型 (F#)
+description: F# 言語で使用される基本的なプリミティブ型を検出します。
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: 2f23d98b-551b-4fd2-9f4f-0fd7254288ed
-ms.openlocfilehash: b493cdf7116d94f66940d03b86e584bcecbbb0f1
-ms.sourcegitcommit: 5fb6646b5ee3769ffb214e672041833ea4ceeb26
+ms.openlocfilehash: 7832151ee211f56547ecad98fc31f1454cb18870
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/08/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="primitive-types"></a>プリミティブ型
 
@@ -45,7 +42,7 @@ ms.lasthandoff: 11/08/2017
 |`float, double`|`System.Double`|64 ビット浮動小数点型です。|
 
 >[!NOTE]
-使用して、64 ビット整数型に対して大きすぎる整数を使用して計算を行うことができます、 [bigint](https://msdn.microsoft.com/library/dc8be18d-4042-46c4-b136-2f21a84f6efa)型です。 `bigint`プリミティブ型であるとは見なされません省略形は`System.Numerics.BigInteger`します。
+使用して、64 ビット整数型に対して大きすぎる整数を使用して計算を行うことができます、 [bigint](https://msdn.microsoft.com/library/dc8be18d-4042-46c4-b136-2f21a84f6efa)型です。 `bigint` プリミティブ型であるとは見なされません省略形は`System.Numerics.BigInteger`します。
 
 ## <a name="see-also"></a>関連項目
 [F# 言語リファレンス](index.md)

@@ -1,20 +1,17 @@
 ---
-title: "判別共用体 (F#)"
-description: "F# を使用する方法を学習判別共用体です。"
-keywords: "visual f#, f#, 関数型プログラミング"
+title: 判別共用体 (F#)
+description: F# を使用する方法を学習判別共用体です。
 author: cartermp
 ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: 16e2a011-c785-48c8-859f-79df7f3a0e29
-ms.openlocfilehash: b7a02512ce4a63885e771be56f106bc66cc2743e
-ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
+ms.openlocfilehash: 64c91410e284ee16036c4f51bd2247475a202a45
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="discriminated-unions"></a>判別共用体
 
@@ -163,7 +160,7 @@ Area of rectangle that has height 5.000000 and width 10.000000 is 50.000000
 * `[RequireQualifiedAccess]`
 * `[NoEquality]`
 * `[NoComparison]`
-* `[Struct]`(F# 4.1 以降)
+* `[Struct]` (F# 4.1 以降)
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 [F# 言語リファレンス](index.md)

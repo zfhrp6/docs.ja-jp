@@ -1,13 +1,13 @@
 ---
-title: "データ転送のアーキテクチャの概要"
-ms.custom: 
+title: データ転送のアーキテクチャの概要
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,17 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - data transfer [WCF], architectural overview
 ms.assetid: 343c2ca2-af53-4936-a28c-c186b3524ee9
-caps.latest.revision: 
+caps.latest.revision: 14
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 829635bd7fd73b58004c59862f4d589e95f67f9b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: cb64b871b8e4ba3036d70f3b84e2fde1667f4529
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="data-transfer-architectural-overview"></a>データ転送のアーキテクチャの概要
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] は、一種のメッセージング インフラストラクチャと考えることができます。 WCF は、メッセージを受信し、それらのメッセージを処理し、さらにアクションを実行するためにユーザー コードにディスパッチすることができます。また、ユーザー コードで指定されたデータからメッセージを作成し、送信先に配布することもできます。 ここでは、メッセージを処理するためのアーキテクチャと格納されるデータについて説明します。このトピックは、上級開発者を対象としています。 データを送受信する方法のより簡単なタスク指向の概要については、「 [Specifying Data Transfer in Service Contracts](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md)」を参照してください。  
@@ -97,14 +97,14 @@ ms.lasthandoff: 12/22/2017
 |ストリーミング チャネル スタックからの受信|ネットワーク上で到着したデータを表す `Stream` オブジェクトと、このオブジェクトに配置された <xref:System.Xml.XmlReader>|`XmlReader` を使用して、格納された `WriteNode` からコンテンツを書き込みます。|格納された `XmlReader`を返します。|  
 |非ストリーミング チャネル スタックからの受信|本文データを格納するバッファーと、このバッファーに配置された `XmlReader`|`XmlReader` を使用して、格納された `WriteNode`からコンテンツを書き込みます。|格納された lang を返します。|  
   
- \*これらの項目が直接に実装されていない`Message`サブクラスのサブクラスでは、<xref:System.ServiceModel.Channels.BodyWriter>クラスです。 詳細については、<xref:System.ServiceModel.Channels.BodyWriter>を参照してください[メッセージ クラスを使用して](../../../../docs/framework/wcf/feature-details/using-the-message-class.md)です。  
+ \* これらの項目が直接に実装されていない`Message`サブクラスのサブクラスでは、<xref:System.ServiceModel.Channels.BodyWriter>クラスです。 詳細については、<xref:System.ServiceModel.Channels.BodyWriter>を参照してください[メッセージ クラスを使用して](../../../../docs/framework/wcf/feature-details/using-the-message-class.md)です。  
   
 ## <a name="message-headers"></a>メッセージ ヘッダー  
  メッセージには、ヘッダーを含めることができます。 ヘッダーは、名前、名前空間、および他の複数のプロパティに関連付けられた XML Infoset で論理的に構成されます。 メッセージ ヘッダーには、 `Headers` の <xref:System.ServiceModel.Channels.Message>プロパティを使用してアクセスします。 各ヘッダーは、 <xref:System.ServiceModel.Channels.MessageHeader> クラスによって表されます。 通常、SOAP メッセージを使用するように構成されたチャネル スタックを使用している場合、メッセージ ヘッダーは SOAP メッセージ ヘッダーにマップされます。  
   
  メッセージ ヘッダーへの情報の配置と、メッセージ ヘッダーからの情報の抽出は、メッセージ本文を使用する場合と似ています。 ストリーミングがサポートされていないため、プロセスは若干簡略化されます。 ヘッダーは常に強制的にバッファーに保持されるため、同じヘッダーの内容に何度もアクセスすることが可能であり、各ヘッダーに任意の順序でアクセスできます。 ヘッダーで XML リーダーを取得するために使用できる汎用の機構はありませんが、このような機能を備えた読み取り可能なヘッダーを表す `MessageHeader` サブクラスが [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の内部に存在します。 この種の `MessageHeader` は、カスタム アプリケーション ヘッダーを持つメッセージが到着したときにチャネル スタックによって作成されます。 これにより、サービス フレームワークは、逆シリアル化エンジン ( <xref:System.Runtime.Serialization.DataContractSerializer>など) を使用してこれらのヘッダーを解釈できます。  
   
- [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Using the Message Class](../../../../docs/framework/wcf/feature-details/using-the-message-class.md)」を参照してください。  
+ 詳細については、次を参照してください。[メッセージ クラスを使用して](../../../../docs/framework/wcf/feature-details/using-the-message-class.md)です。  
   
 ## <a name="message-properties"></a>メッセージ プロパティ  
  メッセージには、プロパティを含めることができます。 *"プロパティ"* とは、文字列名に関連付けられた任意の [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] オブジェクトです。 プロパティには、 `Properties` の `Message`プロパティからアクセスします。  
@@ -113,7 +113,7 @@ ms.lasthandoff: 12/22/2017
   
  たとえば、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の一部として含まれる HTTP トランスポート チャネルは、クライアントに応答を送信するときに、"404 (ページが見つかりません)" や "500 (内部サーバー エラー)" などのさまざまな HTTP ステータス コードを生成できます。 応答メッセージを送信する前に確認するかどうか、`Properties`の`Message`型のオブジェクトを格納する"httpResponse"というプロパティが含まれて<xref:System.ServiceModel.Channels.HttpResponseMessageProperty>です。 このようなプロパティが見つかった場合、 <xref:System.ServiceModel.Channels.HttpResponseMessageProperty.StatusCode%2A> プロパティを調べ、そのステータス コードを使用します。 該当のプロパティが見つからなかった場合は、既定の "200 (OK)" コードが使用されます。  
   
- [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Using the Message Class](../../../../docs/framework/wcf/feature-details/using-the-message-class.md)」を参照してください。  
+ 詳細については、次を参照してください。[メッセージ クラスを使用して](../../../../docs/framework/wcf/feature-details/using-the-message-class.md)です。  
   
 ### <a name="the-message-as-a-whole"></a>メッセージ全体  
  これまで、メッセージのさまざまな部分に個別にアクセスするためのメソッドについて説明してきましたが、 <xref:System.ServiceModel.Channels.Message> クラスには、メッセージ全体を使用するためのメソッドも用意されています。 たとえば、 `WriteMessage` メソッドは、メッセージ全体を XML ライターに書き込みます。  
@@ -139,7 +139,7 @@ ms.lasthandoff: 12/22/2017
 ### <a name="channels"></a>チャネル  
  既に説明したように、チャネル スタックは、送信 <xref:System.ServiceModel.Channels.Message> インスタンスをアクション (ネットワーク上でのパケットの送信など) に変換したり、アクション (ネットワーク パケットの受信など) を受信 `Message` インスタンスに変換したりする役割を担います。  
   
- チャネル スタックは、一連の順序付けられた 1 つ以上のチャネルで構成されます。 送信 `Message` インスタンスは、スタック内の最初のチャネル ( *"最上位チャネル"*とも呼ばれます) に渡され、このチャネルからスタック内の 1 つ下のチャネルに渡されます。以降、同様にスタック内の 1 つ下のチャネルに順次渡されていきます。 メッセージは、 *"トランスポート チャネル"*と呼ばれる最後のチャネルで終了します。 受信メッセージはトランスポート チャネルから始まり、スタック内の下位のチャネルから上位のチャネルに順次渡されていきます。 通常、メッセージは最上位チャネルからサービス フレームワークに渡されます。 これは、アプリケーション メッセージの通常のパターンですが、若干動作が異なるチャネルもあります。たとえば、上のチャネルからメッセージが渡されることなく、独自のインフラストラクチャ メッセージを送信する場合があります。  
+ チャネル スタックは、一連の順序付けられた 1 つ以上のチャネルで構成されます。 送信 `Message` インスタンスは、スタック内の最初のチャネル ( *"最上位チャネル"* とも呼ばれます) に渡され、このチャネルからスタック内の 1 つ下のチャネルに渡されます。以降、同様にスタック内の 1 つ下のチャネルに順次渡されていきます。 メッセージは、 *"トランスポート チャネル"* と呼ばれる最後のチャネルで終了します。 受信メッセージはトランスポート チャネルから始まり、スタック内の下位のチャネルから上位のチャネルに順次渡されていきます。 通常、メッセージは最上位チャネルからサービス フレームワークに渡されます。 これは、アプリケーション メッセージの通常のパターンですが、若干動作が異なるチャネルもあります。たとえば、上のチャネルからメッセージが渡されることなく、独自のインフラストラクチャ メッセージを送信する場合があります。  
   
  メッセージがスタックを通過するときに、チャネルではさまざまな方法でメッセージを処理できます。 最も一般的な処理は、送信メッセージにヘッダーを追加し、受信メッセージのヘッダーを読み取ることです。 たとえば、チャネルでメッセージのデジタル署名を計算し、ヘッダーとして追加できます。 また、受信メッセージのこのデジタル署名ヘッダーを検査し、有効な署名のないメッセージがチャネル スタック内の上位のチャネルに渡されないようにブロックすることもできます。 多くの場合、チャネルはメッセージ プロパティの設定や検査も行います。 通常、メッセージ本文は変更されませんが、変更は可能です。たとえば、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] セキュリティ チャネルはメッセージ本文を暗号化できます。  
   
@@ -231,7 +231,7 @@ ms.lasthandoff: 12/22/2017
  アクション ="*"行は、効果的にメッセージのディスパッチをオフにし、すべてのメッセージが送信することにより、`IForwardingService`コントラクトの作成に、`ForwardMessage`操作します。 (通常は、ディスパッチャーは、調査するか、目的が操作を決定する、メッセージの"Action"ヘッダー。 アクション ="\*"は「すべての値にある Action ヘッダーの」を意味します)。アクションの組み合わせ ="\*"と得るすべてのメッセージを受信することになっているために、パラメーターが「ユニバーサル コントラクト」と呼ばれるメッセージを使用します。 すべての可能なメッセージを送信できるようにするには、Message を戻り値として使用し、設定`ReplyAction`に"\*"です。 これにより、サービス フレームワークは独自の Action ヘッダーを追加できなくなるため、開発者が返す `Message` オブジェクトを使用して、このヘッダーを制御できます。  
   
 ### <a name="3-message-contracts"></a>3.メッセージ コントラクト  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、 *"メッセージ コントラクト"*と呼ばれるメッセージを記述するための宣言型プログラミング モデルが用意されています。 このモデルの詳細については、「 [Using Message Contracts](../../../../docs/framework/wcf/feature-details/using-message-contracts.md)」を参照してください。 基本的に、単一の [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] 型によってメッセージ全体が表されます。この型は、 <xref:System.ServiceModel.MessageBodyMemberAttribute> や <xref:System.ServiceModel.MessageHeaderAttribute> などの属性を使用して、メッセージ コントラクト クラスのどの部分をメッセージのどの部分にマップする必要があるかを示します。  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、 *"メッセージ コントラクト"* と呼ばれるメッセージを記述するための宣言型プログラミング モデルが用意されています。 このモデルの詳細については、「 [Using Message Contracts](../../../../docs/framework/wcf/feature-details/using-message-contracts.md)」を参照してください。 基本的に、単一の [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] 型によってメッセージ全体が表されます。この型は、 <xref:System.ServiceModel.MessageBodyMemberAttribute> や <xref:System.ServiceModel.MessageHeaderAttribute> などの属性を使用して、メッセージ コントラクト クラスのどの部分をメッセージのどの部分にマップする必要があるかを示します。  
   
  メッセージ コントラクトは、結果として生成される `Message` インスタンスに対してさまざまな制御を行うことができます (ただし、 `Message` クラスを直接使用した場合と同様に制御できるわけではありません)。 たとえば、多くの場合、メッセージ本文は情報の複数の部分で構成され、各部分は独自の XML 要素によって表されます。 これらの要素は、本文に直接出現することも (*ベア* モード)、XML 要素で囲んで *ラップ* することもできます。 メッセージ コントラクト プログラミング モデルを使用すると、ベアとラップのどちらを使用するかを決定し、ラッパー名と名前空間の名前を制御できます。  
   
@@ -240,7 +240,7 @@ ms.lasthandoff: 12/22/2017
  [!code-csharp[C_DataArchitecture#9](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_dataarchitecture/cs/source.cs#9)]
  [!code-vb[C_DataArchitecture#9](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_dataarchitecture/vb/source.vb#9)]  
   
- <xref:System.ServiceModel.MessageBodyMemberAttribute>、 <xref:System.ServiceModel.MessageHeaderAttribute>、または他の関連する属性を使用して、シリアル化対象としてマークされた項目は、メッセージ コントラクトに関与するためにシリアル化可能であることが必要です。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] このトピックで後述する「シリアル化」を参照してください。  
+ <xref:System.ServiceModel.MessageBodyMemberAttribute>、 <xref:System.ServiceModel.MessageHeaderAttribute>、または他の関連する属性を使用して、シリアル化対象としてマークされた項目は、メッセージ コントラクトに関与するためにシリアル化可能であることが必要です。 詳細については、このトピックで後述する「シリアル化」を参照してください。  
   
 ### <a name="4-parameters"></a>4.パラメーター  
  多くの場合、データの複数の部分に作用する操作を記述する開発者は、メッセージ コントラクトによって実現される制御のレベルを必要としていません。 たとえば、新しいサービスの作成時に、ベアとラップのどちらを使用するかを決定し、ラッパー要素名を決めることは通常望まれていません。 多くの場合、これらを決定するには Web サービスと SOAP の深い知識が必要となります。  
@@ -255,7 +255,7 @@ ms.lasthandoff: 12/22/2017
  より複雑なメッセージ コントラクトや `Message` ベースのプログラミング モデルに移行する特別な理由がない限り、操作コントラクト パラメーターの簡単なリストとして送信または受信するように情報を記述することをお勧めします。  
   
 ### <a name="5-stream"></a>5.ストリーム  
- `Stream` またはそのサブクラスのいずれかを、操作コントラクトで使用したり、メッセージ コントラクトでメッセージ本文の単独の部分として使用したりすることは、これまでに説明したものとは別のプログラミング モデルと考えることができます。 ストリーミングに対応する独自の `Stream` サブクラスを作成する場合を除き、 `Message` をこのように使用することは、コントラクトをストリーミング方式で使用できることを保証する唯一の方法です。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][大量のデータとストリーミング](../../../../docs/framework/wcf/feature-details/large-data-and-streaming.md)です。  
+ `Stream` またはそのサブクラスのいずれかを、操作コントラクトで使用したり、メッセージ コントラクトでメッセージ本文の単独の部分として使用したりすることは、これまでに説明したものとは別のプログラミング モデルと考えることができます。 ストリーミングに対応する独自の `Stream` サブクラスを作成する場合を除き、 `Message` をこのように使用することは、コントラクトをストリーミング方式で使用できることを保証する唯一の方法です。 詳細については、次を参照してください。[大量のデータとストリーミング](../../../../docs/framework/wcf/feature-details/large-data-and-streaming.md)です。  
   
  `Stream` またはそのサブクラスのいずれかをこのように使用した場合、シリアライザーは呼び出されません。 送信メッセージの場合、 `Message` インターフェイスのセクションで説明したように、特殊なストリーミング <xref:System.Xml.IStreamProvider> サブクラスが作成され、ストリームが書き込まれます。 受信メッセージの場合は、サービス フレームワークが受信メッセージに `Stream` サブクラスを作成し、操作に提供します。  
   
@@ -285,5 +285,5 @@ ms.lasthandoff: 12/22/2017
   
  <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior> と <xref:System.ServiceModel.Description.XmlSerializerOperationBehavior> は、それぞれ `DataContractSerializer` および `XmlSerializer`のメッセージ フォーマッタをプラグインする役割を担う操作の動作です。 <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior> の動作は、 <xref:System.Runtime.Serialization.XmlObjectSerializer>など、 <xref:System.Runtime.Serialization.NetDataContractSerializer> から派生した任意のシリアライザーで実際に操作できます (詳細については、「スタンドアロンのシリアル化の使用」を参照してください)。 この動作では、 `CreateSerializer` 仮想メソッド オーバーロードのいずれかを呼び出して、シリアライザーを取得します。 別のシリアライザーをプラグインするには、新しい <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior> サブクラスを作成し、 `CreateSerializer` の両方のオーバーロードをオーバーライドします。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [サービス コントラクトでのデータ転送の指定](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md)

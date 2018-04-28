@@ -1,20 +1,17 @@
 ---
 title: F# を使用して Azure テーブル ストレージの概要します。
 description: Azure テーブル ストレージまたは Azure Cosmos DB を使用して、クラウドに構造化データを格納します。
-keywords: visual f#、f#、関数型プログラミングでは、.NET では、.NET Core では、Azure
 author: sylvanc
 ms.author: phcart
 ms.date: 03/26/2018
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-fsharp
+ms.topic: conceptual
+ms.prod: dotnet-fsharp
 ms.devlang: fsharp
-ms.assetid: 9e5d6cea-a98c-461e-a5cc-75f1d154eafd
-ms.openlocfilehash: 6d40211e13e8d213aa5a40d585dd384abf49ddfa
-ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
+ms.openlocfilehash: 50721ca44bbae5c52984b08a30bc87507fbf063d
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="get-started-with-azure-table-storage-and-the-azure-cosmos-db-table-api-using-f"></a>Azure テーブル ストレージと f# を使用して Azure Cosmos DB テーブル API の概要します。 # 
 
@@ -91,7 +88,7 @@ Azure 構成マネージャーを使用することはオプションです。 .
 
 テーブル ストレージへのデータを読み書きするコードを記述する準備が整いました。
 
-### <a name="create-a-table"></a>テーブルを作成します。
+### <a name="create-a-table"></a>テーブルの作成
 
 この例では、存在しない場合、テーブルを作成する方法を示します。
 

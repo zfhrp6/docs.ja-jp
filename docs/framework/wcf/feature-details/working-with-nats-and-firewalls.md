@@ -1,27 +1,29 @@
 ---
-title: "NAT とファイアウォールの使用"
-ms.custom: 
+title: NAT とファイアウォールの使用
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - firewalls [WCF]
 - NATs [WCF]
 ms.assetid: 74db0632-1bf0-428b-89c8-bd53b64332e7
-caps.latest.revision: "12"
+caps.latest.revision: 12
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: cae680c8958c86dc57a2aff3c2d567e1fdac981d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: fe74b4bd86a25a8e6b769be1abe5fd81e5ffe5f9
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="working-with-nats-and-firewalls"></a>NAT とファイアウォールの使用
 ネットワーク接続のクライアントとサーバーには、直接開いている通信用のパスが存在しないことがよくあります。 パケットは、エンドポイント コンピューター上だけでなく、ネットワーク上の中間コンピューターによってもフィルター処理、ルーティング、分析、および変換されます。 ネットワーク アドレス変換 (NAT: Network Address Translation) とファイアウォールは、ネットワーク通信に参加できる中間アプリケーションの一般的な例です。  
@@ -43,7 +45,7 @@ ms.lasthandoff: 12/22/2017
  ホーム ユーザー用ファイアウォールの一般的な構成では、以前に送信接続したことがあるコンピューター以外からの受信接続を禁止します。 ビジネス ユーザー用ファイアウォールの一般的な構成では、特別に指定したポート グループを除き、すべてのポートで受信接続を禁止します。 この一例としては、HTTP サービスと HTTPS サービスを提供するポート 80 とポート 443 以外のすべてのポートで接続を禁止するファイアウォールが挙げられます。 管理されたファイアウォールは、ホーム ユーザーとビジネス ユーザーの両者を対象にしており、コンピューター上の信頼済みユーザーやプロセスによるファイアウォール構成の変更を許可します。 管理されたファイアウォールの対象は、ネットワークの使用状況を制御する企業ポリシーが存在しないホーム ユーザーであるのがより一般的です。  
   
 ## <a name="using-teredo"></a>Teredo の使用  
- Teredo は、NAT の内側にあるコンピューターの直接アドレス指定を可能にする IPv6 移行テクノロジです。 Teredo は、パブリックにもグローバルにもルーティングが可能なサーバーを使用して考えられる接続をアドバタイズします。 Teredo サーバーは、アプリケーション クライアントとサーバーに、接続情報を交換できる共通のミーティング ポイントを提供します。 コンピューターは一時 Teredo アドレスを要求し、パケットが既存のネットワークをトンネリングされます。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] での Teredo のサポートには、オペレーティング システムでの IPv6 と Teredo のサポートの有効化が必要です。 [!INCLUDE[wxp](../../../../includes/wxp-md.md)] 以降のオペレーティング システムは Teredo をサポートします。 [!INCLUDE[wv](../../../../includes/wv-md.md)] 以降のオペレーティング システムは、既定で IPv6 をサポートします。ユーザーは Teredo のみ有効にする必要があります。 [!INCLUDE[wxpsp2](../../../../includes/wxpsp2-md.md)] および [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] では、ユーザーが IPv6 と Teredo の両方を有効にする必要があります。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Teredo の概要](http://go.microsoft.com/fwlink/?LinkId=87571)です。  
+ Teredo は、NAT の内側にあるコンピューターの直接アドレス指定を可能にする IPv6 移行テクノロジです。 Teredo は、パブリックにもグローバルにもルーティングが可能なサーバーを使用して考えられる接続をアドバタイズします。 Teredo サーバーは、アプリケーション クライアントとサーバーに、接続情報を交換できる共通のミーティング ポイントを提供します。 コンピューターは一時 Teredo アドレスを要求し、パケットが既存のネットワークをトンネリングされます。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] での Teredo のサポートには、オペレーティング システムでの IPv6 と Teredo のサポートの有効化が必要です。 [!INCLUDE[wxp](../../../../includes/wxp-md.md)] 以降のオペレーティング システムは Teredo をサポートします。 [!INCLUDE[wv](../../../../includes/wv-md.md)] 以降のオペレーティング システムは、既定で IPv6 をサポートします。ユーザーは Teredo のみ有効にする必要があります。 [!INCLUDE[wxpsp2](../../../../includes/wxpsp2-md.md)] および [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] では、ユーザーが IPv6 と Teredo の両方を有効にする必要があります。 詳細については、次を参照してください。、 [Teredo の概要](http://go.microsoft.com/fwlink/?LinkId=87571)です。  
   
 ## <a name="choosing-a-transport-and-message-exchange-pattern"></a>トランスポートとメッセージ交換パターンの選択  
  トランスポートと MEP の選択は、次の 3 つの手順から成るプロセスです。  

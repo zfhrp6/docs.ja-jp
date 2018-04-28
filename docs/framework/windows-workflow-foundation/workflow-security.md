@@ -16,11 +16,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 90e9d5f3a2cff454ff7892877f012f8679b9ccac
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: bfd7c3e36bf28c364adf3cd230522cfc40a9503b
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="workflow-security"></a>ワークフローのセキュリティ
 Windows Workflow Foundation (WF) は、Microsoft SQL Server など、いくつかのテクノロジと統合されて、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)]です。 これらのテクノロジと相互作用するうえで、不適切に実行された場合にワークフローでセキュリティの問題が発生することがあります。  
@@ -41,15 +41,15 @@ Windows Workflow Foundation (WF) は、Microsoft SQL Server など、いくつ�
   
 -   子アクティビティ、場所、ブックマーク、ホストの拡張機能、またはスコープを多数使用する場合、またはペイロードが非常に大きいブックマークを使用する場合、メモリが不足したり、永続化の実行中に必要以上のディスク容量が割り当てられる可能性があります。 オブジェクト レベルおよびデータベース レベルのセキュリティを使用すると、このような状態を緩和できます。  
   
--   <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> を使用する場合、インスタンス ストアをセキュリティで保護する必要があります。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [SQL Server のベスト プラクティス](http://go.microsoft.com/fwlink/?LinkId=164972)です。  
+-   <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> を使用する場合、インスタンス ストアをセキュリティで保護する必要があります。 詳細については、次を参照してください。 [SQL Server のベスト プラクティス](http://go.microsoft.com/fwlink/?LinkId=164972)です。  
   
--   インスタンス ストアの機密情報は暗号化する必要があります。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [SQL セキュリティ暗号化](http://go.microsoft.com/fwlink/?LinkId=164976)です。  
+-   インスタンス ストアの機密情報は暗号化する必要があります。 詳細については、次を参照してください。 [SQL セキュリティ暗号化](http://go.microsoft.com/fwlink/?LinkId=164976)です。  
   
 -   多くの場合、データベース接続文字列は構成ファイルに含まれているので、Windows レベルのセキュリティ (ACL) を使用して、構成ファイル (通常は Web.Config) が安全であるように、またログインとパスワードの情報が接続文字列に含まれないようにする必要があります。 Windows 認証をデータベースと Web サーバー間で代わりに使用する必要があります。  
   
 ## <a name="considerations-for-workflowservicehost"></a>WorkflowServiceHost に関する考慮事項  
   
--   ワークフローで使用されている [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] のエンドポイントは、セキュリティで保護される必要があります。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [WCF セキュリティの概要](http://go.microsoft.com/fwlink/?LinkID=164975)です。  
+-   ワークフローで使用されている [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] のエンドポイントは、セキュリティで保護される必要があります。 詳細については、次を参照してください。 [WCF セキュリティの概要](http://go.microsoft.com/fwlink/?LinkID=164975)です。  
   
 -   <xref:System.ServiceModel.ServiceAuthorizationManager> を使用して、ホスト レベルの認証を実装できます。 参照してください[操作方法: サービスのカスタム承認マネージャーを作成する](http://go.microsoft.com/fwlink/?LinkId=192228)詳細についてはします。 これは、次のサンプル」でも例示されて:[ワークフロー サービスのセキュリティ保護する](../../../docs/framework/windows-workflow-foundation/samples/securing-workflow-services.md)です。  
   
