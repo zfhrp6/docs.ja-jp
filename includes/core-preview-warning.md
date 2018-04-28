@@ -1,2 +1,2 @@
 > [!WARNING]
-> このトピックは .NET Core SDK 2.0 Preview 2 を対象としています。
+> <span data-ttu-id="42ddb-101">このトピックは .NET Core SDK 2.0 Preview 2 を対象としています。</span><span class="sxs-lookup"><span data-stu-id="42ddb-101">This topic applies to .NET Core SDK 2.0 Preview 2.</span></span>

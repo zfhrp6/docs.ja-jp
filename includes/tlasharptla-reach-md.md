@@ -1,1 +1,1 @@
-XML Paper Specification (XPS) ドキュメント
+<span data-ttu-id="dfbc6-101">XML Paper Specification (XPS) ドキュメント</span><span class="sxs-lookup"><span data-stu-id="dfbc6-101">XML Paper Specification (XPS) document</span></span>

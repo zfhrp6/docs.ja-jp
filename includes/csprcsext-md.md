@@ -1,1 +1,1 @@
-Microsoft Visual C# 2005
+<span data-ttu-id="ee4db-101">Microsoft Visual C# 2005</span><span class="sxs-lookup"><span data-stu-id="ee4db-101">Microsoft Visual C# 2005</span></span>

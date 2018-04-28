@@ -1,1 +1,1 @@
-Visual Basic ランタイム ライブラリ (Microsoft.VisualBasic.dll)
+<span data-ttu-id="8c04d-101">Visual Basic ランタイム ライブラリ (Microsoft.VisualBasic.dll)</span><span class="sxs-lookup"><span data-stu-id="8c04d-101">Visual Basic Runtime Library (in Microsoft.VisualBasic.dll)</span></span>

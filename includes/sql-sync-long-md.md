@@ -1,1 +1,1 @@
-Microsoft Synchronization Services for ADO.NET
+<span data-ttu-id="094e8-101">Microsoft Synchronization Services for ADO.NET</span><span class="sxs-lookup"><span data-stu-id="094e8-101">Microsoft Synchronization Services for ADO.NET</span></span>

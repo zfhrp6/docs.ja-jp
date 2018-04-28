@@ -1,1 +1,1 @@
-XML スキーマ定義 (XSD)
+<span data-ttu-id="475eb-101">XML スキーマ定義 (XSD)</span><span class="sxs-lookup"><span data-stu-id="475eb-101">XML Schema Definition (XSD)</span></span>
