@@ -1,39 +1,37 @@
 ---
 title: .NET Core 1.0 のパッケージ依存関係バージョンを管理する方法
 description: .NET Core ライブラリとアプリにおけるパッケージの依存関係のバージョン管理について説明します。
-keywords: .NET, .NET Core
 author: cartermp
 ms.author: mairaw
 ms.date: 06/20/2016
-ms.topic: article
-ms.prod: .net-core
+ms.topic: conceptual
+ms.prod: dotnet-core
 ms.devlang: dotnet
-ms.assetid: 4424a947-bdf9-4775-8d48-dc350a4e0aee
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: 2bb55f3bcd6678a127f099afbb9461cafe1a9c94
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
-ms.translationtype: MT
+ms.openlocfilehash: 7b508f3d83833361bd830bb232587df2ad090661
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 04/28/2018
 ---
-# <a name="how-to-manage-package-dependency-versions-for-net-core-10"></a><span data-ttu-id="4b856-104">.NET Core 1.0 のパッケージ依存関係バージョンを管理する方法</span><span class="sxs-lookup"><span data-stu-id="4b856-104">How to Manage Package Dependency Versions for .NET Core 1.0</span></span>
+# <a name="how-to-manage-package-dependency-versions-for-net-core-10"></a><span data-ttu-id="e83e4-103">.NET Core 1.0 のパッケージ依存関係バージョンを管理する方法</span><span class="sxs-lookup"><span data-stu-id="e83e4-103">How to Manage Package Dependency Versions for .NET Core 1.0</span></span>
 
-<span data-ttu-id="4b856-105">この記事では、.NET Core ライブラリとアプリのパッケージ バージョンについて知っておくべき事項を説明します。</span><span class="sxs-lookup"><span data-stu-id="4b856-105">This article covers what you need to know about package versions for your .NET Core libraries and apps.</span></span>
+<span data-ttu-id="e83e4-104">この記事では、.NET Core ライブラリとアプリのパッケージ バージョンについて知っておくべき事項を説明します。</span><span class="sxs-lookup"><span data-stu-id="e83e4-104">This article covers what you need to know about package versions for your .NET Core libraries and apps.</span></span>
 
-## <a name="glossary"></a><span data-ttu-id="4b856-106">用語集</span><span class="sxs-lookup"><span data-stu-id="4b856-106">Glossary</span></span>
+## <a name="glossary"></a><span data-ttu-id="e83e4-105">用語集</span><span class="sxs-lookup"><span data-stu-id="e83e4-105">Glossary</span></span>
 
-<span data-ttu-id="4b856-107">**固定** - 依存関係を固定するとは、NuGet for .NET Core 1.0 でリリースされた同一 "ファミリ" のパッケージを使用することを意味します。</span><span class="sxs-lookup"><span data-stu-id="4b856-107">**Fix** - Fixing dependencies means you are using the same "family" of packages released on NuGet for .NET Core 1.0.</span></span>
+<span data-ttu-id="e83e4-106">**固定** - 依存関係を固定するとは、NuGet for .NET Core 1.0 でリリースされた同一 "ファミリ" のパッケージを使用することを意味します。</span><span class="sxs-lookup"><span data-stu-id="e83e4-106">**Fix** - Fixing dependencies means you are using the same "family" of packages released on NuGet for .NET Core 1.0.</span></span>
 
-<span data-ttu-id="4b856-108">**メタパッケージ** - NuGet パッケージ セットを表す NuGet パッケージです。</span><span class="sxs-lookup"><span data-stu-id="4b856-108">**Metapackage** - A NuGet package that represents a set of NuGet packages.</span></span>
+<span data-ttu-id="e83e4-107">**メタパッケージ** - NuGet パッケージ セットを表す NuGet パッケージです。</span><span class="sxs-lookup"><span data-stu-id="e83e4-107">**Metapackage** - A NuGet package that represents a set of NuGet packages.</span></span>
 
-<span data-ttu-id="4b856-109">**トリミング** - 依存しないパッケージをメタパッケージから削除する動作です。</span><span class="sxs-lookup"><span data-stu-id="4b856-109">**Trimming** - The act of removing the packages you do not depend on from a metapackage.</span></span>  <span data-ttu-id="4b856-110">これは、NuGet パッケージの作成者に関連するものです。</span><span class="sxs-lookup"><span data-stu-id="4b856-110">This is something relevant for NuGet package authors.</span></span>  <span data-ttu-id="4b856-111">詳細については、「[Reducing Package Dependencies with project.json](../deploying/reducing-dependencies.md)」 (project.json によるパッケージ依存関係の縮小) を参照してください。</span><span class="sxs-lookup"><span data-stu-id="4b856-111">See [Reducing Package Dependencies with project.json](../deploying/reducing-dependencies.md) for more information.</span></span> 
+<span data-ttu-id="e83e4-108">**トリミング** - 依存しないパッケージをメタパッケージから削除する動作です。</span><span class="sxs-lookup"><span data-stu-id="e83e4-108">**Trimming** - The act of removing the packages you do not depend on from a metapackage.</span></span>  <span data-ttu-id="e83e4-109">これは、NuGet パッケージの作成者に関連するものです。</span><span class="sxs-lookup"><span data-stu-id="e83e4-109">This is something relevant for NuGet package authors.</span></span>  <span data-ttu-id="e83e4-110">詳細については、「[Reducing Package Dependencies with project.json](../deploying/reducing-dependencies.md)」 (project.json によるパッケージ依存関係の縮小) を参照してください。</span><span class="sxs-lookup"><span data-stu-id="e83e4-110">See [Reducing Package Dependencies with project.json](../deploying/reducing-dependencies.md) for more information.</span></span> 
 
-## <a name="fix-your-dependencies-to-net-core-10"></a><span data-ttu-id="4b856-112">依存関係を .NET Core 1.0 に固定する</span><span class="sxs-lookup"><span data-stu-id="4b856-112">Fix your dependencies to .NET Core 1.0</span></span>
+## <a name="fix-your-dependencies-to-net-core-10"></a><span data-ttu-id="e83e4-111">依存関係を .NET Core 1.0 に固定する</span><span class="sxs-lookup"><span data-stu-id="e83e4-111">Fix your dependencies to .NET Core 1.0</span></span>
 
-<span data-ttu-id="4b856-113">パッケージを確実に復元して信頼性の高いコードを記述するには、.NET Core 1.0 と共に配布されるパッケージのバージョンに依存関係を固定することが重要です。</span><span class="sxs-lookup"><span data-stu-id="4b856-113">To reliably restore packages and write reliable code, it's important that you fix your dependencies to the versions of packages shipping alongside .NET Core 1.0.</span></span>  <span data-ttu-id="4b856-114">すなわち、どのパッケージのバージョンも、修飾子が付加されていない単一バージョンとする必要があるということです。</span><span class="sxs-lookup"><span data-stu-id="4b856-114">This means every package should have a single version with no additional qualifiers.</span></span>
+<span data-ttu-id="e83e4-112">パッケージを確実に復元して信頼性の高いコードを記述するには、.NET Core 1.0 と共に配布されるパッケージのバージョンに依存関係を固定することが重要です。</span><span class="sxs-lookup"><span data-stu-id="e83e4-112">To reliably restore packages and write reliable code, it's important that you fix your dependencies to the versions of packages shipping alongside .NET Core 1.0.</span></span>  <span data-ttu-id="e83e4-113">すなわち、どのパッケージのバージョンも、修飾子が付加されていない単一バージョンとする必要があるということです。</span><span class="sxs-lookup"><span data-stu-id="e83e4-113">This means every package should have a single version with no additional qualifiers.</span></span>
 
-<span data-ttu-id="4b856-115">**1.0 に固定されたパッケージの例**</span><span class="sxs-lookup"><span data-stu-id="4b856-115">**Examples of packages fixed to 1.0**</span></span>
+<span data-ttu-id="e83e4-114">**1.0 に固定されたパッケージの例**</span><span class="sxs-lookup"><span data-stu-id="e83e4-114">**Examples of packages fixed to 1.0**</span></span>
 
 `"System.Collections":"4.0.11"`
 
@@ -41,7 +39,7 @@ ms.lasthandoff: 03/26/2018
 
 `"Microsoft.NETCore.App":"1.0.0"`
 
-<span data-ttu-id="4b856-116">**1.0 に固定されていないパッケージの例**</span><span class="sxs-lookup"><span data-stu-id="4b856-116">**Examples of packages that are NOT fixed to 1.0**</span></span>
+<span data-ttu-id="e83e4-115">**1.0 に固定されていないパッケージの例**</span><span class="sxs-lookup"><span data-stu-id="e83e4-115">**Examples of packages that are NOT fixed to 1.0**</span></span>
 
 `"Microsoft.NETCore.App":"1.0.0-rc4-00454-00"`
 
@@ -49,40 +47,40 @@ ms.lasthandoff: 03/26/2018
 
 `"System.Text.RegularExpressions":"4.0.10-rc3-24021-00"`
 
-### <a name="why-does-this-matter"></a><span data-ttu-id="4b856-117">なぜこれが重要なのでしょうか?</span><span class="sxs-lookup"><span data-stu-id="4b856-117">Why does this matter?</span></span>
+### <a name="why-does-this-matter"></a><span data-ttu-id="e83e4-116">なぜこれが重要なのでしょうか?</span><span class="sxs-lookup"><span data-stu-id="e83e4-116">Why does this matter?</span></span>
 
-<span data-ttu-id="4b856-118">.NET Core 1.0 と共に配布されるバージョンに依存関係を固定すると、それらのパッケージはすべて確実に連携して動作します。</span><span class="sxs-lookup"><span data-stu-id="4b856-118">We guarantee that if you fix your dependencies to what ships alongside .NET Core 1.0, those packages will all work together.</span></span> <span data-ttu-id="4b856-119">使用するパッケージがこのように固定されたものではない場合、パッケージの連携は保証されません。</span><span class="sxs-lookup"><span data-stu-id="4b856-119">There is no such guarantee if you use packages which aren't fixed in this way.</span></span>
+<span data-ttu-id="e83e4-117">.NET Core 1.0 と共に配布されるバージョンに依存関係を固定すると、それらのパッケージはすべて確実に連携して動作します。</span><span class="sxs-lookup"><span data-stu-id="e83e4-117">We guarantee that if you fix your dependencies to what ships alongside .NET Core 1.0, those packages will all work together.</span></span> <span data-ttu-id="e83e4-118">使用するパッケージがこのように固定されたものではない場合、パッケージの連携は保証されません。</span><span class="sxs-lookup"><span data-stu-id="e83e4-118">There is no such guarantee if you use packages which aren't fixed in this way.</span></span>
 
-### <a name="scenarios"></a><span data-ttu-id="4b856-120">シナリオ</span><span class="sxs-lookup"><span data-stu-id="4b856-120">Scenarios</span></span>
+### <a name="scenarios"></a><span data-ttu-id="e83e4-119">シナリオ</span><span class="sxs-lookup"><span data-stu-id="e83e4-119">Scenarios</span></span>
 
-<span data-ttu-id="4b856-121">.NET Core 1.0 でリリースされたすべてのパッケージとそのバージョンを掲載した一覧が長くても、コードが特定のシナリオに分類されている場合は、一覧を調べなくてもよい場合があります。</span><span class="sxs-lookup"><span data-stu-id="4b856-121">Although there is a big list of all packages and their versions released with .NET Core 1.0, you may not have to look through it if your code falls under certain scenarios.</span></span>
+<span data-ttu-id="e83e4-120">.NET Core 1.0 でリリースされたすべてのパッケージとそのバージョンを掲載した一覧が長くても、コードが特定のシナリオに分類されている場合は、一覧を調べなくてもよい場合があります。</span><span class="sxs-lookup"><span data-stu-id="e83e4-120">Although there is a big list of all packages and their versions released with .NET Core 1.0, you may not have to look through it if your code falls under certain scenarios.</span></span>
 
-<span data-ttu-id="4b856-122">`NETStandard.Library`**のみに依存しますか** **?**</span><span class="sxs-lookup"><span data-stu-id="4b856-122">**Are you depending only on** `NETStandard.Library`**?**</span></span>
+<span data-ttu-id="e83e4-121">`NETStandard.Library`**のみに依存しますか** **?**</span><span class="sxs-lookup"><span data-stu-id="e83e4-121">**Are you depending only on** `NETStandard.Library`**?**</span></span>
 
-<span data-ttu-id="4b856-123">そのようにする場合は、`NETStandard.Library` パッケージをバージョン `1.6` に固定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="4b856-123">If so, you should fix your `NETStandard.Library` package to version `1.6`.</span></span>  <span data-ttu-id="4b856-124">これは選別されたメタパッケージであるため、そのパッケージ クロージャも 1.0 に固定されます。</span><span class="sxs-lookup"><span data-stu-id="4b856-124">Because this is a curated metapackage, its package closure is also fixed to 1.0.</span></span>
+<span data-ttu-id="e83e4-122">そのようにする場合は、`NETStandard.Library` パッケージをバージョン `1.6` に固定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="e83e4-122">If so, you should fix your `NETStandard.Library` package to version `1.6`.</span></span>  <span data-ttu-id="e83e4-123">これは選別されたメタパッケージであるため、そのパッケージ クロージャも 1.0 に固定されます。</span><span class="sxs-lookup"><span data-stu-id="e83e4-123">Because this is a curated metapackage, its package closure is also fixed to 1.0.</span></span>
 
-<span data-ttu-id="4b856-125">`Microsoft.NETCore.App`**のみに依存しますか** **?**</span><span class="sxs-lookup"><span data-stu-id="4b856-125">**Are you depending only on** `Microsoft.NETCore.App`**?**</span></span>
+<span data-ttu-id="e83e4-124">`Microsoft.NETCore.App`**のみに依存しますか** **?**</span><span class="sxs-lookup"><span data-stu-id="e83e4-124">**Are you depending only on** `Microsoft.NETCore.App`**?**</span></span>
 
-<span data-ttu-id="4b856-126">そのようにする場合は、`Microsoft.NETCore.App` パッケージをバージョン `1.0.0` に固定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="4b856-126">If so, you should fix your `Microsoft.NETCore.App` package to version `1.0.0`.</span></span>  <span data-ttu-id="4b856-127">これは選別されたメタパッケージであるため、そのパッケージ クロージャも 1.0 に固定されます。</span><span class="sxs-lookup"><span data-stu-id="4b856-127">Because this is a curated metapackage, its package closure is also fixed to 1.0.</span></span>
+<span data-ttu-id="e83e4-125">そのようにする場合は、`Microsoft.NETCore.App` パッケージをバージョン `1.0.0` に固定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="e83e4-125">If so, you should fix your `Microsoft.NETCore.App` package to version `1.0.0`.</span></span>  <span data-ttu-id="e83e4-126">これは選別されたメタパッケージであるため、そのパッケージ クロージャも 1.0 に固定されます。</span><span class="sxs-lookup"><span data-stu-id="e83e4-126">Because this is a curated metapackage, its package closure is also fixed to 1.0.</span></span>
 
-<span data-ttu-id="4b856-128">**または** `Microsoft.NETCore.App` **メタパッケージ依存関係を** [トリミング](../deploying/reducing-dependencies.md) **する必要がありますか?**`NETStandard.Library`</span><span class="sxs-lookup"><span data-stu-id="4b856-128">**Are you [trimming](../deploying/reducing-dependencies.md) your** `NETStandard.Library` **or** `Microsoft.NETCore.App` **metapackage dependencies?**</span></span>
+<span data-ttu-id="e83e4-127">**または** `Microsoft.NETCore.App` **メタパッケージ依存関係を** [トリミング](../deploying/reducing-dependencies.md) **する必要がありますか?**`NETStandard.Library`</span><span class="sxs-lookup"><span data-stu-id="e83e4-127">**Are you [trimming](../deploying/reducing-dependencies.md) your** `NETStandard.Library` **or** `Microsoft.NETCore.App` **metapackage dependencies?**</span></span>
 
-<span data-ttu-id="4b856-129">そのようにする場合は、作業を開始するメタパッケージが 1.0 に固定されていることを確認する必要があります。</span><span class="sxs-lookup"><span data-stu-id="4b856-129">If so, you should ensure that the metapackage you start with is fixed to 1.0.</span></span>  <span data-ttu-id="4b856-130">トリミングした後に依存する個々のパッケージも 1.0 に固定されます。</span><span class="sxs-lookup"><span data-stu-id="4b856-130">The individual packages you depend on after trimming are also fixed to 1.0.</span></span>
+<span data-ttu-id="e83e4-128">そのようにする場合は、作業を開始するメタパッケージが 1.0 に固定されていることを確認する必要があります。</span><span class="sxs-lookup"><span data-stu-id="e83e4-128">If so, you should ensure that the metapackage you start with is fixed to 1.0.</span></span>  <span data-ttu-id="e83e4-129">トリミングした後に依存する個々のパッケージも 1.0 に固定されます。</span><span class="sxs-lookup"><span data-stu-id="e83e4-129">The individual packages you depend on after trimming are also fixed to 1.0.</span></span>
 
-<span data-ttu-id="4b856-131">**または** `Microsoft.NETCore.App` **メタパッケージ** **の外のパッケージに依存しますか?** `NETStandard.Library`</span><span class="sxs-lookup"><span data-stu-id="4b856-131">**Are you depending on packages outside the** `NETStandard.Library` **or** `Microsoft.NETCore.App` **metapackages?**</span></span>
+<span data-ttu-id="e83e4-130">**または** `Microsoft.NETCore.App` **メタパッケージ** **の外のパッケージに依存しますか?** `NETStandard.Library`</span><span class="sxs-lookup"><span data-stu-id="e83e4-130">**Are you depending on packages outside the** `NETStandard.Library` **or** `Microsoft.NETCore.App` **metapackages?**</span></span>
 
-<span data-ttu-id="4b856-132">そのようにする場合は、ほかの依存関係を 1.0 に固定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="4b856-132">If so, you need to fix your other dependencies to 1.0.</span></span>  <span data-ttu-id="4b856-133">この記事の最後で、適切なパッケージ バージョンを確認し、数値をビルドします。</span><span class="sxs-lookup"><span data-stu-id="4b856-133">See the correct package versions and build numbers at the end of this article.</span></span>
+<span data-ttu-id="e83e4-131">そのようにする場合は、ほかの依存関係を 1.0 に固定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="e83e4-131">If so, you need to fix your other dependencies to 1.0.</span></span>  <span data-ttu-id="e83e4-132">この記事の最後で、適切なパッケージ バージョンを確認し、数値をビルドします。</span><span class="sxs-lookup"><span data-stu-id="e83e4-132">See the correct package versions and build numbers at the end of this article.</span></span>
 
-### <a name="a-note-on-using-a-splat-string--when-versioning"></a><span data-ttu-id="4b856-134">バージョン管理の際の記号文字列 (\*) の使用に関する注意事項</span><span class="sxs-lookup"><span data-stu-id="4b856-134">A note on using a splat string (\*) when versioning</span></span>
+### <a name="a-note-on-using-a-splat-string--when-versioning"></a><span data-ttu-id="e83e4-133">バージョン管理の際の記号文字列 (\*) の使用に関する注意事項</span><span class="sxs-lookup"><span data-stu-id="e83e4-133">A note on using a splat string (\*) when versioning</span></span>
 
-<span data-ttu-id="4b856-135">次のように、記号 (\*) 文字列を使用したバージョン管理パターンを採用している場合があるかもしれません`"System.Collections":"4.0.11-*"`。</span><span class="sxs-lookup"><span data-stu-id="4b856-135">You may have adopted a versioning pattern which uses a splat (\*) string like this: `"System.Collections":"4.0.11-*"`.</span></span>
+<span data-ttu-id="e83e4-134">次のように、記号 (\*) 文字列を使用したバージョン管理パターンを採用している場合があるかもしれません`"System.Collections":"4.0.11-*"`。</span><span class="sxs-lookup"><span data-stu-id="e83e4-134">You may have adopted a versioning pattern which uses a splat (\*) string like this: `"System.Collections":"4.0.11-*"`.</span></span>
 
-<span data-ttu-id="4b856-136">**これはよくありません**。</span><span class="sxs-lookup"><span data-stu-id="4b856-136">**You should not do this**.</span></span>  <span data-ttu-id="4b856-137">記号文字列を使用すると、さまざまなビルドからパッケージが復元される可能性があります。そのなかには、.NET Core 1.0 よりも前のものが含まれる場合があります。</span><span class="sxs-lookup"><span data-stu-id="4b856-137">Using the splat string could result in restoring packages from different builds, some of which may be further along than .NET Core 1.0.</span></span>  <span data-ttu-id="4b856-138">結果として、互換性のないパッケージが存在することになる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="4b856-138">This could then result in some packages being incompatible.</span></span>
+<span data-ttu-id="e83e4-135">**これはよくありません**。</span><span class="sxs-lookup"><span data-stu-id="e83e4-135">**You should not do this**.</span></span>  <span data-ttu-id="e83e4-136">記号文字列を使用すると、さまざまなビルドからパッケージが復元される可能性があります。そのなかには、.NET Core 1.0 よりも前のものが含まれる場合があります。</span><span class="sxs-lookup"><span data-stu-id="e83e4-136">Using the splat string could result in restoring packages from different builds, some of which may be further along than .NET Core 1.0.</span></span>  <span data-ttu-id="e83e4-137">結果として、互換性のないパッケージが存在することになる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="e83e4-137">This could then result in some packages being incompatible.</span></span>
 
-## <a name="packages-and-version-numbers-organized-by-metapackage"></a><span data-ttu-id="4b856-139">メタパッケージで整理されるパッケージとバージョン番号</span><span class="sxs-lookup"><span data-stu-id="4b856-139">Packages and Version Numbers organized by Metapackage</span></span>
+## <a name="packages-and-version-numbers-organized-by-metapackage"></a><span data-ttu-id="e83e4-138">メタパッケージで整理されるパッケージとバージョン番号</span><span class="sxs-lookup"><span data-stu-id="e83e4-138">Packages and Version Numbers organized by Metapackage</span></span>
 
-<span data-ttu-id="4b856-140">[1.0 用の .NET Standard パッケージとそのバージョンの一覧](https://github.com/dotnet/versions/blob/master/build-info/dotnet/corefx/release/1.0.0/Latest_Packages.txt)。</span><span class="sxs-lookup"><span data-stu-id="4b856-140">[List of all .NET Standard packages and their versions for 1.0](https://github.com/dotnet/versions/blob/master/build-info/dotnet/corefx/release/1.0.0/Latest_Packages.txt).</span></span>
+<span data-ttu-id="e83e4-139">[1.0 用の .NET Standard パッケージとそのバージョンの一覧](https://github.com/dotnet/versions/blob/master/build-info/dotnet/corefx/release/1.0.0/Latest_Packages.txt)。</span><span class="sxs-lookup"><span data-stu-id="e83e4-139">[List of all .NET Standard packages and their versions for 1.0](https://github.com/dotnet/versions/blob/master/build-info/dotnet/corefx/release/1.0.0/Latest_Packages.txt).</span></span>
 
-<span data-ttu-id="4b856-141">[1.0 に対するすべてのランタイム パッケージとそのバージョンの一覧](https://github.com/dotnet/versions/blob/master/build-info/dotnet/coreclr/release/1.0.0/LKG_Packages.txt)。</span><span class="sxs-lookup"><span data-stu-id="4b856-141">[List of all runtime packages and their versions for 1.0](https://github.com/dotnet/versions/blob/master/build-info/dotnet/coreclr/release/1.0.0/LKG_Packages.txt).</span></span>
+<span data-ttu-id="e83e4-140">[1.0 に対するすべてのランタイム パッケージとそのバージョンの一覧](https://github.com/dotnet/versions/blob/master/build-info/dotnet/coreclr/release/1.0.0/LKG_Packages.txt)。</span><span class="sxs-lookup"><span data-stu-id="e83e4-140">[List of all runtime packages and their versions for 1.0](https://github.com/dotnet/versions/blob/master/build-info/dotnet/coreclr/release/1.0.0/LKG_Packages.txt).</span></span>
 
-<span data-ttu-id="4b856-142">[1.0 に対するすべての NET Core アプリケーション パッケージとそのバージョンの一覧](https://github.com/dotnet/versions/blob/master/build-info/dotnet/core-setup/release/1.0.0/Latest_Packages.txt)。</span><span class="sxs-lookup"><span data-stu-id="4b856-142">[List of all .NET Core application packages and their versions for 1.0](https://github.com/dotnet/versions/blob/master/build-info/dotnet/core-setup/release/1.0.0/Latest_Packages.txt).</span></span>
+<span data-ttu-id="e83e4-141">[1.0 に対するすべての NET Core アプリケーション パッケージとそのバージョンの一覧](https://github.com/dotnet/versions/blob/master/build-info/dotnet/core-setup/release/1.0.0/Latest_Packages.txt)。</span><span class="sxs-lookup"><span data-stu-id="e83e4-141">[List of all .NET Core application packages and their versions for 1.0](https://github.com/dotnet/versions/blob/master/build-info/dotnet/core-setup/release/1.0.0/Latest_Packages.txt).</span></span>

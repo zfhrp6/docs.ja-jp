@@ -1,62 +1,60 @@
 ---
 title: macOS での .NET Core の概要
 description: このドキュメントでは、Visual Studio Code を使用して .NET Core ソリューションを作成する手順とワークフローを説明します。
-keywords: .NET, .NET Core, Mac, macOS, Visual Studio Code
 author: bleroy
 ms.author: mairaw
 ms.date: 03/23/2017
 ms.topic: get-started-article
-ms.prod: .net-core
+ms.prod: dotnet-core
 ms.devlang: dotnet
-ms.assetid: 8ad82148-dac8-4b31-9128-b0e9610f4d9b
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: d130ef34961d19c450dd7142c8a5996c83465646
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: 18f825e75e7d32198a52a091948bc9dd064dacbd
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/28/2018
 ---
-# <a name="getting-started-with-net-core-on-macos"></a><span data-ttu-id="8f95c-104">macOS での .NET Core の概要</span><span class="sxs-lookup"><span data-stu-id="8f95c-104">Getting started with .NET Core on macOS</span></span>
+# <a name="getting-started-with-net-core-on-macos"></a><span data-ttu-id="61260-103">macOS での .NET Core の概要</span><span class="sxs-lookup"><span data-stu-id="61260-103">Getting started with .NET Core on macOS</span></span>
 
-<span data-ttu-id="8f95c-105">このドキュメントでは、macOS 用の .NET Core ソリューションを作成する手順とワークフローを説明します。</span><span class="sxs-lookup"><span data-stu-id="8f95c-105">This document provides the steps and workflow to create a .NET Core solution for macOS.</span></span> <span data-ttu-id="8f95c-106">プロジェクトと単体テストを作成し、デバッグ ツールを使用して、[NuGet](https://www.nuget.org/) からサードパーティ製ライブラリを組み込む方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="8f95c-106">Learn how to create projects, unit tests, use the debugging tools, and incorporate third-party libraries via [NuGet](https://www.nuget.org/).</span></span>
+<span data-ttu-id="61260-104">このドキュメントでは、macOS 用の .NET Core ソリューションを作成する手順とワークフローを説明します。</span><span class="sxs-lookup"><span data-stu-id="61260-104">This document provides the steps and workflow to create a .NET Core solution for macOS.</span></span> <span data-ttu-id="61260-105">プロジェクトと単体テストを作成し、デバッグ ツールを使用して、[NuGet](https://www.nuget.org/) からサードパーティ製ライブラリを組み込む方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="61260-105">Learn how to create projects, unit tests, use the debugging tools, and incorporate third-party libraries via [NuGet](https://www.nuget.org/).</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="8f95c-107">この記事では、macOS で [Visual Studio Code](http://code.visualstudio.com) を使用します。</span><span class="sxs-lookup"><span data-stu-id="8f95c-107">This article uses [Visual Studio Code](http://code.visualstudio.com) on macOS.</span></span>
+> <span data-ttu-id="61260-106">この記事では、macOS で [Visual Studio Code](http://code.visualstudio.com) を使用します。</span><span class="sxs-lookup"><span data-stu-id="61260-106">This article uses [Visual Studio Code](http://code.visualstudio.com) on macOS.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="8f95c-108">必須コンポーネント</span><span class="sxs-lookup"><span data-stu-id="8f95c-108">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="61260-107">必須コンポーネント</span><span class="sxs-lookup"><span data-stu-id="61260-107">Prerequisites</span></span>
 
-<span data-ttu-id="8f95c-109">[.NET Core SDK](https://www.microsoft.com/net/core) のインストール。</span><span class="sxs-lookup"><span data-stu-id="8f95c-109">Install the [.NET Core SDK](https://www.microsoft.com/net/core).</span></span> <span data-ttu-id="8f95c-110">.NET Core SDK には、.NET Core のフレームワークとランタイムの最新リリースが含まれています。</span><span class="sxs-lookup"><span data-stu-id="8f95c-110">The .NET Core SDK includes the latest release of the .NET Core framework and runtime.</span></span>
+<span data-ttu-id="61260-108">[.NET Core SDK](https://www.microsoft.com/net/core) のインストール。</span><span class="sxs-lookup"><span data-stu-id="61260-108">Install the [.NET Core SDK](https://www.microsoft.com/net/core).</span></span> <span data-ttu-id="61260-109">.NET Core SDK には、.NET Core のフレームワークとランタイムの最新リリースが含まれています。</span><span class="sxs-lookup"><span data-stu-id="61260-109">The .NET Core SDK includes the latest release of the .NET Core framework and runtime.</span></span>
 
-<span data-ttu-id="8f95c-111">[Visual Studio Code](http://code.visualstudio.com) のインストール。</span><span class="sxs-lookup"><span data-stu-id="8f95c-111">Install [Visual Studio Code](http://code.visualstudio.com).</span></span> <span data-ttu-id="8f95c-112">この記事の中では、.NET Core の開発エクスペリエンスが向上する Visual Studio Code 拡張機能もインストールします。</span><span class="sxs-lookup"><span data-stu-id="8f95c-112">During the course of this article, you also install Visual Studio Code extensions that improve the .NET Core development experience.</span></span>
+<span data-ttu-id="61260-110">[Visual Studio Code](http://code.visualstudio.com) のインストール。</span><span class="sxs-lookup"><span data-stu-id="61260-110">Install [Visual Studio Code](http://code.visualstudio.com).</span></span> <span data-ttu-id="61260-111">この記事の中では、.NET Core の開発エクスペリエンスが向上する Visual Studio Code 拡張機能もインストールします。</span><span class="sxs-lookup"><span data-stu-id="61260-111">During the course of this article, you also install Visual Studio Code extensions that improve the .NET Core development experience.</span></span>
 
-<span data-ttu-id="8f95c-113">Visual Studio Code C# 拡張機能をインストールするには、Visual Studio Code を開き、<kbd>F1</kbd> を押して Visual Studio Code パレットを開きます。</span><span class="sxs-lookup"><span data-stu-id="8f95c-113">Install the Visual Studio Code C# extension by opening Visual Studio Code and pressing <kbd>F1</kbd> to open the Visual Studio Code palette.</span></span> <span data-ttu-id="8f95c-114">「**ext install**」と入力して、拡張機能の一覧を表示します。</span><span class="sxs-lookup"><span data-stu-id="8f95c-114">Type **ext install** to see the list of extensions.</span></span> <span data-ttu-id="8f95c-115">C# 拡張機能を選択します。</span><span class="sxs-lookup"><span data-stu-id="8f95c-115">Select the C# extension.</span></span> <span data-ttu-id="8f95c-116">Visual Studio Code を再起動して、拡張機能をアクティブにします。</span><span class="sxs-lookup"><span data-stu-id="8f95c-116">Restart Visual Studio Code to activate the extension.</span></span> <span data-ttu-id="8f95c-117">詳細については、[Visual Studio Code C# 拡張機能のドキュメント](https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="8f95c-117">For more information, see the [Visual Studio Code C# Extension documentation](https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger.md).</span></span>
+<span data-ttu-id="61260-112">Visual Studio Code C# 拡張機能をインストールするには、Visual Studio Code を開き、<kbd>F1</kbd> を押して Visual Studio Code パレットを開きます。</span><span class="sxs-lookup"><span data-stu-id="61260-112">Install the Visual Studio Code C# extension by opening Visual Studio Code and pressing <kbd>F1</kbd> to open the Visual Studio Code palette.</span></span> <span data-ttu-id="61260-113">「**ext install**」と入力して、拡張機能の一覧を表示します。</span><span class="sxs-lookup"><span data-stu-id="61260-113">Type **ext install** to see the list of extensions.</span></span> <span data-ttu-id="61260-114">C# 拡張機能を選択します。</span><span class="sxs-lookup"><span data-stu-id="61260-114">Select the C# extension.</span></span> <span data-ttu-id="61260-115">Visual Studio Code を再起動して、拡張機能をアクティブにします。</span><span class="sxs-lookup"><span data-stu-id="61260-115">Restart Visual Studio Code to activate the extension.</span></span> <span data-ttu-id="61260-116">詳細については、[Visual Studio Code C# 拡張機能のドキュメント](https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="61260-116">For more information, see the [Visual Studio Code C# Extension documentation](https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger.md).</span></span>
 
-## <a name="getting-started"></a><span data-ttu-id="8f95c-118">作業の開始</span><span class="sxs-lookup"><span data-stu-id="8f95c-118">Getting started</span></span>
+## <a name="getting-started"></a><span data-ttu-id="61260-117">作業の開始</span><span class="sxs-lookup"><span data-stu-id="61260-117">Getting started</span></span>
 
-<span data-ttu-id="8f95c-119">このチュートリアルでは 3 つのプロジェクト (ライブラリ プロジェクト、そのライブラリ プロジェクトのテスト、およびライブラリを使用するコンソール アプリケーション) を作成します。</span><span class="sxs-lookup"><span data-stu-id="8f95c-119">In this tutorial, you create three projects: a library project, tests for that library project, and a console application that makes use of the library.</span></span> <span data-ttu-id="8f95c-120">GitHub の dotnet/samples レポジトリで、このトピックの[ソースを表示またはダウンロード](https://github.com/dotnet/samples/tree/master/core/getting-started/golden)することができます。</span><span class="sxs-lookup"><span data-stu-id="8f95c-120">You can [view or download the source](https://github.com/dotnet/samples/tree/master/core/getting-started/golden) for this topic at the dotnet/samples repository on GitHub.</span></span> <span data-ttu-id="8f95c-121">ダウンロード方法については、「[サンプルおよびチュートリアル](../../samples-and-tutorials/index.md#viewing-and-downloading-samples)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="8f95c-121">For download instructions, see [Samples and Tutorials](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).</span></span>
+<span data-ttu-id="61260-118">このチュートリアルでは 3 つのプロジェクト (ライブラリ プロジェクト、そのライブラリ プロジェクトのテスト、およびライブラリを使用するコンソール アプリケーション) を作成します。</span><span class="sxs-lookup"><span data-stu-id="61260-118">In this tutorial, you create three projects: a library project, tests for that library project, and a console application that makes use of the library.</span></span> <span data-ttu-id="61260-119">GitHub の dotnet/samples レポジトリで、このトピックの[ソースを表示またはダウンロード](https://github.com/dotnet/samples/tree/master/core/getting-started/golden)することができます。</span><span class="sxs-lookup"><span data-stu-id="61260-119">You can [view or download the source](https://github.com/dotnet/samples/tree/master/core/getting-started/golden) for this topic at the dotnet/samples repository on GitHub.</span></span> <span data-ttu-id="61260-120">ダウンロード方法については、「[サンプルおよびチュートリアル](../../samples-and-tutorials/index.md#viewing-and-downloading-samples)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="61260-120">For download instructions, see [Samples and Tutorials](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).</span></span>
 
-<span data-ttu-id="8f95c-122">Visual Studio Code を開始します。</span><span class="sxs-lookup"><span data-stu-id="8f95c-122">Start Visual Studio Code.</span></span> <span data-ttu-id="8f95c-123"><kbd>Ctrl</kbd>+<kbd>\`</kbd> (バッククォートまたはアクサン グラーブ) キーを押すか、メニューから **[表示]、[統合ターミナル]** の順に選択し、Visual Studio Code で埋め込みターミナルを開きます。</span><span class="sxs-lookup"><span data-stu-id="8f95c-123">Press <kbd>Ctrl</kbd>+<kbd>\`</kbd> (the backquote or backtick character) or select **View > Integrated Terminal** from the menu to open an embedded terminal in Visual Studio Code.</span></span> <span data-ttu-id="8f95c-124">Visual Studio Code の外部で作業を行う場合は、エクスプローラーの **[コマンド プロンプトで開く]** コマンド (Ma または Linux の場合は **[ターミナルで開く]**) を使用して外部シェルを開くこともできます。</span><span class="sxs-lookup"><span data-stu-id="8f95c-124">You can still open an external shell with the Explorer **Open in Command Prompt** command (**Open in Terminal** on Mac or Linux) if you prefer to work outside of Visual Studio Code.</span></span>
+<span data-ttu-id="61260-121">Visual Studio Code を開始します。</span><span class="sxs-lookup"><span data-stu-id="61260-121">Start Visual Studio Code.</span></span> <span data-ttu-id="61260-122"><kbd>Ctrl</kbd>+<kbd>\`</kbd> (バッククォートまたはアクサン グラーブ) キーを押すか、メニューから **[表示]、[統合ターミナル]** の順に選択し、Visual Studio Code で埋め込みターミナルを開きます。</span><span class="sxs-lookup"><span data-stu-id="61260-122">Press <kbd>Ctrl</kbd>+<kbd>\`</kbd> (the backquote or backtick character) or select **View > Integrated Terminal** from the menu to open an embedded terminal in Visual Studio Code.</span></span> <span data-ttu-id="61260-123">Visual Studio Code の外部で作業を行う場合は、エクスプローラーの **[コマンド プロンプトで開く]** コマンド (Ma または Linux の場合は **[ターミナルで開く]**) を使用して外部シェルを開くこともできます。</span><span class="sxs-lookup"><span data-stu-id="61260-123">You can still open an external shell with the Explorer **Open in Command Prompt** command (**Open in Terminal** on Mac or Linux) if you prefer to work outside of Visual Studio Code.</span></span>
 
-<span data-ttu-id="8f95c-125">1 つ以上の .NET Core プロジェクトのコンテナーとして機能する、ソリューション ファイルの作成を開始します。</span><span class="sxs-lookup"><span data-stu-id="8f95c-125">Begin by creating a solution file, which serves as a container for one or more .NET Core projects.</span></span> <span data-ttu-id="8f95c-126">ターミナルで、*golden* フォルダーを作成し、そのフォルダーを開きます。</span><span class="sxs-lookup"><span data-stu-id="8f95c-126">In the terminal, create a *golden* folder and open the folder.</span></span> <span data-ttu-id="8f95c-127">このフォルダーはソリューションのルートです。</span><span class="sxs-lookup"><span data-stu-id="8f95c-127">This folder is the root of your solution.</span></span> <span data-ttu-id="8f95c-128">以下のように、[`dotnet new`](../tools/dotnet-new.md) コマンドを実行して新しいソリューション *golden.sln* を作成します。</span><span class="sxs-lookup"><span data-stu-id="8f95c-128">Run the [`dotnet new`](../tools/dotnet-new.md) command to create a new solution, *golden.sln*:</span></span>
+<span data-ttu-id="61260-124">1 つ以上の .NET Core プロジェクトのコンテナーとして機能する、ソリューション ファイルの作成を開始します。</span><span class="sxs-lookup"><span data-stu-id="61260-124">Begin by creating a solution file, which serves as a container for one or more .NET Core projects.</span></span> <span data-ttu-id="61260-125">ターミナルで、*golden* フォルダーを作成し、そのフォルダーを開きます。</span><span class="sxs-lookup"><span data-stu-id="61260-125">In the terminal, create a *golden* folder and open the folder.</span></span> <span data-ttu-id="61260-126">このフォルダーはソリューションのルートです。</span><span class="sxs-lookup"><span data-stu-id="61260-126">This folder is the root of your solution.</span></span> <span data-ttu-id="61260-127">以下のように、[`dotnet new`](../tools/dotnet-new.md) コマンドを実行して新しいソリューション *golden.sln* を作成します。</span><span class="sxs-lookup"><span data-stu-id="61260-127">Run the [`dotnet new`](../tools/dotnet-new.md) command to create a new solution, *golden.sln*:</span></span>
 
 ```console
 dotnet new sln
 ```
 
-<span data-ttu-id="8f95c-129">*golden* フォルダーから以下のコマンドを実行して、ライブラリ プロジェクトを作成します。*library* フォルダーには、*library.csproj* と *Class1.cs* という 2 つのファイルが生成されます。</span><span class="sxs-lookup"><span data-stu-id="8f95c-129">From the *golden* folder, execute the following command to create a library project, which produces two files,*library.csproj* and *Class1.cs*, in the *library* folder:</span></span>
+<span data-ttu-id="61260-128">*golden* フォルダーから以下のコマンドを実行して、ライブラリ プロジェクトを作成します。*library* フォルダーには、*library.csproj* と *Class1.cs* という 2 つのファイルが生成されます。</span><span class="sxs-lookup"><span data-stu-id="61260-128">From the *golden* folder, execute the following command to create a library project, which produces two files,*library.csproj* and *Class1.cs*, in the *library* folder:</span></span>
 
 ```console
 dotnet new classlib -o library
 ```
 
-<span data-ttu-id="8f95c-130">以下のように、[`dotnet sln`](../tools/dotnet-sln.md) コマンドを実行し、新しく作成された *library.csproj* プロジェクトをソリューションに追加します。</span><span class="sxs-lookup"><span data-stu-id="8f95c-130">Execute the [`dotnet sln`](../tools/dotnet-sln.md) command to add the newly created *library.csproj* project to the solution:</span></span>
+<span data-ttu-id="61260-129">以下のように、[`dotnet sln`](../tools/dotnet-sln.md) コマンドを実行し、新しく作成された *library.csproj* プロジェクトをソリューションに追加します。</span><span class="sxs-lookup"><span data-stu-id="61260-129">Execute the [`dotnet sln`](../tools/dotnet-sln.md) command to add the newly created *library.csproj* project to the solution:</span></span>
 
 ```console
 dotnet sln add library/library.csproj
 ```
 
-<span data-ttu-id="8f95c-131">*library.csproj* ファイルには、次の情報が含まれています。</span><span class="sxs-lookup"><span data-stu-id="8f95c-131">The *library.csproj* file contains the following information:</span></span>
+<span data-ttu-id="61260-130">*library.csproj* ファイルには、次の情報が含まれています。</span><span class="sxs-lookup"><span data-stu-id="61260-130">The *library.csproj* file contains the following information:</span></span>
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -68,13 +66,13 @@ dotnet sln add library/library.csproj
 </Project>
 ```
 
-<span data-ttu-id="8f95c-132">このライブラリ メソッドでは、JSON 形式でオブジェクトのシリアル化と逆シリアル化を行います。</span><span class="sxs-lookup"><span data-stu-id="8f95c-132">Our library methods serialize and deserialize objects in JSON format.</span></span> <span data-ttu-id="8f95c-133">JSON のシリアル化および逆シリアル化をサポートするには、`Newtonsoft.Json` NuGet パッケージへの参照を追加します。</span><span class="sxs-lookup"><span data-stu-id="8f95c-133">To support JSON serialization and deserialization, add a reference to the `Newtonsoft.Json` NuGet package.</span></span> <span data-ttu-id="8f95c-134">`dotnet add` コマンドにより、新しい項目がプロジェクトに追加されます。</span><span class="sxs-lookup"><span data-stu-id="8f95c-134">The `dotnet add` command adds new items to a project.</span></span> <span data-ttu-id="8f95c-135">NuGet パッケージへの参照を追加するには、[`dotnet add package`](../tools/dotnet-add-package.md) コマンドを使用して、パッケージの名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="8f95c-135">To add a reference to a NuGet package, use the [`dotnet add package`](../tools/dotnet-add-package.md) command and specify the name of the package:</span></span>
+<span data-ttu-id="61260-131">このライブラリ メソッドでは、JSON 形式でオブジェクトのシリアル化と逆シリアル化を行います。</span><span class="sxs-lookup"><span data-stu-id="61260-131">Our library methods serialize and deserialize objects in JSON format.</span></span> <span data-ttu-id="61260-132">JSON のシリアル化および逆シリアル化をサポートするには、`Newtonsoft.Json` NuGet パッケージへの参照を追加します。</span><span class="sxs-lookup"><span data-stu-id="61260-132">To support JSON serialization and deserialization, add a reference to the `Newtonsoft.Json` NuGet package.</span></span> <span data-ttu-id="61260-133">`dotnet add` コマンドにより、新しい項目がプロジェクトに追加されます。</span><span class="sxs-lookup"><span data-stu-id="61260-133">The `dotnet add` command adds new items to a project.</span></span> <span data-ttu-id="61260-134">NuGet パッケージへの参照を追加するには、[`dotnet add package`](../tools/dotnet-add-package.md) コマンドを使用して、パッケージの名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="61260-134">To add a reference to a NuGet package, use the [`dotnet add package`](../tools/dotnet-add-package.md) command and specify the name of the package:</span></span>
 
 ```console
 dotnet add library package Newtonsoft.Json
 ```
 
-<span data-ttu-id="8f95c-136">これにより、`Newtonsoft.Json` とその依存関係がライブラリ プロジェクトに追加されます。</span><span class="sxs-lookup"><span data-stu-id="8f95c-136">This adds `Newtonsoft.Json` and its dependencies to the library project.</span></span> <span data-ttu-id="8f95c-137">あるいは、*library.csproj* ファイルを手動で編集し、次のノードを追加します。</span><span class="sxs-lookup"><span data-stu-id="8f95c-137">Alternatively, manually edit the *library.csproj* file and add the following node:</span></span>
+<span data-ttu-id="61260-135">これにより、`Newtonsoft.Json` とその依存関係がライブラリ プロジェクトに追加されます。</span><span class="sxs-lookup"><span data-stu-id="61260-135">This adds `Newtonsoft.Json` and its dependencies to the library project.</span></span> <span data-ttu-id="61260-136">あるいは、*library.csproj* ファイルを手動で編集し、次のノードを追加します。</span><span class="sxs-lookup"><span data-stu-id="61260-136">Alternatively, manually edit the *library.csproj* file and add the following node:</span></span>
 
 ```xml
 <ItemGroup>
@@ -82,13 +80,13 @@ dotnet add library package Newtonsoft.Json
 </ItemGroup>
 ```
 
-<span data-ttu-id="8f95c-138">[`dotnet restore`](../tools/dotnet-restore.md) を実行します ([注記参照](#dotnet-restore-note))。これにより、依存関係が復元され、*project.assets.json* ファイルなどの 3 つのファイルを含む *obj* フォルダーが *library* 内に作成されます。</span><span class="sxs-lookup"><span data-stu-id="8f95c-138">Execute [`dotnet restore`](../tools/dotnet-restore.md), ([see note](#dotnet-restore-note)) which restores dependencies and creates an *obj* folder inside *library* with three files in it, including a *project.assets.json* file:</span></span>
+<span data-ttu-id="61260-137">[`dotnet restore`](../tools/dotnet-restore.md) を実行します ([注記参照](#dotnet-restore-note))。これにより、依存関係が復元され、*project.assets.json* ファイルなどの 3 つのファイルを含む *obj* フォルダーが *library* 内に作成されます。</span><span class="sxs-lookup"><span data-stu-id="61260-137">Execute [`dotnet restore`](../tools/dotnet-restore.md), ([see note](#dotnet-restore-note)) which restores dependencies and creates an *obj* folder inside *library* with three files in it, including a *project.assets.json* file:</span></span>
 
 ```console
 dotnet restore
 ```
 
-<span data-ttu-id="8f95c-139">*library* フォルダーで、ファイル *Class1.cs* の名前を *Thing.cs* に変更します。</span><span class="sxs-lookup"><span data-stu-id="8f95c-139">In the *library* folder, rename the file *Class1.cs* to *Thing.cs*.</span></span> <span data-ttu-id="8f95c-140">このコードを次のコードを使って置き換えます。</span><span class="sxs-lookup"><span data-stu-id="8f95c-140">Replace the code with the following:</span></span>
+<span data-ttu-id="61260-138">*library* フォルダーで、ファイル *Class1.cs* の名前を *Thing.cs* に変更します。</span><span class="sxs-lookup"><span data-stu-id="61260-138">In the *library* folder, rename the file *Class1.cs* to *Thing.cs*.</span></span> <span data-ttu-id="61260-139">このコードを次のコードを使って置き換えます。</span><span class="sxs-lookup"><span data-stu-id="61260-139">Replace the code with the following:</span></span>
 
 ```csharp
 using static Newtonsoft.Json.JsonConvert;
@@ -103,35 +101,35 @@ namespace Library
 }
 ```
 
-<span data-ttu-id="8f95c-141">`Thing` クラスには、`Get` という 1 つのパブリック メソッドが含まれます。このメソッドは 2 つの数値の合計を返しますが、そのためには合計値を文字列に変換した後、それを整数に逆シリアル化します。</span><span class="sxs-lookup"><span data-stu-id="8f95c-141">The `Thing` class contains one public method, `Get`, which returns the sum of two numbers but does so by converting the sum into a string and then deserializing it into an integer.</span></span> <span data-ttu-id="8f95c-142">このコードでは、[`using static` ディレクティブ](../../csharp/language-reference/keywords/using-static.md)、[式本体のメンバー](../../csharp/whats-new/csharp-7.md#more-expression-bodied-members)、および[文字列補間](../../csharp/language-reference/tokens/interpolated.md)など、C# の最新の機能をいくつか利用しています。</span><span class="sxs-lookup"><span data-stu-id="8f95c-142">This makes use of a number of modern C# features, such as [`using static` directives](../../csharp/language-reference/keywords/using-static.md), [expression-bodied members](../../csharp/whats-new/csharp-7.md#more-expression-bodied-members), and [string interpolation](../../csharp/language-reference/tokens/interpolated.md).</span></span>
+<span data-ttu-id="61260-140">`Thing` クラスには、`Get` という 1 つのパブリック メソッドが含まれます。このメソッドは 2 つの数値の合計を返しますが、そのためには合計値を文字列に変換した後、それを整数に逆シリアル化します。</span><span class="sxs-lookup"><span data-stu-id="61260-140">The `Thing` class contains one public method, `Get`, which returns the sum of two numbers but does so by converting the sum into a string and then deserializing it into an integer.</span></span> <span data-ttu-id="61260-141">このコードでは、[`using static` ディレクティブ](../../csharp/language-reference/keywords/using-static.md)、[式本体のメンバー](../../csharp/whats-new/csharp-7.md#more-expression-bodied-members)、および[文字列補間](../../csharp/language-reference/tokens/interpolated.md)など、C# の最新の機能をいくつか利用しています。</span><span class="sxs-lookup"><span data-stu-id="61260-141">This makes use of a number of modern C# features, such as [`using static` directives](../../csharp/language-reference/keywords/using-static.md), [expression-bodied members](../../csharp/whats-new/csharp-7.md#more-expression-bodied-members), and [string interpolation](../../csharp/language-reference/tokens/interpolated.md).</span></span>
 
-<span data-ttu-id="8f95c-143">[`dotnet build`](../tools/dotnet-build.md) コマンドを使用して、ライブラリをビルドします。</span><span class="sxs-lookup"><span data-stu-id="8f95c-143">Build the library with the [`dotnet build`](../tools/dotnet-build.md) command.</span></span> <span data-ttu-id="8f95c-144">これにより、*golden/library/bin/Debug/netstandard1.4* に *library.dll* ファイルが生成されます。</span><span class="sxs-lookup"><span data-stu-id="8f95c-144">This produces a *library.dll* file under *golden/library/bin/Debug/netstandard1.4*:</span></span>
+<span data-ttu-id="61260-142">[`dotnet build`](../tools/dotnet-build.md) コマンドを使用して、ライブラリをビルドします。</span><span class="sxs-lookup"><span data-stu-id="61260-142">Build the library with the [`dotnet build`](../tools/dotnet-build.md) command.</span></span> <span data-ttu-id="61260-143">これにより、*golden/library/bin/Debug/netstandard1.4* に *library.dll* ファイルが生成されます。</span><span class="sxs-lookup"><span data-stu-id="61260-143">This produces a *library.dll* file under *golden/library/bin/Debug/netstandard1.4*:</span></span>
 
 ```console
 dotnet build
 ```
 
-## <a name="create-the-test-project"></a><span data-ttu-id="8f95c-145">テスト プロジェクトの作成</span><span class="sxs-lookup"><span data-stu-id="8f95c-145">Create the test project</span></span>
+## <a name="create-the-test-project"></a><span data-ttu-id="61260-144">テスト プロジェクトの作成</span><span class="sxs-lookup"><span data-stu-id="61260-144">Create the test project</span></span>
 
-<span data-ttu-id="8f95c-146">ライブラリのテスト プロジェクトをビルドします。</span><span class="sxs-lookup"><span data-stu-id="8f95c-146">Build a test project for the library.</span></span> <span data-ttu-id="8f95c-147">*golden* フォルダーから、次のようにして新しいテスト プロジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="8f95c-147">From the *golden* folder, create a new test project:</span></span>
+<span data-ttu-id="61260-145">ライブラリのテスト プロジェクトをビルドします。</span><span class="sxs-lookup"><span data-stu-id="61260-145">Build a test project for the library.</span></span> <span data-ttu-id="61260-146">*golden* フォルダーから、次のようにして新しいテスト プロジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="61260-146">From the *golden* folder, create a new test project:</span></span>
 
 ```console
 dotnet new xunit -o test-library
 ```
 
-<span data-ttu-id="8f95c-148">次のようにしてテスト プロジェクトをソリューションに追加します。</span><span class="sxs-lookup"><span data-stu-id="8f95c-148">Add the test project to the solution:</span></span>
+<span data-ttu-id="61260-147">次のようにしてテスト プロジェクトをソリューションに追加します。</span><span class="sxs-lookup"><span data-stu-id="61260-147">Add the test project to the solution:</span></span>
 
 ```console
 dotnet sln add test-library/test-library.csproj
 ```
 
-<span data-ttu-id="8f95c-149">コンパイラがライブラリ プロジェクトを見つけて使用できるように、前のセクションで作成したライブラリにプロジェクト参照を追加します。</span><span class="sxs-lookup"><span data-stu-id="8f95c-149">Add a project reference the library you created in the previous section so that the compiler can find and use the library project.</span></span> <span data-ttu-id="8f95c-150">次の [`dotnet add reference`](../tools/dotnet-add-reference.md) コマンドを使用します。</span><span class="sxs-lookup"><span data-stu-id="8f95c-150">Use the [`dotnet add reference`](../tools/dotnet-add-reference.md) command:</span></span>
+<span data-ttu-id="61260-148">コンパイラがライブラリ プロジェクトを見つけて使用できるように、前のセクションで作成したライブラリにプロジェクト参照を追加します。</span><span class="sxs-lookup"><span data-stu-id="61260-148">Add a project reference the library you created in the previous section so that the compiler can find and use the library project.</span></span> <span data-ttu-id="61260-149">次の [`dotnet add reference`](../tools/dotnet-add-reference.md) コマンドを使用します。</span><span class="sxs-lookup"><span data-stu-id="61260-149">Use the [`dotnet add reference`](../tools/dotnet-add-reference.md) command:</span></span>
 
 ```console
 dotnet add test-library/test-library.csproj reference library/library.csproj
 ```
 
-<span data-ttu-id="8f95c-151">あるいは、*test-library.csproj* ファイルを手動で編集し、次のノードを追加します。</span><span class="sxs-lookup"><span data-stu-id="8f95c-151">Alternatively, manually edit the *test-library.csproj* file and add the following node:</span></span>
+<span data-ttu-id="61260-150">あるいは、*test-library.csproj* ファイルを手動で編集し、次のノードを追加します。</span><span class="sxs-lookup"><span data-stu-id="61260-150">Alternatively, manually edit the *test-library.csproj* file and add the following node:</span></span>
 
 ```xml
 <ItemGroup>
@@ -139,7 +137,7 @@ dotnet add test-library/test-library.csproj reference library/library.csproj
 </ItemGroup>
 ```
 
-<span data-ttu-id="8f95c-152">これで依存関係が正しく構成されました。次は、ライブラリのテストを作成します。</span><span class="sxs-lookup"><span data-stu-id="8f95c-152">Now that the dependencies have been properly configured, create the tests for your library.</span></span> <span data-ttu-id="8f95c-153">*UnitTest1.cs* を開き、内容を次のコードに置き換えます。</span><span class="sxs-lookup"><span data-stu-id="8f95c-153">Open *UnitTest1.cs* and replace its contents with the following code:</span></span>
+<span data-ttu-id="61260-151">これで依存関係が正しく構成されました。次は、ライブラリのテストを作成します。</span><span class="sxs-lookup"><span data-stu-id="61260-151">Now that the dependencies have been properly configured, create the tests for your library.</span></span> <span data-ttu-id="61260-152">*UnitTest1.cs* を開き、内容を次のコードに置き換えます。</span><span class="sxs-lookup"><span data-stu-id="61260-152">Open *UnitTest1.cs* and replace its contents with the following code:</span></span>
 
 ```csharp
 using Library;
@@ -157,73 +155,73 @@ namespace TestApp
 }
 ```
 
-<span data-ttu-id="8f95c-154">最初に失敗する単体テスト (`Assert.NotEqual`) を作成する場合、値 42 は 19+23 (つまり、42) と等しくないことをアサートすることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="8f95c-154">Note that you assert the value 42 is not equal to 19+23 (or 42) when you first create the unit test (`Assert.NotEqual`), which will fail.</span></span> <span data-ttu-id="8f95c-155">単体テストのビルドにおける重要な手順は、最初に一度失敗するテストを作成して、そのロジックを確認することです。</span><span class="sxs-lookup"><span data-stu-id="8f95c-155">An important step in building unit tests is to create the test to fail once first to confirm its logic.</span></span>
+<span data-ttu-id="61260-153">最初に失敗する単体テスト (`Assert.NotEqual`) を作成する場合、値 42 は 19+23 (つまり、42) と等しくないことをアサートすることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="61260-153">Note that you assert the value 42 is not equal to 19+23 (or 42) when you first create the unit test (`Assert.NotEqual`), which will fail.</span></span> <span data-ttu-id="61260-154">単体テストのビルドにおける重要な手順は、最初に一度失敗するテストを作成して、そのロジックを確認することです。</span><span class="sxs-lookup"><span data-stu-id="61260-154">An important step in building unit tests is to create the test to fail once first to confirm its logic.</span></span>
 
-<span data-ttu-id="8f95c-156">*golden* フォルダーから、次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="8f95c-156">From the *golden* folder, execute the following commands:</span></span>
+<span data-ttu-id="61260-155">*golden* フォルダーから、次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="61260-155">From the *golden* folder, execute the following commands:</span></span>
 
 ```console
 dotnet restore 
 dotnet test test-library/test-library.csproj
 ```
 
-<span data-ttu-id="8f95c-157">これらのコマンドは、再帰的にすべてのプロジェクトを検出し、依存関係を復元してビルドし、xUnit テスト ランナーをアクティブにしてテストを実行します。</span><span class="sxs-lookup"><span data-stu-id="8f95c-157">These commands will recursively find all projects to restore dependencies, build them, and activate the xUnit test runner to run the tests.</span></span> <span data-ttu-id="8f95c-158">予期したとおり、1 つのテストに失敗します。</span><span class="sxs-lookup"><span data-stu-id="8f95c-158">The single test fails, as you expect.</span></span>
+<span data-ttu-id="61260-156">これらのコマンドは、再帰的にすべてのプロジェクトを検出し、依存関係を復元してビルドし、xUnit テスト ランナーをアクティブにしてテストを実行します。</span><span class="sxs-lookup"><span data-stu-id="61260-156">These commands will recursively find all projects to restore dependencies, build them, and activate the xUnit test runner to run the tests.</span></span> <span data-ttu-id="61260-157">予期したとおり、1 つのテストに失敗します。</span><span class="sxs-lookup"><span data-stu-id="61260-157">The single test fails, as you expect.</span></span>
 
-<span data-ttu-id="8f95c-159">*UnitTest1.cs* ファイルを編集し、アサーションを `Assert.NotEqual` から `Assert.Equal` に変更します。</span><span class="sxs-lookup"><span data-stu-id="8f95c-159">Edit the *UnitTest1.cs* file and change the assertion from `Assert.NotEqual` to `Assert.Equal`.</span></span> <span data-ttu-id="8f95c-160">*golden* フォルダーから次のコマンドを実行し、テストを再実行します。今回は成功します。</span><span class="sxs-lookup"><span data-stu-id="8f95c-160">Execute the following command from the *golden* folder to re-run the test, which passes this time:</span></span>
+<span data-ttu-id="61260-158">*UnitTest1.cs* ファイルを編集し、アサーションを `Assert.NotEqual` から `Assert.Equal` に変更します。</span><span class="sxs-lookup"><span data-stu-id="61260-158">Edit the *UnitTest1.cs* file and change the assertion from `Assert.NotEqual` to `Assert.Equal`.</span></span> <span data-ttu-id="61260-159">*golden* フォルダーから次のコマンドを実行し、テストを再実行します。今回は成功します。</span><span class="sxs-lookup"><span data-stu-id="61260-159">Execute the following command from the *golden* folder to re-run the test, which passes this time:</span></span>
 
 ```console
 dotnet test test-library/test-library.csproj
 ```
 
-## <a name="create-the-console-app"></a><span data-ttu-id="8f95c-161">コンソール アプリの作成</span><span class="sxs-lookup"><span data-stu-id="8f95c-161">Create the console app</span></span>
+## <a name="create-the-console-app"></a><span data-ttu-id="61260-160">コンソール アプリの作成</span><span class="sxs-lookup"><span data-stu-id="61260-160">Create the console app</span></span>
 
-<span data-ttu-id="8f95c-162">次の手順で作成するコンソール アプリは、前の手順で作成したライブラリ プロジェクトに対する依存関係を認識し、実行時にそのライブラリ メソッドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="8f95c-162">The console app you create over the following steps takes a dependency on the library project you created earlier and calls its library method when it runs.</span></span> <span data-ttu-id="8f95c-163">この開発パターンを使用して、複数のプロジェクトで再利用可能なライブラリの作成方法を確認します。</span><span class="sxs-lookup"><span data-stu-id="8f95c-163">Using this pattern of development, you see how to create reusable libraries for multiple projects.</span></span>
+<span data-ttu-id="61260-161">次の手順で作成するコンソール アプリは、前の手順で作成したライブラリ プロジェクトに対する依存関係を認識し、実行時にそのライブラリ メソッドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="61260-161">The console app you create over the following steps takes a dependency on the library project you created earlier and calls its library method when it runs.</span></span> <span data-ttu-id="61260-162">この開発パターンを使用して、複数のプロジェクトで再利用可能なライブラリの作成方法を確認します。</span><span class="sxs-lookup"><span data-stu-id="61260-162">Using this pattern of development, you see how to create reusable libraries for multiple projects.</span></span>
 
-<span data-ttu-id="8f95c-164">次のように、*golden* フォルダーから新しいコンソール アプリケーションを作成します。</span><span class="sxs-lookup"><span data-stu-id="8f95c-164">Create a new console application from the *golden* folder:</span></span>
+<span data-ttu-id="61260-163">次のように、*golden* フォルダーから新しいコンソール アプリケーションを作成します。</span><span class="sxs-lookup"><span data-stu-id="61260-163">Create a new console application from the *golden* folder:</span></span>
 
 ```console
 dotnet new console -o app
 ```
 
-<span data-ttu-id="8f95c-165">次のように、コンソール アプリ プロジェクトをソリューションに追加します。</span><span class="sxs-lookup"><span data-stu-id="8f95c-165">Add the console app project to the solution:</span></span>
+<span data-ttu-id="61260-164">次のように、コンソール アプリ プロジェクトをソリューションに追加します。</span><span class="sxs-lookup"><span data-stu-id="61260-164">Add the console app project to the solution:</span></span>
 
 ```console
 dotnet sln add app/app.csproj
 ```
 
-<span data-ttu-id="8f95c-166">次のように `dotnet add reference` コマンドを実行して、ライブラリに対する依存関係を作成します。</span><span class="sxs-lookup"><span data-stu-id="8f95c-166">Create the dependency on the library by running the `dotnet add reference` command:</span></span>
+<span data-ttu-id="61260-165">次のように `dotnet add reference` コマンドを実行して、ライブラリに対する依存関係を作成します。</span><span class="sxs-lookup"><span data-stu-id="61260-165">Create the dependency on the library by running the `dotnet add reference` command:</span></span>
 
 ```console
 dotnet add app/app.csproj reference library/library.csproj
 ```
 
-<span data-ttu-id="8f95c-167">`dotnet restore` を実行し、ソリューションの 3 つのプロジェクトの依存関係を復元します ([注記参照](#dotnet-restore-note))。</span><span class="sxs-lookup"><span data-stu-id="8f95c-167">Run `dotnet restore` ([see note](#dotnet-restore-note)) to restore the dependencies of the three projects in the solution.</span></span> <span data-ttu-id="8f95c-168">*Program.cs* を開き、`Main` メソッドの内容を次の行に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="8f95c-168">Open *Program.cs* and replace the contents of the `Main` method with the following line:</span></span>
+<span data-ttu-id="61260-166">`dotnet restore` を実行し、ソリューションの 3 つのプロジェクトの依存関係を復元します ([注記参照](#dotnet-restore-note))。</span><span class="sxs-lookup"><span data-stu-id="61260-166">Run `dotnet restore` ([see note](#dotnet-restore-note)) to restore the dependencies of the three projects in the solution.</span></span> <span data-ttu-id="61260-167">*Program.cs* を開き、`Main` メソッドの内容を次の行に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="61260-167">Open *Program.cs* and replace the contents of the `Main` method with the following line:</span></span>
 
 ```csharp
 WriteLine($"The answer is {new Thing().Get(19, 23)}");
 ```
 
-<span data-ttu-id="8f95c-169">次のように、2 つの `using` ディレクティブを *Program.cs* ファイルの先頭に追加します。</span><span class="sxs-lookup"><span data-stu-id="8f95c-169">Add two `using` directives to the top of the *Program.cs* file:</span></span>
+<span data-ttu-id="61260-168">次のように、2 つの `using` ディレクティブを *Program.cs* ファイルの先頭に追加します。</span><span class="sxs-lookup"><span data-stu-id="61260-168">Add two `using` directives to the top of the *Program.cs* file:</span></span>
 
 ```csharp
 using static System.Console;
 using Library;
 ```
 
-<span data-ttu-id="8f95c-170">次の `dotnet run` コマンドを実行して、実行可能ファイルを実行します。`dotnet run` の `-p` オプションは、メイン アプリケーションのプロジェクトを指定します。</span><span class="sxs-lookup"><span data-stu-id="8f95c-170">Execute the following `dotnet run` command to run the executable, where the `-p` option to `dotnet run` specifies the project for the main application.</span></span> <span data-ttu-id="8f95c-171">アプリは "The answer is 42" という文字列を生成します。</span><span class="sxs-lookup"><span data-stu-id="8f95c-171">The app produces the string "The answer is 42".</span></span>
+<span data-ttu-id="61260-169">次の `dotnet run` コマンドを実行して、実行可能ファイルを実行します。`dotnet run` の `-p` オプションは、メイン アプリケーションのプロジェクトを指定します。</span><span class="sxs-lookup"><span data-stu-id="61260-169">Execute the following `dotnet run` command to run the executable, where the `-p` option to `dotnet run` specifies the project for the main application.</span></span> <span data-ttu-id="61260-170">アプリは "The answer is 42" という文字列を生成します。</span><span class="sxs-lookup"><span data-stu-id="61260-170">The app produces the string "The answer is 42".</span></span>
 
 ```console
 dotnet run -p app/app.csproj
 ```
 
-## <a name="debug-the-application"></a><span data-ttu-id="8f95c-172">アプリケーションのデバッグ</span><span class="sxs-lookup"><span data-stu-id="8f95c-172">Debug the application</span></span>
+## <a name="debug-the-application"></a><span data-ttu-id="61260-171">アプリケーションのデバッグ</span><span class="sxs-lookup"><span data-stu-id="61260-171">Debug the application</span></span>
 
-<span data-ttu-id="8f95c-173">`Main` メソッドの `WriteLine` ステートメントにブレークポイントを設定します。</span><span class="sxs-lookup"><span data-stu-id="8f95c-173">Set a breakpoint at the `WriteLine` statement in the `Main` method.</span></span> <span data-ttu-id="8f95c-174">そのためには、カーソルが `WriteLine` 行にある状態で <kbd>F9</kbd> キーを押すか、ブレークポイントを設定する行の左余白でマウスをクリックします。</span><span class="sxs-lookup"><span data-stu-id="8f95c-174">Do this by either pressing the <kbd>F9</kbd> key when the cursor is over the `WriteLine` line or by clicking the mouse in the left margin on the line where you want to set the breakpoint.</span></span> <span data-ttu-id="8f95c-175">コード行の横の余白に赤い丸が表示されます。</span><span class="sxs-lookup"><span data-stu-id="8f95c-175">A red circle will appear in the margin next to the line of code.</span></span> <span data-ttu-id="8f95c-176">ブレークポイントに達した場合、ブレークポイント行が実行される*前*にコードの実行が停止します。</span><span class="sxs-lookup"><span data-stu-id="8f95c-176">When the breakpoint is reached, code execution will stop *before* the breakpoint line is executed.</span></span>
+<span data-ttu-id="61260-172">`Main` メソッドの `WriteLine` ステートメントにブレークポイントを設定します。</span><span class="sxs-lookup"><span data-stu-id="61260-172">Set a breakpoint at the `WriteLine` statement in the `Main` method.</span></span> <span data-ttu-id="61260-173">そのためには、カーソルが `WriteLine` 行にある状態で <kbd>F9</kbd> キーを押すか、ブレークポイントを設定する行の左余白でマウスをクリックします。</span><span class="sxs-lookup"><span data-stu-id="61260-173">Do this by either pressing the <kbd>F9</kbd> key when the cursor is over the `WriteLine` line or by clicking the mouse in the left margin on the line where you want to set the breakpoint.</span></span> <span data-ttu-id="61260-174">コード行の横の余白に赤い丸が表示されます。</span><span class="sxs-lookup"><span data-stu-id="61260-174">A red circle will appear in the margin next to the line of code.</span></span> <span data-ttu-id="61260-175">ブレークポイントに達した場合、ブレークポイント行が実行される*前*にコードの実行が停止します。</span><span class="sxs-lookup"><span data-stu-id="61260-175">When the breakpoint is reached, code execution will stop *before* the breakpoint line is executed.</span></span>
 
-<span data-ttu-id="8f95c-177">Visual Studio Code ツール バーでデバッグ アイコンを選択するか、メニュー バーから **[表示]、[デバッグ]** の順に選択するか、あるいはキーボード ショートカットの <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>D</kbd> を使用して、デバッガー タブを開きます。</span><span class="sxs-lookup"><span data-stu-id="8f95c-177">Open the debugger tab by selecting the Debug icon in the Visual Studio Code toolbar, selecting **View > Debug** from the menu bar, or using the keyboard shortcut <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>D</kbd>:</span></span>
+<span data-ttu-id="61260-176">Visual Studio Code ツール バーでデバッグ アイコンを選択するか、メニュー バーから **[表示]、[デバッグ]** の順に選択するか、あるいはキーボード ショートカットの <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>D</kbd> を使用して、デバッガー タブを開きます。</span><span class="sxs-lookup"><span data-stu-id="61260-176">Open the debugger tab by selecting the Debug icon in the Visual Studio Code toolbar, selecting **View > Debug** from the menu bar, or using the keyboard shortcut <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>D</kbd>:</span></span>
 
 ![Visual Studio Code デバッガー](./media/using-on-macos/vscodedebugger.png)
 
-<span data-ttu-id="8f95c-179">[再生] ボタンを押して、デバッガーでアプリケーションを開始します。</span><span class="sxs-lookup"><span data-stu-id="8f95c-179">Press the Play button to start the application under the debugger.</span></span> <span data-ttu-id="8f95c-180">アプリは実行を開始し、ブレークポイントに達した時点で停止します。</span><span class="sxs-lookup"><span data-stu-id="8f95c-180">The app begins execution and runs to the breakpoint, where it stops.</span></span> <span data-ttu-id="8f95c-181">`Get` メソッドにステップ インし、正しい引数を渡したことを確認します。</span><span class="sxs-lookup"><span data-stu-id="8f95c-181">Step into the `Get` method and make sure that you have passed in the correct arguments.</span></span> <span data-ttu-id="8f95c-182">答えが 42 であることを確認してください。</span><span class="sxs-lookup"><span data-stu-id="8f95c-182">Confirm that the answer is 42.</span></span>
+<span data-ttu-id="61260-178">[再生] ボタンを押して、デバッガーでアプリケーションを開始します。</span><span class="sxs-lookup"><span data-stu-id="61260-178">Press the Play button to start the application under the debugger.</span></span> <span data-ttu-id="61260-179">アプリは実行を開始し、ブレークポイントに達した時点で停止します。</span><span class="sxs-lookup"><span data-stu-id="61260-179">The app begins execution and runs to the breakpoint, where it stops.</span></span> <span data-ttu-id="61260-180">`Get` メソッドにステップ インし、正しい引数を渡したことを確認します。</span><span class="sxs-lookup"><span data-stu-id="61260-180">Step into the `Get` method and make sure that you have passed in the correct arguments.</span></span> <span data-ttu-id="61260-181">答えが 42 であることを確認してください。</span><span class="sxs-lookup"><span data-stu-id="61260-181">Confirm that the answer is 42.</span></span>
 
 <a name="dotnet-restore-note"></a>
 [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
