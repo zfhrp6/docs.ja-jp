@@ -1,1 +1,0 @@
-<span data-ttu-id="fbfaa-101">詳細情報:</span><span class="sxs-lookup"><span data-stu-id="fbfaa-101">For more information about</span></span>
