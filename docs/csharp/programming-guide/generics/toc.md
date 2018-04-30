@@ -10,6 +10,5 @@
 ## [汎用デリゲート](generic-delegates.md)
 ## [C++ テンプレートと C# ジェネリックの違い](differences-between-cpp-templates-and-csharp-generics.md)
 ## [ランタイムのジェネリック](generics-in-the-run-time.md)
-## [.NET Framework クラス ライブラリのジェネリック](generics-in-the-net-framework-class-library.md)
 ## [ジェネリックとリフレクション](generics-and-reflection.md)
 ## [ジェネリックと属性](generics-and-attributes.md)

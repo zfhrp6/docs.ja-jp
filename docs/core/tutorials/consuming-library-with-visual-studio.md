@@ -1,20 +1,21 @@
 ---
-title: "Visual Studio 2017 の .NET Core を使用したクラス ライブラリの利用"
-description: "Visual Studio 2017 でクラス ライブラリのメンバーを呼び出す方法について説明します。"
+title: Visual Studio 2017 の .NET Core を使用したクラス ライブラリの利用
+description: Visual Studio 2017 でクラス ライブラリのメンバーを呼び出す方法について説明します。
 author: BillWagner
 ms.author: wiwagn
 ms.date: 08/07/2017
-ms.topic: article
-ms.prod: .net-core
+ms.topic: conceptual
+ms.prod: dotnet-core
 dev_langs:
 - csharp
 - vb
-ms.workload: dotnetcore
-ms.openlocfilehash: 1525bd3f9d249fe39fd65b53bc8d1e8eddb09ab9
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: 7364f9a4dadf7c4a28dab0cff2fca80d0f3af62c
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="consuming-a-class-library-with-net-core-in-visual-studio-2017"></a>Visual Studio 2017 の .NET Core を使用したクラス ライブラリの利用
 

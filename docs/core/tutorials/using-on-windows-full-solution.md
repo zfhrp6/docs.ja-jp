@@ -1,20 +1,19 @@
 ---
-title: "Visual Studio 2017 を使用した Windows での完全な .NET Core ソリューションの構築"
-description: "Windows 上の Visual Studio 2017 で完全な .NET Core ソリューションを構築する方法を説明します。"
-keywords: .NET, .NET Core
+title: Visual Studio 2017 を使用した Windows での完全な .NET Core ソリューションの構築
+description: Windows 上の Visual Studio 2017 で完全な .NET Core ソリューションを構築する方法を説明します。
 author: bleroy
 ms.author: mairaw
 ms.date: 11/16/2016
-ms.topic: article
-ms.prod: .net-core
+ms.topic: conceptual
+ms.prod: dotnet-core
 ms.devlang: dotnet
-ms.assetid: ba7e082c-a7c8-431e-a342-f67734b660f6
-ms.workload: dotnetcore
-ms.openlocfilehash: e922a2c91fab5c513f5c560920d37d77da2d6f84
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: 8e37eb578f9c4ac63fbc120e6227098ea69d169d
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="building-a-complete-net-core-solution-on-windows-using-visual-studio-2017"></a>Visual Studio 2017 を使用した Windows での完全な .NET Core ソリューションの構築
 
@@ -28,9 +27,9 @@ Visual Studio 2017 は、.NET Core アプリケーション開発用の機能を
 
 ### <a name="writing-the-library"></a>ライブラリの作成
 
-1. Visual Studio で、 **[ファイル]**、 **[新規作成]**、 **[プロジェクト]**の順にクリックします。 **[新しいプロジェクト]** ダイアログで **[Visual C#]** ノードを展開し、**[.NET Standard]** ノードを選択して **[クラス ライブラリ (.NET Standard)]** を選択します。 
+1. Visual Studio で、 **[ファイル]**、 **[新規作成]**、 **[プロジェクト]** の順にクリックします。 **[新しいプロジェクト]** ダイアログで **[Visual C#]** ノードを展開し、**[.NET Standard]** ノードを選択して **[クラス ライブラリ (.NET Standard)]** を選択します。 
 
-2. プロジェクトの名前を "Library" に、ソリューションの名前を "Golden" に設定します。 **[ソリューションのディレクトリを作成]** はオンのままにします。 **[OK]**をクリックします。
+2. プロジェクトの名前を "Library" に、ソリューションの名前を "Golden" に設定します。 **[ソリューションのディレクトリを作成]** はオンのままにします。 **[OK]** をクリックします。
 
 3. ソリューション エクスプローラーで **[依存関係]** ノードのコンテキスト メニューを開き、**[NuGet パッケージの管理]** を選択します。
 
@@ -38,7 +37,7 @@ Visual Studio 2017 は、.NET Core アプリケーション開発用の機能を
 
 5. ファイルの名前を `Class1.cs` から `Thing.cs` に変更します。 クラス名の変更をそのまま使用します。 メソッドの追加: `public int Get(int number) => Newtonsoft.Json.JsonConvert.DeserializeObject<int>($"{number}");`
 
-7. **[ビルド]** メニューの **[ソリューションのビルド]**をクリックします。
+7. **[ビルド]** メニューの **[ソリューションのビルド]** をクリックします。
 
    ソリューションがエラーのない状態でビルドされます。
 
@@ -59,7 +58,7 @@ Visual Studio 2017 は、.NET Core アプリケーション開発用の機能を
 
    ソリューションをビルドできるようになります。 
    
-4. **[テスト]** メニューで、**[Windows]**、**[テスト エクスプローラー]** の順に選択し、テスト エクスプローラー ウィンドウをワークスペースに取り込みます。 数秒後に、`ThingGetsObjectValFromNumber` テストがテスト エクスプローラーに表示されます。 **[すべて実行]**をクリックします。
+4. **[テスト]** メニューで、**[Windows]**、**[テスト エクスプローラー]** の順に選択し、テスト エクスプローラー ウィンドウをワークスペースに取り込みます。 数秒後に、`ThingGetsObjectValFromNumber` テストがテスト エクスプローラーに表示されます。 **[すべて実行]** をクリックします。
    
    テストで問題がないことを確認します。
 

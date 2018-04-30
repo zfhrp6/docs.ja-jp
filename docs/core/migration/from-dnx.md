@@ -1,21 +1,19 @@
 ---
 title: DNX から .NET Core CLI への移行
 description: DNX ツールの使用から .NET Core CLI ツールの使用に移行します。
-keywords: .NET, .NET Core
 author: blackdwarf
 ms.author: mairaw
 ms.date: 06/20/2016
-ms.topic: article
-ms.prod: .net-core
+ms.topic: conceptual
+ms.prod: dotnet-core
 ms.devlang: dotnet
-ms.assetid: c0d70120-78c8-4d26-bb3c-801f42fc2366
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: dba38de28dc15147e5bcc5bf4cede9f4dd5fca62
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
-ms.translationtype: MT
+ms.openlocfilehash: a3832221c2ea8d70415c155b25cfb3523589b1f7
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="migrating-from-dnx-to-net-core-cli-projectjson"></a>DNX から .NET Core CLI への移行 (project.json)
 

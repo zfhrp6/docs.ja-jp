@@ -1,20 +1,19 @@
 ---
-title: "Visual Studio で .NET Core アプリを展開する"
-description: "Visual Studio で .NET Core アプリを展開する方法を説明します。"
-keywords: ".NET, .NET Core, .NET Core 展開"
+title: Visual Studio で .NET Core アプリを展開する
+description: Visual Studio で .NET Core アプリを展開する方法を説明します。
 author: rpetrusha
 ms.author: ronpet
 ms.date: 04/18/2017
-ms.topic: article
-ms.prod: .net-core
+ms.topic: conceptual
+ms.prod: dotnet-core
 ms.devlang: dotnet
-ms.assetid: 01049a21-fd50-4419-9ab2-0e4a2e091050
-ms.workload: dotnetcore
-ms.openlocfilehash: a2706aecb80f079e6e735310b09c1062a6953901
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: 238e43149eebb59ecbb25dfc3976f912e0ae8b01
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="deploying-net-core-apps-with-visual-studio"></a>Visual Studio で .NET Core アプリを展開する
 
@@ -124,19 +123,19 @@ Visual Studio を使用して、.NET Core アプリケーションを開発す�
 
       1. **[発行]** タブで **[発行]** を選択します。 Visual Studio が、アプリケーションを構成するファイルをローカル ファイル システムに書き込みます。
 
-      1. これで **[発行]** タブには、**[FolderProfile]** という 1 つのプロファイルが表示されます。 プロファイルの構成設定が、タブの **[概要]** セクションに表示されます。**[Target Runtime]**\(ターゲット ランタイム\) では、発行されたランタイムを識別し、**[対象の場所]** は自己完結型の展開が書き込まれた場所を識別します。
+      1. これで **[発行]** タブには、**[FolderProfile]** という 1 つのプロファイルが表示されます。 プロファイルの構成設定が、タブの **[概要]** セクションに表示されます。**[Target Runtime]** \(ターゲット ランタイム\) では、発行されたランタイムを識別し、**[対象の場所]** は自己完結型の展開が書き込まれた場所を識別します。
 
       1. Visual Studio は、発行されたすべてのファイルを、既定で 1 つのディレクトリに書き込みます。 ターゲット ランタイムごとに別のプロファイルを作成し、発行したファイルはプラットフォームごとのディレクトリに配置すると便利なのでお勧めします。 これを行う場合、対象のプラットフォームごとに別の発行プロファイルも作成します。 ここでは、次の手順でプラットフォームごとにアプリケーションを再構築します。
 
          1. **[発行]** ダイアログで、**[新しいプロファイルの作成]** を選択します。
 
-         1. **[Pick a publish target]**\(発行する対象の選択)\ ダイアログで **[Choose a folder]**\(フォルダーを選択)\ の場所を *bin\Release\PublishOutput\win10-x64* に変更します。 **[OK]** を選択します。
+         1. **[Pick a publish target]** \(発行する対象の選択)\ ダイアログで **[Choose a folder]** \(フォルダーを選択)\ の場所を *bin\Release\PublishOutput\win10-x64* に変更します。 **[OK]** を選択します。
 
-         1. 新しいプロファイル (**FolderProfile1**) をプロファイルの一覧から選択し、**[Target Runtime]**\(ターゲット ランタイム\) が `win10-x64` であることを確認します。 違う場合は、**[設定]** を選択します。 **[プロファイルの設定]** ダイアログで、**[Target Runtime]**\(ターゲット ランタイム\) を `win10-x64` に変更して、**[保存]** を選択します。 それ以外の場合、**[キャンセル]** を選択します。
+         1. 新しいプロファイル (**FolderProfile1**) をプロファイルの一覧から選択し、**[Target Runtime]** \(ターゲット ランタイム\) が `win10-x64` であることを確認します。 違う場合は、**[設定]** を選択します。 **[プロファイルの設定]** ダイアログで、**[Target Runtime]** \(ターゲット ランタイム\) を `win10-x64` に変更して、**[保存]** を選択します。 それ以外の場合、**[キャンセル]** を選択します。
 
          1. 64 ビットの Windows 10 プラットフォーム用にアプリを発行するために、**[発行]** を選択します。
 
-         1. 前の手順を繰り返して、`osx.10.11-x64` プラットフォームのプロファイルを作成します。 **[対象の場所]** が *bin\Release\PublishOutput\osx.10.11-x64* で、**[Target Runtime]**\(ターゲット ランタイム\) は [`osx.10.11-x64`] です。 Visual Studio がこのプロファイルに割り当てる名前は、**FolderProfile2** です。
+         1. 前の手順を繰り返して、`osx.10.11-x64` プラットフォームのプロファイルを作成します。 **[対象の場所]** が *bin\Release\PublishOutput\osx.10.11-x64* で、**[Target Runtime]** \(ターゲット ランタイム\) は [`osx.10.11-x64`] です。 Visual Studio がこのプロファイルに割り当てる名前は、**FolderProfile2** です。
 
       それぞれの対象の場所には、アプリの起動に必要なファイルの完全なセット (アプリ ファイルとすべての .NET Core ファイルの両方) が含まれています。
 

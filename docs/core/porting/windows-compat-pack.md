@@ -1,18 +1,18 @@
 ---
-title: ".NET Core に移植する - Windows 互換機能パックの使用"
-description: "Windows 互換機能パックとそれを使用して既存の .NET Framework コードを .NET Core に移植する方法について紹介します。"
-keywords: ".NET, .NET Core, Windows, 互換機能"
+title: .NET Core に移植する - Windows 互換機能パックの使用
+description: Windows 互換機能パックとそれを使用して既存の .NET Framework コードを .NET Core に移植する方法について紹介します。
 author: terrajobst
 ms.author: mairaw
 ms.date: 11/13/2017
-ms.topic: article
-ms.prod: .net-core
-ms.workload: dotnetcore
-ms.openlocfilehash: 3b1fe02aad4f78499158ecb7fa9b8521cb7d992e
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.topic: conceptual
+ms.prod: dotnet-core
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: 4ef7d9c847d48ae7bbb2d553b1c05cb90a1c5a7a
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="using-the-windows-compatibility-pack"></a>Windows 互換機能パックの使用
 

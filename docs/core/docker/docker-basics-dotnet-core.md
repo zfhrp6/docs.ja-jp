@@ -1,23 +1,22 @@
 ---
-title: ".NET Core での Docker の基礎の学習"
-description: "Docker と .NET Core の基本チュートリアル"
-keywords: ".NET, .NET Core, Docker, チュートリアル"
+title: .NET Core での Docker の基礎の学習
+description: Docker と .NET Core の基本チュートリアル
 author: jralexander
 ms.author: johalex
 ms.date: 11/06/2017
 ms.topic: tutorial
-ms.prod: .net-core
+ms.prod: dotnet-core
 ms.technology: dotnet-docker
 ms.devlang: dotnet
-ms.assetid: 03c28597-7e73-46d6-a9c3-f9cb55642739
 ms.custom: mvc
 manager: wpickett
-ms.workload: dotnetcore
-ms.openlocfilehash: 79ded2ce5de5100c18301127a2654f8791b8ed76
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: 085ddb58aae78737fae642e7334e7f0139f0cfec
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="learn-docker-basics-with-net-core"></a>.NET Core での Docker の基礎の学習
 
