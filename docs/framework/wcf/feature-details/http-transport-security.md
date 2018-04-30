@@ -1,24 +1,26 @@
 ---
-title: "HTTP トランスポート セキュリティ"
-ms.custom: 
+title: HTTP トランスポート セキュリティ
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d3439262-c58e-4d30-9f2b-a160170582bb
-caps.latest.revision: "14"
+caps.latest.revision: 14
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: f81a95546d593cd5a0acb6a89edf2f6c763f07df
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 2787c38603fd0f88878596a809d7e3c5cfdfb350
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="http-transport-security"></a>HTTP トランスポート セキュリティ
 トランスポートとして HTTP を使用すると、SSL (Secure Sockets Layer) によりセキュリティが提供されます。 SSL はクライアントに対してサービスの認証を行い、機密性 (暗号化) をチャネルに提供する技術としてインターネットで広く使用されています。 このトピックでは、SSL の機能と SSL を [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] に実装する方法について説明します。  
@@ -61,8 +63,8 @@ ms.lasthandoff: 12/22/2017
 ### <a name="using-httpcfg-for-ssl"></a>SSL での HttpCfg の使用  
  自己ホスト型を作成する場合[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]アプリケーションでは、HttpCfg.exe ツールをダウンロードして入手、 [Windows XP Service Pack 2 サポート ツール サイト](http://go.microsoft.com/fwlink/?LinkId=29002)です。  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]参照してください、HttpCfg.exe ツールを使用して、X.509 証明書でポートを設定する[する方法: SSL 証明書でポートを構成する](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md)です。  
+ HttpCfg.exe ツールを使用して、X.509 証明書でポートを設定する方法の詳細については、次を参照してください。[する方法: SSL 証明書でポートを構成する](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [トランスポート セキュリティ](../../../../docs/framework/wcf/feature-details/transport-security.md)  
  [メッセージのセキュリティ](../../../../docs/framework/wcf/feature-details/message-security-in-wcf.md)

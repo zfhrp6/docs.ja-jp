@@ -1,28 +1,28 @@
 ---
-title: "Windows Communication Foundation のバインディングの概要"
-ms.custom: 
+title: Windows Communication Foundation のバインディングの概要
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - bindings [WCF], overview
 ms.assetid: cfb5842f-e0f9-4c56-a015-f2b33f258232
-caps.latest.revision: 
+caps.latest.revision: 16
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 4bc4fc7559872a808c2de87e4926075614351030
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 58b3691c186dc6a33c94d9f8a1af96be488d67df
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="windows-communication-foundation-bindings-overview"></a>Windows Communication Foundation のバインディングの概要
 バインディングとは、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービスのエンドポイントへの接続に必要な通信の詳細設定を指定する際に使用するオブジェクトのことです。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスの各エンドポイントでは、バインディングを適切に指定する必要があります。 ここでは、バインディングによって定義される通信の詳細設定、バインディングの要素、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] に用意されているバインディング、およびエンドポイントにバインディングを指定する方法について説明します。  
@@ -40,7 +40,7 @@ ms.lasthandoff: 12/22/2017
  使用する基本のトランスポート プロトコル (TCP や HTTP など) を決定します。  
   
 ## <a name="the-elements-of-a-binding"></a>バインディングの要素  
- バインディングは、基本的に、バインド要素の順序付きスタックで構成されます。各バインド要素では、サービス エンドポイントに接続するために必要な通信情報の一部を指定します。 スタックの 2 つの最も低い層は両方とも必須です。 スタックの一番下にトランスポート バインド要素があり、そのすぐ上にメッセージ エンコーディング仕様を含んだ要素があります。 その他の通信プロトコルを指定するオプションのバインド要素は、この 2 つの必須要素の上に配置されます。 [!INCLUDE[crabout](../../../includes/crabout-md.md)]これらのバインド要素と、正しい順序に基づいてを参照してください。[カスタム バインディング](../../../docs/framework/wcf/extending/custom-bindings.md)です。  
+ バインディングは、基本的に、バインド要素の順序付きスタックで構成されます。各バインド要素では、サービス エンドポイントに接続するために必要な通信情報の一部を指定します。 スタックの 2 つの最も低い層は両方とも必須です。 スタックの一番下にトランスポート バインド要素があり、そのすぐ上にメッセージ エンコーディング仕様を含んだ要素があります。 その他の通信プロトコルを指定するオプションのバインド要素は、この 2 つの必須要素の上に配置されます。 これらのバインド要素とそれらの正しい順序に関する詳細については、次を参照してください。[カスタム バインディング](../../../docs/framework/wcf/extending/custom-bindings.md)です。  
   
 ## <a name="system-provided-bindings"></a>システム標準のバインディング  
  バインディングの情報は複雑になる可能性があり、一部の設定は他の設定と互換性がない場合もあります。 このため、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] には、システム指定のバインディングが用意されています。 このバインディングは、アプリケーション要件のほとんどに対応するように設計されています。 システム指定のバインディングの例のいくつかを次のクラスで示します。  
@@ -56,7 +56,7 @@ ms.lasthandoff: 12/22/2017
  すべての説明を含む、完全な一覧について、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]-バインド」を参照してください提供[システム指定のバインディング](../../../docs/framework/wcf/system-provided-bindings.md)です。  
   
 ## <a name="using-your-own-bindings"></a>独自のバインディングの使用  
- システム指定のバインディングに、サービス アプリケーションに必要な正しい組み合わせの機能がない場合、独自のバインディングを作成できます。 これには、2 つの方法があります。 <xref:System.ServiceModel.Channels.CustomBinding> オブジェクトを使用して既存のバインド要素から新しいバインディングを作成するか、<xref:System.ServiceModel.Channels.Binding> バインディングから派生することによって完全にユーザー定義のバインディングを作成することができます。 [!INCLUDE[crabout](../../../includes/crabout-md.md)]独自の作成をこれら 2 つの方法を使用したバインディングを参照してください[カスタム バインディング](../../../docs/framework/wcf/extending/custom-bindings.md)と[ユーザー定義バインディング](../../../docs/framework/wcf/extending/creating-user-defined-bindings.md)です。  
+ システム指定のバインディングに、サービス アプリケーションに必要な正しい組み合わせの機能がない場合、独自のバインディングを作成できます。 これには、2 つの方法があります。 <xref:System.ServiceModel.Channels.CustomBinding> オブジェクトを使用して既存のバインド要素から新しいバインディングを作成するか、<xref:System.ServiceModel.Channels.Binding> バインディングから派生することによって完全にユーザー定義のバインディングを作成することができます。 これら 2 つの方法を使用して、独自のバインディングの作成の詳細については、次を参照してください。[カスタム バインディング](../../../docs/framework/wcf/extending/custom-bindings.md)と[ユーザー定義バインディング](../../../docs/framework/wcf/extending/creating-user-defined-bindings.md)です。  
   
 ## <a name="using-bindings"></a>バインディングの使用  
  バインディングを使用する際には、次の 2 つの基本手順があります。  
@@ -68,5 +68,5 @@ ms.lasthandoff: 12/22/2017
 ## <a name="code-and-configuration"></a>コードおよび構成  
  バインディングを定義するには、コードによる方法と構成による方法の 2 とおりがあります。 この 2 つの方法は、システム指定またはカスタムのどちらのバインディングを使用している場合でも有効です。 一般的には、コードを使用すると、開発者がデザイン時にバインディングの定義を完全に制御することになります。 一方、構成を使用する場合は、システム管理者や、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスまたはクライアントのユーザーが、サービス アプリケーションをコンパイルし直すことなくバインディングのパラメーターを変更できます。 通常は、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] アプリケーションの展開先の具体的なコンピューター要件を予測する方法がないため、柔軟性のあるこの方法が望まれます。 バインディング情報とアドレス情報をコードに含めないでおくと、これらの情報を変更したときにアプリケーションを再度コンパイルしたり、展開したりする必要がなくなります。 コードで定義したバインディングは、構成で指定したバインディングの後に作成されます。そのため、構成で定義したバインディングはコードで定義したバインディングによって上書きされることに注意してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [サービスとクライアントを構成するためのバインディングの使用](../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)

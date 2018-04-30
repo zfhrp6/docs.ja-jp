@@ -1,23 +1,24 @@
 ---
-title: "ポリシーを使用した注文処理"
-ms.custom: 
+title: ポリシーを使用した注文処理
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 66833724-dc36-4fad-86b0-59ffeaa3ba6a
-caps.latest.revision: "8"
+caps.latest.revision: 8
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: d86c7890af651ba9f0ee0ec2a1763f9c579bac89
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: f99db44a636a5255990f734d34266b3b2e4a678b
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="order-processing-with-policy"></a>ポリシーを使用した注文処理
 注文処理ポリシー サンプルでは、Windows WF (Workflow Foundation) の [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)] に導入された重要な機能の一部を示しています。 次の機能が WF ルール エンジンに新しく追加されました。  
@@ -34,7 +35,7 @@ ms.lasthandoff: 12/22/2017
  このサンプルでは、使用できるアイテムの番号付きリストと郵便番号で構成される顧客の注文を入力する、`OrderProcessingPolicy` プロジェクトを示します。 両方の入力が正しい場合は、注文が正常に処理されますが、正しくない場合は、ポリシーによってエラー オブジェクトが作成され、オーバーロードされた `+` 演算子と定義済みの拡張メソッドによって、ユーザーにエラーが通知されます。  
   
 > [!NOTE]
->  [!INCLUDE[crabout](../../../../includes/crabout-md.md)]拡張メソッドを参照してください[c# バージョン 3.0 の仕様](http://go.microsoft.com/fwlink/?LinkId=95402)です。  
+>  拡張メソッドの詳細については、次を参照してください。 [c# バージョン 3.0 の仕様](http://go.microsoft.com/fwlink/?LinkId=95402)です。  
   
  サンプルは、以下のプロジェクトで構成されます。  
   

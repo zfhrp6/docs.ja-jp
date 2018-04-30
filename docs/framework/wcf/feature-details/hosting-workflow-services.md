@@ -16,14 +16,14 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: e9f8d38b97a422d2d59e2dea05d53cf6f9684d99
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 21c4ba6a85c2da655b3d0988917165bf84ae64d1
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="hosting-workflow-services"></a>ワークフロー サービスのホスティング
-ワークフロー サービスが受信メッセージに応答するには、ワークフロー サービスがホストされている必要があります。 ワークフロー サービスは [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] メッセージング インフラストラクチャを使用するため、これと似た方法でホストされます。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスと同様に、ワークフロー サービスは、インターネット インフォメーション サービス (IIS) または Windows プロセス アクティブ化サービス (WAS) の下で、任意のマネージ アプリケーションでホストできます。 また、ワークフロー サービスは Windows Server AppFabric でホストできます。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] Windows Server App Fabric を参照してください[Windows Server App Fabric ドキュメント](http://go.microsoft.com/fwlink/?LinkId=193037)、 [AppFabric のホスティング機能](http://go.microsoft.com/fwlink/?LinkId=196494)、および[AppFabric ホスティングの概念](http://go.microsoft.com/fwlink/?LinkId=196495)です。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] ホストするさまざまな方法[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]サービスを参照してください[ホスティング サービス](../../../../docs/framework/wcf/hosting-services.md)です。  
+ワークフロー サービスが受信メッセージに応答するには、ワークフロー サービスがホストされている必要があります。 ワークフロー サービスは [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] メッセージング インフラストラクチャを使用するため、これと似た方法でホストされます。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスと同様に、ワークフロー サービスは、インターネット インフォメーション サービス (IIS) または Windows プロセス アクティブ化サービス (WAS) の下で、任意のマネージ アプリケーションでホストできます。 また、ワークフロー サービスは Windows Server AppFabric でホストできます。 Windows Server App Fabric の詳細については、次を参照してください。 [Windows Server App Fabric ドキュメント](http://go.microsoft.com/fwlink/?LinkId=193037)、 [AppFabric のホスティング機能](http://go.microsoft.com/fwlink/?LinkId=196494)、および[AppFabric ホスティングの概念](http://go.microsoft.com/fwlink/?LinkId=196495)です。 ホストするさまざまな方法の詳細については[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]サービスを参照してください[ホスティング サービス](../../../../docs/framework/wcf/hosting-services.md)です。  
   
 ## <a name="hosting-in-a-managed-application"></a>マネージ アプリケーションでのホスト  
  マネージ アプリケーションでワークフロー サービスをホストするには、<xref:System.ServiceModel.Activities.WorkflowServiceHost> クラスを使用します。 <xref:System.ServiceModel.Activities.WorkflowServiceHost> コンストラクターにより、シングルトン ワークフロー サービス インスタンス、ワークフロー サービス定義、またはワークフロー メッセージング アクティビティを使用するアクティビティを指定できます。 呼び出す <<!--zz xref:System.ServiceModel.Activities.WorkflowServiceHost.Open%2A--> `System.ServiceModel.Activities.WorkflowServiceHost.Open`> サービスが受信メッセージのリッスンを開始します。  
@@ -58,7 +58,7 @@ ms.lasthandoff: 04/28/2018
  ワークフロー サービスを定義する .xamlx ファイルを含める必要があります、<`Service`> ルート要素またはから派生した任意の型を含むルート要素<xref:System.Workflow.ComponentModel.Activity>です。 [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] アクティビティ テンプレートを使用する場合は、.xamlx ファイルが作成されます。 WCF ワークフロー サービス テンプレートを使用する場合は、.xamlx ファイルが作成されます。  
   
 ## <a name="hosting-workflow-services-under-windows-server-app-fabric"></a>Windows Server AppFabric でのワークフロー サービスのホスティング  
- Windows Server AppFabric でのワークフロー サービスのホスティングは IIS/WAS でのホスティングと同じ方法で行われます。 唯一の違いは、Windows Server AppFabric がインストールされるということです。 Windows Server AppFabric には、PowerShell コマンドと同様に、インターネット インフォメーション サービス マネージャーに追加されるツールが用意されています。 これらのツールによって、ワークフロー サービスおよび WCF サービスの配置、管理、および追跡を簡略化することができます。 である必要があります。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] Windows Server App Fabric を参照してください[Windows Server App Fabric](http://go.microsoft.com/fwlink/?LinkId=193037)  
+ Windows Server AppFabric でのワークフロー サービスのホスティングは IIS/WAS でのホスティングと同じ方法で行われます。 唯一の違いは、Windows Server AppFabric がインストールされるということです。 Windows Server AppFabric には、PowerShell コマンドと同様に、インターネット インフォメーション サービス マネージャーに追加されるツールが用意されています。 これらのツールによって、ワークフロー サービスおよび WCF サービスの配置、管理、および追跡を簡略化することができます。 である必要があります。 Windows Server App Fabric の詳細については、次を参照してください[Windows Server App Fabric。](http://go.microsoft.com/fwlink/?LinkId=193037)  
   
 ## <a name="referencing-custom-activities"></a>カスタム アクティビティの参照  
  カスタム活動項目への参照を追加する必要があります、<`Assemblies`> セクションの下にある <`System.Web.Compilation`> アプリケーション ドメインに読み込まれ、XAML デシリアライザーは、型を検索できるようにします。 これらの設定をコンピューター上のすべてのアプリケーションに適用する必要がある場合は、アプリケーション レベルまたはルートの Web.config で設定できます。  

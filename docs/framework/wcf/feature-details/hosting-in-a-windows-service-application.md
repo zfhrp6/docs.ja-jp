@@ -1,27 +1,29 @@
 ---
-title: "Windows サービス アプリケーションのホスト"
-ms.custom: 
+title: Windows サービス アプリケーションのホスト
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f4199998-27f3-4dd9-aee4-0a4addfa9f24
-caps.latest.revision: "12"
+caps.latest.revision: 12
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: d1a39162097c21f20c0dd04f3911442602871436
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: c1f0d2336c2682bd525a66c6e5b12ce2d17ad219
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="hosting-in-a-windows-service-application"></a>Windows サービス アプリケーションのホスト
-Windows サービス (従来 Windows NT サービスと呼ばれていたもの) が提供するプロセス モデルが特に適しているのは、長い期間にわたって動作し続ける必要があり、どのような形式でもユーザー インターフェイスを表示することのないアプリケーションです。 Windows サービス アプリケーションのプロセスの有効期間を管理するのは、サービス コントロール マネージャー (SCM) です。SCM を使用して、Windows サービス アプリケーションを起動、停止、および一時停止できます。 「常時オン」アプリケーション用の適切なホスティング環境を作成、コンピューターの起動時に自動的に開始する Windows サービスのプロセスを構成することができます。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Windows サービス アプリケーションを参照してください[Windows サービス アプリケーション](http://go.microsoft.com/fwlink/?LinkId=89450)です。  
+Windows サービス (従来 Windows NT サービスと呼ばれていたもの) が提供するプロセス モデルが特に適しているのは、長い期間にわたって動作し続ける必要があり、どのような形式でもユーザー インターフェイスを表示することのないアプリケーションです。 Windows サービス アプリケーションのプロセスの有効期間を管理するのは、サービス コントロール マネージャー (SCM) です。SCM を使用して、Windows サービス アプリケーションを起動、停止、および一時停止できます。 「常時オン」アプリケーション用の適切なホスティング環境を作成、コンピューターの起動時に自動的に開始する Windows サービスのプロセスを構成することができます。 Windows サービス アプリケーションの詳細については、次を参照してください。 [Windows サービス アプリケーション](http://go.microsoft.com/fwlink/?LinkId=89450)です。  
   
  長い期間にわたって動作し続ける [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスをホストするアプリケーションは、さまざまな点で Windows サービスに似ています。 中でも顕著な類似点は、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスは長期間動作し続けるサーバー側実行可能ファイルであり、画面上でユーザーと直接対話することがないので、ユーザー インターフェイスを実装する必要がない、ということです。 したがって、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスを Windows サービス アプリケーション上でホストするやり方も、頑健で長期間動作し続ける [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションの構築方法として選択肢となります。  
   
@@ -47,7 +49,7 @@ Windows サービス (従来 Windows NT サービスと呼ばれていたもの)
   
      [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスをホストする Windows サービス アプリケーションも、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を使わない Windows サービス アプリケーションと同様に展開および管理されます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceProcess>  
  [チュートリアル: コンポーネント デザイナーによる Windows サービス アプリケーションの作成](http://go.microsoft.com/fwlink/?LinkId=94875)  
  [方法 : マネージ Windows サービスで WCF サービスをホストする](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-a-managed-windows-service.md)  

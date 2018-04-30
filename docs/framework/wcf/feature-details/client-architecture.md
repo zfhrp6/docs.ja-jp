@@ -1,27 +1,29 @@
 ---
-title: "クライアント アーキテクチャ"
-ms.custom: 
+title: クライアント アーキテクチャ
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 02624403-0d77-41cb-9a86-ab55e98c7966
-caps.latest.revision: "7"
+caps.latest.revision: 7
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 6418c3b5c82ac42fb7e6d3ce85913896a3f76442
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 12db0d4f5717287439b66810e6354b12a4c68b77
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="client-architecture"></a>クライアント アーキテクチャ
-アプリケーションは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] クライアント オブジェクトを使用してサービス操作を呼び出します。 このトピックでは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント オブジェクト、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント チャネル、およびこれらとその基になるチャネル アーキテクチャのリレーションシップについて説明します。 基本的な概要について[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]クライアント オブジェクトを参照してください[WCF クライアントの概要](../../../../docs/framework/wcf/wcf-client-overview.md)です。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]チャネル レイヤを参照してください[、チャネル レイヤの拡張](../../../../docs/framework/wcf/extending/extending-the-channel-layer.md)です。  
+アプリケーションは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] クライアント オブジェクトを使用してサービス操作を呼び出します。 このトピックでは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント オブジェクト、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント チャネル、およびこれらとその基になるチャネル アーキテクチャのリレーションシップについて説明します。 基本的な概要について[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]クライアント オブジェクトを参照してください[WCF クライアントの概要](../../../../docs/framework/wcf/wcf-client-overview.md)です。 チャネル レイヤーの詳細については、次を参照してください。 [、チャネル レイヤの拡張](../../../../docs/framework/wcf/extending/extending-the-channel-layer.md)です。  
   
 ## <a name="overview"></a>概要  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントはサービス モデル ランタイムによって作成されます。クライアントは次の要素から構成されます。  
@@ -48,7 +50,7 @@ ms.lasthandoff: 12/22/2017
   
  チャネル ファクトリに関して覚えておく必要のある重要なことは、これらのファクトリが、<xref:System.ServiceModel.ChannelFactory%601.CreateChannel%2A?displayProperty=nameWithType> を呼び出す前に、指定されている構成のクライアント チャネルの新しいインスタンスを作成するという点です。 いったん <xref:System.ServiceModel.ChannelFactory%601.CreateChannel%2A> (または <xref:System.ServiceModel.ClientBase%601.Open%2A?displayProperty=nameWithType> や <xref:System.ServiceModel.ClientBase%601.CreateChannel%2A?displayProperty=nameWithType>、または [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント オブジェクトに対する任意の操作) を呼び出した場合、ターゲットのエンドポイント アドレスを変更するだけでは、チャネル ファクトリを変更したり、別のサービス インスタンスへのチャネルを取得したりすることはできません。 異なる構成でクライアント オブジェクトやクライアント チャネルを作成するには、まず新しいチャネル ファクトリを作成する必要があります。  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]使用してさまざまな問題[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]クライアント オブジェクトと[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]クライアント チャネルを参照してください[にアクセスするサービスの WCF クライアントを使用して](../../../../docs/framework/wcf/feature-details/accessing-services-using-a-client.md)です。  
+ 使用してさまざまな問題の詳細については[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]クライアント オブジェクトと[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]クライアント チャネルを参照してください[にアクセスするサービスの WCF クライアントを使用して](../../../../docs/framework/wcf/feature-details/accessing-services-using-a-client.md)です。  
   
  次の 2 つのセクションでは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント チャネル オブジェクトの作成と使用について説明します。  
   

@@ -21,11 +21,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 9d4463a04ac2113778d9ea0d315beeef7d564764
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: aebd21186f7d038dfa5d7c3c65f833d41f4a1f71
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="data-contract-equivalence"></a>データ コントラクトの等価性
 クライアントがサービスに特定の型のデータを正常に送信するために、またはサービスがクライアントにデータを正常に送信するために、送信する型が受信側に存在する必要があるとは限りません。 両方の型のデータ コントラクトが同等であるということが唯一の要件です (場合によっては、厳密に一致が必要でないで説明したよう[データ コントラクトのバージョン管理](../../../../docs/framework/wcf/feature-details/data-contract-versioning.md))。  
@@ -37,7 +37,7 @@ ms.lasthandoff: 04/28/2018
 > [!NOTE]
 >  データ コントラクト名と名前空間、およびデータ メンバー名は、大文字と小文字を区別します。  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)] データ コントラクト名と名前空間、さらにデータ メンバー名を参照してください[データ コントラクト名](../../../../docs/framework/wcf/feature-details/data-contract-names.md)です。  
+ データ コントラクト名と名前空間、さらにデータ メンバー名の詳細については、次を参照してください。[データ コントラクト名](../../../../docs/framework/wcf/feature-details/data-contract-names.md)です。  
   
  2 つの型が両側 (送信者と受信者) に存在し、そのデータ コントラクトが同等でない場合 (たとえば、異なるデータ メンバーを含んでいる場合)、そのデータ コントラクトに同じ名前と名前空間を使用しないでください。 同じ名前と名前空間を使用すると、例外がスローされる可能性があります。  
   

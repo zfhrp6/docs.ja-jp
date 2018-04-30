@@ -1,35 +1,37 @@
 ---
-title: "サービスのランタイム動作の指定"
-ms.custom: 
+title: サービスのランタイム動作の指定
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 5c5450ea-6af1-4b75-a267-613d0ac54707
-caps.latest.revision: "12"
+caps.latest.revision: 12
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c2c1534b161f81fa90dce52c825b0417dc8fd35d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: e45c35d0b19833b6fd43c7fd5794ecf8bd3a9769
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="specifying-service-run-time-behavior"></a>サービスのランタイム動作の指定
-サービス コントラクトを設計して ([Designing Service Contracts](../../../docs/framework/wcf/designing-service-contracts.md))、実装 ([Implementing Service Contracts](../../../docs/framework/wcf/implementing-service-contracts.md)) が終わると、サービス ランタイムの実行動作を構成できます。 ここでは、システム指定のサービスと操作の動作について説明し、新しい動作を作成するための詳細情報の参照先を示します。 一部の動作は属性として適用されますが、多くの動作はアプリケーション構成ファイルまたはプログラムを使用して適用されます。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] 、「 [Configuring Services](../../../docs/framework/wcf/configuring-services.md)」を参照してください。  
+サービス コントラクトを設計して ([Designing Service Contracts](../../../docs/framework/wcf/designing-service-contracts.md))、実装 ([Implementing Service Contracts](../../../docs/framework/wcf/implementing-service-contracts.md)) が終わると、サービス ランタイムの実行動作を構成できます。 ここでは、システム指定のサービスと操作の動作について説明し、新しい動作を作成するための詳細情報の参照先を示します。 一部の動作は属性として適用されますが、多くの動作はアプリケーション構成ファイルまたはプログラムを使用して適用されます。 サービス アプリケーションの構成の詳細については、次を参照してください。[サービスを構成する](../../../docs/framework/wcf/configuring-services.md)です。  
   
 ## <a name="overview"></a>概要  
  コントラクトは、その種類のサービスの入力、出力、データ型、および機能を定義します。 サービス コントラクトを実装すると、クラスが 1 つ作成されます。このクラスを任意のアドレスのバインディングで構成すると、実装されたコントラクトが満たされます。 コントラクト、バインディング、およびアドレスはすべて、クライアントにとって既知の情報です。これらの情報がないと、クライアントはサービスを利用できません。  
   
- ただし、実行の詳細 (スレッド処理の問題点やインスタンスの管理など) は、クライアントには見えません。 サービス コントラクトを実装したら、 *動作*を使用してさまざまな操作特性を構成できます。 動作は、ランタイム プロパティを設定するか、またはカスタマイズ種類をランタイムに挿入して、 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] ランタイムを変更するオブジェクトです。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] 、「 [Extending ServiceHost and the Service Model Layer](../../../docs/framework/wcf/extending/extending-servicehost-and-the-service-model-layer.md)」を参照してください。  
+ ただし、実行の詳細 (スレッド処理の問題点やインスタンスの管理など) は、クライアントには見えません。 サービス コントラクトを実装したら、 *動作*を使用してさまざまな操作特性を構成できます。 動作は、ランタイム プロパティを設定するか、またはカスタマイズ種類をランタイムに挿入して、 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] ランタイムを変更するオブジェクトです。 ランタイムを変更するユーザー定義のビヘイビアーの作成方法の詳細については、次を参照してください。 [ServiceHost を拡張すると、サービス モデル レイヤー](../../../docs/framework/wcf/extending/extending-servicehost-and-the-service-model-layer.md)です。  
   
  <xref:System.ServiceModel.ServiceBehaviorAttribute?displayProperty=nameWithType> と <xref:System.ServiceModel.OperationBehaviorAttribute?displayProperty=nameWithType> 属性は、最も広範に使用できる動作であり、最も一般的に要求される操作機能を公開します。 これらは属性であるため、サービス実装または操作実装に適用します。 その他の動作 (<xref:System.ServiceModel.Description.ServiceMetadataBehavior?displayProperty=nameWithType> や <xref:System.ServiceModel.Description.ServiceDebugBehavior?displayProperty=nameWithType> など) は、通常、アプリケーション構成ファイルを使用して適用されますが、プログラムにより使用することもできます。  
   
@@ -131,6 +133,6 @@ ms.lasthandoff: 12/22/2017
   
 -   <xref:System.ServiceModel.TransactionFlowAttribute>。 サービス操作がトランザクション ヘッダーを受け入れるレベルを指定します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [サービスの構成](../../../docs/framework/wcf/configuring-services.md)  
  [方法 : サービスのインスタンス化を制御する](../../../docs/framework/wcf/feature-details/how-to-control-service-instancing.md)

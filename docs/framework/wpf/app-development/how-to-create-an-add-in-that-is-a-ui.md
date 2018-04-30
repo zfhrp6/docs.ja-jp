@@ -1,12 +1,13 @@
 ---
-title: "方法 : UI であるアドインを作成する"
-ms.custom: 
+title: '方法 : UI であるアドインを作成する'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - creating an add-in that is a UI [WPF]
@@ -16,19 +17,20 @@ helpviewer_keywords:
 - implementing UI add-ins [WPF]
 - pipeline segments [WPF], creating add-ins
 ms.assetid: 86375525-282b-4039-8352-8680051a10ea
-caps.latest.revision: "8"
+caps.latest.revision: 8
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: fea1c718eedb12d49eced9964e4f9045badf07ed
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: cadb992a68f4ee9f06ad37adf71856cdc4f46503
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="how-to-create-an-add-in-that-is-a-ui"></a>方法 : UI であるアドインを作成する
-この例は、アドインを作成する方法を示しています、 [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]によってホストされている、[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]スタンドアロン アプリケーションです。  
+この例は、Windows Presentation Foundation (WPF) によってホストされているは、アドインを作成する方法を示しています、[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]スタンドアロン アプリケーションです。  
   
  アドインでは、[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]されている、[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]ユーザー コントロールです。 ユーザー コントロールの中身は 1 つのボタンであり、クリックすると、メッセージ ボックスを表示します。 [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]スタンドアロン アプリケーションをホストにアドイン[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]アプリケーションのメイン ウィンドウの内容として。  
   
@@ -64,7 +66,7 @@ ms.lasthandoff: 12/22/2017
   
  [!code-csharp[SimpleAddInIsAUISample#AddInSideAdapterCode](../../../../samples/snippets/csharp/VS_Snippets_Wpf/SimpleAddInIsAUISample/CSharp/AddInSideAdapters/WPFAddIn_ViewToContractAddInSideAdapter.cs#addinsideadaptercode)]  
   
- 返すアドインをアドイン モデルで、 [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] (を参照してください[、アドインを返すことは、UI 作成](../../../../docs/framework/wpf/app-development/how-to-create-an-add-in-that-returns-a-ui.md))、アドイン アダプターの変換、<xref:System.Windows.FrameworkElement>を<xref:System.AddIn.Contract.INativeHandleContract>を呼び出して<xref:System.AddIn.Pipeline.FrameworkElementAdapters.ViewToContractAdapter%2A>です。 <xref:System.AddIn.Pipeline.FrameworkElementAdapters.ViewToContractAdapter%2A>必要があります呼び出すことも、このモデルでが、それを呼び出すコードを記述するメソッドを実装する必要があります。 オーバーライドすることで、これを行う<xref:System.AddIn.Pipeline.ContractBase.QueryContract%2A>を呼び出すコードを実装して<xref:System.AddIn.Pipeline.FrameworkElementAdapters.ViewToContractAdapter%2A>場合、コードを呼び出している<xref:System.AddIn.Pipeline.ContractBase.QueryContract%2A>が想定している、<xref:System.AddIn.Contract.INativeHandleContract>です。 この場合、呼び出し元はホスト側のアダプターであり、これについては、後で説明します。  
+ 返すアドインをアドイン モデルで、 [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] (を参照してください[、アドインを返すことは、UI 作成](../../../../docs/framework/wpf/app-development/how-to-create-an-add-in-that-returns-a-ui.md))、アドイン アダプターの変換、<xref:System.Windows.FrameworkElement>を<xref:System.AddIn.Contract.INativeHandleContract>を呼び出して<xref:System.AddIn.Pipeline.FrameworkElementAdapters.ViewToContractAdapter%2A>です。 <xref:System.AddIn.Pipeline.FrameworkElementAdapters.ViewToContractAdapter%2A> 必要があります呼び出すことも、このモデルでが、それを呼び出すコードを記述するメソッドを実装する必要があります。 オーバーライドすることで、これを行う<xref:System.AddIn.Pipeline.ContractBase.QueryContract%2A>を呼び出すコードを実装して<xref:System.AddIn.Pipeline.FrameworkElementAdapters.ViewToContractAdapter%2A>場合、コードを呼び出している<xref:System.AddIn.Pipeline.ContractBase.QueryContract%2A>が想定している、<xref:System.AddIn.Contract.INativeHandleContract>です。 この場合、呼び出し元はホスト側のアダプターであり、これについては、後で説明します。  
   
 > [!NOTE]
 >  オーバーライドする必要があります<xref:System.AddIn.Pipeline.ContractBase.QueryContract%2A>ホスト アプリケーション間のタブ移動を有効にするには、このモデルで[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]およびアドイン[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]です。 詳細については、WPF アドインの制限事項」を参照してください[WPF アドイン概要](../../../../docs/framework/wpf/app-development/wpf-add-ins-overview.md)です。  
@@ -115,6 +117,6 @@ ms.lasthandoff: 12/22/2017
   
  このアクティビティは、ホスト アプリケーションから完全に分離されています。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [アドインおよび拡張機能](../../../../docs/framework/add-ins/index.md)  
  [WPF のアドインの概要](../../../../docs/framework/wpf/app-development/wpf-add-ins-overview.md)

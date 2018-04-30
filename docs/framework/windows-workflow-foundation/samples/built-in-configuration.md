@@ -1,23 +1,24 @@
 ---
-title: "組み込みの構成"
-ms.custom: 
+title: 組み込みの構成
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 34e85c9b-088d-4347-816c-0f77cb73ef2f
-caps.latest.revision: "15"
+caps.latest.revision: 15
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 3ddf9b316074a69a88f08a0d7f519533f2db0002
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 0c414f34da0cd4bbf484c0a439f8832f02a5ae58
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="built-in-configuration"></a>組み込みの構成
 このサンプルでは、SQL Workflow Instance Store の使用法と構成を示します。 SQL Workflow Instance Store は、SQL ベースのインスタンス ストアの実装です。 SQL Workflow Instance Store を使用すると、インスタンスの状態を SQL Server データベースや SQL Server Express データベースに保存したり読み込んだりすることができます。  
@@ -36,7 +37,7 @@ ms.lasthandoff: 12/22/2017
   
  このカウント ワークフローは、ワークフロー サービス ホストによってホストされる自己ホスト型サービスです。 プログラムの `Main` メソッドは、カウント ワークフローをホストするワークフロー サービス ホストのインスタンスを作成し、 カウント ワークフローにアクセスできるエンドポイントを定義します。 その後、SQL Workflow Instance Store を構成するために使用される SQL Workflow Instance Store の動作を定義します。 続いて、カウント ワークフローの start メソッドを呼び出すクライアントがプログラムで作成されます。  
   
- プログラムを開始すると、カウンターが自動的にカウントを開始します。 インスタンスを読み込んで SQL Workflow Instance Store を構成するのに数秒かかる場合もあります。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]ワークフロー インスタンス ストアを参照してください[SQL Workflow Instance Store](../../../../docs/framework/windows-workflow-foundation/sql-workflow-instance-store.md)です。  
+ プログラムを開始すると、カウンターが自動的にカウントを開始します。 インスタンスを読み込んで SQL Workflow Instance Store を構成するのに数秒かかる場合もあります。 ワークフロー インスタンス ストアの詳細については、次を参照してください。 [SQL Workflow Instance Store](../../../../docs/framework/windows-workflow-foundation/sql-workflow-instance-store.md)です。  
   
  このサンプルは、2 つの部分で構成されています。  
   
@@ -116,5 +117,5 @@ ms.lasthandoff: 12/22/2017
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Persistence\BuiltInConfiguration`  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [AppFabric ホスティングと永続性のサンプル](http://go.microsoft.com/fwlink/?LinkId=193961)

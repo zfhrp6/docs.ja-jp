@@ -21,14 +21,14 @@ ms.author: bruceper
 manager: mbaldwin
 ms.workload:
 - dotnet
-ms.openlocfilehash: c754a4ec57751b2ca5a809c771b2fb5235ec0510
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 2828b6b9df313bab5a904712ad4e97cc7062f387
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="how-to-secure-a-service-with-windows-credentials"></a>方法 : Windows 資格情報でサービスをセキュリティで保護する
-このトピックでトランスポート セキュリティを有効にする方法について説明、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)]サービスを Windows ドメインに存在し、同じドメイン内のクライアントによって呼び出されます。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] このシナリオを参照してください[トランスポート セキュリティと Windows 認証](../../../docs/framework/wcf/feature-details/transport-security-with-windows-authentication.md)です。 サンプル アプリケーションについては、次を参照してください。、 [WSHttpBinding](../../../docs/framework/wcf/samples/wshttpbinding.md)サンプルです。  
+このトピックでトランスポート セキュリティを有効にする方法について説明、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)]サービスを Windows ドメインに存在し、同じドメイン内のクライアントによって呼び出されます。 このシナリオの詳細については、次を参照してください。[トランスポート セキュリティと Windows 認証](../../../docs/framework/wcf/feature-details/transport-security-with-windows-authentication.md)です。 サンプル アプリケーションについては、次を参照してください。、 [WSHttpBinding](../../../docs/framework/wcf/samples/wshttpbinding.md)サンプルです。  
   
  このトピックでは、定義済みのコントラクト インターフェイスと実装が既に存在するものとして、それに機能を追加していきます。 既存のサービスとクライアントを変更することもできます。  
   
@@ -57,7 +57,7 @@ ms.lasthandoff: 04/28/2018
      [!code-vb[c_SecureWindowsService#1](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securewindowsservice/vb/secureservice.vb#1)]  
   
 ### <a name="using-the-binding-in-a-service"></a>サービスでのバインディングの使用  
- この 2 番目の手順では、自己ホスト型サービスでバインディングを使用する方法を示します。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] ホスティング サービスを参照してください[ホスティング サービス](../../../docs/framework/wcf/hosting-services.md)です。  
+ この 2 番目の手順では、自己ホスト型サービスでバインディングを使用する方法を示します。 ホスティング サービスの詳細については、次を参照してください。[ホスティング サービス](../../../docs/framework/wcf/hosting-services.md)です。  
   
 ##### <a name="to-use-a-binding-in-a-service"></a>サービスでバインディングを使用するには  
   

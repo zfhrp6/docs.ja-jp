@@ -1,31 +1,31 @@
 ---
-title: "Windows Communication Foundation サービスのバインディングの構成"
-ms.custom: 
+title: Windows Communication Foundation サービスのバインディングの構成
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - binding configuration [WCF]
 ms.assetid: 99a85fd8-f7eb-4a84-a93e-7721b37d415c
-caps.latest.revision: 
+caps.latest.revision: 36
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: b11810e0a39c5b6091a63ef33e5abfccb95b7555
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f98d7c7b7d816687487a652f0527886300f0ee86
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="configuring-bindings-for-windows-communication-foundation-services"></a>Windows Communication Foundation サービスのバインディングの構成
-アプリケーションの作成では、アプリケーションの配置後は各種決定事項を管理者に任せる場合がよくあります。 たとえば、どのサービス アドレス (URI (Uniform Resource Identifier)) を使用するかなどの情報は、多くの場合、前もって知る方法がありません。 アドレスをハードコーディングする代わりに、サービスの作成後に管理者が指定する方が便利です。 構成を活用することで、この柔軟性が得られます。  
+アプリケーションの作成では、アプリケーションの配置後は各種決定事項を管理者に任せる場合がよくあります。 たとえば、どのサービス アドレス (URI (Uniform Resource Identifier)) を使用するかなどの情報は、多くの場合、前もって知る方法がありません。 アドレスをハードコーディングする代わりに、サービスの作成後に管理者が指定する方が便利です。  構成を活用することで、この柔軟性が得られます。  
   
 > [!NOTE]
 >  使用して、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)で、`/config`スイッチを構成ファイルをすばやく作成します。  
@@ -47,13 +47,13 @@ ms.lasthandoff: 12/22/2017
 ```  
   
 ### <a name="servicemodel-elements"></a>ServiceModel 要素  
- 区切られたセクションを使用することができます、`system.ServiceModel`サービスの設定と同様に、1 つまたは複数のエンドポイント サービスの種類を構成する要素。 各エンドポイントでは、アドレス、コントラクト、およびバインディングをそれぞれ 1 つずつ構成できます。 [!INCLUDE[crabout](../../../includes/crabout-md.md)]エンドポイントを参照してください[エンドポイントの作成の概要](../../../docs/framework/wcf/endpoint-creation-overview.md)です。 エンドポイントを指定しない場合、ランタイムは、既定のエンドポイントを追加します。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] については、「 [Simplified Configuration](../../../docs/framework/wcf/simplified-configuration.md) 」および「 [Simplified Configuration for WCF Services](../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md)。  
+ 区切られたセクションを使用することができます、`system.ServiceModel`サービスの設定と同様に、1 つまたは複数のエンドポイント サービスの種類を構成する要素。 各エンドポイントでは、アドレス、コントラクト、およびバインディングをそれぞれ 1 つずつ構成できます。 エンドポイントの詳細については、次を参照してください。[エンドポイントの作成の概要](../../../docs/framework/wcf/endpoint-creation-overview.md)です。 エンドポイントを指定しない場合、ランタイムは、既定のエンドポイントを追加します。 既定のエンドポイント、バインディング、および動作の詳細については、次を参照してください。[簡略化された構成](../../../docs/framework/wcf/simplified-configuration.md)と[WCF サービスの構成を簡略化](../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md)です。  
   
  バインディングはトランスポート (HTTP、TCP、パイプ、およびメッセージ キュー) とプロトコル (セキュリティ、信頼性、およびトランザクション フロー) を指定し、バインド要素で構成されます。各バインド要素は、エンドポイントの通信方法のさまざまな側面を指定します。  
   
  たとえば、指定すると、 [ \<basicHttpBinding >](../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md)要素は、エンドポイントのトランスポートとして HTTP を使用することを示します。 このエンドポイントを使用するサービスが開かれる実行時に、エンドポイントとの接続に HTTP が使用されます。  
   
- バインディングには、定義済みバインディングとカスタム バインドの 2 種類があります。 定義済みバインディングには、一般的なシナリオで使用される要素の組み合わせが含まれています。 定義済みバインディングの一覧を型には、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]提供を参照してください[システム指定のバインディング](../../../docs/framework/wcf/system-provided-bindings.md)です。 定義済みバインディング コレクションに、サービス アプリケーションに必要な正しい機能の組み合わせがないときは、カスタム バインドを作成して、そのアプリケーションの要件を満たすことができます。 [!INCLUDE[crabout](../../../includes/crabout-md.md)]カスタム バインディングを参照してください[ \<customBinding >](../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)です。  
+ バインディングには、定義済みバインディングとカスタム バインドの 2 種類があります。 定義済みバインディングには、一般的なシナリオで使用される要素の組み合わせが含まれています。 定義済みバインディングの一覧を型には、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]提供を参照してください[システム指定のバインディング](../../../docs/framework/wcf/system-provided-bindings.md)です。 定義済みバインディング コレクションに、サービス アプリケーションに必要な正しい機能の組み合わせがないときは、カスタム バインドを作成して、そのアプリケーションの要件を満たすことができます。 カスタム バインドの詳細については、次を参照してください。 [ \<customBinding >](../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)です。  
   
  次の 4 つの例は、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスの設定に使用される最も一般的なバインディング構成を示しています。  
   
@@ -174,7 +174,7 @@ ms.lasthandoff: 12/22/2017
 </bindings>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [簡略化された構成](../../../docs/framework/wcf/simplified-configuration.md)  
  [システム標準のバインディング](../../../docs/framework/wcf/system-provided-bindings.md)  
  [エンドポイントの作成の概要](../../../docs/framework/wcf/endpoint-creation-overview.md)  

@@ -18,11 +18,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: bce838d9584480028c7b02d1ba19547fe208bf2c
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: df603da0f4feedeacc59198c156322c78fd2f388
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="metadata-architecture-overview"></a>メタデータ アーキテクチャの概要
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] には、サービス メタデータをエクスポート、公開、取得、およびインポートするためのさまざまなインフラストラクチャが用意されています。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスでは、メタデータを使用してサービスのエンドポイントとの対話方法を記述し、Svcutil.exe などのツールでサービスにアクセスするためのクライアント コードを自動的に生成できるようにします。  
@@ -59,7 +59,7 @@ ms.lasthandoff: 04/28/2018
   
  MEX プロトコルを使用するメタデータ エンドポイントを追加するには、IMetadataExchange をという名前のサービス コントラクトを使用するサービス ホストにサービス エンドポイントを追加します。[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 定義、<xref:System.ServiceModel.Description.IMetadataExchange>このサービス コントラクト名を持つインターフェイスです。 WS-MetadataExchange のエンドポイント、つまり MEX エンドポイントは、<xref:System.ServiceModel.Description.MetadataExchangeBindings> クラスで静的ファクトリ メソッドが公開する 4 つの既定のバインディングの 1 つを使用して、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ツール (Svcutil.exe など) によって使用される既定のバインディングを照合できます。 また、カスタム バインドを使用して MEX メタデータ エンドポイントを構成することもできます。  
   
- <xref:System.ServiceModel.Description.ServiceMetadataBehavior> は <xref:System.ServiceModel.Description.WsdlExporter?displayProperty=nameWithType> を使用して、サービス内のすべてのサービス エンドポイント用のメタデータをエクスポートします。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] サービスからメタデータをエクスポートするを参照してください[エクスポートおよびインポートするメタデータ](../../../../docs/framework/wcf/feature-details/exporting-and-importing-metadata.md)です。  
+ <xref:System.ServiceModel.Description.ServiceMetadataBehavior> は <xref:System.ServiceModel.Description.WsdlExporter?displayProperty=nameWithType> を使用して、サービス内のすべてのサービス エンドポイント用のメタデータをエクスポートします。 サービスからメタデータをエクスポートする方法の詳細については、次を参照してください。[エクスポートおよびインポートするメタデータ](../../../../docs/framework/wcf/feature-details/exporting-and-importing-metadata.md)です。  
   
  <xref:System.ServiceModel.Description.ServiceMetadataBehavior> は、<xref:System.ServiceModel.Description.ServiceMetadataExtension> インスタンスを拡張としてサービス ホストに追加することで、サービス ホストを拡張します。 <xref:System.ServiceModel.Description.ServiceMetadataExtension?displayProperty=nameWithType> により、メタデータ公開プロトコルを実装することができます。 また、<xref:System.ServiceModel.Description.ServiceMetadataExtension?displayProperty=nameWithType> を使用して、<xref:System.ServiceModel.Description.ServiceMetadataExtension.Metadata%2A> プロパティにアクセスすることにより、実行時にサービスのメタデータを取得できます。  
   

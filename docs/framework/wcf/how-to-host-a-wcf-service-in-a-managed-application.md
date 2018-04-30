@@ -1,42 +1,44 @@
 ---
-title: "方法 : マネージ アプリケーションで WCF サービスをホストする"
-ms.custom: 
+title: '方法 : マネージ アプリケーションで WCF サービスをホストする'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 5eb29db0-b6dc-4e77-8c68-0a62f79d743b
-caps.latest.revision: "42"
+caps.latest.revision: 42
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 6491faa6134c1e80e07294d8f888200c04fa8704
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 5f2671dc381e0d3ef8f55ced01268de6205fcb7d
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="how-to-host-a-wcf-service-in-a-managed-application"></a>方法 : マネージ アプリケーションで WCF サービスをホストする
 マネージ アプリケーションでサービスをホストするには、マネージ アプリケーション コード内にサービスのコードを埋め込み、サービスのエンドポイントをコードで強制的に定義するか、構成を使用して宣言により定義してから、または既定のエンドポイントを使用して、<xref:System.ServiceModel.ServiceHost> のインスタンスを作成します。  
   
  メッセージの受信を開始するには、<xref:System.ServiceModel.ICommunicationObject.Open%2A> で <xref:System.ServiceModel.ServiceHost> を呼び出します。 これにより、サービスのリスナーが作成されて開きます。 この方法によるサービスのホストは、マネージ アプリケーション自体がホスト作業を行うため、"自己ホスト" と呼ばれることがあります。 サービスを閉じるには、<xref:System.ServiceModel.Channels.CommunicationObject.Close%2A?displayProperty=nameWithType> で <xref:System.ServiceModel.ServiceHost> を呼び出します。  
   
- サービスは、マネージ Windows サービス、インターネット インフォメーション サービス (IIS)、または Windows プロセス アクティブ化サービス (WAS) でホストすることもできます。 [!INCLUDE[crabout](../../../includes/crabout-md.md)]サービスのオプションをホストするを参照してください[ホスティング サービス](../../../docs/framework/wcf/hosting-services.md)です。  
+ サービスは、マネージ Windows サービス、インターネット インフォメーション サービス (IIS)、または Windows プロセス アクティブ化サービス (WAS) でホストすることもできます。 ホスト サービスのオプションの詳細については、次を参照してください。[ホスティング サービス](../../../docs/framework/wcf/hosting-services.md)です。  
   
- マネージ アプリケーションでのサービスのホスティングは、展開するインフラストラクチャが最小限で済むため、最も柔軟性があります。 [!INCLUDE[crabout](../../../includes/crabout-md.md)]マネージ アプリケーションでサービスをホストするを参照してください[マネージ アプリケーションのホスト](../../../docs/framework/wcf/feature-details/hosting-in-a-managed-application.md)です。  
+ マネージ アプリケーションでのサービスのホスティングは、展開するインフラストラクチャが最小限で済むため、最も柔軟性があります。 詳細については、マネージ アプリケーションでサービスをホストしている、次を参照してください。[マネージ アプリケーションのホスト](../../../docs/framework/wcf/feature-details/hosting-in-a-managed-application.md)です。  
   
  次の手順では、自己ホスト型サービスをコンソール アプリケーションに実装する方法を示します。  
   
 ### <a name="to-create-a-self-hosted-service"></a>自己ホスト型サービスを作成するには  
   
-1.  開いている[!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)]選択**新規**、**プロジェクト.**から、**ファイル**メニュー。  
+1.  開いている[!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)]選択**新規**、**プロジェクト.** から、**ファイル**メニュー。  
   
 2.  **インストールされたテンプレート**一覧で、 **Visual c#**、 **Windows**または**Visual Basic**、 **Windows**. によって、[!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)]設定、これらの両方またはいずれかの可能性があります、**他の言語**内のノード、**インストールされたテンプレート** ボックスの一覧です。  
   
@@ -58,7 +60,7 @@ ms.lasthandoff: 12/22/2017
      [!code-vb[CFX_SelfHost4#2](../../../samples/snippets/visualbasic/VS_Snippets_CFX/cfx_selfhost4/vb/module1.vb#2)]  
   
     > [!NOTE]
-    >  [!INCLUDE[crabout](../../../includes/crabout-md.md)]方法を定義し、サービス インターフェイスを実装して参照してください[する方法: サービス コントラクトを定義する](../../../docs/framework/wcf/how-to-define-a-wcf-service-contract.md)と[する方法: サービス コントラクトを実装する](../../../docs/framework/wcf/how-to-implement-a-wcf-contract.md)です。  
+    >  定義して、サービス インターフェイスを実装する方法の詳細については、次を参照してください。[する方法: サービス コントラクトを定義する](../../../docs/framework/wcf/how-to-define-a-wcf-service-contract.md)と[する方法: サービス コントラクトを実装する](../../../docs/framework/wcf/how-to-implement-a-wcf-contract.md)です。  
   
 7.  `Main` メソッドの上部で、サービスのベース アドレスで <xref:System.Uri> クラスのインスタンスを作成します。  
   
@@ -71,7 +73,7 @@ ms.lasthandoff: 12/22/2017
      [!code-vb[CFX_SelfHost4#4](../../../samples/snippets/visualbasic/VS_Snippets_CFX/cfx_selfhost4/vb/module1.vb#4)]       
   
     > [!NOTE]
-    >  この例では、既定のエンドポイントを使用するので、このサービスには構成ファイルは必要ありません。 エンドポイントが構成されていない場合、ランタイムは、サービスによって実装されたサービス コントラクトごとに 1 つのエンドポイントを各ベース アドレスに作成します。 [!INCLUDE[crabout](../../../includes/crabout-md.md)]既定のエンドポイントを参照してください[簡略化された構成](../../../docs/framework/wcf/simplified-configuration.md)と[WCF サービスの構成を簡略化](../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md)です。  
+    >  この例では、既定のエンドポイントを使用するので、このサービスには構成ファイルは必要ありません。 エンドポイントが構成されていない場合、ランタイムは、サービスによって実装されたサービス コントラクトごとに 1 つのエンドポイントを各ベース アドレスに作成します。 既定のエンドポイントの詳細については、次を参照してください。[簡略化された構成](../../../docs/framework/wcf/simplified-configuration.md)と[WCF サービスの構成を簡略化](../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md)です。  
   
 9. Ctrl キーと Shift キーを押しながら B キーを押して、ソリューションをビルドします。  
   
@@ -84,7 +86,7 @@ ms.lasthandoff: 12/22/2017
     > [!TIP]
     >  開くには**WCF テスト クライアント**を開き、[!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)]コマンド プロンプトを実行**WcfTestClient.exe**です。  
   
-3.  選択**サービスを追加しています.**から、**ファイル**メニュー。  
+3.  選択**サービスを追加しています.** から、**ファイル**メニュー。  
   
 4.  型`http://localhost:8080/hello`クリックおよびアドレス ボックスに**OK**です。  
   
@@ -99,7 +101,7 @@ ms.lasthandoff: 12/22/2017
  [!code-csharp[CFX_SelfHost4#5](../../../samples/snippets/csharp/VS_Snippets_CFX/cfx_selfhost4/cs/program.cs#5)]
  [!code-vb[CFX_SelfHost4#5](../../../samples/snippets/visualbasic/VS_Snippets_CFX/cfx_selfhost4/vb/module1.vb#5)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Uri>  
  <xref:System.Configuration.ConfigurationManager.AppSettings%2A>  
  <xref:System.Configuration.ConfigurationManager>  

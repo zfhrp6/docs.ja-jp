@@ -1,12 +1,13 @@
 ---
-title: "方法 : 署名および暗号化に個別の X.509 証明書を使用する"
-ms.custom: 
+title: '方法 : 署名および暗号化に個別の X.509 証明書を使用する'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -16,16 +17,17 @@ helpviewer_keywords:
 - ClientCredentials class
 - ClientCredentialsSecurityTokenManager class
 ms.assetid: 0b06ce4e-7835-4d82-8baf-d525c71a0e49
-caps.latest.revision: "11"
+caps.latest.revision: 11
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 944e9974ac5cb84aa0dd7e732c35752cb4ea749e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: f6103dd8f680752581a51cba7ba61c83522decc2
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="how-to-use-separate-x509-certificates-for-signing-and-encryption"></a>方法 : 署名および暗号化に個別の X.509 証明書を使用する
 ここでは、クライアントとサービスの両方においてメッセージの署名と暗号化とで別の証明書を使用するように [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] を構成する方法を示します。  
@@ -46,7 +48,7 @@ ms.lasthandoff: 12/22/2017
   
  ![クライアントの資格情報の使用方法を示す図](../../../../docs/framework/wcf/extending/media/e4971edd-a59f-4571-b36f-7e6b2f0d610f.gif "e4971edd-a59f-4571-b36f-7e6b2f0d610f")  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]カスタムの資格情報を参照してください[チュートリアル: カスタムのクライアントを作成してサービスの資格情報](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md)です。  
+ カスタムの資格情報の詳細については、次を参照してください。[チュートリアル: カスタムのクライアントを作成するとサービスの資格情報](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md)です。  
   
  また、カスタム ID 検証機能を作成し、カスタム バインドのセキュリティ バインド要素にリンクする必要があります。 さらに、既定の資格情報の代わりにカスタム資格情報を使用する必要があります。  
   
@@ -54,7 +56,7 @@ ms.lasthandoff: 12/22/2017
   
  ![カスタム バインド要素を示す図](../../../../docs/framework/wcf/extending/media/dddea4a2-0bb4-4921-9bf4-20d4d82c3da5.gif "dddea4a2-0bb4-4921-9bf4-20d4d82c3da5")  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]参照してください、カスタム id 検証機能を作成する方法:[する方法: カスタムのクライアント Id 検証機能を作成](../../../../docs/framework/wcf/extending/how-to-create-a-custom-client-identity-verifier.md)です。  
+ カスタム id 検証機能の作成の詳細については、次を参照してください。 方法:[する方法: カスタムのクライアント Id 検証機能を作成する](../../../../docs/framework/wcf/extending/how-to-create-a-custom-client-identity-verifier.md)です。  
   
 ### <a name="to-use-separate-certificates-for-signing-and-encryption"></a>署名と暗号化に別個の証明書を使用するには  
   
@@ -100,7 +102,7 @@ ms.lasthandoff: 12/22/2017
      [!code-csharp[c_FourCerts#7](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_fourcerts/cs/source.cs#7)]
      [!code-vb[c_FourCerts#7](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_fourcerts/vb/source.vb#7)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Description.ClientCredentials>  
  <xref:System.ServiceModel.Description.ServiceCredentials>  
  <xref:System.ServiceModel.ClientCredentialsSecurityTokenManager>  

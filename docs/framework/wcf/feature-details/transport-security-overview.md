@@ -19,11 +19,11 @@ ms.author: bruceper
 manager: mbaldwin
 ms.workload:
 - dotnet
-ms.openlocfilehash: 5619041ccf4ce4d899f3c9a478d125a1a2d8d32a
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: b697dc6a227c3b2a5646f4fcb11a39fd9d6339ff
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="transport-security-overview"></a>トランスポート セキュリティの概要
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] のトランスポート セキュリティ機構は、使用するバインディングとトランスポートによって異なります。 たとえば、<xref:System.ServiceModel.WSHttpBinding> クラスを使用する場合、トランスポートは HTTP であり、トランスポートをセキュリティで保護するための主要機構は SSL (Secure Sockets Layer) over HTTP (一般に HTTPS と呼ばれます) です。 このトピックでは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] システムに用意されたバインディングで使用する主要なトランスポート セキュリティ機構について説明します。  
@@ -60,19 +60,19 @@ ms.lasthandoff: 04/28/2018
  以下のセクションでは、その他のクライアント資格情報の種類について説明します。  
   
 #### <a name="basic"></a>基本  
- これは、IIS の基本認証方法に対応しています。 このモードを使用する場合は、Windows ユーザー アカウントと、適切な NTFS ファイル システムのアクセス許可を使用して IIS サーバーを構成する必要があります。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] [!INCLUDE[iis601](../../../../includes/iis601-md.md)]、を参照してください[基本認証の有効化と領域名を構成する](http://go.microsoft.com/fwlink/?LinkId=88592)です。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] [!INCLUDE[iisver](../../../../includes/iisver-md.md)]、を参照してください[IIS 7.0 Beta: 基本認証を構成する](http://go.microsoft.com/fwlink/?LinkId=88593)です。  
+ これは、IIS の基本認証方法に対応しています。 このモードを使用する場合は、Windows ユーザー アカウントと、適切な NTFS ファイル システムのアクセス許可を使用して IIS サーバーを構成する必要があります。 詳細については[!INCLUDE[iis601](../../../../includes/iis601-md.md)]を参照してください[基本認証の有効化と領域名を構成する](http://go.microsoft.com/fwlink/?LinkId=88592)です。 詳細については[!INCLUDE[iisver](../../../../includes/iisver-md.md)]を参照してください[IIS 7.0 Beta: 基本認証を構成する](http://go.microsoft.com/fwlink/?LinkId=88593)です。  
   
 #### <a name="certificate"></a>証明書  
- IIS には、クライアントに証明書を使用してログオンすることを要求するオプションがあります。 この機能により、IIS はクライアント証明書を Windows アカウントにマップすることもできます。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] [!INCLUDE[iis601](../../../../includes/iis601-md.md)]、を参照してください[IIS 6.0 でクライアント証明書の有効化](http://go.microsoft.com/fwlink/?LinkId=88594)です。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] [!INCLUDE[iisver](../../../../includes/iisver-md.md)]、を参照してください[IIS 7.0 Beta: IIS 7.0 でサーバー証明書を構成](http://go.microsoft.com/fwlink/?LinkId=88595)です。  
+ IIS には、クライアントに証明書を使用してログオンすることを要求するオプションがあります。 この機能により、IIS はクライアント証明書を Windows アカウントにマップすることもできます。 詳細については[!INCLUDE[iis601](../../../../includes/iis601-md.md)]を参照してください[IIS 6.0 でクライアント証明書の有効化](http://go.microsoft.com/fwlink/?LinkId=88594)です。 詳細については[!INCLUDE[iisver](../../../../includes/iisver-md.md)]を参照してください[IIS 7.0 Beta: IIS 7.0 でサーバー証明書を構成](http://go.microsoft.com/fwlink/?LinkId=88595)です。  
   
 #### <a name="digest"></a>Digest  
- ダイジェスト認証は基本認証と似ていますが、資格情報をクリア テキストではなくハッシュとして送信できるという利点があります。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] [!INCLUDE[iis601](../../../../includes/iis601-md.md)]、を参照してください[IIS 6.0 のダイジェスト認証](http://go.microsoft.com/fwlink/?LinkID=88443)です。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] [!INCLUDE[iisver](../../../../includes/iisver-md.md)]、を参照してください[IIS 7.0 Beta: ダイジェスト認証を構成する](http://go.microsoft.com/fwlink/?LinkId=88596)です。  
+ ダイジェスト認証は基本認証と似ていますが、資格情報をクリア テキストではなくハッシュとして送信できるという利点があります。 詳細については[!INCLUDE[iis601](../../../../includes/iis601-md.md)]を参照してください[IIS 6.0 のダイジェスト認証](http://go.microsoft.com/fwlink/?LinkID=88443)です。 詳細については[!INCLUDE[iisver](../../../../includes/iisver-md.md)]を参照してください[IIS 7.0 Beta: ダイジェスト認証を構成する](http://go.microsoft.com/fwlink/?LinkId=88596)です。  
   
 #### <a name="windows"></a>Windows  
- これは、IIS の統合 Windows 認証に対応しています。 この値に設定する場合、サーバーは、Kerberos プロトコルを使用する Windows ドメインにドメイン コントローラーとして存在することにもなっています。 サーバーが Kerberos ベースのドメインに存在しない場合、または Kerberos システムに障害が発生した場合は、次のセクションで説明する NTLM (NT LAN Manager) 値を使用できます。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] [!INCLUDE[iis601](../../../../includes/iis601-md.md)]、を参照してください[IIS 6.0 で統合 Windows 認証](http://go.microsoft.com/fwlink/?LinkId=88597)です。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] [!INCLUDE[iisver](../../../../includes/iisver-md.md)]、を参照してください[IIS 7.0 Beta: IIS 7.0 でサーバー証明書を構成](http://go.microsoft.com/fwlink/?LinkId=88595)です。  
+ これは、IIS の統合 Windows 認証に対応しています。 この値に設定する場合、サーバーは、Kerberos プロトコルを使用する Windows ドメインにドメイン コントローラーとして存在することにもなっています。 サーバーが Kerberos ベースのドメインに存在しない場合、または Kerberos システムに障害が発生した場合は、次のセクションで説明する NTLM (NT LAN Manager) 値を使用できます。 詳細については[!INCLUDE[iis601](../../../../includes/iis601-md.md)]を参照してください[IIS 6.0 で統合 Windows 認証](http://go.microsoft.com/fwlink/?LinkId=88597)です。 詳細については[!INCLUDE[iisver](../../../../includes/iisver-md.md)]を参照してください[IIS 7.0 Beta: IIS 7.0 でサーバー証明書を構成](http://go.microsoft.com/fwlink/?LinkId=88595)です。  
   
 #### <a name="ntlm"></a>NTLM  
- この値を使用すると、Kerberos プロトコルが失敗した場合に、サーバーは、NTLM を使用して認証を実行できます。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] IIS を構成して[!INCLUDE[iis601](../../../../includes/iis601-md.md)]を参照してください[強制的に NTLM 認証](http://go.microsoft.com/fwlink/?LinkId=88598)です。 [!INCLUDE[iisver](../../../../includes/iisver-md.md)] では、Windows 認証に NTLM 認証が含まれます。 詳細については、次を参照してください。 [IIS 7.0 Beta: IIS 7.0 でサーバー証明書を構成](http://go.microsoft.com/fwlink/?LinkID=88595)です。  
+ この値を使用すると、Kerberos プロトコルが失敗した場合に、サーバーは、NTLM を使用して認証を実行できます。 IIS の構成の詳細については[!INCLUDE[iis601](../../../../includes/iis601-md.md)]を参照してください[強制的に NTLM 認証](http://go.microsoft.com/fwlink/?LinkId=88598)です。 [!INCLUDE[iisver](../../../../includes/iisver-md.md)] では、Windows 認証に NTLM 認証が含まれます。 詳細については、次を参照してください。 [IIS 7.0 Beta: IIS 7.0 でサーバー証明書を構成](http://go.microsoft.com/fwlink/?LinkID=88595)です。  
   
 ## <a name="wshttpbinding"></a>WsHttpBinding  
  <xref:System.ServiceModel.WSHttpBinding> クラスは、WS-* 仕様を実装するサービスと共に相互運用するようにデザインされています。 このバインディングのトランスポート セキュリティは、SSL (Secure Sockets Layer) over HTTP または HTTPS です。 SSL を使用する [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションを作成するには、IIS を使用してアプリケーションをホストします。 自己ホスト型アプリケーションを作成する場合は、HttpCfg.exe ツールを使用して、X.509 証明書をコンピューターの特定のポートにバインドします。 ポート番号は、エンドポイント アドレスとして [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションの一部に指定されます。 トランスポート モードを使用する場合は、エンドポイント アドレスに HTTPS プロトコルを含める必要があります。そうしないと、実行時に例外が発生します。 詳細については、次を参照してください。 [HTTP トランスポート セキュリティ](../../../../docs/framework/wcf/feature-details/http-transport-security.md)です。  
@@ -101,7 +101,7 @@ ms.lasthandoff: 04/28/2018
 > [!NOTE]
 >  Windows セキュリティを使用している場合には、証明書は不要です。  
   
- 証明書の拇印を使用するコードを次に示します。拇印により、証明書が一意に識別されます。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] 証明書を参照してください[証明書の使用](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)です。  
+ 証明書の拇印を使用するコードを次に示します。拇印により、証明書が一意に識別されます。 証明書の詳細については、「[証明書の使用](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)」を参照してください。  
   
  [!code-csharp[c_ProgrammingSecurity#13](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_programmingsecurity/cs/source.cs#13)]
  [!code-vb[c_ProgrammingSecurity#13](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_programmingsecurity/vb/source.vb#13)]  
@@ -125,10 +125,10 @@ ms.lasthandoff: 04/28/2018
  同じネットワーク上の 2 台のコンピューター間に名前付きパイプ チャネルを作成できますが、<xref:System.ServiceModel.NetNamedPipeBinding> クラスは、コンピューター内通信 (つまり、同じコンピューター上で実行されるプロセス) を効率的に行うことができるようにデザインされています。 このバインディングが提供するのは、トランスポート レベルのセキュリティだけです。 このバインディングを使用してアプリケーションを作成する場合は、エンドポイント アドレスにプロトコルとして "net.pipe" を含める必要があります。  
   
 ## <a name="wsfederationhttpbinding"></a>WSFederationHttpBinding  
- トランスポート セキュリティを使用する場合、このバインディングでは SSL over HTTP を使用します。SSL over HTTP は HTTPS とも呼ばれ、発行済みトークン (<xref:System.ServiceModel.WSFederationHttpSecurityMode.TransportWithMessageCredential>) を含みます。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] フェデレーション アプリケーションを参照してください[フェデレーションと発行されたトークン](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)です。  
+ トランスポート セキュリティを使用する場合、このバインディングでは SSL over HTTP を使用します。SSL over HTTP は HTTPS とも呼ばれ、発行済みトークン (<xref:System.ServiceModel.WSFederationHttpSecurityMode.TransportWithMessageCredential>) を含みます。 フェデレーション アプリケーションの詳細については、次を参照してください。[フェデレーションと発行されたトークン](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)です。  
   
 ## <a name="netpeertcpbinding"></a>NetPeerTcpBinding  
- <xref:System.ServiceModel.NetPeerTcpBinding> クラスは、ピアツーピア ネットワーク機能を使用して効率的に通信できるようにデザインされた、セキュリティ保護されたトランスポートです。 クラスとバインディングの名前が示すように、プロトコルは TCP です。 セキュリティ モードが Transport に設定されている場合、このバインディングは TLS over TCP を実装します。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] ピア ツー ピア機能を参照してください[ピア ツー ピア ネットワー キング](../../../../docs/framework/wcf/feature-details/peer-to-peer-networking.md)です。  
+ <xref:System.ServiceModel.NetPeerTcpBinding> クラスは、ピアツーピア ネットワーク機能を使用して効率的に通信できるようにデザインされた、セキュリティ保護されたトランスポートです。 クラスとバインディングの名前が示すように、プロトコルは TCP です。 セキュリティ モードが Transport に設定されている場合、このバインディングは TLS over TCP を実装します。 ピア ツー ピア機能の詳細については、次を参照してください。[ピア ツー ピア ネットワー キング](../../../../docs/framework/wcf/feature-details/peer-to-peer-networking.md)です。  
   
 ## <a name="msmqintegrationbinding-and-netmsmqbinding"></a>MsmqIntegrationBinding と NetMsmqBinding  
  トランスポートの詳細についてはメッセージ キュー (MSMQ と呼ばれる以前) でセキュリティを参照してください[トランスポート セキュリティを使用するメッセージをセキュリティで保護する](../../../../docs/framework/wcf/feature-details/securing-messages-using-transport-security.md)です。  

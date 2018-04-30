@@ -1,29 +1,30 @@
 ---
-title: "ビジュアル ワークフロー追跡"
-ms.custom: 
+title: ビジュアル ワークフロー追跡
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 0143448f-2044-40a0-8a3d-941f6d12468b
-caps.latest.revision: "10"
+caps.latest.revision: 10
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 687cc2acbff7c85b89c4502fff863e48dada97de
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 6bf9a053eaf21f1e0612ea7b91c79755b9ef0e29
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="visual-workflow-tracking"></a>ビジュアル ワークフロー追跡
 このサンプルでは、[!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)] のデバッグ機能を使用してビジュアル ワークフロー追跡アプリケーションを作成する方法を示します。  
   
 ## <a name="sample-details"></a>サンプルの詳細  
- このアプリケーションは、Workflow.xaml に定義されている単純なフローチャート ワークフローを実行し、ワークフロー デザイナーを再ホストして現在実行中のワークフローを表示します。 ワークフローが実行されると、現在実行中のアクティビティが黄色の枠とデバッグ矢印で示されます。 さらに、ワークフローによって生成された追跡レコードもアプリケーション ウィンドウに表示されます。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]ワークフロー追跡を参照してください[ワークフロー追跡とトレース](../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)です。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]ワークフロー デザイナーの再ホストを参照してください[ワークフロー デザイナーを再ホスト](../../../../docs/framework/windows-workflow-foundation/rehosting-the-workflow-designer.md)です。  
+ このアプリケーションは、Workflow.xaml に定義されている単純なフローチャート ワークフローを実行し、ワークフロー デザイナーを再ホストして現在実行中のワークフローを表示します。 ワークフローが実行されると、現在実行中のアクティビティが黄色の枠とデバッグ矢印で示されます。 さらに、ワークフローによって生成された追跡レコードもアプリケーション ウィンドウに表示されます。 ワークフロー追跡の詳細については、次を参照してください。[ワークフロー追跡とトレース](../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)です。 ワークフロー デザイナーの再ホストの詳細については、次を参照してください。[ワークフロー デザイナーを再ホスト](../../../../docs/framework/windows-workflow-foundation/rehosting-the-workflow-designer.md)です。  
   
  このワークフロー シミュレーターは、2 つのディクショナリを保持することによって機能します。 一方のディクショナリには、現在実行中のアクティビティ オブジェクトと、そのアクティビティがインスタンス化された XAML の行番号とのマッピングが含まれています。 もう一方のディクショナリには、アクティビティ インスタンス ID とアクティビティ オブジェクトとのマッピングが含まれています。 カスタム追跡プロファイルを使用して追跡レコードが出力されるときには、現在実行中のアクティビティのインスタンス ID が特定されて、そのアクティビティをインスタンス化した XAML ファイルにマップされます。 その後、再ホストされたワークフロー デザイナーで、ワークフロー デバッガーと同じ方法を使用してそのアクティビティがデザイナー画面で強調表示されます (アクティビティが黄色の枠で囲まれ、デザイナーの左端に黄色の矢印が表示されます)。  
   

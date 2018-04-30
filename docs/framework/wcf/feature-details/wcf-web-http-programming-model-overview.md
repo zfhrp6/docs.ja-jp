@@ -16,11 +16,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: ba8a2eb97b071608b16b5549ead403b578329ee5
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: f617aa68a052b60933db2dc4b2051c910af6b9b9
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="wcf-web-http-programming-model-overview"></a>WCF Web HTTP プログラミング モデルの概要
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] WEB HTTP プログラミング モデルは [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] での WEB HTTP サービスの構築に必要な基本的な要素を提供します。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WEB HTTP サービスは、Web ブラウザーも含めて、最大限の幅広いクライアントからアクセスできるように設計されており、次の固有の要件があります。  
@@ -31,12 +31,12 @@ ms.lasthandoff: 04/28/2018
   
 -   **複数のデータ形式**Web スタイルのサービスがさまざまな種類のデータだけでなく、SOAP メッセージを処理します。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WEB HTTP プログラミング モデルは、<xref:System.ServiceModel.WebHttpBinding> および <xref:System.ServiceModel.Description.WebHttpBehavior> を使用して、XML ドキュメント、JSON データ オブジェクト、バイナリ コンテンツのストリーム (イメージ、ビデオ ファイル、プレーンテキスト) など、さまざまなデータ形式をサポートします。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WEB HTTP プログラミング モデルは [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の扱う範囲を拡大し、WEB HTTP サービス、AJAX および JSON サービス、配信 (ATOM および RSS) フィードを使用する Web スタイルのシナリオも対象とします。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] AJAX および JSON サービスを参照してください[AJAX の統合と JSON サポート](../../../../docs/framework/wcf/feature-details/ajax-integration-and-json-support.md)です。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] 配信を参照してください[WCF 配信の概要](../../../../docs/framework/wcf/feature-details/wcf-syndication-overview.md)です。  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WEB HTTP プログラミング モデルは [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の扱う範囲を拡大し、WEB HTTP サービス、AJAX および JSON サービス、配信 (ATOM および RSS) フィードを使用する Web スタイルのシナリオも対象とします。 AJAX および JSON サービスに関する詳細については、次を参照してください。 [AJAX の統合と JSON サポート](../../../../docs/framework/wcf/feature-details/ajax-integration-and-json-support.md)です。 配信の詳細については、次を参照してください。 [WCF 配信の概要](../../../../docs/framework/wcf/feature-details/wcf-syndication-overview.md)です。  
   
  WEB HTTP サービスから返されるデータの種類に追加の制限はありません。 WEB HTTP サービス操作からは任意のシリアル化可能な型を返すことができます。 WEB HTTP サービス操作は Web ブラウザーによって呼び出すことができるため、URL に指定できるデータ型に制限があります。 既定でサポートされる種類の詳細については、次を参照してください。、 **UriTemplate クエリ文字列パラメーターと Url**以下のセクションです。 既定の動作は、URL で指定されたパラメーターから実際のパラメーター型への変換方法を指定する独自の T:System.ServiceModel.Dispatcher.QueryStringConverter 実装を提供することで変更できます。 詳細については、「<xref:System.ServiceModel.Dispatcher.QueryStringConverter>」を参照してください。  
   
 > [!CAUTION]
->  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WEB HTTP プログラミング モデルで記述されたサービスでは、SOAP メッセージは使用されません。 SOAP が使用されないため、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] によって提供されるセキュリティ機能を使用することはできません。 ただし、HTTPS でサービスをホストすることによってトランスポート ベースのセキュリティを使用できます。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] セキュリティを参照してください[セキュリティの概要](../../../../docs/framework/wcf/feature-details/security-overview.md)  
+>  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WEB HTTP プログラミング モデルで記述されたサービスでは、SOAP メッセージは使用されません。 SOAP が使用されないため、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] によって提供されるセキュリティ機能を使用することはできません。 ただし、HTTPS でサービスをホストすることによってトランスポート ベースのセキュリティを使用できます。 詳細については[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]セキュリティを参照してください[セキュリティの概要](../../../../docs/framework/wcf/feature-details/security-overview.md)  
   
 > [!WARNING]
 >  IIS の WebDAV 拡張をインストールすると、WebDAV 拡張がすべての PUT 要求を処理しようとしたときに Web HTTP サービスが HTTP 405 エラーを返すことがあります。 この問題を解決するには、WebDAV 拡張をアンインストールするか、Web サイトの WebDAV 拡張を無効にします。 詳細については、次を参照してください[IIS および WebDav。](http://learn.iis.net/page.aspx/357/webdav-for-iis-70/)  
@@ -66,7 +66,7 @@ ms.lasthandoff: 04/28/2018
   
  包含されたテンプレートを個別に扱うことができるデータ構造内の一連の <xref:System.UriTemplate> オブジェクトを追跡することが必要になる場合がよくあります (特に、URI に基づいて要求をサービス操作にディスパッチすることが必要なサーバー上)。 <xref:System.UriTemplateTable> は、URI テンプレートのセットを表し、テンプレート セットと候補の URI が与えられると、最適の組み合わせを選択します。 これは、特定のネットワーク スタックと結び付いていないので ([!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を含む)、必要な場合はいつでも使用できます。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービス モデルは、<xref:System.UriTemplate> および <xref:System.UriTemplateTable> を使用して、<xref:System.UriTemplate> によって記述された URI セットにサービス操作を関連付けます。 サービス操作は、<xref:System.UriTemplate> または <xref:System.ServiceModel.Web.WebGetAttribute> によって <xref:System.ServiceModel.Web.WebInvokeAttribute> に関連付けられます。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] <xref:System.UriTemplate> および<xref:System.UriTemplateTable>を参照してください[UriTemplate と UriTemplateTable](../../../../docs/framework/wcf/feature-details/uritemplate-and-uritemplatetable.md)  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービス モデルは、<xref:System.UriTemplate> および <xref:System.UriTemplateTable> を使用して、<xref:System.UriTemplate> によって記述された URI セットにサービス操作を関連付けます。 サービス操作は、<xref:System.UriTemplate> または <xref:System.ServiceModel.Web.WebGetAttribute> によって <xref:System.ServiceModel.Web.WebInvokeAttribute> に関連付けられます。 詳細については<xref:System.UriTemplate>と<xref:System.UriTemplateTable>を参照してください[UriTemplate と UriTemplateTable](../../../../docs/framework/wcf/feature-details/uritemplate-and-uritemplatetable.md)  
   
 ## <a name="webget-and-webinvoke-attributes"></a>WebGet および WebInvoke 属性  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WEB HTTP サービスは、さまざまな呼び出し用の動詞 (HTTP POST、PUT、DELETE など) に加えて、データ取得のための動詞 (HTTP GET など) を使用します。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WEB HTTP プログラミング モデルでは、サービスの開発者は <xref:System.ServiceModel.Web.WebGetAttribute> と <xref:System.ServiceModel.Web.WebInvokeAttribute> を使用して、URI テンプレートと、各自のサービス操作に関連付けられた動詞を共に制御できます。 <xref:System.ServiceModel.Web.WebGetAttribute> および <xref:System.ServiceModel.Web.WebInvokeAttribute> を使用すると、個々の操作を URI と、それらの URI に関連付けられている HTTP メソッドにバインドする方法を制御できます。 たとえば、次のコードでは、<xref:System.ServiceModel.Web.WebGetAttribute> および <xref:System.ServiceModel.Web.WebInvokeAttribute> を追加します。  
@@ -148,10 +148,10 @@ interface ICustomer
   
  つまり、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WEB HTTP プログラミング モデルではあらゆる種類のデータを処理できますが、<xref:System.IO.Stream> に対してプログラミングすることもできます。  
   
- [!INCLUDE[netfx35_short](../../../../includes/netfx35-short-md.md)] は、配信フィード (ATOM および RSS) だけでなく、JSON データ (AJAX) にも対応しています。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] これらの機能を参照してください[WCF Web HTTP 書式](../../../../docs/framework/wcf/feature-details/wcf-web-http-formatting.md)[WCF 配信の概要](../../../../docs/framework/wcf/feature-details/wcf-syndication-overview.md)と[AJAX の統合と JSON サポート](../../../../docs/framework/wcf/feature-details/ajax-integration-and-json-support.md)です。  
+ [!INCLUDE[netfx35_short](../../../../includes/netfx35-short-md.md)] は、配信フィード (ATOM および RSS) だけでなく、JSON データ (AJAX) にも対応しています。 これらの機能に関する詳細については、次を参照してください。 [WCF Web HTTP 書式](../../../../docs/framework/wcf/feature-details/wcf-web-http-formatting.md)[WCF 配信の概要](../../../../docs/framework/wcf/feature-details/wcf-syndication-overview.md)と[AJAX の統合と JSON サポート](../../../../docs/framework/wcf/feature-details/ajax-integration-and-json-support.md)です。  
   
 ## <a name="wcf-web-http-programming-model-and-security"></a>WCF WEB HTTP プログラミング モデルとセキュリティ  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WEB HTTP プログラミング モデルでは WS-* プロトコルがサポートされないため、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WEB HTTP サービスを保護するには、SSL を使用して HTTPS 全体でサービスを公開するしかありません。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] SSL を設定する[!INCLUDE[iisver](../../../../includes/iisver-md.md)]を参照してください[を IIS で SSL を実装する方法](http://go.microsoft.com/fwlink/?LinkId=131613)  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WEB HTTP プログラミング モデルでは WS-* プロトコルがサポートされないため、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WEB HTTP サービスを保護するには、SSL を使用して HTTPS 全体でサービスを公開するしかありません。 SSL の設定の詳細については[!INCLUDE[iisver](../../../../includes/iisver-md.md)]を参照してください[を IIS で SSL を実装する方法](http://go.microsoft.com/fwlink/?LinkId=131613)  
   
 ## <a name="troubleshooting-the-wcf-web-http-programming-model"></a>WCF WEB HTTP プログラミング モデルのトラブルシューティング  
  <xref:System.ServiceModel.Channels.ChannelFactoryBase%601> を使用してチャネルを作成するために WCF WEB HTTP サービスを呼び出すと、異なる <xref:System.ServiceModel.Description.WebHttpBehavior> が <xref:System.ServiceModel.EndpointAddress> に渡されるとしても、<xref:System.ServiceModel.EndpointAddress> は構成ファイルに設定されている <xref:System.ServiceModel.Channels.ChannelFactoryBase%601> を使用します。  

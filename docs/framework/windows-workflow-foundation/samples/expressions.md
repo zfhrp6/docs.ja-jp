@@ -1,28 +1,29 @@
 ---
 title: Expressions2
-ms.custom: 
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 43a85905-77b5-4893-bb38-1cb9b293d69d
-caps.latest.revision: "14"
+caps.latest.revision: 14
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a22cf5ae3434e0f79a4cba1b772b02316ccdb007
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: c8470a3bb93385724f50e18d25c148ee609c3a77
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="expressions"></a>式
 このサンプルでは、基本的な式をワークフローで使用する方法を示します。 このサンプルは、架空の会社の 2 人の従業員の基本給を計算するワークフローで構成されます。 `Employee` および `SalaryStats` という 2 つのクラスが Employee.cs と SalaryStats.cs で定義されています。 これらのクラスをワークフローで使用して、複合型の変数のプロパティに対する単純な数値演算と文字列操作を実行する方法を示します。  
   
- 給与計算ワークフローは、2 つの作成スタイルを示すために XAML と C# の両方で定義されています。 XAML バージョンは SalaryCalculation.xaml にあり、ワークフロー デザイナーで表示および編集できます。 C# バージョンは Program.cs にあります。 XAML で使用されている式は Visual Basic 構文に準拠しており、<xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> 式アクティビティと <xref:Microsoft.VisualBasic.Activities.VisualBasicReference%601> 式アクティビティを使用して実行されます。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Visual Basic 式を参照してください、 [Visual Basic 式](http://go.microsoft.com/fwlink/?LinkId=165912)です。 一方、C# の式はラムダ式で記述されており、<xref:System.Activities.Expressions.LambdaValue%601> 式アクティビティと <xref:System.Activities.Expressions.LambdaReference%601> 式アクティビティが使用されます。 ラムダ式で記述されているため、C# コンパイラで構文の強調表示や静的な検証を行うことができます。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]C# の場合でのラムダ式を参照してください[ラムダ式 (c# プログラミング ガイド)](http://go.microsoft.com/fwlink/?LinkId=182082)です。 ワークフローの作成時に Visual Basic でコードを記述すると、Visual Basic ラムダ式が使用されます。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Visual Basic のラムダ式を参照してください[ラムダ式 (Visual Basic)](http://go.microsoft.com/fwlink/?LinkId=152437)です。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]コードを使用してワークフローを作成するには、について、次を参照してください。[オーサリング ワークフロー、アクティビティ、および命令型コードを使用して式](../../../../docs/framework/windows-workflow-foundation/authoring-workflows-activities-and-expressions-using-imperative-code.md)です。  
+ 給与計算ワークフローは、2 つの作成スタイルを示すために XAML と C# の両方で定義されています。 XAML バージョンは SalaryCalculation.xaml にあり、ワークフロー デザイナーで表示および編集できます。 C# バージョンは Program.cs にあります。 XAML で使用されている式は Visual Basic 構文に準拠しており、<xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> 式アクティビティと <xref:Microsoft.VisualBasic.Activities.VisualBasicReference%601> 式アクティビティを使用して実行されます。 詳細については、Visual Basic 式「 [Visual Basic 式](http://go.microsoft.com/fwlink/?LinkId=165912)です。 一方、C# の式はラムダ式で記述されており、<xref:System.Activities.Expressions.LambdaValue%601> 式アクティビティと <xref:System.Activities.Expressions.LambdaReference%601> 式アクティビティが使用されます。 ラムダ式で記述されているため、C# コンパイラで構文の強調表示や静的な検証を行うことができます。 C# でのラムダ式の詳細については、次を参照してください。[ラムダ式 (c# プログラミング ガイド)](http://go.microsoft.com/fwlink/?LinkId=182082)です。 ワークフローの作成時に Visual Basic でコードを記述すると、Visual Basic ラムダ式が使用されます。 Visual Basic のラムダ式の詳細については、次を参照してください。[ラムダ式 (Visual Basic)](http://go.microsoft.com/fwlink/?LinkId=152437)です。 コードを使用してワークフローの作成に関する詳細については、次を参照してください。[オーサリング ワークフロー、アクティビティ、および命令型コードを使用して式](../../../../docs/framework/windows-workflow-foundation/authoring-workflows-activities-and-expressions-using-imperative-code.md)です。  
   
 #### <a name="to-run-the-sample"></a>サンプルを実行するには  
   

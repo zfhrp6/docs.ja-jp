@@ -1,28 +1,28 @@
 ---
-title: "トランザクション フローの有効化"
-ms.custom: 
+title: トランザクション フローの有効化
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - transactions [WCF], enabling flow
 ms.assetid: a03f5041-5049-43f4-897c-e0292d4718f7
-caps.latest.revision: 
+caps.latest.revision: 17
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 814df9ff4fb11b0aa59270ac251b5dbd9ed7fe96
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ffc7a1af9c9a021e93c0fca14c0d7d2826f8af6a
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="enabling-transaction-flow"></a>トランザクション フローの有効化
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] には、高い柔軟性を備えた、トランザクション フローの制御用オプションが用意されています。 サービスのトランザクション フローの設定は、属性と構成の組み合わせを使用して表すことができます。  
@@ -78,7 +78,7 @@ ms.lasthandoff: 12/22/2017
   
  バインディングによりトランザクション フローが無効にされているとき、サービス コントラクトのいずれかの操作が受信トランザクションを必要とした場合は、サービスの起動時に検証例外がスローされます。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] に用意されているほとんどの標準バインディングには、`transactionFlow` 属性と `transactionProtocol` 属性があります。これらの属性を使用すると、受信トランザクションを受け入れるように特定のバインディングを構成できます。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]構成要素を設定するには、表示[\<バインディング >](../../../../docs/framework/misc/binding.md)です。  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] に用意されているほとんどの標準バインディングには、`transactionFlow` 属性と `transactionProtocol` 属性があります。これらの属性を使用すると、受信トランザクションを受け入れるように特定のバインディングを構成できます。 構成要素の設定の詳細については、次を参照してください。 [\<バインディング >](../../../../docs/framework/misc/binding.md)です。  
   
  管理者や展開担当者は、エンドポイント レベルのトランザクション フローを使用することで、展開時に構成ファイルを使用してトランザクション フローの要件や制約を構成できます。  
   

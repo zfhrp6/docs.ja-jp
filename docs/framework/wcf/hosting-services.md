@@ -18,11 +18,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 8311c558c180de5010850a982dc4cca7576382a3
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: ac7de48b801036ac186ffe92117269ae86d14a10
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="hosting-services"></a>ホスティング サービス
 アクティブにするには、サービスを作成してそのコンテキストと有効期間を制御するランタイム環境内で、サービスをホストする必要があります。 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービスは、マネージ コードをサポートする任意の Windows プロセスで実行されるように設計されています。  
@@ -42,14 +42,14 @@ ms.lasthandoff: 04/28/2018
  このホスト オプションは、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスをマネージ Windows サービス (従来 NT サービスと呼ばれていたもの) としてホストするアプリケーション ドメイン (AppDomain) の登録から構成されているため、サービスのプロセス有効期間は Windows サービスのサービス コントロール マネージャー (SCM) によって制御されます。 自己ホスト オプションと同様、この種類のホスト環境では、ホスト コードをアプリケーションの一部として記述する必要があります。 サービスは、Windows サービスと [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスの両方として実装します。そのためには、 <xref:System.ServiceProcess.ServiceBase> クラスから継承すると同時に、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス コントラクト インターフェイスからも継承します。 次に <xref:System.ServiceModel.ServiceHost> を作成し、オーバーライドされた <xref:System.ServiceProcess.ServiceBase.OnStart%28System.String%5B%5D%29> メソッドで開き、オーバーライドされた <xref:System.ServiceProcess.ServiceBase.OnStop> メソッドで閉じます。 また、 <xref:System.Configuration.Install.Installer> から継承されるインストーラー クラスも実装し、プログラムが Installutil.exe ツールによって Windows サービスとしてインストールされるようにする必要があります。 詳細については、次を参照してください。[する方法: マネージ Windows サービスで WCF サービスをホスト](../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-a-managed-windows-service.md)です。 マネージ Windows サービスのホスト オプションによって有効になるシナリオは、メッセージがアクティブ化されていない、セキュリティ保護された環境において、IIS の外部でホストされ、長時間実行される [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスです。 サービスの有効期限は代わりにオペレーティング システムによって制御されます。 このホスト オプションは Windows のすべてのバージョンで使用できます。  
   
 #### <a name="internet-information-services-iis"></a>インターネット インフォメーション サービス (IIS)  
- IIS ホスト オプションは [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] と統合され、プロセスのリサイクル、アイドル シャットダウン、処理状況の監視、メッセージに基づくアクティベーションなど、このテクノロジによって提供される機能を使用します。 [!INCLUDE[wxp](../../../includes/wxp-md.md)] および [!INCLUDE[ws2003](../../../includes/ws2003-md.md)] オペレーティング システムでは、高可用性と高スケーラビリティが求められる Web サービス アプリケーションのホストには、このオプションが適切なソリューションとなります。 IIS では、顧客がエンタープライズ クラスのサーバー製品に求める統合された管理性も提供されます。 このホスト オプションでは、IIS が正しく構成されている必要がありますが、アプリケーションの一部としてホスト コードを書く必要はありません。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] サービス用に IIS ホストを構成する方法の [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] については、「 [How to: Host a WCF Service in IIS](../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-iis.md)。  
+ IIS ホスト オプションは [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] と統合され、プロセスのリサイクル、アイドル シャットダウン、処理状況の監視、メッセージに基づくアクティベーションなど、このテクノロジによって提供される機能を使用します。 [!INCLUDE[wxp](../../../includes/wxp-md.md)] および [!INCLUDE[ws2003](../../../includes/ws2003-md.md)] オペレーティング システムでは、高可用性と高スケーラビリティが求められる Web サービス アプリケーションのホストには、このオプションが適切なソリューションとなります。 IIS では、顧客がエンタープライズ クラスのサーバー製品に求める統合された管理性も提供されます。 このホスト オプションでは、IIS が正しく構成されている必要がありますが、アプリケーションの一部としてホスト コードを書く必要はありません。 ホストする IIS を構成する方法の詳細についての[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]サービスを参照してください[する方法: IIS で WCF サービスをホスト](../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-iis.md)です。  
   
  IIS でホストされるサービスは HTTP トランスポートしか使用できません。 IIS 5.1 の実装では、 [!INCLUDE[wxp](../../../includes/wxp-md.md)]にいくつかの制限がありました。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] 上で IIS 5.1 によって提供される、 [!INCLUDE[wxp](../../../includes/wxp-md.md)] サービス用のメッセージ ベースのアクティベーションでは、同じコンピューター上にあるそれ以外の自己ホスト型 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスによる、ポート 80 を使用した通信が妨げられます。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] 上で [!INCLUDE[iis601](../../../includes/iis601-md.md)] によってホストした場合は、 [!INCLUDE[ws2003](../../../includes/ws2003-md.md)]サービスは他のアプリケーションと同じ AppDomain/アプリケーション プール/ワーカー プロセスで実行できます。 ただし、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] と [!INCLUDE[iis601](../../../includes/iis601-md.md)] のどちらもカーネル モードの HTTP スタック (HTTP.sys) を使用するため、IIS 5.1 とは異なり、 [!INCLUDE[iis601](../../../includes/iis601-md.md)] ではポート 80 を同じコンピューター上で実行される他の自己ホスト型 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスと共有できます。  
   
 #### <a name="windows-process-activation-service-was"></a>Windows プロセス アクティブ化サービス (WAS)  
  Windows プロセス アクティブ化サービス (WAS) とは、 [!INCLUDE[lserver](../../../includes/lserver-md.md)] でも使用できる [!INCLUDE[wv](../../../includes/wv-md.md)]用の新しいプロセス アクティブ化機構です。 よく知られている [!INCLUDE[iis601](../../../includes/iis601-md.md)] のプロセス モデル (アプリケーション プールとメッセージ ベースのプロセス アクティベーション) とホスト機能 (迅速な障害保護、状態の監視、プロセスのリサイクルなど) はそのままですが、HTTP に対する依存性がアクティベーション アーキテクチャから解消されています。 [!INCLUDE[iisver](../../../includes/iisver-md.md)] では、WAS を使用して HTTP 経由でのメッセージ ベースのアクティベーションを実現しています。 ただし、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] がサポートする他のプロトコル (TCP、MSMQ、名前付きパイプなど) を介してメッセージ ベースのアクティベーションを実現するために、WAS には追加の [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] コンポーネントもプラグインされています。 これにより、IIS のプロセスのリサイクル、迅速な障害保護、一般的な構成システムなど、これまで HTTP ベースのアプリケーションのみで利用可能だった IIS 機能を、通信プロトコルを使用するアプリケーションでも使用できるようになりました。  
   
- このホスト オプションでは、WAS が正しく構成されている必要がありますが、アプリケーションの一部としてホスト コードを書く必要はありません。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] については、「 [How to: Host a WCF Service in WAS](../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-was.md)。  
+ このホスト オプションでは、WAS が正しく構成されている必要がありますが、アプリケーションの一部としてホスト コードを書く必要はありません。 構成する方法の詳細についてをホストしていたは、次を参照してください。[する方法: WAS で WCF サービスをホスト](../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-was.md)です。  
   
 ## <a name="choosing-a-hosting-environment"></a>ホスト環境の選択  
  次の表に、各ホスト オプションに関連する主な利点とシナリオの要点をまとめます。  

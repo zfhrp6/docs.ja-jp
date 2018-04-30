@@ -14,11 +14,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 216136ba084505947b5ab3c985284d704cb5872f
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 460f6db9334c2ede7d968e10f9e594c49e806bea
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="using-variables-with-a-net-framework-35-ruleset"></a>.NET Framework 3.5 ルールセットでの変数の使用
 このサンプルでは、<xref:System.Activities.Statements.Interop> アクティビティを使用するワークフローを作成し、ポリシーとルールを使用する、[!INCLUDE[netfx35_short](../../../../includes/netfx35-short-md.md)] で記述されたカスタム アクティビティを統合する方法を示します。 このワークフローでは、カスタム アクティビティで公開されている依存プロパティに変数をバインドすることで、カスタム アクティビティにデータを渡します。  
@@ -39,7 +39,7 @@ ms.lasthandoff: 04/26/2018
   
 4.  右クリックして、`DiscountPolicy`を選択し、**コードの表示**アクティビティの c# コードの横にあるコードをチェックするオプションです。  
   
-     `DiscountLevel` の依存関係プロパティの設定を確認します。 これは [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)] の引数と同じです。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] 引数を参照してください[変数と引数](../../../../docs/framework/windows-workflow-foundation/variables-and-arguments.md)です。  
+     `DiscountLevel` の依存関係プロパティの設定を確認します。 これは [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)] の引数と同じです。 引数の詳細については、次を参照してください。[変数と引数](../../../../docs/framework/windows-workflow-foundation/variables-and-arguments.md)です。  
   
 ## <a name="interopwith35ruleset"></a>InteropWith35RuleSet  
  これは、<xref:System.Activities.Statements.Interop> アクティビティを使用して、`TravelRuleLibrary` プロジェクトで作成されたカスタム ルール セットと統合するシーケンシャル ワークフロー プロジェクトです。 変数は、最上位レベルの <xref:System.Activities.Statements.Sequence> アクティビティで作成されます。 <xref:System.Activities.Statements.Interop> アクティビティは、`TravelRuleSet` アクティビティと統合するために使用されます。 <xref:System.Activities.Statements.Sequence> で宣言された変数は、依存プロパティにバインドするために使用されます。  

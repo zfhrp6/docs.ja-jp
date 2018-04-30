@@ -21,11 +21,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: d20d4c39a6cca744ac981d1a143d2847d9b20e5a
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: bc962b328f2321d1cfb016b78a53307b43fac30d
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="developing-and-deploying-wcf-data-services"></a>WCF Data Services の開発と配置
 このトピックでは、 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]の開発と配置について説明します。 複数の基本情報については[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]を参照してください[作業の開始](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md)と[概要](../../../../docs/framework/data/wcf/wcf-data-services-overview.md)です。  
@@ -80,7 +80,7 @@ ms.lasthandoff: 04/28/2018
   
 3.  **Microsoft Azure 開発環境**  
   
-     Windows Azure Tools for Visual Studio には、Visual Studio での Windows Azure サービスを開発するためのツールの統合セットが含まれています。 これらのツールでは、Microsoft Azure に配置できるデータ サービスを開発し、配置前にローカル コンピューターでデータ サービスをテストすることができます。 Visual Studio を使用して、Windows Azure プラットフォームで実行されているデータ サービスを開発する場合は、これらのツールを使用します。 Visual Studio からの Windows Azure Tools をダウンロードすることができます、 [Microsoft ダウンロード センター](http://go.microsoft.com/fwlink/?LinkID=201848)です。 Microsoft Azure 上で実行されるデータ サービスの開発の[!INCLUDE[crabout](../../../../includes/crabout-md.md)] については、ブログの記事「 [Deploying an OData Service in Microsoft Azure (Microsoft Azure での OData サービスの配置)](http://go.microsoft.com/fwlink/?LinkId=201847)」を参照してください。  
+     Windows Azure Tools for Visual Studio には、Visual Studio での Windows Azure サービスを開発するためのツールの統合セットが含まれています。 これらのツールでは、Microsoft Azure に配置できるデータ サービスを開発し、配置前にローカル コンピューターでデータ サービスをテストすることができます。 Visual Studio を使用して、Windows Azure プラットフォームで実行されているデータ サービスを開発する場合は、これらのツールを使用します。 Visual Studio からの Windows Azure Tools をダウンロードすることができます、 [Microsoft ダウンロード センター](http://go.microsoft.com/fwlink/?LinkID=201848)です。 Windows Azure で実行されているデータ サービスの開発に関する詳細については、投稿をご覧ください。 [Windows Azure で OData サービスを展開する](http://go.microsoft.com/fwlink/?LinkId=201847)です。  
   
 ### <a name="development-tips"></a>開発のヒント  
  データ サービスを開発する際は、次の点を考慮してください。  
@@ -116,21 +116,21 @@ ms.lasthandoff: 04/28/2018
   
         -   [XCopy](http://msdn.microsoft.com/library/4312c651-2119-49be-bbeb-ee28bdbfe71e)  
   
-     [!INCLUDE[crabout](../../../../includes/crabout-md.md)] オプションは、展開、[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)]アプリケーションを参照してください[for Visual Studio と ASP.NET Web 配置の概要](http://msdn.microsoft.com/library/99bd1927-b59f-4e02-87b4-55c6ba2adbc3)です。  
+     配置オプションの詳細については、[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)]アプリケーションを参照してください[for Visual Studio と ASP.NET Web 配置の概要](http://msdn.microsoft.com/library/99bd1927-b59f-4e02-87b4-55c6ba2adbc3)です。  
   
     > [!TIP]
     >  データ サービスを IIS に配置する前に、IIS を実行している Web サーバーへの配置をテストしておく必要があります。 詳細については、「 [How to: Develop a WCF Data Service Running on IIS](../../../../docs/framework/data/wcf/how-to-develop-a-wcf-data-service-running-on-iis.md)」を参照してください。  
   
 -   **Windows Azure**  
   
-     Visual Studio の Windows Azure Tools を使用して、Windows Azure にデータ サービスを展開できます。 Visual Studio からの Windows Azure Tools をダウンロードすることができます、 [Microsoft ダウンロード センター](http://go.microsoft.com/fwlink/?LinkID=201848)です。 Microsoft Azure へのデータ サービスの配置の[!INCLUDE[crabout](../../../../includes/crabout-md.md)] については、ブログの記事「 [Deploying an OData Service in Windows Azure (Microsoft Azure での OData サービスの配置)](http://go.microsoft.com/fwlink/?LinkId=201847)」を参照してください。  
+     Visual Studio の Windows Azure Tools を使用して、Windows Azure にデータ サービスを展開できます。 Visual Studio からの Windows Azure Tools をダウンロードすることができます、 [Microsoft ダウンロード センター](http://go.microsoft.com/fwlink/?LinkID=201848)です。 Windows Azure へのデータ サービスの展開に関する詳細については、投稿をご覧ください。 [Windows Azure で OData サービスを展開する](http://go.microsoft.com/fwlink/?LinkId=201847)です。  
   
 ### <a name="deployment-considerations"></a>配置に関する注意事項  
  データ サービスを配置する際は、次の点を考慮してください。  
   
 -   [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] プロバイダーを使用して SQL Server データベースにアクセスするデータ サービスを配置する場合、データ サービスの配置でのデータ構造、データ、またはその両方の反映も必要になることがあります。 Visual Studio がこれを行うレプリケーション先データベースのスクリプト (.sql ファイル) を自動的に作成し、これらのスクリプトは、の Web 配置パッケージに含めることができます、[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)]アプリケーションです。 詳細については、次を参照してください。 [NIB: 方法: Web アプリケーション プロジェクトでのデータベースを配置](http://msdn.microsoft.com/library/683b33f1-8a3d-45cf-af6e-61ab50fc518b)です。 [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] Web サイト、こうことを使用して、 **Database Publishing Wizard** Visual Studio でします。 詳細については、「 [Deploying a Database by Using the Database Publishing Wizard](http://msdn.microsoft.com/library/1e3682e7-8b57-4da6-a393-af9640ccf8b7)」を参照してください。  
   
--   [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] には基本的な [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の実装が含まれているので、Windows Server AppFabric を使用して、Windows Server で実行されている IIS に配置されたデータ サービスを監視できます。 Server AppFabric を使用したデータ サービスの監視の[!INCLUDE[crabout](../../../../includes/crabout-md.md)] については、ブログの記事「 [Tracking WCF Data Services with Windows Server AppFabric (Windows Server AppFabric による WCF Data Services の追跡)](http://go.microsoft.com/fwlink/?LinkID=202005)」を参照してください。  
+-   [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] には基本的な [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の実装が含まれているので、Windows Server AppFabric を使用して、Windows Server で実行されている IIS に配置されたデータ サービスを監視できます。 Windows Server AppFabric を使用してデータ サービスを監視する方法の詳細については、投稿をご覧ください。 [Windows Server AppFabric で WCF データ サービスを追跡](http://go.microsoft.com/fwlink/?LinkID=202005)です。  
   
 ## <a name="see-also"></a>関連項目  
  [データ サービスのホスティング](../../../../docs/framework/data/wcf/hosting-the-data-service-wcf-data-services.md)  

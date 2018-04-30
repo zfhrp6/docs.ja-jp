@@ -20,14 +20,14 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 349a9627c20de24a17c533bb9b2fd5f6d1735c70
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 10d723f8a685d76cc739ac88770aad3e1de982ca
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="walkthroughs-create-a-custom-animated-button"></a>チュートリアル : カスタム アニメーション ボタンの作成
-その名前からわかるように、[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)]は顧客の経験の豊富なプレゼンテーションを行うために役立ちます。 これらのチュートリアルでは、(アニメーションを含む) ボタンの動作と外観をカスタマイズする方法を示します。 このカスタマイズを行う、スタイルとテンプレートを使用すると、このカスタム ボタンをアプリケーションで他のボタンに簡単に適用できます。 次の図を作成する場合、カスタマイズされたボタンを示しています。  
+その名前からわかるように、Windows Presentation Foundation (WPF) は顧客の経験の豊富なプレゼンテーションを行うための優れたです。 これらのチュートリアルでは、(アニメーションを含む) ボタンの動作と外観をカスタマイズする方法を示します。 このカスタマイズを行う、スタイルとテンプレートを使用すると、このカスタム ボタンをアプリケーションで他のボタンに簡単に適用できます。 次の図を作成する場合、カスタマイズされたボタンを示しています。  
   
  ![作成するカスタマイズされたボタン](../../../../docs/framework/wpf/controls/media/custom-button-blend-intro.jpg "custom_button_blend_Intro")  
   

@@ -16,11 +16,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: d7de2912029efb61135d5329f186ed2c1ca95840
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 1342f2383e7cf2aa15ea60be03c93044e4332612
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="troubleshooting-queued-messaging"></a>キューに置かれたメッセージングのトラブルシューティング
 ここでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] でのキューの使用に関する一般的な質問とトラブルシューティング ヘルプについて説明します。  
@@ -125,7 +125,7 @@ ms.lasthandoff: 04/28/2018
   
  **Q:** MSMQ によく寄せられる質問に対する回答を見つける場所ですか?  
   
- **A:** [!INCLUDE[crabout](../../../../includes/crabout-md.md)] MSMQ を参照してください[Microsoft メッセージ キュー](http://go.microsoft.com/fwlink/?LinkId=87810)です。  
+ **A:** MSMQ の詳細については、次を参照してください。 [Microsoft メッセージ キュー](http://go.microsoft.com/fwlink/?LinkId=87810)です。  
   
  **Q:** 理由は、サービスをスロー、`ProtocolException`両方を含むキューからの読み取りがセッション メッセージをキューに登録および使用するデータグラム メッセージをキューに登録しますか?  
   

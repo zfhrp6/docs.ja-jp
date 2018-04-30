@@ -1,23 +1,24 @@
 ---
-title: "必須の引数とオーバーロード グループ"
-ms.custom: 
+title: 必須の引数とオーバーロード グループ
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 4ca3ed06-b9af-4b85-8b70-88c2186aefa3
-caps.latest.revision: "6"
+caps.latest.revision: 6
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 8b6025fb65c5e2d4d0683d302638f8a1d2803662
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 47e94c65ff722d3b4f98b026d69ecd31bc02b934
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="required-arguments-and-overload-groups"></a>必須の引数とオーバーロード グループ
 アクティビティは、アクティビティの実行を有効にするためには特定の引数をバインドする必要があるように構成できます。 `RequiredArgument` 属性は、アクティビティの特定の引数が必須であることを示す場合に使用します。また、`OverloadGroup` 属性は、必須の引数のカテゴリをグループ化する場合に使用します。 これらの属性を使用することで、アクティビティ作成者は、単純なアクティビティ検証の構成も複雑な構成も適用できます。  
@@ -73,7 +74,7 @@ public sealed class Add : CodeActivity<int>
   
  **必須のアクティビティ引数 'Operand1' の値が指定されませんでした。**  
 > [!NOTE]
->  [!INCLUDE[crabout](../../../includes/crabout-md.md)]確認し、検証エラーおよび警告の処理では、次を参照してください。[アクティビティの検証を呼び出す](../../../docs/framework/windows-workflow-foundation/invoking-activity-validation.md)です。  
+>  チェックと検証エラーおよび警告の処理に関する詳細については、次を参照してください。[アクティビティの検証を呼び出す](../../../docs/framework/windows-workflow-foundation/invoking-activity-validation.md)です。  
   
 ## <a name="using-overload-groups"></a>オーバーロード グループの使用  
  オーバーロード グループには、あるアクティビティ内で有効である引数の組み合わせを示すメソッドが用意されています。 引数は <xref:System.Activities.OverloadGroupAttribute> を使用してグループ化されます。 各グループには、<xref:System.Activities.OverloadGroupAttribute> によって指定される名前が与えられます。アクティビティが有効なのは、オーバーロード グループに含まれる 1 つの引数セットのみがバインドされる場合です。 取得された次の例で、 [OverloadGroups](../../../docs/framework/windows-workflow-foundation/samples/overloadgroups.md)サンプルについては、`CreateLocation`クラスが定義されています。  

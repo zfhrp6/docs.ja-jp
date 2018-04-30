@@ -1,45 +1,47 @@
 ---
-title: "WCF 分析トレース"
-ms.custom: 
+title: WCF 分析トレース
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 6029c7c7-3515-4d36-9d43-13e8f4971790
-caps.latest.revision: "21"
+caps.latest.revision: 21
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 37dea97db8816f68f0331580cfa21daed7f69914
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 57e3ee18848031bce8ffbb54d26353fe36ee1def
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="wcf-analytic-tracing"></a>WCF 分析トレース
 このサンプルでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] が [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] の ETW に書き込む分析トレースのストリームに独自のトレース イベントを追加する方法を示します。 分析トレースは、パフォーマンスを低下させずに簡単にサービスを確認できるようにするためのものです。 このサンプルでは、<xref:System.Diagnostics.Eventing?displayProperty=nameWithType> API を使用して、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスと統合されるイベントを記述する方法を示します。  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)] API <xref:System.Diagnostics.Eventing?displayProperty=nameWithType>、「<xref:System.Diagnostics.Eventing?displayProperty=nameWithType>」を参照してください。  
+ 詳細については、 <xref:System.Diagnostics.Eventing?displayProperty=nameWithType> Api を参照してください<xref:System.Diagnostics.Eventing?displayProperty=nameWithType>です。  
   
  Windows イベント トレーシングの詳細については、次を参照してください。[デバッグを向上させると、パフォーマンスのチューニングを ETW](http://go.microsoft.com/fwlink/?LinkId=166488)です。  
   
 ## <a name="disposing-eventprovider"></a>EventProvider の破棄  
- このサンプルでは、<xref:System.Diagnostics.Eventing.EventProvider?displayProperty=nameWithType> を実装した <xref:System.IDisposable?displayProperty=nameWithType> クラスを使用します。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスのトレースを実装する場合、サービスの有効期間に <xref:System.Diagnostics.Eventing.EventProvider> のリソースを使用することがあります。 そのため、読みやすくするためにも、このサンプルでは、ラップされた <xref:System.Diagnostics.Eventing.EventProvider> を破棄しません。 何かの理由で、サービスに対して別のトレースの要件を設定し、このリソースを破棄しなければならない場合は、アンマネージ リソースの破棄に関するベスト プラクティスに従ってこのサンプルを変更してください。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]アンマネージ リソースを破棄するを参照してください[Dispose メソッドの実装](http://go.microsoft.com/fwlink/?LinkId=166436)です。  
+ このサンプルでは、<xref:System.Diagnostics.Eventing.EventProvider?displayProperty=nameWithType> を実装した <xref:System.IDisposable?displayProperty=nameWithType> クラスを使用します。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスのトレースを実装する場合、サービスの有効期間に <xref:System.Diagnostics.Eventing.EventProvider> のリソースを使用することがあります。 そのため、読みやすくするためにも、このサンプルでは、ラップされた <xref:System.Diagnostics.Eventing.EventProvider> を破棄しません。 何かの理由で、サービスに対して別のトレースの要件を設定し、このリソースを破棄しなければならない場合は、アンマネージ リソースの破棄に関するベスト プラクティスに従ってこのサンプルを変更してください。 アンマネージ リソースを破棄に関する詳細については、次を参照してください。 [Dispose メソッドの実装](http://go.microsoft.com/fwlink/?LinkId=166436)です。  
   
 ## <a name="self-hosting-vs-web-hosting"></a>自己ホスト型と Web ホスト  
- Web ホスト サービスの場合は、WCF の分析トレースは、"hostreference"をトレースの出力は、サービスの識別に使用される、フィールドを提供します。 拡張可能なユーザー トレースをこのモデルに加えることができます。このサンプルで、そのためのベスト プラクティスを示します。 Web ホストの形式の参照時にパイプ ' &#124;' 文字が実際には、その結果の表示文字列を次のいずれかにすることができます。  
+ Web ホスト サービスの場合は、WCF の分析トレースは、"hostreference"をトレースの出力は、サービスの識別に使用される、フィールドを提供します。 拡張可能なユーザー トレースをこのモデルに加えることができます。このサンプルで、そのためのベスト プラクティスを示します。 Web ホストの形式の参照時にパイプ '&#124;' 文字が実際には、その結果の表示文字列は、次のいずれかを指定できます。  
   
 -   アプリケーションがルート以外にある場合  
   
-     \<SiteName >\<ApplicationVirtualPath > &#124;\<ServiceVirtualPath > &#124;です。\<ServiceName >  
+     \<SiteName >\<ApplicationVirtualPath >&#124;\<ServiceVirtualPath >&#124;\<ServiceName >  
   
 -   アプリケーションがルートにある場合  
   
-     \<SiteName > &#124;です。\<ServiceVirtualPath > &#124;です。\<ServiceName >  
+     \<SiteName >&#124;\<ServiceVirtualPath >&#124;\<ServiceName >  
   
  自己ホスト型サービスは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]の分析トレースで"HostReference"フィールドは設定されません。 このサンプルの `WCFUserEventProvider` クラスは、自己ホスト型サービスで使用した場合も同じように動作します。  
   
@@ -60,7 +62,7 @@ ms.lasthandoff: 12/22/2017
   
 3.  ソリューションを実行するには、Ctrl キーを押しながら F5 キーを押します。  
   
-     Web ブラウザーで、をクリックして**[calculator.svc]**です。 サービスの WSDL ドキュメントの URI がブラウザーに表示されます。 その URI をコピーします。  
+     Web ブラウザーで、をクリックして **[calculator.svc]** です。 サービスの WSDL ドキュメントの URI がブラウザーに表示されます。 その URI をコピーします。  
   
 4.  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] テスト クライアント (WcfTestClient.exe) を実行します。  
   
@@ -90,7 +92,7 @@ ms.lasthandoff: 12/22/2017
   
     1.  WCF テスト クライアントでダブルクリック**Add()** ICalculator サービス ノードの下。  
   
-         **Add()**メソッドが 2 つのパラメーターと共に右ペインに表示されます。  
+         **Add()** メソッドが 2 つのパラメーターと共に右ペインに表示されます。  
   
     2.  最初のパラメーターに「2」と入力し、2 番目のパラメーターに「3」と入力します。  
   
@@ -128,5 +130,5 @@ ms.lasthandoff: 12/22/2017
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Management\ETWTrace`  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [AppFabric の監視のサンプル](http://go.microsoft.com/fwlink/?LinkId=193959)

@@ -1,13 +1,13 @@
 ---
-title: "WPF のブラシの概要"
-ms.custom: 
+title: WPF のブラシの概要
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-wpf
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,17 +15,17 @@ dev_langs:
 helpviewer_keywords:
 - brushes [WPF], about brushes
 ms.assetid: ecea1955-420b-45c6-bf43-c1404c072c41
-caps.latest.revision: 
+caps.latest.revision: 12
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: ec7e566e6f56c215bbaeafdfb5c5e97cc0add0bf
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 1ef53da1febd6a49af8404e5889a728a1b7c649b
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="wpf-brushes-overview"></a>WPF のブラシの概要
 画面に表示できるものは、ブラシによって描画されているために表示されます。 たとえば、ブラシを使用して、ボタン、テキストの前景色、図形の塗りつぶしの背景について説明します。 このトピックでの描画の概念を説明する[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]ブラシし、例について説明します。 ブラシを使用すると、[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] オブジェクトを単色で塗りつぶすことも、パターンとイメージの複雑な組み合わせで塗りつぶすこともできます。  
@@ -142,7 +142,7 @@ VisualBrush を使用して描画された四角形
   
 <a name="paintwithpredefinedbrushesandsystemcolors"></a>   
 ## <a name="paint-using-predefined-and-system-brushes"></a>定義済みおよびシステム ブラシを使用して描く  
- 便宜上、[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)]のセットがあらかじめ定義されており、オブジェクトの描画に使用できるシステムのブラシを提供します。  
+ 便宜上は、Windows Presentation Foundation (WPF) は、一連の定義済みし、オブジェクトの描画に使用できるシステムのブラシを提供します。  
   
 -   使用可能な定義済みのブラシの一覧は、次を参照してください。、<xref:System.Windows.Media.Brushes>クラスです。 定義済みのブラシを使用する方法を示す例は、次を参照してください。[を純色で領域を塗りつぶす](../../../../docs/framework/wpf/graphics-multimedia/how-to-paint-an-area-with-a-solid-color.md)です。  
   
@@ -150,7 +150,7 @@ VisualBrush を使用して描画された四角形
   
 <a name="commonbrushfeatures"></a>   
 ## <a name="common-brush-features"></a>ブラシの共通機能  
- <xref:System.Windows.Media.Brush>オブジェクトは、提供、<xref:System.Windows.Media.Brush.Opacity%2A>ブラシを透明または半透明な使用できるプロパティです。 <xref:System.Windows.Media.Brush.Opacity%2A> 0 の値により、ブラシの中に完全に透明、 <xref:System.Windows.Media.Brush.Opacity%2A> 1 の値を指定すると、ブラシは完全に不透明です。 次の例では、<xref:System.Windows.Media.Brush.Opacity%2A>プロパティを<xref:System.Windows.Media.SolidColorBrush>25% 不透明です。  
+ <xref:System.Windows.Media.Brush> オブジェクトは、提供、<xref:System.Windows.Media.Brush.Opacity%2A>ブラシを透明または半透明な使用できるプロパティです。 <xref:System.Windows.Media.Brush.Opacity%2A> 0 の値により、ブラシの中に完全に透明、 <xref:System.Windows.Media.Brush.Opacity%2A> 1 の値を指定すると、ブラシは完全に不透明です。 次の例では、<xref:System.Windows.Media.Brush.Opacity%2A>プロパティを<xref:System.Windows.Media.SolidColorBrush>25% 不透明です。  
   
  [!code-xaml[BrushOverviewExamples_snip#OpacityExample1XAML](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushOverviewExamples_snip/XAML/OpacityExample.xaml#opacityexample1xaml)]  
   
@@ -173,7 +173,7 @@ VisualBrush を使用して描画された四角形
   
  理由の詳細については<xref:System.Windows.Media.VisualBrush>オブジェクトにすることはできません固定されるを参照してください、<xref:System.Windows.Media.VisualBrush>の種類 ページ。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Media.Brush>  
  <xref:System.Windows.Media.Brushes>  
  [純色およびグラデーションによる塗りつぶしの概要](../../../../docs/framework/wpf/graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md)  

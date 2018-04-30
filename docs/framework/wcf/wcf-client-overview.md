@@ -21,11 +21,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: b0042d9b90066553d6fc962bba1b7a7b990ca242
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 7f083ea44b9bdbd9bf85d65c42d663d87af8d812
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="wcf-client-overview"></a>WCF クライアントの概要
 このセクションでは、クライアント アプリケーションの処理、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] クライアントの構成方法、作成方法、使用方法、およびクライアント アプリケーションをセキュリティで保護する方法について説明します。  
@@ -86,13 +86,13 @@ svcutil /language:vb /out:ClientCode.vb /config:app.config http://computerName/M
  まず [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアント オブジェクトを作成し、それを 1 つの try/catch ブロック内で使用して閉じることをお勧めします。 使用しないで、`using`ステートメント (`Using` Visual Basic で) ため、特定のエラー モードで例外をマスクすることがあります。 詳細については、次のセクションを参照してください。 だけでなく[Using ステートメントに関する問題を回避](../../../docs/framework/wcf/samples/avoiding-problems-with-the-using-statement.md)です。  
   
 ### <a name="contracts-bindings-and-addresses"></a>コントラクト、バインディング、およびアドレス  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアント オブジェクトを作成するには、クライアント オブジェクトを構成する必要があります。 具体的には、サービスがあります*エンドポイント*を使用します。 エンドポイントは、サービス コントラクト、バインディング、およびアドレスの組み合わせです  ([!INCLUDE[crabout](../../../includes/crabout-md.md)]エンドポイントを参照してください[エンドポイント: アドレス、バインディング、およびコントラクト](../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md))。通常、この情報にある、 [\<エンドポイント >](../../../docs/framework/configure-apps/file-schema/wcf/endpoint-of-client.md)もの、Svcutil.exe ツールを生成して、クライアントを作成するときに自動的に読み込まれますなど、クライアント アプリケーション構成ファイル内の要素オブジェクト。 両方の [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアント型には、この情報をプログラムで指定できるオーバーロードもあります。  
+ [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアント オブジェクトを作成するには、クライアント オブジェクトを構成する必要があります。 具体的には、サービスがあります*エンドポイント*を使用します。 エンドポイントは、サービス コントラクト、バインディング、およびアドレスの組み合わせです  (エンドポイントの詳細については、次を参照してください[エンドポイント: アドレス、バインディング、およびコントラクト](../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)。)。通常、この情報にある、 [\<エンドポイント >](../../../docs/framework/configure-apps/file-schema/wcf/endpoint-of-client.md)もの、Svcutil.exe ツールを生成して、クライアントを作成するときに自動的に読み込まれますなど、クライアント アプリケーション構成ファイル内の要素オブジェクト。 両方の [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアント型には、この情報をプログラムで指定できるオーバーロードもあります。  
   
  たとえば、上記の例で使用した `ISampleService` 用に生成された構成ファイルには、次のエンドポイント情報が含まれます。  
   
  [!code-xml[C_GeneratedCodeFiles#19](../../../samples/snippets/csharp/VS_Snippets_CFX/c_generatedcodefiles/common/client.exe.config#19)]  
   
- この構成ファイルの `<client>` 要素には、ターゲット エンドポイントが指定されます。 複数のターゲット エンドポイントの使用方法[!INCLUDE[crabout](../../../includes/crabout-md.md)]、<xref:System.ServiceModel.ClientBase%601.%23ctor%2A?displayProperty=nameWithType> コンストラクターまたは <xref:System.ServiceModel.ChannelFactory%601.%23ctor%2A?displayProperty=nameWithType> コンストラクターを参照してください。  
+ この構成ファイルの `<client>` 要素には、ターゲット エンドポイントが指定されます。 詳細については、複数のターゲット エンドポイントを使用して、次を参照してください。、<xref:System.ServiceModel.ClientBase%601.%23ctor%2A?displayProperty=nameWithType>または<xref:System.ServiceModel.ChannelFactory%601.%23ctor%2A?displayProperty=nameWithType>コンス トラクターです。  
   
 ## <a name="calling-operations"></a>操作の呼び出し  
  クライアント オブジェクトを作成し構成したら、try/catch ブロックを作成し、ローカルのオブジェクトの場合と同じ方法で操作を呼び出して、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアント オブジェクトを閉じます。 クライアント アプリケーションが最初の操作を呼び出すときに、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] は、基になるチャネルを自動的に開きます。基になるチャネルはオブジェクトが再利用されるときに閉じられます  (また、他の操作を呼び出す前後にチャネルを明示的に開いたり閉じたりすることもできます)。  
@@ -145,14 +145,14 @@ End Interface
  [!code-csharp[C_GeneratedCodeFiles#20](../../../samples/snippets/csharp/VS_Snippets_CFX/c_generatedcodefiles/cs/proxycode.cs#20)]  
   
 ## <a name="handling-errors"></a>エラー処理  
- 基になるクライアント チャネルを開いたとき (明示的に開いた場合、または操作を呼び出すことによって自動的に開いた場合)、クライアントまたはチャネル オブジェクトを使用して操作を呼び出したとき、基になるクライアント チャネルを閉じたときときに、クライアント アプリケーションで例外が発生する可能性があります。 少なくともアプリケーションでは、操作から返される SOAP エラーの結果としてスローされる <xref:System.TimeoutException?displayProperty=nameWithType> オブジェクトに加え、可能性のある <xref:System.ServiceModel.CommunicationException?displayProperty=nameWithType> 例外と <xref:System.ServiceModel.FaultException?displayProperty=nameWithType> 例外を処理することをお勧めします。 操作コントラクトで指定されている SOAP エラーは、<xref:System.ServiceModel.FaultException%601?displayProperty=nameWithType> としてクライアント アプリケーションに送信されます。ここで、型パラメーターは SOAP エラーの詳細な型です。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] クライアント アプリケーション内のエラー条件を処理するを参照してください[送信と受信エラー](../../../docs/framework/wcf/sending-and-receiving-faults.md)です。 完全なサンプルに示すクライアントでのエラーを処理する方法を参照してください[予想例外](../../../docs/framework/wcf/samples/expected-exceptions.md)です。  
+ 基になるクライアント チャネルを開いたとき (明示的に開いた場合、または操作を呼び出すことによって自動的に開いた場合)、クライアントまたはチャネル オブジェクトを使用して操作を呼び出したとき、基になるクライアント チャネルを閉じたときときに、クライアント アプリケーションで例外が発生する可能性があります。 少なくともアプリケーションでは、操作から返される SOAP エラーの結果としてスローされる <xref:System.TimeoutException?displayProperty=nameWithType> オブジェクトに加え、可能性のある <xref:System.ServiceModel.CommunicationException?displayProperty=nameWithType> 例外と <xref:System.ServiceModel.FaultException?displayProperty=nameWithType> 例外を処理することをお勧めします。 操作コントラクトで指定されている SOAP エラーは、<xref:System.ServiceModel.FaultException%601?displayProperty=nameWithType> としてクライアント アプリケーションに送信されます。ここで、型パラメーターは SOAP エラーの詳細な型です。 クライアント アプリケーションでエラー状態の処理の詳細については、次を参照してください。[送信と受信エラー](../../../docs/framework/wcf/sending-and-receiving-faults.md)です。 完全なサンプルに示すクライアントでのエラーを処理する方法を参照してください[予想例外](../../../docs/framework/wcf/samples/expected-exceptions.md)です。  
   
 ## <a name="configuring-and-securing-clients"></a>クライアントの構成とセキュリティ保護  
  クライアントを構成するには、まず、そのクライアントまたはチャネル オブジェクトに必要なターゲット エンドポイント情報を読み込みます。通常は構成ファイルから読み込みますが、クライアント コンストラクターとプロパティを使用してプログラムで読み込むこともできます。 ただし、特定のクライアントの動作を有効にし、多くのセキュリティ シナリオに対応するには、追加の構成手順が必要です。  
   
  たとえば、サービス コントラクトのセキュリティ要件はサービス コントラクト インターフェイスに宣言します。Svcutil.exe で構成ファイルを作成した場合、通常そのファイルにはサービスのセキュリティ要件に対応できるバインディングが含まれています。 ただし、クライアント資格情報の構成など、さらに多くのセキュリティ構成が必要な場合もあります。 詳細については、セキュリティ構成の[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]クライアントを参照してください[クライアントのセキュリティで保護する](../../../docs/framework/wcf/securing-clients.md)です。  
   
- また、カスタム ランタイム動作など、クライアント アプリケーションでいくつかのカスタム変更を有効にすることもできます。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] 参照してください、カスタム クライアント動作を構成する方法[クライアントの動作を構成する](../../../docs/framework/wcf/configuring-client-behaviors.md)です。  
+ また、カスタム ランタイム動作など、クライアント アプリケーションでいくつかのカスタム変更を有効にすることもできます。 カスタム クライアント動作を構成する方法の詳細については、次を参照してください。[クライアントの動作を構成する](../../../docs/framework/wcf/configuring-client-behaviors.md)です。  
   
 ## <a name="creating-callback-objects-for-duplex-services"></a>双方向サービスのコールバック オブジェクトの作成  
  双方向サービスには、コントラクトの要件に従って呼び出すサービスのコールバック オブジェクトを提供するために、クライアント アプリケーションが実装する必要のあるコールバック コントラクトを指定します。 コールバック オブジェクトは完全なサービスではありません (たとえば、コールバック オブジェクトを使用してチャネルを初期化できません) が、実装と構成という目的においては、一種のサービスとして考えることができます。  

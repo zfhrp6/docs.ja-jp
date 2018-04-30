@@ -1,24 +1,26 @@
 ---
-title: "高度な形式選択"
-ms.custom: 
+title: 高度な形式選択
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e02d9082-4d55-41d8-9329-98f6d1c77f06
-caps.latest.revision: "9"
+caps.latest.revision: 9
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 124bf59f29ff04e643200edf686f79f573937a03
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 93d7fe0742e16abd92682094ca20d51488516e6e
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="advanced-format-selection"></a>高度な形式選択
 このサンプルでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] REST プログラミング モデルを拡張して新しい送信応答形式をサポートする方法を示します。 また、このサンプルでは T4 テンプレートを使用して応答を XHTML ページとして返し、ビュースタイル プログラミング モデルの実装方法も示します。  
@@ -32,7 +34,7 @@ ms.lasthandoff: 12/22/2017
   
  操作の戻り値の型については注意が必要です。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] REST プログラミング モデルは、操作で  <xref:System.ServiceModel.Channels.Message> 以外の型が返される場合にのみ XML 応答形式と JSON 応答形式をネイティブでサポートします。 ただし、戻り値の型として <xref:System.ServiceModel.Channels.Message> が使用されている場合、メッセージの内容の形式の設定は、開発者によって完全に制御されています。  
   
- このサンプルでは、<xref:System.ServiceModel.Web.WebOperationContext.CreateXmlResponse%2A> メソッド、<xref:System.ServiceModel.Web.WebOperationContext.CreateJsonResponse%2A> メソッドおよび <xref:System.ServiceModel.Web.WebOperationContext.CreateAtom10Response%2A> メソッドを使用して、文字列の一覧を XML、JSON、および ATOM のメッセージにそれぞれシリアル化しています。 jpeg 応答形式の場合は、<xref:System.ServiceModel.Web.WebOperationContext.CreateStreamResponse%2A> メソッドが使用され、画像はストリームに保存されます。 XHTML 応答の場合、<xref:System.ServiceModel.Web.WebOperationContext.CreateTextResponse%2A> が事前に処理された T4 テンプレートと共に使用されます。この T4 テンプレートは .tt ファイルと自動生成された .cs ファイルで構成されます。 開発者は、.tt ファイルを使用して変数と制御構造を含むテンプレート フォームで応答を作成できます。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]T4 を参照してください[を使用してテキスト テンプレートで成果物を生成する](http://go.microsoft.com/fwlink/?LinkId=166023)です。  
+ このサンプルでは、<xref:System.ServiceModel.Web.WebOperationContext.CreateXmlResponse%2A> メソッド、<xref:System.ServiceModel.Web.WebOperationContext.CreateJsonResponse%2A> メソッドおよび <xref:System.ServiceModel.Web.WebOperationContext.CreateAtom10Response%2A> メソッドを使用して、文字列の一覧を XML、JSON、および ATOM のメッセージにそれぞれシリアル化しています。 jpeg 応答形式の場合は、<xref:System.ServiceModel.Web.WebOperationContext.CreateStreamResponse%2A> メソッドが使用され、画像はストリームに保存されます。 XHTML 応答の場合、<xref:System.ServiceModel.Web.WebOperationContext.CreateTextResponse%2A> が事前に処理された T4 テンプレートと共に使用されます。この T4 テンプレートは .tt ファイルと自動生成された .cs ファイルで構成されます。 開発者は、.tt ファイルを使用して変数と制御構造を含むテンプレート フォームで応答を作成できます。 T4 の詳細については、次を参照してください。[を使用してテキスト テンプレートで成果物を生成する](http://go.microsoft.com/fwlink/?LinkId=166023)です。  
   
  このサンプルは、コンソール アプリケーション内で実行される自己ホスト型サービスとクライアントで構成されています。 コンソール アプリケーションが実行されると、クライアントはサービスに要求を発行し、応答からの適切な情報をコンソール ウィンドウに書き込みます。  
   
@@ -57,4 +59,4 @@ ms.lasthandoff: 12/22/2017
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Web\AdvancedFormatSelection`  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目

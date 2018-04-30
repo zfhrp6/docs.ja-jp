@@ -18,11 +18,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: fb9f542d931f5febc2c04d1b0e093cc20f487c57
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 4734407868d9dae2acc422c0f07aad57d42d4566
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="denial-of-service"></a>サービス拒否
 サービス拒否は、メッセージを処理できなくしたり、メッセージ処理を大幅に遅延させたりするなど、システムに過大な負荷が生じた場合に発生します。  
@@ -57,7 +57,7 @@ ms.lasthandoff: 04/28/2018
 ## <a name="auditing-event-log-can-be-filled"></a>監査イベント ログがいっぱいになる可能性がある  
  悪意のあるユーザーに監査が有効になっていることを知られると、その攻撃者に監査エントリの書き込みにつながる無効なメッセージを送信される可能性があります。 このような方法で監査ログに書き込みが行われると、監査システムに障害が発生します。  
   
- これを防ぐには、<xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior.SuppressAuditFailure%2A> プロパティを `true` に設定し、イベント ビューアーのプロパティを使用して監査動作を制御します。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] イベント ビューアーを使用してイベント ログを表示および管理するを参照してください[イベント ビューアー](http://go.microsoft.com/fwlink/?LinkId=186123)です。 詳細については、次を参照してください。[監査](../../../../docs/framework/wcf/feature-details/auditing-security-events.md)です。  
+ これを防ぐには、<xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior.SuppressAuditFailure%2A> プロパティを `true` に設定し、イベント ビューアーのプロパティを使用して監査動作を制御します。 イベント ビューアーを使用して表示し、イベント ログを管理する方法の詳細については、次を参照してください。[イベント ビューアー](http://go.microsoft.com/fwlink/?LinkId=186123)です。 詳細については、次を参照してください。[監査](../../../../docs/framework/wcf/feature-details/auditing-security-events.md)です。  
   
 ## <a name="invalid-implementations-of-iauthorizationpolicy-can-cause-service-hangs"></a>IAuthorizationPolicy の無効な実装によりサービスが停止する可能性がある  
  欠陥のある <xref:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate%2A> インターフェイスの実装で <xref:System.IdentityModel.Policy.IAuthorizationPolicy> メソッドを呼び出すと、サービスが停止する可能性があります。  
@@ -74,7 +74,7 @@ ms.lasthandoff: 04/28/2018
   
  これを軽減するために参照をより正確な検索条件を使用して使用する正確な証明書、 [ \<serviceCredentials >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md)です。 たとえば、<xref:System.Security.Cryptography.X509Certificates.X509FindType.FindByThumbprint> オプションを使用し、一意の拇印 (ハッシュ) により証明書を指定します。  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)] 自動登録機能を参照してください[Windows Server 2003 の証明書の自動登録](http://go.microsoft.com/fwlink/?LinkId=95166)です。  
+ 自動登録機能の詳細については、次を参照してください。 [Windows Server 2003 の証明書の自動登録](http://go.microsoft.com/fwlink/?LinkId=95166)です。  
   
 ## <a name="last-of-multiple-alternative-subject-names-used-for-authorization"></a>複数の代替サブジェクト名の最後が承認に使用される  
  まれなケースとして X.509 証明書に複数の代替サブジェクト名が含まれる場合、その代替サブジェクト名を使用して承認を行うと、承認は失敗する場合があります。  
@@ -88,7 +88,7 @@ ms.lasthandoff: 04/28/2018
  クライアントがサービスにより正常に認証され、セキュリティで保護されたセッションがサービスと共に確立されると、クライアントがセッションをキャンセルするか、セッションの期限が切れるまで、サービスはそのセッションを追跡します。 セッションが確立されるたびに、1 つのサービスで同時にアクティブにできるセッションは上限に近づいていきます。 この上限に達した場合、1 つ以上のアクティブなセッションが期限切れになるかまたはクライアントによりキャンセルされるまで、そのサービスで新しいセッションの作成を試みるクライアントは拒否されます。 クライアントは 1 つのサービスで複数のセッションを保持できますが、その各セッションは上限に反映されます。  
   
 > [!NOTE]
->  ステートフルなセッションを使用する場合、前の段落は適用されません。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] ステートフルなセッションを参照してください[する方法: セキュリティで保護されたセッションのセキュリティ コンテキスト トークンを作成](../../../../docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md)です。  
+>  ステートフルなセッションを使用する場合、前の段落は適用されません。 ステートフルなセッションの詳細については、次を参照してください。[する方法: セキュリティで保護されたセッションのセキュリティ コンテキスト トークンを作成](../../../../docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md)です。  
   
  これを防ぐには、<xref:System.ServiceModel.Channels.SecurityBindingElement> クラスの <xref:System.ServiceModel.Channels.SecurityBindingElement> プロパティを設定して、アクティブなセッションの最大数とセッションの最長有効期間の制限を設定します。  
   

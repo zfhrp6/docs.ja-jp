@@ -1,12 +1,13 @@
 ---
-title: "フィードのカスタマイズ (WCF Data Services)"
-ms.custom: 
+title: フィードのカスタマイズ (WCF Data Services)
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework-oob
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -17,19 +18,20 @@ helpviewer_keywords:
 - Atom Publishing Protocol [WCF Data Services]
 - WCF Data Services, customizing feeds
 ms.assetid: 0d1a39bc-6462-4683-bd7d-e74e0fd28a85
-caps.latest.revision: "11"
+caps.latest.revision: 11
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 2c5e33490a94346880986fdf66a4c5907084c8cd
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: c59bfdd22125f10b8a35afc8c264b6b2869a3998
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="feed-customization-wcf-data-services"></a>フィードのカスタマイズ (WCF Data Services)
-[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]使用して、[!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]データ フィードとして公開します。 [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]データ フィードを Atom と JavaScript Object Notation (JSON) の両方の形式をサポートします。 Atom フィードを使用すると[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]エンティティとリレーションシップは、HTTP メッセージの本文に含めることができる XML 形式などのデータをシリアル化の標準的な方法を提供します。 [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]エンティティに含まれているデータと Atom 要素間の既定のエンティティ プロパティ マッピングを定義します。 詳細については、次を参照してください。 [OData: Atom 形式](http://go.microsoft.com/fwlink/?LinkID=185794)です。  
+[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] 使用して、[!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]データ フィードとして公開します。 [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] データ フィードを Atom と JavaScript Object Notation (JSON) の両方の形式をサポートします。 Atom フィードを使用すると[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]エンティティとリレーションシップは、HTTP メッセージの本文に含めることができる XML 形式などのデータをシリアル化の標準的な方法を提供します。 [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] エンティティに含まれているデータと Atom 要素間の既定のエンティティ プロパティ マッピングを定義します。 詳細については、次を参照してください。 [OData: Atom 形式](http://go.microsoft.com/fwlink/?LinkID=185794)です。  
   
  場合によっては、データ サービスから返されるプロパティのデータを、標準のフィードの形式ではなくカスタマイズした方法でシリアル化する必要があります。 [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]、データ フィードのシリアル化をカスタマイズするには、エントリの未使用の要素と属性をまたはフィードのエントリのカスタム要素には、エンティティのプロパティをマップできます可能性があります。  
   
@@ -53,19 +55,19 @@ ms.lasthandoff: 01/19/2018
  詳細については、次を参照してください。[する方法: Entity Framework プロバイダーでフィードをカスタマイズする](../../../../docs/framework/data/wcf/how-to-customize-feeds-with-ef-provider-wcf-data-services.md)です。  
   
 > [!NOTE]
->  データ モデルへの拡張はエンティティ デザイナーでサポートされていないので、データ モデルを含む XML ファイルを手動で変更する必要があります。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]によって生成された .edmx ファイル、[!INCLUDE[adonet_edm](../../../../includes/adonet-edm-md.md)]ツールを参照してください[.edmx ファイルの概要](http://msdn.microsoft.com/library/f4c8e7ce-1db6-417e-9759-15f8b55155d4)です。  
+>  データ モデルへの拡張はエンティティ デザイナーでサポートされていないので、データ モデルを含む XML ファイルを手動で変更する必要があります。 によって生成される .edmx ファイルに関する詳細については、[!INCLUDE[adonet_edm](../../../../includes/adonet-edm-md.md)]ツールを参照してください[.edmx ファイルの概要](http://msdn.microsoft.com/library/f4c8e7ce-1db6-417e-9759-15f8b55155d4)です。  
   
 ### <a name="custom-feed-attributes"></a>カスタム フィード属性  
  次の表に、データ モデルを定義する概念スキーマ定義言語 (CSDL) に追加できるフィードをカスタマイズする XML 属性を示します。 これらの属性は、<xref:System.Data.Services.Common.EntityPropertyMappingAttribute> のプロパティと同等です。  
   
 |属性名|説明|  
 |--------------------|-----------------|  
-|`FC_ContentKind`|コンテンツの種類を示します。 次のキーワードは、配信コンテンツの種類を定義します。<br /><br /> `text:`プロパティの値はフィード内でテキストとして表示されます。<br /><br /> `html:`プロパティの値はフィード内で HTML として表示されます。<br /><br /> `xhtml:`プロパティの値は、フィード内で XML 形式の HTML として表示されます。<br /><br /> これらのキーワードは、リフレクション プロバイダーと共に使用する <xref:System.Data.Services.Common.SyndicationTextContentKind> 列挙の値と同等です。<br /><br /> この属性は、`FC_NsPrefix` および `FC_NsUri` 属性が使用されているときはサポートされません。<br /><br /> `xhtml` 属性の値として `FC_ContentKind` を指定する場合、そのプロパティ値に正しい形式の XML が含まれることを確認する必要があります。 データ サービスは、変換を行わずに値を返します。 さらに、返された XML 内の XML 要素のプレフィックスに名前空間 URI、およびマップされたフィード内で定義されたプレフィックスが含まれている必要があります。|  
+|`FC_ContentKind`|コンテンツの種類を示します。 次のキーワードは、配信コンテンツの種類を定義します。<br /><br /> `text:` プロパティの値はフィード内でテキストとして表示されます。<br /><br /> `html:` プロパティの値はフィード内で HTML として表示されます。<br /><br /> `xhtml:` プロパティの値は、フィード内で XML 形式の HTML として表示されます。<br /><br /> これらのキーワードは、リフレクション プロバイダーと共に使用する <xref:System.Data.Services.Common.SyndicationTextContentKind> 列挙の値と同等です。<br /><br /> この属性は、`FC_NsPrefix` および `FC_NsUri` 属性が使用されているときはサポートされません。<br /><br /> `xhtml` 属性の値として `FC_ContentKind` を指定する場合、そのプロパティ値に正しい形式の XML が含まれることを確認する必要があります。 データ サービスは、変換を行わずに値を返します。 さらに、返された XML 内の XML 要素のプレフィックスに名前空間 URI、およびマップされたフィード内で定義されたプレフィックスが含まれている必要があります。|  
 |`FC_KeepInContent`|参照されたプロパティ値をフィードのコンテンツ セクションおよびマップされた場所の両方に含める必要があることを示します。 有効値は `true` または `false` です。 結果のフィードの以前のバージョンとの下位互換性のために[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]の値を指定して`true`フィードのコンテンツ セクションで、値が含まれているかどうかを確認します。|  
 |`FC_NsPrefix`|非配信マッピング内の XML 要素の名前空間プレフィックス。 この属性は、`FC_NsUri` 属性と一緒に使用する必要があります。この属性は、`FC_ContentKind` 属性と一緒に使用できません。|  
 |`FC_NsUri`|非配信マッピング内の XML 要素の名前空間 URI。 この属性は、`FC_NsPrefix` 属性と一緒に使用する必要があります。この属性は、`FC_ContentKind` 属性と一緒に使用できません。|  
 |`FC_SourcePath`|このフィード マッピング規則が適用されるエンティティのプロパティのパス。 この属性は、`EntityType` 要素で使用されている場合にのみサポートされます。<br /><br /> <xref:System.Data.Services.Common.EntityPropertyMappingAttribute.SourcePath%2A> プロパティは、複合型を直接参照できません。 複合型の場合は、プロパティ名が円記号 (`/`) で区切られたパス式を使用する必要があります。 エンティティの種類について、次の値を許可するなど、`Person`整数プロパティを持つ`Age`と複雑なプロパティ<br /><br /> `Address`:<br /><br /> `Age`<br /><br /> `Address/Street`<br /><br /> <xref:System.Data.Services.Common.EntityPropertyMappingAttribute.SourcePath%2A> プロパティは、プロパティ名で無効な文字 (スペースなど) を含む値に設定することはできません。|  
-|`FC_TargetPath`|プロパティのマップ先となる結果のフィードのターゲット要素の名前。 この要素は、Atom 仕様またはカスタム要素によって定義された要素である場合があります。<br /><br /> 次のキーワードは、[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] フィードの特定の場所をポイントする定義済みの配信ターゲット パス値です。<br /><br /> `SyndicationAuthorEmail:``atom:email`の子要素、`atom:author`要素。<br /><br /> `SyndicationAuthorName:``atom:name`の子要素、`atom:author`要素。<br /><br /> `SyndicationAuthorUri:``atom:uri`の子要素、`atom:author`要素。<br /><br /> `SyndicationContributorEmail:``atom:email`の子要素、`atom:contributor`要素。<br /><br /> `SyndicationContributorName:``atom:name`の子要素、`atom:contributor`要素。<br /><br /> `SyndicationContributorUri:``atom:uri`の子要素、`atom:contributor`要素。<br /><br /> `SyndicationCustomProperty:`カスタム プロパティ要素です。 カスタム要素にマップする際、ターゲットは、ネストされた要素が円記号 (`/`) で区切られ、属性がアンパサンド (`@`) で指定されたパス式である必要があります。 次の例では、文字列 `UnitsInStock/@ReorderLevel` によってプロパティ値がルート エントリ要素の `ReorderLevel` という子要素の `UnitsInStock` という属性にマップされます。<br /><br /> `<Property Name="ReorderLevel" Type="Int16"               m:FC_TargetPath="UnitsInStock/@ReorderLevel"               m:FC_NsPrefix="Northwind"               m:FC_NsUri="http://schemas.examples.microsoft.com/dataservices"               m:FC_KeepInContent="false"               />`<br /><br /> ターゲットがカスタム要素名の場合、`FC_NsPrefix` および `FC_NsUri` 属性も指定する必要があります。<br /><br /> `SyndicationPublished:``atom:published`要素。<br /><br /> `SyndicationRights:``atom:rights`要素。<br /><br /> `SyndicationSummary:``atom:summary`要素。<br /><br /> `SyndicationTitle:``atom:title`要素。<br /><br /> `SyndicationUpdated:``atom:updated`要素。<br /><br /> これらのキーワードは、リフレクション プロバイダーと共に使用する <xref:System.Data.Services.Common.SyndicationItemProperty> 列挙の値と同等です。|  
+|`FC_TargetPath`|プロパティのマップ先となる結果のフィードのターゲット要素の名前。 この要素は、Atom 仕様またはカスタム要素によって定義された要素である場合があります。<br /><br /> 次のキーワードは、[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] フィードの特定の場所をポイントする定義済みの配信ターゲット パス値です。<br /><br /> `SyndicationAuthorEmail:` `atom:email`の子要素、`atom:author`要素。<br /><br /> `SyndicationAuthorName:` `atom:name`の子要素、`atom:author`要素。<br /><br /> `SyndicationAuthorUri:` `atom:uri`の子要素、`atom:author`要素。<br /><br /> `SyndicationContributorEmail:` `atom:email`の子要素、`atom:contributor`要素。<br /><br /> `SyndicationContributorName:` `atom:name`の子要素、`atom:contributor`要素。<br /><br /> `SyndicationContributorUri:` `atom:uri`の子要素、`atom:contributor`要素。<br /><br /> `SyndicationCustomProperty:` カスタム プロパティ要素です。 カスタム要素にマップする際、ターゲットは、ネストされた要素が円記号 (`/`) で区切られ、属性がアンパサンド (`@`) で指定されたパス式である必要があります。 次の例では、文字列 `UnitsInStock/@ReorderLevel` によってプロパティ値がルート エントリ要素の `ReorderLevel` という子要素の `UnitsInStock` という属性にマップされます。<br /><br /> `<Property Name="ReorderLevel" Type="Int16"               m:FC_TargetPath="UnitsInStock/@ReorderLevel"               m:FC_NsPrefix="Northwind"               m:FC_NsUri="http://schemas.examples.microsoft.com/dataservices"               m:FC_KeepInContent="false"               />`<br /><br /> ターゲットがカスタム要素名の場合、`FC_NsPrefix` および `FC_NsUri` 属性も指定する必要があります。<br /><br /> `SyndicationPublished:` `atom:published`要素。<br /><br /> `SyndicationRights:` `atom:rights`要素。<br /><br /> `SyndicationSummary:` `atom:summary`要素。<br /><br /> `SyndicationTitle:` `atom:title`要素。<br /><br /> `SyndicationUpdated:` `atom:updated`要素。<br /><br /> これらのキーワードは、リフレクション プロバイダーと共に使用する <xref:System.Data.Services.Common.SyndicationItemProperty> 列挙の値と同等です。|  
   
 > [!NOTE]
 >  属性名および値では、大文字と小文字が区別されます。 属性は、`EntityType` 要素または 1 つ以上の `Property` 要素に適用されます (両方には適用されません)。  
@@ -103,6 +105,6 @@ ms.lasthandoff: 01/19/2018
   
  詳細については、次を参照してください。[データ サービスのバージョン管理](../../../../docs/framework/data/wcf/data-service-versioning-wcf-data-services.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [リフレクション プロバイダー](../../../../docs/framework/data/wcf/reflection-provider-wcf-data-services.md)  
  [Entity Framework プロバイダー](../../../../docs/framework/data/wcf/entity-framework-provider-wcf-data-services.md)

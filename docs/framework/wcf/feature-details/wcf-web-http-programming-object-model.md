@@ -10,17 +10,17 @@ ms.technology:
 ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ed96b5fc-ca2c-4b0d-bdba-d06b77c3cb2a
-caps.latest.revision: ''
+caps.latest.revision: 40
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: d71a373d3410c90f405a37e104e7d1b440a7aa14
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: 7bf6512be6fabb87797fb6338f64320d5787d547
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="wcf-web-http-programming-object-model"></a>WCF Web HTTP プログラミング オブジェクト モデル
 WCF Web HTTP プログラミング モデルを使用すると、開発者は基本 HTTP 要求を使用して [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] Web サービスを公開できるようになり、SOAP は必要ありません。 WCF WEB HTTP プログラミング モデルは、既存の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 拡張モデルに基づいて構築されます。 Web HTTP プログラミング モデルでは、次のクラスが定義されます。  
@@ -110,7 +110,7 @@ WCF Web HTTP プログラミング モデルを使用すると、開発者は基
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WEB HTTP プログラミング モデルでは、SOAP ベースのメッセージを使用しないため、WS-* プロトコルをサポートしていません。 ただし、SOAP を使用するエンドポイントと SOAP を使用しないその他のエンドポイントの 2 つの異なるエンドポイントを使用して、同じコントラクトを公開できます。 参照してください[する方法: SOAP および Web クライアントにコントラクトを公開](../../../../docs/framework/wcf/feature-details/how-to-expose-a-contract-to-soap-and-web-clients.md)例についてはします。  
   
 ## <a name="security"></a>セキュリティ  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WEB HTTP プログラミング モデルでは WS-* プロトコルがサポートされないため、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WEB HTTP プログラミング モデルで構築された Web サービスを保護するには、SSL を使用してサービスを公開するしかありません。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] SSL を設定する[!INCLUDE[iisver](../../../../includes/iisver-md.md)]を参照してください[を IIS で SSL を実装する方法](http://go.microsoft.com/fwlink/?LinkId=131613)  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WEB HTTP プログラミング モデルでは WS-* プロトコルがサポートされないため、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WEB HTTP プログラミング モデルで構築された Web サービスを保護するには、SSL を使用してサービスを公開するしかありません。 SSL の設定の詳細については[!INCLUDE[iisver](../../../../includes/iisver-md.md)]を参照してください[を IIS で SSL を実装する方法](http://go.microsoft.com/fwlink/?LinkId=131613)  
   
 ## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.WebHttpBinding>  

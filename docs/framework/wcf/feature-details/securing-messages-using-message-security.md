@@ -16,11 +16,11 @@ ms.author: bruceper
 manager: mbaldwin
 ms.workload:
 - dotnet
-ms.openlocfilehash: be9d55e508308f23e70be81ac0d4fe0dfd0ea9cd
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 088b01151d0471527bbfc2ffa04b5b5064700081
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="securing-messages-using-message-security"></a>メッセージ セキュリティを使用したメッセージのセキュリティ保護
 ここでは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を使用した場合の <xref:System.ServiceModel.NetMsmqBinding> メッセージ セキュリティについて説明します。  
@@ -54,7 +54,7 @@ ms.lasthandoff: 04/28/2018
   
  キューは切断されているため、クライアントとサービスが同時にオンライン状態にならない可能性があります。 したがって、クライアントとサービスは、帯域外で証明書を交換する必要があります。 特にクライアントは、信頼されたストア内にサービスの証明書 (証明機関にチェーンできる) を保持しているという理由で、正しいサービスと通信していると信じる必要があります。 クライアントを認証する場合、サービスはメッセージに添付された X509 証明書を使用し、ストア内の証明書と照合してクライアントの信頼性を確認します。 この場合も、証明書は証明機関にチェーンされている必要があります。  
   
- Windows を実行しているコンピューターでは、証明書は数種類のストアで保持されています。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] 別のストアを参照してください[証明書のストア](http://go.microsoft.com/fwlink/?LinkId=87787)です。  
+ Windows を実行しているコンピューターでは、証明書は数種類のストアで保持されています。 別のストアの詳細については、次を参照してください。[証明書のストア](http://go.microsoft.com/fwlink/?LinkId=87787)です。  
   
 ### <a name="windows"></a>Windows  
  メッセージ資格情報の種類に Windows を設定すると、Kerberos プロトコルが使用されます。  

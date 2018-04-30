@@ -1,12 +1,13 @@
 ---
-title: "リスト項目の UI オートメーション要素の検索"
-ms.custom: 
+title: リスト項目の UI オートメーション要素の検索
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-bcl
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-bcl
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -16,16 +17,17 @@ helpviewer_keywords:
 - elements, finding for list items
 - UI Automation, finding elements for List items
 ms.assetid: c326ad2b-2144-4f64-ae4c-d850c74f95c5
-caps.latest.revision: "5"
+caps.latest.revision: 5
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: a00019e5aaaefaddd94689bd192973d5d5ad175a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 727610b910cecbfa2b4c2eb1064fc357be822d42
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="find-a-ui-automation-element-for-a-list-item"></a>リスト項目の UI オートメーション要素の検索
 > [!NOTE]
@@ -36,10 +38,10 @@ ms.lasthandoff: 12/22/2017
 ## <a name="example"></a>例  
  次の例を使用して、一覧から、指定した項目を取得する 2 つの方法を示しています。<xref:System.Windows.Automation.TreeWalker>とその他の using<xref:System.Windows.Automation.AutomationElement.FindAll%2A>です。  
   
- 最初の手法の処理が速くなる傾向があります[!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)]、コントロールが、2 つ目は高速[!INCLUDE[TLA#tla_wpf](../../../includes/tlasharptla-wpf-md.md)]コントロール。  
+ 最初の手法の処理が速くなる傾向があります[!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)]コントロールが、2 つ目は、Windows Presentation Foundation (WPF) コントロールの高速です。  
   
  [!code-csharp[UIAClient_snip#184](../../../samples/snippets/csharp/VS_Snippets_Wpf/UIAClient_snip/CSharp/ClientForm.cs#184)]
  [!code-vb[UIAClient_snip#184](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/UIAClient_snip/VisualBasic/ClientForm.vb#184)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [UI オートメーション要素の取得](../../../docs/framework/ui-automation/obtaining-ui-automation-elements.md)

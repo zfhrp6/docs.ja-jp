@@ -23,11 +23,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 528c1661b99ff5f50d42bb7a42371c302e335c90
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: c771d78c5e78feabcfe883934ed7ea3589c938d2
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="collection-types-in-data-contracts"></a>データ コントラクトのコレクション型
 *"コレクション"* は、特定の型の項目のリストです。 [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]では、このようなリストは、配列や他のさまざまな型を使用して表すことができます (ジェネリック List、ジェネリック <xref:System.ComponentModel.BindingList%601>、 <xref:System.Collections.Specialized.StringCollection>、または <xref:System.Collections.ArrayList>)。 たとえば、コレクションでは指定された顧客のアドレスのリストを保持できます。 これらのコレクションは、実際の型に関係なく、 *リスト コレクション*と呼びます。  
@@ -42,7 +42,7 @@ ms.lasthandoff: 04/28/2018
   
  コレクションに含まれる型は、データ コントラクト型である必要があります。それ以外の場合は、シリアル化可能な型であることが必要です。 詳細については、次を参照してください。[データ コントラクト シリアライザーでサポートされる型](../../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md)です。  
   
- 有効なコレクションと見なされるものと見なされないもの、およびコレクションをシリアル化する方法[!INCLUDE[crabout](../../../../includes/crabout-md.md)] 、このトピックの「コレクションの高度な規則」でコレクションのシリアル化に関する情報を参照してください。  
+ 新機能し、見なされない有効なコレクションについて、およびコレクションをシリアル化する方法についての詳細については、このトピックの「コレクションの高度な規則」セクションでコレクションのシリアル化に関する情報を参照してください。  
   
 ## <a name="interchangeable-collections"></a>交換可能なコレクション  
  同じ型のすべてのリスト コレクションは、同じデータ コントラクトを持つと見なされます (このトピックで後述するように、 <xref:System.Runtime.Serialization.CollectionDataContractAttribute> 属性を使用してカスタマイズされている場合を除きます)。 たとえば、次のデータ コントラクトは等価です。  
@@ -91,7 +91,7 @@ ms.lasthandoff: 04/28/2018
 ## <a name="customizing-collection-types"></a>コレクション型のカスタマイズ  
  コレクション型は、複数の用途を持つ <xref:System.Runtime.Serialization.CollectionDataContractAttribute> 属性を使用することによってカスタマイズできます。  
   
- コレクション型をカスタマイズすると、コレクションの可換性が損なわれるため、一般に、できるだけこの属性を適用しないようにすることをお勧めします。 この問題[!INCLUDE[crabout](../../../../includes/crabout-md.md)] 、このトピックで後述する「コレクションの高度な規則」を参照してください。  
+ コレクション型をカスタマイズすると、コレクションの可換性が損なわれるため、一般に、できるだけこの属性を適用しないようにすることをお勧めします。 この問題の詳細については、このトピックの「「コレクションの高度な規則」セクションを参照してください。  
   
 ### <a name="collection-data-contract-naming"></a>コレクション データ コントラクトの名前付け  
  コレクション型の名前付け規則は、「 [Data Contract Names](../../../../docs/framework/wcf/feature-details/data-contract-names.md)」で説明する通常のデータ コントラクト型の名前付けの規則に似ていますが、重要な違いがいくつかあります。  
@@ -203,7 +203,7 @@ ms.lasthandoff: 04/28/2018
 </CountriesOrRegionsWithCapitals>  
 ```  
   
- ディクショナリ コレクション[!INCLUDE[crabout](../../../../includes/crabout-md.md)] 、このトピックで後述される「コレクションの高度な規則」を参照してください。  
+ ディクショナリ コレクションの詳細については、このトピックの「「コレクションの高度な規則」セクションを参照してください。  
   
 ## <a name="collections-and-known-types"></a>コレクションと既知の型  
  コレクション型を、他のコレクションまたはコレクション インターフェイスの代わりにポリモーフィックに使用する場合は、既知の型に追加する必要はありません。 たとえば、 <xref:System.Collections.IEnumerable> 型のデータ メンバーを宣言し、このデータ メンバーを使用して <xref:System.Collections.ArrayList>のインスタンスを送信する場合、 <xref:System.Collections.ArrayList> を既知の型に追加する必要はありません。  
@@ -318,7 +318,7 @@ svcutil.exe MyService.wsdl MyServiceSchema.xsd /r:C:\full_path_to_system_dll\Sys
   
 -   コレクション型は、組み合わせる (コレクションのコレクションを持つ) ことができます。 ジャグ配列は、コレクションのコレクションとして扱われます。 多次元配列はサポートされていません。  
   
--   バイト配列と <xref:System.Xml.XmlNode> の配列は、コレクションではなく、プリミティブとして扱われる特殊な配列の型です。 バイト配列をシリアル化すると、バイトごとの個別の要素ではなく、Base64 でエンコードされたデータのチャンクを含む単一の XML 要素が生成されます。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] の配列の処理方法の <xref:System.Xml.XmlNode> については、「 [XML and ADO.NET Types in Data Contracts](../../../../docs/framework/wcf/feature-details/xml-and-ado-net-types-in-data-contracts.md)。 これらの特殊な型もコレクションに参加できます。バイト配列の配列の場合、複数の XML 要素が生成され、各要素に Base64 でエンコードされたデータのチャンクが含まれます。  
+-   バイト配列と <xref:System.Xml.XmlNode> の配列は、コレクションではなく、プリミティブとして扱われる特殊な配列の型です。 バイト配列をシリアル化すると、バイトごとの個別の要素ではなく、Base64 でエンコードされたデータのチャンクを含む単一の XML 要素が生成されます。 方法についての詳細の配列<xref:System.Xml.XmlNode>が処理するを参照してください[XML および ADO.NET データ コントラクトの種類](../../../../docs/framework/wcf/feature-details/xml-and-ado-net-types-in-data-contracts.md)です。 これらの特殊な型もコレクションに参加できます。バイト配列の配列の場合、複数の XML 要素が生成され、各要素に Base64 でエンコードされたデータのチャンクが含まれます。  
   
 -   <xref:System.Runtime.Serialization.DataContractAttribute> 属性をコレクション型に適用した場合、型はコレクションとしてではなく、通常のデータ コントラクト型として扱われるようになります。  
   
@@ -361,7 +361,7 @@ svcutil.exe MyService.wsdl MyServiceSchema.xsd /r:C:\full_path_to_system_dll\Sys
   
 -   Name を使用してオーバーライドしていない場合、リスト コレクション データ コントラクトの既定の名前は、文字列 "ArrayOf" とコレクションに含まれる型のデータ コントラクト名を組み合わせたものです。 たとえば、Integers のジェネリック List のデータ コントラクト名は "ArrayOfint" です。 `Object` のデータ コントラクト名は "anyType" であることに留意してください。したがって、 <xref:System.Collections.ArrayList> のような非ジェネリック リストのデータ コントラクト名は、"ArrayOfanyType" になります。  
   
- `Name` を使用してオーバーライドしていない場合、ディクショナリ コレクション データ コントラクトの既定の名前は、文字列 "ArrayOfKeyValueOf"、キーの型のデータ コントラクト名、および値の型のデータ コントラクト名をこの順番で組み合わせたものです。 たとえば、String と Integer のジェネリック ディクショナリのデータ コントラクト名は、"ArrayOfKeyValueOfstringint" になります。 また、キーの型と値の型がいずれもプリミティブ型ではない場合は、キーおよび値の型のデータ コントラクト名前空間の名前空間ハッシュが名前に付加されます。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] については、「 [Data Contract Names](../../../../docs/framework/wcf/feature-details/data-contract-names.md)。  
+ `Name` を使用してオーバーライドしていない場合、ディクショナリ コレクション データ コントラクトの既定の名前は、文字列 "ArrayOfKeyValueOf"、キーの型のデータ コントラクト名、および値の型のデータ コントラクト名をこの順番で組み合わせたものです。 たとえば、String と Integer のジェネリック ディクショナリのデータ コントラクト名は、"ArrayOfKeyValueOfstringint" になります。 また、キーの型と値の型がいずれもプリミティブ型ではない場合は、キーおよび値の型のデータ コントラクト名前空間の名前空間ハッシュが名前に付加されます。 名前空間ハッシュの詳細については、次を参照してください。[データ コントラクト名](../../../../docs/framework/wcf/feature-details/data-contract-names.md)です。  
   
  各ディクショナリ コレクション データ コントラクトには、ディクショナリの 1 エントリを表すコンパニオン データ コントラクトが存在します。 コンパニオン データ コントラクトの名前は、"ArrayOf" プレフィックスを除いたディクショナリ データ コントラクトの名前と同じです。また、名前空間は、ディクショナリ データ コントラクトの名前空間と同じです。 たとえば、"ArrayOfKeyValueOfstringint" ディクショナリ データ コントラクトの場合、"KeyValueofstringint" データ コントラクトがディクショナリの 1 エントリを表します。 次のセクションで説明するように、このデータ コントラクトの名前は、 `ItemName` プロパティを使用してカスタマイズできます。  
   

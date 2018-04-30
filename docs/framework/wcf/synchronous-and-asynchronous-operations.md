@@ -22,11 +22,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 123186dd5f0d63693c04c0857709292ce122f918
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: c626699dc5291f4d4f6d432e89708661b233f16d
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="synchronous-and-asynchronous-operations"></a>同期操作と非同期操作
 ここでは、非同期サービス操作の実装と呼び出しについて説明します。  
@@ -51,7 +51,7 @@ ms.lasthandoff: 04/26/2018
   
 -   次のような場合には、クライアントまたは呼び出し元アプリケーションで非同期手法を使用します。  
   
--   中間層アプリケーションから操作を呼び出す場合  ([!INCLUDE[crabout](../../../includes/crabout-md.md)]このようなシナリオを参照してください[中間層クライアント アプリケーション](../../../docs/framework/wcf/feature-details/middle-tier-client-applications.md))。  
+-   中間層アプリケーションから操作を呼び出す場合  (このようなシナリオの詳細については、次を参照してください[中間層クライアント アプリケーション](../../../docs/framework/wcf/feature-details/middle-tier-client-applications.md)。)。  
   
 -   ASP.NET ページ内で操作を呼び出す場合、非同期ページを使用します。  
   

@@ -21,14 +21,14 @@ ms.author: bruceper
 manager: mbaldwin
 ms.workload:
 - dotnet
-ms.openlocfilehash: 19bb6d4a172568611f73e3a50d0c526016c65aac
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 0545ff40247b7ff86cb6227fa8cf4af8666c3629
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="best-practices-for-security-in-wcf"></a>WCF のセキュリティのベスト プラクティス
-以下のセクションでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] を使用してセキュリティで保護されたアプリケーションを作成する場合に考慮する必要のあるベスト プラクティスを示します。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] セキュリティを参照してください[セキュリティの考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)、[データのセキュリティに関する考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md)、および[メタデータとセキュリティに関する考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-with-metadata.md)です。  
+以下のセクションでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] を使用してセキュリティで保護されたアプリケーションを作成する場合に考慮する必要のあるベスト プラクティスを示します。 セキュリティの詳細については、次を参照してください。[セキュリティの考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)、[データのセキュリティに関する考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md)、および[メタデータとセキュリティに関する考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-with-metadata.md)です。  
   
 ## <a name="identify-services-performing-windows-authentication-with-spns"></a>Windows 認証での SPN を使用したサービスの識別  
  サービスはユーザー プリンシパル名 (UPN) またはサービス プリンシパル名 (SPN) によって識別できます。 ネットワーク サービスのようにコンピューター アカウントを使用して実行するサービスには、サービスが実行されるコンピューターに対応する SPN ID があります。 ユーザー アカウントを使用して実行するサービスには、そのユーザーに対応する UPN ID があります。ただし、`setspn` ツールを使用するとユーザー アカウントに SPN 割り当てることができます。 サービスが SPN によって識別されるように構成し、サービスに接続するクライアントが SPN を使用してサービスに接続するように構成すると、攻撃の種類によっては攻撃が困難になります。 このガイダンスは Kerberos または SSPI ネゴシエーションを使用するバインディングに適用されます。  その場合でも、SSPI が使用できなくて NTLM が使用される場合に備えて、クライアントは SPN を指定する必要があります。  
@@ -66,7 +66,7 @@ ms.lasthandoff: 04/28/2018
  特定のバインディングに対して発行者アドレスとバインディングが指定されている場合、ローカル発行者はこのバインディングを使用するエンドポイントには使用されません。 ローカル発行者を常に使用する必要があるクライアントには、このようなバインディングが使用されることがないか、または発行者アドレスが null となるようにクライアントによってバインディングが変更されることが保証されている必要があります。  
   
 ## <a name="saml-token-size-quotas"></a>SAML トークン サイズのクォータ  
- セキュリティ トークン サービス (STS: Security Token Service) によって SAML (Security Assertions Markup Language) トークンが発行されたとき、またはクライアントが認証の一部としてこれをサービスに提示したときに、SAML トークンがメッセージ内にシリアル化される場合は、メッセージの最大クォータ サイズが、SAML トークンおよびメッセージの他の部分を格納できるだけの大きさである必要があります。 通常は、既定のメッセージ クォータ サイズで十分です。 ただし、数百のクレームを含んでいるために SAML トークンのサイズが大きい場合には、シリアル化されたトークンを格納できるように、クォータを増やす必要があります。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] クォータを参照してください[データのセキュリティに関する考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md)です。  
+ セキュリティ トークン サービス (STS: Security Token Service) によって SAML (Security Assertions Markup Language) トークンが発行されたとき、またはクライアントが認証の一部としてこれをサービスに提示したときに、SAML トークンがメッセージ内にシリアル化される場合は、メッセージの最大クォータ サイズが、SAML トークンおよびメッセージの他の部分を格納できるだけの大きさである必要があります。 通常は、既定のメッセージ クォータ サイズで十分です。 ただし、数百のクレームを含んでいるために SAML トークンのサイズが大きい場合には、シリアル化されたトークンを格納できるように、クォータを増やす必要があります。 クォータの詳細については、次を参照してください。[データのセキュリティに関する考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md)です。  
   
 ## <a name="set-securitybindingelementincludetimestamp-to-true-on-custom-bindings"></a>カスタム バインドで SecurityBindingElement.IncludeTimestamp を true に設定する  
  カスタム バインディングを作成するときは、<xref:System.ServiceModel.Channels.SecurityBindingElement.IncludeTimestamp%2A> を `true` に設定する必要があります。 <xref:System.ServiceModel.Channels.SecurityBindingElement.IncludeTimestamp%2A> が `false` に設定されている場合に、クライアントが、X509 証明書などの非対称キーに基づくトークンを使用すると、メッセージは署名されません。  

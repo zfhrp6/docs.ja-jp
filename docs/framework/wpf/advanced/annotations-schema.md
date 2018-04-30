@@ -1,28 +1,30 @@
 ---
-title: "注釈スキーマ"
-ms.custom: 
+title: 注釈スキーマ
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - XML schema definition (XSD)
 - Microsoft Annotations Framework [WPF]
 - documents [WPF], annotations
 ms.assetid: a893442b-e220-4603-bf6a-b01fefcb4b37
-caps.latest.revision: "14"
+caps.latest.revision: 14
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 7989269e8076eda1deef6384b7efdb51c2d279ec
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: a78e287065fb714878d4d97b037d44440d063a5a
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="annotations-schema"></a>注釈スキーマ
 このトピックでは、Microsoft Annotations Framework でユーザー注釈データの保存と取得に使用される XML スキーマ定義 (XSD) について説明します。  
@@ -37,7 +39,7 @@ ms.lasthandoff: 12/22/2017
   
  Core スキーマでは、プライマリ XML の構造を定義、<xref:System.Windows.Annotations.Annotation>です。  Core スキーマで定義されている XML 要素の過半数が内の型に対応している、<xref:System.Windows.Annotations>名前空間。  コア スキーマは 3 つの拡張ポイントを公開します。そのポイントでアプリケーションは独自の XML データを追加できます。  これらの拡張ポイントを含める、 <xref:System.Windows.Annotations.Annotation.Authors%2A>、 <xref:System.Windows.Annotations.ContentLocatorPart>、「コンテンツ」とします。  (コンテンツの形式で要素が提供されて、 <xref:System.Xml.XmlElement>  ボックスの一覧です)。  
   
- このトピックで説明する基本スキーマの拡張機能の定義、 <xref:System.Windows.Annotations.Annotation.Authors%2A>、 <xref:System.Windows.Annotations.ContentLocatorPart>、コンテンツの種類、最初に含まれていると[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)]を解放します。  
+ このトピックで説明する基本スキーマの拡張機能の定義、 <xref:System.Windows.Annotations.Annotation.Authors%2A>、 <xref:System.Windows.Annotations.ContentLocatorPart>、コンテンツの種類の最初の Windows Presentation Foundation (WPF) リリースに含まれているとします。  
   
 <a name="CoreSchema"></a>   
 ## <a name="annotations-xml-core-schema"></a>注釈 XML コア スキーマ  
@@ -592,7 +594,7 @@ ms.lasthandoff: 12/22/2017
 </anc:Annotations>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Annotations>  
  <xref:System.Windows.Annotations.Storage>  
  <xref:System.Windows.Annotations.Annotation>  

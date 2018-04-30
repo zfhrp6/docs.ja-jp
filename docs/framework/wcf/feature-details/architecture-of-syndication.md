@@ -16,11 +16,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: bcb64a4e03cae5e6186754dacb87e17a22d13001
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 2516a80f8d92b4e64372be140d2ee3d5db4c7b54
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="architecture-of-syndication"></a>配信のアーキテクチャ
 配信 API は、形式に依存せず、さまざま形式で概要コンテンツをネットワークに書き込むことができるプログラミング モデルを提供することを目的としています。 抽象データ モデルは、次のクラスで構成されています。  
@@ -43,7 +43,7 @@ ms.lasthandoff: 04/28/2018
   
  [!code-csharp[S_UE_SyndicationBoth#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_ue_syndicationboth/cs/service.cs#0)]  
   
- 配信のサポートは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] バインディングを定義する <xref:System.ServiceModel.WebHttpBinding> REST プログラミング モデル上に組み込まれています。このバインディングを <xref:System.ServiceModel.Description.WebHttpBehavior> と共に使用すると、フィードをサービスとして利用できるようになります。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] REST プログラミング モデルを参照してください[WCF Web HTTP プログラミング モデルの概要](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model-overview.md)です。  
+ 配信のサポートは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] バインディングを定義する <xref:System.ServiceModel.WebHttpBinding> REST プログラミング モデル上に組み込まれています。このバインディングを <xref:System.ServiceModel.Description.WebHttpBehavior> と共に使用すると、フィードをサービスとして利用できるようになります。 詳細については、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] REST プログラミング モデルを参照してください[WCF Web HTTP プログラミング モデルの概要](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model-overview.md)です。  
   
 > [!NOTE]
 >  Atom 1.0 仕様では、date コンストラクトで小数秒を指定できます。 シリアル化および逆シリアル化する場合、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の実装では小数秒は無視されます。  

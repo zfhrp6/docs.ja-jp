@@ -18,16 +18,16 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: c29065ebe03617e288d7ebde3dc6b42cbfcf6061
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 530f6ce3d253cfc50818c82fc70e401382b50b85
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="analytic-tracing-overview"></a>分析トレースの概要
 [!INCLUDE[netfx_current_long](../../../../../includes/netfx-current-long-md.md)] の分析トレースは、Event Tracing for Windows (ETW) を基盤とするトレース機能のセットです。詳細度は低いのですが、パフォーマンスに優れています。 ETW は、カーネル レベルで実行され、トレース操作のオーバーヘッドを大幅に削減します。 ユーザー モードおよびカーネル モードのイベントを効率よくバッファーし、サービスの再起動を必要とすることなく、動的にログを有効化できます。 トレース データは、生成および受信されると、イベント ログから確認できます。  
   
- ETW の[!INCLUDE[crabout](../../../../../includes/crabout-md.md)] については、「 [ETW によりデバッグおよびパフォーマンス調整を改善する](http://go.microsoft.com/fwlink/?LinkId=164781)」を参照してください。  
+ ETW の詳細については、次を参照してください。[デバッグを向上させると、パフォーマンスのチューニングを ETW](http://go.microsoft.com/fwlink/?LinkId=164781)です。  
   
  Windows のシステム、セキュリティ、およびアプリケーション イベント ログによるアプリケーションの分析のほかに、 [!INCLUDE[wv](../../../../../includes/wv-md.md)] および [!INCLUDE[lserver](../../../../../includes/lserver-md.md)] では、最上位ノードの [アプリケーションとサービス ログ] の下にログが追加されています。 これらの新しいログは、システム全体に影響するグローバルなイベント (セキュリティ イベント ログで記録されるようなイベントなど) ではなく、特定のアプリケーションやコンポーネントのイベントを格納することを目的としています。 [!INCLUDE[netfx_current_short](../../../../../includes/netfx-current-short-md.md)] では、 [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] トレース イベント、 [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] メッセージ ログ、および [!INCLUDE[wf1](../../../../../includes/wf1-md.md)] 追跡レコードのログを [アプリケーションとサービス ログ] にまとめ、相互に関連付けています。  
   
@@ -57,7 +57,7 @@ ms.lasthandoff: 04/28/2018
  ETW のインフラストラクチャでは、標準の Windows ツールを使用して動的にトレースを有効化および構成できます。 詳細については、次を参照してください。[動的に有効にする分析トレース](../../../../../docs/framework/wcf/diagnostics/etw/dynamically-enabling-analytic-tracing.md)です。  
   
 ### <a name="message-flow-tracing"></a>メッセージ フローのトレース  
- [!INCLUDE[crabout](../../../../../includes/crabout-md.md)] については、「 [Configuring Message Flow Tracing](../../../../../docs/framework/wcf/diagnostics/etw/configuring-message-flow-tracing.md)」を参照してください。  
+ メッセージ フローのトレースを有効にする方法の詳細については、次を参照してください。[メッセージ フローのトレースを構成する](../../../../../docs/framework/wcf/diagnostics/etw/configuring-message-flow-tracing.md)です。  
   
 ### <a name="keywords"></a>キーワード  
  キーワードは、トレース メッセージをフィルター処理するため、およびイベントを生成した [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] コンポーネントを定義するために使用されます。 詳細については、次を参照してください。[動的に有効にする分析トレース](../../../../../docs/framework/wcf/diagnostics/etw/dynamically-enabling-analytic-tracing.md)です。

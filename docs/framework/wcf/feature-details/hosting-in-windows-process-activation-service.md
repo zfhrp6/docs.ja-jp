@@ -1,33 +1,33 @@
 ---
-title: "Windows プロセス アクティブ化サービスでのホスティング"
-ms.custom: 
+title: Windows プロセス アクティブ化サービスでのホスティング
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - hosting services [WCF], WAS
 ms.assetid: d2b9d226-15b7-41fc-8c9a-cb651ac20ecd
-caps.latest.revision: 
+caps.latest.revision: 16
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 40122670c84f87590a31b79f39695e9626ea9883
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a31d66cd4b4430ec838b34fcd77d712698f9e1dc
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="hosting-in-windows-process-activation-service"></a>Windows プロセス アクティブ化サービスでのホスティング
 Windows プロセス アクティブ化サービス (WAS) は、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスをホストするアプリケーションが含まれるワーカー プロセスのアクティベーションと有効期間を管理します。 WAS プロセス モデルは HTTP の依存関係を取り除くことにより、HTTP サーバーの [!INCLUDE[iis601](../../../../includes/iis601-md.md)] プロセス モデルを一般化します。 これにより、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスは、メッセージ ベースのアクティベーションがサポートされ、特定のコンピューター上で多数のアプリケーションをホストできるホスト環境で、Net.TCP などの HTTP プロトコルと非 HTTP プロトコルの両方を使用できるようになります。  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]ビルド、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WAS でホストする環境で実行されているサービスを参照してください[する方法: WAS で WCF サービスをホスト](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-was.md)です。  
+ ビルドの詳細については、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WAS でホストする環境で実行されているサービスを参照してください[する方法: WAS で WCF サービスをホスト](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-was.md)です。  
   
  WAS プロセスモデルは、信頼性が高く管理も容易でリソースを効果的に使用する方法でアプリケーションのホストを実現するいくつかの機能を提供します。  
   
@@ -39,7 +39,7 @@ Windows プロセス アクティブ化サービス (WAS) は、[!INCLUDE[indigo
   
 -   完全な IIS インストールの配置スペースを必要とせずに、アプリケーションで IIS プロセス モデルを利用可能。  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]WAS の機能を参照してください[IIS 7.0 Beta: IIS 7.0 Web 管理](../../../../docs/framework/wcf/feature-details/hosting-in-windows-process-activation-service.md)です。  
+ WAS の機能の詳細については、次を参照してください。 [IIS 7.0 Beta: IIS 7.0 Web 管理](../../../../docs/framework/wcf/feature-details/hosting-in-windows-process-activation-service.md)です。  
   
  [Windows Server AppFabric](http://go.microsoft.com/fwlink/?LinkId=196496)連動[!INCLUDE[iisver](../../../../includes/iisver-md.md)]およびリッチ アプリケーションをホストして、NET4 WCF および WF のサービスの環境を提供する Windows プロセス アクティブ化サービス (WAS) です。 この利点には、プロセス ライフサイクル管理、プロセス リサイクル、共有ホスティング、迅速な障害保護、プロセスの孤立化、オンデマンド アクティブ化、状態監視などがあります。 詳細については、次を参照してください。 [AppFabric のホスティング機能](http://go.microsoft.com/fwlink/?LinkId=196494)と[AppFabric ホスティングの概念](http://go.microsoft.com/fwlink/?LinkId=196495)です。  
   
@@ -64,7 +64,7 @@ net.tcp://contoso.com/Billing/GetOrders.svc/SecureEndpoint
 ## <a name="the-was-runtime"></a>WAS ランタイム  
  アプリケーションは、アドレス指定と管理の目的でサイトに編成されます。 実行時にもアプリケーションはアプリケーション プールにグループ化されます。 アプリケーション プールには、多数の異なるサイトからの多数の異なるアプリケーションを格納できます。 アプリケーション プール内のすべてのアプリケーションで、一連の共通の実行時特性を共有します。 たとえば、すべてのアプリケーションは同じバージョンの共通言語ランタイム (CLR) 下で実行され、またすべてのアプリケーションで共通のプロセス ID を共有します。 各アプリケーション プールはワーカー プロセス (w3wp.exe) のインスタンスに対応します。 共有アプリケーション プール内で実行される各マネージ アプリケーションは、CLR AppDomain により他のアプリケーションから分離されます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [WAS アクティベーション アーキテクチャ](../../../../docs/framework/wcf/feature-details/was-activation-architecture.md)  
  [WCF で使用するための WAS を設定する](../../../../docs/framework/wcf/feature-details/configuring-the-wpa--service-for-use-with-wcf.md)  
  [方法 : WCF アクティブ化コンポーネントをインストールして設定する](../../../../docs/framework/wcf/feature-details/how-to-install-and-configure-wcf-activation-components.md)  

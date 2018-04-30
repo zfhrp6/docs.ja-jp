@@ -16,11 +16,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 7e315c9e77eace9bdb0e66abed203452e5d7f9bb
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: 7ec09b6b99b831245d11d858f90c27de05d1e21f
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="using-the-wcf-development-tools"></a>WCF 開発ツールの使用
 このセクションの説明の開発に役立つ Visual Studio 開発ツール、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]サービス。  
@@ -53,7 +53,7 @@ ms.lasthandoff: 04/27/2018
 netsh http add urlacl url=http://+:8001/MyService user=<domain>\<user>  
 ```  
   
- [!INCLUDE[crabout](../../../includes/crabout-md.md)] Netsh.exe を参照してください[Netsh.exe ツールとコマンド ライン スイッチを使用する方法](http://go.microsoft.com/fwlink/?LinkId=97877)です。  
+ Netsh.exe の詳細については、次を参照してください。 [Netsh.exe ツールとコマンド ライン スイッチを使用する方法](http://go.microsoft.com/fwlink/?LinkId=97877)です。  
   
 ## <a name="see-also"></a>関連項目  
  [WCF Visual Studio テンプレート](../../../docs/framework/wcf/wcf-vs-templates.md)  

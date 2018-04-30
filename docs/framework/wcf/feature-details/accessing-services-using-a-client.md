@@ -19,11 +19,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 2138a412af30812b4ff443963604dda52eafea11
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 209d10f9545be65870f584fa79444f7fab90211a
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="accessing-services-using-a-client"></a>クライアントを使用したサービスへのアクセス
 クライアント アプリケーションがサービスと通信するには、クライアント アプリケーションで [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントまたはチャネルを作成および構成し、使用する必要があります。 [WCF クライアントの概要](../../../../docs/framework/wcf/wcf-client-overview.md)トピックは、オブジェクトと基本的なチャネルとクライアント オブジェクトを作成すると、それらを使用して関連する手順の概要を説明します。  
@@ -76,7 +76,7 @@ ms.lasthandoff: 04/28/2018
   
  データグラム チャネルを閉じるときに例外が発生しても、データグラム チャネルはエラーになりません。 さらに、非双方向クライアントがセキュリティで保護されたメッセージ交換を使用して認証に失敗した場合、通常、<xref:System.ServiceModel.Security.MessageSecurityException?displayProperty=nameWithType> がスローされます。 しかし、双方向クライアントがセキュリティで保護されたメッセージ交換を使用して認証に失敗した場合、クライアントは代わりに <xref:System.TimeoutException?displayProperty=nameWithType> を受信します。  
   
- アプリケーション レベルのエラー情報が作業の詳細については、次を参照してください。[を指定すると処理のエラー コントラクトおよびサービスの](../../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md)します。 [予期される例外](../../../../docs/framework/wcf/samples/expected-exceptions.md)予期される例外を説明し、それらを処理する方法を示します。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] チャネルを開発するときにエラーを処理する方法[例外の処理とエラー](../../../../docs/framework/wcf/extending/handling-exceptions-and-faults.md)です。  
+ アプリケーション レベルのエラー情報が作業の詳細については、次を参照してください。[を指定すると処理のエラー コントラクトおよびサービスの](../../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md)します。 [予期される例外](../../../../docs/framework/wcf/samples/expected-exceptions.md)予期される例外を説明し、それらを処理する方法を示します。 チャネルを開発するときにエラーを処理する方法の詳細については、次を参照してください。[例外の処理とエラー](../../../../docs/framework/wcf/extending/handling-exceptions-and-faults.md)です。  
   
 ### <a name="client-blocking-and-performance"></a>クライアントのブロックとパフォーマンス  
  アプリケーションが要求/応答操作を同期的に呼び出す場合、戻り値が受信されるか例外 (<xref:System.TimeoutException?displayProperty=nameWithType> など) がスローされるまで、クライアントはブロックされます。 この動作はローカルの動作と似ています。 アプリケーションが [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント オブジェクトまたはチャネルに対する操作を同期的に呼び出す場合、チャネル レイヤーがデータをネットワークに書き込むことができるまで、または例外がスローされるまで、クライアントに制御は戻りません。 また、一方向メッセージ交換パターン (<xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A?displayProperty=nameWithType> が `true` に設定された操作をマークすることで指定される) では、クライアントの応答性が向上する可能性がありますが、バインディングや送信済みのメッセージによっては、一方向操作でもブロックが生じる場合があります。 一方向操作とはメッセージ交換のみを指しています。 詳細については、次を参照してください。[一方向サービス](../../../../docs/framework/wcf/feature-details/one-way-services.md)です。  
@@ -85,7 +85,7 @@ ms.lasthandoff: 04/28/2018
   
  操作が完了してもアプリケーションでさらに処理を行う必要がある場合、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントが実装するサービス コントラクト インターフェイスに非同期のメソッドのペアを作成する必要があります。 これを行う最も簡単な方法を使用する、`/async`スイッチ、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)です。 例については、次を参照してください。[する方法: サービスの操作を非同期に呼び出す](../../../../docs/framework/wcf/feature-details/how-to-call-wcf-service-operations-asynchronously.md)です。  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)] クライアントのパフォーマンスの向上を参照してください[中間層クライアント アプリケーション](../../../../docs/framework/wcf/feature-details/middle-tier-client-applications.md)です。  
+ クライアントのパフォーマンスの向上の詳細については、次を参照してください。[中間層クライアント アプリケーション](../../../../docs/framework/wcf/feature-details/middle-tier-client-applications.md)です。  
   
 ### <a name="enabling-the-user-to-select-credentials-dynamically"></a>ユーザーによる資格情報の動的選択の有効化  
  <xref:System.ServiceModel.Dispatcher.IInteractiveChannelInitializer> インターフェイスを使用すると、アプリケーションによりユーザー インターフェイスが表示され、ユーザーが資格情報を選択できるようになります。この資格情報は、タイムアウト タイマーが開始される前に、チャネルの作成に使用されます。  

@@ -1,24 +1,26 @@
 ---
-title: "WCF のメッセージのセキュリティ"
-ms.custom: 
+title: WCF のメッセージのセキュリティ
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a80efb59-591a-4a37-bb3c-8fffa6ca0b7d
-caps.latest.revision: "9"
+caps.latest.revision: 9
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 92422e40742909dbf338ec2660e5494ffcdd31cc
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 3ef96dd25903076fedc59ad1507674dd40dcfcc5
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="message-security-in-wcf"></a>WCF のメッセージのセキュリティ
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] には、セキュリティを提供する 2 つの主なモード (`Transport` および `Message`) と、この 2 つを組み合わせた 3 番目のモード (`TransportWithMessageCredential`) があります。 ここでは、メッセージ セキュリティとその必要性について説明します。  
@@ -37,7 +39,7 @@ ms.lasthandoff: 12/22/2017
   
 -   複数のトランスポートに対するサポート。 複数のトランスポートに対するサポート : セキュリティ用のプロトコルに依存することなく、名前付きパイプ、TCP などの複数の異なるトランスポートを経由して、セキュリティで保護されたメッセージを送信できます。 トランスポート レベルのセキュリティでは、すべてのセキュリティ情報の有効範囲が 1 つの特定のトランスポート接続に限定されるので、メッセージの内容からその情報を使用することはできません。 メッセージ セキュリティでは、メッセージの送信に使用するトランスポートの種類に関係なく、メッセージがセキュリティで保護されます。セキュリティ コンテキストはメッセージの内部に直接埋め込まれます。  
   
--   資格情報とクレームのセットを広範囲にサポート。 メッセージ セキュリティは、SOAP メッセージの内部で任意の種類のクレームを送信できる拡張可能なフレームワークを提供する WS-Security 仕様に基づいています。 トランスポート セキュリティとは異なり、使用できる認証機構またはクレームはトランスポートの機能によって制限されません。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のメッセージ セキュリティには、複数の種類の認証とクレームの送信があります。必要に応じて、追加の種類がサポートされるように拡張できます。 このため、たとえば、フェデレーション資格情報シナリオは、メッセージ セキュリティなしでは実現できません。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]WCF では、フェデレーション シナリオを参照してください[フェデレーションと発行されたトークン](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)です。  
+-   資格情報とクレームのセットを広範囲にサポート。 メッセージ セキュリティは、SOAP メッセージの内部で任意の種類のクレームを送信できる拡張可能なフレームワークを提供する WS-Security 仕様に基づいています。 トランスポート セキュリティとは異なり、使用できる認証機構またはクレームはトランスポートの機能によって制限されません。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のメッセージ セキュリティには、複数の種類の認証とクレームの送信があります。必要に応じて、追加の種類がサポートされるように拡張できます。 このため、たとえば、フェデレーション資格情報シナリオは、メッセージ セキュリティなしでは実現できません。 フェデレーション シナリオ WCF サポートの詳細については、次を参照してください。[フェデレーションと発行されたトークン](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)です。  
   
 ## <a name="how-message-and-transport-security-compare"></a>メッセージ セキュリティとトランスポート セキュリティの比較  
   
@@ -69,7 +71,7 @@ ms.lasthandoff: 12/22/2017
   
 -   XML レベルのセキュリティ機構の実装と WS-Security 仕様のサポートが必要です。 これは、相互運用性に影響する可能性があります。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [サービスおよびクライアントのセキュリティ保護](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
  [トランスポート セキュリティ](../../../../docs/framework/wcf/feature-details/transport-security.md)  
  [方法 : トランスポート セキュリティとメッセージ資格情報を使用する](../../../../docs/framework/wcf/feature-details/how-to-use-transport-security-and-message-credentials.md)  

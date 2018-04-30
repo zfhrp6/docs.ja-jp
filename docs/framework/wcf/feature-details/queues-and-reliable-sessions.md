@@ -1,24 +1,26 @@
 ---
-title: "キューと信頼できるセッション"
-ms.custom: 
+title: キューと信頼できるセッション
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 7e794d03-141c-45ed-b6b1-6c0e104c1464
-caps.latest.revision: "10"
+caps.latest.revision: 10
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a9a78bab9f7c4af23cf01c44e1d22a41a87a96f1
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: dbbaa432f7f1e137fc6cbd47ecd8e24d9eab97c3
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="queues-and-reliable-sessions"></a>キューと信頼できるセッション
 キューおよび信頼できるセッションは、信頼できるメッセージングを実装する [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] の機能です。 このセクションの各トピックでは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の信頼できるメッセージング機能について説明します。  
@@ -40,16 +42,16 @@ ms.lasthandoff: 12/22/2017
 ## <a name="reliable-sessions"></a>信頼できるセッション  
  信頼できるセッションでは、メッセージング (送信元および送信先) エンドポイントを分離する中継局の数や種類に関係なく、WS-ReliableMessaging プロトコルを使用して、送信元から送信先へのエンドツーエンドの信頼できるメッセージ転送を実現します。 これには SOAP を使用しないトランスポート手段 (HTTP プロキシなど)、またはエンドポイント間でメッセージをやりとりする場合に必要となる SOAP を使用する手段 (SOAP ベースのルーターやブリッジなど) が含まれます。 信頼できるセッションでは、メモリ内転送ウィンドウを使用して、トランスポート エラーが発生した場合に SOAP メッセージ レベル エラーをマスクし、接続を再確立します。  
   
- 信頼できるセッションは、待ち時間の短い、信頼できるメッセージ転送を実現します。 これらは、TCP が IP ブリッジ経由のパケットで実現するものと同等の転送を、プロキシや中継局経由の SOAP メッセージで実現します。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]信頼できるセッションを参照してください[信頼できるセッション](../../../../docs/framework/wcf/feature-details/reliable-sessions.md)です。  
+ 信頼できるセッションは、待ち時間の短い、信頼できるメッセージ転送を実現します。 これらは、TCP が IP ブリッジ経由のパケットで実現するものと同等の転送を、プロキシや中継局経由の SOAP メッセージで実現します。 信頼できるセッションの詳細については、次を参照してください。[信頼できるセッション](../../../../docs/framework/wcf/feature-details/reliable-sessions.md)です。  
   
 ### <a name="queues"></a>キュー  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のキューでは、待ち時間は長くなりますが、信頼できるメッセージの転送と共に送信元および送信先の分離が実現されます。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のキュー通信は、Microsoft Message Queuing (MSMQ) に基づいています。  
   
  MSMQ は Windows にオプションとして付属し、NT サービスの 1 つとして実行されます。 MSMQ サービスは、送信元の代わりに転送キューで転送用のメッセージを取得し、ターゲット キューに配信します。 ターゲット キューは、送信先の代わりにメッセージを受け取り、後で送信先がメッセージを要求したときに配信します。 MSMQ キュー マネージャーは信頼できるメッセージ転送プロトコルを実装して、送信中にメッセージが失われないようにします。 このプロトコルは、ネイティブまたは SOAP リライアブル メッセージ プロトコル (SRMP) などの SOAP ベースのプロトコルです。  
   
- キュー間でのメッセージの信頼できる転送に加え、送信元と送信先の分離により、疎結合されたアプリケーションで信頼できる通信を実現できます。 信頼できるセッションとは異なり、送信元と送信先が同時に実行されている必要はありません。 このため、送信元によるメッセージの生成レートと送信先によるメッセージの消費レートが一致しないときに、キューを実質的に負荷平準化機構として使用できるようになります。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]キューを参照してください[WCF のキュー](../../../../docs/framework/wcf/feature-details/queues-in-wcf.md)です。  
+ キュー間でのメッセージの信頼できる転送に加え、送信元と送信先の分離により、疎結合されたアプリケーションで信頼できる通信を実現できます。 信頼できるセッションとは異なり、送信元と送信先が同時に実行されている必要はありません。 このため、送信元によるメッセージの生成レートと送信先によるメッセージの消費レートが一致しないときに、キューを実質的に負荷平準化機構として使用できるようになります。 キューの詳細については、次を参照してください。 [WCF のキュー](../../../../docs/framework/wcf/feature-details/queues-in-wcf.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [WCF のキュー](../../../../docs/framework/wcf/feature-details/queues-in-wcf.md)  
  [WCF でのキュー](../../../../docs/framework/wcf/feature-details/queuing-in-wcf.md)  
  [信頼できるセッション](../../../../docs/framework/wcf/feature-details/reliable-sessions.md)  

@@ -16,11 +16,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 19d1f7630c96f557791f0682fbc0c5d7286c7eb7
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: c2c0d17c7274cc9fdaf1b5080950ddb4f69f539a
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="client-configuration"></a>クライアント構成
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] クライアント構成は、クライアント エンドポイントのアドレス (Address)、バインディング (Binding)、動作 (Behavior)、およびコントラクト (Contract) の各プロパティ (頭文字を取って "ABC" プロパティと呼ばれます) を指定するために使用されます。また、これらのプロパティは、クライアントがサービス エンドポイントに接続するために使用されます。 [\<クライアント >](../../../../docs/framework/configure-apps/file-schema/wcf/client.md)要素には、 [\<エンドポイント >](http://msdn.microsoft.com/library/13aa23b7-2f08-4add-8dbf-a99f8127c017)要素の属性を持つエンドポイントの abc プロパティの構成に使用します。 これらの属性については、このトピックの「エンドポイントの構成」で説明します。  
@@ -97,14 +97,14 @@ ms.lasthandoff: 04/28/2018
   
  すべてのエンドポイントには、エンドポイントを検索および識別するために、アドレスが関連付けられている必要があります。 `address` 属性は、エンドポイントの場所を示す URL を指定するために使用できます。 ただし、サービス エンドポイントのアドレスは、コードで指定することもできます。その場合は、URI (Uniform Resource Identifier) を作成し、<xref:System.ServiceModel.ServiceHost> メソッドのいずれかを使用して、この URI を <xref:System.ServiceModel.ServiceHost.AddServiceEndpoint%2A> に追加します。 詳細については、次を参照してください。[アドレス](../../../../docs/framework/wcf/feature-details/endpoint-addresses.md)です。 概要が示されているように、 [\<ヘッダー >](../../../../docs/framework/configure-apps/file-schema/wcf/headers.md)と[ \<identity >](../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)要素の一部である、 <xref:System.ServiceModel.EndpointAddress> 」でも説明、および、 [アドレス](../../../../docs/framework/wcf/feature-details/endpoint-addresses.md)トピックです。  
   
- `binding` 属性は、エンドポイントがサービスに接続する際に使用するバインディングの種類を示します。 参照できるようにするには、種類は登録された構成セクションを持っている必要があります。 これは、前の例で、 [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)セクションでは、エンドポイントを使用することを示します、<xref:System.ServiceModel.WSHttpBinding>です。 ただし、エンドポイントが使用できる、指定された種類のバインディングが複数存在することもあります。 これらのそれぞれが独自[\<バインディング >](../../../../docs/framework/misc/binding.md)要素内部の要素 (バインド) の種類。 `bindingconfiguration` 属性は、同じ種類のバインディングを識別するために使用されます。 その値と対応している、`name`の属性、 [\<バインディング >](../../../../docs/framework/misc/binding.md)要素。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] クライアントを構成する方法の構成を使用したバインディングを参照してください[する方法: 構成でクライアント バインディングを指定](../../../../docs/framework/wcf/how-to-specify-a-client-binding-in-configuration.md)です。  
+ `binding` 属性は、エンドポイントがサービスに接続する際に使用するバインディングの種類を示します。 参照できるようにするには、種類は登録された構成セクションを持っている必要があります。 これは、前の例で、 [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)セクションでは、エンドポイントを使用することを示します、<xref:System.ServiceModel.WSHttpBinding>です。 ただし、エンドポイントが使用できる、指定された種類のバインディングが複数存在することもあります。 これらのそれぞれが独自[\<バインディング >](../../../../docs/framework/misc/binding.md)要素内部の要素 (バインド) の種類。 `bindingconfiguration` 属性は、同じ種類のバインディングを識別するために使用されます。 その値と対応している、`name`の属性、 [\<バインディング >](../../../../docs/framework/misc/binding.md)要素。 クライアントを構成する方法の詳細について構成を使用するバインディングを参照してください[する方法: 構成でクライアント バインディングを指定](../../../../docs/framework/wcf/how-to-specify-a-client-binding-in-configuration.md)です。  
   
  `behaviorConfiguration`を指定する属性が使用される[\<動作 >](../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)の[ \<endpointBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/endpointbehaviors.md)エンドポイントを使用する必要があります。 その値と対応している、`name`の属性、 [\<動作 >](../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)要素。 クライアントの動作を指定する構成を使用しての例は、次を参照してください。[クライアントの動作を構成する](../../../../docs/framework/wcf/configuring-client-behaviors.md)です。  
   
  `contract` 属性は、エンドポイントが公開するコントラクトを指定します。 この値は、<xref:System.ServiceModel.ServiceContractAttribute.ConfigurationName%2A> の <xref:System.ServiceModel.ServiceContractAttribute> にマップされます。 既定値は、サービスを実装するクラスの完全な型名です。  
   
 ### <a name="configuring-metadata"></a>メタデータの構成  
- [\<メタデータ >](../../../../docs/framework/configure-apps/file-schema/wcf/metadata.md)要素を使用して拡張機能をインポートするメタデータを登録するための設定を指定します。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] メタデータ システムの拡張を参照してください[メタデータ システムの拡張](../../../../docs/framework/wcf/extending/extending-the-metadata-system.md)です。  
+ [\<メタデータ >](../../../../docs/framework/configure-apps/file-schema/wcf/metadata.md)要素を使用して拡張機能をインポートするメタデータを登録するための設定を指定します。 メタデータ システムの拡張の詳細については、次を参照してください。[メタデータ システムの拡張](../../../../docs/framework/wcf/extending/extending-the-metadata-system.md)です。  
   
 ## <a name="see-also"></a>関連項目  
  [エンドポイント : アドレス、バインディング、およびコントラクト](../../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)  

@@ -1,28 +1,30 @@
 ---
-title: "一方向サービス"
-ms.custom: 
+title: 一方向サービス
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - Windows Communication Foundation [WCF], one-way service contracts
 - WCF [WCF], one-way service contracts
 - service contracts [WCF], defining one-way
 ms.assetid: 19053a36-4492-45a3-bfe6-0365ee0205a3
-caps.latest.revision: "18"
+caps.latest.revision: 18
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 0d023d3623777a93cf72715410aed87fe8a63ee5
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 380f6a10994c7eb69f4a59b222aa2d422151f247
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="one-way-services"></a>一方向サービス
 サービス操作の既定の動作は、要求/応答パターンです。 要求/応答パターンでは、サービス操作がコードで `void` 型のメソッドとして表される場合であっても、クライアントは応答メッセージを待機します。 一方向操作では、メッセージが 1 つ送信されるだけです。 受信者は応答メッセージを送信せず、送信者もこれを待機しません。  
@@ -31,7 +33,7 @@ ms.lasthandoff: 12/22/2017
   
 -   クライアントが操作を呼び出す必要があり、操作レベルで操作の結果に影響を受けない場合。  
   
--   <xref:System.ServiceModel.NetMsmqBinding> クラスまたは <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> クラスを使用している場合  ([!INCLUDE[crabout](../../../../includes/crabout-md.md)]このシナリオを参照してください[WCF のキュー](../../../../docs/framework/wcf/feature-details/queues-in-wcf.md))。  
+-   <xref:System.ServiceModel.NetMsmqBinding> クラスまたは <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> クラスを使用している場合  (このシナリオの詳細については、次を参照してください[WCF のキュー](../../../../docs/framework/wcf/feature-details/queues-in-wcf.md)。)。  
   
  操作が一方向の場合、エラー情報をクライアントに伝達する応答メッセージはありません。 エラー状態を検出するには、信頼できるセッションのような基になるバインディングの機能を使用できます。また、2 つの一方向操作 (1 つは、サービス操作を呼び出すための、クライアントからサービスへの一方向コントラクト、もう 1 つは、クライアントが実装するコールバックを使用してサービスがエラーを返せるようにする、サービスとクライアントの間の一方向コントラクト) を使用する双方向サービス コントラクトをデザインすることもできます。  
   
@@ -65,5 +67,5 @@ public interface IOneWayCalculator
   
  代わりに、クライアントおよびサービスの各種コントロールを調べてアプリケーション シナリオをテストし、最適な構成がどちら側にあるのかを判断することをお勧めします。 たとえば、セッションの使用によりサービスでのメッセージの処理がブロックされている場合、<xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A?displayProperty=nameWithType> プロパティを <xref:System.ServiceModel.InstanceContextMode.PerCall> に設定することによって、異なるサービス インスタンスによって各メッセージが処理されるようにし、また <xref:System.ServiceModel.ServiceBehaviorAttribute.ConcurrencyMode%2A> を <xref:System.ServiceModel.ConcurrencyMode.Multiple> に設定することによって、複数のスレッドで同時にメッセージをディスパッチできるようにします。 また、別のアプローチとして、サービスとクライアント バインディングの読み取りクォータを増やすという方法もあります。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [一方向](../../../../docs/framework/wcf/samples/one-way.md)

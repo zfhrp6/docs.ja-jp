@@ -16,11 +16,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: c603032e175fd8390abea2db625321d3e3558c1a
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 1b3da2dc36dca913c638ce269213903c2a024a04
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="information-disclosure"></a>情報の漏えい
 情報が漏えいすると、攻撃者はシステムに関する重要情報を入手できます。 そのため、どのような情報を公開しているか、また、その情報が悪意のあるユーザーによって使用される可能性があるかどうかに常に気を配る必要があります。 考えられる情報漏えい攻撃とその軽減策を以下に示します。  
@@ -29,7 +29,7 @@ ms.lasthandoff: 04/28/2018
  HTTP トランスポート層でメッセージ レベルのセキュリティを使用している場合は、メッセージ レベルのセキュリティで HTTP ヘッダーが保護されないことに注意してください。 HTTP ヘッダーを保護する唯一の方法は、HTTP ではなく、HTTPS トランスポートを使用することです。 HTTPS トランスポートを使用すると、HTTP ヘッダーを含むメッセージ全体が SSL (Secure Sockets Layer) プロトコルを使用して暗号化されます。  
   
 ## <a name="policy-information"></a>ポリシー情報  
- ポリシーをセキュリティで保護することが重要です。特に、機密事項が含まれる発行済みトークンの要件や、トークン発行者の情報がポリシーで公開されるフェデレーション シナリオでは重要です。 このような場合は、フェデレーション サービスのポリシー エンドポイントをセキュリティで保護し、発行済みトークンに含まれるクレームの種類などサービスに関する情報が攻撃者の手に渡らないようにしたり、クライアントが悪意のあるトークン発行者にリダイレクトされたりしないようにすることをお勧めします。 たとえば、攻撃者は、フェデレーション信頼チェーンが man-in-the-middle 攻撃を実行する発行者で終了するように再構成することで、ユーザー名/パスワードのペアを発見することがあります。 また、ポリシーの取得によってバインディングを取得するフェデレーション クライアントの場合は、取得したフェデレーション信頼チェーンに含まれる発行者の信頼性を検証することもお勧めします。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] フェデレーション シナリオを参照して[フェデレーション](../../../../docs/framework/wcf/feature-details/federation.md)です。  
+ ポリシーをセキュリティで保護することが重要です。特に、機密事項が含まれる発行済みトークンの要件や、トークン発行者の情報がポリシーで公開されるフェデレーション シナリオでは重要です。 このような場合は、フェデレーション サービスのポリシー エンドポイントをセキュリティで保護し、発行済みトークンに含まれるクレームの種類などサービスに関する情報が攻撃者の手に渡らないようにしたり、クライアントが悪意のあるトークン発行者にリダイレクトされたりしないようにすることをお勧めします。 たとえば、攻撃者は、フェデレーション信頼チェーンが man-in-the-middle 攻撃を実行する発行者で終了するように再構成することで、ユーザー名/パスワードのペアを発見することがあります。 また、ポリシーの取得によってバインディングを取得するフェデレーション クライアントの場合は、取得したフェデレーション信頼チェーンに含まれる発行者の信頼性を検証することもお勧めします。 フェデレーション シナリオの詳細については、次を参照してください。[フェデレーション](../../../../docs/framework/wcf/feature-details/federation.md)です。  
   
 ## <a name="memory-dumps-can-reveal-claim-information"></a>メモリ ダンプによるクレーム情報の漏えい  
  アプリケーションにエラーが発生した場合、ワトソン博士などによって作成されたログ ファイルには、クレーム情報が含まれることがあります。 この情報はサポート チームなどの他のエンティティに対してエクスポートしないでください。プライベートなデータを含むクレーム情報もエクスポートされます。 ログ ファイルを未知のエンティティに送信しないようにすることで、クレーム情報が漏えいするリスクを軽減できます。 詳細については、次を参照してください。 [Windows Server 2003](http://go.microsoft.com/fwlink/?LinkId=89160)です。  
@@ -67,7 +67,7 @@ MyChannelFactory.Credentials.Windows.ClientCredential = new System.Net.NetworkCr
   
  このコードではドメイン名が指定されておらず、そのため NTLM が使用されます。  
   
- ドメインを指定していても、エンドポイント ID 機能を使用して無効なサービス プリンシパル名を指定した場合は、NTLM が使用されます。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] エンドポイント id を指定するを参照してください。[サービス Id と認証](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)です。  
+ ドメインを指定していても、エンドポイント ID 機能を使用して無効なサービス プリンシパル名を指定した場合は、NTLM が使用されます。 エンドポイント id を指定する方法の詳細については、次を参照してください。[サービス Id と認証](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)です。  
   
 ## <a name="see-also"></a>関連項目  
  [セキュリティの考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)  

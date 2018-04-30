@@ -1,40 +1,42 @@
 ---
-title: "WPF ホスト (PresentationHost.exe)"
-ms.custom: 
+title: WPF ホスト (PresentationHost.exe)
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - WPF Host application [WPF]
 - PresentationHost.exe
 ms.assetid: 3215bfa1-722c-4ac8-a7c5-bdd02d30afbd
-caps.latest.revision: "14"
+caps.latest.revision: 14
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 1c5a9df438353701932a3e732d6df28b08402ee8
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 1cd9586564d79d3c4ef1425eec1499b9b3143ff3
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="wpf-host-presentationhostexe"></a>WPF ホスト (PresentationHost.exe)
-[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] ホスト (PresentationHost.exe) は、[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] アプリケーションを互換ブラウザー ([!INCLUDE[TLA#tla_ie6](../../../../includes/tlasharptla-ie6-md.md)] 以降を含む) でホスト可能にするアプリケーションです。 既定では、[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] ホストは、ブラウザーによってホストされる [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] コンテンツのシェルと [!INCLUDE[TLA2#tla_mime](../../../../includes/tla2sharptla-mime-md.md)] ハンドラーとして登録されます。該当するコンテンツには、次のものが含まれます。  
+Windows Presentation Foundation (WPF) のホスト (PresentationHost.exe) は、アプリケーションを有効にする[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]アプリケーションの互換性のあるブラウザーのホスト (など[!INCLUDE[TLA#tla_ie6](../../../../includes/tlasharptla-ie6-md.md)]およびそれ以降)。 シェルとして既定では、Windows Presentation Foundation (WPF) のホストが登録されていると[!INCLUDE[TLA2#tla_mime](../../../../includes/tla2sharptla-mime-md.md)]のハンドラーはブラウザーによってホストされる[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]コンテンツが含まれます。  
   
 -   Loose (コンパイルされていない) [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] ファイル (.xaml)。  
   
 -   [!INCLUDE[TLA#tla_xbap](../../../../includes/tlasharptla-xbap-md.md)] (.xbap)。  
   
- これらの種類のファイルに対して、[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] ホストは、次の処理を実行します。  
+ これらの型の Windows Presentation Foundation (WPF) のホスト ファイル。  
   
--   [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] コンテンツをホストするために、登録されている [!INCLUDE[TLA2#tla_html](../../../../includes/tla2sharptla-html-md.md)] ハンドラーを起動します。  
+-   登録された起動[!INCLUDE[TLA2#tla_html](../../../../includes/tla2sharptla-html-md.md)]Windows Presentation Foundation (WPF) コンテンツをホストするハンドラー。  
   
--   必要な [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] と [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] アセンブリの正しいバージョンを読み込みます。  
+-   必須の適切なバージョンを読み込みます[!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)]および Windows Presentation Foundation (WPF) のアセンブリ。  
   
 -   展開のゾーンに適切なアクセス許可レベルが設定されるようにします。  
   
@@ -68,5 +70,5 @@ ms.lasthandoff: 12/22/2017
 ### <a name="visual-studio-debugging-in-zone"></a>Visual Studio によるゾーンでのデバッグ  
  `PresentationHost.exe -debug -debugSecurityZoneURL http://www.example.com c:\folderpath\example.xbap`  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [セキュリティ](../../../../docs/framework/wpf/security-wpf.md)

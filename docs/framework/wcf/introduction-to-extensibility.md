@@ -20,11 +20,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 331e71f26b1c703f7df27086d943e799b4eb13e2
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 991c3879990fd5b6562a2270c65e1560efadc022
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="introduction-to-extensibility"></a>拡張機能の概要
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] のアプリケーション モデルは、分散アプリケーションの大部分の通信要件に対応するように設計されています。 ただし、既定のアプリケーション モデルとシステム提供の実装でサポートされないシナリオが必ず存在します。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] の拡張モデルでは、アプリケーション モデル全体の置き換えに至るまでのすべてのレベルでシステム動作を変更できるようにすることによって、カスタム シナリオをサポートします。 ここでは、拡張のさまざまな領域を提示し、各領域の詳細について説明します。  
@@ -43,7 +43,7 @@ ms.lasthandoff: 04/28/2018
   
  アプリケーション メッセージは、ユーザーまたはユーザーの顧客が作成したクライアントまたはサービスの操作向けのデータを含んでいます。 このメッセージは、必要に応じて、メッセージまたはオブジェクトの形でアプリケーション レベルの拡張システムで使用できます。  
   
- すべてのメッセージはチャネル システムを通過しますが、アプリケーション メッセージだけがチャネル システムからアプリケーションに渡されます。 新しいチャネル レベルの機能を作成するには、チャネル システムを拡張する必要があります。 新しいアプリケーション レベルの機能を作成するには、サービスまたはクライアントのランタイム (それぞれディスパッチャーとチャネル ファクトリ) を拡張する必要があります。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] アプリケーション ランタイムを拡張するを参照してください[ServiceHost を拡張して、サービス モデル レイヤー](../../../docs/framework/wcf/extending/extending-servicehost-and-the-service-model-layer.md)です。  
+ すべてのメッセージはチャネル システムを通過しますが、アプリケーション メッセージだけがチャネル システムからアプリケーションに渡されます。 新しいチャネル レベルの機能を作成するには、チャネル システムを拡張する必要があります。 新しいアプリケーション レベルの機能を作成するには、サービスまたはクライアントのランタイム (それぞれディスパッチャーとチャネル ファクトリ) を拡張する必要があります。 アプリケーション ランタイムの拡張の詳細については、次を参照してください。 [ServiceHost を拡張すると、サービス モデル レイヤー](../../../docs/framework/wcf/extending/extending-servicehost-and-the-service-model-layer.md)です。  
   
 #### <a name="extending-security"></a>セキュリティの拡張  
  トークンや資格情報などのカスタム セキュリティ機構を作成するには、セキュリティ システムを拡張する必要があります。 詳細については、次を参照してください。[拡張セキュリティ](../../../docs/framework/wcf/extending/extending-security.md)です。  

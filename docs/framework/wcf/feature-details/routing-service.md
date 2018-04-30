@@ -1,24 +1,26 @@
 ---
-title: "ルーティング サービス"
-ms.custom: 
+title: ルーティング サービス
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ca7c216a-5141-4132-8193-102c181d2eba
-caps.latest.revision: "13"
+caps.latest.revision: 13
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a7214a14b11ae1f91906c8d2140bc82836988390
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 8ff2a99bc06ab0de2aedce98ea029f484e47053f
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="routing-service"></a>ルーティング サービス
 ルーティング サービスは、メッセージ ルーターとして機能する、汎用の SOAP 中継局です。 ルーティング サービスの主要な機能は、メッセージのコンテンツに基づいてメッセージをルーティングする機能です。これにより、メッセージのヘッダーまたはメッセージ本文内に含まれる値に基づいて、メッセージをクライアント エンドポイントに転送できます。  
@@ -48,7 +50,7 @@ ms.lasthandoff: 12/22/2017
  ルーティング サービスは、動的に構成できるプラグ可能な汎用の SOAP 中継局を提供します。この中継局は、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のサービスおよびチャネル モデルと互換性があり、SOAP ベースのメッセージのコンテンツ ベースのルーティングを実行できます。  
   
 > [!NOTE]
->  ルーティング サービスは、現在 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] REST サービスのルーティングをサポートしていません。  REST 呼び出しをルーティングするには、使用を検討して<xref:System.Web.Routing>または[アプリケーション要求ルーティング処理](http://go.microsoft.com/fwlink/?LinkId=164589)(http://go.microsoft.com/fwlink/?LinkId=164589)。  
+>  ルーティング サービスは、現在 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] REST サービスのルーティングをサポートしていません。  REST 呼び出しをルーティングするには、使用を検討して<xref:System.Web.Routing>または[アプリケーション要求ルーティング処理](http://go.microsoft.com/fwlink/?LinkId=164589)(http://go.microsoft.com/fwlink/?LinkId=164589)です。  
   
 ## <a name="content-based-routing"></a>コンテンツ ベースのルーティング  
  コンテンツ ベースのルーティングは、メッセージに含まれている 1 つ以上の値に基づいて、メッセージをルーティングする機能です。 ルーティング サービスでは、各メッセージを確認し、メッセージの内容と開発者が作成したルーティング ロジックに基づいて、送信先エンドポイントにメッセージをルーティングします。 コンテンツ ベースのルーティングは、サービス集計、サービスのバージョン管理、および優先度ルーティングの基礎になります。  
@@ -98,12 +100,12 @@ ms.lasthandoff: 12/22/2017
   
  ルーティング サービスがメッセージを送信している間に <xref:System.ServiceModel.CommunicationException> が発生した場合は、エラー処理が実行されます。  これらの例外は、一般的に、<xref:System.ServiceModel.EndpointNotFoundException>、<xref:System.ServiceModel.ServerTooBusyException>、<xref:System.ServiceModel.CommunicationObjectFaultedException> など、定義されているクライアント エンドポイントとの通信を試みている間に問題が発生したことを示します。  エラー処理コードでキャッチして再送信しようとしています。 はまた、 **TimeoutException**発生すると、から派生していない別の一般的な例外は**CommunicationException**です。  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]エラー処理を参照してください[ルーティングの概要](../../../../docs/framework/wcf/feature-details/routing-introduction.md)です。  
+ エラー処理の詳細については、次を参照してください。[ルーティングの概要](../../../../docs/framework/wcf/feature-details/routing-introduction.md)です。  
   
 ## <a name="backup-endpoints"></a>バックアップ エンドポイント  
  フィルター テーブル内の各フィルター定義と関連付けられる送信先クライアント エンドポイントに加えて、転送エラーが発生した場合にメッセージをルーティングする、バックアップ エンドポイントのリストも作成できます。 エラーが発生した場合に、フィルター エントリのバックアップ リストが定義されていると、ルーティング サービスにより、そのリストに定義されている最初のエンドポイントにメッセージが送信されます。 この送信に失敗した場合は、送信に成功する、送信失敗に関連しないエラーが返される、またはバックアップ リスト内のすべてのエンドポイントで送信エラーが返されるまで、次のエンドポイントへの送信が試みられます。  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]エンドポイントのバックアップ、参照[ルーティングの概要](../../../../docs/framework/wcf/feature-details/routing-introduction.md)と[メッセージ フィルター](../../../../docs/framework/wcf/feature-details/message-filters.md)です。  
+ バックアップ エンドポイントの詳細については、次を参照してください。[ルーティングの概要](../../../../docs/framework/wcf/feature-details/routing-introduction.md)と[メッセージ フィルター](../../../../docs/framework/wcf/feature-details/message-filters.md)です。  
   
 ## <a name="streaming"></a>ストリーム  
  バインディングがストリーミングをサポートするように設定すると、ルーティング サービスはメッセージを正常にストリーミングできます。  ただし、メッセージのバッファーが必要となる可能性のある条件がいくつかあります。  
@@ -116,7 +118,7 @@ ms.lasthandoff: 12/22/2017
   
 -   動的構成  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ルーティングの概要](../../../../docs/framework/wcf/feature-details/routing-introduction.md)  
  [ルーティング コントラクト](../../../../docs/framework/wcf/feature-details/routing-contracts.md)  
  [メッセージ フィルター](../../../../docs/framework/wcf/feature-details/message-filters.md)

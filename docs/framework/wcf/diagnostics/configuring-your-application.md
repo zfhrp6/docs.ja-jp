@@ -16,22 +16,22 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 922b9c5c53e04719f3ed48d0ff6386f21bf83e99
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 170583239ed357904e723aebdaef9809938b5123
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="configuring-your-application"></a>アプリケーションの構成
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] では、.NET 構成システムを使用して、コンピューターとアプリケーションのスコープでサービスを構成できるようにします。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] によって定義された構成設定は、`<system.serviceModel>` セクション グループにあります。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] サービスの構成方法[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]、次のトピックを参照してください。  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] によって定義された構成設定は、`<system.serviceModel>` セクション グループにあります。 構成する方法について、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]サービスを次のトピックを参照してください。  
   
 -   [サービスの構成](../../../../docs/framework/wcf/configuring-services.md)  
   
 -   [\<system.serviceModel>](../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md)  
   
- アプリケーション定義の構成設定は、`<appSettings>` セクション グループで定義されています。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] .NET 構成ファイル内のアプリケーション設定を参照してください[ \<appSettings >](http://go.microsoft.com/fwlink/?LinkId=95159)です。  
+ アプリケーション定義の構成設定は、`<appSettings>` セクション グループで定義されています。 .NET 構成ファイル内のアプリケーション設定の詳細については、次を参照してください。 [ \<appSettings >](http://go.microsoft.com/fwlink/?LinkId=95159)です。  
   
 ## <a name="using-the-configuration-editor"></a>構成エディターの使用  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)][構成エディター ツール (SvcConfigEditor.exe)](../../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md)作成および構成設定を変更するには、管理者および開発者[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]services のグラフィカル ユーザー インターフェイスを使用します。 このツールを使用すると、XML 構成ファイルを直接編集せずに、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のバインディング、動作、サービス、および診断の設定を管理できます。  

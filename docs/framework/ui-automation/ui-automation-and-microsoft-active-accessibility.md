@@ -21,11 +21,11 @@ ms.author: mhopkins
 manager: markl
 ms.workload:
 - dotnet
-ms.openlocfilehash: 2028f312433e3a4cf8c90f2e6809ed29288d7819
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 581fe3272808da84fcf31667f8191f3cc6322033
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="ui-automation-and-microsoft-active-accessibility"></a>UI オートメーションと Microsoft Active Accessibility
 > [!NOTE]
@@ -41,7 +41,7 @@ ms.lasthandoff: 04/26/2018
   
 <a name="Support_in_Windows_Presentation_Foundation_"></a>   
 ## <a name="support-in-windows-presentation-foundation"></a>Windows Presentation Foundation におけるサポート  
- [!INCLUDE[TLA#tla_wpf](../../../includes/tlasharptla-wpf-md.md)] はユーザー インターフェイスを作成するための新しいモデルです。 [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] の要素には [!INCLUDE[TLA2#tla_aa](../../../includes/tla2sharptla-aa-md.md)]のネイティブ サポート機能はありませんが、 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]をサポートしており、これに [!INCLUDE[TLA2#tla_aa](../../../includes/tla2sharptla-aa-md.md)] クライアントのためのブリッジ サポートが含まれています。 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 専用に作成されたクライアントだけが [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]のユーザー補助機能 (テキストに関する豊富なサポートなど) を最大限に利用できます。  
+ Windows Presentation Foundation (WPF) は、新しいモデルのユーザー インターフェイスを作成するためです。 [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] の要素には [!INCLUDE[TLA2#tla_aa](../../../includes/tla2sharptla-aa-md.md)]のネイティブ サポート機能はありませんが、 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]をサポートしており、これに [!INCLUDE[TLA2#tla_aa](../../../includes/tla2sharptla-aa-md.md)] クライアントのためのブリッジ サポートが含まれています。 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 専用に作成されたクライアントだけが [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]のユーザー補助機能 (テキストに関する豊富なサポートなど) を最大限に利用できます。  
   
 <a name="Servers_and_Clients_compare"></a>   
 ## <a name="servers-and-clients"></a>サーバーとクライアント  

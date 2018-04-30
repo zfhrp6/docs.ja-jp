@@ -1,24 +1,26 @@
 ---
-title: "コンテンツ ベースの相関関係。"
-ms.custom: 
+title: コンテンツ ベースの相関関係。
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f46a2b68-8d24-4122-bbee-9573fc3f9fb4
-caps.latest.revision: "17"
+caps.latest.revision: 17
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 72c7233a1c667b7ee3a1f00cc2fdf3c78f58e789
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 4b4ebd49fbed12f1e8120e67f32496cd782531da
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="content-based-correlation"></a>コンテンツ ベースの相関関係。
 ワークフロー サービスがクライアントや他のサービスと通信するときに、交換されるメッセージに、特定のインスタンスに一意に関連付けられたデータが含まれることがよくあります。 コンテンツ ベースの相関関係では、顧客番号や注文 ID などのメッセージ内のデータを使用して、適切なワークフロー インスタンスにメッセージをルーティングします。 このトピックでは、コンテンツ ベースの相関関係をワークフロー内で使用する方法について説明します。  
@@ -27,7 +29,7 @@ ms.lasthandoff: 12/22/2017
  コンテンツ ベースの相関関係は、単一のクライアントによってアクセスされる複数のメソッドがワークフロー サービスにあり、交換されるメッセージ内の一部のデータによって目的のインスタンスが識別される場合に使用されます。  
   
 > [!NOTE]
->  コンテンツ ベースの相関関係は、コンテキスト交換のバインドがサポート対象のものではないためにコンテキスト相関関係を使用できない場合に便利です。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]コンテキスト相関関係を参照してください[コンテキスト交換](../../../../docs/framework/wcf/feature-details/context-exchange-correlation.md)です。  
+>  コンテンツ ベースの相関関係は、コンテキスト交換のバインドがサポート対象のものではないためにコンテキスト相関関係を使用できない場合に便利です。 コンテキスト相関関係の詳細については、次を参照してください。[コンテキスト交換](../../../../docs/framework/wcf/feature-details/context-exchange-correlation.md)です。  
   
  これらの通信で使用される各メッセージ アクティビティでは、インスタンスを一意に識別するメッセージ内のデータの場所を指定する必要があります。 これを行うには、<xref:System.ServiceModel.MessageQuerySet> または <xref:System.ServiceModel.Activities.QueryCorrelationInitializer> を使用して <xref:System.ServiceModel.Activities.Receive.CorrelatesOn%2A> を指定し、インスタンスを一意に識別するデータを求めるクエリをメッセージに対して実行します。  
   

@@ -19,11 +19,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 35244032a36af8d3d23fd9d88006ea032a99b44b
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 856d33f88b55c35927998b15acc7bbf8ff1e9fe2
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="how-to-specify-client-credential-values"></a>方法 : クライアントの資格情報の値を指定する
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] では、サービスに対するクライアントの認証方法を指定できます。 たとえば、証明書を使用してクライアントを認証するように指定できます。  
@@ -75,7 +75,7 @@ ms.lasthandoff: 04/28/2018
   
 3.  追加、 [ \<clientCertificate >](../../../docs/framework/configure-apps/file-schema/wcf/clientcertificate-of-servicecredentials.md)要素を[ \<clientCredentials >](../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md)要素。  
   
-4.  次のコードに示すように、`storeLocation`、`storeName`、`x509FindType`、および `findValue` の各属性を適切な値に設定します。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] 証明書を参照してください[証明書の使用](../../../docs/framework/wcf/feature-details/working-with-certificates.md)です。  
+4.  次のコードに示すように、`storeLocation`、`storeName`、`x509FindType`、および `findValue` の各属性を適切な値に設定します。 証明書の詳細については、「[証明書の使用](../../../docs/framework/wcf/feature-details/working-with-certificates.md)」を参照してください。  
   
     ```xml  
     <behaviors>  

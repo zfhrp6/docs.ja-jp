@@ -16,14 +16,14 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: b0c59c0688fca53a7c7623330f3fdba4f5defd88
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 6eb5381438aa082eae8b4252bbd1cf343ba0ebf7
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="workflow-services-overview"></a>ワークフロー サービスの概要
-ワークフロー サービスは、ワークフローを使用して実装される [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ベースのサービスです。 ワーク フロー サービスは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] メッセージを送受信するメッセージ アクティビティを使用するワークフローです。 .NET Framework 4.5 では、ワークフロー内からメッセージを送受信できるようにする多数のメッセージ アクティビティが導入されています。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] メッセージング アクティビティ、およびそれらを使用して異なるメッセージ交換パターンを実装する方法を参照してください。[メッセージング アクティビティ](../../../../docs/framework/wcf/feature-details/messaging-activities.md)です。  
+ワークフロー サービスは、ワークフローを使用して実装される [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ベースのサービスです。 ワーク フロー サービスは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] メッセージを送受信するメッセージ アクティビティを使用するワークフローです。 .NET Framework 4.5 では、ワークフロー内からメッセージを送受信できるようにする多数のメッセージ アクティビティが導入されています。 メッセージング アクティビティおよびそれらを使用して異なるメッセージ交換パターンを実装する方法の詳細については、次を参照してください。[メッセージング アクティビティ](../../../../docs/framework/wcf/feature-details/messaging-activities.md)です。  
   
 ## <a name="benefits-of-using-workflow-services"></a>ワークフロー サービスを使用する利点  
  アプリケーションが分散型になるにつれ、負荷を軽減させるために、個々のサービスが他のサービスを呼び出す役割を果たすようになっています。 これらの呼び出しを非同期操作として実装すると、コードがやや複雑になります。 エラー処理によって、例外処理と詳細な追跡情報の形式がさらに複雑になります。 一部のサービスには、長時間実行されることが多く、入力を待機する間に貴重なシステム リソースを占有するものがあります。 このような問題があるため、分散アプリケーションは、非常に複雑で、作成と保守が困難であることがよくあります。 ワークフローは、特に外部サービスへの呼び出しなど、非同期操作の連携を表す方法として最適です。 また、実行時間が長いビジネス プロセスを表す場合にも効率的です。 ワークフローが、分散環境でのサービス構築に役立つ資産となるのは、これらの特性があるためです。  

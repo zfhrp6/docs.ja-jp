@@ -1,8 +1,9 @@
 ---
-title: "インク オブジェクト モデル : Windows フォームおよび COM と WPF の比較"
+title: 'インク オブジェクト モデル : Windows フォームおよび COM と WPF の比較'
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.technology: dotnet-wpf
+ms.technology:
+- dotnet-wpf
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,20 +16,21 @@ helpviewer_keywords:
 - ink [WPF], enabling
 - events [WPF], tablet pen
 ms.assetid: 577835be-b145-4226-8570-1d309e9b3901
-caps.latest.revision: "9"
+caps.latest.revision: 9
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 38c7692d433fb91584718984ef2ad81e563517db
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 06a2c2049ec7fe7046bd6dae2711fe8e46592fcf
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="the-ink-object-model-windows-forms-and-com-versus-wpf"></a>インク オブジェクト モデル : Windows フォームおよび COM と WPF の比較
 
-デジタル インクをサポートする 3 つのプラットフォーム基本的には: タブレット PC の Windows フォーム プラットフォーム、Tablet PC COM プラットフォームと[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)]プラットフォームです。  Windows フォーム アプリケーションおよび COM プラットフォーム共有の類似のオブジェクト モデルが、オブジェクト モデル、[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]プラットフォームは大幅に異なります。  1 つのオブジェクト モデルに協力する開発者が理解、他の改善できるように簡単に説明する違いについて説明します。  
+デジタル インクをサポートする 3 つのプラットフォーム基本的には: タブレット PC の Windows フォーム プラットフォーム、Tablet PC COM プラットフォームおよび Windows Presentation Foundation (WPF) プラットフォームです。  Windows フォーム アプリケーションおよび COM プラットフォーム共有の類似のオブジェクト モデルが、オブジェクト モデル、[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]プラットフォームは大幅に異なります。  1 つのオブジェクト モデルに協力する開発者が理解、他の改善できるように簡単に説明する違いについて説明します。  
   
 ## <a name="enabling-ink-in-an-application"></a>アプリケーションでのインクを有効にします。  
  3 つすべてのプラットフォームでは、オブジェクトやタブレット ペンから入力を受信するアプリケーションを有効にするコントロールを出荷します。  Windows フォームおよび COM プラットフォームで同梱[Microsoft.Ink.InkPicture](https://msdn.microsoft.com/library/aa514604.aspx)、 [Microsoft.Ink.InkEdit](https://msdn.microsoft.com/library/ms835842.aspx)、 [Microsoft.Ink.InkOverlay](https://msdn.microsoft.com/library/ms833057.aspx)と[Microsoft.Ink.InkCollector](https://msdn.microsoft.com/library/ms836493.aspx)クラスです。  [Microsoft.Ink.InkPicture](https://msdn.microsoft.com/library/aa514604.aspx)と[Microsoft.Ink.InkEdit](https://msdn.microsoft.com/library/ms835842.aspx)追加できるコントロールは、インクを収集するのには、アプリケーションにします。  [Microsoft.Ink.InkOverlay](https://msdn.microsoft.com/library/ms833057.aspx)と[Microsoft.Ink.InkCollector](https://msdn.microsoft.com/library/ms836493.aspx)インクを有効にするウィンドウとカスタム コントロールを既存のウィンドウにアタッチできます。  
@@ -49,7 +51,7 @@ ms.lasthandoff: 12/22/2017
   
  次の図のペアでは、データのインク オブジェクト モデルを比較します。  Windows フォームや COM プラットフォームでは、上、 [Microsoft.Ink.Ink](https://msdn.microsoft.com/library/aa515768.aspx?displayProperty=nameWithType)オブジェクトの有効期間の制限、 [Microsoft.Ink.Stroke](https://msdn.microsoft.com/library/ms827842.aspx?displayProperty=nameWithType)オブジェクト、および個々 のストロークに属しているスタイラス パケットです。  2 つ以上のストロークを参照できる同じ[Microsoft.Ink.DrawingAttributes](https://msdn.microsoft.com/library/ms837931.aspx?displayProperty=nameWithType)オブジェクトを次の図に示すようにします。  
   
- ![COM &#47; のインク オブジェクト モデルのダイアグラムWinforms です。] (../../../../docs/framework/wpf/advanced/media/ink-inkownsstrokes.png "Ink_InkOwnsStrokes")  
+ ![COM のインク オブジェクト モデルのダイアグラム&#47;Winforms です。] (../../../../docs/framework/wpf/advanced/media/ink-inkownsstrokes.png "Ink_InkOwnsStrokes")  
   
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]、各<xref:System.Windows.Ink.Stroke?displayProperty=nameWithType>がある限り問題への参照が存在する共通言語ランタイム オブジェクト。  各<xref:System.Windows.Ink.Stroke>参照、<xref:System.Windows.Input.StylusPointCollection>と<xref:System.Windows.Ink.DrawingAttributes?displayProperty=nameWithType>オブジェクトも、共通言語ランタイム オブジェクト。  
   
@@ -64,7 +66,7 @@ ms.lasthandoff: 12/22/2017
 |ヒット テスト|<xref:System.Windows.Ink.StrokeCollection.HitTest%2A>|[Microsoft.Ink.Ink.HitTest](https://msdn.microsoft.com/library/aa515934.aspx)|  
 |インクをコピーします。|<xref:System.Windows.Controls.InkCanvas.CopySelection%2A>|[Microsoft.Ink.Ink.ClipboardCopy](https://msdn.microsoft.com/library/microsoft.ink.ink.clipboardcopy(v=vs.100).aspx)|  
 |インクを貼り付けます|<xref:System.Windows.Controls.InkCanvas.Paste%2A>|[Microsoft.Ink.Ink.ClipboardPaste](https://msdn.microsoft.com/library/microsoft.ink.ink.clipboardpaste(v=vs.100).aspx)|  
-|ストロークのコレクションのカスタム プロパティのアクセス|<xref:System.Windows.Ink.StrokeCollection.AddPropertyData%2A>(プロパティが内部的に保存されを使用してアクセス<xref:System.Windows.Ink.StrokeCollection.AddPropertyData%2A>、 <xref:System.Windows.Ink.StrokeCollection.RemovePropertyData%2A>、および<xref:System.Windows.Ink.StrokeCollection.ContainsPropertyData%2A>)|使用して[Microsoft.Ink.Ink.ExtendedProperties](https://msdn.microsoft.com/library/microsoft.ink.ink.extendedproperties(v=vs.100).aspx)|  
+|ストロークのコレクションのカスタム プロパティのアクセス|<xref:System.Windows.Ink.StrokeCollection.AddPropertyData%2A> (プロパティが内部的に保存されを使用してアクセス<xref:System.Windows.Ink.StrokeCollection.AddPropertyData%2A>、 <xref:System.Windows.Ink.StrokeCollection.RemovePropertyData%2A>、および<xref:System.Windows.Ink.StrokeCollection.ContainsPropertyData%2A>)|使用して[Microsoft.Ink.Ink.ExtendedProperties](https://msdn.microsoft.com/library/microsoft.ink.ink.extendedproperties(v=vs.100).aspx)|  
   
 ### <a name="sharing-ink-between-platforms"></a>プラットフォーム間でのインクの共有  
  プラットフォームには、インク データの別のオブジェクト モデルがありますが、プラットフォーム間でデータを共有するは非常に簡単です。 次の例では、Windows フォーム アプリケーションからインクを保存し、Windows Presentation Foundation アプリケーションにインクを読み込みます。  

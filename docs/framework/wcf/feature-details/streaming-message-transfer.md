@@ -1,24 +1,26 @@
 ---
-title: "メッセージ転送ストリーミング"
-ms.custom: 
+title: メッセージ転送ストリーミング
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 72a47a51-e5e7-4b76-b24a-299d51e0ae5a
-caps.latest.revision: "13"
+caps.latest.revision: 13
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a751245f0a933fda649d5919bab86abf2969dbf6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: ed2aa57e044910ab9fd9c60dfd47eb7aaa0ce75e
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="streaming-message-transfer"></a>メッセージ転送ストリーミング
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] のトランスポートでは、メッセージを転送するための次の 2 つのモードをサポートしています。  
@@ -52,10 +54,10 @@ ms.lasthandoff: 12/22/2017
   
  信頼できるメッセージング、トランザクション、SOAP メッセージ レベルのセキュリティなど、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の一部の機能は転送メッセージのバッファー処理に依存しています。 これらの機能を使用すると、ストリーミングによって得られるパフォーマンス上の利点が減少したり、失われたりする可能性があります。 ストリーミングされたトランスポートをセキュリティで保護する場合は、トランスポート レベルのセキュリティだけを使用するか、または、トランスポート レベルのセキュリティと認証のみのメッセージ セキュリティを組み合わせて使用してください。  
   
- SOAP ヘッダーは、転送モードがストリーミングに設定されている場合でも、必ずバッファーされます。 メッセージのヘッダーが `MaxBufferSize` トランスポート クォータのサイズを超えないようにしてください。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]この設定、表示[トランスポート クォータ](../../../../docs/framework/wcf/feature-details/transport-quotas.md)です。  
+ SOAP ヘッダーは、転送モードがストリーミングに設定されている場合でも、必ずバッファーされます。 メッセージのヘッダーが `MaxBufferSize` トランスポート クォータのサイズを超えないようにしてください。 この設定の詳細については、次を参照してください。[トランスポート クォータ](../../../../docs/framework/wcf/feature-details/transport-quotas.md)です。  
   
 ## <a name="differences-between-buffered-and-streamed-transfers"></a>バッファー転送とストリーミング転送の違い  
  転送モードをバッファーからストリーミングに変更すると、TCP トランスポートと名前付きパイプ トランスポートのネイティブなチャネル形状も変更されます。 バッファー転送では、ネイティブなチャネル形状は <xref:System.ServiceModel.Channels.IDuplexSessionChannel> です。 ストリーム転送では、ネイティブなチャネル形状は <xref:System.ServiceModel.Channels.IRequestChannel> と <xref:System.ServiceModel.Channels.IReplyChannel> です。 これらのトランスポートを直接 (つまり、サービス コントラクトを介さずに) 使用する既存のアプリケーションで転送モードを変更するには、チャネル ファクトリおよびリスナーの予測されるチャネル形状を変更する必要があります。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [方法 : ストリーミングを有効にする](../../../../docs/framework/wcf/feature-details/how-to-enable-streaming.md)

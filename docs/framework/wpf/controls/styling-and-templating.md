@@ -1,12 +1,13 @@
 ---
-title: "スタイルとテンプレート"
-ms.custom: 
+title: スタイルとテンプレート
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -22,16 +23,17 @@ helpviewer_keywords:
 - styles [WPF], triggers
 - styles [WPF], event triggers
 ms.assetid: 481765e5-5467-4a75-9f7b-e10e2ac410d9
-caps.latest.revision: "34"
+caps.latest.revision: 34
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c33739d0e753146ffdc8b825d88c6ca7ba63fa1a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 7aafd709bfc1da63d11a56ada59aedf0ada12f3a
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="styling-and-templating"></a>スタイルとテンプレート
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]スタイルとテンプレートは、開発者および設計者が視覚的に説得力のある効果を作成し、製品の一貫した外観を作成できる、一連の機能 (スタイル、テンプレート、トリガー、およびストーリーボード) を表します。 開発者や設計者は、アプリケーション単位で広範囲に外観をカスタマイズできますが、アプリケーション内およびアプリケーション間で外観の保守および共有を可能にするには、強力なスタイルとテンプレートのモデルが必要です。 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] はそのモデルを提供します。  
@@ -182,15 +184,15 @@ ms.lasthandoff: 12/22/2017
  ![スタイル サンプル スクリーン ショット](../../../../docs/framework/wpf/controls/media/stylingintro-eventtriggers.png "StylingIntro_EventTriggers")  
   
 ### <a name="multitriggers-datatriggers-and-multidatatriggers"></a>MultiTriggers、DataTriggers、および MultiDataTriggers  
- 加え<xref:System.Windows.Trigger>と<xref:System.Windows.EventTrigger>トリガーの他の種類があります。 <xref:System.Windows.MultiTrigger>複数の条件に基づくプロパティ値を設定できます。 使用する<xref:System.Windows.DataTrigger>と<xref:System.Windows.MultiDataTrigger>条件のプロパティがデータ バインドの場合。  
+ 加え<xref:System.Windows.Trigger>と<xref:System.Windows.EventTrigger>トリガーの他の種類があります。 <xref:System.Windows.MultiTrigger> 複数の条件に基づくプロパティ値を設定できます。 使用する<xref:System.Windows.DataTrigger>と<xref:System.Windows.MultiDataTrigger>条件のプロパティがデータ バインドの場合。  
   
 <a name="styling_themes"></a>   
 ## <a name="shared-resources-and-themes"></a>共有リソースとテーマ  
- 標準的な [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] アプリケーションには、アプリケーション全体で適用されている複数のユーザー インターフェイス (UI) リソースがある場合があります。 ひとまとめにして、このリソースのセットをアプリケーションのテーマとみなすことができます。 [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)]サポートを提供パッケージのユーザー インターフェイス (UI) のリソースをテーマとしてとしてカプセル化されたリソース ディクショナリを使用して、<xref:System.Windows.ResourceDictionary>クラスです。  
+ 一般的な Windows Presentation Foundation (WPF) アプリケーションには、アプリケーション全体で適用されている複数のユーザー インターフェイス (UI) リソースがあります。 ひとまとめにして、このリソースのセットをアプリケーションのテーマとみなすことができます。 Windows Presentation Foundation (WPF)、サポート パッケージ ユーザー インターフェイス (UI) リソースをテーマとしてとしてカプセル化されたリソース ディクショナリを使用して、<xref:System.Windows.ResourceDictionary>クラスです。  
   
- [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] のテーマは、要素のビジュアルをカスタマイズするために [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] が公開しているスタイルとテンプレートのメカニズムを使用して定義されます。  
+ Windows Presentation Foundation (WPF) のテーマは、任意の要素のビジュアルをカスタマイズするため、スタイル設定および Windows Presentation Foundation (WPF) を公開するテンプレートのメカニズムを使用して定義されます。  
   
- [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] のテーマのリソースは、埋め込みリソース ディクショナリに格納されます。 これらのリソース ディクショナリは署名されたアセンブリ内に埋め込む必要があり、コード自体と同じアセンブリまたはサイド バイ サイド アセンブリで埋め込むことができます。 [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] コントロールを含むアセンブリである PresentationFramework.dll の場合、テーマのリソースは、一連のサイド バイ サイド アセンブリに埋め込まれます。  
+ Windows Presentation Foundation (WPF) テーマ リソースは、埋め込まれたリソース ディクショナリに格納されます。 これらのリソース ディクショナリは署名されたアセンブリ内に埋め込む必要があり、コード自体と同じアセンブリまたはサイド バイ サイド アセンブリで埋め込むことができます。 PresentationFramework.dll、Windows Presentation Foundation (WPF) コントロールを含むアセンブリの場合は、テーマのリソースは、サイド バイ サイド アセンブリの系列には。  
   
  テーマは、要素のスタイルを検索するときに最後に検索する場所になります。 通常、検索は、まず適切なリソースを検索する要素のツリーをウォークしてから、アプリケーションのリソース コレクションがないか調べ、最後に、システム クエリを実行します。 この方法によって、アプリケーション開発者は、テーマに到達する前に、ツリー レベルまたはアプリケーション レベルで任意のオブジェクトのスタイルを再定義できます。  
   
@@ -210,7 +212,7 @@ ms.lasthandoff: 12/22/2017
   
  カスタム コントロールのテーマを作成する場合、「[Control Authoring Overview](../../../../docs/framework/wpf/controls/control-authoring-overview.md)」の「外部のコントロール ライブラリ」セクションを参照してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [WPF におけるパッケージの URI](../../../../docs/framework/wpf/app-development/pack-uris-in-wpf.md)  
  [方法: ControlTemplate によって生成された要素を検索する](../../../../docs/framework/wpf/controls/how-to-find-controltemplate-generated-elements.md)  
  [DataTemplate によって生成された要素を検索する](../../../../docs/framework/wpf/data/how-to-find-datatemplate-generated-elements.md)

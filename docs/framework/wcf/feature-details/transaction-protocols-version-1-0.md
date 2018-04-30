@@ -1,27 +1,29 @@
 ---
-title: "トランザクション プロトコル バージョン 1.0"
-ms.custom: 
+title: トランザクション プロトコル バージョン 1.0
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 034679af-0002-402e-98a8-ef73dcd71bb6
-caps.latest.revision: "3"
+caps.latest.revision: 3
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e616f989416fcee77caa9b9a5d87cfa6812eab32
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 60867daa7b8519f745c37371604807c51aa1cbb9
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="transaction-protocols-version-10"></a>トランザクション プロトコル バージョン 1.0
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] バージョン 1 は、WS-Atomic Transaction プロトコルおよび WS-Coordination プロトコルのバージョン 1.0 を実装します。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]バージョン 1.1 を参照してください[トランザクション プロトコル](../../../../docs/framework/wcf/feature-details/transaction-protocols.md)です。  
+[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] バージョン 1 は、WS-Atomic Transaction プロトコルおよび WS-Coordination プロトコルのバージョン 1.0 を実装します。 バージョン 1.1 の詳細については、次を参照してください。[トランザクション プロトコル](../../../../docs/framework/wcf/feature-details/transaction-protocols.md)です。  
   
 |仕様/ドキュメント|Link|  
 |-----------------------------|----------|  

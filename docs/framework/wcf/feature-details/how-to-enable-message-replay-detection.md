@@ -24,16 +24,16 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 55cd4b928c640f506e058f6a441189842bc9b8a3
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: cada24098f5800f56d7dd50119c3fe3394ba14cd
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="how-to-enable-message-replay-detection"></a>方法 : メッセージ リプレイ検出を有効にする
 リプレイ攻撃は、攻撃者がメッセージのストリームを 2 つのパーティ間でコピーし、そのストリームを他の 1 つ以上のパーティにリプレイすることで発生します。 攻撃が止むまで、攻撃対象になったコンピューターはストリームを正当なメッセージとして処理しようとし、その結果、命令が重複するなど、望ましくない状況に陥ります。  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)] メッセージのリプレイ検出を参照してください[メッセージ リプレイ検出](http://go.microsoft.com/fwlink/?LinkId=88536)です。  
+ メッセージのリプレイ検出の詳細については、次を参照してください。[メッセージ リプレイ検出](http://go.microsoft.com/fwlink/?LinkId=88536)です。  
   
  以下の手順では、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] でリプレイ検出を制御するために使用できるさまざまなプロパティを示します。  
   

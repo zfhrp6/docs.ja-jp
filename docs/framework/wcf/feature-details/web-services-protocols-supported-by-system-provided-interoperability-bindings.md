@@ -20,11 +20,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 754915d5ba596b5121c47be3533ee679b4f9594b
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 998920e4c1d7e0524da1c9843378e92517f4ee96
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="web-services-protocols-supported-by-system-provided-interoperability-bindings"></a>システム標準の相互運用性バインディングがサポートしている Web サービス プロトコル
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] は、Web サービス仕様と呼ばれる一連の仕様をサポートする Web サービスと相互運用できるように構築されています。 サービス構成を簡略化して相互運用性のベスト プラクティスを実現するために、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、<xref:System.ServiceModel.BasicHttpBinding?displayProperty=nameWithType>、<xref:System.ServiceModel.WSHttpBinding?displayProperty=nameWithType>、および <xref:System.ServiceModel.WSDualHttpBinding?displayProperty=nameWithType> の 3 つの相互運用可能なシステム指定のバインディングが導入されています。 OASIS (Organization for the Advancement of Structured Information Standards) 標準との相互運用性を実現するために、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には <xref:System.ServiceModel.WS2007HttpBinding?displayProperty=nameWithType> という相互運用可能なシステム指定のバインディングがあります。 メタデータの公開の[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]2 つの相互運用可能なシステム指定のバインディングが含まれています: [ \<mexHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/mexhttpbinding.md)と[ \<mexHttpsBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/mexhttpsbinding.md)です。 このトピックでは、システム指定の相互運用可能なバインディングがサポートする仕様を示します。  
@@ -102,7 +102,7 @@ ms.lasthandoff: 04/28/2018
  次の表に、<xref:System.ServiceModel.Description.MetadataExchangeBindings?displayProperty=nameWithType> クラスによって公開される、システム指定の相互運用可能なメタデータ バインディングによってサポートされるプロトコルを示します。  
   
 ### <a name="mexhttpbinding"></a>mexHttpBinding  
- [ \<MexHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/mexhttpbinding.md)バインディングは、次のプロトコルをサポートします。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] このバインディングを使用して参照してください[メタデータの公開](../../../../docs/framework/wcf/feature-details/publishing-metadata.md)です。  
+ [ \<MexHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/mexhttpbinding.md)バインディングは、次のプロトコルをサポートします。 このバインディングの使用に関する詳細については、次を参照してください。[メタデータの公開](../../../../docs/framework/wcf/feature-details/publishing-metadata.md)です。  
   
 |カテゴリ|プロトコル|仕様と用途|  
 |--------------|--------------|-----------------------------|  
@@ -112,7 +112,7 @@ ms.lasthandoff: 04/28/2018
 |メタデータ|WS-MetadataExchange|[WS-MetadataExchange](http://go.microsoft.com/fwlink/?LinkId=94868)<br /><br /> [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、XML スキーマ、WSDL、WS-Policy を取得するために WS-MetadataExchange が実装されています。|  
   
 ### <a name="mexhttpsbinding"></a>mexHttpsBinding  
- [\<mexHttpsBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/mexhttpsbinding.md)次のプロトコルをサポートします。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] このバインディングを使用して参照してください[メタデータの公開](../../../../docs/framework/wcf/feature-details/publishing-metadata.md)です。  
+ [\<mexHttpsBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/mexhttpsbinding.md)次のプロトコルをサポートします。 このバインディングの使用に関する詳細については、次を参照してください。[メタデータの公開](../../../../docs/framework/wcf/feature-details/publishing-metadata.md)です。  
   
 |カテゴリ|プロトコル|仕様と用途|  
 |--------------|--------------|-----------------------------|  

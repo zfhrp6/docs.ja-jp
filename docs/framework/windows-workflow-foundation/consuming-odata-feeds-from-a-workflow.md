@@ -14,11 +14,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 09eb22c0c4bfaf549bd18cccae0c84957e730aa6
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: ce7d7812eadea2d9472a62bd007d2eca6ae07891
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="consuming-odata-feeds-from-a-workflow"></a>ワークフローからの OData フィードの利用
 WCF Data Services は [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] のコンポーネントです。このコンポーネントを使用すると、Representational State Transfer (REST) のセマンティクスを使用して、Web またはイントラネット上のデータを公開および使用するために Open Data Protocol (OData) を使用するサービスを作成できます。 OData は、URI でアドレス指定できるリソースとしてデータを公開します。 HTTP 要求を送信し、データ サービスが返す OData フィードを処理できるのであれば、どのようなアプリケーションでも OData ベースのデータ サービスと対話できます。 さらに、WCF Data Services には [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] アプリケーションから OData フィードを使用する際のプログラミング エクスペリエンスを向上させるクライアント ライブラリが含まれています。 このトピックでは、クライアント ライブラリを使用した場合と使用しない場合のワークフローでの OData フィードの使用の概要について説明します。  
@@ -78,7 +78,7 @@ WCF Data Services は [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md
  次の例では、 `ListCustomers` アクティビティを定義します。 このアクティビティは、Northwind データ サービス サンプルを照会し、Northwind データベース内の顧客をすべて含む `List<Customer>` を返します。 非同期操作は `GetCustomers` メソッドによって実行されます。 このメソッドは、サービスに対してすべての顧客を照会し、これらの顧客を `List<Customer>`にコピーします。 次に、結果がページングされているかどうかを確認します。 ページングされている場合は、サービスに対して結果の次のページを照会し、それを一覧に追加します。処理は顧客データをすべて取得するまで続行されます。  
   
 > [!NOTE]
->  [!INCLUDE[crabout](../../../includes/crabout-md.md)] WCF Data Services でのページングを参照してください。 [方法: ページングされた結果を読み込む (WCF Data Services)](http://go.microsoft.com/fwlink/?LinkId=193452)。  
+>  WCF Data Services のページングの詳細についてを参照してください。 [方法: ページングされた結果を読み込む (WCF Data Services)](http://go.microsoft.com/fwlink/?LinkId=193452)。  
   
  顧客がすべて追加されると、一覧が返されます。 `GetCustomers` メソッドはアクティビティの <xref:System.Activities.AsyncCodeActivity.BeginExecute%2A> オーバーライドで指定されます。 メソッドには戻り値があるので、メソッドを指定するために `Func<string, List<Customer>>` が作成されます。  
   
@@ -143,4 +143,4 @@ WCF Data Services は [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md
  **\<link rel ="edit"title ="Order"href="Orders(10643)"/>**  
  **\<link rel ="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Customer"**  
  **種類 ="アプリケーションおよび atom + xml; 入力エントリを ="タイトル"Customer"href =「(10643)/顧客の注文」を =/>**  
-**...** この例は、ワークフロー アプリケーションの作成者が OData サービスから返された生データを使用できる方法の 1 つを示しています。 URI を使用して WCF Data Services にアクセスする方法の[!INCLUDE[crabout](../../../includes/crabout-md.md)] については、「 [データ サービス リソースへのアクセス (WCF Data Services)](http://go.microsoft.com/fwlink/?LinkId=193397) 」および [OData: URI 規約](http://go.microsoft.com/fwlink/?LinkId=185564)に関するページを参照してください。
+**...** この例は、ワークフロー アプリケーションの作成者が OData サービスから返された生データを使用できる方法の 1 つを示しています。 Uri を使用して WCF Data Services へのアクセスに関する詳細については、次を参照してください。[データ サービス リソースのへのアクセス (WCF Data Services)](http://go.microsoft.com/fwlink/?LinkId=193397)と[OData: URI 規則](http://go.microsoft.com/fwlink/?LinkId=185564)です。

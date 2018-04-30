@@ -18,11 +18,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: f23918031c6cc8cd6509d7b7c079b8df050bbb08
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: 4bde13abeac782da1c553afa290943eeff925fa4
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="how-to-configure-a-basic-windows-communication-foundation-client"></a>方法 : 基本的な Windows Communication Foundation クライアントを構成する
 これは、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] アプリケーションの作成に必要な 6 つのタスクのうち、5 番目のタスクです。 タスクの 6 つのすべての概要については、次を参照してください。、[チュートリアル入門](../../../docs/framework/wcf/getting-started-tutorial.md)トピックです。  
@@ -61,11 +61,11 @@ ms.lasthandoff: 03/23/2018
     </configuration>   
     ```  
   
-     この例では、アドレス http://localhost:8000/ServiceModelSamples/Service/CalculatorService に配置されたサービスにアクセスするために、クライアントが使用するエンドポイントを構成しています。  
+     この例は、次のアドレス位置にあるサービスにアクセスするクライアントが使用するエンドポイントを構成します。 http://localhost:8000/ServiceModelSamples/Service/CalculatorService  
   
      endpoint 要素は、`ServiceReference1.ICalculator` サービス コントラクトが、WCF クライアントと WCF サービス間の通信に使用されるように指定します。 WCF チャネルは、システム指定の構成 <<!--zz xref:System.ServiceModel.WsHttpBinding --> `xref:System.ServiceModel.WsHttpBinding`>。 このコントラクトは、Visual Studio の "サービス参照の追加" を使用して生成されました。 基本的には、GettingStartedLib プロジェクトで定義されているコントラクトのコピーです。 <<!--zz xref:System.ServiceModel.WsHttpBinding --> `xref:System.ServiceModel.WsHttpBinding`> バインディングでは、トランスポート、相互運用可能なセキュリティ、およびその他の構成の詳細として HTTP を指定します。  
   
-2.  [!INCLUDE[crabout](../../../includes/crabout-md.md)] この構成では、生成されたクライアントを使用して、表示する方法[する方法: クライアントを使用して](../../../docs/framework/wcf/how-to-use-a-wcf-client.md)です。  
+2.  この構成では、生成されたクライアントを使用する方法の詳細については、次を参照してください。[する方法: クライアントを使用して](../../../docs/framework/wcf/how-to-use-a-wcf-client.md)です。  
   
 ## <a name="see-also"></a>関連項目  
  [サービスとクライアントを構成するためのバインディングの使用](../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)  

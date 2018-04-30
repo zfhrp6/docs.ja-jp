@@ -1,24 +1,26 @@
 ---
-title: "プログラムを使用して探索可能性に WCF サービスとクライアントを追加する方法"
-ms.custom: 
+title: プログラムを使用して探索可能性に WCF サービスとクライアントを追加する方法
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 4f7ae7ab-6fc8-4769-9730-c14d43f7b9b1
-caps.latest.revision: "13"
+caps.latest.revision: 13
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a0a59788544a32b78e75ac25e787dcbae478451e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 3c0da3598b115df4f135ac3fab516447df85e258
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="how-to-programmatically-add-discoverability-to-a-wcf-service-and-client"></a>プログラムを使用して探索可能性に WCF サービスとクライアントを追加する方法
 このトピックでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスを探索可能にする方法について説明します。 基にして、[自己ホスト](http://go.microsoft.com/fwlink/?LinkId=145523)サンプルです。  
@@ -231,7 +233,7 @@ ms.lasthandoff: 12/22/2017
     ```  
   
 ## <a name="example"></a>例  
- このサンプルで使用されているコード全体の一覧を次に示します。 このコードに基づいているため、[自己ホスト](http://go.microsoft.com/fwlink/?LinkId=145523)サンプルでは、変更されたファイルのみが表示されます。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]自己ホスト サンプルを参照してください[のセットアップ手順](http://go.microsoft.com/fwlink/?LinkId=145522)です。  
+ このサンプルで使用されているコード全体の一覧を次に示します。 このコードに基づいているため、[自己ホスト](http://go.microsoft.com/fwlink/?LinkId=145523)サンプルでは、変更されたファイルのみが表示されます。 自己ホストのサンプルに関する詳細については、次を参照してください。[のセットアップ手順](http://go.microsoft.com/fwlink/?LinkId=145522)です。  
   
 ```csharp  
 // Service.cs  
@@ -351,6 +353,6 @@ namespace DiscoveryClientApp
 }  
 ```  
 
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [WCF Discovery の概要](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md)  
  [WCF Discovery オブジェクト モデル](../../../../docs/framework/wcf/feature-details/wcf-discovery-object-model.md)

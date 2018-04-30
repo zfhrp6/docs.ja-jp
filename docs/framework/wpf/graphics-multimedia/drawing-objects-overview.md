@@ -1,12 +1,13 @@
 ---
-title: "Drawing オブジェクトの概要"
-ms.custom: 
+title: Drawing オブジェクトの概要
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - ImageDrawing objects [WPF]
@@ -16,16 +17,17 @@ helpviewer_keywords:
 - Drawing objects [WPF]
 - DrawingGroup objects [WPF]
 ms.assetid: 9b5ce5c0-e204-4320-a7a8-0b2210d62f88
-caps.latest.revision: "25"
+caps.latest.revision: 25
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c9b77b47a3f3ade27f2ba86304b1868a8d388482
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: 3672e4b1deacd8fb50a5318270854daae9c74761
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="drawing-objects-overview"></a>Drawing オブジェクトの概要
 このトピックで紹介<xref:System.Windows.Media.Drawing>オブジェクトし、図形、ビットマップ、文字列、およびメディアを効率的に描画に使用する方法について説明します。 使用して<xref:System.Windows.Media.Drawing>で描画します。 オブジェクト クリップアートを作成するときに、 <xref:System.Windows.Media.DrawingBrush>、使用または<xref:System.Windows.Media.Visual>オブジェクト。  
@@ -36,17 +38,17 @@ ms.lasthandoff: 01/19/2018
 ## <a name="what-is-a-drawing-object"></a>Drawing オブジェクトとは  
  A<xref:System.Windows.Media.Drawing>オブジェクトには、図形、ビットマップ、ビデオ、または行のテキストなど、表示されているコンテンツがについて説明します。 さまざまな種類の描画で、さまざまな種類のコンテンツを記述します。 次の一覧に、さまざまな種類の描画オブジェクトを示します。  
   
--   <xref:System.Windows.Media.GeometryDrawing>– 図形を描画します。  
+-   <xref:System.Windows.Media.GeometryDrawing> – 図形を描画します。  
   
--   <xref:System.Windows.Media.ImageDrawing>– イメージを描画します。  
+-   <xref:System.Windows.Media.ImageDrawing> – イメージを描画します。  
   
--   <xref:System.Windows.Media.GlyphRunDrawing>– テキストを描画します。  
+-   <xref:System.Windows.Media.GlyphRunDrawing> – テキストを描画します。  
   
--   <xref:System.Windows.Media.VideoDrawing>– オーディオまたはビデオ ファイルを再生します。  
+-   <xref:System.Windows.Media.VideoDrawing> – オーディオまたはビデオ ファイルを再生します。  
   
--   <xref:System.Windows.Media.DrawingGroup>– 他の描画を描画します。 他の描画を 1 つの複合描画に結合するには、描画グループを使用します。  
+-   <xref:System.Windows.Media.DrawingGroup> – 他の描画を描画します。 他の描画を 1 つの複合描画に結合するには、描画グループを使用します。  
   
- <xref:System.Windows.Media.Drawing>オブジェクトは汎用です。さまざまな方法で使用することができます、<xref:System.Windows.Media.Drawing>オブジェクト。  
+ <xref:System.Windows.Media.Drawing> オブジェクトは汎用です。さまざまな方法で使用することができます、<xref:System.Windows.Media.Drawing>オブジェクト。  
   
 -   使用してイメージとして表示できる、<xref:System.Windows.Media.DrawingImage>と<xref:System.Windows.Controls.Image>コントロール。  
   
@@ -86,7 +88,7 @@ GeometryDrawing
   
  次の例では、(75,75) に存在する 100 x 100 ピクセルの四角形にイメージを描画します。 次の図は、<xref:System.Windows.Media.ImageDrawing>の例で作成します。 灰色の枠線が表示の境界に追加された、<xref:System.Windows.Media.ImageDrawing>です。  
   
- ![100 × 100 の ImageDrawing 描画する &#40;75, 75&#41;] (../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-simple-imagedrawing-offset.png "graphicsmm_simple_imagedrawing_offset")  
+ ![100 × 100 の ImageDrawing に描画&#40;75, 75&#41;](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-simple-imagedrawing-offset.png "graphicsmm_simple_imagedrawing_offset")  
 100×100 の ImageDrawing  
   
  [!code-csharp[DrawingMiscSnippets_snip#ImageDrawing100by100Inline](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DrawingMiscSnippets_snip/CSharp/ImageDrawingExample.cs#imagedrawing100by100inline)]
@@ -180,7 +182,7 @@ GeometryDrawing
  [!code-csharp[DrawingMiscSnippets_snip#GraphicsMMSimpleDrawingGroupExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DrawingMiscSnippets_snip/CSharp/DrawingGroupExample.cs#graphicsmmsimpledrawinggroupexample)]
  [!code-xaml[DrawingMiscSnippets_snip#GraphicsMMSimpleDrawingGroupExample](../../../../samples/snippets/xaml/VS_Snippets_Wpf/DrawingMiscSnippets_snip/XAML/DrawingGroupExample.xaml#graphicsmmsimpledrawinggroupexample)]  
   
- A<xref:System.Windows.Media.DrawingGroup>不透明マスク、変換、ビットマップ効果、およびその他の操作をその内容に適用することもできます。 <xref:System.Windows.Media.DrawingGroup>操作は、次の順序で適用されます: <xref:System.Windows.Media.DrawingGroup.OpacityMask%2A>、 <xref:System.Windows.Media.DrawingGroup.Opacity%2A>、 <xref:System.Windows.Media.DrawingGroup.BitmapEffect%2A>、 <xref:System.Windows.Media.DrawingGroup.ClipGeometry%2A>、 <xref:System.Windows.Media.DrawingGroup.GuidelineSet%2A>、し<xref:System.Windows.Media.DrawingGroup.Transform%2A>です。  
+ A<xref:System.Windows.Media.DrawingGroup>不透明マスク、変換、ビットマップ効果、およびその他の操作をその内容に適用することもできます。 <xref:System.Windows.Media.DrawingGroup> 操作は、次の順序で適用されます: <xref:System.Windows.Media.DrawingGroup.OpacityMask%2A>、 <xref:System.Windows.Media.DrawingGroup.Opacity%2A>、 <xref:System.Windows.Media.DrawingGroup.BitmapEffect%2A>、 <xref:System.Windows.Media.DrawingGroup.ClipGeometry%2A>、 <xref:System.Windows.Media.DrawingGroup.GuidelineSet%2A>、し<xref:System.Windows.Media.DrawingGroup.Transform%2A>です。  
   
  次の図に順序を<xref:System.Windows.Media.DrawingGroup>操作が適用されます。  
   
@@ -232,7 +234,7 @@ DrawingBrush で使われる GeometryDrawing
 ## <a name="drawingcontext-objects"></a>DrawingContext オブジェクト  
  <xref:System.Windows.Media.DrawingContext>クラスでは、設定することができます、<xref:System.Windows.Media.Visual>または<xref:System.Windows.Media.Drawing>visual のコンテンツを持つ。 このような多くの下位レベルのグラフィック オブジェクトを使用して、<xref:System.Windows.Media.DrawingContext>のため非常に効率よくグラフィック コンテンツについて説明します。  
   
- <xref:System.Windows.Media.DrawingContext>描画メソッド表示の描画メソッドに似ています、<xref:System.Drawing.Graphics?displayProperty=nameWithType>型、それらが実際には非常に異なる。 <xref:System.Windows.Media.DrawingContext>保持モードのグラフィックス システムで使用される、while、<xref:System.Drawing.Graphics?displayProperty=nameWithType>イミディ エイト モード グラフィックス システムでタイプを使用します。 使用すると、<xref:System.Windows.Media.DrawingContext>オブジェクトの描画コマンド、レンダリング命令のセットを格納する実際には (正確なストレージ メカニズムを提供するオブジェクトの種類によって異なりますが、 <xref:System.Windows.Media.DrawingContext>) 後で、グラフィックス システムで使用される; がリアルタイムで画面に描画します。 [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] グラフィックス システムの動作について詳しくは、「[WPF グラフィックス レンダリングの概要](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)」をご覧ください。  
+ <xref:System.Windows.Media.DrawingContext>描画メソッド表示の描画メソッドに似ています、<xref:System.Drawing.Graphics?displayProperty=nameWithType>型、それらが実際には非常に異なる。 <xref:System.Windows.Media.DrawingContext> 保持モードのグラフィックス システムで使用される、while、<xref:System.Drawing.Graphics?displayProperty=nameWithType>イミディ エイト モード グラフィックス システムでタイプを使用します。 使用すると、<xref:System.Windows.Media.DrawingContext>オブジェクトの描画コマンド、レンダリング命令のセットを格納する実際には (正確なストレージ メカニズムを提供するオブジェクトの種類によって異なりますが、 <xref:System.Windows.Media.DrawingContext>) 後で、グラフィックス システムで使用される; がリアルタイムで画面に描画します。 詳細については、Windows Presentation Foundation (WPF) グラフィックス システムのしくみについては、次を参照してください。、 [WPF グラフィックス レンダリングの概要](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)です。  
   
  決して直接インスタンス化する、 <xref:System.Windows.Media.DrawingContext>; など、特定のメソッドから描画コンテキストを取得すること、ただし、<xref:System.Windows.Media.DrawingGroup.Open%2A?displayProperty=nameWithType>と<xref:System.Windows.Media.DrawingVisual.RenderOpen%2A?displayProperty=nameWithType>です。  
   
@@ -244,7 +246,7 @@ DrawingBrush で使われる GeometryDrawing
   
  [!code-csharp[DrawingMiscSnippets_snip#GraphicsMMRetrieveDrawings](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DrawingMiscSnippets_snip/CSharp/EnumerateDrawingsExample.xaml.cs#graphicsmmretrievedrawings)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Media.Drawing>  
  <xref:System.Windows.Media.DrawingGroup>  
  [2D グラフィックスとイメージング](../../../../docs/framework/wpf/advanced/optimizing-performance-2d-graphics-and-imaging.md)  

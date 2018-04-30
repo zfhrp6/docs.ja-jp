@@ -1,32 +1,34 @@
 ---
-title: "分散アプリケーションのセキュリティ"
-ms.custom: 
+title: 分散アプリケーションのセキュリティ
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - distributed application security [WCF]
 - security [WCF], transfer
 ms.assetid: 53928a10-e474-46d0-ab90-5f98f8d7b668
-caps.latest.revision: "32"
+caps.latest.revision: 32
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: 1e67c5da534e7b35d4d27c0164d9389c8afe252b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 8b5bc311262aae1110f7d0249be60135e318785e
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="distributed-application-security"></a>分散アプリケーションのセキュリティ
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] セキュリティは、転送セキュリティ、アクセス制御、および監査の 3 つの主要な機能領域に分けられます。 転送セキュリティは、整合性、機密性、および認証を実現します。 転送セキュリティは、トランスポート セキュリティ、メッセージ セキュリティ、または `TransportWithMessageCredential` のいずれかによって提供されます。  
   
- 概要については[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]メッセージ セキュリティを参照してください[セキュリティの概要](../../../../docs/framework/wcf/feature-details/security-overview.md)です。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]その他の 2 つの[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]セキュリティを参照してください[承認](../../../../docs/framework/wcf/feature-details/authorization-in-wcf.md)と[監査](../../../../docs/framework/wcf/feature-details/auditing-security-events.md)です。  
+ 概要については[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]メッセージ セキュリティを参照してください[セキュリティの概要](../../../../docs/framework/wcf/feature-details/security-overview.md)です。 他の 2 つの部分の詳細については[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]セキュリティを参照してください[承認](../../../../docs/framework/wcf/feature-details/authorization-in-wcf.md)と[監査](../../../../docs/framework/wcf/feature-details/auditing-security-events.md)です。  
   
 ## <a name="transfer-security-scenarios"></a>転送セキュリティのシナリオ  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 転送セキュリティを使用する一般的なシナリオには、次のようなものがあります。  
@@ -68,7 +70,7 @@ ms.lasthandoff: 12/22/2017
   
  証明書資格情報では、サブジェクト名、サブジェクト代替名、または証明書内の特定のフィールドを使用して、クレーム ID と資格を表すことができます。 資格情報に含まれるデータの所有権の証明は、署名の生成のために関連付けられた秘密キーを使用して行われます。  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]転送セキュリティをプログラミングして、資格情報を指定するを参照してください。[バインディングとセキュリティ](../../../../docs/framework/wcf/feature-details/bindings-and-security.md)と[セキュリティ動作](../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)です。  
+ プログラミングの詳細については、転送セキュリティと資格情報を指定するを参照してください[バインディングとセキュリティ](../../../../docs/framework/wcf/feature-details/bindings-and-security.md)と[セキュリティ動作](../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)です。  
   
 ### <a name="transport-client-credential-types"></a>トランスポート クライアント資格情報の種類  
  転送セキュリティを使用するアプリケーションを作成するときに使用できる値を次の表に示します。 これらの値は、コードまたはバインディング設定で使用できます。  
@@ -105,7 +107,7 @@ ms.lasthandoff: 12/22/2017
   
  また、メッセージ セキュリティ モードでは、初期ネゴシエーションの一環としてサービス資格情報がクライアントと交換されるように転送のセキュリティを実行できます。 ネゴシエーションを有効にするには、<xref:System.ServiceModel.MessageSecurityOverHttp.NegotiateServiceCredential%2A> プロパティを `true` に設定します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [エンドポイントの作成の概要](../../../../docs/framework/wcf/endpoint-creation-overview.md)  
  [システム標準のバインディング](../../../../docs/framework/wcf/system-provided-bindings.md)  
  [セキュリティの概要](../../../../docs/framework/wcf/feature-details/security-overview.md)  

@@ -20,11 +20,11 @@ ms.author: bruceper
 manager: mbaldwin
 ms.workload:
 - dotnet
-ms.openlocfilehash: d5fed0e842abd815d0483e26e1e1f350899d1506
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: ffc985d528bfdcdd9b62772a8a8ba61823c95e76
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="securing-services"></a>サービスのセキュリティ保護
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービスのセキュリティは、転送セキュリティと承認という 2 つの主要要件で構成されます (3 番目の要件は、「セキュリティ イベントの監査[監査](../../../docs/framework/wcf/feature-details/auditing-security-events.md)。)簡単に説明すると、転送セキュリティは、認証 (サーバーとクライアント両方の ID の検証)、機密性 (メッセージの暗号化)、および整合性 (改ざんを検出するためのデジタル署名) で構成されます。 承認は、たとえば、特権のあるユーザーだけがファイルを読み取ることができるなど、リソースへのアクセスを制御することです。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]の機能を使用すれば、この 2 つの主要要件を簡単に実装できます。  
@@ -51,13 +51,13 @@ ms.lasthandoff: 04/28/2018
  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] インフラストラクチャは、この Windows セキュリティ機構を使用するように設計されています。 したがって、イントラネットに展開するサービスを作成していて、そのクライアントを Windows ドメインのメンバーに限定する場合、セキュリティを簡単に実装できます。 有効なユーザーだけがドメインにログオンできます。 ログオン後、Kerberos コントローラーによって、各ユーザーは他のコンピューターまたはアプリケーションとの間にセキュリティで保護されたコンテキストを確立できます。 ローカル コンピューターでは、グループを簡単に作成でき、特定のフォルダーを保護する場合、そのグループを使用してローカル コンピューター上でアクセス権を割り当てることができます。  
   
 ## <a name="implementing-windows-security-on-intranet-services"></a>イントラネット サービスでの Windows セキュリティの実装  
- Windows ドメインでのみ実行するアプリケーションをセキュリティで保護するには、 <xref:System.ServiceModel.WSHttpBinding> または <xref:System.ServiceModel.NetTcpBinding> バインディングの既定のセキュリティ設定を使用できます。 既定では、同じ Windows ドメインに存在するすべてのユーザーが [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスにアクセスできます。 ドメイン内にいるユーザーは、ネットワークにログオン済みなので信頼できます。 サービスとクライアントの間で交換されるメッセージは、機密性を保護するために暗号化され、整合性を保護するために署名されます。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] については、「 [方法 : Windows 資格情報でサービスをセキュリティで保護する](../../../docs/framework/wcf/how-to-secure-a-service-with-windows-credentials.md)に依存します。  
+ Windows ドメインでのみ実行するアプリケーションをセキュリティで保護するには、 <xref:System.ServiceModel.WSHttpBinding> または <xref:System.ServiceModel.NetTcpBinding> バインディングの既定のセキュリティ設定を使用できます。 既定では、同じ Windows ドメインに存在するすべてのユーザーが [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスにアクセスできます。 ドメイン内にいるユーザーは、ネットワークにログオン済みなので信頼できます。 サービスとクライアントの間で交換されるメッセージは、機密性を保護するために暗号化され、整合性を保護するために署名されます。 Windows セキュリティを使用するサービスを作成する方法の詳細については、次を参照してください。[する方法: Windows 資格情報でサービスをセキュリティで保護された](../../../docs/framework/wcf/how-to-secure-a-service-with-windows-credentials.md)です。  
   
 ### <a name="authorization-using-the-principalpermissionattribute-class"></a>PrincipalPermissionAttribute クラスを使用した承認  
  コンピューター上のリソースへのアクセスを制限する必要がある場合、最も簡単な方法は <xref:System.Security.Permissions.PrincipalPermissionAttribute> クラスを使用することです。 この属性を使用すると、ユーザーが指定の Windows グループまたはロールに属しているか、特定のユーザーであることを要求して、サービス操作の呼び出しを制限できます。 詳細については、次を参照してください。[する方法: PrincipalPermissionAttribute クラスを使用したアクセスの制限](../../../docs/framework/wcf/how-to-restrict-access-with-the-principalpermissionattribute-class.md)です。  
   
 ### <a name="impersonation"></a>偽装  
- 偽装は、リソース アクセスの制御に使用できるもう 1 つの機構です。 既定では、IIS でホストされるサービスは、ASPNET アカウントの ID で実行されます。 ASPNET アカウントは、アクセス許可のあるリソースにだけアクセスできます。 ただし、ASPNET サービス アカウントを除外し、他の特定の ID によるフォルダーへのアクセスを許可するように ACL を設定できます。 ここで問題となるのが、ASPNET アカウントがフォルダーにアクセスできない場合に、他のユーザーがフォルダーにアクセスできるようにする方法です。 これは、偽装を使用することで解決できます。偽装によって、サービスは特定のリソースにアクセスするためにクライアントの資格情報を使用できます。 もう 1 つの例は、特定のユーザーだけがアクセス許可を持つ SQL Server データベースにアクセスする場合です。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] 権限借用を使用して参照してください[する方法: サービスでクライアントを偽装](../../../docs/framework/wcf/how-to-impersonate-a-client-on-a-service.md)と[委任と偽装](../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md)です。  
+ 偽装は、リソース アクセスの制御に使用できるもう 1 つの機構です。 既定では、IIS でホストされるサービスは、ASPNET アカウントの ID で実行されます。 ASPNET アカウントは、アクセス許可のあるリソースにだけアクセスできます。 ただし、ASPNET サービス アカウントを除外し、他の特定の ID によるフォルダーへのアクセスを許可するように ACL を設定できます。 ここで問題となるのが、ASPNET アカウントがフォルダーにアクセスできない場合に、他のユーザーがフォルダーにアクセスできるようにする方法です。 これは、偽装を使用することで解決できます。偽装によって、サービスは特定のリソースにアクセスするためにクライアントの資格情報を使用できます。 もう 1 つの例は、特定のユーザーだけがアクセス許可を持つ SQL Server データベースにアクセスする場合です。 権限借用の使用に関する詳細については、次を参照してください。[する方法: サービスでクライアントを偽装](../../../docs/framework/wcf/how-to-impersonate-a-client-on-a-service.md)と[委任と偽装](../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md)です。  
   
 ## <a name="security-on-the-internet"></a>インターネット上のセキュリティ  
  インターネット上のセキュリティは、イントラネット上のセキュリティと同じ要件で構成されます。 サービスは、信頼性を証明するために資格情報を提示する必要があり、クライアントは、サービスに対して ID を証明する必要があります。 クライアントの ID が証明されると、サービスは、クライアントによるリソースへのアクセスを制御できます。 ただし、インターネットではさまざまな種類が混在しているので、提示される資格情報は、Windows ドメインで使用される資格情報とは異なります。 Kerberos コントローラーが資格情報のチケットを使用して、ドメインでユーザーの認証を処理するのに対し、インターネットでは、サービスとクライアントは、資格情報を提示するための複数の異なる方法のいずれかに依存します。 なお、このトピックの目的は、インターネット上でアクセスできる [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスを作成するための一般的な方法を示すことです。  
@@ -78,10 +78,10 @@ ms.lasthandoff: 04/28/2018
   
  3 番目のモードは、2 つの主要モードのセマンティクスを組み合わせたもので、 *メッセージ資格情報付きトランスポート モード*です。  
   
- セキュリティ モードによって、メッセージをセキュリティで保護する方法が決まります。それぞれのモードには、次に示す利点と欠点があります。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] については、「 [How to: Set the Security Mode](../../../docs/framework/wcf/how-to-set-the-security-mode.md)に依存します。  
+ セキュリティ モードによって、メッセージをセキュリティで保護する方法が決まります。それぞれのモードには、次に示す利点と欠点があります。 セキュリティ モードの設定の詳細については、次を参照してください。[する方法: セキュリティ モードを設定](../../../docs/framework/wcf/how-to-set-the-security-mode.md)です。  
   
 #### <a name="transport-mode"></a>トランスポート モード  
- ネットワークとアプリケーションの間には複数の層があります。 この層の 1 つが *トランスポート* 層で*、*エンドポイント間のメッセージ転送を管理します。 現時点では、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] は複数のトランスポート プロトコルを使用し、各プロトコルによってメッセージの転送をセキュリティで保護できるということをだけを理解しておいてください ([!INCLUDE[crabout](../../../includes/crabout-md.md)]トランスポートを参照してください[トランスポート](../../../docs/framework/wcf/feature-details/transports.md))。  
+ ネットワークとアプリケーションの間には複数の層があります。 この層の 1 つが *トランスポート* 層で*、*エンドポイント間のメッセージ転送を管理します。 現時点では、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] は複数のトランスポート プロトコルを使用し、各プロトコルによってメッセージの転送をセキュリティで保護できるということをだけを理解しておいてください (トランスポートの詳細については、次を参照してください[トランスポート](../../../docs/framework/wcf/feature-details/transports.md)。)。  
   
  一般的に使用されるプロトコルは HTTP ですが、その他にも TCP があります。 この各プロトコルは、プロトコルに固有の機構によってメッセージ転送をセキュリティで保護できます。 たとえば、HTTP プロトコルは SSL over HTTP (一般的に "HTTPS" と省略される) を使用してセキュリティで保護されます。 そのため、セキュリティのトランスポート モードを選択するときは、同時に、プロトコルによって指定された機構の使用を選択することになります。 たとえば、 <xref:System.ServiceModel.WSHttpBinding> クラスを選択し、そのセキュリティ モードをトランスポートに設定した場合、セキュリティ機構として SSL over HTTP (HTTPS) を選択することになります。 トランスポート モードの利点は、セキュリティが比較的低いレベルで統合されるので、メッセージ モードよりも効率的であるという点です。 トランスポート モードを使用するとき、トランスポートの仕様に基づいてセキュリティ機構を実装する必要があります。これによって、トランスポートを経由した Point-to-Point からのみメッセージを安全にフローできます。  
   
@@ -96,7 +96,7 @@ ms.lasthandoff: 04/28/2018
   
  ただし、すべてのシナリオにクライアント資格情報の種類が必要とは限りません。 SSL over HTTP (HTTPS) を使用して、サービスはクライアントに対して認証を行います。 この認証の一部として、 *ネゴシエーション*と呼ばれるプロセスで、サービスの証明書がクライアントに送信されます。 SSL によってセキュリティで保護されたトランスポートによって、すべてのメッセージの機密性が確保されます。  
   
- クライアントの認証が必要なサービスを作成している場合、クライアント資格情報の種類の選択肢は、選択したトランスポートとモードによって異なります。 たとえば、HTTP トランスポートを使用して、トランスポート モードを選択する場合、基本、ダイジェストなどのいくつかの選択肢があります (トランスポートの[!INCLUDE[crabout](../../../includes/crabout-md.md)] については、「 [Understanding HTTP Authentication](../../../docs/framework/wcf/feature-details/understanding-http-authentication.md)」を参照してください)。  
+ クライアントの認証が必要なサービスを作成している場合、クライアント資格情報の種類の選択肢は、選択したトランスポートとモードによって異なります。 たとえば、HTTP トランスポートを使用して、トランスポート モードを選択する場合、基本、ダイジェストなどのいくつかの選択肢があります (これらの詳細については、資格情報の種類を参照してください[Understanding HTTP 認証](../../../docs/framework/wcf/feature-details/understanding-http-authentication.md))。  
   
  Windows ドメインで、そのネットワークの他のユーザーだけが利用できるサービスを作成している場合、最も使いやすいのは、Windows クライアント資格情報の種類です。 ただし、場合によっては、サービスにも証明書を提供する必要があります。 詳細については、「 [How to: Specify Client Credential Values](../../../docs/framework/wcf/how-to-specify-client-credential-values.md)」を参照してください。  
   
@@ -109,7 +109,7 @@ ms.lasthandoff: 04/28/2018
  反対に、クライアントでは、ID はサービスを検証するために使用されます。 デザイン時に、クライアントの開発者が設定できます、 [ \<identity >](../../../docs/framework/configure-apps/file-schema/wcf/identity.md)要素をサービスから取得した値にします。 実行時に、クライアントは、要素の値をサービスの実際の ID と照合してチェックします。 チェックが失敗した場合、クライアントは通信を終了します。 特定のユーザー ID でサービスを実行している場合の値はユーザー プリンシパル名 (UPN) で、コンピューター アカウントでサービスを実行している場合の値はサービス プリンシパル名 (SPN) です。 詳細については、次を参照してください。[サービス Id と認証](../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)です。 資格情報には、証明書、つまり証明書を識別する証明書内のフィールドも使用できます。  
   
 ## <a name="protection-levels"></a>保護レベル  
- `ProtectionLevel` プロパティは、 <xref:System.ServiceModel.ServiceContractAttribute> クラス、 <xref:System.ServiceModel.OperationContractAttribute> クラスなどのいくつかの属性クラスで使用します。 保護レベルは、サービスをサポートするメッセージ (またはメッセージ部分) が署名されるのか、署名および暗号化されるのか、または署名と暗号化なしで送信されるのかを指定する値です。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] プロパティを参照してください[について保護レベル](../../../docs/framework/wcf/understanding-protection-level.md)、プログラミング例については、次を参照してください。 および[する方法: ProtectionLevel プロパティを設定](../../../docs/framework/wcf/how-to-set-the-protectionlevel-property.md)です。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] を使用してサービス コントラクトを設計する方法の `ProtectionLevel` については、「 [Designing Service Contracts](../../../docs/framework/wcf/designing-service-contracts.md)に依存します。  
+ `ProtectionLevel` プロパティは、 <xref:System.ServiceModel.ServiceContractAttribute> クラス、 <xref:System.ServiceModel.OperationContractAttribute> クラスなどのいくつかの属性クラスで使用します。 保護レベルは、サービスをサポートするメッセージ (またはメッセージ部分) が署名されるのか、署名および暗号化されるのか、または署名と暗号化なしで送信されるのかを指定する値です。 プロパティの詳細については、次を参照してください。[について保護レベル](../../../docs/framework/wcf/understanding-protection-level.md)、プログラミング例については、次を参照してください。 および[する方法: ProtectionLevel プロパティを設定](../../../docs/framework/wcf/how-to-set-the-protectionlevel-property.md)です。 サービス コントラクトの設計の詳細については、`ProtectionLevel`コンテキストでは、次を参照してください。[サービス コントラクトの設計](../../../docs/framework/wcf/designing-service-contracts.md)です。  
   
 ## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel>  

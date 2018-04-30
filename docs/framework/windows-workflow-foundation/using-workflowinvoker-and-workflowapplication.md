@@ -14,14 +14,14 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: af520c1520f605d34076e6ecabdf84deb52fbfd0
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: d0b12fc6c91f57ec49050a0a37b16f64d0e54e6d
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="using-workflowinvoker-and-workflowapplication"></a>WorkflowInvoker と WorkflowApplication の使用
-Windows Workflow Foundation (WF) は、ワークフローのホスティングのいくつかのメソッドを提供します。 <xref:System.Activities.WorkflowInvoker> は、メソッド呼び出しのようにワークフローを呼び出す簡単な方法を提供し、永続化を使用しないワークフローのみに使用できます。 <xref:System.Activities.WorkflowApplication> は、ライフサイクル イベントの通知、実行制御、ブックマークの再開、および永続化を含むワークフローを実行するための豊富なモデルを提供します。 <xref:System.ServiceModel.Activities.WorkflowServiceHost> は、メッセージング アクティビティをサポートし、主にワーク フロー サービスと一緒に使用されます。 このトピックでは、<xref:System.Activities.WorkflowInvoker> と <xref:System.Activities.WorkflowApplication> を使用したワークフロー ホスティングついて説明します。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] ワークフローのホスティング<xref:System.ServiceModel.Activities.WorkflowServiceHost>を参照してください[ワークフロー サービス](../../../docs/framework/wcf/feature-details/workflow-services.md)と[ワークフロー サービスの概要をホストしている](../../../docs/framework/wcf/feature-details/hosting-workflow-services-overview.md)です。  
+Windows Workflow Foundation (WF) は、ワークフローのホスティングのいくつかのメソッドを提供します。 <xref:System.Activities.WorkflowInvoker> は、メソッド呼び出しのようにワークフローを呼び出す簡単な方法を提供し、永続化を使用しないワークフローのみに使用できます。 <xref:System.Activities.WorkflowApplication> は、ライフサイクル イベントの通知、実行制御、ブックマークの再開、および永続化を含むワークフローを実行するための豊富なモデルを提供します。 <xref:System.ServiceModel.Activities.WorkflowServiceHost> は、メッセージング アクティビティをサポートし、主にワーク フロー サービスと一緒に使用されます。 このトピックでは、<xref:System.Activities.WorkflowInvoker> と <xref:System.Activities.WorkflowApplication> を使用したワークフロー ホスティングついて説明します。 ワークフローのホスティングの詳細については<xref:System.ServiceModel.Activities.WorkflowServiceHost>を参照してください[ワークフロー サービス](../../../docs/framework/wcf/feature-details/workflow-services.md)と[ワークフロー サービスの概要をホストしている](../../../docs/framework/wcf/feature-details/hosting-workflow-services-overview.md)です。  
   
 ## <a name="using-workflowinvoker"></a>WorkflowInvoker の使用  
  <xref:System.Activities.WorkflowInvoker> は、メソッドを呼び出すようにワークフローを実行するモデルを提供します。 <xref:System.Activities.WorkflowInvoker> を使用してワークフローを呼び出すには、<xref:System.Activities.WorkflowInvoker.Invoke%2A> メソッドを呼び出し、呼び出すワークフローのワークフロー定義を渡します。 次の例では、<xref:System.Activities.Statements.WriteLine> を使用して <xref:System.Activities.WorkflowInvoker> アクティビティを呼び出します。  
@@ -78,7 +78,7 @@ Windows Workflow Foundation (WF) は、ワークフローのホスティング�
  [!code-csharp[CFX_WorkflowApplicationExample#21](../../../samples/snippets/csharp/VS_Snippets_CFX/cfx_workflowapplicationexample/cs/program.cs#21)]  
   
 > [!NOTE]
->  <xref:System.Activities.WorkflowApplication> と <xref:System.Activities.WorkflowInvoker> は入力引数の辞書を取得し、`out` 引数の辞書を返します。 これらの辞書のパラメーター、プロパティ、および戻り値は `IDictionary<string, object>` 型です。 渡される辞書クラスの実際のインスタンスには、`IDictionary<string, object>` を実装した任意のクラスを使用できます。 これらの例では、`Dictionary<string, object>` が使用されています。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] ディクショナリを参照してください<xref:System.Collections.Generic.IDictionary%602>と<xref:System.Collections.Generic.Dictionary%602>です。  
+>  <xref:System.Activities.WorkflowApplication> と <xref:System.Activities.WorkflowInvoker> は入力引数の辞書を取得し、`out` 引数の辞書を返します。 これらの辞書のパラメーター、プロパティ、および戻り値は `IDictionary<string, object>` 型です。 渡される辞書クラスの実際のインスタンスには、`IDictionary<string, object>` を実装した任意のクラスを使用できます。 これらの例では、`Dictionary<string, object>` が使用されています。 ディクショナリの詳細については、次を参照してください。<xref:System.Collections.Generic.IDictionary%602>と<xref:System.Collections.Generic.Dictionary%602>です。  
   
 ### <a name="passing-data-into-a-running-workflow-using-bookmarks"></a>ブックマークを使用した実行中のワークフローへのデータの受け渡し  
  ブックマークは、アクティビティが再開されるのを受動的に待機するメカニズムです。また、実行中のワークフロー インスタンスにデータを渡すメカニズムでもあります。 次の例に示すように、アクティビティがデータを待機している場合、<xref:System.Activities.Bookmark> を作成し、<xref:System.Activities.Bookmark> が再開されたときに呼び出されるコールバック メソッドを登録します。  

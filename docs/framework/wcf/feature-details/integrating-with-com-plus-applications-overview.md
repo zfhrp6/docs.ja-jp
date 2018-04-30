@@ -1,27 +1,29 @@
 ---
-title: "COM+ アプリケーションとの統合の概要"
-ms.custom: 
+title: COM+ アプリケーションとの統合の概要
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - Windows Communication Foundation, COM+ integration
 - WCF, COM+ integration
 ms.assetid: e481e48f-7096-40eb-9f20-7f0098412941
-caps.latest.revision: "29"
+caps.latest.revision: 29
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 0fbed530a1b968bb049ee20262eb2b8fa9ba13c2
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 3c723bda93feac3eef18f302ab0c8ec7c702eb7a
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="integrating-with-com-applications-overview"></a>COM+ アプリケーションとの統合の概要
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] は分散アプリケーションを作成するための有用な環境を提供します。 COM+ でホストされるコンポーネント ベースのアプリケーション ロジックを既に使用している場合は、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を使用すると、既存のロジックを修正することなく拡張することができます。 既存の COM+ サービスまたはエンタープライズ サービスの業務ロジックを、Web サービスを介して公開する場合に役立ちます。  
@@ -51,9 +53,9 @@ ms.lasthandoff: 12/22/2017
   
 2.  適切なホスティング モードを選択します。  
   
-3.  COM+ サービス モデル構成ツール (ComSvcConfig.exe) を使用して、当該インターフェイスを公開するための Web サービスを追加します。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]ComSvcConfig.exe を使用して、表示する方法[する方法: COM + サービス モデルの構成ツールを使用して](../../../../docs/framework/wcf/feature-details/how-to-use-the-com-service-model-configuration-tool.md)です。  
+3.  COM+ サービス モデル構成ツール (ComSvcConfig.exe) を使用して、当該インターフェイスを公開するための Web サービスを追加します。 ComSvcConfig.exe を使用する方法の詳細については、次を参照してください。[する方法: COM + サービス モデルの構成ツールを使用して](../../../../docs/framework/wcf/feature-details/how-to-use-the-com-service-model-configuration-tool.md)です。  
   
-4.  アプリケーション構成ファイルで、追加のサービス設定を構成します。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]参照してください、コンポーネントを構成する方法[する方法: COM + サービス設定の構成](../../../../docs/framework/wcf/feature-details/how-to-configure-com-service-settings.md)です。  
+4.  アプリケーション構成ファイルで、追加のサービス設定を構成します。 コンポーネントを構成する方法の詳細については、次を参照してください。[する方法: COM + サービス設定の構成](../../../../docs/framework/wcf/feature-details/how-to-configure-com-service-settings.md)です。  
   
 ## <a name="supported-interfaces"></a>公開可能なインターフェイス  
  Web サービスとして公開できるインターフェイスの種類に関して、いくつか制約があります。 次のようなインターフェイスは公開できません。  
@@ -112,5 +114,5 @@ ms.lasthandoff: 12/22/2017
   
  COM+ のプロセス リサイクル機能は、統合アプリケーションでは使えません。 アプリケーションがこの機能を使用するよう設定されている場合、コンポーネントが COM+ ホスト プロセスとして動作していると、サービスを起動できません。 "Web ホスト (インプロセス)" モードであれば、プロセス リサイクル設定は適用されないので問題ありません。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [COM アプリケーションとの統合の概要](../../../../docs/framework/wcf/feature-details/integrating-with-com-applications-overview.md)

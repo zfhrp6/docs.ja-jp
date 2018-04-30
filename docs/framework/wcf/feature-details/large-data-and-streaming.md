@@ -16,11 +16,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: b37af67a3deeed4e55939ff1c1baf73752233e94
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: e367c11b48e6f4034afb1f42ded3498d748848a7
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="large-data-and-streaming"></a>大規模データとストリーミング
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] は、XML ベースの通信インフラストラクチャです。 XML データがで定義されている標準のテキスト形式でエンコードされたよくあるため、 [XML 1.0 仕様](http://go.microsoft.com/fwlink/?LinkId=94838)接続されている、システムの開発者と設計者が通常懸念送信されたメッセージのワイヤのフット プリント (またはサイズ) 間でネットワーク、および XML のテキストに基づくエンコーディングのバイナリ データの効率的な転送特殊な課題を招きます。  
@@ -246,7 +246,7 @@ public class UploadStreamMessage
   
  そのため、この場合は、受信メッセージの最大サイズを制限するだけでは不十分です。 `MaxBufferSize` がバッファーするメモリを制限するには、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] プロパティが必要です。 ストリーミングを使用する場合は、これを安全な値に設定する (または既定値のままにしておく) ことが重要です。 たとえば、サービスでは、サイズが 4 GB までのファイルを受信し、それをローカル ディスクに格納する必要があるとします。 また、一度に 64 KB のデータしかバッファーできないようにメモリが制限されているとします。 その場合、`MaxReceivedMessageSize` を 4 GB、`MaxBufferSize` を 64 KB に設定します。 また、サービス実装において、64 KB ずつ受信ストリームから読み取り、前のデータがディスクに書き込まれ、メモリから破棄されるまで次のデータを読み取らないようにする必要があります。  
   
- このクォータは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] によって行われるバッファーのみを制限するものであり、独自のサービスまたはクライアント実装で行われるバッファーからは保護できないことを理解しておくことも重要です。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] 追加のセキュリティの考慮事項を参照してください[データのセキュリティに関する考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md)です。  
+ このクォータは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] によって行われるバッファーのみを制限するものであり、独自のサービスまたはクライアント実装で行われるバッファーからは保護できないことを理解しておくことも重要です。 追加のセキュリティに関する考慮事項の詳細については、次を参照してください。[データのセキュリティに関する考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md)です。  
   
 > [!NOTE]
 >  バッファー転送とストリーミング転送のどちらを使用するかは、エンドポイントごとにローカルに決定します。 HTTP トランスポートの場合、転送モードは、接続、つまりプロキシ サーバーなどの中継局に伝達されません。 転送モードの設定は、サービス インターフェイスの記述に反映されません。 サービスに対して [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントを生成した後、ストリーミング転送で使用する予定のサービスの構成ファイルを編集し、転送モードを設定する必要があります。 TCP トランスポートと名前付きパイプ トランスポートの場合、転送モードはポリシー アサーションとして伝達されます。  

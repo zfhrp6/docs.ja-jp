@@ -1,24 +1,26 @@
 ---
-title: "長時間のワークフロー サービスの作成"
-ms.custom: 
+title: 長時間のワークフロー サービスの作成
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 4c39bd04-5b8a-4562-a343-2c63c2821345
-caps.latest.revision: "9"
+caps.latest.revision: 9
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 94a62a54fb138e394d8e9fa944e49e6526ae7152
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 1cd7cc70c50ac2aa56d8cca55037769aa0b6a64a
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="creating-a-long-running-workflow-service"></a>長時間のワークフロー サービスの作成
 ここでは、実行時間の長いワークフロー サービスを作成する方法について説明します。 実行時間の長いワークフロー サービスは、長期間にわたって実行できます。 ワークフローでは、いくつかの追加情報を待つ間アイドル状態になることがあります。 アイドル状態になると、ワークフローは SQL データベースに永続化され、メモリから削除されます。 追加情報が使用可能になると、ワークフロー インスタンスがメモリに読み込み直されて、実行を継続します。  このシナリオでは、非常に簡略化された注文システムを実装します。  クライアントは、最初のメッセージをワークフロー サービスに送信して注文を開始します。 ワークフロー サービスは、注文 ID をクライアントに返します。 この時点で、ワークフロー サービスは、クライアントからの別のメッセージを待機しており、アイドル状態に入って、SQL Server データベースに永続化されます。  クライアントが次のメッセージを送信して項目を注文すると、ワークフロー サービスはメモリに読み込み直されて、注文の処理を終了します。 次のコード例では、項目が注文に追加されたことを示す文字列を返します。 このコード例は、テクノロジの実際の適用を意図するものではなく、実行時間の長いワークフロー サービスを示す簡単な例です。 このトピックでは、[!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] のプロジェクトおよびソリューションの作成方法を理解していることを前提としています。  
@@ -82,9 +84,9 @@ ms.lasthandoff: 12/22/2017
   
          ![Receive アクティビティのプロパティの設定](../../../../docs/framework/wcf/feature-details/media/setreceiveproperties.png "SetReceiveProperties")  
   
-         DisplayName プロパティは、デザイナーに表示される Receive アクティビティの名前を設定します。 ServiceContractName プロパティと OperationName プロパティは、Receive アクティビティで実装されるサービス コントラクトおよび操作の名前を指定します。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]サービスのワークフローでコントラクトを使用する方法を参照してください[ワークフロー内のコントラクトの使用](../../../../docs/framework/wcf/feature-details/using-contracts-in-workflow.md)です。  
+         DisplayName プロパティは、デザイナーに表示される Receive アクティビティの名前を設定します。 ServiceContractName プロパティと OperationName プロパティは、Receive アクティビティで実装されるサービス コントラクトおよび操作の名前を指定します。 ワークフロー サービスでのコントラクトの使用方法の詳細については、次を参照してください。[ワークフロー内のコントラクトの使用](../../../../docs/framework/wcf/feature-details/using-contracts-in-workflow.md)です。  
   
-    2.  クリックして、**を定義しています.**内のリンク、 **ReceiveStartOrder**アクティビティし、次の図に示すようにプロパティを設定します。  注意して、**パラメーター**ラジオ ボタンが選択されている、という名前のパラメーター`p_customerName`にバインドされて、`customerName`変数。 これにより、構成、**受信**アクティビティをいくつかのデータを受け取り、そのデータをローカル変数にバインドします。  
+    2.  クリックして、**を定義しています.** 内のリンク、 **ReceiveStartOrder**アクティビティし、次の図に示すようにプロパティを設定します。  注意して、**パラメーター**ラジオ ボタンが選択されている、という名前のパラメーター`p_customerName`にバインドされて、`customerName`変数。 これにより、構成、**受信**アクティビティをいくつかのデータを受け取り、そのデータをローカル変数にバインドします。  
   
          ![Receive アクティビティが受信データの設定](../../../../docs/framework/wcf/feature-details/media/setreceivecontent.png "SetReceiveContent")  
   
@@ -92,7 +94,7 @@ ms.lasthandoff: 12/22/2017
   
          ![SendReply アクティビティのプロパティを設定](../../../../docs/framework/wcf/feature-details/media/setreplyproperties.png "SetReplyProperties")  
   
-    4.  クリックして、**を定義しています.**内のリンク、 **SendReplyToStartOrder**アクティビティし、次の図に示すようにプロパティを設定します。 注意して、**パラメーター**ラジオ ボタンが選択されている以外の場合は、パラメーターと呼ばれる`p_orderId`にバインドされて、`orderId`変数。 この設定により、SendReplyToStartOrder アクティビティが型文字列の値を呼び出し元に返すように指定されます。  
+    4.  クリックして、**を定義しています.** 内のリンク、 **SendReplyToStartOrder**アクティビティし、次の図に示すようにプロパティを設定します。 注意して、**パラメーター**ラジオ ボタンが選択されている以外の場合は、パラメーターと呼ばれる`p_orderId`にバインドされて、`orderId`変数。 この設定により、SendReplyToStartOrder アクティビティが型文字列の値を呼び出し元に返すように指定されます。  
   
          ![SendReply アクティビティのコンテンツ データの構成](../../../../docs/framework/wcf/feature-details/media/setreplycontent.png "SetReplyContent")  
   
@@ -102,7 +104,7 @@ ms.lasthandoff: 12/22/2017
   
          これにより、新しい注文 ID が作成され、orderId 変数に値が配置されます。  
   
-    6.  選択、 **ReplyToStartOrder**アクティビティ。 プロパティ ウィンドウで省略記号ボタンをクリックして**CorrelationInitializers**です。 選択、**初期化子の追加**リンクで、入力`orderIdHandle`初期化子のテキスト ボックスで、関連付けの種類のクエリ関連付け初期化子を選択し、XPATH クエリ ボックスの p_orderId を選択します。 これらの設定を次の図に示します。 **[OK]**をクリックします。  これにより、クライアントとワークフロー サービスのこのインスタンス間の相関関係が初期化されます。 この注文 ID を含むメッセージが受信されると、ワークフロー サービスのこのインスタンスにルーティングされます。  
+    6.  選択、 **ReplyToStartOrder**アクティビティ。 プロパティ ウィンドウで省略記号ボタンをクリックして**CorrelationInitializers**です。 選択、**初期化子の追加**リンクで、入力`orderIdHandle`初期化子のテキスト ボックスで、関連付けの種類のクエリ関連付け初期化子を選択し、XPATH クエリ ボックスの p_orderId を選択します。 これらの設定を次の図に示します。 **[OK]** をクリックします。  これにより、クライアントとワークフロー サービスのこのインスタンス間の相関関係が初期化されます。 この注文 ID を含むメッセージが受信されると、ワークフロー サービスのこのインスタンスにルーティングされます。  
   
          ![関連付け初期化子を追加する](../../../../docs/framework/wcf/feature-details/media/addcorrelationinitializers.png "AddCorrelationInitializers")  
   
@@ -116,17 +118,17 @@ ms.lasthandoff: 12/22/2017
   
          ![Receive アクティビティのプロパティを設定](../../../../docs/framework/wcf/feature-details/media/setreceiveproperties2.png "SetReceiveProperties2")  
   
-    3.  クリックして、**を定義しています.**内のリンク、 **ReceiveAddItem**アクティビティし、次の図に示すようにパラメーターを追加します。 これにより、receive アクティビティを、注文 ID、および注文されている項目の ID の 2 つのパラメーターを受け入れるように、構成します。  
+    3.  クリックして、**を定義しています.** 内のリンク、 **ReceiveAddItem**アクティビティし、次の図に示すようにパラメーターを追加します。 これにより、receive アクティビティを、注文 ID、および注文されている項目の ID の 2 つのパラメーターを受け入れるように、構成します。  
   
          ![2 番目のパラメーターを受信](../../../../docs/framework/wcf/feature-details/media/addreceive2parameters.png "AddReceive2Parameters")  
   
-    4.  クリックして、 **CorrelateOn**省略記号ボタンをクリックし、入力`orderIdHandle`です。 **XPath クエリ**ドロップダウン矢印をクリックし、選択`p_orderId`です。 これにより、2 つ目の Receive アクティビティに相関関係が設定されます。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]相関関係を参照してください[相関](../../../../docs/framework/wcf/feature-details/correlation.md)です。  
+    4.  クリックして、 **CorrelateOn**省略記号ボタンをクリックし、入力`orderIdHandle`です。 **XPath クエリ**ドロップダウン矢印をクリックし、選択`p_orderId`です。 これにより、2 つ目の Receive アクティビティに相関関係が設定されます。 相関関係の詳細については、次を参照してください。[相関](../../../../docs/framework/wcf/feature-details/correlation.md)です。  
   
          ![CorrelatesOn プロパティの設定](../../../../docs/framework/wcf/feature-details/media/correlateson.png "CorrelatesOn")  
   
     5.  ドラッグ アンド ドロップ、**場合**アクティビティの直後に、 **ReceiveAddItem**アクティビティ。 このアクティビティは、if ステートメントと同様に動作します。  
   
-        1.  設定、**条件**プロパティ`itemId=="Zune HD" (itemId="Zune HD" for Visual Basic)`  
+        1.  設定、**条件**プロパティ `itemId=="Zune HD" (itemId="Zune HD" for Visual Basic)`  
   
         2.  ドラッグ アンド ドロップ、**割り当てる**アクティビティを**し**セクションと、 **Else**セクションのプロパティを設定する、**割り当てる**次の図に示すように処理します。  
   
@@ -138,7 +140,7 @@ ms.lasthandoff: 12/22/2017
   
              ![SendReply アクティビティのプロパティを設定](../../../../docs/framework/wcf/feature-details/media/setreply2properties.png "SetReply2Properties")  
   
-        4.  クリックして、**を定義しています.**内のリンク、 **SetReplyToAddItem**アクティビティし、次の図に示すように構成します。 これにより、構成、 **SendReplyToAddItem**で値を返すアクティビティ、`orderResult`変数。  
+        4.  クリックして、**を定義しています.** 内のリンク、 **SetReplyToAddItem**アクティビティし、次の図に示すように構成します。 これにより、構成、 **SendReplyToAddItem**で値を返すアクティビティ、`orderResult`変数。  
   
              ![SendReply アクティビティのデータ バインディング設定](../../../../docs/framework/wcf/feature-details/media/replytoadditemcontent.gif "ReplyToAddItemContent")  
   
@@ -209,5 +211,5 @@ ms.lasthandoff: 12/22/2017
     Sending add item messageService returned: Item added to orderPress any key to continue . . .  
     ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ワークフロー サービス](../../../../docs/framework/wcf/feature-details/workflow-services.md)

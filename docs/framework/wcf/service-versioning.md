@@ -1,26 +1,26 @@
 ---
-title: "サービスのバージョン管理"
-ms.custom: 
+title: サービスのバージョン管理
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 37575ead-d820-4a67-8059-da11a2ab48e2
-caps.latest.revision: 
+caps.latest.revision: 19
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 791e201907f72f9d590f6d835fd6ec1bfc25633f
-ms.sourcegitcommit: 15316053918995cc1380163a7d7e7edd5c44e6d7
+ms.openlocfilehash: fef65a4134f1cf526a7082b08aa4d8d1c6ea7f4d
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/19/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="service-versioning"></a>サービスのバージョン管理
 ビジネス ニーズの変化、情報テクノロジの要件、その他の問題への対処などのさまざまな理由により、サービスの初期導入後と、場合によっては有効期間中に数回、サービス (およびサービスが公開するエンドポイント) を変更することが必要になる場合があります。 変更が発生するたびに、新しいバージョンのサービスが導入されます。 ここでは、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] でのバージョン管理の考え方について説明します。  
@@ -138,7 +138,7 @@ ms.lasthandoff: 03/19/2018
  クライアントが新しいエンドポイント アドレスまたはバインディングを動的に検出できない場合、エンドポイント アドレスとバインディングの変更は互換性に影響する変更です。 新しいエンドポイントまたはバインディングを動的に検出する機能を実装する 1 つの方法として、クライアントがエンドポイントとの通信を試みるときに、UDDI (Universal Discovery Description and Integration) レジストリと UDDI 呼び出しパターンを使用します。エラーが発生した場合、現在のエンドポイントのメタデータについて既知の UDDI レジストリに照会します。 クライアントは、このメタデータからアドレスとバインディングを使用して、エンドポイントと通信を行います。 この通信が成功した場合、クライアントは今後使用できるように、そのアドレスとバインディングをキャッシュします。  
   
 ## <a name="routing-service-and-versioning"></a>ルーティング サービスとバージョン管理  
- サービスに対して行った変更が互換性に影響するもので、複数の異なるバージョンのサービスを同時に実行する必要がある場合、WCF ルーティング サービスを使用して、メッセージを適切なサービス インスタンスにルーティングすることができます。 WCF ルーティング サービスは、メッセージの内容に基づくルーティングを使用します。つまり、メッセージ内に含まれる情報に応じて、そのメッセージのルーティング先が特定されます。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] WCF ルーティング サービスを参照してください[ルーティング サービス](../../../docs/framework/wcf/feature-details/routing-service.md)です。 サービスのバージョン管理の WCF ルーティング サービスを使用する方法の例については、次を参照してください。[操作方法: サービスのバージョン管理](../../../docs/framework/wcf/feature-details/how-to-service-versioning.md)です。  
+ サービスに対して行った変更が互換性に影響するもので、複数の異なるバージョンのサービスを同時に実行する必要がある場合、WCF ルーティング サービスを使用して、メッセージを適切なサービス インスタンスにルーティングすることができます。 WCF ルーティング サービスは、メッセージの内容に基づくルーティングを使用します。つまり、メッセージ内に含まれる情報に応じて、そのメッセージのルーティング先が特定されます。 WCF ルーティング サービス参照の詳細については[ルーティング サービス](../../../docs/framework/wcf/feature-details/routing-service.md)です。 サービスのバージョン管理の WCF ルーティング サービスを使用する方法の例については、次を参照してください。[操作方法: サービスのバージョン管理](../../../docs/framework/wcf/feature-details/how-to-service-versioning.md)です。  
   
 ## <a name="appendix"></a>付録  
  厳密なバージョン管理が必要な場合、データ コントラクトのバージョン管理の一般的なガイダンスは、データ コントラクトを変更不可として扱い、変更が必要な場合は新しいデータ コントラクトを作成することです。 新しいデータ コントラクトごとに新しいクラスを作成する必要があります。したがって、古いデータ コントラクト クラスの観点で作成された既存のコードを取得し、新しいデータ コントラクト クラスの観点でコードを書き換える必要がないようにするための方法が必要となります。  

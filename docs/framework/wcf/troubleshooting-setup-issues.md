@@ -1,24 +1,26 @@
 ---
-title: "セットアップに関する問題のトラブルシューティング"
-ms.custom: 
+title: セットアップに関する問題のトラブルシューティング
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 1644f885-c408-4d5f-a5c7-a1a907bc8acd
-caps.latest.revision: "15"
+caps.latest.revision: 15
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 284805f8ca1fb9778dc6bccd9807fa86dc7e2d77
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 9238c1a1c9092e6806ee941bd7c992071cf98e09
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="troubleshooting-setup-issues"></a>セットアップに関する問題のトラブルシューティング
 ここでは、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] セットアップ問題のトラブルシューティングの方法について説明します。  
@@ -36,7 +38,7 @@ ms.lasthandoff: 12/22/2017
   
 -   HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\MSDTC Bridge 3.0.0.0  
   
- 起動した .NET Framework 3.0 インストーラーを使用して修復を実行する場合、キーが再作成されません、**プログラムの追加/削除**アプレットを**コントロール パネルの** です。 これらのキーを正しく再作成するには、.NET Framework 3.0 をアンインストール後、再インストールする必要があります。  
+ 起動した .NET Framework 3.0 インストーラーを使用して修復を実行する場合、キーが再作成されません、**プログラムの追加/削除**アプレットを**コントロール パネルの **です。 これらのキーを正しく再作成するには、.NET Framework 3.0 をアンインストール後、再インストールする必要があります。  
   
 ## <a name="wmi-service-corruption-blocks-installation-of-the-windows-communication-foundation-wmi-provider-during-installation-of-net-framework-30-package"></a>WMI サービスの破損により .NET Framework 3.0 パッケージのインストール中に Windows Communication Foundation WMI プロバイダーのインストールがブロックされる  
  WMI サービスの破損により、Windows Communication Foundation WMI プロバイダーのインストールがブロックされることがあります。 インストール中、Windows Communication Foundation インストーラーは mofcomp.exe コンポーネントを使用して WCF .mof ファイルを登録できません。 発生する現象を次に示します。  
@@ -63,7 +65,7 @@ ms.lasthandoff: 12/22/2017
   
  上で説明した問題を解決するためには、次の手順を実行する必要があります。  
   
-1.  実行[WMI 診断ユーティリティ、バージョン 2.0](http://go.microsoft.com/fwlink/?LinkId=94685) WMI サービスを修復します。 [!INCLUDE[crabout](../../../includes/crabout-md.md)]このツールを使用して参照してください、 [WMI 診断ユーティリティ](http://go.microsoft.com/fwlink/?LinkId=94686)トピックです。  
+1.  実行[WMI 診断ユーティリティ、バージョン 2.0](http://go.microsoft.com/fwlink/?LinkId=94685) WMI サービスを修復します。 詳細については、このツールを使用して、次を参照してください。、 [WMI 診断ユーティリティ](http://go.microsoft.com/fwlink/?LinkId=94686)トピックです。  
   
  使用して .NET Framework 3.0 のインストールを修復、**プログラムの追加/削除**内にあるアプレット**コントロール パネル**、または .NET Framework 3.0 のアンインストール/再インストールします。  
   
@@ -84,5 +86,5 @@ ms.lasthandoff: 12/22/2017
 aspnet_regiis.exe -i -enable  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [セットアップ手順](../../../docs/framework/wcf/samples/set-up-instructions.md)

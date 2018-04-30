@@ -18,11 +18,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 7b051cdeebf83b34b6e503d8d9cb54a38a46a2a6
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 989ae3d70bce2a4cb374904ee6b2f30f770ccf8a
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="choosing-a-transport"></a>トランスポートの選択
 ここでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] に用意されている HTTP、TCP、名前付きパイプという 3 つの主なトランスポートの中から、1 つのトランスポートを選択する基準について説明します。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、メッセージ キュー (MSMQ とも呼ばれます) トランスポートも用意されていますが、ここではメッセージ キューについては説明しません。  
@@ -39,7 +39,7 @@ ms.lasthandoff: 04/28/2018
  ここでは、3 つの主なトランスポートの中から 1 つを選択する主な理由について説明します。また、トランスポートの選択に使用できる詳細な表も記載しています。  
   
 ### <a name="when-to-use-http-transport"></a>HTTP トランスポートを使用する状況  
- HTTP は、クライアントとサーバー間の要求/応答プロトコルです。 最も一般的なアプリケーションは、Web サーバーと通信する Web ブラウザー クライアントで構成されます。 クライアントは、クライアントの要求メッセージをリッスンしているサーバーに要求を送信します。 サーバーは要求を受信すると、要求のステータスを含んだ応答を返します。 成功した場合は、Web ページ、エラー メッセージ、その他の情報など、任意のデータが返されます。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] HTTP プロトコルを参照してください[HTTP - ハイパー テキスト転送プロトコル](http://go.microsoft.com/fwlink/?LinkId=94858)です。  
+ HTTP は、クライアントとサーバー間の要求/応答プロトコルです。 最も一般的なアプリケーションは、Web サーバーと通信する Web ブラウザー クライアントで構成されます。 クライアントは、クライアントの要求メッセージをリッスンしているサーバーに要求を送信します。 サーバーは要求を受信すると、要求のステータスを含んだ応答を返します。 成功した場合は、Web ページ、エラー メッセージ、その他の情報など、任意のデータが返されます。 HTTP プロトコルの詳細については、次を参照してください。 [HTTP - ハイパー テキスト転送プロトコル](http://go.microsoft.com/fwlink/?LinkId=94858)です。  
   
  HTTP プロトコルは、接続ベースではありません。応答の送信後、状態は維持されません。 複数ページ トランザクションを処理するには、アプリケーションが、必要な状態を維持する必要があります。  
   

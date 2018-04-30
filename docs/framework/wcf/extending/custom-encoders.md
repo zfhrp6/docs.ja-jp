@@ -1,24 +1,26 @@
 ---
-title: "カスタム エンコーダー"
-ms.custom: 
+title: カスタム エンコーダー
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: fa0e1d7f-af36-4bf4-aac9-cd4eab95bc4f
-caps.latest.revision: "15"
+caps.latest.revision: 15
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: f1c8223ea7900ba0a89ee2c5c48895a1782d18a0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 90926fd334eb5ccef3a63f637d5273c408c0c13e
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="custom-encoders"></a>カスタム エンコーダー
 このトピックでは、カスタム エンコーダーを作成する方法について説明します。  
@@ -34,7 +36,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="system-provided-encoders"></a>システム指定のエンコーダー  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、最も一般的なアプリケーション シナリオに合わせて設計されたシステム既定のバインディングがいくつか用意されています。 これらのバインディングは、それぞれトランスポート、メッセージ エンコーダー、その他のオプション (セキュリティなど) を組み合わせます。 このトピックでは、`Text` に含まれる `Binary`、`MTOM`、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] メッセージ エンコーダーの拡張方法、つまり独自のカスタム エンコーダーの作成方法について説明します。 テキスト メッセージ エンコーダーは、通常の XML のエンコーディングに加えて、SOAP のエンコーディングもサポートします。 テキスト メッセージ エンコーダーの通常の XML エンコーディング モードは、テキスト ベースの SOAP エンコーディングと区別するために、POX ("Plain Old XML") エンコーダーと呼ばれます。  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]システム指定のバインディングによって提供されるバインディング要素の組み合わせに対応するセクションを参照してください[トランスポート選択](../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)です。  
+ システム指定のバインディングによって提供されるバインディング要素の組み合わせの詳細については、対応するセクションを参照してください。[トランスポート選択](../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)です。  
   
 ## <a name="how-to-work-with-system-provided-encoders"></a>システム標準のエンコーダーの操作方法  
  エンコーディングは、<xref:System.ServiceModel.Channels.MessageEncodingBindingElement> からの派生クラスを使用してバインディングに追加します。  
@@ -45,7 +47,7 @@ ms.lasthandoff: 12/22/2017
   
 -   <xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement> : バイナリベースの XML メッセージで使用される、文字エンコーディングおよびメッセージのバージョン管理を指定するバインド要素を表します。 これは最も効率的なエンコーディング オプションですが、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] エンドポイントでしかサポートされないため、相互運用性は最も低くなります。  
   
--   <<!--zz xref:System.ServiceModel.Channels.MTOMMessageEncodingBindingElement -->`System.ServiceModel.Channels.MTOMMessageEncodingBindingElement`>: メッセージ Transmission Optimization Mechanism (MTOM) エンコーディングを使用してメッセージに使用するメッセージ バージョン管理および文字エンコーディングを指定するバインド要素を表します。 MTOM は、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] メッセージでのバイナリ データの転送に有効なテクノロジです。 MTOM エンコーダーは、効率と相互運用性のバランスをとろうとします。 MTOM エンコーディングは、ほとんどの XML をテキスト形式で転送しますが、大きいサイズのバイナリ データ ブロックはテキストに変換せずにそのまま転送することによって最適化します。  
+-   <<!--zz xref:System.ServiceModel.Channels.MTOMMessageEncodingBindingElement --> `System.ServiceModel.Channels.MTOMMessageEncodingBindingElement`>: メッセージ Transmission Optimization Mechanism (MTOM) エンコーディングを使用してメッセージに使用するメッセージ バージョン管理および文字エンコーディングを指定するバインド要素を表します。 MTOM は、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] メッセージでのバイナリ データの転送に有効なテクノロジです。 MTOM エンコーダーは、効率と相互運用性のバランスをとろうとします。 MTOM エンコーディングは、ほとんどの XML をテキスト形式で転送しますが、大きいサイズのバイナリ データ ブロックはテキストに変換せずにそのまま転送することによって最適化します。  
   
  バインド要素は、バイナリ、MTOM、またはテキストの <xref:System.ServiceModel.Channels.MessageEncoderFactory> を作成します。 ファクトリは、バイナリ、MTOM、またはテキストの <xref:System.ServiceModel.Channels.MessageEncoderFactory> を作成します。 通常、インスタンスは 1 つだけあります。 ただし、セッションを使用すると、異なるエンコーダーを各セッションに提供できます。 バイナリ エンコーダーでは、これを利用して動的ディクショナリ (XML インフラストラクチャを参照) を調整します。  
   
@@ -102,7 +104,7 @@ ms.lasthandoff: 12/22/2017
   
  提供される 2 つのサンプルがあります[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]サンプル コードでこの処理を示す:[カスタム メッセージ エンコーダー: カスタム テキスト エンコーダー](../../../../docs/framework/wcf/samples/custom-message-encoder-custom-text-encoder.md)と[カスタム メッセージ エンコーダー: 圧縮エンコーダー](../../../../docs/framework/wcf/samples/custom-message-encoder-compression-encoder.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Channels.MessageEncodingBindingElement>  
  <xref:System.ServiceModel.Channels.MessageEncoderFactory>  
  <xref:System.ServiceModel.Channels.MessageEncoder>  

@@ -1,24 +1,26 @@
 ---
-title: "フォーム ポスト"
-ms.custom: 
+title: フォーム ポスト
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: fa6f84f9-2e07-4e3c-92d0-a245308b7dff
-caps.latest.revision: "9"
+caps.latest.revision: 9
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: fe1be9177f3e811a3037377360f46f42904d5af3
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 31d2ebbdb6f899390d7b3af485c1583fb80ae6dc
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="form-post"></a>フォーム ポスト
 このサンプルでは、WCF REST プログラミング モデルを拡張して新しい受信要求形式をサポートする方法を示します。 このサンプルには、要求を HTML フォーム ポストから [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] 型に逆シリアル化できるフォーマッタの実装も含まれています。 また、このサンプルでは T4 テンプレートを使用して、ユーザーが WCF REST サービスにポストバックできる HTML フォームを提供する HTML ページを返します。  
@@ -38,7 +40,7 @@ ms.lasthandoff: 12/22/2017
   
  このコンソール アプリケーション プロジェクトの拡張、[基本的なリソース サービス](../../../../docs/framework/wcf/samples/basic-resource-service.md)サンプルです。 基本的なリソース サービス サンプルは、WCF REST プログラミング モデルを使用してリソースを公開する方法を示しています。 基本的なリソース サービス サンプルでは、コレクション内の顧客を作成、取得、更新、および削除できるように、顧客コレクション リソースが公開されています。 基本的なリソース サービス サンプルでは、ネイティブでサポートされる XML と JSON の 2 つの受信要求形式のみが使用されます。  
   
- このフォーム ポスト サンプルのコンソール アプリケーションでは、HtmlFormProcessing ライブラリのカスタム フォーマッタが使用されるので、ユーザーはブラウザーを使用して HTML フォーム ポストから要求を送信することで顧客を作成できます。 また、このサンプルでは、サービスにポストバックされるフォームを含む HTML ページを返す操作も追加します。 この HTML ページは、事前に処理された T4 テンプレートを使用して生成されます。この T4 テンプレートは .tt ファイルと自動生成された .cs ファイルで構成されます。 開発者は、.tt ファイルを使用して変数と制御構造を含むテンプレート フォームで応答を作成できます。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]T4 を参照してください[を使用してテキスト テンプレートで成果物を生成する](http://go.microsoft.com/fwlink/?LinkId=178139)です。  
+ このフォーム ポスト サンプルのコンソール アプリケーションでは、HtmlFormProcessing ライブラリのカスタム フォーマッタが使用されるので、ユーザーはブラウザーを使用して HTML フォーム ポストから要求を送信することで顧客を作成できます。 また、このサンプルでは、サービスにポストバックされるフォームを含む HTML ページを返す操作も追加します。 この HTML ページは、事前に処理された T4 テンプレートを使用して生成されます。この T4 テンプレートは .tt ファイルと自動生成された .cs ファイルで構成されます。 開発者は、.tt ファイルを使用して変数と制御構造を含むテンプレート フォームで応答を作成できます。 T4 の詳細については、次を参照してください。[を使用してテキスト テンプレートで成果物を生成する](http://go.microsoft.com/fwlink/?LinkId=178139)です。  
   
 #### <a name="to-run-the-sample"></a>サンプルを実行するには  
   

@@ -14,11 +14,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 9a215be76002b9e8fca8ac4a9073885b3b30a97b
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: a36b8a6bdf1a024f4ddee91bd937afac516e391f
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="serializing-workflows-and-activities-to-and-from-xaml"></a>XAML との間のワークフローおよびアクティビティのシリアル化
 ワークフロー定義は、アセンブリに含まれる型にコンパイルされるほか、XAML にシリアル化することもできます。 これらのシリアル化された定義は、編集や検査のために再度読み込んだり、コンパイルのためにビルド システムに渡したり、読み込んで呼び出したりすることができます。 このトピックでは、ワークフロー定義のシリアル化と XAML ワークフロー定義の使用に関する概要について説明します。  
@@ -84,7 +84,7 @@ sw.Close();
  **25 + 15**  
 **40**    
 > [!NOTE]
->  [!INCLUDE[crabout](../../../includes/crabout-md.md)] 複数の入力と出力引数を指定してワークフローを呼び出すを参照してください[を使用して WorkflowInvoker と WorkflowApplication](../../../docs/framework/windows-workflow-foundation/using-workflowinvoker-and-workflowapplication.md)と<xref:System.Activities.WorkflowInvoker.Invoke%2A>です。  
+>  詳細については、入力と出力引数を指定してワークフローを呼び出して、次を参照してください。[を使用して WorkflowInvoker と WorkflowApplication](../../../docs/framework/windows-workflow-foundation/using-workflowinvoker-and-workflowapplication.md)と<xref:System.Activities.WorkflowInvoker.Invoke%2A>です。  
   
  シリアル化されたワークフローに c# 式が含まれている場合、<xref:System.Activities.XamlIntegration.ActivityXamlServicesSettings>インスタンスをその<xref:System.Activities.XamlIntegration.ActivityXamlServicesSettings.CompileExpressions%2A>プロパティに設定`true`へのパラメーターとして渡す必要があります<xref:System.Activities.XamlIntegration.ActivityXamlServices.Load%2A?displayProperty=nameWithType>、それ以外の場合、<xref:System.NotSupportedException>するようなメッセージがスローされます、次の: `Expression Activity type 'CSharpValue`1' を実行するのにはコンパイルを必要とします。  ワークフローがコンパイルされていることを確認してください '。  
   

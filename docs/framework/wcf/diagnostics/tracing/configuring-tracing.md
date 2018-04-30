@@ -18,11 +18,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 2ad8a3a79967c42b8e8afdd9b9d796a7a1dfdd79
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 23dbf9808976496686dfe9d595487110da41730b
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="configuring-tracing"></a>トレースの構成
 ここでは、トレースを有効にする方法、トレースを出力し、トレース レベルを設定するようにトレース ソースを構成する方法、エンドツーエンドのトレース相関をサポートするようにアクティビティ トレースと伝達を設定する方法、およびトレースにアクセスするようにトレース リスナーを設定する方法について説明します。  
@@ -146,7 +146,7 @@ ms.lasthandoff: 04/28/2018
 </system.diagnostics>  
 ```  
   
- [!INCLUDE[crabout](../../../../../includes/crabout-md.md)] ユーザー定義の作成、トレース ソースを参照してください[トレースを拡張する](../../../../../docs/framework/wcf/samples/extending-tracing.md)です。  
+ ユーザー定義のトレース ソースの作成の詳細については、次を参照してください。[トレースを拡張する](../../../../../docs/framework/wcf/samples/extending-tracing.md)です。  
   
 ## <a name="configuring-trace-listeners-to-consume-traces"></a>トレースを使用するためのトレース リスナーの構成  
  [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] は、実行時にトレース データを処理するリスナーにデータを送信します。 [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] は <xref:System.Diagnostics> に出力の形式が異なる複数の定義済みリスナーを提供します。 カスタム リスナーの種類を追加することもできます。  
@@ -187,7 +187,7 @@ ms.lasthandoff: 04/28/2018
   
  `propagateActivity` 属性は、メッセージ交換に参加している他のエンドポイントにアクティビティを伝達する必要があるかどうかを示します。 この値を `true` に設定すると、任意の 2 つのエンドポイントで生成されたトレース ファイルを取得し、一方のエンドポイントのトレース セットがもう一方のエンドポイントのトレース セットにどのように転送されるかを監視できます。  
   
- [!INCLUDE[crabout](../../../../../includes/crabout-md.md)] アクティビティ トレースと伝達を参照してください。[伝達](../../../../../docs/framework/wcf/diagnostics/tracing/propagation.md)です。  
+ アクティビティ トレースと伝達に関する詳細については、次を参照してください。[伝達](../../../../../docs/framework/wcf/diagnostics/tracing/propagation.md)です。  
   
  両方`propagateActivity`と`ActivityTracing`System.ServiceModel TraceSource に適用されるブール値。 `ActivityTracing`値は、任意のトレース ソースにも適用されますを含む[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)]またはユーザー定義のものです。  
   

@@ -16,11 +16,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: ca37e8b3f59875ed912c02d0a8237a040bf79518
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 49ee6091b18dfcf2a5b46c173490b317fe770554
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="deploying-an-internet-information-services-hosted-wcf-service"></a>インターネット インフォメーション サービスでホストされる WCF サービスの配置
 IIS (インターネット インフォメーション サービス) でホストされている [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスの開発と展開には、次のタスクが含まれます。  
@@ -38,7 +38,7 @@ IIS (インターネット インフォメーション サービス) でホス�
  IIS によってホストされる [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスの作成に関する詳細なチュートリアルについては、「 [How to: Host a WCF Service in IIS](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-iis.md)」を参照してください。  
   
 ## <a name="ensure-that-iis-aspnet-and-wcf-are-correctly-installed-and-registered"></a>IIS、ASP.NET、および WCF が正しくインストールおよび登録されていることの確認  
- IIS でホストされる[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]サービスを正常に機能させるには、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 、IIS、および ASP.NET をインストールする必要があります。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ( [!INCLUDE[vstecwinfx](../../../../includes/vstecwinfx-md.md)]の一部として)、ASP.NET、および IIS のインストール手順は、使用しているオペレーティング システムのバージョンによって異なります。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] および [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のインストール [!INCLUDE[vstecwinfx](../../../../includes/vstecwinfx-md.md)]、「 [Microsoft .NET Framework 4.0 (Web インストーラー)](http://go.microsoft.com/fwlink/?LinkId=201185)」を参照してください。 IIS のインストール手順については、「 [IIS のインストール](http://go.microsoft.com/fwlink/?LinkId=201188)」を参照してください。  
+ IIS でホストされる[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]サービスを正常に機能させるには、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 、IIS、および ASP.NET をインストールする必要があります。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ( [!INCLUDE[vstecwinfx](../../../../includes/vstecwinfx-md.md)]の一部として)、ASP.NET、および IIS のインストール手順は、使用しているオペレーティング システムのバージョンによって異なります。 インストールの詳細については[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]と[!INCLUDE[vstecwinfx](../../../../includes/vstecwinfx-md.md)]を参照してください[Microsoft .NET Framework 4 の Web インストーラー](http://go.microsoft.com/fwlink/?LinkId=201185)です。 IIS のインストール手順については、「 [IIS のインストール](http://go.microsoft.com/fwlink/?LinkId=201188)」を参照してください。  
   
  IIS が既にコンピューターにインストールされている場合は、 [!INCLUDE[vstecwinfx](../../../../includes/vstecwinfx-md.md)] のインストール プロセスにより、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] が IIS に自動登録されます。 [!INCLUDE[vstecwinfx](../../../../includes/vstecwinfx-md.md)]の後に IIS をインストールした場合は、追加の手順に従って、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を IIS と [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)]に登録する必要があります。 使用しているオペレーティング システムに応じて、次のように実行します。  
   
@@ -51,9 +51,9 @@ IIS (インターネット インフォメーション サービス) でホス�
  最後に、ASP.NET が .NET Framework Version 4 を使用するように設定されていることを確認する必要があります。 これには、–i オプションを指定して ASPNET_Regiis ツールを実行します。 詳細については、次を参照してください[ASP.NET IIS 登録ツール。](http://go.microsoft.com/fwlink/?LinkId=201186)  
   
 ## <a name="create-a-new-iis-application-or-reuse-an-existing-aspnet-application"></a>新しい IIS アプリケーションの作成、または既存の ASP.NET アプリケーションの再利用  
- IIS でホストされる [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスは、IIS アプリケーションの内部に存在する必要があります。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスのみをホストする新しい IIS アプリケーションを作成できます。 または、既に [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] コンテンツ (.aspx ページや ASP.NET Web サービス (ASMX) など) をホストしている既存のアプリケーションに [!INCLUDE[vstecasplong](../../../../includes/vstecasplong-md.md)] サービスを展開することもできます。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] 、「 [WCF Services and ASP.NET](../../../../docs/framework/wcf/feature-details/wcf-services-and-aspnet.md)」を参照してください。  
+ IIS でホストされる [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスは、IIS アプリケーションの内部に存在する必要があります。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスのみをホストする新しい IIS アプリケーションを作成できます。 または、既に [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] コンテンツ (.aspx ページや ASP.NET Web サービス (ASMX) など) をホストしている既存のアプリケーションに [!INCLUDE[vstecasplong](../../../../includes/vstecasplong-md.md)] サービスを展開することもできます。 これらのオプションの詳細についてを参照してください、「ホスティング WCF サイド バイ サイド ASP.NET で」とのセクションでは、「ASP.NET 互換モードでは WCF サービスをホスティング」 [WCF サービスと ASP.NET](../../../../docs/framework/wcf/feature-details/wcf-services-and-aspnet.md)です。  
   
- [!INCLUDE[iis601](../../../../includes/iis601-md.md)] とそれ以降のバージョンでは、隔離されているオブジェクト指向プログラミング アプリケーションは定期的に再起動されることに注意してください。 既定値は 1740 分です。 サポートされている最大値は 71,582 分です。 この再起動は、無効にできます。 このプロパティ[!INCLUDE[crabout](../../../../includes/crabout-md.md)] 、「 [PeriodicRestartTime](http://go.microsoft.com/fwlink/?LinkId=109968)」を参照してください。  
+ [!INCLUDE[iis601](../../../../includes/iis601-md.md)] とそれ以降のバージョンでは、隔離されているオブジェクト指向プログラミング アプリケーションは定期的に再起動されることに注意してください。 既定値は 1740 分です。 サポートされている最大値は 71,582 分です。 この再起動は、無効にできます。 このプロパティの詳細については、次を参照してください。、 [PeriodicRestartTime](http://go.microsoft.com/fwlink/?LinkId=109968)です。  
   
 ## <a name="create-an-svc-file-for-the-wcf-service"></a>WCF サービス用の .svc ファイルの作成  
  IIS でホストされる[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスは、IIS アプリケーションの内部で特別なコンテンツ ファイル (.svc ファイル) として表現されます。 これは、ASMX ページが、IIS アプリケーションの内部で .asmx ファイルとして表現されるのと同様です。 .svc ファイルには、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]ホスト インフラストラクチャで、着信メッセージに応えてホスト対象サービスをアクティブ化できるようにする、[@ServiceHost](../../../../docs/framework/configure-apps/file-schema/wcf-directive/servicehost.md)固有の処理ディレクティブ ( [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ) が含まれます。 .svc ファイルの最も一般的な構文を次のステートメントに示します。  
@@ -70,7 +70,7 @@ new ServiceHost( typeof( MyNamespace.MyServiceImplementationTypeName ) );
   
  サービスのベース アドレスの一覧を作成するなど、追加のホスト構成を実行することもできます。 カスタム <xref:System.ServiceModel.Activation.ServiceHostFactory> を使用して、このディレクティブをカスタム ホスト ソリューション用に拡張することもできます。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスをホストする IIS アプリケーションは、 <xref:System.ServiceModel.ServiceHost> インスタンスの作成とライフタイムの管理を実行しません。 管理対象の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ホスト インフラストラクチャは、.svc ファイルに対する最初の要求を受け取ったときに、必要な <xref:System.ServiceModel.ServiceHost> インスタンスを動的に作成します。 このインスタンスは、コードによって明示的に閉じられるか、アプリケーションがリサイクルされるときまで解放されません。  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)] 、「 [@ServiceHost](../../../../docs/framework/configure-apps/file-schema/wcf-directive/servicehost.md)」を参照してください。  
+ .Svc ファイルの構文の詳細については、次を参照してください。 [ @ServiceHost](../../../../docs/framework/configure-apps/file-schema/wcf-directive/servicehost.md)です。  
   
 ## <a name="deploy-the-service-implementation-to-the-iis-application"></a>IIS アプリケーションへのサービス実装の展開  
  IIS でホストされる[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスは、 [!INCLUDE[vstecasplong](../../../../includes/vstecasplong-md.md)]と同一の動的なコンパイル モデルを使用します。 [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)]の場合と同様に、IIS でホストされる [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスの実装コードは、次のようないくつかの方法でさまざまな場所に展開できます。  
@@ -81,7 +81,7 @@ new ServiceHost( typeof( MyNamespace.MyServiceImplementationTypeName ) );
   
 -   .svc ファイルに直接格納される、コンパイル解除されたコードとして展開します。 実装コードでは、後に、サービスの .svc ファイルでは、インラインであることができます、@ServiceHostディレクティブです。 インライン コードを変更すると、次の要求を受け取ったときにアプリケーションがリサイクルされ、再コンパイルされます。  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)] コンパイル モデル [!INCLUDE[vstecasplong](../../../../includes/vstecasplong-md.md)] 、「 [ASP.NET コンパイルの概要](http://go.microsoft.com/fwlink/?LinkId=94773)」を参照してください。  
+ 詳細については、[!INCLUDE[vstecasplong](../../../../includes/vstecasplong-md.md)]コンパイル モデルを参照してください[ASP.NET コンパイルの概要](http://go.microsoft.com/fwlink/?LinkId=94773)です。  
   
 ## <a name="configure-the-wcf-service"></a>WCF サービスの構成  
  IIS でホストされる [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスの構成は、アプリケーションの Web.config ファイルに格納されます。 IIS でホストされるサービスは、IIS の外部でホストされる [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスと同じ構成要素と構文を使用します。 ただし、次の制約は、IIS ホスト環境に固有です。  

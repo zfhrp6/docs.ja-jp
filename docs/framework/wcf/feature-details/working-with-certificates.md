@@ -21,16 +21,16 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: e731fd31f2a247466891abbf75d67a61dba7f286
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 3c023b27ace10919c51aa13e2635040d9d5b812b
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="working-with-certificates"></a>証明書の使用
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] のセキュリティをプログラミングする場合、一般に X.509 デジタル証明書を使用して、クライアントとサーバーの認証、暗号化、およびメッセージのデジタル署名を行います。 ここでは、X.509 デジタル証明書の機能および [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] でのそれらの機能の使用方法について簡単に説明します。また、これらの概念の詳細を説明するトピックや、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] と証明書を使用した一般的なタスクの実行方法が記載されたトピックへのリンクも示します。  
   
- デジタル証明書の一部である、簡単に言えば、*公開キー基盤*(PKI)、これは、デジタル証明書、証明書機関、およびその他の検証し、認証の有効性を登録機関のシステム公開キーの暗号化を使用して、電子取引に関与する各当事者です。 証明機関が証明書を発行し、各証明書など、データを含んでいるフィールドのセットがあります*サブジェクト*(証明書の発行先であるエンティティ) 有効期間 (ときに、証明書が有効)、(、発行者エンティティ証明書を発行する) と公開キー。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、これらの各プロパティは <xref:System.IdentityModel.Claims.Claim> (クレーム) として処理されます。各クレームは、さらに ID と権限の 2 種類に分けられます。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] X.509 証明書を参照してください[X.509 公開キー証明書](http://go.microsoft.com/fwlink/?LinkId=209952)[!INCLUDE[crabout](../../../../includes/crabout-md.md)]クレームと WCF での承認を参照してください。[管理クレームと Id モデル承認](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md)です。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] 参照してください、PKI を実装する[Windows Server 2008 R2 の証明書サービス](http://go.microsoft.com/fwlink/?LinkId=209949)です。  
+ デジタル証明書の一部である、簡単に言えば、*公開キー基盤*(PKI)、これは、デジタル証明書、証明書機関、およびその他の検証し、認証の有効性を登録機関のシステム公開キーの暗号化を使用して、電子取引に関与する各当事者です。 証明機関が証明書を発行し、各証明書など、データを含んでいるフィールドのセットがあります*サブジェクト*(証明書の発行先であるエンティティ) 有効期間 (ときに、証明書が有効)、(、発行者エンティティ証明書を発行する) と公開キー。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、これらの各プロパティは <xref:System.IdentityModel.Claims.Claim> (クレーム) として処理されます。各クレームは、さらに ID と権限の 2 種類に分けられます。 詳細については、X.509 証明書を参照してください[X.509 公開キー証明書](http://go.microsoft.com/fwlink/?LinkId=209952)WCF を参照してくださいでクレームと承認の詳細については[管理クレームと Id モデル承認](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md). 詳細については、PKI を実装する、次を参照してください。 [Windows Server 2008 R2 の証明書サービス](http://go.microsoft.com/fwlink/?LinkId=209949)です。  
   
  証明書の第一の機能は、他者に対して証明書の所有者の ID を認証することです。 証明書が含まれています、*公開キー*の所有者、所有者、秘密キーを保持するときにします。 公開キーを使用して、証明書の所有者に送信されるメッセージを暗号化できます。 秘密キーにアクセスできるのは所有者だけであるため、所有者だけが暗号化されたメッセージを復号化できます。  
   
@@ -55,7 +55,7 @@ ms.lasthandoff: 04/28/2018
   
 -   **個人用**です。 このストアは、コンピューターのユーザーに関連付けられた証明書に使用されます。 通常、このストアは、信頼されたルート証明機関ストアにある証明機関証明書のいずれかによって発行された証明書に使用されます。 また、自己発行され、アプリケーションから信頼された証明書が格納されている場合もあります。  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)] 証明書のストアは、「[証明書ストア](http://go.microsoft.com/fwlink/?LinkId=88912)です。  
+ 証明書ストアの詳細については、次を参照してください。[証明書ストア](http://go.microsoft.com/fwlink/?LinkId=88912)です。  
   
 ### <a name="selecting-a-store"></a>ストアの選択  
  証明書を格納する場所の選択は、サービスまたはクライアントの実行方法や実行する状況によって異なります。 次の一般規則が適用されます。  
@@ -65,12 +65,12 @@ ms.lasthandoff: 04/28/2018
 -   サービスまたはクライアントがアプリケーション ユーザー アカウントで実行される場合を使用して、**現在のユーザー**を格納します。  
   
 ### <a name="accessing-stores"></a>ストアへのアクセス  
- ストアは、コンピューター上の一種のフォルダーであり、アクセス制御リスト (ACL: Access Control List) によって保護されています。 インターネット インフォメーション サービス (IIS: Internet Information Services) によってホストされたサービスを作成すると、[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] アカウントで [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] プロセスが実行されます。 このアカウントは、サービスが使用する証明書を格納するストアにアクセス可能である必要があります。 各主要ストアは既定のアクセス リストで保護されていますが、これらのリストは変更できます。 ストアにアクセスする別のロールを作成した場合、そのロールにアクセス許可を付与する必要があります。 WinHttpCertConfig.exe ツールを使用してアクセス リストを変更する方法については、次を参照してください。[する方法: 開発中に使用する一時的な証明書を作成](../../../../docs/framework/wcf/feature-details/how-to-create-temporary-certificates-for-use-during-development.md)です。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] IIS クライアント証明書を使用して、参照してください[を ASP.NET Web アプリケーションでは認証にクライアント証明書を使用して、Web サービスを呼び出す方法](http://go.microsoft.com/fwlink/?LinkId=88914)です。  
+ ストアは、コンピューター上の一種のフォルダーであり、アクセス制御リスト (ACL: Access Control List) によって保護されています。 インターネット インフォメーション サービス (IIS: Internet Information Services) によってホストされたサービスを作成すると、[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] アカウントで [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] プロセスが実行されます。 このアカウントは、サービスが使用する証明書を格納するストアにアクセス可能である必要があります。 各主要ストアは既定のアクセス リストで保護されていますが、これらのリストは変更できます。 ストアにアクセスする別のロールを作成した場合、そのロールにアクセス許可を付与する必要があります。 WinHttpCertConfig.exe ツールを使用してアクセス リストを変更する方法については、次を参照してください。[する方法: 開発中に使用する一時的な証明書を作成](../../../../docs/framework/wcf/feature-details/how-to-create-temporary-certificates-for-use-during-development.md)です。 IIS でクライアント証明書の使用の詳細については、次を参照してください。[を ASP.NET Web アプリケーションでは認証にクライアント証明書を使用して、Web サービスを呼び出す方法](http://go.microsoft.com/fwlink/?LinkId=88914)です。  
   
 ## <a name="chain-trust-and-certificate-authorities"></a>信頼チェーンと証明機関  
  証明書は、各証明書がその発行元の CA にリンクされる階層構造で作成されます。 このリンクは CA の証明書へのリンクになります。 次に、CA の証明書は元の CA の証明書を発行した CA にリンクします。 ルート CA の証明書に到達するまでこのプロセスが繰り返されます。 ルート CA の証明書は本質的に信頼されています。  
   
- デジタル証明書が証明書利用者のとも呼ばれる、この階層でエンティティを認証に使用されます、*の信頼チェーン*です。 証明書をダブルクリックしをクリックすると、MMC スナップインを使用して証明書のチェーンを表示する、**証明書パス**タブ[!INCLUDE[crabout](../../../../includes/crabout-md.md)]証明機関の証明書チェーンをインポートするを参照してください[する方法: 署名の検証に使用される証明書機関の証明書チェーンを指定する](../../../../docs/framework/wcf/feature-details/specify-the-certificate-authority-chain-verify-signatures-wcf.md)です。  
+ デジタル証明書が証明書利用者のとも呼ばれる、この階層でエンティティを認証に使用されます、*の信頼チェーン*です。 証明書をダブルクリックしをクリックすると、MMC スナップインを使用して証明書のチェーンを表示する、**証明書パス**タブです。証明機関の証明書チェーンをインポートする方法の詳細については、次を参照してください。[する方法: 指定の証明書機関の証明書チェーンを使用署名のことを確認する](../../../../docs/framework/wcf/feature-details/specify-the-certificate-authority-chain-verify-signatures-wcf.md)です。  
   
 > [!NOTE]
 >  証明書を "信頼されたルート証明機関" 証明書ストアに配置することにより、その証明書の発行者を信頼されたルート証明機関として指定できます。  
@@ -159,9 +159,9 @@ ms.lasthandoff: 04/28/2018
  証明書は、構成を使用して設定することもできます。 証明書を含む、資格情報が指定されたサービスを作成する場合、 [ \<serviceBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/servicebehaviors.md)です。 証明書が指定されたクライアントをプログラミングする際に、 [ \<endpointBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/endpointbehaviors.md)です。  
   
 ## <a name="mapping-a-certificate-to-a-user-account"></a>ユーザー アカウントへの証明書のマッピング  
- IIS と Active Directory には、証明書を Windows ユーザー アカウントにマップできる機能があります。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)] この機能を参照してください[証明書をユーザー アカウントにマップ](http://go.microsoft.com/fwlink/?LinkId=88917)です。  
+ IIS と Active Directory には、証明書を Windows ユーザー アカウントにマップできる機能があります。 機能の詳細については、次を参照してください。[証明書をユーザー アカウントにマップ](http://go.microsoft.com/fwlink/?LinkId=88917)です。  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)] Active Directory のマッピングを使用して、参照してください[ディレクトリ サービスのマッピングでクライアント証明書のマッピング](http://go.microsoft.com/fwlink/?LinkId=88918)です。  
+ 詳細については、Active Directory のマッピングを使用して、次を参照してください。[ディレクトリ サービスのマッピングでクライアント証明書のマッピング](http://go.microsoft.com/fwlink/?LinkId=88918)です。  
   
  この機能が有効になっている場合、<xref:System.ServiceModel.Security.X509ClientCertificateAuthentication.MapClientCertificateToWindowsAccount%2A> クラスの <xref:System.ServiceModel.Security.X509ClientCertificateAuthentication> プロパティを `true` に設定できます。 構成では、設定することができます、`mapClientCertificateToWindowsAccount`の属性、 [\<認証 >](../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-servicecertificate-element.md)要素`true`次のコードに示すように、します。  
   

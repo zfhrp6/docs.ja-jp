@@ -16,11 +16,11 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 9858475520b949d5b9ee62ecdc0994bbb9398953
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: ae5eb9a10f438f1bb76c51c3c9da68273d94ab57
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="selecting-a-credential-type"></a>資格情報の種類の選択
 *資格情報*データ[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]クレームされた id または機能のいずれかを確立するために使用します。 たとえば、パスポートは、政府によって発行される、国籍または地域籍を証明するための資格情報です。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、ユーザー名トークンや X.509 証明書など多数の形式を資格情報に使用できます。 ここでは、資格情報について説明し、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] で資格情報を使用する方法およびアプリケーションに適切な資格情報を選択する方法についても説明します。  
@@ -108,7 +108,7 @@ ms.lasthandoff: 04/28/2018
 > [!IMPORTANT]
 >  ID の切り替えができないこと (つまり、セキュリティ コンテキストを確立する場合の既定の動作) について、注意が必要な状況があります。 別のサービスと通信するサービスを作成する場合、この 2 番目のサービスに対して [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントを開くために使用した ID は変更できません。 これは、複数のクライアントが最初のサービスを使用できる状況で、2 番目のサービスにアクセスするときに最初のサービスがクライアントを偽装する場合、問題になります。 サービスがすべての呼び出し元に対して同じクライアントを再利用する場合、2 番目のサービスへの呼び出しはすべて、2 番目のサービスに対してクライアントを開くために使用した最初の呼び出し元の ID によって実行されます。 つまり、このサービスでは、すべてのクライアントが 2 番目のサービスと通信できるように、最初のクライアントの ID が使用されます。 これによって、権限の昇格が発生する可能性があります。 これがサービスの目的の動作でない場合、各呼び出し元を追跡し、その呼び出し元ごとに 2 番目のサービスに対する新しいクライアントを作成する必要があります。これによって、適切な呼び出し元が 2 番目のサービスと通信するために、サービスは適切なクライアントだけを使用できます。  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)] 資格情報とセキュリティで保護されたセッションを参照してください。[セキュリティで保護されたセッションに関する考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-for-secure-sessions.md)です。  
+ 資格情報とセキュリティで保護されたセッションの詳細については、次を参照してください。[セキュリティで保護されたセッションに関する考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-for-secure-sessions.md)です。  
   
 ## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.ClientBase%601?displayProperty=nameWithType>  

@@ -1,12 +1,13 @@
 ---
-title: "方法 : ProtectionLevel プロパティを設定する"
-ms.custom: 
+title: '方法 : ProtectionLevel プロパティを設定する'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,19 +16,20 @@ helpviewer_keywords:
 - WCF, security
 - ProtectionLevel property
 ms.assetid: 3d4e8f80-0f9e-4a26-9899-beb6584e78df
-caps.latest.revision: "10"
+caps.latest.revision: 10
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a9b90df85259dfe48f071ca2b4b8404cfe8e673e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: abb1d3cc64b7992b9983e81c5f8a5c30c2343f30
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="how-to-set-the-protectionlevel-property"></a>方法 : ProtectionLevel プロパティを設定する
-適切な属性を適用してプロパティを設定することで、保護レベルを設定できます。 サービス レベルですべてのメッセージのすべての部分に影響する保護を設定したり、メソッドからメッセージ部分まで、段階的にきめ細かなレベルで保護を設定したりすることができます。 [!INCLUDE[crabout](../../../includes/crabout-md.md)]`ProtectionLevel`プロパティを参照してください[について保護レベル](../../../docs/framework/wcf/understanding-protection-level.md)です。  
+適切な属性を適用してプロパティを設定することで、保護レベルを設定できます。 サービス レベルですべてのメッセージのすべての部分に影響する保護を設定したり、メソッドからメッセージ部分まで、段階的にきめ細かなレベルで保護を設定したりすることができます。 詳細については、`ProtectionLevel`プロパティを参照してください[について保護レベル](../../../docs/framework/wcf/understanding-protection-level.md)です。  
   
 > [!NOTE]
 >  保護レベルは構成ではなく、コードでのみ設定できます。  
@@ -53,7 +55,7 @@ ms.lasthandoff: 12/22/2017
      [!code-vb[C_ProtectionLevel#2](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_protectionlevel/vb/source.vb#2)]  
   
 ## <a name="protecting-fault-messages"></a>エラー メッセージの保護  
- サービスでスローされた例外は、SOAP エラーとしてクライアントに送信できます。 [!INCLUDE[crabout](../../../includes/crabout-md.md)]エラーの型指定された厳密に作成しを参照してください[を指定して処理のエラー コントラクトおよびサービスの](../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md)と[する方法: サービス コントラクトで宣言エラー](../../../docs/framework/wcf/how-to-declare-faults-in-service-contracts.md)です。  
+ サービスでスローされた例外は、SOAP エラーとしてクライアントに送信できます。 厳密に作成の詳細については、エラーを型指定されたを参照してください[を指定して処理のエラー コントラクトおよびサービスの](../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md)と[する方法: サービス コントラクトで宣言エラー](../../../docs/framework/wcf/how-to-declare-faults-in-service-contracts.md)です。  
   
 #### <a name="to-protect-a-fault-message"></a>エラー メッセージを保護するには  
   
@@ -72,7 +74,7 @@ ms.lasthandoff: 12/22/2017
      [!code-vb[C_ProtectionLevel#4](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_protectionlevel/vb/source.vb#4)]  
   
 ## <a name="protecting-message-parts"></a>メッセージ部分の保護  
- メッセージ部分を保護するには、メッセージ コントラクトを使用します。 [!INCLUDE[crabout](../../../includes/crabout-md.md)]メッセージ コントラクトを参照してください[メッセージ コントラクトを使用して](../../../docs/framework/wcf/feature-details/using-message-contracts.md)です。  
+ メッセージ部分を保護するには、メッセージ コントラクトを使用します。 メッセージ コントラクトの詳細については、次を参照してください。[メッセージ コントラクトを使用して](../../../docs/framework/wcf/feature-details/using-message-contracts.md)です。  
   
 #### <a name="to-protect-a-message-body"></a>メッセージ本文を保護するには  
   
@@ -99,7 +101,7 @@ ms.lasthandoff: 12/22/2017
  [!code-csharp[C_ProtectionLevel#0](../../../samples/snippets/csharp/VS_Snippets_CFX/c_protectionlevel/cs/source.cs#0)]
  [!code-vb[C_ProtectionLevel#0](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_protectionlevel/vb/source.vb#0)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.ServiceContractAttribute>  
  <xref:System.ServiceModel.OperationContractAttribute>  
  <xref:System.ServiceModel.FaultContractAttribute>  
