@@ -1,12 +1,13 @@
 ---
-title: "ダイアログ ボックスの概要"
-ms.custom: 
+title: ダイアログ ボックスの概要
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -17,16 +18,17 @@ helpviewer_keywords:
 - message boxes [WPF]
 - modal dialog boxes [WPF]
 ms.assetid: 0d23d544-a393-4a02-a3aa-d8cd5d3d6511
-caps.latest.revision: "25"
+caps.latest.revision: 25
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 112a9badaf9a64b2c6d3f73d64c27fbc36ec48a3
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: dfe22dec0827f0ceb880b9410b64668f219a422f
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="dialog-boxes-overview"></a>ダイアログ ボックスの概要
 スタンドアロン アプリケーションは通常、メイン ウィンドウが対象で、アプリケーションが動作して、を介してそのデータを処理する機能を公開、メイン データをある[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]メカニズムは、メニュー バー、ツールバー、およびステータス バーと同様にします。 重要なアプリケーションは、次のようなことをするための追加のウィンドウを表示することもあります。  
@@ -37,13 +39,13 @@ ms.lasthandoff: 12/22/2017
   
 -   情報の表示と収集の両方を行う。  
   
- これらの種類のウィンドウと呼ばれる *ダイアログ ボックス*、し、2 種類があります: モーダルとモードレスです。  
+ これらの種類のウィンドウと呼ばれる* ダイアログ ボックス*、し、2 種類があります: モーダルとモードレスです。  
   
  A*モーダル*関数には、引き続きユーザーからの追加データが必要がある場合、関数によってダイアログ ボックスが表示されます。 機能は、モーダル ダイアログ ボックスに依存してデータを収集するため、モーダル ダイアログ ボックスが開いている間、ユーザーはアプリケーション内の他のウィンドウをアクティブ化することはできません。 ほとんどの場合、モーダル ダイアログ ボックスで、ユーザー キーを押して、モーダル ダイアログ ボックスを終了する場合はシグナルを**OK**または**キャンセル**ボタンをクリックします。 キーを押して、 **OK**ボタンは、こと、ユーザーがデータを入力し、データ処理を継続する関数を示します。 キーを押して、**キャンセル**ボタンは、ユーザーが、関数が完全に実行を停止することを示します。 モーダル ダイアログ ボックスの最も一般的な例は、データを開く、保存する、および印刷するために表示されます。  
   
  A*モードレス*ダイアログ ボックスで、その一方は防止しません、ユーザーが開いている間、他のウィンドウをアクティブ化します。 たとえば、ユーザーがドキュメント内の特定の単語の出現箇所を検索する場合、メイン ウィンドウは、多くの場合、ダイアログ ボックスを開いて、検索する単語をユーザーに尋ねます。 しかし、単語の検索中もユーザーはドキュメントを編集できるため、ダイアログ ボックスがモーダルである必要はありません。 モードレス ダイアログ ボックスは、少なくとも、**閉じる** ダイアログ ボックスを閉じるボタンをクリックしなどの特定の機能を実行するその他のボタンを提供する場合があります、**次を検索**ボタン、次へ を検索する単語が単語の検索の検索条件に一致します。  
   
- [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] では、メッセージ ボックス、コモン ダイアログ ボックス、カスタム ダイアログ ボックスなど、いくつかの種類のダイアログ ボックスを作成できます。 このトピックでは、それぞれ、[ダイアログ ボックスのサンプル](http://go.microsoft.com/fwlink/?LinkID=159984)一致する例を示します。  
+ Windows Presentation Foundation (WPF) では、ダイアログ ボックス、メッセージ ボックス、コモン ダイアログ ボックス、およびカスタム ダイアログ ボックスなどのいくつかの種類を作成することができます。 このトピックでは、それぞれ、[ダイアログ ボックスのサンプル](http://go.microsoft.com/fwlink/?LinkID=159984)一致する例を示します。  
   
  
   
@@ -53,7 +55,7 @@ ms.lasthandoff: 12/22/2017
   
  ![[Word Processor] ダイアログ ボックス](../../../../docs/framework/wpf/app-development/media/dialogboxesoverviewfigure1.png "DialogBoxesOverviewFigure1")  
   
- 使用するメッセージ ボックスを作成する、<xref:System.Windows.MessageBox>クラスです。 <xref:System.Windows.MessageBox>メッセージ ボックスのテキスト、タイトル、アイコン、およびボタンは、次のようにコードを使用して構成することができます。  
+ 使用するメッセージ ボックスを作成する、<xref:System.Windows.MessageBox>クラスです。 <xref:System.Windows.MessageBox> メッセージ ボックスのテキスト、タイトル、アイコン、およびボタンは、次のようにコードを使用して構成することができます。  
   
  [!code-csharp[DialogBoxesOverviewSnippets#MsgBoxConfigureCODEBEHIND](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxesOverviewSnippets/CSharp/Window1.xaml.cs#msgboxconfigurecodebehind)]
  [!code-vb[DialogBoxesOverviewSnippets#MsgBoxConfigureCODEBEHIND](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxesOverviewSnippets/VisualBasic/window1.xaml.vb#msgboxconfigurecodebehind)]  
@@ -72,13 +74,13 @@ ms.lasthandoff: 12/22/2017
   
  <xref:System.Windows.MessageBox>単純なダイアログ ボックス ユーザー エクスペリエンスを使用する利点を提供することがあります<xref:System.Windows.MessageBox>部分信頼セキュリティ サンド ボックス内で実行されるアプリケーションで表示できるウィンドウの唯一の型では、(を参照してください[セキュリティ](../../../../docs/framework/wpf/security-wpf.md)) など[!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)]です。  
   
- ほとんどのダイアログ ボックスは、テキスト、選択 (チェック ボックス)、相互に排他的な選択 (オプション ボタン)、リスト選択 (リスト ボックス、コンボ ボックス、ドロップダウン リスト ボックス) など、メッセージ ボックスの結果よりも複雑なデータを表示し、収集します。 これらのオプション、[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)]いくつかの一般的なダイアログ ボックスを提供し、いずれかの使用は完全信頼で実行されているアプリケーションに限定されますが、独自のダイアログ ボックスを作成することができます。  
+ ほとんどのダイアログ ボックスは、テキスト、選択 (チェック ボックス)、相互に排他的な選択 (オプション ボタン)、リスト選択 (リスト ボックス、コンボ ボックス、ドロップダウン リスト ボックス) など、メッセージ ボックスの結果よりも複雑なデータを表示し、収集します。 これらの場合 Windows Presentation Foundation (WPF) はいくつかの一般的なダイアログ ボックスを提供し、いずれかの使用は完全信頼で実行されているアプリケーションに限定されますが、独自のダイアログ ボックスを作成することができます。 します。  
   
 <a name="Common_Dialogs"></a>   
 ## <a name="common-dialog-boxes"></a>コモン ダイアログ ボックス  
  [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] は、ファイルを開く、ファイルを保存する、印刷するためのダイアログ ボックスなど、すべてのアプリケーションに共通の、さまざまな再利用可能なダイアログ ボックスを実装します。 これらのダイアログ ボックスはオペレーティング システムによって実装されるため、そのオペレーティング システム上で実行するすべてのアプリケーション間で共有でき、ユーザー エクスペリエンスの一貫性を保つことができます。ユーザーが 1 つのアプリケーションで、オペレーティング システムによって提供されるダイアログ ボックスの使用に慣れると、他のアプリケーションでも、そのダイアログ ボックスの使用法を学ぶ必要はありません。 これらのダイアログ ボックスはすべてのアプリケーションで使用され、一貫性のあるユーザー エクスペリエンスを提供するのに役立つ、ために、それらと呼ばれます。*コモン ダイアログ ボックス*です。  
   
- [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] は、ファイルを開く、ファイルを保存する、および印刷コモン ダイアログ ボックスをカプセル化して、スタンドアロン アプリケーションで使用できるマネージ クラスとして公開します。 このトピックでは、それぞれの概要を簡単に説明します。  
+ Windows Presentation Foundation (WPF)、開いているファイルをカプセル化、保存ファイル、および印刷コモン ダイアログ ボックス、およびそれらがスタンドアロン アプリケーションで使用するためのマネージ クラスを公開します。 このトピックでは、それぞれの概要を簡単に説明します。  
   
 <a name="Open_File_Dialog"></a>   
 ### <a name="open-file-dialog"></a>[ファイルを開く] ダイアログ ボックス  
@@ -94,7 +96,7 @@ ms.lasthandoff: 12/22/2017
  ファイルを開く ダイアログ ボックスの詳細については、次を参照してください。<xref:Microsoft.Win32.OpenFileDialog?displayProperty=nameWithType>です。  
   
 > [!NOTE]
->  <xref:Microsoft.Win32.OpenFileDialog>ファイル名を安全に取得する部分的な信頼で実行されているアプリケーションで使用できます (を参照してください[セキュリティ](../../../../docs/framework/wpf/security-wpf.md))。  
+>  <xref:Microsoft.Win32.OpenFileDialog> ファイル名を安全に取得する部分的な信頼で実行されているアプリケーションで使用できます (を参照してください[セキュリティ](../../../../docs/framework/wpf/security-wpf.md))。  
   
 <a name="Save_File_Dialog"></a>   
 ### <a name="save-file-dialog-box"></a>[ファイルの保存] ダイアログ ボックス  
@@ -124,7 +126,7 @@ ms.lasthandoff: 12/22/2017
   
 <a name="Custom_Dialog_Boxes"></a>   
 ## <a name="custom-dialog-boxes"></a>カスタム ダイアログ ボックス  
- コモン ダイアログ ボックスは便利であり、可能なときにはコモン ダイアログ ボックスを使用する必要がありますが、ドメイン固有のダイアログ ボックスの要件はサポートしていません。 このような場合は、独自のダイアログ ボックスを作成する必要があります。 これから説明するように、ダイアログ ボックスは、特殊な動作を持つウィンドウです。 <xref:System.Windows.Window>これらの動作を実装して、その結果を使用する<xref:System.Windows.Window>カスタム モーダルとモードレスのダイアログ ボックスを作成します。  
+ コモン ダイアログ ボックスは便利であり、可能なときにはコモン ダイアログ ボックスを使用する必要がありますが、ドメイン固有のダイアログ ボックスの要件はサポートしていません。 このような場合は、独自のダイアログ ボックスを作成する必要があります。 これから説明するように、ダイアログ ボックスは、特殊な動作を持つウィンドウです。 <xref:System.Windows.Window> これらの動作を実装して、その結果を使用する<xref:System.Windows.Window>カスタム モーダルとモードレスのダイアログ ボックスを作成します。  
   
 <a name="Creating_a_Modal_Custom_Dialog_Box"></a>   
 ### <a name="creating-a-modal-custom-dialog-box"></a>モーダルのカスタム ダイアログ ボックスの作成  
@@ -221,7 +223,7 @@ ms.lasthandoff: 12/22/2017
   
  ![無効な左余白](../../../../docs/framework/wpf/app-development/media/dialogboxesoverviewfigure7.png "DialogBoxesOverviewFigure7")  
   
- [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] は、ユーザーが有効なデータを入力するまで、ユーザーを無効なコントロールに制限するわけではありません。 これは、ダイアログ ボックスとして適切な動作です。データが有効かどうかにかかわらず、ユーザーはダイアログ ボックス内のコントロールを自由に移動できる必要があります。 ただし、これは、無効なデータとキーを押して、ユーザーが入力、 **OK**ボタンをクリックします。 このため、コードも必要があるダイアログ内のすべてのコントロールを検証するときにボックス、 **[ok]**ボタンを処理することにより、<xref:System.Windows.Controls.Primitives.ButtonBase.Click>イベント。  
+ [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] は、ユーザーが有効なデータを入力するまで、ユーザーを無効なコントロールに制限するわけではありません。 これは、ダイアログ ボックスとして適切な動作です。データが有効かどうかにかかわらず、ユーザーはダイアログ ボックス内のコントロールを自由に移動できる必要があります。 ただし、これは、無効なデータとキーを押して、ユーザーが入力、 **OK**ボタンをクリックします。 このため、コードも必要があるダイアログ内のすべてのコントロールを検証するときにボックス、 **[ok]** ボタンを処理することにより、<xref:System.Windows.Controls.Primitives.ButtonBase.Click>イベント。  
   
  [!code-csharp[DialogBoxSample#MarginsDialogBoxValidationCODEBEHIND1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MarginsDialogBox.xaml.cs#marginsdialogboxvalidationcodebehind1)]
  [!code-vb[DialogBoxSample#MarginsDialogBoxValidationCODEBEHIND1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MarginsDialogBox.xaml.vb#marginsdialogboxvalidationcodebehind1)]  
@@ -235,9 +237,9 @@ ms.lasthandoff: 12/22/2017
  ダイアログ ボックスが有効な場合は、安全に閉じて、戻ることができます。 復帰プロセスの一環として、呼び出し元の機能に結果を返す必要があります。  
   
 #### <a name="setting-the-modal-dialog-result"></a>モーダル ダイアログ ボックスの結果を設定する  
- 使用してダイアログ ボックスを開く<xref:System.Windows.Window.ShowDialog%2A>メソッドを呼び出す場合と基本的には: コードを使用して、ダイアログ ボックスを開いた<xref:System.Windows.Window.ShowDialog%2A>までを待ちます<xref:System.Windows.Window.ShowDialog%2A>を返します。 ときに<xref:System.Windows.Window.ShowDialog%2A>を返します、呼び出し元のコードが必要かどうかに基づくした処理を続行するか、処理を停止するかどうかを決定する場合は、ユーザーが押された、 **[ok]**ボタンまたは**キャンセル**ボタンをクリックします。 としてユーザーの選択を返す必要があります ダイアログ ボックスをこの決定を容易にする、<xref:System.Boolean>から返される値、<xref:System.Windows.Window.ShowDialog%2A>メソッドです。  
+ 使用してダイアログ ボックスを開く<xref:System.Windows.Window.ShowDialog%2A>メソッドを呼び出す場合と基本的には: コードを使用して、ダイアログ ボックスを開いた<xref:System.Windows.Window.ShowDialog%2A>までを待ちます<xref:System.Windows.Window.ShowDialog%2A>を返します。 ときに<xref:System.Windows.Window.ShowDialog%2A>を返します、呼び出し元のコードが必要かどうかに基づくした処理を続行するか、処理を停止するかどうかを決定する場合は、ユーザーが押された、 **[ok]** ボタンまたは**キャンセル**ボタンをクリックします。 としてユーザーの選択を返す必要があります ダイアログ ボックスをこの決定を容易にする、<xref:System.Boolean>から返される値、<xref:System.Windows.Window.ShowDialog%2A>メソッドです。  
   
- ときに、 **OK**ボタンをクリックすると、<xref:System.Windows.Window.ShowDialog%2A>返す必要があります`true`です。 これを実現するには、<xref:System.Windows.Window.DialogResult%2A>プロパティ ダイアログ ボックスのボックス、 **[ok]**ボタンをクリックします。  
+ ときに、 **OK**ボタンをクリックすると、<xref:System.Windows.Window.ShowDialog%2A>返す必要があります`true`です。 これを実現するには、<xref:System.Windows.Window.DialogResult%2A>プロパティ ダイアログ ボックスのボックス、 **[ok]** ボタンをクリックします。  
   
  [!code-csharp[DialogBoxSample#MarginsDialogBoxOKResultSetCODEBEHIND1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MarginsDialogBox.xaml.cs#marginsdialogboxokresultsetcodebehind1)]
  [!code-vb[DialogBoxSample#MarginsDialogBoxOKResultSetCODEBEHIND1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MarginsDialogBox.xaml.vb#marginsdialogboxokresultsetcodebehind1)]  
@@ -307,7 +309,7 @@ ms.lasthandoff: 12/22/2017
  異なり<xref:System.Windows.Window.ShowDialog%2A>、<xref:System.Windows.Window.Show%2A>が直ちに返されます。 その結果、呼び出し元のウィンドウは、モードレス ダイアログ ボックスが閉じられたことを知ることができず、したがって、ダイアログ ボックスの結果を確認するタイミングを判断したり、ダイアログ ボックスからデータを取得して、さらに処理したりすることができません。 代わりに、ダイアログ ボックスは、別の方法を作成して、呼び出し元のウィンドウに処理用のデータを返す必要があります。  
   
 #### <a name="processing-data-returned-from-a-modeless-dialog-box"></a>モードレス ダイアログ ボックスから返されたデータの処理  
- この例では、 `FindDialogBox` 1 つまたは複数の検索、テキストが検索されている特定の頻度に応じて、メイン ウィンドウに結果を返すことがあります。 モーダル ダイアログ ボックスと同様、モードレス ダイアログ ボックスは、プロパティを使用して結果を返すことができます。 ただし、ダイアログ ボックスを所有しているウィンドウは、それらのプロパティを確認するタイミングを知る必要があります。 これを可能にする方法の 1 つは、ダイアログ ボックスで、テキストが見つかったときに発生するイベントを実装することです。 `FindDialogBox`実装する、`TextFoundEvent`ときに最初この目的のためには、デリゲートが必要です。  
+ この例では、 `FindDialogBox` 1 つまたは複数の検索、テキストが検索されている特定の頻度に応じて、メイン ウィンドウに結果を返すことがあります。 モーダル ダイアログ ボックスと同様、モードレス ダイアログ ボックスは、プロパティを使用して結果を返すことができます。 ただし、ダイアログ ボックスを所有しているウィンドウは、それらのプロパティを確認するタイミングを知る必要があります。 これを可能にする方法の 1 つは、ダイアログ ボックスで、テキストが見つかったときに発生するイベントを実装することです。 `FindDialogBox` 実装する、`TextFoundEvent`ときに最初この目的のためには、デリゲートが必要です。  
   
  [!code-csharp[DialogBoxSample#TextFoundEventHandlerCODE](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/TextFoundEventHandler.cs#textfoundeventhandlercode)]
  [!code-vb[DialogBoxSample#TextFoundEventHandlerCODE](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/TextFoundEventHandler.vb#textfoundeventhandlercode)]  
@@ -355,7 +357,7 @@ ms.lasthandoff: 12/22/2017
 [!code-csharp[DialogBoxSample#FindDialogCloseCODEBEHIND2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/FindDialogBox.xaml.cs#finddialogclosecodebehind2)]
 [!code-vb[DialogBoxSample#FindDialogCloseCODEBEHIND2](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/FindDialogBox.xaml.vb#finddialogclosecodebehind2)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ポップアップの概要](../../../../docs/framework/wpf/controls/popup-overview.md)  
  [ダイアログ ボックスのサンプル](http://go.microsoft.com/fwlink/?LinkID=159984)  
  [ColorPicker カスタム コントロールのサンプル](http://go.microsoft.com/fwlink/?LinkID=159977)
