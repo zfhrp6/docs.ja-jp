@@ -1,21 +1,19 @@
 ---
-title: "Linux における .NET Core の前提条件"
-description: "Linux マシンで .NET Core アプリケーションを開発、展開、および実行するために必要なサポートされている Linux のバージョンと .NET Core の依存関係。"
-keywords: .NET, .NET Core, Linux, debian, ubuntu, RHEL, centOS,
+title: Linux における .NET Core の前提条件
+description: Linux マシンで .NET Core アプリケーションを開発、展開、および実行するために必要なサポートされている Linux のバージョンと .NET Core の依存関係。
 author: jralexander
 ms.author: johalex
-ms.date: 12/06/2017
-ms.topic: article
-ms.prod: .net-core
+ms.date: 04/19/2018
+ms.topic: conceptual
+ms.prod: dotnet-core
 ms.devlang: dotnet
-ms.assetid: c33b1241-ab66-4583-9eba-52cf51146f5a
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: 913d3869559b10af508e695a06d06021f8f90175
-ms.sourcegitcommit: adcf9bdafeaa6bc243af7bf70b45f3df954f256a
+ms.openlocfilehash: 9d986ed56bbc6f803988fde4b5500cd5d5364050
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/15/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="prerequisites-for-net-core-on-linux"></a>Linux における .NET Core の前提条件
 
@@ -24,25 +22,28 @@ ms.lasthandoff: 02/15/2018
 * [好みのエディターでのコマンドライン](tutorials/using-with-xplat-cli.md)
 * [Visual Studio Code](https://code.visualstudio.com/)
 
+> [!NOTE]
+> .NET Core SDK パッケージは、運用サーバー/環境には必要はありません。 運用環境に展開されるアプリに必要なものは、.NET Core ランタイム パッケージだけです。 .NET Core ランタイムは自己完結型の展開の一部としてアプリと供に展開されますが、フレームワークに依存して展開されるアプリでは個別に展開する必要があります。 フレームワークに依存する展開と自己完結型の展開について詳しくは、「[.NET Core アプリケーションの展開](./deploying/index.md)」をご覧ください。 具体的なガイドラインについては、「[Self-contained Linux applications](https://github.com/dotnet/core/blob/master/Documentation/self-contained-linux-apps.md)」(自己完結型 Linux アプリケーション) もご覧ください。
+
 ## <a name="supported-linux-versions"></a>サポートされている Linux バージョン
 
 # <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
 
-.NET Core 2.0 は、1 つのオペレーティング システムとして Linux を扱います。 サポートされている Linux ディストリビューション用に、1 つの Linux ビルド (チップ アーキテクチャあたり) があります。
+.NET Core 2.x は、1 つのオペレーティング システムとして Linux を扱います。 サポートされている Linux ディストリビューション用に、1 つの Linux ビルド (チップ アーキテクチャあたり) があります。
 
 .NET Core 2.x は、次の Linux 64 ビット (`x86_64` または `amd64`) ディストリビューション/バージョンでサポートされています。
 
- * Red Hat Enterprise Linux 7
- * CentOS 7
- * Oracle Linux 7
- * Fedora 25、Fedora 26
- * Debian 8.7 以降のバージョン 
- * Ubuntu 17.04、Ubuntu 16.04、Ubuntu 14.04
- * Linux Mint 18、Linux Mint 17
- * openSUSE 42.2 以降のバージョン
- * SUSE Enterprise Linux (SLES) 12 SP2 以降のバージョン
+* Red Hat Enterprise Linux 7
+* CentOS 7
+* Oracle Linux 7
+* Fedora 27、26
+* Debian 9、8.7 以降のバージョン
+* Ubuntu 17.10、16.04、14.04
+* Linux Mint 18、17
+* openSUSE 42.3 以降のバージョン
+* SUSE Enterprise Linux (SLES) 12 Service Pack 2 以降
 
-.NET Core 2.x がサポートされているオペレーティング システム (サポートされている OS バージョン以外) の完全なリスト、およびライフサイクル ポリシーのリンクについては、「[.NET Core 2.x Supported OS Versions](https://github.com/dotnet/core/blob/master/release-notes/2.0/2.0-supported-os.md)」 (.NET Core 2.x がサポートされる OS のバージョン) を参照してください。
+.NET Core 2.x でサポートされているオペレーティング システム、ディストリビューション、バージョン、サポートされていない OS のバージョン、ライフサイクル ポリシー リンクの完全なリストについては、「[.NET Core 2.x Supported OS Versions](https://github.com/dotnet/core/blob/master/release-notes/2.0/2.0-supported-os.md)」(.NET Core 2.x がサポートされる OS のバージョン) をご覧ください。
 
 # <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
 
@@ -51,12 +52,11 @@ ms.lasthandoff: 02/15/2018
 * Red Hat Enterprise Linux 7
 * CentOS 7
 * Oracle Linux 7
-* Fedora 24
+* Fedora 26
 * Debian 8.2 以降のバージョン
-* Ubuntu 14.04、Ubuntu 16.04、Ubuntu 16.10\*
- * Ubuntu 16.10 は、.NET Core 1.1 の最新の修正プログラム リリースによってサポートされます
-* Linux Mint 17
-* openSUSE 42.1 以降のバージョン (.NET Core 1.1)
+* Ubuntu 16.04、14.04
+* Linux Mint 18、17
+* openSUSE 42.3 以降のバージョン (.NET Core 1.1)
 
 .NET Core 1.x がサポートされているオペレーティング システム (サポートされている OS バージョン以外) の完全なリスト、およびライフサイクル ポリシーのリンクについては、「[.NET Core 1.x Supported OS Versions](https://github.com/dotnet/core/blob/master/release-notes/1.0/1.0-supported-os.md)」 (.NET Core 1.x がサポートされる OS のバージョン) を参照してください。
 
@@ -77,9 +77,9 @@ Ubuntu ディストリビューションには、次のライブラリがイン�
 * libuuid1
 * libkrb5-3
 * zlib1g
-* libicu52 (14.X 用)
-* libicu55 (16.X 用)
-* libicu57 (17.X 用)
+* libicu52 (14.x 用)
+* libicu55 (16.x 用)
+* libicu57 (17.x 用)
 
 ### <a name="centos"></a>CentOS
 
@@ -107,537 +107,288 @@ Linux では、2 つのインストーラー パッケージから選択でき�
 
 ### <a name="scripting-installs-with-the-net-core-installer-script"></a>.NET Core インストーラー スクリプトを使用したスクリプトのインストール
 
-`dotnet-install` スクリプトは、CLI ツールチェーンと共有ランタイムの非管理者インストールを実行するために使用されます。 次の場所からスクリプトをダウンロードできます: https://dot.net/v1/dotnet-install.sh
+[dotnet-install スクリプト](./tools/dotnet-install-script.md)は、CLI ツールチェーンと共有ランタイムの非管理者インストールを実行するために使用されます。 このスクリプトは [https://dot.net/v1/dotnet-install.sh](https://dot.net/v1/dotnet-install.sh) からダウンロードできます。
 
 インストーラーの bash スクリプトは、自動化シナリオと管理者以外のインストールで使用されます。 このスクリプトは、PowerShell のスイッチも読み取るので、Linux/OS X システムのスクリプトで使うことができます。
 
-> [!IMPORTANT]
-> スクリプトを実行する前に、必要な[依存関係](https://github.com/dotnet/core/blob/master/Documentation/prereqs.md)をすべてインストールします。
+## <a name="install-net-core-for-supported-red-hat-enterprise-linux-rhel-versions"></a>サポートされている Red Hat Enterprise Linux (RHEL) 用の .NET Core をインストールする
 
-## <a name="install-net-core-for-red-hat-enterprise-linux-rhel-7"></a>Red Hat Enterprise Linux (RHEL) 7 用の .NET Core をインストールする
-
-RHEL 7 に .NET Core をインストールするには:
-
-1. RHEL 7 サブスクリプションで利用できる Red Hat .NET チャネルを有効にします。
-    * Red Hat Enterprise 7 Server の場合は、次を使用します。
-    
-         ```bash
-         subscription-manager repos --enable=rhel-7-server-dotnet-rpms
-         ```
-    
-    * Red Hat Enterprise 7 Workstation の場合は、次を使用します。
-    
-        ```bash
-        subscription-manager repos --enable=rhel-7-workstation-dotnet-rpms
-         ```
-    
-    * Red Hat Enterprise 7 HPC Compute Node の場合は、次を使用します。
-    
-        ```bash
-        subscription-manager repos --enable=rhel-7-hpc-node-dotnet-rpms
-        ```
-
-2. scl ツールをインストールします。
-
-    ```bash
-    yum install scl-utils
-    ```
-    
-3. .NET Core をインストールします。
+.NET Core をサポートされている RHEL のバージョンにインストールするには:
 
 # <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
 
-.NET Core 2.0 SDK とランタイムをインストールします。
-
-   ```bash
-   yum install rh-dotnet20
-   ```
-
-環境に対して .NET Core 2.0 SDK/ランタイムを有効にします。
-
-   ```bash
-   scl enable rh-dotnet20 bash
-   ```
+最新のインストール情報については、サポートされている RHEL のバージョンの [.NET Core 2.x SDK とランタイムのインストーラーの説明](https://www.microsoft.com/net/download/linux-package-manager/rhel/sdk-current)に関するページをご覧ください。
 
 # <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
 
 **.NET Core 1.1**
 
-.NET Core 1.1 SDK とランタイムをインストールします。
+1. システムから**以前のプレビュー** バージョンの .NET Core を削除します。
 
-   ```bash
-   yum install rh-dotnetcore11
-   ```
-
-環境に対して .NET Core 1.1 SDK/ランタイムを有効にします。
-
-   ```bash
-   scl enable rh-dotnetcore11 bash
-   ```
-
+2.  Red Hat Enterprise Linux インストール情報での最新の .NET Core 1.1 については、[.NET Core 1.1 の使用開始ガイド](https://access.redhat.com/documentation/en-us/net_core/1.1/html/getting_started_guide/)をご覧ください
+     
 **.NET Core 1.0**
 
-.NET Core 1.0 SDK とランタイムをインストールします。
+1. システムから**以前のプレビュー** バージョンの .NET Core を削除します。
 
-   ```bash
-   yum install rh-dotnetcore10
-   ```
-
-環境に対して .NET Core 1.0 SDK/ランタイムを有効にします。
-
-   ```bash
-   scl enable rh-dotnetcore10 bash
-   ```
-
----
-4. `dotnet --version` コマンドを実行して、インストールが成功したことを確認します。
-
-     ```bash
-     dotnet --version
-     ```
+2.  Red Hat Enterprise Linux インストール情報での最新の .NET Core 1.0 については、[.NET Core 1.0 の使用開始ガイド](https://access.redhat.com/documentation/en-us/net_core/1.0/html/getting_started_guide/)をご覧ください
 
 Red Hat .NET チャネル アクセスの登録に関するヘルプについては、Red Hat の「[Chapter 1 of the .NET Core 1.1 Getting Started Guide](https://access.redhat.com/documentation/en/net-core/1.1/paged/getting-started-guide/)」 (.NET Core 1.1 ファースト ステップ ガイドの第 1 章) を参照してください。
 
-## <a name="install-net-core-for-ubuntu-1404-ubuntu-1604-ubuntu-1610--linux-mint-17-linux-mint-18-64-bit"></a>.NET Core for Ubuntu 14.04、Ubuntu 16.04、Ubuntu 16.10 および Linux Mint 17、Linux Mint 18 (64 ビット)
+---
 
-1. システムから**以前のプレビュー** バージョンの .NET Core を削除します。
+## <a name="install-net-core-for-supported-ubuntu-and-linux-mint-distributionsversions-64-bit"></a>サポートされている Ubuntu および Linux Mint のディストリビューション/バージョン (64 ビット) 用の .NET Core をインストールする
 
 # <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
 
-2. 信頼済みとして Microsoft プロダクト キーを登録します。
+1. システムから**以前のプレビュー** バージョンの .NET Core を削除します。
 
-   ```bash
-   curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
-   sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
-   ```
+2. サポートされている Ubuntu および Linux Mint のディストリビューション/バージョン (64 ビット) に .NET Core 2.x をインストールします。
 
-3. 必要なバージョンのホスト パッケージ フィードを設定します。
+**.NET Core 2.0**
 
-   **Ubuntu 17.10**
+|ランタイム/SDK          |Ubuntu 17.10  |Ubuntu 16.04 / Linux Mint 18|Ubuntu 14.04 / Linux Mint 17|
+|-------------------------|--------------|----------------------------|----------------------------|
+|.NET Core ランタイム 2.0.6  |[インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/ubuntu17-10/runtime-2.0.6)|[インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/ubuntu16-04/runtime-2.0.6)          |[インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/ubuntu14-04/runtime-2.0.6)            |
+|.NET Core ランタイム 2.0.5  |[インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/ubuntu17-10/runtime-2.0.5)|[インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/ubuntu16-04/runtime-2.0.5)          |[インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/ubuntu14-04/runtime-2.0.5)            |
+|.NET Core SDK 2.1.103    |[インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/ubuntu17-10/sdk-2.1.103)|[インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/ubuntu16-04/sdk-2.1.103)            |[インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/ubuntu14-04/sdk-2.1.103)            |
+|.NET Core SDK 2.0.3      |[インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/ubuntu17-10/sdk-2.0.3)|[インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/ubuntu16-04/sdk-2.0.3)          |[インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/ubuntu14-04/sdk-2.0.3)            |
 
-   ```bash
-   sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-ubuntu-artful-prod artful main" > /etc/apt/sources.list.d/dotnetdev.list'
-   sudo apt-get update
-   ```
-   **Ubuntu 17.04**
+**.NET Core 2.1**
 
-   ```bash
-   sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-ubuntu-zesty-prod zesty main" > /etc/apt/sources.list.d/dotnetdev.list'
-   sudo apt-get update
-   ```
+>[!IMPORTANT]
+> Visual Studio で .NET Core 2.1 を使用するには、[Visual Studio 2017 15.7 Preview 1 以降をインストールする](https://www.visualstudio.com/vs/preview)必要があります。
 
-   **Ubuntu 16.04 / Linux Mint 18**
+|ランタイム/SDK                  |Ubuntu 17.10    |Ubuntu 16.04 / Linux Mint 18|Ubuntu 14.04 / Linux Mint 17|
+|---------------------------------|----------------|----------------------------|----------------------------|
+|.NET Core ランタイム 2.1.0-preview2 |[インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/ubuntu17-10/runtime-2.1.0-preview2)|[インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/ubuntu16-04/runtime-2.1.0-preview2)            |[インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/ubuntu14-04/runtime-2.1.0-preview2)            |
+|.NET Core ランタイム 2.1.0-preview1 |[インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/ubuntu17-10/runtime-2.1.0-preview1)|[インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/ubuntu16-04/runtime-2.1.0-preview1)            |[インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/ubuntu14-04/runtime-2.1.0-preview1)            |
+|.NET Core SDK 2.1.300-preview2   |[インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/ubuntu17-10/sdk-2.1.300-preview2)|[インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/ubuntu16-04/sdk-2.1.300-preview2)            |[インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/ubuntu14-04/sdk-2.1.300-preview2)
+|.NET Core SDK 2.1.300-preview1   |[インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/ubuntu17-10/sdk-2.1.300-preview1)|[インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/ubuntu16-04/sdk-2.1.300-preview1)            |[インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/ubuntu14-04/sdk-2.1.300-preview1)            |
 
-   ```bash
-   sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-ubuntu-xenial-prod xenial main" > /etc/apt/sources.list.d/dotnetdev.list'
-   sudo apt-get update
-   ```
-
-   **Ubuntu 14.04 / Linux Mint 17**
-
-   ```bash
-   sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-ubuntu-trusty-prod trusty main" > /etc/apt/sources.list.d/dotnetdev.list'
-   sudo apt-get update
-   ```
-
-4. .NET Core をインストールします。
-
-   ```bash
-   sudo apt-get install dotnet-sdk-2.1.4
-   ```
-
-4. `dotnet --version` コマンドを実行して、インストールが成功したことを確認します。
-
-   ```bash
-   dotnet --version
-   ```
 
 # <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
 
-2. 必要なバージョンのホスト パッケージ フィードを設定します。
+1. システムから**以前のプレビュー** バージョンの .NET Core を削除します。
 
-   **Ubuntu 16.10**
-   
-   ```bash
-   sudo sh -c 'echo "deb [arch=amd64] https://apt-mo.trafficmanager.net/repos/dotnet-release/ yakkety main" > /etc/apt/sources.list.d/dotnetdev.list'
-   sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys B02C46DF417A0893
-   sudo apt-get update
-   ```
+2. サポートされている Ubuntu および Linux Mint のディストリビューション/バージョン (64 ビット) に .NET Core 1.x をインストールします。
 
-  **Ubuntu 16.04 / Linux Mint 18**
-
-   ```bash
-   sudo sh -c 'echo "deb [arch=amd64] https://apt-mo.trafficmanager.net/repos/dotnet-release/ xenial main" > /etc/apt/sources.list.d/dotnetdev.list'
-   sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys B02C46DF417A0893
-   sudo apt-get update
-   ```
-    
-   **Ubuntu 14.04 / Linux Mint 17**
-
-   ```bash
-   sudo sh -c 'echo "deb [arch=amd64] https://apt-mo.trafficmanager.net/repos/dotnet-release/ trusty main" > /etc/apt/sources.list.d/dotnetdev.list'
-   sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys B02C46DF417A0893
-   sudo apt-get update
-   ```
-
-3. Ubuntu または Linux Mint に、.NET Core 1.x をインストールします。
-
-   ```bash
-   sudo apt-get install dotnet-dev-1.0.4
-   ```
-
-4. `dotnet --version` コマンドを実行して、インストールが成功したことを確認します。
-
-   ```bash
-   dotnet --version
-   ```
+| ランタイム/SDK         |Ubuntu 16.04 / Linux Mint 18|Ubuntu 14.04 / Linux Mint 17|
+|-------------------------|----------------------------|----------------------------|
+|.NET Core ランタイム 1.1.7  |[インストール リンク](https://www.microsoft.com/net/download/thank-you/dotnet-runtime-1.1.7-linux-ubuntu-16.04-x64-binaries)            |[インストール リンク](https://www.microsoft.com/net/download/thank-you/dotnet-runtime-1.1.7-linux-ubuntu-14.04-x64-binaries)            |
+|.NET Core ランタイム 1.1.6  |[インストール リンク](https://www.microsoft.com/net/download/thank-you/dotnet-runtime-1.1.6-linux-ubuntu-16.04-x64-binaries)            |[インストール リンク](https://www.microsoft.com/net/download/thank-you/dotnet-runtime-1.1.6-linux-ubuntu-14.04-x64-binaries)            |
+|.NET Core ランタイム 1.0.10 |[インストール リンク](https://www.microsoft.com/net/download/thank-you/dotnet-runtime-1.0.10-linux-ubuntu-16.04-x64-binaries)            |[インストール リンク](https://www.microsoft.com/net/download/thank-you/dotnet-runtime-1.0.10-linux-ubuntu-14.04-x64-binaries)            |
+|.NET Core ランタイム 1.0.9  |[インストール リンク](https://www.microsoft.com/net/download/thank-you/dotnet-runtime-1.0.9-linux-ubuntu-16.04-x64-binaries)            |[インストール リンク](https://www.microsoft.com/net/download/thank-you/dotnet-runtime-1.0.9-linux-ubuntu-14.04-x64-binaries)            |
+|.NET Core SDK 1.1.8      |[インストール リンク](https://www.microsoft.com/net/download/thank-you/dotnet-sdk-1.1.8-linux-ubuntu-16.04-x64-binaries)            |[インストール リンク](https://www.microsoft.com/net/download/thank-you/dotnet-sdk-1.1.8-linux-ubuntu-14.04-x64-binaries)            |
+|.NET Core SDK 1.1.7      |[インストール リンク](https://www.microsoft.com/net/download/thank-you/dotnet-sdk-1.1.7-linux-ubuntu-16.04-x64-binaries)            |[インストール リンク](https://www.microsoft.com/net/download/thank-you/dotnet-sdk-1.1.7-linux-ubuntu-14.04-x64-binaries)            |
+|.NET Core SDK 1.0.4      |[インストール リンク](https://www.microsoft.com/net/download/thank-you/dotnet-sdk-1.0.4-linux-ubuntu-16.04-x64-binaries)            |[インストール リンク](https://www.microsoft.com/net/download/thank-you/dotnet-sdk-1.0.4-linux-ubuntu-14.04-x64-binaries)            |
+|.NET Core SDK 1.0.1      |[インストール リンク](https://www.microsoft.com/net/download/thank-you/dotnet-sdk-1.0.1-linux-ubuntu-16.04-x64-binaries)            |[インストール リンク](https://www.microsoft.com/net/download/thank-you/dotnet-sdk-1.0.1-linux-ubuntu-14.04-x64-binaries)            |
 
 ---
 
- ## <a name="install-net-core-for-debian-8-or-debian-9-64-bit"></a>Debian 8 または Debian 9 (64 ビット) 用の .NET Core をインストールする
+## <a name="install-net-core-for-supported-debian-versions-64-bit"></a>サポートされている Debian のバージョン (64 ビット) 用の .NET Core をインストールする
 
-Debian 8 または Debian 9 (64 ビット) 用の .NET Core をインストールするには:
-
-1. システムから**以前のプレビュー** バージョンの .NET Core を削除します。
+サポートされている Debian のバージョン (64 ビット) に .NET Core をインストールするには:
 
 > [!NOTE]
 > tar.gz から Linux システムをインストールするには、ユーザー指定のディレクトリが必要です。
 
 # <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
 
-2. システムのコンポーネントをインストールします。
+1. システムから**以前のプレビュー** バージョンの .NET Core を削除します。
 
-   ```bash
-   sudo apt-get update
-   sudo apt-get install curl libunwind8 gettext apt-transport-https
-   ```
-   
-3. 信頼済みの Microsoft プロダクト キーを登録します。
+2. サポートされている Debian のバージョン (64 ビット) に .NET Core 2.x をインストールします。
 
-   ```bash
-   curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
-   sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
-   ```
-   
-4. Microsoft 製品フィードを登録します。
+**.NET Core 2.0**
 
-   **Debian 9 (Stretch)**
+|ランタイム/SDK          |Debian 9       |Debian 8       |
+|-------------------------|---------------|---------------|
+|.NET Core ランタイム 2.0.6  |[インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/debian9/runtime-2.0.6)   |[インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/debian8/runtime-2.0.6)   |
+|.NET Core ランタイム 2.0.5  |[インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/debian9/runtime-2.0.5)   |[インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/debian8/runtime-2.0.5)   |
+|.NET Core SDK 2.1.103    |[インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/debian9/sdk-2.1.103)   |[インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/debian8/sdk-2.1.103)   |
+|.NET Core SDK 2.0.3      |[インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/debian9/sdk-2.0.3)   |[インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/debian8/sdk-2.0.3)   |
 
-   ```bash
-   sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-debian-stretch-prod stretch main" > /etc/apt/sources.list.d/dotnetdev.list'
-   ```
-   
-   **Debian 8 (Jessie)**
-   
-   ```bash
-   sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-debian-jessie-prod jessie main" > /etc/apt/sources.list.d/dotnetdev.list'
-   ```
-   
-5. .NET Core SDK をインストールします。
+**.NET Core 2.1**
 
-   ```bash
-   sudo apt-get update
-   sudo apt-get install dotnet-sdk-2.0.0
-   ```
+>[!IMPORTANT]
+> Visual Studio で .NET Core 2.1 を使用するには、[Visual Studio 2017 15.7 Preview 1 以降をインストールする](https://www.visualstudio.com/vs/preview)必要があります。
 
-6. パスに dotnet を追加します。
-
-   ```bash
-   export PATH=$PATH:$HOME/dotnet
-   ```
-   
-7. `dotnet --version` コマンドを実行して、インストールが成功したことを確認します。
-
-   ```bash
-   dotnet --version
-   ```   
-  
+|ランタイム/SDK                  |Debian 9       |Debian 8       |
+|---------------------------------|---------------|---------------|
+|.NET Core ランタイム 2.1.0-preview2 |[インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/debian9/runtime-2.1.0-preview2)   |[インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/debian8/runtime-2.1.0-preview2)   |
+|.NET Core ランタイム 2.1.0-preview1 |[インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/debian9/runtime-2.1.0-preview1)   |[インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/debian8/runtime-2.1.0-preview1)   |
+|.NET Core SDK 2.1.300-preview2   |[インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/debian9/sdk-2.1.300-preview2)   |[インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/debian8/sdk-2.1.300-preview2)   |
+|.NET Core SDK 2.1.300-preview1   |[インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/debian9/sdk-2.1.300-preview1)   |[インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/debian8/sdk-2.1.300-preview1)   |
 
 # <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
 
-2. 必須コンポーネントを取得します。
+1. システムから**以前のプレビュー** バージョンの .NET Core を削除します。
 
-   ```bash
-   sudo apt-get install curl libunwind8 gettext
-   ```
+2. Debian 9 または Debian 8 に .NET Core 1.x をインストールします。
 
-3. .NET Core SDK バイナリ (tarball) をダウンロードします。
-
-   ```bash
-   curl -sSL -o dotnet.tar.gz https://go.microsoft.com/fwlink/?linkid=848826
-   ```
-
-4. .NET Core SDK バイナリを抽出します。
-
-   ```bash
-   sudo mkdir -p /opt/dotnet && sudo tar zxf dotnet.tar.gz -C /opt/dotnet
-   ```
-
-5. パスに dotnet を追加します。
-
-   ```bash
-   sudo ln -s /opt/dotnet/dotnet /usr/local/bin
-   ```
-
-6. `dotnet --version` コマンドを実行して、インストールが成功したことを確認します。
-
-   ```bash
-   dotnet --version
-   ```
+* .NET Core ランタイム 1.1.7 [インストール リンク](https://www.microsoft.com/net/download/thank-you/dotnet-runtime-1.1.7-linux-debian-x64-binaries)
+* .NET Core ランタイム 1.1.6 [インストール リンク](https://www.microsoft.com/net/download/thank-you/dotnet-runtime-1.1.6-linux-debian-x64-binaries)
+* .NET Core ランタイム 1.0.10 [インストール リンク](https://www.microsoft.com/net/download/thank-you/dotnet-runtime-1.0.10-linux-debian-x64-binaries)
+* .NET Core ランタイム 1.0.9 [インストール リンク](https://www.microsoft.com/net/download/thank-you/dotnet-runtime-1.0.9-linux-debian-x64-binaries)
+* .NET Core SDK 1.1.8 [インストール リンク](https://www.microsoft.com/net/download/thank-you/dotnet-sdk-1.1.8-linux-debian-x64-binaries)
+* .NET Core SDK 1.1.7 [インストール リンク](https://www.microsoft.com/net/download/thank-you/dotnet-sdk-1.1.7-linux-debian-x64-binaries)
+* .NET Core SDK 1.0.4 [インストール リンク](https://www.microsoft.com/net/download/thank-you/dotnet-sdk-1.0.4-linux-debian-x64-binaries)
+* .NET Core SDK 1.0.1 [インストール リンク](https://www.microsoft.com/net/download/thank-you/dotnet-sdk-1.0.1-linux-debian-x64-binaries)
 
 ---
 
-## <a name="install-net-core-for-fedora-24-fedora-25-or-fedora-26-64-bit"></a>.NET Core for Fedora 24、Fedora 25、または Fedora 26 (64 ビット) をインストールする
+## <a name="install-net-core-for-supported-fedora-versions-64-bit"></a>サポートされている Fedora のバージョン (64 ビット) 用の .NET Core をインストールする
 
-.NET Core 2.x を Fedora 26 または Fedora 25 にインストールするか、.NET Core 1.x を Fedora 24 にインストールするには、次のようにします。
-
-1. システムから**以前のプレビュー** バージョンの .NET Core を削除します。
+サポートされている Fedora のバージョンに .NET Core をインストールするには:
 
 > [!NOTE]
 > tar.gz から Linux システムをインストールするには、ユーザー指定のディレクトリが必要です。
 
 # <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
 
-**Fedora 26 または Fedora 25**
+1. システムから**以前のプレビュー** バージョンの .NET Core を削除します。
 
-2. Microsoft 署名キーを登録します。
+2. サポートされている Fedora のバージョン (64 ビット) に .NET Core 2.x をインストールします。
 
-   ```bash
-   sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-   ```
+**.NET Core 2.0**
 
-3. dotnet 製品フィードを追加します。
+|ランタイム/SDK          |Fedora 26 以降 |Fedora 25 以前 |
+|-------------------------|-------------------|----------------------|
+|.NET Core ランタイム 2.0.6  |[インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/fedora26/runtime-2.0.6)       |[インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/fedora25/runtime-2.0.6)           |
+|.NET Core ランタイム 2.0.5  |[インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/fedora26/runtime-2.0.5)       |[インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/fedora25/runtime-2.0.5)           |
+|.NET Core SDK 2.1.103    |[インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/fedora26/sdk-2.1.103)       |[インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/fedora25/sdk-2.1.103)           |
+|.NET Core SDK 2.0.3      |[インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/fedora26/sdk-2.0.3)       |[インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/fedora25/sdk-2.0.3)           |
 
-   ```bash
-   sudo sh -c 'echo -e "[packages-microsoft-com-prod]\nname=packages-microsoft-com-prod \nbaseurl=https://packages.microsoft.com/yumrepos/microsoft-rhel7.3-prod\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/dotnetdev.repo'
-   ```
+**.NET Core 2.1**
 
-4. .NET Core SDK をインストールします。
+>[!IMPORTANT]
+> Visual Studio で .NET Core 2.1 を使用するには、[Visual Studio 2017 15.7 Preview 1 以降をインストールする](https://www.visualstudio.com/vs/preview)必要があります。
 
-   ```bash
-   sudo dnf update
-   sudo dnf install libunwind libicu
-   sudo dnf install dotnet-sdk-2.0.0
-   ```
-
-5. パスに dotnet を追加します。
-
-   ```bash
-   export PATH=$PATH:$HOME/dotnet
-   ```
+|ランタイム/SDK                  |Fedora 26 以降 |Fedora 25 以前 |
+|---------------------------------|-------------------|----------------------|
+|.NET Core ランタイム 2.1.0-preview2 |[インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/fedora26/runtime-2.1.0-preview2)       |[インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/fedora25/runtime-2.1.0-preview2)           |
+|.NET Core ランタイム 2.1.0-preview1 |[インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/fedora26/runtime-2.1.0-preview1)       |[インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/fedora25/runtime-2.1.0-preview1)           |
+|.NET Core SDK 2.1.300-preview2   |[インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/fedora26/sdk-2.1.300-preview2)       |[インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/fedora25/sdk-2.1.300-preview2)           |
+|.NET Core SDK 2.1.300-preview1   |[インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/fedora26/sdk-2.1.300-preview1)       |[インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/fedora25/sdk-2.1.300-preview1)           |
 
 # <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
+
+1. システムから**以前のプレビュー** バージョンの .NET Core を削除します。
+
+2. サポートされている Fedora のバージョン (64 ビット) に .NET Core 1.x をインストールします。
 
 **Fedora 24**
 
-2. 必須コンポーネントを取得します。
+* .NET Core ランタイム 1.1.7 [インストール リンク](https://www.microsoft.com/net/download/thank-you/dotnet-runtime-1.1.7-linux-fedora-24-x64-binaries)
+* .NET Core ランタイム 1.1.6 [インストール リンク](https://www.microsoft.com/net/download/thank-you/dotnet-runtime-1.1.6-linux-fedora-24-x64-binaries)
+* .NET Core SDK 1.1.8 [インストール リンク](https://www.microsoft.com/net/download/thank-you/dotnet-sdk-1.1.8-linux-fedora-24-x64-binaries)
+* .NET Core SDK 1.1.7 [インストール リンク](https://www.microsoft.com/net/download/thank-you/dotnet-sdk-1.1.7-linux-fedora-24-x64-binaries)
+* .NET Core SDK 1.0.1 [インストール リンク](https://www.microsoft.com/net/download/thank-you/dotnet-sdk-1.0.1-linux-debian-x64-binaries)
 
-   ```bash
-   sudo dnf install libunwind libicu
-   ```
+**Fedora 23**
 
-3. .NET Core SDK バイナリ (tarball) をダウンロードします。
+* .NET Core ランタイム 1.0.9 [インストール リンク](https://www.microsoft.com/net/download/thank-you/dotnet-runtime-1.0.9-linux-fedora-23-x64-binaries)
+* .NET Core SDK 1.0.4 [インストール リンク](https://www.microsoft.com/net/download/thank-you/dotnet-sdk-1.0.4-linux-fedora-23-x64-binaries)
+* .NET Core SDK 1.0.1 [インストール リンク](https://www.microsoft.com/net/download/thank-you/dotnet-sdk-1.0.1-linux-fedora-23-x64-binaries)
 
-   ```bash
-   curl -sSL -o dotnet.tar.gz https://go.microsoft.com/fwlink/?linkid=848833
-   ```
-
-4. .NET Core SDK バイナリを抽出します。
-
-   ```bash
-   sudo mkdir -p /opt/dotnet && sudo tar zxf dotnet.tar.gz -C /opt/dotnet
-   ```
-
-5. パスに dotnet を追加します。
-
-   ```bash
-   sudo ln -s /opt/dotnet/dotnet /usr/local/bin
-   ```
-   
 ---
 
-6. `dotnet --version` コマンドを実行して、インストールが成功したことを確認します。
+## <a name="install-net-core-for-supported-centos-and-oracle-linux-distributionsversions-64-bit"></a>サポートされている CentOS および Oracle Linux のディストリビューション/バージョン (64 ビット) 用の .NET Core をインストールする
 
-   ```bash
-   dotnet --version
-   ```
-
-## <a name="install-net-core-for-centos-71-64-bit--oracle-linux-71-64-bit"></a>CentOS 7.1 (64 bit) および Oracle Linux 7.1 (64 bit) 用の .NET Core をインストールする
-
-CentOS 7.1 (64 ビット) および Oracle Linux 7.1 (64 ビット) 用の .NET Core をインストールするには、次のようにします。
-
-1. システムから**以前のプレビュー** バージョンの .NET Core を削除します。
+サポートされている CentOS および Oracle Linux のディストリビューション/バージョン (64 ビット) 用の .NET Core をインストールするには:
 
 > [!NOTE]
 > tar.gz から Linux システムをインストールするには、ユーザー指定のディレクトリが必要です。
 
 # <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
 
-2. Microsoft 署名キーを登録します。
+1. システムから**以前のプレビュー** バージョンの .NET Core を削除します。
 
-   ```bash
-   sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-   ```
+2. サポートされている CentOS および Oracle Linux のディストリビューション/バージョン (64 ビット) に .NET Core 2.x をインストールします。
 
-3. Microsoft 製品フィードを追加します。
+**.NET Core 2.0**
 
-   ```bash
-   sudo sh -c 'echo -e "[packages-microsoft-com-prod]\nname=packages-microsoft-com-prod \nbaseurl=https://packages.microsoft.com/yumrepos/microsoft-rhel7.3-prod\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/dotnetdev.repo'
-   ```
+* .NET Core ランタイム 2.0.6 [インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/centos/runtime-2.0.6)
+* .NET Core ランタイム 2.0.5 [インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/centos/runtime-2.0.5)
+* .NET Core SDK 2.1.103 [インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/centos/sdk-2.1.103)
+* .NET Core SDK 2.0.3 [インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/centos/sdk-2.0.3)
+ 
+**.NET Core 2.1**
 
-4. .NET Core SDK をインストールします。
+>[!IMPORTANT]
+> Visual Studio で .NET Core 2.1 を使用するには、[Visual Studio 2017 15.7 Preview 1 以降をインストールする](https://www.visualstudio.com/vs/preview/)必要があります。
 
-   ```bash
-   sudo yum update
-   sudo yum install libunwind libicu
-   sudo yum install dotnet-sdk-2.0.0
-   ```
-
-5. パスに dotnet を追加します。
-
-   ```bash
-   export PATH=$PATH:$HOME/dotnet
-   ```
+* .NET Core ランタイム 2.1.0-preview2 [インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/centos/runtime-2.1.0-preview2)
+* .NET Core ランタイム 2.1.0-preview1 [インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/centos/runtime-2.1.0-preview1)
+* .NET Core SDK 2.1.300-preview2 [インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/centos/sdk-2.1.300-preview2)
+* .NET Core SDK 2.1.300-preview1 [インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/centos/sdk-2.1.300-preview1)
 
 # <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
 
-2. 必須コンポーネントを取得します。
+1. システムから**以前のプレビュー** バージョンの .NET Core を削除します。
 
-   ```bash
-   sudo yum install libunwind libicu
-   ```
-   
-3. .NET Core SDK バイナリ (tarball) をダウンロードします。
+2. サポートされている CentOS および Oracle Linux のディストリビューション/バージョン (64 ビット) に .NET Core 1.x をインストールします。
 
-   ```bash
-   curl -sSL -o dotnet.tar.gz https://go.microsoft.com/fwlink/?linkid=848821
-   ```
-
-4. .NET Core SDK バイナリを抽出します。
-
-   ```bash
-   sudo mkdir -p /opt/dotnet && sudo tar zxf dotnet.tar.gz -C /opt/dotnet
-   ```
-
-5. パスに dotnet を追加します。
-
-   ```bash
-   sudo ln -s /opt/dotnet/dotnet /usr/local/bin
-   ```
+* .NET Core ランタイム 1.1.7 [インストール リンク](https://www.microsoft.com/net/download/thank-you/dotnet-runtime-1.1.7-linux-centos-x64-binaries)
+* .NET Core ランタイム 1.1.6 [インストール リンク](https://www.microsoft.com/net/download/thank-you/dotnet-runtime-1.1.6-linux-centos-x64-binaries)
+* .NET Core ランタイム 1.0.10 [インストール リンク](https://www.microsoft.com/net/download/thank-you/dotnet-runtime-1.0.10-linux-centos-x64-binaries)
+* .NET Core ランタイム 1.0.9 [インストール リンク](https://www.microsoft.com/net/download/thank-you/dotnet-runtime-1.0.9-linux-centos-x64-binaries)
+* .NET Core SDK 1.1.8 [インストール リンク](https://www.microsoft.com/net/download/thank-you/dotnet-sdk-1.1.8-linux-centos-x64-binaries)
+* .NET Core SDK 1.1.7 [インストール リンク](https://www.microsoft.com/net/download/thank-you/dotnet-sdk-1.1.7-linux-centos-x64-binaries)
+* .NET Core SDK 1.0.4 [インストール リンク](https://www.microsoft.com/net/download/thank-you/dotnet-sdk-1.0.4-linux-centos-x64-binaries)
+* .NET Core SDK 1.0.1 [インストール リンク](https://www.microsoft.com/net/download/thank-you/dotnet-sdk-1.0.1-linux-centos-x64-binaries)
 
 ---
 
-6. `dotnet --version` コマンドを実行して、インストールが成功したことを確認します。
+## <a name="install-net-core-for-supported-suse-linux-enterprise-server-and-opensuse-distributionsversions-64-bit"></a>サポートされている SUSE Linux Enterprise Server および OpenSUSE のディストリビューション/バージョン (64 ビット) 用の .NET Core をインストールする
 
-   ```bash
-   dotnet --version
-   ```
-
-## <a name="install-net-core-for-suse-linux-enterprise-server-64-bit"></a>.NET Core for SUSE Linux Enterprise Server (64 ビット) をインストールする
-
-SUSE Linux Enterprise Server (SLES) 12 SP2 (64 ビット) 用の .NET Core 2.x をインストールするには、次のようにします。
-
-1. システムから**以前のプレビュー** バージョンの .NET Core を削除します。
-
-2. dotnet 製品フィードを追加します。
-
-   ```bash
-   sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-   sudo sh -c 'echo -e "[packages-microsoft-com-prod]\nname=packages-microsoft-com-prod \nbaseurl=https://packages.microsoft.com/yumrepos/microsoft-rhel7.3-prod\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/zypp/repos.d/dotnetdev.repo'
-   ```
-
-3. .NET Core SDK をインストールします。
-
-   ```bash
-   sudo zypper update
-   sudo zypper install libunwind libicu
-   sudo zypper install dotnet-sdk-2.0.0
-   ```
-
-4. パスに dotnet を追加します。
-
-   ```bash
-   export PATH=$PATH:$HOME/dotnet
-   ```
-
-5. `dotnet --version` コマンドを実行して、インストールが成功したことを確認します。
-
-   ```bash
-   dotnet --version
-   ```
-   
-## <a name="install-net-core-for-opensuse-64-bit"></a>.NET Core for openSUSE (64 ビット) をインストールする
-
-openSUSE 用の .NET Core 2.x または openSUSE (64 ビット) 用の .NET Core 1.x をインストールするには、次のようにします。
-
-1. システムから**以前のプレビュー** バージョンの .NET Core を削除します。
-
-> [!NOTE]
-> tar.gz から Linux システムをインストールするには、ユーザー指定のディレクトリが必要です。
+サポートされている SUSE Linux Enterprise Server および OpenSUSE のディストリビューション/バージョン (64 ビット) 用の .NET Core 2.x をインストールするには:
 
 # <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
 
-2. Microsoft 署名キーを登録します。
+1. システムから**以前のプレビュー** バージョンの .NET Core を削除します。
 
-   ```bash
-   sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-   ```
+2. サポートされている SUSE Linux Enterprise Server および OpenSUSE のディストリビューション/バージョン (64 ビット) に .NET Core 2.x をインストールします。
 
-3. dotnet 製品フィードを追加します。
+**.NET Core 2.0**
 
-   ```bash
-   sudo sh -c 'echo -e "[packages-microsoft-com-prod]\nname=packages-microsoft-com-prod \nbaseurl=https://packages.microsoft.com/yumrepos/microsoft-rhel7.3-prod\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/zypp/repos.d/dotnetdev.repo'
-   ``` 
+* .NET Core ランタイム 2.0.6 [インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/opensuse/runtime-2.0.6)
+* .NET Core ランタイム 2.0.5 [インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/opensuse/runtime-2.0.5)
+* .NET Core SDK 2.1.103 [インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/opensuse/sdk-2.1.103)
+* .NET Core SDK 2.0.3 [インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/opensuse/sdk-2.0.3)
+ 
+**.NET Core 2.1**
 
-4. .NET Core SDK をインストールします。
+>[!IMPORTANT]
+> Visual Studio で .NET Core 2.1 を使用するには、[Visual Studio 2017 15.7 Preview 1 以降をインストールする](https://www.visualstudio.com/vs/preview)必要があります。
 
-   ```bash
-   sudo zypper update
-   sudo zypper install libunwind libicu
-   sudo zypper install dotnet-sdk-2.0.0
-   ```
-
-5. パスに dotnet を追加します。
-
-   ```bash
-   export PATH=$PATH:$HOME/dotnet
-   ```
+* .NET Core ランタイム 2.1.0-preview2 [インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/opensuse/runtime-2.1.0-preview2)
+* .NET Core ランタイム 2.1.0-preview1  [インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/opensuse/runtime-2.1.0-preview1)
+* .NET Core SDK 2.1.300-preview2 [インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/opensuse/sdk-2.1.300-preview2)
+* .NET Core SDK 2.1.300-preview1 [インストール リンク](https://www.microsoft.com/net/download/linux-package-manager/opensuse/sdk-2.1.300-preview1)
 
 # <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
 
-2. 必須コンポーネントを取得します。
+1. システムから**以前のプレビュー** バージョンの .NET Core を削除します。
 
-   ```bash
-   sudo zypper install libunwind libicu
-   ```
+2. サポートされている SUSE Linux Enterprise Server および OpenSUSE のディストリビューション/バージョン (64 ビット) に .NET Core 1.x をインストールします。
 
-3. .NET Core SDK バイナリ (tarball) をダウンロードします。
+**SUSE Linux Enterprise Server 13.2**
 
-   ```bash
-   curl -sSL -o dotnet.tar.gz https://go.microsoft.com/fwlink/?linkid=848824
-   ```
+* .NET Core ランタイム 1.1.7 [インストール リンク](https://www.microsoft.com/net/download/thank-you/dotnet-runtime-1.1.7-linux-opensuse-13.2-x64-binaries)
+* .NET Core ランタイム 1.1.6 [インストール リンク](https://www.microsoft.com/net/download/thank-you/dotnet-runtime-1.1.6-linux-opensuse-13.2-x64-binaries)
+* .NET Core SDK 1.1.7 [インストール リンク](https://www.microsoft.com/net/download/thank-you/dotnet-sdk-1.1.7-linux-opensuse-13.2-x64-binaries)
 
-4. .NET Core SDK バイナリを抽出します。
-   
-   ```bash
-   sudo mkdir -p /opt/dotnet && sudo tar zxf dotnet.tar.gz -C /opt/dotnet
-   ```
+**openSUSE 24**
 
-5. パスに dotnet を追加します。
+* .NET Core SDK 1.0.4 [インストール リンク](https://www.microsoft.com/net/download/thank-you/dotnet-sdk-1.0.4-linux-opensuse-24-x64-binaries)
+* .NET Core SDK 1.0.1 [インストール リンク](https://www.microsoft.com/net/download/thank-you/dotnet-sdk-1.0.1-linux-opensuse-24-x64-binaries)
 
-   ```bash
-   sudo ln -s /opt/dotnet/dotnet /usr/local/bin
-   ```
-   
 ---
-
-6. `dotnet --version` コマンドを実行して、インストールが成功したことを確認します。
-
-   ```bash
-   dotnet --version
-   ```
 
 > [!IMPORTANT]
-> サポートされている Linux ディストリビューション/バージョンの .NET Core 2.x で問題が発生している場合は、インストールしたディストリビューション/バージョンに対する [2.0 の既知の問題](https://github.com/dotnet/core/tree/master/release-notes/2.0)を参照してください。 
->
-> サポートされている Linux ディストリビューション/バージョンの .NET Core 1.x で問題が発生している場合は、インストールしたディストリビューション/バージョンに対する [1.0.0 の既知の問題](https://github.com/dotnet/core/blob/master/release-notes/1.0/1.0.0-known-issues.md)と [1.0.1 の既知の問題](https://github.com/dotnet/core/blob/master/release-notes/1.0/1.0.1-known-issues.md)を参照してください。
+> サポートされている Linux ディストリビューション/バージョンへの .NET Core のインストールに問題がある場合は、インストールしているディストリビューション/バージョンに関する以下のトピックをご覧ください。
+> * [.NET Core 2.1 の既知の問題](https://github.com/dotnet/core/tree/master/release-notes/2.1)
+> * [.NET Core 2.0 の既知の問題](https://github.com/dotnet/core/tree/master/release-notes/2.0)
+> * [.NET Core 1.1 の既知の問題](https://github.com/dotnet/core/blob/master/release-notes/1.1)
+> * [.NET Core 1.0 の既知の問題](https://github.com/dotnet/core/blob/master/release-notes/1.0)
