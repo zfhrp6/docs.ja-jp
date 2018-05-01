@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 7538c760d396349fe9b1e93a21839e3e59d7f046
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
-ms.translationtype: MT
+ms.openlocfilehash: 279dd4ea2ffb36e13a22f366ece145174918b759
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="subscribing-to-events"></a>イベントへのサブスクライブ
 
@@ -112,7 +112,7 @@ CQRS アプローチを使用する場合など、より高度なマイクロサ
 
 -   完全な[イベント ソーシング パターン](https://msdn.microsoft.com/library/dn589792.aspx)を使用する。
 
--   [トランザクション ログ マイニング](http://www.scoop.it/t/sql-server-transaction-log-mining)を使用する。
+-   [トランザクション ログ マイニング](https://www.scoop.it/t/sql-server-transaction-log-mining)を使用する。
 
 -   [送信トレイ パターン](http://gistlabs.com/2014/05/the-outbox/)を使用する。 これは、(ローカル トランザクションを拡張して) 統合イベントを格納するトランザクション テーブルです。
 
@@ -302,7 +302,7 @@ namespace Microsoft.eShopOnContainers.Services.Basket.API.IntegrationEvents.Even
 
 ### <a name="additional-resources"></a>その他の技術情報
 
--   **メッセージべき等に従う**(このページの小見出し) [*https://msdn.microsoft.com/library/jj591565.aspx*](https://msdn.microsoft.com/library/jj591565.aspx)
+-   **メッセージべき等性の順守** (このページの小見出し) [*https://msdn.microsoft.com/library/jj591565.aspx*](https://msdn.microsoft.com/library/jj591565.aspx)
 
 ## <a name="deduplicating-integration-event-messages"></a>統合イベント メッセージの重複除去
 
@@ -322,63 +322,63 @@ namespace Microsoft.eShopOnContainers.Services.Basket.API.IntegrationEvents.Even
 
 ### <a name="additional-resources"></a>その他の技術情報
 
--   **NServiceBus (特定のソフトウェア) を使用して、分岐した eShopOnContainers**
+-   **NServiceBus を使用するフォークされた eShopOnContainers (Particular Software)**
     [*http://go.particular.net/eShopOnContainers*](http://go.particular.net/eShopOnContainers)
 
 -   **イベント ドリブン メッセージング**
     [*http://soapatterns.org/design\_パターン/イベント\_ドリブン\_メッセージング*](http://soapatterns.org/design_patterns/event_driven_messaging)
 
--   **Jimmy Bogard。結合の評価からの復元力の方向にリファクタリングします。**
+-   **Jimmy Bogard。復元性を目指したリファクタリング: 結合の評価**
     [*https://jimmybogard.com/refactoring-towards-resilience-evaluating-coupling/*](https://jimmybogard.com/refactoring-towards-resilience-evaluating-coupling/)
 
--   **公開/定期受信チャネル**
+-   **発行-サブスクライブ チャンネル**
     [*http://www.enterpriseintegrationpatterns.com/patterns/messaging/PublishSubscribeChannel.html*](http://www.enterpriseintegrationpatterns.com/patterns/messaging/PublishSubscribeChannel.html)
 
--   **境界のあるコンテキスト間の通信**
+-   **境界コンテキスト間の通信**
     [*https://msdn.microsoft.com/library/jj591572.aspx*](https://msdn.microsoft.com/library/jj591572.aspx)
 
--   **最終的整合性**
+-   **最終的な整合性**
     [*https://en.wikipedia.org/wiki/Eventual\_整合性*](https://en.wikipedia.org/wiki/Eventual_consistency)
 
--   **Philip Brown。コンテキストに制限を統合するための戦略**
+-   **Philip Brown。境界コンテキストを統合するための戦略**
     [*http://culttt.com/2014/11/26/strategies-integrating-bounded-contexts/*](http://culttt.com/2014/11/26/strategies-integrating-bounded-contexts/)
 
--   **Chris Richardson。集計、イベント ソース、CQRS - パート 2 を使用してトランザクション Microservices の開発**
+-   **Chris Richardson。集計、イベント ソース、および CQRS を使用したトランザクション マイクロサービスの開発 - パート 2**
     [*https://www.infoq.com/articles/microservices-aggregates-events-cqrs-part-2-richardson*](https://www.infoq.com/articles/microservices-aggregates-events-cqrs-part-2-richardson)
 
 -   **Chris Richardson。イベント ソーシング パターン**
-    [*http://microservices.io/patterns/data/event-sourcing.html*](http://microservices.io/patterns/data/event-sourcing.html)
+    [*https://microservices.io/patterns/data/event-sourcing.html*](https://microservices.io/patterns/data/event-sourcing.html)
 
--   **イベント ソースの概要**
+-   **イベント ソーシングの概要**
     [*https://msdn.microsoft.com/library/jj591559.aspx*](https://msdn.microsoft.com/library/jj591559.aspx)
 
 -   **イベント ストア データベース**。 公式サイト。
     [*https://geteventstore.com/*](https://geteventstore.com/)
 
--   **Patrick Nommensen。Microservices のイベント ドリブンのデータ管理**
+-   **Patrick Nommensen。マイクロサービス用のイベント ドリブン データ管理**
     *<https://dzone.com/articles/event-driven-data-management-for-microservices-1> *
 
--   **キャップの定理**
+-   **CAP 定理**
     [*https://en.wikipedia.org/wiki/CAP\_定理*](https://en.wikipedia.org/wiki/CAP_theorem)
 
--   **キャップの定理とは何ですか。**
+-   **CAP 定理とは?**
     [*https://www.quora.com/What-Is-CAP-Theorem-1*](https://www.quora.com/What-Is-CAP-Theorem-1)
 
 -   **データ整合性の概要**
     [*https://msdn.microsoft.com/library/dn589800.aspx*](https://msdn.microsoft.com/library/dn589800.aspx)
 
--   **Rick Saling。キャップの定理:「すべてのものが異なる」クラウドやインターネット理由**
+-   **Rick Saling。キャップ定理: クラウドとインターネットでは "すべての事が異なる" 理由**
     [*https://blogs.msdn.microsoft.com/rickatmicrosoft/2013/01/03/the-cap-theorem-why-everything-is-different-with-the-cloud-and-internet/*](https://blogs.msdn.microsoft.com/rickatmicrosoft/2013/01/03/the-cap-theorem-why-everything-is-different-with-the-cloud-and-internet/)
 
--   **Eric Brewer。CAP 12 年後:「規則」が次のように変更されました**
+-   **Eric Brewer。CAP の 12 年後: "規則" はどのように変わったのか**
     [*https://www.infoq.com/articles/cap-twelve-years-later-how-the-rules-have-changed*](https://www.infoq.com/articles/cap-twelve-years-later-how-the-rules-have-changed)
 
--   **外部 (DTC) トランザクションに参加している**(MSMQ) [  *https://msdn.microsoft.com/library/ms978430.aspx \#bdadotnetasync2\_topic3c*](https://msdn.microsoft.com/library/ms978430.aspx%23bdadotnetasync2_topic3c)
+-   **外部 (DTC) トランザクションへの参加**(MSMQ) [  *https://msdn.microsoft.com/library/ms978430.aspx \#bdadotnetasync2\_topic3c*](https://msdn.microsoft.com/library/ms978430.aspx%23bdadotnetasync2_topic3c)
 
--   **Azure Service Bus。重複データ検出の仲介型メッセージング:**
+-   **Azure Service Bus。ブローカー メッセージング: 重複データ検出**
     [*https://code.msdn.microsoft.com/Brokered-Messaging-c0acea25*](https://code.msdn.microsoft.com/Brokered-Messaging-c0acea25)
 
--   **信頼性ガイド**(RabbitMQ ドキュメント) [  *https://www.rabbitmq.com/reliability.html\#コンシューマー*](https://www.rabbitmq.com/reliability.html%23consumer)
+-   **信頼性ガイド** (RabbitMQ ドキュメント) [  *https://www.rabbitmq.com/reliability.html\#コンシューマー*](https://www.rabbitmq.com/reliability.html%23consumer)
 
 
 

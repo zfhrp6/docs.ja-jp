@@ -1,7 +1,7 @@
 ---
-title: "Seedwork (ドメイン モデルの再利用可能な基底クラスとインターフェイス)"
-description: "コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | Seedwork (ドメイン モデルの再利用可能な基底クラスとインターフェイス)"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
+title: Seedwork (ドメイン モデルの再利用可能な基底クラスとインターフェイス)
+description: コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | Seedwork (ドメイン モデルの再利用可能な基底クラスとインターフェイス)
+keywords: Docker, マイクロサービス, ASP.NET, コンテナー
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 12/12/2017
@@ -11,15 +11,15 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: aba336676a558f50a2669eb3ca096effb8387916
-ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
+ms.openlocfilehash: 641439267d7fcb504965487aeed165188b2cf123
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/09/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="seedwork-reusable-base-classes-and-interfaces-for-your-domain-model"></a>Seedwork (ドメイン モデルの再利用可能な基底クラスとインターフェイス)
 
-ソリューション フォルダーには、*SeedWork* フォルダーが含まれています。 *SeedWork* フォルダー内にあるカスタム基底クラスは、ドメイン エンティティおよび値オブジェクトの基礎として使用できます。 これらの基底クラスを使用すると、各ドメインのオブジェクト クラスで冗長なコードがなくなります。 これらのタイプのクラス用のフォルダーは、*Framework* のような名前ではなく、*SeedWork* という名前になっています。 *SeedWork* という名前になっているのは、このフォルダーには再利用可能なクラスのほんの一部しか含まれておらず、実際にはフレームワークと見なすことができないためです。 *Seedwork* は、[Michael Feathers](http://www.artima.com/forums/flat.jsp?forum=106&thread=8826) が発表し、[Martin Fowler](https://martinfowler.com/bliki/Seedwork.html) が普及させた用語ですが、Common や SharedKernel といった名前で呼ばれる場合もあります。
+ソリューション フォルダーには、*SeedWork* フォルダーが含まれています。 *SeedWork* フォルダー内にあるカスタム基底クラスは、ドメイン エンティティおよび値オブジェクトの基礎として使用できます。 これらの基底クラスを使用すると、各ドメインのオブジェクト クラスで冗長なコードがなくなります。 これらのタイプのクラス用のフォルダーは、*Framework* のような名前ではなく、*SeedWork* という名前になっています。 *SeedWork* という名前になっているのは、このフォルダーには再利用可能なクラスのほんの一部しか含まれておらず、実際にはフレームワークと見なすことができないためです。 *Seedwork* は、[Michael Feathers](https://www.artima.com/forums/flat.jsp?forum=106&thread=8826) が発表し、[Martin Fowler](https://martinfowler.com/bliki/Seedwork.html) が普及させた用語ですが、Common や SharedKernel といった名前で呼ばれる場合もあります。
 
 図 9-12 は、注文マイクロサービスのドメイン モデルの SeedWork を構成するクラスを示しています。 カスタム基底クラス (Entity、ValueObject、Enumeration など) とインターフェイスがいくつか含まれています。 これらのインターフェイス (IRepository と IUnitOfWork) は、実装する必要があるものをインフラストラクチャ レイヤーに通知します。 また、これらのインターフェイスは、アプリケーション レイヤーから依存関係の挿入を通じて使用されます。
 
@@ -119,7 +119,7 @@ public abstract class Entity
 
 リポジトリ自体と EF コア コード、または他の任意のインフラストラクチャの依存関係やコード (Linq や SQL など) は、ドメイン モデル内に実装してはなりません。リポジトリは、ユーザー定義のインターフェイスのみを実装する必要があります。 
 
-この手法 (リポジトリ インターフェイスをドメイン モデル レイヤーに配置する手法) に関連するパターンが、インターフェイスの分離 パターンです。 Martin Fowler は、次のように[説明](http://www.martinfowler.com/eaaCatalog/separatedInterface.html)しています。"インターフェイスの分離を使用して、あるインターフェイスをあるパッケージに定義します。ただし、その実装は、別のパッケージで行います。 これにより、このインターフェイスへの依存関係が必要なクライアントは、実装を全く意識せずにすむようになります。"
+この手法 (リポジトリ インターフェイスをドメイン モデル レイヤーに配置する手法) に関連するパターンが、インターフェイスの分離 パターンです。 Martin Fowler は、次のように[説明](https://www.martinfowler.com/eaaCatalog/separatedInterface.html)しています。"インターフェイスの分離を使用して、あるインターフェイスをあるパッケージに定義します。ただし、その実装は、別のパッケージで行います。 これにより、このインターフェイスへの依存関係が必要なクライアントは、実装を全く意識せずにすむようになります。"
 
 インターフェイスの分離パターンに従うと、アプリケーション レイヤー (この場合はマイクロサービスの Web API プロジェクト) は、ドメイン モデルで定義された要件に対する依存関係を持つことができます。ただし、インフラストラクチャ/ 永続化レイヤーに対する直接の依存関係を持つことはできません。 また、依存関係の挿入を使用すると、リポジトリを使用してインフラストラクチャ/永続化レイヤーに実装された実装を分離できます。
 
@@ -145,8 +145,8 @@ public interface IRepository<T> where T : IAggregateRoot
 
 ## <a name="additional-resources"></a>その他の技術情報
 
--   **Martin Fowler。「Separated Interface」(インターフェイスの分離)。**
-    [*http://www.martinfowler.com/eaaCatalog/separatedInterface.html*](http://www.martinfowler.com/eaaCatalog/separatedInterface.html)
+-   **Martin Fowler。インターフェイスの分離。**
+    [*https://www.martinfowler.com/eaaCatalog/separatedInterface.html*](https://www.martinfowler.com/eaaCatalog/separatedInterface.html)
 
 
 >[!div class="step-by-step"]

@@ -1,7 +1,7 @@
 ---
-title: "複数のマイクロサービスによって生成されるビジュアル UI シェイプ、レイアウトなど、マイクロサービスを基にしている複合 UI を作成する"
-description: "コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | 複数のマイクロサービスによって生成されるビジュアル UI シェイプ、レイアウトなど、マイクロサービスを基にしている複合 UI を作成する"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
+title: 複数のマイクロサービスによって生成されるビジュアル UI シェイプ、レイアウトなど、マイクロサービスを基にしている複合 UI を作成する
+description: コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | 複数のマイクロサービスによって生成されるビジュアル UI シェイプ、レイアウトなど、マイクロサービスを基にしている複合 UI を作成する
+keywords: Docker, マイクロサービス, ASP.NET, コンテナー
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 12b170e9d4c46fbb697f988596af6566d33099a4
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 55b643fa6f87e5e2b1f49ba201032df655195b46
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="creating-composite-ui-based-on-microservices-including-visual-ui-shape-and-layout-generated-by-multiple-microservices"></a>複数のマイクロサービスによって生成されるビジュアル UI シェイプ、レイアウトなど、マイクロサービスを基にしている複合 UI を作成する
 
@@ -47,20 +47,20 @@ ms.lasthandoff: 12/23/2017
 
 ## <a name="additional-resources"></a>その他の技術情報
 
--   **ASP.NET を使用した複合 UI (特定のワーク ショップ)**
+-   **ASP.NET を使用した複合 UI (特定のワークショップ)**
     [*http://go.particular.net/workshop-composite-ui-demo*](http://go.particular.net/workshop-composite-ui-demo)
 
 -   **Ruben Oostinga。マイクロサービス アーキテクチャでのモノリシック フロントエンド**
     [*http://blog.xebia.com/the-monolithic-frontend-in-the-microservices-architecture/*](http://blog.xebia.com/the-monolithic-frontend-in-the-microservices-architecture/)
 
--   **Mauro Servienti。優れた UI コンポジションのシークレット**
+-   **Mauro Servienti。優れた UI コンポジションの秘密**
     [*https://particular.net/blog/secret-of-better-ui-composition*](https://particular.net/blog/secret-of-better-ui-composition)
 
--   **Viktor Farcic。マイクロサービスへのフロントエンド Web コンポーネントの取り込み**
+-   **Viktor Farcic。フロントエンド Web コンポーネントをマイクロサービスに含める**
     [*https://technologyconversations.com/2015/08/09/including-front-end-web-components-into-microservices/*](https://technologyconversations.com/2015/08/09/including-front-end-web-components-into-microservices/)
 
 -   **マイクロサービス アーキテクチャでのフロントエンドの管理**\
-    [*http://allegro.tech/2016/03/Managing-Frontend-in-the-microservices-architecture.html*](http://allegro.tech/2016/03/Managing-Frontend-in-the-microservices-architecture.html)
+    [*https://allegro.tech/2016/03/Managing-Frontend-in-the-microservices-architecture.html*](https://allegro.tech/2016/03/Managing-Frontend-in-the-microservices-architecture.html)
 
 
 >[!div class="step-by-step"]

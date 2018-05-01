@@ -1,7 +1,7 @@
 ---
-title: "マイクロサービス単位のデータ管理"
-description: ".NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ | マイクロサービス単位のデータ管理"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
+title: マイクロサービス単位のデータ管理
+description: '.NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ | マイクロサービス単位のデータ管理'
+keywords: Docker, マイクロサービス, ASP.NET, コンテナー
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 76265490d7cb0d53686b43b88cb797cf887d578a
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: f5d782a70123a66c1579a64a37bc612ccda9c1a4
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="data-sovereignty-per-microservice"></a>マイクロサービス単位のデータ管理
 
@@ -37,13 +37,13 @@ ms.lasthandoff: 12/23/2017
 
 一方、マイクロサービス アーキテクチャに移行すると、データ アクセスははるかに複雑になります。 ただし、マイクロサービスまたは境界コンテキスト内で ACID トランザクションを使用できる場合、または使用する必要がある場合でも、各マイクロサービスが所有するデータは、そのマイクロサービス専用です。また、マイクロサービス API を介してのみアクセスできます。 データをカプセル化することで、マイクロサービス間の結合は弱くなり、相互に独立して進化できます。 複数のサービスが同じデータにアクセスしている場合、スキーマの更新にはすべてのサービスに対する更新を調整する必要があります。 これではマイクロサービスのライフサイクルの自律性が失われます。 ただし、分散データ構造なので、マイクロサービス全体で単一の ACID トランザクションは作成できません。 つまり、ビジネス プロセスが複数のマイクロサービスにまたがる場合、最終的な整合性を使用する必要があります。 そのため、単純な SQL の結合よりも実装がはるかに困難になります。同様に、他の多くのリレーショナル データベース機能を複数のマイクロサービス全体に使用することはできません。
 
-さらに進んで、複数のマイクロサービスがさまざまな*種類*のデータベースを使用することもよくあります。 最新のアプリケーションでは多様なデータを格納して処理するので、リレーショナル データベースは常に最善の選択肢ではありません。 一部のユース ケースでは、Azure DocumentDB や MongoDB などの NoSQL Server の方が、SQL Server や Azure SQL Database などの SQL Server よりもデータ モデルが便利で、パフォーマンスとスケーラビリティが向上する場合があります。 また、リレーショナル データベースが最善のアプローチのケースもあります。 そのため、マイクロサービスベースのアプリケーションでは、SQL と NoSQL のデータベースが混在することがよくあります。これは[多言語永続化](http://martinfowler.com/bliki/PolyglotPersistence.html)アプローチと呼ばれることもあります。
+さらに進んで、複数のマイクロサービスがさまざまな*種類*のデータベースを使用することもよくあります。 最新のアプリケーションでは多様なデータを格納して処理するので、リレーショナル データベースは常に最善の選択肢ではありません。 一部のユース ケースでは、Azure DocumentDB や MongoDB などの NoSQL Server の方が、SQL Server や Azure SQL Database などの SQL Server よりもデータ モデルが便利で、パフォーマンスとスケーラビリティが向上する場合があります。 また、リレーショナル データベースが最善のアプローチのケースもあります。 そのため、マイクロサービスベースのアプリケーションでは、SQL と NoSQL のデータベースが混在することがよくあります。これは[多言語永続化](https://martinfowler.com/bliki/PolyglotPersistence.html)アプローチと呼ばれることもあります。
 
 データ格納用のパーティション分割された多言語永続化アーキテクチャには、多くの利点があります。 たとえば、疎結合されたサービス、パフォーマンス、スケーラビリティ、コスト、管理容易性などです。 ただし、この章で後述する[ドメインモデルの境界の特定](#identifying-domain-model-boundaries-for-each-microservice)のように、分散データ管理の課題がいくつか生じる可能性があります。
 
 ## <a name="the-relationship-between-microservices-and-the-bounded-context-pattern"></a>マイクロサービスと境界コンテキスト パターンの関係
 
-マイクロサービスの概念は、[ドメイン駆動型設計 (DDD)](https://en.wikipedia.org/wiki/Domain-driven_design) の[境界コンテキスト (BC) パターン](http://martinfowler.com/bliki/BoundedContext.html)に由来しています。 DDD は、モデルを複数の BC に分割し、その境界を明示的にすることで大規模なモデルを扱っています。 各 BC は独自のモデルとデータベースを持つ必要があります。同様に、各マイクロサービスはその関連データを所有しています。 さらに各 BC には、ソフトウェア開発者とドメイン専門家の間のコミュニケーションに役立つ独自の[ユビキタス言語](http://martinfowler.com/bliki/UbiquitousLanguage.html)が存在するのが一般的です。
+マイクロサービスの概念は、[ドメイン駆動型設計 (DDD)](https://en.wikipedia.org/wiki/Domain-driven_design) の[境界コンテキスト (BC) パターン](https://martinfowler.com/bliki/BoundedContext.html)に由来しています。 DDD は、モデルを複数の BC に分割し、その境界を明示的にすることで大規模なモデルを扱っています。 各 BC は独自のモデルとデータベースを持つ必要があります。同様に、各マイクロサービスはその関連データを所有しています。 さらに各 BC には、ソフトウェア開発者とドメイン専門家の間のコミュニケーションに役立つ独自の[ユビキタス言語](https://martinfowler.com/bliki/UbiquitousLanguage.html)が存在するのが一般的です。
 
 異なるドメイン エンティティが同じ ID (つまり、ストレージからエンティティを読み取るために使用される一意の ID) を共有している場合でも、ユビキタス言語で使われる用語 (主にドメイン エンティティ) は、境界コンテキストによって名前が異なる可能性があります。 たとえば、"ユーザー プロファイル" 境界コンテキストの "ユーザー" ドメイン エンティティが、"注文" 境界コンテキストの "購入者" ドメイン エンティティと ID を共有する可能性があります。
 
@@ -56,15 +56,15 @@ DDD は、分散型マイクロサービスの形で実際の境界を獲得す�
 ### <a name="additional-resources"></a>その他の技術情報
 
 -   **Chris Richardson。パターン: サービスごとのデータベース**
-    [*http://microservices.io/patterns/data/database-per-service.html*](http://microservices.io/patterns/data/database-per-service.html)
+    [*https://microservices.io/patterns/data/database-per-service.html*](https://microservices.io/patterns/data/database-per-service.html)
 
 -   **Martin Fowler。BoundedContext**
-    [*http://martinfowler.com/bliki/BoundedContext.html*](http://martinfowler.com/bliki/BoundedContext.html)
+    [*https://martinfowler.com/bliki/BoundedContext.html*](https://martinfowler.com/bliki/BoundedContext.html)
 
 -   **Martin Fowler。PolyglotPersistence**
-    [*http://martinfowler.com/bliki/PolyglotPersistence.html*](http://martinfowler.com/bliki/PolyglotPersistence.html)
+    [*https://martinfowler.com/bliki/PolyglotPersistence.html*](https://martinfowler.com/bliki/PolyglotPersistence.html)
 
--   **Alberto Brandolini。コンテキスト マッピングを使用した戦略的ドメイン駆動型設計**
+-   **Alberto Brandolini。コンテキスト マッピングを使用した戦略的ドメイン駆動設計**
     [*https://www.infoq.com/articles/ddd-contextmapping*](https://www.infoq.com/articles/ddd-contextmapping)
 
 

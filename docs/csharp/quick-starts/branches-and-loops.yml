@@ -1,8 +1,8 @@
 ### YamlMime:Tutorial
-title: "分岐とループ"
+title: 分岐とループ
 metadata:
-  title: "分岐とループの対話形式チュートリアル - C# クイックスタート"
-  description: "このクイックスタートでは、ブラウザーを使用して C# の分岐とループについて対話形式で学習できます。 ブラウザーに直接 C# コードを記述し、コンパイルして実行結果を確認します。"
+  title: 分岐とループの対話形式チュートリアル - C# クイックスタート
+  description: このクイックスタートでは、ブラウザーを使用して C# の分岐とループについて対話形式で学習できます。 ブラウザーに直接 C# コードを記述し、コンパイルして実行結果を確認します。
   audience: Developer
   level: Beginner
   ms.custom: mvc
@@ -12,30 +12,47 @@ metadata:
   displayType: two-column
   interactive: csharp
   nextTutorialHref: interpolated-strings
-  nextTutorialTitle: "C# の挿入文字列"
-  ms.openlocfilehash: 1fad5d5b205c9a02bbb00d3377e3cae59926faf9
-  ms.sourcegitcommit: d2da0142247ef42a219a5d2907f153e62dc6ea0d
+  nextTutorialTitle: C# における文字列補間
+  ms.openlocfilehash: 2b04d2ca42906302f4191b618198d7aeb58b83a6
+  ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 02/01/2018
+  ms.lasthandoff: 04/18/2018
 items:
 - durationInMinutes: 1
-  content: "このクイックスタートでは、変数を調べてその変数に基づいて実行パスを変更するコードを記述する方法について説明します。 ブラウザーを使用して対話形式で C# を記述し、コードのコンパイルおよび実行の結果を確認します。 このクイックスタートでは、C# における分岐構造とループ構造を確認する一連のレッスンを行います。 これらのレッスンでは、C# 言語の基本を説明します。\n"
-- title: "if ステートメントを使用した条件判断"
+  content: >
+    このクイックスタートでは、変数を調べてその変数に基づいて実行パスを変更するコードを記述する方法について説明します。 ブラウザーを使用して対話形式で C# を記述し、コードのコンパイルおよび実行の結果を確認します。 このクイックスタートでは、C# における分岐構造とループ構造を確認する一連のレッスンを行います。 これらのレッスンでは、C# 言語の基本を説明します。
+- title: if ステートメントを使用した条件判断
   durationInMinutes: 4
   content: "対話型ウィンドウで次のコードを実行します。 そのためには、対話型ウィンドウで次のコード ブロックを入力し、**[実行]** をクリックします。\n\n```csharp\nint a = 5;\nint b = 6;\nif (a + b > 10)\n    Console.WriteLine(\"The answer is greater than 10.\");\n```\n\n合計が 10 未満になるように `b` の宣言を変更します。 \n\n```csharp\nint b = 3;\n```\n\nもう一度 **[実行]** をクリックします。 計算結果が 10 未満であるため、何も出力されません。 判定中の**条件**が false になっています。 `if` ステートメントの考えられる分岐の 1 つである true 分岐のみを記述したため、実行すべきコードがありません。\n\n> [!TIP]\n> C# (または何らかのプログラミング言語) について詳しく学習するに従い、コードを記述する際にミスをすることもあるでしょう。 **コンパイラ**は、そうしたエラーを発見して報告します。 エラー メッセージが出力された場合は、例のコードをよく確認して、対話型ウィンドウで修正すべきコードを見つけます。\n> こうした実習が C# コードの構造を理解するのに役立ちます。     \n\nこの最初のサンプルは、`if` とブール型の機能を示しています。 *ブール値*は、`true` または `false` という 2 つの値のいずれかを持つことができる変数です。 C# ではブール変数の `bool` という特殊な型を定義しています。 `if` ステートメントは、`bool` の値を確認します。 値が `true` の場合、`if` に続くステートメントを実行します。 それ以外の場合はスキップします。 \n\n条件を確認してその条件に基づいてステートメントを実行するというこのプロセスは非常に機能的です。 さらに詳しく見てみましょう。\n\n> [!NOTE]\n> このオンライン コーディング体験はプレビュー モードです。 問題が生じた場合は、[dotnet/try リポジトリ](https://github.com/dotnet/try/issues)でその問題をお知らせください。\n"
-- title: "if と else を組み合わせた使用"
+- title: if と else を組み合わせた使用
   durationInMinutes: 10
   content: "\ntrue 分岐と false 分岐で別々のコードを実行するには、条件が false のときに実行する `else` 分岐を作成します。 これを試してみます。\n\n```csharp\nint a = 5;\nint b = 3;\nif (a + b > 10)\n    Console.WriteLine(\"The answer is greater than 10\");\nelse\n    Console.WriteLine(\"The answer is not greater than 10\");\n```\n\n`else` キーワードに続くステートメントは、判定中の条件が `false` のときにのみ実行されます。 `if` と `else` をブール条件と組み合わせれば、必要な機能がすべて整います。\n\n> [!IMPORTANT]\n> `if` と `else` のステートメント内にあるインデントは、人が読みやすいようにするためのものです。\n> C# 言語はインデントや空白文字を重要なものとして扱いません。 `if` や `else` のキーワードに続くステートメントは、条件に基づいて実行されます。 このクイックスタートのすべてのサンプルでは、一般的な記述方法に従い、ステートメントの制御フローに基づいて行にインデントを挿入しています。\n\nインデントは重要ではないため、条件に基づいて実行するブロック内に 1 つ以上のステートメントがある場合には、`{` と `}` を使用して示します。 通常、C# プログラマーは `if` と `else` の句にはこの中かっこを使用します。 次の例は、さきほど作成したものと同じ内容です。 試してみてください。\n\n```csharp\nint a = 5;\nint b = 3;\nif (a + b > 10)\n{\n    Console.WriteLine(\"The answer is greater than 10\");\n}\nelse\n{\n    Console.WriteLine(\"The answer is not greater than 10\");\n}\n```\n\n> [!TIP]\n> このクイックスタートの残りの箇所では、一般に認められている記述方法に従って、すべてのコード サンプルで中かっこを使用しています。\n\nさらに複雑な条件を判定できます。\n\n```csharp\nint a = 5;\nint b = 3;\nint c = 4;\nif ((a + b + c > 10) && (a > b))\n{\n    Console.WriteLine(\"The answer is greater than 10\");\n    Console.WriteLine(\"And the first number is greater than the second\");\n}\nelse\n{\n    Console.WriteLine(\"The answer is not greater than 10\");\n    Console.WriteLine(\"Or the first number is not greater than the second\");\n}\n```\n\n`&&` は \"and\" (および) を表します。 これは、true 分岐でステートメントを実行するには、両方の条件が true になる必要があることを意味しています。  また、これらの例では、ステートメントが `{` と `}` で囲まれていれば、各条件分岐に複数のステートメントを持つことができることを示しています。\n\n\"or\" (または) を表すために `||` を使用することもできます。\n\n```csharp\nint a = 5;\nint b = 3;\nint c = 4;\nif ((a + b + c > 10) || (a > b))\n{\n    Console.WriteLine(\"The answer is greater than 10\");\n    Console.WriteLine(\"Or the first number is greater than the second\");\n}\nelse\n{\n    Console.WriteLine(\"The answer is not greater than 10\");\n    Console.WriteLine(\"And the first number is not greater than the second\");\n}\n```\n\n> [!NOTE]\n> このオンライン コーディング体験はプレビュー モードです。 問題が生じた場合は、[dotnet/try リポジトリ](https://github.com/dotnet/try/issues)でその問題をお知らせください。\n"
-- title: "ループを使用した処理の繰り返し"
+- title: ループを使用した処理の繰り返し
   durationInMinutes: 6
   content: "大規模なプログラムを作成する上でもう 1 つ重要な概念は、**ループ**です。 複数回実行したいステートメントは、ループを使用して繰り返します。 対話型ウィンドウで次のコードを試します。\n\n```csharp\nint counter = 0;\nwhile (counter < 10)\n{\n  Console.WriteLine($\"Hello World! The counter is {counter}\");\n  counter++;\n}\n```\n\n`while` ステートメントは、条件を確認して `while` に続くステートメントを実行します。 条件が false になるまで、条件の確認とステートメントの実行を繰り返します。\n\nこの例では、もう 1 つ新しい演算子が使用されています。 `counter` 変数のあとにある `++` は、**インクリメント**演算子です。 counter の値に 1 を追加し、その値を counter 変数に格納します。\n\n> [!IMPORTANT]\n> コードを実行したときに `while` のループ条件が false に切り替わることを確認してください。 それ以外の場合は、プログラムが終了することのない**無限ループ**を作成します。 これについては実演しません。コードを実行するエンジンがタイムアウトしてプログラムから何も出力されないからです。\n\n`while` ループは、条件を判定してから `while` に続くコードを実行します。 `do` ... `while` ループは、最初にコードを実行してからその条件を確認します。 次のようになります。\n\n```csharp\nint counter = 0;\ndo\n{\n  Console.WriteLine($\"Hello World! The counter is {counter}\");\n  counter++;\n} while (counter < 10);\n```\n\nこの `do` ループと先述の `while` ループは同じ機能を持っています。 \n\nでは、最後のループ ステートメントの確認に移りましょう。\n\n> [!NOTE]\n> このオンライン コーディング体験はプレビュー モードです。 問題が生じた場合は、[dotnet/try リポジトリ](https://github.com/dotnet/try/issues)でその問題をお知らせください。\n"
-- title: "for ループの処理"
+- title: for ループの処理
   durationInMinutes: 5
   content: "C# コードでよく目にするもう 1 つのループ ステートメントは、`for` ループです。 対話型ウィンドウで次のコードを試します。\n\n```csharp\nfor(int counter = 0; counter < 10; counter++)\n{\n  Console.WriteLine($\"Hello World! The counter is {counter}\");\n} \n```\n\nこのループは、既に使用した `while` ループや `do` ループと同じ機能を持っています。 `for` ステートメントは 3 つの部分に分かれてその機能を制御します。 \n\n最初の部分は、**for 初期化子**です。`for counter = 0;` は、`counter` がループ変数であることを宣言し、その初期値を `0` に設定しています。\n\n2 つ目の部分は、**for 条件**です。`counter < 10` は、counter の値が 10 未満である間は `for` ループが実行され続けることを宣言しています。\n\n最後の部分は、**for 反復子**です。`counter++` は、`for` ステートメントに続くブロックを実行したあとにループ変数を変更する方法を指定しています。 ここでは、ブロックが実行されるごとに `counter` が 1 ずつ増加するよう指定しています。\n\nご自身でこれを実行してみてください。 以下をそれぞれ試してみます。\n\n- 初期化子を変更して別の値で開始する。\n- 条件を変更して別の値で停止する。\n\n完了したら次に進み、学習したことを使用して自分でいくつかのコードを記述してみましょう。\n\n> [!NOTE]\n> このオンライン コーディング体験はプレビュー モードです。 問題が生じた場合は、[dotnet/try リポジトリ](https://github.com/dotnet/try/issues)でその問題をお知らせください。\n"
-- title: "分岐とループの組み合わせ"
+- title: 分岐とループの組み合わせ
   durationInMinutes: 12
-  content: "C# 言語における `if` ステートメントとループ構造を見てきました。では、1 から 20 の整数のうち 3 で割り切れる数の合計を求める C# コードを記述できるか確認してみましょう。  次にいくつかヒントを示します。\n\n- `%` 演算子は、除算演算の剰余を算出します。\n- `if` ステートメントは、数を合計に入れるべきかどうか確認する条件を作ります。\n- `for` ループは、1 から 20 までのすべての数を 1 つずつ確認する一連の手順を繰り返すのに役立ちます。\n\nご自身で試してみてください。 そして自分がとった方法を確認してください。 ヒントを出します。答えは 63 になるはずです。\n\n> [!NOTE]\n> このオンライン コーディング体験はプレビュー モードです。 問題が生じた場合は、[dotnet/try リポジトリ](https://github.com/dotnet/try/issues)でその問題をお知らせください。\n"
-- title: "課題完了"
+  content: >
+    C# 言語における `if` ステートメントとループ構造を見てきました。では、1 から 20 の整数のうち 3 で割り切れる数の合計を求める C# コードを記述できるか確認してみましょう。  次にいくつかヒントを示します。
+
+
+    - `%` 演算子は、除算演算の剰余を算出します。
+
+    - `if` ステートメントは、数を合計に入れるべきかどうか確認する条件を作ります。
+
+    - `for` ループは、1 から 20 までのすべての数を 1 つずつ確認する一連の手順を繰り返すのに役立ちます。
+
+
+    ご自身で試してみてください。 そして自分がとった方法を確認してください。 ヒントを出します。答えは 63 になるはずです。
+
+
+    > [!NOTE]
+
+    > このオンライン コーディング体験はプレビュー モードです。 問題が生じた場合は、[dotnet/try リポジトリ](https://github.com/dotnet/try/issues)でその問題をお知らせください。
+- title: 課題完了
   durationInMinutes: 1
-  content: "これで \"分岐とループ\" に関するクイックスタートは終了です。 \n\nこれまでのクイック スタートを、ご自身の開発環境でも使い続けることができます。 [ローカル開発](local-environment.md)の基本を学習してから、クイックスタートを選択してください。 これと同じ演習を試すことも、次のクイックスタートに直接移動することも、再度「[C# の数値](numbers-in-csharp-local.md)」クイックスタートから始めることもできます。\n\n次のトピックでこれらの概念の詳細を学習できます。\n\n[if と else ステートメント](../language-reference/keywords/if-else.md)   \n[while ステートメント](../language-reference/keywords/while.md)   \n[do ステートメント](../language-reference/keywords/do.md)   \n[for ステートメント](../language-reference/keywords/for.md)\0"
+  content: "これで \"分岐とループ\" に関するクイックスタートは終了です。 \n\nこれまでのクイック スタートを、ご自身の開発環境でも使い続けることができます。 [ローカル開発](local-environment.md)の基本を学習してから、クイックスタートを選択してください。 これと同じ演習を試すことも、次のクイックスタートに直接移動することも、再度「[C# の数値](numbers-in-csharp-local.md)」クイックスタートから始めることもできます。\n\n次のトピックでこれらの概念の詳細を学習できます。\n\n[if と else ステートメント](../language-reference/keywords/if-else.md)   \n[while ステートメント](../language-reference/keywords/while.md)   \n[do ステートメント](../language-reference/keywords/do.md)   \n[for ステートメント](../language-reference/keywords/for.md)"

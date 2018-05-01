@@ -6,16 +6,17 @@ ms.author: wiwagn
 ms.date: 10/06/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
+ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: dc5580d38ac29a5e923a4b7d84f9d7e077d5cdb2
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 911935379fd126ccbafe825a6ce4049c2e9b5cde
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/18/2018
 ---
-#<a name="common-web-application-architectures"></a>一般的な Web アプリケーション アーキテクチャ
+# <a name="common-web-application-architectures"></a>一般的な Web アプリケーション アーキテクチャ
 
 > "優れたアーキテクチャが高価であると思うならば、不完全なアーキテクチャを試してみてください。"  
 > _- Brian Foote および Joseph Yoder_

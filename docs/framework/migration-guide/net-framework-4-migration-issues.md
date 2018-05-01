@@ -1,22 +1,24 @@
 ---
-title: ".NET Framework 4 への移行に関する問題"
+title: .NET Framework 4 への移行に関する問題
 ms.date: 05/02/2017
 ms.prod: .net-framework
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.topic: article
 helpviewer_keywords:
 - .NET Framework 4, migration
 - application compatibility
 ms.assetid: df478548-8c05-4de2-8ba7-adcdbe1c2a60
 author: rpetrusha
-ms.author: mariaw
+ms.author: ronpet
 manager: wpickett
-ms.workload: mariaw
-ms.openlocfilehash: b92299279e57a0662f7438cad7c6009d53bda9ee
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- mariaw
+ms.openlocfilehash: 05c86759b16fa4e1cbf31b7409601cb6b91cd08e
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="net-framework-4-migration-issues"></a>.NET Framework 4 への移行に関する問題
 
@@ -48,7 +50,7 @@ Beta 2 より後の移行に関する問題については、「[Migration Issue
 
 | 機能 | 3.5 SP1 との相違 | 推奨される変更 |
 | ------- | ------------------------ | ------------------- |
-| **ブラウザー定義ファイル** | ブラウザー定義ファイルは、新しいブラウザーとデバイスや、更新されたブラウザーとデバイスに関する情報を含むように、更新されました。 Netscape Navigator などの古いブラウザーとデバイスは削除され、Google Chrome や Apple iPhone などの新しいブラウザーとデバイスが追加されました。<br><br>削除されたブラウザー定義の 1 つを継承するカスタム ブラウザー定義がご利用のアプリケーションに含まれている場合は、エラーが表示されます。<br><br><xref:System.Web.HttpBrowserCapabilities> オブジェクト (ページの `Request.Browse` プロパティで公開されます) は、ブラウザー定義ファイルによって実行されます。 そのため、ASP.NET 4 でこのオブジェクトのプロパティにアクセスすることで返される情報は、旧バージョンの ASP.NET で返された情報とは異なる場合があります。 | ご利用のアプリケーションが古いブラウザー定義ファイルに依存している場合は、次のフォルダーからそれらのファイルをコピーできます。<br><br>*Windows\\Microsoft.NET\\Framework\\v2.0.50727\\CONFIG\\Browsers*<br><br>ASP.NET 4 の対応する *\\CONFIG\\Browsers* フォルダーにファイルをコピーします。 ファイルをコピーしたら、[Aspnet_regbrowsers.exe](https://msdn.microsoft.com/library/ms229858.aspx) コマンドライン ツールを実行します。 詳細については、[http://www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkId=182900) の Web サイトをご覧ください。 |
+| **ブラウザー定義ファイル** | ブラウザー定義ファイルは、新しいブラウザーとデバイスや、更新されたブラウザーとデバイスに関する情報を含むように、更新されました。 Netscape Navigator などの古いブラウザーとデバイスは削除され、Google Chrome や Apple iPhone などの新しいブラウザーとデバイスが追加されました。<br><br>削除されたブラウザー定義の 1 つを継承するカスタム ブラウザー定義がご利用のアプリケーションに含まれている場合は、エラーが表示されます。<br><br><xref:System.Web.HttpBrowserCapabilities> オブジェクト (ページの `Request.Browse` プロパティで公開されます) は、ブラウザー定義ファイルによって実行されます。 そのため、ASP.NET 4 でこのオブジェクトのプロパティにアクセスすることで返される情報は、旧バージョンの ASP.NET で返された情報とは異なる場合があります。 | ご利用のアプリケーションが古いブラウザー定義ファイルに依存している場合は、次のフォルダーからそれらのファイルをコピーできます。<br><br>*Windows\\Microsoft.NET\\Framework\\v2.0.50727\\CONFIG\\Browsers*<br><br>ASP.NET 4 の対応する *\\CONFIG\\Browsers* フォルダーにファイルをコピーします。 ファイルをコピーしたら、[Aspnet_regbrowsers.exe](https://msdn.microsoft.com/library/ms229858.aspx) コマンドライン ツールを実行します。 詳細については、Web サイト [http://www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkId=182900) を参照してください。 |
 | **ASP.NET の複数のバージョンが混在する環境で実行される子アプリケーション** | 旧バージョンの ASP.NET を実行する子アプリケーションとして構成されている ASP.NET 4 アプリケーションは、構成エラーまたはコンパイル エラーにより起動しない場合があります。 実際に発生するエラーは、アプリケーションが実行される IIS のバージョン (6.0、7、または 7.5) によって異なります。 | 影響を受けるアプリケーションの構成ファイルを変更することで、構成システムが ASP.NET 4 アプリケーションを適切に認識するように設定できます。 実行する必要がある変更については、ASP.NET Web サイトの「[ASP.NET 4 Breaking Changes (ASP.NET 4 の互換性に影響する変更点)](http://go.microsoft.com/fwlink/?LinkId=182908)」の「ASP.NET 4 Child Applications Fail to Start When Under ASP.NET 2.0 or ASP.NET 3.5 Applications (ASP.NET 2.0 または ASP.NET 3.5 アプリケーションで ASP.NET 4 の子アプリケーションが起動しない)」をご覧ください。 |
 | **ClientID の変更** | ASP.NET 4 の新しい `clientIDMode` 設定では、ASP.NET が HTML 要素の `id` 属性を生成する方法を指定できます。 以前のバージョンの ASP.NET では、既定の動作は `clientIDMode` の `AutoID` 設定と同じでした。 現在の既定の設定は `Predictable` です。 詳細については、[ASP.NET Web サーバー コントロールの識別](https://msdn.microsoft.com/library/1d04y8ss(v=vs.100).aspx)に関する記事をご覧ください。 | Visual Studio 2010 を使用して ASP.NET 2.0 または ASP.NET 3.5 からアプリケーションをアップグレードする場合は、旧バージョンの .NET Framework の動作を維持する設定が、ツールによって Web.config ファイルに自動的に追加されます。 ただし、IIS のアプリケーション プールを変更して .NET Framework 4 をターゲットにするようにアプリケーションをアップグレードする場合、ASP.NET では新しいモードが既定で使用されます。 新しいクライアント ID モードを無効にするには、Web.config ファイルに次の設定を追加します。<br><br>`<pages clientIDMode="AutoID" />` |
 | **コード アクセス セキュリティ (CAS)** | ASP.NET 3.5 で追加された ASP.NET 2.0 NET 機能は、.NET Framework 1.1 と .NET Framework 2.0 のコード アクセス セキュリティ (CAS) モデルを使用します。 ただし、ASP.NET 4 での CAS の実装は大幅に見直されました。 その結果、グローバル アセンブリ キャッシュで実行されている信頼されるコードに依存する、部分的に信頼された ASP.NET アプリケーションの実行は、さまざまなセキュリティ例外で失敗することがあります。 マシンの CAS ポリシーに対する広範な変更に依存する、部分的に信頼されたアプリケーションも、失敗してセキュリティ例外をスローすることがあります。 | 次の例に示すように、`trust` 構成要素の新しい `legacyCasModel` 属性を使用して、部分的に信頼された ASP.NET 4 アプリケーションを ASP.NET 1.1 および 2.0 の動作に戻すことができます。<br><br>`<trust level= "Medium" legacyCasModel="true" />`<br><br>重要: 古い CAS モデルに戻すと、セキュリティが低下する可能性があります。<br><br>新しい ASP.NET 4 コード アクセス セキュリティ モデルの詳細については、「[ASP.NET 4 アプリケーションのコード アクセス セキュリティ](https://msdn.microsoft.com/library/dd984947.aspx)」をご覧ください。 |

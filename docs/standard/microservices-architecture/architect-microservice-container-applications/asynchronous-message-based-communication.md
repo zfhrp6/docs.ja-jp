@@ -1,7 +1,7 @@
 ---
-title: "メッセージベースの非同期通信"
-description: ".NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ | メッセージベースの非同期通信"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
+title: メッセージベースの非同期通信
+description: '.NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ | メッセージベースの非同期通信'
+keywords: Docker, マイクロサービス, ASP.NET, コンテナー
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 7469c41afa16bf96bc81a36c571e3e005c50d904
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 7c216dba3b763c310fe17e6294ae5f2b091f71f9
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="asynchronous-message-based-communication"></a>メッセージベースの非同期通信
 
@@ -59,7 +59,7 @@ ms.lasthandoff: 01/19/2018
 
 「[分散データ管理に関する課題とソリューション](#challenges-and-solutions-for-distributed-data-management)」セクションで説明したように、統合イベントを使用すると、複数のマイクロサービスにまたがるビジネス タスクを実装できます。 このようにして、サービス間の最終的な整合性を実現します。 最終的に整合性のあるトランザクションは、分散アクションのコレクションで構成されます。 各アクションでは、関連するマイクロサービスがドメイン エンティティを更新し、もう 1 つの統合イベントをパブリッシュします。これにより、同一のエンドツーエンド ビジネス タスク内で次のアクションが発生します。
 
-重要な点は、同じイベントをサブクライブしている複数のマイクロサービスに通信を行う必要があるということです。 このためには、イベントドリブン通信に基づいたパブリッシュ/サブスクライブ メッセージングを使用できます (図 4-19 を参照)。 このパブリッシュ/サブスクライブ メカニズムは、マイクロサービス アーキテクチャ専用ではありません。 これは、DDD において[境界付けられたコンテキスト](http://martinfowler.com/bliki/BoundedContext.html)が通信する方法、または[コマンド クエリ責務分離 (CQRS)](http://martinfowler.com/bliki/CQRS.html) アーキテクチャ パターンで書き込みデータベースを読み取りデータベースに反映する方法に似ています。 目的は、分散システム全体の複数のデータ ソース間で最終的な整合性を得ることです。
+重要な点は、同じイベントをサブクライブしている複数のマイクロサービスに通信を行う必要があるということです。 このためには、イベントドリブン通信に基づいたパブリッシュ/サブスクライブ メッセージングを使用できます (図 4-19 を参照)。 このパブリッシュ/サブスクライブ メカニズムは、マイクロサービス アーキテクチャ専用ではありません。 これは、DDD において[境界付けられたコンテキスト](https://martinfowler.com/bliki/BoundedContext.html)が通信する方法、または[コマンド クエリ責務分離 (CQRS)](https://martinfowler.com/bliki/CQRS.html) アーキテクチャ パターンで書き込みデータベースを読み取りデータベースに反映する方法に似ています。 目的は、分散システム全体の複数のデータ ソース間で最終的な整合性を得ることです。
 
 ![](./media/image19.png)
 
@@ -81,7 +81,7 @@ ms.lasthandoff: 01/19/2018
 
 -   MSMQ などのトランザクション (DTC ベース) キューを使用します。 (ただし、これは従来のアプローチです。)
 
--   [トランザクション ログ マイニング](http://www.scoop.it/t/sql-server-transaction-log-mining)を使用します。
+-   [トランザクション ログ マイニング](https://www.scoop.it/t/sql-server-transaction-log-mining)を使用します。
 
 -   完全な[イベント ソーシング パターン](https://msdn.microsoft.com/library/dn589792.aspx)を使用します。
 
@@ -92,24 +92,24 @@ ms.lasthandoff: 01/19/2018
 ## <a name="additional-resources"></a>その他の技術情報
 
 -   **イベント ドリブン メッセージング**
-    [*http://soapatterns.org/design\_patterns/event\_driven\_messaging*](http://soapatterns.org/design_patterns/event_driven_messaging)
+    [*http://soapatterns.org/design\_パターン/イベント\_ドリブン\_メッセージング*](http://soapatterns.org/design_patterns/event_driven_messaging)
 
--   **パブリッシュ/サブスクライブ チャネル**
+-   **発行/サブスクライブ チャンネル**
     [*http://www.enterpriseintegrationpatterns.com/patterns/messaging/PublishSubscribeChannel.html*](http://www.enterpriseintegrationpatterns.com/patterns/messaging/PublishSubscribeChannel.html)
 
--   **Udi Dahan。明解化された CQRS**
+-   **Udi Dahan。CQRS の明確化**
     [*http://udidahan.com/2009/12/09/clarified-cqrs/*](http://udidahan.com/2009/12/09/clarified-cqrs/)
 
 -   **コマンド クエリ責務分離 (CQRS)**
     [*https://docs.microsoft.com/azure/architecture/patterns/cqrs*](https://docs.microsoft.com/azure/architecture/patterns/cqrs)
 
--   **境界付けられたコンテキスト間の通信**
+-   **境界コンテキスト間の通信**
     [*https://msdn.microsoft.com/library/jj591572.aspx*](https://msdn.microsoft.com/library/jj591572.aspx)
 
 -   **最終的な整合性**
-    [*https://en.wikipedia.org/wiki/Eventual\_consistency*](https://en.wikipedia.org/wiki/Eventual_consistency)
+    [*https://en.wikipedia.org/wiki/Eventual\_整合性*](https://en.wikipedia.org/wiki/Eventual_consistency)
 
--   **Jimmy Bogard。復元性に向けたリファクタリング: 結合の評価**
+-   **Jimmy Bogard。復元性を目指したリファクタリング: 結合の評価**
     [*https://jimmybogard.com/refactoring-towards-resilience-evaluating-coupling/*](https://jimmybogard.com/refactoring-towards-resilience-evaluating-coupling/)
 
 

@@ -1,7 +1,7 @@
 ---
-title: "分散データ管理に関する課題と解決策"
-description: "コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | 分散データ管理に関する課題と解決策"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
+title: 分散データ管理に関する課題と解決策
+description: コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | 分散データ管理に関する課題と解決策
+keywords: Docker, マイクロサービス, ASP.NET, コンテナー
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: b0252586a508c059099885991b87c79346e0d809
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: a26f4243acee52e493a10f13ff18899823fd03ba
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="challenges-and-solutions-for-distributed-data-management"></a>分散データ管理に関する課題と解決策
 
@@ -90,27 +90,27 @@ Products テーブルは Catalog マイクロサービスによって所有さ�
 ## <a name="additional-resources"></a>その他の技術情報
 
 -   **CAP 定理**
-    [*https://en.wikipedia.org/wiki/CAP\_theorem*](https://en.wikipedia.org/wiki/CAP_theorem)
+    [*https://en.wikipedia.org/wiki/CAP\_定理*](https://en.wikipedia.org/wiki/CAP_theorem)
 
 -   **最終的な整合性**
-    [*https://en.wikipedia.org/wiki/Eventual\_consistency*](https://en.wikipedia.org/wiki/Eventual_consistency)
+    [*https://en.wikipedia.org/wiki/Eventual\_整合性*](https://en.wikipedia.org/wiki/Eventual_consistency)
 
--   **データ整合性入門**
+-   **データ整合性の概要**
     [*https://msdn.microsoft.com/library/dn589800.aspx*](https://msdn.microsoft.com/library/dn589800.aspx)
 
--   **Martin Fowler。CQRS (コマンド クエリ責務分離)**
-    [*http://martinfowler.com/bliki/CQRS.html*](http://martinfowler.com/bliki/CQRS.html)
+-   **Martin Fowler。コマンド クエリ責務分離 (CQRS)**
+    [*https://martinfowler.com/bliki/CQRS.html*](https://martinfowler.com/bliki/CQRS.html)
 
 -   **具体化されたビュー**
     [*https://docs.microsoft.com/azure/architecture/patterns/materialized-view*](https://docs.microsoft.com/azure/architecture/patterns/materialized-view)
 
--   **Charles Row。ACID とBASE: データベース トランザクション処理のシフト**
+-   **Charles Row。ACID とBASE: データベース トランザクション処理での pH のシフト**
     [*http://www.dataversity.net/acid-vs-base-the-shifting-ph-of-database-transaction-processing/*](http://www.dataversity.net/acid-vs-base-the-shifting-ph-of-database-transaction-processing/)
 
--   **トランザクションの補正**
+-   **補正トランザクション**
     [*https://docs.microsoft.com/azure/architecture/patterns/compensating-transaction*](https://docs.microsoft.com/azure/architecture/patterns/compensating-transaction)
 
--   **Udi Dahan。サービス指向コンポジション**
+-   **Udi Dahan。サービス指向のコンポジション**
     [*http://udidahan.com/2014/07/30/service-oriented-composition-with-video/*](http://udidahan.com/2014/07/30/service-oriented-composition-with-video/)
 
 

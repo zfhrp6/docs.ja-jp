@@ -1,6 +1,6 @@
 ---
-title: "分岐とループのチュートリアル - C# ローカル クイックスタート"
-description: "分岐とループに関するこのクイックスタートでは、C# のコードを記述して、この言語における、ステートメントを繰り返し実行するための条件付き分岐とループに対応している構文について学習します。"
+title: 分岐とループのチュートリアル - C# ローカル クイックスタート
+description: 分岐とループに関するこのクイックスタートでは、C# のコードを記述して、この言語における、ステートメントを繰り返し実行するための条件付き分岐とループに対応している構文について学習します。
 author: billwagner
 ms.author: wiwagn
 ms.date: 10/31/2017
@@ -9,11 +9,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: 7d69b2b9bb02e2999bcd785da653bd4a13ed947c
-ms.sourcegitcommit: d2da0142247ef42a219a5d2907f153e62dc6ea0d
+ms.openlocfilehash: ea9fb2322202dfa19344e6119e748827535b0739
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="branches-and-loops"></a>分岐とループ
 
@@ -249,11 +249,11 @@ C# 言語における `if` ステートメントとループ構造を見てき�
 - `if` ステートメントは、数を合計に入れるべきかどうか確認する条件を作ります。
 - `for` ループは、1 から 20 までのすべての数を 1 つずつ確認する一連の手順を繰り返すのに役立ちます。
 
-ご自身で試してみてください。 そして自分がとった方法を確認してください。 答えは 63 になるはずです。 [GitHub で完成版のコードを表示する](https://github.com/dotnet/docs/tree/master/samples/csharp/branches-quickstart/Program.cs#L46-L54)と、考えられる答えの 1 つを確認できます。
+ご自身で試してみてください。 そして自分がとった方法を確認してください。 答えは 63 になるはずです。 [GitHub で完成版のコードを表示する](https://github.com/dotnet/samples/tree/master/csharp/branches-quickstart/Program.cs#L46-L54)と、考えられる答えの 1 つを確認できます。
 
 これで "分岐とループ" に関するクイックスタートは終了です。
 
-続けて独自の開発環境で[挿入文字列](interpolated-strings-local.md)のクイックスタートに進むことができます。
+[文字列補間](interpolated-strings-local.md)のクイックスタートを、ご自身の開発環境でも使い続けることができます。
 
 次のトピックでこれらの概念の詳細を学習できます。
 

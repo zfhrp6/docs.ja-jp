@@ -1,5 +1,5 @@
 ---
-title: "データフロー (タスク並列ライブラリ)"
+title: データフロー (タスク並列ライブラリ)
 ms.date: 03/30/2017
 ms.prod: .net
 ms.technology: dotnet-standard
@@ -17,11 +17,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: f91100303cb0970ed430eebe2a377a487017b47d
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 7671001fb63a5e09c5d7a3dc4b2414d41a790e16
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="dataflow-task-parallel-library"></a>データフロー (タスク並列ライブラリ)
 <a name="top"></a> タスク並列ライブラリ (TPL) はデータ フロー コンポーネントを提供し、同時実行対応アプリケーションの堅牢性を強化します。 これらのデータ フロー コンポーネントは *TPL データ フロー ライブラリ*と総称されます。 データ フロー モデルは、粒度の粗いデータ フローおよびパイプライン処理タスクのためのインプロセス メッセージ パッシングを提供し、アクター ベースのプログラミング モデルを推進します。 データ フロー コンポーネントは、TPL の種類とスケジュール インフラストラクチャの上でビルドされ、C#、[!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)]、および同期プログラミングの F# 言語のサポートを統合します。 相互に非同期通信を行う必要がある複数の操作を行う場合、またはデータが使用可能になったときにデータを処理する場合に、これらのデータ フロー コンポーネントは役立ちます。 たとえば、Web カメラからのイメージ データを処理するアプリケーションを考えてみます。 データ フロー モデルを使用すると、イメージ フレームが使用可能になったときに、それをアプリケーションで処理できます。 たとえば、アプリケーションが輝度修正や赤目補正などを実行してイメージ フレームを向上させる場合、データ フロー コンポーネントの*パイプライン*を作成できます。 パイプラインの各ステージは、イメージを変換するために、TPL が提供する機能のような、粒度の粗い並列機能を使用する場合があります。  
@@ -84,7 +84,7 @@ ms.lasthandoff: 01/19/2018
  [!code-csharp[TPLDataflow_Overview#11](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_overview/cs/program.cs#11)]
  [!code-vb[TPLDataflow_Overview#11](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_overview/vb/program.vb#11)]  
   
- また、継続タスクの本体で <xref:System.Threading.Tasks.Task.IsCanceled%2A> などのプロパティを使用して、データ フロー ブロックの完了ステータスに関する追加情報を決定することもできます。 継続タスク、および継続タスクと取り消し処理やエラー処理との関連の詳細については、「[Chaining Tasks by Using Continuation Tasks](../../../docs/standard/parallel-programming/chaining-tasks-by-using-continuation-tasks.md)」(継続タスクを使用したタスクのチェーン作成)、「[タスクのキャンセル](../../../docs/standard/parallel-programming/task-cancellation.md)」、「[例外処理 (タスク並列ライブラリ)](../../../docs/standard/parallel-programming/exception-handling-task-parallel-library.md)」、および「[方法: タスクがスローした例外を処理する](http://msdn.microsoft.com/library/d6c47ec8-9de9-4880-beb3-ff19ae51565d)」を参照してください。  
+ また、継続タスクの本体で <xref:System.Threading.Tasks.Task.IsCanceled%2A> などのプロパティを使用して、データ フロー ブロックの完了ステータスに関する追加情報を決定することもできます。 継続タスク、および継続タスクと取り消し処理やエラー処理との関連の詳細については、「[Chaining Tasks by Using Continuation Tasks](../../../docs/standard/parallel-programming/chaining-tasks-by-using-continuation-tasks.md)」(継続タスクを使用したタスクのチェーン作成)、「[タスクのキャンセル](../../../docs/standard/parallel-programming/task-cancellation.md)」、「[例外処理 (タスク並列ライブラリ)](../../../docs/standard/parallel-programming/exception-handling-task-parallel-library.md)」、および「[方法: タスクがスローした例外を処理する](https://msdn.microsoft.com/library/d6c47ec8-9de9-4880-beb3-ff19ae51565d)」を参照してください。  
   
  [[ページのトップへ](#top)]  
   
@@ -166,8 +166,8 @@ ms.lasthandoff: 01/19/2018
   
 |型|同期的なデリゲート型|非同期的なデリゲート型|  
 |----------|-------------------------------|--------------------------------|  
-|<xref:System.Threading.Tasks.Dataflow.ActionBlock%601>|`System.Action`|`System.Func\<TInput, Task>`|  
-|<xref:System.Threading.Tasks.Dataflow.TransformBlock%602>|`System.Func\<TInput, TOutput>`2`|`System.Func<TInput, Task<TOutput>>`|  
+|<xref:System.Threading.Tasks.Dataflow.ActionBlock%601>|`System.Action`|`System.Func<TInput, Task>`|  
+|<xref:System.Threading.Tasks.Dataflow.TransformBlock%602>|`System.Func<TInput, TOutput>`|`System.Func<TInput, Task<TOutput>>`|  
 |<xref:System.Threading.Tasks.Dataflow.TransformManyBlock%602>|`System.Func<TInput, IEnumerable<TOutput>>`|`System.Func<TInput, Task<IEnumerable<TOutput>>>`|  
   
  実行ブロックの型を使用する場合にラムダ式を使用することもできます。 実行ブロックでラムダ式を使用する方法の例については、「[方法: データフロー ブロックでデータを受信したときにアクションを実行する](../../../docs/standard/parallel-programming/how-to-perform-action-when-a-dataflow-block-receives-data.md)」を参照してください。  

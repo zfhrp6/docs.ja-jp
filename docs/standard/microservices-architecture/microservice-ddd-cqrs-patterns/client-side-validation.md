@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 273aa0a8ceb7f683999f1074faae0a6aa303f9be
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
-ms.translationtype: MT
+ms.openlocfilehash: 2057609c7f5c26668eac49cecce522135545e7dd
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="client-side-validation-validation-in-the-presentation-layers"></a>クライアント側の検証 (プレゼンテーション層での検証)
 
@@ -35,8 +35,8 @@ ms.lasthandoff: 03/26/2018
 
 ### <a name="validation-in-xamarin-mobile-apps"></a>Xamarin モバイル アプリの検証
 
--   **テキストを入力し、エラーの表示の検証**
-    [*https://developer.xamarin.com/recipes/ios/standard\_コントロール]、[テキスト\_フィールド/検証\_入力/*](https://developer.xamarin.com/recipes/ios/standard_controls/text_field/validate_input/)
+-   **テキスト入力の検証とエラーの表示**
+    [*https://developer.xamarin.com/recipes/ios/standard\_controls/text\_field/validate\_input/*](https://developer.xamarin.com/recipes/ios/standard_controls/text_field/validate_input/)
 
 -   **検証コールバック**
     [*https://developer.xamarin.com/samples/xamarin-forms/XAML/ValidationCallback/*](https://developer.xamarin.com/samples/xamarin-forms/XAML/ValidationCallback/)
@@ -48,14 +48,14 @@ ms.lasthandoff: 03/26/2018
 
 ### <a name="validation-in-spa-web-apps-angular-2-typescript-javascript"></a>SPA Web アプリの検証 (Angular 2、TypeScript、JavaScript)
 
--   **Ado Kukic。角度の 2 つのフォーム検証** **
+-   **Ado Kukic。Angular 2 フォームの検証** **
     **[*https://scotch.io/tutorials/angular-2-form-validation*](https://scotch.io/tutorials/angular-2-form-validation)
 
--   **フォーム検証**
+-   **フォームの検証**
     [*https://angular.io/docs/ts/latest/cookbook/form-validation.html*](https://angular.io/docs/ts/latest/cookbook/form-validation.html)
 
 -   **検証。** Breeze ドキュメント。
-    [*http://breeze.github.io/doc-js/validation.html*](http://breeze.github.io/doc-js/validation.html)
+    [*https://breeze.github.io/doc-js/validation.html*](https://breeze.github.io/doc-js/validation.html)
 
 要約すると、検証に関する最も重要な概念は次のとおりです。
 

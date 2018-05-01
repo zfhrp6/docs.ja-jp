@@ -21,11 +21,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 0644e2d9e7a52dd5747c9442a4771aa7400cdcb0
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 8d048c89ee416de0b225d3e58cd24e73e1570785
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="data-parallelism-task-parallel-library"></a>データの並列化 (タスク並列ライブラリ)
 "*データの並列化*" とは、ソース コレクションまたは配列の要素に対して、同じ操作を同時に (つまり、並列で) 実行するシナリオを意味します。 データの並列化操作では、複数のスレッドが異なるセグメント上で同時に操作できるようにソース コレクションがパーティション分割されます。  
@@ -45,7 +45,7 @@ ms.lasthandoff: 01/19/2018
   
  <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> メソッドおよび <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> メソッドの両方に、ループの実行を停止または中断させるオーバーロードが複数ある場合は、その他のスレッドのループ状態の監視、スレッド ローカルの状態の維持、スレッド ローカル オブジェクトの終了、同時実行の程度の制御などを行います。 この機能を有効にするヘルパー要素には、<xref:System.Threading.Tasks.ParallelLoopState>、<xref:System.Threading.Tasks.ParallelOptions>、<xref:System.Threading.Tasks.ParallelLoopResult>、<xref:System.Threading.CancellationToken>、および <xref:System.Threading.CancellationTokenSource> があります。  
   
- 詳細については、「[Patterns of Parallel Programming (並列プログラミングのパターン)](http://go.microsoft.com/fwlink/p/?LinkId=265491)」を参照してください。  
+ 詳細については、「[Patterns for Parallel Programming: Understanding and Applying Parallel Patterns with the .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=19222)」 (並列プログラミングのパターン: .NET Framework 4 での並列パターンの理解と適用) を参照してください。  
   
  PLINQ では、宣言構文またはクエリ形式の構文によるデータの並列化がサポートされています。 詳細については、「[Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)」を参照してください。  
   
@@ -55,7 +55,7 @@ ms.lasthandoff: 01/19/2018
 |-----------|-----------------|  
 |[方法: 単純な Parallel.For ループを記述する](../../../docs/standard/parallel-programming/how-to-write-a-simple-parallel-for-loop.md)|任意の配列またはインデックス可能な <xref:System.Threading.Tasks.Parallel.For%2A> ソース コレクションに対して <xref:System.Collections.Generic.IEnumerable%601> ループを記述する方法について説明します。|  
 |[方法: 単純な Parallel.ForEach ループを記述する](../../../docs/standard/parallel-programming/how-to-write-a-simple-parallel-foreach-loop.md)|任意の <xref:System.Threading.Tasks.Parallel.ForEach%2A> ソース コレクションに対して <xref:System.Collections.Generic.IEnumerable%601> ループを記述する方法について説明します。|  
-|[方法: Parallel.For ループを停止または中断する](http://msdn.microsoft.com/library/de52e4f1-9346-4ad5-b582-1a4d54dc7f7e)|並列ループを停止するかまたは抜けて、そのアクションがすべてのスレッドに通知されるようにする方法について説明します。|  
+|[方法: Parallel.For ループを停止または中断する](https://msdn.microsoft.com/library/de52e4f1-9346-4ad5-b582-1a4d54dc7f7e)|並列ループを停止するかまたは抜けて、そのアクションがすべてのスレッドに通知されるようにする方法について説明します。|  
 |[方法: スレッド ローカル変数を使用する Parallel.For ループを記述する](../../../docs/standard/parallel-programming/how-to-write-a-parallel-for-loop-with-thread-local-variables.md)|各スレッドが他のスレッドからは見えないプライベート変数を維持する <xref:System.Threading.Tasks.Parallel.For%2A> ループを記述する方法と、ループが完了したときにすべてのスレッドの結果を同期する方法について説明します。|  
 |[方法: スレッド ローカル変数を使用する Parallel.ForEach ループを記述する](../../../docs/standard/parallel-programming/how-to-write-a-parallel-foreach-loop-with-thread-local-variables.md)|各スレッドが他のスレッドからは見えないプライベート変数を維持する <xref:System.Threading.Tasks.Parallel.ForEach%2A> ループを記述する方法と、ループが完了したときにすべてのスレッドの結果を同期する方法について説明します。|  
 |[方法: Parallel.For または ForEach ループを取り消す](../../../docs/standard/parallel-programming/how-to-cancel-a-parallel-for-or-foreach-loop.md)|<xref:System.Threading.CancellationToken?displayProperty=nameWithType> を使用して並列ループを取り消す方法について説明します。|  

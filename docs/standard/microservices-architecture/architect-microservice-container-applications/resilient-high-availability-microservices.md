@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: cb78e98a01e413f31e6476dac77acdc4e5d4f78d
-ms.sourcegitcommit: c3957fdb990060559d73cca44ab3e2c7b4d049c0
+ms.openlocfilehash: 3ad3fc88a3e857f49283ff596e0385d0daad64b6
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="resiliency-and-high-availability-in-microservices"></a>マイクロサービスの回復性と高可用性
 
@@ -43,7 +43,7 @@ ms.lasthandoff: 03/05/2018
 
 モノリシック サーバー ベースのアプリケーションでは、単純にログをディスク上のファイルに書き込み (ログ ファイル)、後でツールを使用して分析します アプリケーションの実行は、固定サーバーまたは VM に制限されているため、イベントのフローの分析は一般的にそれほど複雑ではありません。 ただし、複数のサービスがオーケストレーター クラスタ内の多くのノードに渡って実行される分散アプリケーションでは、分散イベントを関連付けることは難しい課題です。
 
-マイクロサービスベースのアプリケーションは、イベントまたはログファイルの出力ストリームをアプリケーション自体で保存しないようにする必要があり、さらに中央の場所へのイベントのルーティングも管理しないようにする必要があります 透過的になっている必要があります。つまり、各プロセスは、標準出力にイベント ストリームを書き込むだけで、それが実行されている実行環境インフラストラクチャによって収集されるようにする必要があります。 これらのイベント ストリーム ルーターの例として、[Microsoft.Diagnostic.EventFlow](https://github.com/Azure/diagnostics-eventflow) は、複数のソースからイベント ストリームを収集し、出力システムに公開します。 これらには、開発環境用の単純な標準出力、[Application Insights](https://azure.microsoft.com/services/application-insights/)、[OMS](https://github.com/Azure/diagnostics-eventflow#oms-operations-management-suite) (オンプレミス アプリケーション用)、[Azure Diagnostics](https://docs.microsoft.com/azure/monitoring-and-diagnostics/azure-diagnostics) などのクラウド システムが含まれます。 ログの検索、アラート、レポート、監視を行うことができる優れたサードパーティ製のログ分析プラットフォームとツールもあり、[Splunk](http://www.splunk.com/goto/Splunk_Log_Management?ac=ga_usa_log_analysis_phrase_Mar17&_kk=logs%20analysis&gclid=CNzkzIrex9MCFYGHfgodW5YOtA) のようにリアルタイムで実行できるものもあります。
+マイクロサービスベースのアプリケーションは、イベントまたはログファイルの出力ストリームをアプリケーション自体で保存しないようにする必要があり、さらに中央の場所へのイベントのルーティングも管理しないようにする必要があります 透過的になっている必要があります。つまり、各プロセスは、標準出力にイベント ストリームを書き込むだけで、それが実行されている実行環境インフラストラクチャによって収集されるようにする必要があります。 これらのイベント ストリーム ルーターの例として、[Microsoft.Diagnostic.EventFlow](https://github.com/Azure/diagnostics-eventflow) は、複数のソースからイベント ストリームを収集し、出力システムに公開します。 これらには、開発環境用の単純な標準出力、[Application Insights](https://azure.microsoft.com/services/application-insights/)、[OMS](https://github.com/Azure/diagnostics-eventflow#oms-operations-management-suite) (オンプレミス アプリケーション用)、[Azure Diagnostics](https://docs.microsoft.com/azure/monitoring-and-diagnostics/azure-diagnostics) などのクラウド システムが含まれます。 ログの検索、アラート、レポート、監視を行うことができる優れたサードパーティ製のログ分析プラットフォームとツールもあり、[Splunk](https://www.splunk.com/goto/Splunk_Log_Management?ac=ga_usa_log_analysis_phrase_Mar17&_kk=logs%20analysis&gclid=CNzkzIrex9MCFYGHfgodW5YOtA) のようにリアルタイムで実行できるものもあります。
 
 ### <a name="orchestrators-managing-health-and-diagnostics-information"></a>正常性および診断情報を管理するオーケストレーター
 
@@ -59,7 +59,7 @@ ms.lasthandoff: 03/05/2018
 
 ## <a name="additional-resources"></a>その他の技術情報
 
--   **Twelve-Factor App.XI.Logs: イベントのストリームとしてのログの処理**
+-   **Twelve-Factor App.XI.ログ: イベント ストリームとしてログを処理する**
     [*https://12factor.net/logs*](https://12factor.net/logs)
 
 -   **Microsoft 診断 EventFlow ライブラリ。** GitHub リポジトリ。
@@ -69,16 +69,16 @@ ms.lasthandoff: 03/05/2018
 -   **Azure 診断について**
     [*https://docs.microsoft.com/azure/azure-diagnostics*](https://docs.microsoft.com/azure/azure-diagnostics)
 
--   **Azure で Windows コンピューターをログ分析サービスに接続する**
+-   **Windows コンピューターを Azure の Log Analytics サービスに接続する**
     [*https://docs.microsoft.com/azure/log-analytics/log-analytics-windows-agents*](https://docs.microsoft.com/azure/log-analytics/log-analytics-windows-agents)
 
--   **必要な内容のログ記録: セマンティック ログ アプリケーション ブロックの使用**
+-   **意味を表すログ: セマンティック ログ アプリケーション ブロックを使用する**
     [*https://msdn.microsoft.com/library/dn440729(v=pandp.60).aspx*](https://msdn.microsoft.com/library/dn440729(v=pandp.60).aspx)
 
 -   **Splunk。** 公式サイト。
-    [*http://www.splunk.com*](http://www.splunk.com)
+    [*https://www.splunk.com/*](https://www.splunk.com/)
 
--   **EventSource クラス**。 Events Tracing for Windows (ETW) の API[*https://docs.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource*](xref:System.Diagnostics.Tracing.EventSource)
+-   **EventSource クラス**。 Windows イベント トレーシング (ETW) の API[*https://docs.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource*](xref:System.Diagnostics.Tracing.EventSource)
 
 
 

@@ -1,7 +1,7 @@
 ---
-title: "マイクロサービス アーキテクチャ"
-description: "コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | マイクロサービス アーキテクチャ"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
+title: マイクロサービス アーキテクチャ
+description: コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | マイクロサービス アーキテクチャ
+keywords: Docker, マイクロサービス, ASP.NET, コンテナー
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 453f8a22157eee9601f2586d49d872d90634bb61
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 78d3903e7ed4abf27e78812de87ccbcb9f733663
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="microservices-architecture"></a>マイクロサービス アーキテクチャ
 
@@ -33,7 +33,7 @@ ms.lasthandoff: 12/23/2017
 
 図 4-6 に示すように、マイクロサービス アプローチを使用すると、複雑で大規模でスケーラブルなアプリケーションの特定の小さな領域を変更できるため、各マイクロサービスの柔軟な変更と迅速な繰り返しが可能になります。
 
-細かいマイクロサービスベースのアプリケーションを設計することで、継続的な統合と継続的な配信方法を実現できます。 また、短期間でアプリケーションに新しい関数を配信できるようになります。 細かいアプリケーションの構成にすることで、マイクロサービスを単独で実行してテストし、マイクロサービス間の明確なコントラクトを維持しながら自律的に進化させることもできます。 インターフェイスまたはコントラクトを変更しない限り、任意のマイクロサービスの内部実装を変更することや、他のマイクロサービスを中断することなく新機能を追加することができます。
+細かいマイクロサービスベースのアプリケーションを設計することで、継続的な統合と継続的デリバリーの方法を実現できます。 また、短期間でアプリケーションに新しい関数を配信できるようになります。 細かいアプリケーションの構成にすることで、マイクロサービスを単独で実行してテストし、マイクロサービス間の明確なコントラクトを維持しながら自律的に進化させることもできます。 インターフェイスまたはコントラクトを変更しない限り、任意のマイクロサービスの内部実装を変更することや、他のマイクロサービスを中断することなく新機能を追加することができます。
 
 マイクロサービスベースのシステムを含む実稼働環境への移行を成功させるには、次の点が重要です。
 
@@ -51,19 +51,19 @@ ms.lasthandoff: 12/23/2017
 
 ## <a name="additional-resources"></a>その他の技術情報
 
--   **Mark Russinovich。マイクロサービス: クラウド原動力にするアプリケーション革命**
+-   **Mark Russinovich。マイクロサービス: クラウドによって強化されるアプリケーションの革命**
     [*https://azure.microsoft.com/blog/microservices-an-application-revolution-powered-by-the-cloud/*](https://azure.microsoft.com/blog/microservices-an-application-revolution-powered-by-the-cloud/)
 
 -   **Martin Fowler。マイクロサービス**
-    [*http://www.martinfowler.com/articles/microservices.html*](http://www.martinfowler.com/articles/microservices.html)
+    [*https://www.martinfowler.com/articles/microservices.html*](https://www.martinfowler.com/articles/microservices.html)
 
 -   **Martin Fowler。マイクロサービスの前提条件**
-    [*http://martinfowler.com/bliki/MicroservicePrerequisites.html*](http://martinfowler.com/bliki/MicroservicePrerequisites.html)
+    [*https://martinfowler.com/bliki/MicroservicePrerequisites.html*](https://martinfowler.com/bliki/MicroservicePrerequisites.html)
 
 -   **Jimmy Nilsson。チャンク クラウド コンピューティング**
     [*https://www.infoq.com/articles/CCC-Jimmy-Nilsson*](https://www.infoq.com/articles/CCC-Jimmy-Nilsson)
 
--   **Cesar de la Torre。Microsoft のプラットフォームとツールを使用したコンテナー化された Docker アプリケーションのライフサイクル** (ダウンロード可能な電子ブック) [*https://aka.ms/dockerlifecycleebook*](https://aka.ms/dockerlifecycleebook)
+-   **Cesar de la Torre。Microsoft プラットフォームとツールでコンテナー化された Docker アプリケーションのライフサイクル** (ダウンロード可能な e-book) [*https://aka.ms/dockerlifecycleebook*](https://aka.ms/dockerlifecycleebook)
 
 
 

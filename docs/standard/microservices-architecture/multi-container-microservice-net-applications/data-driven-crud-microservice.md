@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: be8644e45be8db88c99332476e74c5c968764c74
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
-ms.translationtype: MT
+ms.openlocfilehash: ca4bfd31b505754b508555ff2771a6380ae023b4
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="creating-a-simple-data-driven-crud-microservice"></a>単純なデータ ドリブン CRUD マイクロサービスの作成
 
@@ -35,7 +35,7 @@ ms.lasthandoff: 03/26/2018
 
 **図 8-5** 単純なデータ ドリブン/CRUD マイクロサービスの設計
 
-この種のサービスを開発するときに必要なのは、[ASP.NET Core](https://docs.microsoft.com/aspnet/core/) と、データ アクセス API または [Entity Framework Core](https://docs.microsoft.com/ef/core/index) のような ORM だけです。 次のセクションで説明するように、[Swashbuckle](https://github.com/domaindrivendev/Swashbuckle.AspNetCore) を通じて [Swagger](http://swagger.io/) メタデータを自動的に生成して、サービスが提供する内容の説明を提供することもできます。
+この種のサービスを開発するときに必要なのは、[ASP.NET Core](https://docs.microsoft.com/aspnet/core/) と、データ アクセス API または [Entity Framework Core](https://docs.microsoft.com/ef/core/index) のような ORM だけです。 次のセクションで説明するように、[Swashbuckle](https://github.com/domaindrivendev/Swashbuckle.AspNetCore) を通じて [Swagger](https://swagger.io/) メタデータを自動的に生成して、サービスが提供する内容の説明を提供することもできます。
 
 クラウドまたはオンプレミスでデータベースをプロビジョニングしなくてもすべての依存関係を稼働させることができるので、Docker コンテナー内の SQL Server のようなデータベース サーバーの実行は開発環境に適しています。 これは、統合テストの実行時にとても便利です。 ただし運用環境では、コンテナーでデータベース サーバーを実行すると、通常は高可用性が実現されないため、このアプローチはお勧めしません。 Azure の運用環境では、Azure SQL DB、または高可用性と高スケーラビリティを提供できるその他のデータベース テクノロジを使用することをお勧めします。 たとえば、NoSQL アプローチでは、DocumentDB を選択できます。
 
@@ -293,30 +293,30 @@ public class CatalogController : ControllerBase
 
 ### <a name="additional-resources"></a>その他の技術情報
 
--   **Scott Hanselman。ASP.NET Core RESTful Web API のバージョン管理が簡単に作成**
-    [*http://www.hanselman.com/blog/ASPNETCoreRESTfulWebAPIVersioningMadeEasy.aspx*](http://www.hanselman.com/blog/ASPNETCoreRESTfulWebAPIVersioningMadeEasy.aspx)
+-   **Scott Hanselman。簡単になった ASP.NET Core RESTful Web API のバージョン管理**
+    [*https://www.hanselman.com/blog/ASPNETCoreRESTfulWebAPIVersioningMadeEasy.aspx*](https://www.hanselman.com/blog/ASPNETCoreRESTfulWebAPIVersioningMadeEasy.aspx)
 
--   **RESTful web API のバージョン管理**
+-   **RESTful Web API のバージョン管理**
     [*https://docs.microsoft.com/azure/architecture/best-practices/api-design#versioning-a-restful-web-api*](https://docs.microsoft.com/azure/architecture/best-practices/api-design#versioning-a-restful-web-api)
 
--   **Roy Fielding。バージョン管理、Hypermedia、および残りの部分**
+-   **Roy Fielding。バージョン管理、ハイパーメディア、REST**
     [*https://www.infoq.com/articles/roy-fielding-on-versioning*](https://www.infoq.com/articles/roy-fielding-on-versioning)
 
 ## <a name="generating-swagger-description-metadata-from-your-aspnet-core-web-api"></a>ASP.NET Core Web API からの Swagger 記述メタデータの生成 
 
-[Swagger](http://swagger.io/) は一般に使用されるオープン ソース フレームワークであり、RESTful API の設計、構築、文書化、使用に役立つツールの大規模なエコシステムによってサポートされています。 API 記述メタデータ ドメインの標準になりつつあります。 Swagger 記述メタデータを任意の種類のマイクロサービス (次のセクションで説明するデータ ドリブン マイクロサービスまたはより高度なドメイン ドリブン マイクロサービス) と共に含める必要があります。
+[Swagger](https://swagger.io/) は一般に使用されるオープン ソース フレームワークであり、RESTful API の設計、構築、文書化、使用に役立つツールの大規模なエコシステムによってサポートされています。 API 記述メタデータ ドメインの標準になりつつあります。 Swagger 記述メタデータを任意の種類のマイクロサービス (次のセクションで説明するデータ ドリブン マイクロサービスまたはより高度なドメイン ドリブン マイクロサービス) と共に含める必要があります。
 
 Swagger の中心となるのは、JSON または YAML ファイル内の API 記述メタデータである Swagger 仕様です。 仕様では、API の RESTful コントラクトを作成し、開発、検出、統合を簡単にするためにすべてのリソースと操作を人間とマシンの両方が判読できる形式で詳しく記述します。
 
 仕様は、OpenAPI 仕様 (OAS) の基盤であり、RESTful インターフェイスを定義する方法を標準化するためにオープンで透過的なコラボレーション コミュニティで開発されています。
 
-仕様では、サービスの検出方法とその機能を理解する方法に関する構造体を定義します。 詳細については、web エディターおよび Spotify、Uber、余裕期間、および、Microsoft などの企業から Swagger 仕様の例を含むサイトを参照して、Swagger (<http://swagger.io>)。
+仕様では、サービスの検出方法とその機能を理解する方法に関する構造体を定義します。 Web エディターや、Spotify、Uber、Slack、Microsoft などの企業の Swagger 仕様の例については、Swagger のサイト (<https://swagger.io/>) をご覧ください。
 
 ### <a name="why-use-swagger"></a>Swagger を使用する理由
 
 API 用の Swagger メタデータを生成する主な理由は次のとおりです。
 
-**他の製品が API を自動的に使用して統合できる**。 数十個の製品と[商用ツール](http://swagger.io/commercial-tools/)、多くの[ライブラリとフレームワーク](http://swagger.io/open-source-integrations/)で Swagger がサポートされます。 Microsoft には、Swagger ベースの API を自動的に使用できる次のような高度な製品とツールがあります。
+**他の製品が API を自動的に使用して統合できる**。 数十個の製品と[商用ツール](https://swagger.io/commercial-tools/)、多くの[ライブラリとフレームワーク](https://swagger.io/open-source-integrations/)で Swagger がサポートされます。 Microsoft には、Swagger ベースの API を自動的に使用できる次のような高度な製品とツールがあります。
 
 -   [AutoRest](https://github.com/Azure/AutoRest)。 Swagger を呼び出すための .NET クライアント クラスを自動的に生成することができます。 このツールは CLI から使用することができ、GUI から簡単に使用できるように Visual Studio とも統合されています。
 
@@ -415,7 +415,7 @@ http://&lt;your-root-url&gt;/swagger/ui のような URL に対して Swashbuckl
 
 ### <a name="additional-resources"></a>その他の技術情報
 
--   **ASP.NET Web API のヘルプ ページを使用して Swagger します。**
+-   **Swagger を使用する ASP.NET Web API のヘルプ ページ**
     [*https://docs.microsoft.com/aspnet/core/tutorials/web-api-help-pages-using-swagger*](https://docs.microsoft.com/aspnet/core/tutorials/web-api-help-pages-using-swagger)
 
 

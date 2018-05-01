@@ -11,15 +11,15 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 76db5388c75d4eb3b5cc23c1e57cc391a15f2934
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
-ms.translationtype: MT
+ms.openlocfilehash: cab12426308be258134e0385c5a6eb6cdb5d544b
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="designing-the-infrastructure-persistence-layer"></a>インフラストラクチャの永続レイヤーの設計
 
-データ永続化コンポーネントは、マイクロサービス (つまり、マイクロサービスのデータベース) の境界内でホストされているデータへのアクセスを提供します。 内容としては、リポジトリや[作業単位](http://martinfowler.com/eaaCatalog/unitOfWork.html)クラス (カスタム EF DBContexts など) などのコンポーネントの実際の実装が含まれています。
+データ永続化コンポーネントは、マイクロサービス (つまり、マイクロサービスのデータベース) の境界内でホストされているデータへのアクセスを提供します。 内容としては、リポジトリや[作業単位](https://martinfowler.com/eaaCatalog/unitOfWork.html)クラス (カスタム EF DBContexts など) などのコンポーネントの実際の実装が含まれています。
 
 ## <a name="the-repository-pattern"></a>リポジトリ パターン
 
@@ -90,7 +90,7 @@ public interface IOrderRepository : IRepository<Order>
 
 作業単位は複数の挿入、更新、または削除操作が関与する単一のトランザクションとして表されます。 つまり、特定のユーザー操作 (たとえば Web サイトへの登録) に対して、すべての挿入、更新、および削除のトランザクションが 1 つのトランザクションとして処理されることを意味します。 これは、複数のデータベース トランザクションを対話方法で処理するよりも効率的です。
 
-これらの複数の永続化操作は、後でアプリケーション レイヤーのコードが命令を発行したときに、1 アクションで実行されます。 実際のデータベース記憶域にメモリ内の変更を適用する決定は、通常、[作業単位パターン](http://martinfowler.com/eaaCatalog/unitOfWork.html)に基づいて行われます。 EF には、作業単位パターンは DBContext として実装されます。
+これらの複数の永続化操作は、後でアプリケーション レイヤーのコードが命令を発行したときに、1 アクションで実行されます。 実際のデータベース記憶域にメモリ内の変更を適用する決定は、通常、[作業単位パターン](https://martinfowler.com/eaaCatalog/unitOfWork.html)に基づいて行われます。 EF には、作業単位パターンは DBContext として実装されます。
 
 多くの場合、このパターンまたは記憶域に対する操作の適用方法により、アプリケーションのパフォーマンスを向上させ、不整合の可能性を低減することができます。 また、意図したすべての操作が 1 つのトランザクションの一部としてコミットされるので、データベース テーブル内でブロックされるトランザクションが少なくなります。 これは、データベースに対して多数の単独の操作を実行する場合と比べて効率的です。 そのため、小規模な単独のトランザクションを多数実行するのではなく、同じトランザクション内で複数の更新操作をグループ化することにより、選択した ORM でデータベースに対する実行を最適化できます。
 
@@ -132,27 +132,27 @@ public interface ISpecification<T>
 
 次のセクションでは、仕様パターンを Entity Framework Core 2.0 で実装する方法と、任意の Repository (リポジトリ) クラスから使用する方法を説明します。
 
-**重要な注意事項:**仕様パターンは、次の「その他の技術情報」のセクションに示されているように、さまざまな方法で実装できる古いパターンです。 パターンやアイデアとしては古いアプローチがわかりやすいかもしれませんが、Linq や式のような最新の言語機能を利用していない古い実装には注意が必要です。
+**重要な注意事項:** 仕様パターンは、次の「その他の技術情報」のセクションに示されているように、さまざまな方法で実装できる古いパターンです。 パターンやアイデアとしては古いアプローチがわかりやすいかもしれませんが、Linq や式のような最新の言語機能を利用していない古い実装には注意が必要です。
 
 ## <a name="additional-resources"></a>その他の技術情報
 
 ### <a name="the-repository-pattern"></a>リポジトリ パターン
 
 -   **Edward Hieatt、Rob Mee。リポジトリ パターン。**
-    [*http://martinfowler.com/eaaCatalog/repository.html*](http://martinfowler.com/eaaCatalog/repository.html)
+    [*https://martinfowler.com/eaaCatalog/repository.html*](https://martinfowler.com/eaaCatalog/repository.html)
 
 -   **リポジトリ パターン**
     [*https://msdn.microsoft.com/library/ff649690.aspx*](https://msdn.microsoft.com/library/ff649690.aspx)
 
--   **リポジトリ パターン: データ持続性の抽象化**
+-   **リポジトリ パターン: データ永続性の抽象化**
     [*http://deviq.com/repository-pattern/*](http://deviq.com/repository-pattern/)
 
--   **Eric Evans。Domain-Driven Design: Tackling Complexity in the Heart of Software (ドメイン駆動設計: ソフトウェア中心部の複雑さへの取り組み)。** (予約以外の場合は、リポジトリ パターンの詳細についてにが含まれています) [*https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/*](https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/)
+-   **Eric Evans。Domain-Driven Design: Tackling Complexity in the Heart of Software (ドメイン駆動設計: ソフトウェア中心部の複雑さへの取り組み)。** (書籍: リポジトリ パターンに関する説明が含まれています) [*https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/*](https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/)
 
 ### <a name="unit-of-work-pattern"></a>Unit of Work パターン
 
--   **Martin Fowler。作業のパターンの単位。**
-    [*http://martinfowler.com/eaaCatalog/unitOfWork.html*](http://martinfowler.com/eaaCatalog/unitOfWork.html)
+-   **Martin Fowler。Unit of Work パターン。**
+    [*https://martinfowler.com/eaaCatalog/unitOfWork.html*](https://martinfowler.com/eaaCatalog/unitOfWork.html)
 
 <!-- -->
 
@@ -161,12 +161,12 @@ public interface ISpecification<T>
 
 ### <a name="the-specification-pattern"></a>仕様パターン
 
--   **仕様のパターン。**
+-   **仕様パターン。**
     [*http://deviq.com/specification-pattern/*](http://deviq.com/specification-pattern/)
 
 -   **Evans, Eric (2004 年)。「Domain Driven Design」(ドメイン駆動設計)。Addison-Wesley. p. 224.**
 
--   **「Specifications」(仕様)。Martin ファウラー**
+-   **「Specifications」(仕様)。Martin Fowler**
     [*https://www.martinfowler.com/apsupp/spec.pdf/*](https://www.martinfowler.com/apsupp/spec.pdf)
 
 >[!div class="step-by-step"]

@@ -1,7 +1,7 @@
 ---
-title: "クライアントからマイクロサービスへの直接通信に対する API ゲートウェイ パターン"
-description: "コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | クライアントからマイクロサービスへの直接通信に対する API ゲートウェイ パターン"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー, API ゲートウェイ"
+title: クライアントからマイクロサービスへの直接通信に対する API ゲートウェイ パターン
+description: コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | クライアントからマイクロサービスへの直接通信に対する API ゲートウェイ パターン
+keywords: Docker, マイクロサービス, ASP.NET, コンテナー, API ゲートウェイ
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/18/2017
@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 96a02958ef5750aec7a92ff0dd145edc15a5953a
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: fa3f4bb97cf942ee7698b1efa1dcd09b3f2ca571
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="direct-client-to-microservice-communication-versus-the-api-gateway-pattern"></a>クライアントからマイクロサービスへの直接通信に対する API ゲートウェイ パターン
 
@@ -57,7 +57,7 @@ ms.lasthandoff: 12/23/2017
 
 ## <a name="using-an-api-gateway"></a>API ゲートウェイの使用
 
-複数のクライアント アプリを持つマイクロサービス ベースの大きく複雑なアプリケーションを設計してビルドする場合、[API ゲートウェイ](http://microservices.io/patterns/apigateway.html)の使用を検討することをお勧めします。 これは、特定のマイクロサービス グループに対して単一のエントリ ポイントを提供するサービスです。 オブジェクト指向設計の[ファサード パターン](https://en.wikipedia.org/wiki/Facade_pattern)に似ていますが、この場合、これは分散システムの一部となります。 API ゲートウェイ パターンは、クライアント アプリのニーズを考えながらビルドするため、"backend for frontend" [(BFF)](http://samnewman.io/patterns/architectural/bff/) と呼ばれることもあります。
+複数のクライアント アプリを持つマイクロサービス ベースの大きく複雑なアプリケーションを設計してビルドする場合、[API ゲートウェイ](https://microservices.io/patterns/apigateway.html)の使用を検討することをお勧めします。 これは、特定のマイクロサービス グループに対して単一のエントリ ポイントを提供するサービスです。 オブジェクト指向設計の[ファサード パターン](https://en.wikipedia.org/wiki/Facade_pattern)に似ていますが、この場合、これは分散システムの一部となります。 API ゲートウェイ パターンは、クライアント アプリのニーズを考えながらビルドするため、"backend for frontend" [(BFF)](https://samnewman.io/patterns/architectural/bff/) と呼ばれることもあります。
 
 図 4-13 には、マイクロサービス ベースのアーキテクチャにカスタム API ゲートウェイをどのように収めるかが示されています。
 この図では、複数の異なるクライアント アプリに接続されている単一のカスタム API ゲートウェイ サービスを使用していることに注意してください。 クライアント アプリからの多くのさまざまな要件に基づいて API ゲートウェイ サービスが拡大し、進化するため、このことが重要なリスクになる可能性があります。 最終的に、これらのさまざまなニーズにより肥大化し、実際はモノシリック アプリケーションまたはモノシリック サービスにとてもよく似たものになる可能性があります。 そのため、API ゲートウェイを複数のサービスまたは複数のより小さい API ゲートウェイに分割する (たとえば、フォーム ファクター タイプごとに 1 つずつ) ことを強くお勧めします。
@@ -110,8 +110,8 @@ Azure API Management では、キー、トークン、および IP フィルタ�
 
 ## <a name="additional-resources"></a>その他の技術情報
 
--   **Charles Richardson。パターン: API ゲートウェイ / Backend for Front-End**
-    [*http://microservices.io/patterns/apigateway.html*](http://microservices.io/patterns/apigateway.html)
+-   **Charles Richardson。パターン: API ゲートウェイ/フロントエンドのバックエンド**
+    [*https://microservices.io/patterns/apigateway.html*](https://microservices.io/patterns/apigateway.html)
 
 -   **Azure API Management**
     [*https://azure.microsoft.com/services/api-management/*](https://azure.microsoft.com/services/api-management/)
@@ -119,7 +119,7 @@ Azure API Management では、キー、トークン、および IP フィルタ�
 -   **Udi Dahan。サービス指向のコンポジション**\
     [*http://udidahan.com/2014/07/30/service-oriented-composition-with-video/*](http://udidahan.com/2014/07/30/service-oriented-composition-with-video/)
 
--   **Clemens Vasters。GOTO 2016 のメッセージングとマイクロサービス** (ビデオ) [*https://www.youtube.com/watch?v=rXi5CLjIQ9k*](https://www.youtube.com/watch?v=rXi5CLjIQ9k)
+-   **Clemens Vasters。GOTO 2016 でのメッセージングとマイクロサービス** (ビデオ) [*https://www.youtube.com/watch?v=rXi5CLjIQ9k*](https://www.youtube.com/watch?v=rXi5CLjIQ9k)
 
 
 >[!div class="step-by-step"]

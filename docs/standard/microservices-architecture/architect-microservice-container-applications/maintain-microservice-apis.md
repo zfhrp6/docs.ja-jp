@@ -1,7 +1,7 @@
 ---
-title: "マイクロサービス API とコントラクトの作成、進化、バージョン管理"
-description: ".NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ | マイクロサービス API とコントラクトの作成、進化、バージョン管理"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
+title: マイクロサービス API とコントラクトの作成、進化、バージョン管理
+description: '.NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ | マイクロサービス API とコントラクトの作成、進化、バージョン管理'
+keywords: Docker, マイクロサービス, ASP.NET, コンテナー
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 3aaa7eaa8bc535874369cf08414f2211cae1bed9
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 7a80405f0a206cfaa0462392eddfc95878353cd7
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="creating-evolving-and-versioning-microservice-apis-and-contracts"></a>マイクロサービス API とコントラクトの作成、進化、バージョン管理
 
@@ -33,8 +33,8 @@ API の変更が少ない場合 (たとえば、API に属性やパラメータ�
 
 ## <a name="additional-resources"></a>その他の技術情報
 
--   **Scott Hanselman。ASP.NET Core RESTful Web API バージョン管理で簡単に**
-    <http://www.hanselman.com/blog/ASPNETCoreRESTfulWebAPIVersioningMadeEasy.aspx>
+-   **Scott Hanselman。簡単になった ASP.NET Core RESTful Web API のバージョン管理**
+    <https://www.hanselman.com/blog/ASPNETCoreRESTfulWebAPIVersioningMadeEasy.aspx>
 
 -   **RESTful Web API のバージョン管理**
     [*https://docs.microsoft.com/azure/architecture/best-practices/api-design#versioning-a-restful-web-api*](https://docs.microsoft.com/azure/architecture/best-practices/api-design#versioning-a-restful-web-api)

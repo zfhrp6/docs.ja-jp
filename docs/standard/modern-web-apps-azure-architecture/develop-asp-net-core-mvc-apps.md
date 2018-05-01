@@ -6,21 +6,22 @@ ms.author: wiwagn
 ms.date: 10/07/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
+ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: c10bf66dd37f0d99c038db7f95999d84986152fa
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: c5e2d603062095c02af500ae74a9ea708cf9aefa
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="develop-aspnet-core-mvc-apps"></a>ASP.NET Core MVC アプリを開発する
 
 > "最初から正しく理解する必要はありません。 しかし、最後に正しく理解していることは極めて重要です。"  
 > _- Andrew Hunt、David Thomas_
 
-## <a name="summary"></a>概要
+## <a name="summary"></a>まとめ
 
 ASP.NET Core は、最新のクラウド向けに最適化された Web アプリケーションを構築するための、クロス プラットフォームのオープン ソース フレームワークです。 ASP.NET Core アプリは、軽量なモジュール形式であり、依存関係の挿入の組み込みサポートを備え、テストと保守の容易性を大幅に向上させることができます。 ビュー ベースのアプリだけでなく最新の Web API の構築をサポートする MVC と組み合わせて、ASP.NET Core は、エンタープライズ Web アプリケーション構築のための強力なフレームワークになります。
 
@@ -81,7 +82,7 @@ Web API に対しては、ASP.NET Core MVC は[*コンテンツ ネゴシエー�
 
 ## <a name="working-with-dependencies"></a>依存関係の使用
 
-ASP.NET Core は、[依存関係の挿入](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection)と呼ばれる手法の組み込みサポートを備えており、内部的に使用します。 依存関係の挿入は、アプリケーションの異なる部分間を疎結合できる手法です。 結合を緩くすることを、アプリケーションの各部分の分離が容易になり、部分ごとにテストや置換が可能になるため、望ましいことです。 また、アプリケーションの 1 つの部分に対する変更が、アプリケーションの別の場所に予期しない影響を与える可能性も低くなります。 依存関係の挿入は、依存関係逆転 (Dependency Inversion) の原則に基づいており、多くの場合、開放/閉鎖 (Open/closed) の原則の実現に不可欠です。 アプリケーションによる依存関係の処理方法を評価するときは、[静的な結び付き](http://deviq.com/static-cling/)を持つコードのにおいに注意し、"[new は接着剤である](http://ardalis.com/new-is-glue)" という格言を思い出してください。
+ASP.NET Core は、[依存関係の挿入](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection)と呼ばれる手法の組み込みサポートを備えており、内部的に使用します。 依存関係の挿入は、アプリケーションの異なる部分間を疎結合できる手法です。 結合を緩くすることを、アプリケーションの各部分の分離が容易になり、部分ごとにテストや置換が可能になるため、望ましいことです。 また、アプリケーションの 1 つの部分に対する変更が、アプリケーションの別の場所に予期しない影響を与える可能性も低くなります。 依存関係の挿入は、依存関係逆転 (Dependency Inversion) の原則に基づいており、多くの場合、開放/閉鎖 (Open/closed) の原則の実現に不可欠です。 アプリケーションによる依存関係の処理方法を評価するときは、[静的な結び付き](http://deviq.com/static-cling/)を持つコードのにおいに注意し、"[new は接着剤である](https://ardalis.com/new-is-glue)" という格言を思い出してください。
 
 静的な結び付きは、クラスが静的メソッドを呼び出したとき、または静的プロパティにアクセスしたときに発生し、インフラストラクチャに対する副作用または依存関係があります。 たとえば、あるメソッドが静的メソッドを呼び出し、その静的メソッドがデータベースに書き込む場合、元のメソッドはデータベースに密に結合されます。 何かによってデータベース呼び出しが中断されると、メソッドも中断されます。 このようなメソッドのテストは、静的な呼び出しを模倣するために市販のモック ライブラリが必要になるか、またはテスト データベースを使ってしかテストできないため、非常に困難です。 インフラストラクチャに対する依存関係のない静的呼び出しは (特に、完全にステートレスのもの)、問題なく呼び出すことができて、結合や (コードの結合だけでなく静的な呼び出し自体の) テスト可能性に影響を与えません。
 
@@ -281,9 +282,9 @@ public async Task<IActionResult> Put(int id, [FromBody]Author author)
 フィルターの実装について詳しくは、MSDN の記事「[実際の ASP.NET Core MVC フィルター](https://msdn.microsoft.com/magazine/mt767699.aspx)」をご覧ください。動作するサンプルをダウンロードすることもできます。
 
 > ### <a name="references--structuring-applications"></a>参照: アプリケーションの構成
-> - **区分**  
+> - **領域**  
 > <https://docs.microsoft.com/aspnet/core/mvc/controllers/areas>
-> - **MSDN – ASP.NET Core MVC 向け機能スライス**
+> - **MSDN - ASP.NET Core MVC 向け機能スライス**
 >  <https://msdn.microsoft.com/magazine/mt763233.aspx>
 > - **フィルター**  
 > <https://docs.microsoft.com/aspnet/core/mvc/controllers/filters>
@@ -400,7 +401,7 @@ public void ConfigureServices(IServiceCollection services)
 
 ## <a name="client-communication"></a>クライアントの通信
 
-Web API によりページを提供してデータの要求に応答するだけでなく、ASP.NET Core アプリは接続されているクライアントと直接通信できます。 この送信通信では、さまざまなトランスポート テクノロジを使うことができ、最も一般的なものは WebSocket です。 ASP.NET Core SignalR は、サーバーとクライアントの間のリアルタイム通信機能をアプリケーションにとって容易にするライブラリです。 SignalR は、WebSocket などのさまざまなトランスポート テクノロジをサポートしており、多くの実装の詳細を開発者から抽象化します。
+Web API によりページを提供してデータの要求に応答するだけでなく、ASP.NET Core アプリは接続されているクライアントと直接通信できます。 この送信通信では、さまざまなトランスポート テクノロジを使うことができ、最も一般的なものは WebSocket です。 ASP.NET Core SignalR は、サーバーとクライアントの間のリアルタイム通信機能をアプリケーションに容易に追加できるようにするライブラリです。 SignalR は、WebSocket などのさまざまなトランスポート テクノロジをサポートしており、多くの実装の詳細を開発者から抽象化します。
 
 ASP.NET Core SignalR は現在開発中であり、ASP.NET Core の次のリリースで提供されます。 ただし、他の[オープン ソースの WebSocket ライブラリ](https://github.com/radu-matei/websocket-manager)は現在でも使用できます。
 
@@ -507,7 +508,7 @@ DDD では、モデリング、アーキテクチャ、コミュニケーショ�
 > - **わかりやすい英語での DDD (StackOverflow の回答)**  
 > <https://stackoverflow.com/questions/1222392/can-someone-explain-domain-driven-design-ddd-in-plain-english-please/1222488#1222488>
 
-## <a name="deployment"></a>展開
+## <a name="deployment"></a>配置
 
 ホストされる場所に関係なく、ASP.NET Core アプリケーションを展開するプロセスには複数のステップがあります。 最初のステップであるアプリケーションの発行は、dotnet publish CLI コマンド使って行うことができます。 アプリケーションがコンパイルされて、アプリケーションの実行に必要なすべてのファイルが指定したフォルダに配置されます。 Visual Studio から展開する場合、このステップは自動的に実行されます。 publish フォルダーには、アプリケーションとその依存関係の .exe ファイルと .dll ファイルが格納されます。 自己充足型のアプリケーションには、.NET ランタイムのバージョンも含まれます。 ASP.NET Core アプリケーションには、構成ファイル、静的クライアント資産、MVC ビューも含まれます。
 
