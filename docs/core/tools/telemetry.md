@@ -1,22 +1,20 @@
 ---
-title: ".NET Core CLI ツールの製品利用統計情報"
-description: "利用情報を収集して分析する .NET Core ツールの製品利用統計情報機能と収集されるデータについて、およびこの機能を無効にする方法を説明します。"
-keywords: ".NET、.NET Core、製品利用統計情報"
+title: .NET Core CLI ツールの製品利用統計情報
+description: 利用情報を収集して分析する .NET Core ツールの製品利用統計情報機能と収集されるデータについて、およびこの機能を無効にする方法を説明します。
 author: richlander
 ms.author: mairaw
 ms.date: 08/04/2017
-ms.topic: article
-ms.prod: .net-core
+ms.topic: conceptual
+ms.prod: dotnet-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
-ms.assetid: 480df976-7568-4df4-9d26-9911357b5a31
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: 9a78ec370fd53260f26a5d8c15707a5d611e458f
-ms.sourcegitcommit: be1fb5d9447ad459bef22b91a91c72e3e0b2d916
+ms.openlocfilehash: b3da69a7fc8de095b3845428af742870e7e737ad
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="net-core-cli-tools-telemetry"></a>.NET Core CLI ツールの製品利用統計情報
 

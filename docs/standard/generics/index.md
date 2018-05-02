@@ -1,12 +1,8 @@
 ---
-title: .NET Framework におけるジェネリック
-ms.custom: ''
+title: .NET のジェネリック
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -39,16 +35,17 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: d06c2ae074045ae750c079383f43c3d6aa6f726c
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: ba9149da420b7b7bdad01e1376793c64adaf1c8d
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/28/2018
 ---
-# <a name="generics-in-the-net-framework"></a>.NET Framework におけるジェネリック
+# <a name="generics-in-net"></a>.NET のジェネリック
+
 <a name="top"></a> ジェネリックを使用すると、操作対象のデータ型に厳密に合わせてメソッド、クラス、構造体、またはインターフェイスを調整できます。 たとえば、任意の型のキーと値が許可される <xref:System.Collections.Hashtable> クラスを使用する代わりに、 <xref:System.Collections.Generic.Dictionary%602> ジェネリック クラスを使用して、キーに使用できる型と、値に使用できる型を指定できます。 ジェネリックの利点として、コードの再利用性やタイプ セーフの向上などを挙げることができます。  
   
- このトピックでは、.NET Framework におけるジェネリックの概要と、ジェネリック型またはジェネリック メソッドの概要について説明します。 このチュートリアルは、次のセクションで構成されています。  
+ このトピックでは、.NET におけるジェネリックの概要と、ジェネリック型またはジェネリック メソッドの概要について説明します。 このチュートリアルは、次のセクションで構成されています。  
   
 -   [ジェネリックの定義と使用](#defining_and_using_generics)  
   
@@ -78,7 +75,7 @@ ms.lasthandoff: 12/23/2017
   
 <a name="generics_terminology"></a>   
 ### <a name="generics-terminology"></a>ジェネリックの用語  
- .NET Framework におけるジェネリックの説明では、次の用語が使用されます。  
+ .NET におけるジェネリックの説明では、次の用語が使用されます。  
   
 -   *ジェネリック型定義* は、テンプレートとして機能するクラス、構造体、またはインターフェイスの宣言で、格納または使用できる型のプレースホルダーを含みます。 たとえば、<xref:System.Collections.Generic.Dictionary%602?displayProperty=nameWithType> クラスには、キーと値の 2 つの型を含めることができます。 ジェネリック型定義は単なるテンプレートであるため、ジェネリック型定義のクラス、構造体、またはインターフェイスのインスタンスを作成することはできません。  
   
@@ -145,11 +142,11 @@ ms.lasthandoff: 12/23/2017
   
 <a name="class_library_and_language_support"></a>   
 ## <a name="class-library-and-language-support"></a>クラス ライブラリと言語サポート  
- .NET Framework では、次の名前空間に多数のジェネリック コレクション クラスが用意されています。  
+ .NET では、次の名前空間に多数のジェネリック コレクション クラスが用意されています。  
   
--   <xref:System.Collections.Generic> 名前空間には、 <xref:System.Collections.Generic.List%601> ジェネリック クラスや <xref:System.Collections.Generic.Dictionary%602> ジェネリック クラスなど、.NET Framework で用意されているほとんどのジェネリック コレクション型がカタログされています。  
+-   <xref:System.Collections.Generic> 名前空間には、<xref:System.Collections.Generic.List%601> ジェネリック クラスや <xref:System.Collections.Generic.Dictionary%602> ジェネリック クラスなど、.NET で用意されているほとんどのジェネリック コレクション型が含まれています。  
   
--   <xref:System.Collections.ObjectModel> 名前空間には、 <xref:System.Collections.ObjectModel.ReadOnlyCollection%601> ジェネリック クラスなど、クラスのユーザーにオブジェクト モデルを公開するために役立つ追加のジェネリック コレクション型がカタログされています。  
+-   <xref:System.Collections.ObjectModel> 名前空間には、<xref:System.Collections.ObjectModel.ReadOnlyCollection%601> ジェネリック クラスなど、クラスのユーザーにオブジェクト モデルを公開するために役立つ追加のジェネリック コレクション型が含まれています。  
   
  並べ替えと等価比較を実装するためのジェネリック インターフェイスは、イベント ハンドラー、変換、および検索述語の汎用デリゲート型と共に、 <xref:System> 名前空間に用意されています。  
   
@@ -170,13 +167,13 @@ ms.lasthandoff: 12/23/2017
 <a name="related_topics"></a>   
 ## <a name="related-topics"></a>関連トピック  
   
-|タイトル|説明|  
+|Title|説明|  
 |-----------|-----------------|  
-|[.NET Framework のジェネリック コレクション](../../../docs/standard/generics/collections.md)|.NET Framework のジェネリック コレクション クラスとその他のジェネリック型について説明します。|  
+|[ .NET の汎用コレクション](../../../docs/standard/generics/collections.md)|.NET のジェネリック コレクション クラスとその他のジェネリック型について説明します。|  
 |[配列とリストの操作に使用する汎用デリゲート](../../../docs/standard/generics/delegates-for-manipulating-arrays-and-lists.md)|配列またはコレクションの要素に対して実行される変換、検索述語、およびアクションの汎用デリゲートについて説明します。|  
 |[ジェネリック インターフェイス](../../../docs/standard/generics/interfaces.md)|ジェネリック型のファミリ間に共通する機能を提供するジェネリック インターフェイスについて説明します。|  
 |[共変性と反変性](../../../docs/standard/generics/covariance-and-contravariance.md)|ジェネリック型パラメーターの共変性と反変性について説明します。|  
-|[ 一般的に使用されるコレクション型](../../../docs/standard/collections/commonly-used-collection-types.md)|ジェネリック型など、.NET Framework のコレクション型の特性と使用シナリオの概要について説明します。|  
+|[ 一般的に使用されるコレクション型](../../../docs/standard/collections/commonly-used-collection-types.md)|ジェネリック型など、.NET のコレクション型の特性と使用シナリオの概要について説明します。|  
 |[ジェネリック コレクションを使用する状況](../../../docs/standard/collections/when-to-use-generic-collections.md)|ジェネリック コレクション型を使用するケースを決定するための一般的な規則について説明します。|  
 |[方法: リフレクション出力を使用してジェネリック型を定義する](../../../docs/framework/reflection-and-codedom/how-to-define-a-generic-type-with-reflection-emit.md)|ジェネリック型とジェネリック メソッドを含む動的アセンブリの生成方法について説明します。|  
 |[Generic Types in Visual Basic](~/docs/visual-basic/programming-guide/language-features/data-types/generic-types.md)|ジェネリック型の使用方法や定義方法に関するトピックなど、Visual Basic ユーザー向けにジェネリック機能について説明します。|  

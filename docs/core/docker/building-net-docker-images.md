@@ -1,24 +1,22 @@
 ---
-title: ".NET Core の Docker イメージのビルド"
-description: "Docker イメージと .NET Core について"
-keywords: .NET, .NET Core, Docker
+title: .NET Core の Docker イメージのビルド
+description: Docker イメージと .NET Core について
 author: jralexander
 ms.author: johalex
 ms.date: 11/06/2017
 ms.topic: tutorial
-ms.prod: .net-core
+ms.prod: dotnet-core
 ms.technology: dotnet-docker
 ms.devlang: dotnet
-ms.assetid: 03c28597-7e73-46d6-a9c3-f9cb55642739
 ms.custom: mvc
 manager: wpickett
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: d5631bdbc0334640b290c08df17cba0bfe99fe85
-ms.sourcegitcommit: c3957fdb990060559d73cca44ab3e2c7b4d049c0
+ms.openlocfilehash: c1983be59b4a961cabd94915852e0cab7811682c
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="building-docker-images-for-net-core-applications"></a>.NET Core アプリケーションの Docker イメージのビルド
 
@@ -191,7 +189,7 @@ docker run -it --rm --name aspnetcore_sample aspnetapp
 ```
 
 > [!IMPORTANT]
-> Windows コンテナーの利用時、お使いのブラウザーで (http://localhost ではなく) **コンテナー IP アドレス**に移動する必要があります。 次の手順でコンテナーの IP アドレスを取得できます。
+> Windows コンテナーの利用時、お使いのブラウザーで (http://localhost) ではなく) **コンテナー IP アドレス**に移動する必要があります。 次の手順でコンテナーの IP アドレスを取得できます。
 
 * 別のコマンド プロンプトを開きます。
 * `docker ps` を実行し、実行中のコンテナーを確認します。 "aspnetcore_sample" コンテナーを確認できるはずです。

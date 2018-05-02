@@ -1,21 +1,20 @@
 ---
-title: "dotnet-install スクリプト"
-description: ".NET Core CLI ツールと共有ランタイムをインストールする dotnet-install スクリプトについて説明します。"
-keywords: "dotnet-install, dotnet-install スクリプト, .NET Core"
+title: dotnet-install スクリプト
+description: .NET Core CLI ツールと共有ランタイムをインストールする dotnet-install スクリプトについて説明します。
 author: blackdwarf
 ms.author: mairaw
 ms.date: 09/11/2017
-ms.topic: article
-ms.prod: .net-core
+ms.topic: conceptual
+ms.prod: dotnet-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
-ms.assetid: b64e7e6f-ffb4-4fc8-b43b-5731c89479c2
-ms.workload: dotnetcore
-ms.openlocfilehash: bc38ca7b9f00c6c252ff4963c42519a64c456b43
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.workload:
+- dotnetcore
+ms.openlocfilehash: 96336df087ea2ad01584010f0715ad31e079b663
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="dotnet-install-scripts-reference"></a>dotnet-install スクリプト参照
 
@@ -39,8 +38,8 @@ macOS/Linux の場合:
 
 [.NET Core のメインの Web サイト](https://dot.net)でホストされる安定したバージョンを使用することをお勧めします。 スクリプトへの直接パスは次のとおりです。
 
-* https://dot.net/v1/dotnet-install.sh (bash、UNIX)
-* https://dot.net/v1/dotnet-install.ps1 (Powershell、Windows)
+* https://dot.net/v1/dotnet-install.sh (Bash、UNIX)
+* https://dot.net/v1/dotnet-install.ps1 (PowerShell、Windows)
 
 これらのスクリプトの主な有用性は、オートメーションのシナリオと管理者以外のインストールにおいてです。 2 つのスクリプトがあります。1 つは、Windows で動作する PowerShell スクリプトです。 その他のスクリプトは、Linux/macOS で動作する bash スクリプトです。 スクリプトの動作は両方とも同じです。 bash スクリプトは PowerShell のスイッチも読み取るので、Linux/macOS システムのスクリプトで PowerShell のスイッチを使うことができます。 
 

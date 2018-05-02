@@ -1,21 +1,19 @@
 ---
-title: ".NET Core の配布パッケージ"
-description: ".NET Core を配布用にパッケージ化、名前付け、およびバージョン管理する方法について説明します。"
-keywords: ".NET, .NET Core, ソース, ビルド"
+title: .NET Core の配布パッケージ
+description: .NET Core を配布用にパッケージ化、名前付け、およびバージョン管理する方法について説明します。
 author: bleroy
 ms.author: mairaw
 ms.date: 06/28/2017
-ms.topic: article
-ms.prod: .net-core
+ms.topic: conceptual
+ms.prod: dotnet-core
 ms.devlang: dotnet
-ms.assetid: 71b9d722-c5a8-4271-9ce1-d87e7ae2494d
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: e511ea13c578ab44c65a5ba78f666cce1ab6a0c4
-ms.sourcegitcommit: c3957fdb990060559d73cca44ab3e2c7b4d049c0
+ms.openlocfilehash: 63ff542dbde30f8ff72a2d257a16a18b2a9e71b8
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="net-core-distribution-packaging"></a>.NET Core の配布パッケージ
 

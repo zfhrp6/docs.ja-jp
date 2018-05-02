@@ -11,11 +11,11 @@ ms.topic: article
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: af6a6b73c790577cebf301075f2ff7e90960ea62
-ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
+ms.openlocfilehash: bec1341df85f86d5f2aa15753a11a9c4a2d0173f
+ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="domain-events-design-and-implementation"></a>ドメイン イベント: 設計と実装
 
@@ -209,7 +209,7 @@ public class OrderingContext : DbContext, IUnitOfWork
 
 複数の集計に関係するルールは、常に最新の状態であることを期待できません。 イベント処理、バッチ処理、または他の更新メカニズムにより、他の依存関係はある特定の時間内に解決できます。 (128 ページ)
 
-Vaughn Vernon は、『[Effective Aggregate Design.Part II: Making Aggregates Work Together](http://dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_2.pdf)』(効果的な集計設計パート II: 集計処理の連携) で次のように書いています。
+Vaughn Vernon は、『[Effective Aggregate Design.Part II: Making Aggregates Work Together](https://dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_2.pdf)』(効果的な集計設計パート II: 集計処理の連携) で次のように書いています。
 
 したがって、1 つの集計インスタンスでコマンドを実行するために、他のビジネス ルールを 1 つ以上の集計で実行する必要がある場合は、最終的な整合性を使います \[...\]。DDD モデルには最終的な整合性をサポートするための実用的な方法があります。 集計メソッドが発行したドメイン イベントは、1 つ以上の非同期サブスクライバーに時間内に配信されます。
 
@@ -347,13 +347,13 @@ public class ValidateOrAddBuyerAggregateWhenOrderStartedDomainEventHandler
     [*https://lostechies.com/jimmybogard/2014/05/13/a-better-domain-events-pattern/*](https://lostechies.com/jimmybogard/2014/05/13/a-better-domain-events-pattern/)
 
 -   **Vaughn Vernon。効果的な集計設計パート II: 集計処理の連携**
-    [*http://dddcommunity.org/wp-content/uploads/files/pdf\_articles/Vernon\_2011\_2.pdf*](http://dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_2.pdf)
+    [*http://dddcommunity.org/wp-content/uploads/files/pdf\_articles/Vernon\_2011\_2.pdf*](https://dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_2.pdf)
 
 -   **Jimmy Bogard。ドメインの強化: ドメイン イベント**
     *<https://lostechies.com/jimmybogard/2010/04/08/strengthening-your-domain-domain-events/> *
 
 -   **Tony Truong。ドメイン イベント パターンの例**
-    [*http://www.tonytruong.net/domain-events-pattern-example/*](http://www.tonytruong.net/domain-events-pattern-example/)
+    [*https://www.tonytruong.net/domain-events-pattern-example/*](https://www.tonytruong.net/domain-events-pattern-example/)
 
 -   **Udi Dahan。完全にカプセル化されたドメイン モデルを作成する方法**
     [*http://udidahan.com/2008/02/29/how-to-create-fully-encapsulated-domain-models/*](http://udidahan.com/2008/02/29/how-to-create-fully-encapsulated-domain-models/)
