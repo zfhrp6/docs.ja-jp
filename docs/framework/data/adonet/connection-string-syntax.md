@@ -1,4 +1,4 @@
-﻿---
+---
 title: 接続文字列の構文
 ms.custom: ''
 ms.date: 03/30/2017
@@ -46,7 +46,7 @@ ms.lasthandoff: 04/26/2018
  接続文字列ビルダーを使用すると、構文的に正しい接続文字列を実行時に構築できるため、コード内で接続文字列値を手動で連結する必要はありません。 詳細については、次を参照してください。[接続文字列ビルダー](../../../../docs/framework/data/adonet/connection-string-builders.md)です。  
 
 ## <a name="windows-authentication"></a>Windows 認証  
-データ ソースが Windows 認証 (*統合セキュリティ* とも呼ばれることもあります) をサポートしている場合、Windows 認証 を使用することを推奨します。 接続文字列の構文は、プロバイダーによって異なります。 .NET Framework データ プロバイダーで使用されている Windows 認証の構文を次の表に示します。
+ データ ソースが Windows 認証 (*統合セキュリティ* とも呼ばれることもあります) をサポートしている場合、Windows 認証 を使用することを推奨します。 接続文字列の構文は、プロバイダーによって異なります。 .NET Framework データ プロバイダーで使用されている Windows 認証の構文を次の表に示します。  
   
 |プロバイダー|構文|  
 |--------------|------------|  
@@ -65,7 +65,7 @@ ms.lasthandoff: 04/26/2018
 >  既定の設定、`Persist Security Info`キーワードは`false`します。 このキーワードを `true` または `yes` に設定すると、ユーザー ID やパスワードなどのセキュリティ関連情報を、接続を開いた後にその接続から取得できます。 保持`Persist Security Info`'éý'`false`を信頼できないソースに機密を要する接続文字列情報へのアクセスがないことを確認します。  
 
 ### <a name="windows-authentication-with-sqlclient"></a>SqlClient で Windows 認証 
-次の構文の各形式は、Windows 認証を使用してローカル サーバー上の **AdventureWorks** データベースへ接続します。
+ 次の構文の各形式は、Windows 認証を使用してローカル サーバー上の **AdventureWorks** データベースへ接続します。  
   
 ```  
 "Persist Security Info=False;Integrated Security=true;  
