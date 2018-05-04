@@ -1,24 +1,12 @@
 ---
-title: "EDM ジェネレーター (EdmGen.exe)"
-ms.custom: 
+title: EDM ジェネレーター (EdmGen.exe)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: fe8297a1-1fc3-48ce-8eeb-f70f63f857aa
-caps.latest.revision: "6"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 8d310786a12aa538a8a820c1c05788f30fe28c44
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 90d67af0d2ba3ff04ee5c78b7d0a3f061a69bc1d
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="edm-generator-edmgenexe"></a>EDM ジェネレーター (EdmGen.exe)
 EdmGen.exe は、[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] モデルとマッピング ファイルを操作するためのコマンドライン ツールです。 EdmGen.exe ツールを使用すると、次の操作を行うことができます。  
@@ -82,7 +70,7 @@ EdmGen /mode:choice [options]
   
  [方法: EdmGen.exe を使用してモデル ファイルとマッピング ファイルを検証する](../../../../../docs/framework/data/adonet/ef/how-to-use-edmgen-exe-to-validate-model-and-mapping-files.md)  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ADO.NET Entity Data Model ツール](http://msdn.microsoft.com/library/91076853-0881-421b-837a-f582f36be527)  
  [Entity Data Model](../../../../../docs/framework/data/adonet/entity-data-model.md)  
  [CSDL、SSDL、および MSL 仕様](../../../../../docs/framework/data/adonet/ef/language-reference/csdl-ssdl-and-msl-specifications.md)

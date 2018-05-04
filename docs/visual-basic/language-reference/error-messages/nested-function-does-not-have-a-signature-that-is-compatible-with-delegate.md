@@ -18,7 +18,7 @@ author: dotnet-bot
 ms.author: dotnetcontent
 ms.openlocfilehash: 60cf15343023110561da3e3fcf202bd00394127a
 ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/21/2017
 ---

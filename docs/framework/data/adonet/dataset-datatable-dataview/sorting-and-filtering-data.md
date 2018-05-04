@@ -1,34 +1,22 @@
 ---
-title: "データの並べ替えとフィルター処理"
-ms.custom: 
+title: データの並べ替えとフィルター処理
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: fdd9c753-39df-48cd-9822-2781afe76200
-caps.latest.revision: "4"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 2411307623c714ae521d00dcffca05d3569a656e
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 02a67a490eb8339663aac08c97c665ffee09f0df
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="sorting-and-filtering-data"></a>データの並べ替えとフィルター処理
 <xref:System.Data.DataView> には、<xref:System.Data.DataTable> のデータの並べ替えとフィルター処理を行うさまざまな方法が用意されています。  
   
 -   <xref:System.Data.DataView.Sort%2A> プロパティを使用すれば、1 列または複数列の並べ替え順序を指定し、ASC (昇順) パラメーターと DESC (降順) パラメーターを含めることができます。  
   
--   <xref:System.Data.DataView.ApplyDefaultSort%2A> プロパティを使用すると、テーブルの主キー列 (1 列または複数列) に基づいて、昇順の並べ替え順序を自動的に作成できます。 <xref:System.Data.DataView.ApplyDefaultSort%2A>場合のみ適用されます、**並べ替え**プロパティが null 参照または空の文字列には、テーブルで定義された主キーが場合。  
+-   <xref:System.Data.DataView.ApplyDefaultSort%2A> プロパティを使用すると、テーブルの主キー列 (1 列または複数列) に基づいて、昇順の並べ替え順序を自動的に作成できます。 <xref:System.Data.DataView.ApplyDefaultSort%2A> 場合のみ適用されます、**並べ替え**プロパティが null 参照または空の文字列には、テーブルで定義された主キーが場合。  
   
 -   <xref:System.Data.DataView.RowFilter%2A> プロパティを使用すると、列の値に基づいて行のサブセットを指定できます。 有効な式の詳細について、 **RowFilter**プロパティに関するリファレンス情報を参照してください、<xref:System.Data.DataColumn.Expression%2A>のプロパティ、<xref:System.Data.DataColumn>クラスです。  
   
@@ -47,7 +35,7 @@ ms.lasthandoff: 01/17/2018
     |**ModifiedOriginal**|**元**行バージョンのすべて**Modified**行です。|  
     |**None**|行がありません。|  
     |**OriginalRows**|**元**行バージョンのすべて**Unchanged**、 **Modified**、および**Deleted**行です。|  
-    |**Unchanged**|**現在**行バージョンのすべて**Unchanged**行です。|  
+    |**変更されません。**|**現在**行バージョンのすべて**Unchanged**行です。|  
   
  行の状態と行のバージョンの詳細については、次を参照してください。[行の状態と行のバージョン](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-states-and-row-versions.md)します。  
   
@@ -67,7 +55,7 @@ DataView prodView = new DataView(prodDS.Tables["Products"],
    DataViewRowState.CurrentRows);  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Data.DataViewRowState>  
  <xref:System.Data.DataColumn.Expression%2A?displayProperty=nameWithType>  
  <xref:System.Data.DataTable>  

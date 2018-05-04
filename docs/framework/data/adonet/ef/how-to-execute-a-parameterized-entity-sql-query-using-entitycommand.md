@@ -1,27 +1,15 @@
 ---
-title: "EntityCommand を使用してパラメーター化 Entity SQL クエリを実行する方法"
-ms.custom: 
+title: EntityCommand を使用してパラメーター化 Entity SQL クエリを実行する方法
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: e93fea43-7e03-4d7d-9fee-2517b8b88cba
-caps.latest.revision: "3"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: d43be857e4f920a1ce36625d9be207b9025ff423
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: c8469f8f13178a09c636d33070fd5ad4cbb912aa
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-execute-a-parameterized-entity-sql-query-using-entitycommand"></a>EntityCommand を使用してパラメーター化 Entity SQL クエリを実行する方法
 このトピックは、実行する方法を示します、[!INCLUDE[esql](../../../../../includes/esql-md.md)]を使用してパラメーターを持つクエリ、<xref:System.Data.EntityClient.EntityCommand>オブジェクト。  
@@ -41,6 +29,6 @@ ms.lasthandoff: 01/19/2018
  [!code-csharp[DP EntityServices Concepts#ParameterizedQueryWithEntityCommand](../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts/cs/source.cs#parameterizedquerywithentitycommand)]
  [!code-vb[DP EntityServices Concepts#ParameterizedQueryWithEntityCommand](../../../../../samples/snippets/visualbasic/VS_Snippets_Data/dp entityservices concepts/vb/source.vb#parameterizedquerywithentitycommand)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [方法: パラメーター化クエリを実行します。](http://msdn.microsoft.com/library/42048f03-c65c-4d98-b50a-3e7d537a63e8)  
  [Entity SQL 言語](../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-language.md)

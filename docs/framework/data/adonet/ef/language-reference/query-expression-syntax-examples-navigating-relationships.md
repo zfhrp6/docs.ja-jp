@@ -1,27 +1,15 @@
 ---
-title: "クエリ式の構文例: リレーションシップのナビゲーション"
-ms.custom: 
+title: 'クエリ式の構文例: リレーションシップのナビゲーション'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 0d4a7f41-c758-4059-8f83-d2e9c2745593
-caps.latest.revision: "2"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: c029ce130e0bc8a6f959c6c27d863422794c22e5
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: e4297400bd7e76ca6202748d8f14d478364c1275
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="query-expression-syntax-examples-navigating-relationships"></a>クエリ式の構文例: リレーションシップのナビゲーション
 [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)] のナビゲーション プロパティは、アソシエーションの末尾にあるエンティティを見つけるために使用できるショートカット プロパティです。 ナビゲーション プロパティを使用すると、ユーザーは、エンティティ間をナビゲートしたり、あるエンティティからアソシエーション セットを介して関連エンティティにナビゲートしたりできます。 このトピックでは、[!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] クエリ内でナビゲーション プロパティを介してリレーションシップをナビゲートするためのクエリ式の構文例を示します。  
@@ -57,5 +45,5 @@ ms.lasthandoff: 01/17/2018
  [!code-csharp[DP L2E Examples#WhereNavProperty](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#wherenavproperty)]
  [!code-vb[DP L2E Examples#WhereNavProperty](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Examples/VB/Module1.vb#wherenavproperty)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [LINQ to Entities でのクエリ](../../../../../../docs/framework/data/adonet/ef/language-reference/queries-in-linq-to-entities.md)

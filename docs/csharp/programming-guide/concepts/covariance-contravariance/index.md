@@ -1,22 +1,12 @@
 ---
 title: 共変性と反変性 (C#)
-ms.custom: ''
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-csharp
-ms.topic: article
 ms.assetid: 066d9a3c-aab7-4ea6-826d-0b1a85399c74
-caps.latest.revision: 3
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: cc6eb2c4371f69588fd235a0bd3e872b42eb028f
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: bfd78b1a32b9d4fe11b1dce129c24ceb5aca6754
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="covariance-and-contravariance-c"></a>共変性と反変性 (C#)
 C# では、共変性と反変性により、配列型、デリゲート型、およびジェネリック型引数の暗黙の参照変換が可能になります。 共変性は代入互換性を維持し、反変性はこれを反転させます。  
@@ -90,7 +80,7 @@ IEnumerable<Object> objects = strings;
   
 ## <a name="related-topics"></a>関連トピック  
   
-|タイトル|説明|  
+|Title|説明|  
 |-----------|-----------------|  
 |[ジェネリック インターフェイスの分散 (C#)](../../../../csharp/programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md)|ジェネリック インターフェイスでの共変性と反変性について説明し、.NET Framework でのバリアント ジェネリック インターフェイスの一覧を示します。|  
 |[バリアント ジェネリック インターフェイスの作成 (C#)](../../../../csharp/programming-guide/concepts/covariance-contravariance/creating-variant-generic-interfaces.md)|カスタムのバリアント インターフェイスを作成する方法を示します。|  

@@ -1,11 +1,12 @@
 ---
-title: ".NET Framework のファイル I/O とファイル システムの基礎 (Visual Basic)"
-ms.custom: 
+title: .NET Framework のファイル I/O とファイル システムの基礎 (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - file access, file I/O in Visual Basic
@@ -15,14 +16,14 @@ helpviewer_keywords:
 - streams
 - streams, definition
 ms.assetid: 49d837c0-cf28-416f-8606-4d83d7b479ef
-caps.latest.revision: "30"
+caps.latest.revision: 30
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: d6cfdb939bd4bf84fafbffceefccd5cd522018c2
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: 02eaa98b8a52a2b9efa2b273b2a58158a5848b86
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="basics-of-net-framework-file-io-and-the-file-system-visual-basic"></a>.NET Framework のファイル I/O とファイル システムの基礎 (Visual Basic)
 <xref:System.IO> 名前空間のクラスは、ドライブ、ファイル、ディレクトリの操作に使用されます。  
@@ -30,7 +31,7 @@ ms.lasthandoff: 12/21/2017
  <xref:System.IO> 名前空間には <xref:System.IO.File> クラスと <xref:System.IO.Directory> クラスが含まれています。これらのクラスを使用すると、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] でファイルとディレクトリを操作できます。 これらのオブジェクトのメソッドは静的メンバーまたは共有メンバーなので、あらかじめクラスのインスタンスを作成しなくてもメンバーを直接使用できます。 これらのクラスに関連するクラスとして、<xref:System.IO.FileInfo> クラスと <xref:System.IO.DirectoryInfo> クラスがあります。`My` 機能を使用しているユーザーには使い慣れたクラスです。 これらのクラスを使用するには、名前を完全修飾するか、または、関係するコードの先頭に `Imports` ステートメントを記述して、適切な名前空間をインポートする必要があります。 詳細については、「[Imports ステートメント (.NET 名前空間および型)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)」を参照してください。  
   
 > [!NOTE]
->  このセクションのそのほかのトピックでは `My.Computer.FileSystem` のクラスではなく、 `System.IO` オブジェクトを使用して、ドライブ、ファイル、およびディレクトリを操作します。 `My.Computer.FileSystem` オブジェクトは [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] のプログラムで使用する主な目的としています。 `System.IO` のクラスは [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] をサポートする [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] などの言語で使用するためのものです。  
+>  このセクションのそのほかのトピックでは `My.Computer.FileSystem` のクラスではなく、 `System.IO` オブジェクトを使用して、ドライブ、ファイル、およびディレクトリを操作します。 `My.Computer.FileSystem` オブジェクトは主に Visual Basic のプログラムで使用することを目的としています。 `System.IO` のクラスは [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] をサポートする Visual Basic などの言語で使用するためのものです。  
   
 ## <a name="definition-of-a-stream"></a>ストリームの定義  
  [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] では、ファイルに対する読み取りと書き込みをサポートするストリームを使用できます。 ストリームとは、1 次元の連続したデータの集まりと考えることができます。ストリームには先頭と末尾があり、カーソルでストリーム内での現在の位置を示します。  

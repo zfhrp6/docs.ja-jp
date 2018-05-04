@@ -1,27 +1,17 @@
 ---
-title: "&lt;relativeBindForResources&gt;要素"
-ms.custom: 
+title: '&lt;relativeBindForResources&gt;要素'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - RelativeBindForResources element
 - <relativeBindForResources> element
 ms.assetid: 846ffa47-7257-4ce3-8cac-7ff627e0e34f
-caps.latest.revision: "7"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 8409b1fe86776397ceb3db5b338fb8aaadef9cbe
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 7ae5d1ca6403d84c9828dcf9550e9fbf40b28e1b
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltrelativebindforresourcesgt-element"></a>&lt;relativeBindForResources&gt;要素
 サテライト アセンブリのプローブを最適化します。  
@@ -80,7 +70,7 @@ ms.lasthandoff: 12/22/2017
   
 -   発生しない、<xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType>イベント。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [リソースのパッケージ化と配置](../../../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)  
  [ランタイム設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
  [構成ファイル スキーマ](../../../../../docs/framework/configure-apps/file-schema/index.md)

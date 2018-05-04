@@ -1,26 +1,19 @@
 ---
 title: プログラミングの概念 (C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 ms.assetid: 3227afd5-4794-484b-b83b-0f1f94a0476b
-caps.latest.revision: 4
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 9c82430ec58b81f37a33f4c246ea40f6da465af8
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: a557812ff99f09f20d3eb17ea7ff4dd80483a4a4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="programming-concepts-c"></a>プログラミングの概念 (C#)
 このセクションでは、C# 言語でのプログラミングの概念について説明します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
   
-|タイトル|説明|  
+|Title|説明|  
 |-----------|-----------------|  
 |[アセンブリとグローバル アセンブリ キャッシュ (C#)](../../../csharp/programming-guide/concepts/assemblies-gac/index.md)|アセンブリを作成および使用する方法について説明します。|  
 |[Async および Await を使用した非同期プログラミング (C#)](../../../csharp/programming-guide/concepts/async/index.md)|C# の [async](../../../csharp/language-reference/keywords/async.md) および [await](../../../csharp/language-reference/keywords/await.md) キーワードを使用して非同期ソリューションを記述する方法を説明します。 チュートリアルが含まれています。|  

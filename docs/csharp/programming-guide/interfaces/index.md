@@ -1,22 +1,15 @@
 ---
 title: インターフェイス (C# プログラミング ガイド)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - interfaces [C#]
 - C# language, interfaces
 ms.assetid: 2feda177-ce11-432d-81b4-d50f5f35fd37
-caps.latest.revision: 45
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: f14d4bf48d117558a4019a8f016e194af27a9ebf
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 6ef872876e800674a58b440e0e4001b86b0f8244
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="interfaces-c-programming-guide"></a>インターフェイス (C# プログラミング ガイド)
 インターフェイスには、[クラス](../../../csharp/language-reference/keywords/class.md)または[構造体](../../../csharp/language-reference/keywords/struct.md)で実装できる関連機能のグループの定義が含まれます。  
@@ -35,7 +28,7 @@ ms.lasthandoff: 11/21/2017
   
  インターフェイスには、メソッド、プロパティ、イベント、インデクサー、またはこれらの 4 種類のメンバーの任意の組み合わせを含めることができます。 例へのリンクについては、「[関連項目](../../../csharp/programming-guide/interfaces/index.md#BKMK_RelatedSections)」を参照してください。 インターフェイスには、定数、フィールド、演算子、インスタンス コンストラクター、ファイナライザー、または型を含めることはできません。 インターフェイスのメンバーは、自動的にパブリックに設定され、アクセス修飾子を含むことはできません。 メンバーを [static](../../../csharp/language-reference/keywords/static.md) として宣言することもできません。  
   
- インターフェイスのメンバーを実装するには、実装するクラスの対応するメンバーがパブリックかつ非静的であり、インターフェイスのメンバーと同じ名前およびシグネチャを持つ必要があります。  
+ インターフェイスのメンバーを実装するには、実装するクラスの対応するメンバーがパブリックかつ非静的であり、インターフェイスのメンバーと同じ名前および署名を持つ必要があります。  
   
  クラスまたは構造体でインターフェイスを実装するときは、インターフェイスで定義されているすべてのメンバーの実装を提供する必要があります。 インターフェイス自体は、基本クラスの機能を継承できるようにクラスまたは構造体が継承できる機能を提供しません。 ただし、基本クラスでインターフェイスが実装される場合、その基本クラスから派生するすべてのクラスはその実装を継承します。  
   
@@ -99,6 +92,6 @@ ms.lasthandoff: 11/21/2017
 ## <a name="featured-book-chapter"></a>参考書籍の該当する章  
  「[Learning C# 3.0: Master the Fundamentals of C# 3.0 (C# 3.0 の学習: C# 3.0 の基礎を習得)](http://msdn.microsoft.com/library/orm-9780596521066-01.aspx)」の「[Interfaces (インターフェイス)](http://msdn.microsoft.com/library/orm-9780596521066-01-13.aspx)」  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
  [継承](../../../csharp/programming-guide/classes-and-structs/inheritance.md)

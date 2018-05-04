@@ -1,14 +1,6 @@
 ---
 title: .NET Framework およびアプリケーションの配置
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - deploying applications [.NET Framework], packaging
 - deploying applications [.NET Framework]
@@ -17,17 +9,13 @@ helpviewer_keywords:
 - .NET Framework, deploying
 - .NET Framework application deployment
 ms.assetid: 238d8284-6042-4a38-a7f6-1ee8efd719da
-caps.latest.revision: 56
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: c88aabf046ac720d14db3e68c8e04092188a7ef1
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 2686d0db966192606656167d6e505f34ded333f6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="deploying-the-net-framework-and-applications"></a>.NET Framework およびアプリケーションの配置
 ここでは、アプリケーションと共に .NET Framework を配置する方法についての概要を示します。 情報のほとんどは、開発者、OEM、およびエンタープライズ管理者を対象としています。 コンピュータに .NET Framework をインストールするユーザーは、「[.NET Framework のインストール](~/docs/framework/install/index.md)」をご覧ください。  
@@ -164,7 +152,7 @@ ms.lasthandoff: 12/22/2017
   
 ## <a name="related-topics"></a>関連トピック  
   
-|タイトル|説明|  
+|Title|説明|  
 |-----------|-----------------|  
 |[ランタイムがアセンブリを検索する方法](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)|共通言語ランタイムが、バインド要求を満たすために、使用するアセンブリをどのように特定するかを説明します。|  
 |[アセンブリの読み込みのベスト プラクティス](../../../docs/framework/deployment/best-practices-for-assembly-loading.md)|<xref:System.InvalidCastException>、<xref:System.MissingMethodException>、およびその他のエラーの原因となることがある型 ID の問題を回避する方法について説明します。|  

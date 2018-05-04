@@ -1,5 +1,5 @@
 ---
-title: "long (C# リファレンス)"
+title: long (C# リファレンス)
 ms.date: 03/14/2017
 ms.prod: .net
 ms.technology:
@@ -11,14 +11,14 @@ f1_keywords:
 helpviewer_keywords:
 - long keyword [C#]
 ms.assetid: f9b24319-1f39-48be-a42b-d528ee28a7fd
-caps.latest.revision: 
+caps.latest.revision: 17
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 7f18bed80550b293195961fd9d42491dd571cbaf
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 4f11c904aadc5cd27482072e9f6f97236c0cdce2
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="long-c-reference"></a>long (C# リファレンス)
 
@@ -30,7 +30,7 @@ ms.lasthandoff: 11/21/2017
   
 ## <a name="literals"></a>リテラル 
 
-`long` 変数を宣言し、10 進リテラル、16 進リテラル、または (C# 7 以降) バイナリ リテラルを割り当てることによって初期化できます。 
+`long` 変数を宣言し、10 進リテラル、16 進リテラル、または (C# 7.0 以降) バイナリ リテラルを割り当てることによって初期化できます。 
 
 次の例では、整数 4,294,967,296 を 10 進リテラル、16 進リテラル、バイナリ リテラルで表したものが、`long` 値に割り当てられています。  
   
@@ -39,11 +39,11 @@ ms.lasthandoff: 11/21/2017
 > [!NOTE] 
 > 16 進リテラルを表すにはプレフィックス `0x` または `0X` を使い、バイナリ リテラルを表すにはプレフィックス `0b` または `0B` を使います。 10 進リテラルには、プレフィックスはありません。 
 
-以降で c# 7、いくつかの機能が追加されて読みやすさを強化するためにします。 
- - C# 7.0 により、アンダー スコア文字の使用法`_`、桁区切り記号として。
- - により、c# 7.2`_`プレフィックスの後に、バイナリまたは 16 進数リテラルの桁区切り記号として使用します。 10 進数のリテラルはない、先頭にアンダー スコアを持つことができます。
+C# 7.0 以降では、読みやすさを強化するためにいくつかの機能が追加されています。 
+ - C# 7.0 では、桁区切り記号としてアンダースコア文字 (`_`) が使用できます。
+ - C# 7.2 では、プレフィックスの後に、`_` をバイナリまたは 16 進リテラルの桁区切り記号として使用できます。 10 進リテラルは先頭にアンダー スコアを持つことはできません。
 
-いくつかの例は、以下に示します。
+以下にいくつか例を示します。
 
 [!code-csharp[long](../../../../samples/snippets/csharp/language-reference/keywords/numeric-literals.cs#LongS)]  
  
@@ -108,7 +108,7 @@ long y = (long)3.0;   // OK: explicit conversion
 ## <a name="c-language-specification"></a>C# 言語仕様  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Int64>  
  [C# リファレンス](../../../csharp/language-reference/index.md)  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  

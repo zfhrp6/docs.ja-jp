@@ -1,27 +1,15 @@
 ---
-title: "DataView からの DataTable の作成"
-ms.custom: 
+title: DataView からの DataTable の作成
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 2d45cf41-d8ae-4409-af3e-a96a7e476d85
-caps.latest.revision: "3"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 1dff746ff4767f2d0f9a9ab66275ee4d9fc8d3e0
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: a389f75ca6516f8bad55934717bee056aca65f1f
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="creating-a-datatable-from-a-dataview"></a>DataView からの DataTable の作成
 データ ソースからデータを取得し、<xref:System.Data.DataTable> にデータを格納した後、再度データを取得せずに、返されたデータの並べ替え、フィルター処理、または制限の適用を行うことが必要になる場合があります。 これを行うには、<xref:System.Data.DataView> クラスを使用します。 さらに、新しいを作成する必要がある場合<xref:System.Data.DataTable>から、 <xref:System.Data.DataView>、使用することができます、<xref:System.Data.DataView.ToTable%2A>に、新しいすべての行と列、またはデータのサブセットをコピーする方法<xref:System.Data.DataTable>です。 <xref:System.Data.DataView.ToTable%2A> メソッドには、次の操作を行うためのオーバーロード機能があります。  
@@ -216,7 +204,7 @@ Console.WriteLine();
   
  }  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Data.DataView.ToTable%2A>  
  [DataViews](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataviews.md)  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

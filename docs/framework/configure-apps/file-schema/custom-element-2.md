@@ -1,10 +1,6 @@
 ---
-title: "NameValueSectionHandler と DictionarySectionHandler カスタム要素"
+title: NameValueSectionHandler と DictionarySectionHandler カスタム要素
 ms.date: 05/01/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: article
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/sectionName
 helpviewer_keywords:
@@ -12,21 +8,18 @@ helpviewer_keywords:
 ms.assetid: 2303031f-4c1d-4df4-bca1-e9bd96ca40dc
 author: guardrex
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 2154e2a178050e5bafa7d19f37a766141d0a5838
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 3a16952c5cd3759873faeb0fce45b8aa5170b083
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="custom-element-for-namevaluesectionhandler-and-dictionarysectionhandler"></a>NameValueSectionHandler と DictionarySectionHandler カスタム要素
 
 使用するカスタム構成セクションの設定を定義、<xref:System.Configuration.NameValueSectionHandler>と<xref:System.Configuration.DictionarySectionHandler>クラスです。
 
 [**\<configuration>**](~/docs/framework/configure-apps/file-schema/configuration-element.md)   
-&nbsp;&nbsp;**\<sectionName >**
+&nbsp;&nbsp;**\<sectionName>**
 
 ## <a name="attributes"></a>属性
 
@@ -42,13 +35,13 @@ ms.lasthandoff: 12/22/2017
 
 |     | 説明 |
 | --- | ----------- |
-| [**\<追加 >** ](~/docs/framework/configure-apps/file-schema/add-element-for-custom-2.md)の<xref:System.Configuration.NameValueSectionHandler>と<xref:System.Configuration.DictionarySectionHandler>  | カスタム アプリケーションの設定を追加します。 |
-| [**\<削除 >** ](~/docs/framework/configure-apps/file-schema/remove-element-for-custom-2.md)の<xref:System.Configuration.NameValueSectionHandler>と<xref:System.Configuration.DictionarySectionHandler> |    以前に定義された設定を削除します。 |
-| [**\<オフ >** ](~/docs/framework/configure-apps/file-schema/clear-element-for-custom-2.md)の<xref:System.Configuration.NameValueSectionHandler>と<xref:System.Configuration.DictionarySectionHandler> | セクション内のすべての以前に定義された設定を消去します。 |
+| [**\<追加 >** ](~/docs/framework/configure-apps/file-schema/add-element-for-custom-2.md)の<xref:System.Configuration.NameValueSectionHandler>と <xref:System.Configuration.DictionarySectionHandler>  | カスタム アプリケーションの設定を追加します。 |
+| [**\<削除 >** ](~/docs/framework/configure-apps/file-schema/remove-element-for-custom-2.md)の<xref:System.Configuration.NameValueSectionHandler>と <xref:System.Configuration.DictionarySectionHandler> |    以前に定義された設定を削除します。 |
+| [**\<オフ >** ](~/docs/framework/configure-apps/file-schema/clear-element-for-custom-2.md)の<xref:System.Configuration.NameValueSectionHandler>と <xref:System.Configuration.DictionarySectionHandler> | セクション内のすべての以前に定義された設定を消去します。 |
 
 ## <a name="remarks"></a>コメント
 
- **\<SectionName >**要素は、カスタムの要素によって定義された、 **\<セクション >**にタグを付ける、  **\<configSections >**要素。
+**\<SectionName >** 要素は、カスタムの要素によって定義された、 **\<セクション >** にタグを付ける、  **\<configSections >** 要素。
 
 次の表は、オブジェクト ConfigurationSettings.GetConfig メソッドの型は、各構成セクション ハンドラーを返します。
 

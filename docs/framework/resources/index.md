@@ -1,14 +1,6 @@
 ---
 title: デスクトップ アプリケーションのリソース
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-bcl
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - deploying applications [.NET Framework], resources
 - application resources
@@ -18,17 +10,13 @@ helpviewer_keywords:
 - packaging application resources
 - localizing resources
 ms.assetid: 8ad495d4-2941-40cf-bf64-e82e85825890
-caps.latest.revision: 19
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: d8fa1521a5516a4be18352c1bce6abf93e40287f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 023099adeeebf21b7dba631bde75332524eb0cc3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="resources-in-desktop-apps"></a>デスクトップ アプリケーションのリソース
 ほとんどの製品レベルのアプリでは、リソースを使用する必要があります。 リソースは実行不可能なデータであり、アプリと共に論理的に配置されます。 このリソースは、アプリ内ではエラー メッセージまたはユーザー インターフェイスの一部として表示できます。 リソースには、文字列、イメージ、永続化されたオブジェクトなど、多数の形式のデータを含めることができます。 (永続化されたオブジェクトをリソース ファイルに書き込むには、そのオブジェクトをシリアル化できることが必要です)。データをリソース ファイルに格納しておけば、アプリ全体を再コンパイルすることなくデータを変更できます。 また、データの格納場所が 1 つになり、複数の場所に格納されているハードコーディングされたデータを利用する必要がなくなります。  

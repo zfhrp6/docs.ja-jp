@@ -1,31 +1,21 @@
 ---
 title: '&lt;workflowUnhandledException&gt;'
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
 ms.topic: reference
 ms.assetid: 57adeab5-f06a-44b2-916b-0e177cf0f4a6
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 4266eb6480c98c7ea1b96f2325a018b0fdcba041
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d9db6ecc2e95e0d1ec5738f1d2f4a09a89c57f21
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltworkflowunhandledexceptiongt"></a>&lt;workflowUnhandledException&gt;
 ワークフロー サービス内で未処理の例外が発生した場合のアクションを指定するためのサービス動作。  
   
-\<システムです。ServiceModel >  
+\<system.ServiceModel >  
 \<ビヘイビアー >  
-\<serviceBehaviors >  
-\<動作 >  
+\<serviceBehaviors>  
+\<behavior>  
 \<workflowUnhandledException >  
   
 ## <a name="syntax"></a>構文  
@@ -58,6 +48,6 @@ ms.lasthandoff: 12/22/2017
 |-------------|-----------------|  
 |[\<動作 > の\<serviceBehaviors >](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/behavior-of-servicebehaviors-of-workflow.md)|動作の要素を指定します。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Activities.Description.WorkflowUnhandledExceptionBehavior>  
  <xref:System.ServiceModel.Activities.Configuration.WorkflowUnhandledExceptionElement>

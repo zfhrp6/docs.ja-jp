@@ -1,26 +1,12 @@
 ---
 title: LINQ と ADO.NET
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-ado
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: bf0c8f93-3ff7-49f3-8aed-f2b7ac938dec
-caps.latest.revision: 8
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload:
-- dotnet
-ms.openlocfilehash: d86a3f97bcdb748d397dcf5edf20d4d8ce945bc6
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: 1385b2d9b49a7615810025141e111b7d7bf71eac
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="linq-and-adonet"></a>LINQ と ADO.NET
 現在、多くのビジネス開発者が 2 つ (以上) のプログラミング言語を使用する必要があります: (Visual c# や Visual Basic)、ビジネス ロジックやプレゼンテーション層は高級言語と、データベースとやり取りするクエリ言語 (など[!INCLUDE[tsql](../../../../includes/tsql-md.md)])。 開発者は実質的に複数の言語に精通していることが要求され、開発環境における言語の不整合が生じる原因にもなっています。 たとえば、データ アクセス API を使用してデータベースを照会するアプリケーションでは、クエリは文字列リテラルとして引用符で囲んで指定する必要があります。 コンパイラはこのクエリ文字列を認識できないため、エラー (無効な構文、参照されている列または行が実際に存在するかどうかなど) のチェック機構が働きません。 クエリ パラメーターの型チェックや `IntelliSense` のサポートもありません。  

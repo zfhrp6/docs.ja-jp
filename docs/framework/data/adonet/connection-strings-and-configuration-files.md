@@ -1,27 +1,15 @@
 ---
-title: "接続文字列と構成ファイル"
-ms.custom: 
+title: 接続文字列と構成ファイル
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 37df2641-661e-407a-a3fb-7bf9540f01e8
-caps.latest.revision: "4"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 447b2d6c0e5eeafeaff89aa1d6430eec72d59a4d
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: a4876d3b794282852b364f58cc84b58546567d80
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="connection-strings-and-configuration-files"></a>接続文字列と構成ファイル
 接続文字列をアプリケーションのコードに組み込むと、セキュリティ上の脆弱性やメンテナンスの問題を引き起こす可能性があります。 使用して、アプリケーションのソース コードにコンパイルされ暗号化されていない接続文字列を表示できます、 [Ildasm.exe (IL 逆アセンブラー)](../../../../docs/framework/tools/ildasm-exe-il-disassembler.md)ツールです。 さらに、接続文字列が変わるたびにアプリケーションを再コンパイルする必要性が生じます。 そのため、接続文字列はアプリケーション構成ファイルに保存することをお勧めします。  
@@ -153,7 +141,7 @@ ms.lasthandoff: 01/19/2018
  どちらのプロバイダーも、強力なデータ暗号化機能を備えています。 ただし、Web ファームなど、複数のサーバーで、同じ構成ファイルを暗号化して使用する場合、データの暗号化に使用される暗号化キーをエクスポートしたり、それを別のサーバーにインポートしたりできるのは、`RsaProtectedConfigurationProvider` だけです。 詳細については、次を参照してください。[インポートおよびエクスポートする保護された構成の RSA キー コンテナー](http://msdn.microsoft.com/library/f3022b39-f17f-48c1-b067-025eab0ce8bc)です。  
   
 ### <a name="using-the-configuration-classes"></a>構成クラスの使用  
- <xref:System.Configuration> 名前空間には、構成設定をプログラムから行うためのクラスが存在します。 <xref:System.Configuration.ConfigurationManager> クラスは、コンピューター、アプリケーション、ユーザーの各構成ファイルへのアクセスを提供します。 使用することができます、ASP.NET アプリケーションを作成する場合、<xref:System.Web.Configuration.WebConfigurationManager>内で検索できるなどの ASP.NET アプリケーションに固有の設定にアクセスすることもできます、同じ機能を提供するクラス **\<system.web >**です。  
+ <xref:System.Configuration> 名前空間には、構成設定をプログラムから行うためのクラスが存在します。 <xref:System.Configuration.ConfigurationManager> クラスは、コンピューター、アプリケーション、ユーザーの各構成ファイルへのアクセスを提供します。 使用することができます、ASP.NET アプリケーションを作成する場合、<xref:System.Web.Configuration.WebConfigurationManager>内で検索できるなどの ASP.NET アプリケーションに固有の設定にアクセスすることもできます、同じ機能を提供するクラス **\<system.web >** です。  
   
 > [!NOTE]
 >  <xref:System.Security.Cryptography> 名前空間には、データの暗号化と復号化に関連した補足的なオプションを提供するクラスが存在します。 これらのクラスは、保護構成では利用できない暗号化サービスが必要な場合に使用します。 これらのクラスは必ずしも純粋なマネージ実装とは限らず、アンマネージ Microsoft CryptoAPI 用のラッパーもあります。 詳細については、「[暗号サービス](http://msdn.microsoft.com/library/68a1e844-c63c-44af-9247-f6716eb23781)」をご覧ください。  
@@ -180,7 +168,7 @@ ms.lasthandoff: 01/19/2018
   
  ASP.NET アプリケーションのセキュリティ保護の詳細については、次を参照してください。 [NIB: ASP.NET セキュリティ](http://msdn.microsoft.com/library/04b37532-18d9-40b4-8e5f-ee09a70b311d)と[一目で ASP.NET 2.0 セキュリティ プラクティス](http://go.microsoft.com/fwlink/?LinkId=59997)ASP.NET デベロッパー センターにします。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [接続文字列ビルダー](../../../../docs/framework/data/adonet/connection-string-builders.md)  
  [接続情報の保護](../../../../docs/framework/data/adonet/protecting-connection-information.md)  
  [構成クラスの使用](http://msdn.microsoft.com/library/98d2b386-baf6-4a17-974b-76e3b4c87acc)  

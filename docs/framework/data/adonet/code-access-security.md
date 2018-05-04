@@ -1,27 +1,15 @@
 ---
-title: "コード アクセス セキュリティと ADO.NET"
-ms.custom: 
+title: コード アクセス セキュリティと ADO.NET
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 93e099eb-daa1-4f1e-b031-c1e10a996f88
-caps.latest.revision: "6"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: e69073f757c07c5dd262900d4d8f7ad2cc83cdc4
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: ea5dbcc128f97ebbec72273378adb042bbe34e1e
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="code-access-security-and-adonet"></a>コード アクセス セキュリティと ADO.NET
 .NET Framework はコード アクセス セキュリティ (CAS) に加えてロール ベースのセキュリティを備えています。どちらも、共通言語ランタイム (CLR) が提供する共通のインフラストラクチャを使って実装されています。 アンマネージ コードの場合、ほとんどのアプリケーションはユーザーまたはプリンシパルの権限で実行されます。 そのため、悪意のあるソフトウェアやエラーを含むソフトウェアが、システム特権を持つユーザーによって実行された場合、コンピューター システムが被害を受けたり、機密データが改ざんされる可能性があります。  
@@ -82,8 +70,8 @@ ms.lasthandoff: 01/19/2018
 |-----------------------------------|-----------------|  
 |`Action`|セキュリティ アクションを取得または設定します。 このプロパティは、<xref:System.Security.Permissions.SecurityAttribute> から継承されています。|  
 |`AllowBlankPassword`|接続文字列内で空白のパスワードの使用を許可または禁止します。 有効な値は、空白のパスワードの使用を許可する `true` および空白のパスワードの使用を禁止する `false` です。 このプロパティは、<xref:System.Data.Common.DBDataPermissionAttribute> から継承されています。|  
-|`ConnectionString`|使用できる接続文字列を指定します。 複数の接続文字列を指定できます。 **注:**接続文字列でユーザー ID またはパスワードを含まれません。 このリリースでは、.NET Framework 構成ツールを使用して接続文字列制限を変更することはできません。 <br /><br /> このプロパティは、<xref:System.Data.Common.DBDataPermissionAttribute> から継承されています。|  
-|`KeyRestrictions`|許可または禁止する接続文字列パラメーターを指定します。 接続文字列パラメーターが、フォームで識別される*\<パラメーター名 > =*です。 セミコロン (;) で区切って、複数のパラメーターを指定できます。 **注:**を指定しない場合`KeyRestrictions`、設定するが、`KeyRestrictionBehavior`プロパティを`AllowOnly`または`PreventUsage`、追加の接続文字列パラメーターは許可されていません。 このプロパティは、<xref:System.Data.Common.DBDataPermissionAttribute> から継承されています。|  
+|`ConnectionString`|使用できる接続文字列を指定します。 複数の接続文字列を指定できます。 **注:** 接続文字列でユーザー ID またはパスワードを含まれません。 このリリースでは、.NET Framework 構成ツールを使用して接続文字列制限を変更することはできません。 <br /><br /> このプロパティは、<xref:System.Data.Common.DBDataPermissionAttribute> から継承されています。|  
+|`KeyRestrictions`|許可または禁止する接続文字列パラメーターを指定します。 接続文字列パラメーターが、フォームで識別される*\<パラメーター名 > =* です。 セミコロン (;) で区切って、複数のパラメーターを指定できます。 **注:** を指定しない場合`KeyRestrictions`、設定するが、`KeyRestrictionBehavior`プロパティを`AllowOnly`または`PreventUsage`、追加の接続文字列パラメーターは許可されていません。 このプロパティは、<xref:System.Data.Common.DBDataPermissionAttribute> から継承されています。|  
 |`KeyRestrictionBehavior`|接続文字列パラメーターが、追加を許可された唯一の接続文字列パラメーター (`AllowOnly`) か、または追加を禁止された接続文字列パラメーター (`PreventUsage`) かを指定します。 `AllowOnly` が既定値です。 このプロパティは、<xref:System.Data.Common.DBDataPermissionAttribute> から継承されています。|  
 |`TypeID`|派生クラスで実装すると、この属性の一意の識別子を取得します。 このプロパティは、<xref:System.Attribute> から継承されています。|  
 |`Unrestricted`|このリソースに対する無制限のアクセス許可が宣言されているかどうかを示します。 このプロパティは、<xref:System.Security.Permissions.SecurityAttribute> から継承されています。|  
@@ -205,7 +193,7 @@ Failed, as expected: Request failed.
   
  .NET Framework は、COM 相互運用機能を介したアクセスを提供することによって、既存の COM コンポーネントとの下位互換性をサポートしています。 COM 相互運用ツールを使って適切な COM 型をインポートすることにより、.NET Framework アプリケーションに COM コンポーネントを組み込むことができます。 インポートが完了すると、COM 型を使用できるようになります。 アセンブリのメタデータをタイプ ライブラリにエクスポートし、マネージ コンポーネントを COM コンポーネントとして登録することで、COM クライアントからマネージ コードにアクセスすることもできます。 詳細については、次を参照してください。[高度な COM 相互運用性](http://msdn.microsoft.com/library/3ada36e5-2390-4d70-b490-6ad8de92f2fb)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ADO.NET アプリケーションのセキュリティ保護](../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
  [ネイティブ コードと .NET Framework コードのセキュリティ](http://msdn.microsoft.com/library/bd61be84-c143-409a-a75a-44253724f784)  
  [コード アクセス セキュリティ](http://msdn.microsoft.com/library/23a20143-241d-4fe5-9d9f-3933fd594c03)  

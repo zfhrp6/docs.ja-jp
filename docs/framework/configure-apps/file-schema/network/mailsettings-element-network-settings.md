@@ -1,10 +1,6 @@
 ---
-title: "&lt;mailSettings&gt;要素 (ネットワーク設定)"
+title: '&lt;mailSettings&gt;要素 (ネットワーク設定)'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: article
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#mailSettings
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/mailSettings
@@ -12,17 +8,14 @@ helpviewer_keywords:
 - mailSettings element
 - <mailSettings> element
 ms.assetid: 54f0f153-17e5-4f49-afdc-deadb940c9c1
-caps.latest.revision: 
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload:
-- dotnet
-ms.openlocfilehash: ce7ec8bea57436ebd184cf0d593870999405f72f
-ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
+ms.openlocfilehash: 5bc7cc649b18a5330d056bbddfe96db4ecca2ec8
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltmailsettingsgt-element-network-settings"></a>&lt;mailSettings&gt;要素 (ネットワーク設定)
 電子メールの送信オプションを設定します。  
@@ -76,6 +69,6 @@ ms.lasthandoff: 02/01/2018
 </configuration>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Net.Mail.SmtpClient>  
  [ネットワーク設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

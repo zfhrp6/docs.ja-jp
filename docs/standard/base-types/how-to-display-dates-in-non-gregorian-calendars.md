@@ -1,12 +1,12 @@
 ---
-title: "方法 : グレゴリオ暦以外の暦の日付を表示する"
-ms.custom: 
+title: '方法 : グレゴリオ暦以外の暦の日付を表示する'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -17,18 +17,18 @@ helpviewer_keywords:
 - calendars [.NET Framework], displaying dates
 - displaying date and time data
 ms.assetid: ed324eff-4aff-4a76-b6c0-04e6c0d8f5a9
-caps.latest.revision: 
+caps.latest.revision: 7
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 1a9e45fe43e38be3c618df37a639d63a6a0a5349
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 8b0af7aad0efc63518291292b0d0b4ca4872956c
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="how-to-display-dates-in-non-gregorian-calendars"></a>方法 : グレゴリオ暦以外の暦の日付を表示する
 <xref:System.DateTime> 型と <xref:System.DateTimeOffset> 型は既定の暦としてグレゴリオ暦を使用しています。 つまり、日付と時刻値の `ToString` メソッドを呼び出すと、その日付の時刻が別の暦を使用して作成された場合でも、その日付の時刻はグレゴリオ暦の文字列形式で表示されます。 これを次の例で示します。この例では、2 つの方法を使用してペルシャ暦で日付と時刻の値を作成していますが、<xref:System.DateTime.ToString%2A> メソッドを呼び出すと、これらの日付と時刻の値はグレゴリオ暦で表示されます。 この例では、一般的に使われているものの、特定の暦で日付を表示するには正しくない 2 つの手法が反映されています。  
@@ -59,7 +59,7 @@ ms.lasthandoff: 12/23/2017
   
 2.  日付と時刻の値の文字列形式で表示する日付と時刻の要素を決定します。  
   
-3.  表示する日付と時刻の要素ごとに、暦オブジェクトの `Get`  メソッドを呼び出します。 次のメソッドが使用できます。  
+3.  表示する日付と時刻の要素ごとに、暦オブジェクトの `Get`  メソッドをオーバーライドします。 次のメソッドが使用できます。  
   
     -   <xref:System.Globalization.Calendar.GetYear%2A>: 適切な暦で年を表示します。  
   
@@ -98,7 +98,7 @@ ms.lasthandoff: 12/23/2017
 ## <a name="compiling-the-code"></a>コードのコンパイル  
  この例では、System.Core.dll の参照が必要です。  
   
- コマンド ラインで csc.exe または vb.exe を使用してコードをコンパイルします。 [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] でコードをコンパイルするには、コンソール アプリケーション プロジェクト テンプレートの中にコードを配置します。  
+ コマンド ラインで csc.exe または vb.exe を使用してコードをコンパイルします。 Visual Studio でコードをコンパイルするには、コンソール アプリケーション プロジェクト テンプレートの中にコードを配置します。  
   
 ## <a name="see-also"></a>参照  
  [書式設定操作の実行](../../../docs/standard/base-types/performing-formatting-operations.md)

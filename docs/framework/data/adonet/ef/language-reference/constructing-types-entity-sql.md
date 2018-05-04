@@ -1,27 +1,15 @@
 ---
-title: "コンストラクター (Entity SQL)"
-ms.custom: 
+title: コンストラクター (Entity SQL)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 41fa7bde-8d20-4a3f-a3d2-fb791e128010
-caps.latest.revision: "2"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 8a6ae2334c879733e964014716c2b67e77f271d5
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 91ed123132965353ff354282f6850e9ef9cba3d0
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="constructing-types-entity-sql"></a>コンストラクター (Entity SQL)
-[!INCLUDE[esql](../../../../../../includes/esql-md.md)]次の 3 つの種類のコンス トラクターを提供します。 行コンス トラクター、名前付きの型のコンス トラクター、およびコレクション コンス トラクターです。  
+[!INCLUDE[esql](../../../../../../includes/esql-md.md)] 次の 3 つの種類のコンス トラクターを提供します。 行コンス トラクター、名前付きの型のコンス トラクター、およびコレクション コンス トラクターです。  
   
 ## <a name="row-constructors"></a>行コンストラクター  
  1 つまたは複数の値から構造的に型付けされた匿名レコードを構築するには、[!INCLUDE[esql](../../../../../../includes/esql-md.md)] の行コンストラクターを使用します。 行コンストラクターの結果の型は、行の構築に使用された値の型に対応するフィールド型を持つ行型です。 たとえば、次の式が型の値を構築`Record(a int, b string, c int)`:  
@@ -74,7 +62,7 @@ ms.lasthandoff: 01/17/2018
   
  詳細については、次を参照してください。[という名前の型コンス トラクター](../../../../../../docs/framework/data/adonet/ef/language-reference/named-type-constructor-entity-sql.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Entity SQL リファレンス](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)  
  [Entity SQL の概要](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-overview.md)  
  [型システム](../../../../../../docs/framework/data/adonet/ef/language-reference/type-system-entity-sql.md)

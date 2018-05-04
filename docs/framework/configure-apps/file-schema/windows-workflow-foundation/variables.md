@@ -1,32 +1,22 @@
 ---
 title: '&lt;variables&gt;'
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
 ms.topic: reference
 ms.assetid: da0fd144-dda9-4613-b650-fe6325076513
-caps.latest.revision: "5"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 49255241e7adc187c2df68407cae05573fc3d4d3
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d0dc83951bdf894d0061971ae4b79854a7c8bcd8
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltvariablesgt"></a>&lt;variables&gt;
 このアクティビティ クエリに関連付けられている変数のコレクションを表します。  
   
  追跡プロファイルのクエリの詳細については、次を参照してください。[追跡プロファイル](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)です。  
   
-\<system.serviceModel >  
+\<system.serviceModel>  
 \<追跡 >  
-\<trackingProfile >  
+\<trackingProfile>  
 \<ワークフロー >  
 \<activityStateQueries >  
 \<activityStateQuery >  
@@ -84,7 +74,7 @@ ms.lasthandoff: 12/22/2017
 </activityStateQuery>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Activities.Tracking.Configuration.VariableElementCollection?displayProperty=nameWithType>       
  <xref:System.Activities.Tracking.ActivityStateQuery?displayProperty=nameWithType>       
  [ワークフローの追跡とトレース](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)  

@@ -21,11 +21,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: c0782498743f857afac4af073fb0a0cb8fc4d55a
-ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
+ms.openlocfilehash: 87c49eb1cb2b8cef7057e73eca19f74e818b043e
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="task-based-asynchronous-programming"></a>タスク ベースの非同期プログラミング
 タスク並列ライブラリ (TPL) は、非同期操作を表す*タスク*の概念に基づいています。 いくつかの点で、タスクはスレッドまたは <xref:System.Threading.ThreadPool> 作業項目に似ていますが、高いレベルで抽象化しています。 *タスクの並列化*とは、1 つ以上の独立したタスクを同時に実行することです。 タスクが提供する主な利点は次の 2 つです。  
@@ -191,7 +191,7 @@ ms.lasthandoff: 04/18/2018
  タスクを待機する場合は、<xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent?displayProperty=nameWithType> オプションを使用して作成されたタスクのすべての子タスクを暗黙的に待機します。 タスクが既に完了している場合、直ちに <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType> が返されます。 タスクで発生した例外は、<xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType> メソッドがタスクの完了後に呼び出された場合でも <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType> メソッドによってスローされます。  
   
 ## <a name="composing-tasks"></a>タスクを構成する  
- <xref:System.Threading.Tasks.Task> と <xref:System.Threading.Tasks.Task%601> クラスは複数のメソッドを提供し、これらは共通のパターンを実装したり、C#、[!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)]、および F# によって提供される非同期言語機能を使うために、複数のタスクを構成するのに役立ちます。 このセクションでは <xref:System.Threading.Tasks.Task.WhenAll%2A>、<xref:System.Threading.Tasks.Task.WhenAny%2A>、<xref:System.Threading.Tasks.Task.Delay%2A> および <xref:System.Threading.Tasks.Task.FromResult%2A> メソッドについて説明します。  
+ <xref:System.Threading.Tasks.Task> と <xref:System.Threading.Tasks.Task%601> クラスは複数のメソッドを提供し、共通のパターンを実装したり、C#、Visual Basic、F# によって提供される非同期言語機能を使うために、複数のタスクを構成したりするのに役立ちます。 このセクションでは <xref:System.Threading.Tasks.Task.WhenAll%2A>、<xref:System.Threading.Tasks.Task.WhenAny%2A>、<xref:System.Threading.Tasks.Task.Delay%2A> および <xref:System.Threading.Tasks.Task.FromResult%2A> メソッドについて説明します。  
   
 ### <a name="taskwhenall"></a>Task.WhenAll  
  <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType> メソッドは、複数の <xref:System.Threading.Tasks.Task> または <xref:System.Threading.Tasks.Task%601> オブジェクトが終了するのを、非同期的に待機します。 提供されるオーバーロード バージョンにより、不均一なタスクのセットを待機することができます。 たとえば、1 回のメソッド呼び出しで完了する、複数の <xref:System.Threading.Tasks.Task> および <xref:System.Threading.Tasks.Task%601> オブジェクトを待機できます。  

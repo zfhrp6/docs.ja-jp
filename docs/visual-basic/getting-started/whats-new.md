@@ -15,11 +15,11 @@ ms.assetid: d7e97396-7f42-4873-a81c-4ebcc4b6ca02
 caps.latest.revision: 145
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4641041657e99fa64bf1b7eb5317a43660ac7e2b
-ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
+ms.openlocfilehash: 34c7e7147ce7ae43926de1796bee433667f08331
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="whats-new-for-visual-basic"></a>Visual Basic の新機能
 
@@ -129,7 +129,7 @@ Visual Basic はタプルに対応しているため、簡単にタプルを定�
 
 **C# 参照戻り値のサポート**
 
-C# 7 以降の C# は参照戻り値に対応しています。 つまり、メソッドを呼び出して、参照により返された値を受け取るとき、参照の値が変わることがあります。 Visual Basic の場合、参照戻り値でメソッドを作成することはできませんが、参照戻り値を利用したり、変更したりすることはできます。
+C# 7.0 以降の C# は参照戻り値に対応しています。 つまり、メソッドを呼び出して、参照により返された値を受け取るとき、参照の値が変わることがあります。 Visual Basic の場合、参照戻り値でメソッドを作成することはできませんが、参照戻り値を利用したり、変更したりすることはできます。
 
 たとえば、C# で記述された次の `Sentence` クラスには、指定された部分文字列で始まる文の次の単語を探す `FindNext` メソッドが含まれています。 文字列は参照戻り値として返され、参照によりメソッドに渡される `Boolean` 変数は検索が成功したかどうかを示します。 つまり、呼び出すことで戻り値を読めるだけでなく、変更することもできます。その変更は `Sentence` クラスで反映されます。
 

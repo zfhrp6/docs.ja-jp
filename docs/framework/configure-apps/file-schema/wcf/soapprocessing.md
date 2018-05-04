@@ -1,24 +1,12 @@
 ---
 title: '&lt;soapProcessing&gt;'
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: e8707027-e6b8-4539-893d-3cd7c13fbc18
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 1aeb100e1b8e160d30566cd43d67cbf49c6b5c4e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 780c0e9a1d88c9f00883753091b102fbe9d41aa5
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltsoapprocessinggt"></a>&lt;soapProcessing&gt;
 
@@ -60,7 +48,7 @@ ms.lasthandoff: 12/22/2017
 
 SOAP 処理は、メッセージ バージョン間でメッセージが変換されるプロセスです。
 
-[!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] ルーティング サービスは、あるプロトコルから別のプロトコルにメッセージを変換できます。 受信メッセージのバージョンと送信メッセージのバージョンが異なる場合、新しいメッセージが正しいバージョンで作成されます。 いずれかからメッセージを処理する<!--zz <xref:System.ServiceModel.Channel.MessageVersion> -->`MessageVersion`間は新しい構築することによって実現[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)]本文および関連する受信ヘッダーを含むメッセージ[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)]メッセージ。 アドレス指定に固有のヘッダーまたはルーター レベルで認識されるヘッダーは、新しい WCF メッセージの作成に使用されません。これらのヘッダーは、異なるバージョンであるか (アドレス指定ヘッダーの場合)、クライアントとルーターの間の通信の一部として処理されているためです。
+Windows Communication Foundation (WCF) ルーティング サービスは、別に、1 つのプロトコルからメッセージを変換できます。 受信メッセージのバージョンと送信メッセージのバージョンが異なる場合、新しいメッセージが正しいバージョンで作成されます。 いずれかからメッセージを処理する<!--zz <xref:System.ServiceModel.Channel.MessageVersion> -->`MessageVersion`間は新しい構築することによって実現[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)]本文および関連する受信ヘッダーを含むメッセージ[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)]メッセージ。 アドレス指定に固有のヘッダーまたはルーター レベルで認識されるヘッダーは、新しい WCF メッセージの作成に使用されません。これらのヘッダーは、異なるバージョンであるか (アドレス指定ヘッダーの場合)、クライアントとルーターの間の通信の一部として処理されているためです。
 
 発信メッセージにヘッダーが配置されるかどうかは、受信チャネル層を介して渡されたと認識されるようにマークされているかどうかによって決まります。 認識されないヘッダー (カスタム ヘッダーなど) は削除されずに送信メッセージにコピーされ、ルーティング サービスを介して渡されます。 メッセージの本文は、送信メッセージにコピーされます。 そして、メッセージは送信チャネルに送信されます。この時点で、すべてのヘッダー、および使用されている通信プロトコル/トランスポートに固有のエンベロープ データが作成され、追加されます。
 

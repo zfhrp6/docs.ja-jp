@@ -1,29 +1,17 @@
 ---
-title: "&lt;allowAccounts&gt; の &lt;add&gt;"
-ms.custom: 
+title: '&lt;allowAccounts&gt; の &lt;add&gt;'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 763c7b1f-e7b0-4d99-a42c-4506fcb8da00
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 064c9d438832142e1f761d0d33db528dbe73ef2a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 20e1052a0517bb170cf796dd40d58c298185a958
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltaddgt-of-ltallowaccountsgt"></a>&lt;allowAccounts&gt; の &lt;add&gt;
 [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] サービスをホストし、共有サービスへの接続アクセスが付与されているプロセスのユーザー アカウントを指定します。  
   
- \<system.serviceModel.activation >  
+ \<system.serviceModel.activation>  
   
 ## <a name="syntax"></a>構文  
   
@@ -49,7 +37,7 @@ ms.lasthandoff: 12/22/2017
   
 |要素|説明|  
 |-------------|-----------------|  
-|[\<allowAccounts >](../../../../../docs/framework/configure-apps/file-schema/wcf/allowaccounts.md)|`securityIdentifier` をホストするプロセスのユーザー アカウントを指定する [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] 属性が含まれており、共有サービスへの接続アクセス権が付与される構成要素のコレクションです。|  
+|[\<allowAccounts>](../../../../../docs/framework/configure-apps/file-schema/wcf/allowaccounts.md)|`securityIdentifier` をホストするプロセスのユーザー アカウントを指定する [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] 属性が含まれており、共有サービスへの接続アクセス権が付与される構成要素のコレクションです。|  
   
 ## <a name="example"></a>例  
  次の構成例は、このコレクションにユーザー アカウントの 5 つの既定の識別子を追加します。  
@@ -69,7 +57,7 @@ ms.lasthandoff: 12/22/2017
 </allowAccounts>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Activation.Configuration.NetTcpSection.AllowAccounts%2A>  
  <xref:System.ServiceModel.Activation.Configuration.NetPipeSection.AllowAccounts%2A>  
  <xref:System.ServiceModel.Activation.Configuration.SecurityIdentifierElementCollection>  

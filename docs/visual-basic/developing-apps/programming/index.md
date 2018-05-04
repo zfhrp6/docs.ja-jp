@@ -1,23 +1,15 @@
 ---
 title: Visual Basic でのプログラミング
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - programming [Visual Basic], Visual Basic
 - programming
 ms.assetid: bc45a3de-ea36-46e6-a106-309a413d7804
-caps.latest.revision: 11
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 3c19b68746cf32bf405a6ce1d8a12b203f27f03c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 74fd333b97f2e5fbbee3771f6715cc36bbd12037
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="programming-in-visual-basic"></a>Visual Basic でのプログラミング
 このセクションでは、Visual Basic アプリケーションを作成するときに知っておきたいプログラミング タスクについて説明します。  
@@ -44,7 +36,7 @@ ms.lasthandoff: 11/21/2017
  [ドライブ、ディレクトリ、およびファイルの処理](../../../visual-basic/developing-apps/programming/drives-directories-files/processing.md)  
  `My.Computer.FileSystem` オブジェクトを使用してファイル システムにアクセスする方法に関するドキュメントです。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Visual Basic 言語の機能](../../../visual-basic/programming-guide/language-features/index.md)  
  [プログラミングの概念](../../../visual-basic/programming-guide/concepts/index.md)  
  [コレクション](../../../visual-basic/programming-guide/concepts/collections.md)  

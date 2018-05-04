@@ -1,24 +1,12 @@
 ---
 title: '&lt;dispatcherSynchronization&gt;'
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: cc030f9c-4e38-4b14-94dc-9a0e41ec8e2d
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 57477ea60337e5032b80bd9ae8da850099dd08f7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 34c12a05ee363df6b6cfc9ff3809bab50ee8d522
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltdispatchersynchronizationgt"></a>&lt;dispatcherSynchronization&gt;
 
@@ -56,7 +44,7 @@ ms.lasthandoff: 12/22/2017
 
 | 要素 | 説明 |  
 | ------- | ----------- |  
-| [\<動作 >](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|エンドポイントの動作を指定します。 |
+| [\<behavior>](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|エンドポイントの動作を指定します。 |
 
 ## <a name="see-also"></a>関連項目
 

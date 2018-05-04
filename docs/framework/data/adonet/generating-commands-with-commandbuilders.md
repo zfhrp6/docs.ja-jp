@@ -1,27 +1,15 @@
 ---
-title: "CommandBuilder でのコマンドの生成"
-ms.custom: 
+title: CommandBuilder でのコマンドの生成
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 6e3fb8b5-373b-4f9e-ab03-a22693df8e91
-caps.latest.revision: "6"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 5f250f74303fb3f2835781318e655b435e748153
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 752cccc9e10dd3056817945d1f9f5f3cf7d84227
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="generating-commands-with-commandbuilders"></a>CommandBuilder でのコマンドの生成
 `SelectCommand` プロパティが実行時に動的に指定される場合、たとえばクエリ ツールを使用してユーザーの記述したクエリ構文を解釈する場合は、適切な `InsertCommand`、`UpdateCommand`、または `DeleteCommand` をデザイン時に指定することはできません。 <xref:System.Data.DataTable> を単一データベース テーブルに割り当てたり、単一データベースから生成する場合は、<xref:System.Data.Common.DbCommandBuilder> オブジェクトを利用して自動的に `DeleteCommand` の `InsertCommand`、`UpdateCommand`、および <xref:System.Data.Common.DbDataAdapter> を生成できます。  
@@ -119,7 +107,7 @@ custDS.Tables.Remove(custDS.Tables["Customers"]);
 adapter.Fill(custDS, "Customers");  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [コマンドおよびパラメーター](../../../../docs/framework/data/adonet/commands-and-parameters.md)  
  [コマンドの実行](../../../../docs/framework/data/adonet/executing-a-command.md)  
  [DbConnection、DbCommand、および DbException](../../../../docs/framework/data/adonet/dbconnection-dbcommand-and-dbexception.md)  

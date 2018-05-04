@@ -1,13 +1,6 @@
 ---
-title: "&lt;削除&gt;authenticationModules (ネットワーク設定) の要素"
-ms.custom: 
+title: '&lt;削除&gt;authenticationModules (ネットワーク設定) の要素'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/authenticationModules/remove
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#remove
@@ -17,24 +10,22 @@ helpviewer_keywords:
 - <remove> element, authenticationModules
 - authenticationModules, remove element
 ms.assetid: abf79949-b05c-465a-b51c-bbeda9a74173
-caps.latest.revision: "14"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 077a6f3cb7020d501978fa112a0c318efee27e27
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a22ddbada0162ba38589b244cab9123f33d7cf45
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltremovegt-element-for-authenticationmodules-network-settings"></a>&lt;削除&gt;authenticationModules (ネットワーク設定) の要素
 アプリケーションからの認証モジュールを削除します。  
   
  \<configuration>  
-\<system.net >  
+\<system.net>  
 \<authenticationModules >  
-\<削除 >  
+\<remove>  
   
 ## <a name="syntax"></a>構文  
   
@@ -83,7 +74,7 @@ ms.lasthandoff: 12/22/2017
 </configuration>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Net.IAuthenticationModule>  
  <xref:System.Net.AuthenticationManager>  
  [ネットワーク設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

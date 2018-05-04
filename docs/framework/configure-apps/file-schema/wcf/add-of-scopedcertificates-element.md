@@ -1,33 +1,21 @@
 ---
-title: "&lt;scopedCertificates&gt; 要素の &lt;add&gt;"
-ms.custom: 
+title: '&lt;scopedCertificates&gt; 要素の &lt;add&gt;'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: e21c1ef8-d6d6-4bca-ac5a-6fbf4bd77412
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: eff535f7eb779a69c2368f3ad815f1eb124946ff
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 0eb2f116fc0a2c7d59b90cea71150c7b46ee39fa
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltaddgt-of-ltscopedcertificatesgt-element"></a>&lt;scopedCertificates&gt; 要素の &lt;add&gt;
 範囲指定された証明書のコレクションに X.509 証明書を追加します。  
   
- \<システムです。ServiceModel >  
+ \<system.ServiceModel >  
 \<ビヘイビアー >  
 endpointBehaviors セクション  
-\<動作 >  
-\<clientCredentials >  
+\<behavior>  
+\<clientCredentials>  
 \<serviceCertificate >  
 \<scopedCertificates >  
 \<追加 > 要素を\<scopedCertificates >  
@@ -119,7 +107,7 @@ endpointBehaviors セクション
 </behaviors>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Configuration.X509RecipientCertificateClientElement.ScopedCertificates%2A>  
  <xref:System.ServiceModel.Configuration.X509ScopedServiceCertificateElementCollection>  
  <xref:System.ServiceModel.Configuration.X509ScopedServiceCertificateElement>  

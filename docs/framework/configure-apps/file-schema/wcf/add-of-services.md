@@ -1,30 +1,18 @@
 ---
-title: "&lt;services&gt; の &lt;add&gt;"
-ms.custom: 
+title: '&lt;services&gt; の &lt;add&gt;'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 6bdc4590-aa9c-4ec8-9345-879d780cd141
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 040db3b350ebacfc3aff76d90e87e65206701069
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 709636f0b9667a431838b463c05cfd00f6521f6b
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltaddgt-of-ltservicesgt"></a>&lt;services&gt; の &lt;add&gt;
-ワークフロー ベースの <xref:System.Workflow.Runtime.WorkflowRuntime> サービスをホストする [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] のインスタンスの設定を指定します。 この要素は <xref:System.Workflow.Runtime.Configuration.WorkflowRuntimeServiceElement> 型です。  
+インスタンスの設定を指定<xref:System.Workflow.Runtime.WorkflowRuntime>ワークフロー ベースの Windows Communication Foundation (WCF) サービスをホストするためです。 この要素は <xref:System.Workflow.Runtime.Configuration.WorkflowRuntimeServiceElement> 型です。  
   
- \<system.ServiceModel>  
-\<behaviors>  
+ \<system.ServiceModel >  
+\<ビヘイビアー >  
 \<serviceBehaviors>  
 \<behavior>  
 \<services>  
@@ -77,7 +65,7 @@ ms.lasthandoff: 01/19/2018
 </serviceBehaviors>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Configuration.WorkflowRuntimeElement>  
  <xref:System.Workflow.Runtime.Configuration.WorkflowRuntimeServiceElement>  
  <xref:System.Workflow.Runtime.WorkflowRuntime>  

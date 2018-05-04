@@ -21,11 +21,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 1148d2b245d67304071d8dd23bb1a88bdc020b8d
-ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
+ms.openlocfilehash: 24541b681844a2023df8d4d05f13b53d55375b80
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="introduction-to-plinq"></a>PLINQ の概要
 ## <a name="what-is-a-parallel-query"></a>並列クエリとは  
@@ -93,10 +93,10 @@ ms.lasthandoff: 04/18/2018
  一部の操作では、ソース データを順次提供する必要があります。 <xref:System.Linq.ParallelEnumerable> クエリ演算子は、必要に応じて、順次モードに自動的に切り替わります。 ユーザー定義のクエリ演算子と、順次実行を必要とするユーザー デリゲート向けに、PLINQ では <xref:System.Linq.ParallelEnumerable.AsSequential%2A> メソッドを使用できます。 <xref:System.Linq.ParallelEnumerable.AsSequential%2A> を使用すると、それ以降のクエリの演算子は、<xref:System.Linq.ParallelEnumerable.AsParallel%2A> が再度呼び出されるまで順次実行されます。 詳細については、「[How to: Combine Parallel and Sequential LINQ Queries (方法: 並列および順次の LINQ クエリを連結する)](../../../docs/standard/parallel-programming/how-to-combine-parallel-and-sequential-linq-queries.md)」を参照してください。  
   
 ## <a name="options-for-merging-query-results"></a>クエリ結果のマージのオプション  
- PLINQ クエリが並列実行される場合、`foreach` ループ (`For Each` の場合は [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)]) による消費、またはリストや配列への挿入を行うことができるよう、各ワーカー スレッドからの結果をメイン スレッドに再マージする必要があります。 結果をより迅速に生成する場合など、特定のマージ操作を指定すると便利なこともあります。 そのために、PLINQ では <xref:System.Linq.ParallelEnumerable.WithMergeOptions%2A> メソッドと <xref:System.Linq.ParallelMergeOptions> 列挙型をサポートしています。 詳細については、「[Merge Options in PLINQ (PLINQ のマージ オプション)](../../../docs/standard/parallel-programming/merge-options-in-plinq.md)」を参照してください。  
+ PLINQ クエリが並列実行される場合、`foreach` ループ (Visual Basic では `For Each`) による消費、またはリストや配列への挿入を行うことができるよう、各ワーカー スレッドからの結果をメイン スレッドに再マージする必要があります。 結果をより迅速に生成する場合など、特定のマージ操作を指定すると便利なこともあります。 そのために、PLINQ では <xref:System.Linq.ParallelEnumerable.WithMergeOptions%2A> メソッドと <xref:System.Linq.ParallelMergeOptions> 列挙型をサポートしています。 詳細については、「[Merge Options in PLINQ (PLINQ のマージ オプション)](../../../docs/standard/parallel-programming/merge-options-in-plinq.md)」を参照してください。  
   
 ## <a name="the-forall-operator"></a>ForAll 演算子  
- [!INCLUDE[vbteclinq](../../../includes/vbteclinq-md.md)] の順次クエリでは、`foreach` (`For Each` の場合は [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)]) ループで列挙されるか、<xref:System.Linq.ParallelEnumerable.ToList%2A>、<xref:System.Linq.ParallelEnumerable.ToArray%2A>、<xref:System.Linq.ParallelEnumerable.ToDictionary%2A> などのメソッドを呼び出すまで、クエリの実行は延期されます。 PLINQ では、`foreach` を使用してクエリを実行し、結果を反復処理することもできます。 ただし、`foreach` 自体は並列実行されないので、ループが実行されるスレッドに、すべての並列タスクの出力を再マージする必要があります。 PLINQ では、クエリ結果の最終的な順序を維持する必要がある場合や、結果を順次的に処理している場合は (たとえば、各要素に対して `foreach` を呼び出している場合など)、`Console.WriteLine` を使用できます。 順序の維持が必要ない場合や、結果の処理自体を並列化できる場合にクエリ実行を高速化するには、<xref:System.Linq.ParallelEnumerable.ForAll%2A> メソッドで PLINQ クエリを実行します。 <xref:System.Linq.ParallelEnumerable.ForAll%2A> は、この最終的なマージ ステップを実行しません。 <xref:System.Linq.ParallelEnumerable.ForAll%2A> メソッドを使用するコード例を次に示します。 ここで <xref:System.Collections.Concurrent.ConcurrentBag%601?displayProperty=nameWithType> が使用されるのは、項目を削除せずに、同時に複数スレッドの追加を行うために最適化されるためです。  
+ [!INCLUDE[vbteclinq](../../../includes/vbteclinq-md.md)] の順次クエリでは、`foreach` (Visual Basic の場合は `For Each`) ループで列挙されるか、<xref:System.Linq.ParallelEnumerable.ToList%2A>、<xref:System.Linq.ParallelEnumerable.ToArray%2A>、<xref:System.Linq.ParallelEnumerable.ToDictionary%2A> などのメソッドを呼び出すまで、クエリの実行は延期されます。 PLINQ では、`foreach` を使用してクエリを実行し、結果を反復処理することもできます。 ただし、`foreach` 自体は並列実行されないので、ループが実行されるスレッドに、すべての並列タスクの出力を再マージする必要があります。 PLINQ では、クエリ結果の最終的な順序を維持する必要がある場合や、結果を順次的に処理している場合は (たとえば、各要素に対して `foreach` を呼び出している場合など)、`Console.WriteLine` を使用できます。 順序の維持が必要ない場合や、結果の処理自体を並列化できる場合にクエリ実行を高速化するには、<xref:System.Linq.ParallelEnumerable.ForAll%2A> メソッドで PLINQ クエリを実行します。 <xref:System.Linq.ParallelEnumerable.ForAll%2A> は、この最終的なマージ ステップを実行しません。 <xref:System.Linq.ParallelEnumerable.ForAll%2A> メソッドを使用するコード例を次に示します。 ここで <xref:System.Collections.Concurrent.ConcurrentBag%601?displayProperty=nameWithType> が使用されるのは、項目を削除せずに、同時に複数スレッドの追加を行うために最適化されるためです。  
   
  [!code-csharp[PLINQ#4](../../../samples/snippets/csharp/VS_Snippets_Misc/plinq/cs/plinq2_cs.cs#4)]
  [!code-vb[PLINQ#4](../../../samples/snippets/visualbasic/VS_Snippets_Misc/plinq/vb/plinq2_vb.vb#4)]  

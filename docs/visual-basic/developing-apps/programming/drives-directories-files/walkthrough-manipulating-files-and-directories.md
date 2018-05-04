@@ -1,11 +1,12 @@
 ---
-title: "Visual Basic によるファイルとディレクトリの操作"
-ms.custom: 
+title: Visual Basic によるファイルとディレクトリの操作
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - files [Visual Basic], reading text
@@ -21,19 +22,19 @@ helpviewer_keywords:
 - writing to files [Visual Basic], walkthroughs
 - I/O [Visual Basic], reading text from files
 ms.assetid: cae77565-9f78-4e46-8e42-eb2f9f8e1ffd
-caps.latest.revision: "49"
+caps.latest.revision: 49
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: bd1e61503394741e7943d30d383f2e7c5ea35f68
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: bff2e66b1a196117117370f7620f3f55576ad19b
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="walkthrough-manipulating-files-and-directories-in-visual-basic"></a>チュートリアル : Visual Basic によるファイルとディレクトリの操作
-このチュートリアルでは、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] でのファイル I/O の基礎について概説します。 具体的には、ディレクトリ内のテキスト ファイルをリストして調査する小さなアプリケーションを作成する方法について説明します。 このアプリケーションは、選択された各テキスト ファイルについて、ファイルの属性とコンテンツの最初の行を取得します。 ログ ファイルに情報を書き込むオプションもあります。  
+このチュートリアルでは、Visual Basic でのファイル I/O の基礎について概説します。 具体的には、ディレクトリ内のテキスト ファイルをリストして調査する小さなアプリケーションを作成する方法について説明します。 このアプリケーションは、選択された各テキスト ファイルについて、ファイルの属性とコンテンツの最初の行を取得します。 ログ ファイルに情報を書き込むオプションもあります。  
   
- このチュートリアルでは、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] で利用可能な、`My.Computer.FileSystem Object` のメンバーを使用します。 詳細については、「<xref:Microsoft.VisualBasic.FileIO.FileSystem>」を参照してください。 チュートリアルの最後では、<xref:System.IO> 名前空間のクラスを使用する同等の例を示します。  
+ このチュートリアルでは、Visual Basic で利用可能な、`My.Computer.FileSystem Object` のメンバーを使用します。 詳細については、「<xref:Microsoft.VisualBasic.FileIO.FileSystem>」を参照してください。 チュートリアルの最後では、<xref:System.IO> 名前空間のクラスを使用する同等の例を示します。  
   
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
@@ -53,11 +54,11 @@ ms.lasthandoff: 11/21/2017
   
     |コントロール|プロパティ|値|  
     |-------------|--------------|-----------|  
-    |**ListBox**|**名前**|`filesListBox`|  
-    |**Button**|**名前**<br /><br /> **テキスト**|`browseButton`<br /><br /> **参照**|  
-    |**Button**|**名前**<br /><br /> **テキスト**|`examineButton`<br /><br /> **調査**|  
-    |**CheckBox**|**名前**<br /><br /> **テキスト**|`saveCheckBox`<br /><br /> **結果の保存**|  
-    |**FolderBrowserDialog**|**名前**|`FolderBrowserDialog1`|  
+    |**ListBox**|**Name**|`filesListBox`|  
+    |**Button**|**Name**<br /><br /> **[テキスト]**|`browseButton`<br /><br /> **参照**|  
+    |**Button**|**Name**<br /><br /> **[テキスト]**|`examineButton`<br /><br /> **調査**|  
+    |**CheckBox**|**Name**<br /><br /> **[テキスト]**|`saveCheckBox`<br /><br /> **結果の保存**|  
+    |**FolderBrowserDialog**|**Name**|`FolderBrowserDialog1`|  
   
 ### <a name="to-select-a-folder-and-list-files-in-a-folder"></a>フォルダーを選択し、フォルダー内のファイルをリストするには  
   
@@ -167,7 +168,7 @@ ms.lasthandoff: 11/21/2017
   
  [!code-vb[VbVbcnMyFileSystem#111](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/walkthrough-manipulating-files-and-directories_9.vb)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.IO>  
  <xref:Microsoft.VisualBasic.FileIO.FileSystem>  
  <xref:Microsoft.VisualBasic.FileIO.FileSystem.CurrentDirectory%2A>  

@@ -1,32 +1,20 @@
 ---
 title: '&lt;issuedTokenParameters&gt;'
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 120b3f37-7331-4816-b712-d6aab39655a4
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: bac725e0c4fe590623ac82ec45bcf669a2e57179
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 550b3412b193b996b8de800856d6833369fc4bc7
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltissuedtokenparametersgt"></a>&lt;issuedTokenParameters&gt;
 フェデレーション セキュリティのシナリオで発行されるセキュリティ トークンのパラメーターを指定します。  
   
- \<system.serviceModel >  
-\<バインド >  
-\<customBinding >  
-\<バインド >  
+ \<system.serviceModel>  
+\<bindings>  
+\<customBinding>  
+\<binding>  
 \<セキュリティ >  
 \<issuedTokenParameters >  
   
@@ -64,25 +52,25 @@ ms.lasthandoff: 12/22/2017
 |inclusionMode|トークン包含要件を指定します。 この属性は <xref:System.ServiceModel.Security.Tokens.SecurityTokenInclusionMode> 型です。|  
 |keySize|トークン キー サイズを指定する整数。 既定値は 256 です。|  
 |keyType|キーの型を指定する <xref:System.IdentityModel.Tokens.SecurityKeyType> の有効な値。 既定値は、`SymmetricKey` です。|  
-|tokenType|トークンの種類を指定する文字列。 既定値は、"http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAML" です。|  
+|tokenType|トークンの種類を指定する文字列。 既定値は "http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAML" です。|  
   
 ### <a name="child-elements"></a>子要素  
   
 |要素|説明|  
 |-------------|-----------------|  
 |[\<additionalRequestParameters >](../../../../../docs/framework/configure-apps/file-schema/wcf/additionalrequestparameters-element.md)|追加の要求パラメーターを指定する構成要素のコレクション。|  
-|[\<claimTypeRequirements >](../../../../../docs/framework/configure-apps/file-schema/wcf/claimtyperequirements-element.md)|必須のクレームの種類のコレクションを指定します。<br /><br /> フェデレーション シナリオでは、サービスが受信資格情報についての要件を記述します。 たとえば、受信資格情報は、特定のクレーム タイプのセットを処理する必要があります。 このコレクションの要素はそれぞれ、フェデレーション資格情報に表示されると予想される必須の要求および省略可能な要求の種類を指定します。|  
-|[\<発行者 >](../../../../../docs/framework/configure-apps/file-schema/wcf/issuer-of-issuedtokenparameters.md)|現在のトークンを発行するエンドポイントを指定する構成要素。|  
-|[\<issuerMetadata >](../../../../../docs/framework/configure-apps/file-schema/wcf/issuermetadata-of-issuedtokenparameters.md)|トークン発行者のメタデータのエンドポイント アドレスを指定する構成要素。|  
+|[\<claimTypeRequirements>](../../../../../docs/framework/configure-apps/file-schema/wcf/claimtyperequirements-element.md)|必須のクレームの種類のコレクションを指定します。<br /><br /> フェデレーション シナリオでは、サービスが受信資格情報についての要件を記述します。 たとえば、受信資格情報は、特定のクレーム タイプのセットを処理する必要があります。 このコレクションの要素はそれぞれ、フェデレーション資格情報に表示されると予想される必須の要求および省略可能な要求の種類を指定します。|  
+|[\<issuer>](../../../../../docs/framework/configure-apps/file-schema/wcf/issuer-of-issuedtokenparameters.md)|現在のトークンを発行するエンドポイントを指定する構成要素。|  
+|[\<issuerMetadata>](../../../../../docs/framework/configure-apps/file-schema/wcf/issuermetadata-of-issuedtokenparameters.md)|トークン発行者のメタデータのエンドポイント アドレスを指定する構成要素。|  
   
 ### <a name="parent-elements"></a>親要素  
   
 |要素|説明|  
 |-------------|-----------------|  
 |[\<secureConversationBootstrap >](../../../../../docs/framework/configure-apps/file-schema/wcf/secureconversationbootstrap.md)|セキュリティで保護されたメッセージ交換サービスの開始に使用される既定値を指定します。|  
-|[\<セキュリティ >](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md)|カスタム バインドのセキュリティ オプションを指定します。|  
+|[\<security>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md)|カスタム バインドのセキュリティ オプションを指定します。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Security.Tokens.IssuedSecurityTokenParameters>  
  <xref:System.ServiceModel.Configuration.IssuedTokenParametersElement>  
  <xref:System.ServiceModel.Configuration.SecurityElementBase.IssuedTokenParameters%2A>  
@@ -90,7 +78,7 @@ ms.lasthandoff: 12/22/2017
  [バインディング](../../../../../docs/framework/wcf/bindings.md)  
  [バインディングの拡張](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
  [カスタム バインディング](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
- [\<customBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)  
+ [\<customBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)  
  [方法 : SecurityBindingElement を使用してカスタム バインディングを作成する](../../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)  
  [カスタム バインド セキュリティ](../../../../../docs/framework/wcf/samples/custom-binding-security.md)  
  [サービス ID と認証](../../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)  

@@ -1,12 +1,7 @@
 ---
 title: クラスと構造体 (C# プログラミング ガイド)
 description: C# でのクラスと構造体の使用について説明します。
-keywords: クラス (C#), 構造体 (C#), 構造体 (構造体) (C#), 参照型 (C#), 値型 (C#)
 ms.date: 01/17/2016
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - structs [C#], about structs
 - classes [C#], overview
@@ -15,14 +10,11 @@ helpviewer_keywords:
 - objects [C#]
 - C# language, classes
 ms.assetid: cc39dbda-8754-423e-b5b1-16a1db0734c0
-caps.latest.revision: 48
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 8c4cbbdd0384c0c0e97d6a7c655e798d0562d9a8
-ms.sourcegitcommit: 7e99f66ef09d2903e22c789c67ff5a10aa953b2f
+ms.openlocfilehash: 801f8e64bf64ee55651521ba53915000cc326303
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="classes-and-structs-c-programming-guide"></a>クラスと構造体 (C# プログラミング ガイド)
 クラスと構造体は、.NET Framework の共通型システムの 2 つの基本構成です。 クラスと構造体は、どちらも基本的にはデータと動作のセットを 1 つの論理単位としてカプセル化するデータ構造です。 データと動作はクラスまたは構造体の "*メンバー*" です。このトピックで後述するように、メソッド、プロパティ、イベントなどが含まれます。  
@@ -108,5 +100,5 @@ ms.lasthandoff: 11/18/2017
 ## <a name="c-language-specification"></a>C# 言語仕様  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)

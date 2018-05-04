@@ -4,17 +4,16 @@ description: .NET Core でのバージョン管理のしくみについて説明
 author: bleroy
 ms.author: mairaw
 ms.date: 02/13/2018
-ms.topic: article
-ms.prod: .net-core
+ms.topic: conceptual
+ms.prod: dotnet-core
 ms.devlang: dotnet
-ms.assetid: f6f684b1-1d2c-4105-8376-7c1959e23803
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: 70c7f179f3451e51d5ab383cde80959a69f959a1
-ms.sourcegitcommit: 96cc82cac4650adfb65ba351506d8a8fbcd17b5c
+ms.openlocfilehash: 437bea33f26c9ae445cf412657f4d23fcce18873
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="net-core-versioning"></a>.NET Core バージョン管理
 
@@ -22,7 +21,7 @@ ms.lasthandoff: 02/19/2018
 
 この記事では、.NET Core SDK とランタイムのバージョン管理方法を明確にすることを目的としています。
 
-.NET Core には個別にバージョン管理される多くの移動するパーツがあります。 ただし、.NET Core 2.0 以降では、すべてのユーザーが ".NET Core" 全体のバージョンとして理解する簡単に理解できる最上位*レベ*ルのバージョンがあります。 このドキュメントの残りの部分は、これらすべてのパーツのバージョン管理の詳細について説明します。 たとえばパッケージ マネージャーの場合は、これらの詳細が重要になる可能性があります。
+.NET Core には個別にバージョン管理される多くの移動するパーツがあります。 ただし、.NET Core 2.0 以降では、すべてのユーザーが ".NET Core" 全体のバージョンとして理解する簡単に理解できる最上位** レベルのバージョンがあります。 このドキュメントの残りの部分は、これらすべてのパーツのバージョン管理の詳細について説明します。 たとえばパッケージ マネージャーの場合は、これらの詳細が重要になる可能性があります。
 
 > [!IMPORTANT]
 > このトピックで説明されているバージョン管理の詳細は、.NET Core SDK ランタイムの現在のバージョンには適用されません。
@@ -196,7 +195,7 @@ MAJOR.MINOR.PATCH[-PRERELEASE-BUILDNUMBER]
 
 .NET Standard では、`MAJOR.MINOR` バージョン管理スキームを使用しています。 `PATCH` レベルは、.NET Standard では使用できません。これは、あまり頻繁に反復処理されないコントラクトのセットを表し、実際の実装と同じバージョン管理の要件を表さないためです。
 
-.NET Standard バージョンと .NET Core のバージョンの間に実際の結合はありません。 .NET Core 2.0 は .NET Standard 2.0 を実装する場合がありますが、.NET Core の将来のバージョンが同じ .NET Standard のバージョンにマッピングされるという保証はありません。 .NET Core は、.NET Standard で定義されていない API を配布することができるので、新しい .NET Standard を必要とせずに新しいバージョンを配布する場合があります。 .NET Standard は、たとえその始まりが .NET Core と同時に起こったとしても、.NET Framework や Mono などの他のターゲットに適用される概念でもあります。
+.NET Standard バージョンと .NET Core のバージョンの間に実際の結合はありません。 .NET Core 2.0 は .NET Standard 2.0 を実装する場合がありますが、.NET Core の将来のバージョンが同じ .NET Standard のバージョンにマッピングされるという保証はありません。 .NET Core は、.NET Standard で定義されていない API を配布することができるので、新しい .NET Standard を必要とせずに新しバージョンを配布する場合があります。 .NET Standard は、たとえその始まりが .NET Core と同時に起こったとしても、.NET Framework や Mono などの他のターゲットに適用される概念でもあります。
 
 ### <a name="packages"></a>パッケージ
 

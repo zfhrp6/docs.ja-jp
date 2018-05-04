@@ -1,27 +1,15 @@
 ---
-title: "DataSet と XmlDataDocument の同期"
-ms.custom: 
+title: DataSet と XmlDataDocument の同期
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: fbc96fa9-b5d1-4f97-b099-c89b0e14ce2c
-caps.latest.revision: "4"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: c09ddd9ad4d945fc0704e25400dc8c94bdacb933
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: d026a425f7a38777fcb5bbb4b18816c39a99aa72
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="synchronizing-a-dataset-with-an-xmldatadocument"></a>DataSet と XmlDataDocument の同期
 このセクションでは、<xref:System.Data.DataSet> と同期され、厳密に型指定された <xref:System.Xml.XmlDataDocument> を使用して、注文書を処理する手順の 1 ステップを例に説明します。 次の例を作成、**データセット**ソース XML ドキュメントの一部だけに一致する最小限のスキーマとします。 例を使用して、 **XmlDataDocument**ソース XML ドキュメントの忠実性を保持するために有効にすると、**データセット**を使用して XML ドキュメントのサブセットを公開します。  
@@ -242,6 +230,6 @@ public class Sample
 }  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [DataSet と XmlDataDocument の同期](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataset-and-xmldatadocument-synchronization.md)  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

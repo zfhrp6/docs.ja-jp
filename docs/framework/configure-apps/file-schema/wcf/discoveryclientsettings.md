@@ -1,29 +1,17 @@
 ---
 title: '&lt;discoveryClientSettings&gt;'
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 02e1b823-a8bb-4074-90d5-8599f71e8f9d
-caps.latest.revision: "2"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 0bcd70df9809288987636f7766d6d4887dec84d8
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e9723aed1aa8fbcbf5c4e84080c0ba991ea3fd60
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltdiscoveryclientsettingsgt"></a>&lt;discoveryClientSettings&gt;
 サービス探索プロセスにクライアントとして参加するためにアプリケーションが必要とする設定を格納します。  
   
-\<システムです。ServiceModel >  
+\<system.ServiceModel >  
 \<standardEndpoints >  
   
 ## <a name="syntax"></a>構文  
@@ -73,6 +61,6 @@ ms.lasthandoff: 12/22/2017
 |-------------|-----------------|  
 |[\<standardEndpoints >](../../../../../docs/framework/configure-apps/file-schema/wcf/standardendpoints.md)|アプリケーションが実行時に動的にエンドポイント アドレスを検索するクライアント プログラムとして機能するための情報を格納する標準エンドポイントを定義します。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement>  
  <xref:System.ServiceModel.Discovery.Configuration.DiscoveryClientSettingsElement>

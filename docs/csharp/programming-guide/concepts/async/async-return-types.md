@@ -1,21 +1,22 @@
 ---
-title: "非同期の戻り値の型 (C#)"
-ms.custom: 
+title: 非同期の戻り値の型 (C#)
+ms.custom: ''
 ms.date: 05/29/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-csharp
 ms.topic: article
 ms.assetid: ddb2539c-c898-48c1-ad92-245e4a996df8
-caps.latest.revision: "3"
+caps.latest.revision: 3
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 7aee1ebdf24a2ac564268e1f36d3aac707dea463
-ms.sourcegitcommit: 7e99f66ef09d2903e22c789c67ff5a10aa953b2f
+ms.openlocfilehash: 4927d6324b6bda5a897ce81928fc13cae303a99a
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="async-return-types-c"></a>非同期の戻り値の型 (C#)
 非同期メソッドには、次の戻り値の型があります。
@@ -26,7 +27,7 @@ ms.lasthandoff: 11/18/2017
 
 - `void`: イベント ハンドラーの場合。 
 
-- C# 7 以降、アクセス可能な `GetAwaiter` を持つ任意の型です。 <xref:System.Runtime.CompilerServices.ICriticalNotifyCompletion?displayProperty=nameWithType> メソッドによって返されるオブジェクトは、`GetAwaiter` インターフェイスを実装する必要があります。
+- C# 7.0 以降、アクセス可能な `GetAwaiter` を持つ任意の型です。 <xref:System.Runtime.CompilerServices.ICriticalNotifyCompletion?displayProperty=nameWithType> メソッドによって返されるオブジェクトは、`GetAwaiter` インターフェイスを実装する必要があります。
   
 非同期メソッドの詳細については、「[Async および Await を使用した非同期プログラミング (C#)](../../../../csharp/programming-guide/concepts/async/index.md)」を参照してください。  
   
@@ -76,7 +77,7 @@ void を返す非同期メソッドの呼び出し元は、メソッドがスロ
  
 ## <a name="generalized-async-return-types-and-valuetaskt"></a>一般化された async の戻り値の型と ValueTask<T>
 
-C# 7 以降、非同期メソッドで、アクセス可能な `GetAwaiter` メソッドを持つ任意の型を返すことができます。
+C# 7.0 以降、非同期メソッドで、アクセス可能な `GetAwaiter` メソッドを持つ任意の型を返すことができます。
  
 <xref:System.Threading.Tasks.Task> および <xref:System.Threading.Tasks.Task%601> は参照型であるため、特に厳密なループ処理で割り当てが発生すると、パフォーマンスが重要なパスのメモリ割り当てが、パフォーマンスに悪影響を及ぼすことがあります。 一般化された戻り値の型のサポートにより、参照型ではなく、軽量な値の型を返すことができ、追加のメモリ割り当てを回避することが可能です。 
 

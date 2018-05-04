@@ -1,10 +1,6 @@
 ---
-title: "&lt;appSettings&gt;要素&lt;構成&gt;"
+title: '&lt;appSettings&gt;要素&lt;構成&gt;'
 ms.date: 05/01/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: article
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/appSettings
 helpviewer_keywords:
@@ -13,14 +9,11 @@ helpviewer_keywords:
 ms.assetid: 39694cc4-6b84-45a6-9329-385a0d8b48fe
 author: guardrex
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: cebb9ba7ebeb483233276324289a4ddc5a0bc381
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d17400536b911ce0be4d2bf105b0b4d99d0916df
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="appsettings-element-for-configuration"></a>\<appSettings > 要素を\<構成 >
 
@@ -47,7 +40,7 @@ ms.lasthandoff: 12/22/2017
 
 |     | 説明 |
 | --- | ----------- |
-| [**\<構成 >**要素](~/docs/framework/configure-apps/file-schema/configuration-element.md) | 共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。 |
+| [**\<構成 >** 要素](~/docs/framework/configure-apps/file-schema/configuration-element.md) | 共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。 |
 
 ## <a name="child-elements"></a>子要素
 
@@ -59,11 +52,11 @@ ms.lasthandoff: 12/22/2017
 
 ## <a name="remarks"></a>コメント
 
- **\<AppSettings >**要素がデータベース接続文字列、ファイルのパス、XML Web サービス Url の他のカスタム構成情報など、カスタム アプリケーションの構成情報を格納します。アプリケーション。 指定されたキーと値のペア、  **\<appSettings >**要素は、コードを使用して、<xref:System.Configuration.ConfigurationSettings>クラスです。
+**\<AppSettings >** 要素がデータベース接続文字列、ファイルのパス、XML Web サービス Url の他のカスタム構成情報など、カスタム アプリケーションの構成情報を格納します。アプリケーション。 指定されたキーと値のペア、  **\<appSettings >** 要素は、コードを使用して、<xref:System.Configuration.ConfigurationSettings>クラスです。
 
-使用することができます、**ファイル**属性、  **\<appSettings >**の要素、 *Web.config*とアプリケーション構成ファイル。 この属性で指定された設定を上書きまたは追加の設定を提供する構成ファイルを指定する、  **\<appSettings >**要素。 **ファイル**属性をソース コントロール チーム開発などのシナリオで、ユーザーがアプリケーション構成ファイルで指定されたプロジェクトの設定をオーバーライドするときに使用できます。
+使用することができます、**ファイル**属性、  **\<appSettings >** の要素、 *Web.config*とアプリケーション構成ファイル。 この属性で指定された設定を上書きまたは追加の設定を提供する構成ファイルを指定する、  **\<appSettings >** 要素。 **ファイル**属性をソース コントロール チーム開発などのシナリオで、ユーザーがアプリケーション構成ファイルで指定されたプロジェクトの設定をオーバーライドするときに使用できます。
 
-指定された構成ファイル、**ファイル**属性のルート ノードが必要です **\<appSettings >**なく**\<構成 >**.
+指定された構成ファイル、**ファイル**属性のルート ノードが必要です **\<appSettings >** なく**\<構成 >**.
 
 ## <a name="example"></a>例
 

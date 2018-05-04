@@ -1,28 +1,16 @@
 ---
-title: "&lt;フィルター&gt;"
-ms.custom: 
+title: '&lt;フィルター&gt;'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 3266700b-904b-44e4-93a7-e06a1a445100
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 186c511cd8a69cef5e30e369641628a10a0972d7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 93d47fc6b25a75eedae43cd70582abc863a74e6c
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltfiltergt"></a>&lt;フィルター&gt;
 
-受信メッセージの評価に使用される [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)]<xref:System.ServiceModel.Dispatcher.MessageFilter> の種類と、フィルターが必要とする任意のサポート対象のデータまたはパラメーターを指定するルーティング フィルターを定義します。
+Windows Communication Foundation (WCF) の型を決定するルーティング フィルター定義<xref:System.ServiceModel.Dispatcher.MessageFilter>も任意のサポート データまたはフィルターに必要なパラメーターとして、受信メッセージを評価するときに使用します。
 
 \<system.serviceModel >\<ルーティング >\<フィルター >\<フィルター >
 
@@ -47,7 +35,7 @@ ms.lasthandoff: 12/22/2017
 
 | 属性  | 説明 |
 | ---------- | ----------- |
-| customType | フィルターとして使用されるカスタム型の完全修飾型名を示す文字列。 場合`filterType`に設定されている`custom`、この属性には作成するクラスの完全修飾型名が含まれています。  `filterData`カスタム型フィルターの評価中に使用される値もあります。 |
+| customType | フィルターとして使用されるカスタム型の完全修飾型名を示す文字列。 場合`filterType`に設定されている`custom`、この属性には作成するクラスの完全修飾型名が含まれています。  `filterData` カスタム型フィルターの評価中に使用される値もあります。 |
 | filterData | フィルター データを示す文字列。 この属性を指定する方法の詳細については、「<xref:System.ServiceModel.Routing.Configuration.FilterElement.FilterData%2A>」を参照してください。 |
 | filterType | フィルターの種類を示す文字列。 この属性は <xref:System.ServiceModel.Routing.Configuration.FilterType> 型です。  `filterData` 属性を使用する方法の詳細については、「<xref:System.ServiceModel.Routing.Configuration.FilterElement.FilterData%2A>」を参照してください。 |
 | name       | フィルター要素の一意の名前を示す文字列。 |
@@ -60,7 +48,7 @@ ms.lasthandoff: 12/22/2017
 
 | 要素 | 説明 |
 | ------- | ----------- |
-| [\<ルーティング >](../../../../../docs/framework/configure-apps/file-schema/wcf/routing.md) | 受信メッセージの評価に使用される [!INCLUDE[ indigo1](../../../../../includes/indigo1-md.md)]<xref:System.ServiceModel.Dispatcher.MessageFilter> の種類を指定するルーティング フィルター セットを定義する構成セクション。 |
+| [\<ルーティング >](../../../../../docs/framework/configure-apps/file-schema/wcf/routing.md) | Windows Communication Foundation (WCF) の種類を決定するルーティング フィルター セットを定義するための構成セクション<xref:System.ServiceModel.Dispatcher.MessageFilter>着信メッセージを評価するときに使用されます。 |
 
 ## <a name="see-also"></a>関連項目
 

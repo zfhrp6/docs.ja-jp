@@ -1,27 +1,15 @@
 ---
-title: "DataSet への既存の制約の追加"
-ms.custom: 
+title: DataSet への既存の制約の追加
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 307d2809-208b-4cf8-b6a9-5d16f15fc16c
-caps.latest.revision: "4"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 2f2f6c60197b1d71feb13ca351ad19298e09ea56
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: c3c28392a9e4bee0e2f9e0dcf553e13b67c378dd
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="adding-existing-constraints-to-a-dataset"></a>DataSet への既存の制約の追加
 **塗りつぶし**のメソッド、 **DataAdapter**塗りつぶします、<xref:System.Data.DataSet>のみテーブルの列およびデータ ソースからの行も制約は一般設定、データ ソースによって、 **を塗りつぶす**メソッドでは、このスキーマ情報には追加されません、**データセット**既定です。 設定する、**データセット**呼び出すかを使用してデータ ソースから既存の主キー制約情報できます、 **FillSchema**のメソッド、 **DataAdapter**、設定や、**MissingSchemaAction**のプロパティ、 **DataAdapter**に**AddWithKey**呼び出す前に**塗りつぶし**です。 これが主キーをにより、内の制約、**データセット**データ ソースに反映します。 外部キー制約情報が含まれていないのように、明示的に作成する必要があります[DataTable の制約](../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatable-constraints.md)です。  
@@ -71,7 +59,7 @@ custAdapter.Fill(custDataSet, "Customers");
 > [!NOTE]
 >  場合、 **FillSchema**のメソッド、 **OleDbDataAdapter**を複数の結果セットを返すコマンドのオブジェクトが呼び出されると、最初の結果セットからスキーマ情報のみが返されます。 ときに複数の結果のスキーマ情報セットを返すを使用して、 **OleDbDataAdapter**を指定することをお勧め、 **MissingSchemaAction**の**AddWithKey**呼び出すときに、スキーマ情報を取得し、**塗りつぶし**メソッドです。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [DataAdapter と DataReader](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)  
  [DataSet、DataTable、および DataView](../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
  [ADO.NET でのデータの取得および変更](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)  

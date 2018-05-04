@@ -1,24 +1,12 @@
 ---
-title: "関数のオーバーロードの解決方法 (Entity SQL)"
-ms.custom: 
+title: 関数のオーバーロードの解決方法 (Entity SQL)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 9c648054-3808-4a69-9d3e-98e6a4f9c5ca
-caps.latest.revision: "2"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: cafbdd1a06ce506516fa985e9af147f55b4ea3d4
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 517bdb682213deff90a37eafcf32946fef63921f
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="function-overload-resolution-entity-sql"></a>関数のオーバーロードの解決方法 (Entity SQL)
 このトピックでは、[!INCLUDE[esql](../../../../../../includes/esql-md.md)] 関数の解決方法について説明します。  
@@ -41,7 +29,7 @@ ms.lasthandoff: 01/17/2018
   
  ユーザー定義関数の場合、そのユーザー定義関数に適したシグネチャとモデル定義関数が存在する場合でも、インライン クエリ関数の定義が優先されます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Entity SQL リファレンス](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)  
  [Entity SQL の概要](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-overview.md)  
  [関数](../../../../../../docs/framework/data/adonet/ef/language-reference/functions-entity-sql.md)

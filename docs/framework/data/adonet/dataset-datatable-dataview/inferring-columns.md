@@ -1,24 +1,12 @@
 ---
-title: "列の推論"
-ms.custom: 
+title: 列の推論
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 0e022699-c922-454c-93e2-957dd7e7247a
-caps.latest.revision: "4"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 858a23fb8fec7b7f2eee95a1365d16e846beb548
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: da98bcbc4537e08a6f8565b36f8b84b476efd027
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="inferring-columns"></a>列の推論
 ADO.NET は、<xref:System.Data.DataSet> のテーブルとして推論する要素を、XML ドキュメントから決定した後、それらのテーブルの列を推論します。 ADO.NET 2.0 導入ごとに厳密に型指定されたデータ型を推測する新しいスキーマ推論エンジン**simpleType**要素。 以前のバージョンで、データ型、推論された**simpleType**要素が常に**xsd:string**です。  
@@ -76,7 +64,7 @@ ADO.NET は、<xref:System.Data.DataSet> のテーブルとして推論する要
 |-------------------|-------------------|  
 |Text1|Text2|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [XML からの DataSet リレーショナル構造の推論](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/inferring-dataset-relational-structure-from-xml.md)  
  [XML からの DataSet の読み込み](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md)  
  [XML の DataSet スキーマ情報の読み込み](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-dataset-schema-information-from-xml.md)  

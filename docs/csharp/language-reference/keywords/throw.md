@@ -1,8 +1,9 @@
 ---
-title: "throw (C# リファレンス)"
+title: throw (C# リファレンス)
 ms.date: 03/02/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 f1_keywords:
 - throw
@@ -12,14 +13,14 @@ helpviewer_keywords:
 - throw expression [C#]
 - throw keyword [C#]
 ms.assetid: 5ac4feef-4b1a-4c61-aeb4-61d549e5dd42
-caps.latest.revision: "22"
+caps.latest.revision: 22
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e56bd8f8b6bfcc7c8f1eb2df6ac157e28adac331
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 088a8e70c5aaaae6f833f12cad1052c30fbb6bfa
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="throw-c-reference"></a>throw (C# リファレンス)
 プログラムの実行中に例外が発生したことを通知します。  
@@ -50,9 +51,9 @@ throw [e]
  
 ## <a name="the-throw-expression"></a>`throw` 式
 
-C# 7 以降、`throw` は、式およびステートメントとして使用できます。 これにより、以前サポートされていなかったコンテキストでの例外のスローが可能になります。 次の設定があります。
+C# 7.0 以降、`throw` は、式およびステートメントとして使用できます。 これにより、以前サポートされていなかったコンテキストでの例外のスローが可能になります。 次の設定があります。
 
-- [条件演算子](../operators/conditional-operator.md)。 次の例では、`throw` 式を使用して、メソッドに空の文字列配列が渡された場合に <xref:System.ArgumentException> をスローします。 C# 7 より前では、このロジックが `if`/`else` ステートメントで使用されている必要があります。
+- [条件演算子](../operators/conditional-operator.md)。 次の例では、`throw` 式を使用して、メソッドに空の文字列配列が渡された場合に <xref:System.ArgumentException> をスローします。 C# 7.0 より前では、このロジックが `if`/`else` ステートメントで使用されている必要があります。
 
    [!code-csharp[csrefKeyword#4](../../../../samples/snippets/csharp/language-reference/keywords/throw/conditional.cs#1)]  
   
@@ -68,11 +69,11 @@ C# 7 以降、`throw` は、式およびステートメントとして使用で�
 ## <a name="c-language-specification"></a>C# 言語仕様  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C# リファレンス](../../../csharp/language-reference/index.md)  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
  [try-catch](../../../csharp/language-reference/keywords/try-catch.md)  
- [Try、catch、および C++ では throw ステートメント](../../../csharp/language-reference/keywords/try-catch.md)  
+ [C++ の try、catch、および throw ステートメント](../../../csharp/language-reference/keywords/try-catch.md)  
  [C# のキーワード](../../../csharp/language-reference/keywords/index.md)  
  [例外処理ステートメント](../../../csharp/language-reference/keywords/exception-handling-statements.md)  
  [方法: 例外を明示的にスローする](../../../standard/exceptions/how-to-explicitly-throw-exceptions.md)

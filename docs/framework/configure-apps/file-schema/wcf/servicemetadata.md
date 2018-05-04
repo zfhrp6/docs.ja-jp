@@ -1,26 +1,12 @@
 ---
 title: '&lt;serviceMetadata&gt;'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 2b4c3b4c-31d4-4908-a9b7-5bb411c221f2
-caps.latest.revision: 28
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: b0b98c637c98c75aab5009f9a2f35b8ce6b90012
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 3c59a47f8a45fbccb05eb1f385215fe2aa739836
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltservicemetadatagt"></a>&lt;serviceMetadata&gt;
 サービス メタデータと関連情報の公開を指定します。  
@@ -74,7 +60,7 @@ ms.lasthandoff: 04/28/2018
 |[\<behavior>](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|動作の要素を指定します。|  
   
 ## <a name="remarks"></a>コメント  
- この構成要素を使用すると、サービスのメタデータ公開機能を制御できます。 サービスのメタデータには機密情報が含まれる可能性がありますが、意図的ではない開示を回避するために、[!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] サービスの既定の構成では、メタデータは公開されないようになっています。 この動作は、既定の設定ではセキュリティで保護されますが、同時に、サービスの構成の中でメタデータ公開の動作が明示的に有効化されない限り、サービスの呼び出しに必要なクライアント コードをメタデータ インポート ツール (Svcutil.exe など) を使用して生成できないことも意味します。 この構成要素を使用すると、サービスのこの公開動作を有効にできます。  
+ この構成要素を使用すると、サービスのメタデータ公開機能を制御できます。 機密性の高いサービス メタデータが誤って漏洩を防ぐためには、Windows Communication Foundation (WCF) サービスの既定の構成はメタデータの公開を無効にします。 この動作は、既定の設定ではセキュリティで保護されますが、同時に、サービスの構成の中でメタデータ発行の動作が明示的に有効化されない限り、サービスの呼び出しに必要なクライアント コードをメタデータ インポート ツール (Svcutil.exe など) を使用して生成できないことも意味します。 この構成要素を使用すると、サービスのこの公開動作を有効にできます。  
   
  この動作を構成する詳細な例についてを参照してください。[メタデータ公開動作](../../../../../docs/framework/wcf/samples/metadata-publishing-behavior.md)です。  
   

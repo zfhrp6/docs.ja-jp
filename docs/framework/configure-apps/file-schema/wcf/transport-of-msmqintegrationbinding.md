@@ -1,33 +1,21 @@
 ---
-title: "&lt;msmqIntegrationBinding&gt; の &lt;transport&gt;"
-ms.custom: 
+title: '&lt;msmqIntegrationBinding&gt; の &lt;transport&gt;'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 054579e3-7fdd-47df-99ca-952706ba5c8e
-caps.latest.revision: "15"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 2dc4f3cb08436f0f1af2e559c924446faa7b870c
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: e9b065621f57ab902362a9fb1424bde252eba449
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="lttransportgt-of-ltmsmqintegrationbindinggt"></a>&lt;msmqIntegrationBinding&gt; の &lt;transport&gt;
 メッセージ キュー統合トランスポートのセキュリティ設定を定義します。  
   
- \<system.ServiceModel>  
+ \<system.ServiceModel >  
 \<bindings>  
 msmqIntegrationBinding  
 \<binding>  
-\<security>  
+\<セキュリティ >  
 \<transport>  
   
 ## <a name="syntax"></a>構文  
@@ -49,9 +37,9 @@ msmqIntegrationBinding
 |属性|説明|  
 |---------------|-----------------|  
 |`msmqAuthenticationMode`|MSMQ トランスポートによるメッセージの認証方法を指定します。 これが `None` に設定されている場合、`msmqProtectionLevel` 属性の値も `None` に設定する必要があります。<br /><br /> 以下の値が有効です。<br /><br /> -None: 認証は行われません。<br />-WindowsDomain: 認証機構は、メッセージに関連付けられた SID の X.509 証明書を取得するのに Active Directory を使用します。 次に、これを使用してキューの ACL がチェックされ、ユーザーがキューに書き込む権限を持っていることが確認されます。<br />-Certificate: チャネルは、証明書ストアから証明書を取得します。<br /><br /> 既定値は WindowsDomain です。 この属性は <xref:System.ServiceModel.MsmqAuthenticationMode> 型です。|  
-|`msmqEncryptionAlgorithm`|メッセージ キュー マネージャー間でメッセージを転送するときに、ネットワーク上でメッセージの暗号化に使用されるアルゴリズムを指定します。 以下の値が有効です。<br /><br /> -   RC4Stream<br />-   AES<br /><br /> 既定値は RC4Stream です。 この属性は <xref:System.ServiceModel.MsmqEncryptionAlgorithm> 型です。|  
+|`msmqEncryptionAlgorithm`|メッセージ キュー マネージャー間でメッセージを転送するときに、ネットワーク上でメッセージの暗号化に使用されるアルゴリズムを指定します。 以下の値が有効です。<br /><br /> -RC4Stream<br />-AES<br /><br /> 既定値は RC4Stream です。 この属性は <xref:System.ServiceModel.MsmqEncryptionAlgorithm> 型です。|  
 |`msmqProtectionLevel`|MSMQ トランスポートのレベルでメッセージをセキュリティで保護する方法を指定します。 暗号化を行うとメッセージの整合性が確保されますが、EncryptAndSign を使用するとメッセージの整合性と否認防止の両方が確保されます。つまり、メッセージは本当にその送信者から送信されていることになり、記載されている送信者が実際の送信者になります。<br /><br /> -有効な値は次のとおりです。<br />-None: 保護されません。<br />-Sign: メッセージは署名されます。<br />-EncryptAndSign: メッセージが暗号化および署名されます。<br /><br /> 既定値は Sign です。 この属性は、ProtectionLevel 型です。|  
-|`msmqSecureHashAlgorithm`|-署名の一部としてダイジェストの計算に使用するアルゴリズムを指定します。 以下の値が有効です。<br />-   MD5<br />-   SHA1<br />-   SHA256<br />-   SHA512<br /><br /> 既定値は SHA1 です。 この属性は <xref:System.ServiceModel.MsmqSecureHashAlgorithm> 型です。|  
+|`msmqSecureHashAlgorithm`|-署名の一部としてダイジェストの計算に使用するアルゴリズムを指定します。 以下の値が有効です。<br />-   MD5<br />-SHA1<br />-   SHA256<br />-SHA512<br /><br /> 既定値は SHA1 です。 この属性は <xref:System.ServiceModel.MsmqSecureHashAlgorithm> 型です。|  
   
 ### <a name="child-elements"></a>子要素  
  なし  
@@ -65,7 +53,7 @@ msmqIntegrationBinding
 ## <a name="remarks"></a>コメント  
  この要素は、メッセージ キュー統合トランスポートのセキュリティ設定をカプセル化します。 設定は、メッセージ キュー統合トランスポートとキューに置かれているトランスポートの両方で同じです。 この設定を使用すると、認証モード、暗号化アルゴリズム、セキュア ハッシュ アルゴリズム、および保護レベルを設定できます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Configuration.MsmqTransportSecurityElement>  
  <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationSecurity.Transport%2A>  
  <xref:System.ServiceModel.Configuration.MsmqIntegrationSecurityElement.Transport%2A>  

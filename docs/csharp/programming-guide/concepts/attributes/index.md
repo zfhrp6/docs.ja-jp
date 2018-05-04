@@ -1,22 +1,12 @@
 ---
 title: 属性 (C#)
-ms.custom: ''
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-csharp
-ms.topic: article
 ms.assetid: f148f13f-a0d5-4f22-9c87-4b73d5dde270
-caps.latest.revision: 3
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: f9fc23cf7afbd28f0c9ae438cbce298cbf362fbd
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: a7e64c29ab8ca56a47ec6554ebc316f4922d3aca
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="attributes-c"></a>属性 (C#)
 属性は、メタデータまたは宣言型の情報を、コード (アセンブリ、型、メソッド、プロパティなど) に関連付けるための優れた方法です。 属性をプログラム要素に関連付けると、*リフレクション*と呼ばれる手法を使用して、実行時にその属性を照会することができます。 詳細については、「[リフレクション (C#)](../../../../csharp/programming-guide/concepts/reflection.md)」を参照してください。  
@@ -107,7 +97,7 @@ void TraceMethod()
 |`assembly`|アセンブリ全体|  
 |`module`|現在のアセンブリ モジュール|  
 |`field`|クラスまたは構造体のフィールド|  
-|`event`|イベント|  
+|`event`|event|  
 |`method`|メソッドまたは `get` および `set` プロパティ アクセサー|  
 |`param`|メソッド パラメーターまたは `set` プロパティ アクセサー パラメーター|  
 |`property`|プロパティ|  
@@ -180,7 +170,7 @@ int Method3() { return 0; }
   
 -   [呼び出し元情報 (C#)](../../../../csharp/programming-guide/concepts/caller-information.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C# プログラミング ガイド](../../../../csharp/programming-guide/index.md)  
  [リフレクション (C#)](../../../../csharp/programming-guide/concepts/reflection.md)  
  [属性](../../../../../docs/standard/attributes/index.md)
