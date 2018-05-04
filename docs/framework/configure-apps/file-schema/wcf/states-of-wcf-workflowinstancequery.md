@@ -1,35 +1,23 @@
 ---
-title: "WCF の &lt;states&gt;、&lt;workflowInstanceQuery&gt;"
-ms.custom: 
+title: WCF の &lt;states&gt;、&lt;workflowInstanceQuery&gt;
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: d17f7525-8035-4e9e-85a0-4cddae59f85d
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 5995ebfc2cee0f636d2acd8b1cadead0bc7b67e8
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ef3d8d05dad684b07ee527dbd34ae6269ae57657
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltstatesgt-of-wcf-ltworkflowinstancequerygt"></a>WCF の &lt;states&gt;、&lt;workflowInstanceQuery&gt;
 追跡レコードが作成されたときの追跡ワークフロー インスタンスの定期受信済み状態のコレクションを表します。  
   
  追跡プロファイルのクエリの詳細については、次を参照してください[追跡プロファイル。](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)  
   
- \<system.serviceModel >  
+ \<system.serviceModel>  
 \<追跡 >  
-\<trackingProfile >  
+\<trackingProfile>  
 \<ワークフロー >  
-\<workflowInstanceQueries >  
+\<workflowInstanceQueries>  
 \<workflowInstanceQuery >  
 \<状態 >  
   
@@ -55,7 +43,7 @@ ms.lasthandoff: 12/22/2017
   
 |要素|説明|  
 |-------------|-----------------|  
-|[\<workflowInstanceQuery >](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/workflowinstancequery.md)|開始したイベントや完了したイベントなど、ワークフロー インスタンスのライフサイクルの変化を追跡するクエリ。|  
+|[\<workflowInstanceQuery>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/workflowinstancequery.md)|開始したイベントや完了したイベントなど、ワークフロー インスタンスのライフサイクルの変化を追跡するクエリ。|  
   
 ## <a name="remarks"></a>コメント  
  返されたレコードは、このコレクションの状態でフィルター処理されます。  
@@ -91,7 +79,7 @@ ms.lasthandoff: 12/22/2017
 </workflowInstanceQueries>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Activities.Tracking.Configuration.WorkflowInstanceQueryElement?displayProperty=nameWithType>       
  <xref:System.ServiceModel.Activities.Tracking.Configuration.StateElementCollection?displayProperty=nameWithType>       
  <xref:System.Activities.Tracking.WorkflowInstanceQuery?displayProperty=nameWithType>       

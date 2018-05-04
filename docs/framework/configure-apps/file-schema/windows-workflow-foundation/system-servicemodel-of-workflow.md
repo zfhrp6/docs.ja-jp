@@ -1,23 +1,13 @@
 ---
-title: "ワークフローの &lt;system.serviceModel&gt;"
-ms.custom: 
+title: ワークフローの &lt;system.serviceModel&gt;
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
 ms.topic: reference
 ms.assetid: 6a8eb2bf-f925-40e1-ba5c-a49b1d3a3ac6
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 54f8ae10491ebeed683a2ec289e60b9a90afd43b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 62047d68d559a34ead290cf18f77d032841210b2
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltsystemservicemodelgt-of-workflow"></a>ワークフローの &lt;system.serviceModel&gt;
 この構成セクションには、すべてのワークフロー構成要素が含まれます。  
@@ -110,8 +100,8 @@ ms.lasthandoff: 12/22/2017
   
 |要素|説明|  
 |-------------|-----------------|  
-|[\<ビヘイビアー >](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/behaviors-of-workflow.md)|このセクションを定義、 **serviceBehaviors**コレクション。  各コレクション内の要素は、サービスによって使用されるそれぞれの動作要素を定義します。 各動作要素は、独自のによって識別される**名前**属性。|  
-|[\<追跡 >](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/tracking.md)|ワークフロー サービスの追跡設定を定義する構成セクションを表します。<br /><br /> ワークフロー追跡とその構成の詳細については、次を参照してください。[ワークフロー追跡とトレース](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)と[ワークフローの追跡を構成する](../../../../../docs/framework/windows-workflow-foundation/configuring-tracking-for-a-workflow.md)です。|  
+|[\<behaviors>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/behaviors-of-workflow.md)|このセクションを定義、 **serviceBehaviors**コレクション。  各コレクション内の要素は、サービスによって使用されるそれぞれの動作要素を定義します。 各動作要素は、独自のによって識別される**名前**属性。|  
+|[\<tracking>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/tracking.md)|ワークフロー サービスの追跡設定を定義する構成セクションを表します。<br /><br /> ワークフロー追跡とその構成の詳細については、次を参照してください。[ワークフロー追跡とトレース](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)と[ワークフローの追跡を構成する](../../../../../docs/framework/windows-workflow-foundation/configuring-tracking-for-a-workflow.md)です。|  
   
 ### <a name="parent-elements"></a>親要素  
   

@@ -1,33 +1,21 @@
 ---
-title: "&lt;webHttpBinding&gt; の &lt;transport&gt;"
-ms.custom: 
+title: '&lt;webHttpBinding&gt; の &lt;transport&gt;'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: f150fb19-7de1-44af-81f4-86cad881cd05
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 385831b820de77006dffb6206c34baa8620ca5da
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 17468bc2354dc2865f10384e918ffb821a28f059
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="lttransportgt-of-ltwebhttpbindinggt"></a>&lt;webHttpBinding&gt; の &lt;transport&gt;
 HTTP 要求を受信するように構成されたサービス エンドポイントのトランスポート レベルのセキュリティ設定を定義します。  
   
- \<system.ServiceModel>  
+ \<system.ServiceModel >  
 \<bindings>  
 \<webHttpBinding>  
 \<binding>  
-\<security>  
+\<セキュリティ >  
 \<transport>  
   
 ## <a name="syntax"></a>構文  
@@ -95,7 +83,7 @@ HTTP 要求を受信するように構成されたサービス エンドポイ�
 |-------------|-----------------|  
 |[\<security>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-webhttpbinding.md)|セキュリティ機能を表す、 [ \<wsHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)要素。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.HttpTransportSecurity>  
  <xref:System.ServiceModel.Configuration.WebHttpSecurityElement.Transport%2A>  
  <xref:System.ServiceModel.WebHttpSecurity.Transport%2A>  

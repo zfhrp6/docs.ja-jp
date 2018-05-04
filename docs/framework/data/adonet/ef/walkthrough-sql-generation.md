@@ -1,24 +1,12 @@
 ---
-title: "チュートリアル: SQL 生成"
-ms.custom: 
+title: 'チュートリアル: SQL 生成'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 16c38aaa-9927-4f3c-ab0f-81636cce57a3
-caps.latest.revision: "3"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 272d0b8bc58094737d157abfff9f3f026a0f5953
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: ab08b404dc60483a39e5c6ae56d82b63932c3f3e
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="walkthrough-sql-generation"></a>チュートリアル: SQL 生成
 このトピックでの SQL 生成の実行方法について説明します、[サンプル プロバイダー](http://go.microsoft.com/fwlink/?LinkId=180616)です。 次の Entity SQL クエリでは、サンプル プロバイダーに含まれているモデルを使用します。  
@@ -135,7 +123,7 @@ LEFT OUTER JOIN [dbo].[InternationalOrders] AS [Extent5] ON [Extent4].[OrderID] 
   
  右辺の入力は、左辺の入力と同じように処理されます。 右辺の入力にアクセスした後の状態を、次の図に示します。  
   
- ![Diagram](../../../../../docs/framework/data/adonet/ef/media/cd2afa99-7256-4c63-aaa9-c2d13f18a3d8.gif "cd2afa99-7256-4c63-aaa9-c2d13f18a3d8")  
+ ![ダイアグラム](../../../../../docs/framework/data/adonet/ef/media/cd2afa99-7256-4c63-aaa9-c2d13f18a3d8.gif "cd2afa99-7256-4c63-aaa9-c2d13f18a3d8")  
   
  次に、"false" が IsParentAJoin スタックにプッシュされ、結合条件である Var(Extent1).CategoryID == Var(Extent2).CategoryID が処理されます。 Var(Extenent1) は、シンボル テーブルの検索後、<symbol_Extent1> に解決されます。 インスタンスが Var(Extent1) を処理した結果の単純なシンボルに解決します。CategoryID、と共に SqlBuilder \<symbol1 > です"。CategoryID"が返されます。 同様に比較の右辺が処理され、結合条件へのアクセス結果が SelectStatement1 の FROM 句に追加され、値 "false" が IsParentAJoin スタックからポップされます。  
   
@@ -210,5 +198,5 @@ FROM: "[dbo].[Orders]", " AS ", <symbol_Extent4>,
   
  2 番目のフェーズの最後に、最終的な SQL ステートメントが生成されます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [サンプル プロバイダーでの SQL 生成](../../../../../docs/framework/data/adonet/ef/sql-generation-in-the-sample-provider.md)

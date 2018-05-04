@@ -1,13 +1,6 @@
 ---
-title: "&lt;プローブ&gt;要素"
-ms.custom: 
+title: '&lt;プローブ&gt;要素'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/runtime/assemblyBinding/probing
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#probing
@@ -16,23 +9,20 @@ helpviewer_keywords:
 - container tags, <probing> element
 - probing element
 ms.assetid: 09c80fc9-1ba5-4192-89f7-3a79b2e4b024
-caps.latest.revision: "13"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e846cb1386dc64161d91ab50b6a04e5560e9c6da
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8cab16e83466b5954bfebac07dd79c9a8b5e4594
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltprobinggt-element"></a>&lt;プローブ&gt;要素
 アプリケーション ベース、共通言語ランタイム アセンブリを読み込むときに検索するサブディレクトリを指定します。  
   
  \<configuration>  
 \<ランタイム >  
-\<assemblyBinding >  
+\<assemblyBinding>  
 \<probing >  
   
 ## <a name="syntax"></a>構文  
@@ -74,7 +64,7 @@ ms.lasthandoff: 12/22/2017
 </configuration>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ランタイム設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
  [構成ファイル スキーマ](../../../../../docs/framework/configure-apps/file-schema/index.md)  
  [アセンブリの場所の指定](../../../../../docs/framework/configure-apps/specify-assembly-location.md)  

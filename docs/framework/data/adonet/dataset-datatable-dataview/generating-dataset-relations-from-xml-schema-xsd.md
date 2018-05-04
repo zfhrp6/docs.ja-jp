@@ -1,24 +1,12 @@
 ---
-title: "XML スキーマ (XSD) からの DataSet リレーションの生成"
-ms.custom: 
+title: XML スキーマ (XSD) からの DataSet リレーションの生成
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 1c9a1413-c0d2-4447-88ba-9a2b0cbc0aa8
-caps.latest.revision: "4"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 4634e54c620fdd206582af94b825210331d11c14
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: fdf22c311ef7b4267f4a4da8566e4ea59504b103
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="generating-dataset-relations-from-xml-schema-xsd"></a>XML スキーマ (XSD) からの DataSet リレーションの生成
 <xref:System.Data.DataSet> では、親子のリレーションを作成することにより、2 つ以上の列間の関連付けを行います。 3 つの方法を表す、**データセット**XML スキーマ定義言語 (XSD) スキーマ内の関係。  
@@ -44,7 +32,7 @@ ms.lasthandoff: 01/17/2018
 </xs:element>  
 ```  
   
- XML スキーマの割り当て処理にテーブルが作成、**データセット**スキーマで入れ子になった複合型に対応します。 親として使用されるその他の列も作成**-**生成されたテーブルの子列です。 これらの親を**-**子列は主キー/外部キー制約を指定することと同じではない、リレーションシップを指定します。  
+ XML スキーマの割り当て処理にテーブルが作成、**データセット**スキーマで入れ子になった複合型に対応します。 親として使用されるその他の列も作成**-** 生成されたテーブルの子列です。 これらの親を**-** 子列は主キー/外部キー制約を指定することと同じではない、リレーションシップを指定します。  
   
 ## <a name="msdatarelationship-annotation"></a>msdata:Relationship 注釈  
  **Msdata:Relationship**注釈では、入れ子になっていない、スキーマ内の要素間の親子関係を明示的に指定することができます。 次の例の構造を示しています、**リレーションシップ**要素。  
@@ -108,5 +96,5 @@ msdata:childkey="" />
  [XML スキーマ (XSD) 制約の DataSet 制約への割り当て](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/mapping-xml-schema-xsd-constraints-to-dataset-constraints.md)  
  一意制約と外部キー制約の作成に使用される XML スキーマの要素について説明します、**データセット**です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

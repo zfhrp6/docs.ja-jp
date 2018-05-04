@@ -1,13 +1,6 @@
 ---
-title: "&lt;system.diagnostics&gt;要素"
-ms.custom: 
+title: '&lt;system.diagnostics&gt;要素'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#system.diagnostics
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics
@@ -15,16 +8,14 @@ helpviewer_keywords:
 - <system.diagnostics> element
 - system.diagnostics element
 ms.assetid: 3f348f42-fa72-4ff2-aa1c-bb9eecad4bb2
-caps.latest.revision: "17"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: e76f5ef38e29a1afc9f438abb37239d109876cc5
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 090c296ba84043445364b350c8b74587c35b5940
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltsystemdiagnosticsgt-element"></a>&lt;system.diagnostics&gt;要素
 メッセージを収集、格納、およびルーティングするトレース リスナーとトレース スイッチを設定するレベルを指定します。  
@@ -63,7 +54,7 @@ ms.lasthandoff: 12/22/2017
 |`configuration`|共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。|  
   
 ## <a name="example"></a>例  
- 次の例は、トレース スイッチと内部のトレース リスナーを埋め込む方法を示します、  **\<system.diagnostics >**要素。 `General`にトレース スイッチが設定されている、<xref:System.Diagnostics.TraceLevel>レベル。 トレース リスナー`myListener`という名前のファイルを作成`MyListener.log`し、ファイルに出力を書き込みます。  
+ 次の例は、トレース スイッチと内部のトレース リスナーを埋め込む方法を示します、  **\<system.diagnostics >** 要素。 `General`にトレース スイッチが設定されている、<xref:System.Diagnostics.TraceLevel>レベル。 トレース リスナー`myListener`という名前のファイルを作成`MyListener.log`し、ファイルに出力を書き込みます。  
   
 > [!NOTE]
 >  .NET Framework バージョン 2.0 では、スイッチの値を指定するためにテキストを使用できます。 たとえば、指定することができます`true`の<xref:System.Diagnostics.BooleanSwitch>など列挙値を表すテキストを使用するか`Error`の<xref:System.Diagnostics.TraceSwitch>です。 `<add name="myTraceSwitch" value="Error" />` という行は、`<add name="myTraceSwitch" value="1" />` と同じです。  
@@ -83,7 +74,7 @@ ms.lasthandoff: 12/22/2017
 </configuration>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Diagnostics.Trace>  
  <xref:System.Diagnostics.Debug>  
  [トレースおよびデバッグ設定のスキーマ](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)

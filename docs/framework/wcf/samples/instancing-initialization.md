@@ -1,24 +1,26 @@
 ---
-title: "初期化のインスタンス化"
-ms.custom: 
+title: 初期化のインスタンス化
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 154d049f-2140-4696-b494-c7e53f6775ef
-caps.latest.revision: "31"
+caps.latest.revision: 31
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 0bc034028f8dacbac638c27e6fb8f48603cdcf2c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.workload:
+- dotnet
+ms.openlocfilehash: f32b1c7159185bb9d4ccd99c916f00c552502748
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="instancing-initialization"></a>初期化のインスタンス化
 このサンプルを拡張、[プーリング](../../../../docs/framework/wcf/samples/pooling.md)インターフェイスを定義することでサンプル`IObjectControl`でのアクティブ化と非アクティブ化するオブジェクトの初期化をカスタマイズします。 クライアントは、オブジェクトをプールに返すメソッドや、プールに返さないメソッドを呼び出します。  
@@ -27,7 +29,7 @@ ms.lasthandoff: 12/22/2017
 >  このサンプルのセットアップ手順とビルド手順については、このトピックの最後を参照してください。  
   
 ## <a name="extensibility-points"></a>拡張ポイント  
- [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] 拡張機能作成の最初の手順は、使用する機能拡張ポイントの決定です。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]、用語*EndpointDispatcher*実行時コンポーネントが受信メッセージをユーザーのサービス上のメソッド呼び出しに変換するためにそのメソッドから戻り値を変換したりするには、送信メッセージ。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスは、各エンドポイントの EndpointDispatcher を作成します。  
+ Windows Communication Foundation (WCF) 拡張機能の作成の最初の手順では、使用する機能拡張ポイントを決定します。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]、用語*EndpointDispatcher*実行時コンポーネントが受信メッセージをユーザーのサービス上のメソッド呼び出しに変換するためにそのメソッドから戻り値を変換したりするには、送信メッセージ。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスは、各エンドポイントの EndpointDispatcher を作成します。  
   
  EndpointDispatcher は <xref:System.ServiceModel.Dispatcher.EndpointDispatcher> クラスを使用して、(サービスによって送受信されるすべてのメッセージの) エンドポイント スコープ拡張を提供します。 このクラスにより、EndpointDispatcher の動作を制御するさまざまなプロパティをカスタマイズできます。 このサンプルでは、サービス クラスのインスタンスを提供するオブジェクトをポイントする <xref:System.ServiceModel.Dispatcher.DispatchRuntime.InstanceProvider%2A> プロパティに焦点を当てています。  
   
@@ -272,8 +274,8 @@ else if (pool.Count < minPoolSize)
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
+>  このディレクトリが存在しない場合に、 [Windows Communication Foundation (WCF) および .NET Framework 4 向けの Windows Workflow Foundation (WF) サンプル](http://go.microsoft.com/fwlink/?LinkId=150780)すべて Windows Communication Foundation (WCF) をダウンロードして[!INCLUDE[wf1](../../../../includes/wf1-md.md)]サンプルです。 このサンプルは、次のディレクトリに格納されます。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Instancing\Initialization`  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目

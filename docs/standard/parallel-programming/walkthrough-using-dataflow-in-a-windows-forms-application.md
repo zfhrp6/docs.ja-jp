@@ -1,5 +1,5 @@
 ---
-title: "チュートリアル: Windows フォーム アプリケーションでのデータフローの使用"
+title: 'チュートリアル: Windows フォーム アプリケーションでのデータフローの使用'
 ms.date: 03/30/2017
 ms.prod: .net
 ms.technology: dotnet-standard
@@ -15,11 +15,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 8c0d44ca7933626c95603ccc81102889ba4c23cb
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: f28e103d6241d954dd6ac4f7e9c7fcb20a06ea0b
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="walkthrough-using-dataflow-in-a-windows-forms-application"></a>チュートリアル: Windows フォーム アプリケーションでのデータフローの使用
 このドキュメントでは、Windows フォーム アプリケーションでイメージ処理を実行する、データフロー ブロックのネットワークを作成する方法を説明します。  
@@ -48,9 +48,9 @@ ms.lasthandoff: 01/19/2018
   
 #### <a name="to-create-the-windows-forms-application"></a>Windows フォーム アプリケーションを作成するには  
   
-1.  [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] で、[!INCLUDE[csprcs](../../../includes/csprcs-md.md)] または Visual Basic **Windows フォーム アプリケーション** プロジェクトを作成します。 このドキュメントでは、プロジェクトの名前を `CompositeImages` とします。  
+1.  [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] で、Visual C# または Visual Basic **Windows フォーム アプリケーション** プロジェクトを作成します。 このドキュメントでは、プロジェクトの名前を `CompositeImages` とします。  
   
-2.  メイン フォーム Form1.cs ([!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)] の場合は Form1.vb) のフォーム デザイナーで、<xref:System.Windows.Forms.ToolStrip> コントロールを追加します。  
+2.  メイン フォーム Form1.cs (Visual Basic の Form1.vb) のフォーム デザイナーで、<xref:System.Windows.Forms.ToolStrip> コントロールを追加します。  
   
 3.  <xref:System.Windows.Forms.ToolStrip> コントロールに <xref:System.Windows.Forms.ToolStripButton> コントロールを追加します。 <xref:System.Windows.Forms.ToolStripItem.DisplayStyle%2A> プロパティを <xref:System.Windows.Forms.ToolStripItemDisplayStyle.Text> に設定し、<xref:System.Windows.Forms.ToolStripItem.Text%2A> プロパティを「**フォルダーの選択**」に設定します。  
   
@@ -66,7 +66,7 @@ ms.lasthandoff: 01/19/2018
   
 1.  System.Threading.Tasks.Dataflow.dll への参照をプロジェクトに追加します。  
   
-2.  Form1.cs ([!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)] では Form1.vb) に次の `using` ([!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)] では `Using`) ステートメントが含まれることを確認します。  
+2.  Form1.cs (Visual Basic の Form1.vb) に次の `using` (Visual Basic では `Using`) ステートメントが含まれていることを確認します。  
   
      [!code-csharp[TPLDataflow_CompositeImages#1](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_compositeimages/cs/compositeimages/form1.cs#1)]  
   
@@ -87,7 +87,7 @@ ms.lasthandoff: 01/19/2018
      [!code-csharp[TPLDataflow_CompositeImages#5](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_compositeimages/cs/compositeimages/form1.cs#5)]  
   
     > [!NOTE]
-    >  `CreateCompositeBitmap` メソッドの C# バージョンでは、ポインターを使って、<xref:System.Drawing.Bitmap?displayProperty=nameWithType> オブジェクトの効率的な処理を実現します。 したがって、[unsafe](~/docs/csharp/language-reference/keywords/unsafe.md) キーワードを使用するために、プロジェクト内の **[アンセーフ コードの許可]** オプションを有効にしてください。 [!INCLUDE[csprcs](../../../includes/csprcs-md.md)] プロジェクトでアンセーフ コードを有効にする方法については、「[[ビルド] ページ (プロジェクト デザイナー) (C#)](/visualstudio/ide/reference/build-page-project-designer-csharp)」を参照してください。  
+    >  `CreateCompositeBitmap` メソッドの C# バージョンでは、ポインターを使って、<xref:System.Drawing.Bitmap?displayProperty=nameWithType> オブジェクトの効率的な処理を実現します。 したがって、[unsafe](~/docs/csharp/language-reference/keywords/unsafe.md) キーワードを使用するために、プロジェクト内の **[アンセーフ コードの許可]** オプションを有効にしてください。 Visual C# プロジェクトでアンセーフ コードを有効にする方法については、「[[ビルド] ページ (プロジェクト デザイナー) (C#)](/visualstudio/ide/reference/build-page-project-designer-csharp)」を参照してください。  
   
  ネットワークのメンバーを次の表に示します。  
   
@@ -98,7 +98,7 @@ ms.lasthandoff: 01/19/2018
 |`displayCompositeBitmap`|<xref:System.Threading.Tasks.Dataflow.ActionBlock%601>|フォーム上に複合ビットマップを表示します。|  
 |`operationCancelled`|<xref:System.Threading.Tasks.Dataflow.ActionBlock%601>|操作が取り消されたことを示すためにイメージを表示し、ユーザーが別のフォルダーを選択できるようにします。|  
   
- データフロー ブロックを接続してネットワークを形成するため、この例では <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601.LinkTo%2A> メソッドを使います。 <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601.LinkTo%2A> メソッドには、ターゲット ブロックがメッセージを受け入れるか拒否するかを決定する <xref:System.Predicate%601> オブジェクトを受け取るオーバーロード バージョンが含まれます。 このフィルターのしくみによって、メッセージ ブロックは特定の値のみを受信できます。 この例では、ネットワークが、2 つに分岐します。 メイン分岐は、ディスクからイメージを読み込み、複合イメージを作成し、フォームにそのイメージを表示します。 もう 1 つの分岐では、現在の操作がキャンセルされます。 <xref:System.Predicate%601> オブジェクトは、メイン分岐に沿ったデータフロー ブロックで、特定のメッセージを拒否することによって、もう 1 つの分岐に切り替えることができます。 たとえば、ユーザーが操作をキャンセルした場合、データフロー ブロック `createCompositeBitmap` で、`null`([!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)] では `Nothing`) が出力として生成されます。 データフロー ブロック `displayCompositeBitmap` では、`null` 入力値が拒否されるため、メッセージが `operationCancelled` に提供されます。 データフロー ブロック `operationCancelled` はすべてのメッセージを受け入れるため、操作が取り消されたことを示すためにイメージを表示します。  
+ データフロー ブロックを接続してネットワークを形成するため、この例では <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601.LinkTo%2A> メソッドを使います。 <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601.LinkTo%2A> メソッドには、ターゲット ブロックがメッセージを受け入れるか拒否するかを決定する <xref:System.Predicate%601> オブジェクトを受け取るオーバーロード バージョンが含まれます。 このフィルターのしくみによって、メッセージ ブロックは特定の値のみを受信できます。 この例では、ネットワークが、2 つに分岐します。 メイン分岐は、ディスクからイメージを読み込み、複合イメージを作成し、フォームにそのイメージを表示します。 もう 1 つの分岐では、現在の操作がキャンセルされます。 <xref:System.Predicate%601> オブジェクトは、メイン分岐に沿ったデータフロー ブロックで、特定のメッセージを拒否することによって、もう 1 つの分岐に切り替えることができます。 たとえば、ユーザーが操作をキャンセルした場合、データフロー ブロック `createCompositeBitmap` で、`null` (Visual Basic では `Nothing`) が出力として生成されます。 データフロー ブロック `displayCompositeBitmap` では、`null` 入力値が拒否されるため、メッセージが `operationCancelled` に提供されます。 データフロー ブロック `operationCancelled` はすべてのメッセージを受け入れるため、操作が取り消されたことを示すためにイメージを表示します。  
   
  次の図は、イメージ処理ネットワークを示しています。  
   

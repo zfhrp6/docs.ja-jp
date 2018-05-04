@@ -1,26 +1,17 @@
 ---
-title: "Windows フォームの構成要素を追加します。"
-ms.custom: 
+title: Windows フォームの構成要素を追加します。
 ms.date: 04/07/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - Windows Forms Add configuration element
 - configuring Windows Forms applications
 ms.assetid: 3e3e04de-99d1-4658-b716-44cb669d9589
-caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 331b2238ae87776938422484d34bb68b4653a56e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 529dbccd5ddb4dd1f1456fb9a6043f3c5f7b378d
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="windows-forms-add-configuration-element"></a>Windows フォームの構成要素を追加します。
 
@@ -45,19 +36,19 @@ ms.lasthandoff: 12/22/2017
 | `key`     | 必須の属性です。 特定の Windows フォームのカスタマイズ可能な機能に対応する定義済みのキー名。 |
 | `value`   | 必須の属性です。 代入する値`key`です。 |
 
-### <a name="key-attribute-names-and-associated-values"></a>`key`属性名と関連付けられている値
+### <a name="key-attribute-names-and-associated-values"></a>`key` 属性名と関連付けられている値
 
 | `key` 名 | 値 | 説明 |
 | ---------- | ------ | ----------- |
-| "AnchorLayout.DisableSinglePassControlScaling" | "true"&#124;false" | 単一のパスで固定されたコントロールをスケーリングするかどうかを示します。 1 つを無効にするには"true"を渡すスケーリングです。それ以外の場合は false です。 「1 つは、スケーリングを渡す」のセクションを参照して、[解説](#Remarks)詳細についてはします。 |
+| "AnchorLayout.DisableSinglePassControlScaling" | "true"&#124;"false" | 単一のパスで固定されたコントロールをスケーリングするかどうかを示します。 1 つを無効にするには"true"を渡すスケーリングです。それ以外の場合は false です。 「1 つは、スケーリングを渡す」のセクションを参照して、[解説](#Remarks)詳細についてはします。 |
 | "DpiAwareness" | "PerMonitorV2"&#124;"false" | アプリケーションが DPI 対応かどうかを示します。 "PerMonitorV2"Dpi 認識; をサポートするためのキーを設定します。それ以外の場合、"false"に設定します。 DPI 認識は、オプトイン機能です。Windows フォームの高 DPI サポートを利用するには、"PerMonitorV2"には、その値を設定してください。 参照してください、[解説](#remarks)詳細についてはします。 |
-| "CheckedListBox.DisableHighDpiImprovements" | "true"&#124;false" | 示すかどうか、 <xref:System.Windows.Forms.CheckedListBox> .NET Framework 4.7 で導入された機能強化が対応するスケーリングとレイアウトの制御を活用します。 "true"caling とレイアウトの改善; から除外するにはそれ以外の場合、"false"です。 |
-| "DataGridView.DisableHighDpiImprovements" | "true"&#124;false" | 示すかどうか、 <xref:System.Windows.Forms.DataGridView> .NET Framework 4.7 で導入された機能強化が対応するスケーリングとレイアウトを制御します。 "true"DPI 認識; から除外するには"false"それ以外の場合。 |
-| "DisableDpiChangedMessageHandling" | "true"&#124;false" | DPI スケール変更に関連するメッセージを受信しないことを"true""false"それ以外の場合。 参照してください、[解説](#remarks)詳細についてはします。 |
-| "EnableWindowsFormsHighDpiAutoResizing" | "true"&#124;false" | Windows フォーム アプリケーションの DPI スケーリングの変更により自動的にサイズを変更するかどうかを示します。 "true"を自動サイズ変更を有効にするにはそれ以外の場合は false です。 |
-| "Form.DisableSinglePassControlScaling" | "true"&#124;false" | 示すかどうか、<xref:System.Windows.Forms.Form>単一のパスでのスケールが設定されます。 "true"を無効にするシングル パス スケーリングです。それ以外の場合は false です。 「1 つは、スケーリングを渡す」のセクションを参照して、[解説](#Remarks)詳細についてはします。 |
-| "MonthCalendar.DisableSinglePassControlScaling" | "true"&#124;false" | 示すかどうか、<xref:System.Windows.Forms.MonthCalendar>単一のパスでコントロールのスケールを設定します。 "true"を無効にするシングル パス スケーリングです。それ以外の場合は false です。 「1 つは、スケーリングを渡す」のセクションを参照して、[解説](#Remarks)詳細についてはします。 |
-| "Toolstrip.DisableHighDpiImprovements" | "true"&#124;false" | 示すかどうか、 <xref:System.Windows.Forms.ToolStrip> .NET Framework 4.7 で導入された機能強化が対応するスケーリングとレイアウトの制御を活用します。 "true"DPI 認識; から除外するには"false"それ以外の場合。 |
+| "CheckedListBox.DisableHighDpiImprovements" | "true"&#124;"false" | 示すかどうか、 <xref:System.Windows.Forms.CheckedListBox> .NET Framework 4.7 で導入された機能強化が対応するスケーリングとレイアウトの制御を活用します。 "true"caling とレイアウトの改善; から除外するにはそれ以外の場合、"false"です。 |
+| "DataGridView.DisableHighDpiImprovements" | "true"&#124;"false" | 示すかどうか、 <xref:System.Windows.Forms.DataGridView> .NET Framework 4.7 で導入された機能強化が対応するスケーリングとレイアウトを制御します。 "true"DPI 認識; から除外するには"false"それ以外の場合。 |
+| "DisableDpiChangedMessageHandling" | "true"&#124;"false" | DPI スケール変更に関連するメッセージを受信しないことを"true""false"それ以外の場合。 参照してください、[解説](#remarks)詳細についてはします。 |
+| "EnableWindowsFormsHighDpiAutoResizing" | "true"&#124;"false" | Windows フォーム アプリケーションの DPI スケーリングの変更により自動的にサイズを変更するかどうかを示します。 "true"を自動サイズ変更を有効にするにはそれ以外の場合は false です。 |
+| "Form.DisableSinglePassControlScaling" | "true"&#124;"false" | 示すかどうか、<xref:System.Windows.Forms.Form>単一のパスでのスケールが設定されます。 "true"を無効にするシングル パス スケーリングです。それ以外の場合は false です。 「1 つは、スケーリングを渡す」のセクションを参照して、[解説](#Remarks)詳細についてはします。 |
+| "MonthCalendar.DisableSinglePassControlScaling" | "true"&#124;"false" | 示すかどうか、<xref:System.Windows.Forms.MonthCalendar>単一のパスでコントロールのスケールを設定します。 "true"を無効にするシングル パス スケーリングです。それ以外の場合は false です。 「1 つは、スケーリングを渡す」のセクションを参照して、[解説](#Remarks)詳細についてはします。 |
+| "Toolstrip.DisableHighDpiImprovements" | "true"&#124;"false" | 示すかどうか、 <xref:System.Windows.Forms.ToolStrip> .NET Framework 4.7 で導入された機能強化が対応するスケーリングとレイアウトの制御を活用します。 "true"DPI 認識; から除外するには"false"それ以外の場合。 |
 
 ### <a name="child-elements"></a>子要素
 
@@ -69,7 +60,7 @@ ms.lasthandoff: 12/22/2017
 | ------- | ----------- |
 | [`<System.Windows.Forms.ApplicationConfigurationSection>`](../../../../../docs/framework/configure-apps/file-schema/winforms/index.md) | 新しい Windows フォーム アプリケーションの機能のサポートを構成します。 |
 
-## <a name="a-nameremarks--remarks"></a><a name="remarks" />「解説」
+## <a name="a-nameremarks--remarks"></a><a name="remarks" /> 「解説」
 
 .NET Framework 4.7 を使用すれば、.NET Framework の最近のリリースで追加された機能が利用できる Windows フォームのアプリケーションを、`<System.Windows.Forms.ApplicationConfigurationSection>` 要素で構成できます。 
 

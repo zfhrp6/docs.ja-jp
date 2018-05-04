@@ -1,30 +1,18 @@
 ---
-title: "DataView によるフィルター処理 (LINQ to DataSet)"
-ms.custom: 
+title: DataView によるフィルター処理 (LINQ to DataSet)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 5632d74a-ff53-4ea7-9fe7-4a148eeb1c68
-caps.latest.revision: "2"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 2f1eb878bcc38d8bbeed42638cc5ccda230f60f1
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: b457eb925f636656455ef8f3f02f9d2a78558325
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="filtering-with-dataview-linq-to-dataset"></a>DataView によるフィルター処理 (LINQ to DataSet)
-特定の条件に基づいてデータをフィルター処理し、UI コントロールを介してそのデータをクライアントに提供する機能は、データ バインディングの重要な特徴です。 <xref:System.Data.DataView> は、データにフィルターを適用し、特定のフィルター条件を満たすデータ行のサブセットを返す方法をいくつか提供します。 フィルタ リング機能だけでなく、文字列ベース<xref:System.Data.DataView>を使用する機能も提供[!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)]フィルター処理条件式。 [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)]式を使用する、文字列ベースのフィルター処理よりもはるかに複雑で強力なのフィルター処理します。  
+特定の条件に基づいてデータをフィルター処理し、UI コントロールを介してそのデータをクライアントに提供する機能は、データ バインディングの重要な特徴です。 <xref:System.Data.DataView> は、データにフィルターを適用し、特定のフィルター条件を満たすデータ行のサブセットを返す方法をいくつか提供します。 フィルタ リング機能だけでなく、文字列ベース<xref:System.Data.DataView>を使用する機能も提供[!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)]フィルター処理条件式。 [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] 式を使用する、文字列ベースのフィルター処理よりもはるかに複雑で強力なのフィルター処理します。  
   
  <xref:System.Data.DataView> を使用してデータをフィルター処理する方法は 2 つあります。  
   
@@ -103,6 +91,6 @@ ms.lasthandoff: 01/17/2018
  [!code-csharp[DP DataView Samples#LDVClearRowFilter](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP DataView Samples/CS/Form1.cs#ldvclearrowfilter)]
  [!code-vb[DP DataView Samples#LDVClearRowFilter](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP DataView Samples/VB/Form1.vb#ldvclearrowfilter)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [データ バインディングと LINQ to DataSet](../../../../docs/framework/data/adonet/data-binding-and-linq-to-dataset.md)  
  [DataView による並べ替え](../../../../docs/framework/data/adonet/sorting-with-dataview-linq-to-dataset.md)

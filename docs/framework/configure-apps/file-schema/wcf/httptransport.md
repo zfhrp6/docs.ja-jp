@@ -1,26 +1,12 @@
 ---
 title: '&lt;httpTransport&gt;'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 8b30c065-b32a-4fa3-8eb4-5537a9c6b897
-caps.latest.revision: ''
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 50cbf6521870a54f4f87c3eeb12030d5d7f2f6bb
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
-ms.translationtype: MT
+ms.openlocfilehash: cd3a17eee9d4eebbefa880e14aadbc4715a18ac1
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="lthttptransportgt"></a>&lt;httpTransport&gt;
 カスタム バインドの SOAP メッセージを送信する HTTP トランスポートを指定します。  
@@ -59,7 +45,7 @@ IntegratedWindowsAuthentication: Specifies Windows authentication"
 |---------------|-----------------|  
 |allowCookies|クライアントがクッキーを受け入れて、それらを今後の要求に反映させるかどうかを指定するブール値です。 既定値は、`false` です。<br /><br /> この属性はクッキーを使用する ASMX Web サービスと対話する場合に使用できます。 この方法で、サーバーから返されるクッキーを、それ以降のサービスに対するすべてのクライアント要求に自動的にコピーできます。|  
 |authenticationScheme|HTTP リスナーにより処理されているクライアント要求の認証に使用するプロトコルを指定します。 以下の値が有効です。<br /><br /> -Digest: ダイジェスト認証を指定します。<br />-Negotiate: クライアントとネゴシエートし認証方式を決定します。 クライアントとサーバーの両方が Kerberos をサポートする場合は、この方式が使用されます。それ以外の場合は NTLM が使用されます。<br />-Ntlm: NTLM 認証を指定します。<br />-基本: は、基本認証を指定します。<br />-Anonymous: 匿名認証を指定します。<br /><br /> 既定は Anonymous です。 この属性は <xref:System.Net.AuthenticationSchemes> 型です。 この属性は 1 回だけ設定できます。|  
-|bypassProxyOnLocal|ローカル アドレスでプロキシ サーバーをバイパスするかどうかを示すブール値。 既定値は、`false` です。<br /><br /> ローカル アドレスは、ローカル LAN またはイントラネット上にあるアドレスです。<br /><br /> [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] は、サービス アドレスが http://localhost で始まる場合は常にプロキシを無視します。<br /><br /> クライアントが同じマシン上のサービスと対話するときにプロキシを経由させる場合は、localhost ではなくホスト名を使用する必要があります。|  
+|bypassProxyOnLocal|ローカル アドレスでプロキシ サーバーをバイパスするかどうかを示すブール値。 既定値は、`false` です。<br /><br /> ローカル アドレスは、ローカル LAN またはイントラネット上にあるアドレスです。<br /><br /> Windows Communication Foundation (WCF) は、サービス アドレスが始まる場合常に、プロキシを無視http://localhostです。<br /><br /> クライアントが同じマシン上のサービスと対話するときにプロキシを経由させる場合は、localhost ではなくホスト名を使用する必要があります。|  
 |hostnameComparisonMode|URI の解析に使用する HTTP ホスト名比較モードを指定します。 有効な値は次のとおりです。<br /><br /> -StrongWildcard: (「+」)、指定されたスキーム、ポートと相対 URI のコンテキストですべてのホスト名に一致します。<br />厳密: ワイルドカードは使用できません。<br />-WeakWildcard: ("*") または厳密なワイルドカードのメカニズムにより、指定されたスキーム、ポートと対応していない明示的に相対の UIR のコンテキストですべての可能なホスト名と一致します。<br /><br /> 既定値は StrongWildcard です。 この属性は `System.ServiceModel.HostnameComparisonMode` 型です。|  
 |keepAliveEnabled|インターネット リソースへの永続的な接続を行うかどうかを示すブール値。|  
 |maxBufferSize|バッファーの最大サイズを指定する正の整数です。 既定値は 524288 です|  
@@ -80,7 +66,7 @@ IntegratedWindowsAuthentication: Specifies Windows authentication"
 |[\<binding>](../../../../../docs/framework/misc/binding.md)|カスタム バインドのすべてのバインド機能を定義します。|  
   
 ## <a name="remarks"></a>コメント  
- `httpTransport` 要素は、HTTP トランスポート プロトコルを実装するカスタム バインディングを作成する場合の開始点となります。 HTTP は、相互運用性のために使用される主要なトランスポートです。 [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] は、他の非 [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] Web サービス スタックとの相互運用性を保証するために、このトランスポートをサポートします。  
+ `httpTransport` 要素は、HTTP トランスポート プロトコルを実装するカスタム バインディングを作成する場合の開始点となります。 HTTP は、相互運用性のために使用される主要なトランスポートです。 このトランスポートは他の非と相互運用性を確認する Windows Communication Foundation (WCF) によってサポートされている[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)]Web サービス スタック。  
   
 ## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Configuration.HttpTransportElement>  

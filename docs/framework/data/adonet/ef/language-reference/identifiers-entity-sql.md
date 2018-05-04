@@ -1,27 +1,15 @@
 ---
-title: "識別子 (Entity SQL)"
-ms.custom: 
+title: 識別子 (Entity SQL)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: d58a5edd-7b5c-48e1-b5d7-a326ff426aa4
-caps.latest.revision: "2"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 18bfb654a6f116f87ae7eeb6059fe994b9084c19
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 55b9ac101c7849c5b348ba8e48c695c0fa328105
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="identifiers-entity-sql"></a>識別子 (Entity SQL)
-識別子はクエリ式の別名、変数参照、オブジェクトのプロパティ、関数などを表すために [!INCLUDE[esql](../../../../../../includes/esql-md.md)] で使用されます。 [!INCLUDE[esql](../../../../../../includes/esql-md.md)]識別子の 2 種類の説明: 単純な識別子および引用符で囲まれた識別子です。  
+識別子はクエリ式の別名、変数参照、オブジェクトのプロパティ、関数などを表すために [!INCLUDE[esql](../../../../../../includes/esql-md.md)] で使用されます。 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] 識別子の 2 種類の説明: 単純な識別子および引用符で囲まれた識別子です。  
   
 ## <a name="simple-identifiers"></a>単純な識別子  
  単純な識別子[!INCLUDE[esql](../../../../../../includes/esql-md.md)]英数字のシーケンスは、アンダー スコア文字とします。 識別子の最初の文字は英文字 (a ～ z または A ～ Z) にする必要があります。  
@@ -97,7 +85,7 @@ SELECT 1 AS X, 2 AS X …
 ```  
   
 ## <a name="scoping-rules"></a>スコープの規則  
- [!INCLUDE[esql](../../../../../../includes/esql-md.md)]特定の変数は、クエリ言語で表示を決定するスコープの規則を定義します。 一部の式やステートメントでは新しい名前が導入されます。 スコープの規則は、そのような名前をどこで使用でき、いつ (どこで) 同じ名前の新しい宣言によって前の名前を参照できなくなるのかが決まります。  
+ [!INCLUDE[esql](../../../../../../includes/esql-md.md)] 特定の変数は、クエリ言語で表示を決定するスコープの規則を定義します。 一部の式やステートメントでは新しい名前が導入されます。 スコープの規則は、そのような名前をどこで使用でき、いつ (どこで) 同じ名前の新しい宣言によって前の名前を参照できなくなるのかが決まります。  
   
  名前が定義されている場合、[!INCLUDE[esql](../../../../../../includes/esql-md.md)]クエリのスコープ内で定義すると言われます。 スコープはクエリの全領域をカバーします。 特定のスコープで定義されている名前は、そのスコープのすべての式や名前参照から参照できます。 スコープが始まる前や終わった後では、そのスコープで定義されている名前は参照できません。  
   
@@ -125,13 +113,13 @@ SELECT 1 AS X, 2 AS X …
 -   SELECT 式内の句が評価される順序によって、名前がスコープに導入される順序が決まります。 FROM 句が最初に評価され、WHERE 句、GROUP BY 句、HAVING 句、SELECT 句の順に続き、最後に ORDER BY 句が評価されます。  
   
 ### <a name="aggregate-handling"></a>集計の処理  
- [!INCLUDE[esql](../../../../../../includes/esql-md.md)]2 つの形式の集計をサポートしています。 コレクション ベースの集計とグループ ベースの集計です。 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] ではコレクションベースの集計を使用することをお勧めします。グループベースの集計は、SQL との互換性のためにサポートされています。  
+ [!INCLUDE[esql](../../../../../../includes/esql-md.md)] 2 つの形式の集計をサポートしています。 コレクション ベースの集計とグループ ベースの集計です。 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] ではコレクションベースの集計を使用することをお勧めします。グループベースの集計は、SQL との互換性のためにサポートされています。  
   
  集計を解決するときに[!INCLUDE[esql](../../../../../../includes/esql-md.md)]まずコレクション ベースの集計として処理ましょう。 失敗した場合、[!INCLUDE[esql](../../../../../../includes/esql-md.md)]入れ子集計への参照に集計の入力を変換し、次の例に示すようをこの新しい式を解決しようとします。  
   
  `AVG(t.c) becomes AVG(group..(t.c))`  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Entity SQL リファレンス](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)  
  [Entity SQL の概要](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-overview.md)  
  [入力文字セット](../../../../../../docs/framework/data/adonet/ef/language-reference/input-character-set-entity-sql.md)

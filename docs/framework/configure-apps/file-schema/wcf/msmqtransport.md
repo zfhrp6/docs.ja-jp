@@ -1,32 +1,20 @@
 ---
 title: '&lt;msmqTransport&gt;'
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 19d89f35-76ac-49dc-832b-e8bec2d5e33b
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 441ec2cd07d46d44f527da7799e9df6d3bec4408
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 203c6dce4f88433852a54c618718e280152db897
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltmsmqtransportgt"></a>&lt;msmqTransport&gt;
 チャネルがカスタム バインドに含まれているときに、MSMQ トランスポートでメッセージを転送するようにします。  
   
- \<system.serviceModel >  
-\<バインド >  
-\<customBinding >  
-\<バインド >  
+ \<system.serviceModel>  
+\<bindings>  
+\<customBinding>  
+\<binding>  
 \<msmqIntegration >  
   
 ## <a name="syntax"></a>構文  
@@ -90,14 +78,14 @@ ms.lasthandoff: 12/22/2017
   
 |要素|説明|  
 |-------------|-----------------|  
-|[\<バインド >](../../../../../docs/framework/misc/binding.md)|カスタム バインドのすべてのバインド機能を定義します。|  
+|[\<binding>](../../../../../docs/framework/misc/binding.md)|カスタム バインドのすべてのバインド機能を定義します。|  
   
 ## <a name="remarks"></a>コメント  
  `msmqTransport` 要素は、ユーザーがキューに置かれている通信チャネルのプロパティを設定できるようにします。 キューに置かれている通信チャネルは、そのトランスポートにメッセージ キューを使用します。  
   
  このバインディング要素は、メッセージ キューの標準バインディング (`netMsmqBinding`) で使用される既定のバインディング要素です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Configuration.MsmqTransportElement>  
  <xref:System.ServiceModel.Channels.MsmqTransportBindingElement>  
  <xref:System.ServiceModel.Channels.TransportBindingElement>  
@@ -108,4 +96,4 @@ ms.lasthandoff: 12/22/2017
  [バインディング](../../../../../docs/framework/wcf/bindings.md)  
  [バインディングの拡張](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
  [カスタム バインディング](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
- [\<customBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)
+ [\<customBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)

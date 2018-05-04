@@ -1,5 +1,5 @@
 ---
-title: "short (C# リファレンス)"
+title: short (C# リファレンス)
 ms.date: 03/14/2017
 ms.prod: .net
 ms.technology:
@@ -11,14 +11,14 @@ f1_keywords:
 helpviewer_keywords:
 - short keyword [C#]
 ms.assetid: 04c10688-e51a-4a87-bfec-83f7fb42ff11
-caps.latest.revision: 
+caps.latest.revision: 17
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 8ca3c5444c4fa7a49b7169be3e2a5b15d1a72207
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 6f73189891ecb52b81cfc1861a19194113ab2c32
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="short-c-reference"></a>short (C# リファレンス)
 
@@ -30,7 +30,7 @@ ms.lasthandoff: 11/21/2017
   
 ## <a name="literals"></a>リテラル  
 
-`short` 変数を宣言し、10 進リテラル、16 進リテラル、または (C# 7 以降) バイナリ リテラルを割り当てることによって初期化できます。  整数リテラルが `short` の範囲外にある場合 (つまり、<xref:System.Int16.MinValue?displayProperty=nameWithType> より小さいか、<xref:System.Int16.MaxValue?displayProperty=nameWithType> より大きい場合)、コンパイル エラーが発生します。 
+`short` 変数を宣言し、10 進リテラル、16 進リテラル、または (C# 7.0 以降) バイナリ リテラルを割り当てることによって初期化できます。  整数リテラルが `short` の範囲外にある場合 (つまり、<xref:System.Int16.MinValue?displayProperty=nameWithType> より小さいか、<xref:System.Int16.MaxValue?displayProperty=nameWithType> より大きい場合)、コンパイル エラーが発生します。 
 
 次の例では、整数 1,034 を 10 進リテラル、16 進リテラル、バイナリ リテラルで表したものが、[int](../../../csharp/language-reference/keywords/int.md) から `short` 値に暗黙的に変換されています。  
   
@@ -39,17 +39,17 @@ ms.lasthandoff: 11/21/2017
 > [!NOTE] 
 > 16 進リテラルを表すにはプレフィックス `0x` または `0X` を使い、バイナリ リテラルを表すにはプレフィックス `0b` または `0B` を使います。 10 進リテラルには、プレフィックスはありません。
 
-以降で c# 7、いくつかの機能が追加されて読みやすさを強化するためにします。 
- - C# 7.0 により、アンダー スコア文字の使用法`_`、桁区切り記号として。
- - により、c# 7.2`_`プレフィックスの後に、バイナリまたは 16 進数リテラルの桁区切り記号として使用します。 10 進数のリテラルはない、先頭にアンダー スコアを持つことができます。
+C# 7.0 以降では、読みやすさを強化するためにいくつかの機能が追加されています。 
+ - C# 7.0 では、桁区切り記号としてアンダースコア文字 (`_`) が使用できます。
+ - C# 7.2 では、プレフィックスの後に、`_` をバイナリまたは 16 進リテラルの桁区切り記号として使用できます。 10 進リテラルは先頭にアンダー スコアを持つことはできません。
 
-いくつかの例は、以下に示します。
+以下にいくつか例を示します。
 
 [!code-csharp[Short](../../../../samples/snippets/csharp/language-reference/keywords/numeric-literals.cs#ShortS)]  
  
 ## <a name="compiler-overload-resolution"></a>コンパイラのオーバーロード解決
 
- オーバーロードされたメソッドを呼び出すときは、キャストを使用する必要があります。 たとえば、`short` パラメーターと [int](../../../csharp/language-reference/keywords/int.md) パラメーターを使用するオーバーロードされたメソッドがあるとします。  
+ オーバーロードされたメソッドを呼び出すときは、キャストを使用する必要があります。 たとえば、`short` パラメーターと [int](../../../csharp/language-reference/keywords/int.md) パラメーターを使用したオーバーロードされたメソッドがあるとします。  
   
 ```csharp  
 public static void SampleMethod(int i) {}  
@@ -92,7 +92,7 @@ int m = x + y;
 long n = x + y;  
 ```  
   
- 浮動小数点型から `short` への暗黙的な変換は行われません。 たとえば、次のステートメントは、明示的なキャストを使用しない限り、コンパイル エラーになります。  
+ 浮動小数点型から `short` への暗黙的な変換は行われません。 たとえば、次のステートメントは、明示的なキャストを使用しない場合、コンパイラ エラーになります。  
   
 ```csharp  
 short x = 3.0;          // Error: no implicit conversion from double  
@@ -106,7 +106,7 @@ short y = (short)3.0;   // OK: explicit conversion
 ## <a name="c-language-specification"></a>C# 言語仕様  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Int16>  
  [C# リファレンス](../../../csharp/language-reference/index.md)  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  

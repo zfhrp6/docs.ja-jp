@@ -1,13 +1,7 @@
 ---
 title: '&lt;AppContextSwitchOverrides&gt;要素'
-ms.custom: ''
+ms.custom: updateeachrelease
 ms.date: 04/19/2018
-ms.prod: .net-framework
-ms.technology:
-- dotnet-bcl
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - AppContextSwitchOverrides
 - compatibility switches
@@ -16,14 +10,11 @@ helpviewer_keywords:
 ms.assetid: 4ce07f47-7ddb-4d91-b067-501bd8b88752
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 146416a9872a8444316c2e4a754067b82030a81d
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: d16ce7f2744869c812b9988e91edd153d9cb4fd2
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltappcontextswitchoverridesgt-element"></a>&lt;AppContextSwitchOverrides&gt;要素
 <xref:System.AppContext> クラスで使用される、新機能に対するオプトアウト メカニズムを指定するスイッチを 1 つまたは複数定義します。  
@@ -76,12 +67,15 @@ ms.lasthandoff: 04/26/2018
 |`Switch.MS.Internal.`<br/>`UseSha1AsDefaultHashAlgorithmForDigitalSignatures`|PackageDigitalSignatureManager によってパッケージのパーツの署名に使用する既定のアルゴリズムは SHA1 または SHA256 かどうかを制御します。|.NET Framework 4.7.1|
 |`Switch.System.Activities.`<br/>`UseMD5CryptoServiceProviderForWFDebugger`|設定すると`false`FIPS が有効にすると、Visual Studio で XAML ベースのワークフロー プロジェクトのデバッグを許可します。 これがないと、 <xref:System.NullReferenceException> System.Activities アセンブリ内のメソッドの呼び出しでがスローされます。|.NET Framework 4.7|
 |`Switch.System.Activities.`<br/>`UseMD5ForWFDebugger`|デバッガー内のワークフロー インスタンスのチェックサムが MD5 または SHA1 を使用するかどうかを制御します。 | .NET Framework 4.7|
+|`Switch.System.Diagnostics.`<br/>`IgnorePortablePDBsInStackTraces`|ソース ファイルと行の情報を含めることができますポータブル Pdb を使用する場合に、スタック トレースを取得するかどうかを制御します。 `false` ソース ファイルと行情報を含めるそれ以外の場合、`true`です。|.NET framework 4.7.2|
 |`Switch.System.Drawing.`<br/>`DontSupportPngFramesInIcons`|コントロールかどうか、<xref:System.Drawing.Icon.ToBitmap%2A?displayProperty=nameWithType>メソッドが例外をスロー時に、<xref:System.Drawing.Icon>オブジェクトに PNG フレーム。 詳細については、「[軽減策: Icon オブジェクトの PNG フレーム](~/docs/framework/migration-guide/mitigation-png-frames-in-icon-objects.md)」を参照してください。|.NET Framework 4.6|  
+|`Switch.System.Drawing.Text.`<br/>`DoNotRemoveGdiFontsResourcesFromFontCollection`|決定するかどうか<xref:System.Drawing.Text.PrivateFontCollection?displayProperty=nameWithType>によってコレクションに追加すると、オブジェクトが破棄される正しく、<xref:System.Drawing.Text.PrivateFontCollection.AddFontFile(System.String)?displayProperty=nameWithType>メソッドです。 `true` レガシの動作を維持`false`プライベート フォントのすべてのオブジェクトを破棄します。 |.NET framework 4.7.2|
 |`Switch.System.Drawing.Printing.`</br>`OptimizePrintPreview`|コントロールかどうかのパフォーマンス、<xref:System.Windows.Forms.PrintPreviewDialog>ネットワーク プリンターに適しています。 詳細については、次を参照してください。 [PrintPreviewDialog コントロールの概要](../../../winforms/controls/printpreviewdialog-control-overview-windows-forms.md)です。|.NET Framework 4.6|
 |`Switch.System.Globalization.NoAsyncCurrentCulture`|非同期操作が呼び出し元のスレッドのコンテキストからフローしないかどうかを制御します。 詳細については、次を参照してください。 [CurrentCulture、CurrentUICulture のフローのタスクにわたって](~/docs/framework/migration-guide/retargeting/4.5.2-4.6.md#currentculture-and-currentuiculture-flow-across-tasks)です。|.NET Framework 4.6|  
 |`Switch.System.IdentityModel.`<br/>`DisableMultipleDNSEntriesInSANCertificate`|コントロールかどうか、<xref:System.IdentityModel.Claims.X509CertificateClaimSet.FindClaims%2A?displayProperty=nameWithType>メソッドは、要求の種類と最後の DNS エントリのみを一致させようとしています。 詳細については、「[軽減策: X509CertificateClaimSet.FindClaims メソッド](~/docs/framework/migration-guide/mitigation-x509certificateclaimset-findclaims-method.md)」を参照してください。|.NET Framework 4.6.1|  
 |`Switch.System.IdentityModel.`<br/>`EnableCachedEmptyDefaultAuthorizationContext`|変更可能なオブジェクトを返す AuthorizationContext.Empty を許可するかどうかを制御します。|.NET Framework 4.6|  
 |`Switch.System.IO.BlockLongPaths`|コントロールかどうかを超えるパス`MAX_PATH`(260) スロー、<xref:System.IO.PathTooLongException>です。 詳細については、次を参照してください。[長いパスをサポート](~/docs/framework/migration-guide/retargeting/4.6.1-4.6.2.md#long-path-support)です。|.NET Framework 4.6.2|  
+|`Switch.System.IO.Compression.`<br/>`DoNotUseNativeZipLibraryForDecompression`|圧縮解除のネイティブ OS ルーチンを使用するかどうかを制御、<xref:System.IO.Compression.DeflateStream>クラスです。 `false` ネイティブの Api を使用するには`true`を使用する、<xref:System.IO.Compression.DeflateStream>実装します。|.NET framework 4.7.2|
 |`Switch.System.IO.Compression.ZipFile.`<br/>`UseBackslash`|バック スラッシュを使用して ("\\")、スラッシュではなく (「/」) でのパス区切り記号として、<xref:System.IO.Compression.ZipArchiveEntry.FullName%2A?displayProperty=nameWithType>プロパティです。 詳細については、次を参照してください。[軽減策: ZipArchiveEntry.FullName パス区切り](~/docs/framework/migration-guide/mitigation-ziparchiveentry-fullname-path-separator.md)です。|.NET Framework 4.6.1|  
 |`Switch.System.IO.Ports.`<br/>`DoNotCatchSerialStreamThreadExceptions`|オペレーティング システムの例外はで作成されたバック グラウンド スレッドでスローされるかどうかを制御<xref:System.IO.Ports.SerialPort>ストリーム プロセスを終了します。|.NET Framework 4.7.1| 
 |`Switch.System.IO.`<br/>`UseLegacyPathHandling`|レガシ パスの正規化を使用してによって URI パスがサポートされているかどうかを制御、<xref:System.IO.Path.GetDirectoryName%2A?displayProperty=nameWithType>と<xref:System.IO.Path.GetPathRoot%2A?displayProperty=nameWithType>メソッドです。 詳細については、次を参照してください。[軽減策: パスの正規化](~/docs/framework/migration-guide/mitigation-path-normalization.md)と[軽減策: パス コロン チェック](~/docs/framework/migration-guide/mitigation-path-colon-checks.md)です。|.NET Framework 4.6.2|  
@@ -94,7 +88,7 @@ ms.lasthandoff: 04/26/2018
 |`Switch.System.Runtime.Serialization.`<br/>`DoNotUseECMAScriptV6EscapeControlCharacter` |コントロールかどうか、 [DataContractJsonSerializer](xref:System.Runtime.Serialization.Json.DataContractJsonSerializer) ECMAScript V6 と V8 スタンダードに基づくいくつかの制御文字をシリアル化します。 詳細については、「[軽減策: DataContractJsonSerializer での制御文字のシリアル化](Mitigation:%20Serialization%20of%20Control%20Characters%20with%20the%20DataContractJsonSerializer.md)」を参照してください。| .NET Framework 4.7 |
 |`Switch.System.Runtime.Serialization.`<br/>`DoNotUseTimeZoneInfo`|コントロールかどうか、<xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>のタイム ゾーンの調整が複数または単一の調整のみをサポートしています。 場合`true`を使用して、<xref:System.TimeZoneInfo>をシリアル化する型および日付と時刻のデータを逆シリアル化以外の場合は、<xref:System.TimeZone>型で、複数の調整規則をサポートしていません。|.NET Framework 4.6.2|
 |`Switch.System.Security.ClaimsIdentity.`<br/>`SetActorAsReferenceWhenCopyingClaimsIdentity`|コントロールかどうか、<xref:System.Security.Claims.ClaimsIdentity.%23ctor%28System.Security.Principal.IIdentity%29?displayProperty=nameWithType>コンス トラクターは、新しいオブジェクトを設定<xref:System.Security.Claims.ClaimsIdentity.Actor%2A?displayProperty=nameWithType>既存のオブジェクト参照を持つプロパティです。 詳細については、「[軽減策: ClaimsIdentity コンストラクター](~/docs/framework/migration-guide/mitigation-claimsidentity-constructor.md)」を参照してください。|.NET Framework 4.6.2|  
-|`Switch.System.Security.Cryptography.`<br/>`AesCryptoServiceProvider.DontCorrectlyResetDecryptor`|コントロールかどうかを再使用しようとすると、<xref:System.Security.Cryptography.AesCryptoServiceProvider>復号化をスロー、<xref:System.Security.Cryptography.CryptographicException>です。 詳細については、AesCryptoServiceProvider 復号化は、再利用可能な transform](~/docs/framework/migration-guide/retargeting/4.6.1-4.6.2.md#aescryptoserviceprovider-decryptor-provides-a-reusable-transform) を参照してください。|.NET Framework 4.6.2|
+|`Switch.System.Security.Cryptography.`<br/>`AesCryptoServiceProvider.DontCorrectlyResetDecryptor`|コントロールかどうかを再使用しようとすると、<xref:System.Security.Cryptography.AesCryptoServiceProvider>復号化をスロー、<xref:System.Security.Cryptography.CryptographicException>です。 詳細については、次を参照してください。 [AesCryptoServiceProvider 復号化、再利用可能な変換を提供する](~/docs/framework/migration-guide/retargeting/4.6.1-4.6.2.md#aescryptoserviceprovider-decryptor-provides-a-reusable-transform)です。|.NET Framework 4.6.2|
 |`Switch.System.Security.Cryptography.`<br/>`DoNotAddrOfCspParentWindowHandle`|コントロールかどうかの値、 [CspParameters.ParentWindowHandle](xref:System.Security.Cryptography.CspParameters.ParentWindowHandle)プロパティは、 [IntPtr](xref:System.IntPtr)ことを表しますウィンドウのメモリ位置を処理するかどうか、ウィンドウ ハンドル (HWND)。 詳細については、「[Mitigation: CspParameters.ParentWindowHandle Expects an HWND](Mitigation:%20CspParameters.ParentWindowHandle%20Expects%20an%20HWND.md)」 (軽減策: CspParameters.ParentWindowHandle で HWND を受け取る) を参照してください。 |.NET Framework 4.7|   
 |`Switch.System.Security.Cryptography.Pkcs.`<br/>`UseInsecureHashAlgorithms`|一部の SignedCMS 操作の既定値は SHA1 または SHA256 かどうかを判断します。 |.NET Framework 4.7.1|
 |`Switch.System.Security.Cryptography.Xml.`<br/>`UseInsecureHashAlgorithms`|一部の SignedXML 操作の既定値は SHA1 または SHA256 かどうかを判断します。 |.NET Framework 4.7.1|
@@ -109,13 +103,20 @@ ms.lasthandoff: 04/26/2018
 |`Switch.System.ServiceModel.`<br/>`UseSha1InPipeConnectionGetHashAlgorithm`|WCF が、SHA1 または SHA256 ハッシュを使用して名前付きパイプのランダムな名前を生成するかどうかを制御します。|.NET Framework 4.7.1|
 |`Switch.System.ServiceModel.Internals`<br/>`IncludeNullExceptionMessageInETWTrace`|スローするかどうかを制御する[NullReferenceException](xref:System.NullReferenceException)例外メッセージが null の場合。|.NET Framework 4.7|  
 |`Switch.System.ServiceProcess.`<br/>`DontThrowExceptionsOnStart`|呼び出し元にサービスの開始時にスローされる例外を反映するかどうかを制御、<xref:System.ServiceProcess.ServiceBase.Run%2A?displayProperty=nameWithType>メソッドです。|.NET Framework 4.7.1|
+|`Switch.System.Uri.`<br/>`DontEnableStrictRFC3986ReservedCharacterSets`|デコードされたことがあります % でエンコードされた文字の特定が一貫して左エンコードようになりましたかどうかを判断します。 場合`true`、デコード、それ以外は`false`します。|.NET framework 4.7.2|
+|`Switch.System.Uri.`<br/>`DontKeepUnicodeBidiFormattingCharacters`|Uri で Unicode 双方向の文字の処理を決定します。 `true` Uri; からそれらを削除するには`false`を保持し、% - には、エンコードします。|.NET framework 4.7.2|
 |`Switch.System.Windows.Controls.Grid.`<br/>`StarDefinitionsCanExceedAvailableSpace` |Windows Presentation Foundation は、古いアルゴリズムを適用するかどうかを判断 (`true`) または新しいアルゴリズム (`false`) に領域の割り当てで\*-列です。 詳細については、「[Mitigation: Grid Control's Space Allocation to Star-columns](Mitigation:%20Grid%20Control's%20Space%20Allocation%20to%20Star-columns.md)」 (軽減策: グリッド コントロールの *-column へのディスク領域の割り当て) を参照してください。 |.NET Framework 4.7 |
 |`Switch.System.Windows.Controls.TabControl.`<br/>`SelectionPropertiesCanLagBehindSelectionChangedEvent`|コントロールの選択範囲を発生させる前に、選択した値のプロパティの値を更新、セレクターまたはタブが常にして制御するかどうかは、イベントを変更します。|.NET Framework 4.7.1|
+|`Switch.System.Windows.Controls.Text.`<br/>`UseAdornerForTextboxSelectionRendering`|非装飾に基づいて選択レンダリングが使用できるかどうかを判断、<xref:System.Windows.Controls.TextBox>と<xref:System.Windows.Controls.PasswordBox>閉塞文字列を表示するコントロール (`false`)、テキストを装飾層でのみレンダリングするかどうか、または (`true`)。|.NET framework 4.7.2|
 |`Switch.System.Windows.DoNotScaleForDpiChanges`|DPI の変更がシステムごとに発生するかどうかを判断 (値の`false`) またはモニターごとに (値の`true`)。|.NET Framework 4.6.2|
+|`Switch.System.Windows.Forms.`<br/>`DomainUpDown.UseLegacyScrolling`|開発者が特別に処理する必要があるかどうかを判断、<xref:System.Windows.Forms.DomainUpDown.UpButton?displayProperty=nameWithType>コントロールのテキストが存在する場合のアクション。 `true` 処理する、<xref:System.Windows.Forms.DomainUpDown.UpButton>アクションです。`false`の<xref:System.Windows.Forms.DomainUpDown.UpButton?displayProperty=nameWithType>と<xref:System.Windows.Forms.DomainUpDown.DownButton?displayProperty=nameWithType>アクションを正常に同期します。|.NET framework 4.7.2|
 |`Switch.System.Windows.Forms.`<br />`DontSupportReentrantFilterMessage`|により、カスタム コードを止めた<xref:System.Windows.Forms.IMessageFilter.PreFilterMessage%2A?displayProperty=nameWithType>例外をスローせず、メッセージを安全にフィルター処理の実装時に、<xref:System.Windows.Forms.Application.FilterMessage%2A?displayProperty=nameWithType>メソッドが呼び出されます。 詳細については、[「軽減策: カスタムの IMessageFilter.PreFilterMessage 実装」](~/docs/framework/migration-guide/mitigation-custom-imessagefilter-prefiltermessage-implementations.md)を参照してください。|.NET Framework 4.6.1|  
-|`Switch.System.Windows.Input.Stylus.`<br/>`EnablePointerSupport`|省略可能なのかどうかを決定`WM_POINTER`-に基づいてタッチ/スタイラス スタックが WPF アプリケーションで有効にします。 詳細については、次を参照してください[軽減策: ポインターに基づくタッチとスタイラス入力のサポート。](Mitigation:%20Pointer-based%20Touch%20and%20Stylus%20Support.md) | 
+|`Switch.System.Windows.Forms.`<br/>`UseLegacyContextMenuStripSourceControlValue`|指定するかどうか、<xref:System.Windows.Forms.ContextMenuStrip.SourceControl?displayProperty=nameWithType>プロパティは、ユーザーが、入れ子になったから、メニューを開いたときにソース コントロールを返します<xref:System.Windows.Forms.ToolStripMenuItem>コントロール。 `true` 返す`null`、従来の動作です。`false`をソース コントロールを返します。|.NET framework 4.7.2|
+|`Switch.System.Windows.Input.Stylus.`<br/>`EnablePointerSupport`|省略可能なのかどうかを決定`WM_POINTER`-に基づいてタッチ/スタイラス スタックが WPF アプリケーションで有効にします。 詳細については、次を参照してください[軽減策: ポインターに基づくタッチとスタイラス入力のサポート。](../../../migration-guide/mitigation-pointer-based-touch-and-stylus-support.md)|.NET Framework 4.7|
+|`Switch.System.Windows.Markup.`<br/>`DoNotUseSha256ForMarkupCompilerChecksumAlgorithm`|チェックサムを使用する既定のハッシュ アルゴリズムが SHA256 をかどうかを判断 (`false`) または SHA1 (`true`)。|.NET framework 4.7.2|
 |`Switch.System.Windows.Media.ImageSourceConverter.`<br/>`OverrideExceptionWithNullReferenceException`|レガシかどうかを制御[NullReferenceException](xref:System.NullReferenceException)をより具体的には、例外の原因を示す例外ではなくがスローされます (など、 [DirectoryNotFoundException](xref:System.IO.DirectoryNotFoundException)または、 [FileNotFoundException](xref:System.IO.FileNotFoundException)です。 処理に依存するコードで使用するもので、 [NullReferenceException](xref:System.NullReferenceException)です。 | .NET Framework 4.7 |
 |`Switch.UseLegacyAccessibilityFeatures`|コントロールは、ユーザー補助機能を以降、.NET Framework 4.7.1 で使用可能かどうかが有効または無効になっています。 | .NET Framework 4.7.1 |
+|`Switch.UseLegacyAccessibilityFeatures.2`|ユーザー補助機能 4.7.2 .NET Framework で使用できるかどうかが有効になっているコントロール (`false`) か無効 (`true`)。 場合`true`、`Switch.UseLegacyAccessibilityFeatures`必要もあります`true`.NET Framework 4.7.1 ユーザー補助機能を有効にします。|.NET framework 4.7.2|
 |`System.Xml.`<br /><br /> `IgnoreEmptyKeySequences`|XSD スキーマ検証によって、複合キーに空のキー シーケンスが無視するかどうかを制御します。 詳細については、次を参照してください。[軽減策: XML スキーマ検証](~/docs/framework/migration-guide/mitigation-xml-schema-validation.md)です。|.NET Framework 4.6|  
   
 > [!NOTE]

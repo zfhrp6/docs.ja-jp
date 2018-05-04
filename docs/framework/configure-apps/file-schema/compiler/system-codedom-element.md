@@ -1,13 +1,6 @@
 ---
-title: "&lt;system.codedom&gt;要素"
-ms.custom: 
+title: '&lt;system.codedom&gt;要素'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.codedom
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#system.codedom
@@ -16,16 +9,14 @@ helpviewer_keywords:
 - system.codedom element
 - <system.codedom> element
 ms.assetid: 672a68f7-e69f-4479-ac30-e980085ec4fe
-caps.latest.revision: "17"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: bf2e041f9ae9661a9b6f8ecd5883ac7d1b0f0dec
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5939fa31a2f87348922d4586e3e7b7b52066fb09
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltsystemcodedomgt-element"></a>&lt;system.codedom&gt;要素
 使用可能な言語プロバイダーのコンパイラ構成設定を指定します。  
@@ -98,7 +89,7 @@ ms.lasthandoff: 12/22/2017
 </configuration>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.CodeDom.Compiler.CompilerInfo>  
  <xref:System.CodeDom.Compiler.CodeDomProvider>  
  [構成ファイル スキーマ](../../../../../docs/framework/configure-apps/file-schema/index.md)  

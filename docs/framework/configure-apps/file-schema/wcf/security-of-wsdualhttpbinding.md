@@ -1,33 +1,23 @@
 ---
-title: "&lt;wsDualHttpBinding&gt; の &lt;security&gt;"
-ms.custom: 
+title: '&lt;wsDualHttpBinding&gt; の &lt;security&gt;'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 869c05e7-4ebe-467d-95ab-c8f8de4e6b9e
-caps.latest.revision: "15"
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: 6680d01b068a6ac1c4f9abcda69779c9cd0786a0
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 734b6d0625cfda79b600a0920ab39bda25ee2e8b
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltsecuritygt-of-ltwsdualhttpbindinggt"></a>&lt;wsDualHttpBinding&gt; の &lt;security&gt;
 セキュリティ機能を定義、 [ \<wsDualHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wsdualhttpbinding.md)です。  
   
- \<system.ServiceModel>  
+ \<system.ServiceModel >  
 \<bindings>  
-\<wsDualHttpBinding>  
+\<wsDualHttpBinding >  
 \<binding>  
-\<security>  
+\<セキュリティ >  
   
 ## <a name="syntax"></a>構文  
   
@@ -71,7 +61,7 @@ ms.lasthandoff: 01/19/2018
 ## <a name="remarks"></a>コメント  
  二重バインディングでは、クライアントの IP アドレスをサービスに公開します。 クライアントは、セキュリティを使用して信頼するサービスに対して接続のみを可能にする必要があります。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.WSDualHttpSecurity>  
  <xref:System.ServiceModel.BasicHttpSecurity>  
  [サービスおよびクライアントのセキュリティ保護](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  

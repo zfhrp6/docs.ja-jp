@@ -1,22 +1,23 @@
 ---
-title: "方法 : イベント サブスクリプションとサブスクリプションの解除 (C# プログラミング ガイド)"
+title: '方法 : イベント サブスクリプションとサブスクリプションの解除 (C# プログラミング ガイド)'
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 helpviewer_keywords:
 - event handlers [C#], creating
 - Code Editor, event handlers
 - events [C#], creating using the IDE
 ms.assetid: 6319f39f-282c-4173-8a62-6c4657cf51cd
-caps.latest.revision: "15"
+caps.latest.revision: 15
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 5555cc8913bff953601c54aa7430143dc22173c0
-ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
+ms.openlocfilehash: ecb65a2156f83d9da722329ff6159bb08e464eaa
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-to-subscribe-to-and-unsubscribe-from-events-c-programming-guide"></a>方法 : イベント サブスクリプションとサブスクリプションの解除 (C# プログラミング ガイド)
 別のクラスによってパブリッシュされるイベントが発生したときに呼び出されるカスタム コードを作成するときは、そのイベントをサブスクライブします。 たとえば、ユーザーがボタンをクリックしたらアプリケーションで何かを行うには、ボタンの `click` イベントをサブスクライブします。  
@@ -29,7 +30,7 @@ ms.lasthandoff: 01/05/2018
   
 3.  作成するイベントをダブルクリックします (`Load` イベントなど)。  
   
-     [!INCLUDE[csprcs](~/includes/csprcs-md.md)] によって空のイベント ハンドラー メソッドを作成され、コードに追加されます。 または、**コード** ビューを使って手動でコードを追加することもできます。 たとえば、次のコード行では、`Form` クラスで `Load` イベントが発生すると呼び出されるイベント ハンドラー メソッドを宣言しています。  
+     Visual C# によって空のイベント ハンドラー メソッドを作成され、コードに追加されます。 または、**コード** ビューを使って手動でコードを追加することもできます。 たとえば、次のコード行では、`Form` クラスで `Load` イベントが発生すると呼び出されるイベント ハンドラー メソッドを宣言しています。  
   
      [!code-csharp[csProgGuideEvents#11](../../../csharp/programming-guide/events/codesnippet/CSharp/how-to-subscribe-to-and-unsubscribe-from-events_1.cs)]  
   

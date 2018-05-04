@@ -1,24 +1,12 @@
 ---
-title: "接続文字列"
-ms.custom: 
+title: 接続文字列
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 78d516bc-c99f-4865-8ff1-d856bc1a01c0
-caps.latest.revision: "3"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: d582383d59928d72c15aabba37b50ed878b67ca5
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: ac2c618272044ac9aaaba697f6583c9a814aa79f
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="connection-strings"></a>接続文字列
 接続文字列には、データ プロバイダーからデータ ソースにパラメーターとして渡す初期化情報が含まれています。 接続文字列は接続を開くときに解析され、その構文はデータ プロバイダーによって異なります。 Entity Framework で使用される接続文字列には、Entity Framework のサポート基盤である ADO.NET データ プロバイダーへの接続に使用される情報が含まれています。 また、必要なモデル ファイルおよびマッピング ファイルに関する情報も含まれています。  
@@ -102,12 +90,12 @@ Metadata=datadir\metadata\
 Metadata=.\  
 ```  
   
-## <a name="support-for-the-124datadirectory124-substitution-string-and-the-web-application-root-operator-"></a>サポート、&#124; DataDirectory &#124;です。置換文字列と Web アプリケーション ルート演算子 (~)  
- `DataDirectory`~ 演算子で使用、<xref:System.Data.EntityClient.EntityConnection.ConnectionString%2A>の一部として、`Metadata`と`Provider Connection String`キーワード。 <xref:System.Data.EntityClient.EntityConnection> によって、`DataDirectory` と ~ 演算子がそれぞれ <xref:System.Data.Metadata.Edm.MetadataWorkspace> とストア プロバイダーに転送されます。  
+## <a name="support-for-the-124datadirectory124-substitution-string-and-the-web-application-root-operator-"></a>サポート、 &#124;DataDirectory&#124;置換文字列と Web アプリケーション ルート演算子 (~)  
+ `DataDirectory` ~ 演算子で使用、<xref:System.Data.EntityClient.EntityConnection.ConnectionString%2A>の一部として、`Metadata`と`Provider Connection String`キーワード。 <xref:System.Data.EntityClient.EntityConnection> によって、`DataDirectory` と ~ 演算子がそれぞれ <xref:System.Data.Metadata.Edm.MetadataWorkspace> とストア プロバイダーに転送されます。  
   
 |用語|説明|  
 |----------|-----------------|  
-|`&#124;DataDirectory&#124;`|マッピング ファイルとメタデータ ファイルの相対パスに解決されます。 この値は、`AppDomain.SetData("DataDirectory", objValue)` メソッドで設定される値です。 `DataDirectory` 置換文字列はパイプ文字で囲む必要があり、その名前とパイプ文字の間に空白を含めることはできません。 `DataDirectory` の名前では大文字と小文字は区別されません。<br /><br /> "DataDirectory" という名前の物理ディレクトリをメタデータ パスのリストのメンバーとして渡す必要がある場合は、名前の片側または両側に空白を追加します (`Metadata="DataDirectory1 &#124; DataDirectory &#124; DataDirectory2"` など)。 ASP.NET アプリケーション解決 &#124; DataDirectory &#124;です。"\<アプリケーションのルート >/app_data"フォルダーです。|  
+|`&#124;DataDirectory&#124;`|マッピング ファイルとメタデータ ファイルの相対パスに解決されます。 この値は、`AppDomain.SetData("DataDirectory", objValue)` メソッドで設定される値です。 `DataDirectory` 置換文字列はパイプ文字で囲む必要があり、その名前とパイプ文字の間に空白を含めることはできません。 `DataDirectory` の名前では大文字と小文字は区別されません。<br /><br /> "DataDirectory" という名前の物理ディレクトリをメタデータ パスのリストのメンバーとして渡す必要がある場合は、名前の片側または両側に空白を追加します (`Metadata="DataDirectory1 &#124; DataDirectory &#124; DataDirectory2"` など)。 ASP.NET アプリケーションを解決&#124;DataDirectory&#124;に、"\<アプリケーションのルート >/app_data"フォルダーです。|  
 |~|Web アプリケーション ルートに解決されます。 先頭の ~ 文字は、有効なローカル サブディレクトリを表すこともありますが、常に Web アプリケーション ルート演算子 (~) として解釈されます。 このようなローカル サブディレクトリを参照するには、ユーザーが明示的に `./~` を渡す必要があります。|  
   
  `DataDirectory` と ~ 演算子は、パスの先頭にのみ指定する必要があります。その他の位置では解決されません。 Entity Framework では、`~/data` の解決は試行されますが、`/data/~` は物理パスとして処理されます。  
@@ -118,7 +106,7 @@ Metadata=.\
   
  `DataDirectory` 置換文字列と ~ 演算子の解決は非再帰型です。 たとえば、`DataDirectory` に `~` 文字が含まれる場合は、例外が発生します。 これにより、無限再帰が回避されます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [データ プロバイダーの操作](../../../../../docs/framework/data/adonet/ef/working-with-data-providers.md)  
  [配置に関する注意事項](../../../../../docs/framework/data/adonet/ef/deployment-considerations.md)  
  [接続とトランザクションを管理します。](http://msdn.microsoft.com/library/b6659d2a-9a45-4e98-acaa-d7a8029e5b99)  

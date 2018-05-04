@@ -1,13 +1,6 @@
 ---
-title: '&lt;qualifyAssembly&gt; Element'
-ms.custom: 
+title: '&lt;qualifyAssembly&gt;要素'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#qualifyAssembly
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/runtime/assemblyBinding/qualifyAssembly
@@ -16,22 +9,19 @@ helpviewer_keywords:
 - <qualifyAssembly> element
 - qualifyAssembly element
 ms.assetid: ad6442f6-1a9d-43b6-b733-04ac1b7f9b82
-caps.latest.revision: "13"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 7dd24ae9e5659deff7ddbe4183c70d5b442542cd
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: d08cfbde82f74dcf88ddadd844854bdfeb403935
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="ltqualifyassemblygt-element"></a>&lt;qualifyAssembly&gt; Element
+# <a name="ltqualifyassemblygt-element"></a>&lt;qualifyAssembly&gt;要素
 部分名が使用された場合に動的に読み込む必要があるアセンブリの完全名を指定します。  
   
  \<configuration>  
-\<runtime>  
+\<ランタイム >  
 \<assemblyBinding>  
 \<qualifyAssembly>  
   
@@ -84,7 +74,7 @@ ms.lasthandoff: 01/19/2018
 </configuration>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ランタイム設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
  [ランタイムがアセンブリを検索する方法](../../../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)  
  [NIB: 部分アセンブリ参照](http://msdn.microsoft.com/library/ec90f07a-398c-4306-9401-0fc5ff9cb59f)

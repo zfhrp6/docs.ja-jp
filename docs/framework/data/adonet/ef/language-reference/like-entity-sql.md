@@ -1,24 +1,12 @@
 ---
 title: LIKE (Entity SQL)
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 8300e6d2-875b-481e-9ef4-e1e7c12d46fa
-caps.latest.revision: "4"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 021a999e79239e3da5c874cb459ac7f03fdb5661
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: f2d06b364c577b581bb64af0436c133ca830bb2b
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="like-entity-sql"></a>LIKE (Entity SQL)
 指定された文字列 `String` が指定されたパターンと一致するかどうかを判断します。  
@@ -46,16 +34,16 @@ match [NOT] LIKE pattern [ESCAPE escape]
  `true` がパターンに一致する場合は `string`、一致しない場合は `false`。  
   
 ## <a name="remarks"></a>コメント  
- [!INCLUDE[esql](../../../../../../includes/esql-md.md)]LIKE 演算子を使用する式は、フィルター条件として等価性を使用する式と同じように評価されます。 ただし、 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] LIKE 演算子を使用する式は、リテラルとワイルドカード文字の両方を含めることができます。  
+ [!INCLUDE[esql](../../../../../../includes/esql-md.md)] LIKE 演算子を使用する式は、フィルター条件として等価性を使用する式と同じように評価されます。 ただし、 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] LIKE 演算子を使用する式は、リテラルとワイルドカード文字の両方を含めることができます。  
   
  次の表では、パターン `string` の構文について説明します。  
   
 |ワイルドカード文字|説明|例|  
 |------------------------|-----------------|-------------|  
-|%|0 個またはそれ以上の文字で構成される任意の `string` です。|`title like '%computer%'`単語のすべてのタイトルを検索`"computer"`タイトルに任意の場所。|  
-|_ (アンダースコア)|任意の 1 文字です。|`firstname like '_ean'`検索で終了するすべての 4 文字目名前`"ean`、"Dean や Sean などです。|  
-|[ ]|指定した範囲 ([a-f]) またはセット ([abcdef]) にある任意の 1 文字です。|`lastname like '[C-P]arsen'`姓が検索"arsen"で終わる C ~ P、Carsen や Larsen などの任意の 1 文字で始まります。|  
-|[^]|指定した範囲 ([^a-f]) またはセット ([^abcdef]) にない任意の 1 文字です。|`lastname like 'de[^l]%'`"de"で始まり、"l"で、次の文字を含めないでくださいすべての姓を検索します。|  
+|%|0 個またはそれ以上の文字で構成される任意の `string` です。|`title like '%computer%'` 単語のすべてのタイトルを検索`"computer"`タイトルに任意の場所。|  
+|_ (アンダースコア)|任意の 1 文字です。|`firstname like '_ean'` 検索で終了するすべての 4 文字目名前`"ean`、"Dean や Sean などです。|  
+|[ ]|指定した範囲 ([a-f]) またはセット ([abcdef]) にある任意の 1 文字です。|`lastname like '[C-P]arsen'` 姓が検索"arsen"で終わる C ~ P、Carsen や Larsen などの任意の 1 文字で始まります。|  
+|[^]|指定した範囲 ([^a-f]) またはセット ([^abcdef]) にない任意の 1 文字です。|`lastname like 'de[^l]%'` "de"で始まり、"l"で、次の文字を含めないでくださいすべての姓を検索します。|  
   
 > [!NOTE]
 >  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] の LIKE 演算子および ESCAPE 句は、`System.DateTime` または `System.Guid` 値には適用できません。  
@@ -85,5 +73,5 @@ match [NOT] LIKE pattern [ESCAPE escape]
   
  [!code-csharp[DP EntityServices Concepts 2#LIKE](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#like)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Entity SQL リファレンス](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)

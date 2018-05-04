@@ -1,24 +1,12 @@
 ---
-title: "リレーションシップの推論"
-ms.custom: 
+title: リレーションシップの推論
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 8fa86a9d-6545-4a9d-b1f5-58d9742179c7
-caps.latest.revision: "4"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 79f79c1dbc74b98cff10de81c2bd7bd32d7d286b
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 9833966fa5a16bef70a6ae2b9ca618fde0e05fbb
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="inferring-relationships"></a>リレーションシップの推論
 テーブルとして推論される要素に、同じくテーブルとして推論される子の要素が含まれている場合には、2 つのテーブル間に <xref:System.Data.DataRelation> が作成されます。 新しい列の名前を持つ**ParentTableName_Id**親要素に対して作成されたテーブルと子要素に対して作成されたテーブルの両方に追加されます。 **ColumnMapping**この id 列のプロパティ設定されます**MappingType.Hidden**です。 列は、親テーブルの自動インクリメントの主キーになりに使用される、 **DataRelation** 2 つのテーブルです。 追加される id 列のデータ型になります**System.Int32**、これは他のすべての推論された列のデータ型とは異なり**System.String**です。 A<xref:System.Data.ForeignKeyConstraint>で**DeleteRule** = **Cascade**親と子の両方のテーブルに新しい列を使用して作成されます。  
@@ -66,7 +54,7 @@ ms.lasthandoff: 01/17/2018
   
  **ChildColumn:** Element1_Id  
   
- **入れ子になった:**は True。  
+ **入れ子になった:** は True。  
   
  **ForeignKeyConstraint:** Element1_ChildElement1  
   
@@ -78,9 +66,9 @@ ms.lasthandoff: 01/17/2018
   
  **DeleteRule:** Cascade  
   
- **AcceptRejectRule:**なし  
+ **AcceptRejectRule:** なし  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [XML からの DataSet リレーショナル構造の推論](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/inferring-dataset-relational-structure-from-xml.md)  
  [XML からの DataSet の読み込み](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md)  
  [XML の DataSet スキーマ情報の読み込み](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-dataset-schema-information-from-xml.md)  

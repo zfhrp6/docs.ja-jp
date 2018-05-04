@@ -1,31 +1,20 @@
 ---
-title: "&lt;assemblyBinding&gt;要素&lt;構成&gt;"
-ms.custom: 
+title: '&lt;assemblyBinding&gt;要素&lt;構成&gt;'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/assemblyBinding
 helpviewer_keywords:
 - assemblyBinding Element
 - <assemblyBinding> Element
 ms.assetid: 6cc55983-b894-449b-8e26-b258e53939cd
-caps.latest.revision: 
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload:
-- dotnet
-ms.openlocfilehash: 8d670c56a885a5fdae059a87f63fba9ab32f020c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6a3358b2d64ade65e641caa203e2e760dcc4be2c
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="assemblybinding-element-for-configuration"></a>\<assemblyBinding > 要素を\<構成 >
 
@@ -65,7 +54,7 @@ ms.lasthandoff: 12/22/2017
 [  **\<LinkedConfiguration >** ](~/docs/framework/configure-apps/file-schema/linkedconfiguration-element.md)要素内の構成ファイルにアセンブリを含めるアプリケーション構成ファイルを許可することで、コンポーネントのアセンブリの管理を簡略化既知の場所ではなくアセンブリ構成設定を複製します。
 
 > [!NOTE]
->  **\<LinkedConfiguration >** Windows サイド バイ サイド マニフェストと共にアプリケーションに要素がサポートされていません。
+> **\<LinkedConfiguration >** Windows サイド バイ サイド マニフェストと共にアプリケーションに要素がサポートされていません。
 
 ## <a name="example"></a>例
 

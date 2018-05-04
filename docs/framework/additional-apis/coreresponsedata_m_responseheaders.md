@@ -1,9 +1,6 @@
 ---
-title: "CoreResponseData.m_ResponseHeaders フィールド"
+title: CoreResponseData.m_ResponseHeaders フィールド
 ms.date: 01/29/2018
-ms.prod: .net-framework
-ms.technology: 
-ms.topic: reference
 topic_type:
 - apiref
 api_name:
@@ -13,19 +10,15 @@ api_location:
 api_type:
 - Assembly
 author: stevewhims
-ms.author: stwhi
-manager: markl
-ms.workload:
-- dotnet
-ms.openlocfilehash: eaece5bfe9cda7d35905ecd7e1da503ec11faf9c
-ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
+ms.openlocfilehash: ea93b70ae8e1a710b4208050d7ec823a28b218b7
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="coreresponsedatamresponseheaders-field"></a>CoreResponseData.m\_ResponseHeaders フィールド
 
-`CoreResponseData.m_ResponseHeaders`<xref:System.Net.WebHeaderCollection>のサーバーの応答に関連付けられたヘッダー。
+`CoreResponseData.m_ResponseHeaders` <xref:System.Net.WebHeaderCollection>のサーバーの応答に関連付けられたヘッダー。
 
 ## <a name="syntax"></a>構文
   
@@ -38,10 +31,10 @@ public WebHeaderCollection m_ResponseHeaders
 > 
 > Microsoft は、どのような状況下で、実稼働アプリケーションでこのクラスの使用をサポートしていません。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
-**Namespace:**<xref:System.Net>
+**Namespace:** <xref:System.Net>
 
-**アセンブリ:**システム (System.dll)
+**アセンブリ:** システム (System.dll)
 
 **.NET framework のバージョン:** 2.0 から利用可能です。

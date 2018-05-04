@@ -1,24 +1,12 @@
 ---
-title: "Entity Framework の概要"
-ms.custom: 
+title: Entity Framework の概要
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: a2166b3d-d8ba-4a0a-8552-6ba1e3eaaee0
-caps.latest.revision: "6"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 2bfccccbcfa41f8ed67cb309a0e4a3dd9dda6b90
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 8b07fb9b80d5d0d13967c807198194b3a2228202
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="entity-framework-overview"></a>Entity Framework の概要
 [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] は、データ指向のソフトウェア アプリケーション開発をサポートする ADO.NET のテクノロジ セットです。 データ指向のアプリケーションの設計者と開発者はこれまで、2 つの大きく異なる目的を達成するために苦労してきました。 解決すべきビジネス上の問題のエンティティ、リレーションシップ、およびロジックをモデル化する一方で、データの格納と取得に使用するデータ エンジンに取り組む必要もあるからです。 データは複数のストレージ システムにまたがる場合があり、それぞれに独自のプロトコルが存在します。単一のストレージ システムを使用するアプリケーションであっても、ストレージ システムの要件と効率的で保守しやすいアプリケーション コードの記述要件のバランスを取る必要があります。  
@@ -73,7 +61,7 @@ ms.lasthandoff: 01/19/2018
   
 -   [!INCLUDE[linq_entities](../../../../../includes/linq-entities-md.md)]。 概念モデルで定義されているエンティティ型を照会するためには、統合言語クエリ (LINQ) のサポートを提供します。 詳細については、次を参照してください。 [LINQ to Entities](../../../../../docs/framework/data/adonet/ef/language-reference/linq-to-entities.md)です。  
   
--   [!INCLUDE[esql](../../../../../includes/esql-md.md)]。 概念モデルのエンティティと直接連動して、サポートする SQL のストレージに依存しない言語[!INCLUDE[adonet_edm](../../../../../includes/adonet-edm-md.md)]概念です。 [!INCLUDE[esql](../../../../../includes/esql-md.md)]オブジェクトのクエリと EntityClient プロバイダーを使用して実行されるクエリの両方に使用されます。 詳細については、次を参照してください。 [Entity SQL の概要](../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-overview.md)です。  
+-   [!INCLUDE[esql](../../../../../includes/esql-md.md)]。 概念モデルのエンティティと直接連動して、サポートする SQL のストレージに依存しない言語[!INCLUDE[adonet_edm](../../../../../includes/adonet-edm-md.md)]概念です。 [!INCLUDE[esql](../../../../../includes/esql-md.md)] オブジェクトのクエリと EntityClient プロバイダーを使用して実行されるクエリの両方に使用されます。 詳細については、次を参照してください。 [Entity SQL の概要](../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-overview.md)です。  
   
  [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] には、EntityClient データ プロバイダーが含まれています。 このプロバイダーは接続を管理し、エンティティ クエリをデータ ソース固有のクエリに変換し、[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] がエンティティ データをオブジェクトに具体化するために使用するデータ リーダーを返します。 オブジェクトの具体化する必要がない場合、EntityClient プロバイダーこともできます、標準のような[!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)]データ プロバイダーを実行するアプリケーションを有効にして[!INCLUDE[esql](../../../../../includes/esql-md.md)]クエリを実行し、返される読み取り専用データ リーダーを使用します。 詳細については、次を参照してください。 [Entity Framework の EntityClient プロバイダー](../../../../../docs/framework/data/adonet/ef/entityclient-provider-for-the-entity-framework.md)です。  
   
@@ -106,5 +94,5 @@ ms.lasthandoff: 01/19/2018
  [Entity Framework のリソース](../../../../../docs/framework/data/adonet/ef/resources.md)  
  概念に関するトピックへのリンクや [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] アプリケーションの構築に関する外部トピックおよびリソースへのリンクを示します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ADO.NET Entity Framework](../../../../../docs/framework/data/adonet/ef/index.md)

@@ -1,24 +1,15 @@
 ---
-title: "&lt;schemeSettings&gt;要素 (Uri 設定)"
-ms.custom: 
+title: '&lt;schemeSettings&gt;要素 (Uri 設定)'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 0ae45c6e-8c4c-4c0d-8b9f-a93824648890
-caps.latest.revision: "6"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 19bcb64beb7b022d20bbde1210ae6d844690d891
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 40ff62a48a3ba1f4a9b5aed28630ab70d37869fc
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltschemesettingsgt-element-uri-settings"></a>&lt;schemeSettings&gt;要素 (Uri 設定)
 <xref:System.Uri> が特定のスキームに解析される方法を指定します。  
@@ -52,7 +43,7 @@ ms.lasthandoff: 12/22/2017
   
 |**要素**|**説明**|  
 |-----------------|---------------------|  
-|[uri](../../../../../docs/framework/configure-apps/file-schema/network/uri-element-uri-settings.md)|.NET Framework での web アドレスの uniform resource identifier (Uri) を使用して表現の処理方法を指定する設定が含まれています。|  
+|[Uri](../../../../../docs/framework/configure-apps/file-schema/network/uri-element-uri-settings.md)|.NET Framework での web アドレスの uniform resource identifier (Uri) を使用して表現の処理方法を指定する設定が含まれています。|  
   
 ## <a name="remarks"></a>コメント  
  既定では、<xref:System.Uri?displayProperty=nameWithType>クラス エスケープを解除 % は、パスの圧縮を実行する前にパスの区切り記号をエンコードします。 これは、次のような攻撃に対するセキュリティ機構として実装されていました。  
@@ -94,7 +85,7 @@ ms.lasthandoff: 12/22/2017
 |検証ファイル||  
 |空にすることができます。||  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Configuration.SchemeSettingElement?displayProperty=nameWithType>  
  <xref:System.Configuration.SchemeSettingElementCollection?displayProperty=nameWithType>  
  <xref:System.Configuration.UriSection?displayProperty=nameWithType>  

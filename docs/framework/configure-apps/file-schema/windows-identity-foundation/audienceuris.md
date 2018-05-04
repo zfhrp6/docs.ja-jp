@@ -1,31 +1,21 @@
 ---
 title: '&lt;Audienceuri&gt;'
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 7a3d8515-d756-4afe-a22d-07cbe2217ee3
-caps.latest.revision: "8"
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: 69c96698b309a789b4527c76e1fe8b8b99811a19
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 7415cb3f1792d2de566161ae6c348ef591b4a0c3
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltaudienceurisgt"></a>&lt;Audienceuri&gt;
 証明書利用者 (RP) の許容可能な識別子 Uri のセットを指定します。 許可されている対象 Uri のいずれかのスコープがない限り、トークンは承認されません。  
   
- \<system.identityModel >  
-\<identityConfiguration >  
-\<securityTokenHandlers >  
+ \<system.identityModel>  
+\<identityConfiguration>  
+\<securityTokenHandlers>  
 \<securityTokenHandlerConfiguration >  
 \<Audienceuri >  
   
@@ -71,7 +61,7 @@ ms.lasthandoff: 12/22/2017
 |[\<securityTokenHandlerConfiguration >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlerconfiguration.md)|トークン ハンドラーのセキュリティのコレクションの構成を提供します。|  
   
 ## <a name="remarks"></a>コメント  
- 既定では、コレクションが空です。使用して`<add>`、 `<clear>`、および`<remove>`要素のコレクションを変更します。 <xref:System.IdentityModel.Tokens.SamlSecurityTokenHandler>および<xref:System.IdentityModel.Tokens.Saml2SecurityTokenHandler>許可対象ユーザーの URI の制限事項のいずれかを構成する対象ユーザー URI のコレクション内の値をオブジェクト<xref:System.IdentityModel.Tokens.SamlSecurityTokenRequirement>オブジェクト。  
+ 既定では、コレクションが空です。使用して`<add>`、 `<clear>`、および`<remove>`要素のコレクションを変更します。 <xref:System.IdentityModel.Tokens.SamlSecurityTokenHandler> および<xref:System.IdentityModel.Tokens.Saml2SecurityTokenHandler>許可対象ユーザーの URI の制限事項のいずれかを構成する対象ユーザー URI のコレクション内の値をオブジェクト<xref:System.IdentityModel.Tokens.SamlSecurityTokenRequirement>オブジェクト。  
   
  `<audienceUris>`要素として表されます、<xref:System.IdentityModel.Configuration.AudienceUriElementCollection>クラスです。 によって表されるコレクションに追加された個々 の URI、<xref:System.IdentityModel.Configuration.AudienceUriElement>クラスです。  
   

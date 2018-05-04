@@ -1,24 +1,14 @@
 ---
 title: '&lt;federationConfiguration&gt;'
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 8b14054c-6d07-46ab-ab58-03f14beac0f2
-caps.latest.revision: "9"
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: 0014e0224221cd5143709ba0a5b38f10e457b494
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 44014d620dcd03e055eb58b50a1428b8e1b41186
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltfederationconfigurationgt"></a>&lt;federationConfiguration&gt;
 構成、 <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> (WSFAM) および<xref:System.IdentityModel.Services.SessionAuthenticationModule>(SAM) を使用する場合は、Ws-federation プロトコルを使用した認証をフェデレーションします。 構成、<xref:System.Security.Claims.ClaimsAuthorizationManager>を使用する場合、<xref:System.IdentityModel.Services.ClaimsPrincipalPermission>または<xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute>クレームに基づくアクセス制御を提供するクラス。  
@@ -76,7 +66,7 @@ ms.lasthandoff: 12/22/2017
   
 4.  複数の名前を付けて場合`<federationConfiguration>`要素が存在しない名前のない`<federationConfiguration>`要素が、例外がスローされます。  
   
- 通常、1 つだけ`<federationConfiguration>`セクションを定義します。 このセクションでは、既定のフェデレーション構成です。 複数の一意な名前を指定することがあります`<federationConfiguration>`要素です。 ただし、この場合、名前のない別のフェデレーションの構成を読み込む場合は、する必要がありますハンドラーを提供します。 <xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfigurationCreated>イベントとセット、<xref:System.IdentityModel.Services.Configuration.FederationConfigurationCreatedEventArgs.FederationConfiguration%2A?displayProperty=nameWithType>にハンドラー内のプロパティ、<xref:System.IdentityModel.Services.Configuration.FederationConfiguration>オブジェクトから、適切な値で初期化`<federationConfiguration>`構成ファイル内の要素。  
+ 通常、1 つだけ`<federationConfiguration>`セクションを定義します。 このセクションでは、既定のフェデレーション構成です。 複数の一意な名前を指定することがあります`<federationConfiguration>`要素です。 ただし、この場合、名前のない別のフェデレーションの構成を読み込む場合は、する必要がありますハンドラーを提供します。 <xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfigurationCreated> イベントとセット、<xref:System.IdentityModel.Services.Configuration.FederationConfigurationCreatedEventArgs.FederationConfiguration%2A?displayProperty=nameWithType>にハンドラー内のプロパティ、<xref:System.IdentityModel.Services.Configuration.FederationConfiguration>オブジェクトから、適切な値で初期化`<federationConfiguration>`構成ファイル内の要素。  
   
  `<federationConfiguration>`要素として表されます、<xref:System.IdentityModel.Services.Configuration.FederationConfigurationElement>クラスです。 構成オブジェクト自体がによって表される、<xref:System.IdentityModel.Services.Configuration.FederationConfiguration>クラスです。 1 つ<xref:System.IdentityModel.Services.Configuration.FederationConfiguration>インスタンスに設定されて、<xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfiguration%2A?displayProperty=nameWithType>プロパティし、フェデレーション アプリケーションの構成を提供します。  
   
@@ -101,7 +91,7 @@ ms.lasthandoff: 12/22/2017
 </system.identityModel.services>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.IdentityModel.Services.WSFederationAuthenticationModule>  
  <xref:System.IdentityModel.Services.SessionAuthenticationModule>  
  <xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfiguration%2A?displayProperty=nameWithType>  

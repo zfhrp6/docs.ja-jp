@@ -1,13 +1,6 @@
 ---
-title: "&lt;performanceCounters&gt;要素"
-ms.custom: 
+title: '&lt;performanceCounters&gt;要素'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/performanceCounters
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#performanceCounters
@@ -15,23 +8,21 @@ helpviewer_keywords:
 - performanceCounters element
 - <perfomanceCounters> element
 ms.assetid: a71f605b-c7d9-4501-a5c3-abcbb964a43f
-caps.latest.revision: "10"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 64afd62c6eeca7bce14e331fdc65fccfa3d02bce
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: cb4af08095c14c0c748a79f53104d8454d3dcd47
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltperformancecountersgt-element"></a>&lt;performanceCounters&gt;要素
 パフォーマンス カウンターが共有するグローバル メモリのサイズを指定します。  
   
  \<configuration>  
 \<system.diagnostics >  
-\<performanceCounters >  
+\<performanceCounters>  
   
 ## <a name="syntax"></a>構文  
   
@@ -63,9 +54,9 @@ ms.lasthandoff: 12/22/2017
   
  グローバル共有メモリのサイズは、構成ファイルでのみ設定できます。  既定のサイズは 524, 288 バイト、最大サイズは 33,554, 432 (バイト単位)、最小サイズは 32,768 バイトです。  グローバル共有メモリは、すべてのプロセスとカテゴリが共有しているために、最初の作成者は、サイズを指定します。  アプリケーション構成ファイルのサイズを定義する場合、そのサイズは場合にのみ使用アプリケーションが実行するパフォーマンス カウンターの原因となる最初のアプリケーション。  したがって、正しい場所を指定、`filemappingsize`値は、Machine.config ファイルです。  個々 のパフォーマンス カウンターによって、最終的に多数の異なる名前を持つパフォーマンス カウンター インスタンスが作成される場合、グローバル共有メモリがなくなったグローバル共有メモリ内のメモリを解放できません。  
   
- 別の共有メモリのサイズをレジストリの DWORD FileMappingSize 値キー hkey_local_machine \system\currentcontrolset\services\\*\<カテゴリ名 >*\Performance が参照されています。最初に、構成ファイル内のグローバル共有メモリに指定された値に続きます。 FileMappingSize 値が存在しないかどうかは、別の共有メモリのサイズが 4 分の 1 に設定されている (1/4)、構成ファイルのグローバル設定。  
+ 別の共有メモリのサイズをレジストリの DWORD FileMappingSize 値キー hkey_local_machine \system\currentcontrolset\services\\*\<カテゴリ名 >* \Performance が参照されています。最初に、構成ファイル内のグローバル共有メモリに指定された値に続きます。 FileMappingSize 値が存在しないかどうかは、別の共有メモリのサイズが 4 分の 1 に設定されている (1/4)、構成ファイルのグローバル設定。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Diagnostics.PerformanceCounter>  
  <xref:System.Diagnostics.PerformanceCounterCategory>  
  <xref:System.Diagnostics.PerformanceCounter.InstanceLifetime%2A>  

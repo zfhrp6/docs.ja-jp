@@ -1,30 +1,18 @@
 ---
 title: '&lt;discoveryEndpoint&gt;'
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: fae2f48b-a635-4e4b-859d-a1432ac37e1c
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 51caf46f85e7edd1f8e4b9a08ab6a1198ccd9c79
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6a352fbfced08001f76dceaff283d6bca25f56f9
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltdiscoveryendpointgt"></a>&lt;discoveryEndpoint&gt;
 
 この構成要素は、固定探索コントラクトが含まれた標準エンドポイントを定義します。 サービスの構成に追加すると、この要素により、探索メッセージをリッスンする場所が指定されます。 クライアントの構成に追加すると、この要素により、探索クエリの送信先となる場所が指定されます。  
   
-\<system.serviceModel >  
+\<system.serviceModel>  
 \<standardEndpoints >  
   
 ## <a name="syntax"></a>構文

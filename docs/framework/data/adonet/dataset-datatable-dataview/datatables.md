@@ -1,24 +1,12 @@
 ---
 title: DataTables
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 52ff0e32-3e5a-41de-9a3b-7b04ea52b83e
-caps.latest.revision: "6"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 439b951779393d6ac232e6a1a622515905e837ad
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: e148b20c7d8efdb16a897c5606535e4b0112ea29
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="datatables"></a>DataTables
 <xref:System.Data.DataSet> は、テーブル、リレーションシップ、および制約のコレクションで構成されます。 ADO.NET では、<xref:System.Data.DataTable>内のテーブルを表すオブジェクトを使用する**データセット**です。 A **DataTable**のインメモリ リレーショナル データの 1 つのテーブルを表すデータがローカルに、します。NET ベースのアプリケーションをそれが存在するが、Microsoft SQL Server を使用するなどのデータ ソースからデータを読み込むことができます、 **DataAdapter**詳細については、次を参照してください[DataAdapter からの DataSet の読み込み](../../../../../docs/framework/data/adonet/populating-a-dataset-from-a-dataadapter.md).  
@@ -66,5 +54,5 @@ ms.lasthandoff: 01/17/2018
  [クラス ライブラリの概要](../../../../../docs/standard/class-library-overview.md)  
  .NET Framework クラス ライブラリの概要を説明を含む、**システム**名前空間、第 2 レベルの名前空間だけでなく**System.Data**です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

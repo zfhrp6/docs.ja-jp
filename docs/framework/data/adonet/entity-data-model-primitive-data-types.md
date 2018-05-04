@@ -1,24 +1,12 @@
 ---
-title: "Entity Data Model: プリミティブ データ型"
-ms.custom: 
+title: 'Entity Data Model: プリミティブ データ型'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 7635168e-0566-4fdd-8391-7941b0d9f787
-caps.latest.revision: "2"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: f25c94582ade23b645942a13829a5aa559e3e4f6
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 3e99f65c57cf0e0ee4cbccc79d5819d39b9ee60b
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="entity-data-model-primitive-data-types"></a>Entity Data Model: プリミティブ データ型
 Entity Data Model (EDM) は、一連の定義に使用される抽象プリミティブ データ型 (文字列、ブール値、Int32 など) をサポートしている[プロパティ](../../../../docs/framework/data/adonet/property.md)概念モデルでします。 これらのプリミティブ データ型は、SQL Server データベースや共通言語ランタイム (CLR) などのストレージ環境またはホスト環境でサポートされる、実際のプリミティブ データ型のプロキシです。 EDM では、プリミティブ データ型に対する演算や変換のセマンティクスを定義していません。これらのセマンティクスは、ストレージ環境またはホスト環境で定義されます。 通常、EDM のプリミティブ データ型は、ストレージ環境またはホスト環境の対応プリミティブ データ型にマップされます。 Entity Framework が、EDM のプリミティブ型を SQL Server データ型にマップする方法については、次を参照してください。 [Entity Framework 用 SqlClient](../../../../docs/framework/data/adonet/ef/sqlclient-for-ef-types.md)です。  
@@ -49,6 +37,6 @@ Entity Data Model (EDM) は、一連の定義に使用される抽象プリミ�
 |String|文字データを格納します。|Unicode、FixedLength、MaxLength、Collation、Precision、Nullable、Default|  
 |時刻|時刻を格納します。|Precision、Nullable、Default|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Entity Data Model キーの概念](../../../../docs/framework/data/adonet/entity-data-model-key-concepts.md)  
  [Entity Data Model](../../../../docs/framework/data/adonet/entity-data-model.md)

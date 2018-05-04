@@ -1,29 +1,17 @@
 ---
-title: "&lt;baseAddressPrefixFilter&gt; の &lt;add&gt;"
-ms.custom: 
+title: '&lt;baseAddressPrefixFilter&gt; の &lt;add&gt;'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: b226bede-8459-4de9-b2ac-3d39604ce2bc
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ad6ad6f71ef015ad97a2688a7334e8a0c6e5af44
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 549574d0d6585a857f3e0979e814c827139c7536
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltaddgt-of-ltbaseaddressprefixfiltergt"></a>&lt;baseAddressPrefixFilter&gt; の &lt;add&gt;
-パススルー フィルターを指定する構成要素を表します。パススルー フィルターには、インターネット インフォメーション サービス (IIS) で [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] アプリケーションをホストする場合に適切な IIS バインドを選択する機構が用意されています。  
+パススルー フィルター、IIS で Windows Communication Foundation (WCF) アプリケーションをホストする場合は、適切なインターネット インフォメーション サービス (IIS) バインドを選択するメカニズムを提供するを指定する構成要素を表します。  
   
- \<システムです。ServiceModel >  
+ \<system.ServiceModel >  
 \<ServiceHostingEnvironment >  
 \<baseAddressPrefixFilters >  
 \<add>  
@@ -54,7 +42,7 @@ ms.lasthandoff: 12/22/2017
   
 |要素|説明|  
 |-------------|-----------------|  
-|[\<baseAddressPrefixFilters >](../../../../../docs/framework/configure-apps/file-schema/wcf/baseaddressprefixfilters.md)|パススルー フィルターを指定する構成要素のコレクション。パススルー フィルターには、IIS で [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] アプリケーションをホストする場合に適切な IIS バインドを選択する機構が用意されています。|  
+|[\<baseAddressPrefixFilters >](../../../../../docs/framework/configure-apps/file-schema/wcf/baseaddressprefixfilters.md)|IIS で Windows Communication Foundation (WCF) アプリケーションをホストする場合に、適切な IIS バインドを選択するためのメカニズムを提供するパススルー フィルターを指定する構成要素のコレクション。|  
   
 ## <a name="remarks"></a>コメント  
  プレフィックス フィルターは、サービスによって使用される URI を、共有ホスティング プロバイダーが指定できるようにする手段を提供します。 これにより、共有ホストは、同じサイト上の同じスキームに対して、別々のベース アドレスを使用して複数のアプリケーションをホストできるようになります。  
@@ -90,7 +78,7 @@ http://test2.fabrikam.com/Service.svc
 > [!NOTE]
 >  フィルターでワイルドカードはサポートされません。 また、IIS が提供する baseAddresses には、`baseAddressPrefixFilters` リストに存在しない他のスキームにバインドされたアドレスが指定される場合があります。 これらのアドレスはフィルターで除外されません。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Configuration.BaseAddressPrefixFilterElement>  
  <xref:System.ServiceModel.Configuration.ServiceHostingEnvironmentSection>  
  <xref:System.ServiceModel.ServiceHostingEnvironment>  

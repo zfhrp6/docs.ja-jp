@@ -1,21 +1,19 @@
 ---
 title: .NET Core のガイド
 description: .NET Core は、Windows、Linux、および Mac アプリを作成するためのモジュール型の高性能な .NET 実装です。 ここでは、.NET Core の概要について説明します。
-keywords: .NET, .NET Core
 author: richlander
 ms.author: mairaw
 ms.date: 06/20/2016
-ms.topic: article
-ms.prod: .net-core
+ms.topic: conceptual
+ms.prod: dotnet-core
 ms.devlang: dotnet
-ms.assetid: f2b312cb-f80c-4b0d-9101-93908f06a6fa
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: de71e043533d7a7d3d7d3fd3af0a8530c0e145b6
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: dee943a025bf4e3ad97685bde1735f0710023573
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="net-core-guide"></a>.NET Core のガイド
 
@@ -38,7 +36,7 @@ ms.lasthandoff: 12/23/2017
 
 - [.NET ランタイム](https://github.com/dotnet/coreclr)。型システム、アセンブリ読み込み、ガベージ コレクター、ネイティブ相互運用機能、およびその他の基本的なサービスを提供します。 
 - 一連の[フレームワーク ライブラリ](https://github.com/dotnet/corefx)。プリミティブ データ型、アプリ コンポジションの種類、および基本的なユーティリティを提供します。 
-- [SDK ツールのセット](https://github.com/dotnet/cli)と[言語コンパイラ](https://github.com/dotnet/roslyn)。[.NET Core SDK](sdk.md) に含まれており、ベース開発者エクスペリエンスを有効にします。
+- [SDK ツールのセット](https://github.com/dotnet/cli)と[言語コンパイラ](https://github.com/dotnet/roslyn)。[ .NET Core SDK](sdk.md) に含まれており、ベース開発者エクスペリエンスを有効にします。
 - 'dotnet' アプリケ ホスト。 .NET Core アプリの起動に使用されます。 ランタイムの選択、ランタイムのホスト、アセンブリ読み込みポリシーの提供、およびアプリの起動を行います。 同じホストが、ほぼ同じ方法で SDK ツールの起動にも使用されます。
 
 ### <a name="languages"></a>言語

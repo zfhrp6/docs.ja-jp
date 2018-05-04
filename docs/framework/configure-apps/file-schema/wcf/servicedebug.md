@@ -1,32 +1,20 @@
 ---
 title: '&lt;serviceDebug&gt;'
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 6d7ea986-f232-49fe-842c-f934d9966889
-caps.latest.revision: "19"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 8cdd5d8a05354ad6f0df8343d546fd6cd1e8eac4
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 1e9a8a310a2b3154568b20ea225faead1c71d64f
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltservicedebuggt"></a>&lt;serviceDebug&gt;
-[!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] サービスのデバッグおよびヘルプ情報機能を指定します。  
+Windows Communication Foundation (WCF) サービスのデバッグおよびヘルプ情報機能を指定します。  
   
- \<システムです。ServiceModel >  
+ \<system.ServiceModel >  
 \<ビヘイビアー >  
-\<serviceBehaviors >  
-\<動作 >  
+\<serviceBehaviors>  
+\<behavior>  
 \<serviceDebug >  
   
 ## <a name="syntax"></a>構文  
@@ -56,7 +44,7 @@ ms.lasthandoff: 12/22/2017
 |httpsHelpPageBindingConfiguration|このバインディングの追加の構成情報を参照する `httpsHelpPageBinding` 属性に指定されるバインディングの名前を指定する文字列。 同じ名前を `<bindings>` セクションに定義する必要があります。|  
 |httpsHelpPageEnabled|[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] が、`httpsHelpPageUrl` 属性により指定されたアドレスに HTML ヘルプ ページを公開するかどうかを制御するブール値です。 既定値は、`true` です。<br /><br /> このプロパティを `false` に設定して、HTML ブラウザーに表示される HTML ヘルプ ページの公開を無効にできます。<br /><br /> HTML ヘルプ ページが、`httpsHelpPageUrl` 属性により制御される場所に公開されるようにするには、この属性を `true` に設定する必要があります。 さらに、次のいずれかの条件も満たす必要があります。<br /><br /> -`httpsHelpPageUrl`属性は、HTTPS プロトコル スキームをサポートする絶対アドレスです。<br />-は、HTTPS プロトコル スキームをサポートするサービスのベース アドレスです。<br /><br /> HTTPS プロトコル スキームをサポートしない絶対アドレスが `httpsHelpPageUrl` 属性に割り当てられている場合は例外がスローされますが、前の基準をどれも満たさないその他のシナリオでは、例外も HTML ヘルプ ページも表示されません。|  
 |httpsHelpPageUrl|HTML ブラウザーを使用してエンドポイントを表示するときにユーザーが参照する、カスタム HTML ヘルプ ファイルの相対的または絶対的な HTTPS ベースの URL を指定する URI。<br /><br /> この属性を使用して、HTTPS/Get 要求から返されるカスタム HTML ヘルプ ファイルを HTML ブラウザーなどから利用できます。 HTML ヘルプ ファイルの場所は、次のように解決されます。<br /><br /> -このプロパティの値が相対アドレスの場合、HTML ヘルプ ファイルの場所はこのプロパティの値を加えた HTTPS 要求をサポートするサービスのベース アドレスの値です。<br />このプロパティの値が絶対アドレスがあり、HTTPS 要求をサポートする場合、HTML ヘルプ ファイルの場所は、このプロパティの値です。<br />-このプロパティの値が絶対値であって、HTTPS 要求をサポートしていない場合、例外がスローされます。<br /><br /> この属性は有効な場合にのみ、`httpHelpPageEnabled`属性は`true`します。|  
-|includeExceptionDetailInFaults|デバッグの目的でクライアントに返される SOAP エラーの詳細に、マネージ例外情報を含めるかどうかを指定する値。 既定値は、`false` です。<br /><br /> この属性を `true` に設定すると、デバッグ目的でクライアントへのマネージ例外情報のフロー、および Web ブラウザーでサービスをブラウズするユーザー向けの HTML 情報ファイルの公開を有効にできます。 **注意:**返すマネージ例外情報をクライアントにセキュリティ リスクとなることができます。 これは、例外の詳細が、認証されていないクライアントによって使用可能な内部サービスの実装に関する情報を公開するためです。|  
+|includeExceptionDetailInFaults|デバッグの目的でクライアントに返される SOAP エラーの詳細に、マネージ例外情報を含めるかどうかを指定する値。 既定値は、`false` です。<br /><br /> この属性を `true` に設定すると、デバッグ目的でクライアントへのマネージ例外情報のフロー、および Web ブラウザーでサービスをブラウズするユーザー向けの HTML 情報ファイルの公開を有効にできます。 **注意:** 返すマネージ例外情報をクライアントにセキュリティ リスクとなることができます。 これは、例外の詳細が、認証されていないクライアントによって使用可能な内部サービスの実装に関する情報を公開するためです。|  
   
 ### <a name="child-elements"></a>子要素  
  なし。  
@@ -65,7 +53,7 @@ ms.lasthandoff: 12/22/2017
   
 |要素|説明|  
 |-------------|-----------------|  
-|[\<動作 >](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|動作の要素を指定します。|  
+|[\<behavior>](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|動作の要素を指定します。|  
   
 ## <a name="remarks"></a>コメント  
  設定`includeExceptionDetailInFaults`に`true`サービスは、例外が使用して宣言されていない場合でも、アプリケーション コードによってスローされる例外を返すことができます、<xref:System.ServiceModel.FaultContractAttribute>です。 この設定は、サーバーが予期しない例外をスローしている場合のデバッグ時に役立ちます。 この属性を使用すると、不明な例外がシリアル化された形式で返されるので、例外をより詳細に調べることができます。  
@@ -79,7 +67,7 @@ ms.lasthandoff: 12/22/2017
   
  省略可能な `httpHelpPageBinding` 属性および `httpHelpPageBinding` 属性を使用すると、サービス ウェブ ページにアクセスするためのバインディングを構成できます。 これらの属性が指定されていない場合、サービス ヘルプ ページへのアクセスには、適切な既定のバインディグ (HTTP の場合は `HttpTransportBindingElement`、HTTPS の場合は `HttpsTransportBindingElement`) が使用されます。 これらの属性は、組み込みの WCF バインディングでは使用できないことに注意してください。 バインディング xref:System.ServiceModel.Channels.IReplyChannel をサポートする内部バインド要素でのみ > がサポートされます。 さらに、バインディングの <xref:System.ServiceModel.Channels.MessageVersion?displayProperty=nameWithType> プロパティが <xref:System.ServiceModel.Channels.MessageVersion.None?displayProperty=nameWithType> である必要があります。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Configuration.ServiceDebugElement>  
  <xref:System.ServiceModel.Description.ServiceDebugBehavior>  
  [コントラクトおよびサービスのエラーの指定と処理](../../../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md)  

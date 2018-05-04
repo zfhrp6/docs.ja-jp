@@ -1,27 +1,17 @@
 ---
-title: "&lt;UseSmallInternalThreadStacks&gt;要素"
-ms.custom: 
+title: '&lt;UseSmallInternalThreadStacks&gt;要素'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - UseSmallInternalThreadStacks element
 - <UseSmallInternalThreadStacks> element
 ms.assetid: 1e3f6ec0-1cac-4e1c-9c81-17d948ae5874
-caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c96537cad59034578d1284f7dc432e5775f3730b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a11b9a008878e716e9b3d8cd54abe5eb4169672a
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltusesmallinternalthreadstacksgt-element"></a>&lt;UseSmallInternalThreadStacks&gt;要素
 共通言語ランタイム (CLR) にメモリが減少する要求は、これらのスレッドの既定のスタック サイズを使用する代わりに内部的には、使用して特定のスレッドの作成時に、明示的なスタック サイズを指定することによって使用されます。  
@@ -49,8 +39,8 @@ ms.lasthandoff: 12/22/2017
   
 |値|説明|  
 |-----------|-----------------|  
-|TRUE|明示的なスタック サイズを要求します。|  
-|false|既定のスタック サイズを使用します。 これは、既定値を[!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)]です。|  
+|true|明示的なスタック サイズを要求します。|  
+|False|既定のスタック サイズを使用します。 これは、既定値を[!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)]です。|  
   
 ### <a name="child-elements"></a>子要素  
  なし。  
@@ -81,6 +71,6 @@ ms.lasthandoff: 12/22/2017
 </configuration>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ランタイム設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
  [構成ファイル スキーマ](../../../../../docs/framework/configure-apps/file-schema/index.md)

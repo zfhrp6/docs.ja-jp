@@ -1,26 +1,12 @@
 ---
 title: LINQ to DataSet の概要
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-ado
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: dc20a8fb-03f6-4b68-9c2b-7f7299e3070b
-caps.latest.revision: 3
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload:
-- dotnet
-ms.openlocfilehash: 3e030ca62625e2b8870cf0eeb5694f4b889b3a7e
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: d269ea2899ffd8005aad9912cf9273a012e13edd
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="linq-to-dataset-overview"></a>LINQ to DataSet の概要
 <xref:System.Data.DataSet> は、[!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] のコンポーネントの中でもきわめて使用頻度の高いコンポーネントの 1 つです。 [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] の基礎を成す非接続型プログラミング モデルの重要な要素であり、さまざまなデータ ソースからのデータを明示的にキャッシュできます。 プレゼンテーション層では、<xref:System.Data.DataSet> とデータ バインドの GUI コントロールとが密接に連携します。 中間層では、リレーショナル形式のデータを維持するキャッシュとして機能し、単純で高速なクエリと、階層的なナビゲーション サービスを提供します。 データベースに対する要求の数を削減するための一般的な手法は、使用する、<xref:System.Data.DataSet>を中間層でキャッシュします。 たとえば、データ ドリブン[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)]Web アプリケーションです。 ほとんど変更されないアプリケーション データがかなりの割合で存在し、しかも、複数のセッションまたは複数のユーザー間で共通して使用されているケースがよくあります。 このデータを Web サーバー上のメモリに維持しておくことで、データベースに対する要求数を減らし、高速な対話処理をユーザーに提供できます。 別の点、<xref:System.Data.DataSet>は、アプリケーションに 1 つまたは複数のデータ ソースから対象のデータのサブセットをアプリケーション空間に取り込むことができます。 アプリケーションは、そのデータをリレーショナル形式を維持したままインメモリで操作できます。  

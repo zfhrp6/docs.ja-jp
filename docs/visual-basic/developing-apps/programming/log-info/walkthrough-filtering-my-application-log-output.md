@@ -1,25 +1,26 @@
 ---
-title: "My.Application.Log の出力のフィルター処理 (Visual Basic)"
-ms.custom: 
+title: My.Application.Log の出力のフィルター処理 (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - My.Log object, filtering output
 - My.Application.Log object, filtering output
 - application event logs, output filtering
 ms.assetid: 2c0a457a-38a4-49e1-934d-a51320b7b4ca
-caps.latest.revision: "22"
+caps.latest.revision: 22
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 90fd445227e0c8290ad63fccf807d6d7bdf43ccd
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 6c048578b320fedd2153aee7b466b1494551abe0
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="walkthrough-filtering-myapplicationlog-output-visual-basic"></a>チュートリアル: My.Application.Log の出力のフィルター処理 (Visual Basic)
 このチュートリアルでは、`My.Application.Log` オブジェクトの既定のログ フィルター処理を変更して、`Log` オブジェクトからリスナーに渡される情報や、リスナーによって記述される情報を制御する方法について説明します。 構成情報はアプリケーションの構成ファイルに保存されるため、ロギングの動作はアプリケーションをビルドした後でも変更できます。  
@@ -29,7 +30,7 @@ ms.lasthandoff: 11/21/2017
   
 #### <a name="to-build-the-sample-application"></a>サンプル アプリケーションをビルドするには  
   
-1.  新しい [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] Windows アプリケーション プロジェクトを開きます。  
+1.  新しい Visual Basic Windows アプリケーション プロジェクトを開きます。  
   
 2.  Form1 に Button1 という名前のボタンを追加します。  
   
@@ -65,7 +66,7 @@ ms.lasthandoff: 11/21/2017
 |---|---| 
 |`Critical`|`Critical`|  
 |`Error`|`Critical` または `Error`|  
-|`Warning`|`Critical`、`Error`、または `Warning`|  
+|`Warning`|`Critical`、 `Error`、または `Warning`|  
 |`Information`|`Critical`、`Error`、`Warning`、または `Information`|  
 |`Verbose`|`Critical`、`Error`、`Warning`、`Information`、または `Verbose`|  
 |`ActivityTracing`|`Start`、`Stop`、`Suspend`、`Resume`、または `Transfer`|  
@@ -79,17 +80,17 @@ ms.lasthandoff: 11/21/2017
   
 #### <a name="to-log-only-activity-tracing-events"></a>アクティビティ トレース イベントだけを記録するには  
   
-1.  **ソリューション エクスプローラー**で app.config を右クリックし、**[開く]**を選択します。  
+1.  **ソリューション エクスプローラー**で app.config を右クリックし、**[開く]** を選択します。  
   
-     または  
+     - または -  
   
      app.config ファイルがない場合は、次の操作を行います。  
   
-    1.  **[プロジェクト]** メニューの **[新しい項目の追加]**をクリックします。  
+    1.  **[プロジェクト]** メニューの **[新しい項目の追加]** をクリックします。  
   
-    2.  **[新しい項目の追加]** ダイアログ ボックスで、 **[アプリケーション構成ファイル]**を選択します。  
+    2.  **[新しい項目の追加]** ダイアログ ボックスで、 **[アプリケーション構成ファイル]** を選択します。  
   
-    3.  **[追加]**をクリックします。  
+    3.  **[追加]** をクリックします。  
   
 2.  最上位の `<configuration>` セクション内の `<system.diagnostics>` セクションで、`<switches>` セクションを見つけます。  
   
@@ -154,17 +155,17 @@ ms.lasthandoff: 11/21/2017
   
 #### <a name="to-log-only-activity-tracing-events"></a>アクティビティ トレース イベントだけを記録するには  
   
-1.  **ソリューション エクスプローラー**で app.config を右クリックし、**[開く]**を選択します。  
+1.  **ソリューション エクスプローラー**で app.config を右クリックし、**[開く]** を選択します。  
   
-     または  
+     - または -  
   
      app.config ファイルがない場合は、次の操作を行います。  
   
-    1.  **[プロジェクト]** メニューの **[新しい項目の追加]**をクリックします。  
+    1.  **[プロジェクト]** メニューの **[新しい項目の追加]** をクリックします。  
   
-    2.  **[新しい項目の追加]** ダイアログ ボックスで、 **[アプリケーション構成ファイル]**を選択します。  
+    2.  **[新しい項目の追加]** ダイアログ ボックスで、 **[アプリケーション構成ファイル]** を選択します。  
   
-    3.  **[追加]**をクリックします。  
+    3.  **[追加]** をクリックします。  
   
 2.  **ソリューション エクスプローラー**で app.config を右クリックします。 **[開く]** をクリックします。  
   
@@ -255,7 +256,7 @@ ms.lasthandoff: 11/21/2017
   
  配置後にログの設定を変更する方法については、「[アプリケーション ログの使用](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)」をご覧ください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [チュートリアル : My.Application.Log による情報の書き込み先の確認](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)  
  [チュートリアル : My.Application.Log による情報の書き込み先の変更](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md)  
  [チュートリアル : カスタム ログ リスナーの作成](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-creating-custom-log-listeners.md)  

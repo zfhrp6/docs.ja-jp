@@ -1,14 +1,6 @@
 ---
-title: "&lt;assemblyBinding&gt;要素&lt;ランタイム&gt;"
-ms.custom: 
+title: '&lt;assemblyBinding&gt;要素&lt;ランタイム&gt;'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/runtime/assemblyBinding
 helpviewer_keywords:
@@ -16,24 +8,20 @@ helpviewer_keywords:
 - assemblyBinding element
 - container tags, <assemblyBinding> element
 ms.assetid: 964cbb35-ab49-4498-8471-209689e5dada
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: d5ef09f5d7b2dce366c605c8d8f4e6c456920b35
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d84c134b8e2b048f39836bbc10af06039e96719e
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltassemblybindinggt-element-for-ltruntimegt"></a>&lt;assemblyBinding&gt;要素&lt;ランタイム&gt;
 アセンブリ バージョンのリダイレクトおよびアセンブリの位置に関する情報が含まれます。  
   
  \<configuration>  
 \<ランタイム >  
-\<assemblyBinding >  
+\<assemblyBinding>  
   
 ## <a name="syntax"></a>構文  
   
@@ -57,7 +45,7 @@ ms.lasthandoff: 12/22/2017
   
 |要素|説明|  
 |-------------|-----------------|  
-|[\<dependentAssembly>](../../../../../docs/framework/configure-apps/file-schema/runtime/dependentassembly-element.md)|アセンブリのバインディング ポリシーとアセンブリの場所をカプセル化します。 1 つを使用して **\<dependentAssembly >**各アセンブリのタグ。|  
+|[\<dependentAssembly>](../../../../../docs/framework/configure-apps/file-schema/runtime/dependentassembly-element.md)|アセンブリのバインディング ポリシーとアセンブリの場所をカプセル化します。 1 つを使用して **\<dependentAssembly >** 各アセンブリのタグ。|  
 |[\<probing>](../../../../../docs/framework/configure-apps/file-schema/runtime/probing-element.md)|アセンブリの読み込み時に共通言語ランタイムが検索するサブディレクトリを指定します。|  
 |[\<publisherPolicy>](../../../../../docs/framework/configure-apps/file-schema/runtime/publisherpolicy-element.md)|ランタイムが発行元ポリシーを適用するかどうかを指定します。|  
 |[\<qualifyAssembly>](../../../../../docs/framework/configure-apps/file-schema/runtime/qualifyassembly-element.md)|部分名が使用された場合に動的に読み込む必要があるアセンブリの完全名を指定します。|  
@@ -103,7 +91,7 @@ ms.lasthandoff: 12/22/2017
 </runtime>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ランタイム設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
  [構成ファイル スキーマ](../../../../../docs/framework/configure-apps/file-schema/index.md)  
  [アセンブリ バージョンのリダイレクト](../../../../../docs/framework/configure-apps/redirect-assembly-versions.md)

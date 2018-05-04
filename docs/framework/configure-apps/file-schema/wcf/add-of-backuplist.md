@@ -1,29 +1,17 @@
 ---
-title: "&lt;backupList&gt; の &lt;add&gt;"
-ms.custom: 
+title: '&lt;backupList&gt; の &lt;add&gt;'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: bc5939fc-314a-4ea4-a533-c96958da7173
-caps.latest.revision: "2"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 786620b0daf1cd22a95f9d0c94b7fc3d17c1a2c3
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 7e7361b24c0444b5f3d51a6f5bf079d5eb2dee18
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltaddgt-of-ltbackuplistgt"></a>&lt;backupList&gt; の &lt;add&gt;
 バックアップ エンドポイント要素を定義する構成要素を表します。  
   
- \<system.serviceModel >  
+ \<system.serviceModel>  
 \<ルーティング >  
 \<backupLists >  
 \<backupList >  
@@ -56,5 +44,5 @@ ms.lasthandoff: 12/22/2017
 |-------------|-----------------|  
 |[\<ルーティング >](../../../../../docs/framework/configure-apps/file-schema/wcf/routing.md)|プライマリ エンドポイントに到達できない場合に使用するルーティング サービスを希望するエンドポイントの一覧が含まれています。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Routing.Configuration.BackupEndpointElement?displayProperty=nameWithType> 

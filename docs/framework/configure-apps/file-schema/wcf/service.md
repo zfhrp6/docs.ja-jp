@@ -1,30 +1,18 @@
 ---
-title: "&lt;サービス&gt;"
-ms.custom: 
+title: '&lt;サービス&gt;'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 13123dd6-c4a9-4a04-a984-df184b851788
-caps.latest.revision: "27"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 689dfae90baffa3e9895258d1635c7840d8df6b2
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a73e4699e0998338f09e1ed0504f5b1cfd73b225
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltservicegt"></a>&lt;サービス&gt;
 `service` 要素には Windows Communication Foundation (WCF) サービスの設定が含まれます。 また、サービスを公開するエンドポイントも含まれます。  
   
- \<システムです。ServiceModel >  
-\<サービス >  
+ \<system.ServiceModel >  
+\<services>  
 \<サービス >  
   
 ## <a name="syntax"></a>構文  
@@ -49,14 +37,14 @@ ms.lasthandoff: 12/22/2017
   
 |要素|説明|  
 |-------------|-----------------|  
-|[\<エンドポイント >](../../../../../docs/framework/configure-apps/file-schema/wcf/endpoint-element.md)|このサービスを公開する `endpoint` 要素のコレクション。|  
+|[\<endpoint>](../../../../../docs/framework/configure-apps/file-schema/wcf/endpoint-element.md)|このサービスを公開する `endpoint` 要素のコレクション。|  
 |[\<ホスト >](../../../../../docs/framework/configure-apps/file-schema/wcf/host.md)|このサービス インスタンスのホストを指定します。 この要素は <xref:System.ServiceModel.Configuration.HostElement> 型です。|  
   
 ### <a name="parent-elements"></a>親要素  
   
 |要素|説明|  
 |-------------|-----------------|  
-|[\<サービス >](../../../../../docs/framework/configure-apps/file-schema/wcf/services.md)|すべての WCF 構成要素のルート要素です。|  
+|[\<services>](../../../../../docs/framework/configure-apps/file-schema/wcf/services.md)|すべての WCF 構成要素のルート要素です。|  
   
 ## <a name="remarks"></a>コメント  
  サービスは、設定ファイルの `services` セクションで定義されます。 アセンブリには、任意の数のサービスを含めることができます。 各サービスには、独自の `service` 設定セクションがあります。 このセクションとその内容は、サービス コントラクト、動作、および特定のサービスのエンドポイントを定義します。  
@@ -80,6 +68,6 @@ ms.lasthandoff: 12/22/2017
 </service>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Configuration.ServiceElement>  
  [サービスの構成](../../../../../docs/framework/wcf/configuring-services.md)

@@ -1,18 +1,18 @@
 ---
-title: "Windows における .NET Core の前提条件"
-description: "Windows コンピューターで .NET Core アプリケーションを開発および実行する場合に必要な依存関係について説明します。"
+title: Windows における .NET Core の前提条件
+description: Windows コンピューターで .NET Core アプリケーションを開発および実行する場合に必要な依存関係について説明します。
 author: JRAlexander
 ms.author: johalex
-ms.date: 03/02/2018
+ms.date: 04/24/2018
 ms.topic: article
 ms.prod: .net-core
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: 48102f3fb7fa6e93238eefff0e7f1ecbed4d8409
-ms.sourcegitcommit: d3cfda0943364aaf6ccd574f55f584576c8a4fee
+ms.openlocfilehash: ac898ea87c0247581154eb7de65e8cbe6ea6ba15
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="prerequisites-for-net-core-on-windows"></a>Windows における .NET Core の前提条件
 
@@ -50,7 +50,7 @@ ms.lasthandoff: 03/08/2018
 * *.zip* ファイルを使用して .NET Core をインストールする。 これにはビルド/CI/CD サーバーを含めることができます。
 
 > [!NOTE]
-> *Windows 7 および Windows Server 2008 コンピューターの場合のみ:* Windows のインストールが最新であり、Windows Update から修正プログラム [KB2533623](https://support.microsoft.com/help/2533623) をインストールしていることを確認してください。
+> *Windows 8.1 以前のバージョン、または Windows Server 2012 R2 以前のバージョンの場合:* Windows のインストールが最新であることと、Windows Update からインストールできる [KB2999226](https://support.microsoft.com/en-us/help/2999226/update-for-universal-c-runtime-in-windows) が含まれていることを確認してください。 この更新プログラムがインストールされていない場合は、.NET Core アプリケーションを起動するときに、次のようなエラーが表示されます。`The program can't start because api-ms-win-crt-runtime-1-1-0.dll is missing from your computer. Try reinstalling the program to fix this problem.`
 
 ## <a name="prerequisites-with-visual-studio-2017"></a>Visual Studio 2017 の前提条件
 
@@ -70,7 +70,7 @@ Visual Studio 2017 で .NET Core 2.x アプリを開発するには、次の手�
 
  2. [.NET Core 2.x SDK](https://www.microsoft.com/net/download/core) をインストールします。
  3. 次の手順を使用して、既存または新規の .NET Core 1.x プロジェクトを .NET Core 2.x に再ターゲットします。
-    * **[プロジェクト]** メニューの **[プロパティ]**をクリックします。
+    * **[プロジェクト]** メニューの **[プロパティ]** をクリックします。
     * **[ターゲット フレームワーク]** 選択メニューで、値を **[.NET Core 2.0]** に設定します。
 
 ![[ターゲット フレームワーク] メニュー項目で [.NET Core 2.0] が選択された Visual Studio 2017 のアプリケーション プロジェクト プロパティのスクリーンショット](./media/windows-prerequisites/Targeting-dotnetCore2.png)

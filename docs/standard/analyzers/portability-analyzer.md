@@ -1,6 +1,6 @@
 ---
 title: .NET Portability Analyzer - .NET
-description: ".NET Portability Analyzer ツールを使って、さまざまな .NET の実装 (.NET Core、.NET Standard、UWP、Xamarin など) の間でのコードの移植性を評価する方法について説明します。"
+description: .NET Portability Analyzer ツールを使って、さまざまな .NET の実装 (.NET Core、.NET Standard、UWP、Xamarin など) の間でのコードの移植性を評価する方法について説明します。
 keywords: .NET, .NET Core
 author: blackdwarf
 ms.author: mairaw
@@ -13,15 +13,15 @@ ms.assetid: 0375250f-5704-4993-a6d5-e21c499cea1e
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 7e3d628fe4b4a8f01e692a70892658fceeb87953
-ms.sourcegitcommit: 75a180acb5d8a2dbd4a52915ce8e980749fb1d05
+ms.openlocfilehash: 3d813292a821c2ebfa7b40ee873cf36e71104ebf
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="the-net-portability-analyzer"></a>.NET Portability Analyzer
 
-ライブラリをマルチプラットフォーム対応にしたい場合や、 アプリケーションで他の .NET の実装とプロファイル (.NET Core、.NET Standard、UWP、Xamarin for iOS/Android/Mac など) との互換性を確保するのに必要な作業量を知りたい場合は、 [.NET Portability Analyzer](http://go.microsoft.com/fwlink/?LinkID=507467) が役立ちます。このツールを使用すると、アセンブリを分析して、プログラムが .NET 実装全体でどの程度柔軟な構造になっているかについて詳細なレポートを生成することができます。 Portability Analyzer は、Visual Studio 拡張機能のコンソール アプリとして提供されます。
+ライブラリをマルチプラットフォーム対応にしたい場合や、 アプリケーションで他の .NET の実装とプロファイル (.NET Core、.NET Standard、UWP、Xamarin for iOS/Android/Mac など) との互換性を確保するのに必要な作業量を知りたい場合は、 [.NET Portability Analyzer](https://marketplace.visualstudio.com/items?itemName=ConnieYau.NETPortabilityAnalyzer) が役立ちます。このツールを使用すると、アセンブリを分析して、プログラムが .NET 実装全体でどの程度柔軟な構造になっているかについて詳細なレポートを生成することができます。 Portability Analyzer は、Visual Studio 拡張機能のコンソール アプリとして提供されます。
 
 ## <a name="new-targets"></a>新しいターゲット
 
@@ -33,7 +33,7 @@ ms.lasthandoff: 02/24/2018
 
 ## <a name="how-to-use-portability-analyzer"></a>Portability Analyzer の使用方法
 
-.NET Portability Analyzer を使用するには、[Visual Studio ギャラリー](http://go.microsoft.com/fwlink/?LinkID=507467)から拡張機能をダウンロードし、インストールする必要があります。 これは、Visual Studio 2015 と Visual Studio 2017 で機能します。 **[分析]**、 > **[Portability Analyzer Settings (Portability Analyzer の設定)]** の順に選択して構成し、ターゲット プラットフォームを選択できます。
+.NET Portability Analyzer を使用するには、[Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=ConnieYau.NETPortabilityAnalyzer) から拡張機能をダウンロードし、インストールする必要があります。 これは、Visual Studio 2015 と Visual Studio 2017 で機能します。 **[分析]**、 > **[Portability Analyzer Settings (Portability Analyzer の設定)]** の順に選択して構成し、ターゲット プラットフォームを選択できます。
 
 ![Portability のスクリーンショット](./media/portability-analyzer/portability-screenshot.png)
 

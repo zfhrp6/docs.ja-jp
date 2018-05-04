@@ -1,24 +1,12 @@
 ---
-title: "&lt;wsHttpBinding&gt; の &lt;transport&gt;"
-ms.custom: 
+title: '&lt;wsHttpBinding&gt; の &lt;transport&gt;'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 21e38acf-450a-4bda-82b6-de305e1f7cd8
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 0b73a3810376cf05e8b47e29d3997d6a935c9646
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: d6095c2cc9a315855db03f3a3f44547b1f64b9df
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="lttransportgt-of-ltwshttpbindinggt"></a>&lt;wsHttpBinding&gt; の &lt;transport&gt;
 HTTP トランスポートの認証設定を定義します。  
@@ -27,7 +15,7 @@ HTTP トランスポートの認証設定を定義します。
 \<bindings>  
 \<wsHttpBinding>  
 \<binding>  
-\<security>  
+\<セキュリティ >  
 \<transport>  
   
 ## <a name="syntax"></a>構文  
@@ -95,7 +83,7 @@ HTTP トランスポートの認証設定を定義します。
 |-------------|-----------------|  
 |[\<security>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-wshttpbinding.md)|セキュリティ機能を表す、 [ \<wsHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)です。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.HttpTransportSecurity>  
  <xref:System.ServiceModel.WSHttpSecurity.Transport%2A>  
  <xref:System.ServiceModel.Configuration.WSHttpSecurityElement.Transport%2A>  

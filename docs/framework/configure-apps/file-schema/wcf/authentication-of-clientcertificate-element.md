@@ -1,33 +1,21 @@
 ---
-title: "&lt;clientCertificate&gt; 要素の &lt;authentication&gt;"
-ms.custom: 
+title: '&lt;clientCertificate&gt; 要素の &lt;authentication&gt;'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 4a55eea2-1826-4026-b911-b7cc9e9c8bfe
-caps.latest.revision: "16"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e909bd7f6257445fe4c42dd92ae366676f72d60c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ccc184f63428fd4a12b9047c0bcf4416e87f24d2
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltauthenticationgt-of-ltclientcertificategt-element"></a>&lt;clientCertificate&gt; 要素の &lt;authentication&gt;
 サービスによって使用されるクライアント証明書の認証動作を指定します。  
   
- \<システムです。ServiceModel >  
+ \<system.ServiceModel >  
 \<ビヘイビアー >  
-\<serviceBehaviors >  
-\<動作 >  
-\<serviceCredentials >  
+\<serviceBehaviors>  
+\<behavior>  
+\<serviceCredentials>  
 \<clientCertificate >  
 \<認証 >  
   
@@ -118,7 +106,7 @@ trustedStoreLocation="CurrentUser/LocalMachine"
 </serviceBehaviors>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Security.X509ClientCertificateAuthentication>  
  <xref:System.ServiceModel.Security.X509CertificateValidationMode>  
  <xref:System.ServiceModel.Security.X509CertificateInitiatorServiceCredential.Authentication%2A>  

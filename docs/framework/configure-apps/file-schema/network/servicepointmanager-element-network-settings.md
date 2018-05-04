@@ -1,13 +1,6 @@
 ---
-title: "&lt;servicePointManager&gt;要素 (ネットワーク設定)"
-ms.custom: 
+title: '&lt;servicePointManager&gt;要素 (ネットワーク設定)'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#servicePointManager
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/settings/servicePointManager
@@ -15,23 +8,21 @@ helpviewer_keywords:
 - servicePointManager element
 - <servicePointManager> element
 ms.assetid: 6e5def51-3646-4ef6-a7bd-c69151321bec
-caps.latest.revision: "16"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 38ffe6728ca05022caca8f5973b546f2b17412d8
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5903174f125938923a63fc031421a8d5a020e56d
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltservicepointmanagergt-element-network-settings"></a>&lt;servicePointManager&gt;要素 (ネットワーク設定)
 ネットワーク リソースへの接続を構成します。  
   
  \<configuration>  
-\<system.net >  
-\<設定 >  
+\<system.net>  
+\<settings>  
 \<servicePointManager >  
   
 ## <a name="syntax"></a>構文  
@@ -77,7 +68,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="configuration-files"></a>構成ファイル  
  この要素は、アプリケーション構成ファイルまたはマシン構成ファイル (Machine.config) で使用できます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Net.ServicePointManager>  
  <xref:System.Net.Security.EncryptionPolicy>  
  [ネットワーク設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

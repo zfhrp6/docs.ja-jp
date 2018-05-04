@@ -1,24 +1,25 @@
 ---
-title: "Visual Basic アプリケーションにおけるデータ アクセス"
+title: Visual Basic アプリケーションにおけるデータ アクセス
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - data [Visual Basic]
 - Visual Basic, data access
 ms.assetid: 3086ab38-3be5-4b22-9385-7d0e16b04f6a
-caps.latest.revision: "23"
+caps.latest.revision: 23
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: ae0611fdadabd6ab684f3f97995f3be3e348e648
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: 306a618f193f9223443938ae2a9e0996c1b5295c
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="accessing-data-in-visual-basic-applications"></a>Visual Basic アプリケーションにおけるデータ アクセス
-[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] には、データにアクセスするアプリケーションを開発する際に役立ついくつかの新機能が用意されています。 Windows アプリケーションのデータ バインド フォームは、[[データ ソース]](/visualstudio/data-tools/add-new-data-sources) ウィンドウからフォームに項目をドラッグすることにより作成できます。 データをコントロールにバインドするには、**[データ ソース]** ウィンドウから既存のコントロールに項目をドラッグします。  
+Visual Basic には、データにアクセスするアプリケーションを開発する際に役立ついくつかの新機能が用意されています。 Windows アプリケーションのデータ バインド フォームは、[[データ ソース]](/visualstudio/data-tools/add-new-data-sources) ウィンドウからフォームに項目をドラッグすることにより作成できます。 データをコントロールにバインドするには、**[データ ソース]** ウィンドウから既存のコントロールに項目をドラッグします。  
   
 ## <a name="related-sections"></a>関連項目  
  [Visual Studio でのデータへのアクセス](/visualstudio/data-tools/)  

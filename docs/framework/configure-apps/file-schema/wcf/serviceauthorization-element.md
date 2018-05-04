@@ -1,32 +1,20 @@
 ---
-title: "&lt;serviceAuthorization&gt; 要素"
-ms.custom: 
+title: '&lt;serviceAuthorization&gt; 要素'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 18cddad5-ddcb-4839-a0ac-1d6f6ab783ca
-caps.latest.revision: "26"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 9572cea14b7c15893459133aa75e9fa62b10d4f8
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: cd5cb072f424927615b6e87d9193a9c200a8c48b
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltserviceauthorizationgt-element"></a>&lt;serviceAuthorization&gt; 要素
 サービス操作へのアクセスを許可する設定を指定します。  
   
- \<システムです。ServiceModel >  
+ \<system.ServiceModel >  
 \<ビヘイビアー >  
-\<serviceBehaviors >  
-\<動作 >  
+\<serviceBehaviors>  
+\<behavior>  
 \<serviceAuthorization >  
   
 ## <a name="syntax"></a>構文  
@@ -65,7 +53,7 @@ ms.lasthandoff: 12/22/2017
   
 |要素|説明|  
 |-------------|-----------------|  
-|[\<動作 >](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|サービスの動作設定のコレクションが含まれています。|  
+|[\<behavior>](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|サービスの動作設定のコレクションが含まれています。|  
   
 ## <a name="remarks"></a>コメント  
  このセクションには、承認、カスタム ロール プロバイダー、および偽装に影響する要素が含まれています。  
@@ -108,7 +96,7 @@ ms.lasthandoff: 12/22/2017
   
  この構成要素を使用する詳細な例についてを参照してください。[サービス操作へのアクセスを承認する](../../../../../docs/framework/wcf/samples/authorizing-access-to-service-operations.md)と[承認ポリシー](../../../../../docs/framework/wcf/samples/authorization-policy.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Configuration.ServiceAuthorizationElement>  
  <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior>  
  [セキュリティ動作](../../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)  

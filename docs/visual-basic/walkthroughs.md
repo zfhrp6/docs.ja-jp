@@ -1,8 +1,9 @@
 ---
-title: "Visual Basic 言語のチュートリアル"
+title: Visual Basic 言語のチュートリアル
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-visual-basic
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - Visual Basic, walkthroughs
@@ -10,14 +11,14 @@ helpviewer_keywords:
 - Visual Basic code, walkthroughs
 - walkthroughs [Visual Basic]
 ms.assetid: e4e1f849-e1ce-4cf7-8483-d9b4c4887a8e
-caps.latest.revision: "18"
+caps.latest.revision: 18
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: c57ee0b94e5aafb6b1287707b10977e86ee631f1
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: b34c513e54ba41bf845abaa59dd630b6877d9bbd
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="visual-basic-language-walkthroughs"></a>Visual Basic 言語のチュートリアル
 チュートリアルでは、製品や特定の機能領域について学習を開始するのに適した一般的なシナリオについて詳細な手順を示します。  
@@ -26,13 +27,13 @@ ms.lasthandoff: 10/18/2017
  [Async](../visual-basic/language-reference/modifiers/async.md) と [Await](../visual-basic/language-reference/operators/await-operator.md) を使用して非同期ソリューションを作成する方法を示します。  
   
  [イベントの宣言と発生](../visual-basic/programming-guide/language-features/events/walkthrough-declaring-and-raising-events.md)  
- [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] でイベントを宣言する方法と発生させる方法について説明します。  
+ Visual Basic でイベントを宣言する方法と発生させる方法について説明します。  
   
  [イベントの処理](../visual-basic/programming-guide/language-features/events/walkthrough-handling-events.md)  
  標準の `WithEvents` キーワードまたは新しい `AddHandler`/`RemoveHandler` キーワードを使用してイベントを処理する方法を示します。  
   
  [インターフェイスの作成と実装](../visual-basic/programming-guide/language-features/interfaces/walkthrough-creating-and-implementing-interfaces.md)  
- [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] でインターフェイスを宣言および実装する方法について説明します。  
+ Visual Basic でインターフェイスを宣言および実装する方法について説明します。  
   
  [クラスの定義](../visual-basic/programming-guide/language-features/objects-and-classes/walkthrough-defining-classes.md)  
  クラスとそのフィールド、プロパティ、メソッド、およびイベントを宣言する方法について説明します。  
@@ -47,10 +48,10 @@ ms.lasthandoff: 10/18/2017
  `Declare` ステートメントの使用方法と Windows API の呼び出し方法について説明します。 属性を使用して API 呼び出しのマーシャリングを制御する方法と、API 呼び出しをクラスのメソッドとして公開する方法についても説明します。  
   
  [Visual Basic での COM オブジェクトの作成](../visual-basic/programming-guide/com-interop/walkthrough-creating-com-objects.md)  
- COM クラス テンプレートを使用して [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] で COM オブジェクトを作成する方法と、COM クラス テンプレートを使用せずに作成する方法を紹介します。  
+ COM クラス テンプレートを使用して Visual Basic で COM オブジェクトを作成する方法と、COM クラス テンプレートを使用せずに作成する方法を紹介します。  
   
  [COM オブジェクトによる継承の実装](../visual-basic/programming-guide/com-interop/walkthrough-implementing-inheritance-with-com-objects.md)  
- クラスを含む COM オブジェクトを [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] 6.0 で作成し、そのオブジェクトを [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] で基底クラスとして使用する方法について説明します。  
+ クラスを含む COM オブジェクトを Visual Basic 6.0 で作成し、そのオブジェクトを Visual Basic で基底クラスとして使用する方法について説明します。  
   
  [マルチスレッド](http://msdn.microsoft.com/library/2cbf5116-8499-4af9-818c-6f7c1c2ad2c9)  
  テキスト ファイルで単語を検索するマルチスレッド アプリケーションの作成方法について説明します。  
@@ -77,7 +78,7 @@ ms.lasthandoff: 10/18/2017
  <xref:System.Security.Cryptography.DESCryptoServiceProvider> クラスを利用して文字列を暗号化し、暗号化解除する方法を示します。  
   
  [Visual Basic によるファイルとフォルダーの操作](../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-and-directories.md)  
- [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] の関数を使用して、ファイル情報を確認する方法、ファイル内で文字列を検索する方法、およびファイルへの書き込みを行う方法について説明します。  
+ Visual Basic の関数を使用して、ファイル情報を確認する方法、ファイル内で文字列を検索する方法、およびファイルへの書き込みを行う方法について説明します。  
   
  [NET Framework のメソッドによるファイル操作](../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-by-using-net-framework-methods.md)  
  [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] のメソッドを使用して、ファイル情報を確認する方法、ファイル内で文字列を検索する方法、およびファイルへの書き込みを行う方法について説明します。  

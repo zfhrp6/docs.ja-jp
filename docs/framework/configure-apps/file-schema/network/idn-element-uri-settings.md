@@ -1,24 +1,15 @@
 ---
-title: "&lt;idn&gt;要素 (Uri 設定)"
-ms.custom: 
+title: '&lt;idn&gt;要素 (Uri 設定)'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 16c8e869-1791-4cf5-9244-3d3c738f60ec
-caps.latest.revision: "11"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 44e2db95ec354fff4356a3619fa8230faf67544d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 17f68fbb92797928be911e530232e8638793687f
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltidngt-element-uri-settings"></a>&lt;idn&gt;要素 (Uri 設定)
 国際化ドメイン名 (IDN) の解析中に適用されます、ドメイン名を指定します。  
@@ -54,7 +45,7 @@ ms.lasthandoff: 12/22/2017
   
 |**要素**|**説明**|  
 |-----------------|---------------------|  
-|[uri](../../../../../docs/framework/configure-apps/file-schema/network/uri-element-uri-settings.md)|.NET Framework での web アドレスの uniform resource identifier (Uri) を使用して表現の処理方法を指定する設定が含まれています。|  
+|[Uri](../../../../../docs/framework/configure-apps/file-schema/network/uri-element-uri-settings.md)|.NET Framework での web アドレスの uniform resource identifier (Uri) を使用して表現の処理方法を指定する設定が含まれています。|  
   
 ## <a name="remarks"></a>コメント  
  既存の<xref:System.Uri>クラスが .NET Framework 3.5 で拡張されています。 3.0 SP1、および 2.0 SP1 国際リソース識別子 (IRI) および国際化ドメイン名 (IDN) をサポートします。 ユーザーは、IDN を明確にする場合を除きは、現在のユーザーには、.NET Framework 2.0 の動作から変更は表示されませんをサポートします。 これにより、.NET Framework の以前のバージョンとのアプリケーションの互換性を保証します。  
@@ -104,7 +95,7 @@ ms.lasthandoff: 12/22/2017
 </configuration>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Configuration.IdnElement?displayProperty=nameWithType>  
  <xref:System.Configuration.UriSection?displayProperty=nameWithType>  
  [ネットワーク設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

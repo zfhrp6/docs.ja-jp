@@ -1,12 +1,13 @@
 ---
-title: "方法: 公開キーと秘密キーのキー ペアを作成する"
-ms.custom: 
+title: '方法: 公開キーと秘密キーのキー ペアを作成する'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-bcl
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-bcl
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -22,22 +23,23 @@ helpviewer_keywords:
 - .snk files
 - strong-named assemblies, key pairs
 ms.assetid: 05026813-f3bd-4d7c-9e0b-fc588eb3d114
-caps.latest.revision: "16"
+caps.latest.revision: 16
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b8076f5ed713c88f8f538959855408a8c542705a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 991affd7074cd69c1c56c37ab2d0a55f8b3af148
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="how-to-create-a-public-private-key-pair"></a>方法: 公開キーと秘密キーのキー ペアを作成する
 アセンブリに厳密な名前で署名するには、公開/秘密キーの組み合わせが必要です。 このような公開キーと秘密キーからなる暗号鍵の組み合わせがコンパイル時に利用され、厳密な名前が付いたアセンブリが作成されます。 キーの組み合わせは[厳密名ツール (Sn.exe)](../../../docs/framework/tools/sn-exe-strong-name-tool.md) を利用して作成できます。 キー ペア ファイルには通常、.snk 拡張子が与えられます。  
   
 > [!NOTE]
->  [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] では、C# と Visual Basic のプロジェクト プロパティ ページに **[署名]** タブがあります。このタブで、既存のキー ファイルを選択したり、新しいキー ファイルを生成したりできます。Sn.exe を使用する必要はありません。 Visual C++ では、**[プロパティ ページ]** ウィンドウの **[構成プロパティ]** セクションの **[リンカー]** セクションの **[詳細設定]** プロパティ ページで既存のキー ファイルの場所を指定できます。 [!INCLUDE[vsprvslong](../../../includes/vsprvslong-md.md)] より、キー ファイル ペアを特定する <xref:System.Reflection.AssemblyKeyFileAttribute> 属性を使用できなくなりました。  
+>  Visual Studio では、C# と Visual Basic のプロジェクト プロパティ ページに **[署名]** タブがあります。このタブで、Sn.exe を使用することなく、既存のキー ファイルを選択したり、新しいキー ファイルを生成したりすることができます。 Visual C++ では、**[プロパティ ページ]** ウィンドウの **[構成プロパティ]** セクションの **[リンカー]** セクションの **[詳細設定]** プロパティ ページで既存のキー ファイルの場所を指定できます。 [!INCLUDE[vsprvslong](../../../includes/vsprvslong-md.md)] より、キー ファイル ペアを特定する <xref:System.Reflection.AssemblyKeyFileAttribute> 属性を使用できなくなりました。  
   
 ### <a name="to-create-a-key-pair"></a>キー ペアを作成するには  
   
@@ -69,7 +71,7 @@ sn -p keypair.snk public.snk
   
  厳密な名前でアセンブリに署名すると、[アセンブリ リンカー (Al.exe)](../../../docs/framework/tools/al-exe-assembly-linker.md) は、現在のディレクトリと出力ディレクトリを基準にしてキー ファイルを検索します。 コマンド ライン コンパイラを使用する場合は、コード モジュールを格納する現在のディレクトリにキーをコピーするだけで十分です。  
   
- プロジェクト プロパティに **[署名]** タブがない以前のバージョンの [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] を利用している場合、キー ファイルの推奨場所はファイル属性が次のように指定されたプロジェクト ディレクトリです。  
+ プロジェクト プロパティに **[署名]** タブがない以前のバージョンの Visual Studio を利用している場合、キー ファイルの推奨場所はファイル属性が次のように指定されたプロジェクト ディレクトリです。  
   
  [!code-cpp[AssemblyName_KeyPair#21](../../../samples/snippets/cpp/VS_Snippets_CLR/AssemblyName_KeyPair/CPP/keyfileattrib.cpp#21)]
  [!code-csharp[AssemblyName_KeyPair#21](../../../samples/snippets/csharp/VS_Snippets_CLR/AssemblyName_KeyPair/CS/keyfileattrib.cs#21)]

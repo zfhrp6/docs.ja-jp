@@ -1,24 +1,12 @@
 ---
-title: "パフォーマンスに関する考慮事項 (Entity Framework)"
-ms.custom: 
+title: パフォーマンスに関する考慮事項 (Entity Framework)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 61913f3b-4f42-4d9b-810f-2a13c2388a4a
-caps.latest.revision: "6"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: e27d6ec040557d682082a6fb5a05677ad52afae9
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 581f3bc81c689909164ed3fec246371cf83245ff
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="performance-considerations-entity-framework"></a>パフォーマンスに関する考慮事項 (Entity Framework)
 このトピックでは、ADO.NET Entity Framework のパフォーマンス特性を示し、Entity Framework アプリケーションのパフォーマンスを向上させるために役立つ注意事項について説明します。  
@@ -164,5 +152,5 @@ ms.lasthandoff: 01/19/2018
   
 -   [ADO.NET Entity Framework パフォーマンスの比較](http://go.microsoft.com/fwlink/?LinkID=123913)  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [開発および配置に関する注意事項](../../../../../docs/framework/data/adonet/ef/development-and-deployment-considerations.md)

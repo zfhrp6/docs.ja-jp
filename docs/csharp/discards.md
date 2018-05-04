@@ -1,6 +1,6 @@
 ---
-title: "破棄 - C# ガイド"
-description: "C# の破棄のサポートについて説明します。破棄は、未割り当てで破棄可能な変数です。また、破棄の使用例についても説明します。"
+title: 破棄 - C# ガイド
+description: C# の破棄のサポートについて説明します。破棄は、未割り当てで破棄可能な変数です。また、破棄の使用例についても説明します。
 keywords: .NET,.NET Core
 author: rpetrusha
 ms.author: ronpet
@@ -9,23 +9,23 @@ ms.topic: article
 ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
-ms.openlocfilehash: 800a27d2d186c738dceb6838aa669377a0c07b01
-ms.sourcegitcommit: 882e02b086d7cb9c75f748494cf7a8d3377c5874
+ms.openlocfilehash: 94badd78485ee4d3928b170d81a80743bf84102f
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="discards---c-guide"></a>破棄 - C# ガイド
 
-C# 7 以降、C# は破棄をサポートしています。破棄は、アプリケーション コードで意図的に使用しない一時的なダミー変数です。 破棄は、未割り当ての変数と同等です。つまり、値がありません。 破棄変数は 1 つのみであり、破棄変数には記憶域も割り当てられないため、破棄を使用するとメモリの割り当てを減らすことができます。 また、コードの意図がわかりやすくなるため、読みやすさと保守性が向上します。
+C# 7.0 以降、C# は破棄をサポートしています。破棄は、アプリケーション コードで意図的に使用しない一時的なダミー変数です。 破棄は、未割り当ての変数と同等です。つまり、値がありません。 破棄変数は 1 つのみであり、破棄変数には記憶域も割り当てられないため、破棄を使用するとメモリの割り当てを減らすことができます。 また、コードの意図がわかりやすくなるため、読みやすさと保守性が向上します。
 
-変数を破棄と指定するには、変数名にアンダースコア (`_`) を指定します。 たとえば、次のメソッド呼び出しが 3 組の最初と 2 番目の値が破棄を返しますと*領域*によって返される対応する 3 番目のコンポーネントに設定する前に宣言された変数は、 *GetCityInformation*:
+変数を破棄と指定するには、変数名にアンダースコア (`_`) を指定します。 たとえば、次のメソッド呼び出しは 3 つのタプルを返します。この 1 つ目と 2 つ目の値が破棄されます。*area* は以前に宣言した変数であり、*GetCityInformation* から返された、対応する 3 つ目のコンポーネントに設定されます。
 
 ```csharp
 (_, _, area) = city.GetCityInformation(cityName);
 ```
 
-C# 7 では、破棄は次のコンテキストの割り当てでサポートされます。
+C# 7.0 では、破棄は次のコンテキストの割り当てでサポートされます。
 
 - タプルとオブジェクトの[分解](deconstruct.md)。
 - [is](language-reference/keywords/is.md) と [switch](language-reference/keywords/switch.md) によるパターン マッチング。

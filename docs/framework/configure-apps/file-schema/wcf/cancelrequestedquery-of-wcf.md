@@ -1,35 +1,23 @@
 ---
-title: "WCF の &lt;cancelRequestedQuery&gt;"
-ms.custom: 
+title: WCF の &lt;cancelRequestedQuery&gt;
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: b690d870-02eb-4c56-8bc3-e5ca99d7097b
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 2af49aab76e82a97aeee92b4799b91011f70c509
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 41964561a460babc41de755e213971593047b707
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltcancelrequestedquerygt-of-wcf"></a>WCF の &lt;cancelRequestedQuery&gt;
 親アクティビティが子アクティビティを取り消すための要求を追跡するのに使用するクエリを表します。 追跡参加要素がキャンセル要求レコード オブジェクトを定期受信するには、このクエリが必要です。  
   
  追跡プロファイルのクエリの詳細については、次を参照してください。[追跡プロファイル](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)です。  
   
- \<system.serviceModel >  
+ \<system.serviceModel>  
 \<追跡 >  
-\<trackingProfile >  
+\<trackingProfile>  
 \<ワークフロー >  
-\<cancelRequestedQueries >  
+\<cancelRequestedQueries>  
 \<cancelRequestedQuery >  
   
 ## <a name="syntax"></a>構文  
@@ -57,7 +45,7 @@ ms.lasthandoff: 12/22/2017
 |-------------|-----------------|  
 |[\<faultPropagationQuery >](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/faultpropagationquery.md)|親アクティビティが子アクティビティを取り消すための要求を追跡するのに使用する構成要素の一覧を表します。 追跡参加要素がキャンセル要求レコード オブジェクトを定期受信するには、このクエリが必要です。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Activities.Tracking.Configuration.CancelRequestedQueryElement?displayProperty=nameWithType>       
  <xref:System.Activities.Tracking.CancelRequestedQuery?displayProperty=nameWithType>     
  [ワークフローの追跡とトレース](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)  

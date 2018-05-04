@@ -1,12 +1,12 @@
 ---
-title: "方法 : カスタム数値書式プロバイダーを定義して使用する"
-ms.custom: 
+title: '方法 : カスタム数値書式プロバイダーを定義して使用する'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -21,18 +21,18 @@ helpviewer_keywords:
 - format providers [.NET Framework]
 - custom format strings
 ms.assetid: a281bfbf-6596-45ed-a2d6-3782d535ada2
-caps.latest.revision: 
+caps.latest.revision: 11
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: f8f06335d96b3e71f14b3df6b40ef3691c0915f1
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: eb578b18b3d3ab7ae617873a33745f36e0e8cacb
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="how-to-define-and-use-custom-numeric-format-providers"></a>方法 : カスタム数値書式プロバイダーを定義して使用する
 [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] では、数値の文字列形式を広範囲に制御できます。 数値の書式をカスタマイズするため、次の機能をサポートしています。  
@@ -99,7 +99,7 @@ ms.lasthandoff: 12/23/2017
  この例の場合、<xref:System.ICustomFormatter.Format%2A?displayProperty=nameWithType> を実装するメソッドは、<xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> メソッドのコールバック メソッドを果たす目的があります。 そのため、`formatProvider` パラメーターを調べ、現在の `TelephoneFormatter` オブジェクトへの参照が含まれるかどうかを判断します。 ただし、メソッドはコードから直接呼び出すこともできます。 その場合は、`formatProvider` パラメーターを使用して、カルチャに固有の書式情報を提供する <xref:System.Globalization.CultureInfo> オブジェクトまたは <xref:System.Globalization.NumberFormatInfo> オブジェクトを提供することができます。  
   
 ## <a name="compiling-the-code"></a>コードのコンパイル  
- コマンド ラインで csc.exe または vb.exe を使用してコードをコンパイルします。 [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] でコードをコンパイルするには、コンソール アプリケーション プロジェクト テンプレートの中にコードを配置します。  
+ コマンド ラインで csc.exe または vb.exe を使用してコードをコンパイルします。 Visual Studio でコードをコンパイルするには、コンソール アプリケーション プロジェクト テンプレートの中にコードを配置します。  
   
 ## <a name="see-also"></a>参照  
  [書式設定操作の実行](../../../docs/standard/base-types/performing-formatting-operations.md)

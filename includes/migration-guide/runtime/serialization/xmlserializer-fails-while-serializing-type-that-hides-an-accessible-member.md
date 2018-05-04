@@ -3,7 +3,7 @@
 |   |   |
 |---|---|
 |説明|基本型で (パブリックなど) 以前はアクセス可能だった同じ名前のフィールドまたはプロパティを ("新しい" キーワードを使用して) 非表示にするアクセス不可のフィールドまたはプロパティが型に含まれている場合、派生型をシリアル化すると、<xref:System.Xml.Serialization.XmlSerializer?displayProperty=name> が失敗する可能性があります。|
-|提案される解決策|この問題は、新しい非表示メンバーを <xref:System.Xml.Serialization.XmlSerializer?displayProperty=name> にアクセスできるようにする (パブリックにするなど) ことで解決できます。または、次の構成設定で 4.0 <xref:System.Xml.Serialization.XmlSerializer?displayProperty=name> の動作に戻します。これにより、問題が解決されます。<pre><code class="language-xml">&lt;system.xml.serialization&gt;&#13;&#10;&lt;xmlSerializer useLegacySerializerGeneration=&quot;true&quot; /&gt;&#13;&#10;&lt;/system.xml.serialization&gt;&#13;&#10;</code></pre>|
+|提案される解決策|この問題は、新しい非表示メンバーを <xref:System.Xml.Serialization.XmlSerializer?displayProperty=name> にアクセスできるようにする (パブリックにするなど) ことで解決できます。または、次の構成設定で 4.0 <xref:System.Xml.Serialization.XmlSerializer?displayProperty=name> の動作に戻します。これにより、問題が解決されます。<pre><code class="lang-xml">&lt;system.xml.serialization&gt;&#13;&#10;&lt;xmlSerializer useLegacySerializerGeneration=&quot;true&quot; /&gt;&#13;&#10;&lt;/system.xml.serialization&gt;&#13;&#10;</code></pre>|
 |スコープ|マイナー|
 |Version|4.5|
 |型|ランタイム|

@@ -1,33 +1,21 @@
 ---
-title: "&lt;basicHttpBinding&gt; の &lt;transport&gt;"
-ms.custom: 
+title: '&lt;basicHttpBinding&gt; の &lt;transport&gt;'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 4c5ba293-3d7e-47a6-b84e-e9022857b7e5
-caps.latest.revision: "18"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 7c6c0cf1b6eef441958931e4d722ba97980e5682
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 0111a1f0b7697caa584cd7fc45ad6347207100ea
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="lttransportgt-of-ltbasichttpbindinggt"></a>&lt;basicHttpBinding&gt; の &lt;transport&gt;
 HTTP トランスポートの認証パラメーターを制御するプロパティを定義します。  
   
- \<system.ServiceModel>  
+ \<system.ServiceModel >  
 \<bindings>  
 \<basicHttpBinding>  
 \<binding>  
-\<security>  
+\<セキュリティ >  
 \<transport>  
   
 ## <a name="syntax"></a>構文  
@@ -128,7 +116,7 @@ HTTP トランスポートの認証パラメーターを制御するプロパテ
 </system.serviceModel>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Configuration.BasicHttpSecurityElement.Transport%2A>  
  <xref:System.ServiceModel.BasicHttpSecurity.Transport%2A>  
  <xref:System.ServiceModel.Configuration.HttpTransportSecurityElement>  

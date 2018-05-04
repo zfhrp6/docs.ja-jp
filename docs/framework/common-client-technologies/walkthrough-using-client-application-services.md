@@ -1,13 +1,13 @@
 ---
-title: "チュートリアル : クライアント アプリケーション サービスの使用"
-ms.custom: 
+title: 'チュートリアル : クライアント アプリケーション サービスの使用'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -16,17 +16,17 @@ helpviewer_keywords:
 - application services host [client application services]
 - client application services, walkthroughs
 ms.assetid: bb7c8950-4517-4dae-b705-b74a14059b26
-caps.latest.revision: 
+caps.latest.revision: 47
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 71eac85d07ac54cf15edcfcc3a86de58afef5004
-ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
+ms.openlocfilehash: fe0e446a0005ffcbf296c2728fd93056c3e38f2a
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="walkthrough-using-client-application-services"></a>チュートリアル : クライアント アプリケーション サービスの使用
 このトピックでは、ユーザーを認証し、ユーザーのロールと設定を取得するクライアント アプリケーション サービスを使用する Windows アプリケーションを作成する方法について説明します。  
@@ -50,20 +50,20 @@ ms.lasthandoff: 02/01/2018
 ## <a name="prerequisites"></a>必須コンポーネント  
  このチュートリアルを実行するには、次のコンポーネントが必要です。  
   
--   [!INCLUDE[vs_orcas_long](../../../includes/vs-orcas-long-md.md)]である必要があります。  
+-   [!INCLUDE[vs_orcas_long](../../../includes/vs-orcas-long-md.md)]。  
   
 ## <a name="creating-the-client-application"></a>クライアント アプリケーションの作成  
  最初に、Windows フォーム プロジェクトを作成します。 このチュートリアルでは Windows フォームを使用します。これはより多くの人が使い慣れているためです。しかし、プロセスは Windows Presentation Foundation (WPF) プロジェクトと類似しています。  
   
 #### <a name="to-create-a-client-application-and-enable-client-application-services"></a>クライアント アプリケーションを作成し、クライアント アプリケーション サービスを有効にするには  
   
-1.  [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] で、**[ファイル] &#124; [新規作成] &#124; [プロジェクト]** メニュー オプションをクリックします。  
+1.  [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] で、**[ファイル] &#124; [新規作成] &#124; [プロジェクト]**  メニュー オプションをクリックします。  
   
 2.  **[新しいプロジェクト]** ダイアログ ボックスの **[プロジェクトの種類]** ペインで、**[Visual Basic]** または **[Visual C#]** ノードを展開し、プロジェクトの種類 **[Windows]** をクリックします。  
   
 3.  **[.NET Framework 3.5]** が選択されていることを確認してから、 **[Windows フォーム アプリケーション]** テンプレートをクリックします。  
   
-4.  プロジェクトの **[名前]** を `ClientAppServicesDemo`に変更してから、 **[OK]**をクリックします。  
+4.  プロジェクトの **[名前]** を `ClientAppServicesDemo`に変更してから、 **[OK]** をクリックします。  
   
      [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)]に新しい Windows フォーム プロジェクトが開きます。  
   
@@ -71,11 +71,11 @@ ms.lasthandoff: 02/01/2018
   
      プロジェクト デザイナーが表示されます。  
   
-6.  **[サービス]** タブで、 **[クライアント アプリケーション サービスを有効にする]**をクリックします。  
+6.  **[サービス]** タブで、 **[クライアント アプリケーション サービスを有効にする]** をクリックします。  
   
 7.  **[フォーム認証]** が選択されていることを確認してから、 **[認証サービスの場所]**、 **[ロール サービスの場所]**、および **[Web 設定サービスの場所]** を `http://localhost:55555/AppServices`に設定します。  
   
-8.  [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)]の **[アプリケーション]** タブで、 **[認証モード]** を **[アプリケーション定義]**に設定します。  
+8.  Visual Basic では、**[アプリケーション]** タブで、**[認証モード]** を **[アプリケーション定義]** に設定します。  
   
  デザイナーは、アプリケーションの app.config ファイルに指定された設定を格納します。  
   
@@ -94,24 +94,24 @@ ms.lasthandoff: 02/01/2018
   
 3.  **[.NET Framework 3.5]** が選択されていることを確認してから、 **[ASP.NET サービス アプリケーション]** テンプレートをクリックします。  
   
-4.  プロジェクトの **[名前]** を `AppServices` に変更してから、 **[OK]**をクリックします。  
+4.  プロジェクトの **[名前]** を `AppServices` に変更してから、 **[OK]** をクリックします。  
   
      新しい ASP.NET Web サービス アプリケーション プロジェクトがソリューションに追加され、Service1.asmx.vb または Service1.asmx.cs ファイルがエディターに表示されます。  
   
     > [!NOTE]
-    >  この例では、Service1.asmx.vb または Service1.asmx.cs ファイルは使用しません。 作業環境をきちんと整頓したい場合は、このファイルを閉じて **[ソリューション エクスプローラー]**から削除してください。  
+    >  この例では、Service1.asmx.vb または Service1.asmx.cs ファイルは使用しません。 作業環境をきちんと整頓したい場合は、このファイルを閉じて **[ソリューション エクスプローラー]** から削除してください。  
   
-5.  **[ソリューション エクスプローラー]**で、AppServices プロジェクトを選択し、 **[プロジェクト]** メニューで **[AppServices のプロパティ]**をクリックします。  
+5.  **[ソリューション エクスプローラー]** で、AppServices プロジェクトを選択し、 **[プロジェクト]** メニューで **[AppServices のプロパティ]** をクリックします。  
   
      プロジェクト デザイナーが表示されます。  
   
 6.  **[Web]** タブで、 **[Visual Studio 開発サーバーを使用する]** が選択されていることを確認します。  
   
-7.  **[特定のポート]**をクリックし、値に `55555`を指定してから、 **[仮想パス]** を `/AppServices`に設定します。  
+7.  **[特定のポート]** をクリックし、値に `55555`を指定してから、 **[仮想パス]** を `/AppServices`に設定します。  
   
 8.  すべてのファイルを保存します。  
   
-9. **[ソリューション エクスプローラー]**で、Web.config を開き、 `<system.web>` の開始タグを検索します。  
+9. **[ソリューション エクスプローラー]** で、Web.config を開き、 `<system.web>` の開始タグを検索します。  
   
 10. `<system.web>` タグの前に次のマークアップを追加します。  
   
@@ -152,37 +152,37 @@ ms.lasthandoff: 02/01/2018
   
 #### <a name="to-configure-membership-and-roles"></a>メンバーシップとロールを構成するには  
   
-1.  **[ソリューション エクスプローラー]**で、AppServices プロジェクトを選択し、 **[プロジェクト]** メニューで **[ASP.NET の構成]**をクリックします。  
+1.  **[ソリューション エクスプローラー]** で、AppServices プロジェクトを選択し、 **[プロジェクト]** メニューで **[ASP.NET の構成]** をクリックします。  
   
      **ASP.NET Web サイト管理ツール** が表示されます。  
   
-2.  **[セキュリティ]** タブで、 **[セキュリティ設定ウィザードを使用して手順に従ってセキュリティを構成する]**をクリックします。  
+2.  **[セキュリティ]** タブで、 **[セキュリティ設定ウィザードを使用して手順に従ってセキュリティを構成する]** をクリックします。  
   
      **[セキュリティ セットアップ ウィザード]** が表示され、 **[ようこそ]** 手順が表示されます。  
   
-3.  **[次へ]**をクリックします。  
+3.  **[次へ]** をクリックします。  
   
      **[アクセス方法の選択]** 手順が表示されます。  
   
-4.  **[インターネットから]**を選択します。 そうすることで、Windows 認証ではなくフォーム認証を使用するようサービスが構成されます。  
+4.  **[インターネットから]** を選択します。 そうすることで、Windows 認証ではなくフォーム認証を使用するようサービスが構成されます。  
   
 5.  **[次へ]** を 2 回クリックします。  
   
      **[ロールの定義]** 手順が表示されます。  
   
-6.  **[この Web サイトのロールを有効化]**をクリックします。  
+6.  **[この Web サイトのロールを有効化]** をクリックします。  
   
-7.  **[次へ]**をクリックします。 **[新しいロールの作成]** フォームが表示されます。  
+7.  **[次へ]** をクリックします。 **[新しいロールの作成]** フォームが表示されます。  
   
-8.  **[新しいロール名]** テキスト ボックスで、「 `manager` 」と入力してから、 **[ロールの追加]**をクリックします。  
+8.  **[新しいロール名]** テキスト ボックスで、「 `manager` 」と入力してから、 **[ロールの追加]** をクリックします。  
   
      指定した値が入った **[既存のロール]** テーブルが表示されます。  
   
-9. **[新しいロール名]** テキスト ボックスで、 `manager` を `employee` に置き換えてから、 **[ロールの追加]**をクリックします。  
+9. **[新しいロール名]** テキスト ボックスで、 `manager` を `employee` に置き換えてから、 **[ロールの追加]** をクリックします。  
   
      **[既存のロール]** テーブルに新しい値が表示されます。  
   
-10. **[次へ]**をクリックします。  
+10. **[次へ]** をクリックします。  
   
      **[新しいユーザーの追加]** 手順が表示されます。  
   
@@ -197,14 +197,14 @@ ms.lasthandoff: 02/01/2018
   	|**セキュリティの質問**|`manager`|  
   	|**セキュリティ返答**|`manager`|  
   
-12. **[ユーザーの作成]**をクリックします。  
+12. **[ユーザーの作成]** をクリックします。  
   
      成功のメッセージが表示されます。  
   
     > [!NOTE]
     >  フォームでは **[電子メール]**、**[秘密の質問]**、**[秘密の答え]** の値が必要ですが、この例では使用しません。  
   
-13. **[続行]**をクリックします。  
+13. **[続行]** をクリックします。  
   
      **[ユーザーの作成]** フォームが再表示されます。  
   
@@ -219,15 +219,15 @@ ms.lasthandoff: 02/01/2018
   	|**セキュリティの質問**|`Employee`|  
   	|**セキュリティ返答**|`employee`|  
   
-15. **[ユーザーの作成]**をクリックします。  
+15. **[ユーザーの作成]** をクリックします。  
   
      成功のメッセージが表示されます。  
   
-16. **[完了]**をクリックします。  
+16. **[完了]** をクリックします。  
   
      **Web サイト管理ツール** が再表示されます。  
   
-17. **[管理者ユーザー]**をクリックします。  
+17. **[管理者ユーザー]** をクリックします。  
   
      ユーザーの一覧が表示されます。  
   
@@ -237,11 +237,11 @@ ms.lasthandoff: 02/01/2018
   
 20. **Web サイト管理ツール**をホストするブラウザのウィンドウを閉じます。  
   
-21. 変更した Web.config ファイルを再度読み込むかどうかを尋ねるメッセージ ボックスが表示された場合は、 **[はい]**をクリックします。  
+21. 変更した Web.config ファイルを再度読み込むかどうかを尋ねるメッセージ ボックスが表示された場合は、 **[はい]** をクリックします。  
   
  これにより、Web サービスのセットアップが完了します。 この時点で、F5 キーを押すとクライアント アプリケーションを実行します。 **ASP.NET 開発サーバー** は、クライアント アプリケーションとともに自動的に起動します。 サーバーは、アプリケーションが終了しても引き続き実行しますが、アプリケーションを再起動するとサーバーも再起動します。 そうすることで、Web.config に対して行われたすべての変更を検出することができます。  
   
- サーバーを手動で停止するには、タスク バーの通知領域にある ASP.NET 開発サーバーのアイコンを右クリックしてから、 **[停止]**をクリックします。 これは、時折クリーン再起動を確実に行うために役立ちます。  
+ サーバーを手動で停止するには、タスク バーの通知領域にある ASP.NET 開発サーバーのアイコンを右クリックしてから、 **[停止]** をクリックします。 これは、時折クリーン再起動を確実に行うために役立ちます。  
   
 ## <a name="adding-forms-authentication"></a>フォーム認証を追加する  
  次の手順では、ユーザーの検証を試みるとともに、ユーザーが無効な資格情報を指定した場合にアクセスを拒否するコードをメイン フォームに追加します。 ハードコーディングされたユーザー名とパスワードを使用して、サービスをテストします。  
@@ -257,7 +257,7 @@ ms.lasthandoff: 02/01/2018
      [!code-csharp[ClientApplicationServices#001](../../../samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Form1.cs#001)]
      [!code-vb[ClientApplicationServices#001](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Form1.vb#001)]  
   
-4.  **[ソリューション エクスプローラー]**で、Form1 をダブルクリックしてデザイナーを表示します。  
+4.  **[ソリューション エクスプローラー]** で、Form1 をダブルクリックしてデザイナーを表示します。  
   
 5.  デザイナーで、フォーム領域をダブルクリックして、 <xref:System.Windows.Forms.Form.Load?displayProperty=nameWithType> という名前の `Form1_Load`イベント ハンドラーを生成します。  
   
@@ -286,7 +286,7 @@ ms.lasthandoff: 02/01/2018
   
 #### <a name="to-configure-your-application-to-use-a-credentials-provider"></a>アプリケーションが資格情報プロバイダーを使用するように構成するには  
   
-1.  **[ソリューション エクスプローラー]**で、ClientAppServicesDemo プロジェクトを選択し、 **[プロジェクト]** メニューで **[ClientAppServicesDemo のプロパティ]**をクリックします。  
+1.  **[ソリューション エクスプローラー]** で、ClientAppServicesDemo プロジェクトを選択し、 **[プロジェクト]** メニューで **[ClientAppServicesDemo のプロパティ]** をクリックします。  
   
      プロジェクト デザイナーが表示されます。  
   
@@ -315,13 +315,13 @@ ms.lasthandoff: 02/01/2018
 ### <a name="creating-a-login-form"></a>ログイン フォームを作成する  
  資格情報プロバイダーとは、 <xref:System.Web.ClientServices.Providers.IClientFormsAuthenticationCredentialsProvider> インターフェイスを実装するクラスです。 このインターフェイスには、 <xref:System.Web.ClientServices.Providers.IClientFormsAuthenticationCredentialsProvider.GetCredentials%2A> オブジェクトを返す <xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationCredentials> という名前の 1 つのメソッドがあります。 次の手順ではログイン ダイアログ ボックスの作成方法を示します。これは <xref:System.Web.ClientServices.Providers.IClientFormsAuthenticationCredentialsProvider.GetCredentials%2A> を実装してダイアログ ボックスを表示し、ユーザー指定の資格情報を返します。  
   
- [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)] は [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)] [ログイン フォーム] **テンプレートを備えているため、** と C# で手順が別々に説明されています。 このテンプレートを使用すると、時間の節約になり、コーディングの手間も省けます。  
+ Visual Basic は **[ログイン フォーム]** テンプレートを備えているため、Visual Basic と C# で手順が別々に説明されています。 このテンプレートを使用すると、時間の節約になり、コーディングの手間も省けます。  
   
 ##### <a name="to-create-a-login-dialog-box-as-a-credentials-provider-in-visual-basic"></a>Visual Basic で資格情報プロバイダーとしてログイン ダイアログ ボックスを作成するには  
   
-1.  **[ソリューション エクスプローラー]**で、ClientAppServicesDemo プロジェクトを選択してから、 **[プロジェクト]** メニューで **[新しい項目の追加]**をクリックします。  
+1.  **[ソリューション エクスプローラー]** で、ClientAppServicesDemo プロジェクトを選択してから、 **[プロジェクト]** メニューで **[新しい項目の追加]** をクリックします。  
   
-2.  **[新しい項目の追加]** ダイアログ ボックスで、 **[ログイン フォーム]** テンプレートを選択し、項目の **[名前]** を `Login.vb`に変更してから、 **[追加]**をクリックします。  
+2.  **[新しい項目の追加]** ダイアログ ボックスで、 **[ログイン フォーム]** テンプレートを選択し、項目の **[名前]** を `Login.vb`に変更してから、 **[追加]** をクリックします。  
   
      Windows フォーム デザイナーにログイン ダイアログ ボックスが表示されます。  
   
@@ -351,9 +351,9 @@ ms.lasthandoff: 02/01/2018
   
 ##### <a name="to-create-a-login-dialog-box-as-a-credentials-provider-in-c"></a>C# で資格情報プロバイダーとしてログイン ダイアログ ボックスを作成するには  
   
-1.  **[ソリューション エクスプローラー]**で、ClientAppServicesDemo プロジェクトを選択してから、 **[プロジェクト]** メニューで **[クラスの追加]**をクリックします。  
+1.  **[ソリューション エクスプローラー]** で、ClientAppServicesDemo プロジェクトを選択してから、 **[プロジェクト]** メニューで **[クラスの追加]** をクリックします。  
   
-2.  **[新しい項目の追加]** ダイアログ ボックスで、 **[名前]** を `Login.cs`に変更してから、 **[追加]**をクリックします。  
+2.  **[新しい項目の追加]** ダイアログ ボックスで、 **[名前]** を `Login.cs`に変更してから、 **[追加]** をクリックします。  
   
      コード エディターで Login.cs ファイルが開きます。  
   
@@ -407,21 +407,21 @@ ms.lasthandoff: 02/01/2018
  ここでアプリケーションを実行し、従業員としてログインして、ボタンが表示されないことを確認できます。次いで、管理者としてログインして、ボタンが表示されることを確認します。  
   
 ## <a name="accessing-web-settings"></a>Web 設定にアクセスする  
- 次の手順では、フォームにテキスト ボックスを追加するとともに、Web 設定にバインドします。 認証とロールを使用する前のコードと同様、設定コードは設定プロバイダーに直接アクセスしません。 代わりに、 `Settings` がプロジェクト用に生成する、厳密に型指定された `Properties.Settings.Default` クラスを使用します (C# では `My.Settings` として、 [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)]では [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)]としてアクセスします)。  
+ 次の手順では、フォームにテキスト ボックスを追加するとともに、Web 設定にバインドします。 認証とロールを使用する前のコードと同様、設定コードは設定プロバイダーに直接アクセスしません。 代わりに、[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] がプロジェクト用に生成する、厳密に型指定された `Settings` クラスを使用します (C# では `Properties.Settings.Default` として、Visual Basic では `My.Settings` としてアクセスします)。  
   
 #### <a name="to-use-web-settings-in-your-user-interface"></a>ユーザー インターフェイスで Web 設定を使用するには  
   
 1.  タスクバーの通知領域をチェックして、 **ASP.NET Web 開発サーバー** がまだ実行中であることを確認します。 サーバーが停止している場合は、アプリケーションを再起動して (これによりサーバーが自動的に起動します)、その後、ログイン ダイアログ ボックスを閉じます。  
   
-2.  **[ソリューション エクスプローラー]**で、ClientAppServicesDemo プロジェクトを選択し、 **[プロジェクト]** メニューで **[ClientAppServicesDemo のプロパティ]**をクリックします。  
+2.  **[ソリューション エクスプローラー]** で、ClientAppServicesDemo プロジェクトを選択し、 **[プロジェクト]** メニューで **[ClientAppServicesDemo のプロパティ]** をクリックします。  
   
      プロジェクト デザイナーが表示されます。  
   
-3.  **[設定]** タブで、 **[Web 設定の読み込み]**をクリックします。  
+3.  **[設定]** タブで、 **[Web 設定の読み込み]** をクリックします。  
   
      **[ログイン]** ダイアログ ボックスが表示されます。  
   
-4.  従業員またはマネージャーの資格情報を入力してから、 **[ログイン]**をクリックします。 使用する Web 設定は認証されたユーザーのみがアクセスできるように構成されているため、 **[ログインのスキップ]** をクリックすると設定は読み込まれません。  
+4.  従業員またはマネージャーの資格情報を入力してから、 **[ログイン]** をクリックします。 使用する Web 設定は認証されたユーザーのみがアクセスできるように構成されているため、 **[ログインのスキップ]** をクリックすると設定は読み込まれません。  
   
      `WebSettingsTestText` の設定が、既定値の `DefaultText`でデザイナーに表示されます。 さらに、`WebSettingsTestText` プロパティを含む `Settings` クラスがプロジェクトに生成されます。  
   
@@ -527,7 +527,7 @@ ms.lasthandoff: 02/01/2018
     > [!NOTE]
     >  <xref:System.Web.ClientServices.ClientFormsIdentity.RevalidateUser%2A> メソッドは便宜的なものに過ぎません。 このメソッドには戻り値がないため、再検証が失敗したかどうかを示すことはできません。 再検証は失敗することがあります。たとえば、サーバーでユーザーの資格情報が変更された場合などです。 この場合、サービスの呼び出しが失敗した後に、明示的にユーザーを検証するコードを含めることができます。 詳細については、このチュートリアルの上述の「Web 設定にアクセスする」を参照してください。  
   
-     再検証後、前に追加した `SaveSettings` メソッドを呼び出すことで、このコードはローカルの Web 設定への変更をすべて保存します。 続いて、プロジェクトの <xref:System.Configuration.ApplicationSettingsBase.Reload%2A> クラスの `Settings` メソッドを呼び出して、新しい値をすべて取得します (C# では `Properties.Settings.Default` として、 `My.Settings` では [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)]としてアクセスします)。  
+     再検証後、前に追加した `SaveSettings` メソッドを呼び出すことで、このコードはローカルの Web 設定への変更をすべて保存します。 続いて、プロジェクトの `Settings` クラスの <xref:System.Configuration.ApplicationSettingsBase.Reload%2A> メソッドを呼び出して、新しい値をすべて取得します (C# では `Properties.Settings.Default` として、Visual Basic では `My.Settings` としてアクセスします)。  
   
      [!code-csharp[ClientApplicationServices#080](../../../samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Form1.cs#080)]
      [!code-vb[ClientApplicationServices#080](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Form1.vb#080)]  
@@ -537,7 +537,7 @@ ms.lasthandoff: 02/01/2018
      [!code-csharp[ClientApplicationServices#014](../../../samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Form1.cs#014)]
      [!code-vb[ClientApplicationServices#014](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Form1.vb#014)]  
   
- これで、サンプル アプリケーションが完成しました。 オフライン機能をテストするには、アプリケーションを実行し、従業員またはマネージャーとしてログインしてから、 **[Work offline]**をクリックします。 テキスト ボックスの値を変更してから、アプリケーションを終了します。 アプリケーションを再起動します ログインする前に、タスク バーの通知領域にある ASP.NET 開発サーバーのアイコンを右クリックしてから、 **[停止]**をクリックします。 次に、通常どおりにログインします。 サーバーが実行されていない場合でもログインできます。 テキスト ボックスの値を変更してから、終了および再起動を行って、変更された値を確認します。  
+ これで、サンプル アプリケーションが完成しました。 オフライン機能をテストするには、アプリケーションを実行し、従業員またはマネージャーとしてログインしてから、 **[Work offline]** をクリックします。 テキスト ボックスの値を変更してから、アプリケーションを終了します。 アプリケーションを再起動します ログインする前に、タスク バーの通知領域にある ASP.NET 開発サーバーのアイコンを右クリックしてから、 **[停止]** をクリックします。 次に、通常どおりにログインします。 サーバーが実行されていない場合でもログインできます。 テキスト ボックスの値を変更してから、終了および再起動を行って、変更された値を確認します。  
   
 ## <a name="summary"></a>まとめ  
  このチュートリアルでは、Windows フォーム アプリケーションでのクライアント アプリケーション サービスの有効化および使用方法について学習しました。 テスト サーバーをセットアップした後、アプリケーションにコードを追加し、ユーザーを認証したり、サーバーからユーザーのロールとアプリケーションの設定を取得したりできるようにしました。 また、接続を使用できない場合に、アプリケーションがリモート サービスではなく、ローカル データ キャッシュを使用できるように、オフライン モードを有効にする方法についても学びました。  

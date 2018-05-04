@@ -1,24 +1,12 @@
 ---
-title: "アーキテクチャとデザイン"
-ms.custom: 
+title: アーキテクチャとデザイン
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: bd738d39-00e2-4bab-b387-90aac1a014bd
-caps.latest.revision: "3"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: ce16e89e697a7865a65d86b408e49b5ad671bae1
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: c2e8ff5f21a2941d75b21915552e6935a1423978
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="architecture-and-design"></a>アーキテクチャとデザイン
 SQL 生成モジュール、[サンプル プロバイダー](http://go.microsoft.com/fwlink/?LinkId=180616)コマンド ツリーを表す式ツリー上のビジターとして実装されます。 生成は、式ツリーを介した単一のパスで行われます。  
@@ -29,7 +17,7 @@ SQL 生成モジュール、[サンプル プロバイダー](http://go.microsof
   
 -   別名の名前を変更するには、名前の変更中に競合が発生しないように、使用されているすべての別名を識別する必要があります。 SqlBuilder で名前変更の選択を遅らせるには、Symbol オブジェクトを使用して、名前変更の候補となる列を表します。  
   
- ![Diagram](../../../../../docs/framework/data/adonet/ef/media/de1ca705-4f7c-4d2d-ace5-afefc6d3cefa.gif "de1ca705-4f7c-4d2d-ace5-afefc6d3cefa")  
+ ![ダイアグラム](../../../../../docs/framework/data/adonet/ef/media/de1ca705-4f7c-4d2d-ace5-afefc6d3cefa.gif "de1ca705-4f7c-4d2d-ace5-afefc6d3cefa")  
   
  最初のフェーズでは、式ツリーにアクセスしている間、式が SqlSelectStatement にグループ化され、結合がフラット化され、結合の別名がフラット化されます。 この段階では、Symbol オブジェクトは、名前変更が可能な列または入力の別名を表します。  
   
@@ -63,7 +51,7 @@ internal sealed class SqlBuilder : ISqlFragment {
 ```  
   
 #### <a name="sqlselectstatement"></a>SqlSelectStatement  
- SqlSelectStatement は、"SELECT... の図形の正規 SQL SELECT ステートメント FROM  .. WHERE … GROUP BY … ORDER BY".  
+ SqlSelectStatement は、"SELECT... の図形の正規 SQL SELECT ステートメント 差出人。 WHERE … グループ化してください. ORDER BY"です。  
   
  各 SQL 句は StringBuilder によって表されます。 また、Distinct が指定されているかどうか、およびステートメントが最上位かどうかを追跡します。 ステートメントが最上位ではなく、ステートメントに TOP 句も含まれていない場合は、ORDER BY 句は省略されます。  
   
@@ -425,5 +413,5 @@ IsEmpty(inut) = Not Exists(input)
   
  エクステントの別名と列の両方について一意の名前を生成するには、<existing_name>_n を使用します。n はまだ使用されていない最小の別名です。 すべての別名のグローバル リストを使用すると、連鎖名前変更の必要性が高くなります。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [サンプル プロバイダーでの SQL 生成](../../../../../docs/framework/data/adonet/ef/sql-generation-in-the-sample-provider.md)

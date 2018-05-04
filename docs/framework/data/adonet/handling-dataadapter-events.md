@@ -1,27 +1,15 @@
 ---
-title: "DataAdapter のイベント処理"
-ms.custom: 
+title: DataAdapter のイベント処理
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 11515b25-ee49-4b1d-9294-a142147c1ec5
-caps.latest.revision: "3"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 71524de2edbedb24cacc6727654aac5be0a48bb7
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: f2b07b8d42069fa98ba51dea75f9695e7adce0b0
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="handling-dataadapter-events"></a>DataAdapter のイベント処理
 ADO.NET <xref:System.Data.Common.DataAdapter> は、データ ソースのデータに対して行われた変更に応答するときに使用できる 3 つのイベントを公開します。 `DataAdapter` のイベントを次の表に示します。  
@@ -197,7 +185,7 @@ protected static void FillError(object sender, FillErrorEventArgs args)
 }  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [DataAdapter と DataReader](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)  
  [DataSet のイベント処理](../../../../docs/framework/data/adonet/dataset-datatable-dataview/handling-dataset-events.md)  
  [DataTable イベントの処理](../../../../docs/framework/data/adonet/dataset-datatable-dataview/handling-datatable-events.md)  

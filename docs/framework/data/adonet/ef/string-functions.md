@@ -1,24 +1,12 @@
 ---
-title: "文字列関数"
-ms.custom: 
+title: 文字列関数
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 338f0c26-8aee-43eb-bd1a-ec0849a376b9
-caps.latest.revision: "4"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: ba371840cf5c3b19ee232be0934557d87e7c343f
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 0faac7eb37a1405c38137ce9887cf7de4c36df3a
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="string-functions"></a>文字列関数
 .NET Framework Data Provider for SQL Server (SqlClient) には、入力された `String` に対して操作を実行し、その結果を `String` または数値として返す `String` 関数が用意されています。 これらの関数は、SqlClient の SqlServer 名前空間に存在します。 Entity Framework は、プロバイダーの名前空間プロパティを使用することにより、型や関数など、特定のコンストラクターに対してこのプロバイダーによってどのプレフィックスが使用されているかを特定できます。  
@@ -46,7 +34,7 @@ ms.lasthandoff: 01/17/2018
 |`SOUNDEX(expression)`|2 つの文字列の類似性を評価する 4 文字 (SOUNDEX) コードを返します。**引数**<br /><br /> `expression`: Unicode または ASCII の String 型。<br /><br /> **戻り値**<br /><br /> ASCII の `String`。 4 文字の (SOUNDEX) コードは、2 つの文字列の類似性を評価する文字列です。<br /><br /> **例**<br /><br /> `Select SqlServer.SOUNDEX('Smith'), SqlServer.SOUNDEX('Smythe') FROM {1}`<br /><br /> **返します。**<br /><br /> `----- -----  S530  S530`|  
 |`SPACE(int_expression)`|連続する空白文字で構成される ASCII の `String` を返します。<br /><br /> **引数**<br /><br /> `int_expression`: 空白文字の数を表す `Int64` (SQL Server 2000 では返されません) または `Int32`。<br /><br /> **戻り値**<br /><br /> ASCII の `String`。<br /><br /> **例**<br /><br /> `SqlServer.SPACE(2)`|  
 |`STR(float_expression [, length [, decimal]])`|数値データから変換された ASCII の `String` を返します。<br /><br /> **引数**<br /><br /> `float _expression`: 小数点付きの概数型 (`Double`) の式。<br /><br /> `length`: (省略可) 全体の長さを表す `Int32`。 これには小数点、符号、数字、空白文字も含まれます。 既定値は 10 です。<br /><br /> `decimal`: (省略可能)、`Int32`小数点の右側の桁数を表すです。 16 以下である必要があります。 decimal に 16 を超える値を指定した場合、結果は小数点以下 16 桁に切り捨てられます。<br /><br /> **戻り値**<br /><br /> ASCII の `String`。<br /><br /> **例**<br /><br /> `SqlServer.STR(212.0)`|  
-|`STUFF(str_expression, start, length, str_expression_to_insert)`|文字列式内で、指定された長さ分の文字を削除し、指定された開始位置に別の文字列を挿入します。<br /><br /> **引数**<br /><br /> `str_expression`: Unicode または ASCII の `String`。<br /><br /> `start:``Int64` (SQL Server 2000 では返されません) または`Int32`削除と挿入を開始する場所を指定する値。<br /><br /> `length`: 削除する文字数を指定する `Int64` 型 (SQL Server 2000 では返されません) または `Int32` 型の値。<br /><br /> `str_expression_to_insert`: Unicode または ASCII の `String`。<br /><br /> **戻り値**<br /><br /> Unicode または ASCII の `String`。<br /><br /> **例**<br /><br /> `SqlServer.STUFF('abcd', 2, 2, 'zz')`|  
+|`STUFF(str_expression, start, length, str_expression_to_insert)`|文字列式内で、指定された長さ分の文字を削除し、指定された開始位置に別の文字列を挿入します。<br /><br /> **引数**<br /><br /> `str_expression`: Unicode または ASCII の `String`。<br /><br /> `start:` `Int64` (SQL Server 2000 では返されません) または`Int32`削除と挿入を開始する場所を指定する値。<br /><br /> `length`: 削除する文字数を指定する `Int64` 型 (SQL Server 2000 では返されません) または `Int32` 型の値。<br /><br /> `str_expression_to_insert`: Unicode または ASCII の `String`。<br /><br /> **戻り値**<br /><br /> Unicode または ASCII の `String`。<br /><br /> **例**<br /><br /> `SqlServer.STUFF('abcd', 2, 2, 'zz')`|  
 |`SUBSTRING(str_expression, start, length)`|`String` 式の一部分を返します。<br /><br /> **引数**<br /><br /> `str_expression`: `String` (ASCII または Unicode) 型または `Binary` 型の式。<br /><br /> `start`: 部分文字列の取得開始位置を指定する `Int64` ( SQL Server 2000 では返されません) または `Int32`。 1 は文字列の先頭文字を表します。<br /><br /> `length`: 式から取得する文字数を指定する `Int64` (SQL Server 2000 では返されません) または `Int32` 型。<br /><br /> **戻り値**<br /><br /> `String` (ASCII または Unicode) 型または `Binary` 型。<br /><br /> **例**<br /><br /> `SqlServer.SUBSTRING('abcd', 2, 2)`|  
 |`UNICODE(expression)`|Unicode 標準に定義された、入力式の先頭文字の整数値を返します。<br /><br /> **引数**<br /><br /> `expression`: Unicode の `String`。<br /><br /> **戻り値**<br /><br /> `Int32`。<br /><br /> **例**<br /><br /> `SqlServer.UNICODE('a')`|  
 |`UPPER(expression)`|小文字が大文字に変換された状態の `String` 式を返します。<br /><br /> **引数**<br /><br /> `expression`: ASCII または Unicode の String 型の式。<br /><br /> **戻り値**<br /><br /> ASCII または Unicode の `String` 型。<br /><br /> **例**<br /><br /> `SqlServer.UPPER('AbB')`|  
@@ -57,6 +45,6 @@ ms.lasthandoff: 01/17/2018
 |---------------------|---------------------|---------------------|  
 |[文字列関数 (TRANSACT-SQL)](http://go.microsoft.com/fwlink/?LinkId=115915)|[文字列関数 (TRANSACT-SQL)](http://go.microsoft.com/fwlink/?LinkId=115916)|[文字列関数 (TRANSACT-SQL)](http://go.microsoft.com/fwlink/?LinkId=115914)|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Entity Framework 用 SqlClient 関数](../../../../../docs/framework/data/adonet/ef/sqlclient-for-ef-functions.md)  
  [Entity Framework 用の .NET Framework Data Provider for SQL Server (SqlClient) の既知の問題](../../../../../docs/framework/data/adonet/ef/known-issues-in-sqlclient-for-entity-framework.md)

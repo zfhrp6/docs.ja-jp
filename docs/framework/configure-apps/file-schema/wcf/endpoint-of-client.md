@@ -1,31 +1,19 @@
 ---
-title: "&lt;client&gt; の &lt;endpoint&gt;"
-ms.custom: 
+title: '&lt;client&gt; の &lt;endpoint&gt;'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: de6238ae-bbf8-48e9-a1b5-e24c0bea8afa
-caps.latest.revision: "22"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 351f49c346cb8126cdd9d540a4db382bf5f4e721
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f9a69483ab058823fd419edc84868e801b91d2c9
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltendpointgt-of-ltclientgt"></a>&lt;client&gt; の &lt;endpoint&gt;
 サーバーのサービス エンドポイントに接続するためにクライアントによって使用されるチャネル エンドポイントのコントラクト、バインディング、およびアドレスのプロパティを指定します。  
   
- \<システムです。ServiceModel >  
-\<クライアント >  
-\<エンドポイント >  
+ \<system.ServiceModel >  
+\<client>  
+\<endpoint>  
   
 ## <a name="syntax"></a>構文  
   
@@ -59,8 +47,8 @@ ms.lasthandoff: 12/22/2017
   
 |要素|説明|  
 |-------------|-----------------|  
-|[\<ヘッダー >](../../../../../docs/framework/configure-apps/file-schema/wcf/headers.md)|アドレス ヘッダーのコレクション。|  
-|[\<id >](../../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)|メッセージを交換する他のエンドポイントによるエンドポイントの認証を可能にする ID です。|  
+|[\<headers>](../../../../../docs/framework/configure-apps/file-schema/wcf/headers.md)|アドレス ヘッダーのコレクション。|  
+|[\<identity>](../../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)|メッセージを交換する他のエンドポイントによるエンドポイントの認証を可能にする ID です。|  
   
 ### <a name="parent-elements"></a>親要素  
   
@@ -80,7 +68,7 @@ ms.lasthandoff: 12/22/2017
 </endpoint>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Configuration.ChannelEndpointElement>  
  <xref:System.ServiceModel.Configuration.ClientSection>  
  <xref:System.ServiceModel.Configuration.ChannelEndpointElementCollection>  

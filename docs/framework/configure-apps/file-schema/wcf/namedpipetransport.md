@@ -1,32 +1,20 @@
 ---
 title: '&lt;namedPipeTransport&gt;'
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 9fc3f42f-43e2-4ab1-8bc7-3c95a9220df1
-caps.latest.revision: "15"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 7802bff708cb081aa9f54f76a35ff5842ad60544
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 652cb551fb318d43d4284dbee48aeb994f056692
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltnamedpipetransportgt"></a>&lt;namedPipeTransport&gt;
 チャネルがカスタム バインドに含まれているときに名前付きパイプを使用してメッセージを転送するトランスポートを定義します。  
   
-\<system.serviceModel >  
-\<バインド >  
-\<customBinding >  
-\<バインド >  
+\<system.serviceModel>  
+\<bindings>  
+\<customBinding>  
+\<binding>  
 \<namePipeTransport >  
   
 ## <a name="syntax"></a>構文  
@@ -76,14 +64,14 @@ ms.lasthandoff: 12/22/2017
   
 |要素|説明|  
 |-------------|-----------------|  
-|[\<バインド >](../../../../../docs/framework/misc/binding.md)|カスタム バインドのすべてのバインド機能を定義します。|  
+|[\<binding>](../../../../../docs/framework/misc/binding.md)|カスタム バインドのすべてのバインド機能を定義します。|  
   
 ## <a name="remarks"></a>コメント  
 このトランスポートは、"net.pipe://hostname/path" の形式の URI を使用します。 他の URI コンポーネントは省略可能です。  
   
 `namedPipeTransport` 要素は、名前付きパイプ トランスポート プロトコルを実装するカスタム バインディングを作成する場合の開始点となります。 このトランスポートは、コンピューター上での WCF (Windows Communication Foundation) 間の通信に使用されます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
 <xref:System.ServiceModel.Configuration.NamedPipeTransportElement>   
 <xref:System.ServiceModel.Channels.NamedPipeTransportBindingElement>   
 <xref:System.ServiceModel.Channels.TransportBindingElement>   
@@ -93,4 +81,4 @@ ms.lasthandoff: 12/22/2017
 [バインド](../../../../../docs/framework/wcf/bindings.md)   
 [バインディングの拡張](../../../../../docs/framework/wcf/extending/extending-bindings.md)   
 [カスタム バインド](../../../../../docs/framework/wcf/extending/custom-bindings.md)   
-[\<customBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)
+[\<customBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)

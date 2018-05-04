@@ -1,13 +1,6 @@
 ---
-title: "&lt;assemblyIdentity&gt;要素&lt;ランタイム&gt;"
-ms.custom: 
+title: '&lt;assemblyIdentity&gt;要素&lt;ランタイム&gt;'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/runtime/assemblyBinding/dependentAssembly/assemblyIdentity
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#assemblyIdentity
@@ -16,23 +9,21 @@ helpviewer_keywords:
 - container tags, <assemblyIdentity> element
 - assemblyIdentity element
 ms.assetid: cea4d187-6398-4da4-af09-c1abc6a349c1
-caps.latest.revision: "17"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 0dadf0e07f5e3a9f9152ae7cd57c62721402bff0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5d985d1620b7dec324c0113bcd5652cede044950
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltassemblyidentitygt-element-for-ltruntimegt"></a>&lt;assemblyIdentity&gt;要素&lt;ランタイム&gt;
 アセンブリに関する識別情報が含まれています。  
   
  \<configuration>  
 \<ランタイム >  
-\<assemblyBinding >  
+\<assemblyBinding>  
 \<dependentAssembly >  
 \<assemblyIdentity >  
   
@@ -59,7 +50,7 @@ culture="assembly culture"/>
   
 ## <a name="processorarchitecture-attribute"></a>processorArchitecture 属性  
   
-|値|説明|  
+|[値]|説明|  
 |-----------|-----------------|  
 |`amd64`|64 ビットの AMD プロセッサのみです。|  
 |`ia64`|64 ビット Intel プロセッサのみです。|  
@@ -79,7 +70,7 @@ culture="assembly culture"/>
 |`runtime`|アセンブリのバインディングとガベージ コレクションに関する情報が含まれています。|  
   
 ## <a name="remarks"></a>コメント  
- 各 **\<dependentAssembly >**要素が 1 つあります **\<assemblyIdentity >**子要素です。  
+ 各 **\<dependentAssembly >** 要素が 1 つあります **\<assemblyIdentity >** 子要素です。  
   
  場合、`processorArchitecture`属性が含まれている、`<assemblyIdentity>`要素が、対応するプロセッサ アーキテクチャを持つアセンブリにのみ適用されます。 場合、`processorArchitecture`属性が存在しない、`<assemblyIdentity>`要素は、すべてのプロセッサ アーキテクチャを持つアセンブリに適用できます。  
   
@@ -130,7 +121,7 @@ culture="assembly culture"/>
 </configuration>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ランタイム設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
  [構成ファイル スキーマ](../../../../../docs/framework/configure-apps/file-schema/index.md)  
  [アセンブリ バージョンのリダイレクト](../../../../../docs/framework/configure-apps/redirect-assembly-versions.md)

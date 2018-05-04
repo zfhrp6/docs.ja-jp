@@ -1,21 +1,22 @@
 ---
-title: "LINQ to XML およびその他の XML テクノロジ3"
-ms.custom: 
+title: LINQ to XML およびその他の XML テクノロジ3
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-csharp
 ms.topic: article
 ms.assetid: 01b8e746-12d3-471d-b811-7539e4547784
-caps.latest.revision: "3"
+caps.latest.revision: 3
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 4a159c906799a61372c1a40e7464d885339b9256
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: f13e2d64db9265f03aec3fa5da9f171fcb366f72
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="linq-to-xml-vs-other-xml-technologies"></a>LINQ to XML およびその他の XML テクノロジ
 ここでは、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] を他の XML テクノロジ (<xref:System.Xml.XmlReader>、XSLT、MSXML、および XmlLite) と比較します。 使用するテクノロジを決定するときに、ここで説明する情報を参照してください。  
@@ -49,7 +50,7 @@ ms.lasthandoff: 10/18/2017
 ## <a name="linq-to-xml-vs-msxml"></a>LINQ to XML およびMSXML  
  MSXML は、Microsoft Windows に付属する、XML 処理のための COM ベース テクノロジです。 MSXML は DOM をネイティブで実装し、XPath と XSLT をサポートしています。 MSXML には、非キャッシュの SAX2 イベントベース パーサーも含まれています。  
   
- MSXML はパフォーマンスが高く、セキュリティもほとんどのシナリオで既定で確保されます。また、Internet Explorer でアクセスできるため、AJAX スタイルのアプリケーションでクライアント側での XML の処理を実行できます。 MSXML は、C++、JavaScript、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] 6.0 など、COM をサポートするすべてのプログラミング言語から使用できます。  
+ MSXML はパフォーマンスが高く、セキュリティもほとんどのシナリオで既定で確保されます。また、Internet Explorer でアクセスできるため、AJAX スタイルのアプリケーションでクライアント側での XML の処理を実行できます。 MSXML は、C++、JavaScript、Visual Basic 6.0 など、COM をサポートするすべてのプログラミング言語から使用できます。  
   
  ただし共通言語ランタイム (CLR) に基づくマネージ コードで使用することは推奨されません。  
   
@@ -60,5 +61,5 @@ ms.lasthandoff: 10/18/2017
   
  XmlLite は、[!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] と統合されていません。 [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] の利用動機となるプログラミングの生産性の向上はもたらされません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [はじめに (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/getting-started-linq-to-xml.md)

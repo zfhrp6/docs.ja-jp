@@ -1,12 +1,13 @@
 ---
-title: "SqlMetal.exe (コード生成ツール)"
-ms.custom: 
+title: SqlMetal.exe (コード生成ツール)
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - SQLMetal [LINQ to SQL]
@@ -16,16 +17,17 @@ helpviewer_keywords:
 - LINQ to SQL, DBML files
 - LINQ to SQL, SQLMetal
 ms.assetid: 819e5a96-7646-4fdb-b14b-fe31221b0614
-caps.latest.revision: "43"
+caps.latest.revision: 43
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c14c01c670eccbc7f13210d3c0bb7df7bec07679
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 5c21c08cf76143959d11498594fbc94fb1dac55c
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="sqlmetalexe-code-generation-tool"></a>SqlMetal.exe (コード生成ツール)
 SqlMetal コマンド ライン ツールは、 [!INCLUDE[vbtecdlinq](../../../includes/vbtecdlinq-md.md)] の [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)]コンポーネント用のコードとマッピングを生成します。 このトピックで後述するオプションを適用することにより、次のようなアクションを SqlMetal で実行できます。  
@@ -60,7 +62,7 @@ sqlmetal [options] [<input file>]
 |**/database:** *\<name>*|サーバー上のデータベース カタログを指定します。|  
 |**/user:** *\<name>*|ログオン ユーザー ID を指定します。既定値は、Windows 認証を使用します。|  
 |**/password:** *\<password>*|ログオン パスワードを指定します。 既定値は、Windows 認証を使用します。|  
-|**/conn:** *\<connection string>*|データベース接続文字列を指定します。 **/server**、 **/database**、 **/user**、または **/password** オプションと共に使用することはできません。<br /><br /> 接続文字列にファイル名は含めないでください。 代わりに、コマンド ラインにファイル名を入力ファイルとして追加します。 たとえば、 **sqlmetal /code:"c:\northwind.cs" /language:csharp "c:\northwnd.mdf"**というコマンド ラインは、入力ファイルとして "c:\northwnd.mdf" を指定します。|  
+|**/conn:** *\<connection string>*|データベース接続文字列を指定します。 **/server**、 **/database**、 **/user**、または **/password** オプションと共に使用することはできません。<br /><br /> 接続文字列にファイル名は含めないでください。 代わりに、コマンド ラインにファイル名を入力ファイルとして追加します。 たとえば、 **sqlmetal /code:"c:\northwind.cs" /language:csharp "c:\northwnd.mdf"** というコマンド ラインは、入力ファイルとして "c:\northwnd.mdf" を指定します。|  
 |**/timeout:** *\<seconds>*|SqlMetal がデータベースにアクセスする際のタイムアウト値を指定します。 既定値は 0 (時間制限なし) です。|  
   
  **抽出オプション**  
@@ -103,7 +105,7 @@ sqlmetal [options] [<input file>]
   
 -   コード出力ファイルを生成する。  
   
-     適切なコマンド ライン オプションを使用することで、 [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)] または C# ソース コードを生成するか、XML マッピング ファイルを生成できます。  
+     適切なコマンド ライン オプションを使用することで、Visual Basic または C# ソース コードを生成するか、XML マッピング ファイルを生成できます。  
   
  メタデータを .mdf ファイルから抽出するには、他のすべてのオプションの後に .mdf ファイルの名前を指定する必要があります。  
   

@@ -1,28 +1,28 @@
 ---
-title: "方法 : クライアント アプリケーション サービスを構成する"
-ms.custom: 
+title: '方法 : クライアント アプリケーション サービスを構成する'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - client application services, configuring
 ms.assetid: 34a8688a-a32c-40d3-94be-c8e610c6a4e8
-caps.latest.revision: 
+caps.latest.revision: 23
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: bac21a0c9535326becfe94610db33869da89c471
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: e7c6d31293109a0d778136235ccfc894aeba8574
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-to-configure-client-application-services"></a>方法 : クライアント アプリケーション サービスを構成する
 このトピックでは、[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] **プロジェクト デザイナー**を使用して、クライアント アプリケーション サービスを有効にし、構成する方法について説明します。 クライアント アプリケーション サービスを使用してユーザーを検証し、既存の [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] アプリケーション サービスからユーザーのロールおよび設定を取得することができます。 構成した後に、「[クライアント アプリケーション サービスの概要](../../../docs/framework/common-client-technologies/client-application-services-overview.md)」に記載されているように、アプリケーション コード内で有効にされているサービスにアクセスできます。 [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] アプリケーション サービスの詳細については、「[ASP.NET アプリケーション サービスの概要](http://msdn.microsoft.com/library/1162e529-0d70-44b2-b3ab-83e60c695013)」を参照してください。  
@@ -111,7 +111,7 @@ ms.lasthandoff: 01/19/2018
     Data Source = |SQL/CE|;password=<password>;encrypt database=true  
     ```  
   
-5.  独自の [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] データベースを使用するには、独自の接続文字列を指定します。 有効な接続文字列の形式の詳細については、[!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] のドキュメントを参照してください。 このデータベースは自動的には生成されません。 接続文字列は、次の SQL ステートメントを使用して作成できる既存のデータベースを参照する必要があります。  
+5.  独自の SQL Server データベースを使用するには、独自の接続文字列を指定します。 有効な接続文字列の形式の詳細については、SQL Server のドキュメントを参照してください。 このデータベースは自動的には生成されません。 接続文字列は、次の SQL ステートメントを使用して作成できる既存のデータベースを参照する必要があります。  
   
     ```  
     CREATE TABLE ApplicationProperties (PropertyName nvarchar(256),  
@@ -127,7 +127,7 @@ ms.lasthandoff: 01/19/2018
 ## <a name="using-custom-providers"></a>カスタム プロバイダーの使用  
  既定では、クライアント アプリケーション サービスの機能は、<xref:System.Web.ClientServices.Providers?displayProperty=nameWithType> 名前空間のプロバイダーを使用します。 **プロジェクト デザイナー**の **[サービス]** ページを使用してアプリケーションを構成すると、これらのプロバイダーへの参照が App.config ファイルに追加されます。 これらの既定のプロバイダーは、サーバー上の対応するプロバイダーにアクセスします。 Web サービスは、多くの場合、<xref:System.Web.Security.SqlMembershipProvider> や <xref:System.Web.Security.SqlRoleProvider> などのプロバイダーからユーザー データにアクセスするように構成されます。  
   
- カスタム サービス プロバイダーを使用する場合は、通常、サーバーにアクセスするすべてのクライアント アプリケーションに影響を与えるようにサーバー側のプロバイダーを変更します。 ただし、クライアント側で既定以外のプロバイダーを使用することもできます。 次の手順に示すように、プロジェクトの App.config ファイルでカスタム認証またはロール プロバイダーを指定できます。 カスタム認証とロール プロバイダーを作成する方法については、「[メンバーシップ プロバイダーを実装する](http://msdn.microsoft.com/library/d8658b8e-c962-4f64-95e1-4acce35e4582)」と「[ロール プロバイダーを実装する](http://msdn.microsoft.com/library/851671ce-bf9b-43f2-aba4-bc9d28b11c7d)」を参照してください。 また、カスタム設定プロバイダーを使用するには、プロジェクトの `Settings` クラス (C# では `Properties.Settings.Default` として、`My.Settings` では [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)] としてアクセス) を変更します。 詳細については、「[アプリケーション設定アーキテクチャ](../../../docs/framework/winforms/advanced/application-settings-architecture.md)」を参照してください。  
+ カスタム サービス プロバイダーを使用する場合は、通常、サーバーにアクセスするすべてのクライアント アプリケーションに影響を与えるようにサーバー側のプロバイダーを変更します。 ただし、クライアント側で既定以外のプロバイダーを使用することもできます。 次の手順に示すように、プロジェクトの App.config ファイルでカスタム認証またはロール プロバイダーを指定できます。 カスタム認証とロール プロバイダーを作成する方法については、「[メンバーシップ プロバイダーを実装する](http://msdn.microsoft.com/library/d8658b8e-c962-4f64-95e1-4acce35e4582)」と「[ロール プロバイダーを実装する](http://msdn.microsoft.com/library/851671ce-bf9b-43f2-aba4-bc9d28b11c7d)」を参照してください。 また、カスタム設定プロバイダーを使用するには、プロジェクトの `Settings` クラス (C# では `Properties.Settings.Default` として、Visual Basic では `My.Settings` としてアクセス) を変更します。 詳細については、「[アプリケーション設定アーキテクチャ](../../../docs/framework/winforms/advanced/application-settings-architecture.md)」を参照してください。  
   
 #### <a name="to-configure-client-application-services-to-use-non-default-providers"></a>既定以外のプロバイダーを使用するようにクライアント アプリケーション サービスを構成するには  
   

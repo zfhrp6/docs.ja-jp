@@ -1,11 +1,12 @@
 ---
-title: "Visual Basic におけるファイル アクセス"
-ms.custom: 
+title: Visual Basic におけるファイル アクセス
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - file access
@@ -20,17 +21,17 @@ helpviewer_keywords:
 - I/O [Visual Basic]
 - sequential access
 ms.assetid: 231533bf-d049-4345-befa-3fb78fe6517d
-caps.latest.revision: "17"
+caps.latest.revision: 17
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 9929061feeccee31028056bc93f0f0a2f119eb4e
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.openlocfilehash: 2aabea79e3c7a6dabf47647c7e27b072738ba363
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="file-access-with-visual-basic"></a>Visual Basic におけるファイル アクセス
-`My.Computer.FileSystem` オブジェクトには、ファイルとフォルダーを操作するツールが用意されています。 そのプロパティ、メソッド、イベントを使用すると、ファイルとフォルダーの作成、コピー、移動、調査、削除が可能になります。 `My.Computer.FileSystem` は、下位互換性のために [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] に用意されているレガシ関数 (`FileOpen`、`FileClose`、`Input`、`InputString`、`LineInput` など) よりもパフォーマンスが優れています。  
+`My.Computer.FileSystem` オブジェクトには、ファイルとフォルダーを操作するツールが用意されています。 そのプロパティ、メソッド、イベントを使用すると、ファイルとフォルダーの作成、コピー、移動、調査、削除が可能になります。 `My.Computer.FileSystem` は、下位互換性のために Visual Basic に用意されているレガシ関数 (`FileOpen`、`FileClose`、`Input`、`InputString`、`LineInput` など) よりもパフォーマンスが優れています。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [ファイルの読み取り](../../../../visual-basic/developing-apps/programming/drives-directories-files/reading-from-files.md)  

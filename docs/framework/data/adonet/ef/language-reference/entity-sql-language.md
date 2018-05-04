@@ -1,24 +1,12 @@
 ---
-title: "Entity SQL 言語"
-ms.custom: 
+title: Entity SQL 言語
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 9e7d8837-28c5-429d-a824-7bafb59724cf
-caps.latest.revision: "4"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: a0caf2670a90db0e44ad1f51689b6086313de274
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: dbc44189634f4548b97647d19465e28ee343635d
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="entity-sql-language"></a>Entity SQL 言語
 Entity SQL は、ストレージに依存しない SQL と似たクエリ言語です。 Entity SQL を使用すると、オブジェクトとして、または表形式でエンティティ データに対してクエリを実行できます。 次の場合には Entity SQL の使用を検討してください。  
@@ -90,6 +78,6 @@ Entity SQL は、ストレージに依存しない SQL と似たクエリ言語�
   
  [Entity SQL リファレンス](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ADO.NET Entity Framework](../../../../../../docs/framework/data/adonet/ef/index.md)  
  [言語リファレンス](../../../../../../docs/framework/data/adonet/ef/language-reference/index.md)

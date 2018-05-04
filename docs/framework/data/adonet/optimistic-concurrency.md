@@ -1,27 +1,15 @@
 ---
-title: "オプティミスティック同時実行制御"
-ms.custom: 
+title: オプティミスティック同時実行制御
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: e380edac-da67-4276-80a5-b64decae4947
-caps.latest.revision: "6"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 4cc1ac0446f13bcc6bc1c8262eae5716302c3e2d
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: b1395c3bd81f7f9d2f12d5b1ea2ec4b784f7aab9
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="optimistic-concurrency"></a>オプティミスティック同時実行制御
 マルチユーザー環境には、データベースのデータを更新するための 2 つのモデルがあります。オプティミスティック同時実行制御とペシミスティック同時実行制御です。 <xref:System.Data.DataSet> オブジェクトは、データをリモート処理するときや、データと対話するときのように長時間にわたる利用状況では、オプティミスティック同時実行制御の使用を奨励するように設計されています。  
@@ -41,9 +29,9 @@ ms.lasthandoff: 01/17/2018
   
  午後 1 時に、User1 が、次の値を持つデータベースから行を読み取ります。  
   
- **CustID     LastName     FirstName**  
+ **CustID LastName FirstName**  
   
- 101          Smith             Bob  
+ 101 Smith Bob  
   
 |列名|元の値|現在の値|データベース内の値|  
 |-----------------|--------------------|-------------------|-----------------------|  
@@ -217,7 +205,7 @@ protected static void OnRowUpdated(object sender, SqlRowUpdatedEventArgs args)
 }  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ADO.NET でのデータの取得および変更](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)  
  [DataAdapter によるデータ ソースの更新](../../../../docs/framework/data/adonet/updating-data-sources-with-dataadapters.md)  
  [行エラー情報](../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-error-information.md)  

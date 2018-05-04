@@ -1,24 +1,12 @@
 ---
-title: "コマンド ツリーの構造"
-ms.custom: 
+title: コマンド ツリーの構造
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 2215585e-ca47-45f8-98d4-8cb982f8c1d3
-caps.latest.revision: "2"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: d7e2b25788b088d9da49bad206f8f2f11d0104a2
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 9084e2616ac4ea540bdf755afd011d67a5c991fa
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="the-shape-of-the-command-trees"></a>コマンド ツリーの構造
 SQL 生成モジュールは、指定された入力クエリ コマンド ツリー式に基づいてバックエンドに固有の SQL クエリを生成します。 ここでは、クエリ コマンド ツリーの特性、プロパティ、および構造について説明します。  
@@ -82,7 +70,7 @@ SQL 生成モジュールは、指定された入力クエリ コマンド ツ�
   
  正規関数 (を参照してください[正規関数](../../../../../docs/framework/data/adonet/ef/language-reference/canonical-functions.md)詳細については) の一部として指定された、[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]プロバイダーがこれらの仕様に基づく正規の関数の実装を指定する必要があります。 ストア関数は、対応するプロバイダー マニフェスト内の仕様に基づいています。 ユーザー定義の関数は、SSDL 内の仕様に基づいています。  
   
- また、NiladicFunction 属性を持つ関数は引数を持たないため、末尾のかっこを省略して変換する必要があります。  つまり、  *\<functionName >*の代わりに *\<functionName > ()*です。  
+ また、NiladicFunction 属性を持つ関数は引数を持たないため、末尾のかっこを省略して変換する必要があります。  つまり、  *\<functionName >* の代わりに *\<functionName > ()* です。  
   
 #### <a name="dbnewinstanceexpression"></a>DbNewInstanceExpression  
  DbNewInstanceExpression は、次の 2 つのケースでのみ使用できます。  
@@ -116,5 +104,5 @@ SQL 生成モジュールは、指定された入力クエリ コマンド ツ�
 ### <a name="using-primitive-types"></a>プリミティブ型の使用  
  プリミティブ型を出力コマンド ツリー内で参照する場合、通常は概念モデルのプリミティブ型で参照します。 ただし、一部の式に対しては、対応するストア プリミティブ型がプロバイダーで必要となります。 このような式の例としては、DbCastExpression があります。また、null を対応する型にキャストする必要がある場合は、DbNullExpression も同様です。 こうした式では、プロバイダーは、プリミティブ型の種類およびファセットに基づいて、プロバイダー型へマッピングする必要があります。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [SQL 生成](../../../../../docs/framework/data/adonet/ef/sql-generation.md)

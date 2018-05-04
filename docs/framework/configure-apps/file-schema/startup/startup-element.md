@@ -1,13 +1,6 @@
 ---
-title: "&lt;スタートアップ&gt;要素"
-ms.custom: 
+title: '&lt;スタートアップ&gt;要素'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/startup
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#startup
@@ -16,16 +9,14 @@ helpviewer_keywords:
 - <startup> element
 - startup element
 ms.assetid: 536acfd8-f827-452f-838a-e14fa3b87621
-caps.latest.revision: "19"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 4299775cd23162839ab9846adc7d2c64cc18a404
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 60699f0335bb35589341558800cfd64503d0aa0a
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltstartupgt-element"></a>&lt;スタートアップ&gt;要素
 共通言語ランタイム スタートアップ情報を指定します。  
@@ -60,7 +51,7 @@ ms.lasthandoff: 01/19/2018
   
 |要素|説明|  
 |-------------|-----------------|  
-|[\<requiredRuntime>](../../../../../docs/framework/configure-apps/file-schema/startup/requiredruntime-element.md)|バージョン 1.0 の共通言語ランタイムのみがアプリケーションでサポートされることを指定します。 ランタイム バージョン 1.1 以降でビルドされたアプリケーションを使用する必要があります、  **\<supportedRuntime >**要素。|  
+|[\<requiredRuntime>](../../../../../docs/framework/configure-apps/file-schema/startup/requiredruntime-element.md)|バージョン 1.0 の共通言語ランタイムのみがアプリケーションでサポートされることを指定します。 ランタイム バージョン 1.1 以降でビルドされたアプリケーションを使用する必要があります、  **\<supportedRuntime >** 要素。|  
 |[\<supportedRuntime>](../../../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md)|アプリケーションでサポートされる共通言語ランタイムのバージョンを指定します。|  
   
 ### <a name="parent-elements"></a>親要素  
@@ -70,9 +61,9 @@ ms.lasthandoff: 01/19/2018
 |`configuration`|共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。|  
   
 ## <a name="remarks"></a>コメント  
- **\<SupportedRuntime >** 1.1 以降、ランタイムのバージョンを使用して構築されたすべてのアプリケーションで要素を使用する必要があります。 ランタイムのバージョン 1.0 をサポートするために構築されたアプリケーションを使用する必要があります、  **\<requiredRuntime >**要素。  
+ **\<SupportedRuntime >** 1.1 以降、ランタイムのバージョンを使用して構築されたすべてのアプリケーションで要素を使用する必要があります。 ランタイムのバージョン 1.0 をサポートするために構築されたアプリケーションを使用する必要があります、  **\<requiredRuntime >** 要素。  
   
- Microsoft Internet Explorer でホストされているアプリケーションのスタートアップ コードは無視されます、 **\<スタートアップ >**要素とその子要素です。  
+ Microsoft Internet Explorer でホストされているアプリケーションのスタートアップ コードは無視されます、 **\<スタートアップ >** 要素とその子要素です。  
   
 ## <a name="the-uselegacyv2runtimeactivationpolicy-attribute"></a>UseLegacyV2RuntimeActivationPolicy 属性  
  この属性は、アプリケーションなどに、レガシ アクティブ化のパスを使用する場合に便利です、 [CorBindToRuntimeEx 関数](../../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md)、それらのパスを以前のバージョンではなく CLR の version 4 をアクティブ化して、アプリケーションがある場合、またはビルドされた、[!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)]が .NET Framework の以前のバージョンでビルドされた混合モード アセンブリに依存しています。 そのようなシナリオで属性を設定`true`です。  
@@ -99,7 +90,7 @@ ms.lasthandoff: 01/19/2018
 </configuration>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [スタートアップ設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/startup/index.md)  
  [構成ファイル スキーマ](../../../../../docs/framework/configure-apps/file-schema/index.md)  
  [\<PaveOver> 使用するランタイム バージョンの指定](http://msdn.microsoft.com/library/c376208d-980d-42b4-865b-fbe0d9cc97c2)  

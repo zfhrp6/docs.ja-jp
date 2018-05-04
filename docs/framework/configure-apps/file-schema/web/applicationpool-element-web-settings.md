@@ -1,27 +1,18 @@
 ---
-title: "&lt;applicationPool&gt;要素 (Web 設定)"
-ms.custom: 
+title: '&lt;applicationPool&gt;要素 (Web 設定)'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - applicationPool element
 - <applicationPool> element
 ms.assetid: 46d1baaa-e343-4639-b70d-2a43a9f62b2a
-caps.latest.revision: "12"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: d75e9eedf42523301b3c1745c05d90bcdafbdbf5
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: a2eafc6b5ad1446fd07518f877a8ec001ad8dbd6
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltapplicationpoolgt-element-web-settings"></a>&lt;applicationPool&gt;要素 (Web 設定)
 ASP.NET アプリケーションが統合モードで実行されているときに、プロセス全体の動作を管理する ASP.NET によって使用される構成設定を指定[!INCLUDE[iisver](../../../../../includes/iisver-md.md)]以降のバージョン。  
@@ -79,7 +70,7 @@ ASP.NET アプリケーションが統合モードで実行されているとき
   
 -   アプリケーションがホストされている、[!INCLUDE[iisver](../../../../../includes/iisver-md.md)]アプリケーション プール。  
   
--   [!INCLUDE[iisver](../../../../../includes/iisver-md.md)]統合モードで実行されています。  
+-   [!INCLUDE[iisver](../../../../../includes/iisver-md.md)] 統合モードで実行されています。  
   
 -   アプリケーションを使用して、[!INCLUDE[net_v35SP1_short](../../../../../includes/net-v35sp1-short-md.md)]以降のバージョン。  
   
@@ -105,5 +96,5 @@ ASP.NET アプリケーションが統合モードで実行されているとき
 |検証ファイル||  
 |空にすることができます。||  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [\<system.web> 要素 (Web 設定)](../../../../../docs/framework/configure-apps/file-schema/web/system-web-element-web-settings.md)

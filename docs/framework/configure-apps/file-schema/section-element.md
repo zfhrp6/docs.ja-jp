@@ -1,9 +1,6 @@
 ---
-title: "&lt;セクション&gt;要素"
+title: '&lt;セクション&gt;要素'
 ms.date: 05/01/2017
-ms.prod: .net-framework
-ms.technology: dotnet-clr
-ms.topic: article
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/configSections/section
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/configSections/sectionGroup/section
@@ -13,13 +10,11 @@ helpviewer_keywords:
 ms.assetid: ec7d4110-2403-47ac-8218-499bfe9d5ddb
 author: guardrex
 ms.author: mairaw
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 4e7de6e5ce6415c58deeca14df74c26e24957054
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 17b44ca93efc26f4732f5fe2926f894257d8f984
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="section-element"></a>\<セクション > 要素
 
@@ -57,17 +52,17 @@ ms.lasthandoff: 12/22/2017
 |                     | 説明 |
 | ------------------- | ----------- |
 | **仮想ディレクトリ** | セクションを使用できる構成ファイルを指定します。 次のいずれかの値を使用します。<br><br>**すべての場所**<br>すべての構成ファイルで使用するのには、セクションを使用できます。 既定値です。<br>**MachineOnly**<br>により、マシン構成ファイルでのみ使用するセクション (*Machine.config*)。<br>**MachineToApplication**<br>マシン構成ファイルまたはアプリケーション構成ファイルで使用するのには、セクションを使用できます。 |
-| **allowLocation**   | セクション内で使用できるかどうか決定、 **\<場所 >**要素。 次のいずれかの値を使用します。<br><br>**true**<br>セクションは内で使用される、 **\<場所 >**要素。 既定値です。<br>**false**<br>内で使用するのには、セクションを許可しない、 **\<場所 >**要素。 |
+| **allowLocation**   | セクション内で使用できるかどうか決定、 **\<場所 >** 要素。 次のいずれかの値を使用します。<br><br>**true**<br>セクションは内で使用される、 **\<場所 >** 要素。 既定値です。<br>**false**<br>内で使用するのには、セクションを許可しない、 **\<場所 >** 要素。 |
 
 ## <a name="parent-elements"></a>親要素
 
 |     | 説明 |
 | --- | ----------- |
-| [**\<configSections >**要素](~/docs/framework/configure-apps/file-schema/configsections-element-for-configuration.md) | 構成セクションと名前空間宣言が含まれています。 |
-| [**\<sectionGroup >**要素](~/docs/framework/configure-apps/file-schema/sectiongroup-element-for-configsections.md) | 構成セクションの名前空間を定義します。 |
+| [**\<configSections >** 要素](~/docs/framework/configure-apps/file-schema/configsections-element-for-configuration.md) | 構成セクションと名前空間宣言が含まれています。 |
+| [**\<sectionGroup >** 要素](~/docs/framework/configure-apps/file-schema/sectiongroup-element-for-configsections.md) | 構成セクションの名前空間を定義します。 |
 
 > [!NOTE]
-> A **\<セクション >**要素はいずれかの子要素 **\<configSections >**または **\<sectionGroup >**は対象外両方とも。
+> A **\<セクション >** 要素はいずれかの子要素 **\<configSections >** または **\<sectionGroup >** は対象外両方とも。
 
 ## <a name="child-elements"></a>子要素
 

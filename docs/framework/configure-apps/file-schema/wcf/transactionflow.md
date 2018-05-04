@@ -1,32 +1,20 @@
 ---
-title: "&lt;トランザクション フロー&gt;"
-ms.custom: 
+title: '&lt;トランザクション フロー&gt;'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 8c7b4c5b-ace3-4fe3-89ff-7b13c9aacd13
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 3720294ac937c6aa7ce99ab687efa76b2e860abb
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: c708098676e5634281e29c17639304a1a9cf5afe
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="lttransactionflowgt"></a>&lt;トランザクション フロー&gt;
 カスタム バインドのトランザクション フロー サポートを指定します。  
   
- \<system.serviceModel >  
-\<バインド >  
-\<customBinding >  
-\<バインド >  
+ \<system.serviceModel>  
+\<bindings>  
+\<customBinding>  
+\<binding>  
 \<transactionFlow >  
   
 ## <a name="syntax"></a>構文  
@@ -51,7 +39,7 @@ ms.lasthandoff: 12/22/2017
   
 |要素|説明|  
 |-------------|-----------------|  
-|[\<バインド >](../../../../../docs/framework/misc/binding.md)|カスタム バインドのすべてのバインド機能を定義します。|  
+|[\<binding>](../../../../../docs/framework/misc/binding.md)|カスタム バインドのすべてのバインド機能を定義します。|  
   
 ## <a name="remarks"></a>コメント  
  この要素により、受信トランザクションの目的のプロトコル形式を指定できるだけでなく、エンドポイントのバインディング設定で受信トランザクション フローを有効または無効にできます。 この構成要素を使用する方法については、次を参照してください。 [ServiceModel トランザクションの構成](../../../../../docs/framework/wcf/feature-details/servicemodel-transaction-configuration.md)と[トランザクション フローを有効にすると](../../../../../docs/framework/wcf/feature-details/enabling-transaction-flow.md)です。  
@@ -59,7 +47,7 @@ ms.lasthandoff: 12/22/2017
 > [!CAUTION]
 >  `OleTransactions` プロトコルを使用してエンドポイント間でトランザクションをフローさせるとき、フロー先のエンドポイントが `OleTransactions` 以外のプロトコルを使用して再びフローを試みると、トランザクション タイムアウトが失われる場合があります。 その結果、OleTransactions ホップより後のすべてのダウンレベル ノードが、予想より遅くタイムアウトする可能性があります。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Configuration.TransactionFlowElement>  
  <xref:System.ServiceModel.Channels.TransactionFlowBindingElement>  
  <xref:System.ServiceModel.Channels.CustomBinding>  
@@ -68,4 +56,4 @@ ms.lasthandoff: 12/22/2017
  [バインディング](../../../../../docs/framework/wcf/bindings.md)  
  [バインディングの拡張](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
  [カスタム バインディング](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
- [\<customBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)
+ [\<customBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)

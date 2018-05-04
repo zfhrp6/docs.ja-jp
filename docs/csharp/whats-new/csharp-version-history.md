@@ -9,11 +9,11 @@ ms.topic: article
 ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
-ms.openlocfilehash: d24d190eab5896121231543e6696b6a4861b5bb8
-ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
+ms.openlocfilehash: 0a24e8cf22bb8350777879a3adfd2757b89cd305
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="the-history-of-c"></a>C# の歴史 #
 
@@ -48,7 +48,7 @@ C# バージョン 2.0 で、反復子が導入されました。 手短に言�
 
 ## <a name="c-version-30"></a>C# バージョン 3.0
 
-C# バージョン 3.0 は、Visual Studio 2008 と共に 2007 年後半に登場しましたが、すべての言語機能が搭載されたのは、実際には C# バージョン 3.5 からでした。 このバージョンは、C# の成長において大きな変化を遂げました。 このバージョンで、C# は真に強力なプログラミング言語としての地位を確立しました。 このバージョンでの主な機能をいくつか見てみましょう。
+C# バージョン 3.0 は、Visual Studio 2008 と共に 2007 年後半に登場しましたが、すべての言語機能が搭載されたのは、実際には .NET Framework バージョン 3.5 からでした。 このバージョンは、C# の成長において大きな変化を遂げました。 このバージョンで、C# は真に強力なプログラミング言語としての地位を確立しました。 このバージョンでの主な機能をいくつか見てみましょう。
 
 - [自動実装プロパティ](../programming-guide/classes-and-structs/auto-implemented-properties.md)
 - [匿名型](../programming-guide/classes-and-structs/anonymous-types.md)

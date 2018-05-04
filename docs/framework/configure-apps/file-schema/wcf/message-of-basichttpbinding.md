@@ -1,33 +1,21 @@
 ---
-title: "&lt;basicHttpBinding&gt; の &lt;message&gt;"
-ms.custom: 
+title: '&lt;basicHttpBinding&gt; の &lt;message&gt;'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 51cdd329-6461-471a-8747-56c2299b61e5
-caps.latest.revision: "23"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 17840cd9b9e4f05e705d4d8201dd350a140fdf9c
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
-ms.translationtype: MT
+ms.openlocfilehash: f58fadbc3ac3f193232ad075c4973f6ac2f2d1f6
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltmessagegt-of-ltbasichttpbindinggt"></a>&lt;basicHttpBinding&gt; の &lt;message&gt;
 メッセージ レベルのセキュリティの設定を定義、 [ \<basicHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md)です。  
   
- \<system.ServiceModel>  
+ \<system.ServiceModel >  
 \<bindings>  
 \<basicHttpBinding>  
 \<binding>  
-\<security>  
+\<セキュリティ >  
 \<message>  
   
 ## <a name="syntax"></a>構文  
@@ -52,7 +40,7 @@ ms.lasthandoff: 01/19/2018
   
 |値|説明|  
 |-----------|-----------------|  
-|UserName|-UserName 資格情報を使用してサーバーにクライアントの認証が必要です。 この資格情報を使用して指定する必要があります、 [ \<clientCredentials >](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md)です。<br />-   [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)]パスワード ダイジェストの送信、またはパスワードを使用して、そのようなキーを使用して、メッセージ セキュリティのためのキーの派生はサポートしません。 そのため、[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] では UserName 資格情報を使用する場合は、トランスポートが強制的にセキュリティで保護されます。 `basicHttpBinding` の場合は、SSL チャネルの設定が必要です。|  
+|UserName|-UserName 資格情報を使用してサーバーにクライアントの認証が必要です。 この資格情報を使用して指定する必要があります、 [ \<clientCredentials >](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md)です。<br />-   [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] パスワード ダイジェストの送信、またはパスワードを使用して、そのようなキーを使用して、メッセージ セキュリティのためのキーの派生はサポートしません。 そのため、[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] では UserName 資格情報を使用する場合は、トランスポートが強制的にセキュリティで保護されます。 `basicHttpBinding` の場合は、SSL チャネルの設定が必要です。|  
 |証明書|証明書を使用してクライアントをサーバーに認証するように要求します。 ここではクライアントの資格情報を使用して指定する必要があります[ \<clientCredentials >](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md)と[ \<clientCertificate >](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcertificate-of-servicecredentials.md)です。 さらに、メッセージのセキュリティ モードを使用する場合は、クライアントにサービス証明書を準備する必要があります。 ここではサービスの資格情報を使用して指定する必要があります<xref:System.ServiceModel.Description.ClientCredentials>クラスまたは`ClientCredentials`動作要素をサービスを指定することを使用して証明書、 [ \<serviceCertificate >](../../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md)です。|  
   
 ### <a name="child-elements"></a>子要素  
@@ -136,7 +124,7 @@ ms.lasthandoff: 01/19/2018
 </system.serviceModel>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.BasicHttpMessageSecurity>  
  <xref:System.ServiceModel.Configuration.BasicHttpSecurityElement.Message%2A>  
  <xref:System.ServiceModel.BasicHttpSecurity.Message%2A>  

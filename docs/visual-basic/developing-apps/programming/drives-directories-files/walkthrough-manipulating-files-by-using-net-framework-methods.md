@@ -1,11 +1,12 @@
 ---
-title: ".NET Framework のメソッドによるファイル操作 (Visual Basic)"
-ms.custom: 
+title: .NET Framework のメソッドによるファイル操作 (Visual Basic)
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - I/O [Visual Basic], walkthroughs
@@ -21,14 +22,14 @@ helpviewer_keywords:
 - text files [Visual Basic], reading
 - I/O [Visual Basic], reading text from files
 ms.assetid: 7d2109eb-f98a-4389-b43d-30f384aaa7d5
-caps.latest.revision: "18"
+caps.latest.revision: 18
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: bc42dee640271ef84d35ceeb039d98741d296c5e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: ed363efeeef008927f2c34b393de66ca4ccbb0bb
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="walkthrough-manipulating-files-by-using-net-framework-methods-visual-basic"></a>チュートリアル: .NET Framework のメソッドによるファイル操作 (Visual Basic)
 このチュートリアルでは、<xref:System.IO.StreamReader> クラスを使用してファイルを開いて読み取り、ファイルがアクセスされているかどうかをチェックし、<xref:System.IO.StreamReader> クラスのインスタンスを使用したファイル読み取り内の文字列を検索し、<xref:System.IO.StreamWriter> クラスを使用してファイルにデータを書き込む方法について説明します。  
@@ -36,7 +37,7 @@ ms.lasthandoff: 11/21/2017
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
 ## <a name="creating-the-application"></a>アプリケーションの作成  
- [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] を起動し、ユーザーが指定のファイルへの書き込みに使用できるフォームを作成して、プロジェクトを開始します。  
+ Visual Studio を起動し、ユーザーが指定のファイルへの書き込みに使用できるフォームを作成して、プロジェクトを開始します。  
   
 #### <a name="to-create-the-project"></a>プロジェクトを作成するには  
   
@@ -46,15 +47,15 @@ ms.lasthandoff: 11/21/2017
   
 3.  **[名前]** ボックスに `MyDiary` と入力して、**[OK]** をクリックします。  
   
-     [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] の**ソリューション エクスプローラー**にプロジェクトが追加され、**Windows フォーム デザイナー**が開きます。  
+     Visual Studio の**ソリューション エクスプローラー**にプロジェクトが追加され、**Windows フォーム デザイナー**が開きます。  
   
 4.  次の表にあるコントロールをフォームに追加し、それらのプロパティに対応する値を設定します。  
   
-|**オブジェクト**|**プロパティ**|**値**|  
+|**オブジェクト**|**プロパティ**|**[値]**|  
 |---|---|---|   
-|<xref:System.Windows.Forms.Button>|**Name**<br /><br /> **テキスト**|`Submit`<br /><br /> **エントリの送信**|  
-|<xref:System.Windows.Forms.Button>|**Name**<br /><br /> **テキスト**|`Clear`<br /><br /> **エントリのクリア**|  
-|<xref:System.Windows.Forms.TextBox>|**Name**<br /><br /> **テキスト**<br /><br /> **Multiline**|`Entry`<br /><br /> **テキストを入力してください。**<br /><br /> `False`|  
+|<xref:System.Windows.Forms.Button>|**Name**<br /><br /> **[テキスト]**|`Submit`<br /><br /> **エントリの送信**|  
+|<xref:System.Windows.Forms.Button>|**Name**<br /><br /> **[テキスト]**|`Clear`<br /><br /> **エントリのクリア**|  
+|<xref:System.Windows.Forms.TextBox>|**Name**<br /><br /> **[テキスト]**<br /><br /> **Multiline**|`Entry`<br /><br /> **テキストを入力してください。**<br /><br /> `False`|  
   
 ## <a name="writing-to-the-file"></a>ファイルへの書き込み  
  アプリケーションを通じてファイルに書き込む機能を追加するには、<xref:System.IO.StreamWriter> クラスを使用します。 <xref:System.IO.StreamWriter> は、特定のエンコードでの文字出力用に設計されています。これに対し <xref:System.IO.Stream> クラスは、バイト入出力用に設計されています。 標準のテキスト ファイルに複数行の情報を書き込む場合には、<xref:System.IO.StreamWriter> を使用します。 <xref:System.IO.StreamWriter> クラスの詳細については、「<xref:System.IO.StreamWriter>」をご覧ください。  
@@ -100,9 +101,9 @@ ms.lasthandoff: 11/21/2017
 |コントロール|プロパティ|値|  
 |-------------|----------------|------------|  
 |<xref:System.Windows.Forms.TextBox>|**Name**<br /><br /> **Visible**<br /><br /> **Size**<br /><br /> **Multiline**|`DisplayEntry`<br /><br /> `False`<br /><br /> `120,60`<br /><br /> `True`|  
-|<xref:System.Windows.Forms.Button>|**Name**<br /><br /> **テキスト**|`Display`<br /><br /> **表示**|  
+|<xref:System.Windows.Forms.Button>|**Name**<br /><br /> **[テキスト]**|`Display`<br /><br /> **表示**|  
 |<xref:System.Windows.Forms.Button>|**Name**<br /><br /> **テキスト**|`GetEntries`<br /><br /> **エントリの取得**|  
-|<xref:System.Windows.Forms.ComboBox>|**Name**<br /><br /> **テキスト**<br /><br /> **Enabled**|`PickEntries`<br /><br /> **エントリの選択**<br /><br /> `False`|  
+|<xref:System.Windows.Forms.ComboBox>|**Name**<br /><br /> **[テキスト]**<br /><br /> **有効**|`PickEntries`<br /><br /> **エントリの選択**<br /><br /> `False`|  
   
 #### <a name="to-populate-the-combo-box"></a>コンボ ボックスを設定するには  
   
@@ -127,9 +128,9 @@ ms.lasthandoff: 11/21/2017
   
 |コントロール|プロパティ|値|  
 |-------------|----------------|------------|  
-|<xref:System.Windows.Forms.Button>|**Name**<br /><br /> **テキスト**<br /><br /> **Enabled**|`DeleteEntry`<br /><br /> **エントリの削除**<br /><br /> `False`|  
-|<xref:System.Windows.Forms.Button>|**Name**<br /><br /> **テキスト**<br /><br /> **Enabled**|`EditEntry`<br /><br /> **エントリの編集**<br /><br /> `False`|  
-|<xref:System.Windows.Forms.Button>|**Name**<br /><br /> **テキスト**<br /><br /> **Enabled**|`SubmitEdit`<br /><br /> **編集結果の送信**<br /><br /> `False`|  
+|<xref:System.Windows.Forms.Button>|**Name**<br /><br /> **[テキスト]**<br /><br /> **有効**|`DeleteEntry`<br /><br /> **エントリの削除**<br /><br /> `False`|  
+|<xref:System.Windows.Forms.Button>|**Name**<br /><br /> **[テキスト]**<br /><br /> **有効**|`EditEntry`<br /><br /> **エントリの編集**<br /><br /> `False`|  
+|<xref:System.Windows.Forms.Button>|**Name**<br /><br /> **[テキスト]**<br /><br /> **Enabled**|`SubmitEdit`<br /><br /> **編集結果の送信**<br /><br /> `False`|  
   
 #### <a name="to-enable-deletion-and-modification-of-entries"></a>エントリの削除と変更を有効にするには  
   
@@ -155,7 +156,7 @@ ms.lasthandoff: 11/21/2017
   
  コードをテストするには、F5 キーを押してアプリケーションをコンパイルします。 **[エントリの取得]** をクリックし、エントリを選択して、**[表示]** をクリックします。 `DisplayEntry`<xref:System.Windows.Forms.TextBox> にエントリが表示されます。 **[エントリの編集]** をクリックします。 `Entry`<xref:System.Windows.Forms.TextBox> にエントリが表示されます。 `Entry`<xref:System.Windows.Forms.TextBox> でエントリを編集し、**[Submit Edit] (編集結果の送信)** をクリックします。 `MyDiary.txt` ファイルを開いて修正結果を確認します。 確認したら、エントリを選択し、**[エントリの削除]** をクリックします。 <xref:System.Windows.Forms.MessageBox> で確認を求められたら、**[OK]** をクリックします。 アプリケーションを閉じ、`MyDiary.txt` を開いて削除を確認します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.IO.StreamReader>  
  <xref:System.IO.StreamWriter>  
  [チュートリアル](../../../../visual-basic/walkthroughs.md)

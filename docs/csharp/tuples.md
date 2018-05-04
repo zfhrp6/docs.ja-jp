@@ -1,6 +1,6 @@
 ---
-title: "タプル - C# ガイド"
-description: "C# の名前のないタプルと名前付きタプルについて"
+title: タプル - C# ガイド
+description: C# の名前のないタプルと名前付きタプルについて
 keywords: .NET, .NET Core, C#
 author: BillWagner
 ms-author: wiwagn
@@ -10,17 +10,17 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: ee8bf7c3-aa3e-4c9e-a5c6-e05cc6138baa
-ms.openlocfilehash: 58f76332a8f3717fe10788382552598d6693e7e3
-ms.sourcegitcommit: 882e02b086d7cb9c75f748494cf7a8d3377c5874
+ms.openlocfilehash: 1d1fc450503dc905e6b260a2b984e3ce2315fd45
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="c-tuple-types"></a>C# のタプル型 #
 
-C# のタプルは、軽量構文を使用して定義する型で、 構文がシンプルである、変換の規則が要素の数 ("基数" と呼ばれます) と種類に基づく、コピーと割り当ての規則が一貫している、などのメリットがあります。 そのトレードオフとして、タプルでは、継承に関連するオブジェクト指向の表現形式の一部がサポートされていません。 概要については、[C# 7 の新機能のタプル](whats-new/csharp-7.md#tuples)に関するトピックのセクションをご覧ください。
+C# のタプルは、軽量構文を使用して定義する型で、 構文がシンプルである、変換の規則が要素の数 ("カーディナリティ" と呼ばれます) と種類に基づく、コピーと割り当ての規則が一貫している、などのメリットがあります。 そのトレードオフとして、タプルでは、継承に関連するオブジェクト指向の表現形式の一部がサポートされていません。 概要については、[C# 7.0 の新機能のタプル](whats-new/csharp-7.md#tuples)に関するトピックのセクションをご覧ください。
 
-このトピックでは、C# 7 でタプルに適用される言語の規則、タプルの使用方法、およびタプルを操作するための入門的ガイダンスについて説明します。
+このトピックでは、C# 7.0 以降でタプルに適用される言語の規則、タプルの使用方法、およびタプルを操作するための入門的ガイダンスについて説明します。
 
 > [!NOTE]
 > 新しいタプル機能を使用するには、<xref:System.ValueTuple> 型が必要です。
@@ -59,7 +59,7 @@ C# のタプルは、軽量構文を使用して定義する型で、 構文が�
 
 コンパイラと言語によってシノニムが処理されるため、名前付きタプルを効果的に使用できるようになります。 IDE やエディターは Roslyn API を使用して、セマンティック名を読み取ります。 これにより、同じアセンブリ内の任意の場所で、セマンティック名によって名前付きタプルの要素を参照できます。 定義した名前は、コンパイル済み出力が生成されるときに、対応する `Item*` に置き換えられます。 これらの要素に設定した名前は、コンパイルされた Microsoft Intermediate Language (MSIL) には含まれません。
 
-C# 7.1 以降、タプルのフィールド名は、タプルの初期化に使用した変数によって指定される場合があります。 これは、**[タプル プロジェクション初期化子](#tuple-projection-initializers)**と呼ばれます。 次のコードでは、要素 `count` (整数)、および `sum` (倍精度浮動小数点型) で `accumulation` という名前のタプルを作成します。
+C# 7.1 以降、タプルのフィールド名は、タプルの初期化に使用した変数によって指定される場合があります。 これは、**[タプル プロジェクション初期化子](#tuple-projection-initializers)** と呼ばれます。 次のコードでは、要素 `count` (整数)、および `sum` (倍精度浮動小数点型) で `accumulation` という名前のタプルを作成します。
 
 [!code-csharp[ProjectedTuple](../../samples/snippets/csharp/tuples/tuples/program.cs#ProjectedTupleNames "Named tuple")]
 
@@ -77,7 +77,7 @@ C# 7.1 以降、タプルのフィールド名は、タプルの初期化に使�
 
 [!code-csharp[ExplicitNamedTuple](../../samples/snippets/csharp/tuples/tuples/program.cs#ProjectionExample_Explicit "Explicitly named tuple")]
 
-明示的な名前が指定されていないフィールドの場合、適用可能な暗黙的な名前が射影されます。 明示的または暗黙的のいずれかで、セマンティック名を指定するための要件はありません。 次の初期化子はフィールド名が`Item1`、値がある`42`と`StringContent`値が「すべての応答」。
+明示的な名前が指定されていないフィールドの場合、適用可能な暗黙的な名前が射影されます。 明示的または暗黙的のいずれかで、セマンティック名を指定するための要件はありません。 次の初期化子には、フィールド名 `Item1` があり、その値は `42` と `StringContent` で、その値は "The answer to everything" です。
 
 [!code-csharp[MixedTuple](../../samples/snippets/csharp/tuples/tuples/program.cs#MixedTuple "mixed tuple")]
 
@@ -103,7 +103,7 @@ C# 7.1 以降、タプルのフィールド名は、タプルの初期化に使�
 最初の 2 つの変数 `unnamed` および `anonymous` では、要素にセマンティック名が割り当てられていません。 フィールド名は `Item1` と `Item2` になります。
 最後の 2 つの変数 `named` および `differentName` では、要素にセマンティック名が付けられています。 この 2 つのタプルでは、要素名が異なっていることに注意してください。
 
-この 4 つのタプルに含まれている要素の数 ("基数" と呼ばれます) と要素の型は同じです。 このため、これらの割り当てはすべて機能します。
+この 4 つのタプルに含まれている要素の数 ("カーディナリティ" と呼ばれます) と要素の型は同じです。 このため、これらの割り当てはすべて機能します。
 
 [!code-csharp[VariableAssignment](../../samples/snippets/csharp/tuples/tuples/program.cs#04_VariableAssignment "Variable assignment")]
 
@@ -143,7 +143,7 @@ named = differentShape;
 
 [!code-csharp[TupleVersion](../../samples/snippets/csharp/tuples/tuples/statistics.cs#07_TupleVersion "Refactor to use tuples")]
 
-Visual Studio のリファクタリングのサポートにより、簡単にプライベート メソッドには、コアの統計情報の機能を抽出します。 これにより、3 つの値 `Sum`、`SumOfSquares`、`Count` を含むタプル型を返す `private static` メソッドが作成されます。
+Visual Studio のリファクタリング サポートにより、主要な統計情報の機能をプライベート メソッドに抽出できます。 これにより、3 つの値 `Sum`、`SumOfSquares`、`Count` を含むタプル型を返す `private static` メソッドが作成されます。
 
 [!code-csharp[TupleMethodVersion](../../samples/snippets/csharp/tuples/tuples/statistics.cs#08_TupleMethodVersion "After extracting utility method")]
  
@@ -198,7 +198,7 @@ private static (double, double, int) ComputeSumAndSumOfSquares(IEnumerable<doubl
 
 ## <a name="deconstruction"></a>分解
 
-タプル内のすべての項目を展開するには、メソッドによって返されるタプルを*分解*します。 組を分解する 3 つの異なるアプローチがあります。  まず、かっこの中で各フィールドの型を明示的に宣言して、タプルの要素ごとに個別の変数を作成することができます。
+タプル内のすべての項目を展開するには、メソッドによって返されるタプルを*分解*します。 タプルは 3 とおりの方法で分解できます。  まず、かっこの中で各フィールドの型を明示的に宣言して、タプルの要素ごとに個別の変数を作成することができます。
 
 [!code-csharp[Deconstruct](../../samples/snippets/csharp/tuples/tuples/statistics.cs#10_Deconstruct "Deconstruct")]
 
@@ -214,7 +214,7 @@ private static (double, double, int) ComputeSumAndSumOfSquares(IEnumerable<doubl
 
 タプル内のフィールドすべての型が同じでも、かっこ外では使用できない型があることに注意してください。
 
-同様に、既存の宣言との組を分解できます。
+既存の宣言を使用してタプルを分解することもできます。
 
 ```csharp
 public class Point
@@ -227,7 +227,7 @@ public class Point
 ```
 
 > [!WARNING]
->  既存の宣言に、かっこ内の宣言を混在させることはできません。 たとえば、次が許可されていません:`(var x, y) = MyMethod();`です。 これにより作成されるエラー CS8184 のため*x*かっこが宣言されていると*y*が以前に宣言された他の場所。
+>  既存の宣言をかっこ内の宣言と混在させることはできません。 たとえば、`(var x, y) = MyMethod();` は許可されません。 *x* はかっこ内で宣言されており、*y* は他の場所で以前に宣言されているため、これによりエラー CS8184 が生成されます。
 
 ### <a name="deconstructing-user-defined-types"></a>ユーザー定義型の分解
 

@@ -1,27 +1,15 @@
 ---
-title: "XML からの DataSet の読み込み"
-ms.custom: 
+title: XML からの DataSet の読み込み
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 49c083b7-a5ed-41cf-aabc-5aaba96f00e6
-caps.latest.revision: "4"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 1d17bb97811bb3a2ae979e5a05b8d39baf2b9c63
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 0b74480209c8d06f38ea39e7a89741fc5a89512b
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="loading-a-dataset-from-xml"></a>XML からの DataSet の読み込み
 ADO.NET では、XML ストリームまたは XML ドキュメントから <xref:System.Data.DataSet> の内容を作成できます。 また、.NET Framework では、XML から読み込まれる情報と <xref:System.Data.DataSet> のスキーマまたはリレーショナル構造の作成方法を柔軟に変更できます。  
@@ -111,7 +99,7 @@ foreach (DataTable dataTable in dataSet.Tables)
 ```  
   
 > [!NOTE]
->  場合の XSD スキーマ、<xref:System.Data.DataSet>が含まれています、 **targetNamespace**、データを読み取ることができませんが、およびを呼び出すときに、例外が発生する可能性があります**ReadXml**を読み込む、<xref:System.Data.DataSet>を含む xml該当する名前空間のない要素です。 ここでは修飾されていない要素を読み取り、次のように設定します。 **elementFormDefault** 、XSD スキーマで"qualified"に等しい。 例:  
+>  場合の XSD スキーマ、<xref:System.Data.DataSet>が含まれています、 **targetNamespace**、データを読み取ることができませんが、およびを呼び出すときに、例外が発生する可能性があります**ReadXml**を読み込む、<xref:System.Data.DataSet>を含む xml該当する名前空間のない要素です。 ここでは修飾されていない要素を読み取り、次のように設定します。 **elementFormDefault** 、XSD スキーマで"qualified"に等しい。 例えば:  
   
 ```xml  
 <xsd:schema id="customDataSet"   
@@ -126,7 +114,7 @@ foreach (DataTable dataTable in dataSet.Tables)
 ## <a name="merging-data-from-xml"></a>XML のデータの結合  
  既に、<xref:System.Data.DataSet> にデータが含まれている場合には、<xref:System.Data.DataSet> の既存のデータに XML の新しいデータが追加されます。 **ReadXml**に XML からマージしません、<xref:System.Data.DataSet>が主キーに一致する行情報。 XML から新しい情報で既存の行情報を上書きするには使用**ReadXml**を新規作成する<xref:System.Data.DataSet>、し<xref:System.Data.DataSet.Merge%2A>新しい<xref:System.Data.DataSet>既存に<xref:System.Data.DataSet>です。 使用して DiffGram を読み込む**ReadXML**で、 **XmlReadMode**の**DiffGram**を同じ一意の識別子を持つ行をマージします。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Data.DataSet.Merge%2A?displayProperty=nameWithType>  
  [DataSet での XML の使用](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)  
  [DiffGrams](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/diffgrams.md)  

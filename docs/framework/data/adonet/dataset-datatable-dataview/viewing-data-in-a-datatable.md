@@ -1,27 +1,15 @@
 ---
-title: "DataTable 内のデータの表示"
-ms.custom: 
+title: DataTable 内のデータの表示
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 1d26e0fb-f6e0-4afa-9a9c-b8d55b8f20dc
-caps.latest.revision: "4"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 2576c95ad7739d28e2ca822fd13fb6f176900814
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 5d39d2a856a40b5ea20832a544ede360313309d3
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="viewing-data-in-a-datatable"></a>DataTable 内のデータの表示
 内容にアクセスすることができます、<xref:System.Data.DataTable>を使用して、**行**と**列**のコレクション、 **DataTable**です。 使用することも、<xref:System.Data.DataTable.Select%2A>内のデータのサブセットを返すメソッド、 **DataTable**のような検索条件の基準に従って並べ替え順序、および行の状態。 また、使用することができます、<xref:System.Data.DataRowCollection.Find%2A>のメソッド、 **DataRowCollection**主キーの値を使用して特定の行を検索するとき。  
@@ -42,7 +30,7 @@ ms.lasthandoff: 01/17/2018
 |**追加**|新しい行。|  
 |**None**|なし。|  
 |**OriginalRows**|変更されていない行および削除された行を含む元の行。|  
-|**Unchanged**|変更されていない行。|  
+|**変更されません。**|変更されていない行。|  
   
  次の例で、**データセット**オブジェクトはフィルター処理のみを使用する行が**DataViewRowState**に設定されている**CurrentRows**です。  
   
@@ -117,7 +105,7 @@ DataRow[] deletedRows = workTable.Select(
 DataRow[] custRows = workTable.Select("CustID > 5", "CustLName ASC");  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Data.DataRow>  
  <xref:System.Data.DataSet>  
  <xref:System.Data.DataTable>  

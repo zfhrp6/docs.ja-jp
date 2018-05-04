@@ -1,31 +1,20 @@
 ---
-title: "&lt;リスナー&gt;要素&lt;ソース&gt;"
-ms.custom: 
+title: '&lt;リスナー&gt;要素&lt;ソース&gt;'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/sources/source/listeners
 helpviewer_keywords:
 - listeners element for <source>
 - <listeners> element for <source>
 ms.assetid: a2991f43-b4d3-4614-a8e7-da392de9697f
-caps.latest.revision: 
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload:
-- dotnet
-ms.openlocfilehash: dbabe9fbdc7ac4e611d96bf4bd696b716cf68156
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a711b8d6bfd5b6d73d3240cb84810841bdc5a2b6
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltlistenersgt-element-for-ltsourcegt"></a>&lt;リスナー&gt;要素&lt;ソース&gt;
 追加または内のリスナーを削除、<xref:System.Diagnostics.TraceSource.Listeners%2A>のコレクション、<xref:System.Diagnostics.TraceSource>です。 リスナーは、ログ、ウィンドウ、またはテキスト ファイルなどの適切なターゲットにトレース出力を出力します。  
@@ -100,7 +89,7 @@ ms.lasthandoff: 12/22/2017
 </configuration>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Diagnostics.TraceListener>  
  [トレースおよびデバッグ設定のスキーマ](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)  
  [トレース リスナー](../../../../../docs/framework/debug-trace-profile/trace-listeners.md)

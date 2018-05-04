@@ -1,29 +1,20 @@
 ---
-title: "方法: 発行者ポリシーを作成する"
-ms.custom: 
+title: '方法: 発行者ポリシーを作成する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - publisher policy assembly
 - publisher policy files
 - GAC (global assembly cache), publisher policy assembly
 - global assembly cache, publisher policy assembly
 ms.assetid: 8046bc5d-2fa9-4277-8a5e-6dcc96c281d9
-caps.latest.revision: "15"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 4ccd490f6d31ad1d20128497e5115147eddb3df4
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 91971e4d41c3a54fa72ae73a3655dab650019676
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-create-a-publisher-policy"></a>方法: 発行者ポリシーを作成する
 アプリケーションがアップグレード済みのアセンブリに発行者ポリシー ファイルを含めることによって、新しいバージョンのアセンブリを使用するアセンブリの販売元の状態のことができます。 発行者ポリシー ファイルは、アセンブリのリダイレクトやコード ベース設定を指定し、アプリケーション構成ファイルと同じフォーマットを使用します。 発行者ポリシー ファイルがアセンブリにコンパイルされ、グローバル アセンブリ キャッシュに配置します。  
@@ -100,7 +91,7 @@ ms.lasthandoff: 01/19/2018
   
 1.  コマンド プロンプトで次のコマンドを入力します。  
   
-     **gacutil /i**  *publisherPolicyAssemblyFile*  
+     **gacutil/i***publisherPolicyAssemblyFile*   
   
      次のコマンドは、追加`policy.1.0.myAssembly.dll`グローバル アセンブリ キャッシュにします。  
   
@@ -111,7 +102,7 @@ ms.lasthandoff: 01/19/2018
     > [!IMPORTANT]
     >  ない場合は、元の発行者ポリシー ファイル、アセンブリと同じディレクトリに、発行者ポリシー アセンブリをグローバル アセンブリ キャッシュに追加できません。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [アセンブリを使用したプログラミング](../../../docs/framework/app-domains/programming-with-assemblies.md)  
  [ランタイムがアセンブリを検索する方法](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)  
  [アプリの構成](../../../docs/framework/configure-apps/index.md)  

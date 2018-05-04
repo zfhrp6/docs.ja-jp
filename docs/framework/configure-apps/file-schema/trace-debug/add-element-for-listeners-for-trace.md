@@ -1,14 +1,6 @@
 ---
-title: "&lt;追加&gt;要素&lt;リスナー&gt;の&lt;トレース&gt;"
-ms.custom: 
+title: '&lt;追加&gt;要素&lt;リスナー&gt;の&lt;トレース&gt;'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/trace/listeners/add
 helpviewer_keywords:
@@ -16,17 +8,14 @@ helpviewer_keywords:
 - <add> element for <listeners>
 - add element for <listeners>
 ms.assetid: 81e804a3-ef11-4d39-bbde-bfa012c179e2
-caps.latest.revision: 
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload:
-- dotnet
-ms.openlocfilehash: eb624052c3638cb49abe143ebd4173a5ee85a054
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e27187c05b49b7f73ef19243a3286e8c1de71579
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltaddgt-element-for-ltlistenersgt-for-lttracegt"></a>&lt;追加&gt;要素&lt;リスナー&gt;の&lt;トレース&gt;
 リスナーを追加、**リスナー**コレクション。  
@@ -96,7 +85,7 @@ ms.lasthandoff: 12/22/2017
 |<xref:System.Diagnostics.XmlWriterTraceListener?displayProperty=nameWithType>|ファイルの名前を<xref:System.Diagnostics.XmlWriterTraceListener>を書き込みます。|  
   
 ## <a name="example"></a>例  
- 次の例は、使用する方法を示しています。 **\<追加 >**リスナーを追加する要素`MyListener`と`MyEventListener`を、**リスナー**コレクション。 `MyListener`という名前のファイルを作成`MyListener.log`し、ファイルに出力を書き込みます。 `MyEventListener`イベント ログにエントリを作成します。  
+ 次の例は、使用する方法を示しています。 **\<追加 >** リスナーを追加する要素`MyListener`と`MyEventListener`を、**リスナー**コレクション。 `MyListener` という名前のファイルを作成`MyListener.log`し、ファイルに出力を書き込みます。 `MyEventListener` イベント ログにエントリを作成します。  
   
 ```xml  
 <configuration>  
@@ -114,7 +103,7 @@ ms.lasthandoff: 12/22/2017
 </configuration>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Diagnostics.Trace>  
  <xref:System.Diagnostics.Debug>  
  <xref:System.Diagnostics.EventLogTraceListener>  

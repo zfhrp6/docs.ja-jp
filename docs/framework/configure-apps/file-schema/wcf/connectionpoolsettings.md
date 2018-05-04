@@ -1,32 +1,20 @@
 ---
 title: '&lt;connectionPoolSettings&gt;'
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 6fa7fa65-2c6e-4eab-b8cf-7690112c0be5
-caps.latest.revision: "6"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 11500830c7c5fd75a9e2880a5875bd21fb070634
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 87fcbf08d897cf8d9e1924a8a5ed2b5b20945638
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltconnectionpoolsettingsgt"></a>&lt;connectionPoolSettings&gt;
 名前付きパイプ バインディングの追加の接続プール設定を指定します。  
   
- \<system.serviceModel >  
-\<バインド >  
-\<customBinding >  
-\<バインド >  
+ \<system.serviceModel>  
+\<bindings>  
+\<customBinding>  
+\<binding>  
 \<namePipeTransport >  
 \<connectionPoolSettings >  
   
@@ -59,7 +47,7 @@ ms.lasthandoff: 12/22/2017
 |-------------|-----------------|  
 |[\<namedPipeTransport >](../../../../../docs/framework/configure-apps/file-schema/wcf/namedpipetransport.md)|チャネルで名前付きパイプを使用してメッセージを転送するトランスポートを定義します。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Configuration.NamedPipeConnectionPoolSettingsElement>  
  <xref:System.ServiceModel.Channels.NamedPipeTransportBindingElement.ConnectionPoolSettings%2A>  
  <xref:System.ServiceModel.Channels.NamedPipeConnectionPoolSettings>  
@@ -70,4 +58,4 @@ ms.lasthandoff: 12/22/2017
  [バインディング](../../../../../docs/framework/wcf/bindings.md)  
  [バインディングの拡張](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
  [カスタム バインディング](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
- [\<customBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)
+ [\<customBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)

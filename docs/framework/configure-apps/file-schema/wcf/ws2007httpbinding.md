@@ -1,31 +1,19 @@
 ---
 title: '&lt;ws2007HttpBinding&gt;'
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 8586ecc9-bdaa-44d6-8d4d-7038e4ea1741
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 8749fbb1940b07255a6a9681a7c7360d2f6c2f40
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 6531e35cbed56029a8f772f0cd63aad521a166ef
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltws2007httpbindinggt"></a>&lt;ws2007HttpBinding&gt;
 <xref:System.ServiceModel.WSHttpBinding.Security%2A>、<xref:System.ServiceModel.ReliableSession>、および <xref:System.ServiceModel.WSHttpBindingBase.TransactionFlow%2A> の各バインディング要素の適切なバージョンをサポートする相互運用可能なバインディングを定義します。  
   
  \<system.serviceModel>  
 \<bindings>  
-\<ws2007HttpBinding>  
+\<ws2007HttpBinding >  
   
 ## <a name="syntax"></a>構文  
   
@@ -77,7 +65,7 @@ textEncoding="UnicodeFffeTextEncoding/Utf16TextEncoding/Utf8TextEncoding"
 |`bypassProxyOnLocal`|ローカル アドレスでプロキシ サーバーをバイパスするかどうかを示す値。 既定値は、`false` です。|  
 |`closeTimeout`|クローズ操作が完了するまでの期間を指定する <xref:System.TimeSpan> 値です。 この値は必ず <xref:System.TimeSpan.Zero> 以上である必要があります。 既定値は 00:01:00 です。|  
 |`hostnameComparisonMode`|URI (Uniform Resource Identifier) の解析に使用する HTTP ホスト名比較モードを指定します。 この属性は <xref:System.ServiceModel.HostNameComparisonMode> 型で、URI が一致したときにサービスへのアクセスにホスト名を使用するかどうかを指定します。 既定値は <xref:System.ServiceModel.HostNameComparisonMode.StrongWildcard> で、一致しているホスト名を無視します。|  
-|`maxBufferPoolSize`|このバインドに使用するバッファー プールの最大サイズ。 既定値は 524,288 バイト (512 × 1,024) です。 [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] の多くの部分でバッファーが使用されます。 使用するたびに毎回バッファーを作成および破棄すると負荷が高くなります。バッファーのガベージ コレクションも同様です。 バッファー プールを使用すると、バッファーをプールから取得して使用し、作業が終わったらプールに戻すことができます。 これで、バッファーの作成と破棄によるオーバーヘッドを回避できます。|  
+|`maxBufferPoolSize`|このバインドに使用するバッファー プールの最大サイズ。 既定値は 524,288 バイト (512 × 1,024) です。 Windows Communication Foundation (WCF) では、多くの部分でバッファーを使用します。 使用するたびに毎回バッファーを作成および破棄すると負荷が高くなります。バッファーのガベージ コレクションも同様です。 バッファー プールを使用すると、バッファーをプールから取得して使用し、作業が終わったらプールに戻すことができます。 これで、バッファーの作成と破棄によるオーバーヘッドを回避できます。|  
 |`maxReceivedMessageSize`|このバインディングで構成されたチャネルで受信可能な、ヘッダーを含む最大メッセージ サイズ (バイト単位) です。 この制限を超える場合、メッセージの送信者は SOAP エラーを受け取ります。 メッセージは受信者によって破棄され、トレース ログにこのイベントのエントリが作成されます。 既定値は 65536 です。|  
 |`messageEncoding`|メッセージのエンコードに使用されるエンコーダーを定義します。 以下の値が有効です。<br /><br /> -   `Text`: テキスト メッセージ エンコーダーを使用します。<br />-   `Mtom`: メッセージ Transmission Organization Mechanism 1.0 (MTOM) エンコーダーを使用します。<br /><br /> 既定値は、`Text` です。<br /><br /> この属性は <xref:System.ServiceModel.WSMessageEncoding> 型です。|  
 |`name`|バインドの構成名。 この値は、バインディングの ID として使用されるため、一意にする必要があります。 [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)] 以降では、バインディングおよび動作に名前を付ける必要はありません。 既定の構成と無名のバインディングおよび動作の詳細については、次を参照してください。[簡略化された構成](../../../../../docs/framework/wcf/simplified-configuration.md)と[WCF サービスの構成を簡略化](../../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md)です。|  
@@ -145,7 +133,7 @@ textEncoding="UnicodeFffeTextEncoding/Utf16TextEncoding/Utf8TextEncoding"
 </configuration>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.WS2007HttpBinding>  
  <xref:System.ServiceModel.Configuration.WS2007HttpBindingElement>  
  [バインディング](../../../../../docs/framework/wcf/bindings.md)  

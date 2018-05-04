@@ -1,13 +1,6 @@
 ---
-title: "&lt;設定&gt;要素 (ネットワーク設定)"
-ms.custom: 
+title: '&lt;設定&gt;要素 (ネットワーク設定)'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#settings
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/settings
@@ -15,23 +8,21 @@ helpviewer_keywords:
 - settings element
 - <settings> element
 ms.assetid: 189ce989-c39b-427d-b004-6b82a668b931
-caps.latest.revision: "21"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 6fd4b608964bca2e05424f2f76136fa69111adc4
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 3f717705a6cd4cc29fe333f5012c7fec466d350b
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltsettingsgt-element-network-settings"></a>&lt;設定&gt;要素 (ネットワーク設定)
 <xref:System.Net?displayProperty=nameWithType> 名前空間の基本的なネットワーク オプションを構成します。  
   
  \<configuration>  
-\<system.net >  
-\<設定 >  
+\<system.net>  
+\<settings>  
   
 ## <a name="syntax"></a>構文  
   
@@ -57,7 +48,7 @@ ms.lasthandoff: 12/22/2017
   
 |要素|説明|  
 |-------------|-----------------|  
-|[httpListener](../../../../../docs/framework/configure-apps/file-schema/network/httplistener-element-network-settings.md)|によって使用されるパラメーターをカスタマイズ、<xref:System.Net.HttpListener>クラスです。|  
+|[HttpListener](../../../../../docs/framework/configure-apps/file-schema/network/httplistener-element-network-settings.md)|によって使用されるパラメーターをカスタマイズ、<xref:System.Net.HttpListener>クラスです。|  
 |[httpWebRequest](../../../../../docs/framework/configure-apps/file-schema/network/httpwebrequest-element-network-settings.md)|Web 要求のパラメーターをカスタマイズします。|  
 |[ipv6](../../../../../docs/framework/configure-apps/file-schema/network/ipv6-element-network-settings.md)|により、インターネット プロトコル バージョン 6 (IPv6) をサポートします。|  
 |[\<performanceCounter > 要素 (ネットワーク設定)](../../../../../docs/framework/configure-apps/file-schema/network/performancecounter-element-network-settings.md)|ネットワーク パフォーマンス カウンターを有効にします。|  
@@ -76,6 +67,6 @@ ms.lasthandoff: 12/22/2017
 ## <a name="configuration-files"></a>構成ファイル  
  この要素は、アプリケーション構成ファイルまたはマシン構成ファイル (Machine.config) で使用できます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Net?displayProperty=nameWithType>  
  [ネットワーク設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

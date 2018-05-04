@@ -1,12 +1,12 @@
 ---
-title: "BlockingCollection の概要"
-ms.custom: 
+title: BlockingCollection の概要
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -14,18 +14,18 @@ dev_langs:
 helpviewer_keywords:
 - BlockingCollection, overview
 ms.assetid: 987ea3d7-0ad5-4238-8b64-331ce4eb3f0b
-caps.latest.revision: 
+caps.latest.revision: 12
 author: mairaw
 ms.author: mairaw
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 5e2235c1a5bbe4a39cf029059290268faa5be154
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 74303f07134401193d07d3b5d584c9498f023d90
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="blockingcollection-overview"></a>BlockingCollection の概要
 <xref:System.Collections.Concurrent.BlockingCollection%601> は、次の機能を提供するスレッド セーフなコレクション クラスです。  
@@ -85,7 +85,7 @@ BlockingCollection<string> bc = new BlockingCollection<string>(new ConcurrentBag
  詳細については、「[方法: 境界ブロッキング機能をコレクションに追加する](../../../../docs/standard/collections/thread-safe/how-to-add-bounding-and-blocking.md)」を参照してください。  
   
 ## <a name="ienumerable-support"></a>IEnumerable のサポート  
- <xref:System.Collections.Concurrent.BlockingCollection%601> は <xref:System.Collections.Concurrent.BlockingCollection%601.GetConsumingEnumerable%2A> メソッドを提供します。これにより、コンシューマーは `foreach` ([!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)] の場合、`For Each`) を使用し、コレクションが完了するまで (コレクションが空になり、それ以上項目が追加されなくなるまで)、項目を削除できます。 詳細については、「[方法: ForEach を使用して BlockingCollection 内の項目を削除する](../../../../docs/standard/collections/thread-safe/how-to-use-foreach-to-remove.md)」を参照してください。  
+ <xref:System.Collections.Concurrent.BlockingCollection%601> は <xref:System.Collections.Concurrent.BlockingCollection%601.GetConsumingEnumerable%2A> メソッドを提供します。これにより、コンシューマーは `foreach` (Visual Basic では `For Each`) を使用し、コレクションが完了するまで (コレクションが空になり、それ以上項目が追加されなくなるまで)、項目を削除できます。 詳細については、「[方法: ForEach を使用して BlockingCollection 内の項目を削除する](../../../../docs/standard/collections/thread-safe/how-to-use-foreach-to-remove.md)」を参照してください。  
   
 ## <a name="using-many-blockingcollections-as-one"></a>多数の BlockingCollection を 1 つとして使用する  
  consumer が複数のコレクションから同時に項目を取得する必要のあるシナリオでは、<xref:System.Collections.Concurrent.BlockingCollection%601> の配列を作成し、<xref:System.Collections.Concurrent.BlockingCollection%601.TakeFromAny%2A> や <xref:System.Collections.Concurrent.BlockingCollection%601.AddToAny%2A> などの静的メソッドを使用できます。これらのメソッドでは、配列内の任意のコレクションを対象に追加または取得の操作を実行できます。 いずれかのコレクションがブロックしている場合、メソッドはすぐに別のコレクションを試します。これは、操作を実行できるコレクションが見つかるまで続行されます。 詳細については、「[方法: パイプラインでブロッキング コレクションの配列を使用する](../../../../docs/standard/collections/thread-safe/how-to-use-arrays-of-blockingcollections.md)」を参照してください。  

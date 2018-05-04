@@ -1,32 +1,22 @@
 ---
-title: "&lt;peerTransport&gt; の &lt;security&gt;"
-ms.custom: 
+title: '&lt;peerTransport&gt; の &lt;security&gt;'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: f73634ed-f896-4968-bf74-5e5ac52d3b6b
-caps.latest.revision: "7"
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: d08d839d0eb80c23b96f87cf26d3d68db7d358f6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9d77c250b4843c9a0f83247cae5c2859429cf5bf
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltsecuritygt-of-ltpeertransportgt"></a>&lt;peerTransport&gt; の &lt;security&gt;
 ピア チャネルに関連付けられたセキュリティ設定を格納します。使用される認証の種類とメッセージ トランスポートで使用されるセキュリティを含みます。  
   
- \<system.serviceModel >  
-\<バインド >  
-\<customBinding >  
-\<バインド >  
+ \<system.serviceModel>  
+\<bindings>  
+\<customBinding>  
+\<binding>  
 \<peerTransport >  
 \<セキュリティ >  
   
@@ -60,7 +50,7 @@ ms.lasthandoff: 12/22/2017
   
 |要素|説明|  
 |-------------|-----------------|  
-|[\<トランスポート >](../../../../../docs/framework/configure-apps/file-schema/wcf/transport-of-peertransport.md)|カスタム バインドのピア トランスポートを定義します。 この要素には、サービスと対話するときに使用される資格情報を指定する `clientCredentialType` 属性があります。 この属性は <xref:System.ServiceModel.PeerTransportCredentialType> 型です。<br /><br /> この要素は <xref:System.ServiceModel.Configuration.PeerTransportSecurityElement> 型です。|  
+|[\<transport>](../../../../../docs/framework/configure-apps/file-schema/wcf/transport-of-peertransport.md)|カスタム バインドのピア トランスポートを定義します。 この要素には、サービスと対話するときに使用される資格情報を指定する `clientCredentialType` 属性があります。 この属性は <xref:System.ServiceModel.PeerTransportCredentialType> 型です。<br /><br /> この要素は <xref:System.ServiceModel.Configuration.PeerTransportSecurityElement> 型です。|  
   
 ### <a name="parent-elements"></a>親要素  
   
@@ -68,7 +58,7 @@ ms.lasthandoff: 12/22/2017
 |-------------|-----------------|  
 |[\<peerTransport >](../../../../../docs/framework/configure-apps/file-schema/wcf/peertransport.md)|カスタム バインドのピア トランスポートを定義します。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Configuration.PeerSecurityElement>  
  <xref:System.ServiceModel.PeerSecuritySettings>  
  <xref:System.ServiceModel.Channels.CustomBinding>  
@@ -78,4 +68,4 @@ ms.lasthandoff: 12/22/2017
  [バインディング](../../../../../docs/framework/wcf/bindings.md)  
  [バインディングの拡張](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
  [カスタム バインディング](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
- [\<customBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)
+ [\<customBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)

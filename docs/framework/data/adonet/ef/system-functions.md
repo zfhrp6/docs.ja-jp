@@ -1,24 +1,12 @@
 ---
-title: "システム関数"
-ms.custom: 
+title: システム関数
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: b7c71b58-09e6-44ce-a3e5-a0fdb892fb86
-caps.latest.revision: "2"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 4dae900f82b67815543dea915e9f29b56683c3b9
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 91c8e178fc6903dddc287ac2ca00c3152a9e3ce7
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="system-functions"></a>システム関数
 .NET Framework Data Provider for SQL Server (SqlClient) には、次のシステム関数が用意されています。  
@@ -28,10 +16,10 @@ ms.lasthandoff: 01/17/2018
 |`CHECKSUM (` `value`, [`value`, [`value`]]`)`|チェックサム値を返します。 `CHECKSUM` は、ハッシュ インデックスの作成に使用します。<br /><br /> **引数**<br /><br /> `value`: A `Boolean`、 `Byte`、 `Int16`、 `Int32`、 `Int64`、 `Single`、 `Decimal`、 `Double`、 `DateTime`、 `String`、 `Binary`、または`Guid`です。 1 つ、2 つ、または 3 つの値を指定できます。<br /><br /> **戻り値**<br /><br /> 指定された式の絶対値。<br /><br /> **例**<br /><br /> `SqlServer.CHECKSUM(10,100,1000.0)`|  
 |`CURRENT_TIMESTAMP ()`|有効桁数が 7 (SQL Server 2008) または 3 (SQL Server 2005) の `DateTime` 値に使用する現在の日付と時刻を SQL Server の内部形式で生成します。<br /><br /> **戻り値**<br /><br /> 現在のシステム日時を `DateTime` として表現した値。<br /><br /> **例**<br /><br /> `SqlServer.CURRENT_TIMESTAMP()`|  
 |`CURRENT_ USER` `()`|現在のユーザーの名前を返します。<br /><br /> **戻り値**<br /><br /> ASCII の `String`。<br /><br /> **例**<br /><br /> `SqlServer.CURRENT_USER()`|  
-|`DATALENGTH` `(` `expression` `)`|式を表すために必要なバイト数を返します。<br /><br /> **引数**<br /><br /> `expression`: A `Boolean`、 `Byte`、 `Int16`、 `Int32`、 `Int64`、 `Single`、 `Decimal`、 `Double`、 `DateTime`、 `Time`、 `DateTimeOffset`、 `String`、 `Binary`、または`Guid`です。<br /><br /> **戻り値**<br /><br /> プロパティのサイズ (`Int32`)。<br /><br /> **例**<br /><br /> `SELECT VALUE SqlServer.DATALENGTH(P.Name)FROM`<br /><br /> `AdventureWorksEntities.Product AS P`|  
+|`DATALENGTH` `(` `expression` `)`|式を表すために必要なバイト数を返します。<br /><br /> **引数**<br /><br /> `expression`: A `Boolean`、 `Byte`、 `Int16`、 `Int32`、 `Int64`、 `Single`、 `Decimal`、 `Double`、 `DateTime`、 `Time`、 `DateTimeOffset`、 `String`、 `Binary`、または`Guid`.<br /><br /> **戻り値**<br /><br /> プロパティのサイズ (`Int32`)。<br /><br /> **例**<br /><br /> `SELECT VALUE SqlServer.DATALENGTH(P.Name)FROM`<br /><br /> `AdventureWorksEntities.Product AS P`|  
 |`HOST_NAME()`|ワークステーション名を返します。<br /><br /> **戻り値**<br /><br /> Unicode の `String`。<br /><br /> **例**<br /><br /> `SqlServer.HOST_NAME()`|  
-|`ISDATE(` `expression` `)`|入力式が有効な日付かどうかを調べます。<br /><br /> **引数**<br /><br /> `expression`: A `Boolean`、 `Byte`、 `Int16`、 `Int32`、 `Int64`、 `Single`、 `Decimal`、 `Double`、 `DateTime`、 `Time`、 `DateTimeOffset`、 `String`、 `Binary`、または`Guid`です。<br /><br /> **戻り値**<br /><br /> `Int32`。 入力式が有効な日付である場合は 1 です。 それ以外の場合は 0 です。<br /><br /> **例**<br /><br /> `SqlServer.ISDATE('1/1/2006')`|  
-|`ISNUMERIC(` `expression` `)`|式が数値型として有効かどうかを調べます。<br /><br /> **引数**<br /><br /> `expression`: A `Boolean`、 `Byte`、 `Int16`、 `Int32`、 `Int64`、 `Single`、 `Decimal`、 `Double`、 `DateTime`、 `Time`、 `DateTimeOffset`、 `String`、 `Binary`、または`Guid`です。<br /><br /> **戻り値**<br /><br /> `Int32`。 入力式が有効な日付である場合は 1 です。 それ以外の場合は 0 です。<br /><br /> **例**<br /><br /> `SqlServer.ISNUMERIC('21')`|  
+|`ISDATE(` `expression` `)`|入力式が有効な日付かどうかを調べます。<br /><br /> **引数**<br /><br /> `expression`: A `Boolean`、 `Byte`、 `Int16`、 `Int32`、 `Int64`、 `Single`、 `Decimal`、 `Double`、 `DateTime`、 `Time`、 `DateTimeOffset`、 `String`、 `Binary`、または`Guid`.<br /><br /> **戻り値**<br /><br /> `Int32`。 入力式が有効な日付である場合は 1 です。 それ以外の場合は 0 です。<br /><br /> **例**<br /><br /> `SqlServer.ISDATE('1/1/2006')`|  
+|`ISNUMERIC(` `expression` `)`|式が数値型として有効かどうかを調べます。<br /><br /> **引数**<br /><br /> `expression`: A `Boolean`、 `Byte`、 `Int16`、 `Int32`、 `Int64`、 `Single`、 `Decimal`、 `Double`、 `DateTime`、 `Time`、 `DateTimeOffset`、 `String`、 `Binary`、または`Guid`.<br /><br /> **戻り値**<br /><br /> `Int32`。 入力式が有効な日付である場合は 1 です。 それ以外の場合は 0 です。<br /><br /> **例**<br /><br /> `SqlServer.ISNUMERIC('21')`|  
 |`NEWID()`|Guid 型の一意な値を作成します。<br /><br /> **戻り値**<br /><br /> `Guid`。<br /><br /> **例**<br /><br /> `SqlServer.NEWID()`|  
 |`USER_NAME(` `id` `)`|指定した識別番号から、データベース ユーザー名を返します。<br /><br /> **引数**<br /><br /> `expression`: データベース ユーザーに関連付けられている `Int32` 型の識別番号を指定します。<br /><br /> **戻り値**<br /><br /> Unicode の `String`。<br /><br /> **例**<br /><br /> `SqlServer.USER_NAME(0)`|  
   
@@ -41,6 +29,6 @@ ms.lasthandoff: 01/17/2018
 |---------------------|---------------------|---------------------|  
 |[システム関数 Transact SQL)](http://go.microsoft.com/fwlink/?LinkId=115918)|[システム関数 Transact SQL)](http://go.microsoft.com/fwlink/?LinkId=115917)|[システム関数 (TRANSACT-SQL)](http://go.microsoft.com/fwlink/?LinkId=115919)|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Entity SQL 言語](../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-language.md)  
  [Entity Framework 用 SqlClient 関数](../../../../../docs/framework/data/adonet/ef/sqlclient-for-ef-functions.md)

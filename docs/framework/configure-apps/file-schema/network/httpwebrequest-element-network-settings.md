@@ -1,13 +1,6 @@
 ---
-title: "&lt;httpWebRequest&gt;要素 (ネットワーク設定)"
-ms.custom: 
+title: '&lt;httpWebRequest&gt;要素 (ネットワーク設定)'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/settings/httpWebRequest
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#httpWebRequest
@@ -15,23 +8,21 @@ helpviewer_keywords:
 - <httpWebRequest> element
 - httpWebRequest element
 ms.assetid: 52acd9d2-5bdc-4dc4-9c2a-f0a476ccbb31
-caps.latest.revision: "18"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: dadb2d7635f132b44d6fca8c56f53b847ffb1ff9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 1d1dce38e5188824ba1412d3f2a285bd2304f147
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="lthttpwebrequestgt-element-network-settings"></a>&lt;httpWebRequest&gt;要素 (ネットワーク設定)
 Web 要求のパラメーターをカスタマイズします。  
   
  \<configuration>  
-\<system.net >  
-\<設定 >  
+\<system.net>  
+\<settings>  
 \<httpWebRequest >  
   
 ## <a name="syntax"></a>構文  
@@ -64,7 +55,7 @@ Web 要求のパラメーターをカスタマイズします。
   
 |**要素**|**説明**|  
 |-----------------|---------------------|  
-|[設定](../../../../../docs/framework/configure-apps/file-schema/network/settings-element-network-settings.md)|<xref:System.Net> 名前空間の基本的なネットワーク オプションを構成します。|  
+|[settings](../../../../../docs/framework/configure-apps/file-schema/network/settings-element-network-settings.md)|<xref:System.Net> 名前空間の基本的なネットワーク オプションを構成します。|  
   
 ## <a name="remarks"></a>コメント  
  既定では、.NET Framework は URI の解析の RFC 2616 を厳密には適用します。 サーバー応答の一部が原因となる、禁止されているフィールドにコントロール文字を含めることがあります、<xref:System.Net.HttpWebRequest.GetResponse?displayProperty=nameWithType>をスローするメソッド、<xref:System.Net.WebException>です。 場合**useUnsafeHeaderParsing**に設定されている**true**、<xref:System.Net.HttpWebRequest.GetResponse?displayProperty=nameWithType>ただしです。 この場合はスローされません、アプリケーションがいくつかの形式の URI の解析攻撃を受けやすくなります。 応答に制御文字が含まれないように、サーバーを変更することをお勧めします。  
@@ -87,6 +78,6 @@ Web 要求のパラメーターをカスタマイズします。
 </configuration>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Net.HttpWebRequest.MaximumResponseHeadersLength%2A>  
  [ネットワーク設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

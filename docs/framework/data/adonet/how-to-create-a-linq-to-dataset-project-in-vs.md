@@ -1,24 +1,12 @@
 ---
-title: "方法 : Visual Studio で LINQ to DataSet プロジェクトを作成する"
-ms.custom: 
+title: '方法 : Visual Studio で LINQ to DataSet プロジェクトを作成する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 49ba6cb0-cdd2-4571-aeaa-25bf0f40e9b3
-caps.latest.revision: "2"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: c749cdd56f0c964b84788b05470406234ef3eb0a
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 094d766146fe55a865713a4672a2bee6a838ff55
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-create-a-linq-to-dataset-project-in-visual-studio"></a>方法 : Visual Studio で LINQ to DataSet プロジェクトを作成する
 別の種類の [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] プロジェクトでは、特定のインポートされる名前空間 (Visual Basic) または `using` ディレクティブ (C#) および参照が必要です。 最小要件は、System.Core.dll への参照と、`using` の <xref:System.Linq> ディレクティブです。 既定では、これらは新しい [!INCLUDE[csharp_orcas_long](../../../../includes/csharp-orcas-long-md.md)] プロジェクトを作成した場合に提供されます。 また、[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] では、System.Data.dll および System.Data.DataSetExtensions.dll への参照と、`Imports` (Visual Basic) または `using` (C#) ディレクティブも必要です。  
@@ -26,7 +14,7 @@ ms.lasthandoff: 01/19/2018
  以前のバージョンの Visual Studio のプロジェクトをアップグレードする場合、これらの LINQ 関連の参照を手動で追加する必要がある場合があります。 さらに、.NET Framework バージョン 3.5 をプロジェクトのターゲットとして手動で設定する必要がある場合があります。  
   
 > [!NOTE]
->  コマンド プロンプトから構築する場合での LINQ に関連する Dll を手動で参照する必要があります`drive` **:**\Program Files\Reference Assemblies\Microsoft\Framework\v3.5 です。  
+>  コマンド プロンプトから構築する場合での LINQ に関連する Dll を手動で参照する必要があります`drive` **:** \Program Files\Reference Assemblies\Microsoft\Framework\v3.5 です。  
   
 ### <a name="to-target-the-net-framework-35"></a>.NET Framework 3.5 をターゲットとして設定するには  
   
@@ -38,7 +26,7 @@ ms.lasthandoff: 01/19/2018
   
 3.  Visual Basic プロジェクトをクリックして、**プロジェクト** メニューをクリックして**プロパティ**です。  
   
-    1.  **コンパイル**プロパティ ページで、をクリックして**詳細コンパイル オプション**で .NET Framework 3.5 をクリックして、**ターゲット フレームワーク (すべての構成)**ドロップダウン リスト。  
+    1.  **コンパイル**プロパティ ページで、をクリックして**詳細コンパイル オプション**で .NET Framework 3.5 をクリックして、**ターゲット フレームワーク (すべての構成)** ドロップダウン リスト。  
   
 4.  **プロジェクト** メニューのをクリックして**参照の追加**をクリックして、 **.NET**  タブで、下方向にスクロール**System.Core**をクリックし、 をクリックして**Ok**です。  
   
@@ -60,6 +48,6 @@ ms.lasthandoff: 01/19/2018
   
 6.  オプションで、データベースにどのように接続するかに合わせて、`using` または `System.Data.Common` の `System.Data.SqlClient` ディレクティブまたはインポートされる名前空間を追加します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [はじめに](../../../../docs/framework/data/adonet/getting-started-linq-to-dataset.md)  
  [はじめに (LINQ について)](http://msdn.microsoft.com/library/6cc9af04-950a-4cc3-83d4-2aeb4abe4de9)

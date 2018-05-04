@@ -1,10 +1,6 @@
 ---
 title: SingleTagSectionHandler のカスタム要素
 ms.date: 05/01/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: article
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/sectionName
 helpviewer_keywords:
@@ -12,14 +8,11 @@ helpviewer_keywords:
 ms.assetid: e62056c6-b351-40eb-afc0-cc13fc44e45e
 author: guardrex
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 8ee722c7d5db9d58ab1a91f4b1299912981510af
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: 07bc0d9560546f4946d34413697fb0adcf84c58d
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/10/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="custom-element-for-singletagsectionhandler"></a>SingleTagSectionHandler のカスタム要素
 
@@ -50,11 +43,11 @@ ms.lasthandoff: 04/10/2018
 
 ## <a name="remarks"></a>コメント
 
- **\<SectionName >**要素は、カスタムの要素によって定義された、 [ **\<セクション >** ](~/docs/framework/configure-apps/file-schema/section-element.md)にタグを付ける、 [ **\<configSections >** ](~/docs/framework/configure-apps/file-schema/configsections-element-for-configuration.md)要素。 構成システムを返します、<xref:System.Collections.IDictionary>オブジェクトを呼び出すとき<xref:System.Configuration.Configuration.GetSection(System.String)?displayProperty=nameWithType>です。
+**\<SectionName >** 要素は、カスタムの要素によって定義された、 [ **\<セクション >** ](~/docs/framework/configure-apps/file-schema/section-element.md)にタグを付ける、 [ **\<configSections >** ](~/docs/framework/configure-apps/file-schema/configsections-element-for-configuration.md)要素。 構成システムを返します、<xref:System.Collections.IDictionary>オブジェクトを呼び出すとき<xref:System.Configuration.Configuration.GetSection(System.String)?displayProperty=nameWithType>です。
 
 ## <a name="example"></a>例
 
-次の例と呼ばれるカスタム要素の宣言 **\<sampleSection >**によって読み取られた設定を格納している、<xref:System.Configuration.SingleTagSectionHandler>クラス。
+次の例と呼ばれるカスタム要素の宣言 **\<sampleSection >** によって読み取られた設定を格納している、<xref:System.Configuration.SingleTagSectionHandler>クラス。
 
 ```xml
 <configuration>

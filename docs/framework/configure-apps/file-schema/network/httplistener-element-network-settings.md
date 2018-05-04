@@ -1,31 +1,22 @@
 ---
-title: "&lt;httpListener&gt;要素 (ネットワーク設定)"
-ms.custom: 
+title: '&lt;httpListener&gt;要素 (ネットワーク設定)'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 62f121fd-3f2e-4033-bb39-48ae996bfbd9
-caps.latest.revision: "7"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 8d880583016e6ccc0ae57fea10c35cb32726c93e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a327f757f26c815d5b2cffe179af68bbe3d152eb
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="lthttplistenergt-element-network-settings"></a>&lt;httpListener&gt;要素 (ネットワーク設定)
 によって使用されるパラメーターをカスタマイズ、<xref:System.Net.HttpListener>クラスです。  
   
  \<configuration>  
-\<system.net >  
-\<設定 >  
+\<system.net>  
+\<settings>  
 \<httpListener >  
   
 ## <a name="syntax"></a>構文  
@@ -54,7 +45,7 @@ ms.lasthandoff: 12/22/2017
   
 |**要素**|**説明**|  
 |-----------------|---------------------|  
-|[設定](../../../../../docs/framework/configure-apps/file-schema/network/settings-element-network-settings.md)|<xref:System.Net> 名前空間の基本的なネットワーク オプションを構成します。|  
+|[settings](../../../../../docs/framework/configure-apps/file-schema/network/settings-element-network-settings.md)|<xref:System.Net> 名前空間の基本的なネットワーク オプションを構成します。|  
   
 ## <a name="remarks"></a>コメント  
  **UnescapeRequestUrl**場合に属性が示す<xref:System.Net.HttpListener>変換された URI でパーセント エンコード値を変換し、その他の正規化手順は実行ではなく生のエスケープ解除された URI を使用します。  
@@ -148,7 +139,7 @@ ms.lasthandoff: 12/22/2017
 |検証ファイル||  
 |空にすることができます。||  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Net.Configuration.HttpListenerElement>  
  <xref:System.Net.HttpListener>  
  <xref:System.Net.HttpListenerRequest.Url%2A>  

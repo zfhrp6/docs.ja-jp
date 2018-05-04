@@ -1,33 +1,21 @@
 ---
-title: "&lt;serviceCredentials&gt; の &lt;windowsAuthentication&gt;"
-ms.custom: 
+title: '&lt;serviceCredentials&gt; の &lt;windowsAuthentication&gt;'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: e0709473-0997-4de3-8f49-783527309a48
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 2b6043b35ea9dbed1e1e6e170035436038334b34
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9872b1f2520661ff3f31cef94b6822bb345ebfdf
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltwindowsauthenticationgt-of-ltservicecredentialsgt"></a>&lt;serviceCredentials&gt; の &lt;windowsAuthentication&gt;
 Windows サービス資格情報の設定を指定します。  
   
- \<システムです。ServiceModel >  
+ \<system.ServiceModel >  
 \<ビヘイビアー >  
-\<serviceBehaviors >  
-\<動作 >  
-\<serviceCredentials >  
+\<serviceBehaviors>  
+\<behavior>  
+\<serviceCredentials>  
 \<windowsAuthentication >  
   
 ## <a name="syntax"></a>構文  
@@ -55,12 +43,12 @@ Windows サービス資格情報の設定を指定します。
   
 |要素|説明|  
 |-------------|-----------------|  
-|[\<serviceCredentials >](../../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md)|サービスの認証に使用される資格情報と、クライアントの資格情報検証関連の設定を指定します。|  
+|[\<serviceCredentials>](../../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md)|サービスの認証に使用される資格情報と、クライアントの資格情報検証関連の設定を指定します。|  
   
 ## <a name="remarks"></a>コメント  
  匿名の Windows ユーザーのアクセスを許可するかどうかを指定するには、この要素を使用して、`allowAnonymousLogons` 属性を設定します。 また、`includeWindowsGroups` 属性を設定すると、ユーザーが属するグループの情報を AuthorizationContext に含めるかどうかも指定できます。 この属性が `true` (既定値) に設定されている場合、サービスはクライアントが属している Windows グループを特定できます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Configuration.WindowsServiceElement>  
  <xref:System.ServiceModel.Configuration.ServiceCredentialsElement.WindowsAuthentication%2A>  
  <xref:System.ServiceModel.Description.ServiceCredentials.WindowsAuthentication%2A>  

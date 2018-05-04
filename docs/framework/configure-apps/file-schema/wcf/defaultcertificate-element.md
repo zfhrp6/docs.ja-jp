@@ -1,33 +1,21 @@
 ---
-title: "&lt;defaultCertificate&gt; 要素"
-ms.custom: 
+title: '&lt;defaultCertificate&gt; 要素'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: f1ddf364-9a00-45d3-b989-ff381c154ce6
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: eeb4c1b010e2d446303e780966668fc8a6f5ddb7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a4af1c6ec452b24634fa50162fa71f069e2451f5
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltdefaultcertificategt-element"></a>&lt;defaultCertificate&gt; 要素
 ネゴシエーション プロトコル経由でサービスまたは STS が証明書を提供しないときに使用される X.509 証明書を指定します。  
   
- \<システムです。ServiceModel >  
+ \<system.ServiceModel >  
 \<ビヘイビアー >  
 endpointBehaviors セクション  
-\<動作 >  
-\<clientCredentials >  
+\<behavior>  
+\<clientCredentials>  
 \<serviceCertificate >  
 \<defaultCertificate >  
   
@@ -89,7 +77,7 @@ x509FindType="FindByThumbPrint/FindBySubjectName/FindBySubjectDistinguishedName/
  証明書ベースのメッセージ セキュリティを使用するバインディングでは、この構成要素で指定された証明書を使用して、サービスへのメッセージが暗号化されます。この証明書は、サービスがクライアントへの応答に署名するためにも使用されます。 この要素には、サービスで証明書が指定されていないときに使用する証明書を 1 つ格納できます。  
   
 ## <a name="example"></a>例  
- URI が http://www.contoso.com で始まるエンドポイントに使用する証明書と、証明書ネゴシエーションを実行しない他のすべてのエンドポイントに使用する証明書を指定する例を次に示します。  
+ 次の例の URI がで始まるエンドポイントを使用する証明書を指定するhttp://www.contoso.comと、証明書を証明書ネゴシエーションを実行しないその他のすべてのエンドポイントを使用します。  
   
 ```xml  
 <serviceCertificate>  
@@ -107,11 +95,11 @@ x509FindType="FindByThumbPrint/FindBySubjectName/FindBySubjectDistinguishedName/
 </serviceCertificate>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Configuration.X509DefaultServiceCertificateElement>  
  <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential>  
  <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential.DefaultCertificate%2A>  
  [証明書の使用](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)  
- [\<認証 >](../../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-clientcertificate-element.md)  
+ [\<authentication>](../../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-clientcertificate-element.md)  
  [クライアントのセキュリティ保護](../../../../../docs/framework/wcf/securing-clients.md)  
  [サービスおよびクライアントのセキュリティ保護](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)

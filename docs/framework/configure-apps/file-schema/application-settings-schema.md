@@ -1,29 +1,20 @@
 ---
-title: "アプリケーション設定スキーマ"
-ms.custom: 
+title: アプリケーション設定スキーマ
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - schema application settings
 - application settings, schema [Windows Forms]
 - Windows Forms, application settings schema
 - configuration schema [.NET Framework], application settings
 ms.assetid: 5797fcff-6081-4e8c-bebf-63d9c70cf14b
-caps.latest.revision: "3"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 3581c8079132de5f1faad4a01e6b43c8e4833316
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 7af6342e9c05fc4e6c1bf4daac59db14ccdf22c7
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="application-settings-schema"></a>アプリケーション設定スキーマ
 
@@ -35,18 +26,18 @@ ms.lasthandoff: 12/22/2017
 
 | 要素                    | 説明                                                                           |
 | -------------------------- | ------------------------------------------------------------------------------------- |
-| **\<applicationSettings >** | すべてを含む**\<設定 >**タグはアプリケーションに固有です。                         |
-| **\<ユーザー >**        | すべてが含まれます**\<設定 >**タグは、現在のユーザーを特定します。                        |
-| **\<設定 >**             | 設定を定義します。 いずれかの子 **\<applicationSettings >**または**\<ユーザー >**です。 |
-| **\<value>**               | 設定の値を定義します。 子**\<設定 >**です。                                   |
+| **\<applicationSettings >** | すべてを含む**\<設定 >** タグはアプリケーションに固有です。                         |
+| **\<ユーザー >**        | すべてが含まれます**\<設定 >** タグは、現在のユーザーを特定します。                        |
+| **\<設定 >**             | 設定を定義します。 いずれかの子 **\<applicationSettings >** または**\<ユーザー >** です。 |
+| **\<value>**               | 設定の値を定義します。 子**\<設定 >** です。                                   |
 
 ## <a name="applicationsettings-element"></a>\<applicationSettings > 要素
 
-この要素には、すべてが含まれています**\<設定 >**タグは、クライアント コンピューターにアプリケーションのインスタンスに固有です。 属性は定義されません。
+この要素には、すべてが含まれています**\<設定 >** タグは、クライアント コンピューターにアプリケーションのインスタンスに固有です。 属性は定義されません。
 
 ## <a name="usersettings-element"></a>\<ユーザー > 要素
 
-この要素には、すべてが含まれています**\<設定 >**アプリケーションが現在使用しているユーザーに固有のタグ。 属性は定義されません。
+この要素には、すべてが含まれています**\<設定 >** アプリケーションが現在使用しているユーザーに固有のタグ。 属性は定義されません。
 
 ## <a name="setting-element"></a>\<設定 > 要素
 

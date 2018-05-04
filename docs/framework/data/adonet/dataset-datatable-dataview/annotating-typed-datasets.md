@@ -1,29 +1,15 @@
 ---
 title: 型指定された DataSet の注釈
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-ado
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: f82aaa62-321e-4c8a-b51b-9d1114700170
-caps.latest.revision: ''
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload:
-- dotnet
-ms.openlocfilehash: cc09f3f9b43b70b7f9b302d7a9d75428b5a0e6c7
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: 1974ac71e367203b8b94375e43d4fde13f2df51f
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="annotating-typed-datasets"></a>型指定された DataSet の注釈
 注釈を使用すると、基になるスキーマを変更せずに型指定された <xref:System.Data.DataSet> の要素の名前を変更できます。 基になるスキーマの要素の名前を修正するは、型指定された**データセット**にはないデータ ソースに存在だけでなく、データ ソース内に存在しているオブジェクトへの参照が失われるオブジェクトを参照してください。  
@@ -62,7 +48,7 @@ ms.lasthandoff: 03/26/2018
 |**typedPlural**|オブジェクトのコレクション名。|  
 |**typedParent**|親のリレーションシップで参照される場合のオブジェクト名。|  
 |**typedChildren**|子のリレーションシップからオブジェクトを返すメソッド名。|  
-|**nullValue**|値の場合は、基になる値は**DBNull**です。 次の表を参照してください**nullValue**注釈。 既定値は**_throw**です。|  
+|**nullValue**|値の場合は、基になる値は**DBNull**です。 次の表を参照してください**nullValue**注釈。 既定値は **_throw**です。|  
   
  次の表は、値を指定できる、 **nullValue**注釈。  
   
@@ -80,7 +66,7 @@ ms.lasthandoff: 03/26/2018
 |**DataTable**|TableNameDataTable|typedPlural|  
 |**DataTable**メソッド|NewTableNameRow<br /><br /> AddTableNameRow<br /><br /> DeleteTableNameRow|typedName|  
 |**DataRowCollection**|TableName|typedPlural|  
-|**DataRow**|TableNameRow|typedName|  
+|**dataRow**|TableNameRow|typedName|  
 |**DataColumn**|DataTable.ColumnNameColumn<br /><br /> DataRow.ColumnName|typedName|  
 |**Property**|PropertyName|typedName|  
 |**子**アクセサー|GetChildTableNameRows|typedChildren|  

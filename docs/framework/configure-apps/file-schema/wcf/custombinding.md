@@ -1,24 +1,12 @@
 ---
 title: '&lt;customBinding&gt;'
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 9da4f960-f64e-4d8a-894d-2b09eba5ce4b
-caps.latest.revision: "24"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e5a95d677588beaa41e94f12550ba8647202ffe3
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 5d423a29430284c904bcfe8eb11ec470a62ecf57
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltcustombindinggt"></a>&lt;customBinding&gt;
 ユーザーのメッセージ スタックを完全に制御できます。  
@@ -241,7 +229,7 @@ ms.lasthandoff: 01/19/2018
   
 -   その次にあるのは、WS-ReliableMessaging 仕様で定義されているセッションおよび順序指定のメカニズムを提供するオプションの <xref:System.ServiceModel.Channels.ReliableSessionBindingElement> です。 このセッションの概念は、SOAP およびトランスポート中継局を通過できます。  
   
--   その次にあるのは、承認、認証、保護、機密性などのセキュリティ機能を提供するオプションのセキュリティ バインド要素です。 [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] では、次のセキュリティ バインド要素が提供されています。  
+-   その次にあるのは、承認、認証、保護、機密性などのセキュリティ機能を提供するオプションのセキュリティ バインド要素です。 次のセキュリティ バインド要素は、Windows Communication Foundation (WCF) によって用意されています。  
   
     -   <xref:System.ServiceModel.Channels.SecurityBindingElement>  
   
@@ -271,7 +259,7 @@ ms.lasthandoff: 01/19/2018
   
     -   <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement>  
   
--   最下位には、必須のトランスポート要素があります。 独自のトランスポートを使用することも、[!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] で提供されるトランスポート バインド要素のいずれかを使用することもできます。  
+-   最下位には、必須のトランスポート要素があります。 独自のトランスポートを使用してまたはトランスポート バインド要素の Windows Communication Foundation (WCF) によって提供されるのいずれかを使用できます。  
   
     -   <xref:System.ServiceModel.Channels.TcpTransportBindingElement>  
   
@@ -305,7 +293,7 @@ ms.lasthandoff: 01/19/2018
   
 1.  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Channels.Binding>  
  <xref:System.ServiceModel.Channels.BindingElement>  
  <xref:System.ServiceModel.Configuration.BindingsSection>  

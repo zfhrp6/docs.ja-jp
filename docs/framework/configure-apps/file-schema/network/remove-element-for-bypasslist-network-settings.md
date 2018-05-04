@@ -1,13 +1,6 @@
 ---
-title: "&lt;削除&gt;bypasslist (ネットワーク設定) の要素"
-ms.custom: 
+title: '&lt;削除&gt;bypasslist (ネットワーク設定) の要素'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/defaultProxy/bypasslist/remove
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#remove
@@ -17,25 +10,23 @@ helpviewer_keywords:
 - bypasslist, remove element
 - remove element, bypasslist
 ms.assetid: 61dcfb4a-e3d9-4abf-a2cd-7d685fe2f64b
-caps.latest.revision: "16"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: a385401217c10a316268f48757e46e3d0cfea09c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5c7918048743d53d8523ec399d1a11c67152a2bf
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltremovegt-element-for-bypasslist-network-settings"></a>&lt;削除&gt;bypasslist (ネットワーク設定) の要素
 プロキシ バイ パス一覧から IP アドレスまたは DNS 名を削除します。  
   
  \<configuration>  
-\<system.net >  
+\<system.net>  
 \<defaultProxy >  
 \<bypasslist >  
-\<削除 >  
+\<remove>  
   
 ## <a name="syntax"></a>構文  
   
@@ -89,6 +80,6 @@ ms.lasthandoff: 12/22/2017
 </configuration>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Net.WebProxy?displayProperty=nameWithType>  
  [ネットワーク設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

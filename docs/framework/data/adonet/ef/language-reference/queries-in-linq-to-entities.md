@@ -1,24 +1,12 @@
 ---
-title: "LINQ to Entities でのクエリ"
-ms.custom: 
+title: LINQ to Entities でのクエリ
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: c015a609-29eb-4e95-abb1-2ca721c6e2ad
-caps.latest.revision: "4"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: bcf4fea4fc4efce32e5dbadf4738419707ffee3b
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 27e547dacb41201f00552c58840c70ca8fa34428
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="queries-in-linq-to-entities"></a>LINQ to Entities でのクエリ
 クエリは、データ ソースからデータを取得する式です。 一般に、クエリは専用のクエリ言語で表現されます。たとえば、リレーショナル データベースであれば SQL、XML であれば XQuery が使用されます。 そのため、開発者はクエリの対象となるデータ ソースやデータ形式ごとに新しいクエリ言語を習得する必要があります。 統合言語クエリ (LINQ) は、データ ソースや形式の違いを意識することなくデータを扱うことのできる、より簡素化された一貫したモデルを提供します。 LINQ クエリでは、常にプログラミング オブジェクトを操作することになります。  
@@ -30,7 +18,7 @@ ms.lasthandoff: 01/17/2018
  クエリでは、データ ソースから取得する情報を正確に指定できます。 また、並べ替え、グループ化、整形方法を指定して情報を取得することもできます。 LINQ では、クエリが変数に格納されます。 クエリが一連の値を返す場合、クエリ変数そのものがクエリ可能な型であることが必要です。 このクエリ変数は、クエリの情報を保存するだけで、なんらかのアクションを実行したり、データを返したりすることはありません。 クエリを作成した後、データを取得するには、そのクエリを実行する必要があります。  
   
 ## <a name="query-syntax"></a>クエリ構文  
- [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)]2 種類の構文のクエリを作成できます: クエリ式の構文とメソッド ベースのクエリ構文です。 クエリ式の構文は c# 3.0 と Visual Basic 9.0 での新機能と、一連の TRANSACT-SQL や XQuery のように宣言の構文で記述された句で構成されます。 ただし、[!INCLUDE[dnprdnshort](../../../../../../includes/dnprdnshort-md.md)] の共通言語ランタイム (CLR) は、クエリ式の構文そのものを理解することはできません。 そのため、クエリ式はコンパイル時に、CLR が理解できる形式 (メソッド呼び出し) へと変換されます。 これらのメソッドと呼ばれる、*標準クエリ演算子*です。 開発者は、クエリ構文を使う代わりに、メソッド構文を使ってそれらを直接呼び出すこともできます。 詳細については、「[LINQ でのクエリ構文とメソッド構文](~/docs/csharp/programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq.md)」を参照してください。  
+ [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] 2 種類の構文のクエリを作成できます: クエリ式の構文とメソッド ベースのクエリ構文です。 クエリ式の構文は c# 3.0 と Visual Basic 9.0 での新機能と、一連の TRANSACT-SQL や XQuery のように宣言の構文で記述された句で構成されます。 ただし、[!INCLUDE[dnprdnshort](../../../../../../includes/dnprdnshort-md.md)] の共通言語ランタイム (CLR) は、クエリ式の構文そのものを理解することはできません。 そのため、クエリ式はコンパイル時に、CLR が理解できる形式 (メソッド呼び出し) へと変換されます。 これらのメソッドと呼ばれる、*標準クエリ演算子*です。 開発者は、クエリ構文を使う代わりに、メソッド構文を使ってそれらを直接呼び出すこともできます。 詳細については、「[LINQ でのクエリ構文とメソッド構文](~/docs/csharp/programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq.md)」を参照してください。  
   
 ### <a name="query-expression-syntax"></a>クエリ式の構文  
  クエリ式は宣言型のクエリ構文です。 開発者は、Transact-SQL に似た形式の高級言語でクエリを記述できます。 クエリ式の構文を使用することにより、フィルター、並べ替え、グループ化など、データ ソースに対するきわめて複雑な処理を最小限のコードで実行できます。 詳細については、[基本的なクエリ操作 (Visual Basic)](~/docs/visual-basic/programming-guide/concepts/linq/basic-query-operations.md)です。 クエリ式構文の使用方法を示す例については、次のトピックを参照してください。  
@@ -76,7 +64,7 @@ ms.lasthandoff: 01/17/2018
   
 -   [メソッド ベースのクエリ構文例: リレーションシップの操作](../../../../../../docs/framework/data/adonet/ef/language-reference/method-based-query-syntax-examples-navigating-relationships.md)  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/linq-to-entities.md)  
  [C# の LINQ の概要](~/docs/csharp/programming-guide/concepts/linq/getting-started-with-linq.md)  
  [Visual Basic の LINQ の概要](~/docs/visual-basic/programming-guide/concepts/linq/getting-started-with-linq.md)  

@@ -1,27 +1,15 @@
 ---
-title: "NULL 比較"
-ms.custom: 
+title: NULL 比較
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: ef88af8c-8dfe-4556-8b56-81df960a900b
-caps.latest.revision: "2"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 9168051a87b1cd2c0cccaa54f1d688aca018b731
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: f4d4f6cdbb5ac6bae3af66d46599ec65aaae22f4
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="null-comparisons"></a>NULL 比較
 データ ソースの `null` 値は不明な値を表します。 [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] クエリでは、NULL 値をチェックして、必ず NULL でない有効なデータを持つ行に特定の計算または比較を行うようにすることができます。 ただし、CLR の NULL セマンティクスは、データ ソースの NULL セマンティクスとは異なる場合があります。 ほとんどのデータベースでは、3 値論理を使用して NULL 比較を処理します。 つまり、null 値に対する比較には評価されません`true`または`false`、評価結果が`unknown`です。 これは、多くの場合は ANSI NULL の実装ですが、そうでない場合もあります。  
@@ -57,5 +45,5 @@ WHERE h.ShipDate IS Null
 ## <a name="passing-null-collections-to-aggregate-functions"></a>集計関数に NULL コレクションを渡す  
  [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)]をサポートするコレクションを渡すと、`IQueryable`で集計関数では、データベースで集計演算が実行されます。 メモリ内で実行されたクエリとデータベースで実行されたクエリの結果の違いがある可能性があります。 メモリ内のクエリを使用して、一致がない場合、クエリは 0 を返します。 データベースでは、これと同じクエリから `null` が返されます。 場合、`null`値が LINQ 集計関数に渡される、例外がスローされます。 受け入れるに`null`値、キャスト、型と null 許容型にクエリ結果を受信した種類のプロパティです。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [LINQ to Entities クエリ内の式](../../../../../../docs/framework/data/adonet/ef/language-reference/expressions-in-linq-to-entities-queries.md)

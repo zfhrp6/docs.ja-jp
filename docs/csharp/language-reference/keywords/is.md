@@ -15,15 +15,15 @@ ms.assetid: bc62316a-d41f-4f90-8300-c6f4f0556e43
 caps.latest.revision: 20
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 9f0242439caa21268a6c314409f41587890c4126
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 44c15eb9d65adf10904f8777847b0653ff1dbc99
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="is-c-reference"></a>is (C# リファレンス) #
 
-オブジェクトに指定された型との互換性があるかどうかを確認するか、(C# 7 以降では) パターンとの比較によって式をテストします。
+オブジェクトに指定された型との互換性があるかどうかを確認するか、(C# 7.0 以降では) パターンとの比較によって式をテストします。
 
 ## <a name="testing-for-type-compatibility"></a>型の互換性に関するテスト ##
 
@@ -60,11 +60,11 @@ ms.lasthandoff: 11/21/2017
 `expr` には、匿名メソッドとラムダ式を除き、値を返すどのような式でも指定できます。 次の例では、`is` を使用してメソッド呼び出しの戻り値を評価しています。   
 [!code-csharp[is#4](../../../../samples/snippets/csharp/language-reference/keywords/is/is4.cs#4)]
 
-C# 7 以降では、[型パターン](#type)によるパターン マッチングを使用することで、`is` ステートメントを用いたより簡潔なコードを記述できます。
+C# 7.0 以降では、[型パターン](#type)によるパターン マッチングを使用することで、`is` ステートメントを用いたより簡潔なコードを記述できます。
 
 ## <a name="pattern-matching-with-is"></a>`is` を使用したパターン マッチング ##
 
-C# 7 以降では、`is` および [switch](../../../csharp/language-reference/keywords/switch.md) ステートメントでパターン マッチングがサポートされています。 `is` キーワードでは、以下のパターンがサポートされています。
+C# 7.0 以降では、`is` および [switch](../../../csharp/language-reference/keywords/switch.md) ステートメントでパターン マッチングがサポートされています。 `is` キーワードでは、以下のパターンがサポートされています。
 
 - [型パターン](#type): 式を指定された型に変換できるかどうかをテストし、変換できる場合はその型の変数にキャストします。
 
@@ -112,7 +112,7 @@ C# 7 以降では、`is` および [switch](../../../csharp/language-reference/k
 
 ### <a name="a-nameconstant--constant-pattern"></a><a name="constant" />定数パターン ###
 
-定数パターンを使用してパターン マッチングを実行すると、式が指定された定数と等しいかどうかが `is` によってテストされます。 C# 6 以前のバージョンでの定数パターンは [switch](switch.md) ステートメントでサポートされています。 C# 7 以降では、`is` ステートメントでもサポートされています。 構文は次のとおりです。
+定数パターンを使用してパターン マッチングを実行すると、式が指定された定数と等しいかどうかが `is` によってテストされます。 C# 6 以前のバージョンでの定数パターンは [switch](switch.md) ステートメントでサポートされています。 C# 7.0 以降では、`is` ステートメントでもサポートされています。 構文は次のとおりです。
 
 ```csharp
    expr is constant

@@ -1,24 +1,12 @@
 ---
-title: "変更 SQL 生成"
-ms.custom: 
+title: 変更 SQL 生成
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 2188a39d-46ed-4a8b-906a-c9f15e6fefd1
-caps.latest.revision: "3"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 6696d80246d61cc2eac47266837d79661141b9b0
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: b7bb390fd4e221c70d5ed8da5873c557fcde3c98
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="modification-sql-generation"></a>変更 SQL 生成
 ここでは、SQL:1999 準拠のデータベース プロバイダーのための変更 SQL 生成モジュールを開発する方法について説明します。 このモジュールは、変更コマンド ツリーを適切な SQL INSERT ステートメント、UPDATE ステートメント、または DELETE ステートメントに変換します。  
@@ -115,7 +103,7 @@ The elements of the list are specified as type DbModificationClause, which speci
 ## <a name="generating-an-insert-sql-command"></a>挿入 SQL コマンドの生成  
  サンプル プロバイダーで指定されている DbInsertCommandTree に対して生成される挿入コマンドは、以下に示す 2 つの挿入テンプレートのどちらかに基づいています。  
   
- 1 つ目のテンプレートには、SetClauses のリストの値を受け取って挿入を実行するコマンドと、挿入された行の Returning プロパティが null 以外の場合にその Returning プロパティで指定されたプロパティを返す SELECT ステートメントが含まれています。 述語要素"@@ROWCOUNT > 0"行が挿入された場合は true です。 述語要素"keyMemberI = keyValueI &#124;です。scope_identity()"図形は、"keyMemberI = scope_identity()"scope_identity は、id (ストア生成の) 列に挿入された最後の id 値を返すために、keyMemeberI がストア生成のキーが場合にのみです。  
+ 1 つ目のテンプレートには、SetClauses のリストの値を受け取って挿入を実行するコマンドと、挿入された行の Returning プロパティが null 以外の場合にその Returning プロパティで指定されたプロパティを返す SELECT ステートメントが含まれています。 述語要素"@@ROWCOUNT > 0"行が挿入された場合は true です。 述語要素"keyMemberI = keyValueI &#124; scope_identity()"図形は、"keyMemberI = scope_identity()"scope_identity は、identity (に挿入された最後の id 値を返すために、keyMemeberI がストア生成のキーが場合にのみストア生成の) 列です。  
   
 ```  
 -- first insert Template  
@@ -297,5 +285,5 @@ delete [dbo].[Categories]
 where ([CategoryID] = @p0)  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Entity Framework データ プロバイダーの作成](../../../../../docs/framework/data/adonet/ef/writing-an-ef-data-provider.md)

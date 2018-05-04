@@ -1,8 +1,9 @@
 ---
-title: "switch キーワード (C# リファレンス)"
+title: switch キーワード (C# リファレンス)
 ms.date: 03/07/2017
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 f1_keywords:
 - switch_CSharpKeyword
@@ -15,14 +16,14 @@ helpviewer_keywords:
 - case statement [C#]
 - default keyword [C#]
 ms.assetid: 44bae8b8-8841-4d85-826b-8a94277daecb
-caps.latest.revision: "47"
+caps.latest.revision: 47
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 1c345d0c6c935271600a386752e18c19a25cc389
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 6506278edb782f61b83cecfccba3126282c0ecf8
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="switch-c-reference"></a>switch (C# リファレンス)
 `switch` ステートメントは選択ステートメントです。このステートメントは、実行する 1 つの "*switch セクション*" を候補のリストから "*match 式*" によるパターン マッチに基づいて選択します。 
@@ -53,7 +54,7 @@ C# 6 では、match 式は、次の型の値を返す必要があります。
 - 整数値。[int](int.md)、[long](long.md) など。
 - [enum](enum.md)値。
 
-C# 7 以降は、match 式は NULL 以外の式にできます。
+C# 7.0 以降は、match 式は NULL 以外の式にできます。
  
 ## <a name="the-switch-section"></a>switch セクション
  
@@ -91,7 +92,7 @@ switch (caseSwitch)
 
  C# 6 でサポートされるのは定数パターンのみで、定数値の繰り返しは許可されません。このため、case ラベルでは相互に排他的な値が定義され、match 式と一致するのは 1 つのパターンだけです。 そのため、`case` ステートメントが表示される順序は重要ではありません。
 
- 一方、C# 7 では他のパターンがサポートされているため、case ラベルで定義する値が相互に排他的である必要はなく、match 式と一致するパターンが複数存在する可能性があります。 最初に一致するパターンが含まれた switch セクションのステートメントのみが実行されるので、ここでは、`case` ステートメントが表示される順序が重要になってきます。 C# によって switch セクションが検出され、その switch セクションの case ステートメントが前のステートメントと同じだったり、そのステートメントのサブセットだったりすると、コンパイラ エラー CS8120 "switch case は既に以前のケースで処理されています" が生成されます。 
+ 一方、C# 7.0 では他のパターンがサポートされているため、case ラベルで定義する値が相互に排他的である必要はなく、match 式と一致するパターンが複数存在する可能性があります。 最初に一致するパターンが含まれた switch セクションのステートメントのみが実行されるので、ここでは、`case` ステートメントが表示される順序が重要になってきます。 C# によって switch セクションが検出され、その switch セクションの case ステートメントが前のステートメントと同じだったり、そのステートメントのサブセットだったりすると、コンパイラ エラー CS8120 "switch case は既に以前のケースで処理されています" が生成されます。 
 
  次の例は、相互に排他的でない各種パターンを使用する `switch` ステートメントを示しています。 `case 0:` switch セクションを移動し、そのセクションが `switch` ステートメントの最初のセクションでなくなると、C# によってコンパイラ エラーが生成されます。値がゼロの整数は、整数すべてのサブセットであるためです。これは、`case int val` ステートメントで定義されているパターンです。
 
@@ -111,7 +112,7 @@ switch (caseSwitch)
 
 ## <a name="a-namepattern--pattern-matching-with-the-switch-statement"></a>`switch` ステートメントによる <a name="pattern" /> パターン マッチング
   
-各 `case` ステートメントで定義されたパターンが match 式と一致した場合に、switch セクションが実行されます。 定数パターンは、すべてのバージョンの C# でサポートされます。 それ以外のパターンは、C# 7 以降でサポートされています。 
+各 `case` ステートメントで定義されたパターンが match 式と一致した場合に、switch セクションが実行されます。 定数パターンは、すべてのバージョンの C# でサポートされます。 それ以外のパターンは、C# 7.0 以降でサポートされています。 
   
 ### <a name="constant-pattern"></a>定数パターン 
 
@@ -181,7 +182,7 @@ case null:
 
 ## <a name="the-case-statement-and-the-when-clause"></a>`case` ステートメントおよび `when` 句
 
-C# 7 以降では、case ステートメントは相互に排他的である必要がないため、`when` 句を追加して、case ステートメントを true に評価するために満たされなければならない条件を指定できます。 `when` 句には、ブール値を返す任意の式を指定できます。 `when` 句を使用すると、match 式の値が `null` のときに、switch セクションが実行されないようにできます。これは、この句の一般的な使用方法の 1 つです。 
+C# 7.0 以降では、case ステートメントは相互に排他的である必要がないため、`when` 句を追加して、case ステートメントを true に評価するために満たされなければならない条件を指定できます。 `when` 句には、ブール値を返す任意の式を指定できます。 `when` 句を使用すると、match 式の値が `null` のときに、switch セクションが実行されないようにできます。これは、この句の一般的な使用方法の 1 つです。 
 
  次の例では、`Shape` 基底クラス、`Shape` から派生する `Rectangle` クラス、および `Rectangle` から派生する `Square` クラスを定義しています。 ここでは `when` 句を使用して、同じ長さと幅が割り当てられている `Rectangle` オブジェクトが、`Square` オブジェクトとしてインスタンス化されていなくても、`ShowShapeInfo` によって確実に `Square` として処理されるようにしています。 このメソッドは、`null` オブジェクトの情報や、面積がゼロの図形の情報を表示しようとしません。 
 
@@ -192,7 +193,7 @@ C# 7 以降では、case ステートメントは相互に排他的である必�
 ## <a name="c-language-specification"></a>C# 言語仕様  
  [!INCLUDE[CSharplangspec](../../../../includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 
  [C# リファレンス](../index.md)  
  [C# プログラミング ガイド](../../programming-guide/index.md)  

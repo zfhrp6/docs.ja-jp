@@ -1,29 +1,15 @@
 ---
 title: データベースからの単一の値の取得
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-ado
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: b38526cd-a62a-48cb-822a-e91dfa68e02d
-caps.latest.revision: ''
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload:
-- dotnet
-ms.openlocfilehash: 41c3547d203a9958d3ad84303469c1e9591e6bd3
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: b7ad989dce39a8e9a0ed7b6cd988e06304e7b40f
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="obtaining-a-single-value-from-a-database"></a>データベースからの単一の値の取得
 テーブルやデータ ストリームの形式ではなく、単に 1 つの値をデータベース情報として返すことが必要な場合があります。 たとえば、数などの集計関数の結果を返すにする可能性があります (\*)、SUM(Price)、または AVG(Quantity) です。 **コマンド**オブジェクトを使用して単一の値を返す機能を提供する、 **ExecuteScalar**メソッドです。 **ExecuteScalar**メソッドはスカラー値、結果セットの最初の行の最初の列の値として返します。  

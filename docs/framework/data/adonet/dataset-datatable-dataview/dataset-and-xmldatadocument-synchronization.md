@@ -1,27 +1,15 @@
 ---
-title: "DataSet と XmlDataDocument の同期"
-ms.custom: 
+title: DataSet と XmlDataDocument の同期
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 0ce3793d-54b2-47e4-8cf7-b0591cc4dd21
-caps.latest.revision: "5"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 9cdfdf01b950d13ba77f76b126fe6d2ff430ef07
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: cb16d4fae5dc153361fe2cb31cfd6af9b4b83c68
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="dataset-and-xmldatadocument-synchronization"></a>DataSet と XmlDataDocument の同期
 ADO.NET の <xref:System.Data.DataSet> には、データのリレーショナル表現があります。 階層データにアクセスするには、.NET Framework で使用できる XML クラスを使用できます。 従来、この 2 つのデータ表現は個別に使用されていました。 ただし、.NET Framework によりを使用してデータのリレーショナルおよび階層表現の両方へリアルタイムに同期のアクセス、**データセット**オブジェクトおよび<xref:System.Xml.XmlDataDocument>オブジェクト、それぞれします。  
@@ -30,7 +18,7 @@ ADO.NET の <xref:System.Data.DataSet> には、データのリレーショナ�
   
  同期するいくつかの方法、**データセット**で、 **XmlDataDocument**です。 次の操作を行うことができます。  
   
--   追加、**データセット**スキーマ (つまり、リレーショナル構造) とデータを使用し、それを新しい同期**XmlDataDocument**です。 この方法では、既存のリレーショナル データの階層ビューが作成されます。 例:  
+-   追加、**データセット**スキーマ (つまり、リレーショナル構造) とデータを使用し、それを新しい同期**XmlDataDocument**です。 この方法では、既存のリレーショナル データの階層ビューが作成されます。 例えば:  
   
     ```vb  
     Dim dataSet As DataSet = New DataSet  
@@ -123,5 +111,5 @@ ADO.NET の <xref:System.Data.DataSet> には、データのリレーショナ�
  <xref:System.Xml.XmlDataDocument>  
  に関するリファレンス情報を含む、 **XmlDataDocument**クラスです。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

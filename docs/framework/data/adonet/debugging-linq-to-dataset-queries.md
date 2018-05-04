@@ -1,24 +1,12 @@
 ---
-title: "LINQ to DataSet クエリのデバッグ"
-ms.custom: 
+title: LINQ to DataSet クエリのデバッグ
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: f4c54015-8ce2-4c5c-8d18-7038144cc66d
-caps.latest.revision: "3"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: e1c8a518dd3f8bc4c1123099522ad4a4f452c78f
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: c0d3347358fa3417f8b73fd848b4091fe7d74a15
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="debugging-linq-to-dataset-queries"></a>LINQ to DataSet クエリのデバッグ
 [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] は、[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] コードのデバッグをサポートしています。 ただし、デバッグの違いがある[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]コードと非-[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]マネージ コード。 ほとんどのデバッグ機能と[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]ステートメントをステップ実行、ブレークポイントの設定、デバッガー ウィンドウに表示される結果を表示するなどです。 ただし、クエリの実行がデバッグ中に考慮すべきいくつかの副作用を遅延[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]コードし、はエディット コンティニュを使用するには、いくつか制限があります。 このトピックに固有のデバッグの側面を説明します。[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]と比較して非[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]マネージ コード。  
@@ -37,6 +25,6 @@ ms.lasthandoff: 01/17/2018
   
  Visual Studio で Visual basic で行うこともできますエディット コンティニュ非[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]を含むメソッドであっても、コード、[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]クエリ。 追加または前にコードを削除することができます、[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]ステートメントでは、行番号が変わる場合でも、[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]クエリ。 エクスペリエンスのデバッグ、Visual Basic ではない[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]前と同じコードまま[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]が導入されました。 変更、追加、または削除することはできません、[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]クエリ、ただし、変更を適用するデバッグを停止する場合を除き、します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [マネージ コードをデバッグする](/visualstudio/debugger/debugging-managed-code)  
  [プログラミング ガイド](../../../../docs/framework/data/adonet/programming-guide-linq-to-dataset.md)

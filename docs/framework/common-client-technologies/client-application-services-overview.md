@@ -1,27 +1,29 @@
 ---
-title: "クライアント アプリケーション サービスの概要"
-ms.custom: 
+title: クライアント アプリケーション サービスの概要
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - client application services, classes
 - client application services, about client application services
 ms.assetid: f0a2da13-e282-4fd7-88a1-f9102c9aeab1
-caps.latest.revision: "25"
+caps.latest.revision: 25
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 55b4ab154f9f3a9b17274697c30ca826218322ab
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 9ddc1b505146e7ca31bca5acc5e9d19d258a860d
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="client-application-services-overview"></a>クライアント アプリケーション サービスの概要
 クライアント アプリケーション サービスにより、Windows フォーム アプリケーションおよび Windows Presentation Foundation (WPF) アプリケーションから [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] ログイン サービス、ロール サービス、プロファイル サービスに簡単にアクセスできます。 [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] アプリケーション サービスは、[!INCLUDE[vs_orcas_long](../../../includes/vs-orcas-long-md.md)] と [!INCLUDE[net_v35_long](../../../includes/net-v35-long-md.md)] に付属している Microsoft ASP.NET 2.0 AJAX Extensions に含まれています。 これらのサービスにより、複数の Web ベースおよび Windows ベースのアプリケーションで、単一のサーバーから提供されるユーザー情報とユーザー管理機能を共有できます。  
@@ -59,7 +61,7 @@ ms.lasthandoff: 12/22/2017
  [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] ロール サービスの設定方法の詳細については、「[ASP.NET AJAX でのロール情報の使用](http://msdn.microsoft.com/library/280f6ad9-ba1a-4fc9-b0cc-22e39e54a82d)」を参照してください。  
   
 ## <a name="settings"></a>設定  
- クライアント アプリケーション サービスを使用して、既存の [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] プロファイル サービスからユーザー アプリケーション設定を取得できます。 クライアント アプリケーション サービスの Web 設定機能は、[!INCLUDE[dnprdnlong](../../../includes/dnprdnlong-md.md)] のアプリケーション設定機能と統合されています。 Web 設定を取得するには、まず、[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] プロジェクト デザイナーの **[設定]** タブを使用して、プロジェクトの `Settings` クラス (C# では `Properties.Settings.Default`、[!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)] では `My.Settings` としてアクセスされる) を生成します。 **[設定]** タブの **[Web 設定の読み込み]** ボタンをクリックして Web 設定を読み込み、これを生成された `Settings` クラスに追加することができます。 すべての認証済みユーザーまたはすべての匿名ユーザーによって使用されるように構成された Web 設定を使用できます。  
+ クライアント アプリケーション サービスを使用して、既存の [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] プロファイル サービスからユーザー アプリケーション設定を取得できます。 クライアント アプリケーション サービスの Web 設定機能は、[!INCLUDE[dnprdnlong](../../../includes/dnprdnlong-md.md)] のアプリケーション設定機能と統合されています。 Web 設定を取得するには、まず、[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] プロジェクト デザイナーの **[設定]** タブを使用して、プロジェクトの `Settings` クラス (C# では `Properties.Settings.Default`、Visual Basic では `My.Settings` としてアクセスされる) を生成します。 **[設定]** タブの **[Web 設定の読み込み]** ボタンをクリックして Web 設定を読み込み、これを生成された `Settings` クラスに追加することができます。 すべての認証済みユーザーまたはすべての匿名ユーザーによって使用されるように構成された Web 設定を使用できます。  
   
  アプリケーション設定の詳細については、「[アプリケーション設定の概要](../../../docs/framework/winforms/advanced/application-settings-overview.md)」を参照してください。 [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] で設定クラスを生成するのではなく独自の設定クラスを実装する方法の詳細については、「[方法: アプリケーション設定を作成する](../../../docs/framework/winforms/advanced/how-to-create-application-settings.md)」を参照してください。 [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] プロファイル サービスの設定方法の詳細については、「[ASP.NET AJAX でのプロファイル情報の使用](http://msdn.microsoft.com/library/91239ae6-d01c-4f4e-a433-eb9040dbed61)」を参照してください。  
   

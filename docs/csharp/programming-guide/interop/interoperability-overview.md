@@ -1,5 +1,5 @@
 ---
-title: "相互運用性の概要 (C# プログラミング ガイド)"
+title: 相互運用性の概要 (C# プログラミング ガイド)
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -12,14 +12,14 @@ helpviewer_keywords:
 - interoperability, about interoperability
 - platform invoke
 ms.assetid: c025b2e0-2357-4c27-8461-118f0090aeff
-caps.latest.revision: 
+caps.latest.revision: 43
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 5ebdd2d58f2fe502dbeb14148c303487774f531b
-ms.sourcegitcommit: 099aa20d9b6450d1b7452d782a55771a6ad8ff35
+ms.openlocfilehash: 58538b690958e11b1590c13e6709cac4109ef49d
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="interoperability-overview-c-programming-guide"></a>相互運用性の概要 (C# プログラミング ガイド)
 C# マネージ コードとアンマネージ コード間で相互運用を可能にする方法について説明します。  
@@ -55,11 +55,11 @@ C# マネージ コードとアンマネージ コード間で相互運用を可
   
 1.  C# プロジェクトに相互運用属性を追加します。  
   
-     アセンブリ COM は、[!INCLUDE[csprcs](~/includes/csprcs-md.md)] プロジェクト プロパティを変更することで参照できるようになります。 詳細については、「[[アセンブリ情報] ダイアログ ボックス](/visualstudio/ide/reference/assembly-information-dialog-box)」を参照してください。  
+     アセンブリ COM は、Visual C# プロジェクト プロパティを変更することで参照できるようになります。 詳細については、「[[アセンブリ情報] ダイアログ ボックス](/visualstudio/ide/reference/assembly-information-dialog-box)」を参照してください。  
   
 2.  COM タイプ ライブラリを生成し、COM の使用状況に登録します。  
   
-     [!INCLUDE[csprcs](~/includes/csprcs-md.md)] プロジェクト プロパティを変更して、C# アセンブリが COM 相互運用に自動的に登録されるようにできます。 [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] は `/tlb` コマンド ライン スイッチを使用して [Regasm.exe (Assembly Registration Tool)](../../../../docs/framework/tools/regasm-exe-assembly-registration-tool.md) を使用します。これにより、マネージ アセンブリが入力として出力され、タイプ ライブラリを生成できます。 タイプ ライブラリは、アセンブリ内の `public` 型を記述し、レジストリ エントリを追加することで、COM クライアントがマネージ クラスを作成できるようにします。  
+     Visual C# プロジェクト プロパティを変更して、C# アセンブリが COM 相互運用に自動的に登録されるようにできます。 [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] は `/tlb` コマンド ライン スイッチを使用して [Regasm.exe (Assembly Registration Tool)](../../../../docs/framework/tools/regasm-exe-assembly-registration-tool.md) を使用します。これにより、マネージ アセンブリが入力として出力され、タイプ ライブラリを生成できます。 タイプ ライブラリは、アセンブリ内の `public` 型を記述し、レジストリ エントリを追加することで、COM クライアントがマネージ クラスを作成できるようにします。  
   
  詳細については、「[COM への .NET Framework コンポーネントの公開](../../../../docs/framework/interop/exposing-dotnet-components-to-com.md)」と「[COM クラスの例](../../../csharp/programming-guide/interop/example-com-class.md)」を参照してください。  
   

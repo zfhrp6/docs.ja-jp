@@ -1,33 +1,21 @@
 ---
-title: "&lt;netTcpBinding&gt; の &lt;message&gt; 要素"
-ms.custom: 
+title: '&lt;netTcpBinding&gt; の &lt;message&gt; 要素'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 1d71edd9-c085-4c2e-b6d3-980c313366f9
-caps.latest.revision: "20"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ab40ab1cd889665829e42072803010ad49e717a9
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
-ms.translationtype: MT
+ms.openlocfilehash: 4e05182d40348b215f39bb85e0848ed608dcdf16
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltmessagegt-element-of-ltnettcpbindinggt"></a>&lt;netTcpBinding&gt; の &lt;message&gt; 要素
 構成されているエンドポイントのメッセージ レベルのセキュリティ要件の種類を定義、 [ \<netTcpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/nettcpbinding.md)です。  
   
- \<system.ServiceModel>  
+ \<system.ServiceModel >  
 \<bindings>  
-\<netTcpBinding>  
+\<netTcpBinding >  
 \<binding>  
-\<security>  
+\<セキュリティ >  
 \<message>  
   
 ## <a name="syntax"></a>構文  
@@ -91,7 +79,7 @@ ms.lasthandoff: 01/19/2018
 ## <a name="remarks"></a>コメント  
  メッセージは、SOAP メッセージの整合性と機密性を確保し、通信ピアの相互認証を行うために、メッセージ レベルのセキュリティを使用します。 バインディング上でこのセキュリティ モードが選択された場合、チャネル スタックは、メッセージ セキュリティ バインド要素を使用して構成され、SOAP メッセージは WS-Security* 標準に従って保護されます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.MessageSecurityOverTcp>  
  <xref:System.ServiceModel.Configuration.NetTcpSecurityElement.Message%2A>  
  <xref:System.ServiceModel.NetTcpSecurity.Message%2A>  

@@ -1,33 +1,21 @@
 ---
-title: "&lt;scopedCertificates&gt; 要素"
-ms.custom: 
+title: '&lt;scopedCertificates&gt; 要素'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: c7b6fc35-d4b2-4c18-98bd-83e09591f1d3
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 719a52fb1a0f558bda2b337e1402f8aecafc6b8d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d95e608fa9b94086dac72341eb599f258dae6097
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltscopedcertificatesgt-element"></a>&lt;scopedCertificates&gt; 要素
 認証用の (範囲指定された) 特定のサービスにより提供される X.509 証明書のコレクションを表します。 このコレクションは一般に、フェデレーション シナリオでセキュリティ トークン サービスのサービス証明書を指定するために使用されます。  
   
- \<システムです。ServiceModel >  
+ \<system.ServiceModel >  
 \<ビヘイビアー >  
 endpointBehaviors セクション  
-\<動作 >  
-\<clientCredentials >  
+\<behavior>  
+\<clientCredentials>  
 \<serviceCertificate >  
 \<scopedCertificates > 要素  
 \<追加 > 要素を\<scopedCertificates >  
@@ -70,7 +58,7 @@ endpointBehaviors セクション
  詳細についてを参照してください「証明書のスコープ」の[する方法: フェデレーション クライアントを作成する](../../../../../docs/framework/wcf/feature-details/how-to-create-a-federated-client.md)です。  
   
 ## <a name="example"></a>例  
- ドメイン名が http://www.contoso.com であるエンドポイントと HTTP プロトコルを経由して通信するときに使用するクライアントのサービス証明書を指定する例を次に示します。  
+ 次の例は、ドメインの名前のエンドポイントと通信するときに使用するクライアントのサービス証明書を指定するhttp://www.contoso.comHTTP プロトコル経由します。  
   
 ```xml  
 <serviceCertificate>  
@@ -82,7 +70,7 @@ endpointBehaviors セクション
 </serviceCertificate>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Configuration.X509RecipientCertificateClientElement.ScopedCertificates%2A>  
  <xref:System.ServiceModel.Configuration.X509ScopedServiceCertificateElementCollection>  
  <xref:System.ServiceModel.Configuration.X509ScopedServiceCertificateElement>  

@@ -1,13 +1,6 @@
 ---
-title: "&lt;system.Net&gt;要素 (ネットワーク設定)"
-ms.custom: 
+title: '&lt;system.Net&gt;要素 (ネットワーク設定)'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#system.Net
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.Net
@@ -15,22 +8,20 @@ helpviewer_keywords:
 - system.Net element
 - <system.Net> element
 ms.assetid: 52de4d6c-b24d-44aa-ba7d-6b5061f1357e
-caps.latest.revision: "14"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 6140a5a66d39cbee3c2a8477dcab88aaa717e745
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f9098ce379cbaf12f589270729018da399f282b0
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltsystemnetgt-element-network-settings"></a>&lt;system.Net&gt;要素 (ネットワーク設定)
 .NET Framework がネットワークに接続する方法を指定するための設定が含まれています。  
   
  \<configuration>  
-\<system.net >  
+\<system.net>  
   
 ## <a name="syntax"></a>構文  
   
@@ -54,7 +45,7 @@ ms.lasthandoff: 12/22/2017
 |[defaultProxy](../../../../../docs/framework/configure-apps/file-schema/network/defaultproxy-element-network-settings.md)|ハイパーテキスト転送プロトコル (HTTP: Hypertext Transfer Protocol) プロキシ サーバーを構成します。|  
 |[mailSettings](../../../../../docs/framework/configure-apps/file-schema/network/mailsettings-element-network-settings.md)|簡易メール転送プロトコル (SMTP) 電子メールの送信オプションを構成します。|  
 |[requestCaching](../../../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)|ネットワーク要求のキャッシュ メカニズムを制御します。|  
-|[設定](../../../../../docs/framework/configure-apps/file-schema/network/settings-element-network-settings.md)|内のクラスの基本的なネットワーク オプションを構成、<xref:System.Net>および関連子名前空間。|  
+|[settings](../../../../../docs/framework/configure-apps/file-schema/network/settings-element-network-settings.md)|内のクラスの基本的なネットワーク オプションを構成、<xref:System.Net>および関連子名前空間。|  
 |[webRequestModules](../../../../../docs/framework/configure-apps/file-schema/network/webrequestmodules-element-network-settings.md)|使用してインターネット ホストから情報を要求するモジュールを指定します。|  
   
 ### <a name="parent-elements"></a>親要素  
@@ -103,5 +94,5 @@ ms.lasthandoff: 12/22/2017
 </configuration>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ネットワーク設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

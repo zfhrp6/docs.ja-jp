@@ -1,32 +1,20 @@
 ---
 title: '&lt;baseAddressPrefixFilters&gt;'
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 8cab2a9a-c51f-4283-bb60-2ad0c274fd46
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 0a1c2e5e887ceaadf3db6f51991d53c3db8fb6ba
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 8fffcd02b1c08172b184225f13a1852414cf429a
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltbaseaddressprefixfiltersgt"></a>&lt;baseAddressPrefixFilters&gt;
-パス スルー フィルターを指定する構成要素のコレクションを表します。パス スルー フィルターには、インターネット インフォメーション サービス (IIS) で [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] アプリケーションをホストする場合に適切な IIS バインドを選択する機構が用意されています。  
+指定する要素が IIS で Windows Communication Foundation (WCF) アプリケーションをホストする場合は、適切なインターネット インフォメーション サービス (IIS) バインドを選択する機構を提供するフィルターを通過する構成のコレクションを表します。  
   
 > [!WARNING]
 >  \<baseAddressPrefixFilters > は"localhost"を認識ではなくコンピューターの完全修飾名を代わりに使用します。  
   
- \<システムです。ServiceModel >  
+ \<system.ServiceModel >  
 \<ServiceHostingEnvironment >  
   
 ## <a name="syntax"></a>構文  
@@ -55,7 +43,7 @@ ms.lasthandoff: 12/22/2017
   
 |要素|説明|  
 |-------------|-----------------|  
-|[\<serviceHostingEnvironment >](../../../../../docs/framework/configure-apps/file-schema/wcf/servicehostingenvironment.md)|環境をホストするサービスがインスタンス化する特定のトランスポートの型を定義します。|  
+|[\<ServiceHostingEnvironment >](../../../../../docs/framework/configure-apps/file-schema/wcf/servicehostingenvironment.md)|環境をホストするサービスがインスタンス化する特定のトランスポートの型を定義します。|  
   
 ## <a name="remarks"></a>コメント  
  プレフィックス フィルターは、サービスによって使用される URI を、共有ホスティング プロバイダーが指定できるようにする手段を提供します。 これにより、共有ホストは、同じサイト上の同じスキームに対して、別々のベース アドレスを使用して複数のアプリケーションをホストできるようになります。  
@@ -91,7 +79,7 @@ http://test2.fabrikam.com/Service.svc
 > [!NOTE]
 >  フィルターでワイルドカードはサポートされません。 また、IIS が提供する baseAddresses には、`baseAddressPrefixFilters` リストに存在しない他のスキームにバインドされたアドレスが指定される場合があります。 これらのアドレスはフィルターで除外されません。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Configuration.BaseAddressPrefixFilterElementCollection>  
  <xref:System.ServiceModel.Configuration.ServiceHostingEnvironmentSection>  
  <xref:System.ServiceModel.ServiceHostingEnvironment>  

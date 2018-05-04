@@ -1,28 +1,16 @@
 ---
-title: "&lt;ルーティング&gt;"
-ms.custom: 
+title: '&lt;ルーティング&gt;'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: a210c209-3940-4288-9a8e-39b1e62606bc
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 6ef71753a4b0ff20a966842119adb6e637ded1f9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 1771d8a2603a8f61af6ba6e2acf6243d2fd073f7
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltroutinggt"></a>&lt;ルーティング&gt;
 
-受信メッセージの評価に使用される [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] <xref:System.ServiceModel.Dispatcher.MessageFilter> の種類を定義するルーティング フィルター セットと、フィルターが一致するときにメッセージを送信するターゲット エンドポイントを指定するルーティング テーブルを定義する構成セクションを表します。
+Windows Communication Foundation (WCF) の種類を決定するルーティング フィルター セットを定義する構成セクションを表します<xref:System.ServiceModel.Dispatcher.MessageFilter>受信メッセージの評価とルーティング テーブルをするターゲット エンドポイントを定義するときに使用されます。フィルターに一致する場合にメッセージを送信します。
 
 [**\<system.serviceModel >**](system-servicemodel.md)   
 &nbsp;&nbsp;**\<ルーティング >**
@@ -63,7 +51,7 @@ ms.lasthandoff: 12/22/2017
 
 |     | 説明 |
 | --- | ----------- |
-| [**\<フィルター >**](../../../../../docs/framework/configure-apps/file-schema/wcf/filters-of-routing.md) | 受信メッセージの評価に使用される [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] MessageFilter の種類を定義するルーティング フィルター セットを格納します。 |
+| [**\<フィルター >**](../../../../../docs/framework/configure-apps/file-schema/wcf/filters-of-routing.md) | 受信メッセージを評価するときに使用する Windows Communication Foundation (WCF) MessageFilter の種類を決定するルーティング フィルター セットを格納します。 |
 | [**\<filterTables >**](../../../../../docs/framework/configure-apps/file-schema/wcf/filtertables.md) | ルーティング フィルターとターゲット エンドポイントとのマッピングを格納します。フィルターが一致したときにエンドポイントを指定するために使用されます。 |
 
 ### <a name="parent-elements"></a>親要素

@@ -1,12 +1,13 @@
 ---
-title: "Aximp.exe (Windows フォーム ActiveX コントロール インポーター)"
-ms.custom: 
+title: Aximp.exe (Windows フォーム ActiveX コントロール インポーター)
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - ActiveX controls, hosting in Windows Forms
@@ -15,16 +16,17 @@ helpviewer_keywords:
 - Aximp.exe
 - Windows Forms ActiveX Control Importer
 ms.assetid: 482c0d83-7144-4497-b626-87d2351b78d0
-caps.latest.revision: "13"
+caps.latest.revision: 13
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ebde5bd48b02c20f7d607ebcda2b18ed0830c569
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 8098a44c9275be0a40ec8e067d33ac8a00654ec1
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="aximpexe-windows-forms-activex-control-importer"></a>Aximp.exe (Windows フォーム ActiveX コントロール インポーター)
 ActiveX コントロール インポーターは、ActiveX コントロール用の COM タイプ ライブラリに属する型定義を Windows フォーム コントロールに変換します。  
@@ -77,9 +79,9 @@ aximp [options]{file.dll | file.ocx}
   
  Aximp.exe を使用して ActiveX WebBrowser コントロール (shdocvw.dll) 用の .NET アセンブリを生成する方法はサポートされていません。  
   
- shdocvw.dll に対して Aximp.exe を実行すると、ツールが実行されるディレクトリに shdocvw.dll という名前の別のファイルが常に作成されます。 この生成されたファイルが Documents ディレクトリおよび Settings ディレクトリに置かれると、Microsoft Internet Explorer や Windows エクスプローラーに対して問題を引き起こします。 コンピューターを再起動すると、Windows は shdocvw.dll のコピーを見つけるために、system32 ディレクトリの前に Documents and Settings ディレクトリを調べます。 Windows は Documents and Settings で見つけたコピーを使用して、マネージ ラッパーを読み込もうとします。 Internet Explorer と Windows エクスプローラーは、system32 ディレクトリにある shdocvw.dll のバージョンのレンダリング エンジンに依存しているため、正しく機能しません。 このような問題が発生したら、Documents ディレクトリおよび Settings ディレクトリにある shdocvw.dll を削除して、コンピューターを再起動します。  
+ shdocvw.dll に対して Aximp.exe を実行すると、ツールが実行されるディレクトリに shdocvw.dll という名前の別のファイルが常に作成されます。 この生成されたファイルが Documents ディレクトリおよび Settings ディレクトリに置かれると、Microsoft Internet Explorer や Windows エクスプローラーに対して問題を引き起こします。 コンピューターを再起動すると、Windows は shdocvw.dll のコピーを見つけるために、system32 ディレクトリの前に Documents and Settings ディレクトリを調べます。 Windows は Documents and Settings で見つけたコピーを使用して、マネージド ラッパーを読み込もうとします。 Internet Explorer と Windows エクスプローラーは、system32 ディレクトリにある shdocvw.dll のバージョンのレンダリング エンジンに依存しているため、正しく機能しません。 このような問題が発生したら、Documents ディレクトリおよび Settings ディレクトリにある shdocvw.dll を削除して、コンピューターを再起動します。  
   
- shdocvw.dll で Aximp.exe を使用して、アプリケーション開発で使用する .NET アセンブリを作成する場合にも、問題が発生する可能性があります。 この場合、アプリケーションは、システム バージョンと生成されたバージョンの両方の shdocvw.dll を読み込み、システム バージョンを優先します。 このとき、WebBrowser ActiveX コントロール内部の Web ページを読み込もうとすると、[開いて保存] ダイアログ ボックスが表示される場合があります。 ユーザーが **[開く]** をクリックすると、Internet Explorer で Web ページが開きます。 これは、Internet Explorer version 6 以前を実行しているコンピューターでのみ発生します。 この問題の発生を防ぐには、「[方法: タイプ ライブラリへの参照を追加する](../../../docs/framework/interop/how-to-add-references-to-type-libraries.md)」に説明されているように、マネージ <xref:System.Windows.Forms.WebBrowser> コントロールまたは [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] を使用してマネージ shdocvw.dll を生成します。  
+ shdocvw.dll で Aximp.exe を使用して、アプリケーション開発で使用する .NET アセンブリを作成する場合にも、問題が発生する可能性があります。 この場合、アプリケーションは、システム バージョンと生成されたバージョンの両方の shdocvw.dll を読み込み、システム バージョンを優先します。 このとき、WebBrowser ActiveX コントロール内部の Web ページを読み込もうとすると、[開いて保存] ダイアログ ボックスが表示される場合があります。 ユーザーが **[開く]** をクリックすると、Internet Explorer で Web ページが開きます。 これは、Internet Explorer version 6 以前を実行しているコンピューターでのみ発生します。 この問題の発生を防ぐには、「[方法: タイプ ライブラリへの参照を追加する](../../../docs/framework/interop/how-to-add-references-to-type-libraries.md)」に説明されているように、マネージド <xref:System.Windows.Forms.WebBrowser> コントロールまたは Visual Studio を使用してマネージド shdocvw.dll を生成します。  
   
 ## <a name="example"></a>例  
  Media Player コントロール `msdxm.ocx` の MediaPlayer.dll と AxMediaPlayer.dll を生成するコマンドを次に示します。  

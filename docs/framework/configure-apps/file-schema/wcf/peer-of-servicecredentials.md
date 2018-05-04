@@ -1,34 +1,22 @@
 ---
-title: "&lt;serviceCredentials&gt; の &lt;peer&gt;"
-ms.custom: 
+title: '&lt;serviceCredentials&gt; の &lt;peer&gt;'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: b134e21d-e5b5-458e-9309-626dbf8db4ed
-caps.latest.revision: "7"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 79af459aae2eef0544d713b86e8534635fcdd141
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: f50c192639df7b7ed35e863821d5b7a8d62f29bc
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltpeergt-of-ltservicecredentialsgt"></a>&lt;serviceCredentials&gt; の &lt;peer&gt;
 ピア ノードの現在の資格情報を指定します。  
   
- \<system.ServiceModel>  
-\<behaviors>  
+ \<system.ServiceModel >  
+\<ビヘイビアー >  
 \<serviceBehaviors>  
 \<behavior>  
 \<serviceCredentials>  
-\<peer>  
+\<ピア >  
   
 ## <a name="syntax"></a>構文  
   
@@ -60,7 +48,7 @@ ms.lasthandoff: 01/19/2018
 |-------------|-----------------|  
 |[\<serviceCredentials>](../../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md)|サービスの認証に使用される資格情報と、クライアントの資格情報検証関連の設定を指定します。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Configuration.PeerCredentialElement>  
  <xref:System.ServiceModel.Configuration.ServiceCredentialsElement.Peer%2A>  
  <xref:System.ServiceModel.Description.ServiceCredentials.Peer%2A>  

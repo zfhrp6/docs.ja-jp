@@ -8,15 +8,15 @@ ms.topic: article
 ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
-ms.openlocfilehash: 57fa8f52320b30a1cb228b41e3f5e6655c235561
-ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
+ms.openlocfilehash: 98c58d083cb806a92e28c1c9d27effa1124fd153
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="ref-returns-and-ref-locals"></a>ref 戻り値と ref ローカル変数
 
-C# 7 以降の C# は参照戻り値 (ref 戻り値) に対応しています。 参照戻り値を使用すると、メソッドから呼び出し元に、値ではなく、変数への参照を返すことができます。 呼び出し元は、返された変数を値渡しとして処理するか、参照渡しとして処理するかを選択できます。 呼び出し元は、それ自体が、返された値の参照である新しい変数を作成できます。これは ref ローカルと呼ばれています。
+C# 7.0 以降の C# は参照戻り値 (ref 戻り値) に対応しています。 参照戻り値を使用すると、メソッドから呼び出し元に、値ではなく、変数への参照を返すことができます。 呼び出し元は、返された変数を値渡しとして処理するか、参照渡しとして処理するかを選択できます。 呼び出し元は、それ自体が、返された値の参照である新しい変数を作成できます。これは ref ローカルと呼ばれています。
 
 ## <a name="what-is-a-reference-return-value"></a>参照戻り値とは
 

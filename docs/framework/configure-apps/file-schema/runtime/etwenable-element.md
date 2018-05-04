@@ -1,27 +1,17 @@
 ---
-title: "&lt;etwEnable&gt;要素"
-ms.custom: 
+title: '&lt;etwEnable&gt;要素'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - etwEnable element
 - <etwEnable> element
 ms.assetid: 29dde982-6d8b-4099-8867-ad0d7733f6dc
-caps.latest.revision: "7"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 1d94d49fcb2c395de5172a730923dbe42f67cf35
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 267a4a29282881d18201d0cb2062e91b4ff974a9
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltetwenablegt-element"></a>&lt;etwEnable&gt;要素
 共通言語ランタイム イベントで Windows イベント トレーシング (ETW) を有効にするかどうかを指定します。  
@@ -49,7 +39,7 @@ ms.lasthandoff: 12/22/2017
   
 |値|説明|  
 |-----------|-----------------|  
-|TRUE|ETW を有効にします。 これは、以降、Windows Vista および Windows Server 2008 オペレーティング システムの Windows のバージョンの既定値です。|  
+|true|ETW を有効にします。 これは、以降、Windows Vista および Windows Server 2008 オペレーティング システムの Windows のバージョンの既定値です。|  
 |False|ETW を無効にします。 これは、以前のバージョンの Windows の既定値です。|  
   
 ### <a name="child-elements"></a>子要素  
@@ -79,7 +69,7 @@ ms.lasthandoff: 12/22/2017
 </configuration>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ランタイム設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
  [構成ファイル スキーマ](../../../../../docs/framework/configure-apps/file-schema/index.md)  
  [.NET Framework のログ記録の制御](../../../../../docs/framework/performance/controlling-logging.md)

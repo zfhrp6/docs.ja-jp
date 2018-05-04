@@ -1,31 +1,19 @@
 ---
-title: "&lt;identity&gt; の &lt;certificate&gt;"
-ms.custom: 
+title: '&lt;identity&gt; の &lt;certificate&gt;'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 4aeccaf7-8f23-495c-aa5f-5bd8b5d4a10c
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 3c1fb253ed166b4e8106f68bf2782cf215541294
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e7d8e7abbc95521d85dc5999c36687f9becea9fb
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltcertificategt-for-ltidentitygt"></a>&lt;identity&gt; の &lt;certificate&gt;
 クライアントに対するサービスの検証に使用される X.509 証明書を指定します。  
   
  要素の値の設定の詳細については、次を参照してください。[サービス Id と認証](../../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)です。  
   
- \<id >  
+ \<identity>  
 \<証明書 >  
   
 ## <a name="syntax"></a>構文  
@@ -50,7 +38,7 @@ ms.lasthandoff: 12/22/2017
   
 |要素|説明|  
 |-------------|-----------------|  
-|[\<id >](../../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)|クライアントで認証するサービスの ID を指定します。|  
+|[\<identity>](../../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)|クライアントで認証するサービスの ID を指定します。|  
   
 ## <a name="example"></a>例  
  次のコードは、クライアントに対するサーバーの検証に使用される証明書のエンコードされた表現を指定します。  
@@ -61,10 +49,10 @@ ms.lasthandoff: 12/22/2017
 </identity>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Configuration.IdentityElement>  
  <xref:System.ServiceModel.EndpointAddress>  
  <xref:System.ServiceModel.EndpointAddress.Identity%2A>  
  <xref:System.ServiceModel.EndpointIdentity>  
  [サービス ID と認証](../../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)  
- [\<id >](../../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)
+ [\<identity>](../../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)

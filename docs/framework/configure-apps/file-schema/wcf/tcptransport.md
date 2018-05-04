@@ -1,26 +1,12 @@
 ---
 title: '&lt;tcpTransport&gt;'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 8fcd18c1-9958-42e7-b442-7903f7bdb563
-caps.latest.revision: ''
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 9f534bab962e83f76dab7e411cc3c2ca14779df9
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: 4141b0f6493c51048ad60accdc1d5ee9bac01231
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="lttcptransportgt"></a>&lt;tcpTransport&gt;
 カスタム バインドのメッセージを転送するためにチャネルで使用できる TCP トランスポートを定義します。  

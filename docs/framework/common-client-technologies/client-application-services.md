@@ -1,12 +1,13 @@
 ---
-title: "クライアント アプリケーション サービス"
-ms.custom: 
+title: クライアント アプリケーション サービス
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - role-based security [.NET Framework], client application services
@@ -24,16 +25,17 @@ helpviewer_keywords:
 - roles [.NET Framework], client application services
 - client application services, about client application services
 ms.assetid: 1487d8df-089e-4f21-abfb-a791a652b58e
-caps.latest.revision: "14"
+caps.latest.revision: 14
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 597b2d4d37d76ca722ddcebf9fcfeae532f67a00
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 9532594f5f243faed28229388b9a6d597be57a7d
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="client-application-services"></a>クライアント アプリケーション サービス
 クライアント アプリケーション サービスにより、Microsoft ASP.NET 2.0 AJAX Extensions に含まれる [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] のログイン、ロール、およびプロファイル アプリケーション サービスを使用する Windows ベースのアプリケーションを簡単に作成できます。 これらのサービスにより、複数の Web ベースおよび Windows ベースのアプリケーションで、単一のサーバーから提供されるユーザー情報とユーザー管理機能を共有できます。 たとえば、これらのサービスを使用して、次のタスクを実行できます。  
@@ -53,7 +55,7 @@ ms.lasthandoff: 12/22/2017
  クライアント アプリケーション サービス プロバイダーを介して使用できる機能について説明します。  
   
  [方法 : クライアント アプリケーション サービスを構成する](../../../docs/framework/common-client-technologies/how-to-configure-client-application-services.md)  
- このトピックでは、[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] プロジェクト デザイナーを使用して、アプリケーション サービスを有効にし、構成する方法について説明します。 対応する App.config ファイルへの変更についても説明します。  
+ このトピックでは、Visual Studio プロジェクト デザイナーを使用して、アプリケーション サービスを有効にし、構成する方法について説明します。 対応する App.config ファイルへの変更についても説明します。  
   
  [方法: クライアント アプリケーション サービスでユーザーのログインを実装する](../../../docs/framework/common-client-technologies/how-to-implement-user-login-with-client-application-services.md)  
  アプリケーションがクライアントの認証サービス プロバイダーを使用するよう構成される場合のユーザー検証方法について説明します。  

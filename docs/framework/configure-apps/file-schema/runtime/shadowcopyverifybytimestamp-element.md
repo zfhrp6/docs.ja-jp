@@ -1,27 +1,17 @@
 ---
-title: "&lt;shadowCopyVerifyByTimestamp&gt;要素"
-ms.custom: 
+title: '&lt;shadowCopyVerifyByTimestamp&gt;要素'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - <shadowCopyTimeStampVerification> element
 - shadowCopyTimeStampVerification element
 ms.assetid: 2f1648e5-997b-435e-a4f9-d236c574c66c
-caps.latest.revision: "7"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: bae98c91c8a9b68ec7c21b142bc9f004c7bc1394
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 2439a4812163562a73bd3520e65b9973e666a863
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltshadowcopyverifybytimestampgt-element"></a>&lt;shadowCopyVerifyByTimestamp&gt;要素
 シャドウ コピーが [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)] で導入された既定の起動の動作を使用するか、.NET Framework の以前のバージョンの起動の動作に戻すかどうかを指定します。  
@@ -49,8 +39,8 @@ ms.lasthandoff: 12/22/2017
   
 |値|説明|  
 |-----------|-----------------|  
-|TRUE|起動時に、前回シャドウ コピーのディレクトリにコピーされたとき以降に更新されたアセンブリだけをコピーします。 これは、既定値を[!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)]です。|  
-|false|起動時にすべてのファイルをコピーしましたが、.NET Framework の以前のバージョンの起動時の動作に戻ります。|  
+|true|起動時に、前回シャドウ コピーのディレクトリにコピーされたとき以降に更新されたアセンブリだけをコピーします。 これは、既定値を[!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)]です。|  
+|False|起動時にすべてのファイルをコピーしましたが、.NET Framework の以前のバージョンの起動時の動作に戻ります。|  
   
 ### <a name="child-elements"></a>子要素  
  なし。  
@@ -76,7 +66,7 @@ ms.lasthandoff: 12/22/2017
 </configuration>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ランタイム設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
  [構成ファイル スキーマ](../../../../../docs/framework/configure-apps/file-schema/index.md)  
  [アセンブリのシャドウ コピー](../../../../../docs/framework/app-domains/shadow-copy-assemblies.md)

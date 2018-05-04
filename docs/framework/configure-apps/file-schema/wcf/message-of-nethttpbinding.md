@@ -1,33 +1,21 @@
 ---
-title: "&lt;netHttpBinding&gt; の &lt;message&gt;"
-ms.custom: 
+title: '&lt;netHttpBinding&gt; の &lt;message&gt;'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 9def5a35-475d-40d6-b716-ccdbd93863c7
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 17a0043188c36a31dc4ee35e8f5889240b9b7407
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
-ms.translationtype: MT
+ms.openlocfilehash: 6e4cd2c000d577e26b54e09f24279e0fd74afcf1
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltmessagegt-of-ltnethttpbindinggt"></a>&lt;netHttpBinding&gt; の &lt;message&gt;
 メッセージ レベルのセキュリティの設定を定義、 [ \<basicHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md)です。  
   
- \<system.ServiceModel>  
+ \<system.ServiceModel >  
 \<bindings>  
 \<netHttpBinding>  
 \<binding>  
-\<security>  
+\<セキュリティ >  
 \<message>  
   
 ## <a name="syntax"></a>構文  
@@ -52,7 +40,7 @@ ms.lasthandoff: 01/19/2018
   
 |値|説明|  
 |-----------|-----------------|  
-|UserName|-UserName 資格情報を使用してサーバーにクライアントの認証が必要です。 この資格情報は、<`clientCredentials`> 要素を使用して指定する必要があります。<br />-   [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)]パスワード ダイジェストの送信、またはパスワードを使用して、そのようなキーを使用して、メッセージ セキュリティのためのキーの派生はサポートしません。 そのため、[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] では UserName 資格情報を使用する場合は、トランスポートが強制的にセキュリティで保護されます。 `basicHttpBinding` の場合は、SSL チャネルの設定が必要です。|  
+|UserName|-UserName 資格情報を使用してサーバーにクライアントの認証が必要です。 この資格情報は、<`clientCredentials`> 要素を使用して指定する必要があります。<br />-   [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] パスワード ダイジェストの送信、またはパスワードを使用して、そのようなキーを使用して、メッセージ セキュリティのためのキーの派生はサポートしません。 そのため、[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] では UserName 資格情報を使用する場合は、トランスポートが強制的にセキュリティで保護されます。 `basicHttpBinding` の場合は、SSL チャネルの設定が必要です。|  
 |証明書|証明書を使用してクライアントをサーバーに認証するように要求します。 この場合のクライアント資格情報は、<`clientCredentials`> および <`clientCertificate`> を使用して指定する必要があります。 さらに、メッセージのセキュリティ モードを使用する場合は、クライアントにサービス証明書を準備する必要があります。 ここではサービスの資格情報を使用して指定する必要があります<xref:System.ServiceModel.Description.ClientCredentials>クラスまたは`ClientCredentials`動作要素をサービスを指定することを使用して証明書、 \<serviceCertificate > serviceCredentials の要素。|  
   
 ### <a name="child-elements"></a>子要素  
@@ -136,7 +124,7 @@ ms.lasthandoff: 01/19/2018
 </system.serviceModel>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [サービスおよびクライアントのセキュリティ保護](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
  [バインディング](../../../../../docs/framework/wcf/bindings.md)  
  [システムが提供するバインディングの構成](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  

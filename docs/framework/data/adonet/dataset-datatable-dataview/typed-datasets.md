@@ -1,24 +1,12 @@
 ---
-title: "型指定されたデータセット"
-ms.custom: 
+title: 型指定されたデータセット
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 033d2548-cf24-4c05-8179-67d8b009c048
-caps.latest.revision: "4"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: a68d4a10b01285a7e1b33238409351ca04d0aeb4
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 67c1d3a190c5a4f046d7c7da5ebbf98395a96341
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="typed-datasets"></a>型指定されたデータセット
 厳密に型指定されていない変数を使用した値への遅延バインディング アクセスに加えて、<xref:System.Data.DataSet> には、厳密に型指定された変数を使用したデータへのアクセスも用意されています。 テーブルと列の一部であるが、**データセット**わかりやすい名前を使用してアクセスできる、厳密に型指定される変数です。  
@@ -34,6 +22,6 @@ ms.lasthandoff: 01/17/2018
  [型指定された DataSet の注釈](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/annotating-typed-datasets.md)  
  厳密に型を生成するために使用する XML スキーマ定義言語 (XSD) スキーマの注釈を設定する方法について説明**データセット**して**データセット**基になるスキーマを変更することがなく要素に表示名。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [DataSet、DataTable、および DataView](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

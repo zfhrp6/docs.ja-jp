@@ -19,11 +19,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 09d982105d8cf1297a53bd755003e3ef2b089293
-ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
+ms.openlocfilehash: 07b90baf64ad00509cf5cadea4b9a3008237759b
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="migrating-from-the-xsltransform-class"></a>XslTransform クラスからの移行
 XSLT アーキテクチャは、[!INCLUDE[vsprvslong](../../../../includes/vsprvslong-md.md)] リリースで設計が変更されました。 <xref:System.Xml.Xsl.XslTransform> クラスは <xref:System.Xml.Xsl.XslCompiledTransform> クラスで置き換えられています。  
@@ -73,7 +73,7 @@ writer.Close();
 ```  
   
 ### <a name="debug-option"></a>デバッグ オプション  
- <xref:System.Xml.Xsl.XslCompiledTransform> クラスによりデバッグ情報を生成できます。この機能を利用して、Microsoft [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] デバッガーを使用してスタイル シートをデバッグすることができます。 詳細については、「<xref:System.Xml.Xsl.XslCompiledTransform.%23ctor%28System.Boolean%29>」を参照してください。  
+ <xref:System.Xml.Xsl.XslCompiledTransform> クラスによりデバッグ情報を生成できます。この機能を利用して、Microsoft Visual Studio デバッガーを使用してスタイル シートをデバッグすることができます。 詳細については、「<xref:System.Xml.Xsl.XslCompiledTransform.%23ctor%28System.Boolean%29>」を参照してください。  
   
 ## <a name="behavioral-differences"></a>動作の違い  
   

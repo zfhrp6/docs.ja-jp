@@ -1,30 +1,18 @@
 ---
-title: "&lt;commonParameters&gt; の &lt;add&gt;"
-ms.custom: 
+title: '&lt;commonParameters&gt; の &lt;add&gt;'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 3713bf25-20c8-455f-bb85-de46b6487932
-caps.latest.revision: "5"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ef23ba0fa39b01a7cf55c8b2b6cb0beb20be8631
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 7973a1d759eaec06a6bd69822bbbf53ff77721ba
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltaddgt-of-ltcommonparametersgt"></a>&lt;commonParameters&gt; の &lt;add&gt;
 複数のサービスでグローバルに使用されるパラメーターの名前と値のペアを指定します。 このパラメーターには通常、永続性サービスによって共有されるデータベース接続文字列が格納されます。  
   
- \<system.ServiceModel>  
-\<behaviors>  
+ \<system.ServiceModel >  
+\<ビヘイビアー >  
 \<serviceBehaviors>  
 \<behavior>  
 \<workflowRuntime>  
@@ -90,7 +78,7 @@ ms.lasthandoff: 01/19/2018
 </commonParameters>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Configuration.WorkflowRuntimeElement>  
  <xref:System.Workflow.Runtime.Configuration.WorkflowRuntimeServiceElement>  
  <xref:System.Workflow.Runtime.WorkflowRuntime>  

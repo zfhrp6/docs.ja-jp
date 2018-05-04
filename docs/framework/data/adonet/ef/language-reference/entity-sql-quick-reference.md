@@ -1,24 +1,12 @@
 ---
-title: "Entity SQL クイック リファレンス"
-ms.custom: 
+title: Entity SQL クイック リファレンス
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: e53dad9e-5e83-426e-abb4-be3e78e3d6dc
-caps.latest.revision: "2"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 81fd76d09f9cc02e89ac34d5f8fa74bd7f9d92f9
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 0617ce96acaf5a6eafb2658cfe218cc8f4135f6e
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="entity-sql-quick-reference"></a>Entity SQL クイック リファレンス
 このトピックでは、[!INCLUDE[esql](../../../../../../includes/esql-md.md)] クエリのクイック リファレンスを提供します。 このトピック内のクエリは、AdventureWorks Sales model に基づいています。  
@@ -83,7 +71,7 @@ DATETIME '2006-12-25 01:01'
 ## <a name="type-constructors"></a>型コンストラクター  
   
 ### <a name="row"></a>ROW  
- [行](../../../../../../docs/framework/data/adonet/ef/language-reference/row-entity-sql.md)ように、構造的に型指定された匿名 (レコード) 値を作成します。`ROW(1 AS myNumber, ‘Name’ AS myName).`  
+ [行](../../../../../../docs/framework/data/adonet/ef/language-reference/row-entity-sql.md)ように、構造的に型指定された匿名 (レコード) 値を作成します。 `ROW(1 AS myNumber, ‘Name’ AS myName).`  
   
  例:  
   
@@ -373,6 +361,6 @@ CASE WHEN AVG({25,12,11}) < 100 THEN TRUE ELSE FALSE END
 |-----------|  
 |true|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Entity SQL リファレンス](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)  
  [Entity SQL の概要](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-overview.md)

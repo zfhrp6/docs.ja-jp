@@ -1,10 +1,6 @@
 ---
-title: "&lt;削除&gt;要素&lt;configSections&gt;"
+title: '&lt;削除&gt;要素&lt;configSections&gt;'
 ms.date: 05/01/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: article
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/configSections/remove
 helpviewer_keywords:
@@ -13,14 +9,11 @@ helpviewer_keywords:
 ms.assetid: ae4d82e0-e8fe-468c-81ab-46d63c4d66a8
 author: guardrex
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: bf2cb49fbeb01ad176a1d24d711cebc97ba14004
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6555981edeb6f7f088fb12c710d0146cf58d5be1
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="remove-element-for-configsections"></a>\<削除 > 要素を\<configSections >
 
@@ -46,7 +39,7 @@ ms.lasthandoff: 12/22/2017
 
 |     | 説明 |
 | --- | ----------- |
-| [**\<configSections >**要素](~/docs/framework/configure-apps/file-schema/configsections-element-for-configuration.md) | 構成セクションと名前空間宣言が含まれています。 |
+| [**\<configSections >** 要素](~/docs/framework/configure-apps/file-schema/configsections-element-for-configuration.md) | 構成セクションと名前空間宣言が含まれています。 |
 
 # <a name="child-elements"></a>子要素
 
@@ -54,11 +47,11 @@ ms.lasthandoff: 12/22/2017
 
 ## <a name="remarks"></a>コメント
 
-使用することができます、 **\<削除 >**セクションおよびセクション グループを構成ファイルの階層内の上位レベルで定義されているアプリケーションから削除する要素。
+使用することができます、 **\<削除 >** セクションおよびセクション グループを構成ファイルの階層内の上位レベルで定義されているアプリケーションから削除する要素。
 
 ## <a name="example"></a>例
 
-次の例を使用する方法を示しています、 **\<削除 >**マシン構成ファイルで定義されたセクションを削除するアプリケーション構成ファイル内の要素。
+次の例を使用する方法を示しています、 **\<削除 >** マシン構成ファイルで定義されたセクションを削除するアプリケーション構成ファイル内の要素。
 
 マシン構成ファイルのコードは、次のセクションを宣言して **\<sampleSection >**:
 
@@ -75,7 +68,7 @@ ms.lasthandoff: 12/22/2017
 </configuration>
 ```
 
-アプリケーション構成ファイルのコードは、次の削除、  **\<sampleSection >**セクションです。 削除した後、アプリケーションがの設定を取得できません **\<sampleSection >**です。
+アプリケーション構成ファイルのコードは、次の削除、  **\<sampleSection >** セクションです。 削除した後、アプリケーションがの設定を取得できません **\<sampleSection >** です。
 
 ```xml
 <!-- Application configuration file -->

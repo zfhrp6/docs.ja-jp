@@ -1,13 +1,6 @@
 ---
-title: "&lt;ランタイム&gt;要素"
-ms.custom: 
+title: '&lt;ランタイム&gt;要素'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#runtime
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/runtime
@@ -16,16 +9,14 @@ helpviewer_keywords:
 - runtime element
 - container tags, <runtime> element
 ms.assetid: 1eb2fae3-de4b-45b6-852f-517c39b751bd
-caps.latest.revision: "70"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 547e6a5b800f1adf5ba9835470d2dd405ce97b14
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: fb050a8d73c42094caf83ba00c5dfc2e4d472723
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltruntimegt-element"></a>&lt;ランタイム&gt;要素
 アプリケーションを構成する共通言語ランタイムで使用される情報を提供します。  
@@ -100,6 +91,6 @@ ms.lasthandoff: 12/22/2017
   
  内の要素、 [\<ランタイム >](../../../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md)セクションは、アプリケーションの起動時に、共通言語ランタイムによって自動的に読み取られます。 その名前を指定することによって、既定以外のアプリケーション ドメインの構成ファイルを定義することも、<xref:System.AppDomainSetup.ConfigurationFile%2A?displayProperty=nameWithType>プロパティの設定も自動的に読み込まれるアプリケーション ドメインが読み込まれるときにします。 まれに場合、これまでが必要で設定を直接読み取ることが必要、 [\<ランタイム >](../../../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md)アプリケーションの構成ファイルでセクションです。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ランタイム設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
  [構成ファイル スキーマ](../../../../../docs/framework/configure-apps/file-schema/index.md)

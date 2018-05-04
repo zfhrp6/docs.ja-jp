@@ -1,9 +1,6 @@
 ---
-title: "CoreResponseData クラス"
+title: CoreResponseData クラス
 ms.date: 01/29/2018
-ms.prod: .net-framework
-ms.technology: 
-ms.topic: reference
 topic_type:
 - apiref
 api_name:
@@ -13,15 +10,11 @@ api_location:
 api_type:
 - Assembly
 author: stevewhims
-ms.author: stwhi
-manager: markl
-ms.workload:
-- dotnet
-ms.openlocfilehash: d36affb70e141ccb37f65344944f37b6b83ad4ee
-ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
+ms.openlocfilehash: 640a925c3aec86b4743b1b2b62eb3793af1cc0bb
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="coreresponsedata-class"></a>CoreResponseData クラス
 
@@ -38,10 +31,10 @@ internal class CoreResponseData
 > 
 > Microsoft は、どのような状況下で、実稼働アプリケーションでこのクラスの使用をサポートしていません。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
-**Namespace:**<xref:System.Net>
+**Namespace:** <xref:System.Net>
 
-**アセンブリ:**システム (System.dll)
+**アセンブリ:** システム (System.dll)
 
 **.NET framework のバージョン:** 2.0 から利用可能です。

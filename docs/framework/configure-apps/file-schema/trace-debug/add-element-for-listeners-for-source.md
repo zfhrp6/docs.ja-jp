@@ -1,14 +1,6 @@
 ---
-title: "&lt;追加&gt;要素&lt;リスナー&gt;の&lt;ソース&gt;"
-ms.custom: 
+title: '&lt;追加&gt;要素&lt;リスナー&gt;の&lt;ソース&gt;'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/sources/source/listeners/add
 helpviewer_keywords:
@@ -16,17 +8,14 @@ helpviewer_keywords:
 - add element for <listeners> for <source>
 - <add> element for <listeners> for <source>
 ms.assetid: 4ce36ac1-81ef-48e8-b8b2-b5a5b0e2adcb
-caps.latest.revision: 
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload:
-- dotnet
-ms.openlocfilehash: 86177010d8ed70302b51ec9c416a3295009e7394
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ba8ff652003a9167ec370643797ac9300b83889a
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltaddgt-element-for-ltlistenersgt-for-ltsourcegt"></a>&lt;追加&gt;要素&lt;リスナー&gt;の&lt;ソース&gt;
 トレース ソースの `Listeners` コレクションにリスナーを追加します。  
@@ -57,7 +46,7 @@ ms.lasthandoff: 12/22/2017
 |`initializeData`|省略可能な属性です。<br /><br /> 指定したクラスのコンス トラクターに渡された文字列。 A<xref:System.Configuration.ConfigurationException>クラスには、文字列を受け取るコンス トラクターがない場合にスローされます。|  
 |`name`|省略可能な属性です。<br /><br /> リスナーの名前を指定します。|  
 |`traceOutputOptions`|省略可能な属性です。<br /><br /> 指定します、<xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A>トレース リスナーのプロパティの値。|  
-|[カスタム属性]|省略可能な属性です。<br /><br /> によって識別される属性をリスナー固有の値を指定、<xref:System.Diagnostics.TraceListener.GetSupportedAttributes%2A>そのリスナー メソッドです。 <xref:System.Diagnostics.DelimitedListTraceListener.Delimiter%2A>余分な属性の例には、<xref:System.Diagnostics.DelimitedListTraceListener>クラスです。|  
+|[カスタム属性]|省略可能な属性です。<br /><br /> によって識別される属性をリスナー固有の値を指定、<xref:System.Diagnostics.TraceListener.GetSupportedAttributes%2A>そのリスナー メソッドです。 <xref:System.Diagnostics.DelimitedListTraceListener.Delimiter%2A> 余分な属性の例には、<xref:System.Diagnostics.DelimitedListTraceListener>クラスです。|  
   
 ### <a name="child-elements"></a>子要素  
   
@@ -131,7 +120,7 @@ ms.lasthandoff: 12/22/2017
 </configuration>   
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Diagnostics.TraceSource>  
  <xref:System.Diagnostics.TraceListener>  
  [トレースおよびデバッグ設定のスキーマ](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)  

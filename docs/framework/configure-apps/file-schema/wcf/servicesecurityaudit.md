@@ -1,32 +1,20 @@
 ---
 title: '&lt;serviceSecurityAudit&gt;'
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: ba517369-a034-4f8e-a2c4-66517716062b
-caps.latest.revision: 
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload:
-- dotnet
-ms.openlocfilehash: 25355acfd7bc82ccff33f68a690f3f02d1235438
-ms.sourcegitcommit: d3cfda0943364aaf6ccd574f55f584576c8a4fee
+ms.openlocfilehash: 293cd3118ace2e073933e4c124664c775902e7d8
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltservicesecurityauditgt"></a>&lt;serviceSecurityAudit&gt;
 サービス操作中にセキュリティ イベントの監査を有効にする設定を指定します。  
   
- \<system.ServiceModel>  
-\<behaviors>  
+ \<system.ServiceModel >  
+\<ビヘイビアー >  
 \<serviceBehaviors>  
 \<behavior>  
 \<serviceSecurityAudit>  
@@ -63,7 +51,7 @@ ms.lasthandoff: 03/08/2018
 |[\<behavior>](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|動作の要素を指定します。|  
   
 ## <a name="remarks"></a>コメント  
- この構成要素は、[!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] 認証イベントの監査に使用されます。 監査を有効にすると、成功した認証、失敗した認証、またはその両方を監査できます。 イベントは、3 種類のイベント ログ (アプリケーション ログ、セキュリティ ログ、およびオペレーティング システムのバージョンに対する既定のログ) のいずれかに書き込まれます。 イベント ログはすべて、Windows イベント ビューアーを使用して表示できます。  
+ この構成要素は、Windows Communication Foundation (WCF) 認証イベントの監査に使用されます。 監査を有効にすると、成功した認証、失敗した認証、またはその両方を監査できます。 イベントは、3 種類のイベント ログ (アプリケーション ログ、セキュリティ ログ、およびオペレーティング システムのバージョンに対する既定のログ) のいずれかに書き込まれます。 イベント ログはすべて、Windows イベント ビューアーを使用して表示できます。  
   
  この構成要素を使用する詳細な例についてを参照してください。[サービス監査動作](../../../../../docs/framework/wcf/samples/service-auditing-behavior.md)です。  
   
@@ -90,7 +78,7 @@ ms.lasthandoff: 03/08/2018
 </behaviors>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Configuration.ServiceSecurityAuditElement>  
  <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior>  
  [セキュリティ動作](../../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)  

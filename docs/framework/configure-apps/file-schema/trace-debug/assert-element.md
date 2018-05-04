@@ -1,13 +1,6 @@
 ---
-title: "&lt;アサート&gt;要素"
-ms.custom: 
+title: '&lt;アサート&gt;要素'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/assert
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#assert
@@ -15,16 +8,14 @@ helpviewer_keywords:
 - <assert> element
 - assert element
 ms.assetid: ef4c3229-b151-4d85-8091-e6456af9b935
-caps.latest.revision: "9"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 9670cf0faa3e7f69b8f99b09fa26741991a60481
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ab1644d23e4d6d78b62e701902e5ec39e134b38b
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltassertgt-element"></a>&lt;アサート&gt;要素
 <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType> メソッドの呼び出し時にメッセージ ボックスを表示するかどうかを指定し、メッセージの書き込み先のファイルの名前も指定します。  
@@ -51,7 +42,7 @@ ms.lasthandoff: 12/22/2017
   
 ## <a name="assertuienabled-attribute"></a>assertuienabled 属性  
   
-|値|説明|  
+|[値]|説明|  
 |-----------|-----------------|  
 |`true`|メッセージ ボックスが表示されます。 既定値です。|  
 |`false`|メッセージ ボックスは表示されません。|  
@@ -67,7 +58,7 @@ ms.lasthandoff: 12/22/2017
 |`system.diagnostics`|メッセージを収集、格納、およびルーティングするトレース リスナーとトレース スイッチを設定するレベルを指定します。|  
   
 ## <a name="remarks"></a>コメント  
- 両方の属性で、 **\<アサート >**要素は省略可能です。 メッセージを書き込むファイルを指定せずメッセージ ボックスを無効にできますか、メッセージ ボックスが有効なのままにしてメッセージを書き込むファイルを指定することができます。  
+ 両方の属性で、 **\<アサート >** 要素は省略可能です。 メッセージを書き込むファイルを指定せずメッセージ ボックスを無効にできますか、メッセージ ボックスが有効なのままにしてメッセージを書き込むファイルを指定することができます。  
   
 ## <a name="example"></a>例  
  次の例を呼び出すときに表示するメッセージ ボックスを無効にする方法を示しています。 **Debug.Assert**にメッセージを書き込むと`c:\log.txt`です。  
@@ -80,6 +71,6 @@ ms.lasthandoff: 12/22/2017
 </configuration>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Diagnostics.Debug>  
  [トレースおよびデバッグ設定のスキーマ](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)

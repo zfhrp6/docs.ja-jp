@@ -1,24 +1,12 @@
 ---
-title: "分散トランザクション"
-ms.custom: 
+title: 分散トランザクション
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 718b257c-bcb2-408e-b004-a7b0adb1c176
-caps.latest.revision: "7"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: c2de777dbd8bf6ac18db95a1cf647d259a252f8d
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 7792a719a73ca5183d57bcecc5d346153d824570
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="distributed-transactions"></a>分散トランザクション
 トランザクションとは、たとえば、1 つの単位として成功 (コミット) または失敗 (アボート) する関連タスク セットです。 A*ディストリビュートされたトランザクション*いくつかのリソースに影響するトランザクションです。 分散トランザクションがコミットされるためには、すべての参加要素が、すべてのデータ変更が永久的な変更となることを保証する必要があります。 システム クラッシュその他の予期しない出来事が発生した場合でも、変更は保持されます。 1 つの参加要素がこの保証に失敗しただけでも、トランザクション全体が失敗し、トランザクションのスコープ内のデータに対する変更がロールバックされます。  
@@ -44,7 +32,7 @@ ms.lasthandoff: 01/17/2018
   
  分散トランザクションへの参加は、特にビジネス オブジェクトをプールする場合に適切です。 ビジネス オブジェクトが、開かれている接続と共にプールされている場合は、その接続を開くときだけ、自動トランザクション参加が行われます。 プールされているビジネス オブジェクトを使用して複数のトランザクションが実行される場合、そのオブジェクトの開かれている接続は、新しく開始されるトランザクションには自動参加しません。 この場合には、接続の自動トランザクション参加を無効にし、`EnlistTransaction` を使用して、接続をトランザクションに参加させることができます。  
   
- `EnlistTransaction`型の 1 つの引数<xref:System.Transactions.Transaction>既存のトランザクションへの参照されています。 接続の `EnlistTransaction` メソッドを呼び出した後、接続を使用してデータ ソースに対して行ったすべての変更は、トランザクションに組み込まれます。 null 値を渡すことで、現在の分散トランザクションから接続の参加が解除されます。 この接続は、`EnlistTransaction` を呼び出す前に開く必要があることに注意してください。  
+ `EnlistTransaction` 型の 1 つの引数<xref:System.Transactions.Transaction>既存のトランザクションへの参照されています。 接続の `EnlistTransaction` メソッドを呼び出した後、接続を使用してデータ ソースに対して行ったすべての変更は、トランザクションに組み込まれます。 null 値を渡すことで、現在の分散トランザクションから接続の参加が解除されます。 この接続は、`EnlistTransaction` を呼び出す前に開く必要があることに注意してください。  
   
 > [!NOTE]
 >  一度接続を明示的にトランザクションに参加させると、最初のトランザクションが終了するまでは、参加を解除したり別のトランザクションに参加させたりすることはできません。  
@@ -58,7 +46,7 @@ ms.lasthandoff: 01/17/2018
 ## <a name="configuring-distributed-transactions"></a>分散トランザクションの設定  
  分散トランザクションを使用するには、ネットワーク上の MS DTC を有効にする必要があります。 Windows ファイアウォールを有効にしている場合は、MS DTC サービスでネットワークを使用するか MS DTC ポートを開くことができるようにする必要があります。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [トランザクションと同時実行](../../../../docs/framework/data/adonet/transactions-and-concurrency.md)  
  [SQL Server と System.Transactions の統合](../../../../docs/framework/data/adonet/system-transactions-integration-with-sql-server.md)  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

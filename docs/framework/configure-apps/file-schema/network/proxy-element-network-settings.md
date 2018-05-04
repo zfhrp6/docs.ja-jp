@@ -1,13 +1,6 @@
 ---
-title: "&lt;プロキシ&gt;要素 (ネットワーク設定)"
-ms.custom: 
+title: '&lt;プロキシ&gt;要素 (ネットワーク設定)'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/defaultProxy/proxy
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#proxy
@@ -15,22 +8,20 @@ helpviewer_keywords:
 - <proxy> element
 - proxy element
 ms.assetid: 37a548d8-fade-4ac5-82ec-b49b6c6cb22a
-caps.latest.revision: "20"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: b0b397e66e0f73d10f482bc9151a6fbacf3e774d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b5ae716994f9b8222a633699367c94480179c97b
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltproxygt-element-network-settings"></a>&lt;プロキシ&gt;要素 (ネットワーク設定)
 プロキシ サーバーを定義します。  
   
  \<configuration>  
-\<system.net >  
+\<system.net>  
 \<defaultProxy >  
 \<プロキシ >  
   
@@ -54,7 +45,7 @@ ms.lasthandoff: 12/22/2017
 |**属性**|**説明**|  
 |-------------------|---------------------|  
 |`autoDetect`|プロキシが自動的に検出されたかどうかを指定します。 既定値は `unspecified` です。|  
-|`bypassonlocal`|ローカル リソースに対してプロキシをバイパスするかどうかを指定します。 ローカル リソースには、ローカル サーバー (http://localhost、http://loopback、または http://127.0.0.1) とピリオド (http://webserver) のない URI が含まれます。 既定値は `unspecified` です。|  
+|`bypassonlocal`|ローカル リソースに対してプロキシをバイパスするかどうかを指定します。 ローカル リソースには、ローカル サーバーが含まれます (http://localhost、 http://loopback、またはhttp://127.0.0.1)およびピリオドを付けない URI (http://webserver)です。 既定値は `unspecified` です。|  
 |`proxyaddress`|プロキシに使用する URI を指定します。|  
 |`scriptLocation`|構成スクリプトの場所を指定します。|  
 |`usesystemdefault`|Internet Explorer のプロキシ設定を使用するかどうかを指定します。 場合設定`true`、後続する属性には、Internet Explorer のプロキシ設定がよりも優先されます。 既定値は `unspecified` です。|  
@@ -101,6 +92,6 @@ ms.lasthandoff: 12/22/2017
 </configuration>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Net.WebProxy?displayProperty=nameWithType>  
  [ネットワーク設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

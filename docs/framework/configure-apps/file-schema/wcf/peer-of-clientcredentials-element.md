@@ -1,34 +1,22 @@
 ---
-title: "&lt;clientCredentials&gt; 要素の &lt;peer&gt;"
-ms.custom: 
+title: '&lt;clientCredentials&gt; 要素の &lt;peer&gt;'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 505bd987-0042-4622-b68e-94f439729d53
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c3479b52c6e06b7b9ebd69d46780e8dca70d2ef7
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 9d64f682f67dcc7c4f0c0f1600938f8ff9ac0dd6
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltpeergt-of-ltclientcredentialsgt-element"></a>&lt;clientCredentials&gt; 要素の &lt;peer&gt;
 ピアツーピア クライアントの認証時に使用される資格情報を指定します。  
   
- \<system.ServiceModel>  
-\<behaviors>  
+ \<system.ServiceModel >  
+\<ビヘイビアー >  
 \<endpointBehaviors>  
 \<behavior>  
 \<clientCredentials>  
-\<peer>  
+\<ピア >  
   
 ## <a name="syntax"></a>構文  
   
@@ -63,7 +51,7 @@ ms.lasthandoff: 01/19/2018
 ## <a name="remarks"></a>コメント  
  この構成要素は、ピア ノードがメッシュ内の他のノードに対して自身を認証するために使用する資格情報と、ピア ノードが他のピア ノードを認証するために使用する認証設定を指定します。 詳細については、次を参照してください。[ピア チャネル メッセージ認証](http://msdn.microsoft.com/library/80e73386-514e-4c30-9e4a-b9ca8c173a95)と[ピア チャネル アプリケーションのセキュリティで保護する](../../../../../docs/framework/wcf/feature-details/securing-peer-channel-applications.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Configuration.ClientCredentialsElement>  
  <xref:System.ServiceModel.Description.ClientCredentials>  
  <xref:System.ServiceModel.Configuration.PeerCredentialElement>  

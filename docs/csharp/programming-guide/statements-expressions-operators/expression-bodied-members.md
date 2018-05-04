@@ -1,19 +1,20 @@
 ---
-title: "式形式のメンバー (C# プログラミング ガイド)"
+title: 式形式のメンバー (C# プログラミング ガイド)
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 helpviewer_keywords:
 - expression-bodied members[C#]
 - C# language, expresion-bodied members
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ead1e474fe87bd9fbd0f972bc0f2fc4fefc12ecf
-ms.sourcegitcommit: 7e99f66ef09d2903e22c789c67ff5a10aa953b2f
+ms.openlocfilehash: 5690a2ddb9127bb0c9b06d3607e3d105fca9a2e8
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="expression-bodied-members-c-programming-guide"></a>式形式のメンバー (C# プログラミング ガイド)
 式本体の定義を使用すると、簡潔でわかりやすい形式でメンバーの実装を指定できます。 サポートされる任意のメンバー (メソッドやプロパティなど) に関するロジックが単一の式で構成される場合は、常に式本体の定義を使用できます。 式本体の定義には、次の一般的な構文があります。
@@ -24,16 +25,16 @@ member => expression;
 
 この *expression* には有効な式を指定します。 
 
-式本体の定義のサポートは、メソッドとプロパティの get アクセサーのために C# 6 で導入され、C# 7 で拡張されました。 式本体の定義は、次の表の方メンバーで使用できます。 
+式本体の定義のサポートは、メソッドとプロパティの get アクセサーのために C# 6 で導入され、C# 7.0 で拡張されました。 式本体の定義は、次の表の方メンバーで使用できます。 
 
 |メンバー  |サポートが開始されたバージョン |
 |---------|---------|
 |[メソッド](#methods)  |C# 6 |
-|[コンストラクター](#constructors)   |C# 7 |
-|[ファイナライザー](#finalizers)     |C# 7 |
+|[コンストラクター](#constructors)   |C# 7.0 |
+|[ファイナライザー](#finalizers)     |C# 7.0 |
 |[プロパティの取得](#property-get-statements)  |C# 6 |
-|[プロパティの設定](#property-set-statements)  |C# 7 |
-|[インデクサー](#indexers)       |C# 7 |
+|[プロパティの設定](#property-set-statements)  |C# 7.0 |
+|[インデクサー](#indexers)       |C# 7.0 |
 
 ## <a name="methods"></a>メソッド
 

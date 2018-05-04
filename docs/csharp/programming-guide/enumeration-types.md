@@ -1,8 +1,9 @@
 ---
-title: "列挙型 (C# プログラミング ガイド)"
+title: 列挙型 (C# プログラミング ガイド)
 ms.date: 09/10/2017
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 helpviewer_keywords:
 - enumerations [C#]
@@ -10,14 +11,14 @@ helpviewer_keywords:
 - C# Language, enums
 - bit flags [C#]
 ms.assetid: 64a9b731-9e3c-4336-8a09-018db2aa10b7
-caps.latest.revision: "17"
+caps.latest.revision: 17
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 13ec7d5d2a44cddb2b7f440c8d811c2e4060d432
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: cdaa609acfa34f3b0b3073d88f09fe735d48e9a2
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="enumeration-types-c-programming-guide"></a>列挙型 (C# プログラミング ガイド)
 
@@ -47,7 +48,7 @@ Console.WriteLine("{0} is month number #{1}.", thisMonth, monthNumber);
 
 - 変数に対して有効な値をクライアント コードのために明確に指定します。
 
-- [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] の IntelliSense で、定義済みの値が一覧表示されます。
+- Visual Studio の IntelliSense で、定義済みの値が一覧表示されます。
 
 列挙子一覧に要素の値を指定しないとき、値は自動的に 1 ずつ増えます。 前の例では、`Day.Sunday` の値が 0 で、`Day.Monday` の値が 1 です。その後も同様に 1 ずつ増えます。 新しい `Day` オブジェクトを作成するとき、明示的に値を割り当てない場合、`Day.Sunday` の既定値 (0) が与えられます。 列挙を作成するときは、最も論理的な既定値を選択し、それにゼロの値を与えます。 それにより、列挙を作成したときに明示的に値を割り当てない場合、すべての列挙にその既定値が与えられます。
 

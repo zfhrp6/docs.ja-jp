@@ -1,27 +1,15 @@
 ---
-title: "ジェネリック メソッド Field および SetField (LINQ to DataSet)"
-ms.custom: 
+title: ジェネリック メソッド Field および SetField (LINQ to DataSet)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 1883365f-9d6c-4ccb-9187-df309f47706d
-caps.latest.revision: "2"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 6281f2fdd00f210f09c97861d2ea723d259af004
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 2f7d5cc5689914db2107febadf60bee6da1c2b72
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="generic-field-and-setfield-methods-linq-to-dataset"></a>ジェネリック メソッド Field および SetField (LINQ to DataSet)
 [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] では、<xref:System.Data.DataRow> クラスの拡張メソッドとして、列値にアクセスするための <xref:System.Data.DataRowExtensions.Field%2A> メソッドおよび <xref:System.Data.DataRowExtensions.SetField%2A> メソッドが提供されています。 開発者はこれらのメソッドを使用することで、列値に容易にアクセスできます。特に強化されている点は Null 値の扱いです。 <xref:System.Data.DataSet> が <xref:System.DBNull.Value> を使って Null 値を表現するのに対し、[!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] では、[!INCLUDE[dnprdnlong](../../../../includes/dnprdnlong-md.md)] で導入された Null 許容型が使用されます。 既存の列アクセサーを使用して<xref:System.Data.DataRow>戻りオブジェクトを適切な型をキャストする必要があります。 特定のフィールドで、 <xref:System.Data.DataRow> null には、null 値を明示的にチェックする必要がありますを返すため<xref:System.DBNull.Value>別の型をスローに暗黙的にキャストして、<xref:System.InvalidCastException>です。 次の例では場合、<xref:System.Data.DataRow.IsNull%2A>インデクサーが返される場合は、例外がスローされます、null 値をチェックするメソッドが使用されませんでした<xref:System.DBNull.Value>およびにキャストしようとした、<xref:System.String>です。  
@@ -40,5 +28,5 @@ ms.lasthandoff: 01/17/2018
   
  <xref:System.Data.DataRowExtensions.SetField%2A> メソッド自体は、型変換を一切実行しません。 ただし、型変換がまったく発生しないということではありません。 <xref:System.Data.DataRowExtensions.SetField%2A>メソッドの公開、[!INCLUDE[ado_whidbey_long](../../../../includes/ado-whidbey-long-md.md)]の動作、<xref:System.Data.DataRow>クラスです。 型変換を実行して、<xref:System.Data.DataRow>オブジェクトと変換後の値に保存される、<xref:System.Data.DataRow>オブジェクト。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Data.DataRowExtensions>

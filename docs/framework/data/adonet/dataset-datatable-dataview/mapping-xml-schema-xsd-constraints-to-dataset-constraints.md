@@ -1,24 +1,12 @@
 ---
-title: "XML スキーマ (XSD) 制約の DataSet 制約への割り当て"
-ms.custom: 
+title: XML スキーマ (XSD) 制約の DataSet 制約への割り当て
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 3d0d1a4b-9104-434f-ac04-6c01ab5716b5
-caps.latest.revision: "4"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: f403dc974e4fe67d239688f587061cd23a8deff6
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 0a23e7a7ab6456125559ffd8fa19ffa5eba9335d
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="mapping-xml-schema-xsd-constraints-to-dataset-constraints"></a>XML スキーマ (XSD) 制約の DataSet 制約への割り当て
 XML スキーマ定義言語 (XSD) を使用すると、定義する要素と属性で制約を指定できます。 内のリレーショナル スキーマに XML スキーマをマップするとき、 <xref:System.Data.DataSet>、XML スキーマの制約は、テーブルや列内で適切なリレーショナル制約にマップされて、**データセット**です。  
@@ -54,5 +42,5 @@ XML スキーマ定義言語 (XSD) を使用すると、定義する要素と属
  [XML スキーマ (XSD) からの DataSet リレーションの生成](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/generating-dataset-relations-from-xml-schema-xsd.md)  
  テーブルの列間のリレーションを作成するために使用する XML スキーマの要素について説明します、**データセット**です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

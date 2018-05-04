@@ -1,29 +1,17 @@
 ---
 title: '&lt;endToEndTracing&gt;'
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 5034f5de-bb60-4157-9ad4-58aaade094e0
-caps.latest.revision: "2"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a43801f4c45d7ac518c3b24cadc58ffbec40adb4
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 855f579241dfd495e7f8603ce3bd57aa2556ca2d
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltendtoendtracinggt"></a>&lt;endToEndTracing&gt;
 サービス アプリケーションの実行中にエンドツーエンドのトレースのさまざまな側面を有効または無効にするための構成要素。  
   
- \<システムです。ServiceModel >  
+ \<system.ServiceModel >  
 \<診断 >  
 \<endToEndTracing >  
   
@@ -59,7 +47,7 @@ ms.lasthandoff: 12/22/2017
 |-------------|-----------------|  
 |[\<診断 >](../../../../../docs/framework/configure-apps/file-schema/wcf/diagnostics.md)|管理者が行うランタイムの検査と管理の WCF 設定を定義します。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Configuration.DiagnosticSection>  
  <xref:System.ServiceModel.Diagnostics>  
  <xref:System.ServiceModel.Configuration.DiagnosticSection.EndToEndTracing%2A>  

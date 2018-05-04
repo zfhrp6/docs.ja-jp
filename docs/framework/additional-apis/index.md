@@ -1,31 +1,19 @@
 ---
 title: 追加のクラス ライブラリと API
-ms.custom: ''
 ms.date: 01/29/2018
-ms.prod: .net-framework-oob
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - Additional class libraries
 - Additional managed libraries
 - .NET Framework out-of-band releases
 - out-of-band releases
 ms.assetid: cf2d9006-b631-4e5d-81cd-20aab78c60f1
-caps.latest.revision: 12
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: d9ceb1ad24d4ba87fab7713ba61fed91eef26c4d
-ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
+ms.openlocfilehash: bdba02feb8cacc6ab1886c12f88716184aa2a81a
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="additional-class-libraries-and-apis"></a>追加のクラス ライブラリと API
 
@@ -57,7 +45,7 @@ ms.lasthandoff: 02/01/2018
 | [System.Net.Connection クラス](../../../docs/framework/additional-apis/connection.md) |
 | [System.Net.Connection.m\_WriteList フィールド](../../../docs/framework/additional-apis/m_writelist.md) |
 | [System.Net.ConnectionGroup クラス](../../../docs/framework/additional-apis/connectiongroup.md) |
-| [System.Net.ConnectionGroup.m\_ConnectionList Field](../../../docs/framework/additional-apis/m_connectionlist.md) |
+| [System.Net.ConnectionGroup.m\_ConnectionList フィールド](../../../docs/framework/additional-apis/m_connectionlist.md) |
 | [System.Net.CoreResponseData クラス](../../../docs/framework/additional-apis/coreresponsedata.md) |
 | [System.Net.CoreResponseData.m\_ResponseHeaders Field](../../../docs/framework/additional-apis/coreresponsedata_m_responseheaders.md) |
 | [System.Net.CoreResponseData.m\_StatusCode フィールド](../../../docs/framework/additional-apis/coreresponsedata_m_statuscode.md) |

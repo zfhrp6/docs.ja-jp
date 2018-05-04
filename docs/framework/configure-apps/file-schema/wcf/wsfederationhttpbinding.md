@@ -1,33 +1,19 @@
 ---
 title: '&lt;wsFederationHttpBinding&gt;'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - wsFederationBinding element
 ms.assetid: 9c3312b4-2137-4e71-bf3f-de1cf8e9be79
-caps.latest.revision: ''
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: f5d4e55f7ad2d4a347d51c3cd79647c070c11e2d
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: d89d0aeb68aed91b28ca7358a6140e171d3b36b2
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltwsfederationhttpbindinggt"></a>&lt;wsFederationHttpBinding&gt;
 WS-Federation をサポートするバインディングを定義します。  
   
- \<system.ServiceModel>  
+ \<system.ServiceModel >  
 \<bindings>  
 wsFederationBinding 要素  
   
@@ -150,7 +136,7 @@ wsFederationBinding 要素
 |[\<bindings>](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|この要素には、標準バインディングおよびカスタム バインドのコレクションが保持されます。|  
   
 ## <a name="remarks"></a>コメント  
- フェデレーションは、複数のシステム間で認証と承認用の ID を共有する機能です。 これらの ID は、ユーザーまたはコンピューターを参照できます。 フェデレーション HTTP は、SOAP セキュリティと混合モード セキュリティをサポートしますが、トランスポート セキュリティの単独使用はサポートしません。 このバインドは、WS-Federation プロトコルに対して [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] サポートを提供します。 このバインディングで構成されたサービスは、HTTP トランスポートを使用する必要があります。  
+ フェデレーションは、複数のシステム間で認証と承認用の ID を共有する機能です。 これらの ID は、ユーザーまたはコンピューターを参照できます。 フェデレーション HTTP は、SOAP セキュリティと混合モード セキュリティをサポートしますが、トランスポート セキュリティの単独使用はサポートしません。 このバインディングは、Ws-federation プロトコルの Windows Communication Foundation (WCF) のサポートを提供します。 このバインディングで構成されたサービスは、HTTP トランスポートを使用する必要があります。  
   
  バインドは、バインド要素のスタックで構成されます。 内の要素をバインディングのスタック  
   

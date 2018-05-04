@@ -1,28 +1,29 @@
 ---
-title: "C# 言語と .NET Framework の概要"
-description: "C# と .NET の基本を説明します。 C# 言語および .NET エコシステムの概要をご確認ください。"
+title: C# 言語と .NET Framework の概要
+description: C# と .NET の基本を説明します。 C# 言語および .NET エコシステムの概要をご確認ください。
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: get-started-article
 helpviewer_keywords:
 - C# language, about C# language
 - Visual C#, about
 ms.assetid: 0a2dff4e-cd84-42ff-8141-e89889b24081
-caps.latest.revision: "32"
+caps.latest.revision: 32
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: b2ffb641f436a41c97a94a6ec117f6087851d482
-ms.sourcegitcommit: 8bde7a3432f30fc771079744955c75c58c4eb393
+ms.openlocfilehash: 9713b61e9af25e6acba2d6b11b46f2e99f1f1800
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/20/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="introduction-to-the-c-language-and-the-net-framework"></a>C# 言語と .NET Framework の概要
 C# は、タイプ セーフで洗練されたオブジェクト指向言語です。C# を使用すると、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] で稼働する、安全で信頼性の高いさまざまなアプリケーションを構築できます。 C# を使用すると、Windows クライアント アプリケーション、XML Web サービス、分散コンポーネント、クライアント/サーバー アプリケーション、データベース アプリケーションなど、さまざまなアプリケーションを作成できます。 Visual C# には、高度なコード エディター、便利なユーザー インターフェイス デザイナー、統合デバッガーなど、C# 言語と [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] に基づいたアプリケーション開発をより簡単にする多数のツールが用意されています。  
   
 > [!NOTE]
-> [!INCLUDE[csprcs](~/includes/csprcs-md.md)] のドキュメントは、基本的なプログラミング概念を理解している方を対象に書かれています。 初心者である場合、Web で入手できる [!INCLUDE[csprcsxpr](~/includes/csprcsxpr-md.md)] が参考になります。 C# に関する書籍や Web リソースを利用して、実践的なプログラミング スキルを身に付けることもできます。  
+> Visual C# のドキュメントは、基本的なプログラミング概念を理解している方を対象に書かれています。 初心者である場合、Web で入手できる Visual C# Express が参考になります。 C# に関する書籍や Web リソースを利用して、実践的なプログラミング スキルを身に付けることもできます。  
   
 ## <a name="c-language"></a>C# 言語  
  C# の構文は表現力が豊かですが、単純ですぐに覚えることができます。 C、C++、または Java に慣れていれば、C# の中かっこ ({}) 構文をすぐに理解できます。 これらの言語のいずれかを理解していると、一般に、C# での開発を短期間で始めることができます。 C# 構文では、C++ の複雑な部分が数多く簡略化され、null 許容値型、列挙体、デリゲート、ラムダ式、ダイレクト メモリ アクセスなど、Java にはない強力な機能が実装されました。 C# はジェネリック メソッドおよびジェネリック型をサポートしているため、タイプ セーフおよびパフォーマンスが向上し、反復子もサポートしているため、クライアント コードで簡単に使用できるカスタムの反復動作をコレクション クラスの実装側が定義できます。 [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] 式により、厳密に型指定されたクエリは高度な言語構成要素になります。  

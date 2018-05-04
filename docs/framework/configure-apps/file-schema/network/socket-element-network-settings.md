@@ -1,13 +1,6 @@
 ---
-title: "&lt;ソケット&gt;要素 (ネットワーク設定)"
-ms.custom: 
+title: '&lt;ソケット&gt;要素 (ネットワーク設定)'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/settings/socket
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#socket
@@ -15,23 +8,21 @@ helpviewer_keywords:
 - <socket> element
 - socket element
 ms.assetid: 366c634c-7d16-478f-aedf-053eda94a1a0
-caps.latest.revision: "21"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: fefb8e119d428d86501e1c8cdd5eec5ef0809cbd
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 995a89dd67664fd6a408f88f20f6837d2dbaaad4
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltsocketgt-element-network-settings"></a>&lt;ソケット&gt;要素 (ネットワーク設定)
 ソケット操作が完了ポートを使用するかどうかを指定します。  
   
  \<configuration>  
-\<system.net >  
-\<設定 >  
+\<system.net>  
+\<settings>  
 \<ソケット >  
   
 ## <a name="syntax"></a>構文  
@@ -62,7 +53,7 @@ ms.lasthandoff: 12/22/2017
   
 |**要素**|**説明**|  
 |-----------------|---------------------|  
-|[設定](../../../../../docs/framework/configure-apps/file-schema/network/settings-element-network-settings.md)|<xref:System.Net> 名前空間の基本的なネットワーク オプションを構成します。|  
+|[settings](../../../../../docs/framework/configure-apps/file-schema/network/settings-element-network-settings.md)|<xref:System.Net> 名前空間の基本的なネットワーク オプションを構成します。|  
   
 ## <a name="remarks"></a>コメント  
  `alwaysUseCompletionPortsForAccept`と`alwaysUseCompletionPortsForConnect`にあるクラスで属性を使用して、完了ポートの使用に関する既定の動作を指定、 <xref:System.Net.Sockets?displayProperty=nameWithType>.namespace です。 完了ポートは、高パフォーマンス サーバー アプリケーションに適しています。  
@@ -114,7 +105,7 @@ ms.lasthandoff: 12/22/2017
 </configuration>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Net?displayProperty=nameWithType>  
  <xref:System.Net.Configuration.SocketElement?displayProperty=nameWithType>  
  <xref:System.Net.Sockets?displayProperty=nameWithType>  

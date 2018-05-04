@@ -1,26 +1,12 @@
 ---
 title: Entity SQL リファレンス
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-ado
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 61ce7ee1-ffe2-477d-8a9f-835b0a11d900
-caps.latest.revision: ''
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload:
-- dotnet
-ms.openlocfilehash: ac05ec8a8732da383a4e33e84c669aa29660a0da
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: a114bf9b58da255f560564d3fedfee598adb22b2
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="entity-sql-reference"></a>Entity SQL リファレンス
 このセクションには、[!INCLUDE[esql](../../../../../../includes/esql-md.md)] 参照に関するトピックがあります。 このトピックでは、カテゴリ別に [!INCLUDE[esql](../../../../../../includes/esql-md.md)] 演算子をグループ化し、その概要を説明します。  
@@ -59,7 +45,7 @@ ms.lasthandoff: 03/23/2018
 |[= (等しい)](../../../../../../docs/framework/data/adonet/ef/language-reference/equals-entity-sql.md)|2 つの式の等価性を比較します。|  
 |[> (より大きい)](../../../../../../docs/framework/data/adonet/ef/language-reference/greater-than-entity-sql.md)|2 つの式を比較して、左の式の値が右の式の値よりも大きいかどうかを判別します。|  
 |[>= (以上)](../../../../../../docs/framework/data/adonet/ef/language-reference/greater-than-or-equal-to-entity-sql.md)|2 つの式を比較して、左の式の値が右の式の値以上であるかどうかを判別します。|  
-|[IS &#91;NOT&#93; NULL](../../../../../../docs/framework/data/adonet/ef/language-reference/isnull-entity-sql.md)|クエリ式が NULL かどうかを調べます。|  
+|[&AMP;#91;いない&AMP;#93;NULL](../../../../../../docs/framework/data/adonet/ef/language-reference/isnull-entity-sql.md)|クエリ式が NULL かどうかを調べます。|  
 |[< (より小さい)](../../../../../../docs/framework/data/adonet/ef/language-reference/less-than-entity-sql.md)|2 つの式を比較して、左の式の値が右の式の値よりも小さいかどうかを判別します。|  
 |[<= (以下)](../../../../../../docs/framework/data/adonet/ef/language-reference/less-than-or-equal-to-entity-sql.md)|2 つの式を比較して、左の式の値が右の式の値以下であるかどうかを判別します。|  
 |[&AMP;#91;いない&AMP;#93;BETWEEN](../../../../../../docs/framework/data/adonet/ef/language-reference/between-entity-sql.md)|式の結果が指定の範囲内の値になるかどうかを判断します。|  
@@ -72,7 +58,7 @@ ms.lasthandoff: 03/23/2018
 |演算子|説明|  
 |--------------|-----------------|  
 |[& & (論理 AND)](../../../../../../docs/framework/data/adonet/ef/language-reference/and-entity-sql.md)|論理 AND。|  
-|[!(論理 NOT)](../../../../../../docs/framework/data/adonet/ef/language-reference/not-entity-sql.md)|論理 NOT。|  
+|[演算子(論理 NOT)](../../../../../../docs/framework/data/adonet/ef/language-reference/not-entity-sql.md)|論理 NOT。|  
 |[&#124;&#124;(論理 OR)](../../../../../../docs/framework/data/adonet/ef/language-reference/or-entity-sql.md)|論理 OR。|  
 |[CASE](../../../../../../docs/framework/data/adonet/ef/language-reference/case-entity-sql.md)|一連のブール式を評価して結果を決定します。|  
 |[THEN](../../../../../../docs/framework/data/adonet/ef/language-reference/then-entity-sql.md)|結果、[とき](http://msdn.microsoft.com/library/6233fe9f-00b0-460e-8372-64e138a5f998)句を true に評価された場合。|  
@@ -113,7 +99,7 @@ ms.lasthandoff: 03/23/2018
 |[EXCEPT](../../../../../../docs/framework/data/adonet/ef/language-reference/except-entity-sql.md)|EXCEPT オペランドの左辺のクエリ式から返される結果のうち、右辺のクエリ式でも返される結果を除いた、重複しない値のコレクションを返します。|  
 |[&AMP;#91;いない&AMP;#93;EXISTS](../../../../../../docs/framework/data/adonet/ef/language-reference/exists-entity-sql.md)|コレクションが空かどうかを調べます。|  
 |[FLATTEN](../../../../../../docs/framework/data/adonet/ef/language-reference/flatten-entity-sql.md)|コレクションのコレクションをフラット化して単一のコレクションに変換します。|  
-|[&#91;NOT&#93; IN](../../../../../../docs/framework/data/adonet/ef/language-reference/in-entity-sql.md)|コレクション内に一致する値があるかどうかを調べます。|  
+|[&AMP;#91;いない&AMP;#93;IN](../../../../../../docs/framework/data/adonet/ef/language-reference/in-entity-sql.md)|コレクション内に一致する値があるかどうかを調べます。|  
 |[INTERSECT](../../../../../../docs/framework/data/adonet/ef/language-reference/intersect-entity-sql.md)|INTERSECT オペランドの左右両方のクエリ式によって返される個別の値のコレクションを返します。|  
 |[OVERLAPS](../../../../../../docs/framework/data/adonet/ef/language-reference/overlaps-entity-sql.md)|2 つのコレクションに共通の要素が存在するかどうかを調べます。|  
 |[SET](../../../../../../docs/framework/data/adonet/ef/language-reference/set-entity-sql.md)|重複する要素をすべて除外した新しいコレクションを生成することによって、オブジェクトのコレクションを 1 つの集合に変換するために使用されます。|  

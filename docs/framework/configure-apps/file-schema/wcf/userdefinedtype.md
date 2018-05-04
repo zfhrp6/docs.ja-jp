@@ -1,30 +1,18 @@
 ---
 title: '&lt;userDefinedType&gt;'
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 0f70ec06-8249-4f0c-9f49-b4df59985fb8
-caps.latest.revision: "5"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 9bb67a585d7abf3e885c483145215ed4fb9f92be
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ffa9480312c278097ae110c686fb507209c117e1
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltuserdefinedtypegt"></a>&lt;userDefinedType&gt;
 サービス コントラクトに含まれるユーザー定義型 (UDT) を表します。  
   
- \<システムです。ServiceModel >  
-\<comContracts >  
+ \<system.ServiceModel >  
+\<comContracts>  
 \<comContract >  
 \<userDefinedTypes >  
   
@@ -102,10 +90,10 @@ ms.lasthandoff: 12/22/2017
   
  サービスを初期化する場合、統合ランタイムは、指定された型を検索し、指定されたコントラクトで既知の型のコレクションにそれらを追加します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Configuration.ComContractElement.UserDefinedTypes%2A>  
  <xref:System.ServiceModel.Configuration.ComUdtElementCollection>  
  <xref:System.ServiceModel.Configuration.ComUdtElement>  
- [\<comContracts >](../../../../../docs/framework/configure-apps/file-schema/wcf/comcontracts.md)  
+ [\<comContracts>](../../../../../docs/framework/configure-apps/file-schema/wcf/comcontracts.md)  
  [COM+ アプリケーションとの統合](../../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications.md)  
  [方法 : COM+ サービス設定を構成する](../../../../../docs/framework/wcf/feature-details/how-to-configure-com-service-settings.md)

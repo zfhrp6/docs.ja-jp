@@ -1,25 +1,26 @@
 ---
-title: "Visual Basic でのアプリケーション ログの使用"
-ms.custom: 
+title: Visual Basic でのアプリケーション ログの使用
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - logs, application
 - application event logs, Visual Basic
 - application event logs
 ms.assetid: 2581afd1-5791-4bc4-86b2-46244e9fe468
-caps.latest.revision: "21"
+caps.latest.revision: 21
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: ea5f3699ca5a1b6b0859ac266656deb933839d3d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 40cad53cd9283a99a93cde79616151e77489e7bb
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="working-with-application-logs-in-visual-basic"></a>Visual Basic でのアプリケーション ログの使用
 `My.Applicaton.Log` オブジェクトと `My.Log` オブジェクトを使用すると、ログおよびトレース情報をログに簡単に書き込むことができます。  
@@ -38,7 +39,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="where-messages-are-logged"></a>メッセージがログに記録される場所  
  アセンブリに構成ファイルがない場合、 `My.Application.Log` オブジェクトと `My.Log` オブジェクトは <xref:System.Diagnostics.DefaultTraceListener> クラスを介してアプリケーションのデバッグ出力への書き込みを行います。 また、`My.Application.Log` オブジェクトは <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener> クラスを介してアセンブリのログ ファイルへの書き込みを行い、`My.Log` オブジェクトは、<xref:System.Web.WebPageTraceListener> クラスを介して ASP.NET Web ページの出力への書き込みを行います。  
   
- デバッグ出力は、アプリケーションをデバッグ モードで実行中のときに [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] **Output** window when running your application in debug mode. **[出力]** ウィンドウを開くには、 **[デバッグ]** メニュー項目をクリックし、 **[ウィンドウ]**をポイントして、 **[出力]**をクリックします。 **[出力]** ウィンドウで **[出力元の表示]** ボックスの **[デバッグ]** を選択します。  
+ デバッグ出力は、アプリケーションをデバッグ モードで実行中のときに Visual Studio **[出力]** ウィンドウで参照できます。 **[出力]** ウィンドウを開くには、 **[デバッグ]** メニュー項目をクリックし、 **[ウィンドウ]** をポイントして、 **[出力]** をクリックします。 **[出力]** ウィンドウで **[出力元の表示]** ボックスの **[デバッグ]** を選択します。  
   
  既定では、 `My.Application.Log` がログ ファイルを書き込む先は、ユーザーのアプリケーション データ用のパスです。 このパスは、 <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.FullLogFileName%2A> オブジェクトの <xref:Microsoft.VisualBasic.Logging.Log.DefaultFileLogWriter%2A> プロパティから取得できます。 このパスの形式は次のとおりです。  
   
@@ -108,6 +109,6 @@ ms.lasthandoff: 11/21/2017
   
 -   **サービス拒否を避けます。** アプリケーションがログに書き込む情報が多すぎると、ログが満杯になったり、重要な情報を見つけにくくなったりする可能性があります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:Microsoft.VisualBasic.Logging.Log?displayProperty=nameWithType>  
  [アプリケーションからの情報のログ記録](../../../../visual-basic/developing-apps/programming/log-info/logging-information-from-the-application.md)

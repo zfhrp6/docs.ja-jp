@@ -1,27 +1,15 @@
 ---
-title: "DataAdapter DataTable と DataColumn のマップ"
-ms.custom: 
+title: DataAdapter DataTable と DataColumn のマップ
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: d023260a-a66a-4c39-b8f4-090cd130e730
-caps.latest.revision: "3"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: e104ba75026c2ff387eb7c74b11c505e34085f41
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 1b426dbcdc78ecfddeac003616993849ce60b89c
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="dataadapter-datatable-and-datacolumn-mappings"></a>DataAdapter DataTable と DataColumn のマップ
 A **DataAdapter** 0 個以上のコレクションを含んでいます<xref:System.Data.Common.DataTableMapping>内のオブジェクトの**TableMappings**プロパティです。 A **DataTableMapping** 、データ ソースに対するクエリから返されるデータの間のマスター マッピングを提供し、<xref:System.Data.DataTable>です。 **DataTableMapping**の代わりに名前を渡すことができます、 **DataTable**名、**塗りつぶし**のメソッド、 **DataAdapter**です。 次の例を作成、 **DataTableMapping**という**AuthorsMapping**の**作成者**テーブル。  
@@ -108,7 +96,7 @@ adapter.TableMappings.Add("Customers1", "Orders")
 adapter.Fill(customersDataSet, "Customers")  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [DataAdapter と DataReader](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)  
  [ADO.NET でのデータの取得および変更](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

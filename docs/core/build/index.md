@@ -1,25 +1,23 @@
 ---
 title: ソースから .NET Core をビルドする
 description: ソース コードから .NET Core と .NET Core CLI をビルドする方法を説明します。
-keywords: .NET, .NET Core, ソース, ビルド
 author: bleroy
 ms.author: mairaw
 ms.date: 06/28/2017
-ms.topic: article
-ms.prod: .net-core
+ms.topic: conceptual
+ms.prod: dotnet-core
 ms.devlang: dotnet
-ms.assetid: 8b49079c-6ede-429a-92d7-ecd2fda1ab0e
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: a14e8dbf3f9be9910a2c50cfbcb3f52f4e7385e1
-ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
+ms.openlocfilehash: 36939da689a1db06a6d9f1b7e816e6e5cabcf59d
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="build-net-core-from-source"></a>ソースから .NET Core をビルドする
 
-ソース コードから .NET Core をビルドできることは、複数の方法において重要なことです。.NET Core を新しいプラットフォームに簡単に移植でき、製品に対するコントリビューションと修正を有効にすることができ、また、.NET のカスタム バージョンを作成することができます。
+ソース コードから .NET Core をビルドできることは、複数の方法において重要なことです。 .NET Core を新しいプラットフォームに簡単に移植でき、製品に対するコントリビューションと修正を有効にすることができ、また、.NET のカスタム バージョンを作成することができます。
 この記事では、独自のバージョンの .NET Core をビルドして配布する開発者向けのガイダンスを提供します。
 
 ## <a name="build-the-clr-from-source"></a>ソースから CLR をビルドする

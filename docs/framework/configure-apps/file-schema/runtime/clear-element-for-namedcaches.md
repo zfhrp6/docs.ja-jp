@@ -1,33 +1,24 @@
 ---
-title: "&lt;オフ&gt;要素&lt;namedCaches&gt;"
-ms.custom: 
+title: '&lt;オフ&gt;要素&lt;namedCaches&gt;'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - <clear> element for <namedCaches>
 - clear element for <namedCaches>
 ms.assetid: ea01a858-65da-4348-800f-5e3df59d4d79
-caps.latest.revision: "11"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 501371346b3c1496122d93a98eb89dd4afc6bcd1
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: cdd6e4a4849a031dc6bcad909509498406fcb129
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltcleargt-element-for-ltnamedcachesgt"></a>&lt;オフ&gt;要素&lt;namedCaches&gt;
 すべてを消去`namedCache`内のエントリ、`namedCaches`メモリ キャッシュのコレクション。  
   
- \<system.runtime.caching >  
-\<memoryCache >  
+ \<system.runtime.caching>  
+\<memoryCache>  
 \<namedCaches >  
 \<add>  
   
@@ -61,5 +52,5 @@ ms.lasthandoff: 12/22/2017
 ## <a name="remarks"></a>コメント  
  `clear`要素には、すべてを消去`namedCache`メモリ キャッシュの名前付きキャッシュ コレクション内のエントリ。 使用することができます、`clear`要素を使用する前に、`add`があるユーザーが何を特定するために新しい名前付きキャッシュ エントリを追加する要素がコレクション内のキャッシュをという名前です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [\<namedCaches > 要素 (キャッシュの設定)](../../../../../docs/framework/configure-apps/file-schema/runtime/namedcaches-element-cache-settings.md)

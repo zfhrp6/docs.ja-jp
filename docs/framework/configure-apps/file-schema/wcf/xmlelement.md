@@ -1,34 +1,22 @@
 ---
-title: '&lt;xmlElement&gt;'
-ms.custom: 
+title: '&lt;XmlElement&gt;'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 395205c2-d8c0-4a5e-90f3-7ce3c085fccd
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 702b5ea1331aa0ac284d62809367a90e200a8ba3
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 70ff9b93bcd59331c5fa5e66bb51dc4cd1e043ff
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="ltxmlelementgt"></a>&lt;xmlElement&gt;
+# <a name="ltxmlelementgt"></a>&lt;XmlElement&gt;
 トークンの要求時にセキュリティ トークン サービスへのメッセージ本文で送信される XML 要素を指定します。  
   
- \<システムです。ServiceModel >  
-\<バインド >  
-\<wsFederatedBinding >  
-\<バインド >  
+ \<system.ServiceModel >  
+\<bindings>  
+\<wsFederatedBinding>  
+\<binding>  
 \<セキュリティ >  
-\<メッセージ >  
+\<message>  
 \<tokenRequestParameters >  
   
 ## <a name="syntax"></a>構文  
@@ -55,9 +43,9 @@ ms.lasthandoff: 12/22/2017
   
 |要素|説明|  
 |-------------|-----------------|  
-|[\<tokenRequestParameters >](../../../../../docs/framework/configure-apps/file-schema/wcf/tokenrequestparameters.md)|トークン要求パラメーターのコレクション。 各パラメーターは、XML 要素です。|  
+|[\<tokenRequestParameters>](../../../../../docs/framework/configure-apps/file-schema/wcf/tokenrequestparameters.md)|トークン要求パラメーターのコレクション。 各パラメーターは、XML 要素です。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.TokenRequestParameters%2A>  
  <xref:System.ServiceModel.Configuration.FederatedMessageSecurityOverHttpElement.TokenRequestParameters%2A>  
  [サービス ID と認証](../../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)  

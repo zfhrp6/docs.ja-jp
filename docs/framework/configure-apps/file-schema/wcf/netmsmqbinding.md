@@ -1,29 +1,17 @@
 ---
 title: '&lt;netMsmqBinding&gt;'
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: a68b44d7-7799-43a3-9e63-f07c782810a6
-caps.latest.revision: "35"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e8f18988568d9b634b3ae5ec92d746c08ff00e77
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: d4d28a799acecd335d8155a7ae67b6365b3f0023
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltnetmsmqbindinggt"></a>&lt;netMsmqBinding&gt;
 複数コンピューターの通信に適しているキューに置かれたバインディングを定義します。  
   
- \<system.ServiceModel>  
+ \<system.ServiceModel >  
 \<bindings>  
 \<netMsmqBinding>  
   
@@ -90,7 +78,7 @@ ms.lasthandoff: 01/19/2018
 |`retryCycleDelay`|すぐに配信できなかったメッセージを配信しようとするときの、再試行サイクルの時間遅延を指定する TimeSpan 値です。 実際の待機時間はさらに長くなる場合があるため、この値で定義されるのは最小待機時間だけです。 既定値は、00:10:00 です。 詳細については、「<xref:System.ServiceModel.MsmqBindingBase.RetryCycleDelay%2A>」を参照してください。|  
 |`sendTimeout`|送信操作が完了するまでの時間間隔を指定する <xref:System.TimeSpan> 値です。 この値は必ず <xref:System.TimeSpan.Zero> 以上である必要があります。 既定値は 00:01:00 です。|  
 |`timeToLive`|メッセージの期限が切れて、配信不能キューに入れられるまでのメッセージの有効期間を指定する TimeSpan 値です。 既定値は 1.00:00:00 です。<br /><br /> この属性を設定すると、タイムリーなメッセージが受信側アプリケーションで処理される前に古くなることがなくなります。 キュー内のメッセージのうち、指定された期間内に受信アプリケーションで処理されなかったメッセージは、期限切れと呼ばれます。 期限切れのメッセージは、配信不能キューと呼ばれる特別なキューに送信されます。 配信不能キューの場所は、保証の内容に基づいて、`DeadLetterQueue` 属性を使用して設定されるか、適切な既定値に設定されます。|  
-|`usingActiveDirectory`|キューのアドレスを Active Directory を使用して変換する必要があるかどうかを指定するブール値。<br /><br /> MSMQ キューのアドレスは、パス名または直接形式名で構成できます。 直接形式名を使用する場合、MSMQ は、DNS、NetBIOS、または IP を使用してコンピューター名を解決します。 パス名を使用する場合、MSMQ は、Active Directory を使用してコンピューター名を解決します。<br /><br /> 既定では、[!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] キューに置かれているトランスポートは、メッセージ キューの URI を直接形式名に変換します。 `UseActiveDirectory` プロパティを true に設定すると、キューに置かれているトランスポートが DNS、NetBIOS、または IP ではなく Active Directory を使用してコンピューター名を解決する必要があることを、アプリケーションで指定できます。|  
+|`usingActiveDirectory`|キューのアドレスを Active Directory を使用して変換する必要があるかどうかを指定するブール値。<br /><br /> MSMQ キューのアドレスは、パス名または直接形式名で構成できます。 直接形式名を使用する場合、MSMQ は、DNS、NetBIOS、または IP を使用してコンピューター名を解決します。 パス名を使用する場合、MSMQ は、Active Directory を使用してコンピューター名を解決します。<br /><br /> 既定では、Windows Communication Foundation (WCF) には、トランスポートに変換を直接形式名に、メッセージ キューの URI がキューに登録します。 `UseActiveDirectory` プロパティを true に設定すると、キューに置かれているトランスポートが DNS、NetBIOS、または IP ではなく Active Directory を使用してコンピューター名を解決する必要があることを、アプリケーションで指定できます。|  
 |`useMsmqTracing`|このバインディングにより処理されるメッセージをトレースするかどうかを指定するブール値です。 既定値は、`false` です。 トレースが有効な場合、メッセージ キュー コンピューターでメッセージが送受信されるたびに、レポート メッセージが作成され、レポート キューに送信されます。|  
 |`useSourceJournal`|このバインディングにより処理されるメッセージのコピーをソース ジャーナルに保存するかどうかを指定するブール値です。 既定値は、`false` です。<br /><br /> キューに置かれたアプリケーションでは、コンピューターの発信キューから送信されたメッセージの記録を残す場合は、メッセージをジャーナル キューにコピーできます。 メッセージが発信キューから送信され、送信先のコンピューターで受信されたという応答を受け取ると、メッセージのコピーが送信元のコンピューターのシステム ジャーナル キューに保持されます。|  
   
@@ -144,7 +132,7 @@ ms.lasthandoff: 01/19/2018
 </configuration>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.NetMsmqBinding>  
  <xref:System.ServiceModel.Configuration.NetMsmqBindingElement>  
  [\<binding>](../../../../../docs/framework/misc/binding.md)  

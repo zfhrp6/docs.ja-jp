@@ -1,14 +1,6 @@
 ---
-title: "&lt;追加&gt;要素&lt;sharedListeners&gt;"
-ms.custom: 
+title: '&lt;追加&gt;要素&lt;sharedListeners&gt;'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/sharedListeners/add
 helpviewer_keywords:
@@ -16,20 +8,17 @@ helpviewer_keywords:
 - <add> element for <sharedListeners>
 - add element for <sharedListeners>
 ms.assetid: 1595e1bc-2492-421f-8384-7f382eb8eb57
-caps.latest.revision: 
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload:
-- dotnet
-ms.openlocfilehash: 490e58d4514667c5ec781dd76644012b0c97509d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 27d83ba706b4d93b4ac5426bf5bae59b4bfc0d9a
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltaddgt-element-for-ltsharedlistenersgt"></a>&lt;追加&gt;要素&lt;sharedListeners&gt;
-`sharedListeners` コレクションにリスナーを追加します。 `sharedListeners`リスナーのコレクションをするには[\<ソース >](../../../../../docs/framework/configure-apps/file-schema/trace-debug/source-element.md)または[\<トレース >](../../../../../docs/framework/configure-apps/file-schema/trace-debug/trace-element.md)を参照できます。  既定では、リスナーに、`sharedListeners`にコレクションが配置されていない、`Listeners`コレクション。 名前で追加する必要があります、 [\<ソース >](../../../../../docs/framework/configure-apps/file-schema/trace-debug/source-element.md)または[\<トレース >](../../../../../docs/framework/configure-apps/file-schema/trace-debug/trace-element.md)です。 内のリスナーを取得することはできません、`sharedListeners`実行時にコード内のコレクション。  
+`sharedListeners` コレクションにリスナーを追加します。 `sharedListeners` リスナーのコレクションをするには[\<ソース >](../../../../../docs/framework/configure-apps/file-schema/trace-debug/source-element.md)または[\<トレース >](../../../../../docs/framework/configure-apps/file-schema/trace-debug/trace-element.md)を参照できます。  既定では、リスナーに、`sharedListeners`にコレクションが配置されていない、`Listeners`コレクション。 名前で追加する必要があります、 [\<ソース >](../../../../../docs/framework/configure-apps/file-schema/trace-debug/source-element.md)または[\<トレース >](../../../../../docs/framework/configure-apps/file-schema/trace-debug/trace-element.md)です。 内のリスナーを取得することはできません、`sharedListeners`実行時にコード内のコレクション。  
   
  \<configuration>  
 \<system.diagnostics >  
@@ -90,7 +79,7 @@ ms.lasthandoff: 12/22/2017
  この要素は、マシン構成ファイル (Machine.config) と、アプリケーション構成ファイルで使用できます。  
   
 ## <a name="example"></a>例  
- 次の例は、使用する方法を示しています。`<add>`要素を追加する、 <xref:System.Diagnostics.TextWriterTraceListener> `textListener`を、`sharedListeners`コレクション。   `textListener`名前で追加された、`Listeners`トレース ソースのコレクション`TraceSourceApp`です。 `textListener`ファイル myListener.log にリスナーがトレース出力を書き込みます。  
+ 次の例は、使用する方法を示しています。`<add>`要素を追加する、 <xref:System.Diagnostics.TextWriterTraceListener> `textListener`を、`sharedListeners`コレクション。   `textListener` 名前で追加された、`Listeners`トレース ソースのコレクション`TraceSourceApp`です。 `textListener`ファイル myListener.log にリスナーがトレース出力を書き込みます。  
   
 ```xml  
 <configuration>  
@@ -118,7 +107,7 @@ ms.lasthandoff: 12/22/2017
 </configuration>   
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Diagnostics.TraceSource>  
  <xref:System.Diagnostics.TraceListener>  
  [トレースおよびデバッグ設定のスキーマ](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)  

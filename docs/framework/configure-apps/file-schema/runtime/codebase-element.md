@@ -1,13 +1,6 @@
 ---
-title: "&lt;codeBase&gt;要素"
-ms.custom: 
+title: '&lt;codeBase&gt;要素'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#codeBase
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/runtime/assemblyBinding/dependentAssembly/codeBase
@@ -16,23 +9,21 @@ helpviewer_keywords:
 - container tags, <codeBase> element
 - codeBase element
 ms.assetid: d48a3983-2297-43ff-a14d-1f29d3995822
-caps.latest.revision: "10"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 272a4262295b5dd67414dd0ef6523f90b2125836
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 3b614546e8ed23cc1a5e169a33fb5878695037ae
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltcodebasegt-element"></a>&lt;codeBase&gt;要素
 共通言語ランタイムがアセンブリを検索する場所を指定します。  
   
  \<configuration>  
 \<ランタイム >  
-\<assemblyBinding >  
+\<assemblyBinding>  
 \<dependentAssembly >  
 \<codeBase >  
   
@@ -56,7 +47,7 @@ href="URL of assembly"/>
   
 ## <a name="version-attribute"></a>バージョン属性  
   
-|値|説明|  
+|[値]|説明|  
 |-----------|-----------------|  
 |バージョン番号の各部分の有効な値は、0 ~ 65535 です。|該当なし。|  
   
@@ -73,7 +64,7 @@ href="URL of assembly"/>
 |`System.web`|ASP.NET 構成セクションのルート要素を指定します。|  
   
 ## <a name="remarks"></a>コメント  
- ランタイムを使用するため、  **\<codeBase >**発行者ポリシー ファイルまたはマシン構成ファイルで設定をファイルする必要がありますも、アセンブリ バージョンをリダイレクトします。 アプリケーション構成ファイルは、アセンブリのバージョンをリダイレクトすることがなく、コードベースの設定を持つことができます。 使用するアセンブリ バージョンを決定した後は、ランタイムは、バージョンを決定するファイルのコードベースの設定を適用します。 コードベースが示されていない場合、ランタイムは、通常の方法で、アセンブリをプローブします。  
+ ランタイムを使用するため、  **\<codeBase >** 発行者ポリシー ファイルまたはマシン構成ファイルで設定をファイルする必要がありますも、アセンブリ バージョンをリダイレクトします。 アプリケーション構成ファイルは、アセンブリのバージョンをリダイレクトすることがなく、コードベースの設定を持つことができます。 使用するアセンブリ バージョンを決定した後は、ランタイムは、バージョンを決定するファイルのコードベースの設定を適用します。 コードベースが示されていない場合、ランタイムは、通常の方法で、アセンブリをプローブします。  
   
  アセンブリに厳密な名前がある場合、コードベース設定できる任意の場所、ローカル イントラネットまたはインターネット上です。 アセンブリがプライベート アセンブリの場合は、コードベースの設定は、アプリケーションのディレクトリに対する相対パスである必要があります。  
   
@@ -98,7 +89,7 @@ href="URL of assembly"/>
 </configuration>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ランタイム設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
  [構成ファイル スキーマ](../../../../../docs/framework/configure-apps/file-schema/index.md)  
  [アセンブリの場所の指定](../../../../../docs/framework/configure-apps/specify-assembly-location.md)  

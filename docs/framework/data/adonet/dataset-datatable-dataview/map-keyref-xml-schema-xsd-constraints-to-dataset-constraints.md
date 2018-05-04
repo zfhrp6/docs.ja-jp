@@ -1,24 +1,12 @@
 ---
-title: "XML スキーマ (XSD) のキー参照制約の DataSet 制約への割り当て"
-ms.custom: 
+title: XML スキーマ (XSD) のキー参照制約の DataSet 制約への割り当て
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 5b634fea-cc1e-4f6b-9454-10858105b1c8
-caps.latest.revision: "4"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: e364efe0856a5291fc8157ef6ab185c2438a3347
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: a3a5033292db2b47e7a9811e36c0a4af016951fc
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="map-keyref-xml-schema-xsd-constraints-to-dataset-constraints"></a>XML スキーマ (XSD) のキー参照制約の DataSet 制約への割り当て
 **Keyref**要素では、ドキュメント内の要素間のリンクを確立することができます。 これは、リレーショナル データベースの外部キーのリレーションシップと同様です。 スキーマを指定する場合、 **keyref**要素で、要素がのテーブル内の列に対応する外部キー制約にスキーマの割り当て処理中に変換された、<xref:System.Data.DataSet>です。 既定では、 **keyref**要素に、リレーションも生成されます、 **ParentTable**、 **ChildTable**、 **ParentColumn**、および**ChildColumn**リレーションに指定されたプロパティ。  
@@ -27,7 +15,7 @@ ms.lasthandoff: 01/17/2018
   
 |属性名|説明|  
 |--------------------|-----------------|  
-|**msdata:ConstraintOnly**|場合**ConstraintOnly ="true"**で指定された、 **keyref**スキーマ内の要素、制約は作成されますが、リレーションシップは作成されません。 この属性が指定されていない場合 (またはに設定されている**False**)、制約とリレーションシップの両方に作成されます、**データセット**です。|  
+|**msdata:ConstraintOnly**|場合**ConstraintOnly ="true"** で指定された、 **keyref**スキーマ内の要素、制約は作成されますが、リレーションシップは作成されません。 この属性が指定されていない場合 (またはに設定されている**False**)、制約とリレーションシップの両方に作成されます、**データセット**です。|  
 |**msdata:ConstraintName**|場合、 **ConstraintName**属性を指定すると、その値は、制約の名前として使用します。 それ以外の場合、**名前**の属性、 **keyref**スキーマ内の要素に制約名を提供する、**データセット**です。|  
 |**msdata:UpdateRule**|場合、 **UpdateRule**属性が指定した、 **keyref**スキーマ内の要素、その値は、 **UpdateRule**制約プロパティに、 **データセット**です。 それ以外の場合、 **UpdateRule**プロパティに設定されている**Cascade**です。|  
 |**msdata:DeleteRule**|場合、 **DeleteRule**属性が指定した、 **keyref**スキーマ内の要素、その値は、 **DeleteRule**制約プロパティに、 **データセット**です。 それ以外の場合、 **DeleteRule**プロパティに設定されている**Cascade**です。|  
@@ -120,7 +108,7 @@ Order(OrderNumber, EmpNumber)
     RelatedColumns: OrderNumber   
     ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [XML スキーマ (XSD) 制約の DataSet 制約への割り当て](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/mapping-xml-schema-xsd-constraints-to-dataset-constraints.md)  
  [XML スキーマ (XSD) からの DataSet リレーションの生成](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/generating-dataset-relations-from-xml-schema-xsd.md)  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

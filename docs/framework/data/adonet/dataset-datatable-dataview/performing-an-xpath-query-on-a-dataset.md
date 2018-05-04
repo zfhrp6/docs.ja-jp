@@ -1,27 +1,15 @@
 ---
-title: "DataSet に対する XPath クエリの実行"
-ms.custom: 
+title: DataSet に対する XPath クエリの実行
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 7e828566-fffe-4d38-abb2-4d68fd73f663
-caps.latest.revision: "4"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 3a13d6ee9345731e097d0bdc9b6e59772d29b554
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: c785cc69289440918f45974c711ae0b112130c5d
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="performing-an-xpath-query-on-a-dataset"></a>DataSet に対する XPath クエリの実行
 同期済みの間のリレーションシップ<xref:System.Data.DataSet>と<xref:System.Xml.XmlDataDocument>XML を使用することができますにアクセスする XML パス言語 (XPath) クエリなどのサービス、 **XmlDataDocument**し、特定の機能を実行することができます簡単にアクセスするよりも、**データセット**直接です。 使用するのではなく、たとえば、**選択**のメソッド、<xref:System.Data.DataTable>で他のテーブルへのリレーションシップを移動する、**データセット**、に対して XPath クエリを実行できる、 **XmlDataDocument**と同期されている、**データセット**の形式で XML 要素の一覧を取得する、<xref:System.Xml.XmlNodeList>です。 内のノード、 **XmlNodeList**としてキャストされた、<xref:System.Xml.XmlElement>ノードに渡すことができます、 **GetRowFromElement**のメソッド、 **XmlDataDocument**を一致を返す<xref:System.Data.DataRow>は同期済みテーブルの行への参照**データセット**です。  
@@ -112,6 +100,6 @@ foreach (XmlNode xmlNode in nodeList)
 }  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [DataSet と XmlDataDocument の同期](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataset-and-xmldatadocument-synchronization.md)  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

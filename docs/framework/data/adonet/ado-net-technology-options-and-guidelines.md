@@ -1,24 +1,12 @@
 ---
-title: "ADO.NET テクノロジのオプションとガイドライン"
-ms.custom: 
+title: ADO.NET テクノロジのオプションとガイドライン
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: c8577281-38e6-4ce5-b036-572039a4c3d8
-caps.latest.revision: "6"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: aa4cefb27ff3fde3f4f31d996a80b19b94ea57e2
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 106fdbc121c3b1c15aaced5e0314e0651387cede
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="adonet-technology-options-and-guidelines"></a>ADO.NET テクノロジのオプションとガイドライン
 ADO.NET データ プラットフォームは、概念エンティティ データ モデルに対してプログラムを作成できるようにして、開発者に必要とされるコード作成と保守作業の量を減らすための、複数のリリースにわたる戦略です。 このプラットフォームには、ADO.NET Entity Framework と関連技術が含まれています。  
@@ -50,7 +38,7 @@ ADO.NET データ プラットフォームは、概念エンティティ デー�
 ## <a name="wcf-data-services"></a>WCF Data Services  
  [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] は、Web またはイントラネットにデータ サービスを展開します。 データは、エンティティ データ モデルの仕様に従ってエンティティおよびリレーションシップとして構成されます。 このモデルで展開されるデータは、標準 HTTP プロトコルによってアドレス指定可能です。 詳細については、次を参照してください。 [WCF データ サービス 4.5](../../../../docs/framework/data/wcf/index.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ADO.NET の概要](../../../../docs/framework/data/adonet/ado-net-overview.md)  
  [ADO.NET の新機能](../../../../docs/framework/data/adonet/whats-new.md)  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

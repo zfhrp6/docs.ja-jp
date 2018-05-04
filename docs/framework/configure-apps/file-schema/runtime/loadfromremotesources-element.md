@@ -1,27 +1,17 @@
 ---
-title: "&lt;loadFromRemoteSources&gt;要素"
-ms.custom: 
+title: '&lt;loadFromRemoteSources&gt;要素'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - loadFromRemoteSources element
 - <loadFromRemoteSources> element
 ms.assetid: 006d1280-2ac3-4db6-a984-a3d4e275046a
-caps.latest.revision: "31"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 13b42405a0faf721c46476aadaa0cff8163883c1
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: f0d442f71a0e2fc7deacd9aaa02cfba7b66f2349
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltloadfromremotesourcesgt-element"></a>&lt;loadFromRemoteSources&gt;要素
 リモート ソースからのアセンブリに対して、完全な信頼を付与するかどうかを指定します。  
@@ -30,7 +20,7 @@ ms.lasthandoff: 01/19/2018
 >  場合は、Visual Studio プロジェクトのエラー一覧またはビルド エラーのエラー メッセージのため、このトピックにダイレクトされたを参照してください。[する方法: Visual Studio で Web からアセンブリを使用して](http://msdn.microsoft.com/library/d8635b63-89a0-41aa-90f4-f351b2111070)です。  
   
  \<configuration>  
-\<runtime>  
+\<ランタイム >  
 \<loadFromRemoteSources>  
   
 ## <a name="syntax"></a>構文  
@@ -107,7 +97,7 @@ ms.lasthandoff: 01/19/2018
 </configuration>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [CAS ポリシーの複数の暗黙的な用途: loadFromRemoteSources](http://go.microsoft.com/fwlink/p/?LinkId=266839)  
  [方法 : サンドボックスで部分信頼コードを実行する](../../../../../docs/framework/misc/how-to-run-partially-trusted-code-in-a-sandbox.md)  
  [ランタイム設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  

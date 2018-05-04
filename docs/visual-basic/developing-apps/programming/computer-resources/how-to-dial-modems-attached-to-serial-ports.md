@@ -1,28 +1,29 @@
 ---
-title: "方法 : Visual Basic で、シリアル ポートに接続されているモデムをダイヤルする"
-ms.custom: 
+title: '方法 : Visual Basic で、シリアル ポートに接続されているモデムをダイヤルする'
+ms.custom: ''
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 helpviewer_keywords:
 - modems [Visual Basic], dialing
 - serial ports [Visual Basic], dialing
 - My.Computer.Ports object
 ms.assetid: 3834db40-f431-45f1-b671-dc91787164b6
-caps.latest.revision: "19"
+caps.latest.revision: 19
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: ea1b2d6152af8919ac1aa272def4ba198b33867c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 52540ea2962fd6619b205694c444557c283c32e9
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-to-dial-modems-attached-to-serial-ports-in-visual-basic"></a>方法 : Visual Basic で、シリアル ポートに接続されているモデムをダイヤルする
-このトピックでは、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] で `My.Computer.Ports` を使用してモデムをダイヤルする方法について説明します。  
+このトピックでは、Visual Basic で `My.Computer.Ports` を使用してモデムをダイヤルする方法について説明します。  
   
  通常、モデムはコンピューターのいずれかのシリアル ポートに接続されています。 アプリケーションがモデムとやり取りするには、適切なシリアル ポートにコマンドを送信する必要があります。  
   
@@ -59,7 +60,7 @@ ms.lasthandoff: 11/21/2017
   
  この例では、アプリケーションは、モデムをダイヤルした後でシリアル ポートを切断しています。 実際には、モデムとの間でデータの転送が必要となります。 詳細については、「[方法: シリアル ポートから文字列を受信する](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-receive-strings-from-serial-ports.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:Microsoft.VisualBasic.Devices.Ports>  
  <xref:System.IO.Ports.SerialPort?displayProperty=nameWithType>  
  [方法 : シリアル ポートに文字列を送信する](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-send-strings-to-serial-ports.md)  

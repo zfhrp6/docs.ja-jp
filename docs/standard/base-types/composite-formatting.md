@@ -26,11 +26,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 156ef0f063219f5e78084dd664b64699d33e6593
-ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
+ms.openlocfilehash: 473669b4aaa0782fec32fb0e2d89875c4ab7a838
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="composite-formatting"></a>複合書式指定
 .NET の複合書式指定機能は、オブジェクトのリストおよび複合書式指定文字列を入力として使用します。 複合書式指定文字列は、固定テキストに、書式指定項目と呼ばれるインデックス化されたプレースホルダーが混合されて構成されます。このプレースホルダーはリスト内のオブジェクトに対応します。 書式設定操作によって生成される結果の文字列は、元の固定テキストに文字列で表されたリスト内のオブジェクトが混合されて構成されます。  
@@ -74,12 +74,12 @@ ms.lasthandoff: 03/28/2018
  [!code-csharp[Formatting.Composite#7](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Composite/cs/index1.cs#7)]
  [!code-vb[Formatting.Composite#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Composite/vb/index1.vb#7)]  
   
- 同じパラメーター指定子を指定することによって、複数の書式指定項目でオブジェクトのリスト内の同じ要素を参照できます。 たとえば、複合書式指定文字列で "0x{0:X} {0:E} {0:N}" のように指定することによって、1 つの数値を 16 進形式、指数形式、および数値形式で書式設定できます。以下に例を示します。  
+ 同じパラメーター指定子を指定することによって、複数の書式指定項目でオブジェクトのリスト内の同じ要素を参照できます。 たとえば、次の例に示すように、"0x{0:X} {0:E} {0:N}" など、複合書式文字列を指定することで、16 進数、指数、および数字形式で同じ数値の書式を指定できます。  
   
  [!code-csharp[Formatting.Composite#10](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Composite/cs/index1.cs#10)]
  [!code-vb[Formatting.Composite#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Composite/vb/index1.vb#10)]  
   
- 各書式指定項目は、リスト内のどのオブジェクトでも参照できます。 たとえば、3 つのオブジェクトが存在する場合、2 番目、1 番目、3 番目のオブジェクトを書式設定するには、"{1} {0} {2}" のような複合書式指定文字列を指定します。 書式指定項目で参照されないオブジェクトは無視されます。 パラメーター指定子がオブジェクトのリストの範囲外の項目を指定する場合は、ランタイムに <xref:System.FormatException> がスローされます。  
+ 各書式指定項目は、リスト内のどのオブジェクトでも参照できます。 たとえば、3 つのオブジェクトがある場合は、"{1} {0} {2}" などの複合書式文字列を指定して、2 番目、1 番目、3 番目のオブジェクトの書式を指定できます。 書式指定項目で参照されないオブジェクトは無視されます。 パラメーター指定子がオブジェクトのリストの範囲外の項目を指定する場合は、ランタイムに <xref:System.FormatException> がスローされます。  
   
 ### <a name="alignment-component"></a>Alignment コンポーネント  
  省略可能な *alignment* コンポーネントは、書式設定フィールドの幅を指定する符号付き整数です。 *alignment* の値が書式設定する文字列の長さよりも小さい場合、*alignment* は無視され、書式設定する文字列の長さがフィールドの幅として使用されます。 フィールド内の書式設定されたデータは、*alignment* が正の場合は右揃え、*alignment* が負の場合は左揃えされます。 埋め込みが必要な場合は、空白が使用されます。 *alignment* を指定する場合は、コンマが必要です。  
@@ -105,7 +105,7 @@ ms.lasthandoff: 03/28/2018
 ### <a name="escaping-braces"></a>エスケープ中かっこ ({})  
  左中かっこ ({) および右中かっこ (}) は、書式指定項目の開始および終了として解釈されます。 したがって、左中かっこおよび右中かっこを文字として表示するためには、エスケープ シーケンスを使用する必要があります。 左中かっこを 1 つ ("{") 表示するには、左中かっこ 2 つ ("{{") を固定テキストに指定します。また、右中かっこを 1 つ ("}") 表示するには、右中かっこ 2 つ ("}}") を指定します。 書式指定項目に使用されている中かっこは、指定されている順序に従って解釈されます。 入れ子になった中かっこを解釈する機能はサポートされていません。  
   
- エスケープされた中かっこの解釈によっては、予測しない結果になる場合があります。 たとえば、"{{{0:D}}}" という書式指定項目について考えます。この書式指定項目は、左中かっこ、10 進数として書式設定された数値、および右中かっこを表示することを意図しています。 しかし、この書式指定項目は、実際には、次のように解釈されます。  
+ エスケープされた中かっこの解釈によっては、予測しない結果になる場合があります。 たとえば、書式項目 "{{{0:D}}}" があるとします。これは、始まりの中かっこ、10 進数で表記された数値、閉じ中かっこを表示することを意図しています。 しかし、この書式指定項目は、実際には、次のように解釈されます。  
   
 1.  最初の 2 つの左中かっこ ("{{") がエスケープされ、左中かっこ 1 つが作成されます。  
   
@@ -137,7 +137,7 @@ ms.lasthandoff: 03/28/2018
   
     -   日付と時刻の値の場合、null 以外の <xref:System.IFormatProvider> 引数を持つ複合書式指定メソッドが呼び出されると、ランタイムは <xref:System.Globalization.DateTimeFormatInfo> メソッドから <xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType> オブジェクトを要求します。 オブジェクトを 1 つも取得できないか、引数の値が `null` であるか、または複合書式指定メソッドに <xref:System.IFormatProvider> パラメーターがない場合は、現在のスレッド カルチャの <xref:System.Globalization.DateTimeFormatInfo> オブジェクトが使用されます。  
   
-    -   他の型のオブジェクトの場合、<xref:System.IFormatProvider> 引数を持つ複合書式指定が呼び出されると、その値 (`null` オブジェクトが指定されない場合の <xref:System.IFormatProvider> を含む) は <xref:System.IFormattable.ToString%2A?displayProperty=nameWithType> 実装に直接渡されます。  それ以外の場合は、現在のスレッド カルチャを表す <xref:System.Globalization.CultureInfo> オブジェクトが <xref:System.IFormattable.ToString%2A?displayProperty=nameWithType> 実装に渡されます。  
+    -   他の型のオブジェクトの場合、<xref:System.IFormatProvider> 引数を使用して複合書式のメソッドを呼び出すと、その値は <xref:System.IFormattable.ToString%2A?displayProperty=nameWithType> 実装に直接渡されます。 それ以外の場合は、`null` が <xref:System.IFormattable.ToString%2A?displayProperty=nameWithType> 実装に渡されます。  
   
 4.  `ToString` をオーバーライドするか、基底クラスの動作を継承する、型のパラメーターなしの <xref:System.Object.ToString?displayProperty=nameWithType> メソッドが呼び出されます。 この場合、書式指定項目の *formatString* コンポーネントで指定されている書式指定文字列は、存在していても無視されます。  
   

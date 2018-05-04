@@ -1,24 +1,12 @@
 ---
-title: "&lt;system.runtime.serialization&gt; の &lt;dataContractSerializer&gt;"
-ms.custom: 
+title: '&lt;system.runtime.serialization&gt; の &lt;dataContractSerializer&gt;'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: d9b3d625-be3f-4768-8e0d-1b7e6929f6a8
-caps.latest.revision: "6"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 836d00cb0c3de36e8fd918babb605cf629239357
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 96802100fe1b91d3e375363d2c36e239b1a1d330
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltdatacontractserializergt-of-ltsystemruntimeserializationgt"></a>&lt;system.runtime.serialization&gt; の &lt;dataContractSerializer&gt;
 <xref:System.Runtime.Serialization.DataContractSerializer> 用の設定データが含まれています。  
@@ -71,7 +59,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="remarks"></a>コメント  
  既知の型の詳細については、次を参照してください。<xref:System.Runtime.Serialization.DataContractSerializer>と[データ コントラクトの既知の型](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Runtime.Serialization.DataContractSerializer>  
  <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior>  
  [既知のデータ コントラクト型](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)

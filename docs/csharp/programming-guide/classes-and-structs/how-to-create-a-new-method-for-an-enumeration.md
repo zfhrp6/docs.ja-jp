@@ -1,22 +1,23 @@
 ---
-title: "方法 : 列挙型対応の新しいメソッドを作成する (C# プログラミング ガイド)"
+title: '方法 : 列挙型対応の新しいメソッドを作成する (C# プログラミング ガイド)'
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 helpviewer_keywords:
 - enumerations [C#]
 - extension methods [C#], for enums
 - enum extensibility [C#]
 ms.assetid: 100106f9-1e54-462c-8ebe-3892fe23b6eb
-caps.latest.revision: "7"
+caps.latest.revision: 7
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 3cc15d24c9ba954a19fb87d4e364ac6e7f78e8b4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 8b05d9f910e8c268fded8cdcc462392a1e80efdb
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-to-create-a-new-method-for-an-enumeration-c-programming-guide"></a>方法 : 列挙型対応の新しいメソッドを作成する (C# プログラミング ガイド)
 拡張メソッドを使用して、特定の列挙型に固有の機能を追加することができます。  
@@ -29,8 +30,8 @@ ms.lasthandoff: 11/21/2017
  `Extensions` クラスには動的に更新される静的変数も含まれていて、拡張メソッドの戻り値はその変数の現在の値を反映していることに注意してください。 背後では、拡張メソッドが自分が定義されている静的クラスに直接呼び出されることを、この例は示しています。  
   
 ## <a name="compiling-the-code"></a>コードのコンパイル  
- このコードを実行するには、[!INCLUDE[vs_current_short](~/includes/vs-current-short-md.md)] で作成した Visual C# コンソール アプリケーション プロジェクトに、そのコードをコピーして貼り付けます。 既定では、このプロジェクトは、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] のバージョン 3.5 を対象としており、System.Core.dll への参照と System.Linq の `using` ディレクティブが含まれます。 これらの要件のうち、1 つ以上がプロジェクトから欠落している場合、手動で追加できます。  
+ このコードを実行するには、Visual Studio で作成した Visual C# コンソール アプリケーション プロジェクトに、そのコードをコピーして貼り付けます。 既定では、このプロジェクトは、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] のバージョン 3.5 を対象としており、System.Core.dll への参照と System.Linq の `using` ディレクティブが含まれます。 これらの要件のうち、1 つ以上がプロジェクトから欠落している場合、手動で追加できます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
  [拡張メソッド](../../../csharp/programming-guide/classes-and-structs/extension-methods.md)

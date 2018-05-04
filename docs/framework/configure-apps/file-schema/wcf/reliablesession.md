@@ -1,32 +1,20 @@
 ---
 title: '&lt;reliableSession&gt;'
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 129b4a59-37f0-4030-b664-03795d257d29
-caps.latest.revision: "19"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 0e4c854d9f7e1262a771dadc897878dac20a642e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6b8049e2c493a652405a93eed68f05438819aecb
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltreliablesessiongt"></a>&lt;reliableSession&gt;
 WS-ReliableMessaging の設定を定義します。 この要素がカスタム バインドに追加される場合、その結果となるチャネルにより、正確に 1 回の配信保証をサポートできます。  
   
- \<system.serviceModel >  
-\<バインド >  
-\<customBinding >  
-\<バインド >  
+ \<system.serviceModel>  
+\<bindings>  
+\<customBinding>  
+\<binding>  
 \<reliableSession >  
   
 ## <a name="syntax"></a>構文  
@@ -51,7 +39,7 @@ WS-ReliableMessaging の設定を定義します。 この要素がカスタム 
 |---------------|-----------------|  
 |acknowledgementInterval|そのポイントまで受信したメッセージの受信確認の送信をチャネルが待機する最大時間間隔を含む <xref:System.TimeSpan>。 既定値は 00:00:0.2 です。|  
 |flowControlEnabled|高度なフロー制御を有効にするかどうかを示すブール値。WS-ReliableMessaging のフロー制御の Microsoft 固有の実装です。  既定値は、`true` です。|  
-|inactivityTimeout|他の通信相手がチャネルにメッセージを送信せずにいられる最長期間を指定する <xref:System.TimeSpan>。他の通信相手がメッセージを送信しない期間がこの値を超えると、チャネルでエラーが発生します。 既定値は 00:10:00 です。<br /><br /> チャネルでのアクティビティは、アプリケーションまたはインフラストラクチャのメッセージを受信するように定義されています。 このプロパティは、アクティブでないセッションを維持する最長期間を制御します。 反応のない時間がこれより長く経過すると、インフラストラクチャによってセッションは中止され、チャネルはエラーとなります。 **注:**定期的にメッセージを送信する接続を維持するアプリケーションの必要はありません。|  
+|inactivityTimeout|他の通信相手がチャネルにメッセージを送信せずにいられる最長期間を指定する <xref:System.TimeSpan>。他の通信相手がメッセージを送信しない期間がこの値を超えると、チャネルでエラーが発生します。 既定値は 00:10:00 です。<br /><br /> チャネルでのアクティビティは、アプリケーションまたはインフラストラクチャのメッセージを受信するように定義されています。 このプロパティは、アクティブでないセッションを維持する最長期間を制御します。 反応のない時間がこれより長く経過すると、インフラストラクチャによってセッションは中止され、チャネルはエラーとなります。 **注:** 定期的にメッセージを送信する接続を維持するアプリケーションの必要はありません。|  
 |maxPendingChannels|受け入れるリスナーを待機できるチャネルの最大数を指定する整数。 この値は、1 ～ 16384 (1 と 16384を含む) のいずれかです。 既定値は 4 です。<br /><br /> チャネルは、受け入れを待っている間は保留状態になります。 制限に達すると、チャネルは作成されなくなります。 正確には、この数が (保留状態のチャネルの受け入れによって) 減少するまで、保留モードにされます。 これはファクトリごとの制限です。<br /><br /> しきい値に達した後に、リモート アプリケーションが新しい信頼できるセッションを確立しようとした場合、要求は拒否され、この原因となる open 操作でエラーが発生します。 この制限は、保留状態の送信チャネルの数には適用されません。|  
 |maxRetryCount|基になるチャネルで Send を呼び出すことで、信頼できるチャネルが受信確認を受信していないメッセージの再転送を試みる最大回数を指定する整数。<br /><br /> この値は、ゼロより大きい値である必要があります。 既定値は 8 です。<br /><br /> この値は、0 を超えた整数にする必要があります。 最後の再転送後に受信確認が受信されない場合、チャネルでエラーが発生します。<br /><br /> メッセージは、受信側でその配信が確認されている場合、転送されたと見なされます。<br /><br /> 転送済みのメッセージの受信確認が一定時間内に受信されない場合、インフラストラクチャは、自動的にそのメッセージを再転送します。 インフラストラクチャは、このプロパティで指定された回数まで、メッセージを再送信しようとします。 最後の再転送後に受信確認が受信されない場合、チャネルでエラーが発生します。<br /><br /> インフラストラクチャは、指数バックオフ アルゴリズムを使用し、計算された平均ラウンドトリップ時間に基づいて、いつ再転送するかを判断します。 時間は、まず再転送の 1 秒前に開始され、試行ごとに遅延が 2 倍にされます。この結果、最初の転送試行から最後の再転送試行までに約 8.5 分かかります。 最初の再転送試行のタイミングは、計算されたラウンドトリップ時間に従って調整されるので、試行にかかる時間延長はさまざまです。 これにより、再転送のタイミングをさまざまなネットワーク条件に動的に適用できます。|  
 |maxTransferWindowSize|バッファーの最大サイズを指定する整数。 有効値は 1 ～ 4096 の範囲です。<br /><br /> クライアントでは、この属性は、まだ受信側で受信が確認されていないメッセージを保持するために信頼できるチャネルが使用するバッファーの最大サイズを定義します。 クォータの単位はメッセージです。 バッファーがいっぱいになると、それ以降の SEND 操作がブロックされます。<br /><br /> 受信側では、この属性は、まだアプリケーションにディスパッチされていない受信メッセージを格納するためにチャネルが使用するバッファーの最大サイズを定義します。 バッファーがいっぱいになると、それ以降のメッセージは、受信側によって通知なしに自動的に削除されるので、クライアントによる再転送が必要になります。|  
@@ -65,7 +53,7 @@ WS-ReliableMessaging の設定を定義します。 この要素がカスタム 
   
 |要素|説明|  
 |-------------|-----------------|  
-|[\<バインド >](../../../../../docs/framework/misc/binding.md)|カスタム バインドのすべてのバインド機能を定義します。|  
+|[\<binding>](../../../../../docs/framework/misc/binding.md)|カスタム バインドのすべてのバインド機能を定義します。|  
   
 ## <a name="remarks"></a>コメント  
  信頼できるセッションは、信頼できるメッセージとセッションに関する機能を提供します。 信頼できるメッセージは、エラー時に通信を再試行するほか、メッセージの順次到着などの配信の保証を指定できるようにします。 セッションでは、呼び出し間でクライアントの状態が保持されます。 この要素には、オプションとして、順序付けされたメッセージ配信を行う機能も用意されています。 この実装されたセッションは、SOAP およびトランスポート中継局を通過できます。  
@@ -130,7 +118,7 @@ WS-ReliableMessaging の設定を定義します。 この要素がカスタム 
 </configuration>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Configuration.ReliableSessionElement>  
  <xref:System.ServiceModel.Channels.CustomBinding>  
  <xref:System.ServiceModel.Channels.ReliableSessionBindingElement>  
@@ -138,4 +126,4 @@ WS-ReliableMessaging の設定を定義します。 この要素がカスタム 
  [バインディング](../../../../../docs/framework/wcf/bindings.md)  
  [バインディングの拡張](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
  [カスタム バインディング](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
- [\<customBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)
+ [\<customBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)

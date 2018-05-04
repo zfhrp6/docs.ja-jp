@@ -1,24 +1,15 @@
 ---
-title: "&lt;iriParsing&gt;要素 (Uri 設定)"
-ms.custom: 
+title: '&lt;iriParsing&gt;要素 (Uri 設定)'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 953d0b53-445e-41f9-b302-77c4030852ce
-caps.latest.revision: "9"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 6cd69df9ccba39520cca26bb7042dc2932565336
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f05f7e35d69f789d3ebb371689aafbc84004b732
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltiriparsinggt-element-uri-settings"></a>&lt;iriParsing&gt;要素 (Uri 設定)
 International Resource Identifier (IRI) 解析が、<xref:System.Uri> に適用されるかどうか、および IRI の解析規則が適用されるどうかを指定します。  
@@ -54,7 +45,7 @@ International Resource Identifier (IRI) 解析が、<xref:System.Uri> に適用�
   
 |**要素**|**説明**|  
 |-----------------|---------------------|  
-|[uri](../../../../../docs/framework/configure-apps/file-schema/network/uri-element-uri-settings.md)|.NET Framework での web アドレスの uniform resource identifier (Uri) を使用して表現の処理方法を指定する設定が含まれています。|  
+|[Uri](../../../../../docs/framework/configure-apps/file-schema/network/uri-element-uri-settings.md)|.NET Framework での web アドレスの uniform resource identifier (Uri) を使用して表現の処理方法を指定する設定が含まれています。|  
   
 ## <a name="remarks"></a>コメント  
  既存の<xref:System.Uri>クラスが .NET Framework 3.5 で拡張されています。 3.0 SP1、および 2.0 SP1 国際リソース識別子 (IRI) および国際化ドメイン名 (IDN) のサポートを提供します。 ユーザーは、IDN を明確にする場合を除きは、現在のユーザーには、.NET Framework 2.0 の動作から変更は表示されませんをサポートします。 これにより、.NET Framework の以前のバージョンとのアプリケーションの互換性を保証します。  
@@ -90,7 +81,7 @@ International Resource Identifier (IRI) 解析が、<xref:System.Uri> に適用�
 </configuration>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Configuration.IriParsingElement?displayProperty=nameWithType>  
  <xref:System.Configuration.UriSection?displayProperty=nameWithType>  
  [ネットワーク設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

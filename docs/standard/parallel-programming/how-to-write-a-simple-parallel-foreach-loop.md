@@ -1,12 +1,12 @@
 ---
-title: "方法: 単純な Parallel.ForEach ループを記述する"
-ms.custom: 
+title: '方法: 単純な Parallel.ForEach ループを記述する'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -15,18 +15,18 @@ helpviewer_keywords:
 - foreach, parallel version
 - parallel programming, foreach
 ms.assetid: cb5fab92-1c19-499e-ae91-8b7525dd875f
-caps.latest.revision: 
+caps.latest.revision: 19
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: bb628c0de1f0e4452ae13b5f5ee392084118bea5
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 90b900bf98ab664e0fce5c70573f01e044d70803
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="how-to-write-a-simple-parallelforeach-loop"></a>方法: 単純な Parallel.ForEach ループを記述する
 この例は、<xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> ループを使用して、<xref:System.Collections.IEnumerable?displayProperty=nameWithType> または <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> データ ソースでのデータの並列処理を有効にする方法を示しています。  
@@ -51,7 +51,7 @@ ms.lasthandoff: 12/23/2017
   
 ## <a name="compiling-the-code"></a>コードのコンパイル  
   
--   このコードをコピーして、[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] 2010 コンソール アプリケーション プロジェクトに貼り付けます。  
+-   このコードをコピーして、Visual Studio 2010 コンソール アプリケーション プロジェクトに貼り付けます。  
   
 -   System.Drawing.dll への参照を追加します。  
   

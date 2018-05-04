@@ -1,24 +1,12 @@
 ---
-title: "プロバイダー マニフェストの仕様"
-ms.custom: 
+title: プロバイダー マニフェストの仕様
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: bb450b47-8951-4f99-9350-26f05a4d4e46
-caps.latest.revision: "4"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 85096406ae8996713d4861c805d75af42d8c1813
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 02faee9ad69bd75f4df608b9a4767560945c7bb3
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="provider-manifest-specification"></a>プロバイダー マニフェストの仕様
 ここでは、データ ストア プロバイダーでデータ ストアの型および関数がどのようにサポートされているかについて説明します。  
@@ -275,7 +263,7 @@ public DbProviderManifest GetProviderManifest(string manifestToken);
 |BuiltIn|Boolean|Ｘ|True|関数がデータ ストアに組み込まれている場合は True|  
 |StoreFunctionName|String|×|\<名 >|データ ストア内の関数名。  関数名のリダイレクト レベルを許可できます。|  
 |NiladicFunction|Boolean|Ｘ|False|関数にパラメーターが必要なく、パラメーターなしで呼び出される場合は True|  
-|ParameterType<br /><br /> Semantics|ParameterSemantics|Ｘ|AllowImplicit<br /><br /> 変換|クエリ パイプラインによるパラメーター型の置換の処理方法の選択<br /><br /> -   ExactMatchOnly<br />-AllowImplicitPromotion<br />-   AllowImplicitConversion|  
+|ParameterType<br /><br /> Semantics|ParameterSemantics|Ｘ|AllowImplicit<br /><br /> 変換|クエリ パイプラインによるパラメーター型の置換の処理方法の選択<br /><br /> -ExactMatchOnly<br />-AllowImplicitPromotion<br />-AllowImplicitConversion|  
   
  **[パラメーター] ノード**  
   
@@ -290,5 +278,5 @@ public DbProviderManifest GetProviderManifest(string manifestToken);
 ##### <a name="namespace-attribute"></a>Namespace 属性  
  各データ ストア プロバイダーでは、マニフェストで定義された情報に対して 1 つの名前空間または名前空間のグループを定義する必要があります。 この名前空間は、Entity SQL クエリで、関数および型の名前を解決するために使用できます。 たとえば SqlServer の場合、 その名前空間は、標準的な関数が Entity SQL クエリでサポートされるように Entity Services で定義された正規の名前空間 (EDM) とは別にする必要があります。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Entity Framework データ プロバイダーの作成](../../../../../docs/framework/data/adonet/ef/writing-an-ef-data-provider.md)

@@ -1,13 +1,6 @@
 ---
-title: "&lt;linkedConfiguration&gt;要素"
-ms.custom: 
+title: '&lt;linkedConfiguration&gt;要素'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/assemblyBinding/linkedConfiguration
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#linkedConfiguration
@@ -18,16 +11,14 @@ helpviewer_keywords:
 - linked configuration files
 - linkedConfiguration Element
 ms.assetid: 8eb34f3b-427e-4288-a7ff-c73f489deb45
-caps.latest.revision: "6"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: dffff7fefa80f420e61045b21b0e0c1a170e2911
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 71769efa1233fc8a693219dc02ae56ea39c164e7
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="linkedconfiguration-element"></a>\<linkedConfiguration > 要素
 
@@ -53,7 +44,7 @@ ms.lasthandoff: 12/22/2017
 
 |     | 説明 |
 | --- | ----------- |
-| [**\<assemblyBinding >**要素](~/docs/framework/configure-apps/file-schema/assemblybinding-element-for-configuration.md) | 構成レベルでのアセンブリ バインディング ポリシーを指定します。 |
+| [**\<assemblyBinding >** 要素](~/docs/framework/configure-apps/file-schema/assemblybinding-element-for-configuration.md) | 構成レベルでのアセンブリ バインディング ポリシーを指定します。 |
 
 ## <a name="child-elements"></a>子要素
 
@@ -61,10 +52,10 @@ ms.lasthandoff: 12/22/2017
 
 ## <a name="remarks"></a>コメント
 
- **\<LinkedConfiguration >**要素は、サービス コンポーネントのアセンブリの簡略化します。 アセンブリを使用するアプリケーションの構成ファイルを使用できる 1 つまたは複数のアプリケーションでは、既知の場所に存在する構成ファイルがあるアセンブリを使用する場合、  **\<linkedConfiguration >**構成情報を直接含むのではなく、アセンブリの構成ファイルを含める要素。 コンポーネント アセンブリが処理された場合は、アセンブリを使用するすべてのアプリケーションに更新された構成情報を提供一般的な構成ファイルを更新します。
+**\<LinkedConfiguration >** 要素は、サービス コンポーネントのアセンブリの簡略化します。 アセンブリを使用するアプリケーションの構成ファイルを使用できる 1 つまたは複数のアプリケーションでは、既知の場所に存在する構成ファイルがあるアセンブリを使用する場合、  **\<linkedConfiguration >** 構成情報を直接含むのではなく、アセンブリの構成ファイルを含める要素。 コンポーネント アセンブリが処理された場合は、アセンブリを使用するすべてのアプリケーションに更新された構成情報を提供一般的な構成ファイルを更新します。
 
 > [!NOTE]
->  **\<LinkedConfiguration >** Windows サイド バイ サイド マニフェストと共にアプリケーションに要素がサポートされていません。
+> **\<LinkedConfiguration >** Windows サイド バイ サイド マニフェストと共にアプリケーションに要素がサポートされていません。
 
 次の規則は、リンクされた構成ファイルの使用を制御します。
 
@@ -76,9 +67,9 @@ ms.lasthandoff: 12/22/2017
 
 - すべてのリンクされた構成ファイルを結合し、1 つのファイルの動作と同様に、 `#include` C/C++ のディレクティブ。
 
--  **\<LinkedConfiguration >**要素がアプリケーション構成ファイルでのみ使用できます。 では無視されます*Machine.config*です。
+- **\<LinkedConfiguration >** 要素がアプリケーション構成ファイルでのみ使用できます。 では無視されます*Machine.config*です。
 
-- 循環参照が検出され、終了します。 つまり場合、  **\<linkedConfiguration >**ループを形成する一連の構成ファイルの要素、ループが検出され、停止します。
+- 循環参照が検出され、終了します。 つまり場合、  **\<linkedConfiguration >** ループを形成する一連の構成ファイルの要素、ループが検出され、停止します。
 
 ## <a name="example"></a>例
 
@@ -94,5 +85,5 @@ ms.lasthandoff: 12/22/2017
 
 ## <a name="see-also"></a>関連項目
 
-[**\<assemblyBinding >**要素](~/docs/framework/configure-apps/file-schema/assemblybinding-element-for-configuration.md)   
+[**\<assemblyBinding >** 要素](~/docs/framework/configure-apps/file-schema/assemblybinding-element-for-configuration.md)   
 [.NET Framework の構成ファイル スキーマ](~/docs/framework/configure-apps/file-schema/index.md)

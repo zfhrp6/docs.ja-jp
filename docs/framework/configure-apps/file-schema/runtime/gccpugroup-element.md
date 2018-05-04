@@ -1,33 +1,23 @@
 ---
-title: "&lt;GCCpuGroup&gt;要素"
-ms.custom: 
+title: '&lt;GCCpuGroup&gt;要素'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - GCCpuGroup element
 - <GCCpuGroup> element
 ms.assetid: c1fc7d6c-7220-475c-a312-5b8b201f66e0
-caps.latest.revision: "9"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: dcead28d7bf66e0626a0108015add4f22c5fa476
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: d4461667bdb47d410c857b4ac2c9dd268438a02f
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltgccpugroupgt-element"></a>&lt;GCCpuGroup&gt;要素
 ガベージ コレクションが複数の CPU グループをサポートするかどうかを指定します。  
   
  \<configuration>  
-\<runtime>  
+\<ランタイム >  
 \<GCCpuGroup>  
   
 ## <a name="syntax"></a>構文  
@@ -81,7 +71,7 @@ ms.lasthandoff: 01/19/2018
 </configuration>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ランタイム設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
  [構成ファイル スキーマ](../../../../../docs/framework/configure-apps/file-schema/index.md)  
  [方法: 同時実行ガベージ コレクションを無効にします。](http://msdn.microsoft.com/library/ba2c6c67-5778-497c-9fac-5f793b5500c7)  

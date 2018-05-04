@@ -1,13 +1,6 @@
 ---
-title: "パイプラインの開発"
-ms.custom: 
+title: パイプラインの開発
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - add-in pipeline [.NET Framework], segments
 - activation path for add-ins [.NET Framework]
@@ -16,23 +9,20 @@ helpviewer_keywords:
 - add-in pipeline [.NET Framework], about
 - add-ins [.NET Framework], pipeline development
 ms.assetid: 932788f2-b87d-44cf-82f9-04492a8b2722
-caps.latest.revision: "31"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 33646bbd7b0043cb5fc036b9b11aa4cf37cd537f
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 2d889b7de4bc766deda9b91877ceefb4aebfc551
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="pipeline-development"></a>パイプラインの開発
 アドイン パイプラインは、ホスト アプリケーションとそのアドインが互いに通信するために使用する必要がありますパイプライン セグメントのパスです。  
   
  次の図は、通信パイプラインとそのセグメントを示します。  
   
- ![追加 (& a) #45; パイプライン モデル。] (../../../docs/framework/add-ins/media/addin1.png "AddIn1")  
+ ![追加&#45;パイプライン モデル。] (../../../docs/framework/add-ins/media/addin1.png "AddIn1")  
 アドイン パイプライン  
   
  ホスト アプリケーションは、パイプラインの 1 つの最後に、アドインで、もう一方の end。 各端から開始し、中央方向に移動、ホスト アプリケーションとアドインの両方がある、両方を共有するオブジェクト モデルのビューを定義する抽象基本クラスです。 これらの型 (クラス) は、ビューでは、追加のパイプライン セグメントと、アドイン パイプライン セグメントのホスト ビューを構成します。 アドイン ビュー パイプライン セグメントには多くの場合、2 つ以上の抽象クラスが含まれていますが、アドインから継承するクラスは、アドインをベースと呼ばれます。  
@@ -45,7 +35,7 @@ ms.lasthandoff: 01/19/2018
   
  次の図は、パイプライン セグメントを構成する型を示します。 図に示す型の名前は任意ですが、ホストとホストを除くすべての種類のビューを追加で必要な属性情報ストアを構築するメソッドによって検出できるようにします。  
   
- ![追加 (& a) #45 以外の型に必要な属性をモデルにします。] (../../../docs/framework/add-ins/media/addin-model.png "AddIn_Model")  
+ ![追加&#45;モデル型に必要な属性でします。] (../../../docs/framework/add-ins/media/addin-model.png "AddIn_Model")  
 アドイン パイプラインの種類  
   
  次の表では、アドインをアクティブ化するためのパイプライン セグメントについて説明します。 これらのセグメントの詳細については、次を参照してください。[コントラクト、ビュー、およびアダプター](http://msdn.microsoft.com/library/a6460173-9507-4b87-8c07-d4ee245d715c)です。  
@@ -63,7 +53,7 @@ ms.lasthandoff: 01/19/2018
 ## <a name="pipeline-activation-path"></a>パイプラインのアクティブ化のパス  
  次の図は、アドインがアクティブになる型のアクティブ化を示します。 オブジェクトを渡すことは、計算、またはオブジェクトのコレクションの結果などのホストも示しています。 これは、最も一般的なシナリオです。  
   
- ![追加 (& a) #45; アクティブ化パスを持つモデルをします。] (../../../docs/framework/add-ins/media/addin6.png "AddIn6")  
+ ![追加&#45;アクティベーション パスを持つモデル。] (../../../docs/framework/add-ins/media/addin6.png "AddIn6")  
 アドインからホストへのアクティブ化パス  
   
  パイプラインのアクティブ化のパスは次のようです。  
@@ -97,6 +87,6 @@ ms.lasthandoff: 01/19/2018
   
      書店のシナリオを使用してパイプライン経由でデータ コレクションを渡す方法について説明します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [アドイン パイプラインのシナリオ](http://msdn.microsoft.com/library/feb70e0b-8734-494c-aeaf-b567f014043e)  
  [アドインおよび拡張機能](../../../docs/framework/add-ins/index.md)

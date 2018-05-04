@@ -1,24 +1,12 @@
 ---
-title: "入れ子になっているスキーマ要素間の暗黙的なリレーションの割り当て"
-ms.custom: 
+title: 入れ子になっているスキーマ要素間の暗黙的なリレーションの割り当て
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 6b25002a-352e-4d9b-bae3-15129458a355
-caps.latest.revision: "4"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 740d45c47f46c311ed703fa11ec86a9739930944
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 1bce0c2815ac94787055794942807777232df295
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="map-implicit-relations-between-nested-schema-elements"></a>入れ子になっているスキーマ要素間の暗黙的なリレーションの割り当て
 XML スキーマ言語定義 (XSD) スキーマでは、複数の複合型を入れ子にして指定できます。 この場合、割り当て処理には既定の割り当てが適用されます。その際、<xref:System.Data.DataSet> に作成される内容を次に示します。  
@@ -27,7 +15,7 @@ XML スキーマ言語定義 (XSD) スキーマでは、複数の複合型を入
   
 -   追加主キーに対して 1 列テーブルの定義がという名前の親に unique 制約が存在しない場合*TableName*_id のデータ型、 *TableName*親テーブルの名前を指定します。  
   
--   主キーとして追加される列を識別する、親テーブルに主キー制約 (設定して、 **IsPrimaryKey**プロパティを**True**)。 制約が制約を名前付き*#* 場所 *#*  1、2、3 というようにします。 たとえば、最初の制約の既定の名前は Constraint1 となります。  
+-   主キーとして追加される列を識別する、親テーブルに主キー制約 (設定して、 **IsPrimaryKey**プロパティを**True**)。 制約が制約を名前付き*#* 場所*#* 1、2、3 というようにします。 たとえば、最初の制約の既定の名前は Constraint1 となります。  
   
 -   子テーブルの外部キー制約により、追加された列が親テーブルの主キーを参照する外部キーとして認識されます。 制約名が*ParentTable_ChildTable*場所*ParentTable* 、親テーブルの名前を指定し、 *ChildTable*子テーブルの名前を指定します。  
   
@@ -108,7 +96,7 @@ XML スキーマ言語定義 (XSD) スキーマでは、複数の複合型を入
     Nested: True  
     ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [XML スキーマ (XSD) からの DataSet リレーションの生成](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/generating-dataset-relations-from-xml-schema-xsd.md)  
  [XML スキーマ (XSD) 制約の DataSet 制約への割り当て](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/mapping-xml-schema-xsd-constraints-to-dataset-constraints.md)  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

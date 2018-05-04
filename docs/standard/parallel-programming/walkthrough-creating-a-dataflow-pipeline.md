@@ -1,5 +1,5 @@
 ---
-title: "チュートリアル: データフロー パイプラインの作成"
+title: 'チュートリアル: データフロー パイプラインの作成'
 ms.date: 03/30/2017
 ms.prod: .net
 ms.technology: dotnet-standard
@@ -18,11 +18,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 2d0c886a443263897330dbd46a7f6f194bb20857
-ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
+ms.openlocfilehash: e6471de1a6231f114f6967bb6f777a8dc4d39b82
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="walkthrough-creating-a-dataflow-pipeline"></a>チュートリアル: データフロー パイプラインの作成
 <xref:System.Threading.Tasks.Dataflow.DataflowBlock.Receive%2A?displayProperty=nameWithType>、<xref:System.Threading.Tasks.Dataflow.DataflowBlock.ReceiveAsync%2A?displayProperty=nameWithType>、<xref:System.Threading.Tasks.Dataflow.DataflowBlock.TryReceive%2A?displayProperty=nameWithType> の各メソッドを使用してソース ブロックからメッセージを受信できますが、メッセージ ブロックを接続して*データフロー パイプライン*を形成することもできます。 データフロー パイプラインは一連の*データフロー ブロック*で構成されます。それぞれが特定のタスクを実行し、全体として 1 つの大きな目標を達成します。 データフロー パイプラインのすべてのデータフロー ブロックは、他のデータフロー ブロックからメッセージを受け取ったときに処理を実行します。 これは、自動車製造の組み立てラインに例えることができます。 各車両が組み立てラインを通過する際、あるステーションではフレームを組み立て、次のステーションではエンジンを設置するなどです。 組み立てラインでは、複数の車両を同時に組み立てることができるため、一度に車両全体を組み立てるよりスループットが向上します。
@@ -45,7 +45,7 @@ ms.lasthandoff: 02/01/2018
  このチュートリアルを開始する前に、「[Dataflow (データフロー)](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)」をお読みください。  
   
 ## <a name="creating-a-console-application"></a>コンソール アプリケーションの作成  
- [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] で、[!INCLUDE[csprcs](../../../includes/csprcs-md.md)] または [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)] コンソール アプリケーション プロジェクトを作成します。 System.Threading.Tasks.Dataflow NuGet パッケージをインストールします。
+ [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] で、Visual C# または Visual Basic のコンソール アプリケーション プロジェクトを作成します。 System.Threading.Tasks.Dataflow NuGet パッケージをインストールします。
 
 [!INCLUDE [tpl-install-instructions](../../../includes/tpl-install-instructions.md)]
 

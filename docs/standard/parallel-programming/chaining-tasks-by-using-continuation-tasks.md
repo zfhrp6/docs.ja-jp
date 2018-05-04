@@ -21,11 +21,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 64a6fd2f5cbaee17ac35d7b4bd6f08326eafac64
-ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
+ms.openlocfilehash: ff475259d1835a048d6260cabf4f1d46d2436954
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="chaining-tasks-by-using-continuation-tasks"></a>継続タスクを使用したタスクの連結
 非同期プログラミングでは、非同期操作で完了時に 2 番目の操作を呼び出してデータを渡すのが一般的です。 これまで、この処理はコールバック メソッドを使用して行っていました。 タスク並列ライブラリでは、 *継続タスク*に同じ機能が用意されています。 継続タスク (単に "継続" とも呼ばれます) とは、別のタスク (" *継続元*" と呼ばれます) が終了したときにそのタスクによって呼び出される非同期タスクのことです。  
@@ -130,7 +130,7 @@ ms.lasthandoff: 04/18/2018
   
  継続の状態は、TPL を使用するために、 [非同期プログラミング モデル (APM)](../../../docs/standard/asynchronous-programming-patterns/asynchronous-programming-model-apm.md) を使った既存のコードを変換する場合に有用です。 APM では通常、**Begin***Method* メソッドでオブジェクト状態を指定し、後から <xref:System.IAsyncResult.AsyncState%2A?displayProperty=nameWithType> プロパティを使って、その状態にアクセスします。 <xref:System.Threading.Tasks.Task.ContinueWith%2A> メソッドを使用すると、APM を使用するコードを TPL を使用するように変換するときに、この状態を維持できます。  
   
- 継続の状態は、 <xref:System.Threading.Tasks.Task> デバッガーで [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] オブジェクトを使用するときにも有用です。 たとえば、 **[並列タスク]** ウィンドウの **[タスク]** の列に、各タスクの状態オブジェクトの文字列表現が表示されます。 **[並列タスク]** ウィンドウの詳細については、「[[タスク] ウィンドウの使用](/visualstudio/debugger/using-the-tasks-window)」を参照してください。  
+ 継続の状態は、Visual Studio デバッガーで <xref:System.Threading.Tasks.Task> オブジェクトを使用するときにも有用です。 たとえば、 **[並列タスク]** ウィンドウの **[タスク]** の列に、各タスクの状態オブジェクトの文字列表現が表示されます。 **[並列タスク]** ウィンドウの詳細については、「[[タスク] ウィンドウの使用](/visualstudio/debugger/using-the-tasks-window)」を参照してください。  
   
  継続の状態の使用方法を次の例に示します。 この例では、継続タスクのチェーンを作成します。 各タスクは <xref:System.DateTime> メソッドの `state` パラメーターの現在時刻である、 <xref:System.Threading.Tasks.Task.ContinueWith%2A> オブジェクトを提供します。 <xref:System.DateTime> の各オブジェクトは継続タスクが作成された時刻を表します。 各タスクは、結果として、タスクが終了する時刻を表す秒の <xref:System.DateTime> オブジェクトを生成します。 この例では、すべてのタスクが終了した後に、作成時刻および各継続タスクの終了時刻が表示されます。  
   

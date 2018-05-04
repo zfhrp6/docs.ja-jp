@@ -1,24 +1,12 @@
 ---
-title: "入力文字セット (Entity SQL)"
-ms.custom: 
+title: 入力文字セット (Entity SQL)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 13d291d3-e6bc-4719-b953-758b61a590b6
-caps.latest.revision: "2"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 8d75d8c96d1cc028bed8beea16e2728e5654a12c
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 5e7886215cac2d9363a9ed68cd03a0fce4374055
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="input-character-set-entity-sql"></a>入力文字セット (Entity SQL)
 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] は、UTF-16 でエンコードされた UNICODE 文字を受け取ります。  
@@ -39,5 +27,5 @@ ms.lasthandoff: 01/17/2018
   
  シンプルな識別子に使用できるのはラテン文字だけです。 元の値が比較されるので、比較の際のあいまいさが回避されます。 たとえば、[ABC] は、日本語とラテン語のコードページでは異なります。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Entity SQL の概要](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-overview.md)

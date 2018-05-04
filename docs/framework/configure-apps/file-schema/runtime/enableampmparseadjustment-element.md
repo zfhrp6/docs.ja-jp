@@ -1,26 +1,14 @@
 ---
-title: "&lt;EnableAmPmParseAdjustment&gt;要素"
-ms.custom: 
+title: '&lt;EnableAmPmParseAdjustment&gt;要素'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-bcl
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: fda998a5-f538-4f8b-a18c-ee7f35e16938
-caps.latest.revision: "4"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ed01035d7d5b154ebc6541eb6ac3dbae6a413fbc
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b17f521be31fa4082d9418c7dad734e37994bbb5
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ltenableampmparseadjustmentgt-element"></a>&lt;EnableAmPmParseAdjustment&gt;要素
 日時解析メソッドが 1 日、月、1 時間、および AM/PM 指定子を含む日付文字列を解析するルールの調整済みセットを使用するかどうかを判断します。  
@@ -92,6 +80,6 @@ ms.lasthandoff: 12/22/2017
 |en-US|2017 5/1/4時 00分: 00 AM|4/10/2017 年 6時 00分: 00 AM|  
 |en-GB|5/1/2017 6:00:00|10/4/2017 6:00:00|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [\<ランタイム > 要素](../../../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md)  
  [\<configuration> 要素](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)

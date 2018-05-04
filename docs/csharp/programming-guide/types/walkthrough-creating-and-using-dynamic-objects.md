@@ -1,5 +1,5 @@
 ---
-title: "チュートリアル: 動的オブジェクトの作成と使用 (C# および Visual Basic)"
+title: 'チュートリアル: 動的オブジェクトの作成と使用 (C# および Visual Basic)'
 ms.date: 07/20/2015
 ms.prod: .net
 ms.technology:
@@ -13,14 +13,14 @@ helpviewer_keywords:
 - dynamic objects
 - dynamic objects [C#]
 ms.assetid: 568f1645-1305-4906-8625-5d77af81e04f
-caps.latest.revision: 
+caps.latest.revision: 22
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: eca6da96d3bf9c5c25216e442999be77a332b5c9
-ms.sourcegitcommit: 70dcc89737127e4d5f20500242409b687e51b07e
+ms.openlocfilehash: 16c08ff42ce77b3901f5909571c528394d139e03
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/11/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="walkthrough-creating-and-using-dynamic-objects-c-and-visual-basic"></a>チュートリアル: 動的オブジェクトの作成と使用 (C# および Visual Basic)
 
@@ -28,7 +28,7 @@ ms.lasthandoff: 02/11/2018
   
  動的オブジェクトを使用すると、IronPython や IronRuby などの動的言語にも簡単にアクセスできます。 動的オブジェクトを使用して、実行時に解釈される動的スクリプトを参照することもできます。  
   
- 動的オブジェクトを参照するには、遅延バインディングを使用します。 C# では、遅延バインディング オブジェクトの型は `dynamic` として指定します。 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] では、遅延バインディング オブジェクトの型は `Object` として指定します。 詳しくは、「[dynamic](../../../csharp/language-reference/keywords/dynamic.md)」および「[事前バインディングと遅延バインディング](../../../visual-basic/programming-guide/language-features/early-late-binding/index.md)」をご覧ください。  
+ 動的オブジェクトを参照するには、遅延バインディングを使用します。 C# では、遅延バインディング オブジェクトの型は `dynamic` として指定します。 Visual Basic では、遅延バインディング オブジェクトの型は `Object` として指定します。 詳しくは、「[dynamic](../../../csharp/language-reference/keywords/dynamic.md)」および「[事前バインディングと遅延バインディング](../../../visual-basic/programming-guide/language-features/early-late-binding/index.md)」をご覧ください。  
   
  カスタムの動的オブジェクトは、<xref:System.Dynamic?displayProperty=nameWithType> 名前空間内のクラスを使用して作成できます。 たとえば、<xref:System.Dynamic.ExpandoObject> を作成し、実行時にそのオブジェクトのメンバーを指定することもできます。 また、<xref:System.Dynamic.DynamicObject> クラスを継承する、独自の型を作成することもできます。 その後、<xref:System.Dynamic.DynamicObject> クラスのメンバーをオーバーライドして、実行時の動的機能を提供することができます。  
   
@@ -48,9 +48,9 @@ ms.lasthandoff: 02/11/2018
   
 #### <a name="to-create-a-custom-dynamic-class"></a>カスタムの動的クラスを作成するには  
   
-1.  [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] を起動します。  
+1.  Visual Studio を起動します。  
   
-2.  **[ファイル]** メニューの **[新規作成]** をポイントし、 **[プロジェクト]**をクリックします。  
+2.  **[ファイル]** メニューの **[新規作成]** をポイントし、 **[プロジェクト]** をクリックします。  
   
 3.  **[新しいプロジェクト]** ダイアログ ボックスの **[プロジェクトの種類]** ペインで、**[Windows]** が選択されていることを確認します。 **[テンプレート]** ペインの **[コンソール アプリケーション]** を選択します。 **[名前]** ボックスに `DynamicSample` と入力して、**[OK]** をクリックします。 新しいプロジェクトが作成されます。  
   
@@ -127,7 +127,7 @@ ms.lasthandoff: 02/11/2018
   
 #### <a name="to-create-a-sample-application-that-uses-the-custom-dynamic-object"></a>カスタム動的オブジェクトを使用するサンプル アプリケーションを作成するには  
   
-1.  **ソリューション エクスプ ローラー**で、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] を使用している場合は Module1.vb ファイルを、Visual C# を使用している場合は Program.cs ファイルをダブルクリックします。  
+1.  **ソリューション エクスプローラー**で、Visual Basic を使用している場合は Module1.vb ファイルを、Visual C# を使用している場合は Program.cs ファイルをダブルクリックします。  
   
 2.  Main プロシージャに次のコードを追加して、TextFile1.txt ファイルの `ReadOnlyFile` クラスのインスタンスを作成します。 このコードは、遅延バインディングを使用して動的メンバーを呼び出し、"Customer" という文字列を含んだテキスト行を取得します。  
   
@@ -143,15 +143,15 @@ ms.lasthandoff: 02/11/2018
   
 #### <a name="to-create-a-custom-dynamic-class"></a>カスタムの動的クラスを作成するには  
   
-1.  [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] で、**[ファイル]** メニューの **[新規作成]**をポイントし、 **[プロジェクト]**をクリックします。  
+1.  Visual Studio で、**[ファイル]** メニューの **[新規作成]** をポイントし、**[プロジェクト]** をクリックします。  
   
 2.  **[新しいプロジェクト]** ダイアログ ボックスの **[プロジェクトの種類]** ペインで、**[Windows]** が選択されていることを確認します。 **[テンプレート]** ペインの **[コンソール アプリケーション]** を選択します。 **[名前]** ボックスに `DynamicIronPythonSample` と入力して、**[OK]** をクリックします。 新しいプロジェクトが作成されます。  
   
-3.  [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] を使用している場合は、 DynamicIronPythonSample プロジェクトを右クリックし、**[プロパティ]** をクリックします。 **[参照]** タブをクリックします。**[追加]** ボタンをクリックします。 Visual C# を使用している場合は、**ソリューション エクスプローラー**で **[参照]** フォルダーを右クリックし、**[参照の追加]** をクリックします。  
+3.  Visual Basic を使用している場合は、DynamicIronPythonSample プロジェクトを右クリックし、**[プロパティ]** をクリックします。 **[参照]** タブをクリックします。**[追加]** ボタンをクリックします。 Visual C# を使用している場合は、**ソリューション エクスプローラー**で **[参照]** フォルダーを右クリックし、**[参照の追加]** をクリックします。  
   
 4.  **[参照]** タブで、IronPython ライブラリがインストールされているフォルダーを参照します。 たとえば、 C:\Program Files\IronPython 2.6 for .NET 4.0 です。 **IronPython.dll**、**IronPython.Modules.dll**、**Microsoft.Scripting.dll**、および **Microsoft.Dynamic.dll** ライブラリを選択します。 **[OK]** をクリックします。  
   
-5.  [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] を使用している場合は、Module1.vb ファイルを編集します。 Visual C# を使用している場合は、Program.cs ファイルを編集します。  
+5.  Visual Basic を使用している場合は、Module1.vb ファイルを編集します。 Visual C# を使用している場合は、Program.cs ファイルを編集します。  
   
 6.  ファイルの先頭に、IronPython ライブラリから `Microsoft.Scripting.Hosting` および `IronPython.Hosting` 名前空間をインポートするための次のコードを追加します。  
   
