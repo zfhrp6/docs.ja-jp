@@ -1,14 +1,6 @@
 ---
-title: "SYMLINEDELTA 構造体"
-ms.custom: 
+title: SYMLINEDELTA 構造体
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - SYMLINEDELTA
 api_location:
@@ -22,17 +14,13 @@ helpviewer_keywords:
 ms.assetid: 9634e995-d46d-4397-ab66-cc5781d11e4e
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 677b7c2858e4f3248e0d46e460b9eef09de724f0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 77cd8b7d791d11f6d40386f4747c60cd4832521a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="symlinedelta-structure"></a>SYMLINEDELTA 構造体
 シンボル ハンドラーを編集した結果として移動されたメソッドに関する情報を提供します。  
@@ -54,8 +42,8 @@ typedef struct _SYMLINEDELTA
 |`mdMethod`|メソッドのメタデータ トークンです。|  
 |`delta`|メソッドが移動された行の数。|  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** CorSym.idl  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [シンボル ストア診断構造体](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-structures.md)

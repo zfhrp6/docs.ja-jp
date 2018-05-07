@@ -1,14 +1,6 @@
 ---
-title: "ICorDebugController::HasQueuedCallbacks メソッド"
-ms.custom: 
+title: ICorDebugController::HasQueuedCallbacks メソッド
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ICorDebugController.HasQueuedCallbacks
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: 0d6a1cd9-370b-4462-adbf-e3980e897ea7
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 03d52bb31a81876a00e1af33494b14fb99fee0fa
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: eba265b727d00690ab77c6ae831e954d59df7c50
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="icordebugcontrollerhasqueuedcallbacks-method"></a>ICorDebugController::HasQueuedCallbacks メソッド
 任意のマネージ コールバックが、指定されたスレッドの現在キューに登録するかどうかを示す値を取得します。  
@@ -61,14 +49,14 @@ HRESULT HasQueuedCallbacks (
   
  デバッグ イベントのキューに入っているときに、既に、発生したため、デバッガーがデバッグ対象の状態を確認するためのキュー全体をドレインする必要があります。 (呼び出し`ICorDebugController::Continue`するキューのドレインを実行します)。たとえば、キューには、スレッドで 2 つのデバッグ イベントが含まれている場合*X*、デバッガーがスレッドを中断および*X* 、最初のデバッグ イベントとし、呼び出しの後に`ICorDebugController::Continue`、2 番目のデバッグ イベントをスレッド*X*スレッドが中断されましたがディスパッチされます。  
   
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  

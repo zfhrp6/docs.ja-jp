@@ -1,13 +1,6 @@
 ---
-title: "相互運用固有の属性の適用"
-ms.custom: 
+title: 相互運用固有の属性の適用
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - design-time attributes
 - .NET Framework, exposing components to COM
@@ -20,16 +13,13 @@ helpviewer_keywords:
 - COM interop, exposing COM components
 - COM interop, applying attributes
 ms.assetid: b6014613-641c-4912-9e2f-83a99210a037
-caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ea9e12140e351bb5cc2b51ac2efca8a24e94bf2b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 554ea7c54973852510e539000baf03bdce8e7bcf
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="applying-interop-attributes"></a>相互運用固有の属性の適用
 <xref:System.Runtime.InteropServices> 名前空間では、デザイン時にユーザーが適用する属性、変換処理中に COM 相互運用ツールおよび API によって適用される属性、ユーザーまたは COM 相互運用機能によって適用される属性という 3 つのカテゴリの相互運用固有の属性が提供されます。  
@@ -76,7 +66,7 @@ ms.lasthandoff: 12/22/2017
 |<xref:System.Runtime.InteropServices.TypeLibTypeAttribute>|元はこの型のために COM タイプ ライブラリからインポートされた **TYPEFLAGS** が含まれます。|  
 |<xref:System.Runtime.InteropServices.TypeLibVarAttribute>|元はこの変数のために COM タイプ ライブラリからインポートされた **VARFLAGS** が含まれます。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Runtime.InteropServices>  
  [COM への .NET Framework コンポーネントの公開](../../../docs/framework/interop/exposing-dotnet-components-to-com.md)  
  [属性](../../../docs/standard/attributes/index.md)  

@@ -1,24 +1,14 @@
 ---
-title: "方法: WIF を使用してクレーム対応 ASP.NET Web フォーム アプリケーションをビルドする"
-ms.custom: 
+title: '方法: WIF を使用してクレーム対応 ASP.NET Web フォーム アプリケーションをビルドする'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: efb264dd-f47b-49a9-85ee-9f45d4425765
-caps.latest.revision: "7"
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: 70d503448946b60f1d6b63bf850d8d62fb63acc2
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e8dc6b1c5073ac55be224eb0d410ad7f87d135d2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-build-claims-aware-aspnet-web-forms-application-using-wif"></a>方法: WIF を使用してクレーム対応 ASP.NET Web フォーム アプリケーションをビルドする
 ## <a name="applies-to"></a>対象  
@@ -27,7 +17,7 @@ ms.lasthandoff: 12/22/2017
   
 -   ASP.NET® Web フォーム  
   
-## <a name="summary"></a>概要  
+## <a name="summary"></a>まとめ  
  この操作方法では、簡単なクレーム対応 ASP.NET Web フォーム アプリケーションを作成するための詳細な手順を示します。 また、フェデレーション認証を正常に実装するために簡単なクレーム対応 ASP.NET Web フォーム アプリケーションをテストする方法も示します。 この操作方法には、セキュリティ トークン サービス (STS) の詳細な作成手順は含まれていません。既に STS が構成済みであると想定します。  
   
 ## <a name="contents"></a>目次  

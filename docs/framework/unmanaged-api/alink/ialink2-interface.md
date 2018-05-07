@@ -1,30 +1,18 @@
 ---
-title: "IALink2 インターフェイス"
-ms.custom: 
+title: IALink2 インターフェイス
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 f1_keywords:
 - IALink2
 helpviewer_keywords:
 - IALink2 interface
 ms.assetid: fba62a55-36bd-401e-bcd2-5be8e2d34891
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: de0ff924e2c9ae20b9796fbcae2df0fd858295dd
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 0ddc2f50b42ba8adf7aa5f4d7fa0dc68469e7344
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ialink2-interface"></a>IALink2 インターフェイス
 補完、 [IALink インターフェイス](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)など新しいメタデータ インターフェイスで操作するメソッドを宣言することによって[IMetaDataEmit2 インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)です。 さらに、IALink2 では、元の IALink インターフェイス経由で追加の使用の柔軟性を提供するメソッドを宣言します。  
@@ -52,7 +40,7 @@ ms.lasthandoff: 12/22/2017
   
  [SetPEKind メソッド](../../../../docs/framework/unmanaged-api/alink/setpekind-method.md)  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ALink API](../../../../docs/framework/unmanaged-api/alink/index.md)  
  [IALink インターフェイス](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
  [Al.exe (アセンブリ リンカー)](../../../../docs/framework/tools/al-exe-assembly-linker.md)

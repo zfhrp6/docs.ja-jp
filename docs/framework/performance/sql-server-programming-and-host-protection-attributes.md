@@ -1,13 +1,6 @@
 ---
-title: "SQL Server プログラミングとホスト保護属性"
-ms.custom: 
+title: SQL Server プログラミングとホスト保護属性
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - SQL Server [.NET Framework]
 - permission sets, SQL Server
@@ -19,16 +12,13 @@ helpviewer_keywords:
 - host protection attributes
 - HostProtectionAttribute class, reliability
 ms.assetid: 7dfa36b4-e773-4c75-a3ff-ff1af3ce4c4f
-caps.latest.revision: "13"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a775b1c4f8446e756301650dcc61e3ef378408f6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9f3e5b3c4dcec98f293b4d6444d781705c700f88
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="sql-server-programming-and-host-protection-attributes"></a>SQL Server プログラミングとホスト保護属性
 SQL Server ホストにマネージ コードを読み込み、実行する機能を利用するには、コード アクセス セキュリティとホスト リソース保護の両方においてホストの要件を満たす必要があります。  コード アクセス セキュリティの要件は、SAFE、EXTERNAL-ACCESS、UNSAFE という 3 つの SQL Server アクセス許可セットのいずれかにより指定されます。 SAFE アクセス許可セット内か EXTERNAL-ACCESS アクセス許可セット内でコードを実行する場合、<xref:System.Security.Permissions.HostProtectionAttribute> 属性が適用されている特定の型またはメンバーを避ける必要があります。 <xref:System.Security.Permissions.HostProtectionAttribute> はセキュリティ アクセス許可ではなく、むしろ信頼性保証であり、ホストが許可しない可能性がある特定のコード コンストラクト (型またはメソッド) を識別します。  <xref:System.Security.Permissions.HostProtectionAttribute> を使用することで、ホストの安定性を保護するプログラミング モデルを適用します。  
@@ -67,9 +57,9 @@ SQL Server ホストにマネージ コードを読み込み、実行する機�
 |アクセス許可セット|SAFE|EXTERNAL-ACCESS|UNSAFE|  
 |--------------------|----------|----------------------|------------|  
 |コード アクセス セキュリティ|実行のみ|実行 + 外部リソースへのアクセス|無制限|  
-|プログラミング モデルの制限|はい|はい|無制限|  
-|検証の必要性|はい|○|いいえ|  
-|ネイティブ コードを呼び出す機能|いいえ|いいえ|はい|  
+|プログラミング モデルの制限|[はい]|[はい]|無制限|  
+|検証の必要性|[はい]|はい|×|  
+|ネイティブ コードを呼び出す機能|×|Ｘ|[はい]|  
   
  SAFE は、許可されるプログラミング モデルに関して、制限が関連付けられた、最も信頼性があり、安全なモードです。 SAFE コードには、信頼性とセキュリティの高い機能があります。 SAFE アセンブリには、実行、計算の実行、ローカル データベースにアクセスするために十分なアクセス許可が与えられます。 SAFE アセンブリは検証可能なタイプ セーフでなければなりません。また、アンマネージ コードの呼び出しを禁止する必要があります。  
   
@@ -84,6 +74,6 @@ SQL Server ホストにマネージ コードを読み込み、実行する機�
   
  以上を考慮した上で、SQL Server は静的変数と静的データ メンバーの使用を禁止します。 SAFE アセンブリと EXTERNAL-ACCESS アセンブリに関しては、SQL Server は CREATE ASSEMBLY 時にアセンブリのメタデータを調べ、静的データ メンバーや静的変数の使用が見つかった場合、SAFE アセンブリまたは EXTERNAL-ACCESS アセンブリの作成に失敗します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Security.Permissions.HostProtectionAttribute>  
  <xref:System.Security.Permissions.HostProtectionResource>

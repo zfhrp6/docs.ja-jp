@@ -1,28 +1,16 @@
 ---
-title: "WCF Data Service クライアント ユーティリティ (DataSvcUtil.exe)"
-ms.custom: 
+title: WCF Data Service クライアント ユーティリティ (DataSvcUtil.exe)
 ms.date: 03/30/2017
-ms.prod: .net-framework-oob
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - WCF Data Services, generating client data classes
 - WCF Data Services, client library
 - WCF Data Services, consuming
 ms.assetid: 9d0af606-929b-4c03-b307-3ef5f705afce
-caps.latest.revision: "2"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: fcbbbe5180acaf943956310d4837a105d8d049d7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 3206947d06a1736116674b70e469c20f8f4fca86
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="wcf-data-service-client-utility-datasvcutilexe"></a>WCF Data Service クライアント ユーティリティ (DataSvcUtil.exe)
 DataSvcUtil.exe は、コマンド ライン ツールによって提供される[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]を消費する、[!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]フィードし、.NET Framework クライアント アプリケーションからデータ サービスにアクセスするために必要なクライアント データ サービス クラスが生成されます。 このユーティリティでは、以下のメタデータ ソースを使用してデータ クラスを生成できます。  
@@ -49,13 +37,13 @@ datasvcutil /out:file [/in:file | /uri:serviceuri] [/dataservicecollection] [/la
 |------------|-----------------|  
 |`/dataservicecollection`|オブジェクトをコントロールにバインドするために必要なコードも生成することを指定します。|  
 |`/help`<br /><br /> または<br /><br /> `/?`|このツールのコマンド構文とオプションを表示します。|  
-|`/in:`*\<ファイル >*|.csdl ファイルまたは .edmx ファイル、またはファイルがあるディレクトリを指定します。|  
-|`/language:`[VB &#124;です。CSharp]|生成されるソース コード ファイルの言語を指定します。 既定の言語は C# です。|  
+|`/in:` *\<ファイル >*|.csdl ファイルまたは .edmx ファイル、またはファイルがあるディレクトリを指定します。|  
+|`/language:`[VB&#124;CSharp]|生成されるソース コード ファイルの言語を指定します。 既定の言語は C# です。|  
 |`/nologo`|著作権メッセージが表示されないようにします。|  
-|`/out:`*\<ファイル >*|生成されたクライアント データ サービス クラスを含むソース コード ファイルの名前を指定します。|  
-|`/uri:`*\<文字列 >*|URI、[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]フィードします。|  
+|`/out:` *\<ファイル >*|生成されたクライアント データ サービス クラスを含むソース コード ファイルの名前を指定します。|  
+|`/uri:` *\<文字列 >*|URI、[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]フィードします。|  
 |`/version:`[1.0&#124;2.0]|許容される [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] の最上位バージョンを指定します。 基に、バージョンが決定されます、`DataServiceVersion`返されたデータ サービス メタデータの DataService 要素の属性です。 詳細については、次を参照してください。[データ サービスのバージョン管理](../../../../docs/framework/data/wcf/data-service-versioning-wcf-data-services.md)です。 指定すると、`/dataservicecollection`パラメーターも指定してください`/version:2.0`データ バインディングを有効にします。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [データ サービス クライアント ライブラリの生成](../../../../docs/framework/data/wcf/generating-the-data-service-client-library-wcf-data-services.md)  
  [方法: データ サービス参照を追加する](../../../../docs/framework/data/wcf/how-to-add-a-data-service-reference-wcf-data-services.md)

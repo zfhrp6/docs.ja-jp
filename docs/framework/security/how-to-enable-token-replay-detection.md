@@ -1,24 +1,14 @@
 ---
-title: "方法: トークン再生検出を有効にする"
-ms.custom: 
+title: '方法: トークン再生検出を有効にする'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 5a9f5771-f5f6-4100-8501-406aa20d731a
-caps.latest.revision: "4"
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: a7c72d77b4894376fb6cb8aed2d1c6641a3977da
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b9c187998b4af41e1a56ed9a64625da7e4f95d5e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-enable-token-replay-detection"></a>方法: トークン再生検出を有効にする
 ## <a name="applies-to"></a>対象  
@@ -27,7 +17,7 @@ ms.lasthandoff: 12/22/2017
   
 -   ASP.NET® Web フォーム  
   
-## <a name="summary"></a>概要  
+## <a name="summary"></a>まとめ  
  ここでは、WIF を使用する ASP.NET アプリケーションでトークン再生検出を有効にするための詳細な操作手順を示します。 トークン再生検出が有効になっていることを確認するためにアプリケーションをテストする方法についても説明します。 ここでは、セキュリティ トークン サービス (STS) を作成するための詳細な手順については説明しません。代わりに、Identity and Access Tool に付属している開発用 STS を使用します。 開発用 STS はテスト用に用意されたもので、実際の認証は行いません。 このページの内容を完了するには、Identity and Access Tool をインストールする必要があります。 これは、「[Identity and Access Tool](http://go.microsoft.com/fwlink/?LinkID=245849)」からダウンロードできます。  
   
 ## <a name="contents"></a>目次  

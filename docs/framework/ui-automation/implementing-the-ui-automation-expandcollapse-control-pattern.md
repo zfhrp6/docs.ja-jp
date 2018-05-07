@@ -1,28 +1,19 @@
 ---
-title: "UI オートメーション ExpandCollapse コントロール パターンの実装"
-ms.custom: 
+title: UI オートメーション ExpandCollapse コントロール パターンの実装
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-bcl
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - UI Automation, ExpandCollapse control pattern
 - ExpandCollapse control pattern
 - control patterns, ExpandCollapse
 ms.assetid: 1dbabb8c-0d68-47c1-a35e-1c01cb01af26
-caps.latest.revision: "25"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 8e956008c6b80e0b2184adcf0a45b70efa21d752
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f593fb09e8c1056c28d351bfdf0218a0161fd9e4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="implementing-the-ui-automation-expandcollapse-control-pattern"></a>UI オートメーション ExpandCollapse コントロール パターンの実装
 > [!NOTE]
@@ -59,12 +50,12 @@ ms.lasthandoff: 12/22/2017
 ## <a name="required-members-for-iexpandcollapseprovider"></a>IExpandCollapseProvider の必須メンバー  
  <xref:System.Windows.Automation.Provider.IExpandCollapseProvider>の実装には、次のプロパティとメソッドが必要です。  
   
-|必須メンバー|メンバーの型|ノート|  
+|必須メンバー|メンバーの型|メモ|  
 |----------------------|-----------------|-----------|  
 |<xref:System.Windows.Automation.Provider.IExpandCollapseProvider.ExpandCollapseState%2A>|プロパティ|なし|  
 |<xref:System.Windows.Automation.ExpandCollapsePattern.Expand%2A>|メソッド|なし|  
 |<xref:System.Windows.Automation.ExpandCollapsePattern.Collapse%2A>|メソッド|なし|  
-|<xref:System.Windows.Automation.AutomationPropertyChangedEventHandler>|Event|このコントロールには関連付けられているイベントがありません。この汎用デリゲートを使用します。|  
+|<xref:System.Windows.Automation.AutomationPropertyChangedEventHandler>|event|このコントロールには関連付けられているイベントがありません。この汎用デリゲートを使用します。|  
   
 <a name="Exceptions"></a>   
 ## <a name="exceptions"></a>例外  
@@ -74,7 +65,7 @@ ms.lasthandoff: 12/22/2017
 |--------------------|---------------|  
 |<xref:System.InvalidOperationException>|いずれか<xref:System.Windows.Automation.ExpandCollapsePattern.Expand%2A>または<xref:System.Windows.Automation.ExpandCollapsePattern.Collapse%2A>時に呼び出される、 <xref:System.Windows.Automation.ExpandCollapseState>  = <xref:System.Windows.Automation.ExpandCollapseState.LeafNode>です。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [UI Automation コントロール パターンの概要](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)  
  [UI オートメーション プロバイダーでのコントロール パターンのサポート](../../../docs/framework/ui-automation/support-control-patterns-in-a-ui-automation-provider.md)  
  [クライアントの UI オートメーション コントロール パターン](../../../docs/framework/ui-automation/ui-automation-control-patterns-for-clients.md)  

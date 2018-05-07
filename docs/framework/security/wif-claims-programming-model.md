@@ -1,26 +1,14 @@
 ---
-title: "WIF 要求プログラミング モデル"
-ms.custom: 
+title: WIF 要求プログラミング モデル
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 149cb875-9b1c-4695-b88a-fbf1725a02f9
-caps.latest.revision: 
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload:
-- dotnet
-ms.openlocfilehash: 1bd84e6a1e6fb0d4808dca42af2e2916be1133a3
-ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
+ms.openlocfilehash: 71327fb5a86c30d15ff060eff5cce170695e86a9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="wif-claims-programming-model"></a>WIF 要求プログラミング モデル
 ASP.NET と Windows Communication Foundation (WCF) の開発者は、通常、IIdentity インターフェイスや IPrincipal インターフェイスを利用し、ユーザーの ID 情報を処理します。 .NET 4.5 では、Windows Identity Foundation (WIF) が統合され、あらゆるプリンシパルに対して常に要求が表示されるようになりました。次の図をご覧ください。  
@@ -35,7 +23,7 @@ ASP.NET と Windows Communication Foundation (WCF) の開発者は、通常、II
   
 -   <xref:System.Security.Claims.Claim.Value%2A> には要求の値が含まれ、文字列として表されます。 たとえば、電子メール アドレスは"someone@contoso.com"です。  
   
--   <xref:System.Security.Claims.Claim.ValueType%2A> は要求値の種類を表し、通常は URI です。 たとえば、文字列型は `http://www.w3.org/2001/XMLSchema#string` として表されます。 値の型は、XML スキーマに基づく QName になります。 WIF で有効な QName 値を出力するには、値の形式を `namespace#format` にする必要があります。 名前空間が適切に定義された名前空間ではない場合、生成された XML がスキーマ検証できない場合があります。その名前空間には XSD ファイルが発行されないためです。 既定の値の型は `http://www.w3.org/2001/XMLSchema#string` です。 安全に使えることが確認されている値の型については、[http://www.w3.org/2001/XMLSchema](http://go.microsoft.com/fwlink/?LinkId=209155) をご覧ください。  
+-   <xref:System.Security.Claims.Claim.ValueType%2A> は要求値の種類を表し、通常は URI です。 たとえば、文字列型は `http://www.w3.org/2001/XMLSchema#string` として表されます。 値の型は、XML スキーマに基づく QName になります。 WIF で有効な QName 値を出力するには、値の形式を `namespace#format` にする必要があります。 名前空間が適切に定義された名前空間ではない場合、生成された XML がスキーマ検証できない場合があります。その名前空間には XSD ファイルが発行されないためです。 既定の値の型は `http://www.w3.org/2001/XMLSchema#string` です。 参照してください[ http://www.w3.org/2001/XMLSchema ](http://go.microsoft.com/fwlink/?LinkId=209155)安全に使用できますの既知の値の種類です。  
   
 -   <xref:System.Security.Claims.Claim.Issuer%2A> は、要求を発行したセキュリティ トークン サービス (STS) の識別子です。 これは STS の URL か、STS を表す名前として表されます。たとえば、`https://sts1.contoso.com/sts` のようになります。  
   

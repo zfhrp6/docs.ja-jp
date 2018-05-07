@@ -1,27 +1,15 @@
 ---
-title: "オブジェクトの状態と変更の追跡"
-ms.custom: 
+title: オブジェクトの状態と変更の追跡
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 7a808b00-9c3c-479a-aa94-717280fefd71
-caps.latest.revision: "2"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: f7eb1a8afe87caece18432c66a8d8a268ce9fbd2
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 482299f90a92acec9307649ec04a89f8ce6be414
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="object-states-and-change-tracking"></a>オブジェクトの状態と変更の追跡
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]オブジェクトは常にいくつかに参加*状態*です。 たとえば、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] が新しいオブジェクトを作成すると、そのオブジェクトは `Unchanged` 状態です。 自分で作成した新しいオブジェクトが認識できない、<xref:System.Data.Linq.DataContext>ありで`Untracked`状態です。 <xref:System.Data.Linq.DataContext.SubmitChanges%2A> が正常に実行されると、すべてのオブジェクトが [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] にとって既知となり、`Unchanged` 状態になります  (データベースから削除されたオブジェクトは例外です。これは `Deleted` 状態であり、<xref:System.Data.Linq.DataContext> インスタンスの中で使用できません)。  
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] オブジェクトは常にいくつかに参加*状態*です。 たとえば、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] が新しいオブジェクトを作成すると、そのオブジェクトは `Unchanged` 状態です。 自分で作成した新しいオブジェクトが認識できない、<xref:System.Data.Linq.DataContext>ありで`Untracked`状態です。 <xref:System.Data.Linq.DataContext.SubmitChanges%2A> が正常に実行されると、すべてのオブジェクトが [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] にとって既知となり、`Unchanged` 状態になります  (データベースから削除されたオブジェクトは例外です。これは `Deleted` 状態であり、<xref:System.Data.Linq.DataContext> インスタンスの中で使用できません)。  
   
 ## <a name="object-states"></a>オブジェクトの状態  
  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] オブジェクトで有効な状態を次の表に示します。  
@@ -45,9 +33,9 @@ ms.lasthandoff: 01/17/2018
 >  `Table` に追加されたオブジェクトは、ID キャッシュにはありません。 ID キャッシュは、データベースから取得されたもののみを反映します。 <xref:System.Data.Linq.Table%601.InsertOnSubmit%2A> を呼び出した後、<xref:System.Data.Linq.DataContext.SubmitChanges%2A> が正常終了するまで、追加されたエンティティはデータベースに対するクエリで使用されません。  
   
 ## <a name="deleting-objects"></a>オブジェクトの削除  
- 適切な `o` で <xref:System.Data.Linq.Table%601.DeleteOnSubmit%2A>(o) を呼び出すことにより、追跡オブジェクト <xref:System.Data.Linq.Table%601> に削除のマークを付けることができます。 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]オブジェクトからの削除を検討、<xref:System.Data.Linq.EntitySet%601>操作、および対応する外部キーの値の設定の更新プログラムとして null にします。 操作の対象 (`o`) はテーブルから削除されません。 たとえば、`cust.Orders.DeleteOnSubmit(ord)` は、外部キー `cust` を null に設定することによって `ord` と `ord.CustomerID` のリレーションシップが切断される更新を表します。 `ord` に対応する行の削除は行われません。  
+ 適切な `o` で <xref:System.Data.Linq.Table%601.DeleteOnSubmit%2A>(o) を呼び出すことにより、追跡オブジェクト <xref:System.Data.Linq.Table%601> に削除のマークを付けることができます。 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] オブジェクトからの削除を検討、<xref:System.Data.Linq.EntitySet%601>操作、および対応する外部キーの値の設定の更新プログラムとして null にします。 操作の対象 (`o`) はテーブルから削除されません。 たとえば、`cust.Orders.DeleteOnSubmit(ord)` は、外部キー `cust` を null に設定することによって `ord` と `ord.CustomerID` のリレーションシップが切断される更新を表します。 `ord` に対応する行の削除は行われません。  
   
- [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]オブジェクトが削除されたときに、次の処理を実行します (<xref:System.Data.Linq.Table%601.DeleteOnSubmit%2A>) テーブルから。  
+ [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] オブジェクトが削除されたときに、次の処理を実行します (<xref:System.Data.Linq.Table%601.DeleteOnSubmit%2A>) テーブルから。  
   
 -   <xref:System.Data.Linq.DataContext.SubmitChanges%2A> を呼び出すときに、そのオブジェクトに対して `DELETE` 操作が実行されます。  
   
@@ -73,6 +61,6 @@ ms.lasthandoff: 01/17/2018
   
  要求される参照と対応する外部キーの両方を更新する場合は、両者が一致する必要があります。 <xref:System.InvalidOperationException> を呼び出したときに 2 つが同期しない場合は、<xref:System.Data.Linq.DataContext.SubmitChanges%2A> 例外がスローされます。 外部キー値を変更するだけで、基になる行を更新することはできますが、オブジェクト グラフの接続と、リレーションシップの双方向の一貫性を保持するには、参照を変更する必要があります。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [背景情報](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)  
  [挿入、更新、および削除の各操作](../../../../../../docs/framework/data/adonet/sql/linq/insert-update-and-delete-operations.md)

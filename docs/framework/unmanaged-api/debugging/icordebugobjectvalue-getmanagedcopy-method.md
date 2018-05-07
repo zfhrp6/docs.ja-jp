@@ -1,14 +1,6 @@
 ---
-title: "ICorDebugObjectValue::GetManagedCopy メソッド"
-ms.custom: 
+title: ICorDebugObjectValue::GetManagedCopy メソッド
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ICorDebugObjectValue.GetManagedCopy
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: 300af43f-b3eb-4ce5-9ead-30dbfc5fbcc3
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 6a65cf1cbfffdb9abacd987a2417b000a464b527
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b0d8dc3afe188e18d0804055f869e5090ebc4224
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="icordebugobjectvaluegetmanagedcopy-method"></a>ICorDebugObjectValue::GetManagedCopy メソッド
 `GetManagedCopy` は互換性のために残されています。 このメソッドを呼び出さないでください。  
@@ -46,9 +34,9 @@ HRESULT GetManagedCopy (
 );  
 ```  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
     
  

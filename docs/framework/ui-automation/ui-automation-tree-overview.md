@@ -1,27 +1,18 @@
 ---
-title: "UI オートメーション ツリーの概要"
-ms.custom: 
+title: UI オートメーション ツリーの概要
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-bcl
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - automation tree
 - UI Automation, tree
 ms.assetid: 03b98058-bdb3-47a0-8ff7-45e6cdf67166
-caps.latest.revision: "25"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 25a1ddb113916563c234eefb8cdc0746b04f3e66
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 0823a569b19d46f32c1cb780470a935f20429c11
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ui-automation-tree-overview"></a>UI オートメーション ツリーの概要
 > [!NOTE]
@@ -43,7 +34,7 @@ ms.lasthandoff: 12/22/2017
   
  UI オートメーション プロバイダーのサポートなどの要素でプロパティを定義することでフィルター処理、<xref:System.Windows.Automation.AutomationElementIdentifiers.IsControlElementProperty>と<xref:System.Windows.Automation.AutomationElementIdentifiers.IsContentElementProperty>プロパティです。  
   
- [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]次の 3 つの既定のビューを提供します。 これらのビューは、実行されるフィルター処理の種類によって定義されます。すべてのビューのスコープは、アプリケーションによって定義されます。 さらに、アプリケーションではプロパティに他のフィルターを適用して、たとえば有効にされているコントロールだけをコントロール ビューに含めることもできます。  
+ [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 次の 3 つの既定のビューを提供します。 これらのビューは、実行されるフィルター処理の種類によって定義されます。すべてのビューのスコープは、アプリケーションによって定義されます。 さらに、アプリケーションではプロパティに他のフィルターを適用して、たとえば有効にされているコントロールだけをコントロール ビューに含めることもできます。  
   
 <a name="uiautomation_raw_view"></a>   
 ### <a name="raw-view"></a>列ビュー  
@@ -65,6 +56,6 @@ ms.lasthandoff: 12/22/2017
   
  コンテンツ ビューを取得するを持つ要素を検索、<xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.IsContentElement%2A>プロパティに設定`true`、またはを使用して、<xref:System.Windows.Automation.TreeWalker.ContentViewWalker>ツリーを移動します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Automation.AutomationElement>  
  [UI オートメーションの概要](../../../docs/framework/ui-automation/ui-automation-overview.md)

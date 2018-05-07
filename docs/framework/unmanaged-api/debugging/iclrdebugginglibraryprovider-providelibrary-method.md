@@ -1,14 +1,6 @@
 ---
-title: "ICLRDebuggingLibraryProvider::ProvideLibrary メソッド"
-ms.custom: 
+title: ICLRDebuggingLibraryProvider::ProvideLibrary メソッド
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ICLRDebuggingLibraryProvider.ProvideLibrary Method
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: 86f06245-9517-49be-8d8c-ca5deaf34c02
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: cf6860a616312504e3d23177734cb532405bd714
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b0644258eb1622f388f55d0657c8922079fe4dc1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="iclrdebugginglibraryproviderprovidelibrary-method"></a>ICLRDebuggingLibraryProvider::ProvideLibrary メソッド
 コールバック インターフェイスの共通言語ランタイム (CLR) バージョン固有の上にロードし、要求時にデバッグ ライブラリをライブラリ プロバイダーを取得します。  
@@ -71,7 +59,7 @@ HRESULT ProvideLibrary(
 ## <a name="exceptions"></a>例外  
   
 ## <a name="remarks"></a>コメント  
- `ProvideLibrary`により、デバッガーは mscordbi.dll mscordacwks.dll などの特定の CLR ファイルのデバッグに必要なモジュールを提供します。 モジュール ハンドルが有効になるまでの呼び出しが、 [iclrdebugging::canunloadnow](../../../../docs/framework/unmanaged-api/debugging/iclrdebugging-canunloadnow-method.md)メソッドは、これら解放される可能性があります、この時点で、ハンドルを解放する、呼び出し元の責任であることを示します。  
+ `ProvideLibrary` により、デバッガーは mscordbi.dll mscordacwks.dll などの特定の CLR ファイルのデバッグに必要なモジュールを提供します。 モジュール ハンドルが有効になるまでの呼び出しが、 [iclrdebugging::canunloadnow](../../../../docs/framework/unmanaged-api/debugging/iclrdebugging-canunloadnow-method.md)メソッドは、これら解放される可能性があります、この時点で、ハンドルを解放する、呼び出し元の責任であることを示します。  
   
  デバッガーは、すべて使用可能な方法を使用して、検索またはデバッグのモジュールを調達する可能性があります。  
   
@@ -80,15 +68,15 @@ HRESULT ProvideLibrary(
 >   
 >  Mscordbi.dll または mscordacwks.dll などの既にリリースされてライブラリで重大なセキュリティ上の問題が検出された場合、shim にパッチできるの不適切なバージョンのファイルを認識するようにします。 Shim は、によるパッチ形式のバージョンのファイルに対する要求を発行し、すべての要求に対する応答で提供される場合は、不適切なバージョンを拒否します。 これは、shim の新しいバージョンに、ユーザーがパッチされている場合にのみに発生することができます。 未修正のバージョンは、脆弱なままです。  
   
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET framework のバージョン:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **.NET framework のバージョン:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [デバッグ インターフェイス](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
  [デバッグ](../../../../docs/framework/unmanaged-api/debugging/index.md)

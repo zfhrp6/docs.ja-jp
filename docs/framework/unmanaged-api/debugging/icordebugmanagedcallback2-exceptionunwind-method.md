@@ -1,14 +1,6 @@
 ---
-title: "ICorDebugManagedCallback2::ExceptionUnwind メソッド"
-ms.custom: 
+title: ICorDebugManagedCallback2::ExceptionUnwind メソッド
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ICorDebugManagedCallback2.ExceptionUnwind
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: aaf5938d-179c-4eaa-8d35-8523a4fadded
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 64b85311f625e39dd25c48a60dde2fbaf66a957f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 92c4f488dcdc5712dcd2632f489fb0cd65d05ee6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="icordebugmanagedcallback2exceptionunwind-method"></a>ICorDebugManagedCallback2::ExceptionUnwind メソッド
 例外のアンワインド処理中に状態の通知を提供します。  
@@ -63,19 +51,19 @@ HRESULT ExceptionUnwind (
  [in]値、 [CorDebugExceptionFlags](../../../../docs/framework/unmanaged-api/debugging/cordebugexceptionflags-enumeration.md)例外に関する追加情報を指定する列挙です。  
   
 ## <a name="remarks"></a>コメント  
- `ExceptionUnwind`例外処理プロセスのアンワインド フェーズ中にさまざまな時点で呼び出されます。 `ExceptionUnwind`1 つの例外のアンワインド中に複数回呼び出すことができます。  
+ `ExceptionUnwind` 例外処理プロセスのアンワインド フェーズ中にさまざまな時点で呼び出されます。 `ExceptionUnwind` 1 つの例外のアンワインド中に複数回呼び出すことができます。  
   
  場合`dwEventType`= DEBUG_EXCEPTION_INTERCEPTED、する前にシーケンス ポイントで、スレッドのリーフ フレームで、命令ポインターになります (これは、前にいくつかの手順をなる可能性があります) に、例外を引き起こした命令します。  
   
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ICorDebugManagedCallback2 インターフェイス](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-interface.md)  
  [ICorDebugManagedCallback インターフェイス](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)

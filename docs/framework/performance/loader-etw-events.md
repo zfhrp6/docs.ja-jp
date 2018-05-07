@@ -1,27 +1,17 @@
 ---
-title: "ローダー ETW イベント"
-ms.custom: 
+title: ローダー ETW イベント
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - loader events [.NET Framework]
 - ETW, loader events (CLR)
 ms.assetid: cb403cc6-56f8-4609-b467-cdfa09f07909
-caps.latest.revision: "18"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ebdee4427bd0848e75e58443fefd439acaa27f64
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d4746e9e7c8c83caf09ccf51749e9e3cbe69ec52
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="loader-etw-events"></a>ローダー ETW イベント
 <a name="top"></a> これらのイベントは、アプリケーションのドメイン、アセンブリ、およびモジュールのロードとアンロードに関連する情報を収集します。  
@@ -44,7 +34,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="application-domain-events"></a>アプリケーション ドメイン イベント  
  次の表に、キーワードとレベルを示します。  
   
-|イベントを発生させるキーワード|イベント|レベル|  
+|イベントを発生させるキーワード|event|レベル|  
 |-----------------------------------|-----------|-----------|  
 |`LoaderKeyword` (0x8)|`AppDomainLoad_V1` および `AppDomainUnLoad_V1`|情報提供 (4)|  
 |`LoaderRundownKeyword` (0x8) +<br /><br /> `StartRundownKeyword`|`AppDomainDCStart_V1`|情報提供 (4)|  
@@ -75,7 +65,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="clr-loader-assembly-events"></a>CLR ローダー アセンブリ イベント  
  次の表に、キーワードとレベルを示します。  
   
-|イベントを発生させるキーワード|イベント|レベル|  
+|イベントを発生させるキーワード|event|レベル|  
 |-----------------------------------|-----------|-----------|  
 |`LoaderKeyword` (0x8)|`AssemblyLoad` および `AssemblyUnload`|情報提供 (4)|  
 |`LoaderRundownKeyword` (0x8) +<br /><br /> `StartRundownKeyword`|`AssemblyDCStart`|情報提供 (4)|  
@@ -107,7 +97,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="module-events"></a>モジュール イベント  
  次の表に、キーワードとレベルを示します。  
   
-|イベントを発生させるキーワード|イベント|レベル|  
+|イベントを発生させるキーワード|event|レベル|  
 |-----------------------------------|-----------|-----------|  
 |`LoaderKeyword` (0x8)|`ModuleLoad_V2` および `ModuleUnload_V2`|情報提供 (4)|  
 |`LoaderRundownKeyword` (0x8) +<br /><br /> `StartRundownKeyword`|`ModuleDCStart_V2`|情報提供 (4)|  
@@ -155,7 +145,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="clr-domain-module-events"></a>CLR ドメイン モジュール イベント  
  次の表に、キーワードとレベルを示します。  
   
-|イベントを発生させるキーワード|イベント|レベル|  
+|イベントを発生させるキーワード|event|レベル|  
 |-----------------------------------|-----------|-----------|  
 |`LoaderKeyword` (0x8)|`DomainModuleLoad_V1`|情報提供 (4)|  
 |`LoaderRundownKeyword` (0x8) +<br /><br /> `StartRundownKeyword`|`DomainModuleDCStart_V1`|情報提供 (4)|  
@@ -188,7 +178,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="module-range-events"></a>モジュールの範囲イベント  
  次の表に、キーワードとレベルを示します。  
   
-|イベントを発生させるキーワード|イベント|レベル|  
+|イベントを発生させるキーワード|event|レベル|  
 |-----------------------------------|-----------|-----------|  
 |`PerfTrackKeyWord`)|`ModuleRange`|情報提供 (4)|  
 |`PerfTrackKeyWord`|`ModuleRangeDCStart`|情報提供 (4)|  
@@ -221,5 +211,5 @@ ms.lasthandoff: 12/22/2017
   
  モジュールの範囲イベントは、4 以上のすべての ETW レベルで発行され、情報イベントに分類されます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [CLR ETW イベント](../../../docs/framework/performance/clr-etw-events.md)

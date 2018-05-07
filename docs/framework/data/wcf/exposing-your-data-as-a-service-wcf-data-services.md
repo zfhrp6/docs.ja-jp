@@ -1,33 +1,21 @@
 ---
-title: "サービスとしてのデータの公開 (WCF Data Services)"
-ms.custom: 
+title: サービスとしてのデータの公開 (WCF Data Services)
 ms.date: 03/30/2017
-ms.prod: .net-framework-oob
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - WCF Data Services, configuring
 - getting started, WCF Data Services
 - WCF Data Services, getting started
 ms.assetid: df0bbcee-f66f-4a88-abb4-4e73c8b9c908
-caps.latest.revision: "2"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 55e0bc058b92540c9b11965854d38e8d124e205c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 1ab349125419a0589d68ccb821009f8227c942e8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="exposing-your-data-as-a-service-wcf-data-services"></a>サービスとしてのデータの公開 (WCF Data Services)
-[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]簡単としてデータを公開するサービスを定義するために Visual Studio と統合し、[!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]フィードします。 公開データ サービスを作成する、[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]フィードには、次の基本的な手順が含まれます。  
+[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] 簡単としてデータを公開するサービスを定義するために Visual Studio と統合し、[!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]フィードします。 公開データ サービスを作成する、[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]フィードには、次の基本的な手順が含まれます。  
   
-1.  **定義****データ モデル**です。 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]基づくデータ モデルをネイティブにサポート、 [ADO.NET Entity Framework](../../../../docs/framework/data/adonet/ef/index.md)です。 詳細については、次を参照してください。[する方法: ADO.NET Entity Framework データ ソースを使用してデータ サービスを作成](../../../../docs/framework/data/wcf/create-a-data-service-using-an-adonet-ef-data-wcf.md)です。  
+1.  **定義****データ モデル**です。 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] 基づくデータ モデルをネイティブにサポート、 [ADO.NET Entity Framework](../../../../docs/framework/data/adonet/ef/index.md)です。 詳細については、次を参照してください。[する方法: ADO.NET Entity Framework データ ソースを使用してデータ サービスを作成](../../../../docs/framework/data/wcf/create-a-data-service-using-an-adonet-ef-data-wcf.md)です。  
   
      [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] は、<xref:System.Linq.IQueryable%601> インターフェイスのインスタンスを返す共通言語ランタイム (CLR) オブジェクトに基づくデータ モデルもサポートします。 そのため、.NET Framework のリスト、配列、およびコレクションに基づいてデータ サービスを配置できます。 これらのデータ構造での作成、更新、および削除操作を有効にするには、<xref:System.Data.Services.IUpdatable> インターフェイスも実装する必要があります。 詳細については、次を参照してください。[する方法: リフレクション プロバイダーを使用してデータ サービスを作成](../../../../docs/framework/data/wcf/create-a-data-service-using-rp-wcf-data-services.md)です。  
   
@@ -39,6 +27,6 @@ ms.lasthandoff: 12/22/2017
   
  Northwind サンプル データベースに基づく単純なデータ サービスを作成する方法の例は、次を参照してください。[クイック スタート](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [はじめに](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md)  
  [概要](../../../../docs/framework/data/wcf/wcf-data-services-overview.md)

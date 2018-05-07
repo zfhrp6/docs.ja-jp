@@ -1,24 +1,14 @@
 ---
-title: "方法: Windows 認証を使用するクレーム対応 ASP.NET アプリケーションをビルドする"
-ms.custom: 
+title: '方法: Windows 認証を使用するクレーム対応 ASP.NET アプリケーションをビルドする'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 11c53d9d-d34a-44b4-8b5e-22e3eaeaee93
-caps.latest.revision: "5"
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: 1f623cceec04e45d168269379e1af6bdeb573af0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 2a5dbec2e92d32e45bc0271de04f8c6403f67f90
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-build-claims-aware-aspnet-application-using-windows-authentication"></a>方法: Windows 認証を使用するクレーム対応 ASP.NET アプリケーションをビルドする
 ## <a name="applies-to"></a>対象  
@@ -27,7 +17,7 @@ ms.lasthandoff: 12/22/2017
   
 -   ASP.NET® Web フォーム  
   
-## <a name="summary"></a>概要  
+## <a name="summary"></a>まとめ  
  この操作方法では、Windows 認証を使用する簡単なクレーム対応 ASP.NET Web フォーム アプリケーションを作成するための詳細な手順を示します。 また、Windows 認証を使用してユーザーがサインインするときにクレームが表示されることを確認するために、アプリケーションをテストする方法についても説明します。  
   
 ## <a name="contents"></a>目次  

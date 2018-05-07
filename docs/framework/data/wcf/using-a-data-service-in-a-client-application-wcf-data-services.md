@@ -1,27 +1,15 @@
 ---
-title: "クライアント アプリケーションでのデータ サービスの使用 (WCF Data Services)"
-ms.custom: 
+title: クライアント アプリケーションでのデータ サービスの使用 (WCF Data Services)
 ms.date: 03/30/2017
-ms.prod: .net-framework-oob
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - WCF Data Services, client library
 - WCF Data Services, getting started
 ms.assetid: 90872d0c-e989-4490-b3e9-54afb10d33d4
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 91edecf9b500c316b915e908bbbd412a47d86dac
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: b25489de9a64ba4f1938e4d52c1cc677a218495b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-a-data-service-in-a-client-application-wcf-data-services"></a>クライアント アプリケーションでのデータ サービスの使用 (WCF Data Services)
 公開するサービスにアクセスすることができます、 [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] Web ブラウザーに URI を指定することによってフィードします。 URI はリソースのアドレスを提供し、要求メッセージがこれらのアドレスに送信されてリソースが表す基になるデータのアクセスまたは変更を行います。 ブラウザーは HTTP GET コマンドを発行して、要求されたリソースを [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] フィードとして返します。 詳細については、次を参照してください。 [Web ブラウザーからサービスにアクセスする](../../../../docs/framework/data/wcf/accessing-the-service-from-a-web-browser-wcf-data-services-quickstart.md)です。  
@@ -29,7 +17,7 @@ ms.lasthandoff: 01/19/2018
  Web ブラウザーは [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] サービスが予期されたデータを返すかどうかをテストするために便利ですが、データの作成、更新、および削除も行うことができる運用 [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] サービスは、一般的にアプリケーション コードや Web ページのスクリプト言語を使用してアクセスします。 このトピックにアクセスする方法の概要を説明する[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]クライアント アプリケーションからフィードします。  
   
 ## <a name="accessing-and-changing-data-using-rest-semantics"></a>REST セマンティクスを使用したデータのアクセスおよび変更  
- [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]公開するサービスの間の相互運用性を保証するのに役立ちます[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]フィードおよび使用するアプリケーション[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]フィードします。 アプリケーションへのアクセスし、データの変更、[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]のベース URI、アクションの対象となるエンティティ リソースのアドレスを持つ特定の HTTP アクションの要求メッセージを送信することによってサービス。 エンティティ データを指定する必要がある場合、メッセージの本文に、エンコードされたペイロードとして明示的に指定します。  
+ [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] 公開するサービスの間の相互運用性を保証するのに役立ちます[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]フィードおよび使用するアプリケーション[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]フィードします。 アプリケーションへのアクセスし、データの変更、[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]のベース URI、アクションの対象となるエンティティ リソースのアドレスを持つ特定の HTTP アクションの要求メッセージを送信することによってサービス。 エンティティ データを指定する必要がある場合、メッセージの本文に、エンコードされたペイロードとして明示的に指定します。  
   
 ### <a name="http-actions"></a>HTTP アクション  
  [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] は、アドレス指定されたリソースが表すエンティティ データに対する操作の作成、読み取り、更新、および削除を実行する次の HTTP アクションをサポートします。  
@@ -47,7 +35,7 @@ ms.lasthandoff: 01/19/2018
  詳細については、次を参照してください。 [OData: 操作](http://go.microsoft.com/fwlink/?LinkId=185792)です。  
   
 ### <a name="payload-formats"></a>ペイロード形式  
- HTTP PUT、HTTP POST、または HTTP MERGE 要求の場合、要求メッセージのペイロードは、データ サービスに送信するエンティティ データを含んでいます。 ペイロードのコンテンツは、メッセージのデータ形式によって異なります。 そのようなペイロードは、DELETE 以外のすべてのアクションに対する HTTP 応答にも含まれます。 [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]アクセスして、サービスを使用してデータを変更するためには、次のペイロード形式をサポートします。  
+ HTTP PUT、HTTP POST、または HTTP MERGE 要求の場合、要求メッセージのペイロードは、データ サービスに送信するエンティティ データを含んでいます。 ペイロードのコンテンツは、メッセージのデータ形式によって異なります。 そのようなペイロードは、DELETE 以外のすべてのアクションに対する HTTP 応答にも含まれます。 [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] アクセスして、サービスを使用してデータを変更するためには、次のペイロード形式をサポートします。  
   
 -   **Atom** -によって定義されている XML ベースのメッセージ エンコーディング[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]Atom Publishing Protocol (AtomPub) の Web フィード、ポッド キャスト、wiki、HTTP 経由でデータ交換を有効にして XML ベースのインターネット機能を拡張として。 詳細については、次を参照してください。 [OData: Atom 形式](http://go.microsoft.com/fwlink/?LinkId=185794)です。  
   
@@ -56,12 +44,12 @@ ms.lasthandoff: 01/19/2018
  ペイロードのメッセージ形式は、HTTP 要求メッセージのヘッダーで要求されます。 詳細については、次を参照してください。 [OData: 操作](http://go.microsoft.com/fwlink/?LinkID=185792)です。  
   
 ## <a name="accessing-and-changing-data-using-client-libraries"></a>クライアント ライブラリを使用したデータのアクセスおよび変更  
- [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]簡単に使用できるようにするクライアント ライブラリが含まれています、 [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] .NET Framework および Silverlight ベースのクライアント アプリケーションからフィードします。 これらのライブラリは、HTTP メッセージの送受信を簡略化します。 また、メッセージ ペイロードをエンティティ データを表す CLR オブジェクトに変換します。 クライアント ライブラリには、 <xref:System.Data.Services.Client.DataServiceContext> および <xref:System.Data.Services.Client.DataServiceQuery%601>という 2 つのコア クラスがあります。 これらのクラスを使用すると、データ サービスをクエリして、返されるエンティティ データを CLR オブジェクトとして処理できます。 詳細については、次を参照してください。 [WCF Data Services クライアント ライブラリ](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)と[WCF Data Services (Silverlight)](http://msdn.microsoft.com/library/c0cd9f4b-1372-48e4-9935-c8421239da30)です。  
+ [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] 簡単に使用できるようにするクライアント ライブラリが含まれています、 [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] .NET Framework および Silverlight ベースのクライアント アプリケーションからフィードします。 これらのライブラリは、HTTP メッセージの送受信を簡略化します。 また、メッセージ ペイロードをエンティティ データを表す CLR オブジェクトに変換します。 クライアント ライブラリには、 <xref:System.Data.Services.Client.DataServiceContext> および <xref:System.Data.Services.Client.DataServiceQuery%601>という 2 つのコア クラスがあります。 これらのクラスを使用すると、データ サービスをクエリして、返されるエンティティ データを CLR オブジェクトとして処理できます。 詳細については、次を参照してください。 [WCF Data Services クライアント ライブラリ](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)と[WCF Data Services (Silverlight)](http://msdn.microsoft.com/library/c0cd9f4b-1372-48e4-9935-c8421239da30)です。  
   
  使用することができます、**サービス参照の追加**データ サービスへの参照を追加する Visual Studio でのダイアログ。 このツールは、参照されたデータ サービスからサービス メタデータを要求し、データ サービスを表す <xref:System.Data.Services.Client.DataServiceContext> を生成します。また、エンティティを表すクライアント データ サービス クラスも生成します。 詳細については、次を参照してください。[データ サービス クライアント ライブラリを生成する](../../../../docs/framework/data/wcf/generating-the-data-service-client-library-wcf-data-services.md)です。  
   
  プログラミング ライブラリを利用することができますを使用するが、[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]他の種類のクライアント アプリケーションでのフィードです。 詳細については、次を参照してください。、 [OData SDK](http://go.microsoft.com/fwlink/?LinkId=185796)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [データ サービス リソースへのアクセス](../../../../docs/framework/data/wcf/accessing-data-service-resources-wcf-data-services.md)  
  [クイック スタート](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md)

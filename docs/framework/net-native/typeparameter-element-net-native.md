@@ -1,24 +1,14 @@
 ---
-title: "&lt;TypeParameter&gt; 要素 (.NET ネイティブ)"
-ms.custom: 
+title: '&lt;TypeParameter&gt; 要素 (.NET ネイティブ)'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: d37bb1b7-1ddc-4c6d-8ecf-583f804a2479
-caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ee88d7692abb1f640b6e50d845691adf8938f841
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5cc2faf9768b60d49f573720df8763813000a6b4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="lttypeparametergt-element-net-native"></a>&lt;TypeParameter&gt; 要素 (.NET ネイティブ)
 メソッドに渡される型引数により表される型にポリシーを適用します。  
@@ -103,7 +93,7 @@ Object obj = JsonConvert.DeserializeObject(data, t);
   
  リフレクション ディレクティブによって、`StockQuote` 型のメタデータが実行時に NewtonSoft の JSON シリアライザーで使用可能になります。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [\<Method> 要素](../../../docs/framework/net-native/method-element-net-native.md)  
  [ランタイム ディレクティブ (rd.xml) 構成ファイル リファレンス](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)  
  [ランタイム ディレクティブ ポリシーの設定](../../../docs/framework/net-native/runtime-directive-policy-settings.md)  

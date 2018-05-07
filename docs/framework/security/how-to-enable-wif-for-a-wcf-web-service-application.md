@@ -1,24 +1,14 @@
 ---
-title: "操作方法: WCF Web サービス アプリケーションの WIF を有効にする"
-ms.custom: 
+title: '操作方法: WCF Web サービス アプリケーションの WIF を有効にする'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: bfc64b3d-64e9-4093-a6a4-72e933917af7
-caps.latest.revision: "6"
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: 1af6fc1b7802fe69f0585011322e2485695a030c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: bd0ad5392010772c3205d8f148c985de2706de01
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-enable-wif-for-a-wcf-web-service-application"></a>操作方法: WCF Web サービス アプリケーションの WIF を有効にする
 ## <a name="applies-to"></a>対象  
@@ -27,7 +17,7 @@ ms.lasthandoff: 12/22/2017
   
 -   Microsoft® Windows® Communication Foundation (WCF)  
   
-## <a name="summary"></a>概要  
+## <a name="summary"></a>まとめ  
  ここでは、WCF Web サービスの WIF を有効にするための詳細な操作手順を示します。 また、アプリケーションの実行中に Web サービスが正しくクレームを表示しているかどうかを確認するためにアプリケーションをテストする方法についても説明します。 ここでは、セキュリティ トークン サービス (STS) を作成するための詳細な手順については説明しません。代わりに、Identity and Access Tool に付属している開発用 STS を使用します。 開発用 STS はテスト用に用意されたもので、実際の認証は行いません。 このページの内容を完了するには、Identity and Access Tool をインストールする必要があります。 これは、「[Identity and Access Tool](http://go.microsoft.com/fwlink/?LinkID=245849)」からダウンロードできます。  
   
 ## <a name="contents"></a>目次  
@@ -154,7 +144,7 @@ ms.lasthandoff: 12/22/2017
   
 3.  **[Client]** プロジェクトの下の **[参照設定]** を右クリックし、**[サービス参照の追加]** をクリックします。  
   
-4.  **[サービス参照の追加]** ウィンドウで、**[探索]** ボタンのドロップダウン矢印をクリックし、**[ソリューションのサービス]** をクリックします。 **[アドレス]** には、前の手順で作成した WCF サービスが自動的に入力されます。**[名前空間]** は、**[ServiceReference1]** に設定されます。 **[OK]**をクリックします。  
+4.  **[サービス参照の追加]** ウィンドウで、**[探索]** ボタンのドロップダウン矢印をクリックし、**[ソリューションのサービス]** をクリックします。 **[アドレス]** には、前の手順で作成した WCF サービスが自動的に入力されます。**[名前空間]** は、**[ServiceReference1]** に設定されます。 **[OK]** をクリックします。  
   
     > [!IMPORTANT]
     >  クライアントにサービス参照を追加するときに、**TestService** と **LocalSTS** の両方が実行されている必要があります。  

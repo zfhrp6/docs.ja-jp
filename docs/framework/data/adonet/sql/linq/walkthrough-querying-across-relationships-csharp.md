@@ -1,24 +1,12 @@
 ---
-title: "チュートリアル : リレーションシップ間でのクエリの実行 (C#)"
-ms.custom: 
+title: 'チュートリアル : リレーションシップ間でのクエリの実行 (C#)'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 552abeb1-18f2-4e93-a9c6-ef7b2db30c32
-caps.latest.revision: "2"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 3357fa598cb00b5fa0146540f676d7463a05f146
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: a438b0ae83a223abfc35643915e6eedd5be068a6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="walkthrough-querying-across-relationships-c"></a>チュートリアル : リレーションシップ間でのクエリの実行 (C#)
 このチュートリアルの使用[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]*アソシエーション*をデータベース内の外部キー リレーションシップを表します。  
@@ -99,5 +87,5 @@ ms.lasthandoff: 01/17/2018
 ## <a name="next-steps"></a>次の手順  
  次のチュートリアル ([チュートリアル: データの操作 (c#)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-manipulating-data-csharp.md)) データを操作する方法を示します。 そのチュートリアルを実行するのに、既に終了したこのシリーズの 2 つのチュートリアルを保存する必要はありません。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [チュートリアルによる学習](../../../../../../docs/framework/data/adonet/sql/linq/learning-by-walkthroughs.md)
