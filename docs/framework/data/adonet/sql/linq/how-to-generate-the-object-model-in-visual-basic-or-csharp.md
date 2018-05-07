@@ -1,26 +1,12 @@
 ---
 title: '方法 : Visual Basic または C# でオブジェクト モデルを生成する'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-ado
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: a0c73b33-5650-420c-b9dc-f49310c201ee
-caps.latest.revision: 3
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload:
-- dotnet
-ms.openlocfilehash: 77d7020a985abb8ed56af4fdd9f50a98bfc478c4
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: ce7f1f30a606c0d0c81a1afbfc2552ece4fc1029
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-generate-the-object-model-in-visual-basic-or-c"></a>方法 : Visual Basic または C# でオブジェクト モデルを生成する #
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] では、使用しているプログラミング言語のオブジェクト モデルが、リレーショナル データベースに対応付けられています。 2 つのツールは自動的に既存のデータベースのメタデータから Visual Basic または c# のモデルを生成できます。  

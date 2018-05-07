@@ -1,13 +1,6 @@
 ---
-title: "Windows フォームがサポートするデータ ソース"
-ms.custom: 
+title: Windows フォームがサポートするデータ ソース
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - collections [Windows Forms], binding to
 - OLE DB providers [Windows Forms], Windows Forms
@@ -22,16 +15,11 @@ helpviewer_keywords:
 - DataSet class [Windows Forms], binding and Windows Forms
 - data [Windows Forms], data providers
 ms.assetid: 3d2c43f6-462b-4d35-9c86-13e9afe012e1
-caps.latest.revision: "15"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 5a0a4c2bca136377b9c6812008189dae009e195f
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 4705c8a7153e94fa1cd23cf6c2f622d5cd66ec77
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="data-sources-supported-by-windows-forms"></a>Windows フォームがサポートするデータ ソース
 従来は、データ バインディングは、データベースに格納されたデータを活用するためにアプリケーション内で使用されています。 Windows フォーム データ バインディングを特定の最小要件を満たしている限り、データベースに他の構造体、配列など、コレクション内のデータからデータにアクセスすることができます。  
@@ -50,13 +38,13 @@ ms.lasthandoff: 01/19/2018
  配列またはコレクション  
  データ ソースとして機能し、一覧を実装する必要があります、<xref:System.Collections.IList>インターフェイス以外の 1 つの例は配列としてのインスタンスでは、<xref:System.Array>クラスです。 配列の詳細については、次を参照してください。[する方法: 配列のオブジェクト (Visual Basic) を作成する](http://msdn.microsoft.com/library/6b64e069-0387-400c-9081-3bdc581020c3)です。  
   
- 一般に、使用するように<xref:System.ComponentModel.BindingList%601>データ バインディング用のオブジェクトのリストを作成する場合。 <xref:System.ComponentModel.BindingList%601>ジェネリック バージョンは、<xref:System.ComponentModel.IBindingList>インターフェイスです。 <xref:System.ComponentModel.IBindingList>インターフェイスを拡張、<xref:System.Collections.IList>プロパティ、メソッド、および双方向データ バインディングに必要なイベントを追加することでインターフェイスです。  
+ 一般に、使用するように<xref:System.ComponentModel.BindingList%601>データ バインディング用のオブジェクトのリストを作成する場合。 <xref:System.ComponentModel.BindingList%601> ジェネリック バージョンは、<xref:System.ComponentModel.IBindingList>インターフェイスです。 <xref:System.ComponentModel.IBindingList>インターフェイスを拡張、<xref:System.Collections.IList>プロパティ、メソッド、および双方向データ バインディングに必要なイベントを追加することでインターフェイスです。  
   
  <xref:System.Collections.IEnumerable>  
  Windows フォーム コントロールをのみをサポートするデータ ソースにバインドすることができます、<xref:System.Collections.IEnumerable>インターフェイスを通じてバインドされている場合、<xref:System.Windows.Forms.BindingSource>コンポーネントです。  
   
- [!INCLUDE[vstecado](../../../includes/vstecado-md.md)]データ オブジェクト  
- [!INCLUDE[vstecado](../../../includes/vstecado-md.md)]バインドするために適切なデータ構造体の数を提供します。 各は、知識と複雑さによって異なります。  
+ [!INCLUDE[vstecado](../../../includes/vstecado-md.md)] データ オブジェクト  
+ [!INCLUDE[vstecado](../../../includes/vstecado-md.md)] バインドするために適切なデータ構造体の数を提供します。 各は、知識と複雑さによって異なります。  
   
 -   <xref:System.Data.DataColumn>。 A<xref:System.Data.DataColumn>の不可欠なビルド ブロックには、<xref:System.Data.DataTable>列の数が、テーブルを構成することで、します。 各<xref:System.Data.DataColumn>が、<xref:System.Data.DataColumn.DataType%2A>データ列を保持します (たとえば、自動車車を記述する、テーブル内の作成) の種類を決定するプロパティです。 コントロールを単純なバインドこともできます (など、<xref:System.Windows.Forms.TextBox>コントロールの<xref:System.Windows.Forms.Control.Text%2A>プロパティ) データ テーブル内の列にします。  
   
@@ -68,7 +56,7 @@ ms.lasthandoff: 01/19/2018
   
 -   <xref:System.Data.DataViewManager>。 A<xref:System.Data.DataViewManager>全体のカスタマイズされたビューは、<xref:System.Data.DataSet>に似ています、<xref:System.Data.DataView>が含まれている関係を使用します。 <xref:System.Data.DataViewManager.DataViewSettings%2A>コレクション、および設定できます既定のフィルターされたビューの並べ替えオプションを<xref:System.Data.DataViewManager>が指定したテーブル。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Windows フォーム データ バインドの変更通知](../../../docs/framework/winforms/change-notification-in-windows-forms-data-binding.md)  
  [データ連結と Windows フォーム](../../../docs/framework/winforms/data-binding-and-windows-forms.md)  
  [Windows フォームでのデータ バインディング](../../../docs/framework/winforms/windows-forms-data-binding.md)

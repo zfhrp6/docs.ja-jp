@@ -1,14 +1,6 @@
 ---
-title: "EnumCustomAttributes メソッド"
-ms.custom: 
+title: EnumCustomAttributes メソッド
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - EnumCustomAttributes
 - IALink.EnumCustomAttributes
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: 08dff60c-f01b-4050-8865-ea3f95361c9f
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: d616babb47ac0282ef56d119ab448a94fd24c7c5
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5a3d7d3bb05a878f4d9832cf39a8e8863929c4e5
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="enumcustomattributes-method"></a>EnumCustomAttributes メソッド
 アセンブリ レベルのカスタム属性を取得します。  
@@ -69,10 +57,10 @@ HRESULT EnumCustomAttributes(
 ## <a name="return-value"></a>戻り値  
  メソッドが成功した場合は、S_OK を返します。  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  Alink.h が必要です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [IALink インターフェイス](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
  [IALink2 インターフェイス](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)  
  [ALink API](../../../../docs/framework/unmanaged-api/alink/index.md)

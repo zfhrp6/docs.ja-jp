@@ -1,27 +1,15 @@
 ---
-title: "方法 : WCF サービス操作を非同期に呼び出す"
-ms.custom: 
+title: '方法 : WCF サービス操作を非同期に呼び出す'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 0face17f-43ca-417b-9b33-737c0fc360df
-caps.latest.revision: "18"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 9f8a22a5a5b9f388cdfb7b5e5edfa0a54b628aa0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8058f0fac8a0401f72f84e2d2e91c28c7e46d1e3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-call-wcf-service-operations-asynchronously"></a>方法 : WCF サービス操作を非同期に呼び出す
 ここでは、クライアントからサービス操作に非同期にアクセスする方法について説明します。 このトピックのサービスは、`ICalculator` インターフェイスを実装しています。 クライアントは、イベント ドリブンの非同期呼び出しモデルを使用して、このインターフェイスで操作を非同期に呼び出すことができます  (イベント ベースの非同期呼び出しモデルについての詳細については、次を参照してください。[イベント ベースの非同期パターンを使用したマルチ スレッド プログラミング](http://go.microsoft.com/fwlink/?LinkId=248184))。 例については、サービスに非同期的に操作を実装する方法を示す、次を参照してください。[する方法: 非同期サービス操作を実装する](../../../../docs/framework/wcf/how-to-implement-an-asynchronous-service-operation.md)です。 同期および非同期の操作の詳細については、次を参照してください。[同期と非同期の操作](../../../../docs/framework/wcf/synchronous-and-asynchronous-operations.md)です。  
@@ -39,19 +27,19 @@ ms.lasthandoff: 12/22/2017
     svcutil /n:http://Microsoft.ServiceModel.Samples,Microsoft.ServiceModel.Samples http://localhost:8000/servicemodelsamples/service/mex /a /tcv:Version35  
     ```  
   
-     これにより、同期操作と標準のデリゲート ベースの非同期操作だけでなく、以下を含む [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント クラスも生成されます。  
+     これは、クラスを生成、だけでなく、同期操作と標準的なデリゲートに基づく非同期操作、WCF クライアントが含まれています。  
   
-    -   2 つ <`operationName` > `Async` -イベント ベースの非同期呼び出し方法で使用するための操作です。 例:  
+    -   2 つ <`operationName` > `Async` -イベント ベースの非同期呼び出し方法で使用するための操作です。 例えば:  
   
          [!code-csharp[EventAsync#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/eventasync/cs/generatedclient.cs#1)]
          [!code-vb[EventAsync#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/eventasync/vb/generatedclient.vb#1)]  
   
-    -   フォームの操作が完了しましたイベント <`operationName` > `Completed` -イベント ベースの非同期呼び出し方法を使用します。 例:  
+    -   フォームの操作が完了しましたイベント <`operationName` > `Completed` -イベント ベースの非同期呼び出し方法を使用します。 例えば:  
   
          [!code-csharp[EventAsync#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/eventasync/cs/generatedclient.cs#2)]
          [!code-vb[EventAsync#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/eventasync/vb/generatedclient.vb#2)]  
   
-    -   <xref:System.EventArgs?displayProperty=nameWithType>各操作の種類 (形式の <`operationName`>`CompletedEventArgs`) - イベント ベースの非同期呼び出し方法を使用します。 例:  
+    -   <xref:System.EventArgs?displayProperty=nameWithType> 各操作の種類 (形式の <`operationName`>`CompletedEventArgs`) - イベント ベースの非同期呼び出し方法を使用します。 例えば:  
   
          [!code-csharp[EventAsync#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/eventasync/cs/generatedclient.cs#3)]
          [!code-vb[EventAsync#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/eventasync/vb/generatedclient.vb#3)]  
@@ -61,7 +49,7 @@ ms.lasthandoff: 12/22/2017
      [!code-csharp[EventAsync#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/eventasync/cs/client.cs#4)]
      [!code-vb[EventAsync#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/eventasync/vb/client.vb#4)]  
   
-3.  操作を呼び出す前に、新しいジェネリックを使用して<xref:System.EventHandler%601?displayProperty=nameWithType>型の <`operationName` > `EventArgs` (前の手順で作成された) ハンドラー メソッドを追加する、<`operationName` > `Completed`イベント。 まず、<`operationName` > `Async`メソッドです。 例:  
+3.  操作を呼び出す前に、新しいジェネリックを使用して<xref:System.EventHandler%601?displayProperty=nameWithType>型の <`operationName` > `EventArgs` (前の手順で作成された) ハンドラー メソッドを追加する、<`operationName` > `Completed`イベント。 まず、<`operationName` > `Async`メソッドです。 例えば:  
   
      [!code-csharp[EventAsync#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/eventasync/cs/client.cs#5)]
      [!code-vb[EventAsync#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/eventasync/vb/client.vb#5)]  
@@ -74,5 +62,5 @@ ms.lasthandoff: 12/22/2017
  [!code-csharp[EventAsync#6](../../../../samples/snippets/csharp/VS_Snippets_CFX/eventasync/cs/client.cs#6)]
  [!code-vb[EventAsync#6](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/eventasync/vb/client.vb#6)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [方法: 非同期サービス操作を実装する](../../../../docs/framework/wcf/how-to-implement-an-asynchronous-service-operation.md)

@@ -1,31 +1,17 @@
 ---
-title: "方法 : ストーリーボードを使用してアニメーション化した後にプロパティを設定する"
-ms.custom: 
+title: '方法 : ストーリーボードを使用してアニメーション化した後にプロパティを設定する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - animation [WPF], changing property values after
 ms.assetid: 79466556-4dbf-40bd-9c1e-a77613b07077
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 3ffc534549f5b114a07f09326be72c1968d178a8
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b8e9c08075b13f8d6f701d5ac6ae4f8ea8949184
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-set-a-property-after-animating-it-with-a-storyboard"></a>方法 : ストーリーボードを使用してアニメーション化した後にプロパティを設定する
 場合によっては、アニメーション化された後、プロパティの値を変更することはできません、ことがあります。  
@@ -43,7 +29,7 @@ ms.lasthandoff: 12/22/2017
   
  何も操作する前のコードが表示されない: によって提供される、ブラシは黄、これは、値、<xref:System.Windows.Media.Animation.ColorAnimation>ブラシをアニメーション化します。 基になるプロパティの値 (基本値) は実際に青に変更されています。 ただし、有効なつまり現在の値は黄色ため、<xref:System.Windows.Media.Animation.ColorAnimation>底の値を上書きしています。 ベース値に有効な値をもう一度になる場合は、プロパティへの影響からアニメーションを停止する必要があります。 これにはストーリー ボードのアニメーションで行うには次の 3 つの方法があります。  
   
--   アニメーションの<xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A>プロパティ<xref:System.Windows.Media.Animation.FillBehavior.Stop>  
+-   アニメーションの<xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A>プロパティ <xref:System.Windows.Media.Animation.FillBehavior.Stop>  
   
 -   ストーリー ボード全体を削除します。  
   
@@ -75,7 +61,7 @@ ms.lasthandoff: 12/22/2017
   
  この手法は、非ストーリー ボードのアニメーションのでも動作します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A>  
  <xref:System.Windows.Media.Animation.Storyboard.Remove%2A?displayProperty=nameWithType>  
  <xref:System.Windows.Media.Animation.RemoveStoryboard>  

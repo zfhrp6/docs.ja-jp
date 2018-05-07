@@ -1,31 +1,17 @@
 ---
-title: "WPF と Direct3D9 の相互運用性"
-ms.custom: 
+title: WPF と Direct3D9 の相互運用性
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - cpp
 helpviewer_keywords:
 - WPF [WPF], creating Direct3D9 content
 - Direct3D9 [WPF interoperability], creating Direct3D9 content
 ms.assetid: 1b14b823-69c4-4e8d-99e4-f6dade58f89a
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: abfdeb4dbf72d0173b020e201f85a30b57cfb3e2
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a66f37e26d8d86e29e81161ea4585737140441ca
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="wpf-and-direct3d9-interoperation"></a>WPF と Direct3D9 の相互運用性
 Windows Presentation Foundation (WPF) アプリケーションでは、Direct3D9 コンテンツを含めることができます。 このトピックでは、WPF と効率的に相互運用できるように、Direct3D9 コンテンツを作成する方法について説明します。  
@@ -160,7 +146,7 @@ Windows Presentation Foundation (WPF) アプリケーションでは、Direct3D9
 > [!NOTE]
 >  ソフトウェアでは、WPF が完全にレンダリングする場合<xref:System.Windows.Interop.D3DImage>WPF には、フロントのバッファーができないためには表示されません。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Interop.D3DImage>  
  [Direct3D9 および WPF の相互運用性のパフォーマンスに関する考慮事項](../../../../docs/framework/wpf/advanced/performance-considerations-for-direct3d9-and-wpf-interoperability.md)  
  [チュートリアル: WPF でホストするための Direct3D9 コンテンツの作成](../../../../docs/framework/wpf/advanced/walkthrough-creating-direct3d9-content-for-hosting-in-wpf.md)  

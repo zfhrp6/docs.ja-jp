@@ -1,14 +1,6 @@
 ---
-title: "ToolStrip コントロールの概要 (Windows フォーム)"
-ms.custom: 
+title: ToolStrip コントロールの概要 (Windows フォーム)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - Toolstrip
 helpviewer_keywords:
@@ -17,20 +9,14 @@ helpviewer_keywords:
 - toolbars [Windows Forms]
 - what's new [Windows Forms], toolbars
 ms.assetid: 81d067ed-297c-4dad-90de-1bcac15336ec
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 45dab820072b3eb0bcc448ce32251e3ff5a3e622
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 3927f180e738541f2f2f8af6d03d281f6a601167
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="toolstrip-control-overview-windows-forms"></a>ToolStrip コントロールの概要 (Windows フォーム)
-Windows フォーム<xref:System.Windows.Forms.ToolStrip>コントロールとその関連クラスは、ツールバー、ステータス バー、およびメニューにユーザー インターフェイス要素を結合するため、共通のフレームワークを提供します。 <xref:System.Windows.Forms.ToolStrip>コントロールは、水平または垂直のスペースを共有するツールバーの機能は、インプレース アクティブ化と編集、カスタム レイアウト、およびラフティング、豊富なデザイン時のエクスペリエンスを提供します。  
+Windows フォーム<xref:System.Windows.Forms.ToolStrip>コントロールとその関連クラスは、ツールバー、ステータス バー、およびメニューにユーザー インターフェイス要素を結合するため、共通のフレームワークを提供します。 <xref:System.Windows.Forms.ToolStrip> コントロールは、水平または垂直のスペースを共有するツールバーの機能は、インプレース アクティブ化と編集、カスタム レイアウト、およびラフティング、豊富なデザイン時のエクスペリエンスを提供します。  
   
  <xref:System.Windows.Forms.ToolStrip>置き換え、以前のバージョン コントロール機能が追加<xref:System.Windows.Forms.ToolBar>は、必要な場合は旧バージョンとの互換性と将来の使用の両方に保持されます。  
   
@@ -59,7 +45,7 @@ Windows フォーム<xref:System.Windows.Forms.ToolStrip>コントロールと�
   
 ### <a name="important-toolstrip-members"></a>ToolStrip の重要なメンバー  
   
-|name|説明|  
+|名前|説明|  
 |----------|-----------------|  
 |<xref:System.Windows.Forms.ToolStrip.Dock%2A>|取得または設定の親コンテナーの端、<xref:System.Windows.Forms.ToolStrip>にドッキングします。|  
 |<xref:System.Windows.Forms.ToolStrip.AllowItemReorder%2A>|<xref:System.Windows.Forms.ToolStrip> クラスがドラッグ アンド ドロップおよび項目の並べ替えをプライベートで処理するかどうかを示す値を取得または設定します。|  
@@ -75,7 +61,7 @@ Windows フォーム<xref:System.Windows.Forms.ToolStrip>コントロールと�
   
 ### <a name="important-toolstrip-companion-classes"></a>ToolStrip の重要なコンパニオン クラス  
   
-|name|説明|  
+|名前|説明|  
 |----------|-----------------|  
 |<xref:System.Windows.Forms.MenuStrip>|置き換えする機能を追加、<xref:System.Windows.Forms.MainMenu>クラスです。|  
 |<xref:System.Windows.Forms.StatusStrip>|置き換えする機能を追加、<xref:System.Windows.Forms.StatusBar>クラスです。|  
@@ -92,7 +78,7 @@ Windows フォーム<xref:System.Windows.Forms.ToolStrip>コントロールと�
   
  詳細については、次を参照してください。 [ToolStrip テクノロジの概要](../../../../docs/framework/winforms/controls/toolstrip-technology-summary.md)と[ToolStrip コントロールのアーキテクチャ](../../../../docs/framework/winforms/controls/toolstrip-control-architecture.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.ToolStrip>  
  <xref:System.Windows.Forms.MenuStrip>  
  <xref:System.Windows.Forms.ContextMenuStrip>  

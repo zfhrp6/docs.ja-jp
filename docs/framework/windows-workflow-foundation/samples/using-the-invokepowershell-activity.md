@@ -1,23 +1,12 @@
 ---
-title: "InvokePowerShell アクティビティの使用"
-ms.custom: 
+title: InvokePowerShell アクティビティの使用
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 956251a0-31ca-4183-bf76-d277c08585df
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 4cf7092d6eac4fc2d70c4606f4a76f3a83ed9dcf
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: c5609556af94ed3e372538047ff6309a105975ae
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-the-invokepowershell-activity"></a>InvokePowerShell アクティビティの使用
 InvokePowerShell サンプルでは、`InvokePowerShell` アクティビティを使用して Windows PowerShell コマンドを呼び出す方法を示します。  
@@ -35,7 +24,7 @@ InvokePowerShell サンプルでは、`InvokePowerShell` アクティビティ�
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
+>  このディレクトリが存在しない場合に、 [Windows Communication Foundation (WCF) および .NET Framework 4 向けの Windows Workflow Foundation (WF) サンプル](http://go.microsoft.com/fwlink/?LinkId=150780)すべて Windows Communication Foundation (WCF) をダウンロードして[!INCLUDE[wf1](../../../../includes/wf1-md.md)]サンプルです。 このサンプルは、次のディレクトリに格納されます。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\ActivityLibrary\PowerShell`  
   
@@ -205,7 +194,7 @@ new ForEach<PSObject>
   
 1.  `InvokePowerShell` アクティビティのアセンブリやプロジェクトを別のプロジェクトから参照してビルド エラーが発生した場合は、必要に応じて、新しいプロジェクトの .csproj ファイル (`<SpecificVersion>True</SpecificVersion>` を参照している行の下) に `InvokePowerShell` 要素を手動で追加してください。  
   
-2.  追加するとすぐに Visual Studio で次のエラー メッセージが表示される Windows PowerShell がインストールされていない場合、`InvokePowerShell`アクティビティをワークフローに。`Workflow Designer encountered problems with your document. Could not load file or assembly ‘System.Management.Automation’ ... or one of its dependencies. The system cannot find the file specified.`  
+2.  追加するとすぐに Visual Studio で次のエラー メッセージが表示される Windows PowerShell がインストールされていない場合、`InvokePowerShell`アクティビティをワークフローに。 `Workflow Designer encountered problems with your document. Could not load file or assembly ‘System.Management.Automation’ ... or one of its dependencies. The system cannot find the file specified.`  
   
 3.  Windows PowerShell 2.0 では、プログラムで `$input.MoveNext()` を呼び出すと呼び出しが失敗します。そのため、`$input.MoveNext()` を使用するスクリプトで予想外のエラーと結果が生成されます。 この問題を回避するには、配列を反復処理するときに、`foreach` を呼び出す代わりに PowerShell の動詞 `MoveNext()` を使用することを検討してください。  
   
@@ -214,6 +203,6 @@ new ForEach<PSObject>
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
+>  このディレクトリが存在しない場合に、 [Windows Communication Foundation (WCF) および .NET Framework 4 向けの Windows Workflow Foundation (WF) サンプル](http://go.microsoft.com/fwlink/?LinkId=150780)すべて Windows Communication Foundation (WCF) をダウンロードして[!INCLUDE[wf1](../../../../includes/wf1-md.md)]サンプルです。 このサンプルは、次のディレクトリに格納されます。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\ActivityLibrary\PowerShell`

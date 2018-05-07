@@ -1,28 +1,19 @@
 ---
-title: "UI オートメーションによる Document コントロール型のサポート"
-ms.custom: 
+title: UI オートメーションによる Document コントロール型のサポート
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-bcl
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - control types, Document
 - Document control type
 - UI Automation, Document control type
 ms.assetid: a79d594b-1ca0-4543-8dac-afd2c645201d
-caps.latest.revision: "27"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: ef6536fcaf16c7d457caaa86892947fddbd14168
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 08be4846b1ef91abb6fb30f2c66bf1593f9e96b2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ui-automation-support-for-the-document-control-type"></a>UI オートメーションによる Document コントロール型のサポート
 > [!NOTE]
@@ -46,40 +37,40 @@ ms.lasthandoff: 12/22/2017
 ## <a name="required-ui-automation-properties"></a>必須の UI オートメーション プロパティ  
  次の表に、ドキュメント コンロトールに特に関連する値または定義を持つ [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] プロパティを示します。 詳細については[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]プロパティを参照してください[クライアントの UI オートメーション プロパティ](../../../docs/framework/ui-automation/ui-automation-properties-for-clients.md)です。  
   
-|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] プロパティ|値|ノート|  
+|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] プロパティ|[値]|メモ|  
 |------------------------------------------------------------------------------------|-----------|-----------|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationIdProperty>|ノートを参照してください。|このプロパティの値は、アプリケーションのすべてのコントロールで一意である必要があります。|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>|ノートを参照してください。|コントロール全体を格納する最も外側の四角形。|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.ClickablePointProperty>|「ノート」を参照。|ドキュメントにはクリック可能なポイントがあり、そのポイントをクリックすると、ドキュメント コンテナー内のいずれかの要素のドキュメントがフォーカスを受け取ります。|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationIdProperty>|「ノート」をご覧ください。|このプロパティの値は、アプリケーションのすべてのコントロールで一意である必要があります。|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>|「ノート」をご覧ください。|コントロール全体を格納する最も外側の四角形。|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.ClickablePointProperty>|「ノート」をご覧ください。|ドキュメントにはクリック可能なポイントがあり、そのポイントをクリックすると、ドキュメント コンテナー内のいずれかの要素のドキュメントがフォーカスを受け取ります。|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.ControlTypeProperty>|ドキュメント|この値は、すべての UI フレームワークで同じです。|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.IsContentElementProperty>|True|ドキュメント コントロールは、常に [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ツリーのコンテンツ ビューに組み込まれます。|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.IsControlElementProperty>|True|ドキュメント コントロールは、常に [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ツリーのコントロール ビューに組み込まれます。|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsKeyboardFocusableProperty>|「ノート」を参照。|コントロールがキーボード フォーカスを受け取ることができる場合は、このプロパティをサポートする必要があります。|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.LabeledByProperty>|「ノート」を参照。|このプロパティの値は、ドキュメント コントロールのラベルでなければなりません。 通常、ドキュメントのタイトルが使用されます。|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsKeyboardFocusableProperty>|「ノート」をご覧ください。|コントロールがキーボード フォーカスを受け取ることができる場合は、このプロパティをサポートする必要があります。|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.LabeledByProperty>|「ノート」をご覧ください。|このプロパティの値は、ドキュメント コントロールのラベルでなければなりません。 通常、ドキュメントのタイトルが使用されます。|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.LocalizedControlTypeProperty>|「ドキュメント」|Document コントロール型に対応する、ローカライズされた文字列。|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty>|「ノート」を参照。|通常、ドキュメント コントロールの名前は、読み込み元のファイル名から取得されます。 この名前は多くの場合、そのコントロールを格納するウィンドウまたはフレームのタイトルに表示されます。|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty>|「ノート」をご覧ください。|通常、ドキュメント コントロールの名前は、読み込み元のファイル名から取得されます。 この名前は多くの場合、そのコントロールを格納するウィンドウまたはフレームのタイトルに表示されます。|  
   
 <a name="Required_UI_Automation_Control_Patterns"></a>   
 ## <a name="required-ui-automation-control-patterns"></a>必須の UI オートメーション コントロール パターン  
  次の表に、ドキュメント コントロールでサポートする必要がある [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] コントロール パターンを示します。 コントロール パターンについて詳しくは、「 [UI Automation Control Patterns Overview](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)」をご覧ください。  
   
-|コントロール パターン|Support|ノート|  
+|コントロール パターン|サポート|メモ|  
 |---------------------|-------------|-----------|  
 |<xref:System.Windows.Automation.Provider.IScrollProvider>|状況に依存|ドキュメント コントロールは、ビューポートのスパンを超えてスパンできます。 コントロールのコンテンツがスクロール可能な場合は、Scroll コントロール パターンをサポートする必要があります。|  
-|<xref:System.Windows.Automation.Provider.ITextProvider>|必要|ドキュメント コントロールは、ビューポートのスパンを超えてスパンできます。 コントロールのコンテンツがスクロール可能な場合は、Scroll コントロール パターンをサポートする必要があります。|  
+|<xref:System.Windows.Automation.Provider.ITextProvider>|必須|ドキュメント コントロールは、ビューポートのスパンを超えてスパンできます。 コントロールのコンテンツがスクロール可能な場合は、Scroll コントロール パターンをサポートする必要があります。|  
 |<xref:System.Windows.Automation.Provider.IValueProvider>|Never|通常、ドキュメント コントロールのコンテンツは複数のページにまたがるため、ドキュメント コントロールはこのコントロール パターンをサポートしません。 UI オートメーション クライアントは、 <xref:System.Windows.Automation.TextPattern> を使用してドキュメントに関するテキスト情報を取得する必要があります。|  
   
 <a name="Required_UI_Automation_Events"></a>   
 ## <a name="required-ui-automation-events"></a>必須の UI オートメーション イベント  
  次の表に、すべてのドキュメント コントロールでサポートされなければならない [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] イベントを示します。 イベントについて詳しくは、「 [UI Automation Events Overview](../../../docs/framework/ui-automation/ui-automation-events-overview.md)」をご覧ください。  
   
-|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] イベント|Support|ノート|  
+|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] イベント|サポート|メモ|  
 |---------------------------------------------------------------------------------|-------------|-----------|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationFocusChangedEvent>|必要|なし|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty> プロパティ変更イベント。|必須|なし|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty> プロパティ変更イベント。|必須|なし|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty> プロパティ変更イベント。|必須|なし|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.StructureChangedEvent>|必要|なし|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.StructureChangedEvent>|必須|なし|  
 |<xref:System.Windows.Automation.ScrollPatternIdentifiers.HorizontallyScrollableProperty> プロパティ変更イベント。|必須|なし|  
 |<xref:System.Windows.Automation.ScrollPatternIdentifiers.HorizontalScrollPercentProperty> プロパティ変更イベント。|必須|なし|  
 |<xref:System.Windows.Automation.ScrollPatternIdentifiers.HorizontalViewSizeProperty> プロパティ変更イベント。|必須|なし|  
@@ -87,11 +78,11 @@ ms.lasthandoff: 12/22/2017
 |<xref:System.Windows.Automation.ScrollPatternIdentifiers.VerticallyScrollableProperty> プロパティ変更イベント。|必須|なし|  
 |<xref:System.Windows.Automation.ScrollPatternIdentifiers.VerticalViewSizeProperty> プロパティ変更イベント。|必須|なし|  
 |<xref:System.Windows.Automation.SelectionPatternIdentifiers.InvalidatedEvent>|状況に依存|コントロールが Selection コントロール パターンをサポートする場合は、このイベントをサポートする必要があります。|  
-|<xref:System.Windows.Automation.TextPatternIdentifiers.TextSelectionChangedEvent>|必要|なし|  
-|<xref:System.Windows.Automation.TextPatternIdentifiers.TextChangedEvent>|必要|なし|  
+|<xref:System.Windows.Automation.TextPatternIdentifiers.TextSelectionChangedEvent>|必須|なし|  
+|<xref:System.Windows.Automation.TextPatternIdentifiers.TextChangedEvent>|必須|なし|  
 |<xref:System.Windows.Automation.ValuePatternIdentifiers.ValueProperty> プロパティ変更イベント。|Never|なし|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Automation.ControlType.Document>  
  [UI オートメーション コントロール型の概要](../../../docs/framework/ui-automation/ui-automation-control-types-overview.md)  
  [UI オートメーションの概要](../../../docs/framework/ui-automation/ui-automation-overview.md)

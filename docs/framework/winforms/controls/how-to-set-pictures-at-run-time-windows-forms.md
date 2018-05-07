@@ -1,13 +1,6 @@
 ---
-title: "方法 : 実行時にピクチャを設定する (Windows フォーム)"
-ms.custom: 
+title: '方法 : 実行時にピクチャを設定する (Windows フォーム)'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -20,16 +13,11 @@ helpviewer_keywords:
 - images [Windows Forms], adding with PictureBox control [Windows Forms]
 - PictureBox control [Windows Forms], adding pictures
 ms.assetid: 18ca41d0-68a5-4660-985e-a6c1fbc01d76
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 6fd0e990b494bc0b7a3008f211aa6ded9e04d732
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: fedddf56966c3ab11a1dfb20c1d4cbd8a45fb1a9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-set-pictures-at-run-time-windows-forms"></a>方法 : 実行時にピクチャを設定する (Windows フォーム)
 Windows フォームが表示されるイメージをプログラムで設定できる<xref:System.Windows.Forms.PictureBox>コントロール。  
@@ -108,7 +96,7 @@ Windows フォームが表示されるイメージをプログラムで設定で
   
      このコードは、画像がデザイン時にコントロールに読み込まれた場合でも、イメージがクリアされます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.PictureBox>  
  <xref:System.Drawing.Image.FromFile%2A?displayProperty=nameWithType>  
  [PictureBox コントロールの概要](../../../../docs/framework/winforms/controls/picturebox-control-overview-windows-forms.md)  

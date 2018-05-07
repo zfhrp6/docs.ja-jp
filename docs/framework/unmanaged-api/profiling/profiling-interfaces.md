@@ -1,28 +1,18 @@
 ---
-title: "プロファイリングのインターフェイス"
-ms.custom: 
-ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
+title: プロファイリングのインターフェイス
+ms.date: 04/10/2018
 helpviewer_keywords:
 - unmanaged interfaces [.NET Framework], profiling
 - profiling interfaces [.NET Framework]
 - interfaces [.NET Framework profiling]
 ms.assetid: d9303db8-e881-4217-91b7-8c7573c8ef9e
-caps.latest.revision: "31"
-author: mairaw
-ms.author: mairaw
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 4f8c2a5ce5e1231c55f598e48d14bec896a4b5f4
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+author: rpetrusha
+ms.author: ronpet
+ms.openlocfilehash: 059fadc5607e76b871083682136fda542ae9bacf
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="profiling-interfaces"></a>プロファイリングのインターフェイス
 ここでは、共通言語ランタイム (CLR) で実行中のプログラムに対してプロファイルを可能にするアンマネージ インターフェイスについて説明します。  
@@ -54,7 +44,13 @@ ms.lasthandoff: 12/22/2017
   
  [ICorProfilerCallback7 インターフェイス](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback7-interface.md)  
  共通言語ランタイムを使用してメモリ内のモジュールに関連付けられているシンボルのストリームが更新されることをプロファイラーに通知するコールバック メソッドを提供します。  
-  
+
+[ICorProfilerCallback8 インターフェイス](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback8-interface.md)  
+共通言語ランタイムを使用して、動的メソッドの JIT コンパイルが開始して完了したことをプロファイラーに通知するコールバック メソッドを提供します。
+
+[ICorProfilerCallback9 インターフェイス](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback9-interface.md)  
+共通言語ランタイムを使用して、動的メソッドは、ガベージ コレクションされ、後でアンロードされたことをプロファイラーに通知するコールバック メソッドを提供します。
+
  [ICorProfilerFunctionControl インターフェイス](../../../../docs/framework/unmanaged-api/profiling/icorprofilerfunctioncontrol-interface.md)  
  コード プロファイラーが CLR と通信できるようにするためのメソッドを提供します。これは特定のメソッドを再コンパイルするときに、JIT コンパイラーがどのようにしてコードを生成するかを制御するためのものです。  
   

@@ -1,30 +1,18 @@
 ---
-title: "Windows フォーム DataGridView コントロール内の列の並べ替えモード"
-ms.custom: 
+title: Windows フォーム DataGridView コントロール内の列の並べ替えモード
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - data grids [Windows Forms], sort modes
 - DataGridView control [Windows Forms], sort mode
 ms.assetid: 43715887-2df9-4da7-bcf1-b9c7c842b2bf
-caps.latest.revision: "18"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 088d9f1f76e88d8be838cbf7050601835eff216a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9ebcfc435fcc7d2b0dfbfe3004d958c73dd1347c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="column-sort-modes-in-the-windows-forms-datagridview-control"></a>Windows フォーム DataGridView コントロール内の列の並べ替えモード
-<xref:System.Windows.Forms.DataGridView>列では、次の 3 つの並べ替えモードがあります。 各列の並べ替えモードを指定、 <xref:System.Windows.Forms.DataGridViewColumn.SortMode%2A> 、次のいずれかに設定することができる列のプロパティ<xref:System.Windows.Forms.DataGridViewColumnSortMode>列挙値。  
+<xref:System.Windows.Forms.DataGridView> 列では、次の 3 つの並べ替えモードがあります。 各列の並べ替えモードを指定、 <xref:System.Windows.Forms.DataGridViewColumn.SortMode%2A> 、次のいずれかに設定することができる列のプロパティ<xref:System.Windows.Forms.DataGridViewColumnSortMode>列挙値。  
   
 |`DataGridViewColumnSortMode` の値|説明|  
 |----------------------------------------|-----------------|  
@@ -69,7 +57,7 @@ ms.lasthandoff: 12/22/2017
 > [!NOTE]
 >  <xref:System.Windows.Forms.DataGridView.SortCompare>イベントが発生しないときに、<xref:System.Windows.Forms.DataGridView.DataSource%2A>プロパティが設定されて場合や、<xref:System.Windows.Forms.DataGridView.VirtualMode%2A>プロパティの値が`true`です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.DataGridView>  
  <xref:System.Windows.Forms.DataGridView.Sort%2A?displayProperty=nameWithType>  
  <xref:System.Windows.Forms.DataGridView.SortedColumn%2A?displayProperty=nameWithType>  

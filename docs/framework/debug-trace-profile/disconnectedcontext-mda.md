@@ -1,13 +1,6 @@
 ---
 title: disconnectedContext MDA
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - DisconnectedContext MDA
 - MDAs (managed debugging assistants), disconnected context
@@ -16,16 +9,13 @@ helpviewer_keywords:
 - context disconnections
 - managed debugging assistants (MDAs), disconnected context
 ms.assetid: 1887d31d-7006-4491-93b3-68fd5b05f71d
-caps.latest.revision: "14"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 90e840fc24361735b65879702293daadce0bc90e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b5232a01d877484591df63afc68f672327d4b9d5
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="disconnectedcontext-mda"></a>disconnectedContext MDA
 CLR が COM オブジェクトに関する要求を処理中に、切断しているアパートメントまたはコンテキストに遷移しようとすると、`disconnectedContext` マネージ デバッグ アシスタント (MDA) がアクティブ化されます。  
@@ -55,7 +45,7 @@ CLR が COM オブジェクトに関する要求を処理中に、切断して�
 </mdaConfig>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Runtime.InteropServices.MarshalAsAttribute>  
  [マネージ デバッグ アシスタントによるエラーの診断](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)  
  [相互運用マーシャリング](../../../docs/framework/interop/interop-marshaling.md)

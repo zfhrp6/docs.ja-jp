@@ -1,14 +1,6 @@
 ---
-title: "CorImportOptions 列挙型"
-ms.custom: 
+title: CorImportOptions 列挙型
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - CorImportOptions
 api_location:
@@ -22,17 +14,13 @@ helpviewer_keywords:
 ms.assetid: 4e5d03cb-97c9-4ff4-8dbd-17d94ee374d3
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: e9af7bbb6dd7cfa488f72ec99f9cfd848f04e72f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 7078b2eb98c15b7229132076da8af4691032bb08
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="corimportoptions-enumeration"></a>CorImportOptions 列挙型
 現在のスコープ外のアセンブリのインポート中の動作を制御するフラグ値が格納されます。  
@@ -69,12 +57,12 @@ typedef enum CorImportOptions {
 |`MDImportOptionAllCustomAttributes`|削除されたものも含めて、すべてのカスタム属性を列挙することを示します。|  
 |`MDImportOptionAllExportedTypes`|削除されたものも含めて、すべてのエクスポートされた型が列挙されることを示します。|  
   
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** CorHdr.h  
   
- **.NET framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [メタデータ列挙型](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

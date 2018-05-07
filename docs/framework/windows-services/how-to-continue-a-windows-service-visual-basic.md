@@ -1,14 +1,6 @@
 ---
-title: "方法: Windows サービスを続行する (Visual Basic)"
-ms.custom: 
+title: '方法: Windows サービスを続行する (Visual Basic)'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - vb
 f1_keywords:
@@ -17,17 +9,13 @@ helpviewer_keywords:
 - Windows Service applications, pausing
 - pausing Windows Service applications
 ms.assetid: e5d13760-4c83-4b0d-abef-39852677cd7a
-caps.latest.revision: 
 author: ghogen
-ms.author: ghogen
 manager: douge
-ms.workload:
-- dotnet
-ms.openlocfilehash: 73b16a5e5834f7279ae551d4e7efd26cc86c1d07
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 15ef15e0afe43d56db0972a686cd093e22c672dc
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-continue-a-windows-service-visual-basic"></a>方法: Windows サービスを続行する (Visual Basic)
 この例では、<xref:System.ServiceProcess.ServiceController>コンポーネントをローカル コンピューターで、IIS Admin サービスを続行します。  
@@ -61,7 +49,7 @@ ms.lasthandoff: 12/22/2017
   
  使用してサービスの情報へのアクセスを制限することがあります、<xref:System.Security.Permissions.PermissionState>列挙型のアクセス許可設定を<xref:System.Security.Permissions.SecurityPermission>クラスです。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceProcess.ServiceController>  
  <xref:System.ServiceProcess.ServiceControllerStatus>  
  [方法 : Windows サービスを一時中断する (Visual Basic)](../../../docs/framework/windows-services/how-to-pause-a-windows-service-visual-basic.md)

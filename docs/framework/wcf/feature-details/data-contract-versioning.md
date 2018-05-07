@@ -1,14 +1,6 @@
 ---
 title: データ コントラクトのバージョン管理
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,17 +9,11 @@ helpviewer_keywords:
 - versioning [WCF]
 - data contracts [WCF], versioning
 ms.assetid: 4a0700cb-5f5f-4137-8705-3a3ecf06461f
-caps.latest.revision: 35
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: fd1679bb50a0dc6ee4997f7ae427c1cbdc0948ef
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 1ba51c51f30293e05dee17f9cf78cc049e1c751f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="data-contract-versioning"></a>データ コントラクトのバージョン管理
 アプリケーションの進化に伴って、サービスが使用するデータ コントラクトを変更することが必要になる場合があります。 ここでは、データ コントラクトをバージョン管理する方法について説明します。 データ コントラクトのバージョン管理のメカニズムについても説明します。 完全な概要および規範的なバージョン管理ガイドでは、「[ベスト プラクティス: データ コントラクトのバージョン管理](../../../../docs/framework/wcf/best-practices-data-contract-versioning.md)です。  
@@ -110,7 +96,7 @@ ms.lasthandoff: 04/30/2018
 ## <a name="schema-considerations"></a>スキーマの考慮事項  
  データ コントラクト型用に生成されるスキーマの詳細については、次を参照してください。[データ コントラクト スキーマの参照](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md)です。  
   
- データ コントラクト型用に [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] が生成するスキーマは、バージョン管理に対応していません。 つまり、あるバージョンの型からエクスポートされたスキーマには、そのバージョンに存在するデータ メンバーのみが含まれます。 <xref:System.Runtime.Serialization.IExtensibleDataObject> インターフェイスを実装しても、型のスキーマは変更されません。  
+ データ コントラクト型には、バージョン管理に対応の WCF スキーマを生成します。 つまり、あるバージョンの型からエクスポートされたスキーマには、そのバージョンに存在するデータ メンバーのみが含まれます。 <xref:System.Runtime.Serialization.IExtensibleDataObject> インターフェイスを実装しても、型のスキーマは変更されません。  
   
  データ メンバーは、既定でオプション要素としてスキーマにエクスポートされます。 つまり、`minOccurs` (XML 属性) の値は 0 に設定されています。 `minOccurs` を 1 に設定した場合、必須データ メンバーがエクスポートされます。  
   

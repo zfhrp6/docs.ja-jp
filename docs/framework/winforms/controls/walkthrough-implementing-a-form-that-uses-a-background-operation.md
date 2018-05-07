@@ -1,13 +1,6 @@
 ---
-title: "チュートリアル : バックグラウンド操作を使用するフォームの実装"
-ms.custom: 
+title: 'チュートリアル : バックグラウンド操作を使用するフォームの実装'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -22,16 +15,11 @@ helpviewer_keywords:
 - threading [Windows Forms], background operations
 - background operations
 ms.assetid: 4691b796-9200-471a-89c3-ba4c7cc78c03
-caps.latest.revision: "25"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: aaee6f1d650e6af57ab05ad56b5578e094ee50ef
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 28b1ac924fb9b6b8cbc09db62ee33c6780bee820
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="walkthrough-implementing-a-form-that-uses-a-background-operation"></a>チュートリアル : バックグラウンド操作を使用するフォームの実装
 完了するには長い時間がかかる操作があると応答を停止する、ユーザー インターフェイス (UI) を設定したくない、または「ハング」しを使用できる場合、<xref:System.ComponentModel.BackgroundWorker>別のスレッドで操作を実行するクラス。  
@@ -174,11 +162,11 @@ ms.lasthandoff: 01/19/2018
     > [!CAUTION]
     >  どのような種類のマルチスレッドを使用している場合でも、非常に深刻で複雑なバグを引き起こしてしまう可能性があります。 マルチスレッドを使用するソリューションを実装する前に、「[マネージ スレッド処理の実施](../../../../docs/standard/threading/managed-threading-best-practices.md)」を参照してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ComponentModel.BackgroundWorker>  
  [マネージ スレッド処理の実施](../../../../docs/standard/threading/managed-threading-best-practices.md)  
  [コンポーネントのマルチスレッド](http://msdn.microsoft.com/library/2fc31e68-fb71-4544-b654-0ce720478779)  
- [NOT IN BUILD: Visual Basic でのマルチ スレッド](http://msdn.microsoft.com/library/c731a50c-09c1-4468-9646-54c86b75d269)  
+ [ビルド内にありません: Visual Basic でのマルチスレッド](http://msdn.microsoft.com/library/c731a50c-09c1-4468-9646-54c86b75d269)  
  [方法: バックグラウンド操作を使用するフォームを実装する](../../../../docs/framework/winforms/controls/how-to-implement-a-form-that-uses-a-background-operation.md)  
  [チュートリアル: 操作をバックグラウンドで実行する](../../../../docs/framework/winforms/controls/walkthrough-running-an-operation-in-the-background.md)  
  [BackgroundWorker コンポーネント](../../../../docs/framework/winforms/controls/backgroundworker-component.md)

@@ -1,27 +1,18 @@
 ---
-title: "クライアントの UI オートメーション コントロール パターン"
-ms.custom: 
+title: クライアントの UI オートメーション コントロール パターン
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-bcl
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - UI Automation, control patterns for clients
 - control patterns, UI Automation clients
 ms.assetid: 571561d8-5f49-43a9-a054-87735194e013
-caps.latest.revision: "24"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 7de91de7d2b738d92920ffc691133f8f7608e203
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: d3ec88eb1054c4cc14f01320c85924c9ca346361
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ui-automation-control-patterns-for-clients"></a>クライアントの UI オートメーション コントロール パターン
 > [!NOTE]
@@ -55,7 +46,7 @@ ms.lasthandoff: 01/19/2018
   
  カスタム コントロール型を実装するコントロールは、機能を表すために必要なコントロール パターンの任意のセットを持つことができます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [UI オートメーション コントロール パターン](../../../docs/framework/ui-automation/ui-automation-control-patterns.md)  
  [UI オートメーション テキスト パターン](../../../docs/framework/ui-automation/ui-automation-text-pattern.md)  
  [UI オートメーションを使用したコントロールの呼び出し](../../../docs/framework/ui-automation/invoke-a-control-using-ui-automation.md)  

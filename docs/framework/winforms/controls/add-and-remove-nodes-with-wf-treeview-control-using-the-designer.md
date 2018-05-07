@@ -1,29 +1,17 @@
 ---
-title: "方法 : デザイナーで Windows フォーム TreeView コントロールを使ってノードを追加および削除する"
-ms.custom: 
+title: '方法 : デザイナーで Windows フォーム TreeView コントロールを使ってノードを追加および削除する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - examples [Windows Forms], TreeView control
 - TreeView control [Windows Forms], removing nodes
 - tree nodes in TreeView control
 - TreeView control [Windows Forms], adding nodes
 ms.assetid: 35bf1750-045e-4ec5-97cb-b47b0dbdaa2c
-caps.latest.revision: "7"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 067c36daef9649ee9a5da7945aa0202fb684b830
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 2bf62601ae2257a098be0dc5c2cf8b5b1ba2b618
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-add-and-remove-nodes-with-the-windows-forms-treeview-control-using-the-designer"></a>方法 : デザイナーで Windows フォーム TreeView コントロールを使ってノードを追加および削除する
 Windows フォームため<xref:System.Windows.Forms.TreeView>コントロールは、その親ノードに注意を払う必要があります、ノードを追加するときに、階層状にノードを表示します。  
@@ -45,7 +33,7 @@ Windows フォームため<xref:System.Windows.Forms.TreeView>コントロール
   
 4.  ノードを削除するを削除し、をクリックするノードを選択、**削除**ボタンをクリックします。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [TreeView コントロール](../../../../docs/framework/winforms/controls/treeview-control-windows-forms.md)  
  [TreeView コントロールの概要](../../../../docs/framework/winforms/controls/treeview-control-overview-windows-forms.md)  
  [方法: Windows フォーム TreeView コントロールのアイコンを設定する](../../../../docs/framework/winforms/controls/how-to-set-icons-for-the-windows-forms-treeview-control.md)  

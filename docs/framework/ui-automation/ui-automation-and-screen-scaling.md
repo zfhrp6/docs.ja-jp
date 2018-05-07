@@ -1,13 +1,6 @@
 ---
-title: "UI オートメーションおよび画面の拡大縮小"
-ms.custom: 
+title: UI オートメーションおよび画面の拡大縮小
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-bcl
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,16 +10,14 @@ helpviewer_keywords:
 - UI (user interface), automation
 - UI Automation
 ms.assetid: 4380cad7-e509-448f-b9a5-6de042605fd4
-caps.latest.revision: "16"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: bb33d3175cf9e43797125b47c811042771e45782
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: c34c10ee1701adba2dfb64be8ef39d6bf9f203e2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ui-automation-and-screen-scaling"></a>UI オートメーションおよび画面の拡大縮小
 > [!NOTE]
@@ -86,5 +77,5 @@ ms.lasthandoff: 01/19/2018
   
  アプリケーションが [!INCLUDE[TLA2#tla_dpi](../../../includes/tla2sharptla-dpi-md.md)]非対応のアプリケーションと直接プロセス間通信を行う場合は、 [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)] 関数 `PhysicalToLogicalPoint` および `LogicalToPhysicalPoint`を使用して、論理座標と物理座標を互いに変換できます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [蛍光ペンのサンプル](http://msdn.microsoft.com/library/19ba4577-753e-4efd-92cc-c02ee67c1b69)

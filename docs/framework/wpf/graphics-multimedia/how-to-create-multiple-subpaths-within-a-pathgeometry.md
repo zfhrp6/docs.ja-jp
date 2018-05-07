@@ -1,28 +1,16 @@
 ---
-title: "方法 : PathGeometry 内に複数のサブパスを作成する"
-ms.custom: 
+title: '方法 : PathGeometry 内に複数のサブパスを作成する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - multiple subpaths [WPF]
 - graphics [WPF], subpaths
 - subpaths [WPF]
 ms.assetid: 104a862c-dde2-4e62-ac87-80660dd1681c
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 7945728386c01d6137cbc422f0d7fb410a18d57e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5b129b1bacb5dc2cba87376e8df70e115a5ebd72
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-multiple-subpaths-within-a-pathgeometry"></a>方法 : PathGeometry 内に複数のサブパスを作成する
 この例は、内の複数のサブパスを作成する方法を示します、<xref:System.Windows.Media.PathGeometry>です。 作成する複数のサブパスを作成するには<xref:System.Windows.Media.PathFigure>各サブ パスにします。  
@@ -38,5 +26,5 @@ ms.lasthandoff: 12/22/2017
   
  (この属性の構文が実際に作成するメモ、 <xref:System.Windows.Media.StreamGeometry>、軽量バージョンの<xref:System.Windows.Media.PathGeometry>です。 詳細については、「[パス マークアップ構文](../../../../docs/framework/wpf/graphics-multimedia/path-markup-syntax.md)」のページを参照してください。)  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ジオメトリの概要](../../../../docs/framework/wpf/graphics-multimedia/geometry-overview.md)

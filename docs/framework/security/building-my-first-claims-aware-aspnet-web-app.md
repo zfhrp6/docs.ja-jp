@@ -1,24 +1,14 @@
 ---
-title: "クレーム対応の ASP.NET Web アプリケーションを初めて構築する"
-ms.custom: 
+title: クレーム対応の ASP.NET Web アプリケーションを初めて構築する
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 3ee8ee7f-caba-4267-9343-e313fae2876d
-caps.latest.revision: "5"
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: 182f7c1646e112026852efcb5bb110607fe19360
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 7e36ec5b824f60057ce7b1f18c695607cf9b88a3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="building-my-first-claims-aware-aspnet-web-application"></a>クレーム対応の ASP.NET Web アプリケーションを初めて構築する
 ## <a name="applies-to"></a>対象  
@@ -45,9 +35,9 @@ ms.lasthandoff: 12/22/2017
   
 -   [Active Directory フェデレーション サービス (AD FS) 2.0](http://go.microsoft.com/fwlink/?LinkID=247516) (http://go.microsoft.com/fwlink/?LinkID=247516)  
   
--   [Microsoft Azure のアクセス制御サービス (ACS)](http://go.microsoft.com/fwlink/?LinkID=247517) (http://go.microsoft.com/fwlink/?LinkID=247517)。  
+-   [Windows Azure アクセス制御サービス (ACS)](http://go.microsoft.com/fwlink/?LinkID=247517) (http://go.microsoft.com/fwlink/?LinkID=247517)です。  
   
- AD FS 2.0 は、Windows Server R2 に含まれており、設置型シナリオの STS として使用できます。 ACS は、Microsoft Azure プラットフォームの一部として提供されるクラウド サービスです。 テストまたは学習の目的で、他の STS を使用して、クレーム対応アプリケーションをビルドすることもできます。 たとえば、オンラインで自由に入手できる [Identity and Access Tool for Visual Studio](http://go.microsoft.com/fwlink/?LinkID=245849) (http://go.microsoft.com/fwlink/?LinkID=245849) に含まれる、ローカル開発用 STS を使用できます。  
+ AD FS 2.0 は、Windows Server R2 に含まれており、設置型シナリオの STS として使用できます。 ACS は、Microsoft Azure プラットフォームの一部として提供されるクラウド サービスです。 テストまたは学習の目的で、他の STS を使用して、クレーム対応アプリケーションをビルドすることもできます。 たとえばの一部であるローカル開発用 STS を使用することができます、 [Identity and Access Tool for Visual Studio](http://go.microsoft.com/fwlink/?LinkID=245849) (http://go.microsoft.com/fwlink/?LinkID=245849)は自由に利用可能なオンラインです。  
   
  WIF を使用してクレーム対応 ASP.NET アプリケーションを初めてビルドするには、次のいずれかの手順に従ってください。  
   
@@ -57,5 +47,5 @@ ms.lasthandoff: 12/22/2017
   
 -   [方法: フォームベースの認証を使用するクレーム対応 ASP.NET アプリケーションをビルドする](../../../docs/framework/security/claims-aware-aspnet-app-forms-authentication.md)  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [WIF の概要](../../../docs/framework/security/getting-started-with-wif.md)

@@ -1,11 +1,7 @@
 ---
-title: "BlessIWbemServicesObject 関数 (アンマネージ API リファレンス)"
-description: "BlessIWbemServicesObject 関数では、ユーザーの資格情報が IWbemServices オブジェクトへのアクセスを許可するかどうかを示します"
+title: BlessIWbemServicesObject 関数 (アンマネージ API リファレンス)
+description: BlessIWbemServicesObject 関数では、ユーザーの資格情報が IWbemServices オブジェクトへのアクセスを許可するかどうかを示します
 ms.date: 11/06/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: reference
 api_name:
 - BlessIWbemServicesObject
 api_location:
@@ -20,14 +16,11 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 2430358e5ea21468c2e975c2a26f20fe801ee546
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d1bc31a4f074891149783dec647a592683564ba0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="blessiwbemservicesobject-function"></a>BlessIWbemServicesObject 関数
 ユーザーの資格情報が、指定されたアクセスを許可するかどうかを示す[IWbemServices](https://msdn.microsoft.com/library/aa392093(v=vs.85).aspx)オブジェクト。   
@@ -58,11 +51,11 @@ HRESULT BlessIWbemServicesObject (
 `strPassword`  
 [in]関連付けられているパスワード`strUser`です。
 
-`strAuthority`[in]ユーザーのドメイン名。 参照してください、 [ConnectServerWmi](connectserverwmi.md)関数の詳細についてはします。
+`strAuthority` [in]ユーザーのドメイン名。 参照してください、 [ConnectServerWmi](connectserverwmi.md)関数の詳細についてはします。
 
-`impLevel`[in]権限借用レベルです。
+`impLevel` [in]権限借用レベルです。
 
-`authnLevel`[in]承認レベル。
+`authnLevel` [in]承認レベル。
 
 ## <a name="return-value"></a>戻り値
 
@@ -76,12 +69,12 @@ HRESULT BlessIWbemServicesObject (
 | `E_OUTOFMEMORY` | 0x80000002 | 操作の実行に使用できるは、メモリ不足です。 | 
 | `S_OK` | 0 | 関数呼び出しに成功しました。 | 
 
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** WMINet_Utils.idl  
   
- **.NET framework のバージョン:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **.NET framework のバージョン:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>関連項目  
 [WMI およびパフォーマンス カウンター (アンマネージ API リファレンス)](index.md)

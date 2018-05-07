@@ -1,27 +1,17 @@
 ---
-title: "トークン プロバイダー"
-ms.custom: 
+title: トークン プロバイダー
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 947986cf-9946-4987-84e5-a14678d96edb
-caps.latest.revision: "22"
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: bd6b0983dcb4a0f7cdbabc5b391cca2000f9d16d
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
-ms.translationtype: MT
+ms.openlocfilehash: 97602a261f1e86cb70b38f21080c2a2e792605e8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="token-provider"></a>トークン プロバイダー
-このサンプルでは、カスタム トークン プロバイダーを実装する方法を示します。 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] のトークン プロバイダーは、資格情報をセキュリティ インフラストラクチャに提供するために使用します。 一般的に、トークン プロバイダーは、ターゲットをチェックし、適切な証明書を発行して、セキュリティ インフラストラクチャがメッセージのセキュリティを保護できるようにします。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、既定の Credential Manager Token Provider が付属しています。 また、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、[!INCLUDE[infocard](../../../../includes/infocard-md.md)] トークン プロバイダーも付属しています。 カスタム トークン プロバイダーは、次の場合に便利です。  
+このサンプルでは、カスタム トークン プロバイダーを実装する方法を示します。 資格情報をセキュリティ インフラストラクチャに提供するトークン プロバイダーでは、Windows Communication Foundation (WCF) が使用されます。 一般的に、トークン プロバイダーは、ターゲットをチェックし、適切な証明書を発行して、セキュリティ インフラストラクチャがメッセージのセキュリティを保護できるようにします。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、既定の Credential Manager Token Provider が付属しています。 また、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、[!INCLUDE[infocard](../../../../includes/infocard-md.md)] トークン プロバイダーも付属しています。 カスタム トークン プロバイダーは、次の場合に便利です。  
   
 -   トークン プロバイダーが連携動作できない資格情報ストアがある場合。  
   
@@ -304,4 +294,4 @@ static void DisplayIdentityInformation()
   
 1.  サンプルの実行が終わったら、サンプル フォルダーにある Cleanup.bat を実行します。  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目

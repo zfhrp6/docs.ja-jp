@@ -1,24 +1,12 @@
 ---
 title: アクティビティ検証の構成
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 25a4eccb-b8fc-4857-a01d-2683b6341219
-caps.latest.revision: 5
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: f0b7099cbae2faf53e99f73a52f4c25f42ed6834
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: e6fa043e0a0a96875319d556c19ab8ee90cd2139
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="configuring-activity-validation"></a>アクティビティ検証の構成
 アクティビティの検証を使用すると、アクティビティの作成者とユーザーは、アクティビティを実行する前に、アクティビティの構成エラーを特定および報告できます。 Windows Workflow Foundation (WF) は、次の 3 種類のアクティビティの検証を提供します。  

@@ -1,27 +1,15 @@
 ---
-title: "Windows Communication Foundation の採用: 将来の移行の簡略化"
-ms.custom: 
+title: 'Windows Communication Foundation の採用: 将来の移行の簡略化'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: f49664d9-e9e0-425c-a259-93f0a569d01b
-caps.latest.revision: "7"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 76770eff76a7a641ee853f314b5d2c14a56737c1
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: aeafc164d16d9dc60ad0b3012da292e9b0bb38b3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="anticipating-adopting-the-windows-communication-foundation-easing-future-migration"></a>Windows Communication Foundation の採用: 将来の移行の簡略化
-将来、新しい ASP.NET アプリケーションを [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] へ簡単に移行できるようにするには、前述の推奨事項および次の推奨事項に従います。  
+新しい ASP.NET アプリケーションの WCF への簡単に将来の移行には、次の推奨事項と同様に、前の推奨事項に従います。  
   
 ## <a name="protocols"></a>プロトコル  
  ASP.NET 2.0 の SOAP 1.2 サポートを無効にします。  
@@ -38,12 +26,12 @@ ms.lasthandoff: 12/22/2017
 </configuration>  
 ```  
   
- このような処理を行うのは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ではさまざまなエンドポイントを介してメッセージを交換するため、SOAP 1.1 や SOAP 1.2 など各種プロトコルに対応する必要があるためです。 ASP.NET 2.0 Web サービスが SOAP 1.1 と SOAP 1.2 を両方ともサポートするように構成されている場合 (既定の構成)、その ASP.NET Web サービスの既存の全クライアントと確実に互換性のある、元のアドレスの単一の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] エンドポイントに移行することはできません。 また、SOAP 1.1 ではなく 1.2 を選択すると、サービスの利用者がさらに厳しく制限されます。  
+ これは、WCF には、メッセージが SOAP 1.1 と SOAP 1.2 のように、さまざまなプロトコルに準拠している別のエンドポイントを使用して、移動が必要とするために推奨されます。 ASP.NET 2.0 Web サービスが SOAP 1.1 と SOAP 1.2 では、ことはできませんが、既定の構成の両方をサポートするために構成されている転送を確実になる元のアドレスで単一の WCF エンドポイントに移行する場合はすべての ASP.NET Web と互換性があります。サービスの既存のクライアントです。 また、SOAP 1.1 ではなく 1.2 を選択すると、サービスの利用者がさらに厳しく制限されます。  
   
 ## <a name="service-development"></a>サービスの開発  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、<xref:System.ServiceModel.ServiceContractAttribute> をインターフェイスまたはクラスのいずれかに適用することでサービス コントラクトを定義できます。 この属性は、クラスではなくインターフェイスに適用することをお勧めします。これにより、任意の数のクラスでさまざまに実装できるコントラクト定義が作成されます。 ASP.NET 2.0 では、<xref:System.Web.Services.WebService> 属性をクラスだけでなくインターフェイスに適用することもできます。 ただし、既に説明したように ASP.NET 2.0 には不具合があり、<xref:System.Web.Services.WebService> 属性をクラスではなくインターフェイスに適用した場合、この属性の名前空間パラメーターが有効化されません。 一般に、<xref:System.Web.Services.WebService> 属性の名前空間パラメーターを使用して、サービスの名前空間を既定値の http://tempuri.org から変更することが望ましので、引き続き <xref:System.ServiceModel.ServiceContractAttribute> 属性をインターフェイスまたはクラスに適用して ASP.NET Web サービスを定義する必要があります。  
+ WCF では、適用することでサービス コントラクトを定義することができます、<xref:System.ServiceModel.ServiceContractAttribute>インターフェイスまたはクラスのいずれか。 この属性は、クラスではなくインターフェイスに適用することをお勧めします。これにより、任意の数のクラスでさまざまに実装できるコントラクト定義が作成されます。 ASP.NET 2.0 では、<xref:System.Web.Services.WebService> 属性をクラスだけでなくインターフェイスに適用することもできます。 ただし、既に説明したように ASP.NET 2.0 には不具合があり、<xref:System.Web.Services.WebService> 属性をクラスではなくインターフェイスに適用した場合、この属性の名前空間パラメーターが有効化されません。 あるため、既定値からサービスの名前空間を変更することをお勧めhttp://tempuri.orgの Namespace パラメーターを使用して、<xref:System.Web.Services.WebService>を適用して ASP.NET Web サービスを定義する 1 つ続行、属性、 <xref:System.ServiceModel.ServiceContractAttribute>インターフェイスまたはクラスのいずれかの属性です。  
   
--   これらのインターフェイスを定義するメソッドに含めるコードは、できるだけ少なくします。 これらのメソッドの作業を他のクラスに委任します。 その際、新しい [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスの型も、実質的な作業をそのクラスに委任できます。  
+-   これらのインターフェイスを定義するメソッドに含めるコードは、できるだけ少なくします。 これらのメソッドの作業を他のクラスに委任します。 新しい WCF サービスの種類にし、それらのクラス、実質的な作業委任も可能性があります。  
   
 -   `MessageName` の <xref:System.Web.Services.WebMethodAttribute> パラメーターを使用して、サービスの動作の明示的な名前を指定します。  
   
@@ -52,9 +40,9 @@ ms.lasthandoff: 12/22/2017
     string Echo(string input);  
     ```  
   
-     ASP.NET と [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では既定の動作名が異なるので、この処理は重要です。 明示的な名前を指定することで、既定の名前への依存を避けることができます。  
+     そうは、重要なは、ASP.NET での操作の既定の名前は、WCF によって提供される既定の名前と異なるためです。 明示的な名前を指定することで、既定の名前への依存を避けることができます。  
   
--   ASP.NET Web サービスの動作を多様メソッドで実装しないでください。[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、多様メソッドを使用した動作の実装がサポートされていません。  
+-   WCF が実装する操作を多様メソッドをサポートしていないためにを多様メソッドで ASP.NET Web サービスの操作を実装しませんしないでください。  
   
 -   <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute> を使用して、HTTP 要求をメソッドにルーティングする SOAPAction HTTP ヘッダーの明示的な値を指定します。  
   
@@ -64,12 +52,12 @@ ms.lasthandoff: 12/22/2017
     string Echo(string input);  
     ```  
   
-     この方法により、ASP.NET と [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] で SOAPAction の同じ既定値を使用する必要がなくなります。  
+     このアプローチを ASP.NET および WCF の同じによって使用される SOAPAction の値を既定値に依存することは回避します。  
   
--   SOAP 拡張機能は使用しないでください。 SOAP 拡張機能が必要な場合は、それを検討する目的の機能が [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] で既に提供されていないかどうかを確認します。 目的の機能が備わっている場合は、"すぐには [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を導入しない" という方針を考え直してください。  
+-   SOAP 拡張機能は使用しないでください。 SOAP 拡張機能が必要な場合は、検討されている対象の目的は、WCF によって既に提供されている機能するかどうかを決定します。 そのような場合は実際に場合、考え直して WCF を導入しないすぐにします。  
   
 ## <a name="state-management"></a>状態管理  
- サービスで状態を維持する必要がないようにします。 状態を維持すると、アプリケーションのスケーラビリティが損なわれるだけではありません。[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の ASP.NET 互換モードを使用すれば ASP.NET のメカニズムに対応できるとはいえ、ASP.NET と [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] とでは状態管理メカニズムが大きく異なります。  
+ サービスで状態を維持する必要がないようにします。 だけでなく、アプリケーションのスケーラビリティを侵害する傾向がある状態を維持するは、WCF は、ASP.NET 互換モードで ASP.NET のメカニズムをサポートしていますが、ASP.NET および WCF の状態管理メカニズムが大きく異なります。  
   
 ## <a name="exception-handling"></a>例外処理  
  サービスで送受信するデータ型の構造を設計するときは、クライアントに伝達する必要があり、サービス内で発生する可能性のあるさまざまな種類の例外を表現する構造も設計します。  
@@ -124,16 +112,16 @@ throw new SoapException(
      exception.ToXML());  
 ```  
   
- この例外クラスは、新しい [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] をスローするのに、<xref:System.ServiceModel.FaultException%601>`FaultException<AnticipatedException>(anticipatedException);` クラスと共に簡単に再利用できます。  
+ これらの例外クラスは、WCF で簡単に再利用されます<xref:System.ServiceModel.FaultException%601>新しいをスローするクラス `FaultException<AnticipatedException>(anticipatedException);`  
   
 ## <a name="security"></a>セキュリティ  
  セキュリティに関する推奨事項を次にいくつか示します。  
   
--   ASP.NET 2.0 のプロファイルは使用しないでください。サービスを [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] へ移行した場合、ASP.NET 統合モードの使用が制限されます。  
+-   回避としてこれらを使用して ASP.NET 2.0 のプロファイルを使用して使用が制限 ASP.NET 統合モードの場合は、サービスは、WCF に移行されました。  
   
--   サービスへのアクセスを制御する目的で ACL を使用しないでください。ASP.NET Web サービスはインターネット インフォメーション サービス (IIS) を使用して ACL を サポートしますが、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] はサポートしません。これは、ASP.NET Web サービスはホスティングを IIS に依存しますが、WCF は IIS でホストされる必要がないためです。  
+-   Acl を使用して、インターネット インフォメーション サービス (IIS) を使用して Acl をサポートする ASP.NET Web サービスとしてのサービスへのアクセスを制御するを回避するため、WCF はをホストするため、ASP.NET Web サービスが IIS に依存し、WCF は必ずしもありませんを IIS でホストするためです。  
   
 -   サービスのリソースへのアクセスを承認するには、ASP.NET 2.0 ロール プロバイダーの使用を検討してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Windows Communication Foundation 導入の準備: 将来的な統合の容易化](../../../../docs/framework/wcf/feature-details/anticipating-adopting-the-wcf-easing-future-integration.md)

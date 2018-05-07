@@ -1,27 +1,15 @@
 ---
-title: "WMI クラスの参照"
-ms.custom: 
+title: WMI クラスの参照
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: b95a51f5-8251-4619-ae05-7de88cb90f9a
-caps.latest.revision: "6"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 0e221c8197b9713dd5f4e35114ada3c63f4978ef
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 73b36bfc3df917982a2cc9071bdb31f42b3b2dff
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="wmi-class-reference"></a>WMI クラスの参照
-このセクションでは、[!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] WMI プロバイダーが公開しているすべての WMI クラスを示します。  
+このセクションでは、Windows Communication Foundation (WCF) WMI プロバイダーによって公開されているすべての WMI クラスを一覧表示します。  
   
 ## <a name="accessing-wmi-instances"></a>WMI インスタンスへのアクセス  
  WMI オブジェクト リファレンスに記載されているクラスはすべて、インスタンスを直接生成することはできません。ただし Service、AppDomain、Contract、ServiceAppDomain、ServiceToEndpointAssociation、Endpoint の各クラスを除きます。 他のインスタンスには、これらのトップ レベル クラスのプロパティからアクセスできます。 たとえば TransportBindingElement のインスタンスには、Endpoint のインスタンスから、Binding、BindingElements の順にたどってアクセスできます。  

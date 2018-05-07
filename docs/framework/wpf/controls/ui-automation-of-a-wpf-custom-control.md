@@ -1,13 +1,6 @@
 ---
-title: "WPF カスタム コントロールの UI オートメーション"
-ms.custom: 
+title: WPF カスタム コントロールの UI オートメーション
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,16 +10,11 @@ helpviewer_keywords:
 - custom controls [WPF], improving accessibility
 - UI Automation [WPF], using with custom controls
 ms.assetid: 47b310fc-fbd5-4ce2-a606-22d04c6d4911
-caps.latest.revision: "34"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 1a9d17408d6fa03b267c2a22890d2e17c0441389
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: fbd19591c260b0ad160339b45fd762e7a87bbc74
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ui-automation-of-a-wpf-custom-control"></a>WPF カスタム コントロールの UI オートメーション
 [!INCLUDE[TLA#tla_uiautomation](../../../../includes/tlasharptla-uiautomation-md.md)] は、オートメーション クライアントが使用してさまざまなプラットフォームやフレームワークのユーザー インターフェイスを調査または操作できる、単一の汎用的なインターフェイスを提供します。 [!INCLUDE[TLA2#tla_uiautomation](../../../../includes/tla2sharptla-uiautomation-md.md)] では、品質保証 (テスト) のコードとスクリーン リーダーなどのユーザー補助アプリケーションの両方を使用して、ユーザー インターフェイス要素を調べて、他のコードからその要素を使用してユーザーの操作をシュミレーションできます。 すべてのプラットフォームにまたがる [!INCLUDE[TLA2#tla_uiautomation](../../../../includes/tla2sharptla-uiautomation-md.md)] について詳しくは、「ユーザー補助機能」を参照してください。  
@@ -63,7 +51,7 @@ ms.lasthandoff: 12/22/2017
  上書き、<xref:System.Windows.UIElement.OnCreateAutomationPeer%2A>カスタム コントロールがから直接または間接的に派生する必要があります、プロバイダー オブジェクトを取得するためのメソッド<xref:System.Windows.Automation.Peers.AutomationPeer>です。  
   
 ### <a name="override-getpattern"></a>GetPattern のオーバーライド  
- オートメーション ピアは、サーバー側の [!INCLUDE[TLA2#tla_uiautomation](../../../../includes/tla2sharptla-uiautomation-md.md)] プロバイダーの実装の一部を簡略化しますが、カスタム コントロール オートメーション ピアでもパターン インターフェイスを処理する必要があります。 非 WPF プロバイダーのようにピア コントロール パターンのサポートでインターフェイスの実装を提供することによって、<xref:System.Windows.Automation.Provider?displayProperty=nameWithType>名前空間など<xref:System.Windows.Automation.Provider.IInvokeProvider>です。 コントロール パターンのインターフェイスは、ピア自体または別のオブジェクトによって実装できます。 ピアの実装の<xref:System.Windows.Automation.Peers.AutomationPeer.GetPattern%2A>指定されたパターンをサポートするオブジェクトを返します。 [!INCLUDE[TLA2#tla_uiautomation](../../../../includes/tla2sharptla-uiautomation-md.md)]コードの呼び出し、<xref:System.Windows.Automation.Peers.UIElementAutomationPeer.GetPattern%2A>メソッドを指定し、<xref:System.Windows.Automation.Peers.PatternInterface>列挙値。 オーバーライド<xref:System.Windows.Automation.Peers.UIElementAutomationPeer.GetPattern%2A>指定されたパターンを実装するオブジェクトを返す必要があります。 基本型の実装を呼び出すことができます、コントロールがカスタム パターンの実装を持たない場合<xref:System.Windows.Automation.Peers.AutomationPeer.GetPattern%2A>をこの種類のコントロール パターンがサポートしていない場合、実装、または null のいずれかを取得します。 範囲内の値に、カスタムの NumericUpDown コントロールを設定するなど、その[!INCLUDE[TLA2#tla_uiautomation](../../../../includes/tla2sharptla-uiautomation-md.md)]ピアを実装、<xref:System.Windows.Automation.Provider.IRangeValueProvider>インターフェイスです。 例を次にどのようにピアの<xref:System.Windows.Automation.Peers.UIElementAutomationPeer.GetPattern%2A>に応答するメソッドをオーバーライド、<xref:System.Windows.Automation.Peers.PatternInterface.RangeValue?displayProperty=nameWithType>値。  
+ オートメーション ピアは、サーバー側の [!INCLUDE[TLA2#tla_uiautomation](../../../../includes/tla2sharptla-uiautomation-md.md)] プロバイダーの実装の一部を簡略化しますが、カスタム コントロール オートメーション ピアでもパターン インターフェイスを処理する必要があります。 非 WPF プロバイダーのようにピア コントロール パターンのサポートでインターフェイスの実装を提供することによって、<xref:System.Windows.Automation.Provider?displayProperty=nameWithType>名前空間など<xref:System.Windows.Automation.Provider.IInvokeProvider>です。 コントロール パターンのインターフェイスは、ピア自体または別のオブジェクトによって実装できます。 ピアの実装の<xref:System.Windows.Automation.Peers.AutomationPeer.GetPattern%2A>指定されたパターンをサポートするオブジェクトを返します。 [!INCLUDE[TLA2#tla_uiautomation](../../../../includes/tla2sharptla-uiautomation-md.md)] コードの呼び出し、<xref:System.Windows.Automation.Peers.UIElementAutomationPeer.GetPattern%2A>メソッドを指定し、<xref:System.Windows.Automation.Peers.PatternInterface>列挙値。 オーバーライド<xref:System.Windows.Automation.Peers.UIElementAutomationPeer.GetPattern%2A>指定されたパターンを実装するオブジェクトを返す必要があります。 基本型の実装を呼び出すことができます、コントロールがカスタム パターンの実装を持たない場合<xref:System.Windows.Automation.Peers.AutomationPeer.GetPattern%2A>をこの種類のコントロール パターンがサポートしていない場合、実装、または null のいずれかを取得します。 範囲内の値に、カスタムの NumericUpDown コントロールを設定するなど、その[!INCLUDE[TLA2#tla_uiautomation](../../../../includes/tla2sharptla-uiautomation-md.md)]ピアを実装、<xref:System.Windows.Automation.Provider.IRangeValueProvider>インターフェイスです。 例を次にどのようにピアの<xref:System.Windows.Automation.Peers.UIElementAutomationPeer.GetPattern%2A>に応答するメソッドをオーバーライド、<xref:System.Windows.Automation.Peers.PatternInterface.RangeValue?displayProperty=nameWithType>値。  
   
  [!code-csharp[CustomControlNumericUpDown#GetPattern](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CustomControlNumericUpDown/CSharp/CustomControlLibrary/NumericUpDown.cs#getpattern)]
  [!code-vb[CustomControlNumericUpDown#GetPattern](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/CustomControlNumericUpDown/visualbasic/customcontrollibrary/numericupdown.vb#getpattern)]  
@@ -165,7 +153,7 @@ End Class
  [!code-csharp[CustomControlNumericUpDown#RaiseEventFromControl](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CustomControlNumericUpDown/CSharp/CustomControlLibrary/NumericUpDown.cs#raiseeventfromcontrol)]
  [!code-vb[CustomControlNumericUpDown#RaiseEventFromControl](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/CustomControlNumericUpDown/visualbasic/customcontrollibrary/numericupdown.vb#raiseeventfromcontrol)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [UI オートメーションの概要](../../../../docs/framework/ui-automation/ui-automation-overview.md)  
  [NumericUpDown カスタム コントロールのテーマと UI オートメーションのサポートのサンプル](http://go.microsoft.com/fwlink/?LinkID=160025)  
  [サーバー側 UI オートメーション プロバイダーの実装](../../../../docs/framework/ui-automation/server-side-ui-automation-provider-implementation.md)

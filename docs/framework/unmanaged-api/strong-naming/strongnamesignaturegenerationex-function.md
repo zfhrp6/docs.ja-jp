@@ -1,14 +1,6 @@
 ---
-title: "StrongNameSignatureGenerationEx 関数"
-ms.custom: 
+title: StrongNameSignatureGenerationEx 関数
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - StrongNameSignatureGenerationEx
 api_location:
@@ -22,17 +14,13 @@ helpviewer_keywords:
 ms.assetid: 9a75469e-aa49-4e32-ad48-3bafd5202f09
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 4f68befd145649e6d8921e160d302cdb81000a9a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8ac2dd50b26137ee4cf06f0545f1f8cf1bfabf80
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="strongnamesignaturegenerationex-function"></a>StrongNameSignatureGenerationEx 関数
 指定したフラグに基づいて、指定したアセンブリの厳密な名前の署名を生成します。  
@@ -81,12 +69,12 @@ BOOLEAN StrongNameSignatureGenerationEx (
  `dwFlags`  
  [in]1 つ以上の次の値。  
   
--   `SN_SIGN_ALL_FILES`(0x00000001) - リンクされたモジュールのすべてのハッシュを再計算します。  
+-   `SN_SIGN_ALL_FILES` (0x00000001) - リンクされたモジュールのすべてのハッシュを再計算します。  
   
--   `SN_TEST_SIGN`(0x00000002) - テスト アセンブリに署名します。  
+-   `SN_TEST_SIGN` (0x00000002) - テスト アセンブリに署名します。  
   
 ## <a name="return-value"></a>戻り値  
- `true`正常に終了します。それ以外の場合、`false`です。  
+ `true` 正常に終了します。それ以外の場合、`false`です。  
   
 ## <a name="remarks"></a>コメント  
  Null を指定する`wszFilePath`署名を作成することがなく、署名のサイズを計算します。  
@@ -99,16 +87,16 @@ BOOLEAN StrongNameSignatureGenerationEx (
   
  場合、`StrongNameSignatureGenerationEx`関数が正常に完了、呼び出すしていない、 [StrongNameErrorInfo](../../../../docs/framework/unmanaged-api/strong-naming/strongnameerrorinfo-function.md)最後に生成されたエラーを取得します。  
   
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** StrongName.h  
   
  **ライブラリ:** MsCorEE.dll にリソースとして含まれています。  
   
- **.NET framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [StrongNameSignatureGenerationEx メソッド](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamesignaturegenerationex-method.md)  
  [StrongNameSignatureGeneration メソッド](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamesignaturegeneration-method.md)  
  [ICLRStrongName インターフェイス](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)

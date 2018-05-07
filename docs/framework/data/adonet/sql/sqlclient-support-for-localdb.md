@@ -1,26 +1,12 @@
 ---
 title: SqlClient による LocalDB のサポート
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-ado
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: cf796898-5575-46f2-ae6e-21e5aa8c4123
-caps.latest.revision: 14
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload:
-- dotnet
-ms.openlocfilehash: e2564e49a90a1c8fd9fe2cc000ebf648cf90b4e7
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 33368ca4b2dc5397087d29e515db6c1094e350bc
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="sqlclient-support-for-localdb"></a>SqlClient による LocalDB のサポート
 SQL Server コード名 Denali 以降は、LocalDB と呼ばれる SQL Server の簡易バージョンは使用できます。 このトピックでは、LocalDB データベースに接続する方法について説明します。  

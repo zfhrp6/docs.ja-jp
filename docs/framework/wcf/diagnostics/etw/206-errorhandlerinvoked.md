@@ -1,24 +1,12 @@
 ---
 title: 206 - ErrorHandlerInvoked
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 97340f4d-4e09-4e42-a17a-982b3868dbcf
-caps.latest.revision: "6"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 43acd7ae7bbfc84e1d1ffb1bf4fa49a3dd3f191a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 40a92d77c57728249569a854eab8767ff371bca2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="206---errorhandlerinvoked"></a>206 - ErrorHandlerInvoked
 ## <a name="properties"></a>プロパティ  
@@ -43,5 +31,5 @@ ms.lasthandoff: 12/22/2017
 |TypeName|`xs:string`|呼び出された `ErrorHandler` の型の CLR FullName。|  
 |Handled|`xs:unsignedByte`|エラー ハンドラーがエラーを処理した場合は `true`。それ以外の場合は `false`。|  
 |ExceptionTypeName|`xs:string`|処理対象である例外の CLR FullName。|  
-|HostReference|`xs:string`|Web ホスト サービスの場合は、このフィールドにより、サービスが Web 階層内で一意に識別されます。 その形式とは見なさ ' Web サイト名アプリケーション仮想パス &#124;です。サービス仮想パス &#124;です。ServiceName' です。 例: ' 既定の Web サイト/CalculatorApplication &#124;/CalculatorService.svc &#124;です。CalculatorService'。|  
+|HostReference|`xs:string`|Web ホスト サービスの場合は、このフィールドにより、サービスが Web 階層内で一意に識別されます。 その形式とは見なさ ' Web サイト名アプリケーション仮想パス&#124;サービス仮想パス&#124;ServiceName' です。 例: ' 既定の Web サイト/CalculatorApplication&#124;/CalculatorService.svc&#124;CalculatorService'。|  
 |AppDomain|`xs:string`|AppDomain.CurrentDomain.FriendlyName で返される文字列。|

@@ -1,24 +1,12 @@
 ---
 title: DeliveryRequirementsAttribute
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 40c5435c-a325-4cf8-9dd0-d6e24b4a56a3
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e297bfc0499ea3ee8d3dd8395165ca22b2baa1de
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d294ba4f14472012b9e311ee53742633b5173f54
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="deliveryrequirementsattribute"></a>DeliveryRequirementsAttribute
 DeliveryRequirementsAttribute  
@@ -61,11 +49,11 @@ class DeliveryRequirementsAttribute : Behavior
   
  適用先となるコントラクトです。  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
   
 |MOF|Servicemodel.mof にて宣言済み。|  
 |---------|-----------------------------------|  
 |Namespace|root\ServiceModel で定義|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.DeliveryRequirementsAttribute>

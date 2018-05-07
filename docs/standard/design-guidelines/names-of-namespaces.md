@@ -1,14 +1,6 @@
 ---
 title: 名前空間の名前
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - names [.NET Framework], conflicts
 - names [.NET Framework], namespaces
@@ -16,18 +8,13 @@ helpviewer_keywords:
 - namespaces [.NET Framework], names
 - names [.NET Framework], type names
 ms.assetid: a49058d2-0276-43a7-9502-04adddf857b2
-caps.latest.revision: 12
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: f6a3b90dbc0dab0bb3a6a951dea45f59fc3ea1b8
-ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
+ms.openlocfilehash: 9e0b6c5ac60474cfe984b3802e880eb58b017722
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="names-of-namespaces"></a>名前空間の名前
 として他の名前付けのガイドラインに目標の名前空間の名前を付けるときを作成するための十分なわかりやすくするためにどのような名前空間のコンテンツがある可能性がすぐにわかるフレームワークを使用するプログラマにとってです。 次のテンプレートは、名前空間の名前付けに関する一般的な規則を指定します。  

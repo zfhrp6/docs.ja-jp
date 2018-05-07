@@ -1,14 +1,6 @@
 ---
-title: "ICLRTask::YieldTask メソッド"
-ms.custom: 
+title: ICLRTask::YieldTask メソッド
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ICLRTask.YieldTask
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: b8eb4095-3a8f-4be3-9446-63e9893dce7d
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: da84f4da9e7f7bcee48c0d6bc432ca75a001ece3
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 821f524cc8ff7f9983f811f539e2badb2306be26
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="iclrtaskyieldtask-method"></a>ICLRTask::YieldTask メソッド
 共通言語ランタイム (CLR)、確保して、タスクを配置する要求を現在[ICLRTask](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)インスタンスが表すとプロセッサ時間を他のタスクに使用できるようにします。  
@@ -48,7 +36,7 @@ HRESULT YieldTask ();
   
 |HRESULT|説明|  
 |-------------|-----------------|  
-|S_OK|`YieldTask`正常に返されます。|  
+|S_OK|`YieldTask` 正常に返されます。|  
 |HOST_E_CLRNOTAVAILABLE|CLR が、プロセスに読み込まれていませんまたは CLR は、状態をマネージ コードを実行またはできないの呼び出しは正常に処理します。|  
 |HOST_E_TIMEOUT|呼び出しがタイムアウトしました。|  
 |HOST_E_NOT_OWNER|呼び出し元は、ロックを所有していません。|  
@@ -58,16 +46,16 @@ HRESULT YieldTask ();
 ## <a name="remarks"></a>コメント  
  ホストは`YieldTask`他のタスクまたはプロセスのプロセッサ リソースを要求します。 このメソッドは CPU 時間を断念する実行時間の長いコードを許可するためのものでは、主にします。 ランタイムが、タスクを配置しようとしています。 を現在`ICLRTask`処理時間を得ることは成功の保証はありませんが、状態のインスタンスを表します。  
   
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** MSCorEE.h  
   
  **ライブラリ:** MSCorEE.dll にリソースとして含まれています。  
   
- **.NET framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ICLRTask インターフェイス](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)  
  [ICLRTaskManager インターフェイス](../../../../docs/framework/unmanaged-api/hosting/iclrtaskmanager-interface.md)  
  [IHostTask インターフェイス](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md)  

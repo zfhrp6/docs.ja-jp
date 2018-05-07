@@ -1,26 +1,12 @@
 ---
 title: 探索クライアント チャネルの使用
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 1494242a-1d64-4035-8ecd-eb4f06c8d2ba
-caps.latest.revision: 6
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 7828b3037318e4fb63820fe8d235a92e64fb0b07
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: ecade2eedb167e216655a4b7b270806c04b25024
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-the-discovery-client-channel"></a>探索クライアント チャネルの使用
 WCF クライアント アプリケーションを記述するときには、呼び出すサービスのエンドポイント アドレスを知っている必要があります。 多くの場合、サービスのエンドポイント アドレスがわからなかったり、サービスのアドレスが時間の経過と共に変化したりします。 探索クライアント チャネルでは、WCF クライアント アプリケーションを記述し、呼び出すサービスを示すと、クライアント チャネルが自動的にプローブ要求を送信します。 サービスが応答すると、探索クライアント チャネルは、プローブ応答からサービスのエンドポイント アドレスを受け取り、それを使用してサービスを呼び出します。  

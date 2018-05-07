@@ -1,13 +1,6 @@
 ---
-title: "遅延コンテンツの読み込み (WCF Data Services)"
-ms.custom: 
+title: 遅延コンテンツの読み込み (WCF Data Services)
 ms.date: 03/30/2017
-ms.prod: .net-framework-oob
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,16 +9,11 @@ helpviewer_keywords:
 - WCF Data Services, deferred content
 - WCF Data Services, loading data
 ms.assetid: 32f9b588-c832-44c4-a7e0-fcce635df59a
-caps.latest.revision: "2"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 11b796b5b2abaff00c6d0f20894056f5863942b2
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8ab4dea9e4f687f9548bb2b46a8f6baf428e29af
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="loading-deferred-content-wcf-data-services"></a>遅延コンテンツの読み込み (WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] の既定では、クエリが返すデータの量が制限されます。 その一方で、関連エンティティ、ページングされた応答データ、およびバイナリ データ ストリームを含む追加データをデータ サービスから必要に応じて明示的に読み込むことができます。 このトピックでは、このような遅延コンテンツをアプリケーションに読み込む方法について説明します。  
@@ -68,6 +56,6 @@ ms.lasthandoff: 12/22/2017
 ## <a name="binary-data-streams"></a>バイナリ データ ストリーム  
  [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] では、バイナリ ラージ オブジェクト (BLOB) データにデータ ストリームとしてアクセスできます。 ストリーミングは必要になるまでバイナリ データの読み込みを待機し、クライアントは、このデータを効率的に処理できます。 この機能を活用するには、データ サービスは <xref:System.Data.Services.Providers.IDataServiceStreamProvider> プロバイダーを実装する必要があります。 詳細については、次を参照してください。[ストリーミング プロバイダー](../../../../docs/framework/data/wcf/streaming-provider-wcf-data-services.md)です。 ストリーミングが有効である場合、エンティティ型は関連バイナリ データなしで返されます。 この場合、使用する必要があります、<xref:System.Data.Services.Client.DataServiceContext.GetReadStream%2A>のメソッド、<xref:System.Data.Services.Client.DataServiceContext>サービスからバイナリ データのデータ ストリームにアクセスするクラス。 同様に、<xref:System.Data.Services.Client.DataServiceContext.SetSaveStream%2A> メソッドを使用して、エンティティのバイナリ データをストリームとして追加または変更します。 詳細については、次を参照してください。[バイナリ データを扱う](../../../../docs/framework/data/wcf/working-with-binary-data-wcf-data-services.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [WCF Data Services クライアント ライブラリ](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)  
  [データ サービスに対するクエリ](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md)

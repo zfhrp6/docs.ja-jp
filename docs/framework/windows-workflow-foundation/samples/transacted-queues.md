@@ -1,24 +1,12 @@
 ---
 title: トランザクション キュー
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: b1b011dd-5e0b-482c-9bb0-9d8727038f14
-caps.latest.revision: 9
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 628e91589ad32a2646316401c7b2ddb31b13eace
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: b125158a113079d87eb6926393d5a2b5fe326824
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="transacted-queues"></a>トランザクション キュー
 このサンプルでは、キューおよびトランザクションの Windows Workflow Foundation (WF) 信頼性が高く、スケーラブルなサービスを作成するを統合する方法を示します。 A <!--zz <xref:System.Activities.TransactionScope>--> `System.Activities.TransactionScope`を使用してトランザクション内でキューにメッセージを送信するクライアント ワークフローで使用される、<xref:System.ServiceModel.NetMsmqBinding>です。 <xref:System.ServiceModel.Activities.TransactedReceiveScope> は、キューからメッセージを受信して同じトランザクション内でワークフローの状態を更新するためにサーバーで使用されます。  
@@ -46,6 +34,6 @@ ms.lasthandoff: 04/27/2018
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
+>  このディレクトリが存在しない場合に、 [Windows Communication Foundation (WCF) および .NET Framework 4 向けの Windows Workflow Foundation (WF) サンプル](http://go.microsoft.com/fwlink/?LinkId=150780)すべて Windows Communication Foundation (WCF) をダウンロードして[!INCLUDE[wf1](../../../../includes/wf1-md.md)]サンプルです。 このサンプルは、次のディレクトリに格納されます。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\Transactions\TransactedQueues`

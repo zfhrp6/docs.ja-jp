@@ -1,27 +1,15 @@
 ---
-title: "クエリのリモート実行とローカル実行"
-ms.custom: 
+title: クエリのリモート実行とローカル実行
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: ee50e943-9349-4c84-ab1c-c35d3ada1a9c
-caps.latest.revision: "2"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: c402fad49526729ba09d8f4b86a5b022ca4a12cb
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 9488cb4c15c2e0646d91bdba36e7d4e2be2efbbd
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="remote-vs-local-execution"></a>クエリのリモート実行とローカル実行
 クエリは、リモートで実行することも (データベース エンジンによるデータベースに対するクエリの実行)、ローカルに実行することも ([!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] によるローカル キャッシュに対するクエリの実行) できます。  
@@ -58,5 +46,5 @@ ms.lasthandoff: 01/17/2018
 ### <a name="queries-against-unordered-sets"></a>順序なしのセットに対するクエリ  
  実装するローカル コレクションに重要な違いに注意してください<xref:System.Collections.Generic.List%601>およびコレクションに対して実行されるリモート クエリが*セットを順序なし*リレーショナル データベースにします。 インデックス値を使用するメソッドなど、<xref:System.Collections.Generic.List%601> のメソッドにはリストのセマンティクスが必要ですが、これは通常、順序なしのセットに対するリモート クエリからは得られません。 このため、このようなメソッドでは、ローカル実行を可能にするために暗黙的に <xref:System.Data.Linq.EntitySet%601> が読み込まれます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [クエリの概念](../../../../../../docs/framework/data/adonet/sql/linq/query-concepts.md)

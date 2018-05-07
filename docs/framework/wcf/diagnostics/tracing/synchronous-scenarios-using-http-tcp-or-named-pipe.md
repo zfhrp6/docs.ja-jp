@@ -1,24 +1,12 @@
 ---
-title: "HTTP、TCP、または名前付きパイプを使用した同期シナリオ"
-ms.custom: 
+title: HTTP、TCP、または名前付きパイプを使用した同期シナリオ
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 7e90af1b-f8f6-41b9-a63a-8490ada502b1
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 428e8852c9b1706e88b1688b4a1f2e36c167fe28
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 03f4fdcaa5fc59efe7e92d2cb900212ed5ebae77
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="synchronous-scenarios-using-http-tcp-or-named-pipe"></a>HTTP、TCP、または名前付きパイプを使用した同期シナリオ
 ここでは、シングル スレッド クライアントで HTTP、TCP、または名前付きパイプを使用したときの、さまざまな同期要求/応答シナリオでのアクティビティと転送について説明します。 参照してください[HTTP、TCP、または名前付きパイプを使用して非同期シナリオ](../../../../../docs/framework/wcf/diagnostics/tracing/asynchronous-scenarios-using-http-tcp-or-named-pipe.md)マルチ スレッドの要求についての詳細。  
@@ -56,7 +44,7 @@ ms.lasthandoff: 12/22/2017
 #### <a name="closing-a-service-host"></a>サービス ホストの終了  
  ServiceHost の "閉じる" アクティビティ (Z) は、アンビエント アクティビティから作成されます。  
   
- ![#47; (&)、HTTP を使用した同期のシナリオTCP である (、&) #47 です。名前付きパイプ](../../../../../docs/framework/wcf/diagnostics/tracing/media/sync.gif "同期")  
+ ![HTTP を使用した同期シナリオ&#47;TCP&#47;名前付きパイプ](../../../../../docs/framework/wcf/diagnostics/tracing/media/sync.gif "同期")  
   
  \<A: name >、`A`はアクティビティとテーブル 3 に、前の説明を表すショートカット シンボルです。 `Name` は、アクティビティの短縮名です。  
   

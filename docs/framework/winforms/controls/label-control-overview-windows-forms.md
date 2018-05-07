@@ -1,14 +1,6 @@
 ---
-title: "Label コントロールの概要 (Windows フォーム)"
-ms.custom: 
+title: Label コントロールの概要 (Windows フォーム)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - Label
 helpviewer_keywords:
@@ -16,17 +8,11 @@ helpviewer_keywords:
 - labels
 - Label control [Windows Forms], about Label control
 ms.assetid: dcad7f44-11b7-4c55-b0c0-d984ade43d7d
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: f68642eb5f996722097976e042006afbf366ae39
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e5ad4416703e20a8e00299d496d360e1e84005a0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="label-control-overview-windows-forms"></a>Label コントロールの概要 (Windows フォーム)
 Windows フォーム<xref:System.Windows.Forms.Label>テキストや、ユーザーが編集できないイメージを表示するコントロールを使用します。 フォーム上のオブジェクトの識別に使用されます: どのような特定のコントロールの説明をクリックした場合などを提供するか、実行時イベントまたはアプリケーションのプロセスへの応答に情報を表示します。 たとえば、ラベルを使用して、テキスト ボックス、リスト ボックス、コンボ ボックス、およびようにわかりやすいキャプションを追加することができます。 実行時にイベントに応答のラベルで表示されるテキストを変更するコードを記述することもできます。 たとえば、アプリケーションは、変更を処理するまで数分かかる、ラベルに処理ステータス メッセージを表示できます。  
@@ -36,7 +22,7 @@ Windows フォーム<xref:System.Windows.Forms.Label>テキストや、ユーザ
   
  ラベルに表示されるキャプションに含まれている、<xref:System.Windows.Forms.Label.Text%2A>プロパティです。 <xref:System.Windows.Forms.Label.TextAlign%2A>プロパティでは、ラベル内のテキストの配置を設定することができます。 詳細については、次を参照してください。[する方法: Windows フォーム コントロールによって表示されるテキストを設定](../../../../docs/framework/winforms/controls/how-to-set-the-text-displayed-by-a-windows-forms-control.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.Label>  
  [方法: Windows フォーム Label コントロールのサイズを内容に合わせて変更する](../../../../docs/framework/winforms/controls/how-to-size-a-windows-forms-label-control-to-fit-its-contents.md)  
  [方法: Windows フォームの Label コントロールでアクセス キーを作成する](../../../../docs/framework/winforms/controls/how-to-create-access-keys-with-windows-forms-label-controls.md)

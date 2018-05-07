@@ -1,37 +1,23 @@
 ---
 title: '方法 : 構成を使用して ASP.NET AJAX エンドポイントを追加する'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 7cd0099e-dc3a-47e4-a38c-6e10f997f6ea
-caps.latest.revision: 14
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 28051dbed626dc0073a38e72f2cdc21ea108a32e
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: f14b441ead7c701aa4f794370fc5f54ad3b4a4e6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-use-configuration-to-add-an-aspnet-ajax-endpoint"></a>方法 : 構成を使用して ASP.NET AJAX エンドポイントを追加する
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] では、クライアント Web サイトの JavaScript から呼び出される ASP.NET AJAX 対応のエンドポイントを使用できるようにするサービスを作成できます。 このようなエンドポイントを作成するには、他のすべての [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] エンドポイントと同様に、構成ファイルを使用するか、または構成要素を必要としないメソッドを使用できます。 ここでは、構成を使用する方法について説明します。  
+Windows Communication Foundation (WCF) では、ASP.NET AJAX 対応エンドポイントをクライアントの Web サイトの JavaScript から呼び出すことが使用できるようにするサービスを作成することができます。 このようなエンドポイントを作成するには、他のすべての Windows Communication Foundation (WCF) エンドポイントと同様に、構成ファイルを使用するか、または、構成要素を必要としないメソッドを使用できます。 ここでは、構成を使用する方法について説明します。  
   
- ASP.NET AJAX 対応になるするサービス エンドポイントを有効にするプロシージャの部分で使用するエンドポイントを構成するは、<xref:System.ServiceModel.WebHttpBinding>を追加して、 [ \<enableWebScript >](../../../../docs/framework/configure-apps/file-schema/wcf/enablewebscript.md)エンドポイントの動作です。 エンドポイントの構成後、サービスを実装してホストする手順は、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスで使用される手順に似ています。 実際の例では、次を参照してください。、 [HTTP POST を使用して AJAX サービス](../../../../docs/framework/wcf/samples/ajax-service-using-http-post.md)です。  
+ ASP.NET AJAX 対応になるするサービス エンドポイントを有効にするプロシージャの部分で使用するエンドポイントを構成するは、<xref:System.ServiceModel.WebHttpBinding>を追加して、 [ \<enableWebScript >](../../../../docs/framework/configure-apps/file-schema/wcf/enablewebscript.md)エンドポイントの動作です。 エンドポイントを構成した後を実装して、サービスをホストする手順は、すべての WCF サービスで使用されるものと似ています。 実際の例では、次を参照してください。、 [HTTP POST を使用して AJAX サービス](../../../../docs/framework/wcf/samples/ajax-service-using-http-post.md)です。  
   
  構成を使用せずに ASP.NET AJAX エンドポイントを構成する方法の詳細については、次を参照してください。[する方法: ASP.NET AJAX エンドポイントなしを使用して構成を追加](../../../../docs/framework/wcf/feature-details/how-to-add-an-aspnet-ajax-endpoint-without-using-configuration.md)です。  
   
 ### <a name="to-create-a-basic-wcf-service"></a>基本的な WCF サービスを作成するには  
   
-1.  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 属性でマークされたインターフェイスを使用して、基本的な <xref:System.ServiceModel.ServiceContractAttribute> サービス コントラクトを定義します。 各操作を <xref:System.ServiceModel.OperationContractAttribute> でマークします。 <xref:System.ServiceModel.ServiceContractAttribute.Namespace%2A> プロパティが設定されていることを確認します。  
+1.  マークされたインターフェイスを持つ基本的な WCF サービス コントラクトを定義、<xref:System.ServiceModel.ServiceContractAttribute>属性。 各操作を <xref:System.ServiceModel.OperationContractAttribute> でマークします。 <xref:System.ServiceModel.ServiceContractAttribute.Namespace%2A> プロパティが設定されていることを確認します。  
   
     ```  
     [ServiceContract(Namespace = "MyService")]  

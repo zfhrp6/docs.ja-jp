@@ -1,28 +1,16 @@
 ---
-title: "方法 : [継承ピッカー] ダイアログ ボックスを使用してフォームを継承する"
-ms.custom: 
+title: '方法 : [継承ピッカー] ダイアログ ボックスを使用してフォームを継承する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - inheritance [Windows Forms], forms
 - Inheritance Picker dialog box
 - inherited forms [Windows Forms], creating
 ms.assetid: 969b4c04-12aa-4297-93a2-0ae747447823
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b330e84c14fa528fb84489e8fec16544144cf731
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 49c24b12616834ecc532a5568c0971e3dd75cfd8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-inherit-forms-using-the-inheritance-picker-dialog-box"></a>方法 : [継承ピッカー] ダイアログ ボックスを使用してフォームを継承する
 フォームまたは他のオブジェクトを継承する最も簡単な方法は、**[継承ピッカー]** ダイアログ ボックスを使用することです。 これを使用して、その他のソリューションで作成済みのコードまたはユーザー インターフェイス (UI) を利用できます。  
@@ -67,7 +55,7 @@ ms.lasthandoff: 01/19/2018
     > [!NOTE]
     >  継承されたコントロールとコンポーネントを、Windows フォーム上の標準的なコントロールとコンポーネントに結合する場合、z オーダーとの競合が発生する可能性があります。 これを修正するには、**[書式]** メニュー内でクリックして、**[順序]** をポイントし、**[最前面へ移動]** または **[最背面へ移動]** をクリックして z オーダーを変更します。 コントロールの z オーダーの詳細については、「[方法 : Windows フォーム上のオブジェクトをレイヤー化する](../../../../docs/framework/winforms/controls/how-to-layer-objects-on-windows-forms.md)」を参照してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Inherits ステートメント](~/docs/visual-basic/language-reference/statements/inherits-statement.md)  
  [using](~/docs/csharp/language-reference/keywords/using.md)  
  [基本フォームの外観を変更した場合の影響](../../../../docs/framework/winforms/advanced/effects-of-modifying-base-form-appearance.md)  

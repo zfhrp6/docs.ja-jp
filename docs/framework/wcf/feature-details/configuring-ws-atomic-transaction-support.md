@@ -1,28 +1,28 @@
 ---
-title: "WS-AtomicTransaction サポートの構成"
-ms.custom: 
+title: WS-AtomicTransaction サポートの構成
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - dotnet-clr
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - WS-AT protocol [WCF], configuring WS-Atomic Transaction
 ms.assetid: cb9f1c9c-1439-4172-b9bc-b01c3e09ac48
-caps.latest.revision: 
+caps.latest.revision: 31
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 922b2048a262e722a11ee77c41e96dddec411326
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: b2d94c96b8cc225344300540d9fc406a4742db2a
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="configuring-ws-atomic-transaction-support"></a>WS-AtomicTransaction サポートの構成
 ここでは、WS-AtomicTransaction (WS-AT) 構成ユーティリティを使用して WS-AT サポートを構成する方法について説明します。  
@@ -34,11 +34,11 @@ ms.lasthandoff: 12/22/2017
   
  コマンド ライン ウィンドウは、Windows SDK のインストール場所の "%WINDIR%\Microsoft.NET\Framework\v3.0\Windows Communication Foundation" で使用できます。  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]コマンド ライン ツールを参照してください[Ws-atomictransaction 構成ユーティリティ (wsatConfig.exe)](../../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md)です。  
+ コマンド ライン ツールの詳細については、次を参照してください。 [Ws-atomictransaction 構成ユーティリティ (wsatConfig.exe)](../../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md)です。  
   
- 実行している場合[!INCLUDE[wxp](../../../../includes/wxp-md.md)]または[!INCLUDE[ws2003](../../../../includes/ws2003-md.md)]に移動して、MMC スナップインにアクセスできる**コントロール パネル]、[管理ツール]、[コンポーネント サービス**を右クリック、**マイ コンピューター**、および選択すると**プロパティ**です。 この場所では、Microsoft 分散トランザクション コーディネーター (MSDTC) を構成することもできます。 構成できるオプションは、グループ化されて、 **WS-AT**タブです。Windows Vista を実行している場合または[!INCLUDE[lserver](../../../../includes/lserver-md.md)]、MMC スナップインでにあります をクリックして、**開始** ボタン、および入力`dcomcnfg.exe`で、**検索**ボックス。 MMC が開いているときに移動、**マイ Computer\Distributed トランザクション コーディネーター DTC**ノードを右クリックし、**プロパティ**です。 構成できるオプションは、グループ化されて、 **WS-AT**タブです。  
+ 実行している場合[!INCLUDE[wxp](../../../../includes/wxp-md.md)]または[!INCLUDE[ws2003](../../../../includes/ws2003-md.md)]に移動して、MMC スナップインにアクセスできる**コントロール パネル]、[管理ツール]、[コンポーネント サービス**を右クリック、**マイ コンピューター**、および選択すると**プロパティ**です。 この場所では、Microsoft 分散トランザクション コーディネーター (MSDTC) を構成することもできます。 構成できるオプションは、[グループ化されて、 **WS-AT**タブです。Windows Vista を実行している場合または[!INCLUDE[lserver](../../../../includes/lserver-md.md)]、MMC スナップインでにあります をクリックして、**開始** ボタン、および入力`dcomcnfg.exe`で、**検索**ボックス。 MMC が開いているときに移動、**マイ Computer\Distributed トランザクション コーディネーター DTC**ノードを右クリックし、**プロパティ**です。 構成できるオプションは、グループ化されて、 **WS-AT**タブです。  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]スナップインで、参照、 [Ws-atomictransaction 構成 MMC スナップインで](../../../../docs/framework/wcf/ws-atomictransaction-configuration-mmc-snap-in.md)です。  
+ スナップインの詳細については、次を参照してください。、 [Ws-atomictransaction 構成 MMC スナップインで](../../../../docs/framework/wcf/ws-atomictransaction-configuration-mmc-snap-in.md)です。  
   
  ツールのユーザー インターフェイスを有効にするには、WsatUI.dll ファイルを登録しておく必要があります。このファイルは、次のパスにあります。  
   
@@ -88,7 +88,7 @@ ms.lasthandoff: 12/22/2017
 ### <a name="configuring-msdtc-to-use-certificates"></a>MSDTC での証明書の使用の構成  
  WS-AT プロトコル サービスは、クライアントとサーバーの両方として機能するので、このサービスは、受信接続のリッスンと送信接続の開始を実行する必要があります。 このため、外部の通信相手と通信するときに使用する証明書と、受信接続を受け入れるときに承認する証明書を MSDTC に設定する必要があります。  
   
- これを構成するには、MMC WS-AT スナップインを使用します。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]このツールを参照してください、 [Ws-atomictransaction 構成 MMC スナップインで](../../../../docs/framework/wcf/ws-atomictransaction-configuration-mmc-snap-in.md)トピックです。 次の手順では、MSDTC を実行している 2 台のコンピューター間に信頼を確立する方法を説明します。  
+ これを構成するには、MMC WS-AT スナップインを使用します。 このツールの詳細については、次を参照してください。、 [Ws-atomictransaction 構成 MMC スナップインで](../../../../docs/framework/wcf/ws-atomictransaction-configuration-mmc-snap-in.md)トピックです。 次の手順では、MSDTC を実行している 2 台のコンピューター間に信頼を確立する方法を説明します。  
   
 1.  コンピューター A の設定を構成します。 「エンドポイントの証明書」certA を選択します。 "承認された証明書"で、certB を選択します。  
   
@@ -131,6 +131,6 @@ ms.lasthandoff: 12/22/2017
   
 -   31 : 詳細  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [WS-AtomicTransaction 構成ユーティリティ (wsatConfig.exe)](../../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md)  
  [WS-AtomicTransaction 構成 MMC スナップイン](../../../../docs/framework/wcf/ws-atomictransaction-configuration-mmc-snap-in.md)

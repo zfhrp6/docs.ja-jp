@@ -1,26 +1,12 @@
 ---
 title: MSMQ アクティベーション
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: e3834149-7b8c-4a54-806b-b4296720f31d
-caps.latest.revision: 29
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: e0f8077e425464d5a9f33662366377d573719659
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
-ms.translationtype: MT
+ms.openlocfilehash: ab414cb5535ce2b9062520c9d82e139ebdfc04c4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="msmq-activation"></a>MSMQ アクティベーション
 このサンプルでは、メッセージ キューから読み取ったアプリケーションを、Windows プロセス アクティブ化サービス (WAS) でホストする方法を示します。 このサンプルでは、`netMsmqBinding`に基づくと、[双方向通信](../../../../docs/framework/wcf/samples/two-way-communication.md)サンプルです。 この場合、サービスは Web ホスト アプリケーションの 1 つであり、クライアントは自己ホスト型です。クライアントはコンソールに出力して、送信された発注書のステータスを確認します。  
@@ -33,11 +19,11 @@ ms.lasthandoff: 04/27/2018
 >   
 >  \<InstallDrive >: \WF_WCF_Samples  
 >   
->  このディレクトリが存在しない場合に、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]ハイパーリンク"http://go.microsoft.com/fwlink/?LinkId=150780"\t"_blank"と用の Windows Workflow Foundation (WF) サンプル[!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)]すべてダウンロードして[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]と[!INCLUDE[wf1](../../../../includes/wf1-md.md)]サンプルです。 このサンプルは、次のディレクトリに格納されます。  
+>  このディレクトリが存在しない場合に、Windows Communication Foundation (WCF) のハイパーリンクを参照してください。"http://go.microsoft.com/fwlink/?LinkId=150780"\t"_blank"と用の Windows Workflow Foundation (WF) サンプル[!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)]すべてダウンロードして[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]と[!INCLUDE[wf1](../../../../includes/wf1-md.md)]サンプルです。 このサンプルは、次のディレクトリに格納されます。  
 >   
 >  \<InstallDrive >: \Samples\WCFWFCardSpace\WCF\Basic\Services\Hosting\WASHost\MsmqActivation です。  
   
- Windows プロセス アクティブ化サービス (WAS) は [!INCLUDE[lserver](../../../../includes/lserver-md.md)] の新しいプロセス アクティブ化機構です。WAS は、以前は HTTP ベースのアプリケーションでのみ使用できた IIS のような機能を、HTTP 以外のプロトコルを使用するアプリケーションに提供します。 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] はリスナー アダプター インターフェイスを使用し、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] によってサポートされる HTTP 以外のプロトコル (TCP、名前付きパイプ、MSMQ など) を介して受信されるアクティブ化要求を伝達します。 HTTP 以外のプロトコルを介して要求を受信する機能は、SMSvcHost.exe で実行されるマネージ Windows サービスによってホストされます。  
+ Windows プロセス アクティブ化サービス (WAS) は [!INCLUDE[lserver](../../../../includes/lserver-md.md)] の新しいプロセス アクティブ化機構です。WAS は、以前は HTTP ベースのアプリケーションでのみ使用できた IIS のような機能を、HTTP 以外のプロトコルを使用するアプリケーションに提供します。 Windows Communication Foundation (WCF) によってサポートされる非 HTTP プロトコルを介して受信されるアクティブ化要求を通信するために、リスナー アダプター インターフェイスを使用して[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]TCP、名前付きパイプ、MSMQ などです。 HTTP 以外のプロトコルを介して要求を受信する機能は、SMSvcHost.exe で実行されるマネージ Windows サービスによってホストされます。  
   
  Net.Msmq リスナ アダプタ サービス (NetMsmqActivator) は、キュー内のメッセージに基づいてキューに置かれたアプリケーションをアクティブ化します。  
   

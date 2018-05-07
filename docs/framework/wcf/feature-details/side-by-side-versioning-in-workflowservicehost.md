@@ -1,27 +1,15 @@
 ---
-title: "WorkflowServiceHost による side-by-side でのバージョン管理"
-ms.custom: 
+title: WorkflowServiceHost による side-by-side でのバージョン管理
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 60887eed-df40-4412-b812-41e1dd329d15
-caps.latest.revision: "7"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: db8f79fcdc1398b891933f5fef9f07410e5de11e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6c2329fe69941341dff1536b213ca4f1b961889a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="side-by-side-versioning-in-workflowservicehost"></a>WorkflowServiceHost による side-by-side でのバージョン管理
 <xref:System.ServiceModel.Activities.WorkflowServiceHost> で導入された [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)] による side-by-side でのバージョン管理は、1 つのエンドポイントでワークフロー サービスの複数のバージョンをホストする機能を提供します。 提供される side-by-side 機能により、既存の定義を使用してインスタンスを実行しているときに、新しいワークフロー定義を使用してワークフロー サービスの新しいインスタンスが作成されるように、ワークフロー サービスを構成できます。 このトピックでは、<xref:System.ServiceModel.Activities.WorkflowServiceHost> を使用したワークフロー サービスの side-by-side での実行の概要を提供します。  

@@ -1,40 +1,28 @@
 ---
 title: '方法 : SecurityBindingElement を使用してカスタム バインドを作成する'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - security [WCF], creating custom bindings
 ms.assetid: 203a9f9e-3a73-427c-87aa-721c56265b29
-caps.latest.revision: 19
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload:
-- dotnet
-ms.openlocfilehash: 80fd6163db1b7b168be4e19b01c8eb9f15865f04
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 1e288daeb717fa9fa041d552cac4ec5d0cd28808
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-a-custom-binding-using-the-securitybindingelement"></a>方法 : SecurityBindingElement を使用してカスタム バインドを作成する
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] にはシステム指定のバインディングがいくつか含まれています。これらのバインディングは構成できますが、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] がサポートするすべてのセキュリティ オプションを構成しようとする場合には十分な柔軟性が得られません。 ここでは、個別のバインド要素からカスタム バインドを直接作成する方法を説明し、このようなバインディングを作成する場合に指定できるセキュリティ設定のいくつかに焦点を当てます。 カスタム バインディングの作成の詳細については、次を参照してください。[バインディングの拡張](../../../../docs/framework/wcf/extending/extending-bindings.md)です。  
+Windows Communication Foundation (WCF) には、システム提供バインディングがいくつか構成できますが、WCF でサポートされるすべてのセキュリティ オプションを構成するときに、十分な柔軟性を渡さないようにが含まれています。 ここでは、個別のバインド要素からカスタム バインドを直接作成する方法を説明し、このようなバインディングを作成する場合に指定できるセキュリティ設定のいくつかに焦点を当てます。 カスタム バインディングの作成の詳細については、次を参照してください。[バインディングの拡張](../../../../docs/framework/wcf/extending/extending-bindings.md)です。  
   
 > [!WARNING]
 >  <xref:System.ServiceModel.Channels.SecurityBindingElement> では、<xref:System.ServiceModel.Channels.IDuplexSessionChannel> が <xref:System.ServiceModel.TransferMode> に設定されている場合に TCP トランスポートによって使用される既定のチャネル形状である <xref:System.ServiceModel.TransferMode.Buffered> チャネル形状をサポートしていません。 このシナリオで <xref:System.ServiceModel.TransferMode> を使用するには、<xref:System.ServiceModel.TransferMode.Streamed> を <xref:System.ServiceModel.Channels.SecurityBindingElement> に設定する必要があります。  
   
 ## <a name="creating-a-custom-binding"></a>カスタム バインドの作成  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]のすべてのバインドが構成されています*バインド要素*です。 各バインド要素は <xref:System.ServiceModel.Channels.BindingElement> クラスから派生します。 標準のシステム指定のバインディングの場合、バインド要素は自動的に作成および構成されます。ただし、プロパティ設定の一部はカスタマイズが可能です。  
+ WCF でのすべてのバインディングで構成されて*バインド要素*です。 各バインド要素は <xref:System.ServiceModel.Channels.BindingElement> クラスから派生します。 標準のシステム指定のバインディングの場合、バインド要素は自動的に作成および構成されます。ただし、プロパティ設定の一部はカスタマイズが可能です。  
   
  これに対し、カスタム バインディングを作成する場合は、バインド要素が作成および構成され、そのバインド要素から <xref:System.ServiceModel.Channels.CustomBinding> が作成されます。  
   

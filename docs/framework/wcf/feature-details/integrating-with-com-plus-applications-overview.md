@@ -1,32 +1,18 @@
 ---
 title: COM+ アプリケーションとの統合の概要
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - Windows Communication Foundation, COM+ integration
 - WCF, COM+ integration
 ms.assetid: e481e48f-7096-40eb-9f20-7f0098412941
-caps.latest.revision: 29
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 3c723bda93feac3eef18f302ab0c8ec7c702eb7a
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 155365c72fd3f5915db12104f45a500f3176f67b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="integrating-with-com-applications-overview"></a>COM+ アプリケーションとの統合の概要
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] は分散アプリケーションを作成するための有用な環境を提供します。 COM+ でホストされるコンポーネント ベースのアプリケーション ロジックを既に使用している場合は、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を使用すると、既存のロジックを修正することなく拡張することができます。 既存の COM+ サービスまたはエンタープライズ サービスの業務ロジックを、Web サービスを介して公開する場合に役立ちます。  
+Windows Communication Foundation (WCF) では、分散アプリケーションを作成するための有用な環境を提供します。 COM + でホストされるコンポーネント ベースのアプリケーション ロジックを使用して既に場合 WCF を使用して、既存のロジックを修正することがなく拡張することができます。 既存の COM+ サービスまたはエンタープライズ サービスの業務ロジックを、Web サービスを介して公開する場合に役立ちます。  
   
  COM+ コンポーネントのインターフェイスを Web サービスとして公開する場合、その仕様やコントラクトは、アプリケーションの初期化の際に実行される自動マッピングによって決まります。 このマッピングの概念モデルを次に示します。  
   
@@ -84,7 +70,7 @@ ms.lasthandoff: 04/30/2018
  クライアント アプリケーションがサービスとの間でオブジェクトをやり取りするためには、<xref:System.ServiceModel.ComIntegration.PersistStreamTypeWrapper> オブジェクトの該当するメソッドを使用できます。  
   
 > [!NOTE]
->  このメソッドはプラットフォーム固有の独自の方式でシリアル化を行うようになっているので、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントと [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスの間でやり取りする場合に最も適しています。  
+>  カスタムおよびプラットフォーム固有の特性により、シリアル化方法、これは、WCF クライアントと WCF サービスの間での使用に最適です。  
   
 ## <a name="selecting-the-hosting-mode"></a>ホスティング モードの選択  
  COM+ が Web サービスを公開する際のホスティング モードには、次のようなものがあります。  
@@ -95,18 +81,18 @@ ms.lasthandoff: 04/30/2018
   
 -   Web ホスト  
   
-     Web サービスを Web サーバーのワーカー プロセス内で提供します。 最初の要求が届いた時点で、あらかじめ COM+ がアクティブになっている必要はありません。 必要に応じ、自動的にアクティブ化してから要求を処理するようになっています。 このモードでも、サーバー アプリケーションから Web サービスと DCOM アクセスの両方を利用できますが、Web サービス要求の転送が発生するため、プロセス ホップが発生します。 通常、クライアント側で偽装が必要になります。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、<xref:System.ServiceModel.Security.WindowsClientCredential.AllowedImpersonationLevel%2A> クラスの <xref:System.ServiceModel.Security.WindowsClientCredential> プロパティ (ジェネリック <xref:System.ServiceModel.ChannelFactory%601> クラスのプロパティとしてアクセス) および <xref:System.Security.Principal.TokenImpersonationLevel.Impersonation> 列挙値を使用してこれを行います。  
+     Web サービスを Web サーバーのワーカー プロセス内で提供します。 最初の要求が届いた時点で、あらかじめ COM+ がアクティブになっている必要はありません。 必要に応じ、自動的にアクティブ化してから要求を処理するようになっています。 このモードでも、サーバー アプリケーションから Web サービスと DCOM アクセスの両方を利用できますが、Web サービス要求の転送が発生するため、プロセス ホップが発生します。 通常、クライアント側で偽装が必要になります。 WCF では、これで、<xref:System.ServiceModel.Security.WindowsClientCredential.AllowedImpersonationLevel%2A>のプロパティ、<xref:System.ServiceModel.Security.WindowsClientCredential>クラスは、ジェネリックのプロパティとしてアクセス<xref:System.ServiceModel.ChannelFactory%601>クラスだけでなく<xref:System.Security.Principal.TokenImpersonationLevel.Impersonation>列挙値。  
   
 -   Web ホスト (インプロセス)  
   
      Web サービスと COM+ アプリケーション ロジックの両方を Web サーバーのワーカー プロセス内で提供します。 Web サービス要求を転送することなく、自動的に Web ホスト モードにすることができます。 ただし、サーバー アプリケーションに DCOM でアクセスできない、という短所があります。  
   
 ### <a name="security-considerations"></a>セキュリティの考慮事項  
- 他の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスと同様、公開するサービスのセキュリティ設定は [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] チャネルに対して行います。 従来の DCOM セキュリティ設定には、コンピューター全体のアクセス権限設定などがありましたが、これは必須ではありません。 COM+ アプリケーション ロールを強制する場合、コンポーネントの "コンポーネント レベルのアクセス確認" 承認を有効にする必要があります。  
+ その他の WCF サービスと同様に、公開するサービスのセキュリティ設定は、WCF チャネルの構成設定を通じて管理されます。 従来の DCOM セキュリティ設定には、コンピューター全体のアクセス権限設定などがありましたが、これは必須ではありません。 COM+ アプリケーション ロールを強制する場合、コンポーネントの "コンポーネント レベルのアクセス確認" 承認を有効にする必要があります。  
   
  セキュリティ保護されていないバインディングは改ざんや情報漏洩を招くので、 セキュリティ保護されたバインディングを使用することをお勧めします。  
   
- "COM+ ホスト" モードおよび "Web ホスト" モードの場合、クライアント アプリケーション側で、サーバー プロセスによるクライアント ユーザーの偽装を許可する必要があります。 これは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント側で、偽装レベルを <xref:System.Security.Principal.TokenImpersonationLevel.Impersonation> と設定することにより行います。  
+ "COM+ ホスト" モードおよび "Web ホスト" モードの場合、クライアント アプリケーション側で、サーバー プロセスによるクライアント ユーザーの偽装を許可する必要があります。 これ行う WCF クライアントの設定で、偽装レベルを<xref:System.Security.Principal.TokenImpersonationLevel.Impersonation>です。  
   
  インターネット インフォメーション サービス (IIS) または Windows プロセス アクティブ化サービス (WAS) で HTTP トランスポートを使用する場合、Httpcfg.exe ツールでトランスポート エンドポイントのアドレスを確保し、他の用途には使用しないように予約することができます。 他の構成では、正当なサービスのように機能する不正なサービスからの防御が重要です。 接続先のエンドポイントで不正なサービスが起動されるのを防ぐため、正当なサービスは NT サービスとして動作するよう設定するとよいでしょう。 これにより、正当なサービスは、他の不正なサービスに優先してエンドポイント アドレスを確保できるようになります。  
   

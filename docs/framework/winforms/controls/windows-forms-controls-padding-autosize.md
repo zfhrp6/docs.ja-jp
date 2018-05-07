@@ -1,13 +1,6 @@
 ---
-title: "チュートリアル : Padding、Margin、および AutoSize プロパティを使用した Windows フォーム コントロールのレイアウト"
-ms.custom: 
+title: 'チュートリアル : Padding、Margin、および AutoSize プロパティを使用した Windows フォーム コントロールのレイアウト'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - Margin.Bottom
 - Margin.Left
@@ -22,16 +15,11 @@ helpviewer_keywords:
 - layout [Windows Forms], margins and padding
 - Windows Forms, layout
 ms.assetid: f8ae2a6b-db13-4630-8e25-d104091205c7
-caps.latest.revision: "28"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 9ccd5379d9594ccab02b80fd5fbdba0b202e1c69
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 8e5763bd64049ee5f3d00c3489ec0c6a35fd58f8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="walkthrough-laying-out-windows-forms-controls-with-padding-margins-and-the-autosize-property"></a>チュートリアル : Padding、Margin、および AutoSize プロパティを使用した Windows フォーム コントロールのレイアウト
 フォーム上のコントロールを正確に配置することは、多くのアプリケーションで優先度の高い作業です。 **Windows フォーム デザイナー**これを実現するさまざまなレイアウト ツールを提供します。 最も重要な 3 つが、 <xref:System.Windows.Forms.Control.Margin%2A>、 <xref:System.Windows.Forms.Control.Padding%2A>、および<xref:System.Windows.Forms.Control.AutoSize%2A>プロパティで、すべての Windows フォーム コントロール上に存在します。  
@@ -195,7 +183,7 @@ ms.lasthandoff: 01/19/2018
   
 -   実験で子コントロールのドッキングと、<xref:System.Windows.Forms.Panel>コントロール。 <xref:System.Windows.Forms.Control.Padding%2A>プロパティは、の一般的な実現、<xref:System.Windows.Forms.ScrollableControl.DockPadding%2A>プロパティ、およびを満たすことができる自分でこれは大文字と小文字子コントロールを配置することにより、<xref:System.Windows.Forms.Panel>コントロールおよび子コントロールの設定<xref:System.Windows.Forms.Control.Dock%2A>プロパティを<xref:System.Windows.Forms.DockStyle.Fill>. 設定、<xref:System.Windows.Forms.Panel>コントロールの<xref:System.Windows.Forms.Control.Padding%2A>プロパティをさまざまな値変化を確認します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.Control.AutoSize%2A>  
  <xref:System.Windows.Forms.ScrollableControl.DockPadding%2A>  
  <xref:System.Windows.Forms.Control.Margin%2A>  

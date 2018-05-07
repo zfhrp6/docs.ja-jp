@@ -1,27 +1,15 @@
 ---
-title: "DataAdapter を使用したバッチ操作の実行"
-ms.custom: 
+title: DataAdapter を使用したバッチ操作の実行
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: e72ed5af-b24f-486c-8429-c8fd2208f844
-caps.latest.revision: "3"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: e5c584bcd825e390b24da6c95ecb159a8280c639
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: e585d8a3c21f4a256a2e706389fc9f8adc7900da
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="performing-batch-operations-using-dataadapters"></a>DataAdapter を使用したバッチ操作の実行
 ADO.NET のバッチ サポートを利用すると、<xref:System.Data.Common.DataAdapter> は、<xref:System.Data.DataSet> または <xref:System.Data.DataTable> から INSERT、UPDATE、および DELETE の各操作を 1 操作ずつサーバーに送信するのではなく、グループ化してサーバーに送信できます。 こうすることで、サーバーへのラウンド トリップの回数が減少し、大幅なパフォーマンスの向上が期待できます。 バッチ更新は、SQL Server (<xref:System.Data.SqlClient>) および Oracle (<xref:System.Data.OracleClient>) の .NET データ プロバイダーでサポートされています。  
@@ -152,7 +140,7 @@ public static void BatchUpdate(DataTable dataTable,Int32 batchSize)
   
  バッチ処理の実行に対してサポートされる SQL 構成は、データ プロバイダーとバックエンド データベースが決定します。 サポートされていないステートメントが実行時に送信されると、例外がスローされる場合があります。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [DataAdapter と DataReader](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)  
  [DataAdapter によるデータ ソースの更新](../../../../docs/framework/data/adonet/updating-data-sources-with-dataadapters.md)  
  [DataAdapter のイベント処理](../../../../docs/framework/data/adonet/handling-dataadapter-events.md)  

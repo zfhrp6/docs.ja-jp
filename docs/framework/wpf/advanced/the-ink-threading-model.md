@@ -1,13 +1,6 @@
 ---
-title: "インク スレッド モデル"
-ms.custom: 
+title: インク スレッド モデル
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - application user interface thread [WPF]
 - stylus plug-in
@@ -20,16 +13,11 @@ helpviewer_keywords:
 - ink collection plug-in
 - plug-ins [WPF], for ink
 ms.assetid: c85fcad1-cb50-4431-847c-ac4145a35c89
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c8eb0cf9f1cbb1be688f228b7bbd10a3a3ca6ed0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: cc0ff8a2345bd945dd2fffdfda80f00e1ab99c67
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="the-ink-threading-model"></a>インク スレッド モデル
 Tablet PC 上のインクの利点の 1 つは、ことが多くように感じますが書き込みと用紙と正規ペンでです。  これを行うには、タブレット ペンは、速度が大幅に高くマウスは、ユーザーの書き込みとインクをレンダリングよりも入力データを収集します。  アプリケーションのユーザー インターフェイス (UI) スレッドではありませんペンのデータとレンダリング インクを収集するための十分なブロックになることができます。  これを解決するために、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]アプリケーションが、ユーザーがインクを書き込む場合に、追加の 2 つのスレッドを使用します。  
@@ -72,11 +60,11 @@ Tablet PC 上のインクの利点の 1 つは、ことが多くように感じ�
   
  上の図に、次の動作が行わをれます。  
   
-1.  `StylusPlugin1`x の値を変更し、y です。  
+1.  `StylusPlugin1` x の値を変更し、y です。  
   
-2.  <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>スタイラスの更新ポイントを受信し、動的なレンダリング スレッドでそれらを表示します。  
+2.  <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> スタイラスの更新ポイントを受信し、動的なレンダリング スレッドでそれらを表示します。  
   
-3.  `StylusPlugin2`スタイラスの更新ポイントを受信し、さらに x の値を変更し、y です。  
+3.  `StylusPlugin2` スタイラスの更新ポイントを受信し、さらに x の値を変更し、y です。  
   
 4.  アプリケーションでは、スタイラス ポイントを収集し、ユーザーがストロークを完了すると、静的にストロークを描画します。  
   
@@ -87,7 +75,7 @@ Tablet PC 上のインクの利点の 1 つは、ことが多くように感じ�
   
  次の図は、ペン スレッドとのスタイラス イベントに関して UI スレッド間のリレーションシップ、<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn>です。  
   
- ![インク スレッド処理モデル &#40;です。UI およびペン &#41;] (../../../../docs/framework/wpf/advanced/media/inkthreading-plugincallbacks.png "InkThreading_PluginCallbacks")  
+ ![インク スレッド モデル&#40;UI およびペン&#41;](../../../../docs/framework/wpf/advanced/media/inkthreading-plugincallbacks.png "InkThreading_PluginCallbacks")  
   
 ## <a name="rendering-ink"></a>インクをレンダリング  
  ユーザーがストロークを描画と<xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>"をフローする"、ペンから UI スレッドがビジー状態である場合でも、インクが表示されるように、別のスレッド上のインクをレンダリングします。  <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>スタイラス ポイントを収集するように、動的なレンダリング スレッドでビジュアル ツリーを構築します。  ユーザーがストロークを完了すると、<xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>アプリケーションが実行すると、次の表示パスに通知するように要求します。  アプリケーションが、次のレンダリング パスが完了した後、<xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>そのビジュアル ツリーをクリーンアップします。  次の図は、このプロセスを示しています。  

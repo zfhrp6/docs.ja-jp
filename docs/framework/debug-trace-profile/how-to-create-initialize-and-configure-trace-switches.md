@@ -1,13 +1,6 @@
 ---
-title: "方法 : トレース スイッチを作成、初期化、および構成する"
-ms.custom: 
+title: '方法 : トレース スイッチを作成、初期化、および構成する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -18,16 +11,13 @@ helpviewer_keywords:
 - tracing [.NET Framework], enabling or disabling
 - Web.config configuration file, trace switches
 ms.assetid: 5a0e41bf-f99c-4692-8799-f89617f5bcf9
-caps.latest.revision: "14"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 41e41f65b82061cebc52485ed08176633c45613d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4088c74d0ea8e9f2ad70aff37d99870d34b168ba
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-initialize-and-configure-trace-switches"></a>方法 : トレース スイッチを作成、初期化、および構成する
 トレース スイッチを使用すると、トレース出力を有効/無効にしたり、トレースの出力をフィルター処理したりできます。  
@@ -134,7 +124,7 @@ ms.lasthandoff: 12/22/2017
     </system.diagnostics>  
     ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [アプリケーションのトレースとインストルメント](../../../docs/framework/debug-trace-profile/tracing-and-instrumenting-applications.md)  
  [方法 : アプリケーション コードにトレース ステートメントを追加する](../../../docs/framework/debug-trace-profile/how-to-add-trace-statements-to-application-code.md)  
  [トレース スイッチ](../../../docs/framework/debug-trace-profile/trace-switches.md)  

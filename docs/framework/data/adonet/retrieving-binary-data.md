@@ -1,27 +1,15 @@
 ---
-title: "バイナリ データの取得"
-ms.custom: 
+title: バイナリ データの取得
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 56c5a9e3-31f1-482f-bce0-ff1c41a658d0
-caps.latest.revision: "5"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: f91f23906a6d52a66a3cf972fe5636926dba4112
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 302c26571e9843a4b7c3c440969e4159ef2d10ae
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="retrieving-binary-data"></a>バイナリ データの取得
 既定では、 **DataReader**行全体のデータは使用するとすぐに行として受信したデータを読み込みます。 バイナリ ラージ オブジェクト (BLOB) には、1 行に収まらない数ギガバイトのデータが含まれる場合があるため、別の処理が必要です。 **Command.ExecuteReader**メソッド オーバー ロードを実行するには、<xref:System.Data.CommandBehavior>引数の既定の動作を変更する、 **DataReader**です。 渡すことができます<xref:System.Data.CommandBehavior.SequentialAccess>を**ExecuteReader**の既定の動作を変更する方法、 **DataReader**行のデータを読み込み中には、代わりにそれがデータを読み込む順番が受信できるようにします。 これは BLOB やその他の大きなデータ構造を読み込む場合に理想的な処理です。 この動作は、データ ソースによって異なる場合があります。 たとえば、Microsoft Access から BLOB を返すと、受け取ったデータから順に読み込むのではなく、BLOB 全体をメモリに読み込みます。  
@@ -164,7 +152,7 @@ reader.Close();
 connection.Close();  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Datareader の操作](http://msdn.microsoft.com/library/126a966a-d08d-4d22-a19f-f432908b2b54)  
  [SQL Server のバイナリ データと大きな値のデータ](../../../../docs/framework/data/adonet/sql/sql-server-binary-and-large-value-data.md)  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

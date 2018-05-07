@@ -1,26 +1,12 @@
 ---
 title: セッション、インスタンス化、および同時実行
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 50797a3b-7678-44ed-8138-49ac1602f35b
-caps.latest.revision: 16
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 6dd96ea552bb92dd90c1c47abac744c55e2e67e5
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: a3f56a08c695b4d92529d2c1bec625e9e8c6b6ec
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="sessions-instancing-and-concurrency"></a>セッション、インスタンス化、および同時実行
 *"セッション"* とは、2 つのエンドポイント間で送信されるすべてのメッセージを相互に関連付けたものです。 *"インスタンス化"* とは、ユーザー定義のサービス オブジェクトとこれらのオブジェクトに関連する <xref:System.ServiceModel.InstanceContext> オブジェクトの有効期間を制御することです。 また、*同時実行* は、 <xref:System.ServiceModel.InstanceContext> で同時に実行されるスレッドの数の制御を表す用語です。  
@@ -30,7 +16,7 @@ ms.lasthandoff: 04/28/2018
 ## <a name="sessions"></a>セッション  
  サービス コントラクトによって <xref:System.ServiceModel.ServiceContractAttribute.SessionMode%2A?displayProperty=nameWithType> プロパティが <xref:System.ServiceModel.SessionMode.Required?displayProperty=nameWithType> に設定されている場合、すべての呼び出し (つまり、呼び出しをサポートする、基になるメッセージ交換) を同じメッセージ交換の一部にする必要があります。 セッションが許可されるが必須ではないコントラクトの場合、クライアントは、接続した後にセッションを確立できます。また、セッションを確立しないままにしておくこともできます。 セッションが終了したのに、同じセッション ベースのチャネルでメッセージが送信されると、例外がスローされます。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] セッションには、主に次のような概念的特徴があります。  
+ WCF のセッションでは、次のメインの概念的特徴があります。  
   
 -   呼び出し側アプリケーションによって明示的に開始および終了される。  
   
@@ -38,9 +24,9 @@ ms.lasthandoff: 04/28/2018
   
 -   セッションはメッセージのグループを相互に関連付けて通信を行う。 ここで "相互に関連付ける" は、抽象的な意味を持ちます。 たとえば、あるセッション ベースのチャネルでは、共有ネットワーク接続に基づいてメッセージが相互に関連付けられる一方、別のセッション ベースのチャネルでは、メッセージ本文にある共有タグに基づいてメッセージが相互に関連付けられます。 セッションから派生可能な機能は、相互関連付けの性質によって異なります。  
   
--   [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] セッションに関連付けられた一般的なデータ ストアはありません。  
+-   WCF のセッションに関連付けられている全般的なデータ ストアがありません。  
   
- <xref:System.Web.SessionState.HttpSessionState?displayProperty=nameWithType> アプリケーションの [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] クラスに精通している場合は、この種のセッションと [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] セッションの間に次のような相違があることがわかります。  
+ 慣れている場合、<xref:System.Web.SessionState.HttpSessionState?displayProperty=nameWithType>クラス[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)]について、アプリケーションと機能を示しますが、その種のセッションと WCF のセッションの間で次の相違点に注意してください。  
   
 -   [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] セッションは、常にサーバーによって開始される。  
   
@@ -78,7 +64,7 @@ public class CalculatorService : ICalculatorInstance
   
  このようなサービスを作成するには、<xref:System.ServiceModel.ServiceHost.%23ctor%28System.Object%2CSystem.Uri%5B%5D%29?displayProperty=nameWithType> コンストラクターを使用します。 この方法は、シングルトン サービスが使用する特定のオブジェクト インスタンスを提供する場合に、カスタムの <xref:System.ServiceModel.Dispatcher.IInstanceContextInitializer?displayProperty=nameWithType> を実装する代わりに使用できます。 サービス実装の型を作成することが困難な場合 (たとえば、既定のパラメーターなしのコンストラクターが作成されない場合) は、このオーバーロードを使用できます。  
   
- オブジェクトをこのコンストラクターに指定すると、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] のインスタンス化動作に関するいくつかの機能が異なる動作をすることに注意してください。 たとえば、シングルトン オブジェクト インスタンスを指定しているときは、<xref:System.ServiceModel.InstanceContext.ReleaseServiceInstance%2A?displayProperty=nameWithType> を呼び出しても効果はありません。 他のインスタンス解放機構も、同様に無視されます。 <xref:System.ServiceModel.ServiceHost> は常に、すべての操作について <xref:System.ServiceModel.OperationBehaviorAttribute.ReleaseInstanceMode%2A?displayProperty=nameWithType> プロパティが <xref:System.ServiceModel.ReleaseInstanceMode.None?displayProperty=nameWithType> に設定されているかのように動作します。  
+ オブジェクトがこのコンス トラクターに提供されている場合に、Windows Communication Foundation (WCF) 動作をインスタンス化に関連するいくつかの機能動作する異なる方法で注意してください。 たとえば、シングルトン オブジェクト インスタンスを指定しているときは、<xref:System.ServiceModel.InstanceContext.ReleaseServiceInstance%2A?displayProperty=nameWithType> を呼び出しても効果はありません。 他のインスタンス解放機構も、同様に無視されます。 <xref:System.ServiceModel.ServiceHost> は常に、すべての操作について <xref:System.ServiceModel.OperationBehaviorAttribute.ReleaseInstanceMode%2A?displayProperty=nameWithType> プロパティが <xref:System.ServiceModel.ReleaseInstanceMode.None?displayProperty=nameWithType> に設定されているかのように動作します。  
   
 ### <a name="sharing-instancecontext-objects"></a>InstanceContext オブジェクトの共有  
  ユーザーが自ら関連付けを行うことにより、どの <xref:System.ServiceModel.InstanceContext> オブジェクトに、どのセッションフル チャネルまたは呼び出しを関連付けるかを制御することもできます。  
@@ -92,7 +78,7 @@ public class CalculatorService : ICalculatorInstance
   
 -   <xref:System.ServiceModel.ConcurrencyMode.Multiple>: 各サービス インスタンスは、同時にメッセージを処理する複数のスレッドを持つことができます。 この同時実行モードを使用するには、サービスの実装がスレッドセーフである必要があります。  
   
--   <xref:System.ServiceModel.ConcurrencyMode.Reentrant>: 各サービス インスタンスは、一度に 1 つのメッセージを処理しますが、再入操作の呼び出しを受け入れます。 サービスは、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント オブジェクトを通じて呼び出しを行う場合のみ、この呼び出しを受け入れます。  
+-   <xref:System.ServiceModel.ConcurrencyMode.Reentrant>: 各サービス インスタンスは、一度に 1 つのメッセージを処理しますが、再入操作の呼び出しを受け入れます。 サービスは、WCF クライアント オブジェクトを通じて呼び出しが場合にのみ、これらの呼び出しを受け入れます。  
   
 > [!NOTE]
 >  複数のスレッドを安全に使用するコードを理解し、適切に記述することが困難な場合もあります。 <xref:System.ServiceModel.ConcurrencyMode.Multiple> 値や <xref:System.ServiceModel.ConcurrencyMode.Reentrant> 値を使用する前に、これらのモード用にサービスが適切に設計されていることを確認してください。 詳細については、「<xref:System.ServiceModel.ServiceBehaviorAttribute.ConcurrencyMode%2A>」を参照してください。  

@@ -1,24 +1,12 @@
 ---
 title: Windows Workflow Foundation 4 のパフォーマンス
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 67d2b3e8-3777-49f8-9084-abbb33b5a766
-caps.latest.revision: 9
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 4db761d2e6ba0231cb83d4ef5d1ee663c99178c5
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
-ms.translationtype: MT
+ms.openlocfilehash: 793645c442e960c43f00c3ea3c9b636a4c539706
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="windows-workflow-foundation-4-performance"></a>Windows Workflow Foundation 4 のパフォーマンス
 Dustin Metzgar  
@@ -29,12 +17,12 @@ Dustin Metzgar
   
  Microsoft[!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)]パフォーマンスに多大な投資の Windows Workflow Foundation (WF) のメジャー リビジョンが含まれています。  この新しいリビジョンでは、.NET Framework 3.0 および [!INCLUDE[wf1](../../../includes/wf1-md.md)] の一部として提供されている [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] の以前のバージョンからデザインが大幅に変更されています。 プログラミング モデル、ランタイム、およびパフォーマンスと操作性が大幅に向上するツールの基本機能に基づいて再設計されています。 このトピックでは、これらのリビジョンの重要なパフォーマンス上の特徴を説明し、以前のバージョンと比較します。  
   
- WF3 と WF4 を比較すると、個々のワークフロー コンポーネントのパフォーマンスが桁違いに向上しています。  これにより、手動コーディングの [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービスと [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] ワークフロー サービスとのギャップが微小になります。  WF4 でワークフローの待機時間は大幅に短縮されました。  永続化のパフォーマンスは 2.5 ～ 3.0 倍向上しています。  ワークフロー追跡による状態監視のオーバーヘッドも格段に短縮されました。  これらの要因はアプリケーション内で WF4 に移行する、または WF4 を導入する理由として説得力があります。  
+ WF3 と WF4 を比較すると、個々のワークフロー コンポーネントのパフォーマンスが桁違いに向上しています。  これにより、Windows Communication Foundation (WCF) サービスを手動でコーディングした間の時間差と[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]ワークフロー サービス微小になります。  WF4 でワークフローの待機時間は大幅に短縮されました。  永続化のパフォーマンスは 2.5 ～ 3.0 倍向上しています。  ワークフロー追跡による状態監視のオーバーヘッドも格段に短縮されました。  これらの要因はアプリケーション内で WF4 に移行する、または WF4 を導入する理由として説得力があります。  
   
 ## <a name="terminology"></a>用語  
  [!INCLUDE[wf1](../../../includes/wf1-md.md)] で導入された [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] のバージョンは、このトピックではこれから WF4 と呼びます。  [!INCLUDE[wf1](../../../includes/wf1-md.md)] は .NET 3.0 で導入され、[!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] SP1 でいくつかの小さな変更がありました。 また、以後 [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] バージョンの Workflow Foundation を WF3 と呼びます。 WF3 は WF4 と共に [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] に付属しています。 WF4 に移行する WF3 の成果物の詳細については、次を参照してください: [Windows Workflow Foundation 4 移行のガイドライン。](http://go.microsoft.com/fwlink/?LinkID=153313)  
   
- [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] は、サービス指向のアプリケーションを構築するための Microsoft の統一プログラミング モデルです。 当初は WF3 と共に .NET 3.0 の一部として導入されましたが、現在では [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] の重要なコンポーネントになっています。  
+ Windows Communication Foundation (WCF) は、Microsoft の統一プログラミング モデルをサービス指向アプリケーションを構築するためです。 当初は WF3 と共に .NET 3.0 の一部として導入されましたが、現在では [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] の重要なコンポーネントになっています。  
   
  Windows Server AppFabric はインターネット インフォメーション サービス (IIS) 上で実行する Web アプリケーションおよび複合アプリケーションの構築、拡張、および管理を容易にする一連の統合テクノロジです。 監視およびサービスとワークフローの管理を行うためのツールを提供します。 詳細については、次を参照してください[Windows Server AppFabric。](http://msdn.microsoft.com/windowsserver/ee695849.aspx)  
   

@@ -1,29 +1,17 @@
 ---
-title: "方法 : Windows フォーム BindingSource コンポーネントを使用してルックアップ テーブルを作成する"
-ms.custom: 
+title: '方法 : Windows フォーム BindingSource コンポーネントを使用してルックアップ テーブルを作成する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - lookup tables
 - tables [Windows Forms], creating lookup tables
 - BindingSource component [Windows Forms], creating a lookup table
 - BindingSource component [Windows Forms], examples
 ms.assetid: 622fce80-879d-44be-abbf-8350ec22ca2b
-caps.latest.revision: "13"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 324e4ed290b98d2268dd82fa55b81deaeb849770
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 83a34c9d1a4b3d1c2e9950d3c5427567022326b5
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-a-lookup-table-with-the-windows-forms-bindingsource-component"></a>方法 : Windows フォーム BindingSource コンポーネントを使用してルックアップ テーブルを作成する
 ルックアップ テーブルは、関連するテーブル内のレコードのデータを表示する列を持つ、データ テーブルです。 以下の手順では、<xref:System.Windows.Forms.ComboBox> コントロールを使用して、親テーブルから子テーブルへの外部キー リレーションシップを持つフィールドを表示します。  
@@ -90,7 +78,7 @@ ms.lasthandoff: 12/22/2017
   
     7.  必要な場合は、既定のデータセット名を変更します。  
   
-    8.  **[完了]**をクリックします。  
+    8.  **[完了]** をクリックします。  
   
 4.  **[表示メンバー]** ドロップダウン ボックスで、コンボ ボックスに表示する列名 (ContactName など) を選択します。  
   
@@ -102,7 +90,7 @@ ms.lasthandoff: 12/22/2017
   
 8.  <xref:System.Windows.Forms.ComboBox> および <xref:System.Windows.Forms.BindingNavigator> コントロール以外のコントロールを、表示する子テーブルの <xref:System.Windows.Forms.BindingSource> (`OrdersBindingSource` など) の詳細フィールドにバインドします。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.BindingSource>  
  [BindingSource コンポーネント](../../../../docs/framework/winforms/controls/bindingsource-component.md)  
  [ComboBox コントロール](../../../../docs/framework/winforms/controls/combobox-control-windows-forms.md)  

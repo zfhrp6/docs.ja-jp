@@ -1,31 +1,17 @@
 ---
-title: "構造化ナビゲーションの概要"
-ms.custom: 
+title: 構造化ナビゲーションの概要
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - structured navigation [WPF]
 ms.assetid: 025d30ef-fec5-436d-ad7a-5d5483331c26
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: f9d20fb5b16fbf44bdf8431ae32afee105af7676
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9be4e753a229d97f2caf1d74b3b9b8239b99c694
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="structured-navigation-overview"></a>構造化ナビゲーションの概要
 コンテンツでホストできますが、 [!INCLUDE[TLA#tla_xbap](../../../../includes/tlasharptla-xbap-md.md)]、 <xref:System.Windows.Controls.Frame>、または<xref:System.Windows.Navigation.NavigationWindow>はパックによって識別できるページで構成されて[!INCLUDE[TLA#tla_uri#plural](../../../../includes/tlasharptla-urisharpplural-md.md)]とハイパーリンクでに移動します。 ページの構造、およびハイパーリンクで定義される移動方法を、ナビゲーション トポロジと呼びます。 このトポロジはさまざまな種類のアプリケーションに対応しますが、特にドキュメント間を移動するアプリケーションに適しています。 このようなアプリケーションでは、互いのページの情報を必要とせずに、ユーザーはページ間を移動できます。  
@@ -160,7 +146,7 @@ ms.lasthandoff: 12/22/2017
 [!code-csharp[StructuredNavigationSample#ReturnCODEBEHIND2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/StructuredNavigationSample/CSharp/CalledPageFunction.xaml.cs#returncodebehind2)]
 [!code-vb[StructuredNavigationSample#ReturnCODEBEHIND2](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/StructuredNavigationSample/VisualBasic/CalledPageFunction.xaml.vb#returncodebehind2)]  
   
- この例では、ユーザーが [キャンセル] をクリックすると、呼び出し元ページに値 `null` が返されます。 ユーザーが [OK] をクリックすると、ユーザーによって指定された文字列値が返されます。 <xref:System.Windows.Navigation.PageFunction%601.OnReturn%2A>`protected``virtual`データを返す、呼び出し元のページに呼び出すメソッド。 ジェネリックのインスタンスにパッケージ化する必要があるデータ<xref:System.Windows.Navigation.ReturnEventArgs%601>、型引数の型を指定する、型の値を<xref:System.Windows.Navigation.ReturnEventArgs%601.Result%2A>を返します。 宣言するときに、この方法で、<xref:System.Windows.Navigation.PageFunction%601>特定の型引数を指定して、ことを示すは、<xref:System.Windows.Navigation.PageFunction%601>は型引数で指定されている型のインスタンスを返します。 この例では、型引数と、その結果、戻り値が型で<xref:System.String>です。  
+ この例では、ユーザーが [キャンセル] をクリックすると、呼び出し元ページに値 `null` が返されます。 ユーザーが [OK] をクリックすると、ユーザーによって指定された文字列値が返されます。 <xref:System.Windows.Navigation.PageFunction%601.OnReturn%2A> `protected``virtual`データを返す、呼び出し元のページに呼び出すメソッド。 ジェネリックのインスタンスにパッケージ化する必要があるデータ<xref:System.Windows.Navigation.ReturnEventArgs%601>、型引数の型を指定する、型の値を<xref:System.Windows.Navigation.ReturnEventArgs%601.Result%2A>を返します。 宣言するときに、この方法で、<xref:System.Windows.Navigation.PageFunction%601>特定の型引数を指定して、ことを示すは、<xref:System.Windows.Navigation.PageFunction%601>は型引数で指定されている型のインスタンスを返します。 この例では、型引数と、その結果、戻り値が型で<xref:System.String>です。  
   
  ときに<xref:System.Windows.Navigation.PageFunction%601.OnReturn%2A>が呼び出されると、呼び出し元のページは何らかの戻り値を受け取る、<xref:System.Windows.Navigation.PageFunction%601>です。 このため、<xref:System.Windows.Navigation.PageFunction%601>を実装する、<xref:System.Windows.Navigation.PageFunction%601.Return>イベントを処理するページを呼び出すためです。 ときに<xref:System.Windows.Navigation.PageFunction%601.OnReturn%2A>が呼び出されると、<xref:System.Windows.Navigation.PageFunction%601.Return>が発生すると、呼び出し元のページに登録できるように<xref:System.Windows.Navigation.PageFunction%601.Return>通知を受信します。  
   
@@ -182,7 +168,7 @@ ms.lasthandoff: 12/22/2017
   
  また、構造化ナビゲーションに基づいて効率的な操作を実行する複雑なナビゲーション トポロジを使用するアプリケーションもあります。 詳細については、「[ナビゲーション トポロジの概要](../../../../docs/framework/wpf/app-development/navigation-topologies-overview.md)」を参照してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Navigation.PageFunction%601>  
  <xref:System.Windows.Navigation.NavigationService>  
  [ナビゲーション トポロジの概要](../../../../docs/framework/wpf/app-development/navigation-topologies-overview.md)

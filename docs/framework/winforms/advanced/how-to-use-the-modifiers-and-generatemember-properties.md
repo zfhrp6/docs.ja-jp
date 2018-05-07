@@ -1,13 +1,6 @@
 ---
-title: "方法 : Modifiers プロパティおよび GenerateMember プロパティを使用する"
-ms.custom: 
+title: '方法 : Modifiers プロパティおよび GenerateMember プロパティを使用する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -22,16 +15,11 @@ helpviewer_keywords:
 - form inheritance
 - Windows Forms, inheritance
 ms.assetid: 3381a5e4-e1a3-44e2-a765-a0b758937b85
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: f11595daac74ceb76c5d017af015d5523506bdf3
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 451c54bf6272b4fbff46b5298ba5b6a9290656e8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-use-the-modifiers-and-generatemember-properties"></a>方法 : Modifiers プロパティおよび GenerateMember プロパティを使用する
 2 つのプロパティが、デザイン環境で提供される Windows フォームでコンポーネントを配置する場合:`GenerateMember`と`Modifiers`です。 `GenerateMember`プロパティは、Windows フォーム デザイナーでコンポーネントのメンバー変数を生成するときを指定します。 `Modifiers`プロパティは、そのメンバー変数に割り当てられている、アクセス修飾子。 場合の値、`GenerateMember`プロパティは`false`の値、`Modifiers`プロパティは影響を与えません。  
@@ -70,7 +58,7 @@ ms.lasthandoff: 01/19/2018
 > [!NOTE]
 >  既定では、Windows フォーム デザイナーが割り当てられます、 `private` (`Friend` Visual basic) 修飾子などのコンテナー コントロールを<xref:System.Windows.Forms.Panel>です。 場合、ベース<xref:System.Windows.Forms.UserControl>または<xref:System.Windows.Forms.Form>コンテナー コントロールを持つ継承されたコントロールとフォームで新しい子を入力することはできません。 解決する基本のコンテナー コントロールの修飾子を変更するには`protected`または`public`です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.Button>  
  [Windows フォームのビジュアルの継承](../../../../docs/framework/winforms/advanced/windows-forms-visual-inheritance.md)  
  [チュートリアル: ビジュアル継承のデモンストレーション](../../../../docs/framework/winforms/advanced/walkthrough-demonstrating-visual-inheritance.md)  

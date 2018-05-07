@@ -1,32 +1,18 @@
 ---
-title: "ドキュメントのガイド"
-ms.custom: 
+title: ドキュメントのガイド
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - WCF [WCF], documentation
 - Windows Communication Foundation [WCF], documentation
 ms.assetid: 2aa18c85-a4fd-4bb9-986a-a8249e4f8e0e
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 132cbc6c7c9ba7d8e6c29f477554fc7b3bbab469
-ms.sourcegitcommit: 08684dd61444c2f072b89b926370f750e456fca1
-ms.translationtype: MT
+ms.openlocfilehash: 79a9465c81071a77a6901f21f59036ea88b9cb53
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="guide-to-the-documentation"></a>ドキュメントのガイド
-ここでは、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] ドキュメントについて説明します。 リンク先のドキュメントは、特定の目的と専門知識のレベルに応じて分類された、推奨される出発点となります。  
+ここでは、Windows Communication Foundation (WCF) ドキュメントに関するガイダンスです。 リンク先のドキュメントは、特定の目的と専門知識のレベルに応じて分類された、推奨される出発点となります。  
   
  マニュアルとヘルプ ビューアーのスタンドアロン バージョンをインストールするには、ダウンロード、 [Microsoft Windows SDK v 7.1](http://go.microsoft.com/fwlink/?LinkID=194146&clcid=0x409)です。  
   
@@ -74,7 +60,7 @@ ms.lasthandoff: 02/14/2018
 ## <a name="ws--protocols-supported-in-windows-communication-foundation"></a>Windows Communication Foundation でサポートされる WS-* プロトコル  
  システム指定のバインディングでサポートされるプロトコルの一覧を表示するには、次を参照してください。[システム指定の相互運用性バインディングでサポートされる Web サービス プロトコル](../../../docs/framework/wcf/feature-details/web-services-protocols-supported-by-system-provided-interoperability-bindings.md)です。 システム指定のバインディングの一覧を表示するには、次を参照してください。[システム指定のバインディング](../../../docs/framework/wcf/system-provided-bindings.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Windows Communication Foundation サンプル](../../../docs/framework/wcf/samples/index.md)  
  [概念](../../../docs/framework/wcf/conceptual-overview.md)  
  [ガイドラインとベスト プラクティス](../../../docs/framework/wcf/guidelines-and-best-practices.md)  

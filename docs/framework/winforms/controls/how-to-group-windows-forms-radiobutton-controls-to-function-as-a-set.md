@@ -1,29 +1,17 @@
 ---
-title: "方法 : セットとして機能する Windows フォーム RadioButton コントロールをグループ化する"
-ms.custom: 
+title: '方法 : セットとして機能する Windows フォーム RadioButton コントロールをグループ化する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - radio buttons [Windows Forms], grouping
 - controls [Windows Forms], grouping
 - Windows Forms controls, grouping
 - RadioButton control [Windows Forms], grouping
 ms.assetid: 58f8fe34-50b7-49d8-a2be-c271be3c6b32
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c92048374941f735568bcd758ed475eba78b81e1
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: cbc6ab410fa2ab9d89255f82863e51aad36f8c18
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-group-windows-forms-radiobutton-controls-to-function-as-a-set"></a>方法 : セットとして機能する Windows フォーム RadioButton コントロールをグループ化する
 Windows フォーム<xref:System.Windows.Forms.RadioButton>ユーザーがいるプロシージャまたはオブジェクトを 1 つのみを割り当てることが、2 つ以上の設定の間で選択できるようにデザインされています。 たとえば、一連の<xref:System.Windows.Forms.RadioButton>コントロールは、注文の配送業者をパッケージの選択を表示できますが、通信事業者の 1 つだけ使用します。 1 つだけしたがって<xref:System.Windows.Forms.RadioButton>一度に選択できる場合でも、機能グループの一部であります。  
@@ -36,7 +24,7 @@ Windows フォーム<xref:System.Windows.Forms.RadioButton>ユーザーがいる
   
 2.  描画<xref:System.Windows.Forms.RadioButton>コントロールに対して、<xref:System.Windows.Forms.GroupBox>または<xref:System.Windows.Forms.Panel>コントロール。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.RadioButton>  
  [RadioButton コントロールの概要](../../../../docs/framework/winforms/controls/radiobutton-control-overview-windows-forms.md)  
  [Panel コントロールの概要](../../../../docs/framework/winforms/controls/panel-control-overview-windows-forms.md)  

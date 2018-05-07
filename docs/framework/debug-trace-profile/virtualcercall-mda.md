@@ -1,13 +1,6 @@
 ---
 title: virtualCERCall MDA
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - MDAs (managed debugging assistants), CER calls
 - virtualCERCall MDA
@@ -16,21 +9,18 @@ helpviewer_keywords:
 - CER calls
 - managed debugging assistants (MDAs), CER calls
 ms.assetid: 1eb18c7a-f5e0-443f-80fb-67bfbb047da2
-caps.latest.revision: "13"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 010c5dd082c10556ed264306b7575cbe5399fda3
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: c2f2104768144da244679e5d0be884d70a3ba6b0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="virtualcercall-mda"></a>virtualCERCall MDA
 `virtualCERCall` マネージ デバッグ アシスタント (MDA) は、制約された実行領域 (CER) 呼び出し先の呼び出しサイトが、仮想ターゲット (つまり、インターフェイスを使用した最終ではない仮想メソッドまたは呼び出しの仮想呼び出し) を参照していることを示す警告としてアクティブ化されます。 共通言語ランタイム (CLR) は、中間言語およびメタデータの分析だけでは、これらの呼び出しの呼び出し先メソッドを予測できません。 その結果、CER グラフの一部としてコール ツリーを準備できません。また、そのサブツリー内のスレッドの中止を自動的にブロックできません。 呼び出し対象の計算に必要な追加情報が実行時に判明すると、<xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareMethod%2A> メソッドの明示的な呼び出しを使用して CER の拡張が必要な可能性がある場合に、この MDA は警告します。  
   
-## <a name="symptoms"></a>症状  
+## <a name="symptoms"></a>現象  
  スレッドが中止されたとき、またはアプリケーション ドメインがアンロードされたときに CER が実行されません。  
   
 ## <a name="cause"></a>原因  
@@ -105,7 +95,7 @@ void MethodWithCer(MyClass object)
 }  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Runtime.InteropServices.MarshalAsAttribute>  
  [マネージ デバッグ アシスタントによるエラーの診断](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)  
  [相互運用マーシャリング](../../../docs/framework/interop/interop-marshaling.md)

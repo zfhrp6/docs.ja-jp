@@ -1,10 +1,6 @@
 ---
-title: "方法: フォームのクライアント領域と非クライアント領域を印刷する (Visual Basic)"
+title: '方法: フォームのクライアント領域と非クライアント領域を印刷する (Visual Basic)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - title bar [Visual Basic], printing
 - printing
@@ -12,14 +8,11 @@ helpviewer_keywords:
 - entire form
 - non-client area [Visual Basic], printing
 ms.assetid: 856bb0e4-dbc3-47e2-81cd-4b376cf07757
-caps.latest.revision: "17"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: b6dd9c42118491784d71f545c25fd3a376f66e79
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 566cf295462945a6bc90bc96f8907de34646bd00
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-print-client-and-non-client-areas-of-a-form-visual-basic"></a>方法: フォームのクライアント領域と非クライアント領域を印刷する (Visual Basic)
 <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> コンポーネントを使用すると、 <xref:System.Drawing.Printing.PrintDocument> コンポーネントを使わなくても、画面に表示されているとおりにフォームのイメージをすぐに印刷することができます。 次の手順では、クライアント領域と非クライアント領域の両方を含むフォームを印刷する方法を示します。 非クライアント領域にはタイトル バー、境界、およびスクロール バーが含まれます。  

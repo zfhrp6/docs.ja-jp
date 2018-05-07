@@ -1,24 +1,12 @@
 ---
 title: 補正
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 722e9766-48d7-456c-9496-d7c5c8f0fa76
-caps.latest.revision: 26
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 2ed51d14c56358e283d6c014f036a8aff73d2bfe
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 504c6b9efc3ca238d5cfcaa8bc7b72b4a40a3334
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="compensation"></a>補正
 補正 Windows Workflow Foundation (WF) 以前で完了した作業したりできる (次のアプリケーションで定義されているロジック) 補正メカニズムは、その後のエラーが発生しました。 ここでは、ワークフローで補正を使用する方法について説明します。  

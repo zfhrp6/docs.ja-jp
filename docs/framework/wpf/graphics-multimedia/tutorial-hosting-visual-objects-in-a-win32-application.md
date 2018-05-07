@@ -1,13 +1,6 @@
 ---
-title: "チュートリアル : Win32 アプリケーションでのビジュアル オブジェクトのホスト"
-ms.custom: 
+title: 'チュートリアル : Win32 アプリケーションでのビジュアル オブジェクトのホスト'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,16 +9,11 @@ helpviewer_keywords:
 - Win32 code [WPF], visual objects in
 - hosting [WPF], visual objects in Win32 code
 ms.assetid: f0e1600c-3217-43d5-875d-1864fa7fe628
-caps.latest.revision: "17"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 753e55e644a9edea90a0a034ba2930473ef53f61
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: cc78dfd22b0ad2726ce8870a4e03f539ec691d85
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="tutorial-hosting-visual-objects-in-a-win32-application"></a>チュートリアル : Win32 アプリケーションでのビジュアル オブジェクトのホスト
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] は、アプリケーションの作成に適した環境を提供します。 ただしがある場合、かなりの投資[!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)]、コードがありますを追加すると効率的[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]機能にはなく、コードを書き直します。 サポートするために[!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)]と[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]アプリケーションでは、同時に使われているグラフィックス サブシステム[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]内のオブジェクトをホストするためのメカニズムを提供、[!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)]ウィンドウです。  
@@ -35,7 +23,7 @@ ms.lasthandoff: 12/22/2017
 
   
 <a name="requirements"></a>   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  このチュートリアルは、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] と [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] プログラミングの基礎知識があることを前提としています。 基本的な概要については[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]プログラミングを参照してください[チュートリアル: 最初の WPF デスクトップ アプリケーション](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md)です。 概要については[!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)]プログラミングを参照してください、多数の書籍を受け、具体的には*プログラミング Windows* Charles Petzold でします。  
   
 > [!NOTE]
@@ -88,7 +76,7 @@ ms.lasthandoff: 12/22/2017
   
  ビジュアル オブジェクトに対してヒット テストの詳細については、次を参照してください。[ビジュアルの層でのテスト ヒット](../../../../docs/framework/wpf/graphics-multimedia/hit-testing-in-the-visual-layer.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Interop.HwndSource>  
  [ヒット テストの Win32 相互運用性サンプル](http://go.microsoft.com/fwlink/?LinkID=159995)  
  [ビジュアル層でのヒット テスト](../../../../docs/framework/wpf/graphics-multimedia/hit-testing-in-the-visual-layer.md)

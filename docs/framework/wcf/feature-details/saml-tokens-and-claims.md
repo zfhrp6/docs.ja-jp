@@ -1,14 +1,6 @@
 ---
 title: SAML トークンとクレーム
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -18,20 +10,14 @@ helpviewer_keywords:
 - issued tokens
 - SAML token
 ms.assetid: 930b6e34-9eab-4e95-826c-4e06659bb977
-caps.latest.revision: 10
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 9bd10fe663ccb4c78af775baf3e76663ef9a91bd
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 374fde23a1bf8df704f76500b4808c16d142ddd9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="saml-tokens-and-claims"></a>SAML トークンとクレーム
-Security Assertions Markup Language (SAML)*トークン*はクレームの XML 表現。 既定では、SAML トークン[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]フェデレーション セキュリティ シナリオでの使用は*発行済みトークン*です。  
+Security Assertions Markup Language (SAML)*トークン*はクレームの XML 表現。 フェデレーション セキュリティ シナリオで Windows Communication Foundation (WCF) を使用して SAML トークンは、既定では、*発行済みトークン*です。  
   
  SAML トークンは、ステートメント (特定のエンティティによって他のエンティティに関して作成されるクレームのセット) を伝達します。 たとえば、フェデレーション セキュリティ シナリオでは、ステートメントがセキュリティ トークン サービスによって、システム内の特定のユーザーに関して作成されます。 セキュリティ トークン サービスは、トークンに含まれるステートメントの信憑性を示すために SAML トークンに署名します。 また、SAML トークンは、SAML トークンのユーザーが証明として提示する暗号化キー マテリアルに関連付けられています。 これが証拠となり、証明書利用者は、SAML トークンが実際にそのユーザーに対して発行されたことを確認できます。 一般的なシナリオでの例を次に示します。  
   
@@ -44,7 +30,7 @@ Security Assertions Markup Language (SAML)*トークン*はクレームの XML �
 4.  SAML トークンの署名は、そのトークンがセキュリティ トークン サービスによって発行されたことを証明書利用者に示します。 また、証明キーを使用して作成されたメッセージ署名は、トークンがそのクライアントに対して発行されたことを示します。  
   
 ## <a name="from-claims-to-samlattributes"></a>クレームから SamlAttributes  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、SAML トークン内のステートメントは <xref:System.IdentityModel.Tokens.SamlAttribute> オブジェクトとしてモデル化されています。<xref:System.IdentityModel.Claims.Claim> オブジェクトが <xref:System.IdentityModel.Claims.Claim> の <xref:System.IdentityModel.Claims.Claim.Right%2A> プロパティを持ち、<xref:System.IdentityModel.Claims.Rights.PossessProperty%2A> プロパティが <xref:System.IdentityModel.Claims.Claim.Resource%2A> 型である場合、このオブジェクトは <xref:System.String> オブジェクトから直接設定できます。 例えば:  
+ WCF では、SAML トークン内のステートメントとしてモデル化<xref:System.IdentityModel.Tokens.SamlAttribute>から直接データを読み込むことができます、オブジェクト<xref:System.IdentityModel.Claims.Claim>用意されているオブジェクト、<xref:System.IdentityModel.Claims.Claim>オブジェクトには、<xref:System.IdentityModel.Claims.Claim.Right%2A>のプロパティ<xref:System.IdentityModel.Claims.Rights.PossessProperty%2A>と<xref:System.IdentityModel.Claims.Claim.Resource%2A>プロパティは、型<xref:System.String>です。 例えば:  
   
  [!code-csharp[c_CreateSTS#8](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_creatests/cs/source.cs#8)]
  [!code-vb[c_CreateSTS#8](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_creatests/vb/source.vb#8)]  
