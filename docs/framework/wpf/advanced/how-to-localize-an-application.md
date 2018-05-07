@@ -1,9 +1,10 @@
 ---
-title: "方法 : アプリケーションをローカライズする"
+title: '方法 : アプリケーションをローカライズする'
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -16,12 +17,13 @@ ms.assetid: 5001227e-9326-48a4-9dcd-ba1b89ee6653
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 83ed8ee8b8bfd9c3d6dadfedad8889af10a86466
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.workload:
+- dotnet
+ms.openlocfilehash: 3c5621de2a2d10e67f45fa2d6980cb84c388630f
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-to-localize-an-application"></a>方法 : アプリケーションをローカライズする
 このチュートリアルでは、LocBaml ツールを使用して、ローカライズされたアプリケーションを作成する方法について説明します。  
@@ -88,7 +90,7 @@ ms.lasthandoff: 12/22/2017
 <a name="build_locbaml"></a>   
 ## <a name="build-the-locbaml-tool"></a>LocBaml ツールをビルドする  
   
-1.  LocBaml のビルドに必要なすべてのファイルは [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] サンプルに配置されています。 ダウンロード、[!INCLUDE[TLA#tla_lhcshrp](../../../../includes/tlasharptla-lhcshrp-md.md)]ファイルから、 [LocBaml ツール サンプル](http://go.microsoft.com/fwlink/?LinkID=160016)です。  
+1.  LocBaml のビルドに必要なすべてのファイルは [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] サンプルに配置されています。 C# ファイルをダウンロード、 [LocBaml ツール サンプル](http://go.microsoft.com/fwlink/?LinkID=160016)です。  
   
 2.  ツールをビルドするには、コマンド ラインでプロジェクト ファイル (locbaml.csproj) を実行します。  
   
@@ -98,17 +100,17 @@ ms.lasthandoff: 12/22/2017
   
 4.  LocBaml を実行するときに指定できるオプションは、次のとおりです。  
   
-    -   **解析**または**-p:**解析 Baml、リソース、または[!INCLUDE[TLA2#tla_dll](../../../../includes/tla2sharptla-dll-md.md)].csv または .txt ファイルを生成するファイル。  
+    -   **解析**または **-p:** 解析 Baml、リソース、または[!INCLUDE[TLA2#tla_dll](../../../../includes/tla2sharptla-dll-md.md)].csv または .txt ファイルを生成するファイル。  
   
-    -   **生成**または**-g:**変換されたファイルを使用して、ローカライズされたバイナリ ファイルを生成します。  
+    -   **生成**または **-g:** 変換されたファイルを使用して、ローカライズされたバイナリ ファイルを生成します。  
   
-    -   **out**または**-o** {*filedirectory*] **:**出力ファイル名。  
+    -   **out**または **-o** {*filedirectory*] **:** 出力ファイル名。  
   
-    -   **カルチャ**または**- cul** {*カルチャ*] **:**出力アセンブリのロケールです。  
+    -   **カルチャ**または **- cul** {*カルチャ*] **:** 出力アセンブリのロケールです。  
   
-    -   **翻訳**または**- trans** {*translation.csv*] **:**変換またはローカライズされたファイルです。  
+    -   **翻訳**または **- trans** {*translation.csv*] **:** 変換またはローカライズされたファイルです。  
   
-    -   **asmpath**または**- asmpath:** {*filedirectory*] **:**場合、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]コードは、カスタム コントロールを含む、指定する必要があります、 **asmpath**カスタム コントロール アセンブリにします。  
+    -   **asmpath**または **- asmpath:** {*filedirectory*] **:** 場合、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]コードは、カスタム コントロールを含む、指定する必要があります、 **asmpath**カスタム コントロール アセンブリにします。  
   
     -   **nologo:** ロゴまたは著作権情報は表示されません。  
   
@@ -172,7 +174,7 @@ ms.lasthandoff: 12/22/2017
   
 <a name="merge_translations"></a>   
 ## <a name="use-locbaml-to-generate-a-new-resourcesdll-file"></a>LocBaml を使用して新しい .resources.dll ファイルを生成する  
- LocBaml で HelloApp.resources.dll を解析して識別されたコンテンツは翻訳済みであり、元のアプリケーションにマージする必要があります。 使用して、**生成**または**-g**新しいを生成するオプション.resources.dll ファイル。  
+ LocBaml で HelloApp.resources.dll を解析して識別されたコンテンツは翻訳済みであり、元のアプリケーションにマージする必要があります。 使用して、**生成**または **-g**新しいを生成するオプション.resources.dll ファイル。  
   
 1.  新しい HelloApp.resources.dll ファイルを生成するには、次の構文を使用します。 カルチャを en-US (/cul:en-US) としてマークします。  
   
@@ -195,7 +197,7 @@ ms.lasthandoff: 12/22/2017
   
 7.  新しいサテライト アセンブリをテストするには、アプリケーションが実行するカルチャを変更する必要があります。 2 つの方法のいずれかでこれを行うことができます。  
   
-    -   オペレーティング システムの地域設定を変更 (**開始**&#124;です。**コントロール パネルの**  &#124;です。**地域と言語のオプション**)。  
+    -   オペレーティング システムの地域設定を変更 (**開始** &#124; **コントロール パネルの ** &#124; **地域と言語のオプション**)。  
   
     -   アプリケーションで、次のコードを App.xaml.cs に追加します。  
   
@@ -216,6 +218,6 @@ ms.lasthandoff: 12/22/2017
 ## <a name="whats-next"></a>次の内容  
  これで、LocBaml ツールの使用方法に関する基本的な知識が得られました。  UID を含むファイルを作成できるようになりました。 LocBaml ツールを使用することで、ローカライズ可能なコンテンツを抽出するファイルを解析できます。コンテンツを翻訳すると、翻訳済みのコンテンツをマージする .resources.dll ファイルを生成できます。 このトピックには、可能性のあるすべての詳細情報は含まれていませんが、LocBaml を使用してアプリケーションをローカライズするために必要な知識は得られました。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [WPF のグローバリゼーション](../../../../docs/framework/wpf/advanced/globalization-for-wpf.md)  
  [自動レイアウトの使用の概要](../../../../docs/framework/wpf/advanced/use-automatic-layout-overview.md)

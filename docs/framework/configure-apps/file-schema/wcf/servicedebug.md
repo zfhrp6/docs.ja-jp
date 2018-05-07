@@ -2,11 +2,11 @@
 title: '&lt;serviceDebug&gt;'
 ms.date: 03/30/2017
 ms.assetid: 6d7ea986-f232-49fe-842c-f934d9966889
-ms.openlocfilehash: 1e9a8a310a2b3154568b20ea225faead1c71d64f
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
-ms.translationtype: HT
+ms.openlocfilehash: 0a0c6a45b6103d533a87a921e6e428bf30d81b20
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ltservicedebuggt"></a>&lt;serviceDebug&gt;
 Windows Communication Foundation (WCF) サービスのデバッグおよびヘルプ情報機能を指定します。  
@@ -38,11 +38,11 @@ Windows Communication Foundation (WCF) サービスのデバッグおよびヘ�
 |---------------|-----------------|  
 |httpHelpPageBinding|HTTP を利用してサービス ヘルプ ページにアクセスする場合に使用するバインディングの種類を指定する文字列値。<br /><br /> <xref:System.ServiceModel.Channels.IReplyChannel?displayProperty=nameWithType> をサポートする内部バインディング要素を使用したバインディングでのみサポートされます。 さらに、バインディングの <xref:System.ServiceModel.Channels.MessageVersion?displayProperty=nameWithType> プロパティが <xref:System.ServiceModel.Channels.MessageVersion.None?displayProperty=nameWithType> である必要があります。|  
 |httpHelpPageBindingConfiguration|このバインディングの追加の構成情報を参照する `httpHelpPageBinding` 属性に指定されるバインディングの名前を指定する文字列。 同じ名前を `<bindings>` セクションに定義する必要があります。|  
-|httpHelpPageEnabled|[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] が、`httpHelpPageUrl` 属性により指定されたアドレスに HTML ヘルプ ページを公開するかどうかを制御するブール値です。 既定値は、`true` です。<br /><br /> このプロパティを `false` に設定して、HTML ブラウザーに表示される HTML ヘルプ ページの公開を無効にできます。<br /><br /> HTML ヘルプ ページが、`httpHelpPageUrl` 属性により制御される場所に公開されるようにするには、この属性を `true` に設定する必要があります。 さらに、次のいずれかの条件も満たす必要があります。<br /><br /> -`httpHelpPageUrl`属性は、HTTP プロトコル スキームをサポートする絶対アドレスです。<br />-は、HTTP プロトコル スキームをサポートするサービスのベース アドレスです。<br /><br /> HTTP プロトコル スキームをサポートしない絶対アドレスが `httpHelpPageUrl` 属性に割り当てられている場合は例外がスローされますが、前の基準をどれも満たさないその他のシナリオでは、例外も HTML ヘルプ ページも表示されません。|  
+|httpHelpPageEnabled|WCF がで指定されたアドレスに HTML ヘルプ ページを公開するかどうかを制御するブール値、`httpHelpPageUrl`属性。 既定値は、`true` です。<br /><br /> このプロパティを `false` に設定して、HTML ブラウザーに表示される HTML ヘルプ ページの公開を無効にできます。<br /><br /> HTML ヘルプ ページが、`httpHelpPageUrl` 属性により制御される場所に公開されるようにするには、この属性を `true` に設定する必要があります。 さらに、次のいずれかの条件も満たす必要があります。<br /><br /> -`httpHelpPageUrl`属性は、HTTP プロトコル スキームをサポートする絶対アドレスです。<br />-は、HTTP プロトコル スキームをサポートするサービスのベース アドレスです。<br /><br /> HTTP プロトコル スキームをサポートしない絶対アドレスが `httpHelpPageUrl` 属性に割り当てられている場合は例外がスローされますが、前の基準をどれも満たさないその他のシナリオでは、例外も HTML ヘルプ ページも表示されません。|  
 |httpHelpPageUrl|HTML ブラウザーを使用してエンドポイントを表示するときにユーザーが参照する、カスタム HTML ヘルプ ファイルの相対的または絶対的な HTTP ベースの URL を指定する URI。<br /><br /> この属性を使用して、HTTP/Get 要求から返されるカスタム HTML ヘルプ ファイルを HTML ブラウザーなどから利用できます。 HTML ヘルプ ファイルの位置は、次のように解決されます。<br /><br /> 1.この属性の値が相対アドレスの場合、HTML ヘルプ ファイルの位置は、HTTP 要求をサポートするサービスのベース アドレスにこのプロパティの値を加えた値になります。<br />2.この属性が絶対アドレスであり、HTTP 要求をサポートする場合は、HTML ヘルプ ファイルの位置はこのプロパティの値になります。<br />3.この属性の値が絶対値であっても HTTP 要求をサポートしていない場合は、例外がスローされます。<br /><br /> この属性は有効な場合にのみ、`httpHelpPageEnabled`属性は`true`します。|  
 |httpsHelpPageBinding|HTTPS を利用してサービス ヘルプ ページにアクセスする場合に使用するバインディングの種類を指定する文字列値。<br /><br /> <xref:System.ServiceModel.Channels.IReplyChannel> をサポートする内部バインディング要素を使用したバインディングでのみサポートされます。 さらに、バインディングの <xref:System.ServiceModel.Channels.MessageVersion?displayProperty=nameWithType> プロパティが <xref:System.ServiceModel.Channels.MessageVersion.None?displayProperty=nameWithType> である必要があります。|  
 |httpsHelpPageBindingConfiguration|このバインディングの追加の構成情報を参照する `httpsHelpPageBinding` 属性に指定されるバインディングの名前を指定する文字列。 同じ名前を `<bindings>` セクションに定義する必要があります。|  
-|httpsHelpPageEnabled|[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] が、`httpsHelpPageUrl` 属性により指定されたアドレスに HTML ヘルプ ページを公開するかどうかを制御するブール値です。 既定値は、`true` です。<br /><br /> このプロパティを `false` に設定して、HTML ブラウザーに表示される HTML ヘルプ ページの公開を無効にできます。<br /><br /> HTML ヘルプ ページが、`httpsHelpPageUrl` 属性により制御される場所に公開されるようにするには、この属性を `true` に設定する必要があります。 さらに、次のいずれかの条件も満たす必要があります。<br /><br /> -`httpsHelpPageUrl`属性は、HTTPS プロトコル スキームをサポートする絶対アドレスです。<br />-は、HTTPS プロトコル スキームをサポートするサービスのベース アドレスです。<br /><br /> HTTPS プロトコル スキームをサポートしない絶対アドレスが `httpsHelpPageUrl` 属性に割り当てられている場合は例外がスローされますが、前の基準をどれも満たさないその他のシナリオでは、例外も HTML ヘルプ ページも表示されません。|  
+|httpsHelpPageEnabled|WCF がで指定されたアドレスに HTML ヘルプ ページを公開するかどうかを制御するブール値、`httpsHelpPageUrl`属性。 既定値は、`true` です。<br /><br /> このプロパティを `false` に設定して、HTML ブラウザーに表示される HTML ヘルプ ページの公開を無効にできます。<br /><br /> HTML ヘルプ ページが、`httpsHelpPageUrl` 属性により制御される場所に公開されるようにするには、この属性を `true` に設定する必要があります。 さらに、次のいずれかの条件も満たす必要があります。<br /><br /> -`httpsHelpPageUrl`属性は、HTTPS プロトコル スキームをサポートする絶対アドレスです。<br />-は、HTTPS プロトコル スキームをサポートするサービスのベース アドレスです。<br /><br /> HTTPS プロトコル スキームをサポートしない絶対アドレスが `httpsHelpPageUrl` 属性に割り当てられている場合は例外がスローされますが、前の基準をどれも満たさないその他のシナリオでは、例外も HTML ヘルプ ページも表示されません。|  
 |httpsHelpPageUrl|HTML ブラウザーを使用してエンドポイントを表示するときにユーザーが参照する、カスタム HTML ヘルプ ファイルの相対的または絶対的な HTTPS ベースの URL を指定する URI。<br /><br /> この属性を使用して、HTTPS/Get 要求から返されるカスタム HTML ヘルプ ファイルを HTML ブラウザーなどから利用できます。 HTML ヘルプ ファイルの場所は、次のように解決されます。<br /><br /> -このプロパティの値が相対アドレスの場合、HTML ヘルプ ファイルの場所はこのプロパティの値を加えた HTTPS 要求をサポートするサービスのベース アドレスの値です。<br />このプロパティの値が絶対アドレスがあり、HTTPS 要求をサポートする場合、HTML ヘルプ ファイルの場所は、このプロパティの値です。<br />-このプロパティの値が絶対値であって、HTTPS 要求をサポートしていない場合、例外がスローされます。<br /><br /> この属性は有効な場合にのみ、`httpHelpPageEnabled`属性は`true`します。|  
 |includeExceptionDetailInFaults|デバッグの目的でクライアントに返される SOAP エラーの詳細に、マネージ例外情報を含めるかどうかを指定する値。 既定値は、`false` です。<br /><br /> この属性を `true` に設定すると、デバッグ目的でクライアントへのマネージ例外情報のフロー、および Web ブラウザーでサービスをブラウズするユーザー向けの HTML 情報ファイルの公開を有効にできます。 **注意:** 返すマネージ例外情報をクライアントにセキュリティ リスクとなることができます。 これは、例外の詳細が、認証されていないクライアントによって使用可能な内部サービスの実装に関する情報を公開するためです。|  
   

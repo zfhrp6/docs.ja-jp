@@ -1,13 +1,6 @@
 ---
-title: "信頼性に関するベスト プラクティス"
-ms.custom: 
+title: 信頼性に関するベスト プラクティス
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - marking locks
 - rebooting databases
@@ -45,16 +38,13 @@ helpviewer_keywords:
 - STA-dependent features
 - fibers
 ms.assetid: cf624c1f-c160-46a1-bb2b-213587688da7
-caps.latest.revision: "11"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ad218e8f87c2a04a9df6f67a918097de20296d0c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d6f29d15297fc7faff6bb3bb07ee535647c2bb7a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="reliability-best-practices"></a>信頼性に関するベスト プラクティス
 以下の信頼性ルールは SQL Server を対象としたものですが、他のホスト ベースのサーバー アプリケーションにも当てはまります。 SQL Server などのサーバーがリソースをリークせず、停止しないことが非常に重要です。  ただし、オブジェクトの状態を変更するすべてのメソッドに対してバックアウト コードを記述することでは、それを実現できません。  目標は、バックアウト コードによりすべての場所ですべてのエラーから復旧する 100% 信頼できるマネージ コードを記述することではありません。  それは、成功する可能性がほとんどない面倒な作業です。  共通言語ランタイム (CLR) では、完全なマネージ コードを作成できるという十分に強力な保証は簡単には得られません。  ASP.NET とは異なり、SQL Server で使用されているプロセスは 1 つだけであり、受け入れられないほど長い時間データベースを停止させない限りリサイクルできません。  
@@ -258,7 +248,7 @@ public static MyClass SingletonProperty
  すべての例外をキャッチするようになっているすべての場所を、スローされると予想される特定の種類の例外だけをキャッチするように変更することを検討してください (文字列書式設定メソッドからの <xref:System.FormatException> など)。  このようにすると、catch ブロックが予期しない例外で実行されることがなくなり、予期しない例外をキャッチすることでコードのバグが非表示にされなくなります。  一般的なルールとして、ライブラリ コードでは例外を処理しないでください (例外をキャッチする必要があるコードが、呼び出しているコード内の設計上の欠陥を示す可能性があります)。  場合によっては、例外をキャッチし、異なる例外の種類をスローすることで、より多くのデータを提供できることがあります。  このような場合は入れ子になった例外を使い、エラーの実際の原因を新しい例外の <xref:System.Exception.InnerException%2A> プロパティに格納します。  
   
 #### <a name="code-analysis-rule"></a>コード分析ルール  
- すべてのオブジェクトまたはすべての例外をキャッチしているマネージ コード内のすべての catch ブロックを確認します。  C# では、これは `catch` {} と `catch(Exception)` {} 両方のフラグを設定することを意味します。  例外の種類を非常に限定的にすることを考えます。または、コードを調べて、予期しない例外の種類をキャッチした場合に不適切に動作しないことを確認します。  
+ すべてのオブジェクトまたはすべての例外をキャッチしているマネージ コード内のすべての catch ブロックを確認します。  C# の場合、つまり、両方のフラグを設定する`catch`{}と`catch(Exception)`{}です。  例外の種類を非常に限定的にすることを考えます。または、コードを調べて、予期しない例外の種類をキャッチした場合に不適切に動作しないことを確認します。  
   
 ### <a name="do-not-assume-a-managed-thread-is-a-win32-thread--it-is-a-fiber"></a>マネージ スレッドが Win32 スレッド (ファイバー) であると想定してはならない  
  マネージ スレッド ローカル記憶域は動作しますが、アンマネージ スレッド ローカル記憶域を使うこと、またはコードが現在のオペレーティング システム スレッドで再び実行されると想定することはできません。  スレッドのロケールなどの設定を変更しないでください。  プラットフォーム呼び出しでは `InitializeCriticalSection` または `CreateMutex` を呼び出さないでください。これらでは、ロックを開始したオペレーティング システム スレッドがロックを終了する必要があります。  ファイバーを使うとこれは該当しないので、Win32 のクリティカル セクションおよびミューテックスを SQL で直接使うことはできません。  マネージ <xref:System.Threading.Mutex> クラスはこれらのスレッドのアフィニティに関する注意事項を処理しないことに注意してください。  
@@ -287,6 +277,6 @@ public static MyClass SingletonProperty
   
  このようにすると、`try` ブロックを実行する前に finally ブロック内のすべてのコードを準備するよう、Just-In-Time コンパイラに指示されます。 これにより、finally ブロック内のコードがすべてのケースでビルドされて実行されることが保証されます。 CER では空の `try` ブロックを使うことが珍しくありません。 CER を使うと、非同期スレッドの中止およびメモリ不足例外に対して保護されます。 非常に深いコードに対するスタック オーバーフローを追加で処理する CER の形式については、「<xref:System.Runtime.CompilerServices.RuntimeHelpers.ExecuteCodeWithGuaranteedCleanup%2A>」をご覧ください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Runtime.ConstrainedExecution>  
  [SQL Server プログラミングとホスト保護属性](../../../docs/framework/performance/sql-server-programming-and-host-protection-attributes.md)

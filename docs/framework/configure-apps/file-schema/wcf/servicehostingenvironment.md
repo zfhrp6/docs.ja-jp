@@ -2,11 +2,11 @@
 title: '&lt;serviceHostingEnvironment&gt;'
 ms.date: 03/30/2017
 ms.assetid: 4f8a7c4f-e735-4987-979a-b74fcdae2652
-ms.openlocfilehash: e6c69e06b691e40b6b2c39a54be83d7bdbe3a650
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
-ms.translationtype: HT
+ms.openlocfilehash: 1d9edec2c5bbddefe575952d591416353d603d33
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ltservicehostingenvironmentgt"></a>&lt;serviceHostingEnvironment&gt;
 この要素は、環境をホストするサービスがインスタンス化する特定のトランスポートの型を定義します。 この要素が空の場合は、既定の型が使用されます。 この要素は、アプリケーション レベルまたはコンピューター レベルの構成ファイルでのみ使用できます。  
@@ -40,7 +40,7 @@ ms.lasthandoff: 05/03/2018
 |属性|説明|  
 |---------------|-----------------|  
 |aspNetCompatibilityEnabled|ASP.NET の互換モードが現在のアプリケーションに対して有効になっているかどうかを示すブール値。 既定値は、`false` です。<br /><br /> この属性を設定すると`true`、Windows Communication Foundation (WCF) サービスへの要求を ASP.NET HTTP パイプラインを通過し、非 HTTP プロトコルを介した通信は禁止されています。 詳細については、次を参照してください。 [WCF サービスと ASP.NET](../../../../../docs/framework/wcf/feature-details/wcf-services-and-aspnet.md)です。|  
-|minFreeMemoryPercentageToActivateService|[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] サービスをアクティブにする前に、システムに必要な最小限の空きメモリの容量を指定する整数。 **注意:** の web.config ファイルで、部分信頼と共にこの属性を指定する、[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)]サービスになります、<xref:System.Security.SecurityException>サービスを実行するとします。|  
+|minFreeMemoryPercentageToActivateService|WCF サービスをアクティブ化する前に、システムに利用できるように空きメモリ容量の最小量を指定する整数。 **注意:** 、WCF サービスの web.config ファイルで、部分信頼と共にこの属性を指定するが、<xref:System.Security.SecurityException>サービスを実行するとします。|  
 |multipleSiteBindingsEnabled|1 つのサイトで複数の IIS バインディングが有効になっているかどうかを指定するブール値。<br /><br /> IIS は、仮想ディレクトリを含む仮想アプリケーションのコンテナーとしての Web サイトで構成されています。 サイト内のアプリケーションに、1 つ以上の IIS バインディングからアクセスできます。 IIS バインディングは、バインディング プロトコルとバインディング情報という 2 つの情報を提供します。 バインディング プロトコルは通信を行うスキームを定義するもので、バインディング情報はサイトにアクセスするために使用する情報です。 バインディング プロトコルの例には HTTP があり、一方、バインディング情報には IP アドレス、ポート、ホスト ヘッダーなどを含めることができます。<br /><br /> IIS ではサイトごとに複数の IIS バインディングを指定でき、これによりスキームごとに複数のベース アドレスをサポートできます。 ただし、サイトでホストされている Windows Communication Foundation (WCF) サービスは、スキームあたり 1 つのみの baseAddress へのバインドを許可します。<br /><br /> Windows Communication Foundation (WCF) サービスの 1 つのサイトの複数の IIS バインディングを有効にするにこの属性を設定します。`true`です。 複数のサイト バインディングは HTTP プロトコルに対してのみサポートされています。 構成ファイル内のエンドポイントのアドレスには完全な URI を指定する必要があります。|  
   
 ### <a name="child-elements"></a>子要素  

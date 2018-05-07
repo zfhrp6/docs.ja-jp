@@ -1,29 +1,30 @@
 ---
-title: ".NET Framework 4 ワークフローでの相互運用アクティビティの使用"
-ms.custom: 
+title: .NET Framework 4 ワークフローでの相互運用アクティビティの使用
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 9bb747f0-eb33-4f70-84cd-317382372dcd
-caps.latest.revision: "20"
+caps.latest.revision: 20
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 0a02d6dbc7c6f6583a174bd10853d8c8070ac273
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.workload:
+- dotnet
+ms.openlocfilehash: ebef74097d22c9624a29470f4cda231bbb32fe90
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="using-the-interop-activity-in-a-net-framework-4-workflow"></a>.NET Framework 4 ワークフローでの相互運用アクティビティの使用
 [!INCLUDE[vstecwinfx](../../../includes/vstecwinfx-md.md)] または [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] を使用して作成したアクティビティは、[!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] アクティビティを使うことにより <xref:System.Activities.Statements.Interop> ワークフローで使用できます。 ここでは、<xref:System.Activities.Statements.Interop> アクティビティの概要について説明します。  
   
 > [!NOTE]
->  <xref:System.Activities.Statements.Interop> 、ワークフローのプロジェクトがあるない限り、ワークフロー デザイナー ツールボックスにアクティビティが表示されないその**ターゲット フレームワーク**の設定に**.Net Framework 4**またはそれ以降。  
+>  <xref:System.Activities.Statements.Interop> 、ワークフローのプロジェクトがあるない限り、ワークフロー デザイナー ツールボックスにアクティビティが表示されないその**ターゲット フレームワーク**の設定に **.Net Framework 4**またはそれ以降。  
   
 ## <a name="using-the-interop-activity-in-net-framework-45-workflows"></a>.NET Framework 4.5 ワークフローでの相互運用アクティビティの使用  
  このトピックでは、[!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] アクティビティを含む `DiscountCalculator` アクティビティ ライブラリを作成します。 `DiscountCalculator` は、購入額に基づいて割引を計算し、<xref:System.Workflow.Activities.SequenceActivity> を含む <xref:System.Workflow.Activities.PolicyActivity> で構成されます。  
@@ -44,7 +45,7 @@ ms.lasthandoff: 12/22/2017
     > [!TIP]
     >  場合、**ソリューション エクスプ ローラー**ウィンドウが表示されている、select**ソリューション エクスプ ローラー**から、**ビュー**メニュー。  
   
-5.  **インストールされたテンプレート**一覧で、 **Visual c#**し**ワークフロー**です。 選択**.NET Framework 3.5**クリックして .NET Framework のバージョンのドロップダウン リストから**Workflow Activity Library**から、**テンプレート** ボックスの一覧です。  
+5.  **インストールされたテンプレート**一覧で、 **Visual c#** し**ワークフロー**です。 選択 **.NET Framework 3.5**クリックして .NET Framework のバージョンのドロップダウン リストから**Workflow Activity Library**から、**テンプレート** ボックスの一覧です。  
   
 6.  型`PolicyActivityLibrary`で、**名前**ボックスし、をクリックして**OK**です。  
   
@@ -54,7 +55,7 @@ ms.lasthandoff: 12/22/2017
   
 1.  右クリック**PolicyActivityLibrary**で**ソリューション エクスプ ローラー**選択**追加**し**アクティビティ.**.  
   
-2.  選択**アクティビティ (コード分離付き)**から、 **Visual c# アイテム** ボックスの一覧です。 型`DiscountCalculator`で、**名前**ボックスし、をクリックして**OK**です。  
+2.  選択**アクティビティ (コード分離付き)** から、 **Visual c# アイテム** ボックスの一覧です。 型`DiscountCalculator`で、**名前**ボックスし、をクリックして**OK**です。  
   
 3.  右クリック**DiscountCalculator.xoml**で**ソリューション エクスプ ローラー**選択**コードの表示**です。  
   
@@ -137,7 +138,7 @@ ms.lasthandoff: 12/22/2017
   
 14. をクリックして**OK**を閉じる、**ルール セット エディター**  ダイアログ ボックス。  
   
-15. 新たに作成されたことを確認<xref:System.Workflow.Activities.Rules.RuleSet>でが選択されている、**名前**ボックスの一覧し、をクリックして**[ok]**です。  
+15. 新たに作成されたことを確認<xref:System.Workflow.Activities.Rules.RuleSet>でが選択されている、**名前**ボックスの一覧し、をクリックして **[ok]** です。  
   
 16. Ctrl キーと Shift キーを押しながら B キーを押して、ソリューションをビルドします。  
   
@@ -164,13 +165,13 @@ Rule3: IF this.DiscountPercent > 0
   
 1.  右クリック**PolicyInteropDemo**で**ソリューション エクスプ ローラー**選択**追加**、し**新しいプロジェクト.**.  
   
-2.  いることを確認**.NET Framework 4.5** .NET Framework のバージョンのドロップダウン リストで選択され、選択**ワークフロー コンソール アプリケーション**から、 **Visual c# アイテム** ボックスの一覧です。  
+2.  いることを確認 **.NET Framework 4.5** .NET Framework のバージョンのドロップダウン リストで選択され、選択**ワークフロー コンソール アプリケーション**から、 **Visual c# アイテム** ボックスの一覧です。  
   
 3.  型`PolicyInteropHost`に、**名前**ボックスし、をクリックして**OK**です。  
   
 4.  右クリック**PolicyInteropHost**で**ソリューション エクスプ ローラー**選択**プロパティ**です。  
   
-5.  **ターゲット フレームワーク**ドロップダウン ボックスの一覧で選択を変更するから**.NET Framework 4 Client Profile**に**.NET Framework 4.5**です。 をクリックして**はい**ことを確認します。  
+5.  **ターゲット フレームワーク**ドロップダウン ボックスの一覧で選択を変更するから **.NET Framework 4 Client Profile**に **.NET Framework 4.5**です。 をクリックして**はい**ことを確認します。  
   
 6.  右クリック**PolicyInteropHost**で**ソリューション エクスプ ローラー**選択**参照の追加.**.  
   
@@ -370,10 +371,10 @@ Rule3: IF this.DiscountPercent > 0
 |ルール機能|ドキュメント|  
 |-------------------|-------------------|  
 |ルールの概要|[Windows Workflow Foundation ルール エンジンの概要](http://go.microsoft.com/fwlink/?LinkID=152836)|  
-|RuleSet|[ワークフローでの RuleSets の使用](http://go.microsoft.com/fwlink/?LinkId=178516)と<xref:System.Workflow.Activities.Rules.RuleSet>|  
+|RuleSet|[ワークフローでの RuleSets の使用](http://go.microsoft.com/fwlink/?LinkId=178516)と <xref:System.Workflow.Activities.Rules.RuleSet>|  
 |ルールの評価|[RuleSets 内のルールの評価](http://go.microsoft.com/fwlink/?LinkId=178517)|  
 |ルール チェーン|[フォワード チェーン コントロール](http://go.microsoft.com/fwlink/?LinkId=178518)と[ルールのフォワード チェーン](http://go.microsoft.com/fwlink/?LinkId=178519)|  
 |ルール内コレクションの処理|[ルール内コレクションの処理](http://go.microsoft.com/fwlink/?LinkId=178520)|  
-|PolicyActivity の使用|[PolicyActivity アクティビティの使用](http://go.microsoft.com/fwlink/?LinkId=178521)と<xref:System.Workflow.Activities.PolicyActivity>|  
+|PolicyActivity の使用|[PolicyActivity アクティビティの使用](http://go.microsoft.com/fwlink/?LinkId=178521)と <xref:System.Workflow.Activities.PolicyActivity>|  
   
- [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] で作成したワークフローでは、たとえば宣言的アクティビティ条件や条件付きアクティビティ ([!INCLUDE[wf1](../../../includes/wf1-md.md)]、<xref:System.Workflow.Activities.ConditionedActivityGroup> など) など、<xref:System.Workflow.Activities.ReplicatorActivity> に用意されているルール機能のすべてを使用するわけではありません。 必要に応じて、この機能は [!INCLUDE[vstecwinfx](../../../includes/vstecwinfx-md.md)] および [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] を使用して作成したワークフローに使用できます。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][移行ガイダンス](../../../docs/framework/windows-workflow-foundation/migration-guidance.md)です。
+ [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] で作成したワークフローでは、たとえば宣言的アクティビティ条件や条件付きアクティビティ ([!INCLUDE[wf1](../../../includes/wf1-md.md)]、<xref:System.Workflow.Activities.ConditionedActivityGroup> など) など、<xref:System.Workflow.Activities.ReplicatorActivity> に用意されているルール機能のすべてを使用するわけではありません。 必要に応じて、この機能は [!INCLUDE[vstecwinfx](../../../includes/vstecwinfx-md.md)] および [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] を使用して作成したワークフローに使用できます。 詳細については、次を参照してください。[移行ガイダンス](../../../docs/framework/windows-workflow-foundation/migration-guidance.md)です。
