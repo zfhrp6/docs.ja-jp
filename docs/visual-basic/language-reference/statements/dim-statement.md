@@ -1,10 +1,11 @@
 ---
-title: "Dim ステートメント (Visual Basic)"
+title: Dim ステートメント (Visual Basic)
 ms.date: 07/20/2015
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-visual-basic
 ms.topic: article
 f1_keywords:
 - vb.Dim
@@ -34,14 +35,14 @@ helpviewer_keywords:
 - Dim statement [Visual Basic], syntax
 - variables [Visual Basic], member and local
 ms.assetid: fae3eca1-f0b2-4400-994b-7aa58a848448
-caps.latest.revision: "72"
+caps.latest.revision: 72
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: a428f8be7b62600ca8fffd3160039c1de911e34e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
-ms.translationtype: MT
+ms.openlocfilehash: 36e2d416e4653bfa6fe212b75b92ae2d90775d53
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="dim-statement-visual-basic"></a>Dim ステートメント (Visual Basic)
 宣言し、1 つまたは複数の変数の記憶域を割り当てます。  
@@ -57,11 +58,11 @@ Dim [ WithEvents ] variablelist
   
 -   `attributelist`  
   
-     省略可能です。 参照してください[属性一覧](../../../visual-basic/language-reference/statements/attribute-list.md)です。  
+     任意。 参照してください[属性一覧](../../../visual-basic/language-reference/statements/attribute-list.md)です。  
   
 -   `accessmodifier`  
   
-     省略可能です。 次のいずれかの値を指定します。  
+     任意。 次のいずれかの値を指定します。  
   
     -   [Public](../../../visual-basic/language-reference/modifiers/public.md)  
   
@@ -77,27 +78,27 @@ Dim [ WithEvents ] variablelist
   
 -   `Shared`  
   
-     省略可能です。 参照してください[共有](../../../visual-basic/language-reference/modifiers/shared.md)です。  
+     任意。 参照してください[共有](../../../visual-basic/language-reference/modifiers/shared.md)です。  
   
 -   `Shadows`  
   
-     省略可能です。 参照してください[Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)です。  
+     任意。 参照してください[Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)です。  
   
 -   `Static`  
   
-     省略可能です。 参照してください[静的](../../../visual-basic/language-reference/modifiers/static.md)です。  
+     任意。 参照してください[静的](../../../visual-basic/language-reference/modifiers/static.md)です。  
   
 -   `ReadOnly`  
   
-     省略可能です。 参照してください[ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md)です。  
+     任意。 参照してください[ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md)です。  
   
 -   `WithEvents`  
   
-     省略可能です。 これらがイベントを発生させるクラスのインスタンスを参照するオブジェクト変数であることを指定します。 参照してください[WithEvents](../../../visual-basic/language-reference/modifiers/withevents.md)です。  
+     任意。 これらがイベントを発生させるクラスのインスタンスを参照するオブジェクト変数であることを指定します。 参照してください[WithEvents](../../../visual-basic/language-reference/modifiers/withevents.md)です。  
   
 -   `variablelist`  
   
-     必須です。 このステートメントで宣言されている変数の一覧です。  
+     必須。 このステートメントで宣言されている変数の一覧です。  
   
      `variable [ , variable ... ]`  
   
@@ -107,12 +108,12 @@ Dim [ WithEvents ] variablelist
   
     |パーツ|説明|  
     |---|---|  
-    |`variablename`|必須です。 変数の名前です。 参照してください[宣言された要素の名前](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)です。|  
-    |`boundslist`|省略可能です。 配列変数の各次元の境界の一覧です。|  
-    |`New`|省略可能です。 クラスの新しいインスタンスを作成時に、`Dim`ステートメントが実行されています。|  
-    |`datatype`|省略可能です。 変数のデータ型。|  
-    |`With`|省略可能です。 オブジェクト初期化子リストが導入されています。|  
-    |`propertyname`|省略可能です。 インスタンスを作成するクラスのプロパティの名前。|  
+    |`variablename`|必須。 変数の名前です。 参照してください[宣言された要素の名前](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)です。|  
+    |`boundslist`|任意。 配列変数の各次元の境界の一覧です。|  
+    |`New`|任意。 クラスの新しいインスタンスを作成時に、`Dim`ステートメントが実行されています。|  
+    |`datatype`|任意。 変数のデータ型。|  
+    |`With`|任意。 オブジェクト初期化子リストが導入されています。|  
+    |`propertyname`|任意。 インスタンスを作成するクラスのプロパティの名前。|  
     |`propinitializer`|後に必要な`propertyname`= です。 評価され、プロパティ名に割り当てられている式です。|  
     |`initializer`|省略可能な場合`New`が指定されていません。 式が評価され、変数に割り当てが作成されるときです。|  
   
@@ -182,7 +183,7 @@ Dim student1 As New Student With {.First = "Michael",
                                   .Last = "Tucker"}  
 ```  
   
- オブジェクト初期化子の詳細については、次を参照してください[する方法: オブジェクト初期化子を使用してオブジェクトを宣言](../../../visual-basic/programming-guide/language-features/objects-and-classes/how-to-declare-an-object-by-using-an-object-initializer.md)、[オブジェクト初期化子: 名前付きおよび匿名型](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)、および[匿名型](../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md).  
+ オブジェクト初期化子の詳細については、次を参照してください[する方法: オブジェクト初期化子を使用してオブジェクトを宣言](../../../visual-basic/programming-guide/language-features/objects-and-classes/how-to-declare-an-object-by-using-an-object-initializer.md)、[オブジェクト初期化子: 名前付きおよび匿名型](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)、および[匿名型。](../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md).  
   
 ## <a name="declaring-multiple-variables"></a>複数の変数を宣言します。  
  かっこで次の各配列名と、それぞれの変数名を指定する 1 つの宣言ステートメントで複数の変数を宣言できます。 複数の変数を指定するときは、コンマで区切ります。  
@@ -251,19 +252,19 @@ Dim twoDimensions(,) As Integer = {{0, 1, 2}, {10, 11, 12}}
   
  配列リテラルの詳細については、次を参照してください。[配列](../../../visual-basic/programming-guide/language-features/arrays/index.md)です。  
   
-##  <a name="default"></a>既定のデータ型し、値  
+##  <a name="default"></a> 既定のデータ型し、値  
  次の表では、`Dim` ステートメントのデータ型と初期化子を指定するさまざまな組み合わせの結果を示します。  
   
 |データ型が指定されているか|初期化子が指定されているか|例|結果|  
 |---|---|---|---|  
-|Ｘ|いいえ|`Dim qty`|場合[Option Strict](../../../visual-basic/language-reference/statements/option-strict-statement.md)に設定されている変数 off (既定)、`Nothing`です。<br /><br /> `Option Strict` がオンの場合、コンパイル時エラーが発生します。|  
-|Ｘ|はい|`Dim qty = 5`|場合[Option Infer](../../../visual-basic/language-reference/statements/option-infer-statement.md) on (既定値) は、変数は、データが初期化子の型します。 参照してください[ローカル型推論](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)です。<br /><br /> `Option Infer` がオフで、`Option Strict` がオフの場合、変数は `Object` のデータ型になります。<br /><br /> `Option Infer` がオフで、`Option Strict` がオンの場合、コンパイル時エラーが発生します。|  
+|Ｘ|×|`Dim qty`|場合[Option Strict](../../../visual-basic/language-reference/statements/option-strict-statement.md)に設定されている変数 off (既定)、`Nothing`です。<br /><br /> `Option Strict` がオンの場合、コンパイル時エラーが発生します。|  
+|Ｘ|[はい]|`Dim qty = 5`|場合[Option Infer](../../../visual-basic/language-reference/statements/option-infer-statement.md) on (既定値) は、変数は、データが初期化子の型します。 参照してください[ローカル型推論](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)です。<br /><br /> `Option Infer` がオフで、`Option Strict` がオフの場合、変数は `Object` のデータ型になります。<br /><br /> `Option Infer` がオフで、`Option Strict` がオンの場合、コンパイル時エラーが発生します。|  
 |○|Ｘ|`Dim qty As Integer`|変数は、データ型の既定値に初期化されます。 このセクションの後半の表を参照してください。|  
-|はい|○|`Dim qty  As Integer = 5`|初期化子のデータ型を指定したデータ型に変換できない場合は、コンパイル時エラーが発生します。|  
+|[はい]|○|`Dim qty  As Integer = 5`|初期化子のデータ型を指定したデータ型に変換できない場合は、コンパイル時エラーが発生します。|  
   
- データ型を指定して、初期化子を指定しない場合[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]のデータ型の既定値に変数を初期化します。 次の表は、既定値に初期化の値を示します。  
+ データ型を指定して、初期化子を指定しない場合、Visual Basic は、そのデータ型の既定値に変数を初期化します。 次の表は、既定値に初期化の値を示します。  
   
-|データ型|既定値|  
+|データの種類|既定値|  
 |---|---|  
 |すべての数値型 (など`Byte`と`SByte`)|0|  
 |`Char`|バイナリ 0|  
@@ -279,8 +280,8 @@ Dim twoDimensions(,) As Integer = {{0, 1, 2}, {10, 11, 12}}
 |プロシージャの宣言|初期化された変数|既存の変数を停止します。|  
 |---|---|---|  
 |モジュールで|最初に、プロシージャを呼び出す|プログラムが実行を停止します。|  
-|手順は、クラスまたは構造体は、します。`Shared`|最初に、プロシージャを呼び出すか、特定のインスタンスまたはクラスまたは構造体自体|プログラムが実行を停止します。|  
-|クラスまたは構造体では、プロシージャはありません。`Shared`|初めてプロシージャは特定のインスタンスで呼び出されます。|ガベージ コレクション (GC) のインスタンスを解放する場合|  
+|手順は、クラスまたは構造体は、します。 `Shared`|最初に、プロシージャを呼び出すか、特定のインスタンスまたはクラスまたは構造体自体|プログラムが実行を停止します。|  
+|クラスまたは構造体では、プロシージャはありません。 `Shared`|初めてプロシージャは特定のインスタンスで呼び出されます。|ガベージ コレクション (GC) のインスタンスを解放する場合|  
   
 ## <a name="attributes-and-modifiers"></a>属性と修飾子  
  属性は、ローカル変数ではなく、メンバー変数にのみ適用できます。 属性は、ローカル変数などの一時的なストレージの意味ではないアセンブリのメタデータに情報を提供します。  

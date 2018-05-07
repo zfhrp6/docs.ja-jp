@@ -2,11 +2,11 @@
 title: '@ServiceHost'
 ms.date: 03/30/2017
 ms.assetid: 96ba6967-00f2-422f-9aa7-15de4d33ebf3
-ms.openlocfilehash: f81c71746b6b59a51ee825b44c9e6d9f93eb5fbd
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
-ms.translationtype: HT
+ms.openlocfilehash: 5498c300ab126bbc4e08cd228e3e7b48e905932e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="servicehost"></a>@ServiceHost
 サービス ホストの生成に使用されるファクトリを、ホストされるサービスと、.svc ファイルで提供されるホスティング コードのアクセスとコンパイルに必要なその他のプログラミング部分に関連付けます。  
@@ -31,7 +31,7 @@ CodeBehind = "CodeBehind"%>
  サービス ホストのインスタンス化に使用されるサービス ホスト ファクトリの CLR 型名。 この属性は省略できます。 未指定の場合は、<xref:System.ServiceModel.Activation.ServiceHostFactory> のインスタンスを返す既定の <xref:System.ServiceModel.ServiceHost> が使用されます。  
   
 #### <a name="debug"></a>デバッグ  
- Windows Communication Foundation (WCF) サービスをコンパイルするときにデバッグ シンボルを使用するかどうかを示します。 デバッグ シンボルを含む `true` サービスをコンパイルする場合は [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)]、それ以外の場合は `false` を指定します。  
+ Windows Communication Foundation (WCF) サービスをコンパイルするときにデバッグ シンボルを使用するかどうかを示します。 `true` 場合は、WCF サービスをデバッグ シンボルでコンパイルする必要があります。それ以外の場合、`false`です。  
   
 #### <a name="language"></a>言語  
  ファイル (.svc) 内のすべてのインライン コードをコンパイルするときに使用する言語を指定します。 値は、C#、VB、JS (それぞれ、C#、Visual Basic .NET、および JScript .NET を示す) など、.NET がサポートする任意の言語を表します。 この属性は省略できます。  

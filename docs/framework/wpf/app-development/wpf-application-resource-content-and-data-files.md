@@ -1,12 +1,13 @@
 ---
-title: "WPF アプリケーションのリソース ファイル、コンテンツ ファイル、およびデータ ファイル"
-ms.custom: 
+title: WPF アプリケーションのリソース ファイル、コンテンツ ファイル、およびデータ ファイル
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -24,19 +25,20 @@ helpviewer_keywords:
 - application development [WPF], files
 - application management [WPF]
 ms.assetid: 7ad2943b-3961-41d3-8fc6-1582d43f5d99
-caps.latest.revision: "25"
+caps.latest.revision: 25
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 284c3b6788fd43a10d65cfa8bd6c032e4b1e1cd6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.workload:
+- dotnet
+ms.openlocfilehash: bcf0a725b7b3467a50a9f51850709dd972da217d
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="wpf-application-resource-content-and-data-files"></a>WPF アプリケーションのリソース ファイル、コンテンツ ファイル、およびデータ ファイル
-[!INCLUDE[TLA#tla_win](../../../../includes/tlasharptla-win-md.md)]データを含む実行可能でないなどのファイルに多くの場合、依存するアプリケーション[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]イメージ、ビデオ、およびオーディオです。 [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] には、アプリケーション データ ファイルと呼ばれるこれらの種類のデータ ファイルを構成、識別、および使用するための特殊なサポート機能があります。 このサポートの中心となるのは、次のような特定のアプリケーション データ ファイルの種類のセットです。  
+[!INCLUDE[TLA#tla_win](../../../../includes/tlasharptla-win-md.md)] データを含む実行可能でないなどのファイルに多くの場合、依存するアプリケーション[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]イメージ、ビデオ、およびオーディオです。 Windows Presentation Foundation (WPF) は、構成、識別、およびこれらの種類のアプリケーションのデータ ファイルと呼ばれる、データ ファイルを使用して特別なサポートを提供します。 このサポートの中心となるのは、次のような特定のアプリケーション データ ファイルの種類のセットです。  
   
 -   **リソース ファイル**: 実行可能ファイルまたはライブラリにコンパイルされるデータ ファイル[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]アセンブリ。  
   
@@ -46,7 +48,7 @@ ms.lasthandoff: 12/22/2017
   
  これらの 3 種類のファイルの重要な違いは、リソース ファイルとコンテンツ ファイルはビルド時に認識されるという点です。アセンブリは、これらを明確に認識します。 配信元のファイルのサイトのただし、アセンブリがあります認識したり、または暗黙的なナレッジ パックを[!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)]参照。 後者の場合の元のファイルの参照先のサイトが実際に存在するという保証はありません。  
   
- アプリケーション データ ファイルを参照する[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)]、パックを使用して[!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)]で詳しく説明されているスキーム[WPF のパック Uri](../../../../docs/framework/wpf/app-development/pack-uris-in-wpf.md))。  
+ Windows Presentation Foundation (WPF) が、パックを使用するにはアプリケーションのデータ ファイルを参照するには、[!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)]で詳しく説明されているスキーム[WPF のパック Uri](../../../../docs/framework/wpf/app-development/pack-uris-in-wpf.md))。  
   
  このトピックでは、アプリケーション データ ファイルを構成および使用する方法について説明します。  
   
@@ -85,7 +87,7 @@ ms.lasthandoff: 12/22/2017
  プロジェクトのビルド時に[!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)]アセンブリにリソースをコンパイルします。  
   
 ### <a name="using-resource-files"></a>リソース ファイルの使用  
- リソース ファイルを読み込むには、呼び出すことができます、<xref:System.Windows.Application.GetResourceStream%2A>のメソッド、<xref:System.Windows.Application>を渡して、パック[!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)]目的のリソース ファイルを識別します。 <xref:System.Windows.Application.GetResourceStream%2A>返します、<xref:System.Windows.Resources.StreamResourceInfo>として、リソース ファイルを公開するオブジェクト、<xref:System.IO.Stream>とそのコンテンツの種類について説明します。  
+ リソース ファイルを読み込むには、呼び出すことができます、<xref:System.Windows.Application.GetResourceStream%2A>のメソッド、<xref:System.Windows.Application>を渡して、パック[!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)]目的のリソース ファイルを識別します。 <xref:System.Windows.Application.GetResourceStream%2A> 返します、<xref:System.Windows.Resources.StreamResourceInfo>として、リソース ファイルを公開するオブジェクト、<xref:System.IO.Stream>とそのコンテンツの種類について説明します。  
   
  たとえば、次のコードが使用する方法を示します<xref:System.Windows.Application.GetResourceStream%2A>を読み込む、<xref:System.Windows.Controls.Page>リソース ファイルのコンテンツとして設定し、 <xref:System.Windows.Controls.Frame> (`pageFrame`)。  
   
@@ -165,7 +167,7 @@ ms.lasthandoff: 12/22/2017
  <xref:System.Windows.Resources.AssemblyAssociatedContentFileAttribute>値もビルド出力フォルダー内のコンテンツのファイルへのパスの値。  
   
 ### <a name="using-content-files"></a>コンテンツ ファイルの使用  
- コンテンツ ファイルを読み込むには、呼び出すことができます、<xref:System.Windows.Application.GetContentStream%2A>のメソッド、<xref:System.Windows.Application>を渡して、パック[!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)]目的のコンテンツ ファイルを識別します。 <xref:System.Windows.Application.GetContentStream%2A>返します、<xref:System.Windows.Resources.StreamResourceInfo>として、コンテンツ ファイルを公開するオブジェクト、<xref:System.IO.Stream>とそのコンテンツの種類について説明します。  
+ コンテンツ ファイルを読み込むには、呼び出すことができます、<xref:System.Windows.Application.GetContentStream%2A>のメソッド、<xref:System.Windows.Application>を渡して、パック[!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)]目的のコンテンツ ファイルを識別します。 <xref:System.Windows.Application.GetContentStream%2A> 返します、<xref:System.Windows.Resources.StreamResourceInfo>として、コンテンツ ファイルを公開するオブジェクト、<xref:System.IO.Stream>とそのコンテンツの種類について説明します。  
   
  たとえば、次のコードが使用する方法を示します<xref:System.Windows.Application.GetContentStream%2A>を読み込む、<xref:System.Windows.Controls.Page>ファイルのコンテンツのコンテンツとして設定し、 <xref:System.Windows.Controls.Frame> (`pageFrame`)。  
   
@@ -209,7 +211,7 @@ ms.lasthandoff: 12/22/2017
 ### <a name="configuring-site-of-origin-files"></a>起点サイト ファイルの構成  
  従来の配置を使用する必要がある場合は、サイトの元のファイルの存在しないまたは不明なコンパイル時に、いずれかの使用など、実行時に、必要なファイルを確保するための機構を使用できます、`XCopy`コマンド ライン プログラムや、 [!INCLUDE[TLA#tla_wininstall](../../../../includes/tlasharptla-wininstall-md.md)].  
   
- わかっている場合はコンパイル時にファイルを元のサイトに配置されるけれどもまだ明示的な依存関係を回避するにそれらのファイルを追加することができます、[!INCLUDE[TLA#tla_msbuild](../../../../includes/tlasharptla-msbuild-md.md)]としてプロジェクト`None`項目。 コンテンツのファイルで設定する必要がある、 [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] `CopyToOutputDirectory`元のファイルのサイトがいずれかを指定することによってビルドされたアセンブリに対応する場所にコピーされていることを指定する属性、`Always`値または`PreserveNewest`値。  
+ わかっている場合はコンパイル時にファイルを元のサイトに配置されるけれどもまだ明示的な依存関係を回避するにそれらのファイルを追加することができます、[!INCLUDE[TLA#tla_msbuild](../../../../includes/tlasharptla-msbuild-md.md)]としてプロジェクト`None`項目。 コンテンツのファイルで設定する必要がある、 [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] `CopyToOutputDirectory`元のファイルのサイトが [いずれかを指定することによってビルドされたアセンブリに対応する場所にコピーされていることを指定する属性、`Always`値または`PreserveNewest`値。  
   
 ```xml  
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ... >  
@@ -227,7 +229,7 @@ ms.lasthandoff: 12/22/2017
  プロジェクトのビルド時に[!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)]ビルド出力フォルダーに指定されたファイルをコピーします。  
   
 ### <a name="using-site-of-origin-files"></a>起点サイト ファイルの使用  
- 元のファイルのサイトを読み込むには、呼び出すことができます、<xref:System.Windows.Application.GetRemoteStream%2A>のメソッド、<xref:System.Windows.Application>を渡して、パック[!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)]元のファイルの目的のサイトを識別します。 <xref:System.Windows.Application.GetRemoteStream%2A>返します、<xref:System.Windows.Resources.StreamResourceInfo>として元のファイルのサイトを公開するオブジェクト、<xref:System.IO.Stream>とそのコンテンツの種類について説明します。  
+ 元のファイルのサイトを読み込むには、呼び出すことができます、<xref:System.Windows.Application.GetRemoteStream%2A>のメソッド、<xref:System.Windows.Application>を渡して、パック[!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)]元のファイルの目的のサイトを識別します。 <xref:System.Windows.Application.GetRemoteStream%2A> 返します、<xref:System.Windows.Resources.StreamResourceInfo>として元のファイルのサイトを公開するオブジェクト、<xref:System.IO.Stream>とそのコンテンツの種類について説明します。  
   
  例として、次のコードが使用する方法を示します<xref:System.Windows.Application.GetRemoteStream%2A>を読み込む、<xref:System.Windows.Controls.Page>元のサイトのコンテンツとして設定し、ファイル、 <xref:System.Windows.Controls.Frame> (`pageFrame`)。  
   
@@ -249,5 +251,5 @@ ms.lasthandoff: 12/22/2017
 ## <a name="rebuilding-after-changing-build-type"></a>ビルドの種類を変更した後のリビルド  
  アプリケーション データ ファイルのビルドの種類を変更した後は、変更を確実に反映するためにアプリケーション全体をリビルドする必要があります。 アプリケーションのみをビルドしても、変更は適用されません。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [WPF におけるパッケージの URI](../../../../docs/framework/wpf/app-development/pack-uris-in-wpf.md)
