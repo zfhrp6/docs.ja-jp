@@ -1,24 +1,14 @@
 ---
-title: "WIF を使用したクレーム ベースの承認"
-ms.custom: 
+title: WIF を使用したクレーム ベースの承認
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: e24000a3-8fd8-4c0e-bdf0-39882cc0f6d8
-caps.latest.revision: "6"
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: bc6a9d828f1ab666ddda687931785f3853b74374
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 1d2972ccef6829a2b7a052ba30258086443bd833
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="claims-based-authorization-using-wif"></a>WIF を使用したクレーム ベースの承認
 証明書利用者アプリケーションでは、承認によって、認証済み ID がアクセスできるリソースと、そのリソースで実行できる操作が決まります。 承認が不適切だったり弱かったりすると、それは情報漏えいとデータの改ざんにつながります。 ここでは、Windows Identity Foundation (WIF) とセキュリティ トークン サービス (STS)、たとえば Microsoft Azure のアクセス制御サービス (ACS) を使用して、クレーム対応 ASP.NET の Web アプリケーションとサービスの承認を実装する方法の概要を説明します。  
@@ -52,7 +42,7 @@ ms.lasthandoff: 12/22/2017
   
 -   **トークン発行中**。 ユーザーが認証されるときに、Microsoft Azure のアクセス制御サービス (ACS) などのフェデレーション プロバイダーや ID プロバイダー STS によってロール クレームを発行できます。  
   
--   **ClaimsAuthenticationManager を使用して、任意のクレームを、ロール タイプのクレームに変換する**。 ClaimsAuthenticationManager は、WIF に含まれているコンポーネントです。 このコンポーネントは、トークンを調べ、クレームを追加、変更、または削除することでそれを変換し、アプリケーションの起動時に要求を受け取れるようにします。 ClaimsAuthenticationManager を使用してクレームを変換する方法の詳細については、「[方法: WIF および ACS を使用して、要求対応の ASP.NET アプリケーションにロールベースのアクセス制御 (RBAC) を実装する](http://go.microsoft.com/fwlink/?LinkID=247445)」(http://go.microsoft.com/fwlink/?LinkID=247444) を参照してください。  
+-   **ClaimsAuthenticationManager を使用して、任意のクレームを、ロール タイプのクレームに変換する**。 ClaimsAuthenticationManager は、WIF に含まれているコンポーネントです。 このコンポーネントは、トークンを調べ、クレームを追加、変更、または削除することでそれを変換し、アプリケーションの起動時に要求を受け取れるようにします。 クレームに変換するため ClaimsAuthenticationManager を使用する方法の詳細については、次を参照してください。 [How To: 実装ロール ベース アクセス制御 (RBAC) クレーム対応 ASP.NET アプリケーションを使用して WIF および ACS](http://go.microsoft.com/fwlink/?LinkID=247445) (http://go.microsoft.com/fwlink/?LinkID=247444)です。  
   
 -   **samlSecurityTokenRequirement 構成セクションを使用して、任意のクレームをロールの種類に対応付ける**。宣言を使用したアプローチで、構成のみを使ってクレーム変換が行われます。その際、コーディングは必要ありません。  
   

@@ -1,27 +1,18 @@
 ---
-title: "クライアントの UI オートメーション イベント"
-ms.custom: 
+title: クライアントの UI オートメーション イベント
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-bcl
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - UI Automation, events for clients
 - events, UI Automation clients
 ms.assetid: b909e388-3f24-4997-b6d4-bd9c35c2dc27
-caps.latest.revision: "32"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 8486f8c8eaa586f6f81ea895fd22c96801b3594b
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: d471ee08f60d6fdd029b2057d629ad824ae9fdcf
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ui-automation-events-for-clients"></a>クライアントの UI オートメーション イベント
 > [!NOTE]
@@ -29,7 +20,7 @@ ms.lasthandoff: 01/19/2018
   
  このトピックについて説明する方法[!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)]イベントは、UI オートメーション クライアントで使用されます。  
   
- [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]クライアントは、関心のあるイベントにサブスクライブできます。 この機能は、常にすべてをポーリングする必要がなくなるによってパフォーマンスを向上させる、[!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)]任意の情報、構造体、または状態が変更されたかどうかに、システム内の要素。  
+ [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] クライアントは、関心のあるイベントにサブスクライブできます。 この機能は、常にすべてをポーリングする必要がなくなるによってパフォーマンスを向上させる、[!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)]任意の情報、構造体、または状態が変更されたかどうかに、システム内の要素。  
   
  また、定義されたスコープ内のイベントだけをリッスンできるため、効率性も向上します。 すべてのフォーカス変更イベントに、クライアントがリッスンなど[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]ツリーで、または 1 つだけの要素とその子孫の要素。  
   
@@ -47,7 +38,7 @@ ms.lasthandoff: 01/19/2018
 |<xref:System.Windows.Automation.Automation.AddAutomationFocusChangedEventHandler%2A>|フォーカスの変更|<xref:System.Windows.Automation.AutomationFocusChangedEventArgs>|<xref:System.Windows.Automation.AutomationFocusChangedEventHandler>|  
 |<xref:System.Windows.Automation.Automation.AddAutomationPropertyChangedEventHandler%2A>|プロパティの変更|<xref:System.Windows.Automation.AutomationPropertyChangedEventArgs>|<xref:System.Windows.Automation.AutomationPropertyChangedEventHandler>|  
 |<xref:System.Windows.Automation.Automation.AddStructureChangedEventHandler%2A>|構造の変更|<xref:System.Windows.Automation.StructureChangedEventArgs>|<xref:System.Windows.Automation.StructureChangedEventHandler>|  
-|<xref:System.Windows.Automation.Automation.AddAutomationEventHandler%2A>|によって識別されるその他のすべてのイベント、<xref:System.Windows.Automation.AutomationEvent>|<xref:System.Windows.Automation.AutomationEventArgs> または <xref:System.Windows.Automation.WindowClosedEventArgs>|<xref:System.Windows.Automation.AutomationEventHandler>|  
+|<xref:System.Windows.Automation.Automation.AddAutomationEventHandler%2A>|によって識別されるその他のすべてのイベント、 <xref:System.Windows.Automation.AutomationEvent>|<xref:System.Windows.Automation.AutomationEventArgs> または <xref:System.Windows.Automation.WindowClosedEventArgs>|<xref:System.Windows.Automation.AutomationEventHandler>|  
   
  メソッドを呼び出す前に、イベントを処理するデリゲート メソッドを作成する必要があります。 必要に応じて、単一のメソッドでさまざまな種類のイベントを処理し、そのメソッドを複数の呼び出しで表中のメソッドの 1 つに渡すことができます。 たとえば、1 つ<xref:System.Windows.Automation.AutomationEventHandler>異なるによると、さまざまなイベントを処理するを設定することができます、<xref:System.Windows.Automation.AutomationEventArgs.EventId%2A>です。  
   
@@ -68,7 +59,7 @@ ms.lasthandoff: 01/19/2018
   
  コード例を参照してください[の UI オートメーション イベントをサブスクライブ](../../../docs/framework/ui-automation/subscribe-to-ui-automation-events.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [UI オートメーション イベントのサブスクライブ](../../../docs/framework/ui-automation/subscribe-to-ui-automation-events.md)  
  [UI オートメーション イベントの概要](../../../docs/framework/ui-automation/ui-automation-events-overview.md)  
  [UI オートメーション プロパティの概要](../../../docs/framework/ui-automation/ui-automation-properties-overview.md)  

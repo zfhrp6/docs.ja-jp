@@ -2,11 +2,11 @@
 title: '&lt;httpTransport&gt;'
 ms.date: 03/30/2017
 ms.assetid: 8b30c065-b32a-4fa3-8eb4-5537a9c6b897
-ms.openlocfilehash: cd3a17eee9d4eebbefa880e14aadbc4715a18ac1
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
-ms.translationtype: HT
+ms.openlocfilehash: 77400348e9adc31d8121fc75f46d75d757af270f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="lthttptransportgt"></a>&lt;httpTransport&gt;
 カスタム バインドの SOAP メッセージを送信する HTTP トランスポートを指定します。  
@@ -66,7 +66,7 @@ IntegratedWindowsAuthentication: Specifies Windows authentication"
 |[\<binding>](../../../../../docs/framework/misc/binding.md)|カスタム バインドのすべてのバインド機能を定義します。|  
   
 ## <a name="remarks"></a>コメント  
- `httpTransport` 要素は、HTTP トランスポート プロトコルを実装するカスタム バインディングを作成する場合の開始点となります。 HTTP は、相互運用性のために使用される主要なトランスポートです。 このトランスポートは他の非と相互運用性を確認する Windows Communication Foundation (WCF) によってサポートされている[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)]Web サービス スタック。  
+ `httpTransport` 要素は、HTTP トランスポート プロトコルを実装するカスタム バインディングを作成する場合の開始点となります。 HTTP は、相互運用性のために使用される主要なトランスポートです。 このトランスポートには、他の WCF 以外の Web サービス スタックと相互運用するための Windows Communication Foundation (WCF) によってはサポートされています。  
   
 ## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Configuration.HttpTransportElement>  

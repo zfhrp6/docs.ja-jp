@@ -1,24 +1,26 @@
 ---
-title: "ワークフロー サービス ホストの内部"
-ms.custom: 
+title: ワークフロー サービス ホストの内部
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: af44596f-bf6a-4149-9f04-08d8e8f45250
-caps.latest.revision: "5"
+caps.latest.revision: 5
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 6761c044f166105a2e463d0f89ed0b3813d4b97a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.workload:
+- dotnet
+ms.openlocfilehash: 84bd0c5b93984e126019699caf64a61183c08f13
+ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="workflow-service-host-internals"></a>ワークフロー サービス ホストの内部
 <xref:System.ServiceModel.WorkflowServiceHost> では、ワークフロー サービスのホストが提供されます。 これにより、受信メッセージをリッスンして、該当するワークフロー サービス インスタンスにルーティングし、アイドル状態のワークフローのアンロードおよび永続化を制御できます。 このトピックでは、WorkflowServiceHost がどのように受信メッセージを処理するかについて説明します。  
@@ -37,7 +39,7 @@ ms.lasthandoff: 12/22/2017
   
  ![ワークフロー サービス ホストのメッセージ フロー](../../../../docs/framework/wcf/feature-details/media/wfshmessageflow.gif "WFSHMessageFlow")  
   
- この図には、3 つの異なるエンドポイント (アプリケーション エンドポイント、ワークフロー コントロール エンドポイント、およびワークフローをホストするエンドポイント) が示されています。 アプリケーション エンドポイントは、特定のワークフロー インスタンスにバインドされたメッセージを受信します。 ワークフロー コントロール エンドポイントは、制御操作をリッスンします。 ワークフローをホストするエンドポイントは、<xref:System.ServiceModel.WorkflowServiceHost> がサービス以外のワークフローを読み込んで実行するためのメッセージをリッスンします。 この図が示すように、すべてのメッセージは、WCF ランタイム中に処理されます。  ワークフロー サービス インスタンスの調整は、<xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentInstances%2A> プロパティを使用して実現されます。 このプロパティは、同時ワークフロー サービス インスタンスの数を制限します。 この調整を超過すると、新しいワークフロー サービス インスタンスの追加要求または永続化されたワークフロー インスタンスのアクティブ化の要求がキューに置かれます。 キューに置かれた要求は、新規インスタンスと実行中の永続化されたインスタンスのどちらに対するものであるかにかかわらず、FIFO 順で処理されます。 未処理の例外の処理方法およびアイドル状態のワークフロー サービスのアンロードおよび永続化方法を指定するホスト ポリシー情報が読み込まれます。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]これらのトピックを参照してください[する方法: WorkflowServiceHost での例外動作の構成ワークフロー未処理](../../../../docs/framework/wcf/feature-details/config-workflow-unhandled-exception-workflowservicehost.md)と[する方法: WorkflowServiceHost でのアイドル動作の構成](../../../../docs/framework/wcf/feature-details/how-to-configure-idle-behavior-with-workflowservicehost.md)です。 ワークフロー インスタンスは、ホスト ポリシーに従って永続化され、必要に応じて再度読み込まれます。 ワークフローの永続化の詳細については、次を参照してください:[する方法: WorkflowServiceHost で永続化を構成する](../../../../docs/framework/wcf/feature-details/how-to-configure-persistence-with-workflowservicehost.md)、[実行時間の長いワークフロー サービスを作成する](../../../../docs/framework/wcf/feature-details/creating-a-long-running-workflow-service.md)、および[ワークフローの永続化。](../../../../docs/framework/windows-workflow-foundation/workflow-persistence.md).  
+ この図には、3 つの異なるエンドポイント (アプリケーション エンドポイント、ワークフロー コントロール エンドポイント、およびワークフローをホストするエンドポイント) が示されています。 アプリケーション エンドポイントは、特定のワークフロー インスタンスにバインドされたメッセージを受信します。 ワークフロー コントロール エンドポイントは、制御操作をリッスンします。 ワークフローをホストするエンドポイントは、<xref:System.ServiceModel.WorkflowServiceHost> がサービス以外のワークフローを読み込んで実行するためのメッセージをリッスンします。 この図が示すように、すべてのメッセージは、WCF ランタイム中に処理されます。  ワークフロー サービス インスタンスの調整は、<xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentInstances%2A> プロパティを使用して実現されます。 このプロパティは、同時ワークフロー サービス インスタンスの数を制限します。 この調整を超過すると、新しいワークフロー サービス インスタンスの追加要求または永続化されたワークフロー インスタンスのアクティブ化の要求がキューに置かれます。 キューに置かれた要求は、新規インスタンスと実行中の永続化されたインスタンスのどちらに対するものであるかにかかわらず、FIFO 順で処理されます。 未処理の例外の処理方法およびアイドル状態のワークフロー サービスのアンロードおよび永続化方法を指定するホスト ポリシー情報が読み込まれます。 これらのトピックの詳細については、次を参照してください。[する方法: WorkflowServiceHost での例外動作の構成ワークフロー未処理](../../../../docs/framework/wcf/feature-details/config-workflow-unhandled-exception-workflowservicehost.md)と[する方法: WorkflowServiceHost でのアイドル動作の構成](../../../../docs/framework/wcf/feature-details/how-to-configure-idle-behavior-with-workflowservicehost.md)です。 ワークフロー インスタンスは、ホスト ポリシーに従って永続化され、必要に応じて再度読み込まれます。 ワークフローの永続化の詳細については、次を参照してください:[する方法: WorkflowServiceHost で永続化を構成する](../../../../docs/framework/wcf/feature-details/how-to-configure-persistence-with-workflowservicehost.md)、[実行時間の長いワークフロー サービスを作成する](../../../../docs/framework/wcf/feature-details/creating-a-long-running-workflow-service.md)、および[ワークフローの永続化。](../../../../docs/framework/windows-workflow-foundation/workflow-persistence.md).  
   
  次の図は、WorkflowServiceHost.Open が呼び出されたときの動作を示しています。  
   
@@ -60,7 +62,7 @@ ms.lasthandoff: 12/22/2017
 > [!WARNING]
 >  SQL Server が NamedPipe プロトコルでのみリッスンするように設定されている場合、ワークフロー サービス ホストは開きません。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ワークフロー サービス](../../../../docs/framework/wcf/feature-details/workflow-services.md)  
  [ワークフロー サービスのホスティング](../../../../docs/framework/wcf/feature-details/hosting-workflow-services.md)  
  [ワークフロー コントロール エンドポイント](../../../../docs/framework/wcf/feature-details/workflow-control-endpoint.md)  

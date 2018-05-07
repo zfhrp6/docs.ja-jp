@@ -1,14 +1,6 @@
 ---
-title: "CloseAssembly メソッド"
-ms.custom: 
+title: CloseAssembly メソッド
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - IALink.CloseAssembly
 - CloseAssembly
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: f66a43bc-a5c5-4190-acbe-63fd27640634
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 160ec53440f4ecdb924537c732a367881e75acf9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 68698aab0fd0872c6e6f67e4ec531ab0226e784f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="closeassembly-method"></a>CloseAssembly メソッド
 アセンブリの操作を終了します。 新しいアセンブリまたは非バインド モジュールを開始する前に、このメソッドを呼び出します。  
@@ -53,10 +41,10 @@ HRESULT CloseAssembly(
 ## <a name="return-value"></a>戻り値  
  メソッドが成功した場合は、S_OK を返します。  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  Alink.h が必要です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [IALink インターフェイス](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
  [IALink2 インターフェイス](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)  
  [ALink API](../../../../docs/framework/unmanaged-api/alink/index.md)

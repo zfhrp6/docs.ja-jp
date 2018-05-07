@@ -1,28 +1,19 @@
 ---
-title: "UI オートメーション GridItem コントロール パターンの実装"
-ms.custom: 
+title: UI オートメーション GridItem コントロール パターンの実装
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-bcl
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - control patterns, GridItem
 - UI Automation GridItem control pattern
 - GridItem control pattern
 ms.assetid: bffbae08-fe2a-42fd-ab84-f37187518916
-caps.latest.revision: "15"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: d234ea6f15706a47f6a758528dbe4eda0f3b778a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: bfe7fb8ab64f148d8ca5af0e419ca60690a1acce
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="implementing-the-ui-automation-griditem-control-pattern"></a>UI オートメーション GridItem コントロール パターンの実装
 > [!NOTE]
@@ -40,7 +31,7 @@ ms.lasthandoff: 12/22/2017
   
 -   マージされたセルが報告、<xref:System.Windows.Automation.Provider.IGridItemProvider.Row%2A>と<xref:System.Windows.Automation.Provider.IGridItemProvider.Column%2A>プロパティは、UI オートメーション プロバイダーによって定義された、基になるアンカー セルに基づきます。 通常、これは、最上位の左端の行または列です。  
   
--   <xref:System.Windows.Automation.Provider.IGridItemProvider>グリッドの結合またはセルの分割などのアクティブな操作を提供しません。  
+-   <xref:System.Windows.Automation.Provider.IGridItemProvider> グリッドの結合またはセルの分割などのアクティブな操作を提供しません。  
   
 -   実装するコントロール<xref:System.Windows.Automation.Provider.IGridItemProvider>通常走査することができます (つまり、UI オートメーション クライアントが隣接するコントロールに移動ことができます)、キーボードを使用しています。  
   
@@ -48,7 +39,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="required-members-for-igriditemprovider"></a>IGridItemProvider の必須メンバー  
  <xref:System.Windows.Automation.Provider.IGridItemProvider> の実装には、次のプロパティとメソッドが必要です。  
   
-|必須メンバー|メンバーの型|ノート|  
+|必須メンバー|メンバーの型|メモ|  
 |----------------------|-----------------|-----------|  
 |<xref:System.Windows.Automation.Provider.IGridItemProvider.Row%2A>|プロパティ|なし|  
 |<xref:System.Windows.Automation.Provider.IGridItemProvider.Column%2A>|プロパティ|なし|  
@@ -62,7 +53,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="exceptions"></a>例外  
  このコントロール パターンに関連付けられた例外はありません。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [UI Automation コントロール パターンの概要](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)  
  [UI オートメーション プロバイダーでのコントロール パターンのサポート](../../../docs/framework/ui-automation/support-control-patterns-in-a-ui-automation-provider.md)  
  [クライアントの UI オートメーション コントロール パターン](../../../docs/framework/ui-automation/ui-automation-control-patterns-for-clients.md)  

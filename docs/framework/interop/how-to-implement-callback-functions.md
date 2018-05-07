@@ -1,14 +1,6 @@
 ---
-title: "方法: コールバック関数を実装する"
-ms.custom: 
+title: '方法: コールバック関数を実装する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,17 +8,13 @@ dev_langs:
 helpviewer_keywords:
 - callback function, implementing
 ms.assetid: e55b3712-b9ea-4453-bd9a-ad5cfa2f6bfa
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 819861f9bf13f9af3fab7a1ea7ffc697c1d98926
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e081347129ce367cf6b46ca29c07a016bb64ab95
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-implement-callback-functions"></a>方法: コールバック関数を実装する
 次の手順と例は、マネージ アプリケーションがプラットフォーム呼び出しを使用して、ローカル コンピューター上の各ウィンドウのハンドル値を出力する方法を示しています。 具体的には、この手順と例では **EnumWindows** 関数を使用してウィンドウのリストをステップスルーし、(CallBack という名前の) マネージ コールバック関数を使用してウィンドウ ハンドルの値を出力します。  
@@ -140,6 +128,6 @@ int main()
 }  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [コールバック関数](../../../docs/framework/interop/callback-functions.md)  
  [DLL 関数の呼び出し](../../../docs/framework/interop/calling-a-dll-function.md)

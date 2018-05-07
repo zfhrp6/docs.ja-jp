@@ -1,29 +1,15 @@
 ---
 title: データ バインディング
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-ado
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: cbec8b02-a1e8-4ae8-a83b-bb5190413ac5
-caps.latest.revision: 2
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload:
-- dotnet
-ms.openlocfilehash: 8308700a35bdd2aec2d66f4edd8a89c128e07d7c
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 440a7eb5af425a3cea46de142e4a7d41f95559c1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="data-binding"></a>データ バインディング
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] グリッド コントロールなどのコモン コントロールにバインドをサポートします。 具体的には、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]データ グリッドへのバインドの表示と更新の両方に関して、マスター/詳細バインディングを処理するための基本的なパターンを定義します。  

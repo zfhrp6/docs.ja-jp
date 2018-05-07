@@ -1,24 +1,12 @@
 ---
-title: "データ サービス コンテキストの管理 (WCF Data Services)"
-ms.custom: 
+title: データ サービス コンテキストの管理 (WCF Data Services)
 ms.date: 03/30/2017
-ms.prod: .net-framework-oob
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 15b19d09-7de7-4638-9556-6ef396cc45ec
-caps.latest.revision: "6"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c993a4f09a7187b45331f6beb71a9637da87d20f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9b2b0bb709081ca7b0b2a1367f10e1f7a08c98c9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="managing-the-data-service-context-wcf-data-services"></a>データ サービス コンテキストの管理 (WCF Data Services)
 <xref:System.Data.Services.Client.DataServiceContext> クラスは、特定のデータ サービスに対してサポートされている操作をカプセル化します。 [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] サービスはステートレスですが、コンテキストはステートレスではありません。 したがって、使用することができます、<xref:System.Data.Services.Client.DataServiceContext>変更管理などの機能をサポートするために、データ サービスとのやり取りの間でクライアントの状態を維持するクラス。 このクラスは、ID の管理と変更の追跡も行います。  
@@ -29,7 +17,7 @@ ms.lasthandoff: 12/22/2017
  既定では、クライアントは <xref:System.Data.Services.Client.DataServiceContext> によってまだ追跡されていないエンティティのオブジェクトに応答フィードのエントリを具体化するだけです。 これは、既にキャッシュ内にあるオブジェクトに対する変更は上書きされないことを意味します。 この動作は、クエリおよび読み込み操作に <xref:System.Data.Services.Client.MergeOption> 値を指定することによって制御されます。 このオプションを指定するには、<xref:System.Data.Services.Client.DataServiceContext.MergeOption%2A> の <xref:System.Data.Services.Client.DataServiceContext> プロパティを設定します。 既定のマージ オプションの値は <xref:System.Data.Services.Client.MergeOption.AppendOnly> です。 この既定値を設定した場合、まだ追跡されていないエンティティのオブジェクトのみが具体化されます。これは、既存のオブジェクトが上書きされないことを意味します。 クライアントのオブジェクトに対する変更がデータ サービスからの更新によって上書きされないようにするもう 1 つの方法は、<xref:System.Data.Services.Client.MergeOption.PreserveChanges> を指定する方法です。 <xref:System.Data.Services.Client.MergeOption.OverwriteChanges> を指定した場合、クライアントのオブジェクトの値は、既に変更が加えられていても、応答フィードのエントリの最新の値によって置換されます。 <xref:System.Data.Services.Client.MergeOption.NoTracking> マージ オプションを使用する場合、<xref:System.Data.Services.Client.DataServiceContext> はクライアント オブジェクトに加えられた変更をデータ サービスに送信できません。 このオプションを使用すると、変更は常にデータ サービスの値によって上書きされます。  
   
 ## <a name="managing-concurrency"></a>同時実行の管理  
- [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]により更新の競合を検出するためにデータ サービスでは、オプティミスティック同時実行制御をサポートしています。 データ サービス プロバイダーは、データ サービスで同時実行トークンを使用してエンティティへの変更をチェックするように構成できます。 このトークンには、リソースが変更されているかどうかを決定するためにデータ サービスによって検証されるエンティティ型の 1 つ以上のプロパティが含まれています。 要求と、データ サービスからの応答の eTag ヘッダーに含まれている、同時実行トークンはによって管理されている、[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]クライアント。 詳細については、次を参照してください。[データ サービスの更新](../../../../docs/framework/data/wcf/updating-the-data-service-wcf-data-services.md)です。  
+ [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] により更新の競合を検出するためにデータ サービスでは、オプティミスティック同時実行制御をサポートしています。 データ サービス プロバイダーは、データ サービスで同時実行トークンを使用してエンティティへの変更をチェックするように構成できます。 このトークンには、リソースが変更されているかどうかを決定するためにデータ サービスによって検証されるエンティティ型の 1 つ以上のプロパティが含まれています。 要求と、データ サービスからの応答の eTag ヘッダーに含まれている、同時実行トークンはによって管理されている、[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]クライアント。 詳細については、次を参照してください。[データ サービスの更新](../../../../docs/framework/data/wcf/updating-the-data-service-wcf-data-services.md)です。  
   
  <xref:System.Data.Services.Client.DataServiceContext> は、<xref:System.Data.Services.Client.DataServiceContext.AddObject%2A>、<xref:System.Data.Services.Client.DataServiceContext.UpdateObject%2A>、および <xref:System.Data.Services.Client.DataServiceContext.DeleteObject%2A> を使用して手動で報告しているか、または <xref:System.Data.Services.Client.DataServiceCollection%601> によって報告されているオブジェクトへの変更を追跡します。 <xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A> メソッドを呼び出すと、クライアントはデータ サービスに変更を送り返します。 <xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A> は、クライアントでのデータ変更がデータ サービスでの変更と競合する場合に失敗する可能性があります。 このような状況が発生した場合、エンティティ リソースに対してクエリを再度実行し、更新データを受信する必要があります。 データ サービスの変更を上書きするには、<xref:System.Data.Services.Client.MergeOption.PreserveChanges> マージ オプションを使用してクエリを実行します。 <xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A> を再度呼び出すと、データ サービスのリソースに対してその他の変更がまだ行われていない場合に限り、クライアントに保存されている変更がデータ サービスに永続化されます。  
   
@@ -47,7 +35,7 @@ ms.lasthandoff: 12/22/2017
 ### <a name="post-tunneling"></a>POST トンネリング  
  既定では、クライアント ライブラリは、作成、読み取り、更新、および削除要求を、POST、GET、PUT/MERGE/PATCH、および DELETE の対応する HTTP メソッドを使用して、[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] サービスに送信します。 これは、Representational State Transfer (REST) の基本原則に沿った動作です。 ただし、すべての Web サーバー実装で HTTP メソッドの完全なセットがサポートされるとは限りません。 場合によっては、サポートされているメソッドが GET と POST のみに制限されていることもあります。 このような状況は、ファイアウォールのような仲介物が特定のメソッドの要求をブロックしている場合に発生します。 GET メソッドと POST メソッドは一般的にサポートされているメソッドであるため、[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] では、サポートされていない HTTP メソッドを POST 要求を使用して実行する方法を規定しています。 呼ばれる*メソッド トンネリング*または*POST トンネリング*、これにより、クライアント ユーザー設定で指定された実際のメソッドを POST 要求を送信する`X-HTTP-Method`ヘッダー。 要求の POST トンネリングを有効にするには、<xref:System.Data.Services.Client.DataServiceContext.UsePostTunneling%2A> インスタンスの <xref:System.Data.Services.Client.DataServiceContext> プロパティを `true` に設定します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [WCF Data Services クライアント ライブラリ](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)  
  [データ サービスの更新](../../../../docs/framework/data/wcf/updating-the-data-service-wcf-data-services.md)  
  [非同期操作](../../../../docs/framework/data/wcf/asynchronous-operations-wcf-data-services.md)  

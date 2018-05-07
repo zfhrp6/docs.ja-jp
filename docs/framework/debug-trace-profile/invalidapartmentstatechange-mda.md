@@ -1,13 +1,6 @@
 ---
 title: invalidApartmentStateChange MDA
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - MDAs (managed debugging assistants), invalid apartment state
 - managed debugging assistants (MDAs), invalid apartment state
@@ -18,16 +11,13 @@ helpviewer_keywords:
 - threading [.NET Framework], managed debugging assistants
 - COM apartment states
 ms.assetid: e56fb9df-5286-4be7-b313-540c4d876cd7
-caps.latest.revision: "12"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 654e950aab0e8ae2929a62e035ffc1252c5717d7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 864367e71f3ed05af87931b2a87f576df42dcbf5
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="invalidapartmentstatechange-mda"></a>invalidApartmentStateChange MDA
 `invalidApartmentStateChange` マネージ デバッグ アシスタント (MDS) は、次の 2 つのどちらかの問題によってアクティブ化されます。  
@@ -36,7 +26,7 @@ ms.lasthandoff: 12/22/2017
   
 -   スレッドの COM アパートメント状態が予期せず変更された。  
   
-## <a name="symptoms"></a>症状  
+## <a name="symptoms"></a>現象  
   
 -   スレッドの COM アパートメント状態が要求されたものと異なります。 これが原因で、現在のモデルと異なるスレッド処理モデルの COM コンポーネントがプロキシで使用される場合があります。 これにより、アパートメント間のマーシャリング用に設定されていないインターフェイスを介して COM オブジェクトが呼び出されるときに <xref:System.InvalidCastException> がスローされる場合があります。  
   
@@ -86,7 +76,7 @@ namespace ApartmentStateMDA
 }  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Runtime.InteropServices.MarshalAsAttribute>  
  [マネージ デバッグ アシスタントによるエラーの診断](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)  
  [相互運用マーシャリング](../../../docs/framework/interop/interop-marshaling.md)

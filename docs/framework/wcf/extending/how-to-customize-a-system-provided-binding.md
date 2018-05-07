@@ -1,32 +1,18 @@
 ---
 title: '方法 : システム指定のバインディングをカスタマイズする'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: f8b97862-e8bb-470d-8b96-07733c21fe26
-caps.latest.revision: 10
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 1d70a4c4234047e7410ae4f631e48595a0859f37
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
-ms.translationtype: MT
+ms.openlocfilehash: 40efa49836561351dc14c2cb49d906a6d344a5bc
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-customize-a-system-provided-binding"></a>方法 : システム指定のバインディングをカスタマイズする
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] には、システム指定のバインディングがいくつか含まれています。これらのバインディングを使用して、基になるバインド要素の一部のプロパティを構成できますが、すべてのプロパティを構成できるとは限りません。 ここでは、バインド要素のプロパティを設定してカスタム バインドを作成する方法を示します。  
+Windows Communication Foundation (WCF) には、すべてのプロパティでは、基になるバインド要素のプロパティの一部を構成することのいくつかのシステム指定のバインディングが含まれています。 ここでは、バインド要素のプロパティを設定してカスタム バインドを作成する方法を示します。  
   
  直接作成し、システム指定のバインディングを使用せずにバインディング要素を構成する方法の詳細については、次を参照してください。[カスタム バインディング](../../../../docs/framework/wcf/extending/custom-bindings.md)です。  
   

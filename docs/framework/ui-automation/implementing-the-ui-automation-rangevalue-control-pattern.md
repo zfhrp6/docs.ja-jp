@@ -1,28 +1,19 @@
 ---
-title: "UI オートメーション RangeValue コントロール パターンの実装"
-ms.custom: 
+title: UI オートメーション RangeValue コントロール パターンの実装
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-bcl
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - control patterns, Range Value
 - Range Value control pattern
 - UI Automation, Range Value control pattern
 ms.assetid: 225feaa4-918e-418b-938e-7389338d0a69
-caps.latest.revision: "19"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: a53f5f802d451d7575188d4687b6d88f96ec64fb
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 219f460906d2892ae6cd76d13a2b17378e02b9b7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="implementing-the-ui-automation-rangevalue-control-pattern"></a>UI オートメーション RangeValue コントロール パターンの実装
 > [!NOTE]
@@ -46,7 +37,7 @@ ms.lasthandoff: 12/22/2017
 <a name="Required_Members_for_the_IRangeValueProvider"></a>   
 ## <a name="required-members-for-irangevalueprovider"></a>IRangeValueProvider の必須メンバー  
   
-|必須メンバー|メンバーの型|ノート|  
+|必須メンバー|メンバーの型|メモ|  
 |---------------------|-----------------|-----------|  
 |<xref:System.Windows.Automation.RangeValuePattern.IsReadOnlyProperty>|プロパティ|なし|  
 |<xref:System.Windows.Automation.RangeValuePattern.ValueProperty>|プロパティ|なし|  
@@ -62,11 +53,11 @@ ms.lasthandoff: 12/22/2017
 ## <a name="exceptions"></a>例外  
  プロバイダーは、次の例外をスローする必要があります。  
   
-|例外の種類|状態|  
+|例外の種類|条件|  
 |--------------------|---------------|  
 |<xref:System.ArgumentOutOfRangeException>|<xref:System.Windows.Automation.RangeValuePattern.SetValue%2A> は、 <xref:System.Windows.Automation.RangeValuePattern.MaximumProperty> より大きい値または <xref:System.Windows.Automation.RangeValuePattern.MinimumProperty>より小さい値で呼び出されます。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [UI Automation コントロール パターンの概要](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)  
  [UI オートメーション プロバイダーでのコントロール パターンのサポート](../../../docs/framework/ui-automation/support-control-patterns-in-a-ui-automation-provider.md)  
  [クライアントの UI オートメーション コントロール パターン](../../../docs/framework/ui-automation/ui-automation-control-patterns-for-clients.md)  

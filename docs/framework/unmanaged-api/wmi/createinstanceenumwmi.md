@@ -1,11 +1,7 @@
 ---
-title: "CreateInstanceEnumWmi 関数 (アンマネージ API リファレンス)"
-description: "CreateInstanceEnumWmi 関数では、選択条件を満たす、指定されたクラスのインスタンスを含む列挙子を返します。"
+title: CreateInstanceEnumWmi 関数 (アンマネージ API リファレンス)
+description: CreateInstanceEnumWmi 関数では、選択条件を満たす、指定されたクラスのインスタンスを含む列挙子を返します。
 ms.date: 11/06/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: reference
 api_name:
 - CreateInstanceEnumWmi
 api_location:
@@ -20,14 +16,11 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: b796771b07dee28470d37ca3e4292c0a244e056b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 1f9297d34b01c03075db67bd904a81e589bfcc10
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="createinstanceenumwmi-function"></a>CreateInstanceEnumWmi 関数
 指定された選択条件を満たす指定したクラスのインスタンスを返す列挙子を返します。 
@@ -79,7 +72,7 @@ HRESULT CreateInstanceEnumWmi (
 `authLevel`  
 [in]承認レベル。
 
-`impLevel`[in]権限借用レベルです。
+`impLevel` [in]権限借用レベルです。
 
 `pCurrentNamespace`   
 [in]ポインター、 [IWbemServices](https://msdn.microsoft.com/library/aa392093(v=vs.85).aspx)を現在の名前空間を表すオブジェクト。
@@ -116,12 +109,12 @@ HRESULT CreateInstanceEnumWmi (
 
 呼び出して追加のエラー情報を取得するには、関数呼び出しに失敗した場合、 [GetErrorInfo](geterrorinfo.md)関数。
 
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** WMINet_Utils.idl  
   
- **.NET framework のバージョン:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **.NET framework のバージョン:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>関連項目  
 [WMI およびパフォーマンス カウンター (アンマネージ API リファレンス)](index.md)

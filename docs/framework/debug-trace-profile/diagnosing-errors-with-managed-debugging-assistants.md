@@ -1,14 +1,6 @@
 ---
-title: "マネージ デバッグ アシスタントによるエラーの診断"
-ms.custom: 
+title: マネージ デバッグ アシスタントによるエラーの診断
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - EHMDA
 helpviewer_keywords:
@@ -37,17 +29,13 @@ helpviewer_keywords:
 - output, managed debugging assistants
 - errors [.NET Framework], managed debugging assistants
 ms.assetid: 76994ee6-9fa9-4059-b813-26578d24427c
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 12a96068412f05d48b8b006385c66f3efbbf9870
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 16a039a5edb0e1023551f97deefbf7874a19638b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="diagnosing-errors-with-managed-debugging-assistants"></a>マネージ デバッグ アシスタントによるエラーの診断
 マネージ デバッグ アシスタント (MDA) は、共通言語ランタイム (CLR: Common Language Runtime) と連携してランタイム状態に関する情報を提供するデバッグ支援ツールです。 MDA は、これ以外の方法ではトラップできないランタイム イベントに関する情報メッセージを生成します。 MDA を使用すると、マネージ コードからアンマネージ コードへの遷移時に発生する、検出が難しいアプリケーション バグを分離できます。 すべての MDA を有効または無効にするには、Windows レジストリにキーを追加するか、環境変数を設定します。 特定の MDA を有効にするには、アプリケーション構成設定を使用します。 一部の MDA については、アプリケーションの構成ファイルで追加の構成設定を個別に設定できます。 この構成ファイルはランタイムの読み込み時に解析されるため、MDA は、マネージ アプリケーションが起動する前に有効にする必要があります。 MDA は、既に起動しているアプリケーションに対して有効にできません。  
@@ -192,5 +180,5 @@ Windows Registry Editor Version 5.00
   
  `A call to PInvoke function 'MDATest!MDATest.Program::StdCall' has unbalanced the stack. This is likely because the managed PInvoke signature does not match the unmanaged target signature. Check that the calling convention and parameters of the PInvoke signature match the target unmanaged signature.`  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [デバッグ、トレース、およびプロファイリング](../../../docs/framework/debug-trace-profile/index.md)

@@ -1,24 +1,12 @@
 ---
-title: "SQL Server Express のセキュリティ"
-ms.custom: 
+title: SQL Server Express のセキュリティ
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: cf9cf6d9-4b05-43e9-ac7b-6cefbfcd6d4e
-caps.latest.revision: "6"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 6593e075d1a9d672f414cfa0cd8652f760b084e1
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 7bc0fdf218f8fca1f904505c552df6986c47e4de
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="sql-server-express-security"></a>SQL Server Express のセキュリティ
 Microsoft SQL Server Express Edition (SQL Server Express) は Microsoft SQL Server をベースとしており、同データベース エンジンの多くの機能をサポートしています。 必須ではない機能やネットワーク接続は、既定では無効にされています。 これは悪意のあるユーザーに攻撃の隙をできるだけ与えないようにするための配慮です。  
@@ -48,7 +36,7 @@ Microsoft SQL Server Express Edition (SQL Server Express) は Microsoft SQL Serv
 |[管理者以外のユーザー インスタンス](http://msdn.microsoft.com/library/ms143684.aspx)SQL Server オンライン ブック|ユーザー インスタンスの作成方法および配置方法について説明します。|  
 |[SQL Server Express ユーザー インスタンス](../../../../../docs/framework/data/adonet/sql/sql-server-express-user-instances.md)|ADO.NET アプリケーションにおけるユーザー インスタンスの機能について説明します。 ユーザー インスタンスを有効にする方法、<xref:System.Data.SqlClient.SqlConnection> を使ってユーザー インスタンスに接続する方法、ユーザー インスタンスの有効期間、ユーザー インスタンスのシナリオについて情報を提供します。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [SQL Server のセキュリティ](../../../../../docs/framework/data/adonet/sql/sql-server-security.md)  
  [SQL Server Express ユーザー インスタンス](../../../../../docs/framework/data/adonet/sql/sql-server-express-user-instances.md)  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

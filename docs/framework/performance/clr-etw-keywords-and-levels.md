@@ -1,29 +1,19 @@
 ---
-title: "CLR ETW キーワードおよびレベル"
-ms.custom: 
+title: CLR ETW キーワードおよびレベル
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - CLR ETW keywords
 - CLR ETW levels
 - ETW, CLR keywords
 - ETW, CLR levels
 ms.assetid: fdf5856d-516b-4042-849d-911c4518a6cb
-caps.latest.revision: "15"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 72775d4cb478b6d9c9d2e65119c63f8a34ae47d1
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8332eba909c3ebe475e3f364f81a676733e4e3d7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="clr-etw-keywords-and-levels"></a>CLR ETW キーワードおよびレベル
 <a name="top"></a> Windows (ETW) イベントのイベント トレースは、カテゴリとレベルによってフィルター処理できます。 イベントの [CLR ETW キーワード](#keywords) は、イベントをカテゴリ別にフィルタ処理できます。これらはランタイム プロバイダーとランダウン プロバイダー用に組み合わせて使用します。 [イベント レベル](#levels) は、フラグによって識別されます。  
@@ -46,7 +36,7 @@ ms.lasthandoff: 12/22/2017
 ### <a name="clr-etw-runtime-keywords"></a>CLR ETW ランタイム キーワード  
  CLR ETW のランタイム キーワード、その値、およびその用途を次の表に示します。  
   
-|ランタイム キーワード名|値|目的|  
+|ランタイム キーワード名|[値]|目的|  
 |--------------------------|-----------|-------------|  
 |`GCKeyword`|0x00000001|[ガベージ コレクション イベント](../../../docs/framework/performance/garbage-collection-etw-events.md)のコレクションを有効にします。|  
 |`LoaderKeyword`|0x00000008|[ローダー イベント](../../../docs/framework/performance/loader-etw-events.md)のコレクションを有効にします。|  
@@ -71,7 +61,7 @@ ms.lasthandoff: 12/22/2017
 ### <a name="clr-etw-rundown-keywords"></a>CLR ETW ランダウン キーワード  
  CLR ETW ランダウン キーワード、その値、およびその用途を次の表に示します。  
   
-|ランダウン キーワード名|値|目的|  
+|ランダウン キーワード名|[値]|目的|  
 |--------------------------|-----------|-------------|  
 |`LoaderRundownKeyword`|0x00000008|`StartRundownKeyword` および `EndRundownKeyword`と一緒に使用する場合のローダー イベントのコレクションを有効にします。|  
 |`JitRundownKeyword`|0x00000010|`DCStart` および `DCEnd` と一緒に使用する場合の、メソッド `StartRundownKeyword` と JIT コンパイルされたメソッドの `EndRundownKeyword`イベントのコレクションを有効にします。|  
@@ -131,7 +121,7 @@ ms.lasthandoff: 12/22/2017
   
  0x0 - LogAlways  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [CLR ETW プロバイダー](../../../docs/framework/performance/clr-etw-providers.md)  
  [CLR ETW イベント](../../../docs/framework/performance/clr-etw-events.md)  
  [共通言語ランタイムの ETW イベント](../../../docs/framework/performance/etw-events-in-the-common-language-runtime.md)

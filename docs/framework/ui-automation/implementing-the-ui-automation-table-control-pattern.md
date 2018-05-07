@@ -1,28 +1,19 @@
 ---
-title: "UI オートメーション Table コントロール パターンの実装"
-ms.custom: 
+title: UI オートメーション Table コントロール パターンの実装
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-bcl
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - UI Automation, Table control pattern
 - control patterns, Table
 - TableControl pattern
 ms.assetid: 880cd85c-aa8c-4fb5-9369-45491d34bb78
-caps.latest.revision: "19"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 1e0b3c09948b53363888ae133cd0c4d9f9ae8f05
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 955d9f005a45ab805012dd43cbef27877a9dfdb4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="implementing-the-ui-automation-table-control-pattern"></a>UI オートメーション Table コントロール パターンの実装
 > [!NOTE]
@@ -57,7 +48,7 @@ RowOrColumnMajor プロパティがあいまいなテーブルの例
 ## <a name="required-members-for-itableprovider"></a>ITableProvider の必須メンバー  
  ITableProvider インターフェイスには、次のプロパティとメソッドが必要です。  
   
-|必須メンバー|メンバーの型|ノート|  
+|必須メンバー|メンバーの型|メモ|  
 |----------------------|-----------------|-----------|  
 |<xref:System.Windows.Automation.Provider.ITableProvider.RowOrColumnMajor%2A>|プロパティ|なし|  
 |<xref:System.Windows.Automation.Provider.ITableProvider.GetColumnHeaders%2A>|メソッド|なし|  
@@ -69,7 +60,7 @@ RowOrColumnMajor プロパティがあいまいなテーブルの例
 ## <a name="exceptions"></a>例外  
  このコントロール パターンに関連付けられた例外はありません。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [UI Automation コントロール パターンの概要](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)  
  [UI オートメーション プロバイダーでのコントロール パターンのサポート](../../../docs/framework/ui-automation/support-control-patterns-in-a-ui-automation-provider.md)  
  [クライアントの UI オートメーション コントロール パターン](../../../docs/framework/ui-automation/ui-automation-control-patterns-for-clients.md)  

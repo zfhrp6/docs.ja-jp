@@ -1,23 +1,12 @@
 ---
-title: "単一フェーズ コミットおよび昇格可能単一フェーズ通知を使用した最適化"
-ms.custom: 
+title: 単一フェーズ コミットおよび昇格可能単一フェーズ通知を使用した最適化
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 57beaf1a-fb4d-441a-ab1d-bc0c14ce7899
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 6f85dabc8a447db13173a672db37b327ba4a9fe6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 093dfb793d5a8c8dc59eaabab09f2e5b6c81c352
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="optimization-using-single-phase-commit-and-promotable-single-phase-notification"></a>単一フェーズ コミットおよび昇格可能単一フェーズ通知を使用した最適化
 ここでは、パフォーマンスを最適化するために <xref:System.Transactions> インフラストラクチャに用意されているメカニズムについて説明します。  
@@ -70,6 +59,6 @@ ms.lasthandoff: 12/22/2017
   
  1 つだけの揮発性参加リストとなしの永続参加リストがある、揮発性参加リストは SPC という通知を受け取ります。  任意の揮発性参加リストと 1 つだけの永続参加リストがある場合は、揮発性参加リストは、2 pc を受信します。 完了すると、永続参加リストが SPC を受信します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [トランザクションの参加要素としてのリソースの参加](../../../../docs/framework/data/transactions/enlisting-resources-as-participants-in-a-transaction.md)  
  [単一フェースおよび複数フェーズでのトランザクションのコミット](../../../../docs/framework/data/transactions/committing-a-transaction-in-single-phase-and-multi-phase.md)

@@ -1,14 +1,6 @@
 ---
-title: "CorSymVarFlag 列挙体"
-ms.custom: 
+title: CorSymVarFlag 列挙体
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - CorSymVarFlag
 api_location:
@@ -22,17 +14,13 @@ helpviewer_keywords:
 ms.assetid: c3f7d307-4047-4f9a-be8c-f152fca42fd0
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: b548a66f471eb3641da7407ed14d107c6b4fec8c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a6a9c5ff91989fc1ad7da4e23df0e80d9d74ec7c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="corsymvarflag-enumeration"></a>CorSymVarFlag 列挙体
 変数がコンパイラによって生成されたかどうかを示します。  
@@ -52,8 +40,8 @@ typedef enum CorSymVarFlag
 |------------|-----------------|  
 |`VAR_IS_COMP_GEN`|所定の変数がコンパイラによって生成されたことを示します。|  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** CorSym.idl、CorSym.h  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [シンボル ストア診断列挙型](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-enumerations.md)

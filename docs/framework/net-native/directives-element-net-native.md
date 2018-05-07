@@ -1,29 +1,19 @@
 ---
-title: "&lt;Directives&gt; 要素 (.NET ネイティブ)"
-ms.custom: 
+title: '&lt;Directives&gt; 要素 (.NET ネイティブ)'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 444846f3-48d5-4341-a43e-69f7221389eb
-caps.latest.revision: "9"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 4ca27422889fd33071a02c3a4b6fea0a6ba7eb0b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: bd571255f924c9f3878c00a2bc01397d63e6d777
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ltdirectivesgt-element-net-native"></a>&lt;Directives&gt; 要素 (.NET ネイティブ)
 [!INCLUDE[net_native](../../../includes/net-native-md.md)]のすべてのランタイム ディレクティブ ファイルのルート要素です。  
   
- **\<Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">**  
+ **\<ディレクティブ xmlns ="http://schemas.microsoft.com/netfx/2013/01/metadata">**  
   
 ## <a name="syntax"></a>構文  
   
@@ -37,7 +27,7 @@ ms.lasthandoff: 12/22/2017
   
 |属性|説明|  
 |---------------|-----------------|  
-|`xmlns`|XML 名前空間。 値は常に **"http://schemas.microsoft.com/netfx/2013/01/metadata"** です。|  
+|`xmlns`|XML 名前空間。 その値は常に **"http://schemas.microsoft.com/netfx/2013/01/metadata"** です。|  
   
 ## <a name="child-elements"></a>子要素  
   
@@ -51,6 +41,6 @@ ms.lasthandoff: 12/22/2017
   
  `<Directives>` 要素には、0 または 1 個の [\<Application>](../../../docs/framework/net-native/application-element-net-native.md) 要素と、0 個以上の [\<Library>](../../../docs/framework/net-native/library-element-net-native.md) 要素を含めることができます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ランタイム ディレクティブ (rd.xml) 構成ファイル リファレンス](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)  
  [ランタイム ディレクティブ要素](../../../docs/framework/net-native/runtime-directive-elements.md)

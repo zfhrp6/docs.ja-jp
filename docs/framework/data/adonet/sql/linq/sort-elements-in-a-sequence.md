@@ -1,33 +1,21 @@
 ---
-title: "シーケンスの要素の並べ替え"
-ms.custom: 
+title: シーケンスの要素の並べ替え
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: d59b93a9-50c8-4770-a114-d902f6a0ea76
-caps.latest.revision: "2"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: f296565beb284095dce2520cd545f8af61dc6b48
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 00c7a7a62890aced4c480e2653084c0b7cfe7f45
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="sort-elements-in-a-sequence"></a>シーケンスの要素の並べ替え
 1 つ以上のキーに従ってシーケンスを並べ替えるには、<xref:System.Linq.Enumerable.OrderBy%2A> 演算子を使用します。  
   
 > [!NOTE]
->  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]などの単純なのプリミティブ型による順序付けをサポートするように設計された`string`、`int`のようにします。 匿名型のように複数の値を持つ複雑なクラスでの順序付けはサポートされていません。 また、`byte` データ型もサポートされていません。  
+>  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] などの単純なのプリミティブ型による順序付けをサポートするように設計された`string`、`int`のようにします。 匿名型のように複数の値を持つ複雑なクラスでの順序付けはサポートされていません。 また、`byte` データ型もサポートされていません。  
   
 ## <a name="example"></a>例  
  次の例は、`Employees` を入社日の順に並べ替えます。  
@@ -99,6 +87,6 @@ ms.lasthandoff: 01/17/2018
   
  `Carnarvon Tigers`  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [クエリの例](../../../../../../docs/framework/data/adonet/sql/linq/query-examples.md)  
  [サンプル データベースのダウンロード](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)

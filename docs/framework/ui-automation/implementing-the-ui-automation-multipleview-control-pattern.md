@@ -1,28 +1,19 @@
 ---
-title: "UI オートメーション MultipleView コントロール パターンの実装"
-ms.custom: 
+title: UI オートメーション MultipleView コントロール パターンの実装
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-bcl
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - UI Automation, MultipleView control pattern
 - MultipleView control pattern
 - control patterns, MultipleView
 ms.assetid: 5bf1b248-ffee-48c8-9613-0b134bbe9f6a
-caps.latest.revision: "15"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 5ff185ddb145d51fe8bc32ac10f3a45b57ec954c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 777f529b3b925a965b24cf1a4b38b9d3b9adae7b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="implementing-the-ui-automation-multipleview-control-pattern"></a>UI オートメーション MultipleView コントロール パターンの実装
 > [!NOTE]
@@ -50,7 +41,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="required-members-for-imultipleviewprovider"></a>IMultipleViewProvider の必須メンバー  
  IMultipleViewProvider の実装には、次のプロパティとメソッドが必要です。  
   
-|必須メンバー|メンバーの型|ノート|  
+|必須メンバー|メンバーの型|メモ|  
 |----------------------|-----------------|-----------|  
 |<xref:System.Windows.Automation.Provider.IMultipleViewProvider.CurrentView%2A>|プロパティ|なし|  
 |<xref:System.Windows.Automation.Provider.IMultipleViewProvider.GetSupportedViews%2A>|メソッド|なし|  
@@ -63,11 +54,11 @@ ms.lasthandoff: 12/22/2017
 ## <a name="exceptions"></a>例外  
  プロバイダーは、次の例外をスローする必要があります。  
   
-|例外の種類|状態|  
+|例外の種類|条件|  
 |--------------------|---------------|  
 |<xref:System.ArgumentException>|<xref:System.Windows.Automation.Provider.IMultipleViewProvider.SetCurrentView%2A> または <xref:System.Windows.Automation.Provider.IMultipleViewProvider.GetViewName%2A> が、サポートされているビュー コレクションのメンバーではないパラメーターで呼び出された場合。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [UI Automation コントロール パターンの概要](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)  
  [UI オートメーション プロバイダーでのコントロール パターンのサポート](../../../docs/framework/ui-automation/support-control-patterns-in-a-ui-automation-provider.md)  
  [クライアントの UI オートメーション コントロール パターン](../../../docs/framework/ui-automation/ui-automation-control-patterns-for-clients.md)  

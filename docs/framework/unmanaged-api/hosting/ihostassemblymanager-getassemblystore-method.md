@@ -1,14 +1,6 @@
 ---
-title: "IHostAssemblyManager::GetAssemblyStore メソッド"
-ms.custom: 
+title: IHostAssemblyManager::GetAssemblyStore メソッド
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - IHostAssemblyManager.GetAssemblyStore
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: d0f74593-9bb1-4a11-8096-e29734b20698
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 347947622601475147663b8838bef5f36a1f7e32
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: efad3c6e566ab35a8ba4fbbacf09931e844ce8ef
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ihostassemblymanagergetassemblystore-method"></a>IHostAssemblyManager::GetAssemblyStore メソッド
 インターフェイス ポインターを取得、 [IHostAssemblyStore](../../../../docs/framework/unmanaged-api/hosting/ihostassemblystore-interface.md)ホストによって読み込まれるアセンブリの一覧を表すです。  
@@ -54,7 +42,7 @@ HRESULT GetAssemblyStore (
   
 |HRESULT|説明|  
 |-------------|-----------------|  
-|S_OK|`GetAssemblyStore`正常に返されます。|  
+|S_OK|`GetAssemblyStore` 正常に返されます。|  
 |HOST_E_CLRNOTAVAILABLE|共通言語ランタイム (CLR) が、プロセスに読み込まれていませんまたは CLR は、状態をマネージ コードを実行またはできないの呼び出しは正常に処理します。|  
 |HOST_E_TIMEOUT|呼び出しがタイムアウトしました。|  
 |HOST_E_NOT_OWNER|呼び出し元は、ロックを所有していません。|  
@@ -63,20 +51,20 @@ HRESULT GetAssemblyStore (
 |E_NOINTERFACE|ホストがの実装を提供していない`IHostAssemblyStore`です。|  
   
 ## <a name="remarks"></a>コメント  
- `IHostAssemblyStore`ホストがアセンブリと CLR とは無関係にモジュールをバインドできるようにするメソッドを提供します。 ホストは、通常、ファイル システム以外の形式から読み込まれるアセンブリを許可するアセンブリ ストアを提供します。  
+ `IHostAssemblyStore` ホストがアセンブリと CLR とは無関係にモジュールをバインドできるようにするメソッドを提供します。 ホストは、通常、ファイル システム以外の形式から読み込まれるアセンブリを許可するアセンブリ ストアを提供します。  
   
 > [!NOTE]
 >  ホストを実装しない場合`IHostAssemblyStore`、 `GetAssemblyStore` 、HRESULT の戻り値は E_NOINTERFACE、および設定する必要があります`ppAssemblyStore`を null にします。  
   
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** MSCorEE.h  
   
  **ライブラリ:** MSCorEE.dll にリソースとして含まれています。  
   
- **.NET framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [IHostAssemblyManager インターフェイス](../../../../docs/framework/unmanaged-api/hosting/ihostassemblymanager-interface.md)  
  [IHostAssemblyStore インターフェイス](../../../../docs/framework/unmanaged-api/hosting/ihostassemblystore-interface.md)

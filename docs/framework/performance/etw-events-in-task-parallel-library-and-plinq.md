@@ -1,28 +1,16 @@
 ---
-title: "タスク並列ライブラリおよび PLINQ での ETW イベント"
-ms.custom: 
+title: タスク並列ライブラリおよび PLINQ での ETW イベント
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - tasks, ETW events
 ms.assetid: 87a9cff5-d86f-4e44-a06e-d12764d0dce2
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: a84fdb104296cf15b5f0d2d04f4ddd7ea1419643
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 3c5b372073b00f30312a83ae88ae0dbb6885d1a8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="etw-events-in-task-parallel-library-and-plinq"></a>タスク並列ライブラリおよび PLINQ での ETW イベント
 タスク並列ライブラリおよび PLINQ は、どちらも Windows イベント トレーシング (ETW) イベントを生成します。ETW イベントは、Windows パフォーマンス アナライザーなどのツールを使用して、アプリケーションのプロファイルやトラブルシューティングに使用できます。 ただし、ほとんどのシナリオでは、並列アプリケーション コードをプロファイルする最善の方法は、[!INCLUDE[vsUltShort](../../../includes/vsultshort-md.md)] で[同時実行ビジュアライザー](/visualstudio/profiling/concurrency-visualizer)を使用することです。  
@@ -126,7 +114,7 @@ ms.lasthandoff: 12/22/2017
 |OriginatingTaskID|<xref:System.Int32?displayProperty=nameWithType>|ループを開始したタスクの ID。|  
 |QueryID|<xref:System.Int32?displayProperty=nameWithType>|一意のクエリの識別子。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [.NET Framework の ETW イベント](../../../docs/framework/performance/etw-events.md)  
  [タスク並列ライブラリ (TPL)](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md)  
  [Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)

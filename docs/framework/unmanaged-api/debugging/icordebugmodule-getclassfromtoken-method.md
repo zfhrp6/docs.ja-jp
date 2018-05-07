@@ -1,14 +1,6 @@
 ---
-title: "ICorDebugModule::GetClassFromToken メソッド"
-ms.custom: 
+title: ICorDebugModule::GetClassFromToken メソッド
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ICorDebugModule.GetClassFromToken
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: 622a4d3c-0425-4c54-a7e4-0735377cdad2
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: ef8ef4c1f2fb8a7b8aa94b99f3821a91abe0b91d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 195cea23313d88b636479147faa512889ca94b17
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="icordebugmodulegetclassfromtoken-method"></a>ICorDebugModule::GetClassFromToken メソッド
 メタデータ トークンによって指定されたクラスを取得します。  
@@ -54,11 +42,11 @@ HRESULT GetClassFromToken(
  `ppClass`  
  [out]クラスを表す ICorDebugClass オブジェクトのアドレスへのポインター。  
   
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **.NET framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

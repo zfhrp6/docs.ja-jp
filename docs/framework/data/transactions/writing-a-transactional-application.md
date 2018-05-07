@@ -1,23 +1,12 @@
 ---
-title: "トランザクション アプリケーションの作成"
-ms.custom: 
+title: トランザクション アプリケーションの作成
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: a4d891f2-6fc8-4395-93c6-6819492406e0
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 9fab355da61ea7445e429cfc4e336a14b588e30c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 048df434ff0ada2ab5f8c7473913f6c34c05d1a2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="writing-a-transactional-application"></a>トランザクション アプリケーションの作成
 トランザクション アプリケーションのプログラマは、<xref:System.Transactions> 名前空間に用意されている 2 つのプログラミング モデルを活用して、トランザクションを作成できます。 使用して、明示的なプログラミング モデルを使用することができます、<xref:System.Transactions.Transaction>クラス、または暗黙的なプログラミング モデルがトランザクションは自動的に管理のインフラストラクチャでを使用して、<xref:System.Transactions.TransactionScope>クラスです。 開発のため、暗黙のトランザクション モデルを使用することをお勧めします。 トランザクション スコープを使用する方法の詳細についてを見つけることができます、[トランザクション スコープを使用して、暗黙的なトランザクションを実装する](../../../../docs/framework/data/transactions/implementing-an-implicit-transaction-using-transaction-scope.md)トピックです。  

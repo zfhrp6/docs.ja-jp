@@ -1,14 +1,6 @@
 ---
-title: "IMetaDataImport::IsValidToken メソッド"
-ms.custom: 
+title: IMetaDataImport::IsValidToken メソッド
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - IMetaDataImport.IsValidToken
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: aeb0fc63-9eff-4384-9284-cb9900572d74
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 61af4f5e68ebd5d5e4639cbc4c581d1c66358ff8
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d752d6dbe8a6b7a23faae498f9118c8d89e92929
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="imetadataimportisvalidtoken-method"></a>IMetaDataImport::IsValidToken メソッド
 指定したトークンが、コード オブジェクトへの有効な参照を保持しているかどうかを示す値を取得します。  
@@ -51,17 +39,17 @@ BOOL IsValidToken (
  [in]参照の有効性を確認するトークン。  
   
 ## <a name="return-value"></a>戻り値  
- `true`場合`tk`現在のスコープ内で有効なメタデータ トークンします。 それ以外の場合は `false`。  
+ `true` 場合`tk`現在のスコープ内で有効なメタデータ トークンします。 それ以外の場合は `false`。  
   
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** Cor.h  
   
  **ライブラリ:** MsCorEE.dll にリソースとして含まれています。  
   
- **.NET framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [IMetaDataImport インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  
  [IMetaDataImport2 インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

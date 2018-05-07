@@ -1,26 +1,14 @@
 ---
-title: "クレームベースの ID モデル"
-ms.custom: 
+title: クレームベースの ID モデル
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 4a96a9af-d980-43be-bf91-341a23401431
-caps.latest.revision: 
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload:
-- dotnet
-ms.openlocfilehash: f675f75d6dfd51b5259748316864048562ee0452
-ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
+ms.openlocfilehash: dadcc397783e003574d417aa6253ebc561ed28db
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="claims-based-identity-model"></a>クレームベースの ID モデル
 クレーム対応アプリケーションをビルドすると、ユーザー ID はアプリケーションでクレーム セットとして表されます。 1 つの要求には、ユーザーの名前が可能性があります、別の電子メール アドレス可能性があります。 これは、ユーザーが要求を行うたびにユーザーの識別に必要なすべての情報がアプリケーションに提供されるように外部 ID システムを構成し、同時に、信頼できるソースから提供される ID データを暗号化によって保護するという考え方です。  

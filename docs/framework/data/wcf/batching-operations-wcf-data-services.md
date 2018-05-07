@@ -1,28 +1,14 @@
 ---
-title: "バッチ処理 (WCF Data Services)"
-ms.custom: 
+title: バッチ処理 (WCF Data Services)
 ms.date: 03/30/2017
-ms.prod: .net-framework-oob
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - WCF Data Services, client library
 ms.assetid: 962a49d1-cc11-4b96-bc7d-071dd6607d6c
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 65bf6bfd0bd437848137506605a958f5f2e8d750
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5284d1a3c2ea95e26eddd9c5617f09f299bda4f3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="batching-operations-wcf-data-services"></a>バッチ処理 (WCF Data Services)
 [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]バッチへの要求の処理をサポートする、 [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]-ベースのサービスです。 詳細については、次を参照してください。 [OData: バッチ処理](http://go.microsoft.com/fwlink/?LinkId=186075)です。 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]、使用する各操作、<xref:System.Data.Services.Client.DataServiceContext>クエリを実行するなど、別のデータ サービスに送信される要求の結果の変更を保存します。 操作セットの論理スコープを維持するために、操作バッチを明示的に定義する必要があります。 これにより、バッチ内のすべての操作に 1 つの HTTP 要求でデータ サービスに送信し、により、サーバーは、操作をアトミックに、処理をされ、データ サービスへのラウンド トリップの数が減ることです。  
@@ -37,5 +23,5 @@ ms.lasthandoff: 12/22/2017
   
  バッチ処理された変更を非同期で保存することもできます。 詳細については、次を参照してください。[非同期操作](../../../../docs/framework/data/wcf/asynchronous-operations-wcf-data-services.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [WCF Data Services クライアント ライブラリ](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)

@@ -1,28 +1,14 @@
 ---
-title: "リフレクション プロバイダー (WCF Data Services)"
-ms.custom: 
+title: リフレクション プロバイダー (WCF Data Services)
 ms.date: 03/30/2017
-ms.prod: .net-framework-oob
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - WCF Data Services, providers
 ms.assetid: ef5ba300-6d7c-455e-a7bd-d0cc6d211ad4
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 617754fcd9515f080dc6cf8ae923c2c6fc34ad3a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 3c6885ee7976461379513e8e579f58160146769a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="reflection-provider-wcf-data-services"></a>リフレクション プロバイダー (WCF Data Services)
 Entity Framework を介してデータ モデルからデータを公開することに加えて、[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] では、エンティティ ベースのモデルで厳密に定義されていないデータを公開することもできます。 リフレクション プロバイダーは、<xref:System.Linq.IQueryable%601> インターフェイスを実装する型を返すクラスのデータを公開します。 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] は、リフレクションを使用して、これらのクラスのデータ モデルを推論し、リソースに対するアドレス ベースのクエリを、公開されている <xref:System.Linq.IQueryable%601> 型に対する統合言語クエリ (LINQ) ベースのクエリに変換します。  
@@ -107,5 +93,5 @@ Entity Framework を介してデータ モデルからデータを公開する�
 ## <a name="using-linq-to-sql-with-the-reflection-provider"></a>リフレクション プロバイダーによる SQL への LINQ の使用  
  既定では Entity Framework がネイティブでサポートされるので、これが [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] でリレーショナル データを使用する場合の推奨データ プロバイダーです。 ただし、データ サービスで LINQ to SQL クラスを使用するには、リフレクション プロバイダーを使用できます。 <xref:System.Data.Linq.Table%601>結果セットのメソッドによって返される、 <xref:System.Data.Linq.DataContext> LINQ to SQL オブジェクト リレーショナル デザイナー (O/R デザイナー) の実装によって生成された、<xref:System.Linq.IQueryable%601>インターフェイスです。 そのため、リフレクション プロバイダーは、生成された LINQ to SQL クラスを使用して、これらのメソッドにアクセスし、SQL Server からエンティティ データを返すことができます。 ところが、LINQ to SQL は <xref:System.Data.Services.IUpdatable> インターフェイスを実装しないので、既存の <xref:System.Data.Linq.DataContext> 部分クラスを拡張する部分クラスを追加して、<xref:System.Data.Services.IUpdatable> 実装を追加する必要があります。 詳細については、次を参照してください。[する方法: LINQ to SQL データ ソースを使用してデータ サービスを作成](../../../../docs/framework/data/wcf/create-a-data-service-using-linq-to-sql-wcf.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Data Services プロバイダー](../../../../docs/framework/data/wcf/data-services-providers-wcf-data-services.md)

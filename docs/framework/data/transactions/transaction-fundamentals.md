@@ -1,23 +1,12 @@
 ---
-title: "トランザクションの基礎"
-ms.custom: 
+title: トランザクションの基礎
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 353f4ee2-e6bf-4b1c-b1c8-385fc8a486c0
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: fa26531b1d2573b4bef49ec93f4205716227e25b
-ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
+ms.openlocfilehash: 1189556c74c45dc7475dd872c01c1ec5eaeba111
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="transaction-fundamentals"></a>トランザクションの基礎
 トランザクションとは、複数のタスクを互いに結合したものです。 たとえば、あるアプリケーションが 2 つのタスクを実行するものとします。 まず、このアプリケーションはデータベースに新しいテーブルを作成します。 次に、データを収集、フォーマットし、新しく作成したテーブルに挿入する特定のオブジェクトを呼び出します。 この 2 つのタスクは、単に関連しているだけでなく、相互に依存しており、たとえば、新しいテーブルにデータを格納できなければ新しいテーブルを作成しないようにできます。 単一のトランザクションのスコープ内でこの 2 つのタスクを実行すると、両タスク間の結合が行われます。 第 2 のタスクが失敗すると、新しいテーブルの作成以前の時点まで第 1 のタスクがロールバックされます。  
@@ -34,5 +23,5 @@ ms.lasthandoff: 01/05/2018
   
  ADO.NET を使用してトランザクションを作成する<xref:System.EnterpriseServices>、または、トランザクション プログラミング モデルによって提供される、<xref:System.Transactions>名前空間。 [System.Transactions によって提供される機能](../../../../docs/framework/data/transactions/features-provided-by-system-transactions.md)を使用して、トランザクション アプリケーションの記述に使用できる機能について説明、<xref:System.Transactions>名前空間。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [System.Transactions により提供される機能](../../../../docs/framework/data/transactions/features-provided-by-system-transactions.md)

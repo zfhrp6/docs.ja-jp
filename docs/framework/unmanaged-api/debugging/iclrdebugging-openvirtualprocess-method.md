@@ -1,14 +1,6 @@
 ---
-title: "ICLRDebugging::OpenVirtualProcess メソッド"
-ms.custom: 
+title: ICLRDebugging::OpenVirtualProcess メソッド
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ICLRDebugging.OpenVirtualProcess
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: e8ab7c41-d508-4ed9-8a31-ead072b5a314
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: f1f71f42f10c3d25714998d1697b20a5ee13e055
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 51b5a9ecd85f0d40ac2fe2826cbbe7a56a6228d1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="iclrdebuggingopenvirtualprocess-method"></a>ICLRDebugging::OpenVirtualProcess メソッド
 プロセスに読み込まれている共通言語ランタイム (CLR) モジュールに対応する ICorDebugProcess インターフェイスを取得します。  
@@ -87,7 +75,7 @@ HRESULT OpenVirtualProcess(
 |S_OK|メソッドは正常に完了しました。|  
 |E_POINTER|`pDataTarget` は `null` です。|  
 |CORDBG_E_LIBRARY_PROVIDER_ERROR|[ICLRDebuggingLibraryProvider](../../../../docs/framework/unmanaged-api/debugging/iclrdebugginglibraryprovider-interface.md)コールバックがエラーを返しますまたは、有効なハンドルは提供されません。|  
-|CORDBG_E_MISSING_DATA_TARGET_INTERFACE|`pDataTarget`このバージョンのランタイムの必要なデータ ターゲットのインターフェイスを実装しません。|  
+|CORDBG_E_MISSING_DATA_TARGET_INTERFACE|`pDataTarget` このバージョンのランタイムの必要なデータ ターゲットのインターフェイスを実装しません。|  
 |CORDBG_E_NOT_CLR|指定されたモジュールが CLR モジュールではありません。 メモリが破損している、モジュールが使用できないか、CLR バージョン shim バージョンより新しいために、CLR モジュールを検出できない場合にも、この HRESULT が返されます。|  
 |CORDBG_E_UNSUPPORTED_DEBUGGING_MODEL|このランタイムのバージョンは、このデバッグ モデルをサポートしていません。 現在、デバッグ モデルは前に、のバージョンの CLR でサポートされていません、[!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)]です。 `pwszVersion`出力パラメーターが設定されている適切な値にこのエラーが発生後します。|  
 |CORDBG_E_UNSUPPORTED_FORWARD_COMPAT|CLR のバージョンは、このデバッガーでサポートされるバージョンを超えています。 `pwszVersion`出力パラメーターが設定されている適切な値にこのエラーが発生後します。|  
@@ -98,15 +86,15 @@ HRESULT OpenVirtualProcess(
   
 ## <a name="remarks"></a>コメント  
   
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET framework のバージョン:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **.NET framework のバージョン:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [デバッグ インターフェイス](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
  [デバッグ](../../../../docs/framework/unmanaged-api/debugging/index.md)

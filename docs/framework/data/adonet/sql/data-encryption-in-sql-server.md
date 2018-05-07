@@ -1,24 +1,12 @@
 ---
-title: "SQL Server でのデータの暗号化"
-ms.custom: 
+title: SQL Server でのデータの暗号化
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 83b992f7-b351-4678-b4b9-f4ffd58134cc
-caps.latest.revision: "6"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: e7784ac319785babbc4d7715e13fb157b3b15b04
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 9e2924dc9f2f2954f6690ad5009c4143d1b9a44f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="data-encryption-in-sql-server"></a>SQL Server でのデータの暗号化
 SQL Server には、証明書、非対称キー、対称キーのいずれかを使ってデータを暗号化したり、復号化したりできる関数が用意されています。 これらはすべて内部の証明書ストアで管理されます。 証明書ストアは、1 つ上の層がその下の層を保護する暗号化階層を使用することによって、証明書およびキーを保護します。 SQL Server では、この機能領域をシークレット ストレージと呼びます。  
@@ -40,7 +28,7 @@ SQL Server には、証明書、非対称キー、対称キーのいずれかを
 |[SQL Server の暗号化](http://msdn.microsoft.com/library/bb510663.aspx)SQL Server オンライン ブック|SQL Server における暗号化の概要を説明します。 このトピックには、他のトピックや具体的な方法を示したページへのリンクが用意されています。|  
 |[暗号化階層](http://msdn.microsoft.com/library/ms189586.aspx)と[暗号化方法に関するトピック](http://msdn.microsoft.com/library/aa337557.aspx)SQL Server オンライン ブック|SQL Server における暗号化の概要を説明します。 このトピックには、他のトピックや具体的な方法を示したページへのリンクが用意されています。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ADO.NET アプリケーションのセキュリティ保護](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
  [SQL Server におけるアプリケーション セキュリティのシナリオ](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)  
  [SQL Server での認証](../../../../../docs/framework/data/adonet/sql/authentication-in-sql-server.md)  

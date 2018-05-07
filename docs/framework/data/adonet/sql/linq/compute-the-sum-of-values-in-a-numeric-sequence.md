@@ -1,27 +1,15 @@
 ---
-title: "数値のシーケンスの合計の計算"
-ms.custom: 
+title: 数値のシーケンスの合計の計算
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 24e335b0-984e-4825-8721-0a91b533b7c3
-caps.latest.revision: "2"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 547d9f245d41fac2e2d65877ddbb2a8660d73c42
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: d1c49d45eaf82101e57e0886af52a134d24b1651
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="compute-the-sum-of-values-in-a-numeric-sequence"></a>数値のシーケンスの合計の計算
 <xref:System.Linq.Enumerable.Sum%2A> 演算子を使用すると、シーケンス内の数値の合計を計算できます。  
@@ -50,6 +38,6 @@ ms.lasthandoff: 01/17/2018
  [!code-csharp[DLinqQueryExamples#13](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#13)]
  [!code-vb[DLinqQueryExamples#13](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#13)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [集計クエリ](../../../../../../docs/framework/data/adonet/sql/linq/aggregate-queries.md)  
  [サンプル データベースのダウンロード](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)

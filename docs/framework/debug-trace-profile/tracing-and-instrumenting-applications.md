@@ -1,13 +1,6 @@
 ---
-title: "アプリケーションのトレースとインストルメント"
-ms.custom: 
+title: アプリケーションのトレースとインストルメント
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -20,16 +13,13 @@ helpviewer_keywords:
 - performance monitoring, tracing code
 - Trace class, instrumentation for .NET applications
 ms.assetid: 773b6fc4-9013-4322-b728-5dec7a72e743
-caps.latest.revision: "21"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 20eea5ed6f69c17466aeb33617f418ac71a3e1b2
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 33d940a051c3185d8a3a04e77ea5899de0475ffc
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="tracing-and-instrumenting-applications"></a>アプリケーションのトレースとインストルメント
 トレースとは、実行中のアプリケーションの実行状態を監視する方法です。 .NET Framework アプリケーションの開発時に、トレースとデバッグのインストルメンテーションをアプリケーションに追加できます。このインストルメンテーションは、アプリケーションの開発中でも開発したアプリケーションの配置後でも使用できます。 <xref:System.Diagnostics.Trace?displayProperty=nameWithType>、<xref:System.Diagnostics.Debug?displayProperty=nameWithType>、および <xref:System.Diagnostics.TraceSource?displayProperty=nameWithType> の各クラスを使用すると、エラーおよびアプリケーションの実行についての情報を後で分析するために、ログ、テキスト ファイル、またはその他のデバイスに記録できます。  
@@ -53,7 +43,7 @@ ms.lasthandoff: 12/22/2017
  <xref:System.Diagnostics.Trace> クラスおよび <xref:System.Diagnostics.Debug> クラスは、アプリケーションの開発中または配置後に、アプリケーションのパフォーマンスをモニターおよび検査する手段を提供します。 たとえば、(新しいデータベース接続の作成など) が配置されたアプリケーションの操作の特定の種類を追跡するために <xref:System.Diagnostics.Trace> クラスを使用すると、アプリケーションの効率を監視できるようになります。  
   
 ## <a name="code-tracing-and-debugging"></a>コードのトレースとデバッグ  
- 開発時に、Visual Studio 統合開発環境 (IDE) の出力ウィンドウにメッセージを表示するために <xref:System.Diagnostics.Debug> クラスの出力メソッドを使用できます。 例:  
+ 開発時に、Visual Studio 統合開発環境 (IDE) の出力ウィンドウにメッセージを表示するために <xref:System.Diagnostics.Debug> クラスの出力メソッドを使用できます。 例えば:  
   
 ```vb  
 Trace.WriteLine("Hello World!")  
@@ -102,7 +92,7 @@ System.Diagnostics.Debug.WriteLine("Hello World!");
   
     -   **ソリューション エクスプローラー**の **[プロパティ ページ]** ダイアログ ボックスの **[デバッグ]** ページで **[ビルド]** メニューを使用します。 Visual Studio でコンパイルをする場合は、この方法を使用してください。  
   
-         \- または  
+         \- または -  
   
     -   コマンド ラインによるコンパイル用の **Trace** コンパイラ ディレクティブおよび **Debug** コンパイラ ディレクティブを使用します。 詳細については、「[トレースとデバッグによる条件付きコンパイル](../../../docs/framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md)」を参照してください。 コマンド ラインからコンパイルする場合はこの方法を使用してください。  
   
@@ -150,7 +140,7 @@ System.Diagnostics.Debug.WriteLine("Hello World!");
 ## <a name="security-concerns"></a>セキュリティに関する注意事項  
  ASP.NET アプリケーションを配置する前にトレースとデバッグを無効にしないと、アプリケーションに関する情報が公開され、悪意を持ったプログラムによって利用される可能性があります。 詳細については、「[方法 : トレースとデバッグを指定して条件付きコンパイルを実行する](../../../docs/framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md)」、「[Compiling and Building](/visualstudio/ide/compiling-and-building-in-visual-studio)」(コンパイルとビルド)、および「[方法 : トレース スイッチを作成、初期化、および構成する](../../../docs/framework/debug-trace-profile/how-to-create-initialize-and-configure-trace-switches.md)」を参照してください。 デバッグは、IIS (Internet Information Services) で設定することもできます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Diagnostics.Trace>  
  <xref:System.Diagnostics.TraceSource>  
  [コード コントラクト](../../../docs/framework/debug-trace-profile/code-contracts.md)  

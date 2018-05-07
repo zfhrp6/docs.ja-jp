@@ -2,11 +2,11 @@
 title: '&lt;basicHttpBinding&gt; の &lt;message&gt;'
 ms.date: 03/30/2017
 ms.assetid: 51cdd329-6461-471a-8747-56c2299b61e5
-ms.openlocfilehash: f58fadbc3ac3f193232ad075c4973f6ac2f2d1f6
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
-ms.translationtype: HT
+ms.openlocfilehash: 7f543a91f1d11575df239267a6a8a0b244d99cb3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ltmessagegt-of-ltbasichttpbindinggt"></a>&lt;basicHttpBinding&gt; の &lt;message&gt;
 メッセージ レベルのセキュリティの設定を定義、 [ \<basicHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md)です。  
@@ -40,7 +40,7 @@ ms.lasthandoff: 05/03/2018
   
 |値|説明|  
 |-----------|-----------------|  
-|UserName|-UserName 資格情報を使用してサーバーにクライアントの認証が必要です。 この資格情報を使用して指定する必要があります、 [ \<clientCredentials >](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md)です。<br />-   [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] パスワード ダイジェストの送信、またはパスワードを使用して、そのようなキーを使用して、メッセージ セキュリティのためのキーの派生はサポートしません。 そのため、[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] では UserName 資格情報を使用する場合は、トランスポートが強制的にセキュリティで保護されます。 `basicHttpBinding` の場合は、SSL チャネルの設定が必要です。|  
+|UserName|-UserName 資格情報を使用してサーバーにクライアントの認証が必要です。 この資格情報を使用して指定する必要があります、 [ \<clientCredentials >](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md)です。<br />WCF では、パスワード ダイジェストの送信、またはパスワードを使用して、そのようなキーを使用して、メッセージ セキュリティのためのキーの派生は使用できません。 そのため、WCF では、トランスポートは、UserName 資格情報を使用する場合にセキュリティで保護することを強制します。 `basicHttpBinding` の場合は、SSL チャネルの設定が必要です。|  
 |証明書|証明書を使用してクライアントをサーバーに認証するように要求します。 ここではクライアントの資格情報を使用して指定する必要があります[ \<clientCredentials >](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md)と[ \<clientCertificate >](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcertificate-of-servicecredentials.md)です。 さらに、メッセージのセキュリティ モードを使用する場合は、クライアントにサービス証明書を準備する必要があります。 ここではサービスの資格情報を使用して指定する必要があります<xref:System.ServiceModel.Description.ClientCredentials>クラスまたは`ClientCredentials`動作要素をサービスを指定することを使用して証明書、 [ \<serviceCertificate >](../../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md)です。|  
   
 ### <a name="child-elements"></a>子要素  

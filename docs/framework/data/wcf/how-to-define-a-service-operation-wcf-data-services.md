@@ -1,13 +1,6 @@
 ---
-title: "方法: サービス操作を定義する (WCF Data Services)"
-ms.custom: 
+title: '方法: サービス操作を定義する (WCF Data Services)'
 ms.date: 03/30/2017
-ms.prod: .net-framework-oob
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - Service Operations [WCF Data Services]
 - WCF Data Services, service operations
 ms.assetid: dfcd3cb1-2f07-4d0b-b16a-6b056c4f45fa
-caps.latest.revision: "2"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 03dc0b774fe6c3e077fa539fc14c7df4a1fb448d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 7d40011e701525912c4406d1ab35712ee21009da
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-define-a-service-operation-wcf-data-services"></a>方法: サービス操作を定義する (WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] は、サーバー上でサービス操作として定義されたメソッドを公開します。 サービス操作では、サーバーで定義されているメソッドに URI を介してアクセスを提供するデータ サービスを許可します。 サービス操作を定義するのには、適用、[`WebGet]`または`[WebInvoke]`属性をメソッドにします。 クエリ演算子をサポートするために、サービス操作が返す必要があります、<xref:System.Linq.IQueryable%601>インスタンス。 サービス操作は、<xref:System.Data.Services.DataService%601.CurrentDataSource%2A> の <xref:System.Data.Services.DataService%601> プロパティを介して、基になるデータ ソースにアクセスできます。 詳細については、次を参照してください。[サービス操作](../../../../docs/framework/data/wcf/service-operations-wcf-data-services.md)です。  
@@ -64,5 +52,5 @@ ms.lasthandoff: 12/22/2017
  [!code-csharp[Astoria Northwind Service#ServiceOperation](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind service/cs/northwind2.svc.cs#serviceoperation)]
  [!code-vb[Astoria Northwind Service#ServiceOperation](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind service/vb/northwind2.svc.vb#serviceoperation)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [WCF Data Services の定義](../../../../docs/framework/data/wcf/defining-wcf-data-services.md)

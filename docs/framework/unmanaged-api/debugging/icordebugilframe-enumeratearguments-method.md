@@ -1,14 +1,6 @@
 ---
-title: "ICorDebugILFrame::EnumerateArguments メソッド"
-ms.custom: 
+title: ICorDebugILFrame::EnumerateArguments メソッド
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ICorDebugILFrame.EnumerateArguments
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: 00ac81e2-a774-422a-bd88-54a4b3c99f73
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 474118abc505928d16737d792a619e75f1209344
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 2e4a727dcfbc80b131f526a08b00bd0ec91ca209
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="icordebugilframeenumeratearguments-method"></a>ICorDebugILFrame::EnumerateArguments メソッド
 引数のこのフレームの列挙子を取得します。  
@@ -51,13 +39,13 @@ HRESULT EnumerateArguments (
  [out]引数は、このフレームの列挙子である ICorDebugValueEnum オブジェクトのアドレスへのポインター。  
   
 ## <a name="remarks"></a>コメント  
- `EnumerateArguments`ICorDebugILFrame オブジェクトによって表される呼び出しフレームで使用可能な引数の一覧を表示する列挙子を取得します。 一覧には引数には表示[vararg](/cpp/windows/vararg) (つまり、可変個の引数) な引数がだけでなく`vararg`です。  
+ `EnumerateArguments` ICorDebugILFrame オブジェクトによって表される呼び出しフレームで使用可能な引数の一覧を表示する列挙子を取得します。 一覧には引数には表示[vararg](/cpp/windows/vararg) (つまり、可変個の引数) な引数がだけでなく`vararg`です。  
   
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **.NET framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

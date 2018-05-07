@@ -1,13 +1,6 @@
 ---
-title: "Assert メソッドの使用"
-ms.custom: 
+title: Assert メソッドの使用
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -23,16 +16,13 @@ helpviewer_keywords:
 - permissions [.NET Framework], overriding security checks
 - permissions [.NET Framework], assertions
 ms.assetid: 1e40f4d3-fb7d-4f19-b334-b6076d469ea9
-caps.latest.revision: "20"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 90e5d910e0d6e6f55234255ac378fa58ebf7f307
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ea8be23eb6fd2500e59527890b874b8f19ec06d5
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-the-assert-method"></a>Assert メソッドの使用
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
@@ -177,7 +167,7 @@ namespace LogUtil
 }  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Security.PermissionSet>  
  <xref:System.Security.Permissions.SecurityPermission>  
  <xref:System.Security.Permissions.FileIOPermission>  

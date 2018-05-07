@@ -1,12 +1,13 @@
 ---
-title: "チュートリアル : ビジュアル継承のデモンストレーション"
-ms.custom: 
+title: 'チュートリアル : ビジュアル継承のデモンストレーション'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-winforms
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -18,16 +19,17 @@ helpviewer_keywords:
 - walkthroughs [Windows Forms], visual inheritance
 - Windows Forms, inheritance
 ms.assetid: 01966086-3142-450e-8210-3fd4cb33f591
-caps.latest.revision: "24"
+caps.latest.revision: 24
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 7c5ef33be9841b5c74b6ae2448daf56079489b61
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
-ms.translationtype: MT
+ms.workload:
+- dotnet
+ms.openlocfilehash: e76ddcb33980db1a6d1b6e602c1b71da60b53381
+ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="walkthrough-demonstrating-visual-inheritance"></a>チュートリアル : ビジュアル継承のデモンストレーション
 ビジュアル継承により、基本フォームのコントロールを表示して、新しいコントロールを追加できます。 このチュートリアルでは、基本フォームを作成してクラス ライブラリにコンパイルします。 このクラス ライブラリを別のプロジェクトにインポートして、基本フォームから継承する新しいフォームを作成します。 このチュートリアルでは、次の作業を行う方法について説明します。  
@@ -89,11 +91,11 @@ ms.lasthandoff: 01/19/2018
   
     -   設定、**テキスト**プロパティを**Say こんにちは**です。  
   
-    -   設定、 **(名)**プロパティを**btnProtected**です。  
+    -   設定、 **(名)** プロパティを**btnProtected**です。  
   
     -   設定、**修飾子**プロパティを**Protected**です。 継承するフォームができるようになります**Form1**のプロパティを変更する**btnProtected**です。  
   
-4.  ダブルクリックして、 **Say こんにちは**のイベント ハンドラーを追加するボタン、  **をクリックして**イベント。  
+4.  ダブルクリックして、 **Say こんにちは**のイベント ハンドラーを追加するボタン、 ** をクリックして**イベント。  
   
 5.  イベント ハンドラーに次のコードを追加します。  
   
@@ -107,17 +109,17 @@ ms.lasthandoff: 01/19/2018
   
 #### <a name="to-add-a-button-that-cannot-be-modified-by-inheritors-of-the-base-form"></a>基本フォームの継承元により変更できないボタンを追加するには  
   
-1.  クリックしてデザイン ビューに切り替え、 **Form1.vb [デザイン]、Form1.cs [デザイン]、または Form1.jsl の [デザイン]**コード エディターの上または F7 キーを押してタブです。  
+1.  クリックしてデザイン ビューに切り替え、 **Form1.vb [デザイン]、[Form1.cs [デザイン]、または Form1.jsl の [デザイン]** コード エディターの上または F7 キーを押してタブです。  
   
 2.  2 番目のボタンを追加し、そのプロパティを次のように設定します。  
   
     -   設定、**テキスト**プロパティを**Say Goodbye**です。  
   
-    -   設定、 **(名)**プロパティを**btnPrivate**です。  
+    -   設定、 **(名)** プロパティを**btnPrivate**です。  
   
     -   設定、**修飾子**プロパティを**プライベート**です。 継承するフォームが不可能になります。 **Form1**のプロパティを変更する**btnPrivate**です。  
   
-3.  ダブルクリックして、 **Say Goodbye**のイベント ハンドラーを追加するボタン、  **をクリックして**イベント。 イベントの手順で、次のコード行を配置します。  
+3.  ダブルクリックして、 **Say Goodbye**のイベント ハンドラーを追加するボタン、 ** をクリックして**イベント。 イベントの手順で、次のコード行を配置します。  
   
     ```vb  
     MessageBox.Show("Goodbye!")  
@@ -157,7 +159,7 @@ ms.lasthandoff: 01/19/2018
   
 7.  プライベート**Say Goodbye**  ボタン、およびサイズ変更ハンドルがないことに注意してください。 また、、**プロパティ**ウィンドウで、このボタンのプロパティは変更できないことを示すためにグレー表示にします。  
   
-8.  [!INCLUDE[csprcs](../../../../includes/csprcs-md.md)] を使用している場合:  
+8.  Visual C# の場合: 使用している場合  
   
     1.  **ソリューション エクスプ ローラー**を右クリックして**Form1**で、 **InheritanceTest**プロジェクトし、**削除**です。 表示されるメッセージ ボックスで、をクリックして**OK**削除を確認します。  
   
@@ -172,9 +174,9 @@ ms.lasthandoff: 01/19/2018
 12. F5 を押してアプリケーションを実行し、継承されたフォームの動作を確認します。  
   
 ## <a name="next-steps"></a>次の手順  
- ユーザー コントロールの継承はほぼ同じ方法で機能します。 新しいクラス ライブラリ プロジェクトを開き、ユーザー コントロールを追加します。 内在コントロールを配置し、プロジェクトをコンパイルします。 別の新しいクラス ライブラリ プロジェクトを開き、コンパイル済みのクラス ライブラリへの参照を追加します。 また、[継承されたコントロールを追加してみてください (を通じて、**新しい項目の追加**] ダイアログ ボックス) をプロジェクトを使用して、**継承ピッカー**です。 ユーザー コントロールを追加し、`Inherits` ([!INCLUDE[csprcs](../../../../includes/csprcs-md.md)] の`:`) ステートメントを変更します。 詳細については、次を参照してください。[する方法: Windows フォームの継承](../../../../docs/framework/winforms/advanced/how-to-inherit-windows-forms.md)です。  
+ ユーザー コントロールの継承はほぼ同じ方法で機能します。 新しいクラス ライブラリ プロジェクトを開き、ユーザー コントロールを追加します。 内在コントロールを配置し、プロジェクトをコンパイルします。 別の新しいクラス ライブラリ プロジェクトを開き、コンパイル済みのクラス ライブラリへの参照を追加します。 また、[継承されたコントロールを追加してみてください (を通じて、**新しい項目の追加**] ダイアログ ボックス) をプロジェクトを使用して、**継承ピッカー**です。 ユーザー コントロールを追加し、変更、 `Inherits` (`:` Visual c#) ステートメントです。 詳細については、次を参照してください。[する方法: Windows フォームの継承](../../../../docs/framework/winforms/advanced/how-to-inherit-windows-forms.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [方法: Windows フォームを継承する](../../../../docs/framework/winforms/advanced/how-to-inherit-windows-forms.md)  
  [Windows フォームのビジュアルの継承](../../../../docs/framework/winforms/advanced/windows-forms-visual-inheritance.md)  
  [Windows フォーム](../../../../docs/framework/winforms/index.md)

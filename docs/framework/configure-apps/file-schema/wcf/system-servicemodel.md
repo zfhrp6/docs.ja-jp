@@ -8,11 +8,11 @@ helpviewer_keywords:
 - <system.serviceModel> element
 - system.serviceModel element
 ms.assetid: 78519531-ad7a-40d3-b3e7-42f1103d8854
-ms.openlocfilehash: 0ce459b5b3d739770353d9913f30c6feaceabfd8
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
-ms.translationtype: HT
+ms.openlocfilehash: ef3af4663462ff2bb93622e128e58a3ac039dcf5
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ltsystemservicemodelgt"></a>&lt;system.serviceModel&gt;
 この構成セクションには、すべての Windows Communication Foundation (WCF) ServiceModel 構成要素が含まれています。  
@@ -62,7 +62,7 @@ ms.lasthandoff: 05/03/2018
 |[\<bindings>](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|このセクションには、標準バインディングおよびカスタム バインドのコレクションが保持されます。 各エントリは、その一意の `name` により識別されます。 サービスは、`name` を使用してバインディングをリンクすることにより、バインディングを使用します。|  
 |[\<クライアント >](../../../../../docs/framework/configure-apps/file-schema/wcf/client.md)|このセクションは、クライアントがサービスの接続に使用するエンドポイントの一覧を含みます。|  
 |[\<comContracts>](../../../../../docs/framework/configure-apps/file-schema/wcf/comcontracts.md)|このセクションは、WCF と COM 相互運用が有効な COM コントラクトを定義します。|  
-|[\<commonBehaviors >](../../../../../docs/framework/configure-apps/file-schema/wcf/commonbehaviors.md)|このセクションは、machine.config ファイルでだけ定義できます。 このセクションは、`endpointBehaviors` と`serviceBehaviors` という 2 つの子コレクションを定義します。  各コレクションは、コンピューター上の [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] のすべてのエンドポイントとサービスによって使用されるそれぞれの動作要素を定義します。  両方で、動作が定義されている場合`<commonBehaviors>`と`<behaviors>`セクションではの動作、\<動作 > セクションが優先します。|  
+|[\<commonBehaviors >](../../../../../docs/framework/configure-apps/file-schema/wcf/commonbehaviors.md)|このセクションは、machine.config ファイルでだけ定義できます。 このセクションは、`endpointBehaviors` と`serviceBehaviors` という 2 つの子コレクションを定義します。  各コレクションは、すべての WCF エンドポイントと、コンピューター上のサービスによって使用されるそれぞれの動作要素を定義します。  両方で、動作が定義されている場合`<commonBehaviors>`と`<behaviors>`セクションではの動作、\<動作 > セクションが優先します。|  
 |[\<拡張機能 >](../../../../../docs/framework/configure-apps/file-schema/wcf/extensions-section.md)|このセクションには、拡張のコレクションが含まれています。これにより、ユーザー定義のバインディング、動作、およびその他の拡張機能を作成できるようになります。|  
 |[\<診断 >](../../../../../docs/framework/configure-apps/file-schema/wcf/diagnostics.md)|このセクションには、WCF の診断機能の設定が含まれます。 ユーザーはトレース、パフォーマンス カウンター、および WMI プロバイダーを有効または無効にしたり、カスタム メッセージ フィルターを追加したりできます。|  
 |[\<protocolMapping >](../../../../../docs/framework/configure-apps/file-schema/wcf/protocolmapping.md)|このセクションでは、トランスポート プロトコル スキーム (など、http、net.tcp、net.pipe など) と WCF バインディング間の既定のプロトコル マッピングのセットを定義します。|  
@@ -78,9 +78,9 @@ ms.lasthandoff: 05/03/2018
 |\<configuration>|.NET 構成ファイルのすべての構成要素のルート要素。|  
   
 ## <a name="remarks"></a>コメント  
- [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] は、他の製品の構成セクションに要素を追加しません。  
+ WCF では、他の製品の構成セクションに要素を追加しません。  
   
- [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] サービスは、構成ファイルの `services` セクションで定義されます。 アセンブリには、任意の数のサービスを含めることができます。 各サービスには、独自の `service` 設定セクションがあります。 セクションとその内容は、サービス コントラクト、動作、および特定のサービスのエンドポイントを定義します。  
+ WCF サービスが定義されている、`services`構成ファイルのセクションです。 アセンブリには、任意の数のサービスを含めることができます。 各サービスには、独自の `service` 設定セクションがあります。 セクションとその内容は、サービス コントラクト、動作、および特定のサービスのエンドポイントを定義します。  
   
  サービスの `name` 属性だけが必須項目です。  既定では、サービスの名前は、サービスの実装に使用される、基になる CLR 型を示します。ただし、<xref:System.ServiceModel.ServiceContractAttribute> の ConfigurationName プロパティを変更して、CLR 型要件をオーバーライドすることもできます。  
   

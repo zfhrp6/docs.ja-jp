@@ -1,24 +1,12 @@
 ---
-title: "ADO.NET アプリケーションのセキュリティ保護"
-ms.custom: 
+title: ADO.NET アプリケーションのセキュリティ保護
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 005a1d43-6ee5-471e-ad98-1d30a44d49d5
-caps.latest.revision: "4"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 75d78c505c81ce688e0ba0110c76712c71db1c4f
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 5e4363ada4ebdb94801378bc61139f68085b462d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="securing-adonet-applications"></a>ADO.NET アプリケーションのセキュリティ保護
 ユーザー入力の検証を怠るなど、コーディング時に陥りやすい基本的なミスを防ぐだけでは、安全な ADO.NET アプリケーションを作成することはできません。 データにアクセスするアプリケーションには、機密データの取得、操作、破壊など、攻撃者に攻略される可能性がある障害点が多数あります。 そのため、アプリケーションの設計フェーズで行う脅威のモデリングのプロセスから、アプリケーションの最終的な配置と継続的な保守に至るまで、セキュリティのすべての側面を理解することが重要です。  
@@ -62,6 +50,6 @@ ms.lasthandoff: 01/19/2018
  [セキュリティ参考文献](/visualstudio/ide/security-bibliography)  
  オンラインまたは出版物として提供されている外部リソースへのリンク集です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ADO.NET](../../../../docs/framework/data/adonet/index.md)  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

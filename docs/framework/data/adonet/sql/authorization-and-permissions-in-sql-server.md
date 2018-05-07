@@ -1,24 +1,12 @@
 ---
-title: "SQL Server の承認と権限"
-ms.custom: 
+title: SQL Server の承認と権限
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: d340405c-91f4-4837-a3cc-a238ee89888a
-caps.latest.revision: "8"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 9b5dd162aad85ea28e7d05cbfd2e72e7fc2fb235
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: bddbbd7eac29d33801042276e5f4ca9a05a83c1a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="authorization-and-permissions-in-sql-server"></a>SQL Server の承認と権限
 データベース オブジェクトを作成する際は、ユーザーがそれらのオブジェクトにアクセスできるように明示的に権限を付与する必要があります。 セキュリティ保護可能なすべてのオブジェクトには、権限ステートメントを使ってプリンシパルに付与することのできる権限が関連付けられています。  
@@ -69,7 +57,7 @@ ms.lasthandoff: 01/17/2018
 |--------------|-----------------|  
 |[アクセス許可](http://msdn.microsoft.com/library/ms191291.aspx)SQL Server オンライン ブック|権限の階層、カタログ ビュー、および固定サーバー ロールと固定データベース ロールの権限について説明します。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ADO.NET アプリケーションのセキュリティ保護](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
  [SQL Server におけるアプリケーション セキュリティのシナリオ](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)  
  [SQL Server での認証](../../../../../docs/framework/data/adonet/sql/authentication-in-sql-server.md)  

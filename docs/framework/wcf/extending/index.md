@@ -1,33 +1,19 @@
 ---
 title: WCF の拡張
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - WCF, extensibility
 - extensibility [WCF]
 - Windows Communication Foundation, extensibility
 ms.assetid: c145e2f6-f402-41f5-8b5a-eee03978737b
-caps.latest.revision: 13
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 2c84f25dfd5d3066f9c5d0b62bc0b28bc98c283d
-ms.sourcegitcommit: 08684dd61444c2f072b89b926370f750e456fca1
-ms.translationtype: MT
+ms.openlocfilehash: 4990f14178551d9dccaca0f2899d8dbc4416cdc4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="extending-wcf"></a>WCF の拡張
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] 使用すると、変更、実行時コンポーネントを正確に制御を拡張し、およびサービス ベースのアプリケーションを拡張できます。 このセクションのトピックでは、その拡張アーキテクチャについて詳しく説明します。 基本的なプログラミングの詳細については、次を参照してください。[基本的な WCF プログラミング](../../../../docs/framework/wcf/basic-wcf-programming.md)です。  
+Windows Communication Foundation (WCF) を使用すると、変更、実行時コンポーネントを正確に制御を拡張し、およびサービス ベースのアプリケーションを拡張できます。 このセクションのトピックでは、その拡張アーキテクチャについて詳しく説明します。 基本的なプログラミングの詳細については、次を参照してください。[基本的な WCF プログラミング](../../../../docs/framework/wcf/basic-wcf-programming.md)です。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [ServiceHost とサービス モデル レイヤーの拡張](../../../../docs/framework/wcf/extending/extending-servicehost-and-the-service-model-layer.md)  

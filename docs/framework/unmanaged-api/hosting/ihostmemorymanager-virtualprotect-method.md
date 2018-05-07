@@ -1,14 +1,6 @@
 ---
 title: IHostMemoryManager::VirtualProtect メソッド
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: reference
 api_name:
 - IHostMemoryManager.VirtualProtect
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: 13be0299-df0d-4951-aabf-0676a30b385f
 topic_type:
 - apiref
-caps.latest.revision: 11
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 77e8e163a16752934d0a1d826cc8463b3d3281bd
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: bada01e910397adcf0fe59286d90774a0ab24ffa
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/10/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ihostmemorymanagervirtualprotect-method"></a>IHostMemoryManager::VirtualProtect メソッド
 対応する Win32 関数の論理ラッパーとして機能します。 Win32 実装`VirtualProtect`呼び出しプロセスの仮想アドレス空間でコミットされたページの領域に保護を変更します。  
@@ -54,7 +42,7 @@ HRESULT VirtualProtect (
  [in]変更する保護属性は、仮想メモリのベース アドレスへのポインター。  
   
  `dwSize`  
- [in](バイト単位) を変更するメモリ ページの領域のサイズ。  
+ [in] 変更されるメモリページの領域のサイズ（バイト単位）。  
   
  `flNewProtect`  
  [in]適用するメモリの保護の種類。  
@@ -77,7 +65,7 @@ HRESULT VirtualProtect (
  この実装の`VirtualProtect`Win32 実装が成功を示すゼロ以外の値を返すとき、HRESULT 値とエラーを示す 0 値を返します。 詳細については、Windows プラットフォームのドキュメントを参照してください。  
   
 ## <a name="requirements"></a>要件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** MSCorEE.h  
   

@@ -1,27 +1,15 @@
 ---
-title: "コンソール アプリケーションでのポーリング"
-ms.custom: 
+title: コンソール アプリケーションでのポーリング
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 4ff084d5-5956-4db1-8e18-c5a66b000882
-caps.latest.revision: "3"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: be0ea0de7a87ed89954520992ab0b53baff80876
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 4fc9a787aa03af311ed219f0831a4d0e41544be8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="polling-in-console-applications"></a>コンソール アプリケーションでのポーリング
 ADO.NET での非同期操作は、1 つのスレッドで他のタスクを実行している間に、別のスレッドで時間のかかるデータベース操作を開始できます。 ただし、ほとんどの場合、データベース操作が完了するまでは、アプリケーションを続行できない状態に最終的に達することになります。 このような場合は、操作が完了したかどうかを確認するために、非同期操作をポーリングすると便利です。  
@@ -201,6 +189,6 @@ class Class1
 }  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [非同期操作](../../../../../docs/framework/data/adonet/sql/asynchronous-operations.md)  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

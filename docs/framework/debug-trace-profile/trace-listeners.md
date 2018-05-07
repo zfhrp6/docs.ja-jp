@@ -1,13 +1,6 @@
 ---
-title: "トレース リスナー"
-ms.custom: 
+title: トレース リスナー
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -21,16 +14,13 @@ helpviewer_keywords:
 - tracing [.NET Framework], trace listeners
 - logs, trace listeners
 ms.assetid: 444b0d33-67ea-4c36-9e94-79c50f839025
-caps.latest.revision: "13"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 042b8a6f7c25c34fc06d5d0bfd4ebce6417b920f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 457310fbf12ef2d6143586116f76df1720b59a6f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="trace-listeners"></a>トレース リスナー
 **Trace**、**Debug**、および <xref:System.Diagnostics.TraceSource> を使用するときには、送信されたメッセージを収集して記録するための機構が必要です。 トレース メッセージは*リスナー*によって受け取られます。 リスナーの目的は、トレース メッセージの収集、格納、およびルーティングを行うことです。 リスナーにより、トレース出力が適切な場所 (ログ、ウィンドウ、またはテキスト ファイル) に送られます。  
@@ -85,7 +75,7 @@ System.Diagnostics.Trace.Listeners.Add(
 ## <a name="developer-defined-listeners"></a>開発者が定義するリスナー  
  **TraceListener** 基底クラスから継承することにより、独自のリスナーを定義し、カスタマイズされたメソッドで既存のメソッドをオーバーライドできます。 開発者が定義するリスナーの作成については、「.NET Framework リファレンス」の「<xref:System.Diagnostics.TraceListener>」を参照してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Diagnostics.TextWriterTraceListener>  
  <xref:System.Diagnostics.EventLogTraceListener>  
  <xref:System.Diagnostics.DefaultTraceListener>  

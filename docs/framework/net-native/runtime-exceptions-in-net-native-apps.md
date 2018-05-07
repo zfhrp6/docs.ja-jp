@@ -1,24 +1,14 @@
 ---
-title: ".NET ネイティブ アプリでのランタイム例外"
-ms.custom: 
+title: .NET ネイティブ アプリでのランタイム例外
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 5f050181-8fdd-4a4e-9d16-f84c22a88a97
-caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: cea4901eca45a4b02e3eeb9fa8a3ac2a9efa3484
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 3a18dd97fcd9825867f85ba7e8798b12f8953725
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="runtime-exceptions-in-net-native-apps"></a>.NET ネイティブ アプリでのランタイム例外
 デバッグ構成とリリース構成は完全に異なるため、ターゲット プラットフォームでユニバーサル Windows プラットフォーム アプリのリリース ビルドをテストすることは重要です。 既定では、デバッグ構成は .NET Core ランタイムを使用してアプリをコンパイルしますが、リリース構成は .NET ネイティブを使用してアプリをネイティブ コードにコンパイルします。  
@@ -68,6 +58,6 @@ Additional information: Value does not fall within the expected range.
   
  完全なスタックを取得するには、代わりにデバッグ ビルドを実行します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [.NET ネイティブの Windows ユニバーサル アプリのデバッグ](http://blogs.msdn.com/b/visualstudioalm/archive/2015/07/29/debugging-net-native-windows-universal-apps.aspx)  
  [はじめに](../../../docs/framework/net-native/getting-started-with-net-native.md)

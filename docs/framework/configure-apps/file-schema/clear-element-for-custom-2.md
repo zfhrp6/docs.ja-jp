@@ -1,10 +1,6 @@
 ---
-title: "&lt;オフ&gt;NameValueSectionHandler と DictionarySectionHandler 要素"
+title: '&lt;オフ&gt;NameValueSectionHandler と DictionarySectionHandler 要素'
 ms.date: 05/01/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: article
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/sectionName/clear
 helpviewer_keywords:
@@ -13,14 +9,11 @@ helpviewer_keywords:
 ms.assetid: ff2294ec-fb82-4b0c-933e-ae185433fc7b
 author: guardrex
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 57ee634c987d344d81f1ca099fe55e633bfbf659
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a1cbd682faa4c60e50bc3b73b58ef226dd599da2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="clear-element-for-namevaluesectionhandler-and-dictionarysectionhandler"></a>\<オフ > NameValueSectionHandler と DictionarySectionHandler 要素
 
@@ -44,7 +37,7 @@ ms.lasthandoff: 12/22/2017
 
 |     | 説明 |
 | --- | ------------|
-| [**\<sectionName >**要素](~/docs/framework/configure-apps/file-schema/custom-element-2.md) | 使用するカスタム構成セクションの設定を定義、<xref:System.Configuration.NameValueSectionHandler>と<xref:System.Configuration.DictionarySectionHandler>クラスです。 |
+| [**\<sectionName >** 要素](~/docs/framework/configure-apps/file-schema/custom-element-2.md) | 使用するカスタム構成セクションの設定を定義、<xref:System.Configuration.NameValueSectionHandler>と<xref:System.Configuration.DictionarySectionHandler>クラスです。 |
 
 ## <a name="child-elements"></a>子要素
 
@@ -52,11 +45,11 @@ ms.lasthandoff: 12/22/2017
 
 ## <a name="remarks"></a>コメント
 
-使用することができます、 **\<オフ >**構成ファイルの階層内の上位レベルで定義されているアプリケーションからのすべての設定を削除する要素。
+使用することができます、 **\<オフ >** 構成ファイルの階層内の上位レベルで定義されているアプリケーションからのすべての設定を削除する要素。
 
 ## <a name="example"></a>例
 
-この例は、マシン構成ファイルとアプリケーション構成ファイルを定義し、使用する方法を示しています、 **\<オフ >**で以前に定義されたセクションをオフにするアプリケーション構成ファイル内の要素、マシン構成ファイルです。
+この例は、マシン構成ファイルとアプリケーション構成ファイルを定義し、使用する方法を示しています、 **\<オフ >** で以前に定義されたセクションをオフにするアプリケーション構成ファイル内の要素、マシン構成ファイルです。
 
 マシン構成ファイルのコードは、次のセクションを宣言して **\<mySection >**:
 
@@ -73,7 +66,7 @@ ms.lasthandoff: 12/22/2017
 </configuration>
 ```
 
-次のアプリケーション構成ファイルのコードからすべての設定を削除する **\<mySection >**です。 アプリケーションを取得できませんで宣言されていた設定のいずれかで、  **\<mySection >**マシン構成ファイルのセクションです。
+次のアプリケーション構成ファイルのコードからすべての設定を削除する **\<mySection >** です。 アプリケーションを取得できませんで宣言されていた設定のいずれかで、  **\<mySection >** マシン構成ファイルのセクションです。
 
 ```xml
 <!-- Application configuration file -->

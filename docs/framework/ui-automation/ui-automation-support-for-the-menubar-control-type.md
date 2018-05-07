@@ -1,28 +1,19 @@
 ---
-title: "UI オートメーションによる MenuBar コントロール型のサポート"
-ms.custom: 
+title: UI オートメーションによる MenuBar コントロール型のサポート
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-bcl
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - UI Automation, Menu Bar control type
 - control types, Menu Bar
 - Menu Bar control type
 ms.assetid: c1202b21-c1f0-4560-853c-7b99bd73ad97
-caps.latest.revision: "22"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 680afc96b2574a767ab187d8f6796a444b87ccdf
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a2a93699231f00d73eef42c6407bd83c09e3a90d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ui-automation-support-for-the-menubar-control-type"></a>UI オートメーションによる MenuBar コントロール型のサポート
 > [!NOTE]
@@ -48,10 +39,10 @@ ms.lasthandoff: 12/22/2017
 ## <a name="required-ui-automation-properties"></a>必須の UI オートメーション プロパティ  
  次の表に、メニュー バー コントロールに特に関連する値または定義を持つ [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] プロパティを示します。 詳細については[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]プロパティを参照してください[クライアントの UI オートメーション プロパティ](../../../docs/framework/ui-automation/ui-automation-properties-for-clients.md)です。  
   
-|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] プロパティ|値|ノート|  
+|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] プロパティ|[値]|メモ|  
 |------------------------------------------------------------------------------------|-----------|-----------|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>|「ノート」を参照。|このプロパティで公開する値には、メニュー バー コントロールに含まれるすべてのコントロールを含める必要があります。|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty>|「ノート」を参照。|アプリケーションに複数のメニュー バーがある場合を除き、メニュー バー コントロールに名前は必要ありません。 アプリケーションに複数のメニュー バーがある場合、このプロパティを使用して、「書式設定」や「アウトライン」といった識別名を公開する必要があります|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>|「ノート」をご覧ください。|このプロパティで公開する値には、メニュー バー コントロールに含まれるすべてのコントロールを含める必要があります。|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty>|「ノート」をご覧ください。|アプリケーションに複数のメニュー バーがある場合を除き、メニュー バー コントロールに名前は必要ありません。 アプリケーションに複数のメニュー バーがある場合、このプロパティを使用して、「書式設定」や「アウトライン」といった識別名を公開する必要があります|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.LabeledByProperty>|`Null`|メニュー バー コントロールには例外なく、ラベルはありません。|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.ControlTypeProperty>|メニュー バー|この値は、すべての UI フレームワークで同じです。|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.LocalizedControlTypeProperty>|「メニュー バー」|MenuBar コントロール型に対応する、ローカライズされた文字列。|  
@@ -60,7 +51,7 @@ ms.lasthandoff: 12/22/2017
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty>|「ノート」を参照。|このプロパティの値は、コントロールを画面に表示できるかどうかによって異なります。|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.OrientationProperty>|状況に依存|このプロパティは、メニュー バー コントロールが水平または垂直のいずれかであるかを公開します。|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.IsKeyboardFocusableProperty>|True|メニュー バー コントロールに含まれるコントロールはキーボード フォーカスを受け取ることができるため、メニュー バー コントロールはキーボード フォーカスを受け取ることができます。|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.HelpTextProperty>|「ノート」を参照。|メニュー バー コントロールにヘルプ テキストが必要になるシナリオはありません。|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.HelpTextProperty>|「ノート」をご覧ください。|メニュー バー コントロールにヘルプ テキストが必要になるシナリオはありません。|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.AcceleratorKeyProperty>|`Null`|メニュー バーでアクセラレータ キーを使用することは決してありません。|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.AccessKeyProperty>|「ALT」|ALT キーを押すと常に、アプリケーション内のメニュー バーにフォーカスが移動します。|  
   
@@ -68,7 +59,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="required-ui-automation-control-patterns"></a>必須の UI オートメーション コントロール パターン  
  次の表に、メニュー バー コントロールでサポートされなければならない [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] コントロール パターンを示します。 コントロール パターンについて詳しくは、「 [UI Automation Control Patterns Overview](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)」をご覧ください。  
   
-|コントロール パターン|Support|ノート|  
+|コントロール パターン|サポート|メモ|  
 |---------------------|-------------|-----------|  
 |<xref:System.Windows.Automation.Provider.IExpandCollapseProvider>|状況に依存|コントロールを展開または折りたたむことができる場合は、 <xref:System.Windows.Automation.Provider.IExpandCollapseProvider>を実装します。|  
 |<xref:System.Windows.Automation.Provider.IDockProvider>|状況に依存|コントロールを画面のさまざまな部分にドッキングできる場合は、 <xref:System.Windows.Automation.Provider.IDockProvider>を実装します。|  
@@ -78,16 +69,16 @@ ms.lasthandoff: 12/22/2017
 ## <a name="required-ui-automation-events"></a>必須の UI オートメーション イベント  
  次の表に、すべてのメニュー バー コントロールでサポートされなければならない [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] イベントを示します。 イベントについて詳しくは、「 [UI Automation Events Overview](../../../docs/framework/ui-automation/ui-automation-events-overview.md)」をご覧ください。  
   
-|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] イベント|サポート/値|ノート|  
+|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] イベント|サポート/値|メモ|  
 |---------------------------------------------------------------------------------|--------------------|-----------|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty> プロパティ変更イベント。|必須|なし|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty> プロパティ変更イベント。|必須|なし|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty> プロパティ変更イベント。|必須|なし|  
 |<xref:System.Windows.Automation.ExpandCollapsePatternIdentifiers.ExpandCollapseStateProperty> プロパティ変更イベント。|状況に依存|なし|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationFocusChangedEvent>|必要|なし|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.StructureChangedEvent>|必要|なし|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationFocusChangedEvent>|必須|なし|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.StructureChangedEvent>|必須|なし|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Automation.ControlType.MenuBar>  
  [UI オートメーション コントロール型の概要](../../../docs/framework/ui-automation/ui-automation-control-types-overview.md)  
  [UI オートメーションの概要](../../../docs/framework/ui-automation/ui-automation-overview.md)

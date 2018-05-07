@@ -1,14 +1,6 @@
 ---
-title: "IMetaDataEmit::DefineField メソッド"
-ms.custom: 
+title: IMetaDataEmit::DefineField メソッド
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - IMetaDataEmit.DefineField
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: 6b5be4fc-2e86-499c-8b09-833160bca767
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: e2c4b5604c3daec78744eb8902a30750571b9f82
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: fd0ddda898911da2c96a53d941c4290af9028154
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="imetadataemitdefinefield-method"></a>IMetaDataEmit::DefineField メソッド
 指定したメタデータ シグネチャを持つフィールドの定義を作成し、そのフィールド定義トークンを取得します。  
@@ -71,7 +59,7 @@ HRESULT DefineField (
  [in]内のバイト数`pvSigBlob`です。  
   
  `dwCPlusTypeFlage`  
- [in]`ELEMENT_TYPE_`  *\** 定数値にします。 これは、`CorElementType`値。 場合は、フィールドの定数値を定義しないを使用して`ELEMENT_TYPE_END`です。  
+ [in]`ELEMENT_TYPE_` *\** 定数値にします。 これは、`CorElementType`値。 場合は、フィールドの定数値を定義しないを使用して`ELEMENT_TYPE_END`です。  
   
  `pValue`  
  [in]フィールドの定数値。  
@@ -82,15 +70,15 @@ HRESULT DefineField (
  `pmd`  
  [out]`mdFieldDef`トークンが割り当てられます。  
   
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** Cor.h  
   
  **ライブラリ:** MSCorEE.dll にリソースとして使用  
   
- **.NET framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [IMetaDataEmit インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)  
  [IMetaDataEmit2 インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

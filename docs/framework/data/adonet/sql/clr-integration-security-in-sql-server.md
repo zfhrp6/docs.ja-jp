@@ -1,24 +1,12 @@
 ---
-title: "SQL Server の CLR 統合セキュリティ"
-ms.custom: 
+title: SQL Server の CLR 統合セキュリティ
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 489fe096-fd1d-42de-8438-bf7aed46aea2
-caps.latest.revision: "5"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 37437d827fc0ff6583178f33f4cceaa86f5175dd
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 8df8a19850e9cce28b1f09e80908dafb8bfedaf6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="clr-integration-security-in-sql-server"></a>SQL Server の CLR 統合セキュリティ
 Microsoft SQL Server で新たに導入された機能の 1 つに、.NET Framework の共通言語ランタイム (CLR) コンポーネントの統合があります。 CLR の統合により、Microsoft Visual Basic .NET や Microsoft Visual C# を含む任意の .NET Framework 言語を使用して、ストアド プロシージャ、トリガー、ユーザー定義型、ユーザー定義関数、ユーザー定義集計、およびストリーミング テーブル値関数を作成できるようになりました。  
@@ -33,7 +21,7 @@ Microsoft SQL Server で新たに導入された機能の 1 つに、.NET Framew
 |[コード アクセス セキュリティ](http://msdn.microsoft.com/library/23a20143-241d-4fe5-9d9f-3933fd594c03)|.NET Framework の CAS について説明します。|  
 |[CLR 統合のセキュリティ](http://go.microsoft.com/fwlink/?LinkId=59998)|SQL Server の内部で実行されるマネージ コードのセキュリティ モデルについて説明します。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ADO.NET アプリケーションのセキュリティ保護](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
  [SQL Server におけるアプリケーション セキュリティのシナリオ](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)  
  [SQL Server の共通言語ランタイム統合](../../../../../docs/framework/data/adonet/sql/sql-server-common-language-runtime-integration.md)  

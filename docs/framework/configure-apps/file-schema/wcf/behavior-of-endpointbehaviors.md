@@ -2,11 +2,11 @@
 title: '&lt;endpointBehaviors&gt; の &lt;behavior&gt;'
 ms.date: 03/30/2017
 ms.assetid: b90ca3bc-3c22-4174-b903-e3a39898bd27
-ms.openlocfilehash: 0619d14444d835ed959a1a1db7cd37aaf0429728
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
-ms.translationtype: HT
+ms.openlocfilehash: e275fbc1b14469553094a4df838930be53937de2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ltbehaviorgt-of-ltendpointbehaviorsgt"></a>&lt;endpointBehaviors&gt; の &lt;behavior&gt;
 エンドポイントの動作設定のコレクションを含む `behavior` 要素。 各動作には、それぞれの `name` によってインデックスが付けられます。 エンドポイントは、この名前を使用して各動作にリンクできます。 [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)] 以降では、バインディングおよび動作に名前を付ける必要はありません。 既定の構成と無名のバインディングおよび動作の詳細については、次を参照してください。[簡略化された構成](../../../../../docs/framework/wcf/simplified-configuration.md)と[WCF サービスの構成を簡略化](../../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md)です。  
@@ -52,7 +52,7 @@ ms.lasthandoff: 05/03/2018
 |[\<soapProcessing >](../../../../../docs/framework/configure-apps/file-schema/wcf/soapprocessing.md)|異なるバインディングの種類およびメッセージ バージョンの間でメッセージのマーシャリングに使用されるクライアント エンドポイントの動作を定義します。|  
 |[\<synchronousReceive >](../../../../../docs/framework/configure-apps/file-schema/wcf/synchronousreceive-element.md)|サービスまたはクライアント アプリケーションでメッセージを受信する場合のランタイム動作を指定します。 属性や子要素はありません。|  
 |[\<transactedBatching >](../../../../../docs/framework/configure-apps/file-schema/wcf/transactedbatching.md)|受信操作でトランザクション バッチがサポートされるかどうかを指定します。|  
-|[\<webHttp >](../../../../../docs/framework/configure-apps/file-schema/wcf/webhttp.md)|構成によってエンドポイントに WebHttpBehavior を指定します。 この動作と組み合わせて使用すると、 \<webHttpBinding > 標準バインディングの Web プログラミング モデルを有効に、[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)]サービス。|  
+|[\<webHttp >](../../../../../docs/framework/configure-apps/file-schema/wcf/webhttp.md)|構成によってエンドポイントに WebHttpBehavior を指定します。 この動作と組み合わせて使用すると、 \<webHttpBinding > 標準バインディングは、WCF サービスの Web プログラミング モデルを有効にします。|  
   
 ### <a name="parent-elements"></a>親要素  
   

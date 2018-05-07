@@ -1,28 +1,14 @@
 ---
 title: ユーザー定義バインディングの作成
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - user-defined bindings [WCF]
 ms.assetid: c4960675-d701-4bc9-b400-36a752fdd08b
-caps.latest.revision: 19
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 05476adccca0deb5fd82b62f99f06939664cc876
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
-ms.translationtype: MT
+ms.openlocfilehash: 82fe3baada73b89291311a891069c6ee3f19cf20
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="creating-user-defined-bindings"></a>ユーザー定義バインディングの作成
 システムから提供されないバインディングを作成する方法はいくつかあります。  
@@ -38,7 +24,7 @@ ms.lasthandoff: 04/30/2018
   
  バインディング要素には主に、プロトコル バインディング要素、エンコーディング バインディング要素、トランスポート バインディング要素という 3 つの種類があります。  
   
- プロトコル バインド要素 : この要素はメッセージで動作する上位処理ステップを表します。 このバインド要素で作成したチャネルとリスナーを使って、メッセージ内容の追加、削除、変更が可能です。 特定のバインディングには、それぞれが <xref:System.ServiceModel.Channels.BindingElement> を継承する任意の数のプロトコル バインド要素を含めることができます。 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] には、<xref:System.ServiceModel.Channels.ReliableSessionBindingElement> や <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> などのプロトコル バインド要素がいくつか含まれます。  
+ プロトコル バインド要素 : この要素はメッセージで動作する上位処理ステップを表します。 このバインド要素で作成したチャネルとリスナーを使って、メッセージ内容の追加、削除、変更が可能です。 特定のバインディングには、それぞれが <xref:System.ServiceModel.Channels.BindingElement> を継承する任意の数のプロトコル バインド要素を含めることができます。 Windows Communication Foundation (WCF) など、いくつかのプロトコル バインド要素が含まれています、<xref:System.ServiceModel.Channels.ReliableSessionBindingElement>と<xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>です。  
   
  エンコーディング バインド要素 : この要素は、メッセージとネットワーク転送が可能なエンコーディングとの間の変換を表します。 一般的な [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] バインディングには、エンコーディング バインド要素が 1 つだけ含まれます。 エンコーディング バインド要素の例として、<xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement>、<xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement>、<xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement> などがあります。 エンコーディング バインド要素がバインディングに指定されていない場合、既定のエンコーディングが使用されます。 既定値は、トランスポートが HTTP の場合はテキスト、それ以外の場合はバイナリです。  
   

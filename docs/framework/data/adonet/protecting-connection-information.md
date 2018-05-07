@@ -1,24 +1,12 @@
 ---
-title: "接続情報の保護"
-ms.custom: 
+title: 接続情報の保護
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 1471f580-bcd4-4046-bdaf-d2541ecda2f4
-caps.latest.revision: "4"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: ffd77bb1875b2de47602a6bd766463b0a274fadc
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 4cf503af6f57eefb0990a8e7e728ea5c1474bfa7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="protecting-connection-information"></a>接続情報の保護
 アプリケーションのセキュリティを実現するうえで、データ ソースへのアクセスを保護することは、最も重要な目標の 1 つです。 保護されていない接続文字列は脆弱性を招く原因になります。 接続情報をテキスト形式で保存したり、メモリ内に保持したりすると、システム全体のセキュリティが損なわれる可能性があります。 使用して、ソース コードに埋め込まれた接続文字列を読み取ることができます、 [Ildasm.exe (IL 逆アセンブラー)](../../../../docs/framework/tools/ildasm-exe-il-disassembler.md)コンパイルされたアセンブリで Microsoft intermediate language (MSIL) を表示します。  
@@ -48,9 +36,9 @@ ms.lasthandoff: 01/19/2018
  `Persist Security Info` の既定値は false です。すべての接続文字列には、この既定値を使用することをお勧めします。 `Persist Security Info` を `true` または `yes` に設定すると、ユーザー ID やパスワードなどのセキュリティ関連情報を、接続を開いた後にその接続から取得できます。 `Persist Security Info` を `false` または `no` に設定した場合、その情報を使って接続を開いた後で、セキュリティ情報が破棄されるため、信頼できないソースによってセキュリティ関連情報がアクセスされることを確実に防ぐことができます。  
   
 ## <a name="encrypt-configuration-files"></a>構成ファイルの暗号化  
- 接続文字列は構成ファイルに保存することもでき、そうすることで、アプリケーションのコードに接続文字列を組み込むことを避けられます。 構成ファイルは、.NET Framework が基本的な要素を定義するために使用する標準的な XML ファイルです。 構成ファイル内の接続文字列内に格納されて通常、  **\<connectionStrings >**内の要素、 **app.config** Windows アプリケーションの場合、または**web.config** ASP.NET アプリケーションのファイルです。 格納する基本の詳細については、取得して、構成ファイルから接続文字列の暗号化を参照してください[接続文字列と構成ファイル](../../../../docs/framework/data/adonet/connection-strings-and-configuration-files.md)です。  
+ 接続文字列は構成ファイルに保存することもでき、そうすることで、アプリケーションのコードに接続文字列を組み込むことを避けられます。 構成ファイルは、.NET Framework が基本的な要素を定義するために使用する標準的な XML ファイルです。 構成ファイル内の接続文字列内に格納されて通常、  **\<connectionStrings >** 内の要素、 **app.config** Windows アプリケーションの場合、または**web.config** ASP.NET アプリケーションのファイルです。 格納する基本の詳細については、取得して、構成ファイルから接続文字列の暗号化を参照してください[接続文字列と構成ファイル](../../../../docs/framework/data/adonet/connection-strings-and-configuration-files.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ADO.NET アプリケーションのセキュリティ保護](../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
  [保護された構成を使用して構成情報の暗号化](http://msdn.microsoft.com/library/51cdfe5b-9d82-458c-94ff-c551c4f38ed1)  
  [ネイティブ コードと .NET Framework コードのセキュリティ](http://msdn.microsoft.com/library/bd61be84-c143-409a-a75a-44253724f784)  

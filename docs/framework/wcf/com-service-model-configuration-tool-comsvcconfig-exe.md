@@ -1,27 +1,15 @@
 ---
-title: "COM+ サービス モデル構成ツール (ComSvcConfig.exe)"
-ms.custom: 
+title: COM+ サービス モデル構成ツール (ComSvcConfig.exe)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - Windows Communication Foundation, COM+ integration
 - WCF, COM+ integration
 ms.assetid: 7717c6c2-85fc-418b-a8ed-bad8e61cec5c
-caps.latest.revision: "15"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 40e7644ade32f245772a8971cf0693683b980952
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: db4518a66c54574f498c4657e25a29676f0f720a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="com-service-model-configuration-tool-comsvcconfigexe"></a>COM+ サービス モデル構成ツール (ComSvcConfig.exe)
 COM+ サービス モデル構成コマンド ライン ツール (ComSvcConfig.exe) を使用すると、COM+ インターフェイスを Web サービスとして公開するように構成できます。  
@@ -55,11 +43,11 @@ ComSvcConfig.exe /install | /uninstall | /list [/application:<ApplicationID | Ap
   
 |オプション|説明|  
 |------------|-----------------|  
-|`/application:`\< *ApplicationID* &#124;です。*ApplicationName*\>|構成する COM+ アプリケーションを指定します。<br /><br /> 短縮形 : `/a`。|  
-|`/contract:`\< *ClassID* &#124;です。*ProgID* &#124;です。\*、*InterfaceID* &#124;です。*InterfaceName* &#124;です。\*\>|サービスのコントラクトとして構成される COM+ コンポーネントとインターフェイスを指定します。<br /><br /> 短縮形 : `/c`。<br /><br /> ワイルドカード文字を中に (\*) コンポーネントとインターフェイスの名前を指定するときに使用できることをお勧めは使用しないこと、そのために、意図しないインターフェイスを公開する可能性があります。|  
-|`/hosting:`\< *complus* &#124;です。*されました*\>|COM+ ホスト モードと Web ホスト モードのどちらを使用するかを指定します。<br /><br /> 短縮形 : `/h`。<br /><br /> COM+ ホスト モードを使用するには、COM + アプリケーションの明示的なアクティブ化が必要です。 Web ホスト モードを使用すると、COM+ アプリケーションを必要なときに自動的にアクティブ化できます。 COM+ アプリケーションがライブラリ アプリケーションの場合は、インターネット インフォメーション サービス (IIS) のプロセスで実行します。 COM+ アプリケーションがサーバー アプリケーションの場合は、Dllhost.exe のプロセスで実行します。|  
-|`/webSite:`\< *WebsiteName*\>|Web ホスト モードを使用する場合は、ホストする Web サイトを指定します (`/hosting` フラグを参照)。<br /><br /> 短縮形 : `/w`。<br /><br /> Web サイトを指定しない場合は、既定の Web サイトが使用されます。|  
-|`/webDirectory:`\< *WebDirectoryName*\>|Web ホストを使用する場合は、ホストする仮想ディレクトリを指定します (`/hosting` フラグを参照)。<br /><br /> 短縮形 : `/d`。|  
+|`/application:` \<*ApplicationID* &#124; *ApplicationName*\>|構成する COM+ アプリケーションを指定します。<br /><br /> 短縮形 : `/a`。|  
+|`/contract:` \<*ClassID* &#124; *ProgID* &#124; \*、*InterfaceID* &#124; *InterfaceName*    &#124; \*\>|サービスのコントラクトとして構成される COM+ コンポーネントとインターフェイスを指定します。<br /><br /> 短縮形 : `/c`。<br /><br /> ワイルドカード文字を中に (\*) コンポーネントとインターフェイスの名前を指定するときに使用できることをお勧めは使用しないこと、そのために、意図しないインターフェイスを公開する可能性があります。|  
+|`/hosting:` \<*complus* &#124; *されました* \>|COM+ ホスト モードと Web ホスト モードのどちらを使用するかを指定します。<br /><br /> 短縮形 : `/h`。<br /><br /> COM+ ホスト モードを使用するには、COM + アプリケーションの明示的なアクティブ化が必要です。 Web ホスト モードを使用すると、COM+ アプリケーションを必要なときに自動的にアクティブ化できます。 COM+ アプリケーションがライブラリ アプリケーションの場合は、インターネット インフォメーション サービス (IIS) のプロセスで実行します。 COM+ アプリケーションがサーバー アプリケーションの場合は、Dllhost.exe のプロセスで実行します。|  
+|`/webSite:` \<*Web サイト名*\>|Web ホスト モードを使用する場合は、ホストする Web サイトを指定します (`/hosting` フラグを参照)。<br /><br /> 短縮形 : `/w`。<br /><br /> Web サイトを指定しない場合は、既定の Web サイトが使用されます。|  
+|`/webDirectory:` \<*WebDirectoryName*\>|Web ホストを使用する場合は、ホストする仮想ディレクトリを指定します (`/hosting` フラグを参照)。<br /><br /> 短縮形 : `/d`。|  
 |`/mex`|サービスからコントラクト定義を取得するクライアントをサポートするには、既定のサービス構成に Metadata Exchange (MEX) サービス エンドポイントを追加します。<br /><br /> 短縮形 : `/x`。|  
 |`/id`|アプリケーション、コンポーネント、およびインターフェイス情報を ID として表示します。<br /><br /> 短縮形 : `/k`。|  
 |`/nologo`|ComSvcConfig.exe がロゴを表示しないようにします。<br /><br /> 短縮形 : `/n`。|  
@@ -105,5 +93,5 @@ ComSvcConfig.exe /uninstall /application:OnlineStore /interface:ItemOrders.Finan
 ComSvcConfig.exe /list /application:OnlineStore /hosting:complus  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [方法 : COM+ サービス モデル構成ツールを使用する](../../../docs/framework/wcf/feature-details/how-to-use-the-com-service-model-configuration-tool.md)

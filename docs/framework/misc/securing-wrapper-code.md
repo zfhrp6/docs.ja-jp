@@ -1,29 +1,19 @@
 ---
-title: "ラッパー コードの保護"
-ms.custom: 
+title: ラッパー コードの保護
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - security [.NET Framework], wrapper code
 - wrapper code, securing
 - secure coding, wrapper code
 - code security, wrapper code
 ms.assetid: 1df6c516-5bba-48bd-b450-1070e04b7389
-caps.latest.revision: "11"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 5e29a2bdd0bfa338d0266c0841e11aa2ac366529
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ac278a4a3b06e0611e1cf57d079516a1dccf606b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="securing-wrapper-code"></a>ラッパー コードの保護
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
@@ -110,5 +100,5 @@ ms.lasthandoff: 12/22/2017
   
 -   実装する型とインターフェイス。 一貫してリンク要求を使用する必要があります。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [安全なコーディングのガイドライン](../../../docs/standard/security/secure-coding-guidelines.md)
