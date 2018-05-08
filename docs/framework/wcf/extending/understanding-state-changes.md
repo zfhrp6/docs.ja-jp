@@ -1,24 +1,12 @@
 ---
-title: "状態変更の理解"
-ms.custom: 
+title: 状態変更の理解
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: a79ed2aa-e49a-47a8-845a-c9f436ec9987
-caps.latest.revision: "13"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ce0d3be43b8e50367d1cdd9b4e486a4154001624
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5bfee392053d9f3fd529d68b533a046e53f20dd1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="understanding-state-changes"></a>状態変更の理解
 ここでは、チャネルの状態と遷移、チャネル状態の構成に使用する型、およびそれらの型の実装方法について説明します。  
@@ -42,7 +30,7 @@ ms.lasthandoff: 12/22/2017
  ![チャネル状態遷移](../../../../docs/framework/wcf/extending/media/channelstatetranitionshighleveldiagram.gif "ChannelStateTranitionsHighLevelDiagram")  
 図 1 です。 ICommunicationObject ステート マシン  
   
- [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] は、<xref:System.ServiceModel.Channels.CommunicationObject> とチャネル ステート マシンを実装する <xref:System.ServiceModel.ICommunicationObject> という名前の抽象基本クラスを提供します。 次の図は、<xref:System.ServiceModel.Channels.CommunicationObject> に固有の、変更済みの状態図です。 <xref:System.ServiceModel.ICommunicationObject> ステート マシンのほかに、追加の <xref:System.ServiceModel.Channels.CommunicationObject> メソッドが呼び出されるタイミングも示しています。  
+ Windows Communication Foundation (WCF) という名前の抽象基本クラスを提供する<xref:System.ServiceModel.Channels.CommunicationObject>を実装する<xref:System.ServiceModel.ICommunicationObject>とチャネル ステート マシンです。 次の図は、<xref:System.ServiceModel.Channels.CommunicationObject> に固有の、変更済みの状態図です。 <xref:System.ServiceModel.ICommunicationObject> ステート マシンのほかに、追加の <xref:System.ServiceModel.Channels.CommunicationObject> メソッドが呼び出されるタイミングも示しています。  
   
  ![状態が変化](../../../../docs/framework/wcf/extending/media/wcfc-wcfchannelsigure5statetransitionsdetailsc.gif "wcfc_WCFChannelsigure5StateTransitionsDetailsc")  
 図 2 になります。 イベントと保護メソッドの呼び出しを含む、ICommunicationObject ステート マシンの CommunicationObject 実装  

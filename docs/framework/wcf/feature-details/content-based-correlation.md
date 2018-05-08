@@ -1,26 +1,12 @@
 ---
 title: コンテンツ ベースの相関関係。
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: f46a2b68-8d24-4122-bbee-9573fc3f9fb4
-caps.latest.revision: 17
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 4b4ebd49fbed12f1e8120e67f32496cd782531da
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 48009420788b8678f842c4368926e04f8a745a52
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="content-based-correlation"></a>コンテンツ ベースの相関関係。
 ワークフロー サービスがクライアントや他のサービスと通信するときに、交換されるメッセージに、特定のインスタンスに一意に関連付けられたデータが含まれることがよくあります。 コンテンツ ベースの相関関係では、顧客番号や注文 ID などのメッセージ内のデータを使用して、適切なワークフロー インスタンスにメッセージをルーティングします。 このトピックでは、コンテンツ ベースの相関関係をワークフロー内で使用する方法について説明します。  

@@ -1,27 +1,15 @@
 ---
-title: "スキーマの制限"
-ms.custom: 
+title: スキーマの制限
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 73d2980e-e73c-4987-913a-8ddc93d09144
-caps.latest.revision: "3"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: f5b004b70716c61af8ac37fef76f660c488e5a74
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: c62f934561fa4a6c352ff84b8c1201461c42de39
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="schema-restrictions"></a>スキーマの制限
 2 番目の省略可能なパラメーター、 **GetSchema**メソッドは、スキーマ情報の量を制限するために使用される制限が返されに渡される、 **GetSchema**文字列の配列としてメソッド. 配列での位置により、渡すことができる値が決定します。これは、制限の番号に相当します。  
@@ -154,7 +142,7 @@ class Program
   
 |制限の名前|パラメーター名|制限の既定値|制限の番号|  
 |----------------------|--------------------|-------------------------|------------------------|  
-|name|@Name|name|1|  
+|名前|@Name|名前|1|  
   
 ### <a name="tables"></a>[テーブル]  
   
@@ -206,7 +194,7 @@ class Program
 |----------------------|--------------------|-------------------------|------------------------|  
 |Catalog|@Catalog|SPECIFIC_CATALOG|1|  
 |Owner|@Owner|SPECIFIC_SCHEMA|2|  
-|name|@Name|SPECIFIC_NAME|3|  
+|名前|@Name|SPECIFIC_NAME|3|  
 |パラメーター|@Parameter|PARAMETER_NAME|4|  
   
 ### <a name="procedures"></a>手順  
@@ -215,7 +203,7 @@ class Program
 |----------------------|--------------------|-------------------------|------------------------|  
 |Catalog|@Catalog|SPECIFIC_CATALOG|1|  
 |Owner|@Owner|SPECIFIC_SCHEMA|2|  
-|name|@Name|SPECIFIC_NAME|3|  
+|名前|@Name|SPECIFIC_NAME|3|  
 |型|@Type|ROUTINE_TYPE|4|  
   
 ### <a name="indexcolumns"></a>IndexColumns  
@@ -250,7 +238,7 @@ class Program
 |Catalog|@Catalog|CONSTRAINT_CATALOG|1|  
 |Owner|@Owner|CONSTRAINT_SCHEMA|2|  
 |テーブル|@Table|TABLE_NAME|3|  
-|name|@Name|CONSTRAINT_NAME|4|  
+|名前|@Name|CONSTRAINT_NAME|4|  
   
 ## <a name="sql-server-2008-schema-restrictions"></a>SQL Server 2008 スキーマの制限  
  次の表に、SQL Server 2008 スキーマ コレクションの制限を示します。 これらの制限は、.NET Framework 3.5 SP1 および SQL Server 2008 以降で有効です。 これらの制限は、以前のバージョンの .NET Framework および SQL Server ではサポートされません。  
@@ -272,5 +260,5 @@ class Program
 |テーブル|@Table|TABLE_NAME|3|  
 |Column|@Column|COLUMN_NAME|4|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

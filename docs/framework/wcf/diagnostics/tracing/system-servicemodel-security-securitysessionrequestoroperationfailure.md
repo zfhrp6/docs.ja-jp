@@ -1,24 +1,14 @@
 ---
 title: System.ServiceModel.Security.SecuritySessionRequestorOperationFailure
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: c3ebb7b2-ed30-4e8c-99dc-b79d37a7e3fb
-caps.latest.revision: "4"
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: 487c849e765bd8f0bc51eee3032845f19258a952
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f65406eccaf764cd299f76ca73128d907506653b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="systemservicemodelsecuritysecuritysessionrequestoroperationfailure"></a>System.ServiceModel.Security.SecuritySessionRequestorOperationFailure
 System.ServiceModel.Security.SecuritySessionRequestorOperationFailure  
@@ -26,7 +16,7 @@ System.ServiceModel.Security.SecuritySessionRequestorOperationFailure
 ## <a name="description"></a>説明  
  クライアントのセキュリティ セッションの操作が失敗しました。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [トレース](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
  [トレースを使用したアプリケーションのトラブルシューティング](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
  [管理と診断](../../../../../docs/framework/wcf/diagnostics/index.md)

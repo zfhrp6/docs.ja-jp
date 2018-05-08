@@ -1,14 +1,6 @@
 ---
-title: "ISymUnmanagedReader インターフェイス"
-ms.custom: 
+title: ISymUnmanagedReader インターフェイス
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ISymUnmanagedReader
 api_location:
@@ -22,17 +14,13 @@ helpviewer_keywords:
 ms.assetid: aa3cc15d-058e-4e6f-b03e-39569646ba47
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 9e8daea11292cb37deb8e956e6a666c14579fbfa
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a78616ea1dccdf82c4e00d23d2ff630c98cb4e38
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="isymunmanagedreader-interface"></a>ISymUnmanagedReader インターフェイス
 ドキュメント、メソッド、およびシンボル ストア内の変数へのアクセスを提供するシンボル リーダーを表します。  
@@ -59,9 +47,9 @@ ms.lasthandoff: 12/22/2017
 |[ReplaceSymbolStore メソッド](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-replacesymbolstore-method.md)|既存のシンボル ストアをデルタ シンボル ストアで置き換えます。|  
 |[UpdateSymbolStore メソッド](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-updatesymbolstore-method.md)|既存のシンボル ストアをデルタ シンボル ストアで更新します。|  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** CorSym.idl、CorSym.h  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [シンボル ストア診断インターフェイス](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)  
  [ISymUnmanagedReader2 インターフェイス](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader2-interface.md)

@@ -1,11 +1,7 @@
 ---
-title: "BeginEnumeration 関数 (アンマネージ API リファレンス)"
-description: "BeginEnumeration 関数が列挙体の先頭に、列挙子をリセットします。"
+title: BeginEnumeration 関数 (アンマネージ API リファレンス)
+description: BeginEnumeration 関数が列挙体の先頭に、列挙子をリセットします。
 ms.date: 11/06/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: reference
 api_name:
 - BeginEnumeration
 api_location:
@@ -20,14 +16,11 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 90c3e8448a61145290ea4a75b1d38f7ae010cb9f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9699f0cfc4e9fdb989337681b164cc1e703c1e60
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="beginenumeration-function"></a>BeginEnumeration 関数
 列挙体の先頭に戻るには、列挙子をリセットします。  
@@ -49,7 +42,7 @@ HRESULT BeginEnumeration (
 `vFunc`  
 [in]このパラメーターは使用されません。
 
-`ptr`[in]ポインター、 [IWbemClassObject](https://msdn.microsoft.com/library/aa391433%28v=vs.85%29.aspx)インスタンス。
+`ptr` [in]ポインター、 [IWbemClassObject](https://msdn.microsoft.com/library/aa391433%28v=vs.85%29.aspx)インスタンス。
 
 `lEnumFlags`  
 [in]フラグまたはで説明されている値のビットごとの組み合わせ、[解説](#remarks)列挙体に含まれるプロパティを制御するセクション。
@@ -103,12 +96,12 @@ HRESULT BeginEnumeration (
 | `WBEM_FLAG_PROPAGATED_ONLY` |  0x20 | 基本クラスから継承されたプロパティ、列挙型を制限します。 |
 
 
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** WMINet_Utils.idl  
   
- **.NET framework のバージョン:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **.NET framework のバージョン:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>関連項目  
 [WMI およびパフォーマンス カウンター (アンマネージ API リファレンス)](index.md)

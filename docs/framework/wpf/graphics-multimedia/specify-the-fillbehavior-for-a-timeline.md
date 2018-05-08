@@ -1,27 +1,15 @@
 ---
-title: "方法 : アクティブな期間の末尾に到達したタイムラインの FillBehavior を指定する"
-ms.custom: 
+title: '方法 : アクティブな期間の末尾に到達したタイムラインの FillBehavior を指定する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - FillBehavior property for inactive timelines [WPF]
 - Timelines [WPF], FillBehavior property
 ms.assetid: db805f59-d513-4dac-af15-47005dae3199
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 4b890d121cf06dc377a3bbc1dc569d9dac7c011b
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 947be09140dc2d1d5e130ccb74472d8dce3408cb
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-specify-the-fillbehavior-for-a-timeline-that-has-reached-the-end-of-its-active-period"></a>方法 : アクティブな期間の末尾に到達したタイムラインの FillBehavior を指定する
 この例を指定する方法を示しています、 <xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A> 、非アクティブの<xref:System.Windows.Media.Animation.Timeline>アニメーション化されたプロパティのです。  
@@ -37,7 +25,7 @@ ms.lasthandoff: 01/19/2018
   
  サンプル全体については、次を参照してください。[アニメーション サンプル ギャラリー](http://go.microsoft.com/fwlink/?LinkID=159969)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Media.Animation.DoubleAnimation>  
  <xref:System.Windows.FrameworkElement.Width%2A>  
  <xref:System.Windows.Media.Animation.Timeline>  

@@ -1,38 +1,24 @@
 ---
 title: キューに置かれたメッセージングのトラブルシューティング
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: a5f2836f-018d-42f5-a571-1e97e64ea5b0
-caps.latest.revision: 19
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 1342f2383e7cf2aa15ea60be03c93044e4332612
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 45a3bf82662fcc01b732428d1ca351e4ae8ddca0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="troubleshooting-queued-messaging"></a>キューに置かれたメッセージングのトラブルシューティング
-ここでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] でのキューの使用に関する一般的な質問とトラブルシューティング ヘルプについて説明します。  
+このセクションには、一般的な質問とトラブルシューティングの Windows Communication Foundation (WCF) でキューを使用するためのヘルプが含まれています。  
   
 ## <a name="common-questions"></a>一般的な質問  
- **Q:** 使用[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]ベータ 1 とは、MSMQ の修正プログラムをインストールします。 この修正プログラムを削除する必要がありますか。  
+ **Q:** WCF Beta 1 を使用して、MSMQ の修正プログラムをインストールします。 この修正プログラムを削除する必要がありますか。  
   
- **A:** できます。 この修正プログラムのサポートは終了しています。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、現在、MSMQ で正常に動作し、修正プログラムは不要です。  
+ **A:** できます。 この修正プログラムのサポートは終了しています。 WCF になりました MSMQ に、修正プログラムは不要です。  
   
  **Q:** MSMQ 用の 2 つのバインディングがある:<xref:System.ServiceModel.NetMsmqBinding>と<xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding>です。 それぞれの用途を教えてください。  
   
- **A:** を使用して、<xref:System.ServiceModel.NetMsmqBinding>の 2 つのキューに置かれた通信をトランスポートとして MSMQ を使用するときに[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]アプリケーションです。 また、<xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> を使用するのは、既存の MSMQ アプリケーションを使用して、新しい [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションと通信する場合です。  
+ **A:** を使用して、<xref:System.ServiceModel.NetMsmqBinding>の 2 つの WCF アプリケーション間でキューに置かれた通信をトランスポートとして MSMQ を使用する場合。 使用して、<xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding>既存の MSMQ アプリケーションを使用して、新しい WCF アプリケーションと通信する場合。  
   
  **Q:** を使用するように MSMQ をアップグレードする必要は、<xref:System.ServiceModel.NetMsmqBinding>と`MsmqIntegration`バインドしますか?  
   
@@ -54,7 +40,7 @@ ms.lasthandoff: 04/30/2018
   
  **A:** できます。  
   
- **Q:** 新規と既存の MSMQ アプリケーションを統合する[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]クライアントまたはサーバー。 使用している MSMQ インフラストラクチャの両方の側をアップグレードする必要がありますか。  
+ **Q:** 新しい WCF クライアントまたはサーバーと既存の MSMQ アプリケーションを統合します。 使用している MSMQ インフラストラクチャの両方の側をアップグレードする必要がありますか。  
   
  **A:** いいえ。 どちら側も MSMQ 4.0 にアップグレードする必要はありません。  
   
@@ -145,9 +131,9 @@ System.ServiceModel.MsmqPoisonMessageException: The transport channel detected a
   
  **Q:** public または private 形式名を使用し、上のサービス ホストを開いてすればとき[!INCLUDE[wv](../../../../includes/wv-md.md)]、エラーが発生します。 なぜでしょうか。  
   
- **A:** 、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]で統合チャネル[!INCLUDE[wv](../../../../includes/wv-md.md)]サブキュー有害なメッセージを処理するため、アプリケーションのメイン キューを開くことができるかどうかを確認します。 サブキューの名前は、リスナーに渡される msmq.formatname URI から派生します。 MSMQ でのサブキュー名は、直接形式名に限定されます。 そのためにエラーが発生します。 キュー URI を直接形式名に変更してください。  
+ **A:** で WCF 統合チャネル[!INCLUDE[wv](../../../../includes/wv-md.md)]サブキュー有害なメッセージを処理するため、アプリケーションのメイン キューを開くことができるかどうかを確認します。 サブキューの名前は、リスナーに渡される msmq.formatname URI から派生します。 MSMQ でのサブキュー名は、直接形式名に限定されます。 そのためにエラーが発生します。 キュー URI を直接形式名に変更してください。  
   
- **Q:** MSMQ アプリケーションからメッセージを受信するときに、メッセージがキューに置かれ、受信側によって読み取られません[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]アプリケーションです。 なぜでしょうか。  
+ **Q:** MSMQ アプリケーションからメッセージを受信するときに、メッセージがキューに置かれ、は、受信側の WCF アプリケーションで読み取ることができません。 なぜでしょうか。  
   
  **A:** メッセージ本文が含まれるかどうかを確認します。 メッセージに本文がない場合、MSMQ 統合チャネルはメッセージを無視します。 例外を通知する `IErrorHandler` を実装し、トレースを確認してください。  
   
@@ -193,7 +179,7 @@ System.ServiceModel.MsmqPoisonMessageException: The transport channel detected a
  **A:** バインディング構成を確認します。 既定のバインディングでは、メッセージに署名するために MSMQ トランスポート セキュリティを有効にしています。 これを無効にしてください。  
   
 ### <a name="remote-transacted-receives"></a>リモート トランザクション受信  
- **Q:** コンピューター A で、キューがある場合、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]サービスを読み取るメッセージの B (リモート トランザクション受信シナリオ)、コンピューター上のキューからメッセージがキューから読み取られません。 受信側は、メッセージ「トランザクションをインポートできません」で失敗しました。 トレース情報を示します これを修正するのには、どうすればよいですか  
+ **Q:** コンピューター A で、キューがあるし、メッセージの B (リモート トランザクション受信シナリオ)、コンピューター上のキューからメッセージを読み取りを WCF サービスがキューから読み取るされません。 受信側は、メッセージ「トランザクションをインポートできません」で失敗しました。 トレース情報を示します これを修正するのには、どうすればよいですか  
   
  **A:** この 3 つの理由が考えられます。  
   

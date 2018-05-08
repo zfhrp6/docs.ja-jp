@@ -1,37 +1,27 @@
 ---
-title: "セキュリティの概念"
-ms.custom: 
+title: セキュリティの概念
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 944fa5ca-2c34-4268-8897-e005a61b470d
-caps.latest.revision: "11"
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: 1ac16afc6ee22665188d5df5e79288341072026e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 2379c009cacf4cd2adac0aeebbade437e8483af4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="security-concepts"></a>セキュリティの概念
-このセクションでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] セキュリティに関連する概念について簡単に説明します。  
+このセクションでは、Windows Communication Foundation (WCF) のセキュリティに関連する概念について簡単に説明します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [WCF で使用されるセキュリティの概要](../../../../docs/framework/wcf/feature-details/security-concepts-used-in-wcf.md)  
  セキュリティの実装で使用される概念の概要を示します。  
   
  [分散アプリケーションのセキュリティ](../../../../docs/framework/wcf/feature-details/distributed-application-security.md)  
- 分散アプリケーション トポグラフィで [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] がセキュリティを提供するしくみの概要を示します。  
+ WCF が分散アプリケーション トポグラフィでセキュリティがどのように提供する方法の概要。  
   
  [セキュリティ用語](../../../../docs/framework/wcf/feature-details/wcf-security-terminology.md)  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] セキュリティの説明に使用される用語集です。  
+ WCF セキュリティの説明に使用される用語集。  
   
 ## <a name="reference"></a>参照  
  <xref:System.ServiceModel>  
@@ -47,7 +37,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="related-sections"></a>関連項目  
  [セキュリティの拡張](../../../../docs/framework/wcf/extending/extending-security.md)  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [セキュリティ](../../../../docs/framework/wcf/feature-details/security.md)  
  [セキュリティの概要](../../../../docs/framework/wcf/feature-details/security-overview.md)  
  [Windows Server App Fabric のセキュリティ モデル](http://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)

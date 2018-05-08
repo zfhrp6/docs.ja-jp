@@ -1,14 +1,6 @@
 ---
-title: "IHostSyncManager::CreateMonitorEvent メソッド"
-ms.custom: 
+title: IHostSyncManager::CreateMonitorEvent メソッド
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - IHostSyncManager.CreateMonitorEvent
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: 524c7fd3-9b5c-46e7-99ba-555fd2fe33f0
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: ae12db71f4eae0f7d887fda26e05401f4f23ee5c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 1d7cff23fc0b58d316ce19950a982249e84b79ec
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ihostsyncmanagercreatemonitorevent-method"></a>IHostSyncManager::CreateMonitorEvent メソッド
 監視対象の自動リセット イベント オブジェクトを作成します。  
@@ -58,7 +46,7 @@ HRESULT CreateMonitorEvent (
   
 |HRESULT|説明|  
 |-------------|-----------------|  
-|S_OK|`CreateMonitorEvent`正常に返されます。|  
+|S_OK|`CreateMonitorEvent` 正常に返されます。|  
 |HOST_E_CLRNOTAVAILABLE|共通言語ランタイム (CLR) が、プロセスに読み込まれていませんまたは CLR は、状態をマネージ コードを実行またはできないの呼び出しは正常に処理します。|  
 |HOST_E_TIMEOUT|呼び出しがタイムアウトしました。|  
 |HOST_E_NOT_OWNER|呼び出し元は、ロックを所有していません。|  
@@ -67,20 +55,20 @@ HRESULT CreateMonitorEvent (
 |E_OUTOFMEMORY|十分なメモリは、要求されたイベント オブジェクトを作成できませんでした。|  
   
 ## <a name="remarks"></a>コメント  
- `CreateMonitorEvent`返します、 `IHostAutoEvent` CLR がマネージの実装で使用する<xref:System.Threading.Monitor?displayProperty=nameWithType>型です。 このメソッドは、Win32 をミラー化`CreateEvent`関数の値を持つ`false`向けに指定された、`bManualReset`パラメーター。  
+ `CreateMonitorEvent` 返します、 `IHostAutoEvent` CLR がマネージの実装で使用する<xref:System.Threading.Monitor?displayProperty=nameWithType>型です。 このメソッドは、Win32 をミラー化`CreateEvent`関数の値を持つ`false`向けに指定された、`bManualReset`パラメーター。  
   
  ホストは、cookie を使用して呼び出すことで、モニターにどのタスクが待機しているかを判断、 [iclrsyncmanager::getmonitorowner](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-getmonitorowner-method.md)メソッドです。  
   
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** MSCorEE.h  
   
  **ライブラリ:** MSCorEE.dll にリソースとして含まれています。  
   
- **.NET framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ICLRSyncManager インターフェイス](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-interface.md)  
  [IHostAutoEvent インターフェイス](../../../../docs/framework/unmanaged-api/hosting/ihostautoevent-interface.md)  
  [IHostSyncManager インターフェイス](../../../../docs/framework/unmanaged-api/hosting/ihostsyncmanager-interface.md)  

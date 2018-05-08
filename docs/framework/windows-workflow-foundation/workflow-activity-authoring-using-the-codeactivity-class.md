@@ -1,23 +1,12 @@
 ---
-title: "CodeActivity クラスを使用したワークフロー アクティビティの作成"
-ms.custom: 
+title: CodeActivity クラスを使用したワークフロー アクティビティの作成
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: cfe315c1-f86d-43ec-b9ce-2f8c469b1106
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 2daec260c1224cd81280c6bf699b70efc2072588
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6a78c4399db0c4d207921544d5faa4da022dd107
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="workflow-activity-authoring-using-the-codeactivity-class"></a>CodeActivity クラスを使用したワークフロー アクティビティの作成
 <xref:System.Activities.CodeActivity> を継承して作成されたアクティビティは、<xref:System.Activities.CodeActivity.Execute%2A> メソッドをオーバーライドすることで強制的な基本動作を実装できます。  
@@ -35,7 +24,7 @@ ms.lasthandoff: 12/22/2017
   
 1.  [!INCLUDE[vs2010](../../../includes/vs2010-md.md)] を開きます。  
   
-2.  選択**ファイル**、**新しい**、し**プロジェクト**です。 選択**Workflow 4.0**  **Visual c#**で、**プロジェクトの種類**ウィンドウ、および選択、 **v2010**ノード。 選択**アクティビティ ライブラリ**で、**テンプレート**ウィンドウです。 新しいプロジェクトに HelloActivity という名前を付けます。  
+2.  選択**ファイル**、**新しい**、し**プロジェクト**です。 選択**Workflow 4.0**  **Visual c#** で、**プロジェクトの種類**ウィンドウ、および選択、 **v2010**ノード。 選択**アクティビティ ライブラリ**で、**テンプレート**ウィンドウです。 新しいプロジェクトに HelloActivity という名前を付けます。  
   
 3.  HelloActivity プロジェクトの Activity1.xaml を右クリックし **削除**です。  
   

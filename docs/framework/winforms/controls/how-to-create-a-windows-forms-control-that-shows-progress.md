@@ -1,13 +1,6 @@
 ---
-title: "方法 : 進行状況を示す Windows フォーム コントロールを作成する"
-ms.custom: 
+title: '方法 : 進行状況を示す Windows フォーム コントロールを作成する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,16 +10,11 @@ helpviewer_keywords:
 - progress [Windows Forms], reporting [Windows Forms]
 - FlashTrackBar custom control
 ms.assetid: 24c5a2e3-058c-4b8d-a217-c06e6a130c2f
-caps.latest.revision: "6"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 76ce5cd67b66dea47f5bd12e78bb27179b391257
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5773181b8883f0f94ff451808c8c97ce3407970e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-a-windows-forms-control-that-shows-progress"></a>方法 : 進行状況を示す Windows フォーム コントロールを作成する
 次のコード例は、アプリケーションのレベルまたは進行状況の表示にに使用できる `FlashTrackBar` というカスタム コントロールを示していいます。 これは、グラデーションを使用して、進行状況を視覚的に表示します。  
@@ -66,7 +54,7 @@ ms.lasthandoff: 12/22/2017
 |`OnValueChanged`|`ValueChanged` イベントを発生させるメソッド。|  
   
 > [!NOTE]
->  `FlashTrackBar`使用して、<xref:System.EventArgs>イベント データのクラスと<xref:System.EventHandler>イベント デリゲート。  
+>  `FlashTrackBar` 使用して、<xref:System.EventArgs>イベント データのクラスと<xref:System.EventHandler>イベント デリゲート。  
   
  対応するを処理するために*EventName*イベント、`FlashTrackBar`から継承する次のメソッドをオーバーライド<xref:System.Windows.Forms.Control?displayProperty=nameWithType>:  
   
@@ -103,6 +91,6 @@ ms.lasthandoff: 12/22/2017
  [!code-csharp[System.Windows.Forms.FlashTrackBar#30](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.FlashTrackBar/CS/HostApp.cs#30)]
  [!code-vb[System.Windows.Forms.FlashTrackBar#30](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.FlashTrackBar/VB/HostApp.vb#30)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [デザイン時サポートの拡張](http://msdn.microsoft.com/library/d6ac8a6a-42fd-4bc8-bf33-b212811297e2)  
  [Windows フォーム コントロール開発の基本概念](../../../../docs/framework/winforms/controls/windows-forms-control-development-basics.md)

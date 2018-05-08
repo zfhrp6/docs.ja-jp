@@ -1,31 +1,17 @@
 ---
-title: "データ コントラクトの列挙型"
-ms.custom: 
+title: データ コントラクトの列挙型
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - data contracts [WCF], enumeration types
 ms.assetid: b5d694da-68cb-4b74-a5fb-75108a68ec3b
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 7989996f7ed64ba4b85ddc1ca01538ec05e99e1a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ed4a0c572f651793a40cb5ffcaa32aef884c1cec
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="enumeration-types-in-data-contracts"></a>データ コントラクトの列挙型
 列挙はデータ コントラクト モデルで表現できます。 このトピックでは、いくつかの例を通してプログラミング モデルを説明します。  
@@ -43,7 +29,7 @@ ms.lasthandoff: 12/22/2017
  <xref:System.Runtime.Serialization.DataContractAttribute> プロパティ (<xref:System.Runtime.Serialization.DataContractAttribute.Name%2A> と <xref:System.Runtime.Serialization.DataContractAttribute.Namespace%2A>) を、列挙データ コントラクトとして通常通り使用できます。  
   
 ### <a name="enumeration-member-values"></a>列挙メンバー値  
- 通常、データ コントラクトには、数値ではなく列挙メンバー名が含まれます。 ただし、データ コントラクト モデルを使用しているときに、受信側が [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントである場合、エクスポートされたスキーマは数値を保持します。 これはいない大文字と小文字を使用する場合、 [XmlSerializer クラスを使用して](../../../../docs/framework/wcf/feature-details/using-the-xmlserializer-class.md)です。  
+ 通常、データ コントラクトには、数値ではなく列挙メンバー名が含まれます。 ただし、受信側が WCF クライアントの場合は、データ コントラクト モデルを使用している場合、エクスポートされたスキーマは、数値を保持します。 これはいない大文字と小文字を使用する場合、 [XmlSerializer クラスを使用して](../../../../docs/framework/wcf/feature-details/using-the-xmlserializer-class.md)です。  
   
  前の例では、`condition` が `Used` に設定され、データが XML にシリアル化されると、結果の XML は `<condition>Used</condition>` になりますが `<condition>1</condition>` にはなりません。 したがって、次のデータ コントラクトは、`CarConditionEnum` のデータ コントラクトと同じです。  
   
@@ -109,7 +95,7 @@ ms.lasthandoff: 12/22/2017
  [!code-csharp[c_DataContractEnumerations#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_datacontractenumerations/cs/source.cs#5)]
  [!code-vb[c_DataContractEnumerations#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_datacontractenumerations/vb/source.vb#5)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Runtime.Serialization.DataContractSerializer>  
  [データ コントラクトの使用](../../../../docs/framework/wcf/feature-details/using-data-contracts.md)  
  [サービス コントラクトでのデータ転送の指定](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md)

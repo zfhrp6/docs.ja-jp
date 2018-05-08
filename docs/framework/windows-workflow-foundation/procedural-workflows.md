@@ -1,23 +1,12 @@
 ---
-title: "手続き型ワークフロー"
-ms.custom: 
+title: 手続き型ワークフロー
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 52401de9-9115-472d-8fd9-047af6a072b9
-caps.latest.revision: "17"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 10cf83264fbdc2ed3dc088c11865c630c0b8f4f7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5cd97c8ccaae74e4275f809502ac0a4d3c2f042a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="procedural-workflows"></a>手続き型ワークフロー
 手続き型ワークフローでは、手続き型言語と似たフロー制御方法を使用します。 これらの構造には `While` と `If` が含まれます。 これらのワークフローは、<xref:System.Activities.Statements.Flowchart> や <xref:System.Activities.Statements.Sequence> など、他のフロー制御アクティビティを使用して自由に構成できます。  
@@ -46,5 +35,5 @@ ms.lasthandoff: 12/22/2017
 > [!NOTE]
 >  [!INCLUDE[dublin](../../../includes/dublin-md.md)] を使用して Web ファーム上でワークフローをホストすると、AppFabric のインスタンスは複数の AppFabric サーバー間を移動します。 この機能を利用するには、リソースがすべてのノード間で共有可能になっている必要があります。  既定の NET 4 ワークフロー アクティビティには、ローカル リソースにアクセスする操作は含まれていません。 AppFabric には特定のワークフローを不変に設定するメカニズムがないため、ワークフローが移動されるとエラーが発生するようなカスタム アクティビティは絶対に作成しないでください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Flowchart のワークフロー](../../../docs/framework/windows-workflow-foundation/flowchart-workflows.md)

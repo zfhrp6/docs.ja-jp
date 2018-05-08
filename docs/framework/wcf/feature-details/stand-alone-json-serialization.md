@@ -1,29 +1,15 @@
 ---
 title: スタンドアロン JSON のシリアル化
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 312bd7b2-1300-4b12-801e-ebe742bd2287
-caps.latest.revision: 32
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 4d3c7234c25b0a968ca67b58a560e8c8b55bb73d
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 5a157dfd55e722b3e7be967a26e8d2ff5fd54afe
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="stand-alone-json-serialization"></a>スタンドアロン JSON のシリアル化
-JSON (JavaScript Object Notation) は、ブラウザー内の Web ページで実行される JavaScript コードで使用するために特別に設計されたデータ形式です。 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] で作成される ASP.NET AJAX サービスは、既定でこのデータ形式を使用します。  
+JSON (JavaScript Object Notation) は、ブラウザー内の Web ページで実行される JavaScript コードで使用するために特別に設計されたデータ形式です。 これは、Windows Communication Foundation (WCF) を作成する ASP.NET AJAX サービスで使用される既定のデータ形式です。  
   
  この形式は、ASP.NET と統合せずに AJAX サービスを作成する場合にも使用できます。この場合、XML が既定のデータ形式になりますが、JSON を選択することもできます。  
   
@@ -87,7 +73,7 @@ JSON (JavaScript Object Notation) は、ブラウザー内の Web ページで�
   
 -   <xref:System.Runtime.Serialization.CollectionDataContractAttribute> を使用するカスタマイズは、JSON 表現では無視されます。  
   
--   ディクショナリは、直接 JSON を操作する手段ではありません。 ディクショナリ\<文字列, オブジェクト > はサポートされない、同じように[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]の他の JSON テクノロジの使用から予想されるようにします。 たとえば、ディクショナリで "abc" が "xyz" にマップされ、"def" が 42 にマップされている場合、JSON 表現では {"abc":"xyz","def":42} ではなく、[{"Key":"abc","Value":"xyz"},{"Key":"def","Value":42}] になります。  
+-   ディクショナリは、直接 JSON を操作する手段ではありません。 ディクショナリ\<文字列, オブジェクト > はサポートされない WCF で同じ方法での他の JSON テクノロジの使用から予想されるようにします。 たとえば、ディクショナリで "abc" が "xyz" にマップされ、"def" が 42 にマップされている場合、JSON 表現では {"abc":"xyz","def":42} ではなく、[{"Key":"abc","Value":"xyz"},{"Key":"def","Value":42}] になります。  
   
 -   JSON を直接使用する (厳密なコントラクトをあらかじめ定義せずに、キーと値に動的にアクセスする) 場合、いくつかのオプションがあります。  
   
@@ -108,7 +94,7 @@ JSON (JavaScript Object Notation) は、ブラウザー内の Web ページで�
  JSON の型は、逆シリアル化時には前述の表と一致する必要はありません。 たとえば、`Int` は通常 JSON の数値にマップされますが、JSON 文字列に有効な数値が含まれていれば、その文字列から正常に逆シリアル化することもできます。 つまり、"q" という `Int` データ メンバーが存在する場合は、{"q":42} も {"q":"42"} も有効です。  
   
 ### <a name="polymorphism"></a>ポリモーフィズム  
- ポリモーフィックなシリアル化は、基本型が必要な場合に派生型をシリアル化できることで成り立ちます。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] による JSON シリアル化でこれがサポートされているのは、XML シリアル化がサポートされている方法と互換性がある場合です。 たとえば、シリアル化できます`MyDerivedType`場所`MyBaseType`はシリアル化したり、`Int`場所`Object`が必要です。  
+ ポリモーフィックなシリアル化は、基本型が必要な場合に派生型をシリアル化できることで成り立ちます。 これはによってサポートされている JSON のシリアル化 WCF XML シリアル化がサポートされる方法に相当します。 たとえば、シリアル化できます`MyDerivedType`場所`MyBaseType`はシリアル化したり、`Int`場所`Object`が必要です。  
   
  複合型を逆シリアル化する場合を除き、基本型が必要な場合に派生型を逆シリアル化すると、型情報が失われることがあります。 たとえば、<xref:System.Uri> が必要な場合に <xref:System.Object> をシリアル化すると、JSON 文字列になります。 この文字列を <xref:System.Object> に逆シリアル化した場合、.NET の <xref:System.String> が返されます。 デシリアライザーは、この文字列が最初は <xref:System.Uri> 型であったことを認識していません。 通常、<xref:System.Object> を必要とするときに、すべての JSON 文字列が .NET 文字列として逆シリアル化されます。また、.NET のコレクション、ディクショナリ、および配列のシリアル化に使用するすべての JSON 配列は、実際の元の型に関係なく、<xref:System.Array> 型の .NET <xref:System.Object> として逆シリアル化されます。 JSON のブール型は .NET の <xref:System.Boolean> にマップされます。 ただし、<xref:System.Object> が必要な場合、JSON の数値型は .NET の <xref:System.Int32>、<xref:System.Decimal>、または <xref:System.Double> の型として逆シリアル化されます。この場合、最も適切な型が自動的に選択されます。  
   
@@ -151,7 +137,7 @@ http://example.com/myservice.svc/MyOperation?number=7&p={"name":"John","age":42}
   
  ASP.NET AJAX クライアントの JavaScript コードにより、このような文字列は JavaScript の `DateTime` インスタンスに自動的に変換されます。 類似する形式で .NET の <xref:System.DateTime> 型ではない他の文字列が存在する場合、これらの文字列も変換されます。  
   
- 変換の場合は、「/」文字はエスケープだけ行わ (つまり、次の JSON のように"\\/Date(700000+0500)\\/")、ため、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]の JSON エンコーダー (で有効になって、 <xref:System.ServiceModel.WebHttpBinding>) を常にエスケープ、「/」文字があります。  
+ 変換の場合は、「/」文字はエスケープだけ行わ (は、次の JSON のように"\\/Date(700000+0500)\\/")、およびこの理由 WCF の JSON エンコーダー (で有効になって、 <xref:System.ServiceModel.WebHttpBinding>) 常に「/」文字をエスケープします。  
   
 ### <a name="xml-in-json-strings"></a>JSON 文字列内の XML  
   
@@ -209,7 +195,7 @@ http://example.com/myservice.svc/MyOperation?number=7&p={"name":"John","age":42}
 {"x":50,"y":70,"radius":10,"__type":"Circle:#MyApp.Shapes"}  
 ```  
   
- <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> が使用する [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] と ASP.NET AJAX クライアント ページでは、いずれも型ヒントが常に最初に出力されます。  
+ 両方の<xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>WCF と ASP.NET AJAX で使用されるクライアント ページ常に生成、型ヒント最初。  
   
 #### <a name="type-hints-apply-only-to-complex-types"></a>複合型にのみ適用される型ヒント  
  複合型以外の型の型ヒントを出力する方法はありません。 たとえば、戻り値の型が <xref:System.Object> である操作で Circle を返す場合、前に示したような JSON 表現が可能であり、型情報は保持されます。 ただし、Uri が返される場合、JSON 表現は文字列であり、この文字列が Uri を表すために使用されているという情報は失われます。 これは、プリミティブ型だけでなく、コレクションと配列にも適用されます。  

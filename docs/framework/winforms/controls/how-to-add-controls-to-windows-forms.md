@@ -1,13 +1,6 @@
 ---
-title: "方法 : Windows フォームにコントロールを追加する"
-ms.custom: 
+title: '方法 : Windows フォームにコントロールを追加する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,16 +9,11 @@ helpviewer_keywords:
 - Windows Forms controls, adding to form
 - controls [Windows Forms], adding
 ms.assetid: 2af86001-9d62-4154-87fb-66db2c3cd9fd
-caps.latest.revision: "15"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ab92f7a56173ec71642d0cc09f3f81e9859533b4
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 2dd048fb074d1ec5bb7bc0a67f196d5d51281545
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-add-controls-to-windows-forms"></a>方法 : Windows フォームにコントロールを追加する
 ほとんどのフォームは、フォームのサーフェイスにコントロールを追加してユーザー インターフェイス (UI) を定義するよう設計されています。 A*コントロール*情報の表示や、ユーザー入力をそのまま使用するために使用するフォームのコンポーネントは、します。 コントロールの詳細については、次を参照してください。 [Windows フォーム コントロール](../../../../docs/framework/winforms/controls/index.md)です。  
@@ -100,7 +88,7 @@ ms.lasthandoff: 01/19/2018
     > [!IMPORTANT]
     >  悪意のあるを参照して、ローカル コンピューターがネットワーク経由のセキュリティ リスクを公開する可能性があります`UserControl`です。 誤ってそれをプロジェクトに追加した後に、有害なカスタム コントロールを作成する悪意のあるユーザーの場合は問題にならなければのみとなります。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Windows フォーム コントロール](../../../../docs/framework/winforms/controls/index.md)  
  [Windows フォームでのコントロールの配置](../../../../docs/framework/winforms/controls/arranging-controls-on-windows-forms.md)  
  [方法: Windows フォーム上のコントロールのサイズを変更する](../../../../docs/framework/winforms/controls/how-to-resize-controls-on-windows-forms.md)  

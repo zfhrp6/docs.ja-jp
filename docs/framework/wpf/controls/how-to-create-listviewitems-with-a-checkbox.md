@@ -1,29 +1,17 @@
 ---
-title: "方法 : CheckBox を持つ ListViewItem を作成する"
-ms.custom: 
+title: '方法 : CheckBox を持つ ListViewItem を作成する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - controls [WPF], ListView
 - controls [WPF], CheckBox
 - ListView controls [WPF], CheckBox controls
 - CheckBox control [WPF], ListView control
 ms.assetid: f6d66c7f-906c-4f65-a55a-0ede9d00e26a
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: be87183efd8101233bd5cbda49d556d09802b630
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 424bc25f9c584017d80ba1c8f1517211595fd247
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-listviewitems-with-a-checkbox"></a>方法 : CheckBox を持つ ListViewItem を作成する
 この例は、の列を表示する方法を示しています。<xref:System.Windows.Controls.CheckBox>コントロールで、<xref:System.Windows.Controls.ListView>を使用するコントロール、<xref:System.Windows.Controls.GridView>です。  
@@ -39,7 +27,7 @@ ms.lasthandoff: 12/22/2017
   
  [!code-xaml[ListViewChkBox#GridViewColumnCheckBox](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ListViewChkBox/CS/window1.xaml#gridviewcolumncheckbox)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Controls.Control>  
  <xref:System.Windows.Controls.ListView>  
  <xref:System.Windows.Controls.GridView>  

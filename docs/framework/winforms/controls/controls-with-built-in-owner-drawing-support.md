@@ -1,13 +1,6 @@
 ---
-title: "組み込みのオーナー描画サポートを備えたコントロール"
-ms.custom: 
+title: 組み込みのオーナー描画サポートを備えたコントロール
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - drawing [Windows Forms], owner
 - drawing [Windows Forms], custom
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - custom drawing
 - owner drawing
 ms.assetid: 3823d01e-9610-43e6-864d-99f9b7c2b351
-caps.latest.revision: "15"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: efd297dcc11005d6b6d47bb9ce3853a757046e8f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a5cbdc733a2f1cda3e708ceaae8604297f8da58a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="controls-with-built-in-owner-drawing-support"></a>組み込みのオーナー描画サポートを備えたコントロール
 Windows フォームのオーナー描画 (カスタム描画とも呼ばれます) は、特定のコントロールの外観を変更するための手法です。  
@@ -53,7 +41,7 @@ Windows フォームのオーナー描画 (カスタム描画とも呼ばれま�
   
 -   <xref:System.Windows.Forms.ComboBox>  
   
--   <xref:System.Windows.Forms.MenuItem>(で使用される<xref:System.Windows.Forms.MainMenu>と<xref:System.Windows.Forms.ContextMenu>)  
+-   <xref:System.Windows.Forms.MenuItem> (で使用される<xref:System.Windows.Forms.MainMenu>と<xref:System.Windows.Forms.ContextMenu>)  
   
 -   <xref:System.Windows.Forms.TabControl>  
   
@@ -188,7 +176,7 @@ Windows フォームのオーナー描画 (カスタム描画とも呼ばれま�
 -   [方法 : Windows フォームの DataGridView コントロールの行の外観をカスタマイズする](../../../../docs/framework/winforms/controls/customize-the-appearance-of-rows-in-the-datagrid.md)  
   
 ### <a name="toolstrip-control"></a>ToolStrip コントロール  
- <xref:System.Windows.Forms.ToolStrip>派生したコントロールの外観のすべての側面をカスタマイズできます。  
+ <xref:System.Windows.Forms.ToolStrip> 派生したコントロールの外観のすべての側面をカスタマイズできます。  
   
  カスタムの表示を提供する<xref:System.Windows.Forms.ToolStrip>、コントロールの設定、`Renderer`のプロパティ、 <xref:System.Windows.Forms.ToolStrip>、 <xref:System.Windows.Forms.ToolStripManager>、 <xref:System.Windows.Forms.ToolStripPanel>、または<xref:System.Windows.Forms.ToolStripContentPanel>を`ToolStripRenderer`オブジェクトし、によって提供される多くの描画イベントの 1 つ以上の処理、`ToolStripRenderer`クラスです。 または、設定、`Renderer`から派生した独自のクラスのインスタンスにプロパティ`ToolStripRenderer`、 <xref:System.Windows.Forms.ToolStripProfessionalRenderer>、または<xref:System.Windows.Forms.ToolStripSystemRenderer>を実装またはオーバーライド特定`On` *EventName*メソッドです。  
   
@@ -200,5 +188,5 @@ Windows フォームのオーナー描画 (カスタム描画とも呼ばれま�
   
 -   [方法 : ToolStrip コントロールをカスタム描画する](../../../../docs/framework/winforms/controls/how-to-custom-draw-a-toolstrip-control.md)  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Windows フォームで使用するコントロール](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)

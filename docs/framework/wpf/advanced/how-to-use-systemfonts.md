@@ -1,13 +1,6 @@
 ---
-title: "方法: SystemFonts を使用する"
-ms.custom: 
+title: '方法: SystemFonts を使用する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,22 +9,17 @@ helpviewer_keywords:
 - fonts [WPF], system fonts
 - classes [WPF], SystemFonts
 ms.assetid: 3f46a4ec-2225-408a-8123-8838a8f7057a
-caps.latest.revision: "27"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 2579926dfc71028590e09993e2773ee2cfac1505
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 305d0cf18db5dc96b2d3cde863cf4ba2ae8dbb96
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-use-systemfonts"></a>方法: SystemFonts を使用する
 この例の静的なリソースを使用する方法を示しています、<xref:System.Windows.SystemFonts>スタイルを設定したり、ボタンをカスタマイズするためにクラスです。  
   
 ## <a name="example"></a>例  
- システム リソースは、システム設定と一貫性のあるビジュアルを作成できるようにするために、いくつかのシステムによって決定される値を、リソースおよびプロパティの両方として公開します。 <xref:System.Windows.SystemFonts>静的プロパティ、および実行時にそれらの値を動的にアクセスするために使用するリソース キーを参照するプロパティと両方のシステム フォントの値を含むクラスです。 たとえば、<xref:System.Windows.SystemFonts.CaptionFontFamily%2A>は、<xref:System.Windows.SystemFonts>値、および<xref:System.Windows.SystemFonts.CaptionFontFamilyKey%2A>は、対応するリソース キー。  
+ システム リソースは、システム設定と一貫性のあるビジュアルを作成できるようにするために、いくつかのシステムによって決定される値を、リソースおよびプロパティの両方として公開します。 <xref:System.Windows.SystemFonts> 静的プロパティ、および実行時にそれらの値を動的にアクセスするために使用するリソース キーを参照するプロパティと両方のシステム フォントの値を含むクラスです。 たとえば、<xref:System.Windows.SystemFonts.CaptionFontFamily%2A>は、<xref:System.Windows.SystemFonts>値、および<xref:System.Windows.SystemFonts.CaptionFontFamilyKey%2A>は、対応するリソース キー。  
   
  [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]のメンバーを使用することができます<xref:System.Windows.SystemFonts>静的プロパティまたは (キーとして静的プロパティの値) の動的リソース参照のいずれかとして。 アプリケーションの実行時にフォント メトリックを自動的に更新する場合は、動的リソース参照を使用します。それ以外の場合は、静的な値参照を使用します。  
   
@@ -47,7 +35,7 @@ ms.lasthandoff: 12/22/2017
  [!code-csharp[SystemRes_snip#FontResourcesCode](../../../../samples/snippets/csharp/VS_Snippets_Wpf/SystemRes_snip/CSharp/Pane1.xaml.cs#fontresourcescode)]
  [!code-vb[SystemRes_snip#FontResourcesCode](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/SystemRes_snip/VisualBasic/Pane1.xaml.vb#fontresourcescode)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.SystemFonts>  
  [システム ブラシで領域を塗りつぶす](../../../../docs/framework/wpf/graphics-multimedia/how-to-paint-an-area-with-a-system-brush.md)  
  [SystemParameters を使用する](../../../../docs/framework/wpf/advanced/how-to-use-systemparameters.md)  

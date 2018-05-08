@@ -1,14 +1,6 @@
 ---
-title: "ICorProfilerInfo::GetInprocInspectionInterface メソッド"
-ms.custom: 
+title: ICorProfilerInfo::GetInprocInspectionInterface メソッド
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ICorProfilerInfo.GetInprocInspectionInterface
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: 22a92d1d-8849-4af6-8304-ecc53dd1d289
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 9088389df33b079fe2275f5c7e642a055fa8ee51
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 761dd55d2ae48739f24a03b8ce81c571fb211a5a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="icorprofilerinfogetinprocinspectioninterface-method"></a>ICorProfilerInfo::GetInprocInspectionInterface メソッド
 "ICorDebugProcess"インターフェイスの照会されるオブジェクトを取得します。 このメソッドは、.NET Framework version 2.0 廃止されています。  
@@ -52,8 +40,8 @@ HRESULT GetInprocInspectionInterface(
 ## <a name="remarks"></a>コメント  
  デバッグ API 共通言語ランタイム (CLR) では、プロセスで、.NET Framework version 1.0 でデバッグを制限をサポートします。 プロセスのデバッグには、プロファイラーは、デバッグ API の検査部分の使用が有効になります。 カスタマー フィードバックの結果として、インプロセスのデバッグがバージョン 2.0、.NET Framework から削除されに沿ってプロファイル API は、機能のセットに置き換えられます。  
   
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー** : CorProf.idl、CorProf.h  
   
@@ -61,5 +49,5 @@ HRESULT GetInprocInspectionInterface(
   
  **.NET framework のバージョン:** 1.0  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ICorProfilerInfo インターフェイス](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)

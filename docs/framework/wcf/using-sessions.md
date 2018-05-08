@@ -1,34 +1,20 @@
 ---
 title: セッションの使用
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - sessions [WCF]
 ms.assetid: 864ba12f-3331-4359-a359-6d6d387f1035
-caps.latest.revision: 32
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 172ef71bd3ae09e3c9f15cb0bdb48728a587605e
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
-ms.translationtype: MT
+ms.openlocfilehash: e826e0952f95608fd8d85a5b1fad6b17d3fdacb3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-sessions"></a>セッションの使用
-[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] アプリケーションでは、 *"セッション"* がメッセージのグループを相互に関連付けて通信を行います。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] セッションは、 [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] アプリケーションで使用できるセッション オブジェクトとは異なるものであり、サポートされる動作と制御する方法が異なります。 ここでは、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] アプリケーションのセッションで有効になる諸機能とそれらの使用方法について説明します。  
+Windows Communication Foundation (WCF) アプリケーションで、*セッション*会話にメッセージのグループを関連付けます。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] セッションは、 [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] アプリケーションで使用できるセッション オブジェクトとは異なるものであり、サポートされる動作と制御する方法が異なります。 ここでは、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] アプリケーションのセッションで有効になる諸機能とそれらの使用方法について説明します。  
   
 ## <a name="sessions-in-windows-communication-foundation-applications"></a>Windows Communication Foundation アプリケーションのセッション  
  サービス コントラクトでセッションが必要であると指定されている場合、すべての呼び出し (つまり、呼び出しをサポートする基本的なメッセージ交換) を同じメッセージ交換の一部にする必要があります。 セッションが許可されるが必須ではないコントラクトの場合、クライアントは、接続した後にセッションを確立できます。また、セッションを確立しないままにしておくこともできます。 セッションが終了したのに、同じチャネルでメッセージが送信されると、例外がスローされます。  

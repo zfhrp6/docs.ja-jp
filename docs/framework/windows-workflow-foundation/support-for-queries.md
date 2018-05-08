@@ -1,23 +1,12 @@
 ---
-title: "クエリのサポート"
-ms.custom: 
+title: クエリのサポート
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 093c22f5-3294-4642-857a-5252233d6796
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: f20e9fbcad31a3924474793d9107d6a3c4aeef27
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5c46ed5ae2fc2cc2275bfa7251fe5f8fa346c1f4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="support-for-queries"></a>クエリのサポート
 SQL Workflow Instance Store は、一連の既知のプロパティをストアに記録します。 ユーザーは、これらのプロパティに基づいてインスタンスのクエリを実行できます。 これらの既知のプロパティの一部を次の一覧に示します。  
@@ -103,7 +92,7 @@ SQL Workflow Instance Store は、一連の既知のプロパティをストア�
 ### <a name="the-instancepromotedproperties-view"></a>InstancePromotedProperties ビュー  
  InstancePromotedProperties ビューには、次のフィールドがあります。 昇格させたプロパティの詳細については、「、[ストア拡張](../../../docs/framework/windows-workflow-foundation/store-extensibility.md)トピックです。  
   
-1.  **InstanceId**  
+1.  **instanceId**  
   
 2.  **EncodingOption**  
   

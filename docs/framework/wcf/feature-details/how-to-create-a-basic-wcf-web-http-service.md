@@ -1,30 +1,18 @@
 ---
-title: "方法 : 基本的な WCF Web HTTP サービスを作成する"
-ms.custom: 
+title: '方法 : 基本的な WCF Web HTTP サービスを作成する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 877662d3-d372-4e08-b417-51f66a0095cd
-caps.latest.revision: "26"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 4dc60bbb51bc573840d0d45356f0cd84fd32db2a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d147286fd2f8fe3f4f5e822598a07b51ae6d9791
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-a-basic-wcf-web-http-service"></a>方法 : 基本的な WCF Web HTTP サービスを作成する
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] では、Web エンドポイントを公開するサービスを作成できます。 Web エンドポイントは、XML または JSON でデータを送信します。SOAP エンベロープはありません。 ここでは、このようなエンドポイントを公開する方法を示します。  
+Windows Communication Foundation (WCF) では、Web エンドポイントを公開するサービスを作成することができます。 Web エンドポイントは、XML または JSON でデータを送信します。SOAP エンベロープはありません。 ここでは、このようなエンドポイントを公開する方法を示します。  
   
 > [!NOTE]
 >  Web エンドポイントをセキュリティで保護する唯一の方法は、トランスポート セキュリティを使用する HTTPS を介してエンドポイントを公開することです。 メッセージ ベースのセキュリティを使用する場合、セキュリティ情報は通常 SOAP ヘッダーに配置されます。SOAP 以外のエンドポイントに送信するメッセージには SOAP エンベロープが含まれないため、セキュリティ情報を配置する場所がなく、トランスポート セキュリティに依存する必要があります。  
@@ -59,7 +47,7 @@ ms.lasthandoff: 12/22/2017
     > [!NOTE]
     >  エンド ポイントを追加しない場合は、<xref:System.ServiceModel.Web.WebServiceHost> が自動的に既定のエンド ポイントを作成します。 <xref:System.ServiceModel.Web.WebServiceHost> は、他にも <xref:System.ServiceModel.Description.WebHttpBehavior> を追加し、HTTP ヘルプ ページと Web サービス記述言語 (WSDL) GET 機能を無効にすることによって、メタデータ エンドポイントが既定の HTTP エンドポイントに干渉しないようにします。  
     >   
-    >  URL が "" である SOAP 以外のエンドポイントを追加すると、エンドポイント上の操作の呼び出しを行うときに予期しない動作が発生します。 これはエンドポイントのリッスン URI が、ヘルプ ページ ([!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスのベース アドレスに移動すると表示されるページ) の URI と同じになるためです。  
+    >  URL が "" である SOAP 以外のエンドポイントを追加すると、エンドポイント上の操作の呼び出しを行うときに予期しない動作が発生します。 この理由は、[リッスン]、エンドポイントの URI は、(WCF サービスのベース アドレスを参照するときに表示されるページ) のヘルプ ページの URI と同じです。  
   
      これを回避するには、次のいずれかの操作を行います。  
   
@@ -87,7 +75,7 @@ ms.lasthandoff: 12/22/2017
   
 ### <a name="to-call-service-operations-mapped-to-get-in-internet-explorer"></a>Internet Explorer で GET にマッピングされたサービス操作を呼び出すには  
   
-1.  Internet Explorer を開き「"`http://localhost:8000/EchoWithGet?s=Hello, world!`"し、ENTER キーを押します。 この URL には、サービスのベース アドレス ("http://localhost:8000/") が含まれており、エンドポイントの相対アドレス ("")、呼び出すサービス操作 ("EchoWithGet")、疑問符の後にアンパサンド (&) で区切られた名前付きパラメーターのリストが続きます。  
+1.  Internet Explorer を開き「"`http://localhost:8000/EchoWithGet?s=Hello, world!`"し、ENTER キーを押します。 URL には、サービスのベース アドレスが含まれています ("http://localhost:8000/")、エンドポイントの相対アドレス ("")、アンパサンドで区切られた名前付きパラメーターの一覧の後に、サービス操作呼び出し ("EchoWithGet")、疑問符 () (&)。  
   
 ### <a name="to-call-service-operations-in-code"></a>コードからサービス操作を呼び出すには  
   
@@ -120,7 +108,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="compiling-the-code"></a>コードのコンパイル  
  Service.cs のコンパイル時には、System.ServiceModel.dll と System.ServiceModel.Web.dll が参照されます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.WebHttpBinding>  
  <xref:System.ServiceModel.Web.WebGetAttribute>  
  <xref:System.ServiceModel.Web.WebInvokeAttribute>  

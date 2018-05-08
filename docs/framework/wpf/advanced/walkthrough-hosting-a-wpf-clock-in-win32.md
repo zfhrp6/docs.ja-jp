@@ -1,28 +1,16 @@
 ---
-title: "チュートリアル: Win32 での WPF クロックのホスト"
-ms.custom: 
+title: 'チュートリアル: Win32 での WPF クロックのホスト'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - interoperability [WPF], tutorials
 - Win32 code [WPF], WPF interoperation
 - interoperability [WPF], Win32
 ms.assetid: 555e55a7-0851-4ec8-b1c6-0acba7e9b648
-caps.latest.revision: "15"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: caf652f8a80da8e927a74ffc012d09b2389b1b09
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 58e4b1dd311ccd6e1bbab79f4c4dda2207f96eaa
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="walkthrough-hosting-a-wpf-clock-in-win32"></a>チュートリアル: Win32 での WPF クロックのホスト
 配置する[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]内[!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)]アプリケーションに、<xref:System.Windows.Interop.HwndSource>を含む HWND を提供する、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]コンテンツ。 最初に作成、 <xref:System.Windows.Interop.HwndSource>CreateWindow のようなパラメーターを指定します。  指示、<xref:System.Windows.Interop.HwndSource>に関する、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]内部するコンテンツ。  最後に、HWND のうち、<xref:System.Windows.Interop.HwndSource>です。 このチュートリアルは、混合を作成する方法を示しています。[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]内[!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)]オペレーティング システムを reimplements アプリケーション**日付と時刻のプロパティ**ダイアログ。  
@@ -236,7 +224,7 @@ HWND clock = ManagedCode::GetHwnd(hDlg, point.x, point.y, width, height);
   
  このスクリーン ショットを作成したコードに、最終結果を比較するを参照してください。[クロックの相互運用の Win32 サンプル](http://go.microsoft.com/fwlink/?LinkID=160051)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Interop.HwndSource>  
  [WPF と Win32 の相互運用性](../../../../docs/framework/wpf/advanced/wpf-and-win32-interoperation.md)  
  [Win32 クロックの相互運用性サンプル](http://go.microsoft.com/fwlink/?LinkID=160051)

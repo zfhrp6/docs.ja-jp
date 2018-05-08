@@ -1,28 +1,16 @@
 ---
-title: "方法 : GridView を実装する ListView で行のスタイルを設定する"
-ms.custom: 
+title: '方法 : GridView を実装する ListView で行のスタイルを設定する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - GridView controls [WPF], styling rows
 - styling rows in ListViews implementing GridViews [WPF]
 - ListView controls [WPF], styling rows with GridViews
 ms.assetid: 2e406ba2-70a0-4e62-841f-0934859de76e
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 1e37d70fe1cb6aefb1404424c1a8f5339e0badf7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 313ead6de45f2a137775adb0ad9aad8bd061c066
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-style-a-row-in-a-listview-that-implements-a-gridview"></a>方法 : GridView を実装する ListView で行のスタイルを設定する
 この例は、内の行のスタイルを設定する方法を示しています、<xref:System.Windows.Controls.ListView>を実装するコントロール、 <xref:System.Windows.Controls.GridView> <xref:System.Windows.Controls.ListView.View%2A>モード。  
@@ -44,7 +32,7 @@ ms.lasthandoff: 12/22/2017
   
  [!code-xaml[ListViewItemStyleSnippet#GridView](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ListViewItemStyleSnippet/CS/Window1.xaml#gridview)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Controls.ListView>  
  <xref:System.Windows.Controls.GridView>  
  [方法トピック](../../../../docs/framework/wpf/controls/listview-how-to-topics.md)  

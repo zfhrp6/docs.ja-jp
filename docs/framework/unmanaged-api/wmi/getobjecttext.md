@@ -1,11 +1,7 @@
 ---
-title: "GetObjectText 関数 (アンマネージ API リファレンス)"
-description: "GetObjectText 関数は、MOF 構文では、オブジェクトのテキストのレンダリングを返します。"
+title: GetObjectText 関数 (アンマネージ API リファレンス)
+description: GetObjectText 関数は、MOF 構文では、オブジェクトのテキストのレンダリングを返します。
 ms.date: 11/06/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: reference
 api_name:
 - GetObjectText
 api_location:
@@ -20,14 +16,11 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 0b47dc73bb9da71b0c8593aa5758179327d7572d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d2f0e766a3a310bdb58f7cbffd8d49404eb5e0b0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="getobjecttext-function"></a>GetObjectText 関数
 管理オブジェクト フォーマット (MOF) の構文では、オブジェクトのテキストのレンダリングを返します。
@@ -81,14 +74,14 @@ MOF テキストを返すには、オブジェクトに関するすべての情�
 1. パラメーターは、その識別子の値の順序で resequenced されます。
 1. パラメーターとして指定されている`[in]`と`[out]`パラメーターを 1 つに結合されます。
  
-`pstrObjectText`ポインターにする必要があります、`null`有効では、メソッドを呼び出す前に、ポインターの割り当てを解除できませんが、文字列をポイントする必要がありますいない関数が呼び出されるとします。 します。
+`pstrObjectText` ポインターにする必要があります、`null`有効では、メソッドを呼び出す前に、ポインターの割り当てを解除できませんが、文字列をポイントする必要がありますいない関数が呼び出されるとします。 します。
 
-## <a name="requirements"></a>必要条件  
-**プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+**プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** WMINet_Utils.idl  
   
- **.NET framework のバージョン:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **.NET framework のバージョン:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>関連項目  
 [WMI およびパフォーマンス カウンター (アンマネージ API リファレンス)](index.md)

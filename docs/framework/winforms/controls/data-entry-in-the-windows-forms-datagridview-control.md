@@ -1,28 +1,16 @@
 ---
-title: "Windows フォーム DataGridView コントロールでのデータ入力"
-ms.custom: 
+title: Windows フォーム DataGridView コントロールでのデータ入力
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - DataGridView control [Windows Forms], data entry
 - data entry [Windows Forms], dataGridView control
 - data grids [Windows Forms], data entry
 ms.assetid: 4a6d4676-d4e7-4b0e-9c22-50ce65ffe0d6
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 399520738c53e149e7a5539a62a5d4599e26a8da
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f5870b3cedd18d605426c7e27981303adc9beb5e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="data-entry-in-the-windows-forms-datagridview-control"></a>Windows フォーム DataGridView コントロールでのデータ入力
 `DataGridView`コントロールはユーザーが追加またはコントロール内のデータを変更する方法を変更することができますいくつかの機能を提供します。 たとえば、することができますデータ エントリ効率的と新しい行の既定値を提供することによってエラーが発生したとき、ユーザーに警告します。  
@@ -63,6 +51,6 @@ ms.lasthandoff: 12/22/2017
  [Windows フォーム DataGridView コントロールでのデータの表示](../../../../docs/framework/winforms/controls/displaying-data-in-the-windows-forms-datagridview-control.md)  
  手動または外部データ ソースからコントロールにデータを設定する方法を説明するトピックを提供します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [DataGridView コントロール](../../../../docs/framework/winforms/controls/datagridview-control-windows-forms.md)  
  [Windows フォーム DataGridView コントロールの列型](../../../../docs/framework/winforms/controls/column-types-in-the-windows-forms-datagridview-control.md)

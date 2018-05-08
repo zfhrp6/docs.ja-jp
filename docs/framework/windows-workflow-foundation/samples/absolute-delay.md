@@ -1,24 +1,12 @@
 ---
-title: "絶対遅延"
-ms.custom: 
+title: 絶対遅延
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: b483139a-39bb-4560-8003-8969a8fc2cd1
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 60e3b65851dba68b4d01d6e4195b5faf99b583de
-ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
+ms.openlocfilehash: 3a104f6b879e9cdc899bad2201ad1ed320a38a2d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="absolute-delay"></a>絶対遅延
 このサンプルの主要なシナリオは、ワークフロー アプリケーションで永続的なタイマーを使用して、指定した <xref:System.DateTime> まで遅延することです。 これは、特定の <xref:System.Activities.Statements.Delay> (または分数/秒数) の遅延のみ行うことができるため、組み込みの <xref:System.TimeSpan> アクティビティの使用とは異なります。  
@@ -78,6 +66,6 @@ ms.lasthandoff: 02/01/2018
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
+>  このディレクトリが存在しない場合に、 [Windows Communication Foundation (WCF) および .NET Framework 4 向けの Windows Workflow Foundation (WF) サンプル](http://go.microsoft.com/fwlink/?LinkId=150780)すべて Windows Communication Foundation (WCF) をダウンロードして[!INCLUDE[wf1](../../../../includes/wf1-md.md)]サンプルです。 このサンプルは、次のディレクトリに格納されます。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Services\AbsoluteDelay`

@@ -1,13 +1,6 @@
 ---
-title: "マネージ HTML DOM (Document Object Model) の非公開メンバーへのアクセス"
-ms.custom: 
+title: マネージ HTML DOM (Document Object Model) の非公開メンバーへのアクセス
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,22 +8,17 @@ helpviewer_keywords:
 - unexposed members
 - managed HTML DOM [Windows Forms], accessing unexposed members
 ms.assetid: 762295bd-2355-4aa7-b43c-5bff997a33e6
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 97a795930eb6965bd0ed15254969a72f45700306
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d2fbccfb3ecd7716420ca951e86f728798d25258
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="accessing-unexposed-members-on-the-managed-html-document-object-model"></a>マネージ HTML DOM (Document Object Model) の非公開メンバーへのアクセス
 マネージ HTML ドキュメント オブジェクト モデル (DOM) と呼ばれるクラスが含まれています<xref:System.Windows.Forms.HtmlElement>プロパティ、メソッド、およびすべての HTML 要素に共通するイベントを公開します。 場合によっては、ただし、する必要があります、マネージ インターフェイスを直接公開しないメンバーにアクセスします。 このトピックは、非公開メンバーにアクセスするための 2 つの方法を調べて[!INCLUDE[jsprjscript](../../../../includes/jsprjscript-md.md)]と Web ページ内で定義されている VBScript 関数。  
   
 ## <a name="accessing-unexposed-members-through-managed-interfaces"></a>マネージ インターフェイスを非公開メンバーへのアクセス  
- <xref:System.Windows.Forms.HtmlDocument>および<xref:System.Windows.Forms.HtmlElement>非公開メンバーへのアクセスを有効にする 4 つのメソッドを提供します。 次の表は、種類とその対応するメソッドを示します。  
+ <xref:System.Windows.Forms.HtmlDocument> および<xref:System.Windows.Forms.HtmlElement>非公開メンバーへのアクセスを有効にする 4 つのメソッドを提供します。 次の表は、種類とその対応するメソッドを示します。  
   
 |メンバーの型|メソッド|  
 |-----------------|-----------------|  
@@ -82,5 +70,5 @@ ms.lasthandoff: 12/22/2017
   
  HTML ページを使用して、定義するスクリプト関数を呼び出すことができます、<xref:System.Windows.Forms.HtmlDocument.InvokeScript%2A>メソッドです。 スクリプト メソッドに HTML 要素が返される場合に返されるこの結果を変換する、キャストを使用することができます、<xref:System.Windows.Forms.HtmlElement>です。 詳細とコード例では、次を参照してください。<xref:System.Windows.Forms.HtmlDocument.InvokeScript%2A>です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [マネージ HTML DOM (Document Object Model) の使用](../../../../docs/framework/winforms/controls/using-the-managed-html-document-object-model.md)

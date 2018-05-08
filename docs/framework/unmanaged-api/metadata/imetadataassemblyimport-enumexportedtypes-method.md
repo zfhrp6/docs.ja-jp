@@ -1,14 +1,6 @@
 ---
-title: "IMetaDataAssemblyImport::EnumExportedTypes メソッド"
-ms.custom: 
+title: IMetaDataAssemblyImport::EnumExportedTypes メソッド
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - IMetaDataAssemblyImport.EnumExportedTypes
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: e5912ed8-e4ce-438b-8ea3-d9e4c288d109
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 54b5a51dc0a12bb4c159b61252c9db0a82f03518
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9aef8c40be2456532bd6df6feb8d286cdaeefa7f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="imetadataassemblyimportenumexportedtypes-method"></a>IMetaDataAssemblyImport::EnumExportedTypes メソッド
 現在のメタデータ スコープ内のアセンブリ マニフェストで参照されているエクスポートされた型を列挙します。  
@@ -66,17 +54,17 @@ HRESULT EnumExportedTypes (
   
 |HRESULT|説明|  
 |-------------|-----------------|  
-|`S_OK`|`EnumExportedTypes`正常に返されます。|  
+|`S_OK`|`EnumExportedTypes` 正常に返されます。|  
 |`S_FALSE`|列挙するトークンがありません。 この場合、`pcTokens`は 0 に設定します。|  
   
-## <a name="requirements"></a>必要条件  
- **Platform:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **Platform:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** Cor.h  
   
  **ライブラリ:** MsCorEE.dll にリソースとして使用  
   
- **.NET framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [IMetaDataAssemblyImport インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md)

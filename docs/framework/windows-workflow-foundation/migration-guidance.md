@@ -1,24 +1,12 @@
 ---
 title: 移行のガイドライン
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: cb65c132-58c9-4028-b3d4-1efc71d5e60e
-caps.latest.revision: 7
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 2e6b42296d6780d93d5835b89732d114de6d8aca
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 562ee0913f657b349d88fe7be1627ecd9469f317
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="migration-guidance"></a>移行のガイドライン
 [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)]、2 つ目のメジャー バージョンの Windows Workflow Foundation (WF) がリリースされています。 [!INCLUDE[wf1](../../../includes/wf1-md.md)] は、[!INCLUDE[vstecwinfx](../../../includes/vstecwinfx-md.md)] (これに含まれていた System.Workflow.* 名前空間の型は現在 WF3 と呼ばれています) でリリースされ、[!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] で強化されました。 WF3 もの一部、 [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)]、新しいワークフロー テクノロジが存在するが、(System.Activities。 内の型\*名前空間です。 WF4 と呼ばれます)。 WF4 の導入時期を検討する場合は、最初にそのタイミングの管理を認識することが重要です。  

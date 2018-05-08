@@ -1,13 +1,6 @@
 ---
-title: "テーブルの概要"
-ms.custom: 
+title: テーブルの概要
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,19 +9,14 @@ helpviewer_keywords:
 - documents [WPF], tables
 - tables [WPF]
 ms.assetid: 5e1105f4-8fc4-473a-ba55-88c8e71386e6
-caps.latest.revision: "21"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 922faa06456a1aa86ffd0c805ab33577280ccf4f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 631a14ae8eb17713186f7db66700026cc476024e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="table-overview"></a>テーブルの概要
-<xref:System.Windows.Documents.Table>グリッド ベース フロー ドキュメントの内容の表示形式をサポートするブロック レベル要素です。 この要素は、その柔軟性により非常に便利ですが、正しく理解して使用するのが難しいとも言えます。  
+<xref:System.Windows.Documents.Table> グリッド ベース フロー ドキュメントの内容の表示形式をサポートするブロック レベル要素です。 この要素は、その柔軟性により非常に便利ですが、正しく理解して使用するのが難しいとも言えます。  
   
  このトピックは、次のセクションで構成されています。  
   
@@ -55,11 +43,11 @@ ms.lasthandoff: 12/22/2017
   
 <a name="table_vs_Grid"></a>   
 ### <a name="how-is-table-different-then-grid"></a>テーブルとグリッドの相違点  
- <xref:System.Windows.Documents.Table>および<xref:System.Windows.Controls.Grid>各はさまざまなシナリオに最適なはいくつかの一般的な機能を共有します。 A<xref:System.Windows.Documents.Table>フロー コンテンツ内で使用するために設計されていますが (を参照してください[フロー ドキュメントの概要](../../../../docs/framework/wpf/advanced/flow-document-overview.md)フロー コンテンツの詳細については)。 グリッドは、フォーム内で最適に使用される (基本的に任意の場所以外のフロー コンテンツ)。 内で、 <xref:System.Windows.Documents.FlowDocument>、<xref:System.Windows.Documents.Table>サポート フロー コンテンツの動作などの改ページ、列の折り返し、およびコンテンツの選択中に、<xref:System.Windows.Controls.Grid>しません。 A<xref:System.Windows.Controls.Grid>一方は最適以外で使用される、<xref:System.Windows.Documents.FlowDocument>さまざまな理由<xref:System.Windows.Controls.Grid>行と列のインデックスに基づいて要素を追加<xref:System.Windows.Documents.Table>しません。 <xref:System.Windows.Controls.Grid>要素により、1 つの「セル」内に存在する 1 つ以上の要素を許可する子コンテンツの重ね順 <xref:System.Windows.Documents.Table>重ね順をサポートしていません。 子要素、 <xref:System.Windows.Controls.Grid> 「セル」境界外部の領域と相対的絶対位置に配置できます。 <xref:System.Windows.Documents.Table>この機能はサポートしません。 最後に、<xref:System.Windows.Controls.Grid>少ないリソースを必要とし、<xref:System.Windows.Documents.Table>ので使用を検討して、<xref:System.Windows.Controls.Grid>パフォーマンスを向上させるためにします。  
+ <xref:System.Windows.Documents.Table> および<xref:System.Windows.Controls.Grid>各はさまざまなシナリオに最適なはいくつかの一般的な機能を共有します。 A<xref:System.Windows.Documents.Table>フロー コンテンツ内で使用するために設計されていますが (を参照してください[フロー ドキュメントの概要](../../../../docs/framework/wpf/advanced/flow-document-overview.md)フロー コンテンツの詳細については)。 グリッドは、フォーム内で最適に使用される (基本的に任意の場所以外のフロー コンテンツ)。 内で、 <xref:System.Windows.Documents.FlowDocument>、<xref:System.Windows.Documents.Table>サポート フロー コンテンツの動作などの改ページ、列の折り返し、およびコンテンツの選択中に、<xref:System.Windows.Controls.Grid>しません。 A<xref:System.Windows.Controls.Grid>一方は最適以外で使用される、<xref:System.Windows.Documents.FlowDocument>さまざまな理由<xref:System.Windows.Controls.Grid>行と列のインデックスに基づいて要素を追加<xref:System.Windows.Documents.Table>しません。 <xref:System.Windows.Controls.Grid>要素により、1 つの「セル」内に存在する 1 つ以上の要素を許可する子コンテンツの重ね順 <xref:System.Windows.Documents.Table> 重ね順をサポートしていません。 子要素、 <xref:System.Windows.Controls.Grid> 「セル」境界外部の領域と相対的絶対位置に配置できます。 <xref:System.Windows.Documents.Table> この機能はサポートしません。 最後に、<xref:System.Windows.Controls.Grid>少ないリソースを必要とし、<xref:System.Windows.Documents.Table>ので使用を検討して、<xref:System.Windows.Controls.Grid>パフォーマンスを向上させるためにします。  
   
 <a name="basic_table_structure"></a>   
 ### <a name="basic-table-structure"></a>テーブルの基本構造  
- <xref:System.Windows.Documents.Table>列から成るグリッド ベースのプレゼンテーションを提供 (によって表される<xref:System.Windows.Documents.TableColumn>要素) と行 (によって表される<xref:System.Windows.Documents.TableRow>要素)。 <xref:System.Windows.Documents.TableColumn>要素は、コンテンツをホストしていません。単に列と列の特性を定義します。 <xref:System.Windows.Documents.TableRow>要素でホストされる必要があります、<xref:System.Windows.Documents.TableRowGroup>要素は、テーブルの行のグループを定義します。 <xref:System.Windows.Documents.TableCell>テーブルに表示する実際のコンテンツが含まれる要素をホストする必要があります、<xref:System.Windows.Documents.TableRow>要素。 <xref:System.Windows.Documents.TableCell>派生した要素のみを含めることが<xref:System.Windows.Documents.Block>です。  有効な子要素、<xref:System.Windows.Documents.TableCell>が含まれます。  
+ <xref:System.Windows.Documents.Table> 列から成るグリッド ベースのプレゼンテーションを提供 (によって表される<xref:System.Windows.Documents.TableColumn>要素) と行 (によって表される<xref:System.Windows.Documents.TableRow>要素)。 <xref:System.Windows.Documents.TableColumn> 要素は、コンテンツをホストしていません。単に列と列の特性を定義します。 <xref:System.Windows.Documents.TableRow> 要素でホストされる必要があります、<xref:System.Windows.Documents.TableRowGroup>要素は、テーブルの行のグループを定義します。 <xref:System.Windows.Documents.TableCell> テーブルに表示する実際のコンテンツが含まれる要素をホストする必要があります、<xref:System.Windows.Documents.TableRow>要素。 <xref:System.Windows.Documents.TableCell> 派生した要素のみを含めることが<xref:System.Windows.Documents.Block>です。  有効な子要素、<xref:System.Windows.Documents.TableCell>が含まれます。  
   
 -   <xref:System.Windows.Documents.BlockUIContainer>  
   
@@ -72,10 +60,10 @@ ms.lasthandoff: 12/22/2017
 -   <xref:System.Windows.Documents.Table>  
   
 > [!NOTE]
->  <xref:System.Windows.Documents.TableCell>要素は、テキスト コンテンツを直接ホスト可能性があります。 などの要素のコンテンツ フローの包含規則の詳細については<xref:System.Windows.Documents.TableCell>を参照してください[フロー ドキュメントの概要](../../../../docs/framework/wpf/advanced/flow-document-overview.md)です。  
+>  <xref:System.Windows.Documents.TableCell> 要素は、テキスト コンテンツを直接ホスト可能性があります。 などの要素のコンテンツ フローの包含規則の詳細については<xref:System.Windows.Documents.TableCell>を参照してください[フロー ドキュメントの概要](../../../../docs/framework/wpf/advanced/flow-document-overview.md)です。  
   
 > [!NOTE]
->  <xref:System.Windows.Documents.Table>に似ていますが、<xref:System.Windows.Controls.Grid>要素が、多くの機能があり、したがって、大きいリソースのオーバーヘッドが必要です。  
+>  <xref:System.Windows.Documents.Table> に似ていますが、<xref:System.Windows.Controls.Grid>要素が、多くの機能があり、したがって、大きいリソースのオーバーヘッドが必要です。  
   
  次の例では、単純な 2 x 3 テーブル[!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)]です。  
   
@@ -87,7 +75,7 @@ ms.lasthandoff: 12/22/2017
   
 <a name="table_containment"></a>   
 ### <a name="table-containment"></a>テーブルの内容  
- <xref:System.Windows.Documents.Table>派生した、<xref:System.Windows.Documents.Block>要素の一般的な規則に準拠している<xref:System.Windows.Documents.Block>レベルの要素。  A<xref:System.Windows.Documents.Table>要素は、次の要素のいずれかが含まれる可能性があります。  
+ <xref:System.Windows.Documents.Table> 派生した、<xref:System.Windows.Documents.Block>要素の一般的な規則に準拠している<xref:System.Windows.Documents.Block>レベルの要素。  A<xref:System.Windows.Documents.Table>要素は、次の要素のいずれかが含まれる可能性があります。  
   
 -   <xref:System.Windows.Documents.FlowDocument>  
   
@@ -186,7 +174,7 @@ ms.lasthandoff: 12/22/2017
  [!code-csharp[TableSnippets#_TableAddFooterRow](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TableSnippets/CSharp/Table.cs#_tableaddfooterrow)]
  [!code-vb[TableSnippets#_TableAddFooterRow](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/TableSnippets/VisualBasic/Table.vb#_tableaddfooterrow)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [フロー ドキュメントの概要](../../../../docs/framework/wpf/advanced/flow-document-overview.md)  
  [XAML を使用してテーブルを定義する](../../../../docs/framework/wpf/advanced/how-to-define-a-table-with-xaml.md)  
  [WPF のドキュメント](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  

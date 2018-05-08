@@ -1,24 +1,12 @@
 ---
-title: "Windows ストア クライアント アプリを使用した WCF サービスへのアクセス"
-ms.custom: 
+title: Windows ストア クライアント アプリを使用した WCF サービスへのアクセス
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: e2002ef4-5dee-4a54-9d87-03b33d35fc52
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: df5e05b1896ee272e286102a6c9433fad51b3c98
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: aca0c4e4daecc1b7a2474130eb36b9ead1c538bd
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="accessing-wcf-services-with-a-windows-store-client-app"></a>Windows ストア クライアント アプリを使用した WCF サービスへのアクセス
 Windows 8 では、Windows ストア アプリケーションと呼ばれる新しい種類のアプリケーションが導入されています。 これらのアプリケーションはタッチ スクリーンのインターフェイスを念頭にデザインされています。 .NET Framework 4.5 により、Windows ストア アプリケーションから WCF サービスを呼び出すことができます。  
@@ -184,7 +172,7 @@ void async SomeMethod()
   
  非同期呼び出しを行うメソッドでは async キーワード、非同期メソッドの呼び出し時には await キーワードが使用されていることに注意してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Windows ストア アプリのブログの WCF](http://blogs.msdn.com/b/piyushjo/archive/2011/09/22/wcf-in-win8-metro-styled-apps-absolutely-supported.aspx)  
  [WCF Windows ストア クライアントおよびセキュリティ](http://blogs.msdn.com/b/piyushjo/archive/2011/10/11/calling-a-wcf-service-from-a-metro-application-adding-security.aspx)  
  [Windows ストア アプリとコンピューター間の呼び出し](http://blogs.msdn.com/b/piyushjo/archive/2011/10/22/calling-a-wcf-service-from-a-metro-application-cross-machine-scenario.aspx)  

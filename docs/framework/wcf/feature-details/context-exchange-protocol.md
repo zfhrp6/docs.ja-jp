@@ -1,27 +1,15 @@
 ---
-title: "コンテキスト交換プロトコル"
-ms.custom: 
+title: コンテキスト交換プロトコル
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 3dfd38e0-ae52-491c-94f4-7a862b9843d4
-caps.latest.revision: "6"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 8f19b228eadcf8dabfaba2fc31f4f49f1b4d149b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a682b94b1ab659515e618e79230d94f57f140717
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="context-exchange-protocol"></a>コンテキスト交換プロトコル
-このセクションの説明で導入されたコンテキスト交換プロトコル[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)][!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)]を解放します。 このプロトコルを使用すると、クライアント チャネルはサービスから送られたコンテキストを受け入れ、以降はそのコンテキストを、同じクライアント チャネル インスタンス経由でそのサービスに送信されるすべての要求に適用できます。 コンテキスト交換プロトコルを実装されると、2 つの機構 (HTTP クッキーまたは SOAP ヘッダー) のいずれか 1 つを使用し、サーバーとクライアント間でコンテキストを伝達できます。  
+このセクションでは、Windows Communication Foundation (WCF) リリースの .NET Framework version 3.5 で導入されたコンテキスト交換プロトコルについて説明します。 このプロトコルを使用すると、クライアント チャネルはサービスから送られたコンテキストを受け入れ、以降はそのコンテキストを、同じクライアント チャネル インスタンス経由でそのサービスに送信されるすべての要求に適用できます。 コンテキスト交換プロトコルを実装されると、2 つの機構 (HTTP クッキーまたは SOAP ヘッダー) のいずれか 1 つを使用し、サーバーとクライアント間でコンテキストを伝達できます。  
   
  コンテキスト交換プロトコルは、カスタム チャネル層に実装されます。 チャネルでは <xref:System.ServiceModel.Channels.ContextMessageProperty> プロパティを使用して、アプリケーション層とコンテキストを送受信します。 エンドポイント間の転送については、コンテキストの値は、チャネル層で SOAP ヘッダーとしてシリアル化されるか、HTTP 要求および応答を表すメッセージ プロパティとの間で双方向に変換されます。 後者の場合、下位のチャネル層のいずれか 1 つで、HTTP 要求および応答のメッセージ プロパティをそれぞれ HTTP クッキーとの間で双方向に変換する必要があります。 コンテキスト交換に使用する機構の選択は、<xref:System.ServiceModel.Channels.ContextExchangeMechanism> の <xref:System.ServiceModel.Channels.ContextBindingElement> プロパティを使用します。 有効な値は、`HttpCookie` または `SoapHeader` です。  
   
@@ -78,5 +66,5 @@ ms.lasthandoff: 12/22/2017
     <HttpUseCookie xmlns="http://schemas.xmlsoap.org/soap/http"/>  
     ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Web サービス プロトコルの相互運用性ガイド](../../../../docs/framework/wcf/feature-details/web-services-protocols-interoperability-guide.md)

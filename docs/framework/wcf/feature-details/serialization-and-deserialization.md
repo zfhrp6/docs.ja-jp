@@ -1,38 +1,24 @@
 ---
 title: シリアル化と逆シリアル化
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 3d71814c-bda7-424b-85b7-15084ff9377a
-caps.latest.revision: 13
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 2343ebe5a2a029ddb40da98d28f5c442aa7b6962
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 754b09b3b90399c242ddbaf968242f969cb27b8b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="serialization-and-deserialization"></a>シリアル化と逆シリアル化
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] には新しいシリアル化エンジン、 <xref:System.Runtime.Serialization.DataContractSerializer>が含まれます。 <xref:System.Runtime.Serialization.DataContractSerializer> は、 [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] オブジェクトと XML を双方向で変換します。 ここでは、シリアライザーのしくみについて説明します。  
+Windows Communication Foundation (WCF) には新しいシリアル化エンジンが含まれています、<xref:System.Runtime.Serialization.DataContractSerializer>です。 <xref:System.Runtime.Serialization.DataContractSerializer> は、 [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] オブジェクトと XML を双方向で変換します。 ここでは、シリアライザーのしくみについて説明します。  
   
  [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] オブジェクトをシリアル化するときに、シリアライザーは新しい *データ コントラクト* モデルも含めて、さまざまなシリアル化プログラミング モデルを認識します。 サポートされるすべての型の一覧については、「 [Types Supported by the Data Contract Serializer](../../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md)」を参照してください。 データ コントラクトの概要については、「 [Using Data Contracts](../../../../docs/framework/wcf/feature-details/using-data-contracts.md)」を参照してください。  
   
- XML を逆シリアル化するときに、シリアライザーは <xref:System.Xml.XmlReader> クラスと <xref:System.Xml.XmlWriter> クラスを使用します。 また、 <xref:System.Xml.XmlDictionaryReader> バイナリ XML 形式を使用する場合などに、最適化された XML を生成できるように、 <xref:System.Xml.XmlDictionaryWriter> クラスと [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クラスもサポートしています。  
+ XML を逆シリアル化するときに、シリアライザーは <xref:System.Xml.XmlReader> クラスと <xref:System.Xml.XmlWriter> クラスを使用します。 サポートしています、<xref:System.Xml.XmlDictionaryReader>と<xref:System.Xml.XmlDictionaryWriter>フォーマットの WCF バイナリ XML を使用する場合などのいくつかの場合、最適化された XML をクラスを生成できるようにします。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、コンパニオン シリアライザーである <xref:System.Runtime.Serialization.NetDataContractSerializer>も含まれます。 <xref:System.Runtime.Serialization.NetDataContractSerializer> は、シリアル化されたデータの一部として <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> 型名を出力するため、 <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter> シリアライザーや [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] シリアライザーに似ています。 このシリアライザーは、シリアル化と逆シリアル化の終了時に、同じ型を共有する場合に使用します。 <xref:System.Runtime.Serialization.DataContractSerializer> と <xref:System.Runtime.Serialization.NetDataContractSerializer> は、共通の基本クラスである <xref:System.Runtime.Serialization.XmlObjectSerializer>から派生します。  
+ WCF には、コンパニオン シリアライザーでも含まれています、<xref:System.Runtime.Serialization.NetDataContractSerializer>です。 <xref:System.Runtime.Serialization.NetDataContractSerializer> は、シリアル化されたデータの一部として <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> 型名を出力するため、 <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter> シリアライザーや [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] シリアライザーに似ています。 このシリアライザーは、シリアル化と逆シリアル化の終了時に、同じ型を共有する場合に使用します。 <xref:System.Runtime.Serialization.DataContractSerializer> と <xref:System.Runtime.Serialization.NetDataContractSerializer> は、共通の基本クラスである <xref:System.Runtime.Serialization.XmlObjectSerializer>から派生します。  
   
 > [!WARNING]
 >  <xref:System.Runtime.Serialization.DataContractSerializer> は、20 未満の 16 進数値と制御文字を含む文字列を XML エンティティとしてシリアル化します。 このようなデータを WCF サービスに送信するときに、WCF 以外のクライアントに問題があります。  
@@ -128,7 +114,7 @@ ms.lasthandoff: 04/30/2018
   
 -   セマンティクス。 2 つの参照の参照先が 1 つのオブジェクトであり、2 つの同一のオブジェクトではない状態を維持することが重要な場合があります。  
   
- 上記の理由から、 `DataContractSerializer` の一部のコンストラクター オーバーロードには、 `preserveObjectReferences` パラメーターが含まれています (既定値は `false`です)。 このパラメーターを `true`に設定すると、オブジェクト参照をエンコードする特殊なメソッドが使用されます。これは、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] だけが認識するメソッドです。 `true`に設定すると、XML コードの例は次のようになります。  
+ 上記の理由から、 `DataContractSerializer` の一部のコンストラクター オーバーロードには、 `preserveObjectReferences` パラメーターが含まれています (既定値は `false`です)。 このパラメーターに設定すると`true`、のみ WCF を理解している、オブジェクト参照をエンコードの特殊なメソッドを使用します。 `true`に設定すると、XML コードの例は次のようになります。  
   
 ```xml  
 <PurchaseOrder ser:id="1">  

@@ -1,32 +1,18 @@
 ---
 title: '方法: コードを使用してサービスのメタデータを公開する'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 51407e6d-4d87-42d5-be7c-9887b8652006
-caps.latest.revision: 19
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: c3d2fd1222539ec8017846069e7eda9a2c503f22
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: bef5421d377bcae6e8c56b0117ebbe22a861de86
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-publish-metadata-for-a-service-using-code"></a>方法: コードを使用してサービスのメタデータを公開する
-これは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスのメタデータの公開方法を説明する 2 つの「方法」トピックの 1 つです。 構成ファイルとコードを使用して、サービスがメタデータを公開する手段を指定する方法は 2 つあります。 このトピックでは、コードを使用してサービスのメタデータを公開する方法について説明します。  
+これは、Windows Communication Foundation (WCF) サービスのメタデータの公開の方法を説明している 2 つの操作方法に関するトピックのいずれかです。 構成ファイルとコードを使用して、サービスがメタデータを公開する手段を指定する方法は 2 つあります。 このトピックでは、コードを使用してサービスのメタデータを公開する方法について説明します。  
   
 > [!CAUTION]
 >  このトピックでは、セキュリティで保護されていない方法でメタデータを公開する方法について説明します。 クライアントは、サービスからメタデータを取得できます。 セキュリティで保護された方法でメタデータを公開するサービスが必要な場合は、 参照してください[カスタム セキュリティで保護されたメタデータ エンドポイント](../../../../docs/framework/wcf/samples/custom-secure-metadata-endpoint.md)です。  
@@ -94,7 +80,7 @@ ms.lasthandoff: 04/30/2018
 11. Internet Explorer を使用して、サービスのベース アドレスを参照 (http://localhost:8001/MetadataSampleこのサンプルでは) し、メタデータの公開の電源が入っていることを確認します。 上部の "サービスを作成しました" のすぐ下に "Simple Service" と表示された Web ページが表示されます。 有効になっていない場合は、"このサービスのメタデータ公開は現在は無効になっています。" というメッセージが結果ページの上部に表示されます。  
   
 ## <a name="example"></a>例  
- 次のコード例は、コードを使用してサービスのメタデータを公開する基本的な [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスの実装を示しています。  
+ 次のコード例は、コードのサービスのメタデータを公開する基本的な WCF サービスの実装を示しています。  
   
  [!code-csharp[htPublishMetadataCode#11](../../../../samples/snippets/csharp/VS_Snippets_CFX/htpublishmetadatacode/cs/program.cs#11)]
  [!code-vb[htPublishMetadataCode#11](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htpublishmetadatacode/vb/program.vb#11)]  

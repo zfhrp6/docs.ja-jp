@@ -1,29 +1,15 @@
 ---
 title: セットアップに関する問題のトラブルシューティング
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 1644f885-c408-4d5f-a5c7-a1a907bc8acd
-caps.latest.revision: 15
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 9238c1a1c9092e6806ee941bd7c992071cf98e09
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
-ms.translationtype: MT
+ms.openlocfilehash: 806e8a1f45deec5861e3bcc9a9c06a93ce410c1a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="troubleshooting-setup-issues"></a>セットアップに関する問題のトラブルシューティング
-ここでは、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] セットアップ問題のトラブルシューティングの方法について説明します。  
+このトピックでは、Windows Communication Foundation (WCF) がセットアップ問題のトラブルシューティングを行う方法について説明します。  
   
 ## <a name="some-windows-communication-foundation-registry-keys-are-not-repaired-by-performing-an-msi-repair-operation-on-the-net-framework-30"></a>.NET Framework 3.0 の MSI 修復操作の実行では修復されない一部の Windows Communication Foundation レジストリ キー  
  次のいずれかのレジストリ キーを削除した場合  

@@ -1,24 +1,12 @@
 ---
-title: "データ型と関数"
-ms.custom: 
+title: データ型と関数
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 683413c5-0312-4e60-8619-9a97bdc6e62a
-caps.latest.revision: "2"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: f9f97f0ae0a75dd15edcb2256d991e987388f1ae
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: a7205d7fbdeb2b6cffcf49fb30e2ff2a25137403
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="data-types-and-functions"></a>データ型と関数
 次の表の各トピックでは、共通言語ランタイム (CLR) のメンバー、コンストラクト、およびキャストに対する LINQ to SQL でのサポートについて説明します。 サポートされているメンバーおよびコンストラクトは、LINQ to SQL クエリで使用できます。  
@@ -42,7 +30,7 @@ ms.lasthandoff: 01/19/2018
 |[System.TimeSpan メソッド](../../../../../../docs/framework/data/adonet/sql/linq/system-timespan-methods.md)|<xref:System.TimeSpan?displayProperty=nameWithType> 構造体のメンバーに対する LINQ to SQL でのサポートについて説明します。|  
 |[サポートされていない機能](../../../../../../docs/framework/data/adonet/sql/linq/unsupported-functionality.md)|[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] でサポートされていない機能について説明します。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [SQL と CLR の型の不一致](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mismatches.md)  
  [参照](../../../../../../docs/framework/data/adonet/sql/linq/reference.md)  
  [Visual Studio での .NET framework クラス ライブラリ](http://msdn.microsoft.com/library/a03e374c-3d5c-4169-937b-49857ab273ae)

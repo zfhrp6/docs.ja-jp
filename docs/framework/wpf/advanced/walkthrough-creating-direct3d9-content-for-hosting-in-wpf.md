@@ -1,31 +1,17 @@
 ---
-title: "チュートリアル : WPF でホストするための Direct3D9 コンテンツの作成"
-ms.custom: 
+title: 'チュートリアル : WPF でホストするための Direct3D9 コンテンツの作成'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - cpp
 helpviewer_keywords:
 - WPF [WPF], creating Direct3D9 content
 - Direct3D9 [WPF interoperability], creating Direct3D9 content
 ms.assetid: 286e98bc-1eaa-4b5e-923d-3490a9cca5fc
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: f1a5d70807541a0a3faf6bc99a3ced42827efd72
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f279fb1749be9953e6d09d4b1bd4dd8578d42615
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="walkthrough-creating-direct3d9-content-for-hosting-in-wpf"></a>チュートリアル : WPF でホストするための Direct3D9 コンテンツの作成
 このチュートリアルでは、Windows Presentation Foundation (WPF) アプリケーションでホストするために適切な Direct3D9 コンテンツを作成する方法を示します。 WPF アプリケーションで Direct3D9 コンテンツをホストの詳細については、次を参照してください。 [WPF と Direct3D9 相互運用](../../../../docs/framework/wpf/advanced/wpf-and-direct3d9-interoperation.md)です。  
@@ -54,13 +40,13 @@ ms.lasthandoff: 12/22/2017
   
      Win32 アプリケーション ウィザードが開き、ようこそ画面を表示します。  
   
-2.  **[次へ]**をクリックします。  
+2.  **[次へ]** をクリックします。  
   
      アプリケーション設定 画面が表示されます。  
   
 3.  **アプリケーションの種類:**  セクションで、select、 **DLL**オプション。  
   
-4.  **[完了]**をクリックします。  
+4.  **[完了]** をクリックします。  
   
      D3DContent プロジェクトが生成されます。  
   
@@ -68,7 +54,7 @@ ms.lasthandoff: 12/22/2017
   
      **D3DContent プロパティ ページ** ダイアログ ボックスが表示されます。  
   
-6.  選択、 **C/C++**ノード。  
+6.  選択、 **C/C++** ノード。  
   
 7.  **追加のインクルード ディレクトリ**フィールドで、DirectX の場所を含めるフォルダーを指定します。 このフォルダーの既定の場所は %ProgramFiles%\Microsoft DirectX SDK (*バージョン*) \Include です。  
   
@@ -89,7 +75,7 @@ ms.lasthandoff: 12/22/2017
   
 1.  ソリューション エクスプ ローラーを使用して、次の名前のプロジェクトに 3 つの C++ クラスを追加します。  
   
-     `CRenderer`(で仮想デストラクター)  
+     `CRenderer` (で仮想デストラクター)  
   
      `CRendererManager`  
   
@@ -152,7 +138,7 @@ ms.lasthandoff: 12/22/2017
   
 -   WPF アプリケーションで Direct3D9 コンテンツをホストします。 詳細については、次を参照してください。[チュートリアル: wpf Direct3D9 のコンテンツをホストしている](../../../../docs/framework/wpf/advanced/walkthrough-hosting-direct3d9-content-in-wpf.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Interop.D3DImage>  
  [Direct3D9 および WPF の相互運用性のパフォーマンスに関する考慮事項](../../../../docs/framework/wpf/advanced/performance-considerations-for-direct3d9-and-wpf-interoperability.md)  
  [チュートリアル: WPF での Direct3D9 コンテンツのホスト](../../../../docs/framework/wpf/advanced/walkthrough-hosting-direct3d9-content-in-wpf.md)

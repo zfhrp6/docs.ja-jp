@@ -1,29 +1,15 @@
 ---
 title: WCF Web HTTP プログラミング オブジェクト モデル
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: ed96b5fc-ca2c-4b0d-bdba-d06b77c3cb2a
-caps.latest.revision: 40
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 7bf6512be6fabb87797fb6338f64320d5787d547
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 412f3cb8aa0fcbb491bb9aeee907f848d272b847
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="wcf-web-http-programming-object-model"></a>WCF Web HTTP プログラミング オブジェクト モデル
-WCF Web HTTP プログラミング モデルを使用すると、開発者は基本 HTTP 要求を使用して [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] Web サービスを公開できるようになり、SOAP は必要ありません。 WCF WEB HTTP プログラミング モデルは、既存の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 拡張モデルに基づいて構築されます。 Web HTTP プログラミング モデルでは、次のクラスが定義されます。  
+WCF WEB HTTP プログラミング モデルでは、SOAP は必要ありません基本的な HTTP 要求を通じて Windows Communication Foundation (WCF) Web サービスの公開をすることができます。 WCF WEB HTTP プログラミング モデルは、既存の WCF 拡張モデルが構築されます。 Web HTTP プログラミング モデルでは、次のクラスが定義されます。  
   
  **プログラミング モデルです。**  
   
@@ -81,10 +67,10 @@ WCF Web HTTP プログラミング モデルを使用すると、開発者は基
 |`UriTemplate`|属性が適用されているサービス操作にマップされた GET 要求を制御する URI テンプレートを指定します。|  
   
 ## <a name="uritemplate"></a>UriTemplate  
- <xref:System.UriTemplate> クラスでは、構造が似ている URI のセットを定義できます。 テンプレートは、パスとクエリの 2 つの部分から構成されています。 パスは、スラッシュ (/) で区切られた一連のセグメントから構成されています。 各セグメントは、リテラル値、変数値 (記述中かっこ [{}] 内で 1 つのセグメントの内容と一致する制約付き)、またはワイルドカードを持つことができます (アスタリスク [\*]、「残りのパス」に一致します) に表示される必要がありますパスの末尾。 クエリ式は、すべて省略することができます。 存在する場合、クエリ式は順序なしの一連の名前/値ペアを指定します。 クエリ式の要素は、リテラル ペアを指定できます (? x = 2) または変数ペア (? x = {*値*})。 対になっていない値は使用できません。 <xref:System.UriTemplate> は、特定の URI や URI のグループをサービス操作にマップするために、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WEB HTTP プログラミング モデルによって内部的に使用されます。  
+ <xref:System.UriTemplate> クラスでは、構造が似ている URI のセットを定義できます。 テンプレートは、パスとクエリの 2 つの部分から構成されています。 パスは、スラッシュ (/) で区切られた一連のセグメントから構成されています。 各セグメントは、リテラル値、変数値 (記述中かっこ [{}] 内で 1 つのセグメントの内容と一致する制約付き)、またはワイルドカードを持つことができます (アスタリスク [\*]、「残りのパス」に一致します) に表示される必要がありますパスの末尾。 クエリ式は、すべて省略することができます。 存在する場合、クエリ式は順序なしの一連の名前/値ペアを指定します。 クエリ式の要素は、リテラル ペアを指定できます (? x = 2) または変数ペア (? x = {*値*})。 対になっていない値は使用できません。 <xref:System.UriTemplate> によって内部的に使用、WCF WEB HTTP プログラミング モデルを特定の Uri や Uri のグループをサービス操作にマップします。  
   
 ## <a name="uritemplatetable"></a>UriTemplateTable  
- <xref:System.UriTemplateTable> クラスは、開発者が選択したオブジェクトにバインドされた <xref:System.UriTemplate> オブジェクトの結合セットを表します。 これにより、セット内のテンプレートと候補 URI (Uniform Resource Identifier) を照合し、一致したテンプレートに関連付けられているデータを取得することができます。 <xref:System.UriTemplateTable> は、特定の URI や URI のグループをサービス操作にマップするために、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WEB HTTP プログラミング モデルによって内部的に使用されます。  
+ <xref:System.UriTemplateTable> クラスは、開発者が選択したオブジェクトにバインドされた <xref:System.UriTemplate> オブジェクトの結合セットを表します。 これにより、セット内のテンプレートと候補 URI (Uniform Resource Identifier) を照合し、一致したテンプレートに関連付けられているデータを取得することができます。 <xref:System.UriTemplateTable> によって内部的に使用、WCF WEB HTTP プログラミング モデルを特定の Uri や Uri のグループをサービス操作にマップします。  
   
 ## <a name="webservicehost"></a>WebServiceHost  
  <xref:System.ServiceModel.Web.WebServiceHost> は <xref:System.ServiceModel.ServiceHost> を拡張するため、SOAP 以外の Web スタイル サービスを容易にホストできます。 <xref:System.ServiceModel.Web.WebServiceHost> では、サービスの説明にエンドポイントが見つからない場合、サービスのベース アドレスに既定のエンドポイントを自動的に作成します。 既定の HTTP エンドポイントを作成するときに、<xref:System.ServiceModel.Web.WebServiceHost> は、HTTP ヘルプ ページと Web サービス記述言語 (WSDL) GET 機能を無効にして、メタデータ エンドポイントが既定の HTTP エンドポイントに干渉しないようにします。 また、<xref:System.ServiceModel.Web.WebServiceHost> は、<xref:System.ServiceModel.WebHttpBinding> を使用するすべてのエンドポイントに必要な <xref:System.ServiceModel.Description.WebHttpBehavior> がアタッチされるようにもします。 最後に、<xref:System.ServiceModel.Web.WebServiceHost> は、エンドポイントのバインディングを、安全な仮想ディレクトリで使用するときに、関連付けられたインターネット インフォメーション サービス (IIS) のセキュリティ設定と連携して動作するよう自動的に構成します。  
@@ -98,7 +84,7 @@ WCF Web HTTP プログラミング モデルを使用すると、開発者は基
 ### <a name="extending-webhttpbehavior"></a>WebHttpBehavior の拡張  
  <xref:System.ServiceModel.Description.WebHttpBehavior> は、仮想メソッド <xref:System.ServiceModel.Description.WebHttpBehavior.GetOperationSelector%28System.ServiceModel.Description.ServiceEndpoint%29>、<xref:System.ServiceModel.Description.WebHttpBehavior.GetReplyClientFormatter%28System.ServiceModel.Description.OperationDescription%2CSystem.ServiceModel.Description.ServiceEndpoint%29>、<xref:System.ServiceModel.Description.WebHttpBehavior.GetRequestClientFormatter%28System.ServiceModel.Description.OperationDescription%2CSystem.ServiceModel.Description.ServiceEndpoint%29>、<xref:System.ServiceModel.Description.WebHttpBehavior.GetReplyDispatchFormatter%28System.ServiceModel.Description.OperationDescription%2CSystem.ServiceModel.Description.ServiceEndpoint%29>、および <xref:System.ServiceModel.Description.WebHttpBehavior.GetRequestDispatchFormatter%28System.ServiceModel.Description.OperationDescription%2CSystem.ServiceModel.Description.ServiceEndpoint%29> を使用して拡張できます。 開発者は、<xref:System.ServiceModel.Description.WebHttpBehavior> から派生クラスを作成し、そのメソッドをオーバーライドして既定の動作をカスタマイズすることができます。  
   
- <xref:System.ServiceModel.Description.WebScriptEnablingBehavior> は、<xref:System.ServiceModel.Description.WebHttpBehavior> 拡張の一例です。 <xref:System.ServiceModel.Description.WebScriptEnablingBehavior> によって、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] エンドポイントでブラウザー ベースの ASP.NET AJAX クライアントから HTTP 要求を受信できるようになります。 [HTTP POST を使用して AJAX サービス](../../../../docs/framework/wcf/samples/ajax-service-using-http-post.md)この機能拡張ポイントを使用しての例に示します。  
+ <xref:System.ServiceModel.Description.WebScriptEnablingBehavior> は、<xref:System.ServiceModel.Description.WebHttpBehavior> 拡張の一例です。 <xref:System.ServiceModel.Description.WebScriptEnablingBehavior> ブラウザー ベースの ASP.NET AJAX クライアントから HTTP 要求を受信する Windows Communication Foundation (WCF) エンドポイントを有効にします。 [HTTP POST を使用して AJAX サービス](../../../../docs/framework/wcf/samples/ajax-service-using-http-post.md)この機能拡張ポイントを使用しての例に示します。  
   
 > [!WARNING]
 >  <xref:System.ServiceModel.Description.WebScriptEnablingBehavior> を使用する場合、<xref:System.UriTemplate> は、<xref:System.ServiceModel.Web.WebGetAttribute> または <xref:System.ServiceModel.Web.WebInvokeAttribute> 属性内でサポートされません。  
@@ -107,10 +93,10 @@ WCF Web HTTP プログラミング モデルを使用すると、開発者は基
  <xref:System.ServiceModel.Dispatcher.WebHttpDispatchOperationSelector> クラスは、<xref:System.UriTemplate> クラスおよび <xref:System.UriTemplateTable> クラスを使用して、サービス操作に対して呼び出しをディスパッチします。  
   
 ## <a name="compatibility"></a>互換性  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WEB HTTP プログラミング モデルでは、SOAP ベースのメッセージを使用しないため、WS-* プロトコルをサポートしていません。 ただし、SOAP を使用するエンドポイントと SOAP を使用しないその他のエンドポイントの 2 つの異なるエンドポイントを使用して、同じコントラクトを公開できます。 参照してください[する方法: SOAP および Web クライアントにコントラクトを公開](../../../../docs/framework/wcf/feature-details/how-to-expose-a-contract-to-soap-and-web-clients.md)例についてはします。  
+ WCF WEB HTTP プログラミング モデル (SOAP) ベースのメッセージを使用しない、したがってサポートしていません、ws-* プロトコルです。 ただし、SOAP を使用するエンドポイントと SOAP を使用しないその他のエンドポイントの 2 つの異なるエンドポイントを使用して、同じコントラクトを公開できます。 参照してください[する方法: SOAP および Web クライアントにコントラクトを公開](../../../../docs/framework/wcf/feature-details/how-to-expose-a-contract-to-soap-and-web-clients.md)例についてはします。  
   
 ## <a name="security"></a>セキュリティ  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WEB HTTP プログラミング モデルでは WS-* プロトコルがサポートされないため、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WEB HTTP プログラミング モデルで構築された Web サービスを保護するには、SSL を使用してサービスを公開するしかありません。 SSL の設定の詳細については[!INCLUDE[iisver](../../../../includes/iisver-md.md)]を参照してください[を IIS で SSL を実装する方法](http://go.microsoft.com/fwlink/?LinkId=131613)  
+ WCF WEB HTTP プログラミング モデルはサポートされていません、ws-* プロトコルが WCF WEB HTTP プログラミング モデル上に構築された Web サービスをセキュリティで保護する唯一の方法は、SSL を使用して、サービスを公開します。 SSL の設定の詳細については[!INCLUDE[iisver](../../../../includes/iisver-md.md)]を参照してください[を IIS で SSL を実装する方法](http://go.microsoft.com/fwlink/?LinkId=131613)  
   
 ## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.WebHttpBinding>  

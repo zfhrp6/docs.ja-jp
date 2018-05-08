@@ -1,13 +1,6 @@
 ---
-title: "コントロールとコンポーネントの作成時のトラブルシューティング"
-ms.custom: 
+title: コントロールとコンポーネントの作成時のトラブルシューティング
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -18,16 +11,11 @@ helpviewer_keywords:
 - components [Windows Forms], troubleshooting
 - Windows Forms controls, debugging
 ms.assetid: e9c8c099-2271-4737-882f-50f336c7a55e
-caps.latest.revision: "22"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c735d363af49688530e318680cbb4132fc747be7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9100d6dc41f982af340d747ad447009a183b3c7b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="troubleshooting-control-and-component-authoring"></a>コントロールとコンポーネントの作成時のトラブルシューティング
 このトピックでは、コンポーネントとコントロールの開発時に発生する次の一般的な問題について説明します。 詳細については、「[コンポーネントによるプログラミング](http://msdn.microsoft.com/library/d4d4fcb4-e0b8-46b3-b679-7ee0026eb9e3)」を参照してください。  
@@ -118,7 +106,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="component-icon-does-not-appear-in-toolbox"></a>ツールボックスにコンポーネント アイコンが表示されない  
  使用すると<xref:System.Drawing.ToolboxBitmapAttribute>にカスタム コンポーネントにアイコンを関連付けるには、ビットマップは自動生成されたコンポーネントをツールボックスに表示されません。 ビットマップを表示するには、**[ツールボックス アイテムの選択]** ダイアログ ボックスを使用してコントロールを再読み込みします。 詳細については、「[方法 : コントロールにツールボックス ビットマップを指定する](../../../../docs/framework/winforms/controls/how-to-provide-a-toolbox-bitmap-for-a-control.md)」を参照してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [デザイン時の Windows フォーム コントロールの開発](../../../../docs/framework/winforms/controls/developing-windows-forms-controls-at-design-time.md)  
  [チュートリアル: ツールボックスへのカスタム コンポーネントの自動設定](../../../../docs/framework/winforms/controls/walkthrough-automatically-populating-the-toolbox-with-custom-components.md)  
  [方法: UserControl の実行時の動作をテストする](../../../../docs/framework/winforms/controls/how-to-test-the-run-time-behavior-of-a-usercontrol.md)  

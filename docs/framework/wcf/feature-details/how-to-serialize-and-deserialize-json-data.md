@@ -1,33 +1,19 @@
 ---
 title: '方法 : JSON データをシリアル化および逆シリアル化する'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 88abc1fb-8196-4ee3-a23b-c6934144d1dd
-caps.latest.revision: 13
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 9152e0047102661664f9b158aa26f83fb1d3c25c
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: f51ffb180adfc8310c91ff3c1ec7b7725f6b8b15
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-serialize-and-deserialize-json-data"></a>方法 : JSON データをシリアル化および逆シリアル化する
 JSON (JavaScript Object Notation) は、クライアント ブラウザーと AJAX 対応の Web サービスとの間で、少量のデータを高速に交換できる効率的なデータ エンコード形式です。  
   
  ここでは、<xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> を使用して .NET 型のオブジェクトを JSON エンコードされたデータにシリアル化し、この JSON 形式のデータを .NET 型のインスタンスに戻すために逆シリアル化する方法について説明します。 この例では、ユーザー定義された `Person` 型のシリアル化と逆シリアル化を示すためにデータ コントラクトを使用します。  
   
- AJAX 対応エンドポイントで公開されたサービス操作でデータ コントラクト型を使用する場合、JSON でのシリアル化および逆シリアル化は通常 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] によって自動的に処理されます。 ただし、特定の場合においては JSON データを直接処理する必要があります。このトピックでは、このようなシナリオについて説明します。  
+ 通常、JSON のシリアル化および逆シリアル化は自動的に処理 Windows Communication Foundation (WCF) によって AJAX 対応エンドポイントで公開されているサービス操作でデータ コントラクト型を使用するとします。 ただし、特定の場合においては JSON データを直接処理する必要があります。このトピックでは、このようなシナリオについて説明します。  
   
 > [!NOTE]
 >  サーバー上で送信応答のシリアル化中にエラーが発生した場合、または応答操作がなんらかの理由で例外をスローした場合、エラーにより応答がクライアントに戻らないことがあります。  

@@ -1,14 +1,6 @@
 ---
 title: ICorThreadpool::CorRegisterWaitForSingleObject メソッド
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: reference
 api_name:
 - ICorThreadpool.CorRegisterWaitForSingleObject
 api_location:
@@ -23,15 +15,13 @@ helpviewer_keywords:
 ms.assetid: cade1feb-71d2-43ed-85ca-7b2e9da12994
 topic_type:
 - apiref
-caps.latest.revision: 8
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.openlocfilehash: 72c953022514ee916e34c596eb2f504725b75ab6
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 8198bef4a479499724b07da245f40aa9d9f4c265
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="icorthreadpoolcorregisterwaitforsingleobject-method"></a>ICorThreadpool::CorRegisterWaitForSingleObject メソッド
 このメソッドは、.NET Framework インフラストラクチャをサポートします。独自に作成したコードから直接使用するためのものではありません。  
@@ -51,13 +41,13 @@ HRESULT CorRegisterWaitForSingleObject (
 ```  
   
 ## <a name="requirements"></a>要件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** MSCorEE.h  
   
  **ライブラリ:** MSCorEE.dll にリソースとして含まれています。  
   
- **.NET framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目  
  [ICorThreadpool インターフェイス](../../../../docs/framework/unmanaged-api/hosting/icorthreadpool-interface.md)

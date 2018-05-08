@@ -1,28 +1,14 @@
 ---
-title: "トレースとメッセージ ログ"
-ms.custom: 
+title: トレースとメッセージ ログ
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - Tracing and logging
 ms.assetid: a4f39bfc-3c5e-4d51-a312-71c5c3ce0afd
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: cae7d806ce68f6804f97195c9bf2571328af6dff
-ms.sourcegitcommit: f28752eab00d2bd97e971542c0f49ce63cfbc239
-ms.translationtype: MT
+ms.openlocfilehash: 5f0cca66798a9d84b01c9fde1147c28f14a953db
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/29/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="tracing-and-message-logging"></a>トレースとメッセージ ログ
 このサンプルでは、トレースとメッセージ ログを有効にする方法を示します。 結果のトレースとメッセージ ログを使用して表示、[サービス トレース ビューアー ツール (SvcTraceViewer.exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md)です。 このサンプルがに基づいて、[作業の開始](../../../../docs/framework/wcf/samples/getting-started-sample.md)です。  
@@ -31,7 +17,7 @@ ms.lasthandoff: 01/29/2018
 >  このサンプルのセットアップ手順とビルド手順については、このトピックの最後を参照してください。  
   
 ## <a name="tracing"></a>トレース  
- [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] では、<xref:System.Diagnostics> 名前空間で定義されたトレース機構が使用されます。 このトレース モデルのトレース データは、アプリケーションが実装するトレース ソースによって作成されます。 各ソースは、名前によって識別されます。 トレース コンシューマでは、情報を取得するトレース ソースのトレース リスナが作成されます。 トレース データを受け取るには、トレース ソースのリスナを作成する必要があります。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] でこれを行うには、サービス モデルのトレース ソース `switchValue` を設定することにより、次のコードをサービスまたはクライアントのどちらかの構成ファイルに追加します。  
+ Windows Communication Foundation (WCF) で定義されているトレース機構を使用して、<xref:System.Diagnostics>名前空間。 このトレース モデルのトレース データは、アプリケーションが実装するトレース ソースによって作成されます。 各ソースは、名前によって識別されます。 トレース コンシューマでは、情報を取得するトレース ソースのトレース リスナが作成されます。 トレース データを受け取るには、トレース ソースのリスナを作成する必要があります。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] でこれを行うには、サービス モデルのトレース ソース `switchValue` を設定することにより、次のコードをサービスまたはクライアントのどちらかの構成ファイルに追加します。  
   
 ```xml  
 <system.diagnostics>  
@@ -141,10 +127,10 @@ ms.lasthandoff: 01/29/2018
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
+>  このディレクトリが存在しない場合に、 [Windows Communication Foundation (WCF) および .NET Framework 4 向けの Windows Workflow Foundation (WF) サンプル](http://go.microsoft.com/fwlink/?LinkId=150780)すべて Windows Communication Foundation (WCF) をダウンロードして[!INCLUDE[wf1](../../../../includes/wf1-md.md)]サンプルです。 このサンプルは、次のディレクトリに格納されます。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Management\TracingAndLogging`  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [トレース](../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
  [AppFabric の監視のサンプル](http://go.microsoft.com/fwlink/?LinkId=193959)

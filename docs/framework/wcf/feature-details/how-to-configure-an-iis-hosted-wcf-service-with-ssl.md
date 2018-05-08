@@ -1,24 +1,12 @@
 ---
-title: "IIS でホストされる WCF サービスに SSL を構成する方法"
-ms.custom: 
+title: IIS でホストされる WCF サービスに SSL を構成する方法
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: df2fe31f-a4bb-4024-92ca-b74ba055e038
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b16ca5b4cfe615eedd9e532b12f61394806829bd
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e739eb47611e5b73e7f1d62191a5aa61ad77abe2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-configure-an-iis-hosted-wcf-service-with-ssl"></a>IIS でホストされる WCF サービスに SSL を構成する方法
 ここでは、HTTP トランスポート セキュリティを使用するように IIS でホストされる WCF サービスをセットアップする方法について説明します。 HTTP トランスポート セキュリティを使用するには、SSL 証明書が IIS に登録されている必要があります。 SSL 証明書がない場合は、IIS を使用してテスト証明書を生成できます。 次に、Web サイトに SSL バインディングを追加し、Web サイトの認証プロパティを構成する必要があります。 最後に、HTTPS を使用するように WCF サービスを構成する必要があります。  
@@ -31,11 +19,11 @@ ms.lasthandoff: 12/22/2017
   
 2.  サーバー証明書 ウィンドウでをクリックして、**自己署名証明書を作成しています.** リンクをクリックします。  
   
-     ![IIS で証明書に署名自己 &#45; を作成する](../../../../docs/framework/wcf/feature-details/media/mg-createselfsignedcert.jpg "mg_CreateSelfSignedCert")  
+     ![自己を作成する&#45;署名入り証明書を IIS に](../../../../docs/framework/wcf/feature-details/media/mg-createselfsignedcert.jpg "mg_CreateSelfSignedCert")  
   
 3.  自己署名証明書のフレンドリ名を入力し、クリックして**OK**です。  
   
-     ![Self &#45; を作成します。署名証明書ダイアログ](../../../../docs/framework/wcf/feature-details/media/mg-mycert.jpg "mg_MyCert")  
+     ![自動作成&#45;署名証明書ダイアログ](../../../../docs/framework/wcf/feature-details/media/mg-mycert.jpg "mg_MyCert")  
   
      新しく作成された自己署名証明書の詳細が示されています、**サーバー証明書**ウィンドウです。  
   
@@ -155,7 +143,7 @@ ms.lasthandoff: 12/22/2017
 </configuration>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [インターネット インフォメーション サービスでのホスティング](../../../../docs/framework/wcf/feature-details/hosting-in-internet-information-services.md)  
  [インターネット インフォメーション サービスのホスティング手順](../../../../docs/framework/wcf/samples/internet-information-service-hosting-instructions.md)  
  [インターネット インフォメーション サービス ホスティングのベスト プラクティス](../../../../docs/framework/wcf/feature-details/internet-information-services-hosting-best-practices.md)  

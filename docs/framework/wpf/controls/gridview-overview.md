@@ -1,31 +1,19 @@
 ---
-title: "GridView の概要"
-ms.custom: 
+title: GridView の概要
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - GridView view mode [WPF]
 - ListView controls [WPF], GridView view mode
 - controls [WPF], ListView
 ms.assetid: b2d02267-32b3-40ce-8e9f-06972d8749d9
-caps.latest.revision: "26"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 099584ff5149891f406d5ad24a28a6b3e3faafb4
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 776897d490b2748e240cf7b9a4ea21364284c4c4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="gridview-overview"></a>GridView の概要
-<xref:System.Windows.Controls.GridView>表示モードのいずれかのビュー モードは、<xref:System.Windows.Controls.ListView>コントロール。 <xref:System.Windows.Controls.GridView>とユーザーの対話型の列見出しとして通常のボタンを使用するテーブル内の項目コレクションを表示するクラスとそのサポート クラスを有効にします。 このトピックでは、<xref:System.Windows.Controls.GridView>クラスし、その用途について説明します。  
+<xref:System.Windows.Controls.GridView> 表示モードのいずれかのビュー モードは、<xref:System.Windows.Controls.ListView>コントロール。 <xref:System.Windows.Controls.GridView>とユーザーの対話型の列見出しとして通常のボタンを使用するテーブル内の項目コレクションを表示するクラスとそのサポート クラスを有効にします。 このトピックでは、<xref:System.Windows.Controls.GridView>クラスし、その用途について説明します。  
   
   
   
@@ -42,7 +30,7 @@ ms.lasthandoff: 12/22/2017
   
  ![スタイル化 ListView](../../../../docs/framework/wpf/controls/media/styledlistview.PNG "StyledListView")  
   
- <xref:System.Windows.Controls.GridView>列がによって表される<xref:System.Windows.Controls.GridViewColumn>オブジェクトで、そのコンテンツを自動的にサイズことができます。 必要に応じて、明示的に設定できます、<xref:System.Windows.Controls.GridViewColumn>幅を指定します。 列のサイズは、列ヘッダー間のグリッパーをドラッグすることで変更できます。 ことができますも動的に追加、削除、置換、およびにこの機能が組み込まれているために、列を並べ替える<xref:System.Windows.Controls.GridView>です。 ただし、<xref:System.Windows.Controls.GridView>表示されるデータを直接更新することはできません。  
+ <xref:System.Windows.Controls.GridView> 列がによって表される<xref:System.Windows.Controls.GridViewColumn>オブジェクトで、そのコンテンツを自動的にサイズことができます。 必要に応じて、明示的に設定できます、<xref:System.Windows.Controls.GridViewColumn>幅を指定します。 列のサイズは、列ヘッダー間のグリッパーをドラッグすることで変更できます。 ことができますも動的に追加、削除、置換、およびにこの機能が組み込まれているために、列を並べ替える<xref:System.Windows.Controls.GridView>です。 ただし、<xref:System.Windows.Controls.GridView>表示されるデータを直接更新することはできません。  
   
  次の例は、定義する方法を示します、<xref:System.Windows.Controls.GridView>従業員データを表示します。 この例では<xref:System.Windows.Controls.ListView>定義、`EmployeeInfoDataSource`として、<xref:System.Windows.Controls.ItemsControl.ItemsSource%2A>です。 プロパティ定義<xref:System.Windows.Controls.GridViewColumn.DisplayMemberBinding%2A>バインド<xref:System.Windows.Controls.GridViewColumn>へのコンテンツ`EmployeeInfoDataSource`データのカテゴリ。  
   
@@ -139,7 +127,7 @@ ms.lasthandoff: 12/22/2017
   
 -   <xref:System.Windows.Controls.GridViewColumnHeaderRole>  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Controls.ListView>  
  <xref:System.Windows.Controls.ListViewItem>  
  <xref:System.Windows.Controls.GridViewColumn>  

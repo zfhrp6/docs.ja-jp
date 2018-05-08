@@ -1,33 +1,19 @@
 ---
 title: 資格情報の種類の選択
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: bf707063-3f30-4304-ab53-0e63413728a8
-caps.latest.revision: 25
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: ae5eb9a10f438f1bb76c51c3c9da68273d94ab57
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 756017462ccaf8a555b0634e8a43cfdd3bc63d32
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="selecting-a-credential-type"></a>資格情報の種類の選択
-*資格情報*データ[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]クレームされた id または機能のいずれかを確立するために使用します。 たとえば、パスポートは、政府によって発行される、国籍または地域籍を証明するための資格情報です。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、ユーザー名トークンや X.509 証明書など多数の形式を資格情報に使用できます。 ここでは、資格情報について説明し、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] で資格情報を使用する方法およびアプリケーションに適切な資格情報を選択する方法についても説明します。  
+*資格情報*Windows Communication Foundation (WCF) をクレームされた id または機能のいずれかを確立するために使用されるデータします。 たとえば、パスポートは、政府によって発行される、国籍または地域籍を証明するための資格情報です。 WCF では、資格情報は、ユーザー名トークンや X.509 証明書など、多くの形式を実行できます。 このトピックでは、資格情報、WCF では、その使用方法およびアプリケーションの適切な資格情報を選択する方法について説明します。  
   
  多くの国や地域において、運転免許証は資格情報の一例です。 運転免許証には、個人を識別する情報や能力を表すデータが記載されます。 この免許証には、所有者の写真という形式で所有の証明が含まれています。 免許証は、政府機関など、信頼された証明機関によって発行されます。 免許証には発行機関印が押され (国や地域によってはホログラムが使用され) ており、これによって、改ざんあるいは偽造されたものではないことが示されています。  
   
- 資格情報の提示には、データ自体の提示とデータの所有証明の提示が関与します。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、トランスポートとメッセージの両方のセキュリティ レベルで、さまざまな種類の資格情報がサポートされています。 例えば、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] でサポートされている、ユーザー名と (X.509) 証明書の 2 種類の資格情報を考えてみましょう。  
+ 資格情報の提示には、データ自体の提示とデータの所有証明の提示が関与します。 WCF には、さまざまなトランスポートとメッセージの両方のセキュリティ レベルで資格情報の種類がサポートしています。 たとえば、次の 2 つの種類の WCF ではサポートされている資格情報: ユーザー名と (X.509) 証明書します。  
   
  ユーザー名資格情報で、ユーザー名はクレームされた ID を表しており、パスワードは所有の証明に使用されます。 この場合の信頼された証明機関とは、ユーザー名とパスワードを検証するシステムです。  
   
@@ -41,7 +27,7 @@ ms.lasthandoff: 04/30/2018
 |なし|クライアントが資格情報を提示する必要がないことを指定します。 匿名クライアントであると解釈されます。|  
 |Basic|クライアントに基本認証を指定します。 詳細については、RFC2617 を参照してください:[HTTP Authentication: Basic and Digest Authentication](http://go.microsoft.com/fwlink/?LinkID=88313)です。|  
 |Digest|クライアントにダイジェスト認証を指定します。 詳細については、RFC2617 を参照してください:[HTTP Authentication: Basic and Digest Authentication](http://go.microsoft.com/fwlink/?LinkID=88313)です。|  
-|Ntlm|NT LAN Manager (NTLM) 認証を指定します。 これは、何らかの理由で Kerberos 認証を使用できないときに使用されます。 <xref:System.ServiceModel.Security.WindowsClientCredential.AllowNtlm%2A> プロパティを `false` に設定すると、フォールバックとしての NTLM の使用を無効にすることもできます。これにより、NTLM が使用されていれば、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] はベスト エフォートで例外をスローするようになります。 ただし、このプロパティを `false` に設定しても、ネットワーク経由で NTLM 資格情報が送信されなくなるとは限りません。|  
+|Ntlm|NT LAN Manager (NTLM) 認証を指定します。 これは、何らかの理由で Kerberos 認証を使用できないときに使用されます。 設定して、フォールバックとしての使用を無効にすることもできます、<xref:System.ServiceModel.Security.WindowsClientCredential.AllowNtlm%2A>プロパティを`false`、それが原因で WCF は、ベスト エフォート NTLM が使用されている場合に例外をスローします。 ただし、このプロパティを `false` に設定しても、ネットワーク経由で NTLM 資格情報が送信されなくなるとは限りません。|  
 |Windows|Windows 認証を指定します。 Windows ドメインで Kerberos プロトコルだけを指定するには、<xref:System.ServiceModel.Security.WindowsClientCredential.AllowNtlm%2A> プロパティを `false` (既定値は `true`) に設定する必要があります。|  
 |証明書|X.509 証明書を使用したクライアント認証を実行します。|  
 |[Password]|ユーザーは、ユーザー名とパスワードを提供する必要があります。 Windows 認証または他のカスタム ソリューションを使用して、ユーザー名とパスワードの組み合わせを検証します。|  
@@ -53,17 +39,17 @@ ms.lasthandoff: 04/30/2018
 |-------------|-----------------|  
 |なし|クライアントが資格情報を提示する必要がないことを指定します。 匿名クライアントであると解釈されます。|  
 |Windows|Windows 資格情報によって確立されたセキュリティ コンテキストで、SOAP メッセージ交換を実行できます。|  
-|[ユーザー名]|ユーザー名資格情報を使用したクライアントの認証をサービスで要求できるようにします。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、署名の生成やデータの暗号化など、ユーザー名を使用した暗号化操作が許可されていない点に注意してください。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、ユーザー名資格情報の使用時に、トランスポートが確実にセキュリティで保護されます。|  
+|[ユーザー名]|ユーザー名資格情報を使用したクライアントの認証をサービスで要求できるようにします。 WCF は、署名の生成やデータの暗号化など、ユーザー名を使用した暗号化操作をできないことに注意してください。 WCF は、ユーザー名資格情報を使用する場合に、トランスポートを保護することを確認します。|  
 |証明書|X.509 証明書を使用したクライアントの認証をサービスで要求できるようにします。|  
 |IssuedToken|セキュリティ ポリシーに従って構成されるカスタム トークンです。 既定のトークンの種類は、SAML (Security Assertion Markup Language) です。 トークンは、セキュリティ トークン サービスによって発行されます。 詳細については、次を参照してください。[フェデレーションと発行されたトークン](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)です。|  
   
 ### <a name="negotiation-model-of-service-credentials"></a>サービス資格情報のネゴシエーション モデル  
  *ネゴシエーション*資格情報を交換することで、クライアントとサービス間の信頼を確立するプロセスです。 このプロセスは、ネゴシエーション プロセスの次の手順に必要な情報だけを公開するために、クライアントとサービスとの間で反復して実行されます。 実際には、最後に、後続の操作で使用されるサービスの資格情報がクライアントに配信されます。  
   
- 1 つの例外を除き、既定では、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のシステム指定のバインディングは、メッセージ レベルのセキュリティを使用しているときに、サービス資格情報を自動的にネゴシエートします  (例外とは、<xref:System.ServiceModel.BasicHttpBinding> の場合です。このバインディングでは、既定ではセキュリティが有効化されません)。この動作を無効にするには、<xref:System.ServiceModel.MessageSecurityOverHttp.NegotiateServiceCredential%2A> プロパティと <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.NegotiateServiceCredential%2A> プロパティを参照してください。  
+ 1 つの例外を除き、既定では WCF では、システム指定のバインディング、サービス資格情報を自動的にネゴシエート メッセージ レベルのセキュリティを使用する場合。 (例外とは、<xref:System.ServiceModel.BasicHttpBinding> の場合です。このバインディングでは、既定ではセキュリティが有効化されません)。この動作を無効にするには、<xref:System.ServiceModel.MessageSecurityOverHttp.NegotiateServiceCredential%2A> プロパティと <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.NegotiateServiceCredential%2A> プロパティを参照してください。  
   
 > [!NOTE]
->  SSL セキュリティを .NET Framework 3.5 以降と共に使用すると、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントは、証明書ストア内の中間証明書と SSL ネゴシエーション中に受信した中間証明書の両方を使用して、サービスの証明書に対して証明書チェーンの検証を実行します。 .NET Framework 3.0 では、ローカルの証明書ストアにインストールされている中間証明書のみが使用されます。  
+>  WCF クライアントがサービスの証明書チェーンの検証を実行するのに、その証明書ストア内の中間証明書と SSL ネゴシエーション中に受信した中間証明書の両方を使用する SSL セキュリティを使用するは、.NET Framework 3.5 以降のバージョンと、証明書です。 .NET Framework 3.0 では、ローカルの証明書ストアにインストールされている中間証明書のみが使用されます。  
   
 #### <a name="out-of-band-negotiation"></a>帯域外ネゴシエーション  
  自動ネゴシエーションを無効にした場合、サービスにメッセージを送信する前にクライアント側にサービス資格情報が準備されている必要があります。 これとも呼ばれる、*帯域外の*プロビジョニングします。 たとえば、指定された資格情報の種類が証明書で、自動ネゴシエーションが無効の場合、クライアントはサービス所有者に連絡し、証明書を受け取って、クライアント アプリケーションを実行しているコンピューターにインストールする必要があります。 この方法は、たとえば B2B シナリオで、サービスにアクセスできるクライアントを厳密に制御することが必要な場合に使用される可能性があります。 メールは、この出力の-域外ネゴシエーションを行うことができ、X.509 証明書は、Microsoft 管理コンソール (MMC) の証明書スナップインなどのツールを使用して Windows 証明書ストアに格納します。  
@@ -90,7 +76,7 @@ ms.lasthandoff: 04/30/2018
  クライアントが有効なユーザー名とパスワードを指定した場合、その資格情報がクライアントの認証に使用されます。 それ以外の場合は、現在ログオンしているユーザーの資格情報が使用されます。  
   
 ### <a name="setting-client-credentials"></a>クライアント資格情報の設定  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、クライアント アプリケーションは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントを使用してサービスに接続します。 各クライアントは、<xref:System.ServiceModel.ClientBase%601> クラスから派生しています。各クライアントでは <xref:System.ServiceModel.ClientBase%601.ClientCredentials%2A> プロパティを使用して、クライアント資格情報のさまざまな値を指定できます。  
+ WCF では、クライアント アプリケーションは、サービスに接続する WCF クライアントを使用します。 各クライアントは、<xref:System.ServiceModel.ClientBase%601> クラスから派生しています。各クライアントでは <xref:System.ServiceModel.ClientBase%601.ClientCredentials%2A> プロパティを使用して、クライアント資格情報のさまざまな値を指定できます。  
   
 #### <a name="setting-a-certificate"></a>証明書の設定  
  サービスに対するクライアントの認証に使用される X.509 証明書をサービスに提供するには、<xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A> クラスの <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential> メソッドを使用します。  
@@ -98,7 +84,7 @@ ms.lasthandoff: 04/30/2018
 ## <a name="how-client-credentials-are-used-to-authenticate-a-client-to-the-service"></a>サービスに対するクライアントの認証でのクライアント資格情報の使用  
  サービスとの通信に必要なクライアント資格情報は、<xref:System.ServiceModel.ClientBase%601.ClientCredentials%2A> プロパティまたは <xref:System.ServiceModel.ChannelFactory.Credentials%2A> プロパティを使用して提供されます。 この情報は、サービスに対してクライアントを認証するためにセキュリティ チャネルで使用されます。 認証は、次のいずれかの方法で実行されます。  
   
--   クライアント資格情報を 1 回使用してから、セキュリティ コンテキストを確立するために、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントのインスタンスを使用して最初のメッセージを送信します。 アプリケーション メッセージはすべて、そのセキュリティ コンテキストで保護されます。  
+-   クライアントの資格情報は、最初のメッセージを送信すると、インスタンスを使用して、WCF クライアントのセキュリティ コンテキストを確立する前に 1 回使用されます。 アプリケーション メッセージはすべて、そのセキュリティ コンテキストで保護されます。  
   
 -   サービスに送信されたアプリケーション メッセージごとの認証に、クライアント資格情報を使用します。 この場合、クライアントとサービスとの間にコンテキストは確立されません。  
   
@@ -106,7 +92,7 @@ ms.lasthandoff: 04/30/2018
  1 つ目の方法を使用した場合、確立されたコンテキストは、クライアント ID に永続的に関連付けられます。 つまり、セキュリティ コンテキストが確立されると、クライアントに関連付けられた ID を変更できません。  
   
 > [!IMPORTANT]
->  ID の切り替えができないこと (つまり、セキュリティ コンテキストを確立する場合の既定の動作) について、注意が必要な状況があります。 別のサービスと通信するサービスを作成する場合、この 2 番目のサービスに対して [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントを開くために使用した ID は変更できません。 これは、複数のクライアントが最初のサービスを使用できる状況で、2 番目のサービスにアクセスするときに最初のサービスがクライアントを偽装する場合、問題になります。 サービスがすべての呼び出し元に対して同じクライアントを再利用する場合、2 番目のサービスへの呼び出しはすべて、2 番目のサービスに対してクライアントを開くために使用した最初の呼び出し元の ID によって実行されます。 つまり、このサービスでは、すべてのクライアントが 2 番目のサービスと通信できるように、最初のクライアントの ID が使用されます。 これによって、権限の昇格が発生する可能性があります。 これがサービスの目的の動作でない場合、各呼び出し元を追跡し、その呼び出し元ごとに 2 番目のサービスに対する新しいクライアントを作成する必要があります。これによって、適切な呼び出し元が 2 番目のサービスと通信するために、サービスは適切なクライアントだけを使用できます。  
+>  ID の切り替えができないこと (つまり、セキュリティ コンテキストを確立する場合の既定の動作) について、注意が必要な状況があります。 2 番目のサービスと通信するサービスを作成する場合、2 番目のサービスを WCF クライアントを開くために使用する id は変更できません。 これは、複数のクライアントが最初のサービスを使用できる状況で、2 番目のサービスにアクセスするときに最初のサービスがクライアントを偽装する場合、問題になります。 サービスがすべての呼び出し元に対して同じクライアントを再利用する場合、2 番目のサービスへの呼び出しはすべて、2 番目のサービスに対してクライアントを開くために使用した最初の呼び出し元の ID によって実行されます。 つまり、このサービスでは、すべてのクライアントが 2 番目のサービスと通信できるように、最初のクライアントの ID が使用されます。 これによって、権限の昇格が発生する可能性があります。 これがサービスの目的の動作でない場合、各呼び出し元を追跡し、その呼び出し元ごとに 2 番目のサービスに対する新しいクライアントを作成する必要があります。これによって、適切な呼び出し元が 2 番目のサービスと通信するために、サービスは適切なクライアントだけを使用できます。  
   
  資格情報とセキュリティで保護されたセッションの詳細については、次を参照してください。[セキュリティで保護されたセッションに関する考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-for-secure-sessions.md)です。  
   

@@ -1,31 +1,17 @@
 ---
 title: メッセージ資格情報付き WS トランスポート
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 0d092f3a-b309-439b-920b-66d8f46a0e3c
-caps.latest.revision: 7
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 7b954e2d19f601476876beef6482ca10eb3f113b
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
-ms.translationtype: MT
+ms.openlocfilehash: acb2960fe3d563a05b0bdeee70af0d4093aae6f0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ws-transport-with-message-credential"></a>メッセージ資格情報付き WS トランスポート
 このサンプルでは、メッセージに含まれるクライアント資格情報と組み合わせて SSL トランスポート セキュリティを使用する例を示します。 このサンプルでは、`wsHttpBinding` バインディングを使用します。  
   
- 既定で、`wsHttpBinding` バインディングは HTTP 通信を実現します。 トランスポート セキュリティ用に構成すると、バインディングは HTTPS 通信をサポートします。 HTTPS により、通信回線を介して送信されるメッセージについての機密性および整合性の保護が実現します。 ただし、サービスに対するクライアントの認証に使用できる一連の認証機構は、HTTPS トランスポートのサポート範囲に限定されます。 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] には、この制限を克服するためにデザインされた、`TransportWithMessageCredential` セキュリティ モードが用意されています。 このセキュリティ モードが構成されると、送信メッセージの機密性および整合性を実現してサービス認証を実行する、トランスポート セキュリティが使用されます。 ただし、クライアント認証は、メッセージ内で直接クライアント資格情報を記述することによって実行します。 これにより、トランスポート セキュリティ モードのパフォーマンスの利点を維持しながら、クライアント認証用のメッセージ セキュリティ モードでサポートされている資格情報の種類を使用することができます。  
+ 既定で、`wsHttpBinding` バインディングは HTTP 通信を実現します。 トランスポート セキュリティ用に構成すると、バインディングは HTTPS 通信をサポートします。 HTTPS により、通信回線を介して送信されるメッセージについての機密性および整合性の保護が実現します。 ただし、サービスに対するクライアントの認証に使用できる一連の認証機構は、HTTPS トランスポートのサポート範囲に限定されます。 Windows Communication Foundation (WCF) の提供、`TransportWithMessageCredential`この制限を克服するものではセキュリティ モード。 このセキュリティ モードが構成されると、送信メッセージの機密性および整合性を実現してサービス認証を実行する、トランスポート セキュリティが使用されます。 ただし、クライアント認証は、メッセージ内で直接クライアント資格情報を記述することによって実行します。 これにより、トランスポート セキュリティ モードのパフォーマンスの利点を維持しながら、クライアント認証用のメッセージ セキュリティ モードでサポートされている資格情報の種類を使用することができます。  
   
  このサンプルでは、サービスに対するクライアントの認証に `UserName` 資格情報が使用されます。  
   

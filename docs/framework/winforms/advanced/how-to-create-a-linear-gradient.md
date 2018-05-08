@@ -1,13 +1,6 @@
 ---
-title: "方法 : 線形グラデーションを作成する"
-ms.custom: 
+title: '方法 : 線形グラデーションを作成する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,19 +10,14 @@ helpviewer_keywords:
 - colors [Windows Forms], creating linear gradients
 - gradients
 ms.assetid: 6c88e1cc-1217-4399-ac12-cb37592b9f01
-caps.latest.revision: "17"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 33979decf37e9adb29d94a6602a43f992d93aaa1
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9eeedf1ef92bdf6e5e2724eeca5060765b0778f3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-a-linear-gradient"></a>方法 : 線形グラデーションを作成する
-[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]水平方向、垂直方向、および対角線方向の線形グラデーションを提供します。 既定では、線形グラデーションの色を一様に変更します。 ただし、色が一様でない方法で変更されるように、線形グラデーションをカスタマイズできます。  
+[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] 水平方向、垂直方向、および対角線方向の線形グラデーションを提供します。 既定では、線形グラデーションの色を一様に変更します。 ただし、色が一様でない方法で変更されるように、線形グラデーションをカスタマイズできます。  
   
  次の例では、行、楕円、および水平方向の線形グラデーション ブラシを含む四角形を格納します。  
   
@@ -50,7 +38,7 @@ ms.lasthandoff: 12/22/2017
   
  色の要素は前の例では 200 の水平方向の座標に水平方向の座標は 0 から移動すると直線的に変更します。 たとえば、最初の座標が 0 ~ 200 の範囲の中間に位置ポイントは、0 ~ 255 の範囲の中間に位置が青の要素があります。  
   
- [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]グラデーションの 1 つの辺によって色が異なるため、他の方法を調整できます。 黒から次の表に従って赤に変更するグラデーション ブラシを作成するとします。  
+ [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] グラデーションの 1 つの辺によって色が異なるため、他の方法を調整できます。 黒から次の表に従って赤に変更するグラデーション ブラシを作成するとします。  
   
 |水平方向の座標|RGB コンポーネント|  
 |---------------------------|--------------------|  
@@ -88,6 +76,6 @@ ms.lasthandoff: 12/22/2017
      [!code-csharp[System.Drawing.UsingaGradientBrush#23](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.UsingaGradientBrush/CS/Class1.cs#23)]
      [!code-vb[System.Drawing.UsingaGradientBrush#23](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.UsingaGradientBrush/VB/Class1.vb#23)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [グラデーション ブラシを使用した図形の塗りつぶし](../../../../docs/framework/winforms/advanced/using-a-gradient-brush-to-fill-shapes.md)  
  [Windows フォームにおけるグラフィックスと描画](../../../../docs/framework/winforms/advanced/graphics-and-drawing-in-windows-forms.md)

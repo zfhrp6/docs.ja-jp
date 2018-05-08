@@ -1,32 +1,20 @@
 ---
 title: 資格情報ネゴシエーションを使用しない Windows クライアントを使用するメッセージ セキュリティ
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: fc07a26c-cbee-41c5-8fb0-329085fef749
-caps.latest.revision: 18
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload:
-- dotnet
-ms.openlocfilehash: 056e743ff1849457f8a0e8ee509a56475f09435c
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 05ffe731a578f8b8d2cdbdf5e3c9229e2b03821c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="message-security-with-a-windows-client-without-credential-negotiation"></a>資格情報ネゴシエーションを使用しない Windows クライアントを使用するメッセージ セキュリティ
-次のシナリオは、Kerberos プロトコルによって保護される [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] のクライアントとサービスを示します。  
+次のシナリオでは、Windows Communication Foundation (WCF) クライアントと Kerberos プロトコルによって保護されたサービスを示します。  
   
  サービスとクライアントは、いずれも同じドメインまたは信頼できるドメインに配置されています。  
   
@@ -59,9 +47,9 @@ ms.lasthandoff: 04/30/2018
 > [!NOTE]
 >  ネゴシエートせずに Windows の資格情報を使用するには、サービスのユーザー アカウントが、Active Directory ドメインを使用して登録されたサービス プリンシパル名 (SPN) にアクセスする必要があります。 これは次の 2 つの方法で実行できます。  
   
-1.  `NetworkService` アカウントまたは `LocalSystem` アカウントを使用してサービスを実行します。 これらのアカウントは、コンピューターが Active Directory ドメインに参加したときに確立されたコンピューターの SPN にアクセスできるため、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は適切な SPN 要素をサービスのメタデータ (Web サービス記述言語 (WSDL)) にあるサービスのエンドポイント内部に自動的に生成します。  
+1.  `NetworkService` アカウントまたは `LocalSystem` アカウントを使用してサービスを実行します。 WCF が、サービスのメタデータ (Web サービスの説明に、サービスのエンドポイント内の適切な SPN 要素を自動的に生成するため、それらのアカウントには、コンピューターのコンピューター、Active Directory ドメインに参加するときに確立されている SPN へのアクセスがある、言語、または WSDL)。  
   
-2.  任意の Active Directory ドメイン アカウントを使用してサービスを実行します。 この場合、そのドメイン アカウント用の SPN を確立する必要があります。 これを行うには、Setspn.exe ユーティリティ ツールを使用する方法があります。 サービスのアカウント用の SPN を作成したら、SPN をそのメタデータ (WSDL) を通じてサービスのクライアントに公開するように [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を構成します。 これを行うには、アプリケーション構成ファイルまたはコードのどちらかを使用して、公開されるエンドポイントのエンドポイント ID を設定します。 プログラムで ID を公開する方法を次の例に示します。  
+2.  任意の Active Directory ドメイン アカウントを使用してサービスを実行します。 この場合、そのドメイン アカウント用の SPN を確立する必要があります。 これを行うには、Setspn.exe ユーティリティ ツールを使用する方法があります。 サービスのアカウントの SPN が作成されると、その SPN をそのメタデータ (WSDL) を通じてサービスのクライアントに公開する WCF を構成します。 これを行うには、アプリケーション構成ファイルまたはコードのどちらかを使用して、公開されるエンドポイントのエンドポイント ID を設定します。 プログラムで ID を公開する方法を次の例に示します。  
   
  詳細については、Spn、Kerberos プロトコル、および Active Directory を参照してください[Kerberos テクニカル Supplement for Windows](http://go.microsoft.com/fwlink/?LinkId=88330)です。 エンドポイントの id に関する詳細については、次を参照してください。 [SecurityBindingElement 認証モード](../../../../docs/framework/wcf/feature-details/securitybindingelement-authentication-modes.md)です。  
   

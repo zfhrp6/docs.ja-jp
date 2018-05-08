@@ -1,27 +1,15 @@
 ---
-title: "探索プロキシで登録される探索可能なサービスの実装方法"
-ms.custom: 
+title: 探索プロキシで登録される探索可能なサービスの実装方法
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: eb275bc1-535b-44c8-b9f3-0b75e9aa473b
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ee99c7c74f0e1e2d287802d46cf4b716cfa3b76d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e0ceada8f65b98676d160ba096c63bf946a178cf
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-implement-a-discoverable-service-that-registers-with-the-discovery-proxy"></a>探索プロキシで登録される探索可能なサービスの実装方法
-これは、探索プロキシの実装方法に関する 4 つのトピックのうちの 2 番目のトピックです。 前のトピックで[する方法: 探索プロキシの実装](../../../../docs/framework/wcf/feature-details/how-to-implement-a-discovery-proxy.md)、探索プロキシを実装します。 このトピックでは、アナウンス メッセージ ([!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] および `Hello`) を探索プロキシに送信する `Bye` サービスを作成します。この送信により、サービスが探索プロキシに登録または登録解除されます。  
+これは、探索プロキシの実装方法に関する 4 つのトピックのうちの 2 番目のトピックです。 前のトピックで[する方法: 探索プロキシの実装](../../../../docs/framework/wcf/feature-details/how-to-implement-a-discovery-proxy.md)、探索プロキシを実装します。 このトピックでは、アナウンス メッセージを送信する WCF サービスを作成 (`Hello`と`Bye`) から、探索プロキシになった原因を登録し、探索プロキシから登録解除します。  
   
 ### <a name="to-define-the-service-contract"></a>サービス コントラクトを定義するには  
   
@@ -295,7 +283,7 @@ namespace Microsoft.Samples.Discovery
 }  
 ```  
 
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [WCF Discovery](../../../../docs/framework/wcf/feature-details/wcf-discovery.md)  
  [探索プロキシを実装する方法](../../../../docs/framework/wcf/feature-details/how-to-implement-a-discovery-proxy.md)  
  [探索プロキシを使用してサービスを検索するクライアント アプリケーションの実装方法](../../../../docs/framework/wcf/feature-details/client-app-discovery-proxy-to-find-a-service.md)

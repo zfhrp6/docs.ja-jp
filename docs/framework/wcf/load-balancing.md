@@ -1,31 +1,17 @@
 ---
 title: 負荷分散
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - load balancing [WCF]
 ms.assetid: 148e0168-c08d-4886-8769-776d0953b80f
-caps.latest.revision: 7
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: fe13c4aee41cd7af188ccaea77b3c0af07603e2c
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
-ms.translationtype: MT
+ms.openlocfilehash: 9ad9c9c569137534addfa3b91f412fb0c0a4b808
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="load-balancing"></a>負荷分散
-[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] アプリケーションの処理能力を増加する方法の 1 つは、アプリケーションを負荷分散されたサーバー ファームに配置することでスケール アウトすることです。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] アプリケーションは、ハードウェア ベースの負荷分散アプリケーションのほか、Windows Network Load Balancing のようなソフトウェアによる負荷分散も含む、標準的な負荷分散手法を使用して負荷分散できます。  
+Windows Communication Foundation (WCF) アプリケーションの容量を増やす方法の 1 つは負荷分散されたサーバー ファームに配置をスケール アウトすることです。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] アプリケーションは、ハードウェア ベースの負荷分散アプリケーションのほか、Windows Network Load Balancing のようなソフトウェアによる負荷分散も含む、標準的な負荷分散手法を使用して負荷分散できます。  
   
  以下のセクションでは、システム提供の各種のバインディングを使用して構築された [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] アプリケーションを負荷分散するときの考慮事項について説明します。  
   

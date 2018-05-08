@@ -1,28 +1,16 @@
 ---
-title: "ファイル ダイアログ ボックスのカスタム プレイス用既知のフォルダー GUID"
-ms.custom: 
+title: ファイル ダイアログ ボックスのカスタム プレイス用既知のフォルダー GUID
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - Known Folder GUIDs [Windows Forms], Custom Places
 - Custom Places [Windows Forms], Known Folder GUIDs
 - Windows Vista Known Folder GUIDs [Windows Forms], Custom Places
 ms.assetid: d8d8b544-8b4d-4da5-ba3a-b05e93244778
-caps.latest.revision: "6"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 913cccadc90eaef589f42d097a14b1472c7129fc
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 69fa8837f616969e018e4ec7191f0b30a2df5b62
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="known-folder-guids-for-file-dialog-custom-places"></a>ファイル ダイアログ ボックスのカスタム プレイス用既知のフォルダー GUID
 使用する、<xref:System.Guid>を指定する、[!INCLUDE[wiprlhext](../../../../includes/wiprlhext-md.md)]既知のフォルダーにフォルダーを追加するときに、<xref:System.Windows.Forms.FileDialog.CustomPlaces%2A>コレクション。 既知のフォルダー Guid は、大文字小文字は区別されずで KnownFolders.h ファイルで定義されて、[!INCLUDE[winSDK](../../../../includes/winsdk-md.md)]です。  
@@ -297,6 +285,6 @@ ms.lasthandoff: 12/22/2017
  Windows  
  F38BF404-1D43-42F2-9305-67DE0B28FC23  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.FileDialogCustomPlace>  
  [方法: よく使用する場所をファイル ダイアログ ボックスに追加する](../../../../docs/framework/winforms/controls/how-to-add-a-custom-place-to-a-file-dialog-box.md)

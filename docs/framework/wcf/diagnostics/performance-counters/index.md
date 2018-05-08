@@ -1,31 +1,17 @@
 ---
 title: WCF パフォーマンス カウンター
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - performance counters [WCF]
 ms.assetid: f559b2bd-ed83-4988-97a1-e88f06646609
-caps.latest.revision: 37
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: be4ffac8444f6365dacb2b20db6abbb6792c2239
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 74bf11779e6ccf032f2c8c920b62b2f0e5d0625d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="wcf-performance-counters"></a>WCF パフォーマンス カウンター
-[!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] には、アプリケーションのパフォーマンス測定に役立つ多数のパフォーマンス カウンターが備わっています。  
+Windows Communication Foundation (WCF) には、アプリケーションのパフォーマンスの測定に役立つパフォーマンス カウンターの大規模なセットが含まれています。  
   
 ## <a name="enabling-performance-counters"></a>パフォーマンス カウンターの有効化  
  次のように、[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] サービスの app.config 構成ファイルを使用して [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] サービスのパフォーマンス カウンターを有効にできます。  
@@ -151,5 +137,5 @@ ServiceName@ServiceBaseAddress
   
  カウンターをプログラムでアクセスする方法の詳細については、次を参照してください。[パフォーマンス カウンターのプログラミング アーキテクチャ](http://go.microsoft.com/fwlink/?LinkId=95179)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [管理と診断](../../../../../docs/framework/wcf/diagnostics/index.md)

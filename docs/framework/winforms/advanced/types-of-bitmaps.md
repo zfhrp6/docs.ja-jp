@@ -1,13 +1,6 @@
 ---
-title: "ビットマップの種類"
-ms.custom: 
+title: ビットマップの種類
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - jpeg files
 - TIFF files
@@ -27,16 +20,11 @@ helpviewer_keywords:
 - bitmaps [Windows Forms], file format
 - Exchangeable Image File
 ms.assetid: 6be085a2-2c13-47c8-b80a-c18b32777d8d
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 6af28e7b50cb7e4a2a90153a053a83931c738214
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 1a79f34daac4238093693947f5fb5e73bb56213d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="types-of-bitmaps"></a>ビットマップの種類
 ビットマップは、ピクセルの四角形の配列に各ピクセルの色を指定するビットの配列です。 各ピクセルのビット数では、そのピクセルに割り当てることのできる色の数を決定します。 たとえば、各ピクセルが 4 ビットで表されている場合、指定されたピクセル割り当てることができる 16 色のいずれか (2 ^4 = 16)。 次の表は、指定したビット数で表されるピクセルに割り当てることのできる色の数のいくつかの例を示します。  
@@ -64,7 +52,7 @@ ms.lasthandoff: 12/22/2017
  ![ビットマップ サンプル](../../../../docs/framework/winforms/advanced/media/aboutgdip03-art02.gif "AboutGdip03_Art02")  
   
 ## <a name="graphics-file-formats"></a>画像ファイル  
- ディスク ファイルにビットマップを保存するための多くの標準の形式があります。 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]グラフィックス ファイルの次の段落で説明する形式をサポートします。  
+ ディスク ファイルにビットマップを保存するための多くの標準の形式があります。 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] グラフィックス ファイルの次の段落で説明する形式をサポートします。  
   
 ### <a name="bmp"></a>BMP  
  BMP は、デバイスやアプリケーションに依存しないイメージを格納する、Windows で使用される標準的な形式です。 指定した BMP ファイル (1、4、8、15、24、32、または 64) をピクセルあたりのビット数は、ファイルのヘッダーで指定されます。 24 ビット/ピクセルの BMP ファイルは、共通です。 BMP 通常は圧縮されず、ファイル、そのため、転送に適してがインターネット経由でします。  
@@ -96,7 +84,7 @@ ms.lasthandoff: 12/22/2017
 ### <a name="tag-image-file-format-tiff"></a>タグ イメージ ファイルの形式 (TIFF)  
  TIFF は、さまざまなプラットフォームとイメージ処理アプリケーションでサポートされている柔軟性と拡張性の高い形式です。 TIFF ファイルでは、ピクセルあたりのビット数の任意の数を含むイメージを格納することができます、さまざまな圧縮アルゴリズムを使用できます。 いくつかのイメージは、1 つ、複数のページの TIFF ファイルに格納できます。 (スキャナーの種類、ホスト コンピューター、型の圧縮、向き、1 つのピクセルのサンプル) のイメージに関連する情報をファイルに格納し、タグを使用して配置します。 TIFF 形式は、必要に応じて、承認および新しいタグの追加によって拡張できます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Drawing.Image?displayProperty=nameWithType>  
  <xref:System.Drawing.Bitmap?displayProperty=nameWithType>  
  <xref:System.Drawing.Imaging.PixelFormat?displayProperty=nameWithType>  

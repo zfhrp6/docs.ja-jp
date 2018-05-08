@@ -1,14 +1,6 @@
 ---
-title: "CLR プロファイラーと Windows ストア アプリ"
-ms.custom: 
+title: CLR プロファイラーと Windows ストア アプリ
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 applies_to:
@@ -20,17 +12,13 @@ helpviewer_keywords:
 - profiling managed code
 - profiling managed code [Windows Store Apps]
 ms.assetid: 1c8eb2e7-f20a-42f9-a795-71503486a0f5
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: d884b80ba8ccc42d1b6acc671db408305a095a7d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 20a1ed9b6b613b1e4d3e5363ab9995cc81295091
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="clr-profilers-and-windows-store-apps"></a>CLR プロファイラーと Windows ストア アプリ
 このトピックでは、分析する診断ツールの書き込みが Windows ストア アプリ内で実行されているコードを管理する場合について検討する必要がありますについて説明します。  また、Windows ストア アプリに対して実行する、操作を続行するために、既存の開発ツールを変更するガイドラインを示します。  この情報を理解するのには、ツールを変更するスクリプトは Windows デスクトップ アプリケーション、およびするに対して正しく実行、対象となるようになりましたこと診断ツールで、この API を既に使用している場合は、共通言語ランタイム プロファイリング API に慣れている、最適ですWindows ストア アプリに対して正しく実行します。  
@@ -64,7 +52,7 @@ ms.lasthandoff: 12/22/2017
   
 <a name="Intro"></a>   
 ## <a name="introduction"></a>はじめに  
- 場合は、過去の導入段落、CLR プロファイル API を使い慣れています。  管理対象のデスクトップ アプリケーションに対して適切に動作する診断ツールを既に書き込まれています。  これで、興味の対処、ツールは、管理対象の Windows ストア アプリで動作できるようにします。  おそらく既にしようとしたこの作業を行い、簡単な作業ではないことが検出されます。  実際には、すべてのツール開発者に知られていない可能性がありますの考慮事項の数があります。  例:  
+ 場合は、過去の導入段落、CLR プロファイル API を使い慣れています。  管理対象のデスクトップ アプリケーションに対して適切に動作する診断ツールを既に書き込まれています。  これで、興味の対処、ツールは、管理対象の Windows ストア アプリで動作できるようにします。  おそらく既にしようとしたこの作業を行い、簡単な作業ではないことが検出されます。  実際には、すべてのツール開発者に知られていない可能性がありますの考慮事項の数があります。  例えば:  
   
 -   Windows ストア アプリは、重大な権限のコンテキストで実行します。  
   
@@ -154,7 +142,7 @@ NET Runtime version 4.0.30319.17929 - Loading profiler failed during CoCreateIns
  **プロファイルへの Windows ストア アプリを選択します。**  
  まず、質問、プロファイラーを起動するには、どの Windows ストア アプリにします。  デスクトップ アプリは、ファイル参照のダイアログ ボックスを表示する場合と、ユーザーが検索して .exe ファイルを選択します。  Windows ストア アプリが異なる場合、し、[参照] ダイアログを使用すると、意味がないためです。  代わりに、ユーザーからを選択するには、そのユーザー用にインストールされた Windows ストア アプリの一覧を表示することをお勧めします。  
   
- 使用することができます、 [PackageManager クラス](https://msdn.microsoft.com/library/windows/apps/windows.management.deployment.packagemanager.aspx)をこの一覧を生成します。  `PackageManager`デスクトップ アプリで使用可能な Windows ランタイム クラスは、実際には*のみ*デスクトップ アプリで利用できます。  
+ 使用することができます、 [PackageManager クラス](https://msdn.microsoft.com/library/windows/apps/windows.management.deployment.packagemanager.aspx)をこの一覧を生成します。  `PackageManager` デスクトップ アプリで使用可能な Windows ランタイム クラスは、実際には*のみ*デスクトップ アプリで利用できます。  
   
  C# yses でデスクトップ アプリとして書き込まれる仮定プロファイラー UI から次のコード例、 `PackageManager` Windows アプリの一覧を生成します。  
   
@@ -178,9 +166,9 @@ pkgDebugSettings.EnableDebugging(packgeFullName, debuggerCommandLine,
   
  いくつかの項目が、正しく理解する必要があります。  
   
--   `packageFullName`パッケージを反復処理して、取得中に決定できる`package.Id.FullName`です。  
+-   `packageFullName` パッケージを反復処理して、取得中に決定できる`package.Id.FullName`です。  
   
--   `debuggerCommandLine`もっと興味深いです。  Windows ストア アプリへのカスタム環境ブロックを渡すために、独自の単純なダミー デバッガーを記述する必要があります。  Windows 産み落とす Windows ストア アプリは中断され、この例でようにコマンドラインを使用して、デバッガーを起動して、デバッガーをアタッチします。  
+-   `debuggerCommandLine` もっと興味深いです。  Windows ストア アプリへのカスタム環境ブロックを渡すために、独自の単純なダミー デバッガーを記述する必要があります。  Windows 産み落とす Windows ストア アプリは中断され、この例でようにコマンドラインを使用して、デバッガーを起動して、デバッガーをアタッチします。  
   
     ```Output  
     MyDummyDebugger.exe -p 1336 -tid 1424  
@@ -326,7 +314,7 @@ tempDir = appData.TemporaryFolder.Path;
  **イベントを介して通信**  
  プロファイラー UI とプロファイラー DLL の間での単純なシグナリング セマンティクスを実行する場合に、Windows ストア アプリだけでなくデスクトップ アプリ内のイベントを使用することができます。  
   
- プロファイラー DLL だけを呼び出し、 [CreateEventEx](https://msdn.microsoft.com/library/windows/desktop/ms682400\(v=vs.85\).aspx)任意の名前と名前付きイベントを作成する関数。  例:  
+ プロファイラー DLL だけを呼び出し、 [CreateEventEx](https://msdn.microsoft.com/library/windows/desktop/ms682400\(v=vs.85\).aspx)任意の名前と名前付きイベントを作成する関数。  例えば:  
   
 ```cpp  
 // Profiler DLL in Windows Store app (C++).  
@@ -341,7 +329,7 @@ CreateEventEx(
   
  `AppContainerNamedObjects\<acSid>\MyNamedEvent`  
   
- `<acSid>`Windows ストア アプリの AppContainer SID です。  このトピックの前のセクションでは、現在のユーザーに対してインストールされているパッケージを繰り返し処理する方法を示しました。  そのサンプル コードから、パッケージ Id を取得できます。  Id を取得したりできます、`<acSid>`には、次のようなコード。  
+ `<acSid>` Windows ストア アプリの AppContainer SID です。  このトピックの前のセクションでは、現在のユーザーに対してインストールされているパッケージを繰り返し処理する方法を示しました。  そのサンプル コードから、パッケージ Id を取得できます。  Id を取得したりできます、`<acSid>`には、次のようなコード。  
   
 ```csharp  
 IntPtr acPSID;  
@@ -437,5 +425,5 @@ GetAppContainerFolderPath(acSid, out acDir);
   
 -   [IPackageDebugSettings インターフェイス](https://msdn.microsoft.com/library/hh438393\(v=vs.85\).aspx)  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [プロファイル](../../../../docs/framework/unmanaged-api/profiling/index.md)

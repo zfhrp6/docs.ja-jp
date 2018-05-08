@@ -1,27 +1,15 @@
 ---
-title: "方法 : 3-D 変換をアニメーション化する"
-ms.custom: 
+title: '方法 : 3-D 変換をアニメーション化する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - animation [WPF], 3-D translations
 - 3-D translations [WPF], animating
 ms.assetid: d4eece1f-0cd2-4a2c-8370-293354c380e4
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: d49ad52906787eed9ab115adeb763b89b2ea38e0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b9307e1c9ca13b465acd76091f364c538416a5b3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-animate-3-d-translations"></a>方法 : 3-D 変換をアニメーション化する
 このトピックで設定の変換の変換をアニメーション化する方法を示します、[!INCLUDE[TLA#tla_3d](../../../../includes/tlasharptla-3d-md.md)]モデル。  
@@ -39,7 +27,7 @@ ms.lasthandoff: 12/22/2017
   
  [!code-xaml[Animation3DGallery_snip#Translation3DAnimationExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Animation3DGallery_snip/CS/Translation3DAnimationExample.xaml#translation3danimationexamplewholepage)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)  
  [3-D シーンを作成する](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-3-d-scene.md)  
  [3-D グラフィックスの概要](../../../../docs/framework/wpf/graphics-multimedia/3-d-graphics-overview.md)  

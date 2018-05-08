@@ -1,13 +1,6 @@
 ---
-title: "ListBox の代わりに Windows フォーム ComboBox を使用する場合"
-ms.custom: 
+title: ListBox の代わりに Windows フォーム ComboBox を使用する場合
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - ListBox control [Windows Forms], adding and removing items
 - ListBox control [Windows Forms], vs. ComboBox
@@ -18,16 +11,11 @@ helpviewer_keywords:
 - ListBox control [Windows Forms], accessing items
 - ListCount property
 ms.assetid: 7bcaea58-1cfa-46db-9baf-b75a69d8f9ec
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 8c4a2886dae3aee147d80957874d0d98714c0ca5
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 88b6a6023fbfdd8fa315fcd434357626ea69a9ae
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="when-to-use-a-windows-forms-combobox-instead-of-a-listbox"></a>ListBox の代わりに Windows フォーム ComboBox を使用する場合
 <xref:System.Windows.Forms.ComboBox>と<xref:System.Windows.Forms.ListBox>コントロール似たような動作は、でき、場合によっては同義です。 ただしが 1 つまたはもう一方のタスクをより適切な時間があります。  
@@ -36,7 +24,7 @@ ms.lasthandoff: 12/22/2017
   
  さらに、コンボ ボックスは、フォームの領域を節約します。 下向きの矢印をクリックするまでに、完全な一覧が表示されていないために、コンボ ボックスは、リスト ボックスが収まらない小さなスペースに簡単に適合できます。 ときに例外が、<xref:System.Windows.Forms.ComboBox.DropDownStyle%2A>プロパティに設定されている<xref:System.Windows.Forms.ComboBoxStyle.Simple>: 完全な一覧が表示され、コンボ ボックスは、リスト ボックスの場合よりもさらにスペースを占有します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.ComboBox>  
  <xref:System.Windows.Forms.ListBox>  
  [方法: Windows フォームの ComboBox、ListBox、または CheckedListBox コントロールに項目を追加または削除する](../../../../docs/framework/winforms/controls/add-and-remove-items-from-a-wf-combobox.md)  

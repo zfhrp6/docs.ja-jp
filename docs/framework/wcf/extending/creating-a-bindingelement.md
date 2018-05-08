@@ -1,27 +1,15 @@
 ---
-title: "BindingElement の作成"
-ms.custom: 
+title: BindingElement の作成
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 01a35307-a41f-4ef6-a3db-322af40afc99
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 0184d07210322e6ed04441f7190857cf07205b15
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: fdc3ec1fef86ad31434ea372740497969c7ae6a7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="creating-a-bindingelement"></a>BindingElement の作成
-バインディングとバインド要素 (それぞれ、<xref:System.ServiceModel.Channels.Binding?displayProperty=nameWithType> と <xref:System.ServiceModel.Channels.BindingElement?displayProperty=nameWithType> を拡張するオブジェクト) は、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] アプリケーション モデルがチャネル ファクトリおよびチャネル リスナーと関連付けられる場所です。 結合がないカスタム チャネルを使用する必要がありますチャネル レベルでのプログラミング」の説明に従って[サービス チャネル レベルのプログラミング](../../../../docs/framework/wcf/extending/service-channel-level-programming.md)と[クライアント チャネル レベルのプログラミング](../../../../docs/framework/wcf/extending/client-channel-level-programming.md)です。 チャネルを使用して有効にする最小要件について説明[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]の開発、<xref:System.ServiceModel.Channels.BindingElement>チャネル、および手順 4 の説明に従って、アプリケーションから使用を有効にする の[開発チャネル](../../../../docs/framework/wcf/extending/developing-channels.md)です。  
+バインディングとバインド要素 (を拡張したオブジェクト<xref:System.ServiceModel.Channels.Binding?displayProperty=nameWithType>と<xref:System.ServiceModel.Channels.BindingElement?displayProperty=nameWithType>、それぞれ) は、Windows Communication Foundation (WCF) アプリケーションのモデルがチャネル ファクトリとチャネル リスナーに関連付けられている場所です。 結合がないカスタム チャネルを使用する必要がありますチャネル レベルでのプログラミング」の説明に従って[サービス チャネル レベルのプログラミング](../../../../docs/framework/wcf/extending/service-channel-level-programming.md)と[クライアント チャネル レベルのプログラミング](../../../../docs/framework/wcf/extending/client-channel-level-programming.md)です。 チャネルを使用して有効にする最小要件について説明[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]の開発、<xref:System.ServiceModel.Channels.BindingElement>チャネル、および手順 4 の説明に従って、アプリケーションから使用を有効にする の[開発チャネル](../../../../docs/framework/wcf/extending/developing-channels.md)です。  
   
 ## <a name="overview"></a>概要  
  チャネルの <xref:System.ServiceModel.Channels.BindingElement> を作成しておくと、開発者は [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーション内でチャネルを使用できるようになります。 <xref:System.ServiceModel.Channels.BindingElement> オブジェクトを <xref:System.ServiceModel.ServiceHost?displayProperty=nameWithType> クラスから使用することにより、チャネルの正確な型情報を指定しなくても [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションをチャネルに接続できます。  
@@ -82,7 +70,7 @@ public IChannelListener<TChannel> BuildChannelListener<TChannel>(BindingContext 
   
  チャネルのバインド要素を作成した後に戻り、[開発チャネル](../../../../docs/framework/wcf/extending/developing-channels.md)かどうかをバインド要素に構成ファイル サポートを追加する場合と、メタデータ ドキュメントのサポートを追加する方法を表示するトピックとユーザー定義のバインディングを構築するために、このバインディング要素を使用する方法とかどうか。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Channels.BindingElement>  
  [チャネルの開発](../../../../docs/framework/wcf/extending/developing-channels.md)  
  [トランスポート: UDP](../../../../docs/framework/wcf/samples/transport-udp.md)

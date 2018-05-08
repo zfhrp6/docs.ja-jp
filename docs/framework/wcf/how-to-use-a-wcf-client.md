@@ -1,33 +1,19 @@
 ---
-title: "方法 : Windows Communication Foundation クライアントを使用する"
-ms.custom: 
+title: '方法 : Windows Communication Foundation クライアントを使用する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - WCF clients [WCF], using
 ms.assetid: 190349fc-0573-49c7-bb85-8e316df7f31f
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 0330c386730c6b0436196bb5b85162bc4621c214
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 6667a8e9862054d7d8d5b20e70dfbe699de02eab
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-use-a-windows-communication-foundation-client"></a>方法 : Windows Communication Foundation クライアントを使用する
-これは、基本的な [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] アプリケーションの作成に必要な 6 つのタスクのうち、最後のタスクです。 タスクの 6 つのすべての概要については、次を参照してください。、[チュートリアル入門](../../../docs/framework/wcf/getting-started-tutorial.md)トピックです。  
+これは、基本的な Windows Communication Foundation (WCF) アプリケーションを作成するために必要な 6 つのタスクの最後のタスクです。 タスクの 6 つのすべての概要については、次を参照してください。、[チュートリアル入門](../../../docs/framework/wcf/getting-started-tutorial.md)トピックです。  
   
- [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] プロキシを作成して構成したら、クライアント インスタンスを作成できます。また、クライアント アプリケーションをコンパイルし、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスとの通信に使用できます。 このトピックでは、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアントをインスタンス化し、使用する手順について説明します。 この手順は、次の 3 つの手順で構成されます。  
+ Windows Communication Foundation (WCF) プロキシを作成して、構成、クライアント インスタンスを作成すると、クライアント アプリケーションのコンパイルし通信するために使用されることができます、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]サービス。 このトピックでは、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアントをインスタンス化し、使用する手順について説明します。 この手順は、次の 3 つの手順で構成されます。  
   
 1.  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアントをインスタンス化します。  
   
@@ -151,7 +137,7 @@ The service is ready.Press <ENTER> to terminate service.Received Add(100,15.99)R
 Add(100,15.99) = 115.99Subtract(145,76.54) = 68.46Multiply(9,81.25) = 731.25Divide(22,7) = 3.14285714285714Press <ENTER> to terminate client.  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [クライアントを構築する](../../../docs/framework/wcf/building-clients.md)  
  [方法: クライアントを作成する](../../../docs/framework/wcf/how-to-create-a-wcf-client.md)  
  [チュートリアル入門](../../../docs/framework/wcf/getting-started-tutorial.md)  

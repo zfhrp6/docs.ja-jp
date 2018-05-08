@@ -1,13 +1,6 @@
 ---
-title: "方法 : Windows フォームの RichTextBox コントロールを使用してファイルを保存する"
-ms.custom: 
+title: '方法 : Windows フォームの RichTextBox コントロールを使用してファイルを保存する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -22,16 +15,11 @@ helpviewer_keywords:
 - .rtf files [Windows Forms], saving in RichTextBox control
 - text files [Windows Forms], saving from RichTextBox control
 ms.assetid: 4a58ec19-84d1-4383-9110-298c06adcfca
-caps.latest.revision: "15"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 7fece6685c1ac71d6ddc152e25c22010e6d579c2
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: c50b2f3309c1f811b29e824327a709e2cc4bd791
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-save-files-with-the-windows-forms-richtextbox-control"></a>方法 : Windows フォームの RichTextBox コントロールを使用してファイルを保存する
 Windows フォーム<xref:System.Windows.Forms.RichTextBox>コントロールがいくつかの形式のいずれかで表示される情報を書き込むことができます。  
@@ -98,7 +86,7 @@ Windows フォーム<xref:System.Windows.Forms.RichTextBox>コントロールが
     > [!IMPORTANT]
     >  次のコード例では、ファイルが存在しない場合は新規にファイルを作成します。 アプリケーション ファイルを作成する場合は、フォルダーの作成アクセスが必要です。 アクセス許可は、アクセス制御リストを使って設定します。 ファイルが既に存在する場合、アプリケーションには、書き込みアクセスだけより低い権限が必要があります。 可能な展開時に、ファイルを作成し、のみ 1 つのファイルに対する読み取りアクセス権を付与ではなくフォルダーのアクセスを作成する方が安全です。 また、ルート フォルダーや Program Files フォルダーにデータを書き込むよりも、ユーザー フォルダーに書き込む方が安全です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.RichTextBox.SaveFile%2A?displayProperty=nameWithType>  
  <xref:System.Windows.Forms.RichTextBox>  
  [RichTextBox コントロール](../../../../docs/framework/winforms/controls/richtextbox-control-windows-forms.md)  

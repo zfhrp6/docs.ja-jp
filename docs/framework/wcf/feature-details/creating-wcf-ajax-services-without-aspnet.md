@@ -1,33 +1,19 @@
 ---
 title: ASP.NET を使用せずに WCF AJAX サービスを作成する方法
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: ba4a7d1b-e277-4978-9f62-37684e6dc934
-caps.latest.revision: 7
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: b652bcd522a8eea81b3d1218fbd054ee0b2caea8
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 77a850408c3d952dbd4f682ea704d3248ae17c3e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="creating-wcf-ajax-services-without-aspnet"></a>ASP.NET を使用せずに WCF AJAX サービスを作成する方法
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] AJAX サービスには、JavaScript 対応の Web ページからアクセスできます。ASP.NET AJAX は必要ありません。 ここでは、このような [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスを作成する方法について説明します。  
+Windows Communication Foundation (WCF) の AJAX サービスは、ASP.NET AJAX を必要とせず、JavaScript 対応の Web ページからアクセスできます。 このトピックでは、このような WCF サービスを作成する方法について説明します。  
   
- 使用法について[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]ASP.NET AJAX を参照してください。 [ASP.NET AJAX 用の WCF サービスの作成](../../../../docs/framework/wcf/feature-details/creating-wcf-services-for-aspnet-ajax.md)です。  
+ ASP.NET AJAX での WCF の使用方法の詳細については、次を参照してください。 [ASP.NET AJAX 用の WCF サービスの作成](../../../../docs/framework/wcf/feature-details/creating-wcf-services-for-aspnet-ajax.md)です。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] AJAX サービスを作成する手順は、次の 3 つに分けられます。  
+ WCF AJAX サービスを作成する 3 つの部分があります。  
   
 -   ブラウザーからアクセスできる AJAX エンドポイントの作成  
   
@@ -36,7 +22,7 @@ ms.lasthandoff: 04/28/2018
 -   WCF AJAX サービスへのアクセス  
   
 ## <a name="creating-an-ajax-endpoint"></a>AJAX エンドポイントの作成  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスで AJAX のサポートを有効にする最も基本的な方法は、次の例に示すように、サービスに関連付けられた .svc ファイルの <xref:System.ServiceModel.Activation.WebServiceHostFactory> を使用することです。  
+ WCF サービスでの AJAX サポートを有効にする最も基本的な方法は、使用する、<xref:System.ServiceModel.Activation.WebServiceHostFactory>次の例のように、サービスに関連付けられた .svc ファイルでします。  
   
 ```  
 <%ServiceHost   
@@ -115,7 +101,7 @@ string[] GetCities(string firstLetters, int maxNumber);
 ```  
   
 ## <a name="accessing-ajax-services"></a>AJAX サービスへのアクセス  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] AJAX エンドポイントでは、常に JSON と XML の両方の要求を受け入れます。  
+ WCF AJAX エンドポイントは、常に、JSON と XML の両方の要求を受け入れます。  
   
  "Application/json"とのコンテンツの種類の HTTP POST 要求は JSON として扱われ、XML (たとえば、"テキストまたは xml") を示しているコンテンツの種類では XML として扱われます。  
   

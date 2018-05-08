@@ -1,13 +1,6 @@
 ---
-title: "インターセプター (WCF Data Services)"
-ms.custom: 
+title: インターセプター (WCF Data Services)
 ms.date: 03/30/2017
-ms.prod: .net-framework-oob
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,19 +8,14 @@ helpviewer_keywords:
 - WCF Data Services, customizing
 - query interceptors [WCF Data Services]
 ms.assetid: e33ae8dc-8069-41d0-99a0-75ff28db7050
-caps.latest.revision: "2"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 8c72d4ba56859e0afec4b26d7ce81668b443a4ba
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f3ff08dd4cd20e7ce226750a386cfddb27731923
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="interceptors-wcf-data-services"></a>インターセプター (WCF Data Services)
-[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]操作にカスタム ロジックを追加できるように、要求メッセージをインターセプトするアプリケーションを有効にします。 このカスタム ロジックを使用して、受信メッセージ内のデータを検証することができます。 このカスタム ロジックを使用して、クエリ要求の範囲をさらに制限することもできます (カスタム認証ポリシーを要求ごとに挿入するなど)。  
+[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] 操作にカスタム ロジックを追加できるように、要求メッセージをインターセプトするアプリケーションを有効にします。 このカスタム ロジックを使用して、受信メッセージ内のデータを検証することができます。 このカスタム ロジックを使用して、クエリ要求の範囲をさらに制限することもできます (カスタム認証ポリシーを要求ごとに挿入するなど)。  
   
  先に取得するには、データ サービスで特別なメソッドを使用します。 これらのメソッドは、メッセージ処理の適切なポイントで [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] によって呼び出されます。 インターセプターは、エンティティ セットごとに定義され、サービス操作のように、インターセプター メソッドは、要求からパラメーターを受け取ることはできません。 HTTP GET 要求を処理するときと呼ばれる、クエリ インターセプター メソッドは、インターセプターのエンティティのインスタンスを設定するかどうかを決定するラムダ式は、クエリ結果によって返される必要がありますを返す必要があります。 この式は、要求された操作をさらに絞り込むためにデータ サービスによって使用されます。 次の例は、クエリ インターセプターの定義の例を示します。  
   
@@ -59,5 +47,5 @@ ms.lasthandoff: 12/22/2017
   
  詳細については、次を参照してください。[する方法: データ サービス メッセージを傍受](../../../../docs/framework/data/wcf/how-to-intercept-data-service-messages-wcf-data-services.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [サービス操作](../../../../docs/framework/data/wcf/service-operations-wcf-data-services.md)

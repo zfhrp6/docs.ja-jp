@@ -1,28 +1,19 @@
 ---
-title: "UI オートメーション Window コントロール パターンの実装"
-ms.custom: 
+title: UI オートメーション Window コントロール パターンの実装
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-bcl
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - control patterns, Window
 - UI Automation, Window control pattern
 - Window control pattern
 ms.assetid: a28cb286-296e-4a62-b4cb-55ad636ebccc
-caps.latest.revision: "21"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 3f1b44184f1a241943d9fa9d60a62a703dbaf0d8
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 73a484ea6165b4e38901630730c7ba985a5608ba
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="implementing-the-ui-automation-window-control-pattern"></a>UI オートメーション Window コントロール パターンの実装
 > [!NOTE]
@@ -50,7 +41,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="required-members-for-iwindowprovider"></a>IWindowProvider の必須メンバー  
  IWindowProvider インターフェイスには、次のプロパティ、メソッド、イベントが必要です。  
   
-|必須メンバー|メンバーの型|ノート|  
+|必須メンバー|メンバーの型|メモ|  
 |---------------------|-----------------|-----------|  
 |<xref:System.Windows.Automation.Provider.IWindowProvider.InteractionState%2A>|プロパティ|なし|  
 |<xref:System.Windows.Automation.Provider.IWindowProvider.IsModal%2A>|プロパティ|なし|  
@@ -61,8 +52,8 @@ ms.lasthandoff: 12/22/2017
 |<xref:System.Windows.Automation.Provider.IWindowProvider.Close%2A>|メソッド|なし|  
 |<xref:System.Windows.Automation.Provider.IWindowProvider.SetVisualState%2A>|メソッド|なし|  
 |<xref:System.Windows.Automation.Provider.IWindowProvider.WaitForInputIdle%2A>|メソッド|なし|  
-|<xref:System.Windows.Automation.WindowPattern.WindowClosedEvent>|Event|なし|  
-|<xref:System.Windows.Automation.WindowPattern.WindowOpenedEvent>|Event|なし|  
+|<xref:System.Windows.Automation.WindowPattern.WindowClosedEvent>|event|なし|  
+|<xref:System.Windows.Automation.WindowPattern.WindowOpenedEvent>|event|なし|  
 |<xref:System.Windows.Automation.WindowInteractionState>|event|<xref:System.Windows.Automation.WindowInteractionState.ReadyForUserInteraction>|  
   
 <a name="Exceptions"></a>   
@@ -74,7 +65,7 @@ ms.lasthandoff: 12/22/2017
 |<xref:System.InvalidOperationException>|<xref:System.Windows.Automation.Provider.IWindowProvider.SetVisualState%2A><br /><br /> -コントロールでは、要求された動作をサポートしません。|  
 |<xref:System.ArgumentOutOfRangeException>|<xref:System.Windows.Automation.Provider.IWindowProvider.WaitForInputIdle%2A><br /><br /> 場合、パラメーターは、有効な数値ではありません。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [UI Automation コントロール パターンの概要](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)  
  [UI オートメーション プロバイダーでのコントロール パターンのサポート](../../../docs/framework/ui-automation/support-control-patterns-in-a-ui-automation-provider.md)  
  [クライアントの UI オートメーション コントロール パターン](../../../docs/framework/ui-automation/ui-automation-control-patterns-for-clients.md)  

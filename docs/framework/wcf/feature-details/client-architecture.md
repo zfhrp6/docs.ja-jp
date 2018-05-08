@@ -1,32 +1,18 @@
 ---
 title: クライアント アーキテクチャ
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 02624403-0d77-41cb-9a86-ab55e98c7966
-caps.latest.revision: 7
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 12db0d4f5717287439b66810e6354b12a4c68b77
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 4ced24f370e2ab54528c6adb2b3617d3d849e745
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="client-architecture"></a>クライアント アーキテクチャ
-アプリケーションは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] クライアント オブジェクトを使用してサービス操作を呼び出します。 このトピックでは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント オブジェクト、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント チャネル、およびこれらとその基になるチャネル アーキテクチャのリレーションシップについて説明します。 基本的な概要について[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]クライアント オブジェクトを参照してください[WCF クライアントの概要](../../../../docs/framework/wcf/wcf-client-overview.md)です。 チャネル レイヤーの詳細については、次を参照してください。 [、チャネル レイヤの拡張](../../../../docs/framework/wcf/extending/extending-the-channel-layer.md)です。  
+アプリケーションでは、Windows Communication Foundation (WCF) クライアント オブジェクトを使用して、サービス操作を呼び出します。 このトピックでは、WCF クライアント オブジェクト、WCF クライアント チャネル、およびそのリレーションシップを基になるチャネル アーキテクチャについて説明します。 WCF クライアント オブジェクトの基本的な概要については、次を参照してください。 [WCF クライアントの概要](../../../../docs/framework/wcf/wcf-client-overview.md)です。 チャネル レイヤーの詳細については、次を参照してください。 [、チャネル レイヤの拡張](../../../../docs/framework/wcf/extending/extending-the-channel-layer.md)です。  
   
 ## <a name="overview"></a>概要  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントはサービス モデル ランタイムによって作成されます。クライアントは次の要素から構成されます。  
+ サービス モデル ランタイムでは、WCF クライアントは、次の構成を作成します。  
   
 -   自動的に生成される、サービス コントラクトのクライアント実装。これは、アプリケーション コードからの呼び出しを送信メッセージに変換すると共に、応答メッセージを出力パラメーターに変換して、アプリケーションが取得できる値を返します。  
   
@@ -37,22 +23,22 @@ ms.lasthandoff: 04/30/2018
  アプリケーションは、このようなクライアントを作成するオンデマンドで使用するか、<xref:System.ServiceModel.ChannelFactory?displayProperty=nameWithType>またはのインスタンスを作成することで、<xref:System.ServiceModel.ClientBase%601>によって生成されるクラスを派生、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)です。 これらの作成済みのクライアント クラスは、<xref:System.ServiceModel.ChannelFactory> によって動的に構築されるクライアント チャネル実装にカプセル化され、処理が代行されます。 したがって、クライアント チャネルと、クライアント チャネルを生成するチャネル ファクトリが、このトピックの説明の中心となります。  
   
 ## <a name="client-objects-and-client-channels"></a>クライアント オブジェクトとクライアント チャネル  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントの基本インターフェイスは、<xref:System.ServiceModel.IClientChannel?displayProperty=nameWithType> インターフェイスです。これは、中核となるクライアント機能だけでなく、<xref:System.ServiceModel.ICommunicationObject?displayProperty=nameWithType> の基本的な通信オブジェクト機能、<xref:System.ServiceModel.IContextChannel?displayProperty=nameWithType> のコンテキスト機能、および <xref:System.ServiceModel.IExtensibleObject%601?displayProperty=nameWithType> の拡張可能な動作を公開します。  
+ WCF クライアントの基底インターフェイスが、<xref:System.ServiceModel.IClientChannel?displayProperty=nameWithType>中核となるクライアント機能だけでなく、基本的な通信オブジェクトの機能を公開するインターフェイス<xref:System.ServiceModel.ICommunicationObject?displayProperty=nameWithType>のコンテキスト機能<xref:System.ServiceModel.IContextChannel?displayProperty=nameWithType>との拡張可能な動作<xref:System.ServiceModel.IExtensibleObject%601?displayProperty=nameWithType>.  
   
- ただし、<xref:System.ServiceModel.IClientChannel> インターフェイスではサービス コントラクトそのものは定義しません。 サービス コントラクト インターフェイスで宣言されている (通常のようなツールを使用してサービス メタデータから生成、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md))。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント型は、<xref:System.ServiceModel.IClientChannel> とターゲットのサービス コントラクト インターフェイスの両方を拡張したもので、アプリケーションから直接操作を呼び出したり、クライアント側のランタイム機能にアクセスしたりできるようにします。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントを作成することにより、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]<xref:System.ServiceModel.ChannelFactory?displayProperty=nameWithType> オブジェクトには、構成済みサービス エンドポイントに接続して対話できるランタイムの作成に必要な情報が提供されます。  
+ ただし、<xref:System.ServiceModel.IClientChannel> インターフェイスではサービス コントラクトそのものは定義しません。 サービス コントラクト インターフェイスで宣言されている (通常のようなツールを使用してサービス メタデータから生成、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md))。 WCF クライアントの種類は、両方を拡張<xref:System.ServiceModel.IClientChannel>され、操作を呼び出すと直接アプリケーションを有効にするには、ターゲット サービス コントラクト インターフェイスにはクライアント側の実行時の機能にアクセスします。 WCF クライアントを作成すると、WCF が提供<xref:System.ServiceModel.ChannelFactory?displayProperty=nameWithType>接続したり、構成されたサービス エンドポイントと対話できる実行時に作成するために必要な情報を持つオブジェクト。  
   
- 上述のとおり、この 2 つの [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント型は、使用する前に構成する必要があります。 最も単純な [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント型は、<xref:System.ServiceModel.ClientBase%601> (または、サービス コントラクトが双方向コントラクトである場合は、<xref:System.ServiceModel.DuplexClientBase%601>) から派生するオブジェクトです。 これらのクライアント型はコンストラクターを使用して作成し、プログラムで構成するか、または構成ファイルを使用して構成します。また、サービス操作を呼び出すために直接呼び出されます。 基本的な概要について<xref:System.ServiceModel.ClientBase%601>、オブジェクトを参照してください[WCF クライアントの概要](../../../../docs/framework/wcf/wcf-client-overview.md)です。  
+ 前述のように、使用する前に、2 つの WCF クライアントの種類を構成する必要があります。 最も簡単な WCF クライアントの種類から派生したオブジェクトは、 <xref:System.ServiceModel.ClientBase%601> (または<xref:System.ServiceModel.DuplexClientBase%601>サービス コントラクトが双方向コントラクトの場合)。 これらのクライアント型はコンストラクターを使用して作成し、プログラムで構成するか、または構成ファイルを使用して構成します。また、サービス操作を呼び出すために直接呼び出されます。 基本的な概要について<xref:System.ServiceModel.ClientBase%601>、オブジェクトを参照してください[WCF クライアントの概要](../../../../docs/framework/wcf/wcf-client-overview.md)です。  
   
  2 番目のクライアント型は、実行時に <xref:System.ServiceModel.ChannelFactory%601.CreateChannel%2A> メソッドへの呼び出しから生成されます。 通常、通信の詳細厳重に関係していてアプリケーションと呼ばれるこのクライアントの種類を使用して、*クライアント チャネル オブジェクト*、基になるクライアント ランタイムやチャネルより直接的な対話を可能にします。システムです。  
   
 ## <a name="channel-factories"></a>チャネル ファクトリ  
- クライアント呼び出しをサポートする、基になるランタイムを作成するクラスは、<xref:System.ServiceModel.ChannelFactory%601?displayProperty=nameWithType> クラスです。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント オブジェクトも [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント チャネル オブジェクトも、<xref:System.ServiceModel.ChannelFactory%601> オブジェクトを使用してインスタンスを作成します。<xref:System.ServiceModel.ClientBase%601> 派生クライアント オブジェクトはチャネル ファクトリの処理をカプセル化しますが、さまざまなシナリオを想定した場合、チャネル ファクトリを直接使用することをお勧めします。 よくあるシナリオとしては、既存のファクトリから新しいクライアント チャネルを繰り返し作成する必要がある場合です。 クライアント オブジェクトを使用している場合は、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] プロパティを呼び出して、<xref:System.ServiceModel.ClientBase%601.ChannelFactory%2A?displayProperty=nameWithType> クライアント オブジェクトから、基になるチャネル ファクトリを取得できます。  
+ クライアント呼び出しをサポートする、基になるランタイムを作成するクラスは、<xref:System.ServiceModel.ChannelFactory%601?displayProperty=nameWithType> クラスです。 WCF クライアント オブジェクトと WCF クライアント チャネル オブジェクトを使用して、 <xref:System.ServiceModel.ChannelFactory%601> ; のインスタンスを作成するオブジェクト、<xref:System.ServiceModel.ClientBase%601>派生クライアント オブジェクト チャネル ファクトリの処理をカプセル化は、さまざまなシナリオは、完全に適切に使用できる、チャネル ファクトリで直接使用します。 よくあるシナリオとしては、既存のファクトリから新しいクライアント チャネルを繰り返し作成する必要がある場合です。 クライアント オブジェクトを使用している場合から取得できます、基になるチャネル ファクトリ WCF クライアント オブジェクトを呼び出して、<xref:System.ServiceModel.ClientBase%601.ChannelFactory%2A?displayProperty=nameWithType>プロパティです。  
   
- チャネル ファクトリに関して覚えておく必要のある重要なことは、これらのファクトリが、<xref:System.ServiceModel.ChannelFactory%601.CreateChannel%2A?displayProperty=nameWithType> を呼び出す前に、指定されている構成のクライアント チャネルの新しいインスタンスを作成するという点です。 いったん <xref:System.ServiceModel.ChannelFactory%601.CreateChannel%2A> (または <xref:System.ServiceModel.ClientBase%601.Open%2A?displayProperty=nameWithType> や <xref:System.ServiceModel.ClientBase%601.CreateChannel%2A?displayProperty=nameWithType>、または [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント オブジェクトに対する任意の操作) を呼び出した場合、ターゲットのエンドポイント アドレスを変更するだけでは、チャネル ファクトリを変更したり、別のサービス インスタンスへのチャネルを取得したりすることはできません。 異なる構成でクライアント オブジェクトやクライアント チャネルを作成するには、まず新しいチャネル ファクトリを作成する必要があります。  
+ チャネル ファクトリに関して覚えておく必要のある重要なことは、これらのファクトリが、<xref:System.ServiceModel.ChannelFactory%601.CreateChannel%2A?displayProperty=nameWithType> を呼び出す前に、指定されている構成のクライアント チャネルの新しいインスタンスを作成するという点です。 呼び出す<xref:System.ServiceModel.ChannelFactory%601.CreateChannel%2A>(または<xref:System.ServiceModel.ClientBase%601.Open%2A?displayProperty=nameWithType>、 <xref:System.ServiceModel.ClientBase%601.CreateChannel%2A?displayProperty=nameWithType>、または WCF クライアント オブジェクトに任意の操作)、チャネル ファクトリを変更し、ターゲットのエンドポイント アドレスを変更するだけであって、さまざまなサービス インスタンスへのチャネルを取得する期待ことはできません。 異なる構成でクライアント オブジェクトやクライアント チャネルを作成するには、まず新しいチャネル ファクトリを作成する必要があります。  
   
- 使用してさまざまな問題の詳細については[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]クライアント オブジェクトと[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]クライアント チャネルを参照してください[にアクセスするサービスの WCF クライアントを使用して](../../../../docs/framework/wcf/feature-details/accessing-services-using-a-client.md)です。  
+ WCF クライアント オブジェクトと WCF クライアント チャネルを使用してさまざまな問題の詳細については、次を参照してください。[にアクセスするサービスの WCF クライアントを使用して](../../../../docs/framework/wcf/feature-details/accessing-services-using-a-client.md)です。  
   
- 次の 2 つのセクションでは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント チャネル オブジェクトの作成と使用について説明します。  
+ 次の 2 つのセクションでは、作成と WCF クライアント チャネル オブジェクトの使用について説明します。  
   
 #### <a name="creating-a-new-wcf-client-channel-object"></a>新しい WCF クライアント チャネル オブジェクトの作成  
  次のサービス コントラクトが生成されていることを前提に、クライアント チャネルの使用方法を説明します。  
@@ -70,6 +56,6 @@ ms.lasthandoff: 04/30/2018
   
  作成したクライアント チャネル オブジェクトで <xref:System.ServiceModel.IClientChannel> とコントラクト インターフェイスを実装します。 その結果、これらを使用して、このコントラクトをサポートするサービスと対話する操作を直接呼び出すことができます。  
   
- クライアント オブジェクトを使用するかクライアント チャネル オブジェクトを使用するかは、開発者がきめ細かな制御を優先するか容易さを優先するかの違いだけです。 クラスやオブジェクトの処理に慣れている多くの開発者の場合、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント チャネルではなく [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント オブジェクトを選択することも考えられます。  
+ クライアント オブジェクトを使用するかクライアント チャネル オブジェクトを使用するかは、開発者がきめ細かな制御を優先するか容易さを優先するかの違いだけです。 クラスとオブジェクトの使用に慣れている多くの開発者は、WCF クライアント チャネルではなく、WCF クライアント オブジェクトを使用するを選びます。  
   
  例については、次を参照してください。[する方法: ChannelFactory を使用して](../../../../docs/framework/wcf/feature-details/how-to-use-the-channelfactory.md)です。

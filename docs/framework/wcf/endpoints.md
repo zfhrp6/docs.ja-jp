@@ -1,31 +1,17 @@
 ---
-title: "Windows Communication Foundation エンドポイント"
-ms.custom: 
+title: Windows Communication Foundation エンドポイント
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - endpoints [WCF]
 ms.assetid: bd0c310f-dd9f-4081-9be2-3db5909850b6
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 0725c4f4275853cce958072a57d7f6ca4059e8cf
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 2588cc0bd70932aa91d300d8ecbe35cd2bcd7d00
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="windows-communication-foundation-endpoints"></a>Windows Communication Foundation エンドポイント
-すべての通信、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)]サービスが使用して行われる、*エンドポイント*サービス。 エンドポイントは、クライアントが [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスによって提供される機能にアクセスできるようにします。  
+使用して、Windows Communication Foundation (WCF) サービスとすべての通信が行われる、*エンドポイント*サービス。 エンドポイントは、クライアントが [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスによって提供される機能にアクセスできるようにします。  
   
  エンドポイントを作成する方法の詳細については、次を参照してください。[エンドポイントの作成の概要](../../../docs/framework/wcf/endpoint-creation-overview.md)です。 エンドポイントは次の要素から成ります。  
   

@@ -1,28 +1,19 @@
 ---
-title: "UI オートメーションによる TitleBar コントロール型のサポート"
-ms.custom: 
+title: UI オートメーションによる TitleBar コントロール型のサポート
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-bcl
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - control types, Title Bar
 - Title Bar control type
 - UI Automation, Title Bar control type
 ms.assetid: 3b7a4e13-0305-45d5-bc33-1f4133c50782
-caps.latest.revision: "21"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: bbcfe9b826844471a238432c57fa78bfcaacf03a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6ca737fc4c935fa8808e091ea425b8bd1415165b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ui-automation-support-for-the-titlebar-control-type"></a>UI オートメーションによる TitleBar コントロール型のサポート
 > [!NOTE]
@@ -46,14 +37,14 @@ ms.lasthandoff: 12/22/2017
 ## <a name="required-ui-automation-properties"></a>必須の UI オートメーション プロパティ  
  次の表に、TitleBar コントロールに特に関連する値または定義を持つ [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] プロパティを示します。 詳細については[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]プロパティを参照してください[クライアントの UI オートメーション プロパティ](../../../docs/framework/ui-automation/ui-automation-properties-for-clients.md)です。  
   
-|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] プロパティ|値|ノート|  
+|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] プロパティ|[値]|メモ|  
 |------------------------------------------------------------------------------------|-----------|-----------|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationIdProperty>|ノートを参照してください。|このプロパティの値は、アプリケーションのすべてのコントロールで一意である必要があります。|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>|ノートを参照してください。|タイトル バーの四角形領域は、タイトル バー コントロールに含まれるコントロールをすべて囲んでいる必要があります。|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.ClickablePointProperty>|ノートを参照してください。|四角形領域が存在する場合にサポートされます。 四角形領域の内側にクリック不可能な点が存在し、特別なヒット テストを実行する場合は、クリック可能な点をオーバーライドして提供します。|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationIdProperty>|「ノート」をご覧ください。|このプロパティの値は、アプリケーションのすべてのコントロールで一意である必要があります。|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>|「ノート」をご覧ください。|タイトル バーの四角形領域は、タイトル バー コントロールに含まれるコントロールをすべて囲んでいる必要があります。|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.ClickablePointProperty>|「ノート」をご覧ください。|四角形領域が存在する場合にサポートされます。 四角形領域の内側にクリック不可能な点が存在し、特別なヒット テストを実行する場合は、クリック可能な点をオーバーライドして提供します。|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.IsKeyboardFocusableProperty>|False|タイトル バーで、キーボード フォーカスを持つことはありません。|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty>|""|タイトル バーはコンテンツではありません。タイトル バーのテキスト情報は、親ウィンドウで公開されます。|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.LabeledByProperty>|ノートを参照してください。|通常、タイトル バー コントロールにラベルはありません。|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.LabeledByProperty>|「ノート」をご覧ください。|通常、タイトル バー コントロールにラベルはありません。|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.ControlTypeProperty>|TitleBar|この値は、すべての UI フレームワークで同じです。|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.LocalizedControlTypeProperty>|"タイトル バー"|TitleBar コントロール型に対応する、ローカライズされた文字列。|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.IsContentElementProperty>|False|タイトル バー コントロールはコンテンツではありません。|  
@@ -70,15 +61,15 @@ ms.lasthandoff: 12/22/2017
 ## <a name="required-ui-automation-events"></a>必須の UI オートメーション イベント  
  次の表に、すべてのタイトル バー コントロールでサポートする必要がある [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] イベントを示します。 イベントについて詳しくは、「 [UI Automation Events Overview](../../../docs/framework/ui-automation/ui-automation-events-overview.md)」をご覧ください。  
   
-|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] イベント|Support|ノート|  
+|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] イベント|サポート|メモ|  
 |---------------------------------------------------------------------------------|-------------|-----------|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty> プロパティ変更イベント。|必須|なし|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty> プロパティ変更イベント。|必須|なし|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty> プロパティ変更イベント。|Never|なし|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationFocusChangedEvent>|Never|なし|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.StructureChangedEvent>|必要|なし|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.StructureChangedEvent>|必須|なし|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Automation.ControlType.TitleBar>  
  [UI オートメーション コントロール型の概要](../../../docs/framework/ui-automation/ui-automation-control-types-overview.md)  
  [UI オートメーションの概要](../../../docs/framework/ui-automation/ui-automation-overview.md)

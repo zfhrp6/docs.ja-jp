@@ -1,14 +1,6 @@
 ---
-title: "ICeeGen::GetIMapTokenIface メソッド"
-ms.custom: 
+title: ICeeGen::GetIMapTokenIface メソッド
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ICeeGen.GetIMapTokenIface
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: 847a5531-c37d-49cd-8844-9e54b5d86cf7
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 35d1879309a1db350ded19865cc979ab7158f984
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 627ae1f3da053af9a1bf9962e5b46cfb8b5046cf
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="iceegengetimaptokeniface-method"></a>ICeeGen::GetIMapTokenIface メソッド
 指定したトークンによって参照されているインターフェイスを取得します。  
@@ -52,14 +40,14 @@ HRESULT GetIMapTokenIface (
  `pIMapToken`  
  [入力、出力].返されるインターフェイスのメタデータ トークン。  
   
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** Cor.h  
   
  **ライブラリ:** MsCorEE.dll にリソースとして使用  
   
- **.NET framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ICeeGen インターフェイス](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)

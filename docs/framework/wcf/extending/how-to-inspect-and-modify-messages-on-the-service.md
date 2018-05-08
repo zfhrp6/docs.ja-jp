@@ -1,30 +1,18 @@
 ---
-title: "方法 : サービスのメッセージを検査および変更する"
-ms.custom: 
+title: '方法 : サービスのメッセージを検査および変更する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 9c5b1cc7-84f3-45f8-9226-d59c278e8c42
-caps.latest.revision: "6"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 64d9ccf97533be6be0da5d1e23763e8174aead3c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ec1c60bc2b3e966c576de260dfe3b06a05ab84c0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-inspect-and-modify-messages-on-the-service"></a>方法 : サービスのメッセージを検査および変更する
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] を実装し、それをサービス ランタイムに挿入することで、<xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector?displayProperty=nameWithType> クライアントの送受信メッセージを検査または変更できます。 詳細については、次を参照してください。[ディスパッチャーの拡張](../../../../docs/framework/wcf/extending/extending-dispatchers.md)です。 サービスの同等の機能は、<xref:System.ServiceModel.Dispatcher.IClientMessageInspector?displayProperty=nameWithType> です。  
+検査または実装することで Windows Communication Foundation (WCF) クライアントの受信または送信メッセージを変更することができます、<xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector?displayProperty=nameWithType>サービス ランタイムに挿入するとします。 詳細については、次を参照してください。[ディスパッチャーの拡張](../../../../docs/framework/wcf/extending/extending-dispatchers.md)です。 サービスの同等の機能は、<xref:System.ServiceModel.Dispatcher.IClientMessageInspector?displayProperty=nameWithType> です。  
   
 ### <a name="to-inspect-or-modify-messages"></a>メッセージを検査または変更するには  
   
@@ -51,7 +39,7 @@ ms.lasthandoff: 12/22/2017
   
  [!code-xml[Interceptors#9](../../../../samples/snippets/csharp/VS_Snippets_CFX/interceptors/cs/hostapplication.exe.config#9)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Dispatcher.IClientMessageInspector?displayProperty=nameWithType>  
  <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector?displayProperty=nameWithType>  
  [動作を使用したランタイムの構成と拡張](../../../../docs/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md)

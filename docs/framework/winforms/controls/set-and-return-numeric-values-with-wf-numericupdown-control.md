@@ -1,13 +1,6 @@
 ---
-title: "方法 : Windows フォームの NumericUpDown コントロールを使用して数値を設定および取得する"
-ms.custom: 
+title: '方法 : Windows フォームの NumericUpDown コントロールを使用して数値を設定および取得する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -18,16 +11,11 @@ helpviewer_keywords:
 - Windows Forms controls, NumericUpDown
 - NumericUpDown control [Windows Forms], setting and returning values
 ms.assetid: 5bd8f8cd-4c12-49ea-9cc3-2a647d064689
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: f31f0b247c882b8ccba84930f7e21f5eea088a35
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e214f556224577c3029b2b742784e58932d792f3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-set-and-return-numeric-values-with-the-windows-forms-numericupdown-control"></a>方法 : Windows フォームの NumericUpDown コントロールを使用して数値を設定および取得する
 Windows フォームの数値<xref:System.Windows.Forms.NumericUpDown>コントロールはによって決定されます。 その<xref:System.Windows.Forms.NumericUpDown.Value%2A>プロパティです。 他のプロパティと同様に、コントロールの値に対する条件テストを記述できます。 1 回、<xref:System.Windows.Forms.NumericUpDown.Value%2A>プロパティが設定されてで、操作を実行するコードの記述で直接調整することができます、または呼び出すことができます、<xref:System.Windows.Forms.NumericUpDown.UpButton%2A>と<xref:System.Windows.Forms.NumericUpDown.DownButton%2A>メソッドです。  
@@ -100,7 +88,7 @@ Windows フォームの数値<xref:System.Windows.Forms.NumericUpDown>コント�
     }  
     ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.NumericUpDown>  
  <xref:System.Windows.Forms.NumericUpDown.Value%2A?displayProperty=nameWithType>  
  <xref:System.Windows.Forms.NumericUpDown.Increment%2A?displayProperty=nameWithType>  

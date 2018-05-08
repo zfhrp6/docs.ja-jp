@@ -1,31 +1,17 @@
 ---
 title: 構成ファイルを使用してサービスを構成する方法
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - configuring services [WCF]
 ms.assetid: c9c8cd32-2c9d-4541-ad0d-16dff6bd2a00
-caps.latest.revision: 29
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 62a8774ab2843d0b1f0a19ad04fc0a76abb7cac5
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
-ms.translationtype: MT
+ms.openlocfilehash: abfe502c6b50234037cad786a658edc3d479cc9e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="configuring-services-using-configuration-files"></a>構成ファイルを使用してサービスを構成する方法
-構成ファイルを使用して [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービスを構成すると、デザイン時ではなく配置時にエンドポイントとサービス動作のデータを指定できるという柔軟性が生まれます。 ここでは使用可能な主要な技術について説明します。  
+構成ファイルで Windows Communication Foundation (WCF) サービスを構成する柔軟性がエンドポイントを提供して、サービス動作のデータではなく、配置時にデザイン時です。 ここでは使用可能な主要な技術について説明します。  
   
  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスは、 [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] の構成技術を使用して構成できます。 通常、XML 要素は、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスをホストするインターネット インフォメーション サービス (IIS) サイトの Web.config ファイルに追加されます。 この要素によって、コンピューターごとにエンドポイント アドレス (サービスと通信するために使用する実際のアドレス) などの詳細情報を変更できます。 また、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] には、システム指定の要素がいくつか用意されており、これらの要素によって、サービスの最も基本的な機能を簡単に選択できます。 [!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)]以降では、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] には、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] 構成要件を簡略化する新しい既定の構成モデルが付属しています。 特定のサービスに対し [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] 構成を指定しないと、ランタイムは自動的にいくつかの標準エンドポイントおよびバインディング/動作でサービスを構成します。 実際、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] アプリケーションのプログラミングにおいては、構成ファイルの記述が作業の大きな部分を占めます。  
   

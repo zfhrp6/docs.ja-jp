@@ -1,30 +1,18 @@
 ---
-title: "方法 : カスタム ポリシー アサーションをエクスポートする"
-ms.custom: 
+title: '方法 : カスタム ポリシー アサーションをエクスポートする'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 99030386-43b0-4f7b-866d-17ea307f5cbd
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: d8620dec4997947df2dc7078e337a5e421d66c55
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4182007d32ea857aa333542b4df29da18b8062df
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-export-custom-policy-assertions"></a>方法 : カスタム ポリシー アサーションをエクスポートする
-ポリシー アサーションはサービス エンドポイントの機能と要件を説明します。 サービス アプリケーションは、サービス メタデータに含まれるカスタム ポリシー アサーションを使用して、エンドポイントのバインディングまたはコントラクトのカスタマイズ情報をクライアント アプリケーションに伝達します。 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] を使用すると、伝達している機能または要件に応じて、エンドポイント、操作、またはメッセージ サブジェクトで WSDL バインディングに結び付けられているポリシー表現のアサーションをエクスポートできます。  
+ポリシー アサーションはサービス エンドポイントの機能と要件を説明します。 サービス アプリケーションは、サービス メタデータに含まれるカスタム ポリシー アサーションを使用して、エンドポイントのバインディングまたはコントラクトのカスタマイズ情報をクライアント アプリケーションに伝達します。 Windows Communication Foundation (WCF) を使用して、エンドポイント、操作、または機能または通信する要件に応じて、メッセージのサブジェクトで WSDL バインディングに結び付けられたポリシー表現のアサーションをエクスポートすることができます。  
   
  カスタム ポリシー アサーションは、<xref:System.ServiceModel.Description.IPolicyExportExtension?displayProperty=nameWithType> インターフェイスを <xref:System.ServiceModel.Channels.BindingElement?displayProperty=nameWithType> に実装して、サービス エンドポイントのバインディングにバインド要素を直接挿入するか、またはアプリケーション構成ファイルにバインド要素を登録することによってエクスポートされます。 ポリシーのエクスポートの実装では、<xref:System.Xml.XmlElement?displayProperty=nameWithType> メソッドに渡された <xref:System.ServiceModel.Description.PolicyAssertionCollection?displayProperty=nameWithType> の適切な <xref:System.ServiceModel.Description.PolicyConversionContext?displayProperty=nameWithType> に、<xref:System.ServiceModel.Description.IPolicyExportExtension.ExportPolicy%2A> インスタンスとしてカスタム ポリシー アサーションを追加する必要があります。  
   
@@ -60,7 +48,7 @@ ms.lasthandoff: 12/22/2017
      [!code-csharp[s_imperative#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_imperative/cs/service.cs#1)]
      [!code-vb[s_imperative#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_imperative/vb/service.vb#1)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Description.IPolicyImportExtension>  
  <xref:System.ServiceModel.Description.IPolicyExportExtension>  
  [方法 : カスタム ポリシー アサーションをインポートする](../../../../docs/framework/wcf/extending/how-to-import-custom-policy-assertions.md)

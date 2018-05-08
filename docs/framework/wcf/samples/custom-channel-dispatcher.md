@@ -1,30 +1,18 @@
 ---
-title: "カスタム チャネル ディスパッチャー"
-ms.custom: 
+title: カスタム チャネル ディスパッチャー
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 813acf03-9661-4d57-a3c7-eeab497321c6
-caps.latest.revision: "7"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 1c67425c67625fcfcfaac5ec689f4f70dbd3d64f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 7cd27d485efe7fe91e7c59627bf14e188e85f386
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="custom-channel-dispatcher"></a>カスタム チャネル ディスパッチャー
 このサンプルでは、<xref:System.ServiceModel.ServiceHostBase> を直接実装することによって、カスタマイズした方法でチャネル スタックを作成する方法と、Web ホスト環境でカスタム チャネル ディスパッチャーを作成する方法を示します。 チャネル ディスパッチャーは、<xref:System.ServiceModel.Channels.IChannelListener> と対話してチャネルを受け入れ、チャネル スタックからメッセージを取得します。 このサンプルには、<xref:System.ServiceModel.Activation.VirtualPathExtension> を使用して Web ホスト環境でチャネル スタックを作成する方法を示す基本的なサンプルも用意されています。  
   
 ## <a name="custom-servicehostbase"></a>カスタム ServiceHostBase  
- このサンプルでは、<xref:System.ServiceModel.ServiceHostBase> スタック実装をチャネル スタック上のカスタム メッセージ処理層で置き換える方法を示すために、基本型として <xref:System.ServiceModel.ServiceHost> の代わりに [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] を実装します。 仮想メソッド <xref:System.ServiceModel.ServiceHostBase.InitializeRuntime%2A> をオーバーライドして、チャネル リスナーとチャネル ディスパッチャーを作成します。  
+ このサンプルは、基本データ型を実装して<xref:System.ServiceModel.ServiceHostBase>の代わりに<xref:System.ServiceModel.ServiceHost>のカスタム メッセージ処理、チャネル スタックの上位層で、Windows Communication Foundation (WCF) スタックを実装を置き換える方法を示します。 仮想メソッド <xref:System.ServiceModel.ServiceHostBase.InitializeRuntime%2A> をオーバーライドして、チャネル リスナーとチャネル ディスパッチャーを作成します。  
   
  Web ホスト サービスを実装するには、サービス拡張 <xref:System.ServiceModel.Activation.VirtualPathExtension> を <xref:System.ServiceModel.ServiceHostBase.Extensions%2A> コレクションから取得し、<xref:System.ServiceModel.Channels.BindingParameterCollection> に追加します。これにより、トランスポート層で、ホスト環境の設定 (つまり、インターネット インフォメーション サービス (IIS) および Windows プロセス アクティブ化サービス (WAS) の設定) に基づいてチャネル リスナーを構成する方法を認識できるようになります。  
   
@@ -34,7 +22,7 @@ ms.lasthandoff: 12/22/2017
  ディスパッチャーは、まずチャネル リスナーを開き、次にシングルトン応答チャネルを受け入れます。 このチャネルを使用して、無限ループでメッセージ (応答) の送信を開始します。 要求ごとに、応答メッセージを作成し、クライアントに返信します。  
   
 ## <a name="creating-a-response-message"></a>応答メッセージの作成  
- メッセージ処理は型 `MyServiceManager` で実装されます。 `HandleRequest` メソッドでは、要求がサポートされているかどうか確認するために、メッセージの `Action` ヘッダーが最初にチェックされます。 メッセージ フィルター処理を提供するために、定義済みの SOAP アクション "http://tempuri.org/HelloWorld/Hello" が定義されています。 これは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の <xref:System.ServiceModel.ServiceHost> 実装におけるサービス コントラクトの概念と似ています。  
+ メッセージ処理は型 `MyServiceManager` で実装されます。 `HandleRequest` メソッドでは、要求がサポートされているかどうか確認するために、メッセージの `Action` ヘッダーが最初にチェックされます。 定義済みの SOAP アクション"http://tempuri.org/HelloWorld/Hello"メッセージのフィルター処理を提供するが定義されています。 これは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の <xref:System.ServiceModel.ServiceHost> 実装におけるサービス コントラクトの概念と似ています。  
   
  正しい SOAP アクションの場合、サンプルでは、<xref:System.ServiceModel.ServiceHost> の場合と同じように、要求されたメッセージ データを取得し、要求に対して対応する応答を生成します。  
   
@@ -62,6 +50,6 @@ Server replied: You said: Howdy. Message id: 5
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
+>  このディレクトリが存在しない場合に、 [Windows Communication Foundation (WCF) および .NET Framework 4 向けの Windows Workflow Foundation (WF) サンプル](http://go.microsoft.com/fwlink/?LinkId=150780)すべて Windows Communication Foundation (WCF) をダウンロードして[!INCLUDE[wf1](../../../../includes/wf1-md.md)]サンプルです。 このサンプルは、次のディレクトリに格納されます。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Channels\CustomChannelDispatcher`

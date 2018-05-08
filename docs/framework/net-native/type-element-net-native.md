@@ -1,24 +1,14 @@
 ---
-title: "&lt;Type&gt; 要素 (.NET ネイティブ)"
-ms.custom: 
+title: '&lt;Type&gt; 要素 (.NET ネイティブ)'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 1e88d368-a886-4f1e-8eb6-6127979a9fce
-caps.latest.revision: "33"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 654f3a360038266d246438838c9ad5821b0a50b9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ad20cf4528f5ca7d23f80570cc34712d33b74d93
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="lttypegt-element-net-native"></a>&lt;Type&gt; 要素 (.NET ネイティブ)
 クラスや構造体などの特定の型に実行時ポリシーを適用します。  
@@ -140,7 +130,7 @@ ms.lasthandoff: 12/22/2017
 </Directives>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ランタイム ディレクティブ (rd.xml) 構成ファイル リファレンス](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)  
  [ランタイム ディレクティブ要素](../../../docs/framework/net-native/runtime-directive-elements.md)  
  [ランタイム ディレクティブ ポリシーの設定](../../../docs/framework/net-native/runtime-directive-policy-settings.md)

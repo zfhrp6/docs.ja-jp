@@ -1,13 +1,6 @@
 ---
-title: "WPF のコンテンツ モデル"
-ms.custom: 
+title: WPF のコンテンツ モデル
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - UIElement class [WPF], displaying content
 - content model [WPF], controls
@@ -18,16 +11,11 @@ helpviewer_keywords:
 - arbitrary content classes [WPF], content model
 - ContentControl class [WPF], displaying content
 ms.assetid: 214da5ef-547a-4cf8-9b07-4aa8a0e52cdd
-caps.latest.revision: "17"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 7d708674682ffd7b0d13c9cbe828e28bbc26e260
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 48e96b04a3459aa18a52624758d5fa2347570fcf
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="wpf-content-model"></a>WPF のコンテンツ モデル
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] は、多くのコントロールやコントロールのような型を提供する表示プラットフォームで、その主な目的は、異なる種類のコンテンツを表示することです。 使用するコントロールまたは派生元のコントロールを判断するには、特定のコントロールが最適に表示できるオブジェクトの種類を理解する必要があります。  
@@ -122,7 +110,7 @@ ms.lasthandoff: 12/22/2017
  作成する方法の例については<xref:System.Windows.Controls.TabItem>、オブジェクトを参照してください<xref:System.Windows.Controls.HeaderedContentControl>です。  
   
 ### <a name="controls-that-contain-a-collection-of-arbitrary-objects"></a>任意のオブジェクトのコレクションを格納しているコントロール  
- <xref:System.Windows.Controls.ItemsControl>クラスから継承<xref:System.Windows.Controls.Control>文字列、オブジェクト、またはその他の要素など、複数の項目を含めることができます。 コンテンツ プロパティは<xref:System.Windows.Controls.ItemsControl.ItemsSource%2A>と<xref:System.Windows.Controls.ItemsControl.Items%2A>です。 <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A>設定に通常使用されます、<xref:System.Windows.Controls.ItemsControl>データ コレクションを使用します。 追加にコレクションを使用しないかどうか、<xref:System.Windows.Controls.ItemsControl>を使用して項目を追加することができます、<xref:System.Windows.Controls.ItemsControl.Items%2A>プロパティです。  
+ <xref:System.Windows.Controls.ItemsControl>クラスから継承<xref:System.Windows.Controls.Control>文字列、オブジェクト、またはその他の要素など、複数の項目を含めることができます。 コンテンツ プロパティは<xref:System.Windows.Controls.ItemsControl.ItemsSource%2A>と<xref:System.Windows.Controls.ItemsControl.Items%2A>です。 <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> 設定に通常使用されます、<xref:System.Windows.Controls.ItemsControl>データ コレクションを使用します。 追加にコレクションを使用しないかどうか、<xref:System.Windows.Controls.ItemsControl>を使用して項目を追加することができます、<xref:System.Windows.Controls.ItemsControl.Items%2A>プロパティです。  
   
  次のコントロールから継承<xref:System.Windows.Controls.ItemsControl>し、そのコンテンツ モデルを使用します。  
   
@@ -261,7 +249,7 @@ ms.lasthandoff: 12/22/2017
   
 <a name="classes_that_format_text"></a>   
 ## <a name="classes-that-format-your-text"></a>テキストを書式設定するクラス  
- <xref:System.Windows.Documents.TextElement>され、その関連クラスでは、テキストの書式設定することができます。 <xref:System.Windows.Documents.TextElement>オブジェクトを含めるし、内のテキストを書式設定<xref:System.Windows.Controls.TextBlock>と<xref:System.Windows.Documents.FlowDocument>オブジェクト。 2 つの基本的な種類<xref:System.Windows.Documents.TextElement>オブジェクトが<xref:System.Windows.Documents.Block>要素および<xref:System.Windows.Documents.Inline>要素。 A<xref:System.Windows.Documents.Block>要素は段落またはリストなどのテキストのブロックを表します。 <xref:System.Windows.Documents.Inline>要素は、ブロック内のテキストの一部を表します。 多く<xref:System.Windows.Documents.Inline>クラスを適用するテキストの書式を指定します。 各<xref:System.Windows.Documents.TextElement>独自のコンテンツ モデルを持ちます。 詳細については、「[TextElement Content Model Overview](../../../../docs/framework/wpf/advanced/textelement-content-model-overview.md)」を参照してください。  
+ <xref:System.Windows.Documents.TextElement> され、その関連クラスでは、テキストの書式設定することができます。 <xref:System.Windows.Documents.TextElement> オブジェクトを含めるし、内のテキストを書式設定<xref:System.Windows.Controls.TextBlock>と<xref:System.Windows.Documents.FlowDocument>オブジェクト。 2 つの基本的な種類<xref:System.Windows.Documents.TextElement>オブジェクトが<xref:System.Windows.Documents.Block>要素および<xref:System.Windows.Documents.Inline>要素。 A<xref:System.Windows.Documents.Block>要素は段落またはリストなどのテキストのブロックを表します。 <xref:System.Windows.Documents.Inline>要素は、ブロック内のテキストの一部を表します。 多く<xref:System.Windows.Documents.Inline>クラスを適用するテキストの書式を指定します。 各<xref:System.Windows.Documents.TextElement>独自のコンテンツ モデルを持ちます。 詳細については、「[TextElement Content Model Overview](../../../../docs/framework/wpf/advanced/textelement-content-model-overview.md)」を参照してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [詳細設定](../../../../docs/framework/wpf/advanced/index.md)

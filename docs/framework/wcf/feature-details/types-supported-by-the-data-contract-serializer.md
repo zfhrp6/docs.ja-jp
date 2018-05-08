@@ -1,31 +1,17 @@
 ---
 title: データ コントラクト シリアライザーでサポートされる型
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - serialization [WCF], supported types
 ms.assetid: 7381b200-437a-4506-9556-d77bf1bc3f34
-caps.latest.revision: 24
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: c53a11408254dc3c5f2abfb7d5d45305d3429280
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 9a6279b9850ce5cd3d23cffeaf233dec1b360deb
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="types-supported-by-the-data-contract-serializer"></a>データ コントラクト シリアライザーでサポートされる型
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] は、データを XML に変換し、変換された XML をデータへ戻すための既定のシリアル化エンジンとして <xref:System.Runtime.Serialization.DataContractSerializer> を使用します。 <xref:System.Runtime.Serialization.DataContractSerializer> は、 *データ コントラクト* 型をシリアル化するように設計されています。 ただし、暗黙のデータ コントラクトを持つと考えられるその他の型も多数サポートされています。 以下は、シリアル化可能なすべての型です。  
+Windows Communication Foundation (WCF) を使用して、<xref:System.Runtime.Serialization.DataContractSerializer>既定のシリアル化エンジンにデータを XML に変換して、XML をデータに変換するとします。 <xref:System.Runtime.Serialization.DataContractSerializer> は、 *データ コントラクト* 型をシリアル化するように設計されています。 ただし、暗黙のデータ コントラクトを持つと考えられるその他の型も多数サポートされています。 以下は、シリアル化可能なすべての型です。  
   
 -   パラメーターを持たないコンストラクターを持つ公開されている型すべて  
   
@@ -51,13 +37,13 @@ ms.lasthandoff: 04/28/2018
   
 -   部分信頼コードで <xref:System.Runtime.Serialization.ISerializable> を使用して <xref:System.Runtime.Serialization.DataContractSerializer> を実装する型のシリアル化または逆シリアル化を行うには、 <xref:System.Security.Permissions.SecurityPermissionAttribute.SerializationFormatter%2A> アクセス許可および <xref:System.Security.Permissions.SecurityPermissionAttribute.UnmanagedCode%2A> アクセス許可が必要です。  
   
--   実行しているときに[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]内のコード[部分信頼](../../../../docs/framework/wcf/feature-details/partial-trust.md)モードでは、シリアル化および逆シリアル化の`readonly`フィールド (両方`public`と`private`) はサポートされていません。 これは、生成された IL が検証不能であるため、より高いアクセス許可が必要になるためです。  
+-   WCF コードを実行する場合[部分信頼](../../../../docs/framework/wcf/feature-details/partial-trust.md)モードでは、シリアル化および逆シリアル化の`readonly`フィールド (両方`public`と`private`) はサポートされていません。 これは、生成された IL が検証不能であるため、より高いアクセス許可が必要になるためです。  
   
 -   部分信頼環境では、 <xref:System.Runtime.Serialization.DataContractSerializer> と <xref:System.Xml.Serialization.XmlSerializer> の両方がサポートされています。 ただし、 <xref:System.Runtime.Serialization.DataContractSerializer> の使用は、次の条件に従う必要があります。  
   
     -   シリアル化可能なすべての `[DataContract]` 型はパブリックである必要があります。  
   
-    -   `[DataMember]` 型にあるシリアル化可能なすべての `[DataContract]` フィールドまたはプロパティは、パブリックで読み書き可能である必要があります。 `readonly` フィールドのシリアル化と逆シリアル化は、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を部分信頼アプリケーションで実行する場合にはサポートされません。  
+    -   `[DataMember]` 型にあるシリアル化可能なすべての `[DataContract]` フィールドまたはプロパティは、パブリックで読み書き可能である必要があります。 シリアル化および逆シリアル化の`readonly`部分的に信頼されたアプリケーションで WCF を実行する場合、フィールドがサポートされていません。  
   
     -   部分信頼環境では、 `[Serializable]`/`ISerializable]` プログラミング モデルはサポートされていません。  
   
@@ -76,7 +62,7 @@ ms.lasthandoff: 04/28/2018
   
 -   構造体とクラスの両方がサポートされています。  
   
--   <xref:System.Runtime.Serialization.DataContractSerializer> は、 <xref:System.Xml.Serialization.XmlSerializer> と [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] Web サービスで使用されるプログラミング モデルをサポートしていません。 特に、 <xref:System.Xml.Serialization.XmlElementAttribute> や <xref:System.Xml.Serialization.XmlAttributeAttribute>のような属性をサポートしていません。 このプログラミング モデルのサポートを有効にするには、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ではなく <xref:System.Xml.Serialization.XmlSerializer> を使用するように <xref:System.Runtime.Serialization.DataContractSerializer>を切り替える必要があります。  
+-   <xref:System.Runtime.Serialization.DataContractSerializer> は、 <xref:System.Xml.Serialization.XmlSerializer> と [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] Web サービスで使用されるプログラミング モデルをサポートしていません。 特に、 <xref:System.Xml.Serialization.XmlElementAttribute> や <xref:System.Xml.Serialization.XmlAttributeAttribute>のような属性をサポートしていません。 このプログラミング モデルのサポートを有効にするには、使用する WCF を切り替える、<xref:System.Xml.Serialization.XmlSerializer>の代わりに、<xref:System.Runtime.Serialization.DataContractSerializer>です。  
   
 -   <xref:System.DBNull> 型は、特殊な方法で処理されます。 これは、シングルトン型です。デシリアライザーは、逆シリアル化後にシングルトン制約に従い、シングルトン インスタンスへのすべての `DBNull` 参照を指します。 `DBNull` はシリアル化可能な型であるため、 <xref:System.Security.Permissions.SecurityPermissionAttribute.SerializationFormatter%2A> アクセス許可が必要です。  
   

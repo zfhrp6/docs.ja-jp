@@ -1,30 +1,19 @@
 ---
-title: "アクティビティ拡張機能の使用"
-ms.custom: 
+title: アクティビティ拡張機能の使用
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 500eb96a-c009-4247-b6b5-b36faffdf715
-caps.latest.revision: "5"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 6bc2e498a4073f6f0881e011b00de6ac89f4f2fe
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 32c465ae42a1f0238fab7bba5ea795486db3b562
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-activity-extensions"></a>アクティビティ拡張機能の使用
 アクティビティは、ワークフローで明示的にモデル化されていない追加機能の提供をホストに許可するワークフロー アプリケーション拡張機能と相互作用することができます。  ここでは、アクティビティの実行回数をカウントする拡張機能を作成および使用する方法について説明します。  
   
 ### <a name="to-use-an-activity-extension-to-count-executions"></a>実行回数をカウントするアクティビティ拡張機能を使用するには  
   
-1.  [!INCLUDE[vs2010](../../../includes/vs2010-md.md)] を開きます。 選択**新しい**、**プロジェクト**です。 下にある、 **Visual c#**ノード、**ワークフロー**です。  選択**ワークフロー コンソール アプリケーション**テンプレートの一覧からです。 プロジェクトに `Extensions` という名前を付けます。 をクリックして**OK**プロジェクトを作成します。  
+1.  [!INCLUDE[vs2010](../../../includes/vs2010-md.md)] を開きます。 選択**新しい**、**プロジェクト**です。 下にある、 **Visual c#** ノード、**ワークフロー**です。  選択**ワークフロー コンソール アプリケーション**テンプレートの一覧からです。 プロジェクトに `Extensions` という名前を付けます。 **[OK]** をクリックして、プロジェクトを作成します。  
   
 2.  追加、 `using` Program.cs ファイル内のステートメント、 **System.Collections.Generic**名前空間。  
   

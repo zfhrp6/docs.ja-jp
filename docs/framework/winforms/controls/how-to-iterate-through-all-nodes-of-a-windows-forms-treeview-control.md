@@ -1,13 +1,6 @@
 ---
-title: "方法 : Windows フォーム TreeView コントロールのすべてのノードを反復処理する"
-ms.custom: 
+title: '方法 : Windows フォーム TreeView コントロールのすべてのノードを反復処理する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,16 +10,11 @@ helpviewer_keywords:
 - TreeView control [Windows Forms], iterating through nodes
 - tree nodes in TreeView control [Windows Forms], iterating through
 ms.assetid: 427f8928-ebcf-4beb-887f-695b905d5134
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 02dfe1cb494df91a2a3ef3a6bba533306d61edef
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 89a2c1411ab64b4a20ad291165cfa6d83511c4c6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-iterate-through-all-nodes-of-a-windows-forms-treeview-control"></a>方法 : Windows フォーム TreeView コントロールのすべてのノードを反復処理する
 Windows フォーム内の各ノードをチェックすると役立つ場合があります<xref:System.Windows.Forms.TreeView>ノードの値に対していくつか計算を実行するために管理します。 この操作は、ツリーの各コレクションの各ノードを反復処理する再帰プロシージャ (C# および C++ の場合は再帰メソッド) を使用して実行できます。  
@@ -134,6 +122,6 @@ Windows フォーム内の各ノードをチェックすると役立つ場合が
        }  
     ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [TreeView コントロール](../../../../docs/framework/winforms/controls/treeview-control-windows-forms.md)  
  [再帰プロシージャ](~/docs/visual-basic/programming-guide/language-features/procedures/recursive-procedures.md)

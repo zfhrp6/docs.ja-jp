@@ -1,14 +1,6 @@
 ---
-title: "ISymUnmanagedWriter::CloseMethod メソッド"
-ms.custom: 
+title: ISymUnmanagedWriter::CloseMethod メソッド
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ISymUnmanagedWriter.CloseMethod
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: b8025e04-f0e5-40c8-849c-8cd51323420e
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 21c4cdd42613f5e8b60c39426b4f169a034ce7a6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 71be697a8a1decd9b5f780d047c3dbb397e351d0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="isymunmanagedwriterclosemethod-method"></a>ISymUnmanagedWriter::CloseMethod メソッド
 現在のメソッドを閉じます。 メソッドが閉じられた後は、内部にシンボルを定義できます。  
@@ -47,9 +35,9 @@ HRESULT CloseMethod();
 ## <a name="return-value"></a>戻り値  
  メソッドが成功した場合は S_OK、それ以外の場合、E_FAIL またはその他のエラー コード。  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** CorSym.idl、CorSym.h  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ISymUnmanagedWriter インターフェイス](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)  
  [OpenMethod メソッド](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-openmethod-method.md)

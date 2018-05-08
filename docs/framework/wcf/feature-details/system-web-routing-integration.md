@@ -1,29 +1,15 @@
 ---
 title: System.Web.Routing 統合
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 31fe2a4f-5c47-4e5d-8ee1-84c524609d41
-caps.latest.revision: 7
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 72403671fe6700ae26cae4471a1d0ac100005f3a
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 5bd405d66dcad597bbe6f452703d25372fdb7682
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="systemwebrouting-integration"></a>System.Web.Routing 統合
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスをインターネット インフォメーション サービス (IIS) でホストするときは、.svc ファイルを仮想ディレクトリに配置します。 この .svc ファイルは、使用するサービス ホスト ファクトリと、サービスを実装するクラスを指定します。 たとえば、URI で .svc ファイルを指定するサービスに要求を行うときに:http://contoso.com/EmployeeServce.svcです。 REST サービスを記述するプログラマにとっては、この種類の URI は最適とは言えません。 REST サービス用の URI は、特定のリソースを指定しており、拡張子がないのが普通です。 <xref:System.Web.Routing> 統合機能では、拡張子のない URI に応答する [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] REST サービスをホストできます。 ルーティングの参照の詳細については[ASP.NET ルーティング](http://go.microsoft.com/fwlink/?LinkId=184660)と[AspNetRouteIntegration](../../../../docs/framework/wcf/samples/aspnetrouteintegration.md)サンプルです。  
+インターネット インフォメーション サービス (IIS) で Windows Communication Foundation (WCF) サービスをホストする場合は、仮想ディレクトリで .svc ファイルを配置します。 この .svc ファイルは、使用するサービス ホスト ファクトリと、サービスを実装するクラスを指定します。 たとえば、URI で .svc ファイルを指定するサービスに要求を行うときに:http://contoso.com/EmployeeServce.svcです。 REST サービスを記述するプログラマにとっては、この種類の URI は最適とは言えません。 REST サービス用の URI は、特定のリソースを指定しており、拡張子がないのが普通です。 <xref:System.Web.Routing>統合機能では、拡張子のない Uri に応答する WCF REST サービスをホストすることができます。 ルーティングの参照の詳細については[ASP.NET ルーティング](http://go.microsoft.com/fwlink/?LinkId=184660)と[AspNetRouteIntegration](../../../../docs/framework/wcf/samples/aspnetrouteintegration.md)サンプルです。  
   
 ## <a name="using-systemwebrouting-integration"></a>System.Web.Routing 統合の使用  
  <xref:System.Web.Routing> 統合機能を使用するには、<xref:System.ServiceModel.Activation.ServiceRoute> クラスを使用して 1 つ以上のルートを作成し、Global.asax ファイルでそれらを <xref:System.Web.Routing.RouteTable> に追加します。 これらのルートは、サービスが応答する相対 URI を指定します。 その方法を次の例に示します。  

@@ -1,28 +1,19 @@
 ---
-title: メソッド &#39;'System.nullable(of (Of T) &#39;オペランドとして使用することはできません、&#39;です。AddressOf &#39;演算子
+title: メソッドの&#39;'system.nullable(of T)&#39;のオペランドとして使用することはできません、 &#39;AddressOf&#39;演算子
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vbc32126
 - bc32126
 helpviewer_keywords:
 - BC32126
 ms.assetid: 2325668b-e2ad-40ee-a1ec-30450236c20d
-caps.latest.revision: 5
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: ce0e9bc6abd71f22e3f6c3486ef40493e74d820f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 3a3e4fc033f47fb6a72076dff79f1eece8d01a30
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="methods-of-39systemnullableof-t39-cannot-be-used-as-operands-of-the-39addressof39-operator"></a>メソッド &#39;'System.nullable(of (Of T) &#39;オペランドとして使用することはできません、&#39;です。AddressOf &#39;演算子
+# <a name="methods-of-39systemnullableof-t39-cannot-be-used-as-operands-of-the-39addressof39-operator"></a>メソッドの&#39;'system.nullable(of T)&#39;のオペランドとして使用することはできません、 &#39;AddressOf&#39;演算子
 ステートメントを使用して、`AddressOf`のプロシージャを表すオペランドと演算子、<xref:System.Nullable%601>構造体。  
   
  **エラー ID:** BC32126  

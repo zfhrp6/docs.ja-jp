@@ -1,35 +1,23 @@
 ---
 title: WCF セキュリティ用語
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - security [WCF], terminology
 - security glossary [WCF]
 - security terms [WCF]
 ms.assetid: 68dde024-8e51-40ba-804f-ec52d85e9ca9
-caps.latest.revision: 14
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload:
-- dotnet
-ms.openlocfilehash: 46f70ad623d852e051ff69fb68690114f8c39381
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 8024abdab01b2df151a6c0c2f5760e85ae119fd4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="wcf-security-terminology"></a>WCF セキュリティ用語
 セキュリティについて説明するときに使用する用語の中には、だれもが知っているとは限らないものもあります。 ここでは、セキュリティ用語の一部を簡単に説明します。このトピックは、すべての項目について詳細に説明することを目的としたものではありません。  
   
- 使用される用語の詳細については[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]ドキュメントについてを参照してください[基本的な Windows Communication Foundation 概念](../../../../docs/framework/wcf/fundamental-concepts.md)です。  
+ Windows Communication Foundation (WCF) のドキュメントで使用される用語の詳細については、次を参照してください。[基本的な Windows Communication Foundation 概念](../../../../docs/framework/wcf/fundamental-concepts.md)です。  
   
  アクセス制御リスト (ACL: Access Control List)  
  オブジェクトに適用されるセキュリティ保護のリスト。 オブジェクトには、ファイル、プロセス、イベント、またはセキュリティ記述子を持つすべてのものが含まれます。ACL 内のエントリは、アクセス制御エントリ (ACE: Access Control Entry) と呼ばれます。 ACL には、随意 ACL とシステム ACL の 2 種類があります。  
@@ -189,7 +177,7 @@ ms.lasthandoff: 04/30/2018
  ユーザー アカウント名 (とも呼ば、*ユーザー ログオン名*) と、ユーザー アカウントが配置されているドメインを識別するドメイン名です。 これは、Windows ドメインにログオンするための標準的使用方法です。 形式:someone@example.comです (の場合、電子メール アドレスなど)。  
   
 > [!NOTE]
->  標準の UPN 形式に加え、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、cohowinery.com\someone のような下位レベル形式の UPN も受け入れます。  
+>  標準の UPN 形式に加えては、WCF は、ダウンレベルのフォームでは、たとえば、cohowinery.com\someone Upn を受け入れます。  
   
  X.509  
  国際的に認知されている証明書の規格。証明書の必須部分が定義されています。  

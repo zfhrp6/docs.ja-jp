@@ -1,31 +1,19 @@
 ---
-title: "コード アクセス セキュリティの基礎"
-ms.custom: 
+title: コード アクセス セキュリティの基礎
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - security [.NET Framework], code access security
 ms.assetid: 4eaa6535-d9fe-41a1-91d8-b437cfc16921
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 1fbeae8d01d9ef03c476679ea7fc59273b7a0a0b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 77687934a91b92909bdbab1ede5075ace4326d4e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="code-access-security-basics"></a>コード アクセス セキュリティの基礎
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
@@ -161,7 +149,7 @@ public class MyClass {
   
  アンマネージ コードにアクセスすることが必要な操作をアプリケーションで実行する場合、必要な機能 をラップする信頼できるマネージ クラス (存在する場合) を使用してそうした操作をアプリケーションで実行しなければなりません。 安全なクラス ライブラリ内のラッパー クラスが既に存在する場合には、独自にラッパー クラスを作成しないでください。 ラッパー クラスでは、アンマネージ コードへの呼び出しが許可されるように高度な信頼が付与される必要があります。呼び出し元に適切なアクセス許可があることを確認要求する責任はラッパー クラスにあります。 ラッパー クラスを使用する場合、作成したコードで必要となるのは、ラッパー クラスが確認要求するアクセス許可を要求して付与することのみです。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Security.PermissionSet>  
  <xref:System.Security.Permissions.FileIOPermission>  
  <xref:System.Security.NamedPermissionSet>  

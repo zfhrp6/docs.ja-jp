@@ -1,31 +1,17 @@
 ---
-title: "WebBrowser コントロールの概要"
-ms.custom: 
+title: WebBrowser コントロールの概要
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - WebBrowser
 helpviewer_keywords:
 - WebBrowser control [Windows Forms], about
 - Web pages [Windows Forms], displaying in applications
 ms.assetid: 6e3e1cc2-9c48-4136-9659-e99e4e60b7e9
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: d2c1ed93769cc91d9622a86ea2d894cea57f5bcd
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 2e69b71b3e354101d950d6f7011b13fc7c0de030
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="webbrowser-control-overview"></a>WebBrowser コントロールの概要
 <xref:System.Windows.Forms.WebBrowser>コントロールは、WebBrowser ActiveX コントロールのマネージ ラッパーを提供します。 マネージ ラッパーを使用して、Windows フォーム クライアント アプリケーションで Web ページを表示できます。 使用することができます、<xref:System.Windows.Forms.WebBrowser>したりするアプリケーションで Internet Explorer Web ブラウズの機能を複製するコントロールが既定の Internet Explorer の機能を無効にしてとして単純な HTML ドキュメント ビューアー コントロールを使用します。 DHTML ベースのユーザー インターフェイス要素をフォームに追加しでホストされているという事実を非表示にする、コントロールを使用することも、<xref:System.Windows.Forms.WebBrowser>コントロール。 この方法では、Web コントロールを 1 つのアプリケーションで Windows フォーム コントロールとシームレスに結合することができます。  
@@ -37,7 +23,7 @@ ms.lasthandoff: 12/22/2017
   
  `Document`プロパティでは Web ページのクライアント アプリケーション コードからコードをスクリプトで実装されているメソッドを呼び出すこともできます。 スクリプト コードから、クライアント アプリケーション コードにアクセスするには、設定、`ObjectForScripting`プロパティです。 指定したオブジェクトとして、スクリプト コードでアクセスできる、`window.external`オブジェクト。  
   
-|name|説明|  
+|名前|説明|  
 |----------|-----------------|  
 |<xref:System.Windows.Forms.WebBrowser.Document%2A> プロパティ|現在の Web ページの HTML ドキュメント オブジェクト モデル (DOM) への管理アクセスを提供するオブジェクトを取得します。|  
 |<xref:System.Windows.Forms.WebBrowser.DocumentCompleted> イベント|Web ページには、読み込みが完了したときに発生します。|  
@@ -53,7 +39,7 @@ ms.lasthandoff: 12/22/2017
 |<xref:System.Windows.Forms.WebBrowser.Stop%2A> メソッド|現在のナビゲーションを停止し、音声とアニメーションなどの動的なページの要素を停止します。|  
 |<xref:System.Windows.Forms.WebBrowser.Url%2A> プロパティ|取得または現在の Web ページの URL を設定します。 このプロパティを設定すると、新しい URL にコントロールが移動します。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.WebBrowser>  
  <xref:System.Windows.Forms.WebBrowserDocumentCompletedEventArgs>  
  <xref:System.Windows.Forms.WebBrowserDocumentCompletedEventHandler>  

@@ -1,31 +1,19 @@
 ---
-title: "セキュリティの拡張"
-ms.custom: 
+title: セキュリティの拡張
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - security [WCF], extending
 ms.assetid: a015a040-9fdf-4147-9ea9-f83b570be1d4
-caps.latest.revision: 
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload:
-- dotnet
-ms.openlocfilehash: cdd9b91ba7ff9b1e431f7d9107e72df084ba8af3
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
-ms.translationtype: MT
+ms.openlocfilehash: 6ba6df24163064ee65c563253fa56a1ec574cffc
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="extending-security"></a>セキュリティの拡張
-新しいクレームの種類やカスタム トークンに対応するために、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] のセキュリティ インフラストラクチャを拡張できます。 このセクションの各トピックでは、この方法について説明します。  
+新しいクレームの種類とカスタム トークンに合わせて、Windows Communication Foundation (WCF) のセキュリティ インフラストラクチャを拡張できます。 このセクションの各トピックでは、この方法について説明します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [セキュリティ アーキテクチャ](http://msdn.microsoft.com/library/16593476-d36a-408d-808c-ae6fd483e28f)  
@@ -50,7 +38,7 @@ ms.lasthandoff: 01/19/2018
  通常、メッセージの署名および暗号化は 1 つの証明書を使用して行われます。 ここでは、必要に応じて 2 つの証明書を使用する方法について説明します。  
   
  [方法 : X.509 証明書の秘密キーの暗号化プロバイダーを変更する](../../../../docs/framework/wcf/extending/change-cryptographic-provider-x509-certificate-private-key.md)  
- X.509 証明書の秘密キーを提供するために使用する暗号化プロバイダーを変更する方法、およびそのプロバイダーを [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] フレームワークに統合する方法について説明します。  
+ X.509 証明書の秘密キーを提供するために使用する暗号化サービス プロバイダーを変更する方法と、Windows Communication Foundation (WCF) フレームワークにプロバイダーを統合する方法について説明します。  
   
 ## <a name="reference"></a>参照  
  <xref:System.ServiceModel.ServiceAuthorizationManager>  
@@ -70,5 +58,5 @@ ms.lasthandoff: 01/19/2018
   
  [基本的な WCF プログラミング](../../../../docs/framework/wcf/basic-wcf-programming.md)  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [セキュリティの概要](../../../../docs/framework/wcf/feature-details/security-overview.md)

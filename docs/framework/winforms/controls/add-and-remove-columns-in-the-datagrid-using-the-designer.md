@@ -1,31 +1,17 @@
 ---
-title: "方法 : デザイナーを使用して Windows フォーム DataGridView コントロールの列を追加および削除する"
-ms.custom: 
+title: '方法 : デザイナーを使用して Windows フォーム DataGridView コントロールの列を追加および削除する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - vs.DataGridViewAddColumnDialog
 helpviewer_keywords:
 - DataGridView control [Windows Forms], adding columns
 - DataGridView control [Windows Forms], removing columns
 ms.assetid: 9e709f35-0a8c-4e7e-b4c4-bacb7a834077
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 4fdb57cf2134ee4f221a26db61cfdcc48dc92548
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: f98d0e530f502655b9a48819d266a604581d22de
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-add-and-remove-columns-in-the-windows-forms-datagridview-control-using-the-designer"></a>方法 : デザイナーを使用して Windows フォーム DataGridView コントロールの列を追加および削除する
 Windows フォーム<xref:System.Windows.Forms.DataGridView>コントロールは、データを表示するために列を含める必要があります。 コントロールを手動で設定する場合は、する必要があります自分自身を追加する列。 代わりに、コントロールを生成し、列を自動的に設定するデータ ソースにバインドできます。 データ ソースを表示する数より多い列が含まれている場合は、不要な列を削除することができます。  
@@ -54,7 +40,7 @@ Windows フォーム<xref:System.Windows.Forms.DataGridView>コントロール�
   
 3.  をクリックして、**削除**ボタンに、デザイナーに表示されなくなった原因の列を削除します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.DataGridView>  
  [方法: Windows アプリケーション プロジェクトの作成](http://msdn.microsoft.com/library/b2f93fed-c635-4705-8d0e-cf079a264efa)  
  [方法: Windows フォームにコントロールを追加する](../../../../docs/framework/winforms/controls/how-to-add-controls-to-windows-forms.md)

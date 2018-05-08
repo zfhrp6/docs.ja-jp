@@ -1,13 +1,6 @@
 ---
-title: "GDI+ でのペン、直線、および四角形"
-ms.custom: 
+title: GDI+ でのペン、直線、および四角形
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -24,16 +17,11 @@ helpviewer_keywords:
 - examples [Windows Forms], GDI+
 - lines [Windows Forms], dashed
 ms.assetid: 30b25aae-e3eb-4479-bdb8-187cf651fc84
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 7f21564c800dd960a96dfc024fa2cccc6b27780f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 86cc51006361d5628dc12999588520e28e62f166
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="pens-lines-and-rectangles-in-gdi"></a>GDI+ でのペン、直線、および四角形
 線を描画する[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]を作成する必要があります、<xref:System.Drawing.Graphics>オブジェクトおよび<xref:System.Drawing.Pen>オブジェクト。 <xref:System.Drawing.Graphics>オブジェクトが実際には、描画を実行するメソッドを提供し、<xref:System.Drawing.Pen>オブジェクトは線の色、幅、およびスタイルなどの属性を格納します。  
@@ -44,7 +32,7 @@ ms.lasthandoff: 12/22/2017
  [!code-csharp[LinesCurvesAndShapes#41](../../../../samples/snippets/csharp/VS_Snippets_Winforms/LinesCurvesAndShapes/CS/Class1.cs#41)]
  [!code-vb[LinesCurvesAndShapes#41](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/LinesCurvesAndShapes/VB/Class1.vb#41)]  
   
- <xref:System.Drawing.Graphics.DrawLine%2A>オーバー ロードされたメソッド、<xref:System.Drawing.Graphics>クラスの引数を指定することがいくつかの方法があるようにします。 2 つ構築など、<xref:System.Drawing.Point>オブジェクトやパス、<xref:System.Drawing.Point>オブジェクトへの引数として、<xref:System.Drawing.Graphics.DrawLine%2A>メソッド。  
+ <xref:System.Drawing.Graphics.DrawLine%2A> オーバー ロードされたメソッド、<xref:System.Drawing.Graphics>クラスの引数を指定することがいくつかの方法があるようにします。 2 つ構築など、<xref:System.Drawing.Point>オブジェクトやパス、<xref:System.Drawing.Point>オブジェクトへの引数として、<xref:System.Drawing.Graphics.DrawLine%2A>メソッド。  
   
  [!code-csharp[LinesCurvesAndShapes#42](../../../../samples/snippets/csharp/VS_Snippets_Winforms/LinesCurvesAndShapes/CS/Class1.cs#42)]
  [!code-vb[LinesCurvesAndShapes#42](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/LinesCurvesAndShapes/VB/Class1.vb#42)]  
@@ -71,14 +59,14 @@ ms.lasthandoff: 12/22/2017
  [!code-csharp[LinesCurvesAndShapes#45](../../../../samples/snippets/csharp/VS_Snippets_Winforms/LinesCurvesAndShapes/CS/Class1.cs#45)]
  [!code-vb[LinesCurvesAndShapes#45](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/LinesCurvesAndShapes/VB/Class1.vb#45)]  
   
- <xref:System.Drawing.Graphics.DrawRectangle%2A>オーバー ロードされたメソッド、<xref:System.Drawing.Graphics>クラスの引数を指定することがいくつかの方法があるようにします。 たとえば、構成することができます、<xref:System.Drawing.Rectangle>オブジェクトを渡す、<xref:System.Drawing.Rectangle>オブジェクトを<xref:System.Drawing.Graphics.DrawRectangle%2A>引数としてメソッド。  
+ <xref:System.Drawing.Graphics.DrawRectangle%2A> オーバー ロードされたメソッド、<xref:System.Drawing.Graphics>クラスの引数を指定することがいくつかの方法があるようにします。 たとえば、構成することができます、<xref:System.Drawing.Rectangle>オブジェクトを渡す、<xref:System.Drawing.Rectangle>オブジェクトを<xref:System.Drawing.Graphics.DrawRectangle%2A>引数としてメソッド。  
   
  [!code-csharp[LinesCurvesAndShapes#46](../../../../samples/snippets/csharp/VS_Snippets_Winforms/LinesCurvesAndShapes/CS/Class1.cs#46)]
  [!code-vb[LinesCurvesAndShapes#46](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/LinesCurvesAndShapes/VB/Class1.vb#46)]  
   
  A<xref:System.Drawing.Rectangle>オブジェクトがメソッドとプロパティを操作すると、四角形に関する情報を収集します。 たとえば、<xref:System.Drawing.Rectangle.Inflate%2A>と<xref:System.Drawing.Rectangle.Offset%2A>メソッドは、四角形の位置とサイズを変更します。 <xref:System.Drawing.Rectangle.IntersectsWith%2A>メソッドに指示するかどうか、四角形他と交差する四角形を指定し、<xref:System.Drawing.Rectangle.Contains%2A>メソッドは、特定の時点が四角形の内側がかどうかを示します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Drawing.Graphics?displayProperty=nameWithType>  
  <xref:System.Drawing.Pen?displayProperty=nameWithType>  
  <xref:System.Drawing.Rectangle?displayProperty=nameWithType>  

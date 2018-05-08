@@ -1,14 +1,6 @@
 ---
-title: "ICorProfilerCallback4::ReJITCompilationStarted メソッド"
-ms.custom: 
+title: ICorProfilerCallback4::ReJITCompilationStarted メソッド
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ICorProfilerCallback4.ReJITCompilationStarted
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: 512fdd00-262a-4456-a075-365ef4133c4d
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 903db06089f7c68843b503c94483087ff9fce636
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d3e21d42340378c576bfc65750fba26a257b82cb
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="icorprofilercallback4rejitcompilationstarted-method"></a>ICorProfilerCallback4::ReJITCompilationStarted メソッド
 関数を再コンパイルする・ イン タイム (JIT) コンパイラが開始されたことをプロファイラーに通知します。  
@@ -41,7 +29,8 @@ ms.lasthandoff: 12/22/2017
 ## <a name="syntax"></a>構文  
   
 ```  
-HRESULT ReJITCompilationStarted(    [in] FunctionID functionId,  
+HRESULT ReJITCompilationStarted(   
+    [in] FunctionID functionId,  
     [in] ReJITID    rejitId,  
     [in] BOOL       fIsSafeToBlock);  
 ```  
@@ -61,16 +50,16 @@ HRESULT ReJITCompilationStarted(    [in] FunctionID functionId,
   
  プロファイラーは、場合は、2 つのスレッドでは、コールバックを行う同時に JIT 再コンパイルのコールバックのシーケンスをサポートする必要があります。 たとえば、スレッド A が`ReJITCompilationStarted`ですただし、スレッド A 呼び出し前に[ReJITCompilationFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-rejitcompilationfinished-method.md)、スレッド B 呼び出し[icorprofilercallback::exceptionsearchfunctionenter](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptionsearchfunctionenter-method.md)関数の ID を持つ。`ReJITCompilationStarted`スレッド A のコールバック関数の ID がないまだ有効であることが表示されるためへの呼び出し[ReJITCompilationFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-rejitcompilationfinished-method.md)がまだ受信されていません、プロファイラーによってです。 ただし、この場合、関数の ID は有効です。  
   
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー** : CorProf.idl、CorProf.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET framework のバージョン:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **.NET framework のバージョン:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ICorProfilerCallback インターフェイス](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)  
  [ICorProfilerCallback4 インターフェイス](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-interface.md)  
  [JITCompilationFinished メソッド](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-jitcompilationfinished-method.md)  

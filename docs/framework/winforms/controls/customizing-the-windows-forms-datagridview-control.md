@@ -1,27 +1,15 @@
 ---
-title: "Windows フォーム DataGridView コントロールのカスタマイズ"
-ms.custom: 
+title: Windows フォーム DataGridView コントロールのカスタマイズ
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - data grids [Windows Forms], customization
 - DataGridView control [Windows Forms], customization
 ms.assetid: 01ea5d4c-a736-4596-b0e9-a67a1b86e15f
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 348651784ef2b4d99679038a1875fc6650688a6d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 92bbace4d0869aca67025f1e4ac8c451fe073219
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="customizing-the-windows-forms-datagridview-control"></a>Windows フォーム DataGridView コントロールのカスタマイズ
 `DataGridView`コントロールの基本的な動作 (ルック アンド フィール) のセル、行、列と外観を調整するために使用できるいくつかのプロパティを提供します。 機能以外に特別なニーズがあるかどうか、<xref:System.Windows.Forms.DataGridViewCellStyle>クラス、ただし、またオーナー描画コントロールを実装したり、カスタムのセル、列、および行を作成してそのような機能を拡張します。  
@@ -64,6 +52,6 @@ ms.lasthandoff: 12/22/2017
  [Windows フォームの DataGridView コントロールの基本的な書式設定およびスタイル設定](../../../../docs/framework/winforms/controls/basic-formatting-and-styling-in-the-windows-forms-datagridview-control.md)  
  コントロールの基本の外観およびセル データの書式設定を変更する方法を説明するトピックを示します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [DataGridView コントロール](../../../../docs/framework/winforms/controls/datagridview-control-windows-forms.md)  
  [Windows フォーム DataGridView コントロールの列型](../../../../docs/framework/winforms/controls/column-types-in-the-windows-forms-datagridview-control.md)

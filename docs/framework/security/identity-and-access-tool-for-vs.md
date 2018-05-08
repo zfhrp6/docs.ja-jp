@@ -1,27 +1,17 @@
 ---
 title: Identity and Access Tool for Visual Studio 2012
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 87b8f8f2-4074-44fd-9fd6-08278e877390
-caps.latest.revision: "3"
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: 079c3798f17f4929124cd5cb027baa5d40a1167a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 107028b89d576b27a2559fd0ae5298c849da2c94
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="identity-and-access-tool-for-visual-studio-2012"></a>Identity and Access Tool for Visual Studio 2012
-このトピックでは、新しい Identity and Access Tool for Visual Studio 11 について説明します。 このツールは [http://go.microsoft.com/fwlink/?LinkID=245849](http://go.microsoft.com/fwlink/?LinkID=245849) からダウンロードできます。また、拡張機能マネージャーで直接 "ID" を検索して、Visual Studio 11 から直接ダウンロードすることもできます。  
+このトピックでは、新しい Identity and Access Tool for Visual Studio 11 について説明します。 このツールは、次の URL からダウンロードできます: [ http://go.microsoft.com/fwlink/?LinkID=245849 ](http://go.microsoft.com/fwlink/?LinkID=245849)またはから直接、拡張機能マネージャーで直接には、"identity"を検索して Visual Studio 11 内です。  
   
  Identity and Access Tool for Visual Studio 11 の特長を次に示します。これにより、開発時の操作性が大幅に簡素化されます。  
   
@@ -37,5 +27,5 @@ ms.lasthandoff: 12/22/2017
   
 -   ツールでは Microsoft Azure のアクセス制御サービス (ACS) の機能を使用できます。この機能には、使用するすべての ID プロバイダー (Facebook、Google、Live ID、Yahoo! などの OpenID プロバイダー、および WS-Federation プロバイダー) のチェック ボックスが用意されています。 ID プロバイダーのチェック ボックスをオンにして、[OK] をクリックし、F5 キーを押すと、アプリケーションと ACS の両方が自動的に構成され、テスト アプリケーションが ACS 対応になります。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [WIF の機能](../../../docs/framework/security/wif-features.md)

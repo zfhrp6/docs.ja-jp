@@ -1,14 +1,6 @@
 ---
-title: "FunctionLeave3WithInfo 関数"
-ms.custom: 
+title: FunctionLeave3WithInfo 関数
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - FunctionLeave3WithInfo
 api_location:
@@ -22,17 +14,13 @@ helpviewer_keywords:
 ms.assetid: 5fa68a67-ced6-41c6-a2c0-467060fd0692
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: f787b5bd78a575d862c198daeee99a0704734276
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: bd87709a9e8b0e943bcf89aa528872d465526218
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="functionleave3withinfo-function"></a>FunctionLeave3WithInfo 関数
 コントロールが、関数から返されていることをプロファイラーに通知しに渡すことができるハンドルを提供、 [icorprofilerinfo 3::getfunctionleave3info メソッド](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-getfunctionleave3info-method.md)スタック フレームおよび戻り値を取得します。  
@@ -67,16 +55,16 @@ void __stdcall FunctionLeave3WithInfo(
   
  `FunctionLeave3WithInfo`関数がマネージ コードを呼び出していない、または任意の方法で管理されているメモリの割り当てが発生する必要があります。  
   
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** CorProf.idl  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET framework のバージョン:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **.NET framework のバージョン:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [GetFunctionLeave3Info](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-getfunctionleave3info-method.md)  
  [FunctionEnter3](../../../../docs/framework/unmanaged-api/profiling/functionenter3-function.md)  
  [FunctionLeave3](../../../../docs/framework/unmanaged-api/profiling/functionleave3-function.md)  

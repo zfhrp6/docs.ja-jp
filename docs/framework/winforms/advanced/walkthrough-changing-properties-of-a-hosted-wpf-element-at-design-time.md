@@ -1,29 +1,17 @@
 ---
-title: "チュートリアル: デザイン時のホストされている WPF 要素のプロパティの変更"
-ms.custom: 
+title: 'チュートリアル: デザイン時のホストされている WPF 要素のプロパティの変更'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - WPF content [Windows Forms], changing properties at design time
 - Windows Forms, changing properties of WPF content at design time
 - WPF content [Windows Forms], hosting in Windows Forms
 - interoperability [WPF]
 ms.assetid: a1f7a90c-0bbb-4781-8c3c-8cc8bef2488d
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 46b80ee0c74da7371ac8f7a16d3430b5b753059d
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: d17273f52d0cef118b79fef03af72522f6677073
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="walkthrough-changing-properties-of-a-hosted-wpf-element-at-design-time"></a>チュートリアル: デザイン時のホストされている WPF 要素のプロパティの変更
 このチュートリアルでは、Windows フォームでホストされている Windows Presentation Foundation (WPF) コントロールのプロパティ値を変更する方法について説明します。  
@@ -90,7 +78,7 @@ ms.lasthandoff: 01/19/2018
   
      `UserControl1` のインスタンスが赤の背景になります。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.Integration.ElementHost>  
  <xref:System.Windows.Forms.Integration.WindowsFormsHost>  
  [方法: TableLayoutPanel コントロールで子コントロールを固定およびドッキングする](../../../../docs/framework/winforms/controls/how-to-anchor-and-dock-child-controls-in-a-tablelayoutpanel-control.md)  

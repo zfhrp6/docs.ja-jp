@@ -1,28 +1,16 @@
 ---
-title: "x:Reference のマークアップ拡張機能"
-ms.custom: 
+title: x:Reference のマークアップ拡張機能
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - x:Reference markup extension [XAML Services]
 - XAML [XAML Services], x:Reference Markup Extension
 - Reference markup extension [XAML Services]
 ms.assetid: 2982e68b-d26b-4aa3-826a-34c57a9c5199
-caps.latest.revision: "8"
-author: wadepickett
-ms.author: wpickett
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 03b63cb40e57223d5c66c03fb60780689cd6c925
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 960f5c0e4192df72090c1a571dfc2fc5e3fd8ba3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="xreference-markup-extension"></a>x:Reference のマークアップ拡張機能
 XAML マークアップの他の場所で宣言されているインスタンスを参照します。 要素の参照を参照`x:Name`です。  
@@ -50,9 +38,9 @@ XAML マークアップの他の場所で宣言されているインスタンス
 |`instancexName`|`x:Name`値 (またはの値、 <xref:System.Windows.Markup.RuntimeNamePropertyAttribute>-プロパティを識別) の参照先のインスタンス。|  
   
 ## <a name="remarks"></a>コメント  
- `x:Reference`WPF などの特定のフレームワークで実装された場合は要素の参照の概念の XAML 言語レベルのサポートを提供します。  
+ `x:Reference` WPF などの特定のフレームワークで実装された場合は要素の参照の概念の XAML 言語レベルのサポートを提供します。  
   
 ## <a name="xreference-and-wpf"></a>X:reference と WPF  
  WPF XAML 2006 では、要素の参照は、フレームワーク レベルの機能のによってアドレス指定<xref:System.Windows.Data.Binding.ElementName%2A>バインドします。 ほとんどの WPF アプリケーションおよびシナリオ、<xref:System.Windows.Data.Binding.ElementName%2A>バインディングを引き続き使用します。 この一般的なガイダンスの例外は、データ コンテキストまたは不可能な場合のデータ バインディングを構成するスコープの他の考慮事項があるおよびマークアップのコンパイルが関係していない、ケースにすることがあります。  
   
- `x:Reference`XAML 2009 では、コンス トラクターが定義されます。 WPF では XAML 2009 の機能を使用できますが、WPF マークアップ コンパイルされていない XAML に限定されます。 マークアップ コンパイルされた XAML、および XAML の BAML 形式は、現在、XAML 2009 言語のキーワードと機能をサポートしていません。
+ `x:Reference` XAML 2009 では、コンス トラクターが定義されます。 WPF では XAML 2009 の機能を使用できますが、WPF マークアップ コンパイルされていない XAML に限定されます。 マークアップ コンパイルされた XAML、および XAML の BAML 形式は、現在、XAML 2009 言語のキーワードと機能をサポートしていません。

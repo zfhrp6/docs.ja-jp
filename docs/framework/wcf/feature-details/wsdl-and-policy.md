@@ -1,31 +1,17 @@
 ---
 title: WSDL とポリシー
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: cea87440-3519-4640-8494-b8a2b0e88c84
-caps.latest.revision: ''
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: dd52e36199fc2412abb003d530dd5614cda8049b
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: 330a48989e9d6ca3cee0d11bf4b3fce38a25fa3d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="wsdl-and-policy"></a>WSDL とポリシー
-ここでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] WSDL 1.1、WS-Policy、および WS-PolicyAttachment の実装の詳細、および [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] によって導入される追加の WS-Policy アサーションと WSDL 1.1 拡張について説明します。  
+このトピックでは、Windows Communication Foundation (WCF) WSDL 1.1、Ws-policy、および Ws-policyattachment の実装の詳細および追加の Ws-policy アサーションと WCF で導入された WSDL 1.1 拡張について説明します。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、ここで説明する制約と説明に基づいて、W3C に提出された WS-Policy 仕様と WS-PolicyAttachment 仕様を実装しています。  
+ WCF では、制約と説明はこのドキュメントで説明されている W3C に提出された Ws-policy、および Ws-policyattachment 仕様を実装します。  
   
  このドキュメントでは、次の表に示すプレフィックスと名前空間を使用します。  
   
@@ -41,19 +27,19 @@ ms.lasthandoff: 03/26/2018
 |cdp|http://schemas.microsoft.com/net/2006/06/duplex|  
   
 ## <a name="wcf-wsdl11-extensions"></a>WCF WSDL1.1 の拡張  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、次の WSDL1.1 拡張を使用して、コントラクト セッションの要件を表します。  
+ WCF では、次の WSDL1.1 拡張機能を使用して、コントラクト セッションの要件について説明します。  
   
  wsdl:portType/wsdl:operation/@msc:isInitiating  
- xs:boolean は、この操作が [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] セッションを開始するかどうかを示します。既定値は `false` です。  
+ xs:boolean は、この操作は、WCF のセッションを開始を示します既定値は`false`します。  
   
  wsdl:portType/wsdl:operation/@msc:isTerminating  
- xs:boolean は、この操作が [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] セッションを終了するかどうかを示します。既定値は `false` です。  
+ xs:boolean は、この操作には、WCF セッションが終了したことを示します既定値は`false`します。  
   
  wsdl:portType/wsdl:operation/@msc:usingSession  
  xs:boolean は、このコントラクトでセッションを確立する必要があるかどうかを示します。  
   
 ### <a name="soap-1x-http-binding-transport-uris"></a>SOAP 1.x HTTP バインディング トランスポートの URI  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、次の URI を使用して、WSDL 1.1、SOAP 1.1 および 1.2 のバインディング拡張要素に使用するトランスポートを示します。  
+ WCF では、次の Uri を使用して、WSDL 1.1、SOAP 1.1 および SOAP 1.2 のバインディング拡張要素を使用するトランスポートを示します。  
   
 |Transport|URI|  
 |---------------|---------|  
@@ -63,7 +49,7 @@ ms.lasthandoff: 03/26/2018
 |名前付きパイプ|http://schemas.microsoft.com/soap/named-pipe|  
   
 ## <a name="policy-assertions-implemented-by-wcf"></a>WCF で実装されるポリシー アサーション  
- Web サービス仕様 (WS-*) で導入されたポリシー アサーションとこのドキュメントの他のセクションに記載しているポリシー アサーションに加えて、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では次のポリシー アサーションを実装します。  
+ Web サービス仕様で導入されたポリシー アサーションに加えて (ws-*) を WCF このドキュメントの他のセクションで説明したように、次のポリシー アサーションを実装します。  
   
 |ポリシー アサーション|ポリシー サブジェクト|説明|  
 |----------------------|--------------------|-----------------|  

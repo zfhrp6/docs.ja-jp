@@ -1,35 +1,23 @@
 ---
-title: "JSON と XML 間のマッピング"
-ms.custom: 
+title: JSON と XML 間のマッピング
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 22ee1f52-c708-4024-bbf0-572e0dae64af
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 770be9ea5327b32286de64207a3cf07bca7449c6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: db34161ad3e2f7d2c9737e6a456b27bd70c5ebfb
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="mapping-between-json-and-xml"></a>JSON と XML 間のマッピング
-<xref:System.Runtime.Serialization.Json.JsonReaderWriterFactory> によって作成されるリーダーとライターには、JSON (JavaScript Object Notation) コンテンツでの XML API が備わっています。 JSON は、JavaScript のオブジェクト リテラルのサブセットを使用してデータをエンコードします。 このファクトリによって作成されるリーダーおよびライターは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] アプリケーションが <xref:System.ServiceModel.Channels.WebMessageEncodingBindingElement> または <xref:System.ServiceModel.WebHttpBinding> を使用して JSON コンテンツを送信または受信するときにも使用されます。  
+<xref:System.Runtime.Serialization.Json.JsonReaderWriterFactory> によって作成されるリーダーとライターには、JSON (JavaScript Object Notation) コンテンツでの XML API が備わっています。 JSON は、JavaScript のオブジェクト リテラルのサブセットを使用してデータをエンコードします。 リーダーとライターがこのファクトリによって生成されるも使用するときに JSON コンテンツが使用する Windows Communication Foundation (WCF) アプリケーションによって送信または受信、<xref:System.ServiceModel.Channels.WebMessageEncodingBindingElement>または<xref:System.ServiceModel.WebHttpBinding>です。  
   
  JSON リーダーは JSON コンテンツで初期化されると、XML インスタンスで動作するテキストの XML リーダーと同じ方法で動作します。 テキストの XML リーダーでの一連の呼び出しによって特定の XML インスタンスが生成されると、JSON ライターは JSON コンテンツを書き出します。 このトピックでは、高度なシナリオで使用するために、この XML のインスタンスと JSON コンテンツ間のマッピングについて説明します。  
   
- 内部的には、JSON は [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] によって処理される際に XML 情報セットとして表されます。 マッピングは論理上の処理であるため、通常はこのような内部表現を考慮する必要はありません。JSON は通常、メモリで物理的に XML に変換されたり、XML から JSON に変換されたりすることはありません。 マッピングとは、XML API を使用して JSON コンテンツにアクセスすることを意味します。  
+ 内部的には、JSON は、WCF によって処理されるときに、XML infoset として表されます。 マッピングは論理上の処理であるため、通常はこのような内部表現を考慮する必要はありません。JSON は通常、メモリで物理的に XML に変換されたり、XML から JSON に変換されたりすることはありません。 マッピングとは、XML API を使用して JSON コンテンツにアクセスすることを意味します。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] で JSON を使用する場合、通常のシナリオでは <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> 動作、または該当する場合は <xref:System.ServiceModel.Description.WebScriptEnablingBehavior> 動作により、<xref:System.ServiceModel.Description.WebHttpBehavior> が自動的にプラグインされます。 <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> は、JSON と XML 情報セット間のマッピングを認識し、直接 JSON を処理しているかのように動作します。 XML が次のマッピングに従うという了解の下に、任意の XML リーダーまたはライターで <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> を使用できます。  
+ WCF は、JSON を使用している場合に、通常のシナリオは、<xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>によって自動的に接続されて、<xref:System.ServiceModel.Description.WebScriptEnablingBehavior>動作、または、<xref:System.ServiceModel.Description.WebHttpBehavior>適切な場合に動作します。 <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> は、JSON と XML 情報セット間のマッピングを認識し、直接 JSON を処理しているかのように動作します。 XML が次のマッピングに従うという了解の下に、任意の XML リーダーまたはライターで <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> を使用できます。  
   
- 高度なシナリオでは、次のマッピングへの直接アクセスが必要になることがあります。 このようなシナリオが生じるのは、<xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> に依存することなく、独自の方法で JSON のシリアル化および逆シリアル化を行うとき、または JSON を含むメッセージに対して直接 <xref:System.ServiceModel.Channels.Message> 型を処理するときです。 JSON と XML 間のマッピングは、メッセージ ログにも使用されます。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のメッセージ ログ機能を使用する場合、次のセクションで説明するマッピングに従って、JSON メッセージが XML としてログに記録されます。  
+ 高度なシナリオでは、次のマッピングへの直接アクセスが必要になることがあります。 このようなシナリオが生じるのは、<xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> に依存することなく、独自の方法で JSON のシリアル化および逆シリアル化を行うとき、または JSON を含むメッセージに対して直接 <xref:System.ServiceModel.Channels.Message> 型を処理するときです。 JSON と XML 間のマッピングは、メッセージ ログにも使用されます。 メッセージ ログ機能を使用して、WCF では、次のセクションで説明するマッピングに従って、JSON メッセージが XML として記録されます。  
   
  マッピングの概念を明確にするために、次に JSON ドキュメントの例を示します。  
   
@@ -46,7 +34,7 @@ ms.lasthandoff: 12/22/2017
 </root>  
 ```  
   
- また、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] によってこの例の JSON メッセージが取得されてログに記録される場合は、先行ログの XML フラグメントを参照します。  
+ さらに、JSON メッセージの例では、WCF によって受信され、ログに記録は場合、先行ログの XML フラグメントが表示されます。  
   
 ## <a name="mapping-between-json-and-the-xml-infoset"></a>JSON と XML 情報セット間のマッピング  
  正式には、マッピングは JSON の間で説明した[RFC 4627](http://go.microsoft.com/fwlink/?LinkId=98808) (を除く厳密でないと特定の特定の制限を追加するその他の制限) XML 情報セット (およびいないテキスト形式の XML) として記載[XML について設定](http://go.microsoft.com/fwlink/?LinkId=98809)です。 このトピックの定義を参照して*情報項目*および [角かっこで囲んで] フィールドです。  
@@ -105,7 +93,7 @@ ms.lasthandoff: 12/22/2017
   
 -   後述の Data Contract Name Attribute ("__type")。 この属性は、JSON Type Attribute が存在し、その [normalized value] が "object" であるときにのみ存在します。 この属性は、派生型がシリアル化されたり、基本型が要求されたりするポリモーフィックな場合などに、`DataContractJsonSerializer` によりデータ コントラクトの型情報を保持するために使用されます。 `DataContractJsonSerializer` を使用していなければ、この属性はほとんどの場合に無視されます。  
   
--   XML 情報セットの仕様に規定されるように、[in-scope namespaces] には、"xml" から "http://www.w3.org/XML/1998/namespace" へのバインディングが含まれます。  
+-   [スコープの名前空間] を"xml"のバインドを含む"http://www.w3.org/XML/1998/namespace"infoset 仕様に規定されるようにします。  
   
 -   [children]、[attributes]、および[in-scope namespaces] は、あらかじめ指定した項目以外の項目を持つことができず、[namespace attributes] はメンバーを持つことができませんが、JSON からマップされた XML を読み取るときには、この事実に依存しないでください。  
   
@@ -209,7 +197,7 @@ ms.lasthandoff: 12/22/2017
  `{"myLocalName1":"myValue1","myLocalName2":2,"myLocalName3":{"myNestedName1":true,"myNestedName2":null}}`  
   
 > [!NOTE]
->  上記のマッピングには、XML エンコーディングの手順がありません。 したがって、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、キー名のすべての文字が XML 要素名の有効な文字である JSON ドキュメントのみをサポートします。 たとえば、JSON ドキュメント {"<":"a"} は、< が XML 要素の有効な名前ではないため、サポートされません。  
+>  上記のマッピングには、XML エンコーディングの手順がありません。 そのため、WCF は、キー名のすべての文字が XML 要素の名前に有効な文字を JSON ドキュメントのみをサポートします。 たとえば、JSON ドキュメント {"<":"a"} は、< が XML 要素の有効な名前ではないため、サポートされません。  
   
  逆に、XML では有効であり、JSON では有効でない文字は、上記のマッピングに JSON のエスケープ/エスケープ解除の手順が含まれるため、問題が生じません。  
   
@@ -241,7 +229,7 @@ ms.lasthandoff: 12/22/2017
   
  `["myValue1",2,[true,null]]`  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Runtime.Serialization.Json.JsonReaderWriterFactory>  
  <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>  
  [スタンドアロン JSON のシリアル化](../../../../docs/framework/wcf/feature-details/stand-alone-json-serialization.md)

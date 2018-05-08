@@ -1,13 +1,6 @@
 ---
-title: "方法 : ライン キャップを使用した直線を描画する"
-ms.custom: 
+title: '方法 : ライン キャップを使用した直線を描画する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,19 +10,14 @@ helpviewer_keywords:
 - pens [Windows Forms], drawing lines
 - drawing lines [Windows Forms], line caps
 ms.assetid: eb68c3e1-c400-4886-8a04-76978a429cb6
-caps.latest.revision: "16"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 4048757e11724aa1e175d8b18c47f48d22d807e4
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: be492f2317d4677776cc9f89f546c935d271019b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-draw-a-line-with-line-caps"></a>方法 : ライン キャップを使用した直線を描画する
-ライン キャップと呼ばれるいくつかの図形のいずれかでは、開始または行の末尾を描画できます。 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]いくつかの線端、ラウンド、正方形、ひし形の矢印などをサポートしています。  
+ライン キャップと呼ばれるいくつかの図形のいずれかでは、開始または行の末尾を描画できます。 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] いくつかの線端、ラウンド、正方形、ひし形の矢印などをサポートしています。  
   
 ## <a name="example"></a>例  
  ライン キャップ (start cap) の行、行 (end cap) の末尾または破線の破線 (dash cap) の開始を指定することができます。  
@@ -45,7 +33,7 @@ ms.lasthandoff: 12/22/2017
   
 -   Windows フォームを作成し、処理、フォームの<xref:System.Windows.Forms.Control.Paint>イベント。 コード例を貼り付け、<xref:System.Windows.Forms.Control.Paint>イベント ハンドラーを渡す`e`として<xref:System.Windows.Forms.PaintEventArgs>です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Drawing.Pen?displayProperty=nameWithType>  
  <xref:System.Drawing.Drawing2D.LineCap?displayProperty=nameWithType>  
  [Windows フォームにおけるグラフィックスと描画](../../../../docs/framework/winforms/advanced/graphics-and-drawing-in-windows-forms.md)  

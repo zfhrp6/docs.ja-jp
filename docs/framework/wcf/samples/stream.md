@@ -1,24 +1,12 @@
 ---
-title: "ストリーム"
-ms.custom: 
+title: ストリーム
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 58a3db81-20ab-4627-bf31-39d30b70b4fe
-caps.latest.revision: "22"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ab56dd7938f2c7594627b54b4cb61b4e0f6b28fe
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 96b77d0135a4dac1dcb8406a1b9a1372d0c4a35d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="stream"></a>ストリーム
 このストリーム サンプルでは、ストリーミング転送モードの通信を使用する方法を示します。 サービスは、ストリームを送受信する複数の操作を公開します。 このサンプルは自己ホスト型です。 クライアントとサービスはどちらもコンソール プログラムです。  
@@ -26,7 +14,7 @@ ms.lasthandoff: 12/22/2017
 > [!NOTE]
 >  このサンプルのセットアップ手順とビルド手順については、このトピックの最後を参照してください。  
   
- [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] では、2 つの転送モード (バッファまたはストリーミング) で通信できます。 既定のバッファー転送モードでは、受信側がメッセージを読むためにはメッセージを完全に送信する必要があります。 ストリーミング転送モードでは、メッセージを完全に送信しなくても、受信側がメッセージの処理を開始できます。 ストリーミング モードは、渡される情報が長い場合、または連続的に処理する場合に役立ちます。 ストリーミング モードは、メッセージが大きすぎてすべてをバッファーできない場合にも役立ちます。  
+ Windows Communication Foundation (WCF) が 2 つの転送モードで通信できます — バッファまたはストリーミングします。 既定のバッファー転送モードでは、受信側がメッセージを読むためにはメッセージを完全に送信する必要があります。 ストリーミング転送モードでは、メッセージを完全に送信しなくても、受信側がメッセージの処理を開始できます。 ストリーミング モードは、渡される情報が長い場合、または連続的に処理する場合に役立ちます。 ストリーミング モードは、メッセージが大きすぎてすべてをバッファーできない場合にも役立ちます。  
   
 ## <a name="streaming-and-service-contracts"></a>ストリーミングとサービス コントラクト  
  サービス コントラクトを設計する際は、ストリーミングを考慮します。 操作により大量のデータが受信されたり返されたりする場合、このデータをストリーミングして、入力または出力メッセージのバッファによりメモリの使用率が高くなるのを回避することを検討してください。 データをストリーミングするには、メッセージ内のパラメータが、データを保持するパラメータだけになるようにします。 たとえば、入力メッセージをストリーミングする場合、厳密に 1 つの入力パラメーターが操作に含まれている必要があります。 同様に、出力メッセージをストリーミングする場合、厳密に 1 つの出力パラメーターまたは戻り値が操作に含まれている必要があります。 いずれの場合も、パラメータまたは戻り値の型は `Stream`、`Message`、または `IXmlSerializable` のいずれかである必要があります。 このストリーミングのサンプルに使用されているサービス コントラクトを次に示します。  
@@ -192,8 +180,8 @@ Press <ENTER> to terminate client.
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
+>  このディレクトリが存在しない場合に、 [Windows Communication Foundation (WCF) および .NET Framework 4 向けの Windows Workflow Foundation (WF) サンプル](http://go.microsoft.com/fwlink/?LinkId=150780)すべて Windows Communication Foundation (WCF) をダウンロードして[!INCLUDE[wf1](../../../../includes/wf1-md.md)]サンプルです。 このサンプルは、次のディレクトリに格納されます。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Service\Stream`  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目

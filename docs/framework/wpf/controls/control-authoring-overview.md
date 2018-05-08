@@ -1,13 +1,6 @@
 ---
-title: "コントロールの作成の概要"
-ms.custom: 
+title: コントロールの作成の概要
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - controls [WPF], authoring overview
 - authoring overview for controls [WPF]
 ms.assetid: 3d864748-cff0-4e63-9b23-d8e5a635b28f
-caps.latest.revision: "32"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: f9290c249ed85ffc1fe98878daf2c2f0777786f5
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: a6c2c796819924cdbd15d6eefffe10a607bad9bc
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="control-authoring-overview"></a>コントロールの作成の概要
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] コントロール モデルの機能拡張により、新しいコントロールを作成する必要性が大幅に削減されます。 ただし、場合によっては、カスタム コントロールを作成する必要があります。 このトピックでは、カスタム コントロールを作成する必要性を最小限に抑える機能と、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] のさまざまなコントロール作成モデルについて説明します。 また、新しいコントロールを作成する方法も示します。  
@@ -83,7 +71,7 @@ ms.lasthandoff: 01/19/2018
 ### <a name="deriving-from-frameworkelement"></a>FrameworkElement からの派生  
  派生したコントロール<xref:System.Windows.Controls.UserControl>または<xref:System.Windows.Controls.Control>既存の要素の作成に依存します。 多くのシナリオでは、これは、適切な解決のためから継承する任意のオブジェクト<xref:System.Windows.FrameworkElement>にすることができます、<xref:System.Windows.Controls.ControlTemplate>です。 しかし、場合によっては、単純な要素コンポジションでは、コントロールの外観に必要な機能を実現できないことがあります。 このようなシナリオに基づいて、コンポーネント<xref:System.Windows.FrameworkElement>最適な選択肢です。  
   
- 構築するための 2 つの標準的な方法がある<xref:System.Windows.FrameworkElement>-コンポーネントをベース: レンダリングとカスタム要素のコンポジションをダイレクトします。 直接レンダリングでは、オーバーライドでは、<xref:System.Windows.UIElement.OnRender%2A>メソッドの<xref:System.Windows.FrameworkElement>を提供する<xref:System.Windows.Media.DrawingContext>コンポーネント ビジュアルを明示的に定義する操作。 これで使用されるメソッド<xref:System.Windows.Controls.Image>と<xref:System.Windows.Controls.Border>です。 カスタム要素の合成では、型のオブジェクトを使用して<xref:System.Windows.Media.Visual>コンポーネントの外観を構成します。 例については、「[DrawingVisual オブジェクトの使用](../../../../docs/framework/wpf/graphics-multimedia/using-drawingvisual-objects.md)」を参照してください。 <xref:System.Windows.Controls.Primitives.Track>内のコントロールの例は、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]カスタム要素コンポジションを使用します。 同じコントロールでダイレクト レンダリングとカスタム要素コンポジションを混在させることもできます。  
+ 構築するための 2 つの標準的な方法がある<xref:System.Windows.FrameworkElement>-コンポーネントをベース: レンダリングとカスタム要素のコンポジションをダイレクトします。 直接レンダリングでは、オーバーライドでは、<xref:System.Windows.UIElement.OnRender%2A>メソッドの<xref:System.Windows.FrameworkElement>を提供する<xref:System.Windows.Media.DrawingContext>コンポーネント ビジュアルを明示的に定義する操作。 これで使用されるメソッド<xref:System.Windows.Controls.Image>と<xref:System.Windows.Controls.Border>です。 カスタム要素の合成では、型のオブジェクトを使用して<xref:System.Windows.Media.Visual>コンポーネントの外観を構成します。 例については、「[DrawingVisual オブジェクトの使用](../../../../docs/framework/wpf/graphics-multimedia/using-drawingvisual-objects.md)」を参照してください。 <xref:System.Windows.Controls.Primitives.Track> 内のコントロールの例は、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]カスタム要素コンポジションを使用します。 同じコントロールでダイレクト レンダリングとカスタム要素コンポジションを混在させることもできます。  
   
 #### <a name="benefits-of-deriving-from-frameworkelement"></a>FrameworkElement からの派生の利点  
  派生することを検討してください<xref:System.Windows.FrameworkElement>以下のいずれかの場合。  
@@ -127,7 +115,7 @@ ms.lasthandoff: 01/19/2018
   
 -   メソッドを定義する、<xref:System.Windows.CoerceValueCallback>という`CoerceValue`です。 `CoerceValue` によって、`Value` は `MinValue` 以上で `MaxValue` 以下になります。  
   
--   メソッドを定義する、 <xref:System.Windows.PropertyChangedCallback>、名前付き`OnValueChanged`します。 `OnValueChanged`作成、<xref:System.Windows.RoutedPropertyChangedEventArgs%601>オブジェクトを発生させる準備、`ValueChanged`ルーティングされたイベント。 ルーティング イベントについては、次のセクションで説明します。  
+-   メソッドを定義する、 <xref:System.Windows.PropertyChangedCallback>、名前付き`OnValueChanged`します。 `OnValueChanged` 作成、<xref:System.Windows.RoutedPropertyChangedEventArgs%601>オブジェクトを発生させる準備、`ValueChanged`ルーティングされたイベント。 ルーティング イベントについては、次のセクションで説明します。  
   
  [!code-csharp[UserControlNumericUpDown#DependencyProperty](../../../../samples/snippets/csharp/VS_Snippets_Wpf/UserControlNumericUpDown/CSharp/NumericUpDown.xaml.cs#dependencyproperty)]
  [!code-vb[UserControlNumericUpDown#DependencyProperty](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/UserControlNumericUpDown/visualbasic/numericupdown.xaml.vb#dependencyproperty)]  
@@ -195,7 +183,7 @@ ms.lasthandoff: 01/19/2018
   
 -   `Set` *PropertyName* および `Get` *PropertyName* という名前の `public``static` CLR メソッドのペアを実装します。 どちらの方法はから派生するクラスを受け入れる必要があります<xref:System.Windows.DependencyProperty>の最初の引数として。 また、`Set` *PropertyName* メソッドでは、プロパティの登録データ型と同じ型の引数も受け取ります。 `Get` *PropertyName*メソッドでは、同じ型の値を返す必要があります。 `Set` *PropertyName*メソッドがない場合、プロパティは読み取り専用としてマークされます。  
   
--   `Set`*PropertyName*と`Get` *PropertyName*に直接ルーティングする必要があります、<xref:System.Windows.DependencyObject.GetValue%2A>と<xref:System.Windows.DependencyObject.SetValue%2A>オブジェクトのメソッド、対象の依存関係に、それぞれします。 デザイナーが添付プロパティにアクセスするには、メソッド ラッパー経由で呼び出す場合もあれば、対象の依存関係オブジェクトを直接呼び出す場合もあります。  
+-   `Set` *PropertyName*と`Get` *PropertyName*に直接ルーティングする必要があります、<xref:System.Windows.DependencyObject.GetValue%2A>と<xref:System.Windows.DependencyObject.SetValue%2A>オブジェクトのメソッド、対象の依存関係に、それぞれします。 デザイナーが添付プロパティにアクセスするには、メソッド ラッパー経由で呼び出す場合もあれば、対象の依存関係オブジェクトを直接呼び出す場合もあります。  
   
  添付プロパティの詳細については、「[添付プロパティの概要](../../../../docs/framework/wpf/advanced/attached-properties-overview.md)」を参照してください。  
   
@@ -279,7 +267,7 @@ ms.lasthandoff: 01/19/2018
  [!code-csharp[CustomControlNumericUpDown#ThemesSection](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CustomControlNumericUpDown/CSharp/CustomControlLibrary/Properties/AssemblyInfo.cs#themessection)]
  [!code-vb[CustomControlNumericUpDown#ThemesSection](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/CustomControlNumericUpDown/visualbasic/customcontrollibrary/my project/assemblyinfo.vb#themessection)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [WPF デザイナー](http://msdn.microsoft.com/library/c6c65214-8411-4e16-b254-163ed4099c26)  
  [WPF におけるパッケージの URI](../../../../docs/framework/wpf/app-development/pack-uris-in-wpf.md)  
  [コントロールのカスタマイズ](../../../../docs/framework/wpf/controls/control-customization.md)

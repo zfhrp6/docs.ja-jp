@@ -1,13 +1,6 @@
 ---
-title: "方法 : パネルの OnRender メソッドをオーバーライドする"
-ms.custom: 
+title: '方法 : パネルの OnRender メソッドをオーバーライドする'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -21,16 +14,11 @@ helpviewer_keywords:
 - OnRender method [WPF], overriding
 - Panel control [WPF], overriding OnRender method
 ms.assetid: 57397834-a085-4e36-90ab-416fad98f341
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 958595cdfa521b372270d6283c7134ef0ba0ef79
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e591bc195d3b0ba58002bda42ddb3e9ed35d312e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-override-the-panel-onrender-method"></a>方法 : パネルの OnRender メソッドをオーバーライドする
 この例は、オーバーライドする方法を示します、<xref:System.Windows.Controls.Panel.OnRender%2A>メソッドの<xref:System.Windows.Controls.Panel>レイアウト要素をカスタムのグラフィック効果を追加するためにします。  
@@ -41,7 +29,7 @@ ms.lasthandoff: 12/22/2017
  [!code-csharp[LightWeightCustomPanel#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/LightWeightCustomPanel/CSharp/OffsetPanel.cs#1)]
  [!code-vb[LightWeightCustomPanel#1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/LightWeightCustomPanel/visualbasic/offsetpanel.vb#1)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Controls.Panel>  
  [パネルの概要](../../../../docs/framework/wpf/controls/panels-overview.md)  
  [カスタムの放射状パネルのサンプル](http://go.microsoft.com/fwlink/?LinkID=159982)  

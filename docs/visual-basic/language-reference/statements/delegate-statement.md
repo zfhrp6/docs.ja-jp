@@ -1,24 +1,17 @@
 ---
 title: Delegate ステートメント
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Delegate
 helpviewer_keywords:
 - delegate keyword [Visual Basic]
 - Delegate statement [Visual Basic]
 ms.assetid: f799c518-0817-40cc-ad0b-4da846fdba57
-caps.latest.revision: 27
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 7e79a261f74cbc7aa067af63629e31bedf65d163
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: fb9d8b2c2647ba8fd3b7cee4781f1574b6679b0f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="delegate-statement"></a>Delegate ステートメント
 デリゲートを宣言するために使用します。 デリゲートは、参照型を参照する、`Shared`メソッド、型またはオブジェクトのインスタンス メソッドです。 このデリゲート クラスのインスタンスを作成するパラメーターと戻り値の型が一致するプロシージャを使用できます。 プロシージャし、後で呼び出せるデリゲート インスタンスの作成。  
@@ -34,14 +27,14 @@ ms.lasthandoff: 11/21/2017
   
 |用語|定義|  
 |---|---|  
-|`attrlist`|省略可能です。 このデリゲートに適用される属性の一覧です。 複数の属性を指定するときは、コンマで区切ります。 囲む必要があります、[属性リスト](../../../visual-basic/language-reference/statements/attribute-list.md)山かっこ ("`<`「と」`>`") です。|  
-|`accessmodifier`|省略可能です。 どのようなコードからアクセスできるデリゲートを指定します。 次のいずれかの値を指定します。<br /><br /> -   [パブリック](../../../visual-basic/language-reference/modifiers/public.md)です。 デリゲートを宣言した要素にアクセスするすべてのコードにアクセスできます。<br />-   [保護されている](../../../visual-basic/language-reference/modifiers/protected.md)です。 デリゲートのクラスまたは派生クラス内でコードにのみアクセスできます。<br />-   [フレンド](../../../visual-basic/language-reference/modifiers/friend.md)です。 デリゲートを同じアセンブリ内のコードのみにアクセスできます。<br />-   [プライベート](../../../visual-basic/language-reference/modifiers/private.md)です。 デリゲートを宣言する要素内でコードからのみアクセスできます。<br /><br /> 指定できます`Protected Friend`デリゲートのクラス、派生クラスでは、または同じアセンブリ内のコードからのアクセスを有効にします。|  
-|`Shadows`|省略可能です。 このデリゲートを宣言し、同じ名前を持つプログラミング要素、または基底クラスのオーバー ロードされる要素のセットを非表示にすることを示します。 宣言された要素は、他の任意の種類の要素でシャドウできます。<br /><br /> シャドウされた要素は、その要素をシャドウする派生クラスからは使用できません。ただし、シャドウする要素がアクセスできない要素の場合は例外です。 たとえば場合、`Private`要素をシャドウする基本クラスの要素では、コードへのアクセス許可がない、`Private`要素は、基底クラス要素を代わりにアクセスします。|  
+|`attrlist`|任意。 このデリゲートに適用される属性の一覧です。 複数の属性を指定するときは、コンマで区切ります。 囲む必要があります、[属性リスト](../../../visual-basic/language-reference/statements/attribute-list.md)山かっこ ("`<`「と」`>`") です。|  
+|`accessmodifier`|任意。 どのようなコードからアクセスできるデリゲートを指定します。 次のいずれかの値を指定します。<br /><br /> -   [パブリック](../../../visual-basic/language-reference/modifiers/public.md)です。 デリゲートを宣言した要素にアクセスするすべてのコードにアクセスできます。<br />-   [保護されている](../../../visual-basic/language-reference/modifiers/protected.md)です。 デリゲートのクラスまたは派生クラス内でコードにのみアクセスできます。<br />-   [フレンド](../../../visual-basic/language-reference/modifiers/friend.md)です。 デリゲートを同じアセンブリ内のコードのみにアクセスできます。<br />-   [プライベート](../../../visual-basic/language-reference/modifiers/private.md)です。 デリゲートを宣言する要素内でコードからのみアクセスできます。<br /><br /> 指定できます`Protected Friend`デリゲートのクラス、派生クラスでは、または同じアセンブリ内のコードからのアクセスを有効にします。|  
+|`Shadows`|任意。 このデリゲートを宣言し、同じ名前を持つプログラミング要素、または基底クラスのオーバー ロードされる要素のセットを非表示にすることを示します。 宣言された要素は、他の任意の種類の要素でシャドウできます。<br /><br /> シャドウされた要素は、その要素をシャドウする派生クラスからは使用できません。ただし、シャドウする要素がアクセスできない要素の場合は例外です。 たとえば場合、`Private`要素をシャドウする基本クラスの要素では、コードへのアクセス許可がない、`Private`要素は、基底クラス要素を代わりにアクセスします。|  
 |`Sub`|省略可能、ただしか`Sub`または`Function`表示する必要があります。 代理人としてこのプロシージャを宣言`Sub`値を返さないプロシージャです。|  
 |`Function`|省略可能、ただしか`Sub`または`Function`表示する必要があります。 代理人としてこのプロシージャを宣言`Function`値を返すプロシージャです。|  
-|`name`|必須です。 デリゲート型の名前標準変数の名前付け規則に従います。|  
-|`typeparamlist`|省略可能です。 このデリゲートの型パラメーターの一覧です。 複数の型パラメーターは、コンマで区切られます。 必要に応じて、型パラメーターごとに宣言できますバリアントを使用して`In`と`Out`ジェネリック修飾子です。 囲む必要があります、[型リスト](../../../visual-basic/language-reference/statements/type-list.md)かっこで囲まれたを導入し、`Of`キーワード。|  
-|`parameterlist`|省略可能です。 呼び出されると、プロシージャに渡されるパラメーターの一覧です。 囲む必要があります、[パラメーター リスト](../../../visual-basic/language-reference/statements/parameter-list.md)かっこ内に示します。|  
+|`name`|必須。 デリゲート型の名前標準変数の名前付け規則に従います。|  
+|`typeparamlist`|任意。 このデリゲートの型パラメーターの一覧です。 複数の型パラメーターは、コンマで区切られます。 必要に応じて、型パラメーターごとに宣言できますバリアントを使用して`In`と`Out`ジェネリック修飾子です。 囲む必要があります、[型リスト](../../../visual-basic/language-reference/statements/type-list.md)かっこで囲まれたを導入し、`Of`キーワード。|  
+|`parameterlist`|任意。 呼び出されると、プロシージャに渡されるパラメーターの一覧です。 囲む必要があります、[パラメーター リスト](../../../visual-basic/language-reference/statements/parameter-list.md)かっこ内に示します。|  
 |`type`|指定するかどうかは必須、`Function`プロシージャです。 戻り値のデータ型。|  
   
 ## <a name="remarks"></a>コメント  

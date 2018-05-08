@@ -1,10 +1,6 @@
 ---
-title: "方法 : LineShape コントロールを使用して線を描画する (Visual Studio)"
+title: '方法 : LineShape コントロールを使用して線を描画する (Visual Studio)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -12,14 +8,11 @@ helpviewer_keywords:
 - LineShape control [Visual Basic]
 - lines, drawing
 ms.assetid: 83e71b4e-aa76-4f9b-b547-8704309fd1e5
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 42e7f01a57a514ad1dc64e3d4451ce38ea199f93
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: 5e1a837578aab4b4609a58ffee46406b022b8f97
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-draw-lines-with-the-lineshape-control-visual-studio"></a>方法 : LineShape コントロールを使用して線を描画する (Visual Studio)
 使用することができます、<xref:Microsoft.VisualBasic.PowerPacks.LineShape>デザイン時および実行時の両方のフォームまたはコンテナー、水平、垂直、または斜めの線を描画するコントロール。  
@@ -57,7 +50,7 @@ using Microsoft.VisualBasic.PowerPacks;
      [!code-csharp[VbPowerPacksLine#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/CSharp/how-to-draw-lines-with-the-lineshape-control-visual-studio_1.cs)]
      [!code-vb[VbPowerPacksLine#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/VisualBasic/how-to-draw-lines-with-the-lineshape-control-visual-studio_1.vb)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:Microsoft.VisualBasic.PowerPacks.LineShape>  
  [ライン コントロールとシェイプ コントロールの概要](../../../visual-basic/developing-apps/windows-forms/introduction-to-the-line-and-shape-controls-visual-studio.md)  
  [方法: OvalShape コントロールおよび RectangleShape コントロールを使用して図形を描画する](../../../visual-basic/developing-apps/windows-forms/how-to-draw-shapes-with-the-ovalshape-and-rectangleshape-controls.md)

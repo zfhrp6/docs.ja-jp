@@ -1,14 +1,6 @@
 ---
-title: "CorDebugDecodeEventFlagsWindows 列挙体"
-ms.custom: 
+title: CorDebugDecodeEventFlagsWindows 列挙体
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - CorDebugDecodeEventFlagsWindows
 api_location:
@@ -18,17 +10,13 @@ api_type:
 ms.assetid: aa6cf962-30ae-4cfd-8895-826deeb46a54
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: cbbc275fd87ab9059959c2b770060ae1e11daa9a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: fa8bbcf4d8e5aadee6a4250d23842187d6c2af09
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="cordebugdecodeeventflagswindows-enumeration"></a>CorDebugDecodeEventFlagsWindows 列挙体
 Windows プラットフォームのデバッグ イベントに関する追加情報を提供します。  
@@ -53,14 +41,14 @@ typedef enum CorDebugDecodeEventFlagsWindows {
 > [!NOTE]
 >  この列挙体は .NET ネイティブのデバッグ シナリオのみで使用することを目的としています。  
   
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET framework のバージョン:**[!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
+ **.NET framework のバージョン:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [列挙型のデバッグ](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)

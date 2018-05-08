@@ -1,14 +1,6 @@
 ---
-title: "IHostMemoryManager インターフェイス"
-ms.custom: 
+title: IHostMemoryManager インターフェイス
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - IHostMemoryManager
 api_location:
@@ -22,17 +14,13 @@ helpviewer_keywords:
 ms.assetid: a945d439-3b34-4aa4-b575-8413dd7806ce
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: b39a43874bc1808928f21e0a35638aae9a99ca8e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d3edae4cb112f46643734c5f1612d9df36ad47e9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ihostmemorymanager-interface"></a>IHostMemoryManager インターフェイス
 標準の Win32 仮想メモリ関数を使用する代わりに、共通言語ランタイム (CLR) はホストを介して仮想メモリの要求を行うことができるようにするメソッドを提供します。  
@@ -53,17 +41,17 @@ ms.lasthandoff: 12/22/2017
 |[VirtualQuery メソッド](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-virtualquery-method.md)|対応する Win32 関数では、呼び出し元プロセスの仮想アドレス空間内のページの範囲に関する情報を取得する論理ラッパーとして機能します。|  
   
 ## <a name="remarks"></a>コメント  
- `IHostMemoryManager`また、CLR ホストによって報告された、ヒープのメモリ要求を行うと、プロセスでは、メモリ不足のレベルを取得するためのポインターを取得するためのメソッドを提供します。  
+ `IHostMemoryManager` また、CLR ホストによって報告された、ヒープのメモリ要求を行うと、プロセスでは、メモリ不足のレベルを取得するためのポインターを取得するためのメソッドを提供します。  
   
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** MSCorEE.h  
   
  **ライブラリ:** MSCorEE.dll にリソースとして含まれています。  
   
- **.NET framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [IHostMalloc インターフェイス](../../../../docs/framework/unmanaged-api/hosting/ihostmalloc-interface.md)  
  [ホスト インターフェイス](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)

@@ -1,14 +1,6 @@
 ---
 title: '方法 : WSFederationHttpBinding を作成する'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,20 +8,14 @@ helpviewer_keywords:
 - WCF, federation
 - federation
 ms.assetid: e54897d7-aa6c-46ec-a278-b2430c8c2e10
-caps.latest.revision: 16
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: f43b95df73b35b7dc7c34c2e16364dfa7bbdbee4
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 41fa1e7c0430f4723123b03f04d4fc74f9bfc589
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-a-wsfederationhttpbinding"></a>方法 : WSFederationHttpBinding を作成する
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]、<xref:System.ServiceModel.WSFederationHttpBinding>クラス ([\<wsFederationHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md)構成で) フェデレーション サービスを公開するためのメカニズムを提供します。 これはクライアントに対して認証を要求するサービスであって、認証にはセキュリティ トークン サービスが発行するセキュリティ トークンが必要となります。 このトピックでは、必要な処理をコード中に埋め込む形、あるいは構成ファイルに必要な記述を加える形で、<xref:System.ServiceModel.WSFederationHttpBinding> の設定をする手順を説明します。 バインディングを作成すると、エンドポイントを設定してこのバインディングを使用できるようになります。  
+Windows Communication Foundation (WCF) で、<xref:System.ServiceModel.WSFederationHttpBinding>クラス ([\<wsFederationHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md)構成で) フェデレーション サービスを公開するためのメカニズムを提供します。 これはクライアントに対して認証を要求するサービスであって、認証にはセキュリティ トークン サービスが発行するセキュリティ トークンが必要となります。 このトピックでは、必要な処理をコード中に埋め込む形、あるいは構成ファイルに必要な記述を加える形で、<xref:System.ServiceModel.WSFederationHttpBinding> の設定をする手順を説明します。 バインディングを作成すると、エンドポイントを設定してこのバインディングを使用できるようになります。  
   
  基本的な手順の概略を以下に示します。  
   
@@ -38,7 +24,7 @@ ms.lasthandoff: 04/30/2018
     > [!NOTE]
     >  <xref:System.ServiceModel.WSFederationHttpBinding> には、セキュリティ モードとして `None` を指定することもできます。 このモードは安全性が低く、デバッグ目的での使用のみを目的としています。 サービス エンドポイントが展開された場合、<xref:System.ServiceModel.WSFederationHttpBinding>そのセキュリティ モードを設定`None`、結果として得られるクライアントのバインディング (によって生成された、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)) は、<<!--zz xref:System.ServiceModel.WsHttpBinding --> `xref:System.ServiceModel.WsHttpBinding`> のセキュリティ モードを使って`None`です。  
   
-     `WSFederationHttpBinding` の場合、システムに組み込まれている他のバインディングとは違って、クライアント資格情報の種類を選択する必要はありません。 これは、常に、発行されたトークンを資格情報として使うからです。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は指定された発行者からトークンを取得し、これをサービスに提示することによりクライアント認証を行います。  
+     `WSFederationHttpBinding` の場合、システムに組み込まれている他のバインディングとは違って、クライアント資格情報の種類を選択する必要はありません。 これは、常に、発行されたトークンを資格情報として使うからです。 WCF では、指定した発行者からトークンを取得し、そのトークンをクライアントの認証にサービスを提供します。  
   
 2.  フェデレーション クライアントの場合、<xref:System.ServiceModel.FederatedMessageSecurityOverHttp.IssuerAddress%2A> プロパティの値として、セキュリティ トークン サービスの URL を指定します。 <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.IssuerBinding%2A> としてバインディングを指定し、セキュリティ トークン サービスとの通信に使用します。  
   
@@ -65,7 +51,7 @@ ms.lasthandoff: 04/30/2018
   
 4.  設定、<xref:System.ServiceModel.FederatedMessageSecurityOverHttp.IssuedKeyType%2A>プロパティを<xref:System.IdentityModel.Tokens.SecurityKeyType>`SymmetricKey`またはします。`AsymmetricKey` 必要に応じて。  
   
-5.  <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.IssuedTokenType%2A> プロパティに適切な値を設定します。 値が設定されていない場合[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]の既定値は"http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV1.1"、SAML 1.1 トークンを示します。  
+5.  <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.IssuedTokenType%2A> プロパティに適切な値を設定します。 値が設定されていない場合は、WCF 既定値は"http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV1.1"、SAML 1.1 トークンを示します。  
   
 6.  クライアント側ではローカル発行者が指定されていなければ必須。サービス側では省略可能。 セキュリティ トークン サービスのアドレスと ID 情報が設定された <xref:System.ServiceModel.EndpointAddress> を作成し、この <xref:System.ServiceModel.EndpointAddress> インスタンスを <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.IssuerAddress%2A> プロパティに代入します。  
   

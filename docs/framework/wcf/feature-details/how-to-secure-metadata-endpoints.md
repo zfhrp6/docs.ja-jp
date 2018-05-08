@@ -1,34 +1,22 @@
 ---
 title: '方法 : セキュリティで保護されたメタデータ エンドポイント'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 9f71b6ae-737c-4382-8d89-0a7b1c7e182b
-caps.latest.revision: 13
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload:
-- dotnet
-ms.openlocfilehash: 50a62366063123de9e1773b2926f79b76a1b1c3b
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 659291975902ec78c1484ac77f898b4486000e8d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-secure-metadata-endpoints"></a>方法 : セキュリティで保護されたメタデータ エンドポイント
 サービスのメタデータには、悪意のあるユーザーに利用される可能性がある、アプリケーションに関する機密情報が含まれています。 また、サービスのコンシューマーにも、サービスのメタデータを取得するためのセキュリティで保護された機構が必要です。 したがって、状況に応じて、セキュリティで保護されたエンドポイントを使用してメタデータを公開する必要があります。  
   
- メタデータ エンドポイントは、一般に、アプリケーション エンドポイントをセキュリティで保護するために [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] に定義されている標準のセキュリティ機構を使用して保護されます  (詳細については、次を参照してください[セキュリティの概要](../../../../docs/framework/wcf/feature-details/security-overview.md)。)。  
+ メタデータ エンドポイントは、Windows Communication Foundation (WCF) で定義されているアプリケーション エンドポイントをセキュリティで保護する標準的なセキュリティ メカニズムを使用して一般的に保護されます。 (詳細については、次を参照してください[セキュリティの概要](../../../../docs/framework/wcf/feature-details/security-overview.md)。)。  
   
  ここでは、SSL (Secure Sockets Layer) 証明書によって保護されたエンドポイント (つまり、HTTPS エンドポイント) を作成する手順を示します。  
   

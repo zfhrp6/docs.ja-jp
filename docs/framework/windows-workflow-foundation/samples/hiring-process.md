@@ -1,29 +1,17 @@
 ---
 title: 雇用プロセス
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: d5fcacbb-c884-4b37-a5d6-02b1b8eec7b4
-caps.latest.revision: 13
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 8cfa23ab5f36b3a40de107a546dd4700a4523595
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 87327692e35e9386dab4cf906ab33cbe08d73fdd
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="hiring-process"></a>雇用プロセス
 このサンプルでは、メッセージング アクティビティ、およびワークフロー サービスとしてホストされる 2 つのワークフローを使用して、ビジネス プロセスを実装する方法を示します。 この 2 つのワークフローは、Contoso, Inc という架空の会社の IT インフラストラクチャの一部です。  
   
- `HiringRequest` ワークフロー プロセス (<xref:System.Activities.Statements.Flowchart> として実装) は、組織の複数のマネージャーの承認が必要です。 この目標を達成するため、ワークフローでは、組織内の他の既存のサービス (ここでは、プレーン [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスとして実装された受信トレイ サービスおよび組織データ サービス) を使用します。  
+ `HiringRequest` ワークフロー プロセス (<xref:System.Activities.Statements.Flowchart> として実装) は、組織の複数のマネージャーの承認が必要です。 この目標を達成するのには、ワークフローは、今回の場合、受信トレイ サービスおよび標準の Windows Communication Foundation (WCF) サービスとして実装された組織のデータ サービス) の「組織の他の既存のサービスを使用します。  
   
  `ResumeRequest` ワークフロー (<xref:System.Activities.Statements.Sequence> として実装) は、Contoso 社の外部 Careers Web サイトに求人情報を発行し、履歴書の受け取りを管理します。 求人情報は、指定した期間 (タイムアウトになるまで) または Contoso の従業員が削除を決定するまで、外部 Web サイトに掲載されます。  
   
@@ -64,7 +52,7 @@ ms.lasthandoff: 04/26/2018
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
+>  このディレクトリが存在しない場合に、 [Windows Communication Foundation (WCF) および .NET Framework 4 向けの Windows Workflow Foundation (WF) サンプル](http://go.microsoft.com/fwlink/?LinkId=150780)すべて Windows Communication Foundation (WCF) をダウンロードして[!INCLUDE[wf1](../../../../includes/wf1-md.md)]サンプルです。 このサンプルは、次のディレクトリに格納されます。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Application\HiringProcess`  
   
@@ -111,7 +99,7 @@ ms.lasthandoff: 04/26/2018
 |ContosoHR|データ コントラクト、ビジネス オブジェクト、およびリポジトリ クラスを含んでいます。|  
 |HiringRequestService|Hiring Request Process ワークフローの定義を含んでいます。<br /><br /> このプロジェクトは、サービスとしてワークフロー (xaml ファイル) を自己ホストするコンソール アプリケーションとして実装されます。|  
 |ResumeRequestService|タイムアウトとなるかプロセス終了が決定するまで応募者からの履歴書を収集するワークフロー サービス。<br /><br /> このプロジェクトは、宣言型ワークフロー サービス (xamlx) として実装されます。|  
-|OrgService|組織情報 (Employees、Positions、PositionTypes、および Departments) を公開するサービス。 このサービスは、Enterprise Resource Plan (ERP) の Company Organization モジュールと考えることができます。<br /><br /> このプロジェクトは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスを公開するコンソール アプリケーションとして実装されます。|  
+|OrgService|組織情報 (Employees、Positions、PositionTypes、および Departments) を公開するサービス。 このサービスは、Enterprise Resource Plan (ERP) の Company Organization モジュールと考えることができます。<br /><br /> このプロジェクトは、Windows Communication Foundation (WCF) サービスを公開するコンソール アプリケーションとして実装されます。|  
 |InboxService|従業員のアクション可能なタスクを含んでいる受信トレイです。<br /><br /> このプロジェクトは、WCF サービスを公開するコンソール アプリケーションとして実装されます。|  
 |InternalClient|プロセスと対話するための Web アプリケーション。 ユーザーは、HiringProcess ワークフローを開始して、参加し、表示できます。 このアプリケーションを使用すると、ResumeRequest プロセスを開始および監視することもできます。<br /><br /> このサイトは、Contoso のイントラネット内のサイトとして実装されます。 このプロジェクトは ASP.NET Web サイトとして実装されます。|  
 |CareersWebSite|Contoso 社で募集中の求人を公開する外部 Web サイト。 興味を持った応募者は、このサイトに移動して、履歴書を送信します。|  

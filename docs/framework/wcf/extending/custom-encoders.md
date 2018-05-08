@@ -1,31 +1,17 @@
 ---
 title: カスタム エンコーダー
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: fa0e1d7f-af36-4bf4-aac9-cd4eab95bc4f
-caps.latest.revision: 15
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 90926fd334eb5ccef3a63f637d5273c408c0c13e
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
-ms.translationtype: MT
+ms.openlocfilehash: 4f7b011b038714ee8349e74f6be270c85aed0a7b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="custom-encoders"></a>カスタム エンコーダー
 このトピックでは、カスタム エンコーダーを作成する方法について説明します。  
   
- [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]を使用する、*バインディング*エンドポイント間のネットワーク経由でデータを転送する方法を指定します。 バインディングで構成される、一連の*バインド要素*です。 バインディングには、セキュリティ、必須などのオプションのプロトコル バインド要素が含まれています。*メッセージ エンコーダー*バインド要素、および必須のトランスポート バインド要素。 メッセージ エンコーダーは、メッセージ エンコーディング バインド要素で表されます。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] に含まれるメッセージ エンコーダーは、バイナリ、MTOM (Message Transmission Optimization Mechanism)、およびテキストの 3 つです。  
+ Windows Communication Foundation (WCF) を使用する、*バインディング*エンドポイント間のネットワーク経由でデータを転送する方法を指定します。 バインディングで構成される、一連の*バインド要素*です。 バインディングには、セキュリティ、必須などのオプションのプロトコル バインド要素が含まれています。*メッセージ エンコーダー*バインド要素、および必須のトランスポート バインド要素。 メッセージ エンコーダーは、メッセージ エンコーディング バインド要素で表されます。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] に含まれるメッセージ エンコーダーは、バイナリ、MTOM (Message Transmission Optimization Mechanism)、およびテキストの 3 つです。  
   
  メッセージ エンコーディング バインド要素は、送信する <xref:System.ServiceModel.Channels.Message> をシリアル化してそれをトランスポートに渡すか、シリアル化された形式のメッセージをトランスポートから受信して、それをプロトコル層 (ある場合) またはアプリケーション (プロトコル層がない場合) に渡します。  
   

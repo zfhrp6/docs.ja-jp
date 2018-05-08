@@ -1,14 +1,6 @@
 ---
 title: ナビゲーションの概要
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-wpf
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -32,17 +24,11 @@ helpviewer_keywords:
 - programmatic navigation [WPF]
 - hyperlinks [WPF]
 ms.assetid: 86ad2143-606a-4e34-bf7e-51a2594248b8
-caps.latest.revision: 69
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: bf7ec6cc18461a906e889a997968677d0c63df20
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: b326d623da49cf02b95be8a22a75b3ea3d199e27
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="navigation-overview"></a>ナビゲーションの概要
 Windows Presentation Foundation (WPF) は、2 種類のアプリケーションで使用できるブラウザー スタイルのナビゲーションをサポートしています: スタンドアロン アプリケーションと[!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)]です。 ナビゲーションのためのパッケージのコンテンツを[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]提供、<xref:System.Windows.Controls.Page>クラスです。 1 つから移動することができます<xref:System.Windows.Controls.Page>別に宣言してを使用して、 <xref:System.Windows.Documents.Hyperlink>、またはを使用して、プログラムによって、<xref:System.Windows.Navigation.NavigationService>です。 [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] は、ナビゲート元のページを記憶し、それらのページに戻るために、履歴を使用します。  

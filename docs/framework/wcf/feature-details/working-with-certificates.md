@@ -1,36 +1,22 @@
 ---
 title: 証明書の使用
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - certificates [WCF]
 ms.assetid: 6ffb8682-8f07-4a45-afbb-8d2487e9dbc3
-caps.latest.revision: 26
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 3c023b27ace10919c51aa13e2635040d9d5b812b
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: f5566eacaabb5d3eb5579d015fad8149a2ed4f3c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="working-with-certificates"></a>証明書の使用
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] のセキュリティをプログラミングする場合、一般に X.509 デジタル証明書を使用して、クライアントとサーバーの認証、暗号化、およびメッセージのデジタル署名を行います。 ここでは、X.509 デジタル証明書の機能および [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] でのそれらの機能の使用方法について簡単に説明します。また、これらの概念の詳細を説明するトピックや、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] と証明書を使用した一般的なタスクの実行方法が記載されたトピックへのリンクも示します。  
+Windows Communication Foundation (WCF) のセキュリティをプログラミングするには、一般的にクライアントとサーバー認証、暗号化、およびメッセージのデジタル署名に X.509 デジタル証明書が使用されます。 このトピックは簡単に X.509 デジタル証明書の機能と WCF では、その使用方法について説明し、さらに、これらの概念を説明する、または WCF と証明書を使用して一般的なタスクを実行する方法を示すトピックへのリンクが含まれています。  
   
- デジタル証明書の一部である、簡単に言えば、*公開キー基盤*(PKI)、これは、デジタル証明書、証明書機関、およびその他の検証し、認証の有効性を登録機関のシステム公開キーの暗号化を使用して、電子取引に関与する各当事者です。 証明機関が証明書を発行し、各証明書など、データを含んでいるフィールドのセットがあります*サブジェクト*(証明書の発行先であるエンティティ) 有効期間 (ときに、証明書が有効)、(、発行者エンティティ証明書を発行する) と公開キー。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、これらの各プロパティは <xref:System.IdentityModel.Claims.Claim> (クレーム) として処理されます。各クレームは、さらに ID と権限の 2 種類に分けられます。 詳細については、X.509 証明書を参照してください[X.509 公開キー証明書](http://go.microsoft.com/fwlink/?LinkId=209952)WCF を参照してくださいでクレームと承認の詳細については[管理クレームと Id モデル承認](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md). 詳細については、PKI を実装する、次を参照してください。 [Windows Server 2008 R2 の証明書サービス](http://go.microsoft.com/fwlink/?LinkId=209949)です。  
+ デジタル証明書の一部である、簡単に言えば、*公開キー基盤*(PKI)、これは、デジタル証明書、証明書機関、およびその他の検証し、認証の有効性を登録機関のシステム公開キーの暗号化を使用して、電子取引に関与する各当事者です。 証明機関が証明書を発行し、各証明書など、データを含んでいるフィールドのセットがあります*サブジェクト*(証明書の発行先であるエンティティ) 有効期間 (ときに、証明書が有効)、(、発行者エンティティ証明書を発行する) と公開キー。 WCF では、これらの各プロパティが処理されると、 <xref:System.IdentityModel.Claims.Claim>、さらに、各要求は次の 2 種類に分割し、: id と権限。 詳細については、X.509 証明書を参照してください[X.509 公開キー証明書](http://go.microsoft.com/fwlink/?LinkId=209952)WCF を参照してくださいでクレームと承認の詳細については[管理クレームと Id モデル承認](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md). 詳細については、PKI を実装する、次を参照してください。 [Windows Server 2008 R2 の証明書サービス](http://go.microsoft.com/fwlink/?LinkId=209949)です。  
   
  証明書の第一の機能は、他者に対して証明書の所有者の ID を認証することです。 証明書が含まれています、*公開キー*の所有者、所有者、秘密キーを保持するときにします。 公開キーを使用して、証明書の所有者に送信されるメッセージを暗号化できます。 秘密キーにアクセスできるのは所有者だけであるため、所有者だけが暗号化されたメッセージを復号化できます。  
   
@@ -46,7 +32,7 @@ ms.lasthandoff: 04/30/2018
   
 -   **現在のユーザー ストア**です。 コンピューターの現在のユーザーの証明書は、通常、対話型アプリケーションによってここに配置されます。 クライアント アプリケーションを作成する場合、サービスに対してユーザーを認証するための証明書は、通常、ここに配置します。  
   
- 上記の 2 つのストアは、さらにサブストアに分かれています。 サブストアの中で、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] でプログラミングするときに最も重要なものは次のとおりです。  
+ 上記の 2 つのストアは、さらにサブストアに分かれています。 これらの最も重要な wcf プログラミングが含まれます。  
   
 -   **信頼されたルート証明機関**です。 このストア内の証明書を使用して、証明書チェーンを作成できます。証明書チェーンをさかのぼることで、このストア内の任意の証明機関証明書に到達できます。  
   
@@ -99,7 +85,7 @@ ms.lasthandoff: 04/30/2018
  カスタム認証システムを作成する場合、オーバーライドする最も重要なメソッドは <xref:System.IdentityModel.Selectors.X509CertificateValidator.Validate%2A> メソッドです。 カスタム認証の例は、次を参照してください。、 [X.509 証明書検証](../../../../docs/framework/wcf/samples/x-509-certificate-validator.md)サンプルです。 詳細については、次を参照してください。[カスタム資格情報と資格情報の検証](../../../../docs/framework/wcf/extending/custom-credential-and-credential-validation.md)です。  
   
 ## <a name="using-makecertexe-to-build-a-certificate-chain"></a>Makecert.exe を使用した証明書チェーンの構築  
- 証明書作成ツール (Makecert.exe) では、X.509 証明書および秘密キーと公開キーのペアを作成します。 秘密キーをディスクに保存し、新しい証明書の発行と署名に使用できるため、チェーンになった証明書の階層をシミュレートできます。 このツールは、サービスの開発時に支援ツールとして使用することだけを目的としています。実際の展開に使用する証明書の作成には使用しないでください。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスの開発時に、Makecert.exe を使用して信頼チェーンを構築するには、次の手順に従います。  
+ 証明書作成ツール (Makecert.exe) では、X.509 証明書および秘密キーと公開キーのペアを作成します。 秘密キーをディスクに保存し、新しい証明書の発行と署名に使用できるため、チェーンになった証明書の階層をシミュレートできます。 このツールは、サービスの開発時に支援ツールとして使用することだけを目的としています。実際の展開に使用する証明書の作成には使用しないでください。 WCF サービスを開発する場合は、Makecert.exe で信頼チェーンを構築する、次の手順を使用します。  
   
 #### <a name="to-build-a-chain-of-trust-with-makecertexe"></a>Makecert.exe を使用して証明書チェーンを構築するには  
   
@@ -137,7 +123,7 @@ ms.lasthandoff: 04/30/2018
  使用して構成でモードを設定することも、`revocationMode`両方の属性、 [\<認証 >](../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-clientcertificate-element.md) (の[ \<serviceBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/servicebehaviors.md)) と、 [\<認証 >](../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-clientcertificate-element.md) (の[ \<endpointBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/endpointbehaviors.md))。  
   
 ## <a name="the-setcertificate-method"></a>SetCertificate メソッド  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、認証、暗号化、またはメッセージのデジタル署名を行うために、多くの場合、サービスまたはクライアントが使用する証明書または証明書のセットを指定する必要があります。 これは、X.509 証明書を表すさまざまなクラスの `SetCertificate` メソッドを使用することで、プログラムによって実行できます。 `SetCertificate` メソッドを使用して証明書を指定するクラスは次のとおりです。  
+ WCF では、するには、多くの場合、証明書を指定するか、サービス証明書の設定や、クライアントは、認証、暗号化、またはメッセージのデジタル署名に使用します。 これは、X.509 証明書を表すさまざまなクラスの `SetCertificate` メソッドを使用することで、プログラムによって実行できます。 `SetCertificate` メソッドを使用して証明書を指定するクラスは次のとおりです。  
   
 |クラス|メソッド|  
 |-----------|------------|  
@@ -179,9 +165,9 @@ ms.lasthandoff: 04/30/2018
   
  Windows ユーザー アカウントを表すトークンに X.509 証明書をマップすると、Windows トークンを使用して保護されたリソースにアクセスできるため、このマッピングが特権の昇格と見なされます。 したがって、マッピングを行う前に、ドメイン ポリシーにそのポリシーに準拠する X.509 証明書が必要となります。 *SChannel*セキュリティ パッケージは、この要件を強制します。  
   
- [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)] 以降を使用している場合は、Windows アカウントにマッピングされる前に、証明書がドメイン ポリシーに準拠していることが [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] によって確認されます。  
+ 使用する場合[!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)]WCF により、証明書がドメイン ポリシーに準拠している Windows アカウントにマップされている前に、後で、または。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の最初のリリースでは、ドメイン ポリシーを参照せずにマッピングが実行されます。 そのため、マッピングが有効になっており、X.509 証明書がドメイン ポリシーを満たしていない場合は、最初のリリースの下で実行しているときには動作していた古いアプリケーションが動作しなくなる可能性があります。  
+ WCF の最初のリリースでは、ドメイン ポリシーを参照せずマッピングは行われます。 そのため、マッピングが有効になっており、X.509 証明書がドメイン ポリシーを満たしていない場合は、最初のリリースの下で実行しているときには動作していた古いアプリケーションが動作しなくなる可能性があります。  
   
 ## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Channels>  

@@ -1,13 +1,6 @@
 ---
-title: "方法 : Windows フォームの ComboBox、ListBox、または CheckedListBox コントロールに項目を追加または削除する"
-ms.custom: 
+title: '方法 : Windows フォームの ComboBox、ListBox、または CheckedListBox コントロールに項目を追加または削除する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -21,16 +14,11 @@ helpviewer_keywords:
 - combo boxes [Windows Forms], removing items
 - CheckedListBox control [Windows Forms], adding and removing items
 ms.assetid: 7224c8d2-4118-443e-ae1e-d7c17d1e69ee
-caps.latest.revision: "19"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: faf0422db9915806442ab96759d63e15ff98b813
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f9319ffe5e9c4f06565648565ce21dec6fc672f9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-add-and-remove-items-from-a-windows-forms-combobox-listbox-or-checkedlistbox-control"></a>方法 : Windows フォームの ComboBox、ListBox、または CheckedListBox コントロールに項目を追加または削除する
 項目は、Windows フォームのコンボ ボックス、リスト ボックスに追加できるまたはこれらのコントロールは、さまざまなデータ ソースにバインドすることができますので、さまざまな方法でボックスの一覧を確認します。 ただし、このトピックでは、最も簡単な方法を示していて、データ バインドは必要ありません。 表示される項目は、通常の文字列です。ただし、すべてのオブジェクトを使用できます。 コントロールに表示されるテキストが、オブジェクトのによって返される値`ToString`メソッドです。  
@@ -102,7 +90,7 @@ ms.lasthandoff: 12/22/2017
   
 1.  呼び出す、`Remove`または`RemoveAt`項目を削除するメソッド。  
   
-     `Remove`削除する項目を指定する 1 つの引数が存在します。`RemoveAt` 指定したインデックス番号を持つ項目を削除します。  
+     `Remove` 削除する項目を指定する 1 つの引数が存在します。`RemoveAt` 指定したインデックス番号を持つ項目を削除します。  
   
     ```vb  
     ' To remove item with index 0:  
@@ -147,7 +135,7 @@ ms.lasthandoff: 12/22/2017
     listBox1->Items->Clear();  
     ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.ComboBox>  
  <xref:System.Windows.Forms.ListBox>  
  <xref:System.Windows.Forms.CheckedListBox>  

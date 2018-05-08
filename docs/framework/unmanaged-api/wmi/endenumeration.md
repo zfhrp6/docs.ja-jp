@@ -1,11 +1,7 @@
 ---
-title: "EndEnumeration 関数 (アンマネージ API リファレンス)"
-description: "EndEnumeration 関数は、列挙を終了します。"
+title: EndEnumeration 関数 (アンマネージ API リファレンス)
+description: EndEnumeration 関数は、列挙を終了します。
 ms.date: 11/06/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: reference
 api_name:
 - EndEnumeration
 api_location:
@@ -20,14 +16,11 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: fee3137dad3f89fa8849b28e9ca38b40040f916e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d77497beb122bef580d6eb142fede33b8cf220e3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="endenumeration-function"></a>EndEnumeration 関数
 呼び出し時に起動列挙のシーケンスの終了、 [BeginEnumeration 関数](beginenumeration.md)です。  
@@ -67,12 +60,12 @@ HRESULT EndEnumeration (
 
 呼び出し、`EndEnumeration`関数は必要ありませんが、列挙体に関連付けられているリソースを解放するためお勧めします。 ただし、resoruces は次回の列挙が開始されたか、オブジェクトが解放されるときに、自動的に解放されます。
 
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** WMINet_Utils.idl  
   
- **.NET framework のバージョン:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **.NET framework のバージョン:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>関連項目  
 [WMI およびパフォーマンス カウンター (アンマネージ API リファレンス)](index.md)

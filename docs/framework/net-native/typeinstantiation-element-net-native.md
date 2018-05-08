@@ -1,24 +1,14 @@
 ---
-title: "&lt;TypeInstantiation&gt; 要素 (.NET ネイティブ)"
-ms.custom: 
+title: '&lt;TypeInstantiation&gt; 要素 (.NET ネイティブ)'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: a5eada64-075b-4162-9655-ded84e4681f2
-caps.latest.revision: "21"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b5dc19038af220cca63417a331a37d4a7d3b9f96
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 30802eff0b960c2a19e5cebb4757bfeff809d322
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="lttypeinstantiationgt-element-net-native"></a>&lt;TypeInstantiation&gt; 要素 (.NET ネイティブ)
 構築されたジェネリック型にランタイム リフレクション ポリシーを適用します。  
@@ -70,7 +60,7 @@ ms.lasthandoff: 12/22/2017
   
 |値|説明|  
 |-----------|-----------------|  
-|*type_argument*|ジェネリック型の引数を指定します。 複数の引数が存在する場合は、コンマで区切られます。 各引数は、完全修飾型名で構成されている必要があります。|  
+|*type_argument*|ジェネリック型引数を指定します。 複数の引数が存在する場合は、コンマで区切られます。 各引数は、完全修飾型名で構成されている必要があります。|  
   
 ## <a name="all-other-attributes"></a>その他すべての属性  
   
@@ -125,7 +115,7 @@ ms.lasthandoff: 12/22/2017
 </Directives>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ランタイム ディレクティブ (rd.xml) 構成ファイル リファレンス](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)  
  [ランタイム ディレクティブ要素](../../../docs/framework/net-native/runtime-directive-elements.md)  
  [ランタイム ディレクティブ ポリシーの設定](../../../docs/framework/net-native/runtime-directive-policy-settings.md)

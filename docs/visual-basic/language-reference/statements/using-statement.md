@@ -1,12 +1,6 @@
 ---
 title: Using ステートメント (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.using
 helpviewer_keywords:
@@ -15,14 +9,11 @@ helpviewer_keywords:
 - resources [Visual Basic], disposing
 - Using statement [Visual Basic]
 ms.assetid: 665d1580-dd54-4e96-a9a9-6be2a68948f1
-caps.latest.revision: 36
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: ed9cc0d04c89eac1fe342a0924dd89bb1e258a11
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 725eeb42dc5462022ac1a021c537d701929398ba
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-statement-visual-basic"></a>Using ステートメント (Visual Basic)
 始まりを宣言、`Using`をブロックし、必要に応じてブロックを制御するシステム リソースを取得します。  
@@ -41,14 +32,14 @@ End Using
 |---|---|  
 |`resourcelist`|指定しないかどうかに必要な`resourceexpression`します。 この 1 つまたは複数のシステム リソースの一覧表示`Using`コントロール、コンマで区切ってをブロックします。|  
 |`resourceexpression`|指定しないかどうかに必要な`resourcelist`します。 参照変数またはこので制御するシステム リソースを参照する式`Using`ブロックします。|  
-|`statements`|省略可能です。 ステートメントのブロックを`Using`ブロックが実行されます。|  
-|`End Using`|必須です。 定義を終了、`Using`ブロックおよびそれによって制御されるすべてのリソースを破棄します。|  
+|`statements`|任意。 ステートメントのブロックを`Using`ブロックが実行されます。|  
+|`End Using`|必須。 定義を終了、`Using`ブロックおよびそれによって制御されるすべてのリソースを破棄します。|  
   
  内の各リソース、`resourcelist`部分は、次の構文とパーツ。  
   
  `resourcename As New resourcetype [ ( [ arglist ] ) ]`  
   
- または  
+ - または -  
   
  `resourcename As resourcetype = resourceexpression`  
   
@@ -56,11 +47,11 @@ End Using
   
 |用語|定義|  
 |---|---|  
-|`resourcename`|必須です。 システム リソースを参照する参照変数を`Using`コントロールをブロックします。|  
+|`resourcename`|必須。 システム リソースを参照する参照変数を`Using`コントロールをブロックします。|  
 |`New`|必要な場合、`Using`ステートメントがリソースを取得します。 リソースを既に取得した場合は、2 番目の構文を使用します。|  
-|`resourcetype`|必須です。 リソースのクラスです。 このクラスを実装する必要があります、<xref:System.IDisposable>インターフェイスです。|  
-|`arglist`|省略可能です。 インスタンスを作成するコンス トラクターに渡す引数のリスト`resourcetype`です。 参照してください[パラメーター リスト](../../../visual-basic/language-reference/statements/parameter-list.md)です。|  
-|`resourceexpression`|必須です。 変数または式の要件を満たすシステム リソースを参照する`resourcetype`です。 2 番目の構文を使用する場合は、制御を渡す前に、リソースを取得する必要があります、`Using`ステートメントです。|  
+|`resourcetype`|必須。 リソースのクラスです。 このクラスを実装する必要があります、<xref:System.IDisposable>インターフェイスです。|  
+|`arglist`|任意。 インスタンスを作成するコンス トラクターに渡す引数のリスト`resourcetype`です。 参照してください[パラメーター リスト](../../../visual-basic/language-reference/statements/parameter-list.md)です。|  
+|`resourceexpression`|必須。 変数または式の要件を満たすシステム リソースを参照する`resourcetype`です。 2 番目の構文を使用する場合は、制御を渡す前に、リソースを取得する必要があります、`Using`ステートメントです。|  
   
 ## <a name="remarks"></a>コメント  
  場合によって、コードでは、ファイル ハンドル、COM ラッパーの場合は、SQL 接続など、アンマネージ リソースが必要です。 A`Using`ブロックがそれらにコードが完了すると、そのような 1 つまたは複数のリソースの破棄を保証します。 これによりを使用するには、他のコードで使用可能です。  

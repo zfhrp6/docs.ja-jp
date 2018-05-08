@@ -1,14 +1,6 @@
 ---
-title: "ISymUnmanagedMethod::GetOffset メソッド"
-ms.custom: 
+title: ISymUnmanagedMethod::GetOffset メソッド
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ISymUnmanagedMethod.GetOffset
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: 8bf3cb62-89bf-4159-ad53-de606aba89e8
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 1c60d35b63d083ce4e23119e3fcb5e64c518f0ac
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6d88e9279f70c36fd8a9c626972e33305cded5fb
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="isymunmanagedmethodgetoffset-method"></a>ISymUnmanagedMethod::GetOffset メソッド
 ドキュメント内の指定位置に対応するこのメソッド内のオフセットを返します。  
@@ -64,8 +52,8 @@ HRESULT GetOffset(
 ## <a name="return-value"></a>戻り値  
  メソッドが成功した場合は S_OK、それ以外の場合、E_FAIL またはその他のエラー コード。  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** CorSym.idl、CorSym.h  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ISymUnmanagedMethod インターフェイス](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md)

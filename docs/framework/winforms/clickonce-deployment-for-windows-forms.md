@@ -1,28 +1,16 @@
 ---
-title: "Windows フォームの ClickOnce 配置"
-ms.custom: 
+title: Windows フォームの ClickOnce 配置
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - ClickOnce deployment [Windows Forms]
 - Windows Forms, ClickOnce deployment
 - walkthroughs [Windows Forms], ClickOnce deployment
 ms.assetid: 1451fce9-1965-4a03-b4d3-831b5fe4ad66
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 1f157ea4afcaccfffde548c26a440fa6686c87aa
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a9721b7e13c24af6256d692fef879b08f2858a68
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="clickonce-deployment-for-windows-forms"></a>Windows フォームの ClickOnce 配置
 次のトピックでは、Windows フォーム アプリケーションをクライアント コンピューターに簡単に配置するために使用されるテクノロジである [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] について説明します。  
@@ -73,7 +61,7 @@ ms.lasthandoff: 12/22/2017
  [方法 : ClickOnce アプリケーションにデータ ファイルを含める](/visualstudio/deployment/how-to-include-a-data-file-in-a-clickonce-application)  
  [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] データ ディレクトリで利用できるファイルにマークする方法を示します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [アプリケーション設定の概要](../../../docs/framework/winforms/advanced/application-settings-overview.md)  
  [ClickOnce アプリケーションの発行](/visualstudio/deployment/publishing-clickonce-applications)  
  [ClickOnce アプリケーションのコマンド ラインからのビルド](/visualstudio/deployment/building-clickonce-applications-from-the-command-line)  

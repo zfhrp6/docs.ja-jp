@@ -1,32 +1,18 @@
 ---
 title: キューに置かれた通信のベスト プラクティス
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - queues [WCF], best practices
 - best practices [WCF], queued communication
 ms.assetid: 446a6383-cae3-4338-b193-a33c14a49948
-caps.latest.revision: 14
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 082fa083dbba601cefc00e40bad7b91e14a45d44
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: b54569ad3d11c3b9b1b96e2738bdf0582b63b0b7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="best-practices-for-queued-communication"></a>キューに置かれた通信のベスト プラクティス
-ここでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] のキューに置かれた通信で推奨されるベスト プラクティスについて説明します。 以下の各セクションでは、シナリオの観点から推奨されるベスト プラクティスについて説明します。  
+このトピックでは、キューに置かれた通信では、Windows Communication Foundation (WCF) の推奨されるベスト プラクティスを説明します。 以下の各セクションでは、シナリオの観点から推奨されるベスト プラクティスについて説明します。  
   
 ## <a name="fast-best-effort-queued-messaging"></a>キューに置かれたベストエフォート方式の高速メッセージング  
  キューに置かれたメッセージングによってもたらされる分離と、ベストエフォート保証による高パフォーマンスの高速メッセージングを必要とするシナリオでは、非トランザクション キューを使用し、<xref:System.ServiceModel.MsmqBindingBase.ExactlyOnce%2A> プロパティを `false` に設定します。  
@@ -69,7 +55,7 @@ ms.lasthandoff: 04/28/2018
   
  バッチ処理を使用する場合は、同時実行と調整は同時バッチに変換されることに気をつけてください。  
   
- スループットと可用性を高めるには、キューから読み取る [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスのファームを使用します。 この場合、ファームのすべてのサービスが同じエンドポイントで同じコントラクトを公開している必要があります。 ファームを使用すると、多数のサービスがすべて同じキューから読み取ることができるため、この方法はメッセージの生成率が高いアプリケーションで最も効果を発揮します。  
+ スループットと可用性を実現するために、キューから読み取られる WCF サービスのファームを使用します。 この場合、ファームのすべてのサービスが同じエンドポイントで同じコントラクトを公開している必要があります。 ファームを使用すると、多数のサービスがすべて同じキューから読み取ることができるため、この方法はメッセージの生成率が高いアプリケーションで最も効果を発揮します。  
   
  ファームを使用する場合、MSMQ 3.0 ではリモート トランザクション読み取りがサポートされていないので注意してください。 MSMQ 4.0 は、リモート トランザクション読み取りをサポートしています。  
   
@@ -84,11 +70,11 @@ ms.lasthandoff: 04/28/2018
  通常、キューは一方向ですが、シナリオによっては、受信した応答を以前に送信した要求に関連付けることが必要になる場合があります。 このような関連付けが必要な場合、関連付け情報を含む独自の SOAP メッセージ ヘッダーをメッセージに追加することをお勧めします。 通常、送信側がこのヘッダーをメッセージに添付すると、受信側は、このメッセージを処理して応答キューにある新しいメッセージで応答するときに、関連付け情報を含む送信側のメッセージ ヘッダーを添付します。これにより、送信側は要求メッセージを使用して応答メッセージを識別できます。  
   
 ## <a name="integrating-with-non-wcf-applications"></a>非 WCF アプリケーションとの統合  
- `MsmqIntegrationBinding` サービスまたはクライアントを非 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスまたはクライアントと統合するときには、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を使用します。 以外の[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]アプリケーションは、System.Messaging、COM +、Visual Basic、または C++ を使用して記述された MSMQ アプリケーションを指定できます。  
+ 使用して`MsmqIntegrationBinding`WCF 以外のサービスまたはクライアントと WCF サービスまたはクライアントを統合するときにします。 非 WCF アプリケーションは、System.Messaging、COM +、Visual Basic、または C++ を使用して記述された MSMQ アプリケーションを指定できます。  
   
  `MsmqIntegrationBinding` を使用するときは、以下の点に注意してください。  
   
--   [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] メッセージの本文は、MSMQ メッセージの本文と同じではありません。 キューに置かれたバインディングを使用して [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] メッセージを送信する場合は、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] メッセージの本文が MSMQ メッセージの内部に配置されます。 MSMQ インフラストラクチャは、この追加情報を認識しません。認識するのは、MSMQ メッセージだけです。  
+-   WCF メッセージ本文は、MSMQ メッセージ本文と同じではありません。 キューに置かれたバインディングを使用して WCF メッセージを送信するときに、WCF メッセージ本文が MSMQ メッセージの内部に配置されます。 MSMQ インフラストラクチャは、この追加情報を認識しません。認識するのは、MSMQ メッセージだけです。  
   
 -   `MsmqIntegrationBinding` では、よく使用されるシリアル化型をサポートしています。 ジェネリック メッセージである <xref:System.ServiceModel.MsmqIntegration.MsmqMessage%601> の本文の型は、シリアル化型に基づいてさまざまな型パラメーターを受け取ります。 たとえば、<xref:System.ServiceModel.MsmqIntegration.MsmqMessageSerializationFormat.ByteArray> には `MsmqMessage\<byte[]>` が必要であり、<xref:System.ServiceModel.MsmqIntegration.MsmqMessageSerializationFormat.Stream> には `MsmqMessage<Stream>` が必要です。  
   

@@ -1,13 +1,6 @@
 ---
-title: "方法 : Windows フォーム TextBox コントロールでテキストを選択する"
-ms.custom: 
+title: '方法 : Windows フォーム TextBox コントロールでテキストを選択する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,16 +10,11 @@ helpviewer_keywords:
 - text boxes [Windows Forms], selecting text programmatically
 - text [Windows Forms], selecting in text boxes programmatically
 ms.assetid: 8c591546-6a01-45c7-8e03-f78431f903b1
-caps.latest.revision: "24"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 535ee9e7359782f24d48d895f094afbe47e1023b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8fd1cfb0764d16b86cd639d8266d1cceff874932
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-select-text-in-the-windows-forms-textbox-control"></a>方法 : Windows フォーム TextBox コントロールでテキストを選択する
 Windows フォームでテキストをプログラムで選択できる<xref:System.Windows.Forms.TextBox>コントロール。 たとえば、特定の文字列のテキストを検索する関数を作成する場合は、検索した文字列の位置のリーダーを視覚的にアラートを生成するテキストを選択できます。  
@@ -78,7 +66,7 @@ Windows フォームでテキストをプログラムで選択できる<xref:Sys
     }  
     ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.TextBox>  
  [TextBox コントロールの概要](../../../../docs/framework/winforms/controls/textbox-control-overview-windows-forms.md)  
  [方法: Windows フォーム TextBox コントロールでのカーソル位置を制御する](../../../../docs/framework/winforms/controls/how-to-control-the-insertion-point-in-a-windows-forms-textbox-control.md)  

@@ -1,26 +1,12 @@
 ---
 title: 長時間のワークフロー サービスの作成
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 4c39bd04-5b8a-4562-a343-2c63c2821345
-caps.latest.revision: 9
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 1cd7cc70c50ac2aa56d8cca55037769aa0b6a64a
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 1ddb995b849a15451c36d5d11c95a4904a3e0496
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="creating-a-long-running-workflow-service"></a>長時間のワークフロー サービスの作成
 ここでは、実行時間の長いワークフロー サービスを作成する方法について説明します。 実行時間の長いワークフロー サービスは、長期間にわたって実行できます。 ワークフローでは、いくつかの追加情報を待つ間アイドル状態になることがあります。 アイドル状態になると、ワークフローは SQL データベースに永続化され、メモリから削除されます。 追加情報が使用可能になると、ワークフロー インスタンスがメモリに読み込み直されて、実行を継続します。  このシナリオでは、非常に簡略化された注文システムを実装します。  クライアントは、最初のメッセージをワークフロー サービスに送信して注文を開始します。 ワークフロー サービスは、注文 ID をクライアントに返します。 この時点で、ワークフロー サービスは、クライアントからの別のメッセージを待機しており、アイドル状態に入って、SQL Server データベースに永続化されます。  クライアントが次のメッセージを送信して項目を注文すると、ワークフロー サービスはメモリに読み込み直されて、注文の処理を終了します。 次のコード例では、項目が注文に追加されたことを示す文字列を返します。 このコード例は、テクノロジの実際の適用を意図するものではなく、実行時間の長いワークフロー サービスを示す簡単な例です。 このトピックでは、[!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] のプロジェクトおよびソリューションの作成方法を理解していることを前提としています。  
@@ -52,7 +38,7 @@ ms.lasthandoff: 04/30/2018
   
 1.  空の [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] ソリューションを作成し、`OrderProcessing` という名前を付けます。  
   
-2.  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] という新しい `OrderService` ワークフロー サービス アプリケーション プロジェクトをソリューションに追加します。  
+2.  `OrderService` という新しい WCF ワークフロー サービス アプリケーション プロジェクトをソリューションに追加します。  
   
 3.  プロジェクトのプロパティ ダイアログ ボックスで、 **Web**タブです。  
   

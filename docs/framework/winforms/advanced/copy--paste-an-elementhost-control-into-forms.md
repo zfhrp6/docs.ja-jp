@@ -1,29 +1,17 @@
 ---
-title: "チュートリアル : ElementHost コントロールの別の Windows フォームへのコピーと貼り付け"
-ms.custom: 
+title: 'チュートリアル : ElementHost コントロールの別の Windows フォームへのコピーと貼り付け'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - Windows Forms, content copying and pasting
 - interoperability [WPF]
 - ElementHost control [Windows Forms], copying and pasting at design time
 - WPF user control [Windows Forms], hosting in Windows Forms
 ms.assetid: 6e81bb13-577c-46c3-a1cf-8d15969fb83e
-caps.latest.revision: "19"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 2f98d3463adab9bace30610efbaf06dcade78f17
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 1cce981e4cb04ab6ed6ed41e0afac0121b242761
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="walkthrough-copying-and-pasting-an-elementhost-control-into-separate-windows-forms"></a>チュートリアル : ElementHost コントロールの別の Windows フォームへのコピーと貼り付け
 このチュートリアルでは、Windows フォーム間で Windows Presentation Foundation (WPF) コントロールをコピーする方法について説明します。  
@@ -75,7 +63,7 @@ ms.lasthandoff: 01/19/2018
   
      `Form2` クラスのプライベート フィールドであるため、コピーしたコントロールの名前も `elementHost1` です。 `Form1` クラスの `elementHost1` には名前の競合がありません。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.Integration.ElementHost>  
  <xref:System.Windows.Forms.Integration.WindowsFormsHost>  
  [移行と相互運用性](../../../../docs/framework/wpf/advanced/migration-and-interoperability.md)  

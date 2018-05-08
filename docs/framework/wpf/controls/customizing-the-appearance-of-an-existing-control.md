@@ -1,13 +1,6 @@
 ---
-title: "ControlTemplate の作成による既存のコントロールの外観のカスタマイズ"
-ms.custom: 
+title: ControlTemplate の作成による既存のコントロールの外観のカスタマイズ
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -19,19 +12,14 @@ helpviewer_keywords:
 - controls [WPF], appearance specified by state
 - templates [WPF], custom for existing controls
 ms.assetid: 678dd116-43a2-4b8c-82b5-6b826f126e31
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 0019b739c794cbffa62b49749371c2a19f752267
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: bbdc79fabf8dbe344baae66d718d79ac6375db7e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="customizing-the-appearance-of-an-existing-control-by-creating-a-controltemplate"></a>ControlTemplate の作成による既存のコントロールの外観のカスタマイズ
-<a name="introduction"></a>A<xref:System.Windows.Controls.ControlTemplate>視覚的な構造とコントロールの視覚的な動作を指定します。 コントロールの外観をカスタマイズするには、新しい it を付けることで<xref:System.Windows.Controls.ControlTemplate>です。 作成するときに、 <xref:System.Windows.Controls.ControlTemplate>、その機能を変更することがなく、既存のコントロールの外観を置き換えます。 たとえば、することができます、ボタン、アプリケーションで、既定の正方形ではなくラウンドただし、ボタンが発生するが、<xref:System.Windows.Controls.Primitives.ButtonBase.Click>イベント。  
+<a name="introduction"></a> A<xref:System.Windows.Controls.ControlTemplate>視覚的な構造とコントロールの視覚的な動作を指定します。 コントロールの外観をカスタマイズするには、新しい it を付けることで<xref:System.Windows.Controls.ControlTemplate>です。 作成するときに、 <xref:System.Windows.Controls.ControlTemplate>、その機能を変更することがなく、既存のコントロールの外観を置き換えます。 たとえば、することができます、ボタン、アプリケーションで、既定の正方形ではなくラウンドただし、ボタンが発生するが、<xref:System.Windows.Controls.Primitives.ButtonBase.Click>イベント。  
   
  このトピックのさまざまな部分を説明します、 <xref:System.Windows.Controls.ControlTemplate>、単純な作成方法を示します<xref:System.Windows.Controls.ControlTemplate>の<xref:System.Windows.Controls.Button>、およびその外観をカスタマイズするには、コントロールのコントロールのコントラクトを理解する方法について説明します。 作成するため、<xref:System.Windows.Controls.ControlTemplate>で[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]、任意のコードを記述することがなく、コントロールの外観を変更することができます。 また、カスタム コントロール テンプレートを作成するために、Microsoft Expression Blend などのデザイナーを使用することもできます。 このトピックの例を示しています、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]の外観をカスタマイズする、<xref:System.Windows.Controls.Button>し、トピックの最後に完全な例を一覧表示します。 Expression Blend の使用方法の詳細については、「[テンプレートをサポートするコントロールのスタイル処理](http://go.microsoft.com/fwlink/?LinkId=161153)」を参照してください。  
   
@@ -93,7 +81,7 @@ ms.lasthandoff: 12/22/2017
   
  この例では、<xref:System.Windows.Controls.Grid>がその<xref:System.Windows.Controls.Panel.Background%2A?displayProperty=nameWithType>プロパティ テンプレートにバインド<xref:System.Windows.Controls.Control.Background%2A?displayProperty=nameWithType>です。 <xref:System.Windows.Controls.Panel.Background%2A?displayProperty=nameWithType>がバインドされているテンプレートでは、同じものを使用する複数のボタンを作成することができます<xref:System.Windows.Controls.ControlTemplate>設定と、<xref:System.Windows.Controls.Control.Background%2A?displayProperty=nameWithType>ボタンごとに異なる値にします。 場合<xref:System.Windows.Controls.Control.Background%2A?displayProperty=nameWithType>テンプレートではありませんが内の要素のプロパティにバインドされていた、 <xref:System.Windows.Controls.ControlTemplate>、設定、<xref:System.Windows.Controls.Control.Background%2A?displayProperty=nameWithType>のボタンがないため影響ボタンの外観にします。  
   
- 2 つのプロパティの名前は同じである必要はありません。 前の例で、<xref:System.Windows.Controls.Control.HorizontalContentAlignment%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Windows.Controls.Button>にテンプレートがバインドされて、<xref:System.Windows.FrameworkElement.HorizontalAlignment%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Windows.Controls.ContentPresenter>です。 これにより、ボタンのコンテンツを水平方向に配置できます。 <xref:System.Windows.Controls.ContentPresenter>という名前のプロパティを持たない`HorizontalContentAlignment`が<xref:System.Windows.Controls.Control.HorizontalContentAlignment%2A?displayProperty=nameWithType>にバインドできる<xref:System.Windows.FrameworkElement.HorizontalAlignment%2A?displayProperty=nameWithType>です。 プロパティをテンプレート バインディングするときは、ターゲットとソースのプロパティが同じ型であることを確認してください。  
+ 2 つのプロパティの名前は同じである必要はありません。 前の例で、<xref:System.Windows.Controls.Control.HorizontalContentAlignment%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Windows.Controls.Button>にテンプレートがバインドされて、<xref:System.Windows.FrameworkElement.HorizontalAlignment%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Windows.Controls.ContentPresenter>です。 これにより、ボタンのコンテンツを水平方向に配置できます。 <xref:System.Windows.Controls.ContentPresenter> という名前のプロパティを持たない`HorizontalContentAlignment`が<xref:System.Windows.Controls.Control.HorizontalContentAlignment%2A?displayProperty=nameWithType>にバインドできる<xref:System.Windows.FrameworkElement.HorizontalAlignment%2A?displayProperty=nameWithType>です。 プロパティをテンプレート バインディングするときは、ターゲットとソースのプロパティが同じ型であることを確認してください。  
   
  <xref:System.Windows.Controls.Control>クラスに設定している場合は、コントロールに影響を与えるコントロール テンプレートで使用する必要がありますをいくつかのプロパティを定義します。 どのように<xref:System.Windows.Controls.ControlTemplate>使用して、プロパティ、プロパティに依存します。 <xref:System.Windows.Controls.ControlTemplate>で、次の方法のいずれかのプロパティを使用する必要があります。  
   
@@ -200,9 +188,9 @@ ms.lasthandoff: 12/22/2017
   
 |制限の種類|値します。|値|  
 |-------------------------|-------------------|-----------------|  
-|指定した状態から別の指定した状態まで|名前、<xref:System.Windows.VisualState>|名前、<xref:System.Windows.VisualState>|  
-|任意の状態から指定された状態まで|未設定|名前、<xref:System.Windows.VisualState>|  
-|指定した状態から任意の状態まで|名前、<xref:System.Windows.VisualState>|未設定|  
+|指定した状態から別の指定した状態まで|名前、 <xref:System.Windows.VisualState>|名前、 <xref:System.Windows.VisualState>|  
+|任意の状態から指定された状態まで|未設定|名前、 <xref:System.Windows.VisualState>|  
+|指定した状態から任意の状態まで|名前、 <xref:System.Windows.VisualState>|未設定|  
 |他の状態のいずれかの状態から|未設定|未設定|  
   
  複数<xref:System.Windows.VisualTransition>内のオブジェクト、<xref:System.Windows.VisualStateGroup>を参照する、同じ状態が、前の表に示す順序で使用されます。 次の例では、2 つ<xref:System.Windows.VisualTransition>オブジェクト。 コントロールが遷移すると、`Pressed`状態、 `MouseOver` 、状態、<xref:System.Windows.VisualTransition>両方を持つ<xref:System.Windows.VisualTransition.From%2A>と<xref:System.Windows.VisualTransition.To%2A>セットを使用します。 コントロールが `Pressed` ではない状態から `MouseOver` 状態に遷移するときには、別の状態を使用します。  
@@ -272,5 +260,5 @@ ms.lasthandoff: 12/22/2017
   
  [!code-xaml[VSMButtonTemplate#3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/vsmbuttontemplate/csharp/skinnedbutton.xaml#3)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [スタイルとテンプレート](../../../../docs/framework/wpf/controls/styling-and-templating.md)

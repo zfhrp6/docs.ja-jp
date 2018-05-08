@@ -1,36 +1,24 @@
 ---
-title: "方法 : カスタム セキュリティ トークン認証システムを作成する"
-ms.custom: 
+title: '方法 : カスタム セキュリティ トークン認証システムを作成する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - WCF, authentication
 ms.assetid: 10e245f7-d31e-42e7-82a2-d5780325d372
-caps.latest.revision: 
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload:
-- dotnet
-ms.openlocfilehash: 4415edbe9f04cb56cefadcb3ae521994fac28ffb
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
-ms.translationtype: MT
+ms.openlocfilehash: 41936b407dfdb3fecee80b2513b557016cdcfe5e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-a-custom-security-token-authenticator"></a>方法 : カスタム セキュリティ トークン認証システムを作成する
 ここでは、カスタム セキュリティ トークン認証システムの作成方法と、これをカスタム セキュリティ トークン マネージャーに統合する方法を示します。 セキュリティ トークン認証システムは受信メッセージと共に提出されるセキュリティ トークンの内容を検証します。 検証に成功すると、認証システムは <xref:System.IdentityModel.Policy.IAuthorizationPolicy> インスタンスのコレクションを返します。これが評価されるとクレーム セットが返されます。  
   
- [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] でカスタム セキュリティ トークン認証システムを使用するには、カスタム資格情報とセキュリティ トークンマネージャーの実装をあらかじめ作成しておく必要があります。 カスタムの資格情報と、セキュリティ トークン マネージャーの作成に関する詳細については、次を参照してください。[チュートリアル: カスタムのクライアントを作成するとサービスの資格情報](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md)です。 資格情報、セキュリティ トークン マネージャー、およびプロバイダーおよび認証システム クラスの詳細については、次を参照してください。[セキュリティ アーキテクチャ](http://msdn.microsoft.com/library/16593476-d36a-408d-808c-ae6fd483e28f)です。  
+ Windows Communication Foundation (WCF) で、カスタム セキュリティ トークン認証システムを使用するには、必要がありますまず作成するカスタムの資格情報とセキュリティ トークン マネージャーの実装。 カスタムの資格情報と、セキュリティ トークン マネージャーの作成に関する詳細については、次を参照してください。[チュートリアル: カスタムのクライアントを作成するとサービスの資格情報](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md)です。 資格情報、セキュリティ トークン マネージャー、およびプロバイダーおよび認証システム クラスの詳細については、次を参照してください。[セキュリティ アーキテクチャ](http://msdn.microsoft.com/library/16593476-d36a-408d-808c-ae6fd483e28f)です。  
   
 ## <a name="procedures"></a>手順  
   
@@ -71,7 +59,7 @@ ms.lasthandoff: 01/19/2018
      [!code-csharp[c_CustomTokenAuthenticator#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customtokenauthenticator/cs/source.cs#3)]
      [!code-vb[c_CustomTokenAuthenticator#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customtokenauthenticator/vb/source.vb#3)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.IdentityModel.Selectors.SecurityTokenAuthenticator>  
  <xref:System.IdentityModel.Selectors.SecurityTokenRequirement>  
  <xref:System.IdentityModel.Selectors.SecurityTokenManager>  

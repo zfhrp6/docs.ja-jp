@@ -1,24 +1,12 @@
 ---
-title: "SQL Server スキーマ コレクション"
-ms.custom: 
+title: SQL Server スキーマ コレクション
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: c6403cc3-d78b-4f85-bab1-ada7a3446ec5
-caps.latest.revision: "5"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: e95c6dc6bceb367000f4aa174a368bf046bc1b93
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 248e5f4caf47f09742358240fa43f46169f0b1e5
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="sql-server-schema-collections"></a>SQL Server スキーマ コレクション
 Microsoft .NET Framework Data Provider for SQL Server は、共通のスキーマ コレクションに加えて追加のスキーマ コレクションをサポートしています。 スキーマ コレクションは、使用している SQL Server のバージョンによって多少異なります。 サポートされるスキーマ コレクションの一覧を確認するのには、呼び出し、 **GetSchema**メソッド引数のない、またはスキーマ コレクション名に"metadatacollections を指定して"います。 これにより、サポートされるスキーマ コレクションの一覧、それぞれがサポートする制限数、および使用する識別子部分の数と共に、<xref:System.Data.DataTable> が返されます。  
@@ -62,7 +50,7 @@ Microsoft .NET Framework Data Provider for SQL Server は、共通のスキー�
   
 |ColumnName|DataType|説明|  
 |----------------|--------------|-----------------|  
-|type_desc|String|インデックスの種類。次のいずれかの値になります。<br /><br /> -   HEAP<br />-   CLUSTERED<br />-   NONCLUSTERED<br />-   XML<br />空間|  
+|type_desc|String|インデックスの種類。次のいずれかの値になります。<br /><br /> -HEAP<br />クラスター化<br />-   NONCLUSTERED<br />XML<br />空間|  
   
 ## <a name="indexcolumns"></a>IndexColumns  
   
@@ -266,6 +254,6 @@ Microsoft .NET Framework Data Provider for SQL Server は、共通のスキー�
 |Create_Date|DateTime|アセンブリが作成/登録された日付。|  
 |Permission_set_desc|String|アセンブリのアクセス許可セット/セキュリティ レベルのフレンドリ名。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [データベース スキーマ情報の取得](../../../../docs/framework/data/adonet/retrieving-database-schema-information.md)  
  [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

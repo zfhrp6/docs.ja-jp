@@ -1,36 +1,24 @@
 ---
-title: "信頼できるセッションの概要"
-ms.custom: 
+title: 信頼できるセッションの概要
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: a7fc4146-ee2c-444c-82d4-ef6faffccc2d
-caps.latest.revision: "30"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 1d2749188214f3f68ee3ed5df87fc0aa7cac604d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 1c5344c2804cf4c17fdc46a7fea5a4a360122b6e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="reliable-sessions-overview"></a>信頼できるセッションの概要
 
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] の SOAP リライアブル メッセージ機能では、SOAP エンドポイント間でエンドツーエンドのメッセージ転送に信頼性が提供されます。 これにより、信頼性の低いネットワーク上でも、トランスポート エラーや SOAP メッセージ レベルのエラーに対処できます。 具体的には、SOAP またはトランスポート中継局を経由して送信されるメッセージに関して、1 回だけの配信や (オプションで) 順序保証の配信がセッション ベースで提供されます。 セッション ベースの配布は、メッセージの省略可能な順序とのセッションでメッセージをグループ化を提供します。
+Windows Communication Foundation (WCF) の SOAP リライアブル メッセージの SOAP エンドポイント間でエンド ツー エンドのメッセージ転送の信頼性を提供します。 これにより、信頼性の低いネットワーク上でも、トランスポート エラーや SOAP メッセージ レベルのエラーに対処できます。 具体的には、SOAP またはトランスポート中継局を経由して送信されるメッセージに関して、1 回だけの配信や (オプションで) 順序保証の配信がセッション ベースで提供されます。 セッション ベースの配布は、メッセージの省略可能な順序とのセッションでメッセージをグループ化を提供します。
 
 このトピックでは、信頼できるセッションをする方法について説明と、使用するタイミングと方法をセキュリティで保護します。
 
 ## <a name="wcf-reliable-sessions"></a>WCF の信頼できるセッション
 
-[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の信頼できるセッションは、WS-ReliableMessaging プロトコルの定義に準拠した SOAP リライアブル メッセージ機能の実装です。
+WCF の信頼できるセッションは、SOAP リライアブル メッセージ機能は、Ws-reliablemessaging プロトコルで定義されているの実装です。
 
-[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の SOAP リライアブル メッセージ機能は、メッセージング エンドポイントを分離する中継局の数や種類に関係なく、2 つのエンドポイント間でエンドツーエンドの信頼できるセッションを実現します。 これにより、SOAP (HTTP プロキシなど) を使用しないトランスポート手段が含まれます。 や中継ぎ局 SOAP (たとえば、SOAP ベースのルーターやブリッジなど) を使用するエンドポイントの間でメッセージを必要とされます。 信頼できるセッション チャネルをサポートしている*インタラクティブ*通信できるように、このようなチャネルが接続されているサービスが同時に実行し、低待機時間、つまりの条件下でメッセージを処理内で比較的短い時間間隔。 この組み合わせは、それらの間で提供される分離がないように、これらのコンポーネントは一緒に進めるか、ひとまとまりでフェールオーバーを意味します。
+WCF SOAP リライアブル メッセージ数や、メッセージング エンドポイントを分離する中継ぎ局の種類に関係なく、2 つのエンドポイント間でのエンド ツー エンドの信頼できるセッションを提供します。 これにより、SOAP (HTTP プロキシなど) を使用しないトランスポート手段が含まれます。 や中継ぎ局 SOAP (たとえば、SOAP ベースのルーターやブリッジなど) を使用するエンドポイントの間でメッセージを必要とされます。 信頼できるセッション チャネルをサポートしている*インタラクティブ*通信できるように、このようなチャネルが接続されているサービスが同時に実行し、低待機時間、つまりの条件下でメッセージを処理内で比較的短い時間間隔。 この組み合わせは、それらの間で提供される分離がないように、これらのコンポーネントは一緒に進めるか、ひとまとまりでフェールオーバーを意味します。
 
 信頼できるセッションでは次の 2 種類のエラーがマスクされます。
 
@@ -52,7 +40,7 @@ ms.lasthandoff: 12/22/2017
 
 ## <a name="reliable-sessions-and-bindings"></a>信頼できるセッションとバインディング
 
-前述のように、信頼できるセッションは、トランスポート中立的なです。 また、要求/応答や双方向など、複数のメッセージ交換パターンで信頼できるセッションを確立することができます。 A[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]信頼できるセッションは、一連のバインドのプロパティとして公開します。
+前述のように、信頼できるセッションは、トランスポート中立的なです。 また、要求/応答や双方向など、複数のメッセージ交換パターンで信頼できるセッションを確立することができます。 WCF の信頼できるセッションは、一連のバインディングのプロパティとして公開されます。
 
 使用するエンドポイントでは、信頼できるセッションを使用します。
 
@@ -74,23 +62,23 @@ HTTPS などのカスタム バインディングを作成することで、他�
 
 基になるチャネルの種類別、上の信頼できるセッションを積み重ねることができ、結果として得られる、信頼できるセッション チャネル形状が変化します。 クライアントとサーバーの両方でサポートされている信頼できるセッション チャネルの種類は、使用される基になるチャネルの種類によって異なります。 次の表では、基になるチャネルの種類ごとに、クライアントでサポートされるセッション チャネルの種類を示します。
 
-| サポートされている信頼できるセッション チャネルの種類 &#8224;です。 | `IRequestChannel` | `IRequestSessionChannel` | `IDuplexChannel` | `IDuplexSessionChannel` |
+| サポートされている信頼できるセッション チャネルの種類&#8224; | `IRequestChannel` | `IRequestSessionChannel` | `IDuplexChannel` | `IDuplexSessionChannel` |
 | ----------------------------------------------- | :---------------: | :----------------------: | :--------------: | :---------------------: |
 | `IOutputSessionChannel`                         | [はい]               | はい                      | はい              | はい                     |
 | `IRequestSessionChannel`                        | はい               | はい                      | いいえ               | Ｘ                      |
 | `IDuplexSessionChannel`                         | Ｘ                | Ｘ                       | はい              | [はい]                     |
 
-&#8224;です。サポートされているチャネルの種類は、ジェネリックの使用可能な値`TChannel`に渡されるパラメーター値、<xref:System.ServiceModel.Channels.ReliableSessionBindingElement.BuildChannelFactory%60%601%28System.ServiceModel.Channels.BindingContext%29>メソッドです。
+&#8224;サポートされているチャネルの種類は、ジェネリックの使用可能な値`TChannel`に渡されるパラメーター値、<xref:System.ServiceModel.Channels.ReliableSessionBindingElement.BuildChannelFactory%60%601%28System.ServiceModel.Channels.BindingContext%29>メソッドです。
 
 次の表では、基になるチャネルの種類ごとに、サーバーでサポートされるセッション チャネルの種類を示します。
 
-| サポートされている信頼できるセッション チャネルの種類 &#8225;です。 | `IReplyChannel` | `IReplySessionChannel` | `IDuplexChannel` | `IDuplexSessionChannel` |
+| サポートされている信頼できるセッション チャネルの種類&#8225; | `IReplyChannel` | `IReplySessionChannel` | `IDuplexChannel` | `IDuplexSessionChannel` |
 | ----------------------------------------------- | :-------------: | :--------------------: | :--------------: | :---------------------: |
 | `IInputSessionChannel`                          | [はい]             | はい                    | はい              | はい                     |
 | `IReplySessionChannel`                          | はい             | はい                    | いいえ               | Ｘ                      |
 | `IDuplexSessionChannel`                         | Ｘ              | Ｘ                     | はい              | [はい]                     |
 
-&#8225;です。サポートされているチャネルの種類は、ジェネリックの使用可能な値`TChannel`に渡されるパラメーター値、<xref:System.ServiceModel.Channels.ReliableSessionBindingElement.BuildChannelListener%60%601%28System.ServiceModel.Channels.BindingContext%29>メソッドです。
+&#8225;サポートされているチャネルの種類は、ジェネリックの使用可能な値`TChannel`に渡されるパラメーター値、<xref:System.ServiceModel.Channels.ReliableSessionBindingElement.BuildChannelListener%60%601%28System.ServiceModel.Channels.BindingContext%29>メソッドです。
 
 ## <a name="reliable-sessions-and-security"></a>信頼できるセッションとセキュリティ
 
@@ -102,7 +90,7 @@ HTTPS などのカスタム バインディングを作成することで、他�
 
 ## <a name="using-reliable-sessions"></a>信頼できるセッションを使用します。
 
-[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の信頼できるセッションを使用するには、信頼できるセッションをサポートするバインディングを使用してエンドポイントを作成します。 システム指定のバインディングのいずれかを使用する[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]有効になっている信頼できるセッションでは、またはこれを行う独自のカスタム バインドを作成します。
+WCF の信頼できるセッションを使用するのには、信頼できるセッションをサポートするバインディングで、エンドポイントを作成します。 WCF は信頼できるセッションは、システム指定のバインディングの 1 つを使用では、有効になっているか、これは、独自のカスタム バインディングを作成します。
 
 信頼できるセッションが既定でサポートおよび有効化されているシステム定義のバインディングは、次のとおりです。
 
@@ -118,11 +106,11 @@ HTTPS などのカスタム バインディングを作成することで、他�
 
 カスタム バインディングを作成する方法の例は、次を参照してください。[する方法: HTTPS で、カスタムの信頼できるセッション バインドを作成する](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-reliable-session-binding-with-https.md)です。
 
-については[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]を信頼できるセッションをサポートするバインディングを参照してください[システム指定のバインディング](../../../../docs/framework/wcf/system-provided-bindings.md)です。
+信頼できるセッションをサポートしている WCF バインドの詳細については、次を参照してください。[システム指定のバインディング](../../../../docs/framework/wcf/system-provided-bindings.md)です。
 
 ## <a name="when-to-use-reliable-sessions"></a>信頼できるセッションを使用する場合
 
-アプリケーションで信頼できるセッションを使用するタイミングを理解しておく必要です。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、双方のエンドポイントがどちらもアクティブである場合に、信頼できるセッションがサポートされます。 アプリケーションでは、エンドポイントのいずれかが必要な場合は、時間、一定期間使用できないし、信頼性を実現するためにキューを使用します。
+アプリケーションで信頼できるセッションを使用するタイミングを理解しておく必要です。 WCF では、同時にアクティブで有効であるエンドポイント間で信頼できるセッションをサポートします。 アプリケーションでは、エンドポイントのいずれかが必要な場合は、時間、一定期間使用できないし、信頼性を実現するためにキューを使用します。
 
 シナリオでは、2 つのエンドポイントを TCP 経由で接続されている必要がある場合、TCP は信頼性の高いメッセージ交換を提供するための十分なあります。 TCP 確実に信頼できるセッションを使用する必要はありませんが、パケットは 1 回だけ、正しい順序で到着します。
 

@@ -1,14 +1,6 @@
 ---
-title: "ISymUnmanagedReader::ReplaceSymbolStore メソッド"
-ms.custom: 
+title: ISymUnmanagedReader::ReplaceSymbolStore メソッド
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ISymUnmanagedReader.ReplaceSymbolStore
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: 43257761-8cb1-4eaf-8fb5-1f3980cb66cd
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 1bedceac4661204bb72e59981450d7fee488857b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 03607cf96d73e96eef63fe62b86b50be02f34421
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="isymunmanagedreaderreplacesymbolstore-method"></a>ISymUnmanagedReader::ReplaceSymbolStore メソッド
 既存のシンボル ストアをデルタ シンボル ストアで置き換えます。 このメソッドがに似ていますが、 [UpdateSymbolStore](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-updatesymbolstore-method.md)メソッド、指定のデルタは、更新プログラムではなく、完全な置き換えとして機能する点が異なります。  
@@ -59,8 +47,8 @@ HRESULT ReplaceSymbolStore (
 ## <a name="return-value"></a>戻り値  
  メソッドが成功した場合は S_OK、それ以外の場合、E_FAIL またはその他のエラー コード。  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** CorSym.idl、CorSym.h  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ISymUnmanagedReader インターフェイス](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md)

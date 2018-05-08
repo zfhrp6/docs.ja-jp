@@ -1,28 +1,16 @@
 ---
-title: "DataGridView コントロールのシナリオ (Windows フォーム)"
-ms.custom: 
+title: DataGridView コントロールのシナリオ (Windows フォーム)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - data [Windows Forms], displaying in tabular format
 - data grids [Windows Forms], about data grids
 - DataGridView control [Windows Forms], scenarios
 ms.assetid: 09a5fd05-3447-47ec-a4ec-6082a2b7f0dd
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 38e5337f775d98f8729c62b3481c3e839bff2252
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a320b40664e4fe2254109183731db346a5d7d0b7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="datagridview-control-scenarios-windows-forms"></a>DataGridView コントロールのシナリオ (Windows フォーム)
 <xref:System.Windows.Forms.DataGridView>コントロール、さまざまなデータ ソースから表形式のデータを表示することができます。 単純な使用方法については、手動で設定できる、<xref:System.Windows.Forms.DataGridView>コントロールから直接データを操作します。 通常、ただし、外部データ ソースにデータを格納してコントロールをバインドして、<xref:System.Windows.Forms.BindingSource>コンポーネントです。  
@@ -80,7 +68,7 @@ ms.lasthandoff: 12/22/2017
   
 ### <a name="scenario-key-points"></a>シナリオの要点  
   
--   <xref:System.Windows.Forms.DataGridViewCellStyle>オブジェクトを使用して、色、フォント、書式設定、および複数のレベルと、コントロールの個々 の要素の位置情報を提供できます。  
+-   <xref:System.Windows.Forms.DataGridViewCellStyle> オブジェクトを使用して、色、フォント、書式設定、および複数のレベルと、コントロールの個々 の要素の位置情報を提供できます。  
   
 -   セル スタイルは、レイヤーし、コードを再利用すること、複数の要素で共有されることができます。  
   
@@ -97,6 +85,6 @@ ms.lasthandoff: 12/22/2017
   
 -   組み込み列の型によって提供されるもの以外のホスト コントロールを独自のセルと列のクラスを実装することができます。 詳細については、次を参照してください。[する方法: Windows フォーム DataGridView セルでホスト コントロール](../../../../docs/framework/winforms/controls/how-to-host-controls-in-windows-forms-datagridview-cells.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.DataGridView>  
  [DataGridView コントロールの概要](../../../../docs/framework/winforms/controls/datagridview-control-overview-windows-forms.md)

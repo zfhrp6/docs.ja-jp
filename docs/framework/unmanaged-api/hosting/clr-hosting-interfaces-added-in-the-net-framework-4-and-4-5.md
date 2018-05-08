@@ -1,28 +1,18 @@
 ---
-title: ".NET Framework 4 および 4.5 で追加された CLR ホスト インターフェイス"
-ms.custom: 
+title: .NET Framework 4 および 4.5 で追加された CLR ホスト インターフェイス
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 helpviewer_keywords:
 - hosting interfaces [.NET Framework], version 4
 - .NET Framework 4, hosting interfaces
 - interfaces [.NET Framework hosting], version 4
 ms.assetid: f6af6116-f5b0-4bda-a276-fffdba70893d
-caps.latest.revision: "26"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 61231715a24978e7fe57b2c9e87e7968dc0fdbc5
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 982f5780a40dd8cbce02ec33f7e6f77589cd3717
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="clr-hosting-interfaces-added-in-the-net-framework-4-and-45"></a>.NET Framework 4 および 4.5 で追加された CLR ホスト インターフェイス
 アンマネージ インターフェイスについて説明ホストを使用して、共通言語ランタイム (CLR) 統合、 [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)]、 [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)]、以降のバージョンのアプリケーションにします。 これらのインターフェイスは、ホストを構成して、ランタイムをプロセスに読み込むのためのメソッドを提供します。  
@@ -64,7 +54,8 @@ ms.lasthandoff: 12/22/2017
  すべての機能を提供、 [ICLRTask インターフェイス](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)以外の場合はさらに、現在のスレッドで遅延するスレッドの中止できるようにするメソッドを提供します。  
   
 ## <a name="related-sections"></a>関連項目  
- [サポートされなくなった CLR のホスト インターフェイスおよびコクラス](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-interfaces-and-coclasses.md)  
+ 
+  [非推奨の CLR のホスト インターフェイスおよびコクラス](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-interfaces-and-coclasses.md)  
  .NET Framework バージョン 1.0 および 1.1 で提供されるホスティング インターフェイスをについて説明します。  
   
  [CLR ホスト インターフェイス](../../../../docs/framework/unmanaged-api/hosting/clr-hosting-interfaces.md)  

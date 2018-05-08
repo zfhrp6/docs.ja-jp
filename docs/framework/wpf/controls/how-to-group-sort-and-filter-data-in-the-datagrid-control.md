@@ -1,13 +1,6 @@
 ---
-title: "方法: DataGrid コントロールでデータをグループ化、並べ替え、およびフィルター処理する"
-ms.custom: 
+title: '方法: DataGrid コントロールでデータをグループ化、並べ替え、およびフィルター処理する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,16 +9,11 @@ helpviewer_keywords:
 - DataGrid [WPF], group
 - DataGrid [WPF], filter
 ms.assetid: 03345e85-89e3-4aec-9ed0-3b80759df770
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e648b5a4a45c3583d496ac0ea6036d268d6d33a6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 675c1441201fa1578023d6ed758f389a38f3b79a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-group-sort-and-filter-data-in-the-datagrid-control"></a>方法: DataGrid コントロールでデータをグループ化、並べ替え、およびフィルター処理する
 内のデータを表示すると便利です、<xref:System.Windows.Controls.DataGrid>によってグループ化、並べ替え、およびデータのフィルター処理のさまざまな方法でします。 グループ化、並べ替え、およびデータをフィルター処理、<xref:System.Windows.Controls.DataGrid>にバインドする、<xref:System.Windows.Data.CollectionView>これらの関数をサポートします。 内のデータを操作することができますし、<xref:System.Windows.Data.CollectionView>基になるソース データには影響しません。 コレクション ビューの変更に反映されます、<xref:System.Windows.Controls.DataGrid>ユーザー インターフェイス (UI)。  
@@ -162,7 +150,7 @@ DataGrid のグループ化されたデータ
   
 ## <a name="net-framework-security"></a>.NET Framework セキュリティ  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [データ バインディングの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)  
  [ObservableCollection を作成およびバインドする](../../../../docs/framework/wpf/data/how-to-create-and-bind-to-an-observablecollection.md)  
  [ビュー内のデータをフィルター処理する](../../../../docs/framework/wpf/data/how-to-filter-data-in-a-view.md)  

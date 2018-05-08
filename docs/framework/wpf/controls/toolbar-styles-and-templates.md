@@ -1,13 +1,6 @@
 ---
-title: "ToolBar のスタイルとテンプレート"
-ms.custom: 
+title: ToolBar のスタイルとテンプレート
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - states [WPF], ToolBar
 - styles [WPF], ToolBar
@@ -16,19 +9,14 @@ helpviewer_keywords:
 - ToolBar [WPF], styles and templates
 - templates [WPF], ToolBar
 ms.assetid: bd875f46-4690-46f5-81e0-f11a9822484f
-caps.latest.revision: "15"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: d56858f3785a4d4d49a0781fbf4c19397a3bb375
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: eec0160ccf6e3e977dd293f2e26ae111c7725188
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="toolbar-styles-and-templates"></a>ToolBar のスタイルとテンプレート
-このトピックは、のスタイルとテンプレートについて説明します、<xref:System.Windows.Controls.ToolBar>コントロール。 既定値を変更することができます<xref:System.Windows.Controls.ControlTemplate>コントロールの外観を一意にします。 詳細については、「[Customizing the Appearance of an Existing Control by Creating a ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)」を参照してください。  
+このトピックは、のスタイルとテンプレートについて説明します、<xref:System.Windows.Controls.ToolBar>コントロール。 既定値を変更することができます<xref:System.Windows.Controls.ControlTemplate>コントロールの外観を一意にします。 詳細については、「[ControlTemplate の作成による既存のコントロールの外観のカスタマイズ](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)」を参照してください。  
   
 ## <a name="toolbar-parts"></a>ツールバーのパーツ  
  次の表に、名前付きのパーツの<xref:System.Windows.Controls.ToolBar>コントロール。  
@@ -60,7 +48,7 @@ ms.lasthandoff: 12/22/2017
   
  完全なサンプルについては、[Styling with ControlTemplates Sample](http://go.microsoft.com/fwlink/?LinkID=160041)を参照してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.FrameworkElement.Style%2A>  
  <xref:System.Windows.Controls.ControlTemplate>  
  [コントロールのスタイルとテンプレート](../../../../docs/framework/wpf/controls/control-styles-and-templates.md)  

@@ -1,29 +1,18 @@
 ---
-title: "Interop アクティビティと .NET Framework 4 内の .NET Framework 3.0 WF アクティビティの使用"
-ms.custom: 
+title: Interop アクティビティと .NET Framework 4 内の .NET Framework 3.0 WF アクティビティの使用
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 71f112ba-abb0-46f7-b05f-a5d2eb9d0c5c
-caps.latest.revision: "15"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e551a2a5253232ca7e504ea484601fb935901da4
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8110c86ab8bf5c557dbf8eb361d4ead2e256a3b8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-net-framework-30-wf-activities-in-net-framework-4-with-the-interop-activity"></a>Interop アクティビティと .NET Framework 4 内の .NET Framework 3.0 WF アクティビティの使用
 <xref:System.Activities.Statements.Interop> アクティビティは、[!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] ワークフロー内に [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] (WF 3.5) アクティビティをラップする [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] (WF 4.5) アクティビティです。 WF 3 アクティビティは、単一のリーフ アクティビティまたはツリー全体のアクティビティです。 [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] アクティビティの実行 (取り消しおよび例外処理を含む) および保持は、実行中の [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] ワークフロー インスタンスのコンテキスト内で発生します。  
   
 > [!NOTE]
->  <xref:System.Activities.Statements.Interop> 、ワークフローのプロジェクトがあるない限り、ワークフロー デザイナー ツールボックスにアクティビティが表示されないその**ターゲット フレームワーク**の設定に**.NET Framework 4.5**です。  
+>  <xref:System.Activities.Statements.Interop> 、ワークフローのプロジェクトがあるない限り、ワークフロー デザイナー ツールボックスにアクティビティが表示されないその**ターゲット フレームワーク**の設定に **.NET Framework 4.5**です。  
   
 ## <a name="criteria-for-using-a-wf-3-activity-with-an-interop-activity"></a>WF 3 アクティビティと Interop アクティビティを使用するための基準  
  <xref:System.Activities.Statements.Interop> アクティビティ内で WF 3 アクティビティを正常に実行するには、次の基準を満たす必要があります。  
@@ -64,5 +53,5 @@ ms.lasthandoff: 12/22/2017
   
 4.  WF 3 カスタム アクティビティからは、WF 3 ワークフロー ランタイム内とまったく同じ方法で、相互運用環境内でワークフロー キューを使用してデータにアクセスできます。 カスタム アクティビティ コードの変更は必要ありません。 ホストでは、<xref:System.Activities.Bookmark> を再開することで WF 3 ワークフロー キューにデータが追加されます。 ブックマークの名前は、<xref:System.IComparable> ワークフロー キュー名の文字列の形式です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [.NET Framework 4.5 ワークフローでの .NET Framework 3.0 または .NET Framework 3.5 アクティビティの使用](../../../docs/framework/windows-workflow-foundation/samples/using-a-net-3-0-or-net-3-5-activity-in-a-net-4-5-workflow.md)

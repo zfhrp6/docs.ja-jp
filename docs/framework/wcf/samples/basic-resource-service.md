@@ -1,27 +1,15 @@
 ---
-title: "基本的なリソース サービス"
-ms.custom: 
+title: 基本的なリソース サービス
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 4360063e-cc8c-4648-846e-c05a5af51a7a
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 8bfcd632846510f8f62280bfb1620ba1f8c35ce3
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 3ec743bbbb6d18d972701c3149179d6f615d1884
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="basic-resource-service"></a>基本的なリソース サービス
-このサンプルでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] REST プログラミング モデルを使用して HTTP ベースのサービスを実装する方法を示します。このモデルでは、取得、追加、削除、および置換の各操作をサポートする顧客のコレクションが公開されます。 このサンプルは、自己ホスト型 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] HTTP サービス (Service.cs) と、サービスの作成およびサービスへの呼び出しを行うコンソール アプリケーション (program.cs) の 2 つのコンポーネントで構成されています。  
+このサンプルでは、取得をサポートする顧客のコレクションを公開する Windows Communication Foundation (WCF) REST プログラミング モデルを使用して HTTP ベースのサービスを実装して、追加、削除、および置換操作する方法を示します。 このサンプルは、自己ホスト型 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] HTTP サービス (Service.cs) と、サービスの作成およびサービスへの呼び出しを行うコンソール アプリケーション (program.cs) の 2 つのコンポーネントで構成されています。  
   
 ## <a name="sample-details"></a>サンプルの詳細  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスでは、リソース指向の REST 方式で顧客のコレクションが公開されます。 つまり、顧客のコレクションには一意の URI があり、コレクションにはすべての顧客が含まれます。 このサービスは、コレクション全体を取得するための、コレクションの URI への HTTP `GET` の送信と、新しい顧客をコレクションに追加するための、コレクションの URI への HTTP `POST` の送信をサポートしています。 また、個々の顧客の URI では、顧客の詳細を取得する HTTP `GET`、顧客の詳細を置換する HTTP `PUT`、コレクションから顧客を削除する HTTP `DELETE` をサポートしています。 新しい顧客がコレクションに追加されると、サービスはその顧客に一意の URI を割り当て、顧客の詳細の一部として URI を格納します。 また、応答の Location HTTP ヘッダーを使用して、クライアントの URI と通信します。  
@@ -45,10 +33,10 @@ ms.lasthandoff: 12/22/2017
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
+>  このディレクトリが存在しない場合に、 [Windows Communication Foundation (WCF) および .NET Framework 4 向けの Windows Workflow Foundation (WF) サンプル](http://go.microsoft.com/fwlink/?LinkId=150780)すべて Windows Communication Foundation (WCF) をダウンロードして[!INCLUDE[wf1](../../../../includes/wf1-md.md)]サンプルです。 このサンプルは、次のディレクトリに格納されます。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Web\BasicResourceService`  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [基本的な HTTP サービス](../../../../docs/framework/wcf/samples/basic-http-service.md)  
  [形式の自動選択](../../../../docs/framework/wcf/samples/automatic-format-selection.md)

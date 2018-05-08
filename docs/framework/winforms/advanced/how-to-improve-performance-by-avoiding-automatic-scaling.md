@@ -1,13 +1,6 @@
 ---
-title: "方法 : 自動スケーリングを解除してパフォーマンスを向上させる"
-ms.custom: 
+title: '方法 : 自動スケーリングを解除してパフォーマンスを向上させる'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,19 +10,14 @@ helpviewer_keywords:
 - images [Windows Forms], using without automatic scaling
 - performance [Windows Forms], improving image
 ms.assetid: 5fe2c95d-8653-4d55-bf0d-e5afa28f223b
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 1f49fc4b1e59879b9ecc67295610187fa2e5e80d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e1c46f805b7ba2e2f2a1eb52042cc2ca08e63e03
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-improve-performance-by-avoiding-automatic-scaling"></a>方法 : 自動スケーリングを解除してパフォーマンスを向上させる
-[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]描画すると、パフォーマンスが低下していましたが、イメージをスケーリング自動的に場合があります。 描画先の四角形の寸法を渡すことによって、イメージのスケーリングを制御する代わりに、<xref:System.Drawing.Graphics.DrawImage%2A>メソッドです。  
+[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] 描画すると、パフォーマンスが低下していましたが、イメージをスケーリング自動的に場合があります。 描画先の四角形の寸法を渡すことによって、イメージのスケーリングを制御する代わりに、<xref:System.Drawing.Graphics.DrawImage%2A>メソッドです。  
   
  たとえば、次の呼び出し、<xref:System.Drawing.Graphics.DrawImage%2A>メソッドの左上隅を指定します (50, 30) 先の四角形が指定されていません。  
   
@@ -51,6 +39,6 @@ ms.lasthandoff: 12/22/2017
 ## <a name="compiling-the-code"></a>コードのコンパイル  
  前の例は、Windows フォームで使用するために設計されていて、<xref:System.Windows.Forms.Control.Paint> イベント ハンドラーのパラメーターである <xref:System.Windows.Forms.PaintEventArgs> `e` を必要とします。 Texture.jpg をイメージ名と、システムで有効なパスに置き換えます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [イメージ、ビットマップ、メタファイル](../../../../docs/framework/winforms/advanced/images-bitmaps-and-metafiles.md)  
  [イメージ、ビットマップ、アイコン、およびメタファイルの操作](../../../../docs/framework/winforms/advanced/working-with-images-bitmaps-icons-and-metafiles.md)

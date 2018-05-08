@@ -1,13 +1,6 @@
 ---
-title: "WPF グラフィックス レンダリングの概要"
-ms.custom: 
+title: WPF グラフィックス レンダリングの概要
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - graphics [WPF], rendering
 - rendering graphics [WPF]
 ms.assetid: 6dec9657-4d8c-4e46-8c54-40fb80008265
-caps.latest.revision: "51"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: cfb9a546ca33b848fbbcbd114951eddc5b000663
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 305af1025abb98950d90f46e75a9f261704a8ebe
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="wpf-graphics-rendering-overview"></a>WPF グラフィックス レンダリングの概要
 ここでは、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] のビジュアル層の概要について説明します。 ロールに焦点を当てています、<xref:System.Windows.Media.Visual>でのサポートを表示するためのクラス、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]モデル。  
@@ -58,7 +46,7 @@ ms.lasthandoff: 12/22/2017
   
 -   グローバリゼーション  
   
- <xref:System.Windows.Media.Visual>子クラスを派生する必要があります、パブリックの抽象クラスとして公開されます。 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] で公開されるビジュアル オブジェクトの階層構造を次の図に示します。  
+ <xref:System.Windows.Media.Visual> 子クラスを派生する必要があります、パブリックの抽象クラスとして公開されます。 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] で公開されるビジュアル オブジェクトの階層構造を次の図に示します。  
   
  ![Visual オブジェクトから派生したクラスのダイアグラム](../../../../docs/framework/wpf/graphics-multimedia/media/visualclass01.png "VisualClass01")  
 Visual クラスの階層構造  
@@ -86,7 +74,7 @@ Visual クラスの階層構造
   
  作成するときに、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]など、制御、 <xref:System.Windows.Controls.Button>、レンダリング データ自体を描画するため、コントロールを暗黙的に生成します。 たとえば、設定、<xref:System.Windows.Controls.ContentControl.Content%2A>のプロパティ、<xref:System.Windows.Controls.Button>グリフの表示形式を格納するコントロールします。  
   
- A<xref:System.Windows.Media.Visual>として 1 つまたは複数のコンテンツについて説明<xref:System.Windows.Media.Drawing>に含まれるオブジェクト、<xref:System.Windows.Media.DrawingGroup>です。 A<xref:System.Windows.Media.DrawingGroup>不透明マスク、変換、ビットマップ効果、およびその内容に適用されているその他の操作についても説明します。 <xref:System.Windows.Media.DrawingGroup>操作は、コンテンツが表示されるときに、次の順序で適用されます: <xref:System.Windows.Media.DrawingGroup.OpacityMask%2A>、 <xref:System.Windows.Media.DrawingGroup.Opacity%2A>、 <xref:System.Windows.Media.DrawingGroup.BitmapEffect%2A>、 <xref:System.Windows.Media.DrawingGroup.ClipGeometry%2A>、 <xref:System.Windows.Media.DrawingGroup.GuidelineSet%2A>、し<xref:System.Windows.Media.DrawingGroup.Transform%2A>です。  
+ A<xref:System.Windows.Media.Visual>として 1 つまたは複数のコンテンツについて説明<xref:System.Windows.Media.Drawing>に含まれるオブジェクト、<xref:System.Windows.Media.DrawingGroup>です。 A<xref:System.Windows.Media.DrawingGroup>不透明マスク、変換、ビットマップ効果、およびその内容に適用されているその他の操作についても説明します。 <xref:System.Windows.Media.DrawingGroup> 操作は、コンテンツが表示されるときに、次の順序で適用されます: <xref:System.Windows.Media.DrawingGroup.OpacityMask%2A>、 <xref:System.Windows.Media.DrawingGroup.Opacity%2A>、 <xref:System.Windows.Media.DrawingGroup.BitmapEffect%2A>、 <xref:System.Windows.Media.DrawingGroup.ClipGeometry%2A>、 <xref:System.Windows.Media.DrawingGroup.GuidelineSet%2A>、し<xref:System.Windows.Media.DrawingGroup.Transform%2A>です。  
   
  次の図に順序を<xref:System.Windows.Media.DrawingGroup>レンダリング シーケンス中の操作が適用されます。  
   
@@ -268,7 +256,7 @@ WPF レンダリング シーケンスのダイアグラム
  [!code-csharp[VisualsOverview#102](../../../../samples/snippets/csharp/VS_Snippets_Wpf/VisualsOverview/CSharp/Window1.xaml.cs#102)]
  [!code-vb[VisualsOverview#102](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/VisualsOverview/visualbasic/window1.xaml.vb#102)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Media.Visual>  
  <xref:System.Windows.Media.VisualTreeHelper>  
  <xref:System.Windows.Media.DrawingVisual>  

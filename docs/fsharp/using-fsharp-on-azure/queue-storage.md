@@ -2,16 +2,12 @@
 title: F# を使用して Azure キュー ストレージの概要します。
 description: Azure キューでは、アプリケーション コンポーネント間で信頼性の高い非同期メッセージングを提供します。 クラウドを単独でスケーリングのアプリケーション コンポーネントのメッセージングを有効します。
 author: sylvanc
-ms.author: phcart
 ms.date: 09/20/2016
-ms.topic: conceptual
-ms.prod: dotnet-fsharp
-ms.devlang: fsharp
-ms.openlocfilehash: bd49fd0f0e8d91449443051ab9a4ffc2d2638e11
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 14bbc657f965fc262d2a83b1fdf982fe5e75d55e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="get-started-with-azure-queue-storage-using-f"></a>F# を使用して Azure キュー ストレージの概要します。 #
 

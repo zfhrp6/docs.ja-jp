@@ -1,31 +1,19 @@
 ---
 title: メッセージ セキュリティ匿名
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - WS Security
 ms.assetid: c321cbf9-8c05-4cce-b5a5-4bf7b230ee03
-caps.latest.revision: 52
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload:
-- dotnet
-ms.openlocfilehash: c93aacbe5af47c9094dccdaa15828bfa9fda79c5
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: 4805b4f111e950c18a34822ebfb48eca4134b0da
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="message-security-anonymous"></a>メッセージ セキュリティ匿名
-メッセージ セキュリティ匿名のサンプルでは、クライアント認証を行わないでメッセージ レベルのセキュリティを使用するが、サーバーの X.509 証明書を使用したサーバー認証を必要とする [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] アプリケーションを実装する方法を示します。 クライアント/サーバー間のすべてのアプリケーション メッセージは署名され、暗号化されます。 このサンプルがに基づいて、 [WSHttpBinding](../../../../docs/framework/wcf/samples/wshttpbinding.md)サンプルです。 このサンプルは、クライアント コンソール プログラム (.exe) と、インターネット インフォメーション サービス (IIS) によってホストされるサービス ライブラリ (.dll) で構成されています。 サービスは、要求/応答通信パターンを定義するコントラクトを実装します。  
+メッセージ セキュリティ匿名サンプルは、Windows Communication Foundation (WCF) アプリケーションの実装には、クライアント認証とメッセージ レベルのセキュリティを使用するは、サーバーの X.509 を使用するサーバー認証を必要とする方法を示しています。証明書です。 クライアント/サーバー間のすべてのアプリケーション メッセージは署名され、暗号化されます。 このサンプルがに基づいて、 [WSHttpBinding](../../../../docs/framework/wcf/samples/wshttpbinding.md)サンプルです。 このサンプルは、クライアント コンソール プログラム (.exe) と、インターネット インフォメーション サービス (IIS) によってホストされるサービス ライブラリ (.dll) で構成されています。 サービスは、要求/応答通信パターンを定義するコントラクトを実装します。  
   
 > [!NOTE]
 >  このサンプルのセットアップ手順とビルド手順については、このトピックの最後を参照してください。  
@@ -251,6 +239,6 @@ Press <ENTER> to terminate client.
 -   サンプルの実行が終わったら、サンプル フォルダーにある Cleanup.bat を実行します。  
   
 > [!NOTE]
->  このサンプルを複数のコンピューターで実行している場合、このスクリプトはサービス証明書をクライアントから削除しません。 複数のコンピューターで証明書を使用する [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サンプルを実行した場合は、CurrentUser - TrustedPeople ストアにインストールされたサービス証明書を忘れずに削除してください。 削除するには、コマンド `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>` を実行します。たとえば、`certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com.` となります。  
+>  このサンプルを複数のコンピューターで実行している場合、このスクリプトはサービス証明書をクライアントから削除しません。 コンピューター間で証明書を使用する Windows Communication Foundation (WCF) サンプルを実行すると、必ず、CurrentUser - TrustedPeople ストアにインストールされているサービス証明書をオフにします。 削除するには、コマンド `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>` を実行します。たとえば、`certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com.` となります。  
   
 ## <a name="see-also"></a>関連項目

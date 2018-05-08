@@ -1,32 +1,18 @@
 ---
 title: トランザクション アプリケーションの診断
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 4a993492-1088-4d10-871b-0c09916af05f
-caps.latest.revision: 8
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 5b8171f382812480078b76588089871233bdf9ca
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 4fa85fea0651d7a31c5a50bbc9c1226421b976b7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="diagnosing-transactional-applications"></a>トランザクション アプリケーションの診断
-このトピックでは、トランザクションのアプリケーションをトラブルシューティングするために、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] に用意されている管理機能および診断機能の使用方法について説明します。  
+このトピックでは、Windows Communication Foundation (WCF) 管理、および診断機能を使用して、トランザクション アプリケーションをトラブルシューティングする方法について説明します。  
   
-## <a name="performance-counters"></a>パフォーマンス カウンター  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、トランザクション アプリケーションのパフォーマンスを測定するための、標準のパフォーマンス カウンターが用意されています。 詳細については、「[パフォーマンス カウンター](../../../../docs/framework/wcf/diagnostics/performance-counters/index.md)」を参照してください。  
+## <a name="performance-counters"></a>[パフォーマンス カウンター]  
+ WCF には、パフォーマンス カウンターをトランザクション アプリケーションのパフォーマンスを測定するための標準セットが用意されています。 詳細については、「[パフォーマンス カウンター](../../../../docs/framework/wcf/diagnostics/performance-counters/index.md)」を参照してください。  
   
  パフォーマンス カウンターには次の表に示すように、サービス、エンドポイント、操作の 3 つのレベルがあります。  
   
@@ -58,7 +44,7 @@ ms.lasthandoff: 04/30/2018
 |1 秒あたりのトランザクション フロー|毎秒ごとにこのエンドポイントでの操作に対して実行されたトランザクションの数。 このカウンターは、エンドポイントに送信されたメッセージにトランザクションがある場合は常にインクリメントされます。|  
   
 ## <a name="windows-management-instrumentation"></a>WMI (Windows Management Instrumentation)  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WMI (Windows Management Instrumentation) プロバイダーを介して実行時のサービスの検査データを公開します。 WMI データへのアクセスの詳細については、次を参照してください。[診断の Windows Management Instrumentation を使用して](../../../../docs/framework/wcf/diagnostics/wmi/index.md)です。  
+ WCF では、WCF Windows Management Instrumentation (WMI) プロバイダーを介して実行時に、サービスの検査データを公開します。 WMI データへのアクセスの詳細については、次を参照してください。[診断の Windows Management Instrumentation を使用して](../../../../docs/framework/wcf/diagnostics/wmi/index.md)です。  
   
  WMI プロパティには、サービスに適用されるトランザクション設定を示す読み取り専用のプロパティが多数あります。 次の表にこれらの設定をすべて示します。  
   
@@ -100,13 +86,13 @@ ms.lasthandoff: 04/30/2018
 ## <a name="tracing"></a>トレース  
  トレースを使用すると、トランザクション アプリケーションにおけるエラーを監視および分析できます。 トレースは次の方法を使用して有効にできます。  
   
--   [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の標準トレース  
+-   標準の WCF トレース  
   
-     このトレースは、通常の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションのトレースと同じものです。 詳細については、「 [Configuring Tracing](../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)」を参照してください。  
+     この種類のトレースは、任意の WCF アプリケーションのトレースと同じです。 詳細については、「 [Configuring Tracing](../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)」を参照してください。  
   
 -   WS-AtomicTransaction トレース  
   
-     Ws-atomictransaction トレースを使用して有効にすることができます、 [Ws-atomictransaction 構成ユーティリティ (wsatConfig.exe)](../../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md)です。 このトレースでは、トランザクションの状態とシステム内の参加要素を把握できます。 内部のサービス モデル トレースも有効にするには、`HKLM\SOFTWARE\Microsoft\WSAT\3.0\ServiceModelDiagnosticTracing` レジストリ キーを <xref:System.Diagnostics.SourceLevels> 列挙体の有効な値に設定します。 メッセージ ログは、他の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションと同じ方法で有効にできます。  
+     Ws-atomictransaction トレースを使用して有効にすることができます、 [Ws-atomictransaction 構成ユーティリティ (wsatConfig.exe)](../../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md)です。 このトレースでは、トランザクションの状態とシステム内の参加要素を把握できます。 内部のサービス モデル トレースも有効にするには、`HKLM\SOFTWARE\Microsoft\WSAT\3.0\ServiceModelDiagnosticTracing` レジストリ キーを <xref:System.Diagnostics.SourceLevels> 列挙体の有効な値に設定します。 他の WCF アプリケーションと同じ方法でメッセージ ログを有効にすることができます。  
   
 -   `System.Transactions` トレース  
   
@@ -131,7 +117,7 @@ ms.lasthandoff: 04/30/2018
     </configuration>  
     ```  
   
-     [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] インフラストラクチャは [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] でも使用されるので、このコードにより、<xref:System.Transactions> のトレースも有効になります。  
+     これもにより WCF トレースだけで WCF を利用も、<xref:System.Transactions>インフラストラクチャです。  
   
 ## <a name="see-also"></a>関連項目  
  [管理と診断](../../../../docs/framework/wcf/diagnostics/index.md)  

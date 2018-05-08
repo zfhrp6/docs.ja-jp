@@ -1,29 +1,15 @@
 ---
 title: '方法 : 企業内のエンドポイントをロックダウンする'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 1b7eaab7-da60-4cf7-9d6a-ec02709cf75d
-caps.latest.revision: 21
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: e5b10665e9a820c7057231c684769bddf9cb0c79
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
-ms.translationtype: MT
+ms.openlocfilehash: c91faf201c9a7cb0e5dd810059dbaa39b1e8eb05
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-lock-down-endpoints-in-the-enterprise"></a>方法 : 企業内のエンドポイントをロックダウンする
-大規模な企業では、多くの場合、企業のセキュリティ ポリシーに準拠してアプリケーションを開発する必要があります。 ここでは、コンピューターにインストールされているすべての [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] クライアント アプリケーションを検証できるクライアント エンドポイント検証を開発してインストールする方法を説明します。  
+大規模な企業では、多くの場合、企業のセキュリティ ポリシーに準拠してアプリケーションを開発する必要があります。 次のトピックでは、開発およびコンピューターにインストールされているすべての Windows Communication Foundation (WCF) クライアント アプリケーションの検証に使用できるクライアント エンドポイント検証コントロールをインストールする方法について説明します。  
   
  この場合、検証コントロールは、クライアント検証コントロールをクライアントにこのエンドポイントの動作が追加されるため[ \<commonBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/commonbehaviors.md) machine.config ファイル内のセクションです。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、クライアント アプリケーションだけを対象に共通のエンドポイント動作を読み込み、サービス アプリケーションだけを対象に共通のサービス動作を読み込みます。 サービス アプリケーション用のこの同じ検証コントロールをインストールするには、検証コントロールがサービス動作であることが必要です。 詳細については、次を参照してください。、 [ \<commonBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/commonbehaviors.md)セクションです。  
   

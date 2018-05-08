@@ -1,13 +1,6 @@
 ---
-title: "GlyphRun オブジェクトと Glyphs 要素の概要"
-ms.custom: 
+title: GlyphRun オブジェクトと Glyphs 要素の概要
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - typography [WPF], Glyphs element
 - Glyphs elements [WPF]
@@ -16,16 +9,11 @@ helpviewer_keywords:
 - glyphs [WPF]
 - typography [WPF], GlyphRun object
 ms.assetid: 746ca769-a331-4435-9b95-f72a883b67c1
-caps.latest.revision: "21"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: fa868b520224b27b3cd2b3dc99431728ad8ea527
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5750177c03cf859ebb884c5774b7ded03fa60628
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="introduction-to-the-glyphrun-object-and-glyphs-element"></a>GlyphRun オブジェクトと Glyphs 要素の概要
 このトピックの内容について説明します、<xref:System.Windows.Media.GlyphRun>オブジェクトおよび<xref:System.Windows.Documents.Glyphs>要素。  
@@ -33,7 +21,7 @@ ms.lasthandoff: 12/22/2017
   
 <a name="text_glyphrunovw_intro"></a>   
 ## <a name="introduction-to-glyphrun"></a>GlyphRun の概要  
- [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]直接アクセスできるグリフ レベルのマークアップを含む高度なテキストのサポートを提供<xref:System.Windows.Documents.Glyphs>をインターセプトし、テキストを書式設定後に永続化を希望するお客様向けです。 これらの機能は、下記のようなシナリオでのさまざまなテキスト レンダリング要件をサポートする不可欠なものです。  
+ [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] 直接アクセスできるグリフ レベルのマークアップを含む高度なテキストのサポートを提供<xref:System.Windows.Documents.Glyphs>をインターセプトし、テキストを書式設定後に永続化を希望するお客様向けです。 これらの機能は、下記のようなシナリオでのさまざまなテキスト レンダリング要件をサポートする不可欠なものです。  
   
 1.  固定形式のドキュメントの画面表示。  
   
@@ -50,15 +38,15 @@ ms.lasthandoff: 12/22/2017
 3.  以前のバージョンの [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] のクライアントおよびその他のコンピューティング デバイスを含む、固定形式のドキュメント表示。  
   
 > [!NOTE]
->  <xref:System.Windows.Documents.Glyphs>および<xref:System.Windows.Media.GlyphRun>固定形式のドキュメントの表示と印刷のシナリオ用に設計されています。 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]一般的なレイアウトをいくつかの要素を提供し、[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]などのシナリオ<xref:System.Windows.Controls.Label>と<xref:System.Windows.Controls.TextBlock>です。 レイアウトと [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] シナリオの詳細については、[WPF のタイポグラフィ](../../../../docs/framework/wpf/advanced/typography-in-wpf.md)を参照してください。  
+>  <xref:System.Windows.Documents.Glyphs> および<xref:System.Windows.Media.GlyphRun>固定形式のドキュメントの表示と印刷のシナリオ用に設計されています。 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] 一般的なレイアウトをいくつかの要素を提供し、[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]などのシナリオ<xref:System.Windows.Controls.Label>と<xref:System.Windows.Controls.TextBlock>です。 レイアウトと [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] シナリオの詳細については、[WPF のタイポグラフィ](../../../../docs/framework/wpf/advanced/typography-in-wpf.md)を参照してください。  
   
 <a name="text_glyphrunovw_glyphrunobject"></a>   
 ## <a name="the-glyphrun-object"></a>GlyphRun オブジェクト  
  <xref:System.Windows.Media.GlyphRun>オブジェクトは、1 つのサイズで、1 つの描画スタイルを使用して 1 つのフォントの書体を 1 つのグリフのシーケンスを表します。  
   
- <xref:System.Windows.Media.GlyphRun>グリフなど、両方のフォントの詳細が含まれています<xref:System.Windows.Documents.Glyphs.Indices%2A>と個々 のグリフの位置。 元も含まれています。[!INCLUDE[TLA#tla_unicode](../../../../includes/tlasharptla-unicode-md.md)]コード ポイントが、実行が生成された文字のグリフのバッファー オフセットのマッピングの情報、および文字単位とグリフのフラグ。  
+ <xref:System.Windows.Media.GlyphRun> グリフなど、両方のフォントの詳細が含まれています<xref:System.Windows.Documents.Glyphs.Indices%2A>と個々 のグリフの位置。 元も含まれています。[!INCLUDE[TLA#tla_unicode](../../../../includes/tlasharptla-unicode-md.md)]コード ポイントが、実行が生成された文字のグリフのバッファー オフセットのマッピングの情報、および文字単位とグリフのフラグ。  
   
- <xref:System.Windows.Media.GlyphRun>高度な対応しています<xref:System.Windows.FrameworkElement>、<xref:System.Windows.Documents.Glyphs>です。 <xref:System.Windows.Documents.Glyphs>要素ツリーとで使用できます[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]を表すマークアップ<xref:System.Windows.Media.GlyphRun>出力します。  
+ <xref:System.Windows.Media.GlyphRun> 高度な対応しています<xref:System.Windows.FrameworkElement>、<xref:System.Windows.Documents.Glyphs>です。 <xref:System.Windows.Documents.Glyphs> 要素ツリーとで使用できます[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]を表すマークアップ<xref:System.Windows.Media.GlyphRun>出力します。  
   
 <a name="text_glyphrunovw_glyphselement"></a>   
 ## <a name="the-glyphs-element"></a>Glyphs 要素  
@@ -105,7 +93,7 @@ ms.lasthandoff: 12/22/2017
   
  [!code-xaml[GlyphsOvwSamp2#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GlyphsOvwSamp2/CS/default.xaml#1)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [WPF のタイポグラフィ](../../../../docs/framework/wpf/advanced/typography-in-wpf.md)  
  [WPF のドキュメント](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
  [[テキスト]](../../../../docs/framework/wpf/advanced/optimizing-performance-text.md)

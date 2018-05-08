@@ -1,14 +1,6 @@
 ---
 title: ProgressBar のスタイルとテンプレート
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-wpf
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - parts [WPF], ProgressBar
 - ProgressBar [WPF], styles and templates
@@ -17,17 +9,11 @@ helpviewer_keywords:
 - templates [WPF], ProgressBar
 - states [WPF], ProgressBar
 ms.assetid: 935aa600-16e6-4947-a905-37a189a583dd
-caps.latest.revision: ''
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 6809ce2f51af8a1baf535afa8fe80f4e5b5f53e9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 0ed9d134a055e5b411ab105b72706839e2f216c1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="progressbar-styles-and-templates"></a>ProgressBar のスタイルとテンプレート
 このトピックは、のスタイルとテンプレートについて説明します、<xref:System.Windows.Controls.ProgressBar>コントロール。 既定値を変更することができます<xref:System.Windows.Controls.ControlTemplate>コントロールの外観を一意にします。 詳細については、「[ControlTemplate の作成による既存のコントロールの外観のカスタマイズ](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)」を参照してください。  
@@ -46,8 +32,8 @@ ms.lasthandoff: 12/22/2017
   
 |VisualState 名|VisualStateGroup 名|説明|  
 |----------------------|---------------------------|-----------------|  
-|不定になります|CommonStates|<xref:System.Windows.Controls.ProgressBar>に基づいて進行状況をレポート、<xref:System.Windows.Controls.Primitives.RangeBase.Value%2A>プロパティです。|  
-|不確定です|CommonStates|<xref:System.Windows.Controls.ProgressBar>繰り返しのパターンを持つジェネリックの進行状況を報告します。|  
+|不定になります|CommonStates|<xref:System.Windows.Controls.ProgressBar> に基づいて進行状況をレポート、<xref:System.Windows.Controls.Primitives.RangeBase.Value%2A>プロパティです。|  
+|不確定です|CommonStates|<xref:System.Windows.Controls.ProgressBar> 繰り返しのパターンを持つジェネリックの進行状況を報告します。|  
 |有効|ValidationStates|コントロールを使用して、<xref:System.Windows.Controls.Validation>クラスおよび<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType>添付プロパティは`false`します。|  
 |InvalidFocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType>添付プロパティは`true`がコントロールにフォーカスします。|  
 |InvalidUnfocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType>添付プロパティは`true`がコントロールにフォーカスがないです。|  
@@ -63,7 +49,7 @@ ms.lasthandoff: 12/22/2017
   
  完全なサンプルについては、[Styling with ControlTemplates Sample](http://go.microsoft.com/fwlink/?LinkID=160041)を参照してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.FrameworkElement.Style%2A>  
  <xref:System.Windows.Controls.ControlTemplate>  
  [コントロールのスタイルとテンプレート](../../../../docs/framework/wpf/controls/control-styles-and-templates.md)  

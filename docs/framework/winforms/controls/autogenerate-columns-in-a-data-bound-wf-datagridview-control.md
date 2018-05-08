@@ -1,13 +1,6 @@
 ---
-title: "方法 : データバインドされた Windows フォーム DataGridView コントロールに列を自動生成する"
-ms.custom: 
+title: '方法 : データバインドされた Windows フォーム DataGridView コントロールに列を自動生成する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,16 +9,11 @@ helpviewer_keywords:
 - columns [Windows Forms], autogenerating
 - DataGridView control [Windows Forms], data-bound columns
 ms.assetid: 699f6f9e-6aa5-4811-902b-6a2c57dec7d6
-caps.latest.revision: "13"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 18d54da2c24d592b6fb6b53be10824c85682f9db
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 97fbc2c21f618b9fa0451c17ebf87579f51a3f0d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-autogenerate-columns-in-a-data-bound-windows-forms-datagridview-control"></a>方法 : データバインドされた Windows フォーム DataGridView コントロールに列を自動生成する
 次のコード例でバインド データ ソースから列を表示する方法を示します、<xref:System.Windows.Forms.DataGridView>コントロール。 ときに、<xref:System.Windows.Forms.DataGridView.AutoGenerateColumns%2A>プロパティの値が`true`(既定)、<xref:System.Windows.Forms.DataGridViewColumn>データ ソース テーブル内の各列に対して作成します。  
@@ -45,7 +33,7 @@ ms.lasthandoff: 12/22/2017
   
 -   <xref:System?displayProperty=nameWithType>、<xref:System.Windows.Forms?displayProperty=nameWithType>、<xref:System.Data?displayProperty=nameWithType>、および <xref:System.Xml?displayProperty=nameWithType> の各アセンブリへの参照。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.DataGridView>  
  <xref:System.Windows.Forms.DataGridView.AutoGenerateColumns%2A?displayProperty=nameWithType>  
  [Windows フォーム DataGridView コントロールでのデータの表示](../../../../docs/framework/winforms/controls/displaying-data-in-the-windows-forms-datagridview-control.md)  

@@ -1,14 +1,6 @@
 ---
-title: "ICorRuntimeHost::CreateDomainEx メソッド"
-ms.custom: 
+title: ICorRuntimeHost::CreateDomainEx メソッド
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ICorRuntimeHost.CreateDomainEx
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: 1bdde382-f8ba-4cc8-94b2-d1ac919c585e
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: a2a577e1bd8765c7359e521b007bea943de7a984
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 2e851cf16e4b23b1f8510c4d96b23c01eb726a77
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="icorruntimehostcreatedomainex-method"></a>ICorRuntimeHost::CreateDomainEx メソッド
 アプリケーション ドメインを作成します。 呼び出し元が、型のインターフェイス ポインターを受け取ります<xref:System._AppDomain>、型のインスタンスに<xref:System.AppDomain?displayProperty=nameWithType>です。 この方法では、呼び出し、返されたその他の機能を構成する IAppDomainSetup インスタンス<xref:System._AppDomain>インスタンス。  
@@ -72,10 +60,10 @@ HRESULT CreateDomainEx (
 |HOST_E_CLRNOTAVAILABLE|CLR が、プロセスに読み込まれていませんまたは CLR は、状態をマネージ コードを実行またはできないの呼び出しは正常に処理します。|  
   
 ## <a name="remarks"></a>コメント  
- `CreateDomainEx`機能を拡張[CreateDomain](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-createdomain-method.md)を渡す、呼び出し元を許可することで、`IAppDomainSetup`アプリケーション ドメインを構成するためのプロパティ値を持つインスタンス。  
+ `CreateDomainEx` 機能を拡張[CreateDomain](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-createdomain-method.md)を渡す、呼び出し元を許可することで、`IAppDomainSetup`アプリケーション ドメインを構成するためのプロパティ値を持つインスタンス。  
   
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** MSCorEE.h  
   
@@ -83,7 +71,7 @@ HRESULT CreateDomainEx (
   
  **.NET framework のバージョン:** 1.0、1.1  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System._AppDomain>  
  <xref:System.AppDomain>  
  <xref:System.IAppDomainSetup?displayProperty=nameWithType>  

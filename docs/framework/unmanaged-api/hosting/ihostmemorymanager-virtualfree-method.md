@@ -1,14 +1,6 @@
 ---
 title: IHostMemoryManager::VirtualFree メソッド
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: reference
 api_name:
 - IHostMemoryManager.VirtualFree
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: 1a436e89-eb28-4d15-bcf1-a072f86dbd99
 topic_type:
 - apiref
-caps.latest.revision: 12
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 663c01d7e4b551ecf18bdd85a63aefc43f9750e2
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: 063ddd0bfa1734d43f90b4680166c21b80f5cc05
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/10/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ihostmemorymanagervirtualfree-method"></a>IHostMemoryManager::VirtualFree メソッド
 対応する Win32 関数の論理ラッパーとして機能します。 Win32 実装`VirtualFree`解放、デコミット、またはを解放し、呼び出し元プロセスの仮想アドレス空間内のページの領域をデコミットします。  
@@ -76,7 +64,7 @@ HRESULT VirtualFree (
  セマンティクスは次の Win32 実装のものと同じ`VirtualFree`です。 詳細については、Windows プラットフォームのドキュメントを参照してください。  
   
 ## <a name="requirements"></a>要件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** MSCorEE.h  
   

@@ -1,29 +1,17 @@
 ---
 title: HTTP トランスポート セキュリティ
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: d3439262-c58e-4d30-9f2b-a160170582bb
-caps.latest.revision: 14
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload:
-- dotnet
-ms.openlocfilehash: 2787c38603fd0f88878596a809d7e3c5cfdfb350
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: cc284f82f974d9b34ff1cf6732d2ee7b95528c44
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="http-transport-security"></a>HTTP トランスポート セキュリティ
-トランスポートとして HTTP を使用すると、SSL (Secure Sockets Layer) によりセキュリティが提供されます。 SSL はクライアントに対してサービスの認証を行い、機密性 (暗号化) をチャネルに提供する技術としてインターネットで広く使用されています。 このトピックでは、SSL の機能と SSL を [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] に実装する方法について説明します。  
+トランスポートとして HTTP を使用すると、SSL (Secure Sockets Layer) によりセキュリティが提供されます。 SSL はクライアントに対してサービスの認証を行い、機密性 (暗号化) をチャネルに提供する技術としてインターネットで広く使用されています。 このトピックでは、SSL のしくみし、Windows Communication Foundation (WCF) でその実装方法について説明します。  
   
 ## <a name="basic-ssl"></a>基本 SSL  
  SSL の機能について一般的なシナリオを用いて説明します。ここでは、銀行の Web サイトを考えます。 ユーザーはユーザー名とパスワードを使用してサイトにログオンできます。 認証された後、ユーザーは、残高照会、支払い、口座間振り替えなどの各種取引を実行できます。  
@@ -42,11 +30,11 @@ ms.lasthandoff: 04/30/2018
  すべての証明書が 2 つのキー、秘密キーと公開キー、および 2 つと呼ばれる、*交換キー ペア*です。 簡単に説明すると、秘密キーは証明書の所有者のみが認識し、公開キーは証明書から読み取ることができます。 どちらのキーもダイジェスト、ハッシュ、その他のキーの暗号化と複号化に使用できますが、逆の操作としての使用に限られます。 たとえば、クライアントで公開キーを使用して暗号化した場合、サイトのみが秘密キーを使用してメッセージを複号化できます。 同様に、サイトで秘密キーを使用して暗号化した場合、クライアントは公開キーを使用して複号化できます。 秘密キーを使用して暗号化されたメッセージのみが公開キーを使用して復号化できるため、クライアントには、秘密キーの所有者のみとメッセージ交換することが保証されます。 サイトには、公開キーを使用して暗号化を行っているクライアントとメッセージを交換していることが保証されます。 この交換は初期ハンドシェイクの場合のみセキュリティで保護されます。このため、実際の対称キーを作成する多くの試みが行われています。 いずれにしても、すべての通信は有効な SSL 証明書を保有するサービスに依存します。  
   
 ## <a name="implementing-ssl-with-wcf"></a>WCF を使用する SSL の実装  
- HTTP トランスポート セキュリティ (つまり SSL) は、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の外部に提供されます。 SSL は、次のいずれかの方法で実装できますが、その方法は、アプリケーションがどのようにホストされるかによって決まります。  
+ HTTP トランスポート セキュリティ (SSL) は、WCF に外部から提供されます。 SSL は、次のいずれかの方法で実装できますが、その方法は、アプリケーションがどのようにホストされるかによって決まります。  
   
--   [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のホストとしてインターネット インフォメーション サービス (IIS) を使用する場合、IIS インフラストラクチャを使用して SSL サービスを設定します。  
+-   WCF ホストとインターネット インフォメーション サービス (IIS) を使用する場合は、IIS インフラストラクチャを使用して、SSL サービスを設定します。  
   
--   自己ホスト型の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションを作成する場合は、HttpCfg.exe ツールを使用して SSL 証明書をアドレスにバインドできます。  
+-   自己ホスト型 WCF アプリケーションを作成する場合は、HttpCfg.exe ツールを使用して、アドレスに SSL 証明書をバインドできます。  
   
 ### <a name="using-iis-for-transport-security"></a>トランスポート セキュリティのための IIS の使用  
   
@@ -61,7 +49,7 @@ ms.lasthandoff: 04/30/2018
  使用するための証明書を構成する[!INCLUDE[iis601](../../../../includes/iis601-md.md)]を参照してください[Certificates_IIS_SP1_Ops](http://go.microsoft.com/fwlink/?LinkId=88602)です。  
   
 ### <a name="using-httpcfg-for-ssl"></a>SSL での HttpCfg の使用  
- 自己ホスト型を作成する場合[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]アプリケーションでは、HttpCfg.exe ツールをダウンロードして入手、 [Windows XP Service Pack 2 サポート ツール サイト](http://go.microsoft.com/fwlink/?LinkId=29002)です。  
+ 自己ホスト型 WCF アプリケーションを作成する場合、HttpCfg.exe ツールをダウンロードに、 [Windows XP Service Pack 2 サポート ツール サイト](http://go.microsoft.com/fwlink/?LinkId=29002)です。  
   
  HttpCfg.exe ツールを使用して、X.509 証明書でポートを設定する方法の詳細については、次を参照してください。[する方法: SSL 証明書でポートを構成する](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md)です。  
   

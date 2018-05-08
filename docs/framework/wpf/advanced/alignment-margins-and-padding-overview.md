@@ -1,13 +1,6 @@
 ---
-title: "配置、余白、パディングの概要"
-ms.custom: 
+title: 配置、余白、パディングの概要
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,16 +10,11 @@ helpviewer_keywords:
 - padding [WPF]
 - aligning [WPF]
 ms.assetid: 9c6a2009-9b86-4e40-8605-0a2664dc3973
-caps.latest.revision: "22"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 9d53ec57bdd6126aa1b82e3fa34d01b8907ca169
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 70eff35db638c5bfbc9c164dc381e3f58e18957b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="alignment-margins-and-padding-overview"></a>配置、余白、パディングの概要
 <xref:System.Windows.FrameworkElement>クラスは子要素を正確に配置に使用されるいくつかのプロパティを公開します。 このトピックでは、4 つの最も重要なプロパティについて説明します。 <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A>、 <xref:System.Windows.FrameworkElement.Margin%2A>、 <xref:System.Windows.Controls.Border.Padding%2A>、および<xref:System.Windows.FrameworkElement.VerticalAlignment%2A>です。 これらのプロパティの効果を理解することが重要です。[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] アプリケーションの要素の位置を制御するための基本となるためです。  
@@ -67,7 +55,7 @@ ms.lasthandoff: 12/22/2017
 |<xref:System.Windows.HorizontalAlignment.Left>|子要素は、親要素に割り当てられたレイアウト領域の左に揃えて配置されます。|  
 |<xref:System.Windows.HorizontalAlignment.Center>|子要素は、親要素に割り当てられたレイアウト領域の中央に揃えて配置されます。|  
 |<xref:System.Windows.HorizontalAlignment.Right>|子要素は、親要素に割り当てられたレイアウト領域の右に揃えて配置されます。|  
-|<xref:System.Windows.HorizontalAlignment.Stretch>(既定値)|子要素は引き伸ばされ、親要素に割り当てられたレイアウト領域を埋めます。 明示的な<xref:System.Windows.FrameworkElement.Width%2A>と<xref:System.Windows.FrameworkElement.Height%2A>値が優先されます。|  
+|<xref:System.Windows.HorizontalAlignment.Stretch> (既定値)|子要素は引き伸ばされ、親要素に割り当てられたレイアウト領域を埋めます。 明示的な<xref:System.Windows.FrameworkElement.Width%2A>と<xref:System.Windows.FrameworkElement.Height%2A>値が優先されます。|  
   
  次の例に適用する方法を示しています、<xref:System.Windows.FrameworkElement.HorizontalAlignment%2A>プロパティを<xref:System.Windows.Controls.Button>要素。 各属性値が示され、さまざまなレンダリング動作をより良く表しています。  
   
@@ -87,7 +75,7 @@ ms.lasthandoff: 12/22/2017
 |<xref:System.Windows.VerticalAlignment.Top>|子要素は、親要素に割り当てられたレイアウト領域の上に揃えて配置されます。|  
 |<xref:System.Windows.VerticalAlignment.Center>|子要素は、親要素に割り当てられたレイアウト領域の中央に揃えて配置されます。|  
 |<xref:System.Windows.VerticalAlignment.Bottom>|子要素は、親要素に割り当てられたレイアウト領域の下に揃えて配置されます。|  
-|<xref:System.Windows.VerticalAlignment.Stretch>(既定値)|子要素は引き伸ばされ、親要素に割り当てられたレイアウト領域を埋めます。 明示的な<xref:System.Windows.FrameworkElement.Width%2A>と<xref:System.Windows.FrameworkElement.Height%2A>値が優先されます。|  
+|<xref:System.Windows.VerticalAlignment.Stretch> (既定値)|子要素は引き伸ばされ、親要素に割り当てられたレイアウト領域を埋めます。 明示的な<xref:System.Windows.FrameworkElement.Width%2A>と<xref:System.Windows.FrameworkElement.Height%2A>値が優先されます。|  
   
  次の例に適用する方法を示しています、<xref:System.Windows.FrameworkElement.VerticalAlignment%2A>プロパティを<xref:System.Windows.Controls.Button>要素。 各属性値が示され、さまざまなレンダリング動作をより良く表しています。 このサンプルの目的で、<xref:System.Windows.Controls.Grid>表示のグリッド線を持つ要素は各プロパティ値のレイアウトの動作を理解する、親として使用します。  
   
@@ -101,7 +89,7 @@ ms.lasthandoff: 12/22/2017
   
 <a name="wcpsdk_layout_amp_margin_properties"></a>   
 ## <a name="understanding-margin-properties"></a>余白プロパティを理解する  
- <xref:System.Windows.FrameworkElement.Margin%2A>プロパティには、要素とその子またはピア間の距離がについて説明します。 <xref:System.Windows.FrameworkElement.Margin%2A>ような構文を使用して値を統一されたできます`Margin="20"`です。 この構文では、一様に<xref:System.Windows.FrameworkElement.Margin%2A>要素に適用される非依存のピクセルの 20 デバイス。 <xref:System.Windows.FrameworkElement.Margin%2A>値をとることも次の 4 つの個別の値の形式左、上、右、およびその順序で、一番下に適用する個別の余白を記述するそれぞれの値と同様に`Margin="0,10,5,25"`です。 適切な使用、<xref:System.Windows.FrameworkElement.Margin%2A>プロパティ要素の描画位置とその近隣ノード要素と子の描画位置の非常に詳細に制御を有効にします。  
+ <xref:System.Windows.FrameworkElement.Margin%2A>プロパティには、要素とその子またはピア間の距離がについて説明します。 <xref:System.Windows.FrameworkElement.Margin%2A> ような構文を使用して値を統一されたできます`Margin="20"`です。 この構文では、一様に<xref:System.Windows.FrameworkElement.Margin%2A>要素に適用される非依存のピクセルの 20 デバイス。 <xref:System.Windows.FrameworkElement.Margin%2A> 値をとることも次の 4 つの個別の値の形式左、上、右、およびその順序で、一番下に適用する個別の余白を記述するそれぞれの値と同様に`Margin="0,10,5,25"`です。 適切な使用、<xref:System.Windows.FrameworkElement.Margin%2A>プロパティ要素の描画位置とその近隣ノード要素と子の描画位置の非常に詳細に制御を有効にします。  
   
 > [!NOTE]
 >  0 以外の余白は、要素の<xref:System.Windows.FrameworkElement.ActualWidth%2A>と<xref:System.Windows.FrameworkElement.ActualHeight%2A>です。  
@@ -135,7 +123,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="using-alignment-margins-and-padding-in-an-application"></a>アプリケーションで配置、余白、パディングを利用する  
  <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A>、 <xref:System.Windows.FrameworkElement.Margin%2A>、 <xref:System.Windows.Controls.Border.Padding%2A>、および<xref:System.Windows.FrameworkElement.VerticalAlignment%2A>、複雑なを作成するために必要なコントロールが配置[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]です。 各プロパティの効果を利用し、子要素の配置を変更できます。動的なアプリケーション/ユーザー体験を生み出す柔軟性が与えられます。  
   
- 次の例は、このトピックで説明した各概念を示しています。 このトピックの最初のサンプルについては、インフラストラクチャの構築、この例では追加、<xref:System.Windows.Controls.Grid>の子要素として、<xref:System.Windows.Controls.Border>最初のサンプルです。 <xref:System.Windows.Controls.Border.Padding%2A>親に適用される<xref:System.Windows.Controls.Border>要素。 <xref:System.Windows.Controls.Grid> 3 つの子の間にスペースをパーティション分割に使用される<xref:System.Windows.Controls.StackPanel>要素。 <xref:System.Windows.Controls.Button>さまざまな影響を表示する要素を使用再度<xref:System.Windows.FrameworkElement.Margin%2A>と<xref:System.Windows.FrameworkElement.HorizontalAlignment%2A>です。 <xref:System.Windows.Controls.TextBlock>要素がそれぞれに追加され<xref:System.Windows.Controls.ColumnDefinition>をより適切に適用されるさまざまなプロパティを定義する、<xref:System.Windows.Controls.Button>各列内の要素。  
+ 次の例は、このトピックで説明した各概念を示しています。 このトピックの最初のサンプルについては、インフラストラクチャの構築、この例では追加、<xref:System.Windows.Controls.Grid>の子要素として、<xref:System.Windows.Controls.Border>最初のサンプルです。 <xref:System.Windows.Controls.Border.Padding%2A> 親に適用される<xref:System.Windows.Controls.Border>要素。 <xref:System.Windows.Controls.Grid> 3 つの子の間にスペースをパーティション分割に使用される<xref:System.Windows.Controls.StackPanel>要素。 <xref:System.Windows.Controls.Button> さまざまな影響を表示する要素を使用再度<xref:System.Windows.FrameworkElement.Margin%2A>と<xref:System.Windows.FrameworkElement.HorizontalAlignment%2A>です。 <xref:System.Windows.Controls.TextBlock> 要素がそれぞれに追加され<xref:System.Windows.Controls.ColumnDefinition>をより適切に適用されるさまざまなプロパティを定義する、<xref:System.Windows.Controls.Button>各列内の要素。  
   
  [!code-cpp[MarginPaddingAlignmentSample#4](../../../../samples/snippets/cpp/VS_Snippets_Wpf/MarginPaddingAlignmentSample/CPP/Margin_Padding_Alignment_Sample.cpp#4)]
  [!code-csharp[MarginPaddingAlignmentSample#4](../../../../samples/snippets/csharp/VS_Snippets_Wpf/MarginPaddingAlignmentSample/CSharp/Margin_Padding_Alignment_Sample.cs#4)]
@@ -152,7 +140,7 @@ ms.lasthandoff: 12/22/2017
   
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] レイアウトの詳細はその他の資料で確認できます。 [パネルの概要](../../../../docs/framework/wpf/controls/panels-overview.md)トピックには、さまざまなについての詳細が含まれています。<xref:System.Windows.Controls.Panel>要素。 トピック[チュートリアル: 最初の WPF デスクトップ アプリケーション](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md)コンポーネントを配置して、そのアクションをデータ ソースにバインドするレイアウト要素を使用して高度な技術が導入されています。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.FrameworkElement>  
  <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A>  
  <xref:System.Windows.FrameworkElement.VerticalAlignment%2A>  

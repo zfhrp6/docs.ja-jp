@@ -1,28 +1,18 @@
 ---
-title: "ホスティングの列挙体"
-ms.custom: 
+title: ホスティングの列挙体
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 helpviewer_keywords:
 - unmanaged enumerations [.NET Framework], hosting
 - enumerations [.NET Framework hosting]
 - hosting enumerations [.NET Framework]
 ms.assetid: e09131eb-1f7d-4f52-ae42-7393e9b62ef6
-caps.latest.revision: "14"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: cc6b5df39c9fad6182f0ee6e4ff95638e9aaf448
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 05fc295d394dca7a4f0edead64d326032958b070
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="hosting-enumerations"></a>ホスティングの列挙体
 このセクションでは、ホスト API で使用するアンマネージ列挙について説明します。  
@@ -123,6 +113,7 @@ ms.lasthandoff: 12/22/2017
   
  [ホスト インターフェイス](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)  
   
- [サポートされなくなった CLR ホスト関数](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)  
+ 
+  [非推奨の CLR ホスト関数](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)  
   
  [ホスト構造体](../../../../docs/framework/unmanaged-api/hosting/hosting-structures.md)

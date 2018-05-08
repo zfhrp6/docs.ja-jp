@@ -1,14 +1,6 @@
 ---
 title: グラフィックスとマルチメディア
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-wpf
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -20,21 +12,15 @@ helpviewer_keywords:
 - graphics features [WPF]
 - transition effects [WPF]
 ms.assetid: 1817d9dc-3d6c-46cb-afc8-63b0bae35e37
-caps.latest.revision: 30
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 013ae46e2d90a9eda42d33e95e590812489fa04b
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 74375c468170d58cfa79031ab0030477c29bd445
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="graphics-and-multimedia"></a>グラフィックスとマルチメディア
 <a name="introduction"></a>
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]マルチ メディア、ベクター グラフィックス、アニメーション、およびコンテンツの構成、簡単に興味深いユーザー インターフェイスとコンテンツを構築する開発者向けのサポートを提供します。 [!INCLUDE[TLA#tla_visualstu](../../../../includes/tlasharptla-visualstu-md.md)] を使用して、ベクター グラフィックスや複雑なアニメーションを作成し、メディアをアプリケーションに統合できます。  
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] マルチ メディア、ベクター グラフィックス、アニメーション、およびコンテンツの構成、簡単に興味深いユーザー インターフェイスとコンテンツを構築する開発者向けのサポートを提供します。 [!INCLUDE[TLA#tla_visualstu](../../../../includes/tlasharptla-visualstu-md.md)] を使用して、ベクター グラフィックスや複雑なアニメーションを作成し、メディアをアプリケーションに統合できます。  
   
  このトピックでは、アプリケーションにグラフィックス、画面切り替え効果、サウンド、ビデオを追加できるようにする [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] のグラフィックス、アニメーション、メディア機能を紹介します。  
   
@@ -154,11 +140,11 @@ End Class
 <MediaElement Source="media\numbers.wmv" Width="450" Height="250" />  
 ```  
   
- <xref:System.Windows.Controls.MediaElement>オーディオとビデオを再生できるは、カスタムの簡単な作成を許可するのに十分な拡張[!INCLUDE[TLA2#tla_ui#plural](../../../../includes/tla2sharptla-uisharpplural-md.md)]です。  
+ <xref:System.Windows.Controls.MediaElement> オーディオとビデオを再生できるは、カスタムの簡単な作成を許可するのに十分な拡張[!INCLUDE[TLA2#tla_ui#plural](../../../../includes/tla2sharptla-uisharpplural-md.md)]です。  
   
  詳しくは、「[マルチメディアの概要](../../../../docs/framework/wpf/graphics-multimedia/multimedia-overview.md)」をご覧ください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Media>  
  <xref:System.Windows.Media.Animation>  
  <xref:System.Windows.Media.Media3D>  

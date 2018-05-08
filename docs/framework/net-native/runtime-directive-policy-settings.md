@@ -1,24 +1,14 @@
 ---
-title: "ランタイム ディレクティブ ポリシーの設定"
-ms.custom: 
+title: ランタイム ディレクティブ ポリシーの設定
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: cb52b1ef-47fd-4609-b69d-0586c818ac9e
-caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 698e8ef926740f33f8a0a192680b5cebb45c9d79
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 51a0538670a834435aff8d2b6c81b78450fe47f1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="runtime-directive-policy-settings"></a>ランタイム ディレクティブ ポリシーの設定
 > [!NOTE]
@@ -136,6 +126,6 @@ ms.lasthandoff: 12/22/2017
 |`Required PublicAndInternal`|パブリックおよび内部の型またはメンバーのポリシーを有効にして、パブリックおよび内部の型とメンバーのメタデータが常に使用可能であるようにします。 この設定は、ツール チェーンが必要であると判断した場合にのみ、パブリックおよび内部の型とメンバーのメタデータを使用可能にする `PublicAndInternal` とは異なります。|✓||  
 |`Required All`|使用されているかどうかに関係なく、すべての型とメンバーを保持し、そのポリシーを有効にするために、ツール チェーンを要求します。|✓||  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ランタイム ディレクティブ (rd.xml) 構成ファイル リファレンス](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)  
  [ランタイム ディレクティブ要素](../../../docs/framework/net-native/runtime-directive-elements.md)

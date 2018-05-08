@@ -1,32 +1,18 @@
 ---
 title: '方法 : 一方向コントラクトを作成する'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 85084cd9-31cc-4e95-b667-42ef01336622
-caps.latest.revision: 23
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 1a54b64826735d912bdf6507023da56118fb9a69
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 80cab35b14dd3b7663405038f2afdea362cdb792
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-a-one-way-contract"></a>方法 : 一方向コントラクトを作成する
-ここでは、一方向コントラクトを使用するメソッドを作成するための基本手順を示します。 このようなメソッドは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスの操作をクライアントから呼び出しますが、応答を待ちません。 この種のコントラクトは、たとえば、多数のサブスクライバーに対して通知を発行するために使用できます。 一方向コントラクトは、二重のコントラクトを作成する場合にも使用できます。その場合は、クライアントとサーバーが互いに独立して通信できるため、どちらからでも相手の呼び出しを開始できます。 これにより、特にサーバーは、クライアントがイベントとして処理できる一方向の呼び出しをクライアントに対して実行できます。 一方向メソッドの指定の詳細については、<xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> プロパティおよび <xref:System.ServiceModel.OperationContractAttribute> クラスのトピックを参照してください。  
+ここでは、一方向コントラクトを使用するメソッドを作成するための基本手順を示します。 このようなメソッドは、クライアントからの Windows Communication Foundation (WCF) サービスに対する操作を呼び出すが、応答を想定していません。 この種のコントラクトは、たとえば、多数のサブスクライバーに対して通知を発行するために使用できます。 一方向コントラクトは、二重のコントラクトを作成する場合にも使用できます。その場合は、クライアントとサーバーが互いに独立して通信できるため、どちらからでも相手の呼び出しを開始できます。 これにより、特にサーバーは、クライアントがイベントとして処理できる一方向の呼び出しをクライアントに対して実行できます。 一方向メソッドの指定の詳細については、<xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> プロパティおよび <xref:System.ServiceModel.OperationContractAttribute> クラスのトピックを参照してください。  
   
  双方向コントラクト用のクライアント アプリケーションの作成の詳細については、次を参照してください。[する方法: 一方向とアクセス サービスと要求/応答コントラクト](../../../../docs/framework/wcf/feature-details/how-to-access-wcf-services-with-one-way-and-request-reply-contracts.md)です。 作業用サンプルについては、次を参照してください。、[一方向](../../../../docs/framework/wcf/samples/one-way.md)サンプルです。  
   

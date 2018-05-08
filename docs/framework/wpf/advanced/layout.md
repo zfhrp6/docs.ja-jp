@@ -1,13 +1,6 @@
 ---
-title: "レイアウト"
-ms.custom: 
+title: レイアウト
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,16 +9,11 @@ helpviewer_keywords:
 - controls [WPF], layout system
 - layout system [WPF]
 ms.assetid: 3eecdced-3623-403a-a077-7595453a9221
-caps.latest.revision: "31"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c9a5f33ab22779002e85d7a73b29ae74dac81c26
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 00c2b2bcb58e60c1a60d2d360f25089c079c0704
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="layout"></a>レイアウト
 このトピックでは、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] レイアウト システムについて説明します。 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] でユーザー インターフェイスを作成するには、レイアウトの計算が発生するタイミングと方法を理解することが非常に重要です。  
@@ -97,7 +85,7 @@ ms.lasthandoff: 12/22/2017
   
  最初、ネイティブのサイズ プロパティ、<xref:System.Windows.UIElement>など、評価は<xref:System.Windows.UIElement.Clip%2A>と<xref:System.Windows.UIElement.Visibility%2A>です。 これにより、という名前の値が生成されます。`constraintSize`に渡される<xref:System.Windows.FrameworkElement.MeasureCore%2A>です。  
   
- 次に、フレームワーク プロパティが定義されている<xref:System.Windows.FrameworkElement>が処理の値に影響する`constraintSize`です。 これらのプロパティ、通常、サイズ変更の特性を記述、基になる<xref:System.Windows.UIElement>などの<xref:System.Windows.FrameworkElement.Height%2A>、 <xref:System.Windows.FrameworkElement.Width%2A>、 <xref:System.Windows.FrameworkElement.Margin%2A>、および<xref:System.Windows.FrameworkElement.Style%2A>です。 これらの各プロパティは、要素を表示するために必要な領域を変更できます。 <xref:System.Windows.FrameworkElement.MeasureOverride%2A>呼び出された`constraintSize`をパラメーターとして。  
+ 次に、フレームワーク プロパティが定義されている<xref:System.Windows.FrameworkElement>が処理の値に影響する`constraintSize`です。 これらのプロパティ、通常、サイズ変更の特性を記述、基になる<xref:System.Windows.UIElement>などの<xref:System.Windows.FrameworkElement.Height%2A>、 <xref:System.Windows.FrameworkElement.Width%2A>、 <xref:System.Windows.FrameworkElement.Margin%2A>、および<xref:System.Windows.FrameworkElement.Style%2A>です。 これらの各プロパティは、要素を表示するために必要な領域を変更できます。 <xref:System.Windows.FrameworkElement.MeasureOverride%2A> 呼び出された`constraintSize`をパラメーターとして。  
   
 > [!NOTE]
 >  プロパティの間で違いがある<xref:System.Windows.FrameworkElement.Height%2A>と<xref:System.Windows.FrameworkElement.Width%2A>と<xref:System.Windows.FrameworkElement.ActualHeight%2A>と<xref:System.Windows.FrameworkElement.ActualWidth%2A>です。 たとえば、<xref:System.Windows.FrameworkElement.ActualHeight%2A>プロパティは、その他の高さの入力と、レイアウト システムに基づいて計算される値。 値が実際のレンダリング パスに基づいて、レイアウト システム自体によって設定されている可能性があるためと、プロパティの設定された値の背後にあるなど<xref:System.Windows.FrameworkElement.Height%2A>、入力の変更の基礎にあります。  
@@ -108,11 +96,11 @@ ms.lasthandoff: 12/22/2017
   
  配置パスがへの呼び出しで始まり、<xref:System.Windows.UIElement.Arrange%2A>メソッドです。 パスでは、配置、親<xref:System.Windows.Controls.Panel>要素が子の境界を表す四角形を生成します。 この値は、<xref:System.Windows.FrameworkElement.ArrangeCore%2A>処理のためのメソッドです。  
   
- <xref:System.Windows.FrameworkElement.ArrangeCore%2A>メソッドは、評価、<xref:System.Windows.UIElement.DesiredSize%2A>子のレンダリングされる要素のサイズに影響するその他の余白を評価します。 <xref:System.Windows.FrameworkElement.ArrangeCore%2A>生成、`arrangeSize`に渡される、<xref:System.Windows.FrameworkElement.ArrangeOverride%2A>のメソッド、<xref:System.Windows.Controls.Panel>をパラメーターとして。 <xref:System.Windows.FrameworkElement.ArrangeOverride%2A>生成、`finalSize`子。 最後に、<xref:System.Windows.FrameworkElement.ArrangeCore%2A>メソッドが最終的な余白や配置などのオフセットのプロパティの評価し、レイアウト スロット内の子を格納します。 子は割り当てられた領域全体を埋める必要はありません (そうしない場合もよくあります)。 コントロールは、親に返されます<xref:System.Windows.Controls.Panel>レイアウト プロセスが完了するとします。  
+ <xref:System.Windows.FrameworkElement.ArrangeCore%2A>メソッドは、評価、<xref:System.Windows.UIElement.DesiredSize%2A>子のレンダリングされる要素のサイズに影響するその他の余白を評価します。 <xref:System.Windows.FrameworkElement.ArrangeCore%2A> 生成、`arrangeSize`に渡される、<xref:System.Windows.FrameworkElement.ArrangeOverride%2A>のメソッド、<xref:System.Windows.Controls.Panel>をパラメーターとして。 <xref:System.Windows.FrameworkElement.ArrangeOverride%2A> 生成、`finalSize`子。 最後に、<xref:System.Windows.FrameworkElement.ArrangeCore%2A>メソッドが最終的な余白や配置などのオフセットのプロパティの評価し、レイアウト スロット内の子を格納します。 子は割り当てられた領域全体を埋める必要はありません (そうしない場合もよくあります)。 コントロールは、親に返されます<xref:System.Windows.Controls.Panel>レイアウト プロセスが完了するとします。  
   
 <a name="LayoutSystem_PanelsCustom"></a>   
 ## <a name="panel-elements-and-custom-layout-behaviors"></a>パネル要素とカスタム レイアウトの動作  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]派生した要素のグループが含まれています<xref:System.Windows.Controls.Panel>です。 これら<xref:System.Windows.Controls.Panel>要素には、多くの複雑なレイアウトが有効にします。 たとえば、要素をスタックに簡単に実現できますを使用して、<xref:System.Windows.Controls.StackPanel>要素を使用して、複雑なレイアウトと空きフロー レイアウトも有効であるときに、<xref:System.Windows.Controls.Canvas>です。  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 派生した要素のグループが含まれています<xref:System.Windows.Controls.Panel>です。 これら<xref:System.Windows.Controls.Panel>要素には、多くの複雑なレイアウトが有効にします。 たとえば、要素をスタックに簡単に実現できますを使用して、<xref:System.Windows.Controls.StackPanel>要素を使用して、複雑なレイアウトと空きフロー レイアウトも有効であるときに、<xref:System.Windows.Controls.Canvas>です。  
   
  次の表に、使用可能なレイアウト<xref:System.Windows.Controls.Panel>要素。  
   
@@ -133,11 +121,11 @@ ms.lasthandoff: 12/22/2017
   
 -   どのプロパティ値の変更がレイアウト システムによる再帰的な更新を強制するかに注意してください。  
   
-     レイアウト システムを初期化できる値が設定されている依存関係プロパティは、パブリック フラグでマークされます。 <xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>および<xref:System.Windows.FrameworkPropertyMetadata.AffectsArrange%2A>プロパティに関する値が変更されたが、再帰的なを強制的に役立ちますの手がかりをレイアウト システム更新を提供します。 通常、要素の境界ボックスのサイズに影響する可能性があるプロパティがあります、<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>フラグを true に設定します。 依存関係プロパティの詳細については、「[依存関係プロパティの概要](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)」を参照してください。  
+     レイアウト システムを初期化できる値が設定されている依存関係プロパティは、パブリック フラグでマークされます。 <xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A> および<xref:System.Windows.FrameworkPropertyMetadata.AffectsArrange%2A>プロパティに関する値が変更されたが、再帰的なを強制的に役立ちますの手がかりをレイアウト システム更新を提供します。 通常、要素の境界ボックスのサイズに影響する可能性があるプロパティがあります、<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>フラグを true に設定します。 依存関係プロパティの詳細については、「[依存関係プロパティの概要](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)」を参照してください。  
   
 -   可能であれば、使用、<xref:System.Windows.UIElement.RenderTransform%2A>の代わりに、<xref:System.Windows.FrameworkElement.LayoutTransform%2A>です。  
   
-     A<xref:System.Windows.FrameworkElement.LayoutTransform%2A>の内容に影響する非常に便利な方法を指定できます、[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]です。 ただし、その他の要素の位置に影響する変換の結果がない場合をお勧めを使用する、<xref:System.Windows.UIElement.RenderTransform%2A>代わりに、ため<xref:System.Windows.UIElement.RenderTransform%2A>レイアウト システムは呼び出されません。 <xref:System.Windows.FrameworkElement.LayoutTransform%2A>その変換を適用し、新しい要素の位置の影響を受けるために、再帰的なレイアウトの更新を強制します。  
+     A<xref:System.Windows.FrameworkElement.LayoutTransform%2A>の内容に影響する非常に便利な方法を指定できます、[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]です。 ただし、その他の要素の位置に影響する変換の結果がない場合をお勧めを使用する、<xref:System.Windows.UIElement.RenderTransform%2A>代わりに、ため<xref:System.Windows.UIElement.RenderTransform%2A>レイアウト システムは呼び出されません。 <xref:System.Windows.FrameworkElement.LayoutTransform%2A> その変換を適用し、新しい要素の位置の影響を受けるために、再帰的なレイアウトの更新を強制します。  
   
 -   不要な呼び出しを避けるため<xref:System.Windows.UIElement.UpdateLayout%2A>です。  
   
@@ -159,7 +147,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="whats-next"></a>次の内容  
  要素の測定方法と配置方法を理解することが、レイアウトを理解する最初のステップです。 詳細については、使用可能な<xref:System.Windows.Controls.Panel>要素を参照してください[パネルの概要](../../../../docs/framework/wpf/controls/panels-overview.md)です。 レイアウトに影響を与えるさまざまな配置プロパティをより理解するには、「[配置、余白、パディングの概要](../../../../docs/framework/wpf/advanced/alignment-margins-and-padding-overview.md)」を参照してください。 カスタムの例については<xref:System.Windows.Controls.Panel>要素を参照してください[カスタム放射状パネル サンプル](http://go.microsoft.com/fwlink/?LinkID=159982)です。 軽量のアプリケーションにまとめて配置する準備ができたらを参照してください。[チュートリアル: 最初の WPF デスクトップ アプリケーション](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.FrameworkElement>  
  <xref:System.Windows.UIElement>  
  [パネルの概要](../../../../docs/framework/wpf/controls/panels-overview.md)  

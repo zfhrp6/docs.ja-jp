@@ -1,31 +1,17 @@
 ---
-title: "データ メンバーの順序"
-ms.custom: 
+title: データ メンバーの順序
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - data contracts [WCF], ordering members
 ms.assetid: 0658a47d-b6e5-4ae0-ba72-ababc3c6ff33
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 41eb191a08aba0f84a677087a3771b6d8e90efcd
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e286b900d7647bcd5bc99b78164e6820c1417a63
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="data-member-order"></a>データ メンバーの順序
 一部のアプリケーションでは、各種のデータ メンバーから送信される、または受信されると予想できるデータの順序 (たとえばシリアル化された XML でデータが表れる順序) がわかると便利です。 この順序を変更する必要が生じることもあります。 ここでは、このような順序を決定する規則について説明します。  
@@ -75,7 +61,7 @@ ms.lasthandoff: 12/22/2017
 </DerivedType>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Runtime.Serialization.DataContractAttribute>  
  [データ コントラクトの等価性](../../../../docs/framework/wcf/feature-details/data-contract-equivalence.md)  
  [データ コントラクトの使用](../../../../docs/framework/wcf/feature-details/using-data-contracts.md)

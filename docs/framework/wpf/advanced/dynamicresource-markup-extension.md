@@ -1,13 +1,6 @@
 ---
-title: "DynamicResource のマークアップ拡張機能"
-ms.custom: 
+title: DynamicResource のマークアップ拡張機能
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - DynamicResource
 - DynamicResourceExtension
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - XAML [WPF], DynamicResource markup extension
 - DynamicResource markup extensions [WPF]
 ms.assetid: 7324f243-03af-4c2b-b0db-26ac6cdfcbe4
-caps.latest.revision: "16"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 3f6c8500f9b9cd6d617789a2da3444519971ae81
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: c09d009a8cc90e050f6cfb1a8d2abd5c61c5b19f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="dynamicresource-markup-extension"></a>DynamicResource のマークアップ拡張機能
 いずれかの値を提供[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]定義されているリソースへの参照にするには、その値を遅らせることで、プロパティの属性です。 そのリソースに対する検索の動作は、実行時の参照に似ています。  
@@ -63,13 +51,13 @@ ms.lasthandoff: 12/22/2017
   
  リソース キーの任意の文字列で定義されている可能性があります、 [XamlName の文法](../../../../docs/framework/xaml-services/xamlname-grammar.md)です。 リソース キーもあります他のオブジェクトの種類など、<xref:System.Type>です。 A<xref:System.Type>キーがコントロールをテーマ スタイル設定するための基礎です。 詳しくは、「[コントロールの作成の概要](../../../../docs/framework/wpf/controls/control-authoring-overview.md)」を参照してください。  
   
- [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)]リソースの値の検索など<xref:System.Windows.FrameworkElement.FindResource%2A>で使用されると同じリソースの検索ロジックに従います`DynamicResource`です。  
+ [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] リソースの値の検索など<xref:System.Windows.FrameworkElement.FindResource%2A>で使用されると同じリソースの検索ロジックに従います`DynamicResource`です。  
   
  リソースを参照するための代替宣言的な手段は、 [StaticResource マークアップ拡張機能](../../../../docs/framework/wpf/advanced/staticresource-markup-extension.md)します。  
   
  属性構文は、このマークアップ拡張機能で使用される最も一般的な構文です。 `DynamicResource` 識別子文字列の後に設定される文字列トークンは、基になる <xref:System.Windows.DynamicResourceExtension.ResourceKey%2A> 拡張クラスの <xref:System.Windows.DynamicResourceExtension> 値として割り当てられます。  
   
- `DynamicResource`オブジェクトの要素の構文で使用できます。 この例では、値を指定する、<xref:System.Windows.DynamicResourceExtension.ResourceKey%2A>プロパティは必須です。  
+ `DynamicResource` オブジェクトの要素の構文で使用できます。 この例では、値を指定する、<xref:System.Windows.DynamicResourceExtension.ResourceKey%2A>プロパティは必須です。  
   
  `DynamicResource` は、<xref:System.Windows.DynamicResourceExtension.ResourceKey%2A> プロパティをプロパティおよび値のペアとして指定する詳細出力属性使用でも使用できます。  
   
@@ -83,7 +71,7 @@ ms.lasthandoff: 12/22/2017
   
  `DynamicResource` はマークアップ拡張機能です。 一般にマークアップ拡張機能を実装するのは、属性値をリテラル値やハンドラー名以外にエスケープする要件が存在し、その要件の適用範囲がグローバルで、特定の型やプロパティに型コンバーターを適用するだけにとどまらない場合です。 すべてのマークアップ拡張機能で[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]を使用して、{、}、規則は、それぞれの属性構文内の文字、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]プロセッサは、マークアップ拡張機能が、属性を処理する必要がありますを認識します。 詳細については、次を参照してください。[マークアップ拡張機能と WPF XAML](../../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [XAML リソース](../../../../docs/framework/wpf/advanced/xaml-resources.md)  
  [リソースとコード](../../../../docs/framework/wpf/advanced/resources-and-code.md)  
  [x:Key ディレクティブ](../../../../docs/framework/xaml-services/x-key-directive.md)  

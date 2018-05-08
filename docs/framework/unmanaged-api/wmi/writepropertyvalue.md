@@ -1,11 +1,7 @@
 ---
-title: "WritePropertyValue 関数 (アンマネージ API リファレンス)"
-description: "WritePropertyValue 関数は、プロパティにバイトを書き込みます。"
+title: WritePropertyValue 関数 (アンマネージ API リファレンス)
+description: WritePropertyValue 関数は、プロパティにバイトを書き込みます。
 ms.date: 11/06/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: reference
 api_name:
 - WritePropertyValue
 api_location:
@@ -20,14 +16,11 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 7221c9e0f1cb49ab0e27130ce69c0527ba903148
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6aafb918616d27cf6289a8747f3336b2e813beb6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="writepropertyvalue-function"></a>WritePropertyValue 関数
 プロパティのハンドルによって識別されたプロパティに指定したバイト数を書き込みます。
@@ -81,12 +74,12 @@ HRESULT WritePropertyValue (
 
 プロパティ値は文字列ではない、`lNumBytes`指定されたプロパティの型の適切なデータ サイズにする必要があります。 文字列プロパティの値の`lNumBytes`長さにする必要があります (バイト単位) で指定した文字列および文字列の偶数の長さ (バイト単位) の必要があり、null 終端文字の後にします。
 
-## <a name="requirements"></a>必要条件  
-**プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+**プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** WMINet_Utils.idl  
   
- **.NET framework のバージョン:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **.NET framework のバージョン:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>関連項目  
 [WMI およびパフォーマンス カウンター (アンマネージ API リファレンス)](index.md)

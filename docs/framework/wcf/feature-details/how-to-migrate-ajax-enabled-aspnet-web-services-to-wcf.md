@@ -1,41 +1,27 @@
 ---
 title: '方法 : AJAX 対応 ASP.NET Web サービスを WCF に移行する'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 1428df4d-b18f-4e6d-bd4d-79ab3dd5147c
-caps.latest.revision: 17
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 2b728e6283a2f038b7e5ef4c535da41f4eb8ebef
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 048408adf8678c243a225a233cb1173c9b7f869f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-migrate-ajax-enabled-aspnet-web-services-to-wcf"></a>方法 : AJAX 対応 ASP.NET Web サービスを WCF に移行する
-ここでは、基本的な ASP.NET AJAX サービスを同等の AJAX 対応 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスに移行する手順の概要を説明します。 ここでは、ASP.NET AJAX サービスの、機能的に同等の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] バージョンを作成する方法を示します。 この 2 つのサービスを並行して使用することも、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスを ASP.NET AJAX サービスと置き換えて使用することもできます。  
+このトピックでは、基本的な ASP.NET AJAX サービスを同等の AJAX 対応の Windows Communication Foundation (WCF) サービスに移行する手順について説明します。 ASP.NET AJAX サービスの同等の WCF バージョンを作成する方法を示します。 サイド バイ サイドで、2 つのサービスは使用して、または WCF サービスは、ASP.NET AJAX サービスを置き換えるを使用することができます。  
   
- 既存の ASP.NET AJAX サービスを [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] AJAX サービスに移行すると、次のような利点が得られます。  
+ 既存の ASP.NET AJAX を移行するサービスを WCF AJAX サービスでは、次の利点があります。  
   
 -   最小限の追加構成で、AJAX サービスを SOAP サービスとして公開できます。  
   
--   トレースなどの [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の機能の利点が得られます。  
+-   トレースなどの WCF 機能を利用しにできます。  
   
  次の手順では、[!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] が使用されていることを前提としています。  
   
  手順に続く例で、ここで説明する手順によって作成されるコードを示します。  
   
- 公開の詳細については、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] AJAX 対応エンドポイントを介してサービスを参照してください、[する方法: ASP.NET AJAX エンドポイントを追加する構成を使用する](../../../../docs/framework/wcf/feature-details/how-to-use-configuration-to-add-an-aspnet-ajax-endpoint.md)トピックです。  
+ AJAX 対応エンドポイントを介して WCF サービスを公開する詳細については、次を参照してください。、[する方法: ASP.NET AJAX エンドポイントを追加する構成を使用する](../../../../docs/framework/wcf/feature-details/how-to-use-configuration-to-add-an-aspnet-ajax-endpoint.md)トピックです。  
   
 ### <a name="to-create-and-test-the-aspnet-web-service-application"></a>ASP.NET Web サービス アプリケーションを作成してテストする  
   
@@ -62,7 +48,7 @@ ms.lasthandoff: 04/30/2018
   
 9. この応答は、ASP.NET AJAX サービスが現在機能していること、およびこのサービスが現在 Service1.asmx/HelloWorld でエンドポイントを公開していることを確認するものです。このエンドポイントが HTTP POST 要求に応答し、XML を返します。  
   
-     これで、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] AJAX サービスを使用するために、このサービスを変換する準備ができました。  
+     WCF AJAX サービスを使用するには、このサービスに変換する準備が整いました。  
   
 ### <a name="to-create-an-equivalent-wcf-ajax-service-application"></a>同等の WCF AJAX サービス アプリケーションを作成するには  
   
@@ -190,11 +176,11 @@ namespace ASPHello
   
  <xref:System.Xml.XmlDocument> 型は、<xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> によってシリアル化できないため、<xref:System.Xml.Serialization.XmlSerializer> ではサポートされていません。 <xref:System.Xml.Linq.XDocument> 型を使用するか、<xref:System.Xml.XmlDocument.DocumentElement%2A> をシリアル化します。  
   
- ASMX Web サービスが [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスと並行してアップグレードおよび移行される場合は、クライアントで 2 つの型を同じ名前に割り当てないようにします。 同じ名前が割り当てられていると、<xref:System.Web.Services.WebMethodAttribute> と <xref:System.ServiceModel.ServiceContractAttribute> で同じ型が使用されている場合に、シリアライザーで次のような例外が発生します。  
+ ASMX Web サービスがアップグレード中は、WCF サービスにサイド バイ サイドを移行する場合は、クライアントで同じ名前に 2 つの型をマッピングしないようにします。 同じ名前が割り当てられていると、<xref:System.Web.Services.WebMethodAttribute> と <xref:System.ServiceModel.ServiceContractAttribute> で同じ型が使用されている場合に、シリアライザーで次のような例外が発生します。  
   
--   [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスが先に追加された場合は、ASMX Web サービスでメソッドを呼び出すと、<xref:System.Web.UI.ObjectConverter.ConvertValue%28System.Object%2CSystem.Type%2CSystem.String%29> で例外が発生します。これは、プロキシでの順序の定義で [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] スタイル定義が優先されるためです。  
+-   WCF サービスを最初に追加すると場合に、例外の原因の ASMX Web サービス メソッドを呼び出して<xref:System.Web.UI.ObjectConverter.ConvertValue%28System.Object%2CSystem.Type%2CSystem.String%29>のため、WCF スタイルの定義、プロキシでの順序が優先されます。  
   
--   ASMX Web サービスが先に追加された場合は、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスでメソッドを呼び出すと、<xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> で例外が発生します。これは、プロキシでの順序の定義で Web サービス スタイル定義が優先されるためです。  
+-   WCF サービスでメソッドを呼び出す場合は、ASMX Web サービスを最初に追加するで例外が発生<xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>のため、プロキシでの順序の Web サービス スタイル定義が優先されます。  
   
  <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> と ASP.NET AJAX <xref:System.Web.Script.Serialization.JavaScriptSerializer> の動作には大きな違いがあります。 たとえば、<xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> はディクショナリをキーと値のペアの配列として表しますが、ASP.NET AJAX <xref:System.Web.Script.Serialization.JavaScriptSerializer> はディクショナリを実際の JSON オブジェクトとして表します。 したがって、ASP.NET AJAX では、ディクショナリが次のように表されます。  
   

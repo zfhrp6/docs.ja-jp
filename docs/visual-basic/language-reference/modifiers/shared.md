@@ -1,11 +1,6 @@
 ---
 title: Shared (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Shared
 helpviewer_keywords:
@@ -16,14 +11,11 @@ helpviewer_keywords:
 - shared [elements VB]
 - elements [Visual Basic], shared
 ms.assetid: 2bf7cf2c-b0dd-485e-8749-b5d674dab4cd
-caps.latest.revision: 16
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: fce13c308a449e63eacc2bc4c94c274c7e25506a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: b15dd08d69f372317b9140001e8072eeb66d44ab
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="shared-visual-basic"></a>Shared (Visual Basic)
 1 つまたは複数の宣言されたプログラミング要素がクラスまたは構造体全体、いないに関連付けられているクラスまたは構造体の特定のインスタンスを指定します。  

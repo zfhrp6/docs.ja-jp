@@ -1,29 +1,15 @@
 ---
 title: カスタム バインディング
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - Windows Communication Foundation, endpoints
 - Windows Communication Foundation, configuration
 ms.assetid: 58532b6d-4eea-4a4f-854f-a1c8c842564d
-caps.latest.revision: 33
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: f5fc38becb4a737ada5102c187ddeaac73aaceb1
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 6880b04a3f8a82c1e109c32674804c5241913a8a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="custom-bindings"></a>カスタム バインディング
 システムが提供するバインディングの中にサービスの要件を満たすものがない場合は、<xref:System.ServiceModel.Channels.CustomBinding> クラスを使用できます。 すべてのバインディングは、バインド要素の順序付き集合から作成されます。 カスタム バインドは、一連のシステム指定のバインド要素から作成したり、ユーザー定義のカスタム バインド要素を含めたりできます。 カスタム バインド要素を使用すると、たとえば、新しいトランスポートまたはエンコーダーをサービス エンドポイントで使用できるようになります。 実施例については、次を参照してください。[カスタム バインディングのサンプル](http://msdn.microsoft.com/library/657e8143-beb0-472d-9cfe-ed1a19c2ab08)です。 詳細については、次を参照してください。 [ \<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)です。  
@@ -55,7 +41,7 @@ ms.lasthandoff: 04/28/2018
   
     -   <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement>  
   
- 最下位には、必須のトランスポート要素があります。 独自のトランスポートを使用することも、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] が提供する次のトランスポート バインド要素のいずれかを使用することもできます。  
+ 最下位には、必須のトランスポート要素があります。 独自のトランスポートまたは Windows Communication Foundation (WCF) は、次のトランスポート バインド要素の 1 つを使用することができます。  
   
 -   <xref:System.ServiceModel.Channels.TcpTransportBindingElement>  
   

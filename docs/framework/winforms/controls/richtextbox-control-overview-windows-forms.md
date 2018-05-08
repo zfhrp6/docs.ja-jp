@@ -1,31 +1,17 @@
 ---
-title: "RichTextBox コントロールの概要 (Windows フォーム)"
-ms.custom: 
+title: RichTextBox コントロールの概要 (Windows フォーム)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - RichTextBox
 helpviewer_keywords:
 - RichTextBox control [Windows Forms], about RichTextBox control
 - text boxes [Windows Forms], about text boxes
 ms.assetid: 95081194-3dd4-4b84-9545-dd373e491eca
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: d6ed04ab478cc6c20d88ec97934f5e45528558c8
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 53c4cd41cf203886c93291debc7bca4f395f9698
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="richtextbox-control-overview-windows-forms"></a>RichTextBox コントロールの概要 (Windows フォーム)
 Windows フォーム<xref:System.Windows.Forms.RichTextBox>コントロールを表示、入力すると、および書式設定を含むテキストを操作するために使用します。 <xref:System.Windows.Forms.RichTextBox>コントロールはすべて、<xref:System.Windows.Forms.TextBox>コントロールは、できますが、ことができますフォント、色、およびリンクの表示以外の場合は、ファイルからテキストと埋め込み画像を読み込む、指定した文字を検索します。 <xref:System.Windows.Forms.RichTextBox>通常、コントロールはテキストの操作を提供し、Microsoft Word などのワード プロセッシング アプリケーションと同様の機能の表示に使用します。 同様に、<xref:System.Windows.Forms.TextBox>コントロール、<xref:System.Windows.Forms.RichTextBox>コントロールがスクロール バーを表示できるとは異なり、<xref:System.Windows.Forms.TextBox>コントロール、その既定値は、必要に応じて、水平線と垂直スクロール バーを表示して、追加のスクロール バーの設定があります。  
@@ -37,7 +23,7 @@ Windows フォーム<xref:System.Windows.Forms.RichTextBox>コントロールを
   
  元に戻したりでのほとんどの編集操作をやり直すことができます、<xref:System.Windows.Forms.RichTextBox>コントロールを呼び出して、<xref:System.Windows.Forms.TextBoxBase.Undo%2A>と<xref:System.Windows.Forms.RichTextBox.Redo%2A>メソッドです。 <xref:System.Windows.Forms.RichTextBox.CanRedo%2A>メソッドでは、コントロールにユーザーを元に戻した最後の操作を再適用することができるかどうかを判断することができます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.RichTextBox>  
  [RichTextBox コントロール](../../../../docs/framework/winforms/controls/richtextbox-control-windows-forms.md)  
  [TextBox コントロールの概要](../../../../docs/framework/winforms/controls/textbox-control-overview-windows-forms.md)

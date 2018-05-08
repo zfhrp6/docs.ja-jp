@@ -1,32 +1,18 @@
 ---
 title: クライアントを使用したサービスへのアクセス
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: c8329832-bf66-4064-9034-bf39f153fc2d
-caps.latest.revision: 15
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 209d10f9545be65870f584fa79444f7fab90211a
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 1369403b493683f58640047fe042708afc5d5b46
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="accessing-services-using-a-client"></a>クライアントを使用したサービスへのアクセス
-クライアント アプリケーションがサービスと通信するには、クライアント アプリケーションで [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントまたはチャネルを作成および構成し、使用する必要があります。 [WCF クライアントの概要](../../../../docs/framework/wcf/wcf-client-overview.md)トピックは、オブジェクトと基本的なチャネルとクライアント オブジェクトを作成すると、それらを使用して関連する手順の概要を説明します。  
+クライアント アプリケーションは、作成、構成、およびサービスと通信する WCF クライアントまたはチャネル オブジェクトを使用する必要があります。 [WCF クライアントの概要](../../../../docs/framework/wcf/wcf-client-overview.md)トピックは、オブジェクトと基本的なチャネルとクライアント オブジェクトを作成すると、それらを使用して関連する手順の概要を説明します。  
   
  このトピックでは、ユーザーのシナリオに応じて役立つ、クライアント アプリケーション、クライアント オブジェクト、およびチャネル オブジェクトに関するいくつかの問題について詳しく説明します。  
   
@@ -42,7 +28,7 @@ ms.lasthandoff: 04/30/2018
 -   対話方式によるチャネルの初期化  
   
 ### <a name="channel-and-session-lifetimes"></a>チャネルとセッションの有効期間  
- [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] アプリケーションのチャネルは、データグラム チャネルとセッションフル チャネルの 2 つに分類されます。  
+ Windows Communication Foundation (WCF) アプリケーションには、データグラム チャネルとセッションフル チャネルの 2 つのカテゴリが含まれています。  
   
  A*データグラム*チャネルは、チャネルをすべてのメッセージが相関されません。 データグラム チャネルでは、入出力操作が失敗しても、通常、次の操作は影響を受けないので、同じチャネルの再利用が可能です。 したがって、通常、データグラム チャネルは失敗になりません。  
   
@@ -79,11 +65,11 @@ ms.lasthandoff: 04/30/2018
  アプリケーション レベルのエラー情報が作業の詳細については、次を参照してください。[を指定すると処理のエラー コントラクトおよびサービスの](../../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md)します。 [予期される例外](../../../../docs/framework/wcf/samples/expected-exceptions.md)予期される例外を説明し、それらを処理する方法を示します。 チャネルを開発するときにエラーを処理する方法の詳細については、次を参照してください。[例外の処理とエラー](../../../../docs/framework/wcf/extending/handling-exceptions-and-faults.md)です。  
   
 ### <a name="client-blocking-and-performance"></a>クライアントのブロックとパフォーマンス  
- アプリケーションが要求/応答操作を同期的に呼び出す場合、戻り値が受信されるか例外 (<xref:System.TimeoutException?displayProperty=nameWithType> など) がスローされるまで、クライアントはブロックされます。 この動作はローカルの動作と似ています。 アプリケーションが [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント オブジェクトまたはチャネルに対する操作を同期的に呼び出す場合、チャネル レイヤーがデータをネットワークに書き込むことができるまで、または例外がスローされるまで、クライアントに制御は戻りません。 また、一方向メッセージ交換パターン (<xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A?displayProperty=nameWithType> が `true` に設定された操作をマークすることで指定される) では、クライアントの応答性が向上する可能性がありますが、バインディングや送信済みのメッセージによっては、一方向操作でもブロックが生じる場合があります。 一方向操作とはメッセージ交換のみを指しています。 詳細については、次を参照してください。[一方向サービス](../../../../docs/framework/wcf/feature-details/one-way-services.md)です。  
+ アプリケーションが要求/応答操作を同期的に呼び出す場合、戻り値が受信されるか例外 (<xref:System.TimeoutException?displayProperty=nameWithType> など) がスローされるまで、クライアントはブロックされます。 この動作はローカルの動作と似ています。 アプリケーションは、WCF クライアント オブジェクトまたはチャネルに対する操作を同期的に呼び出す、ネットワークに、または例外がスローされるまで、チャネル レイヤーがデータを書き込むことができますになるまで、クライアントは返しません。 また、一方向メッセージ交換パターン (<xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A?displayProperty=nameWithType> が `true` に設定された操作をマークすることで指定される) では、クライアントの応答性が向上する可能性がありますが、バインディングや送信済みのメッセージによっては、一方向操作でもブロックが生じる場合があります。 一方向操作とはメッセージ交換のみを指しています。 詳細については、次を参照してください。[一方向サービス](../../../../docs/framework/wcf/feature-details/one-way-services.md)です。  
   
  メッセージ交換パターンに関係なく、大規模データのチャンクによりクライアント処理が遅延する場合があります。 これらの問題を処理する方法を理解するには、次を参照してください。[大量のデータとストリーミング](../../../../docs/framework/wcf/feature-details/large-data-and-streaming.md)です。  
   
- 操作が完了してもアプリケーションでさらに処理を行う必要がある場合、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントが実装するサービス コントラクト インターフェイスに非同期のメソッドのペアを作成する必要があります。 これを行う最も簡単な方法を使用する、`/async`スイッチ、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)です。 例については、次を参照してください。[する方法: サービスの操作を非同期に呼び出す](../../../../docs/framework/wcf/feature-details/how-to-call-wcf-service-operations-asynchronously.md)です。  
+ 場合は、アプリケーションは、処理が完了したときより多くの作業を行う必要がありますは、WCF クライアントを実装するサービス コントラクト インターフェイスに非同期メソッド ペアを作成します。 これを行う最も簡単な方法を使用する、`/async`スイッチ、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)です。 例については、次を参照してください。[する方法: サービスの操作を非同期に呼び出す](../../../../docs/framework/wcf/feature-details/how-to-call-wcf-service-operations-asynchronously.md)です。  
   
  クライアントのパフォーマンスの向上の詳細については、次を参照してください。[中間層クライアント アプリケーション](../../../../docs/framework/wcf/feature-details/middle-tier-client-applications.md)です。  
   

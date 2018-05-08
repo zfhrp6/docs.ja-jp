@@ -1,14 +1,6 @@
 ---
 title: クラスを作成するためのスキーマのインポート
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,20 +8,14 @@ helpviewer_keywords:
 - WCF, schema import and export
 - XsdDataContractImporter class
 ms.assetid: b9170583-8c34-43bd-97bb-6c0c8dddeee0
-caps.latest.revision: 15
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 4d7988630e2eba3e6d5ebdc8b15b23aeb280a66f
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 338daa031ac2c1b31a121908643a15449c5401a1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="importing-schema-to-generate-classes"></a>クラスを作成するためのスキーマのインポート
-スキーマを読み込んで、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] で使用可能なクラスを生成するには、<xref:System.Runtime.Serialization.XsdDataContractImporter> クラスを使用します。 ここでは、生成時に指定できる各種のオプションについて解説します。  
+Windows Communication Foundation (WCF) で使用可能なスキーマからクラスを生成するには、使用、<xref:System.Runtime.Serialization.XsdDataContractImporter>クラスです。 ここでは、生成時に指定できる各種のオプションについて解説します。  
   
 ## <a name="the-import-process"></a>インポート処理  
  スキーマのインポート処理は、<xref:System.Xml.Schema.XmlSchemaSet> を用意し、<xref:System.CodeDom.CodeCompileUnit> を生成することから始まります。  
@@ -114,7 +100,7 @@ ms.lasthandoff: 04/28/2018
  [!code-xml[C_SchemaImportExport#12](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_schemaimportexport/common/source.config#12)]  
   
 > [!NOTE]
->  関連付けもリストと見なすことができます。 たとえば、上記の関連付けは、文字列と整数の 2 つのフィールドから成る複雑な `city` オブジェクトのリストと考えることも可能です。 どちらの方法であっても、XSD スキーマで表現できます。 この 2 つを区別する手段はないので、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] に特有の特別な注釈がスキーマ内になければ、このようなパターンは常にリストとして扱われます。 注釈がある場合は、関連付けを表すものとして扱われます。 詳細については、次を参照してください。[データ コントラクト スキーマの参照](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md)です。  
+>  関連付けもリストと見なすことができます。 たとえば、上記の関連付けは、文字列と整数の 2 つのフィールドから成る複雑な `city` オブジェクトのリストと考えることも可能です。 どちらの方法であっても、XSD スキーマで表現できます。 WCF に固有の特別な注釈がスキーマ内に存在しない限りに、このようなパターンはリストとして扱われます常に、一覧と、関連付けとを区別する方法はありません。 注釈がある場合は、関連付けを表すものとして扱われます。 詳細については、次を参照してください。[データ コントラクト スキーマの参照](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md)です。  
   
  リストは通常、ジェネリック リストから派生したコレクション データ コントラクト、または [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] の配列としてインポートされます。スキーマがコレクションの標準的な名前付けパターンに従っているかどうかによって切り分けます。 さらに詳しく記載されて[データ コントラクトのコレクション型](../../../../docs/framework/wcf/feature-details/collection-types-in-data-contracts.md)です。 関連付けは通常、<xref:System.Collections.Generic.Dictionary%602>、または辞書オブジェクトから派生したコレクション データ コントラクトとしてインポートされます。 たとえば、次のスキーマを考えます。  
   

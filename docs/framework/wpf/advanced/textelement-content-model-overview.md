@@ -1,13 +1,6 @@
 ---
-title: "TextElement コンテンツ モデルの概要"
-ms.custom: 
+title: TextElement コンテンツ モデルの概要
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,16 +9,11 @@ helpviewer_keywords:
 - TextElement content model [WPF]
 - flow content elements [WPF], TextElement content model
 ms.assetid: d0a7791c-b090-438c-812f-b9d009d83ee9
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 95d25ff6819ba913b7e9270bc2d87dd77032c5c6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4a50e8a10563fdc5e16ee2e2a46389e13b51e447
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="textelement-content-model-overview"></a>TextElement コンテンツ モデルの概要
 このコンテンツ モデルの概要で説明するサポートされているコンテンツを<xref:System.Windows.Documents.TextElement>です。 <xref:System.Windows.Documents.Paragraph>クラスは、型の<xref:System.Windows.Documents.TextElement>します。 コンテンツ モデルは、他のオブジェクトや要素に含めることのできるオブジェクトや要素を記述します。 この概要から派生したオブジェクトに使用されるコンテンツ モデルの概要を示します<xref:System.Windows.Documents.TextElement>です。 詳細については、次を参照してください。[フロー ドキュメントの概要](../../../../docs/framework/wpf/advanced/flow-document-overview.md)です。  
@@ -69,7 +57,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="working-with-textelement-content-programmatically"></a>TextElement のコンテンツをプログラムで操作する  
  内容、<xref:System.Windows.Documents.TextElement>コレクションの内容をプログラムで操作するため、作成されて<xref:System.Windows.Documents.TextElement>オブジェクトは、これらのコレクションで作業して行われます。 使用される 3 つの異なるコレクションがある<xref:System.Windows.Documents.TextElement>-派生クラス。  
   
--   <xref:System.Windows.Documents.InlineCollection>: のコレクションを表します<xref:System.Windows.Documents.Inline>要素。 <xref:System.Windows.Documents.InlineCollection>許容される子コンテンツを定義、 <xref:System.Windows.Documents.Paragraph>、 <xref:System.Windows.Documents.Span>、および<xref:System.Windows.Controls.TextBlock>要素。  
+-   <xref:System.Windows.Documents.InlineCollection>: のコレクションを表します<xref:System.Windows.Documents.Inline>要素。 <xref:System.Windows.Documents.InlineCollection> 許容される子コンテンツを定義、 <xref:System.Windows.Documents.Paragraph>、 <xref:System.Windows.Documents.Span>、および<xref:System.Windows.Controls.TextBlock>要素。  
   
 -   <xref:System.Windows.Documents.BlockCollection>: のコレクションを表します<xref:System.Windows.Documents.Block>要素。 <xref:System.Windows.Documents.BlockCollection> は <xref:System.Windows.Documents.FlowDocument>、<xref:System.Windows.Documents.Section>、<xref:System.Windows.Documents.ListItem>、<xref:System.Windows.Documents.TableCell>、<xref:System.Windows.Documents.Floater>、<xref:System.Windows.Documents.Figure> 要素で許容される子コンテンツを定義します。  
   
@@ -112,7 +100,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="types-that-can-contain-textelement-objects"></a>TextElement オブジェクトを含むことのできる型  
  参照してください[WPF コンテンツ モデル](../../../../docs/framework/wpf/controls/wpf-content-model.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Blocks プロパティを介して FlowDocument を操作する](../../../../docs/framework/wpf/advanced/how-to-manipulate-a-flowdocument-through-the-blocks-property.md)  
  [Blocks プロパティを介してフロー コンテンツ要素を操作する](../../../../docs/framework/wpf/advanced/how-to-manipulate-flow-content-elements-through-the-blocks-property.md)  
  [Blocks プロパティを介して FlowDocument を操作する](../../../../docs/framework/wpf/advanced/how-to-manipulate-a-flowdocument-through-the-blocks-property.md)  

@@ -1,13 +1,6 @@
 ---
-title: "方法 : ToolStripMenuItems を移動する"
-ms.custom: 
+title: '方法 : ToolStripMenuItems を移動する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - ToolStripMenuItems [Windows Forms], moving
 - menus [Windows Forms], arranging items
@@ -18,16 +11,11 @@ helpviewer_keywords:
 - MenuStrip control [Windows Forms], arranging items
 - ToolStripMenuItems [Windows Forms], cutting and pasting
 ms.assetid: cab9e03e-4edd-4c25-b3e3-bd1edc602bd9
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 6ffef860118ba20508bba037910d85866055c898
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 5cfaf87a59d27678cfb786633ed4c9a9f66bac76
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-move-toolstripmenuitems"></a>方法 : ToolStripMenuItems を移動する
 デザイン時に行うことができますトップレベル メニュー全体とそのメニュー項目を別の場所、<xref:System.Windows.Forms.MenuStrip>です。 トップレベル メニュー間で個々 のメニュー項目を移動したり、メニュー内のメニュー項目の位置を変更できます。  
@@ -61,7 +49,7 @@ ms.lasthandoff: 01/19/2018
   
 4.  メニュー内のメニュー項目を移動する上下矢印キーをクリックします。  
   
-5.  **[OK]**をクリックします。  
+5.  **[OK]** をクリックします。  
   
 ### <a name="to-move-a-menu-item-within-a-menu-using-the-keyboard"></a>キーボードを使用してメニュー内のメニュー項目を移動するには  
   
@@ -81,7 +69,7 @@ ms.lasthandoff: 01/19/2018
   
      切り取りするメニュー項目が選択されたメニュー項目の後に挿入されます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.MenuStrip>  
  <xref:System.Windows.Forms.ToolStripMenuItem>  
  [MenuStrip コントロールの概要](../../../../docs/framework/winforms/controls/menustrip-control-overview-windows-forms.md)

@@ -1,14 +1,6 @@
 ---
-title: "ICorDebugEval::NewArray メソッド"
-ms.custom: 
+title: ICorDebugEval::NewArray メソッド
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ICorDebugEval.NewArray
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: cc79a67d-5368-434d-a943-209db90491b9
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: f9116c2ee7edbc39d203728909ce37e963c896fc
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 38b00d903fdd7301415a8df7642e12366178fd10
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="icordebugevalnewarray-method"></a>ICorDebugEval::NewArray メソッド
 指定した要素の型および次元の新しい配列を割り当てます。  
@@ -71,8 +59,8 @@ HRESULT NewArray (
 ## <a name="remarks"></a>コメント  
  配列は常に、現在のスレッドが実行しているアプリケーション ドメインに作成します。  
   
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   

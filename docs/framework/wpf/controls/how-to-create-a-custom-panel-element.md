@@ -1,13 +1,6 @@
 ---
-title: "方法 : カスタム パネル要素を作成する"
-ms.custom: 
+title: '方法 : カスタム パネル要素を作成する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,16 +9,11 @@ helpviewer_keywords:
 - Panel control [WPF]
 - custom Panel elements [WPF]
 ms.assetid: e0df4f1e-8c07-4e86-89a3-e22acfffdc2a
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 5eacc5435e259c20c25b64d6e82c33d07338602a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 2d1581ef1d0130a6952becf36d668e6a198e1ee9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-a-custom-panel-element"></a>方法 : カスタム パネル要素を作成する
 ## <a name="example"></a>例  
@@ -39,7 +27,7 @@ ms.lasthandoff: 12/22/2017
  [!code-csharp[PlotPanel#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PlotPanel/CSharp/PlotPanel.cs#1)]
  [!code-vb[PlotPanel#1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/PlotPanel/VisualBasic/PlotPanel.vb#1)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Controls.Panel>  
  [パネルの概要](../../../../docs/framework/wpf/controls/panels-overview.md)  
  [カスタム コンテンツの折り返しパネル サンプルを作成します。](http://go.microsoft.com/fwlink/?LinkID=159979)

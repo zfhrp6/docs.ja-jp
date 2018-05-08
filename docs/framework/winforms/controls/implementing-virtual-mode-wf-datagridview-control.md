@@ -1,13 +1,6 @@
 ---
-title: "チュートリアル : Windows フォーム DataGridView コントロールでの仮想モードの実装"
-ms.custom: 
+title: 'チュートリアル : Windows フォーム DataGridView コントロールでの仮想モードの実装'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -19,16 +12,11 @@ helpviewer_keywords:
 - DataGridView control [Windows Forms], large data sets
 - walkthroughs [Windows Forms], DataGridView control
 ms.assetid: 74eb5276-5ab8-4ce0-8005-dae751d85f7c
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 3b9a70aaf2643811354cc9d7f6b51ed0805ca916
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 52e93ebe0b2903fdf2fe97f4ce812331e740f8b0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="walkthrough-implementing-virtual-mode-in-the-windows-forms-datagridview-control"></a>チュートリアル : Windows フォーム DataGridView コントロールでの仮想モードの実装
 非常に大量の表形式データを表示する場合、<xref:System.Windows.Forms.DataGridView>コントロールを設定できます、<xref:System.Windows.Forms.DataGridView.VirtualMode%2A>プロパティを`true`と明示的にそのデータ ストアとコントロールの相互作用を管理します。 このような状況で、コントロールのパフォーマンスを微調整できます。  
@@ -136,7 +124,7 @@ ms.lasthandoff: 12/22/2017
   
  外部データベースから値をキャッシュの詳細については、次を参照してください。[する方法: Windows フォーム DataGridView コントロールで Just-In-Time データ読み込みによる仮想モードを実装する](../../../../docs/framework/winforms/controls/virtual-mode-with-just-in-time-data-loading-in-the-datagrid.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.DataGridView>  
  <xref:System.Windows.Forms.DataGridView.VirtualMode%2A>  
  <xref:System.Windows.Forms.DataGridView.CellValueNeeded>  

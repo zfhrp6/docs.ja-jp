@@ -1,12 +1,6 @@
 ---
 title: Sub ステートメント (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Sub
 helpviewer_keywords:
@@ -35,14 +29,11 @@ helpviewer_keywords:
 - ByVal keyword [Visual Basic], Sub statements
 - Visual Basic code, Sub procedures
 ms.assetid: e347d700-d06c-405b-b302-e9b1edb57dfc
-caps.latest.revision: 52
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 0a2d0d5ffdca857a3a5ca58cd38b0930f254526f
-ms.sourcegitcommit: 8ed4ebc15b5ef89d06a7507dc9d5e306e30accf7
+ms.openlocfilehash: 9a806f2ec979699f7ccf4012c6477bee11301b0f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="sub-statement-visual-basic"></a>Sub ステートメント (Visual Basic)
 宣言名、パラメーター、およびコードを定義する、`Sub`プロシージャです。  
@@ -62,15 +53,15 @@ End Sub
   
 -   `attributelist`  
   
-     省略可能です。 参照してください[属性一覧](attribute-list.md)です。  
+     任意。 参照してください[属性一覧](attribute-list.md)です。  
   
 -   `Partial`  
   
-     省略可能です。 部分メソッドの定義を示します。 参照してください[部分メソッド](../../../visual-basic/programming-guide/language-features/procedures/partial-methods.md)です。  
+     任意。 部分メソッドの定義を示します。 参照してください[部分メソッド](../../../visual-basic/programming-guide/language-features/procedures/partial-methods.md)です。  
   
 -   `accessmodifier`  
   
-     省略可能です。 次のいずれかの値を指定します。  
+     任意。 次のいずれかの値を指定します。  
   
     -   [Public](../modifiers/public.md)  
   
@@ -86,7 +77,7 @@ End Sub
   
 -   `proceduremodifiers`  
   
-     省略可能です。 次のいずれかの値を指定します。  
+     任意。 次のいずれかの値を指定します。  
   
     -   [オーバーロード](../modifiers/overloads.md)  
   
@@ -104,31 +95,31 @@ End Sub
   
 -   `Shared`  
   
-     省略可能です。 参照してください[共有](../modifiers/shared.md)です。  
+     任意。 参照してください[共有](../modifiers/shared.md)です。  
   
 -   `Shadows`  
   
-     省略可能です。 参照してください[Shadows](../modifiers/shadows.md)です。  
+     任意。 参照してください[Shadows](../modifiers/shadows.md)です。  
   
 -   `Async`  
   
-     省略可能です。 参照してください[Async](../modifiers/async.md)です。  
+     任意。 参照してください[Async](../modifiers/async.md)です。  
   
 -   `name`  
   
-     必須です。 プロシージャの名前。 参照してください[宣言された要素の名前](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)です。 クラスのコンス トラクターのプロシージャを作成するには、名前を設定、`Sub`する手順、`New`キーワード。 詳細については、次を参照してください。[オブジェクトの有効期間: オブジェクトが作成と破棄にはどのように](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md)です。  
+     必須。 プロシージャの名前。 参照してください[宣言された要素の名前](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)です。 クラスのコンス トラクターのプロシージャを作成するには、名前を設定、`Sub`する手順、`New`キーワード。 詳細については、次を参照してください。[オブジェクトの有効期間: オブジェクトが作成と破棄にはどのように](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md)です。  
   
 -   `typeparamlist`  
   
-     省略可能です。 ジェネリック プロシージャの型パラメーターの一覧です。 参照してください[のリストを入力](type-list.md)です。  
+     任意。 ジェネリック プロシージャの型パラメーターの一覧です。 参照してください[のリストを入力](type-list.md)です。  
   
 -   `parameterlist`  
   
-     省略可能です。 このプロシージャのパラメーターを表すローカル変数名の一覧です。 参照してください[パラメーター リスト](parameter-list.md)です。  
+     任意。 このプロシージャのパラメーターを表すローカル変数名の一覧です。 参照してください[パラメーター リスト](parameter-list.md)です。  
   
 -   `Implements`  
   
-     省略可能です。 この手順には、1 つまたは複数が実装されていることを示します`Sub`プロシージャ、このプロシージャの包含クラスまたは構造体によって実装されるインターフェイスで定義されている 1 つずつです。 参照してください[ステートメントを実装します](implements-statement.md)です。  
+     任意。 この手順には、1 つまたは複数が実装されていることを示します`Sub`プロシージャ、このプロシージャの包含クラスまたは構造体によって実装されるインターフェイスで定義されている 1 つずつです。 参照してください[ステートメントを実装します](implements-statement.md)です。  
   
 -   `implementslist`  
   
@@ -142,12 +133,12 @@ End Sub
   
     |パーツ|説明|  
     |---|---|  
-    |`interface`|必須です。 このプロシージャによって実装されるインターフェイスの名前には、クラスまたは構造体を含むのです。|  
-    |`definedname`|必須です。 `interface` の中でプロシージャを定義するために使用する名前。|  
+    |`interface`|必須。 このプロシージャによって実装されるインターフェイスの名前には、クラスまたは構造体を含むのです。|  
+    |`definedname`|必須。 `interface` の中でプロシージャを定義するために使用する名前。|  
   
 -   `Handles`  
   
-     省略可能です。 この手順が 1 つまたは複数の特定のイベントを処理できることを示します。 参照してください[処理](handles-clause.md)です。  
+     任意。 この手順が 1 つまたは複数の特定のイベントを処理できることを示します。 参照してください[処理](handles-clause.md)です。  
   
 -   `eventlist`  
   
@@ -161,12 +152,12 @@ End Sub
   
     |パーツ|説明|  
     |---|---|  
-    |`eventvariable`|必須です。 クラスまたはイベントを発生させる構造体のデータ型で宣言されたオブジェクト変数です。|  
-    |`event`|必須です。 このプロシージャを処理するイベントの名前。|  
+    |`eventvariable`|必須。 クラスまたはイベントを発生させる構造体のデータ型で宣言されたオブジェクト変数です。|  
+    |`event`|必須。 このプロシージャを処理するイベントの名前。|  
   
 -   `statements`  
   
-     省略可能です。 このプロシージャ内で実行するステートメントのブロックです。  
+     任意。 このプロシージャ内で実行するステートメントのブロックです。  
   
 -   `End Sub`  
   
@@ -178,7 +169,7 @@ End Sub
 ## <a name="defining-a-sub-procedure"></a>Sub プロシージャの定義  
  定義することができます、`Sub`手順モジュール レベルでのみです。 Sub プロシージャの宣言コンテキストは、そのため、必要があります、クラス、構造体、モジュールの場合、またはインターフェイスと、ソース ファイル、名前空間、プロシージャ、またはブロックすることはできません。 詳細については、「[宣言コンテキストと既定のアクセス レベル](declaration-contexts-and-default-access-levels.md)」を参照してください。  
   
- `Sub`パブリック アクセスにプロシージャの既定値です。 アクセス修飾子を使用して、これらのアクセス レベルを調整できます。  
+ `Sub` パブリック アクセスにプロシージャの既定値です。 アクセス修飾子を使用して、これらのアクセス レベルを調整できます。  
   
  プロシージャで使用する場合、`Implements`キーワードを含むクラスまたは構造体があります、`Implements`直後に続くステートメント、`Class`または`Structure`ステートメントです。 `Implements`ステートメントで指定されている各インターフェイスを含める必要があります`implementslist`です。 ただし、インターフェイスを定義する名前、 `Sub` (で`definedname`) このプロシージャの名前と一致する必要はありません (で`name`)。  
   
@@ -214,7 +205,7 @@ End Sub
   
  マークすることも、[関数ステートメント](function-statement.md)で、`Async`修飾子です。 `Async`関数の戻り値の型を持つことができます<xref:System.Threading.Tasks.Task%601>または<xref:System.Threading.Tasks.Task>です。 例を後でのこのトピックでは、`Async`関数の戻り値の型を持つ<xref:System.Threading.Tasks.Task%601>します。  
   
- `Async``Sub`プロシージャは、主に使用、イベント ハンドラーの値が返されることはできません。 `Async``Sub`プロシージャを待機することはできませんとの呼び出し元、`Async``Sub`プロシージャは、例外をキャッチできませんを`Sub`プロシージャがスローされます。  
+ `Async` `Sub` プロシージャは、主に、値が返されることはできません、イベント ハンドラーを使用します。 `Async``Sub`プロシージャを待機することはできませんとの呼び出し元、`Async``Sub`プロシージャは、例外をキャッチできませんを`Sub`プロシージャがスローされます。  
   
  `Async`プロシージャは、いずれかを宣言できません[ByRef](../modifiers/byref.md)パラメーター。  
   

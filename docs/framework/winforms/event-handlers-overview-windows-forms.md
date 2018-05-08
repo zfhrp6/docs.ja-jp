@@ -1,14 +1,6 @@
 ---
 title: イベント ハンドラーの概要 (Windows フォーム)
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-winforms
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -18,17 +10,11 @@ helpviewer_keywords:
 - event handling [Windows Forms], Windows Forms
 - event handlers [Windows Forms], about event handlers
 ms.assetid: 228112e1-1711-42ee-8ffa-ff3555bffe66
-caps.latest.revision: 13
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 44d79fb9d6ca2712c470354999b4795408044166
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 2970cf0f83339fe86faf4af7da80bb17bd25acfc
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="event-handlers-overview-windows-forms"></a>イベント ハンドラーの概要 (Windows フォーム)
 イベント ハンドラーは、イベントにバインドされるメソッドです イベントが発生したとき、そのイベント ハンドラー内のコードが実行されます 各イベント ハンドラーは、イベントを正しく処理できるように 2 つのパラメーターを提供しています。 次の例では、<xref:System.Windows.Forms.Button> コントロールの <xref:System.Windows.Forms.Control.Click> イベントのイベント ハンドラーを示しています。  
@@ -61,6 +47,6 @@ private:
   
  また、異なるコントロールの同じイベントを処理するために同じイベント ハンドラーを使用することもできます。 たとえば、フォーム上に <xref:System.Windows.Forms.RadioButton> のコントロールのグループがある場合、<xref:System.Windows.Forms.Control.Click> イベントのイベント ハンドラーを作成し、それぞれのコントロールの <xref:System.Windows.Forms.Control.Click> イベントをその 1 つのイベント ハンドラーにバインドさせることができます。 詳細については、[Windows フォームの 1 つのイベント ハンドラーに複数のイベントを接続する方法](../../../docs/framework/winforms/how-to-connect-multiple-events-to-a-single-event-handler-in-windows-forms.md) についての記事を参照してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Windows フォーム内でのイベント ハンドラーの作成](../../../docs/framework/winforms/creating-event-handlers-in-windows-forms.md)  
  [イベントの概要](../../../docs/framework/winforms/events-overview-windows-forms.md)

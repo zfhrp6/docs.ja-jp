@@ -1,14 +1,6 @@
 ---
-title: "FolderBrowserDialog コンポーネントの概要 (Windows フォーム)"
-ms.custom: 
+title: FolderBrowserDialog コンポーネントの概要 (Windows フォーム)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - FolderBrowserDialog
 helpviewer_keywords:
@@ -16,17 +8,11 @@ helpviewer_keywords:
 - directories [Windows Forms], enabling browsing in applications
 - folders [Windows Forms], enabling browsing in applications
 ms.assetid: 796b622c-3ba9-4356-93bb-e217fc52f2c7
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 26d2b6294a503edd25b499da2ab67739cdf87174
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a735749698266ac20e2ea9ee5569fd210ee9977b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="folderbrowserdialog-component-overview-windows-forms"></a>FolderBrowserDialog コンポーネントの概要 (Windows フォーム)
 Windows フォーム<xref:System.Windows.Forms.FolderBrowserDialog>コンポーネントは、モーダル ダイアログ ボックスを参照してフォルダーを選択するために使用します。 内から新しいフォルダーを作成することも、<xref:System.Windows.Forms.FolderBrowserDialog>コンポーネントです。  
@@ -38,7 +24,7 @@ Windows フォーム<xref:System.Windows.Forms.FolderBrowserDialog>コンポー�
   
  フォームに追加されたとき、<xref:System.Windows.Forms.FolderBrowserDialog>コンポーネントは、Windows フォーム デザイナーの下部にあるトレイに表示されます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.FolderBrowserDialog>  
  [方法: Windows フォーム FolderBrowserDialog コンポーネントを使用してフォルダーを選択する](../../../../docs/framework/winforms/controls/how-to-choose-folders-with-the-windows-forms-folderbrowserdialog-component.md)  
  [FolderBrowserDialog コンポーネント](../../../../docs/framework/winforms/controls/folderbrowserdialog-component-windows-forms.md)

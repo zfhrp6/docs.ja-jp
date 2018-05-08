@@ -1,27 +1,15 @@
 ---
-title: "伝達"
-ms.custom: 
+title: 伝達
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: f8181e75-d693-48d1-b333-a776ad3b382a
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 17b20b76d4932272c8e2a9e26603dc8483505242
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 5d848a2b74402d0adf125488481f5b82e0b09781
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="propagation"></a>伝達
-このトピックでは、[!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] トレース モデルのアクティビティ伝達について説明します。  
+このトピックでは、Windows Communication Foundation (WCF) のトレース モデルでのアクティビティ伝達について説明します。  
   
 ## <a name="using-propagation-to-correlate-activities-across-endpoints"></a>伝達を使用したエンドポイント間でのアクティビティの関連付け  
  伝達を使用することで、複数のアプリケーション エンドポイントについて、同じ処理単位 (要求など) のエラー トレースを直接関連付けることができます。 さまざまなエンドポイントで発生した同じ処理単位のエラーは、アプリケーション ドメインが異なる場合でも同じアクティビティとしてグループ化されます。 これは、メッセージ ヘッダーで特定のアクティビティ ID を伝達することによって実現されます。 したがって、サーバーの内部エラーによってクライアントがタイムアウトした場合、これらのエラーは直接関係しているので、どちらも同じアクティビティに表示されます。  
@@ -89,7 +77,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="synchronization"></a>同期  
  異なるコンピューター上で実行されるエンドポイント間でイベントを同期するには、メッセージ内で伝達される ActivityId ヘッダーに CorrelationId を追加します。 ツールはこの ID を使用することにより、クロックにずれのあるコンピューター間でもイベントを同期できます。 具体的に言うと、サービス トレース ビューアー ツールは、エンドポイント間のメッセージ フローを示す際に、この ID を使用します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [トレースの構成](../../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)  
  [サービス トレース ビューアーを使用した相関トレースの表示とトラブルシューティング](../../../../../docs/framework/wcf/diagnostics/tracing/using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md)  
  [エンドツーエンドのトレースのシナリオ](../../../../../docs/framework/wcf/diagnostics/tracing/end-to-end-tracing-scenarios.md)  

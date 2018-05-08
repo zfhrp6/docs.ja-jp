@@ -1,13 +1,6 @@
 ---
-title: "方法: サービスをインストールおよびアンインストールする"
-ms.custom: 
+title: '方法: サービスをインストールおよびアンインストールする'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - Windows Service applications, deploying
 - services, uninstalling
@@ -18,16 +11,13 @@ helpviewer_keywords:
 - uninstalling Windows Services
 - installutil.exe tool
 ms.assetid: c89c5169-f567-4305-9d62-db31a1de5481
-caps.latest.revision: "19"
 author: ghogen
-ms.author: ghogen
 manager: douge
-ms.workload: dotnet
-ms.openlocfilehash: 1fcbc8e7a84b16d244561e0cd69f8661236e63de
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 0d42a37b2e84c310569666771ded38e5feca3608
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-install-and-uninstall-services"></a>方法: サービスをインストールおよびアンインストールする
 .NET Framework を使用して Windows サービスを開発している場合は、InstallUtil.exe というコマンド ライン ユーティリティを使用してサービス アプリケーションをすばやくインストールできます。 開発者は、ユーザーがインストールおよびアンインストールできる Windows サービスをリリースする場合、InstallShield を使用する必要があります。 参照してください[Windows インストーラーの配置](http://msdn.microsoft.com/library/121be21b-b916-43e2-8f10-8b080516d2a0)です。  
@@ -72,7 +62,7 @@ ms.lasthandoff: 01/19/2018
   
 3.  場合によっては、サービスの実行可能ファイルを削除した後も、レジストリ内にサービスが存在したままになることがあります。 その場合は、コマンドを使用して[sc delete](http://technet.microsoft.com/library/cc742045.aspx)をレジストリからサービスのエントリを削除します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Windows サービス アプリケーションの概要](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)  
  [方法 : Windows サービスを作成する](../../../docs/framework/windows-services/how-to-create-windows-services.md)  
  [方法 : サービス アプリケーションにインストーラーを追加する](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md)  

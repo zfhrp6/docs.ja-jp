@@ -1,13 +1,6 @@
 ---
-title: "方法 : TileBrush を使用してさまざまなタイル パターンを作成する"
-ms.custom: 
+title: '方法 : TileBrush を使用してさまざまなタイル パターンを作成する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,16 +9,11 @@ helpviewer_keywords:
 - tile patterns [WPF], creating
 - creating [WPF], tile patterns with TileBrush
 ms.assetid: 5aa46632-3527-4668-9d8d-0375c8af28aa
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 646ce5142875c95c0b1ca19643790f73f7eb83e9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 01004c66a8bd820f05e6e1f6c77a9fe7d30bca46
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-different-tile-patterns-with-a-tilebrush"></a>方法 : TileBrush を使用してさまざまなタイル パターンを作成する
 この例を使用する方法を示しています、<xref:System.Windows.Media.TileBrush.TileMode%2A>のプロパティ、<xref:System.Windows.Media.TileBrush>パターンを作成します。  
@@ -44,6 +32,6 @@ TileMode プロパティを使用して作成されたタイル パターン
  [!code-vb[BrushesIntroduction_snip#GraphicsMMDrawingBrushTileModeExample](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/BrushesIntroduction_snip/visualbasic/tilemodeexample.vb#graphicsmmdrawingbrushtilemodeexample)]
  [!code-xaml[BrushesIntroduction_snip#GraphicsMMDrawingBrushTileModeExample](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushesIntroduction_snip/XAML/TileModeExample.xaml#graphicsmmdrawingbrushtilemodeexample)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [TileBrush のタイル サイズを設定する](../../../../docs/framework/wpf/graphics-multimedia/how-to-set-the-tile-size-for-a-tilebrush.md)  
  [イメージ、描画、およびビジュアルによる塗りつぶし](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)

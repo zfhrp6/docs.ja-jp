@@ -1,36 +1,22 @@
 ---
 title: '方法 : サービス モニカーを登録および構成する'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - COM [WCF], configure service monikers
 - COM [WCF], register service monikers
 ms.assetid: e5e16c80-8a8e-4eef-af53-564933b651ef
-caps.latest.revision: 20
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 52b3ec27560ca2dc47b7951cb209f33f307fa7ea
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 1d245327c1e7d53de9a88c93ff0399d8e231a1df
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-register-and-configure-a-service-moniker"></a>方法 : サービス モニカーを登録および構成する
-COM アプリケーションの [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービス モニカーを型付きコントラクトで使うには、必要な属性を備えた型を COM に登録し、COM アプリケーションとモニカーに、必要なバインディング設定を組み込まなければなりません。  
+型付きコントラクトで、Windows Communication Foundation (WCF) サービス モニカーを COM アプリケーションを使用する前を COM に必要な属性型を登録して必要なバインドと、COM アプリケーションとモニカーを構成する必要があります。構成します。  
   
 ### <a name="to-register-the-required-attributed-types-with-com"></a>必要な属性を備えた型を COM に登録するには  
   
-1.  使用して、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)からコントラクトのメタデータを取得するツール、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]サービス。 これにより、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント アセンブリに組み込むソース コードと、クライアント アプリケーションの構成ファイルが生成されます。  
+1.  使用して、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)ツールを WCF サービスからメタデータのコントラクトを取得します。 これは、WCF クライアント アセンブリおよびクライアント アプリケーション構成ファイルをソース コードを生成します。  
   
 2.  アセンブリ内で定義されている型に `ComVisible` という設定をします。 Visual Studio プロジェクトで、AssemblyInfo.cs ファイルに次の属性を追加してください。  
   
@@ -38,7 +24,7 @@ COM アプリケーションの [!INCLUDE[indigo1](../../../../includes/indigo1-
     [assembly: ComVisible(true)]  
     ```  
   
-3.  マネージ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントを、厳密な名前のアセンブリとしてコンパイルします。 そのためには暗号キー ペアで署名する必要があります。 詳細については、次を参照してください。[厳密な名前でアセンブリに署名](http://go.microsoft.com/fwlink/?LinkId=94874)、.NET 開発者ガイド 』 でします。  
+3.  厳密な名前のアセンブリとマネージの WCF クライアントをコンパイルします。 そのためには暗号キー ペアで署名する必要があります。 詳細については、次を参照してください。[厳密な名前でアセンブリに署名](http://go.microsoft.com/fwlink/?LinkId=94874)、.NET 開発者ガイド 』 でします。  
   
 4.  アセンブリ登録 (Regasm.exe) ツールに `/tlb` オプションを指定して、アセンブリで定義されている型を COM に登録します。  
   
@@ -49,7 +35,7 @@ COM アプリケーションの [!INCLUDE[indigo1](../../../../includes/indigo1-
   
 ### <a name="to-configure-the-com-application-and-the-moniker-with-the-required-binding-configuration"></a>COM アプリケーションとモニカーに必要なバインディングを設定するには  
   
--   バインディングの定義を配置 (によって生成された、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)生成されたクライアント アプリケーション構成ファイルに) クライアント アプリケーションの構成ファイルにします。 たとえば、Visual Basic 6.0 で開発した実行可能ファイルの名前が CallCenterClient.exe の場合、これと同じディレクトリに、CallCenterConfig.exe.config という名前で構成ファイルを作成します。 するとクライアント アプリケーションはモニカーを使えるようになります。 なお、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] に組み込まれている標準のバインディング型を使うのであれば、バインディングの設定は必要ありません。  
+-   バインディングの定義を配置 (によって生成された、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)生成されたクライアント アプリケーション構成ファイルに) クライアント アプリケーションの構成ファイルにします。 たとえば、Visual Basic 6.0 で開発した実行可能ファイルの名前が CallCenterClient.exe の場合、これと同じディレクトリに、CallCenterConfig.exe.config という名前で構成ファイルを作成します。 するとクライアント アプリケーションはモニカーを使えるようになります。 バインド構成は必要ありません、標準バインド WCF に用意された型のいずれかを使用する場合に注意してください。  
   
      次の型が登録されています。  
   

@@ -1,31 +1,17 @@
 ---
 title: サービスとクライアントを構成するためのバインディングの使用
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - bindings [WCF], using
 ms.assetid: c39479c3-0766-4a17-ba4c-97a74607f392
-caps.latest.revision: 33
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 68c8c2c93ce29147247c332848025fd931bf7854
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
-ms.translationtype: MT
+ms.openlocfilehash: 39866d7cdd871c6450e0864848c7a3197779045a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-bindings-to-configure-services-and-clients"></a>サービスとクライアントを構成するためのバインディングの使用
-バインディングとは、エンドポイントへの接続に必要な通信の詳細設定を指定するオブジェクトです。 具体的には、バインディングには構成情報が含まれており、この情報を使用してそれぞれのエンドポイントまたはクライアント チャネルで使用されるトランスポート仕様、ワイヤ形式 (メッセージ エンコード) 仕様、プロトコル仕様が定義され、クライアントまたはサービスのランタイムが作成されます。 機能する [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービスを作成するには、サービスの各エンドポイントにバインディングが必要です。 ここでは、エンドポイントにおけるバインディングの概要と定義方法、特定のバインディングの指定方法を説明します。  
+バインディングとは、エンドポイントへの接続に必要な通信の詳細設定を指定するオブジェクトです。 具体的には、バインディングには構成情報が含まれており、この情報を使用してそれぞれのエンドポイントまたはクライアント チャネルで使用されるトランスポート仕様、ワイヤ形式 (メッセージ エンコード) 仕様、プロトコル仕様が定義され、クライアントまたはサービスのランタイムが作成されます。 機能している Windows Communication Foundation (WCF) サービスを作成するには、サービス内の各エンドポイントには、バインディングが必要です。 ここでは、エンドポイントにおけるバインディングの概要と定義方法、特定のバインディングの指定方法を説明します。  
   
 ## <a name="what-a-binding-defines"></a>バインディングの定義内容  
  バインディングの情報は、非常に基本的な情報にすることも複雑なものにすることもできます。 最も基本的なバインディングはトランスポート プロトコル (HTTP など) のみを指定したもので、これはエンドポイントへの接続に必ず使用します。 一般的に、バインディングに含まれるエンドポイントへの接続方法を示す情報は、次のカテゴリのいずれかに当てはまります。  

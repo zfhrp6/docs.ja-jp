@@ -1,13 +1,6 @@
 ---
-title: "方法 : パスに沿ってオブジェクトをアニメーション化する (ポイント アニメーション)"
-ms.custom: 
+title: '方法 : パスに沿ってオブジェクトをアニメーション化する (ポイント アニメーション)'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - animation [WPF], objects along paths (point animation)
 - point animation [WPF]
 ms.assetid: 1fa3f817-35bc-41a1-b366-f5a20b70da0c
-caps.latest.revision: "16"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 399d6b8028b8715f38335089a723707657df4a98
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 639e28d9b809d6fb5eed3a002bca1ffc40913896
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-animate-an-object-along-a-path-point-animation"></a>方法 : パスに沿ってオブジェクトをアニメーション化する (ポイント アニメーション)
 この例を使用する方法を示しています、<xref:System.Windows.Media.Animation.PointAnimationUsingPath>アニメーション化するオブジェクト、<xref:System.Windows.Point>曲線のパスに沿ったです。  
@@ -41,7 +29,7 @@ ms.lasthandoff: 12/22/2017
   
  使用される前の例のコードのバージョン、<xref:System.Windows.Media.Animation.Storyboard>アニメーション化する、 <xref:System.Windows.Media.EllipseGeometry>1 つだけのアニメーションが適用された場合でも、します。 A<xref:System.Windows.Media.Animation.Storyboard>同じによってこれらのアニメーションを制御できるため、複数のアニメーションを適用する最も簡単な方法は、多くの場合、<xref:System.Windows.Media.Animation.Storyboard>です。 しかし、コードを使用するときに、プロパティに 1 つのアニメーションを適用する簡単な方法は、使用する、<xref:System.Windows.Media.Animation.Animatable.BeginAnimation%2A>メソッドです。 例については、「[ストーリーボードを使用せずにプロパティをアニメーション化する](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-property-without-using-a-storyboard.md)」を参照してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [パス アニメーションのサンプル](http://go.microsoft.com/fwlink/?LinkID=160028)  
  [アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)  
  [パス アニメーションに関する「方法」トピック](../../../../docs/framework/wpf/graphics-multimedia/path-animation-how-to-topics.md)

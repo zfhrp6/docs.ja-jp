@@ -1,28 +1,16 @@
 ---
-title: "方法 : デザイナーで Windows フォーム DataGrid コントロールを使用してマスター/詳細リストを作成する"
-ms.custom: 
+title: '方法 : デザイナーで Windows フォーム DataGrid コントロールを使用してマスター/詳細リストを作成する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - master-details lists
 - DataGrid control [Windows Forms], master-details lists
 - related tables [Windows Forms], displaying in DataGrid control
 ms.assetid: 19438ba2-f687-4417-a2fb-ab1cd69d4ded
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: f1526a6e54078ea3dc0500c39a8fc2feda44d901
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 20a6f059efab5469879d3c3a45f4005020414316
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-master-details-lists-with-the-windows-forms-datagrid-control-using-the-designer"></a>方法 : デザイナーで Windows フォーム DataGrid コントロールを使用してマスター/詳細リストを作成する
 > [!NOTE]
@@ -62,7 +50,7 @@ ms.lasthandoff: 01/19/2018
   
     2.  ドロップダウン リストから、マスター/詳細テーブル間の関係 (たとえば、"Customers.CustOrd") を選択、<xref:System.Windows.Forms.DataGrid.DataMember%2A>プロパティです。 リレーションシップを表示するために、プラス記号をクリックすると、ノードを展開します (**+**) ドロップダウン リストのマスター テーブルの横にある記号。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [DataGrid コントロール](../../../../docs/framework/winforms/controls/datagrid-control-windows-forms.md)  
  [DataGrid コントロールの概要](../../../../docs/framework/winforms/controls/datagrid-control-overview-windows-forms.md)  
  [方法: データ ソースに Windows フォーム DataGrid コントロールをバインドする](../../../../docs/framework/winforms/controls/how-to-bind-the-windows-forms-datagrid-control-to-a-data-source.md)  

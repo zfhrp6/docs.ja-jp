@@ -1,27 +1,15 @@
 ---
-title: "ローカリゼーション属性とコメント"
-ms.custom: 
+title: ローカリゼーション属性とコメント
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - localization [WPF], attributes
 - localization [WPF], comments
 ms.assetid: ead2d9ac-b709-4ec1-a924-39927a29d02f
-caps.latest.revision: "15"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 85584c17675167d374c595aa26288f550a033efb
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 7cfcc9fa4dc3bc1450febb39500b7d96f92beac6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="localization-attributes-and-comments"></a>ローカリゼーション属性とコメント
 [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)] ソース コード内部の [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] ローカリゼーション コメントはプロパティで、ローカライズのルールとヒントを提供するために開発者によって提供されます。 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] ローカリゼーション コメントには、ローカライズ可否属性と自由形式のローカリゼーション コメントの 2 つの情報が含まれます。 ローカライズ可否属性は、ローカライズするリソースを示すために [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ローカリゼーション API によって使用されます。 自由形式のコメントは、アプリケーションの作成者が含めたい任意の情報です。  
@@ -110,7 +98,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="localization-comments"></a>ローカリゼーション コメント  
  Localization.Comments には、ターゲットの値に関する自由形式の文字列が含まれます。 アプリケーション開発者は、アプリケーションのテキストを変換する方法についてのヒントをローカライザーに提供するための情報を追加できます。 コメントの形式は、"()" で囲まれた任意の文字列で指定できます。 文字をエスケープするには、'\\' を使用します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [WPF のグローバリゼーション](../../../../docs/framework/wpf/advanced/globalization-for-wpf.md)  
  [自動レイアウトを使用してボタンを作成する](../../../../docs/framework/wpf/advanced/how-to-use-automatic-layout-to-create-a-button.md)  
  [自動レイアウト用のグリッドを使用する](../../../../docs/framework/wpf/advanced/how-to-use-a-grid-for-automatic-layout.md)  

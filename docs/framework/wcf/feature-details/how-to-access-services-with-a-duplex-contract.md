@@ -1,38 +1,24 @@
 ---
 title: '方法 : 双方向コントラクトを使用してサービスにアクセスする'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - duplex contracts [WCF]
 ms.assetid: 746a9d64-f21c-426c-b85d-972e916ec6c5
-caps.latest.revision: 18
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: c80980ff5a5b1011c021bcaf0688747178ec5b9b
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: c0022e6ce3a63c1f497eeee82ca959cec1046cec
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-access-services-with-a-duplex-contract"></a>方法 : 双方向コントラクトを使用してサービスにアクセスする
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] の機能の 1 つに、双方向のメッセージング パターンを使用するサービスを作成する機能があります。 双方向のメッセージング パターンを使用するサービスは、コールバックを通じてクライアントと通信できます。 ここでは、コールバック インターフェイスを実装するクライアント クラス内に [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントを作成する手順を示します。  
+Windows Communication Foundation (WCF) の 1 つの機能は、双方向のメッセージング パターンを使用してサービスを作成する機能です。 双方向のメッセージング パターンを使用するサービスは、コールバックを通じてクライアントと通信できます。 このトピックでは、コールバック インターフェイスを実装するクライアント クラスで、WCF クライアントを作成する手順を示します。  
   
  二重バインディングでは、クライアントの IP アドレスをサービスに公開します。 クライアントは、セキュリティを使用して信頼するサービスだけに接続できるようにする必要があります。  
   
- 基本的な作成に関するチュートリアルについては[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]サービスとクライアントを参照してください[チュートリアル入門](../../../../docs/framework/wcf/getting-started-tutorial.md)です。  
+ 基本的な WCF サービスとクライアントを作成する方法のチュートリアルを参照してください。[チュートリアル入門](../../../../docs/framework/wcf/getting-started-tutorial.md)です。  
   
 ### <a name="to-access-a-duplex-service"></a>双方向サービスにアクセスするには  
   
@@ -80,7 +66,7 @@ ms.lasthandoff: 04/30/2018
     Dim site As InstanceContext = New InstanceContext(new CallbackHandler())  
     ```  
   
-6.  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] オブジェクトを必要とするコンストラクターを使用して、<xref:System.ServiceModel.InstanceContext> クライアントのインスタンスを作成します。 コンストラクターの 2 番目のパラメーターは、構成ファイルに含まれるエンドポイントの名前です。  
+6.  必要とするコンス トラクターを使用して WCF クライアントのインスタンスを作成、<xref:System.ServiceModel.InstanceContext>オブジェクト。 コンストラクターの 2 番目のパラメーターは、構成ファイルに含まれるエンドポイントの名前です。  
   
     ```csharp  
     CalculatorDuplexClient wcfClient =   
@@ -91,7 +77,7 @@ ms.lasthandoff: 04/30/2018
     Dim wcfClient As New CalculatorDuplexClient(site, "default")  
     ```  
   
-7.  必要に応じて、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントのメソッドを呼び出します。  
+7.  必要に応じて、WCF クライアントのメソッドを呼び出します。  
   
 ## <a name="example"></a>例  
  双方向コントラクトにアクセスするクライアント クラスを作成する方法を次のコード例に示します。  

@@ -1,28 +1,14 @@
 ---
-title: "サービス トランザクションの動作"
-ms.custom: 
+title: サービス トランザクションの動作
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - Service Transaction Behavior Sample [Windows Communication Foundation]
 ms.assetid: 1a9842a3-e84d-427c-b6ac-6999cbbc2612
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: a4c7c9c78b821f7457f193d24bae031d49b301ec
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e49404626f6de1bfe260f0abb692d68ad779a7ab
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="service-transaction-behavior"></a>サービス トランザクションの動作
 このサンプルでは、クライアント調整トランザクションの使用方法と、サービス トランザクションの動作を制御する ServiceBehaviorAttribute と OperationBehaviorAttribute の設定方法について説明します。 このサンプルがに基づいて、[作業の開始](../../../../docs/framework/wcf/samples/getting-started-sample.md)電卓サービスを実装しますが、データベース テーブルと、電卓操作の合計を実行しているステートフルで実行される操作のサーバー ログを維持するために拡張されています。 サーバー ログ テーブルへの書き込みを保存するかどうかは、クライアント調整トランザクションの結果によって異なります。クライアント トランザクションが完了しない場合は、Web サービス トランザクションにより、データベースへの更新はコミットされません。  
@@ -225,13 +211,13 @@ Creating new service instance...
   
 3.  1 つまたは複数コンピューター構成でサンプルを実行する手順についてで[Windows Communication Foundation サンプルの実行](../../../../docs/framework/wcf/samples/running-the-samples.md)です。  
   
- サンプルを別のコンピュータで実行する場合は、Microsoft 分散トランザクション コーディネータ (MSDTC) を構成してネットワーク トランザクション フローを有効にし、WsatConfig.exe ツールを使用して [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] トランザクション ネットワーク サポートを有効にする必要があります。  
+ マシン間でサンプルを実行する場合は、Microsoft 分散トランザクション コーディネーター (MSDTC) ネットワーク トランザクション フローを有効にし、WsatConfig.exe ツールを使用して、Windows Communication Foundation (WCF) トランザクションのネットワークを有効にするを構成する必要があります。サポートしてください。  
   
 ### <a name="to-configure-the-microsoft-distributed-transaction-coordinator-msdtc-to-support-running-the-sample-across-machines"></a>分散トランザクション コーディネータ (MSDTC) を構成してサンプルを別のコンピュータで実行できるようにするには  
   
 1.  サービス コンピューターで、受信ネットワーク トランザクションを許可するように MSDTC を構成します。  
   
-    1.  **開始** メニューの "éˆú"**コントロール パネルの** 、し**管理ツール**、し、**コンポーネント サービス**です。  
+    1.  **開始** メニューの "éˆú"**コントロール パネルの **、し**管理ツール**、し、**コンポーネント サービス**です。  
   
     2.  右クリック**マイ コンピューター**選択**プロパティ**です。  
   
@@ -257,7 +243,7 @@ Creating new service instance...
   
 3.  クライアント コンピューターで、送信ネットワーク トランザクションを許可するよう MSDTC を構成します。  
   
-    1.  **開始** メニューの "éˆú"**コントロール パネルの** 、し**管理ツール**、し、**コンポーネント サービス**です。  
+    1.  **開始** メニューの "éˆú"**コントロール パネルの **、し**管理ツール**、し、**コンポーネント サービス**です。  
   
     2.  右クリック**マイ コンピューター**選択**プロパティ**です。  
   
@@ -274,8 +260,8 @@ Creating new service instance...
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
+>  このディレクトリが存在しない場合に、 [Windows Communication Foundation (WCF) および .NET Framework 4 向けの Windows Workflow Foundation (WF) サンプル](http://go.microsoft.com/fwlink/?LinkId=150780)すべて Windows Communication Foundation (WCF) をダウンロードして[!INCLUDE[wf1](../../../../includes/wf1-md.md)]サンプルです。 このサンプルは、次のディレクトリに格納されます。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Behaviors\Transactions`  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目

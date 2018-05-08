@@ -1,29 +1,15 @@
 ---
 title: '方法 : サポート資格情報を作成する'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: d0952919-8bb4-4978-926c-9cc108f89806
-caps.latest.revision: 9
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: e74ba51306ba8761d916f580b21de9b3ba9cb7f4
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 6ec7412d1de2bca349c7cfbf4a37c98ca60cc78d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-a-supporting-credential"></a>方法 : サポート資格情報を作成する
-カスタムのセキュリティ スキームでは、複数の資格情報が必要になることがあります。 たとえば、サービスが、ユーザー名とパスワードだけでなく、クライアントが 18 歳以上であることを証明する資格情報もクライアントに要求することがあります。 2 番目の資格情報は、*資格情報をサポートする*です。 ここでは、このような資格情報を [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] クライアントで実装する方法について説明します。  
+カスタムのセキュリティ スキームでは、複数の資格情報が必要になることがあります。 たとえば、サービスが、ユーザー名とパスワードだけでなく、クライアントが 18 歳以上であることを証明する資格情報もクライアントに要求することがあります。 2 番目の資格情報は、*資格情報をサポートする*です。 このトピックでは、Windows Communication Foundation (WCF) クライアントにこのような資格情報を実装する方法について説明します。  
   
 > [!NOTE]
 >  サポート資格情報の仕様は、WS-SecurityPolicy 仕様の一部です。 詳細については、次を参照してください。 [Web サービスのセキュリティ仕様](http://go.microsoft.com/fwlink/?LinkId=88537)です。  

@@ -1,14 +1,6 @@
 ---
 title: LINQ に関する留意点 (WCF Data Services)
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework-oob
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,17 +9,11 @@ helpviewer_keywords:
 - querying the data service [WCF Data Services]
 - WCF Data Services, querying
 ms.assetid: cc4ec9e9-348f-42a6-a78e-1cd40e370656
-caps.latest.revision: 5
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 365bab484be17fd7bd1466a39d5af53f116ad06f
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 030c8e12b45cfc11d1440a410c69d8bc911c56c8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="linq-considerations-wcf-data-services"></a>LINQ に関する留意点 (WCF Data Services)
 このトピックでは、[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] クライアントを使用しているときに LINQ クエリを作成および実行する方法と、[!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] を実装するデータ サービスを LINQ で照会する場合の制限について説明します。 作成し、に対するクエリの実行の詳細については、 [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]-ベースのデータ サービスを参照してください[データ サービスのクエリ](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md)です。  

@@ -1,34 +1,20 @@
 ---
 title: サービス コントラクトでのデータ転送の指定
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - service contracts [WCF], data transfer
 ms.assetid: 7c5a26c8-89c9-4bcb-a4bc-7131e6d01f0c
-caps.latest.revision: 38
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 852519dc1edc499511652f4027f4cd4eed6eef98
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 7423a44f7779c8e4ef75fc68e33eeb4ac48a660a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="specifying-data-transfer-in-service-contracts"></a>サービス コントラクトでのデータ転送の指定
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] は、一種のメッセージング インフラストラクチャと考えることができます。 サービス操作では、メッセージを受信し、それらのメッセージを処理し、送信することができます。 メッセージは、操作コントラクトを使用して記述されます。 たとえば、次のようなコントラクトがあるとします。  
+Windows Communication Foundation (WCF) は、メッセージング インフラストラクチャと考えることができます。 サービス操作では、メッセージを受信し、それらのメッセージを処理し、送信することができます。 メッセージは、操作コントラクトを使用して記述されます。 たとえば、次のようなコントラクトがあるとします。  
   
 ```csharp  
 [ServiceContract]  
@@ -65,7 +51,7 @@ float GetAirfare(string fromCity, string toCity, out string currency);
     Function GetAirfare(fromCity As String, toCity As String) As Double  
 ```  
   
- また、参照パラメーターを使用すると、要求メッセージと応答メッセージの両方のパラメーター部分を作成できます。 パラメーターは、シリアル化 (XML への変換) が可能な型にする必要があります。 既定では、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、<xref:System.Runtime.Serialization.DataContractSerializer> クラスというコンポーネントを使用してこの変換を実行します。 ほとんどのプリミティブ型 (`int`、`string`、`float`、`DateTime` など) がサポートされます。 ユーザー定義型には、通常、データ コントラクトが存在する必要があります。 詳細については、次を参照してください。[を使用してデータ コントラクト](../../../../docs/framework/wcf/feature-details/using-data-contracts.md)です。  
+ また、参照パラメーターを使用すると、要求メッセージと応答メッセージの両方のパラメーター部分を作成できます。 パラメーターは、シリアル化 (XML への変換) が可能な型にする必要があります。 既定では、WCF と呼ばれるコンポーネントを使用して、<xref:System.Runtime.Serialization.DataContractSerializer>をこの変換を実行するクラス。 ほとんどのプリミティブ型 (`int`、`string`、`float`、`DateTime` など) がサポートされます。 ユーザー定義型には、通常、データ コントラクトが存在する必要があります。 詳細については、次を参照してください。[を使用してデータ コントラクト](../../../../docs/framework/wcf/feature-details/using-data-contracts.md)です。  
   
 ```csharp
 public interface IAirfareQuoteService  
@@ -100,7 +86,7 @@ Public Interface IAirfareQuoteService
 End Interface  
 ```  
   
- 場合によっては、使用する型のシリアル化に `DataContractSerializer` が適さないことがあります。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、代替のシリアル化エンジンとして <xref:System.Xml.Serialization.XmlSerializer> をサポートしているため、パラメーターのシリアル化にこれを使用することもできます。 <xref:System.Xml.Serialization.XmlSerializer> では、`XmlAttributeAttribute` などの属性を使用することによって、結果の XML をより細かく制御できます。 特定の操作やサービス全体で <xref:System.Xml.Serialization.XmlSerializer> を使用するように切り替えるには、<xref:System.ServiceModel.XmlSerializerFormatAttribute> 属性を操作またはサービスに適用します。 例えば:  
+ 場合によっては、使用する型のシリアル化に `DataContractSerializer` が適さないことがあります。 WCF には、別のシリアル化エンジンがサポートされる、<xref:System.Xml.Serialization.XmlSerializer>パラメーターのシリアル化に使用することもできます。 これです。 <xref:System.Xml.Serialization.XmlSerializer> では、`XmlAttributeAttribute` などの属性を使用することによって、結果の XML をより細かく制御できます。 特定の操作やサービス全体で <xref:System.Xml.Serialization.XmlSerializer> を使用するように切り替えるには、<xref:System.ServiceModel.XmlSerializerFormatAttribute> 属性を操作またはサービスに適用します。 例えば:  
   
 ```csharp  
 [ServiceContract]  
@@ -261,7 +247,7 @@ End Class
 ## <a name="describing-messages-by-using-streams"></a>ストリームを使用したメッセージの記述  
  操作でメッセージを記述する場合は、<xref:System.IO.Stream> クラスまたはその派生クラスを操作コントラクトで使用したり、メッセージ コントラクト本文メンバー (この場合、唯一のメンバーである必要があります) として使用したりする方法もあります。 受信メッセージの場合、型は `Stream` である必要があり、派生クラスを使用することはできません。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、シリアライザーを呼び出す代わりに、ストリームからデータを取得して送信メッセージに直接配置するか、受信メッセージからデータを取得してストリームに直接配置します。 次に、ストリームの使用例を示します。  
+ シリアライザーを呼び出す代わりに WCF ストリームからデータを取得および、送信メッセージに直接配置または受信メッセージからデータを取得およびストリームに直接配置します。 次に、ストリームの使用例を示します。  
   
 ```csharp  
 [OperationContract]  
@@ -477,7 +463,7 @@ End Interface
 ```  
   
 ### <a name="serialization-behaviors"></a>シリアル化の動作  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、特定の操作で使用しているシリアライザーに応じて自動的にプラグインされる、<xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior> と <xref:System.ServiceModel.Description.XmlSerializerOperationBehavior> の 2 つの動作が用意されています。 これらの動作は自動的に適用されるため、通常、これらの動作を意識する必要はありません。  
+ 2 つの動作は、WCF では、使用可能な<xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior>と<xref:System.ServiceModel.Description.XmlSerializerOperationBehavior>では、特定の操作に使用されているシリアライザーに応じて自動的に接続されていること。 これらの動作は自動的に適用されるため、通常、これらの動作を意識する必要はありません。  
   
  ただし、`DataContractSerializerOperationBehavior` には、`MaxItemsInObjectGraph`、`IgnoreExtensionDataObject`、および `DataContractSurrogate` の 3 つのプロパティがあり、これらを使用してシリアル化プロセスをカスタマイズできます。 最初の 2 つのプロパティの意味は、前のセクションの説明と同じです。 `DataContractSurrogate` プロパティを使用すると、シリアル化プロセスをカスタマイズおよび拡張するための強力な機構であるデータ コントラクト サロゲートを有効にできます。 詳細については、次を参照してください。[データ コントラクト サロゲート](../../../../docs/framework/wcf/extending/data-contract-surrogates.md)です。  
   
@@ -571,7 +557,7 @@ Dim serviceHost As ServiceHost = New ServiceHost(GetType(IDataService))
 ```  
   
 ### <a name="shared-type-serialization-object-graph-preservation-and-custom-serializers"></a>共有する型のシリアル化、オブジェクト グラフの保存、およびカスタム シリアライザー  
- <xref:System.Runtime.Serialization.DataContractSerializer> は、.NET 型名ではなく、データ コントラクト名を使用してシリアル化を実行します。 これは、サービス指向アーキテクチャの基本思想と一致しており、高度な柔軟性の実現を可能にします。つまり、ネットワーク コントラクトに影響を及ぼさずに .NET 型を変更できます。 まれなケースとして、実際の .NET 型名をシリアル化することにより、.NET Framework リモート処理テクノロジと同様のクライアントとサーバー間の密結合を導入することが必要になる場合があります。 .NET Framework リモート処理から [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] への移行時に発生するまれなケースを除き、これはお勧めしません。 この場合、<xref:System.Runtime.Serialization.NetDataContractSerializer> クラスではなく、<xref:System.Runtime.Serialization.DataContractSerializer> クラスを使用する必要があります。  
+ <xref:System.Runtime.Serialization.DataContractSerializer> は、.NET 型名ではなく、データ コントラクト名を使用してシリアル化を実行します。 これは、サービス指向アーキテクチャの基本思想と一致しており、高度な柔軟性の実現を可能にします。つまり、ネットワーク コントラクトに影響を及ぼさずに .NET 型を変更できます。 まれなケースとして、実際の .NET 型名をシリアル化することにより、.NET Framework リモート処理テクノロジと同様のクライアントとサーバー間の密結合を導入することが必要になる場合があります。 This、推奨される方法以外では .NET Framework リモート処理から WCF に移行するときに通常発生するまれなケースです。 この場合、<xref:System.Runtime.Serialization.NetDataContractSerializer> クラスではなく、<xref:System.Runtime.Serialization.DataContractSerializer> クラスを使用する必要があります。  
   
  <xref:System.Runtime.Serialization.DataContractSerializer> は、通常、オブジェクト グラフをオブジェクト ツリーとしてシリアル化します。 つまり、同じオブジェクトが複数回にわたって参照される場合、そのオブジェクトは複数回にわたってシリアル化されます。 たとえば、`PurchaseOrder` および `billTo` という、Address 型の 2 つのフィールドを持つ `shipTo` インスタンスがあるとします。 この両方のフィールドに同じ Address インスタンスを設定すると、シリアル化および逆シリアル化の後に 2 つの同一の Address インスタンスが生じます。 これは、オブジェクト グラフを XML で表現する相互運用可能な標準の方法がないためです (ただし、<xref:System.Xml.Serialization.XmlSerializer> と `Style` に関する前のセクションで説明した `Use` で使用できる従来の SOAP エンコード標準を除きます)。 オブジェクト グラフをツリーとしてシリアル化する場合、循環参照が含まれたグラフをシリアル化できないなどの欠点があります。 場合によっては、相互運用が可能ではありませんが、真のオブジェクト グラフ シリアル化に切り替えることが必要になります。 これを行うには、<xref:System.Runtime.Serialization.DataContractSerializer> パラメーターを `preserveObjectReferences` に設定して構築した `true` を使用します。  
   

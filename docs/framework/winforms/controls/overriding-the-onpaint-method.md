@@ -1,13 +1,6 @@
 ---
-title: "OnPaint メソッドのオーバーライド"
-ms.custom: 
+title: OnPaint メソッドのオーバーライド
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - Paint event [Windows Forms], handling in Windows Forms custom control
 - OnPaint method [Windows Forms], overriding in Windows Forms custom controls
 ms.assetid: e9ca2723-0107-4540-bb21-4f5ffb4a9906
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 7d9012d1a31eeaf50560b6166d32ac58662c5aa4
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: fc41158e9a3d5d331b391f0f28701612012becf7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="overriding-the-onpaint-method"></a>OnPaint メソッドのオーバーライド
 定義されているすべてのイベントをオーバーライドするための基本的な手順、[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]が同じであり、次の一覧にまとめます。  
@@ -93,11 +81,11 @@ public class PaintEventArgs : EventArgs {
 }  
 ```  
   
- <xref:System.Windows.Forms.PaintEventArgs.ClipRectangle%2A>四角形を描画するのには、および<xref:System.Windows.Forms.PaintEventArgs.Graphics%2A>プロパティを指す、<xref:System.Drawing.Graphics>オブジェクト。 内のクラス、<xref:System.Drawing?displayProperty=nameWithType>名前空間は、管理の機能へのアクセスを提供するクラス[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]、新しい Windows グラフィックス ライブラリです。 <xref:System.Drawing.Graphics>オブジェクトをポイント、文字列、線、円弧、省略記号、およびその他の多くの図形を描画するメソッドがあります。  
+ <xref:System.Windows.Forms.PaintEventArgs.ClipRectangle%2A> 四角形を描画するのには、および<xref:System.Windows.Forms.PaintEventArgs.Graphics%2A>プロパティを指す、<xref:System.Drawing.Graphics>オブジェクト。 内のクラス、<xref:System.Drawing?displayProperty=nameWithType>名前空間は、管理の機能へのアクセスを提供するクラス[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]、新しい Windows グラフィックス ライブラリです。 <xref:System.Drawing.Graphics>オブジェクトをポイント、文字列、線、円弧、省略記号、およびその他の多くの図形を描画するメソッドがあります。  
   
  コントロールを呼び出す、<xref:System.Windows.Forms.Control.OnPaint%2A>メソッド ビジュアル表示を変更する必要があるたびにします。 このメソッドを生成させる、<xref:System.Windows.Forms.Control.Paint>イベント。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [イベント](../../../../docs/standard/events/index.md)  
  [Windows フォーム コントロールのレンダリング](../../../../docs/framework/winforms/controls/rendering-a-windows-forms-control.md)  
  [イベントの定義](../../../../docs/framework/winforms/controls/defining-an-event-in-windows-forms-controls.md)

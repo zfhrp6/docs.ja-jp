@@ -1,17 +1,12 @@
 ---
 title: インターフェイス (F#)
 description: F# でインターフェイスが他のクラスを実装する関連するメンバーのセットを指定する方法について説明します。
-author: cartermp
-ms.author: phcart
 ms.date: 05/16/2016
-ms.topic: language-reference
-ms.prod: dotnet-fsharp
-ms.devlang: fsharp
-ms.openlocfilehash: fa299a7e37d4e1e3800a02bf5a77831db9146daf
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 174e30c03cd555d2d9c89c88bd80e06a2cdcef46
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="interfaces"></a>インターフェイス
 

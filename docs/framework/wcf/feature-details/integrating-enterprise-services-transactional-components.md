@@ -1,27 +1,15 @@
 ---
-title: "エンタープライズ サービスのトランザクション コンポーネントの統合"
-ms.custom: 
+title: エンタープライズ サービスのトランザクション コンポーネントの統合
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 05dab277-b8b2-48cf-b40c-826be128b175
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b6ce82d100341fec4415cf9fdb7159706b2accc4
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8453b4199f5e6eae263ebc3fc1c457429c868d7f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="integrating-enterprise-services-transactional-components"></a>エンタープライズ サービスのトランザクション コンポーネントの統合
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]エンタープライズ サービスと統合するための自動メカニズム (を参照してください[COM + アプリケーションとの統合](../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications.md))。 ただし、柔軟性を高めるために、エンタープライズ サービス内でホストされるトランザクション コンポーネントを内部的に使用するサービスを開発する場合があります。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]トランザクション機能が組み込まれている、<xref:System.Transactions>インフラストラクチャ、エンタープライズ サービスとの統合のプロセス[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]間の相互運用性を指定するのと同じです<xref:System.Transactions>および Enterpriseサービスで説明したよう[エンタープライズ サービス、および COM + トランザクションとの相互運用](http://go.microsoft.com/fwlink/?LinkId=94949)です。  
+Windows Communication Foundation (WCF) は、エンタープライズ サービスと統合するための自動メカニズムを提供 (を参照してください[COM + アプリケーションとの統合](../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications.md))。 ただし、柔軟性を高めるために、エンタープライズ サービス内でホストされるトランザクション コンポーネントを内部的に使用するサービスを開発する場合があります。 WCF のトランザクション機能が組み込まれているため、<xref:System.Transactions>インフラストラクチャ、WCF とエンタープライズ サービスを統合するためのプロセスは相互運用性を指定する場合と同じです<xref:System.Transactions>と」の説明に従って、エンタープライズ サービス[エンタープライズ サービス、および COM + トランザクションとの相互運用](http://go.microsoft.com/fwlink/?LinkId=94949)です。  
   
  フローされる受信トランザクションと COM+ コンテキスト トランザクションの間に必要なレベルの相互運用性を提供するには、サービス実装で <xref:System.Transactions.TransactionScope> インスタンスを作成し、<xref:System.Transactions.EnterpriseServicesInteropOption> 列挙型の適切な値を使用する必要があります。  
   
@@ -103,6 +91,6 @@ static void Main()
 }  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [COM+ アプリケーションとの統合](../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications.md)  
  [COM アプリケーションとの統合](../../../../docs/framework/wcf/feature-details/integrating-with-com-applications.md)

@@ -1,36 +1,24 @@
 ---
-title: "フィルター処理"
-ms.custom: 
+title: フィルター処理
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 4002946c-e34a-4356-8cfb-e25912a4be63
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 6f67a7f6ac423bd66d9d25b834edc9cf55a5d6a8
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5f599ac74aa63951f59c5e5c79d3fe37b2ab5100
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="filtering"></a>フィルター処理
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] フィルター処理システムは、宣言的なフィルターを使用してメッセージの照合処理と操作上の判断を行います。 フィルターを使用してメッセージの一部を調べることで、そのメッセージで必要な操作を決定できます。 たとえば、キュー プロセスでは、XPath 1.0 クエリを使用して既知のヘッダー優先度要素をチェックし、メッセージをキューの先頭に移動するべきかどうかを決定します。  
+Windows Communication Foundation (WCF) のフィルター処理システムは、メッセージと一致し、運用上の決定を宣言的なフィルターを使用できます。 フィルターを使用してメッセージの一部を調べることで、そのメッセージで必要な操作を決定できます。 たとえば、キュー プロセスでは、XPath 1.0 クエリを使用して既知のヘッダー優先度要素をチェックし、メッセージをキューの先頭に移動するべきかどうかを決定します。  
   
- フィルター処理システムは、特定の `true` メッセージに対して、どのフィルターのセットが [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] であるかを効率よく判断できる一連のクラスから構成されます。  
+ フィルター処理システムは効率的に実行できるクラスのセットで構成の特定には、一連のフィルターの`true`特定の WCF メッセージにします。  
   
- フィルター処理システムは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] メッセージングの中核となるコンポーネントであり、非常に高速に動作するように設計されています。 フィルターの各実装は、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] メッセージの特定の種類の照合に対して最適化されています。  
+ フィルター処理システムは、WCF メッセージングの主要なコンポーネント非常に高速に設計されています。 フィルターの各実装は、WCF メッセージと一致する種類の特定の最適化されています。  
   
  フィルター処理システムは、スレッド セーフではありません。 アプリケーションは、すべてのロック セマンティクスを処理する必要があります。 ただし、(スレッドに対する) マルチ リーダー/シングル ライターはサポートされています。  
   
 ## <a name="where-filtering-fits"></a>フィルター処理が適する場合  
- フィルター処理は、メッセージを適切なアプリケーション コンポーネントにディスパッチする処理の一部であり、メッセージの受信後に行われます。 フィルター処理システムの設計では、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のいくつかのサブシステム (メッセージング、ルーティング、セキュリティ、イベント処理、およびシステム管理など) の要件に対処します。  
+ フィルター処理は、メッセージを適切なアプリケーション コンポーネントにディスパッチする処理の一部であり、メッセージの受信後に行われます。 フィルター処理システムの設計は、いくつかの WCF サブシステム (メッセージング、ルーティング、セキュリティ、イベントの処理、およびシステムの管理を含む) の要件に対応します。  
   
 ## <a name="filters"></a>フィルター  
  フィルター エンジンには、フィルターとフィルター テーブルという 2 つの主要コンポーネントが含まれます。 フィルターは、ユーザーが指定した論理条件に基づいてメッセージに関する論理判定を行います。 フィルターは <xref:System.ServiceModel.Dispatcher.MessageFilter> クラスを実装します。  
@@ -53,7 +41,7 @@ ms.lasthandoff: 12/22/2017
   
 ### <a name="prefix-endpoint-address-filters"></a>プレフィックス エンドポイント アドレス フィルター  
   
-1.  <xref:System.ServiceModel.Dispatcher.PrefixEndpointAddressMessageFilter> は、メッセージ URI のプレフィックスとも一致できるという点を除けば、<xref:System.ServiceModel.Dispatcher.EndpointAddressMessageFilter> フィルターと同じように動作します。 たとえば、アドレス http://www.adatum.com を指定したフィルターは、http://www.adatum.com/userA 宛のメッセージと一致します。  
+1.  <xref:System.ServiceModel.Dispatcher.PrefixEndpointAddressMessageFilter> は、メッセージ URI のプレフィックスとも一致できるという点を除けば、<xref:System.ServiceModel.Dispatcher.EndpointAddressMessageFilter> フィルターと同じように動作します。 たとえば、アドレスを指定するフィルターhttp://www.adatum.com宛てのメッセージと一致するhttp://www.adatum.com/userAです。  
   
 ### <a name="xpath-message-filters"></a>XPath メッセージ フィルター  
  <xref:System.ServiceModel.Dispatcher.XPathMessageFilter> は、XPath 式を使用して、XML ドキュメントに特定の要素、属性、テキスト、その他の XML 構文が含まれているかどうかを判定します。 このフィルターは、XPath の厳密なサブセットに対して非常に効率的に処理できるように最適化されています。 XML パス言語については、「、 [W3C XML パス言語 1.0 仕様](http://go.microsoft.com/fwlink/?LinkId=94779)です。  
@@ -79,7 +67,7 @@ ms.lasthandoff: 12/22/2017
   
  <xref:System.ServiceModel.Dispatcher.XPathMessageFilterTable%601> クラスは、ほとんどのメッセージ シナリオをカバーし、XPath 1.0 の文法を完全にサポートする XPath のサブセットに合わせてマッチングを最適化します。 また、効率的な並列マッチング用のアルゴリズムも最適化します。  
   
- このテーブルには、`Match` および <xref:System.Xml.XPath.XPathNavigator> 上で動作する特殊な <xref:System.ServiceModel.Dispatcher.SeekableXPathNavigator> メソッドがいくつかあります。 <xref:System.ServiceModel.Dispatcher.SeekableXPathNavigator> は、<xref:System.Xml.XPath.XPathNavigator> プロパティを追加することで、<xref:System.ServiceModel.Dispatcher.SeekableXPathNavigator.CurrentPosition%2A> クラスを拡張します。 このプロパティを使用すると、ナビゲーターを複製せずに XML ドキュメント内の位置を迅速に保存し、読み込むことができます。<xref:System.Xml.XPath.XPathNavigator> を使用してそうした操作を行うには、大量のメモリ領域を割り当てる必要があります。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] XPath エンジンでは、XML ドキュメントでクエリの実行中にカーソルの位置を頻繁に記録する必要があるため、<xref:System.ServiceModel.Dispatcher.SeekableXPathNavigator> により、メッセージ処理にとって重要な最適化が提供されます。  
+ このテーブルには、`Match` および <xref:System.Xml.XPath.XPathNavigator> 上で動作する特殊な <xref:System.ServiceModel.Dispatcher.SeekableXPathNavigator> メソッドがいくつかあります。 <xref:System.ServiceModel.Dispatcher.SeekableXPathNavigator> は、<xref:System.Xml.XPath.XPathNavigator> プロパティを追加することで、<xref:System.ServiceModel.Dispatcher.SeekableXPathNavigator.CurrentPosition%2A> クラスを拡張します。 このプロパティを使用すると、ナビゲーターを複製せずに XML ドキュメント内の位置を迅速に保存し、読み込むことができます。<xref:System.Xml.XPath.XPathNavigator> を使用してそうした操作を行うには、大量のメモリ領域を割り当てる必要があります。 WCF XPath エンジンは、XML ドキュメントでクエリを実行中にカーソルの位置を頻繁に記録する必要がありますので、<xref:System.ServiceModel.Dispatcher.SeekableXPathNavigator>メッセージ処理にとって重要な最適化を提供します。  
   
 ## <a name="customer-scenarios"></a>顧客シナリオ  
  フィルター処理は、メッセージに含まれるデータに応じて、異なる処理モジュールにメッセージを送信する必要がある場合に、いつでも使用できます。 一般的なのは、アクション コードに基づいてメッセージをルーティングするシナリオと、メッセージのエンドポイント アドレスに基づいてメッセージのストリームを分離化するシナリオの 2 つです。  
@@ -94,5 +82,5 @@ ms.lasthandoff: 12/22/2017
   
 -   `EndpointAddress` で指定された <xref:System.ServiceModel.Dispatcher.EndpointAddressMessageFilter> にある残りのエンドポイント パラメーター  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [データ転送とシリアル化](../../../../docs/framework/wcf/feature-details/data-transfer-and-serialization.md)

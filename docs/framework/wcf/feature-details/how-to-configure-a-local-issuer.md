@@ -1,13 +1,6 @@
 ---
-title: "方法 : ローカル発行者を設定する"
-ms.custom: 
+title: '方法 : ローカル発行者を設定する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,26 +8,21 @@ helpviewer_keywords:
 - WCF, federation
 - federation
 ms.assetid: 15263371-514e-4ea6-90fb-14b4939154cd
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c24b039709a013f210a42d67c744c03489e4cf73
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 2b227398af3ea0dfd7cd866f1110ccc1737553c3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-configure-a-local-issuer"></a>方法 : ローカル発行者を設定する
 ここでは、発行済みトークンに対してローカル発行者を使用するようにクライアントを構成する方法を説明します。  
   
  クライアントがフェデレーション サービスと通信する場合、クライアントが自分をフェデレーション サービスに対して認証するときに使用するトークンの発行元となるセキュリティ トークン サービスのアドレスが、サービスによって指定されることがよくあります。 特定の状況で使用するクライアントを構成することがあります、*ローカル発行者*です。  
   
- フェデレーション バインディングの発行者アドレスが http://schemas.microsoft.com/2005/12/ServiceModel/Addressing/Anonymous または [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] である場合、`null` はローカル発行者を使用します。 そのような場合は、ローカルの発行者およびバインディングのアドレスと共に <xref:System.ServiceModel.Description.ClientCredentials> を構成し、その発行者との通信に使用する必要があります。  
+ Windows Communication Foundation (WCF) フェデレーション バインディングの発行者アドレスがある場合はローカル発行者を使用してhttp://schemas.microsoft.com/2005/12/ServiceModel/Addressing/Anonymousまたは`null`です。 そのような場合は、ローカルの発行者およびバインディングのアドレスと共に <xref:System.ServiceModel.Description.ClientCredentials> を構成し、その発行者との通信に使用する必要があります。  
   
 > [!NOTE]
->  場合、<xref:System.ServiceModel.Description.ClientCredentials.SupportInteractive%2A>のプロパティ、`ClientCredentials`クラスに設定されている`true`、ローカル発行者のアドレスが指定されていない、および発行者のアドレスを指定して、 [ \<wsFederationHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md)またはその他のフェデレーション バインディングは http://schemas.xmlsoap.org/ws/2005/05/identity/issuer/self、http://schemas.microsoft.com/2005/12/ServiceModel/Addressing/Anonymous、またはが`null`、Windows、[!INCLUDE[infocard](../../../../includes/infocard-md.md)]発行者を使用します。  
+>  場合、<xref:System.ServiceModel.Description.ClientCredentials.SupportInteractive%2A>のプロパティ、`ClientCredentials`クラスに設定されている`true`、ローカル発行者のアドレスが指定されていない、および発行者のアドレスを指定して、 [ \<wsFederationHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md)またはその他のフェデレーション バインディングはhttp://schemas.xmlsoap.org/ws/2005/05/identity/issuer/self、 http://schemas.microsoft.com/2005/12/ServiceModel/Addressing/Anonymous、または`null`、Windows では、[!INCLUDE[infocard](../../../../includes/infocard-md.md)]発行者を使用します。  
   
 ### <a name="to-configure-the-local-issuer-in-code"></a>コードでローカル発行者を構成するには  
   
@@ -85,7 +73,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="net-framework-security"></a>.NET Framework セキュリティ  
  特定のバインディングに対して発行者アドレスとバインディングが指定されている場合、ローカル発行者はこのバインディングを使用するエンドポイントには使用されません。 ローカル発行者を常に使用する必要があるクライアントには、このようなバインディングが使用されることがないこと、または発行者アドレスが `null` となるようにクライアントによってバインディングが変更されることが保証されている必要があります。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [方法 : フェデレーション サービスで資格情報を設定する](../../../../docs/framework/wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md)  
  [方法 : フェデレーション クライアントを作成する](../../../../docs/framework/wcf/feature-details/how-to-create-a-federated-client.md)  
  [方法 : WSFederationHttpBinding を作成する](../../../../docs/framework/wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md)

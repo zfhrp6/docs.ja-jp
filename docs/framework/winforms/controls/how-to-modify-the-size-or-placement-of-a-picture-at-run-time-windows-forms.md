@@ -1,13 +1,6 @@
 ---
-title: "方法 : 実行時にピクチャのサイズまたは配置を変更する (Windows フォーム)"
-ms.custom: 
+title: '方法 : 実行時にピクチャのサイズまたは配置を変更する (Windows フォーム)'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -18,16 +11,11 @@ helpviewer_keywords:
 - PictureBox control [Windows Forms], picture size and alignment
 - pictures [Windows Forms], controlling placement in PictureBox control [Windows Forms]
 ms.assetid: d0b332a3-fae2-4891-957c-dc3e17743326
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e02ea1cbcb1fdd86d182bfba23241acb91c4b54a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9e6e114e0a9d7e5e9c17ba21ef941703cd108784
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-modify-the-size-or-placement-of-a-picture-at-run-time-windows-forms"></a>方法 : 実行時にピクチャのサイズまたは配置を変更する (Windows フォーム)
 Windows フォームを使用する場合<xref:System.Windows.Forms.PictureBox>コントロール、フォームで設定することができます、<xref:System.Windows.Forms.PictureBox.SizeMode%2A>のプロパティ。  
@@ -44,7 +32,7 @@ Windows フォームを使用する場合<xref:System.Windows.Forms.PictureBox>�
   
 ### <a name="to-set-the-sizemode-property-at-run-time"></a>実行時に、このプロパティを設定するには  
   
-1.  設定<xref:System.Windows.Forms.PictureBox.SizeMode%2A>に<xref:System.Windows.Forms.PictureBoxSizeMode.Normal>(既定)、 <xref:System.Windows.Forms.PictureBoxSizeMode.AutoSize>、 <xref:System.Windows.Forms.PictureBoxSizeMode.CenterImage>、または<xref:System.Windows.Forms.PictureBoxSizeMode.StretchImage>です。 <xref:System.Windows.Forms.PictureBoxSizeMode.Normal>コントロールの左上隅にある; に、イメージが配置されていることを意味します。イメージ コントロールよりも大きい場合は、その右下隅、クリッピングされます。 <xref:System.Windows.Forms.PictureBoxSizeMode.CenterImage>イメージが、コントロール内で中央揃えする方法イメージ コントロールよりも大きい場合は、画像の外側の端がクリッピングされます。 <xref:System.Windows.Forms.PictureBoxSizeMode.AutoSize>コントロールのサイズは、イメージのサイズに調整されていることを意味します。 <xref:System.Windows.Forms.PictureBoxSizeMode.StretchImage>逆の場合は、イメージのサイズは、コントロールのサイズに調整されていることを意味します。  
+1.  設定<xref:System.Windows.Forms.PictureBox.SizeMode%2A>に<xref:System.Windows.Forms.PictureBoxSizeMode.Normal>(既定)、 <xref:System.Windows.Forms.PictureBoxSizeMode.AutoSize>、 <xref:System.Windows.Forms.PictureBoxSizeMode.CenterImage>、または<xref:System.Windows.Forms.PictureBoxSizeMode.StretchImage>です。 <xref:System.Windows.Forms.PictureBoxSizeMode.Normal> コントロールの左上隅にある; に、イメージが配置されていることを意味します。イメージ コントロールよりも大きい場合は、その右下隅、クリッピングされます。 <xref:System.Windows.Forms.PictureBoxSizeMode.CenterImage> イメージが、コントロール内で中央揃えする方法イメージ コントロールよりも大きい場合は、画像の外側の端がクリッピングされます。 <xref:System.Windows.Forms.PictureBoxSizeMode.AutoSize> コントロールのサイズは、イメージのサイズに調整されていることを意味します。 <xref:System.Windows.Forms.PictureBoxSizeMode.StretchImage> 逆の場合は、イメージのサイズは、コントロールのサイズに調整されていることを意味します。  
   
      次の例では、イメージの場所の設定パスは、マイ ドキュメント フォルダーです。 これは、Windows オペレーティング システムを実行しているほとんどのコンピューターがこのディレクトリを含めることを想定するためです。 また、このようにすることで、最小限のシステム アクセス レベルしか持たないユーザーもアプリケーションを安全に実行できるようになります。 次の例にフォームを前提としています、<xref:System.Windows.Forms.PictureBox>コントロールが既に追加されています。  
   
@@ -93,7 +81,7 @@ Windows フォームを使用する場合<xref:System.Windows.Forms.PictureBox>�
        }  
     ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.PictureBox>  
  [方法: デザイナーを使用してピクチャを読み込む](../../../../docs/framework/winforms/controls/how-to-load-a-picture-using-the-designer-windows-forms.md)  
  [PictureBox コントロールの概要](../../../../docs/framework/winforms/controls/picturebox-control-overview-windows-forms.md)  

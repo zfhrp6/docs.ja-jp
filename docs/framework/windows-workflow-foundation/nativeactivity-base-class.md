@@ -1,23 +1,12 @@
 ---
-title: "NativeActivity の基本クラス"
-ms.custom: 
+title: NativeActivity の基本クラス
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 254a4c50-425b-426d-a32f-0f7234925bac
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e53471a2d0245b1547ae5ee3c3a147e024aedefb
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ca4a497f1e78989f9488507015526214ead6cae7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="nativeactivity-base-class"></a>NativeActivity の基本クラス
 <xref:System.Activities.NativeActivity> はプロテクト コンストラクターを持つ抽象クラスです。 <xref:System.Activities.CodeActivity> と同様に、<xref:System.Activities.NativeActivity> は、<xref:System.Activities.NativeActivity.Execute%2A> メソッドを実装して、強制的な動作を記述するときに使用します。 <xref:System.Activities.CodeActivity> とは異なり、<xref:System.Activities.NativeActivity> からは、<xref:System.Activities.NativeActivityContext> メソッドに渡される <xref:System.Activities.NativeActivity.Execute%2A> オブジェクトを介して、ワークフロー ランタイムの公開されているすべての機能にアクセスできます。  
@@ -45,7 +34,7 @@ ms.lasthandoff: 12/22/2017
   
 1.  [!INCLUDE[vs2010](../../../includes/vs2010-md.md)] を開きます。  
   
-2.  選択**ファイル**、**新しい**、し**プロジェクト**です。 選択**Workflow 4.0**  **Visual c#**で、**プロジェクトの種類**ウィンドウ、および選択、 **v2010**ノード。 選択**アクティビティ ライブラリ**で、**テンプレート**ウィンドウです。 新しいプロジェクトに HelloActivity という名前を付けます。  
+2.  選択**ファイル**、**新しい**、し**プロジェクト**です。 選択**Workflow 4.0**  **Visual c#** で、**プロジェクトの種類**ウィンドウ、および選択、 **v2010**ノード。 選択**アクティビティ ライブラリ**で、**テンプレート**ウィンドウです。 新しいプロジェクトに HelloActivity という名前を付けます。  
   
 3.  HelloActivity プロジェクトの Activity1.xaml を右クリックし **削除**です。  
   

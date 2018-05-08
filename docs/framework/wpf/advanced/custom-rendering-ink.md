@@ -1,14 +1,6 @@
 ---
 title: カスタム レンダリング インク
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-wpf
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,17 +9,11 @@ helpviewer_keywords:
 - ink [WPF], custom-rendering
 - classes [WPF], InkCanvas
 ms.assetid: 65c978a7-0ee0-454f-ac7f-b1bd2efecac5
-caps.latest.revision: 10
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: e8f7288d9d3b729ab9c38bc6b2afd603b4d6d1aa
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 2c627f757c1eccc37f57aea6880ffc8a362e5ddb
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="custom-rendering-ink"></a>カスタム レンダリング インク
 <xref:System.Windows.Ink.Stroke.DrawingAttributes%2A>ストロークのプロパティでは、そのサイズ、色、および図形など、線の外観を指定することができますが、機能の外観をカスタマイズすることもあります<xref:System.Windows.Ink.Stroke.DrawingAttributes%2A>を許可します。 エアブラシ、油絵、およびその他の多くの効果の外観でレンダリングすることで、インクの外観をカスタマイズしたい場合もあります。 Windows Presentation Foundation (WPF) により、カスタムを実装することでインクをレンダリングすると、カスタム<xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>と<xref:System.Windows.Ink.Stroke>オブジェクト。  

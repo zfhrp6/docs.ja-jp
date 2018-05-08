@@ -1,25 +1,15 @@
 ---
 title: Windows Communication Foundation
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: article
 helpviewer_keywords:
 - Windows Communication Foundation [WCF]
 - WCF [WCF]
 ms.assetid: 149348a6-bf82-4ccc-9604-fa7cc88c0749
-caps.latest.revision: 10
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 0e7ef1702718d24580694a3d0d4c72e41dc314b4
-ms.sourcegitcommit: 08684dd61444c2f072b89b926370f750e456fca1
-ms.translationtype: MT
+ms.openlocfilehash: f3b8abb2a8e0079dc18624c5ac0408a2738f06b6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="developing-service-oriented-applications-with-wcf"></a>WCF でのサービス指向アプリケーションの開発
 このセクションでは、サービス指向アプリケーションを構築するための統一プログラミング モデルを提供する Windows Communication Foundation (WCF) について説明します。 これを使用して開発者は、プラットフォーム間を統合し、既存のコンポーネントと相互運用する、セキュリティで保護された信頼性の高いトランザクション型のソリューションを構築できます。
@@ -77,7 +67,7 @@ ms.lasthandoff: 02/14/2018
  Windows Communication Foundation のさまざまな特性について説明するサンプルがあります。  
   
  [Windows Communication Foundation 用語集](../../../docs/framework/wcf/glossary.md)  
- 固有の用語の一覧を表示します。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]  
+ [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] に固有の用語の一覧を示します。  
   
  [一般的なリファレンス](../../../docs/framework/wcf/general-reference.md)  
  このセクションでは、Windows Communication Foundation のクライアントおよびサービスの設定に使用される要素について説明します。  

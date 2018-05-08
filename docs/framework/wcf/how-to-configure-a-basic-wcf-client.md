@@ -1,33 +1,19 @@
 ---
 title: '方法 : 基本的な Windows Communication Foundation クライアントを構成する'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - WCF clients [WCF], configuring
 ms.assetid: d067b86d-afb0-47bf-94f6-45180a3d8d78
-caps.latest.revision: 47
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 4bde13abeac782da1c553afa290943eeff925fa4
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: c03bf37c737a19b0a90f12e7ad5db78b75323f5e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-configure-a-basic-windows-communication-foundation-client"></a>方法 : 基本的な Windows Communication Foundation クライアントを構成する
-これは、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] アプリケーションの作成に必要な 6 つのタスクのうち、5 番目のタスクです。 タスクの 6 つのすべての概要については、次を参照してください。、[チュートリアル入門](../../../docs/framework/wcf/getting-started-tutorial.md)トピックです。  
+これは、5 番目の基本的な Windows Communication Foundation (WCF) アプリケーションを作成するために必要な 6 つのタスクです。 タスクの 6 つのすべての概要については、次を参照してください。、[チュートリアル入門](../../../docs/framework/wcf/getting-started-tutorial.md)トピックです。  
   
- このトピックのサービス参照の追加機能を使用して生成されたクライアント構成ファイルを disuccess[!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)]または[ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)です。 クライアントを構成するには、クライアントがサービスにアクセスするために使用するエンドポイントを指定します。 エンドポイントには、アドレス、バインディング、およびコントラクトがあり、クライアントを構成する過程でそれぞれを指定する必要があります。  
+ このトピックのサービス参照の追加機能を使用して生成されたクライアント構成ファイル[!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)]または[ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)です。 クライアントを構成するには、クライアントがサービスにアクセスするために使用するエンドポイントを指定します。 エンドポイントには、アドレス、バインディング、およびコントラクトがあり、クライアントを構成する過程でそれぞれを指定する必要があります。  
   
 ### <a name="to-configure-a-windows-communication-foundation-client"></a>Windows Communication Foundation クライアントを構成するには  
   

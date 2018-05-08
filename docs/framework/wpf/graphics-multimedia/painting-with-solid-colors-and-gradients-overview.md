@@ -1,13 +1,6 @@
 ---
-title: "純色およびグラデーションによる塗りつぶしの概要"
-ms.custom: 
+title: 純色およびグラデーションによる塗りつぶしの概要
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - solid colors [WPF], painting with
 - painting with gradients [WPF]
@@ -16,16 +9,11 @@ helpviewer_keywords:
 - brushes [WPF], painting with gradients
 - painting with solid colors [WPF]
 ms.assetid: f5b182f3-c5c7-4cbe-9f2f-65e690d08255
-caps.latest.revision: "21"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: bb71a1ae52b35b421474954410869f20fa004eb7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: cea4b2dbd17178a6943b0f4a84182e65232330fb
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="painting-with-solid-colors-and-gradients-overview"></a>純色およびグラデーションによる塗りつぶしの概要
 このトピックを使用する方法について説明<xref:System.Windows.Media.SolidColorBrush>、 <xref:System.Windows.Media.LinearGradientBrush>、および<xref:System.Windows.Media.RadialGradientBrush>純色の線形グラデーションおよび放射状グラデーションで塗りつぶすオブジェクト。  
@@ -74,7 +62,7 @@ ms.lasthandoff: 12/22/2017
   
 <a name="gradient"></a>   
 ## <a name="painting-an-area-with-a-gradient"></a>領域をグラデーションで塗りつぶす  
- グラデーション ブラシは、軸に沿って互いに溶け込む複数の色で領域を塗りつぶします。 これらを使用して、光と影の感じを作り出して、コントロールを立体的に見せることができます。 ガラス、クロム メッキ、水、その他の滑らかな表面をシミュレートするためにも使用できます。  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]グラデーション ブラシの 2 つの型を提供します。<xref:System.Windows.Media.LinearGradientBrush>と<xref:System.Windows.Media.RadialGradientBrush>です。  
+ グラデーション ブラシは、軸に沿って互いに溶け込む複数の色で領域を塗りつぶします。 これらを使用して、光と影の感じを作り出して、コントロールを立体的に見せることができます。 ガラス、クロム メッキ、水、その他の滑らかな表面をシミュレートするためにも使用できます。  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] グラデーション ブラシの 2 つの型を提供します。<xref:System.Windows.Media.LinearGradientBrush>と<xref:System.Windows.Media.RadialGradientBrush>です。  
   
 <a name="lineargradientbrush"></a>   
 ## <a name="linear-gradients"></a>線状グラデーション  
@@ -179,7 +167,7 @@ GradientOrigin、Center、RadiusX、および RadiusY の設定が異なる Radi
 ## <a name="painting-with-images-drawings-visuals-and-patterns"></a>イメージ、描画、ビジュアル、およびパターンによる塗りつぶし  
  <xref:System.Windows.Media.ImageBrush>、 <xref:System.Windows.Media.DrawingBrush>、および<xref:System.Windows.Media.VisualBrush>クラスを使用すると、画像、図形、またはビジュアルを使用して領域を描画します。 イメージ、描画、およびパターンによる塗りつぶしの詳細については、「[イメージ、描画、およびビジュアルによる塗りつぶし](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)」を参照してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Media.Brush>  
  <xref:System.Windows.Media.SolidColorBrush>  
  <xref:System.Windows.Media.LinearGradientBrush>  

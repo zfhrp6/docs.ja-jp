@@ -1,31 +1,17 @@
 ---
-title: "Windows フォームでのユーザー入力の検証"
-ms.custom: 
+title: Windows フォームでのユーザー入力の検証
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - Windows Forms, validating user input
 - validation [Windows Forms], Windows Forms user input
 - user input [Windows Forms], validating in Windows Forms
 - validating user input [Windows Forms], Windows Forms
 ms.assetid: 4ec07681-1dee-4bf9-be5e-718f635a33a1
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 1d0e3ec867e44c4f01b239e8e243259d7c951d96
-ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
+ms.openlocfilehash: adc138ad1e277f69f27f9f86fc5c3ea28a8d5cce
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="user-input-validation-in-windows-forms"></a>Windows フォームでのユーザー入力の検証
 ユーザーがアプリケーションにデータを入力する場合、アプリケーションがそれを使用する前に、データが有効であることを確認します。 特定のテキスト フィールドにならないこと長さがゼロでフィールドが、電話番号などの適切な形式のデータの型として書式設定されること、または文字列がデータベースのセキュリティを侵害するために使用できる任意の安全でない文字を含まないことを要求することがあります。 Windows フォームでは、アプリケーションで入力を検証するためのいくつかの方法を提供します。  
@@ -56,7 +42,7 @@ ms.lasthandoff: 02/01/2018
  実行中に、データ ソースとに、コントロール内のデータが同期されているデータ バインディングを使用するとき、<xref:System.Windows.Forms.Control.Validating>イベント。 キャンセルすると、<xref:System.Windows.Forms.Control.Validating>イベント、データは、データ ソースと同期されません。  
   
 > [!IMPORTANT]
->  カスタム検証が行われたことがある場合、<xref:System.Windows.Forms.Control.Validating>イベントには、データ バインディングで影響しません。 コードがある場合など、<xref:System.Windows.Forms.Control.Validated>データ バインディングをキャンセルしようとするイベント、データ バインディングは行われます。 検証を実行するのには、この場合で、<xref:System.Windows.Forms.Control.Validated>イベント、管理の変更**データ ソース更新モード**プロパティ (**(Databindings) の下にある**\\**(詳細)**) から**OnValidation**に**Never**、し、追加*コントロール*`.DataBindings["`*\<YOURFIELD >* `"].WriteValue()`検証コードにします。  
+>  カスタム検証が行われたことがある場合、<xref:System.Windows.Forms.Control.Validating>イベントには、データ バインディングで影響しません。 コードがある場合など、<xref:System.Windows.Forms.Control.Validated>データ バインディングをキャンセルしようとするイベント、データ バインディングは行われます。 検証を実行するのには、この場合で、<xref:System.Windows.Forms.Control.Validated>イベント、管理の変更**データ ソース更新モード**プロパティ (**(Databindings) の下にある**\\ **(詳細)**) から**OnValidation**に**Never**、し、追加*コントロール*`.DataBindings["`*\<YOURFIELD >* `"].WriteValue()`検証コードにします。  
   
 ### <a name="implicit-and-explicit-validation"></a>暗黙的および明示的な検証  
  これはいつコントロールのデータ取得検証しますか。 これは、ユーザー、開発者の責任です。 アプリケーションのニーズに応じて、暗黙的または明示的な検証を使用することができます。  
@@ -103,7 +89,7 @@ ms.lasthandoff: 02/01/2018
 > [!NOTE]
 >  フォームを閉じるには、この方法を強制すると、既に保存されていないするフォームのコントロール内のデータは失われます。 さらに、モーダル フォームは、閉じられるときにコントロールの内容を検証しません。 コントロールにフォーカスをロックするコントロールの検証を使用することもできますが、フォームを閉じると関連付けられた動作について考慮する必要はありません。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.Control.Validating?displayProperty=nameWithType>  
  <xref:System.Windows.Forms.Form.Closing?displayProperty=nameWithType>  
  <xref:System.ComponentModel.CancelEventArgs?displayProperty=nameWithType>  

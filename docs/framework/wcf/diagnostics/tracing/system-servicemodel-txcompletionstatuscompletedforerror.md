@@ -1,24 +1,12 @@
 ---
 title: System.ServiceModel.TxCompletionStatusCompletedForError
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 8ade4722-a6d5-471c-b960-1cfea4ea2aa9
-caps.latest.revision: "6"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 25106bffe6d541a89c786035db3d3266d861fd5b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: bba41b339d393ad2a02b5be36600927e3548f736
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="systemservicemodeltxcompletionstatuscompletedforerror"></a>System.ServiceModel.TxCompletionStatusCompletedForError
 処理されない実行例外が発生したため、指定された操作の指定されたトランザクションが完了しました。  
@@ -29,7 +17,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="troubleshooting"></a>トラブルシューティング  
  トレース メッセージを調べて、例外メッセージとアクション可能な項目を確認してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [トレース](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
  [トレースを使用したアプリケーションのトラブルシューティング](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
  [管理と診断](../../../../../docs/framework/wcf/diagnostics/index.md)

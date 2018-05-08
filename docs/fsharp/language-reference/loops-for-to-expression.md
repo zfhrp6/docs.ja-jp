@@ -1,17 +1,12 @@
 ---
 title: 'ループ: for...to 式 (F#)'
 description: 参照してくださいか f# データ型.. ループでループ変数の値の範囲を反復処理に式を使用します。
-author: cartermp
-ms.author: phcart
 ms.date: 05/16/2016
-ms.topic: language-reference
-ms.prod: dotnet-fsharp
-ms.devlang: fsharp
-ms.openlocfilehash: 95a8960d71c82c01118d2e71479fc0ec5298a02b
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 841c7d557abc11e0253cb87ab8081cc77671b44b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="loops-forto-expression"></a>ループ: for...to 式
 

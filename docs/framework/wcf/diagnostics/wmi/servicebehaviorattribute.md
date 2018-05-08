@@ -1,24 +1,12 @@
 ---
 title: ServiceBehaviorAttribute
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 5faa266f-587f-4e03-828d-1c7dd5acfe65
-caps.latest.revision: "7"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 7d6b0620e9cb2575bcfe9cd6f01b5d87669df69b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 514af4c6d9eaaf8929ca831e4e786c895d14c67d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="servicebehaviorattribute"></a>ServiceBehaviorAttribute
 ServiceBehaviorAttribute  
@@ -100,7 +88,7 @@ class ServiceBehaviorAttribute : Behavior
   
  1 つのシリアル化されたオブジェクトで許可される項目の最大数。  
   
-### <a name="name"></a>name  
+### <a name="name"></a>名前  
  データ型: string  
   
  アクセスの種類 : 読み取り専用  
@@ -156,11 +144,11 @@ class ServiceBehaviorAttribute : Behavior
   
  システムまたはアプリケーションで SOAP MustUnderstand ヘッダー処理を強制的に行うかどうかを指定します。  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
   
 |MOF|Servicemodel.mof にて宣言済み。|  
 |---------|-----------------------------------|  
 |Namespace|root\ServiceModel で定義|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.ServiceBehaviorAttribute>

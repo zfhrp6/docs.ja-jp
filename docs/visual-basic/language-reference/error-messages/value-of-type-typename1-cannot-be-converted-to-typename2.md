@@ -1,28 +1,19 @@
 ---
-title: "型 &#39; の値&lt;typename1&gt;&#39; に変換できません (& m); #39&lt;typename2&gt;&#39;です。"
+title: 型の値&#39; &lt;typename1&gt; &#39;に変換できない&#39; &lt;typename2&gt;&#39;
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vbc30955
 - bc30955
 helpviewer_keywords:
 - BC30955
 ms.assetid: 966b61eb-441e-48b0-bedf-ca95384ecb8b
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: b583c4272dd6e964de99fb14d2795152c655f3aa
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: 9b3c029ed7bf73ff92dba65438d797b27fa135f1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="value-of-type-39lttypename1gt39-cannot-be-converted-to-39lttypename2gt39"></a>型 &#39; の値&lt;typename1&gt;&#39; に変換できません (& m); #39&lt;typename2&gt;&#39;です。
+# <a name="value-of-type-39lttypename1gt39-cannot-be-converted-to-39lttypename2gt39"></a>型の値&#39; &lt;typename1&gt; &#39;に変換できない&#39; &lt;typename2&gt;&#39;
 型の値 '\<typename1 >' に変換できません。'\<typename2 >' です。 型の不一致は、ファイル参照アセンブリへの参照をプロジェクトとの混合によって生じた可能性があります '\<assemblyname >' です。 ファイル参照を置き換えてください '\<filepath >' プロジェクトで'\<projectname1 >' への参照をプロジェクトに '\<projectname2 >' です。  
   
  プロジェクトがプロジェクト参照とファイル参照の両方を使用する場合、コンパイラは、別に、1 つの型を変換できることを保証できません。  
@@ -67,7 +58,7 @@ ms.lasthandoff: 12/21/2017
   
 -   ファイル参照をプロジェクト参照を変更します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Visual Basic での型変換](../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)  
  [プロジェクト内の参照の管理](/visualstudio/ide/managing-references-in-a-project)  
  

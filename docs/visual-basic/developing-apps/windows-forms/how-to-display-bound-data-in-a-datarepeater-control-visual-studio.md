@@ -1,22 +1,15 @@
 ---
-title: "方法 : DataRepeater コントロールにバインドされたデータを表示する (Visual Studio)"
+title: '方法 : DataRepeater コントロールにバインドされたデータを表示する (Visual Studio)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - DataRepeater, data-binding
 - DataRepeater, displaying bound controls
 ms.assetid: 56a15326-1334-4275-af4e-075cad79e6f7
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 770003c8879661bfc1ce683f5b6ed84483cf47ea
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: b96fb33a0dcf80a86d1fcb6e219e5f35b1f7351c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-display-bound-data-in-a-datarepeater-control-visual-studio"></a>方法 : DataRepeater コントロールにバインドされたデータを表示する (Visual Studio)
 最も一般的な使用、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>コントロールは、データベースまたはその他のデータ ソースからバインドされたデータを表示します。  
@@ -37,7 +30,7 @@ ms.lasthandoff: 11/21/2017
   
      またサイズし、コントロール、または項目テンプレートを変更することで位置、**サイズ**と**位置**プロパティ ウィンドウでプロパティです。  
   
-3.  **[データ]** メニューの **[データ ソースの表示]**をクリックします。  
+3.  **[データ]** メニューの **[データ ソースの表示]** をクリックします。  
   
     > [!NOTE]
     >  場合、**データソース**ウィンドウが空の場合に、データ ソースを追加します。 詳細については、「[新しいデータ ソースの追加](/visualstudio/data-tools/add-new-data-sources)」を参照してください。  

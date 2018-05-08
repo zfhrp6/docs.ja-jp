@@ -1,13 +1,6 @@
 ---
-title: "ID モデルを使用したクレームと承認の管理"
-ms.custom: 
+title: ID モデルを使用したクレームと承認の管理
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - authorization [WCF]
 - WCF security
@@ -15,19 +8,14 @@ helpviewer_keywords:
 - claims [WCF]
 - authorization [WCF], managing with the Identity Model
 ms.assetid: 099defbb-5d35-434e-9336-1a49b9ec7663
-caps.latest.revision: "20"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: db0a304a908e906b635672eed1a84f0277284ad7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 84f4485a85f83e910cc75b04282e1ad04aee72c1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="managing-claims-and-authorization-with-the-identity-model"></a>ID モデルを使用したクレームと承認の管理
-承認は、コンピューター リソースを変更または表示したり、コンピューター リソースにアクセスしたりする権限を持つエンティティを特定するプロセスです。 たとえば、ある業務で、管理者だけが従業員のファイルへのアクセスを許可される場合があります。 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] では、承認処理を実行するための 2 つの機構をサポートしています。 1 つ目の機構では、既存の共通言語ランタイム (CLR: Common Language Runtime) 構造を使用して承認を制御できます。 2 つ目は、クレームに基づくモデルと呼ばれる、 *Id モデル*です。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、ID モデルを使用して受信メッセージからクレームを作成します。ID モデル クラスを拡張することで、カスタム承認方式に対応する新しいクレームの種類をサポートできます。 このトピックでは、ID モデル機能のプログラミングの主要概念について概説し、この機能で使用する最も重要なクラスの一覧を示します。  
+承認は、コンピューター リソースを変更または表示したり、コンピューター リソースにアクセスしたりする権限を持つエンティティを特定するプロセスです。 たとえば、ある業務で、管理者だけが従業員のファイルへのアクセスを許可される場合があります。 Windows Communication Foundation (WCF) には、承認処理を実行するための 2 つのメカニズムがサポートしています。 1 つ目の機構では、既存の共通言語ランタイム (CLR: Common Language Runtime) 構造を使用して承認を制御できます。 2 つ目は、クレームに基づくモデルと呼ばれる、 *Id モデル*です。 WCF の着信メッセージからクレームを作成するのに、Id モデルを使用します。カスタム承認スキームでは新しいクレームの種類をサポートするためには、id モデル クラスを拡張できます。 このトピックでは、ID モデル機能のプログラミングの主要概念について概説し、この機能で使用する最も重要なクラスの一覧を示します。  
   
 ## <a name="identity-model-scenarios"></a>ID モデルのシナリオ  
  ID モデルの使用例を以下のシナリオに示します。  
@@ -136,7 +124,7 @@ ms.lasthandoff: 12/22/2017
  ![クレームと承認を管理する](../../../../docs/framework/wcf/feature-details/media/xsi-recap.gif "xsi_recap")  
   
 ## <a name="wcf-and-identity-model"></a>WCF と ID モデル  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、承認を実行するための基盤として ID モデル インフラストラクチャを使用します。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]、<xref:System.ServiceModel.Description.ServiceAuthorizationBehavior>クラスを指定できます。*承認*サービスの一部としてポリシー。 このような承認ポリシーと呼ばれる*外部承認ポリシー*、リモート サービスと対話してローカル ポリシーに基づく請求処理を行うことです。 承認マネージャーは、によって表される、<xref:System.ServiceModel.ServiceAuthorizationManager>クラスは、各種の資格情報の種類 (トークン) を認識する承認ポリシーと共に外部承認ポリシーを評価し、設定と呼ばれるもの、 *承認コンテキスト*受信メッセージに適切な要求を使用します。 承認コンテキストは、<xref:System.IdentityModel.Policy.AuthorizationContext> クラスによって表されます。  
+ WCF は、承認を実行するため、基盤として Id モデル インフラストラクチャを使用します。 WCF では、<xref:System.ServiceModel.Description.ServiceAuthorizationBehavior>クラスを指定できます。*承認*サービスの一部としてポリシー。 このような承認ポリシーと呼ばれる*外部承認ポリシー*、リモート サービスと対話してローカル ポリシーに基づく請求処理を行うことです。 承認マネージャーは、によって表される、<xref:System.ServiceModel.ServiceAuthorizationManager>クラスは、各種の資格情報の種類 (トークン) を認識する承認ポリシーと共に外部承認ポリシーを評価し、設定と呼ばれるもの、 *承認コンテキスト*受信メッセージに適切な要求を使用します。 承認コンテキストは、<xref:System.IdentityModel.Policy.AuthorizationContext> クラスによって表されます。  
   
 ## <a name="identity-model-programming"></a>ID モデルのプログラミング  
  ID モデル拡張のプログラミングに使用するオブジェクト モデルを次の表に示します。 これらのクラスはすべて、<xref:System.IdentityModel.Policy> 名前空間または <xref:System.IdentityModel.Claims> 名前空間にあります。  
@@ -170,7 +158,7 @@ ms.lasthandoff: 12/22/2017
 |<xref:System.ServiceModel.Description.ServiceAuthorizationBehavior.ServiceAuthorizationManager%2A>|サービスの <xref:System.ServiceModel.ServiceAuthorizationManager> を返します。 承認決定は、<xref:System.ServiceModel.ServiceAuthorizationManager> が行います。|  
 |<xref:System.ServiceModel.Description.ServiceAuthorizationBehavior.ExternalAuthorizationPolicies%2A>|サービスに指定されたカスタム承認ポリシーのコレクション。 受信メッセージの資格情報に関連するポリシーに加え、これらのポリシーも評価されます。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.IdentityModel.Policy.AuthorizationContext>  
  <xref:System.IdentityModel.Claims.Claim>  
  <xref:System.IdentityModel.Policy.EvaluationContext>  

@@ -1,13 +1,6 @@
 ---
-title: "XAML 名前空間および WPF XAML の名前空間の割り当て"
-ms.custom: 
+title: XAML 名前空間および WPF XAML の名前空間の割り当て
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -21,16 +14,11 @@ helpviewer_keywords:
 - classes [WPF], mapping namespaces to
 - namespaces [WPF]
 ms.assetid: 5c0854e3-7470-435d-9fe2-93eec9d3634e
-caps.latest.revision: "23"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 80f152f8cdf459f920d723df66756af680b4bcea
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: dbf9c9c16488a58a07aa29d16b3d00dd83c7c232
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="xaml-namespaces-and-namespace-mapping-for-wpf-xaml"></a>XAML 名前空間および WPF XAML の名前空間の割り当て
 さらに、このトピックでは、存在と WPF XAML ファイルのルート タグにある多くの場合、2 つの XAML 名前空間のマッピングの目的について説明します。 独自のコード内や個別のアセンブリ内で定義されている要素を使用するためのようなマッピングを生成する方法についても説明します。  
@@ -59,9 +47,9 @@ ms.lasthandoff: 12/22/2017
   
  構文には、次の名前のトークンと次の値。  
   
- `clr-namespace:`CLR 名前空間は要素として公開するパブリック型を格納するアセンブリ内で宣言されています。  
+ `clr-namespace:` CLR 名前空間は要素として公開するパブリック型を格納するアセンブリ内で宣言されています。  
   
- `assembly=`参照先の一部またはすべてを含むアセンブリ[!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)]名前空間。 この値は、パスではなく、アセンブリの名前だけでは通常、(.dll または .exe) など、拡張機能は含まれません。 マップしようとして XAML を含むプロジェクト ファイル内のプロジェクト参照としては、そのアセンブリへのパスを確立する必要があります。 バージョン管理とを厳密な名前の署名を反映するために、`assembly`値で定義されている文字列であることができます<xref:System.Reflection.AssemblyName>、単純な文字列名ではなくです。  
+ `assembly=` 参照先の一部またはすべてを含むアセンブリ[!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)]名前空間。 この値は、パスではなく、アセンブリの名前だけでは通常、(.dll または .exe) など、拡張機能は含まれません。 マップしようとして XAML を含むプロジェクト ファイル内のプロジェクト参照としては、そのアセンブリへのパスを確立する必要があります。 バージョン管理とを厳密な名前の署名を反映するために、`assembly`値で定義されている文字列であることができます<xref:System.Reflection.AssemblyName>、単純な文字列名ではなくです。  
   
  文字を分離することに注意してください、`clr-namespace`値からトークンがありますが、コロン (:) 文字の分離、`assembly`値からトークンが等号 (=)。 これら 2 つのトークンの間で使用する文字は、セミコロンです。 またの空白任意の場所に含めない宣言します。  
   
@@ -111,7 +99,7 @@ End Namespace
 ```  
   
 ### <a name="mapping-to-current-assemblies"></a>現在のアセンブリへのマッピング  
- `assembly`場合は省略可能、`clr-namespace`参照先は、カスタム クラスを参照しているアプリケーション コードと同じアセンブリ内で定義されています。 この場合の同等の構文を指定するか、 `assembly=`、なし文字列トークンを等号の後にします。  
+ `assembly` 場合は省略可能、`clr-namespace`参照先は、カスタム クラスを参照しているアプリケーション コードと同じアセンブリ内で定義されています。 この場合の同等の構文を指定するか、 `assembly=`、なし文字列トークンを等号の後にします。  
   
  カスタム クラスは、同じアセンブリで定義されている場合は、ページのルート要素として使用できません。 部分クラスが割り当てる必要はありません。アプリケーションが必要となる xaml 要素として参照する場合にマップするページの部分クラスではないクラスのみです。  
   
@@ -124,9 +112,9 @@ End Namespace
 ## <a name="designer-namespaces-and-other-prefixes-from-xaml-templates"></a>デザイナーの名前空間と XAML テンプレートから他のプレフィックス  
  XAML の WPF の開発環境やデザイン ツールを使用している、する可能性がありますがわかりますがある他の定義済みの XAML 名前空間プレフィックスの XAML マークアップで/です。  
   
- [!INCLUDE[wpfdesigner_current_long](../../../../includes/wpfdesigner-current-long-md.md)]通常、プレフィックスにマップされるデザイナー名前空間を使用して`d:`です。 WPF のプロジェクト テンプレートをより新しい場合があります、XAML との間のやり取りをサポートするためにこの XAML 名前空間をマップして事前[!INCLUDE[wpfdesigner_current_long](../../../../includes/wpfdesigner-current-long-md.md)]およびその他のデザイン環境です。 この設計の XAML 名前空間は、ラウンドト リップ、デザイナーで XAML ベースの UI の中にデザインの状態を永続化に使用されます。 使用機能のように`d:IsDataSource`デザイナーでデータ ソースのランタイムを有効にします。  
+ [!INCLUDE[wpfdesigner_current_long](../../../../includes/wpfdesigner-current-long-md.md)] 通常、プレフィックスにマップされるデザイナー名前空間を使用して`d:`です。 WPF のプロジェクト テンプレートをより新しい場合があります、XAML との間のやり取りをサポートするためにこの XAML 名前空間をマップして事前[!INCLUDE[wpfdesigner_current_long](../../../../includes/wpfdesigner-current-long-md.md)]およびその他のデザイン環境です。 この設計の XAML 名前空間は、ラウンドト リップ、デザイナーで XAML ベースの UI の中にデザインの状態を永続化に使用されます。 使用機能のように`d:IsDataSource`デザイナーでデータ ソースのランタイムを有効にします。  
   
- マップされている別のプレフィックスが表示されて`mc:`です。 `mc:`マークアップ互換性のためと、必ずしも XAML に固有ではないマークアップ互換性パターンを活用することができます。 ある程度はマークアップ互換性フレームワーク間またはその他の境界、補助的な実装の間で XAML を交換する機能を使用することができます XAML スキーマ コンテキスト間で作業デザイナーでは、制限付きのモードの互換性を提供され、します。 マークアップ互換性概念と WPF に関連付ける方法の詳細については、次を参照してください[マークアップの互換性 (mc:)。言語機能](../../../../docs/framework/wpf/advanced/markup-compatibility-mc-language-features.md)します。  
+ マップされている別のプレフィックスが表示されて`mc:`です。 `mc:` マークアップ互換性のためと、必ずしも XAML に固有ではないマークアップ互換性パターンを活用することができます。 ある程度はマークアップ互換性フレームワーク間またはその他の境界、補助的な実装の間で XAML を交換する機能を使用することができます XAML スキーマ コンテキスト間で作業デザイナーでは、制限付きのモードの互換性を提供され、します。 マークアップ互換性概念と WPF に関連付ける方法の詳細については、次を参照してください[マークアップの互換性 (mc:)。言語機能](../../../../docs/framework/wpf/advanced/markup-compatibility-mc-language-features.md)します。  
   
 ## <a name="wpf-and-assembly-loading"></a>WPF およびアセンブリの読み込み  
  WPF の XAML スキーマ コンテキスト 'æ˜aœg' の CLR で定義された概念を順番に使用して、WPF アプリケーション モデル、<xref:System.AppDomain>です。 次の順序は、XAML スキーマ コンテキストがアセンブリを読み込むかの WPF の使用状況に基づいて実行時またはデザイン時に、型を検出する方法をどのように解釈する方法について説明します<xref:System.AppDomain>およびその他の要因です。  
@@ -147,6 +135,6 @@ End Namespace
   
  BAML も含めることはできませんの非修飾アセンブリ名が、コンパイル済みの BAML (PresentationBuildTask 経由で生成) はすべての手順を使用します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [XML 名前空間を理解します。](http://go.microsoft.com/fwlink/?LinkId=98069)  
  [XAML の概要 (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)

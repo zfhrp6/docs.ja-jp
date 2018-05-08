@@ -1,13 +1,6 @@
 ---
-title: "TileBrush の概要"
-ms.custom: 
+title: TileBrush の概要
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,19 +8,14 @@ helpviewer_keywords:
 - TileBrush [WPF]
 - brushes [WPF], TileBrush
 ms.assetid: aa4a7b7e-d09d-44c2-8d61-310c50e08d68
-caps.latest.revision: "16"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a7d5e9fa36ddeda0c724eeb0bb46a64d0ba36c99
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ac247a9caa54c40a31e3c78ba8537d60a333feb5
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="tilebrush-overview"></a>TileBrush の概要
-<xref:System.Windows.Media.TileBrush>オブジェクトを使用する、イメージで領域を描画する方法を細かく制御が大幅に向上<xref:System.Windows.Media.Drawing>、または<xref:System.Windows.Media.Visual>です。 このトピックを使用する方法について説明<xref:System.Windows.Media.TileBrush>の機能をより細かく方法、 <xref:System.Windows.Media.ImageBrush>、 <xref:System.Windows.Media.DrawingBrush>、または<xref:System.Windows.Media.VisualBrush>領域を塗りつぶします。  
+<xref:System.Windows.Media.TileBrush> オブジェクトを使用する、イメージで領域を描画する方法を細かく制御が大幅に向上<xref:System.Windows.Media.Drawing>、または<xref:System.Windows.Media.Visual>です。 このトピックを使用する方法について説明<xref:System.Windows.Media.TileBrush>の機能をより細かく方法、 <xref:System.Windows.Media.ImageBrush>、 <xref:System.Windows.Media.DrawingBrush>、または<xref:System.Windows.Media.VisualBrush>領域を塗りつぶします。  
   
   
 <a name="prerequisite"></a>   
@@ -132,7 +120,7 @@ Tile の TileMode を使用する TileBrush のコンポーネント
  [!code-csharp[BrushOverviewExamples_procedural_snip#GraphicsMMFlipXYExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BrushOverviewExamples_procedural_snip/CSharp/TilingExample.cs#graphicsmmflipxyexample)]
  [!code-vb[BrushOverviewExamples_procedural_snip#GraphicsMMFlipXYExample](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/BrushOverviewExamples_procedural_snip/visualbasic/tilingexample.vb#graphicsmmflipxyexample)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Media.ImageBrush>  
  <xref:System.Windows.Media.DrawingBrush>  
  <xref:System.Windows.Media.VisualBrush>  

@@ -1,27 +1,15 @@
 ---
-title: "メッセージ キュー統合"
-ms.custom: 
+title: メッセージ キュー統合
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 8d2b47a0-5d51-45b5-9633-b62e064e8ea4
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 9e27134c9a18d5125566b582ac17cf6a95b3b83f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 3b61da0a95a875c2f594657c324753d00866553c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="message-queueing-integration"></a>メッセージ キュー統合
-このセクションには、メッセージ キューと [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] の間の統合を示すサンプルが含まれています。  
+このセクションには、メッセージ キューと Windows Communication Foundation (WCF) の間の統合を示すサンプルが含まれています。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [Windows Communication Foundation へのメッセージ キュー](../../../../docs/framework/wcf/samples/message-queuing-to-wcf.md)  

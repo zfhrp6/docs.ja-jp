@@ -1,34 +1,20 @@
 ---
 title: エンドポイント アドレスの指定
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - endpoints [WCF], addressing
 ms.assetid: ac24f5ad-9558-4298-b168-c473c68e819b
-caps.latest.revision: 41
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 99fdfad6c06e74a92d7fffb7c7a5e14284757e12
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
-ms.translationtype: MT
+ms.openlocfilehash: 784b0fe3e2b23287d458f9aa4d8276e10dd6ed97
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="specifying-an-endpoint-address"></a>エンドポイント アドレスの指定
-[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービスを使用して行われるすべての通信では、エンドポイントが使用されます。 各 <xref:System.ServiceModel.Description.ServiceEndpoint> は、<xref:System.ServiceModel.Description.ServiceEndpoint.Address%2A>、<xref:System.ServiceModel.Description.ServiceEndpoint.Binding%2A>、および <xref:System.ServiceModel.Description.ServiceEndpoint.Contract%2A> で構成されます。 コントラクトでは、使用できる操作を指定します。 バインディングでは、サービスとの通信方法を指定し、アドレスでは、サービスの場所を指定します。 各エンドポイントには、一意のアドレスを設定する必要があります。 エンドポイント アドレスは、<xref:System.ServiceModel.EndpointAddress> クラスによって表します。このクラスは、サービスのアドレスを表す URI (Uniform Resource Identifier)、サービスのセキュリティ ID を表す <xref:System.ServiceModel.EndpointAddress.Identity%2A>、およびオプションの <xref:System.ServiceModel.EndpointAddress.Headers%2A> のコレクションで構成されます。 オプション ヘッダーは、エンドポイントの識別または対話のために、より詳細なアドレス指定情報を提供します。 たとえば、ヘッダーを使用して、受信メッセージの処理方法や、エンドポイントからの応答メッセージの送信先を指定できるほか、複数のサービス インスタンスが使用できる場合に、特定ユーザーからの受信メッセージの処理に使用するインスタンスを指定できます。  
+Windows Communication Foundation (WCF) サービスとすべての通信は、そのエンドポイントを介して行われます。 各 <xref:System.ServiceModel.Description.ServiceEndpoint> は、<xref:System.ServiceModel.Description.ServiceEndpoint.Address%2A>、<xref:System.ServiceModel.Description.ServiceEndpoint.Binding%2A>、および <xref:System.ServiceModel.Description.ServiceEndpoint.Contract%2A> で構成されます。 コントラクトでは、使用できる操作を指定します。 バインディングでは、サービスとの通信方法を指定し、アドレスでは、サービスの場所を指定します。 各エンドポイントには、一意のアドレスを設定する必要があります。 エンドポイント アドレスは、<xref:System.ServiceModel.EndpointAddress> クラスによって表します。このクラスは、サービスのアドレスを表す URI (Uniform Resource Identifier)、サービスのセキュリティ ID を表す <xref:System.ServiceModel.EndpointAddress.Identity%2A>、およびオプションの <xref:System.ServiceModel.EndpointAddress.Headers%2A> のコレクションで構成されます。 オプション ヘッダーは、エンドポイントの識別または対話のために、より詳細なアドレス指定情報を提供します。 たとえば、ヘッダーを使用して、受信メッセージの処理方法や、エンドポイントからの応答メッセージの送信先を指定できるほか、複数のサービス インスタンスが使用できる場合に、特定ユーザーからの受信メッセージの処理に使用するインスタンスを指定できます。  
   
 ## <a name="definition-of-an-endpoint-address"></a>エンドポイント アドレスの定義  
  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] の <xref:System.ServiceModel.EndpointAddress> は、WS-Addressing 仕様で定義されているエンドポイント参照 (EPR) をモデル化します。  

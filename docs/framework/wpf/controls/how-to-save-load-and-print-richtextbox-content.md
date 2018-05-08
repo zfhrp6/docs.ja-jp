@@ -1,13 +1,6 @@
 ---
-title: "方法 : RichTextBox コンテンツを保存、読み込み、および印刷する"
-ms.custom: 
+title: '方法 : RichTextBox コンテンツを保存、読み込み、および印刷する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -19,16 +12,11 @@ helpviewer_keywords:
 - RichTextBox control [WPF], printing
 - RichTextBox control [WPF], loading
 ms.assetid: ffb113d3-c68a-47ca-8ac0-882283f38326
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 45cd99332ca5ea87bf70c9b881da7daa3705ec25
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: df43a5f5cabd664bb8514967456a67ba3699d5a3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-save-load-and-print-richtextbox-content"></a>方法 : RichTextBox コンテンツを保存、読み込み、および印刷する
 次の例の内容を保存する方法を示しています、<xref:System.Windows.Controls.RichTextBox>をファイルにそのコンテンツの状態に戻してを読み込み、 <xref:System.Windows.Controls.RichTextBox>、および内容を印刷します。  
@@ -44,6 +32,6 @@ ms.lasthandoff: 12/22/2017
  [!code-csharp[RichTextBoxMiscSnippets_snip#SaveLoadPrintRTBCodeExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/RichTextBoxMiscSnippets_snip/CSharp/SaveLoadPrintRTB.xaml.cs#saveloadprintrtbcodeexamplewholepage)]
  [!code-vb[RichTextBoxMiscSnippets_snip#SaveLoadPrintRTBCodeExampleWholePage](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/RichTextBoxMiscSnippets_snip/VisualBasic/SaveLoadPrintRTB.xaml.vb#saveloadprintrtbcodeexamplewholepage)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [RichTextBox の概要](../../../../docs/framework/wpf/controls/richtextbox-overview.md)  
  [TextBox の概要](../../../../docs/framework/wpf/controls/textbox-overview.md)

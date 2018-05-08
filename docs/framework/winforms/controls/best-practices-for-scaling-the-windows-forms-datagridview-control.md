@@ -1,13 +1,6 @@
 ---
-title: "Windows フォーム DataGridView コントロールを拡張するための推奨される手順"
-ms.custom: 
+title: Windows フォーム DataGridView コントロールを拡張するための推奨される手順
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - DataGridView control [Windows Forms], row sharing
 - data grids [Windows Forms], best practices
@@ -16,16 +9,11 @@ helpviewer_keywords:
 - best practices [Windows Forms], dataGridView control
 - DataGridView control [Windows Forms], scaling
 ms.assetid: 8321a8a6-6340-4fd1-b475-fa090b905aaf
-caps.latest.revision: "31"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ecd629bd38e08c8d6909ee4ad771f17b1554fc80
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 91153df539871de571375d7bf6d49d712a0c43b2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="best-practices-for-scaling-the-windows-forms-datagridview-control"></a>Windows フォーム DataGridView コントロールを拡張するための推奨される手順
 <xref:System.Windows.Forms.DataGridView>コントロールが最大限のスケーラビリティを提供するように設計されています。 大量のデータを表示する必要がある場合または大量のメモリを使用して、ユーザー インターフェイス (UI) の応答性を低下させることを回避するには、このトピックで説明されているガイドラインに従ってください。 このトピックでは、次の問題について説明します。  
@@ -124,7 +112,7 @@ ms.lasthandoff: 12/22/2017
   
  行が非共有にならないようにするのには、次のガイドラインを使用します。  
   
--   インデックス作成を避けるため、<xref:System.Windows.Forms.DataGridView.Rows%2A>またはコレクションを反復処理に使用して、`foreach`ループします。 行に直接アクセスする通常必要はありません。 <xref:System.Windows.Forms.DataGridView>行を操作するメソッドは、行のインスタンスではなく、行のインデックスの引数を取ります。 さらに、行に関連するイベント ハンドラーは発生させずに共有が解除する行を操作に使用できる行のプロパティを持つイベント引数オブジェクトを受け取ります。  
+-   インデックス作成を避けるため、<xref:System.Windows.Forms.DataGridView.Rows%2A>またはコレクションを反復処理に使用して、`foreach`ループします。 行に直接アクセスする通常必要はありません。 <xref:System.Windows.Forms.DataGridView> 行を操作するメソッドは、行のインスタンスではなく、行のインデックスの引数を取ります。 さらに、行に関連するイベント ハンドラーは発生させずに共有が解除する行を操作に使用できる行のプロパティを持つイベント引数オブジェクトを受け取ります。  
   
 -   行オブジェクトにアクセスする必要がある場合、<xref:System.Windows.Forms.DataGridViewRowCollection.SharedRow%2A?displayProperty=nameWithType>メソッドと行の実際のインデックスを渡します。 ただし、このメソッドを使用して取得共有行オブジェクトを変更すると、このオブジェクトを共有するすべての行は変更することに注意してください。 新しいレコードの行とは共有されません他の行では、ただし、ため、他の行を変更するときに影響しません。 共有行によって表される複数の異なる行に異なるショートカット メニューがあることにも注意してください。 共有行のインスタンスから正しいショートカット メニューを取得する、<xref:System.Windows.Forms.DataGridViewRow.GetContextMenuStrip%2A>メソッドと行の実際のインデックスを渡します。 共有行にアクセスする場合は<xref:System.Windows.Forms.DataGridViewRow.ContextMenuStrip%2A>プロパティ代わりに、-1 の場合、共有行のインデックスを使用し、正しいショートカット メニューを取得しません。  
   
@@ -146,7 +134,7 @@ ms.lasthandoff: 12/22/2017
   
 -   呼び出す必要はありません、`Sort(IComparer)`のオーバー ロード、<xref:System.Windows.Forms.DataGridView.Sort%2A>メソッドです。 カスタムの比較演算子の並び替えにすると、すべての行を非共有になります。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.DataGridView>  
  [Windows フォーム DataGridView コントロールでのパフォーマンス チューニング](../../../../docs/framework/winforms/controls/performance-tuning-in-the-windows-forms-datagridview-control.md)  
  [Windows フォーム DataGridView コントロールでの仮想モード](../../../../docs/framework/winforms/controls/virtual-mode-in-the-windows-forms-datagridview-control.md)  

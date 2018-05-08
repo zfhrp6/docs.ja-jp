@@ -1,13 +1,6 @@
 ---
-title: "さまざまなカスタム コントロール"
-ms.custom: 
+title: さまざまなカスタム コントロール
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - controls [Windows Forms], user controls
 - controls [Windows Forms], types of
@@ -18,16 +11,11 @@ helpviewer_keywords:
 - custom controls [Windows Forms]
 - controls [Windows Forms], composite
 ms.assetid: 3cea09e5-4344-4ccb-9858-b66ccac210ff
-caps.latest.revision: "20"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e7cd45c85f155da975ca17961ca49a5dc89800a3
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f35fdb0f82370ed3e40aeeda01b3c88f0a8c5ec0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="varieties-of-custom-controls"></a>さまざまなカスタム コントロール
 .NET Framework を使用して、新しいコントロールを開発し、実装できます。 継承によって、使い慣れたユーザー コントロールや既存のコントロールの機能を拡張できます。 また、独自の描画を実行するカスタム コントロールを作成することもできます。  
@@ -117,7 +105,7 @@ ms.lasthandoff: 12/22/2017
   
  使用して、<xref:System.ComponentModel.DesignerAttribute>にコントロールをデザイナーに関連付けます。 詳細については、「[デザイン時サポートの拡張](http://msdn.microsoft.com/library/d6ac8a6a-42fd-4bc8-bf33-b212811297e2)」および「[方法 : デザイン時機能を活用した Windows フォーム コントロールを作成する](http://msdn.microsoft.com/library/8e0bad0e-56f3-43d2-bf63-a945c654d97c)」を参照してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [.NET Framework を使用したカスタム Windows フォーム コントロールの開発](../../../../docs/framework/winforms/controls/developing-custom-windows-forms-controls.md)  
  [方法: シンプルな Windows フォーム コントロールを開発する](../../../../docs/framework/winforms/controls/how-to-develop-a-simple-windows-forms-control.md)  
  [複合 Windows フォーム コントロールの開発](../../../../docs/framework/winforms/controls/developing-a-composite-windows-forms-control.md)  

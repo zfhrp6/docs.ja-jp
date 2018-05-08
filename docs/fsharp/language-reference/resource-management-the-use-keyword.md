@@ -1,17 +1,12 @@
 ---
 title: 'リソースの管理: use キーワード (F#)'
 description: F# キーワード 'use' と 'を使用して' の関数は、初期化とリソースの解放を制御できますについて説明します。
-author: cartermp
-ms.author: phcart
 ms.date: 05/16/2016
-ms.topic: language-reference
-ms.prod: dotnet-fsharp
-ms.devlang: fsharp
-ms.openlocfilehash: 0e134bf5b302911324dd224316941fee693b787b
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: c75783080d1d87c6ee75aede500d3d0b3fdf8355
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="resource-management-the-use-keyword"></a>リソースの管理: use キーワード
 

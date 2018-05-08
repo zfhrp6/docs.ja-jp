@@ -1,33 +1,19 @@
 ---
-title: "エンドポイント アドレス"
-ms.custom: 
+title: エンドポイント アドレス
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - addresses [WCF]
 - Windows Communication Foundation [WCF], addresses
 - WCF [WCF], addresses
 ms.assetid: 13f269e3-ebb1-433c-86cf-54fbd866a627
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 58e6d383856d57e95a1ea5bd2658af2ec0b22ed5
-ms.sourcegitcommit: 15316053918995cc1380163a7d7e7edd5c44e6d7
+ms.openlocfilehash: 46278e35c6966e473f5a800f7e99814efd7b943c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="endpoint-addresses"></a>エンドポイント アドレス
-すべてのエンドポイントにはこれと関連するアドレスがあり、エンドポイントの検索と識別に使用されます。 このアドレスは主にエンドポイントの位置を指定する URI (Uniform Resource Identifier) で構成されます。 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] のプログラミング モデルでは、エンドポイント アドレスは <xref:System.ServiceModel.EndpointAddress> クラスによって表されます。このクラスには、このエンドポイントとメッセージを交換する他のエンドポイントがエンドポイントを認証できるようにする、オプションの <xref:System.ServiceModel.EndpointAddress.Identity%2A> プロパティ、およびサービスに到達するために必要な他の任意の SOAP ヘッダーを定義するオプションの <xref:System.ServiceModel.EndpointAddress.Headers%2A> プロパティが含まれます。 オプションのヘッダーは、サービス エンドポイントの識別または対話のために、より詳細なアドレス指定情報を提供します。 エンドポイントのアドレスは、ネットワーク上では WS-Addressing エンドポイント参照 (EPR) として表されます。  
+すべてのエンドポイントにはこれと関連するアドレスがあり、エンドポイントの検索と識別に使用されます。 このアドレスは主にエンドポイントの位置を指定する URI (Uniform Resource Identifier) で構成されます。 エンドポイントのアドレスは、Windows Communication Foundation (WCF) のプログラミング モデルで表される、<xref:System.ServiceModel.EndpointAddress>を含む省略可能なクラス<xref:System.ServiceModel.EndpointAddress.Identity%2A>を他のエンドポイントによるエンドポイントの認証を有効にするプロパティを交換、メッセージ、および一連の省略可能な<xref:System.ServiceModel.EndpointAddress.Headers%2A>プロパティで、サービスに到達するために必要なその他の任意の SOAP ヘッダーを定義します。 オプションのヘッダーは、サービス エンドポイントの識別または対話のために、より詳細なアドレス指定情報を提供します。 エンドポイントのアドレスは、ネットワーク上では WS-Addressing エンドポイント参照 (EPR) として表されます。  
   
 ## <a name="uri-structure-of-an-address"></a>アドレスの URI 構造  
  ほとんどのトランスポートの URI アドレスは、4 つの部分から構成されます。 URI の 4 つの部分ではたとえば、http://www.fabrikam.com:322/mathservice.svc/secureEndpointようを明細化することができます。  
@@ -63,7 +49,7 @@ ms.lasthandoff: 03/19/2018
   
 -   バインディング情報 : IP アドレス、ポート、ホスト ヘッダー  
   
- IIS ではサイトごとに複数の IIS バインディングを指定でき、これによりスキームごとに複数のベース アドレスをサポートできます。 [!INCLUDE[netfx35_short](../../../../includes/netfx35-short-md.md)] 以前は、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ではスキームごとに複数のアドレスがサポートされておらず、複数のアドレスが指定された場合は、アクティブ化の間に <xref:System.ArgumentException> がスローされました。  
+ IIS ではサイトごとに複数の IIS バインディングを指定でき、これによりスキームごとに複数のベース アドレスをサポートできます。 前のバージョン[!INCLUDE[netfx35_short](../../../../includes/netfx35-short-md.md)]、WCF は、スキーマの複数のアドレスをサポートされていませんでしたし、指定された場合にスロー、<xref:System.ArgumentException>アクティブ化時にします。  
   
  [!INCLUDE[netfx35_short](../../../../includes/netfx35-short-md.md)] により、インターネット サービス プロバイダーは同じサイト上の同じスキームに対して別のベース アドレスを使用して複数のアプリケーションをホストできます。  
   
@@ -111,7 +97,7 @@ ms.lasthandoff: 03/19/2018
  詳細と例については、次を参照してください。[複数の IIS サイト バインディングをサポートする](../../../../docs/framework/wcf/feature-details/supporting-multiple-iis-site-bindings.md)と<xref:System.ServiceModel.ServiceHostingEnvironment.MultipleSiteBindingsEnabled%2A>です。  
   
 ## <a name="extending-addressing-in-wcf-services"></a>WCF サービスによるアドレスの拡張  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスの既定のアドレス指定モデルでは、エンドポイント アドレス URI を次の目的で使用します。  
+ 既定のアドレス指定の WCF サービスのモデルでは、次の目的のエンドポイント アドレス URI を使用します。  
   
 -   サービスがリッスンするアドレス、つまりエンドポイントがメッセージをリッスンする位置の指定  
   

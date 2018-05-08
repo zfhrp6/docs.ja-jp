@@ -1,24 +1,12 @@
 ---
-title: "承認ポリシー"
-ms.custom: 
+title: 承認ポリシー
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 1db325ec-85be-47d0-8b6e-3ba2fdf3dda0
-caps.latest.revision: "38"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 4ba4548e6ea62f408fddf3629eca1318c482f728
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
-ms.translationtype: MT
+ms.openlocfilehash: fc0c147f2f9a57c80edda6144a14f208bde835eb
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="authorization-policy"></a>承認ポリシー
 このサンプルでは、カスタム クレーム承認ポリシーと、関連するカスタム サービス承認マネージャーを実装する方法を示します。 この方法は、サービスがクレームに基づくアクセス チェックをサービス操作に行う場合や、アクセス チェックを行う前に呼び出し元に特定の権限を与える場合に便利です。 このサンプルでは、クレームの追加プロセスと、完了したクレーム セットに対してアクセス チェックを行うプロセスの両方を示します。 クライアント/サーバー間のすべてのアプリケーション メッセージは署名され、暗号化されます。 `wsHttpBinding` バインディングを使用する際の既定では、クライアントによって提供されるユーザー名とパスワードが、有効な Windows NT アカウントへのログオンに使用されます。 このサンプルは、カスタムを利用する方法を示します<!--zz <xref:System.IdentityModel.Selectors.UsernamePasswordValidator>-->`System.IdentityModel.Selectors.UsernamePasswordValidator`クライアントを認証します。 さらにこのサンプルでは、クライアントが X.509 証明書を使用してサービスを認証する方法を示します。 また、<xref:System.IdentityModel.Policy.IAuthorizationPolicy> と <xref:System.ServiceModel.ServiceAuthorizationManager> の実装も示します。これらの間では、特定のユーザーに対するサービスの特定のメソッドへのアクセスが許可されます。 このサンプルがに基づいて、[メッセージ セキュリティ ユーザー名](../../../../docs/framework/wcf/samples/message-security-user-name.md)より前のバージョンの信頼性情報の変換を実行する方法を示しますが、<xref:System.ServiceModel.ServiceAuthorizationManager>呼び出されています。  
@@ -292,9 +280,9 @@ serviceHost.Credentials.UserNameAuthentication.CustomUserNamePasswordValidator =
 </behavior>  
 ```  
   
- [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] には、アクセス チェックの実行を目的とした、クレームに基づく豊富なモデルがあります。 <xref:System.ServiceModel.ServiceAuthorizationManager> オブジェクトを使用するとアクセス チェックが実行され、クライアントに関連付けられたクレームがサービス メソッドへのアクセスに必要な要件を満たすかどうかが判断されます。  
+ Windows Communication Foundation (WCF) は、アクセス チェックを実行するための豊富なクレームに基づくモデルを提供します。 <xref:System.ServiceModel.ServiceAuthorizationManager> オブジェクトを使用するとアクセス チェックが実行され、クライアントに関連付けられたクレームがサービス メソッドへのアクセスに必要な要件を満たすかどうかが判断されます。  
   
- このサンプルでは、デモンストレーションの目的で <xref:System.ServiceModel.ServiceAuthorizationManager> の実装を示します。この実装は <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%2A> メソッドを実装し、呼び出しが許可されている操作のアクション URI を値として持つ種類のクレーム (http://example.com/claims/allowedoperation) に基づいて、メソッドへのユーザーのアクセスを許可します。  
+ デモの目的は、このサンプルの実装を示します<xref:System.ServiceModel.ServiceAuthorizationManager>を実装する、<xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%2A>メソッドへのユーザーのアクセスを許可するメソッドが型のクレームに基づくhttp://example.com/claims/allowedoperation値がある操作のアクション URI。呼び出される許可します。  
   
 ```  
 public class MyServiceAuthorizationManager : ServiceAuthorizationManager  
@@ -510,4 +498,4 @@ public class MyAuthorizationPolicy : IAuthorizationPolicy
 > [!NOTE]
 >  このサンプルを複数のコンピューターで実行している場合、このスクリプトはサービス証明書をクライアントから削除しません。 複数のコンピューターで証明書を使用する [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サンプルを実行した場合は、CurrentUser - TrustedPeople ストアにインストールされたサービス証明書を忘れずに削除してください。 削除するには、コマンド `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>` を実行します。たとえば、`certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com` となります。  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目

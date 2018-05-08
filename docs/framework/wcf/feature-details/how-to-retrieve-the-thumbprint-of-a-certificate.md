@@ -1,31 +1,17 @@
 ---
 title: '方法 : 証明書のサムプリントを取得する'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - certificates [WCF], retrieving thumbprint
 ms.assetid: da3101aa-78cd-4c34-9652-d1f24777eeab
-caps.latest.revision: 15
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 0fe3635b73e17123e410f43efc8d382e0df85641
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: d827c2c5f407c3041a31efbc06fcfed205bef458
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-retrieve-the-thumbprint-of-a-certificate"></a>方法 : 証明書のサムプリントを取得する
-認証に X.509 証明書を使用する [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] アプリケーションを記述するときは、多くの場合、証明書に含まれているクレームを指定する必要があります。 たとえば、 <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindByThumbprint> メソッドで <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A> 列挙体を使用する場合は、拇印クレームを指定する必要があります。 クレーム値を検索するには 2 つの手順を実行する必要があります。 まず、証明書用の Microsoft 管理コンソール (MMC) スナップインを開きます (「 [How to: View Certificates with the MMC Snap-in](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md)」を参照)。次に、ここで説明されているとおりに適切な証明書を検索してその拇印 (または他のクレーム値) をコピーします。  
+認証に X.509 証明書を使用する Windows Communication Foundation (WCF) アプリケーションを作成する場合、証明書については、信頼性情報を指定する必要があります。 たとえば、 <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindByThumbprint> メソッドで <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A> 列挙体を使用する場合は、拇印クレームを指定する必要があります。 クレーム値を検索するには 2 つの手順を実行する必要があります。 まず、証明書用の Microsoft 管理コンソール (MMC) スナップインを開きます (「 [How to: View Certificates with the MMC Snap-in](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md)」を参照)。次に、ここで説明されているとおりに適切な証明書を検索してその拇印 (または他のクレーム値) をコピーします。  
   
  サービス認証で証明書を使用する場合は、 **[Issued To]** 列 (コンソールの 1 番目の列) の値に注意することが重要です。 トランスポート セキュリティとして SSL (Secure Sockets Layer) を使用する場合、実行される最初のチェックの 1 つで、サービスのベース アドレス URI (Uniform Resource Identifier) が **[Issued To]** の値と比較されます。 値は一致する必要があります。一致しない場合は、認証が停止します。  
   

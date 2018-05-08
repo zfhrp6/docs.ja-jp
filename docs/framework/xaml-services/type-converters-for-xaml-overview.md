@@ -1,28 +1,16 @@
 ---
-title: "XAML の型コンバーターの概要"
-ms.custom: 
+title: XAML の型コンバーターの概要
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - XAML [XAML Services], type converters
 - XAML [XAML Services], TypeConverter
 - type conversion for XAML [XAML Services]
 ms.assetid: 51a65860-efcb-4fe0-95a0-1c679cde66b7
-caps.latest.revision: "14"
-author: wadepickett
-ms.author: wpickett
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b59b88c38b6fa7f810bb3a12de09a962eb5679c2
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: df6b7f212a60d8d51bb684891055de7e285ddf4f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="type-converters-for-xaml-overview"></a>XAML の型コンバーターの概要
 型コンバーターは、XAML マークアップの文字列をオブジェクト グラフの特定のオブジェクトに変換するオブジェクト ライターのロジックを提供します。 .NET Framework XAML サービスでは、型コンバーターは <xref:System.ComponentModel.TypeConverter>から派生したクラスである必要があります。 一部のコンバーターは XAML 保存パスもサポートしており、オブジェクトをシリアル化マークアップの文字列形式にシリアル化するために使用されます。 このトピックでは、XAML の型コンバーターがいつ、どのように起動されるかについて説明し、 <xref:System.ComponentModel.TypeConverter>のメソッドのオーバーライドの実装についてアドバイスします。  
@@ -81,7 +69,7 @@ ms.lasthandoff: 12/22/2017
  各 <xref:System.ComponentModel.TypeConverter> 実装では、変換に対して有効な文字列の構成内容を独自に解釈できます。また、パラメーターとして渡される型の説明やカルチャ コンテキストを使用することも無視することもできます。 ただし、WPF による XAML 処理では、型の説明コンテキストに値を渡さない場合があり、 `xml:lang`に基づくカルチャを渡さない場合もあります。  
   
 > [!NOTE]
->  文字列の書式の要素として中かっこ ({})、特に左中かっこ ({) は使用しないでください。 これらの文字は、マークアップ拡張シーケンスの開始および終了を示す文字として予約されています。  
+>  中かっこを使用しないでください ({})、具体的には、中かっこ ({)、文字列の書式の要素として。 これらの文字は、マークアップ拡張シーケンスの開始および終了を示す文字として予約されています。  
   
  型コンバーターが .NET Framework XAML サービスのオブジェクト ライターから XAML サービスにアクセスする必要があるものの、そのコンテキストで <xref:System.IServiceProvider.GetService%2A> を呼び出してもそのサービスが返されない場合は、例外をスローするのが適切です。  
   
@@ -106,7 +94,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="applying-the-typeconverterattribute"></a>TypeConverterAttribute の適用  
  カスタム型コンバーターとして使用する .NET Framework XAML サービスでのカスタム クラスの型コンバーターを適用する必要あります、 [!INCLUDE[TLA#tla_netframewkattr](../../../includes/tlasharptla-netframewkattr-md.md)] <xref:System.ComponentModel.TypeConverterAttribute>クラス定義にします。 属性を通して指定する <xref:System.ComponentModel.TypeConverterAttribute.ConverterTypeName%2A> は、カスタム型コンバーターの型名である必要があります。 この属性を適用すると、プロパティの型としてカスタム クラスの型が使用されている値を XAML プロセッサが処理する際に、入力文字列を処理して、オブジェクトのインスタンスを返すことができます。  
   
- また、プロパティごとに型コンバーターを提供することもできます。 クラス定義に [!INCLUDE[TLA#tla_netframewkattr](../../../includes/tlasharptla-netframewkattr-md.md)] <xref:System.ComponentModel.TypeConverterAttribute> を適用する代わりに、プロパティ定義 (メイン定義内の `get`/`set` 実装ではなくメイン定義自体) に適用します。 プロパティの型は、カスタム型コンバーターによって処理される型と一致する必要があります。 この属性を適用すると、プロパティの値を XAML プロセッサが処理する際に、入力文字列を処理して、オブジェクトのインスタンスを返すことができます。 プロパティごとに型コンバーターを提供する手法は、 [!INCLUDE[TLA#tla_netframewk](../../../includes/tlasharptla-netframewk-md.md)] やその他のライブラリなど、クラス定義を制御することができず、 <xref:System.ComponentModel.TypeConverterAttribute> を適用できないライブラリからプロパティの型を使用する場合に特に便利です。  
+ また、プロパティごとに型コンバーターを提供することもできます。 クラス定義に [!INCLUDE[TLA#tla_netframewkattr](../../../includes/tlasharptla-netframewkattr-md.md)] <xref:System.ComponentModel.TypeConverterAttribute> を適用する代わりに、プロパティ定義 (メイン定義内の `get`/`set` 実装ではなくメイン定義自体) に適用します。 プロパティの型は、カスタム型コンバーターによって処理される型と一致する必要があります。 この属性を適用すると、プロパティの値を XAML プロセッサが処理する際に、入力文字列を処理して、オブジェクトのインスタンスを返すことができます。 プロパティごとに型コンバーター手法は、Microsoft .NET Framework とは、クラス定義を制御することはできませんし、適用できない他のいくつかのライブラリからプロパティの型を使用する場合に特に便利な<xref:System.ComponentModel.TypeConverterAttribute>があります。  
   
  アタッチされたカスタム メンバーの型変換動作を割り当てるには、アタッチされたメンバーの実装パターンの <xref:System.ComponentModel.TypeConverterAttribute> アクセサー メソッドに `Get` を適用します。  
   
@@ -118,7 +106,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="type-converters-in-the-xaml-node-stream"></a>XAML ノード ストリームでの型コンバーター  
  XAML ノード ストリームを処理している場合、型コンバーターのアクションや最終結果はまだ実行されていません。 読み込みパスでは、読み込むために最終的に型変換する必要がある属性文字列は、開始メンバーおよび終了メンバー内でテキスト値のままです。 この処理のために最終的に必要になる型コンバーターは、<xref:System.Xaml.XamlMember.TypeConverter%2A?displayProperty=nameWithType> プロパティを使用することで判別できます。 ただし、<xref:System.Xaml.XamlMember.TypeConverter%2A?displayProperty=nameWithType> から有効な値を取得するには、基になるメンバー、またはメンバーが使用するオブジェクト値の型を介してこのような情報にアクセスできる XAML スキーマ コンテキストを持っていることが必要です。 型変換の動作を呼び出すためにも、型マッピングと、コンバーター インスタンスの作成が必要であるため、XAML スキーマ コンテキストが必要になります。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ComponentModel.TypeConverterAttribute>  
  [XAML の型コンバーターおよびマークアップ拡張機能](../../../docs/framework/xaml-services/type-converters-and-markup-extensions-for-xaml.md)  
  [XAML の概要 (WPF)](../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)

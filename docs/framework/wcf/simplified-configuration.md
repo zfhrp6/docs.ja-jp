@@ -1,27 +1,15 @@
 ---
-title: "簡略化された構成"
-ms.custom: 
+title: 簡略化された構成
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: dcbe1f84-437c-495f-9324-2bc09fd79ea9
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 334dfce44b1f0a7b6b38f509f2f0a346ef90630f
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
-ms.translationtype: MT
+ms.openlocfilehash: a07ab26b19004df97f4ac65f711b03fc6a6ba445
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="simplified-configuration"></a>簡略化された構成
-[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービスの構成は複雑な作業になることがあります。 さまざまなオプションがあり、どの設定が必要であるかをいつでも簡単に判断できるとは限りません。 構成ファイルを使用することで、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスの柔軟性は高まりますが、構成ファイルは、発見しにくい問題の多くの根源でもあります。 [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] では、このような問題に対応し、サービス構成の規模と複雑さを軽減する手段を提供しています。  
+Windows Communication Foundation (WCF) サービスを構成すると、複雑なタスクを指定できます。 さまざまなオプションがあり、どの設定が必要であるかをいつでも簡単に判断できるとは限りません。 構成ファイルを使用することで、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスの柔軟性は高まりますが、構成ファイルは、発見しにくい問題の多くの根源でもあります。 [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] では、このような問題に対応し、サービス構成の規模と複雑さを軽減する手段を提供しています。  
   
 ## <a name="simplified-configuration"></a>簡略化された構成  
  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] のサービス構成ファイルでは、&lt;`system.serviceModel`&gt; セクションに、ホストされる各サービスの &lt;`service`&gt; 要素が含まれます。 <`service`> 要素には、各サービスに対して公開されるエンドポイントと、必要に応じて一連のサービス動作を指定する <`endpoint`> 要素が含まれます。 <`endpoint`> 要素は、エンドポイントが公開するアドレス、バインド、およびコントラクトと、必要に応じてバインド構成およびエンドポイントの動作を指定します。 <`system.serviceModel`> セクションには、サービスまたはエンドポイントの動作を指定できる <`behaviors`> 要素も含まれます。 構成ファイルの <`system.serviceModel`> セクションの例を次に示します。  
@@ -121,7 +109,7 @@ ms.lasthandoff: 01/19/2018
 > [!IMPORTANT]
 >  この機能は、WCF サービス構成にのみ適用され、クライアント構成には適用されません。 ほとんどの場合、WCF クライアント構成は、svcutil.exe などのツールを使用したり、Visual Studio からサービス参照を追加したりすることで生成されます。 WCF クライアントを手動で構成している場合は、追加する必要があります、\<クライアント > 要素を構成し、呼び出すエンドポイントを指定します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [構成ファイルを使用してサービスを構成する方法](../../../docs/framework/wcf/configuring-services-using-configuration-files.md)  
  [サービスのバインディングの構成](../../../docs/framework/wcf/configuring-bindings-for-wcf-services.md)  
  [システムが提供するバインディングの構成](../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  

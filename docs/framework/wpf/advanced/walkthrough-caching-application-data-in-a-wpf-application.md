@@ -1,12 +1,13 @@
 ---
-title: "チュートリアル: WPF アプリケーション内のアプリケーション データのキャッシュ"
-ms.custom: 
+title: 'チュートリアル: WPF アプリケーション内のアプリケーション データのキャッシュ'
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- dotnet-wpf
+ms.tgt_pltfrm: ''
 ms.topic: article
 dev_langs:
 - csharp
@@ -16,16 +17,17 @@ helpviewer_keywords:
 - caching [.NET Framework]
 - caching [WPF]
 ms.assetid: dac2c9ce-042b-4d23-91eb-28f584415cef
-caps.latest.revision: "25"
+caps.latest.revision: 25
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 81d808b982852d5cc6dc187a3c8389748a0dc0bf
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.workload:
+- dotnet
+ms.openlocfilehash: a8d3fe2dbfe0b4b5fb9081d71cec080dfa54add8
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="walkthrough-caching-application-data-in-a-wpf-application"></a>チュートリアル: WPF アプリケーション内のアプリケーション データのキャッシュ
 キャッシュを使用すると、メモリにデータを格納して高速にアクセスできます。 データを再度アクセスすると、アプリケーションは、代わりに、元のソースから取得するキャッシュからデータを取得できます。 そのため、パフォーマンスとスケーラビリティが向上します。 また、データ ソースが一時的に使用できない場合でも、キャッシュのデータを使用できます。  
@@ -67,7 +69,7 @@ ms.lasthandoff: 12/22/2017
   
 #### <a name="to-create-a-wpf-application"></a>WPF アプリケーションを作成するには  
   
-1.  [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] を起動します。  
+1.  Visual Studio を起動します。  
   
 2.  **ファイル** メニューのをクリックして**新規**、クリックして**新しいプロジェクト**です。  
   
@@ -84,9 +86,9 @@ ms.lasthandoff: 12/22/2017
   
 6.  選択、**ソリューションのディレクトリを作成**チェック ボックスをオンします。  
   
-7.  **[OK]**をクリックします。  
+7.  **[OK]** をクリックします。  
   
-     WPF デザイナーで開きます**デザイン**を表示し、MainWindow.xaml ファイルを表示します。 [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)]作成、 **My Project**フォルダー、Application.xaml ファイル、および、MainWindow.xaml ファイル。  
+     WPF デザイナーで開きます**デザイン**を表示し、MainWindow.xaml ファイルを表示します。 Visual Studio によって作成、 **My Project**フォルダー、Application.xaml ファイル、および、MainWindow.xaml ファイル。  
   
 ## <a name="targeting-the-net-framework-and-adding-a-reference-to-the-caching-assemblies"></a>.NET Framework を対象として、キャッシュのアセンブリへの参照を追加します。  
  既定では、WPF アプリケーションのターゲット、[!INCLUDE[net_client_v40_long](../../../../includes/net-client-v40-long-md.md)]です。 使用する、 <xref:System.Runtime.Caching> WPF アプリケーションの名前空間は、アプリケーションを対象にする、 [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)] (されません、 [!INCLUDE[net_client_v40_long](../../../../includes/net-client-v40-long-md.md)]) 名前空間への参照を含める必要があります。  
@@ -108,9 +110,9 @@ ms.lasthandoff: 12/22/2017
   
      **コンパイラ設定の高度な** ダイアログ ボックスが表示されます。  
   
-4.  **ターゲット フレームワーク (すべての構成)**一覧で、[!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)]です。 (選択しないでください[!INCLUDE[net_client_v40_long](../../../../includes/net-client-v40-long-md.md)])。  
+4.  **ターゲット フレームワーク (すべての構成)** 一覧で、[!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)]です。 (選択しないでください[!INCLUDE[net_client_v40_long](../../../../includes/net-client-v40-long-md.md)])。  
   
-5.  **[OK]**をクリックします。  
+5.  **[OK]** をクリックします。  
   
      **ターゲット フレームワークの変更** ダイアログ ボックスが表示されます。  
   
@@ -122,7 +124,7 @@ ms.lasthandoff: 12/22/2017
   
     1.  **ソリューション エクスプ ローラー**プロジェクトの名前を右クリックし、クリックして**参照の追加**です。  
   
-    2.  選択、 **.NET** ] タブで [ `System.Runtime.Caching`、クリックして**[ok]**です。  
+    2.  選択、 **.NET** ] タブで [ `System.Runtime.Caching`、クリックして **[ok]** です。  
   
 #### <a name="to-change-the-target-net-framework-in-a-visual-c-project"></a>Visual c# プロジェクトのターゲットの .NET Framework を変更するには  
   
@@ -132,13 +134,13 @@ ms.lasthandoff: 12/22/2017
   
 2.  **[アプリケーション]** タブをクリックします。  
   
-3.  **ターゲット フレームワーク**一覧で、[!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)]です。 (選択しないでください**.NET Framework 4 Client Profile**)。  
+3.  **ターゲット フレームワーク**一覧で、[!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)]です。 (選択しないでください **.NET Framework 4 Client Profile**)。  
   
 4.  次の手順でキャッシュのアセンブリへの参照を追加します。  
   
     1.  右クリックし、**参照**フォルダーをクリックして**参照の追加**です。  
   
-    2.  選択、 **.NET** ] タブで [ `System.Runtime.Caching`、クリックして**[ok]**です。  
+    2.  選択、 **.NET** ] タブで [ `System.Runtime.Caching`、クリックして **[ok]** です。  
   
 ## <a name="adding-a-button-to-the-wpf-window"></a>WPF ウィンドウへボタンの追加  
  次に、ボタン コントロールを追加し、ボタンのイベント ハンドラーを作成`Click`イベント。 後で、テキスト ファイルの内容がキャッシュされ、表示されるボタンをクリックすると、コードを追加します。  
@@ -336,7 +338,7 @@ ms.lasthandoff: 12/22/2017
  [!code-csharp[CachingWPFApplications#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CachingWPFApplications/CSharp/MainWindow.xaml.cs#1)]
  [!code-vb[CachingWPFApplications#1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/CachingWPFApplications/VisualBasic/MainWindow.xaml.vb#1)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Runtime.Caching.MemoryCache>  
  <xref:System.Runtime.Caching.ObjectCache>  
  <xref:System.Runtime.Caching>  

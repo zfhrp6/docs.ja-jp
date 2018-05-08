@@ -1,34 +1,20 @@
 ---
 title: データ コントラクト スキーマの参照
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - data contracts [WCF], schema reference
 ms.assetid: 9ebb0ebe-8166-4c93-980a-7c8f1f38f7c0
-caps.latest.revision: 24
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 075f8d89caccd7723f3a1dc54fde695a8fb624ab
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 06bc79e059300d448ababa87974b590f54f7984c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="data-contract-schema-reference"></a>データ コントラクト スキーマの参照
 ここでは、XML シリアル化用の共通言語ランタイム (CLR) 型を表すために <xref:System.Runtime.Serialization.DataContractSerializer> が使用する XML スキーマ (XSD) のサブセットについて説明します。  
   
 ## <a name="datacontractserializer-mappings"></a>DataContractSerializer のマッピング  
- また、 `DataContractSerializer` は、メタデータ エンドポイントや [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] を使用してメタデータを [indigo1](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)サービスからエクスポートするときに、CLR 型を XSD にマッピングします。 詳細については、次を参照してください。[データ コントラクト シリアライザー](../../../../docs/framework/wcf/feature-details/data-contract-serializer.md)です。  
+ `DataContractSerializer`メタデータ エンドポイントを使用して、Windows Communication Foundation (WCF) サービスからメタデータをエクスポートする際に、XSD を CLR 型をマップまたは[ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)です。 詳細については、次を参照してください。[データ コントラクト シリアライザー](../../../../docs/framework/wcf/feature-details/data-contract-serializer.md)です。  
   
  また、 `DataContractSerializer` は、Svcutil.exe を使用して Web サービス記述言語 (WSDL) や XSD ドキュメントにアクセスし、サービスまたはクライアントのデータ コントラクトを生成するときに、XSD を CLR 型にマッピングします。  
   
@@ -105,7 +91,7 @@ ms.lasthandoff: 04/30/2018
 |`choice`|禁止|  
 |`sequence`|サポートされます。データ コントラクトのデータ メンバーにマッピングされます。|  
 |`attribute`|use="prohibited" の場合でも禁止です (ただし、例外が 1 つあります)。 標準シリアル化スキーマ名前空間のオプションの属性のみがサポートされます。 これらは、データ コントラクト プログラミング モデルのデータ メンバーにマッピングされません。 現在、これらの属性で意味のあるものは 1 つだけです。詳細については、ISerializable のセクションを参照してください。 他の属性はすべて無視されます。|  
-|`attributeGroup`|禁止。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] v1 リリースの `DataContractSerializer` では、 `attributeGroup` 内部の `xs:complexType`の存在が無視されます。|  
+|`attributeGroup`|禁止。 リリースでは、WCF v1、`DataContractSerializer`の存在が無視されます`attributeGroup`内`xs:complexType`です。|  
 |`anyAttribute`|禁止。|  
 |(空)|データ メンバーを持たないデータ コントラクトにマッピングされます。|  
   
@@ -215,7 +201,7 @@ ms.lasthandoff: 04/30/2018
   
  \* 使用する場合、`simpleType`と`complexType,`匿名型のマッピングは、同じ非匿名型、匿名データ コントラクトがないする点を除いて、および要素名から派生して生成された名前で、名前付きのデータ コントラクトが作成されるようにします。 匿名型のルールは、次のとおりです。  
   
--   [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 実装詳細 : `xs:element` 名にピリオドが含まれていない場合、匿名型は、外部データ コントラクト型の内部型にマッピングされます。 名前にピリオドが含まれている場合、結果のデータ コントラクト型は、内部型ではなく、独立した型になります。  
+-   WCF 実装の詳細: 場合、`xs:element`名にピリオドが含まれていない場合、匿名型、外部データ コントラクト型の内部型にマップします。 名前にピリオドが含まれている場合、結果のデータ コントラクト型は、内部型ではなく、独立した型になります。  
   
 -   内部型の生成されたデータ コントラクト名は、外部型のデータ コントラクト名の後にピリオド、要素の名前、および文字列 "Type" が付いたものになります。  
   

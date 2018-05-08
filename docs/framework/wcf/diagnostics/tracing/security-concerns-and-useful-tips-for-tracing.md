@@ -1,24 +1,14 @@
 ---
-title: "トレースに関するセキュリティの考慮事項と役立つヒント"
-ms.custom: 
+title: トレースに関するセキュリティの考慮事項と役立つヒント
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 88bc2880-ecb9-47cd-9816-39016a07076f
-caps.latest.revision: "11"
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: 4c6916333d1efa99ba1c4a9d75d80be2193e8698
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 664785bc97574eff73dc1c2be64f407641df6b00
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="security-concerns-and-useful-tips-for-tracing"></a>トレースに関するセキュリティの考慮事項と役立つヒント
 ここでは、機密情報を漏洩の危険から守る方法と共に、WebHost を使用する場合の便利なヒントについて説明します。  
@@ -101,5 +91,5 @@ ms.lasthandoff: 12/22/2017
   
  また、接続が確立されるたび (接続指向トランスポートの場合)、またはメッセージが送信されるたび (それ以外の場合) に、メッセージ送信者の IP アドレスが記録されます。 これは、送信者の同意を得ずに行われます。 ただし、このログ記録は Information レベルまたは Verbose レベルだけで実行されます。これらのトレース レベルは既定ではありません。また、ライブ デバッグを行う場合を除き、運用環境ではお勧めしません。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [トレース](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)

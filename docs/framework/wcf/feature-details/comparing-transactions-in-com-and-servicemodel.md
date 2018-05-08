@@ -1,32 +1,20 @@
 ---
-title: "COM+ と ServiceModel でのトランザクションの比較"
-ms.custom: 
+title: COM+ と ServiceModel でのトランザクションの比較
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: e493bcdd-b91a-4486-853f-83dbcd1931b7
-caps.latest.revision: "5"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 87e3df31060a9c71e0b2868aa34373bca221fa79
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4a47fe1686dff2e705b06b001d7d5e4ea6e8c5f2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="comparing-transactions-in-com-and-servicemodel"></a>COM+ と ServiceModel でのトランザクションの比較
-このトピックでは、トランザクション COM+ サービスの動作を、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] 名前空間で定義された <xref:System.ServiceModel> 属性を使用してシミュレートする方法について説明します。  
+このトピックで、トランザクション COM + サービスの Windows Communication Foundation (WCF) 属性を使用して動作をシミュレートする方法について説明します、<xref:System.ServiceModel>名前空間を提供します。  
   
 ## <a name="emulating-com-using-servicemodel-attributes"></a>ServiceModel 属性を使った COM+ のエミュレート  
- 次の表では、<xref:System.EnterpriseServices.TransactionOption> トランザクションの生成に使用される `EnterpriseServices` 列挙体の各値を比較し、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 名前空間で定義された <xref:System.ServiceModel> 属性との関連を示します。  
+ 比較を次の表、<xref:System.EnterpriseServices.TransactionOption>を作成するための列挙、`EnterpriseServices`トランザクションおよび関連 WCF 属性を<xref:System.ServiceModel>名前空間を提供します。  
   
-|COM+ 属性|[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 属性|  
+|COM+ 属性|WCF 属性|  
 |---------------------|------------------------------------------------------------------------|  
 |RequiresNew|<xref:System.ServiceModel.TransactionFlowAttribute> が <xref:System.ServiceModel.TransactionFlowOption.NotAllowed> に設定されます。<br /><br /> <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired%2A> は `true` です。<br /><br /> バインド要素の `TransactionFlow` 属性は `false` です。|  
 |必須|<xref:System.ServiceModel.TransactionFlowAttribute> が <xref:System.ServiceModel.TransactionFlowOption.Allowed> に設定されます。<br /><br /> <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired%2A> は `true` です。<br /><br /> バインド要素の `TransactionFlow` 属性は `true` です。|  

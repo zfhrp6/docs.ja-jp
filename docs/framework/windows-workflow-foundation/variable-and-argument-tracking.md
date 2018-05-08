@@ -1,24 +1,12 @@
 ---
 title: 変数と引数の追跡
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 8f3d9d30-d899-49aa-b7ce-a8d0d32c4ff0
-caps.latest.revision: ''
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: c0857830b52b2f71df5d81f4bd232b62b894da63
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: f1938da55d2e1d88c88f83ff75f357e23f1eb81f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="variable-and-argument-tracking"></a>変数と引数の追跡
 ワークフローの実行を追跡するときは、データを抽出すると便利です。 これにより、実行後に追跡レコードにアクセスするときにコンテキストが追加されます。 [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] では、追跡を使用して、ワークフローのアクティビティのスコープ内の参照可能な変数や引数を抽出できます。 プロファイルを追跡すると、データを簡単に抽出できるようになります。  

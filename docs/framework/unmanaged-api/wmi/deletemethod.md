@@ -1,11 +1,7 @@
 ---
-title: "DeleteMethod 関数 (アンマネージ API リファレンス)"
-description: "DeleteMethod 関数は、CIM クラス定義から、指定したメソッドを削除します。"
+title: DeleteMethod 関数 (アンマネージ API リファレンス)
+description: DeleteMethod 関数は、CIM クラス定義から、指定したメソッドを削除します。
 ms.date: 11/06/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: reference
 api_name:
 - DeleteMethod
 api_location:
@@ -20,14 +16,11 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 03b147d2fd76e34c6152a0b41ee14319811e9300
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: fd862910d0c9bb0274158c2c516211cef598a553
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="deletemethod-function"></a>DeleteMethod 関数
 CIM クラス定義から、指定したメソッドを削除します。
@@ -53,7 +46,7 @@ HRESULT Delete (
 [in]ポインター、 [IWbemClassObject](https://msdn.microsoft.com/library/aa391433%28v=vs.85%29.aspx)インスタンス。
 
 `wszName`  
-[in]クラスのテーブルから削除するメソッドの名前。 `wszName`有効なポインターである必要があります`LPCWSTR`です。
+[in]クラスのテーブルから削除するメソッドの名前。 `wszName` 有効なポインターである必要があります`LPCWSTR`です。
 
 ## <a name="return-value"></a>戻り値
 
@@ -71,12 +64,12 @@ HRESULT Delete (
 
 メソッドの削除はサポートされていません[IWbemClassObject](https://msdn.microsoft.com/library/aa391433%28v=vs.85%29.aspx) CIM インスタンスを指すポインターです。
 
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** WMINet_Utils.idl  
   
- **.NET framework のバージョン:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **.NET framework のバージョン:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>関連項目  
 [WMI およびパフォーマンス カウンター (アンマネージ API リファレンス)](index.md)

@@ -1,13 +1,6 @@
 ---
-title: "方法: 通知を受け取るときに、クロック &#39; s 状態の変更"
-ms.custom: 
+title: '方法: クロックときに通知を受け取る&#39;s 状態の変更'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,18 +8,13 @@ helpviewer_keywords:
 - clocks [WPF], notification of state changes
 - notifications [WPF], clocks' state changes
 ms.assetid: ecb10fc9-d0c2-45c3-b0a1-7b11baa733da
-caps.latest.revision: "7"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 396e2c51894ad5ed11f8953bceb1bd36899cfc62
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d0eaca4d2a05d01e686efc15dfceebb6de4f4b64
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="how-to-receive-notification-when-a-clock39s-state-changes"></a>方法: 通知を受け取るときに、クロック &#39; s 状態の変更
+# <a name="how-to-receive-notification-when-a-clock39s-state-changes"></a>方法: クロックときに通知を受け取る&#39;s 状態の変更
 クロックの<xref:System.Windows.Media.Animation.Clock.CurrentStateInvalidated>イベントが発生したときにその<xref:System.Windows.Media.Animation.Clock.CurrentState%2A>時計が開始または停止するなど、無効になります。 このイベントを使用して直接の登録することができます、 <xref:System.Windows.Media.Animation.Clock>、またはを使用して登録することができます、<xref:System.Windows.Media.Animation.Timeline>です。  
   
  次の例で、<xref:System.Windows.Media.Animation.Storyboard>と 2 つ<xref:System.Windows.Media.Animation.DoubleAnimation>オブジェクトは 2 つの四角形の幅をアニメーション化するために使用します。 <xref:System.Windows.Media.Animation.Timeline.CurrentStateInvalidated>クロック状態の変更をリッスンするようにイベントを使用します。  

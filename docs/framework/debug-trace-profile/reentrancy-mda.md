@@ -1,13 +1,6 @@
 ---
 title: reentrancy MDA
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - unmanaged code, debugging
 - transitioning threads unmanaged to managed code
@@ -20,21 +13,18 @@ helpviewer_keywords:
 - managed code, debugging
 - native debugging, MDAs
 ms.assetid: 7240c3f3-7df8-4b03-bbf1-17cdce142d45
-caps.latest.revision: "8"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a305658068e6d59f27957879c053b18742ea642f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5aea903a7b16491a84998d8290270044e167b79f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="reentrancy-mda"></a>reentrancy MDA
 `reentrancy` マネージ デバッグ アシスタント (MDA) は、前のマネージ コードからネイティブ コードへの切り替えが遷移順序を守って実行されなかった場合に、ネイティブ コードからマネージ コードへの遷移が試みられるとアクティブになります。  
   
-## <a name="symptoms"></a>症状  
+## <a name="symptoms"></a>現象  
  ネイティブ コードからマネージ コードに遷移するときに、オブジェクト ヒープが壊れたり、他の重大なエラーが発生しています。  
   
  ネイティブ コードとマネージ コードの間でどちらかの方向に切り替えるスレッドは、適切な遷移順序を実行する必要があります。 ただし、ベクトル化例外ハンドラーなど、オペレーティング システムの特定の低レベル拡張ポイントでは、適切な遷移順序を実行しなくてもマネージ コードからネイティブ コードに切り替えることができます。  これらの切り替えは、共通言語ランタイム (CLR) の管理下ではなく、オペレーティング システムの管理下にあります。  これらの拡張ポイント内で実行されるネイティブ コードでは、マネージ コードへのコールバックを避ける必要があります。  
@@ -113,5 +103,5 @@ public class Reenter
 }  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [マネージ デバッグ アシスタントによるエラーの診断](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)

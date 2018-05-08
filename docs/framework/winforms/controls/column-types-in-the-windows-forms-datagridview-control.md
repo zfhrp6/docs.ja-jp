@@ -1,28 +1,16 @@
 ---
-title: "Windows フォーム DataGridView コントロールの列型"
-ms.custom: 
+title: Windows フォーム DataGridView コントロールの列型
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - columns [Windows Forms], types
 - DataGridView control [Windows Forms], column types
 - data grids [Windows Forms], columns
 ms.assetid: f0a0a9f1-8757-4bfd-891f-d7d12870dbed
-caps.latest.revision: "17"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 92c6881fe876bba3fe0224a358a9b12767d53f0b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6630323b66265f478151ec80ab8b225c0b653917
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="column-types-in-the-windows-forms-datagridview-control"></a>Windows フォーム DataGridView コントロールの列型
 <xref:System.Windows.Forms.DataGridView>コントロールは、その情報を表示して情報を変更または追加のユーザーを有効にするいくつかの列の型を使用します。  
@@ -53,7 +41,7 @@ ms.lasthandoff: 12/22/2017
  列のセル値のデータ型がで指定された、<xref:System.Windows.Forms.DataGridViewColumn.ValueType%2A>列のプロパティです。  
   
 ## <a name="datagridviewcheckboxcolumn"></a>DataGridViewCheckBoxColumn  
- <xref:System.Windows.Forms.DataGridViewCheckBoxColumn>と共に使用される<xref:System.Boolean>と<xref:System.Windows.Forms.CheckState>値。 <xref:System.Boolean>値の値に応じて、2 つの状態または 3 つの状態のチェック ボックスとして表示、<xref:System.Windows.Forms.DataGridViewCheckBoxColumn.ThreeState%2A>プロパティです。 列をバインドするときに<xref:System.Windows.Forms.CheckState>、値、<xref:System.Windows.Forms.DataGridViewCheckBoxColumn.ThreeState%2A>プロパティの値が`true`既定です。  
+ <xref:System.Windows.Forms.DataGridViewCheckBoxColumn>と共に使用される<xref:System.Boolean>と<xref:System.Windows.Forms.CheckState>値。 <xref:System.Boolean> 値の値に応じて、2 つの状態または 3 つの状態のチェック ボックスとして表示、<xref:System.Windows.Forms.DataGridViewCheckBoxColumn.ThreeState%2A>プロパティです。 列をバインドするときに<xref:System.Windows.Forms.CheckState>、値、<xref:System.Windows.Forms.DataGridViewCheckBoxColumn.ThreeState%2A>プロパティの値が`true`既定です。  
   
  通常は、チェック ボックス セルの値は記憶域は、その他のデータと同様に、または一括操作を実行するものです。 処理することができる場合、ユーザーは、チェック ボックス セルをクリックして、すぐに応答する場合、<xref:System.Windows.Forms.DataGridView.CellClick>セルの値が更新される前に、イベントでなく、このイベントが発生します。 1 つのオプションは、予期された値を計算する、クリックの時に新しい値を必要がある場合、現在の値に基づいています。 すぐに、変更をコミットし、処理は、別の方法として、<xref:System.Windows.Forms.DataGridView.CellValueChanged>イベントに応答します。 セルがクリックされたときに、変更をコミットするには、処理、<xref:System.Windows.Forms.DataGridView.CurrentCellDirtyStateChanged>イベント。 呼び出しでは、ハンドラーを現在のセルがチェック ボックス セルの場合、<xref:System.Windows.Forms.DataGridView.CommitEdit%2A>メソッドを渡します、<xref:System.Windows.Forms.DataGridViewDataErrorContexts.Commit>値。  
   
@@ -91,7 +79,7 @@ ms.lasthandoff: 12/22/2017
   
  <xref:System.Windows.Forms.DataGridViewLinkColumn>クラスでは、いくつかのプロパティを提供する前に、実行時と後のリンクの外観を変更するためをクリックします。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.DataGridView>  
  <xref:System.Windows.Forms.DataGridViewColumn>  
  <xref:System.Windows.Forms.DataGridViewButtonColumn>  

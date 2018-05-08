@@ -1,13 +1,7 @@
 ---
-title: "方法 : デジタル署名で XML ドキュメントに署名する"
-ms.custom: 
+title: '方法 : デジタル署名で XML ドキュメントに署名する'
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -20,18 +14,13 @@ helpviewer_keywords:
 - XML signing
 - signing XML
 ms.assetid: 99692ac1-d8c9-42d7-b1bf-2737b01037e4
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 8835bd09e041ce8bb36c09951ea5526d42ff0c3c
-ms.sourcegitcommit: ba765893e3efcece67d99fd6d5ce0074b050d1d9
+ms.openlocfilehash: 829be8663068d4eb492631ccc4194b4e4c3000aa
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-sign-xml-documents-with-digital-signatures"></a>方法 : デジタル署名で XML ドキュメントに署名する
 <xref:System.Security.Cryptography.Xml> 名前空間のクラスを使用すると、XML ドキュメントまたは XML ドキュメントの一部にデジタル署名で署名することができます。  XML デジタル署名 (XMLDSIG) を使用すると、データが署名後に変更されなかったことを確認できます。  XMLDSIG 標準の詳細については、World Wide Web Consortium (W3C) の推奨事項を参照してください。 [XML 署名の構文と処理](https://www.w3.org/TR/xmldsig-core/)です。  
@@ -128,6 +117,6 @@ ms.lasthandoff: 03/02/2018
   
  秘密キーをソース コードに直接埋め込まないでください。  使用してアセンブリから、埋め込まれたキーを簡単に読み取ることができます、 [Ildasm.exe (IL 逆アセンブラー)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md)またはメモ帳などのテキスト エディターで、アセンブリを開くことができます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Security.Cryptography.Xml>  
  [方法: XML ドキュメントのデジタル署名を検証する](../../../docs/standard/security/how-to-verify-the-digital-signatures-of-xml-documents.md)

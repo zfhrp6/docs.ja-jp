@@ -1,28 +1,14 @@
 ---
 title: HTTP および HTTPS の構成
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - configuring HTTP [WCF]
 ms.assetid: b0c29a86-bc0c-41b3-bc1e-4eb5bb5714d4
-caps.latest.revision: 17
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 8d3317cd4bba7c9935bd7555f16599dc94725fbd
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 70c947724abf8da68ec8f7e6d858e26fec62dce5
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="configuring-http-and-https"></a>HTTP および HTTPS の構成
 WCF サービスと WCF クライアントは、HTTP および HTTPS を介して通信できます。 HTTP または HTTPS の設定は、インターネット インフォメーション サービス (IIS) またはコマンド ライン ツールを使用して構成します。 WCF サービスが IIS でホストされている場合は、IIS 内で HTTP または HTTPS の設定を構成できます (inetmgr.exe ツールを使用)。 WCF サービスが自己ホスト型の場合は、コマンド ライン ツールを使用して HTTP または HTTPS の設定を構成します。  
@@ -79,7 +65,7 @@ netsh http add urlacl url=http://+:80/MyUri user=DOMAIN\user
  手順については、次を参照してください。[する方法: SSL 証明書でポートを構成する](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md)です。  
   
 ## <a name="configuring-the-ip-listen-list"></a>IP リッスン一覧の構成  
- HTTP Server API は、ユーザーが URL を登録すると、IP アドレスとポートだけにバインドします。 既定では、HTTP Server API は、コンピューターのすべての IP アドレスに対して、URL でポートにバインドします。 その IP アドレスとポートの組み合わせにバインドしている HTTP Server API をアプリケーションが使用していない場合、競合が発生します。 IP リッスン一覧によって、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスは、コンピューターの一部の IP アドレスに対してポートを使用するアプリケーションと共存できます。 IP リッスン一覧にエントリがある場合、HTTP Server API は、その一覧に指定されている IP アドレスだけにバインドします。 IP リッスン一覧を変更するには、管理特権が必要です。  
+ HTTP Server API は、ユーザーが URL を登録すると、IP アドレスとポートだけにバインドします。 既定では、HTTP Server API は、コンピューターのすべての IP アドレスに対して、URL でポートにバインドします。 その IP アドレスとポートの組み合わせにバインドしている HTTP Server API をアプリケーションが使用していない場合、競合が発生します。 IP リッスン一覧には、WCF サービスをマシンの IP アドレスの一部のポートを使用するアプリケーションと共存させることができます。 IP リッスン一覧にエントリがある場合、HTTP Server API は、その一覧に指定されている IP アドレスだけにバインドします。 IP リッスン一覧を変更するには、管理特権が必要です。  
   
 ### <a name="running-windows-xp-or-server-2003"></a>Windows XP または Windows Server 2003 を実行している場合  
  httpcfg ツールを使用して IP リッスン一覧を変更します。次に例を示します。 [Windows サポート ツールのマニュアル](http://go.microsoft.com/fwlink/?LinkId=94840)httpcfg.exe ツールの構文について説明します。  
@@ -101,7 +87,7 @@ netsh http add iplisten ipaddress=0.0.0.0:8000
  HTTP Server API には、HttpCfg からは使用できない高度な構成設定があります。 この設定は、レジストリで管理され、HTTP Server API を使用するシステムで実行中のすべてのアプリケーションに適用されます。 これらの設定については、次を参照してください。 [IIS 用 Http.sys レジストリ設定](http://go.microsoft.com/fwlink/?LinkId=94843)です。 ほとんどのユーザーは、この設定を変更する必要がありません。  
   
 ## <a name="issues-specific-to-windows-xp"></a>Windows XP に固有の問題  
- IIS では、[!INCLUDE[wxp](../../../../includes/wxp-md.md)] 上でのポート共有がサポートされていません。 IIS を実行していて、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスが同じポートを持つ名前空間を使用しようとすると、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスは開始に失敗します。 IIS と [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ではどちらも、既定でポート 80 が使用されます。 いずれかのサービスのポート割り当てを変更するか、IP リッスン一覧を使用して、IIS で使用されていないネットワーク アダプターに [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスを割り当てます。 IIS 6.0 以上では、HTTP Server API を使用できるように設計が変更されています。  
+ IIS では、[!INCLUDE[wxp](../../../../includes/wxp-md.md)] 上でのポート共有がサポートされていません。 WCF サービスが、同じポートを持つ名前空間を使用しようとしています。 IIS が実行されている場合、WCF サービスは開始に失敗します。 どちらも、既定のポート 80 を使用する IIS および WCF です。 サービスのいずれかのポート割り当てを変更するか、IP リッスン一覧を使用して、IIS によって使用されていないネットワーク アダプターに、WCF サービスを割り当てます。 IIS 6.0 以上では、HTTP Server API を使用できるように設計が変更されています。  
   
 ## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.WSDualHttpBinding>  

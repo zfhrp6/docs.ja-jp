@@ -1,28 +1,16 @@
 ---
-title: "SoundPlayer クラスの概要"
-ms.custom: 
+title: SoundPlayer クラスの概要
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - playing sounds [Windows Forms], SoundPlayer class
 - SoundPlayer class [Windows Forms], about SoundPlayer class
 - sounds [Windows Forms], playing
 ms.assetid: fcebb938-62b9-4677-9cbe-6465bc863e22
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 3dc355fbe0d8262cb24779b99375d6075f758bbc
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 31ce87303b7b96cfd14d4daf07fd21c9de91a548
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="soundplayer-class-overview"></a>SoundPlayer クラスの概要
 <xref:System.Media.SoundPlayer> クラスを使用すると、アプリケーションにサウンドを簡単に組み込むことができます。  
@@ -33,7 +21,7 @@ ms.lasthandoff: 12/22/2017
   
 ## <a name="commonly-used-properties-methods-and-events"></a>一般的に使用されるプロパティ、メソッド、およびイベント  
   
-|name|説明|  
+|名前|説明|  
 |----------|-----------------|  
 |<xref:System.Media.SoundPlayer.SoundLocation%2A> プロパティ|サウンドのファイル パスまたは Web アドレスです。 使用可能な値には UNC または HTTP があります。|  
 |<xref:System.Media.SoundPlayer.LoadTimeout%2A> プロパティ|プログラムが、例外をスローする前にサウンドの読み込みを待機するミリ秒単位の時間です。 既定値は 10 秒です。|  
@@ -45,6 +33,6 @@ ms.lasthandoff: 12/22/2017
 |<xref:System.Media.SoundPlayer.Stop%2A> メソッド|現在再生されているサウンドを停止します。|  
 |<xref:System.Media.SoundPlayer.LoadCompleted> イベント|サウンドの読み込みが試みられた後に発生します。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Media.SoundPlayer>  
  <xref:System.Media.SystemSounds>

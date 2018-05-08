@@ -1,13 +1,6 @@
 ---
-title: "方法 : 純色で図形を塗りつぶす"
-ms.custom: 
+title: '方法 : 純色で図形を塗りつぶす'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - colors [Windows Forms], adding to shapes
 - shapes [Windows Forms], filling
 ms.assetid: 06088b31-bac9-4ef3-9ebe-06c2c764d6df
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: f016404feeac47c5f77527b8baa68d70742d4763
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 7f719417a6a1226d7dc4d600518711ba31920a6c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-fill-a-shape-with-a-solid-color"></a>方法 : 純色で図形を塗りつぶす
 純色で図形を塗りつぶす、作成、<xref:System.Drawing.SolidBrush>オブジェクト、およびをパススルーする<xref:System.Drawing.SolidBrush>オブジェクトへの fill メソッドのいずれかの引数として、<xref:System.Drawing.Graphics>クラスです。 次の例では、色が赤に楕円を設定する方法を示します。  
@@ -40,5 +28,5 @@ ms.lasthandoff: 12/22/2017
 ## <a name="compiling-the-code"></a>コードのコンパイル  
  前の例は、Windows フォームで使用するために設計されていて、<xref:System.Windows.Forms.Control.Paint> イベント ハンドラーのパラメーターである <xref:System.Windows.Forms.PaintEventArgs> `e` を必要とします。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ブラシを使用した図形の塗りつぶし](../../../../docs/framework/winforms/advanced/using-a-brush-to-fill-shapes.md)

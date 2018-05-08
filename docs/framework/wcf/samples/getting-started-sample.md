@@ -1,34 +1,20 @@
 ---
-title: "入門サンプル"
-ms.custom: 
+title: 入門サンプル
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - basic samples [WCF], getting started
 ms.assetid: 967a3d94-0261-49ff-b85a-20bb07f1af20
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 2f97ad418f3d5ed197e8c35edf9e897eb393ef18
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: dfba7062d4226f3644aa6c4cc0efcd7c5fb9eab8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="getting-started-sample"></a>入門サンプル
-この入門サンプルでは、一般的なサービスと一般的なクライアントを、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] を使用して実装する方法を示します。 このサンプルは、他のすべての基本的な技術サンプルの基礎になります。  
+この入門サンプルでは、一般的なサービスと Windows Communication Foundation (WCF) を使用して一般的なクライアントを実装する方法を示します。 このサンプルは、他のすべての基本的な技術サンプルの基礎になります。  
   
 > [!NOTE]
 >  このサンプルのセットアップ手順とビルド手順については、このトピックの最後を参照してください。  
@@ -38,7 +24,7 @@ ms.lasthandoff: 12/22/2017
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
+>  このディレクトリが存在しない場合に、 [Windows Communication Foundation (WCF) および .NET Framework 4 向けの Windows Workflow Foundation (WF) サンプル](http://go.microsoft.com/fwlink/?LinkId=150780)すべて Windows Communication Foundation (WCF) をダウンロードして[!INCLUDE[wf1](../../../../includes/wf1-md.md)]サンプルです。 このサンプルは、次のディレクトリに格納されます。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\GettingStarted\GettingStarted`  
   
@@ -154,9 +140,9 @@ public class CalculatorService : ICalculator
   
  サービスは、IIS ホストまたは WAS ホストから提供されるベース アドレスで、エンドポイントを公開します。 バインディングの構成には、標準の <xref:System.ServiceModel.WSHttpBinding> を使用します。これは HTTP 通信と Web サービスの標準プロトコルを提供し、アドレス指定とセキュリティをサポートします。 コントラクトは、サービスによって実装される `ICalculator` です。  
   
- 前の構成では、サービスと同じコンピューター上にあるクライアントは、http://localhost/servicemodelsamples/service.svc でサービスにアクセスできます。 リモート コンピューター上のクライアントがサービスにアクセスするには、localhost の代わりに完全修飾ドメイン名を指定する必要があります。  
+ サービスにアクセスできるように構成されている、http://localhost/servicemodelsamples/service.svc同じコンピューター上のクライアントによってです。 リモート コンピューター上のクライアントがサービスにアクセスするには、localhost の代わりに完全修飾ドメイン名を指定する必要があります。  
   
- 既定では、フレームワークはメタデータを公開しません。 そのため、サービスは <xref:System.ServiceModel.Description.ServiceMetadataBehavior> を有効にし、Metadata Exchange (MEX) エンドポイントを http://localhost/servicemodelsamples/service.svc/mex で公開します。 これを設定する構成を次に示します。  
+ 既定では、フレームワークはメタデータを公開しません。 オンに、サービスのような場合、<xref:System.ServiceModel.Description.ServiceMetadataBehavior>に metadata exchange (MEX) エンドポイントを公開およびhttp://localhost/servicemodelsamples/service.svc/mexです。 これを設定する構成を次に示します。  
   
 ```xaml  
 <system.serviceModel>  
@@ -295,6 +281,6 @@ Press <ENTER> to terminate client.
   
 3.  1 つまたは複数コンピューター構成でサンプルを実行する手順についてで[Windows Communication Foundation サンプルの実行](../../../../docs/framework/wcf/samples/running-the-samples.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [方法: マネージ アプリケーションで WCF サービスをホストする](../../../../docs/framework/wcf/how-to-host-a-wcf-service-in-a-managed-application.md)  
  [方法 : IIS で WCF サービスをホストする](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-iis.md)

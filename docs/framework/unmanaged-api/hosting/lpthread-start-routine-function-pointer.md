@@ -1,14 +1,6 @@
 ---
-title: "LPTHREAD_START_ROUTINE 関数ポインター"
-ms.custom: 
+title: LPTHREAD_START_ROUTINE 関数ポインター
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - LPTHREAD_START_ROUTINE
 api_location:
@@ -22,17 +14,13 @@ helpviewer_keywords:
 ms.assetid: 7b9b93b0-fe92-42ba-8693-701168a29dde
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: d28cdbfa2cb6c2c1f6b730e34b623a621119bc3a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5025b75106b2cb0853047a09ca263f795d99633f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="lpthreadstartroutine-function-pointer"></a>LPTHREAD_START_ROUTINE 関数ポインター
 スレッドの実行を開始したことをホストに通知する関数を指します。  
@@ -54,14 +42,15 @@ typedef DWORD (__stdcall *LPTHREAD_START_ROUTINE) (
 ## <a name="remarks"></a>コメント  
  関数`LPTHREAD_START_ROUTINE`ポイントはコールバック関数であり、ホスト アプリケーションの作成者によって実装する必要があります。  
   
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** MSCorEE.h  
   
  **ライブラリ:** MSCorWks.dll  
   
- **.NET framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>参照  
- [サポートされなくなった CLR ホスト関数](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+## <a name="see-also"></a>関連項目  
+ 
+  [非推奨の CLR ホスト関数](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)

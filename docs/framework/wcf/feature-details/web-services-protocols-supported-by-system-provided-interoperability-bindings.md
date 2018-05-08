@@ -1,33 +1,19 @@
 ---
 title: システム標準の相互運用性バインディングがサポートしている Web サービス プロトコル
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - WS-protocols
 - Web services protocols
 - Windows Communication Foundation, Web service protocols
 ms.assetid: 1f7fc4ff-30fe-4e46-adda-91caad3b06c6
-caps.latest.revision: 39
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 998920e4c1d7e0524da1c9843378e92517f4ee96
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 728dba65a99d71a52551b16e5f1822104ed40ea7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="web-services-protocols-supported-by-system-provided-interoperability-bindings"></a>システム標準の相互運用性バインディングがサポートしている Web サービス プロトコル
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] は、Web サービス仕様と呼ばれる一連の仕様をサポートする Web サービスと相互運用できるように構築されています。 サービス構成を簡略化して相互運用性のベスト プラクティスを実現するために、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、<xref:System.ServiceModel.BasicHttpBinding?displayProperty=nameWithType>、<xref:System.ServiceModel.WSHttpBinding?displayProperty=nameWithType>、および <xref:System.ServiceModel.WSDualHttpBinding?displayProperty=nameWithType> の 3 つの相互運用可能なシステム指定のバインディングが導入されています。 OASIS (Organization for the Advancement of Structured Information Standards) 標準との相互運用性を実現するために、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には <xref:System.ServiceModel.WS2007HttpBinding?displayProperty=nameWithType> という相互運用可能なシステム指定のバインディングがあります。 メタデータの公開の[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]2 つの相互運用可能なシステム指定のバインディングが含まれています: [ \<mexHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/mexhttpbinding.md)と[ \<mexHttpsBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/mexhttpsbinding.md)です。 このトピックでは、システム指定の相互運用可能なバインディングがサポートする仕様を示します。  
+Windows Communication Foundation (WCF) は、一連の Web サービス仕様と呼ばれる仕様をサポートする Web サービスと相互運用するために作成されています。 WCF サービスの相互運用性のベスト プラクティスに関する構成を簡略化するには次の 3 つの相互運用可能なシステム指定のバインディングが導入されています: <xref:System.ServiceModel.BasicHttpBinding?displayProperty=nameWithType>、 <xref:System.ServiceModel.WSHttpBinding?displayProperty=nameWithType>、および<xref:System.ServiceModel.WSDualHttpBinding?displayProperty=nameWithType>です。 WCF には Advancement の構造化情報標準 (OASIS) 標準の組織と相互運用性には 1 つの相互運用可能なシステム指定のバインディングが含まれています:<xref:System.ServiceModel.WS2007HttpBinding?displayProperty=nameWithType>です。 WCF にはメタデータの公開には 2 つの相互運用可能なシステム指定のバインディングが含まれています: [ \<mexHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/mexhttpbinding.md)と[ \<mexHttpsBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/mexhttpsbinding.md)です。 このトピックでは、システム指定の相互運用可能なバインディングがサポートする仕様を示します。  
   
 ## <a name="web-services-protocols-supported-by-basichttpbinding-wshttpbinding-ws2007httpbinding-and-wsdualhttpbinding-bindings"></a>basicHttpBinding、wsHttpBinding、ws2007HttpBinding、および wsDualHttpBinding の各バインディングでサポートされる Web サービス プロトコル  
   
@@ -41,11 +27,11 @@ ms.lasthandoff: 04/30/2018
 |--------------|--------------|-----------------------------|  
 |Transport|HTTP 1.1|[HTTP 1.1](http://go.microsoft.com/fwlink/?LinkId=84048)<br /><br /> `BasicHttpBinding`、`WSHttpBinding`、および `WS2007HttpBinding` は、HTTP トランスポートおよび HTTPS トランスポートを使用します。|  
 |メッセージング|MTOM|[MTOM](http://go.microsoft.com/fwlink/?LinkId=95326)<br /><br /> `basicHttpBinding`、`wsHttpBinding`、および `ws2007HttpBinding` は、MTOM (Message Transmission Optimization Mechanism) をサポートしています。 既定では使用されません。 MTOM を使用するには、`messageEncoding` 属性を `"Mtom"` に設定します。<br /><br /> 例:<br /><br /> `<wsHttpBinding> <binding messageEncoding="Mtom"/> </wsHttpBinding>`|  
-|メタデータ|WSDL 1.1|[WSDL 1.1](http://go.microsoft.com/fwlink/?LinkId=94859)<br /><br /> [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、サービスの記述に Web サービス記述言語 (WSDL) を使用します。|  
-|メタデータ|WS-Policy|[WS-Policy](http://go.microsoft.com/fwlink/?LinkId=94864)<br /><br /> [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、ドメイン固有のアサーションと共に WS-Policy 仕様を使用して、サービス要件と機能を記述します。|  
-|メタデータ|WS-Policy 1.5|[Ws-policy 1.5](http://go.microsoft.com/fwlink/?LinkId=95327)<br /><br /> [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、ドメイン固有のアサーションと共に WS-Policy 仕様を使用して、サービス要件と機能を記述します。|  
-|メタデータ|WS-PolicyAttachment|[WS-PolicyAttachment](http://go.microsoft.com/fwlink/?LinkId=95328)<br /><br /> [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、Web サービス記述言語 (WSDL) のさまざまなスコープでポリシー式を関連付けるために、WS-PolicyAttachment を実装しています。|  
-|メタデータ|WS-MetadataExchange|[WS-MetadataExchange](http://go.microsoft.com/fwlink/?LinkId=94868)<br /><br /> [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、XML スキーマ、WSDL、WS-Policy を取得するために WS-MetadataExchange が実装されています。|  
+|メタデータ|WSDL 1.1|[WSDL 1.1](http://go.microsoft.com/fwlink/?LinkId=94859)<br /><br /> WCF では、Web サービス記述言語 (WSDL) を使用して、サービスについて説明します。|  
+|メタデータ|WS-Policy|[WS-Policy](http://go.microsoft.com/fwlink/?LinkId=94864)<br /><br /> WCF では、ドメイン固有のアサーションと共に Ws-policy 仕様を使用して、サービス要件と機能について説明します。|  
+|メタデータ|WS-Policy 1.5|[Ws-policy 1.5](http://go.microsoft.com/fwlink/?LinkId=95327)<br /><br /> WCF では、ドメイン固有のアサーションと共に Ws-policy 仕様を使用して、サービス要件と機能について説明します。|  
+|メタデータ|WS-PolicyAttachment|[WS-PolicyAttachment](http://go.microsoft.com/fwlink/?LinkId=95328)<br /><br /> WCF では、Web サービス記述言語 (WSDL) でのさまざまなスコープでポリシー式をアタッチする Ws-policyattachment を実装します。|  
+|メタデータ|WS-MetadataExchange|[WS-MetadataExchange](http://go.microsoft.com/fwlink/?LinkId=94868)<br /><br /> WCF には、XML スキーマ、WSDL、Ws-policy を取得するには、Ws-metadataexchange が実装されています。|  
   
 ### <a name="basichttpbinding"></a>basicHttpBinding  
   
@@ -70,7 +56,7 @@ ms.lasthandoff: 04/30/2018
 |セキュリティ|WS-SecureConversation|[WS-SecureConversation](http://go.microsoft.com/fwlink/?LinkId=95317)<br /><br /> `security/@mode` 属性が "Message" に設定され、`message/@establishSecurityContext` 属性が "true" (既定値) に設定されている場合に、セッションをセキュリティで保護するために使用します。|  
 |セキュリティ|WS-Trust|[Ws-trust](http://go.microsoft.com/fwlink/?LinkId=95318)<br /><br /> WS-SecureConversation で使用されます (上記を参照)。|  
 |信頼できるメッセージ機能|WS-ReliableMessaging|[WS-ReliableMessaging](http://go.microsoft.com/fwlink/?LinkId=95322)<br /><br /> バインディングが `reliableSession` を使用するように構成されている場合に使用します。<br /><br /> `<wsHttpBinding>  <binding name="myBinding">    <reliableSession/>   </binding> </wsHttpBinding>`|  
-|トランザクション|WS-AtomicTransaction|[WS-AtomicTransaction](http://go.microsoft.com/fwlink/?LinkId=95323)<br /><br /> トランザクション マネージャー間の通信に使用します。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のクライアントとサービスは、常にローカル トランザクション マネージャーを使用します。|  
+|トランザクション|WS-AtomicTransaction|[WS-AtomicTransaction](http://go.microsoft.com/fwlink/?LinkId=95323)<br /><br /> トランザクション マネージャー間の通信に使用します。 WCF クライアントおよびサービスでは、常にローカル トランザクション マネージャーを使用するようにします。|  
 |トランザクション|WS-Coordination|[Ws-coordination 仕様](http://go.microsoft.com/fwlink/?LinkId=95324)<br /><br /> `flowTransactions` 属性が "Allowed" または "Required" に設定されている場合に、トランザクション コンテキストをフローするために使用します。<br /><br /> `<wsHttpBinding>   <binding transactionFlow="true"/> </wsHttpBinding>`|  
   
 ## <a name="wsfederationhttpbinding-and-ws2007federationhttpbinding"></a>wsFederationHttpBinding および ws2007FederationHttpBinding  
@@ -109,7 +95,7 @@ ms.lasthandoff: 04/30/2018
 |Transport|HTTP 1.1|[HTTP 1.1](http://go.microsoft.com/fwlink/?LinkId=84048)|  
 |メッセージング|SOAP 1.2|[入門](http://go.microsoft.com/fwlink/?LinkId=48282)<br /><br /> [メッセージング フレームワーク](http://go.microsoft.com/fwlink/?LinkId=94664)<br /><br /> [(HTTP バインドを含む) に対する](http://go.microsoft.com/fwlink/?LinkId=95329)|  
 |メッセージング|Ws-addressing 2005/08|[Web Services Addressing 1.0 - コア](http://go.microsoft.com/fwlink/?LinkId=90574)<br /><br /> [Web Services Addressing 1.0 - SOAP](http://go.microsoft.com/fwlink/?LinkId=95330)|  
-|メタデータ|WS-MetadataExchange|[WS-MetadataExchange](http://go.microsoft.com/fwlink/?LinkId=94868)<br /><br /> [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、XML スキーマ、WSDL、WS-Policy を取得するために WS-MetadataExchange が実装されています。|  
+|メタデータ|WS-MetadataExchange|[WS-MetadataExchange](http://go.microsoft.com/fwlink/?LinkId=94868)<br /><br /> WCF には、XML スキーマ、WSDL、Ws-policy を取得するには、Ws-metadataexchange が実装されています。|  
   
 ### <a name="mexhttpsbinding"></a>mexHttpsBinding  
  [\<mexHttpsBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/mexhttpsbinding.md)次のプロトコルをサポートします。 このバインディングの使用に関する詳細については、次を参照してください。[メタデータの公開](../../../../docs/framework/wcf/feature-details/publishing-metadata.md)です。  
@@ -119,7 +105,7 @@ ms.lasthandoff: 04/30/2018
 |Transport|HTTP 1.1|[HTTP 1.1](http://go.microsoft.com/fwlink/?LinkId=84048)<br /><br /> トランスポート セキュリティは有効です。|  
 |メッセージング|SOAP 1.2|[入門](http://go.microsoft.com/fwlink/?LinkId=48282)<br /><br /> [メッセージング フレームワーク](http://go.microsoft.com/fwlink/?LinkId=94664)<br /><br /> [(HTTP バインドを含む) に対する](http://go.microsoft.com/fwlink/?LinkId=95329)|  
 |メッセージング|Ws-addressing 2005/08|[Web Services Addressing 1.0 - コア](http://go.microsoft.com/fwlink/?LinkId=90574)<br /><br /> [Web Services Addressing 1.0 - SOAP](http://go.microsoft.com/fwlink/?LinkId=95330)|  
-|メタデータ|WS-MetadataExchange|[WS-MetadataExchange](http://go.microsoft.com/fwlink/?LinkId=94868)<br /><br /> [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、XML スキーマ、WSDL、WS-Policy を取得するために WS-MetadataExchange が実装されています。|  
+|メタデータ|WS-MetadataExchange|[WS-MetadataExchange](http://go.microsoft.com/fwlink/?LinkId=94868)<br /><br /> WCF には、XML スキーマ、WSDL、Ws-policy を取得するには、Ws-metadataexchange が実装されています。|  
   
 ## <a name="see-also"></a>関連項目  
  [システム標準のバインディング](../../../../docs/framework/wcf/system-provided-bindings.md)  

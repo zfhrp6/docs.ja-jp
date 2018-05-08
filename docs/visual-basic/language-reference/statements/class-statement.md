@@ -1,12 +1,6 @@
 ---
 title: Class ステートメント (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Class
 helpviewer_keywords:
@@ -19,14 +13,11 @@ helpviewer_keywords:
 - classes [Visual Basic], data members
 - data members [Visual Basic], of classes
 ms.assetid: f2664f38-eb5a-4d4b-a374-1d041521fb6c
-caps.latest.revision: 29
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: df86ef0eec67d96f2f997dc5dac7ee2357c6362b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 2346823e7b774c21171bd81023cc5b920d34d19a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="class-statement-visual-basic"></a>Class ステートメント (Visual Basic)
 クラスの名前を宣言し、変数、プロパティ、イベント、およびクラスを構成するプロシージャの定義が追加されました。  
@@ -46,21 +37,21 @@ End Class
   
 |用語|定義|  
 |---|---|  
-|`attributelist`|省略可能です。 参照してください[属性一覧](../../../visual-basic/language-reference/statements/attribute-list.md)です。|  
-|`accessmodifier`|省略可能です。 次のいずれかの値を指定します。<br /><br /> -   [パブリック](../../../visual-basic/language-reference/modifiers/public.md)<br />-   [保護されています。](../../../visual-basic/language-reference/modifiers/protected.md)<br />-   [Friend](../../../visual-basic/language-reference/modifiers/friend.md)<br />-   [プライベート](../../../visual-basic/language-reference/modifiers/private.md)<br />-   `Protected Friend`<br /><br /> 参照してください[Visual Basic でのレベルのアクセス](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)です。|  
-|`Shadows`|省略可能です。 参照してください[Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)です。|  
-|`MustInherit`|省略可能です。 参照してください[MustInherit](../../../visual-basic/language-reference/modifiers/mustinherit.md)です。|  
-|`NotInheritable`|省略可能です。 参照してください[NotInheritable](../../../visual-basic/language-reference/modifiers/notinheritable.md)です。|  
-|`Partial`|省略可能です。 クラスの部分定義を示します。 参照してください[部分](../../../visual-basic/language-reference/modifiers/partial.md)です。|  
-|`name`|必須です。 このクラスの名前です。 参照してください[宣言された要素の名前](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)です。|  
-|`Of`|省略可能です。 これは、ジェネリック クラスであることを指定します。|  
+|`attributelist`|任意。 参照してください[属性一覧](../../../visual-basic/language-reference/statements/attribute-list.md)です。|  
+|`accessmodifier`|任意。 次のいずれかの値を指定します。<br /><br /> -   [パブリック](../../../visual-basic/language-reference/modifiers/public.md)<br />-   [保護されています。](../../../visual-basic/language-reference/modifiers/protected.md)<br />-   [Friend](../../../visual-basic/language-reference/modifiers/friend.md)<br />-   [プライベート](../../../visual-basic/language-reference/modifiers/private.md)<br />-   `Protected Friend`<br /><br /> 参照してください[Visual Basic でのレベルのアクセス](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)です。|  
+|`Shadows`|任意。 参照してください[Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)です。|  
+|`MustInherit`|任意。 参照してください[MustInherit](../../../visual-basic/language-reference/modifiers/mustinherit.md)です。|  
+|`NotInheritable`|任意。 参照してください[NotInheritable](../../../visual-basic/language-reference/modifiers/notinheritable.md)です。|  
+|`Partial`|任意。 クラスの部分定義を示します。 参照してください[部分](../../../visual-basic/language-reference/modifiers/partial.md)です。|  
+|`name`|必須。 このクラスの名前です。 参照してください[宣言された要素の名前](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)です。|  
+|`Of`|任意。 これは、ジェネリック クラスであることを指定します。|  
 |`typelist`|使用するかどうかは必ず、[の](../../../visual-basic/language-reference/statements/of-clause.md)キーワード。 このクラスの型パラメーターの一覧。 参照してください[のリストを入力](../../../visual-basic/language-reference/statements/type-list.md)です。|  
-|`Inherits`|省略可能です。 このクラスが別のクラスのメンバーを継承することを示します。 参照してください[Inherits ステートメント](../../../visual-basic/language-reference/statements/inherits-statement.md)です。|  
+|`Inherits`|任意。 このクラスが別のクラスのメンバーを継承することを示します。 参照してください[Inherits ステートメント](../../../visual-basic/language-reference/statements/inherits-statement.md)です。|  
 |`classname`|`Inherits` ステートメントを使用する場合は必ず指定します。 このクラスの派生元となるクラスの名前。|  
-|`Implements`|省略可能です。 このクラスで、1 つまたは複数のインターフェイスのメンバーを実装することを示します。 参照してください[ステートメントを実装します](../../../visual-basic/language-reference/statements/implements-statement.md)です。|  
+|`Implements`|任意。 このクラスで、1 つまたは複数のインターフェイスのメンバーを実装することを示します。 参照してください[ステートメントを実装します](../../../visual-basic/language-reference/statements/implements-statement.md)です。|  
 |`interfacenames`|`Implements` ステートメントを使用する場合は必ず指定します。 このクラスが実装するインターフェイスの名前。|  
-|`statements`|省略可能です。 このクラスのメンバーを定義するステートメント。|  
-|`End Class`|必須です。 `Class` の定義を終了します。|  
+|`statements`|任意。 このクラスのメンバーを定義するステートメント。|  
+|`End Class`|必須。 `Class` の定義を終了します。|  
   
 ## <a name="remarks"></a>コメント  
  A`Class`ステートメントが、新しいデータ型を定義します。 A*クラス*オブジェクト指向プログラミング (OOP) の基本的なビルド ブロックです。 詳細については、次を参照してください。[クラスとオブジェクト](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)です。  

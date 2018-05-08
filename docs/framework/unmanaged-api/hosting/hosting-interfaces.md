@@ -1,28 +1,18 @@
 ---
-title: "ホスト インターフェイス"
-ms.custom: 
+title: ホスト インターフェイス
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 helpviewer_keywords:
 - interfaces [.NET Framework hosting]
 - hosting interfaces [.NET Framework]
 - unmanaged interfaces [.NET Framework], hosting
 ms.assetid: cc64cb05-38da-418e-815a-daac8e8e26e5
-caps.latest.revision: "23"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 4fb24db8ad5b1ff92eadee139ddf10c044488f7d
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: c2bef9e1671b8487a6702cce71106c84a2984317
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="hosting-interfaces"></a>ホスト インターフェイス
 このセクションの内容がアンマネージ インターフェイスについて説明しますホストを使用して、共通言語ランタイム (CLR) をアプリケーションに統合します。  
@@ -34,7 +24,8 @@ ms.lasthandoff: 01/19/2018
  [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)]ホスト インターフェイスは、.NET Framework 2.0 インターフェイスをよりも優先されます。
   
 ## <a name="in-this-section"></a>このセクションの内容  
- [サポートされなくなった CLR のホスト インターフェイスおよびコクラス](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-interfaces-and-coclasses.md)  
+ 
+  [非推奨の CLR のホスト インターフェイスおよびコクラス](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-interfaces-and-coclasses.md)  
  .NET Framework のバージョン 1.0 および 1.1 で導入されたホスト インターフェイスをについて説明します。  
   
  [CLR ホスト インターフェイス](../../../../docs/framework/unmanaged-api/hosting/clr-hosting-interfaces.md)  
@@ -46,7 +37,8 @@ ms.lasthandoff: 01/19/2018
 ## <a name="related-sections"></a>関連項目  
  [ホスト コクラス](../../../../docs/framework/unmanaged-api/hosting/hosting-coclasses.md)  
   
- [サポートされなくなった CLR ホスト関数](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)  
+ 
+  [非推奨の CLR ホスト関数](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)  
   
  [ホスティングの列挙型](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)  
   

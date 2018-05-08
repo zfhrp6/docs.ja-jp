@@ -1,11 +1,7 @@
 ---
-title: "PutClassWmi 関数 (アンマネージ API リファレンス)"
-description: "PutClassWmi 関数は、新しいクラスを作成または既存のものを更新します。"
+title: PutClassWmi 関数 (アンマネージ API リファレンス)
+description: PutClassWmi 関数は、新しいクラスを作成または既存のものを更新します。
 ms.date: 11/06/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: reference
 api_name:
 - PutClassWmi
 api_location:
@@ -20,14 +16,11 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 219cec2096cd3d1dfe1e0d3c0903b62692e444e6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 3ce887d59d02cfc2e4d8c183aa495dcc1535853c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="putclasswmi-function"></a>PutClassWmi 関数
 新しいクラスを作成または既存のものを更新します。  
@@ -84,7 +77,7 @@ HRESULT PutClassWmi (
 | `WBEM_E_INVALID OPERATION` | 0x80041016 | 指定されたクラス名が正しくありません。 |
 | `WBEM_E_CLASS_HAS_CHILDREN` | 0x80041025 | サブクラスを無効にする変更を加えるしようとしました。 |
 | `WBEM_E_ALREADY_EXISTS` | 0x80041019 | `WBEM_FLAG_CREATE_ONLY`フラグが指定されましたが、クラスが既に存在します。 |
-| `WBEM_E_NOT_FOUND` | 0x80041002 | `WBEM_FLAG_UPDATE_ONLY`指定された`lFlags`クラスが見つかりません。 |
+| `WBEM_E_NOT_FOUND` | 0x80041002 | `WBEM_FLAG_UPDATE_ONLY` 指定された`lFlags`クラスが見つかりません。 |
 | `WBEM_E_INCOMPLETE_CLASS` | 0x80041020 | クラスに必要なプロパティがすべて設定されています。 |
 | `WBEM_E_OUT_OF_MEMORY` | 0x80041006 | 操作を完了するのに十分なメモリがあります。 |
 | `WBEM_E_SHUTTING_DOWN` | 0x80041033 | WMI は、おそらく停止および再起動されました。 呼び出す[ConnectServerWmi](connectserverwmi.md)もう一度です。 |
@@ -99,12 +92,12 @@ HRESULT PutClassWmi (
 
 呼び出して追加のエラー情報を取得するには、関数呼び出しに失敗した場合、 [GetErrorInfo](geterrorinfo.md)関数。
 
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** WMINet_Utils.idl  
   
- **.NET framework のバージョン:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **.NET framework のバージョン:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>関連項目  
 [WMI およびパフォーマンス カウンター (アンマネージ API リファレンス)](index.md)
