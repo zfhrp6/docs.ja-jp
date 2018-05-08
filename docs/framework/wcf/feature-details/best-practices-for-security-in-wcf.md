@@ -1,43 +1,31 @@
 ---
 title: WCF のセキュリティのベスト プラクティス
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - best practices [WCF], security
 ms.assetid: 3639de41-1fa7-4875-a1d7-f393e4c8bd69
-caps.latest.revision: 19
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload:
-- dotnet
-ms.openlocfilehash: 0545ff40247b7ff86cb6227fa8cf4af8666c3629
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 62675bc5cca2eccfcd4f210f96e5eeec93341399
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="best-practices-for-security-in-wcf"></a>WCF のセキュリティのベスト プラクティス
-以下のセクションでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] を使用してセキュリティで保護されたアプリケーションを作成する場合に考慮する必要のあるベスト プラクティスを示します。 セキュリティの詳細については、次を参照してください。[セキュリティの考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)、[データのセキュリティに関する考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md)、および[メタデータとセキュリティに関する考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-with-metadata.md)です。  
+次のセクションでは、Windows Communication Foundation (WCF) を使用してセキュリティで保護されたアプリケーションを作成する際に考慮するベスト プラクティスを一覧表示します。 セキュリティの詳細については、次を参照してください。[セキュリティの考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)、[データのセキュリティに関する考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md)、および[メタデータとセキュリティに関する考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-with-metadata.md)です。  
   
 ## <a name="identify-services-performing-windows-authentication-with-spns"></a>Windows 認証での SPN を使用したサービスの識別  
  サービスはユーザー プリンシパル名 (UPN) またはサービス プリンシパル名 (SPN) によって識別できます。 ネットワーク サービスのようにコンピューター アカウントを使用して実行するサービスには、サービスが実行されるコンピューターに対応する SPN ID があります。 ユーザー アカウントを使用して実行するサービスには、そのユーザーに対応する UPN ID があります。ただし、`setspn` ツールを使用するとユーザー アカウントに SPN 割り当てることができます。 サービスが SPN によって識別されるように構成し、サービスに接続するクライアントが SPN を使用してサービスに接続するように構成すると、攻撃の種類によっては攻撃が困難になります。 このガイダンスは Kerberos または SSPI ネゴシエーションを使用するバインディングに適用されます。  その場合でも、SSPI が使用できなくて NTLM が使用される場合に備えて、クライアントは SPN を指定する必要があります。  
   
 ## <a name="verify-service-identities-in-wsdl"></a>WSDL でのサービス ID の検証  
- WS-SecurityPolicy ではサービスが自己の ID に関する情報をメタデータの中で公開できるようになっています。 この ID 情報は `svcutil` で取得した場合や <xref:System.ServiceModel.Description.WsdlImporter> などその他の方法で取得した場合、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービス エンドポイント アドレスの ID プロパティに変換されます。 サービス ID が正しく有効であることを検証しないクライアントは、実質上サービス認証をバイパスすることになります。 悪意を持ったサービスは、資格情報の転送やその他の "man in the middle" 攻撃を実行するために、その WSDL での ID 宣言を変更することによって、このようなクライアントを利用できます。  
+ WS-SecurityPolicy ではサービスが自己の ID に関する情報をメタデータの中で公開できるようになっています。 使用して取得されたときに`svcutil`などの他のメソッドまたは<xref:System.ServiceModel.Description.WsdlImporter>、この id 情報は、WCF サービスのエンドポイント アドレスの id プロパティに変換します。 サービス ID が正しく有効であることを検証しないクライアントは、実質上サービス認証をバイパスすることになります。 悪意を持ったサービスは、資格情報の転送やその他の "man in the middle" 攻撃を実行するために、その WSDL での ID 宣言を変更することによって、このようなクライアントを利用できます。  
   
 ## <a name="use-x509-certificates-instead-of-ntlm"></a>NTLM の代わりに X509 証明書を使用する  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、ピアツーピア認証用に X509 証明書 (ピア チャネルで使用) と SSPI ネゴシエーションが Kerberos から NTLM にダウングレードされたときに使用される Windows 認証の 2 つのメカニズムが提供されています。  1024 ビット以上のキー サイズを使用する証明書ベースの認証が NTLM より好ましい理由はいくつかあります。  
+ WCF は、ピア ツー ピア認証用の 2 つのメカニズムを提供しています: X509 証明書 (ピア チャネルで使用) と、SSPI ネゴシエーションにダウン グレード Kerberos から NTLM に Windows 認証です。  1024 ビット以上のキー サイズを使用する証明書ベースの認証が NTLM より好ましい理由はいくつかあります。  
   
 -   相互認証が可能  
   

@@ -1,34 +1,20 @@
 ---
 title: WCF のイベント ログ
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - event logging [WCF]
 ms.assetid: aac0530d-f44c-45a1-bada-e30e0677b41f
-caps.latest.revision: 22
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 4028772caef8e5c0301ab3a6a0bde2f180d821ca
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 78ad80188b8428bb718251045ef04ab803862a0f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="event-logging-in-wcf"></a>WCF のイベント ログ
-[!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] は、Windows イベント ログで内部イベントをトレースします。  
+Windows Communication Foundation (WCF) では、Windows イベント ログで内部イベントをトレースします。  
   
 ## <a name="viewing-event-logs"></a>イベント ログの表示  
- イベント ログは、既定で自動的に有効になります。無効にする方法はありません。 [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] によってログに記録されるイベントは、イベント ビューアーを使用して表示できます。 このツールを起動する をクリックして**開始**、 をクリックして**コントロール パネルの** をダブルクリックして**管理ツール**、順にダブルクリック**イベント ビューアー**.  
+ イベント ログは、既定で自動的に有効になります。無効にする方法はありません。 [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] によってログに記録されるイベントは、イベント ビューアーを使用して表示できます。 このツールを起動する をクリックして**開始**、 をクリックして**コントロール パネルの **をダブルクリックして**管理ツール**、順にダブルクリック**イベント ビューアー**.  
   
 ### <a name="application-event-log"></a>アプリケーション イベント ログ  
  **アプリケーション イベント ログ**によって生成されたイベントの大半が含ま[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)]です。 このエントリの多くは、アプリケーションに関して特定の機能を起動できなかったことを示しています。 次に例を示します。  
@@ -60,6 +46,6 @@ ms.lasthandoff: 12/22/2017
   
  「詳細」をクリックすると、イベント ビューアーがインターネット経由で情報を送信可能性があります、イベント ビューアでイベントを表示するときにします。 詳細については、イベント ビューアーのヘルプを参照してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [管理と診断](../../../../../docs/framework/wcf/diagnostics/index.md)  
  [イベント一覧](../../../../../docs/framework/wcf/diagnostics/event-logging/events-general-reference.md)

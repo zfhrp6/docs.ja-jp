@@ -1,42 +1,30 @@
 ---
 title: WCF セキュリティのプログラミング
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - message security [WCF], programming overview
 ms.assetid: 739ec222-4eda-4cc9-a470-67e64a7a3f10
-caps.latest.revision: 25
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload:
-- dotnet
-ms.openlocfilehash: 63f5c2c61a374b92b018419c83c9429e6ad796d8
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 3eb645dcc5b8cc1c52818e290699ebadcd0943c6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="programming-wcf-security"></a>WCF セキュリティのプログラミング
-このトピックでは、セキュリティで保護された [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] アプリケーションを作成するために使用する基本的なセキュリティ プログラミング タスクについて説明します。 このトピックの内容のみ認証、機密性、整合性と総称*転送セキュリティ*です。 このトピックには、承認 (リソースやサービスへのアクセスの制御); は取り上げません。承認方法については、次を参照してください。[承認](../../../../docs/framework/wcf/feature-details/authorization-in-wcf.md)です。  
+このトピックでは、セキュリティで保護された Windows Communication Foundation (WCF) アプリケーションを作成するために使用する基本的なプログラミング タスクについて説明します。 このトピックの内容のみ認証、機密性、整合性と総称*転送セキュリティ*です。 このトピックには、承認 (リソースやサービスへのアクセスの制御); は取り上げません。承認方法については、次を参照してください。[承認](../../../../docs/framework/wcf/feature-details/authorization-in-wcf.md)です。  
   
 > [!NOTE]
->  貴重な概要については特にに関連して、セキュリティの基本概念[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]、MSDN サイトでのパターンとプラクティスのチュートリアルのセットを参照してください[シナリオ、パターン、および実装ガイドには、Web サービス拡張 (WSE) 3.0](http://go.microsoft.com/fwlink/?LinkID=88250).  
+>  貴重な概要については、WCF に特に関連のセキュリティの基本概念 MSDN サイトでのパターンとプラクティスのチュートリアルのセットを参照してください。[シナリオ、パターン、および実装ガイドには、Web サービス拡張 (WSE) 3.0](http://go.microsoft.com/fwlink/?LinkID=88250)です。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] セキュリティのプログラミングは、セキュリティ モードの設定、クライアント資格情報の種類の設定、および資格情報の値の設定の 3 つの手順に基づいています。 これらの手順は、コードまたは構成を使用して実行できます。  
+ WCF セキュリティのプログラミングは、次を設定する 3 つの手順に基づいて: セキュリティ モードをクライアント資格情報の種類、および資格情報の値。 これらの手順は、コードまたは構成を使用して実行できます。  
   
 ## <a name="setting-the-security-mode"></a>セキュリティ モードの設定  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のセキュリティ モードに関する一般的なプログラミング手順は、次のとおりです。  
+ 次に、WCF のセキュリティ モードを使用したプログラミングの一般的な手順について説明します。  
   
 1.  アプリケーション要件を満たす適切な定義済みバインディングを選択します。 バインディングの選択肢の一覧は、次を参照してください。[システム指定のバインディング](../../../../docs/framework/wcf/system-provided-bindings.md)です。 既定では、ほとんどのバインディングでセキュリティが有効になっています。 1 つの例外は、<xref:System.ServiceModel.BasicHttpBinding>クラス (構成を使用する、 [ \<basicHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md))。  
   

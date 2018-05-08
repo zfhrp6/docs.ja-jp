@@ -1,24 +1,14 @@
 ---
 title: 定数の概要 (Visual Basic)
-ms.custom: ''
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - constants [Visual Basic]
 ms.assetid: 29016fe8-78b3-4dc8-90b8-1cfec2fa8ac9
-caps.latest.revision: 14
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 40330e8c2c60c866200e009a8280c7ec9c855435
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 2ec43254013df5444048b5197489c55217d5328a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="constants-overview-visual-basic"></a>定数の概要 (Visual Basic)
 定数とは、数値または文字列が変化しないの代わりに使用されるわかりやすい名前です。 定数は、同じである、名前が示すように、アプリケーションの実行中の値を格納します。 大幅に、コードの読みやすさを向上し、定数を使用して管理しやすくできます。 再度表示される値を含むコード内を使用すると、保存または明確な意味がないが困難な特定の番号によって異なります。  

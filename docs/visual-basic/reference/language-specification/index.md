@@ -1,23 +1,16 @@
 ---
 title: Visual Basic 言語仕様
 ms.date: 08/02/2017
-ms.prod: .net
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - resources [Visual Basic], specifications
 - Visual Basic code, specifications
 - specifications, Visual Basic
 ms.assetid: 42c30017-19d0-442e-87a2-850b66ddc3df
-caps.latest.revision: 14
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: a4bfab2f6f06cbe1ac971fc21d53a7336ad03c58
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: cfdf6945be3f440013716694e633e7ca9c064729
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="visual-basic-language-specification"></a>Visual Basic 言語仕様
 Visual Basic 言語仕様は、Visual Basic の文法と構文に関するすべての質問に対する回答の権限を持つソースです。 Visual Basic リファレンス ドキュメントで取り上げられていない、言語に関する詳細情報が含まれています。  

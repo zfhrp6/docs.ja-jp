@@ -1,11 +1,7 @@
 ---
-title: "VerifyClientKey 関数 (アンマネージ API リファレンス)"
-description: "VerifyClientKey 関数により、クライアント キーが正しいセキュリティ。"
+title: VerifyClientKey 関数 (アンマネージ API リファレンス)
+description: VerifyClientKey 関数により、クライアント キーが正しいセキュリティ。
 ms.date: 11/06/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: reference
 api_name:
 - VerifyClientKey
 api_location:
@@ -20,14 +16,11 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: ada878ff8bc430ab2a2d48cac13a81b1f64d39f6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ea8a74633d3e950f6cf7ba87c00a9efa45206545
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="verifyclientkey-function"></a>VerifyClientKey 関数
 により、クライアント キーは、適切なセキュリティ。  
@@ -46,12 +39,12 @@ LONG VerifyClientKey();
 
 戻り値で定義されている 0 以外のエラー コードは、関数が失敗した場合、 *WinError.h*です。
 
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** WMINet_Utils.def  
   
- **.NET framework のバージョン:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **.NET framework のバージョン:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>関連項目  
 [WMI およびパフォーマンス カウンター (アンマネージ API リファレンス)](index.md)

@@ -1,13 +1,6 @@
 ---
 title: Sub プロシージャ (Visual Basic)
-ms.custom: ''
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - Sub procedures [Visual Basic], about Sub procedures
 - statement blocks
@@ -18,14 +11,11 @@ helpviewer_keywords:
 - procedures [Visual Basic], Sub
 - syntax [Visual Basic], Sub procedures
 ms.assetid: 6a0a4958-ed0a-4d3d-8d31-0772c82bda58
-caps.latest.revision: 21
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 7258d57d2677042a2020097893a4f7a0adb35508
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 3286df1a5babfcf7d6b759ff5c9a920bb44f51ab
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="sub-procedures-visual-basic"></a>Sub プロシージャ (Visual Basic)
 A`Sub`プロシージャは、一連の Visual Basic ステートメントで囲まれた、`Sub`と`End Sub`ステートメントです。 `Sub`呼び出しコードに値を返さないが、プロシージャは、タスクを実行し、呼び出し元のコードにコントロールを返します。  
@@ -39,7 +29,7 @@ A`Sub`プロシージャは、一連の Visual Basic ステートメントで囲
 ## <a name="declaration-syntax"></a>宣言の構文  
  宣言の構文、`Sub`手順のとおりです。  
   
- `[` *修飾子* `] Sub` *subname* `[(` *parameterlist*  `)]`  
+ `[` *修飾子* `] Sub` *subname* `[(` *parameterlist* `)]`  
   
  `' Statements of the Sub procedure.`  
   
@@ -52,11 +42,11 @@ A`Sub`プロシージャは、一連の Visual Basic ステートメントで囲
   
  パラメーター リスト内の各パラメーターの構文は次のとおりです。  
   
- `[Optional] [ByVal | ByRef] [ParamArray]`  *parametername*`As`*データ型*   
+ `[Optional] [ByVal | ByRef] [ParamArray]`  *parametername*`As`*データ型*  
   
  パラメーターが省略可能な場合は、宣言の一部として既定値も指定する必要があります。 既定値を指定する構文は次のとおりです。  
   
- `Optional [ByVal | ByRef]`  *parametername*`As`*datatype*`=`*defaultvalue*   
+ `Optional [ByVal | ByRef]`  *parametername*`As`*datatype*`=`*defaultvalue*  
   
 ### <a name="parameters-as-local-variables"></a>ローカル変数としてパラメーター  
  コントロール、プロシージャに渡すと、各パラメーターは、ローカル変数として扱われます。 これは、その有効期間は、プロシージャのと同じことと、そのスコープは、プロシージャ全体を意味します。  

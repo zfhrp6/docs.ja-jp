@@ -1,13 +1,6 @@
 ---
 title: Visual Basic における有効期間
-ms.custom: ''
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - static variables [Visual Basic], lifetime
 - static variables [Visual Basic], Visual Basic
@@ -17,14 +10,11 @@ helpviewer_keywords:
 - lifetime [Visual Basic], Visual Basic
 - lifetime [Visual Basic]
 ms.assetid: bd91e390-690a-469a-9946-8dca70bc14e7
-caps.latest.revision: 14
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 14a75a2c3af52f63051d02df9341faf19c3b76c7
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: d32639f1c392d53a7e9f6258440b6c0925d27a5d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="lifetime-in-visual-basic"></a>Visual Basic における有効期間
 *有効期間*宣言された要素は、期間その中に、使用可能です。 変数は、有効期間がある唯一の要素です。 この目的のため、コンパイラは、プロシージャのパラメーターを処理し、関数は変数の特殊なケースとして返します。 変数の有効期間は、値を保持できる時間の期間を表します。 その有効期間全体でその値を変更することができますが、いくつかの値が常に格納します。  

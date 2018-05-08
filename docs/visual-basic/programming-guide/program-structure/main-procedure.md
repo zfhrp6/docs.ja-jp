@@ -1,13 +1,6 @@
 ---
-title: "Visual Basic の Main プロシージャ"
-ms.custom: 
+title: Visual Basic の Main プロシージャ
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Main
 helpviewer_keywords:
@@ -15,24 +8,21 @@ helpviewer_keywords:
 - Main method [Visual Basic]
 - main function
 ms.assetid: f0db283e-f283-4464-b521-b90858cc1b44
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 6de98ad4e470cd0becaf25f5a9a00c8095e44b15
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: 109bf94eb91292cfca700a9e456c8ab53e83d68f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="main-procedure-in-visual-basic"></a>Visual Basic の Main プロシージャ
 すべての Visual Basic アプリケーションが呼び出されるプロシージャを含める必要があります`Main`です。 このプロシージャは、開始ポイントし、アプリケーションの総合的な制御します。 .NET Framework の呼び出し、`Main`プロシージャ、アプリケーションが読み込まれたし、制御を渡す準備ができました。 記述する必要があります、Windows フォーム アプリケーションを作成する場合は、しない限り、`Main`が自分で実行されるアプリケーションのプロシージャです。  
   
- `Main`最初に実行するコードが含まれています。 `Main`プログラムの開始時に最初に読み込まれる形式を決定、アプリケーションのコピーがシステムで既に実行されているかどうかを調べる、アプリケーションの変数のセットを確立またはアプリケーションに必要なデータベースを開くことができます。  
+ `Main` 最初に実行するコードが含まれています。 `Main`プログラムの開始時に最初に読み込まれる形式を決定、アプリケーションのコピーがシステムで既に実行されているかどうかを調べる、アプリケーションの変数のセットを確立またはアプリケーションに必要なデータベースを開くことができます。  
   
 ## <a name="requirements-for-the-main-procedure"></a>メインのプロシージャの要件  
  (通常は拡張子が .exe) で自身で実行されるファイルを含める必要があります、`Main`プロシージャです。 (たとえば、拡張子は .dll) ライブラリで稼働していない、独自としないため、`Main`プロシージャです。 作成することができます、さまざまな種類のプロジェクトの要件は次のとおりです。  
   
--   コンソール アプリケーションは単独で実行、および少なくとも 1 つを指定する必要があります`Main`プロシージャです。 」を参照してください。  
+-   コンソール アプリケーションは単独で実行、および少なくとも 1 つを指定する必要があります`Main`プロシージャです。 である必要があります。  
   
 -   Windows フォーム アプリケーションは単独で実行します。 ただし、Visual Basic コンパイラに自動的に生成、`Main`などの手順と、アプリケーションをする必要はありません 1 つ作成します。  
   
@@ -56,7 +46,7 @@ ms.lasthandoff: 12/21/2017
     End Module  
     ```  
   
--   `Main`返すことも、`Integer`値で、プログラムの終了コードとしてオペレーティング システムを使用します。 その他のプログラムは、Windows ERRORLEVEL 値を確認するには、このコードをテストできます。 宣言する必要があります、終了コードを返す`Main`として、`Function`プロシージャの代わりに、`Sub`プロシージャです。  
+-   `Main` 返すことも、`Integer`値で、プログラムの終了コードとしてオペレーティング システムを使用します。 その他のプログラムは、Windows ERRORLEVEL 値を確認するには、このコードをテストできます。 宣言する必要があります、終了コードを返す`Main`として、`Function`プロシージャの代わりに、`Sub`プロシージャです。  
   
     ```  
     Module mainModule  
@@ -73,7 +63,7 @@ ms.lasthandoff: 12/21/2017
     End Module  
     ```  
   
--   `Main`とることも、`String`引数として配列します。 配列内の各文字列には、プログラムの実行に使用したコマンドライン引数のいずれかが含まれています。 その値に応じて異なるアクションを実行できます。  
+-   `Main` とることも、`String`引数として配列します。 配列内の各文字列には、プログラムの実行に使用したコマンドライン引数のいずれかが含まれています。 その値に応じて異なるアクションを実行できます。  
   
     ```  
     Module mainModule  
@@ -117,7 +107,7 @@ ms.lasthandoff: 12/21/2017
     End Module  
     ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:Microsoft.VisualBasic.Interaction.MsgBox%2A>  
  <xref:System.Array.Length%2A>  
  <xref:Microsoft.VisualBasic.Information.UBound%2A>  

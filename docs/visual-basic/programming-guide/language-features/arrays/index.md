@@ -1,11 +1,6 @@
 ---
 title: Visual Basic における配列
-ms.custom: ''
 ms.date: 12/06/2017
-ms.prod: .net
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Array
 helpviewer_keywords:
@@ -14,12 +9,11 @@ helpviewer_keywords:
 ms.assetid: dbf29737-b589-4443-bee6-a27588d9c67e
 author: rpetrusha
 ms.author: ronpet
-ms.manager: wpickett
-ms.openlocfilehash: d223ca8b0ff59a13c31fa777e5cb6a97918421c6
-ms.sourcegitcommit: 01ea3686e74ff05e4f6de3d8d46dc603d051ec00
+ms.openlocfilehash: 3b6c1db0131f2a150dc1b00dd5e6dafc3a418f05
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/13/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="arrays-in-visual-basic"></a>Visual Basic における配列
 配列と呼ばれるものの値のセットとは、*要素*、互いに論理的に関連します。 たとえば、配列で構成されます; 学校の各学年の生徒の数配列の各要素は、1 つ学年の生徒の数です。 同様に、配列が、クラスの学生の成績のあります。配列の各要素は、1 つのレベルです。    
@@ -126,7 +120,7 @@ Dim sales()() As Double = New Double(11)() {}
   
 ##  <a name="storing-values-in-an-array"></a>配列への値の格納
  
- 配列のそれぞれの位置には、 `Integer`型のインデックスを使用してアクセスできます。 かっこで囲まれたインデックスを使用して配列のそれぞれの位置を参照することで、配列の値を格納および取得することができます。 多次元配列のインデックスは、コンマ (,) で区切られます。 配列の次元ごとに 1 つのインデックスが必要です。 
+ 配列のそれぞれの位置には、`Integer` 型のインデックスを使用してアクセスできます。 かっこで囲まれたインデックスを使用して配列のそれぞれの位置を参照することで、配列の値を格納および取得することができます。 多次元配列のインデックスは、コンマ (,) で区切られます。 配列の次元ごとに 1 つのインデックスが必要です。 
 
 次の例では、格納および配列の値を取得するステートメントを示します。
   
@@ -165,7 +159,7 @@ Dim sales()() As Double = New Double(11)() {}
   
  [!code-vb[iterate-one-dimensional-array](../../../../../samples/snippets/visualbasic/programming-guide/language-features/arrays/iterate1d.vb)]  
   
- 次の例を使用して、多次元配列を反復処理する[ `For...Next` ](../../../../visual-basic/language-reference/statements/for-next-statement.md)ステートメントです。 <xref:System.Array.GetUpperBound%2A> メソッドには、次元を指定するパラメーターがあります。 `GetUpperBound(0)`最初の次元のインデックスの最大値を返しますと`GetUpperBound(1)`2 番目の次元のインデックスの最大値を返します。
+ 次の例を使用して、多次元配列を反復処理する[ `For...Next` ](../../../../visual-basic/language-reference/statements/for-next-statement.md)ステートメントです。 <xref:System.Array.GetUpperBound%2A> メソッドには、次元を指定するパラメーターがあります。 `GetUpperBound(0)` 最初の次元のインデックスの最大値を返しますと`GetUpperBound(1)`2 番目の次元のインデックスの最大値を返します。
   
  [!code-vb[iterate-two-dimensional-array](../../../../../samples/snippets/visualbasic/programming-guide/language-features/arrays/iterate2d.vb)]  
   
@@ -246,12 +240,12 @@ Dim sales()() As Double = New Double(11)() {}
 [!code-vb[jagged-array-size](../../../../../samples/snippets/visualbasic/programming-guide/language-features/arrays/jagged-length.vb)] 
 
 ## <a name="zero-length-arrays"></a>長さ 0 の配列  
-Visual Basic が初期化されていない配列間で区別 (値が配列`Nothing`) および*長さ 0 の配列*または空の配列 (配列要素が存在しないことです)。初期化されていない配列である多次元化されていないか、任意の値がそれに割り当てられます。 例:
+Visual Basic が初期化されていない配列間で区別 (値が配列`Nothing`) および*長さ 0 の配列*または空の配列 (配列要素が存在しないことです)。初期化されていない配列である多次元化されていないか、任意の値がそれに割り当てられます。 例えば:
 
 ```vb
 Dim arr() As String
 ```
-長さ 0 の配列は、-1 のディメンションと宣言されます。 例:
+長さ 0 の配列は、-1 のディメンションと宣言されます。 例えば:
 
 ```vb
 Dim arrZ(-1) As String

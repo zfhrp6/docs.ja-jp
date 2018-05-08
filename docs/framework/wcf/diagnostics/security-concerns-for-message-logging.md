@@ -1,24 +1,14 @@
 ---
-title: "メッセージ ログ記録のセキュリティの考慮事項"
-ms.custom: 
+title: メッセージ ログ記録のセキュリティの考慮事項
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 21f513f2-815b-47f3-85a6-03c008510038
-caps.latest.revision: "17"
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: 87815be1f0951d54a8d9eedbfdcaca038fa6fe09
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: c8b2fe3300bacc76e63f9d533c613171d03600d7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="security-concerns-for-message-logging"></a>メッセージ ログ記録のセキュリティの考慮事項
 ここでは、メッセージ ログに表示される機密データだけでなく、メッセージ ログによって生成されるイベントを保護する方法についても説明します。  
@@ -26,7 +16,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="security-concerns"></a>セキュリティに関する注意事項  
   
 ### <a name="logging-sensitive-information"></a>機密情報のログ記録  
- [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] では、アプリケーション固有のヘッダーおよび本文内のデータを変更することはありません。 また、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、アプリケーション固有のヘッダーまたは本文データにある個人情報も追跡しません。  
+ Windows Communication Foundation (WCF) では、アプリケーション固有のヘッダーと本文内のデータは変更しません。 また、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、アプリケーション固有のヘッダーまたは本文データにある個人情報も追跡しません。  
   
  メッセージのログ記録が有効になっていると、アプリケーション固有ヘッダー内にある個人情報 (クエリ文字列など)、および本文情報 (クレジット カード番号) がログ内で確認できるようになります。 アプリケーションを配置するユーザーは、構成ファイルとログ ファイルに対するアクセス制御を実施する必要があります。 この種の情報を表示しないようにするには、ログ記録を無効にするか、ログを共有する場合にこの種のデータにフィルターをかけて除外します。  
   
@@ -120,6 +110,6 @@ ms.lasthandoff: 12/22/2017
   
  これらのイベントは、Windows に付属するイベント ビューアー ツールを使用して表示できます。 詳細については、次を参照してください。[イベント ログ](../../../../docs/framework/wcf/diagnostics/event-logging/index.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [メッセージ ログ](../../../../docs/framework/wcf/diagnostics/message-logging.md)  
  [トレースに関するセキュリティの考慮事項と役立つヒント](../../../../docs/framework/wcf/diagnostics/tracing/security-concerns-and-useful-tips-for-tracing.md)

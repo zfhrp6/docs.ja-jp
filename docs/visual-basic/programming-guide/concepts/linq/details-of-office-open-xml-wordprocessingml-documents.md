@@ -1,22 +1,12 @@
 ---
-title: "Office の詳細は Open XML WordprocessingML ドキュメント (Visual Basic)"
-ms.custom: 
+title: Office の詳細は Open XML WordprocessingML ドキュメント (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 6b1e155c-7174-4244-a6de-0fddf9a0b0d7
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 36d397853f042454fd14b888029dee7dbe383f68
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 5e23b8aad1d6339c2c9a71143d72a5f0d6d7eee6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="details-of-office-open-xml-wordprocessingml-documents-visual-basic"></a>Office の詳細は Open XML WordprocessingML ドキュメント (Visual Basic)
 ここでは、Office Open XML WordprocessingML ドキュメントの詳細について説明します。 Open XML ドキュメントのドキュメント パーツとスタイル パーツの例も示します。  

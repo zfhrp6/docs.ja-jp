@@ -1,24 +1,14 @@
 ---
-title: "方法 : 信頼できるセッション内でメッセージをセキュリティで保護する"
-ms.custom: 
+title: '方法 : 信頼できるセッション内でメッセージをセキュリティで保護する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: aee33e50-936f-4486-9ca8-c1520c19a62d
-caps.latest.revision: "8"
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: 2604b9dacf11b9971b10d23d9a807092ddf07830
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 4c320d74f7e7966bfa35c824dbe30da768cd1447
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-secure-messages-within-reliable-sessions"></a>方法 : 信頼できるセッション内でメッセージをセキュリティで保護する
 
@@ -36,9 +26,9 @@ ms.lasthandoff: 01/19/2018
 
 この構成手順を基になる例の元のコピーを次を参照してください。、 [WS 信頼できるセッション](../../../../docs/framework/wcf/samples/ws-reliable-session.md)です。
 
-設定して行われます 2 番目のタスクの重要な項目、`mode`の属性、 **\<セキュリティ >**要素に含まれている、 **\<バインディング >** 。要素のクライアントとサービスを`Message`です。
+設定して行われます 2 番目のタスクの重要な項目、`mode`の属性、 **\<セキュリティ >** 要素に含まれている、 **\<バインディング >** 。要素のクライアントとサービスを`Message`です。
 
-設定して行われます 3 番目のタスクの重要な項目、`clientCredentialType`の属性、 **\<メッセージ >**要素に含まれている、 **\<セキュリティ >** 。要素のクライアントとサービスを`Certificate`です。
+設定して行われます 3 番目のタスクの重要な項目、`clientCredentialType`の属性、 **\<メッセージ >** 要素に含まれている、 **\<セキュリティ >** 。要素のクライアントとサービスを`Certificate`です。
 
 > [!NOTE]
 > メッセージ セキュリティを使用して、信頼できるセッションで、最初のエラー発生時に例外をスローする代わりに、タイムアウトが発生するまでは、認証されていないクライアントを認証すると信頼性の高いメッセージングされます。
@@ -55,11 +45,11 @@ ms.lasthandoff: 01/19/2018
 
 1. 適切なバインド要素を追加、 [ **\<バインド >** ](../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)構成ファイルの要素。 次の例では追加、 [  **\<wsHttpBinding >** ](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)要素。
 
-1. 追加、 **\<バインディング >**要素とその`name`属性を適切な値にします。 例では、名前を使用して`MessageSecurity`です。
+1. 追加、 **\<バインディング >** 要素とその`name`属性を適切な値にします。 例では、名前を使用して`MessageSecurity`です。
 
-1. 追加、 **\<セキュリティ >**要素、`mode`属性を`Message`です。
+1. 追加、 **\<セキュリティ >** 要素、`mode`属性を`Message`です。
 
-1. 内で、 **\<セキュリティ >**要素を追加、 **\<メッセージ >**要素、`clientCredentialType`属性を`Certificate`です。
+1. 内で、 **\<セキュリティ >** 要素を追加、 **\<メッセージ >** 要素、`clientCredentialType`属性を`Certificate`です。
 
 ```xml
 <wsHttpBinding>

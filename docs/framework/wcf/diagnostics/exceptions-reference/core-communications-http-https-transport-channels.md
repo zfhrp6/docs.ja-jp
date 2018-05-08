@@ -1,27 +1,15 @@
 ---
-title: "コア通信: HTTP、HTTPS トランスポート チャネル"
-ms.custom: 
+title: 'コア通信: HTTP、HTTPS トランスポート チャネル'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 6c0a23c9-a663-461c-bdab-58b4d3e23642
-caps.latest.revision: "6"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 7d67bb810ced381749dca0dc698ca405bb59cfb0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: fbdb5b350425aad7108402dec939f036e971d053
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="core-communications-httphttps-transport-channels"></a>コア通信 : HTTP/HTTPS トランスポート チャネル
-ここでは、[!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] の HTTP/HTTPS トランスポート チャネルによって生成されるすべての例外を示します。  
+このトピックでは、Windows Communication Foundation (WCF) トランスポートの HTTP または HTTPS チャネルによって生成されるすべての例外を示します。  
   
 ## <a name="exception-list"></a>例外の一覧  
   
@@ -32,7 +20,7 @@ ms.lasthandoff: 12/22/2017
 |Hosting_SslSettingsMisconfigured|指定されたサービスの SSL (Secure Sockets Layer) 設定が、インターネット インフォメーション サービスの SSL 設定と一致しません。|  
 |HttpAuthSchemeAndClientCert|HTTPS リスナー ファクトリが、クライアント証明書と指定された認証方式を要求するように構成されています。 ただし、クライアント認証の方式は、一度に 1 種類しか要求できません。|  
 |HttpReceiveFailure|指定された対象への HTTP 応答の受信中にエラーが発生しました。 サービス エンドポイント バインディングが HTTP プロトコルを使用していない可能性があります。 サービスがシャットダウンしたため、HTTP 要求コンテキストがサーバーによって中止された可能性もあります。 詳細については、サーバー ログを参照してください。|  
-|HttpRegistrationAccessDenied|HTTP は指定された URL を登録できません。 プロセスにこの名前空間へのアクセス権がありません (詳細については、http://msdn.microsoft.com/library/default.asp?url=/library/http/http/namespace_reservations_registrations_and_routing.asp を参照してください)。|  
+|HttpRegistrationAccessDenied|HTTP は指定された URL を登録できません。 プロセスにこの名前空間へのアクセス権がありません (を参照してくださいhttp://msdn.microsoft.com/library/default.asp?url=/library/http/http/namespace_reservations_registrations_and_routing.asp詳細)。|  
 |HttpRegistrationAlreadyExists|HTTP は指定された URL を登録できません。 別のアプリケーションが既にこの URL を HTTP.SYS に登録しています。|  
 |HttpRegistrationPortInUse|HTTP が指定された URL を登録できませんでした。指定された TCP ポートは別のアプリケーションが使用しています。|  
 |HttpSendFailure|指定された対象への HTTP 要求の発行中にエラーが発生しました。 この原因がセキュリティ バインディングの不一致ではないことを確認してください。 また、サービスが SSL (Secure Sockets Layer) 用に構成されていないことも確認してください。|  

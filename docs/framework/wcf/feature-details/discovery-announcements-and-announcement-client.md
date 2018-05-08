@@ -1,27 +1,15 @@
 ---
-title: "探索アナウンスとアナウンス クライアント"
-ms.custom: 
+title: 探索アナウンスとアナウンス クライアント
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 426c6437-f8d2-4968-b23a-18afd671aa4b
-caps.latest.revision: "6"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 67eab6a5b35e29fe3df09ab286090433d25e8ca3
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: c32aca5e6deab01423d61c516ee924d00bc041ee
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="discovery-announcements-and-announcement-client"></a>探索アナウンスとアナウンス クライアント
-[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の探索機能では、コンポーネントがその可用性をアナウンスできます。 そのように構成されている場合、サービスは Hello アナウンスと Bye アナウンスを送信します。 クライアントまたはその他のコンポーネントは、それらのアナウンス メッセージをリッスンして、対応します。 これにより、クライアントは別の手段でサービスを認識します。 アナウンス機能にはいくつかの用途があります。たとえば、サービスがネットワークに頻繁に出入りする場合は、サービスを検索するよりも、アナウンスを利用する方が効果的です。 この方法を使用すると、ネットワーク トラフィックが減少し、クライアントは、アナウンスを受信するとすぐに、そのサービスが存在するかどうかを知ることができます。  
+WCF discovery 機能には、その可用性をアナウンス コンポーネントができるようにします。 そのように構成されている場合、サービスは Hello アナウンスと Bye アナウンスを送信します。 クライアントまたはその他のコンポーネントは、それらのアナウンス メッセージをリッスンして、対応します。 これにより、クライアントは別の手段でサービスを認識します。 アナウンス機能にはいくつかの用途があります。たとえば、サービスがネットワークに頻繁に出入りする場合は、サービスを検索するよりも、アナウンスを利用する方が効果的です。 この方法を使用すると、ネットワーク トラフィックが減少し、クライアントは、アナウンスを受信するとすぐに、そのサービスが存在するかどうかを知ることができます。  
   
 ## <a name="discovery-announcements"></a>探索アナウンス  
  アナウンスが構成されたサービスがネットワークに参加し、探索可能になると、そのサービスは、リッスンしているクライアントにそのサービスの可用性をアナウンスする Hello メッセージを送信します。 このメッセージには、サービスのコントラクト、エンドポイント アドレス、および関連付けられたスコープなど、探索関連の情報が含まれています。 アナウンス メッセージを送信する先を <xref:System.ServiceModel.Discovery.AnnouncementEndpoint> クラスで指定できます。 アナウンス エンドポイントが <xref:System.ServiceModel.Discovery.UdpAnnouncementEndpoint> の場合、Hello および Bye はマルチキャストです。また、アナウンス エンドポイントがユニキャストの場合、メッセージは指定されたエンドポイントに直接送信されます。  
