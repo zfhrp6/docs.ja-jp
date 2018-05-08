@@ -1,4 +1,4 @@
----
+﻿---
 title: Windows Communication Foundation とは
 ms.date: 03/30/2017
 helpviewer_keywords:
@@ -47,23 +47,23 @@ Windows Communication Foundation (WCF) は、サービス指向アプリケー�
 -   **サービス メタデータ**  
   
      [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] では、WSDL、XML スキーマ、WS-Policy などの業界標準で指定された形式を使用するサービス メタデータの公開をサポートしています。 このメタデータを使用して、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスにアクセスするためのクライアントを自動生成および構成できます。 メタデータは HTTP や HTTPS 上で、または Web サービス メタデータ交換標準を使用して公開できます。 詳細については、次を参照してください。[メタデータ](../../../docs/framework/wcf/feature-details/metadata.md)です。  
-  
+
 -   **データ コントラクト**  
   
      [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] は [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)]を使用して作成されているため、適用するコントラクトを提供するコードフレンドリなメソッドが含まれています。 汎用的な型のコントラクトの 1 つにデータ コントラクトがあります。 本質的に、Visual C# または Visual Basic を使用してサービスをコード化した場合、データを処理する最も簡単な方法は、データ エンティティを表すクラスにデータ エンティティに属するプロパティを作成する方法です。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] には、このような簡単な方法でデータを使用する包括的なシステムがあります。 データを表すクラスを作成すると、設計したデータ型にクライアントが準拠できるメタデータがサービスによって自動生成されます。 詳細については、「[データコントラクトの使用](../../../docs/framework/wcf/feature-details/using-data-contracts.md)」を参照してください。  
-  
+
 -   **セキュリティ**  
   
      メッセージを暗号化してプライバシーを保護し、メッセージを受信する前にユーザーが自身を認証することを必須化することができます。 SSL や WS-SecureConversation などよく知られた標準を使用してセキュリティを実装できます。 詳細については、[セキュリティ](../../../docs/framework/wcf/feature-details/security.md)に関するページをご覧ください。  
-  
+
 -   **複数のトランスポートとエンコーディング**  
   
      メッセージは複数の組み込みトランスポート プロトコルおよびエンコーディングのいずれかを使用して送信できます。 最も一般的なプロトコルとエンコーディングは、テキスト エンコードを使用して、World Wide Web 上のハイパー テキスト転送プロトコル (HTTP) を使用して SOAP メッセージを送信します。 また、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] では、TCP、名前付きパイプ、MSMQ でメッセージを送信することもできます。 これらのメッセージはテキストとしてエンコードするか、最適化されたバイナリ形式を使用することができます。  バイナリ データは MTOM 標準を使用することで効率的に送信できます。 提供されているトランスポートまたはエンコーディングのいずれもニーズを満たさない場合は、独自のカスタム トランスポートまたはエンコーディングを作成できます。 詳細については、トランスポートとエンコーディングでサポートされている[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]を参照してください[トランスポート](../../../docs/framework/wcf/feature-details/transports.md)です。  
-  
+
 -   **キューに置かれた信頼性のあるメッセージ**  
   
      [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] では、WS-Reliable Messaging 経由で MSMQ を使用して実装された、信頼性の高いセッションで信頼性の高いメッセージ交換をサポートしています。 詳細については、信頼性があり、キューに置かれたメッセージングでのサポート[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]を参照してください[キューと信頼できるセッション](../../../docs/framework/wcf/feature-details/queues-and-reliable-sessions.md)です。  
-  
+
 -   **非揮発性メッセージ**  
   
      非揮発性メッセージは、通信の中断によって失われることがないメッセージです。 非揮発性メッセージ パターンのメッセージは常にデータベースに保存されます。 中断が発生した場合、接続復旧時にデータベースでメッセージの交換を再開できます。 Windows Workflow Foundation (WF) を使用して非揮発性メッセージを作成することもできます。 詳細については、次を参照してください。[ワークフロー サービス](../../../docs/framework/wcf/feature-details/workflow-services.md)です。  
@@ -71,7 +71,7 @@ Windows Communication Foundation (WCF) は、サービス指向アプリケー�
 -   **トランザクション**  
   
      WCF では、WS-AtomicTtransactions、<xref:System.Transactions> 名前空間の API、および Microsoft 分散トランザクション コーディネーターの 3 つのトランザクション モデルの 1 つを使用したトランザクションもサポートしています。  サポートするトランザクションの詳細については[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]を参照してください[トランザクション](../../../docs/framework/wcf/feature-details/transactions-in-wcf.md)です。  
-  
+
 -   **AJAX および REST サポート**  
   
      REST は、進化し続ける Web 2.0 テクノロジの一例です。 SOAP エンベロープにラップされていない "書式なし" XML データを処理するように[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] を構成できます。 また、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] を拡張して、ATOM (一般的な RSS 標準) などの特定の XML 形式や、JSON (JavaScript Object Notation) などの XML 以外の形式をサポートすることもできます。  
