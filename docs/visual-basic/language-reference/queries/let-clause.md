@@ -1,12 +1,6 @@
 ---
 title: Let 句 (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.QueryLet
 helpviewer_keywords:
@@ -14,14 +8,11 @@ helpviewer_keywords:
 - Let clause [Visual Basic]
 - Let statement [Visual Basic]
 ms.assetid: 981aa516-16eb-4c53-b1f1-5aa3e82f316e
-caps.latest.revision: 16
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 70e47517a62f58dcababd31c26277417b62eab66
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 6484da5329c8240735b7c35f506637dd01cbeda4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="let-clause-visual-basic"></a>Let 句 (Visual Basic)
 値を計算し、クエリ内で新しい変数に代入します。  
@@ -36,8 +27,8 @@ Let variable = expression [, ...]
   
 |用語|定義|  
 |---|---|  
-|`variable`|必須です。 指定した式の結果を参照に使用できるエイリアスです。|  
-|`expression`|必須です。 評価し、指定された変数に割り当てられている式です。|  
+|`variable`|必須。 指定した式の結果を参照に使用できるエイリアスです。|  
+|`expression`|必須。 評価し、指定された変数に割り当てられている式です。|  
   
 ## <a name="remarks"></a>コメント  
  `Let`句では、計算値はそれぞれのクエリの結果とエイリアスを使用してそれらを参照することができます。 エイリアスをなどの他の句で使用できます、`Where`句。 `Let`句では、クエリに含まれる式の句の別名を指定し、式の句が使用されるたびに、エイリアスに置き換えるために読みやすくクエリ ステートメントを作成することができます。  

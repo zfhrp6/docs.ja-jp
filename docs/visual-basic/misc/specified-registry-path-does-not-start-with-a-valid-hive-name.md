@@ -1,18 +1,12 @@
 ---
-title: "指定されたレジストリ パスには、先頭に有効なハイブ名がありません"
+title: 指定されたレジストリ パスには、先頭に有効なハイブ名がありません
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-visual-basic
-ms.topic: article
 ms.assetid: afb1a03b-4516-450b-aab1-827a93f9e99d
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 88bd789cb604f1f3239d3f4ba747d1794f140669
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: 391ba85d944e301568d3b5973d6dab705bb9e783
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="specified-registry-path-does-not-start-with-a-valid-hive-name"></a>指定されたレジストリ パスには、先頭に有効なハイブ名がありません
 指定されたレジストリ パスには、先頭に正しいハイブ名がありません。 正しいハイブ名は、以下のとおりです。  
@@ -35,7 +29,7 @@ ms.lasthandoff: 12/21/2017
   
 -   正しいハイブ名を指定していることを確認します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [文字列の操作](../../standard/base-types/manipulating-strings.md)  
  [読み取りとレジストリ (Visual Basic) への書き込み](../developing-apps/programming/computer-resources/reading-from-and-writing-to-the-registry.md)  
  [My.Computer.Registry](xref:Microsoft.VisualBasic.MyServices.RegistryProxy)

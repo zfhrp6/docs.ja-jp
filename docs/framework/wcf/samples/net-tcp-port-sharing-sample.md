@@ -1,26 +1,12 @@
 ---
 title: Net.TCP ポート共有のサンプル
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 03da5959-0574-4e91-8a53-05854b6c55dc
-caps.latest.revision: 18
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 0db4148f9be6db97dec2b8b680dad56171106b2c
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: cfd87868a5ecc557ccca1003f54f3a896b2f9fcc
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="nettcp-port-sharing-sample"></a>Net.TCP ポート共有のサンプル
 TCP/IP プロトコルはポートと呼ばれる 16 ビットの番号を使用して、同じコンピュータ上で実行されている複数のネットワーク アプリケーションへの接続を区別します。 アプリケーションがポートをリッスンすると、そのポートのすべての TCP トラフィックがそのアプリケーションに送られます。 他のアプリケーションは、そのポートを同時にリッスンできません。  
@@ -30,13 +16,13 @@ TCP/IP プロトコルはポートと呼ばれる 16 ビットの番号を使用
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
+>  このディレクトリが存在しない場合に、 [Windows Communication Foundation (WCF) および .NET Framework 4 向けの Windows Workflow Foundation (WF) サンプル](http://go.microsoft.com/fwlink/?LinkId=150780)すべて Windows Communication Foundation (WCF) をダウンロードして[!INCLUDE[wf1](../../../../includes/wf1-md.md)]サンプルです。 このサンプルは、次のディレクトリに格納されます。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Net\TCP\PortSharing`  
   
  多くのプロトコルは、使用する標準または既定のポート番号を持っています。 たとえば、HTTP プロトコルは一般的に TCP ポート 80 を使用します。 インターネット インフォメーション サービス (IIS) には、複数の HTTP アプリケーション間でポートを共有するためのリスナーがあります。 IIS はポートを直接リッスンし、メッセージ ストリーム内の情報に基づいて、そのメッセージを適切なアプリケーションに転送します。 これにより、複数の HTTP アプリケーションで、メッセージ受信用のポートの予約が競合することなく同じポート番号を使用できます。  
   
- NetTcp ポート共有は、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]同様に複数のネットワーク アプリケーションを 1 つのポートを共有できるようにする機能。 NetTcp ポート共有サービスは net.tcp プロトコルを使用して接続を受け入れ、メッセージの送信先アドレスに基づいてメッセージを転送します。  
+ NetTcp ポート共有は、同様に複数のネットワーク アプリケーションを 1 つのポートを共有できるようにする Windows Communication Foundation (WCF) 機能です。 NetTcp ポート共有サービスは net.tcp プロトコルを使用して接続を受け入れ、メッセージの送信先アドレスに基づいてメッセージを転送します。  
   
  既定では、NetTcp ポート共有サービスは有効ではありません。 このサンプルを実行する前に、手動でサービスを有効にする必要があります。 詳細については、次を参照してください。[する方法: Net.TCP ポート共有サービスを有効にする](../../../../docs/framework/wcf/feature-details/how-to-enable-the-net-tcp-port-sharing-service.md)です。 サービスが無効な場合は、サーバー アプリケーションの開始時に例外がスローされます。  
   

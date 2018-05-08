@@ -1,19 +1,14 @@
 ---
 title: Visual Studio Tools for Docker (Windows 上の Visual Studio) を使用
 description: Microsoft プラットフォームとツールでコンテナー化された Docker アプリケーションのライフサイクル
-ms.prod: .net
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
-ms.topic: article
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 7f000cfdaf9e750869ed6495b8198fd76e4c23b0
-ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
+ms.openlocfilehash: 05db5cf8e8dc073dd341fbffab619c326b48f136
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-visual-studio-tools-for-docker-visual-studio-on-windows"></a>Visual Studio Tools for Docker (Windows 上の Visual Studio) を使用
 

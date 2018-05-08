@@ -2,10 +2,6 @@
 title: Get 関数 (アンマネージ API リファレンス)
 description: Get 関数は、指定されたプロパティ値を取得します。
 ms.date: 11/06/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: reference
 api_name:
 - Get
 api_location:
@@ -20,14 +16,11 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 69312030689ab1b87e3aadd040395f06e1c94ac8
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 2f837a526879f80177bc9979e1d7671edfcd8d4f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="get-function"></a>Get 関数
 存在する場合は、指定されたプロパティ値を取得します。
@@ -59,13 +52,13 @@ HRESULT Get (
 `wszName`  
 [in]プロパティの名前です。
 
-`lFlags`[in]予約されています。 このパラメーターは、0 を指定する必要があります。
+`lFlags` [in]予約されています。 このパラメーターは、0 を指定する必要があります。
 
-`pVal`[out]関数が正常に返された場合の値が含まれています、`wszName`プロパティです。 `pval`引数には、正しい型および修飾子の値が割り当てられています。
+`pVal` [out]関数が正常に返された場合の値が含まれています、`wszName`プロパティです。 `pval`引数には、正しい型および修飾子の値が割り当てられています。
 
-`pvtType`[out]関数が正常に返された場合は、 [CIM 型の定数](https://msdn.microsoft.com/library/aa386309(v=vs.85).aspx)プロパティの型を示すです。 その値にはあります`null`です。 
+`pvtType` [out]関数が正常に返された場合は、 [CIM 型の定数](https://msdn.microsoft.com/library/aa386309(v=vs.85).aspx)プロパティの型を示すです。 その値にはあります`null`です。 
 
-`plFlavor`[out]関数が正常に返された場合は、プロパティの原点に関する情報を受け取ります。 その値を指定できます`null`、またはいずれかで定義されている次の WBEM_FLAVOR_TYPE 定数の*WbemCli.h*ヘッダー ファイル。 
+`plFlavor` [out]関数が正常に返された場合は、プロパティの原点に関する情報を受け取ります。 その値を指定できます`null`、またはいずれかで定義されている次の WBEM_FLAVOR_TYPE 定数の*WbemCli.h*ヘッダー ファイル。 
 
 |定数  |[値]  |説明  |
 |---------|---------|---------|
@@ -93,12 +86,12 @@ HRESULT Get (
 
 `pVal`引数には、正しい型および修飾子と COM の値が割り当てられている[VariantInit](https://msdn.microsoft.com/library/ms221402(v=vs.85).aspx)関数
 
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** WMINet_Utils.idl  
   
- **.NET framework のバージョン:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **.NET framework のバージョン:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>関連項目  
 [WMI およびパフォーマンス カウンター (アンマネージ API リファレンス)](index.md)

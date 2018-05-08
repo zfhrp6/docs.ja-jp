@@ -1,12 +1,6 @@
 ---
 title: Distinct 句 (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.QueryDistinct
 helpviewer_keywords:
@@ -14,14 +8,11 @@ helpviewer_keywords:
 - Distinct statement [Visual Basic]
 - queries [Visual Basic], Distinct
 ms.assetid: 86f42614-0d8f-4ffc-b888-ce8a37a8d36a
-caps.latest.revision: 15
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 6ed92d5d601c1ec329728346ac881c4fa2bad8aa
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 4b0ce12f6361d3dc6e5cc3601e96fc3a9bcf3841
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="distinct-clause-visual-basic"></a>Distinct 句 (Visual Basic)
 次のクエリ句で、重複を回避するのには、現在の範囲変数の値を制限します。  

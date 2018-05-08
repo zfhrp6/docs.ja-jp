@@ -1,13 +1,6 @@
 ---
-title: "x:Static のマークアップ拡張機能"
-ms.custom: 
+title: x:Static のマークアップ拡張機能
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - StaticExtension
 - xStatic
@@ -17,16 +10,11 @@ helpviewer_keywords:
 - Static markup extension in XAML [XAML Services]
 - XAML [XAML Services], x:Static markup extension
 ms.assetid: 056aee79-7cdd-434f-8174-dfc856cad343
-caps.latest.revision: "25"
-author: wadepickett
-ms.author: wpickett
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 647bfed7b321a949090f6da047f9b8105d335101
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 980bf6a1bdb19afd5c8d3c798d31037ab8cd7086
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="xstatic-markup-extension"></a>x:Static のマークアップ拡張機能
 定義されているすべての静的な値でコードのエンティティを参照して、 [!INCLUDE[TLA#tla_cls](../../../includes/tlasharptla-cls-md.md)]– 準拠した方法です。 参照される静的プロパティは、XAML では、プロパティの値を提供する使用できます。  
@@ -41,7 +29,7 @@ ms.lasthandoff: 12/22/2017
   
 |||  
 |-|-|  
-|`prefix`|任意。 割り当てられた、既定以外の XAML 名前空間を表すプレフィックスです。 `prefix`明示的に使用量のため表示を既定の XAML 名前空間から静的なプロパティを参照することはほとんどありません。 「解説」を参照してください。|  
+|`prefix`|任意。 割り当てられた、既定以外の XAML 名前空間を表すプレフィックスです。 `prefix` 明示的に使用量のため表示を既定の XAML 名前空間から静的なプロパティを参照することはほとんどありません。 「解説」を参照してください。|  
 |`typeName`|必須。 目的の静的メンバーを定義する型の名前。|  
 |`staticMemberName`|必須。 静的な値が必要なメンバー (定数、静的なプロパティ、フィールド、または列挙値) の名前。|  
   
@@ -68,9 +56,9 @@ ms.lasthandoff: 12/22/2017
   
  技術的に可能な他の 2 つの XAML 使用法があります。 ただし、これらの使用方法は一般的ではないためにが不必要に詳細です。  
   
- **オブジェクトの要素の構文:** `<x:Static Member="` `prefix` `:` `typeName` `.` `staticMemberName``" .../>`  
+ **オブジェクトの要素の構文:** `<x:Static Member="` `prefix` `:` `typeName` `.` `staticMemberName` `" .../>`  
   
- **属性が初期化文字列の明示的なメンバー プロパティと構文:** `<` `object`  ``  `property` `="{x:Static Member=` `prefix` `:` `typeName` `.` `staticMemberName``}" .../>`  
+ **初期化文字列の明示的なメンバーのプロパティ属性の構文:** `<` `object` `` `property` `="{x:Static Member=` `prefix` `:` `typeName` `.` `staticMemberName` `}" .../>`  
   
  .NET Framework XAML サービス実装では、このマークアップ拡張機能の処理がによって定義された、<xref:System.Windows.Markup.StaticExtension>クラスです。  
   
@@ -87,6 +75,6 @@ ms.lasthandoff: 12/22/2017
   
  WPF のプレフィックスと XAML 名前空間を使用する方法の詳細については、次を参照してください。 [XAML 名前空間と WPF XAML のマッピングの Namespace](../../../docs/framework/wpf/advanced/xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [x:Type マークアップ拡張機能](../../../docs/framework/xaml-services/x-type-markup-extension.md)  
  [WPF から System.Xaml に移行した型](../../../docs/framework/xaml-services/types-migrated-from-wpf-to-system-xaml.md)

@@ -1,22 +1,12 @@
 ---
-title: "リフレクション (Visual Basic) を使用して属性へのアクセス"
-ms.custom: 
+title: リフレクション (Visual Basic) を使用して属性へのアクセス
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: c56e41da-5433-464f-a7bf-2a722e78bc9f
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: a4397200b5a2aa5f337dd3479b5405c1a9f245a8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: dca476eef392a2f57d0c66727c53e0e53310d679
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="accessing-attributes-by-using-reflection-visual-basic"></a>リフレクション (Visual Basic) を使用して属性へのアクセス
 カスタム属性を定義し、それらをソース コード内に配置することができても、その情報を取得して操作する手段がなければ、ほとんど価値はありません。 リフレクションを使用すれば、カスタム属性を使用して定義された情報を取得することができます。 鍵となるメソッドは `GetCustomAttributes` です。このメソッドは、ソース コード属性の実行時の等価オブジェクトを配列で返します。 このメソッドには、いくつかのオーバー ロード バージョンがあります。 詳細については、「<xref:System.Attribute>」を参照してください。  

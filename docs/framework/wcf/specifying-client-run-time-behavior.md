@@ -1,34 +1,20 @@
 ---
 title: クライアントのランタイム動作の指定
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - behaviors [WCF], system-provided client
 ms.assetid: d16d3405-be70-4edb-8f62-b5f614ddeca5
-caps.latest.revision: 8
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: fb6ba82af23f51e43da57adb0e65c77ee3436676
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
-ms.translationtype: MT
+ms.openlocfilehash: dbee1fecda66dc377513bdf8cae4645f009b6384
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="specifying-client-run-time-behavior"></a>クライアントのランタイム動作の指定
-[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] クライアントは、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービスと同様に、クライアント アプリケーションに合わせてランタイム動作を変更するように構成できます。 クライアントのランタイム動作を指定する際には、3 つの属性を使用できます。 双方向クライアント コールバック オブジェクトは、<xref:System.ServiceModel.CallbackBehaviorAttribute> 属性と <xref:System.ServiceModel.Description.CallbackDebugBehavior> 属性を使用して、そのランタイム動作を変更できます。 もう 1 つの属性 <xref:System.ServiceModel.Description.ClientViaBehavior> は、論理送信先を直接のネットワーク送信先と区別するために使用できます。 さらに、双方向クライアントのコールバック型では、サービス側の動作の一部を使用できます。 詳細については、次を参照してください。[サービスの実行時の動作を指定する](../../../docs/framework/wcf/specifying-service-run-time-behavior.md)です。  
+クライアント アプリケーションに合わせて実行時の動作を変更するのには、Windows Communication Foundation (WCF) サービスと同様に、Windows Communication Foundation (WCF) クライアントを構成できます。 クライアントのランタイム動作を指定する際には、3 つの属性を使用できます。 双方向クライアント コールバック オブジェクトは、<xref:System.ServiceModel.CallbackBehaviorAttribute> 属性と <xref:System.ServiceModel.Description.CallbackDebugBehavior> 属性を使用して、そのランタイム動作を変更できます。 もう 1 つの属性 <xref:System.ServiceModel.Description.ClientViaBehavior> は、論理送信先を直接のネットワーク送信先と区別するために使用できます。 さらに、双方向クライアントのコールバック型では、サービス側の動作の一部を使用できます。 詳細については、次を参照してください。[サービスの実行時の動作を指定する](../../../docs/framework/wcf/specifying-service-run-time-behavior.md)です。  
   
 ## <a name="using-the-callbackbehaviorattribute"></a>CallbackBehaviorAttribute の使用  
  <xref:System.ServiceModel.CallbackBehaviorAttribute> クラスを使用して、クライアント アプリケーションのコールバック コントラクト実装の実行動作を構成または拡張できます。 この属性は、インスタンス化動作とトランザクションの設定を除き、<xref:System.ServiceModel.ServiceBehaviorAttribute> クラスと同様の機能をコールバック クラスに対して実行します。  

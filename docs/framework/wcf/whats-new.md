@@ -1,32 +1,18 @@
 ---
 title: Windows Communication Foundation 4.5 の新機能
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - WCF [WCF], what's new
 - Windows Communication Foundation [WCF], what's new
 ms.assetid: 7e93fe73-af93-46b5-9f63-32f761ee40cf
-caps.latest.revision: 35
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 3ca03c4529588964abe2d0d434bfd47b005e8d26
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
-ms.translationtype: MT
+ms.openlocfilehash: 1d4ac2fe884a3c6696dc70ea2de9967a23fc6605
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="what39s-new-in-windows-communication-foundation-45"></a>Windows Communication Foundation 4.5 の新機能
-このトピックでは、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] の新しい機能について説明します。  
+このトピックでは、Windows Communication Foundation (WCF) の新機能について説明します。  
   
 ## <a name="wcf-simplification-features"></a>WCF の単純化機能  
  WCF 4.5 アプリケーションの開発および保守を容易にするために多大な労力が費やされてきました。 詳細については、次を参照してください。 [WCF の単純化機能](../../../docs/framework/wcf/wcf-simplification-features.md)します。  
@@ -87,7 +73,7 @@ ms.lasthandoff: 04/28/2018
  新規および既存の WCF サービスの開発者がサービスを構成するうえで役立つよう、Visual Studio の XML エディターでは、サービス構成ファイルに含まれる各構成要素とそのプロパティにツールヒントが表示されるようになりました。  
   
 ## <a name="configuring-wcf-services-in-code"></a>コード内での WCF サービスの構成  
- [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] では、開発者が構成ファイルまたはコードを使用してサービスを構成できます。  構成ファイルは、サービスを配置した後に構成する必要がある場合に便利です。 構成ファイルを使用する場合、IT 専門家は構成ファイルを更新するだけで、再コンパイルの必要はありません。 ただし、構成ファイルの管理は複雑で難しくなる場合があります。 構成ファイルのデバッグはサポートされていません。また、構成要素は名前で参照されるため、構成ファイルの作成時にエラーが発生しやすく、構成ファイルの作成が困難になります。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] では、コードでサービスを構成することもできます。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] の以前のバージョン (4.0 以前) では、自己ホスト型のシナリオであれば、コードで簡単にサービスを構成できました。また、<xref:System.ServiceModel.ServiceHost> クラスを使用すると、ServiceHost.Open を呼び出す前にエンドポイントと動作を構成できました。 ただし、Web ホストのシナリオでは、<xref:System.ServiceModel.ServiceHost> クラスにアクセスできません。 Web ホスト サービスを構成するには、`System.ServiceModel.ServiceHostFactory` を作成して必要な構成を実行する <xref:System.ServiceModel.Activation.ServiceHostFactory> を作成する必要がありました。 .NET 4.5 以降では、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] を使用すると、自己ホスト型サービスと Web ホスト サービスの両方をコードで簡単に構成できます。 詳細については、次を参照してください。[コードで WCF サービスを構成する](../../../docs/framework/wcf/configuring-wcf-services-in-code.md)です。  
+ Windows Communication Foundation (WCF) では、構成ファイルまたはコードを使用してサービスの構成をすることができます。  構成ファイルは、サービスを配置した後に構成する必要がある場合に便利です。 構成ファイルを使用する場合、IT 専門家は構成ファイルを更新するだけで、再コンパイルの必要はありません。 ただし、構成ファイルの管理は複雑で難しくなる場合があります。 構成ファイルのデバッグはサポートされていません。また、構成要素は名前で参照されるため、構成ファイルの作成時にエラーが発生しやすく、構成ファイルの作成が困難になります。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] では、コードでサービスを構成することもできます。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] の以前のバージョン (4.0 以前) では、自己ホスト型のシナリオであれば、コードで簡単にサービスを構成できました。また、<xref:System.ServiceModel.ServiceHost> クラスを使用すると、ServiceHost.Open を呼び出す前にエンドポイントと動作を構成できました。 ただし、Web ホストのシナリオでは、<xref:System.ServiceModel.ServiceHost> クラスにアクセスできません。 Web ホスト サービスを構成するには、`System.ServiceModel.ServiceHostFactory` を作成して必要な構成を実行する <xref:System.ServiceModel.Activation.ServiceHostFactory> を作成する必要がありました。 .NET 4.5 以降では、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] を使用すると、自己ホスト型サービスと Web ホスト サービスの両方をコードで簡単に構成できます。 詳細については、次を参照してください。[コードで WCF サービスを構成する](../../../docs/framework/wcf/configuring-wcf-services-in-code.md)です。  
   
 ## <a name="channelfactory-caching"></a>ChannelFactory のキャッシュ  
  WCF クライアント アプリケーションでは、<xref:System.ServiceModel.ChannelFactory%601> クラスを使用して WCF サービスとの通信チャネルを作成します。  <xref:System.ServiceModel.ChannelFactory%601> インスタンスを作成する場合は、次の操作が必要になるため、オーバーヘッドが生じます。  

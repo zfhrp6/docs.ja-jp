@@ -1,26 +1,12 @@
 ---
 title: メッセージ配布の制限
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 8b5ec4b8-1ce9-45ef-bb90-2c840456bcc1
-caps.latest.revision: ''
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: b4d81583a8dfc2c48fb9b7533f071495b562615e
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: 006cfaffe02752bb91e9f7d780477aecbaeb9c9e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="limiting-message-distribution"></a>メッセージ配布の制限
 ピア チャネルは仕様上はブロードキャスト メッシュです。 その基本的な大量転送モデルでは、メッシュの任意のメンバーが送信した各メッセージをそのメッシュの他のメンバー全員に配布します。 これは、1 人のメンバーが生成した各メッセージが他のメンバー全員に関係していて、役立つものであるような状況 (チャット ルームなど) に最適です。 ただし、多くのアプリケーションではメッセージの配布を制限する必要が生じることがあります。 たとえば、新しいメンバーがメッシュに参加し、メッシュを経由して送信された最新のメッセージを取得しようとする場合、この要求をメッシュのメンバー全員に転送する必要はありません。 要求は近くの近隣ノードに制限できます。また、ローカルで生成されたメッセージをフィルターで除外することもできます。メッセージはメッシュの個別のノードに送信することもできます。 このトピックでは、ホップ数、メッセージ伝達フィルター、ローカル フィルター、または直接接続を使用し、メッシュを経由してメッセージを転送する方法について説明し、1 つの方法を選択するための一般的なガイドラインを示します。  
@@ -57,7 +43,7 @@ ms.lasthandoff: 03/26/2018
   
  これらの質問の回答は、ホップ数、メッセージ伝達フィルター、ローカル フィルター、直接接続のいずれを使用するかを決定するのに役立ちます。 次の一般的なガイドラインを考慮してください。  
   
--   **Who**  
+-   **誰が**  
   
     -   *個々 のノード*: ローカル フィルターまたは直接接続します。  
   

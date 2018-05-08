@@ -1,29 +1,15 @@
 ---
 title: 'デザイン パターン: リストに基づく公開/定期受信'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: f4257abc-12df-4736-a03b-0731becf0fd4
-caps.latest.revision: ''
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 2a4f36c7231146811e4eb033cfb6a3433a58dbb2
-ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
+ms.openlocfilehash: ee05be76607975bd771c0e6f83c242ad944251df
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="design-patterns-list-based-publish-subscribe"></a>デザイン パターン: リストに基づく公開/定期受信
-このサンプルでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] プログラムとして実装された、リストに基づく公開/定期受信パターンを示します。  
+このサンプルでは、Windows Communication Foundation (WCF) プログラムとして実装された、リストに基づく公開/定期受信パターンを示します。  
   
 > [!NOTE]
 >  このサンプルのセットアップ手順とビルド手順については、このトピックの最後を参照してください。  
@@ -135,7 +121,7 @@ public class PriceChangeEventArgs : EventArgs
   
 2.  Client.exe を \client\bin 実行\\、言語固有のフォルダーの下。 クライアント アクティビティがクライアント コンソール ウィンドウに表示されます。 複数のクライアントを起動します。  
   
-3.  Run Datasource.exe from \datasource\bin\\, from under the language-specific folder. データ ソース アクティビティがコンソール ウィンドウに表示されます。 データ ソースがサービスに情報を送信すると、その情報は各クライアントに渡されます。  
+3.  \Datasource\bin から Datasource.exe を実行\\、言語固有のフォルダーの下。 データ ソース アクティビティがコンソール ウィンドウに表示されます。 データ ソースがサービスに情報を送信すると、その情報は各クライアントに渡されます。  
   
 4.  クライアント、データ ソース、およびサービス プログラムできない場合は通信するためを参照してください。[トラブルシューティングのヒント](http://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b)です。  
   
@@ -170,7 +156,7 @@ public class PriceChangeEventArgs : EventArgs
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
+>  このディレクトリが存在しない場合に、 [Windows Communication Foundation (WCF) および .NET Framework 4 向けの Windows Workflow Foundation (WF) サンプル](http://go.microsoft.com/fwlink/?LinkId=150780)すべて Windows Communication Foundation (WCF) をダウンロードして[!INCLUDE[wf1](../../../../includes/wf1-md.md)]サンプルです。 このサンプルは、次のディレクトリに格納されます。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Scenario\DesignPatterns/ListBasedPublishSubscribe`  
   

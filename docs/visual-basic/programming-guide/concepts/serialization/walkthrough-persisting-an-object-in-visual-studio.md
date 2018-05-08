@@ -1,22 +1,12 @@
 ---
-title: "Visual Studio (Visual Basic) でオブジェクトを保持します。"
-ms.custom: 
+title: Visual Studio (Visual Basic) でオブジェクトを保持します。
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: get-started-article
 ms.assetid: f1d0b562-e349-4dce-ab5f-c05108467030
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 9a7abe74b76b2b7d0b4b2d45894e2cd4940f989a
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: 2523aefc90e22fe79f22e90d8da68c35c8dd24b0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="walkthrough-persisting-an-object-in-visual-studio-visual-basic"></a>チュートリアル: Visual Studio でのオブジェクトの永続化 (Visual Basic)
 オブジェクトのプロパティはデザイン時に既定値に設定できますが、そのオブジェクトが破棄されると、実行時に入力した値はすべて失われます。 シリアル化によってインスタンス間でオブジェクトのデータを永続化すると、値を保存しておき、次にそのオブジェクトをインスタンス化するときに、その値を取得することができます。  
@@ -88,13 +78,13 @@ ms.lasthandoff: 12/21/2017
   
 1.  **[ファイル]** メニューで **[追加]**、**[新しいプロジェクト]** の順に選択して、Windows フォーム アプリケーション プロジェクトをソリューションに追加します。  
   
-2.  **[新しいプロジェクトの追加]** ダイアログ ボックスで、**[Windows フォーム アプリケーション]** を選択し、プロジェクト名として「`LoanApp`」と入力します。次に、**[OK]** をクリックしてダイアログ ボックスを閉じます。  
+2.  **新しいプロジェクトの追加** ダイアログ ボックスで、選択**Windows フォーム アプリケーション**、入力と`LoanApp`クリックして、プロジェクトの名前として**ok** ダイアログ ボックスを閉じます。  
   
 3.  **ソリューション エクスプローラー** で LoanApp プロジェクトを選択します。  
   
 4.  **[プロジェクト]** メニューの **[スタートアップ プロジェクトに設定]** をクリックします。  
   
-5.  **[プロジェクト]** メニューの **[参照の追加]**をクリックします。  
+5.  **[プロジェクト]** メニューの **[参照の追加]** をクリックします。  
   
 6.  **[参照の追加]** ダイアログ ボックスで、**[プロジェクト]** タブをクリックし、LoanClass プロジェクトを選択します。  
   
@@ -224,6 +214,6 @@ ms.lasthandoff: 12/21/2017
   
  この時点で、アプリケーションを再度ビルドして実行できます。 最初に既定値がテキスト ボックスに表示されます。 値を変更して、4 番目のテキスト ボックスに名前を入力します。 いったんアプリケーションを閉じて、再び実行します。 これで、新しい値がテキスト ボックスに表示されます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [シリアル化 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/serialization/index.md)  
  [Visual Basic プログラミング ガイド](../../../../visual-basic/programming-guide/index.md)

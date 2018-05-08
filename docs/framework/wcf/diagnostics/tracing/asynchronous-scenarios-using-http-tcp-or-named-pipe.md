@@ -1,24 +1,12 @@
 ---
-title: "HTTP、TCP、または名前付きパイプを使用した非同期シナリオ"
-ms.custom: 
+title: HTTP、TCP、または名前付きパイプを使用した非同期シナリオ
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: a4d62402-43a4-48a4-9ced-220633ebc4ce
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 76c4c225b333af6d376fa409a05ea5727ede6e8f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d08f70186a59b8717c4441167ee720ba1c20b9dc
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="asynchronous-scenarios-using-http-tcp-or-named-pipe"></a>HTTP、TCP、または名前付きパイプを使用した非同期シナリオ
 ここでは、マルチスレッド要求で HTTP、TCP、または名前付きパイプを使用したときの、さまざまな非同期要求/応答シナリオでのアクティビティおよび転送について説明します。  
@@ -44,7 +32,7 @@ ms.lasthandoff: 12/22/2017
 #### <a name="propagation-is-disabled-on-either-sides-using-http"></a>HTTP を使用して、両方の側で伝達が無効になっている場合  
  場合`propagateActivity` = `false`いずれかの側は示しません ProcessAction アクティビティに転送します。 したがって、新しい ID を使用して、新しい一時的な "アクションを処理" アクティビティが呼び出されます。 非同期応答と ServiceModel コード内の要求が一致する場合は、アクティビティ ID をローカル コンテキストから取得できます。 その ID を使用して、実際の "アクションを処理" アクティビティに転送できます。  
   
- ![#47; (&)、HTTP を使用して非同期シナリオTCP である (、&) #47 です。名前付きパイプ](../../../../../docs/framework/wcf/diagnostics/tracing/media/async2.gif "Async2")  
+ ![HTTP を使用した非同期シナリオ&#47;TCP&#47;名前付きパイプ](../../../../../docs/framework/wcf/diagnostics/tracing/media/async2.gif "Async2")  
   
  図 2 になります。 非同期クライアント、コールバックなし、 `propagateActivity` = `false`右辺でも左辺でも、HTTP  
   
@@ -53,7 +41,7 @@ ms.lasthandoff: 12/22/2017
  Process Action アクティビティが、非同期クライアントで作成されたときに`propagateActivity` = `false`呼び出し元または呼び出し先、および応答メッセージに Action ヘッダーが含まれていない場合。  
   
 #### <a name="propagation-is-enabled-on-both-sides-using-tcp-or-named-pipe"></a>TCP または名前付きパイプを使用して、両方の側で伝達が有効になっている場合  
- ![#47; (&)、HTTP を使用して非同期シナリオTCP である (、&) #47 です。名前付きパイプ](../../../../../docs/framework/wcf/diagnostics/tracing/media/async3.gif "Async3")  
+ ![HTTP を使用した非同期シナリオ&#47;TCP&#47;名前付きパイプ](../../../../../docs/framework/wcf/diagnostics/tracing/media/async3.gif "Async3")  
   
  図 3. 非同期クライアント、コールバックなし、 `propagateActivity` = `true`両側で名前付きパイプ/TCP  
   
@@ -66,7 +54,7 @@ ms.lasthandoff: 12/22/2017
   
  、、図 2 のような場合は`propagateActivity` = `false`いずれかの側では、は示しません ProcessAction アクティビティに転送します。 したがって、新しい ID を使用して、新しい一時的な "アクションを処理" アクティビティが呼び出されます。 非同期応答と ServiceModel コード内の要求が一致する場合は、アクティビティ ID をローカル コンテキストから取得できます。 その ID を使用して、実際の "アクションを処理" アクティビティに転送できます。  
   
- ![#47; (&)、HTTP を使用して非同期シナリオTCP である (、&) #47 です。名前付きパイプ](../../../../../docs/framework/wcf/diagnostics/tracing/media/async4.gif "Async4")  
+ ![HTTP を使用した非同期シナリオ&#47;TCP&#47;名前付きパイプ](../../../../../docs/framework/wcf/diagnostics/tracing/media/async4.gif "Async4")  
   
  図 4 です。 非同期クライアント、コールバックなし、 `propagateActivity` = `false`右辺でも左辺でも、名前付きパイプ/TCP  
   
@@ -86,7 +74,7 @@ ms.lasthandoff: 12/22/2017
  図 6。 非同期クライアント、コールバックあり、コールバック外での `endCall`  
   
 ### <a name="asynchronous-server-with-callback"></a>コールバックを伴う非同期サーバー  
- ![#47; (&)、HTTP を使用して非同期シナリオTCP である (、&) #47 です。名前付き &#45;です。パイプ](../../../../../docs/framework/wcf/diagnostics/tracing/media/aynchserver.gif "AynchServer")  
+ ![HTTP を使用した非同期シナリオ&#47;TCP&#47;名前付き&#45;パイプ](../../../../../docs/framework/wcf/diagnostics/tracing/media/aynchserver.gif "AynchServer")  
   
  図 7 です。 非同期サーバー、コールバックあり  
   

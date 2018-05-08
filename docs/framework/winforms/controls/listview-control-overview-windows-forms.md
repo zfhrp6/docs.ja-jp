@@ -1,14 +1,6 @@
 ---
-title: "ListView コントロールの概要 (Windows フォーム)"
-ms.custom: 
+title: ListView コントロールの概要 (Windows フォーム)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - ListView
 helpviewer_keywords:
@@ -16,17 +8,11 @@ helpviewer_keywords:
 - ListView control [Windows Forms], about ListView control
 - list views
 ms.assetid: c9ef56c1-3bb1-4101-9f4e-e95e720f2756
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: b79fecb0a537f4c568b4a57e9ce2bfab8d8e1005
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: f92b5f5ae40287c95da10ef96aad0fa764fa00e2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="listview-control-overview-windows-forms"></a>ListView コントロールの概要 (Windows フォーム)
 Windows フォーム <xref:System.Windows.Forms.ListView> コントロールにはアイコン表示で項目の一覧が表示されます。 リスト ビューを使用すると、Windows エクスプローラーの右側のペインのようなユーザー インターフェイスを作成することができます。 コントロールが 4 つの表示モード: LargeIcon、SmallIcon、リスト、および詳細。  
@@ -50,17 +36,17 @@ Windows フォーム <xref:System.Windows.Forms.ListView> コントロールに�
 |<xref:System.Windows.Forms.ListView.FindItemWithText%2A> メソッド|<xref:System.Windows.Forms.View.Details>、 <xref:System.Windows.Forms.View.List>、または <xref:System.Windows.Forms.View.Tile>|  
 |<xref:System.Windows.Forms.ListView.FindNearestItem%2A> メソッド|<xref:System.Windows.Forms.View.SmallIcon> または <xref:System.Windows.Forms.View.LargeIcon>|  
 |<xref:System.Windows.Forms.ListView.GetItemAt%2A> メソッド|<xref:System.Windows.Forms.View.Details> または <xref:System.Windows.Forms.View.Tile>|  
-|<xref:System.Windows.Forms.ListView.Groups%2A> プロパティ|除くすべてのビュー<xref:System.Windows.Forms.View.List>|  
+|<xref:System.Windows.Forms.ListView.Groups%2A> プロパティ|除くすべてのビュー <xref:System.Windows.Forms.View.List>|  
 |<xref:System.Windows.Forms.ListView.HeaderStyle%2A> プロパティ|<xref:System.Windows.Forms.View.Details>。|  
 |<xref:System.Windows.Forms.ListView.InsertionMark%2A> プロパティ|<xref:System.Windows.Forms.View.LargeIcon>、 <xref:System.Windows.Forms.View.SmallIcon>、または <xref:System.Windows.Forms.View.Tile>|  
   
  キー プロパティ、<xref:System.Windows.Forms.ListView>コントロールが<xref:System.Windows.Forms.ListView.Items%2A>、コントロールによって表示される項目が含まれています。 <xref:System.Windows.Forms.ListView.SelectedItems%2A>プロパティには、コントロールで現在選択されている項目のコレクションが含まれています。 ユーザーがドラッグ アンド場合、別のコントロールには、一度にいくつかの項目をドロップする例については、複数の項目を選択できる、<xref:System.Windows.Forms.ListView.MultiSelect%2A>プロパティに設定されている`true`です。 <xref:System.Windows.Forms.ListView>場合、コントロールは、項目の横にチェック ボックスを表示できます、<xref:System.Windows.Forms.ListView.CheckBoxes%2A>プロパティに設定されている`true`です。  
   
- <xref:System.Windows.Forms.ListView.Activation%2A>プロパティは、アクションの種類、ユーザーは、リスト内の項目をアクティブに実行する必要がありますを決定します。 オプションは、 <xref:System.Windows.Forms.ItemActivation.Standard>、 <xref:System.Windows.Forms.ItemActivation.OneClick>、と<xref:System.Windows.Forms.ItemActivation.TwoClick>。 <xref:System.Windows.Forms.ItemActivation.OneClick>アクティブ化には、シングル クリックで項目をアクティブ化が必要です。 <xref:System.Windows.Forms.ItemActivation.TwoClick>アクティブ化をダブルクリックすると、アイテムをアクティブ化ユーザーが必要です。1 回のクリックでは、項目のテキストの色を変更します。 <xref:System.Windows.Forms.ItemActivation.Standard>アクティブ化をダブルクリックすると、アイテムをアクティブ化ユーザーが必要ですが、アイテムの外観は変わりません。  
+ <xref:System.Windows.Forms.ListView.Activation%2A>プロパティは、アクションの種類、ユーザーは、リスト内の項目をアクティブに実行する必要がありますを決定します。 オプションは、 <xref:System.Windows.Forms.ItemActivation.Standard>、 <xref:System.Windows.Forms.ItemActivation.OneClick>、と<xref:System.Windows.Forms.ItemActivation.TwoClick>。 <xref:System.Windows.Forms.ItemActivation.OneClick> アクティブ化には、シングル クリックで項目をアクティブ化が必要です。 <xref:System.Windows.Forms.ItemActivation.TwoClick> アクティブ化をダブルクリックすると、アイテムをアクティブ化ユーザーが必要です。1 回のクリックでは、項目のテキストの色を変更します。 <xref:System.Windows.Forms.ItemActivation.Standard> アクティブ化をダブルクリックすると、アイテムをアクティブ化ユーザーが必要ですが、アイテムの外観は変わりません。  
   
  <xref:System.Windows.Forms.ListView>コントロールもサポートしている visual スタイルと使用できるその他の機能グループ化、並べて表示ビュー、および挿入マークを含む、Windows XP のプラットフォームでします。 詳細については、次を参照してください。 [Windows XP の機能と Windows フォーム コントロール](http://msdn.microsoft.com/library/bc7fab94-fce9-4bf1-a8ad-a5837c91c3c0)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.ListView>  
  [ListView コントロール](../../../../docs/framework/winforms/controls/listview-control-windows-forms.md)  
  [方法: Windows フォーム ListView コントロールで項目を追加および削除する](../../../../docs/framework/winforms/controls/how-to-add-and-remove-items-with-the-windows-forms-listview-control.md)  

@@ -1,12 +1,6 @@
 ---
 title: += 演算子 (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.+=
 helpviewer_keywords:
@@ -16,14 +10,11 @@ helpviewer_keywords:
 - += operator [Visual Basic], appending strings
 - compound assignment statements [Visual Basic]
 ms.assetid: d3e959f4-85d4-4e47-87c4-77b62335a5b3
-caps.latest.revision: 16
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 4ac8f5679aa90c50c15c33a957cfc75d9ccecde6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: f12a0560d984f871110c02f1df2c2ec42b68809b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="-operator-visual-basic"></a>+= 演算子 (Visual Basic)
 数値型の変数またはプロパティの値に数値式の値を追加し、結果を変数またはプロパティに代入します。 連結するためにも使用する、`String`式、`String`変数やプロパティと、割り当て、その結果を変数またはプロパティ。  
@@ -36,10 +27,10 @@ variableorproperty += expression
   
 ## <a name="parts"></a>指定項目  
  `variableorproperty`  
- 必須です。 任意の数値または`String`変数またはプロパティ。  
+ 必須。 任意の数値または`String`変数またはプロパティ。  
   
  `expression`  
- 必須です。 任意の数値または`String`式。  
+ 必須。 任意の数値または`String`式。  
   
 ## <a name="remarks"></a>コメント  
  左側にある要素、`+=`演算子は、単純なスカラー変数、プロパティ、または配列の要素を指定できます。 変数またはプロパティにできません。 [ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md)です。  

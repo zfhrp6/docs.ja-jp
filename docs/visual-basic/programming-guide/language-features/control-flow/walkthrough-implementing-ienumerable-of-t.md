@@ -1,27 +1,17 @@
 ---
 title: Visual Basic で IEnumerable を実装します。
-ms.custom: ''
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - control flow [Visual Basic]
 - enumerable interfaces
 - loop structures [Visual Basic], optimizing performance
 - control flow [Visual Basic]
 ms.assetid: c60d7589-51f2-4463-a2d5-22506bbc1554
-caps.latest.revision: 15
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 4645153f9c830bc96b7ec55367f46f09098eb78d
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 2c2012261f38bccb704fe1a0300d496785e2129c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="walkthrough-implementing-ienumerableof-t-in-visual-basic"></a>チュートリアル: Visual Basic での IEnumerable(Of T) の実装
 <xref:System.Collections.Generic.IEnumerable%601>インターフェイスは、一度に 1 つの項目の値のシーケンスを返すことができるクラスによって実装されます。 データを操作するためのメモリにデータの完全なセットをロードする必要はありませんは、一度に 1 つの項目を返すことの利点です。 のみをデータから 1 つの項目を読み込むための十分なメモリを使用する必要があります。 実装するクラス、`IEnumerable(T)`インターフェイスで使用できる`For Each`ループまたは LINQ クエリ。  

@@ -1,13 +1,6 @@
 ---
-title: "方法 : キー フレームを使用して点をアニメーション化する"
-ms.custom: 
+title: '方法 : キー フレームを使用して点をアニメーション化する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,16 +9,11 @@ helpviewer_keywords:
 - Points [WPF], animating with key frames
 - animation [WPF], Points with key frames
 ms.assetid: d2e2ef10-0773-4133-856e-d41c09f60ded
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 4c115d31c6ace26f8fd9dd6cff3fdeead89eea33
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a59ceb62d7feb33d2cc8a747a7bfb85e551d785c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-animate-a-point-by-using-key-frames"></a>方法 : キー フレームを使用して点をアニメーション化する
 この例を使用する方法を示しています、<xref:System.Windows.Media.Animation.PointAnimationUsingKeyFrames>アニメーション化するクラス、<xref:System.Windows.Point>です。  
@@ -47,7 +35,7 @@ ms.lasthandoff: 12/22/2017
   
  この例のコードを使用して他のアニメーション例と一貫性を保つのため、<xref:System.Windows.Media.Animation.Storyboard>を適用するオブジェクト、<xref:System.Windows.Media.Animation.PointAnimationUsingKeyFrames>です。 ただし、コード内の 1 つのアニメーションを適用するときに使いやすく、<xref:System.Windows.Media.Animation.Animatable.BeginAnimation%2A>メソッドを使用してではなく、<xref:System.Windows.Media.Animation.Storyboard>です。 例については、「[ストーリーボードを使用せずにプロパティをアニメーション化する](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-property-without-using-a-storyboard.md)」を参照してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Media.Animation.PointAnimationUsingKeyFrames>  
  <xref:System.Windows.Media.EllipseGeometry.Center%2A?displayProperty=nameWithType>  
  <xref:System.Windows.Media.EllipseGeometry>  

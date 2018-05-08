@@ -1,11 +1,6 @@
 ---
 title: 日付型 (Date) (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Date
 helpviewer_keywords:
@@ -20,14 +15,11 @@ helpviewer_keywords:
 - literals [Visual Basic], Date
 - '# specifier for Date literals'
 ms.assetid: d9edf5b0-e85e-438b-a1cf-1f321e7c831b
-caps.latest.revision: 22
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 190b40888dc4a42075b7b6b27bdb1bd403a7efb5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: b7827206d6e145b559d9716df5ec4a98ac4ea0b5
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="date-data-type-visual-basic"></a>日付型 (Date) (Visual Basic)
 IEEE 64 ビット (8 バイト) の値として格納され、西暦 0001 年 1 月 1 日から西暦 9999 年 12 月 31 日までの日付と、午前 12:00:00 (深夜) から午後 11:59:59.9999999 までの時刻を表します。 各インクリメントはグレゴリオ暦の西暦 1 年 1 月 1 日からの経過時間を 100 ナノ秒で表します。 最大値は、西暦 10000 年 1 月 1 日の 100 ナノ秒前です。  
@@ -70,7 +62,7 @@ Dim dateInMay As New System.DateTime(1993, 5, 31, 12, 14, 0)
   
 -   **相互運用の考慮事項。** オートメーションまたは COM オブジェクトのように、.NET Framework 向けに作成されていないコンポーネントとやり取りする場合、他の環境の日付/時刻の型は Visual Basic の `Date` 型と互換性がないことに注意してください。 そのようなコンポーネントに日付/時刻の引数を渡す場合は、新しい Visual Basic のコードで、`Date` 型ではなく `Double` 型として宣言し、<xref:System.DateTime.FromOADate%2A?displayProperty=nameWithType> および <xref:System.DateTime.ToOADate%2A?displayProperty=nameWithType> の変換メソッドを使用します。  
   
--   **型宣言文字。** `Date`リテラルの型文字または識別子の型文字がありません。 ただし、コンパイラでは、シャープ記号 (`# #`) で囲まれたリテラルは、日付型 (`Date`) として処理されます。  
+-   **型宣言文字。** `Date` リテラルの型文字または識別子の型文字がありません。 ただし、コンパイラでは、シャープ記号 (`# #`) で囲まれたリテラルは、日付型 (`Date`) として処理されます。  
   
 -   **Framework の型。** .NET Framework において対応する型は、<xref:System.DateTime?displayProperty=nameWithType> 構造体です。  
   

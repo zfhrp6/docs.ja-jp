@@ -1,14 +1,6 @@
 ---
-title: "CorDebugDebugEventKind 列挙体"
-ms.custom: 
+title: CorDebugDebugEventKind 列挙体
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - CorDebugDebugEventKind
 api_location:
@@ -18,17 +10,13 @@ api_type:
 ms.assetid: 6075a6cd-97e6-4472-a090-0dd14860d1f3
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 90cd2b8d02cb1d16e4932ffdcc3c9b02dc71541a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9f2f5af86e210493cd8ba0eb8afe10d22b84b18c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="cordebugdebugeventkind-enumeration"></a>CorDebugDebugEventKind 列挙体
 情報がデコードされるによってイベントの種類を示す、 [DecodeEvent](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess6-decodeevent-method.md)メソッドです。  
@@ -63,14 +51,14 @@ typedef enum CorDebugDebugEventKind {
 > [!NOTE]
 >  この列挙体は .NET ネイティブのデバッグ シナリオのみで使用することを目的としています。  
   
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET framework のバージョン:**[!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
+ **.NET framework のバージョン:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [列挙型のデバッグ](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)

@@ -1,14 +1,6 @@
 ---
 title: 'チュートリアル : Visual C# による Windows フォーム コントロールからの継承'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-winforms
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - inheritance [Windows Forms], custom controls
 - inheritance [Windows Forms], control
@@ -16,17 +8,11 @@ helpviewer_keywords:
 - inheritance [Windows Forms], walkthroughs
 - custom controls [Windows Forms], inheritance
 ms.assetid: 09476da0-8d4c-4a4c-b969-649519dfb438
-caps.latest.revision: 17
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: cdf472776fc293bc5dfa1db940d23c6a297767e7
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 1e9231065369640fa49e04a491b92ebfb1e91912
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="walkthrough-inheriting-from-a-windows-forms-control-with-visual-c"></a>チュートリアル : Visual C# による Windows フォーム コントロールからの継承 #
 [!INCLUDE[csprcslong](../../../../includes/csprcslong-md.md)] では、*継承*によって強力なカスタム コントロールを作成できます。 継承を使用すると、標準の Windows フォーム コントロールの固有の機能をすべて保持しながら、カスタム機能も組み込んだコントロールを作成できます。 このチュートリアルでは、`ValueButton` という単純な継承されたコントロールを作成します。 このボタンは、標準の Windows フォームの機能を継承<xref:System.Windows.Forms.Button>制御、およびと呼ばれるカスタム プロパティを公開`ButtonValue`です。  

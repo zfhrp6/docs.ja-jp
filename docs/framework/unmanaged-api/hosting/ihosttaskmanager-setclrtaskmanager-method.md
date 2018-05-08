@@ -1,14 +1,6 @@
 ---
-title: "IHostTaskManager::SetCLRTaskManager メソッド"
-ms.custom: 
+title: IHostTaskManager::SetCLRTaskManager メソッド
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - IHostTaskManager.SetCLRTaskManager
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: ec90ee83-bd4b-408b-9274-62a923ab86a1
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 9f009fee3f9bc439ce61d859759870f9cbb54f09
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 84501ae5e96a2eab4c5da4d4cb211fc60822e339
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ihosttaskmanagersetclrtaskmanager-method"></a>IHostTaskManager::SetCLRTaskManager メソッド
 により、ホストへのインターフェイス ポインターで、 [ICLRTaskManager](../../../../docs/framework/unmanaged-api/hosting/iclrtaskmanager-interface.md)共通言語ランタイム (CLR) によって実装されているインスタンス。  
@@ -54,7 +42,7 @@ HRESULT SetCLRTaskManager (
   
 |HRESULT|説明|  
 |-------------|-----------------|  
-|S_OK|`SetCLRTaskManager`正常に返されます。|  
+|S_OK|`SetCLRTaskManager` 正常に返されます。|  
 |HOST_E_CLRNOTAVAILABLE|CLR が、プロセスに読み込まれていませんまたは CLR は、状態をマネージ コードを実行またはできないの呼び出しは正常に処理します。|  
 |HOST_E_TIMEOUT|呼び出しがタイムアウトしました。|  
 |HOST_E_NOT_OWNER|呼び出し元は、ロックを所有していません。|  
@@ -64,16 +52,16 @@ HRESULT SetCLRTaskManager (
 ## <a name="remarks"></a>コメント  
  ランタイム呼び出し`SetCLRTaskManager`にインターフェイス ポインターを使用して、ホストを提供する、`ICLRTaskManager`インスタンス。  
   
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** MSCorEE.h  
   
  **ライブラリ:** MSCorEE.dll にリソースとして含まれています。  
   
- **.NET framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ICLRTask インターフェイス](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)  
  [ICLRTaskManager インターフェイス](../../../../docs/framework/unmanaged-api/hosting/iclrtaskmanager-interface.md)  
  [IHostTask インターフェイス](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md)  

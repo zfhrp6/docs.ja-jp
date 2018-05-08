@@ -1,13 +1,6 @@
 ---
-title: "方法 : プログラムでサービスを作成する"
-ms.custom: 
+title: '方法 : プログラムでサービスを作成する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,16 +8,13 @@ helpviewer_keywords:
 - services, creating
 - Windows Service applications, creating
 ms.assetid: 3abbb2ec-78d2-41e6-b9f9-6662d4e2cdc7
-caps.latest.revision: "21"
 author: ghogen
-ms.author: ghogen
 manager: douge
-ms.workload: dotnet
-ms.openlocfilehash: cdb9c7bba564b71bfba86076218e48610cf73076
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 99fd44723bba21127e2a5e0ba3e9bfc4b90b52d7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-write-services-programmatically"></a>方法 : プログラムでサービスを作成する
 Windows サービス プロジェクトのテンプレートを使用しない場合は、継承などの基本要素を設定して独自のサービスを作成できます。 プログラミングによってサービスを作成する場合は、テンプレートでは自動化される手順を手動で行う必要があります。  
@@ -45,7 +35,7 @@ Windows サービス プロジェクトのテンプレートを使用しない�
   
     3.  スクロール**System.ServiceProcess.dll**  をクリック**選択**です。  
   
-    4.  **[OK]**をクリックします。  
+    4.  **[OK]** をクリックします。  
   
 2.  クラスを追加し、<xref:System.ServiceProcess.ServiceBase> から継承されるように設定します。  
   
@@ -80,7 +70,7 @@ Windows サービス プロジェクトのテンプレートを使用しない�
   
 10. サービスをインストールします。 詳細については、「 [How to: Install and Uninstall Services](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md)」を参照してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Windows サービス アプリケーションの概要](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)  
  [方法 : Windows サービスを作成する](../../../docs/framework/windows-services/how-to-create-windows-services.md)  
  [方法 : サービス アプリケーションにインストーラーを追加する](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md)  

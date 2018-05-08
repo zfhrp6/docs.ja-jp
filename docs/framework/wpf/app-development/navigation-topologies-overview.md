@@ -1,13 +1,6 @@
 ---
-title: "ナビゲーション トポロジの概要"
-ms.custom: 
+title: ナビゲーション トポロジの概要
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - linear topology [WPF]
 - fixed hierarchical topology [WPF]
@@ -16,19 +9,14 @@ helpviewer_keywords:
 - navigation topologies [WPF]
 - dynamically-generated topology
 ms.assetid: 5d5ee837-629a-4933-869a-186dc22ac43d
-caps.latest.revision: "20"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: dbe7fe80639537293413d8fb923033909a2451e9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8976ba7973e4f53022846b98c47d5613fd6ba158
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="navigation-topologies-overview"></a>ナビゲーション トポロジの概要
-<a name="introduction"></a>この概要でナビゲーション トポロジの概要については、[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]です。 3 つの一般的なナビゲーション トポロジをサンプルと共に説明します。  
+<a name="introduction"></a> この概要でナビゲーション トポロジの概要については、[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]です。 3 つの一般的なナビゲーション トポロジをサンプルと共に説明します。  
   
 > [!NOTE]
 >  このトピックを読む前にする必要がありますでナビゲーションを構造化の概念を[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]ページ関数を使用します。 これらのトピックの両方の詳細については、次を参照してください。[構造化されたナビゲーションの概要](../../../../docs/framework/wpf/app-development/structured-navigation-overview.md)です。  
@@ -151,7 +139,7 @@ ms.lasthandoff: 12/22/2017
   
 -   ウィザードが完了すると (受け入れられた場合も、キャンセルされた場合も)、ウィザードを構成するページは履歴から削除されます。 これにより、ウィザードの各インスタンスが分離され、異常なデータや状態の発生を防ぎます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Controls.Page>  
  <xref:System.Windows.Navigation.PageFunction%601>  
  <xref:System.Windows.Navigation.NavigationService>  

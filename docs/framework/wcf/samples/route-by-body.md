@@ -1,24 +1,12 @@
 ---
-title: "本文別のルーティング"
-ms.custom: 
+title: 本文別のルーティング
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 07a6fc3b-c360-42e0-b663-3d0f22cf4502
-caps.latest.revision: "18"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: defd3a3e9df273739aaf3440fd34fad2cad44cd4
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e9a0c947a1dd7ac2a6c7af74baaa072aae67358c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="route-by-body"></a>本文別のルーティング
 このサンプルでは、任意の SOAP アクションでメッセージ オブジェクトを受け入れるサービスを実装する方法を示します。 このサンプルがに基づいて、[作業の開始](../../../../docs/framework/wcf/samples/getting-started-sample.md)電卓サービスを実装します。 このサービスは、`Calculate` 要求パラメータを受け入れる 1 つの <xref:System.ServiceModel.Channels.Message> 操作を実装して、<xref:System.ServiceModel.Channels.Message> 応答を返します。  
@@ -28,7 +16,7 @@ ms.lasthandoff: 12/22/2017
 > [!NOTE]
 >  このサンプルのセットアップ手順とビルド手順については、このトピックの最後を参照してください。  
   
- このサンプルでは、本文の内容に基づくメッセージ ディスパッチを示します。 組み込みの [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービス モデルのメッセージ ディスパッチ メカニズムは、メッセージの Action に基づいています。 ただし既存の多くの Web サービスでは、すべての操作が Action="" で定義されています。 アクション情報に基づいてディスパッチ要求メッセージを保持する WSDL を基準として、サービスを構築することはできません。 このサンプルでは、WSDL に基づくサービス コントラクトを示します (WSDL はこのサンプルに含まれる Service.wsdl 内に格納されています)。 サービス コントラクトはで使用されるように、電卓[作業の開始](../../../../docs/framework/wcf/samples/getting-started-sample.md)です。 ただし、`[OperationContract]` は、すべての操作に対して `Action=""` を指定します。  
+ このサンプルでは、本文の内容に基づくメッセージ ディスパッチを示します。 組み込みの Windows Communication Foundation (WCF) サービス モデル メッセージ ディスパッチ メカニズムは、メッセージの Action に基づいています。 ただし既存の多くの Web サービスでは、すべての操作が Action="" で定義されています。 アクション情報に基づいてディスパッチ要求メッセージを保持する WSDL を基準として、サービスを構築することはできません。 このサンプルでは、WSDL に基づくサービス コントラクトを示します (WSDL はこのサンプルに含まれる Service.wsdl 内に格納されています)。 サービス コントラクトはで使用されるように、電卓[作業の開始](../../../../docs/framework/wcf/samples/getting-started-sample.md)です。 ただし、`[OperationContract]` は、すべての操作に対して `Action=""` を指定します。  
   
 ```  
 [ServiceContract(Namespace = "http://Microsoft.ServiceModel.Samples"),    
@@ -80,8 +68,8 @@ Press <ENTER> to terminate client.
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
+>  このディレクトリが存在しない場合に、 [Windows Communication Foundation (WCF) および .NET Framework 4 向けの Windows Workflow Foundation (WF) サンプル](http://go.microsoft.com/fwlink/?LinkId=150780)すべて Windows Communication Foundation (WCF) をダウンロードして[!INCLUDE[wf1](../../../../includes/wf1-md.md)]サンプルです。 このサンプルは、次のディレクトリに格納されます。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Interop\RouteByBody`  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目

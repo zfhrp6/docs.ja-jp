@@ -1,27 +1,15 @@
 ---
-title: "方法 : WCF Web HTTP プログラミング モデルを使用して任意のデータを返すサービスを作成する"
-ms.custom: 
+title: '方法 : WCF Web HTTP プログラミング モデルを使用して任意のデータを返すサービスを作成する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 0283955a-b4ae-458d-ad9e-6fbb6f529e3d
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 829e9f2bcf909bee41f53b4b7cabbb0803e77963
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 763d62750380f025ae369e1e917b46d4e51874e8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-a-service-that-returns-arbitrary-data-using-the-wcf-web-http-programming-model"></a>方法 : WCF Web HTTP プログラミング モデルを使用して任意のデータを返すサービスを作成する
-開発者は、データがサービス操作から返される流れを完全に制御する必要が生じることがあります。 サービス操作でサポートされていない形式でデータを返す必要がある場合は、この[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]です。 このトピックでは [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WEB HTTP プログラミング モデルを使用してこのようなサービスを作成する方法を説明します。 ストリームを返す操作を 1 つ持つサービスを例に取ります。  
+開発者は、データがサービス操作から返される流れを完全に制御する必要が生じることがあります。 これは、サービス操作は、WCF によってサポートされていない形式でデータを返す必要がある場合です。 このトピックでは、WCF WEB HTTP プログラミング モデルを使用して、このようなサービスを作成するについて説明します。 ストリームを返す操作を 1 つ持つサービスを例に取ります。  
   
 ### <a name="to-implement-the-service-contract"></a>サービス コントラクトを実装するには  
   
@@ -36,7 +24,7 @@ ms.lasthandoff: 12/22/2017
         }  
     ```  
   
-     このメソッドは <xref:System.IO.Stream> を戻すので、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] はその操作がサービス操作から戻るデータを完全に制御できると想定し、戻されたデータにフォーマットを適用しません。  
+     メソッドを返すため、 <xref:System.IO.Stream>WCF サービス操作から返されるバイト数を完全に制御が、操作に必要があることを想定しています、および適用なしに返されるデータの書式設定します。  
   
 2.  サービス コントラクトを実装します。 コントラクトには 1 つの操作 (`GetImage`) しかありません。 このメソッドはビットマップを生成して、それを <xref:System.IO.MemoryStream> に .jpg 形式で保存します。 操作はそのストリームを呼び出し元に戻します。  
   
@@ -186,5 +174,5 @@ namespace RawImageService
   
 -   コード例のコンパイル時には、System.ServiceModel.dll と System.ServiceModel.Web.dll を参照します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [WCF Web HTTP プログラミング モデル](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)

@@ -1,13 +1,6 @@
 ---
-title: "Windows フォームについて"
-ms.custom: 
+title: Windows フォームについて
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - Designer_System.Windows.Forms.Design.FormDocumentDesigner
 - vb.wfc.formdesigner
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - Windows Forms, getting started
 - getting started [Windows Forms], Windows Forms
 ms.assetid: a031aa58-5027-4082-b590-df7c12c77dec
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: d5d81497872e231fb1b235d9707b9a36505d3165
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 7fc45efec8878ba4a098ad686e53bca375200c23
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="getting-started-with-windows-forms"></a>Windows フォームについて
 Windows フォームでは、Windows ベースの強力なアプリケーションを作成できます。 次のトピックは、データを表示、ユーザー入力を処理し、強化されたセキュリティを使用して簡単に、アプリケーションの展開の Windows フォームの機能を利用する方法詳細について説明します。  

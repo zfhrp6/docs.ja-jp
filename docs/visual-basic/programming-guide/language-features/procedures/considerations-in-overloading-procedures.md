@@ -1,13 +1,6 @@
 ---
 title: プロシージャのオーバーロードに関する注意事項 (Visual Basic)
-ms.custom: ''
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - signatures [Visual Basic], ParamArray arguments
 - ParamArray keyword [Visual Basic], parameter arrays
@@ -32,14 +25,11 @@ helpviewer_keywords:
 - restrictions [Visual Basic], overloading procedures
 - procedures [Visual Basic], parameter lists
 ms.assetid: a2001248-10d0-42c5-b0ce-eeedc987319f
-caps.latest.revision: 26
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: ac4bc47f9e781f83c7930efffedd40d9c25c2ec2
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: e1768d0ac03cb6730c4337d7476ae163e75adfd3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="considerations-in-overloading-procedures-visual-basic"></a>プロシージャのオーバーロードに関する注意事項 (Visual Basic)
 プロシージャをオーバー ロードするときに使用する必要あります別*署名*オーバー ロードされたバージョンごとにします。 通常、このエラーは、各バージョンは、異なるパラメーター リストを指定する必要があることを意味します。 詳細についてを参照してください「異なる署名」[プロシージャのオーバー ロード](./procedure-overloading.md)です。  

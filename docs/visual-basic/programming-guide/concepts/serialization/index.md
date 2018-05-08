@@ -1,23 +1,12 @@
 ---
 title: シリアル化 (Visual Basic)
-ms.custom: ''
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 67379a76-5465-4af8-a781-0b0b25a62d9a
-caps.latest.revision: 3
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 43e3be09a66ca1fef4f6a5b829c3057d2740d9c8
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 710975170d256982ea1a7190358155769ed6e2a7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="serialization-visual-basic"></a>シリアル化 (Visual Basic)
 シリアル化は、オブジェクトを格納するか、メモリ、データベース、またはファイルに転送するためにバイト ストリームに変換するプロセスです。 その主な目的は、必要なときに再作成できるように、オブジェクトの状態を保存しておくことです。 逆のプロセスは、逆シリアル化と呼ばれます。  

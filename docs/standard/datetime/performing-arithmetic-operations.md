@@ -1,13 +1,7 @@
 ---
-title: "日付と時刻を使用した算術演算の実行"
-ms.custom: 
+title: 日付と時刻を使用した算術演算の実行
 ms.date: 04/10/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -20,18 +14,13 @@ helpviewer_keywords:
 - DateTime structure, arithmetic operations
 - DateTimeOffset structure, arithmetic operations
 ms.assetid: 87c7ddf2-f15e-48af-8602-b3642237e6d0
-caps.latest.revision: "9"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: edad8fc6643b90afc8327b574e19b178270829b3
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 5bbd5afb89d2b992e06583c7427c1a25a5b8f273
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="performing-arithmetic-operations-with-dates-and-times"></a>日付と時刻を使用した算術演算の実行
 
@@ -46,7 +35,7 @@ ms.lasthandoff: 12/23/2017
 
 <xref:System.DateTime.CompareTo%28System.DateTime%29>メソッドによって報告されるローカル時刻よりも前 (またはより小さい)、UTC 時刻、および減算操作されることを示します、米国で UTC と、システムのローカル時刻の違い7 時間であることを示しています。 しかし、これら 2 つの値は、ある特定の時点を異なる表現で示したものであるため、この場合、時間差の原因は、UTC を基準としたローカル タイム ゾーンのオフセットにあることは明らかです。
 
-一般的に、<xref:System.DateTime.Kind%2A?displayProperty=nameWithType>プロパティによって返される結果は影響しません<xref:System.DateTime.Kind>比較演算および算術メソッド (示すように時間内と同じ 2 つのポイントの比較)、それらの結果の解釈に影響を与えることができますが、します。 例:
+一般的に、<xref:System.DateTime.Kind%2A?displayProperty=nameWithType>プロパティによって返される結果は影響しません<xref:System.DateTime.Kind>比較演算および算術メソッド (示すように時間内と同じ 2 つのポイントの比較)、それらの結果の解釈に影響を与えることができますが、します。 例えば:
 
 * 算術演算はすべての結果がある 2 つの日付と時刻の値に対して実行<xref:System.DateTime.Kind%2A?displayProperty=nameWithType>プロパティの両方と同じ<xref:System.DateTimeKind>2 つの値の実際の時間間隔が反映されます。 同様に、そのような 2 つの日付と時刻の値を比較した結果には、2 つの時間の関係が正確に反映されます。
 

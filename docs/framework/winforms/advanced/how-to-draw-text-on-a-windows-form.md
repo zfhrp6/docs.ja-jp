@@ -1,13 +1,6 @@
 ---
-title: "方法 : Windows フォームにテキストを描画する"
-ms.custom: 
+title: '方法 : Windows フォームにテキストを描画する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,16 +9,11 @@ helpviewer_keywords:
 - forms [Windows Forms], drawing text
 - text [Windows Forms], drawing
 ms.assetid: 5d2447a9-21a1-4adc-b954-5516f2bb9b2c
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 03e663f455a348b2699331ec5bf1ea6df2e54493
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9369a4ed26107bdc395d455ba6fb8420fd895d6f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-draw-text-on-a-windows-form"></a>方法 : Windows フォームにテキストを描画する
 次のコード例を使用する方法を示しています、<xref:System.Drawing.Graphics.DrawString%2A>のメソッド、<xref:System.Drawing.Graphics>フォームにテキストを描画します。 また、使用することができます<xref:System.Windows.Forms.TextRenderer>フォームでテキストを描画するためです。 詳細については、次を参照してください。[する方法: GDI でテキストを描画](../../../../docs/framework/winforms/advanced/how-to-draw-text-with-gdi.md)です。  
@@ -43,7 +31,7 @@ ms.lasthandoff: 12/22/2017
   
 -   Arial フォントがインストールされていません。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Drawing.Graphics.DrawString%2A>  
  <xref:System.Windows.Forms.TextRenderer.DrawText%2A>  
  <xref:System.Drawing.StringFormat.FormatFlags%2A>  

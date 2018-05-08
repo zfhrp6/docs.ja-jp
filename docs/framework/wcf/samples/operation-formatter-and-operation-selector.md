@@ -1,27 +1,15 @@
 ---
-title: "操作フォーマッタと操作セレクター"
-ms.custom: 
+title: 操作フォーマッタと操作セレクター
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 1c27e9fe-11f8-4377-8140-828207b98a0e
-caps.latest.revision: "19"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a10be10687f03b5de45846faa9ca832ead193e19
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 469b7f2c99652cb6fceb2e8f12f1c74f0140b5ec
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="operation-formatter-and-operation-selector"></a>操作フォーマッタと操作セレクター
-このサンプルでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] 拡張ポイントを使用して、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] で想定されている形式と異なる形式のメッセージ データを許可する方法を示します。 既定では、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]フォーマッタの下に含まれるメソッドのパラメーターを想定して、`soap:body`要素。 このサンプルでは、代わりに HTTP GET クエリ文字列のパラメータ データを解析するカスタム操作フォーマッタを実装し、そのデータを使用してメソッドを呼び出す方法を示します。  
+このサンプルでは、Windows Communication Foundation (WCF) の機能拡張ポイントを使用して、どのようなから別の形式でメッセージ データを許可する方法を示します[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]が必要です。 既定では、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]フォーマッタの下に含まれるメソッドのパラメーターを想定して、`soap:body`要素。 このサンプルでは、代わりに HTTP GET クエリ文字列のパラメータ データを解析するカスタム操作フォーマッタを実装し、そのデータを使用してメソッドを呼び出す方法を示します。  
   
  サンプルがに基づいて、[作業の開始](../../../../docs/framework/wcf/samples/getting-started-sample.md)を実装する、`ICalculator`サービス コントラクト。 加算、減算、乗算、および除算のメッセージを変更して、クライアントからサーバーへの要求を行うための HTTP GET と、サーバーからクライアントへの要求を行うための POX メッセージ付きの HTTP POST を使用する方法を示します。  
   
@@ -177,7 +165,7 @@ void ReplaceFormatterBehavior(OperationDescription operationDescription, Endpoin
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
+>  このディレクトリが存在しない場合に、 [Windows Communication Foundation (WCF) および .NET Framework 4 向けの Windows Workflow Foundation (WF) サンプル](http://go.microsoft.com/fwlink/?LinkId=150780)すべて Windows Communication Foundation (WCF) をダウンロードして[!INCLUDE[wf1](../../../../includes/wf1-md.md)]サンプルです。 このサンプルは、次のディレクトリに格納されます。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Formatters\QuieryStringFormatter`  
   
@@ -189,4 +177,4 @@ void ReplaceFormatterBehavior(OperationDescription operationDescription, Endpoin
   
 3.  1 つまたは複数コンピューター構成でサンプルを実行する手順についてで[Windows Communication Foundation サンプルの実行](../../../../docs/framework/wcf/samples/running-the-samples.md)です。  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目

@@ -1,13 +1,6 @@
 ---
 title: '方法: コード内でステートメントを分割および連結する (Visual Basic)'
-ms.custom: ''
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb._
 helpviewer_keywords:
@@ -28,14 +21,11 @@ helpviewer_keywords:
 - Visual Basic code, line continuation in
 - statements [Visual Basic], line breaks in
 ms.assetid: dea01dad-a8ac-484a-bb3a-8c45a1b1eccc
-caps.latest.revision: 21
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 06702cdc9073065a418b17d198dbb43be4aefca1
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 6bca3d62cb3e886ee08b9169d63d4c3a38247f3f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-break-and-combine-statements-in-code-visual-basic"></a>方法: コード内でステートメントを分割および連結する (Visual Basic)
 コードを書くときにも必要になるは、水平方向にスクロール コード エディターでステートメントが長くなりを作成する可能性があります。 方法は、これには影響しませんが、コードの実行、困難の作成者やその他のユーザーをモニターに表示されるようにコードを読み取る。 このような場合は、単一の長いステートメントを複数の行に分割することを検討してください。  

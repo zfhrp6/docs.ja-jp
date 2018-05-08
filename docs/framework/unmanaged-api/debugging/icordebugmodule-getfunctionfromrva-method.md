@@ -1,14 +1,6 @@
 ---
-title: "ICorDebugModule::GetFunctionFromRVA メソッド"
-ms.custom: 
+title: ICorDebugModule::GetFunctionFromRVA メソッド
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ICorDebugModule.GetFunctionFromRVA
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: f5a34517-2422-484f-be89-2ce0b4bce195
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 13f755198c83990e7dd48333ba2f4e9a57f6ae0d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: db2f30001e050c1f312613c794388ffaa99d3b17
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="icordebugmodulegetfunctionfromrva-method"></a>ICorDebugModule::GetFunctionFromRVA メソッド
 このメソッドは .NET Framework の現在のバージョンで実装されていません。  
@@ -47,9 +35,9 @@ HRESULT GetFunctionFromRVA(
 );  
 ```  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
     
  

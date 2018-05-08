@@ -1,13 +1,6 @@
 ---
-title: "方法: JPEG 圧縮レベルの設定"
-ms.custom: 
+title: '方法: JPEG 圧縮レベルの設定'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - images [Windows Forms], changing encoder parameters
 - JPEG images [Windows Forms], setting quality level
 ms.assetid: 4b9a74e3-9504-43c1-9f28-ace651d0772e
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 02e417fbcdb68e114ea0fc7afad7c22f6b2fdae9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5f12f0ed8bae7b6cfb6f3162848e3c3761f7dbbd
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-set-jpeg-compression-level"></a>方法: JPEG 圧縮レベルの設定
 イメージをディスクに保存するときに、ファイル サイズを最小化したり品質を向上させるために、イメージのパラメーターを修正したりする必要がある場合があります。 圧縮レベルを修正して、JPEG イメージの品質を調整することができます。 JPEG 画像を保存するときに、圧縮レベルを指定するに作成する必要があります、<xref:System.Drawing.Imaging.EncoderParameters>オブジェクトに渡すと、<xref:System.Drawing.Image.Save%2A>のメソッド、<xref:System.Drawing.Image>クラスです。 初期化、<xref:System.Drawing.Imaging.EncoderParameters>オブジェクトのいずれかで構成される配列を持つこと、<xref:System.Drawing.Imaging.EncoderParameter>です。 作成するときに、<xref:System.Drawing.Imaging.EncoderParameter>を指定して、<xref:System.Drawing.Imaging.Encoder.Quality>エンコーダー、その、必要な圧縮レベルです。  
@@ -140,7 +128,7 @@ End Function
   
 -   `TestPhoto.jpg` という名前のイメージ ファイル。保存場所は **c:\\** です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [方法: エンコーダーがサポートするパラメーターの確認](../../../../docs/framework/winforms/advanced/how-to-determine-the-parameters-supported-by-an-encoder.md)  
  [ビットマップの種類](../../../../docs/framework/winforms/advanced/types-of-bitmaps.md)  
  [マネージ GDI+ でのイメージ エンコーダーおよびイメージ デコーダーの使用](../../../../docs/framework/winforms/advanced/using-image-encoders-and-decoders-in-managed-gdi.md)

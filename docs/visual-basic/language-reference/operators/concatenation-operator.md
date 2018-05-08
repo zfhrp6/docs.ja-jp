@@ -1,12 +1,6 @@
 ---
-title: '&amp;演算子 (Visual Basic)'
+title: '&amp; 演算子 (Visual Basic)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.&
 helpviewer_keywords:
@@ -16,16 +10,13 @@ helpviewer_keywords:
 - concatenation operators [Visual Basic], syntax
 - strings [Visual Basic], concatenating
 ms.assetid: fefc3d00-cbf1-475c-8c5e-6fb213b3f85a
-caps.latest.revision: 12
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 76c8fc52a518dfe7850a5680b7d4f06f3d09bf73
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 28d8cdb22974d77edf055ab9b2c6c767872e6783
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="amp-operator-visual-basic"></a>&amp;演算子 (Visual Basic)
+# <a name="amp-operator-visual-basic"></a>&amp; 演算子 (Visual Basic)
 2 つの式の文字列の連結を生成します。  
   
 ## <a name="syntax"></a>構文  
@@ -36,13 +27,13 @@ result = expression1 & expression2
   
 ## <a name="parts"></a>指定項目  
  `result`  
- 必須です。 どの`String`または`Object`変数。  
+ 必須。 どの`String`または`Object`変数。  
   
  `expression1`  
- 必須です。 データ型に拡大変換を持つ任意の式`String`です。  
+ 必須。 データ型に拡大変換を持つ任意の式`String`です。  
   
  `expression2`  
- 必須です。 データ型に拡大変換を持つ任意の式`String`です。  
+ 必須。 データ型に拡大変換を持つ任意の式`String`です。  
   
 ## <a name="remarks"></a>コメント  
  データ型の場合`expression1`または`expression2`は`String`に拡大変換が`String`に変換されます`String`です。 かどうか、データ型のいずれかが拡大変換されないに`String`、コンパイラ エラーが発生します。  

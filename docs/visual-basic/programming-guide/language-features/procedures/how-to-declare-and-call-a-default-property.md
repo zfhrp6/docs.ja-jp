@@ -1,13 +1,6 @@
 ---
 title: '方法: 既定のプロパティを宣言して呼び出す (Visual Basic)'
-ms.custom: ''
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - defaults [Visual Basic], properties
 - properties [Visual Basic], default
@@ -17,14 +10,11 @@ helpviewer_keywords:
 - Visual Basic code, properties
 - default properties
 ms.assetid: 68b4026e-09ef-4613-808e-f6287494ff63
-caps.latest.revision: 23
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 9c4f471eba42e47d6bef45a4d38abc0cbd2d32bc
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 7805ee4dcd4bad0d0624c97ccc25232e9bc31ba4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-declare-and-call-a-default-property-in-visual-basic"></a>方法: 既定のプロパティを宣言して呼び出す (Visual Basic)
 A*既定プロパティ*クラスまたは構造体のプロパティで指定することがなく、コードにアクセスできます。 呼び出し元のコードは、クラスまたは構造体がない、プロパティ、およびコンテキスト プロパティへのアクセスを許可、Visual Basic が存在する場合に、そのクラスまたは構造体の既定のプロパティにアクセスを解決します。  

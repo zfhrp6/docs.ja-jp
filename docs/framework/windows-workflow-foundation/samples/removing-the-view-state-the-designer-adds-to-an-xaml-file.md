@@ -1,23 +1,12 @@
 ---
-title: "デザイナーによって XAML ファイルに追加されるビューステートの削除"
-ms.custom: 
+title: デザイナーによって XAML ファイルに追加されるビューステートの削除
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: a801ce22-8699-483c-a392-7bb3834aae4f
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 5da4423b5f6106bde106de739a8a33e351d17c3d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f63723c29c76854602308ba3e8d7e6dd65d9fb94
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="removing-the-view-state-the-designer-adds-to-an-xaml-file"></a>デザイナーによって XAML ファイルに追加されるビューステートの削除
 このサンプルでは、<xref:System.Windows.Markup.XamlWriter> から派生するクラスを作成する方法を示し、XAML ファイルからビュー ステートを削除します。 [!INCLUDE[wfd1](../../../../includes/wfd1-md.md)] は、ビュー ステートと呼ばれる情報を XAML ドキュメントに書き込みます。 ビュー ステートは、ランタイムでは不必要なレイアウト配置などの、デザイン時に必要な情報を参照します。 [!INCLUDE[wfd2](../../../../includes/wfd2-md.md)] は、編集時に、XAML ドキュメントにこの情報を挿入します。 [!INCLUDE[wfd2](../../../../includes/wfd2-md.md)] は、`mc:Ignorable` 属性を持つ XAML ファイルにビュー ステートを書き込みます。この結果、ランタイムが XAML ファイルを読み込みとき、この情報は読み込まれません。 このサンプルでは、XAML ノードの処理中にそのビューステート情報を削除するクラスを作成する方法を示します。  
@@ -129,6 +118,6 @@ XamlServices.Save(new ViewStateCleaningWriter(ActivityXamlServices.CreateBuilder
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
+> このディレクトリが存在しない場合に、 [Windows Communication Foundation (WCF) および .NET Framework 4 向けの Windows Workflow Foundation (WF) サンプル](http://go.microsoft.com/fwlink/?LinkId=150780)すべて Windows Communication Foundation (WCF) をダウンロードして[!INCLUDE[wf1](../../../../includes/wf1-md.md)]サンプルです。 このサンプルは、次のディレクトリに格納されます。  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Designer\ViewStateCleaningWriter`

@@ -1,21 +1,14 @@
 ---
-title: "書き込みを行うと MaximumSize 値を超えてしまうため、ログ ファイルに書き込めません"
+title: 書き込みを行うと MaximumSize 値を超えてしまうため、ログ ファイルに書き込めません
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vbrApplicationLog_FileExceedsMaximumSize
 ms.assetid: 61747a9c-e460-424b-a365-73cdba9dd428
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 4004dca2a3b9f13583cfdfe43f89bc4bff5dd6d6
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: dabd9559864f9c04d7e4647f1e7da24adc679b24
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="unable-to-write-to-log-file-because-writing-to-it-would-cause-it-to-exceed-maximumsize-value"></a>書き込みを行うと MaximumSize 値を超えてしまうため、ログ ファイルに書き込めません
 次の理由により、 <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener> クラスは、ログ ファイルに書き込むことができませんでした。  
@@ -34,7 +27,7 @@ ms.lasthandoff: 12/21/2017
   
 3.  <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.DiskSpaceExhaustedBehavior%2A> プロパティを <xref:Microsoft.VisualBasic.Logging.DiskSpaceExhaustedOption.DiscardMessages> に設定し、ログが大きすぎる場合は、警告のないメッセージを破棄します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.MaxFileSize%2A>  
  <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.DiskSpaceExhaustedBehavior%2A>  
  <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener>  

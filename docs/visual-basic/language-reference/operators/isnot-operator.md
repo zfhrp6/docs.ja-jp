@@ -1,25 +1,16 @@
 ---
 title: IsNot 演算子 (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.isnot
 helpviewer_keywords:
 - IsNot operator [Visual Basic]
 ms.assetid: 8dd2bcdb-0166-48a2-9094-60dfb448f36c
-caps.latest.revision: 13
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 969fdebdf15a1f779075c58616ccd16c64976a35
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: babee364d350ca84a8379f675acc4b5c87f98303
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="isnot-operator-visual-basic"></a>IsNot 演算子 (Visual Basic)
 2 つのオブジェクト参照変数を比較します。  
@@ -32,18 +23,18 @@ result = object1 IsNot object2
   
 ## <a name="parts"></a>指定項目  
  `result`  
- 必須です。 `Boolean` 値。  
+ 必須。 `Boolean` 値。  
   
  `object1`  
- 必須です。 どの`Object`変数または式。  
+ 必須。 どの`Object`変数または式。  
   
  `object2`  
- 必須です。 どの`Object`変数または式。  
+ 必須。 どの`Object`変数または式。  
   
 ## <a name="remarks"></a>コメント  
  `IsNot`演算子は、次の 2 つのオブジェクト参照が別のオブジェクトを参照してかどうかを決定します。 ただし、値の比較は実行しません。 場合`object1`と`object2`正確な同じオブジェクト インスタンスをどちらも参照してください`result`は`False`以外の場合は一致しない場合、`result`は`True`します。  
   
- `IsNot`逆の`Is`演算子。 利点は、`IsNot`は避けることができますを組み合わせて`Not`と`Is`、読みにくくなることができます。  
+ `IsNot` 逆の`Is`演算子。 利点は、`IsNot`は避けることができますを組み合わせて`Not`と`Is`、読みにくくなることができます。  
   
  使用することができます、`Is`と`IsNot`事前バインドおよび遅延バインディングの両方のオブジェクトをテストする演算子です。  
   

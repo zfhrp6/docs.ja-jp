@@ -1,24 +1,12 @@
 ---
 title: カスタム式エディターの使用
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 0901b58b-e037-44a8-8281-f6f54361cfca
-caps.latest.revision: 8
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 6e9481364a70257f6c1711692daf5c81eee9fd88
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: 4eb39fbd51cf4f1914f7fdca545f9c9fd8e83240
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-a-custom-expression-editor"></a>カスタム式エディターの使用
 カスタム式エディターを実装して、式の編集を多機能化したり単純化したりすることができます。 たとえば、次のような場合にカスタム式エディターを使用できます。  

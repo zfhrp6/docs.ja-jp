@@ -1,13 +1,6 @@
 ---
 title: ラムダ式 (Visual Basic)
-ms.custom: ''
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.LambdaFunction
 helpviewer_keywords:
@@ -16,14 +9,11 @@ helpviewer_keywords:
 - expressions [Visual Basic], lambda
 - inline functions [Visual Basic]
 ms.assetid: 137064b0-3928-4bfa-ba71-c3f9cbd951e2
-caps.latest.revision: 52
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 69ac88d295420277e99058d0f80a5ae1c2ce2e39
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: c45500dc7a1e59a7ac83d43b826ca4cbfca6efb3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="lambda-expressions-visual-basic"></a>ラムダ式 (Visual Basic)
 A*ラムダ式*は関数またはサブルーチン デリゲートが有効な場所で使用できる名前のないです。 ラムダ式は関数またはサブルーチンを指定でき、単一行または複数行を指定できます。 ラムダ式に現在のスコープから値を渡すことができます。  
@@ -58,7 +48,7 @@ A*ラムダ式*は関数またはサブルーチン デリゲートが有効な�
   
 -   単一行のラムダ関数は使用しないで、`As`戻り値の型を指定する句。 代わりに、型は、ラムダ式の本体に評価される値から推論されます。 たとえば、ラムダ式の本体が`cust.City = "London"`、戻り値の型は`Boolean`します。  
   
--   複数行ラムダ関数のいずれかを指定できます戻り値の型を使用して、`As`句、または省略、`As`句戻り値の型を推論できるようにします。 ときに、`As`複数行ラムダ関数の句を省略すると、すべての主要な型である戻り値の型を推論、`Return`複数行ラムダ関数内のステートメント。 *基準となる型*は一意の型に拡大変換できるその他のすべての型です。 この一意の型を特定できない場合に絞り込むことが、配列内の他のすべての型を一意の型は、主要な型です。 これらの一意の型をどちらも特定できない場合は、`Object` が最も優先度の高い型になります。 この例では場合、`Option Strict`に設定されている`On`、コンパイラ エラーが発生します。  
+-   複数行ラムダ関数のいずれかを指定できます戻り値の型を使用して、`As`句、または省略、`As`句戻り値の型を推論できるようにします。 ときに、`As`複数行ラムダ関数の句を省略すると、すべての主要な型である戻り値の型を推論、`Return`複数行ラムダ関数内のステートメント。 *基準となる型*は一意の型に拡大変換できるその他のすべての型です。 この一意の型を特定できない場合に絞り込むことが、配列内の他のすべての型を一意の型は、主要な型です。 これらの一意の型をどちらも特定できない場合は、 `Object`が最も優先度の高い型になります。 この例では場合、`Option Strict`に設定されている`On`、コンパイラ エラーが発生します。  
   
      式が指定された場合など、`Return`ステートメントは、型の値を含む`Integer`、 `Long`、および`Double`、結果の配列の型は`Double`します。 両方`Integer`と`Long`に拡大変換`Double`とのみ`Double`です。 そのため、 `Double` が最も優先度の高い型になります。 詳細については、「 [Widening and Narrowing Conversions](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)」を参照してください。  
   
@@ -70,7 +60,7 @@ A*ラムダ式*は関数またはサブルーチン デリゲートが有効な�
   
 -   ラムダ式のパラメーターのデータ型を使用して指定することができます、`As`キーワード、またはパラメーターのデータ型を推論することができます。 データ型またはすべてを推論する必要がありますかすべてのパラメーターが指定する必要があります。  
   
--   `Optional``Paramarray`パラメーターは使用できません。  
+-   `Optional` `Paramarray`パラメーターは使用できません。  
   
 -   ジェネリック パラメーターを指定することはできません。  
   
@@ -118,7 +108,7 @@ End Class
   
  作成して、非同期メソッドを使用する方法の詳細については、次を参照してください。 [Async および Await を使用した非同期プログラミング](../../../../visual-basic/programming-guide/concepts/async/index.md)です。  
   
-##  <a name="context"></a>コンテキスト  
+##  <a name="context"></a> コンテキスト  
  ラムダ式は、内部で定義されたスコープとコンテキストを共有します。 コンテナーのスコープで記述されたコードと同じアクセス権を持ちます。 メンバー変数、関数とサブへのアクセスが含まれます`Me`、コンテナーのスコープ内のローカル変数やパラメーター。  
   
  ローカル変数と、コンテナー スコープ内のパラメーターへのアクセスは、そのスコープの有効期間を超えて拡張できます。 ラムダ式を参照するデリゲートがガベージ コレクションを使用できない限り、元の環境変数へのアクセスは保持されます。 次の例で、変数`target`に対してローカルな`makeTheGame`をメソッド、ラムダ式`playTheGame`が定義されています。 返されたラムダ式が割り当てられている注`takeAGuess`で`Main`、引き続きローカル変数にアクセスしている`target`です。  
@@ -127,15 +117,15 @@ End Class
   
  次の例では、入れ子になったラムダ式のアクセス権の幅の広い範囲を示します。 返されたラムダ式を実行すると`Main`として`aDel`、これらの要素にアクセスします。  
   
--   定義されているクラスのフィールド:`aField`  
+-   定義されているクラスのフィールド: `aField`  
   
--   定義されているクラスのプロパティ:`aProp`  
+-   定義されているクラスのプロパティ: `aProp`  
   
--   メソッドのパラメーター `functionWithNestedLambda`、それが定義されています。`level1`  
+-   メソッドのパラメーター `functionWithNestedLambda`、それが定義されています。 `level1`  
   
--   ローカル変数`functionWithNestedLambda`:`localVar`  
+-   ローカル変数`functionWithNestedLambda`: `localVar`  
   
--   入れ子になったラムダ式のパラメーター:`level2`  
+-   入れ子になったラムダ式のパラメーター: `level2`  
   
  [!code-vb[VbVbalrLambdas#9](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/lambda-expressions_6.vb)]  
   
@@ -150,7 +140,7 @@ End Class
   
  ラムダ式をデリゲートに割り当てるまたはプロシージャに引数として渡したりするときに、パラメーター名を指定は、データ型、型がデリゲートから取得されるを省略できます。  
   
-## <a name="examples"></a>例  
+## <a name="examples"></a>使用例  
   
 -   次の例を返すラムダ式を定義する`True`null 許容型の引数に値が割り当てられる場合と`False`場合はその値は`Nothing`します。  
   

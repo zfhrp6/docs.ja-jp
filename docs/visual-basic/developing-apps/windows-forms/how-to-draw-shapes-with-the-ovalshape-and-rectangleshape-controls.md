@@ -1,10 +1,6 @@
 ---
-title: "方法 : OvalShape コントロールおよび RectangleShape コントロールを使用して図形を描画する (Visual Studio)"
+title: '方法 : OvalShape コントロールおよび RectangleShape コントロールを使用して図形を描画する (Visual Studio)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -13,14 +9,11 @@ helpviewer_keywords:
 - shapes, drawing
 - RectangleShape control [Visual Basic]
 ms.assetid: 0275b4c6-7a13-46c8-90f3-61db308c6b5d
-caps.latest.revision: "15"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 53d91d10cc4735bbae521d17d05045cc7ea75fbc
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: f87865ba3aebe5739b87d6ae6bfeaa957af726d8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-draw-shapes-with-the-ovalshape-and-rectangleshape-controls-visual-studio"></a>方法 : OvalShape コントロールおよび RectangleShape コントロールを使用して図形を描画する (Visual Studio)
 デザイン時にも実行時にも、<xref:Microsoft.VisualBasic.PowerPacks.OvalShape> コントロールを使用して、フォームまたはコンテナーに円または楕円を描画できます。 <xref:Microsoft.VisualBasic.PowerPacks.RectangleShape> コントロールを使用して、フォームまたはコンテナーに正方形、長方形、または角の丸い四角形を描画できます。 デザイン時にも実行時にも、このコントロールを使用して、図形を描画することもできます。  

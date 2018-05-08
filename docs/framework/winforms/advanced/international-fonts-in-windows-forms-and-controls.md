@@ -1,13 +1,6 @@
 ---
-title: "Windows フォームおよびコントロールの国際対応フォント"
-ms.custom: 
+title: Windows フォームおよびコントロールの国際対応フォント
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - fonts [Windows Forms], international
 - international applications [Windows Forms], character display
@@ -17,16 +10,11 @@ helpviewer_keywords:
 - font fallback in Windows Forms
 - globalization [Windows Forms], character sets
 ms.assetid: 2c3066df-9bac-479a-82b2-79e484b346a3
-caps.latest.revision: "6"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e7b6574e452faf4f0396f7633ba7f21519948262
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 38a6928dfb548c6b514b598dbebe5bbc62d2e3f8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="international-fonts-in-windows-forms-and-controls"></a>Windows フォームおよびコントロールの国際対応フォント
 国際対応のアプリケーションでは、可能な限り、フォント フォールバックを使用するフォントを選択する勧めします。 システムがどのようなスクリプトの文字を決定するフォント代替手段に属しています。  
@@ -90,6 +78,6 @@ TextBox1.Font = New System.Drawing.Font(Me.Font, TextBox1.Font.Style)
 textBox1.Font = new System.Drawing.Font(this.Font, textBox1.Font.Style);  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Windows フォームのグローバル化](../../../../docs/framework/winforms/advanced/globalizing-windows-forms.md)  
  [フォントとテキストの使用](../../../../docs/framework/winforms/advanced/using-fonts-and-text.md)

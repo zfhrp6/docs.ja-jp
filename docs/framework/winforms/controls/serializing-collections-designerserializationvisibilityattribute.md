@@ -1,13 +1,6 @@
 ---
-title: "チュートリアル: DesignerSerializationVisibilityAttribute を使用した、標準データ型のコレクションのシリアル化"
-ms.custom: 
+title: 'チュートリアル: DesignerSerializationVisibilityAttribute を使用した、標準データ型のコレクションのシリアル化'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -18,16 +11,11 @@ helpviewer_keywords:
 - collections [Windows Forms], serializing
 - collections [Windows Forms], standard types
 ms.assetid: 020c9df4-fdc5-4dae-815a-963ecae5668c
-caps.latest.revision: "19"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 0267020f7e7a52e92b05a0bda0ee397e5c3393fc
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: a502ecc30911f2296bf48eaa195f5b6452b7588a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="walkthrough-serializing-collections-of-standard-types-with-the-designerserializationvisibilityattribute"></a>チュートリアル: DesignerSerializationVisibilityAttribute を使用した、標準データ型のコレクションのシリアル化
 カスタム コントロールは、プロパティとして、コレクションを公開して場合があります。 このチュートリアルを使用する方法を示します、<xref:System.ComponentModel.DesignerSerializationVisibilityAttribute>クラスをデザイン時にコレクションをシリアル化する方法を制御します。 適用する、<xref:System.ComponentModel.DesignerSerializationVisibilityAttribute.Content>値をコレクション プロパティにより、プロパティをシリアル化することです。  
@@ -148,7 +136,7 @@ ms.lasthandoff: 01/19/2018
   
 -   [チュートリアル: Visual Studio のデザイン時機能を活用した Windows フォーム コントロールの作成](../../../../docs/framework/winforms/controls/creating-a-wf-control-design-time-features.md)  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ComponentModel.DesignerSerializationVisibilityAttribute>  
  [デザイナーのシリアル化の概要](http://msdn.microsoft.com/library/c342635a-aa5f-4281-915b-b013738af15a)  
  [方法: designerserializationvisibilityattribute を使用、標準的なデータ型のコレクションをシリアル化](http://msdn.microsoft.com/library/7829fcdd-8205-405f-8231-a1282a9835c9)  

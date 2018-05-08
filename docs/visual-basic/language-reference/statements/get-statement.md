@@ -1,12 +1,6 @@
 ---
 title: Get ステートメント
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Get
 helpviewer_keywords:
@@ -17,14 +11,11 @@ helpviewer_keywords:
 - Get keyword [Visual Basic]
 - property procedures [Visual Basic], Get statements
 ms.assetid: 56b05cdc-bd64-4dfd-bb12-824eacec6f94
-caps.latest.revision: 19
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: c1ff062a5e3bf41794bd5b4c90f1e188d6d97480
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: d6a6fdfd191de76871619dea3bd1794b487698aa
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="get-statement"></a>Get ステートメント
 宣言、`Get`プロパティ プロシージャのプロパティの値を取得するために使用します。  
@@ -41,10 +32,10 @@ End Get
   
 |用語|定義|  
 |---|---|  
-|`attributelist`|省略可能です。 参照してください[属性一覧](../../../visual-basic/language-reference/statements/attribute-list.md)です。|  
+|`attributelist`|任意。 参照してください[属性一覧](../../../visual-basic/language-reference/statements/attribute-list.md)です。|  
 |`accessmodifier`|1 つの省略可能な`Get`と`Set`このプロパティ内のステートメント。 次のいずれかの値を指定します。<br /><br /> -   [保護されています。](../../../visual-basic/language-reference/modifiers/protected.md)<br />-   [Friend](../../../visual-basic/language-reference/modifiers/friend.md)<br />-   [プライベート](../../../visual-basic/language-reference/modifiers/private.md)<br />-   `Protected Friend`<br /><br /> 参照してください[Visual Basic でのレベルのアクセス](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)です。|  
-|`statements`|省略可能です。 場合に実行する 1 つまたは複数のステートメント、`Get`プロパティ プロシージャが呼び出されます。|  
-|`End Get`|必須です。 定義を終了、`Get`プロパティ プロシージャです。|  
+|`statements`|任意。 場合に実行する 1 つまたは複数のステートメント、`Get`プロパティ プロシージャが呼び出されます。|  
+|`End Get`|必須。 定義を終了、`Get`プロパティ プロシージャです。|  
   
 ## <a name="remarks"></a>コメント  
  すべてのプロパティがあります、`Get`プロパティ プロシージャ、プロパティが設定されていない限り`WriteOnly`です。 `Get`プロパティの現在の値を返すプロシージャを使用します。  
@@ -69,7 +60,7 @@ End Get
   
 -   **プロシージャから取得します。** ときに、`Get`プロパティ値を要求するステートメント内で、プロシージャ呼び出し元のコードに戻ると、実行が継続します。  
   
-     `Get`プロパティ プロシージャは、いずれかを使用して値を返すことができます、 [Return ステートメント](../../../visual-basic/language-reference/statements/return-statement.md)か、プロパティ名を戻り値を割り当てます。 詳細についてを参照してください「戻り値」[関数ステートメント](../../../visual-basic/language-reference/statements/function-statement.md)です。  
+     `Get` プロパティ プロシージャは、いずれかを使用して値を返すことができます、 [Return ステートメント](../../../visual-basic/language-reference/statements/return-statement.md)か、プロパティ名を戻り値を割り当てます。 詳細についてを参照してください「戻り値」[関数ステートメント](../../../visual-basic/language-reference/statements/function-statement.md)です。  
   
      `Exit Property`と`Return`ステートメントでは、プロパティ プロシージャからすぐに終了します。 任意の数の`Exit Property`と`Return`ステートメントがどこにでも表示、プロシージャとを混在させること`Exit Property`と`Return`ステートメントです。  
   

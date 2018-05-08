@@ -1,34 +1,20 @@
 ---
 title: '方法 : カスタム ユーザー名およびパスワード検証を使用する'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - WCF, username and password
 ms.assetid: 8e08b74b-fa44-4018-b63d-0d0805f85e3f
-caps.latest.revision: 14
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 4ea4f4d7021f02d239b9e2e93a85b5baaf5a0317
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 8580219181af8fd28bcc99c60bd1e681ffbdad54
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-use-a-custom-user-name-and-password-validator"></a>方法 : カスタム ユーザー名およびパスワード検証を使用する
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] では、認証にユーザー名とパスワードを使用すると、既定の Windows 認証を使用してユーザー名とパスワードが検証されます。 ただし、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]では、カスタム ユーザー名とパスワードの認証スキームとも呼ばれる*バリデーター*です。 ユーザー名およびパスワードのカスタム検証を組み込むには、<xref:System.IdentityModel.Selectors.UserNamePasswordValidator> から派生するクラスを作成して構成します。  
+既定では、使用すると、ユーザー名とパスワード認証では、Windows Communication Foundation (WCF) を使用して Windows ユーザー名とパスワードを検証します。 ただし、WCF では、カスタム ユーザー名とパスワードの認証スキームとも呼ばれる*バリデーター*です。 ユーザー名およびパスワードのカスタム検証を組み込むには、<xref:System.IdentityModel.Selectors.UserNamePasswordValidator> から派生するクラスを作成して構成します。  
   
  サンプル アプリケーションについては、次を参照してください。[ユーザー名パスワード検証](../../../../docs/framework/wcf/samples/user-name-password-validator.md)です。  
   
@@ -64,7 +50,7 @@ ms.lasthandoff: 04/30/2018
   
     1.  構成ファイルで下にある、 [ \<system.serviceModel >](../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md)要素を追加、 [\<バインド >](../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)要素。  
   
-    2.  追加、 [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)または[ \<basicHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md)バインディング セクションに要素。 作成の詳細については、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]バインド要素を参照してください[する方法: 構成でサービス バインディングを指定](../../../../docs/framework/wcf/how-to-specify-a-service-binding-in-configuration.md)です。  
+    2.  追加、 [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)または[ \<basicHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md)バインディング セクションに要素。 WCF バインド要素の作成の詳細については、次を参照してください。[する方法: 構成でサービス バインディングを指定](../../../../docs/framework/wcf/how-to-specify-a-service-binding-in-configuration.md)です。  
   
     3.  設定、`mode`の属性、 [\<セキュリティ >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-wshttpbinding.md)または[\<セキュリティ >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-basichttpbinding.md)に`Message`、 `Transport`、`or``TransportWithMessageCredential`です。  
   
@@ -75,9 +61,9 @@ ms.lasthandoff: 04/30/2018
          HTTP (S) 経由でのトランスポート レベルのセキュリティを使用して、設定、`clientCredentialType`の属性、 [\<トランスポート >](../../../../docs/framework/configure-apps/file-schema/wcf/transport-of-wshttpbinding.md)または[\<トランスポート >](../../../../docs/framework/configure-apps/file-schema/wcf/transport-of-basichttpbinding.md)に`Basic`です。  
   
         > [!NOTE]
-        >  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスがインターネット インフォメーション サービス (IIS) でトランスポート レベルのセキュリティを使用してホストされており、<xref:System.ServiceModel.Security.UserNamePasswordServiceCredential.UserNamePasswordValidationMode%2A> プロパティが <xref:System.ServiceModel.Security.UserNamePasswordValidationMode.Custom> に設定されている場合、カスタム認証方式では Windows 認証のサブセットが使用されます。 これは、このシナリオの場合、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] がカスタム認証を呼び出す前に IIS によって Windows 認証が実行されるためです。  
+        >  WCF サービスがホストされている場合にインターネット インフォメーション サービス (IIS) トランスポート レベル セキュリティを使用して、<xref:System.ServiceModel.Security.UserNamePasswordServiceCredential.UserNamePasswordValidationMode%2A>プロパティに設定されている<xref:System.ServiceModel.Security.UserNamePasswordValidationMode.Custom>、カスタム認証方式は Windows 認証のサブセットを使用しています。 このシナリオでは IIS が WCF のカスタム認証システムを起動する前に Windows 認証を実行するためです。  
   
-     作成の詳細については、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]バインド要素を参照してください[する方法: 構成でサービス バインディングを指定](../../../../docs/framework/wcf/how-to-specify-a-service-binding-in-configuration.md)です。  
+     WCF バインド要素の作成の詳細については、次を参照してください。[する方法: 構成でサービス バインディングを指定](../../../../docs/framework/wcf/how-to-specify-a-service-binding-in-configuration.md)です。  
   
      次のコード例は、バインディングの構成コードを示しています。  
   
@@ -110,7 +96,7 @@ ms.lasthandoff: 04/30/2018
     6.  `userNamePasswordValidationMode` を `Custom` に設定します。  
   
         > [!IMPORTANT]
-        >  `userNamePasswordValidationMode` 値が設定されていない場合、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、カスタムのユーザー名/パスワード検証コントロールの代わりに Windows 認証が使用されます。  
+        >  場合、`userNamePasswordValidationMode`値が設定されていない、WCF は、カスタムのユーザー名とパスワードの検証コントロールではなく Windows 認証を使用します。  
   
     7.  `customUserNamePasswordValidatorType` を、カスタムのユーザー名/パスワード検証コントロールを表す型に設定します。  
   

@@ -1,25 +1,15 @@
 ---
-title: "方法: XML リテラルに式を埋め込む (Visual Basic)"
-ms.custom: 
+title: '方法: XML リテラルに式を埋め込む (Visual Basic)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - embedded expressions [Visual Basic]
 - XML literals [Visual Basic], embedded expressions
 ms.assetid: 75016fad-0141-42de-8564-5051be29487e
-caps.latest.revision: "16"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: bef4662d69ca7ceddeb2641cbe265d93712c5d16
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 41dc6ef8d2ec2ffd6cd1cf793911f2e09f1a1e77
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-embed-expressions-in-xml-literals-visual-basic"></a>方法: XML リテラルに式を埋め込む (Visual Basic)
 埋め込み式を XML ドキュメント、フラグメント、または実行時に作成されたコンテンツを格納する要素を作成するには、XML リテラルを組み合わせることができます。 次の例では、組み込み式を使用して、実行時に要素の内容、属性、および要素名を設定する方法を示します。  

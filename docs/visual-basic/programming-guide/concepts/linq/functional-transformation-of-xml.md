@@ -1,22 +1,12 @@
 ---
-title: "XML (Visual Basic) の関数型変換"
-ms.custom: 
+title: XML (Visual Basic) の関数型変換
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: fdbe5b91-f457-4b4e-a11b-def4bdd77bab
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 69cd09a017ab7fbf9fc56a6724abb4cc15b3e1cf
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: c268f414d720bb71866c35de367e9f452f02c5ab
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="functional-transformation-of-xml-visual-basic"></a>XML (Visual Basic) の関数型変換
 このトピックでは、XML ドキュメントを変更するための純粋関数型変換の方法について説明し、手続き型の方法と比較します。  

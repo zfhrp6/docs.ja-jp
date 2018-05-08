@@ -1,17 +1,12 @@
 ---
 title: コンパイラ ディレクティブ (F#)
 description: F# の言語プリプロセッサ ディレクティブ、条件付きコンパイル ディレクティブは、行ディレクティブとコンパイラ ディレクティブについて説明します。
-author: cartermp
-ms.author: phcart
 ms.date: 05/16/2016
-ms.topic: language-reference
-ms.prod: dotnet-fsharp
-ms.devlang: fsharp
-ms.openlocfilehash: 03fe3598f04025cf6dfaf2424b9fcb33ed4b3859
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 5b7974d586b085ad8a40bc2d872cdd425494475a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="compiler-directives"></a>コンパイラ ディレクティブ
 

@@ -1,22 +1,12 @@
 ---
-title: "方法: Namespace、全体 XML ツリーを変更 (Visual Basic)"
-ms.custom: 
+title: '方法: Namespace、全体 XML ツリーを変更 (Visual Basic)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 1837324b-5cb5-4fa8-95b9-3071efa0f913
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 1c5ee83840f9d8b4105e7af53008a329dfde37d3
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 1ef5ae9a2a8c4e69687809c117451d70dbfe211b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-change-the-namespace-for-an-entire-xml-tree-visual-basic"></a>方法: Namespace、全体 XML ツリーを変更 (Visual Basic)
 要素または属性の名前空間をプログラムで変更しなければならない場合があります。 LINQ to XML では、この操作を簡単に行うことができます。 <xref:System.Xml.Linq.XElement.Name%2A?displayProperty=nameWithType> プロパティを設定できます。 <xref:System.Xml.Linq.XAttribute.Name%2A?displayProperty=nameWithType> プロパティは設定できませんが、簡単に属性を <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> にコピーし、既存の属性を削除して、目的の新しい名前空間に含まれる新しい属性を追加できます。  

@@ -1,24 +1,12 @@
 ---
-title: "ワークフロー サービスへのトランザクションのフロー"
-ms.custom: 
+title: ワークフロー サービスへのトランザクションのフロー
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 03ced70e-b540-4dd9-86c8-87f7bd61f609
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a38c0c224c93941efa767d142aa7738296a62f15
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8b3d3e85b626d033c9ab50e93e3ceb3b86058a2f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="flowing-transactions-into-and-out-of-workflow-services"></a>ワークフロー サービスへのトランザクションのフロー
 ワークフロー サービスとワークフロー クライアントはトランザクションに参加できます。  サービス操作をアンビエント トランザクションの一部にするには、<xref:System.ServiceModel.Activities.Receive> アクティビティを <xref:System.ServiceModel.Activities.TransactedReceiveScope> アクティビティの中に配置します。 <xref:System.ServiceModel.Activities.Send> 内の <xref:System.ServiceModel.Activities.SendReply> または <xref:System.ServiceModel.Activities.TransactedReceiveScope> アクティビティによる呼び出しが行われると、アンビエント トランザクション内でも呼び出しが行われます。 ワークフロー クライアント アプリケーションでは、<xref:System.Activities.Statements.TransactionScope> アクティビティを使用してアンビエント トランザクションを作成し、そのアンビエント トランザクションを使用してサービス操作を呼び出すことができます。 ここでは、トランザクションに参加するワークフロー サービスとワークフロー クライアントを作成する手順について説明します。  
@@ -87,7 +75,7 @@ ms.lasthandoff: 12/22/2017
   
 ### <a name="implement-the-workflow-service"></a>ワークフロー サービスの実装  
   
-1.  新しい[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]と呼ばれるワークフロー サービス`WorkflowService`を`Common`プロジェクト。 右クリックを行うには、`Common`プロジェクトで、**追加**、**新しい項目の追加.****ワークフロー** **インストールされたテンプレート**を選択し、 **WCF ワークフロー サービス**です。  
+1.  呼ばれる新しい WCF ワークフロー サービスの追加`WorkflowService`を`Common`プロジェクト。 右クリックを行うには、`Common`プロジェクトで、**追加**、**新しい項目の追加.****ワークフロー** **インストールされたテンプレート**を選択し、 **WCF ワークフロー サービス**です。  
   
      ![ワークフロー サービスの追加](../../../../docs/framework/wcf/feature-details/media/addwfservice.JPG "AddWFService")  
   
@@ -120,7 +108,7 @@ ms.lasthandoff: 12/22/2017
   
      ![Receive アクティビティの追加](../../../../docs/framework/wcf/feature-details/media/serviceaddreceive.JPG "ServiceAddReceive")  
   
-7.  クリックして、**を定義しています.**内のリンク、<xref:System.ServiceModel.Activities.Receive>アクティビティと、次の設定を行います。  
+7.  クリックして、**を定義しています.** 内のリンク、<xref:System.ServiceModel.Activities.Receive>アクティビティと、次の設定を行います。  
   
      ![Recieve アクティビティのメッセージ設定](../../../../docs/framework/wcf/feature-details/media/receivemessagesettings.JPG "ReceiveMessageSettings")  
   
@@ -152,7 +140,7 @@ ms.lasthandoff: 12/22/2017
   
      ![Assign および WriteLine の追加後に](../../../../docs/framework/wcf/feature-details/media/afteraddingsbrwriteline.JPG "AfterAddingSBRWriteLine")  
   
-12. 右クリックして、<xref:System.ServiceModel.Activities.Receive>活動と選択**SendReply の作成**し、最後の後に貼り付けます<xref:System.Activities.Statements.WriteLine>アクティビティ。 クリックして、**を定義しています.**内のリンク、`SendReplyToReceive`アクティビティと、次の設定を行います。  
+12. 右クリックして、<xref:System.ServiceModel.Activities.Receive>活動と選択**SendReply の作成**し、最後の後に貼り付けます<xref:System.Activities.Statements.WriteLine>アクティビティ。 クリックして、**を定義しています.** 内のリンク、`SendReplyToReceive`アクティビティと、次の設定を行います。  
   
      ![メッセージの設定を返信](../../../../docs/framework/wcf/feature-details/media/replymessagesettings.JPG "ReplyMessageSettings")  
   
@@ -200,7 +188,7 @@ ms.lasthandoff: 12/22/2017
   
      ![Send アクティビティのプロパティを設定](../../../../docs/framework/wcf/feature-details/media/clientsendsettings.JPG "ClientSendSettings")  
   
-9. クリックして、**を定義しています.**リンクし、次の設定を行います。  
+9. クリックして、**を定義しています.** リンクし、次の設定を行います。  
   
      ![Send アクティビティのメッセージ設定](../../../../docs/framework/wcf/feature-details/media/sendmessagesettings.JPG "SendMessageSettings")  
   
@@ -323,7 +311,7 @@ ms.lasthandoff: 12/22/2017
         }  
     ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ワークフロー サービス](../../../../docs/framework/wcf/feature-details/workflow-services.md)  
  [Windows Communication Foundation のトランザクションの概要](../../../../docs/framework/wcf/feature-details/transactions-overview.md)  
  [TransactedReceiveScope の使用](../../../../docs/framework/windows-workflow-foundation/samples/use-of-transactedreceivescope.md)

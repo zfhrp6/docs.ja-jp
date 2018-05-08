@@ -1,28 +1,14 @@
 ---
-title: "サービスの構成"
-ms.custom: 
+title: サービスの構成
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - configuration [WCF]
 ms.assetid: beac771e-f28e-4f84-9ff1-ad9251c726d3
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 857ec77e54d6a55bde1a94fd9fd5758ef7a24309
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: dc3aeadafd54bbd8b57a3e8c781e0cced9e7e632
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="configuring-services"></a>サービスの構成
 サービス コントラクトの設計、実装が終われば、サービスを構成できる状態になります。 クライアント側から見たサービスの動作は、ここで定義、カスタマイズします。サービスと通信するためのアドレス、メッセージの送受信に使うトランスポートやエンコーディング、必要なセキュリティ型などを指定できます。  
@@ -34,13 +20,13 @@ ms.lasthandoff: 12/22/2017
  [!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)]以降では、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] には、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] 構成要件を簡略化する新しい既定の構成モデルが付属しています。 特定のサービスに対し [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] 構成を指定しないと、ランタイムは自動的に既定のエンドポイント、バインディング、および動作でサービスを構成します。  
   
  [構成ファイルを使用してサービスを構成する方法](../../../docs/framework/wcf/configuring-services-using-configuration-files.md)  
- [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービスは、[!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] の構成技術を使用して構成できます。 通常、XML 要素は、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスをホストするインターネット インフォメーション サービス (IIS) サイトの Web.config ファイルに追加されます。 この要素によって、コンピューターごとにエンドポイント アドレス (サービスと通信するために使用する実際のアドレス) などの詳細情報を変更できます。  
+ Windows Communication Foundation (WCF) サービスは、構成可能なを使用して、[!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)]テクノロジ構成します。 通常、XML 要素は、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスをホストするインターネット インフォメーション サービス (IIS) サイトの Web.config ファイルに追加されます。 この要素によって、コンピューターごとにエンドポイント アドレス (サービスと通信するために使用する実際のアドレス) などの詳細情報を変更できます。  
   
  [バインディング](../../../docs/framework/wcf/bindings.md)  
  さらに [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] には、一般的な構成がシステム提供のバインディングとして用意されています。これを使用すると、クライアントとサービスの通信方法に関する基本事項 (トランスポート、セキュリティ、メッセージのエンコーディングなど) を容易に選択できます。  
   
  [エンドポイント](../../../docs/framework/wcf/endpoints.md)  
- すべての通信、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]サービスが使用して行われる、*エンドポイント*サービス。 エンドポイントには、コントラクト、バインディングで指定されている構成情報、およびサービスの検索場所やサービスに関する情報の取得場所を示すアドレスが設定されています。  
+ [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]サービスにおけるすべての通信はサービスの*エンドポイント*を通じて発生します。 エンドポイントには、コントラクト、バインディングで指定されている構成情報、およびサービスの検索場所やサービスに関する情報の取得場所を示すアドレスが設定されています。  
   
  [サービスのセキュリティ保護](../../../docs/framework/wcf/securing-services.md)  
  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] および既存のセキュリティ機構を使用することにより、機密性、整合性、認証、および承認をサービスに実装できます。 また、セキュリティに関する成功および失敗を監査することも可能です。  
@@ -68,7 +54,7 @@ ms.lasthandoff: 12/22/2017
   
  [管理と診断](../../../docs/framework/wcf/diagnostics/index.md)  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [基本的な WCF プログラミング](../../../docs/framework/wcf/basic-wcf-programming.md)  
  [概念](../../../docs/framework/wcf/conceptual-overview.md)  
  [WCF 機能の詳細](../../../docs/framework/wcf/feature-details/index.md)

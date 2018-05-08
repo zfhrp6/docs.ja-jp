@@ -1,24 +1,12 @@
 ---
-title: "チャネル ファクトリとキャッシュ"
-ms.custom: 
+title: チャネル ファクトリとキャッシュ
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 954f030e-091c-4c0e-a7a2-10f9a6b1f529
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b92c94c6ae15684a087af07edd5801aa4bb9f671
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 1bf8e3fe4833b662f16bd6311056fda8609dd9d3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="channel-factory-and-caching"></a>チャネル ファクトリとキャッシュ
 WCF クライアント アプリケーションでは、<xref:System.ServiceModel.ChannelFactory%601> クラスを使用して WCF サービスとの通信チャネルを作成します。  <xref:System.ServiceModel.ChannelFactory%601> インスタンスを作成する場合は、次の操作が必要になるため、オーバーヘッドが生じます。  
@@ -122,7 +110,7 @@ public partial class TestClient : System.ServiceModel.ClientBase, ITest {}
   
  上の例では、`TestClient` のすべてのインスタンスで異なるチャネル ファクトリを使用します。 これは、エンドポイントごとにセキュリティ要件が異なり、キャッシュする意味がない場合に便利です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.ClientBase%601>  
  [クライアントを構築する](../../../../docs/framework/wcf/building-clients.md)  
  [クライアント](../../../../docs/framework/wcf/feature-details/clients.md)  

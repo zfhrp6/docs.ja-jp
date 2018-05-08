@@ -1,13 +1,6 @@
 ---
-title: "共通の XAML 言語プリミティブの組み込み型"
-ms.custom: 
+title: 共通の XAML 言語プリミティブの組み込み型
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - XAML language primitives [XAML Services]
 - XAML [XAML Services], built-in types
@@ -22,16 +15,11 @@ helpviewer_keywords:
 - x:Single [XAML Services]
 - x:Int32 [XAML Services]
 ms.assetid: 11de2f08-5b95-4989-b5ec-5178eb968184
-caps.latest.revision: "11"
-author: wadepickett
-ms.author: wpickett
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 6052e575b62994b54799cc1af88584f433b06ff8
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 15c359a9a7f9797fc03ce20c453905af01f925d7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="built-in-types-for-common-xaml-language-primitives"></a>共通の XAML 言語プリミティブの組み込み型
 XAML 2009 では、いくつかのデータ型に対する XAML 言語をサポートします。これらのデータ型は、共通言語ランタイム (CLR: Common Language Runtime) およびその他のプログラミング言語でよく使用されているプリミティブです。 XAML 2009 でサポートされるようになったのは、 `x:Object`, `x:Boolean`, `x:Char`, `x:String`, `x:Decimal`, `x:Single`, `x:Double`, `x:Int16`, `x:Int32`, `x:Int64`, `x:TimeSpan`, `x:Uri`, `x:Byte`、および `x:Array`の各プリミティブです。  

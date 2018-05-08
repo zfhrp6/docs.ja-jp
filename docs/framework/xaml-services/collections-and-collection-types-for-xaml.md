@@ -1,24 +1,12 @@
 ---
-title: "XAML のコレクションおよびコレクション型"
-ms.custom: 
+title: XAML のコレクションおよびコレクション型
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 58f8e7c6-9a41-4f25-8551-c042f1315baa
-caps.latest.revision: "2"
-author: wadepickett
-ms.author: wpickett
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b67fec476c95d82b769494d53e50550cad0c719b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5605c97b13503e18e2f698f2a19f715663052b08
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="collections-and-collection-types-for-xaml"></a>XAML のコレクションおよびコレクション型
 このトピックでは、コレクションをサポートして、親オブジェクトの要素またはプロパティ要素の子要素としてコレクション アイテムをインスタンス化するため、XAML 構文をサポートするためには、型のプロパティを定義する方法について説明します。  
@@ -34,7 +22,7 @@ ms.lasthandoff: 12/22/2017
   
 2.  <xref:System.Collections.IDictionary>インターフェイスが dicionary コレクションを表します。  
   
-3.  <xref:System.Array>配列、および配列をサポートしている表します<xref:System.Collections.IList>メソッドです。  
+3.  <xref:System.Array> 配列、および配列をサポートしている表します<xref:System.Collections.IList>メソッドです。  
   
  これらの概念のコレクションの各で、.NET Framework XAML サービスの XAML プロセッサは、予期を呼び出して、`Add`コレクション プロパティの型の特定のインスタンス上のメソッドです。 または、XAML プロセッサ シナリオでは、シリアル化、リスト、ディクショナリまたは「アイテム」の各コレクションの特定の概念に基づいて配列内に見つかった項目ごとに個別の XAML 型のインスタンスが生成されます。 これらは、:<xref:System.Collections.IList.Item%2A>です。<xref:System.Collections.IDictionary.Item%2A>; 明示的な<xref:System.Array.System%23Collections%23IList%23Item%2A>の<xref:System.Array>します。  
   
@@ -49,8 +37,8 @@ ms.lasthandoff: 12/22/2017
 ## <a name="xaml-type-system-support-and-collections"></a>XAML 型システムのサポートとコレクション  
  XAML を解析しを設定するまたはコレクションのプロパティをシリアル化の基本的なメカニズム、以外は、.NET Framework XAML サービスに実装されている XAML 型システムには、XAML でのコレクションに関連するいくつかのデザイン機能が含まれています。  
   
-1.  <xref:System.Xaml.XamlType.IsCollection%2A>XAML の型は、XAML コレクションのサポートを提供する型によってバックアップされている場合は true を返します。  
+1.  <xref:System.Xaml.XamlType.IsCollection%2A> XAML の型は、XAML コレクションのサポートを提供する型によってバックアップされている場合は true を返します。  
   
-2.  <xref:System.Xaml.XamlType.IsDictionary%2A>および<xref:System.Xaml.XamlType.IsArray%2A>XAML の型をサポートするコレクション モードをさらに特定できます。 カスタム XAML の .NET Framework XAML サービスと、XAML に基づくプロセッサは入力システムが、既存に基づいていない<xref:System.Xaml.XamlWriter>実装では、使用するコレクション モードを知る必要がありますを呼び出す方法を把握するためにコレクションの処理です。  
+2.  <xref:System.Xaml.XamlType.IsDictionary%2A> および<xref:System.Xaml.XamlType.IsArray%2A>XAML の型をサポートするコレクション モードをさらに特定できます。 カスタム XAML の .NET Framework XAML サービスと、XAML に基づくプロセッサは入力システムが、既存に基づいていない<xref:System.Xaml.XamlWriter>実装では、使用するコレクション モードを知る必要がありますを呼び出す方法を把握するためにコレクションの処理です。  
   
 3.  前のプロパティの値の各可能性のある影響を受けますの上書きによって<xref:System.Xaml.XamlType.LookupCollectionKind%2A>XAML の型にします。

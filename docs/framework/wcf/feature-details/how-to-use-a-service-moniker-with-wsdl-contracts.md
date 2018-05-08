@@ -1,24 +1,12 @@
 ---
-title: "方法 : WSDL コントラクトと共にサービス モニカーを使用する"
-ms.custom: 
+title: '方法 : WSDL コントラクトと共にサービス モニカーを使用する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: a88d9650-bb50-4f48-8c85-12f5ce98a83a
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 7c36ac73ced510c1ba3b7e16c71f764c46d6c8f9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 838e7affcf47742c8f372879fcb33946d53ba43f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-use-a-service-moniker-with-wsdl-contracts"></a>方法 : WSDL コントラクトと共にサービス モニカーを使用する
 完全に自己完結型である COM Interop クライアントの構築が必要になる場合があります。 呼び出そうとするサービスで MEX エンドポイントが公開されておらず、WCF クライアントの DLL が COM interop に登録されていないこともあります。 このような場合、サービスを記述した WSDL ファイルを作成し、そのファイルを WCF サービス モニカーに渡すことができます。 ここでは、WCF WSDL モニカーを使用して、WCF の入門サンプルを呼び出す方法を説明します。  
@@ -27,7 +15,7 @@ ms.lasthandoff: 12/22/2017
   
 1.  入門サンプル ソリューションを開き、ビルドします。  
   
-2.  Internet Explorer を開いて http://localhost/ServiceModelSamples/Service.svc に移動し、サービスが動作していることを確認します。  
+2.  Internet Explorer を開きを参照http://localhost/ServiceModelSamples/Service.svcサービスが動作しているかどうかを確認します。  
   
 3.  Service.cs ファイルで、次の属性を CalculatorService クラスに追加します。  
   
@@ -37,7 +25,7 @@ ms.lasthandoff: 12/22/2017
   
   
   
-5.  アプリケーションが読み取る WSDL ファイルを作成します。 名前空間を手順 3. と 4. で追加したので、IE で http://localhost/ServiceModelSamples/Service.svc?wsdl を表示することによって、サービスの WSDL 記述全体を照会できます。 次に、そのファイルをサービスの WSDL.xml として Internet Explorer で保存できます。 手順 3. と 4. で名前空間を指定しなかった場合、上記の URL を照会したときに返される WSDL ドキュメントは、完全な WSDL ではありません。 返される WSDL ドキュメントには、他の WSDL ドキュメントをインポートするためのインポート ステートメントが追加されています。 各インポート ステートメントを実行し、サービスから返された WSDL とインポートした WSDL を組み合わせることによって、完全な WSDL ドキュメントを作成する必要があります。  
+5.  アプリケーションが読み取る WSDL ファイルを作成します。 名前空間は、手順 3. および 4. で追加された、ためにを参照して、サービスの WSDL 記述全体を照会する IE を使用してhttp://localhost/ServiceModelSamples/Service.svc?wsdlです。 次に、そのファイルをサービスの WSDL.xml として Internet Explorer で保存できます。 手順 3. と 4. で名前空間を指定しなかった場合、上記の URL を照会したときに返される WSDL ドキュメントは、完全な WSDL ではありません。 返される WSDL ドキュメントには、他の WSDL ドキュメントをインポートするためのインポート ステートメントが追加されています。 各インポート ステートメントを実行し、サービスから返された WSDL とインポートした WSDL を組み合わせることによって、完全な WSDL ドキュメントを作成する必要があります。  
   
 6.  Visual Basic 6.0 を開き、新しい標準 .exe ファイルを作成します。 フォームにボタンを追加し、追加したボタンをダブルクリックして次のコードをクリック ハンドラーに追加します。  
   
@@ -67,6 +55,6 @@ ms.lasthandoff: 12/22/2017
   
 7.  Visual Basic アプリケーションを実行します。 メッセージ ボックスに、Subtract(145, 76.54) を呼び出した結果が表示されます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [はじめに](../../../../docs/framework/wcf/samples/getting-started-sample.md)  
  [COM アプリケーションとの統合の概要](../../../../docs/framework/wcf/feature-details/integrating-with-com-applications-overview.md)

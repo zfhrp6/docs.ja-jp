@@ -1,28 +1,16 @@
 ---
-title: "グラデーション ブラシを使用した図形の塗りつぶし"
-ms.custom: 
+title: グラデーション ブラシを使用した図形の塗りつぶし
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - brushes [Windows Forms], gradient brushes
 - gradient brushes
 - examples [Windows Forms], gradient brushes
 ms.assetid: 2c6037b9-05bd-44c0-a22a-19584b722524
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 6a84a68f9082d00559938c2710b6574690fa6ab4
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 857a9276a731ae5e69b3caa1a639d1315aba9901
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-a-gradient-brush-to-fill-shapes"></a>グラデーション ブラシを使用した図形の塗りつぶし
 グラデーション ブラシを使用して、図形を塗りつぶす色が徐々 に変化させることができます。 たとえば、色、形状の左端から右端に移動する段階的に変化するように図形を塗りつぶすに水平方向のグラデーションを使用できます。 黒を左の端で四角形を想像してください (0, 0, 0 は、赤、緑、および青のコンポーネントによって表されます)、右端が赤 (255, 0, 0) とします。 四角形が 256 ピクセルである場合は、いずれかの左側にあるピクセルの赤の要素より大きい値を特定のピクセルの赤の要素になります。 行の左端のピクセルの色要素 (0, 0, 0)、2 番目のピクセルが (1, 0, 0)、3 番目のピクセルが (2, 0, 0)、し、右端のピクセルの色要素 (255, 0, 0) に達するまでします。 これらの色の補間値は、色のグラデーションを構成します。  

@@ -1,32 +1,18 @@
 ---
 title: '方法 : 非同期サービス操作を実装する'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 4e5d2ea5-d8f8-4712-bd18-ea3c5461702c
-caps.latest.revision: 14
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: fe823fc8b86dd20cfa344c9889eca9dff21514ec
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: b8e6ce386dc122ba059a18a448239cec7eaae222
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-implement-an-asynchronous-service-operation"></a>方法 : 非同期サービス操作を実装する
-[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] アプリケーションでは、クライアントに呼び出し方法を指示することなく、サービス操作を非同期的または同期的に実装できます。 たとえば、非同期サービス操作を同期的に呼び出すことも、同期サービス操作を非同期的に呼び出すことも可能です。 例については、クライアント アプリケーションで非同期的に操作を呼び出す方法を示す、次を参照してください。[する方法: サービスの操作を非同期に呼び出す](../../../docs/framework/wcf/feature-details/how-to-call-wcf-service-operations-asynchronously.md)です。 同期および非同期の操作の詳細については、次を参照してください。[サービス コントラクトの設計](../../../docs/framework/wcf/designing-service-contracts.md)と[同期と非同期の操作](../../../docs/framework/wcf/synchronous-and-asynchronous-operations.md)です。 このトピックでは、非同期サービス操作の基本構造について説明します。コードは部分的なコードです。 サービスとクライアント側の両方の完全な例を参照してください。[非同期](http://msdn.microsoft.com/library/833db946-f511-4f64-a26f-2759a11217c7)です。  
+Windows Communication Foundation (WCF) アプリケーションで、サービス操作を実装できます非同期的または同期的に指示することがなく、クライアントにそれを呼び出す方法です。 たとえば、非同期サービス操作を同期的に呼び出すことも、同期サービス操作を非同期的に呼び出すことも可能です。 例については、クライアント アプリケーションで非同期的に操作を呼び出す方法を示す、次を参照してください。[する方法: サービスの操作を非同期に呼び出す](../../../docs/framework/wcf/feature-details/how-to-call-wcf-service-operations-asynchronously.md)です。 同期および非同期の操作の詳細については、次を参照してください。[サービス コントラクトの設計](../../../docs/framework/wcf/designing-service-contracts.md)と[同期と非同期の操作](../../../docs/framework/wcf/synchronous-and-asynchronous-operations.md)です。 このトピックでは、非同期サービス操作の基本構造について説明します。コードは部分的なコードです。 サービスとクライアント側の両方の完全な例を参照してください。[非同期](http://msdn.microsoft.com/library/833db946-f511-4f64-a26f-2759a11217c7)です。  
   
 ### <a name="implement-a-service-operation-asynchronously"></a>非同期サービス操作の実装  
   

@@ -1,28 +1,14 @@
 ---
-title: "方法 : 深度がわからないデータに TreeView をバインドする"
-ms.custom: 
+title: '方法 : 深度がわからないデータに TreeView をバインドする'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - TreeView control [WPF], binding to data of indeterminate depth
 ms.assetid: daddcd74-1b0f-4ffd-baeb-ec934c5e0f53
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: be21ecb75420b6499e5b95d5f4d93a5f079f9646
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 30e328c94e1e1da4641e93dd5f5730eab2d8af1f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-bind-a-treeview-to-data-that-has-an-indeterminable-depth"></a>方法 : 深度がわからないデータに TreeView をバインドする
 バインドする場合がある可能性があります、<xref:System.Windows.Controls.TreeView>の深さがわかっているいないデータ ソースにします。  これは、データが再帰的な場所のフォルダーには、フォルダーを含めることができます、ファイル システムや企業の組織の構造など、本質的に直属の部下として他の従業員の従業員のある場合に発生します。  
@@ -38,6 +24,6 @@ ms.lasthandoff: 12/22/2017
   
  [!code-xaml[TreeViewWithUnknownDepth#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TreeViewWithUnknownDepth/CS/Window1.xaml#1)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [データ バインディングの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)  
  [データ テンプレートの概要](../../../../docs/framework/wpf/data/data-templating-overview.md)

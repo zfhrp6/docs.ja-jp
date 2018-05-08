@@ -1,34 +1,20 @@
 ---
-title: "エラーの送受信"
-ms.custom: 
+title: エラーの送受信
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - handling faults [WCF], sending
 ms.assetid: 7be6fb96-ce2a-450b-aebe-f932c6a4bc5d
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 248202e07d3b74f5d71b40155ae8f617f7ed15ce
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 76fb07a6c9a5e0efdbf21f153f5fc2aea7f1880e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="sending-and-receiving-faults"></a>エラーの送受信
-SOAP エラーは、エラー状態情報をサービスからクライアントに伝達します。双方向通信の場合は、相互運用可能な方法でクライアントからサービスにも伝達します。 通常、サービスは、カスタムのエラー コンテンツを定義し、そのエラー コンテンツを返すことができる操作を指定します  (詳細については、次を参照してください[を指定するエラーの定義および](../../../docs/framework/wcf/defining-and-specifying-faults.md)。)。ここでは、対応するエラー状態が発生したときにサービスまたは双方向クライアントがエラーを送信する方法、およびクライアントまたはサービス アプリケーションがエラーを処理する方法について説明します。 エラー処理の概要については[!INCLUDE[indigo1](../../../includes/indigo1-md.md)]アプリケーションを参照してください[を指定して処理のエラー コントラクトおよびサービスの](../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md)します。  
+SOAP エラーは、エラー状態情報をサービスからクライアントに伝達します。双方向通信の場合は、相互運用可能な方法でクライアントからサービスにも伝達します。 通常、サービスは、カスタムのエラー コンテンツを定義し、そのエラー コンテンツを返すことができる操作を指定します  (詳細については、次を参照してください[を指定するエラーの定義および](../../../docs/framework/wcf/defining-and-specifying-faults.md)。)。ここでは、対応するエラー状態が発生したときにサービスまたは双方向クライアントがエラーを送信する方法、およびクライアントまたはサービス アプリケーションがエラーを処理する方法について説明します。 Windows Communication Foundation (WCF) アプリケーションのエラー処理の概要については、次を参照してください。[を指定すると処理のエラー コントラクトおよびサービスの](../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md)します。  
   
 ## <a name="sending-soap-faults"></a>SOAP エラーの送信  
  宣言された SOAP エラーは、カスタム SOAP エラーの種類を指定する <xref:System.ServiceModel.FaultContractAttribute?displayProperty=nameWithType> を含む操作で発生します。 宣言されていない SOAP エラーとは、操作のコントラクトに指定されていないエラーです。  
@@ -117,7 +103,7 @@ SOAP エラーは、エラー状態情報をサービスからクライアント
  [!code-csharp[FaultContractAttribute#3](../../../samples/snippets/csharp/VS_Snippets_CFX/faultcontractattribute/cs/client.cs#3)]
  [!code-vb[FaultContractAttribute#3](../../../samples/snippets/visualbasic/VS_Snippets_CFX/faultcontractattribute/vb/client.vb#3)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.FaultException>  
  <xref:System.ServiceModel.FaultException%601>  
  <xref:System.ServiceModel.CommunicationException?displayProperty=nameWithType>  

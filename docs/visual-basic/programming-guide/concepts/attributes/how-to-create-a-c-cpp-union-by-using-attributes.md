@@ -1,22 +1,12 @@
 ---
-title: "方法: 属性 (Visual Basic) を使用して C/C++ の共用体を作成します。"
-ms.custom: 
+title: '方法: 属性 (Visual Basic) を使用して C/C++ の共用体を作成します。'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 9352a7e4-c0da-4d07-aa14-55ed43736fcb
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 51d04c573e91a351c48edefebdb3d32fce1d306f
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: b07168df3fb7ec8195a3f64ef5b1bef0cc16dda2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-a-cc-union-by-using-attributes-visual-basic"></a>方法: 属性 (Visual Basic) を使用して C/C++ の共用体を作成します。
 属性を使用すると、構造体のメモリ内での配置をカスタマイズできます。 たとえば、`StructLayout(LayoutKind.Explicit)` 属性と `FieldOffset` 属性を使用すると、C/C++ の共用体と呼ばれるものを作成できます。  
@@ -75,7 +65,7 @@ Structure TestExplicit
   
  2 つの整数フィールド、`i1` および `i2` は、`lg` と同じメモリ位置を共有します。 このような構造体配置の制御は、プラットフォームを呼び出すときに便利です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Reflection>  
  <xref:System.Attribute>  
  [Visual Basic プログラミング ガイド](../../../../visual-basic/programming-guide/index.md)  

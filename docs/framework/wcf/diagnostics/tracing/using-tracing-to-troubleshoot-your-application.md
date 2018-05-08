@@ -1,24 +1,12 @@
 ---
-title: "トレースを使用したアプリケーションのトラブルシューティング"
-ms.custom: 
+title: トレースを使用したアプリケーションのトラブルシューティング
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 7676b9bb-cbd1-41fd-9a93-cc615af6e2d0
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: fb46ad5fe95405c78baf3173a982969e0e7092fd
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 7613ff24161fd7dc159838fb232e2fc6742ab1a4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-tracing-to-troubleshoot-your-application"></a>トレースを使用したアプリケーションのトラブルシューティング
 このセクションには、トレースを使用してアプリケーションをトラブルシューティングする方法について説明したさまざまなトピックが含まれています。  
@@ -42,7 +30,7 @@ ms.lasthandoff: 12/22/2017
  [ユーザー コード トレースの出力](../../../../../docs/framework/wcf/diagnostics/tracing/emitting-user-code-traces.md)  
  プログラムを使用してユーザー コードでトレースを出力する方法について説明します。これによってインストルメンテーション データを事前に作成し、後の診断 (および WCF トレースとの関連付け) で使用できます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [サービス トレース ビューアー ツール (SvcTraceViewer.exe)](../../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md)  
  [トレース](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
  [エンドツーエンドのトレース](../../../../../docs/framework/wcf/diagnostics/tracing/end-to-end-tracing.md)

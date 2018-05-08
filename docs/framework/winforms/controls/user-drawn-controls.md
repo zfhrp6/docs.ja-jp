@@ -1,13 +1,6 @@
 ---
-title: "ユーザー描画コントロール"
-ms.custom: 
+title: ユーザー描画コントロール
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,25 +9,20 @@ helpviewer_keywords:
 - OnPaint method [Windows Forms]
 - user-drawn controls [Windows Forms]
 ms.assetid: 034af4b5-457f-4160-a937-22891817faa8
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e9e486058850616c2304ce0032c35baa855fdf2f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 26b4f062c120bf543a5e597fc8c734e8cc336bd8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="user-drawn-controls"></a>ユーザー描画コントロール
 .NET Framework では、独自のコントロールを簡単に開発する機能を提供します。 コードによって結合されて標準のコントロールのセットにある、ユーザー コントロールを作成するかを一から独自のコントロールをデザインすることができます。 既存のコントロールから継承されるコントロールを作成し、本質的な機能を追加する継承を使用することもできます。 どのようなアプローチを使用すると、.NET Framework では、任意のコントロールを作成するためのカスタムのグラフィカル インターフェイスを描画する機能を提供します。  
   
  コントロールの描画には、コントロールのコードの実行、<xref:System.Windows.Forms.Control.OnPaint%2A>メソッドです。 単一の引数、<xref:System.Windows.Forms.Control.OnPaint%2A>メソッドは、<xref:System.Windows.Forms.PaintEventArgs>のすべての情報と、コントロールを表示するために必要な機能を提供するオブジェクト。 <xref:System.Windows.Forms.PaintEventArgs>プロパティとして、コントロールのレンダリングに使用される 2 つのプリンシパル オブジェクトを提供します。  
   
--   <xref:System.Windows.Forms.PaintEventArgs.ClipRectangle%2A>オブジェクトの四角形を描画するか、コントロールの部分を表すです。 これには、全体をコントロール、またはコントロールの描画方法に応じて、コントロールの一部です。  
+-   <xref:System.Windows.Forms.PaintEventArgs.ClipRectangle%2A> オブジェクトの四角形を描画するか、コントロールの部分を表すです。 これには、全体をコントロール、またはコントロールの描画方法に応じて、コントロールの一部です。  
   
--   <xref:System.Drawing.Graphics>オブジェクト - いくつかのグラフィック指向オブジェクトとコントロールを描画するために必要な機能を提供するメソッドをカプセル化します。  
+-   <xref:System.Drawing.Graphics> オブジェクト - いくつかのグラフィック指向オブジェクトとコントロールを描画するために必要な機能を提供するメソッドをカプセル化します。  
   
  詳細については、<xref:System.Drawing.Graphics>オブジェクトとを使用してを参照してください方法[する方法: 描画グラフィック オブジェクトを作成する](../../../../docs/framework/winforms/advanced/how-to-create-graphics-objects-for-drawing.md)です。  
   
@@ -86,7 +74,7 @@ SetStyle(ControlStyles.ResizeRedraw, true);
 > [!NOTE]
 >  使用して、<xref:System.Windows.Forms.Control.Region%2A?displayProperty=nameWithType>四角形以外のコントロールを実装するプロパティです。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.Control.Region%2A>  
  <xref:System.Windows.Forms.ControlStyles>  
  <xref:System.Drawing.Graphics>  

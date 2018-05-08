@@ -1,30 +1,16 @@
 ---
 title: 概要 (WPF)
-ms.custom: ''
 ms.date: 01/26/2018
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-wpf
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - getting started [WPF]
 - introduction [WPF]
 - WPF [WPF], getting started
 ms.assetid: 04f91da8-708c-46c7-8172-f1695ec847cd
-caps.latest.revision: 60
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: eded6de5de269e7b49a87da31590267a5350f161
-ms.sourcegitcommit: f28752eab00d2bd97e971542c0f49ce63cfbc239
+ms.openlocfilehash: 0bb339d9343cd7ccca0f1f97d2d15b2afa5fdab0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/29/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="getting-started-wpf"></a>概要 (WPF)
 Windows Presentation Foundation (WPF) は、デスクトップ クライアント アプリケーションを作成する UI フレームワークです。 WPF の開発プラットフォームは、アプリケーション モデル、リソース、コントロール、グラフィックス、レイアウト、データ バインディング、ドキュメント、セキュリティなどのさまざまなアプリケーション開発機能の一式をサポートします。 WPF は .NET Framework のサブセットであるため、以前 ASP.NET や Windows フォームを使用して .NET Framework でアプリケーションを構築したことがあれば、プログラミングには馴染みがあるでしょう。 WPF は、Extensible Application Markup Language (XAML) を使用して、アプリケーションのプログラミング用に、宣言型モデルを提供します。 このセクションには、WPF の紹介のトピックと、WPF の使用を開始するトピックがあります。  
@@ -39,7 +25,7 @@ Windows Presentation Foundation (WPF) は、デスクトップ クライアン�
 |WPF の詳細な説明...|[Visual Studio での WPF の概要](../../../../docs/framework/wpf/getting-started/introduction-to-wpf-in-vs.md)<br /><br /> [XAML の概要 (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)<br /><br /> [コントロール](../../../../docs/framework/wpf/controls/index.md)<br /><br /> [データ バインディングの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)|  
 |Windows フォームの開発者向け|[Windows フォーム コントロールおよび同等の WPF コントロール](../../../../docs/framework/wpf/advanced/windows-forms-controls-and-equivalent-wpf-controls.md)<br /><br /> [WPF と Windows フォームの相互運用性](../../../../docs/framework/wpf/advanced/wpf-and-windows-forms-interoperation.md)|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [クラス ライブラリ](../../../../docs/framework/wpf/class-library-wpf.md)  
  [アプリケーションの開発](../../../../docs/framework/wpf/app-development/index.md)  
  [.NET Framework デベロッパー センター](https://www.microsoft.com/net)

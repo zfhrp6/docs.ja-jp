@@ -1,26 +1,16 @@
 ---
-title: "方法: 2 つのオブジェクトが関連しているかどうかを判別する (Visual Basic)"
-ms.custom: 
+title: '方法: 2 つのオブジェクトが関連しているかどうかを判別する (Visual Basic)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - inheritance [Visual Basic], Visual Basic objects
 - objects [Visual Basic], inheritance
 - object variables [Visual Basic], determining relation
 ms.assetid: da002e3f-6616-4bad-a229-f842d06652bb
-caps.latest.revision: "7"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 7824742459fca355c0043ad8ed20a26330402c05
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 2041f89ffd954e479046eb85c6dd82de1f8793ca
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-determine-whether-two-objects-are-related-visual-basic"></a>方法: 2 つのオブジェクトが関連しているかどうかを判別する (Visual Basic)
 その作成元のクラス間のリレーションシップを判断する 2 つのオブジェクトを比較することができます。 <xref:System.Type.IsInstanceOfType%2A>のメソッド、<xref:System.Type?displayProperty=nameWithType>クラスを返します`True`指定したクラスを現在のクラスから継承する場合、または現在の型が指定したクラスでサポートされているインターフェイス。  
@@ -33,7 +23,7 @@ ms.lasthandoff: 11/21/2017
   
 3.  引数リストの<xref:System.Type.IsInstanceOfType%2A>、派生型のオブジェクトと思われる場合がありますを指定します。  
   
-     <xref:System.Type.IsInstanceOfType%2A>返します`True`からその引数の型を継承する場合、<xref:System.Type?displayProperty=nameWithType>オブジェクトの種類。  
+     <xref:System.Type.IsInstanceOfType%2A> 返します`True`からその引数の型を継承する場合、<xref:System.Type?displayProperty=nameWithType>オブジェクトの種類。  
   
 ## <a name="example"></a>例  
  次の例では、1 つのオブジェクトが別のオブジェクトのクラスから派生するクラスを表すかどうかを判断します。  

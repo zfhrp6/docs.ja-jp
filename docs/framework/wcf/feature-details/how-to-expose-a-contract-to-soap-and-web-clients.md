@@ -1,30 +1,18 @@
 ---
-title: "方法 : コントラクトを SOAP クライアントおよび Web クライアントに公開する"
-ms.custom: 
+title: '方法 : コントラクトを SOAP クライアントおよび Web クライアントに公開する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: bb765a48-12f2-430d-a54d-6f0c20f2a23a
-caps.latest.revision: "21"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 0f13ba797b0c0e5c8b0d1eef271baf62f920f199
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a9a730fe94d1df8c887a2eaf20c1e338bd056ed5
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-expose-a-contract-to-soap-and-web-clients"></a>方法 : コントラクトを SOAP クライアントおよび Web クライアントに公開する
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] では、既定でエンドポイントは SOAP クライアントでのみ利用できます。 [する方法: 基本的な WCF Web HTTP サービスを作成する](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-wcf-web-http-service.md)エンドポイントが SOAP 以外のクライアントを使用できます。 状況によっては、同じコントラクトを Web エンドポイントと SOAP エンドポイントのどちらとしても利用できることが望ましい場合があります。 ここでは、これを実現する方法の例について示します。  
+既定では、Windows Communication Foundation (WCF) を使用可能エンドポイント SOAP クライアントにのみです。 [する方法: 基本的な WCF Web HTTP サービスを作成する](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-wcf-web-http-service.md)エンドポイントが SOAP 以外のクライアントを使用できます。 状況によっては、同じコントラクトを Web エンドポイントと SOAP エンドポイントのどちらとしても利用できることが望ましい場合があります。 ここでは、これを実現する方法の例について示します。  
   
 ### <a name="to-define-the-service-contract"></a>サービス コントラクトを定義するには  
   
@@ -65,7 +53,7 @@ ms.lasthandoff: 12/22/2017
   
 ### <a name="to-call-service-operations-mapped-to-get-in-internet-explorer"></a>Internet Explorer で GET にマッピングされたサービス操作を呼び出すには  
   
-1.  Internet Explorer を開き「"`http://localhost:8000/Web/EchoWithGet?s=Hello, world!`"し、ENTER キーを押します。 この URL には、サービスのベース アドレス ("http://localhost:8000/") が含まれており、エンドポイントの相対アドレス ("")、呼び出すサービス操作 ("EchoWithGet")、疑問符の後にアンパサンド (&) で区切られた名前付きパラメーターのリストが続きます。  
+1.  Internet Explorer を開き「"`http://localhost:8000/Web/EchoWithGet?s=Hello, world!`"し、ENTER キーを押します。 URL には、サービスのベース アドレスが含まれています ("http://localhost:8000/")、エンドポイントの相対アドレス ("")、アンパサンドで区切られた名前付きパラメーターの一覧の後に、サービス操作呼び出し ("EchoWithGet")、疑問符 () (&)。  
   
 ### <a name="to-call-service-operations-on-the-web-endpoint-in-code"></a>コードから Web エンドポイントにあるサービス操作を呼び出すには  
   
@@ -110,7 +98,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="compiling-the-code"></a>コードのコンパイル  
  Service.cs のコンパイル時には、System.ServiceModel.dll と System.ServiceModel.Web.dll を参照します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.WebHttpBinding>  
  <xref:System.ServiceModel.Web.WebGetAttribute>  
  <xref:System.ServiceModel.Web.WebInvokeAttribute>  

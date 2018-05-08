@@ -1,28 +1,19 @@
 ---
-title: プロパティ &#39;&lt;propertyname&gt;&#39; しません &#39; t のすべてのコード パスで値を返しません
+title: プロパティ&#39; &lt;propertyname&gt; &#39;しません&#39;t は、すべてのコード パスで値を返しません
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - bc42107
 - vbc42107
 helpviewer_keywords:
 - BC42107
 ms.assetid: 06800966-9c3b-4844-9f13-83ac95607d32
-caps.latest.revision: 7
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: c9ef5b2ac62412f5684cbc78ab6bebf6bc7b6752
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 72bc7e45cadd2528f29c88bf6e80ee5f381052dd
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="property-39ltpropertynamegt39-doesn39t-return-a-value-on-all-code-paths"></a>プロパティ &#39;&lt;propertyname&gt;&#39; しません &#39; t のすべてのコード パスで値を返しません
+# <a name="property-39ltpropertynamegt39-doesn39t-return-a-value-on-all-code-paths"></a>プロパティ&#39; &lt;propertyname&gt; &#39;しません&#39;t は、すべてのコード パスで値を返しません
 プロパティ '\<propertyname >' は、すべてのコード パスで値を返しません。 この結果が使用されると、実行時に Null 参照例外が生じる可能性があります。  
   
  プロパティ`Get`手順では、値を返さないコードに少なくとも 1 つの可能なパスです。  

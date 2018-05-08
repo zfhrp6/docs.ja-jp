@@ -1,24 +1,12 @@
 ---
 title: System.ServiceModel.TxAsyncAbort
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: bce47ff2-abd0-4b58-8667-ebf1ef3580b8
-caps.latest.revision: "7"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 484eeee16d2af18471ea5bc312a07aab60a8871c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6e8c978e708056cf639cca555ccc42f057f38af1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="systemservicemodeltxasyncabort"></a>System.ServiceModel.TxAsyncAbort
 指定したトランザクションが非同期に中止されました。  
@@ -29,7 +17,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="troubleshooting"></a>トラブルシューティング  
  これが予期された中止であるかどうかをすべてのシステム ログで確認し、中止の原因を特定してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [トレース](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
  [トレースを使用したアプリケーションのトラブルシューティング](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
  [管理と診断](../../../../../docs/framework/wcf/diagnostics/index.md)

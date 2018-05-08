@@ -1,26 +1,16 @@
 ---
-title: "方法: オブジェクト変数で参照している型を確認する (Visual Basic)"
-ms.custom: 
+title: '方法: オブジェクト変数で参照している型を確認する (Visual Basic)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - TypeOf operator [Visual Basic], determining object variable type
 - variables [Visual Basic], object
 - object variables [Visual Basic], determining type
 ms.assetid: 6f6a138d-58a4-40d1-9f4e-0a3c598eaf81
-caps.latest.revision: "13"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 5dd6785ecd48be3f0455de63b9e3f13a485ddbb2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 0dfd4ed87b65f536802ae71cbc3de41e1c4f83af
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-determine-what-type-an-object-variable-refers-to-visual-basic"></a>方法: オブジェクト変数で参照している型を確認する (Visual Basic)
 オブジェクト変数には、他の場所に格納されているデータへのポインターが含まれています。 実行時にそのデータの種類を変更できます。 時点で使用することができます、<xref:System.Type.GetTypeCode%2A>を現在の実行時の型を特定のメソッドまたは[TypeOf 演算子](../../../../visual-basic/language-reference/operators/typeof-operator.md)かどうかを現在の検索を実行時の型が、指定した型と互換性がします。  

@@ -1,12 +1,6 @@
 ---
 title: Enum ステートメント (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Enum
 helpviewer_keywords:
@@ -17,14 +11,11 @@ helpviewer_keywords:
 - variables [Visual Basic], enumeration
 - constants [Visual Basic], enumerated
 ms.assetid: a45e51f1-65ff-48e1-bf32-79130f137377
-caps.latest.revision: 44
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 7a8244318e0be8e50f3384b56cf63e59182b6cda
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 89de51f2551437d102ccdc5a0f1ff5f23b53e47f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="enum-statement-visual-basic"></a>Enum ステートメント (Visual Basic)
 列挙体を宣言し、そのメンバーの値を定義します。  
@@ -42,13 +33,13 @@ End Enum
   
 -   `attributelist`  
   
-     省略可能です。 この列挙体に適用される属性の一覧です。 囲む必要があります、[属性リスト](../../../visual-basic/language-reference/statements/attribute-list.md)山かっこ ("`<`「と」`>`") です。  
+     任意。 この列挙体に適用される属性の一覧です。 囲む必要があります、[属性リスト](../../../visual-basic/language-reference/statements/attribute-list.md)山かっこ ("`<`「と」`>`") です。  
   
      <xref:System.FlagsAttribute>属性は、列挙型のインスタンスの値が、複数の列挙型メンバーを含めることができ、各メンバーが、列挙値のビット フィールドを表すことを示します。  
   
 -   `accessmodifier`  
   
-     省略可能です。 この列挙体にアクセスできるコードを指定します。 次のいずれかの値を指定します。  
+     任意。 この列挙体にアクセスできるコードを指定します。 次のいずれかの値を指定します。  
   
     -   [Public](../../../visual-basic/language-reference/modifiers/public.md)  
   
@@ -62,28 +53,28 @@ End Enum
   
 -   `Shadows`  
   
-     省略可能です。 この列挙体を宣言し、同じ名前を持つプログラミング要素、または基底クラスのオーバー ロードされる要素のセットを非表示にすることを指定します。 指定できます[Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)のみ列挙体自体ではなく、メンバーのいずれか。  
+     任意。 この列挙体を宣言し、同じ名前を持つプログラミング要素、または基底クラスのオーバー ロードされる要素のセットを非表示にすることを指定します。 指定できます[Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)のみ列挙体自体ではなく、メンバーのいずれか。  
   
 -   `enumerationname`  
   
-     必須です。 列挙体の名前です。 有効な名前については、次を参照してください。[宣言された要素の名前](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)です。  
+     必須。 列挙体の名前です。 有効な名前については、次を参照してください。[宣言された要素の名前](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)です。  
   
 -   `datatype`  
   
-     省略可能です。 列挙体およびそのすべてのメンバーのデータ型。  
+     任意。 列挙体およびそのすべてのメンバーのデータ型。  
   
 -   `memberlist`  
   
-     必須です。 このステートメントで宣言されているメンバー定数の一覧です。 複数のメンバーは、個々 のソース コード行に表示されます。  
+     必須。 このステートメントで宣言されているメンバー定数の一覧です。 複数のメンバーは、個々 のソース コード行に表示されます。  
   
-     各`member`が次の構文とパーツ。`[<attribute list>] member name [ = initializer ]`  
+     各`member`が次の構文とパーツ。 `[<attribute list>] member name [ = initializer ]`  
   
     |パーツ|説明|  
     |---|---|  
-    |`membername`|必須です。 このメンバーの名前です。|  
-    |`initializer`|省略可能です。 式がコンパイル時に評価され、このメンバーに割り当てられているです。|  
+    |`membername`|必須。 このメンバーの名前です。|  
+    |`initializer`|任意。 式がコンパイル時に評価され、このメンバーに割り当てられているです。|  
   
--   `End``Enum`  
+-   `End` `Enum`  
   
      `Enum` ブロックを終了します。  
   
@@ -112,7 +103,7 @@ End Enum
   
  属性を適用できますがそのメンバーに、全体として列挙型には個別にします。 属性は、アセンブリのメタデータに情報を提供します。  
   
-## <a name="data-type"></a>データ型  
+## <a name="data-type"></a>データの種類  
  `Enum`ステートメントは、列挙型のデータ型を宣言できます。 各メンバーは、列挙型のデータ型を取得します。 指定できます`Byte`、 `Integer`、 `Long`、 `SByte`、 `Short`、 `UInteger`、 `ULong`、または`UShort`です。  
   
  指定しない場合`datatype`列挙体の各メンバーのデータ型を受け取り、`initializer`です。 両方を指定する場合`datatype`と`initializer`のデータ型`initializer`に変換できる必要があります`datatype`です。 どちらの場合`datatype`も`initializer`が含まれているデータ型の既定値は`Integer`します。  

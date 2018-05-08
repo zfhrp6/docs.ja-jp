@@ -1,28 +1,22 @@
 ---
-title: "Visual Basic でのプロジェクトのカスタマイズと My の拡張"
+title: Visual Basic でのプロジェクトのカスタマイズと My の拡張
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - My namespace [Visual Basic], customizing
 - My namespace
 - My namespace [Visual Basic], extending
 ms.assetid: 06ca80b9-1192-4eb5-8537-8ef5edfb9be0
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 397b345239f8707f0129ac14ab426f93372b4010
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.openlocfilehash: 4dfe14f7680ad0c3a302334c07bb17e3e92011b0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="customizing-projects-and-extending-my-with-visual-basic"></a>Visual Basic でのプロジェクトのカスタマイズと My の拡張
 追加するプロジェクト テンプレートをカスタマイズする`My`オブジェクト。 これにより、簡単に検索して、オブジェクトを使用するには、他の開発者。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
- [拡張する、Visual Basic での My Namespace](../../../visual-basic/developing-apps/customizing-extending-my/extending-the-my-namespace.md)  
+ [Visual Basic における My 名前空間の拡張](../../../visual-basic/developing-apps/customizing-extending-my/extending-the-my-namespace.md)  
  カスタム メンバーを追加する方法について説明し、値を`My`Visual Basic での名前空間。  
   
  [カスタム My 拡張のパッケージ化と配置](../../../visual-basic/developing-apps/customizing-extending-my/packaging-and-deploying-custom-my-extensions.md)  

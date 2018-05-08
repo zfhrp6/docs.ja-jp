@@ -1,29 +1,17 @@
 ---
-title: "方法 : デザイナーを使用して ToolStripMenuItems を無効にする"
-ms.custom: 
+title: '方法 : デザイナーを使用して ToolStripMenuItems を無効にする'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - ToolStripMenuItems [Windows Forms], disabling in designer
 - MenuStrip control [Windows Forms], disabling menu items in designer
 - menu items [Windows Forms], disabling
 - menus [Windows Forms], disabling items
 ms.assetid: 985e311e-7d67-4205-b5a3-d045b68a4a03
-caps.latest.revision: "7"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: f704e99622900d8c37c8ddd5054a3c5ad920bc6b
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 3ce18d40910145a076cc7084e2fba8ee0229c21f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-disable-toolstripmenuitems-using-the-designer"></a>方法 : デザイナーを使用して ToolStripMenuItems を無効にする
 制限またはを有効にして、ユーザー アクティビティを応答でのメニュー項目を無効にすると、ユーザーが実行できるコマンドの範囲を広げることができます。 メニュー項目は既定で有効には、作成されるが、これで調整できる場合に、<xref:System.Windows.Forms.ToolStripMenuItem.Enabled%2A>プロパティです。 デザイン時にこのプロパティを操作することができます、**プロパティ**ウィンドウまたはプログラムによってコードで設定します。 詳細については、次を参照してください。[する方法: ToolStripMenuItems を無効にする](../../../../docs/framework/winforms/controls/how-to-disable-toolstripmenuitems.md)です。  
@@ -38,7 +26,7 @@ ms.lasthandoff: 01/19/2018
     > [!TIP]
     >  メニューの最初または最上位レベルのメニュー項目を無効にするには、メニュー内に含まれるすべてのメニュー項目が無効にします。 同様に、サブメニュー項目を持つメニュー項目を無効にするには、サブメニュー項目が無効にします。 指定されたメニュー上のすべてのコマンドがユーザーに利用可能な場合は、この場合は、クリーンなユーザー インターフェイスとして両方を非表示にし、メニュー全体を無効にすることをお勧めプログラミングと見なされます。 非表示にする必要があり、無効にします] メニューの [非表示にするだけでは、ショートカット キーを使用してメニュー コマンドにアクセスを妨げません。 設定、<xref:System.Windows.Forms.ToolStripItem.Visible%2A>をトップレベルのメニュー項目のプロパティ`false`メニュー全体を非表示にします。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.MenuStrip>  
  <xref:System.Windows.Forms.ToolStripMenuItem>  
  [方法: ToolStripMenuItems を非表示にする](../../../../docs/framework/winforms/controls/how-to-hide-toolstripmenuitems.md)  

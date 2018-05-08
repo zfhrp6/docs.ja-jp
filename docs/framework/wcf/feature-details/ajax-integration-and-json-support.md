@@ -1,46 +1,32 @@
 ---
 title: AJAX の統合と JSON のサポート
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - AJAX integration and JSON support [WCF]
 ms.assetid: 3851a8fc-d861-4ac1-873c-96af0343d3a7
-caps.latest.revision: 17
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 0d62da8cf67fb8f996f341018c39146b51e308c3
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 0b392044db3fbc926bf77ac305ece294880216d9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ajax-integration-and-json-support"></a>AJAX の統合と JSON のサポート
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] が ASP.NET AJAX (Asynchronous JavaScript and XML) と JSON (JavaScript Object Notation) データ形式をサポートするため、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスは AJAX クライアントに操作を公開できます。 AJAX クライアントは、JavaScript コードを実行し、HTTP 要求を使用してこのような [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスにアクセスする Web ページです。 このセクションのトピックでは、このサポートと実装方法について説明します。  
+ASP.NET Asynchronous JavaScript and XML (AJAX) の Windows Communication Foundation (WCF) のサポートと JavaScript Object Notation (JSON) データ形式は、AJAX クライアントに操作を公開する WCF サービスを許可します。 AJAX クライアントは、JavaScript コードを実行して、HTTP 要求を使用してこれらの WCF サービスへのアクセスの Web ページです。 このセクションのトピックでは、このサポートと実装方法について説明します。  
   
  詳細については、ASP.NET AJAX との統合を ASP.NET 2.0 では、次を参照してください。 [ASP.NET AJAX 概要](http://go.microsoft.com/fwlink/?LinkId=96725)です。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [ASP.NET AJAX 用の WCF サービスの作成](../../../../docs/framework/wcf/feature-details/creating-wcf-services-for-aspnet-ajax.md)  
- 構成によって、または、自動的に AJAX エンドポイントを構成するサービス ホストを生成するようにカスタマイズされたサービス ホスト ファクトリを使用することによって適切な AJAX エンドポイントを追加することで、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスを AJAX クライアントに公開する方法について説明します。  
+ WCF サービス公開する方法を AJAX クライアントに構成を適切な AJAX エンドポイントを追加することによってまたは自動的に AJAX エンドポイントを構成するサービス ホストを生成するようにカスタマイズ サービス ホスト ファクトリを使用してについて説明します。  
   
  [ASP.NET を使用せずに WCF AJAX サービスを作成する方法](../../../../docs/framework/wcf/feature-details/creating-wcf-ajax-services-without-aspnet.md)  
- ASP.NET を使用しないで [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスを作成する方法について説明します。  
+ ASP.NET を使用せずに WCF サービスを作成する方法について説明します。  
   
  [JSON などのデータ転送形式のサポート](../../../../docs/framework/wcf/feature-details/support-for-json-and-other-data-transfer-formats.md)  
  ASP.NET AJAX サービスとのメッセージングで、XML の代わりに一般に使用される JSON 形式のサポートについて説明します。  
   
  [方法 : AJAX 対応 ASP.NET Web サービスを WCF に移行する](../../../../docs/framework/wcf/feature-details/how-to-migrate-ajax-enabled-aspnet-web-services-to-wcf.md)  
- AJAX 対応の ASP.NET Web サービスを [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Web サービスに移行する方法について説明します。  
+ WCF Web サービスに AJAX 対応の ASP.NET Web サービスを移行する方法について説明します。  
   
 ## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Activation.WebScriptServiceHostFactory>  

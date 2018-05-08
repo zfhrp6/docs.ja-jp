@@ -1,11 +1,6 @@
 ---
-title: "My.Resources オブジェクト"
+title: My.Resources オブジェクト
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: 
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - My.Resources
 - My.Resources.MyResources.ResourceManager
@@ -13,14 +8,11 @@ f1_keywords:
 helpviewer_keywords:
 - My.Resources object
 ms.assetid: 34c3f2dc-7b87-432c-9d5f-17ea666bb266
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 96e5b909d9945ed631cebe07e4cfc7d5dc2e019f
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: 9fd23cb119ff9148a45d32ec70ccc4dad08ab876
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="myresources-object"></a>My.Resources オブジェクト
 アプリケーションのリソースにアクセスするには、プロパティとクラスを提供します。  
@@ -51,7 +43,7 @@ ms.lasthandoff: 12/21/2017
 |**イメージ**|<xref:System.Drawing.Bitmap>|  
 |**アイコン**|<xref:System.Drawing.Icon>|  
 |**オーディオ**|<xref:System.IO.UnmanagedMemoryStream><br /><br /> <xref:System.IO.UnmanagedMemoryStream>から派生したクラス、<xref:System.IO.Stream>など、ストリームを取るメソッドで使用できるように、クラス、<xref:Microsoft.VisualBasic.Devices.Audio.Play%2A>メソッドです。|  
-|**ファイル**|-   [文字列](../../../visual-basic/language-reference/data-types/string-data-type.md)テキスト ファイルにします。<br />-   <xref:System.Drawing.Bitmap>イメージ ファイル。<br />-   <xref:System.Drawing.Icon>アイコン ファイルです。<br />-   <xref:System.IO.UnmanagedMemoryStream>音声ファイル。|  
+|**ファイル**|-   [文字列](../../../visual-basic/language-reference/data-types/string-data-type.md)テキスト ファイルにします。<br />-   <xref:System.Drawing.Bitmap> イメージ ファイル。<br />-   <xref:System.Drawing.Icon> アイコン ファイルです。<br />-   <xref:System.IO.UnmanagedMemoryStream> 音声ファイル。|  
 |**その他**|デザイナーの内の情報によって決まります**型**列です。|  
   
 ## <a name="classes"></a>クラス  
@@ -84,7 +76,7 @@ ms.lasthandoff: 12/21/2017
   
  [!code-vb[VbVbalrMyResources#10](../../../visual-basic/developing-apps/programming/app-settings/codesnippet/VisualBasic/my-resources-object_5.vb)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [アプリケーション リソースの管理 (.NET)](/visualstudio/ide/managing-application-resources-dotnet)  
  [デスクトップ アプリケーションのリソース](../../../framework/resources/index.md)  
 

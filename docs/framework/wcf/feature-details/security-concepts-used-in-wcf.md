@@ -1,31 +1,19 @@
 ---
 title: WCF で使用されるセキュリティの概要
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 3b9dfcf5-4bf1-4f35-9070-723171c823a1
-caps.latest.revision: 15
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload:
-- dotnet
-ms.openlocfilehash: 74b16698d40747937a89f84f0d958178b42d2e44
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: ac76f1742ab72de9f5180d1ea2fcbc668ec2140c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="security-concepts-used-in-wcf"></a>WCF で使用されるセキュリティの概要
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] のセキュリティは、各種のセキュリティ インフラストラクチャで既に使用され展開されている概念の上に構築されています。  
+Windows Communication Foundation (WCF) のセキュリティが既に使用されている概念に基づいて構築されているし、各種のセキュリティ インフラストラクチャに展開します。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、これらのインフラストラクチャの一部 (SSL (Secure Sockets Layer) over HTTP (HTTPS) など) をサポートしています。 ただし、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、新しい相互運用可能なセキュリティ標準 (WS-Security など) を SOAP エンコード メッセージに実装することで、既存のセキュリティ インフラストラクチャをサポートする以上の機能を実現しています。 既存の機構と新規の相互運用可能な標準のどちらを使用する場合でも、背後にあるセキュリティ概念に変わりはありません。 既存のインフラストラクチャおよび新しい標準を支える概念を理解することが、アプリケーションにとって最善のセキュリティ モデルを実装するための要になります。  
+ WCF など Secure Sockets Layer (SSL) over HTTP (HTTPS)、これらのインフラストラクチャの一部がサポートされています。 ただし、WCF は超えた (Ws-security) などの新しい相互運用可能なセキュリティ標準を実装することで既存のセキュリティ インフラストラクチャをサポートする SOAP でエンコードされたメッセージにします。 既存の機構と新規の相互運用可能な標準のどちらを使用する場合でも、背後にあるセキュリティ概念に変わりはありません。 既存のインフラストラクチャおよび新しい標準を支える概念を理解することが、アプリケーションにとって最善のセキュリティ モデルを実装するための要になります。  
   
 ## <a name="introduction-to-security-for-wcf-web-services"></a>WCF Web サービスのセキュリティの概要  
  Microsoft Patterns and Practices グループは、ここからダウンロードされる WCF セキュリティ ガイダンスで、詳細なホワイト ペーパーを書き込みました。 [WCF セキュリティ ガイド](http://go.microsoft.com/fwlink/?LinkId=210210)です。 このホワイト ペーパーでは、Web サービス、WCF セキュリティの主な概念、イントラネット アプリケーション シナリオ、およびインターネット アプリケーション シナリオに関連するセキュリティの基本概念について説明しています。  

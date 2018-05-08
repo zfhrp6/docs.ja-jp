@@ -1,33 +1,21 @@
 ---
 title: ICorProfilerCallback7::ModuleInMemorySymbolsUpdated Method
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 api_name:
-- ICorProfiler7.ModuleInMemorySymbolsUpdated
+- ICorProfilerCallback7.ModuleInMemorySymbolsUpdated
 api_location:
 - mscorwks.dll
 - corprof.idl
 api_type:
 - COM
 ms.assetid: f362a896-3247-4894-9727-e48dbbcd2c78
-caps.latest.revision: ''
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 898adf043e425c00d6e311e2f67c53ed65cacb33
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: 9aa690378a32ffee2def672f02dc8b5582647a5e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="icorprofilercallback7moduleinmemorysymbolsupdated-method"></a>ICorProfilerCallback7::ModuleInMemorySymbolsUpdated Method
 [.NET Framework 4.6.1 以降のバージョンでのみでサポート]  
@@ -43,7 +31,7 @@ HRESULT ModuleInMemorySymbolsUpdated(
 ```  
   
 #### <a name="parameters"></a>パラメーター  
- `moduleId`  
+ [入力] `moduleId`  
  メモリ内のモジュールのシンボルのストリームの更新の識別子。  
   
 ## <a name="remarks"></a>コメント  
@@ -55,7 +43,7 @@ HRESULT ModuleInMemorySymbolsUpdated(
  でもシンボルが指定されたときに前もってマネージのオーバー ロードのいずれかへの呼び出しで<xref:System.Reflection.Assembly.Load*?displayProperty=nameWithType>メソッドを含む、 `rawSymbolStore` runtime、アセンブリのシンボルを指定する引数可能性があります実際には関連付けられませんシンボリック データ モジュールまで後、 [ModuleLoadFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleloadfinished-method.md)コールバックが発生しました。 このイベントは、このようなモジュールのシンボルを収集する以降の機会を提供します。  
   
 ## <a name="requirements"></a>要件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー** : CorProf.idl、CorProf.h  
   

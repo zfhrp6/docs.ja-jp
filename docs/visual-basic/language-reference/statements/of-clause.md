@@ -1,11 +1,6 @@
 ---
-title: "Of 句 (Visual Basic)"
+title: Of 句 (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - Of
 - vb.Of
@@ -22,14 +17,11 @@ helpviewer_keywords:
 - type parameters
 - data type arguments
 ms.assetid: 0db8f65c-65af-4089-ab7f-6fcfecb60444
-caps.latest.revision: "17"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 5ef3ac4ac88727b1dcae50fa14abde03f29a16fb
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 9ace0ad55d9eb1618dbdafb0d49d1ff4b169a877
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="of-clause-visual-basic"></a>Of 句 (Visual Basic)
 導入されています、`Of`句であることを識別、*パラメーター入力*上、*ジェネリック*クラス、構造体、インターフェイス、デリゲート、またはプロシージャ。 ジェネリック型については、次を参照してください。 [Visual Basic におけるジェネリック型](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)です。  
@@ -51,7 +43,7 @@ End Class
   
  上記のクラス定義を完了する場合は、さまざまなを構築できます`dictionary`からクラスです。 指定する種類`entryType`と`keyType`エントリの種類、クラスを保持し、各エントリに関連付けるキーの種類を決定します。 制約のために指定する必要があります`keyType`を実装する型<xref:System.IComparable>です。  
   
- 次のコード例を保持するオブジェクトを作成する`String`エントリと関連付け、 `Integer` 1 つずつキー。 `Integer`実装する<xref:System.IComparable>し、そのために、制約を満たす`keyType`です。  
+ 次のコード例を保持するオブジェクトを作成する`String`エントリと関連付け、 `Integer` 1 つずつキー。 `Integer` 実装する<xref:System.IComparable>し、そのために、制約を満たす`keyType`です。  
   
 ```  
 Dim d As New dictionary(Of String, Integer)  

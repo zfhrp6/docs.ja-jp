@@ -1,31 +1,20 @@
 ---
 title: .NET Framework におけるセキュリティ
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - .NET Framework, security
 - security [.NET Framework], about security
 - application development [.NET Framework], security
 - security [.NET Framework]
 ms.assetid: 9a9621d7-8883-4a4f-a874-65e8e09e20a6
-caps.latest.revision: 37
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 7f8600da624ff75ce2dbd5c417f886d6b3b1ac37
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 4f3911a46eaea2ed29287132935b0294ba509227
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="security-in-the-net-framework"></a>.NET Framework におけるセキュリティ
 共通言語ランタイムと .NET Framework には、開発者が安全なコードを簡単に作成したり、システム管理者が保護されたリソースへのアクセスを可能にするコードに付与されたアクセス許可をカスタマイズしたりできるようにするための便利なクラスとサービスが多数用意されています。 さらに、ランタイムおよび .NET Framework には、暗号とロール ベース セキュリティを簡単に利用できるようにする有用なクラスとサービスも用意されています。  

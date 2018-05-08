@@ -1,13 +1,7 @@
 ---
-title: "暗号化と復号化のためのキーの生成"
-ms.custom: 
+title: 暗号化と復号化のためのキーの生成
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -20,18 +14,13 @@ helpviewer_keywords:
 - asymmetric keys [.NET Framework]
 - cryptography [.NET Framework], keys
 ms.assetid: c197dfc9-a453-4226-898d-37a16638056e
-caps.latest.revision: "14"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 333e99997bad3852ae34753165aa736ef32ac004
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: cb506ee4e9dde8fcc58e92dfcecd9b896a78401e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="generating-keys-for-encryption-and-decryption"></a>暗号化と復号化のためのキーの生成
 キーの作成と管理は、暗号プロセスの重要な部分です。 対称アルゴリズムでは、キーと初期化ベクター (IV) を作成する必要があります。 キーは、データの暗号化解除を許可しないユーザーに対しては秘密にする必要があります。 IV は秘密にする必要はありませんが、セッションごとに変更する必要があります。 非対称アルゴリズムでは、公開キーと秘密キーを作成する必要があります。 公開キーはだれに公開してもかまいせんが、秘密キーを知らせる相手は、公開キーで暗号化されたデータを復号化する人だけにします。 このセクションでは、対称アルゴリズムと非対称アルゴリズムの両方について、キーを作成して管理する方法を説明します。  
@@ -98,7 +87,7 @@ RSACryptoServiceProvider RSA = new RSACryptoServiceProvider();
 RSAParameters RSAKeyInfo = RSA.ExportParameters(false);  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [データの暗号化](../../../docs/standard/security/encrypting-data.md)  
  [データの復号化](../../../docs/standard/security/decrypting-data.md)  
  [Cryptographic Services](../../../docs/standard/security/cryptographic-services.md)  

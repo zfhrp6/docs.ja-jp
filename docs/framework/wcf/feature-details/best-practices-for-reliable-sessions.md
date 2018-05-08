@@ -1,24 +1,12 @@
 ---
-title: "信頼できるセッションのベスト プラクティス"
-ms.custom: 
+title: 信頼できるセッションのベスト プラクティス
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: b94f6e01-8070-40b6-aac7-a2cb7b4cb4f2
-caps.latest.revision: "6"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c022db62103826aa89e9035fd36c050d1f7c0f84
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 1d9671e7e3124d535b66de8cd8468f76dcb32b10
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="best-practices-for-reliable-sessions"></a>信頼できるセッションのベスト プラクティス
 
@@ -26,7 +14,7 @@ ms.lasthandoff: 12/22/2017
 
 ## <a name="setting-maxtransferwindowsize"></a>MaxTransferWindowSize の設定
 
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] の信頼できるセッションでは、転送ウィンドウを使用して、クライアント側およびサービス側のメッセージを保持しています。 <xref:System.ServiceModel.Channels.ReliableSessionBindingElement.MaxTransferWindowSize%2A> プロパティは、この転送ウィンドウに保持できるメッセージの最大数を表します。
+信頼できるセッションで Windows Communication Foundation (WCF) では、転送ウィンドウを使用して、クライアントとサービスでメッセージを保持します。 <xref:System.ServiceModel.Channels.ReliableSessionBindingElement.MaxTransferWindowSize%2A> プロパティは、この転送ウィンドウに保持できるメッセージの最大数を表します。
 
 送信者は、このことを示します。 受信確認の待機中に転送ウィンドウが保持できるメッセージの数受信側、サービス用にバッファーにメッセージの数を示します。
 
@@ -56,7 +44,7 @@ ms.lasthandoff: 12/22/2017
 
 *フロー制御*により、送信者と受信者、互いに対応する、メッセージし、処理が処理する機構は、生成されている高速です。 クライアントとサービスの転送ウィンドウ サイズは、送信側と受信側が妥当な許容範囲内で同期できるように設定しなければなりません。
 
-プロパティを設定することを強くお勧め<xref:System.ServiceModel.Channels.ReliableSessionBindingElement.FlowControlEnabled%2A>に`true`間で信頼できるセッションを使用しているときに、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]クライアントと[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]サービス。
+プロパティを設定することを強くお勧め<xref:System.ServiceModel.Channels.ReliableSessionBindingElement.FlowControlEnabled%2A>に`true`WCF クライアントと WCF サービスの間の信頼できるセッションを使用しているときにします。
 
 ## <a name="setting-maxpendingchannels"></a>MaxPendingChannels の設定
 

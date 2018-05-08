@@ -1,14 +1,6 @@
 ---
-title: "IMetaDataEmit::GetSaveSize メソッド"
-ms.custom: 
+title: IMetaDataEmit::GetSaveSize メソッド
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - IMetaDataEmit.GetSaveSize
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: 8aea2e2c-23a3-4cda-9a06-e19f97383830
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 7585f6adbca97b252fdad90276b0cd422d32c04a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d9a65f76aed00e2b848f8603f1fee4d6acc91f99
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="imetadataemitgetsavesize-method"></a>IMetaDataEmit::GetSaveSize メソッド
 現在のスコープ内には、バイナリの推定サイズ アセンブリとそのメタデータを取得します。  
@@ -61,21 +49,21 @@ HRESULT GetSaveSize (
  [out]ファイルを保存するために必要なサイズへのポインター。  
   
 ## <a name="remarks"></a>コメント  
- `GetSaveSize`必要に応じて、(バイト単位) を現在のスコープ内のアセンブリとそのすべてのメタデータを保存する領域を計算します。 (への呼び出し、 [imetadataemit::savetostream](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-savetostream-method.md)メソッドはこのバイト数を出力します)。  
+ `GetSaveSize` 必要に応じて、(バイト単位) を現在のスコープ内のアセンブリとそのすべてのメタデータを保存する領域を計算します。 (への呼び出し、 [imetadataemit::savetostream](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-savetostream-method.md)メソッドはこのバイト数を出力します)。  
   
  呼び出し元が実装されている場合、 [IMapToken](../../../../docs/framework/unmanaged-api/metadata/imaptoken-interface.md)インターフェイス (を通じて[imetadataemit::sethandler](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-sethandler-method.md)または[imetadataemit::merge](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-merge-method.md))、`GetSaveSize`は 2 つのパスを実行最適化し、それを圧縮するメタデータ。 それ以外の場合、最適化は行われません。  
   
  最適化を実行すると、最初のパスは単にインポート時の検索のパフォーマンスを調整するメタデータ構造体を並べ替えます。 この手順は、通常、レコードが移動、今後の参照用のツールで保持されるトークンが無効にした、副作用とで発生します。 メタデータに通知しませんまでこれらのトークンの変更の呼び出し元は、2 番目のパスの後にただしです。 2 番目のパスでは、さまざまな最適化が実行退席中の (事前バインディング) の最適化などのメタデータの全体的なサイズの削減を意図した`mdTypeRef`と`mdMemberRef`トークンの参照先が型またはメンバーで宣言されているときに、現在のメタデータ スコープ。 このパスでは、トークンのマッピングの別のラウンドが発生します。 このパスの後はメタデータ エンジンに通知、呼び出し元からその`IMapToken`のいずれかのインターフェイスは、トークンの値を変更します。  
   
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** Cor.h  
   
  **ライブラリ:** MSCorEE.dll にリソースとして使用  
   
- **.NET framework のバージョン:**[!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]  
+ **.NET framework のバージョン:** [!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [IMetaDataEmit インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)  
  [IMetaDataEmit2 インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

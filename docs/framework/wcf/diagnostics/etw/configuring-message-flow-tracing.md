@@ -1,27 +1,15 @@
 ---
-title: "メッセージ フローのトレースの構成"
-ms.custom: 
+title: メッセージ フローのトレースの構成
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 15571ca2-bee2-47fb-ba10-fcbc09152ad0
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 8df32a64c07db8a45dfb41a46e7a65a92fbef434
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 7bfba8ababc6ddc0b2ddd78e879058cfa9e8ebb1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="configuring-message-flow-tracing"></a>メッセージ フローのトレースの構成
-[!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] のアクティビティ トレースが有効な場合は、エンド ツー エンド アクティビティ ID が、[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] スタック全体で論理アクティビティに割り当てられます。 [!INCLUDE[netfx_current_short](../../../../../includes/netfx-current-short-md.md)] では、この機能の高パフォーマンス バージョンが導入されており、"メッセージ フローのトレース" と呼ばれる Event Tracing for Windows (ETW) と連携します。 この機能が有効な場合は、エンド ツー エンド アクティビティ ID が受信メッセージから取得され (空の場合は割り当てられ)、チャネルによってメッセージがデコードされた後に生成されたすべてのトレース イベントに伝達されます。 ユーザーはこの機能を使用して、デコード後に、異なるサービスから取得したトレース ログでメッセージ フローを再構築できます。  
+エンド ツー エンド アクティビティ Id が全体で論理アクティビティに割り当てられた Windows Communication Foundation (WCF) のアクティビティ トレースが有効にすると、[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)]スタック。 [!INCLUDE[netfx_current_short](../../../../../includes/netfx-current-short-md.md)] では、この機能の高パフォーマンス バージョンが導入されており、"メッセージ フローのトレース" と呼ばれる Event Tracing for Windows (ETW) と連携します。 この機能が有効な場合は、エンド ツー エンド アクティビティ ID が受信メッセージから取得され (空の場合は割り当てられ)、チャネルによってメッセージがデコードされた後に生成されたすべてのトレース イベントに伝達されます。 ユーザーはこの機能を使用して、デコード後に、異なるサービスから取得したトレース ログでメッセージ フローを再構築できます。  
   
  トレースは、アプリケーションで問題が検出された後に有効にし、その問題が解決された後は無効にすることができます。  
   

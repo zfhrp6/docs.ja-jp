@@ -1,13 +1,6 @@
 ---
-title: "方法 : デザイナーを使って ToolBar コントロールにボタンを追加する"
-ms.custom: 
+title: '方法 : デザイナーを使って ToolBar コントロールにボタンを追加する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - toolbars [Windows Forms], adding buttons
 - ToolBar control [Windows Forms], adding buttons
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - examples [Windows Forms], toolbars
 - ToolBar control [Windows Forms], adding drop-down menus
 ms.assetid: d9ce3040-3e21-4e2d-80ae-b430982b2db8
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 5339d946f771b7ba187813dd67860aaa63a21eb3
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: e90732329a0d78421d09da1c405ed93d5cb82f23
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-add-buttons-to-a-toolbar-control-using-the-designer"></a>方法 : デザイナーを使って ToolBar コントロールにボタンを追加する
 > [!NOTE]
@@ -58,7 +46,7 @@ ms.lasthandoff: 01/19/2018
   
 5.  をクリックして**OK**をダイアログ ボックスを閉じるし、指定したパネルを作成します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.ToolBar>  
  [方法: ツール バー ボタンのアイコンを定義する](../../../../docs/framework/winforms/controls/how-to-define-an-icon-for-a-toolbar-button.md)  
  [方法: ツール バー ボタンのメニュー イベントをトリガーする](../../../../docs/framework/winforms/controls/how-to-trigger-menu-events-for-toolbar-buttons.md)  

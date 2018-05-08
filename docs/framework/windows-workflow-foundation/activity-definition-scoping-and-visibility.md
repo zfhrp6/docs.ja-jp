@@ -1,23 +1,12 @@
 ---
-title: "アクティビティ定義のスコープ設定と表示"
-ms.custom: 
+title: アクティビティ定義のスコープ設定と表示
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: ccdffa07-9503-4eea-a61b-17f1564368b7
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: bb1b48bf06d024183a22027cb12dbca78f272085
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f3a8936c1bc3275468e1e4dbd23d0d001edad021
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="activity-definition-scoping-and-visibility"></a>アクティビティ定義のスコープ設定と表示
 アクティビティ定義のスコープと可視性は、オブジェクトのスコープと可視性と同様に、他のオブジェクトまたはアクティビティがアクティビティのメンバーにアクセスするために必要な機能です。 アクティビティ定義は次の実装によって実行されます。  

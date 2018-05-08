@@ -1,14 +1,6 @@
 ---
 title: '方法 : MaskedTextBox コントロールにデータをバインドする'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-winforms
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -18,17 +10,11 @@ helpviewer_keywords:
 - data binding [Windows Forms], MaskedTextBox control [Windows Forms]
 - MaskedTextBox control [Windows Forms], binding data
 ms.assetid: 34b29f07-e8df-48d4-b08b-53fcca524708
-caps.latest.revision: 12
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 8adf445de4648c0a751a852f67a55ca9683e3469
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 98d59e7443b51c17baafd05e6701c1418298b4a4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-bind-data-to-the-maskedtextbox-control"></a>方法 : MaskedTextBox コントロールにデータをバインドする
 データをバインドすることができます、<xref:System.Windows.Forms.MaskedTextBox>と同様に、他の Windows フォーム コントロールを制御します。 ただし、データベース内のデータの形式でマスクで定義された形式が一致しない場合は、データの書式を変更する必要があります。 次の手順を使用してこれを行う方法を示して、<xref:System.Windows.Forms.Binding.Format>と<xref:System.Windows.Forms.Binding.Parse>のイベント、<xref:System.Windows.Forms.Binding>クラスを別の電話番号を表示およびデータベースの拡張フィールドを 1 つの編集可能なフィールドとして電話します。  

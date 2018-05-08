@@ -1,30 +1,20 @@
 ---
-title: "ユーザー名クライアントを使用したメッセージ セキュリティ"
-ms.custom: 
+title: ユーザー名クライアントを使用したメッセージ セキュリティ
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 36335cb9-76b8-4443-92c7-44f081eabb21
-caps.latest.revision: "15"
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: dfda34c6bf165ebcecfd6d9a3710e785586d6cb1
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 7bda1bc18e2b5af1365c799c6f2be9d8d220e9ed
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="message-security-with-a-user-name-client"></a>ユーザー名クライアントを使用したメッセージ セキュリティ
-メッセージ レベルのセキュリティで保護された [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスとクライアントを次の図に示します。 サービスは X.509 証明書を使用して認証されます。 クライアントはユーザー名とパスワードを使用して認証されます。  
+次の図は、Windows Communication Foundation (WCF) サービスとメッセージ レベル セキュリティを使用してセキュリティで保護されたクライアントを示します。 サービスは X.509 証明書を使用して認証されます。 クライアントはユーザー名とパスワードを使用して認証されます。  
   
  サンプル アプリケーションについては、次を参照してください。[メッセージ セキュリティ ユーザー名](../../../../docs/framework/wcf/samples/message-security-user-name.md)です。  
   
@@ -33,7 +23,7 @@ ms.lasthandoff: 12/22/2017
 |特徴|説明|  
 |--------------------|-----------------|  
 |セキュリティ モード|メッセージ|  
-|相互運用性|[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] のみ|  
+|相互運用性|Windows Communication Foundation (WCF) のみ|  
 |認証 (サーバー)|初期ネゴシエーションにはサーバー認証が必要|  
 |認証 (クライアント)|ユーザー名/パスワード|  
 |整合性|はい、共有のセキュリティ コンテキストを使用します|  
@@ -136,9 +126,9 @@ ms.lasthandoff: 12/22/2017
 </configuration>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [セキュリティの概要](../../../../docs/framework/wcf/feature-details/security-overview.md)  
  [メッセージ セキュリティ ユーザー名](../../../../docs/framework/wcf/samples/message-security-user-name.md)  
  [サービス ID と認証](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)  
- [\<id >](../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)  
+ [\<identity>](../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)  
  [Windows Server App Fabric のセキュリティ モデル](http://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)

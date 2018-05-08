@@ -1,24 +1,14 @@
 ---
-title: "WIF 3.5 と WIF 4.5 間での名前空間マッピング"
-ms.custom: 
+title: WIF 3.5 と WIF 4.5 間での名前空間マッピング
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: a092d98c-444d-4336-a644-63c2e11e96c8
-caps.latest.revision: "4"
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: b8d27385a08c58c61983315da41f27f4dcb29368
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a120347d20de5b881ccb60d03da482856d9e68a7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="namespace-mapping-between-wif-35-and-wif-45"></a>WIF 3.5 と WIF 4.5 間での名前空間マッピング
 .NET 4.5 以降では、Windows Identity Foundation (WIF) は .NET Framework に完全に統合されています。 この統合により、名前の変更および WIF の名前空間と API サーフェスの統合が行われました。 このトピックでは、いくつかのガイダンスと、WIF 3.5 の名前空間と WIF 4.5 の名前空間の間の一般的なマッピングを示します。 すべてを網羅するものではなく、使い慣れた WIF 3.5 のクラスが WIF 4.5 のどこで見つかるかについての一般的な情報を提供するだけです。 WIF 3.5 と WIF 4.5 の間の違いについては、「[Windows Identity Foundation 4.5 の新機能](../../../docs/framework/security/whats-new-in-wif.md)」を参照してください。 WIF 3.5 を使ってビルドされたアプリケーションを WIF 4.5 に移行する方法のガイダンスについては、「[Guidelines for Migrating an Application Built Using WIF 3.5 to WIF 4.5](../../../docs/framework/security/guidelines-for-migrating-an-application-built-using-wif-3-5-to-wif-4-5.md)」(WIF 3.5 でビルドされたアプリケーションを WIF 4.5 に移行するためのガイドライン) を参照してください。  
@@ -54,6 +44,6 @@ ms.lasthandoff: 12/22/2017
 |`Microsoft.IdentityModel.Web.Controls`|WIF 4.5 では実装されていません。|`Microsoft.IdentityModel.Web.Controls` のクラスはフェデレーション パッシブ サインイン コントロールを実装していましたが、WIF 4.5 には存在しません。|  
 |`Microsoft.IdentityModel.WindowsTokenService`|WIF 4.5 では実装されていません。|-|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Windows Identity Foundation 4.5 の新機能](../../../docs/framework/security/whats-new-in-wif.md)  
  [WIF 3.5 でビルドされたアプリケーションを WIF 4.5 に移行するためのガイドライン](../../../docs/framework/security/guidelines-for-migrating-an-application-built-using-wif-3-5-to-wif-4-5.md)

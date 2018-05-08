@@ -1,13 +1,6 @@
 ---
-title: "方法 : コントロール クラスを継承する"
-ms.custom: 
+title: '方法 : コントロール クラスを継承する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - inheritance [Windows Forms], Windows Forms custom controls
 - Control class [Windows Forms], inheriting from
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - OnPaint method [Windows Forms]
 - custom controls [Windows Forms], creating
 ms.assetid: 46ba0df3-5cf7-443c-a3b4-a72660172476
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: bdc4a5c7f721fd350f5c604d4529f05afd62a42c
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: da80d46f27d7cd721af7a9600d2b0cde84876d23
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-inherit-from-the-control-class"></a>方法 : コントロール クラスを継承する
 Windows フォームで使用する完全なカスタム コントロールを作成する場合から継承する必要があります、<xref:System.Windows.Forms.Control>クラスです。 継承するときに、<xref:System.Windows.Forms.Control>を計画および実装の詳細を実行するオプションを提供するオプションの最大範囲とクラスが必要です。 継承する場合<xref:System.Windows.Forms.Control>コントロールの動作を実現する非常に基本的な機能を継承します。 本来の機能、<xref:System.Windows.Forms.Control>クラス、キーボードとマウスを介してユーザー入力の処理、境界とコントロールのサイズを定義、windows ハンドルを提供およびメッセージの処理とセキュリティを提供します。 描画機能 (ここではコントロールのグラフィカル インターフェイスを実際に表示する機能) や、ユーザーとやり取りするための特定の機能は含まれていません。 このような機能はすべて、カスタム コードによって提供する必要があります。  
@@ -54,7 +42,7 @@ Windows フォームで使用する完全なカスタム コントロールを�
   
 8.  コントロールを保存して、動作確認を行います。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [さまざまなカスタム コントロール](../../../../docs/framework/winforms/controls/varieties-of-custom-controls.md)  
  [方法: UserControl クラスを継承する](../../../../docs/framework/winforms/controls/how-to-inherit-from-the-usercontrol-class.md)  
  [方法: 既存の Windows フォーム コントロールから継承する](../../../../docs/framework/winforms/controls/how-to-inherit-from-existing-windows-forms-controls.md)  

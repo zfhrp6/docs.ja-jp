@@ -1,12 +1,6 @@
 ---
 title: /= 演算子 (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb./=
 helpviewer_keywords:
@@ -16,14 +10,11 @@ helpviewer_keywords:
 - operator /=
 - compound assignment statements [Visual Basic]
 ms.assetid: a1e22d0e-8380-4761-9da1-84fb51c34821
-caps.latest.revision: 23
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 94448856072a949582e64577287134c4b975bfec
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 642307bc531e7d9ce21a932b112795b35e7b3182
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="-operator-visual-basic"></a>/= 演算子 (Visual Basic)
 変数またはプロパティの値式の値で除算し、浮動小数点の結果を変数またはプロパティに代入します。  
@@ -36,10 +27,10 @@ variableorproperty /= expression
   
 ## <a name="parts"></a>指定項目  
  `variableorproperty`  
- 必須です。 任意の数値型の変数またはプロパティ。  
+ 必須。 任意の数値型の変数またはプロパティ。  
   
  `expression`  
- 必須です。 任意の数式。  
+ 必須。 任意の数式。  
   
 ## <a name="remarks"></a>コメント  
  左側にある要素、`/=`演算子は、単純なスカラー変数、プロパティ、または配列の要素を指定できます。 変数またはプロパティにできません。 [ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md)です。  

@@ -1,13 +1,6 @@
 ---
-title: "ハイブリッド アプリケーションのトラブルシューティング"
-ms.custom: 
+title: ハイブリッド アプリケーションのトラブルシューティング
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - overlapping controls [WPF]
 - Windows Forms [WPF], interoperability with
@@ -16,29 +9,24 @@ helpviewer_keywords:
 - hybrid applications [WPF interoperability]
 - message loops [WPF]
 ms.assetid: f440c23f-fa5d-4d5a-852f-ba61150e6405
-caps.latest.revision: "26"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 0a23f439b9b14d16a5440fa3b757b972304fdfa3
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 878761c030d4950e53ee24b76f7e29101584143a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="troubleshooting-hybrid-applications"></a>ハイブリッド アプリケーションのトラブルシューティング
-<a name="introduction"></a>このトピックは、両方を使用するハイブリッド アプリケーションを作成するときに発生する可能性がある一般的な問題を一覧表示[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]と[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]テクノロジです。  
+<a name="introduction"></a> このトピックは、両方を使用するハイブリッド アプリケーションを作成するときに発生する可能性がある一般的な問題を一覧表示[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]と[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]テクノロジです。  
   
 
   
 <a name="overlapping_controls"></a>   
 ## <a name="overlapping-controls"></a>コントロールの重複  
- 予想できるように、コントロールは重複できません可能性があります。 [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]各コントロールの個別の HWND を使用します。 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]ページ上のすべてのコンテンツを 1 つの HWND を使用します。 この実装の相違では、予期しない重複した動作が原因です。  
+ 予想できるように、コントロールは重複できません可能性があります。 [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] 各コントロールの個別の HWND を使用します。 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ページ上のすべてのコンテンツを 1 つの HWND を使用します。 この実装の相違では、予期しない重複した動作が原因です。  
   
  A[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]コントロールでホスト[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]の上に常に表示される、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]コンテンツ。  
   
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]ホストされているコンテンツ、<xref:System.Windows.Forms.Integration.ElementHost>の z オーダーでコントロールが表示されます、<xref:System.Windows.Forms.Integration.ElementHost>コントロール。 重複することは<xref:System.Windows.Forms.Integration.ElementHost>、コントロールが、ホストされている[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]コンテンツが結合または対話していません。  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ホストされているコンテンツ、<xref:System.Windows.Forms.Integration.ElementHost>の z オーダーでコントロールが表示されます、<xref:System.Windows.Forms.Integration.ElementHost>コントロール。 重複することは<xref:System.Windows.Forms.Integration.ElementHost>、コントロールが、ホストされている[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]コンテンツが結合または対話していません。  
   
 <a name="child_property"></a>   
 ## <a name="child-property"></a>子プロパティ  
@@ -46,7 +34,7 @@ ms.lasthandoff: 01/19/2018
   
 <a name="scaling"></a>   
 ## <a name="scaling"></a>スケーリング  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]および[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]別のスケーリング モデルがあります。 いくつか[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]拡大縮小変換が有意義に[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]コントロールが、他のユーザーはいません。 たとえば、スケーリング、[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]コントロールを 0 に機能しますが、0 以外の値に同じコントロールのスケール設定しようとすると、コントロールのサイズは 0 のままです。 詳細については、次を参照してください。 [WindowsFormsHost 要素のレイアウトに関する考慮事項](../../../../docs/framework/wpf/advanced/layout-considerations-for-the-windowsformshost-element.md)です。  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] および[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]別のスケーリング モデルがあります。 いくつか[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]拡大縮小変換が有意義に[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]コントロールが、他のユーザーはいません。 たとえば、スケーリング、[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]コントロールを 0 に機能しますが、0 以外の値に同じコントロールのスケール設定しようとすると、コントロールのサイズは 0 のままです。 詳細については、次を参照してください。 [WindowsFormsHost 要素のレイアウトに関する考慮事項](../../../../docs/framework/wpf/advanced/layout-considerations-for-the-windowsformshost-element.md)です。  
   
 <a name="adapter"></a>   
 ## <a name="adapter"></a>アダプター  
@@ -95,11 +83,11 @@ ms.lasthandoff: 01/19/2018
   
 <a name="dispose"></a>   
 ## <a name="dispose"></a>Dispose  
- クラスが正しく破棄しないと、リソースがリークすることができます。 アプリケーションでは、ハイブリッド、ことを確認、<xref:System.Windows.Forms.Integration.WindowsFormsHost>と<xref:System.Windows.Forms.Integration.ElementHost>クラスが破棄されると、またはリソース リークが発生する可能性があります。 [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]破棄する<xref:System.Windows.Forms.Integration.ElementHost>タイミングを制御、非モーダル<xref:System.Windows.Forms.Form>親が終了します。 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]破棄する<xref:System.Windows.Forms.Integration.WindowsFormsHost>アプリケーションのシャット ダウン時の要素。 表示することは、<xref:System.Windows.Forms.Integration.WindowsFormsHost>内の要素、<xref:System.Windows.Window>で、[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]メッセージ ループします。 ここでは、コードは、アプリケーションがシャット ダウンしている通知を受け取りません可能性があります。  
+ クラスが正しく破棄しないと、リソースがリークすることができます。 アプリケーションでは、ハイブリッド、ことを確認、<xref:System.Windows.Forms.Integration.WindowsFormsHost>と<xref:System.Windows.Forms.Integration.ElementHost>クラスが破棄されると、またはリソース リークが発生する可能性があります。 [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] 破棄する<xref:System.Windows.Forms.Integration.ElementHost>タイミングを制御、非モーダル<xref:System.Windows.Forms.Form>親が終了します。 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 破棄する<xref:System.Windows.Forms.Integration.WindowsFormsHost>アプリケーションのシャット ダウン時の要素。 表示することは、<xref:System.Windows.Forms.Integration.WindowsFormsHost>内の要素、<xref:System.Windows.Window>で、[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]メッセージ ループします。 ここでは、コードは、アプリケーションがシャット ダウンしている通知を受け取りません可能性があります。  
   
 <a name="enabling_visual_styles"></a>   
 ## <a name="enabling-visual-styles"></a>視覚スタイルを有効にする  
- [!INCLUDE[TLA#tla_winxp](../../../../includes/tlasharptla-winxp-md.md)]上の visual スタイル、[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]制御が有効にできません。 <xref:System.Windows.Forms.Application.EnableVisualStyles%2A?displayProperty=nameWithType>のテンプレートにメソッドが呼び出されます、[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]アプリケーションです。 使用する場合、既定では、このメソッドが呼び出されませんが[!INCLUDE[TLA2#tla_visualstu](../../../../includes/tla2sharptla-visualstu-md.md)]プロジェクトを作成、表示される[!INCLUDE[TLA#tla_winxp](../../../../includes/tlasharptla-winxp-md.md)]Comctl32.dll のバージョン 6.0 が使用可能な場合に、コントロール、visual スタイルします。 呼び出す必要があります、<xref:System.Windows.Forms.Application.EnableVisualStyles%2A>メソッド ハンドルは、スレッドで作成する前にします。 詳細については、次を参照してください。[する方法: ハイブリッド アプリケーションで Visual スタイルを有効にする](../../../../docs/framework/wpf/advanced/how-to-enable-visual-styles-in-a-hybrid-application.md)です。  
+ [!INCLUDE[TLA#tla_winxp](../../../../includes/tlasharptla-winxp-md.md)] 上の visual スタイル、[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]制御が有効にできません。 <xref:System.Windows.Forms.Application.EnableVisualStyles%2A?displayProperty=nameWithType>のテンプレートにメソッドが呼び出されます、[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]アプリケーションです。 使用する場合、既定では、このメソッドが呼び出されませんが[!INCLUDE[TLA2#tla_visualstu](../../../../includes/tla2sharptla-visualstu-md.md)]プロジェクトを作成、表示される[!INCLUDE[TLA#tla_winxp](../../../../includes/tlasharptla-winxp-md.md)]Comctl32.dll のバージョン 6.0 が使用可能な場合に、コントロール、visual スタイルします。 呼び出す必要があります、<xref:System.Windows.Forms.Application.EnableVisualStyles%2A>メソッド ハンドルは、スレッドで作成する前にします。 詳細については、次を参照してください。[する方法: ハイブリッド アプリケーションで Visual スタイルを有効にする](../../../../docs/framework/wpf/advanced/how-to-enable-visual-styles-in-a-hybrid-application.md)です。  
   
 <a name="licensed_controls"></a>   
 ## <a name="licensed-controls"></a>ライセンスされたコントロール  
@@ -125,7 +113,7 @@ ms.lasthandoff: 01/19/2018
 ## <a name="elementhost-and-ime"></a>ElementHost と IME  
  ホストされている WPF コントロール、<xref:System.Windows.Forms.Integration.ElementHost>はサポートされていません、<xref:System.Windows.Forms.Control.ImeMode%2A>プロパティです。 変更<xref:System.Windows.Forms.Control.ImeMode%2A>ホストされるコントロールでは無視されます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.Integration.ElementHost>  
  <xref:System.Windows.Forms.Integration.WindowsFormsHost>  
  [WPF デザイナーでの相互運用性](http://msdn.microsoft.com/library/2cb7c1ca-2a75-463b-8801-fba81e2b7042)  

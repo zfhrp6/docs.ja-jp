@@ -1,13 +1,6 @@
 ---
-title: "GDI+ でのブラシと塗りつぶされた図形"
-ms.custom: 
+title: GDI+ でのブラシと塗りつぶされた図形
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -20,19 +13,14 @@ helpviewer_keywords:
 - gradient brushes
 - brushes [Windows Forms], gradient
 ms.assetid: e863e2a7-0294-4130-99b6-f1ea3201e7cd
-caps.latest.revision: "15"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 89f0a7c86a83222030d9b50e20228f32e85ce730
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9475518a5f0422e0eac1ec521088071bb4d1c885
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="brushes-and-filled-shapes-in-gdi"></a>GDI+ でのブラシと塗りつぶされた図形
-四角形や楕円など、閉じた図形は、概要と、内部で構成されます。 ペンを使用して、アウトラインが描画され、内部はブラシと塗りつぶされます。 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]閉じた図形の内部を塗りつぶすときのいくつかのブラシ クラスを提供します。 <xref:System.Drawing.SolidBrush>、 <xref:System.Drawing.Drawing2D.HatchBrush>、 <xref:System.Drawing.TextureBrush>、 <xref:System.Drawing.Drawing2D.LinearGradientBrush>、および<xref:System.Drawing.Drawing2D.PathGradientBrush>です。 継承するすべてのクラス、<xref:System.Drawing.Brush>クラスです。 次の図は、四角形とソリッド ブラシ、ハッチ ブラシを使用して塗りつぶした楕円を示します。  
+四角形や楕円など、閉じた図形は、概要と、内部で構成されます。 ペンを使用して、アウトラインが描画され、内部はブラシと塗りつぶされます。 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] 閉じた図形の内部を塗りつぶすときのいくつかのブラシ クラスを提供します。 <xref:System.Drawing.SolidBrush>、 <xref:System.Drawing.Drawing2D.HatchBrush>、 <xref:System.Drawing.TextureBrush>、 <xref:System.Drawing.Drawing2D.LinearGradientBrush>、および<xref:System.Drawing.Drawing2D.PathGradientBrush>です。 継承するすべてのクラス、<xref:System.Drawing.Brush>クラスです。 次の図は、四角形とソリッド ブラシ、ハッチ ブラシを使用して塗りつぶした楕円を示します。  
   
  ![塗りつぶされた図形](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art17.gif "Aboutgdip02_art17")  
   
@@ -51,7 +39,7 @@ ms.lasthandoff: 12/22/2017
  [!code-csharp[LinesCurvesAndShapes#122](../../../../samples/snippets/csharp/VS_Snippets_Winforms/LinesCurvesAndShapes/CS/Class1.cs#122)]
  [!code-vb[LinesCurvesAndShapes#122](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/LinesCurvesAndShapes/VB/Class1.vb#122)]  
   
- [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]50 以上の陰影のスタイル; は、します。次の図に示すように 3 つのスタイルが<xref:System.Drawing.Drawing2D.HatchStyle.Horizontal>、 <xref:System.Drawing.Drawing2D.HatchStyle.ForwardDiagonal>、および<xref:System.Drawing.Drawing2D.HatchStyle.Cross>です。  
+ [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] 50 以上の陰影のスタイル; は、します。次の図に示すように 3 つのスタイルが<xref:System.Drawing.Drawing2D.HatchStyle.Horizontal>、 <xref:System.Drawing.Drawing2D.HatchStyle.ForwardDiagonal>、および<xref:System.Drawing.Drawing2D.HatchStyle.Cross>です。  
   
  ![塗りつぶされた図形](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art18.gif "Aboutgdip02_art18")  
   
@@ -70,7 +58,7 @@ ms.lasthandoff: 12/22/2017
  ![図形の入力](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art20.gif "AboutGdip02_Art20")  
   
 ## <a name="gradient-brushes"></a>グラデーション ブラシ  
- [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]グラデーション ブラシの 2 種類の説明: 線形とパス。 線形グラデーション ブラシを使用して、図形を塗りつぶす色が徐々 に水平、垂直方向には、図形間で移動すると、または対角線方向に変化することができます。 次のコード例では、楕円の左端から右端に移動すると、青から緑色に変化する水平グラデーション ブラシで楕円を塗りつぶす方法を示します。  
+ [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] グラデーション ブラシの 2 種類の説明: 線形とパス。 線形グラデーション ブラシを使用して、図形を塗りつぶす色が徐々 に水平、垂直方向には、図形間で移動すると、または対角線方向に変化することができます。 次のコード例では、楕円の左端から右端に移動すると、青から緑色に変化する水平グラデーション ブラシで楕円を塗りつぶす方法を示します。  
   
  [!code-csharp[LinesCurvesAndShapes#124](../../../../samples/snippets/csharp/VS_Snippets_Winforms/LinesCurvesAndShapes/CS/Class1.cs#124)]
  [!code-vb[LinesCurvesAndShapes#124](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/LinesCurvesAndShapes/VB/Class1.vb#124)]  
@@ -87,7 +75,7 @@ ms.lasthandoff: 12/22/2017
   
  ![図形の入力](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art23.gif "AboutGdip02_Art23")  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Drawing.SolidBrush?displayProperty=nameWithType>  
  <xref:System.Drawing.Drawing2D.HatchBrush?displayProperty=nameWithType>  
  <xref:System.Drawing.TextureBrush?displayProperty=nameWithType>  

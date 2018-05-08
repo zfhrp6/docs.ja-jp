@@ -1,12 +1,6 @@
 ---
-title: "XML シリアル化の例"
-ms.custom: 
+title: XML シリアル化の例
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -19,18 +13,11 @@ helpviewer_keywords:
 - DataSet class, serializing
 - XML Schema, serializing
 ms.assetid: eec46337-9696-435b-a375-dc5effae6992
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 39cf89856b8096fb879ee42f068e96308c5f9660
-ms.sourcegitcommit: 83dd5ec003e788ccb3e33f3412a7af39ae347646
+ms.openlocfilehash: 8d30afa0b517f31ded2bc5229927c698e476f790
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="examples-of-xml-serialization"></a>XML シリアル化の例
 XML シリアル化は、単純な形式から複雑な形式に至るまで、さまざまな形で実行できます。 たとえば、「[XML シリアル化の概要](../../../docs/standard/serialization/introducing-xml-serialization.md)」に示すように、パブリック フィールドとパブリック プロパティだけで構成されるクラスをシリアル化できます。 次の例では、XML シリアル化を使用して特定の XML スキーマ (XSD) ドキュメントに準拠する XML ストリームを生成する方法など、各種の高度なシナリオに対応するコード例を示します。  
@@ -774,7 +761,7 @@ public class Test
 </PurchaseOrder>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [XML シリアル化の概要](../../../docs/standard/serialization/introducing-xml-serialization.md)  
  [属性を使用した XML シリアル化の制御](../../../docs/standard/serialization/controlling-xml-serialization-using-attributes.md)  
  [XML シリアル化を制御する属性](../../../docs/standard/serialization/attributes-that-control-xml-serialization.md)  

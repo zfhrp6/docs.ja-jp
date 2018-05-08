@@ -1,22 +1,12 @@
 ---
-title: "チュートリアル: Async と Await を使用した Web へのアクセス (Visual Basic)"
-ms.custom: 
+title: 'チュートリアル: Async と Await を使用した Web へのアクセス (Visual Basic)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: get-started-article
 ms.assetid: 84fd047f-fab8-4d89-8ced-104fb7310a91
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: de1219de72be5ddc022d898c904663bf92ca5ab6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 7154ea12f2660074e3ad8251b9baaa3eeb3d453c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="walkthrough-accessing-the-web-by-using-async-and-await-visual-basic"></a>チュートリアル: Async と Await を使用した Web へのアクセス (Visual Basic)
 async/await 機能を使用することで、非同期プログラムをより簡単かつ直感的に記述できます。 同期コードに似た非同期コードを記述し、通常の非同期コードが必要とする難しいコールバック関数や継続の処理をコンパイラに任せます。  
@@ -60,7 +50,7 @@ async/await 機能を使用することで、非同期プログラムをより�
   
 1.  Visual Studio を起動します。  
   
-2.  メニュー バーで、 **[ファイル]**、 **[新規作成]**、 **[プロジェクト]**の順にクリックします。  
+2.  メニュー バーで、 **[ファイル]**、 **[新規作成]**、 **[プロジェクト]** の順にクリックします。  
   
      **[新しいプロジェクト]** ダイアログ ボックスが表示されます。  
   
@@ -117,7 +107,7 @@ async/await 機能を使用することで、非同期プログラムをより�
 6.  **[OK]** をクリックしてダイアログ ボックスを閉じます。  
   
 ##  <a name="BKMK_AddStatesandDirs"></a>   
-###  <a name="ImportsState"></a>必要な Imports ステートメントを追加するには  
+###  <a name="ImportsState"></a> 必要な Imports ステートメントを追加するには  
   
 1.  **ソリューション エクスプ ローラー**MainWindow.xaml.vb のショートカット メニューを開き、クリックして**コードの表示**です。  
   
@@ -683,7 +673,7 @@ End Class
 ```  
   
 ## <a name="see-also"></a>関連項目  
- [「Async Sample: Accessing the Web Walkthrough (c# および Visual Basic)](http://go.microsoft.com/fwlink/?LinkId=255191)  
+ [非同期サンプル: Web へのアクセスのチュートリアル (C# および Visual Basic)](http://go.microsoft.com/fwlink/?LinkId=255191)  
  [Await 演算子](../../../../visual-basic/language-reference/operators/await-operator.md)  
  [Async](../../../../visual-basic/language-reference/modifiers/async.md)  
  [Async および Await を使用した非同期プログラミング (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)  

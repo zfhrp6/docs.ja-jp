@@ -1,13 +1,6 @@
 ---
-title: "方法 : ルーティング イベントのクラス処理を追加する"
-ms.custom: 
+title: '方法 : ルーティング イベントのクラス処理を追加する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,16 +9,11 @@ helpviewer_keywords:
 - task_core_add_class_handling_routed_properties [WPF]
 - class handlers [WPF], routed events
 ms.assetid: 15b7b06c-9112-4ee5-b30a-65d10c5c5df6
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 1f0315bbd1d1a5ab2ae08d8bc1810e240cb6a5a7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 85c3491c9035d807b4c654659a8641121bb5709f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-add-class-handling-for-a-routed-event"></a>方法 : ルーティング イベントのクラス処理を追加する
 クラス ハンドラーまたはルート内の特定のノード上のインスタンス ハンドラーによって、ルーティングされたイベントを処理できます。 クラス ハンドラーは、最初に、呼び出され、インスタンス処理からイベントを抑制するか、基本クラスによって所有されているイベントに関するその他のイベント固有の動作を紹介するクラスの実装で使用できます。 この例では、クラス ハンドラーを実装するための 2 つの密接に関連する手法を示します。  
@@ -43,7 +31,7 @@ ms.lasthandoff: 12/22/2017
  [!code-csharp[ClassHandling#StaticAndRegisterClassHandler](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ClassHandling/CSharp/SDKSampleLibrary/class1.cs#staticandregisterclasshandler)]
  [!code-vb[ClassHandling#StaticAndRegisterClassHandler](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ClassHandling/visualbasic/sdksamplelibrary/class1.vb#staticandregisterclasshandler)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.EventManager>  
  [ルーティング イベントの処理済みとしてのマーキング、およびクラス処理](../../../../docs/framework/wpf/advanced/marking-routed-events-as-handled-and-class-handling.md)  
  [ルーティング イベントを処理する](../../../../docs/framework/wpf/advanced/how-to-handle-a-routed-event.md)  

@@ -1,13 +1,6 @@
 ---
-title: "方法 : Windows フォーム上のコントロールのサイズを変更する"
-ms.custom: 
+title: '方法 : Windows フォーム上のコントロールのサイズを変更する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - Size.Height
 - Size.Width
@@ -16,16 +9,11 @@ helpviewer_keywords:
 - size [Windows Forms], controls
 - Windows Forms controls, size
 ms.assetid: d2dba441-a8c0-4705-b8e8-2e5d86d6e7ec
-caps.latest.revision: "13"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: aad7c24027b7b1d45d1042d1125ee24a87bf3c15
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 1f9db293cdfbba0be960513034cfe122d80d66bf
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-resize-controls-on-windows-forms"></a>方法 : Windows フォーム上のコントロールのサイズを変更する
 個々 のコントロールのサイズを変更することができ、サイズを変更する、同じまたは異なる種類の複数のコントロールなど<xref:System.Windows.Forms.Button>と<xref:System.Windows.Forms.GroupBox>コントロール。  
@@ -43,7 +31,7 @@ ms.lasthandoff: 01/19/2018
   
 2.  **形式**] メニューの [選択**同じサイズに揃える**、4 つのオプションのいずれかを選択します。 最初の 3 つのコマンドは、最初に選択されたコントロールに合わせてコントロールのサイズを変更します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Windows フォーム コントロール](../../../../docs/framework/winforms/controls/index.md)  
  [Windows フォームでのコントロールの配置](../../../../docs/framework/winforms/controls/arranging-controls-on-windows-forms.md)  
  [各 Windows フォーム コントロールのラベル設定とショートカットの作成](../../../../docs/framework/winforms/controls/labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them.md)  

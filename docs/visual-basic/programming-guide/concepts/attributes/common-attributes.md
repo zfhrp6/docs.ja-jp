@@ -1,22 +1,12 @@
 ---
-title: "共通の属性 (Visual Basic)"
-ms.custom: 
+title: 共通の属性 (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 11fe4894-1bf9-4525-a36b-cddcd3a5d22b
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 9528b7dcfa52c30954929d714bd098eb51886ebd
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: 5a91b0aa48a22db4ea7fb56a9c632ff0cb44dce5
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="common-attributes-visual-basic"></a>共通の属性 (Visual Basic)
 このトピックでは、Visual Basic プログラムで最もよく使用される属性について説明します。  
@@ -84,7 +74,7 @@ ms.lasthandoff: 12/21/2017
 |<xref:System.Reflection.AssemblyDefaultAliasAttribute>|アセンブリ マニフェストのわかりやすい既定の別名を定義します。|  
   
 ##  <a name="Obsolete"></a> Obsolete 属性  
- `Obsolete` 属性は、使用が推奨されなくなったプログラム エンティティをマークします。 その後、非推奨の印が付いたエンティティが使用されるたびに、この属性の構成に従って警告かエラーが生成されます。 例:  
+ `Obsolete` 属性は、使用が推奨されなくなったプログラム エンティティをマークします。 その後、非推奨の印が付いたエンティティが使用されるたびに、この属性の構成に従って警告かエラーが生成されます。 例えば:  
   
 ```vb  
 <System.Obsolete("use class B")>   
@@ -231,7 +221,7 @@ End Class
   
  呼び出し元情報属性の詳細については、次を参照してください。[呼び出し元情報 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/caller-information.md)です。  
   
-##  <a name="VB"></a>Visual Basic の属性  
+##  <a name="VB"></a> Visual Basic の属性  
  次の表は、Visual Basic に固有の属性を一覧表示します。  
   
 |属性|目的|  
@@ -263,7 +253,7 @@ End Structure
 ### <a name="vbfixedarrayattribute"></a>VBFixedArrayAttribute  
  使用して`VBFixedArrayAttribute`が固定サイズで配列を宣言します。 Visual Basic の文字列のような配列は、既定では可変長の。 この属性は、シリアル化またはファイルにデータを書き込む場合に便利です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Reflection>  
  <xref:System.Attribute>  
  [Visual Basic プログラミング ガイド](../../../../visual-basic/programming-guide/index.md)  

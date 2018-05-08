@@ -1,29 +1,15 @@
 ---
 title: 権限の昇格
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - elevation of privilege [WCF]
 - security [WCF], elevation of privilege
 ms.assetid: 146e1c66-2a76-4ed3-98a5-fd77851a06d9
-caps.latest.revision: 16
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 6d93a8ae074e4016d7d8ec4b8734f0d14ead938f
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: c71936d087ef046848c75d1fa0638aaafbe43c9a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="elevation-of-privilege"></a>権限の昇格
 *特権の昇格*攻撃者承認本来付与されたもの以外のアクセス許可を与えた結果します。 たとえば、"読み取り専用" アクセス許可の権限セットを持つ攻撃者が、何らかの方法で権限セットを "読み取り/書き込み" アクセス許可を含むものに昇格させます。  
@@ -36,7 +22,7 @@ ms.lasthandoff: 04/28/2018
 ## <a name="switching-identity-without-a-security-context"></a>セキュリティ コンテキストを使用しない ID の切り替え  
  次の内容は、[!INCLUDE[vstecwinfx](../../../../includes/vstecwinfx-md.md)] にのみ適用されます。  
   
- クライアントとサーバー間の接続が確立すると、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントを開いた後に次のすべての条件に該当する場合を除き、クライアントの ID は変更されません。  
+ クライアントとサーバー、クライアントの id の間の接続が確立されている場合は変更されない 1 つの状況では可: 次の条件がすべて当てはまる場合、WCF クライアントが開かれた後に。  
   
 -   (トランスポート セキュリティ セッションまたはメッセージ セキュリティ セッションを使用して) セキュリティ コンテキストを確立するための手順がオフになっている (<xref:System.ServiceModel.NonDualMessageSecurityOverHttp.EstablishSecurityContext%2A>プロパティに設定されている`false`メッセージ セキュリティまたはトランスポート セキュリティを確立するための非対応の場合トランスポート セキュリティの場合は、セッションが使用されます。 トランスポート セキュリティの場合は、セキュリティ セッションを確立できないトランスポート (HTTPS など) が使用されている)。  
   
@@ -46,7 +32,7 @@ ms.lasthandoff: 04/28/2018
   
 -   偽装されたセキュリティ コンテキストでサービスを呼び出している。  
   
- これらの条件に該当する場合、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントを開いた後で、サービスに対するクライアントの認証に使用する ID が変更されることがあります (偽装された ID ではなく、プロセス ID になります)。 この状況が発生するのは、サービスに対するクライアントの認証に使用する Windows 資格情報がすべてのメッセージと共に送信され、認証に使用する資格情報が現在のスレッドの Windows ID から取得されるためです。 (たとえば、別の呼び出し元を偽装することによって) 現在のスレッドの Windows ID が変更された場合、メッセージに添付され、サービスに対するクライアントの認証に使用する資格情報も変更される可能性があります。  
+ これらの条件に当てはまる場合、サービスに対するクライアントの認証に使用される id を変更する可能性があります (場合がありますが、偽装された id、プロセス id 代わりに)、WCF クライアントが開かれた後にします。 この状況が発生するのは、サービスに対するクライアントの認証に使用する Windows 資格情報がすべてのメッセージと共に送信され、認証に使用する資格情報が現在のスレッドの Windows ID から取得されるためです。 (たとえば、別の呼び出し元を偽装することによって) 現在のスレッドの Windows ID が変更された場合、メッセージに添付され、サービスに対するクライアントの認証に使用する資格情報も変更される可能性があります。  
   
  偽装と共に Windows 認証を使用する場合に動作を確定する必要があるときは、Windows 資格情報を明示的に設定するか、サービスでセキュリティ コンテキストを確立する必要があります。 これを行うには、メッセージ セキュリティ セッションまたはトランスポート セキュリティ セッションを使用します。 たとえば、net.tcp トランスポートは、トランスポート セキュリティ セッションを提供します。 また、サービスの呼び出し時に、クライアント操作の同期バージョンだけを使用する必要があります。 メッセージ セキュリティ コンテキストを確立する場合は、構成済みセッションの更新時間よりも長い時間、サービスへの接続を開いたままにしないようにしてください。セッション更新プロセスの間にも ID が変更される可能性があるためです。  
   
@@ -59,9 +45,9 @@ ms.lasthandoff: 04/28/2018
 >  `BeginOpen` メソッドを使用する場合、キャプチャされた資格情報は、このメソッドを呼び出したプロセスの資格情報であることが保証されません。  
   
 ## <a name="token-caches-allow-replay-using-obsolete-data"></a>トークン キャッシュによる以前のデータを使用した再生の許可  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、ローカル セキュリティ機関 (LSA) の `LogonUser` 関数を使用して、ユーザー名とパスワードによってユーザーを認証します。 ログオン関数はコストの高い操作であるため、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、パフォーマンスを向上させるために、認証済みユーザーを表すトークンをキャッシュできます。 キャッシュ機構は、それ以降に使用できるように `LogonUser` の結果を保存します。 このメカニズムは既定で無効です。有効にするには、設定、<xref:System.ServiceModel.Security.UserNamePasswordServiceCredential.CacheLogonTokens%2A>プロパティを`true`、またはを使用して、`cacheLogonTokens`の属性、 [ \<userNameAuthentication >](../../../../docs/framework/configure-apps/file-schema/wcf/usernameauthentication.md)です。  
+ ローカル セキュリティ機関 (LSA) を使用する WCF`LogonUser`ユーザー名とパスワードによってユーザーを認証する関数。 WCF を使用すると、ログオン関数はコストのかかる操作なのでを表すトークンをキャッシュすると、認証されたユーザーにパフォーマンスが向上します。 キャッシュ機構は、それ以降に使用できるように `LogonUser` の結果を保存します。 このメカニズムは既定で無効です。有効にするには、設定、<xref:System.ServiceModel.Security.UserNamePasswordServiceCredential.CacheLogonTokens%2A>プロパティを`true`、またはを使用して、`cacheLogonTokens`の属性、 [ \<userNameAuthentication >](../../../../docs/framework/configure-apps/file-schema/wcf/usernameauthentication.md)です。  
   
- <xref:System.ServiceModel.Security.UserNamePasswordServiceCredential.CachedLogonTokenLifetime%2A> プロパティを <xref:System.TimeSpan> に設定するか、`cachedLogonTokenLifetime` 要素の `userNameAuthentication` 属性を使用することで、キャッシュされたトークンの有効期間 (TTL) を設定できます。既定値は 15 分です。 Windows からユーザー アカウントが削除された場合や、パスワードが変更されている場合でも、トークンがキャッシュされている間は、同じユーザー名とパスワードを指定すると、どのクライアントもこのトークンを使用できます。 TTL が終了し、トークンがキャッシュから削除されるまで、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は悪意のあるユーザーである可能性があっても、ユーザー認証を許可します。  
+ <xref:System.ServiceModel.Security.UserNamePasswordServiceCredential.CachedLogonTokenLifetime%2A> プロパティを <xref:System.TimeSpan> に設定するか、`cachedLogonTokenLifetime` 要素の `userNameAuthentication` 属性を使用することで、キャッシュされたトークンの有効期間 (TTL) を設定できます。既定値は 15 分です。 Windows からユーザー アカウントが削除された場合や、パスワードが変更されている場合でも、トークンがキャッシュされている間は、同じユーザー名とパスワードを指定すると、どのクライアントもこのトークンを使用できます。 TTL の有効期限が切れるし、トークンがキャッシュから削除、まで、WCF は (場合によって悪意のあるユーザーの認証を使用します。  
   
  これをできるだけ防ぐには、`cachedLogonTokenLifetime` の設定値をユーザーが必要とする最低の期間に限定して攻撃領域を減らします。  
   
@@ -91,7 +77,7 @@ ms.lasthandoff: 04/28/2018
   
 -   サービスのコンピューターに同じ公開キーを持つ複数の証明書が格納されており、それらの証明書に含まれる情報が異なる場合。  
   
--   サービスがサブジェクト キー識別子と一致する証明書を取得したが、クライアントが使用する予定だったものではない場合。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] でメッセージを取得し署名を検証すると、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は予定されていたものと異なる X.509 証明書の情報をクレーム セットに対応付けます。このクレーム セットは、クライアントが必要とした内容とは異なり、昇格されている可能性があります。  
+-   サービスがサブジェクト キー識別子と一致する証明書を取得したが、クライアントが使用する予定だったものではない場合。 WCF では、メッセージを受信し、署名を検証、ときに WCF は、X.509 証明書の情報をから、クライアントが予期したものと異なる可能性のある管理者特権のあるクレームのセットにマップされます。  
   
  これをできるだけ防ぐには、X.509 証明書を別の方法 (<xref:System.ServiceModel.Security.Tokens.X509KeyIdentifierClauseType.IssuerSerial> の使用など) で参照します。  
   

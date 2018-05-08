@@ -1,13 +1,6 @@
 ---
-title: "方法 : 成型された Windows フォームを作成する"
-ms.custom: 
+title: '方法 : 成型された Windows フォームを作成する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -25,16 +18,11 @@ helpviewer_keywords:
 - Windows Forms, circular
 - forms [Windows Forms], custom shapes
 ms.assetid: 6e6041e0-8e67-4487-b1e9-e410dbd1ef6c
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b0641adfcd7fa8e1d3367ea55d00830dd5a60706
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4a799baa2732b4d2a28a9d8d67fa54d8b48dd191
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-a-shaped-windows-form"></a>方法 : 成型された Windows フォームを作成する
 この例は、フォームのサイズを変更する楕円形です。  
@@ -51,7 +39,7 @@ ms.lasthandoff: 12/22/2017
   
  この例で上書き、<xref:System.Windows.Forms.Control.OnPaint%2A>フォームの形状を変更するメソッド。 このコードを使用するには、メソッドの宣言とメソッドの内部の描画コードをコピーします。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.Control.OnPaint%2A>  
  <xref:System.Drawing.Region>  
  <xref:System.Drawing>  

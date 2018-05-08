@@ -1,32 +1,18 @@
 ---
 title: '方法 : クラスを使用して Windows Communication Foundation コントラクトを作成する'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 1ad69393-3915-4e7f-9b91-b6fc59c6f5ba
-caps.latest.revision: 17
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 54d5e1328482fc7d0c1ee33918ffae6bf7195db9
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 296f500532040aaebf0f6d7d37a7a9aae99a3451
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-a-windows-communication-foundation-contract-with-a-class"></a>方法 : クラスを使用して Windows Communication Foundation コントラクトを作成する
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] コントラクトの作成には、インターフェイスの使用が適しています。 詳細については、次を参照してください。[する方法: サービス コントラクトを定義する](../../../../docs/framework/wcf/how-to-define-a-wcf-service-contract.md)です。 ここで説明する代替方法では、クラスを作成してから、<xref:System.ServiceModel.ServiceContractAttribute> 属性を直接そのクラスに適用し、<xref:System.ServiceModel.OperationContractAttribute> 属性をコントラクトに含まれるクラス内の各メソッドに適用します。  
+インターフェイスを使用しては、Windows Communication Foundation (WCF) コントラクトを作成することをお勧めします。 詳細については、次を参照してください。[する方法: サービス コントラクトを定義する](../../../../docs/framework/wcf/how-to-define-a-wcf-service-contract.md)です。 ここで説明する代替方法では、クラスを作成してから、<xref:System.ServiceModel.ServiceContractAttribute> 属性を直接そのクラスに適用し、<xref:System.ServiceModel.OperationContractAttribute> 属性をコントラクトに含まれるクラス内の各メソッドに適用します。  
   
 > [!WARNING]
 >  `[ServiceContract]` と `[ServiceContractAttribute]` は、同じことを行います。 `[OperationContract]` と `[OperationContractAttribute]` でも、同様です。 いずれの場合も、前者は後者の短縮形です。  
@@ -41,7 +27,7 @@ ms.lasthandoff: 04/30/2018
   
 3.  クラスでメソッドを作成します。  
   
-4.  <xref:System.ServiceModel.OperationContractAttribute> のパブリック コントラクトの一部として公開する必要のある各メソッドに、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クラスを適用します。  
+4.  適用、<xref:System.ServiceModel.OperationContractAttribute>クラス、パブリックの WCF コントラクトの一部として公開する必要がある各メソッドにします。  
   
 ## <a name="example"></a>例  
  次のコード例は、サービス コントラクトを定義するクラスを示しています。  

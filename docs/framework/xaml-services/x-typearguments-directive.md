@@ -1,13 +1,6 @@
 ---
-title: "x:TypeArguments ディレクティブ"
-ms.custom: 
+title: x:TypeArguments ディレクティブ
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - x:TypeArguments
 - xTypeArguments
@@ -17,16 +10,11 @@ helpviewer_keywords:
 - TypeArguments attribute in XAML [XAML Services]
 - XAML [XAML Services], x:TypeArguments attribute
 ms.assetid: 86561058-d393-4a44-b5c3-993a4513ea74
-caps.latest.revision: "18"
-author: wadepickett
-ms.author: wpickett
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e601fb5895460e52aa21836c542d0b1367527f09
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 94f09bdd3b6ee0b180e30bab0993f0b4e41730ac
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="xtypearguments-directive"></a>x:TypeArguments ディレクティブ
 パスの制約は、ジェネリック型のコンス トラクターにジェネリック型の引数を入力します。  
@@ -62,13 +50,13 @@ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
 ```  
   
 ### <a name="liststring"></a>リスト\<文字列 >  
- `<scg:List x:TypeArguments="sys:String" ...>`新しいインスタンスを作成<xref:System.Collections.Generic.List%601>で、<xref:System.String>引数を入力します。  
+ `<scg:List x:TypeArguments="sys:String" ...>` 新しいインスタンスを作成<xref:System.Collections.Generic.List%601>で、<xref:System.String>引数を入力します。  
   
 ### <a name="dictionarystringstring"></a>ディクショナリ\<String, String >  
- `<scg:Dictionary x:TypeArguments="sys:String,sys:String" ...>`新しいインスタンスを作成<xref:System.Collections.Generic.Dictionary%602>、2 つ<xref:System.String>引数を入力します。  
+ `<scg:Dictionary x:TypeArguments="sys:String,sys:String" ...>` 新しいインスタンスを作成<xref:System.Collections.Generic.Dictionary%602>、2 つ<xref:System.String>引数を入力します。  
   
 ### <a name="queuekeyvaluepairstringstring"></a>キュー < KeyValuePair\<String, String >>  
- `<scg:Queue x:TypeArguments="scg:KeyValuePair(sys:String,sys:String)" ...>`新しいインスタンスを作成<xref:System.Collections.Generic.Queue%601>の制約を持つ<xref:System.Collections.Generic.KeyValuePair%602>内部制約の型引数を持つ<xref:System.String>と<xref:System.String>です。  
+ `<scg:Queue x:TypeArguments="scg:KeyValuePair(sys:String,sys:String)" ...>` 新しいインスタンスを作成<xref:System.Collections.Generic.Queue%601>の制約を持つ<xref:System.Collections.Generic.KeyValuePair%602>内部制約の型引数を持つ<xref:System.String>と<xref:System.String>です。  
   
 ## <a name="xaml-2006-and-wpf-generic-xaml-usages"></a>XAML 2006 および WPF の汎用的な XAML の使用  
  XAML 2006 の使用状況、および WPF アプリケーションに使用される XAML では、次の制限が存在して`x:TypeArguments`と一般的な XAML からジェネリック型の使用法。  
@@ -79,7 +67,7 @@ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
   
 -   ジェネリックのルート要素の XAML オブジェクト要素は、部分クラスを使用しても宣言しなければなりません`x:Class`です。 これは、ビルド アクションを WPF を定義する場合でも当てはまります。  
   
--   `x:TypeArguments`入れ子になったジェネリック制約は参照できません。  
+-   `x:TypeArguments` 入れ子になったジェネリック制約は参照できません。  
   
 ## <a name="xaml-2009-or-xaml-2006-with-no-wpf-30-or-wpf-35-dependency"></a>XAML 2009 またはなし、WPF 3.0 または 3.5 を WPF XAML 2006 の依存関係  
  XAML 2006 または XAML 2009 のいずれかの .NET Framework XAML サービスでは、WPF に関連する汎用の XAML 使用量に制限が緩和されています。 XAML マークアップ、バッキング型システムとオブジェクト モデルをサポートする任意の位置に汎用オブジェクトの要素をインスタンス化することができます。  
@@ -92,7 +80,7 @@ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
   
  WPF では、対象とするときに[!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)]、と共に XAML 2009 の機能を使用する`x:TypeArguments`loose XAML (XAML をマークアップ コンパイルされていない) に対してのみです。 WPF 向けにマークアップ コンパイルされた XAML、および XAML の BAML 形式は、現在、XAML 2009 のキーワードと機能をサポートしていません。 必要なマークアップをコンパイルした場合、XAML は、「XAML 2006 および WPF 汎用 XAML の使用」セクションで説明した制限で動作する必要があります。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [x:Class ディレクティブ](../../../docs/framework/xaml-services/x-class-directive.md)  
  [x:Type マークアップ拡張機能](../../../docs/framework/xaml-services/x-type-markup-extension.md)  
  [共通の XAML 言語プリミティブの組み込み型](../../../docs/framework/xaml-services/built-in-types-for-common-xaml-language-primitives.md)  

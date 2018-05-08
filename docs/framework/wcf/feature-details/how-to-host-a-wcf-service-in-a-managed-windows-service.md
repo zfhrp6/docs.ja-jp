@@ -1,36 +1,22 @@
 ---
 title: '方法 : マネージ Windows サービスで WCF サービスをホストする'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 8e37363b-4dad-4fb6-907f-73c30fac1d9a
-caps.latest.revision: 21
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: aab9780a0d40ab71710d454deb3144219557450f
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: c6c3e057fd07569d462f1bf25d1c283e42024a8b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-host-a-wcf-service-in-a-managed-windows-service"></a>方法 : マネージ Windows サービスで WCF サービスをホストする
-ここでは、Windows サービスでホストされる [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスを作成するために必要な基本手順について説明します。 このシナリオは、マネージ Windows サービスのホスト オプションによって有効になります。このサービスは、メッセージがアクティブ化されていない、セキュリティ保護された環境において、インターネット インフォメーション サービス (IIS) の外部でホストされ、長時間実行される [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスです。 サービスの有効期限は代わりにオペレーティング システムによって制御されます。 このホスト オプションは Windows のすべてのバージョンで使用できます。  
+このトピックでは、Windows サービスによってホストされている Windows Communication Foundation (WCF) サービスを作成するために必要な基本的な手順について説明します。 シナリオは、マネージ Windows サービスのホストがアクティブ化メッセージをセキュリティで保護された環境でインターネット インフォメーション サービス (IIS) の外部でホストされている実行時間の長い WCF サービスではオプションでは有効です。 サービスの有効期限は代わりにオペレーティング システムによって制御されます。 このホスト オプションは Windows のすべてのバージョンで使用できます。  
   
- Windows サービスは、Microsoft 管理コンソール (MMC) の Microsoft.ManagementConsole.SnapIn を使用して管理し、システムのブート時に自動的に起動するように構成できます。 このホスト オプションは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスをマネージ Windows サービスとしてホストするアプリケーション ドメイン (AppDomain) の登録から構成されているため、サービスのプロセス有効期間は Windows サービスのサービス コントロール マネージャー (SCM) によって制御されます。  
+ Windows サービスは、Microsoft 管理コンソール (MMC) の Microsoft.ManagementConsole.SnapIn を使用して管理し、システムのブート時に自動的に起動するように構成できます。 このホスト オプションは、サービスのプロセスの有効期間は Windows サービスのサービス コントロール マネージャー (SCM) によって、制御できるようにマネージ Windows サービスとして WCF サービスをホストするアプリケーション ドメイン (AppDomain) の登録で構成されます。  
   
- サービス コードには、サービス コントラクトのサービス実装、Windows サービス クラス、およびインストーラー クラスが含まれています。 サービス実装クラスである `CalculatorService` は [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスです。 一方、`CalculatorWindowsService` は Windows サービスです。 Windows サービスとして限定するため、このクラスは `ServiceBase` を継承し、`OnStart` メソッドと `OnStop` メソッドを実装しています。 `OnStart` では、<xref:System.ServiceModel.ServiceHost> 型の `CalculatorService` が作成され、開かれます。 `OnStop` では、このサービスが停止され、破棄されます。 ホストはベース アドレスをサービス ホストに提供する必要もあります。サービス ホストは、アプリケーション設定で構成されます。 インストーラー クラスは <xref:System.Configuration.Install.Installer> を継承します。このクラスを使用すると、Installutil.exe ツールにより、プログラムを Windows サービスとしてインストールできます。  
+ サービス コードには、サービス コントラクトのサービス実装、Windows サービス クラス、およびインストーラー クラスが含まれています。 サービス実装クラス`CalculatorService`、WCF サービスです。 一方、`CalculatorWindowsService` は Windows サービスです。 Windows サービスとして限定するため、このクラスは `ServiceBase` を継承し、`OnStart` メソッドと `OnStop` メソッドを実装しています。 `OnStart` では、<xref:System.ServiceModel.ServiceHost> 型の `CalculatorService` が作成され、開かれます。 `OnStop` では、このサービスが停止され、破棄されます。 ホストはベース アドレスをサービス ホストに提供する必要もあります。サービス ホストは、アプリケーション設定で構成されます。 インストーラー クラスは <xref:System.Configuration.Install.Installer> を継承します。このクラスを使用すると、Installutil.exe ツールにより、プログラムを Windows サービスとしてインストールできます。  
   
 ### <a name="construct-the-service-and-provide-the-hosting-code"></a>サービスを構築してホスティング コードを提供する  
   
@@ -135,7 +121,7 @@ ms.lasthandoff: 04/30/2018
     > [!NOTE]
     >  [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] コマンド プロンプトを使用しない場合、`%WinDir%\Microsoft.NET\Framework\v4.0.<current version>` ディレクトリがシステム パスにあることを確認してください。  
   
-     コマンド プロンプトで「`services.msc`」と入力してサービス コントロール マネージャー (SCM) にアクセスします。 Windows サービスは、[Services] に "WCFWindowsServiceSample" として表示されます。 Windows サービスが実行されている場合、クライアントに応答できるサービスは [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスのみです。 サービスを開始するには、右クリックして、SCM"Start"、または選択の種類で**net 開始 WCFWindowsServiceSample**コマンド プロンプトでします。  
+     コマンド プロンプトで「`services.msc`」と入力してサービス コントロール マネージャー (SCM) にアクセスします。 Windows サービスは、[Services] に "WCFWindowsServiceSample" として表示されます。 WCF サービスは、Windows サービスが実行されている場合にのみクライアントに応答できます。 サービスを開始するには、右クリックして、SCM"Start"、または選択の種類で**net 開始 WCFWindowsServiceSample**コマンド プロンプトでします。  
   
 3.  サービスを変更する場合は、まずそのサービスを停止してからアンインストールする必要があります。 サービスを停止し、SCM でサービスを右クリックし、"Stop"を選択または**型 net stop WCFWindowsServiceSample**コマンド プロンプトでします。 Windows サービスを停止してクライアントを実行すると、クライアントがこのサービスにアクセスしようとしたときに <xref:System.ServiceModel.EndpointNotFoundException> 例外が発生することに注意してください。 Windows サービスの種類をアンインストールする**installutil/u bin\service.exe**コマンド プロンプトでします。  
   

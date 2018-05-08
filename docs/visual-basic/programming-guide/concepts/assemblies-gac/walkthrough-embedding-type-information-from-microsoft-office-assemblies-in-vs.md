@@ -1,22 +1,12 @@
 ---
-title: "チュートリアル: Visual Studio (Visual Basic) での Microsoft Office アセンブリから型情報の埋め込み"
-ms.custom: 
+title: 'チュートリアル: Visual Studio (Visual Basic) での Microsoft Office アセンブリから型情報の埋め込み'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 26b44286-5066-4ad4-8e6a-c24902be347c
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 26e6fee5147e8477c64f7eaf0dc2aeb928c13e15
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 6a28e95f9c3cfcc2481c8f4f9f83303648df43cd
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="walkthrough-embedding-type-information-from-microsoft-office-assemblies-in-visual-studio-visual-basic"></a>チュートリアル: Visual Studio (Visual Basic) での Microsoft Office アセンブリから型情報の埋め込み
 COM オブジェクトを参照するアプリケーションに型情報を埋め込むと、プライマリ相互運用機能アセンブリ (PIA: Primary Interop Assembly) を使用する必要がなくなります。 また、埋め込み型情報を使用することで、バージョンに依存しないアプリケーションを作成できます。 つまり、複数のバージョンの COM ライブラリの型を使用するようにプログラムを記述でき、バージョンごとに固有の PIA が不要になります。 この方法は、Microsoft Office ライブラリのオブジェクトを使用するアプリケーション向けの一般的なシナリオです。 型情報を埋め込むと、プログラムの同じビルドで、異なるコンピューター上にある異なるバージョンの Microsoft Office と連携できます。Microsoft Office のバージョンごとにプログラムや PIA を再配置する必要はありません。  
@@ -34,7 +24,7 @@ COM オブジェクトを参照するアプリケーションに型情報を埋�
   
 1.  Excel がインストールされているコンピューターで Visual Studio を起動します。  
   
-2.  **[ファイル]** メニューで、 **[新規]**、 **[プロジェクト]**をクリックします。  
+2.  **[ファイル]** メニューで、 **[新規]**、 **[プロジェクト]** をクリックします。  
   
 3.  **[新しいプロジェクト]** ダイアログ ボックスの **[プロジェクトの種類]** ペインで、**[Windows]** が選択されていることを確認します。 **[テンプレート]** ペインの **[コンソール アプリケーション]** を選択します。 **[名前]** ボックスに「`CreateExcelWorkbook`」と入力して、 **[OK]** を選択します。 新しいプロジェクトが作成されます。  
   

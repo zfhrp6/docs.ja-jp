@@ -1,13 +1,6 @@
 ---
-title: "方法: プライベート フォント コレクションを作成する"
-ms.custom: 
+title: '方法: プライベート フォント コレクションを作成する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - private font collections [Windows Forms], creating
 - fonts [Windows Forms], creating private collections
 ms.assetid: 6533d5e5-a8dc-4b76-9fc4-3bf75c8b9212
-caps.latest.revision: "16"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 8c0107b1ef1d5259835c6fb1666519d3fc06f4e5
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 824d42c40b07e8662395e7a1286b9a5a6112c415
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-a-private-font-collection"></a>方法: プライベート フォント コレクションを作成する
 <xref:System.Drawing.Text.PrivateFontCollection>クラスから継承、<xref:System.Drawing.Text.FontCollection>抽象基本クラスです。 使用することができます、<xref:System.Drawing.Text.PrivateFontCollection>具体的には、アプリケーションのフォントのセットを保持するオブジェクト。 プライベート フォント コレクションには、インストールされているシステム フォントだけでなく、コンピューターにインストールされていないフォントを含めることができます。 プライベート フォント コレクションにフォント ファイルを追加するには、呼び出し、<xref:System.Drawing.Text.PrivateFontCollection.AddFontFile%2A>のメソッド、<xref:System.Drawing.Text.PrivateFontCollection>オブジェクト。  
@@ -52,7 +40,7 @@ ms.lasthandoff: 12/22/2017
   
  ![フォント テキスト](../../../../docs/framework/winforms/advanced/media/csfontstext7.png "csfontstext7")  
   
- 次のコード例でプライベート フォント コレクションに追加された) Arial.tff は、Arial 正規スタイルのフォント ファイルです。 ただし、プログラムの出力が Arial フォント ファミリの標準以外の複数の使用可能なスタイルを表示することに注意してください。 これはため[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]太字、斜体、および太字斜体のスタイル標準のスタイルからをシミュレートすることができます。 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]下線や標準のスタイルから取り消し線も生成できます。  
+ 次のコード例でプライベート フォント コレクションに追加された) Arial.tff は、Arial 正規スタイルのフォント ファイルです。 ただし、プログラムの出力が Arial フォント ファミリの標準以外の複数の使用可能なスタイルを表示することに注意してください。 これはため[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]太字、斜体、および太字斜体のスタイル標準のスタイルからをシミュレートすることができます。 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] 下線や標準のスタイルから取り消し線も生成できます。  
   
  同様に、[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]太字または斜体のスタイルのいずれかから太字斜体のスタイルをシミュレートすることができます。 太字斜体スタイルが回ファミリの使用可能な場合でも、TimesBd.tff (Times New Roman、太字) は、唯一プログラム出力を示しています、コレクション内の回ファイル。  
   
@@ -62,6 +50,6 @@ ms.lasthandoff: 12/22/2017
 ## <a name="compiling-the-code"></a>コードのコンパイル  
  前の例は、Windows フォームで使用するために設計されていて、<xref:System.Windows.Forms.PaintEventHandler> のパラメーターである <xref:System.Windows.Forms.PaintEventArgs> `e` を必要とします。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Drawing.Text.PrivateFontCollection>  
  [フォントとテキストの使用](../../../../docs/framework/winforms/advanced/using-fonts-and-text.md)

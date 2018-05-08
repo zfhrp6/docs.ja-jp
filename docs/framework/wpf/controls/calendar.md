@@ -1,27 +1,15 @@
 ---
-title: "予定表"
-ms.custom: 
+title: 予定表
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - controls [WPF], Calendar
 - Calendar control [WPF]
 ms.assetid: ee844e4a-eefe-48e2-bd0d-1d82cc5e960b
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 04d602161a20e56395e978dfeeb7ec5e756af7a5
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b706ec6236b7e3e10865eee9fd32c2eb5a5e7db2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="calendar"></a>予定表
 カレンダーでは、ビジュアルな予定表を使用して日付を選択するユーザーを使用できます。  
@@ -62,6 +50,6 @@ ms.lasthandoff: 12/22/2017
 |Ctrl +↓|どれでも可|次に切り替わります小さい<xref:System.Windows.Controls.Calendar.DisplayMode%2A>です。 場合<xref:System.Windows.Controls.Calendar.DisplayMode%2A>は既に<xref:System.Windows.Controls.CalendarMode.Month>何もしません。|  
 |Space キーまたは ENTER|<xref:System.Windows.Controls.CalendarMode.Year> または <xref:System.Windows.Controls.CalendarMode.Decade>|スイッチ<xref:System.Windows.Controls.Calendar.DisplayMode%2A>を<xref:System.Windows.Controls.CalendarMode.Month>または<xref:System.Windows.Controls.CalendarMode.Year>フォーカスのあるアイテムによって表されます。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [コントロール](../../../../docs/framework/wpf/controls/index.md)  
  [スタイルとテンプレート](../../../../docs/framework/wpf/controls/styling-and-templating.md)

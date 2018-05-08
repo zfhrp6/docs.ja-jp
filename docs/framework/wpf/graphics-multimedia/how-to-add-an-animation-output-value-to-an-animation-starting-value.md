@@ -1,28 +1,14 @@
 ---
-title: "方法 : アニメーションの出力値をアニメーションの開始値に追加する"
-ms.custom: 
+title: '方法 : アニメーションの出力値をアニメーションの開始値に追加する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - animation [WPF]
 ms.assetid: b89a82be-b03d-481e-a8d3-cc513d09ca00
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 3a670a29e4bd982418ac92ef0e2ac65635763671
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 7f60a3cd3fc88c5bb2460864be6cee008dc672fd
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-add-an-animation-output-value-to-an-animation-starting-value"></a>方法 : アニメーションの出力値をアニメーションの開始値に追加する
 この例では、アニメーションの開始値をアニメーションの出力値を追加する方法を示します。  
@@ -34,7 +20,7 @@ ms.lasthandoff: 01/19/2018
   
  [!code-xaml[timingbehaviors_snip#IsAdditiveWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/timingbehaviors_snip/CSharp/IsAdditiveExample.xaml#isadditivewholepage)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [反復サイクル中にアニメーション値を累積する](../../../../docs/framework/wpf/graphics-multimedia/how-to-accumulate-animation-values-during-repeat-cycles.md)  
  [アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)  
  [キー フレーム アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animations-overview.md)  

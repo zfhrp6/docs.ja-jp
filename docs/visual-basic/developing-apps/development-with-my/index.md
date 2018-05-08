@@ -1,11 +1,6 @@
 ---
 title: My による開発 (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - My.MyWpfExtension.Windows
 helpviewer_keywords:
@@ -14,14 +9,11 @@ helpviewer_keywords:
 - My feature
 - Visual Basic, programming in
 ms.assetid: f1d04509-5e46-4551-9f9f-94334a121fca
-caps.latest.revision: 26
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 5ea802572a59a3b94508558cee97290cac67e1ac
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: f13e7348eb1c63e8256a48da7a8f5a8e357c72ae
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="development-with-my-visual-basic"></a>My による開発 (Visual Basic)
 Visual Basic には、多彩な機能を提供する一方で生産性や使いやすさを向上させる、迅速なアプリケーション開発用の新しい機能が用意されています。 こうした機能の 1 つである `My` という機能は、情報へのアクセス、およびアプリケーションやそのランタイム環境に関連する既定のオブジェクト インスタンスを提供します。 この情報は、IntelliSense によって検出可能な形式で編成され、用途に応じて論理的に区別されます。  

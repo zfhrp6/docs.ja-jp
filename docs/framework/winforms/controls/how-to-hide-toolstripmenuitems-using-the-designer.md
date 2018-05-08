@@ -1,28 +1,16 @@
 ---
-title: "方法 : デザイナーを使用して ToolStripMenuItems を非表示にする"
-ms.custom: 
+title: '方法 : デザイナーを使用して ToolStripMenuItems を非表示にする'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - ToolStripMenuItems [Windows Forms], hiding menu items in designer
 - MenuStrip control [Windows Forms], hiding menu items in designer
 - menu items [Windows Forms], hiding
 ms.assetid: 8f1b057e-3d8a-4f11-88df-935f7b29a836
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 06a95581e156a7027c8fa0bda6e5fbc4babdb85b
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: b0018516b9ac337cea3716c4b2eddc6eb859dbb0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-hide-toolstripmenuitems-using-the-designer"></a>方法 : デザイナーを使用して ToolStripMenuItems を非表示にする
 メニュー項目を非表示には、アプリケーションのユーザー インターフェイス (UI) を制御し、ユーザーのコマンドを制限する方法です。 多くの場合、すべてのメニュー項目が利用できない場合は、メニュー全体を非表示にするされます。 これにより、ユーザーの混乱を避けることが少ないが表示されます。 さらに、ことができますを非表示にして、メニューまたはメニュー項目を無効にするように単独で非表示がショートカット キーを使用して、メニュー コマンドにアクセスできないユーザーを妨げません。 メニュー項目を無効にする方法の詳細については、次を参照してください。[する方法: ToolStripMenuItems を無効にするデザイナーの使用](../../../../docs/framework/winforms/controls/how-to-disable-toolstripmenuitems-using-the-designer.md)です。  
@@ -45,7 +33,7 @@ ms.lasthandoff: 01/19/2018
   
      サブメニュー項目を非表示にするときにそのまま表示されてデザイン時に、フォーム上の作業をさらに簡単に選択できるようにします。 実行時に実際には表示されません。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.ToolStripItem.Visible%2A>  
  <xref:System.Windows.Forms.MenuStrip>  
  <xref:System.Windows.Forms.ToolStripMenuItem.Enabled%2A>  

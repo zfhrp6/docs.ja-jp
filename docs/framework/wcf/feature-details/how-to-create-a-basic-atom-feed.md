@@ -1,32 +1,18 @@
 ---
 title: '方法 : 基本的な ATOM フィードを作成する'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 6e0cacc1-9b11-4665-adb7-577a62626fd6
-caps.latest.revision: 14
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 26e5bf0771e3b8d700efeaf4f63b9866534db68a
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 229cc4a5a06059159eb045da234d9f09de0f6c0d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-a-basic-atom-feed"></a>方法 : 基本的な ATOM フィードを作成する
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] では、配信フィードを公開するサービスを作成できます。 ここでは、ATOM 配信フィードを公開する配信サービスを作成する方法について説明します。  
+Windows Communication Foundation (WCF) では、配信フィードを公開するサービスを作成することができます。 ここでは、ATOM 配信フィードを公開する配信サービスを作成する方法について説明します。  
   
 ### <a name="to-create-a-basic-syndication-service"></a>基本的な配信サービスを作成するには  
   

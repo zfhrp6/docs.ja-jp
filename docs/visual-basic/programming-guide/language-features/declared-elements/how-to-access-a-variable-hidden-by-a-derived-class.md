@@ -1,12 +1,6 @@
 ---
-title: "方法: 派生クラスによって非表示になっている変数にアクセスする (Visual Basic)"
-ms.custom: 
+title: '方法: 派生クラスによって非表示になっている変数にアクセスする (Visual Basic)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - qualification [Visual Basic], of element names
 - base classes [Visual Basic], accessing elements
@@ -15,14 +9,11 @@ helpviewer_keywords:
 - declared elements [Visual Basic], referencing
 - variables [Visual Basic], accessing hidden
 ms.assetid: ae21a8ac-9cd4-4fba-a3ec-ecc4321ef93c
-caps.latest.revision: "20"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 0f94e45fcb0a26b0d59789e101c37aceba219250
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 8dd59dff5b8123331237db905432bbb4e94d62ab
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-access-a-variable-hidden-by-a-derived-class-visual-basic"></a>方法: 派生クラスによって非表示になっている変数にアクセスする (Visual Basic)
 派生クラス内のコードは、変数にアクセスするときに、コンパイラ通常参照が解決を最も近いアクセス可能なバージョンにアクセス可能なバージョンは、少ない継承旧バージョンとのステップにアクセスするクラス。 変数が派生クラスで定義されている場合、コードでその定義が正常にアクセスします。  

@@ -1,28 +1,18 @@
 ---
-title: "CLR ホスト インターフェイス"
-ms.custom: 
+title: CLR ホスト インターフェイス
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 helpviewer_keywords:
 - interfaces [.NET Framework hosting], version 2.0
 - hosting interfaces [.NET Framework], version 2.0
 - .NET Framework 2.0, hosting interfaces
 ms.assetid: 703b8381-43db-4a4d-9faa-cca39302d922
-caps.latest.revision: "16"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: fd954419f46313a239ddf5a309a646e3d2f1b9bf
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 03839a2c6e52f9d2dcdd2e0941ff4fdbeb8a3a17
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="clr-hosting-interfaces"></a>CLR ホスト インターフェイス
 このセクションの内容がアンマネージ インターフェイスについて説明しますホストを使用して、共通言語ランタイム (CLR) をアプリケーションに統合します。 情報は、.NET Framework バージョン 2.0 およびそれ以降のバージョンに関連します。 これらのインターフェイスは、ランタイムは、バージョン 1.0 および 1.1 よりも多くの面を制御するホストを有効にし、CLR とホストの実行モデルの間でより緊密に統合を提供します。  
@@ -196,7 +186,8 @@ ms.lasthandoff: 12/22/2017
  ポータブル実行可能 (PE) イメージを検証し、検証エラーを報告のメソッドを提供します。  
   
 ## <a name="related-sections"></a>関連項目  
- [サポートされなくなった CLR のホスト インターフェイスおよびコクラス](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-interfaces-and-coclasses.md)  
+ 
+  [非推奨の CLR のホスト インターフェイスおよびコクラス](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-interfaces-and-coclasses.md)  
  .NET Framework version 1.0 および 1.1 で提供されるホスト インターフェイスを説明するトピックが含まれています。  
   
  [.NET Framework 4 および 4.5 で追加された CLR ホスト インターフェイス](../../../../docs/framework/unmanaged-api/hosting/clr-hosting-interfaces-added-in-the-net-framework-4-and-4-5.md)  

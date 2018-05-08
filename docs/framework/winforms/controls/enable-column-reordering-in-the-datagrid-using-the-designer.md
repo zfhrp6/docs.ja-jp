@@ -1,29 +1,17 @@
 ---
-title: "方法 : デザイナーを使用して Windows フォーム DataGridView コントロールの列の並べ替えを有効にする"
-ms.custom: 
+title: '方法 : デザイナーを使用して Windows フォーム DataGridView コントロールの列の並べ替えを有効にする'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - DataGridView control [Windows Forms], column order
 - Windows Forms, columns
 - columns [Windows Forms], reordering
 - data [Windows Forms], displaying
 ms.assetid: d82bd69c-6799-4439-a32c-91139c5901d1
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: bd65179ea22bd7e8b9240d157874f6fd01285665
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 519ddacfa37fa6ffb5ff7ffbe6124ee772ab0c09
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-enable-column-reordering-in-the-windows-forms-datagridview-control-using-the-designer"></a>方法 : デザイナーを使用して Windows フォーム DataGridView コントロールの列の並べ替えを有効にする
 Windows フォームに表示されるデータを表示するときに<xref:System.Windows.Forms.DataGridView>コントロール、ユーザーことがありますする特定の列に値を比較します。 これがあります、列がコントロールでは、広く分散している場合に便利特に関心のあるすべての列を確認するためにユーザーが水平の双方向にスクロールする必要。 列の順序を変更できるので、列の値を容易に比較を行うことができます。 列の並べ替えを有効にするとユーザーは、マウスを使用して、列ヘッダーをドラッグして列を新しい位置に移動できます。  
@@ -37,7 +25,7 @@ Windows フォームに表示されるデータを表示するときに<xref:Sys
   
 -   スマート タグ グリフをクリックして (![スマート タグ グリフ](../../../../docs/framework/winforms/controls/media/vs-winformsmttagglyph.gif "VS_WinFormSmtTagGlyph")) の右上隅で、<xref:System.Windows.Forms.DataGridView>を制御し、**を有効にする列の並べ替え**.  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.DataGridView>  
  <xref:System.Windows.Forms.DataGridView.AllowUserToOrderColumns%2A?displayProperty=nameWithType>  
  [方法: デザイナーを使用して Windows フォーム DataGridView コントロールの列を固定する](../../../../docs/framework/winforms/controls/freeze-columns-in-the-datagrid-using-the-designer.md)  

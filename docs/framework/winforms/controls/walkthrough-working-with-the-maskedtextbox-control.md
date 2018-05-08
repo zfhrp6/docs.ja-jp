@@ -1,13 +1,6 @@
 ---
-title: "チュートリアル : MaskedTextBox コントロールの使用"
-ms.custom: 
+title: 'チュートリアル : MaskedTextBox コントロールの使用'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -18,16 +11,11 @@ helpviewer_keywords:
 - user input [Windows Forms], controlling
 - text [Windows Forms], controls for input
 ms.assetid: df60565e-5447-4110-92a6-be1f6ff5faa3
-caps.latest.revision: "16"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 006dafe88c5db7cb1499d7c1902d295841bfb5ae
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: bcca6c5f5481d351a39a4e71532cc0f006075128
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="walkthrough-working-with-the-maskedtextbox-control"></a>チュートリアル : MaskedTextBox コントロールの使用
 このチュートリアルでは、以下のタスクを行います。  
@@ -46,7 +34,7 @@ ms.lasthandoff: 12/22/2017
   
 2.  ドラッグ、<xref:System.Windows.Forms.MaskedTextBox>から制御、**ツールボックス**をフォームにします。  
   
-3.  コントロールを右クリックして選択**プロパティ**です。 **プロパティ**ウィンドウで、**マスク**プロパティをクリックして、**しています.**プロパティ名の横にある (省略記号) ボタンをクリックします。  
+3.  コントロールを右クリックして選択**プロパティ**です。 **プロパティ**ウィンドウで、**マスク**プロパティをクリックして、**しています.** プロパティ名の横にある (省略記号) ボタンをクリックします。  
   
 4.  **定型入力**ダイアログ ボックスで、**短い日付**マスクし、をクリックして**OK**です。  
   
@@ -135,6 +123,6 @@ ms.lasthandoff: 12/22/2017
     End Sub  
     ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.MaskedTextBox>  
  [MaskedTextBox コントロール](../../../../docs/framework/winforms/controls/maskedtextbox-control-windows-forms.md)

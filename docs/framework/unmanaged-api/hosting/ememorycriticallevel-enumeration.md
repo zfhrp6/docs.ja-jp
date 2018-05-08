@@ -1,14 +1,6 @@
 ---
-title: "EMemoryCriticalLevel 列挙型"
-ms.custom: 
+title: EMemoryCriticalLevel 列挙型
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - EMemoryCriticalLevel
 api_location:
@@ -22,17 +14,13 @@ helpviewer_keywords:
 ms.assetid: 2ca8a7a2-7b54-4ba3-8e73-277c7df485f3
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 4fb279402b2b677546f775b9a8badfbe2095fe4f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: acf4f3f582e417c5e7b814622986427f996796ce
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ememorycriticallevel-enumeration"></a>EMemoryCriticalLevel 列挙型
 特定のメモリ割り当てが要求されましたが満足することはできません、エラーの影響を示す値が含まれています。  
@@ -58,15 +46,15 @@ typedef enum {
 ## <a name="remarks"></a>コメント  
  定義されているメモリの割り当て方法、 [IHostMemoryManager](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-interface.md)と[IHostMAlloc](../../../../docs/framework/unmanaged-api/hosting/ihostmalloc-interface.md)インターフェイスは、この型のパラメーターを受け取ります。 エラーの重大度に応じて、ホスト決定できますは割り当て要求はすぐに失敗するか、満たすことができるまで待機するか。  
   
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** MSCorEE.h  
   
  **ライブラリ:** MSCorEE.dll  
   
- **.NET framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ICLRMemoryNotificationCallback インターフェイス](../../../../docs/framework/unmanaged-api/hosting/iclrmemorynotificationcallback-interface.md)  
  [ホスティングの列挙型](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)

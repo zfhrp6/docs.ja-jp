@@ -1,28 +1,16 @@
 ---
-title: "方法 : キー フレームを使用して文字列をアニメーション化する"
-ms.custom: 
+title: '方法 : キー フレームを使用して文字列をアニメーション化する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - animation [WPF], strings with key frames
 - strings [WPF], animating with key frames
 - key frames [WPF], animating strings with
 ms.assetid: c62bc9fd-c09a-4227-bce0-0a1ab82049dd
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 1692777a97754fb7f6481b2d9cb8942dcb62df77
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5219ce11667c84d3ceca380d5a4ddd52695736b9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-animate-a-string-by-using-key-frames"></a>方法 : キー フレームを使用して文字列をアニメーション化する
 この例があり、この例では、文字列をアニメーション化する方法を示しています、<xref:System.Windows.Controls.ContentControl.Content%2A>のプロパティ、<xref:System.Windows.Controls.Button>キー フレームを使用して、コントロール。  
@@ -36,7 +24,7 @@ ms.lasthandoff: 12/22/2017
   
  サンプル全体については、「[キーフレーム アニメーションのサンプル](http://go.microsoft.com/fwlink/?LinkID=160012)」を参照してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Media.Animation.StringAnimationUsingKeyFrames>  
  <xref:System.Windows.Controls.ContentControl.Content%2A>  
  <xref:System.Windows.Controls.Button>  

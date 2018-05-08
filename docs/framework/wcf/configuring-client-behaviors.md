@@ -1,30 +1,18 @@
 ---
-title: "クライアントの動作の構成"
-ms.custom: 
+title: クライアントの動作の構成
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: df5b32fa-e73b-4e8e-b66f-357c748e0173
-caps.latest.revision: "7"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ee79900b52ae0fa58e8fb9a5cbbf50f5a882c295
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 062e726b6f1d6831303e1cc0ae82a434daab860c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="configuring-client-behaviors"></a>クライアントの動作の構成
-[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] は 2 とおりの方法で動作を構成します。1 つは動作の構成を参照する方法で、これはクライアント アプリケーションの構成ファイルの `<behavior>` セクションで定義されます。もう 1 つは、呼び出し元アプリケーションでプログラムによって動作を構成する方法です。 このトピックでは、両方の方法について説明します。  
+Windows Communication Foundation (WCF) では、2 つの方法で動作を構成します--で定義されている動作の構成を参照して、`<behavior>`クライアント アプリケーション構成ファイル – またはプログラムによって呼び出し元のセクション。アプリケーション。 このトピックでは、両方の方法について説明します。  
   
  構成ファイルを使用する場合、動作の構成には、構成設定の名前付きコレクションがあります。 各動作の構成には、一意の名前を指定する必要があります。 この文字列をエンドポイントの構成の `behaviorConfiguration` 属性で使用し、エンドポイントと動作を関連付けます。  
   
@@ -54,7 +42,7 @@ ms.lasthandoff: 12/22/2017
 ```  
   
 ## <a name="using-behaviors-programmatically"></a>プログラムによる動作の使用  
- クライアントを開く前に、`Behaviors` クライアント オブジェクトまたはクライアント チャネル ファクトリ オブジェクト上の適切な [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] プロパティを見つけることで、動作をプログラムによって構成または挿入することもできます。  
+ 構成で、適切な動作をプログラムによって挿入したり`Behaviors`Windows Communication Foundation (WCF) クライアント オブジェクトまたはクライアントを開く前に、クライアント チャネル ファクトリ オブジェクトのプロパティです。  
   
 ## <a name="example"></a>例  
  次のコード例は、チャネル オブジェクトの作成前に、<xref:System.ServiceModel.Description.ServiceEndpoint.Behaviors%2A> プロパティから返される <xref:System.ServiceModel.Description.ServiceEndpoint> 上の <xref:System.ServiceModel.ChannelFactory.Endpoint%2A> プロパティにアクセスすることで、プログラムでクライアント動作が挿入される方法を示します。  
@@ -62,5 +50,5 @@ ms.lasthandoff: 12/22/2017
  [!code-csharp[ChannelFactoryBehaviors#10](../../../samples/snippets/csharp/VS_Snippets_CFX/channelfactorybehaviors/cs/client.cs#10)]
  [!code-vb[ChannelFactoryBehaviors#10](../../../samples/snippets/visualbasic/VS_Snippets_CFX/channelfactorybehaviors/vb/client.vb#10)]  
   
-## <a name="see-also"></a>参照  
- [\<ビヘイビアー >](../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md)
+## <a name="see-also"></a>関連項目  
+ [\<behaviors>](../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md)

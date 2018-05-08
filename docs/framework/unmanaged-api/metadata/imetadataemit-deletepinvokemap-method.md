@@ -1,14 +1,6 @@
 ---
-title: "IMetaDataEmit::DeletePinvokeMap メソッド"
-ms.custom: 
+title: IMetaDataEmit::DeletePinvokeMap メソッド
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - IMetaDataEmit.DeletePinvokeMap
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: 3c4f6b54-5ce7-4a2a-83e1-6dec16441f50
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 1479c3fb19feec0e42ee4aec8544a35ce51350a8
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 34db47b9f43412c9b6c5f58dd6afded505703905
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="imetadataemitdeletepinvokemap-method"></a>IMetaDataEmit::DeletePinvokeMap メソッド
 指定したトークンによって参照されるオブジェクトの PInvoke マッピング メタデータを破棄します。  
@@ -50,15 +38,15 @@ HRESULT DeletePinvokeMap (
  `tk`  
  [in]`mdFieldDef`または`mdMethodDef`PInvoke マッピング メタデータを削除する対象のオブジェクトを表すトークンです。  
   
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** Cor.h  
   
  **ライブラリ:** MSCorEE.dll にリソースとして使用  
   
- **.NET framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [IMetaDataEmit インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)  
  [IMetaDataEmit2 インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

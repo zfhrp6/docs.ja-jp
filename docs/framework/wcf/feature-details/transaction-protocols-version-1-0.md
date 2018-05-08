@@ -1,29 +1,15 @@
 ---
 title: トランザクション プロトコル バージョン 1.0
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 034679af-0002-402e-98a8-ef73dcd71bb6
-caps.latest.revision: 3
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 60867daa7b8519f745c37371604807c51aa1cbb9
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: d510a74560369a132822e980e7812ca4deff55a3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="transaction-protocols-version-10"></a>トランザクション プロトコル バージョン 1.0
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] バージョン 1 は、WS-Atomic Transaction プロトコルおよび WS-Coordination プロトコルのバージョン 1.0 を実装します。 バージョン 1.1 の詳細については、次を参照してください。[トランザクション プロトコル](../../../../docs/framework/wcf/feature-details/transaction-protocols.md)です。  
+Windows Communication Foundation (WCF) バージョン 1 は、Ws-atomic Transaction プロトコルおよび Ws-coordination プロトコルの version 1.0 を実装します。 バージョン 1.1 の詳細については、次を参照してください。[トランザクション プロトコル](../../../../docs/framework/wcf/feature-details/transaction-protocols.md)です。  
   
 |仕様/ドキュメント|Link|  
 |-----------------------------|----------|  
@@ -66,7 +52,7 @@ ms.lasthandoff: 04/30/2018
   
 -   アプリケーション メッセージ  
   
- 最初の 3 つのメッセージ クラスはトランザクション マネージャーのメッセージと考えられます。これらのクラスのバインディング構成については、後の「アプリケーション メッセージ交換」で説明します。 4 番目のメッセージ クラスは、アプリケーション間のメッセージであり、後の「メッセージの例」で説明します。 ここでは、これらの各クラスで [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] によって使用されるプロトコル バインディングについて説明します。  
+ 最初の 3 つのメッセージ クラスはトランザクション マネージャーのメッセージと考えられます。これらのクラスのバインディング構成については、後の「アプリケーション メッセージ交換」で説明します。 4 番目のメッセージ クラスは、アプリケーション間のメッセージであり、後の「メッセージの例」で説明します。 このセクションでは、これらのクラスの各 WCF によって使用されるプロトコル バインディングについて説明します。  
   
  このドキュメントでは、次の XML 名前空間と関連付けられたプレフィックスが使用されます。  
   
@@ -95,13 +81,13 @@ ms.lasthandoff: 04/30/2018
   
 -   B1112 : X.509 のサブジェクト名のチェックが成功するには、システム内の送信者と受信者の各ペア間で、DNS が機能している必要があります。  
   
-#### <a name="activation-and-registration-binding-configuration"></a>アクティベーションと登録のバインディング構成  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、HTTPS 上での関連付けにおいて要求/応答の二重バインディングが必要です  (関連付けと要求/応答メッセージ交換パターンの詳細については、WS-AtomicTransaction 仕様のセクション 8 を参照してください)。  
+#### <a name="activation-and-registration-binding-configuration"></a>アクティベーションと登録のバインド構成  
+ WCF では、HTTPS 経由での相関関係と共に、要求/応答の二重バインディングが必要です。 (関連付けと要求/応答メッセージ交換パターンの詳細については、WS-AtomicTransaction 仕様のセクション 8 を参照してください)。  
   
 #### <a name="2pc-protocol-binding-configuration"></a>2PC プロトコルのバインド構成  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、HTTPS 上の一方向 (データグラム) メッセージをサポートしています。 メッセージ間の関連付けは、実装詳細の状態にしておきます。  
+ WCF では、HTTPS 経由で一方向 (データグラム) メッセージをサポートします。 メッセージ間の関連付けは、実装詳細の状態にしておきます。  
   
- B2131: 実装をサポートする必要があります`wsa:ReferenceParameters`Ws-addressing の相関関係を実現するために」の説明に従って[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]の 2 pc メッセージ。  
+ B2131: 実装をサポートする必要があります`wsa:ReferenceParameters`WCF の 2 pc メッセージの関連付けを実現するために WS アドレス指定」の説明に従ってします。  
   
 ### <a name="transaction-manager-mixed-security-binding"></a>トランザクション マネージャーによる混合セキュリティ バインディング  
  これは、代替 (混在モード) をトランスポート セキュリティと組み合わせて使用 Ws-coordination 発行済みトークンの id を確立するためのモデルをバインドします。  2 つのバインディングを区別する要素は、アクティベーションと登録のみです。  
@@ -112,7 +98,7 @@ ms.lasthandoff: 04/30/2018
 #### <a name="activation-message-binding-configuration"></a>アクティベーション メッセージのバインド構成  
  アクティベーション メッセージは通常、アプリケーションとローカルのトランザクション マネージャー間で発生するため、相互運用には参加しません。  
   
- B1221:[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]双方向の HTTPS バインドを使用して (「[メッセージング プロトコル](../../../../docs/framework/wcf/feature-details/messaging-protocols.md)) アクティベーション メッセージのです。 要求および応答メッセージは、WS-Addressing 2004/08 を使用して関連付けられます。  
+ B1221: 双方向の HTTPS バインドを使用する WCF (」に記載[メッセージング プロトコル](../../../../docs/framework/wcf/feature-details/messaging-protocols.md)) アクティベーション メッセージにします。 要求および応答メッセージは、WS-Addressing 2004/08 を使用して関連付けられます。  
   
  WS-AtomicTransaction 仕様のセクション 8 では、関連付けとメッセージ交換のパターンについて詳細に説明されています。  
   
@@ -123,7 +109,7 @@ ms.lasthandoff: 04/30/2018
  新しい`t:IssuedTokens`送信にアタッチするためのヘッダーを生成する必要があります`wscoor:CreateCoordinationContextResponse`メッセージ。  
   
 #### <a name="registration-message-binding-configuration"></a>登録メッセージのバインド構成  
- B1231:[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]双方向の HTTPS バインドを使用して (「[メッセージング プロトコル](../../../../docs/framework/wcf/feature-details/messaging-protocols.md))。 要求および応答メッセージは、WS-Addressing 2004/08 を使用して関連付けられます。  
+ B1231: 双方向の HTTPS バインドを使用する WCF (記載[メッセージング プロトコル](../../../../docs/framework/wcf/feature-details/messaging-protocols.md))。 要求および応答メッセージは、WS-Addressing 2004/08 を使用して関連付けられます。  
   
  WS-AtomicTransaction 仕様のセクション 8 では、関連付けとメッセージ交換のパターンについて詳細に説明されています。  
   
@@ -131,10 +117,10 @@ ms.lasthandoff: 04/30/2018
   
  `wsse:Timestamp`要素を使用して署名する必要があります、`SecurityContextToken``STx`発行します。 この署名は特定のトランザクションに関連付けられたトークンを所有していることの証明であり、トランザクションに登録されている参加要素の認証で使用されます。 RegistrationResponse メッセージは、HTTPS を使用して返信されます。  
   
-#### <a name="2pc-protocol-binding-configuration"></a>2PC プロトコルのバインディング構成  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、HTTPS 上の一方向 (データグラム) メッセージをサポートしています。 メッセージ間の関連付けは、実装詳細の状態にしておきます。  
+#### <a name="2pc-protocol-binding-configuration"></a>2PC プロトコルのバインド構成  
+ WCF では、HTTPS 経由で一方向 (データグラム) メッセージをサポートします。 メッセージ間の関連付けは、実装詳細の状態にしておきます。  
   
- B2131: 実装をサポートする必要があります`wsa:ReferenceParameters`Ws-addressing の相関関係を実現するために」の説明に従って[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]の 2 pc メッセージ。  
+ B2131: 実装をサポートする必要があります`wsa:ReferenceParameters`WCF の 2 pc メッセージの関連付けを実現するために WS アドレス指定」の説明に従ってします。  
   
 ## <a name="application-message-exchange"></a>アプリケーション メッセージ交換  
  アプリケーションでは、バインディングが次のセキュリティ要件を満たしている限り、アプリケーション間メッセージに任意のバインディングを使用できます。  
@@ -143,9 +129,9 @@ ms.lasthandoff: 04/30/2018
   
 -   R2002 : `t:IssuedToken` の整合性と機密性が提供される必要があります。  
   
- `CoordinationContext` ヘッダーには `wscoor:Identifier` が含まれます。 `xsd:AnyURI` の定義では、絶対 URI と相対 URI の両方の使用が許可されていますが、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では絶対 URI である `wscoor:Identifiers` のみがサポートされています。  
+ `CoordinationContext` ヘッダーには `wscoor:Identifier` が含まれます。 定義`xsd:AnyURI`、絶対と相対 Uri の使用できるように WCF のみがサポート`wscoor:Identifiers`、絶対 Uri であります。  
   
- `wscoor:Identifier` の `wscoor:CoordinationContext` が相対 URI である場合は、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] トランザクション サービスからエラーが返されます。  
+ 場合、`wscoor:Identifier`の`wscoor:CoordinationContext`相対 uri では、トランザクションの WCF サービスからエラーが返されます。  
   
 ## <a name="message-examples"></a>メッセージの例  
   

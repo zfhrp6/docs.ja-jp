@@ -1,29 +1,17 @@
 ---
-title: "XAML リソース"
-ms.custom: 
+title: XAML リソース
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - reusing resources [WPF]
 - resources [WPF], reusing
 - reusing commonly defined objects [WPF]
 - XAML [WPF], reusing resources
 ms.assetid: 91580b89-a0a8-4889-aecb-fddf8e63175f
-caps.latest.revision: "33"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a2d58802bcdfa57bb7689e7406651fcc9829a7e5
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 7b917b13909c463cd9d518d79bf8ce2683591dda
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="xaml-resources"></a>XAML リソース
 リソースは、アプリケーションで別の場所で再利用可能なオブジェクトです。 リソースの例には、ブラシとスタイルが含まれます。 この概要は、リソースを使用する方法を説明[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]です。 作成してコードを使用して、またはコードの間で同じ意味でリソースにアクセスし、[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]です。 詳細については、次を参照してください。[リソースやコード](../../../../docs/framework/wpf/advanced/resources-and-code.md)です。  
@@ -162,9 +150,9 @@ ms.lasthandoff: 12/22/2017
   
  場合、スタイルの暗黙的なキーは、コントロールに適用されません<xref:System.Windows.FrameworkElement.OverridesDefaultStyle%2A>は`true`(もなお<xref:System.Windows.FrameworkElement.OverridesDefaultStyle%2A>コントロール クラスではなく、明示的に、コントロールのインスタンスのネイティブの動作の一部として設定することがあります)。 また、暗黙的なキーの派生クラスのシナリオをサポートするために、制御する必要がありますオーバーライド<xref:System.Windows.FrameworkElement.DefaultStyleKey%2A>(の一部として提供されるすべての既存のコントロール[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]この)。 スタイル、テーマ、およびコントロールのデザインの詳細については、次を参照してください。[のスタイル設定可能なコントロールのデザイン ガイドライン](../../../../docs/framework/wpf/controls/guidelines-for-designing-stylable-controls.md)です。  
   
- <xref:System.Windows.DataTemplate>暗黙のキーがあります。 暗黙のキーを<xref:System.Windows.DataTemplate>は、<xref:System.Windows.DataTemplate.DataType%2A>プロパティの値。 <xref:System.Windows.DataTemplate.DataType%2A>明示的に使用するのではなく、型の名前として指定することも[{X:type…}](../../../../docs/framework/xaml-services/x-type-markup-extension.md). 詳細については、「[データ テンプレートの概要](../../../../docs/framework/wpf/data/data-templating-overview.md)です。  
+ <xref:System.Windows.DataTemplate> 暗黙のキーがあります。 暗黙のキーを<xref:System.Windows.DataTemplate>は、<xref:System.Windows.DataTemplate.DataType%2A>プロパティの値。 <xref:System.Windows.DataTemplate.DataType%2A> 明示的に使用するのではなく、型の名前として指定することも[{X:type…}](../../../../docs/framework/xaml-services/x-type-markup-extension.md). 詳細については、「[データ テンプレートの概要](../../../../docs/framework/wpf/data/data-templating-overview.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.ResourceDictionary>  
  [アプリケーション リソース](../../../../docs/framework/wpf/advanced/optimizing-performance-application-resources.md)  
  [リソースとコード](../../../../docs/framework/wpf/advanced/resources-and-code.md)  

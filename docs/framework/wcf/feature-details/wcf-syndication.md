@@ -1,35 +1,21 @@
 ---
-title: "WCF 配信"
-ms.custom: 
+title: WCF 配信
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - syndication [WCF]
 ms.assetid: ebf80384-0fc9-4919-a1e8-23ca2a13e300
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 1f7f5fd65fc298107a66e2049c059f3cc58b3d44
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 627de6431c641e48367a97e3f80f3d05d185ab45
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="wcf-syndication"></a>WCF 配信
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] には、Atom、RSS、またはその他の独自の形式の配信フィードを簡単に扱うためのサポートが用意されています。これを利用して、配信フィードの読み取りや作成を行ったり、サービス エンドポイントで配信フィードを公開したりできます。 このセクションのトピックでは、配信用のこのプログラミング モデルについて詳細に説明します。  
+Windows Communication Foundation (WCF) では、Atom、RSS、またはその他のカスタム形式で配信フィードを簡単に操作をサポートすると、読み取り、作成し、サービス エンドポイントで公開することができますを提供します。 このセクションのトピックでは、配信用のこのプログラミング モデルについて詳細に説明します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [WCF 配信の概要](../../../../docs/framework/wcf/feature-details/wcf-syndication-overview.md)  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] で提供される配信サポートの概要について説明します。  
+ WCF によって提供される配信サポートの概要を示します。  
   
  [配信のアーキテクチャ](../../../../docs/framework/wcf/feature-details/architecture-of-syndication.md)  
  オブジェクト モデルのクラスと配信の拡張について説明します。  
@@ -53,6 +39,6 @@ ms.lasthandoff: 12/22/2017
   
 ## <a name="related-sections"></a>関連項目  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [WCF Web HTTP プログラミング モデル](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)  
  [部分信頼](../../../../docs/framework/wcf/feature-details/partial-trust.md)

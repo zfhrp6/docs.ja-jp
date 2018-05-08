@@ -1,24 +1,12 @@
 ---
 title: Hosting2
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 0820c7e5-0b50-4cde-80e7-74e346513002
-caps.latest.revision: "20"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: f25f0c9e773bbadd992284adf6c79d77aaa2441c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 2c6eccc668427e9fedf2d4faf7eb9643815dbabb
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="hosting"></a>ホスト
 このセクションのトピックでは、サービス ホスティングについて説明します。 インターネット インフォメーション サービス (IIS)、Windows プロセス アクティブ化サービス (WAS)、Windows Server AppFabric、Windows サービス、またはマネージ アプリケーションによっては、サービスをホストされていることができます: このオプションは、多くの場合と呼びます*セルフ ホスト*です。  
@@ -27,23 +15,23 @@ ms.lasthandoff: 12/22/2017
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [インターネット インフォメーション サービスでのホスティング](../../../../docs/framework/wcf/feature-details/hosting-in-internet-information-services.md)  
- について説明する方法、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]サービスがインターネット インフォメーション サービスでホストされているまたは[Windows Server AppFabric](http://go.microsoft.com/fwlink/?LinkId=196496)です。  
+ インターネット インフォメーション サービスで Windows Communication Foundation (WCF) サービスをホストする方法について説明します。 または[Windows Server AppFabric](http://go.microsoft.com/fwlink/?LinkId=196496)です。  
   
  [Windows プロセス アクティブ化サービスでのホスティング](../../../../docs/framework/wcf/feature-details/hosting-in-windows-process-activation-service.md)  
- Windows プロセス アクティブ化サービス (WAS) で [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスをホストする方法について説明します。  
+ Windows プロセス アクティブ化サービスによって、WCF サービスをホストする方法について説明します。  
   
  [Windows サービス アプリケーションのホスト](../../../../docs/framework/wcf/feature-details/hosting-in-a-windows-service-application.md)  
- Windows サービスで [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] をホストする方法について説明します。  
+ Windows サービスによって、WCF サービスをホストする方法について説明します。  
   
  [マネージ アプリケーションのホスト](../../../../docs/framework/wcf/feature-details/hosting-in-a-managed-application.md)  
- マネージ アプリケーションで [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] をホストする方法について説明します。  
+ マネージ アプリケーションで WCF サービスをホストする方法について説明します。  
   
  [IIS と WAS における構成ベースのアクティブ化](../../../../docs/framework/wcf/feature-details/configuration-based-activation-in-iis-and-was.md)  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスが、.svc ファイルを使用せずに、IIS または WAS でホストされるしくみについて説明します。  
+ .Svc ファイルを使用せず、WCF サービスを IIS または WAS でホストされて方法について説明します。  
   
  [複数の IIS サイト バインディングのサポート](../../../../docs/framework/wcf/feature-details/supporting-multiple-iis-site-bindings.md)  
  1 つの Web サイト上で同じ URI スキームを使用してサービスの複数のベース アドレスを指定する方法について説明します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ホスティング サービス](../../../../docs/framework/wcf/hosting-services.md)  
  [Windows Server App Fabric のホスティング機能](http://go.microsoft.com/fwlink/?LinkId=201276)

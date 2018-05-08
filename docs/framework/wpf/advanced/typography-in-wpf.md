@@ -1,28 +1,14 @@
 ---
-title: "WPF のタイポグラフィ"
-ms.custom: 
+title: WPF のタイポグラフィ
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - typography [WPF], about typography
 ms.assetid: 06cbf17b-6eff-4fe5-949d-2dd533e4e1f4
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 7cd424dfd936427edb855a92e54921c064c8a8fe
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 45f74a4dd2164f332314ad79a18eab49efb520d6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="typography-in-wpf"></a>WPF のタイポグラフィ
 このトピックでは、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] の主要な文字体裁の機能について説明します。 これらの機能には、テキスト レンダリングの品質とパフォーマンスの向上、[!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] 文字体裁のサポート、国際対応テキストの強化、フォントのサポートの強化、新しいテキスト API (アプリケーション プログラミング インターフェイス) が含まれます。  
@@ -33,7 +19,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="improved-quality-and-performance-of-text"></a>テキストに関する品質とパフォーマンスの向上  
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] のテキストは、テキストのわかりやすさと読みやすさを高める [!INCLUDE[TLA#tla_ct](../../../../includes/tlasharptla-ct-md.md)] を使用して描画されます。 [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] は、ラップトップや Pocket PC の画面、フラット パネル モニターなど、既存の LCD (液晶ディスプレイ) でのテキストの読みやすさを向上させるために [!INCLUDE[TLA#tla_ms](../../../../includes/tlasharptla-ms-md.md)] が開発したソフトウェア テクノロジです。 [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] は、ピクセルの画素レベルで文字を表示調整することで実際の形状を忠実に再現したテキストを表示できる、サブピクセル レンダリングを採用しています。 解像度が上がるとテキスト表示の微細部の鮮明度が高くなるため、長時間にわたって読んでも苦になりません。 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] での [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] のもう 1 つの改良点は、y 方向のアンチエイリアシングです。これにより、テキスト文字の緩やかな曲線部の上下が滑らかになります。 [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] の機能の詳細については、「[ClearType の概要](../../../../docs/framework/wpf/advanced/cleartype-overview.md)」をご覧ください。  
   
- ![ClearType y &#45; anti 方向 &#45;を含むテキスト; エイリアス](../../../../docs/framework/wpf/advanced/media/typographyinwpf02.gif "TypographyInWPF02")  
+ ![ClearType y を含むテキスト&#45;anti 方向&#45;エイリアス](../../../../docs/framework/wpf/advanced/media/typographyinwpf02.gif "TypographyInWPF02")  
 ClearType の y 方向アンチエイリアシングを適用したテキスト  
   
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] では、コンピューターがハードウェアの最小要件を満たしている限り、テキスト レンダリング パイプライン全体に対してハードウェア アクセラレータを使用できます。 ハードウェアを使用して実行できないレンダリングは、ソフトウェア レンダリングとなります。 ハードウェア アクセラレータは、個々のグリフの格納から始まり、グリフ実行への複数のグリフの合成、効果の適用、最終的な表示出力への [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] ブレンディング アルゴリズムの適用まで、テキスト レンダリング パイプラインのすべてのフェーズに影響します。 ハードウェア アクセラレータの詳細については、「[グラフィックスの描画層](../../../../docs/framework/wpf/advanced/graphics-rendering-tiers.md)」をご覧ください。  
@@ -103,7 +89,7 @@ OpenType の標準グリフと飾り付きグリフを使用するテキスト
 #### <a name="using-bitmap-effects-transforms-and-text-effects"></a>ビットマップ効果、変換、テキスト効果の使用  
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] では、ビットマップ効果、変換、テキスト効果などの機能を利用して、人の目をひきつけるテキストを作成できます。 テキストに標準タイプのドロップ シャドウ効果を適用した例を次に示します。  
   
- ![テキストの影のぼかし &#61;です。0.25](../../../../docs/framework/wpf/advanced/media/shadowtext01.jpg "ShadowText01")  
+ ![テキストの影のぼかしを&#61;0.25](../../../../docs/framework/wpf/advanced/media/shadowtext01.jpg "ShadowText01")  
 ドロップ シャドウが適用されたテキスト  
   
  テキストにドロップ シャドウ効果とノイズを適用した例を次に示します。  
@@ -180,7 +166,7 @@ FormattedText オブジェクトを使用して表示されるテキスト
   
  カスタム テキスト レイアウトの作成の詳細については、「[テキストの高度な書式設定](../../../../docs/framework/wpf/advanced/advanced-text-formatting.md)」をご覧ください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Media.FormattedText>  
  <xref:System.Windows.Media.TextFormatting.TextFormatter>  
  [ClearType の概要](../../../../docs/framework/wpf/advanced/cleartype-overview.md)  

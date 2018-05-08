@@ -1,14 +1,6 @@
 ---
-title: "ICLRPolicyManager::SetActionOnTimeout メソッド"
-ms.custom: 
+title: ICLRPolicyManager::SetActionOnTimeout メソッド
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ICLRPolicyManager.SetActionOnTimeout
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: 38439fa1-2b99-4fa8-a6ec-08afc0f83b9c
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: db0918272a315e78191624cbe6420863285620c6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: cc1d16a2d57fea27c1c26fc55fbbfa9b74c25495
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="iclrpolicymanagersetactionontimeout-method"></a>ICLRPolicyManager::SetActionOnTimeout メソッド
 指定された操作がタイムアウトしたときに、共通言語ランタイム (CLR) で実行する必要がありますポリシー操作を指定します。  
@@ -66,7 +54,7 @@ HRESULT SetActionOnTimeout (
   
 |HRESULT|説明|  
 |-------------|-----------------|  
-|S_OK|`SetActionOnTimeout`正常に返されます。|  
+|S_OK|`SetActionOnTimeout` 正常に返されます。|  
 |HOST_E_CLRNOTAVAILABLE|CLR が、プロセスに読み込まれていませんまたは CLR は、状態をマネージ コードを実行またはできないの呼び出しは正常に処理します。|  
 |HOST_E_TIMEOUT|呼び出しがタイムアウトしました。|  
 |HOST_E_NOT_OWNER|呼び出し元は、ロックを所有していません。|  
@@ -77,24 +65,24 @@ HRESULT SetActionOnTimeout (
 ## <a name="remarks"></a>コメント  
  タイムアウト値は、CLR によって設定されている既定のタイムアウトまたはへの呼び出しにホストによって指定された値のいずれかを指定できます、 [iclrpolicymanager::settimeout](../../../../docs/framework/unmanaged-api/hosting/iclrpolicymanager-settimeout-method.md)メソッドです。  
   
- すべてのポリシー アクションの値は、CLR 操作のタイムアウトの動作として指定できます。 `SetActionOnTimeout`通常の動作を報告するのみ使用されます。 たとえば、ホストを指定できます、スレッドの中止する rude 中止をスレッドが、その逆を指定することはできません。 次の表は、有効な説明`action`の値が有効な`operation`値。  
+ すべてのポリシー アクションの値は、CLR 操作のタイムアウトの動作として指定できます。 `SetActionOnTimeout` 通常の動作を報告するのみ使用されます。 たとえば、ホストを指定できます、スレッドの中止する rude 中止をスレッドが、その逆を指定することはできません。 次の表は、有効な説明`action`の値が有効な`operation`値。  
   
-|値`operation`|有効な値`action`|  
+|値 `operation`|有効な値 `action`|  
 |---------------------------|-------------------------------|  
 |OPR_ThreadRudeAbortInNonCriticalRegion<br /><br /> OPR_ThreadRudeAbortInCriticalRegion|-eRudeAbortThread<br />-eUnloadAppDomain<br />-eRudeUnloadAppDomain<br />-eExitProcess<br />-eFastExitProcess<br />-eRudeExitProcess<br />-eDisableRuntime|  
 |OPR_AppDomainUnload|-eUnloadAppDomain<br />-eRudeUnloadAppDomain<br />-eExitProcess<br />-eFastExitProcess<br />-eRudeExitProcess<br />-eDisableRuntime|  
 |OPR_ProcessExit|-eExitProcess<br />-eFastExitProcess<br />-eRudeExitProcess<br />-eDisableRuntime|  
   
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** MSCorEE.h  
   
  **ライブラリ:** MSCorEE.dll にリソースとして含まれています。  
   
- **.NET framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [EClrOperation 列挙型](../../../../docs/framework/unmanaged-api/hosting/eclroperation-enumeration.md)  
  [EPolicyAction 列挙型](../../../../docs/framework/unmanaged-api/hosting/epolicyaction-enumeration.md)  
  [ICLRControl インターフェイス](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-interface.md)  

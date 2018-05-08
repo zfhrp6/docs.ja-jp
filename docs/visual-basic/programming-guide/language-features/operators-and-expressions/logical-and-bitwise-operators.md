@@ -1,12 +1,6 @@
 ---
-title: "Visual Basic の論理演算子とビット処理演算子"
-ms.custom: 
+title: Visual Basic の論理演算子とビット処理演算子
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - short-circuiting
 - Boolean expressions
@@ -27,14 +21,11 @@ helpviewer_keywords:
 - OrElse operator [Visual Basic]
 - logical operators [Visual Basic], unary
 ms.assetid: ca474e13-567d-4b1d-a18b-301433705e57
-caps.latest.revision: "22"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: ba48f722a11e93f82ae99aa407c3096a964e5ddd
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 371d28629b39fb2808ca018ea69da3306a31f50c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="logical-and-bitwise-operators-in-visual-basic"></a>Visual Basic の論理演算子とビット処理演算子
 論理演算子は、比較`Boolean`式と戻り値、`Boolean`結果。 `And`、 `Or`、 `AndAlso`、 `OrElse`、および`Xor`演算子は*バイナリ*中に、2 つのオペランドを受け取るため、`Not`演算子は*単項* 1 つのオペランドを受け取るためです。 整数値のビットごとの論理演算これらの演算子の一部も行えます。  
@@ -96,7 +87,7 @@ ms.lasthandoff: 11/21/2017
   
 -   結果は、10 進数として扱われます。 001 値は 1、バイナリ形式をこのため`x`= 1 です。  
   
- ビットごと`Or`操作似ていますが、ビットごとの一方または両方が 1 の場合、結果のビットを 1 が割り当てられます。 `Xor`1 つの (両方ではなく)、比較するビットだけが 1 の場合は、1、結果のビットに割り当てられます。 `Not`1 つのオペランドを受け取るし、符号ビットを含むすべてのビットを反転結果にその値を割り当てます。 これは、正の数値を署名のことを意味`Not`常に負の値を返しますと負の値、`Not`常に正の値または 0 の値を返します。  
+ ビットごと`Or`操作似ていますが、ビットごとの一方または両方が 1 の場合、結果のビットを 1 が割り当てられます。 `Xor` 1 つの (両方ではなく)、比較するビットだけが 1 の場合は、1、結果のビットに割り当てられます。 `Not` 1 つのオペランドを受け取るし、符号ビットを含むすべてのビットを反転結果にその値を割り当てます。 これは、正の数値を署名のことを意味`Not`常に負の値を返しますと負の値、`Not`常に正の値または 0 の値を返します。  
   
  `AndAlso`と`OrElse`演算子はビットごとの演算をサポートしていません。  
   

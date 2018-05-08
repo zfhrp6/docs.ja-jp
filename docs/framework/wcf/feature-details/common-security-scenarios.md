@@ -1,28 +1,16 @@
 ---
-title: "一般的なセキュリティ シナリオ"
-ms.custom: 
+title: 一般的なセキュリティ シナリオ
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - security [WCF], scenarios
 ms.assetid: 201923b5-5162-4a8a-8d4c-e7bd242748d5
-caps.latest.revision: 
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload:
-- dotnet
-ms.openlocfilehash: d8881768d66e95ce1391ce1be1663bdc3107a347
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 0fb51ea0624c4fa686e4e99ffb9c30decedfea10
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="common-security-scenarios"></a>一般的なセキュリティ シナリオ
 ここでは、考えられるさまざまなクライアントおよびサービスのセキュリティ構成の一覧を示します。 構成はさまざまな要因により異なります。 たとえば、サービスやクライアントがイントラネット上にあるかどうか、また、セキュリティが Windows とトランスポート (HTTPS など) のどちらで提供されるかなどが考えられます。  
@@ -32,7 +20,7 @@ ms.lasthandoff: 12/22/2017
  セキュリティで保護されていないパブリックなクライアントとサービスの例です。  
   
  [セキュリティで保護されていないイントラネットのクライアントとサービス](../../../../docs/framework/wcf/feature-details/intranet-unsecured-client-and-service.md)  
- セキュリティで保護されたプライベートなネットワーク上で [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] アプリケーションに情報を提供するために開発された基本的な [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスです。  
+ WCF アプリケーションをセキュリティで保護されたプライベート ネットワーク上の情報を提供する基本的な Windows Communication Foundation (WCF) サービスを開発しました。  
   
  [基本認証を使用する場合のトランスポート セキュリティ](../../../../docs/framework/wcf/feature-details/transport-security-with-basic-authentication.md)  
  アプリケーションは、カスタム認証を使用して、クライアントにログオンを許可します。  
@@ -47,7 +35,7 @@ ms.lasthandoff: 12/22/2017
  証明書によってセキュリティ保護されたクライアントとサービスを示します。  
   
  [メッセージ セキュリティと匿名クライアント](../../../../docs/framework/wcf/feature-details/message-security-with-an-anonymous-client.md)  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] メッセージ セキュリティによってセキュリティ保護されたクライアントとサービスを示します。  
+ クライアントと WCF メッセージ セキュリティによって保護されたサービスを示します。  
   
  [ユーザー名クライアントを使用したメッセージ セキュリティ](../../../../docs/framework/wcf/feature-details/message-security-with-a-user-name-client.md)  
  クライアントは、ドメイン ユーザー名とパスワードを使用してクライアントのログオンを許可する Windows フォーム アプリケーションです。  
@@ -92,6 +80,6 @@ ms.lasthandoff: 12/22/2017
   
  [監査](../../../../docs/framework/wcf/feature-details/auditing-security-events.md)  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [セキュリティ ガイドラインとベスト プラクティス](../../../../docs/framework/wcf/feature-details/security-guidance-and-best-practices.md)  
  [Windows Server App Fabric のセキュリティ モデル](http://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)

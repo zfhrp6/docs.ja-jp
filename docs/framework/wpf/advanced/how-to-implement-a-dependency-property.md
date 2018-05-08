@@ -1,13 +1,6 @@
 ---
-title: "方法 : 依存関係プロパティを実装する"
-ms.custom: 
+title: '方法 : 依存関係プロパティを実装する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - dependency properties [WPF], backing properties with
 - properties [WPF], backing with dependency properties
 ms.assetid: 855fd6d7-19ac-493c-bf5e-2f40b57cdc92
-caps.latest.revision: "19"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: d63e66b2458fa4ff21a227bdc2898d97e5eb30f0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b0c5b33d841f43249f9559bd31f1ef8fe66ff05e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-implement-a-dependency-property"></a>方法 : 依存関係プロパティを実装する
 この例は、バックアップする方法を示しています、[!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)]を持つプロパティ、<xref:System.Windows.DependencyProperty>フィールド、ため、依存関係プロパティを定義します。 独自に定義したプロパティが [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] のさまざまな機能、たとえばスタイル、データ バインディング、継承、アニメーション、既定値をサポートできるようにするには、そのプロパティを依存関係プロパティとして実装します。  
@@ -43,6 +31,6 @@ ms.lasthandoff: 12/22/2017
   
  単にプライベート フィールドを使用して [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] プロパティを補足するのではなく依存関係プロパティを実装する理由とその方法の詳細については、「[依存関係プロパティの概要](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)」を参照してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [依存関係プロパティの概要](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)  
  [方法トピック](../../../../docs/framework/wpf/advanced/properties-how-to-topics.md)

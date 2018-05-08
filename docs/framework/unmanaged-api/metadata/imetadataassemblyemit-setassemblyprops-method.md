@@ -1,14 +1,6 @@
 ---
-title: "IMetaDataAssemblyEmit::SetAssemblyProps メソッド"
-ms.custom: 
+title: IMetaDataAssemblyEmit::SetAssemblyProps メソッド
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - IMetaDataAssemblyEmit.SetAssemblyProps
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: 91b633d7-9e75-43c3-a8d2-2144984e5f9e
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: aab505700b669cae071420117abd71332f49d8b6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6f8132296035e9ddcdcad76d93ed05358beb0b81
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="imetadataassemblyemitsetassemblyprops-method"></a>IMetaDataAssemblyEmit::SetAssemblyProps メソッド
 指定された `Assembly` メタデータ構造体を変更します。  
@@ -77,14 +65,14 @@ HRESULT SetAssemblyProps (
 ## <a name="remarks"></a>コメント  
  作成する、`Assembly`メタデータ構造体を使用して、 [imetadataassemblyemit::defineassembly](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-defineassembly-method.md)メソッドです。  
   
-## <a name="requirements"></a>必要条件  
- **Platform:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **Platform:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** Cor.h  
   
  **ライブラリ:** MsCorEE.dll にリソースとして使用  
   
- **.NET framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [IMetaDataAssemblyEmit インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md)

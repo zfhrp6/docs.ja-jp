@@ -1,11 +1,6 @@
 ---
-title: "Select...Case ステートメント (Visual Basic)"
+title: Select...Case ステートメント (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Select
 - vb.Case
@@ -26,14 +21,11 @@ helpviewer_keywords:
 - End keyword [Visual Basic], Select Case statements
 - Case statement [Visual Basic], Select...Case
 ms.assetid: 68877b65-5419-4bf0-a465-20cd0e4c7d44
-caps.latest.revision: "15"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: a7527763a05ec32af88c6ba66ef717d839c33154
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 9d24b455d92cbd00b268df26283aab082b7703a1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="selectcase-statement-visual-basic"></a>Select...Case ステートメント (Visual Basic)
 式の値に応じて、ステートメントのいくつかのグループのいずれかを実行します。  
@@ -53,10 +45,10 @@ End Select
   
 |用語|定義|  
 |---|---|  
-|`testexpression`|必須です。 式。 基本データ型のいずれかに評価される必要があります (`Boolean`、 `Byte`、 `Char`、 `Date`、 `Double`、 `Decimal`、 `Integer`、 `Long`、 `Object`、 `SByte`、 `Short`、`Single`、 `String`、 `UInteger`、 `ULong`、および`UShort`)。|  
+|`testexpression`|必須。 式。 基本データ型のいずれかに評価される必要があります (`Boolean`、 `Byte`、 `Char`、 `Date`、 `Double`、 `Decimal`、 `Integer`、 `Long`、 `Object`、 `SByte`、 `Short`、`Single`、 `String`、 `UInteger`、 `ULong`、および`UShort`)。|  
 |`expressionlist`|必要な`Case`ステートメントです。 一致した値を表す式の句の一覧`testexpression`です。 複数の式の句は、コンマで区切られます。 それぞれの句は、次の形式のいずれかを実行できます。<br /><br /> -   *expression1* `To` *expression2*<br />-[ `Is` ] *comparisonoperator* *式*<br />-   *式*<br /><br /> 使用して、`To`一致の範囲の境界を指定するキーワードの値を`testexpression`です。 値`expression1`の値以下である必要があります`expression2`です。<br /><br /> 使用して、`Is`比較演算子でキーワード (`=`、 `<>`、 `<`、 `<=`、 `>`、または`>=`)、一致した値に制限を指定する`testexpression`です。 場合、`Is`キーワードが指定されていないが自動的にする前に挿入*comparisonoperator*です。<br /><br /> のみを指定するフォーム`expression`の特殊なケースとして扱われる、 `Is` where を形成*comparisonoperator*等号 (=) は、(`=`)。 このフォームの評価は`testexpression`  = `expression`です。<br /><br /> 内の式`expressionlist`はの型に暗黙的に変換できる任意のデータ型を指定できます`testexpression`と適切な`comparisonoperator`に使用されている 2 つの型が有効です。|  
-|`statements`|省略可能です。 1 つまたは複数のステートメント次`Case`実行されている場合`testexpression`で任意の句に一致する`expressionlist`です。|  
-|`elsestatements`|省略可能です。 1 つまたは複数のステートメント次`Case Else`実行されている場合`testexpression`で句と一致しません、`expressionlist`のいずれかの`Case`ステートメントです。|  
+|`statements`|任意。 1 つまたは複数のステートメント次`Case`実行されている場合`testexpression`で任意の句に一致する`expressionlist`です。|  
+|`elsestatements`|任意。 1 つまたは複数のステートメント次`Case Else`実行されている場合`testexpression`で句と一致しません、`expressionlist`のいずれかの`Case`ステートメントです。|  
 |`End Select`|定義を終了、`Select`しています.`Case`構築します。|  
   
 ## <a name="remarks"></a>コメント  
@@ -82,7 +74,7 @@ End Select
   
  場合、コード内で、`Case`または`Case Else`ステートメント ブロックがブロック内のステートメントでそれ以上実行する必要はありませんを使用して、ブロックを終了できますが、`Exit Select`ステートメントです。 ステートメントに制御を直ちに移しますこの`End Select`です。  
   
- `Select Case`構造を入れ子にすることができます。 入れ子になった`Select Case`構築の対応する必要がありますが`End Select`ステートメント内の 1 つに完全に含まする必要がありますと`Case`または`Case Else`、外側のステートメント ブロック`Select Case`構築の内部で入れ子にされています。  
+ `Select Case` 構造を入れ子にすることができます。 入れ子になった`Select Case`構築の対応する必要がありますが`End Select`ステートメント内の 1 つに完全に含まする必要がありますと`Case`または`Case Else`、外側のステートメント ブロック`Select Case`構築の内部で入れ子にされています。  
   
 ## <a name="example"></a>例  
  次の例では、`Select Case`構造を使用して、変数の値に対応する行を書き込みます。`number`です。 2 番目`Case`ステートメントには、現在の値に一致する値が含まれています。 `number`"6、8、包括的"の間、ステートメントを書き込むため、実行します。  

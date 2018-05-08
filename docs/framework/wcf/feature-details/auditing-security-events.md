@@ -1,42 +1,30 @@
 ---
 title: セキュリティ イベントの監査
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - auditing security events [WCF]
 ms.assetid: 5633f61c-a3c9-40dd-8070-1c373b66a716
-caps.latest.revision: 27
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload:
-- dotnet
-ms.openlocfilehash: 69b013389511ac2cfb31e22f7a39e98eb22fb977
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: e4219553f97f272577e8efdeb106b43e5f76ee59
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="auditing-security-events"></a>セキュリティ イベントの監査
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] で作成されたアプリケーションでは、監査機能を使用してセキュリティ イベント (成功、失敗、またはその両方) をログに記録できます。 これらのイベントは Windows システム イベント ログに書き込まれ、イベント ビューアーを使用して確認できます。  
+Windows Communication Foundation (WCF) を作成するアプリケーション ログに記録できます (か、成功、失敗、または両方) のセキュリティ イベント監査機能を使用します。 これらのイベントは Windows システム イベント ログに書き込まれ、イベント ビューアーを使用して確認できます。  
   
  監査を使用すると、管理者は既に発生した攻撃や現在進行中の攻撃を検出できます。 また、開発者がセキュリティ関連の問題をデバッグする際にも役立ちます。 たとえば、認証またはポリシー チェックの構成エラーによって承認済みユーザーへのアクセスが拒否された場合、開発者は、イベント ログを検査することによって、このエラーの原因をすばやく発見し、取り出すことができます。  
   
- 詳細については[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]セキュリティを参照してください[セキュリティの概要](../../../../docs/framework/wcf/feature-details/security-overview.md)です。 プログラミングの詳細については[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]を参照してください[基本的な WCF プログラミング](../../../../docs/framework/wcf/basic-wcf-programming.md)です。  
+ WCF セキュリティの詳細については、次を参照してください。[セキュリティの概要](../../../../docs/framework/wcf/feature-details/security-overview.md)です。 WCF プログラミングの詳細については、次を参照してください。[基本的な WCF プログラミング](../../../../docs/framework/wcf/basic-wcf-programming.md)です。  
   
 ## <a name="audit-level-and-behavior"></a>監査レベルと動作  
  セキュリティ監査には次の 2 つのレベルがあります。  
   
 -   呼び出し元を承認するサービス承認レベル。  
   
--   [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] がメッセージの有効性をチェックして呼び出し元を認証するメッセージ レベル。  
+-   メッセージ レベルを WCF メッセージの有効性が確認され、呼び出し元を認証します。  
   
  両方の監査の成功または失敗と呼ばれるレベルを確認することができます、*監査動作*です。  
   

@@ -1,13 +1,6 @@
 ---
-title: "方法 : イメージをトリミングおよびスケーリングする"
-ms.custom: 
+title: '方法 : イメージをトリミングおよびスケーリングする'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - images [Windows Forms], cropping
 - images [Windows Forms], scaling
 ms.assetid: 053e3360-bca0-4b25-9afa-0e77a6f17b03
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: de905cf70013098a4282e3f4af092ccbea16ccfd
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d5acda50a1aa0f0cae6e77a748b011908fcc8c34
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-crop-and-scale-images"></a>方法 : イメージをトリミングおよびスケーリングする
 <xref:System.Drawing.Graphics>クラスには、いくつか用意されて<xref:System.Drawing.Graphics.DrawImage%2A>トリミングおよびスケール イメージに使用できる元とコピー先の四角形のパラメーターを持つこれらのいくつかの方法です。  
@@ -46,6 +34,6 @@ ms.lasthandoff: 12/22/2017
 ## <a name="compiling-the-code"></a>コードのコンパイル  
  前の例は、Windows フォームで使用するために設計されていて、<xref:System.Windows.Forms.Control.Paint> イベント ハンドラーのパラメーターである <xref:System.Windows.Forms.PaintEventArgs> `e` を必要とします。 必ず置き換えて`Apple.gif`イメージのファイル名と、システムで有効なパスを使用します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [イメージ、ビットマップ、メタファイル](../../../../docs/framework/winforms/advanced/images-bitmaps-and-metafiles.md)  
  [イメージ、ビットマップ、アイコン、およびメタファイルの操作](../../../../docs/framework/winforms/advanced/working-with-images-bitmaps-icons-and-metafiles.md)

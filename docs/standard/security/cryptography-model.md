@@ -1,29 +1,18 @@
 ---
-title: ".NET Framework の暗号モデル"
-ms.custom: 
+title: .NET Framework の暗号モデル
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - cryptography [.NET Framework], model
 - encryption [.NET Framework], model
 ms.assetid: 12fecad4-fbab-432a-bade-2f05976a2971
-caps.latest.revision: "17"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 842ebbe9104463a3c75f01f41a4fe5953b95303d
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: ced7ed2cb8d3ae3bb24211c6e7dafd1744fb9559
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="net-framework-cryptography-model"></a>.NET Framework の暗号モデル
 .NET Framework は、多くの標準的な暗号化アルゴリズムの実装を提供します。 これらのアルゴリズムは簡単に使用でき、またできるだけ安全な既定のプロパティを提供しています。 さらに、オブジェクトの継承、ストリームの設計、および構成の .NET Framework の暗号モデルは非常に拡張性に優れています。  
@@ -97,6 +86,6 @@ ms.lasthandoff: 12/23/2017
   
     -   <xref:System.Security.Cryptography.Rfc2898DeriveBytes>  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Cryptographic Services](../../../docs/standard/security/cryptographic-services.md)  
  
