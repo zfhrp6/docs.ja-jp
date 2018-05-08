@@ -1,22 +1,12 @@
 ---
-title: "BackgroundWorker コンポーネント (Visual Basic) でのマルチ スレッド"
-ms.custom: 
+title: BackgroundWorker コンポーネント (Visual Basic) でのマルチ スレッド
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: e4cd9b2a-f924-470e-a16e-50274709b40e
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: bb0734b4bbf3f8bf5b27305754829f1a9f29f42a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 07700aa526866729f1ba1a8d846f22ce333c356d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="walkthrough-multithreading-with-the-backgroundworker-component-visual-basic"></a>チュートリアル: BackgroundWorker コンポーネント (Visual Basic) でのマルチ スレッド
 このチュートリアルでは、テキスト ファイルで単語を検索する、マルチスレッドの Windows Forms アプリケーションを作成する方法について説明します。 具体的には、次のタスクについて説明します。  
@@ -48,7 +38,7 @@ ms.lasthandoff: 11/21/2017
   
 4.  各テキスト ボックスの横にラベルを追加します。 次の表のように、各ラベルの `Text` プロパティを設定します。  
   
-    |オブジェクト|プロパティ|設定|  
+    |Object|プロパティ|設定|  
     |------------|--------------|-------------|  
     |1 つ目のラベル|`Text`|[ソース ファイル]|  
     |2 つ目のラベル|`Text`|Compare String|  
@@ -72,7 +62,7 @@ ms.lasthandoff: 11/21/2017
   
 2.  テンプレート ウィンドウから **[クラス]** を選択し、名前 フィールドに「`Words.vb`」と入力します。  
   
-3.  **[追加]**をクリックします。 `Words` クラスが表示されます。  
+3.  **[追加]** をクリックします。 `Words` クラスが表示されます。  
   
 4.  `Words` クラスに次のコードを追加します。  
   

@@ -1,14 +1,6 @@
 ---
 title: スキーマのインポートとエクスポート
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,20 +9,14 @@ helpviewer_keywords:
 - XsdDataContractExporter class
 - XsdDataContractImporter class
 ms.assetid: 0da32b50-ccd9-463a-844c-7fe803d3bf44
-caps.latest.revision: 14
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: fe4ef5b17013bf1a9abf5fd1ca0807fe4d335df4
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: c9bb0d6df362380a37ae3079694ab91e9577741d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="schema-import-and-export"></a>スキーマのインポートとエクスポート
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] には新しいシリアル化エンジン、 <xref:System.Runtime.Serialization.DataContractSerializer>が含まれます。 `DataContractSerializer` は、[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] オブジェクトと XML を双方向で変換します。 このシリアライザー自体の他に、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、関連するスキーマ インポート機構とスキーマ エクスポート機構が用意されています。 *スキーマ*シリアライザーが生成するか、デシリアライザーがアクセスできる、または XML の形状の正式かつ正確であり、コンピューターが判読できる説明を示します。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、多数のサードパーティ プラットフォームとの広範な相互運用性を持つ W3C (World Wide Web Consortium) XML スキーマ定義言語 (XSD: XML Schema Definition Language) をスキーマ表現として使用します。  
+Windows Communication Foundation (WCF) には新しいシリアル化エンジンが含まれています、<xref:System.Runtime.Serialization.DataContractSerializer>です。 `DataContractSerializer` は、[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] オブジェクトと XML を双方向で変換します。 このシリアライザー自体だけでなく WCF には、関連するスキーマ インポート機構とスキーマ エクスポート機構が含まれています。 *スキーマ*シリアライザーが生成するか、デシリアライザーがアクセスできる、または XML の形状の正式かつ正確であり、コンピューターが判読できる説明を示します。 WCF は、多数のサードパーティ プラットフォームと相互運用広くスキーマ表現として、World Wide Web Consortium (W3C) XML スキーマ定義言語 (XSD) を使用します。  
   
  スキーマ インポート コンポーネント <xref:System.Runtime.Serialization.XsdDataContractImporter> は、XSD スキーマ ドキュメントを受け取って、シリアル化された形式が特定のスキーマに対応するように [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] クラス (通常、データ コントラクト クラス) を生成します。  
   

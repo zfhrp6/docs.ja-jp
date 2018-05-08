@@ -1,27 +1,15 @@
 ---
-title: "IIS と WAS における構成ベースのアクティブ化"
-ms.custom: 
+title: IIS と WAS における構成ベースのアクティブ化
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 6a927e1f-b905-4ee5-ad0f-78265da38238
-caps.latest.revision: "13"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: fc0e954ae5cadbe7e70cd8a83d3d5841f4e0d142
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: aa4a3c682ab1d5d7ca0869fee588934b9ed2bf75
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="configuration-based-activation-in-iis-and-was"></a>IIS と WAS における構成ベースのアクティブ化
-インターネット インフォメーション サービス (IIS: Internet Information Services) または Windows プロセス アクティブ化サービス (WAS) で [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスをホストする場合は、.svc ファイルを用意する必要があります。 .svc ファイルには、サービスの名前と、オプションのカスタム サービス ホスト ファクトリが含まれています。 この追加ファイルによって、管理のオーバーヘッドが増加します。 構成ベースのアクティブ化機能により、.svc ファイルを用意する必要がなくなり、関連するオーバーヘッドも発生しません。  
+通常インターネット インフォメーション サービス (IIS) または Windows プロセス アクティブ化サービス (WAS) で Windows Communication Foundation (WCF) サービスをホストする場合は、.svc ファイルを提供する必要があります。 .svc ファイルには、サービスの名前と、オプションのカスタム サービス ホスト ファクトリが含まれています。 この追加ファイルによって、管理のオーバーヘッドが増加します。 構成ベースのアクティブ化機能により、.svc ファイルを用意する必要がなくなり、関連するオーバーヘッドも発生しません。  
   
 ## <a name="configuration-based-activation"></a>構成ベースのアクティブ化  
  構成ベースのアクティブ化では、以前は .svc ファイルに配置されていたメタデータを受け取り、それを Web.config ファイルに配置します。 内で、<`serviceHostingEnvironment`> 要素は、<`serviceActivations`> 要素。 内で、<`serviceActivations`> 要素が 1 つ以上 <`add`> 要素、各ホステッド サービスに 1 つです。 <`add`> 要素には属性の場合、サービスおよびサービスの種類、サービス ホスト ファクトリの相対アドレスを設定することができます。 次の構成コード例は、このセクションの使用方法を示しています。  
@@ -48,9 +36,9 @@ ms.lasthandoff: 12/22/2017
 > -   構成ファイル内での登録は、.svc、.xamlx、.xoml、またはその他のファイルでの設定よりも優先されます。  
 > -   IIS/WAS に送信された URI 内の \ (円記号) は、自動的に / (スラッシュ) に変換されます。 \ を含む相対アドレスが追加され、その相対アドレスを使用する URI を IIS に送信した場合は、円記号がスラッシュに変換されるため、IIS では、それを相対アドレスと一致させることができません。 IIS は、一致するものが見つからなかったことを示すトレース情報を送信します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Configuration.ServiceHostingEnvironmentSection.ServiceActivations%2A>  
  [ホスティング サービス](../../../../docs/framework/wcf/hosting-services.md)  
  [ワークフロー サービスのホストの概要](../../../../docs/framework/wcf/feature-details/hosting-workflow-services-overview.md)  
- [\<serviceHostingEnvironment >](../../../../docs/framework/configure-apps/file-schema/wcf/servicehostingenvironment.md)  
+ [\<ServiceHostingEnvironment >](../../../../docs/framework/configure-apps/file-schema/wcf/servicehostingenvironment.md)  
  [Windows Server App Fabric のホスティング機能](http://go.microsoft.com/fwlink/?LinkId=201276)

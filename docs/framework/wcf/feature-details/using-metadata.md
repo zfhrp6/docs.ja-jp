@@ -1,24 +1,12 @@
 ---
-title: "メタデータを使用する"
-ms.custom: 
+title: メタデータを使用する
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 05cf53a1-b92d-4d8e-a87e-79f6e51c4a8d
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: fa545e812de8c87191d6bba7df5cc5a5a494af3d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: c2fd0fc54c868c72903d5ea5ad847725d813f2da
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-metadata"></a>メタデータを使用する
 サービス メタデータには、コンピューターが読み取ることのできる、サービスに関する説明が含まれます。 サービス メタデータには、サービス エンドポイント、バインディング、コントラクト、操作、およびメッセージに関する説明が含まれます。 サービス メタデータは、サービスを利用するクライアントの自動生成、サービスに関する説明の実装、クライアントに対するバインディングの動的な更新など、さまざまな目的で使用できます。  
@@ -31,7 +19,7 @@ ms.lasthandoff: 12/22/2017
  Svcutil.exe を使用してメタデータを取得し、準拠サービスを実装する方法を示します。  
   
  [サービス メタデータからの WCF クライアントの生成](../../../../docs/framework/wcf/feature-details/generating-a-wcf-client-from-service-metadata.md)  
- Svcutil.exe を使用してメタデータを取得し、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] クライアントを生成する方法を示します。  
+ Svcutil.exe を使用してメタデータを取得し、Windows Communication Foundation (WCF) クライアントを生成する方法を示します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [メタデータ](../../../../docs/framework/wcf/feature-details/metadata.md)

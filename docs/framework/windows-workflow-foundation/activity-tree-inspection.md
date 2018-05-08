@@ -1,23 +1,12 @@
 ---
-title: "アクティビティ ツリー検査"
-ms.custom: 
+title: アクティビティ ツリー検査
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 100d00e4-8c1d-4233-8fbb-dd443a01155d
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: efb7f8f1603de67f21aee7e1746670e324d5e238
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4f2ca6bff27cfe0e3362e2a3b95cd08a0f8d5297
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="activity-tree-inspection"></a>アクティビティ ツリー検査
 アクティビティ ツリー検査は、アプリケーションによってホストされるワークフローを検査するためにワークフロー アプリケーションの作成者によって使用されます。 <xref:System.Activities.WorkflowInspectionServices> を使用することによって、特定の子アクティビティを対象としてワークフローを検索したり、個々のアクティビティとそのプロパティを列挙したりできるほか、アクティビティのランタイム メタデータを特定の時点でキャッシュできます。 ここでは、<xref:System.Activities.WorkflowInspectionServices> の概要を説明します。また、これを使用してアクティビティ ツリーを検査する方法も説明します。  

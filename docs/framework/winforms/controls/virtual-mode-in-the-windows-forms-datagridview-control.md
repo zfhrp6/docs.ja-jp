@@ -1,28 +1,14 @@
 ---
-title: "Windows フォーム DataGridView コントロールでの仮想モード"
-ms.custom: 
+title: Windows フォーム DataGridView コントロールでの仮想モード
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - DataGridView control [Windows Forms], virtual mode
 ms.assetid: feae5d43-2848-4b1a-8ea7-77085dc415b5
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 06c5bb1d4a36d51bb07d59b48c730f722af23f8c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 2e5724da4442bbfcb0928c864f78744b946acc18
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="virtual-mode-in-the-windows-forms-datagridview-control"></a>Windows フォーム DataGridView コントロールでの仮想モード
 仮想モードでは、間の相互作用を管理することができます、<xref:System.Windows.Forms.DataGridView>コントロールとカスタム データ キャッシュします。 仮想モードを実装するのには、設定、<xref:System.Windows.Forms.DataGridView.VirtualMode%2A>プロパティを`true`し、1 つ以上のこのトピックで説明するイベントを処理します。 通常を処理するには、少なくとも、`CellValueNeeded`イベントで、コントロールのルックアップ データ キャッシュ内の値を使用します。  
@@ -75,7 +61,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="best-practices-in-virtual-mode"></a>仮想モードでのベスト プラクティス  
  大量のデータと効率よく連携するために仮想モードを実装している場合もすることを使用する効率的なことを確認、<xref:System.Windows.Forms.DataGridView>自体を制御します。 セルのスタイル、サイズの自動調整、選択内容、および行の共有の効率的な使用に関する詳細については、次を参照してください。 [Windows フォーム DataGridView コントロールを拡張するためのベスト プラクティス](../../../../docs/framework/winforms/controls/best-practices-for-scaling-the-windows-forms-datagridview-control.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.DataGridView>  
  <xref:System.Windows.Forms.DataGridView.VirtualMode%2A>  
  [Windows フォーム DataGridView コントロールでのパフォーマンス チューニング](../../../../docs/framework/winforms/controls/performance-tuning-in-the-windows-forms-datagridview-control.md)  

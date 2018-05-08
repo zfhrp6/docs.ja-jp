@@ -1,10 +1,6 @@
 ---
 title: 文字データ型 (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - data types [Visual Basic], character
 - String data type [Visual Basic], character data types
@@ -12,13 +8,11 @@ helpviewer_keywords:
 - Char data type [Visual Basic], character data types
 - data types [Visual Basic], choosing
 ms.assetid: 902479ef-1679-47fc-9911-0c1c5008226c
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: afd368c00444f136c6d69b02a733c82f0c8eafe0
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 5a6a8dae63f3c0b5e3038304c1c2242f9e8c9c9d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="character-data-types-visual-basic"></a>文字データ型 (Visual Basic)
 Visual Basic では*文字データ型*文字や表示可能な文字を処理します。 Unicode 文字を扱う両者間`Char`一方、1 つの文字を保持している`String`不特定数文字にはが含まれています。  

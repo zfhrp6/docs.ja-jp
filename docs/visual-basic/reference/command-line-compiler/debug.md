@@ -1,12 +1,6 @@
 ---
 title: /debug (Visual Basic)
 ms.date: 03/10/2018
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - debug compiler switches
 - /debug compiler option [Visual Basic]
@@ -15,11 +9,11 @@ helpviewer_keywords:
 ms.assetid: c2b0bea5-1d5e-499f-9bd5-4f6c6b715ea2
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7430a3ac85a86ed5528af9ea830da530208749eb
-ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
+ms.openlocfilehash: 18d74b8f0a7b319e08780a8db9175c7be16d932e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="-debug-visual-basic"></a>デバッグ (Visual Basic)
 コンパイラがデバッグ情報が生成され、出力ファイルに配置します。  
@@ -48,7 +42,7 @@ ms.lasthandoff: 03/22/2018
   
 |Set - には、Visual Studio 統合開発環境でデバッグします。|  
 |---|  
-|1.**ソリューション エクスプ ローラー**でプロジェクトを選択し、 **[プロジェクト]** メニューの **[プロパティ]**をクリックします。 <br />2.**[コンパイル]** タブをクリックします。<br />3.**[詳細コンパイル オプション]** をクリックします。<br />4.値を変更、**デバッグ情報の生成**ボックス。|  
+|1.**ソリューション エクスプ ローラー**でプロジェクトを選択し、 **[プロジェクト]** メニューの **[プロパティ]** をクリックします。 <br />2.**[コンパイル]** タブをクリックします。<br />3.**[詳細コンパイル オプション]** をクリックします。<br />4.値を変更、**デバッグ情報の生成**ボックス。|  
   
 ## <a name="example"></a>例  
  次の例は、デバッグ情報を出力ファイルに入れ`App.exe`です。  

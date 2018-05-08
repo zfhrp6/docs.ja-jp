@@ -1,39 +1,27 @@
 ---
-title: "ToolBar の概要"
-ms.custom: 
+title: ToolBar の概要
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - controls [WPF], ToolBar
 - ToolBar control [WPF]
 ms.assetid: a8edb32c-118d-4f31-b6e6-8899082b504b
-caps.latest.revision: "28"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: f00597d48ff100325c1fb2884f64169164415a50
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 0c66867ce4d86a11424d7a7a859817d603b4227e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="toolbar-overview"></a>ToolBar の概要
-<xref:System.Windows.Controls.ToolBar>コントロールは、コマンドまたは通常、その機能に関連するコントロールのグループのコンテナーです。 A<xref:System.Windows.Controls.ToolBar>通常コマンドを呼び出すボタンが含まれます。  
+<xref:System.Windows.Controls.ToolBar> コントロールは、コマンドまたは通常、その機能に関連するコントロールのグループのコンテナーです。 A<xref:System.Windows.Controls.ToolBar>通常コマンドを呼び出すボタンが含まれます。  
   
   
 <a name="ToolBarControl"></a>   
 ## <a name="toolbar-control"></a>ToolBar コントロール  
- <xref:System.Windows.Controls.ToolBar>コントロールは、1 つの行または列にボタンやその他のコントロールのバーのような配置から名前を取得します。 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]<xref:System.Windows.Controls.ToolBar>コントロールがサイズ制限内で自然に適合しないすべての項目を配置するオーバーフロー メカニズムを提供<xref:System.Windows.Controls.ToolBar>特別なオーバーフロー領域にします。 また、 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Controls.ToolBar>コントロールを使用する通常に関連する<xref:System.Windows.Controls.ToolBarTray>コントロールで、ユーザーによるサイズ変更や、ツールバーの配置の特殊なレイアウト動作とサポートを提供します。  
+ <xref:System.Windows.Controls.ToolBar>コントロールは、1 つの行または列にボタンやその他のコントロールのバーのような配置から名前を取得します。 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Controls.ToolBar> コントロールがサイズ制限内で自然に適合しないすべての項目を配置するオーバーフロー メカニズムを提供<xref:System.Windows.Controls.ToolBar>特別なオーバーフロー領域にします。 また、 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Controls.ToolBar>コントロールを使用する通常に関連する<xref:System.Windows.Controls.ToolBarTray>コントロールで、ユーザーによるサイズ変更や、ツールバーの配置の特殊なレイアウト動作とサポートを提供します。  
   
 <a name="Creating_ToolBars"></a>   
 ## <a name="specifying-the-position-of-toolbars-in-a-toolbartray"></a>ToolBarTray でツールバーの位置を指定する  
- 使用して、<xref:System.Windows.Controls.ToolBar.Band%2A>と<xref:System.Windows.Controls.ToolBar.BandIndex%2A>配置プロパティ、<xref:System.Windows.Controls.ToolBar>で、<xref:System.Windows.Controls.ToolBarTray>です。 <xref:System.Windows.Controls.ToolBar.Band%2A>位置を示す、<xref:System.Windows.Controls.ToolBar>親内に配置されます<xref:System.Windows.Controls.ToolBarTray>です。 <xref:System.Windows.Controls.ToolBar.BandIndex%2A>順序を示す、<xref:System.Windows.Controls.ToolBar>そのバンド内に配置されます。 次の例は、配置するこのプロパティを使用する方法<xref:System.Windows.Controls.ToolBar>内の制御、<xref:System.Windows.Controls.ToolBarTray>です。  
+ 使用して、<xref:System.Windows.Controls.ToolBar.Band%2A>と<xref:System.Windows.Controls.ToolBar.BandIndex%2A>配置プロパティ、<xref:System.Windows.Controls.ToolBar>で、<xref:System.Windows.Controls.ToolBarTray>です。 <xref:System.Windows.Controls.ToolBar.Band%2A> 位置を示す、<xref:System.Windows.Controls.ToolBar>親内に配置されます<xref:System.Windows.Controls.ToolBarTray>です。 <xref:System.Windows.Controls.ToolBar.BandIndex%2A> 順序を示す、<xref:System.Windows.Controls.ToolBar>そのバンド内に配置されます。 次の例は、配置するこのプロパティを使用する方法<xref:System.Windows.Controls.ToolBar>内の制御、<xref:System.Windows.Controls.ToolBarTray>です。  
   
  [!code-xaml[ToolBarExample#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ToolBarExample/CS/Pane1.xaml#2)]  
   
@@ -52,7 +40,7 @@ ms.lasthandoff: 12/22/2017
   
  [ツール バーのスタイルとテンプレート](../../../../docs/framework/wpf/controls/toolbar-styles-and-templates.md)  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Controls.Primitives.ToolBarPanel>  
  <xref:System.Windows.Controls.Primitives.ToolBarOverflowPanel>  
  [ToolBar のコントロールのスタイルを設定する](../../../../docs/framework/wpf/controls/how-to-style-controls-on-a-toolbar.md)  

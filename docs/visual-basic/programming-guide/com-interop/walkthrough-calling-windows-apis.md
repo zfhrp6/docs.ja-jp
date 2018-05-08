@@ -1,13 +1,6 @@
 ---
 title: 'チュートリアル: Windows API の呼び出し (Visual Basic)'
-ms.custom: ''
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - DLLs, calling
 - Windows API, walkthroughs
@@ -18,14 +11,11 @@ helpviewer_keywords:
 - DllImport attribute, calling Windows API
 - Declare statement [Visual Basic], declaring DLL functions
 ms.assetid: 9280ca96-7a93-47a3-8d01-6d01be0657cb
-caps.latest.revision: 20
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 34bfb732e2d99b259811573a427ae66628c7fc3a
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: bb98d842bfe65bdf637a789fc9a8319a70cb2bc8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="walkthrough-calling-windows-apis-visual-basic"></a>チュートリアル: Windows API の呼び出し (Visual Basic)
 Windows Api は、Windows オペレーティング システムの一部であるダイナミック リンク ライブラリ (Dll) です。 それらを使用して、タスクを実行するときは、独自の同等のプロシージャを記述することは困難です。 たとえば、という名前の関数は、Windows`FlashWindowEx`をアプリケーションのタイトル バーを薄いおよび濃い網掛けが交互に行うことができます。  

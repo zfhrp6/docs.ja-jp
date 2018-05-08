@@ -1,29 +1,17 @@
 ---
-title: "AutoSize プロパティの概要"
-ms.custom: 
+title: AutoSize プロパティの概要
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - sizing [Windows Forms], automatic
 - layout [Windows Forms], AutoSize
 - automatic sizing
 - AutoSizeMode property
 ms.assetid: 62fd82a2-9565-4f65-925b-9d1e66dc4e7d
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 34f92bdc80f62225efe5e008f0893905f49da970
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d7502d11c6cad526c5b19ea2d98e39756d518b98
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="autosize-property-overview"></a>AutoSize プロパティの概要
 <xref:System.Windows.Forms.Control.AutoSize%2A>プロパティで指定された値を実現するために必要な場合は、そのサイズを変更するコントロールを使用して、<xref:System.Windows.Forms.Control.PreferredSize%2A>プロパティです。 設定して特定のコントロールのサイズ変更動作を調整する、`AutoSizeMode`プロパティです。  
@@ -58,8 +46,8 @@ ms.lasthandoff: 12/22/2017
   
 |AutoSize のサポート|コントロール型|  
 |----------------------|------------------|  
-|-   <xref:System.Windows.Forms.Control.AutoSize%2A>サポートされるプロパティです。<br />-`AutoSizeMode`プロパティです。|<xref:System.Windows.Forms.CheckBox><br /><br /> <xref:System.Windows.Forms.DomainUpDown><br /><br /> <xref:System.Windows.Forms.Label><br /><br /> <xref:System.Windows.Forms.LinkLabel><br /><br /> <xref:System.Windows.Forms.MaskedTextBox>(<xref:System.Windows.Forms.TextBox>ベース)<br /><br /> <xref:System.Windows.Forms.NumericUpDown><br /><br /> <xref:System.Windows.Forms.RadioButton><br /><br /> <xref:System.Windows.Forms.TextBox><br /><br /> <xref:System.Windows.Forms.TrackBar>|  
-|-   <xref:System.Windows.Forms.Control.AutoSize%2A>サポートされるプロパティです。<br />-   `AutoSizeMode`サポートされるプロパティです。|<xref:System.Windows.Forms.Button><br /><br /> <xref:System.Windows.Forms.CheckedListBox><br /><br /> <xref:System.Windows.Forms.FlowLayoutPanel><br /><br /> <xref:System.Windows.Forms.Form><br /><br /> <xref:System.Windows.Forms.GroupBox><br /><br /> <xref:System.Windows.Forms.Panel><br /><br /> <xref:System.Windows.Forms.TableLayoutPanel>|  
+|-   <xref:System.Windows.Forms.Control.AutoSize%2A> サポートされるプロパティです。<br />-`AutoSizeMode`プロパティです。|<xref:System.Windows.Forms.CheckBox><br /><br /> <xref:System.Windows.Forms.DomainUpDown><br /><br /> <xref:System.Windows.Forms.Label><br /><br /> <xref:System.Windows.Forms.LinkLabel><br /><br /> <xref:System.Windows.Forms.MaskedTextBox> (<xref:System.Windows.Forms.TextBox>ベース)<br /><br /> <xref:System.Windows.Forms.NumericUpDown><br /><br /> <xref:System.Windows.Forms.RadioButton><br /><br /> <xref:System.Windows.Forms.TextBox><br /><br /> <xref:System.Windows.Forms.TrackBar>|  
+|-   <xref:System.Windows.Forms.Control.AutoSize%2A> サポートされるプロパティです。<br />-   `AutoSizeMode` サポートされるプロパティです。|<xref:System.Windows.Forms.Button><br /><br /> <xref:System.Windows.Forms.CheckedListBox><br /><br /> <xref:System.Windows.Forms.FlowLayoutPanel><br /><br /> <xref:System.Windows.Forms.Form><br /><br /> <xref:System.Windows.Forms.GroupBox><br /><br /> <xref:System.Windows.Forms.Panel><br /><br /> <xref:System.Windows.Forms.TableLayoutPanel>|  
 |-<xref:System.Windows.Forms.Control.AutoSize%2A>プロパティです。|<xref:System.Windows.Forms.CheckedListBox><br /><br /> <xref:System.Windows.Forms.ComboBox><br /><br /> <xref:System.Windows.Forms.DataGridView><br /><br /> <xref:System.Windows.Forms.DateTimePicker><br /><br /> <xref:System.Windows.Forms.ListBox><br /><br /> <xref:System.Windows.Forms.ListView><br /><br /> <xref:System.Windows.Forms.MaskedTextBox><br /><br /> <xref:System.Windows.Forms.MonthCalendar><br /><br /> <xref:System.Windows.Forms.ProgressBar><br /><br /> <xref:System.Windows.Forms.PropertyGrid><br /><br /> <xref:System.Windows.Forms.RichTextBox><br /><br /> <xref:System.Windows.Forms.SplitContainer><br /><br /> <xref:System.Windows.Forms.TabControl><br /><br /> <xref:System.Windows.Forms.TabPage><br /><br /> <xref:System.Windows.Forms.TreeView><br /><br /> <xref:System.Windows.Forms.WebBrowser><br /><br /> <xref:System.Windows.Forms.ScrollBar>|  
   
 ## <a name="autosize-in-the-design-environment"></a>デザイン環境で自動サイズ調整  
@@ -77,7 +65,7 @@ ms.lasthandoff: 12/22/2017
 > [!NOTE]
 >  Windows フォーム デザイナーの影の生産性を最大化する、<xref:System.Windows.Forms.Control.AutoSize%2A>プロパティを<xref:System.Windows.Forms.Form>クラスです。 デザイン時に、フォームが動作かのよう、<xref:System.Windows.Forms.Control.AutoSize%2A>プロパティに設定されている`false`その実際の設定に関係なく、します。 実行時に、特別な設備は行われず、および<xref:System.Windows.Forms.Control.AutoSize%2A>プロパティが適用されるプロパティの設定で指定されたとおりです。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.Control.AutoSize%2A>  
  <xref:System.Windows.Forms.Control.PreferredSize%2A>  
  <xref:System.Windows.Forms.Control.GetPreferredSize%2A>

@@ -1,13 +1,6 @@
 ---
-title: "添付イベントの概要"
-ms.custom: 
+title: 添付イベントの概要
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -19,16 +12,11 @@ helpviewer_keywords:
 - backing attached events with routed events [WPF]
 - attached events [WPF], definition
 ms.assetid: 2c40eae3-80e4-4a45-ae09-df6c9ab4d91e
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: fcfe0d97b86a27859d79685e035d8f3f765a965b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ae6d426d671c8bf034ebd86e768352914585d969
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="attached-events-overview"></a>添付イベントの概要
 [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] は言語コンポーネントと*添付イベント*と呼ばれている種類のイベントを定義します。 添付イベントという概念を利用すると、イベントを実際に定義または継承する要素にではなく、任意の要素に特定のイベントのハンドラーを追加できます。 この場合、イベントを発生させる可能性があるオブジェクトとターゲット処理インスタンスのいずれもイベントを定義せず、"所有" しません。  
@@ -102,7 +90,7 @@ ms.lasthandoff: 12/22/2017
   
  ただし、に基づいてカスタム添付イベントを定義しているかどうか、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]にアタッチされるイベントをベースのモデル<xref:System.Windows.RoutedEvent>、使用することができます<xref:System.Windows.UIElement.RaiseEvent%2A>イベントを発生させる接続されているいずれかから<xref:System.Windows.UIElement>または<xref:System.Windows.ContentElement>です。 (接続するか) のルーティング イベントを発生させるには、イベント ソースとして、要素ツリー内の特定の要素を宣言することが必要です。そのソースが報告されて、<xref:System.Windows.UIElement.RaiseEvent%2A>呼び出し元。 ツリーのソースとして報告される要素を決定することはサービスの担当です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ルーティング イベントの概要](../../../../docs/framework/wpf/advanced/routed-events-overview.md)  
  [XAML 構文の詳細](../../../../docs/framework/wpf/advanced/xaml-syntax-in-detail.md)  
  [WPF における XAML とカスタム クラス](../../../../docs/framework/wpf/advanced/xaml-and-custom-classes-for-wpf.md)

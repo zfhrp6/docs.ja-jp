@@ -1,22 +1,12 @@
 ---
-title: "(Visual Basic) の XML ツリーをシリアル化します。"
-ms.custom: 
+title: (Visual Basic) の XML ツリーをシリアル化します。
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 2c340695-a726-4030-85be-6975d8a149cf
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 924c4dace92ed306852cd1d7d2fead8588d03dc4
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 009bd3e229ad6debb0f4176c18fc9cb712154197
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="serializing-xml-trees-visual-basic"></a>(Visual Basic) の XML ツリーをシリアル化します。
 XML ツリーのシリアル化とは、XML ツリーから XML を生成することです。 ファイル、<xref:System.IO.TextWriter> クラスの具象実装、または <xref:System.Xml.XmlWriter> クラスの具象実装へのシリアル化を行うことができます。  

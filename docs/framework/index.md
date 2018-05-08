@@ -1,10 +1,6 @@
 ---
 title: .NET Framework 4.7、4.6、および 4.5
-ms.date: 10/17/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: article
+ms.date: 04/10/2018
 ms.custom: updateeachrelease
 f1_keywords:
 - f61f02f2-2f20-483d-8f56-a9c8f3a54986
@@ -14,19 +10,16 @@ helpviewer_keywords:
 ms.assetid: f61f02f2-2f20-483d-8f56-a9c8f3a54986
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 34402e74bb0cb560d213760c38ce4b936d712eb4
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 85bb386f2adbf02a8fde891c65c78b8e8d4537b2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="net-framework-guide"></a>.NET Framework ガイド
 
 > [!NOTE]
-> この .NET Framework コンテンツ セットには .NET Framework バージョン 4.5、4.5.1、4.5.2、4.6、4.6.1、4.6.2、4.7 および 4.7.1 に関する情報が含まれています。 .NET Framework をダウンロードするには、「[.NET Framework のインストール](../../docs/framework/install/guide-for-developers.md)」を参照してください。 NET Framework 4.5、[!INCLUDE[net_v46](../../includes/net-v46-md.md)]、これらのポイント リリース、および .NET Framework 4.7 および 4.7.1 の新機能と変更点については、「[.NET Framework の新機能](../../docs/framework/whats-new/index.md)」をご覧ください。 サポートされているプラットフォームについては、「[.NET Framework のシステム要件](../../docs/framework/get-started/system-requirements.md)」を参照してください。 
+> この .NET Framework コンテンツ セットには .NET Framework バージョン 4.5、4.5.1、4.5.2、4.6、4.6.1、4.6.2、4.7、4.7.1、および 4.7.2 に関する情報が含まれています。 .NET Framework をダウンロードするには、「[.NET Framework のインストール](../../docs/framework/install/guide-for-developers.md)」を参照してください。 NET Framework 4.5、[!INCLUDE[net_v46](../../includes/net-v46-md.md)]、これらのポイント リリース、および .NET Framework 4.7、4.7.1、および 4.7.2 の新機能と変更点については、「[.NET Framework の新機能](../../docs/framework/whats-new/index.md)」をご覧ください。 サポートされているプラットフォームについては、「[.NET Framework のシステム要件](../../docs/framework/get-started/system-requirements.md)」を参照してください。 
 
 .NET Framework は、Web、Windows、Windows Phone、Windows Server、および Microsoft Azure 用のアプリを作成するための開発プラットフォームです。 共通言語ランタイム (CLR) と .NET Framework クラス ライブラリで構成され、さまざまな機能を含み、さまざまな業界標準をサポートしています。
 
@@ -61,7 +54,7 @@ ms.lasthandoff: 12/22/2017
 [ツール](../../docs/framework/tools/index.md)  
 .NET Framework テクノロジを使ってアプリケーションを開発、構成、配置するのに役立つツールについて説明します。  
   
-[.NET Framework クラス ライブラリ](/dotnet/api/?view=netframework-4.7.1)   
+[.NET Framework クラス ライブラリ](/dotnet/api/?view=netframework-4.7.2)   
 .NET Framework の名前空間に含まれる各クラスの構文、コード例、および関連情報を記載しています。  
   
 [追加のクラス ライブラリおよび API](../../docs/framework/additional-apis/index.md)  

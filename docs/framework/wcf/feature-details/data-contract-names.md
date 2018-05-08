@@ -1,34 +1,20 @@
 ---
-title: "データ コントラクト名"
-ms.custom: 
+title: データ コントラクト名
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - data contracts [WCF], naming
 ms.assetid: 31f87e6c-247b-48f5-8e94-b9e1e33d8d09
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 56744318e6ea29350fd02d1cb35e49e566894a23
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 18ba9aa1f7af3733acd60924d0aa24ceb1b5126c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="data-contract-names"></a>データ コントラクト名
-クライアントとサービスが同じ型を共有しないことがあります。 このような場合でも、双方のデータ コントラクトが等価であれば、相互にデータを受け渡すことができます。 [データ コントラクトの等価性](../../../../docs/framework/wcf/feature-details/data-contract-equivalence.md)はデータ コントラクトとデータ メンバー名に依存し、それらの名前に、型およびメンバーをマップするメカニズムを提供するためです。 ここでは、データ コントラクトの命名規則に加えて、名前を作成する際の [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] インフラストラクチャの既定の動作についても説明します。  
+クライアントとサービスが同じ型を共有しないことがあります。 このような場合でも、双方のデータ コントラクトが等価であれば、相互にデータを受け渡すことができます。 [データ コントラクトの等価性](../../../../docs/framework/wcf/feature-details/data-contract-equivalence.md)はデータ コントラクトとデータ メンバー名に依存し、それらの名前に、型およびメンバーをマップするメカニズムを提供するためです。 このトピックでは、名前を作成するときに、Windows Communication Foundation (WCF) インフラストラクチャの既定の動作と同様にデータ コントラクトの名前付け規則について説明します。  
   
 ## <a name="basic-rules"></a>基本的な規則  
  データ コントラクトの名前付けに関する基本的な規則は次のとおりです。  
@@ -37,15 +23,15 @@ ms.lasthandoff: 12/22/2017
   
 -   データ メンバーは名前のみを持ち、名前空間はありません。  
   
--   データ コントラクトを処理するときに、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] インフラストラクチャは、データ コントラクトの名前空間と名前およびデータ メンバーの名前について大文字と小文字を区別します。  
+-   データ コントラクトを処理するときに、WCF インフラストラクチャが名前空間とデータ コントラクトおよびデータ メンバーの名前の両方に大文字小文字を区別します。  
   
 ## <a name="data-contract-namespaces"></a>データ コントラクト名前空間  
  データ コントラクトの名前空間は、URI (Uniform Resource Identifier) の形式を使用します。 URI は、絶対 URI でも相対 URI のどちらでもかまいません。 既定では、特定の型のデータ コントラクトには、その型の共通言語ランタイム (CLR: Common Language Runtime) 名前空間に基づく名前空間が割り当てられます。  
   
- 既定では、特定の CLR 名前空間 (形式の*Clr.Namespace*) は、名前空間"http://schemas.datacontract.org/2004/07/Clr.Namespace"にマップします。 この既定をオーバーライドするには、<xref:System.Runtime.Serialization.ContractNamespaceAttribute> 属性をモジュールまたはアセンブリ全体に適用します。 また、型ごとにデータ コントラクト名前空間を制御するには、<xref:System.Runtime.Serialization.DataContractAttribute.Namespace%2A> の <xref:System.Runtime.Serialization.DataContractAttribute> プロパティを設定します。  
+ 既定では、特定の CLR 名前空間 (形式の*Clr.Namespace*) は、名前空間にマップされて"http://schemas.datacontract.org/2004/07/Clr.Namespace"です。 この既定をオーバーライドするには、<xref:System.Runtime.Serialization.ContractNamespaceAttribute> 属性をモジュールまたはアセンブリ全体に適用します。 また、型ごとにデータ コントラクト名前空間を制御するには、<xref:System.Runtime.Serialization.DataContractAttribute.Namespace%2A> の <xref:System.Runtime.Serialization.DataContractAttribute> プロパティを設定します。  
   
 > [!NOTE]
->  "http://schemas.microsoft.com/2003/10/Serialization" 名前空間は予約されているため、データ コントラクトの名前空間として使用することはできません。  
+>  "http://schemas.microsoft.com/2003/10/Serialization"名前空間は、予約されており、データ コントラクト名前空間として使用できません。  
   
 > [!NOTE]
 >  `delegate` 宣言を含むデータ コントラクト型では、既定の名前空間をオーバーライドすることはできません。  
@@ -84,7 +70,7 @@ ms.lasthandoff: 12/22/2017
   
  この場合、`Drawing<Square,RegularRedBrush>` 型は、"Drawing_using_RedBrush_brush_and_Square_shape" というデータ コントラクト名になります。 <xref:System.Runtime.Serialization.DataContractAttribute.Name%2A> プロパティに "{#}" があるため、名前にはハッシュは含まれません。したがって、この型では名前の競合が発生しやすくなります。たとえば、`Drawing<Square,SpecialRedBrush>` 型は、まったく同じデータ コントラクト名を持ちます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Runtime.Serialization.DataContractAttribute>  
  <xref:System.Runtime.Serialization.DataMemberAttribute>  
  <xref:System.Runtime.Serialization.ContractNamespaceAttribute>  

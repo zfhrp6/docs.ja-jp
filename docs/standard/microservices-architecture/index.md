@@ -1,27 +1,20 @@
 ---
 title: .NET マイクロサービス。 コンテナー化された .NET アプリケーションのアーキテクチャ
 description: '.NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ | Front Matter'
-keywords: Docker, マイクロサービス, ASP.NET, コンテナー
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
-ms.prod: .net-core
-ms.technology: dotnet-docker
-ms.topic: article
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 289f34b12cc0278212ceb737c2b9cb3f2ff986c1
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: d4499384d63f11a1d78d0aa84749aed8ea554794
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/04/2018
 ---
 ![](./media/cover.png)
 
 # <a name="net-microservices-architecture-for-containerized-net-applications"></a>.NET マイクロサービス。 コンテナー化された .NET アプリケーションのアーキテクチャ
 
-ダウンロード: <https://aka.ms/microservicesebook>
+次の場所でダウンロードできます: <https://aka.ms/microservicesebook>
 
 発行者
 
@@ -131,7 +124,7 @@ Docker は、コンテナー業界では事実上の標準になりつつあり�
 
 ### <a name="additional-resources"></a>その他の技術情報
 
--   **Microsoft のプラットフォームとツールを使用したコンテナー化された Docker アプリケーションのライフサイクル** (ダウンロード可能な電子ブック) [*https://aka.ms/dockerlifecycleebook*](https://aka.ms/dockerlifecycleebook)
+-   **Microsoft プラットフォームとツールでコンテナー化された Docker アプリケーションのライフサイクル** (ダウンロード可能な e-book) [*https://aka.ms/dockerlifecycleebook*](https://aka.ms/dockerlifecycleebook)
 
 ## <a name="who-should-use-this-guide"></a>対象読者
 

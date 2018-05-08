@@ -1,22 +1,12 @@
 ---
-title: "(Visual Basic) の XML の純粋関数型変換"
-ms.custom: 
+title: (Visual Basic) の XML の純粋関数型変換
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 5e19b74a-7773-4b58-b110-953ffd364c55
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 01ad228d91037de1585d1e66292fddb80c785ada
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 25719fc53235424b6a1e2b779ab4e6bdfbe6b4d3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="pure-functional-transformations-of-xml-visual-basic"></a>(Visual Basic) の XML の純粋関数型変換
 ここでは、XML の関数型変換に関するチュートリアルについて説明します。 このチュートリアルには、関数型変換を使用する場合に理解しておく必要がある主な概念や言語構造についての説明と、関数型変換を使用して XML ドキュメントを操作する例が含まれています。 このチュートリアルでは、LINQ to XML のコード例が示されますが、基本的概念はすべて他の LINQ テクノロジにも適用されます。  

@@ -1,13 +1,6 @@
 ---
-title: "エキスパンダーの概要"
-ms.custom: 
+title: エキスパンダーの概要
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - controls [WPF], Expander
 - Expander control [WPF], about Expander control
 ms.assetid: 877bf425-0e54-49ec-8fd2-13a211377abb
-caps.latest.revision: "20"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 9f0623ed4c84247cc1759a203e3b95dd895cee2e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: abcc7c48c602aee742959b39bb5244563eaf4d5d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="expander-overview"></a>エキスパンダーの概要
 <xref:System.Windows.Controls.Expander>コントロールがコンテンツをウィンドウのようになり、ヘッダーを含む拡張可能な領域を提供する方法を提供します。  
@@ -70,7 +58,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="using-the-alignment-properties"></a>配置プロパティの使用  
  コンテンツの配置を設定することができます、<xref:System.Windows.Controls.Control.HorizontalContentAlignment%2A>と<xref:System.Windows.Controls.Control.VerticalContentAlignment%2A>プロパティを<xref:System.Windows.Controls.Expander>コントロール。 これらのプロパティを設定すると、配置がヘッダーに適用され、展開されたコンテンツにも適用されます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Controls.Expander>  
  <xref:System.Windows.Controls.ExpandDirection>  
  [データ バインドに関する「方法」トピック](../../../../docs/framework/wpf/controls/expander-how-to-topics.md)

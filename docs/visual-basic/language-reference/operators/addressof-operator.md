@@ -1,11 +1,6 @@
 ---
-title: "AddressOf 演算子 (Visual Basic)"
+title: AddressOf 演算子 (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - AddressOf
 - vb.AddressOf
@@ -13,14 +8,11 @@ helpviewer_keywords:
 - AddressOf operator [Visual Basic]
 - addresses, passing to API procedures
 ms.assetid: 8105a59d-60d8-4ab5-b221-5899cdfacbf4
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 52560a2d9071373fd28f7aad2e485da08324656d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 7c229c32a3b295b4dbfe50ca2abc60d4ad5f2145
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="addressof-operator-visual-basic"></a>AddressOf 演算子 (Visual Basic)
 特定のプロシージャを参照するプロシージャ デリゲート インスタンスを作成します。  
@@ -33,7 +25,7 @@ AddressOf procedurename
   
 ## <a name="parts"></a>指定項目  
  `procedurename`  
- 必須です。 新しく作成されたプロシージャ デリゲートで参照するプロシージャを指定します。  
+ 必須。 新しく作成されたプロシージャ デリゲートで参照するプロシージャを指定します。  
   
 ## <a name="remarks"></a>コメント  
  `AddressOf`演算子で指定された関数を指して関数デリゲートを作成する`procedurename`です。 指定したプロシージャが場合、関数デリゲートのインスタンス メソッドが、インスタンスとメソッドの両方を参照します。 次に、関数デリゲートが呼び出されたときに、指定したインスタンスの指定したメソッドが呼び出されます。  

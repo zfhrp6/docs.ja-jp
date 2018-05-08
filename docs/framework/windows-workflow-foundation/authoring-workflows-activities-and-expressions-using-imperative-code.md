@@ -1,24 +1,12 @@
 ---
 title: 命令型コードを使用してワークフロー、アクティビティ、および式を作成する方法
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: cefc9cfc-2882-4eb9-8c94-7a6da957f2b2
-caps.latest.revision: 16
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: efbefbffdc0314826a361b4a165c67ab1828e40b
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: ebc093bf8cd3e87bc04c20e93415aa1d2d2f7867
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="authoring-workflows-activities-and-expressions-using-imperative-code"></a>命令型コードを使用してワークフロー、アクティビティ、および式を作成する方法
 ワークフロー定義は、構成済みのアクティビティ オブジェクトのツリーです。 このアクティビティ ツリーは、手動で XAML を編集したり、ワークフロー デザイナーを使用して XAML を生成したりするなど、多くの方法で定義することができます。 ただし、XAML の使用は必須ではありません。 ワークフロー定義は、プログラムで作成することもできます。 このトピックでは、コードを使用したワークフローの定義、アクティビティ、および式の作成の概要について説明します。 コードを使用して XAML ワークフローを使った作業の例については、次を参照してください。[をシリアル化するワークフローとアクティビティの XAML との間](../../../docs/framework/windows-workflow-foundation/serializing-workflows-and-activities-to-and-from-xaml.md)です。  

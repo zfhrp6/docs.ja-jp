@@ -1,9 +1,6 @@
 ---
-title: "チュートリアル: コンポーネント デザイナーによる Windows サービス アプリケーションの作成"
+title: 'チュートリアル: コンポーネント デザイナーによる Windows サービス アプリケーションの作成'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.technology: dotnet-clr
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -11,16 +8,13 @@ helpviewer_keywords:
 - Windows Service applications, walkthroughs
 - Windows Service applications, creating
 ms.assetid: e24d8a3d-edc6-485c-b6e0-5672d91fb607
-caps.latest.revision: "57"
 author: ghogen
-ms.author: ghogen
 manager: douge
-ms.workload: dotnet
-ms.openlocfilehash: 42fc5f27f1c78e243ff1d3a705c61a20ff459937
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: c33b8badcacd4e228d70f8e770d4bf27144c29eb
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="walkthrough-creating-a-windows-service-application-in-the-component-designer"></a>チュートリアル: コンポーネント デザイナーによる Windows サービス アプリケーションの作成
 この記事では、イベント ログにメッセージを書き込む単純な Windows サービス アプリケーションを Visual Studio で作成する方法を示します。 サービスを作成して使用するために実行する基本的な手順は次のとおりです。  
@@ -54,17 +48,17 @@ ms.lasthandoff: 12/22/2017
   
 #### <a name="to-create-and-configure-your-service"></a>サービスを作成して設定するには  
   
-1.  Visual Studio のメニュー バーで、 **[ファイル]**、 **[新規作成]**、 **[プロジェクト]**の順に選択します。  
+1.  Visual Studio のメニュー バーで、 **[ファイル]**、 **[新規作成]**、 **[プロジェクト]** の順に選択します。  
   
      **[新しいプロジェクト]** ダイアログ ボックスが表示されます。  
   
-2.  Visual Basic や Visual C# のプロジェクト テンプレートの一覧で、 **Windows サービス**を選択し、プロジェクトに「 **MyNewService**」という名前を付けます。 **[OK]**をクリックします。  
+2.  Visual Basic や Visual C# のプロジェクト テンプレートの一覧で、 **Windows サービス**を選択し、プロジェクトに「 **MyNewService**」という名前を付けます。 **[OK]** をクリックします。  
   
      プロジェクト テンプレートは、`Service1` を継承する <xref:System.ServiceProcess.ServiceBase?displayProperty=nameWithType> という名前のコンポーネント クラスを自動的に追加します。  
   
 3.  **[編集]** メニューで、 **[検索と置換]**、 **[フォルダーを指定して検索]** の順にクリックします (キーボード: Ctrl + Shift + F)。 出現するすべての `Service1` を `MyNewService`に変更します。 Service1.cs、Program.cs、および Service1.Designer.cs (または対応する .vb) にインスタンスがあります。  
   
-4.  **Service1.cs [Design]** や **Service1.vb [Design]** の **[プロパティ]**ウィンドウで、 <xref:System.ServiceProcess.ServiceBase.ServiceName%2A> の **と** (Name) `Service1` プロパティが **MyNewService**に設定されていない場合は設定します。  
+4.  **Service1.cs [Design]** や **Service1.vb [Design]** の **[プロパティ]** ウィンドウで、 <xref:System.ServiceProcess.ServiceBase.ServiceName%2A> の **と** (Name) `Service1` プロパティが **MyNewService**に設定されていない場合は設定します。  
   
 5.  ソリューション エクスプローラーで、 **Service1.cs** を **MyNewService.cs**に、または **Service1.vb** を **MyNewService.vb**に変更します。  
   
@@ -74,11 +68,11 @@ ms.lasthandoff: 12/22/2017
   
 #### <a name="to-add-custom-event-log-functionality-to-your-service"></a>サービスにカスタム イベント ログ機能を追加するには  
   
-1.  **ソリューション エクスプローラー**で、 **MyNewService.cs** または **MyNewService.vb**のコンテキスト メニューを開き、 **[デザイナーの表示]**を選択します。  
+1.  **ソリューション エクスプローラー**で、 **MyNewService.cs** または **MyNewService.vb**のコンテキスト メニューを開き、 **[デザイナーの表示]** を選択します。  
   
-2.  **[ツールボックス]** の **[コンポーネント]**セクションから、 <xref:System.Diagnostics.EventLog> コンポーネントをデザイナーにドラッグします。  
+2.  **[ツールボックス]** の **[コンポーネント]** セクションから、 <xref:System.Diagnostics.EventLog> コンポーネントをデザイナーにドラッグします。  
   
-3.  **ソリューション エクスプローラー**で、 **MyNewService.cs** または **MyNewService.vb**のコンテキスト メニューを開き、 **[コードの表示]**を選択します。  
+3.  **ソリューション エクスプローラー**で、 **MyNewService.cs** または **MyNewService.vb**のコンテキスト メニューを開き、 **[コードの表示]** を選択します。  
   
 4.  **クラスの、** 変数を宣言している行の直後に、 `MyNewService` eventLog `components` オブジェクトの宣言を追加します。  
   
@@ -284,15 +278,15 @@ ms.lasthandoff: 12/22/2017
   
 #### <a name="to-create-the-installers-for-your-service"></a>サービスのインストーラーを作成するには  
   
-1.  **ソリューション エクスプローラー**で、 **MyNewService.cs** または **MyNewService.vb**のコンテキスト メニューを開き、 **[デザイナーの表示]**を選択します。  
+1.  **ソリューション エクスプローラー**で、 **MyNewService.cs** または **MyNewService.vb**のコンテキスト メニューを開き、 **[デザイナーの表示]** を選択します。  
   
 2.  デザイナーの背景をクリックして、サービスの内容ではなくサービス自体を選択します。  
   
-3.  デザイナー ウィンドウのコンテキスト メニューを開き (ポインティング デバイスを使用している場合は、ウィンドウ内を右クリック)、 **[インストーラーの追加]**を選択します。  
+3.  デザイナー ウィンドウのコンテキスト メニューを開き (ポインティング デバイスを使用している場合は、ウィンドウ内を右クリック)、 **[インストーラーの追加]** を選択します。  
   
      既定では、2 つのインストーラーを含むコンポーネント クラスがプロジェクトに追加されます。 このコンポーネントは **ProjectInstaller**という名前で、サービス用のインストーラーと、サービスの関連プロセス用のインストーラーを含んでいます。  
   
-4.  **[ProjectInstaller]** の **[デザイン]**ビューで、 **[serviceInstaller1]** (Visual C# プロジェクトの場合) または **[ServiceInstaller1]** (Visual Basic プロジェクトの場合) を選択します。  
+4.  **[ProjectInstaller]** の **[デザイン]** ビューで、 **[serviceInstaller1]** (Visual C# プロジェクトの場合) または **[ServiceInstaller1]** (Visual Basic プロジェクトの場合) を選択します。  
   
 5.  **[プロパティ]** ウィンドウで、 <xref:System.ServiceProcess.ServiceInstaller.ServiceName%2A> プロパティが **MyNewService**に設定されていることを確認します。  
   
@@ -411,9 +405,9 @@ End Sub
   
 #### <a name="to-build-your-service-project"></a>サービス プロジェクトをビルドするには  
   
-1.  **ソリューション エクスプローラー**で、プロジェクトのコンテキスト メニューを開き、 **[プロパティ]**を選択します。 プロジェクトのプロパティ ページが表示されます。  
+1.  **ソリューション エクスプローラー**で、プロジェクトのコンテキスト メニューを開き、 **[プロパティ]** を選択します。 プロジェクトのプロパティ ページが表示されます。  
   
-2.  [アプリケーション] タブで、 **[スタートアップ オブジェクト]** ボックスの一覧の **[MyNewService.Program]**を選択します。  
+2.  [アプリケーション] タブで、 **[スタートアップ オブジェクト]** ボックスの一覧の **[MyNewService.Program]** を選択します。  
   
 3.  **ソリューション エクスプローラー**で、プロジェクトのコンテキスト メニューを開き、 **[ビルド]** を選択してプロジェクトをビルドします (キーボード: Ctrl + Shift + B)。  
   
@@ -423,7 +417,7 @@ End Sub
   
 #### <a name="to-install-a-windows-service"></a>Windows サービスをインストールするには  
   
-1.  Windows 7 および Windows Server の **[スタート]** メニューで、 **[Visual Studio ツール]** の **[開発者コマンド プロンプト]** を開きます。 Windows 8 または Windows 8.1 の **[スタート]** 画面で、 **[Visual Studio ツール]** タイルを選択し、管理者資格情報を使用して開発者コマンド プロンプトを実行します。 (マウスを使用している場合は、 **[開発者コマンド プロンプト]**を右クリックし、 **[管理者として実行]**を選択します)  
+1.  Windows 7 および Windows Server の **[スタート]** メニューで、 **[Visual Studio ツール]** の **[開発者コマンド プロンプト]** を開きます。 Windows 8 または Windows 8.1 の **[スタート]** 画面で、 **[Visual Studio ツール]** タイルを選択し、管理者資格情報を使用して開発者コマンド プロンプトを実行します。 (マウスを使用している場合は、 **[開発者コマンド プロンプト]** を右クリックし、 **[管理者として実行]** を選択します)  
   
 2.  コマンド プロンプト ウィンドウで、プロジェクトの出力が格納されているフォルダーに移動します。 たとえば、ユーザーの [マイ ドキュメント] フォルダーで、Visual Studio 2013\Projects\MyNewService\bin\Debug に移動します。  
   
@@ -450,9 +444,9 @@ End Sub
   
      ![[サービス] ウィンドウの MyNewService。] (../../../docs/framework/windows-services/media/windowsservices-serviceswindow.PNG "WindowsServices_ServicesWindow")  
   
-2.  **[サービス]** ウィンドウで、サービスのショートカット メニューを開き、 **[開始]**を選択します。  
+2.  **[サービス]** ウィンドウで、サービスのショートカット メニューを開き、 **[開始]** を選択します。  
   
-3.  サービスのショートカット メニューを開き、 **[停止]**を選択します。  
+3.  サービスのショートカット メニューを開き、 **[停止]** を選択します。  
   
 4.  (省略可能) コマンド ラインからコマンド `net start``ServiceName` プロシージャの `net stop``ServiceName` を使用することで、サービスを開始および停止できます。  
   
@@ -488,7 +482,7 @@ End Sub
   
  インストーラーを使用すると、アプリケーションの実行時にイベント ログを作成する代わりに、アプリケーションのインストール時にイベント ログを作成できます。 さらに、イベント ログは、アプリケーションがアンインストールされたときにインストーラーによって削除されます。 詳細については、 <xref:System.Diagnostics.EventLogInstaller> のリファレンス ページを参照してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Windows サービス アプリケーション](../../../docs/framework/windows-services/index.md)  
  [Windows サービス アプリケーションの概要](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)  
  [方法 : Windows サービス アプリケーションをデバッグする](../../../docs/framework/windows-services/how-to-debug-windows-service-applications.md)  

@@ -1,21 +1,14 @@
 ---
-title: "機能がまだ実装されていません"
+title: 機能がまだ実装されていません
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vbrID32768
 ms.assetid: 487361ea-7158-479f-ad25-9e7c9b5ea3a6
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 82b1c5e5c19bc1835f2232c31f704a193cf0f118
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: 9ab141faddbedab2decc0e450a77fc5f1895b481
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="feature-not-yet-implemented"></a>機能がまだ実装されていません
 Visual Basic で現在実装されていない機能にアクセスしようとしました。  
@@ -24,6 +17,6 @@ Visual Basic で現在実装されていない機能にアクセスしようと�
   
 -   参照を削除します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [エラーの種類](../../visual-basic/programming-guide/language-features/error-types.md)  
 

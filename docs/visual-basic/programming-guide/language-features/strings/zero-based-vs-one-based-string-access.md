@@ -1,25 +1,14 @@
 ---
 title: 0 から始まる vs です。Visual Basic で文字列の 1 つに基づいたアクセス
-ms.custom: ''
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - strings [Visual Basic], indexing
 ms.assetid: 0ed39f35-d68e-421d-ae14-460a5c0373b8
-caps.latest.revision: 11
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: bbc418147a83b93f94449beb607d7f6bc3eff7a2
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: a0a42f72d94adf1c10865374017fa61e833df40f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="zero-based-vs-one-based-string-access-in-visual-basic"></a>0 から始まる vs です。Visual Basic で文字列の 1 つに基づいたアクセス
 このトピックでどの Visual Basic を比較し、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]文字列の文字へのアクセスを提供します。 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]常に、文字列の文字に 0 から始まるアクセスを提供し、Visual Basic は、関数によって、0 から始まると 1 つベースのアクセスを提供します。  

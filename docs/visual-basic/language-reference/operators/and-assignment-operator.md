@@ -1,12 +1,6 @@
 ---
 title: '&amp;= 演算子 (Visual Basic)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.&=
 helpviewer_keywords:
@@ -16,14 +10,11 @@ helpviewer_keywords:
 - '&= operator [Visual Basic]'
 - compound assignment statements [Visual Basic]
 ms.assetid: 0cf262fc-1a05-419a-a503-60013f111c8a
-caps.latest.revision: 15
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 929a9e8c3384451679fc52ad478eb03219d67192
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: c3db2d4095600f32af92d1a4ce1f806a3f032af0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="amp-operator-visual-basic"></a>&amp;= 演算子 (Visual Basic)
 連結、`String`式を`String`変数またはプロパティと、結果を変数またはプロパティに割り当てます。  
@@ -36,10 +27,10 @@ variableorproperty &= expression
   
 ## <a name="parts"></a>指定項目  
  `variableorproperty`  
- 必須です。 どの`String`変数またはプロパティ。  
+ 必須。 どの`String`変数またはプロパティ。  
   
  `expression`  
- 必須です。 任意のブール型 (`String`) の式を指定します。  
+ 必須。 任意のブール型 (`String`) の式を指定します。  
   
 ## <a name="remarks"></a>コメント  
  左側にある要素、`&=`演算子は、単純なスカラー変数、プロパティ、または配列の要素を指定できます。 変数またはプロパティにできません。 [ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md)です。 `&=`演算子は、連結、 `String` 、右辺の式、`String`変数またはプロパティの左側にし、変数またはプロパティの左側に結果を代入します。  

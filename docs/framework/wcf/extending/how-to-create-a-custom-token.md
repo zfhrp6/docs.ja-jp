@@ -1,14 +1,6 @@
 ---
 title: '方法 : カスタム トークンを作成する'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -18,22 +10,16 @@ helpviewer_keywords:
 - WSSecurityTokenSerializer class
 - SecurityToken class
 ms.assetid: 6d892973-1558-4115-a9e1-696777776125
-caps.latest.revision: 14
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: c270b63586809044f1bb3e56841ae8cf590e7bb1
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
-ms.translationtype: MT
+ms.openlocfilehash: eb227075b1a696216e62e851aa8b10c7511ac93f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-a-custom-token"></a>方法 : カスタム トークンを作成する
 ここでは、<xref:System.IdentityModel.Tokens.SecurityToken> を使用してカスタムのセキュリティ トークンを作成する方法と、作成したトークンを、カスタム セキュリティ トークン プロバイダーおよび認証システムと統合する方法について説明します。 完全なコード例については、[カスタム トークン](../../../../docs/framework/wcf/samples/custom-token.md)サンプルです。  
   
- A*セキュリティ トークン*によって使用される XML 要素基本的には、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] SOAP メッセージ内の送信者に関するクレームを表すセキュリティ フレームワークです。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] セキュリティは、システム指定の認証モードで使用するさまざまなトークンを提供します。 たとえば、<xref:System.IdentityModel.Tokens.X509SecurityToken> クラスによって表される X.509 証明書セキュリティ トークンや、<xref:System.IdentityModel.Tokens.UserNameSecurityToken> クラスによって表されるユーザー名セキュリティ トークンなどがあります。  
+ A*セキュリティ トークン*本質的には、XML 要素を SOAP メッセージ内の送信者に関するクレームを表すために、Windows Communication Foundation (WCF) のセキュリティ フレームワークによって使用されます。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] セキュリティは、システム指定の認証モードで使用するさまざまなトークンを提供します。 たとえば、<xref:System.IdentityModel.Tokens.X509SecurityToken> クラスによって表される X.509 証明書セキュリティ トークンや、<xref:System.IdentityModel.Tokens.UserNameSecurityToken> クラスによって表されるユーザー名セキュリティ トークンなどがあります。  
   
  認証モードや資格情報は、指定した種類のトークンではサポートされないことがあります。 そのような場合は、SOAP メッセージ内部のカスタム資格情報の XML 表現を提供するカスタム セキュリティ トークンを作成する必要があります。  
   

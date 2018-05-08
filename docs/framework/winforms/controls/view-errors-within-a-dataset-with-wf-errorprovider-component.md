@@ -1,13 +1,6 @@
 ---
-title: "方法 : Windows フォーム ErrorProvider コンポーネントで DataSet 内にエラーを表示する"
-ms.custom: 
+title: '方法 : Windows フォーム ErrorProvider コンポーネントで DataSet 内にエラーを表示する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,16 +9,11 @@ helpviewer_keywords:
 - error messages [Windows Forms], viewing in datasets
 - ErrorProvider component [Windows Forms], dataset errors
 ms.assetid: cbae023f-d651-4210-bdea-bcc5f037e321
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 27ef4200996108e378273c5f813106d4f82dacd8
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f00d874f2a4afcea3498a64fe946a93c83eb7b9e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-view-errors-within-a-dataset-with-the-windows-forms-errorprovider-component"></a>方法 : Windows フォーム ErrorProvider コンポーネントで DataSet 内にエラーを表示する
 Windows フォームを使用することができます<xref:System.Windows.Forms.ErrorProvider>データセットまたはその他のデータ ソース内で列エラーを表示するコンポーネントです。 <xref:System.Windows.Forms.ErrorProvider>フォームのデータのエラーを表示するコンポーネントであるがないコントロールに直接関連付けられています。 データ ソースにバインドされていると、同じデータ ソースにバインドされている任意のコントロールの横にエラー アイコンを表示できます。  
@@ -73,6 +61,6 @@ Windows フォームを使用することができます<xref:System.Windows.For
     this.BindingContext [DataTable1].Position = 5;  
     ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ErrorProvider コンポーネントの概要](../../../../docs/framework/winforms/controls/errorprovider-component-overview-windows-forms.md)  
  [方法: Windows フォーム ErrorProvider コンポーネントを使用してフォーム検証でエラー アイコンを表示する](../../../../docs/framework/winforms/controls/display-error-icons-for-form-validation-with-wf-errorprovider.md)

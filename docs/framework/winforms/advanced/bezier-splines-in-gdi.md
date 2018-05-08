@@ -1,13 +1,6 @@
 ---
-title: "B &#233; ベジエ スプライン GDI + で"
-ms.custom: 
+title: B&#233;ベジエ スプライン GDI + で
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,18 +9,13 @@ helpviewer_keywords:
 - splines [Windows Forms], Bezier
 - GDI+, Bezier splines
 ms.assetid: 5774ce1e-87d4-4bc7-88c4-4862052781b8
-caps.latest.revision: "16"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 8cc06a81c879e6ebd50c4eb6a70590c28cc43f6e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 2e247ec2bcd57c2fb2f5c32f61d38a2e7a267ff1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="b233zier-splines-in-gdi"></a>B &#233; ベジエ スプライン GDI + で
+# <a name="b233zier-splines-in-gdi"></a>B&#233;ベジエ スプライン GDI + で
 ベジエ スプラインは、4 つのポイントで指定された曲線: 次の 2 つの終点 (p1 と p2) と 2 つの制御ポイント (c1 と c2)。 曲線では、p1 で開始され、p2 で終了します。 コントロール ポイントを曲線が通過しませんが、管理ポイントが磁石、特定の方向に曲線をプルし、曲線曲がる方法に影響を与えるとして機能します。 次の図は、およびそのエンドポイントとの制御点のベジエ曲線を示します。  
   
  ![ベジエ スプライン](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art11a.gif "Aboutgdip02_art11a")  
@@ -48,7 +36,7 @@ ms.lasthandoff: 12/22/2017
   
  ![パス](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art13.gif "Aboutgdip02_art13")  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Drawing.Graphics?displayProperty=nameWithType>  
  <xref:System.Drawing.Pen?displayProperty=nameWithType>  
  [直線、曲線、および図形](../../../../docs/framework/winforms/advanced/lines-curves-and-shapes.md)  

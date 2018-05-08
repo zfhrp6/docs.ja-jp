@@ -1,14 +1,6 @@
 ---
-title: "ImageList コンポーネントの概要 (Windows フォーム)"
-ms.custom: 
+title: ImageList コンポーネントの概要 (Windows フォーム)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - ImageList
 helpviewer_keywords:
@@ -16,17 +8,11 @@ helpviewer_keywords:
 - icon list control
 - ImageList component [Windows Forms], about ImageList component
 ms.assetid: 7e25d89b-5633-40c1-afc3-82e0e301ffa2
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: a913de1a6808c7e600a4f28ed58dedf93506466b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: bda9bb71dd2e9b6da2de2444013ed724979f61af
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="imagelist-component-overview-windows-forms"></a>ImageList コンポーネントの概要 (Windows フォーム)
 Windows フォーム <xref:System.Windows.Forms.ImageList> コンポーネントは、コントロールで表示するイメージの保存に使用します。 イメージ リストでは、一貫性のある 1 つのイメージのカタログのコードを記述することができます。 たとえば、ボタンの <xref:System.Windows.Forms.ButtonBase.ImageIndex%2A> プロパティまたは <xref:System.Windows.Forms.ButtonBase.ImageKey%2A> プロパティを変更するだけで、<xref:System.Windows.Forms.Button> コントロールによって表示されるイメージを回転できます。 同じイメージのリストを複数のコントロールに関連付けることもできます。 たとえば、<xref:System.Windows.Forms.ListView> コントロールと <xref:System.Windows.Forms.TreeView> コントロールの両方を使用して同じファイルのリストを表示する場合、イメージのリストでファイルのアイコンを変更すると、新しいアイコンが両方のビューに表示されます。  
@@ -39,6 +25,6 @@ Windows フォーム <xref:System.Windows.Forms.ImageList> コンポーネント
   
  [!INCLUDE[vsprvslong](../../../../includes/vsprvslong-md.md)] を使用している場合は、アプリケーションで使用する標準のイメージの大規模なライブラリにアクセスできます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.ImageList>  
  [方法: Windows フォームの ImageList コンポーネントにイメージを追加または削除する](../../../../docs/framework/winforms/controls/how-to-add-or-remove-images-with-the-windows-forms-imagelist-component.md)

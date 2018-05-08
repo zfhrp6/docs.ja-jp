@@ -1,28 +1,16 @@
 ---
-title: "x:FactoryMethod ディレクティブ"
-ms.custom: 
+title: x:FactoryMethod ディレクティブ
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - XAML. x:FactoryMethod directive [XAML Services]
 - FactoryMethod directive in XAML [XAML Services]
 - x:FactoryMethod directive [XAML Services]
 ms.assetid: 829bcbdf-5318-4afb-9a03-c310e0d2f23d
-caps.latest.revision: "8"
-author: wadepickett
-ms.author: wpickett
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 58349c5440d0062c64346933e48b64de6c4c7b60
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 75225e624abdd3dc0862a04fae409da48b3f0d1e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="xfactorymethod-directive"></a>x:FactoryMethod ディレクティブ
 XAML プロセッサが、バッキング型の解決後、オブジェクトを初期化するために使用するコンス トラクター以外の方法を指定します。  
@@ -61,11 +49,11 @@ XAML プロセッサが、バッキング型の解決後、オブジェクトを
   
  工場出荷時のメソッドは、関連するオブジェクトに割り当てることができるインスタンスを返す必要があります。 ファクトリ メソッドにする必要があります null を返すことはありません。  
   
- `x:Arguments`ファクトリ メソッドのシグネチャに最も適しているの原則で動作します。 パラメーターの数を最初に評価に一致します。 パラメーターの数に一致する 1 つ以上の場合は、パラメーターの型がで評価されると最適な組み合わせが決定されます。 評価のこのフェーズの後にあいまいさが残る、XAML プロセッサの動作は未定義です。  
+ `x:Arguments` ファクトリ メソッドのシグネチャに最も適しているの原則で動作します。 パラメーターの数を最初に評価に一致します。 パラメーターの数に一致する 1 つ以上の場合は、パラメーターの型がで評価されると最適な組み合わせが決定されます。 評価のこのフェーズの後にあいまいさが残る、XAML プロセッサの動作は未定義です。  
   
- `x:FactoryMethod`要素の使用法がプロパティ要素の使用、一般的な意味で、ディレクティブのマークアップが含まれるオブジェクト要素の型を参照していないためです。 推測要素の使用方法は、属性の使用方法ほど一般的です。 `x:Arguments`と共に使用できます (属性または要素のいずれかの利用率)`x:FactoryMethod`要素の使用方法が、これは具体的には表示されません使用状況のセクションでします。  
+ `x:FactoryMethod`要素の使用法がプロパティ要素の使用、一般的な意味で、ディレクティブのマークアップが含まれるオブジェクト要素の型を参照していないためです。 推測要素の使用方法は、属性の使用方法ほど一般的です。 `x:Arguments` と共に使用できます (属性または要素のいずれかの利用率)`x:FactoryMethod`要素の使用方法が、これは具体的には表示されません使用状況のセクションでします。  
   
- `x:FactoryMethod`要素には、その他のすべてのプロパティ要素が前に指定する必要があります、としてはいずれかで始まる必要があります`x:Arguments`も、要素として提供されており、コンテンツ/内部のテキスト/初期化のテキストの前にする必要があります。  
+ `x:FactoryMethod` 要素には、その他のすべてのプロパティ要素が前に指定する必要があります、としてはいずれかで始まる必要があります`x:Arguments`も、要素として提供されており、コンテンツ/内部のテキスト/初期化のテキストの前にする必要があります。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [x:Arguments ディレクティブ](../../../docs/framework/xaml-services/x-arguments-directive.md)

@@ -1,23 +1,15 @@
 ---
-title: "属性リスト (Visual Basic)"
+title: 属性リスト (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - attribute list
 - attributes [Visual Basic], applying
 ms.assetid: 5880073a-68a4-4b6b-8a07-ace32959a4e2
-caps.latest.revision: "18"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: adfb980380bb787280715ca0185950657e174eb1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 35d031722a5eddd6adce5e32df62b86c500d305b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="attribute-list-visual-basic"></a>属性リスト (Visual Basic)
 宣言されたプログラミング要素に適用される属性を指定します。 複数の属性を指定するときは、コンマで区切ります。 1 つの属性の構文を次に示します。  
@@ -33,13 +25,13 @@ ms.lasthandoff: 11/21/2017
  ソース ファイルの先頭に適用される属性に必須です。 指定できます[アセンブリ](../../../visual-basic/language-reference/modifiers/assembly.md)または[モジュール](../../../visual-basic/language-reference/modifiers/module-keyword.md)です。  
   
  `attributename`  
- 必須です。 属性の名前。  
+ 必須。 属性の名前。  
   
  `attributearguments`  
- 省略可能です。 この属性の位置指定引数の一覧です。 複数の引数は、コンマで区切られます。  
+ 任意。 この属性の位置指定引数の一覧です。 複数の引数は、コンマで区切られます。  
   
  `attributeinitializer`  
- 省略可能です。 この属性の変数またはプロパティの初期化子の一覧です。 複数の初期化子は、コンマで区切られます。  
+ 任意。 この属性の変数またはプロパティの初期化子の一覧です。 複数の初期化子は、コンマで区切られます。  
   
 ## <a name="remarks"></a>コメント  
  (型、プロシージャ、プロパティ、およびなど)、ほぼすべてのプログラミング要素には、1 つまたは複数の属性を適用できます。 属性がアセンブリのメタデータに表示され、コードに注釈を付けるか、特定のプログラミング要素を使用する方法を指定するのに役立ちます。 Visual Basic と .NET Framework によって定義された属性を適用して、独自の属性を定義することができます。  
@@ -63,7 +55,7 @@ ms.lasthandoff: 11/21/2017
   
  [!code-vb[VbVbalrStatements#1](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/attribute-list_1.vb)]  
   
- <xref:System.Runtime.InteropServices.DllImportAttribute>属性付きの手順がアンマネージ ダイナミック リンク ライブラリ (DLL) のエントリ ポイントを表すことを示します。 属性は、位置指定引数として DLL 名と変数の初期化子とその他の情報を提供します。  
+ <xref:System.Runtime.InteropServices.DllImportAttribute> 属性付きの手順がアンマネージ ダイナミック リンク ライブラリ (DLL) のエントリ ポイントを表すことを示します。 属性は、位置指定引数として DLL 名と変数の初期化子とその他の情報を提供します。  
   
 ## <a name="see-also"></a>関連項目  
  [Assembly](../../../visual-basic/language-reference/modifiers/assembly.md)  

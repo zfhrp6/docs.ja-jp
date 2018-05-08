@@ -1,36 +1,22 @@
 ---
 title: ServiceModel 属性および ServiceDescription 参照
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 4ab86b17-eab9-4846-a881-0099f9a7cc64
-caps.latest.revision: 13
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: ba8888c2a1bd3c16ab6d216c365870c0df0e499a
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: cc7c36ff7a1c81227f118ee7113be8f7f9eb2e9f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="servicemodel-attributes-and-servicedescription-reference"></a>ServiceModel 属性および ServiceDescription 参照
-*説明ツリー*型の階層は、(以降で、<xref:System.ServiceModel.Description.ServiceDescription?displayProperty=nameWithType>クラス)、サービスのすべての側面を同時に記述します。 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] では、説明ツリーを使用して、有効なサービス ランタイムの構築、Web サービス記述言語 (WSDL: Web Services Description Language)、XML スキーマ定義言語 (XSD: XML Schema Definition language)、およびクライアントが接続して使用できるサービスに関するポリシー アサーション (メタデータ) の公開、説明ツリーの値を表すさまざまなコードと構成ファイルの生成を行います。  
+*説明ツリー*型の階層は、(以降で、<xref:System.ServiceModel.Description.ServiceDescription?displayProperty=nameWithType>クラス)、サービスのすべての側面を同時に記述します。 Windows Communication Foundation (WCF) では、説明ツリーを使用して、Web サービス記述言語 (WSDL)、XML スキーマ定義言語 (XSD)、およびクライアントを使用して、サービスに関するポリシー アサーション (メタデータ) 公開の有効なサービス ランタイムを構築接続し、サービスを使用し、さまざまな構成ファイルを表すコードと、説明ツリーの値を生成します。  
   
  ここでは、サービス コントラクトからコントラクトに関連するプロパティが取得されるしくみ、およびこれらのプロパティが実装され、説明ツリーに追加されるしくみについて説明します。 属性値が動作プロパティに変換された後、動作が説明ツリーに挿入される場合もあります。 説明ツリーの値がメタデータに変換される方法の詳細については、次を参照してください。 [ServiceDescription と WSDL 参照](../../../../docs/framework/wcf/feature-details/servicedescription-and-wsdl-reference.md)です。  
   
 ## <a name="mapping-operations-to-the-description-tree"></a>説明ツリーへの操作のマッピング  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションでは、サービス コントラクトが、属性を使用してインターフェイスまたはクラスとそのメソッドを操作のグループとしてマークするインターフェイス (またはクラス) によってモデル化されます。 <xref:System.ServiceModel.ServiceHost> クラスを開くと、サービス コントラクトと実装が構成情報に反映され、構成情報とマージされて、説明ツリーに挿入されます。  
+ WCF アプリケーションで、サービス コントラクトはインターフェイス (またはクラス) によってモデル化されている属性を使用して、操作のグループをインターフェイスまたはクラスとそのメソッドをマークします。 <xref:System.ServiceModel.ServiceHost> クラスを開くと、サービス コントラクトと実装が構成情報に反映され、構成情報とマージされて、説明ツリーに挿入されます。  
   
- 操作のモデルの 2 種類があります。*パラメーター*モデルおよび*メッセージ コントラクト*モデル。 パラメーター モデルでは、<xref:System.ServiceModel.MessageContractAttribute?displayProperty=nameWithType> クラスによってマークされたパラメーターまたは戻り値の型を持たないマネージ メソッドを使用します。 このモデルでは、開発者がパラメーターと戻り値のシリアル化を制御しますが、サービスとそのコントラクトの説明ツリーの設定に使用する値は [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] によって生成されます。  
+ 操作のモデルの 2 種類があります。*パラメーター*モデルおよび*メッセージ コントラクト*モデル。 パラメーター モデルでは、<xref:System.ServiceModel.MessageContractAttribute?displayProperty=nameWithType> クラスによってマークされたパラメーターまたは戻り値の型を持たないマネージ メソッドを使用します。 このモデルでは、開発者が値を返すし、パラメーターのシリアル化を制御が WCF サービスとそのコントラクトの説明ツリーの設定に使用される値が生成されます。  
   
  構成ファイルで指定されたバインディングは、<xref:System.ServiceModel.Description.ServiceEndpoint.Binding%2A?displayProperty=nameWithType> プロパティに直接読み込まれます。  
   

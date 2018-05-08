@@ -1,27 +1,15 @@
 ---
-title: "マルチメディアの概要"
-ms.custom: 
+title: マルチメディアの概要
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - multimedia [WPF]
 - media [WPF]
 ms.assetid: feb25b15-d741-4ac3-818f-1b19f63a3562
-caps.latest.revision: "19"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 65553e18fc66825c9c0a991aba600b4b90d0d4c0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 7a986125cff1ff4812528212fa3aee7689af1f16
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="multimedia-overview"></a>マルチメディアの概要
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] のマルチメディア機能を使用してアプリケーションにオーディオとビデオを統合することで、ユーザー エクスペリエンスを向上させることできます。 このトピックでは、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] のマルチメディア機能の概要を説明します。  
@@ -32,7 +20,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="media-api"></a>メディア API  
  <xref:System.Windows.Controls.MediaElement>と<xref:System.Windows.Media.MediaPlayer>クラスを使用するオーディオまたはビデオ コンテンツを表示します。 これらのクラスは、対話式またはクロックで制御できます。 これらのクラスは、メディアを再生するために [!INCLUDE[TLA#tla_wmp](../../../../includes/tlasharptla-wmp-md.md)] 10 のコントロールで使用できます。 どちらのクラスを使用するかは、シナリオによって決まります。  
   
- <xref:System.Windows.Controls.MediaElement><xref:System.Windows.UIElement>でサポートされている、[レイアウト](../../../../docs/framework/wpf/advanced/layout.md)あり、多くのコントロールのコンテンツとして使用することができます。 [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] でコードとして使用することもできます。 <xref:System.Windows.Media.MediaPlayer>、その一方で、は用に設計された<xref:System.Windows.Media.Drawing>オブジェクトおよびレイアウトをサポートしません。 使用して読み込まれたメディア、<xref:System.Windows.Media.MediaPlayer>でのみ表示できますを使用して、<xref:System.Windows.Media.VideoDrawing>またはと直接やり取りすることによって、<xref:System.Windows.Media.DrawingContext>です。 <xref:System.Windows.Media.MediaPlayer>XAML では使用できません。  
+ <xref:System.Windows.Controls.MediaElement> <xref:System.Windows.UIElement>でサポートされている、[レイアウト](../../../../docs/framework/wpf/advanced/layout.md)あり、多くのコントロールのコンテンツとして使用することができます。 [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] でコードとして使用することもできます。 <xref:System.Windows.Media.MediaPlayer>、その一方で、は用に設計された<xref:System.Windows.Media.Drawing>オブジェクトおよびレイアウトをサポートしません。 使用して読み込まれたメディア、<xref:System.Windows.Media.MediaPlayer>でのみ表示できますを使用して、<xref:System.Windows.Media.VideoDrawing>またはと直接やり取りすることによって、<xref:System.Windows.Media.DrawingContext>です。 <xref:System.Windows.Media.MediaPlayer> XAML では使用できません。  
   
  描画オブジェクトと描画コンテキストの詳細については、「[描画オブジェクトの概要](../../../../docs/framework/wpf/graphics-multimedia/drawing-objects-overview.md)」を参照してください。  
   
@@ -88,7 +76,7 @@ ms.lasthandoff: 12/22/2017
 ### <a name="controlling-a-mediaelement"></a>MediaElement の制御  
  <xref:System.Windows.Controls.MediaElement.LoadedBehavior%2A>と<xref:System.Windows.Controls.MediaElement.UnloadedBehavior%2A>プロパティの動作を制御する、<xref:System.Windows.Controls.MediaElement>とき<xref:System.Windows.FrameworkElement.IsLoaded%2A>は`true`または`false`、それぞれします。 <xref:System.Windows.Controls.MediaState>メディア再生の動作に影響を与えるプロパティが設定されます。 たとえば、既定値<xref:System.Windows.Controls.MediaElement.LoadedBehavior%2A>は<xref:System.Windows.Controls.MediaState.Play>と既定<xref:System.Windows.Controls.MediaElement.UnloadedBehavior%2A>は<xref:System.Windows.Controls.MediaState.Close>します。 つまり、このとすぐに、<xref:System.Windows.Controls.MediaElement>が読み込まれて、プリロールが完了すると、メディアの再生が開始されるとします。 再生が完了すると、メディアが閉じられ、すべてのメディア リソースが解放されます。  
   
- <xref:System.Windows.Controls.MediaElement.LoadedBehavior%2A>と<xref:System.Windows.Controls.MediaElement.UnloadedBehavior%2A>プロパティがメディアの再生を制御する唯一の方法ではありません。 クロック モードで、クロックを制御できます、<xref:System.Windows.Controls.MediaElement>対話型コントロール メソッドが制御できると、<xref:System.Windows.Controls.MediaElement.LoadedBehavior%2A>は<xref:System.Windows.Controls.MediaState.Manual>します。 <xref:System.Windows.Controls.MediaElement>次の優先順位を評価することによって、このコントロールでの競合を処理します。  
+ <xref:System.Windows.Controls.MediaElement.LoadedBehavior%2A>と<xref:System.Windows.Controls.MediaElement.UnloadedBehavior%2A>プロパティがメディアの再生を制御する唯一の方法ではありません。 クロック モードで、クロックを制御できます、<xref:System.Windows.Controls.MediaElement>対話型コントロール メソッドが制御できると、<xref:System.Windows.Controls.MediaElement.LoadedBehavior%2A>は<xref:System.Windows.Controls.MediaState.Manual>します。 <xref:System.Windows.Controls.MediaElement> 次の優先順位を評価することによって、このコントロールでの競合を処理します。  
   
 1.  <xref:System.Windows.Controls.MediaElement.UnloadedBehavior%2A>。 メディアがアンロードされているときに有効です。 これにより、既定では、すべてのメディア リソースを解放する場合でも、<xref:System.Windows.Media.MediaClock>に関連付けられている、<xref:System.Windows.Controls.MediaElement>です。  
   
@@ -107,7 +95,7 @@ ms.lasthandoff: 12/22/2017
   
 <a name="mediaplayer"></a>   
 ## <a name="mediaplayer-class"></a>MediaPlayer クラス  
- 該当します。、<xref:System.Windows.Controls.MediaElement>クラスは、フレームワーク要素、<xref:System.Windows.Media.MediaPlayer>クラスで使用するものでは<xref:System.Windows.Media.Drawing>オブジェクト。 パフォーマンス上の利点を取得するためにフレームワーク レベルの機能を犠牲にする必要がある場合または描画オブジェクトで使用<xref:System.Windows.Freezable>機能します。 <xref:System.Windows.Media.MediaPlayer>アプリケーションでメディア コンテンツを提供するときにこれらの機能を利用できます。 同様に<xref:System.Windows.Controls.MediaElement>、<xref:System.Windows.Media.MediaPlayer>独立で使用できるまたは時刻のモードはありませんが、<xref:System.Windows.Controls.MediaElement>オブジェクトのアンロードし、読み込み状態。 これは再生コントロールの複雑さを軽減、<xref:System.Windows.Media.MediaPlayer>です。  
+ 該当します。、<xref:System.Windows.Controls.MediaElement>クラスは、フレームワーク要素、<xref:System.Windows.Media.MediaPlayer>クラスで使用するものでは<xref:System.Windows.Media.Drawing>オブジェクト。 パフォーマンス上の利点を取得するためにフレームワーク レベルの機能を犠牲にする必要がある場合または描画オブジェクトで使用<xref:System.Windows.Freezable>機能します。 <xref:System.Windows.Media.MediaPlayer> アプリケーションでメディア コンテンツを提供するときにこれらの機能を利用できます。 同様に<xref:System.Windows.Controls.MediaElement>、<xref:System.Windows.Media.MediaPlayer>独立で使用できるまたは時刻のモードはありませんが、<xref:System.Windows.Controls.MediaElement>オブジェクトのアンロードし、読み込み状態。 これは再生コントロールの複雑さを軽減、<xref:System.Windows.Media.MediaPlayer>です。  
   
 ### <a name="controlling-mediaplayer"></a>Media Player の制御  
  <xref:System.Windows.Media.MediaPlayer>はステートレスであるメディア再生を制御する方法は 2 つです。  
@@ -123,7 +111,7 @@ ms.lasthandoff: 12/22/2017
   
  参照してください、[描画オブジェクトの概要](../../../../docs/framework/wpf/graphics-multimedia/drawing-objects-overview.md)の詳細については<xref:System.Windows.Media.Drawing>オブジェクト。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Media.DrawingGroup>  
  [レイアウト](../../../../docs/framework/wpf/advanced/layout.md)  
  [方法トピック](../../../../docs/framework/wpf/graphics-multimedia/audio-and-video-how-to-topics.md)

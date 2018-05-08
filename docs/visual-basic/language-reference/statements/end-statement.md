@@ -1,11 +1,6 @@
 ---
-title: "End ステートメント"
+title: End ステートメント
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.End
 - End
@@ -19,14 +14,11 @@ helpviewer_keywords:
 - End statement [Visual Basic]
 - execution [Visual Basic], stopping
 ms.assetid: 0e64467c-0f34-4aab-9ddd-43f8b9d55d90
-caps.latest.revision: "19"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: b692409f2895f5e9b713c57fc35ff2def40bce75
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 864ac5ef1713f8ffa93c18accede8ecd5b3b7a8c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="end-statement"></a>End ステートメント
 すぐに実行を終了します。  
@@ -38,7 +30,7 @@ End
 ```  
   
 ## <a name="remarks"></a>コメント  
- 配置することができます、`End`ステートメント、プロシージャを強制的に実行を停止するアプリケーション全体で任意の場所。 `End`使用して開いたファイルをすべて閉じます、`Open`ステートメントと、アプリケーションのすべての変数を消去します。 コードが実行されている、そのオブジェクトへの参照を保持している他のプログラムがないとすぐにアプリケーションを閉じます。  
+ 配置することができます、`End`ステートメント、プロシージャを強制的に実行を停止するアプリケーション全体で任意の場所。 `End` 使用して開いたファイルをすべて閉じます、`Open`ステートメントと、アプリケーションのすべての変数を消去します。 コードが実行されている、そのオブジェクトへの参照を保持している他のプログラムがないとすぐにアプリケーションを閉じます。  
   
 > [!NOTE]
 >  `End`ステートメントが突然、コードの実行を停止しは呼び出されません、`Dispose`または`Finalize`メソッド、またはその他の Visual Basic コードです。 その他のプログラムによって保持されているオブジェクトの参照が無効になります。 場合、`End`内でステートメントが検出された、`Try`または`Catch`ブロック、コントロールに対応する渡しません`Finally`ブロックします。  
@@ -50,7 +42,7 @@ End
  使用する必要があります`End`限り注意して、必要なときにすぐに停止します。 プロシージャを終了する通常の方法 ([Return ステートメント](../../../visual-basic/language-reference/statements/return-statement.md)と[Exit ステートメント](../../../visual-basic/language-reference/statements/exit-statement.md)) だけでなく、プロシージャを正常に終了しますが、も呼び出し元のコードに正常に閉じるための機会を提供します。 コンソール アプリケーションはたとえば、単にできます`Return`から、`Main`プロシージャです。  
   
 > [!IMPORTANT]
->  `End`ステートメントの呼び出し、<xref:System.Environment.Exit%2A>のメソッド、<xref:System.Environment>クラス内で、<xref:System>名前空間。 <xref:System.Environment.Exit%2A>必要に`UnmanagedCode`権限です。 そうしない場合、<xref:System.Security.SecurityException>エラーが発生します。  
+>  `End`ステートメントの呼び出し、<xref:System.Environment.Exit%2A>のメソッド、<xref:System.Environment>クラス内で、<xref:System>名前空間。 <xref:System.Environment.Exit%2A> 必要に`UnmanagedCode`権限です。 そうしない場合、<xref:System.Security.SecurityException>エラーが発生します。  
   
  追加のキーワードが続くと[終了\<キーワード > ステートメント](../../../visual-basic/language-reference/statements/end-keyword-statement.md)適切なプロシージャまたはブロックの定義の最後のようになります。 たとえば、`End Function`の定義を終了、`Function`プロシージャです。  
   

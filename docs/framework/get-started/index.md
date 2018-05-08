@@ -1,25 +1,18 @@
 ---
 title: .NET Framework の概要
 ms.custom: updateeachrelease
-ms.date: 10/17/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: article
+ms.date: 04/10/2018
 helpviewer_keywords:
 - .NET Framework, getting started
 - getting started [.NET Framework]
 ms.assetid: c693fd34-88fe-4d90-b332-19eeadf3b7e7
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 3295d17b0ef4650c38f264dfc785eee7a452be86
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d62ae73c9a2789087785e1fba6b227245ee08a10
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="get-started-with-the-net-framework"></a>.NET Framework の概要
 
@@ -60,7 +53,7 @@ Windows オペレーティング システムを使用している場合は、.N
 
 - 使用するアプリが特定のバージョンの .NET Framework に依存している場合、そのバージョンが削除されるとアプリの互換性に影響する可能性があります。
 
-- .NET Framework のバージョンの中には、前のバージョンのインプレース更新であるものがあります。 たとえば、[!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)] はバージョン 2.0 のインプレース更新で、.NET Framework 4.7.1 はバージョン 4、4.5、4.5.1、4.5.2、4.6、4.6.1、4.6.2、および 4.7 のインプレース更新です。 詳細については、「[.NET Framework のバージョンおよび依存関係](../../../docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。
+- .NET Framework のバージョンの中には、前のバージョンのインプレース更新であるものがあります。 たとえば、[!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)] はバージョン 2.0 のインプレース更新で、.NET Framework 4.7.2 はバージョン 4 ～ 4.7.1 のインプレース更新です。 詳細については、「[.NET Framework のバージョンおよび依存関係](../../../docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。
 
 Windows 8 よりも前の Windows バージョンで .NET Framework を削除する場合は、必ずコントロール パネルの **[プログラムと機能]** を使用してアンインストールしてください。 .NET Framework のバージョンを手動で削除しないでください。 Windows 8 以降では、.NET Framework はオペレーティング システム コンポーネントとなっているため、個別にアンインストールすることはできません。
 
@@ -73,7 +66,7 @@ Windows 8 よりも前の Windows バージョンで .NET Framework を削除す
 
 .NET Framework アプリまたはコンポーネントを開発するには、次の操作を行います。
 
-1. オペレーティング システムにプレインストールされていない場合は、アプリが対象とする .NET Framework のバージョンをインストールします。 最新の製品バージョンである .NET Framework 4.7.1 は Windows 10 Fall Creators Update にプレインストールされていますが、以前のバージョンの Windows オペレーティング システムでも使用できます。 .NET Framework システム要件については、「[.NET Framework システム要件](../../../docs/framework/get-started/system-requirements.md)」を参照してください。 その他のバージョンの .NET Framework のインストールの詳細については、[インストール ガイド](../../../docs/framework/install/guide-for-developers.md)に関するページを参照してください。 .NET Framework の追加パッケージは、アウト オブ バンドでリリースされます。これは、通常のリリース サイクルや定期的なリリース サイクルではなく、ローリング方式でリリースされるということを意味します。 これらのパッケージの詳細については、「[.NET Framework および特別なリリース](../../../docs/framework/get-started/the-net-framework-and-out-of-band-releases.md)」を参照してください。
+1. オペレーティング システムにプレインストールされていない場合は、アプリが対象とする .NET Framework のバージョンをインストールします。 最新の製品バージョンである .NET Framework 4.7.2 は Windows 10 April 2018 Update にプレインストールされていますが、以前のバージョンの Windows オペレーティング システムでも使用できます。 .NET Framework システム要件については、「[.NET Framework システム要件](../../../docs/framework/get-started/system-requirements.md)」を参照してください。 その他のバージョンの .NET Framework のインストールの詳細については、[インストール ガイド](../../../docs/framework/install/guide-for-developers.md)に関するページを参照してください。 .NET Framework の追加パッケージは、アウト オブ バンドでリリースされます。これは、通常のリリース サイクルや定期的なリリース サイクルではなく、ローリング方式でリリースされるということを意味します。 これらのパッケージの詳細については、「[.NET Framework および特別なリリース](../../../docs/framework/get-started/the-net-framework-and-out-of-band-releases.md)」を参照してください。
 
 2. .NET Framework でサポートされている、アプリ開発に使用する言語を選択します。 Microsoft の [Visual Basic](../../visual-basic/index.md)、[C#](../../csharp/index.md)、[F#](../../fsharp/index.md)、および C++ と CLI を含む多くの言語から選択できます。 (.NET Framework のアプリを開発できるプログラミング言語は、[共通言語基盤 (CLI) 仕様](http://go.microsoft.com/fwlink/?LinkId=199862)に準拠します)。
 
@@ -83,7 +76,7 @@ Windows 8 よりも前の Windows バージョンで .NET Framework を削除す
 
 ## <a name="related-topics"></a>関連トピック
 
-| タイトル | 説明 |
+| Title | 説明 |
 | ----- |------------ |
 | [概要](../../../docs/framework/get-started/overview.md) | .NET Framework を対象としたアプリを作成する開発者向けの詳細情報を提供します。 |
 | [インストール ガイド](../../../docs/framework/install/index.md) | .NET Framework のインストールに関する情報を提供します。 |  

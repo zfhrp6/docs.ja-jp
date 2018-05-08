@@ -1,27 +1,15 @@
 ---
-title: "ServiceHostFactory を使用したホストの拡張"
-ms.custom: 
+title: ServiceHostFactory を使用したホストの拡張
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: bcc5ae1b-21ce-4e0e-a184-17fad74a441e
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 4a7bcd2e0ba68499cad63ec47918fd2bd6bd80d7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 3773ca50111f609489b95145f1005cd005922b9b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="extending-hosting-using-servicehostfactory"></a>ServiceHostFactory を使用したホストの拡張
-<xref:System.ServiceModel.ServiceHost> アーキテクチャを拡張するためのインターフェイスとして、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] には、ホスティング サービスを実装するための標準 API である [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] があります。 ユーザーは、この <xref:System.ServiceModel.ServiceHost> の派生型として独自のホスト クラスを定義できます。通常は、<xref:System.ServiceModel.Channels.CommunicationObject.OnOpening> を使用するために <xref:System.ServiceModel.Description.ServiceDescription> をオーバーライドして、これにより、サービスを開く前に、強制的に既定のエンドポイントを追加したり、動作を変更することができます。  
+標準<xref:System.ServiceModel.ServiceHost>Windows Communication Foundation (WCF) サービスをホストするための API は、機能拡張ポイントで、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]アーキテクチャ。 ユーザーは、この <xref:System.ServiceModel.ServiceHost> の派生型として独自のホスト クラスを定義できます。通常は、<xref:System.ServiceModel.Channels.CommunicationObject.OnOpening> を使用するために <xref:System.ServiceModel.Description.ServiceDescription> をオーバーライドして、これにより、サービスを開く前に、強制的に既定のエンドポイントを追加したり、動作を変更することができます。  
   
  自己ホスト環境では、カスタムの <xref:System.ServiceModel.ServiceHost> を作成する必要はありません。ホストをインスタンス化し、インスタンス化の後で <xref:System.ServiceModel.ICommunicationObject.Open> を呼び出すコードを記述するので、 この 2 つのステップの間に任意の処理を記述できます。 たとえば、新しい <xref:System.ServiceModel.Description.IServiceBehavior> を次のように追加できます。  
   

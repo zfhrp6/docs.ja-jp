@@ -1,11 +1,7 @@
 ---
-title: "CreateClassEnumWmi 関数 (アンマネージ API リファレンス)"
-description: "CreateClassEnumWmi 関数では、指定した条件に適合するすべてのクラスの列挙子を返します。"
+title: CreateClassEnumWmi 関数 (アンマネージ API リファレンス)
+description: CreateClassEnumWmi 関数では、指定した条件に適合するすべてのクラスの列挙子を返します。
 ms.date: 11/06/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: reference
 api_name:
 - CreateClassEnumWmi
 api_location:
@@ -20,14 +16,11 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 2058bad61af79244d211afb6a7661ca1642db070
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 3f84902586a2b940d52eb6365a141af61af802dd
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="createclassenumwmi-function"></a>CreateClassEnumWmi 関数
 指定した選択条件を満たすすべてのクラスの列挙子を返します。  
@@ -79,7 +72,7 @@ HRESULT CreateClassEnumWmi (
 `authLevel`  
 [in]承認レベル。
 
-`impLevel`[in]権限借用レベルです。
+`impLevel` [in]権限借用レベルです。
 
 `pCurrentNamespace`   
 [in]ポインター、 [IWbemServices](https://msdn.microsoft.com/library/aa392093(v=vs.85).aspx)を現在の名前空間を表すオブジェクト。
@@ -114,12 +107,12 @@ HRESULT CreateClassEnumWmi (
 
 呼び出して追加のエラー情報を取得するには、関数呼び出しに失敗した場合、 [GetErrorInfo](geterrorinfo.md)関数。
 
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** WMINet_Utils.idl  
   
- **.NET framework のバージョン:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **.NET framework のバージョン:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>関連項目  
 [WMI およびパフォーマンス カウンター (アンマネージ API リファレンス)](index.md)

@@ -1,10 +1,6 @@
 ---
-title: "方法 : DataRepeater コントロールでデータを検索する (Visual Studio)"
+title: '方法 : DataRepeater コントロールでデータを検索する (Visual Studio)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -12,14 +8,11 @@ helpviewer_keywords:
 - DataRepeater, implementing search
 - DataRepeater, searching data
 ms.assetid: a8ab5d17-b94f-43c4-8dd7-d0450226d73f
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: a3ed7138c142a83584ecd19ccaebe0e31e421ce3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 689990ee125c85c3151a4e965b619fde068d220e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-search-data-in-a-datarepeater-control-visual-studio"></a>方法 : DataRepeater コントロールでデータを検索する (Visual Studio)
 使用する場合、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>コントロールを特定のレコードを使用すると、ユーザーによる検索をすることが多くのレコードが含まれています。 基になるクエリを実行して、検索を実装するコントロール自体にデータを検索するのではなく<xref:System.Windows.Forms.BindingSource>です。 項目が見つかった場合、行うこともできますし、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.CurrentItemIndex%2A>プロパティを項目を選択し、スクロールして表示します。  

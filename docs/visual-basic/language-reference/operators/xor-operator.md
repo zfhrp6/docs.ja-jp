@@ -1,12 +1,6 @@
 ---
 title: Xor 演算子 (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Xor
 helpviewer_keywords:
@@ -20,14 +14,11 @@ helpviewer_keywords:
 - Xor keyword [Visual Basic]
 - bitwise comparison [Visual Basic]
 ms.assetid: 036000a9-3934-4e7f-a9d0-a816de3d84a6
-caps.latest.revision: 17
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: b14f11f2df2df9c29e88e9188390cfe245d2cb58
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 34d317da5d85127e371c2df7229e0f0873972f50
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="xor-operator-visual-basic"></a>Xor 演算子 (Visual Basic)
 2 つの論理和を求めます`Boolean`式、または 2 つの数値式の和を求めます。  
@@ -40,13 +31,13 @@ result = expression1 Xor expression2
   
 ## <a name="parts"></a>指定項目  
  `result`  
- 必須です。 どの`Boolean`または数値型の変数です。 ブール値の比較の`result`は 2 つの論理和 (排他的論理和)`Boolean`値。 ビットごとの演算`result`は、ビット処理排他的論理和) 2 つの数値のビット パターンを表す数値。  
+ 必須。 どの`Boolean`または数値型の変数です。 ブール値の比較の`result`は 2 つの論理和 (排他的論理和)`Boolean`値。 ビットごとの演算`result`は、ビット処理排他的論理和) 2 つの数値のビット パターンを表す数値。  
   
  `expression1`  
- 必須です。 どの`Boolean`または数値式です。  
+ 必須。 どの`Boolean`または数値式です。  
   
  `expression2`  
- 必須です。 どの`Boolean`または数値式です。  
+ 必須。 どの`Boolean`または数値式です。  
   
 ## <a name="remarks"></a>コメント  
  ブール値の比較の`result`は`True`場合にだけ、ただ 1 つの`expression1`と`expression2`に評価される`True`です。 つまり、場合にのみ`expression1`と`expression2`評価に反対`Boolean`値。 次に示す方法`result`決定されます。  
@@ -75,7 +66,7 @@ result = expression1 Xor expression2
   
  たとえば、5 `Xor` 3 は 6 です。 これが理由を確認するため、101 と 011 のバイナリ表現に 5 と 3 に変換します。 101 Xor 011 があること、110 6 の 10 進数のバイナリ表現を決定するのに、前の表を使用しています。  
   
-## <a name="data-types"></a>データ型  
+## <a name="data-types"></a>データの種類  
  いずれかのオペランドで構成される場合`Boolean`式と 1 つの数値式では、Visual Basic に変換します、`Boolean`数値を指定する式 (– 1`True`と 0 を`False`) し、ビットごとの演算を実行します。  
   
  `Boolean` 、比較結果のデータ型は`Boolean`します。 ビットごとの比較結果のデータ型は数値型のデータ型に適した`expression1`と`expression2`です。 「リレーショナルとビットごとの比較」表を参照して[データ型の演算子の結果](../../../visual-basic/language-reference/operators/data-types-of-operator-results.md)です。  

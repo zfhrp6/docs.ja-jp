@@ -1,33 +1,21 @@
 ---
-title: "StatusBar コントロール (Windows フォーム)"
-ms.custom: 
+title: StatusBar コントロール (Windows フォーム)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - StatusBar control [Windows Forms]
 - status bars [Windows Forms], creating
 ms.assetid: 6f543e27-cf78-4b7f-b4d0-6a8030155d48
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 945d9a658dd3d75dd0edb9f4eaca78334ee4d652
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 66ec834778bd0eeacea642250c5430be8929b732
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="statusbar-control-windows-forms"></a>StatusBar コントロール (Windows フォーム)
 > [!NOTE]
 >  <xref:System.Windows.Forms.ToolStripStatusLabel> コントロールは、<xref:System.Windows.Forms.StatusBar> コントロールに代わると共に追加の機能を提供します。ただし、<xref:System.Windows.Forms.StatusBar> コントロールは、下位互換性を保つ目的および将来使用する目的で保持されます。  
   
- Windows フォームの <xref:System.Windows.Forms.StatusBar> コントロールは、フォーム上で領域として使用され、通常はウィンドウの下端に表示されます。アプリケーションは、このコントロールにさまざまな種類のステータス情報を表示できます <xref:System.Windows.Forms.StatusBar>コントロールは、状態、または一連のプロセスが動作してを示すアニメーションのアイコンを示すアイコンを表示でそれらのステータス バー パネルを持つことができます。たとえば、ことを示す Microsoft Word ドキュメント保存されます。  
+ Windows フォームの <xref:System.Windows.Forms.StatusBar> コントロールは、フォーム上で領域として使用され、通常はウィンドウの下端に表示されます。アプリケーションは、このコントロールにさまざまな種類のステータス情報を表示できます <xref:System.Windows.Forms.StatusBar> コントロールは、状態、または一連のプロセスが動作してを示すアニメーションのアイコンを示すアイコンを表示でそれらのステータス バー パネルを持つことができます。たとえば、ことを示す Microsoft Word ドキュメント保存されます。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [StatusBar コントロールの概要](../../../../docs/framework/winforms/controls/statusbar-control-overview-windows-forms.md)  

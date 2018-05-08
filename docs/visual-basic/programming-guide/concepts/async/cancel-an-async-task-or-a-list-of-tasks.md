@@ -1,22 +1,12 @@
 ---
-title: "非同期タスクまたはタスク (Visual Basic) の一覧をキャンセルします。"
-ms.custom: 
+title: 非同期タスクまたはタスク (Visual Basic) の一覧をキャンセルします。
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: a9ee1b71-5bec-4736-a1e9-448042dd7215
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 916577107bd65559aed71dc9bb2921969a117e90
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 74f0c1c4653709497cb264aac18b49f4fee4eefa
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="cancel-an-async-task-or-a-list-of-tasks-visual-basic"></a>非同期タスクまたはタスク (Visual Basic) の一覧をキャンセルします。
 非同期のアプリケーションが終了するまで待機しない場合、それを取り消すために使用できるボタンを設定できます。 このトピックの例に従うと、1 つの Web サイトのコンテンツまたは Web サイトのリストをダウンロードするアプリケーションにキャンセル ボタンを追加できます。  
@@ -24,7 +14,7 @@ ms.lasthandoff: 11/21/2017
  例では、UI を使用している[非同期アプリケーションの微調整 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/fine-tuning-your-async-application.md)について説明します。  
   
 > [!NOTE]
->  この例を実行するには、Visual Studio 2012 以降および .NET Framework 4.5 以降が、コンピューターにインストールされている必要があります。  
+>  この例を実行するには、コンピューターに Visual Studio 2012 以降および .NET Framework 4.5 以降がインストールされている必要があります。  
   
 ##  <a name="BKMK_CancelaTask"></a>タスクのキャンセル  
  最初の例では、**キャンセル** ボタンを単一のダウンロード タスクと関連付けます。 アプリケーションがコンテンツをダウンロード中にボタンをクリックすると、ダウンロードは取り消されます。  
@@ -34,7 +24,7 @@ ms.lasthandoff: 11/21/2017
   
 1.  ダウンロードしたファイルを圧縮解除し、Visual Studio を起動します。  
   
-2.  メニュー バーで **[ファイル]**、 **[開く]**、 **[プロジェクト/ソリューション]**の順に選択します。  
+2.  メニュー バーで **[ファイル]**、 **[開く]**、 **[プロジェクト/ソリューション]** の順に選択します。  
   
 3.  **プロジェクトを開く** ダイアログ ボックスでは、圧縮解除したサンプル コードが含まれるフォルダーを開き、AsyncFineTuningVB のソリューション (.sln) ファイルを開きます。  
   
@@ -152,7 +142,7 @@ ms.lasthandoff: 11/21/2017
   
 1.  ダウンロードしたファイルを圧縮解除し、Visual Studio を起動します。  
   
-2.  メニュー バーで **[ファイル]**、 **[開く]**、 **[プロジェクト/ソリューション]**の順に選択します。  
+2.  メニュー バーで **[ファイル]**、 **[開く]**、 **[プロジェクト/ソリューション]** の順に選択します。  
   
 3.  **プロジェクトを開く** ダイアログ ボックスでは、圧縮解除したサンプル コードが含まれるフォルダーを開き、AsyncFineTuningVB のソリューション (.sln) ファイルを開きます。  
   

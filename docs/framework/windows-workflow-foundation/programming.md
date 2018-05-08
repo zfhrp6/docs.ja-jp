@@ -1,28 +1,16 @@
 ---
 title: Windows Workflow Foundation プログラミングの新機能
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - Windows Workflow Foundation [WF], programming
 - programming [WF]
 - WF [WF], programming
 ms.assetid: f62354e2-6a2b-4e8c-a4bc-533fb96267a4
-caps.latest.revision: 16
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 0b704357d914f72049d0639c402bf2ae64975d00
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: 2e60a98492947a5ce21652cff1ca7dda7993e8bf
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="windows-workflow-foundation-programming"></a>Windows Workflow Foundation プログラミングの新機能
 このセクションには、一連入門トピックに習熟して Windows Workflow Foundation (WF) プログラマになることを理解しておく必要にはが含まれています。  
@@ -62,7 +50,7 @@ ms.lasthandoff: 04/27/2018
  ワークフローの追跡とトレース、およびワークフロー アプリケーションを監視するためにこれらの機能を使用する方法について説明します。  
   
  [ワークフローのセキュリティ](../../../docs/framework/windows-workflow-foundation/workflow-security.md)  
- SQL および [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] を使用する場合に、ワークフローのセキュリティを維持する方法について説明します。  
+ SQL と Windows Communication Foundation (WCF) を使用して、ワークフローをセキュリティで保護された状態に保つ方法について説明します。  
   
  [Windows Workflow Foundation 4 のパフォーマンス](../../../docs/framework/windows-workflow-foundation/performance.md)  
  Windows Workflow Foundation 4 のパフォーマンスについて説明し、WF の以前のバージョンを比較します。

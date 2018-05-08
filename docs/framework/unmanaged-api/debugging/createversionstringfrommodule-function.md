@@ -1,14 +1,6 @@
 ---
-title: "CreateVersionStringFromModule 関数"
-ms.custom: 
+title: CreateVersionStringFromModule 関数
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - CreateVersionStringFromModule
 api_location:
@@ -24,17 +16,13 @@ helpviewer_keywords:
 ms.assetid: 3d2fe9bd-75ef-4364-84a6-da1e1994ac1a
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 9d7d545256393cfbe37216f0d6db064d5e7cb410
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 0988b2c4471cb5449f7c7fac82c6e94bcd537b7e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="createversionstringfrommodule-function"></a>CreateVersionStringFromModule 関数
 対象プロセス内の共通言語ランタイム (CLR: Common Language Runtime) パスからバージョン文字列を作成します。  
@@ -89,8 +77,8 @@ HRESULT CreateVersionStringFromModule (
   
  この関数は、2 回呼び出す必要があります。 1 回目の呼び出しでは、`pBuffer` と `cchBuffer` の両方に null を渡します。 これにより、`pBuffer` に必要なバッファーのサイズが `pdwLength` に返されます。 その後、2 回目の関数呼び出しを実行し、`pBuffer` にはバッファーを、`cchBuffer` にはバッファーのサイズを渡すことができます。  
   
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** dbgshim.h  
   

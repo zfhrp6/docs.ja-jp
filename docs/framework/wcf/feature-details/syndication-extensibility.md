@@ -1,24 +1,12 @@
 ---
-title: "配信の拡張"
-ms.custom: 
+title: 配信の拡張
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 4d941175-74a2-4b15-81b3-086e8a95d25f
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 5322ff2c79ab5051b3a9aaaeaafe7db6c9c2f683
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8182aee9d8a526d995ab1266e5c654f29f4af3d8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="syndication-extensibility"></a>配信の拡張
 配信 API は、形式に依存せず、さまざま形式で概要コンテンツをネットワークに書き込むことができるプログラミング モデルを提供することを目的としています。 抽象データ モデルは、次のクラスで構成されています。  
@@ -35,7 +23,7 @@ ms.lasthandoff: 12/22/2017
   
  これらのクラスは、一部の名前が異なっていますが、Atom 1.0 仕様に規定されるコンストラクトに厳密にマップされています。  
   
- 配信プロトコルの主な機能は拡張性です。 Atom 1.0 と RSS 2.0 のどちらも、仕様で定義されていない属性と要素を配信フィードに追加できます。 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] の配信プログラミング モデルには、カスタム属性と拡張機能を扱う方法として、次のように、弱い型指定のアクセスと新しいクラスの派生が用意されています。  
+ 配信プロトコルの主な機能は拡張性です。 Atom 1.0 と RSS 2.0 のどちらも、仕様で定義されていない属性と要素を配信フィードに追加できます。 Windows Communication Foundation (WCF) の配信プログラミング モデルでは、カスタム属性と拡張機能、弱い型指定のアクセスを使用して、新しいクラスを派生するは、次の方法を提供します。  
   
 ## <a name="loosely-typed-access"></a>弱い型指定のアクセス  
  新しいクラスの派生によって拡張機能を追加するには、追加のコードを記述する必要があります。 別の方法として、弱い型指定で拡張機能にアクセスする方法もあります。 配信抽象データ モデルに定義される型にはすべて、`AttributeExtensions` および `ElementExtensions` という名前のプロパティが含まれます。ただし、<xref:System.ServiceModel.Syndication.SyndicationContent> には `AttributeExtensions` プロパティがありますが、`ElementExtensions` プロパティはありません。 この 2 つのプロパティはそれぞれ、`TryParseAttribute` メソッドと `TryParseElement` メソッドで処理されない拡張機能のコレクションです。 この処理されない拡張機能にアクセスするには、<xref:System.ServiceModel.Syndication.SyndicationElementExtensionCollection.ReadElementExtensions%2A?displayProperty=nameWithType>、`ElementExtensions`、<xref:System.ServiceModel.Syndication.SyndicationFeed>、<xref:System.ServiceModel.Syndication.SyndicationItem>、および <xref:System.ServiceModel.Syndication.SyndicationLink> の <xref:System.ServiceModel.Syndication.SyndicationPerson> プロパティで <xref:System.ServiceModel.Syndication.SyndicationCategory> を呼び出します。 このメソッドのセットは、指定した名前と名前空間を持つ拡張機能をすべて検索し、個別に `TExtension` のインスタンスに逆シリアル化して `TExtension` オブジェクトのコレクションとして返します。  
@@ -55,6 +43,6 @@ ms.lasthandoff: 12/22/2017
   
 -   MyExtensionFeed クラスの <xref:System.ServiceModel.Syndication.SyndicationFeed.CreateItem> をオーバーライドし、既定の <xref:System.ServiceModel.Syndication.SyndicationItem> の代わりに MyExtensionItem をインスタンス化します。 <xref:System.ServiceModel.Syndication.SyndicationFeed> および <xref:System.ServiceModel.Syndication.SyndicationItem> に、<xref:System.ServiceModel.Syndication.SyndicationLink>、<xref:System.ServiceModel.Syndication.SyndicationCategory>、および <xref:System.ServiceModel.Syndication.SyndicationPerson> の各オブジェクトを生成する一連のメソッドが定義されます (たとえば、<xref:System.ServiceModel.Syndication.SyndicationFeed.CreateLink>、<xref:System.ServiceModel.Syndication.SyndicationFeed.CreateCategory>、<xref:System.ServiceModel.Syndication.SyndicationFeed.CreatePerson> など)。 そのどれもが、カスタム派生クラスを作成するためにオーバーライドできます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [WCF 配信の概要](../../../../docs/framework/wcf/feature-details/wcf-syndication-overview.md)  
  [配信のアーキテクチャ](../../../../docs/framework/wcf/feature-details/architecture-of-syndication.md)

@@ -1,10 +1,6 @@
 ---
 title: MustInherit (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - MustInherit
 - vb.MustInherit
@@ -14,14 +10,11 @@ helpviewer_keywords:
 - abstract classes [Visual Basic], MustInherit class
 - MustInherit keyword [Visual Basic]
 ms.assetid: b8f05185-90e3-4dd7-adc2-90d852fab5b4
-caps.latest.revision: "15"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 9d384986e42ee69a0f425c1590599aa2c82bc856
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 5d622c1cff77a45c8de7772af7efbb73586f4400
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="mustinherit-visual-basic"></a>MustInherit (Visual Basic)
 クラスを基底クラスとしてのみ使用できます、また、オブジェクトを直接作成できないことを指定します。  
@@ -31,7 +24,7 @@ ms.lasthandoff: 11/21/2017
   
  別の使用、`MustInherit`クラスは、関連するクラスのセットに変数を制限します。 基本クラスを定義し、そこからこれらのすべての関連するクラスを派生できます。 基本クラスは、すべての派生クラスに共通の機能を提供する必要はありませんが、その変数に値を割り当てるためのフィルターとして使用できます。 コンシューマー コードは、基底クラスとしての変数を宣言する場合 Visual Basic では、その変数に、派生クラスのいずれかのオブジェクトのみを割り当てることができます。  
   
- .NET Framework では、いくつかを定義します`MustInherit`クラスは、それらの間<xref:System.Array>、 <xref:System.Enum>、および<xref:System.ValueType>です。 <xref:System.ValueType>変数を制限する基本クラスの例を示します。 すべての値型から派生<xref:System.ValueType>です。 として変数を宣言する場合<xref:System.ValueType>、その変数に値型のみを割り当てることができます。  
+ .NET Framework では、いくつかを定義します`MustInherit`クラスは、それらの間<xref:System.Array>、 <xref:System.Enum>、および<xref:System.ValueType>です。 <xref:System.ValueType> 変数を制限する基本クラスの例を示します。 すべての値型から派生<xref:System.ValueType>です。 として変数を宣言する場合<xref:System.ValueType>、その変数に値型のみを割り当てることができます。  
   
 ## <a name="rules"></a>ルール  
   
@@ -48,7 +41,7 @@ ms.lasthandoff: 11/21/2017
   
  として宣言されているため`shape`、変数`shape1`と`shape2`派生クラスからオブジェクトに制限される`circle`と`square`です。 Visual Basic はできません、他のオブジェクトをこれらの変数に割り当てることにより、高レベルのタイプ セーフです。  
   
-## <a name="usage"></a>使用方法  
+## <a name="usage"></a>使用法  
  `MustInherit`修飾子は、このコンテキストで使用できます。  
   
  [Class ステートメント](../../../visual-basic/language-reference/statements/class-statement.md)  

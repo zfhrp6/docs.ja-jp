@@ -1,27 +1,15 @@
 ---
-title: "機能拡張"
-ms.custom: 
+title: 機能拡張
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: cd7ddffc-a261-44aa-bd50-33c1c74f0df0
-caps.latest.revision: "6"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: d1d8ea4987d918da79dcf1f69b842f19901e63a5
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 7cba21715a6a0347e910300de46c1e47fd6e30bf
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="extensibility"></a>機能拡張
-このセクションには、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] のカスタムの機能拡張およびその他の機能に関するサンプルが含まれています。  
+このセクションには、カスタム拡張機能と Windows Communication Foundation (WCF) の他の機能を処理するサンプルが含まれています。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [チャネル拡張](../../../../docs/framework/wcf/samples/channels-extensibility.md)  
@@ -58,7 +46,7 @@ ms.lasthandoff: 12/22/2017
  拡張ポイントでカスタムのメッセージのデータ形式を使用する方法を示します。  
   
  [カスタム メッセージ フィルター](../../../../docs/framework/wcf/samples/custom-message-filter.md)  
- [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] が使用するメッセージ フィルターを置き換えて、メッセージをエンドポイントにディスパッチする方法を示します。  
+ Windows Communication Foundation (WCF) を使用してエンドポイントにメッセージをディスパッチするメッセージ フィルターを置換する方法を示します。  
   
  [カスタム サービス ホスト](../../../../docs/framework/wcf/samples/custom-service-host.md)  
  <xref:System.ServiceModel.ServiceHost> クラスから派生したカスタムのサービス ホストを使用して、サービスの実行時動作を変更する方法を示します。  

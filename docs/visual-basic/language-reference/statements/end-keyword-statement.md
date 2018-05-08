@@ -1,25 +1,16 @@
 ---
 title: 終了&lt;キーワード&gt;ステートメント (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.EndDefinition
 helpviewer_keywords:
 - End keyword [Visual Basic]
 ms.assetid: 42d6e088-ab0f-4cda-88e8-fdce3e5fcf4f
-caps.latest.revision: 17
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: cf0ac1221f8a85a8a43599d9c5ec210884205e5e
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.openlocfilehash: 8137434bfd8c26144d78b1761b784cdba4894eaf
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="end-ltkeywordgt-statement-visual-basic"></a>終了&lt;キーワード&gt;ステートメント (Visual Basic)
 その他のキーワードの後に、そのキーワードによって導入されるステートメント ブロックの定義を終了します。  
@@ -53,7 +44,7 @@ End With
   
 ## <a name="parts"></a>指定項目  
  `End`  
- 必須です。 プログラミング要素の定義を終了します。  
+ 必須。 プログラミング要素の定義を終了します。  
   
  `AddHandler`  
  終了するために必要な`AddHandler`、対応する開始アクセサー`AddHandler`カスタム ステートメント[Event ステートメント](../../../visual-basic/language-reference/statements/event-statement.md)です。  
@@ -127,7 +118,7 @@ End With
  番号記号に続く場合 (`#`) では、`End`キーワードが、対応するディレクティブによって導入されるプリプロセッサのブロックを終了します。  
   
  `#End`  
- 必須です。 処理前のブロックの定義を終了します。  
+ 必須。 処理前のブロックの定義を終了します。  
   
  `#ExternalSource`  
  開始されて、対応する外部のソース ブロックを終了するために必要な[#ExternalSource ディレクティブ](../../../visual-basic/language-reference/directives/externalsource-directive.md)です。  

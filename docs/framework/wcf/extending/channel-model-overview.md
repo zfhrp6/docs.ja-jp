@@ -1,31 +1,17 @@
 ---
-title: "チャネル モデルの概要"
-ms.custom: 
+title: チャネル モデルの概要
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - channel model [WCF]
 ms.assetid: 07a81e11-3911-4632-90d2-cca99825b5bd
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 7f6f45b788d825fed3c8f5d627190dd8911ec4c9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: df2993d9ba25c043aa66029aa00fae945d5cec9d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="channel-model-overview"></a>チャネル モデルの概要
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] チャネル スタックは、メッセージを処理する 1 つ以上のチャネルから成る階層構造の通信スタックです。 スタックの一番下には、基になるトランスポート (TCP、HTTP、SMTP、およびその他の種類のトランスポート) にチャネル スタックを適応させるためのトランスポート チャネルがあります。 チャネルによって、メッセージを送受信するための低レベルのプログラミング モデルが提供されます。 このプログラミング モデルは、複数のインターフェイスと、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] チャネル モデルとして総称されるその他のモデルを利用します。 このトピックでは、チャネル形状、基本的なチャネル リスナーの構築 (サービス側)、およびチャネル ファクトリ (クライアント側) について説明します。  
+Windows Communication Foundation (WCF) チャネル スタックは、メッセージを処理する 1 つまたは複数のチャネルを持つ複数層の通信スタックです。 スタックの一番下には、基になるトランスポート (TCP、HTTP、SMTP、およびその他の種類のトランスポート) にチャネル スタックを適応させるためのトランスポート チャネルがあります。 チャネルによって、メッセージを送受信するための低レベルのプログラミング モデルが提供されます。 このプログラミング モデルは、複数のインターフェイスと、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] チャネル モデルとして総称されるその他のモデルを利用します。 このトピックでは、チャネル形状、基本的なチャネル リスナーの構築 (サービス側)、およびチャネル ファクトリ (クライアント側) について説明します。  
   
 ## <a name="channel-stack"></a>チャネル スタック  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] エンドポイントでは、チャネル スタックと呼ばれる通信スタックを使用して通信が行われます。 次の図では、チャネル スタックと、TCP/IP などの他の通信スタックを比較します。  

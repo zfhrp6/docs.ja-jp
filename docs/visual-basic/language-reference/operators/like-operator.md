@@ -1,11 +1,6 @@
 ---
-title: "Like 演算子 (Visual Basic)"
+title: Like 演算子 (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - Like
 - vb.Like
@@ -27,14 +22,11 @@ helpviewer_keywords:
 - data [Visual Basic], string comparisons
 - string comparison [Visual Basic], Like operators
 ms.assetid: 966283ec-80e2-4294-baa8-c75baff804f9
-caps.latest.revision: "18"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: ad5729515362bfd52b0c3b401f218a49f569726e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: a9c672a397510c69c9ee67358689feff80d8831a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="like-operator-visual-basic"></a>Like 演算子 (Visual Basic)
 文字列をパターンと比較します。  
@@ -47,13 +39,13 @@ result = string Like pattern
   
 ## <a name="parts"></a>指定項目  
  `result`  
- 必須です。 どの`Boolean`変数。 結果は、`Boolean`を示す値かどうか、`string`満たす、`pattern`です。  
+ 必須。 どの`Boolean`変数。 結果は、`Boolean`を示す値かどうか、`string`満たす、`pattern`です。  
   
  `string`  
- 必須です。 任意のブール型 (`String`) の式を指定します。  
+ 必須。 任意のブール型 (`String`) の式を指定します。  
   
  `pattern`  
- 必須です。 どの`String`「解説」で説明したパターン マッチの規則に適合させる式  
+ 必須。 どの`String`「解説」で説明したパターン マッチの規則に適合させる式  
   
 ## <a name="remarks"></a>コメント  
  場合の値`string`に含まれているパターンを満たす`pattern`、`result`は`True`します。 文字列は、パターンが満たされない場合`result`は`False`します。 両方`string`と`pattern`空の文字列は、結果は`True`します。  
@@ -64,13 +56,13 @@ result = string Like pattern
 ## <a name="pattern-options"></a>パターンのオプション  
  組み込みのパターンに一致する文字列比較のための多機能なツールを提供します。 内の各文字に一致することは、パターン マッチング機能`string`に対して特定の文字やワイルドカード文字、文字一覧は、文字の範囲です。 次の表で使用できる文字`pattern`一致したとします。  
   
-|内の文字`pattern`|内の一致`string`|  
+|内の文字 `pattern`|内の一致 `string`|  
 |-----------------------------|-------------------------|  
 |`?`|任意の 1 文字|  
 |`*`|0 個以上の文字|  
 |`#`|任意の 1 つの数字 (0 ~ 9)|  
-|`[charlist]`|内の任意の 1 文字`charlist`|  
-|`[!charlist]`|内にない任意の 1 文字`charlist`|  
+|`[charlist]`|内の任意の 1 文字 `charlist`|  
+|`[!charlist]`|内にない任意の 1 文字 `charlist`|  
   
 ## <a name="character-lists"></a>文字の一覧  
  1 つ以上の文字グループ (`charlist`) 角かっこで囲む (`[ ]`) 任意の 1 文字に一致に使用できる`string`桁の数字を含む、ほぼすべての文字コードを含めることができます。  

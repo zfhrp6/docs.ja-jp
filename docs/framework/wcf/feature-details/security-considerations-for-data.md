@@ -1,32 +1,20 @@
 ---
 title: セキュリティに関するデータの考慮事項
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: a7eb98da-4a93-4692-8b59-9d670c79ffb2
-caps.latest.revision: 23
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload:
-- dotnet
-ms.openlocfilehash: aa0692c130fdfcf3685c152cdcb73a07d041ab9b
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 077d6b3527119f00ecec3014778fecf0dd1a4bde
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="security-considerations-for-data"></a>セキュリティに関するデータの考慮事項
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]でデータを処理するとき、さまざまな種類の脅威について考慮する必要があります。 データ処理に関連する最も重要な脅威の種類を次の表に示します。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、これらの脅威を軽減するためのツールが用意されています。  
+Windows Communication Foundation (WCF) でのデータを扱う場合、脅威の分類の数を検討する必要があります。 データ処理に関連する最も重要な脅威の種類を次の表に示します。 WCF には、これらの脅威を軽減するためのツールが用意されています。  
   
  サービス拒否  
  信頼できないデータを受信すると、受信側では、そのデータによって非常に長い計算が発生し、メモリ、スレッド、利用可能な接続、プロセッサ サイクルなど複数のリソースに過剰にアクセスすることがあります。 サーバーに対するサービス拒否攻撃によって、サーバーがクラッシュし、正当なクライアントからのメッセージを処理できなくなる場合があります。  
@@ -38,7 +26,7 @@ ms.lasthandoff: 04/28/2018
  リモートの攻撃者は、受信側に要求への応答を強制し、受信側が意図した以上の情報を公開させます。  
   
 ## <a name="user-provided-code-and-code-access-security"></a>ユーザー指定のコードとコード アクセス セキュリティ  
- [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] インフラストラクチャのさまざまな場所で、ユーザーが指定したコードが実行されます。 たとえば、 <xref:System.Runtime.Serialization.DataContractSerializer> シリアル化エンジンでは、ユーザー指定のプロパティの `set` アクセサーと `get` アクセサーが呼び出されることがあります。 また、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] チャネル インフラストラクチャで、 <xref:System.ServiceModel.Channels.Message> クラスのユーザー指定の派生クラスが呼び出されることもあります。  
+ さまざまな場所で、Windows Communication Foundation (WCF) インフラストラクチャでは、ユーザーによって提供されるコードを実行します。 たとえば、 <xref:System.Runtime.Serialization.DataContractSerializer> シリアル化エンジンでは、ユーザー指定のプロパティの `set` アクセサーと `get` アクセサーが呼び出されることがあります。 WCF チャネル インフラストラクチャ可能性がありますのユーザー指定の派生クラスが呼び出すことも、<xref:System.ServiceModel.Channels.Message>クラスです。  
   
  コード作成者は、コードにセキュリティの脆弱性が存在しないことを確認する必要があります。 たとえば、整数型のデータ メンバー プロパティを使用してデータ コントラクト型を作成し、 `set` アクセサー実装でこのプロパティ値に基づいて配列を割り当てた場合、悪質なメッセージにこのデータ メンバーの極端に大きな値が含まれていると、サービス拒否攻撃の危険にさらされることになります。 一般的に、受信データに基づく割り当てや、ユーザー指定のコードでの長時間に及ぶ処理は回避します (特に、長時間に及ぶ処理が少量の受信データによって発生する可能性がある場合)。 ユーザー指定のコードのセキュリティ分析を実行するときは、必ず失敗した場合 (つまり、例外をスローするすべてのコード分岐) も考慮してください。  
   
@@ -68,7 +56,7 @@ ms.lasthandoff: 04/28/2018
   
  クォータが超過した状況は、回復可能です。実行中のサービスでこの状況が発生した場合、現在処理されているメッセージは破棄されますが、サービスの実行は続行され、次のメッセージが処理されます。 ただし、メモリ不足とスタック オーバーフローの場合は、 [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]のどの場所でも回復不可能です。このような例外が発生した場合、サービスは強制終了されます。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のクォータには、事前割り当ては含まれません。 たとえば、さまざまなクラスにある <xref:System.ServiceModel.Channels.TransportBindingElement.MaxReceivedMessageSize%2A> クォータを 128 KB に設定した場合、各メッセージに 128 KB が自動的に割り当てられるわけではありません。 実際の割当量は、実際の受信メッセージのサイズによって異なります。  
+ WCF でのクォータでは、事前割り当ては含まれません。 たとえば、さまざまなクラスにある <xref:System.ServiceModel.Channels.TransportBindingElement.MaxReceivedMessageSize%2A> クォータを 128 KB に設定した場合、各メッセージに 128 KB が自動的に割り当てられるわけではありません。 実際の割当量は、実際の受信メッセージのサイズによって異なります。  
   
  トランスポート層には、利用できるクォータが多数あります。 使用しているトランスポート チャネル (HTTP、TCP など) によって指定されるクォータもあります。 ここでは、これらのクォータの一部について説明しますが、詳細については、「 [Transport Quotas](../../../../docs/framework/wcf/feature-details/transport-quotas.md)」を参照してください。  
   
@@ -85,19 +73,19 @@ ms.lasthandoff: 04/28/2018
  バイナリ XML エンコーディングを使用する場合は、追加のクォータを `MaxReceivedMessageSize` に設定することが特に重要です。 バイナリ エンコーディングの使用は、圧縮に似ているところがあります。受信メッセージ内の少量のバイトで、大量のデータが表されていることがあります。 したがって、 `MaxReceivedMessageSize` の制限に収まるメッセージでも、完全に展開された形式では、さらに多くのメモリを消費する可能性があります。 このような XML 固有の脅威を軽減するには、すべての XML リーダーのクォータを、このトピックの後半の「XML の安全な使用」で説明するとおりに設定する必要があります。  
   
 ## <a name="limiting-memory-consumption-with-streaming"></a>メモリ消費の制限 (ストリーミングありの場合)  
- ストリーミング中、 `MaxReceivedMessageSize` の設定値を小さくすることで、サービス拒否攻撃を防止できます。 ただし、ストリーミングを伴う場合、状況が複雑になります。 たとえば、ファイル アップロード サービスでは使用可能なメモリより大きいファイルが許容されます。 この場合、メモリにバッファーされるデータはほとんどなく、メッセージが直接ディスクにストリーミングされると予測して、 `MaxReceivedMessageSize` を非常に大きな値に設定します。 何らかの方法で悪質なメッセージがデータをストリーミングするのではなく、バッファーに格納することを [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] に強制した場合、メッセージが使用可能なすべてのメモリにアクセスする状況を `MaxReceivedMessageSize` で防ぐことはできなくなります。  
+ ストリーミング中、 `MaxReceivedMessageSize` の設定値を小さくすることで、サービス拒否攻撃を防止できます。 ただし、ストリーミングを伴う場合、状況が複雑になります。 たとえば、ファイル アップロード サービスでは使用可能なメモリより大きいファイルが許容されます。 この場合、メモリにバッファーされるデータはほとんどなく、メッセージが直接ディスクにストリーミングされると予測して、 `MaxReceivedMessageSize` を非常に大きな値に設定します。 悪意のあるメッセージは、ここでは、ストリーミングするのではなくデータをバッファーする WCF を強制的何らかの理由でことができる場合`MaxReceivedMessageSize`不要になったすべての利用可能なメモリにアクセスするメッセージから保護します。  
   
- この脅威を軽減するために、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] に含まれる複数のデータ処理コンポーネントには、バッファー化を制限するためのクォータ設定が存在します。 この中で最も重要なのは、複数のトランスポート バインド要素と標準バインディングに存在する `MaxBufferSize` プロパティです。 ストリーミングを使用する場合は、メッセージごとに割り当て可能なメモリの最大量を考慮して、このクォータを設定する必要があります。 `MaxReceivedMessageSize`と同様、この設定ではメモリ消費の絶対的な最大値が設定されるのではなく、メモリ消費が定数係数以内に制限されるだけです。 また、 `MaxReceivedMessageSize`の場合と同じく、複数のメッセージが同時に処理されている可能性もあります。  
+ この脅威を軽減するために特定のクォータ設定が存在さまざまな WCF データ処理コンポーネントにその制限バッファリングします。 この中で最も重要なのは、複数のトランスポート バインド要素と標準バインディングに存在する `MaxBufferSize` プロパティです。 ストリーミングを使用する場合は、メッセージごとに割り当て可能なメモリの最大量を考慮して、このクォータを設定する必要があります。 `MaxReceivedMessageSize`と同様、この設定ではメモリ消費の絶対的な最大値が設定されるのではなく、メモリ消費が定数係数以内に制限されるだけです。 また、 `MaxReceivedMessageSize`の場合と同じく、複数のメッセージが同時に処理されている可能性もあります。  
   
 ### <a name="maxbuffersize-details"></a>MaxBufferSize の詳細  
- `MaxBufferSize` プロパティは、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] が実行するすべての大量バッファーを制限します。 たとえば、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では常に、SOAP ヘッダーと SOAP エラー、さらに MTOM (Message Transmission Optimization Mechanism) メッセージ内で自然な読み取り順序ではないことが検出された MIME パートがバッファー化されます。 この設定では、このようなすべての状況でバッファー量が制限されます。  
+ `MaxBufferSize`プロパティは、バッファリング WCF は、一括を制限します。 たとえば、WCF は、SOAP ヘッダーと SOAP エラーだけでなく、メッセージ Transmission Optimization Mechanism (MTOM) メッセージ内で、自然な読み取り順序ではないことに検出された MIME パートを常にバッファーされます。 この設定では、このようなすべての状況でバッファー量が制限されます。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、バッファー化を行う可能性がある多様なコンポーネントに `MaxBufferSize` の値を渡すことによって、この制限を実現します。 たとえば、 <xref:System.ServiceModel.Channels.Message.CreateMessage%2A> クラスの一部の <xref:System.ServiceModel.Channels.Message> オーバーロードは、 `maxSizeOfHeaders` パラメーターを受け取ります。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、このパラメーターに `MaxBufferSize` の値を渡して、SOAP ヘッダーのバッファー量を制限します。 <xref:System.ServiceModel.Channels.Message> クラスを直接使用する場合、このパラメーターを設定することが重要です。 通常、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] でクォータ パラメーターを受け取るコンポーネントを使用する場合、このパラメーターのセキュリティに対する影響を理解し、正しく設定することが重要です。  
+ WCF でこれを行うを渡すことによって、`MaxBufferSize`さまざまなコンポーネントがバッファーに格納する値。 たとえば、 <xref:System.ServiceModel.Channels.Message.CreateMessage%2A> クラスの一部の <xref:System.ServiceModel.Channels.Message> オーバーロードは、 `maxSizeOfHeaders` パラメーターを受け取ります。 WCF 渡します、 `MaxBufferSize` SOAP ヘッダーのバッファー量を制限するには、このパラメーターに値。 <xref:System.ServiceModel.Channels.Message> クラスを直接使用する場合、このパラメーターを設定することが重要です。 一般に、コンポーネントでクォータ パラメーターを受け取る WCF を使用する場合、これらのパラメーターのセキュリティへの影響を理解し、それらが正しく設定を必要があります。  
   
  MTOM メッセージ エンコーダーには、 `MaxBufferSize` 設定もあります。 標準バインディングを使用する場合、この値は自動的にトランスポート レベルの `MaxBufferSize` に設定されます。 ただし、MTOM メッセージ エンコーダーのバインド要素を使用してカスタム バインディングを作成する場合、ストリーミングの使用時には `MaxBufferSize` プロパティを安全な値に設定することが重要です。  
   
 ## <a name="xml-based-streaming-attacks"></a>XML ベースのストリーミング攻撃  
- ストリーミングが予想される場合、`MaxBufferSize` だけでは、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] によるバッファー化が強制されないようにすることができません。 たとえば、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の XML リーダーは、新しい要素の読み取りを開始すると、必ず XML 要素の開始タグ全体をバッファー化します。 この処理は、名前空間と属性を適切に処理するために行われます。 (たとえば、大きいファイルを直接ディスクにストリーミングするシナリオを可能にする目的で) `MaxReceivedMessageSize` が大きい値に設定されている場合、メッセージの本文全体が大きい XML 要素の開始タグであるような、悪質なメッセージが作成される可能性があります。 このメッセージを読み取ろうとすると、 <xref:System.OutOfMemoryException>が発生します。 これは、可能な XML ベースのサービス拒否攻撃の多くすべて軽減するには、このトピックの「XML の安全な使用」セクションで説明した XML リーダー クォータを使用しているのいずれかです。 ストリーミングを使用する場合、これらのクォータをすべて設定することが特に重要です。  
+ `MaxBufferSize` 単独ではない WCF は、ストリーミングが予想されるときにバッファー処理に適用できないことを確認するのに十分なです。 たとえば、WCF XML リーダーでは常に全体の XML 要素の開始タグをバッファーして、新しい要素の読み取りを開始するときに。 この処理は、名前空間と属性を適切に処理するために行われます。 (たとえば、大きいファイルを直接ディスクにストリーミングするシナリオを可能にする目的で) `MaxReceivedMessageSize` が大きい値に設定されている場合、メッセージの本文全体が大きい XML 要素の開始タグであるような、悪質なメッセージが作成される可能性があります。 このメッセージを読み取ろうとすると、 <xref:System.OutOfMemoryException>が発生します。 これは、可能な XML ベースのサービス拒否攻撃の多くすべて軽減するには、このトピックの「XML の安全な使用」セクションで説明した XML リーダー クォータを使用しているのいずれかです。 ストリーミングを使用する場合、これらのクォータをすべて設定することが特に重要です。  
   
 ### <a name="mixing-streaming-and-buffering-programming-models"></a>ストリーミングとバッファー プログラミング モデルの混在  
  攻撃の多くは、同じサービス内にストリーミングとストリーミング以外のプログラミング モデルを混在させることによって発生することが考えられます。 2 つの操作が設定されたサービス コントラクトがあるとします。一方は <xref:System.IO.Stream> を使用し、他方はカスタム型の配列を使用します。 また、1 つ目の操作で、大きいストリームを処理できるように、 `MaxReceivedMessageSize` が大きい値に設定されているとします。 この場合、大きいメッセージを 2 つ目の操作でも受け取れることになってしまいます。デシリアライザーは、操作が呼び出される前にデータを配列としてメモリにバッファー化します。 この状況では、サービス拒否攻撃が発生する可能性があります。 `MaxBufferSize` クォータでは、メッセージ本文のサイズ、つまり、デシリアライザーが処理するデータのサイズは制限できません。  
@@ -123,7 +111,7 @@ ms.lasthandoff: 04/28/2018
 ### <a name="slow-stream-attacks"></a>遅いストリームによる攻撃  
  ストリーミング サービス拒否攻撃では、メモリ消費は発生しません。 代わりに、この攻撃では送信側または受信側でデータの転送が遅くなります。 データが送信または受信されるのを待っている間、スレッドや利用可能な接続などのリソースが消耗します。 この状況は、悪質な攻撃を受けた結果として、または正当な送信側または受信側が遅いネットワーク接続を使用していることが原因で起こる可能性があります。  
   
- この攻撃を軽減するには、トランスポートのタイムアウトを適切に設定します。 詳細については、次を参照してください。[トランスポート クォータ](../../../../docs/framework/wcf/feature-details/transport-quotas.md)です。 また、 `Read` でストリームを処理するときは、同期 `Write` 操作または同期 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]操作を使用しないでください。  
+ この攻撃を軽減するには、トランスポートのタイムアウトを適切に設定します。 詳細については、次を参照してください。[トランスポート クォータ](../../../../docs/framework/wcf/feature-details/transport-quotas.md)です。 次に、使用しないで同期`Read`または`Write`WCF でのストリームを使用するときに操作します。  
   
 ## <a name="using-xml-safely"></a>XML の安全な使用  
   
@@ -131,11 +119,11 @@ ms.lasthandoff: 04/28/2018
 >  このセクションは XML に関するものですが、ここに記載された情報は、JSON (JavaScript Object Notation) ドキュメントにも該当します。 [Mapping Between JSON and XML](../../../../docs/framework/wcf/feature-details/mapping-between-json-and-xml.md)を使用することで、クォータは同様に機能します。  
   
 ### <a name="secure-xml-readers"></a>セキュリティで保護された XML リーダー  
- XML Infoset は、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]でのすべてのメッセージ処理の基礎となります。 信頼できない送信元からの XML データを受け入れる場合、多数のサービス拒否攻撃が存在する可能性があり、これを軽減する必要があります。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、セキュリティで保護された特別な XML リーダーが用意されています。 このリーダーは、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] で標準エンコーディング (テキスト、バイナリ、MTOM) のいずれかを使用しているときに自動的に作成されます。  
+ XML Infoset は、WCF でのすべてのメッセージ処理の基礎を形成します。 信頼できない送信元からの XML データを受け入れる場合、多数のサービス拒否攻撃が存在する可能性があり、これを軽減する必要があります。 WCF には、特別なは、セキュリティで保護された XML リーダーが用意されています。 これらのリーダーは、WCF (テキスト、バイナリ、または MTOM) で標準エンコーディングのいずれかを使用する場合、自動的に作成されます。  
   
  このリーダーでは、一部のセキュリティ機能が常にアクティブです。 たとえば、このリーダーは文書型定義 (DTD) を処理しません。文書型定義は、サービス拒否攻撃のソースの 1 つになり得るものであり、正当な SOAP メッセージに使用すべきではありません。 他のセキュリティ機能としてリーダーのクォータがあり、これらを設定する必要があります。この機能については、次のセクションで説明します。  
   
- XML リーダーを直接操作するとき (カスタム エンコーダーを記述するときや、 <xref:System.ServiceModel.Channels.Message> クラスを直接操作するときなど)、信頼できないデータを処理する可能性がある場合は必ず、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のセキュリティで保護されたリーダーを使用します。 セキュリティで保護されたリーダーは、 <xref:System.Xml.XmlDictionaryReader.CreateTextReader%2A>クラス上で <xref:System.Xml.XmlDictionaryReader.CreateBinaryReader%2A>、 <xref:System.Xml.XmlDictionaryReader.CreateMtomReader%2A> 、または <xref:System.Xml.XmlDictionaryReader> の静的ファクトリ メソッドのオーバーロードのいずれかを呼び出すことによって作成します。 リーダーを作成したら、安全なクォータ値を渡します。 `Create` メソッドのオーバーロードを呼び出さないでください。 オーバーロードを呼び出しても [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のリーダーは作成されません。 作成されるのは、このセクションで説明したセキュリティ機能で保護されていないリーダーです。  
+ XML リーダーを直接操作するときに (など、独自のカスタム エンコーダーを記述するときや、直接使用するときに、<xref:System.ServiceModel.Channels.Message>クラス)、信頼できないデータを処理する可能性があるときに、WCF のセキュリティで保護されたリーダーを常に使用します。 セキュリティで保護されたリーダーは、 <xref:System.Xml.XmlDictionaryReader.CreateTextReader%2A>クラス上で <xref:System.Xml.XmlDictionaryReader.CreateBinaryReader%2A>、 <xref:System.Xml.XmlDictionaryReader.CreateMtomReader%2A> 、または <xref:System.Xml.XmlDictionaryReader> の静的ファクトリ メソッドのオーバーロードのいずれかを呼び出すことによって作成します。 リーダーを作成したら、安全なクォータ値を渡します。 `Create` メソッドのオーバーロードを呼び出さないでください。 WCF リーダーを作成されません。 作成されるのは、このセクションで説明したセキュリティ機能で保護されていないリーダーです。  
   
 ### <a name="reader-quotas"></a>リーダーのクォータ  
  セキュリティで保護された XML リーダーには、5 つの設定可能なクォータがあります。 これらのクォータは通常、標準バインディングまたはエンコーディング バインド要素で `ReaderQuotas` プロパティを使用するか、リーダーの作成時に渡される <xref:System.Xml.XmlDictionaryReaderQuotas> オブジェクトを使用して設定します。  
@@ -164,9 +152,9 @@ ms.lasthandoff: 04/28/2018
  このクォータは、XML リーダーが返すプリミティブ配列 (バイト配列など) の最大サイズを制限します。 このクォータは、XML リーダー自体のメモリ消費は制限しませんが、このリーダーを使用するコンポーネントのメモリ消費を制限します。 たとえば、 <xref:System.Runtime.Serialization.DataContractSerializer> が <xref:System.Xml.XmlDictionaryReaderQuotas.MaxArrayLength%2A>でセキュリティ保護されたリーダーを使用するときは、このクォータを超えるバイト配列を逆シリアル化することはありません。 1 つのコントラクトでストリーミングとバッファー プログラミング モデルを混合する場合は、このクォータを設定することが重要です。 <xref:System.Xml.XmlDictionaryReader> クラスを直接使用すると、特定のプリミティブ型の任意のサイズの配列を読み取ることを目的としたメソッド ( <xref:System.Xml.XmlDictionaryReader.ReadInt32Array%2A>メソッドなど) だけがこのクォータに従います。  
   
 ## <a name="threats-specific-to-the-binary-encoding"></a>バイナリ エンコーディングに固有の脅威  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] がサポートするバイナリ XML エンコーディングには、 *ディクショナリ文字列* 機能があります。 長い文字列をわずかなバイト数でエンコードすることができます。 これによって、パフォーマンスは大幅に向上しますが、新たなサービス拒否攻撃の脅威を招き、その対策が必要になります。  
+ WCF のサポートをエンコードするバイナリ XML が含まれる、*ディクショナリ文字列*機能します。 長い文字列をわずかなバイト数でエンコードすることができます。 これによって、パフォーマンスは大幅に向上しますが、新たなサービス拒否攻撃の脅威を招き、その対策が必要になります。  
   
- ディクショナリには、 *静的ディクショナリ* と *動的ディクショナリ*の 2 種類があります。 静的ディクショナリは、バイナリ エンコーディングで短いコードを使用して表現できる長い文字列の組み込みリストです。 この文字列のリストは、リーダーの作成時に固定され、変更できません。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] が既定で使用する静的ディクショナリ内の文字列はいずれも、重大なサービス拒否攻撃の脅威を招くほど長くありません。ただし、ディクショナリ拡大攻撃に使用される可能性はあります。 独自の静的ディクショナリを使用する高度なシナリオでは、長いディクショナリ文字列を追加するときに注意が必要です。  
+ ディクショナリには、 *静的ディクショナリ* と *動的ディクショナリ*の 2 種類があります。 静的ディクショナリは、バイナリ エンコーディングで短いコードを使用して表現できる長い文字列の組み込みリストです。 この文字列のリストは、リーダーの作成時に固定され、変更できません。 既定で WCF を使用する静的ディクショナリ内の文字列は、重大なサービス拒否攻撃の脅威を招くほど長く、ディクショナリ拡大攻撃に引き続き使用することがあります。 独自の静的ディクショナリを使用する高度なシナリオでは、長いディクショナリ文字列を追加するときに注意が必要です。  
   
  動的ディクショナリ機能では、メッセージで独自の文字列を定義し、その文字列を短いコードに関連付けることができます。 この文字列とコードのマッピングは、通信セッション中にメモリに格納されるので、後続のメッセージは文字列を再送信する必要がなく、既に定義されているコードを利用できます。 この文字列は、任意の長さになるので、静的ディクショナリの場合よりも重大な脅威を招く可能性があります。  
   
@@ -272,7 +260,7 @@ ms.lasthandoff: 04/28/2018
 -   信頼できないデータ ソースから逆シリアル化されたオブジェクト グラフは、検証せずに信頼してはいけません。 各オブジェクトが整合状態にあっても、オブジェクト グラフ全体としては整合状態にない場合があります。 さらに、オブジェクト グラフの保存モードが無効になっている場合でも、逆シリアル化されたグラフに、同じオブジェクトへの複数の参照または循環参照が存在することがあります。 詳細については、次を参照してください。[シリアル化および逆シリアル化](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md)です。  
   
 ### <a name="using-the-netdatacontractserializer-securely"></a>NetDataContractSerializer の安全な使用  
- <xref:System.Runtime.Serialization.NetDataContractSerializer> は、型に対して密結合を使用するシリアル化エンジンです。 これは、 <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> および <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter>に類似しています。 つまり、このシリアル化エンジンでは、受信データから [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] アセンブリと型名を読み取って、インスタンス化する型を決定します。 このシリアル化エンジンは [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]の一部ですが、このエンジンにプラグインする方法は用意されていないため、カスタム コードを記述する必要があります。 `NetDataContractSerializer` は、主に、 [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] リモート処理から [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]への移行を容易にするためのものです。 詳細については、の該当セクションを参照してください。[シリアル化および逆シリアル化](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md)です。  
+ <xref:System.Runtime.Serialization.NetDataContractSerializer> は、型に対して密結合を使用するシリアル化エンジンです。 これは、 <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> および <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter>に類似しています。 つまり、このシリアル化エンジンでは、受信データから [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] アセンブリと型名を読み取って、インスタンス化する型を決定します。 このシリアル化エンジンにプラグインする指定の方法はありませんが、WCF の一部では、カスタム コードを記述する必要があります。 `NetDataContractSerializer`からの移行を容易に、主に提供される[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]WCF へのリモート処理します。 詳細については、の該当セクションを参照してください。[シリアル化および逆シリアル化](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md)です。  
   
  読み込むことができる型はメッセージ自身が示すことができるため、 <xref:System.Runtime.Serialization.NetDataContractSerializer> のメカニズムは本質的にセキュリティで保護されていません。このエンジンでは、信頼されたデータだけを使用してください。 <xref:System.Runtime.Serialization.NetDataContractSerializer.Binder%2A> プロパティを使用して、セキュリティで保護され、型を限定する型バインダーを記述して、安全な型の読み込みだけを許可することによって、このエンジンをセキュリティで保護された状態にすることができます。  
   
@@ -343,7 +331,7 @@ ms.lasthandoff: 04/28/2018
  通常、型を生成するためにスキーマをインポートするプロセスは、設計時にのみ発生します。たとえば、クライアント クラスを生成するために Web サービス上で [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) を使用しているときなどです。 ただし、さらに高度なシナリオでは、スキーマを実行時に処理することがあります。 この場合、サービス拒否攻撃の危険にさらされる可能性があることを覚えておく必要があります。 スキーマによっては、インポートに時間がかかる場合があります。 スキーマが信頼できないソースからのものである可能性がある場合は、このようなシナリオで <xref:System.Xml.Serialization.XmlSerializer> のスキーマ インポート コンポーネントを使用しないでください。  
   
 ## <a name="threats-specific-to-aspnet-ajax-integration"></a>ASP.NET AJAX 統合に固有の脅威  
- ユーザーが <xref:System.ServiceModel.Description.WebScriptEnablingBehavior> または <xref:System.ServiceModel.Description.WebHttpBehavior>を実装すると、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は XML メッセージと JSON メッセージの両方を受け入れることができるエンドポイントを公開します。 ただし、XML リーダーと JSON リーダーの両方が使用するリーダー クォータのセットは 1 つしかありません。 一部のクォータ設定が一方のリーダーには適切であっても、もう一方のリーダーには大きすぎる場合があります。  
+ ユーザーを実装すると<xref:System.ServiceModel.Description.WebScriptEnablingBehavior>または<xref:System.ServiceModel.Description.WebHttpBehavior>WCF は XML と JSON の両方のメッセージを受け入れることができるエンドポイントを公開します。 ただし、XML リーダーと JSON リーダーの両方が使用するリーダー クォータのセットは 1 つしかありません。 一部のクォータ設定が一方のリーダーには適切であっても、もう一方のリーダーには大きすぎる場合があります。  
   
  `WebScriptEnablingBehavior`を実装すると、ユーザーはエンドポイントで JavaScript プロキシを公開するオプションを使用できます。 セキュリティに関する次の問題を考慮する必要があります。  
   
@@ -352,9 +340,9 @@ ms.lasthandoff: 04/28/2018
 -   JavaScript エンドポイントを使用すると、機密性の高い情報やプライベートな情報がクライアントの Web ブラウザーのキャッシュに保持される可能性があります。  
   
 ## <a name="a-note-on-components"></a>コンポーネントに関する注意事項  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、柔軟でカスタマイズ可能なシステムです。 このトピックのほとんどの内容は、最も一般的な [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の使用シナリオに基づいています。 ただし、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] が提供するコンポーネントは、複数の異なる方法で構築できます。 各コンポーネントを使用した場合のセキュリティへの影響について理解することが重要です。 特に次の点に注意してください。  
+ WCF は、柔軟でカスタマイズ可能なシステムです。 このトピックの内容の大部分は、最も一般的な WCF 使用量シナリオに注目します。 ただし、さまざまな方法で WCF を提供するコンポーネントを作成することができます。 各コンポーネントを使用した場合のセキュリティへの影響について理解することが重要です。 特に次の点に注意してください。  
   
--   XML リーダーを使用する必要があるときは、 <xref:System.Xml.XmlDictionaryReader> クラスに用意されたリーダーを使用し、それ以外のリーダーは使用しないようにします。 安全なリーダーは、 <xref:System.Xml.XmlDictionaryReader.CreateTextReader%2A>、 <xref:System.Xml.XmlDictionaryReader.CreateBinaryReader%2A>、 <xref:System.Xml.XmlDictionaryReader.CreateMtomReader%2A> のいずれかのメソッドを使用して作成できます。 <xref:System.Xml.XmlReader.Create%2A> メソッドは使用しないでください。 リーダーは、必ず安全なクォータを使用して設定します。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のシリアル化エンジンがセキュリティで保護されるのは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] で提供されるセキュリティで保護された XML リーダーを使用する場合だけです。  
+-   XML リーダーを使用する必要があるときは、 <xref:System.Xml.XmlDictionaryReader> クラスに用意されたリーダーを使用し、それ以外のリーダーは使用しないようにします。 安全なリーダーは、 <xref:System.Xml.XmlDictionaryReader.CreateTextReader%2A>、 <xref:System.Xml.XmlDictionaryReader.CreateBinaryReader%2A>、 <xref:System.Xml.XmlDictionaryReader.CreateMtomReader%2A> のいずれかのメソッドを使用して作成できます。 <xref:System.Xml.XmlReader.Create%2A> メソッドは使用しないでください。 リーダーは、必ず安全なクォータを使用して設定します。 WCF でシリアル化エンジンは、WCF のセキュリティで保護された XML リーダーを使用する場合にのみセキュリティで保護されています。  
   
 -   <xref:System.Runtime.Serialization.DataContractSerializer> を使用して、信頼できない可能性のあるデータを逆シリアル化する場合は、必ず <xref:System.Runtime.Serialization.DataContractSerializer.MaxItemsInObjectGraph%2A> プロパティを設定します。  
   

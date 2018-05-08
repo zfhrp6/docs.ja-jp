@@ -1,28 +1,14 @@
 ---
 title: メッセージ フィルター
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - routing [WCF], message filters
 ms.assetid: cb33ba49-8b1f-4099-8acb-240404a46d9a
-caps.latest.revision: 8
-author: wadepickett
-ms.author: wpickett
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: bd5019668e865d2fea835b450d992d45b5273ed7
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: e129924de53fb0dba61798cc492729c8af69ed94
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/10/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="message-filters"></a>メッセージ フィルター
 コンテンツ ベースのルーティングを実装する場合、ルーティング サービスは、アドレス、エンドポイント名、特定の XPath ステートメントなど、メッセージの特定のセクションを確認する <xref:System.ServiceModel.Dispatcher.MessageFilter> 実装を使用します。 [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)] に付属のメッセージ フィルターの中にニーズを満たすものがない場合は、<xref:System.ServiceModel.Dispatcher.MessageFilter> 基本クラスの新しい実装を作成することで、カスタム フィルターを作成できます。  
@@ -38,14 +24,14 @@ ms.lasthandoff: 04/10/2018
   
 |フィルターの型|説明|フィルター データの意味|フィルターの例|  
 |------------------|-----------------|-------------------------|--------------------|  
-|動作|<xref:System.ServiceModel.Dispatcher.ActionMessageFilter> クラスを使用して、特定のアクションを含むメッセージを照合します。|フィルター処理するアクション。|\<filter name="action1" filterType="Action" filterData="http://namespace/contract/operation" />|  
+|動作|<xref:System.ServiceModel.Dispatcher.ActionMessageFilter> クラスを使用して、特定のアクションを含むメッセージを照合します。|フィルター処理するアクション。|\<フィルター名 =「アクション 1」filterType"Action"filterData を = ="http://namespace/contract/operation"/>|  
 |EndpointAddress|使用して、<xref:System.ServiceModel.Dispatcher.EndpointAddressMessageFilter>クラスで<xref:System.ServiceModel.Dispatcher.EndpointAddressMessageFilter.IncludeHostNameInComparison%2A>  ==  `true`特定のアドレスを含むメッセージを照合します。|フィルター処理するアドレス (To ヘッダー)。|\<filter name="address1" filterType="EndpointAddress" filterData="http://host/vdir/s.svc/b"  />|  
 |EndpointAddressPrefix|使用して、<xref:System.ServiceModel.Dispatcher.PrefixEndpointAddressMessageFilter>クラスで<xref:System.ServiceModel.Dispatcher.PrefixEndpointAddressMessageFilter.IncludeHostNameInComparison%2A>  ==  `true`特定のアドレス プレフィックスを含むメッセージを照合します。|最長プレフィックス一致を使用してフィルター処理するアドレス。|\<filter name="prefix1" filterType="EndpointAddressPrefix" filterData="http://host/" />|  
 |および|常に両方の条件を評価してから結果を返す <xref:System.ServiceModel.Dispatcher.StrictAndMessageFilter> クラスを使用します。|filterData は使用されません。代わりに filter1 および filter2、対象となる、(同じくテーブル) 内のメッセージの対応するフィルターの名前を持つ**AND**連結します。|\<filter name="and1" filterType="And" filter1="address1" filter2="action1" />|  
 |カスタム|<xref:System.ServiceModel.Dispatcher.MessageFilter> クラスを拡張し、文字列を受け取るコンストラクターを持つユーザー定義の型。|customType 属性は、作成するクラスの完全修飾型名で、filterData は、フィルターの作成時にコンストラクターに渡す文字列です。|\<filter name="custom1" filterType="Custom" customType="CustomAssembly.CustomMsgFilter, CustomAssembly" filterData="Custom Data" />|  
-|EndpointName|<xref:System.ServiceModel.Dispatcher.EndpointNameMessageFilter> クラスを使用して、メッセージを受信したサービス エンドポイントの名前を基にメッセージを照合します。|たとえば、サービス エンドポイントの名前:"serviceEndpoint1"です。  このサービス エンドポイントは、ルーティング サービスで公開されるいずれかのエンドポイントでなければなりません。|\<filter name="stock1" filterType="Endpoint" filterData="SvcEndpoint" />|  
+|EndpointName|<xref:System.ServiceModel.Dispatcher.EndpointNameMessageFilter> クラスを使用して、メッセージを受信したサービス エンドポイントの名前を基にメッセージを照合します。|たとえば、サービス エンドポイントの名前:"serviceEndpoint1"です。  このサービス エンドポイントは、ルーティング サービスで公開されるいずれかのエンドポイントでなければなりません。|\<フィルター名"stock1"filterType を = =「エンドポイント」filterData = SvcEndpoint/>|  
 |MatchAll|<xref:System.ServiceModel.Dispatcher.MatchAllMessageFilter> クラスを使用します。 このフィルターは、すべての着信メッセージを照合します。|filterData は使用されません。 このフィルターは、常にすべてのメッセージを照合します。|\<filter name="matchAll1" filterType="MatchAll" />|  
-|XPath|<xref:System.ServiceModel.Dispatcher.XPathMessageFilter> クラスを使用して、メッセージ内の特定の XPath クエリを照合します。|メッセージの照合時に使用する XPath クエリ。|\<filter name="XPath1" filterType="XPath" filterData="//ns:element" />|  
+|XPath|<xref:System.ServiceModel.Dispatcher.XPathMessageFilter> クラスを使用して、メッセージ内の特定の XPath クエリを照合します。|メッセージの照合時に使用する XPath クエリ。|\<フィルター名 ="XPath1"filterType"XPath"filterData を = ="//ns:element"/>|  
   
  次の例では、XPath、EndpointName、および PrefixEndpointAddress メッセージ フィルターを使用するフィルター エントリを定義しています。 また、この例では、RoundRobinFilter1 エントリと RoundRobinFilter2 エントリに対するカスタム フィルターの使用方法も示しています。  
   

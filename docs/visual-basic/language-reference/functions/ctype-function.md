@@ -1,11 +1,6 @@
 ---
-title: "CType 関数 (Visual Basic)"
+title: CType 関数 (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: 
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.CType
 helpviewer_keywords:
@@ -14,14 +9,11 @@ helpviewer_keywords:
 - CType function
 - conversions [Visual Basic], expression
 ms.assetid: dd4b29e7-6fa1-428c-877e-69955420bb72
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: d804ce75929592675068fdc434a1ba7429fa5373
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: 7b1c7ae2a0126bf7cd487df4e9a7364c98e1c695
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ctype-function-visual-basic"></a>CType 関数 (Visual Basic)
 任意の式を、指定されたデータ型、オブジェクト、構造体、クラス、またはインターフェイスに明示的に変換し、その結果を返します。  
@@ -68,7 +60,7 @@ CType(expression, typename)
   
  その他の例では、次を参照してください。[暗黙的および明示的な変換](../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.OverflowException>  
  <xref:System.InvalidCastException>  
  [データ型変換関数](../../../visual-basic/language-reference/functions/type-conversion-functions.md)  

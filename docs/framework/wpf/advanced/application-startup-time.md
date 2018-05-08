@@ -1,13 +1,6 @@
 ---
-title: "アプリケーションの起動時間"
-ms.custom: 
+title: アプリケーションの起動時間
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - splash screen [WPF], startup time
 - WPF [WPF], startup time
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - application startup [WPF]
 - performance [WPF], startup time
 ms.assetid: f0ec58d8-626f-4d8a-9873-c20f95e08b96
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: af07e1876666351d72eada56e7af3e787ccc90f6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8452c41bc6d60d18fa058966299e3ca2b989604f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="application-startup-time"></a>アプリケーションの起動時間
 WPF アプリケーションの起動に必要な時間には、かなりばらつきがあります。 このトピックでは、Windows Presentation Foundation (WPF) アプリケーションの認識される起動時間と実際の起動時間を短縮する方法について説明します。  
@@ -133,7 +121,7 @@ WPF アプリケーションの起動に必要な時間には、かなりばら�
 ## <a name="set-data-binding-programmatically"></a>データ バインディングのプログラムによる設定  
  XAML を使用して設定するのではなく、<xref:System.Windows.FrameworkElement.DataContext%2A>宣言によって、メイン ウィンドウのプログラムで設定することを検討してください、<xref:System.Windows.Application.OnActivated%2A>メソッドです。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.SplashScreen>  
  <xref:System.AppDomain>  
  <xref:System.Resources.NeutralResourcesLanguageAttribute>  

@@ -1,24 +1,12 @@
 ---
-title: "ピア リゾルバー"
-ms.custom: 
+title: ピア リゾルバー
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: d86d12a1-7358-450f-9727-b6afb95adb9c
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 79c26ca9e167455dfbd664ea96e574c130cdc3d2
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 760011dda4a3059a217dcfbfc3fddaa67edc9995
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="peer-resolvers"></a>ピア リゾルバー
 メッシュに接続するには、ピア ノードに他のノードの IP アドレスが必要です。 IP アドレスを取得するには、リゾルバー サービスにアクセスします。このサービスは、メッシュ ID を受け取り、そのメッシュ ID で登録されているノードに対応するアドレスの一覧を返します。 リゾルバーは登録されたアドレスのリストを保持します。そのリストには、メッシュ レジスタの各ノードとサービスが含まれます。  
@@ -28,7 +16,7 @@ ms.lasthandoff: 01/19/2018
 ## <a name="supported-peer-resolvers"></a>サポートされるピア リゾルバー  
  ピア チャネルは、PNRP (Peer Name Resolution Protocol) サービスとカスタム リゾルバー サービスの 2 種類のリゾルバーをサポートします。  
   
- 既定で、ピア チャネルは PNRP ピア リゾルバー サービスを使用して、メッシュ内のピアと近隣ノードを検出します。 PNRP が利用できない、または適切でない状況やプラットフォームでは、別の方法として、サーバー ベースの検索サービスである [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] が <xref:System.ServiceModel.PeerResolvers.CustomPeerResolverService> に用意されています。 また、<xref:System.ServiceModel.PeerResolvers.IPeerResolverContract> インターフェイスを実装するクラスを書き込むと、カスタム リゾルバー サービスを明示的に定義することもできます。  
+ 既定で、ピア チャネルは PNRP ピア リゾルバー サービスを使用して、メッシュ内のピアと近隣ノードを検出します。 状況やプラットフォーム、PNRP が利用できないか不可能では、Windows Communication Foundation (WCF) が、別のサーバー ベースの検出、サービスを提供、<xref:System.ServiceModel.PeerResolvers.CustomPeerResolverService>です。 また、<xref:System.ServiceModel.PeerResolvers.IPeerResolverContract> インターフェイスを実装するクラスを書き込むと、カスタム リゾルバー サービスを明示的に定義することもできます。  
   
 ### <a name="peer-name-resolution-protocol-pnrp"></a>PNRP (Peer Name Resolution Protocol)  
  PNRP ([!INCLUDE[wv](../../../../includes/wv-md.md)] の既定のリゾルバー) は、分散型でサーバーを使用しない、名前のリゾルバー サービスです。 PNRP は、Advanced Networking Pack をインストールすれば [!INCLUDE[wxpsp2](../../../../includes/wxpsp2-md.md)] でも使用できます。 2 つのクライアントが同じバージョンの PNRP を実行している場合、特定の条件 (途中に企業のファイアウォールが存在しないなどの条件) を満たせば、このプロトコルを使用してお互いを検索できます。 [!INCLUDE[wv](../../../../includes/wv-md.md)] に付属する PNRP は、Advanced Networking Pack に含まれているバージョンよりも新しいバージョンです。 [!INCLUDE[wxpsp2](../../../../includes/wxpsp2-md.md)] 用の PNRP への更新については、Microsoft ダウンロード センターで確認してください。  
@@ -48,7 +36,7 @@ ms.lasthandoff: 01/19/2018
 ## <a name="in-this-section"></a>このセクションの内容  
  [CustomPeerResolverService 内部 : クライアント登録](../../../../docs/framework/wcf/feature-details/inside-the-custompeerresolverservice-client-registrations.md)  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ピア チャネルの概要](../../../../docs/framework/wcf/feature-details/peer-channel-concepts.md)  
  [ピア チャネルのセキュリティ](../../../../docs/framework/wcf/feature-details/peer-channel-security.md)  
  [ピア チャネル アプリケーションの構築](../../../../docs/framework/wcf/feature-details/building-a-peer-channel-application.md)

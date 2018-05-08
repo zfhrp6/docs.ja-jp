@@ -1,27 +1,17 @@
 ---
-title: "Exception Thrown_V1 ETW イベント"
-ms.custom: 
+title: Exception Thrown_V1 ETW イベント
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - ExceptionThrown_V1 event [.NET Framework]
 - ETW, ExceptionThrown_V1 event (CLR)
 ms.assetid: 0d3da389-6b7b-40f6-a877-fac546d6019c
-caps.latest.revision: "6"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 60013d0df8c63033f6da8d61479bacac7b944094
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: dafa5846f779276ab81e8e30e7c7a50b9fbff853
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="exception-thrownv1-etw-event"></a>Exception Thrown_V1 ETW イベント
 このイベントは、スローされる例外に関する情報をキャプチャします。  
@@ -34,7 +24,7 @@ ms.lasthandoff: 12/22/2017
   
  次の表にイベント情報を示します。  
   
-|イベント|イベント ID|いつ発生するか|  
+|event|イベント ID|いつ発生するか|  
 |-----------|--------------|-----------------|  
 |`ExceptionThrown_V1`|80|マネージ例外がスローされます。|  
   
@@ -49,5 +39,5 @@ ms.lasthandoff: 12/22/2017
 |ExceptionFlags|win:UInt16|0x01: HasInnerException (Visual Basic のドキュメントで「[CLR ETW イベント](../../../docs/framework/performance/clr-etw-events.md)」を参照)。<br /><br /> 0x02: IsNestedException。<br /><br /> 0x04: IsRethrownException。<br /><br /> 0x08: IsCorruptedStateException (プロセスの状態が破損していることを示す。MSDN で「[破損状態例外を処理する](http://go.microsoft.com/fwlink/?LinkId=179681)」を参照)。<br /><br /> 0x10: IsCLSCompliant (<xref:System.Exception> から派生した例外は CLS 準拠で、それ以外は CLS 非準拠)。|  
 |ClrInstanceID|win:UInt16|CLR または CoreCLR のインスタンスの一意の ID。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [CLR ETW イベント](../../../docs/framework/performance/clr-etw-events.md)

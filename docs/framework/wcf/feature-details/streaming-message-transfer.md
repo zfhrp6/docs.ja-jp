@@ -1,29 +1,15 @@
 ---
 title: メッセージ転送ストリーミング
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 72a47a51-e5e7-4b76-b24a-299d51e0ae5a
-caps.latest.revision: 13
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: ed2aa57e044910ab9fd9c60dfd47eb7aaa0ce75e
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 340c903e2cb34373514ea2f739cab57dc620df5d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="streaming-message-transfer"></a>メッセージ転送ストリーミング
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] のトランスポートでは、メッセージを転送するための次の 2 つのモードをサポートしています。  
+Windows Communication Foundation (WCF) トランスポートでは、メッセージを転送するため次の 2 つのモードをサポートします。  
   
 -   バッファー転送では、転送が完了するまで、メッセージ全体がメモリ バッファーに保持されます。 受信側がメッセージを読み取るためには、バッファー内のメッセージが完全に配信される必要があります。  
   
@@ -52,7 +38,7 @@ ms.lasthandoff: 04/30/2018
   
  ストリーミングされたトランスポートで発生する操作は、最大で 1 つの入力パラメーターまたは出力パラメーターが指定されたコントラクトを持つことができます。 設定するパラメーターは、メッセージの本文全体に対応し、<xref:System.ServiceModel.Channels.Message>、 <xref:System.IO.Stream> の派生型、または <xref:System.Xml.Serialization.IXmlSerializable> 実装であることが必要です。 操作の戻り値を取得することは、出力パラメーターを取得することと同じです。  
   
- 信頼できるメッセージング、トランザクション、SOAP メッセージ レベルのセキュリティなど、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の一部の機能は転送メッセージのバッファー処理に依存しています。 これらの機能を使用すると、ストリーミングによって得られるパフォーマンス上の利点が減少したり、失われたりする可能性があります。 ストリーミングされたトランスポートをセキュリティで保護する場合は、トランスポート レベルのセキュリティだけを使用するか、または、トランスポート レベルのセキュリティと認証のみのメッセージ セキュリティを組み合わせて使用してください。  
+ 信頼できるメッセージング、トランザクション、および SOAP メッセージ レベルのセキュリティなど、一部の WCF 機能は、転送メッセージのバッファー処理に依存します。 これらの機能を使用すると、ストリーミングによって得られるパフォーマンス上の利点が減少したり、失われたりする可能性があります。 ストリーミングされたトランスポートをセキュリティで保護する場合は、トランスポート レベルのセキュリティだけを使用するか、または、トランスポート レベルのセキュリティと認証のみのメッセージ セキュリティを組み合わせて使用してください。  
   
  SOAP ヘッダーは、転送モードがストリーミングに設定されている場合でも、必ずバッファーされます。 メッセージのヘッダーが `MaxBufferSize` トランスポート クォータのサイズを超えないようにしてください。 この設定の詳細については、次を参照してください。[トランスポート クォータ](../../../../docs/framework/wcf/feature-details/transport-quotas.md)です。  
   

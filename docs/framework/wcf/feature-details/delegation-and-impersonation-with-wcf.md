@@ -1,14 +1,6 @@
 ---
 title: WCF の委任と偽装
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,17 +8,11 @@ helpviewer_keywords:
 - impersonation [WCF]
 - delegation [WCF]
 ms.assetid: 110e60f7-5b03-4b69-b667-31721b8e3152
-caps.latest.revision: 40
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 8fc08c442813991b425b2bed3a0047fc5efa0d83
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 811ab308b881b5209d44612b29fb51d1c79e8bf1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="delegation-and-impersonation-with-wcf"></a>WCF の委任と偽装
 *偽装* は、サービス ドメインのリソースへのクライアント アクセスを制限するためにサービスが使用する一般的な手法です。 サービス ドメインのリソースは、ローカル ファイルなどのコンピューター リソースの場合もあれば (偽装)、ファイル共有などの別のコンピューター上のリソースの場合もあります (委任)。 サンプル アプリケーションについては、「 [Impersonating the Client](../../../../docs/framework/wcf/samples/impersonating-the-client.md)」を参照してください。 偽装の使用方法の例については、「 [How to: Impersonate a Client on a Service](../../../../docs/framework/wcf/how-to-impersonate-a-client-on-a-service.md)」を参照してください。  
@@ -40,12 +26,12 @@ ms.lasthandoff: 04/30/2018
  偽装と委任はいずれも、クライアントが Windows ID を保持していることが必要となります。 クライアントが Windows ID を保持していない場合、クライアントの ID を 2 番目のサービスにフローする以外に選択肢はありません。  
   
 ## <a name="impersonation-basics"></a>偽装の基本  
- [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] では、さまざまなクライアント資格情報の偽装をサポートしています。 このトピックでは、サービス メソッドの実装時に呼び出し元を偽装するためのサービス モデルのサポートについて説明します。 また、偽装と SOAP セキュリティを必要とする一般的な展開シナリオ、およびこれらのシナリオでの [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のオプションについても説明します。  
+ Windows Communication Foundation (WCF) では、さまざまなクライアントの資格情報の偽装をサポートしています。 このトピックでは、サービス メソッドの実装時に呼び出し元を偽装するためのサービス モデルのサポートについて説明します。 偽装と SOAP セキュリティ、およびこれらのシナリオでの WCF オプションに関連する一般的な配置シナリオは、についても説明します。  
   
- ここでは、SOAP セキュリティを使用する場合の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] での偽装と委任について集中的に説明します。 「 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 」に記載されているように、トランスポート セキュリティを使用する場合にも、 [indigo2](../../../../docs/framework/wcf/feature-details/using-impersonation-with-transport-security.md)」を参照してください。  
+ このトピックは、SOAP セキュリティを使用する場合に、偽装と WCF の委任について説明します。 使用できますの偽装と委任 WCF とトランスポート セキュリティを使用するときに」の説明に従って[トランスポート セキュリティを使用して偽装を使用して](../../../../docs/framework/wcf/feature-details/using-impersonation-with-transport-security.md)です。  
   
 ## <a name="two-methods"></a>2 つの方法  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の SOAP セキュリティには、偽装を実行するための 2 とおりの方法があります。 使用する方法は、バインディングによって異なります。 1 つは、セキュリティ サポート プロバイダー インターフェイス (SSPI) または Kerberos 認証から取得し、サーバーにキャッシュされた Windows トークンの偽装です。 もう 1 つは、 *Service-for-User (S4U)* と総称される Kerberos 拡張から取得した Windows トークンの偽装です。  
+ WCF SOAP セキュリティには、偽装を実行するための 2 つの個別メソッドがあります。 使用する方法は、バインディングによって異なります。 1 つは、セキュリティ サポート プロバイダー インターフェイス (SSPI) または Kerberos 認証から取得し、サーバーにキャッシュされた Windows トークンの偽装です。 もう 1 つは、 *Service-for-User (S4U)* と総称される Kerberos 拡張から取得した Windows トークンの偽装です。  
   
 ### <a name="cached-token-impersonation"></a>キャッシュされたトークンの偽装  
  キャッシュされたトークンの偽装は、以下で実行できます。  
@@ -73,7 +59,7 @@ ms.lasthandoff: 04/30/2018
 >  クライアントとサービスが同じコンピューター上で実行されており、クライアントがシステム アカウント ( `Local System` や `Network Service`など) で実行されているときに、ステートレスなセキュリティ コンテキスト トークンを使用してセキュリティで保護されたセッションを確立した場合は、クライアントを偽装できません。 通常、Windows フォームまたはコンソール アプリケーションは、現在ログインしているアカウントで実行されるため、既定でそのアカウントを偽装できます。 ただし、クライアントが [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] ページであり、そのページが [!INCLUDE[iis601](../../../../includes/iis601-md.md)] または [!INCLUDE[iisver](../../../../includes/iisver-md.md)]でホストされている場合、既定では、クライアントは `Network Service` アカウントで実行されます。 セキュリティで保護されたセッションをサポートするシステム提供のすべてのバインディングは、ステートフルなセキュリティ コンテキスト トークン (SCT: Security Context Token) を既定で使用します。 ただし、クライアントが [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] ページであり、ステートフルな SCT を使用する、セキュリティで保護されたセッションを使用している場合は、クライアントを偽装できません。 詳細については、セキュリティで保護されたセッションでステートフルな Sct を使用して、次を参照してください。[する方法: セキュリティで保護されたセッションのセキュリティ コンテキスト トークンを作成](../../../../docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md)です。  
   
 ## <a name="impersonation-in-a-service-method-declarative-model"></a>サービス メソッドでの偽装 : 宣言モデル  
- ほとんどの偽装シナリオでは、呼び出し元のコンテキストでサービス メソッドを実行する必要があります。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、ユーザーが <xref:System.ServiceModel.OperationBehaviorAttribute> 属性で偽装要件を指定できるようにすることで、これを容易に実行できるようにした偽装機能が用意されています。 たとえば、次のコードでは、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] インフラストラクチャは `Hello` メソッドを実行する前に呼び出し元を偽装します。 `Hello` メソッド内でネイティブ リソースへのアクセス試行が成功するのは、そのリソースのアクセス制御リスト (ACL) で呼び出し元のアクセス特権が許可されている場合だけです。 偽装を有効にするには、次の例に示すように、<xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A> プロパティを <xref:System.ServiceModel.ImpersonationOption> 列挙値のいずれか (<xref:System.ServiceModel.ImpersonationOption.Required?displayProperty=nameWithType> または <xref:System.ServiceModel.ImpersonationOption.Allowed?displayProperty=nameWithType>) に設定します。  
+ ほとんどの偽装シナリオでは、呼び出し元のコンテキストでサービス メソッドを実行する必要があります。 WCF で偽装要件を指定するユーザーを許可することで行うは簡単にこれを偽装機能を提供する、<xref:System.ServiceModel.OperationBehaviorAttribute>属性。 たとえば、次のコードで、WCF インフラストラクチャ呼び出し元を偽装を実行する前に、`Hello`メソッドです。 `Hello` メソッド内でネイティブ リソースへのアクセス試行が成功するのは、そのリソースのアクセス制御リスト (ACL) で呼び出し元のアクセス特権が許可されている場合だけです。 偽装を有効にするには、次の例に示すように、<xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A> プロパティを <xref:System.ServiceModel.ImpersonationOption> 列挙値のいずれか (<xref:System.ServiceModel.ImpersonationOption.Required?displayProperty=nameWithType> または <xref:System.ServiceModel.ImpersonationOption.Allowed?displayProperty=nameWithType>) に設定します。  
   
 > [!NOTE]
 >  サービスの資格情報がリモート クライアントよりも高い場合は、 <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A> プロパティが <xref:System.ServiceModel.ImpersonationOption.Allowed>に設定されていても、サービスの資格情報が使用されます。 つまり、低い特権を持つユーザーがその資格情報を提示した場合、そのユーザーよりも高い特権を持つサービスは、サービスの資格情報を使用してメソッドを実行し、特権の低いユーザーが本来は使用できないリソースを使用できることになります。  
@@ -81,7 +67,7 @@ ms.lasthandoff: 04/30/2018
  [!code-csharp[c_ImpersonationAndDelegation#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_impersonationanddelegation/cs/source.cs#1)]
  [!code-vb[c_ImpersonationAndDelegation#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_impersonationanddelegation/vb/source.vb#1)]  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] インフラストラクチャが呼び出し元を偽装できるのは、呼び出し元が Windows ユーザー アカウントにマップできる資格情報を使用して認証された場合だけです。 サービスが Windows アカウントにマップできない資格情報を使用して認証を行うように構成されている場合には、サービス メソッドは実行されません。  
+ 呼び出し元が Windows ユーザー アカウントにマップできる資格情報で認証される場合にのみ、WCF インフラストラクチャは、呼び出し元を偽装できます。 サービスが Windows アカウントにマップできない資格情報を使用して認証を行うように構成されている場合には、サービス メソッドは実行されません。  
   
 > [!NOTE]
 >  [!INCLUDE[wxp](../../../../includes/wxp-md.md)]では、ステートフルな SCT が作成されると偽装が失敗し、 <xref:System.InvalidOperationException>になります。 詳細については、次を参照してください。[サポートされていないシナリオ](../../../../docs/framework/wcf/feature-details/unsupported-scenarios.md)です。  
@@ -101,14 +87,14 @@ ms.lasthandoff: 04/30/2018
  [!code-csharp[c_ImpersonationAndDelegation#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_impersonationanddelegation/cs/source.cs#3)]
  [!code-vb[c_ImpersonationAndDelegation#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_impersonationanddelegation/vb/source.vb#3)]  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] と `ImpersonationOption` の可能なすべての組み合わせに対する `ImpersonateCallerForAllServiceOperations`の動作を次の表に示します。  
+ 次の表に、すべての組み合わせの WCF 動作`ImpersonationOption`と`ImpersonateCallerForAllServiceOperations`です。  
   
 |`ImpersonationOption`|`ImpersonateCallerForAllServiceOperations`|動作|  
 |---------------------------|------------------------------------------------|--------------|  
-|必須|N/A|[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、呼び出し元を偽装します。|  
-|Allowed|False|[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、呼び出し元を偽装しません。|  
-|Allowed|true|[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、呼び出し元を偽装します。|  
-|NotAllowed|False|[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、呼び出し元を偽装しません。|  
+|必須|N/A|WCF は、呼び出し元を偽装します|  
+|Allowed|False|WCF では、呼び出し元を偽装しません。|  
+|Allowed|true|WCF は、呼び出し元を偽装します|  
+|NotAllowed|False|WCF では、呼び出し元を偽装しません。|  
 |NotAllowed|true|使用できません ( <xref:System.InvalidOperationException> がスローされます)。|  
   
 ## <a name="impersonation-level-obtained-from-windows-credentials-and-cached-token-impersonation"></a>Windows 資格情報とキャッシュされたトークンの偽装から取得する偽装レベル  
@@ -136,7 +122,7 @@ ms.lasthandoff: 04/30/2018
 |処理の代行|×|N/A|識別|  
   
 ## <a name="impersonation-level-obtained-from-user-name-credentials-and-cached-token-impersonation"></a>ユーザー名資格情報とキャッシュされたトークンの偽装から取得する偽装レベル  
- クライアントがユーザー名とパスワードをサービスに渡すことで、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] はそのユーザーとしてログオンできるようになります。これは、`AllowedImpersonationLevel` プロパティを <xref:System.Security.Principal.TokenImpersonationLevel.Delegation> に設定することに相当します  (`AllowedImpersonationLevel` は、<xref:System.ServiceModel.Security.WindowsClientCredential> クラスと <xref:System.ServiceModel.Security.HttpDigestClientCredential> クラスで使用できます)。サービスがユーザー名資格情報を受け取るときに取得する偽装レベルを次の表に示します。  
+ クライアントを有効に等しい設定は、そのユーザーとしてログオンする WCF のユーザー名とパスワードをサービスに渡すことによって、`AllowedImpersonationLevel`プロパティを<xref:System.Security.Principal.TokenImpersonationLevel.Delegation>です。 (`AllowedImpersonationLevel` は、<xref:System.ServiceModel.Security.WindowsClientCredential> クラスと <xref:System.ServiceModel.Security.HttpDigestClientCredential> クラスで使用できます)。サービスがユーザー名資格情報を受け取るときに取得する偽装レベルを次の表に示します。  
   
 |`AllowedImpersonationLevel`|サービスに `SeImpersonatePrivilege`がある|サービスとクライアントに処理を代行する機能がある|キャッシュされたトークンの `ImpersonationLevel`|  
 |---------------------------------|------------------------------------------|--------------------------------------------------|---------------------------------------|  

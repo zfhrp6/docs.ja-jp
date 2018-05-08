@@ -4,16 +4,11 @@ description: Azure のクラウドと Windows コンテナーの既存の .NET �
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/26/2017
-ms.prod: .net
-ms.topic: article
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 0bad7e3afbdf3e55c447319b3756f2235b9e0a19
-ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
+ms.openlocfilehash: b41fe9e8b492b1348cc5615f6254d5fd3ddebf25
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="walkthroughs-and-technical-get-started-overview"></a>チュートリアルと技術は、開始の概要を取得します。
 

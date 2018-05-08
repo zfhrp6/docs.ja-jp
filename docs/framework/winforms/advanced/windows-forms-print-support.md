@@ -1,13 +1,6 @@
 ---
-title: "Windows フォームにおける印刷のサポート"
-ms.custom: 
+title: Windows フォームにおける印刷のサポート
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - Windows Forms, printing
 - printing [Windows Forms]
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - printing [Windows Forms], Windows Forms, support
 - printing [Windows Forms], print support
 ms.assetid: a4a2960c-eb70-48e2-b641-cfb222704e46
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 81f89ee41eb9f8b492ab12e30ae4580cdffbd8f4
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4ea04d0b6bb8ffa7182d5166ebd66b809adeed34
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="windows-forms-print-support"></a>Windows フォームにおける印刷のサポート
 Windows フォームにおける印刷は、主に使用して、 [PrintDocument コンポーネント](../../../../docs/framework/winforms/controls/printdocument-component-windows-forms.md)を印刷するユーザーを有効にするコンポーネントと[PrintPreviewDialog コントロール](../../../../docs/framework/winforms/controls/printpreviewdialog-control-windows-forms.md)コントロール、 [PrintDialogコンポーネント](../../../../docs/framework/winforms/controls/printdialog-component-windows-forms.md)と[PageSetupDialog コンポーネント](../../../../docs/framework/winforms/controls/pagesetupdialog-component-windows-forms.md)Windows オペレーティング システムに慣れているユーザーが使い慣れたグラフィカル インターフェイスを提供するコンポーネントです。  

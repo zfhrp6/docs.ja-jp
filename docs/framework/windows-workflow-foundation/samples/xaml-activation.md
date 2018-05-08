@@ -1,23 +1,12 @@
 ---
-title: "XAML アクティベーション"
-ms.custom: 
+title: XAML アクティベーション
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 486760e2-bb10-4ed5-8c02-fe7472498d2d
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 53665f39c6c0c7e5c7956912b05e3fd80659ddcb
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8621b0ea7b390c81e76ac7eeedb0b547b44320d7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="xaml-activation"></a>XAML アクティベーション
 このサンプルでは、宣言型ワークフローを IIS でホストする方法を示します。 このサンプルは、1 つの操作を持つ、`EchoService` という名前の基本的なワークフローです。  
@@ -27,7 +16,7 @@ ms.lasthandoff: 12/22/2017
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、ダウンロード ページに移動して、すべての [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サンプルおよび [!INCLUDE[wf1](../../../../includes/wf1-md.md)] サンプルをダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
+>  このディレクトリが存在しない場合は、ダウンロード ページに移動をすべて Windows Communication Foundation (WCF) をダウンロードし、[!INCLUDE[wf1](../../../../includes/wf1-md.md)]サンプルです。 このサンプルは、次のディレクトリに格納されます。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Services\XAMLActivation`  
   
@@ -43,10 +32,10 @@ ms.lasthandoff: 12/22/2017
   
     2.  WcfTestClient.exe を実行します。  
   
-4.  WcfTestClient.exe でサービスのアドレスを設定します。これを行うには、Ctrl と Shift キーを押しながら A キーを押して、サービス アドレスを http://localhost:56133/Service.xamlx に設定します。  
+4.  Ctrl キーと shift キーを押しながら A キーを押して、サービス アドレスに設定して WcfTestClient.exe でサービスのアドレスを設定http://localhost:56133/Service.xamlxです。  
   
 5.  エコー操作を実行してサービスをテストします。  
   
 6.  管理者権限で実行したコマンド プロンプトから DeployToIIS.Bat を使用して、IIS にサービスを配置します。  
   
-7.  クライアントでサービスのアドレスを http://localhost/XAMLActivation/Service.xamlx に更新し、WcfTestClient.exe を使用してサービスを再度テストします。
+7.  クライアントにサービスのアドレスは更新http://localhost/XAMLActivation/Service.xamlxし、もう一度 WcfTestClient.exe を使用して、サービスをテストします。

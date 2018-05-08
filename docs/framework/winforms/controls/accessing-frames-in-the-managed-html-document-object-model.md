@@ -1,13 +1,6 @@
 ---
-title: "マネージ HTML DOM (Document Object Model) へのアクセス"
-ms.custom: 
+title: マネージ HTML DOM (Document Object Model) へのアクセス
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - HTML [Windows Forms], dOM
 - managed HTML DOM
@@ -16,16 +9,11 @@ helpviewer_keywords:
 - frames [Windows Forms], accessing
 - DOM [Windows Forms], accessing frames in managed HTML
 ms.assetid: cdeeaa22-0be4-4bbf-9a75-4ddc79199f8d
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: f9355596982025bf9834924a0de8e79e7073fc0e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a9bd6bb730ff84a48c180c7f1ac435afbf75fbc0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="accessing-frames-in-the-managed-html-document-object-model"></a>マネージ HTML DOM (Document Object Model) へのアクセス
 一部の HTML ドキュメントが不在で構成される*フレーム*、または独自の個別の HTML ドキュメントを持つウィンドウです。 フレームを使用すると、ページ内に 1 つ以上の静的な部分 (ナビゲーション バーなど) があり、その他のフレームでは内容が常に変化するような HTML ページを簡単に作成できます。  
@@ -45,12 +33,12 @@ ms.lasthandoff: 12/22/2017
 3.  <xref:System.Windows.Forms.HtmlWindow> の <xref:System.Windows.Forms.HtmlWindow.WindowFrameElement%2A> プロパティ、<xref:System.Windows.Forms.HtmlElement.Children%2A> コレクション、または <xref:System.Windows.Forms.HtmlElementCollection.GetElementsByName%2A> や <xref:System.Windows.Forms.HtmlDocument.GetElementById%2A> などのメソッドを使用して `FRAME` タグまたは `IFRAME` タグにアクセスすると、フレーム要素を取得できます。 これは、元の HTML ファイルに指定されている URL を含む、フレームの静的プロパティを表します。  
   
 ## <a name="frames-and-security"></a>フレームとセキュリティ  
- マネージ HTML DOM と呼ばれるセキュリティ手段が実装されているという事実によってフレームへのアクセスが複雑な*クロス フレーム スクリプティング セキュリティ*です。 異なるドメインに属する複数の `FRAME` を持つ `FRAMESET` がドキュメントに含まれる場合、これらの `FRAME` は相互にやり取りできません。 つまり、自分の Web サイトのコンテンツを表示する `FRAME` は、サード パーティのサイト (http://www.adatum.com/ など) をホストする `FRAME` 内の情報にアクセスできません このセキュリティは、<xref:System.Windows.Forms.HtmlWindow> クラスのレベルで実装されます 別の Web サイトをホストする `FRAME` に関する一般情報 (URL など) は取得できますが、Web サイトの <xref:System.Windows.Forms.HtmlWindow.Document%2A> へのアクセスや、ホストしている `FRAME` または `IFRAME` のサイズや位置の変更はできません。  
+ マネージ HTML DOM と呼ばれるセキュリティ手段が実装されているという事実によってフレームへのアクセスが複雑な*クロス フレーム スクリプティング セキュリティ*です。 異なるドメインに属する複数の `FRAME` を持つ `FRAMESET` がドキュメントに含まれる場合、これらの `FRAME` は相互にやり取りできません。 言い換えると、 `FRAME` 、Web サイトからのコンテンツの表示が内の情報にアクセスできないことを`FRAME`など、サード パーティのサイトをホストするhttp://www.adatum.com/です。 このセキュリティは、<xref:System.Windows.Forms.HtmlWindow> クラスのレベルで実装されます 別の Web サイトをホストする `FRAME` に関する一般情報 (URL など) は取得できますが、Web サイトの <xref:System.Windows.Forms.HtmlWindow.Document%2A> へのアクセスや、ホストしている `FRAME` または `IFRAME` のサイズや位置の変更はできません。  
   
  この規則は、<xref:System.Windows.Forms.HtmlWindow.Open%2A> メソッドおよび <xref:System.Windows.Forms.HtmlWindow.OpenNew%2A> メソッドを使用して開くウィンドウにも適用されます。 開いたウィンドウが <xref:System.Windows.Forms.WebBrowser> コントロール内でホストされているページとは異なるドメインにある場合、そのウィンドウを移動したり、内容をチェックしたりできません。 このような制限は、<xref:System.Windows.Forms.WebBrowser> コントロールを使用して、Windows フォーム ベースのアプリケーションの配置に使用した Web サイトとは異なる Web サイトを表示する場合にも適用されます。 [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)] 配置テクノロジを使用して Web サイト A からアプリケーションをインストールし、<xref:System.Windows.Forms.WebBrowser> を使用して Web サイト B を表示した場合、Web サイト B のデータにはアクセスできません。  
   
  クロスサイト スクリプティングの詳細については、次を参照してください。[に関するクロス フレームのスクリプティングとセキュリティ](http://msdn.microsoft.com/library/ms533028.aspx)です。  
   
-## <a name="see-also"></a>参照  
- [フレーム要素 &#124;です。フレーム オブジェクト](http://msdn.microsoft.com/library/ms535250.aspx)  
+## <a name="see-also"></a>関連項目  
+ [フレーム要素&#124;フレーム オブジェクト](http://msdn.microsoft.com/library/ms535250.aspx)  
  [マネージ HTML DOM (Document Object Model) の使用](../../../../docs/framework/winforms/controls/using-the-managed-html-document-object-model.md)

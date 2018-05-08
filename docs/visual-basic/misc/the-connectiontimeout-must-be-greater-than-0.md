@@ -1,21 +1,14 @@
 ---
-title: "ConnectionTimeout は 0 より大きくなければなりません。"
+title: ConnectionTimeout は 0 より大きくなければなりません。
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vbrNetwork_BadConnectionTimeout
 ms.assetid: 15ac09a7-47f0-44f3-9e84-5bd10bd07450
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 49e52d7b219d834609658b652f78629c36f79e59
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: ff1df6398ba2c10e72a6c57efcbfa6d2169fc367
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="the-connectiontimeout-must-be-greater-than-0"></a>ConnectionTimeout は 0 より大きくなければなりません。
 アップロードとダウンロード ファイルが、 [My.Computer.Network](xref:Microsoft.VisualBasic.Devices.Network)を指定する必要があります、`connectionTimeout`より大きい`0`です。  
@@ -24,7 +17,7 @@ ms.lasthandoff: 01/19/2018
   
 -   `connectionTimeout` より大きい `0`をご指定ください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [My.Computer.Network.UploadFile](xref:Microsoft.VisualBasic.Devices.Network.UploadFile%2A)  
  [My.Computer.Network.DownloadFile](xref:Microsoft.VisualBasic.Devices.Network.DownloadFile%2A)  
  [方法 : ファイルをアップロードする](../../visual-basic/developing-apps/programming/computer-resources/how-to-upload-a-file.md)  

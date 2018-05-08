@@ -1,13 +1,6 @@
 ---
-title: "方法 : Inlines プロパティを介してフロー コンテンツ要素を操作する"
-ms.custom: 
+title: '方法 : Inlines プロパティを介してフロー コンテンツ要素を操作する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,16 +10,11 @@ helpviewer_keywords:
 - Inlines property [WPF], manipulating flow Content elements
 - properties [WPF], Inlines [WPF], manipulating flow Content elements
 ms.assetid: 510780d2-3da1-4360-8763-7054bda22ea3
-caps.latest.revision: "13"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c5d90756ee200ba091f2f9e15e9e7d5632984ba9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 3bbeac2eda8811939be3c710a8ce28349e7f0759
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-manipulate-flow-content-elements-through-the-inlines-property"></a>方法 : Inlines プロパティを介してフロー コンテンツ要素を操作する
 これらの例では、インライン フロー コンテンツ要素に対して実行できる一般的な操作の点を示しています (とそのような要素のコンテナーなど<xref:System.Windows.Controls.TextBlock>) を介して、**インライン**プロパティです。 このプロパティを使用してアイテムの追加し、削除を<xref:System.Windows.Documents.InlineCollection>です。 フロー コンテンツ要素で、その機能、**インライン**プロパティが含まれます。  
@@ -75,7 +63,7 @@ ms.lasthandoff: 12/22/2017
  [!code-csharp[SpanSnippets#_SpanInlinesClear](../../../../samples/snippets/csharp/VS_Snippets_Wpf/SpanSnippets/CSharp/Window1.xaml.cs#_spaninlinesclear)]
  [!code-vb[SpanSnippets#_SpanInlinesClear](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/SpanSnippets/visualbasic/window1.xaml.vb#_spaninlinesclear)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Documents.BlockCollection>  
  <xref:System.Windows.Documents.InlineCollection>  
  <xref:System.Windows.Documents.ListItemCollection>  

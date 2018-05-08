@@ -1,32 +1,22 @@
 ---
-title: "Visual Basic でクエリを記述します。"
-ms.custom: 
+title: Visual Basic でクエリを記述します。
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: get-started-article
 helpviewer_keywords:
 - queries [LINQ in Visual Basic], writing
 - LINQ [Visual Basic], walkthroughs
 - LINQ [Visual Basic], writing queries
 - writing LINQ queries [Visual Basic]
 ms.assetid: f0045808-b9fe-4d31-88d1-473d9957211e
-caps.latest.revision: "70"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: e78d93895a86ad9b2456e5ac7c05db83ebf0379d
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: beb192f6b136455cb1adcb6cf2616578b63fcebf
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="walkthrough-writing-queries-in-visual-basic"></a>チュートリアル: Visual Basic でクエリを記述する
 このチュートリアルでは、書き込みを Visual Basic 言語の機能を使用する方法を示しています[!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)]クエリ式。 このチュートリアルでは、Student オブジェクトの一覧にクエリを作成する方法、クエリを実行する方法、およびそれらを変更する方法について説明します。 クエリでは、オブジェクト初期化子、ローカル型推論、および匿名型を含むいくつかの機能を組み込みます。  
   
- このチュートリアルを完了すると、サンプルと、特定のドキュメントに移動する準備ができてされます[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]興味のあるプロバイダー。 [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]プロバイダーが含まれます[!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)]、 [!INCLUDE[linq_dataset](~/includes/linq-dataset-md.md)]、および[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]です。  
+ このチュートリアルを完了すると、サンプルと、特定のドキュメントに移動する準備ができてされます[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]興味のあるプロバイダー。 [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] プロバイダーが含まれます[!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)]、 [!INCLUDE[linq_dataset](~/includes/linq-dataset-md.md)]、および[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]です。  
   
 ## <a name="create-a-project"></a>プロジェクトの作成  
   
@@ -34,7 +24,7 @@ ms.lasthandoff: 12/21/2017
   
 1.  Visual Studio を起動します。  
   
-2.  **[ファイル]** メニューの **[新規作成]**をポイントし、 **[プロジェクト]**をクリックします。  
+2.  **[ファイル]** メニューの **[新規作成]** をポイントし、 **[プロジェクト]** をクリックします。  
   
 3.  **インストールされたテンプレート**一覧で、クリックして**Visual Basic**です。  
   
@@ -151,7 +141,7 @@ ms.lasthandoff: 12/21/2017
   
  [LINQ to DataSet](../../../../framework/data/adonet/linq-to-dataset.md)  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [統合言語クエリ (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/index.md)  
  [Visual Basic の LINQ の概要](../../../../visual-basic/programming-guide/concepts/linq/getting-started-with-linq.md)  
  [ローカル型の推論](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)  

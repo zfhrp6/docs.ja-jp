@@ -1,11 +1,7 @@
 ---
-title: "QualifierSet_BeginEnumeration 関数 (アンマネージ API リファレンス)"
-description: "QualifierSet_BeginEnumeration 関数では、オブジェクトの修飾子の列挙子をリセットします。"
+title: QualifierSet_BeginEnumeration 関数 (アンマネージ API リファレンス)
+description: QualifierSet_BeginEnumeration 関数では、オブジェクトの修飾子の列挙子をリセットします。
 ms.date: 11/06/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: reference
 api_name:
 - QualifierSet_BeginEnumeration
 api_location:
@@ -20,14 +16,11 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 440dde03f4ed138a33eb6f817723d7c5c74f6d46
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 1fac897f743ca452c38282143cdf822b682df1df
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="qualifiersetbeginenumeration-function"></a>QualifierSet_BeginEnumeration 関数
 列挙体の先頭にオブジェクトの修飾子の列挙子をリセットします。  
@@ -80,12 +73,12 @@ HRESULT QualifierSet_BeginEnumeration (
 | `WBEM_FLAG_LOCAL_ONLY` | 0x10 | 現在のプロパティまたはオブジェクトに特定の修飾子の名前のみを返します。 <br/> プロパティの: (オーバーライドを含む)、プロパティに特定の修飾子のみを返すし、クラス定義から伝達されたこれらの修飾子されません。 <br/> インスタンス: インスタンス固有の修飾子名のみが返されます。 <br/> クラスの: 派生クラス beiong に特定の修飾子のみを返します。
 |`WBEM_FLAG_PROPAGATED_ONLY` | 0x20 | 別のオブジェクトから修飾子の名前のみが反映される戻り値。 <br/> プロパティ: から返される修飾子のみが反映されるこのプロパティに、クラス定義と、プロパティ自体からです。 <br/> インスタンス: クラス定義からこれらの修飾子のみが反映される戻り値。 <br/> クラスの: 戻り値の修飾子名前だけが、親クラスから継承します。 |
 
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** WMINet_Utils.idl  
   
- **.NET framework のバージョン:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **.NET framework のバージョン:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>関連項目  
 [WMI およびパフォーマンス カウンター (アンマネージ API リファレンス)](index.md)

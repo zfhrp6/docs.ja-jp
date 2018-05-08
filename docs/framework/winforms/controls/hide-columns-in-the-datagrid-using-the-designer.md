@@ -1,29 +1,17 @@
 ---
-title: "方法 : デザイナーを使用して Windows フォーム DataGridView コントロールの列を非表示にする"
-ms.custom: 
+title: '方法 : デザイナーを使用して Windows フォーム DataGridView コントロールの列を非表示にする'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - Windows Forms, columns
 - columns [Windows Forms], hiding
 - DataGridView control [Windows Forms], column hiding
 - data [Windows Forms], displaying
 ms.assetid: a81c38e6-2527-426a-bcb1-be691403be04
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: f09bcdd3db201aa270ff7b124c8b142ecd588746
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: c7362b503f16dd184be3bd04ba21a4d1eb55a390
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-hide-columns-in-the-windows-forms-datagridview-control-using-the-designer"></a>方法 : デザイナーを使用して Windows フォーム DataGridView コントロールの列を非表示にする
 Windows フォームの <xref:System.Windows.Forms.DataGridView> コントロールで使用できる列の一部のみを表示したいときがあります。 従業員を表示したいたとえば、給与の列を他のユーザーから非表示にするときに管理資格情報を持つユーザーです。 代わりに、一部のみを表示したい多くの列を含むデータ ソースにコントロールをバインドすることがあります。 この場合、不要なに非表示にするのではなく、表示する列を通常削除されます。 詳細については、次を参照してください。[する方法: 追加し、Windows フォーム DataGridView コントロールを使用して、デザイナーで列を削除する](../../../../docs/framework/winforms/controls/add-and-remove-columns-in-the-datagrid-using-the-designer.md)です。  
@@ -44,7 +32,7 @@ Windows フォームの <xref:System.Windows.Forms.DataGridView> コントロー
     > [!NOTE]
     >  オフにして追加する際に、列を隠すことも、 **Visible**  チェック ボックス、**列の追加** ダイアログ ボックス。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.DataGridView>  
  <xref:System.Windows.Forms.DataGridViewColumn.Visible%2A?displayProperty=nameWithType>  
  [方法: デザイナーを使用して Windows フォーム DataGridView コントロールの列を追加および削除する](../../../../docs/framework/winforms/controls/add-and-remove-columns-in-the-datagrid-using-the-designer.md)  

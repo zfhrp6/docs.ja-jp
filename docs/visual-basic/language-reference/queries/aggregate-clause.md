@@ -1,11 +1,6 @@
 ---
-title: "Aggregate 句 (Visual Basic)"
+title: Aggregate 句 (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.QueryAggregateIn
 - vb.QueryAggregate
@@ -15,14 +10,11 @@ helpviewer_keywords:
 - Aggregate statement [Visual Basic]
 - queries [Visual Basic], Aggregate
 ms.assetid: 1315a814-5db6-4077-b34b-b141e11cc0eb
-caps.latest.revision: "25"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 47017414a92bfbca0df4ce6e2b70398a01762d37
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 1db4b7fdcf9c8a38c2c49eca9d874eccea90ab1d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="aggregate-clause-visual-basic"></a>Aggregate 句 (Visual Basic)
 コレクションに 1 つまたは複数の集計関数を適用します。  
@@ -40,11 +32,11 @@ Aggregate element [As type] In collection _
   
 |用語|定義|  
 |---|---|  
-|`element`|必須です。 変数なコレクションの要素を反復処理するために使用します。|  
-|`type`|省略可能です。 `element` の型。 型が指定されていない場合の種類`element`から推論される`collection`です。|  
-|`collection`|必須です。 操作対象のコレクションを参照します。|  
-|`clause`|省略可能です。 1 つまたは複数の句がクエリなど、 `Where` aggregate 句または句を適用するクエリの結果を絞り込むの句。|  
-|`expressionList`|必須です。 1 つまたは複数カンマ区切りの式をコレクションに適用する集計関数を識別します。 エイリアスは、クエリ結果のメンバー名を指定する集計関数に適用できます。 別名が指定されていない場合は、集計関数の名前が使用されます。 例については、このトピックの後半の集計関数に関するセクションを参照してください。|  
+|`element`|必須。 変数なコレクションの要素を反復処理するために使用します。|  
+|`type`|任意。 `element` の型。 型が指定されていない場合の種類`element`から推論される`collection`です。|  
+|`collection`|必須。 操作対象のコレクションを参照します。|  
+|`clause`|任意。 1 つまたは複数の句がクエリなど、 `Where` aggregate 句または句を適用するクエリの結果を絞り込むの句。|  
+|`expressionList`|必須。 1 つまたは複数カンマ区切りの式をコレクションに適用する集計関数を識別します。 エイリアスは、クエリ結果のメンバー名を指定する集計関数に適用できます。 別名が指定されていない場合は、集計関数の名前が使用されます。 例については、このトピックの後半の集計関数に関するセクションを参照してください。|  
   
 ## <a name="remarks"></a>コメント  
  `Aggregate`に集計関数をクエリに含める句を使用できます。 集計関数は、値のセットに対してチェックと計算を実行し、1 つの値を返します。 クエリ結果の型のメンバーを使用して計算値にアクセスすることができます。 使用できる標準の集計関数は、 `All`、 `Any`、 `Average`、 `Count`、 `LongCount`、 `Max`、 `Min`、および`Sum`関数。 これらの関数は、SQL での集計に慣れている開発者に習熟しています。 これらは、このトピックの次のセクションで説明します。  

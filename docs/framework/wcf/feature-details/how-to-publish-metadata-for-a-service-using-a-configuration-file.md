@@ -1,34 +1,20 @@
 ---
 title: '方法: 構成ファイルを使用してサービスのメタデータを公開する'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: f061443f-92df-4824-b36a-609c4cd14a17
-caps.latest.revision: 24
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: d30031db590b424688cc0af6a573c1042099e64e
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 94013c69bec0ea37c9260567437aeada3ebe2ae4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-publish-metadata-for-a-service-using-a-configuration-file"></a>方法: 構成ファイルを使用してサービスのメタデータを公開する
-このトピックは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスのメタデータを公開する手段を示す 2 つの「方法」トピックのうちの 1 つです。 構成ファイルとコードを使用して、サービスがメタデータを公開する手段を指定する方法は 2 つあります。 このトピックでは、構成ファイルを使用してサービスのメタデータを公開する方法について説明します。  
+これは、Windows Communication Foundation (WCF) サービスのメタデータを公開に示す 2 つの操作方法に関するトピックのいずれかです。 構成ファイルとコードを使用して、サービスがメタデータを公開する手段を指定する方法は 2 つあります。 このトピックでは、構成ファイルを使用してサービスのメタデータを公開する方法について説明します。  
   
 > [!CAUTION]
 >  このトピックでは、セキュリティで保護されていない方法でメタデータを公開する方法について説明します。 クライアントは、サービスからメタデータを取得できます。 安全な方法でメタデータを公開するようにサービスを必要とする場合は、次を参照してください。[カスタム セキュリティで保護されたメタデータ エンドポイント](../../../../docs/framework/wcf/samples/custom-secure-metadata-endpoint.md)です。  
   
- コードでメタデータの公開の詳細については、次を参照してください。[する方法: サービスを使用してコードのメタデータを公開](../../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-code.md)です。 メタデータを公開すると、クライアントが `?wsdl` クエリ文字列を使用した WS-Transfer GET 要求または HTTP/GET 要求によりメタデータを取得できるようになります。 コードが機能するかどうかを確認するために、基本的な [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスを作成します。 簡略化のため、次のコードに基本的な自己ホスト型サービスが用意されています。  
+ コードでメタデータの公開の詳細については、次を参照してください。[する方法: サービスを使用してコードのメタデータを公開](../../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-code.md)です。 メタデータを公開すると、クライアントが `?wsdl` クエリ文字列を使用した WS-Transfer GET 要求または HTTP/GET 要求によりメタデータを取得できるようになります。 コードが動作していることを確認するには、基本的な WCF サービスを作成します。 簡略化のため、次のコードに基本的な自己ホスト型サービスが用意されています。  
   
 ```csharp  
 using System;  
@@ -203,7 +189,7 @@ namespace Metadata.Samples
      サービスの <xref:System.ServiceModel.Description.ServiceMetadataBehavior> では `httpGetEnabled` が `true` に設定されているため、サービスではメタデータの公開が有効になっています。また、エンドポイントが明示的に追加されていないため、ランタイムは既定のエンドポイントを追加します。 既定のエンドポイント、バインディング、および動作の詳細については、次を参照してください。[簡略化された構成](../../../../docs/framework/wcf/simplified-configuration.md)と[WCF サービスの構成を簡略化](../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md)です。  
   
 ## <a name="example"></a>例  
- 次のコード例は、基本的な [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスの実装と、このサービスのメタデータを公開する構成ファイルを示しています。  
+ 次のコード例は、基本的な WCF サービスとサービスのメタデータを公開する構成ファイルの実装を示しています。  
   
 ```csharp  
 using System;  

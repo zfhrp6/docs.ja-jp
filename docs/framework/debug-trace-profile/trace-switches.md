@@ -1,13 +1,6 @@
 ---
-title: "トレース スイッチ"
-ms.custom: 
+title: トレース スイッチ
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -19,16 +12,13 @@ helpviewer_keywords:
 - trace switches
 - trace switches, creating custom
 ms.assetid: 8ab913aa-f400-4406-9436-f45bc6e54fbe
-caps.latest.revision: "16"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 4df092afd4d60811683b4187df78f27ad971cf89
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8b8ee0d04644cf504354767c296f504a937055d1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="trace-switches"></a>トレース スイッチ
 トレース スイッチを使用すると、トレース出力を有効/無効にしたり、トレースの出力をフィルター処理したりできます。 トレース スイッチは、コードに存在すれるオブジェクトであり、.config ファイルによって外部的に設定できます。 .NET Framework に用意されたトレース スイッチには、 <xref:System.Diagnostics.BooleanSwitch> クラス、 <xref:System.Diagnostics.TraceSwitch> クラス、および <xref:System.Diagnostics.SourceSwitch> クラスの 3 種類があります。 <xref:System.Diagnostics.BooleanSwitch> クラスは、トグル スイッチとして機能し、各種のトレース ステートメントを有効にしたり無効にしたりできます。 <xref:System.Diagnostics.TraceSwitch> クラスと <xref:System.Diagnostics.SourceSwitch> クラスを使用すると、特定のトレース レベルごとにトレース スイッチを有効にすることができます。これにより、該当するレベルおよびそれ以下のすべてのレベルに対して指定された <xref:System.Diagnostics.Trace> メッセージまたは <xref:System.Diagnostics.TraceSource> メッセージが表示されます。 スイッチを無効にした場合、トレース メッセージは表示されません。 すべてのクラスは、他のユーザー定義のスイッチと同様に、どちらも**Switch**という抽象 ( **MustInherit**) クラスから派生したクラスです。  
@@ -66,7 +56,7 @@ ms.lasthandoff: 12/22/2017
   
  **TraceSwitch** のプロパティは、スイッチの最大トレース レベルを示します。 つまり、指定されたレベルとそれ以下のすべてのレベルについて、トレース情報が書き込まれます。 たとえば、 **TraceInfo** が **true**の場合、 **TraceError** と **TraceWarning** も **true** になりますが、 **TraceVerbose** は **false**になることがあります。  
   
- これらのプロパティは読み取り専用です。 **TraceSwitch** オブジェクトは、 **TraceLevel** プロパティの設定時にこれらのプロパティを自動的に設定します。 例:  
+ これらのプロパティは読み取り専用です。 **TraceSwitch** オブジェクトは、 **TraceLevel** プロパティの設定時にこれらのプロパティを自動的に設定します。 例えば:  
   
 ```vb  
 Dim myTraceSwitch As New TraceSwitch("SwitchOne", "The first switch")  
@@ -92,7 +82,7 @@ MessageBox.Show(myTraceSwitch.TraceVerbose.ToString());
 ## <a name="developer-defined-switches"></a>開発者が定義するスイッチ  
  **BooleanSwitch** と **TraceSwitch**を指定する以外に、 **Switch** クラスから継承される独自のスイッチを定義して、カスタマイズしたメソッドで基本クラスのメソッドをオーバーライドできます。 開発者定義スイッチの作成方法については、「.NET Framework リファレンス」の「 <xref:System.Diagnostics.Switch> クラス」を参照してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [トレース リスナー](../../../docs/framework/debug-trace-profile/trace-listeners.md)  
  [方法 : アプリケーション コードにトレース ステートメントを追加する](../../../docs/framework/debug-trace-profile/how-to-add-trace-statements-to-application-code.md)  
  [アプリケーションのトレースとインストルメント](../../../docs/framework/debug-trace-profile/tracing-and-instrumenting-applications.md)

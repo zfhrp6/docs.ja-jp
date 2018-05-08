@@ -1,13 +1,6 @@
 ---
-title: "ToolStripPanel コントロール"
-ms.custom: 
+title: ToolStripPanel コントロール
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - ToolStripPanel control [Windows Forms]
 - horizontal space
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - tool area [Windows Forms]
 - vertical space
 ms.assetid: aa47af39-1e71-40ee-bb75-2d2478f81bd0
-caps.latest.revision: "6"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: d062e46ce0cb8d6ce6fa7189377735a4c480e030
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 14ddd56540d8649a3705ef2d19726499fbfcaf9e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="toolstrippanel-control"></a>ToolStripPanel コントロール
 `ToolStripPanel` コントロールは、ドッキングしたときにツールの領域内の水平方向または縦方向のスペースを共有し、<xref:System.Windows.Forms.ToolStripContainer> の 4 つのパネルと中庸のパネルが必要ないときに <xref:System.Windows.Forms.ToolStrip> コントロールを調整することができます。  
@@ -45,5 +33,5 @@ ms.lasthandoff: 12/22/2017
  <xref:System.Windows.Forms.ToolStripPanel>  
  <xref:System.Windows.Forms.ToolStripPanel> コントロールのリファレンス ドキュメントを提供します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Windows フォームで使用するコントロール](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)

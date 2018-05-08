@@ -1,14 +1,6 @@
 ---
-title: "方法 : Windows フォーム コントロールのスレッド セーフな呼び出しを行う"
-ms.custom: 
+title: '方法 : Windows フォーム コントロールのスレッド セーフな呼び出しを行う'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -24,17 +16,11 @@ helpviewer_keywords:
 - threading [Windows Forms], cross-thread calls
 - controls [Windows Forms], multithreading
 ms.assetid: 138f38b6-1099-4fd5-910c-390b41cbad35
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 7cca363be57e5c5022c70c62d876f62cebc6e9c0
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 1a726dd3c6ff5e36190f6260a9644d9f69b87933
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-make-thread-safe-calls-to-windows-forms-controls"></a>方法 : Windows フォーム コントロールのスレッド セーフな呼び出しを行う
 マルチスレッドを使用して Windows フォーム アプリケーションのパフォーマンスを向上させる場合は、必ずスレッド セーフな方法でコントロールを呼び出してください。  
@@ -1060,7 +1046,7 @@ int main()
 > [!CAUTION]
 >  どのようなマルチスレッドを使用する場合でも、コードで深刻かつ複雑なバグが発生する可能性があります。 詳細については、マルチスレッドを使用するソリューションを実装する前に、「[マネージ スレッド処理の実施](../../../../docs/standard/threading/managed-threading-best-practices.md)」を参照してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ComponentModel.BackgroundWorker>  
  [方法: バックグラウンドで操作を実行する](../../../../docs/framework/winforms/controls/how-to-run-an-operation-in-the-background.md)  
  [方法: バックグラウンド操作を使用するフォームを実装する](../../../../docs/framework/winforms/controls/how-to-implement-a-form-that-uses-a-background-operation.md)  

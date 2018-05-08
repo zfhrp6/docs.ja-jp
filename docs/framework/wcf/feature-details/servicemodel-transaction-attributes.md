@@ -1,31 +1,17 @@
 ---
-title: "ServiceModel トランザクションの属性"
-ms.custom: 
+title: ServiceModel トランザクションの属性
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - transactions [WCF], ServiceModel attributes
 ms.assetid: 1e0d2436-6ae5-439b-9765-a448d6f60000
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: aac52f3c542f88adbca40c6cbbdddc734e12903b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 79d97eee328d816281348b5b15cf779e1ee65893
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="servicemodel-transaction-attributes"></a>ServiceModel トランザクションの属性
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] には、<xref:System.ServiceModel> サービスのトランザクションの動作を構成できる次の 3 つの標準的な [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 属性のプロパティが用意されています。  
+Windows Communication Foundation (WCF) の 3 つの標準的なプロパティを提供<xref:System.ServiceModel>を WCF サービスのトランザクションの動作を構成できるようにする属性。  
   
 -   <xref:System.ServiceModel.TransactionFlowAttribute>  
   
@@ -50,7 +36,7 @@ ms.lasthandoff: 12/22/2017
 -   <xref:System.ServiceModel.ServiceBehaviorAttribute.TransactionTimeout%2A> は、サービスで作成された新しいトランザクションを完了させる期間を指定します。 この期間が過ぎてもトランザクションが完了しない場合は、トランザクションは中止されます。 <xref:System.TimeSpan> は、<xref:System.Transactions.TransactionScope> が <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired%2A> に設定された任意の操作、および新しいトランザクションが作成された任意の操作の `true` タイムアウトとして使用されます。 このタイムアウトは、2 フェーズ コミット プロトコルにおいて、トランザクションが作成されてからフェーズ 1 が完了するまでの最大許容時間です。 使用されるタイムアウト値は、<xref:System.ServiceModel.ServiceBehaviorAttribute.TransactionTimeout%2A> プロパティと `transactionTimeout` 構成設定のうち、常に小さい方の値になります。  
   
 ## <a name="operationbehaviorattribute"></a>OperationBehaviorAttribute  
- <xref:System.ServiceModel.OperationBehaviorAttribute> 属性は、サービス実装におけるメソッドの動作を指定します。 この属性を使用して、操作の特定の実行動作を示すことができます。 この属性のプロパティは、サービス コントラクトの Web サービス記述言語 (WSDL: Web Service Description Language) 記述には影響しません。また、このプロパティがない場合に開発者が実装する必要のある共通の機能を有効にする、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] プログラミング モデルの要素にすぎません。  
+ <xref:System.ServiceModel.OperationBehaviorAttribute> 属性は、サービス実装におけるメソッドの動作を指定します。 この属性を使用して、操作の特定の実行動作を示すことができます。 この属性のプロパティは、サービス コントラクトの Web サービス記述言語 (WSDL) の説明には影響しませんの要素にすぎません WCF プログラミング モデルを実装する開発者がそれ以外の場合がある一般的な機能を有効にするです。  
   
  この属性には、次のようなトランザクション固有のプロパティがあります。  
   

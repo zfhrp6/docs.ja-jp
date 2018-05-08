@@ -1,34 +1,20 @@
 ---
-title: "方法 : COM+ サービス設定を構成する"
-ms.custom: 
+title: '方法 : COM+ サービス設定を構成する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - COM+ [WCF], configuring service settings
 ms.assetid: f42a55a8-3af8-4394-9fdd-bf12a93780eb
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 1bdbdbae857685ddb447843fd704896de018b1c1
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 43964331f6728db0f094eaceb63e2c306d2dd3ac
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-configure-com-service-settings"></a>方法 : COM+ サービス設定を構成する
 COM+ サービス構成ツールを使用してアプリケーション インターフェイスを追加または削除すると、アプリケーション構成ファイル内の Web サービス構成が更新されます。 COM + ホスト モードでは、Application.config ファイルはアプリケーションのルート ディレクトリに配置されます (%PROGRAMFILES%\ComPlus アプリケーション\\%programfiles%\complus は既定値)。 いずれの Web ホスト モードでも、Web.config ファイルは指定した vroot ディレクトリに配置されます。  
   
 > [!NOTE]
->  クライアントとサーバー間のメッセージの改ざんを防止するには、メッセージの署名を使用する必要があります。 また、クライアントとサーバー間のメッセージから情報が漏えいするのを防止するには、メッセージまたはトランスポート層の暗号化を使用する必要があります。 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスの場合と同様に、調整機能を使用して同時呼び出し、同時接続、同時インスタンス、同時保留操作の数を制限する必要があります。 これによりリソースの過剰消費を防ぐことができます。 調整の動作は、サービス構成ファイルの設定で指定します。  
+>  クライアントとサーバー間のメッセージの改ざんを防止するには、メッセージの署名を使用する必要があります。 また、クライアントとサーバー間のメッセージから情報が漏えいするのを防止するには、メッセージまたはトランスポート層の暗号化を使用する必要があります。 同様に Windows Communication Foundation (WCF) サービスを使用してください調整の同時呼び出し、接続、インスタンス、および保留中の操作の数を制限します。 これによりリソースの過剰消費を防ぐことができます。 調整の動作は、サービス構成ファイルの設定で指定します。  
   
 ## <a name="example"></a>例  
  次のインターフェイスを実装するコンポーネントについて考えます。  
@@ -62,13 +48,13 @@ public interface IFinancesContract : IDisposable
   
  このサービスを使用するクライアント アプリケーションはこのコントラクトに準拠し、さらにアプリケーションの構成に指定したバインディングと互換性のあるバインディングを使用する必要があります。  
   
- 次のコード例は、既定の構成ファイルの例を示しています。 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] Web サービスであるため、これは標準サービス モデルの構成スキーマに準拠し、他の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスの構成ファイルと同様の方法で編集できます。  
+ 次のコード例は、既定の構成ファイルの例を示しています。 Windows Communication Foundation (WCF) Web サービスであるこの標準サービス モデル構成スキーマに準拠し、他の WCF サービス構成ファイルと同じ方法で編集できます。  
   
  通常、次のような変更を行います。  
   
 -   エンドポイント アドレスを既定の ApplicationName/ComponentName/InterfaceName という形式から、より利用しやすい形式に変更する。  
   
--   サービスの名前空間を既定の "http://tempuri.org/InterfaceID" という形式から、より関連性の高い形式に変更する。  
+-   既定値からサービスの名前空間の変更"http://tempuri.org/InterfaceID"関連性の高いフォームをフォーム。  
   
 -   異なるトランスポート バインディングを使用するようにエンドポイントを変更する。  
   
@@ -109,5 +95,5 @@ public interface IFinancesContract : IDisposable
 </configuration>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [COM+ アプリケーションとの統合](../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications.md)

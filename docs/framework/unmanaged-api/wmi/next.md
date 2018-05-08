@@ -1,11 +1,7 @@
 ---
-title: "次の関数 (アンマネージ API リファレンス)"
-description: "次のように関数 retireves 列挙型で次のプロパティです。"
+title: 次の関数 (アンマネージ API リファレンス)
+description: 次のように関数 retireves 列挙型で次のプロパティです。
 ms.date: 11/06/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: reference
 api_name:
 - Next
 api_location:
@@ -20,14 +16,11 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: e59ef3f65b75a91708dc65f7d4e3d811dc2d3f9d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e945930a9a668d0a1c1e4c26bf3add9cc574c261
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="next-function"></a>次の関数
 呼び出しで始まる列挙型で次のプロパティを取得[BeginEnumeration](beginenumeration.md)です。  
@@ -101,12 +94,12 @@ HRESULT Next (
 | `WBEM_FLAVOR_ORIGIN_PROPAGATED` | 0x20 | クラスの: このプロパティは、親クラスから継承します。 </br> インスタンス: プロパティは、親クラスから継承されたときに変更されていないインスタンスがします。  |
 | `WBEM_FLAVOR_ORIGIN_LOCAL` | 0 | クラスの: プロパティが、派生クラスに所属します。 </br> インスタンス:; のインスタンスによって、プロパティが変更されました。値が指定された、または修飾子が追加または変更します。 |
 
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** WMINet_Utils.idl  
   
- **.NET framework のバージョン:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **.NET framework のバージョン:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>関連項目  
 [WMI およびパフォーマンス カウンター (アンマネージ API リファレンス)](index.md)

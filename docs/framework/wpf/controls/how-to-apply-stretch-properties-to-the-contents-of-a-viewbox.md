@@ -1,13 +1,6 @@
 ---
-title: "方法 : Viewbox のコンテンツに Stretch プロパティを適用する"
-ms.custom: 
+title: '方法 : Viewbox のコンテンツに Stretch プロパティを適用する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,22 +10,17 @@ helpviewer_keywords:
 - controls [WPF], Viewbox
 - Viewbox control [WPF]
 ms.assetid: b9c22ef4-bce4-4300-9e0c-8260b7db83cc
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 93e61783f70ee501266a68785350ee0810dff255
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 3e81ec9fd045bb3fcf359943e455d2cce94aec55
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-apply-stretch-properties-to-the-contents-of-a-viewbox"></a>方法 : Viewbox のコンテンツに Stretch プロパティを適用する
 ## <a name="example"></a>例  
  この例の値を変更する方法を示しています、<xref:System.Windows.Controls.Viewbox.StretchDirection%2A>と<xref:System.Windows.Controls.Viewbox.Stretch%2A>のプロパティ、<xref:System.Windows.Controls.Viewbox>です。  
   
- 最初の例では[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]を定義する、<xref:System.Windows.Controls.Viewbox>要素。 割り当てます、<xref:System.Windows.FrameworkElement.MaxWidth%2A>と<xref:System.Windows.FrameworkElement.MaxHeight%2A>400 です。 例の入れ子、<xref:System.Windows.Controls.Image>内の要素、<xref:System.Windows.Controls.Viewbox>です。 <xref:System.Windows.Controls.Button>プロパティの値に対応する要素、<xref:System.Windows.Controls.Viewbox.Stretch%2A>と<xref:System.Windows.Controls.StretchDirection>列挙体は、入れ子になったの伸縮動作を操作<xref:System.Windows.Controls.Image>です。  
+ 最初の例では[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]を定義する、<xref:System.Windows.Controls.Viewbox>要素。 割り当てます、<xref:System.Windows.FrameworkElement.MaxWidth%2A>と<xref:System.Windows.FrameworkElement.MaxHeight%2A>400 です。 例の入れ子、<xref:System.Windows.Controls.Image>内の要素、<xref:System.Windows.Controls.Viewbox>です。 <xref:System.Windows.Controls.Button> プロパティの値に対応する要素、<xref:System.Windows.Controls.Viewbox.Stretch%2A>と<xref:System.Windows.Controls.StretchDirection>列挙体は、入れ子になったの伸縮動作を操作<xref:System.Windows.Controls.Image>です。  
   
  [!code-xaml[viewboxStretchLayoutSamp#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/viewboxStretchLayoutSamp/CSharp/Window1.xaml#1)]  
   
@@ -41,7 +29,7 @@ ms.lasthandoff: 12/22/2017
  [!code-csharp[viewboxStretchLayoutSamp#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/viewboxStretchLayoutSamp/CSharp/Window1.xaml.cs#2)]
  [!code-vb[viewboxStretchLayoutSamp#2](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/viewboxStretchLayoutSamp/VisualBasic/Window1.xaml.vb#2)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Controls.Viewbox>  
  <xref:System.Windows.Media.Stretch>  
  <xref:System.Windows.Controls.StretchDirection>

@@ -1,24 +1,14 @@
 ---
-title: "&lt;Application&gt; 要素 (.NET ネイティブ)"
-ms.custom: 
+title: '&lt;Application&gt; 要素 (.NET ネイティブ)'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: b4e9b37a-059b-4076-8f56-cb3f9cef0cd9
-caps.latest.revision: "21"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c486faf43a1109b0391f40072ab267b72e1d07d8
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 60145611981b53d4778e7c52c6138b6a9b58a592
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ltapplicationgt-element-net-native"></a>&lt;Application&gt; 要素 (.NET ネイティブ)
 実行時にリフレクションに使用可能なメタデータを持つアプリケーション全体の型と型のメンバーのコンテナーとして機能し、アプリ内のすべてのプログラム要素にランタイム リフレクション ポリシーを適用します。  
@@ -94,7 +84,7 @@ ms.lasthandoff: 12/22/2017
   
 -   リフレクション、シリアル化、および相互運用に関するアプリケーション全体のポリシーを設定する要素として。 `<Application>` 要素の属性はアプリケーション全体のポリシーを定義します。このポリシーは、`<Application>` 要素または [\<Library>](../../../docs/framework/net-native/library-element-net-native.md) 要素により定義される子要素によってオーバーライドできます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [\<ライブラリ > 要素](../../../docs/framework/net-native/library-element-net-native.md)  
  [\<ディレクティブ > 要素](../../../docs/framework/net-native/directives-element-net-native.md)  
  [ランタイム ディレクティブ要素](../../../docs/framework/net-native/runtime-directive-elements.md)  

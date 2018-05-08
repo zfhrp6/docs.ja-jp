@@ -1,22 +1,12 @@
 ---
-title: "方法: 2 つのロケーション パス (XPATH-LINQ to XML) の和集合を検索 (Visual Basic)"
-ms.custom: 
+title: '方法: 2 つのロケーション パス (XPATH-LINQ to XML) の和集合を検索 (Visual Basic)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: c82c09b4-cb0a-47ec-8cc3-a124144c2788
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: c15ef409500a07d922563309301ea8f1442feee6
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 3f67ac24d12e7d2fcbd74e2f27a75d982c1cf00b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-find-a-union-of-two-location-paths-xpath-linq-to-xml-visual-basic"></a>方法: 2 つのロケーション パス (XPATH-LINQ to XML) の和集合を検索 (Visual Basic)
 XPath を使用すると、2 つの XPath ロケーション パスの結果の和集合を検索できます。  
@@ -30,7 +20,7 @@ XPath を使用すると、2 つの XPath ロケーション パスの結果の�
 ## <a name="example"></a>例  
  この例では、`Category` 要素と `Price` 要素をすべて検索し、それらを 1 つのコレクションに連結します。 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] クエリで <xref:System.Xml.Linq.Extensions.InDocumentOrder%2A> を呼び出して、結果を並べ替えていることに注意してください。 XPath 式の評価結果もドキュメント順になります。  
   
- この例では、「[サンプル XML ファイル: 数値データ (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-numerical-data-linq-to-xml.md)」の XML ドキュメントを使用します。  
+ この例では、「[サンプル XML ファイル: 数値データ (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-numerical-data-linq-to-xml.md)」の XML ドキュメントを使います。  
   
 ```vb  
 Dim data As XDocument = XDocument.Load("Data.xml")  

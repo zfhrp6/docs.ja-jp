@@ -1,31 +1,19 @@
 ---
-title: "限定的な初期化"
-ms.custom: 
+title: 限定的な初期化
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - lazy initialization in .NET, introduction
 ms.assetid: 56b4ae5c-4745-44ff-ad78-ffe4fcde6b9b
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: f4998cc0c836cf46d79d854ad9a85e7eacf70d7f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a826121a7f22d1db7287171c5add28e5fcd690cc
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="lazy-initialization"></a>限定的な初期化
 オブジェクトの*遅延初期化*とは、初めて使用されるまでオブジェクトの作成が延期されることを意味します。 (このトピックでは、*遅延初期化*と*遅延インスタンス化*を同じ意味の言葉として使っています。)遅延初期化は主に、パフォーマンスの改善、無駄な計算処理の回避、プログラムのメモリ要件の縮小を目的として利用されます。 最も一般的なシナリオ:  
@@ -111,12 +99,12 @@ ms.lasthandoff: 12/22/2017
   
 |コンストラクター|スレッド セーフ モード|初期化メソッドを使用します|例外がキャッシュされます|  
 |-----------------|------------------------|--------------------------------|---------------------------|  
-|Lazy(T)()|(<xref:System.Threading.LazyThreadSafetyMode.ExecutionAndPublication>)|いいえ|いいえ|  
-|Lazy(T)(Func(T))|(<xref:System.Threading.LazyThreadSafetyMode.ExecutionAndPublication>)|はい|はい|  
-|Lazy(T)(Boolean)|`True` (<xref:System.Threading.LazyThreadSafetyMode.ExecutionAndPublication>) または `false` (<xref:System.Threading.LazyThreadSafetyMode.None>)|いいえ|いいえ|  
-|Lazy(T)(Func(T), Boolean)|`True` (<xref:System.Threading.LazyThreadSafetyMode.ExecutionAndPublication>) または `false` (<xref:System.Threading.LazyThreadSafetyMode.None>)|はい|はい|  
-|Lazy(T)(LazyThreadSafetyMode)|ユーザー指定|いいえ|いいえ|  
-|Lazy(T)(Func(T), LazyThreadSafetyMode)|ユーザー指定|はい|ユーザーが <xref:System.Threading.LazyThreadSafetyMode.PublicationOnly> を指定する場合は、いいえ。指定しない場合は、はい。|  
+|Lazy(T)()|(<xref:System.Threading.LazyThreadSafetyMode.ExecutionAndPublication>)|×|×|  
+|Lazy(T)(Func(T))|(<xref:System.Threading.LazyThreadSafetyMode.ExecutionAndPublication>)|[はい]|[はい]|  
+|Lazy(T)(Boolean)|`True` (<xref:System.Threading.LazyThreadSafetyMode.ExecutionAndPublication>) または `false` (<xref:System.Threading.LazyThreadSafetyMode.None>)|×|×|  
+|Lazy(T)(Func(T), Boolean)|`True` (<xref:System.Threading.LazyThreadSafetyMode.ExecutionAndPublication>) または `false` (<xref:System.Threading.LazyThreadSafetyMode.None>)|[はい]|[はい]|  
+|Lazy(T)(LazyThreadSafetyMode)|ユーザー指定|×|×|  
+|Lazy(T)(Func(T), LazyThreadSafetyMode)|ユーザー指定|[はい]|ユーザーが <xref:System.Threading.LazyThreadSafetyMode.PublicationOnly> を指定する場合は、いいえ。指定しない場合は、はい。|  
   
 ## <a name="implementing-a-lazy-initialized-property"></a>遅延初期化プロパティを実装する  
  遅延初期化を利用してパブリック プロパティを実装するには、プロパティのバッキング フィールドを <xref:System.Lazy%601> として定義し、プロパティの `get` アクセサーから <xref:System.Lazy%601.Value%2A> プロパティを返します。  
@@ -163,7 +151,7 @@ ms.lasthandoff: 12/22/2017
   
  この例では、ループの繰り返しの旅に初期化プロシージャが呼び出されていることに注意してください。 マルチスレッド シナリオでは、初期化プロシージャを呼び出した最初のスレッドの値をすべてのスレッドで確認できます。 後続のスレッドも初期化プロシージャを呼び出しますが、その結果は利用されません。 この種類の潜在的競合状態が許容できない場合、ブール値引数と同期オブジェクトを取る <xref:System.Threading.LazyInitializer.EnsureInitialized%2A?displayProperty=nameWithType> のオーバーロードを使用します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [マネージ スレッド処理の基本](../../../docs/standard/threading/managed-threading-basics.md)  
  [スレッドおよびスレッド処理](../../../docs/standard/threading/threads-and-threading.md)  
  [タスク並列ライブラリ (TPL)](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md)  

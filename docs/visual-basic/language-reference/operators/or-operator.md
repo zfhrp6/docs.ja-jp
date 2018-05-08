@@ -1,12 +1,6 @@
 ---
 title: Or 演算子 (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Or
 helpviewer_keywords:
@@ -21,14 +15,11 @@ helpviewer_keywords:
 - logical disjunction
 - disjunction operator [Visual Basic]
 ms.assetid: 41ed6905-bf3d-468a-9e3b-03c10d461891
-caps.latest.revision: 12
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 4c9429eb2bdeb86bfa73786433231fdc22a230d9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 9e02f619a81ee3c15321dfd44963c1a7d29843ab
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="or-operator-visual-basic"></a>Or 演算子 (Visual Basic)
 2 つの論理和を求めます`Boolean`式、または 2 つの数値式のビットごとの論理和です。  
@@ -41,13 +32,13 @@ result = expression1 Or expression2
   
 ## <a name="parts"></a>指定項目  
  `result`  
- 必須です。 どの`Boolean`または数値式です。 `Boolean`比較、`result`は 2 つの包括的論理和`Boolean`値。 ビットごとの演算`result`は、次の 2 つの数値のビット パターンの包括的論理和を表す数値を指定します。  
+ 必須。 どの`Boolean`または数値式です。 `Boolean`比較、`result`は 2 つの包括的論理和`Boolean`値。 ビットごとの演算`result`は、次の 2 つの数値のビット パターンの包括的論理和を表す数値を指定します。  
   
  `expression1`  
- 必須です。 どの`Boolean`または数値式です。  
+ 必須。 どの`Boolean`または数値式です。  
   
  `expression2`  
- 必須です。 どの`Boolean`または数値式です。  
+ 必須。 どの`Boolean`または数値式です。  
   
 ## <a name="remarks"></a>コメント  
  `Boolean`比較、`result`は`False`場合にのみ、両方`expression1`と`expression2`に評価される`False`です。 次に示す方法`result`決定されます。  
@@ -74,7 +65,7 @@ result = expression1 Or expression2
 > [!NOTE]
 >  論理/ビット処理演算子の他の算術演算子や関係演算子よりも優先順位が低いため、ビットごとの演算が正確に実行されるようにかっこで囲む必要があります。  
   
-## <a name="data-types"></a>データ型  
+## <a name="data-types"></a>データの種類  
  いずれかのオペランドで構成される場合`Boolean`式と 1 つの数値式では、Visual Basic に変換します、`Boolean`数値を指定する式 (– 1`True`と 0 を`False`) し、ビットごとの演算を実行します。  
   
  `Boolean` 、比較結果のデータ型は`Boolean`します。 ビットごとの比較結果のデータ型は数値型のデータ型に適した`expression1`と`expression2`です。 「リレーショナルとビットごとの比較」表を参照して[データ型の演算子の結果](../../../visual-basic/language-reference/operators/data-types-of-operator-results.md)です。  

@@ -1,17 +1,12 @@
 ---
-title: "Do...Loop ステートメント (Visual Basic)"
+title: Do...Loop ステートメント (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Do
 - vb.Loop
 - vb.Until
 helpviewer_keywords:
-- "conditional statements [Visual Basic], Do�Loop"
+- conditional statements [Visual Basic], Do�Loop
 - while statement [Visual Basic], Do...Loop
 - execution [Visual Basic], conditional
 - Do loops
@@ -20,19 +15,16 @@ helpviewer_keywords:
 - instructions, repeating
 - Do statement [Visual Basic]
 - Exit statement [Visual Basic], in Do...Loop statements
-- "loop structures [Visual Basic], Do�Loop statements"
+- loop structures [Visual Basic], Do�Loop statements
 - do-while statements [Visual Basic]
 - loops, exiting
 - Loop keyword [Visual Basic], Do...Loop statement
 ms.assetid: 892f9096-b3e2-4aee-834d-83bc4e2c379d
-caps.latest.revision: "37"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 79d25dce963f383a84b56ce2c9b600fc2d5a7937
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: e12cdc1ae405b877d4d27d1947c98dcb51938ba7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="doloop-statement-visual-basic"></a>Do...Loop ステートメント (Visual Basic)
 ときにステートメント ブロックを繰り返します、`Boolean`条件が`True`、条件になるまで、または`True`です。  
@@ -61,14 +53,14 @@ Loop { While | Until } condition
   
 |用語|定義|  
 |---|---|  
-|`Do`|必須です。 定義を開始、`Do`ループします。|  
+|`Do`|必須。 定義を開始、`Do`ループします。|  
 |`While`|`Until` を使用しない場合に、必ず指定します。 までループを繰り返す`condition`は`False`します。|  
 |`Until`|`While` を使用しない場合に、必ず指定します。 までループを繰り返す`condition`は`True`します。|  
-|`condition`|省略可能です。 `Boolean`式。 場合`condition`は`Nothing`、Visual Basic として扱います`False`です。|  
-|`statements`|省略可能です。 1 つ以上のステートメント、または、まで繰り返される`condition`は`True`します。|  
-|`Continue Do`|省略可能です。 次のイテレーションに制御を転送、`Do`ループします。|  
-|`Exit Do`|省略可能です。 うちの制御を転送、`Do`ループします。|  
-|`Loop`|必須です。 定義を終了、`Do`ループします。|  
+|`condition`|任意。 `Boolean` 式。 場合`condition`は`Nothing`、Visual Basic として扱います`False`です。|  
+|`statements`|任意。 1 つ以上のステートメント、または、まで繰り返される`condition`は`True`します。|  
+|`Continue Do`|任意。 次のイテレーションに制御を転送、`Do`ループします。|  
+|`Exit Do`|任意。 うちの制御を転送、`Do`ループします。|  
+|`Loop`|必須。 定義を終了、`Do`ループします。|  
   
 ## <a name="remarks"></a>コメント  
  使用して、`Do...Loop`一連の条件が満たされるまで何度で不特定数のステートメントを繰り返し使用するときにします。 セット回数だけ、ステートメントを繰り返し使用する場合、[をしています.次のステートメントの](../../../visual-basic/language-reference/statements/for-next-statement.md)は通常、ことをお勧めします。  
@@ -85,9 +77,9 @@ Loop { While | Until } condition
 >  `Do...Loop`構造体より高い柔軟性を提供する、[中.End While ステートメント](../../../visual-basic/language-reference/statements/while-end-while-statement.md)ループを終了するかどうかを決定することができるためとき`condition`停止されている`True`最初になったときまたは`True`です。 テストすることもできます`condition`先頭またはループの終了のいずれか。  
   
 ## <a name="exit-do"></a>操作を終了します。  
- [Exit Do](../../../visual-basic/language-reference/statements/exit-statement.md)ステートメントが終了する代替方法を提供できる、`Do…Loop`です。 `Exit Do`続くステートメントに直ちに制御を移します、`Loop`ステートメントです。  
+ [Exit Do](../../../visual-basic/language-reference/statements/exit-statement.md)ステートメントが終了する代替方法を提供できる、`Do…Loop`です。 `Exit Do` 続くステートメントに直ちに制御を移します、`Loop`ステートメントです。  
   
- `Exit Do`たとえば、いくつかの条件が評価された後は、よく使用、`If...Then...Else`構造体。 不要な値が間違っているか、終了要求など、繰り返し処理を続行不可能になったりする条件を検出した場合、ループを終了する可能性があります。 用途の 1 つ`Exit Do`を引き起こす可能性のある条件をテストするには、*無限ループ*、これは、大規模なまたは無限も可能回数だけ実行できるループします。 使用することができます`Exit Do`ループをエスケープするためにします。  
+ `Exit Do` たとえば、いくつかの条件が評価された後は、よく使用、`If...Then...Else`構造体。 不要な値が間違っているか、終了要求など、繰り返し処理を続行不可能になったりする条件を検出した場合、ループを終了する可能性があります。 用途の 1 つ`Exit Do`を引き起こす可能性のある条件をテストするには、*無限ループ*、これは、大規模なまたは無限も可能回数だけ実行できるループします。 使用することができます`Exit Do`ループをエスケープするためにします。  
   
  任意の数を含めることができます`Exit Do`内の任意の場所のステートメント、`Do…Loop`です。  
   

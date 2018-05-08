@@ -1,22 +1,12 @@
 ---
-title: "方法: Namespace (XPATH-LINQ to XML) 内の要素を検索 (Visual Basic)"
-ms.custom: 
+title: '方法: Namespace (XPATH-LINQ to XML) 内の要素を検索 (Visual Basic)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: c7cb3b77-3424-4b54-9efa-4dc715948e41
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 257d4c37f849bbc50aac6b9cb4531d1084163db2
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 417ff63408ea640bbbd5cc4863193e769a2ec444
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-find-elements-in-a-namespace-xpath-linq-to-xml-visual-basic"></a>方法: Namespace (XPATH-LINQ to XML) 内の要素を検索 (Visual Basic)
 XPath 式を使用すると、特定の名前空間内のノードを検索できます。 XPath 式では、名前空間を指定する名前空間プレフィックスを使用します。 名前空間プレフィックスを含む XPath 式を解析するには、<xref:System.Xml.IXmlNamespaceResolver> を実装する XPath メソッドにオブジェクトを渡す必要があります。 この例では <xref:System.Xml.XmlNamespaceManager> を使用します。  

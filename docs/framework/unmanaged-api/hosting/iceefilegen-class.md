@@ -1,14 +1,6 @@
 ---
-title: "ICeeFileGen クラス"
-ms.custom: 
+title: ICeeFileGen クラス
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ICeeFileGen
 api_location:
@@ -22,23 +14,19 @@ helpviewer_keywords:
 ms.assetid: 90368606-506e-40df-be1f-8d595159203f
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 04d0dc0d4ab53c17e818d17aa9c07f94bd05f703
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9f0ab07377b9e5db36ca9e4f1fd93aacd3464df4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="iceefilegen-class"></a>ICeeFileGen クラス
 ネイティブ ポータブル実行可能 (PE) ファイルを作成するための機能を提供します。 インターフェイスは、実行可能ファイル、コンパイルされた出力を生成するコンパイラで通常使用がされます。  
   
 > [!NOTE]
->  `ICeeFileGen`.NET Framework インフラストラクチャをサポートし、コードから直接使用するものではありません。  
+>  `ICeeFileGen` .NET Framework インフラストラクチャをサポートし、コードから直接使用するものではありません。  
   
  このインターフェイスは廃止されており、将来のリリースで削除される予定です。  
   
@@ -247,12 +235,12 @@ public:
 };  
 ```  
   
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** ICeeFileGen.h  
   
  **.NET framework のバージョン:** 1.0  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ホスト インターフェイス](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)

@@ -1,27 +1,15 @@
 ---
-title: "部分信頼のベスト プラクティス"
-ms.custom: 
+title: 部分信頼のベスト プラクティス
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 0d052bc0-5b98-4c50-8bb5-270cc8a8b145
-caps.latest.revision: "17"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 817f7aeeb7adece1c375bb8b0cc455a17fb54185
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: fca975ff4216384b970535273511eb07cd6ded68
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="partial-trust-best-practices"></a>部分信頼のベスト プラクティス
-このトピックでは、部分信頼環境で [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] を実行する場合のベスト プラクティスについて説明します。  
+このトピックでは、部分信頼環境で Windows Communication Foundation (WCF) を実行する場合のベスト プラクティスについて説明します。  
   
 ## <a name="serialization"></a>シリアル化  
  部分信頼アプリケーションで <xref:System.Runtime.Serialization.DataContractSerializer> を使用する場合は、次の方法を適用します。  
@@ -56,26 +44,26 @@ ms.lasthandoff: 12/22/2017
 -   <xref:System.Xml.Serialization.IXmlSerializable> インターフェイスを実装するインスタンス メソッドは、`public` とする必要があります。  
   
 ## <a name="using-wcf-from-fully-trusted-platform-code-that-allows-calls-from-partially-trusted-callers"></a>部分信頼の呼び出し元から呼び出せる完全信頼のプラットフォーム コードで WCF を使用する  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の部分信頼セキュリティ モデルでは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] パブリック メソッドまたはプロパティのすべての呼び出し元は、ホスト アプリケーションのコード アクセス セキュリティ (CAS: Code Access Security) コンテキストで実行されていることを前提としています。 また、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、各 <xref:System.AppDomain> に対して存在するアプリケーション セキュリティ コンテキストが 1 つのみであり、このコンテキストが <xref:System.AppDomain> への呼び出しや ASP.NET アプリケーション マネージャーなどの信頼されているホストにより、<xref:System.AppDomain.CreateDomain%2A> 作成時に確立されることを前提としています。  
+ WCF 部分信頼セキュリティ モデルでは、WCF のパブリック メソッドまたはプロパティの呼び出し元が、ホスト アプリケーションのコード アクセス セキュリティ (CAS) のコンテキストで実行されていることを前提としています。 WCF もその 1 つだけのアプリケーションのセキュリティ コンテキストはあるものと各<xref:System.AppDomain>でこのコンテキストが確立されると<xref:System.AppDomain>作成時の信頼されたホスト (への呼び出しなどによって<xref:System.AppDomain.CreateDomain%2A>または ASP.NET アプリケーション マネージャーによって)。  
   
- このセキュリティ モデルは、信頼性が "中" の ASP.NET アプリケーションで実行されているユーザー コードなど、追加の CAS アクセス許可をアサートできないユーザー記述のアプリケーションに適用されます。 ただし、完全信頼のプラットフォーム コード (たとえば、グローバル アセンブリ キャッシュにインストールされているサード パーティ アセンブリや、部分信頼コードからの呼び出しを受け入れるサード パーティ アセンブリなど) は、アプリケーション レベルのセキュリティの脆弱性が発生しないよう、部分信頼アプリケーションに代わって [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を呼び出す場合に、明示的な注意を行う必要があります。  
+ このセキュリティ モデルは、信頼性が "中" の ASP.NET アプリケーションで実行されているユーザー コードなど、追加の CAS アクセス許可をアサートできないユーザー記述のアプリケーションに適用されます。 ただし、完全に信頼されたプラットフォーム コード (グローバル アセンブリ キャッシュにインストールされてを部分信頼コードからの呼び出しを許可するサード パーティ アセンブリなど) 必要があるときの注意明示的に部分信頼アプリケーションに代わって WCF への呼び出しアプリケーション レベルのセキュリティの脆弱性を行わずに済みます。  
   
- 完全信頼コードでは、部分信頼コードに代わって <xref:System.Security.PermissionSet.Assert%2A> API を呼び出す前に、<xref:System.Security.PermissionSet.PermitOnly%2A>、<xref:System.Security.PermissionSet.Deny%2A>、または [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を呼び出して、現在のスレッドの CAS アクセス許可セットを変更しないようにする必要があります。 アプリケーション レベルのセキュリティ コンテキストに依存しないスレッド固有のアクセス許可コンテキストのアサート、拒否、または作成により、予期しない動作が発生することがあります。 アプリケーションによっては、この動作がアプリケーション レベルのセキュリティの脆弱性となることがあります。  
+ 完全信頼コードでは、現在のスレッドの CAS 権限のセットを変更することを避ける必要があります (を呼び出して<xref:System.Security.PermissionSet.Assert%2A>、 <xref:System.Security.PermissionSet.PermitOnly%2A>、または<xref:System.Security.PermissionSet.Deny%2A>) 部分信頼コードに代わって WCF Api を呼び出す前にします。 アプリケーション レベルのセキュリティ コンテキストに依存しないスレッド固有のアクセス許可コンテキストのアサート、拒否、または作成により、予期しない動作が発生することがあります。 アプリケーションによっては、この動作がアプリケーション レベルのセキュリティの脆弱性となることがあります。  
   
- 次のような状況の発生に対処するには、スレッド固有のアクセス許可コンテキストを使用して [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を呼び出すコードを準備する必要があります。  
+ 発生する可能性が次のような状況を処理するスレッド固有のアクセス許可コンテキストを使用して WCF への呼び出しを準備する必要がありますコード:  
   
 -   スレッド固有のセキュリティ コンテキストを処理の期間全体にわたっては保持できない場合があり、このときセキュリティの例外が発生する可能性があります。  
   
--   内部 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] コードとユーザーが指定したコールバックが、呼び出しが開始された元のセキュリティ コンテキストとは異なるセキュリティ コンテキストで実行される場合があります。 次のようなコンテキストが含まれます。  
+-   内部の WCF コードだけではなく、任意のユーザーが指定したコールバックは、呼び出しを開始すると最初の 1 つ以上の別のセキュリティ コンテキストで実行可能性があります。 次のようなコンテキストが含まれます。  
   
     -   アプリケーションのアクセス許可コンテキスト。  
   
-    -   現在実行している [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の有効期間中に、<xref:System.AppDomain> の呼び出しに使用される他のユーザー スレッドが以前に作成したスレッド固有のアクセス許可コンテキスト。  
+    -   他のユーザー スレッドが現在実行中の有効期間中に WCF への呼び出しを使用して以前作成したスレッド固有のアクセス許可コンテキスト<xref:System.AppDomain>です。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] パブリック API の呼び出しの前に、完全信頼コンポーネントによってこのようなアクセス許可がアサートされない限り、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、部分信頼コードで完全信頼アクセス許可を取得できないことが保証されます。 ただし、完全信頼をアサートした効果が特定のスレッド、操作、またはユーザー操作として隔離されることは保証されません。  
+ WCF は、WCF のパブリック Api を呼び出す前に完全に信頼されたコンポーネントでこのようなアクセス許可がアサートされる場合を除き、部分信頼コードが完全信頼アクセス許可を取得できないことを保証します。 ただし、完全信頼をアサートした効果が特定のスレッド、操作、またはユーザー操作として隔離されることは保証されません。  
   
  <xref:System.Security.PermissionSet.Assert%2A>、<xref:System.Security.PermissionSet.PermitOnly%2A>、または <xref:System.Security.PermissionSet.Deny%2A> を呼び出すことにより、スレッド固有のアクセス許可コンテキストを作成しないことをお勧めします。 代わりに、<xref:System.Security.PermissionSet.Assert%2A>、<xref:System.Security.PermissionSet.Deny%2A>、または <xref:System.Security.PermissionSet.PermitOnly%2A> が不要となるように、アプリケーション自体に特権を付与するか、特権を拒否します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Runtime.Serialization.DataContractSerializer>  
  <xref:System.Xml.Serialization.IXmlSerializable>

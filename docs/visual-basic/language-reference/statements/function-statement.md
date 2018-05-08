@@ -1,12 +1,6 @@
 ---
-title: "Function ステートメント (Visual Basic)"
+title: Function ステートメント (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Function
 helpviewer_keywords:
@@ -34,14 +28,11 @@ helpviewer_keywords:
 - End keyword [Visual Basic], Function statements
 - Handles keyword [Visual Basic], Function statements
 ms.assetid: a4497077-0f46-4ede-a27f-9e8670df52b9
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 52e9210f9e715b6055e6ed199ef1aa4b919c6dd6
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: b4a0c33d6d466975ca5dde1bd20ad2e1a9f560e4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="function-statement-visual-basic"></a>Function ステートメント (Visual Basic)
 宣言名、パラメーター、およびコードを定義する、`Function`プロシージャです。  
@@ -183,7 +174,7 @@ End Function
 ## <a name="defining-a-function"></a>関数を定義します。  
  定義することができます、`Function`手順モジュール レベルでのみです。 そのため、関数の宣言コンテキストは、クラス、構造体、モジュールの場合、またはインターフェイスにする必要があり、ソース ファイル、名前空間、プロシージャ、またはブロックすることはできません。 詳細については、「[宣言コンテキストと既定のアクセス レベル](declaration-contexts-and-default-access-levels.md)」を参照してください。  
   
- `Function`パブリック アクセスにプロシージャの既定値です。 アクセス修飾子を使用してこれらのアクセス レベルを調整できます。  
+ `Function` パブリック アクセスにプロシージャの既定値です。 アクセス修飾子を使用してこれらのアクセス レベルを調整できます。  
   
  A`Function`プロシージャがプロシージャが返す値のデータ型を宣言できます。 任意のデータ型または列挙型、構造体、クラスまたはインターフェイスの名前を指定することができます。 指定しない場合は、`returntype`プロシージャは、パラメーターを返します`Object`です。  
   
@@ -260,7 +251,7 @@ End Function
   
  [!code-vb[csAsyncMethod#1](../../../csharp/programming-guide/classes-and-structs/codesnippet/VisualBasic/function-statement_5.vb)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Sub ステートメント](sub-statement.md)  
  [Function プロシージャ](../../../visual-basic/programming-guide/language-features/procedures/function-procedures.md)  
  [パラメーター リスト](parameter-list.md)  

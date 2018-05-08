@@ -1,13 +1,6 @@
 ---
-title: "チュートリアル: Windows フォームにおけるドラッグ アンド ドロップ操作の実行"
-ms.custom: 
+title: 'チュートリアル: Windows フォームにおけるドラッグ アンド ドロップ操作の実行'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - Windows Forms, drag and drop operations
 - drag and drop [Windows Forms], Windows Forms
 ms.assetid: eb66f6bf-4a7d-4c2d-b276-40fefb2d3b6c
-caps.latest.revision: "15"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 173af57f1ec5d9ed14afc0ef5d6ddd391e15d534
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6c78a06e37de491e95d56d29c9d2f3e60b88e8ab
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="walkthrough-performing-a-drag-and-drop-operation-in-windows-forms"></a>チュートリアル: Windows フォームにおけるドラッグ アンド ドロップ操作の実行
 Windows ベースのアプリケーション内でドラッグ アンド ドロップ操作を実行する必要がありますを処理する、一連のイベント、特に、 <xref:System.Windows.Forms.Control.DragEnter>、 <xref:System.Windows.Forms.Control.DragLeave>、および<xref:System.Windows.Forms.Control.DragDrop>イベント。 情報の操作、使用可能なイベントのこれらのイベントの引数、ドラッグ アンド ドロップ操作を簡単に実現できます。  
@@ -117,7 +105,7 @@ Windows ベースのアプリケーション内でドラッグ アンド ドロ�
     > [!NOTE]
     >  さらに、使用できますが、<xref:System.Windows.Forms.DragEventArgs.KeyState%2A>プロパティ、キーによって、ドラッグ アンド ドロップ操作中に押されているように、特定の効果の発生 (たとえば、これは、CTRL キーが押されたときに、ドラッグしたデータをコピーする標準的な)。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [方法: クリップボードにデータを追加する](../../../../docs/framework/winforms/advanced/how-to-add-data-to-the-clipboard.md)  
  [方法: クリップボードからデータを取得する](../../../../docs/framework/winforms/advanced/how-to-retrieve-data-from-the-clipboard.md)  
  [ドラッグ アンド ドロップ操作とクリップボードのサポート](../../../../docs/framework/winforms/advanced/drag-and-drop-operations-and-clipboard-support.md)

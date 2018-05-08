@@ -1,26 +1,12 @@
 ---
 title: 予期される例外
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 299a6987-ae6b-43c6-987f-12b034b583ae
-caps.latest.revision: 7
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 28af4a374d7ff474cf313aad711a3062f56263c9
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
-ms.translationtype: MT
+ms.openlocfilehash: 9552bf5178e3309d46e0f9220311c9e1a811c4b9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="expected-exceptions"></a>予期される例外
 このサンプルでは、型指定のあるクライアントを使用する際に、予期される例外をキャッチする方法を示します。 このサンプルがに基づいて、[作業の開始](../../../../docs/framework/wcf/samples/getting-started-sample.md)電卓サービスを実装します。 この例では、クライアントはコンソール アプリケーション (.exe) であり、サービスはインターネット インフォメーション サービス (IIS) によってホストされます。  
@@ -30,7 +16,7 @@ ms.lasthandoff: 04/27/2018
   
  このサンプルでは、正しいプログラムが処理する必要のある `TimeoutException` および `CommunicationException` という 2 種類の予期される例外を、キャッチして処理する方法を示します。  
   
- [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] クライアントの通信メソッドからスローされる例外には、予期される例外と予期しない例外があります。 予期しない例外には、`OutOfMemoryException` などの致命的なエラーや、`ArgumentNullException` や `InvalidOperationException` などのプログラミング エラーが含まれます。 一般に、予期しないエラーを処理する有効な方法はありません。したがって [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントの通信メソッドを呼び出す際、通常は、予期しないエラーをキャッチしないでください。  
+ Windows Communication Foundation (WCF) クライアント上の通信メソッドからスローされる例外は、必要なまたは予期しないです。 予期しない例外には、`OutOfMemoryException` などの致命的なエラーや、`ArgumentNullException` や `InvalidOperationException` などのプログラミング エラーが含まれます。 一般に、予期しないエラーを処理する有効な方法はありません。したがって [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントの通信メソッドを呼び出す際、通常は、予期しないエラーをキャッチしないでください。  
   
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントの通信メソッドからの予期される例外には、`TimeoutException`、`CommunicationException`、および `CommunicationException` の任意の派生クラスが含まれます。 これらの例外は通信中の問題を示しますが、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントを中止して通信エラーを報告することによって安全に処理できます。 どのアプリケーションでも外部要因によってこうしたエラーが発生する可能性があるので、正しいアプリケーションはこのようなエラーをキャッチし、発生した場合には回復させる必要があります。  
   
@@ -89,7 +75,7 @@ Got System.TimeoutException
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
+>  このディレクトリが存在しない場合に、 [Windows Communication Foundation (WCF) および .NET Framework 4 向けの Windows Workflow Foundation (WF) サンプル](http://go.microsoft.com/fwlink/?LinkId=150780)すべて Windows Communication Foundation (WCF) をダウンロードして[!INCLUDE[wf1](../../../../includes/wf1-md.md)]サンプルです。 このサンプルは、次のディレクトリに格納されます。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Client\ExpectedExceptions`  
   

@@ -1,34 +1,20 @@
 ---
-title: "メタデータのエクスポートとインポート"
-ms.custom: 
+title: メタデータのエクスポートとインポート
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - metadata [WCF], exporting and importing
 ms.assetid: 614a75bb-e0b0-4c95-b6d8-02cb5e5ddb38
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: a2785f74d9a07b267d836a9f6e6749d259a1ab21
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 497feb80d5930a784022877cfaa6e6c76a3047a1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="exporting-and-importing-metadata"></a>メタデータのエクスポートとインポート
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] では、メタデータのエクスポートは、サービス エンドポイントを説明したり、クライアントがサービスの使用方法を理解するために使用できる、対応した標準的な表現にメタデータを移し替えたりするプロセスです。 サービス メタデータのインポートは <xref:System.ServiceModel.Description.ServiceEndpoint> インスタンス、またはサービス メタデータの一部を生成するプロセスです。  
+Windows Communication Foundation (WCF) では、サービス エンドポイントを記述するそれらを並行してクライアントを使用してサービスを使用する方法を理解する標準化表現のプロセスではメタデータのエクスポートです。 サービス メタデータのインポートは <xref:System.ServiceModel.Description.ServiceEndpoint> インスタンス、またはサービス メタデータの一部を生成するプロセスです。  
   
 ## <a name="exporting-metadata"></a>メタデータのエクスポート  
- メタデータを <xref:System.ServiceModel.Description.ServiceEndpoint?displayProperty=nameWithType> インスタンスからエクスポートするには、<xref:System.ServiceModel.Description.MetadataExporter> 抽象クラスの実装を使用します。 <xref:System.ServiceModel.Description.WsdlExporter> 型は、<xref:System.ServiceModel.Description.MetadataExporter> に含まれる [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 抽象クラスの実装です。  
+ メタデータを <xref:System.ServiceModel.Description.ServiceEndpoint?displayProperty=nameWithType> インスタンスからエクスポートするには、<xref:System.ServiceModel.Description.MetadataExporter> 抽象クラスの実装を使用します。 <xref:System.ServiceModel.Description.WsdlExporter>型の実装は、 <xref:System.ServiceModel.Description.MetadataExporter> WCF に含まれているクラスを抽象化します。  
   
  <xref:System.ServiceModel.Description.WsdlExporter?displayProperty=nameWithType> 型は Web サービス記述言語 (WSDL: Web Services Description Language) メタデータを生成します。このメタデータには、<xref:System.ServiceModel.Description.MetadataSet> インスタンス内にカプセル化されたポリシー表現が関連付けられています。 <xref:System.ServiceModel.Description.WsdlExporter?displayProperty=nameWithType> インスタンスを使用すると、<xref:System.ServiceModel.Description.ContractDescription> オブジェクトと <xref:System.ServiceModel.Description.ServiceEndpoint> オブジェクトのメタデータを反復してエクスポートできます。 <xref:System.ServiceModel.Description.ServiceEndpoint> オブジェクトのコレクションをエクスポートして、特定のサービス名に関連付けることもできます。  
   
@@ -38,7 +24,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="importing-metadata"></a>メタデータのインポート  
   
 ### <a name="importing-wsdl-documents"></a>WSDL ドキュメントのインポート  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のサービス メタデータをインポートするには、<xref:System.ServiceModel.Description.MetadataImporter> 抽象クラスの実装を使用します。 <xref:System.ServiceModel.Description.WsdlImporter?displayProperty=nameWithType> 型は、<xref:System.ServiceModel.Description.MetadataImporter> に含まれる [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 抽象クラスの実装です。 <xref:System.ServiceModel.Description.WsdlImporter> 型は、<xref:System.ServiceModel.Description.MetadataSet> オブジェクトにまとめられた、結び付けられているポリシーを使用して WSDL メタデータをインポートします。  
+ WCF でのサービス メタデータをインポートするには、実装を使用、<xref:System.ServiceModel.Description.MetadataImporter>抽象クラスです。 <xref:System.ServiceModel.Description.WsdlImporter?displayProperty=nameWithType>型の実装は、 <xref:System.ServiceModel.Description.MetadataImporter> WCF に含まれているクラスを抽象化します。 <xref:System.ServiceModel.Description.WsdlImporter> 型は、<xref:System.ServiceModel.Description.MetadataSet> オブジェクトにまとめられた、結び付けられているポリシーを使用して WSDL メタデータをインポートします。  
   
  <xref:System.ServiceModel.Description.WsdlImporter> 型を使用すると、メタデータをインポートする方法を制御できます。 すべてのエンドポイント、すべてのバインディング、またはすべてのコントラクトをインポートできます。 特定の WSDL サービス、バインディング、またはポートの種類に関連付けられたすべてのエンドポイントをインポートすることもできます。 また、特定の WSDL ポートのエンドポイント、特定の WSDL バインディングのバインディング、または特定の WSDL ポートの種類のコントラクトをインポートすることもできます。  
   
@@ -81,6 +67,6 @@ ms.lasthandoff: 12/22/2017
   
  <xref:System.ServiceModel.Description.WsdlImporter>  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [WCF 拡張に対するカスタム メタデータのエクスポート](../../../../docs/framework/wcf/extending/exporting-custom-metadata-for-a-wcf-extension.md)  
  [WCF 拡張に対するカスタム メタデータのインポート](../../../../docs/framework/wcf/extending/importing-custom-metadata-for-a-wcf-extension.md)

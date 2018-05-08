@@ -1,31 +1,17 @@
 ---
 title: ルーティング サービス
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: ca7c216a-5141-4132-8193-102c181d2eba
-caps.latest.revision: 13
-author: wadepickett
-ms.author: wpickett
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 8ff2a99bc06ab0de2aedce98ea029f484e47053f
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: e3170108ae190c08a42cc7d80d66576a7b4f8a8e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="routing-service"></a>ルーティング サービス
 ルーティング サービスは、メッセージ ルーターとして機能する、汎用の SOAP 中継局です。 ルーティング サービスの主要な機能は、メッセージのコンテンツに基づいてメッセージをルーティングする機能です。これにより、メッセージのヘッダーまたはメッセージ本文内に含まれる値に基づいて、メッセージをクライアント エンドポイントに転送できます。  
   
- <xref:System.ServiceModel.Routing.RoutingService> は、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスとして <xref:System.ServiceModel.Routing> 名前空間で実装されます。 ルーティング サービスは、メッセージを受信し、その内容に基づいて各メッセージを 1 つ以上のクライアント エンドポイントにルーティングする、1 つ以上のサービス エンドポイントを公開します。 このサービスには、次の機能が用意されています。  
+ <xref:System.ServiceModel.Routing.RoutingService>で Windows Communication Foundation (WCF) サービスとして実装された、<xref:System.ServiceModel.Routing>名前空間。 ルーティング サービスは、メッセージを受信し、その内容に基づいて各メッセージを 1 つ以上のクライアント エンドポイントにルーティングする、1 つ以上のサービス エンドポイントを公開します。 このサービスには、次の機能が用意されています。  
   
 -   コンテンツ ベースのルーティング  
   
@@ -47,10 +33,10 @@ ms.lasthandoff: 04/30/2018
   
  上記の機能の 1 つ以上を実現する中間サービスを作成することもできますが、このような実装では、特定のシナリオまたはソリューションに制限され、新しいアプリケーションにすぐに適用できません。  
   
- ルーティング サービスは、動的に構成できるプラグ可能な汎用の SOAP 中継局を提供します。この中継局は、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のサービスおよびチャネル モデルと互換性があり、SOAP ベースのメッセージのコンテンツ ベースのルーティングを実行できます。  
+ ルーティング サービスには、動的に構成できる、プラグ可能な汎用の SOAP 中継ぎ局は、WCF サービスとチャネル モデルと互換性が、コンテンツ ベースのメッセージの SOAP ベースのルーティングを実行することができます。  
   
 > [!NOTE]
->  ルーティング サービスは、現在 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] REST サービスのルーティングをサポートしていません。  REST 呼び出しをルーティングするには、使用を検討して<xref:System.Web.Routing>または[アプリケーション要求ルーティング処理](http://go.microsoft.com/fwlink/?LinkId=164589)(http://go.microsoft.com/fwlink/?LinkId=164589)です。  
+>  ルーティング サービスは、現在 WCF REST サービスのルーティングをサポートしていません。  REST 呼び出しをルーティングするには、使用を検討して<xref:System.Web.Routing>または[アプリケーション要求ルーティング処理](http://go.microsoft.com/fwlink/?LinkId=164589)(http://go.microsoft.com/fwlink/?LinkId=164589)です。  
   
 ## <a name="content-based-routing"></a>コンテンツ ベースのルーティング  
  コンテンツ ベースのルーティングは、メッセージに含まれている 1 つ以上の値に基づいて、メッセージをルーティングする機能です。 ルーティング サービスでは、各メッセージを確認し、メッセージの内容と開発者が作成したルーティング ロジックに基づいて、送信先エンドポイントにメッセージをルーティングします。 コンテンツ ベースのルーティングは、サービス集計、サービスのバージョン管理、および優先度ルーティングの基礎になります。  

@@ -1,23 +1,12 @@
 ---
-title: "Pick アクティビティ"
-ms.custom: 
+title: Pick アクティビティ
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: b3e49b7f-0285-4720-8c09-11ae18f0d53e
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ce650c931e94c76c669ee99068d2356f4b2ec32f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b6a49207c6c2e800c2e894f6223abdf0f5f6820d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="pick-activity"></a>Pick アクティビティ
 <xref:System.Activities.Statements.Pick> アクティビティを使用すると、イベント トリガー セットとそれに続く対応するハンドラーのモデル化が単純になります。  <xref:System.Activities.Statements.Pick> アクティビティには、<xref:System.Activities.Statements.PickBranch> アクティビティのコレクションが含まれます。各 <xref:System.Activities.Statements.PickBranch> は <xref:System.Activities.Statements.PickBranch.Trigger%2A> アクティビティと <xref:System.Activities.Statements.PickBranch.Action%2A> アクティビティの組み合わせです。  実行時に、すべての分岐のトリガーが並行して実行されます。  1 つのトリガーが完了すると、対応するアクションが実行され、その他すべてのトリガーが取り消されます。  [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] の <xref:System.Activities.Statements.Pick> アクティビティの動作は [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] の <xref:System.Workflow.Activities.ListenActivity> アクティビティに似ています。  

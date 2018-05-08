@@ -1,26 +1,14 @@
 ---
 title: メッセージ キューを介したメッセージ セキュリティ
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 329aea9c-fa80-45c0-b2b9-e37fd7b85b38
-caps.latest.revision: 22
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload:
-- dotnet
-ms.openlocfilehash: aeb0e66c5bad2b2d03a08560e1021b57e793ad55
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: 25a06ac7c13f0abe0f1e8bf27fe117aa9cf038bd
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="message-security-over-message-queuing"></a>メッセージ キューを介したメッセージ セキュリティ
 このサンプルでは、クライアントの認証で X.509v3 証明書による WS-Security を使用するアプリケーションを実装する方法を示します。このアプリケーションでは、サーバーの X.509v3 証明書を MSMQ 経由で使用するサーバー認証が必要です。 MSMQ ストア内のメッセージの暗号化を保持したり、アプリケーションで独自のメッセージ認証を実行できるようにするには、メッセージ セキュリティの使用が望ましい場合があります。  
@@ -93,7 +81,7 @@ ms.lasthandoff: 04/27/2018
 -   サンプルの実行が終わったら、サンプル フォルダーにある Cleanup.bat を実行します。  
   
     > [!NOTE]
-    >  このサンプルを複数のコンピューターで実行している場合、このスクリプトはサービス証明書をクライアントから削除しません。 複数のコンピューターで証明書を使用する [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サンプルを実行した場合は、CurrentUser - TrustedPeople ストアにインストールされたサービス証明書を忘れずに削除してください。 削除するには、コマンド `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>` を実行します。たとえば、`certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com` となります。  
+    >  このサンプルを複数のコンピューターで実行している場合、このスクリプトはサービス証明書をクライアントから削除しません。 コンピューター間で証明書を使用する Windows Communication Foundation (WCF) サンプルを実行すると、必ず、CurrentUser - TrustedPeople ストアにインストールされているサービス証明書をオフにします。 削除するには、コマンド `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>` を実行します。たとえば、`certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com` となります。  
   
 ## <a name="requirements"></a>要件  
  このサンプルでは、MSMQ がインストールされて実行中であることが必要です。  
@@ -101,7 +89,7 @@ ms.lasthandoff: 04/27/2018
 ## <a name="demonstrates"></a>使用例  
  クライアントは、サービスの公開キーを使用してメッセージを暗号化し、独自の証明書を使用してメッセージ署名を行います。 キューからのメッセージを読み込むサービスは、信頼されたユーザーのストア内の証明書を使用して、クライアント証明書を認証します。 次にメッセージを復号化し、サービス操作にディスパッチします。  
   
- [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] メッセージは MSMQ メッセージの本文のペイロードとして送信されるので、メッセージ本文は MSMQ ストアで暗号化されたまま残ります。 これによりメッセージは、望ましくない公開から保護されます。 MSMQ 自体では、送信されるメッセージが暗号化されているかどうかは認識されません。  
+ されるため、Windows Communication Foundation (WCF) メッセージは MSMQ メッセージの本文のペイロードとして、本文は MSMQ ストアで暗号化されたまま維持します。 これによりメッセージは、望ましくない公開から保護されます。 MSMQ 自体では、送信されるメッセージが暗号化されているかどうかは認識されません。  
   
  このサンプルは、MSMQ でメッセージ レベルの相互認証を使用する方法を示します。 証明書は、帯域外で交換されます。 サービスとクライアントは同時に実行される必要がないため、キューに置かれたアプリケーションでは常にその状態です。  
   
@@ -313,7 +301,7 @@ Processing Purchase Order: 6536e097-da96-4773-9da3-77bab4345b5d
   
 -   クライアント証明書のサーバーの信頼された証明書ストアへのインストール。  
   
-     バッチ ファイルの次の行では、クライアント証明書をサーバーの TrustedPeople ストアにコピーし、サーバーが信頼/非信頼を判断できるようにします。 TrustedPeople ストアにインストールされた証明書が [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスに信頼されるには、クライアント証明書の検証モードの値を `PeerOrChainTrust` または `PeerTrust` に設定する必要があります。 前のサービス構成サンプルを参照して、構成ファイルを使用してこれを行う手順を確認してください。  
+     バッチ ファイルの次の行では、クライアント証明書をサーバーの TrustedPeople ストアにコピーし、サーバーが信頼/非信頼を判断できるようにします。 証明書の Windows Communication Foundation (WCF) サービスから信頼される TrustedPeople ストアにインストールされている場合、クライアント証明書検証モードを設定する必要があります`PeerOrChainTrust`または`PeerTrust`値。 前のサービス構成サンプルを参照して、構成ファイルを使用してこれを行う手順を確認してください。  
   
     ```bat
     echo ************  
@@ -354,7 +342,7 @@ Processing Purchase Order: 6536e097-da96-4773-9da3-77bab4345b5d
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
+>  このディレクトリが存在しない場合に、 [Windows Communication Foundation (WCF) および .NET Framework 4 向けの Windows Workflow Foundation (WF) サンプル](http://go.microsoft.com/fwlink/?LinkId=150780)すべて Windows Communication Foundation (WCF) をダウンロードして[!INCLUDE[wf1](../../../../includes/wf1-md.md)]サンプルです。 このサンプルは、次のディレクトリに格納されます。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Net\MSMQ\MessageSecurity`  
   

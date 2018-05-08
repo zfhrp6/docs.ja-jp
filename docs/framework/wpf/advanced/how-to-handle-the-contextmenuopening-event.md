@@ -1,28 +1,14 @@
 ---
-title: "方法 : ContextMenuOpening イベントを処理する"
-ms.custom: 
+title: '方法 : ContextMenuOpening イベントを処理する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - ContextMenuOpening properties [WPF]
 ms.assetid: 789652fb-1951-4217-934a-7843e355adf4
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 5eec8646a48f94fb9ffdcad14849416732618a06
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ab4c4867981cd318738b7404d76f2f5932bb9059
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-handle-the-contextmenuopening-event"></a>方法 : ContextMenuOpening イベントを処理する
 <xref:System.Windows.FrameworkElement.ContextMenuOpening>か、既存のコンテキスト メニューの前、表示するかを抑制する状況を設定して表示されるメニューを調整するアプリケーションでイベントを処理することができます、<xref:System.Windows.RoutedEventArgs.Handled%2A>プロパティを`true`イベント データ。 設定の一般的な理由<xref:System.Windows.RoutedEventArgs.Handled%2A>に`true`データが完全に新しいメニューを置き換えるには、イベントの<xref:System.Windows.Controls.ContextMenu>オブジェクトの操作を取り消すと、新しいオープンを開始も必要があります。 ハンドラーを記述する場合、<xref:System.Windows.FrameworkElement.ContextMenuOpening>イベント、する必要がありますの間のタイミングの問題に注意してください、<xref:System.Windows.Controls.ContextMenu>コントロールとサービスが開くと、一般にコントロールのコンテキスト メニューの位置を担当します。 このトピックでは、コンテキスト メニューのさまざまなシナリオを開くためのコードの手法の一部を示していて、タイミングの問題が関係する状況を示しています。  
@@ -68,7 +54,7 @@ ms.lasthandoff: 12/22/2017
   
  [!code-csharp[ContextMenuOpeningHandlers#ReplaceReopen](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ContextMenuOpeningHandlers/CSharp/Pane1.xaml.cs#replacereopen)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Controls.ContextMenu>  
  <xref:System.Windows.FrameworkElement.ContextMenu%2A?displayProperty=nameWithType>  
  [基本要素の概要](../../../../docs/framework/wpf/advanced/base-elements-overview.md)  

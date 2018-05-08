@@ -1,13 +1,6 @@
 ---
-title: "アプリケーションでのフォントのパッケージング"
-ms.custom: 
+title: アプリケーションでのフォントのパッケージング
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,16 +10,11 @@ helpviewer_keywords:
 - typography [WPF], packaging fonts with applications
 - packaging fonts with applications [WPF]
 ms.assetid: db15ee48-4d24-49f5-8b9d-a64460865286
-caps.latest.revision: "29"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: d3860aff69b0e4e7a3dc624898cc6b1daa0dd092
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 068a85a5fffd9b7463875695a4b494340ef66cd9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="packaging-fonts-with-applications"></a>アプリケーションでのフォントのパッケージング
 このトピックでは、パッケージで使用するフォントの方法の概要、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]アプリケーションです。  
@@ -40,7 +28,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="introduction-to-packaging-fonts"></a>フォントのパッケージングの概要  
  簡単にパッケージ化して、フォント内でリソースとして、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]ベースのアプリケーションにユーザー インターフェイス テキストとその他の種類のテキストを表示するコンテンツ。 フォントは、アプリケーションのアセンブリ ファイルと別にすることも、その中に埋め込むこともできます。 アプリケーションから参照できる、リソース専用のフォント ライブラリを作成することもできます。  
   
- [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)]および[!INCLUDE[TLA#tla_truetype](../../../../includes/tlasharptla-truetype-md.md)]フォントにライセンスを埋め込むフォントのフォントの権限を示すすれば、型フラグが含まれています。 しかし、この型フラグはドキュメントに格納された埋め込みフォントのみを参照し、アプリケーションに埋め込まれたフォントは参照しません。 作成することで、フォントの権利を埋め込むフォントを取得することができます、<xref:System.Windows.Media.GlyphTypeface>オブジェクトおよび参照するその<xref:System.Windows.Media.GlyphTypeface.EmbeddingRights%2A>プロパティです。 「OS/2 および Windows メトリック」セクションを参照してください、 [OpenType 仕様](http://www.microsoft.com/typography/otspec/os2.htm)すればフラグについての詳細。  
+ [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] および[!INCLUDE[TLA#tla_truetype](../../../../includes/tlasharptla-truetype-md.md)]フォントにライセンスを埋め込むフォントのフォントの権限を示すすれば、型フラグが含まれています。 しかし、この型フラグはドキュメントに格納された埋め込みフォントのみを参照し、アプリケーションに埋め込まれたフォントは参照しません。 作成することで、フォントの権利を埋め込むフォントを取得することができます、<xref:System.Windows.Media.GlyphTypeface>オブジェクトおよび参照するその<xref:System.Windows.Media.GlyphTypeface.EmbeddingRights%2A>プロパティです。 「OS/2 および Windows メトリック」セクションを参照してください、 [OpenType 仕様](http://www.microsoft.com/typography/otspec/os2.htm)すればフラグについての詳細。  
   
  [Microsoft タイポグラフィ](http://www.microsoft.com/typography/links/)Web サイトには、特定のフォントの仕入先を検索またはカスタムの作業のフォントの製造元を検索するのに役立つ連絡先の情報が含まれています。  
   
@@ -183,7 +171,7 @@ ms.lasthandoff: 12/22/2017
   
 -   正しくない参照がある場合、アプリケーションは使用可能なフォントの使用に戻ります。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Documents.Typography>  
  <xref:System.Windows.Media.FontFamily>  
  [Microsoft の文字体裁: リンク、ニュース、および連絡先](http://www.microsoft.com/typography/links/)  

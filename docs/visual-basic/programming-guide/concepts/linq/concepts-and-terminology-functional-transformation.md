@@ -1,22 +1,12 @@
 ---
-title: "概念と用語 (関数型変換) (Visual Basic)"
-ms.custom: 
+title: 概念と用語 (関数型変換) (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 24fd244d-ebae-4721-8858-89bb544aea0b
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 12b40d31688d852c9f9b3f644f64fc273c76209c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 67986e36333ac9a1aba7bec3c1b6c248b4faf55f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="concepts-and-terminology-functional-transformation-visual-basic"></a>概念と用語 (関数型変換) (Visual Basic)
 このトピックでは、純粋関数型変換の概念と用語について説明します。 データの変換に対して関数型変換の方法を使用すると、多くの場合、従来の命令型のプログラミングよりすばやいプログラミングが可能になります。また、さまざまな表現を使用した、デバッグや保守の容易なコードが生成されます。  

@@ -1,34 +1,20 @@
 ---
-title: "データ サービス プロバイダー (WCF Data Services)"
-ms.custom: 
+title: データ サービス プロバイダー (WCF Data Services)
 ms.date: 03/30/2017
-ms.prod: .net-framework-oob
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - WCF Data Services, providers
 ms.assetid: a0160b1b-3d9c-4cc8-8391-cb0986a60a41
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 6f25f1f9137206c1adb3ab3f89b7c6a783aeccf0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 7be6578f0b237f986bcb68a3ace10ba04cf06474
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="data-services-providers-wcf-data-services"></a>データ サービス プロバイダー (WCF Data Services)
-[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]データとして公開するための複数のプロバイダー モデルをサポートしている、[!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]フィードします。 このトピックでは、データ ソースに最適な [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] プロバイダーを選択するための情報を示します。  
+[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] データとして公開するための複数のプロバイダー モデルをサポートしている、[!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]フィードします。 このトピックでは、データ ソースに最適な [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] プロバイダーを選択するための情報を示します。  
   
 ## <a name="data-source-providers"></a>データ ソース プロバイダー  
- [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]データ サービスのデータ モデルを定義するには、次のプロバイダーをサポートします。  
+ [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] データ サービスのデータ モデルを定義するには、次のプロバイダーをサポートします。  
   
 |プロバイダー|説明|  
 |--------------|-----------------|  
@@ -37,13 +23,13 @@ ms.lasthandoff: 12/22/2017
 |カスタム データ サービス プロバイダー|[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] には、遅延バインディング データ型に基づいてデータ モデルを動的に定義できるプロバイダーのセットが含まれています。 公開されるデータが不明な場合、アプリケーションを設計中の場合、または Entity Framework プロバイダーやリフレクション プロバイダーでは不十分な場合には、これらのインターフェイスを実装する必要があります。 詳細については、次を参照してください。[カスタム データ サービス プロバイダー](../../../../docs/framework/data/wcf/custom-data-service-providers-wcf-data-services.md)です。|  
   
 ## <a name="other-data-service-providers"></a>その他のデータ サービス プロバイダー  
- [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]他のプロバイダーのいずれかを使用して定義されているデータ ソースのパフォーマンスを強化する次の追加のデータ サービス プロバイダーがあります。  
+ [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] 他のプロバイダーのいずれかを使用して定義されているデータ ソースのパフォーマンスを強化する次の追加のデータ サービス プロバイダーがあります。  
   
 |プロバイダー|説明|  
 |--------------|-----------------|  
 |ストリーミング プロバイダー|このプロバイダーを使用すると、[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] を使用してバイナリ ラージ オブジェクト データ型を公開できます。 ストリーミング プロバイダーは、<xref:System.Data.Services.Providers.IDataServiceStreamProvider> インターフェイスを実装することによって作成されます。 このプロバイダーは、任意のデータ ソース プロバイダーと共に実装できます。 詳細については、次を参照してください。[ストリーミング プロバイダー](../../../../docs/framework/data/wcf/streaming-provider-wcf-data-services.md)です。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [WCF Data Services の定義](../../../../docs/framework/data/wcf/defining-wcf-data-services.md)  
  [データ サービスの構成](../../../../docs/framework/data/wcf/configuring-the-data-service-wcf-data-services.md)  
  [データ サービスのホスティング](../../../../docs/framework/data/wcf/hosting-the-data-service-wcf-data-services.md)

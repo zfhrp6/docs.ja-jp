@@ -1,28 +1,19 @@
 ---
-title: 式を再帰的に呼び出して、包含するプロパティ &#39;&lt;propertyname&gt;&#39;です。
+title: 式を再帰的には、包含するプロパティを呼び出して&#39; &lt;propertyname&gt;&#39;
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vbc42026
 - BC42026
 helpviewer_keywords:
 - BC42026
 ms.assetid: 4fde9db6-3bf3-48dc-8e05-981bf08969da
-caps.latest.revision: 10
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 47de3c2d25336962168f01a4c8717274de7c9aad
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: f14e2645772b22a8f6ff2385dcd316a42d1d5cf0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="expression-recursively-calls-the-containing-property-39ltpropertynamegt39"></a>式を再帰的に呼び出して、包含するプロパティ &#39;&lt;propertyname&gt;&#39;です。
+# <a name="expression-recursively-calls-the-containing-property-39ltpropertynamegt39"></a>式を再帰的には、包含するプロパティを呼び出して&#39; &lt;propertyname&gt;&#39;
 内のステートメント、`Set`プロパティ定義のプロシージャは、プロパティの名前に、値を格納します。  
   
  定義するのには、プロパティの値を保持するための推奨アプローチ、`Private`変数、プロパティのコンテナーの両方で使用して、`Get`と`Set`プロシージャです。 `Set`プロシージャは、この受信した値を保存し、必要があります`Private`変数。  

@@ -1,10 +1,7 @@
 ---
-title: "依存関係プロパティの概要"
-description: "WPF プロパティ システムでバックアップされているプロパティは、依存関係プロパティと呼ばれます。 この概要では、WPF プロパティ システムと依存関係プロパティの機能について説明します。"
+title: 依存関係プロパティの概要
+description: WPF プロパティ システムでバックアップされているプロパティは、依存関係プロパティと呼ばれます。 この概要では、WPF プロパティ システムと依存関係プロパティの機能について説明します。
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.technology: dotnet-wpf
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,16 +14,11 @@ helpviewer_keywords:
 - dependency properties [WPF]
 - resources [WPF], references to
 ms.assetid: d119d00c-3afb-48d6-87a0-c4da4f83dee5
-caps.latest.revision: "30"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: d90e47c400f24eb10f2d262f9cb0e757ff472f0a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 196e858c52c06c96d652209e86039bfcc81a785a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="dependency-properties-overview"></a>依存関係プロパティの概要
 
@@ -43,11 +35,11 @@ ms.lasthandoff: 12/22/2017
 SDK リファレンスで、プロパティのマネージ リファレンス ページの「依存関係プロパティの情報」セクションの有無によって、どのプロパティが依存関係プロパティかを特定できます。 依存プロパティ情報セクションにはへのリンクが含まれています、<xref:System.Windows.DependencyProperty>識別子は、その依存関係プロパティのフィールドし、そのプロパティ、クラスごとの上書きについては、およびその他の詳細に設定されているメタデータ オプションの一覧があります。
 
 ## <a name="dependency-properties-back-clr-properties"></a>依存関係プロパティのバックアップ CLR プロパティ
-依存関係プロパティおよび [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] プロパティ システムは、プライベート フィールドでプロパティをサポートする標準パターンの代替実装として、プロパティをサポートする型を提供することによって、プロパティ機能を拡張します。 この種類の名前は<xref:System.Windows.DependencyProperty>します。 定義するその他の重要な型、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]プロパティ システム<xref:System.Windows.DependencyObject>です。 <xref:System.Windows.DependencyObject>登録および依存関係プロパティを所有できる基本クラスを定義します。
+依存関係プロパティおよび [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] プロパティ システムは、プライベート フィールドでプロパティをサポートする標準パターンの代替実装として、プロパティをサポートする型を提供することによって、プロパティ機能を拡張します。 この種類の名前は<xref:System.Windows.DependencyProperty>します。 定義するその他の重要な型、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]プロパティ システム<xref:System.Windows.DependencyObject>です。 <xref:System.Windows.DependencyObject> 登録および依存関係プロパティを所有できる基本クラスを定義します。
 
 依存関係プロパティについて説明するときにこの [!INCLUDE[TLA#tla_sdk](../../../../includes/tlasharptla-sdk-md.md)] ドキュメントで使用する用語の概要を次に示します。
 
-- **依存関係プロパティ:**補助されているプロパティ、<xref:System.Windows.DependencyProperty>です。
+- **依存関係プロパティ:** 補助されているプロパティ、<xref:System.Windows.DependencyProperty>です。
 
 - **依存関係プロパティの識別子:** A<xref:System.Windows.DependencyProperty>依存関係プロパティを登録するときに、戻り値として取得され、クラスの静的メンバーとして格納されているインスタンス。 この識別子は、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] プロパティ システムと対話する多くの [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] でパラメーターとして使用されます。
 

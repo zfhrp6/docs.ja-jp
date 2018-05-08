@@ -1,22 +1,12 @@
 ---
 title: Visual Basic における宣言された要素
-ms.custom: ''
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 ms.assetid: 0d1d1bb5-ac0b-485f-8922-cdcec5574c79
-caps.latest.revision: 15
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 0c437331e5fb1a5b9d727b3e24760250685fd365
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: cafc280bb4dbee388717ead4f748d66ea5d3ce72
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="declared-elements-in-visual-basic"></a>Visual Basic における宣言された要素
 *宣言された要素*は、宣言ステートメントで定義されているプログラミング要素です。 宣言された要素には、変数、定数、列挙型、クラス、構造体、モジュール、インターフェイス、プロシージャ、プロシージャ パラメーター、関数の戻り値、外部プロシージャの参照、演算子、プロパティ、イベント、およびデリゲートが含まれます。  

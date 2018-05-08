@@ -1,29 +1,17 @@
 ---
-title: "方法 : マウス ポインターが ToolStripItem 上にあることを検出する"
-ms.custom: 
+title: '方法 : マウス ポインターが ToolStripItem 上にあることを検出する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - toolbars [Windows Forms], detecting mouse movement
 - ToolStrip control [Windows Forms], detecting mouse movement
 - ToolStripItem class [Windows Forms], detecting mouse movement
 - mouse [Windows Forms], detecting movement on toolbars
 ms.assetid: d38b5082-aba7-4f6c-841b-bd9714e307fd
-caps.latest.revision: "7"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b04d0ef38a8946abc43da2672ade0723f5f2446f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 15a7562efd9a86a029754610ffd9e77c372d1ac2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-detect-when-the-mouse-pointer-is-over-a-toolstripitem"></a>方法 : マウス ポインターが ToolStripItem 上にあることを検出する
 マウス ポインターが上に検出するために、次の手順を使用して、<xref:System.Windows.Forms.ToolStripItem>です。  
@@ -34,7 +22,7 @@ ms.lasthandoff: 12/22/2017
   
      こうと、同期する必要はありません、<xref:System.Windows.Forms.ToolStripItem.MouseEnter>と<xref:System.Windows.Forms.ToolStripItem.MouseLeave>イベント。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.ToolStripItem>  
  <xref:System.Windows.Forms.ToolStripItem.Selected%2A>  
  [ToolStrip コントロールの概要](../../../../docs/framework/winforms/controls/toolstrip-control-overview-windows-forms.md)

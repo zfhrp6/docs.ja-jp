@@ -1,12 +1,6 @@
 ---
 title: Where 句 (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.QueryWhere
 helpviewer_keywords:
@@ -14,14 +8,11 @@ helpviewer_keywords:
 - queries [Visual Basic], Where
 - Where clause [Visual Basic]
 ms.assetid: 48b5c2c5-3181-429c-8545-894296798c89
-caps.latest.revision: 18
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 8c2572f513d00bc72e869cf28d382be799f7a303
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 0b61a52a366fb37a0834c9223bc8b7f099354d16
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="where-clause-visual-basic"></a>Where 句 (Visual Basic)
 クエリのフィルター処理条件を指定します。  
@@ -34,7 +25,7 @@ Where condition
   
 ## <a name="parts"></a>指定項目  
  `condition`  
- 必須です。 コレクションの現在のアイテムの値を出力コレクションに含めるかどうかを決定する式。 式を評価する、`Boolean`値またはのそれと同等、`Boolean`値。 条件の評価が場合`True`要素は、それ以外のクエリの結果に含まれている、要素が、クエリ結果から除外します。  
+ 必須。 コレクションの現在のアイテムの値を出力コレクションに含めるかどうかを決定する式。 式を評価する、`Boolean`値またはのそれと同等、`Boolean`値。 条件の評価が場合`True`要素は、それ以外のクエリの結果に含まれている、要素が、クエリ結果から除外します。  
   
 ## <a name="remarks"></a>コメント  
  `Where`句では、特定の条件を満たす要素のみを選択してクエリのデータをフィルター処理することができます。 要素の値を持つが発生する、`Where`句を評価する`True`クエリの結果に含まれるその他の要素が除外されます。 式で使用されている、`Where`に句を評価する必要があります、`Boolean`またはのそれと同等、`Boolean`に評価される整数など`False`その値が 0 の場合。 複数の式を組み合わせることができます、`Where`句などの論理演算子を使用して、 `And`、 `Or`、 `AndAlso`、 `OrElse`、 `Is`、および`IsNot`です。  

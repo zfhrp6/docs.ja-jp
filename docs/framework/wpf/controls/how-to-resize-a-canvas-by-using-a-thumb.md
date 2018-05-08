@@ -1,13 +1,6 @@
 ---
-title: "方法: つまみを使用してキャンバスのサイズを変更する"
-ms.custom: 
+title: '方法: つまみを使用してキャンバスのサイズを変更する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -18,16 +11,11 @@ helpviewer_keywords:
 - Thumb control [WPF]
 - Canvas control [WPF]
 ms.assetid: 7dc9f435-726c-4d4d-be41-eb24cfe17bef
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c73509d58112e47f707e82243005bfdf9edca151
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: c3e7176b0578c8fdc5f4331ad8f3b464f3a88b51
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-resize-a-canvas-by-using-a-thumb"></a>方法: つまみを使用してキャンバスのサイズを変更する
 この例を使用する方法を示しています、<xref:System.Windows.Controls.Primitives.Thumb>コントロール サイズを変更する、<xref:System.Windows.Controls.Canvas>コントロール。  
@@ -57,7 +45,7 @@ ms.lasthandoff: 12/22/2017
   
  サンプル全体については、次を参照してください。 [Thumb ドラッグ機能のサンプル](http://go.microsoft.com/fwlink/?LinkID=160042)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Controls.Primitives.Thumb>  
  <xref:System.Windows.Controls.Primitives.Thumb.DragStarted>  
  <xref:System.Windows.Controls.Primitives.Thumb.DragDelta>  

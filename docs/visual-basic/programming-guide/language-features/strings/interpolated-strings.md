@@ -1,17 +1,13 @@
 ---
 title: 補間文字列 (Visual Basic)
 ms.date: 10/31/2017
-ms.prod: .net
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9501c052f387a522226e957193a8866083aa4233
-ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
+ms.openlocfilehash: 95f79c5cdff1a48da2bb0eaf92229570ced631b1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="interpolated-strings-visual-basic-reference"></a>補間文字列 (Visual Basic リファレンス)
 
@@ -61,7 +57,7 @@ $"<text> {<interpolated-expression> [,<field-width>] [:<format-string>] } <text>
 
    これが、文字列解釈の最終的な結果です。 二重中かっこ ("{{" および "}}") のすべての発生箇所は、単一の中かっこに変換されます。 
 
-2. 挿入文字列から <xref:System.IFormattable> 変数への変換。これは、単一の <xref:System.IFormattable> インスタンスから、カルチャ固有のコンテンツを持った複数の結果文字列の作成を可能にするものです。 これは、個々のカルチャに適切な数値書式や日付形式などの情報を含めるのに便利です。  二重中かっこ ("{{" および "}}") のすべての出現箇所は、明示的または暗黙的に <xref:System.Object.ToString> メソッドを呼び出して文字列を書式指定するまで、二重中かっこのままです。  含まれるすべての補間式は、{0}、\{1\} などに変換されます。  
+2. 挿入文字列から <xref:System.IFormattable> 変数への変換。これは、単一の <xref:System.IFormattable> インスタンスから、カルチャ固有のコンテンツを持った複数の結果文字列の作成を可能にするものです。 これは、個々のカルチャに適切な数値書式や日付形式などの情報を含めるのに便利です。  二重中かっこ ("{{" および "}}") のすべての出現箇所は、明示的または暗黙的に <xref:System.Object.ToString> メソッドを呼び出して文字列を書式指定するまで、二重中かっこのままです。  すべての含まれる補間式に変換する{0}、{1}のようにします。  
 
    次の例では、リフレクションを使用することで、挿入文字列から作成された <xref:System.IFormattable> 変数のフィールドおよびプロパティ値だけでなく、メンバーも表示しています。 また、<xref:System.IFormattable> 変数を <xref:System.Console.WriteLine(System.String)?displayProperty=nameWithType> メソッドに渡しています。
 
@@ -71,13 +67,13 @@ $"<text> {<interpolated-expression> [,<field-width>] [:<format-string>] } <text>
 
 3. 補間文字列からへの変換、<xref:System.FormattableString>複合書式指定文字列を表す変数です。 たとえば、複合書式指定文字列を検査し、それが結果文字列としてどのように表示されるかを検査すると、クエリを構築する場合にインジェクション攻撃を防ぐことができます。 A<xref:System.FormattableString>も含まれています。
 
-      - A<xref:System.FormattableString.ToString>オーバー ロードの結果文字列を生成する、<xref:System.Globalization.CultureInfo.CurrentCulture>です。
+      - <xref:System.Globalization.CultureInfo.CurrentCulture> の結果文字列を生成する <xref:System.FormattableString.ToString> オーバーロード。
       
       - A<xref:System.FormattableString.Invariant%2A>の文字列を生成するメソッド、<xref:System.Globalization.CultureInfo.InvariantCulture>です。
       
-      - A<xref:System.FormattableString.ToString(System.IFormatProvider)>を特定のカルチャの結果文字列を生成するメソッド。 
+      - 特定のカルチャの結果文字列を生成する <xref:System.FormattableString.ToString(System.IFormatProvider)> メソッド。 
   
-    二重中かっこのすべての出現 ("{{"と"}}") 書式指定するまで二重中かっこのままです。  含まれるすべての補間式は、{0}、\{1\} などに変換されます。  
+    二重中かっこのすべての出現 ("{{"と"}}") 書式指定するまで二重中かっこのままです。  すべての含まれる補間式に変換する{0}、{1}のようにします。  
 
    [!code-vb[interpolated-strings3](../../../../../samples/snippets/visualbasic/programming-guide/language-features/strings/interpolated-strings3.vb)]  
 

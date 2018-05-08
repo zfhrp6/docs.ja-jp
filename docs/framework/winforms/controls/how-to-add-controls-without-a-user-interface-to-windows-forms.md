@@ -1,14 +1,6 @@
 ---
 title: '方法 : ユーザー インターフェイスを持たないコントロールを Windows フォームに追加する'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-winforms
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -22,17 +14,11 @@ helpviewer_keywords:
 - Windows Forms controls, nonvisual
 - nonvisual controls [Windows Forms]
 ms.assetid: 52134d9c-cff6-4eed-8e2b-3d5eb3bd494e
-caps.latest.revision: 12
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: e900c1c34f69531a14cfa11803ef5a6afb4783c6
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: 0a3e9ab5a048e085b192ffc0eb796caae1e58efe
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-add-controls-without-a-user-interface-to-windows-forms"></a>方法 : ユーザー インターフェイスを持たないコントロールを Windows フォームに追加する
 非ビジュアル コントロール (またはコンポーネント) は、アプリケーションに機能を提供します。 異なり、他のコントロールのコンポーネント、ユーザーにユーザー インターフェイスを提供しないので、Windows フォーム デザイナー画面に表示する必要はありません。 コンポーネントがフォームに追加されると、Windows フォーム デザイナーは、すべてのコンポーネントが表示されるフォームの下部にあるサイズ変更可能なトレイを表示します。 コントロールがコンポーネント トレイに追加されると、コンポーネントを選択し、フォーム上の他のコントロールのように、そのプロパティを設定することができます。  

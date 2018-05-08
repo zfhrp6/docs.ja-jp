@@ -1,10 +1,6 @@
 ---
 title: Visual Basic における My 名前空間の拡張
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.AddingMyExtensions
 helpviewer_keywords:
@@ -12,14 +8,11 @@ helpviewer_keywords:
 - My namespace
 - My namespace [Visual Basic], extending
 ms.assetid: 808e8617-b01c-4135-8b21-babe87389e8e
-caps.latest.revision: 13
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 25fff04b19cce299a2d437e662fb7481153d29da
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 22d9d0def302b870de6f3e5ca4c142758b21314c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="extending-the-my-namespace-in-visual-basic"></a>Visual Basic における My 名前空間の拡張
 `My` Visual Basic での名前空間を簡単に活用するために、.NET Framework の機能を有効にするプロパティとメソッドを公開します。 `My`名前空間には多くの場合、1 行のコードに困難な作業を減らす、プログラミングの共通の問題が簡略化します。 さらに、`My`の動作をカスタマイズすることができるように、名前空間は完全に拡張可能`My`特定のアプリケーションのニーズに合わせて調整するには、その階層に新しいサービスを追加します。 このトピックでは両方の既存のメンバーをカスタマイズする方法、`My`名前空間に独自のカスタム クラスを追加する方法と、`My`名前空間。  
@@ -42,7 +35,7 @@ ms.lasthandoff: 11/21/2017
   
 -   [パッケージ化と配置の拡張機能](#packaging)  
   
-##  <a name="customizing"></a>既存の My Namespace メンバーのカスタマイズ  
+##  <a name="customizing"></a> 既存の My Namespace メンバーのカスタマイズ  
  `My` Visual Basic の公開で名前空間は、アプリケーション、自分のコンピューターに関する情報を頻繁に使用します。 内のオブジェクトの完全な一覧については、`My`名前空間を参照してください[マイ参照](../../../visual-basic/language-reference/keywords/my-reference.md)です。 既存のメンバーをカスタマイズする必要があります、`My`名前空間にするようは、アプリケーションのニーズを満たします。 内のオブジェクトの任意のプロパティ、`My`読み取り専用ではない名前空間は、カスタムの値に設定することができます。  
   
  たとえば、頻繁に使用する、`My.User`アプリケーションを実行しているユーザーの現在のセキュリティ コンテキストにアクセスするオブジェクト。 ただし、会社は、追加情報や企業内のユーザーの機能を公開するのにカスタムのユーザー オブジェクトを使用します。 このシナリオでの既定値を置き換えることができます、`My.User.CurrentPrincipal`次の例で示すように、独自カスタム プリンシパルのオブジェクトのインスタンスを持つプロパティです。  
@@ -51,17 +44,17 @@ ms.lasthandoff: 11/21/2017
   
  設定、`CurrentPrincipal`プロパティを`My.User`オブジェクトが、アプリケーションを実行する id を変更します。 `My.User`オブジェクトは、さらに、新しく指定したユーザーに関する情報を返します。  
   
-##  <a name="addingtoobjects"></a>My オブジェクトにメンバーを追加します。  
+##  <a name="addingtoobjects"></a> My オブジェクトにメンバーを追加します。  
  返される型`My.Application`と`My.Computer`として定義されます`Partial`クラスです。 そのため、拡張することができます、`My.Application`と`My.Computer`オブジェクトを作成して、`Partial`という名前のクラス`MyApplication`または`MyComputer`です。 クラスにすることはできません、`Private`クラスです。 一部として、クラスを指定する場合、`My`名前空間、プロパティとに含まれているメソッドを追加できる、`My.Application`または`My.Computer`オブジェクト。  
   
  たとえば、次の例がという名前のプロパティを追加`DnsServerIPAddresses`を`My.Computer`オブジェクト。  
   
  [!code-vb[VbVbcnExtendingMy#2](../../../visual-basic/developing-apps/customizing-extending-my/codesnippet/VisualBasic/extending-the-my-namespace_2.vb)]  
   
-##  <a name="addingcustom"></a>カスタム オブジェクトを追加、My Namespace  
+##  <a name="addingcustom"></a> カスタム オブジェクトを追加、My Namespace  
  `My`名前空間は、多くの一般的なプログラミング タスクのソリューションを提供、作業が発生する可能性がある、`My`名前空間では対処できません。 たとえば、アプリケーションが、ユーザー データのカスタム ディレクトリ サービスにアクセスしたり、アプリケーションが Visual Basic での既定でインストールされていないアセンブリを使用可能性があります。 拡張することができます、`My`環境に固有の一般的なタスクへのカスタム ソリューションを含める名前空間。 `My`名前空間は、アプリケーションのニーズの増大に応じて新しいメンバーを追加に簡単に拡張できます。 さらに、展開することができます、`My`名前空間の拡張機能を Visual Basic テンプレートとして他の開発者。  
   
-###  <a name="addingtonamespace"></a>メンバーを追加する、My Namespace  
+###  <a name="addingtonamespace"></a> メンバーを追加する、My Namespace  
  `My`名前空間には、その他の名前空間のようなことができますを追加する最上位のプロパティだけを追加して、モジュールを指定する、`Namespace`の`My`します。 モジュールに注釈を付ける、`HideModuleName`属性の次の例で示すようにします。 `HideModuleName`属性により、エントリのメンバーを表示するとき、IntelliSense は、モジュール名が表示されない、`My`名前空間。  
   
  [!code-vb[VbVbcnExtendingMy#3](../../../visual-basic/developing-apps/customizing-extending-my/codesnippet/VisualBasic/extending-the-my-namespace_3.vb)]  
@@ -70,7 +63,7 @@ ms.lasthandoff: 11/21/2017
   
  [!code-vb[VbVbcnExtendingMy#4](../../../visual-basic/developing-apps/customizing-extending-my/codesnippet/VisualBasic/extending-the-my-namespace_4.vb)]  
   
-##  <a name="addingevents"></a>カスタム My オブジェクトへのイベントの追加  
+##  <a name="addingevents"></a> カスタム My オブジェクトへのイベントの追加  
  使用することができます、`My.Application`独自のイベントを公開するオブジェクト`My`オブジェクトを拡張することによって、`MyApplication`部分クラスで、`My`名前空間。 ダブルクリックし、Windows ベースのプロジェクト、 **My Project**内のノードに、プロジェクトの**ソリューション エクスプ ローラー**です。 Visual Basic で**プロジェクト デザイナー**をクリックして、 `Application`  タブでをクリックし、`View Application Events`ボタンをクリックします。 ApplicationEvents.vb という新しいファイルが作成されます。 拡張するための次のコードが含まれている、`MyApplication`クラスです。  
   
  [!code-vb[VbVbcnExtendingMy#5](../../../visual-basic/developing-apps/customizing-extending-my/codesnippet/VisualBasic/extending-the-my-namespace_5.vb)]  
@@ -79,7 +72,7 @@ ms.lasthandoff: 11/21/2017
   
  [!code-vb[VbVbcnExtendingMy#6](../../../visual-basic/developing-apps/customizing-extending-my/codesnippet/VisualBasic/extending-the-my-namespace_6.vb)]  
   
-##  <a name="design"></a>デザイン ガイドライン  
+##  <a name="design"></a> デザイン ガイドライン  
  拡張機能を開発する際に、`My`名前空間を拡張コンポーネントのメンテナンス コストを抑えるために、次のガイドラインを使用します。  
   
 -   **拡張機能のロジックのみが含まれます。** 含まれるロジック、`My`名前空間の拡張機能に必要な機能を公開するために必要なコードのみを含める必要があります、`My`名前空間。 拡張機能は、ソース コードとしてユーザーのプロジェクトに存在するため拡張コンポーネントを更新高のメンテナンス コストが生じます、可能な限り避ける必要があります。  
@@ -88,7 +81,7 @@ ms.lasthandoff: 11/21/2017
   
 -   **拡張機能のコードを分離します。** Visual Studio 項目テンプレートと簡単に配置できる拡張機能は、1 つのファイルでコードを記述します。 詳細については、このトピックの「「のパッケージ化し、拡張機能の配置」を参照してください。 すべてを配置する、`My`名前空間の拡張機能コードを 1 つのファイルまたは別のフォルダーをプロジェクトにも役立ちますを検索するユーザー、`My`名前空間の拡張機能です。  
   
-##  <a name="designing"></a>設計のクラス ライブラリの   
+##  <a name="designing"></a> 設計のクラス ライブラリの   
  ほとんどのオブジェクト モデルと同様に、一部のデザイン パターンが適切に機能、`My`名前空間とその他のユーザーはこれはできません。 拡張機能を設計するとき、`My`名前空間には、次の原則を検討してください。  
   
 -   **ステートレスな方法があります。** 内のメソッド、`My`名前空間は、特定のタスクへの完全なソリューションを提供する必要があります。 メソッドに渡されるパラメーター値が特定のタスクを完了するために必要なすべての入力を提供することを確認します。 リソースへの開いている接続など、前の状態に依存するメソッドを作成しないでください。  
@@ -101,7 +94,7 @@ ms.lasthandoff: 11/21/2017
   
  次のガイドラインは、クラス ライブラリに関する一般的な設計の原則を妨害しません。 代わりに、Visual Basic を使用する開発者用に最適化された推奨事項は、`My`名前空間。 クラス ライブラリを作成するための一般的な設計原則を参照してください。 [Framework デザイン ガイドライン](../../../standard/design-guidelines/index.md)です。  
   
-##  <a name="packaging"></a>パッケージ化と配置の拡張機能  
+##  <a name="packaging"></a> パッケージ化と配置の拡張機能  
  含めることができます`My`には、Visual Studio プロジェクト テンプレートでは、名前空間の拡張機能が、拡張機能をパッケージ化し、し、Visual Studio 項目テンプレートとして展開できます。 パッケージ化するときに、 `My` Visual Studio 項目テンプレートと名前空間拡張を行う Visual Basic で提供される追加機能を活用します。 これらの機能を使用するプロジェクトは、特定のアセンブリを参照するときに、拡張機能を含めるまたは明示的に追加するユーザーを有効にする、`My`名前空間の拡張機能を使用して、**マイ拡張**Visual Basic のページプロジェクト デザイナー。  
   
  展開する方法の詳細について`My`名前空間の拡張機能を参照してください[パッケージ化とカスタム My 拡張機能の配置](../../../visual-basic/developing-apps/customizing-extending-my/packaging-and-deploying-custom-my-extensions.md)です。  

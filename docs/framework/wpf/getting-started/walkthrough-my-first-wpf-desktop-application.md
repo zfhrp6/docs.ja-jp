@@ -1,9 +1,6 @@
 ---
 title: Visual Studio での WPF アプリケーションを作成します。
-ms.custom: 04/12/2018
-ms.prod: .net-framework
-ms.technology: dotnet-wpf
-ms.topic: conceptual
+ms.date: 04/12/2018
 dev_langs:
 - csharp
 - vb
@@ -13,14 +10,11 @@ helpviewer_keywords:
 ms.assetid: b96bed40-8946-4285-8fe4-88045ab854ed
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: edc7a22a7b108731e08c5d67ef8b8a52e9959ddc
-ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
-ms.translationtype: MT
+ms.openlocfilehash: a21a18b8e203cf57dfd1659b2eeeece157ad24ad
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="walkthrough-my-first-wpf-desktop-application"></a>チュートリアル: 初めての WPF デスクトップ アプリケーション
 
@@ -488,7 +482,7 @@ Visual Studio の最新バージョンのインストールに関する詳細に
 >
 > - [セキュリティ](../../../../docs/framework/wpf/security-wpf.md)
 >
-> - [WPF のグローバリゼーションとローカリゼーション](../../../../docs/framework/wpf/advanced/wpf-globalization-and-localization-overview.md)
+> - [WPF のグローバリゼーションとローカライズ](../../../../docs/framework/wpf/advanced/wpf-globalization-and-localization-overview.md)
 >
 > - [WPF のパフォーマンス](../../../../docs/framework/wpf/advanced/optimizing-wpf-application-performance.md)
 

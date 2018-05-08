@@ -1,13 +1,6 @@
 ---
-title: "データ メンバーの既定値"
-ms.custom: 
+title: データ メンバーの既定値
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - data members [WCF], default values
 - data members [WCF]
 ms.assetid: 53a3b505-4b27-444b-b079-0eb84a97cfd8
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 33f093beb022804bbdbccf1177404e128d198dd1
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 477921069411bb4b7ac32a5e93cc409bc7fbdec2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="data-member-default-values"></a>データ メンバーの既定値
 [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]、型の概念がある*既定値*です。 たとえば、参照型の既定値は `null` で、整数型の既定値は 0 です。 しかし、データ メンバーが既定値に設定されている場合は、シリアル化されたデータからそのデータ メンバーを省略することが望ましいことがあります。 それは、メンバーが既定値に設定されているために実際の値をシリアル化する必要がなく、パフォーマンスの点で有利だからです。  
@@ -61,12 +49,12 @@ ms.lasthandoff: 12/22/2017
 ### <a name="schema-representation"></a>スキーマ表現  
  XML スキーマ定義言語 (XSD) スキーマの形式をデータ メンバーの詳細と、`EmitDefaultValue`プロパティに設定されている`false`で説明した[データ コントラクト スキーマの参照](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md)です。 以下に、その概要を簡単に説明します。  
   
--   <xref:System.Runtime.Serialization.DataMemberAttribute.EmitDefaultValue%2A> を `false` に設定すると、スキーマでは [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] に固有の注釈として表現されます。 この情報を表すための相互運用可能な方法はありません。 特に、スキーマにおける "default" 属性はこの目的では使用されません。また、`minOccurs` 属性は <xref:System.Runtime.Serialization.DataMemberAttribute.IsRequired%2A> 設定だけに影響され、`nillable` 属性はデータ メンバーの型だけに影響されます。  
+-   ときに、<xref:System.Runtime.Serialization.DataMemberAttribute.EmitDefaultValue%2A>に設定されている`false`、Windows Communication Foundation (WCF) に固有の注釈としてスキーマで表されます。 この情報を表すための相互運用可能な方法はありません。 特に、スキーマにおける "default" 属性はこの目的では使用されません。また、`minOccurs` 属性は <xref:System.Runtime.Serialization.DataMemberAttribute.IsRequired%2A> 設定だけに影響され、`nillable` 属性はデータ メンバーの型だけに影響されます。  
   
 -   使用される実際の既定値は、スキーマには存在しません。 指定されていない要素が適切に解釈されるかどうかは、受信エンドポイントに依存します。  
   
- スキーマのインポートでは、前述の <xref:System.Runtime.Serialization.DataMemberAttribute.EmitDefaultValue%2A> に固有の注釈が検出されるたびに `false` プロパティが自動的に [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] に設定されます。 また、このプロパティは、一般に `false` Web サービスを使用したときに発生する特定の相互運用シナリオをサポートするために、`nillable` プロパティが `false` に設定されている参照型に対しても、[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] に設定されます。  
+ スキーマのインポート、<xref:System.Runtime.Serialization.DataMemberAttribute.EmitDefaultValue%2A>プロパティに設定されて自動的に`false`されるたびに記載されている WCF 固有の注釈が検出されます。 また、このプロパティは、一般に `false` Web サービスを使用したときに発生する特定の相互運用シナリオをサポートするために、`nillable` プロパティが `false` に設定されている参照型に対しても、[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] に設定されます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Runtime.Serialization.DataMemberAttribute.EmitDefaultValue%2A>  
  <xref:System.Runtime.Serialization.DataMemberAttribute>

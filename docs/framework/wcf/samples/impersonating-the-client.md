@@ -1,28 +1,16 @@
 ---
-title: "クライアントの偽装"
-ms.custom: 
+title: クライアントの偽装
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - service behaviors, impersonation sample
 - Impersonating the Client Sample [Windows Communication Foundation]
 - impersonation, Windows Communication Foundation sample
 ms.assetid: 8bd974e1-90db-4152-95a3-1d4b1a7734f8
-caps.latest.revision: "25"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a17a3631b781e6a96eb8aec17b20e8ddca52890d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4c5d911bfbfcd33248e15b9fc822abdc9cf4046c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="impersonating-the-client"></a>クライアントの偽装
 偽装のサンプルでは、サービスで呼び出し元のアプリケーションを偽装し、サービスが呼び出し元の代わりにシステム リソースにアクセスできるようにする方法を示します。  
@@ -113,7 +101,7 @@ client.ClientCredentials.Windows.AllowedImpersonationLevel = TokenImpersonationL
  このサンプルを実行すると、操作要求と応答がサービスとクライアントの両方のコンソール ウィンドウに表示されます。 どちらかのコンソールで Enter キーを押すと、サービスとクライアントがどちらもシャットダウンされます。  
   
 > [!NOTE]
->  サービスを管理アカウントで実行するか、またはサービスを実行するアカウントに http://localhost:8000/ServiceModelSamples の URI を HTTP レイヤーに登録する権限を付与する必要があります。 設定して、そのような権利を与えることができます、 [Namespace 予約](http://go.microsoft.com/fwlink/?LinkId=95012)を使用して、 [Httpcfg.exe ツール](http://go.microsoft.com/fwlink/?LinkId=95010)です。  
+>  サービスの管理者アカウントで実行する必要がありますまたはそれを実行するアカウントに登録する権限を与える必要があります、 http://localhost:8000/ServiceModelSamples HTTP レイヤーを使用して URI。 設定して、そのような権利を与えることができます、 [Namespace 予約](http://go.microsoft.com/fwlink/?LinkId=95012)を使用して、 [Httpcfg.exe ツール](http://go.microsoft.com/fwlink/?LinkId=95010)です。  
   
 > [!NOTE]
 >  [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] を実行しているコンピューターでは、Host.exe アプリケーションに偽装特権がある場合にのみ偽装がサポートされます  (既定では、管理者のみがこれを許可できます)。サービスを実行しているアカウントにこの特権を追加するに移動**管理ツール**、開かれている**ローカル セキュリティ ポリシー**、開かれている**ローカル ポリシー**をクリックして**ユーザー権利の割り当て**を選択して**認証後にクライアントを偽装** をダブルクリック**プロパティ**ユーザーまたはグループに追加します。  
@@ -136,4 +124,4 @@ client.ClientCredentials.Windows.AllowedImpersonationLevel = TokenImpersonationL
   
 5.  クライアントを実行する際、クライアントを実行する前と後で ID の資格情報が異なることに注意してください。  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目

@@ -1,28 +1,16 @@
 ---
-title: "方法 : デザイナーを使って Windows フォーム ListView コントロールの項目をグループ化する"
-ms.custom: 
+title: '方法 : デザイナーを使って Windows フォーム ListView コントロールの項目をグループ化する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - ListView control [Windows Forms], grouping items
 - grouping
 - groups [Windows Forms], in Windows Forms controls
 ms.assetid: 8b615000-69d9-4c64-acaf-b54fa09b69e3
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: f5e86ecdad66c9e58d691b18126c1fbf782e3130
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: c532cadc5b42c26f1598c4e7586309cf690456bb
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-group-items-in-a-windows-forms-listview-control-using-the-designer"></a>方法 : デザイナーを使って Windows フォーム ListView コントロールの項目をグループ化する
 グループ化機能、<xref:System.Windows.Forms.ListView>コントロールでは、グループ内のアイテムの関連のセットを表示することができます。 これらのグループは、画面の水平方向のグループを含むヘッダーにグループのタイトルで区切られます。 使用することができます<xref:System.Windows.Forms.ListView>日付、またはその他の論理グループで、アルファベット順に項目をグループ化して簡単に大規模なリストを移動するグループです。 次の図は、いくつかのグループ化された項目を示します。  
@@ -34,7 +22,7 @@ ms.lasthandoff: 01/19/2018
  グループ化を有効にする必要があります最初に作成する 1 つまたは複数<xref:System.Windows.Forms.ListViewGroup>デザイナーで、またはプログラムでのオブジェクト。 グループを定義した後に項目を割り当てることができます。  
   
 > [!NOTE]
->  <xref:System.Windows.Forms.ListView>のみ使用可能なグループ[!INCLUDE[WinXpFamily](../../../../includes/winxpfamily-md.md)]、アプリケーションを呼び出すと、<xref:System.Windows.Forms.Application.EnableVisualStyles%2A?displayProperty=nameWithType>メソッドです。 以前のオペレーティング システムでグループに関連するすべてのコードが影響を与えませんし、グループが表示されません。 詳細については、「<xref:System.Windows.Forms.ListView.Groups%2A?displayProperty=nameWithType>」を参照してください。  
+>  <xref:System.Windows.Forms.ListView> のみ使用可能なグループ[!INCLUDE[WinXpFamily](../../../../includes/winxpfamily-md.md)]、アプリケーションを呼び出すと、<xref:System.Windows.Forms.Application.EnableVisualStyles%2A?displayProperty=nameWithType>メソッドです。 以前のオペレーティング システムでグループに関連するすべてのコードが影響を与えませんし、グループが表示されません。 詳細については、「<xref:System.Windows.Forms.ListView.Groups%2A?displayProperty=nameWithType>」を参照してください。  
 >   
 >  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「[Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/library/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
   
@@ -56,7 +44,7 @@ ms.lasthandoff: 01/19/2018
   
 3.  選択、<xref:System.Windows.Forms.ListViewItem.Group%2A>プロパティし、ドロップダウン リストからグループを選択します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.ListView>  
  <xref:System.Windows.Forms.ListView.Groups%2A>  
  <xref:System.Windows.Forms.ListViewGroup>  

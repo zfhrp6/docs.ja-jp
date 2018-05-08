@@ -1,36 +1,22 @@
 ---
 title: ServiceDescription と WSDL 参照
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: eedc025d-abd9-46b1-bf3b-61d2d5c95fd6
-caps.latest.revision: ''
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 7eadfaaae920071092f569fe2b8882875ed9497f
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: e70d653519c13d2f40fa2a579b674893e1b7ab02
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="servicedescription-and-wsdl-reference"></a>ServiceDescription と WSDL 参照
-ここでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] で行われる Web サービス記述言語 (WSDL) ドキュメントと <xref:System.ServiceModel.Description.ServiceDescription> インスタンスの間のマッピングについて説明します。  
+このトピックとの間に、Windows Communication Foundation (WCF) が Web サービス記述言語 (WSDL) ドキュメントをマップする方法について説明<xref:System.ServiceModel.Description.ServiceDescription>インスタンス。  
   
 ## <a name="how-servicedescription-maps-to-wsdl-11"></a>ServiceDescription から WSDL 1.1 へのマッピング  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を使用して、サービスの <xref:System.ServiceModel.Description.ServiceDescription> インスタンスから WSDL ドキュメントをエクスポートできます。 WSDL ドキュメントは、メタデータ エンドポイントを公開したときに自動的にサービスに対して生成されます。  
+ WCF を使用してから WSDL ドキュメントをエクスポートすることができます、<xref:System.ServiceModel.Description.ServiceDescription>サービスのインスタンス。 WSDL ドキュメントは、メタデータ エンドポイントを公開したときに自動的にサービスに対して生成されます。  
   
  また、<xref:System.ServiceModel.Description.ServiceEndpoint> 型を使用して、WSDL ドキュメントから <xref:System.ServiceModel.Description.ContractDescription> インスタンス、<xref:System.ServiceModel.Channels.Binding> インスタンス、および `WsdlImporter` インスタンスをインポートできます。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] によってエクスポートされる WSDL ドキュメントは、外部の XML スキーマ ドキュメントから使用する XML スキーマ定義をインポートします。 データ型がサービスで使用するターゲット名前空間ごとに、個別の XML スキーマ ドキュメントがエクスポートされます。 同様に、サービス コントラクトが使用するターゲット名前空間ごとに、個別の WSDL ドキュメントがエクスポートされます。  
+ WCF, によってエクスポートされた WSDL ドキュメントは、外部の XML スキーマ ドキュメントから使用されている任意の XML スキーマ定義をインポートします。 データ型がサービスで使用するターゲット名前空間ごとに、個別の XML スキーマ ドキュメントがエクスポートされます。 同様に、サービス コントラクトが使用するターゲット名前空間ごとに、個別の WSDL ドキュメントがエクスポートされます。  
   
 ### <a name="servicedescription"></a>ServiceDescription  
  <xref:System.ServiceModel.Description.ServiceDescription> インスタンスは `wsdl:service` 要素にマップされます。 <xref:System.ServiceModel.Description.ServiceDescription> インスタンスは、それぞれが個別の <xref:System.ServiceModel.Description.ServiceEndpoint> 要素にマップされる `wsdl:port` インスタンスのコレクションを格納します。  
@@ -49,13 +35,13 @@ ms.lasthandoff: 03/26/2018
 |プロパティ|WSDL マッピング|  
 |----------------|------------------|  
 |`Name`|`wsdl:port` /@nameエンドポイントの値と`wsdl:binding`/@nameエンドポイント バインディングの値。|  
-|`Address`|エンドポイントの `wsdl:port` 定義のアドレス<br /><br /> アドレスの形式は、エンドポイントのトランスポートによって決まります。 たとえば、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] でサポートされるトランスポートの場合、SOAP アドレスまたはエンドポイント参照になります。|  
-|`Binding`|エンドポイントの `wsdl:binding` 定義<br /><br /> `wsdl:binding` 定義とは異なり、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のバインディングはどのコントラクトにも関連付けられません。|  
+|`Address`|エンドポイントの `wsdl:port` 定義のアドレス<br /><br /> アドレスの形式は、エンドポイントのトランスポートによって決まります。 たとえば、トランスポートの WCF でサポートされている可能性があります、SOAP アドレスまたはエンドポイント参照します。|  
+|`Binding`|エンドポイントの `wsdl:binding` 定義<br /><br /> 異なり`wsdl:binding`定義、WCF のバインディングはどのコントラクトにも関連付けられません。|  
 |`Contract`|エンドポイントの `wsdl:portType` 定義|  
 |`Behaviors`|<xref:System.ServiceModel.Description.IWsdlExportExtension> インターフェイスを実装するエンドポイント動作は、エンドポイントの `wsdl:port` を変更できます。|  
   
 ### <a name="bindings"></a>バインディング  
- `ServiceEndpoint` インスタンスのバインディング インスタンスは、`wsdl:binding` 定義にマップされます。 特定の `wsdl:binding` 定義に関連付ける必要がある `wsdl:portType` 定義とは異なり、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のバインディングは、どのコントラクトにも依存しません。  
+ `ServiceEndpoint` インスタンスのバインディング インスタンスは、`wsdl:binding` 定義にマップされます。 異なり`wsdl:binding`定義で、特定の関連付けである必要があります`wsdl:portType`定義、WCF バインドは任意のコントラクトに依存しません。  
   
  バインディングは、バインド要素のコレクションで構成されます。 各要素は、エンドポイントがクライアントと通信する方法の一部分を記述します。 また、バインディングには、エンドポイントの <xref:System.ServiceModel.Channels.MessageVersion> と <xref:System.ServiceModel.EnvelopeVersion> を示すための <xref:System.ServiceModel.Channels.AddressingVersion> があります。  
   
@@ -72,10 +58,10 @@ ms.lasthandoff: 03/26/2018
  SOAP バインディングのトランスポート URI (Uniform Resource Identifier) は、バインディングの <xref:System.ServiceModel.Channels.TransportBindingElement> によって決まります。  
   
 #### <a name="addressingversion"></a>AddressingVersion  
- バインディングの `AddressingVersion` は、`wsd:port` で使用されるアドレス指定のバージョンにマップされます。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、SOAP 1.1 と SOAP 1.2 のアドレスおよび WS-Addressing 08/2004 と WS-Addressing 1.0 のエンドポイント参照をサポートします。  
+ バインディングの `AddressingVersion` は、`wsd:port` で使用されるアドレス指定のバージョンにマップされます。 WCF でサポートされる SOAP 1.1 と SOAP 1.2 のアドレスおよび Ws-addressing 2004/08 と Ws-addressing 1.0 のエンドポイント参照します。  
   
 #### <a name="envelopeversion"></a>EnvelopeVersion  
- バインディングの `EnvelopeVersion` は、`wsdl:binding` で使用される SOAP のバージョンにマップされます。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、SOAP 1.1 と SOAP 1.2 のバインディングをサポートします。  
+ バインディングの `EnvelopeVersion` は、`wsdl:binding` で使用される SOAP のバージョンにマップされます。 WCF では、SOAP 1.1 と SOAP 1.2 のバインディングをサポートします。  
   
 ### <a name="contracts"></a>コントラクト  
  <xref:System.ServiceModel.Description.ContractDescription> インスタンスの `ServiceEndpoint` インスタンスは、`wsdl:portType` にマップされます。 `ContractDescription` インスタンスは、特定のコントラクトのすべての操作を記述します。  
@@ -84,7 +70,7 @@ ms.lasthandoff: 03/26/2018
 |----------------|------------------|  
 |`Name`|`wsdl:portType` /@nameコントラクトの値。|  
 |`Namespace`|`wsdl:portType` 定義の targetNamespace|  
-|`SessionMode`|`wsdl:portType` /@msc:usingSessionコントラクトの値。 この属性は、WSDL 1.1 用の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 拡張です。|  
+|`SessionMode`|`wsdl:portType` /@msc:usingSessionコントラクトの値。 この属性は、WSDL 1.1 用の WCF 拡張機能です。|  
 |`Operations`|コントラクトの `wsdl:operation` 定義|  
   
 ### <a name="operations"></a>オペレーション  
@@ -96,8 +82,8 @@ ms.lasthandoff: 03/26/2018
 |----------------|------------------|  
 |`Name`|`wsdl:portType` / `wsdl:operation` /@name操作の値。|  
 |`ProtectionLevel`|この操作の `wsdl:binding/wsdl:operation` メッセージに関連付けられたセキュリティ ポリシーの保護アサーション|  
-|`IsInitiating`|`wsdl:portType` / `wsdl:operation` /@msc:isInitiating操作の値。 この属性は、WSDL 1.1 用の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 拡張です。|  
-|`IsTerminating`|`wsdl:portType` / `wsdl:operation` /@msc:isTerminating操作の値。 この属性は、WSDL 1.1 用の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 拡張です。|  
+|`IsInitiating`|`wsdl:portType` / `wsdl:operation` /@msc:isInitiating操作の値。 この属性は、WSDL 1.1 用の WCF 拡張機能です。|  
+|`IsTerminating`|`wsdl:portType` / `wsdl:operation` /@msc:isTerminating操作の値。 この属性は、WSDL 1.1 用の WCF 拡張機能です。|  
 |`Messages`|`wsdl:portType` / `wsdl:operation` / `wsdl:input`と`wsdl:portType` / `wsdl:operation` / `wsdl:output`操作のメッセージ。|  
 |`Faults`|`wsdl:portType` / `wsdl:operation` / `wsdl:fault`操作を定義します。|  
 |`Behaviors`|`DataContractSerializerOperationBehavior` および `XmlSerializerOperationBehavior` は、操作バインディングおよび操作メッセージを扱います。|  

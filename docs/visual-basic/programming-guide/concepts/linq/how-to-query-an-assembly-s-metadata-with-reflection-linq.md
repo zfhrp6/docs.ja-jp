@@ -1,24 +1,14 @@
 ---
-title: "方法: アセンブリ &#39; クエリ (LINQ) (Visual Basic) のリフレクションを使用してメタデータ"
-ms.custom: 
+title: '方法: アセンブリをクエリ&#39;リフレクション (LINQ) (Visual Basic) を使用してメタデータ'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 53caa336-ab83-4181-b0f6-5c87c5f9e4ee
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 718f8d78ac71c8d6d28f762e756eb2a0219fce19
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: f465cccef2009bb9d8da1dc57c14eb09dc008f54
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="how-to-query-an-assembly39s-metadata-with-reflection-linq-visual-basic"></a>方法: アセンブリ &#39; クエリ (LINQ) (Visual Basic) のリフレクションを使用してメタデータ
+# <a name="how-to-query-an-assembly39s-metadata-with-reflection-linq-visual-basic"></a>方法: アセンブリをクエリ&#39;リフレクション (LINQ) (Visual Basic) を使用してメタデータ
 次の例では、LINQ でリフレクションを使用して、指定した検索条件に一致するメソッドについてのメタデータを取得する方法を示します。 この例のクエリでは、配列などの列挙可能な型を返すすべてのメソッドの名前をアセンブリ内で検索します。  
   
 ## <a name="example"></a>例  

@@ -1,22 +1,12 @@
 ---
-title: "量指定子操作 (Visual Basic)"
-ms.custom: 
+title: 量指定子操作 (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: ae1a2b73-503c-4f4b-a3fd-31b5adbee67c
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 9bc48c69179b1f8876efaa465295e94a9a0e0fb6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 0a0a5fae35a14ab6451f2f56fb2eedd92ac437e7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="quantifier-operations-visual-basic"></a>量指定子操作 (Visual Basic)
 量指定子操作は、シーケンス内の要素の一部またはすべてが条件を満たしているかどうかを示す <xref:System.Boolean> 値を返します。  

@@ -1,11 +1,6 @@
 ---
-title: "For...Next ステートメント (Visual Basic)"
+title: For...Next ステートメント (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Step
 - vb.Next
@@ -28,14 +23,11 @@ helpviewer_keywords:
 - Exit statement [Visual Basic], For...Next statements
 - For statement [Visual Basic]
 ms.assetid: f5fc0d51-67ce-4c36-9f09-31c9a91c94e9
-caps.latest.revision: "64"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 8a50f44a167952c735c6ed2830ca87105413401b
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: 8c54189499b7d5b52cf93b4a0ae6cc47356bf57e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="fornext-statement-visual-basic"></a>For...Next ステートメント (Visual Basic)
 ステートメントのグループを指定した回数だけ繰り返されます。  
@@ -103,7 +95,7 @@ Next [ counter ]
   
  任意の数を配置する`Exit For`内のステートメント、`For`しています.`Next` ループします。 使用すると内で入れ子になった`For`しています.`Next` ループ、`Exit For`最も内側のループを終了し、入れ子の上位のレベルに制御を移します。  
   
- `Exit For`いくつかの条件を評価した後は、よく使用 (たとえば、 `If`.`Then`...`Else`構造体)。 使用することができます`Exit For`次の条件。  
+ `Exit For` いくつかの条件を評価した後は、よく使用 (たとえば、 `If`.`Then`...`Else`構造体)。 使用することができます`Exit For`次の条件。  
   
 -   反復処理を続行するは、不要なまたは不可能です。 値が間違っているか、終了要求は、この状態になる可能性があります。  
   
@@ -132,15 +124,15 @@ Next [ counter ]
   
  既定値の`step`は 1 です。  
   
-###  <a name="BKMK_Counter"></a>カウンターの引数  
+###  <a name="BKMK_Counter"></a> カウンターの引数  
  次の表に示すかどうか`counter`全体を対象とする新しいローカル変数を定義`For…Next`ループします。 この決定によって異なるかどうか`datatype`が存在かどうかおよび`counter`は既に定義されています。  
   
 |`datatype`存在しますか?|`counter`既に定義されていますか。|結果 (かどうか`counter`全体を対象とする新しいローカル変数を定義`For...Next`ループ)|  
 |----------------------------|-----------------------------------|-------------------------------------------------------------------------------------------------------------|  
-|いいえ|はい|いいえ、ため`counter`は既に定義されています。 場合のスコープ`counter`コンパイル警告が発生した、プロシージャに対してローカルにないです。|  
-|いいえ|いいえ|はい。 データ型から推論されます、 `start`、 `end`、および`step`式。 型の推定については、次を参照してください。 [Option Infer ステートメント](../../../visual-basic/language-reference/statements/option-infer-statement.md)と[ローカル型推論](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)です。|  
-|[はい]|はい|場合に限り、[はい]、既存の`counter`プロシージャの外部から変数を定義します。 その変数は別に維持します。 場合、既存のスコープ`counter`変数は、プロシージャに対してローカルに、コンパイル時エラーが発生します。|  
-|はい|いいえ|はい。|  
+|×|[はい]|いいえ、ため`counter`は既に定義されています。 場合のスコープ`counter`コンパイル警告が発生した、プロシージャに対してローカルにないです。|  
+|×|×|はい。 データ型から推論されます、 `start`、 `end`、および`step`式。 型の推定については、次を参照してください。 [Option Infer ステートメント](../../../visual-basic/language-reference/statements/option-infer-statement.md)と[ローカル型推論](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)です。|  
+|[はい]|[はい]|場合に限り、[はい]、既存の`counter`プロシージャの外部から変数を定義します。 その変数は別に維持します。 場合、既存のスコープ`counter`変数は、プロシージャに対してローカルに、コンパイル時エラーが発生します。|  
+|[はい]|×|はい。|  
   
  データ型`counter`イテレーションでは、次の種類のいずれかを指定する必要がありますの種類を決定します。  
   
@@ -179,7 +171,7 @@ Next [ counter ]
   
  [!code-vb[VbVbalrStatements#117](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-next-statement_7.vb)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Collections.Generic.List%601>  
  [ループ構造](../../../visual-basic/programming-guide/language-features/control-flow/loop-structures.md)  
  [While...End While ステートメント](../../../visual-basic/language-reference/statements/while-end-while-statement.md)  

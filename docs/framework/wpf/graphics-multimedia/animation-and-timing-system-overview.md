@@ -1,27 +1,15 @@
 ---
-title: "アニメーションとタイミング システムの概要"
-ms.custom: 
+title: アニメーションとタイミング システムの概要
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - timing system [WPF]
 - animation [WPF]
 ms.assetid: 172cd5a8-a333-4c81-9456-fafccc19f382
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 87e3b1b63c8582a322f74659f03803d1dbb19621
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: bfb9a337a604fe8d86d208344d4371748e28f285
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="animation-and-timing-system-overview"></a>アニメーションとタイミング システムの概要
 このトピックでは、タイミング システムが、アニメーションを使用する方法について説明<xref:System.Windows.Media.Animation.Timeline>、および<xref:System.Windows.Media.Animation.Clock>プロパティをアニメーション化するクラス。  
@@ -93,7 +81,7 @@ ClockGroup
   
  プロパティをアニメーション化するときに、<xref:System.Windows.Media.Animation.AnimationClock>プロパティの設定*現在*値。 その CLR アクセサーを使用して、プロパティの値を取得する、または<xref:System.Windows.DependencyObject.GetValue%2A>メソッドの出力が返されます、<xref:System.Windows.Media.Animation.AnimationClock>ときに、<xref:System.Windows.Media.Animation.AnimationClock>は<xref:System.Windows.Media.Animation.ClockState.Active>または<xref:System.Windows.Media.Animation.ClockState.Filling>です。 使用して、プロパティのベース値を取得することができます、<xref:System.Windows.Media.Animation.IAnimatable.GetAnimationBaseValue%2A>メソッドです。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)  
  [タイミング イベントの概要](../../../../docs/framework/wpf/graphics-multimedia/timing-events-overview.md)  
  [タイミング動作の概要](../../../../docs/framework/wpf/graphics-multimedia/timing-behaviors-overview.md)

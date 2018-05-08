@@ -1,34 +1,20 @@
 ---
 title: NAT とファイアウォールの使用
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - firewalls [WCF]
 - NATs [WCF]
 ms.assetid: 74db0632-1bf0-428b-89c8-bd53b64332e7
-caps.latest.revision: 12
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: fe74b4bd86a25a8e6b769be1abe5fd81e5ffe5f9
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 72582af358d363038d09b313632c023f3c054dbe
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="working-with-nats-and-firewalls"></a>NAT とファイアウォールの使用
 ネットワーク接続のクライアントとサーバーには、直接開いている通信用のパスが存在しないことがよくあります。 パケットは、エンドポイント コンピューター上だけでなく、ネットワーク上の中間コンピューターによってもフィルター処理、ルーティング、分析、および変換されます。 ネットワーク アドレス変換 (NAT: Network Address Translation) とファイアウォールは、ネットワーク通信に参加できる中間アプリケーションの一般的な例です。  
   
- [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] のトランスポートとメッセージ交換パターン (MEP: Message Exchange Pattern) では、NAT とファイアウォールに対する反応がそれぞれ異なります。 ここでは、一般的なネットワーク トポロジで NAT とファイアウォールがどのように機能するかについて説明します。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のトランスポートと MEP の特定の組み合わせに関する推奨事項は、ネットワーク上の NAT とファイアウォールに対するアプリケーションの堅牢性を向上させる上で役立ちます。  
+ Windows Communication Foundation (WCF) トランスポートとメッセージ交換パターン (Mep) 反応がそれぞれ異なります Nat とファイアウォールのです。 ここでは、一般的なネットワーク トポロジで NAT とファイアウォールがどのように機能するかについて説明します。 WCF トランスポートと Mep の特定の組み合わせに関する推奨事項は、指定された Nat とファイアウォールがネットワーク上に、アプリケーションをより堅牢なことを支援します。  
   
 ## <a name="how-nats-affect-communication"></a>NAT が通信に及ぼす影響  
  NAT は、複数のコンピューターで 1 つの外部 IP アドレスを共有できるようにするために作成されました。 ポート再割り当て NAT は、新しいポート番号を使用して、接続する内部 IP アドレスとポートを外部 IP アドレスに割り当てます。 新しいポート番号により、NAT は、リターン トラフィックを元の通信に関連付けることができます。 現在、多くのホーム ユーザーがプライベートでのみルーティング可能な IP アドレスを持ち、パケットのグローバル ルーティングを実現するために NAT に依存しています。  
@@ -45,7 +31,7 @@ ms.lasthandoff: 04/28/2018
  ホーム ユーザー用ファイアウォールの一般的な構成では、以前に送信接続したことがあるコンピューター以外からの受信接続を禁止します。 ビジネス ユーザー用ファイアウォールの一般的な構成では、特別に指定したポート グループを除き、すべてのポートで受信接続を禁止します。 この一例としては、HTTP サービスと HTTPS サービスを提供するポート 80 とポート 443 以外のすべてのポートで接続を禁止するファイアウォールが挙げられます。 管理されたファイアウォールは、ホーム ユーザーとビジネス ユーザーの両者を対象にしており、コンピューター上の信頼済みユーザーやプロセスによるファイアウォール構成の変更を許可します。 管理されたファイアウォールの対象は、ネットワークの使用状況を制御する企業ポリシーが存在しないホーム ユーザーであるのがより一般的です。  
   
 ## <a name="using-teredo"></a>Teredo の使用  
- Teredo は、NAT の内側にあるコンピューターの直接アドレス指定を可能にする IPv6 移行テクノロジです。 Teredo は、パブリックにもグローバルにもルーティングが可能なサーバーを使用して考えられる接続をアドバタイズします。 Teredo サーバーは、アプリケーション クライアントとサーバーに、接続情報を交換できる共通のミーティング ポイントを提供します。 コンピューターは一時 Teredo アドレスを要求し、パケットが既存のネットワークをトンネリングされます。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] での Teredo のサポートには、オペレーティング システムでの IPv6 と Teredo のサポートの有効化が必要です。 [!INCLUDE[wxp](../../../../includes/wxp-md.md)] 以降のオペレーティング システムは Teredo をサポートします。 [!INCLUDE[wv](../../../../includes/wv-md.md)] 以降のオペレーティング システムは、既定で IPv6 をサポートします。ユーザーは Teredo のみ有効にする必要があります。 [!INCLUDE[wxpsp2](../../../../includes/wxpsp2-md.md)] および [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] では、ユーザーが IPv6 と Teredo の両方を有効にする必要があります。 詳細については、次を参照してください。、 [Teredo の概要](http://go.microsoft.com/fwlink/?LinkId=87571)です。  
+ Teredo は、NAT の内側にあるコンピューターの直接アドレス指定を可能にする IPv6 移行テクノロジです。 Teredo は、パブリックにもグローバルにもルーティングが可能なサーバーを使用して考えられる接続をアドバタイズします。 Teredo サーバーは、アプリケーション クライアントとサーバーに、接続情報を交換できる共通のミーティング ポイントを提供します。 コンピューターは一時 Teredo アドレスを要求し、パケットが既存のネットワークをトンネリングされます。 WCF での teredo のサポートは、オペレーティング システムでの IPv6 と Teredo のサポートを有効にする必要があります。 [!INCLUDE[wxp](../../../../includes/wxp-md.md)] 以降のオペレーティング システムは Teredo をサポートします。 [!INCLUDE[wv](../../../../includes/wv-md.md)] 以降のオペレーティング システムは、既定で IPv6 をサポートします。ユーザーは Teredo のみ有効にする必要があります。 [!INCLUDE[wxpsp2](../../../../includes/wxpsp2-md.md)] および [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] では、ユーザーが IPv6 と Teredo の両方を有効にする必要があります。 詳細については、次を参照してください。、 [Teredo の概要](http://go.microsoft.com/fwlink/?LinkId=87571)です。  
   
 ## <a name="choosing-a-transport-and-message-exchange-pattern"></a>トランスポートとメッセージ交換パターンの選択  
  トランスポートと MEP の選択は、次の 3 つの手順から成るプロセスです。  
@@ -64,7 +50,7 @@ ms.lasthandoff: 04/28/2018
   
 -   エンドポイントの登録用、またはトラフィックの中継用に到達可能なサービスを使用します。 Teredo サーバーなどの、グローバルに到達できる接続サービスを使用すると、ネットワーク トポロジの制限が厳しい場合やトポロジが不明な場合に正常に接続できる可能性が大幅に向上します。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] における一方向、要求/応答、双方向の各 MEP と、標準 TCP、Teredo を使用する TCP、および標準 HTTP と双方向 HTTP の各トランスポートについて次の表にまとめます。  
+ 次の表は、一方向、要求/応答、および双方向 Mep、および標準 TCP、Teredo を使用する TCP を確認し、WCF で標準およびデュアル HTTP を転送します。  
   
 |アドレスの指定可能性|サーバー (直接指定)|サーバー (NAT トラバースによる直接指定)|サーバー (NAT)|サーバー (NAT トラバースによる NAT)|  
 |--------------------|-------------------|--------------------------------------|----------------|-----------------------------------|  

@@ -1,22 +1,12 @@
 ---
-title: "Visual Studio (Visual Basic) で式ツリーのデバッグ"
-ms.custom: 
+title: Visual Studio (Visual Basic) で式ツリーのデバッグ
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 492cc28f-b7a2-4c47-b582-b3c437b8a5d5
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: ff1bee9c3c3fdeafab24368d2c7e8376d4ff7b97
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 2addba2654067eaaf6c621c927e0992308879ae4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="debugging-expression-trees-in-visual-studio-visual-basic"></a>Visual Studio (Visual Basic) で式ツリーのデバッグ
 アプリケーションをデバッグするときに、式ツリーの構造および内容を分析できます。 式ツリーの構造を簡単に確認する場合は、`DebugView` プロパティを使用できます。このプロパティは、デバッグ モードでのみ使用できます。 デバッグの詳細については、「[Visual Studio でのデバッグ](/visualstudio/debugger/debugging-in-visual-studio)」を参照してください。  
@@ -38,7 +28,7 @@ ms.lasthandoff: 11/21/2017
   
  パラメーターに名前がない場合、`$var1` や `$var2` など、自動的に生成された名前が割り当てられます。  
   
-### <a name="examples"></a>例  
+### <a name="examples"></a>使用例  
   
 -   `Expression`  
   
@@ -65,7 +55,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="constantexpressions"></a>ConstantExpressions  
  整数値、文字列、および `null` を表す <xref:System.Linq.Expressions.ConstantExpression> オブジェクトの場合、定数の値が表示されます。  
   
-### <a name="examples"></a>例  
+### <a name="examples"></a>使用例  
   
 -   `Expression`  
   
@@ -92,7 +82,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="blockexpression"></a>BlockExpression  
  <xref:System.Linq.Expressions.BlockExpression> オブジェクトの型が、ブロック内の最後の式の型と異なる場合、その型が `DebugInfo` プロパティに山かっこ (\< および >) で囲まれて表示されます。 それ以外の場合、<xref:System.Linq.Expressions.BlockExpression> オブジェクトの型は表示されません。  
   
-### <a name="examples"></a>例  
+### <a name="examples"></a>使用例  
   
 -   `Expression`  
   
@@ -128,7 +118,7 @@ ms.lasthandoff: 11/21/2017
   
  ラムダ式に名前がない場合、`#Lambda1` や `#Lambda2` など、自動的に生成された名前が割り当てられます。  
   
-### <a name="examples"></a>例  
+### <a name="examples"></a>使用例  
   
 -   `Expression`  
   
@@ -167,7 +157,7 @@ ms.lasthandoff: 11/21/2017
   
  ラベルに名前がない場合、`#Label1` や `#Label2` など、自動的に生成された名前が割り当てられます。  
   
-### <a name="examples"></a>例  
+### <a name="examples"></a>使用例  
   
 -   `Expression`  
   
@@ -215,7 +205,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="checked-operators"></a>checked 演算子  
  checked 演算子は、演算子の前に "#" 記号が付く形式で表示されます。 たとえば、checked 加算演算子は `#+` と表示されます。  
   
-### <a name="examples"></a>例  
+### <a name="examples"></a>使用例  
   
 -   `Expression`  
   

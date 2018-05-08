@@ -1,13 +1,6 @@
 ---
 title: Visual Basic における算術演算子
-ms.custom: ''
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - type safety
 - operators [Visual Basic], bitwise
@@ -20,14 +13,11 @@ helpviewer_keywords:
 - Visual Basic code, operators
 - arithmetic operators [Visual Basic], about arithmetic operators
 ms.assetid: 325dac7a-ea4f-41d5-8b48-f6e904211569
-caps.latest.revision: 20
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: cef1e3610d885a0f3a2bae718641f7b8ca1062dc
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: cd66d08eba973a796472fcbd40a6a84edbbb62ae
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="arithmetic-operators-in-visual-basic"></a>Visual Basic における算術演算子
 算術演算子は、多くのリテラル、変数、その他の式、関数とプロパティの呼び出し、および定数で表される数値の計算を含む一般的な算術演算の実行に使用されます。 オペランドのビットごとのレベルで動作し、ビット パターンを左または右にシフトするビット シフト演算子は、算術演算子を含む分類もします。  

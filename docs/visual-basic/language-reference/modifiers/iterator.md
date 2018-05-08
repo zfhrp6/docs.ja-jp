@@ -1,24 +1,16 @@
 ---
-title: "反復子 (Visual Basic)"
+title: 反復子 (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: 
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Iterator
 helpviewer_keywords:
 - Iterator keyword [Visual Basic]
 ms.assetid: 69cb0b04-ac87-49d0-bcfe-810c0d60daff
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: fd6c0b1fa422dc4ab659d8c59472e5c098c729bc
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: 565508046b3fa2dc52acf8c5204153beffc15d9e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="iterator-visual-basic"></a>反復子 (Visual Basic)
 指定する関数または`Get`アクセサーが反復子。  
@@ -57,7 +49,7 @@ ms.lasthandoff: 12/21/2017
   
  その他の例では、次を参照してください。[反復子](../../programming-guide/concepts/iterators.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Runtime.CompilerServices.IteratorStateMachineAttribute>  
  [反復子](../../programming-guide/concepts/iterators.md)  
  [Yield ステートメント](../../../visual-basic/language-reference/statements/yield-statement.md)

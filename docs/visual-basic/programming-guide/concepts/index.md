@@ -1,26 +1,19 @@
 ---
 title: プログラミングの概念 (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 ms.assetid: cc9cac84-61f6-476e-b8c7-9bae7749bd90
-caps.latest.revision: 4
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: c84b26f757ec852c9aefecab58eff9e631b95d15
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 85e23fcca0607e9f42daa94334c983462f6cf881
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="programming-concepts-visual-basic"></a>プログラミングの概念 (Visual Basic)
 このセクションでは、Visual Basic 言語でのプログラミングの概念について説明します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
   
-|タイトル|説明|  
+|Title|説明|  
 |-----------|-----------------|  
 |[アセンブリとグローバル アセンブリ キャッシュ (Visual Basic)](../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)|アセンブリを作成および使用する方法について説明します。|  
 |[Async および Await を使用した非同期プログラミング (Visual Basic)](../../../visual-basic/programming-guide/concepts/async/index.md)|[Async](../../../visual-basic/language-reference/modifiers/async.md) キーワードと [Await](../../../visual-basic/language-reference/operators/await-operator.md) キーワードを使用して非同期ソリューションを記述する方法を説明します。 チュートリアルが含まれています。|  

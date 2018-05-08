@@ -1,12 +1,6 @@
 ---
 title: '&lt;&lt;= 演算子 (Visual Basic)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.<<=
 helpviewer_keywords:
@@ -17,14 +11,11 @@ helpviewer_keywords:
 - operator<<=
 - compound assignment statements [Visual Basic]
 ms.assetid: 8ad26613-faff-4e2f-89ee-63feee33bfda
-caps.latest.revision: 17
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 5c5c36e4f91155c09d01b448777483941d018d9a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 559624f7097f90d374ee83e3c0a9ac97d9f93444
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ltlt-operator-visual-basic"></a>&lt;&lt;= 演算子 (Visual Basic)
 変数またはプロパティの値に対して算術左シフトを実行し、結果を変数またはプロパティに代入します。  
@@ -37,10 +28,10 @@ variableorproperty <<= amount
   
 ## <a name="parts"></a>指定項目  
  `variableorproperty`  
- 必須です。 整数型の変数またはプロパティ (`SByte`、 `Byte`、 `Short`、 `UShort`、 `Integer`、 `UInteger`、 `Long`、または`ULong`)。  
+ 必須。 整数型の変数またはプロパティ (`SByte`、 `Byte`、 `Short`、 `UShort`、 `Integer`、 `UInteger`、 `Long`、または`ULong`)。  
   
  `amount`  
- 必須です。 拡大変換をデータ型の数値式`Integer`です。  
+ 必須。 拡大変換をデータ型の数値式`Integer`です。  
   
 ## <a name="remarks"></a>コメント  
  左側にある要素、`<<=`演算子は、単純なスカラー変数、プロパティ、または配列の要素を指定できます。 変数またはプロパティにできません。 [ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md)です。  

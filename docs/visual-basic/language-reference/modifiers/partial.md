@@ -1,10 +1,6 @@
 ---
 title: Partial (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Partial
 - partial
@@ -18,14 +14,11 @@ helpviewer_keywords:
 - Partial keyword [Visual Basic]
 - type promotion
 ms.assetid: 7adaef80-f435-46e1-970a-269fff63b448
-caps.latest.revision: "36"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 5129ef7737b1b07317d47f8d18e9aceb668bf05a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: c94c3bf1a1e3e4c724f90690f52e97e8216cb9a7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="partial-visual-basic"></a>Partial (Visual Basic)
 型宣言が、型の部分定義であることを示します。  
@@ -51,20 +44,20 @@ Partial { Class | Structure | Interface | Module } name [ (Of typelist) ]
   
 |用語|定義|  
 |---|---|  
-|`attrlist`|省略可能です。 この型に適用される属性の一覧です。 囲む必要があります、[属性リスト](../../../visual-basic/language-reference/statements/attribute-list.md)山かっこ (`< >`)。|  
-|`accessmodifier`|省略可能です。 どのようなコードから型にアクセスできるのかを指定します。 参照してください[Visual Basic でのレベルのアクセス](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)です。|  
-|`Shadows`|省略可能です。 参照してください[Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)です。|  
-|`MustInherit`|省略可能です。 参照してください[MustInherit](../../../visual-basic/language-reference/modifiers/mustinherit.md)です。|  
-|`NotInheritable`|省略可能です。 参照してください[NotInheritable](../../../visual-basic/language-reference/modifiers/notinheritable.md)です。|  
-|`name`|必須です。 この型の名前です。 同じ型の他のすべての部分宣言で定義されている名前と一致する必要があります。|  
-|`Of`|省略可能です。 これがジェネリック型であることを指定します。 参照してください[Visual Basic におけるジェネリック型](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)です。|  
+|`attrlist`|任意。 この型に適用される属性の一覧です。 囲む必要があります、[属性リスト](../../../visual-basic/language-reference/statements/attribute-list.md)山かっこ (`< >`)。|  
+|`accessmodifier`|任意。 どのようなコードから型にアクセスできるのかを指定します。 参照してください[Visual Basic でのレベルのアクセス](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)です。|  
+|`Shadows`|任意。 参照してください[Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)です。|  
+|`MustInherit`|任意。 参照してください[MustInherit](../../../visual-basic/language-reference/modifiers/mustinherit.md)です。|  
+|`NotInheritable`|任意。 参照してください[NotInheritable](../../../visual-basic/language-reference/modifiers/notinheritable.md)です。|  
+|`name`|必須。 この型の名前です。 同じ型の他のすべての部分宣言で定義されている名前と一致する必要があります。|  
+|`Of`|任意。 これがジェネリック型であることを指定します。 参照してください[Visual Basic におけるジェネリック型](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)です。|  
 |`typelist`|使用するかどうかは必ず[の](../../../visual-basic/language-reference/statements/of-clause.md)します。 参照してください[のリストを入力](../../../visual-basic/language-reference/statements/type-list.md)です。|  
-|`Inherits`|省略可能です。 参照してください[Inherits ステートメント](../../../visual-basic/language-reference/statements/inherits-statement.md)です。|  
+|`Inherits`|任意。 参照してください[Inherits ステートメント](../../../visual-basic/language-reference/statements/inherits-statement.md)です。|  
 |`classname`|`Inherits` を使用する場合は必ず指定します。 このクラスの派生元のクラスまたはインターフェイスの名前です。|  
-|`Implements`|省略可能です。 参照してください[ステートメントを実装します](../../../visual-basic/language-reference/statements/implements-statement.md)です。|  
+|`Implements`|任意。 参照してください[ステートメントを実装します](../../../visual-basic/language-reference/statements/implements-statement.md)です。|  
 |`interfacenames`|`Implements` を使用する場合は必ず指定します。 この型が実装するインターフェイスの名前を指定します。|  
-|`variabledeclarations`|省略可能です。 この型の追加の変数やイベントを宣言するステートメントです。|  
-|`proceduredeclarations`|省略可能です。 この型の追加のプロシージャを宣言および定義するステートメントです。|  
+|`variabledeclarations`|任意。 この型の追加の変数やイベントを宣言するステートメントです。|  
+|`proceduredeclarations`|任意。 この型の追加のプロシージャを宣言および定義するステートメントです。|  
 |`End Class` または `End Structure`|この `Class` または `Structure` の部分定義を終了します。|  
   
 ## <a name="remarks"></a>コメント  

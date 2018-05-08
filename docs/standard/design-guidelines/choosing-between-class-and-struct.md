@@ -1,13 +1,7 @@
 ---
 title: クラスまたは構造体の選択
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - class library design guidelines [.NET Framework], structures
 - class library design guidelines [.NET Framework], classes
@@ -18,18 +12,13 @@ helpviewer_keywords:
 - classes [.NET Framework], vs. structures
 - type design guidelines, classes
 ms.assetid: f8b8ec9b-0ba7-4dea-aadf-a93395cd804f
-caps.latest.revision: 11
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: d7b7a0b290b97966894b9fa7d3b5597e68037cb0
-ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
+ms.openlocfilehash: 8bb05b825113c025781a790dc206d500633a3b08
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="choosing-between-class-and-struct"></a>クラスまたは構造体の選択
 すべての framework デザイナーに直面して基本的な設計上の決定の 1 つは、クラス (参照型)、または構造体 (値型) として型をデザインするかどうかです。 参照型と値の型の動作の違いをよく理解は、このオプションを選択する際に非常に重要です。  

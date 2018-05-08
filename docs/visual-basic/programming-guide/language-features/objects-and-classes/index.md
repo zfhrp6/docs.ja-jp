@@ -1,25 +1,15 @@
 ---
 title: Visual Basic のオブジェクトとクラス
-ms.custom: ''
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - classes [Visual Basic]
 - objects [Visual Basic]
 ms.assetid: c68c5752-1006-46e1-975a-6717b62a42fc
-caps.latest.revision: 26
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 19aa20097e35a780f923a84e3e5809eb2b8bb3e8
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 2917a698f9aa7828c201a048f443f5941797c704
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="objects-and-classes-in-visual-basic"></a>Visual Basic のオブジェクトとクラス
 "*オブジェクト*" は、1 つの単位として扱うことができるコードとデータの組み合わせです。 オブジェクトは、コントロールやフォームのように、アプリケーションの一部になることができます。 アプリケーション全体も、オブジェクトになることができます。

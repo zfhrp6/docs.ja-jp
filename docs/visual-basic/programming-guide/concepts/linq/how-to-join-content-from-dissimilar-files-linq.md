@@ -1,22 +1,12 @@
 ---
-title: "方法: 異種ファイル (LINQ) (Visual Basic) からコンテンツを結合します。"
-ms.custom: 
+title: '方法: 異種ファイル (LINQ) (Visual Basic) からコンテンツを結合します。'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: e7530857-c467-41ea-9730-84e6b1065a4d
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 00a3e776afbed3fd87a1f91eb83ada5d505aadfe
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 1be067db9c248ae7f51d79f1193e185f9c1fe564
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-join-content-from-dissimilar-files-linq-visual-basic"></a>方法: 異種ファイル (LINQ) (Visual Basic) からコンテンツを結合します。
 この例では、一致するキーとして共通の値を使用する 2 つのコンマ区切りファイルのデータを結合する方法を示します。 この方法は、2 つのスプレッドシートのデータ、またはスプレッドシートのデータと別の形式のファイルのデータを、新しいファイルに結合する必要がある場合に役立ちます。 この例は、変更を加えることで、あらゆる構造化テキスト ファイルに応用できます。  

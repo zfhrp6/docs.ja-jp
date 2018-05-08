@@ -1,28 +1,16 @@
 ---
-title: "コントロールのカスタム描画およびレンダリング"
-ms.custom: 
+title: コントロールのカスタム描画およびレンダリング
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - custom controls [Windows Forms], rendering
 - custom controls [Windows Forms], painting
 - user controls [Windows Forms], painting
 ms.assetid: a09dbf76-0966-4cbf-a66a-2083ba98e068
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 355a5842348aa4395d1841d0343080ddef634456
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 18a05a739f42d41a650e66723f44aae69c1707c7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="custom-control-painting-and-rendering"></a>コントロールのカスタム描画およびレンダリング
 コントロールのカスタム描画は、.NET Framework で簡単に作成する多くの複雑なタスクのいずれかです。 カスタム コントロールを作成するときに、コントロールの外観に関する多くのオプションがあります。 継承されるコントロールを作成している場合、 `Control`、グラフィカル表示を表示するために、コントロールを可能にするコードを指定する必要があります。 継承することで、ユーザー コントロールを作成するかどうかは、 `UserControl`、継承、または Windows フォーム コントロールのいずれかでは、標準のグラフィカル表示をオーバーライドして、独自のグラフィックス コードを提供します。 内在コントロールのカスタムの表示を提供するかどうか、`UserControl`オーサリングするは、これは、オプションが制限されますが、コントロールとアプリケーションのグラフィカル表現の広範な許可を許可します。  

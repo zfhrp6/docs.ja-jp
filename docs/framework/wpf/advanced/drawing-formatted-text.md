@@ -1,13 +1,6 @@
 ---
-title: "書式設定されたテキストの描画"
-ms.custom: 
+title: 書式設定されたテキストの描画
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,16 +10,11 @@ helpviewer_keywords:
 - formatted text [WPF]
 - drawing [WPF], formatted text
 ms.assetid: b1d851c1-331c-4814-9964-6fe769db6f1f
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 364362e8377f02b5d6518e6ae4d71b6dd1eafc02
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 978c97b8cae24bff4ebdea8f4e56a940e5907fa6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="drawing-formatted-text"></a>書式設定されたテキストの描画
 このトピックの機能の概要を示します、<xref:System.Windows.Media.FormattedText>オブジェクト。 このオブジェクトは、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] アプリケーションでのテキストの描画に対する低レベルの制御を提供します。  
@@ -42,11 +30,11 @@ FormattedText オブジェクトを使用して表示されるテキスト
 >  [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] API から移行する開発者のために、「[Win32 の移行](#win32_migration)」の表に [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] DrawText フラグと [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] におけるほぼ同等のものを示します。  
   
 ### <a name="reasons-for-using-formatted-text"></a>書式設定されたテキストを使用する理由  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] には画面にテキストを描画するための複数のコントロールが含まれています。 各コントロールは異なるシナリオを対象にしており、それぞれに一連の機能と制限があります。 一般に、<xref:System.Windows.Controls.TextBlock>制限付きのテキストのサポートが必要な場合、簡単な文など、要素を使用する必要があります、[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]です。 <xref:System.Windows.Controls.Label>最小限のテキストのサポートが必要な場合に使用できます。 詳細については、「[WPF のドキュメント](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)」を参照してください。  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] には画面にテキストを描画するための複数のコントロールが含まれています。 各コントロールは異なるシナリオを対象にしており、それぞれに一連の機能と制限があります。 一般に、<xref:System.Windows.Controls.TextBlock>制限付きのテキストのサポートが必要な場合、簡単な文など、要素を使用する必要があります、[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]です。 <xref:System.Windows.Controls.Label> 最小限のテキストのサポートが必要な場合に使用できます。 詳細については、「[WPF のドキュメント](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)」を参照してください。  
   
  <xref:System.Windows.Media.FormattedText>オブジェクトが書式設定機能よりも大きい値のテキストを提供[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]テキスト コントロールとテキスト装飾的な要素として使用する場合に役に立ちます。 詳細については、後の「[書式設定されたテキストのジオメトリへの変換](#converting_formatted_text)」を参照してください。  
   
- さらに、<xref:System.Windows.Media.FormattedText>オブジェクトはテキスト指向の作成に役立つ<xref:System.Windows.Media.DrawingVisual>-派生オブジェクト。 <xref:System.Windows.Media.DrawingVisual>図形、画像、またはテキストを表示するために使用される軽量の描画クラスです。 詳細については、「[DrawingVisuals を使用したヒット テストのサンプル](http://go.microsoft.com/fwlink/?LinkID=159994)」を参照してください。  
+ さらに、<xref:System.Windows.Media.FormattedText>オブジェクトはテキスト指向の作成に役立つ<xref:System.Windows.Media.DrawingVisual>-派生オブジェクト。 <xref:System.Windows.Media.DrawingVisual> 図形、画像、またはテキストを表示するために使用される軽量の描画クラスです。 詳細については、「[DrawingVisuals を使用したヒット テストのサンプル](http://go.microsoft.com/fwlink/?LinkID=159994)」を参照してください。  
   
 ## <a name="using-the-formattedtext-object"></a>FormattedText オブジェクトの使用  
  書式設定されたテキストを作成するには、<xref:System.Windows.Media.FormattedText.%23ctor%2A>コンス トラクターを作成する、<xref:System.Windows.Media.FormattedText>オブジェクト。 最初の書式設定済みテキスト文字列を作成したら、書式スタイルの範囲を適用できます。  
@@ -127,14 +115,14 @@ FormattedText オブジェクトを使用して表示されるテキスト
 |DT_PREFIXONLY|なし|サポートされていません。|  
 |DT_RIGHT|<xref:System.Windows.Media.FormattedText.TextAlignment%2A>|使用して、<xref:System.Windows.Media.FormattedText.TextAlignment%2A>プロパティ値を設定して<xref:System.Windows.TextAlignment.Right>です。 (WPF のみ)。|  
 |DT_RTLREADING|<xref:System.Windows.Media.FormattedText.FlowDirection%2A>|<xref:System.Windows.Media.FormattedText.FlowDirection%2A> プロパティを <xref:System.Windows.FlowDirection.RightToLeft> に設定します。|  
-|DT_SINGLELINE|なし|不要。 <xref:System.Windows.Media.FormattedText>オブジェクトは、1 行のコントロールとして動作しますが場合を除き、いずれか、<xref:System.Windows.Media.FormattedText.MaxTextWidth%2A>プロパティを設定またはテキストには、キャリッジ リターン/ライン フィード (CR/LF) が含まれています。|  
+|DT_SINGLELINE|なし|不要。 <xref:System.Windows.Media.FormattedText> オブジェクトは、1 行のコントロールとして動作しますが場合を除き、いずれか、<xref:System.Windows.Media.FormattedText.MaxTextWidth%2A>プロパティを設定またはテキストには、キャリッジ リターン/ライン フィード (CR/LF) が含まれています。|  
 |DT_TABSTOP|なし|ユーザー定義のタブ位置はサポートされていません。|  
 |DT_TOP|<xref:System.Windows.Media.FormattedText.Height%2A>|不要。 上端揃えが既定値です。 その他の垂直方向の位置指定値を使用して定義することができます、<xref:System.Windows.Media.FormattedText.Height%2A>プロパティを適切なコンピューティング[!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)]方向の位置。|  
 |DT_VCENTER|<xref:System.Windows.Media.FormattedText.Height%2A>|使用して、<xref:System.Windows.Media.FormattedText.Height%2A>プロパティを適切なコンピューティング[!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)]方向の位置。|  
 |DT_WORDBREAK|なし|不要。 単語区切り処理が自動的に行われます<xref:System.Windows.Media.FormattedText>オブジェクト。 無効にすることはできません。|  
 |DT_WORD_ELLIPSIS|<xref:System.Windows.Media.FormattedText.Trimming%2A>|使用して、 <xref:System.Windows.Media.FormattedText.Trimming%2A> 、値を持つプロパティ<xref:System.Windows.TextTrimming.WordEllipsis>です。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Media.FormattedText>  
  [WPF のドキュメント](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
  [WPF のタイポグラフィ](../../../../docs/framework/wpf/advanced/typography-in-wpf.md)  

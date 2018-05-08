@@ -1,32 +1,20 @@
 ---
 title: '方法 : X.509 証明書を使用してサービスをセキュリティで保護する'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 2d06c2aa-d0d7-4e5e-ad7e-77416aa1c10b
-caps.latest.revision: 8
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload:
-- dotnet
-ms.openlocfilehash: 89ad47ad898184b99f32743855091c0985722f77
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 73fd9919d1403ef592e5b81c11b6eb659baea669
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-secure-a-service-with-an-x509-certificate"></a>方法 : X.509 証明書を使用してサービスをセキュリティで保護する
-X.509 証明書を使用してサービスをセキュリティ保護することは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] の大半のバインディングで使用される基本的な手法です。 ここでは、X.509 証明書を使用して自己ホスト サービスを構成する手順を示します。  
+X.509 証明書によってサービスのセキュリティ保護は、ほとんどのバインドでは、Windows Communication Foundation (WCF) を使用する基本的な手法です。 ここでは、X.509 証明書を使用して自己ホスト サービスを構成する手順を示します。  
   
  サーバーの認証に使用できる有効な証明書があることが前提条件になります。 この証明書は、信頼された証明機関によってサーバーに対して発行される必要があります。 証明書が無効な場合、サービスの使用を試みるすべてのクライアントがサービスを信頼しなくなるため、接続が作成されません。 証明書の使用の詳細については、次を参照してください。[証明書の使用](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)です。  
   
@@ -44,7 +32,7 @@ X.509 証明書を使用してサービスをセキュリティ保護するこ�
      [!code-csharp[C_SecureWithCertificate#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securewithcertificate/cs/source.cs#2)]
      [!code-vb[C_SecureWithCertificate#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securewithcertificate/vb/source.vb#2)]  
   
-4.  サービスのベース アドレス用に <xref:System.Uri> クラスのインスタンスを作成します。 `WSHttpBinding` では HTTP トランスポートを使用するため、URI (Uniform Resource Identifier) がこのスキーマで開始されている必要があります。そうでない場合、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] は、サービスが開かれたときに例外をスローします。  
+4.  サービスのベース アドレス用に <xref:System.Uri> クラスのインスタンスを作成します。 `WSHttpBinding`は、Uniform Resource Identifier ()、HTTP トランスポートは、そのスキーマで始まる必要がありますまたは Windows Communication Foundation (WCF) サービスが開かれたときに例外がスローされます。  
   
      [!code-csharp[C_SecureWithCertificate#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securewithcertificate/cs/source.cs#3)]
      [!code-vb[C_SecureWithCertificate#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securewithcertificate/vb/source.vb#3)]  

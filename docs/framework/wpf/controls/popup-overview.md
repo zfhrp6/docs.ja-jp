@@ -1,27 +1,15 @@
 ---
-title: "ポップアップの概要"
-ms.custom: 
+title: ポップアップの概要
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - controls [WPF], Popup
 - Popup control [WPF], about Popup control
 ms.assetid: 774f53ca-bff8-470e-9ce9-3928b4cf3d4c
-caps.latest.revision: "34"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 0cb20895b5af35fec7274ca4c747740390104355
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: c9261e2151f116b46a0c25d8dc775bf41bf932b7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="popup-overview"></a>ポップアップの概要
 <xref:System.Windows.Controls.Primitives.Popup>コントロールは、指定された要素または画面座標の基準とした、現在のアプリケーション ウィンドウで別のウィンドウの内容を表示する方法を提供します。 このトピックでは、<xref:System.Windows.Controls.Primitives.Popup>制御し、その使用に関する情報を提供します。  
@@ -81,7 +69,7 @@ ms.lasthandoff: 12/22/2017
 ### <a name="popup-size"></a>ポップアップのサイズ  
  既定では、<xref:System.Windows.Controls.Primitives.Popup>そのコンテンツのサイズが自動的にします。 自動サイズ変更が発生すると一部のビットマップ効果が非表示にするために定義されている画面の領域の既定のサイズ、<xref:System.Windows.Controls.Primitives.Popup>コンテンツがビットマップ効果を表示するのに十分な容量を提供していません。  
   
- <xref:System.Windows.Controls.Primitives.Popup>設定すると、コンテンツを隠されることも、<xref:System.Windows.UIElement.RenderTransform%2A>内容にします。 このシナリオでいくつかのコンテンツが非表示にする場合、変換後のコンテンツ<xref:System.Windows.Controls.Primitives.Popup>、元の領域からはみ出した<xref:System.Windows.Controls.Primitives.Popup>です。 ビットマップ効果または変換より多くの領域が必要とする場合は、周囲に余白を定義することができます、<xref:System.Windows.Controls.Primitives.Popup>コンテンツ コントロールの複数の領域を提供するためにします。  
+ <xref:System.Windows.Controls.Primitives.Popup> 設定すると、コンテンツを隠されることも、<xref:System.Windows.UIElement.RenderTransform%2A>内容にします。 このシナリオでいくつかのコンテンツが非表示にする場合、変換後のコンテンツ<xref:System.Windows.Controls.Primitives.Popup>、元の領域からはみ出した<xref:System.Windows.Controls.Primitives.Popup>です。 ビットマップ効果または変換より多くの領域が必要とする場合は、周囲に余白を定義することができます、<xref:System.Windows.Controls.Primitives.Popup>コンテンツ コントロールの複数の領域を提供するためにします。  
   
 <a name="DefiningPopupPosition"></a>   
 ## <a name="defining-the-popup-position"></a>ポップアップ位置の定義  
@@ -99,7 +87,7 @@ ms.lasthandoff: 12/22/2017
   
  <xref:System.Windows.Controls.Primitives.Popup>コントロールへの参照を保持する、<xref:System.Windows.Controls.Primitives.Popup.Child%2A>論理子としてコンテンツ。 作成時に、新しいウィンドウが、コンテンツの<xref:System.Windows.Controls.Primitives.Popup>visual の子ウィンドウの論理子のままになり<xref:System.Windows.Controls.Primitives.Popup>です。 これに対し、<xref:System.Windows.Controls.Primitives.Popup>の論理上の親のまま、<xref:System.Windows.Controls.Primitives.Popup.Child%2A>コンテンツ。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Controls.Primitives.Popup>  
  <xref:System.Windows.Controls.Primitives.PopupPrimaryAxis>  
  <xref:System.Windows.Controls.Primitives.PlacementMode>  

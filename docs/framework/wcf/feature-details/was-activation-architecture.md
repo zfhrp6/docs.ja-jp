@@ -1,24 +1,12 @@
 ---
-title: "WAS アクティベーション アーキテクチャ"
-ms.custom: 
+title: WAS アクティベーション アーキテクチャ
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 58aeffb0-8f3f-4b40-80c8-15f3f1652fd3
-caps.latest.revision: "16"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 7563510fdd44336cb5f8c50705edefd732082347
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 0c91ebd605fbe503dd11da7167512648afd86449
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="was-activation-architecture"></a>WAS アクティベーション アーキテクチャ
 ここでは、Windows プロセス アクティブ化サービス (WAS とも呼ばれます) の各コンポーネントについて説明します。  
@@ -41,14 +29,14 @@ ms.lasthandoff: 12/22/2017
  ![WAS アーキテクチャ](../../../../docs/framework/wcf/feature-details/media/wasarchitecture.gif "WASArchitecture")  
   
 ### <a name="listener-adapters"></a>リスナー アダプター  
- リスナー アダプターは個別の Windows サービスであり、リッスンするネットワーク プロトコルを使用して、メッセージ受信に使用されるネットワーク通信ロジックを実装します。 次の表は、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] プロトコルのリスナー アダプターの一覧です。  
+ リスナー アダプターは個別の Windows サービスであり、リッスンするネットワーク プロトコルを使用して、メッセージ受信に使用されるネットワーク通信ロジックを実装します。 次の表には、Windows Communication Foundation (WCF) プロトコルのリスナー アダプターが一覧表示します。  
   
 |リスナー アダプターのサービス名|プロトコル|メモ|  
 |-----------------------------------|--------------|-----------|  
-|W3SVC|http|IIS 7.0 と [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の両方に HTTP アクティベーションを提供する共通コンポーネントです。|  
+|W3SVC|http|IIS 7.0 と WCF HTTP アクティブ化を提供する共通のコンポーネント。|  
 |NetTcpActivator|net.tcp|NetTcpPortSharing サービスに依存します。|  
 |NetPipeActivator|net.pipe||  
-|NetMsmqActivator|net.msmq|[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ベースのメッセージ キュー アプリケーションで使用します。|  
+|NetMsmqActivator|net.msmq|メッセージ キューの WCF ベースのアプリケーションで使用します。|  
 |NetMsmqActivator|msmq.formatname|既存のメッセージ キュー アプリケーションとの下位互換性を提供します。|  
   
  次の XML サンプルに示すように、特定プロトコルのリスナー アダプターは、インストール時に applicationHost.config ファイルに登録されます。  
@@ -96,6 +84,6 @@ ms.lasthandoff: 12/22/2017
 </system.web>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [WCF で使用するための WAS を設定する](../../../../docs/framework/wcf/feature-details/configuring-the-wpa--service-for-use-with-wcf.md)  
  [Windows Server App Fabric のホスティング機能](http://go.microsoft.com/fwlink/?LinkId=201276)

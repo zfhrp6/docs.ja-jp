@@ -1,13 +1,6 @@
 ---
-title: "チュートリアル: ユーザー コントロールでのドラッグ アンド ドロップの有効化"
-ms.custom: 
+title: 'チュートリアル: ユーザー コントロールでのドラッグ アンド ドロップの有効化'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - walkthrough [WPF], drag-and-drop
 - drag-and-drop [WPF], walkthrough
 ms.assetid: cc844419-1a77-4906-95d9-060d79107fc7
-caps.latest.revision: "7"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: d87872d3009b46878b7b614c1aef728d5b1d511d
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: e4dba856b973f1210f2d088de3ed8ae5df2c6988
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="walkthrough-enabling-drag-and-drop-on-a-user-control"></a>チュートリアル: ユーザー コントロールでのドラッグ アンド ドロップの有効化
 このチュートリアルでのドラッグ アンド ドロップのデータ転送に含めることができるカスタム ユーザー コントロールを作成する方法を示します[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]です。  
@@ -129,11 +117,11 @@ ms.lasthandoff: 01/19/2018
   
     -   静的なを呼び出して<xref:System.Windows.DragDrop.DoDragDrop%2A?displayProperty=nameWithType>をドラッグ アンド ドロップ操作を開始するメソッド。 次の 3 つのパラメーターを渡す、<xref:System.Windows.DragDrop.DoDragDrop%2A>メソッド。  
   
-        -   `dragSource`– このコントロールへの参照。  
+        -   `dragSource` – このコントロールへの参照。  
   
-        -   `data`–<xref:System.Windows.DataObject>前のコードで作成します。  
+        -   `data` –<xref:System.Windows.DataObject>前のコードで作成します。  
   
-        -   `allowedEffects`– の許可されているドラッグ アンド ドロップ操作<xref:System.Windows.DragDropEffects.Copy>または<xref:System.Windows.DragDropEffects.Move>です。  
+        -   `allowedEffects` – の許可されているドラッグ アンド ドロップ操作<xref:System.Windows.DragDropEffects.Copy>または<xref:System.Windows.DragDropEffects.Move>です。  
   
 3.  F5 キーを押してアプリケーションをビルドし、実行します。  
   
@@ -288,7 +276,7 @@ ms.lasthandoff: 01/19/2018
   
 7.  円コントロールの上にドロップせず、テキストをドラッグします。 円は、blue から緑色に変わります。  
   
-     ![ドラッグ &#45; の効果のプレビューおよび &#45; ドロップ](../../../../docs/framework/wpf/advanced/media/dragdrop-previeweffects.png "DragDrop_PreviewEffects")  
+     ![ドラッグの効果のプレビュー&#45;と&#45;ドロップ操作で](../../../../docs/framework/wpf/advanced/media/dragdrop-previeweffects.png "DragDrop_PreviewEffects")  
   
 8.  円コントロールのテキストをドラッグします。 円を青に緑のバックアップから変更します。  
   
@@ -347,5 +335,5 @@ ms.lasthandoff: 01/19/2018
   
      ![CTRL キーを押しながら Circle をドラッグ](../../../../docs/framework/wpf/advanced/media/dragdrop-paneldrop.png "DragDrop_PanelDrop")  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ドラッグ アンド ドロップの概要](../../../../docs/framework/wpf/advanced/drag-and-drop-overview.md)

@@ -1,30 +1,18 @@
 ---
-title: "データ転送とシリアル化"
-ms.custom: 
+title: データ転送とシリアル化
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - data serialization [WCF]
 - data transfer [WCF]
 ms.assetid: 0f03c635-f3e7-4c5c-9463-3cb0135e221e
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 8daadec1eef20e62747cdbfcafd1fd13cfc16093
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 53c1421bf14c598611e116c61353c4ecd465f1aa
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="data-transfer-and-serialization"></a>データ転送とシリアル化
-接続されたシステムでは、サービスとクライアントのタスクの実行は、データの交換に依存します。 サービスやクライアントの開発者は、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] のデータ処理方法とデータのシリアル化を理解して、効果的で保守しやすいアプリケーションを作成する必要があります。  
+接続されたシステムでは、サービスとクライアントのタスクの実行は、データの交換に依存します。 サービスまたはクライアントの開発者は、効率的で簡単に維持するアプリケーションを作成するために、Windows Communication Foundation (WCF) がデータとデータのシリアル化を処理する方法も理解する必要があります。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [サービス コントラクトでのデータ転送の指定](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md)  
@@ -55,7 +43,7 @@ ms.lasthandoff: 12/22/2017
  データの転送とシリアル化をプログラムするときに注意する必要のある項目について説明します。  
   
  [データ転送のアーキテクチャの概要](../../../../docs/framework/wcf/feature-details/data-transfer-architectural-overview.md)  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] におけるデータ転送の全般的な設計について説明します。  
+ WCF でのデータ転送の全体的な設計のビューについて説明します。  
   
 ## <a name="reference"></a>参照  
  <xref:System.ServiceModel>  
@@ -71,6 +59,6 @@ ms.lasthandoff: 12/22/2017
 ## <a name="related-sections"></a>関連項目  
  [エンコーダーとシリアライザーの拡張](../../../../docs/framework/wcf/extending/extending-encoders-and-serializers.md)  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ベスト プラクティス: データ コントラクトのバージョン管理](../../../../docs/framework/wcf/best-practices-data-contract-versioning.md)  
  [サービスのバージョン管理](../../../../docs/framework/wcf/service-versioning.md)

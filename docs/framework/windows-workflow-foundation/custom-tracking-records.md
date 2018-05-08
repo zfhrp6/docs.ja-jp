@@ -1,23 +1,12 @@
 ---
-title: "カスタム追跡レコード"
-ms.custom: 
+title: カスタム追跡レコード
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 24284565-c68b-40bf-b7f1-e148d151a6fc
-caps.latest.revision: "6"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 51c47c3b11c912c1c67fe0d9ed4960de42f8a852
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6c68c08e5beacee30b517bf0c2bad3e83785409b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="custom-tracking-records"></a>カスタム追跡レコード
 このトピックではカスタム追跡レコードを作成し、出力されたデータをレコードと一緒に読み込む方法を示します。  
@@ -37,6 +26,6 @@ protected override void Execute(CodeActivityContext context)
   
  <xref:System.Activities.Tracking.CustomTrackingRecord> 上で <xref:System.Activities.NativeActivityContext.Track%2A> メソッドを呼び出すことで、`ActvityContext` をコード アクティビティに出力できます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Windows Server App Fabric の監視](http://go.microsoft.com/fwlink/?LinkId=201273)  
  [アプリケーション App Fabric の監視](http://go.microsoft.com/fwlink/?LinkId=201275)

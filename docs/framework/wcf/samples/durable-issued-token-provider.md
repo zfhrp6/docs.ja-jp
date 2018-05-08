@@ -1,30 +1,18 @@
 ---
-title: "永続性発行済みトークン プロバイダー"
-ms.custom: 
+title: 永続性発行済みトークン プロバイダー
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 76fb27f5-8787-4b6a-bf4c-99b4be1d2e8b
-caps.latest.revision: "17"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: fc92bd92f688ae2b12889779083142e6ddd481d9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 20006f87f7ecba9c09f6c957f8b6355dec7fbd32
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="durable-issued-token-provider"></a>永続性発行済みトークン プロバイダー
 このサンプルでは、カスタム クライアントの発行済みトークン プロバイダーを実装する方法を示します。  
   
 ## <a name="discussion"></a>説明  
- [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] のトークン プロバイダーは、資格情報をセキュリティ インフラストラクチャに提供するために使用します。 一般的に、トークン プロバイダーは、ターゲットをチェックし、適切な証明書を発行して、セキュリティ インフラストラクチャがメッセージのセキュリティを保護できるようにします。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] にはトークン プロバイダー [!INCLUDE[infocard](../../../../includes/infocard-md.md)] が付属しています。 カスタム トークン プロバイダーは、次の場合に便利です。  
+ トークン プロバイダーでは、Windows Communication Foundation (WCF) を使用すると、セキュリティ インフラストラクチャに資格情報を提供します。 一般的に、トークン プロバイダーは、ターゲットをチェックし、適切な証明書を発行して、セキュリティ インフラストラクチャがメッセージのセキュリティを保護できるようにします。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] にはトークン プロバイダー [!INCLUDE[infocard](../../../../includes/infocard-md.md)] が付属しています。 カスタム トークン プロバイダーは、次の場合に便利です。  
   
 -   組み込みのトークン プロバイダが連係動作できない資格情報ストアがある場合。  
   
@@ -261,8 +249,8 @@ ms.lasthandoff: 12/22/2017
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
+>  このディレクトリが存在しない場合に、 [Windows Communication Foundation (WCF) および .NET Framework 4 向けの Windows Workflow Foundation (WF) サンプル](http://go.microsoft.com/fwlink/?LinkId=150780)すべて Windows Communication Foundation (WCF) をダウンロードして[!INCLUDE[wf1](../../../../includes/wf1-md.md)]サンプルです。 このサンプルは、次のディレクトリに格納されます。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Security\DurableIssuedTokenProvider`  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目

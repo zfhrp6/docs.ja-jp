@@ -1,27 +1,15 @@
 ---
-title: "フレームワーク プロパティ メタデータ"
-ms.custom: 
+title: フレームワーク プロパティ メタデータ
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - metadata [WPF], framework properties
 - framework property metadata [WPF]
 ms.assetid: 9962f380-b885-4b61-a62e-457397083fea
-caps.latest.revision: "19"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 4fec11a973572dce9e8d6f77bf65ce31ee77eb41
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d968bc7a3033bd994590520c5cd5062d3c212b4f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="framework-property-metadata"></a>フレームワーク プロパティ メタデータ
 フレームワーク プロパティ メタデータのオプションは、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] アーキテクチャの WPF フレームワーク レベルにあると見なされるオブジェクト要素のプロパティに対して報告されます。 一般に、WPF フレームワーク レベルが指定されている場合、レンダリング、データ バインディング、プロパティ システムの調整などの機能が、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] のプレゼンテーション [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] と実行可能ファイルによって処理されます。 フレームワーク プロパティ メタデータがこれらのシステムによって照会されて、特定の要素プロパティに対する機能固有の特性が決まります。  
@@ -40,7 +28,7 @@ ms.lasthandoff: 12/22/2017
   
 -   レポート要素の親要素に影響するレイアウト プロパティ (<xref:System.Windows.FrameworkPropertyMetadata.AffectsParentArrange%2A>、 <xref:System.Windows.FrameworkPropertyMetadata.AffectsParentMeasure%2A>)。 既定ではこれらのフラグが設定されているいくつかの例は、<xref:System.Windows.Documents.FixedPage.Left%2A?displayProperty=nameWithType>と<xref:System.Windows.Documents.Paragraph.KeepWithNext%2A?displayProperty=nameWithType>です。  
   
--   <xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A>。 既定では、依存関係プロパティは値を継承しません。 <xref:System.Windows.FrameworkPropertyMetadata.OverridesInheritanceBehavior%2A>一部のコントロールの複合シナリオに必要なビジュアル ツリーにも移動する継承のパスを使用できます。  
+-   <xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A>。 既定では、依存関係プロパティは値を継承しません。 <xref:System.Windows.FrameworkPropertyMetadata.OverridesInheritanceBehavior%2A> 一部のコントロールの複合シナリオに必要なビジュアル ツリーにも移動する継承のパスを使用できます。  
   
     > [!NOTE]
     >  プロパティ値のコンテキストにおける "継承" という用語は、依存関係プロパティに固有の事項を意味します。つまり、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] プロパティ システムの WPF フレームワーク レベルの機能によって、実際の依存関係プロパティ値を子要素が親要素から継承できることを意味します。 派生型を通じたマネージ コードの型およびメンバーの継承とは直接関係はありません。 詳細については、「[プロパティ値の継承](../../../../docs/framework/wpf/advanced/property-value-inheritance.md)」を参照してください。  
@@ -69,13 +57,13 @@ ms.lasthandoff: 12/22/2017
 ## <a name="framework-property-metadata-merge-behavior"></a>フレームワーク プロパティ メタデータのマージ動作  
  フレームワーク プロパティ メタデータをオーバーライドすると、さまざまなメタデータ特性がマージされるか置き換えられます。  
   
--   <xref:System.Windows.PropertyMetadata.PropertyChangedCallback%2A>マージされています。 新しく追加した場合<xref:System.Windows.PropertyMetadata.PropertyChangedCallback%2A>、そのコールバックがメタデータに格納します。 指定しない場合、<xref:System.Windows.PropertyMetadata.PropertyChangedCallback%2A>の値よりも優先的に<xref:System.Windows.PropertyMetadata.PropertyChangedCallback%2A>がメタデータに指定する、最も近い先祖から参照として昇格します。  
+-   <xref:System.Windows.PropertyMetadata.PropertyChangedCallback%2A> マージされています。 新しく追加した場合<xref:System.Windows.PropertyMetadata.PropertyChangedCallback%2A>、そのコールバックがメタデータに格納します。 指定しない場合、<xref:System.Windows.PropertyMetadata.PropertyChangedCallback%2A>の値よりも優先的に<xref:System.Windows.PropertyMetadata.PropertyChangedCallback%2A>がメタデータに指定する、最も近い先祖から参照として昇格します。  
   
 -   実際のプロパティのシステム動作<xref:System.Windows.PropertyMetadata.PropertyChangedCallback%2A>はある実装の階層内のすべてのメタデータ所有者が保持され、テーブルに追加されていることが、最も深く派生クラスのコールバック プロパティ システムによって実行の順序で最初に呼び出されます。 継承されたコールバックは、それらをメタデータに配置したクラスによって所有されていると見なされ、それぞれ 1 回だけ実行されます。  
   
--   <xref:System.Windows.PropertyMetadata.DefaultValue%2A>置換されます。 指定しない場合、<xref:System.Windows.PropertyMetadata.PropertyChangedCallback%2A>の値よりも優先的に<xref:System.Windows.PropertyMetadata.DefaultValue%2A>はメタデータに指定する、最も近い先祖から取得します。  
+-   <xref:System.Windows.PropertyMetadata.DefaultValue%2A> 置換されます。 指定しない場合、<xref:System.Windows.PropertyMetadata.PropertyChangedCallback%2A>の値よりも優先的に<xref:System.Windows.PropertyMetadata.DefaultValue%2A>はメタデータに指定する、最も近い先祖から取得します。  
   
--   <xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A>実装は置き換えられます。 新しく追加した場合<xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A>、そのコールバックがメタデータに格納します。 指定しない場合、<xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A>の値よりも優先的に<xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A>がメタデータに指定する、最も近い先祖から参照として昇格します。  
+-   <xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A> 実装は置き換えられます。 新しく追加した場合<xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A>、そのコールバックがメタデータに格納します。 指定しない場合、<xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A>の値よりも優先的に<xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A>がメタデータに指定する、最も近い先祖から参照として昇格します。  
   
 -   プロパティのシステム動作はのみですが、<xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A>即時のメタデータでが呼び出されます。 他の参照がありません<xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A>階層内の実装が保持されます。  
   
@@ -83,7 +71,7 @@ ms.lasthandoff: 12/22/2017
   
  この動作はによって実装<xref:System.Windows.FrameworkPropertyMetadata.Merge%2A>、およびメタデータの派生クラスでオーバーライドできます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.DependencyProperty.GetMetadata%2A>  
  [依存関係プロパティのメタデータ](../../../../docs/framework/wpf/advanced/dependency-property-metadata.md)  
  [依存関係プロパティの概要](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)  

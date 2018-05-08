@@ -1,11 +1,6 @@
 ---
 title: 10 進型 (Decimal) (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Decimal
 helpviewer_keywords:
@@ -25,14 +20,11 @@ helpviewer_keywords:
 - '@ identifier type character'
 - identifier type characters [Visual Basic], @
 ms.assetid: 1d855b45-afe2-45b0-a623-96b6f63a43d5
-caps.latest.revision: 20
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 55a9293fa680a7a04cff4099654d4d66790e8d3d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 9e256e93d7857c8674a1d711fa9cafd3ed9a29f5
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="decimal-data-type-visual-basic"></a>10 進型 (Decimal) (Visual Basic)
 可変 10 の累乗によってスケーリング 96 ビット (12 バイト) 整数値を表す 128 ビット (16 バイト) 値の符号付き保持します。 スケール ファクターです。 小数点の右側にある数字の数を指定します。範囲は 0 から 28 です。 最大有効値は 0 (小数点は除く) の小数点以下桁数、79,228,162,514,264,337,593,543,950,335 +/-(7 +/-.9228162514264337593543950335E + 28)。 小数点以下桁数が 28 7.9228162514264337593543950335 については、最大値し、(1 e ~ 28) +/-+/-0.0000000000000000000000000001 は、0 以外の最小値。  
@@ -44,7 +36,7 @@ ms.lasthandoff: 11/21/2017
   
 ## <a name="programming-tips"></a>プログラミングのヒント  
   
--   **有効桁数です。** `Decimal`浮動小数点データ型がありません。 `Decimal`構造体は、符号ビット、およびスケール ファクター値のどの部分が、小数を指定する整数のバイナリ整数値を保持します。 このため、`Decimal`番号より正確な表現を持つ浮動小数点型よりもメモリ内 (`Single`と`Double`)。  
+-   **有効桁数です。** `Decimal` 浮動小数点データ型がありません。 `Decimal`構造体は、符号ビット、およびスケール ファクター値のどの部分が、小数を指定する整数のバイナリ整数値を保持します。 このため、`Decimal`番号より正確な表現を持つ浮動小数点型よりもメモリ内 (`Single`と`Double`)。  
   
 -   **パフォーマンス。** `Decimal`データ型はすべての数値型の最も遅い。 データ型を選択する前にパフォーマンスと精度の重要性を比較検討する必要があります。  
   

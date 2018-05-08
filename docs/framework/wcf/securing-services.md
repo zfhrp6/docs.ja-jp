@@ -1,33 +1,21 @@
 ---
 title: サービスのセキュリティ保護
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - configuration [WCF], securing services
 - WCF security
 - WCF, security
 ms.assetid: f0ecc6f7-f4b5-42a4-9cb1-b02e28e26620
-caps.latest.revision: 28
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload:
-- dotnet
-ms.openlocfilehash: ffc985d528bfdcdd9b62772a8a8ba61823c95e76
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
-ms.translationtype: MT
+ms.openlocfilehash: 6bdac5a65c51ff08cfa170c1a6e556c3532ee7c9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="securing-services"></a>サービスのセキュリティ保護
-[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービスのセキュリティは、転送セキュリティと承認という 2 つの主要要件で構成されます (3 番目の要件は、「セキュリティ イベントの監査[監査](../../../docs/framework/wcf/feature-details/auditing-security-events.md)。)簡単に説明すると、転送セキュリティは、認証 (サーバーとクライアント両方の ID の検証)、機密性 (メッセージの暗号化)、および整合性 (改ざんを検出するためのデジタル署名) で構成されます。 承認は、たとえば、特権のあるユーザーだけがファイルを読み取ることができるなど、リソースへのアクセスを制御することです。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]の機能を使用すれば、この 2 つの主要要件を簡単に実装できます。  
+Windows Communication Foundation (WCF) サービスのセキュリティは、次の 2 つの主要要件で構成されます。 転送セキュリティと承認します。 (3 番目の要件は、「セキュリティ イベントの監査[監査](../../../docs/framework/wcf/feature-details/auditing-security-events.md)。)簡単に説明すると、転送セキュリティは、認証 (サーバーとクライアント両方の ID の検証)、機密性 (メッセージの暗号化)、および整合性 (改ざんを検出するためのデジタル署名) で構成されます。 承認は、たとえば、特権のあるユーザーだけがファイルを読み取ることができるなど、リソースへのアクセスを制御することです。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]の機能を使用すれば、この 2 つの主要要件を簡単に実装できます。  
   
  例外を除いて、<xref:System.ServiceModel.BasicHttpBinding>クラス (または[ \<basicHttpBinding >](../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md)構成内の要素)、すべての定義済みバインディングの既定で転送セキュリティが有効にします。 このセクションのトピックでは、2 つの基本的なシナリオ、インターネット インフォメーション サービス (IIS) でホストされるイントラネット サービス上で転送セキュリティと承認を実装するシナリオと、IIS でホストされるサービス上で転送セキュリティと承認を実装するシナリオについて説明します。  
   

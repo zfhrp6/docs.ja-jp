@@ -1,29 +1,15 @@
 ---
 title: ワークフロー サービスのホスティング
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 2d55217e-8697-4113-94ce-10b60863342e
-caps.latest.revision: 12
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 21c4ba6a85c2da655b3d0988917165bf84ae64d1
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 02d77b851dcd35108668ee6a42022e9721b84bd8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="hosting-workflow-services"></a>ワークフロー サービスのホスティング
-ワークフロー サービスが受信メッセージに応答するには、ワークフロー サービスがホストされている必要があります。 ワークフロー サービスは [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] メッセージング インフラストラクチャを使用するため、これと似た方法でホストされます。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスと同様に、ワークフロー サービスは、インターネット インフォメーション サービス (IIS) または Windows プロセス アクティブ化サービス (WAS) の下で、任意のマネージ アプリケーションでホストできます。 また、ワークフロー サービスは Windows Server AppFabric でホストできます。 Windows Server App Fabric の詳細については、次を参照してください。 [Windows Server App Fabric ドキュメント](http://go.microsoft.com/fwlink/?LinkId=193037)、 [AppFabric のホスティング機能](http://go.microsoft.com/fwlink/?LinkId=196494)、および[AppFabric ホスティングの概念](http://go.microsoft.com/fwlink/?LinkId=196495)です。 ホストするさまざまな方法の詳細については[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]サービスを参照してください[ホスティング サービス](../../../../docs/framework/wcf/hosting-services.md)です。  
+ワークフロー サービスが受信メッセージに応答するには、ワークフロー サービスがホストされている必要があります。 ワークフロー サービスは WCF メッセージング インフラストラクチャを使用するため、これと似た方法でホストされます。 WCF サービスと同様に、インターネット インフォメーション サービス (IIS)、または Windows プロセス アクティブ化サービス (WAS) の下で、すべての管理対象のアプリケーションでワークフロー サービスをホストできます。 また、ワークフロー サービスは Windows Server AppFabric でホストできます。 Windows Server App Fabric の詳細については、次を参照してください。 [Windows Server App Fabric ドキュメント](http://go.microsoft.com/fwlink/?LinkId=193037)、 [AppFabric のホスティング機能](http://go.microsoft.com/fwlink/?LinkId=196494)、および[AppFabric ホスティングの概念](http://go.microsoft.com/fwlink/?LinkId=196495)です。 WCF をホストするさまざまな方法の詳細については、「」を参照をサービスの[ホスティング サービス](../../../../docs/framework/wcf/hosting-services.md)です。  
   
 ## <a name="hosting-in-a-managed-application"></a>マネージ アプリケーションでのホスト  
  マネージ アプリケーションでワークフロー サービスをホストするには、<xref:System.ServiceModel.Activities.WorkflowServiceHost> クラスを使用します。 <xref:System.ServiceModel.Activities.WorkflowServiceHost> コンストラクターにより、シングルトン ワークフロー サービス インスタンス、ワークフロー サービス定義、またはワークフロー メッセージング アクティビティを使用するアクティビティを指定できます。 呼び出す <<!--zz xref:System.ServiceModel.Activities.WorkflowServiceHost.Open%2A--> `System.ServiceModel.Activities.WorkflowServiceHost.Open`> サービスが受信メッセージのリッスンを開始します。  

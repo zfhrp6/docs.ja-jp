@@ -1,27 +1,15 @@
 ---
-title: "仮想ディレクトリのセットアップ手順"
-ms.custom: 
+title: 仮想ディレクトリのセットアップ手順
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 3c62cab5-81a4-48b6-ac8c-9ce33a85a157
-caps.latest.revision: "36"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 2684091d15a4c0796a0b8fb85952c0f902c1f545
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: a6fc8309563e78f919fe1e2009c1f46801c32913
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="virtual-directory-setup-instructions"></a>仮想ディレクトリのセットアップ手順
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サンプルは、servicemodelsamples という共通の仮想ディレクトリの共有を想定しています。この仮想ディレクトリは %SystemDrive%\inetpub\wwwroot\servicemodelsamples フォルダーにマップされています。  
+Windows Communication Foundation (WCF) サンプルは %SystemDrive%\inetpub\wwwroot\servicemodelsamples フォルダーにマップされている servicemodelsamples という仮想ディレクトリを共有します。  
   
 > [!NOTE]
 >  %SystemDrive% は、インターネット インフォメーション サービス (IIS) がインストールされているドライブの場所に応じて、通常は C: または D: になります。  
@@ -44,7 +32,7 @@ ms.lasthandoff: 12/22/2017
   
 6.  物理パスを %SystemDrive%\inetpub\wwwroot\servicemodelsamples に設定します。  WCF サンプルの多くは、ビルド時にサービス実行可能ファイルをこの場所にコピーします。  
   
-7.  **[OK]**をクリックします。 Web アプリケーションが、WCF サンプル用に作成されました。  
+7.  **[OK]** をクリックします。 Web アプリケーションが、WCF サンプル用に作成されました。  
   
     > [!NOTE]
     >  すべての [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サンプルで同じ servicemodelsamples Web アプリケーションを使用するため、この作業は 1 回だけ実行してください。  
@@ -66,7 +54,7 @@ ms.lasthandoff: 12/22/2017
   
 5.  パスを %SystemDrive%\inetpub\wwwroot\servicemodelsamples に設定します。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サンプルの多くは、ビルド時にサービス実行可能ファイルをこの場所にコピーします。  
   
-6.  **[次へ]**をクリックします。  
+6.  **[次へ]** をクリックします。  
   
 7.  既定では、次のチェック ボックスがオンになっています。  
   
@@ -74,7 +62,7 @@ ms.lasthandoff: 12/22/2017
   
     -   **(ASP) などのスクリプトを実行します。**  
   
-8.  をクリックして**[次へ]**、順にクリック**完了**ウィザードを完了します。  
+8.  をクリックして **[次へ]**、順にクリック**完了**ウィザードを完了します。  
   
     > [!NOTE]
     >  すべての [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サンプルで同じ servicemodelsamples 仮想ディレクトリを使用するため、この作業は 1 回だけ実行してください。  
@@ -121,7 +109,7 @@ ms.lasthandoff: 12/22/2017
   
 8.  をクリックして**今すぐ検索**です。 これで、ローカル コンピューターに関連付けられたオブジェクトが検索結果に表示されます。  
   
-9. 検索、 **IIS_IUSRS**内のエントリ、**名 (相対識別名)**列です。 そのエントリを選択し、をクリックして**OK**結果ウィンドウの検索を閉じます。  
+9. 検索、 **IIS_IUSRS**内のエントリ、**名 (相対識別名)** 列です。 そのエントリを選択し、をクリックして**OK**結果ウィンドウの検索を閉じます。  
   
 10. をクリックして**OK**を閉じる、 **ユーザーまたはグループ**ウィンドウです。  
   
@@ -141,7 +129,7 @@ ms.lasthandoff: 12/22/2017
   
      表示されていない場合:  
   
-    1.  をクリックして**開始**] をクリックし、**コントロール パネルの [**です。  
+    1.  をクリックして**開始**] をクリックし、**コントロール パネルの [** です。  
   
     2.  表示されない場合、**ユーザー アカウント** アイコンをクリックして**カテゴリのビューに切り替えます**です。  
   
@@ -177,7 +165,7 @@ ms.lasthandoff: 12/22/2017
   
      NETWORK SERVICE が表示されていない場合:  
   
-    1.  **[追加]**をクリックします。  
+    1.  **[追加]** をクリックします。  
   
     2.  **ユーザーまたはグループ**に円記号が、コンピューターの名の後にダイアログ ボックスで入力します。  
   
@@ -195,11 +183,11 @@ ms.lasthandoff: 12/22/2017
   
      ASPNET の一部であるかどうかを確認する、**ユーザー**セキュリティ グループ。  
   
-    1.  **開始**] メニューのをクリックして**コントロール パネルの [**です。  
+    1.  **開始**] メニューのをクリックして**コントロール パネルの [** です。  
   
     2.  クリックして、**ユーザー アカウント**アイコン。  
   
     3.  **グループ**列、ことを確認の値は、 **ASPNET** "Users"は、  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [インターネット インフォメーション サービスのホスティング手順](../../../../docs/framework/wcf/samples/internet-information-service-hosting-instructions.md)

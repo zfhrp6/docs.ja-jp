@@ -1,26 +1,12 @@
 ---
-title: "フィルターを使用する方法"
-ms.custom: 
+title: フィルターを使用する方法
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: f2c7255f-c376-460e-aa20-14071f1666e5
-caps.latest.revision: 
-author: wadepickett
-ms.author: wpickett
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 94d45537ca3edd5f31f1ed31898857f002312a0b
-ms.sourcegitcommit: 15316053918995cc1380163a7d7e7edd5c44e6d7
+ms.openlocfilehash: 2c8c5519d31d1d57c1c568599964b97043f806a9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-use-filters"></a>フィルターを使用する方法
 ここでは、複数のフィルターを使用したルーティング構成を作成するために必要な基本手順について説明します。 この例では、メッセージが、電卓サービスの 2 つの実装である regularCalc および roundingCalc にルーティングされます。 これらの実装は両方とも同じ操作をサポートしますが、片方のサービスでは、値を返す前にすべての計算を最も近い整数値に丸めます。 クライアント アプリケーションが、丸め処理を行うバージョンのサービスを使用するかどうかを表示可能である必要がありますが、優先するサービスが示されていない場合は、メッセージが 2 つのサービス間で負荷分散されます。 次の操作が両方のサービスによって公開されます。  
@@ -145,7 +131,7 @@ ms.lasthandoff: 03/19/2018
             filterData="http://localhost/routingservice/router/rounding/"/>  
     ```  
   
-     かどうかには、"http://localhost/routingservice/router/rounding/"で始まるアドレスにメッセージを受信し、このフィルターを評価する**true**です。 このエンドポイントと通信するために使用される完全なアドレスは、"http://localhost/ のため、この構成で使用されるベース アドレスが"http://localhost/routingservice/router"で、roundingEndpoint に指定されたアドレスは「丸め/calculator」、します。ルーティング サービス/ルーター/丸め/電卓"、このフィルターに一致します。  
+     始まるアドレスにメッセージが受信したかどうかは"http://localhost/routingservice/router/rounding/"にこのフィルターが評価**true**です。 この構成で使用されるベース アドレスがあるため"http://localhost/routingservice/router「と指定されている、roundingEndpoint が「丸め/電卓」アドレスをこのエンドポイントと通信するために使用される完全なアドレスでは」http://localhost/routingservice/router/rounding/calculator"、このフィルターに一致します。  
   
     > [!NOTE]
     >  PrefixEndpointAddress フィルターは、一致するメッセージの確認を行う際にホスト名を評価しません。これは、1 つのホストへの参照を表す際に使用できるホスト名にはさまざまな種類があり、そのすべてが、クライアント アプリケーションからホストを参照するための正しい方法であるためです。 たとえば、次の例はすべて、同じホストを参照します。  

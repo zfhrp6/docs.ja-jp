@@ -1,30 +1,19 @@
 ---
 title: 仮想メンバー
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - overridable members
 - virtual members
 - members [.NET Framework], virtual
 ms.assetid: 8ff4eb97-0364-43ec-8a02-934b5cd94d19
-caps.latest.revision: 9
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 1b7abe1dbeb7f4888dd8ee4001b410cc583935c4
-ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
+ms.openlocfilehash: fa4227fc4476b86f07216650b22fccc25af7dd98
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="virtual-members"></a>仮想メンバー
 したがって、サブクラスの動作を変更する、仮想メンバーをオーバーライドできます。 それらは、拡張性の観点からのコールバックを非常に似ていますが、実行のパフォーマンスとメモリ消費量の観点から優れています。 また、仮想メンバーは、特殊な既存の型 (特殊化) の種類を作成する必要があるシナリオで複数な操作です。  

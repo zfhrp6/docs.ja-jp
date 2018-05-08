@@ -1,12 +1,6 @@
 ---
-title: "方法: 文字列がパターンに一致するかどうかを調べる (Visual Basic)"
-ms.custom: 
+title: '方法: 文字列がパターンに一致するかどうかを調べる (Visual Basic)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - comparison operators [Visual Basic], comparing strings
 - pattern matching
@@ -19,19 +13,16 @@ helpviewer_keywords:
 - pattern matching, empty strings
 - operators [Visual Basic], comparison
 ms.assetid: 19a83804-b5af-4739-928b-ac93e64e457f
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 83433bdb41df0ce40d0979f3f44603f10ba1c7d5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: aef378bfc32d6deff431a2caac1261a6cd7520c2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-match-a-string-against-a-pattern-visual-basic"></a>方法: 文字列がパターンに一致するかどうかを調べる (Visual Basic)
 式かどうかを検索する場合、[文字列データ型](../../../../visual-basic/language-reference/data-types/string-data-type.md)を使用して、パターンを満たす、 [Like 演算子](../../../../visual-basic/language-reference/operators/like-operator.md)です。  
   
- `Like`2 つのオペランドを受け取ります。 左のオペランドは、文字列式であり、右のオペランドが、照合に使用するパターンを含む文字列。 `Like`返します、`Boolean`文字列式が、パターンを満たすかどうかを示す値。  
+ `Like` 2 つのオペランドを受け取ります。 左のオペランドは、文字列式であり、右のオペランドが、照合に使用するパターンを含む文字列。 `Like` 返します、`Boolean`文字列式が、パターンを満たすかどうかを示す値。  
   
  特定の文字、ワイルドカード文字、文字のリスト、または文字の範囲に対して文字列式内の各文字に一致することができます。 パターン文字列に指定された位置は、文字列式に一致する文字の位置に対応します。  
   
@@ -72,7 +63,7 @@ ms.lasthandoff: 11/21/2017
      この照合の大文字小文字を区別に注意してください。  
   
 ## <a name="matching-empty-strings"></a>空の文字列に一致します。  
- `Like`シーケンスを扱う`[]`長さ 0 の文字列として (`""`)。 使用することができます`[]`文字列全体の式が空、ですが、文字列式で特定の位置が空かどうかを行うことはできないかどうかをテストします。 空の位置は、オプションのいずれかの場合は、テストする、使用できる必要があります。`Like`も複数回です。  
+ `Like` シーケンスを扱う`[]`長さ 0 の文字列として (`""`)。 使用することができます`[]`文字列全体の式が空、ですが、文字列式で特定の位置が空かどうかを行うことはできないかどうかをテストします。 空の位置は、オプションのいずれかの場合は、テストする、使用できる必要があります。`Like`も複数回です。  
   
 #### <a name="to-match-a-character-in-the-string-expression-against-a-list-of-characters-or-no-character"></a>一覧の文字または文字の文字列式の文字と一致するには  
   

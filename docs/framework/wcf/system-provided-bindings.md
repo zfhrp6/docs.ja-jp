@@ -1,28 +1,14 @@
 ---
 title: システム標準のバインディング
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - bindings [WCF], system-provided
 ms.assetid: 2c243746-45ce-4588-995e-c17126a579a6
-caps.latest.revision: 60
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 4ccdab56a90f4114836dd9f0a56cc495657ee9c8
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
-ms.translationtype: MT
+ms.openlocfilehash: 12382b0886970bc48345107008ee449d9653ec4f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="system-provided-bindings"></a>システム標準のバインディング
 バインディングにより、エンドポイントとの通信で使用する通信メカニズムが指定され、エンドポイントへの接続方法が示されます。 バインディングには次の要素が含まれます。  
@@ -33,7 +19,7 @@ ms.lasthandoff: 04/30/2018
   
 -   エンコードは、エンドポイントに送信されるメッセージに使用するネットワーク エンコード (text/XML、バイナリ、MTOM (Message Transmission Optimization Mechanism) など) を決定します。  
   
- ここでは、システム指定の [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] バインディングをすべて示します。 このバインディングがいずれもアプリケーションの条件に適合しない場合は、カスタム バインドを作成できます。 カスタム バインディングの作成の詳細については、次を参照してください。[カスタム バインド](../../../docs/framework/wcf/extending/custom-bindings.md)です。  
+ このトピックでは、すべてのシステムによって提供される Windows Communication Foundation (WCF) バインドを表示します。 このバインディングがいずれもアプリケーションの条件に適合しない場合は、カスタム バインドを作成できます。 カスタム バインディングの作成の詳細については、次を参照してください。[カスタム バインド](../../../docs/framework/wcf/extending/custom-bindings.md)です。  
   
  WS-Federation プロトコルをサポートする、セキュリティで保護された相互操作可能なバインディングを使用すると、フェデレーションに属す組織のユーザーを効率的に認証および承認できます。  
   

@@ -1,18 +1,12 @@
 ---
-title: "&lt;アドレス&gt;リモート ファイルの有効なアドレスではありません"
+title: '&lt;アドレス&gt;リモート ファイルの有効なアドレスではありません'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-visual-basic
-ms.topic: article
 ms.assetid: 2c312242-6c42-4754-a1f5-7e801a542604
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: b81c9a96ff90d429e5457283bbafb4ec3e021473
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: 5c7d92a9e2c3f20988367fd54428331c8a432986
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ltaddressgt-is-not-a-valid-remote-file-address"></a>&lt;アドレス&gt;リモート ファイルの有効なアドレスではありません
 \<アドレス > リモート ファイルの有効なアドレスではありません。 有効なアドレスには、プロトコル、パス、およびファイル名を含める必要があります。  
@@ -23,7 +17,7 @@ ms.lasthandoff: 12/21/2017
   
 -   指定したアドレスを確認して問題の場所を特定し、必要な情報を提供します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [My.Computer.Network.UploadFile](xref:Microsoft.VisualBasic.Devices.Network.UploadFile%2A)  
  [My.Computer.Network.DownloadFile](xref:Microsoft.VisualBasic.Devices.Network.DownloadFile%2A)  
  [方法 : ファイルをダウンロードする](../../visual-basic/developing-apps/programming/computer-resources/how-to-download-a-file.md)  

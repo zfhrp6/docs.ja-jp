@@ -1,24 +1,12 @@
 ---
 title: WorkflowInvoker と WorkflowApplication の使用
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: cd0e583c-a3f9-4fa2-b247-c7b3368c48a7
-caps.latest.revision: 19
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: d0b12fc6c91f57ec49050a0a37b16f64d0e54e6d
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 6cbfca14eddeb82fc2d88b70703cae0fe59d63ad
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-workflowinvoker-and-workflowapplication"></a>WorkflowInvoker と WorkflowApplication の使用
 Windows Workflow Foundation (WF) は、ワークフローのホスティングのいくつかのメソッドを提供します。 <xref:System.Activities.WorkflowInvoker> は、メソッド呼び出しのようにワークフローを呼び出す簡単な方法を提供し、永続化を使用しないワークフローのみに使用できます。 <xref:System.Activities.WorkflowApplication> は、ライフサイクル イベントの通知、実行制御、ブックマークの再開、および永続化を含むワークフローを実行するための豊富なモデルを提供します。 <xref:System.ServiceModel.Activities.WorkflowServiceHost> は、メッセージング アクティビティをサポートし、主にワーク フロー サービスと一緒に使用されます。 このトピックでは、<xref:System.Activities.WorkflowInvoker> と <xref:System.Activities.WorkflowApplication> を使用したワークフロー ホスティングついて説明します。 ワークフローのホスティングの詳細については<xref:System.ServiceModel.Activities.WorkflowServiceHost>を参照してください[ワークフロー サービス](../../../docs/framework/wcf/feature-details/workflow-services.md)と[ワークフロー サービスの概要をホストしている](../../../docs/framework/wcf/feature-details/hosting-workflow-services-overview.md)です。  

@@ -1,29 +1,15 @@
 ---
 title: サービスのランタイム動作の指定
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 5c5450ea-6af1-4b75-a267-613d0ac54707
-caps.latest.revision: 12
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 9733bb29701e4d1b46cc08c14b91e0357c935b42
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 38035230cf4f5e411f7ec769a169528ada130749
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="specifying-service-run-time-behavior"></a>サービスのランタイム動作の指定
 サービス コントラクトを設計して ([Designing Service Contracts](../../../docs/framework/wcf/designing-service-contracts.md))、実装 ([Implementing Service Contracts](../../../docs/framework/wcf/implementing-service-contracts.md)) が終わると、サービス ランタイムの実行動作を構成できます。 ここでは、システム指定のサービスと操作の動作について説明し、新しい動作を作成するための詳細情報の参照先を示します。 一部の動作は属性として適用されますが、多くの動作はアプリケーション構成ファイルまたはプログラムを使用して適用されます。 サービス アプリケーションの構成の詳細については、次を参照してください。[サービスを構成する](../../../docs/framework/wcf/configuring-services.md)です。  

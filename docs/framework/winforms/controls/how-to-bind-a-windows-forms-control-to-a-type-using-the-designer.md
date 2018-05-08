@@ -1,28 +1,16 @@
 ---
-title: "方法 : デザイナーを使って Windows フォーム コントロールを型にバインドする"
-ms.custom: 
+title: '方法 : デザイナーを使って Windows フォーム コントロールを型にバインドする'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - controls [Windows Forms], binding to a type
 - BindingSource component [Windows Forms], binding to a type
 - types [Windows Forms], binding controls to
 ms.assetid: 5ab984b5-c2d0-4638-a572-1c84013e8746
-caps.latest.revision: "13"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ee932e7cb4a3333ac56242e281ec64d3016746f9
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: a58a528cd1a2246ddfdff7997b7c7cb0d8dcc6a6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-bind-a-windows-forms-control-to-a-type-using-the-designer"></a>方法 : デザイナーを使って Windows フォーム コントロールを型にバインドする
 データをやり取りするコントロールを作成する際、オブジェクトではなく型にコントロールをバインドすることが必要な場合があります。 データを使用できないが、データ バインド コントロールで型のパブリック インターフェイスからデータを表示する必要がある場合、通常はデザイン時にコントロールを型にバインドする必要があります。 次の手順を新規作成する方法を説明する<xref:System.Windows.Forms.BindingSource>されている型にバインドし、型のプロパティのいずれかにバインドする方法、<xref:System.Windows.Forms.TextBox.Text%2A>のプロパティ、<xref:System.Windows.Forms.TextBox>です。  
@@ -52,7 +40,7 @@ ms.lasthandoff: 01/19/2018
         > [!NOTE]
         >  フレームワークまたは Microsoft アセンブリの型にバインドする場合は、**[Microsoft または System で始まるアセンブリを表示しない]** チェックボックスをオフにします。  
   
-7.  **[次へ]**をクリックし、 **[完了]**をクリックします。  
+7.  **[次へ]** をクリックし、 **[完了]** をクリックします。  
   
 ### <a name="to-bind-the-control-to-the-bindingsource"></a>コントロールを BindingSource にバインドするには  
   
@@ -64,7 +52,7 @@ ms.lasthandoff: 01/19/2018
   
 4.  **データ ソースの UI 型エディター**、ノードを展開します、<xref:System.Windows.Forms.BindingSource>以前は、追加され、プロパティにバインドするバインドの種類の選択、<xref:System.Windows.Forms.TextBox.Text%2A>のプロパティ、<xref:System.Windows.Forms.TextBox>です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [BindingSource コンポーネント](../../../../docs/framework/winforms/controls/bindingsource-component.md)  
  [方法: Windows フォーム コントロールを型にバインドする](../../../../docs/framework/winforms/controls/how-to-bind-a-windows-forms-control-to-a-type.md)  
  [Visual Studio でのデータへのコントロールのバインド](/visualstudio/data-tools/bind-controls-to-data-in-visual-studio)

@@ -1,31 +1,19 @@
 ---
-title: "コード コントラクト"
-ms.custom: 
+title: コード コントラクト
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - Code contracts
 ms.assetid: 84526045-496f-489d-8517-a258cf76f040
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 4a7f6dd2f97f7d57cdaa59d1420a34409804f9dd
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 09bfa08589bda68258883e6f080392f534e8c5df
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="code-contracts"></a>コード コントラクト
 コード コントラクトを使用すると、事前条件、事後条件、およびオブジェクト不変条件をコードで指定できます。 事前条件とは、メソッドやプロパティに入るときに満たされている必要がある要件です。 事後条件は、メソッドやプロパティのコードが終了するときの予測を表します。 オブジェクト不変条件は、正しい状態のクラスに対して予期される状態を表します。  

@@ -1,13 +1,6 @@
 ---
-title: "Windows フォームのセキュリティ"
-ms.custom: 
+title: Windows フォームのセキュリティ
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - designer access security [Windows Forms]
 - permissions [Windows Forms], Windows Forms
@@ -16,16 +9,11 @@ helpviewer_keywords:
 - access control [Windows Forms], Windows Forms
 - security policy [Windows Forms], Windows Forms
 ms.assetid: 932d438a-5285-46d8-a958-8c93d0ad6cae
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 8bd9b87fdfa54a6f9bf53e4fa897106257b4c625
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 3dc4397319d42760a1886a96377a949da6ae63be
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="windows-forms-security"></a>Windows フォームのセキュリティ
 Windows フォームでは、コードに基づく (レベルが設定されたセキュリティ コード、コードを実行しているユーザーに関係なく) であるセキュリティ モデルを備えています。 これは、既にコンピューター システム上の場所に可能性のあるセキュリティのすべてのスキーマだけでなくです。 これらは、ゾーンに基づいたセキュリティ Internet Explorer で使用可能な) など、ブラウザーまたはオペレーティング システム (Windows NT の資格情報に基づいたセキュリティ) などを含めることができます。  

@@ -1,24 +1,12 @@
 ---
-title: "System.Convert メソッド"
-ms.custom: 
+title: System.Convert メソッド
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 3ca6c5b6-ea5d-4ab0-b675-f082135b342c
-caps.latest.revision: "2"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 0d0dc8889c9d71063dabd89b0434b088b4368080
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: a16839bf64d5786caa6feb557333fe93c66edc3c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="systemconvert-methods"></a>System.Convert メソッド
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] は、次の <xref:System.Convert> メソッドをサポートしていません。  
@@ -59,5 +47,5 @@ ms.lasthandoff: 01/17/2018
   
     -   <xref:System.Convert.ChangeType%2A>  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [データ型と関数](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md)

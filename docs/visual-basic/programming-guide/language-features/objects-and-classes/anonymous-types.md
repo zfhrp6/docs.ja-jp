@@ -1,13 +1,6 @@
 ---
 title: 匿名型 (Visual Basic)
-ms.custom: ''
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.AnonymousType
 helpviewer_keywords:
@@ -15,14 +8,11 @@ helpviewer_keywords:
 - anonymous types [Visual Basic]
 - types [Visual Basic], anonymous
 ms.assetid: 7b87532c-4b3e-4398-8503-6ea9d67574a4
-caps.latest.revision: 46
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 530e21e1595f9bbc3436280418287413e2a48111
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 451fe45c9b5efbeb64b1066d6ba8e5f9b27300c2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="anonymous-types-visual-basic"></a>匿名型 (Visual Basic)
 Visual Basic では、匿名型は、使用すると、データ型のクラス定義を記述することがなくオブジェクトの作成をサポートします。 クラスは、コンパイラによって生成されます。 クラスの使用可能な名前を持たないから直接継承<xref:System.Object>オブジェクトの宣言で指定したプロパティが含まれます。 データ型の名前が指定されていないため、呼びます、*匿名型*です。  
@@ -95,11 +85,11 @@ Visual Basic では、匿名型は、使用すると、データ型のクラス�
 ## <a name="anonymous-types-from-query-expressions"></a>クエリ式からの匿名型  
  常に、クエリ式では、匿名型の作成を必要はありません。 可能な場合は、列のデータを保持するために既存の型を使用します。 これは、クエリ、データ ソースまたは各レコードから 1 つだけのフィールドからレコード全体が返されるときに発生します。 次のコード例で`customers`のオブジェクトのコレクションには、`Customer`クラスです。 クラスには、多数のプロパティと任意の順序で、クエリ結果のうちの 1 つ以上を含めることができます。 最初の 2 つの例については、匿名型はありません必要なため、クエリは、名前付きの型の要素を選択です。  
   
--   `custs1`に、文字列のコレクションを含む`cust.Name`文字列です。  
+-   `custs1` に、文字列のコレクションを含む`cust.Name`文字列です。  
   
      [!code-vb[VbVbalrAnonymousTypes#30](../../../../visual-basic/language-reference/modifiers/codesnippet/VisualBasic/anonymous-types_9.vb)]  
   
--   `custs2`コレクションを格納`Customer`ため、オブジェクトの各要素`customers`は、`Customer`オブジェクト、および全体の要素は、クエリで選択します。  
+-   `custs2` コレクションを格納`Customer`ため、オブジェクトの各要素`customers`は、`Customer`オブジェクト、および全体の要素は、クエリで選択します。  
   
      [!code-vb[VbVbalrAnonymousTypes#31](../../../../visual-basic/language-reference/modifiers/codesnippet/VisualBasic/anonymous-types_10.vb)]  
   

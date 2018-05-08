@@ -1,24 +1,14 @@
 ---
-title: "トランスポート セキュリティを使用したメッセージのセキュリティ保護"
-ms.custom: 
+title: トランスポート セキュリティを使用したメッセージのセキュリティ保護
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 9029771a-097e-448a-a13a-55d2878330b8
-caps.latest.revision: "21"
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: 461ec7d3cda41194317054ca2413b99f39ebda2c
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 50e450f4241abc7d8b688c58a121f64c3ca0e709
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="securing-messages-using-transport-security"></a>トランスポート セキュリティを使用したメッセージのセキュリティ保護
 ここでは、キューに送信されるメッセージをセキュリティで保護するために使用できるメッセージ キュー (MSMQ) トランスポート セキュリティについて説明します。  
@@ -26,11 +16,11 @@ ms.lasthandoff: 01/19/2018
 > [!NOTE]
 >  このトピック全体を読み取る前にお勧めお読みになる[セキュリティの基本概念](../../../../docs/framework/wcf/feature-details/security-concepts.md)です。  
   
- 次の図は、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] を使用する、キューに置かれた通信の概念モデルを表したものです。 この図および用語を使用して、トランスポート セキュリティの概念について解説します。  
+ 次の図は、Windows Communication Foundation (WCF) を使用してキューに置かれた通信の概念モデルを提供します。 この図および用語を使用して、トランスポート セキュリティの概念について解説します。  
   
  ![アプリケーション ダイアグラムをキューに置かれた](../../../../docs/framework/wcf/feature-details/media/distributed-queue-figure.jpg "分散キュー図")  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] と <xref:System.ServiceModel.NetMsmqBinding> を使用してキューに置かれたメッセージを送信すると、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] メッセージは MSMQ メッセージの本文として添付されます。 トランスポート セキュリティは、MSMQ メッセージ全体 (MSMQ メッセージ ヘッダーまたはプロパティ、およびメッセージ本文) をセキュリティで保護します。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] メッセージは MSMQ メッセージの本文であるために、このメッセージもトランスポート セキュリティで保護されます。  
+ WCF を使用してメッセージのキューを送信するときに<xref:System.ServiceModel.NetMsmqBinding>、WCF メッセージは MSMQ メッセージの本文として添付されます。 トランスポート セキュリティは、MSMQ メッセージ全体 (MSMQ メッセージ ヘッダーまたはプロパティ、およびメッセージ本文) をセキュリティで保護します。 MSMQ メッセージの本文になっているためには、WCF メッセージを保護するトランスポート セキュリティを使用してもします。  
   
  トランスポート セキュリティの背後にある重要な概念は、メッセージがターゲット キューに到達するためには、クライアントがセキュリティ要件を満たす必要があるという点です。 これは、メッセージ セキュリティとは異なります。メッセージ セキュリティでは、メッセージを受信するアプリケーションに対してメッセージが保護されます。  
   
@@ -49,19 +39,19 @@ ms.lasthandoff: 01/19/2018
   
  また、MSMQ は、Active Directory に登録されていないメッセージに証明書を添付する機能も提供します。 この場合は、添付された証明書を使用してメッセージが署名されたことが保証されます。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、両方のオプションが MSMQ トランスポート セキュリティの一部として提供されます。これらのオプションは、トランスポート セキュリティの中核です。  
+ WCF は、MSMQ トランスポート セキュリティの一部として、これらのオプションを提供され、トランスポート セキュリティの中核です。  
   
  既定では、トランスポート セキュリティが有効になります。  
   
  これらの基本事項に基づいて、以降のセクションでは <xref:System.ServiceModel.NetMsmqBinding> および <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> に結び付けられたトランスポート セキュリティのプロパティについて詳しく説明します。  
   
 #### <a name="msmq-authentication-mode"></a>MSMQ 認証モード  
- <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A> は、Windows ドメインのセキュリティと外部の証明書ベースのセキュリティのどちらを使用してメッセージを保護するかを決定します。 どちらの認証モードでも、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のキューに置かれたトランスポート チャネルは、サービス構成で指定された `CertificateValidationMode` を使用します。 証明書検証モードは、証明書の有効性を確認するために使用される機構を指定します。  
+ <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A> は、Windows ドメインのセキュリティと外部の証明書ベースのセキュリティのどちらを使用してメッセージを保護するかを決定します。 どちらの認証モードでは、WCF のキューに置かれたトランスポート チャネルを使用して、`CertificateValidationMode`サービス構成で指定します。 証明書検証モードは、証明書の有効性を確認するために使用される機構を指定します。  
   
  トランスポート セキュリティが有効になっている場合、既定の設定は <xref:System.ServiceModel.MsmqAuthenticationMode.WindowsDomain> です。  
   
 #### <a name="windows-domain-authentication-mode"></a>Windows ドメイン認証モード  
- Windows セキュリティを選択した場合は、Active Directory 統合が必要となります。 <xref:System.ServiceModel.MsmqAuthenticationMode.WindowsDomain> が既定のトランスポート セキュリティ モードです。 このモードを設定すると、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] チャネルは MSMQ メッセージに Windows SID を添付し、Active Directory から取得した内部証明書を使用します。 MSMQ は、この内部証明書を使用してメッセージをセキュリティで保護します。 受信側キュー マネージャーは、Active Directory を使用して一致する証明書を検索し、クライアントを認証します。また、SID がクライアントの SID と一致するかどうかをチェックします。 この認証手順は、認証を要求するようにターゲット キューがマークされていない場合でも、内部的 (`WindowsDomain` 認証モードの場合) または外部的 (`Certificate` 認証モードの場合) に生成された証明書がメッセージに添付されているときに実行されます。  
+ Windows セキュリティを選択した場合は、Active Directory 統合が必要となります。 <xref:System.ServiceModel.MsmqAuthenticationMode.WindowsDomain> が既定のトランスポート セキュリティ モードです。 これを設定すると、WCF チャネルは Windows SID を MSMQ メッセージに添付し、Active Directory から取得した内部証明書を使用します。 MSMQ は、この内部証明書を使用してメッセージをセキュリティで保護します。 受信側キュー マネージャーは、Active Directory を使用して一致する証明書を検索し、クライアントを認証します。また、SID がクライアントの SID と一致するかどうかをチェックします。 この認証手順は、認証を要求するようにターゲット キューがマークされていない場合でも、内部的 (`WindowsDomain` 認証モードの場合) または外部的 (`Certificate` 認証モードの場合) に生成された証明書がメッセージに添付されているときに実行されます。  
   
 > [!NOTE]
 >  キューを作成する際に認証キューとしてマークすることにより、そのキューにメッセージを送信するクライアントに対して認証を求めることができます。 これにより、認証されたメッセージだけをキューに受け入れることができます。  
@@ -71,9 +61,9 @@ ms.lasthandoff: 01/19/2018
 #### <a name="certificate-authentication-mode"></a>証明書認証モード  
  証明書認証モードを選択した場合は、Active Directory 統合をインストールする必要がありません。 実際、(Active Directory 統合をインストールせずに) MSMQ をワークグループ モードでインストールしている場合や、SOAP リライアブル メッセージ プロトコル (SRMP: SOAP Reliable Messaging Protocol) 転送プロトコルを使用してメッセージをキューに送信する場合など、<xref:System.ServiceModel.MsmqAuthenticationMode.Certificate> だけが機能するというケースもあります。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を使用して <xref:System.ServiceModel.MsmqAuthenticationMode.Certificate> メッセージを送信した場合、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] チャネルは Windows SID を MSMQ メッセージに添付しません。 そのため、ターゲット キューの ACL は、キューへの送信に対して `Anonymous` ユーザー アクセスを許可する必要があります。 受信側キュー マネージャーは、証明書を使用して MSMQ メッセージが署名されたかどうかをチェックしますが、認証は行いません。  
+ WCF メッセージと共に送信するときに<xref:System.ServiceModel.MsmqAuthenticationMode.Certificate>、WCF チャネルは MSMQ メッセージを Windows SID をアタッチできません。 そのため、ターゲット キューの ACL は、キューへの送信に対して `Anonymous` ユーザー アクセスを許可する必要があります。 受信側キュー マネージャーは、証明書を使用して MSMQ メッセージが署名されたかどうかをチェックしますが、認証は行いません。  
   
- クレームと ID 情報を持つ証明書は、<xref:System.ServiceModel.ServiceSecurityContext> のキューに置かれたトランスポート チャネルによって [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 内に設定されます。 サービスは、この情報を使用して独自の方式で送信者の認証を行います。  
+ クレームと id 情報を持つ証明書が設定されます、 <xref:System.ServiceModel.ServiceSecurityContext> WCF のキューに置かれたトランスポート チャネルによってです。 サービスは、この情報を使用して独自の方式で送信者の認証を行います。  
   
 ### <a name="msmq-protection-level"></a>MSMQ の保護レベル  
  保護レベルは、MSMQ メッセージが改ざんされないように MSMQ メッセージを保護する方法を決定します。 これは、<xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A> プロパティで指定します。 既定値は <xref:System.Net.Security.ProtectionLevel.Sign> です。  
@@ -107,7 +97,7 @@ ms.lasthandoff: 01/19/2018
   
  サポートされるアルゴリズムは、`MD5`、`SHA1`、`SHA256`、および `SHA512` です。 既定値は、`SHA1` です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [メッセージ キュー](http://msdn.microsoft.com/library/ff917e87-05d5-478f-9430-0f560675ece1)  
  [セキュリティの概念](../../../../docs/framework/wcf/feature-details/security-concepts.md)  
  [サービスおよびクライアントのセキュリティ保護](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)

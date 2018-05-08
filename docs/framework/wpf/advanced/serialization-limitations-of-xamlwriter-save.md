@@ -1,28 +1,16 @@
 ---
-title: "XamlWriter.Save のシリアル化の制限"
-ms.custom: 
+title: XamlWriter.Save のシリアル化の制限
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - XamlWriter.Save [WPF], serialization limitations of
 - limitations of XamlWriter.Save
 - serialization limitations of XamlWriter.Save
 ms.assetid: f86acc91-2b67-4039-8555-505734491d36
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c6f22b112807876102dbcb934698d18d85cd51c9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: cbe8d517b8794f6aae7190457a077422d235acb8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="serialization-limitations-of-xamlwritersave"></a>XamlWriter.Save のシリアル化の制限
 [!INCLUDE[TLA#tla_api](../../../../includes/tlasharptla-api-md.md)] <xref:System.Windows.Markup.XamlWriter.Save%2A>の内容をシリアル化に使用できる、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]アプリケーションとして、[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]ファイル。 ただし、シリアル化されるいくつかの重要な制限があります。 このトピックでは、これらの制限事項といくつかの一般的な考慮事項が記載されています。  
@@ -43,7 +31,7 @@ ms.lasthandoff: 12/22/2017
   
 <a name="Event_Handling_is_Not_Preserved"></a>   
 ## <a name="event-handling-is-not-preserved"></a>イベント処理が保持されません。  
- ときにイベント ハンドラーによって追加された[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]はシリアル化すると、それらは保持されません。 [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]分離コードなし (および関連する X:code メカニズムがなければ) ランタイム手続き型のロジックをシリアル化の方法がありません。 シリアル化は自己完結型の論理ツリーに限定的であるために、イベント ハンドラーを格納するための機能はありません。 出力からのイベント ハンドラー属性、属性自体と、ハンドラーの名前を示す文字列値の両方を削除するため、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]です。  
+ ときにイベント ハンドラーによって追加された[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]はシリアル化すると、それらは保持されません。 [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] 分離コードなし (および関連する X:code メカニズムがなければ) ランタイム手続き型のロジックをシリアル化の方法がありません。 シリアル化は自己完結型の論理ツリーに限定的であるために、イベント ハンドラーを格納するための機能はありません。 出力からのイベント ハンドラー属性、属性自体と、ハンドラーの名前を示す文字列値の両方を削除するため、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]です。  
   
 <a name="Realistic_Scenarios_for_Use_of_XAMLWriter_Save"></a>   
 ## <a name="realistic-scenarios-for-use-of-xamlwritersave"></a>XAMLWriter.Save の使用についての現実的なシナリオ  

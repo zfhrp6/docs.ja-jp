@@ -1,26 +1,12 @@
 ---
 title: ブール型
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-ado
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 57f7376b-4b11-4b35-98a9-780382053ceb
-caps.latest.revision: 2
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload:
-- dotnet
-ms.openlocfilehash: a3a11b4dfde2afcf738f125a1fd7324ceff74669
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: 8b0eba237e713cc34859d2cdfe3da62f03f955f6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="boolean-data-types"></a>ブール型
 ブール演算子は、共通言語ランタイム (CLR) で正常に動作しますが、ショートサーキットの動作は変換されません。 たとえば、Visual Basic の `AndAlso` 演算子は `And` 演算子のように動作します。 C# の `&&` 演算子は `&` 演算子のように動作します。  

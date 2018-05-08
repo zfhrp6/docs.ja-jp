@@ -1,17 +1,12 @@
 ---
 title: '例外: try...finally 式 (F#)'
 description: 学習方法、f# 'try… 最後に' 式では、コード ブロックの例外をスローする場合でも、クリーンアップ コードを実行することができます。
-author: cartermp
-ms.author: phcart
 ms.date: 05/16/2016
-ms.topic: language-reference
-ms.prod: dotnet-fsharp
-ms.devlang: fsharp
-ms.openlocfilehash: 588e4edb4d25c6d25ef103ba724613db997f68d7
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: a5fdec7b3986fc9a85c34b08d20dc31947c92b2e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="exceptions-the-tryfinally-expression"></a>例外: try...finally 式
 

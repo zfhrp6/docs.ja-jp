@@ -1,13 +1,6 @@
 ---
-title: "UI オートメーション イベントの概要"
-ms.custom: 
+title: UI オートメーション イベントの概要
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-bcl
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - UI Automation, providers
 - UI Automation, events
@@ -16,16 +9,14 @@ helpviewer_keywords:
 - providers, UI Automation
 - UI Automation, clients
 ms.assetid: 69eebd8b-39ed-40e7-93cc-4457c4caf746
-caps.latest.revision: "22"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 8b28d6aafc0e9680123859ee0e9a28dd71a2249c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 2190e404479a940e638d6ee8b9fd7135d8fc0109
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ui-automation-events-overview"></a>UI オートメーション イベントの概要
 > [!NOTE]
@@ -39,7 +30,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="types-of-events"></a>イベントの種類  
  [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] イベントは次のカテゴリに分けられます。  
   
-|イベント|説明|  
+|event|説明|  
 |-----------|-----------------|  
 |プロパティの変更|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 要素のプロパティまたはコントロール パターンが変更された場合に発生します。 たとえば、クライアントがアプリケーションのチェック ボックス コントロールの監視を必要とする場合に、 <xref:System.Windows.Automation.TogglePattern.TogglePatternInformation.ToggleState%2A> プロパティ上のプロパティの変更イベントをリッスンするよう登録できます。 チェック ボックス コントロールがオンまたはオフになったときに、プロバイダーがイベントを発生させ、クライアントが必要なアクションを実行できます。|  
 |要素のアクション|[!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] の変更がエンド ユーザーまたはプログラムによるアクティビティに起因する場合に発生します。たとえば、ボタンがクリックされたり、 <xref:System.Windows.Automation.InvokePattern>を通じて呼び出される場合です。|  
@@ -92,7 +83,7 @@ ms.lasthandoff: 12/22/2017
   
  イベント識別子の一覧については、「 [UI Automation Events for Clients](../../../docs/framework/ui-automation/ui-automation-events-for-clients.md)」を参照してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [クライアントの UI オートメーション イベント](../../../docs/framework/ui-automation/ui-automation-events-for-clients.md)  
  [サーバー側 UI オートメーション プロバイダーの実装](../../../docs/framework/ui-automation/server-side-ui-automation-provider-implementation.md)  
  [UI オートメーション イベントのサブスクライブ](../../../docs/framework/ui-automation/subscribe-to-ui-automation-events.md)

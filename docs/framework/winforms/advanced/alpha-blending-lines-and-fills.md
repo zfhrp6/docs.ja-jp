@@ -1,13 +1,6 @@
 ---
-title: "アルファ ブレンドの直線と塗りつぶし"
-ms.custom: 
+title: アルファ ブレンドの直線と塗りつぶし
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - lines [Windows Forms], adding transparency
 - examples [Windows Forms], alpha blending
@@ -18,16 +11,11 @@ helpviewer_keywords:
 - alpha blending [Windows Forms], using with fills
 - shapes [Windows Forms], adding transparency
 ms.assetid: 5440f48c-3ac9-44c3-b170-c1c110bdbab8
-caps.latest.revision: "13"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 2a46efeccf9ab343ca0da07fad07138bd72e4e44
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f58fa2d105492c6c72d3d6906c3c35f89130fe91
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="alpha-blending-lines-and-fills"></a>アルファ ブレンドの直線と塗りつぶし
 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]色がそれぞれ 8 ビットでアルファ、赤、緑、および青の 32 ビット値。 アルファ値は、色の透明度を示します: 範囲の色から背景色とブレンドされます。 アルファ値の範囲は 0 ~ 255, 0 が完全に透明色を表すおよび 255 は、完全に不透明な色を表します。  

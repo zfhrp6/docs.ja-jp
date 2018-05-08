@@ -1,34 +1,20 @@
 ---
 title: 構成エディター ツール (SvcConfigEditor.exe)
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - configuration files, creating
 - configuration files
 - Configuration file
 - configuration file schema
 ms.assetid: 2db21a57-5f64-426f-89df-fb0dc2d2def5
-caps.latest.revision: 45
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 1531c68bdbb3b28436d0701536ef274f34513b19
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
-ms.translationtype: MT
+ms.openlocfilehash: ab6e3a99f951d2977a079f49e4aa3eff250ee8d5
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="configuration-editor-tool-svcconfigeditorexe"></a>構成エディター ツール (SvcConfigEditor.exe)
-管理者と開発者は、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービス構成エディター (SvcConfigEditor.exe) のグラフィカル ユーザー インターフェイスを使用して、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスの構成設定を作成および変更できます。 このツールを使用すると、XML 構成ファイルを直接編集せずに、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] のバインディング、動作、サービス、および診断の設定を管理できます。  
+Windows Communication Foundation (WCF) サービス構成エディター (SvcConfigEditor.exe) により、作成および構成設定を変更するには、管理者および開発者[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]services のグラフィカル ユーザー インターフェイスを使用します。 このツールを使用すると、XML 構成ファイルを直接編集せずに、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] のバインディング、動作、サービス、および診断の設定を管理できます。  
   
  サービス構成エディターは、C:\Program Files\Microsoft SDKs\Windows\v6.0\Bin フォルダーにあります。  
   

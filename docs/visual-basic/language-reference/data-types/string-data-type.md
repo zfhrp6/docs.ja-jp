@@ -1,11 +1,6 @@
 ---
 title: 文字列型 (String) (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.String
 helpviewer_keywords:
@@ -23,14 +18,11 @@ helpviewer_keywords:
 - String literals [Visual Basic]
 - identifier type characters [Visual Basic], $
 ms.assetid: 15ac03f5-cabd-42cc-a754-1df3893c25d9
-caps.latest.revision: 19
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 90f126a5cca36969617446e81a8d13434e39df75
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 894638bbe50dad2cae1f74a2f7b7fe006f029d1b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="string-data-type-visual-basic"></a>文字列型 (String) (Visual Basic)
 0 ~ 65535 の値の符号なし 16 ビット (2 バイト) コード ポイントのシーケンスの範囲を保持します。 各*コード ポイントが*、または文字コードを 1 つの Unicode 文字を表します。 文字列は、0 からおよそ 20億を含めることができます (2 ^31) の Unicode 文字。  
@@ -81,7 +73,7 @@ S = Microsoft.VisualBasic.Left(S, 4)
   
 -   **相互運用の考慮事項。** オートメーション オブジェクトや COM オブジェクトなど、.NET Framework 用に作成されていないコンポーネントとやり取りする場合、他の環境では文字列の文字の別のデータ幅 (8 ビット) ことに注意してください。 このようなコンポーネントを 8 ビット文字の文字列引数を渡す場合として宣言`Byte()`、配列の`Byte`要素の代わりに`String`新しい Visual Basic コードでします。  
   
--   **型宣言文字。** 識別子の型文字を付加`$`任意の識別子を強制的に、`String`データ型。 `String`リテラルの型文字がありません。 ただし、コンパイラに引用符で囲まれたリテラル (`" "`) として`String`です。  
+-   **型宣言文字。** 識別子の型文字を付加`$`任意の識別子を強制的に、`String`データ型。 `String` リテラルの型文字がありません。 ただし、コンパイラに引用符で囲まれたリテラル (`" "`) として`String`です。  
   
 -   **Framework の型。** .NET Framework において対応する型は、<xref:System.String?displayProperty=nameWithType>クラスです。  
   

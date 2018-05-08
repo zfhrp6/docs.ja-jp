@@ -1,12 +1,6 @@
 ---
-title: "方法: システム リソースを破棄する (Visual Basic)"
-ms.custom: 
+title: '方法: システム リソースを破棄する (Visual Basic)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - Using statement [Visual Basic], disposing of system resources
 - Visual Basic code, control flow
@@ -16,14 +10,11 @@ helpviewer_keywords:
 - Using statement [Visual Basic], Using...End Using
 - Using block
 ms.assetid: 8be2b239-8090-419b-8e7e-bcaa75b0ecc8
-caps.latest.revision: "15"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 5b5c65c9d123c6f481852eb249cb4d479a180c5b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: cbb66934833da2bd6f0b797944dbb9c4df267cfc
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-dispose-of-a-system-resource-visual-basic"></a>方法: システム リソースを破棄する (Visual Basic)
 使用することができます、`Using`システムは、コード ブロックを終了するときに、リソースの破棄を保証するためにブロックします。 これは、大量のメモリを消費する、またはその他のコンポーネントが使用する必要も、システム リソースを使用している場合に便利です。  

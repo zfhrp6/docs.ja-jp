@@ -1,33 +1,21 @@
 ---
-title: "Windows Communication Foundation のトランスポート"
-ms.custom: 
+title: Windows Communication Foundation のトランスポート
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - transports [WCF]
 - WCF, transports
 - Windows Communication Foundation, transports
 ms.assetid: 005c894b-af70-48aa-a1c1-c99338083c27
-caps.latest.revision: "18"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 62eb27919e762004667b3d5179c35cb04d9a9422
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6bb8e8b90c26533661684bd403b9ec439f1bb37e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="transports-in-windows-communication-foundation"></a>Windows Communication Foundation のトランスポート
-トランスポート層は、チャネル スタックの最も低いレベルにあります。 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] で使用される主なトランスポートは、HTTP、HTTPS、TCP、および名前付きパイプです。 このセクションのトピックでは、このようなトランスポートの選択、トランスポートの構成、およびチューニング プロパティの設定について説明します。  
+トランスポート層は、チャネル スタックの最も低いレベルにあります。 Windows Communication Foundation (WCF) を使用する主なトランスポートは、HTTP、HTTPS、TCP、および名前付きパイプです。 このセクションのトピックでは、このようなトランスポートの選択、トランスポートの構成、およびチューニング プロパティの設定について説明します。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には追加のトランスポートが含まれています。 トランスポートのメッセージ キュー (MSMQ とも呼ばれます) については、次を参照してください。[キューと信頼できるセッション](../../../../docs/framework/wcf/feature-details/queues-and-reliable-sessions.md)です。 ピア ツー ピアのトランスポートの詳細については、次を参照してください。[ピア ツー ピア ネットワー キング](../../../../docs/framework/wcf/feature-details/peer-to-peer-networking.md)です。  
+ WCF には、追加のトランスポートが含まれています。 トランスポートのメッセージ キュー (MSMQ とも呼ばれます) については、次を参照してください。[キューと信頼できるセッション](../../../../docs/framework/wcf/feature-details/queues-and-reliable-sessions.md)です。 ピア ツー ピアのトランスポートの詳細については、次を参照してください。[ピア ツー ピア ネットワー キング](../../../../docs/framework/wcf/feature-details/peer-to-peer-networking.md)です。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [トランスポートの選択](../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)  
@@ -43,7 +31,7 @@ ms.lasthandoff: 12/22/2017
  HTTP および HTTPS トランスポート バインド要素の構成方法について説明します。  
   
  [方法 : WCF URL 予約を制限付きの予約に置き換える](../../../../docs/framework/wcf/feature-details/how-to-replace-the-wcf-url-reservation-with-a-restricted-reservation.md)  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の URL 制限付き予約の使用方法について説明します。  
+ 制限付き WCFURL 予約を使用する方法について説明します。  
   
  [トランスポート クォータ](../../../../docs/framework/wcf/feature-details/transport-quotas.md)  
  トランスポート層で使用できるクォータを設定する際の考慮事項について説明します。  
@@ -52,7 +40,7 @@ ms.lasthandoff: 12/22/2017
  ファイアウォールを介してメッセージを送受信する場合や、ネットワーク アドレス交換 (NAT) が存在する場合にトランスポート層を構成する方法について説明します。  
   
  [Net.TCP ポート共有](../../../../docs/framework/wcf/feature-details/net-tcp-port-sharing.md)  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の Net.TCP ポート共有コンポーネントの使用方法について説明します。  
+ WCF の Net.TCP ポート共有コンポーネントを使用する方法について説明します。  
   
 ## <a name="reference"></a>参照  
  <xref:System.ServiceModel.Channels.HttpTransportBindingElement>  

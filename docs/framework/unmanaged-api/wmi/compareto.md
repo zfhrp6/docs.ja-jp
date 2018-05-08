@@ -1,11 +1,7 @@
 ---
-title: "CompareTo 関数 (アンマネージ API リファレンス)"
-description: "CompareTo 関数では、別の WMI オブジェクトにオブジェクトを比較します。"
+title: CompareTo 関数 (アンマネージ API リファレンス)
+description: CompareTo 関数では、別の WMI オブジェクトにオブジェクトを比較します。
 ms.date: 11/06/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: reference
 api_name:
 - CompareTo
 api_location:
@@ -20,14 +16,11 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 038074b5bb3adc816caa226d3167395758d2ae57
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: db4431da90842f4f96a0f09a2f28dc473d956ee3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="compareto-function"></a>CompareTo 関数
 別の Windows 管理オブジェクトにオブジェクトを比較します。  
@@ -58,7 +51,7 @@ HRESULT CompareTo (
 
 `pCompareTo`  
 
-[in]比較のオブジェクトです。 `pcompareTo`有効な[IWbemClassObject](https://msdn.microsoft.com/library/aa391433%28v=vs.85%29.aspx)インスタンス; ことはできません`null`です。
+[in]比較のオブジェクトです。 `pcompareTo` 有効な[IWbemClassObject](https://msdn.microsoft.com/library/aa391433%28v=vs.85%29.aspx)インスタンス; ことはできません`null`です。
 
 ## <a name="return-value"></a>戻り値
 
@@ -94,12 +87,12 @@ HRESULT CompareTo (
 |---------|---------|---------|
 |`WBEM_COMPARISON_INCLUDE_ALL` | 0 | 比較のすべての機能を検討してください。 |
 
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** WMINet_Utils.idl  
   
- **.NET framework のバージョン:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **.NET framework のバージョン:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>関連項目  
 [WMI およびパフォーマンス カウンター (アンマネージ API リファレンス)](index.md)

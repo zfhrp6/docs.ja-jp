@@ -1,13 +1,6 @@
 ---
-title: "チュートリアル: デザイン時の Windows フォームでの WPF コンテンツの割り当て"
-ms.custom: 
+title: 'チュートリアル: デザイン時の Windows フォームでの WPF コンテンツの割り当て'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - WPF content [Windows Forms], assigning at design time
 - ElementHost control [Windows Forms], assigning WPF content at design time
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - Windows Forms, content assignments
 - WPF user control [Windows Forms], hosting in Windows Forms
 ms.assetid: b3e9ef93-7e0f-4a2f-8f1e-3437609a1eb7
-caps.latest.revision: "18"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 93ff6f39f4d8bcdd037d373f8bd26cbb3c32c125
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: abdeb2e77486d4f94f3d0543d94186168baae31c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="walkthrough-assigning-wpf-content-on-windows-forms-at-design-time"></a>チュートリアル: デザイン時の Windows フォームでの WPF コンテンツの割り当て
 このチュートリアルでは、フォームに表示する Windows Presentation Foundation (WPF) コントロール型を選択する方法について説明します。 プロジェクトに含まれている WPF コントロール型であれば、どれでも選択できます。  
@@ -91,11 +79,11 @@ ms.lasthandoff: 01/19/2018
   
 3.  スマート タグ パネルで`elementHost1`を開き、 **ホストするコンテンツ**ドロップダウン リスト。  
   
-4.  選択**[usercontrol2]**ドロップダウン リスト ボックスからです。  
+4.  選択 **[usercontrol2]** ドロップダウン リスト ボックスからです。  
   
      これで、`elementHost1` コントロールが `UserControl2` 型のインスタンスをホストするようになりました。  
   
-5.  **プロパティ**ウィンドウ、いることを確認、<xref:System.Windows.Forms.Integration.ElementHost.Child%2A>プロパティに設定されている**[usercontrol2]**です。  
+5.  **プロパティ**ウィンドウ、いることを確認、<xref:System.Windows.Forms.Integration.ElementHost.Child%2A>プロパティに設定されている **[usercontrol2]** です。  
   
 6.  **ツールボックス**で、 **WPF 相互運用性**グループで、ドラッグ、<xref:System.Windows.Forms.Integration.ElementHost>コントロールをフォームにします。  
   
@@ -107,7 +95,7 @@ ms.lasthandoff: 01/19/2018
   
 9. これで、`elementHost2` コントロールが `UserControl1` 型のインスタンスをホストするようになりました。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.Integration.ElementHost>  
  <xref:System.Windows.Forms.Integration.WindowsFormsHost>  
  [移行と相互運用性](../../../../docs/framework/wpf/advanced/migration-and-interoperability.md)  

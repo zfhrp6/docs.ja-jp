@@ -1,24 +1,12 @@
 ---
-title: "ReceiveContext が有効な WCF チャネル"
-ms.custom: 
+title: ReceiveContext が有効な WCF チャネル
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: d990d119-7321-4b8c-852b-10256f59f9b0
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 765efb43efc0ea60ebb71bc8cdb5bd8edf973c2c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 3e5ac914ae4d0c97ed617ea4a8d5a893ec740179
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="receivecontext-enabled-wcf-channels"></a>ReceiveContext が有効な WCF チャネル
 このサンプルでは、<xref:System.ServiceModel.Channels.ReceiveContext> を有効にした WCF チャネルの有用性を示します。 このサンプルでは、NetMSMQ チャネルを使用して 2 つの数値の積を見つけるサービスを実装します。  
@@ -30,7 +18,7 @@ ms.lasthandoff: 12/22/2017
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
+>  このディレクトリが存在しない場合に、 [Windows Communication Foundation (WCF) および .NET Framework 4 向けの Windows Workflow Foundation (WF) サンプル](http://go.microsoft.com/fwlink/?LinkId=150780)すべて Windows Communication Foundation (WCF) をダウンロードして[!INCLUDE[wf1](../../../../includes/wf1-md.md)]サンプルです。 このサンプルは、次のディレクトリに格納されます。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Net\MSMQ\ReceiveContextProductGenerator`  
   
@@ -50,11 +38,11 @@ ms.lasthandoff: 12/22/2017
   
         5.  をクリックして**ディレクトリ サービス統合**(コンピューターの場合、ドメインに参加している)、をクリックして**HTTP サポート**です。  
   
-        6.  をクリックして**[次へ]**、クリックして**インストール**です。  
+        6.  をクリックして **[次へ]**、クリックして**インストール**です。  
   
     2.  MSMQ を [!INCLUDE[wv](../../../../includes/wv-md.md)] にインストールするには  
   
-        1.  **[コントロール パネル]**を開きます。  
+        1.  **[コントロール パネル]** を開きます。  
   
         2.  をクリックして**プログラム**し、**プログラムと機能**をクリックして**Windows の機能のオンとオフを**です。  
   
@@ -66,7 +54,7 @@ ms.lasthandoff: 12/22/2017
   
             -   [MSMQ HTTP サポート]  
   
-        4.  **[OK]**をクリックします。  
+        4.  **[OK]** をクリックします。  
   
         5.  コンピューターを再起動するメッセージが表示されたら、クリックして**OK**インストールを完了します。  
   

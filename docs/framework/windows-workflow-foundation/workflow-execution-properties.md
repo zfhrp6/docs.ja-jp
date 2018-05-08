@@ -1,23 +1,12 @@
 ---
-title: "ワークフロー実行プロパティ"
-ms.custom: 
+title: ワークフロー実行プロパティ
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: a50e088e-3a45-4267-bd51-1a3e6c2d246d
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c541ebf83babcbdbda86c5b6f3862727d49d8679
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 2681152ba89baa2f65d5402a8c8c9d872cadb65b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="workflow-execution-properties"></a>ワークフロー実行プロパティ
 CLR は、スレッド ローカル ストレージ (TLS) を介して各スレッドの実行コンテキストを維持します。 この実行コンテキストは、スレッド ID、アンビエント トランザクション、現在のアクセス許可セットなど、既知のスレッド プロパティに加えて、名前付きスロットのようなユーザー定義のスレッド プロパティを制御します。  
@@ -174,7 +163,7 @@ End default text.
   
  ワークフロー実行プロパティは、カスタム アクティビティ作成者が使用できます。また、このプロパティには、<xref:System.ServiceModel.Activities.CorrelationScope> や <xref:System.Activities.Statements.TransactionScope> などのアクティビティ向けにハンドル管理の機構も用意されています。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Activities.IExecutionProperty>  
  <xref:System.Activities.IPropertyRegistrationCallback>  
  <xref:System.Activities.RegistrationContext>

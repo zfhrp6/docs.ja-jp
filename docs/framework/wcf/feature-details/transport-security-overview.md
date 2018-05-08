@@ -1,35 +1,23 @@
 ---
 title: トランスポート セキュリティの概要
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 00959326-aa9d-44d0-af61-54933d4adc7f
-caps.latest.revision: 23
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload:
-- dotnet
-ms.openlocfilehash: b697dc6a227c3b2a5646f4fcb11a39fd9d6339ff
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 12b491971a9f3faa57edb1ccf9fb59351ed45f3b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="transport-security-overview"></a>トランスポート セキュリティの概要
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] のトランスポート セキュリティ機構は、使用するバインディングとトランスポートによって異なります。 たとえば、<xref:System.ServiceModel.WSHttpBinding> クラスを使用する場合、トランスポートは HTTP であり、トランスポートをセキュリティで保護するための主要機構は SSL (Secure Sockets Layer) over HTTP (一般に HTTPS と呼ばれます) です。 このトピックでは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] システムに用意されたバインディングで使用する主要なトランスポート セキュリティ機構について説明します。  
+トランスポート セキュリティ機構では、Windows Communication Foundation (WCF) は、バインドと使用されているトランスポートによって異なります。 たとえば、<xref:System.ServiceModel.WSHttpBinding> クラスを使用する場合、トランスポートは HTTP であり、トランスポートをセキュリティで保護するための主要機構は SSL (Secure Sockets Layer) over HTTP (一般に HTTPS と呼ばれます) です。 このトピックでは、WCF のシステム指定のバインディングで使用する主要なトランスポート セキュリティ機構について説明します。  
   
 > [!NOTE]
->  SSL セキュリティを .NET Framework 3.5 以降と共に使用すると、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントは、証明書ストア内の中間証明書と SSL ネゴシエーション中に受信した中間証明書の両方を使用して、サービスの証明書に対して証明書チェーンの検証を実行します。 .NET Framework 3.0 では、ローカルの証明書ストアにインストールされている中間証明書のみが使用されます。  
+>  SSL セキュリティを使用するの .NET Framework 3.5 以降のバージョンと WCF クライアントの証明書ストアに中間、両方の証明書を使用して、サービスの証明書チェーンの検証を実行する SSL ネゴシエーション中に受信した中間証明書証明書です。 .NET Framework 3.0 では、ローカルの証明書ストアにインストールされている中間証明書のみが使用されます。  
   
 > [!WARNING]
 >  トランスポート セキュリティを使用すると、 <!--zz <xref:System.Treading.Thread.CurrentPrincipal%2A> --> `CurrentPrincipal`プロパティを上書きする可能性があります。 設定しないように、 <!--zz <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior.PrincipalPermission%2A> --> `PrincipalPermission` [なし] にします。 <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior> は、サービスの説明で設定できる、サービスの動作です。  
@@ -75,7 +63,7 @@ ms.lasthandoff: 04/30/2018
  この値を使用すると、Kerberos プロトコルが失敗した場合に、サーバーは、NTLM を使用して認証を実行できます。 IIS の構成の詳細については[!INCLUDE[iis601](../../../../includes/iis601-md.md)]を参照してください[強制的に NTLM 認証](http://go.microsoft.com/fwlink/?LinkId=88598)です。 [!INCLUDE[iisver](../../../../includes/iisver-md.md)] では、Windows 認証に NTLM 認証が含まれます。 詳細については、次を参照してください。 [IIS 7.0 Beta: IIS 7.0 でサーバー証明書を構成](http://go.microsoft.com/fwlink/?LinkID=88595)です。  
   
 ## <a name="wshttpbinding"></a>WsHttpBinding  
- <xref:System.ServiceModel.WSHttpBinding> クラスは、WS-* 仕様を実装するサービスと共に相互運用するようにデザインされています。 このバインディングのトランスポート セキュリティは、SSL (Secure Sockets Layer) over HTTP または HTTPS です。 SSL を使用する [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションを作成するには、IIS を使用してアプリケーションをホストします。 自己ホスト型アプリケーションを作成する場合は、HttpCfg.exe ツールを使用して、X.509 証明書をコンピューターの特定のポートにバインドします。 ポート番号は、エンドポイント アドレスとして [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションの一部に指定されます。 トランスポート モードを使用する場合は、エンドポイント アドレスに HTTPS プロトコルを含める必要があります。そうしないと、実行時に例外が発生します。 詳細については、次を参照してください。 [HTTP トランスポート セキュリティ](../../../../docs/framework/wcf/feature-details/http-transport-security.md)です。  
+ <xref:System.ServiceModel.WSHttpBinding> クラスは、WS-* 仕様を実装するサービスと共に相互運用するようにデザインされています。 このバインディングのトランスポート セキュリティは、SSL (Secure Sockets Layer) over HTTP または HTTPS です。 SSL を使用する WCF アプリケーションを作成するには、IIS を使用してアプリケーションをホストします。 自己ホスト型アプリケーションを作成する場合は、HttpCfg.exe ツールを使用して、X.509 証明書をコンピューターの特定のポートにバインドします。 ポート番号は、エンドポイント アドレスとして、WCF アプリケーションの一部として指定されます。 トランスポート モードを使用する場合は、エンドポイント アドレスに HTTPS プロトコルを含める必要があります。そうしないと、実行時に例外が発生します。 詳細については、次を参照してください。 [HTTP トランスポート セキュリティ](../../../../docs/framework/wcf/feature-details/http-transport-security.md)です。  
   
  クライアント認証の場合、<xref:System.ServiceModel.HttpTransportSecurity.ClientCredentialType%2A> クラスの <xref:System.ServiceModel.HttpTransportSecurity> プロパティを <xref:System.ServiceModel.HttpClientCredentialType> 列挙値のいずれかに設定します。 この列挙値は、<xref:System.ServiceModel.BasicHttpBinding> のクライアント資格情報の種類と同一であり、IIS サービスを使用してホストされるようにデザインされています。  
   

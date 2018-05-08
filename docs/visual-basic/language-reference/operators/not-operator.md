@@ -1,12 +1,6 @@
 ---
 title: Not 演算子 (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Not
 helpviewer_keywords:
@@ -20,14 +14,11 @@ helpviewer_keywords:
 - logical negation
 - operators [Visual Basic], negation
 ms.assetid: 8f2ea83c-d2ed-480a-a474-3042a1cad9b5
-caps.latest.revision: 11
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: ac160aef7b7dc8acb8bf0211b403599692f2373c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 332cee57c8d25d7f51737e01e70ba515d50bd6e6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="not-operator-visual-basic"></a>Not 演算子 (Visual Basic)
 論理否定を実行、`Boolean`式、または数値式のビットごとの否定。  
@@ -40,10 +31,10 @@ result = Not expression
   
 ## <a name="parts"></a>指定項目  
  `result`  
- 必須です。 どの`Boolean`または数値式です。  
+ 必須。 どの`Boolean`または数値式です。  
   
  `expression`  
- 必須です。 どの`Boolean`または数値式です。  
+ 必須。 どの`Boolean`または数値式です。  
   
 ## <a name="remarks"></a>コメント  
  `Boolean`式では、次の表に示す方法`result`決定されます。  
@@ -63,7 +54,7 @@ result = Not expression
 > [!NOTE]
 >  論理/ビット処理演算子の他の算術演算子や関係演算子よりも優先順位が低いため、ビットごとの演算が正確に実行されるようにかっこで囲む必要があります。  
   
-## <a name="data-types"></a>データ型  
+## <a name="data-types"></a>データの種類  
  結果のデータ型は、ブール型の否定の`Boolean`します。 ビットごとの否定の結果のデータ型は、のと同じ`expression`です。 ただし、式が場合`Decimal`、結果は`Long`します。  
   
 ## <a name="overloading"></a>オーバーロード  

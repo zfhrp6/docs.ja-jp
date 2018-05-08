@@ -1,11 +1,7 @@
 ---
-title: "ExecQueryWmi 関数 (アンマネージ API リファレンス)"
-description: "ExecQueryWmi 関数は、オブジェクトを取得するクエリを実行します。"
+title: ExecQueryWmi 関数 (アンマネージ API リファレンス)
+description: ExecQueryWmi 関数は、オブジェクトを取得するクエリを実行します。
 ms.date: 11/06/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: reference
 api_name:
 - ExecQueryWmi
 api_location:
@@ -20,14 +16,11 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 872109cb0472a8404c492c2867429fe783f898eb
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b482f2ca2e2d5c06e69945adb71aa6c0f5d26465
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="execquerywmi-function"></a>ExecQueryWmi 関数
 オブジェクトを取得するクエリを実行します。  
@@ -69,7 +62,7 @@ HRESULT ExecQueryWmi (
 | `WBEM_FLAG_RETURN_IMMEDIATELY` | 0x10 | フラグは、半同期呼び出しがします。 |
 | `WBEM_FLAG_FORWARD_ONLY` | 0x20 | この関数は、順方向専用の列挙子を返します。 呼び出しを許可しませんが、通常、順方向専用の列挙子は、高速および従来の列挙子よりも少ないメモリを使用して[クローン](clone.md)です。 |
 | `WBEM_FLAG_BIDIRECTIONAL` | 0 | WMI は、リリースされるまで、enumration 内のオブジェクトへのポインターを保持します。 | 
-| `WBEM_FLAG_ENSURE_LOCATABLE` | 0x100 | 返されるオブジェクトがあるのに十分な情報にためことにより、そのシステムのプロパティなど**_ _path**、 **_relpath**、および**__SERVER**、されない`null`です。 |
+| `WBEM_FLAG_ENSURE_LOCATABLE` | 0x100 | 返されるオブジェクトがあるのに十分な情報にためことにより、そのシステムのプロパティなど **_ _path**、 **_relpath**、および **__SERVER**、されない`null`です。 |
 | `WBEM_FLAG_PROTOTYPE` | 2 | このフラグは、プロトタイプの作成に使用されます。 クエリは実行されませんし、代わりに、よくある結果オブジェクトのようなオブジェクトを返します。 |
 | `WBEM_FLAG_DIRECT_READ` | 0x200 | 原因は直接、親クラス、または任意のサブクラスに関係なく指定されたクラスのプロバイダーへのアクセスです。 |
 
@@ -84,7 +77,7 @@ HRESULT ExecQueryWmi (
 `authLevel`  
 [in]承認レベル。
 
-`impLevel`[in]権限借用レベルです。
+`impLevel` [in]権限借用レベルです。
 
 `pCurrentNamespace`   
 [in]ポインター、 [IWbemServices](https://msdn.microsoft.com/library/aa392093(v=vs.85).aspx)を現在の名前空間を表すオブジェクト。
@@ -126,12 +119,12 @@ HRESULT ExecQueryWmi (
 
 呼び出して追加のエラー情報を取得するには、関数呼び出しに失敗した場合、 [GetErrorInfo](geterrorinfo.md)関数。
 
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** WMINet_Utils.idl  
   
- **.NET framework のバージョン:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **.NET framework のバージョン:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>関連項目  
 [WMI およびパフォーマンス カウンター (アンマネージ API リファレンス)](index.md)

@@ -1,27 +1,15 @@
 ---
-title: "方法: ワークフロー アプリケーションからサービスにアクセスする"
-ms.custom: 
+title: '方法: ワークフロー アプリケーションからサービスにアクセスする'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 925ef8ea-5550-4c9d-bb7b-209e20c280ad
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 0ffac399e3f7cb3f860128b072251131ac356a2a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5f1ef07d92eea2b526259cd11caf56e45c83675d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-access-a-service-from-a-workflow-application"></a>方法: ワークフロー アプリケーションからサービスにアクセスする
-このトピックでは、ワークフロー コンソール アプリケーションからワークフロー サービスを呼び出す方法について説明します。 完了に依存している、[する方法: メッセージング アクティビティでワークフロー サービスを作成](../../../../docs/framework/wcf/feature-details/how-to-create-a-workflow-service-with-messaging-activities.md)トピックです。 このトピックでは、ワークフロー アプリケーションからワークフロー サービスを呼び出す方法について説明していますが、同じ方法を使用して、どのような [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスでもワークフロー アプリケーションから呼び出すことができます。  
+このトピックでは、ワークフロー コンソール アプリケーションからワークフロー サービスを呼び出す方法について説明します。 完了に依存している、[する方法: メッセージング アクティビティでワークフロー サービスを作成](../../../../docs/framework/wcf/feature-details/how-to-create-a-workflow-service-with-messaging-activities.md)トピックです。 このトピックでは、ワークフロー アプリケーションからワークフロー サービスを呼び出す方法について説明、ワークフロー アプリケーションから任意の Windows Communication Foundation (WCF) サービスを呼び出す場合と同じ方法を使用できます。  
   
 ### <a name="create-a-workflow-console-application-project"></a>ワークフロー コンソール アプリケーション プロジェクトの作成  
   
@@ -73,7 +61,7 @@ ms.lasthandoff: 12/22/2017
   
 12. Ctrl キーを押しながら F5 キーを押し、サービスとクライアントの両方を起動します。 ASP.NET 開発サーバー サービスをホストする、Internet Explorer に WCF ヘルプ ページが表示されます、およびクライアント ワークフロー アプリケーションは、コンソール ウィンドウで起動し、(「こんにちは, world」)、サービスから返される文字列が表示されます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ワークフロー サービス](../../../../docs/framework/wcf/feature-details/workflow-services.md)  
  [方法 : メッセージング アクティビティを使用してワークフロー サービスを作成する](../../../../docs/framework/wcf/feature-details/how-to-create-a-workflow-service-with-messaging-activities.md)  
  [Web プロジェクトでワークフローから WCF サービスの使用](http://go.microsoft.com/fwlink/?LinkId=207725)

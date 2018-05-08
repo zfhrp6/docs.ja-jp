@@ -1,13 +1,6 @@
 ---
-title: "イメージ、描画、およびビジュアルによる塗りつぶし"
-ms.custom: 
+title: イメージ、描画、およびビジュアルによる塗りつぶし
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -19,16 +12,11 @@ helpviewer_keywords:
 - brushes [WPF], painting with images
 - brushes [WPF], painting with visuals
 ms.assetid: 779aac3f-8d41-49d8-8130-768244aa2240
-caps.latest.revision: "28"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 01939eb8735e6764e0f0cba811091c7fdbd6797f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: abb5733ed54ea430ba161db5ea2dcb33e99298ad
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="painting-with-images-drawings-and-visuals"></a>イメージ、描画、およびビジュアルによる塗りつぶし
 このトピックを使用する方法について説明<xref:System.Windows.Media.ImageBrush>、 <xref:System.Windows.Media.DrawingBrush>、および<xref:System.Windows.Media.VisualBrush>、イメージを使用して領域を描画するオブジェクト、 <xref:System.Windows.Media.Drawing>、または<xref:System.Windows.Media.Visual>です。  
@@ -69,15 +57,15 @@ DrawingBrush で塗りつぶされたオブジェクト
   
  A<xref:System.Windows.Media.DrawingBrush>領域を塗りつぶします、<xref:System.Windows.Media.Drawing>オブジェクト。 A<xref:System.Windows.Media.Drawing>オブジェクトには、図形、ビットマップ、ビデオ、または行のテキストなど、表示されているコンテンツがについて説明します。 さまざまな種類の描画で、さまざまな種類のコンテンツを記述します。 次の一覧に、さまざまな種類の描画オブジェクトを示します。  
   
--   <xref:System.Windows.Media.GeometryDrawing>– 図形を描画します。  
+-   <xref:System.Windows.Media.GeometryDrawing> – 図形を描画します。  
   
--   <xref:System.Windows.Media.ImageDrawing>– イメージを描画します。  
+-   <xref:System.Windows.Media.ImageDrawing> – イメージを描画します。  
   
--   <xref:System.Windows.Media.GlyphRunDrawing>– テキストを描画します。  
+-   <xref:System.Windows.Media.GlyphRunDrawing> – テキストを描画します。  
   
--   <xref:System.Windows.Media.VideoDrawing>– オーディオまたはビデオ ファイルを再生します。  
+-   <xref:System.Windows.Media.VideoDrawing> – オーディオまたはビデオ ファイルを再生します。  
   
--   <xref:System.Windows.Media.DrawingGroup>– 他の描画を描画します。 他の描画を 1 つの複合描画に結合するには、描画グループを使用します。  
+-   <xref:System.Windows.Media.DrawingGroup> – 他の描画を描画します。 他の描画を 1 つの複合描画に結合するには、描画グループを使用します。  
   
  詳細については<xref:System.Windows.Media.Drawing>、オブジェクトを参照してください、[描画オブジェクトの概要](../../../../docs/framework/wpf/graphics-multimedia/drawing-objects-overview.md)です。  
   
@@ -133,7 +121,7 @@ DrawingBrush で塗りつぶされたオブジェクト
   
 <a name="tilebrush"></a>   
 ## <a name="tilebrush-features"></a>TileBrush の機能  
- <xref:System.Windows.Media.ImageBrush>、 <xref:System.Windows.Media.DrawingBrush>、および<xref:System.Windows.Media.VisualBrush>種類<xref:System.Windows.Media.TileBrush>オブジェクト。 <xref:System.Windows.Media.TileBrush>オブジェクトを提供するイメージ、図形、または visual で領域を描画する方法を細かく制御が大幅に向上します。 たとえば、1 つのイメージを引き伸ばして領域を塗りつぶす代わりに、一連のイメージ タイルでパターンを作って領域を塗りつぶすことができます。  
+ <xref:System.Windows.Media.ImageBrush>、 <xref:System.Windows.Media.DrawingBrush>、および<xref:System.Windows.Media.VisualBrush>種類<xref:System.Windows.Media.TileBrush>オブジェクト。 <xref:System.Windows.Media.TileBrush> オブジェクトを提供するイメージ、図形、または visual で領域を描画する方法を細かく制御が大幅に向上します。 たとえば、1 つのイメージを引き伸ばして領域を塗りつぶす代わりに、一連のイメージ タイルでパターンを作って領域を塗りつぶすことができます。  
   
  A<xref:System.Windows.Media.TileBrush>は 3 つの主なコンポーネントがあります。 コンテンツ、タイル、および、出力領域。  
   
@@ -145,7 +133,7 @@ DrawingBrush で塗りつぶされたオブジェクト
   
  タイルの機能の詳細については<xref:System.Windows.Media.TileBrush>、オブジェクトを参照してください、 [TileBrush 概要](../../../../docs/framework/wpf/graphics-multimedia/tilebrush-overview.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Media.ImageBrush>  
  <xref:System.Windows.Media.DrawingBrush>  
  <xref:System.Windows.Media.VisualBrush>  

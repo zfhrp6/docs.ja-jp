@@ -1,22 +1,12 @@
 ---
-title: "遅延実行とレイジー評価で LINQ to XML (Visual Basic)"
-ms.custom: 
+title: 遅延実行とレイジー評価で LINQ to XML (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 31998eed-b95e-47fb-a865-9de1f337d1fb
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 3a465c4448157505a42db57202298cb18e44a562
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: eade2fe987ecbc399c2e2a8a65e74e3beab5e123
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="deferred-execution-and-lazy-evaluation-in-linq-to-xml-visual-basic"></a>遅延実行とレイジー評価で LINQ to XML (Visual Basic)
 クエリと軸の操作は、多くの場合、遅延実行を使用するように実装されています。 このトピックでは、遅延実行の要件と利点、および実装に関する注意点について説明します。  

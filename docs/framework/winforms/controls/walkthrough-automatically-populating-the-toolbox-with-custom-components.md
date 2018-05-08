@@ -1,28 +1,16 @@
 ---
-title: "チュートリアル : ツールボックスへのカスタム コンポーネントの自動設定"
-ms.custom: 
+title: 'チュートリアル : ツールボックスへのカスタム コンポーネントの自動設定'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - IToolboxService interface
 - Toolbox [Windows Forms], populating
 - custom components [Windows Forms], adding to Toolbox
 ms.assetid: 2fa1e3e8-6b9f-42b2-97c0-2be57444dba4
-caps.latest.revision: "22"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 6b60d4ee7908a5ed9dcb3393132ba7d0bd0a6cb5
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: d446ab84cfe135e56483b8b309b696f7f15044fa
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="walkthrough-automatically-populating-the-toolbox-with-custom-components"></a>チュートリアル : ツールボックスへのカスタム コンポーネントの自動設定
 現在開いているソリューション内のプロジェクトで定義された、コンポーネント場合、自動的に表示されます、**ツールボックス**操作は必要とします。 手動で設定することができます、**ツールボックス**を使用して、カスタム コンポーネントで、[選択ツールボックス項目 ダイアログ ボックス (Visual Studio)](http://msdn.microsoft.com/library/bd07835f-18a8-433e-bccc-7141f65263bb)、ですが、**ツールボックス**考慮ソリューションの内の項目は、ビルドの次のすべての特性を持つ出力を。  
@@ -106,7 +94,7 @@ ms.lasthandoff: 01/19/2018
 ## <a name="next-steps"></a>次の手順  
  このチュートリアルで説明する、**ツールボックス**、プロジェクトのコンポーネントの考慮ですが、**ツールボックス**コントロールもです。 追加と管理プロジェクトをソリューションから削除して、独自のカスタム コントロールをテストします。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [一般に、Windows フォーム デザイナー、オプション ダイアログ ボックス](http://msdn.microsoft.com/library/8dd170af-72f0-4212-b04b-034ceee92834)  
  [方法: [ツールボックス] タブの操作](http://msdn.microsoft.com/library/21285050-cadd-455a-b1f5-a2289a89c4db)  
  [[ツールボックス アイテムの選択] ダイアログ ボックス (Visual Studio)](http://msdn.microsoft.com/library/bd07835f-18a8-433e-bccc-7141f65263bb)  

@@ -1,28 +1,19 @@
 ---
-title: 変数 &#39; の種類&lt;variablename&gt;&#39; は、外側のスコープ内のフィールドにバインドされているので、推論できません。
+title: 変数の型&#39; &lt;variablename&gt; &#39;は、外側のスコープ内のフィールドにバインドされているので、推論できません。
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vbc42110
 - bc42110
 helpviewer_keywords:
 - BC42110
 ms.assetid: ef4442eb-08d1-434f-a03b-4aa2ed4e4414
-caps.latest.revision: 33
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 39968407f4de5436df324320c99dede4d72e2808
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: cb423e8dcced6956eb86d484607915030c91412b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="the-type-for-variable-39ltvariablenamegt39-will-not-be-inferred-because-it-is-bound-to-a-field-in-an-enclosing-scope"></a>変数 &#39; の種類&lt;variablename&gt;&#39; は、外側のスコープ内のフィールドにバインドされているので、推論できません。
+# <a name="the-type-for-variable-39ltvariablenamegt39-will-not-be-inferred-because-it-is-bound-to-a-field-in-an-enclosing-scope"></a>変数の型&#39; &lt;variablename&gt; &#39;は、外側のスコープ内のフィールドにバインドされているので、推論できません。
 変数の型 '\<variablename >' は、外側のスコープ内のフィールドにバインドされているので、推論できません。 名前を変更するか '\<variablename >'、または完全修飾名 (たとえば、Me.variablename"や"MyBase.variablename") を使用します。  
   
  コードのループ制御変数は、クラスまたは他の外側のスコープ内のフィールドと同じ名前を持っています。 制御変数は、`As` 句なしで使用されるため、外側のスコープ内のフィールドにバインドされ、コンパイラがこれに対して新しい変数を作成したり、その型を推論したりすることはありません。  

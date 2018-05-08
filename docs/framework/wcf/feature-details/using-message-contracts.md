@@ -1,41 +1,27 @@
 ---
 title: メッセージ コントラクトの使用
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - message contracts [WCF]
 ms.assetid: 1e19c64a-ae84-4c2f-9155-91c54a77c249
-caps.latest.revision: 46
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 600d938b8981ddfabcb79028ae66b5b9d02107b7
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: ea0a107a67753e919439a6be2035ab77001641ff
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-message-contracts"></a>メッセージ コントラクトの使用
-一般に、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] アプリケーションを構築するときには、開発者はデータ構造とシリアル化の問題には細心の注意を払いますが、データを送信するメッセージ構造について懸念する必要はありません。 このようなアプリケーションでは、パラメーターまたは戻り値用にデータ コントラクトを作成するのは簡単です  (詳細については、次を参照してください[サービス コントラクトのデータ転送を指定する](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md)。)。  
+通常 Windows Communication Foundation (WCF) アプリケーションを構築するときに、データ構造とシリアル化の問題に注目して開発者や、データが持ち込まれるメッセージの構造を意識する必要はありません。 このようなアプリケーションでは、パラメーターまたは戻り値用にデータ コントラクトを作成するのは簡単です  (詳細については、次を参照してください[サービス コントラクトのデータ転送を指定する](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md)。)。  
   
  ただし、SOAP メッセージの構造を完全に制御することがメッセージの内容の制御と同様に重要となる場合があります。 これが特に当てはまるのは、相互運用性が重要である場合、具体的にはメッセージまたはメッセージ部分のレベルでセキュリティの問題を制御する場合です。 このような場合は、作成することができます、*メッセージ コントラクト*必要正確な SOAP メッセージの構造を指定することができます。  
   
  ここでは、メッセージ コントラクトの各種属性を使用して、ユーザー操作に専用のメッセージ コントラクトを作成する方法について説明します。  
   
 ## <a name="using-message-contracts-in-operations"></a>処理におけるメッセージ コントラクトの使用  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] いずれかでモデル化された操作をサポートする、*リモート プロシージャ コール (RPC) スタイル*または*メッセージング スタイル*です。 RPC スタイルの操作では、シリアル化可能な任意の型を使用できます。複数のパラメーター、`ref` パラメーターと `out` パラメーターなど、ローカル呼び出しで使用できる機能を利用できます。 このスタイルでは、選択したシリアル化の形式によって基になるメッセージのデータ構造が制御されます。また、操作をサポートするために、メッセージは [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ランタイムによって作成されます。 これにより、SOAP や SOAP メッセージに不慣れな開発者でも、サービス アプリケーションを迅速かつ容易に作成し、使用できます。  
+ WCF 操作のいずれかでモデル化をサポートする、*リモート プロシージャ コール (RPC) スタイル*または*メッセージング スタイル*です。 RPC スタイルの操作では、シリアル化可能な任意の型を使用できます。複数のパラメーター、`ref` パラメーターと `out` パラメーターなど、ローカル呼び出しで使用できる機能を利用できます。 このスタイルでは、選択したシリアル化の形式は、基になるメッセージ内のデータの構造を制御し、WCF ランタイムは、操作をサポートするためにメッセージを作成します。 これにより、SOAP や SOAP メッセージに不慣れな開発者でも、サービス アプリケーションを迅速かつ容易に作成し、使用できます。  
   
  RPC スタイルでモデル化されたサービス操作のコード例を次に示します。  
   
@@ -263,7 +249,7 @@ public class PatientRecord
   
 -   `Relay`  
   
- `Actor` 属性または `Role` 属性は、指定のヘッダーが対象とするノードの URI (Uniform Resource Identifier) を指定します。 `MustUnderstand` 属性は、ヘッダー処理ノードがヘッダーを認識する必要があるかどうかを指定します。 `Relay` 属性は、ダウンストリーム ノードにヘッダーを中継する必要があるかどうかを指定します。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、`MustUnderstand` 属性を除いて (このトピックの後半の「メッセージ コントラクトのバージョン管理」セクションで指定)、受信メッセージに対してこれらの属性の処理を実行しません。 ただし、後述するように、必要に応じてこれらの属性を読み書きすることができます。  
+ `Actor` 属性または `Role` 属性は、指定のヘッダーが対象とするノードの URI (Uniform Resource Identifier) を指定します。 `MustUnderstand` 属性は、ヘッダー処理ノードがヘッダーを認識する必要があるかどうかを指定します。 `Relay` 属性は、ダウンストリーム ノードにヘッダーを中継する必要があるかどうかを指定します。 WCF がを除き、受信メッセージに対するこれらの属性の処理を実行しません、`MustUnderstand`属性に、このトピックの「メッセージ コントラクトのバージョン管理」セクションで指定されています。 ただし、後述するように、必要に応じてこれらの属性を読み書きすることができます。  
   
  既定では、メッセージの送信時にこれらの属性は出力されません。 これは、2 とおりの方法で変更できます。 1 つ目の方法として、次のコード例に示すように、<xref:System.ServiceModel.MessageHeaderAttribute.Actor%2A?displayProperty=nameWithType>、<xref:System.ServiceModel.MessageHeaderAttribute.MustUnderstand%2A?displayProperty=nameWithType>、および <xref:System.ServiceModel.MessageHeaderAttribute.Relay%2A?displayProperty=nameWithType> の各プロパティを変更することによって、属性を必要な値に静的に設定できます  (`Role` プロパティが存在しないことに注意してください。SOAP 1.2 を使用している場合は、<xref:System.ServiceModel.MessageHeaderAttribute.Actor%2A> プロパティを設定すると `Role` 属性が出力されます)。  
   
@@ -336,9 +322,9 @@ public class BankingTransaction
   
  ヘッダーのバージョン管理には、次のルールが適用されます。  
   
--   [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は不足しているヘッダーを問題にしません。対応するメンバーは既定値で残されます。  
+-   WCF が不足しているヘッダーをオブジェクトいません-対応するメンバーは、既定値のままにします。  
   
--   [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、予期しない余分なヘッダーも無視します。 このルールの 1 つの例外は、入力 SOAP メッセージ内の余分なヘッダーの `MustUnderstand` 属性が `true` に設定されている場合です。この場合、認識する必要のあるヘッダーを処理できないため、例外がスローされます。  
+-   WCF には、予期しない余分なヘッダーも無視されます。 このルールの 1 つの例外は、入力 SOAP メッセージ内の余分なヘッダーの `MustUnderstand` 属性が `true` に設定されている場合です。この場合、認識する必要のあるヘッダーを処理できないため、例外がスローされます。  
   
  メッセージ本文にも同様のバージョン管理ルールがあります。メッセージ本文の不足している部分と追加された部分はいずれも無視されます。  
   
@@ -383,7 +369,7 @@ public class PatientRecord : PersonRecord
 -   複数の処理で同じメッセージ コントラクトを使用すると、WSDL ドキュメント内に複数のメッセージ型が生成されます。 以降も使用できるように、"2"、"3" などの番号を付加することで名前を一意にします。 WSDL をインポートし直すと、名前以外は同一の複数のメッセージ コントラクト型が作成されます。  
   
 ## <a name="soap-encoding-considerations"></a>SOAP エンコードに関する留意点  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、XML のレガシー SOAP エンコード スタイルを使用できますが、このスタイルを使用することはお勧めしません。 (サービス コントラクトに適用されている `Use` で、`Encoded` プロパティを <xref:System.ServiceModel.XmlSerializerFormatAttribute?displayProperty=nameWithType> に設定して) このスタイルを使用する場合、次の追加の考慮事項が適用されます。  
+ WCF では、レガシー SOAP エンコード、XML のスタイルを使用できます。 ただし、その使用は推奨されません。 (サービス コントラクトに適用されている `Use` で、`Encoded` プロパティを <xref:System.ServiceModel.XmlSerializerFormatAttribute?displayProperty=nameWithType> に設定して) このスタイルを使用する場合、次の追加の考慮事項が適用されます。  
   
 -   メッセージ ヘッダーはサポートされません。つまり、<xref:System.ServiceModel.MessageHeaderAttribute> 属性と <xref:System.ServiceModel.MessageHeaderArrayAttribute> 配列属性は、SOAP エンコーディングと互換性がありません。  
   

@@ -1,31 +1,19 @@
 ---
-title: "方法 : MetadataExchangeClient を使用してメタデータを取得する"
-ms.custom: 
+title: '方法 : MetadataExchangeClient を使用してメタデータを取得する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 0754e9dc-13c5-45c2-81b5-f3da466e5a87
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 119e23c5834fdc646a793a4e84f191a37bca2f63
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 1df4bc156485108dc0c11d597b268864c9656b1b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-use-metadataexchangeclient-to-retrieve-metadata"></a>方法 : MetadataExchangeClient を使用してメタデータを取得する
 WS-MetadataExchange (MEX) プロトコルを使用してメタデータをダウンロードするには、<xref:System.ServiceModel.Description.MetadataExchangeClient> クラスを使用します。 取得されたメタデータ ファイルは、<xref:System.ServiceModel.Description.MetadataSet> オブジェクトとして返されます。 返された <xref:System.ServiceModel.Description.MetadataSet> オブジェクトには、<xref:System.ServiceModel.Description.MetadataSection> オブジェクトのコレクションが含まれ、コレクションの各オブジェクトには、特定のメタデータの言語と識別子が含まれます。 返されたメタデータはファイルに書き込むことができます。また、返されたメタデータに Web サービス記述言語 (WSDL: Web Services Description Language) ドキュメントが含まれている場合は、<xref:System.ServiceModel.Description.WsdlImporter> を使用してメタデータをインポートできます。  
   
  アドレスを取得する <xref:System.ServiceModel.Description.MetadataExchangeClient> コンストラクターは、アドレスの URI (Uniform Resource Identifier) スキームに一致する <xref:System.ServiceModel.Description.MetadataExchangeBindings> 静的クラスでバインディングを使用します。 または、使用するバインディングを明示的に指定できるようにする <xref:System.ServiceModel.Description.MetadataExchangeClient> コンストラクターを使用することもできます。 指定したバインディングは、すべてのメタデータ参照を解決するために使用されます。  
   
- 他の [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] クライアントと同様に、<xref:System.ServiceModel.Description.MetadataExchangeClient> 型は、エンドポイント構成名を使用してクライアント エンドポイント構成を読み込むためのコンストラクターを提供します。 指定したエンドポイント構成では、<xref:System.ServiceModel.Description.IMetadataExchange> コントラクトを指定する必要があります。 エンドポイント構成のアドレスは読み込まれないため、アドレスを受け取る <xref:System.ServiceModel.Description.MetadataExchangeClient.GetMetadata%2A> オーバーロードのいずれかを使用する必要があります。 <xref:System.ServiceModel.EndpointAddress> インスタンスを使用してメタデータ アドレスを指定した場合、<xref:System.ServiceModel.Description.MetadataExchangeClient> は、指定したアドレスが MEX エンドポイントを指すものと想定します。 メタデータ アドレスを URL として指定した場合は、使用する <xref:System.ServiceModel.Description.MetadataExchangeClientMode> として、MEX または HTTP GET のいずれかを指定する必要もあります。  
+ その他の Windows Communication Foundation (WCF) クライアントと同じように、<xref:System.ServiceModel.Description.MetadataExchangeClient>型は、エンドポイント構成名を使用してクライアント エンドポイント構成を読み込むためのコンス トラクターを提供します。 指定したエンドポイント構成では、<xref:System.ServiceModel.Description.IMetadataExchange> コントラクトを指定する必要があります。 エンドポイント構成のアドレスは読み込まれないため、アドレスを受け取る <xref:System.ServiceModel.Description.MetadataExchangeClient.GetMetadata%2A> オーバーロードのいずれかを使用する必要があります。 <xref:System.ServiceModel.EndpointAddress> インスタンスを使用してメタデータ アドレスを指定した場合、<xref:System.ServiceModel.Description.MetadataExchangeClient> は、指定したアドレスが MEX エンドポイントを指すものと想定します。 メタデータ アドレスを URL として指定した場合は、使用する <xref:System.ServiceModel.Description.MetadataExchangeClientMode> として、MEX または HTTP GET のいずれかを指定する必要もあります。  
   
 > [!IMPORTANT]
 >  既定では、<xref:System.ServiceModel.Description.MetadataExchangeClient> は、WSDL と XML スキーマのインポートおよびインクルードを含むすべての参照を解決します。 <xref:System.ServiceModel.Description.MetadataExchangeClient.ResolveMetadataReferences%2A> プロパティを `false` に設定すると、この機能を無効にできます。 解決する参照の最大数を制御するには、<xref:System.ServiceModel.Description.MetadataExchangeClient.MaximumResolvedReferences%2A> プロパティを使用します。 バインディングでこのプロパティと `MaxReceivedMessageSize` プロパティを組み合わせて使用すると、取得するメタデータのサイズを制御できます。  
@@ -46,7 +34,7 @@ WS-MetadataExchange (MEX) プロトコルを使用してメタデータをダウ
 ## <a name="compiling-the-code"></a>コードのコンパイル  
  このコード例をコンパイルするには、System.ServiceModel.dll アセンブリを参照し、<xref:System.ServiceModel.Description> 名前空間をインポートする必要があります。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Description.MetadataResolver>  
  <xref:System.ServiceModel.Description.MetadataExchangeClient>  
  <xref:System.ServiceModel.Description.WsdlImporter>

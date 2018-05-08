@@ -1,13 +1,6 @@
 ---
-title: "方法 : ToolTip を配置する"
-ms.custom: 
+title: '方法 : ToolTip を配置する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - ToolTip control [WPF], positioning
 - positioning ToolTip controls [WPF]
 ms.assetid: cddf3757-9e5f-4ce3-a6eb-44489cf3804a
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: cc81fa247f21448a4ccbd62baccb72c0ec14bb31
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 218d8814cf75cd80a63c94397ed00e92c6a9a8fb
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-position-a-tooltip"></a>方法 : ToolTip を配置する
 この例では、画面のツールヒントの位置を指定する方法を示します。  
@@ -34,7 +22,7 @@ ms.lasthandoff: 01/19/2018
   
 ### <a name="corresponding-tooltip-properties-according-to-class"></a>対応するツールヒント プロパティ クラス  
   
-|<xref:System.Windows.Controls.ToolTip?displayProperty=nameWithType>クラスのプロパティ|<xref:System.Windows.Controls.ToolTipService?displayProperty=nameWithType>クラスのプロパティ|  
+|<xref:System.Windows.Controls.ToolTip?displayProperty=nameWithType> クラスのプロパティ|<xref:System.Windows.Controls.ToolTipService?displayProperty=nameWithType> クラスのプロパティ|  
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|  
 |<xref:System.Windows.Controls.ToolTip.Placement%2A?displayProperty=nameWithType>|<xref:System.Windows.Controls.ToolTipService.Placement%2A?displayProperty=nameWithType>|  
 |<xref:System.Windows.Controls.ToolTip.PlacementTarget%2A?displayProperty=nameWithType>|<xref:System.Windows.Controls.ToolTipService.PlacementTarget%2A?displayProperty=nameWithType>|  
@@ -69,7 +57,7 @@ ms.lasthandoff: 01/19/2018
  [!code-csharp[ToolTipService#NoToolTipCode](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml.cs#notooltipcode)]
  [!code-vb[ToolTipService#NoToolTipCode](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ToolTipService/visualbasic/pane1.xaml.vb#notooltipcode)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Controls.ToolTip>  
  <xref:System.Windows.Controls.ToolTipService>  
  [方法トピック](../../../../docs/framework/wpf/controls/tooltip-how-to-topics.md)  

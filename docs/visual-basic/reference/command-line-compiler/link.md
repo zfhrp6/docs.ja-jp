@@ -1,11 +1,6 @@
 ---
 title: -リンク (Visual Basic)
 ms.date: 03/10/2018
-ms.prod: .net
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - l compiler option [Visual Basic]
 - EmbedInteropTypes
@@ -16,13 +11,11 @@ helpviewer_keywords:
 - -l compiler option [Visual Basic]
 - /l compiler option [Visual Basic]
 ms.assetid: 1885f24a-86f5-486c-a064-9fb7e455ccec
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 4699e3adfd83a35ee81a5c8838e300adf6ecf667
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: 95c528c4d686c44d0d77d1f55833be75ab14f8bf
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="-link-visual-basic"></a>-リンク (Visual Basic)
 指定したアセンブリ内の COM 型情報を、現在のコンパイル対象のプロジェクトで使用できるようにします。  
@@ -51,7 +44,7 @@ ms.lasthandoff: 04/27/2018
 > [!NOTE]
 >  コードで埋め込み COM 型のインスタンスを作成する際は、適切なインターフェイスを使用してインスタンスを作成する必要があります。 コクラスを使用して埋め込み COM 型のインスタンスを作成しようとすると、エラーが発生します。  
   
- 設定する、`-link`オプションを Visual Studio で、アセンブリ参照を追加し、設定、`Embed Interop Types`プロパティを**true**です。 `Embed Interop Types` プロパティの既定値は **false** です。  
+ Visual Studio で `-link` オプションを設定するには、アセンブリ参照を追加し、`Embed Interop Types` プロパティを **true** に設定します。 `Embed Interop Types` プロパティの既定値は **false** です。  
   
  別の COM アセンブリ (アセンブリ B) を参照する COM アセンブリ (アセンブリ A) にリンクする場合、次のいずれかが当てはまるときは、アセンブリ B にもリンクする必要があります。  
   

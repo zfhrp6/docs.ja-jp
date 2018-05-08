@@ -1,26 +1,17 @@
 ---
-title: "方法: Windows API を呼び出す (Visual Basic)"
-ms.custom: 
+title: '方法: Windows API を呼び出す (Visual Basic)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - API calls [Visual Basic]
 - Windows API, calling
 - API calls [Visual Basic], platform invoke
 - calls [Visual Basic], stored procedures
 ms.assetid: 27d75f0a-54ab-4ee1-b91d-43513a19b12d
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 772db789fba4552a4645d2c6a242ba01944652ee
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: de568c3273d4d040c6566136e5d59e2155b86f8b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-call-windows-apis-visual-basic"></a>方法: Windows API を呼び出す (Visual Basic)
 この例は、定義し、呼び出し、 `MessageBox` user32.dll 内の関数に文字列を渡します。  
@@ -42,8 +33,8 @@ ms.lasthandoff: 01/19/2018
   
 -   含んでいる型が `CreateType` を使用して以前に作成されています。 (<xref:System.InvalidOperationException>)  
   
-## <a name="see-also"></a>参照  
- [詳しく見てプラットフォーム呼び出し](http://msdn.microsoft.com/library/ba9dd55b-2eaa-45cd-8afd-75cb8d64d243)  
+## <a name="see-also"></a>関連項目  
+ [プラットフォーム呼び出しの詳細](http://msdn.microsoft.com/library/ba9dd55b-2eaa-45cd-8afd-75cb8d64d243)  
  [プラットフォーム呼び出しの例](../../../framework/interop/platform-invoke-examples.md)  
  [アンマネージ DLL 関数の処理](../../../framework/interop/consuming-unmanaged-dll-functions.md)  
  [出力リフレクションを使用してメソッドを定義します。](http://msdn.microsoft.com/library/84fd3bf6-628f-41aa-83d9-b990cf926e81)  

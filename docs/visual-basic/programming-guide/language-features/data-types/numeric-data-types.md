@@ -1,13 +1,6 @@
 ---
 title: 数値データ型 (Visual Basic)
-ms.custom: ''
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - integral types [Visual Basic], Visual Basic
 - Short data type [Visual Basic], numeric data types
@@ -30,14 +23,11 @@ helpviewer_keywords:
 - Single data type [Visual Basic], numeric types
 - Decimal data type [Visual Basic], numeric data types
 ms.assetid: a27bd4d0-7e14-43eb-9cc4-b42eaab323c9
-caps.latest.revision: 25
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: c5e7a5340f9b0d103acc14350f30f17d8d709de3
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 8fa88172c9914a071e1b24e959c9030e6d219a30
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="numeric-data-types-visual-basic"></a>数値データ型 (Visual Basic)
 Visual Basic では、いくつかを指定*数値データ型*さまざまな表現で数値を処理するためです。 *整数*型を表す整数のみ (正、負の値、および 0)、および*非整数*型は整数と小数部の両方で数値を表します。  

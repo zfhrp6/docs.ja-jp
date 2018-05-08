@@ -1,28 +1,19 @@
 ---
-title: "UI オートメーションによる MenuItem コントロール型のサポート"
-ms.custom: 
+title: UI オートメーションによる MenuItem コントロール型のサポート
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-bcl
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - control types, Menu Item
 - Menu Item control type
 - UI Automation, Menu Item control type
 ms.assetid: 54bce311-3d23-40b9-ba90-1bdbdaf8fbba
-caps.latest.revision: "23"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: fe4e46294f10d3b48dcf4162d64047ae2930d777
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 618a28d5a58880166087dd77016353f9d7efd3ea
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ui-automation-support-for-the-menuitem-control-type"></a>UI オートメーションによる MenuItem コントロール型のサポート
 > [!NOTE]
@@ -30,7 +21,7 @@ ms.lasthandoff: 12/22/2017
   
  このトピックでは、MenuItem コントロール型の [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] サポートについて説明します。 ここではコントロールの [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] ツリー構造について説明し、MenuItem コントロール型に必要なプロパティとコントロール パターンを示します。  
   
- メニュー コントロールを使用すると、コマンドおよびイベント ハンドラーに関連付けられている要素を階層的に編成できます。 一般的な [!INCLUDE[TLA#tla_win](../../../includes/tlasharptla-win-md.md)] アプリケーションでは、メニュー バーに複数のメニュー項目 ( **[ファイル]**、 **[編集]**、 **[ウィンドウ]**など) が含まれ、各メニュー項目にメニューが表示されます。 メニューには、メニュー項目 ( **[新規]**、 **[開く]**、 **[閉じる]**など) のコレクションが含まれていて、クリックされると展開して追加のメニュー項目を表示したり、特定の操作を実行したりできます。 メニュー項目は、メニュー、メニュー バー、またはツール バーに配置できます。  
+ メニュー コントロールを使用すると、コマンドおよびイベント ハンドラーに関連付けられている要素を階層的に編成できます。 一般的な [!INCLUDE[TLA#tla_win](../../../includes/tlasharptla-win-md.md)] アプリケーションでは、メニュー バーに複数のメニュー項目 ( **[ファイル]**、 **[編集]**、 **[ウィンドウ]** など) が含まれ、各メニュー項目にメニューが表示されます。 メニューには、メニュー項目 ( **[新規]**、 **[開く]**、 **[閉じる]** など) のコレクションが含まれていて、クリックされると展開して追加のメニュー項目を表示したり、特定の操作を実行したりできます。 メニュー項目は、メニュー、メニュー バー、またはツール バーに配置できます。  
   
  以下のセクションでは、MenuItem コントロール型で必要な [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ツリー構造、プロパティ、コントロール パターン、イベントを定義します。 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] の要件は、 [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)]、 [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)]、または [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)]であるかどうかに関係なく、すべてのリスト コントロールに適用されます。  
   
@@ -50,10 +41,10 @@ ms.lasthandoff: 12/22/2017
 ## <a name="required-ui-automation-properties"></a>必須の UI オートメーション プロパティ  
  次の表に、メニュー項目コントロールに特に関連する値または定義を持つ [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] プロパティを示します。 詳細については[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]プロパティを参照してください[クライアントの UI オートメーション プロパティ](../../../docs/framework/ui-automation/ui-automation-properties-for-clients.md)です。  
   
-|プロパティ|値|説明|  
+|プロパティ|[値]|説明|  
 |--------------|-----------|-----------------|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationIdProperty>|「ノート」をご覧ください。|このプロパティの値は、アプリケーションのすべてのコントロールで一意である必要があります。|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>|ノートを参照してください。|コントロール全体を格納する最も外側の四角形。|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>|「ノート」をご覧ください。|コントロール全体を格納する最も外側の四角形。|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.ClickablePointProperty>|「ノート」をご覧ください。|四角形領域が存在する場合にサポートされます。 四角形領域内にクリック不可能な点が存在し、特別なヒット テストを実行する場合は、オーバーライドしてクリック可能な点を提供します。|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.IsKeyboardFocusableProperty>|「ノート」をご覧ください。|コントロールがキーボード フォーカスを受け取ることができる場合は、このプロパティをサポートする必要があります。|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty>|「ノート」をご覧ください。|メニュー項目コントロールは [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ツリーのコンテンツ ビューに含まれていて、名前が自動的にラベル付けされます。|  
@@ -67,7 +58,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="required-ui-automation-control-patterns"></a>必須の UI オートメーション コントロール パターン  
  次の表に、メニュー項目コントロールでサポートする必要がある [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] コントロール パターンの一覧を示します。 コントロール パターンについて詳しくは、「 [UI Automation Control Patterns Overview](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)」をご覧ください。  
   
-|コントロール パターン プロパティ|Support|ノート|  
+|コントロール パターン プロパティ|Support|メモ|  
 |------------------------------|-------------|-----------|  
 |<xref:System.Windows.Automation.Provider.IExpandCollapseProvider>|状況に依存|コントロールを展開または折りたたむことができる場合は、 <xref:System.Windows.Automation.Provider.IExpandCollapseProvider>を実装します。|  
 |<xref:System.Windows.Automation.Provider.IInvokeProvider>|状況に依存|コントロールが単一のアクションまたはコマンドを実行する場合は、 <xref:System.Windows.Automation.Provider.IInvokeProvider>を実装します。|  
@@ -78,7 +69,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="ui-automation-events-for-menu-item"></a>メニュー項目の UI オートメーション イベント  
  次の表に、メニュー項目コントロールに関連付けられている [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] イベントの一覧を示します。  
   
-|イベント|Support|説明|  
+|event|サポート|説明|  
 |-----------|-------------|-----------------|  
 |<xref:System.Windows.Automation.InvokePatternIdentifiers.InvokedEvent>|状況に依存|コントロールが呼び出しコントロール パターンをサポートしている場合に、発生させる必要があります。|  
 |<xref:System.Windows.Automation.TogglePatternIdentifiers.ToggleStateProperty> プロパティ変更イベント。|状況に依存|コントロールがトグル コントロール パターンをサポートしている場合に、発生させる必要があります。|  
@@ -89,7 +80,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="required-ui-automation-events"></a>必須の UI オートメーション イベント  
  次の表に、すべてのメニュー項目コントロールでサポートする必要がある [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] イベントの一覧を示します。 イベントについて詳しくは、「 [UI Automation Events Overview](../../../docs/framework/ui-automation/ui-automation-events-overview.md)」をご覧ください。  
   
-|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] イベント|サポート/値|ノート|  
+|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] イベント|サポート/値|メモ|  
 |---------------------------------------------------------------------------------|--------------------|-----------|  
 |<xref:System.Windows.Automation.InvokePatternIdentifiers.InvokedEvent>|状況に依存|なし|  
 |<xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementAddedToSelectionEvent>|状況に依存|なし|  
@@ -100,14 +91,14 @@ ms.lasthandoff: 12/22/2017
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty> プロパティ変更イベント。|必須|なし|  
 |<xref:System.Windows.Automation.ExpandCollapsePatternIdentifiers.ExpandCollapseStateProperty> プロパティ変更イベント。|状況に依存|なし|  
 |<xref:System.Windows.Automation.TogglePatternIdentifiers.ToggleStateProperty> プロパティ変更イベント。|状況に依存|なし|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationFocusChangedEvent>|必要|なし|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.StructureChangedEvent>|必要|なし|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationFocusChangedEvent>|必須|なし|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.StructureChangedEvent>|必須|なし|  
   
 <a name="Legacy_Issues"></a>   
 ## <a name="legacy-issues"></a>既知の問題  
  トグル パターンがサポートされるのは、 [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)] メニュー項目がチェックされ、トグル パターンをサポートすることが必要であるとプログラムで判断できる場合のみです。 [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)] メニュー項目はチェックできるかどうかを公開しないため、メニュー項目がチェックされていない場合は呼び出しパターンがサポートされます。 トグル パターンのみをサポートするべきメニュー項目に対して常に呼び出しパターンをサポートするには、例外が作成されます。 このようにすると、(メニュー項目がクリアされていたときに) 呼び出しパターンをサポートしていた要素が、チェックされたときにそのパターンをサポートしなくなっても、クライアントは混乱しません。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Automation.ControlType.MenuItem>  
  [UI Automation コントロール パターンの概要](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)  
  [UI オートメーション コントロール型の概要](../../../docs/framework/ui-automation/ui-automation-control-types-overview.md)  

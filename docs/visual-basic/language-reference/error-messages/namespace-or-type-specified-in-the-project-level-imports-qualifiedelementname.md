@@ -1,28 +1,19 @@
 ---
-title: Namespace またはプロジェクト レベルのインポート &#39; で指定された型&lt;qualifiedelementname&gt;&#39; しません &#39; t がすべてのパブリック メンバーを含めるか、または見つかりません
+title: プロジェクト レベル インポートで指定された Namespace または型&#39; &lt;qualifiedelementname&gt; &#39;しません&#39;t がすべてのパブリック メンバーを含めるか、または見つかりません
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vbc40057
 - bc40057
 helpviewer_keywords:
 - BC40057
 ms.assetid: 4ae3506e-2ebe-4ff3-995d-14ac60db5e9f
-caps.latest.revision: 10
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 0d0a164562524af239b3b130f681dbc6eff23814
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: d6d0c931262d892ec3e65888a76f25218b23d868
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="namespace-or-type-specified-in-the-project-level-imports-39ltqualifiedelementnamegt39-doesn39t-contain-any-public-member-or-cannot-be-found"></a>Namespace またはプロジェクト レベルのインポート &#39; で指定された型&lt;qualifiedelementname&gt;&#39; しません &#39; t がすべてのパブリック メンバーを含めるか、または見つかりません
+# <a name="namespace-or-type-specified-in-the-project-level-imports-39ltqualifiedelementnamegt39-doesn39t-contain-any-public-member-or-cannot-be-found"></a>プロジェクト レベル インポートで指定された Namespace または型&#39; &lt;qualifiedelementname&gt; &#39;しません&#39;t がすべてのパブリック メンバーを含めるか、または見つかりません
 プロジェクト レベル インポートで指定された Namespace または型\<qualifiedelementname >'、パブリック メンバーが含まれていないか、または見つかりません。 確認してください、名前空間または型が定義されている少なくとも 1 つのパブリック メンバーが含まれています。 エイリアス名には他のエイリアスが含まれていないことを確認してください。  
   
  見つからない、またはいずれかを一切定義しませんをコンテナー要素を指定して、プロジェクトのインポート プロパティ`Public`メンバー。  

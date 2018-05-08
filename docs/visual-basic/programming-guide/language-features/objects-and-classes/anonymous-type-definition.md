@@ -1,24 +1,14 @@
 ---
 title: 匿名型の定義 (Visual Basic)
-ms.custom: ''
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - anonymous types [Visual Basic], type definition
 ms.assetid: 7a8a0ddc-55ba-4d67-869e-87a84d938bac
-caps.latest.revision: 21
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 8b5b7eba55d719c1482b7224ecffc78b776feb00
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 179fb9773fde2631666498d54894037b2bbfd087
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="anonymous-type-definition-visual-basic"></a>匿名型の定義 (Visual Basic)
 匿名型のインスタンスの宣言に応答してでは、コンパイラは、型の指定したプロパティを格納する新しいクラス定義を作成します。  
@@ -63,7 +53,7 @@ End Class
   
  型定義がから継承した 3 つのメンバーをオーバーライドして匿名型の宣言には、少なくとも 1 つのキー プロパティが含まれている場合、 <xref:System.Object>: <xref:System.Object.Equals%2A>、 <xref:System.Object.GetHashCode%2A>、および<xref:System.Object.ToString%2A>です。 キー プロパティが宣言されていない場合、のみ<xref:System.Object.ToString%2A>はオーバーライドします。 上書きは、次の機能を提供します。  
   
--   `Equals`返します`True`匿名型の 2 つのインスタンスが、同じインスタンスである場合、または、次の条件を満たしている場合。  
+-   `Equals` 返します`True`匿名型の 2 つのインスタンスが、同じインスタンスである場合、または、次の条件を満たしている場合。  
   
     -   同じ数のプロパティがあります。  
   
@@ -77,9 +67,9 @@ End Class
   
      [!code-vb[VbVbalrAnonymousTypes#24](../../../../visual-basic/language-reference/modifiers/codesnippet/VisualBasic/anonymous-type-definition_2.vb)]  
   
--   `GetHashcode`適切に一意の GetHashCode アルゴリズムを提供します。 アルゴリズムでは、キー プロパティだけを使って、ハッシュ コードを計算します。  
+-   `GetHashcode` 適切に一意の GetHashCode アルゴリズムを提供します。 アルゴリズムでは、キー プロパティだけを使って、ハッシュ コードを計算します。  
   
--   `ToString`次の例のように連結されたプロパティの値の文字列を返します。 キーとキー以外のプロパティの両方が含まれます。  
+-   `ToString` 次の例のように連結されたプロパティの値の文字列を返します。 キーとキー以外のプロパティの両方が含まれます。  
   
      [!code-vb[VbVbalrAnonymousTypes#29](../../../../visual-basic/language-reference/modifiers/codesnippet/VisualBasic/anonymous-type-definition_3.vb)]  
   

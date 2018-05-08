@@ -1,27 +1,15 @@
 ---
-title: "XAML セキュリティの考慮事項"
-ms.custom: 
+title: XAML セキュリティの考慮事項
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - security [XAML Services], .NET XAML services
 - XAML security [XAML Services]
 ms.assetid: 544296d4-f38e-4498-af49-c9f4dad28964
-caps.latest.revision: "7"
-author: wadepickett
-ms.author: wpickett
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b58719f36cd911497c5cd892610330688221e7ef
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ef47e7e370082a2050406710edcb62d0967df8ef
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="xaml-security-considerations"></a>XAML セキュリティの考慮事項
 このトピックは、XAML と .NET Framework XAML サービス API を使用するときに、アプリケーションのセキュリティのベスト プラクティスを説明します。  
@@ -29,7 +17,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="untrusted-xaml-in-applications"></a>アプリケーションで信頼されていない XAML  
  最も一般的な意味では、信頼されていない XAML は、アプリケーションの表示または出力しなかった以外にインクルードするすべての XAML ソースです。  
   
- XAML にコンパイルまたはとして格納されている、 `resx`-信頼されたおよび署名されたアセンブリ内で型のリソースが本質的に信頼されていません。 全体として、アセンブリを信頼する限り、XAML を信頼できます。 ほとんどの場合、ストリームまたはその他の IO から読み込まれる XAML ソースでは、loose XAML の信頼の側面に関係するはのみです。 Loose XAML は、特定のコンポーネントまたは配置とパッケージ化インフラストラクチャを持つアプリケーション モデルの機能ではありません。 ただし、アセンブリは、loose XAML を読み込む必要がある動作を実装する場合があります。  
+ XAML にコンパイルまたはとして格納されている、 `resx`-信頼されたおよび署名されたアセンブリ内で型のリソースが本質的に信頼されていません。 全体として、アセンブリを信頼する限り、XAML を信頼できます。 ほとんどの場合、ストリームまたはその他の I/O から読み込まれる XAML ソースでは、loose XAML の信頼の側面に関係するはのみです。 Loose XAML は、特定のコンポーネントまたは配置とパッケージ化インフラストラクチャを持つアプリケーション モデルの機能ではありません。 ただし、アセンブリは、loose XAML を読み込む必要がある動作を実装する場合があります。  
   
  、信頼されていない xaml にする必要があります扱う一般に、同じ信頼できないコードの場合と同様。 サンド ボックスまたは他の要素を使用して、信頼されるコードにアクセスできなくなる可能性のある信頼されていない XAML にします。  
   
@@ -52,5 +40,5 @@ ms.lasthandoff: 12/22/2017
 ## <a name="xaml-type-mapping-and-type-system-access"></a>XAML の型マッピングおよびシステム アクセスの種類  
  XAML では、独自の型システムがあるさまざまな方法でピア CLR が、基本的な CLR 型システムを実装する方法をサポートしています。 ただし、特定の要素の型情報に基づいて、型に関する信頼の決定を行う型対応の型のバッキング CLR の型情報に従う必要があります。 これは XAML 型システムの特定のレポート機能の一部は仮想メソッドとして開かれたままを完全に元の .NET Framework XAML サービス実装の制御下です。 これらの拡張ポイントは、XAML 型システムでは、拡張可能な XAML 自体の拡張機能とその考えられる別型マッピングの手法と、既定の実装で CLR バックアップおよび既定の XAML スキーマ コンテキストとを照合するために存在します。 詳細については、のプロパティのいくつかの特定のノートを参照してください。<xref:System.Xaml.XamlType>と<xref:System.Xaml.XamlMember>です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Xaml.Permissions.XamlAccessLevel>

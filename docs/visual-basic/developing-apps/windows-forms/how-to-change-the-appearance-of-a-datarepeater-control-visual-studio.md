@@ -1,10 +1,6 @@
 ---
-title: "方法 : DataRepeater コントロールの外観を変更する (Visual Studio)"
+title: '方法 : DataRepeater コントロールの外観を変更する (Visual Studio)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -12,14 +8,11 @@ helpviewer_keywords:
 - DataRepeater, customizing
 - DataRepeater, changing run time appearance
 ms.assetid: 2af6dfce-760b-489e-b863-8da967f315c3
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 585ff4c942185f3199fe6e9e47a4ebd9f1f0a478
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 9863d9343ffcecc1e4aae7f6bc16dae39ef76385
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-change-the-appearance-of-a-datarepeater-control-visual-studio"></a>方法 : DataRepeater コントロールの外観を変更する (Visual Studio)
 外観を変更することができます、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>コントロール プロパティの設定によっては、デザイン時または実行時に処理して、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.DrawItem>イベント。  
@@ -36,7 +29,7 @@ ms.lasthandoff: 11/21/2017
   
 ### <a name="to-change-the-appearance-at-run-time"></a>実行時に外観を変更するには  
   
-1.  コード エディターで、[イベント] ボックスの一覧の **[DrawItem]**をクリックします。  
+1.  コード エディターで、[イベント] ボックスの一覧の **[DrawItem]** をクリックします。  
   
 2.  <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.DrawItem> 、イベント ハンドラーのプロパティを設定するコードを追加します。  
   

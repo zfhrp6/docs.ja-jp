@@ -1,12 +1,6 @@
 ---
-title: "Boolean 式 (Visual Basic)"
-ms.custom: 
+title: Boolean 式 (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - short-circuiting
 - Boolean expressions
@@ -20,17 +14,14 @@ helpviewer_keywords:
 - operators [Visual Basic], Boolean
 - Visual Basic code, expressions
 ms.assetid: d3d90406-55c8-4404-8143-50fd7f0d0d1a
-caps.latest.revision: "19"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 48071c6833f9841fa42311dda59d6959c0645ff4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: ff5843c815658468ac69fe5d62a9ea4cac2be830
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="boolean-expressions-visual-basic"></a>Boolean 式 (Visual Basic)
-A*ブール式*の値に評価される式を指定、[ブールのデータ型](../../../../visual-basic/language-reference/data-types/boolean-data-type.md):`True`または`False`です。 `Boolean`式は、いくつかの形式を取ります。 単純な形式の値を直接比較、`Boolean`変数を`Boolean`リテラルで、次の例に示すようにします。  
+A*ブール式*の値に評価される式を指定、[ブールのデータ型](../../../../visual-basic/language-reference/data-types/boolean-data-type.md):`True`または`False`です。 `Boolean` 式は、いくつかの形式を取ります。 単純な形式の値を直接比較、`Boolean`変数を`Boolean`リテラルで、次の例に示すようにします。  
   
  [!code-vb[VbVbalrOperators#87](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/boolean-expressions_1.vb)]  
   

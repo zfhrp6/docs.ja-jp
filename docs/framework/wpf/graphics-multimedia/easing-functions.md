@@ -1,13 +1,6 @@
 ---
-title: "イージング関数"
-ms.custom: 
+title: イージング関数
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -22,16 +15,11 @@ helpviewer_keywords:
 - easing functions [WPF], customizing
 - animations [WPF], applying
 ms.assetid: 075b9c2b-82c4-43fa-b3cd-de0b6236eb38
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 570a065d3f28befe8db4887ff908c3bd60a639a1
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 3ce7c1824dc53c154ba1091ea62c1b8950b757c1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="easing-functions"></a>イージング関数
 イージング関数を使うと、独自の数式をアニメーションに適用することができます。 たとえば、オブジェクトをリアルにバウンドさせたり、バネに乗っているように動作させたりすることができます。 キー フレーム アニメーションや From/To/By アニメーションを使ってこれらの効果を近似することもできますが、大量の作業が必要であり、アニメーションは数式を使うほど正確ではありません。  
@@ -50,7 +38,7 @@ ms.lasthandoff: 12/22/2017
   
 -   <xref:System.Windows.Media.Animation.ExponentialEase>: 加速または減速指数の式を使用するアニメーションを作成します。  
   
--   <xref:System.Windows.Media.Animation.PowerEase>: 加速または減速の公式を使用するアニメーションを作成する*f*(*t*) = *t*<sup>p</sup> p が、に等しい<xref:System.Windows.Media.Animation.PowerEase.Power%2A>プロパティです。  
+-   <xref:System.Windows.Media.Animation.PowerEase>: 加速または減速の公式を使用するアニメーションを作成する*f*(*t*) = *t*<sup>p</sup> p は、 <xref:System.Windows.Media.Animation.PowerEase.Power%2A>プロパティです。  
   
 -   <xref:System.Windows.Media.Animation.QuadraticEase>: 加速または減速の公式を使用するアニメーションを作成する*f*(*t*) = *t*<sup>2</sup>です。  
   

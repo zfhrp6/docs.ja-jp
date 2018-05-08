@@ -1,28 +1,19 @@
 ---
-title: '&lt;type1&gt;&#39;&lt;typename&gt;&#39; する必要があります実装 &#39;&lt;membername&gt;&#39; インターフェイス &#39;&lt;interfacename&gt;&#39;です。'
+title: '&lt;type1&gt;&#39;&lt;typename&gt; &#39;実装する必要があります&#39; &lt;membername&gt; &#39;インターフェイスの&#39; &lt;interfacename&gt;&#39;'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vbc30154
 - bc30154
 helpviewer_keywords:
 - BC30154
 ms.assetid: 259afdfa-3608-4760-adcb-88ec0da5020d
-caps.latest.revision: 9
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 05e0229d0259c519d4db265c017a5040b425c79a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 0f93bd137bdc21268cbca139ae739843561350ac
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="lttype1gt39lttypenamegt39-must-implement-39ltmembernamegt39-for-interface-39ltinterfacenamegt39"></a>&lt;type1&gt;&#39;&lt;typename&gt;&#39; する必要があります実装 &#39;&lt;membername&gt;&#39; インターフェイス &#39;&lt;interfacename&gt;&#39;です。
+# <a name="lttype1gt39lttypenamegt39-must-implement-39ltmembernamegt39-for-interface-39ltinterfacenamegt39"></a>&lt;type1&gt;&#39;&lt;typename&gt; &#39;実装する必要があります&#39; &lt;membername&gt; &#39;インターフェイスの&#39; &lt;interfacename&gt;&#39;
 '\<typename >' を実装する必要があります'\<membername >' のインターフェイス '\<interfacename >' です。 プロパティを実装する必要があります一致する 'ReadOnly' または 'WriteOnly' 指定子。  
   
  クラスまたは構造体、インターフェイスを実装する要求が、プロシージャ、プロパティ、またはインターフェイスで定義されたイベントは実装されません。 インターフェイスのすべてのメンバーを実装する必要があります。  
@@ -33,7 +24,7 @@ ms.lasthandoff: 11/21/2017
   
 1.  同じ名前と、インターフェイスで定義されているシグネチャを持つメンバーを宣言します。 含めることを確認するには、少なくとも、 `End Function`、 `End Sub`、または`End Property`ステートメントです。  
   
-2.  追加、`Implements`句の末尾に、 `Function`、 `Sub`、 `Property`、または`Event`ステートメントです。 例:  
+2.  追加、`Implements`句の末尾に、 `Function`、 `Sub`、 `Property`、または`Event`ステートメントです。 例えば:  
   
     ```  
     Public Event ItHappened() Implements IBaseInterface.ItHappened  

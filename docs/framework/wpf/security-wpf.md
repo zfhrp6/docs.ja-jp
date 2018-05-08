@@ -1,14 +1,6 @@
 ---
 title: セキュリティ (WPF)
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-wpf
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - XAML files [WPF], sandbox behavior
 - browser-hosted application security [WPF]
@@ -21,17 +13,11 @@ helpviewer_keywords:
 - XBAP security [WPF]
 - Internet Explorer security settings [WPF]
 ms.assetid: ee1baea0-3611-4e36-9ad6-fcd5205376fb
-caps.latest.revision: 38
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 51b940d4a2463be7aaea9d0ff8e48e2b9f47363a
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 7b58368539ed1e41c1367e0cd1da7e4181a8af7e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="security-wpf"></a>セキュリティ (WPF)
 <a name="introduction"></a> Windows Presentation Foundation (WPF) スタンドアロン アプリケーションとブラウザーによってホストされるアプリケーションを開発するときは、セキュリティ モデルを検討する必要があります。 [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] 無制限のアクセス許可を持つスタンドアロンのアプリケーションを実行 ( [!INCLUDE[TLA2#tla_cas](../../../includes/tla2sharptla-cas-md.md)] **FullTrust**アクセス許可セット) Windows インストーラー (.msi)、XCopy を使用して配置するかどうか、または[!INCLUDE[TLA2#tla_clickonce](../../../includes/tla2sharptla-clickonce-md.md)]です。 部分的に信頼されたスタンドアロンの WPF アプリケーションを ClickOnce で展開することはサポートされていません。 ただし、完全に信頼されたホスト アプリケーションが部分的に信頼を作成できます<xref:System.AppDomain>アドインの .NET Framework モデルを使用します。 詳細については、次を参照してください。 [WPF アドイン概要](../../../docs/framework/wpf/app-development/wpf-add-ins-overview.md)です。  

@@ -1,29 +1,17 @@
 ---
-title: "方法 : 複合コントロールを作成する"
-ms.custom: 
+title: '方法 : 複合コントロールを作成する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - UserControl class [Windows Forms], creating composite controls
 - user controls [Windows Forms], creating
 - user controls [Windows Forms], inheriting from
 - composite controls [Windows Forms], creating
 ms.assetid: 79c9cf05-5ab6-4a18-886d-88a64748b098
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 621d761411d5c33316d80e6dcdc9d0ec675242b2
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: d13b2a3a89a27c8494d3efa990a1368cec55a28c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-author-composite-controls"></a>方法 : 複合コントロールを作成する
 複合コントロールはさまざまな方法で使用できます。 Windows デスクトップ アプリケーション プロジェクトの一部として複合コントロールを作成し、プロジェクト内のフォーム上でのみ使用することができます。 または、Windows コントロール ライブラリ プロジェクトで複合コントロールを作成し、プロジェクトをアセンブリにコンパイルして、他のプロジェクトで使用することもできます。 そのコントロールから継承することや、ビジュアル継承を使用して特殊な用途のために簡単にカスタマイズすることまでできます。  
@@ -37,7 +25,7 @@ ms.lasthandoff: 01/19/2018
   
 1.  `DemoControlHost` という新しい **Windows アプリケーション** プロジェクトを開きます。  
   
-2.  **[プロジェクト]** メニューの **[ユーザー コントロールの追加]**をクリックします。  
+2.  **[プロジェクト]** メニューの **[ユーザー コントロールの追加]** をクリックします。  
   
 3.  **[新しい項目の追加]** ダイアログ ボックスで、クラス ファイル (.vb または .cs ファイル) に複合コントロールに付ける名前を指定します。  
   
@@ -49,7 +37,7 @@ ms.lasthandoff: 01/19/2018
   
 7.  複合コントロールのデザイナーを閉じて、メッセージが表示されたらファイルを保存します。  
   
-8.  **[ビルド]** メニューの **[ソリューションのビルド]**をクリックします。  
+8.  **[ビルド]** メニューの **[ソリューションのビルド]** をクリックします。  
   
      カスタム コントロールが **[ツールボックス]** に表示されるようにプロジェクトをビルドする必要があります。  
   
@@ -75,7 +63,7 @@ ms.lasthandoff: 01/19/2018
   
 3.  **[プロジェクト]** タブを選択し、コントロール ライブラリ プロジェクトをダブルクリックします。  
   
-4.  **[ビルド]** メニューの **[ソリューションのビルド]**をクリックします。  
+4.  **[ビルド]** メニューの **[ソリューションのビルド]** をクリックします。  
   
 5.  **ソリューション エクスプローラー**で、コントロール ライブラリ プロジェクトを右クリックし、ショートカット メニューの **[新しい項目の追加]** をクリックします。  
   
@@ -89,7 +77,7 @@ ms.lasthandoff: 01/19/2018
   
      DLL の複合コントロールから継承された内在コントロールを表示し、**Modifiers** プロパティが **Public** であるコントロールのプロパティを変更することができます。 **Modifiers** プロパティが **Private** であるコントロールのプロパティを変更することはできません。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [チュートリアル: Visual Basic による複合コントロールの作成](../../../../docs/framework/winforms/controls/walkthrough-authoring-a-composite-control-with-visual-basic.md)  
  [チュートリアル: Visual C# による複合コントロールの作成](../../../../docs/framework/winforms/controls/walkthrough-authoring-a-composite-control-with-visual-csharp.md)  
  [チュートリアル: Visual Basic による Windows フォーム コントロールからの継承](../../../../docs/framework/winforms/controls/walkthrough-inheriting-from-a-windows-forms-control-with-visual-basic.md)  

@@ -1,34 +1,22 @@
 ---
 title: '方法 : チャネルのセキュリティ資格情報を指定する'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: f8e03f47-9c4f-4dd5-8f85-429e6d876119
-caps.latest.revision: ''
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload:
-- dotnet
-ms.openlocfilehash: e2aedb06ec694f6c7dfb12b70ab919ae23eed17e
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: f25089f7f5ffa16bb46e0833b15b4cbc4a7735ac
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-specify-channel-security-credentials"></a>方法 : チャネルのセキュリティ資格情報を指定する
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービス モニカーを使用すると、COM アプリケーションで [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスを呼び出すことができます。 ほとんどの [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスで、クライアントは認証と承認のための資格情報の指定が要求されます。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスを [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントから呼び出す場合、この資格情報をマネージ コードまたはアプリケーション構成ファイルに指定できます。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスを COM アプリケーションから呼び出す場合、<xref:System.ServiceModel.ComIntegration.IChannelCredentials> インターフェイスを使用して資格情報を指定できます。 ここでは、<xref:System.ServiceModel.ComIntegration.IChannelCredentials> インターフェイスを使用して資格情報を指定するさまざまな方法を説明します。  
+Windows Communication Foundation (WCF) サービス モニカーでは、COM アプリケーションで WCF サービスを呼び出すができます。 ほとんどの WCF サービスでは、クライアント認証と承認のための資格情報を指定する必要があります。 WCF クライアントから WCF サービスを呼び出すときに、マネージ コードで、またはアプリケーション構成ファイルで、これらの資格情報を指定できます。 COM アプリケーションから WCF サービスを呼び出すときに行うこともできます、<xref:System.ServiceModel.ComIntegration.IChannelCredentials>資格情報を指定するインターフェイスです。 ここでは、<xref:System.ServiceModel.ComIntegration.IChannelCredentials> インターフェイスを使用して資格情報を指定するさまざまな方法を説明します。  
   
 > [!NOTE]
 >  <xref:System.ServiceModel.ComIntegration.IChannelCredentials> は IDispatch ベースのインターフェイスです。Visual Studio 環境で IntelliSense 機能を取得することはできません。  
   
- この記事の内容を使用して、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]で定義されたサービス、[メッセージ セキュリティ サンプル](../../../../docs/framework/wcf/samples/message-security-sample.md)です。  
+ この記事の内容がで定義された WCF サービスを使用して、[メッセージ セキュリティ サンプル](../../../../docs/framework/wcf/samples/message-security-sample.md)です。  
   
 ### <a name="to-specify-a-client-certificate"></a>クライアント証明書を指定するには  
   
@@ -40,7 +28,7 @@ ms.lasthandoff: 03/23/2018
   
 4.  追加`bindingNamespace=``http://Microsoft.ServiceModel.Samples`サービス用の App.config 内のエンドポイント タグにします。  
   
-5.  メッセージ セキュリティ サンプルをビルドし、Service.exe を実行します。 Internet Explorer を使用してサービスの URI (http://localhost:8000/ServiceModelSamples/Service) を参照し、サービスが動作していることを確認します。  
+5.  メッセージ セキュリティ サンプルをビルドし、Service.exe を実行します。 Internet Explorer を使用し、サービスの URI を参照 (http://localhost:8000/ServiceModelSamples/Service)サービスが動作していることを確認します。  
   
 6.  Visual Basic 6.0 を開き、新しい標準 .exe ファイルを作成します。 フォームにボタンを追加し、追加したボタンをダブルクリックして次のコードをクリック ハンドラーに追加します。  
   

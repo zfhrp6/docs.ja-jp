@@ -1,28 +1,14 @@
 ---
-title: "ルーティング シナリオ"
-ms.custom: 
+title: ルーティング シナリオ
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - rounting [WCF], scenarios
 ms.assetid: ec22f308-665a-413e-9f94-7267cb665dab
-caps.latest.revision: 
-author: wadepickett
-ms.author: wpickett
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 3ef101a9a5f78e1b85ac7cb983b4766088b83317
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 458b67de57be2bd0847ceccbc8a3aebd3b025f64
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="routing-scenarios"></a>ルーティング シナリオ
 ルーティング サービスは自由にカスタマイズできますが、まったく新しい構成を作成するときは、効率的なルーティング ロジックを設計するのが困難である場合があります。  しかし、ほとんどのルーティング サービスの構成で想定されている一般的なシナリオがいくつかあります。 これらのシナリオは、特定の構成に直接、適用できない場合もありますが、これらのシナリオに対応するルーティング サービスの構成方法を理解しておくことは、ルーティング サービスを理解する助けとなります。  
@@ -89,5 +75,5 @@ ms.lasthandoff: 12/22/2017
   
  [エラーを処理する方法](../../../../docs/framework/wcf/feature-details/how-to-error-handling.md)  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ルーティングの概要](../../../../docs/framework/wcf/feature-details/routing-introduction.md)

@@ -1,24 +1,12 @@
 ---
-title: "インターネット インフォメーション サービス (IIS) サーバー証明書インストール手順"
-ms.custom: 
+title: インターネット インフォメーション サービス (IIS) サーバー証明書インストール手順
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 11281490-d2ac-4324-8f33-e7714611a34b
-caps.latest.revision: "18"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: cfb168ae60765a57017aaec6bdedaf796491f602
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 46d1acf758dd50b881527a16570a1e4a45933958
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="internet-information-services-iis-server-certificate-installation-instructions"></a>インターネット インフォメーション サービス (IIS) サーバー証明書インストール手順
 インターネット インフォメーション サービス (IIS) と安全に通信するこのサンプルを実行するには、サーバー証明書を作成してインストールする必要があります。  
@@ -47,7 +35,7 @@ makecert -sr LocalMachine -ss My -n CN=ServiceModelSamples-HTTPS-Server -sky exc
   
      ![証明書ウィザードの IIS](../../../../docs/framework/wcf/samples/media/iiscertificate-wizard.GIF "IISCertificate_Wizard")  
   
-6.  サービスへのアクセスをテストします。ブラウザに HTTPS アドレス「https://localhost/servicemodelsamples/service.svc」を入力します。  
+6.  HTTPS アドレスを使用して、ブラウザーでサービスへのアクセスをテストhttps://localhost/servicemodelsamples/service.svcです。  
   
 #### <a name="if-ssl-was-previously-configured-by-using-httpcfgexe"></a>Httpcfg.exe であらかじめ SSL が構成されている場合  
   
@@ -76,7 +64,7 @@ PermissiveCertificatePolicy.Enact("CN=ServiceModelSamples-HTTPS-Server");
   
 5.  選択、 **ServiceModelSamples HTTPS サーバー**から、 **SSL 証明書**ドロップダウン リストをクリック**OK**です。  
   
-6.  サービスへのアクセスをテストします。ブラウザに HTTPS アドレス「https://localhost/servicemodelsamples/service.svc」を入力します。  
+6.  HTTPS アドレスを使用して、ブラウザーでサービスへのアクセスをテストhttps://localhost/servicemodelsamples/service.svcです。  
   
 > [!NOTE]
 >  先ほどインストールしたテスト証明書は信頼された証明書ではないので、この証明書でセキュリティ保護されたローカル Web アドレスを参照した場合、Internet Explorer のセキュリティ警告がさらに発生する場合があります。  

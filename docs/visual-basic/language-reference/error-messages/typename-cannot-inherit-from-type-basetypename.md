@@ -1,28 +1,19 @@
 ---
-title: '&#39;です。&lt;typename&gt;&#39; から継承できません&lt;型&gt;&#39;&lt; 。basetypename&gt;&#39;ベースのアクセスを展開しているためです&lt;型&gt;、アセンブリ外。'
+title: '&#39;&lt;typename&gt; &#39;から継承できません&lt;型&gt; &#39; &lt;basetypename&gt; &#39;ベースのアクセスを展開しているため&lt;型&gt;。アセンブリの外部'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vbc30910
 - bc30910
 helpviewer_keywords:
 - BC30910
 ms.assetid: 68fc05c5-5d55-4742-9a3b-ea04312594f4
-caps.latest.revision: 8
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: d01981d3136968ae2534539b8eccab4c5c535fbc
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: f747b2b24f5fecc22b9e1fbc6ba26b634e9ead2c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="39lttypenamegt39-cannot-inherit-from-lttypegt-39ltbasetypenamegt39-because-it-expands-the-access-of-the-base-lttypegt-outside-the-assembly"></a>&#39;です。&lt;typename&gt;&#39; から継承できません&lt;型&gt;&#39;&lt; 。basetypename&gt;&#39;ベースのアクセスを展開しているためです&lt;型&gt;、アセンブリ外。
+# <a name="39lttypenamegt39-cannot-inherit-from-lttypegt-39ltbasetypenamegt39-because-it-expands-the-access-of-the-base-lttypegt-outside-the-assembly"></a>&#39;&lt;typename&gt; &#39;から継承できません&lt;型&gt; &#39; &lt;basetypename&gt; &#39;ベースのアクセスを展開しているため&lt;型&gt;。アセンブリの外部
 基本クラスからクラスまたはインターフェイスを継承またはインターフェイスが、制限の緩いアクセス レベル。  
   
  たとえば、`Public`インターフェイスから継承、`Friend`インターフェイス、または`Protected`クラスから継承、`Private`クラスです。 これは、基底クラスまたは目的のレベル以外にアクセスするインターフェイスを公開します。  
@@ -33,7 +24,7 @@ ms.lasthandoff: 11/21/2017
   
 -   派生クラスまたはインターフェイスには、少なくとも基底クラスまたはインターフェイスと同程度に制限を指定のアクセス レベルを変更します。  
   
-     または  
+     - または -  
   
 -   制限の緩いアクセス レベルを必要とする場合は、削除、`Inherits`ステートメントです。 さらに制限された基底クラスまたはインターフェイスから継承することはできません。  
   

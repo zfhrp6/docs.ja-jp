@@ -1,13 +1,6 @@
 ---
-title: "スレッド モデル"
-ms.custom: 
+title: スレッド モデル
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -25,21 +18,16 @@ helpviewer_keywords:
 - nested message processing [WPF]
 - reentrancy [WPF]
 ms.assetid: 02d8fd00-8d7c-4604-874c-58e40786770b
-caps.latest.revision: "33"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: f598cecef2d0994692f197df09e9befc39a58723
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 15115cc0ed14cb5605100ebe47abd5cd4dc02ec0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="threading-model"></a>スレッド モデル
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]スレッド処理の問題の開発者を保存する設計されています。 その結果、ほとんどの[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]開発者は、複数のスレッドを使用するインターフェイスを記述する必要はありません。 マルチ スレッド プログラムは複雑でデバッグが困難であるため、避けてシングル スレッドが存在する場合。  
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] スレッド処理の問題の開発者を保存する設計されています。 その結果、ほとんどの[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]開発者は、複数のスレッドを使用するインターフェイスを記述する必要はありません。 マルチ スレッド プログラムは複雑でデバッグが困難であるため、避けてシングル スレッドが存在する場合。  
   
- 関係なくどの程度設計上、ただし、いいえ[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]フレームワークができるソリューションを提供する、シングル スレッドの問題のすべての種類。 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]閉じるは、複数のスレッドを向上させるような状況はまだあります[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]の応答性またはアプリケーションのパフォーマンスです。 いくつかの背景情報の資料を紹介した後は、このペーパーは、これらの状況について説明し、最後にいくつかの低レベルの詳細の詳細についてはします。  
+ 関係なくどの程度設計上、ただし、いいえ[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]フレームワークができるソリューションを提供する、シングル スレッドの問題のすべての種類。 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 閉じるは、複数のスレッドを向上させるような状況はまだあります[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]の応答性またはアプリケーションのパフォーマンスです。 いくつかの背景情報の資料を紹介した後は、このペーパーは、これらの状況について説明し、最後にいくつかの低レベルの詳細の詳細についてはします。  
   
 
   
@@ -56,11 +44,11 @@ ms.lasthandoff: 12/22/2017
   
  方法、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]アプリケーション大規模な操作を処理する必要がありますか。 場合、コードを使用するか、大量の計算では、または、いくつかのリモート サーバー上のデータベースのクエリを実行する必要がありますか。 まま、別のスレッドで大規模な操作を処理する、応答が通常は、[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]内の項目に傾向が空きスレッド、<xref:System.Windows.Threading.Dispatcher>キュー。 大規模な操作が完了したら、その結果を報告できるに戻す、[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]のスレッドを表示します。  
   
- 従来、[!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)]により[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]は作成元のスレッドのみがアクセスする要素。 つまりが完了すると、いくつか実行時間の長いタスクを担当するバック グラウンド スレッドにテキスト ボックスを更新できません。 [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)]これは、整合性を確保ため[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]コンポーネントです。 リスト ボックスでしたにくい描画中に、バック グラウンド スレッドによってその内容が更新された場合。  
+ 従来、[!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)]により[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]は作成元のスレッドのみがアクセスする要素。 つまりが完了すると、いくつか実行時間の長いタスクを担当するバック グラウンド スレッドにテキスト ボックスを更新できません。 [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] これは、整合性を確保ため[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]コンポーネントです。 リスト ボックスでしたにくい描画中に、バック グラウンド スレッドによってその内容が更新された場合。  
   
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]この調整を適用する組み込みの相互排他メカニズムがあります。 ほとんどのクラス[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]から派生<xref:System.Windows.Threading.DispatcherObject>です。 構築時に、<xref:System.Windows.Threading.DispatcherObject>への参照を格納、<xref:System.Windows.Threading.Dispatcher>現在実行中のスレッドにリンクします。 実際には、<xref:System.Windows.Threading.DispatcherObject>それを作成したスレッドを関連付けます。 プログラムの実行中、<xref:System.Windows.Threading.DispatcherObject>そのパブリックを呼び出すことができます<xref:System.Windows.Threading.DispatcherObject.VerifyAccess%2A>メソッドです。 <xref:System.Windows.Threading.DispatcherObject.VerifyAccess%2A>調べ、 <xref:System.Windows.Threading.Dispatcher> 、現在のスレッドに関連付けられているし、比較する、<xref:System.Windows.Threading.Dispatcher>構築中に格納されている参照します。 一致しない場合は、<xref:System.Windows.Threading.DispatcherObject.VerifyAccess%2A>例外をスローします。 <xref:System.Windows.Threading.DispatcherObject.VerifyAccess%2A>属するすべてのメソッドの開始時に呼び出されるものでは、<xref:System.Windows.Threading.DispatcherObject>です。  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] この調整を適用する組み込みの相互排他メカニズムがあります。 ほとんどのクラス[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]から派生<xref:System.Windows.Threading.DispatcherObject>です。 構築時に、<xref:System.Windows.Threading.DispatcherObject>への参照を格納、<xref:System.Windows.Threading.Dispatcher>現在実行中のスレッドにリンクします。 実際には、<xref:System.Windows.Threading.DispatcherObject>それを作成したスレッドを関連付けます。 プログラムの実行中、<xref:System.Windows.Threading.DispatcherObject>そのパブリックを呼び出すことができます<xref:System.Windows.Threading.DispatcherObject.VerifyAccess%2A>メソッドです。 <xref:System.Windows.Threading.DispatcherObject.VerifyAccess%2A> 調べ、 <xref:System.Windows.Threading.Dispatcher> 、現在のスレッドに関連付けられているし、比較する、<xref:System.Windows.Threading.Dispatcher>構築中に格納されている参照します。 一致しない場合は、<xref:System.Windows.Threading.DispatcherObject.VerifyAccess%2A>例外をスローします。 <xref:System.Windows.Threading.DispatcherObject.VerifyAccess%2A> 属するすべてのメソッドの開始時に呼び出されるものでは、<xref:System.Windows.Threading.DispatcherObject>です。  
   
- 1 つのスレッドを変更できるだけの場合、 [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]、方法はバック グラウンド スレッドと対話するユーザーですか? バック グラウンド スレッドを求めることができます、[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]スレッドの代理で操作を実行します。 これは、含む作業項目を登録することで、<xref:System.Windows.Threading.Dispatcher>の[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]スレッドです。 <xref:System.Windows.Threading.Dispatcher>クラスは作業項目を登録するための 2 つのメソッドを提供します。<xref:System.Windows.Threading.Dispatcher.Invoke%2A>と<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>です。 どちらの方法では、デリゲートの実行をスケジュールします。 <xref:System.Windows.Threading.Dispatcher.Invoke%2A>– の同期呼び出しは、つまりまで返されません、[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]スレッドが実際にはデリゲートの実行を終了します。 <xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>非同期と直ちに返されます。  
+ 1 つのスレッドを変更できるだけの場合、 [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]、方法はバック グラウンド スレッドと対話するユーザーですか? バック グラウンド スレッドを求めることができます、[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]スレッドの代理で操作を実行します。 これは、含む作業項目を登録することで、<xref:System.Windows.Threading.Dispatcher>の[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]スレッドです。 <xref:System.Windows.Threading.Dispatcher>クラスは作業項目を登録するための 2 つのメソッドを提供します。<xref:System.Windows.Threading.Dispatcher.Invoke%2A>と<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>です。 どちらの方法では、デリゲートの実行をスケジュールします。 <xref:System.Windows.Threading.Dispatcher.Invoke%2A> – の同期呼び出しは、つまりまで返されません、[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]スレッドが実際にはデリゲートの実行を終了します。 <xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A> 非同期と直ちに返されます。  
   
  <xref:System.Windows.Threading.Dispatcher>優先順位によって、キューに、要素を並べ替えます。 要素を追加するときに指定できる 10 のレベルがある、<xref:System.Windows.Threading.Dispatcher>キュー。 これらの優先順位はで保持されます、<xref:System.Windows.Threading.DispatcherPriority>列挙します。 に関する詳細情報<xref:System.Windows.Threading.DispatcherPriority>レベルは含まれて、[!INCLUDE[TLA2#tla_winfxsdk](../../../../includes/tla2sharptla-winfxsdk-md.md)]ドキュメント。  
   
@@ -87,7 +75,7 @@ ms.lasthandoff: 12/22/2017
   
  ![ディスパッチャー キューの図](../../../../docs/framework/wpf/advanced/media/threadingdispatcherqueue.PNG "ThreadingDispatcherQueue")  
   
- [!INCLUDE[TLA#tla_word](../../../../includes/tlasharptla-word-md.md)]スペル チェックこのメカニズムを使用して実現しています。 スペル チェックのアイドル時間を使用して、バック グラウンドで行われますが、[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]スレッドです。 コードを見てをみましょう。  
+ [!INCLUDE[TLA#tla_word](../../../../includes/tlasharptla-word-md.md)] スペル チェックこのメカニズムを使用して実現しています。 スペル チェックのアイドル時間を使用して、バック グラウンドで行われますが、[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]スレッドです。 コードを見てをみましょう。  
   
  次の例では、ユーザー インターフェイスを作成する XAML を示します。  
   
@@ -105,7 +93,7 @@ ms.lasthandoff: 12/22/2017
   
  テキストの更新だけでなく、<xref:System.Windows.Controls.Button>の最初の素数のチェックをスケジュール設定するデリゲートを追加することで、このハンドラーは、<xref:System.Windows.Threading.Dispatcher>キュー。 このイベント ハンドラーには、作業が完了した後、<xref:System.Windows.Threading.Dispatcher>このデリゲートの実行を選択します。  
   
- 既に説明したよう、<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>は、<xref:System.Windows.Threading.Dispatcher>メンバー デリゲートの実行をスケジュールするために使用します。 この場合、ユーザーが選択、<xref:System.Windows.Threading.DispatcherPriority.SystemIdle>優先度。 <xref:System.Windows.Threading.Dispatcher>を処理する重要なイベントがない場合にのみ、このデリゲートは実行されます。 [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]応答性がチェックの番号よりも重要です。 番号のチェックのルーチンを表す新しいデリゲートを渡します。  
+ 既に説明したよう、<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>は、<xref:System.Windows.Threading.Dispatcher>メンバー デリゲートの実行をスケジュールするために使用します。 この場合、ユーザーが選択、<xref:System.Windows.Threading.DispatcherPriority.SystemIdle>優先度。 <xref:System.Windows.Threading.Dispatcher>を処理する重要なイベントがない場合にのみ、このデリゲートは実行されます。 [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] 応答性がチェックの番号よりも重要です。 番号のチェックのルーチンを表す新しいデリゲートを渡します。  
   
  [!code-csharp[ThreadingPrimeNumbers#ThreadingPrimeNumberCheckNextNumber](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ThreadingPrimeNumbers/CSharp/Window1.xaml.cs#threadingprimenumberchecknextnumber)]
  [!code-vb[ThreadingPrimeNumbers#ThreadingPrimeNumberCheckNextNumber](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ThreadingPrimeNumbers/visualbasic/mainwindow.xaml.vb#threadingprimenumberchecknextnumber)]  
@@ -143,7 +131,7 @@ ms.lasthandoff: 12/22/2017
   
  報告する時間の遅延が完了したら、際、天気予報をランダムに選択したことには、[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]スレッドです。 この作業を行うへの呼び出しをスケジュールすることによって`UpdateUserInterface`で、[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]スレッドのスレッドを使用して<xref:System.Windows.Threading.Dispatcher>です。 このスケジュールされたメソッドの呼び出しを天気を説明する文字列を渡します。  
   
--   更新します[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]  
+-   更新します [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]  
   
      [!code-csharp[ThreadingWeatherForecast#ThreadingWeatherUpdateUI](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ThreadingWeatherForecast/CSharp/Window1.xaml.cs#threadingweatherupdateui)]
      [!code-vb[ThreadingWeatherForecast#ThreadingWeatherUpdateUI](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ThreadingWeatherForecast/visualbasic/window1.xaml.vb#threadingweatherupdateui)]  
@@ -154,7 +142,7 @@ ms.lasthandoff: 12/22/2017
 ### <a name="multiple-windows-multiple-threads"></a>複数のウィンドウ、複数のスレッド  
  いくつか[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]アプリケーションが複数のトップレベル ウィンドウを必要とします。 完全に 1 つのスレッドもかまわない/<xref:System.Windows.Threading.Dispatcher>複数の windows では複数のスレッドもを管理するための組み合わせが的確にしないでください。 これは、windows の 1 つで、スレッドを占有する可能性がある場合は特に当てはまります。  
   
- [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)]エクスプ ローラーは、この方法で動作します。 新しい各エクスプ ローラー ウィンドウが元のプロセスに属するが、独立したスレッドの制御下で作成されます。  
+ [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] エクスプ ローラーは、この方法で動作します。 新しい各エクスプ ローラー ウィンドウが元のプロセスに属するが、独立したスレッドの制御下で作成されます。  
   
  使用して、 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Controls.Frame>コントロール、ページを表示することができます。 単純なを簡単に作成できるよう[!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)]置換します。 重要な機能をまず: 新しいエクスプ ローラー ウィンドウを開く機能します。 ユーザーが、新しいウィンドウをクリックしたとき ボタン、別のスレッドでウィンドウのコピーを起動します。 これにより、windows のいずれかで実行時間の長いまたはブロックしている操作は、他のすべての windows をロックしません。  
   
@@ -177,18 +165,18 @@ ms.lasthandoff: 12/22/2017
  [!code-csharp[ThreadingMultipleBrowsers#ThreadingMultiBrowserThreadStart](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ThreadingMultipleBrowsers/CSharp/Window1.xaml.cs#threadingmultibrowserthreadstart)]
  [!code-vb[ThreadingMultipleBrowsers#ThreadingMultiBrowserThreadStart](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ThreadingMultipleBrowsers/VisualBasic/Window1.xaml.vb#threadingmultibrowserthreadstart)]  
   
- このメソッドは、新しいスレッドの開始ポイントです。 このスレッドの制御下で、新しいウィンドウを作成します。 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]新たに自動的に作成<xref:System.Windows.Threading.Dispatcher>を新しいスレッドを管理します。 開始、ウィンドウを機能させるために必要なは、<xref:System.Windows.Threading.Dispatcher>です。  
+ このメソッドは、新しいスレッドの開始ポイントです。 このスレッドの制御下で、新しいウィンドウを作成します。 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 新たに自動的に作成<xref:System.Windows.Threading.Dispatcher>を新しいスレッドを管理します。 開始、ウィンドウを機能させるために必要なは、<xref:System.Windows.Threading.Dispatcher>です。  
   
 <a name="stumbling_points"></a>   
 ## <a name="technical-details-and-stumbling-points"></a>技術的な詳細と障害点  
   
 ### <a name="writing-components-using-threading"></a>スレッドを使用するコンポーネントを記述  
- [!INCLUDE[TLA#tla_netframewk](../../../../includes/tlasharptla-netframewk-md.md)]開発者ガイド 』 のコンポーネントがそのクライアントへの非同期動作を公開する方法のパターンを説明します (を参照してください[イベント ベースの非同期パターン概要](../../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md))。 たとえば、パッケージ化する場合、`FetchWeatherFromServer`を再利用可能なノングラフィック コンポーネントにメソッドです。 次の標準[!INCLUDE[TLA#tla_netframewk](../../../../includes/tlasharptla-netframewk-md.md)]パターンでは、これは、次のようなります。  
+ Microsoft .NET Framework 開発者ガイドは、コンポーネントがそのクライアントへの非同期動作を公開する方法のパターンを説明します (を参照してください[イベント ベースの非同期パターン概要](../../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md))。 たとえば、パッケージ化する場合、`FetchWeatherFromServer`を再利用可能なノングラフィック コンポーネントにメソッドです。 次の標準の Microsoft .NET Framework パターンには、次のようなこれはなります。  
   
  [!code-csharp[CommandingOverviewSnippets#ThreadingArticleWeatherComponent1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml.cs#threadingarticleweathercomponent1)]
  [!code-vb[CommandingOverviewSnippets#ThreadingArticleWeatherComponent1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/CommandingOverviewSnippets/visualbasic/window1.xaml.vb#threadingarticleweathercomponent1)]  
   
- `GetWeatherAsync`使用など、バック グラウンド スレッドを作成する前に説明した手法のいずれかを非同期に作業を行うには、呼び出し元スレッドをブロックしていません。  
+ `GetWeatherAsync` 使用など、バック グラウンド スレッドを作成する前に説明した手法のいずれかを非同期に作業を行うには、呼び出し元スレッドをブロックしていません。  
   
  このパターンの最も重要な部分の 1 つを呼び出して、 *MethodName* `Completed`メソッドを呼び出した同じスレッドで、 *MethodName* `Async`で始まるメソッド。 次を使用して[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]格納することにより、非常に簡単に<xref:System.Windows.Threading.Dispatcher.CurrentDispatcher%2A>— ノングラフィック コンポーネントでしたのみで使用されますが、 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 、アプリケーションではなく[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]または[!INCLUDE[TLA#tla_aspnet](../../../../includes/tlasharptla-aspnet-md.md)]プログラムです。  
   
@@ -198,11 +186,11 @@ ms.lasthandoff: 12/22/2017
  [!code-vb[CommandingOverviewSnippets#ThreadingArticleWeatherComponent2](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/CommandingOverviewSnippets/visualbasic/window1.xaml.vb#threadingarticleweathercomponent2)]  
   
 ### <a name="nested-pumping"></a>ポンピング入れ子になった  
- ないを完全にロックして可能な場合があります、[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]スレッドです。 について考えてみます、<xref:System.Windows.MessageBox.Show%2A>のメソッド、<xref:System.Windows.MessageBox>クラスです。 <xref:System.Windows.MessageBox.Show%2A>[ok] ボタンをクリックするまでを返しません。 対話するためにメッセージ ループが必要なウィンドウは、ただし、作成します。 ユーザーが [ok] をクリックするを待つ、中に、元のアプリケーション ウィンドウはユーザー入力に応答しません。 ただし、引き続き必要が描画メッセージを処理します。 元のウィンドウには、取り除いたときにそれ自体が再描画します。  
+ ないを完全にロックして可能な場合があります、[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]スレッドです。 について考えてみます、<xref:System.Windows.MessageBox.Show%2A>のメソッド、<xref:System.Windows.MessageBox>クラスです。 <xref:System.Windows.MessageBox.Show%2A> [ok] ボタンをクリックするまでを返しません。 対話するためにメッセージ ループが必要なウィンドウは、ただし、作成します。 ユーザーが [ok] をクリックするを待つ、中に、元のアプリケーション ウィンドウはユーザー入力に応答しません。 ただし、引き続き必要が描画メッセージを処理します。 元のウィンドウには、取り除いたときにそれ自体が再描画します。  
   
  ![[OK] ボタンを含む MessageBox](../../../../docs/framework/wpf/advanced/media/threadingnestedpumping.png "ThreadingNestedPumping")  
   
- 一部のスレッドは、メッセージ ボックス ウィンドウを担当する必要があります。 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]新しいスレッド、メッセージ ボックス ウィンドウを作成してが、このスレッドは元のウィンドウで無効になっている要素を描画することはできません (相互排他の以前のディスカッションを注意してください)。 代わりに、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]処理システム入れ子になったメッセージを使用します。 <xref:System.Windows.Threading.Dispatcher>クラスと呼ばれる特殊なメソッドが含まれています。 <xref:System.Windows.Threading.Dispatcher.PushFrame%2A>、新しいメッセージ ループを開始し、アプリケーションの現在の実行ポイントを格納します。 入れ子になったメッセージ ループが終了すると、元の後に実行が再開されます。<xref:System.Windows.Threading.Dispatcher.PushFrame%2A>呼び出します。  
+ 一部のスレッドは、メッセージ ボックス ウィンドウを担当する必要があります。 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 新しいスレッド、メッセージ ボックス ウィンドウを作成してが、このスレッドは元のウィンドウで無効になっている要素を描画することはできません (相互排他の以前のディスカッションを注意してください)。 代わりに、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]処理システム入れ子になったメッセージを使用します。 <xref:System.Windows.Threading.Dispatcher>クラスと呼ばれる特殊なメソッドが含まれています。 <xref:System.Windows.Threading.Dispatcher.PushFrame%2A>、新しいメッセージ ループを開始し、アプリケーションの現在の実行ポイントを格納します。 入れ子になったメッセージ ループが終了すると、元の後に実行が再開されます。<xref:System.Windows.Threading.Dispatcher.PushFrame%2A>呼び出します。  
   
  ここでは、<xref:System.Windows.Threading.Dispatcher.PushFrame%2A>への呼び出しでプログラムのコンテキストを保持<xref:System.Windows.MessageBox>.<xref:System.Windows.MessageBox.Show%2A>をバック グラウンド ウィンドウを再描画し、メッセージ ボックス ウィンドウへの入力を処理する新しいメッセージ ループを開始するとします。 ユーザーが [ok] をクリックして、ポップアップ ウィンドウをクリア、入れ子になったループの終了し、呼び出しの後にコントロールが再開されます<xref:System.Windows.MessageBox.Show%2A>です。  
   
@@ -213,7 +201,7 @@ ms.lasthandoff: 12/22/2017
   
  楕円の上でマウスの左ボタンが押されたときに`handler2`を実行します。 後に`handler2`が終了したら、イベントに渡されます、<xref:System.Windows.Controls.Canvas>を使用してオブジェクト`handler1`それを処理します。 これは場合にのみ発生`handler2`は明示的にマーク イベント オブジェクト処理済みとして。  
   
- 可能であればを`handler2`かなりのこのイベントの処理時間がかかります。 `handler2`使用して<xref:System.Windows.Threading.Dispatcher.PushFrame%2A>を返さないため、時間を入れ子になったメッセージ ループを開始します。 場合`handler2`イベントは、このメッセージ ループするときに処理するように完了のマークは、非常に古いなっても、ツリーをイベントが渡されます。  
+ 可能であればを`handler2`かなりのこのイベントの処理時間がかかります。 `handler2` 使用して<xref:System.Windows.Threading.Dispatcher.PushFrame%2A>を返さないため、時間を入れ子になったメッセージ ループを開始します。 場合`handler2`イベントは、このメッセージ ループするときに処理するように完了のマークは、非常に古いなっても、ツリーをイベントが渡されます。  
   
 ### <a name="reentrancy-and-locking"></a>再入およびロック  
  ロック メカニズム、[!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)]とまったく同じように動作しない想像のいずれかです。 期待されるスレッドのロックを要求するときに完全に操作を停止します。 実際で、スレッドは、優先度の高いメッセージ受信して処理を続行します。 これにより、デッドロックを回避し、インターフェイスの最小応答は軽度のバグの可能性が導入されています。  まれな状況が、これに関する知識は必要はありません時間の大部分 (通常、[!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)]ウィンドウ メッセージまたは COM STA コンポーネント) これは、知っておくと便利です。  
@@ -228,5 +216,5 @@ ms.lasthandoff: 12/22/2017
   
  タスクを[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]させず、メモリ リーク、再入 everywhere をブロックしない理由は、予期しない再入を避けることができます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [実行時間の長い計算のサンプルを使用して、シングル スレッド アプリケーション](http://go.microsoft.com/fwlink/?LinkID=160038)

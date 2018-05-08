@@ -1,34 +1,22 @@
 ---
 title: '方法 : Windows Communication Foundation セキュリティ イベントを監査する'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - security [WCF], auditing events
 ms.assetid: e71e9587-3336-46a2-9a9e-d72a1743ecec
-caps.latest.revision: 19
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload:
-- dotnet
-ms.openlocfilehash: 72eff4af38636577dc9e3b35af1f1155d5ed892c
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: ad1cf3dd598a2ec76302c48ae36b45fd0310d69d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-audit-windows-communication-foundation-security-events"></a>方法 : Windows Communication Foundation セキュリティ イベントを監査する
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] にはセキュリティ イベントを Windows イベント ログに記録する機能があります。これは Windows イベント ビューアーに表示できます。 このトピックでは、セキュリティ イベントをログ出力するようにアプリケーションを設定する方法について説明します。 詳細については[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]監査を参照してください[監査](../../../../docs/framework/wcf/feature-details/auditing-security-events.md)です。  
+Windows Communication Foundation (WCF) では、Windows イベント ビューアーを使用して表示する Windows イベント ログにセキュリティ イベント ログに記録することができます。 このトピックでは、セキュリティ イベントをログ出力するようにアプリケーションを設定する方法について説明します。 WCF の監査の詳細については、次を参照してください。[監査](../../../../docs/framework/wcf/feature-details/auditing-security-events.md)です。  
   
 ### <a name="to-audit-security-events-in-code"></a>セキュリティ イベントを監査するコードを記述するには  
   

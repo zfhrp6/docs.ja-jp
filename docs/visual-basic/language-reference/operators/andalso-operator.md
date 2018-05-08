@@ -1,11 +1,6 @@
 ---
-title: "AndAlso 演算子 (Visual Basic)"
+title: AndAlso 演算子 (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.AndAlso
 - AndAlso
@@ -16,14 +11,11 @@ helpviewer_keywords:
 - operators [Visual Basic], conjunction
 - short-circuit evaluation
 ms.assetid: bbc15191-b374-495b-9b8f-7b8c2f4388eb
-caps.latest.revision: "19"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 5f92f4ed226c2923c3d95a7b80db3872b7ac33dc
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 549d14cc35d285ac2e4a02a37dd201cc669c5627
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="andalso-operator-visual-basic"></a>AndAlso 演算子 (Visual Basic)
 ショート サーキットの 2 つの式に対して論理積を実行します。  
@@ -38,9 +30,9 @@ result = expression1 AndAlso expression2
   
 |用語|定義|  
 |---|---|  
-|`result`|必須です。 任意のブール型 (`Boolean`) の式を指定します。 結果は、`Boolean`の 2 つの式の比較の結果。|  
-|`expression1`|必須です。 任意のブール型 (`Boolean`) の式を指定します。|  
-|`expression2`|必須です。 任意のブール型 (`Boolean`) の式を指定します。|  
+|`result`|必須。 任意のブール型 (`Boolean`) の式を指定します。 結果は、`Boolean`の 2 つの式の比較の結果。|  
+|`expression1`|必須。 任意のブール型 (`Boolean`) の式を指定します。|  
+|`expression2`|必須。 任意のブール型 (`Boolean`) の式を指定します。|  
   
 ## <a name="remarks"></a>コメント  
  論理演算があると言われます*ショート サーキット*場合は、コンパイルされたコードが別の式の結果に応じて、1 つの式の評価をバイパスできます。 最初に評価される式の結果には、操作の最終的な結果が判断した場合必要はありませんを 2 番目の式を評価するため、最終的な結果を変更することはできません。 ショート サーキットによりでバイパスされる式が複雑な場合、またはプロシージャの呼び出しが含まれる場合、パフォーマンスが向上します。  

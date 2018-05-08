@@ -1,21 +1,14 @@
 ---
 title: マイクロサービスで DDD と CQRS パターンを使ってビジネスの複雑さに取り組む
 description: コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | マイクロサービスで DDD と CQRS パターンを使ってビジネスの複雑さに取り組む
-keywords: Docker, マイクロサービス, ASP.NET, コンテナー
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
-ms.prod: .net-core
-ms.technology: dotnet-docker
-ms.topic: article
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 8098c62ac18593d8044d52cb24c4cd8859972e68
-ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
+ms.openlocfilehash: ef8e0b08c7ba4ddb78144df54d407998cd40fc55
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="tackling-business-complexity-in-a-microservice-with-ddd-and-cqrs-patterns"></a>マイクロサービスで DDD と CQRS パターンを使ってビジネスの複雑さに取り組む
 
@@ -54,7 +47,7 @@ DDD は、学習用に豊富な技術資料が提供されている大きなテ�
 -   **Eric Evans。Domain-Driven Design Reference: Definitions and Pattern Summaries (ドメイン駆動設計のリファレンス: 定義とパターンの概要)**
     [*https://www.amazon.com/Domain-Driven-Design-Reference-Definitions-2014-09-22/dp/B01N8YB4ZO/*](https://www.amazon.com/Domain-Driven-Design-Reference-Definitions-2014-09-22/dp/B01N8YB4ZO/)
 
--   **Vaughn Vernon。実践ドメイン駆動設計**
+-   **Vaughn Vernon。ドメイン駆動型設計の実装**
     [*https://www.amazon.com/Implementing-Domain-Driven-Design-Vaughn-Vernon/dp/0321834577/*](https://www.amazon.com/Implementing-Domain-Driven-Design-Vaughn-Vernon/dp/0321834577/)
 
 -   **Vaughn Vernon。Domain-Driven Design Distilled (ドメイン駆動設計の基本)**

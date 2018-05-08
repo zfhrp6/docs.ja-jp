@@ -1,14 +1,6 @@
 ---
 title: WPF 部分信頼セキュリティ
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-wpf
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -23,17 +15,11 @@ helpviewer_keywords:
 - feature security requirements [WPF]
 - managing permissions [WPF]
 ms.assetid: ef2c0810-1dbf-4511-babd-1fab95b523b5
-caps.latest.revision: 40
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 023de9e20206411f7dd6774553ae39eefaa508a0
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 27934f782d6c1efde69794c73d653b57b287341f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="wpf-partial-trust-security"></a>WPF 部分信頼セキュリティ
 <a name="introduction"></a> 一般に、悪意のある破損を防ぐための重要なシステム リソースに直接アクセスする必要がなくなりますインターネット アプリケーションを制限する必要があります。 既定では、[!INCLUDE[TLA#tla_html](../../../includes/tlasharptla-html-md.md)]クライアント側のスクリプト言語は、重要なシステム リソースにアクセスすることができません。 ブラウザーによってホストされるアプリケーションの Windows Presentation Foundation (WPF) は、ブラウザーから起動できる、ためには、同様の制限のセットに準拠している必要があります。 これらの制限が適用[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]両方に依存している[!INCLUDE[TLA#tla_cas](../../../includes/tlasharptla-cas-md.md)]と[!INCLUDE[TLA#tla_clickonce](../../../includes/tlasharptla-clickonce-md.md)](を参照してください[WPF のセキュリティ方針 - プラットフォーム セキュリティ](../../../docs/framework/wpf/wpf-security-strategy-platform-security.md))。 既定では、ブラウザ ホスト アプリケーションでは、インターネット ゾーンを要求[!INCLUDE[TLA2#tla_cas](../../../includes/tla2sharptla-cas-md.md)]インターネット、ローカル イントラネット、またはローカル コンピューターから起動するかどうかに関係なく、権限のセット。 未満のアクセス許可の完全なセットを使用して実行するアプリケーションは、部分信頼で実行されていると見なされます。  

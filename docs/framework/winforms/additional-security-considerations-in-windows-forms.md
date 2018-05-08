@@ -1,29 +1,17 @@
 ---
-title: "Windows フォームのセキュリティに関するその他の考慮事項"
-ms.custom: 
+title: Windows フォームのセキュリティに関するその他の考慮事項
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - Windows Forms, secure calls to Windows API
 - security [Windows Forms]
 - security [Windows Forms], calling APIs
 - Clipboard [Windows Forms], securing access
 ms.assetid: 15abda8b-0527-47c7-aedb-77ab595f2bf1
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 5c86374066cea2926b0ac4510afbc17749182fea
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: a1d8606eb972a6e3bea52f6230cb893a4bbb5aac
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="additional-security-considerations-in-windows-forms"></a>Windows フォームのセキュリティに関するその他の考慮事項
 [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] セキュリティ設定によっては、ローカル コンピューターとは異なり、アプリケーションが部分信頼環境で実行されることがあります。 [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] は、ファイル システム、ネットワーク、アンマネージ API などの重要なローカル リソースへのアクセスを他のリソースの場合よりも制限します。 セキュリティ設定により、セキュリティ システムが検証できない Microsoft Win32 API やその他の API を呼び出す機能が影響を受けます。 また、ファイルやデータへのアクセス、印刷など、アプリケーションのその他の処理にも影響があります。 部分信頼環境でのファイルやデータへのアクセスの詳細については、「[Windows フォームにおけるファイルおよびデータへのより安全なアクセス](../../../docs/framework/winforms/more-secure-file-and-data-access-in-windows-forms.md)」を参照してください。 部分信頼環境での印刷の詳細については、「[Windows フォームでのより安全な印刷](../../../docs/framework/winforms/more-secure-printing-in-windows-forms.md)」を参照してください。  
@@ -55,7 +43,7 @@ ms.lasthandoff: 01/19/2018
   
  各アクセス許可レベルで識別される、<xref:System.Security.Permissions.UIPermissionWindow>がその上のレベルよりも少ないアクションが可能です。 次の表は、によって制限される操作を示す、<xref:System.Security.Permissions.UIPermissionWindow.SafeTopLevelWindows>と<xref:System.Security.Permissions.UIPermissionWindow.SafeSubWindows>値。 各メンバーに対して必要なアクセス許可については、.NET Framework クラス ライブラリのドキュメントで該当するメンバーのトピックを参照してください。  
   
- <xref:System.Security.Permissions.UIPermissionWindow.SafeTopLevelWindows>アクセス許可は、次の表に示す操作を制限します。  
+ <xref:System.Security.Permissions.UIPermissionWindow.SafeTopLevelWindows> アクセス許可は、次の表に示す操作を制限します。  
   
 |コンポーネント|制限される処理|  
 |---------------|------------------------|  
@@ -87,11 +75,11 @@ ms.lasthandoff: 01/19/2018
   
 |コンポーネント|メンバー|  
 |---------------|------------|  
-|<xref:System.Windows.Forms.Application>|-   <xref:System.Windows.Forms.Application.AddMessageFilter%2A> メソッド<br />-   <xref:System.Windows.Forms.Application.CurrentInputLanguage%2A>プロパティ<br />-   `Exit` メソッド<br />-   <xref:System.Windows.Forms.Application.ExitThread%2A> メソッド<br />-   <xref:System.Windows.Forms.Application.ThreadException>イベント|  
-|<xref:System.Windows.Forms.CommonDialog>|-   <xref:System.Windows.Forms.CommonDialog.HookProc%2A> メソッド<br />-   <xref:System.Windows.Forms.CommonDialog.OwnerWndProc%2A>\ method<br />-   <xref:System.Windows.Forms.CommonDialog.Reset%2A> メソッド<br />-   <xref:System.Windows.Forms.CommonDialog.RunDialog%2A> メソッド|  
+|<xref:System.Windows.Forms.Application>|-   <xref:System.Windows.Forms.Application.AddMessageFilter%2A> メソッド<br />-   <xref:System.Windows.Forms.Application.CurrentInputLanguage%2A> プロパティ<br />-   `Exit` メソッド<br />-   <xref:System.Windows.Forms.Application.ExitThread%2A> メソッド<br />-   <xref:System.Windows.Forms.Application.ThreadException> イベント|  
+|<xref:System.Windows.Forms.CommonDialog>|-   <xref:System.Windows.Forms.CommonDialog.HookProc%2A> メソッド<br />-   <xref:System.Windows.Forms.CommonDialog.OwnerWndProc%2A>\ メソッド<br />-   <xref:System.Windows.Forms.CommonDialog.Reset%2A> メソッド<br />-   <xref:System.Windows.Forms.CommonDialog.RunDialog%2A> メソッド|  
 |<xref:System.Windows.Forms.Control>|-   <xref:System.Windows.Forms.Control.CreateParams%2A> メソッド<br />-   <xref:System.Windows.Forms.Control.DefWndProc%2A> メソッド<br />-   <xref:System.Windows.Forms.Control.DestroyHandle%2A> メソッド<br />-   <xref:System.Windows.Forms.Control.WndProc%2A> メソッド|  
-|<xref:System.Windows.Forms.Help>|-   <xref:System.Windows.Forms.Help.ShowHelp%2A>メソッド<br />-   <xref:System.Windows.Forms.Help.ShowHelpIndex%2A> メソッド|  
-|<xref:System.Windows.Forms.NativeWindow>|-   <xref:System.Windows.Forms.NativeWindow>クラス|  
+|<xref:System.Windows.Forms.Help>|-   <xref:System.Windows.Forms.Help.ShowHelp%2A> メソッド<br />-   <xref:System.Windows.Forms.Help.ShowHelpIndex%2A> メソッド|  
+|<xref:System.Windows.Forms.NativeWindow>|-   <xref:System.Windows.Forms.NativeWindow> クラス|  
 |<xref:System.Windows.Forms.Screen>|-   <xref:System.Windows.Forms.Screen.FromHandle%2A> メソッド|  
 |<xref:System.Windows.Forms.SendKeys>|-   <xref:System.Windows.Forms.SendKeys.Send%2A> メソッド<br />-   <xref:System.Windows.Forms.SendKeys.SendWait%2A> メソッド|  
   
@@ -99,7 +87,7 @@ ms.lasthandoff: 01/19/2018
   
  アンマネージ コードを呼び出すアクセス許可を与えられたアプリケーションは、ほとんどの処理を実行できます。 そのため、アンマネージ コードを呼び出すアクセス許可は、信頼されたソースからのアプリケーションに対してだけ与えるようにしてください。 また、アプリケーションによっては、アンマネージ コードの呼び出しを生成するアプリケーション機能の一部をオプションにするか、完全に信頼された環境でのみ有効にすることもできます。 危険なアクセス許可の詳細については、「[危険なアクセス許可とポリシー管理](../../../docs/framework/misc/dangerous-permissions-and-policy-administration.md)」を参照してください。 アクセス許可の昇格の詳細については、「[一般的なセキュリティ ポリシー管理](http://msdn.microsoft.com/library/5121fe35-f0e3-402c-94ab-4f35b0a87b4b)」を参照してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Windows フォームにおけるファイルおよびデータへのより安全なアクセス](../../../docs/framework/winforms/more-secure-file-and-data-access-in-windows-forms.md)  
  [Windows フォームでのより安全な印刷](../../../docs/framework/winforms/more-secure-printing-in-windows-forms.md)  
  [Windows フォームのセキュリティの概要](../../../docs/framework/winforms/security-in-windows-forms-overview.md)  

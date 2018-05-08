@@ -1,28 +1,19 @@
 ---
-title: Default プロパティ アクセスは、継承されたインターフェイスのメンバー &#39; の間であいまいです。&lt;defaultpropertyname&gt;&#39;インターフェイス &#39; の;&lt;interfacename1&gt;&#39; と &#39;&lt;defaultpropertyname&gt;&#39;インターフェイス &#39; の;&lt;interfacename2&gt;&#39;です。
+title: Default プロパティ アクセスは、継承インターフェイス メンバーの間にあいまいな&#39; &lt;defaultpropertyname&gt; &#39;インターフェイスの&#39; &lt;interfacename1&gt; &#39;と&#39; &lt;defaultpropertyname&gt; &#39;インターフェイスの&#39; &lt;interfacename2&gt;&#39;
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vbc30686
 - bc30686
 helpviewer_keywords:
 - BC30686
 ms.assetid: 784fefec-ef57-48cf-b960-957df419b439
-caps.latest.revision: 13
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 23d613668ee2d92484117759dd614ed2cad4bcb2
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 65a10067284cad3bf56ecdc441ebefa0a740ef53
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="default-property-access-is-ambiguous-between-the-inherited-interface-members-39ltdefaultpropertynamegt39-of-interface-39ltinterfacename1gt39-and-39ltdefaultpropertynamegt39-of-interface-39ltinterfacename2gt39"></a>Default プロパティ アクセスは、継承されたインターフェイスのメンバー &#39; の間であいまいです。&lt;defaultpropertyname&gt;&#39;インターフェイス &#39; の;&lt;interfacename1&gt;&#39; と &#39;&lt;defaultpropertyname&gt;&#39;インターフェイス &#39; の;&lt;interfacename2&gt;&#39;です。
+# <a name="default-property-access-is-ambiguous-between-the-inherited-interface-members-39ltdefaultpropertynamegt39-of-interface-39ltinterfacename1gt39-and-39ltdefaultpropertynamegt39-of-interface-39ltinterfacename2gt39"></a>Default プロパティ アクセスは、継承インターフェイス メンバーの間にあいまいな&#39; &lt;defaultpropertyname&gt; &#39;インターフェイスの&#39; &lt;interfacename1&gt; &#39;と&#39; &lt;defaultpropertyname&gt; &#39;インターフェイスの&#39; &lt;interfacename2&gt;&#39;
 インターフェイスは、同じ名前の既定のプロパティを宣言の 2 つのインターフェイスから継承します。 コンパイラは、この既定のプロパティを修飾せずに、アクセスを解決できません。 次に例を示します。  
   
 ```  
@@ -55,7 +46,7 @@ End Class
     Dim testObj As Iface1  
     ```  
   
-     または  
+     - または -  
   
 -   クラスに継承するインターフェイスを実装します。 それぞれ異なる名前を持つ継承されたプロパティを実装できます。 ただし、それらの 1 つだけでは、実装するクラスの既定のプロパティがあります。 次に例を示します。  
   

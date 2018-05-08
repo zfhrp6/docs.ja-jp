@@ -1,23 +1,15 @@
 ---
-title: "Visual Studio アプリケーションへの印刷可能なレポートの追加"
+title: Visual Studio アプリケーションへの印刷可能なレポートの追加
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: 
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - printing [Visual Studio], reports
 - reports [Visual Basic], printing in Visual Studio
 ms.assetid: 93928405-ef41-495e-bce2-9d43d5a7080a
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 2b0300f31e4c75c72a72590ad22c19441acb7519
-ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
+ms.openlocfilehash: 4a7275a665e0c3290c2b3cd55c1af0c7cf0504f2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="adding-printable-reports-to-visual-studio-applications"></a>Visual Studio アプリケーションへの印刷可能なレポートの追加
 Visual Studio では、さまざまな豊富なデータを Visual Basic アプリケーションにレポートを追加するためのレポート ソリューションをサポートしています。 作成し、ReportViewer コントロール、Crystal Reports、または SQL Server Reporting Services を使用してレポートを追加できます。  
@@ -58,7 +50,7 @@ Visual Studio では、さまざまな豊富なデータを Visual Basic アプ�
   
 |基本的なレポート機能をアプリケーションに追加するには|  
 |---|    
-|1.ReportViewer コントロールをドラッグして、**データ**のタブ、**ツールボックス**フォーム上にします。<br />2.**[プロジェクト]** メニューの **[新しい項目の追加]**をクリックします。 **新しい項目の追加**ダイアログ ボックスで、**レポート**アイコンをクリックしてをクリックして**追加**です。<br />     レポート デザイナーで、開発環境が開きレポート (.rdlc) ファイルがプロジェクトに追加します。<br />3.レポート アイテムをドラッグして、**ツールボックス**レポート レイアウト上とするように配置します。<br />4.フィールドをドラッグ、**データソース**レポート レイアウトでのレポート アイテムにウィンドウです。|  
+|1.ReportViewer コントロールをドラッグして、**データ**のタブ、**ツールボックス**フォーム上にします。<br />2.**[プロジェクト]** メニューの **[新しい項目の追加]** をクリックします。 **新しい項目の追加**ダイアログ ボックスで、**レポート**アイコンをクリックしてをクリックして**追加**です。<br />     レポート デザイナーで、開発環境が開きレポート (.rdlc) ファイルがプロジェクトに追加します。<br />3.レポート アイテムをドラッグして、**ツールボックス**レポート レイアウト上とするように配置します。<br />4.フィールドをドラッグ、**データソース**レポート レイアウトでのレポート アイテムにウィンドウです。|  
   
 ## <a name="using-reporting-services-in-visual-basic-applications"></a>Visual Basic アプリケーションでの Reporting Services の使用  
  Reporting Services は、SQL Server に含まれているサーバーに基づくレポート テクノロジです。 Reporting Services には、ReportViewer コントロールに記載されていないその他の機能が含まれます。 次の機能のいずれかが必要な場合は、Reporting Services を選択します。  

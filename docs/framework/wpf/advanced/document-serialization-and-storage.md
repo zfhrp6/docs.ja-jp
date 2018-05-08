@@ -1,30 +1,16 @@
 ---
 title: ドキュメントのシリアル化および保存
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-wpf
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - 'serialization of documents [WPF], , '
 - documents [WPF], storage
 - documents [WPF], serialization
 ms.assetid: 4839cd87-e206-4571-803f-0200098ad37b
-caps.latest.revision: 24
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: e6b1cc63b5118280a0a06fe63961c6e54792ed09
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 8ee8acb95aa4a7c8dd80ea88594e582f05b71611
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="document-serialization-and-storage"></a>ドキュメントのシリアル化および保存
 Microsoft .NET Framework では、作成および高品質のドキュメントを表示するための強力な環境を提供します。  固定ドキュメントとフロー ドキュメント、詳細の両方をサポートする拡張機能、コントロールを表示する強力な 2D と組み合わせて使用し、3 D グラフィックス機能が .NET Framework アプリケーションの品質およびユーザー エクスペリエンスの新しいレベルを行います。  ドキュメントのメモリ内表現を柔軟に管理することが必要ですが、.NET Framework の主要な機能と効率的に保存し、データ ストアからドキュメントを読み込むことが必要ですがほぼすべてのアプリケーションが必要です。  内部のメモリ内表現から外部のデータ ストアにドキュメントを変換するプロセスは、シリアル化と呼ばれます。  データ ストアを読み取って元のメモリ内インスタンスを再作成する逆のプロセスは、逆シリアル化と呼ばれます。  

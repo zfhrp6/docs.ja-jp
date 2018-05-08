@@ -1,13 +1,6 @@
 ---
-title: "パフォーマンスの最適化 : オブジェクトの動作"
-ms.custom: 
+title: 'パフォーマンスの最適化 : オブジェクトの動作'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -18,16 +11,11 @@ helpviewer_keywords:
 - object performance considerations [WPF]
 - Freezable objects [WPF], performance
 ms.assetid: 73aa2f47-1d73-439a-be1f-78dc4ba2b5bd
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 12c4dc202ac4db2c21b0a45b61608f5c03c24ac9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 2e1f56dec87de7a22aa8a0bfefe84222d74ba085
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="optimizing-performance-object-behavior"></a>パフォーマンスの最適化 : オブジェクトの動作
 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] オブジェクトに固有の動作を理解することは、機能とパフォーマンスのバランスを見極めるうえで役に立ちます。  
@@ -80,8 +68,8 @@ ms.lasthandoff: 12/22/2017
   
 |**状態**|**Size**|  
 |---------------|--------------|  
-|固定されています。<xref:System.Windows.Media.SolidColorBrush>|212 バイト|  
-|固定されていません。<xref:System.Windows.Media.SolidColorBrush>|972 バイト|  
+|固定されています。 <xref:System.Windows.Media.SolidColorBrush>|212 バイト|  
+|固定されていません。 <xref:System.Windows.Media.SolidColorBrush>|972 バイト|  
   
  この概念の例を次のコード サンプルに示します。  
   
@@ -91,7 +79,7 @@ ms.lasthandoff: 12/22/2017
 ### <a name="changed-handlers-on-unfrozen-freezables-may-keep-objects-alive"></a>固定されていない Freezable の Changed ハンドラーによってオブジェクトが維持される可能性がある  
  オブジェクトに渡すデリゲート、<xref:System.Windows.Freezable>オブジェクトの<xref:System.Windows.Freezable.Changed>イベントは、そのオブジェクトへの参照では実質的にします。 したがって、<xref:System.Windows.Freezable.Changed>イベント ハンドラーが維持オブジェクト予想以上に長くします。 リッスンするように登録されているオブジェクトのクリーンアップを実行するときに、<xref:System.Windows.Freezable>オブジェクトの<xref:System.Windows.Freezable.Changed>イベントがオブジェクトを解放する前にそのデリゲートを削除するために不可欠です。  
   
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]フック<xref:System.Windows.Freezable.Changed>イベント内部でします。 実行するすべての依存関係プロパティなど、<xref:System.Windows.Freezable>値がリッスンするよう<xref:System.Windows.Freezable.Changed>イベントに自動的にします。 <xref:System.Windows.Shapes.Shape.Fill%2A>プロパティを<xref:System.Windows.Media.Brush>、この概念を説明します。  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] フック<xref:System.Windows.Freezable.Changed>イベント内部でします。 実行するすべての依存関係プロパティなど、<xref:System.Windows.Freezable>値がリッスンするよう<xref:System.Windows.Freezable.Changed>イベントに自動的にします。 <xref:System.Windows.Shapes.Shape.Fill%2A>プロパティを<xref:System.Windows.Media.Brush>、この概念を説明します。  
   
  [!code-csharp[Performance#PerformanceSnippet4](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Performance/CSharp/Window1.xaml.cs#performancesnippet4)]
  [!code-vb[Performance#PerformanceSnippet4](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/Performance/visualbasic/window1.xaml.vb#performancesnippet4)]  
@@ -110,7 +98,7 @@ ms.lasthandoff: 12/22/2017
   
 <a name="User_Interface_Virtualization"></a>   
 ## <a name="user-interface-virtualization"></a>ユーザー インターフェイスの仮想化  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]バリエーションも提供、<xref:System.Windows.Controls.StackPanel>自動的に「は、仮想化」のデータ バインドされた子コンテンツ要素。 ここで、"仮想化" は、どの項目を画面に表示するかに基づいて、オブジェクトのサブセットを多数のデータ項目から生成する手法を指します。 特定の時間に画面に UI 要素が少ししか表示されていない場合に多数の UI 要素を生成すると、メモリおよびプロセッサの両方に負荷がかかります。 <xref:System.Windows.Controls.VirtualizingStackPanel>(によって提供される機能を通じて<xref:System.Windows.Controls.VirtualizingPanel>) 表示されている項目を計算し、連携、<xref:System.Windows.Controls.ItemContainerGenerator>から、 <xref:System.Windows.Controls.ItemsControl> (など<xref:System.Windows.Controls.ListBox>または<xref:System.Windows.Controls.ListView>) のみ表示される項目の要素を作成します。  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] バリエーションも提供、<xref:System.Windows.Controls.StackPanel>自動的に「は、仮想化」のデータ バインドされた子コンテンツ要素。 ここで、"仮想化" は、どの項目を画面に表示するかに基づいて、オブジェクトのサブセットを多数のデータ項目から生成する手法を指します。 特定の時間に画面に UI 要素が少ししか表示されていない場合に多数の UI 要素を生成すると、メモリおよびプロセッサの両方に負荷がかかります。 <xref:System.Windows.Controls.VirtualizingStackPanel> (によって提供される機能を通じて<xref:System.Windows.Controls.VirtualizingPanel>) 表示されている項目を計算し、連携、<xref:System.Windows.Controls.ItemContainerGenerator>から、 <xref:System.Windows.Controls.ItemsControl> (など<xref:System.Windows.Controls.ListBox>または<xref:System.Windows.Controls.ListView>) のみ表示される項目の要素を作成します。  
   
  パフォーマンスの最適化の一環として、これらの項目のビジュアル オブジェクトは、画面に表示される場合にのみ生成または維持されます。 既にコントロールの表示可能領域にないビジュアル オブジェクトは削除される可能性があります。 これをデータの仮想化と混同しないようにしてください。データの仮想化では、すべてのデータ オブジェクトがローカル コレクションに存在するのではなく、データ オブジェクトが必要に応じてストリームされます。  
   
@@ -121,7 +109,7 @@ ms.lasthandoff: 12/22/2017
 |<xref:System.Windows.Controls.StackPanel>|3210|  
 |<xref:System.Windows.Controls.VirtualizingStackPanel>|46|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [WPF アプリケーションのパフォーマンスの最適化](../../../../docs/framework/wpf/advanced/optimizing-wpf-application-performance.md)  
  [アプリケーション パフォーマンスの計画](../../../../docs/framework/wpf/advanced/planning-for-application-performance.md)  
  [ハードウェアの活用](../../../../docs/framework/wpf/advanced/optimizing-performance-taking-advantage-of-hardware.md)  

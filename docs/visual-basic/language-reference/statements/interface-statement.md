@@ -1,24 +1,17 @@
 ---
 title: Interface ステートメント (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Interface
 helpviewer_keywords:
 - interface statement [Visual Basic]
 - interfaces [Visual Basic], interface definition
 ms.assetid: 8997af73-bda3-4f79-bd41-ca396b610260
-caps.latest.revision: 26
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 9418dc86ac6947ae951cb8fb757aed6e092a6668
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: f4282778db2d95f701cadb8bb98ec8ca982ba663
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="interface-statement-visual-basic"></a>Interface ステートメント (Visual Basic)
 インターフェイスの名前を宣言し、インターフェイスに含まれるメンバーの定義を紹介します。  
@@ -43,22 +36,22 @@ End Interface
   
 |用語|定義|  
 |---|---|  
-|`attributelist`|省略可能です。 参照してください[属性一覧](../../../visual-basic/language-reference/statements/attribute-list.md)です。|  
-|`accessmodifier`|省略可能です。 次のいずれかの値を指定します。<br /><br /> -   [パブリック](../../../visual-basic/language-reference/modifiers/public.md)<br />-   [保護されています。](../../../visual-basic/language-reference/modifiers/protected.md)<br />-   [Friend](../../../visual-basic/language-reference/modifiers/friend.md)<br />-   [プライベート](../../../visual-basic/language-reference/modifiers/private.md)<br />-   `Protected Friend`<br /><br /> 参照してください[Visual Basic でのレベルのアクセス](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)です。|  
-|`Shadows`|省略可能です。 参照してください[Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)です。|  
-|`name`|必須です。 このインターフェイスの名前です。 参照してください[宣言された要素の名前](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)です。|  
-|`Of`|省略可能です。 ジェネリック インターフェイスは、これを指定します。|  
+|`attributelist`|任意。 参照してください[属性一覧](../../../visual-basic/language-reference/statements/attribute-list.md)です。|  
+|`accessmodifier`|任意。 次のいずれかの値を指定します。<br /><br /> -   [パブリック](../../../visual-basic/language-reference/modifiers/public.md)<br />-   [保護されています。](../../../visual-basic/language-reference/modifiers/protected.md)<br />-   [Friend](../../../visual-basic/language-reference/modifiers/friend.md)<br />-   [プライベート](../../../visual-basic/language-reference/modifiers/private.md)<br />-   `Protected Friend`<br /><br /> 参照してください[Visual Basic でのレベルのアクセス](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)です。|  
+|`Shadows`|任意。 参照してください[Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)です。|  
+|`name`|必須。 このインターフェイスの名前です。 参照してください[宣言された要素の名前](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)です。|  
+|`Of`|任意。 ジェネリック インターフェイスは、これを指定します。|  
 |`typelist`|使用するかどうかは必ず、[の](../../../visual-basic/language-reference/statements/of-clause.md)キーワード。 このインターフェイスの型パラメーターの一覧です。 必要に応じて、型パラメーターごとに宣言できますバリアントを使用して`In`と`Out`ジェネリック修飾子です。 参照してください[のリストを入力](../../../visual-basic/language-reference/statements/type-list.md)です。|  
-|`Inherits`|省略可能です。 このインターフェイスが別のインターフェイスまたはインターフェイスのメンバーと属性を継承することを示します。 参照してください[Inherits ステートメント](../../../visual-basic/language-reference/statements/inherits-statement.md)です。|  
+|`Inherits`|任意。 このインターフェイスが別のインターフェイスまたはインターフェイスのメンバーと属性を継承することを示します。 参照してください[Inherits ステートメント](../../../visual-basic/language-reference/statements/inherits-statement.md)です。|  
 |`interfacenames`|`Inherits` ステートメントを使用する場合は必ず指定します。 このインターフェイスの派生元のインターフェイスの名前。|  
-|`modifiers`|省略可能です。 定義するインターフェイス メンバーの適切な修飾子。|  
-|`Property`|省略可能です。 インターフェイスのメンバーであるプロパティを定義します。|  
-|`Function`|省略可能です。 定義、`Function`インターフェイスのメンバーであるプロシージャです。|  
-|`Sub`|省略可能です。 定義、`Sub`インターフェイスのメンバーであるプロシージャです。|  
-|`Event`|省略可能です。 インターフェイスのメンバーであるイベントを定義します。|  
-|`Interface`|省略可能です。 このインターフェイス内で入れ子になったであるインターフェイスを定義します。 入れ子になったインターフェイスの定義が終了する必要があります、`End Interface`ステートメントです。|  
-|`Class`|省略可能です。 インターフェイスのメンバーであるクラスを定義します。 クラスの定義が終了する必要があります、`End Class`ステートメントです。|  
-|`Structure`|省略可能です。 インターフェイスのメンバーである構造体を定義します。 構造体のメンバーの定義がで終了する必要があります、`End Structure`ステートメントです。|  
+|`modifiers`|任意。 定義するインターフェイス メンバーの適切な修飾子。|  
+|`Property`|任意。 インターフェイスのメンバーであるプロパティを定義します。|  
+|`Function`|任意。 定義、`Function`インターフェイスのメンバーであるプロシージャです。|  
+|`Sub`|任意。 定義、`Sub`インターフェイスのメンバーであるプロシージャです。|  
+|`Event`|任意。 インターフェイスのメンバーであるイベントを定義します。|  
+|`Interface`|任意。 このインターフェイス内で入れ子になったであるインターフェイスを定義します。 入れ子になったインターフェイスの定義が終了する必要があります、`End Interface`ステートメントです。|  
+|`Class`|任意。 インターフェイスのメンバーであるクラスを定義します。 クラスの定義が終了する必要があります、`End Class`ステートメントです。|  
+|`Structure`|任意。 インターフェイスのメンバーである構造体を定義します。 構造体のメンバーの定義がで終了する必要があります、`End Structure`ステートメントです。|  
 |`membername`|各プロパティ、プロシージャ、イベント、インターフェイス、クラス、またはインターフェイスのメンバーとして定義された構造に必要です。 メンバーの名前。|  
 |`End Interface`|`Interface` の定義を終了します。|  
   

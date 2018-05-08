@@ -1,11 +1,6 @@
 ---
-title: "Join 句 (Visual Basic)"
+title: Join 句 (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.QueryJoinIn
 - vb.QueryJoin
@@ -15,14 +10,11 @@ helpviewer_keywords:
 - Join statement [Visual Basic]
 - Join clause [Visual Basic]
 ms.assetid: 6dd37936-b27c-4e00-98ad-154b23f4de64
-caps.latest.revision: "19"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 2bb25c9dac8994e7f975539c1d036f0f0d9d239e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 2186954ab6536988271629c4feba0a40563bfc3f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="join-clause-visual-basic"></a>Join 句 (Visual Basic)
 2 つのコレクションを単一のコレクションに結合します。 結合操作を一致するキーに基づいて、使用、`Equals`演算子。  
@@ -38,19 +30,19 @@ On key1 Equals key2 [ And key3 Equals key4 [... ]
   
 ## <a name="parts"></a>指定項目  
  `element`  
- 必須です。 結合するコレクションの制御変数にします。  
+ 必須。 結合するコレクションの制御変数にします。  
   
  `collection`  
- 必須です。 左側にあるで識別されるコレクションと結合するコレクション、`Join`演算子。 A`Join`句は、別の入れ子にすることができます`Join`句、または、`Group Join`句。  
+ 必須。 左側にあるで識別されるコレクションと結合するコレクション、`Join`演算子。 A`Join`句は、別の入れ子にすることができます`Join`句、または、`Group Join`句。  
   
  `joinClause`  
- 省略可能です。 1 つ以上の追加`Join`をさらに句がクエリを変更します。  
+ 任意。 1 つ以上の追加`Join`をさらに句がクエリを変更します。  
   
  `groupJoinClause`  
- 省略可能です。 1 つ以上の追加`Group Join`をさらに句がクエリを変更します。  
+ 任意。 1 つ以上の追加`Group Join`をさらに句がクエリを変更します。  
   
- `key1``Equals``key2`  
- 必ず指定します。 結合するコレクションのキーを識別します。 使用する必要があります、`Equals`演算子を結合するコレクションからキーを比較します。 使用して結合条件を組み合わせることができます、`And`演算子を複数のキーを識別します。 `key1`左側にあるコレクションからある必要があります、`Join`演算子。 `key2`右側にあるコレクションからある必要があります、`Join`演算子。  
+ `key1` `Equals` `key2`  
+ 必須。 結合するコレクションのキーを識別します。 使用する必要があります、`Equals`演算子を結合するコレクションからキーを比較します。 使用して結合条件を組み合わせることができます、`And`演算子を複数のキーを識別します。 `key1` 左側にあるコレクションからある必要があります、`Join`演算子。 `key2` 右側にあるコレクションからある必要があります、`Join`演算子。  
   
  結合条件で使用されるキーには、コレクションの 1 つ以上の項目を含む式を指定できます。 ただし、それぞれのキー式は、該当するコレクションの項目のみを含めることができます。  
   

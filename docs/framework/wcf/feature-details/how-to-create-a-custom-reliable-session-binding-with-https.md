@@ -1,30 +1,18 @@
 ---
-title: "方法 : カスタムの信頼できるセッションによる HTTPS を使用したバインディングを作成する"
-ms.custom: 
+title: '方法 : カスタムの信頼できるセッションによる HTTPS を使用したバインディングを作成する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: fa772232-da1f-4c66-8c94-e36c0584b549
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e56b54b5d49fcd307821211e7db858299f9f446d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b3699593f783fff1227ec51194956e0cc8577dd8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-a-custom-reliable-session-binding-with-https"></a>方法 : カスタムの信頼できるセッションによる HTTPS を使用したバインディングを作成する
 
 ここでは、信頼できるセッションを使用した SSL (Secure Sockets Layer) トランスポート セキュリティの使用方法について説明します。 HTTPS 上で信頼できるセッションを使用するには、信頼できるセッションと HTTPS トランスポートを使用するカスタム バインドを作成する必要があります。 信頼できるセッションを有効にする場合、コードを使用して強制的に行う、または構成ファイルで宣言します。 この手順では、クライアントとサービスの構成ファイルを使用して、信頼できるセッションを有効にして、 [  **\<httpsTransport >** ](../../../../docs/framework/configure-apps/file-schema/wcf/httpstransport.md)要素。
 
-この手順の重要な部分は、 **\<エンドポイント >**構成要素を含む、`bindingConfiguration`という名前のカスタム バインド構成を参照する属性を`reliableSessionOverHttps`です。 [ **\<バインディング >** ](../../../../docs/framework/misc/binding.md)構成要素を含めることによって、信頼できるセッションと HTTPS トランスポートを使用することを指定するには、この名前を参照して **\<reliableSession >**と **\<httpsTransport >**要素。
+この手順の重要な部分は、 **\<エンドポイント >** 構成要素を含む、`bindingConfiguration`という名前のカスタム バインド構成を参照する属性を`reliableSessionOverHttps`です。 [ **\<バインディング >** ](../../../../docs/framework/misc/binding.md)構成要素を含めることによって、信頼できるセッションと HTTPS トランスポートを使用することを指定するには、この名前を参照して **\<reliableSession >** と **\<httpsTransport >** 要素。
 
 この例の元のコピーを次を参照してください。[カスタム バインド信頼できるセッションが HTTPS 経由で](../../../../docs/framework/wcf/samples/custom-binding-reliable-session-over-https.md)です。
 

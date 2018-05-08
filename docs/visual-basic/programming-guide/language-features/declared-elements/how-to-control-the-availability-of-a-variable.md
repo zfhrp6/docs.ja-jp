@@ -1,12 +1,6 @@
 ---
-title: "方法: 変数の可用性を制御する (Visual Basic)"
-ms.custom: 
+title: '方法: 変数の可用性を制御する (Visual Basic)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - access levels, declared elements
 - Private keyword [Visual Basic], accessing variables
@@ -17,14 +11,11 @@ helpviewer_keywords:
 - declared elements [Visual Basic], access level
 - Protected keyword [Visual Basic], accessing variables
 ms.assetid: eaf4f073-7922-43ce-ae1e-90ff376ae947
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 004fb101661fadeaee084e1f9374ca8332ac7234
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 27ee5d3405ea24c0754cffa85e9b89b2ac561e42
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-control-the-availability-of-a-variable-visual-basic"></a>方法: 変数の可用性を制御する (Visual Basic)
 指定して、変数の可用性を制御するその*アクセス レベル*です。 アクセス レベルは、どのようなコードは、変数に対する読み取りまたは書き込みするアクセス許可を決定します。  
@@ -53,7 +44,7 @@ ms.lasthandoff: 11/21/2017
   
      読み取りまたはアセンブリと相互運用する任意のコードから変数への書き込みことができます。  
   
- または  
+ - または -  
   
 1.  ローカル変数では、配置、`Dim`変数、プロシージャ内のステートメント。  
   

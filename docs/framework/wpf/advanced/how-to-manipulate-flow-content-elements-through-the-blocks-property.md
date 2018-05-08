@@ -1,13 +1,6 @@
 ---
-title: "方法 : Blocks プロパティを介してフロー コンテンツ要素を操作する"
-ms.custom: 
+title: '方法 : Blocks プロパティを介してフロー コンテンツ要素を操作する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,16 +10,11 @@ helpviewer_keywords:
 - properties [WPF], Blocks [WPF], manipulating flow content elements
 - Blocks property [WPF], manipulating flow content elements
 ms.assetid: aeda4ece-b979-4818-a093-ef938e908751
-caps.latest.revision: "6"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: d995e9a3a50e733a87a203f94b97a937560a0141
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 74710c4a6dd58cf2836cd7671a3e39401a5ea774
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-manipulate-flow-content-elements-through-the-blocks-property"></a>方法 : Blocks プロパティを介してフロー コンテンツ要素を操作する
 これらの例では、を介してフロー コンテンツ要素に対して実行できる一般的な操作の点を示しています、**ブロック**プロパティです。 このプロパティを使用してアイテムの追加し、削除を<xref:System.Windows.Documents.BlockCollection>です。 フロー コンテンツ要素で、その機能、**ブロック**プロパティが含まれます。  
@@ -73,7 +61,7 @@ ms.lasthandoff: 12/22/2017
  [!code-csharp[FlowDocumentSnippets#_SectionBlocksClear](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml.cs#_sectionblocksclear)]
  [!code-vb[FlowDocumentSnippets#_SectionBlocksClear](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentSnippets/visualbasic/window1.xaml.vb#_sectionblocksclear)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Documents.BlockCollection>  
  <xref:System.Windows.Documents.InlineCollection>  
  <xref:System.Windows.Documents.ListItemCollection>  

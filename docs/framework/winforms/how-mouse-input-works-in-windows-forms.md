@@ -1,27 +1,15 @@
 ---
-title: "Windows フォームにおけるマウス入力のしくみ"
-ms.custom: 
+title: Windows フォームにおけるマウス入力のしくみ
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - Windows Forms, mouse input
 - mouse [Windows Forms], input
 ms.assetid: 48fc5240-75a6-44bf-9fce-6aa21b49705a
-caps.latest.revision: "16"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 388fd8d3e7f23dc55d46c5a097be99e9f1c34ab0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 265693eef3008362994ad04d9faaf8e20554d13e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-mouse-input-works-in-windows-forms"></a>Windows フォームにおけるマウス入力のしくみ
 受信とマウス入力の処理は、すべての Windows アプリケーションの重要な部分です。 アプリケーションで操作を実行するマウス イベントを処理するか、ヒット テストの実行にマウスの位置情報やその他のアクションを使用します。 さらに、アプリケーションでは、コントロールがマウス入力を処理する方法を変更することができます。 このトピックでは、これらのマウス イベントの詳細と、取得して、マウスのシステム設定を変更する方法について説明します。 イベントとする、マウスのクリックしてイベントの順序を発生するマウスで提供されるデータの詳細についてを参照してください[Windows フォームにおけるマウス イベント](../../../docs/framework/winforms/mouse-events-in-windows-forms.md)です。  
@@ -63,7 +51,7 @@ ms.lasthandoff: 12/22/2017
 |<xref:System.Windows.Forms.SystemInformation.MouseWheelScrollDelta%2A>|1 回のマウス ホイールの回転の増分の差分値を取得します。|  
 |<xref:System.Windows.Forms.SystemInformation.MouseWheelScrollLines%2A>|マウス ホイールを回転したときにスクロールする行数を取得します。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Windows フォーム アプリケーションにおけるマウス入力](../../../docs/framework/winforms/mouse-input-in-a-windows-forms-application.md)  
  [Windows フォームにおけるマウスのキャプチャ](../../../docs/framework/winforms/mouse-capture-in-windows-forms.md)  
  [Windows フォームにおけるマウス ポインター](../../../docs/framework/winforms/mouse-pointers-in-windows-forms.md)

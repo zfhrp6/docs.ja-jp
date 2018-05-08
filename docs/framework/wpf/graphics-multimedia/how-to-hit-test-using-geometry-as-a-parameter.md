@@ -1,13 +1,6 @@
 ---
-title: "方法 : パラメーターとしてジオメトリを使用してヒット テストを実行する"
-ms.custom: 
+title: '方法 : パラメーターとしてジオメトリを使用してヒット テストを実行する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,16 +9,11 @@ helpviewer_keywords:
 - visual objects [WPF], hit tests on
 - Geometry objects [WPF], hit tests on visual objects [WPF]
 ms.assetid: 6c8bdbf2-19e0-4fbb-bf89-c1252b2ebc61
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 1b5c5bb47e3f435419bcf3c472f052260adec7c0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 57b04f7f8c9bcc21f6b970c2981c2bab51044c10
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-hit-test-using-geometry-as-a-parameter"></a>方法 : パラメーターとしてジオメトリを使用してヒット テストを実行する
 この例を使用してビジュアル オブジェクトに対してヒット テストを実行する方法を示しています、<xref:System.Windows.Media.Geometry>ヒットとしてパラメーターをテストします。  
@@ -49,6 +37,6 @@ ms.lasthandoff: 12/22/2017
 > [!NOTE]
 >  <xref:System.Windows.Media.HitTestResult>交差部分の詳細はときに、コールバックを呼び出すことはできません<xref:System.Windows.Media.IntersectionDetail.Empty>です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ビジュアル層でのヒット テスト](../../../../docs/framework/wpf/graphics-multimedia/hit-testing-in-the-visual-layer.md)  
  [ビジュアル内のジオメトリのヒット テストを実行する](../../../../docs/framework/wpf/graphics-multimedia/how-to-hit-test-geometry-in-a-visual.md)

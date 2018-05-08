@@ -1,13 +1,6 @@
 ---
-title: "基本的なクエリ操作 (Visual Basic)"
-ms.custom: 
+title: 基本的なクエリ操作 (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - data sources [LINQ in Visual Basic]
 - Join clause [LINQ in Visual Basic]
@@ -22,14 +15,11 @@ helpviewer_keywords:
 - grouping data [LINQ in Visual Basic]
 - Select clause [LINQ in Visual Basic]
 ms.assetid: 1146f6d0-fcb8-4f4d-8223-c9db52620d21
-caps.latest.revision: "37"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 794d77a18b50cc1667fddbad17c46735ae91be26
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 5587a60e97464324659b325e38a18ac25488d30d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="basic-query-operations-visual-basic"></a>基本的なクエリ操作 (Visual Basic)
 このトピックでは、簡単な概要を[!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)]Visual Basic、および一般的な種類のクエリで実行する操作の一部に式。 詳細については、次のトピックを参照してください。  
@@ -96,7 +86,7 @@ Where cust.City = "London" Or cust.City = "Paris"
   
      [!code-vb[VbLINQBasicOps#6](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/basic-query-operations_6.vb)]  
   
-     または  
+     - または -  
   
 -   結果に含めるを作成し、型のインスタンスを初期化する特定のフィールドを含んでいる名前付きの型を定義、`Select`句。 これらは、返されますが、コレクションの外部の個々 の結果を使用する必要がある場合にのみ、またはメソッドの呼び出しでパラメーターとして渡すことがある場合は、このオプションを使用します。 型`londonCusts5`次の例では、IEnumerable (Of NamePhone)。  
   
@@ -118,7 +108,7 @@ Where cust.City = "London" Or cust.City = "Paris"
   
  [!code-vb[VbLINQBasicOps#10](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/basic-query-operations_10.vb)]  
   
- `Group Join`同じように単一の階層コレクションにコレクションを結合、 `LEFT JOIN` SQL にします。 詳細については、次を参照してください。 [Join 句](../../../../visual-basic/language-reference/queries/join-clause.md)と[Group Join 句](../../../../visual-basic/language-reference/queries/group-join-clause.md)です。  
+ `Group Join` 同じように単一の階層コレクションにコレクションを結合、 `LEFT JOIN` SQL にします。 詳細については、次を参照してください。 [Join 句](../../../../visual-basic/language-reference/queries/join-clause.md)と[Group Join 句](../../../../visual-basic/language-reference/queries/group-join-clause.md)です。  
   
 ## <a name="grouping-data-group-by"></a>データのグループ化 (Group By)  
  追加することができます、`Group By`句、クエリ結果の要素の 1 つまたは複数のフィールドに従って要素をグループ化します。 たとえば、次のコードでは、クラス、年ごと受講者をグループ化します。  

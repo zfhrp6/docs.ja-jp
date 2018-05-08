@@ -1,32 +1,20 @@
 ---
 title: トランスポート セキュリティと Windows 認証
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 96dd26e2-46e7-4de0-9a29-4fcb05bf187b
-caps.latest.revision: 17
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload:
-- dotnet
-ms.openlocfilehash: 5effb18435241b00c3036fd23e15ef5ce485b646
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: d291cd3d00f8d0d40e0b8543d5347e1509cb8b90
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="transport-security-with-windows-authentication"></a>トランスポート セキュリティと Windows 認証
-次のシナリオでは、Windows セキュリティによって保護されている [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] クライアントおよびサービスを示します。 プログラミングの詳細については、次を参照してください。[する方法: Windows 資格情報でサービスをセキュリティで保護された](../../../../docs/framework/wcf/how-to-secure-a-service-with-windows-credentials.md)です。  
+次のシナリオでは、Windows Communication Foundation (WCF) クライアントと Windows セキュリティによって保護されたサービスを示します。 プログラミングの詳細については、次を参照してください。[する方法: Windows 資格情報でサービスをセキュリティで保護された](../../../../docs/framework/wcf/how-to-secure-a-service-with-windows-credentials.md)です。  
   
  イントラネットの Web サービスでは人事情報を表示しています。 クライアントは Windows フォーム アプリケーションです。 このアプリケーションは、Kerberos コントローラーで保護されたドメインに展開されています。  
   
@@ -35,7 +23,7 @@ ms.lasthandoff: 04/30/2018
 |特徴|説明|  
 |--------------------|-----------------|  
 |セキュリティ モード|Transport|  
-|相互運用性|[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のみ|  
+|相互運用性|WCF のみ|  
 |認証 (サーバー)<br /><br /> 認証 (クライアント)|○ (Windows 統合認証を使用)<br /><br /> ○ (Windows 統合認証を使用)|  
 |整合性|はい|  
 |機密性|はい|  

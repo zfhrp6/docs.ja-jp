@@ -1,13 +1,7 @@
 ---
-title: "DateTime と DateTimeOffset 間の変換"
-ms.custom: 
+title: DateTime と DateTimeOffset 間の変換
 ms.date: 04/10/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -22,25 +16,20 @@ helpviewer_keywords:
 - Date data type, converting
 - local time conversions
 ms.assetid: b605ff97-0c45-4c24-833f-4c6a3e8be64c
-caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 2055df26618664ee130be417599f4ec46e439444
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: dec0e5138ecf08783f11d21cd28d7291d27ea68d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="converting-between-datetime-and-datetimeoffset"></a>DateTime と DateTimeOffset 間の変換
 
 <xref:System.DateTimeOffset>構造により、高い安全性とタイム ゾーンに対応、<xref:System.DateTime>構造体、<xref:System.DateTime>パラメーターは、メソッドの呼び出しでよく使用されます。 このため、変換機能を<xref:System.DateTimeOffset>値<xref:System.DateTime>値し、その逆の場合は特に重要です。 このトピックでは、できるだけ多くのタイム ゾーン情報を保持する方法でこれらの変換を実行する方法を示します。
 
 > [!NOTE]
-> 両方の<xref:System.DateTime>と<xref:System.DateTimeOffset>型タイム ゾーンの時刻を表す場合に制限事項があります。 その<xref:System.DateTime.Kind%2A>プロパティ、<xref:System.DateTime>は世界協定時刻 (UTC) と、システムのローカル タイム ゾーンだけを反映するようにできます。 <xref:System.DateTimeOffset>utc を基準と時刻のオフセットしますが、オフセットを実際のタイム ゾーンが属しているが反映されないが反映されます。 時刻の値とタイム ゾーンのサポートに関する詳細については、「[選択の間で DateTime DateTimeOffset TimeSpan、および TimeZoneInfo](../../../docs/standard/datetime/choosing-between-datetime.md)です。
+> 両方の<xref:System.DateTime>と<xref:System.DateTimeOffset>型タイム ゾーンの時刻を表す場合に制限事項があります。 その<xref:System.DateTime.Kind%2A>プロパティ、<xref:System.DateTime>は世界協定時刻 (UTC) と、システムのローカル タイム ゾーンだけを反映するようにできます。 <xref:System.DateTimeOffset> utc を基準と時刻のオフセットしますが、オフセットを実際のタイム ゾーンが属しているが反映されないが反映されます。 時刻の値とタイム ゾーンのサポートに関する詳細については、「[選択の間で DateTime DateTimeOffset TimeSpan、および TimeZoneInfo](../../../docs/standard/datetime/choosing-between-datetime.md)です。
 
 ## <a name="conversions-from-datetime-to-datetimeoffset"></a>DateTime から DateTimeOffset への変換
 

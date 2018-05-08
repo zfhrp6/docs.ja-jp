@@ -1,10 +1,6 @@
 ---
 title: NotOverridable (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.NotOverridable
 - NotOverridable
@@ -20,14 +16,11 @@ helpviewer_keywords:
 - methods [Visual Basic], sealed
 - properties [Visual Basic], overriding
 ms.assetid: 66ec6984-f5f5-4857-b362-6a3907aaf9e0
-caps.latest.revision: "15"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 6fc5fb006b36cda1b6ad0e128604bc3bb427fd94
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 3fae1a4b587c379dbc459cbc973982851e713785
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="notoverridable-visual-basic"></a>NotOverridable (Visual Basic)
 プロパティまたはプロシージャを派生クラスでオーバーライドできないことを指定します。  
@@ -46,7 +39,7 @@ ms.lasthandoff: 11/21/2017
   
  指定することはできません`NotOverridable`と共に`MustOverride`、 `Overridable`、または`Shared`同じ宣言内で。  
   
-## <a name="usage"></a>使用方法  
+## <a name="usage"></a>使用法  
  `NotOverridable` 修飾子は、次のコンテキストで使用できます。  
   
  [Function ステートメント](../../../visual-basic/language-reference/statements/function-statement.md)  

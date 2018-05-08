@@ -1,10 +1,6 @@
 ---
-title: "データ型変換関数 (Visual Basic)"
+title: データ型変換関数 (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.CUShort
 - vb.csng
@@ -85,14 +81,11 @@ helpviewer_keywords:
 - rounding numbers [Visual Basic], banker's rounding
 - type conversion [Visual Basic], Visual Basic vs. .NET Framework
 ms.assetid: d9d8d165-f967-44ff-a6cd-598e4740a99e
-caps.latest.revision: "22"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 117cd4ce038a533715bbc86558545f0f223dd149
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: c9222bdb31f4fd7c792d5a50c100067e29e9d537
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="type-conversion-functions-visual-basic"></a>データ型変換関数 (Visual Basic)
 これらの関数は、コンパイルされたインラインで、変換コードは、式を評価するコードの一部を意味します。 場合によってパフォーマンスを向上させると、変換を行うプロシージャへの呼び出しはありません。 各関数は、式を特定のデータ型を変換します。  
@@ -120,7 +113,7 @@ CUShort(expression)
   
 ## <a name="part"></a>パーツ  
  `expression`  
- 必須です。 ソースのデータ型の任意の式。  
+ 必須。 ソースのデータ型の任意の式。  
   
 ## <a name="return-value-data-type"></a>戻り値のデータ型  
  関数名は、次の表に示すように、返されると、値のデータ型を決定します。  
@@ -159,9 +152,9 @@ CUShort(expression)
   
      場合は、小数部分が正確には 0.5、整数の変換関数に丸める、近い偶数の整数。 たとえば、0.5 は、0、および 1.5 2.5 は 2 にどちらに切り上げられます。 これとも呼ばれます*銀行型丸めが*、その目的は、このような多くの数値をまとめて追加するときに蓄積する偏りを調整するとします。  
   
-     `CInt``CLng`は異なる、<xref:Microsoft.VisualBasic.Conversion.Int%2A>と<xref:Microsoft.VisualBasic.Conversion.Fix%2A>切り上げるには、数値の小数部ではなく、切り捨て関数。 また、`Fix`と`Int`を渡すと、同じデータ型の値を常に返します。  
+     `CInt` `CLng`は異なる、<xref:Microsoft.VisualBasic.Conversion.Int%2A>と<xref:Microsoft.VisualBasic.Conversion.Fix%2A>切り上げるには、数値の小数部ではなく、切り捨て関数。 また、`Fix`と`Int`を渡すと、同じデータ型の値を常に返します。  
   
--   **日付/時刻の変換。** 使用して、<xref:Microsoft.VisualBasic.Information.IsDate%2A>値を日付と時刻に変換できるかどうかを判断する関数。 `CDate`リテラルの日付と時刻リテラルが数値以外の値を認識します。 Visual Basic 6.0 を変換する`Date`値を`Date`Visual Basic 2005 での値またはそれ以降のバージョンでは、使用できます、<xref:System.DateTime.FromOADate%2A?displayProperty=nameWithType>メソッドです。  
+-   **日付/時刻の変換。** 使用して、<xref:Microsoft.VisualBasic.Information.IsDate%2A>値を日付と時刻に変換できるかどうかを判断する関数。 `CDate` リテラルの日付と時刻リテラルが数値以外の値を認識します。 Visual Basic 6.0 を変換する`Date`値を`Date`Visual Basic 2005 での値またはそれ以降のバージョンでは、使用できます、<xref:System.DateTime.FromOADate%2A?displayProperty=nameWithType>メソッドです。  
   
 -   **ニュートラル日付/時刻値。** [Date データ型](../../../visual-basic/language-reference/data-types/date-data-type.md)常に日付と時刻の両方の情報が含まれます。 型変換のため、Visual Basic 1/1/0001 (1 年 1 月、1) であると見なす、*ニュートラル値*日付、および 00時 00分: 00 (午前 0 時) に依存しない値であることにします。 変換する場合、`Date`値を文字列に`CStr`結果の文字列に中立的な値は含まれません。 変換する場合など、`#January 1, 0001 9:30:00#`文字列に、結果は"9時 30分: 00 AM"以外の場合は、日付情報は表示されません。 ただし、日付情報は、元にまだ存在している`Date`値し、などの関数で回復できる<xref:Microsoft.VisualBasic.DateAndTime.DatePart%2A>関数。  
   
@@ -194,7 +187,7 @@ CUShort(expression)
  [!code-vb[VbVbalrFunctions#4](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/type-conversion-functions_4.vb)]  
   
 ## <a name="cdate-example"></a>Cdate 関数の例  
- 次の例では、`CDate`関数への文字列に変換する`Date`値。 一般に、ハードコーディングされた日付と時刻文字列としてのこの例に示す) は推奨されません。 日付リテラルと #Feb 12、&#1969; など、時刻のリテラルを使用し、# 4時 45分: 23 PM #、代わりにします。  
+ 次の例では、`CDate`関数への文字列に変換する`Date`値。 一般に、ハードコーディングされた日付と時刻文字列としてのこの例に示す) は推奨されません。 日付リテラルと #Feb 12、1969 # など、時刻のリテラルを使用し、# 4時 45分: 23 PM #、代わりにします。  
   
  [!code-vb[VbVbalrFunctions#5](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/type-conversion-functions_5.vb)]  
   
@@ -245,7 +238,7 @@ CUShort(expression)
   
  [!code-vb[VbVbalrFunctions#15](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/type-conversion-functions_15.vb)]  
   
- `CStr`常に表示、`Date`現在のロケールのたとえば、標準の短い形式の値"2003 年 6 月 15/4時 35分: 47 PM"です。 ただし、`CStr`抑制、*ニュートラル値*の日付と時刻の 00時 00分: 00 の 1/1/0001 です。  
+ `CStr` 常に表示、`Date`現在のロケールのたとえば、標準の短い形式の値"2003 年 6 月 15/4時 35分: 47 PM"です。 ただし、`CStr`抑制、*ニュートラル値*の日付と時刻の 00時 00分: 00 の 1/1/0001 です。  
   
  によって返される値の詳細については`CStr`を参照してください[CStr 関数の戻り値](../../../visual-basic/language-reference/functions/return-values-for-the-cstr-function.md)です。  
   

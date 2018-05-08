@@ -1,13 +1,6 @@
 ---
-title: "方法 : Windows フォームの MonthCalendar コントロールを使用して特定の日付を太字で表示する"
-ms.custom: 
+title: '方法 : Windows フォームの MonthCalendar コントロールを使用して特定の日付を太字で表示する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -18,16 +11,11 @@ helpviewer_keywords:
 - GetDayBold event
 - MonthCalendar control [Windows Forms], dates displayed in bold
 ms.assetid: 8b20db5b-8118-4825-90e8-2c45c186ac7d
-caps.latest.revision: "13"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 141d943c4f4dfc3976e66e13e7c0975aba3f1687
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 0ee89fb4cfb6ddbf975eb0e85e7dd1bab30f08d1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-display-specific-days-in-bold-with-the-windows-forms-monthcalendar-control"></a>方法 : Windows フォームの MonthCalendar コントロールを使用して特定の日付を太字で表示する
 Windows フォーム<xref:System.Windows.Forms.MonthCalendar>コントロールは、単数形の日付として、または繰り返しごとに、太字での日数を表示できます。 休日や週末などの特別な日を目立たせるこれを行う場合があります。  
@@ -138,7 +126,7 @@ Windows フォーム<xref:System.Windows.Forms.MonthCalendar>コントロール�
     monthCalendar1->UpdateBoldedDates();  
     ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [MonthCalendar コントロール](../../../../docs/framework/winforms/controls/monthcalendar-control-windows-forms.md)  
  [方法: Windows フォームの MonthCalendar コントロールで日付の範囲を選択する](../../../../docs/framework/winforms/controls/how-to-select-a-range-of-dates-in-the-windows-forms-monthcalendar-control.md)  
  [方法: Windows フォームの MonthCalendar コントロールの外観を変更する](../../../../docs/framework/winforms/controls/how-to-change-monthcalendar-control-appearance.md)  

@@ -1,28 +1,14 @@
 ---
 title: サービス拒否
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - denial of service [WCF]
 ms.assetid: dfb150f3-d598-4697-a5e6-6779e4f9b600
-caps.latest.revision: 12
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 4734407868d9dae2acc422c0f07aad57d42d4566
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 52a22d96e981ff10d444569465d8e74ddf890836
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="denial-of-service"></a>サービス拒否
 サービス拒否は、メッセージを処理できなくしたり、メッセージ処理を大幅に遅延させたりするなど、システムに過大な負荷が生じた場合に発生します。  
@@ -62,15 +48,15 @@ ms.lasthandoff: 04/30/2018
 ## <a name="invalid-implementations-of-iauthorizationpolicy-can-cause-service-hangs"></a>IAuthorizationPolicy の無効な実装によりサービスが停止する可能性がある  
  欠陥のある <xref:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate%2A> インターフェイスの実装で <xref:System.IdentityModel.Policy.IAuthorizationPolicy> メソッドを呼び出すと、サービスが停止する可能性があります。  
   
- 回避方法 : 信頼されたコードのみを使用します。 つまり、ユーザーが記述しテストしたコード、または信頼されたプロバイダーが提供するコードのみを使用します。 十分な検討を行わずに、<xref:System.IdentityModel.Policy.IAuthorizationPolicy> の信頼されない拡張をユーザーのコードに接続することを許可しないでください。 これは、サービスの実装で使用されるすべての拡張に当てはまります。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、アプリケーション コードと、拡張ポイントを使用して接続される外部コードを区別しません。  
+ 回避方法 : 信頼されたコードのみを使用します。 つまり、ユーザーが記述しテストしたコード、または信頼されたプロバイダーが提供するコードのみを使用します。 十分な検討を行わずに、<xref:System.IdentityModel.Policy.IAuthorizationPolicy> の信頼されない拡張をユーザーのコードに接続することを許可しないでください。 これは、サービスの実装で使用されるすべての拡張に当てはまります。 WCF 機能拡張ポイントを使用してアプリケーション コードと接続されている外部コードとの区別を行いません。  
   
 ## <a name="kerberos-maximum-token-size-may-need-resizing"></a>Kerberos の最大トークン サイズの変更が必要になる場合がある  
- クライアントが多数のグループ (実際の数はグループにより異なるが、約 900) に属している場合、メッセージ ヘッダーのブロックが 64 KB を超えると問題が発生する場合があります。 その場合は、サイズを増やし、最大 Kerberos トークン、Microsoft サポート記事に説明されて"[バッファー不足が IIS に接続するために Internet Explorer Kerberos 認証が動作しない](http://go.microsoft.com/fwlink/?LinkId=89176)"。 最大 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] メッセージ サイズを Kerberos トークンの増加に合わせて増加させることが必要な場合もあります。  
+ クライアントが多数のグループ (実際の数はグループにより異なるが、約 900) に属している場合、メッセージ ヘッダーのブロックが 64 KB を超えると問題が発生する場合があります。 その場合は、サイズを増やし、最大 Kerberos トークン、Microsoft サポート記事に説明されて"[バッファー不足が IIS に接続するために Internet Explorer Kerberos 認証が動作しない](http://go.microsoft.com/fwlink/?LinkId=89176)"。 また、Kerberos トークンの増加に合わせて WCF メッセージの最大サイズを大きく必要があります。  
   
 ## <a name="autoenrollment-results-in-multiple-certificates-with-same-subject-name-for-machine"></a>自動登録によってコンピューターに同一サブジェクト名の証明書が複数発生する  
  *自動登録*の機能は、[!INCLUDE[ws2003](../../../../includes/ws2003-md.md)]ユーザーとコンピューターの証明書を自動的に登録します。 この機能が有効になっているドメイン上にコンピューターがある場合、新しいコンピューターがネットワークに参加するたびに、クライアント認証を目的とする X.509 証明書が自動的に作成されローカル コンピューターの個人用証明書のストアに自動で挿入されます。 ただし、自動登録では、キャッシュに作成されたすべての証明書に同じサブジェクト名が使用されます。  
   
- この影響で、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスを自動登録のドメインで開始できない場合があります。 コンピューターの完全修飾ドメイン ネーム システム (DNS) 名を持つ証明書が複数あるため、既定サービスの X.509 資格情報検索の条件が不明確になり、このような問題が発生します。 この場合、1 つは自動登録で作成された証明書、もう 1 つは自己発行された証明書です。  
+ 影響は、WCF サービスが自動登録のドメインで開くには失敗することです。 コンピューターの完全修飾ドメイン ネーム システム (DNS) 名を持つ証明書が複数あるため、既定サービスの X.509 資格情報検索の条件が不明確になり、このような問題が発生します。 この場合、1 つは自動登録で作成された証明書、もう 1 つは自己発行された証明書です。  
   
  これを軽減するために参照をより正確な検索条件を使用して使用する正確な証明書、 [ \<serviceCredentials >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md)です。 たとえば、<xref:System.Security.Cryptography.X509Certificates.X509FindType.FindByThumbprint> オプションを使用し、一意の拇印 (ハッシュ) により証明書を指定します。  
   
@@ -82,7 +68,7 @@ ms.lasthandoff: 04/30/2018
 ## <a name="protect-configuration-files-with-acls"></a>ACL を使用して構成ファイルを保護する  
  [!INCLUDE[infocard](../../../../includes/infocard-md.md)] で発行されたトークンについては、必須およびオプションのクレームをコードおよび構成ファイルに指定できます。 これにより、対応する要素が、セキュリティ トークン サービスに送信される `RequestSecurityToken` メッセージに送出されます。 攻撃者は、コードまたは構成を変更して必須またはオプションのクレームを削除でき、対象サービスへのアクセスが許可されていないトークンをセキュリティ トークン サービスに発行させることができます。  
   
- これを防ぐには、コンピューターにアクセスして構成ファイルを変更する必要があります。 アクセス制御リスト (ACL: Access Control List) を使用して構成ファイルをセキュリティで保護します。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、コードが構成から読み込まれる前に、そのコードをアプリケーション ディレクトリまたはグローバル アセンブリ キャッシュに格納する必要があります。 ディレクトリの ACL を使用してディレクトリをセキュリティで保護します。  
+ これを防ぐには、コンピューターにアクセスして構成ファイルを変更する必要があります。 アクセス制御リスト (ACL: Access Control List) を使用して構成ファイルをセキュリティで保護します。 WCF では、コードに含まれるアプリケーションのディレクトリまたはグローバル アセンブリ キャッシュの構成から読み込まれるには、このようなコードが許可されます前に必要です。 ディレクトリの ACL を使用してディレクトリをセキュリティで保護します。  
   
 ## <a name="maximum-number-of-secure-sessions-for-a-service-is-reached"></a>1 つのサービスに対して、セキュリティで保護されたセッションが最大数に達する  
  クライアントがサービスにより正常に認証され、セキュリティで保護されたセッションがサービスと共に確立されると、クライアントがセッションをキャンセルするか、セッションの期限が切れるまで、サービスはそのセッションを追跡します。 セッションが確立されるたびに、1 つのサービスで同時にアクティブにできるセッションは上限に近づいていきます。 この上限に達した場合、1 つ以上のアクティブなセッションが期限切れになるかまたはクライアントによりキャンセルされるまで、そのサービスで新しいセッションの作成を試みるクライアントは拒否されます。 クライアントは 1 つのサービスで複数のセッションを保持できますが、その各セッションは上限に反映されます。  

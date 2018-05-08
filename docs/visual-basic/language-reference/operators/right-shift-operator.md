@@ -1,12 +1,6 @@
 ---
-title: '&gt;&gt;演算子 (Visual Basic)'
+title: '&gt;&gt; 演算子 (Visual Basic)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.>>
 helpviewer_keywords:
@@ -16,16 +10,13 @@ helpviewer_keywords:
 - operator >>
 - right shift operators [Visual Basic]
 ms.assetid: 054dc6a6-47d9-47ef-82da-cfa2b59fbf8f
-caps.latest.revision: 14
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 4eb0ed817c95905a679de5026bf6494eb72df078
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 9bb8e82b3f5451417fe1867d08b7601ee1acb036
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="gtgt-operator-visual-basic"></a>&gt;&gt;演算子 (Visual Basic)
+# <a name="gtgt-operator-visual-basic"></a>&gt;&gt; 演算子 (Visual Basic)
 ビット パターンに対して算術右シフトを実行します。  
   
 ## <a name="syntax"></a>構文  
@@ -36,13 +27,13 @@ result = pattern >> amount
   
 ## <a name="parts"></a>指定項目  
  `result`  
- 必須です。 整数値。 ビット パターンのシフトの結果。 データ型はのと同じ`pattern`です。  
+ 必須。 整数値。 ビット パターンのシフトの結果。 データ型はのと同じ`pattern`です。  
   
  `pattern`  
- 必須です。 整数の数値式です。 シフトするビット パターンです。 データ型は整数型である必要があります (`SByte`、 `Byte`、 `Short`、 `UShort`、 `Integer`、 `UInteger`、 `Long`、または`ULong`)。  
+ 必須。 整数の数値式です。 シフトするビット パターンです。 データ型は整数型である必要があります (`SByte`、 `Byte`、 `Short`、 `UShort`、 `Integer`、 `UInteger`、 `Long`、または`ULong`)。  
   
  `amount`  
- 必須です。 数値式です。 ビット パターンをシフトするビット数。 データ型にする必要があります`Integer`に拡大変換または`Integer`です。  
+ 必須。 数値式です。 ビット パターンをシフトするビット数。 データ型にする必要があります`Integer`に拡大変換または`Integer`です。  
   
 ## <a name="remarks"></a>コメント  
  算術シフトは循環、つまり、もう一方の端に結果の 1 つの端シフトは行われません。 算術右シフトの右端のビット位置を超えてシフトは破棄され、左端 (符号) のビットが左側にある空いたビット位置に反映されます。 つまり、`pattern`負の値を持つ、空いた位置は、いずれかに設定されます。 それ以外の場合 0 に設定されます。  
@@ -51,12 +42,12 @@ result = pattern >> amount
   
  Visual Basic マスクの値を防ぐには、結果が保持できるよりも多くのビット シフト、`amount`のデータ型に対応するサイズ マスクを持つ`pattern`します。 これらの値のバイナリとシフト数が使用されます。 サイズのマスクは次のとおりです。  
   
-|データ型`pattern`|サイズのマスク (10 進数)|サイズのマスク (16 進数)|  
+|データ型 `pattern`|サイズのマスク (10 進数)|サイズのマスク (16 進数)|  
 |----------------------------|---------------------------|-------------------------------|  
-|`SByte`, `Byte`|7|(& A) H00000007|  
-|`Short`, `UShort`|15|(& A) H0000000F|  
-|`Integer`, `UInteger`|31|(& A) H0000001F|  
-|`Long`, `ULong`|63|(& A) H0000003F|  
+|`SByte`, `Byte`|7|(&AMP; A) H00000007|  
+|`Short`, `UShort`|16|(&AMP; A) H0000000F|  
+|`Integer`, `UInteger`|31|(&AMP; A) H0000001F|  
+|`Long`, `ULong`|63|(&AMP; A) H0000003F|  
   
  場合`amount`の値は 0 が`result`の値と同一では、`pattern`です。 場合`amount`は負の値は符号なしの値として解釈され、適切なサイズ マスクとマスクします。  
   
@@ -72,15 +63,15 @@ result = pattern >> amount
   
  前の例の結果は次のとおりです。  
   
--   `result1`2560 (0000 1010 0000 0000)。  
+-   `result1` 2560 (0000 1010 0000 0000)。  
   
--   `result2`160 (0000 0000 1010 0000)。  
+-   `result2` 160 (0000 0000 1010 0000)。  
   
--   `result3`2 (0000 0000 0000 0010) です。  
+-   `result3` 2 (0000 0000 0000 0010) です。  
   
--   `result4`640 (0000 0010 1000 0000)。  
+-   `result4` 640 (0000 0010 1000 0000)。  
   
--   `result5`0 (シフト 15 桁) です。  
+-   `result5` 0 (シフト 15 桁) です。  
   
  Shift キーを押し、金額`result4`18 として計算されますが 2 と等しいと 15 です。  
   
@@ -90,9 +81,9 @@ result = pattern >> amount
   
  前の例の結果は次のとおりです。  
   
--   `negresult1`-512 (1111 1110 0000 0000) は、します。  
+-   `negresult1` -512 (1111 1110 0000 0000) は、します。  
   
--   `negresult2`-1 (符号ビットが反映されますです)。  
+-   `negresult2` -1 (符号ビットが反映されますです)。  
   
 ## <a name="see-also"></a>関連項目  
  [ビット シフト演算子](../../../visual-basic/language-reference/operators/bit-shift-operators.md)  

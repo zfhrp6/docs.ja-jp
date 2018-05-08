@@ -1,12 +1,6 @@
 ---
 title: + 演算子 (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.+
 helpviewer_keywords:
@@ -16,14 +10,11 @@ helpviewer_keywords:
 - strings [Visual Basic], concatenating
 - sum operator [Visual Basic]
 ms.assetid: 5694778f-0a2c-4539-8009-f66f318fb46d
-caps.latest.revision: 26
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: fb0d66db2d777c046ccec69acc1f2069d21baf6c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: ccf79c700cf852c0febb9c3f3464cbacdd39296e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="-operator-visual-basic"></a>+ 演算子 (Visual Basic)
 2 つの数値を加算または数値式の正の値を取得します。 2 つの文字列式を連結するも使用できます。  
@@ -40,7 +31,7 @@ ms.lasthandoff: 11/21/2017
   
 |用語|定義|  
 |---|---|  
-|`expression1`|必須です。 任意の数値または文字列式です。|  
+|`expression1`|必須。 任意の数値または文字列式です。|  
 |`expression2`|いない限り、必須、`+`演算子が負の値を計算します。 任意の数値または文字列式です。|  
   
 ## <a name="result"></a>結果  
@@ -63,26 +54,26 @@ ms.lasthandoff: 11/21/2017
 |式のデータ型|コンパイラによる処理|  
 |---|---|  
 |両方の式が数値データ型 (`SByte`、 `Byte`、 `Short`、 `UShort`、 `Integer`、 `UInteger`、 `Long`、 `ULong`、 `Decimal`、 `Single`、または`Double`)|追加します。 結果のデータ型は数値型のデータ型に適した`expression1`と`expression2`です。 「整数算術演算による」テーブルを参照して[データ型の演算子の結果](../../../visual-basic/language-reference/operators/data-types-of-operator-results.md)です。|  
-|型の両方の式は、します。`String`|連結します。|  
+|型の両方の式は、します。 `String`|連結します。|  
 |1 つの式は数値データ型で、もう一方の文字列|場合`Option Strict`は`On`、コンパイラ エラーを生成します。<br /><br /> 場合`Option Strict`は`Off`、暗黙的に変換、`String`に`Double`を追加します。<br /><br /> 場合、`String`に変換できない`Double`、スロー、<xref:System.InvalidCastException>例外。|  
 |1 つの式が数値データ型では、もう一方は[何も行われません](../../../visual-basic/language-reference/nothing.md)|追加すると`Nothing`値 0 にします。|  
-|1 つの式は、文字列であり、もう一方は`Nothing`|連結`Nothing`として値を持つ""です。|  
+|1 つの式は、文字列であり、もう一方は `Nothing`|連結`Nothing`として値を持つ""です。|  
   
  1 つの式がある場合、`Object`式では、Visual Basic は次の操作を実行します。  
   
 |式のデータ型|コンパイラによる処理|  
 |---|---|  
-|`Object`式は数値の値を保持し、もう一方の数値データ型|場合`Option Strict`は`On`、コンパイラ エラーを生成します。<br /><br /> 場合`Option Strict`は`Off`、しを追加します。|  
-|`Object`式は数値の値を保持し、もう一方の型の`String`|場合`Option Strict`は`On`、コンパイラ エラーを生成します。<br /><br /> 場合`Option Strict`は`Off`、暗黙的に変換、`String`に`Double`を追加します。<br /><br /> 場合、`String`に変換できない`Double`、スロー、<xref:System.InvalidCastException>例外。|  
-|`Object`式が文字列を保持し、もう一方の数値データ型|場合`Option Strict`は`On`、コンパイラ エラーを生成します。<br /><br /> 場合`Option Strict`は`Off`、文字列を暗黙的に変換`Object`に`Double`を追加します。<br /><br /> 場合、文字列`Object`に変換できません`Double`、スロー、<xref:System.InvalidCastException>例外。|  
-|`Object`式が文字列を保持し、もう一方の型の`String`|場合`Option Strict`は`On`、コンパイラ エラーを生成します。<br /><br /> 場合`Option Strict`は`Off`、暗黙的に変換`Object`に`String`連結します。|  
+|`Object` 式は数値の値を保持し、もう一方の数値データ型|場合`Option Strict`は`On`、コンパイラ エラーを生成します。<br /><br /> 場合`Option Strict`は`Off`、しを追加します。|  
+|`Object` 式は数値の値を保持し、もう一方の型の `String`|場合`Option Strict`は`On`、コンパイラ エラーを生成します。<br /><br /> 場合`Option Strict`は`Off`、暗黙的に変換、`String`に`Double`を追加します。<br /><br /> 場合、`String`に変換できない`Double`、スロー、<xref:System.InvalidCastException>例外。|  
+|`Object` 式が文字列を保持し、もう一方の数値データ型|場合`Option Strict`は`On`、コンパイラ エラーを生成します。<br /><br /> 場合`Option Strict`は`Off`、文字列を暗黙的に変換`Object`に`Double`を追加します。<br /><br /> 場合、文字列`Object`に変換できません`Double`、スロー、<xref:System.InvalidCastException>例外。|  
+|`Object` 式が文字列を保持し、もう一方の型の `String`|場合`Option Strict`は`On`、コンパイラ エラーを生成します。<br /><br /> 場合`Option Strict`は`Off`、暗黙的に変換`Object`に`String`連結します。|  
   
  両方の式が場合`Object`式、Visual Basic は、次のアクション (`Option Strict Off`のみ)。  
   
 |式のデータ型|コンパイラによる処理|  
 |---|---|  
 |両方`Object`式は数値を保持|追加します。|  
-|両方`Object`型の式は、`String`|連結します。|  
+|両方`Object`型の式は、 `String`|連結します。|  
 |1 つ`Object`式は数値の値を保持し、文字列を保持して、他の|文字列に暗黙的に変換`Object`に`Double`を追加します。<br /><br /> 場合、文字列`Object`値を数値に変換することはできませんし、スロー、<xref:System.InvalidCastException>例外。|  
   
  いずれか`Object`式に評価される[何も](../../../visual-basic/language-reference/nothing.md)または<xref:System.DBNull>、`+`演算子として扱われます、`String`値は""です。  

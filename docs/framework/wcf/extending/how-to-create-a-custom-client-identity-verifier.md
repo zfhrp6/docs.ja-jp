@@ -1,30 +1,18 @@
 ---
-title: "方法 : カスタム クライアント ID 検証機能を作成する"
-ms.custom: 
+title: '方法 : カスタム クライアント ID 検証機能を作成する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: f2d34e43-fa8b-46d2-91cf-d2960e13e16b
-caps.latest.revision: "15"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b10dd9be996369385ca323b0409145a9cde46a1e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 99d46b19e744190c50a2ba316fe0f59a8f6cf07b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-a-custom-client-identity-verifier"></a>方法 : カスタム クライアント ID 検証機能を作成する
-*Identity*の機能[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]クライアントが予想されるサービスの id を事前に指定できるようにします。 サーバーがクライアントに対して自身を認証するたびに、ID がこの予想 ID と照合されます (Id およびそのしくみの詳細については、次を参照してください[サービス Id と認証](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)。)。  
+*Identity* Windows Communication Foundation (WCF) の機能により、クライアントに事前に予想されるサービスの id を指定します。 サーバーがクライアントに対して自身を認証するたびに、ID がこの予想 ID と照合されます (Id およびそのしくみの詳細については、次を参照してください[サービス Id と認証](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)。)。  
   
  必要に応じて、カスタム ID 検証機能を使用して検証をカスタマイズできます。 たとえば、追加のサービス ID 検証チェックを実行できます。 この例では、カスタム ID 検証機能で、サーバーから戻された X.509 証明書の追加のクレームをチェックします。 サンプル アプリケーションについては、次を参照してください。[サービス Id サンプル](../../../../docs/framework/wcf/samples/service-identity-sample.md)です。  
   
@@ -92,7 +80,7 @@ ms.lasthandoff: 12/22/2017
  [!code-csharp[c_HowToSetCustomClientIdentity#6](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howtosetcustomclientidentity/cs/source.cs#6)]
  [!code-vb[c_HowToSetCustomClientIdentity#6](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howtosetcustomclientidentity/vb/source.vb#6)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.ServiceAuthorizationManager>  
  <xref:System.ServiceModel.EndpointIdentity>  
  <xref:System.ServiceModel.Security.IdentityVerifier>  

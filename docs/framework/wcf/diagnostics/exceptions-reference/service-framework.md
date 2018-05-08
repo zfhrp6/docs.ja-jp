@@ -1,26 +1,12 @@
 ---
 title: サービス フレームワーク
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 75f60b87-f80e-4377-ba7c-8e6becaa2b28
-caps.latest.revision: ''
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 67e856aff583513fa8a16d289cf5190a9698c52c
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: 859e718a56ab63c8e012e1851c0730f53cb707be
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="service-framework"></a>サービス フレームワーク
 ここでは、サービス フレームワーク データによって生成されるすべての例外を示します。  
@@ -49,8 +35,8 @@ ms.lasthandoff: 03/26/2018
 |channelDoesNotHaveADuplexSession0|現在のチャネルは、出力セッションの終了をサポートしていません。 このチャネルは、ISessionChannel を実装していません\<IDuplexSession >。|  
 |ClientRuntimeRequiresFormatter0|SerializeRequest と DeserializeReply の両方が false ではないため、指定された ClientOperation にはフォーマッタが必要です。|  
 |CommunicationObjectAborted1|指定された通信オブジェクトは停止しているため、通信に使用できません。|  
-|CommunicationObjectAbortedStack2|指定された通信オブジェクトは停止しているため、通信に使用できません: {1}|  
-|CommunicationObjectBaseClassMethodNotCalled|指定された通信オブジェクトは、仮想関数 {1} をオーバーライドしましたが、基本クラスで定義されたバージョンを呼び出しません。|  
+|CommunicationObjectAbortedStack2|指定された通信オブジェクトは、停止しているために、通信に使用できません。 {1}|  
+|CommunicationObjectBaseClassMethodNotCalled|指定された通信オブジェクトが、仮想関数をオーバーライド{1}しますが、基底クラスで定義されているバージョンを呼び出しません。|  
 |ContractIsNotSelfConsistentItHasOneOrMore2|指定されたコントラクトには、IsTerminating 操作または IsInitiating 以外の操作が 1 つ以上あります。 SessionMode.Required に設定された SessionMode プロパティがありません。 IsInitiating 属性と IsTerminating 属性は、セッションのコンテキストでのみ使用できます。|  
 |CouldnTCreateChannelForChannelType2|指定されたチャネルの種類が要求されましたが、指定されたバインディングはこれをサポートしていないか、サポートするように正しく構成されていません。|  
 |DispatchRuntimeRequiresFormatter0|DeserializeRequest と SerializeReply の両方が false ではないため、指定された DispatchOperation にはフォーマッタが必要です。|  

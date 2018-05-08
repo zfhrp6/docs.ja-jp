@@ -1,35 +1,21 @@
 ---
 title: コントロール
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-wpf
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - controls [WPF], about WPF controls
 ms.assetid: 3f255a8a-35a8-4712-9065-472ff7d75599
-caps.latest.revision: 13
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 66c6cc58423a2af8d0fd6de93b8884918888fb48
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 11c9c2cdd9e485fb87f5d8ead7790ded0428f7dd
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="controls"></a>コントロール
 <a name="introduction"></a>
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]など、ほぼすべての Windows アプリケーションで使用される共通の UI コンポーネントの多くに付属して<xref:System.Windows.Controls.Button>、 <xref:System.Windows.Controls.Label>、 <xref:System.Windows.Controls.TextBox>、 <xref:System.Windows.Controls.Menu>、および<xref:System.Windows.Controls.ListBox>です。 これまで、これらのオブジェクトはコントロールと呼ばれてきました。 中に、 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] SDK で引き続き疎アプリケーションでは、表示されているオブジェクトを表す任意のクラスを意味する「コントロール」という用語を使用するクラスが継承する必要がないことを確認することが重要、<xref:System.Windows.Controls.Control>表示に存在するクラス。 継承するクラス、<xref:System.Windows.Controls.Control>クラスが含まれて、 <xref:System.Windows.Controls.ControlTemplate>、これにより、根本的に、新しいサブクラスを作成することがなく、コントロールの外観を変更するコントロールのコンシューマーです。  このトピックについて説明方法コントロール (両方ものからは継承、<xref:System.Windows.Controls.Control>クラスとそうでないもの) でよく使用される[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]です。  
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] など、ほぼすべての Windows アプリケーションで使用される共通の UI コンポーネントの多くに付属して<xref:System.Windows.Controls.Button>、 <xref:System.Windows.Controls.Label>、 <xref:System.Windows.Controls.TextBox>、 <xref:System.Windows.Controls.Menu>、および<xref:System.Windows.Controls.ListBox>です。 これまで、これらのオブジェクトはコントロールと呼ばれてきました。 中に、 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] SDK で引き続き疎アプリケーションでは、表示されているオブジェクトを表す任意のクラスを意味する「コントロール」という用語を使用するクラスが継承する必要がないことを確認することが重要、<xref:System.Windows.Controls.Control>表示に存在するクラス。 継承するクラス、<xref:System.Windows.Controls.Control>クラスが含まれて、 <xref:System.Windows.Controls.ControlTemplate>、これにより、根本的に、新しいサブクラスを作成することがなく、コントロールの外観を変更するコントロールのコンシューマーです。  このトピックについて説明方法コントロール (両方ものからは継承、<xref:System.Windows.Controls.Control>クラスとそうでないもの) でよく使用される[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]です。  
 
 <a name="creating_an_instance_of_a_control"></a>   
 ## <a name="creating-an-instance-of-a-control"></a>コントロールのインスタンスの作成  
@@ -37,7 +23,7 @@ ms.lasthandoff: 12/22/2017
   
  [!code-xaml[ControlsOverview#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlsOverview/CSharp/Window1.xaml#1)]  
   
- 次の例では、同じアプリケーションをコードで作成します。 簡略化のための作成、 <xref:System.Windows.Controls.Grid>、 `grid1`、サンプルから除外されています。 `grid1`上記のように同じ列と行の定義を持つ[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]例です。  
+ 次の例では、同じアプリケーションをコードで作成します。 簡略化のための作成、 <xref:System.Windows.Controls.Grid>、 `grid1`、サンプルから除外されています。 `grid1` 上記のように同じ列と行の定義を持つ[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]例です。  
   
  [!code-csharp[ControlsOverview#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlsOverview/CSharp/AppInCode.xaml.cs#2)]
  [!code-vb[ControlsOverview#2](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ControlsOverview/VisualBasic/AppInCode.xaml.vb#2)]  
@@ -63,7 +49,7 @@ ms.lasthandoff: 12/22/2017
  [!code-vb[ControlsOverview#4](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ControlsOverview/VisualBasic/AppInCode.xaml.vb#4)]  
   
 ### <a name="creating-a-style-for-a-control"></a>コントロールのスタイル作成  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]作成することで、アプリケーション内の各インスタンスのプロパティを設定する代わりに、コントロールの外観を指定することができます、<xref:System.Windows.Style>です。 次の例を作成、<xref:System.Windows.Style>それぞれに適用されている<xref:System.Windows.Controls.Button>アプリケーションにします。 <xref:System.Windows.Style>定義されている定義が通常[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]で、 <xref:System.Windows.ResourceDictionary>、ように、<xref:System.Windows.FrameworkElement.Resources%2A>のプロパティ、<xref:System.Windows.FrameworkElement>です。  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 作成することで、アプリケーション内の各インスタンスのプロパティを設定する代わりに、コントロールの外観を指定することができます、<xref:System.Windows.Style>です。 次の例を作成、<xref:System.Windows.Style>それぞれに適用されている<xref:System.Windows.Controls.Button>アプリケーションにします。 <xref:System.Windows.Style> 定義されている定義が通常[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]で、 <xref:System.Windows.ResourceDictionary>、ように、<xref:System.Windows.FrameworkElement.Resources%2A>のプロパティ、<xref:System.Windows.FrameworkElement>です。  
   
  [!code-xaml[ControlsOverview#5](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlsOverview/CSharp/AppInCode.xaml#5)]  
   
@@ -112,7 +98,7 @@ ms.lasthandoff: 12/22/2017
   
  これらの基本クラスの詳細については、次を参照してください。 [WPF コンテンツ モデル](../../../../docs/framework/wpf/controls/wpf-content-model.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [スタイルとテンプレート](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
  [カテゴリ別のコントロール](../../../../docs/framework/wpf/controls/controls-by-category.md)  
  [コントロール ライブラリ](../../../../docs/framework/wpf/controls/control-library.md)  

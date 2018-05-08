@@ -1,14 +1,6 @@
 ---
 title: '方法 : プリンターを複製する'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-wpf
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -19,17 +11,11 @@ helpviewer_keywords:
 - print queues [WPF], cloning
 - cloning print queues [WPF]
 ms.assetid: dd6997c9-fe04-40f8-88a6-92e3ac0889eb
-caps.latest.revision: 8
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 9ffb9f5ab8e7b768d888f5f2800fae668e47bfc3
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: 8f3a9c3b4d9f4bcbe3a6ffcff9868aa7b19b8f28
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-clone-a-printer"></a>方法 : プリンターを複製する
 ほとんどの企業が、ある時点で、購入、同じモデルの複数のプリンターです。 通常、これらはすべてほぼ同一の構成の設定でインストールします。 各プリンターのインストールとできる時間がかかる場合、エラーが発生します。 <xref:System.Printing.IndexedProperties?displayProperty=nameWithType>名前空間および<xref:System.Printing.PrintServer.InstallPrintQueue%2A>Microsoft .NET Framework で公開されているクラスでは、既存の印刷キューから複製されたその他の印刷キューの任意の数を即座にインストールすることです。  

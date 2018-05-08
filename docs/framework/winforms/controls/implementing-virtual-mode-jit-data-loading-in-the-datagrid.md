@@ -1,13 +1,6 @@
 ---
-title: "Windows フォーム DataGridView コントロールでの Just-In-Time データ読み込みによる仮想モードの実装"
-ms.custom: 
+title: Windows フォーム DataGridView コントロールでの Just-In-Time データ読み込みによる仮想モードの実装
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -19,19 +12,14 @@ helpviewer_keywords:
 - DataGridView control [Windows Forms], large data sets
 - virtual mode [Windows Forms], just-in-time data loading
 ms.assetid: c2a052b9-423c-4ff7-91dc-d8c7c79345f6
-caps.latest.revision: "13"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 2a830c11e8df73b71f16c1b9dfd1007461d910f5
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ad3ec7fb2e0012459bcf597ac9abee76c20b767e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="implementing-virtual-mode-with-just-in-time-data-loading-in-the-windows-forms-datagridview-control"></a>Windows フォーム DataGridView コントロールでの Just-In-Time データ読み込みによる仮想モードの実装
-仮想モードを実装する 1 つの理由、<xref:System.Windows.Forms.DataGridView>コントロールは、必要なデータのみを取得します。 これと呼ばれる*- just-in-time データ読み込み*です。  
+仮想モードを実装する 1 つの理由、<xref:System.Windows.Forms.DataGridView>コントロールは、必要なデータのみを取得します。 これと呼ばれる *- just-in-time データ読み込み*です。  
   
  リモート データベースで非常に大きなテーブルで作業している場合などの可能性がありますを避けたいスタートアップの遅延を表示するために必要なデータのみを取得し、ユーザー ビューに新しい行をスクロールする場合にのみ、追加のデータを取得するとします。 アプリケーションを実行しているクライアント コンピューター データの格納に使用可能なメモリ量が限られている場合、データベースから新しい値を取得するときに使用されていないデータを破棄することがもできます。  
   
@@ -81,7 +69,7 @@ ms.lasthandoff: 12/22/2017
   
  アプリケーションのスクロールのパフォーマンスを向上させるのには、ローカルに格納されているデータの量を変更できます。 起動時間を向上させるのにする必要がありますは避けてください大量のデータを最初に読み込みます。 変更することも、`Cache`クラスを格納できるデータ ページの数を増やします。 スクロールの効率を向上させる多くのデータ ページを使用することができますが、使用可能な帯域幅とサーバーの待機時間に応じてのデータ ページ内の行の最適な数を決定する必要があります。 サイズの小さいページは、サーバーより頻繁にアクセスするより短時間で要求されたデータを返します。 待機時間がより多くの帯域幅よりも、問題の場合は、大きなデータ ページを使用することがあります。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.DataGridView>  
  <xref:System.Windows.Forms.DataGridView.VirtualMode%2A>  
  [Windows フォーム DataGridView コントロールでのパフォーマンス チューニング](../../../../docs/framework/winforms/controls/performance-tuning-in-the-windows-forms-datagridview-control.md)  

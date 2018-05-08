@@ -1,13 +1,6 @@
 ---
-title: "フォーカスの概要"
-ms.custom: 
+title: フォーカスの概要
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - applications [WPF], focus
 - focus in applications [WPF]
 ms.assetid: 0230c4eb-0c8a-462b-ac4b-ae3e511659f4
-caps.latest.revision: "19"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: d35b65f88452085e601569b9dcfc62a541a1655f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 620839a0060469604d0affa6637c3cafac0f62c2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="focus-overview"></a>フォーカスの概要
 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] には、キーボード フォーカスと論理フォーカスという、フォーカスに関する 2 つの主要な概念があります。  キーボード フォーカスはキーボード入力を受け取る要素を指し、論理フォーカスはフォーカスを持つフォーカス範囲内の要素を指します。  これらの概念については、この概要で詳しく説明します。  フォーカスを取得可能な領域を複数持つ複雑なアプリケーションを作成する場合は、これらの概念の違いを理解することが重要です。  
@@ -69,11 +57,11 @@ ms.lasthandoff: 12/22/2017
  [!code-csharp[FocusSnippets#FocusSetIsFocusScope](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FocusSnippets/CSharp/Window1.xaml.cs#focussetisfocusscope)]
  [!code-vb[FocusSnippets#FocusSetIsFocusScope](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/FocusSnippets/visualbasic/window1.xaml.vb#focussetisfocusscope)]  
   
- <xref:System.Windows.Input.FocusManager.GetFocusScope%2A>指定した要素のフォーカス スコープを返します。  
+ <xref:System.Windows.Input.FocusManager.GetFocusScope%2A> 指定した要素のフォーカス スコープを返します。  
   
  内のクラス[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]は既定でフォーカス範囲は<xref:System.Windows.Window>、 <xref:System.Windows.Controls.MenuItem>、 <xref:System.Windows.Controls.ToolBar>、および<xref:System.Windows.Controls.ContextMenu>です。  
   
- <xref:System.Windows.Input.FocusManager.GetFocusedElement%2A>指定したフォーカスの範囲のフォーカスがある要素を取得します。  <xref:System.Windows.Input.FocusManager.SetFocusedElement%2A>指定したフォーカスのスコープ内には、フォーカスのある要素を設定します。  <xref:System.Windows.Input.FocusManager.SetFocusedElement%2A>初期フォーカスのある要素の設定に通常使用されます。  
+ <xref:System.Windows.Input.FocusManager.GetFocusedElement%2A> 指定したフォーカスの範囲のフォーカスがある要素を取得します。  <xref:System.Windows.Input.FocusManager.SetFocusedElement%2A> 指定したフォーカスのスコープ内には、フォーカスのある要素を設定します。  <xref:System.Windows.Input.FocusManager.SetFocusedElement%2A> 初期フォーカスのある要素の設定に通常使用されます。  
   
  フォーカス範囲にフォーカスを持つ要素を設定し、フォーカス範囲のフォーカスを持つ要素を取得する例を次に示します。  
   
@@ -97,20 +85,20 @@ ms.lasthandoff: 12/22/2017
 ## <a name="navigating-focus-programmatically"></a>プログラムによるフォーカスのナビゲーション  
  追加[!INCLUDE[TLA#tla_api](../../../../includes/tlasharptla-api-md.md)]を操作するにはフォーカスが<xref:System.Windows.UIElement.MoveFocus%2A>と<xref:System.Windows.UIElement.PredictFocus%2A>です。  
   
- <xref:System.Windows.FrameworkElement.MoveFocus%2A>アプリケーションで次の要素にフォーカスを変更します。  A<xref:System.Windows.Input.TraversalRequest>方向を指定するために使用します。   <xref:System.Windows.Input.FocusNavigationDirection>に渡される<xref:System.Windows.UIElement.MoveFocus%2A>異なる方向フォーカスが移動可能などを示す<xref:System.Windows.Input.FocusNavigationDirection.First>、 <xref:System.Windows.Input.FocusNavigationDirection.Last>、<xref:System.Windows.Input.FocusNavigationDirection.Up>と<xref:System.Windows.Input.FocusNavigationDirection.Down>です。  
+ <xref:System.Windows.FrameworkElement.MoveFocus%2A> アプリケーションで次の要素にフォーカスを変更します。  A<xref:System.Windows.Input.TraversalRequest>方向を指定するために使用します。   <xref:System.Windows.Input.FocusNavigationDirection>に渡される<xref:System.Windows.UIElement.MoveFocus%2A>異なる方向フォーカスが移動可能などを示す<xref:System.Windows.Input.FocusNavigationDirection.First>、 <xref:System.Windows.Input.FocusNavigationDirection.Last>、<xref:System.Windows.Input.FocusNavigationDirection.Up>と<xref:System.Windows.Input.FocusNavigationDirection.Down>です。  
   
  次の例では<xref:System.Windows.FrameworkElement.MoveFocus%2A>フォーカスのある要素を変更します。  
   
  [!code-csharp[focussample#FocusSampleMoveFocus](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FocusSample/CSharp/Window1.xaml.cs#focussamplemovefocus)]
  [!code-vb[focussample#FocusSampleMoveFocus](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/FocusSample/visualbasic/window1.xaml.vb#focussamplemovefocus)]  
   
- <xref:System.Windows.FrameworkElement.PredictFocus%2A>フォーカスが変更された場合、フォーカスを受け取るオブジェクトを返します。  現時点では、のみ<xref:System.Windows.Input.FocusNavigationDirection.Up>、 <xref:System.Windows.Input.FocusNavigationDirection.Down>、 <xref:System.Windows.Input.FocusNavigationDirection.Left>、および<xref:System.Windows.Input.FocusNavigationDirection.Right>でサポートされている<xref:System.Windows.FrameworkElement.PredictFocus%2A>です。  
+ <xref:System.Windows.FrameworkElement.PredictFocus%2A> フォーカスが変更された場合、フォーカスを受け取るオブジェクトを返します。  現時点では、のみ<xref:System.Windows.Input.FocusNavigationDirection.Up>、 <xref:System.Windows.Input.FocusNavigationDirection.Down>、 <xref:System.Windows.Input.FocusNavigationDirection.Left>、および<xref:System.Windows.Input.FocusNavigationDirection.Right>でサポートされている<xref:System.Windows.FrameworkElement.PredictFocus%2A>です。  
   
 <a name="Focus_Events"></a>   
 ## <a name="focus-events"></a>フォーカス イベント  
  キーボード フォーカスに関連するイベントは<xref:System.Windows.Input.Keyboard.PreviewGotKeyboardFocus>、<xref:System.Windows.Input.Keyboard.GotKeyboardFocus>と<xref:System.Windows.Input.Keyboard.PreviewLostKeyboardFocus>、<xref:System.Windows.Input.Keyboard.LostKeyboardFocus>です。  アタッチされるイベントとイベントが定義されている、<xref:System.Windows.Input.Keyboard>クラスしますが、基本要素クラスの同等のルーティング イベントとしてより簡単にアクセスできます。  イベントの詳細については、「[ルーティング イベントの概要](../../../../docs/framework/wpf/advanced/routed-events-overview.md)」を参照してください。  
   
- <xref:System.Windows.Input.Keyboard.GotKeyboardFocus>要素がキーボード フォーカスを取得したときに発生します。  <xref:System.Windows.Input.Keyboard.LostKeyboardFocus>要素がキーボード フォーカスを失ったときに発生します。  場合、<xref:System.Windows.Input.Keyboard.PreviewGotKeyboardFocus>イベントまたは<xref:System.Windows.Input.Keyboard.PreviewLostKeyboardFocusEvent>イベントが処理されると<xref:System.Windows.RoutedEventArgs.Handled%2A>に設定されている`true`、フォーカスは変わりません。  
+ <xref:System.Windows.Input.Keyboard.GotKeyboardFocus> 要素がキーボード フォーカスを取得したときに発生します。  <xref:System.Windows.Input.Keyboard.LostKeyboardFocus> 要素がキーボード フォーカスを失ったときに発生します。  場合、<xref:System.Windows.Input.Keyboard.PreviewGotKeyboardFocus>イベントまたは<xref:System.Windows.Input.Keyboard.PreviewLostKeyboardFocusEvent>イベントが処理されると<xref:System.Windows.RoutedEventArgs.Handled%2A>に設定されている`true`、フォーカスは変わりません。  
   
  次の例ではアタッチ<xref:System.Windows.UIElement.GotKeyboardFocus>と<xref:System.Windows.UIElement.LostKeyboardFocus>へのイベント ハンドラー、<xref:System.Windows.Controls.TextBox>です。  
   
@@ -126,9 +114,9 @@ ms.lasthandoff: 12/22/2017
  [!code-csharp[keyboardsample#KeyboardSampleLostFocus](../../../../samples/snippets/csharp/VS_Snippets_Wpf/KeyboardSample/CSharp/Window1.xaml.cs#keyboardsamplelostfocus)]
  [!code-vb[keyboardsample#KeyboardSampleLostFocus](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/KeyboardSample/visualbasic/window1.xaml.vb#keyboardsamplelostfocus)]  
   
- 論理フォーカスに関連するイベントは<xref:System.Windows.UIElement.GotFocus>と<xref:System.Windows.UIElement.LostFocus>です。  これらのイベントがで定義された、<xref:System.Windows.Input.FocusManager>としてアタッチされるイベントは、ですが、 <xref:System.Windows.Input.FocusManager> CLR イベントのラッパーを公開しません。  <xref:System.Windows.UIElement>および<xref:System.Windows.ContentElement>これらのイベントをより簡単に公開します。  
+ 論理フォーカスに関連するイベントは<xref:System.Windows.UIElement.GotFocus>と<xref:System.Windows.UIElement.LostFocus>です。  これらのイベントがで定義された、<xref:System.Windows.Input.FocusManager>としてアタッチされるイベントは、ですが、 <xref:System.Windows.Input.FocusManager> CLR イベントのラッパーを公開しません。  <xref:System.Windows.UIElement> および<xref:System.Windows.ContentElement>これらのイベントをより簡単に公開します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Input.FocusManager>  
  <xref:System.Windows.UIElement>  
  <xref:System.Windows.ContentElement>  

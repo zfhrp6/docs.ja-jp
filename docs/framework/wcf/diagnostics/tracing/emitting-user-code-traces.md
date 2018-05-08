@@ -1,27 +1,15 @@
 ---
-title: "ユーザー コード トレースの出力"
-ms.custom: 
+title: ユーザー コード トレースの出力
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: fa54186a-8ffa-4332-b0e7-63867126fd49
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a71ab8d8b4f96900e6d0f83541b6ae17f09ddeee
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 120827bff85d4bc347274cad1370d291caba1c3d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="emitting-user-code-traces"></a>ユーザー コード トレースの出力
-[!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] により生成されるインストルメンテーション データを収集するには、構成内でトレースを有効にする方法に加えて、ユーザー コードのプログラムによりトレースを出力することもできます。 この方法では、インストルメンテーション データを能動的に作成でき、後でそのデータを診断目的で詳細に調べることができます。 ここでは、この方法について説明します。  
+Windows Communication Foundation (WCF) によって生成されるインストルメンテーション データを収集するための構成でのトレースを有効にするだけでなくもユーザー コードでプログラムからトレースを出力することができます。 この方法では、インストルメンテーション データを能動的に作成でき、後でそのデータを診断目的で詳細に調べることができます。 ここでは、この方法について説明します。  
   
  さらに、[トレースを拡張する](../../../../../docs/framework/wcf/samples/extending-tracing.md)サンプルには、次のセクションに示されているすべてのコードが含まれています。  
   
@@ -134,22 +122,22 @@ ts.TraceEvent(TraceEventType.Warning, 0, "Throwing exception " + "exceptionMessa
   
  次の図には、Calculator アクティビティと要求アクティビティ間の転送トレースに加え、1 つの要求アクティビティについて Start トレースと Stop トレースが 2 組表示されています。1 組はクライアントのトレースで、もう 1 組はサーバーのトレースです (各トレース ソースにつき 1 組)。  
   
- ![コードのトレースのトレース ビューアー: 出力ユーザー &#45;](../../../../../docs/framework/wcf/diagnostics/tracing/media/242c9358-475a-4baf-83f3-4227aa942fcd.gif "242c9358-475a-4baf-83f3-4227aa942fcd")  
+ ![トレース ビューアー: ユーザーを出力する&#45;トレース コード](../../../../../docs/framework/wcf/diagnostics/tracing/media/242c9358-475a-4baf-83f3-4227aa942fcd.gif "242c9358-475a-4baf-83f3-4227aa942fcd")  
 作成時刻によるアクティビティのリスト (左のパネル)、および入れ子にされたアクティビティ (右上のパネル)  
   
  クライアントがスローする原因となる例外を、サービス コードがスローする場合 (たとえば、クライアントが要求に対する応答を取得できなかった場合など)、直接的な相関関係を示すために、サービスとクライアントの両方の警告メッセージまたはエラー メッセージは、同じアクティビティ内に発生します。 次の図で、サービスは「サービスの退出をユーザー コードでは、この要求を処理します」という例外をスローします。 クライアントは、「サーバーでした内部エラーのため要求を処理できません。」という例外もがスローされます。  
   
- ![ユーザー &#45; を出力するトレース ビューアーを使用したコードをトレース](../../../../../docs/framework/wcf/diagnostics/tracing/media/e2etrace2.gif "e2eTrace2")  
+ ![ユーザーを出力するトレース ビューアーを使用した&#45;トレース コード](../../../../../docs/framework/wcf/diagnostics/tracing/media/e2etrace2.gif "e2eTrace2")  
 要求アクティビティ ID が伝達された場合、どのエンドポイントで発生したかにかかわらず、その要求に関するすべてのエラーが同じアクティビティに表示されます。  
   
  左パネルの Multiply アクティビティをダブルクリックすると、次のグラフが表示されます。関連するプロセスごとの Multiply アクティビティに対するトレースが示されます。 まずサービスで発生した警告 (スローされた例外) が表示され、それに続いて、要求を処理できなかったために発生したクライアントの警告とエラーが表示されます。 したがって、エンドポイント間のエラーの因果関係が示され、エラーの根本原因を導き出すことができます。  
   
- ![ユーザー &#45; を出力するトレース ビューアーを使用したコードをトレース](../../../../../docs/framework/wcf/diagnostics/tracing/media/e2etrace3.gif "e2eTrace3")  
+ ![ユーザーを出力するトレース ビューアーを使用した&#45;トレース コード](../../../../../docs/framework/wcf/diagnostics/tracing/media/e2etrace3.gif "e2eTrace3")  
 エラーの相関関係のグラフ表示  
   
  以前のトレースを取得するには、ユーザー トレース ソースに対して `ActivityTracing` を設定し、`propagateActivity=true` トレース ソースに対して `System.ServiceModel` を設定します。 ユーザー コード間のアクティビティの伝達を有効にするため、`ActivityTracing` トレース ソースの `System.ServiceModel` は設定されていません  (ServiceModel アクティビティがオンになっている場合、クライアントに定義されているアクティビティ ID がサービス ユーザー コードにまで伝達されることはありません。ただし、転送は、クライアントおよびサービスのユーザー コード アクティビティと、中間の [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] アクティビティを相互に関連付けます)。  
   
  アクティビティを定義してアクティビティ ID を伝達することにより、エンドポイント間でエラーの直接相関関係を実行できます。 このようにして、エラーの根本原因をよりすばやく見つけることができるようになります。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [トレースの拡張](../../../../../docs/framework/wcf/samples/extending-tracing.md)

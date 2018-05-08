@@ -1,14 +1,6 @@
 ---
 title: '方法 : メッセージ リプレイ検出を有効にする'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -18,24 +10,18 @@ helpviewer_keywords:
 - WCF, custom bindings
 - WCF, security
 ms.assetid: 8b847e91-69a3-49e1-9e5f-0c455e50d804
-caps.latest.revision: 10
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: cada24098f5800f56d7dd50119c3fe3394ba14cd
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 5c761a23d2560f40a0121d684dcb411a716de5a6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-enable-message-replay-detection"></a>方法 : メッセージ リプレイ検出を有効にする
 リプレイ攻撃は、攻撃者がメッセージのストリームを 2 つのパーティ間でコピーし、そのストリームを他の 1 つ以上のパーティにリプレイすることで発生します。 攻撃が止むまで、攻撃対象になったコンピューターはストリームを正当なメッセージとして処理しようとし、その結果、命令が重複するなど、望ましくない状況に陥ります。  
   
  メッセージのリプレイ検出の詳細については、次を参照してください。[メッセージ リプレイ検出](http://go.microsoft.com/fwlink/?LinkId=88536)です。  
   
- 以下の手順では、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] でリプレイ検出を制御するために使用できるさまざまなプロパティを示します。  
+ 次の手順では、Windows Communication Foundation (WCF) を使用して再生検出を制御するのに使用できるさまざまなプロパティを示します。  
   
 ### <a name="to-control-replay-detection-on-the-client-using-code"></a>コードを使用してクライアントでのリプレイ検出を制御するには  
   

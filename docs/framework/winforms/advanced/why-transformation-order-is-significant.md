@@ -1,31 +1,17 @@
 ---
-title: "変換順序が重要となる理由"
-ms.custom: 
+title: 変換順序が重要となる理由
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - transformations [Windows Forms], order signficance
 ms.assetid: 37d5f9dc-a5cf-4475-aa5d-34d714e808a9
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: cd3363a1afb8658ed3bb27359259cb752464507d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 943bfa73b54a1ac5d68d21d2bb6e271133db595a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="why-transformation-order-is-significant"></a>変換順序が重要となる理由
 1 つ<xref:System.Drawing.Drawing2D.Matrix>オブジェクトは、単一の変換または変換のシーケンスを格納できます。 後者を複合変換と呼びます。 複合変換のマトリックスは、個々 の変換行列を乗算することによって取得されます。  
@@ -35,7 +21,7 @@ ms.lasthandoff: 12/22/2017
   
  順序は重要な理由の 1 つは、座標系の原点を基準の回転とスケーリングのような変換を行うことです。 原点を中心とするオブジェクトをスケーリングすると、原点から離れているオブジェクトをスケーリング異なる結果が生成されます。 同様に、原点を中心とするオブジェクトを回転させるには、原点から離れているオブジェクトを回転異なる結果が生成されます。  
   
- 次の例では、複合変換を拡大/縮小、回転、およびその順序で翻訳を結合します。 引数<xref:System.Drawing.Drawing2D.MatrixOrder.Append>に渡される、<xref:System.Drawing.Graphics.RotateTransform%2A>メソッドでは、拡大/縮小、回転を従うことを示します。 同様に、引数<xref:System.Drawing.Drawing2D.MatrixOrder.Append>に渡される、<xref:System.Drawing.Graphics.TranslateTransform%2A>メソッドは、翻訳は、回転に従うことを示します。 <xref:System.Drawing.Drawing2D.MatrixOrder.Append>および<xref:System.Drawing.Drawing2D.MatrixOrder.Prepend>のメンバーである、<xref:System.Drawing.Drawing2D.MatrixOrder>列挙します。  
+ 次の例では、複合変換を拡大/縮小、回転、およびその順序で翻訳を結合します。 引数<xref:System.Drawing.Drawing2D.MatrixOrder.Append>に渡される、<xref:System.Drawing.Graphics.RotateTransform%2A>メソッドでは、拡大/縮小、回転を従うことを示します。 同様に、引数<xref:System.Drawing.Drawing2D.MatrixOrder.Append>に渡される、<xref:System.Drawing.Graphics.TranslateTransform%2A>メソッドは、翻訳は、回転に従うことを示します。 <xref:System.Drawing.Drawing2D.MatrixOrder.Append> および<xref:System.Drawing.Drawing2D.MatrixOrder.Prepend>のメンバーである、<xref:System.Drawing.Drawing2D.MatrixOrder>列挙します。  
   
  [!code-csharp[System.Drawing.MiscLegacyTopics#21](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.MiscLegacyTopics/CS/Class1.cs#21)]
  [!code-vb[System.Drawing.MiscLegacyTopics#21](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.MiscLegacyTopics/VB/Class1.vb#21)]  
@@ -52,7 +38,7 @@ ms.lasthandoff: 12/22/2017
   
  直前の例の結果は、このトピックの最初の例の結果と同じです。 これは、メソッド呼び出しの順序と行列乗算の順序の両方は元に戻すためにです。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Drawing.Drawing2D.Matrix>  
  [座標系と変換](../../../../docs/framework/winforms/advanced/coordinate-systems-and-transformations.md)  
  [マネージ GDI+ での変換の使用](../../../../docs/framework/winforms/advanced/using-transformations-in-managed-gdi.md)

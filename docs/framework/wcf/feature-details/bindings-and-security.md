@@ -1,45 +1,33 @@
 ---
 title: バインディングとセキュリティ
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - bindings [WCF], security
 - WCF security
 - Windows Communication Foundation, security
 - bindings [WCF]
 ms.assetid: 4de03dd3-968a-4e65-af43-516e903d7f95
-caps.latest.revision: 42
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload:
-- dotnet
-ms.openlocfilehash: 440bbcf03eef8f32a28073bfc9f5aeeb824a50fd
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 938b04f6c612f38be41d278273aa18d41677f84c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="bindings-and-security"></a>バインディングとセキュリティ
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] に用意されたシステム指定のバインディングを使用すると、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションをすばやくプログラミングできます。 1 つの例外を除き、すべてのバインディングにはセキュリティ スキームが含まれており、既定で有効になっています。 ここでは、セキュリティ ニーズに適した正しいバインディングの選択方法について説明します。  
+Windows Communication Foundation (WCF) に含まれているシステム指定のバインディングは、WCF アプリケーションのプログラミングする簡単な方法を提供します。 1 つの例外を除き、すべてのバインディングにはセキュリティ スキームが含まれており、既定で有効になっています。 ここでは、セキュリティ ニーズに適した正しいバインディングの選択方法について説明します。  
   
- 概要については[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]セキュリティを参照してください[セキュリティの概要](../../../../docs/framework/wcf/feature-details/security-overview.md)です。 プログラミングの詳細については[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]バインドを使用して、参照してください[WCF セキュリティのプログラミング](../../../../docs/framework/wcf/feature-details/programming-wcf-security.md)です。  
+ WCF セキュリティの概要については、次を参照してください。[セキュリティの概要](../../../../docs/framework/wcf/feature-details/security-overview.md)です。 バインドを使用して WCF のプログラミングに関する詳細については、次を参照してください。 [WCF セキュリティのプログラミング](../../../../docs/framework/wcf/feature-details/programming-wcf-security.md)です。  
   
  バインディングを既に選択した場合のセキュリティに関連付けられている実行時の動作に関する詳細を見つかります[セキュリティ動作](../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)です。  
   
  セキュリティ機能のなかには、システム指定のバインディングを使用してプログラミングできないものがあります。 詳細コントロールがカスタム バインドを使用して、次を参照してください。[のカスタム バインディングのセキュリティ機能](../../../../docs/framework/wcf/feature-details/security-capabilities-with-custom-bindings.md)します。  
   
 ## <a name="security-functions-of-bindings"></a>バインディングのセキュリティ機能  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、ほとんどのニーズを満たすシステム指定のバインディングが多数用意されています。 特定のバインディングでは不十分な場合は、カスタム バインドを作成することもできます。 システム指定のバインディングの一覧は、次を参照してください。[システム指定のバインディング](../../../../docs/framework/wcf/system-provided-bindings.md)です。 カスタム バインドの詳細については、次を参照してください。[カスタム バインド](../../../../docs/framework/wcf/extending/custom-bindings.md)です。  
+ WCF には、ほとんどのニーズを満たすシステム指定のバインディングの数が含まれています。 特定のバインディングでは不十分な場合は、カスタム バインドを作成することもできます。 システム指定のバインディングの一覧は、次を参照してください。[システム指定のバインディング](../../../../docs/framework/wcf/system-provided-bindings.md)です。 カスタム バインドの詳細については、次を参照してください。[カスタム バインド](../../../../docs/framework/wcf/extending/custom-bindings.md)です。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のすべてのバインディングには、API としての形式と、構成ファイルで使用する XML 要素としての形式という 2 つの形式があります。 たとえば、 `WSHttpBinding` (API)、対応するには、 [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)です。  
+ WCF でのすべてのバインドが 2 つの形式: API とは、構成ファイルで使用する XML 要素として。 たとえば、 `WSHttpBinding` (API)、対応するには、 [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)です。  
   
  以下のセクションでは、各バインディングについて両方の形式を示し、セキュリティ機能の概要を説明します。  
   
@@ -149,7 +137,7 @@ ms.lasthandoff: 04/30/2018
 ### <a name="msmqintegrationbinding"></a>MsmqIntegrationBinding  
  コードを使用して、<xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding>クラスは、構成を使用して、 [ \<msmqIntegrationBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/msmqintegrationbinding.md)です。  
   
- このバインディングは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] MSMQ (Microsoft Message Queuing) 以外のエンドポイントと相互運用する [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントおよびサービスの作成用に最適化されています。  
+ このバインディングは非-WCF MSMQ Microsoft Message Queuing エンドポイントで WCF クライアントと相互運用可能なサービスを作成するために最適化されます。  
   
  既定では、このバインディングはトランスポート セキュリティを使用し、次のセキュリティ特性があります。  
   
@@ -162,7 +150,7 @@ ms.lasthandoff: 04/30/2018
 ### <a name="netmsmqbinding"></a>NetMsmqBinding  
  コードを使用して、<xref:System.ServiceModel.NetMsmqBinding>クラスは、構成を使用して、 [ \<netMsmqBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/netmsmqbinding.md)です。  
   
- このバインディングは、MSMQ のキューに置かれたメッセージのサポートを必要とする [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスの作成時に使用します。  
+ このバインディングが使用するためキューに置かれたメッセージのサポートの MSMQ を必要とする WCF サービスを作成するときにします。  
   
  既定では、このバインディングはトランスポート セキュリティを使用し、次のセキュリティ特性があります。  
   
@@ -232,7 +220,7 @@ ms.lasthandoff: 04/30/2018
 |----------|-----------------|  
 |なし|サービスが匿名クライアントとやり取りを行うことが可能になります。|  
 |Windows|Windows 資格情報の認証済みコンテキストの制御下で SOAP メッセージ交換を行うことができます。|  
-|UserName|サービスが、ユーザー名資格情報を使用したクライアントの認証を要求できるようにします。 セキュリティ モードが `TransportWithMessageCredential` に設定されている場合は、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、パスワード ダイジェストの送信、またはパスワードを使用したキーの派生、およびメッセージ モード セキュリティでのこのようなキーの使用がサポートされません。 そのため、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、ユーザー名資格情報を使用する場合は、トランスポートが強制的にセキュリティで保護されます。|  
+|UserName|サービスが、ユーザー名資格情報を使用したクライアントの認証を要求できるようにします。 セキュリティ モードが に設定されているときに注意してください`TransportWithMessageCredential`WCF は、パスワードを送信するには、ダイジェスト認証または派生キー パスワードを使用して、メッセージ モード セキュリティのようなキーの使用をサポートしていません。 そのため、WCF は、ユーザー名資格情報を使用する場合、トランスポートは、セキュリティで保護を強制します。|  
 |証明書|証明書を使用したクライアントの認証を、サービスで要求することが可能になります。|  
 |IssuedToken|サービスは、セキュリティ トークン サービスを使用してカスタム トークンを提供できます。|  
   

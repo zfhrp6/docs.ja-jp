@@ -1,11 +1,6 @@
 ---
-title: "From 句 (Visual Basic)"
+title: From 句 (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.QueryFrom
 - vb.QueryFromIn
@@ -15,14 +10,11 @@ helpviewer_keywords:
 - From clause [Visual Basic]
 - From statement [Visual Basic]
 ms.assetid: 83e3665e-68a0-4540-a3a3-3d777a0f95d5
-caps.latest.revision: "19"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 0ecdc8b70fb1ae164a6c78998ce11db9938fbb56
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 1f113444efae83de7d299db330593937c7800bb3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="from-clause-visual-basic"></a>From 句 (Visual Basic)
 1 つまたは複数の範囲変数およびコレクションのクエリを指定します。  
@@ -38,9 +30,9 @@ From element [ As type ] In collection [ _ ]
   
 |用語|定義|  
 |---|---|  
-|`element`|必須です。 A*範囲変数*コレクションの要素を反復処理するために使用します。 各メンバーを参照する、範囲変数が使用される、`collection`を反復処理クエリとして、`collection`です。 列挙可能な型である必要があります。|  
-|`type`|省略可能です。 `element` の型。 ない場合は`type`が指定されているの種類`element`から推論される`collection`です。|  
-|`collection`|必須です。 コレクションを参照するクエリを実行します。 列挙可能な型である必要があります。|  
+|`element`|必須。 A*範囲変数*コレクションの要素を反復処理するために使用します。 各メンバーを参照する、範囲変数が使用される、`collection`を反復処理クエリとして、`collection`です。 列挙可能な型である必要があります。|  
+|`type`|任意。 `element` の型。 ない場合は`type`が指定されているの種類`element`から推論される`collection`です。|  
+|`collection`|必須。 コレクションを参照するクエリを実行します。 列挙可能な型である必要があります。|  
   
 ## <a name="remarks"></a>コメント  
  `From`句を使用して、ソース データ クエリと、ソース コレクションから要素を参照するために使用される変数を識別します。 これらの変数といいます*範囲変数*です。 `From`句が必要な場合を除き、クエリ、`Aggregate`句を使用する集計された結果だけを返します。 クエリを識別します。 詳細については、次を参照してください。 [Aggregate 句](../../../visual-basic/language-reference/queries/aggregate-clause.md)です。  

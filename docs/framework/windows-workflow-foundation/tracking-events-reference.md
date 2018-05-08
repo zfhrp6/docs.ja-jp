@@ -1,23 +1,12 @@
 ---
-title: "追跡イベントのリファレンス"
-ms.custom: 
+title: 追跡イベントのリファレンス
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: c1c1ee87-f80a-449b-acd0-50d81eef116e
-caps.latest.revision: "23"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 5fba1e622a9be31f7db7bc0ccc05fda0997b12c2
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 211cb1d059bbe969c4334ea995c5676b09a3846a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="tracking-events-reference"></a>追跡イベントのリファレンス
 [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] のワークフローが実行中にライフタイムのさまざまなステージを移行するとき、追跡イベントが発生します。 ホストはこれらのイベントに定期受信し、ライフタイム中のワークフローの進行状況について最新の状態に保ちます。 ここでは、発生する追跡イベントについて説明します。  

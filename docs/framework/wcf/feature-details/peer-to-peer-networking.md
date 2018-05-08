@@ -1,29 +1,17 @@
 ---
-title: "ピアツーピア ネットワーク"
-ms.custom: 
+title: ピアツーピア ネットワーク
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: ad6cb67b-fd1c-4ca1-a767-b410da2e16ca
-caps.latest.revision: "17"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a26f10a323b44e7954245ab90a02f62745e84e87
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: fe3fe122e758d8460d98793cb8028ad696cb5302
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="peer-to-peer-networking"></a>ピアツーピア ネットワーク
-ピア チャネルとは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] のマルチパーティ対応ピアツーピア (P2P) 通信技術です。 この技術によって、アプリケーション開発者は安全で拡張可能なメッセージ ベースの P2P 通信チャネルを利用できます。 ピア チャネルのメリットを活用するマルチパーティ アプリケーションの一般的な例は、チャットなどの共同作業アプリケーションです。チャットでは、ユーザーのグループがサーバーなしのピアツーピア方式で互いに会話します。 ピア チャネルを使用することで、顧客シナリオや企業シナリオでの P2P コラボレーション、コンテンツ配布、負荷分散、および分散処理が実現します。  
+ピア チャネルは、マルチパーティ、ピア ツー ピア (P2P) 通信テクノロジ Windows Communication Foundation (WCF) です。 この技術によって、アプリケーション開発者は安全で拡張可能なメッセージ ベースの P2P 通信チャネルを利用できます。 ピア チャネルのメリットを活用するマルチパーティ アプリケーションの一般的な例は、チャットなどの共同作業アプリケーションです。チャットでは、ユーザーのグループがサーバーなしのピアツーピア方式で互いに会話します。 ピア チャネルを使用することで、顧客シナリオや企業シナリオでの P2P コラボレーション、コンテンツ配布、負荷分散、および分散処理が実現します。  
   
- [!INCLUDE[wv](../../../../includes/wv-md.md)] では、すべての [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] と同様に、既定でピア チャネルが有効になっています。 ピア チャネルのクラスにアクセスするには、プロジェクトに System.ServiceModel.dll への参照を追加します。  
+ ピア チャネルがで既定で有効になっている[!INCLUDE[wv](../../../../includes/wv-md.md)]が格納されるすべての WCF、します。 ピア チャネルのクラスにアクセスするには、プロジェクトに System.ServiceModel.dll への参照を追加します。  
   
  次の各セクションには、ピアツーピア ネットワークに関する情報と、ピア チャネルのクラスを使用してピア対応のネットワーク アプリケーションを作成する方法が記載されています。  
   

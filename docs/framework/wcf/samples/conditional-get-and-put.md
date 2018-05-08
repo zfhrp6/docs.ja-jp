@@ -1,24 +1,12 @@
 ---
-title: "条件付きの Get と Put"
-ms.custom: 
+title: 条件付きの Get と Put
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 3d22067f-57b8-4e0f-a571-a694512187ae
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 08efa127ed06ffc8cff3c7bb83af7be929329794
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f2d170da80de1186aa41b4821da52d58a0bb0e0e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="conditional-get-and-put"></a>条件付きの Get と Put
 このサンプルでは、新しい条件付きの取得 API と更新 API を WCF REST プログラミング モデルで使用する方法を示します。 条件付きの取得と更新プログラムに最も適したためリソース指向の REST サービスでは、このサンプルを拡張し、[基本的なリソース サービス](../../../../docs/framework/wcf/samples/basic-resource-service.md)サンプルです。 このサンプルでは、条件付きの取得と更新のサポートの追加、[基本的なリソース サービス](../../../../docs/framework/wcf/samples/basic-resource-service.md)で導入された新しい Api を使用してサンプル[!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)]です。  
@@ -54,6 +42,6 @@ ms.lasthandoff: 12/22/2017
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
+>  このディレクトリが存在しない場合に、 [Windows Communication Foundation (WCF) および .NET Framework 4 向けの Windows Workflow Foundation (WF) サンプル](http://go.microsoft.com/fwlink/?LinkId=150780)すべて Windows Communication Foundation (WCF) をダウンロードして[!INCLUDE[wf1](../../../../includes/wf1-md.md)]サンプルです。 このサンプルは、次のディレクトリに格納されます。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Web\ConditionalGetAndPut`

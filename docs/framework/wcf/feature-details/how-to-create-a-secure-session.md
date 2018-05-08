@@ -1,34 +1,22 @@
 ---
 title: '方法 : セキュリティで保護されたセッションを作成する'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - security [WCF], creating a session
 ms.assetid: b6f42b5a-bbf7-45cf-b917-7ec9fa7ae110
-caps.latest.revision: 10
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload:
-- dotnet
-ms.openlocfilehash: 0316d1120fe5f5b596374594de66e4f48dae84e8
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: ce351a87e70b09a2f68654af817e28fa3145d79d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-a-secure-session"></a>方法 : セキュリティで保護されたセッションを作成する
-例外を除いて、 [ \<basicHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md)のシステム指定のバインディング、バインディング[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]メッセージ セキュリティが有効になっているセキュリティで保護されたセッションを自動的に使用します。  
+例外を除いて、 [ \<basicHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md)バインド、システム指定のバインディングで Windows Communication Foundation (WCF) に自動的にセッションを使用するセキュリティで保護されたメッセージ セキュリティが有効な場合です。  
   
  既定では、セキュリティで保護されたセッションは、再利用される Web サーバーで存続します。 セキュリティで保護されたセッションが確立されると、クライアントとサービスが、セキュリティで保護されたセッションに関連付けられているキーをキャッシュします。 メッセージを交換するときは、キャッシュされたキーの識別子のみが交換されます。 Web サーバーが再利用される場合は、Web サーバーが識別子のキャッシュされたキーを取得できないようにキャッシュも再利用されます。 これが発生した場合、例外がクライアントにスローされます。 ステートフルなセキュリティ コンテキスト トークン (SCT: Security Context Token) を使用するセキュリティで保護されたセッションは、再利用される Web サーバーで存続することができます。 詳細については、セキュリティで保護されたセッションでステートフルな SCT を使用して、次を参照してください。[する方法: セキュリティで保護されたセッションのセキュリティ コンテキスト トークンを作成](../../../../docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md)です。  
   
@@ -36,7 +24,7 @@ ms.lasthandoff: 04/30/2018
   
 -   メッセージ セキュリティをサポートするシステム提供のバインディングを使用するようにサービスを構成します。  
   
-     例外を除いて、 [ \<basicHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md)メッセージ セキュリティを使用するシステム提供のバインディングが構成されている場合、バインディング、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]自動的にセキュリティで保護されたセッションを使用します。 次の表は、メッセージ セキュリティをサポートするシステム提供のバインディングを示し、そのバインディングでメッセージ セキュリティが既定のセキュリティ機構であるかどうかを示しています。  
+     例外を除いて、 [ \<basicHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md)セキュリティで保護されたセッションを使用して WCF メッセージ セキュリティを自動的に使用するシステム提供のバインディングが構成されている場合、バインドします。 次の表は、メッセージ セキュリティをサポートするシステム提供のバインディングを示し、そのバインディングでメッセージ セキュリティが既定のセキュリティ機構であるかどうかを示しています。  
   
     |システム提供のバインディング|構成要素|既定でメッセージ セキュリティが有効|  
     |------------------------------|---------------------------|------------------------------------|  

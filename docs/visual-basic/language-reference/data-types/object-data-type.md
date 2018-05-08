@@ -1,10 +1,6 @@
 ---
 title: Object Data Type
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Object
 - vb.Variant
@@ -14,14 +10,11 @@ helpviewer_keywords:
 - Object data type
 - Object data type [Visual Basic], reference
 ms.assetid: 61ea4a7c-3b3d-48d4-adc4-eacfa91779b2
-caps.latest.revision: "19"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 847f2b50296ad1a1ba6f0009d1d6afced27f9abe
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: e9b1da5a88c12e0d883c3afe63be98c3fa3e9173
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="object-data-type"></a>Object Data Type
 オブジェクトを参照するアドレスを保持します。 任意の参照型 (文字列、配列、クラス、またはインターフェイス) を割り当てることができます、`Object`変数。 `Object`変数は、任意の値型のデータを指すことも (numeric、 `Boolean`、 `Char`、 `Date`、構造体、または列挙型)。  
@@ -31,7 +24,7 @@ ms.lasthandoff: 11/21/2017
   
  既定値の`Object`は`Nothing`(null 参照)。  
   
-## <a name="data-types"></a>データ型  
+## <a name="data-types"></a>データの種類  
  変数、定数、または任意のデータ型に式を割り当てることができます、`Object`変数。 データ型を決定する、`Object`変数を現在参照して、使用することができます、<xref:System.Type.GetTypeCode%2A>のメソッド、<xref:System.Type?displayProperty=nameWithType>クラスです。 次に例を示します。  
   
 ```  
@@ -43,7 +36,7 @@ datTyp = Type.GetTypeCode(myObject.GetType())
   
  `Object`データ型が参照型です。 ただし、Visual Basic の処理、`Object`値型のデータを参照するときに、値型として変数です。  
   
-## <a name="storage"></a>ストレージ  
+## <a name="storage"></a>記憶域  
  参照するすべてのデータ型、`Object`自体が、値へのポインターではなく、変数がデータ値を含んでいません。 コンピューター メモリ内で常に 4 バイトを使用しますが、これは、変数の値を表すデータの記憶域には含まれません。 ポインターを使用して、データを検索するコードのため`Object`値の型を保持する変数より明示的に型指定された変数にアクセスするのには、多少速度が低下します。  
   
 ## <a name="programming-tips"></a>プログラミングのヒント  
@@ -58,7 +51,7 @@ datTyp = Type.GetTypeCode(myObject.GetType())
   
      ただし、値型の間で変換する場合と`Object`、という操作を実行する Visual Basic*ボックス化*と*アンボックス*、により実行速度が低下します。  
   
--   **型宣言文字。** `Object`リテラルの型文字または識別子の型文字がありません。  
+-   **型宣言文字。** `Object` リテラルの型文字または識別子の型文字がありません。  
   
 -   **Framework の型。** .NET Framework において対応する型は、<xref:System.Object?displayProperty=nameWithType>クラスです。  
   

@@ -1,13 +1,6 @@
 ---
-title: "Windows フォーム DataGridView コントロールでの選択およびクリップボードの使用"
-ms.custom: 
+title: Windows フォーム DataGridView コントロールでの選択およびクリップボードの使用
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - DataGridView control [Windows Forms], Clipboard use
 - cells [Windows Forms], selecting in grids
@@ -16,16 +9,11 @@ helpviewer_keywords:
 - data grids [Windows Forms], selecting cells
 - DataGridView control [Windows Forms], selecting cells
 ms.assetid: 82cffcad-8b30-4897-bddb-c3a79d751b83
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ceea4108f39619ccbcbf0286905a94b8236607cb
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: c777366124a3cc5f43df8efca54fc366245bcb75
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="selection-and-clipboard-use-with-the-windows-forms-datagridview-control"></a>Windows フォーム DataGridView コントロールでの選択およびクリップボードの使用
 `DataGridView`コントロールでは、さまざまなユーザーがセル、行、および列を選択する方法を構成するためのオプションが用意されています。 たとえば、有効にできます 1 つまたは複数選択、行全体またはユーザーがセルをクリックしたときの列の選択または選択行全体または列のユーザーが、ヘッダーをクリックしたときにのみセルの選択もできます。 選択範囲の独自のユーザー インターフェイスを提供する場合は、通常の選択を無効にし、すべての選択項目をプログラムで処理できます。 さらに、選択した値をクリップボードにコピーするユーザーを有効にすることができます。  
@@ -62,6 +50,6 @@ ms.lasthandoff: 12/22/2017
  <xref:System.Windows.Forms.DataGridViewSelectedColumnCollection>  
  リファレンス ドキュメントを提供、<xref:System.Windows.Forms.DataGridViewSelectedColumnCollection>クラスです。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [DataGridView コントロール](../../../../docs/framework/winforms/controls/datagridview-control-windows-forms.md)  
  [Windows フォーム DataGridView コントロールの既定のキーボード処理とマウス処理](../../../../docs/framework/winforms/controls/default-keyboard-and-mouse-handling-in-the-windows-forms-datagridview-control.md)

@@ -1,24 +1,12 @@
 ---
-title: "カスタム暗号アルゴリズムの指定"
-ms.custom: 
+title: カスタム暗号アルゴリズムの指定
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: d662a305-8e09-451d-9a59-b0f12b012f1d
-caps.latest.revision: "2"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 965f121faa851722e6e2e7f92e805252f7e927c5
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d8fb22daac66c3ef80f148db03703fc5024d3438
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="specifying-a-custom-crypto-algorithm"></a>カスタム暗号アルゴリズムの指定
 WCF では、データの暗号化やデジタル署名の計算を行う際に使用するカスタム暗号アルゴリズムを指定できます。 そのためには、次の手順に従います。  
@@ -116,7 +104,7 @@ public class MyCustomAlgorithmSuite : SecurityAlgorithmSuite
 </configuration>  
 ```  
   
- 下のセクションで、<`cryptoClasses`> 要素が、SHA256CryptoServiceProvider とエイリアス"SHA256CSP"の間のマッピングを作成します。 <`nameEntry`> 要素は、"SHA256CSP"エイリアスと指定された URL (http://constoso.com/CustomAlgorithms/CustomHashAlgorithm) の間のマッピングを作成します。  
+ 下のセクションで、<`cryptoClasses`> 要素が、SHA256CryptoServiceProvider とエイリアス"SHA256CSP"の間のマッピングを作成します。 <`nameEntry`> 要素は、"SHA256CSP"エイリアスと指定された URL の間のマッピングを作成 (http://constoso.com/CustomAlgorithms/CustomHashAlgorithm )。  
   
  コードでカスタム アルゴリズムを登録するには、<xref:System.Security.Cryptography.CryptoConfig.AddAlgorithm(System.Type,System.String[])> メソッドを使用します。 このメソッドによって、両方のマッピングを作成します。 次の例は、このメソッドを呼び出す方法を示しています。  
   
@@ -136,7 +124,7 @@ WSHttpBinding binding = new WSHttpBinding();
   
  完全なコード例は、次を参照してください。、 [WCF セキュリティの暗号化方式の指定](../../../../docs/framework/wcf/samples/cryptographic-agility-in-wcf-security.md)サンプルです。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [サービスおよびクライアントのセキュリティ保護](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
  [サービスのセキュリティ保護](../../../../docs/framework/wcf/securing-services.md)  
  [セキュリティの概要](../../../../docs/framework/wcf/feature-details/security-overview.md)  

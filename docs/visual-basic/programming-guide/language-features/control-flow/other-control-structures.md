@@ -1,25 +1,15 @@
 ---
 title: その他の制御構造 (Visual Basic)
-ms.custom: ''
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - statements [Visual Basic], control flow
 - control structures [Visual Basic]
 ms.assetid: 24b811f7-98ba-40ec-8dd3-4d528cfa4574
-caps.latest.revision: 19
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 4e1ea44cf2f0405dc55f8df60fb842691e50a9a0
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 272ebcf0639b83a51e87de5ebbf93d7e750c03a7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="other-control-structures-visual-basic"></a>その他の制御構造 (Visual Basic)
 Visual Basic では、リソースを破棄または繰り返しオブジェクト参照に必要な回数の数を削減するのに役立つ制御構造を提供します。  

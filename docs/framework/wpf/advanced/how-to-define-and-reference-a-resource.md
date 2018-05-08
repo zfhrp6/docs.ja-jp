@@ -1,29 +1,17 @@
 ---
-title: "方法 : リソースを定義および参照する"
-ms.custom: 
+title: '方法 : リソースを定義および参照する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - resources [WPF], defining
 - defining resources [WPF]
 - resources [WPF], referencing
 - referencing resources [WPF]
 ms.assetid: b86b876b-0a10-489b-9a5d-581ea9b32406
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 173be3048f7bf082db2eef2ea21eb1e0319f9a43
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 347804f0ce6dd3b907d3ac088248a64569a63695
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-define-and-reference-a-resource"></a>方法 : リソースを定義および参照する
 この例は、内の属性を使用して、参照およびリソースを定義する方法を示しています。[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]です。  
@@ -35,6 +23,6 @@ ms.lasthandoff: 12/22/2017
   
  [!code-xaml[FEResource#XAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FEResource/CS/default.xaml#xaml)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [XAML リソース](../../../../docs/framework/wpf/advanced/xaml-resources.md)  
  [スタイルとテンプレート](../../../../docs/framework/wpf/controls/styling-and-templating.md)

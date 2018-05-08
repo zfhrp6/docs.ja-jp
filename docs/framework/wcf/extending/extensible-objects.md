@@ -1,23 +1,14 @@
 ---
-title: "拡張可能オブジェクト"
+title: 拡張可能オブジェクト
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: article
 helpviewer_keywords:
 - extensible objects [WCF]
 ms.assetid: bc88cefc-31fb-428e-9447-6d20a7d452af
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: a1bb341d9e164b1ce232f238f8ddf4a0cf807363
-ms.sourcegitcommit: c1904b0437605a90e5aa65b4abd7e048000e349d
-ms.translationtype: MT
+ms.openlocfilehash: 4fdb3ddff6bda21ac7f9538645d92f15e0b443b9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="extensible-objects"></a>拡張可能オブジェクト
 拡張可能オブジェクト パターンは、既存のランタイム クラスに新しい機能を付加して拡張したり、オブジェクトに新しい状態を追加するために使用します。 このようなオブジェクトを実際に拡張することにより、処理の段階に応じて、共通の拡張可能オブジェクトに定義された共有の状態や機能にアクセスすることができます。  
@@ -57,7 +48,7 @@ where T : IExtensibleObject<T>
  <xref:System.ServiceModel.IExtensionCollection%601> インターフェイスは、型を基準にした <xref:System.ServiceModel.IExtension%601> の取得を可能にする <xref:System.ServiceModel.IExtension%601> オブジェクトのコレクションです。 <xref:System.ServiceModel.IExtensionCollection%601.Find%2A?displayProperty=nameWithType> は、指定された型の <xref:System.ServiceModel.IExtension%601> オブジェクトのうち、最も新しく追加されたものを返します。  
   
 ### <a name="extensible-objects-in-windows-communication-foundation"></a>Windows Communication Foundation の拡張可能オブジェクト  
- [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] には次の 4 つの拡張可能オブジェクトが組み込まれています。  
+ Windows Communication Foundation (WCF) の 4 つの拡張可能なオブジェクトがあります。  
   
 -   <xref:System.ServiceModel.ServiceHostBase> : サービス ホストの基本クラスです。  <xref:System.ServiceModel.ServiceHostBase> 自身の動作を拡張するほか、各サービスの状態を保存しておくための拡張が可能です。  
   
@@ -73,7 +64,7 @@ where T : IExtensibleObject<T>
   
  [!code-csharp[IInstanceContextInitializer#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/iinstancecontextinitializer/cs/initializer.cs#1)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.IExtensibleObject%601>  
  <xref:System.ServiceModel.IExtension%601>  
  <xref:System.ServiceModel.IExtensionCollection%601>

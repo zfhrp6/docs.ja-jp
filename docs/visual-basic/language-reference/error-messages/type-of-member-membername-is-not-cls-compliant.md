@@ -1,26 +1,17 @@
 ---
 title: メンバーの種類&#39; &lt;membername&gt; &#39; CLS 準拠ではありません
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - bc40025
 - vbc40025
 helpviewer_keywords:
 - BC40025
 ms.assetid: adbd34bb-43d2-4266-90e7-cd1afaf49b4e
-caps.latest.revision: 14
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 123d19bc3b159578edc7fdfe2a36bc8c79e962ef
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 5735b5104884a702a649a029116be7446424ec67
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="type-of-member-39ltmembernamegt39-is-not-cls-compliant"></a>メンバーの種類&#39; &lt;membername&gt; &#39; CLS 準拠ではありません
 このメンバーに指定されたデータ型の一部、[言語非依存および言語非依存コンポーネント](../../../standard/language-independence-and-language-independent-components.md)(CLS)。 これは、エラーではありません、コンポーネント内であるため、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]と Visual Basic は、このデータ型をサポートします。 ただし、厳密に CLS 準拠コードで記述された別のコンポーネントがこのデータ型をサポートしていません。 このようなコンポーネントはできないコンポーネントを正常にやり取りすることがあります。  

@@ -1,13 +1,6 @@
 ---
-title: "3-D 変換の概要"
-ms.custom: 
+title: 3-D 変換の概要
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - 3-D transformations
 - transformations [WPF], 3-D
 ms.assetid: e45e555d-ac1e-4b36-aced-e433afe7f27f
-caps.latest.revision: "18"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 7b45c2c12393f296f916eaf8ea3f912958b54b09
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f0fb859905327b30c0ea509e5d07072b81dcf30e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="3-d-transformations-overview"></a>3-D 変換の概要
 このトピックでは、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] グラフィックス システムで 3-D モデルに変換を適用する方法について説明します。 変換を使うと、モデルを定義する基本の値を変更することなく、モデルの位置、サイズ、向きを変更できます。  
@@ -49,7 +37,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="translation-transformations"></a>平行移動変換  
  3-D 変換は、抽象基本クラスから継承<xref:System.Windows.Media.Media3D.Transform3D>; アフィン変換クラスが含まれます<xref:System.Windows.Media.Media3D.TranslateTransform3D>、 <xref:System.Windows.Media.Media3D.ScaleTransform3D>、および<xref:System.Windows.Media.Media3D.RotateTransform3D>です。 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] 3-D システムも用意されています、<xref:System.Windows.Media.Media3D.MatrixTransform3D>できるようにするクラスより簡潔なマトリックスの操作で同じ変換を指定します。  
   
- <xref:System.Windows.Media.Media3D.TranslateTransform3D>指定したオフセットのベクターの方向に Model3D 内のすべてのポイントを移動、 <xref:System.Windows.Media.Media3D.TranslateTransform3D.OffsetX%2A>、 <xref:System.Windows.Media.Media3D.TranslateTransform3D.OffsetY%2A>、および<xref:System.Windows.Media.Media3D.TranslateTransform3D.OffsetZ%2A>プロパティです。 たとえば、立方体の 1 つの頂点が (2,2,2) にあるものとすると、オフセット ベクトル (0,1.6,1) により頂点 (2,2,2) は (2,3.6,3) に移動します。 モデル空間内での立方体の頂点はまだ (2,2,2) にありますが、モデル空間の (2,2,2) がワールド空間では (2,3.6,3) になるように、モデル空間とワールド空間の関係が変更されています。  
+ <xref:System.Windows.Media.Media3D.TranslateTransform3D> 指定したオフセットのベクターの方向に Model3D 内のすべてのポイントを移動、 <xref:System.Windows.Media.Media3D.TranslateTransform3D.OffsetX%2A>、 <xref:System.Windows.Media.Media3D.TranslateTransform3D.OffsetY%2A>、および<xref:System.Windows.Media.Media3D.TranslateTransform3D.OffsetZ%2A>プロパティです。 たとえば、立方体の 1 つの頂点が (2,2,2) にあるものとすると、オフセット ベクトル (0,1.6,1) により頂点 (2,2,2) は (2,3.6,3) に移動します。 モデル空間内での立方体の頂点はまだ (2,2,2) にありますが、モデル空間の (2,2,2) がワールド空間では (2,3.6,3) になるように、モデル空間とワールド空間の関係が変更されています。  
   
  ![変換の図](../../../../docs/framework/wpf/graphics-multimedia/media/transforms-translate.png "変換の変換")  
 オフセットでの平行移動  
@@ -59,7 +47,7 @@ ms.lasthandoff: 12/22/2017
  [!code-xaml[animation3dgallery_snip#Translation3DAnimationExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Animation3DGallery_snip/CS/Translation3DAnimationExample.xaml#translation3danimationexamplewholepage)]  
   
 ## <a name="scale-transformations"></a>スケール変換  
- <xref:System.Windows.Media.Media3D.ScaleTransform3D>中心点を参照するよう指定したスケール ベクターでモデルのスケールを変更します。 一様なスケールを指定すると、モデルは X、Y、Z 軸の方向に同じ比率だけ拡大縮小され、それに比例してモデルのサイズが変化します。 たとえば、変換のプロパティ設定<xref:System.Windows.Media.ScaleTransform.ScaleX%2A>、 <xref:System.Windows.Media.ScaleTransform.ScaleY%2A>、および<xref:System.Windows.Media.Media3D.ScaleTransform3D.ScaleZ%2A>を 0.5 にプロパティが、モデルのサイズを半分以外の場合は、次の 3 つすべての軸のスケールを 2 倍に同じプロパティを 2 に設定します。  
+ <xref:System.Windows.Media.Media3D.ScaleTransform3D> 中心点を参照するよう指定したスケール ベクターでモデルのスケールを変更します。 一様なスケールを指定すると、モデルは X、Y、Z 軸の方向に同じ比率だけ拡大縮小され、それに比例してモデルのサイズが変化します。 たとえば、変換のプロパティ設定<xref:System.Windows.Media.ScaleTransform.ScaleX%2A>、 <xref:System.Windows.Media.ScaleTransform.ScaleY%2A>、および<xref:System.Windows.Media.Media3D.ScaleTransform3D.ScaleZ%2A>を 0.5 にプロパティが、モデルのサイズを半分以外の場合は、次の 3 つすべての軸のスケールを 2 倍に同じプロパティを 2 に設定します。  
   
  ![ScaleTransform3D の統一された](../../../../docs/framework/wpf/graphics-multimedia/media/threecubes-uniformscale-1.png "threecubes_uniformscale_1")  
 ScaleVector の例  
@@ -87,7 +75,7 @@ ScaleVector の例
   
  モデルを "その場で" 回転するには、モデルの実際の中心を回転の中心として指定します。 通常、ジオメトリは原点を中心にモデル化されるので、ほとんどの場合は、最初にモデルのサイズを変更し (スケーリング)、次に向きを設定し (回転)、最後に目的の位置に移動することにより (平行移動)、変換のセットで意図した結果が得られます。  
   
- ![X 60 度 &#45; 回転y &#45; のおよび軸](../../../../docs/framework/wpf/graphics-multimedia/media/twocubes-rotation2axes-1.png "twocubes_rotation2axes_1")  
+ ![X 60 度回転&#45;と y&#45;軸](../../../../docs/framework/wpf/graphics-multimedia/media/twocubes-rotation2axes-1.png "twocubes_rotation2axes_1")  
 回転の例  
   
  軸角度の回転は、静的な変換と一部のアニメーションで問題なく行われます。 ただし、立方体モデルを X 軸を中心に 60 度回転してから、Z 軸を中心に 45 度回転する場合を考えてみてください。 この変換は、2 つの個別のアフィン変換として、または行列として記述できます。 しかし、この方法で定義された回転をスムーズにアニメーション化するのは難しい場合があります。 どちらの方法で計算してもモデルの最初と最後の位置は同じですが、モデルの中間の位置は計算上は不確定です。 四元数は、回転の開始と終了の間の補間を計算する別の方法を表します。  
@@ -116,7 +104,7 @@ ScaleVector の例
   
  カメラもモデルなので、カメラのプロパティを変換することもできます。  カメラの位置または平面距離を変換することにより (実際には、シーン全体の投影を変換して) シーンの外観を変更できますが、この方法で得られる効果の多くは、シーン内のモデルの場所や位置に適用される変換ほど大きな "視覚的意味" を見ている人に与えられない場合があることに注意してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [3-D グラフィックスの概要](../../../../docs/framework/wpf/graphics-multimedia/3-d-graphics-overview.md)  
  [変換の概要](../../../../docs/framework/wpf/graphics-multimedia/transforms-overview.md)  
  [2-D 変換のサンプル](http://go.microsoft.com/fwlink/?LinkID=158252)

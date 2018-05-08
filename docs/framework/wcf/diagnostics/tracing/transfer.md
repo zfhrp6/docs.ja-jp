@@ -1,27 +1,15 @@
 ---
-title: "転送"
-ms.custom: 
+title: 転送
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: dfcfa36c-d3bb-44b4-aa15-1c922c6f73e6
-caps.latest.revision: "7"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 83bb76cc46d72f3d368de20669391c3e7f24a0f2
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 7daa486286e022b24be32df7335ddbd5db7233f0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="transfer"></a>転送
-このトピックでは、[!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] のアクティビティ トレース モデルで使用される転送という概念について説明します。  
+このトピックでは、Windows Communication Foundation (WCF) のアクティビティ トレース モデルで使用される転送について説明します。  
   
 ## <a name="transfer-definition"></a>転送の定義  
  アクティビティ間の転送は、エンドポイント内の関連アクティビティで発生したイベント間の因果関係を表します。 制御が 2 つのアクティビティ間を流れる場合 (アクティビティの境界を越えたメソッド呼び出しなど)、転送によってこれらのアクティビティが関連付けられます。 [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] では、サービスでバイトを受信すると、"リッスン" アクティビティが "バイトを受信" アクティビティに転送され、このアクティビティでメッセージ オブジェクトが作成されます。 エンド ツー エンドのトレース シナリオと、それぞれのアクティビティとデザインのトレースの一覧は、次を参照してください。[エンド ツー エンドのトレース シナリオ](../../../../../docs/framework/wcf/diagnostics/tracing/end-to-end-tracing-scenarios.md)です。  
@@ -102,7 +90,7 @@ Trace.CorrelationManager.ActivityId = oldGuid;
 ts.TraceEvent(TraceEventType.Resume, 667, "Resume: Activity " + i-1);  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [トレースの構成](../../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)  
  [サービス トレース ビューアーを使用した相関トレースの表示とトラブルシューティング](../../../../../docs/framework/wcf/diagnostics/tracing/using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md)  
  [エンドツーエンドのトレースのシナリオ](../../../../../docs/framework/wcf/diagnostics/tracing/end-to-end-tracing-scenarios.md)  

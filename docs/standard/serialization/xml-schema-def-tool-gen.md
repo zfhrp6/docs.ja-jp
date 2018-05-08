@@ -1,30 +1,17 @@
 ---
-title: "方法 : XML スキーマ定義ツールを使用してクラスと XML スキーマ ドキュメントを生成する"
-ms.custom: 
+title: '方法 : XML スキーマ定義ツールを使用してクラスと XML スキーマ ドキュメントを生成する'
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - generating XML classes using XML Schema Definition tool
 - generating XML Schema Document using XML Schema Definition tool
 - XML Schema Definition tool, using to generate classes that conform to specific schema
 - XML Schema Definition tool, using to generate XML Schema Document
 ms.assetid: 51f0edc3-993d-4051-b7f2-77753694d3d1
-caps.latest.revision: "5"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 0e390b808f9eaa5d6b305284e1abe28f45f4d104
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: c169a3068b240e8d4d1cdb1d307938ee113066fb
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-use-the-xml-schema-definition-tool-to-generate-classes-and-xml-schema-documents"></a>方法 : XML スキーマ定義ツールを使用してクラスと XML スキーマ ドキュメントを生成する
 XML スキーマ定義ツール (Xsd.exe) を使用して、クラスを説明する XML スキーマを生成したり、XML スキーマで定義されるクラスを生成したりできます。 次の手順では、これらの操作の実行方法を示します。  
@@ -39,7 +26,7 @@ XML スキーマ定義ツール (Xsd.exe) を使用して、クラスを説明�
     xsd mySchema.xsd  
     ```  
   
-     ツールは、2001 年 3 月 16 日付けの World Wide Web Consortium XML 仕様を参照するスキーマのみを処理できます。 つまり、XML スキーマ名前空間は、次の例に示すように "http://www.w3.org/2001/XMLSchema" になる必要があります。  
+     ツールは、2001 年 3 月 16 日付けの World Wide Web Consortium XML 仕様を参照するスキーマのみを処理できます。 つまり、XML スキーマ名前空間がある必要があります"http://www.w3.org/2001/XMLSchema"次の例で示すようにします。  
   
     ```xml  
     <?xml version="1.0" encoding="utf-8"?>  
@@ -64,7 +51,7 @@ XML スキーマ定義ツール (Xsd.exe) を使用して、クラスを説明�
   
      スキーマが、"schema0.xsd" という名前から順に書き込まれます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Data.DataSet>  
  [XML スキーマ定義ツールと XML シリアル化](../../../docs/standard/serialization/the-xml-schema-definition-tool-and-xml-serialization.md)  
  [XML シリアル化の概要](../../../docs/standard/serialization/introducing-xml-serialization.md)  

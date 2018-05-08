@@ -1,13 +1,6 @@
 ---
-title: "3-D グラフィックスの概要"
-ms.custom: 
+title: 3-D グラフィックスの概要
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - 3-D graphics [WPF]
 - graphics [WPF], 3-D
 ms.assetid: 67f31ed4-e36b-4b02-9889-dcce245d7afc
-caps.latest.revision: "21"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 58b756c24c1ca7e3f5b6b3f13c314363daf35443
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6d44f27ccd82d535436be03092c3864e3155d1d8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="3-d-graphics-overview"></a>3-D グラフィックスの概要
 <a name="introduction"></a> [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] の [!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] 機能を使うと、マークアップと手続き型コード両方の 3-D グラフィックスを描画、変換、およびアニメーション化することができます。 開発者は [!INCLUDE[TLA#tla_2d](../../../../includes/tlasharptla-2d-md.md)] グラフィックスと [!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] グラフィックスを組み合わせて、リッチなコントロールを作成したり、データの複雑なイラストを提供したり、アプリケーションのインターフェイスのユーザー エクスペリエンスを拡張したりすることができます。 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] での [!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] のサポートは、フル機能のゲーム開発プラットフォームを提供するようには設計されていません。 このトピックでは、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] グラフィックス システムでの [!INCLUDE[TLA#tla_3d](../../../../includes/tlasharptla-3d-md.md)] 機能の概要について説明します。  
@@ -32,7 +20,7 @@ ms.lasthandoff: 12/22/2017
   
 <a name="threed_in_2d"></a>   
 ## <a name="3-d-in-a-2-d-container"></a>2-D コンテナー内の 3-D  
- [!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)]グラフィックでコンテンツ[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]要素内にカプセル化<xref:System.Windows.Controls.Viewport3D>、2 次元の要素の構造に含まれることができます。 グラフィックス システム処理<xref:System.Windows.Controls.Viewport3D>内にあるその他の多くのような 2 次元の visual 要素として[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]です。 <xref:System.Windows.Controls.Viewport3D>ウィンドウとして機能-ビューポート-3 次元シーンにします。 より正確には、[!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] シーンが投影されるサーフェイスです。  
+ [!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] グラフィックでコンテンツ[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]要素内にカプセル化<xref:System.Windows.Controls.Viewport3D>、2 次元の要素の構造に含まれることができます。 グラフィックス システム処理<xref:System.Windows.Controls.Viewport3D>内にあるその他の多くのような 2 次元の visual 要素として[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]です。 <xref:System.Windows.Controls.Viewport3D> ウィンドウとして機能-ビューポート-3 次元シーンにします。 より正確には、[!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] シーンが投影されるサーフェイスです。  
   
  従来の[!INCLUDE[TLA2#tla_2d](../../../../includes/tla2sharptla-2d-md.md)]アプリケーションでは、使用<xref:System.Windows.Controls.Viewport3D>グリッドまたはキャンバスのような別のコンテナー要素と同様です。  使用できますが<xref:System.Windows.Controls.Viewport3D>他[!INCLUDE[TLA2#tla_2d](../../../../includes/tla2sharptla-2d-md.md)]シーンで同じグラフにオブジェクトを描画することはできませんめり込んで[!INCLUDE[TLA2#tla_2d](../../../../includes/tla2sharptla-2d-md.md)]と[!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)]内のオブジェクトは、<xref:System.Windows.Controls.Viewport3D>です。  このトピックの内容にどのように描画する焦点[!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)]内にあるグラフィック、<xref:System.Windows.Controls.Viewport3D>です。  
   
@@ -51,12 +39,12 @@ ms.lasthandoff: 12/22/2017
   
  [!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] シーンが [!INCLUDE[TLA2#tla_2d](../../../../includes/tla2sharptla-2d-md.md)] サーフェイス上でどのように表現されるかを理解するもう 1 つの方法は、表示サーフェイスへの投影としてシーンを記述することです。 <xref:System.Windows.Media.Media3D.ProjectionCamera>さまざまな予測と観察の表示を変更するには、そのプロパティを指定することができます[!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)]モデル。 A<xref:System.Windows.Media.Media3D.PerspectiveCamera>シーンを foreshortens 投影を指定します。  言い換えると、<xref:System.Windows.Media.Media3D.PerspectiveCamera>消失点透視投影を提供します。  シーンの座標空間内でのカメラの位置、カメラの方向と視野、およびシーン内での "上" の方向を定義するベクトルを指定できます。 次の図は、<xref:System.Windows.Media.Media3D.PerspectiveCamera>のプロジェクション。  
   
- <xref:System.Windows.Media.Media3D.ProjectionCamera.NearPlaneDistance%2A>と<xref:System.Windows.Media.Media3D.ProjectionCamera.FarPlaneDistance%2A>プロパティの<xref:System.Windows.Media.Media3D.ProjectionCamera>カメラの投影の範囲を制限します。 カメラはシーン内の任意の場所に配置できるため、カメラをモデルの内部またはモデルの非常に近くに実際に配置することができ、オブジェクトを正しく識別するのが困難になる場合があります。  <xref:System.Windows.Media.Media3D.ProjectionCamera.NearPlaneDistance%2A>これを超えるオブジェクトが描画しないカメラからの最小距離を指定できます。  これに対し、<xref:System.Windows.Media.Media3D.ProjectionCamera.FarPlaneDistance%2A>を認識できる離れすぎてオブジェクトをシーンに含まれるしないことを実行できるようにこれを超えるオブジェクトは描画されません、カメラからの距離を指定することができます。  
+ <xref:System.Windows.Media.Media3D.ProjectionCamera.NearPlaneDistance%2A>と<xref:System.Windows.Media.Media3D.ProjectionCamera.FarPlaneDistance%2A>プロパティの<xref:System.Windows.Media.Media3D.ProjectionCamera>カメラの投影の範囲を制限します。 カメラはシーン内の任意の場所に配置できるため、カメラをモデルの内部またはモデルの非常に近くに実際に配置することができ、オブジェクトを正しく識別するのが困難になる場合があります。  <xref:System.Windows.Media.Media3D.ProjectionCamera.NearPlaneDistance%2A> これを超えるオブジェクトが描画しないカメラからの最小距離を指定できます。  これに対し、<xref:System.Windows.Media.Media3D.ProjectionCamera.FarPlaneDistance%2A>を認識できる離れすぎてオブジェクトをシーンに含まれるしないことを実行できるようにこれを超えるオブジェクトは描画されません、カメラからの距離を指定することができます。  
   
  ![カメラのセットアップ](../../../../docs/framework/wpf/graphics-multimedia/media/coordsystem-6.png "CoordSystem 6")  
 カメラの位置  
   
- <xref:System.Windows.Media.Media3D.OrthographicCamera>正の射影を指定します、[!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)]モデルを[!INCLUDE[TLA2#tla_2d](../../../../includes/tla2sharptla-2d-md.md)]ビジュアル サーフェイスです。 他のカメラと同じように、位置、視線方向、および "上" の向きを指定します。 異なり<xref:System.Windows.Media.Media3D.PerspectiveCamera>、ただし、<xref:System.Windows.Media.Media3D.OrthographicCamera>パースペクティブの短縮を含まない射影について説明します。 つまり、<xref:System.Windows.Media.Media3D.OrthographicCamera>辺が並列ではなくいずれかの辺を満たす、カメラにある点で、表示ボックスについて説明します。 次の図に、同じモデルを使用して表示<xref:System.Windows.Media.Media3D.PerspectiveCamera>と<xref:System.Windows.Media.Media3D.OrthographicCamera>です。  
+ <xref:System.Windows.Media.Media3D.OrthographicCamera> 正の射影を指定します、[!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)]モデルを[!INCLUDE[TLA2#tla_2d](../../../../includes/tla2sharptla-2d-md.md)]ビジュアル サーフェイスです。 他のカメラと同じように、位置、視線方向、および "上" の向きを指定します。 異なり<xref:System.Windows.Media.Media3D.PerspectiveCamera>、ただし、<xref:System.Windows.Media.Media3D.OrthographicCamera>パースペクティブの短縮を含まない射影について説明します。 つまり、<xref:System.Windows.Media.Media3D.OrthographicCamera>辺が並列ではなくいずれかの辺を満たす、カメラにある点で、表示ボックスについて説明します。 次の図に、同じモデルを使用して表示<xref:System.Windows.Media.Media3D.PerspectiveCamera>と<xref:System.Windows.Media.Media3D.OrthographicCamera>です。  
   
  ![正投影と透視投影](../../../../docs/framework/wpf/graphics-multimedia/media/camera-projections4.png "Camera_projections4")  
 透視投影と正投影  
@@ -69,7 +57,7 @@ ms.lasthandoff: 12/22/2017
 <a name="models_meshes"></a>   
 ## <a name="model-and-mesh-primitives"></a>モデルとメッシュ プリミティブ  
   
- <xref:System.Windows.Media.Media3D.Model3D>ジェネリック型を表す抽象基本クラスは、[!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)]オブジェクト。 構築する、[!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)]シーン、一部のオブジェクトを表示する必要があり、シーンのグラフを構成するオブジェクトから派生して<xref:System.Windows.Media.Media3D.Model3D>です。 現時点では、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]のジオメトリをモデリングをサポートしている<xref:System.Windows.Media.Media3D.GeometryModel3D>です。 <xref:System.Windows.Media.Media3D.GeometryModel3D.Geometry%2A>このモデルのプロパティにプリミティブ メッシュはします。  
+ <xref:System.Windows.Media.Media3D.Model3D> ジェネリック型を表す抽象基本クラスは、[!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)]オブジェクト。 構築する、[!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)]シーン、一部のオブジェクトを表示する必要があり、シーンのグラフを構成するオブジェクトから派生して<xref:System.Windows.Media.Media3D.Model3D>です。 現時点では、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]のジオメトリをモデリングをサポートしている<xref:System.Windows.Media.Media3D.GeometryModel3D>です。 <xref:System.Windows.Media.Media3D.GeometryModel3D.Geometry%2A>このモデルのプロパティにプリミティブ メッシュはします。  
   
  モデルを構築するには、最初にプリミティブ (メッシュ) を作成します。 [!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] のプリミティブは、1 つの [!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] エンティティを形成する頂点の集合です。 ほとんどの [!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] システムでは、最も簡単な閉じた図形 (3 つの頂点で定義された三角形) でモデル化されたプリミティブが提供されます。  三角形の 3 つの頂点は同一平面上にあるため、三角形の追加を続けて、メッシュと呼ばれる複雑な図形をモデル化できます。  
   
@@ -81,7 +69,7 @@ ms.lasthandoff: 12/22/2017
   
  値を指定して、モデルの定義を続行することができます、<xref:System.Windows.Media.Media3D.MeshGeometry3D.Normals%2A>と<xref:System.Windows.Media.Media3D.MeshGeometry3D.TextureCoordinates%2A>プロパティです。  グラフィックス システムがモデルのサーフェイスをレンダリングするには、特定の三角形において面が向いている方向に関する情報が必要です。 この情報を使って、モデルの照明の計算が行われます。光源に正対しているサーフェイスは、光源に対して角度のあるサーフェスより明るくなります。 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]は位置座標を使って既定の法線ベクトルを決定できますが、曲面の外観を近似する別の法線ベクトルを指定することもできます。  
   
- <xref:System.Windows.Media.Media3D.MeshGeometry3D.TextureCoordinates%2A>プロパティのコレクションを指定する<xref:System.Windows.Point>グラフィックス システム メッシュの頂点にテクスチャを描画する方法を決定する座標をマップする方法を指示する秒です。 <xref:System.Windows.Media.Media3D.MeshGeometry3D.TextureCoordinates%2A>0 ~ 1 の値として指定されます。  同様、<xref:System.Windows.Media.Media3D.MeshGeometry3D.Normals%2A>プロパティ、グラフィックス システムは既定で、テクスチャ座標が、繰り返しのパターンの一部を含むテクスチャのマッピングを制御するさまざまなテクスチャ座標を設定することもできますを計算できます。 テクスチャ座標について詳しくは、マネージ Direct3D SDK の後続のトピックをご覧ください。  
+ <xref:System.Windows.Media.Media3D.MeshGeometry3D.TextureCoordinates%2A>プロパティのコレクションを指定する<xref:System.Windows.Point>グラフィックス システム メッシュの頂点にテクスチャを描画する方法を決定する座標をマップする方法を指示する秒です。 <xref:System.Windows.Media.Media3D.MeshGeometry3D.TextureCoordinates%2A> 0 ~ 1 の値として指定されます。  同様、<xref:System.Windows.Media.Media3D.MeshGeometry3D.Normals%2A>プロパティ、グラフィックス システムは既定で、テクスチャ座標が、繰り返しのパターンの一部を含むテクスチャのマッピングを制御するさまざまなテクスチャ座標を設定することもできますを計算できます。 テクスチャ座標について詳しくは、マネージ Direct3D SDK の後続のトピックをご覧ください。  
   
  次の例では、手続き型コードで立方体モデルの 1 つの面を作成する方法を示します。 立方体全体を単一の GeometryModel3D として描画できることに注意してください。この例では、後で各面に異なるテクスチャを適用するため、個別のモデルとして立方体の面を描画します。  
   
@@ -98,11 +86,11 @@ ms.lasthandoff: 12/22/2017
   
  モデルのサーフェスの特性を定義する[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]を使用して、<xref:System.Windows.Media.Media3D.Material>抽象クラスです。 Material の具象サブクラスでは、モデルのサーフェイスの一部の外観特性が決まり、SolidColorBrush、TileBrush、または VisualBrush を渡すことができる Brush プロパティも提供されます。  
   
--   <xref:System.Windows.Media.Media3D.DiffuseMaterial>そのモデルがディフューズ点灯している場合と同様に、ブラシ、モデルに適用されることを指定します。 DiffuseMaterial を使うことは、[!INCLUDE[TLA2#tla_2d](../../../../includes/tla2sharptla-2d-md.md)] モデルにブラシを直接使うことと最もよく似ています。モデルのサーフェイスは光沢があるようにはライトを反射しません。  
+-   <xref:System.Windows.Media.Media3D.DiffuseMaterial> そのモデルがディフューズ点灯している場合と同様に、ブラシ、モデルに適用されることを指定します。 DiffuseMaterial を使うことは、[!INCLUDE[TLA2#tla_2d](../../../../includes/tla2sharptla-2d-md.md)] モデルにブラシを直接使うことと最もよく似ています。モデルのサーフェイスは光沢があるようにはライトを反射しません。  
   
--   <xref:System.Windows.Media.Media3D.SpecularMaterial>モデルのサーフェスのハードまたは光沢のある、重要なポイントを反映できるようにブラシをモデルに適用されることを指定します。 値を指定してする、テクスチャは提示この反射の品質評価、または「輝き、」度を設定することができます、<xref:System.Windows.Media.Media3D.SpecularMaterial.SpecularPower%2A>プロパティです。  
+-   <xref:System.Windows.Media.Media3D.SpecularMaterial> モデルのサーフェスのハードまたは光沢のある、重要なポイントを反映できるようにブラシをモデルに適用されることを指定します。 値を指定してする、テクスチャは提示この反射の品質評価、または「輝き、」度を設定することができます、<xref:System.Windows.Media.Media3D.SpecularMaterial.SpecularPower%2A>プロパティです。  
   
--   <xref:System.Windows.Media.Media3D.EmissiveMaterial>使用すると、モデルがブラシの色に等しい光を生成した場合と同様に、テクスチャが適用されるように指定できます。 これによってモデルが明るくなることはありませんが、DiffuseMaterial または SpecularMaterial のテクスチャとは異なるシャドウになります。  
+-   <xref:System.Windows.Media.Media3D.EmissiveMaterial> 使用すると、モデルがブラシの色に等しい光を生成した場合と同様に、テクスチャが適用されるように指定できます。 これによってモデルが明るくなることはありませんが、DiffuseMaterial または SpecularMaterial のテクスチャとは異なるシャドウになります。  
   
  背面パフォーマンス向上のため、<xref:System.Windows.Media.Media3D.GeometryModel3D>シーンからカリング (それらの面見えない、カメラからのモデルの反対側にあるため)。  指定する、<xref:System.Windows.Media.Media3D.Material>平面などのモデルの背面に適用する、設定、モデルの<xref:System.Windows.Media.Media3D.GeometryModel3D.BackMaterial%2A>プロパティです。  
   
@@ -127,7 +115,7 @@ ms.lasthandoff: 12/22/2017
   
 -   <xref:System.Windows.Media.Media3D.DirectionalLight>: 離れている光源などが点灯します。  ディレクショナル ライトが、 <xref:System.Windows.Media.Media3D.DirectionalLight.Direction%2A> Vector3D がない指定の場所として指定します。  
   
--   <xref:System.Windows.Media.Media3D.PointLight>: 近くの光源などが点灯します。 PointLight には位置があり、その位置から光を投射します。 シーン内のオブジェクトは、その位置および光源からの距離に応じて照らされます。 <xref:System.Windows.Media.Media3D.PointLightBase>公開、<xref:System.Windows.Media.Media3D.PointLightBase.Range%2A>プロパティで、これを超えるモデルいない点灯するライトによって距離を決定します。 また、PointLight には減衰プロパティもあり、距離によって光の強度がどの程度低下するかを指定します。 光の減衰には、一定、線形、または 2 次補間を指定できます。  
+-   <xref:System.Windows.Media.Media3D.PointLight>: 近くの光源などが点灯します。 PointLight には位置があり、その位置から光を投射します。 シーン内のオブジェクトは、その位置および光源からの距離に応じて照らされます。 <xref:System.Windows.Media.Media3D.PointLightBase> 公開、<xref:System.Windows.Media.Media3D.PointLightBase.Range%2A>プロパティで、これを超えるモデルいない点灯するライトによって距離を決定します。 また、PointLight には減衰プロパティもあり、距離によって光の強度がどの程度低下するかを指定します。 光の減衰には、一定、線形、または 2 次補間を指定できます。  
   
 -   <xref:System.Windows.Media.Media3D.SpotLight>: から継承<xref:System.Windows.Media.Media3D.PointLight>です。 SpotLight は PointLight と同じように照らし、位置と方向の両方を持ちます。 によって設定円錐形の領域部分は薄いに投影する<xref:System.Windows.Media.Media3D.SpotLight.InnerConeAngle%2A>と<xref:System.Windows.Media.Media3D.SpotLight.OuterConeAngle%2A>度で指定したプロパティ。  
   
@@ -180,7 +168,7 @@ ms.lasthandoff: 12/22/2017
   
  [!code-xaml[hostingwpfusercontrolinwf#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/HostingWpfUserControlInWf/CSharp/HostingWpfUserControlInWf/ConeControl.xaml#1)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Controls.Viewport3D>  
  <xref:System.Windows.Media.Media3D.PerspectiveCamera>  
  <xref:System.Windows.Media.Media3D.DirectionalLight>  

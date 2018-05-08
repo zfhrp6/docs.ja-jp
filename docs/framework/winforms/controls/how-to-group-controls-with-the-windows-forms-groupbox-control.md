@@ -1,28 +1,16 @@
 ---
-title: "方法 : Windows フォーム GroupBox コントロールを使用してコントロールをグループ化する"
-ms.custom: 
+title: '方法 : Windows フォーム GroupBox コントロールを使用してコントロールをグループ化する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - controls [Windows Forms], grouping
 - GroupBox control [Windows Forms], grouping controls
 - Windows Forms controls, grouping
 ms.assetid: 0bda316d-bd2a-43aa-ac73-342453303169
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 7ecdb7b8682b13f93f59d1de21552abfa91b8f50
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 718367e9da9efda20c79fbff3bd2f14f11c96ee1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-group-controls-with-the-windows-forms-groupbox-control"></a>方法 : Windows フォーム GroupBox コントロールを使用してコントロールをグループ化する
 Windows フォーム<xref:System.Windows.Forms.GroupBox>コントロールを使用すると、その他のコントロールをグループ化します。 グループ コントロールに次の 3 つの理由があります。  
@@ -43,6 +31,6 @@ Windows フォーム<xref:System.Windows.Forms.GroupBox>コントロールを使
   
 3.  設定、<xref:System.Windows.Forms.GroupBox.Text%2A>グループ ボックスに適切なキャプションのプロパティです。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.GroupBox>  
  [GroupBox コントロール](../../../../docs/framework/winforms/controls/groupbox-control-windows-forms.md)
