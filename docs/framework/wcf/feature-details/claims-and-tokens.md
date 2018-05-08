@@ -1,31 +1,17 @@
 ---
-title: "クレームとトークン"
-ms.custom: 
+title: クレームとトークン
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - claims [WCF], and tokens
 ms.assetid: eff167f3-33f8-483d-a950-aa3e9f97a189
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: b2e571e8526581269cedb65b83c9ea0d8a81e280
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 087deeef91367210db936f2976a3846d0279dcba
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="claims-and-tokens"></a>クレームとトークン
-ここでは、サポートされている既定のトークンから [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] によって作成されるさまざまなクレームの種類について説明します。  
+このトピックでは、Windows Communication Foundation (WCF) をサポートしている既定のトークンから作成するさまざまなクレームの種類について説明します。  
   
  クライアント資格情報のクレームは、<xref:System.IdentityModel.Claims.ClaimSet> クラスと <xref:System.IdentityModel.Claims.Claim> クラスを使用して確認できます。 `ClaimSet` には、`Claim` オブジェクトのコレクションが格納されます。 各 `Claim` には、次の重要なメンバーがあります。  
   
@@ -77,7 +63,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="identity-claims-and-servicesecuritycontextisanonymous"></a>Identity クレームと ServiceSecurityContext.IsAnonymous  
  None の場合、`ClaimSet`クライアントの資格情報の結果オブジェクトはクレームを格納、`Right`の`Identity,`、<xref:System.ServiceModel.ServiceSecurityContext.IsAnonymous%2A>プロパティから返される`true`です。 このようなクレームが 1 つ以上ある場合、`IsAnonymous` プロパティは `false` を返します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.IdentityModel.Claims.ClaimSet>  
  <xref:System.IdentityModel.Claims.Claim>  
  <xref:System.IdentityModel.Claims.Rights>  

@@ -18,14 +18,14 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: e7c6d31293109a0d778136235ccfc894aeba8574
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: f8a6c6be6874c1a90c9e40b5b82d833aeaa9b63a
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="how-to-configure-client-application-services"></a>方法 : クライアント アプリケーション サービスを構成する
-このトピックでは、[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] **プロジェクト デザイナー**を使用して、クライアント アプリケーション サービスを有効にし、構成する方法について説明します。 クライアント アプリケーション サービスを使用してユーザーを検証し、既存の [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] アプリケーション サービスからユーザーのロールおよび設定を取得することができます。 構成した後に、「[クライアント アプリケーション サービスの概要](../../../docs/framework/common-client-technologies/client-application-services-overview.md)」に記載されているように、アプリケーション コード内で有効にされているサービスにアクセスできます。 [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] アプリケーション サービスの詳細については、「[ASP.NET アプリケーション サービスの概要](http://msdn.microsoft.com/library/1162e529-0d70-44b2-b3ab-83e60c695013)」を参照してください。  
+このトピックでは、Visual Studio **プロジェクト デザイナー**を使用して、クライアント アプリケーション サービスを有効にし、構成する方法について説明します。 クライアント アプリケーション サービスを使用してユーザーを検証し、既存の [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] アプリケーション サービスからユーザーのロールおよび設定を取得することができます。 構成した後に、「[クライアント アプリケーション サービスの概要](../../../docs/framework/common-client-technologies/client-application-services-overview.md)」に記載されているように、アプリケーション コード内で有効にされているサービスにアクセスできます。 [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] アプリケーション サービスの詳細については、「[ASP.NET アプリケーション サービスの概要](http://msdn.microsoft.com/library/1162e529-0d70-44b2-b3ab-83e60c695013)」を参照してください。  
   
  クライアント アプリケーション サービスは、**プロジェクト デザイナー**の **[サービス]** ページで有効にし、構成することができます。 **[サービス]** ページは、プロジェクトの App.config ファイル内の値を更新します。 **プロジェクト デザイナー**にアクセスするには、**[プロジェクト]** メニューの **[プロパティ]** を使用します。 **[サービス]** ページの詳細については、「[Services Page, Project Designer](https://msdn.microsoft.com/library/bb398109)」([サービス] ページ (プロジェクト デザイナー)) を参照してください。  
   
@@ -100,7 +100,7 @@ ms.lasthandoff: 04/26/2018
   
      テキスト ボックスに `Data Source = |SQL/CE|` の既定値が表示されます。  
   
-3.  SQL Server Compact データベースを生成して使用するには、接続文字列の既定値を保持します。 [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] はデータベース ファイルを生成し、<xref:System.Windows.Forms.Application.UserAppDataPath%2A?displayProperty=nameWithType> プロパティで指定されるディレクトリにそれを格納します。  
+3.  SQL Server Compact データベースを生成して使用するには、接続文字列の既定値を保持します。 Visual Studio はデータベース ファイルを生成し、<xref:System.Windows.Forms.Application.UserAppDataPath%2A?displayProperty=nameWithType> プロパティで指定されるディレクトリにそれを格納します。  
   
 4.  暗号化された [!INCLUDE[ssEW](../../../includes/ssew-md.md)] データベースを生成し、使用するには、次の例に示すように、接続文字列に `password` および `encrypt database` 値を追加します。  
   

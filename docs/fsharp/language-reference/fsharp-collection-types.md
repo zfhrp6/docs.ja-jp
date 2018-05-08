@@ -1,17 +1,12 @@
 ---
 title: F# コレクション型
 description: F# コレクション型と .NET Framework のコレクション型との違いについて説明します。
-author: cartermp
-ms.author: phcart
 ms.date: 05/16/2016
-ms.topic: language-reference
-ms.prod: dotnet-fsharp
-ms.devlang: fsharp
-ms.openlocfilehash: 0baad5bdf88e8f381240b822a3f6132898dc9ff9
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: a94dc300d984ca31baf1eb7d1073e23b51ebd030
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="f-collection-types"></a>F# コレクション型
 

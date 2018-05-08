@@ -1,9 +1,6 @@
 ---
-title: "型リスト (Visual Basic)"
+title: 型リスト (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - StructureConstraint
 - vb.StructureConstraint
@@ -27,14 +24,11 @@ helpviewer_keywords:
 - type parameters
 - constraints, Class keyword
 ms.assetid: 56db947a-2ae8-40f2-a70a-960764e9d0db
-caps.latest.revision: "33"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 35e72414b236615dc230b654ccfeed290841fb31
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 5fbb07154fce27feb257b431c1726446b42fbfe0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="type-list-visual-basic"></a>型リスト (Visual Basic)
 指定します、*パラメーター入力*の*ジェネリック*プログラミング要素です。 複数のパラメーターは、コンマで区切られます。 1 つの型パラメーターの構文を次に示します。  
@@ -49,9 +43,9 @@ ms.lasthandoff: 11/21/2017
   
 |用語|定義|  
 |---|---|  
-|`genericmodifier`|省略可能です。 ジェネリック インターフェイスとバリアント汎用デリゲートでのみ使用できます。 型を宣言する共変を使用して、[アウト](../../../visual-basic/language-reference/modifiers/out-generic-modifier.md)キーワードまたは反変を使用して、[で](../../../visual-basic/language-reference/modifiers/in-generic-modifier.md)キーワード。 「 [共変性と反変性](../../programming-guide/concepts/covariance-contravariance/index.md)を参照してください。|  
-|`typename`|必須です。 型パラメーターの名前です。 これは、対応する型引数で指定した定義済みの型によって置き換えられるプレース ホルダーです。|  
-|`constraintlist`|省略可能です。 指定できるデータ型を制約するための要件の一覧`typename`です。 複数の制約があれば、中かっこで囲む (`{ }`) をコンマで区切って指定します。 使用して、制約リストを導入する必要があります、[として](../../../visual-basic/language-reference/statements/as-clause.md)キーワード。 使用する`As`リストの先頭に一度だけです。|  
+|`genericmodifier`|任意。 ジェネリック インターフェイスとバリアント汎用デリゲートでのみ使用できます。 型を宣言する共変を使用して、[アウト](../../../visual-basic/language-reference/modifiers/out-generic-modifier.md)キーワードまたは反変を使用して、[で](../../../visual-basic/language-reference/modifiers/in-generic-modifier.md)キーワード。 「 [共変性と反変性](../../programming-guide/concepts/covariance-contravariance/index.md)を参照してください。|  
+|`typename`|必須。 型パラメーターの名前です。 これは、対応する型引数で指定した定義済みの型によって置き換えられるプレース ホルダーです。|  
+|`constraintlist`|任意。 指定できるデータ型を制約するための要件の一覧`typename`です。 複数の制約があれば、中かっこで囲む (`{ }`) をコンマで区切って指定します。 使用して、制約リストを導入する必要があります、[として](../../../visual-basic/language-reference/statements/as-clause.md)キーワード。 使用する`As`リストの先頭に一度だけです。|  
   
 ## <a name="remarks"></a>コメント  
  すべて汎用のプログラミング要素には、少なくとも 1 つの型パラメーターを受け取る必要があります。 型パラメーターは、特定の種類を表すプレース ホルダー (、*構築される要素*) クライアント コードは、ジェネリック型のインスタンスを作成するタイミングを指定します。 ジェネリック クラスを定義、構造体、インターフェイス、プロシージャ、したり、委任できます。  

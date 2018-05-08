@@ -1,27 +1,15 @@
 ---
-title: "Button コントロール (Windows フォーム)"
-ms.custom: 
+title: Button コントロール (Windows フォーム)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - buttons
 - Button control [Windows Forms]
 ms.assetid: d38bc40c-8040-4f19-9e88-2c665b0ab80b
-caps.latest.revision: "17"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e4f9720f26458f3dd9cb2411d123fa830b20f3fd
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: d7eef53967962804033334750b9f3230b95a949d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="button-control-windows-forms"></a>Button コントロール (Windows フォーム)
 Windows フォームの `Button` コントロールを使用すると、ユーザーはそれをクリックしてアクションを実行できます。 `Button` コントロールには、テキストとイメージの両方を表示できます。 ボタンをクリックすると、ボタンを実際に押して離したかのように表示されます。  

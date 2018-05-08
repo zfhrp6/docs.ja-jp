@@ -1,29 +1,17 @@
 ---
-title: "DataGrid コントロールの既定のキーボード動作とマウス動作"
-ms.custom: 
+title: DataGrid コントロールの既定のキーボード動作とマウス動作
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - DataGrid [WPF], keyboard behavior
 - DataGrid [WPF], mouse behavior
 - keyboard behavior [WPF], DataGrid
 - mouse behavior [WPF], DataGrid
 ms.assetid: 563b8854-ca39-4d97-8235-17eaa0f93c8d
-caps.latest.revision: "7"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 28cb1b02e67d076f9190e2d8e36b72c20cc5c4e2
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 559b84d3e6b5ece6c71f17e6766cac4ec14824cb
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="default-keyboard-and-mouse-behavior-in-the-datagrid-control"></a>DataGrid コントロールの既定のキーボード動作とマウス動作
 このトピックとユーザーの対話方法について説明します、<xref:System.Windows.Controls.DataGrid>キーボードとマウスを使用して制御します。  
@@ -96,7 +84,7 @@ ms.lasthandoff: 12/22/2017
 |Ctrl キーを押しながら、行をクリックして|場合<xref:System.Windows.Controls.DataGrid.SelectionMode%2A>に設定されている<xref:System.Windows.Controls.DataGridSelectionMode.Extended>、連続しない複数行の選択状態を変更します。<br /><br /> 行は既に選択されている場合は、行を選択解除します。|  
 |SHIFT + 行をクリックしてください|場合<xref:System.Windows.Controls.DataGrid.SelectionMode%2A>に設定されている<xref:System.Windows.Controls.DataGridSelectionMode.Extended>、連続する複数の行の選択を変更します。|  
 |行グループ ヘッダーをクリックします。|展開またはグループを折りたたみます。|  
-|左上隅にある [すべて選択] ボタンをクリックして、<xref:System.Windows.Controls.DataGrid>|場合<xref:System.Windows.Controls.DataGrid.SelectionMode%2A>に設定されている<xref:System.Windows.Controls.DataGridSelectionMode.Extended>のすべての行を選択、<xref:System.Windows.Controls.DataGrid>です。|  
+|左上隅にある [すべて選択] ボタンをクリックして、 <xref:System.Windows.Controls.DataGrid>|場合<xref:System.Windows.Controls.DataGrid.SelectionMode%2A>に設定されている<xref:System.Windows.Controls.DataGridSelectionMode.Extended>のすべての行を選択、<xref:System.Windows.Controls.DataGrid>です。|  
   
 ## <a name="mouse-selection"></a>マウスの選択  
  場合、<xref:System.Windows.Controls.DataGrid.SelectionMode%2A>プロパティに設定されている<xref:System.Windows.Controls.DataGridSelectionMode.Extended>、ctrl キーまたは shift キーを押しながら、行をクリックすると、複数の行の選択が変更されます。  
@@ -107,6 +95,6 @@ ms.lasthandoff: 12/22/2017
   
  隣接する行の連続していない範囲を選択するには、CTRL + SHIFT を組み合わせて指定できます。 これを行うには、shift キーを使用して、最初の範囲を選択 + 前述のようにクリックします。 行の最初の範囲を選択した後、ctrl キーを押し + をクリックして [次へ] の範囲内で最初の行を選択、CTRL + SHIFT を押しながら次の範囲の最後の行をクリックできます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Controls.DataGrid>  
  <xref:System.Windows.Controls.DataGrid.SelectionMode%2A>

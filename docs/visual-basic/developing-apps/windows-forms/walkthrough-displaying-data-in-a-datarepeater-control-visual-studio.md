@@ -1,25 +1,17 @@
 ---
 title: 'チュートリアル : DataRepeater コントロールでのデータの表示 (Visual Studio)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - DataRepeater, walkthrough
 ms.assetid: 65dcdb95-6c3e-47cc-987d-190000f71653
-caps.latest.revision: 12
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 93072bf30c8ee2a4a44c4862de0882072c298f8b
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: d02668303f61f6a22f99bd7c86c41c9c139a716f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/10/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="walkthrough-displaying-data-in-a-datarepeater-control-visual-studio"></a>チュートリアル : DataRepeater コントロールでのデータの表示 (Visual Studio)
 このチュートリアルでは、 <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> コントロールにバインドされたデータを表示する基本的なシナリオ全体を示します。  
@@ -47,15 +39,15 @@ ms.lasthandoff: 04/10/2018
   
 #### <a name="to-create-a-datarepeater-solution"></a>DataRepeater ソリューションを作成するには  
   
-1.  Visual Studio で **[ファイル]** メニューの **[新しいプロジェクト]**をクリックします。  
+1.  Visual Studio で **[ファイル]** メニューの **[新しいプロジェクト]** をクリックします。  
   
-2.  **[新しいプロジェクト]** ダイアログ ボックスの **[プロジェクトの種類]** ペインで、 **[Visual Basic]**を展開し、 **[Windows]**をクリックします。  
+2.  **[新しいプロジェクト]** ダイアログ ボックスの **[プロジェクトの種類]** ペインで、 **[Visual Basic]** を展開し、 **[Windows]** をクリックします。  
   
-3.  **[テンプレート]** ペインの **[Windows フォーム アプリケーション]**をクリックします。  
+3.  **[テンプレート]** ペインの **[Windows フォーム アプリケーション]** をクリックします。  
   
 4.  **[名前]** ボックスに「 `DataRepeaterApp`」と入力します。  
   
-5.  **[OK]**をクリックします。  
+5.  **[OK]** をクリックします。  
   
      Windows フォーム デザイナーが開きます。  
   
@@ -66,7 +58,7 @@ ms.lasthandoff: 04/10/2018
   
 #### <a name="to-add-a-datarepeater-control"></a>DataRepeater コントロールを追加するには  
   
-1.  **[表示]** メニューの **[ツールボックス]**をクリックします。  
+1.  **[表示]** メニューの **[ツールボックス]** をクリックします。  
   
      **ツールボックス** が表示されます。  
   
@@ -83,11 +75,11 @@ ms.lasthandoff: 04/10/2018
   
 #### <a name="to-add-a-data-source"></a>データ ソースを追加するには  
   
-1.  **[データ]** メニューの **[データ ソースの表示]**をクリックします。  
+1.  **[データ]** メニューの **[データ ソースの表示]** をクリックします。  
   
-2.  **[データ ソース]** ウィンドウで、 **[新しいデータ ソースの追加]**をクリックします。  
+2.  **[データ ソース]** ウィンドウで、 **[新しいデータ ソースの追加]** をクリックします。  
   
-3.  **[データソースの種類を選択]** ページで、 **[データベース]** をクリックし、 **[次へ]**をクリックします。  
+3.  **[データソースの種類を選択]** ページで、 **[データベース]** をクリックし、 **[次へ]** をクリックします。  
   
 4.  **[データ接続の選択]** ページで、次のいずれかの操作を行います。  
   
@@ -97,7 +89,7 @@ ms.lasthandoff: 04/10/2018
   
     -   **[新しい接続]** をクリックし、新しいデータ接続を構成します。 詳細については、次を参照してください。[新しい接続を追加](/visualstudio/data-tools/add-new-connections)です。  
   
-5.  データベースにパスワードが必要な場合は、該当するオプションを選択して重要情報を含め、 **[次へ]**をクリックします。  
+5.  データベースにパスワードが必要な場合は、該当するオプションを選択して重要情報を含め、 **[次へ]** をクリックします。  
   
     > [!NOTE]
     >  ダイアログ ボックスが表示された場合は、 **[はい]** をクリックしてファイルをプロジェクトに保存します。  
@@ -106,7 +98,7 @@ ms.lasthandoff: 04/10/2018
   
 7.  **[データベース オブジェクトの選択]** ページの **[テーブル]** ノードを展開します。  
   
-8.  **Customers** テーブルと **Orders** テーブルの横のチェック ボックスをオンにし、 **[完了]**をクリックします。  
+8.  **Customers** テーブルと **Orders** テーブルの横のチェック ボックスをオンにし、 **[完了]** をクリックします。  
   
      プロジェクトに**NorthwindDataSet** が追加され、 **[データ ソース]** ウィンドウに **Customers** テーブルと **Orders** テーブルが表示されます。  
   
@@ -157,7 +149,7 @@ ms.lasthandoff: 04/10/2018
   
 3.  <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> をダブルクリックしてコード エディターを開きます。  
   
-4.  コード エディターで、[イベント] ボックスの一覧の **[DrawItem]**をクリックします。  
+4.  コード エディターで、[イベント] ボックスの一覧の **[DrawItem]** をクリックします。  
   
 5.  <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.DrawItem> イベント ハンドラーで、 `BackColor`を交互にする次のコードを追加します。  
   
@@ -183,7 +175,7 @@ ms.lasthandoff: 04/10/2018
      [!code-csharp[VbPowerPacksDataRepeaterWalkthrough#3](../../../visual-basic/developing-apps/windows-forms/codesnippet/CSharp/walkthrough-displaying-data-in-a-datarepeater-control-visual-studio_3.cs)]
      [!code-vb[VbPowerPacksDataRepeaterWalkthrough#3](../../../visual-basic/developing-apps/windows-forms/codesnippet/VisualBasic/walkthrough-displaying-data-in-a-datarepeater-control-visual-studio_3.vb)]  
   
-3.  [クラス名] ボックスの一覧で **[BindingNavigatorDeleteItem]**をクリックします。 [メソッド名] ボックスの一覧で **[EnabledChanged]**をクリックします。  
+3.  [クラス名] ボックスの一覧で **[BindingNavigatorDeleteItem]** をクリックします。 [メソッド名] ボックスの一覧で **[EnabledChanged]** をクリックします。  
   
 4.  `BindingNavigatorDeleteItem_EnabledChanged` イベント ハンドラーに次のコードを追加します。  
   

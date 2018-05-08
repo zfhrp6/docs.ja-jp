@@ -1,32 +1,18 @@
 ---
 title: データ コントラクトの XML および ADO.NET の種類
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: c2ce8461-3c15-4c41-8c81-1cb78f5b59a6
-caps.latest.revision: 7
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 7efef63668bb78bdc9a7d66654c9e33ef6c0138c
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: ae21174d19ad69f87165427cf5a0bfd29ac872db
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="xml-and-adonet-types-in-data-contracts"></a>データ コントラクトの XML および ADO.NET の種類
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] のデータ コントラクト モデルでは、XML を直接表す特定の型がサポートされています。 シリアライザーは、これらの型を XML にシリアル化するとき、型の XML コンテンツを書き出しますが、それ以上の処理は行いません。 サポートされている型は、<xref:System.Xml.XmlElement>、<xref:System.Xml.XmlNode> の配列 (`XmlNode` 型自体はサポートされていません)、および <xref:System.Xml.Serialization.IXmlSerializable> を実装した型です。 データベース プログラミングでは、<xref:System.Data.DataSet> 型、<xref:System.Data.DataTable> 型、および型指定されたデータセットが一般的に使用されます。 これらの型は `IXmlSerializable` インターフェイスを実装するので、データ コントラクト モデルでシリアル化可能です。 この型に関する考慮事項について、このトピックの最後に説明します。  
+Windows Communication Foundation (WCF) のデータ コントラクト モデルでは、XML を直接表す特定の種類をサポートします。 シリアライザーは、これらの型を XML にシリアル化するとき、型の XML コンテンツを書き出しますが、それ以上の処理は行いません。 サポートされている型は、<xref:System.Xml.XmlElement>、<xref:System.Xml.XmlNode> の配列 (`XmlNode` 型自体はサポートされていません)、および <xref:System.Xml.Serialization.IXmlSerializable> を実装した型です。 データベース プログラミングでは、<xref:System.Data.DataSet> 型、<xref:System.Data.DataTable> 型、および型指定されたデータセットが一般的に使用されます。 これらの型は `IXmlSerializable` インターフェイスを実装するので、データ コントラクト モデルでシリアル化可能です。 この型に関する考慮事項について、このトピックの最後に説明します。  
   
 ## <a name="xml-types"></a>XML 型  
   
@@ -48,7 +34,7 @@ ms.lasthandoff: 04/30/2018
 </MyDataContract>  
 ```  
   
- ラッパー データ メンバー要素 `<myDataMember>` が引き続き存在している点に注意してください。 データ コントラクト モデルにはこの要素を削除する方法がありません。 このモデルを処理するシリアライザー (<xref:System.Runtime.Serialization.DataContractSerializer> と <xref:System.Runtime.Serialization.NetDataContractSerializer>) では、このラッパー要素に特別な属性が出力されることがあります。 この特別な属性には、標準の XML スキーマ インスタンスの "nil" 属性 (`XmlElement` を `null` に設定できるようにする属性) や "type" 属性 (`XmlElement` をポリモーフィックに使用できるようにする属性) などがあります。 また、"Id"、"Ref"、"Type"、および "Assembly" は、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] に固有の XML 属性です。 これらの属性が出力されるのは、オブジェクト グラフの保存モードを有効にするか `XmlElement` を使用する場合に <xref:System.Runtime.Serialization.NetDataContractSerializer> をサポートするためです  (オブジェクト グラフの保存モードの詳細については、次を参照してください[シリアル化および逆シリアル化](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md)。)。  
+ ラッパー データ メンバー要素 `<myDataMember>` が引き続き存在している点に注意してください。 データ コントラクト モデルにはこの要素を削除する方法がありません。 このモデルを処理するシリアライザー (<xref:System.Runtime.Serialization.DataContractSerializer> と <xref:System.Runtime.Serialization.NetDataContractSerializer>) では、このラッパー要素に特別な属性が出力されることがあります。 この特別な属性には、標準の XML スキーマ インスタンスの "nil" 属性 (`XmlElement` を `null` に設定できるようにする属性) や "type" 属性 (`XmlElement` をポリモーフィックに使用できるようにする属性) などがあります。 また、次の XML 属性に固有 WCF:"Id"、"Ref"、"Type"および"Assembly"です。 これらの属性が出力されるのは、オブジェクト グラフの保存モードを有効にするか `XmlElement` を使用する場合に <xref:System.Runtime.Serialization.NetDataContractSerializer> をサポートするためです  (オブジェクト グラフの保存モードの詳細については、次を参照してください[シリアル化および逆シリアル化](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md)。)。  
   
  `XmlElement` の配列またはコレクションを使用できます。これらは、他の配列またはコレクションとして処理されます。 つまり、コレクション全体のラッパー要素と、配列に含まれる `<myDataMember>` ごとに個別のラッパー要素 (上記の例の `XmlElement` と同様) が存在することになります。  
   
@@ -88,7 +74,7 @@ ms.lasthandoff: 04/30/2018
   
  結果的に無効な XML になる `XmlNode` の配列は、シリアル化できません。 たとえば、最初のインスタンスが `XmlNode` で、次のインスタンスが `XmlElement` という 2 つの <xref:System.Xml.XmlAttribute> インスタンスの配列は、無効です。このシーケンスは、有効な XML インスタンスに対応していません (属性を関連付ける場所がありません)。  
   
- `XmlNode` の配列の逆シリアル化時には、ノードが作成され、そのノードに受信 XML からの情報が追加されます。 有効な親 <xref:System.Xml.XmlDocument> は、デシリアライザーによって提供されます。 ラッパー データ メンバー要素にあるすべての属性を含めて、すべてのノードが逆シリアル化されます。ただし、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] シリアライザーによってその要素に配置される属性 (ポリモーフィック割り当てを示すための属性など) を除きます。 XML フラグメントですべての名前空間プレフィックスを定義するときの注意点は、`XmlNode` の逆シリアル化に適用されるのと同様に、`XmlElement` の配列の逆シリアル化にも適用されます。  
+ `XmlNode` の配列の逆シリアル化時には、ノードが作成され、そのノードに受信 XML からの情報が追加されます。 有効な親 <xref:System.Xml.XmlDocument> は、デシリアライザーによって提供されます。 すべてのノードが逆シリアル化、ラッパー データ メンバー要素に属性を含むが、除外の属性 (ポリモーフィックな割り当てを示すために使用される属性) などの WCF シリアライザーによってそこに配置されます。 XML フラグメントですべての名前空間プレフィックスを定義するときの注意点は、`XmlNode` の逆シリアル化に適用されるのと同様に、`XmlElement` の配列の逆シリアル化にも適用されます。  
   
  オブジェクト グラフの保存を有効にしてシリアライザーを使用した場合、オブジェクトの等価性は、個別の `XmlNode` インスタンスではなく、`XmlNode` 配列のレベルでのみ保存されます。  
   
@@ -142,7 +128,7 @@ ms.lasthandoff: 04/30/2018
   
  `IXmlSerializable` を実装しており、以前に定義したコンテンツ型である型のデータ メンバーを逆シリアル化すると、デシリアライザーはそのデータ メンバーのラッパー要素に XML リーダーを配置し、<xref:System.Xml.Serialization.IXmlSerializable.ReadXml%2A> メソッドに制御を渡します。 このメソッドは、開始タグと終了タグを含む、要素全体を読み取る必要があります。 `ReadXml` コードでは、要素が空の場合も忘れずに処理してください。 また、`ReadXml` の実装では、特定の方法で名前が付けられたラッパー要素に依存しないようにしてください。 シリアライザーによって選択される名前は、異なる場合があります。  
   
- `IXmlSerializable` コンテンツ型は、たとえば <xref:System.Object> 型のデータ メンバーなどに、ポリモーフィックに割り当てることができます。 また、型インスタンスを null にすることもできます。 さらに、`IXmlSerializable` 型は、オブジェクト グラフの保存を有効にして <xref:System.Runtime.Serialization.NetDataContractSerializer> で使用することも可能です。 これらのすべての機能を実現するには、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] シリアライザーが特定の属性 (XML スキーマ インスタンス名前空間の "nil" と "type"、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 固有の名前空間の "Id"、"Ref"、"Type"、および "Assembly") をラッパー要素に追加する必要があります。  
+ `IXmlSerializable` コンテンツ型は、たとえば <xref:System.Object> 型のデータ メンバーなどに、ポリモーフィックに割り当てることができます。 また、型インスタンスを null にすることもできます。 さらに、`IXmlSerializable` 型は、オブジェクト グラフの保存を有効にして <xref:System.Runtime.Serialization.NetDataContractSerializer> で使用することも可能です。 これらすべての機能には、ラッパー要素に特定の属性を追加する WCF シリアライザーが必要があります ("nil"と WCF 固有の名前空間で XML スキーマ インスタンス名前空間と"Id"、"Ref"、"Type"および"Assembly"で"type") です。  
   
 #### <a name="attributes-to-ignore-when-implementing-readxml"></a>ReadXml を実装するときに無視する属性  
  `ReadXml` コードに制御を渡す前に、デシリアライザーは、XML 要素を調べ、前述の特別な XML 属性を検出し、その属性に従って動作します。 たとえば、"nil" が `true` の場合は、null 値が逆シリアル化され、`ReadXml` は呼び出されません。 ポリモーフィズムが検出された場合は、要素のコンテンツが別の型と同様に逆シリアル化されます。 ポリモーフィックに割り当てられた型の `ReadXml` 実装が呼び出されます。 どの場合も、これらの特別な属性がデシリアライザーによって処理されるため、`ReadXml` 実装ではこれらの属性を無視する必要があります。  
@@ -200,16 +186,16 @@ ms.lasthandoff: 04/30/2018
   
 -   XML ライターは、通常許可しない XML ドキュメントの宣言 (たとえば、 \<? xml バージョン ='1.0 '? >) 別のドキュメントの書き込み中です。 完全な XML ドキュメントを取得して、それを `Array` データ メンバーの `XmlNode` としてシリアル化したりすることはできません。 これを実行するには、ドキュメントの宣言を取り除くか、独自のエンコード方法でこの宣言を表現する必要があります。  
   
--   付属している XML ライターのすべて[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]XML 処理命令 (\<しますか? … ? >) と文書型定義 (\<! … >)、SOAP メッセージではできないためです。 この場合も、独自のエンコード機構を使用して、この制限に対処できます。 生成される XML に XML 処理命令と文書型定義を含める必要がある場合は、この 2 つをサポートする XML ライターを使用するカスタム エンコーダーを作成できます。  
+-   すべての WCF に付属している XML ライターは、XML 処理命令 (\<しますか? … ? >) と文書型定義 (\<! … >)、SOAP メッセージではできないためです。 この場合も、独自のエンコード機構を使用して、この制限に対処できます。 生成される XML に XML 処理命令と文書型定義を含める必要がある場合は、この 2 つをサポートする XML ライターを使用するカスタム エンコーダーを作成できます。  
   
--   `WriteXml` を実装するときは、XML ライターで <xref:System.Xml.XmlWriter.WriteRaw%2A> メソッドを呼び出さないようにします。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、バイナリを含むさまざまな XML エンコードを使用します。その結果をどのエンコードでも使用できるように `WriteRaw` を使用することは非常に困難か不可能です。  
+-   `WriteXml` を実装するときは、XML ライターで <xref:System.Xml.XmlWriter.WriteRaw%2A> メソッドを呼び出さないようにします。 WCF がさまざまな XML エンコーディング (バイナリを含む) を使用して、非常に困難か使用不可能である`WriteRaw`結果は、エンコーディングで使用できるようにします。  
   
--   `WriteXml` を実装するとき、<xref:System.Xml.XmlWriter.WriteEntityRef%2A> で提供される XML ライターでサポートされていない <xref:System.Xml.XmlWriter.WriteNmToken%2A> メソッドと [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] メソッドを使用しないようにします。  
+-   実装するときに`WriteXml`を使用しないでください、<xref:System.Xml.XmlWriter.WriteEntityRef%2A>と<xref:System.Xml.XmlWriter.WriteNmToken%2A>WCF に付属している XML ライターでサポートされていないメソッドです。  
   
 ## <a name="using-dataset-typed-dataset-and-datatable"></a>DataSet、Typed DataSet、および DataTable の使用  
  データ コントラクト モデルでは、この 3 つの型の使用が完全にサポートされています。 これらの型を使用する場合は、次の点に注意してください。  
   
--   この 3 つの型 (特に、<xref:System.Data.DataSet> と型指定された派生クラス) のスキーマは、一部の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 以外のプラットフォームと相互運用できない場合があります。また、このようなプラットフォームで使用しても、結果的に使いにくい場合もあります。 また、`DataSet` 型の使用はパフォーマンスに影響を与えることがあります。 さらに、将来的にアプリケーションのバージョン管理が通常より難しくなる可能性もあります。 コントラクトでは、`DataSet` 型の代わりに、明示的に定義されたデータ コントラクト型を使用することを検討してください。  
+-   これらの型のスキーマ (特に<xref:System.Data.DataSet>とその型指定された派生クラス) 一部の WCF 以外のプラットフォームと相互運用できませんか的に使いにくいこれらのプラットフォームで使用する場合があります。 また、`DataSet` 型の使用はパフォーマンスに影響を与えることがあります。 さらに、将来的にアプリケーションのバージョン管理が通常より難しくなる可能性もあります。 コントラクトでは、`DataSet` 型の代わりに、明示的に定義されたデータ コントラクト型を使用することを検討してください。  
   
 -   `DataSet` スキーマまたは `DataTable` スキーマをインポートする際には、これらの型を参照することが重要です。 Svcutil.exe コマンド ライン ツールを使用してこれには、System.Data.dll アセンブリ名を渡すことによって、`/reference`スイッチします。 型指定されたデータセット スキーマをインポートする場合、その型指定されたデータセットの型を参照する必要があります。 Svcutil.exe を使用する、型指定されたデータセットのアセンブリの場所を渡す、`/reference`スイッチします。 型の参照の詳細については、次を参照してください。、[クラスを生成するには、スキーマのインポート](../../../../docs/framework/wcf/feature-details/importing-schema-to-generate-classes.md)です。  
   

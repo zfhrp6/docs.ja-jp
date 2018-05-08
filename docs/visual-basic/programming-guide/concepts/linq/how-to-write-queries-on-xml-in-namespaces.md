@@ -1,22 +1,12 @@
 ---
-title: "方法: 名前空間 (Visual Basic) 内の XML に対するクエリの作成"
-ms.custom: 
+title: '方法: 名前空間 (Visual Basic) 内の XML に対するクエリの作成'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 7d4131b5-3288-414f-b77c-b2edc2a1f465
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 5708a2a162132262722f390842f59c9c6a6838e4
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: f4e895e560d0fb11c128248e4f42d1d5124bc124
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-write-queries-on-xml-in-namespaces-visual-basic"></a>方法: 名前空間 (Visual Basic) 内の XML に対するクエリの作成
 名前空間内の XML に対するクエリを記述するには、正しい名前空間を持つ <xref:System.Xml.Linq.XName> オブジェクトを使用する必要があります。  

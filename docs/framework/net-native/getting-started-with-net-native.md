@@ -1,24 +1,14 @@
 ---
-title: ".NET ネイティブの概要"
-ms.custom: 
+title: .NET ネイティブの概要
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: fc9e04e8-2d05-4870-8cd6-5bd276814afc
-caps.latest.revision: "29"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 56ff06c17eda8483c7d067af9fb39a402d2f6ea5
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 90469469c864e235ff96e7dd2f0f3ebfcef9d7b6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="getting-started-with-net-native"></a>.NET ネイティブの概要
 Windows 10 用に新しい Windows アプリを作成する場合も、既存の Windows ストア アプリを移行する場合も、次に示す同じ手順を実行することになります。 [!INCLUDE[net_native](../../../includes/net-native-md.md)] アプリを作成するには、次の手順を実行します。  
@@ -85,7 +75,7 @@ Windows 10 用に新しい Windows アプリを作成する場合も、既存の
   
  アプリが正常に動作しない場合 (特に実行時に [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) 例外または [MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md) 例外をスローする場合)、次のセクション「[手順 4: メタデータの欠落を手動で解決する](#Step4)」の手順を実行してください。 初回例外を有効にすると、このようなバグの検出に役立ちます。  
   
- アプリのデバッグ ビルドをテストしてデバッグし、 [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) 例外と [MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md) 例外を確実に排除したら、アプリを最適化された [!INCLUDE[net_native](../../../includes/net-native-md.md)] アプリとしてテストする必要があります。 これを行うには、アクティブ プロジェクトの構成を **[デバッグ]** から **[リリース]**に変更します。  
+ アプリのデバッグ ビルドをテストしてデバッグし、 [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) 例外と [MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md) 例外を確実に排除したら、アプリを最適化された [!INCLUDE[net_native](../../../includes/net-native-md.md)] アプリとしてテストする必要があります。 これを行うには、アクティブ プロジェクトの構成を **[デバッグ]** から **[リリース]** に変更します。  
   
 <a name="Step4"></a>   
 ## <a name="step-4-manually-resolve-missing-metadata"></a>手順 4: メタデータの欠落を手動で解決する  
@@ -121,7 +111,7 @@ Windows 10 用に新しい Windows アプリを作成する場合も、既存の
   
 -   [.NET ネイティブ アプリでのランタイム例外](../../../docs/framework/net-native/runtime-exceptions-in-net-native-apps.md)  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ランタイム ディレクティブ (rd.xml) 構成ファイル リファレンス](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)  
  [NIB: .NET ネイティブのセットアップと構成](http://msdn.microsoft.com/library/7c9bc375-8b87-4c33-bede-72d513e362ec)  
  [.NET ネイティブとコンパイル](../../../docs/framework/net-native/net-native-and-compilation.md)  

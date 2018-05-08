@@ -1,29 +1,17 @@
 ---
-title: "方法 : ASP.NET Web サービス コードを Windows Communication Foundation に移行する"
-ms.custom: 
+title: '方法 : ASP.NET Web サービス コードを Windows Communication Foundation に移行する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: e528c64f-c027-4f2e-ada6-d8f3994cf8d6
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e56d2481785a9a8486174e611001b9d800c7c869
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 90a6109a56299ec1bcaff4a35141abc194484772
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-migrate-aspnet-web-service-code-to-the-windows-communication-foundation"></a>方法 : ASP.NET Web サービス コードを Windows Communication Foundation に移行する
-ASP.NET Web サービスを [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] に移行する手順を次に示します。  
+次の手順では、Windows Communication Foundation (WCF) に ASP.NET Web サービスを移行する方法について説明します。  
   
-## <a name="procedure"></a>手順  
+## <a name="procedure"></a>プロシージャ  
   
 #### <a name="to-migrate-aspnet-web-service-code-to-wcf"></a>ASP.NET Web サービス コードを WCF に移行するには  
   
@@ -85,9 +73,9 @@ ASP.NET Web サービスを [!INCLUDE[indigo1](../../../../includes/indigo1-md.m
   
 7.  変更点をテストします。  
   
-8.  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のアセンブリである System.ServiceModel および System.Runtime.Serialization の参照を ASP.NET Web サービス プロジェクトに追加します。  
+8.  ASP.NET Web サービス プロジェクトには、WCF アセンブリ System.ServiceModel および System.Runtime.Serialization への参照を追加します。  
   
-9. 実行[ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)を生成する、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WSDL からクライアント クラスです。 生成されたクラス モジュールをソリューションに追加します。  
+9. 実行[ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) WSDL から WCF クライアント クラスを生成します。 生成されたクラス モジュールをソリューションに追加します。  
   
 10. 前の手順で生成したクラス モジュールには、インターフェイスの定義が含まれます。  
   
@@ -145,7 +133,7 @@ ASP.NET Web サービスを [!INCLUDE[indigo1](../../../../includes/indigo1-md.m
     }  
     ```  
   
-13. 以上の手順により、クラスは [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービス型になりました。ASP.NET Web サービスが次のいずれかに依存する場合は、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ASP.NET 互換モードであることを要求するよう、クラスのモードを設定します。  
+13. クラスは、ASP.NET Web サービスは、次のいずれかに依存している場合は、WCF の ASP.NET 互換モードを要求するように、WCF サービスの種類は、今すぐ構成します。  
   
     -   <xref:System.Web.HttpContext> クラス  
   
@@ -167,14 +155,14 @@ ASP.NET Web サービスを [!INCLUDE[indigo1](../../../../includes/indigo1-md.m
   
 14. 元の .asmx ファイルを .asmx.old と改名します。  
   
-15. サービスの [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービス ファイルを作成し、その拡張子を .asmx として、IIS のアプリケーション ルートに保存します。  
+15. サービスの WCF サービスのファイルを作成、その拡張子を .asmx として、IIS でアプリケーションのルートに保存します。  
   
     ```xml  
     <%@Service Class="MyOrganization.Adder" %>  
     <%@Assembly Name="MyServiceAssembly" %>   
     ```  
   
-16. サービスの [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 構成を Web.config ファイルに追加します。 使用するサービスを構成、 [ \<basicHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md)、上記の手順で作成された .asmx 拡張子を持つサービス ファイルを使用して、自身の WSDL を生成しないことが手順 2 からの WSDL を使用します。 さらに、必要に応じて、ASP.NET 互換モードを使用するように設定します。  
+16. Web.config ファイルに、WCF サービスの構成を追加します。 使用するサービスを構成、 [ \<basicHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md)、上記の手順で作成された .asmx 拡張子を持つサービス ファイルを使用して、自身の WSDL を生成しないことが手順 2 からの WSDL を使用します。 さらに、必要に応じて、ASP.NET 互換モードを使用するように設定します。  
   
     ```xml  
     <?xml version="1.0" encoding="utf-8" ?>  
@@ -224,5 +212,5 @@ ASP.NET Web サービスを [!INCLUDE[indigo1](../../../../includes/indigo1-md.m
   
 19. テスト セットを実行して、想定どおりに変更されていることを確認してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [方法 : ASP.NET Web サービス クライアント コードを Windows Communication Foundation に移行する](../../../../docs/framework/wcf/feature-details/migrate-asp-net-web-service-client-to-wcf.md)

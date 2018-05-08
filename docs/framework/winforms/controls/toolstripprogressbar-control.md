@@ -1,29 +1,17 @@
 ---
-title: "ToolStripProgressBar コントロール"
-ms.custom: 
+title: ToolStripProgressBar コントロール
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - ToolStrip control [Windows Forms], ToolStripProgressBar
 - ToolStripProgressBar control [Windows Forms]
 - toolbars [Windows Forms], progress bars
 - progress controls [Windows Forms]
 ms.assetid: cb3eb0a8-60b1-483e-a03f-93b0b1351dae
-caps.latest.revision: "6"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 13dcd324772393e3746a6ea5c5cadca02d9a1bab
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 005c7d0ed69edc0a54f428adba186efb170df6d4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="toolstripprogressbar-control"></a>ToolStripProgressBar コントロール
 <xref:System.Windows.Forms.ToolStripProgressBar>結合<xref:System.Windows.Forms.ToolStrip>の表示および機能をラフティングの一般的なプロセスの追跡機能。  
@@ -39,5 +27,5 @@ ms.lasthandoff: 12/22/2017
  <xref:System.Windows.Forms.ToolStripProgressBar>  
  <xref:System.Windows.Forms.ToolStripProgressBar> コントロールのリファレンス ドキュメントを提供します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Windows フォームで使用するコントロール](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)

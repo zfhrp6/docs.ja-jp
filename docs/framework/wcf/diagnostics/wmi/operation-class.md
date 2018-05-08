@@ -1,24 +1,12 @@
 ---
-title: "操作クラス"
-ms.custom: 
+title: 操作クラス
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: b19d1496-ef06-4d0c-b2ae-e728ec00cca0
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 54566bc452baa2e02cef7d8d13d29fcd5864c95c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d9256915afe9fdb8e4c91d186131fe41a7094c56
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="operation-class"></a>操作クラス
 操作  
@@ -105,7 +93,7 @@ class Operation
   
  操作のメソッド署名。  
   
-### <a name="name"></a>name  
+### <a name="name"></a>名前  
  データ型: string  
   
  アクセスの種類 : 読み取り専用  
@@ -133,11 +121,11 @@ class Operation
   
  操作の戻り値の型。  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
   
 |MOF|Servicemodel.mof にて宣言済み。|  
 |---------|-----------------------------------|  
 |Namespace|root\ServiceModel で定義|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Description.OperationDescription>

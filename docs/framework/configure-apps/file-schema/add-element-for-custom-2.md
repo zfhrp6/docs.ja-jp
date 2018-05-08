@@ -1,10 +1,6 @@
 ---
-title: "&lt;追加&gt;NameValueSectionHandler と DictionarySectionHandler 要素"
+title: '&lt;追加&gt;NameValueSectionHandler と DictionarySectionHandler 要素'
 ms.date: 05/01/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: article
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/sectionName/add
 helpviewer_keywords:
@@ -13,18 +9,15 @@ helpviewer_keywords:
 ms.assetid: 0d4ddb53-eb2b-49c0-9c33-a8dec5c39b46
 author: guardrex
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: e29d0007820bb0218338394fe199e7acfd66344e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: aeb3e3a4be201369ca2df8d231498dd2400d3c07
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="add-element-for-namevaluesectionhandler-and-dictionarysectionhandler"></a>\<追加 > NameValueSectionHandler と DictionarySectionHandler 要素
 
-カスタム アプリケーションの設定を追加します。 各**\<追加 >**タグには、キー/値ペアが含まれています。
+カスタム アプリケーションの設定を追加します。 各**\<追加 >** タグには、キー/値ペアが含まれています。
 
 [**\<configuration>**](~/docs/framework/configure-apps/file-schema/configuration-element.md)   
 &nbsp;&nbsp;[**\<sectionName >**](~/docs/framework/configure-apps/file-schema/custom-element-2.md)   
@@ -47,7 +40,7 @@ ms.lasthandoff: 12/22/2017
 
 | 要素 | 説明 |
 | ------- | ------------|
-| [**\<sectionName >**要素](~/docs/framework/configure-apps/file-schema/custom-element-2.md) | 使用するカスタム構成セクションの設定を定義、<xref:System.Configuration.NameValueSectionHandler>と<xref:System.Configuration.DictionarySectionHandler>クラスです。 |
+| [**\<sectionName >** 要素](~/docs/framework/configure-apps/file-schema/custom-element-2.md) | 使用するカスタム構成セクションの設定を定義、<xref:System.Configuration.NameValueSectionHandler>と<xref:System.Configuration.DictionarySectionHandler>クラスです。 |
 
 ## <a name="child-elements"></a>子要素
 
@@ -55,7 +48,7 @@ ms.lasthandoff: 12/22/2017
 
 ## <a name="example"></a>例
 
-次の例は、カスタム構成セクションを定義および使用する方法を示しています、 **\<追加 >**セクションに設定を追加する要素。
+次の例は、カスタム構成セクションを定義および使用する方法を示しています、 **\<追加 >** セクションに設定を追加する要素。
 
 ```xml
 <configuration>

@@ -1,14 +1,6 @@
 ---
 title: フェデレーション
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,25 +8,19 @@ helpviewer_keywords:
 - WCF, federation
 - federation [WCF]
 ms.assetid: 2f1e646f-8361-48d4-9d5d-1b961f31ede4
-caps.latest.revision: 26
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 0e7aef1f53675089ee311aa79a54abf60441b728
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: d69de8c01a23eff5314220a10a51f6487080df41
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="federation"></a>フェデレーション
-ここでは、フェデレーション セキュリティの概念について簡単に説明します。 また、フェデレーション セキュリティ アーキテクチャを展開する際の [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] のサポートについても説明します。 フェデレーションを示すサンプル アプリケーションを参照してください。[フェデレーション サンプル](../../../../docs/framework/wcf/samples/federation-sample.md)です。  
+ここでは、フェデレーション セキュリティの概念について簡単に説明します。 フェデレーション セキュリティ アーキテクチャを展開するための Windows Communication Foundation (WCF) のサポートについても説明します。 フェデレーションを示すサンプル アプリケーションを参照してください。[フェデレーション サンプル](../../../../docs/framework/wcf/samples/federation-sample.md)です。  
   
 ## <a name="definition-of-federated-security"></a>フェデレーション セキュリティの定義  
  フェデレーション セキュリティにより、クライアントがアクセスするサービスと、関連する認証および承認の手順を明確に分離できます。 また、フェデレーション セキュリティを使用すると、異なる信頼レルムに属する複数のシステム、ネットワーク、および組織間のコラボレーションが可能になります。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、フェデレーション セキュリティを使用する分散システムの構築と展開をサポートします。  
+ WCF には、ビルドとフェデレーション セキュリティを使用する分散システムの展開のサポートが用意されています。  
   
 ### <a name="elements-of-a-federated-security-architecture"></a>フェデレーション セキュリティ アーキテクチャの要素  
  次の表に示すように、フェデレーション セキュリティ アーキテクチャには 3 つの主要な要素があります。  
@@ -80,7 +66,7 @@ ms.lasthandoff: 04/28/2018
  STS A からセキュリティ トークンを取得したユーザーは、このトークンを STS B に提示します。組織 B はユーザーの要求の承認手順を進め、独自のセキュリティ トークン セットからユーザーにセキュリティ トークンを発行します。 ユーザーは、このトークンを組織 B のリソースに提示し、サービスにアクセスします。  
   
 ## <a name="support-for-federated-security-in-wcf"></a>WCF におけるフェデレーション セキュリティのサポート  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、ターンキーを通じてフェデレーション セキュリティ アーキテクチャを展開する、 [ \<wsFederationHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md)です。  
+ WCF は、すぐに使用できるサポートを介してフェデレーション セキュリティ アーキテクチャを展開する、 [ \<wsFederationHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md)です。  
   
  [ \<WsFederationHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md)要素は、要求/応答通信のスタイル、基になるトランスポート機構として HTTP を使用する必要があります、信頼性が高く、相互運用可能なセキュリティで保護されたバインディングのエンコードするためのワイヤ形式として、テキスト、XML を採用することです。  
   
@@ -98,10 +84,10 @@ ms.lasthandoff: 04/28/2018
 -   サービスにトークンを提示してサービスにアクセスする。  
   
 ### <a name="phase-2-run-time-phase"></a>第 2 フェーズ : 実行時  
- 実行時フェーズでは、クライアントは [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント クラスのオブジェクトをインスタンス化し、この [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントを使用して呼び出しを行います。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の基盤となるフレームワークにより、フェデレーション セキュリティの通信パターンにおける前述の手順が処理され、クライアントがシームレスにサービスを利用できるようにします。  
+ 実行時フェーズ中には、クライアントは、WCF クライアント クラスのオブジェクトをインスタンス化し、WCF クライアントを使用して呼び出しを行います。 WCF の基になるフレームワークでは、フェデレーション セキュリティの通信パターンにおける前述の手順を処理し、クライアントがシームレスにサービスを利用できるようにします。  
   
 ## <a name="sample-implementation-using-wcf"></a>WCF を使用した実装のサンプル  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のネイティブ サポートを使用したフェデレーション セキュリティ アーキテクチャの実装サンプルを次の図に示します。  
+ 次の図は、WCF のネイティブ サポートを使用して、フェデレーション セキュリティ アーキテクチャの実装サンプルを示します。  
   
  ![WCF のフェデレーション セキュリティ](../../../../docs/framework/wcf/feature-details/media/federatedsecurityinwcf.gif "FederatedSecurityInWCF")  
   
@@ -300,7 +286,7 @@ operationRequirementType="FederationSample.MyServiceOperationRequirement, MyServ
  ![フェデレーション](../../../../docs/framework/wcf/feature-details/media/federationclienta.gif "FederationClientA")  
   
 ## <a name="summary"></a>まとめ  
- フェデレーション セキュリティを使用すると、役割を明確に分離できるため、安全で拡張性のあるサービス アーキテクチャを構築できます。 分散アプリケーションの構築と展開を行うためのプラットフォームとして、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ではフェデレーション セキュリティの実装をネイティブにサポートをしています。  
+ フェデレーション セキュリティを使用すると、役割を明確に分離できるため、安全で拡張性のあるサービス アーキテクチャを構築できます。 構築および分散アプリケーションを展開するためのプラットフォームでは、WCF は、フェデレーション セキュリティを実装するためのネイティブ サポートを提供します。  
   
 ## <a name="see-also"></a>関連項目  
  [セキュリティ](../../../../docs/framework/wcf/feature-details/security.md)

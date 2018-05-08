@@ -22,18 +22,18 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: fe0e446a0005ffcbf296c2728fd93056c3e38f2a
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: e67d4297ca0fe7028380b6d862f9f86c93bcaa61
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="walkthrough-using-client-application-services"></a>チュートリアル : クライアント アプリケーション サービスの使用
 このトピックでは、ユーザーを認証し、ユーザーのロールと設定を取得するクライアント アプリケーション サービスを使用する Windows アプリケーションを作成する方法について説明します。  
   
  このチュートリアルでは次のタスクを実行します。  
   
--   Windows フォーム アプリケーションを作成し、 [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] プロジェクト デザイナーを使用してクライアント アプリケーション サービスの有効化および構成を行います。  
+-   Windows フォーム アプリケーションを作成し、Visual Studio プロジェクト デザイナーを使用してクライアント アプリケーション サービスの有効化および構成を行います。  
   
 -   アプリケーション サービスのホストと、クライアント構成のテストを行う、簡単な ASP.NET Web サービス アプリケーションを作成します。  
   
@@ -57,7 +57,7 @@ ms.lasthandoff: 04/26/2018
   
 #### <a name="to-create-a-client-application-and-enable-client-application-services"></a>クライアント アプリケーションを作成し、クライアント アプリケーション サービスを有効にするには  
   
-1.  [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] で、**[ファイル] &#124; [新規作成] &#124; [プロジェクト]**  メニュー オプションをクリックします。  
+1.  Visual Studio で、**[ファイル] &#124; [新規作成] &#124; [プロジェクト]** メニュー オプションを選択します。  
   
 2.  **[新しいプロジェクト]** ダイアログ ボックスの **[プロジェクトの種類]** ペインで、**[Visual Basic]** または **[Visual C#]** ノードを展開し、プロジェクトの種類 **[Windows]** をクリックします。  
   
@@ -65,7 +65,7 @@ ms.lasthandoff: 04/26/2018
   
 4.  プロジェクトの **[名前]** を `ClientAppServicesDemo`に変更してから、 **[OK]** をクリックします。  
   
-     [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)]に新しい Windows フォーム プロジェクトが開きます。  
+     Visual Studio に新しい Windows フォーム プロジェクトが開きます。  
   
 5.  **[プロジェクト]** メニューで、 **ClientAppServicesDemo**プロパティを選択します。  
   
@@ -250,7 +250,7 @@ ms.lasthandoff: 04/26/2018
   
 1.  **[ソリューション エクスプローラー]** の ClientAppServicesDemo プロジェクトで、System.Web アセンブリへの参照を追加します。  
   
-2.  Form1 ファイルを選択し、[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] のメイン メニューから **[表示] &#124; [コード]** をクリックします。  
+2.  Form1 ファイルを選択し、Visual Studio のメイン メニューから **[表示] &#124; [コード]** を選択します。  
   
 3.  コード エディターで、Form1 ファイルの先頭に次のステートメントを追加します。  
   
@@ -331,7 +331,7 @@ ms.lasthandoff: 04/26/2018
   
 5.  **[プロパティ]** ウィンドウで、**[(名前)]** の値を "`rememberMeCheckBox`" と指定し、**[テキスト]** の値を "`&Remember me`" と指定します。  
   
-6.  [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] のメイン メニューで、**[表示] &#124; [コード]** の順にクリックします。  
+6.  Visual Studio のメイン メニューで、**[表示] &#124; [コード]** の順に選択します。  
   
 7.  コード エディターで、ファイルの先頭に次のコードを追加します。  
   
@@ -371,7 +371,7 @@ ms.lasthandoff: 04/26/2018
   
 #### <a name="to-change-the-user-interface-based-on-user-role"></a>ユーザーのロールに基づいてユーザー インターフェイスを変更するには  
   
-1.  **[ソリューション エクスプローラー]** の ClientAppServicesDemo プロジェクトで、Form1 を選択してから、[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] のメイン メニューで **[表示] &#124; [デザイナー]** をクリックします。  
+1.  **[ソリューション エクスプローラー]** の ClientAppServicesDemo プロジェクトで、Form1 を選択してから、Visual Studio のメイン メニューで **[表示] &#124; [デザイナー]** を選択します。  
   
 2.  デザイナーで、**[ツールボックス]** からフォームに <xref:System.Windows.Forms.Button> コントロールを追加します。  
   
@@ -407,7 +407,7 @@ ms.lasthandoff: 04/26/2018
  ここでアプリケーションを実行し、従業員としてログインして、ボタンが表示されないことを確認できます。次いで、管理者としてログインして、ボタンが表示されることを確認します。  
   
 ## <a name="accessing-web-settings"></a>Web 設定にアクセスする  
- 次の手順では、フォームにテキスト ボックスを追加するとともに、Web 設定にバインドします。 認証とロールを使用する前のコードと同様、設定コードは設定プロバイダーに直接アクセスしません。 代わりに、[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] がプロジェクト用に生成する、厳密に型指定された `Settings` クラスを使用します (C# では `Properties.Settings.Default` として、Visual Basic では `My.Settings` としてアクセスします)。  
+ 次の手順では、フォームにテキスト ボックスを追加するとともに、Web 設定にバインドします。 認証とロールを使用する前のコードと同様、設定コードは設定プロバイダーに直接アクセスしません。 代わりに、Visual Studio がプロジェクト用に生成する、厳密に型指定された `Settings` クラスを使用します (C# では `Properties.Settings.Default` として、Visual Basic では `My.Settings` としてアクセスします)。  
   
 #### <a name="to-use-web-settings-in-your-user-interface"></a>ユーザー インターフェイスで Web 設定を使用するには  
   
@@ -425,7 +425,7 @@ ms.lasthandoff: 04/26/2018
   
      `WebSettingsTestText` の設定が、既定値の `DefaultText`でデザイナーに表示されます。 さらに、`WebSettingsTestText` プロパティを含む `Settings` クラスがプロジェクトに生成されます。  
   
-5.  **[ソリューション エクスプローラー]** の ClientAppServicesDemo プロジェクトで、Form1 を選択してから、[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] のメイン メニューで **[表示] &#124; [デザイナー]** をクリックします。  
+5.  **[ソリューション エクスプローラー]** の ClientAppServicesDemo プロジェクトで、Form1 を選択してから、Visual Studio のメイン メニューで **[表示] &#124; [デザイナー]** を選択します。  
   
 6.  デザイナーで、フォームに <xref:System.Windows.Forms.TextBox> コントロールを追加します。  
   
@@ -510,7 +510,7 @@ ms.lasthandoff: 04/26/2018
   
 #### <a name="to-enable-offline-mode-in-your-application"></a>アプリケーションでオフライン モードを有効にするには  
   
-1.  **[ソリューション エクスプローラー]** の ClientAppServicesDemo プロジェクトで、Form1 を選択してから、[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] のメイン メニューで **[表示] &#124; [デザイナー]** をクリックします。  
+1.  **[ソリューション エクスプローラー]** の ClientAppServicesDemo プロジェクトで、Form1 を選択してから、Visual Studio のメイン メニューで **[表示] &#124; [デザイナー]** を選択します。  
   
 2.  デザイナーで、フォームに <xref:System.Windows.Forms.CheckBox> コントロールを追加します。  
   

@@ -1,11 +1,6 @@
 ---
 title: 文字型 (Char) (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Char
 helpviewer_keywords:
@@ -15,14 +10,11 @@ helpviewer_keywords:
 - data types [Visual Basic], assigning
 - Char data type [Visual Basic], character literals
 ms.assetid: cd7547a9-7855-4e8e-b216-35d74a362657
-caps.latest.revision: 17
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 16ff547fccbf4481d31ca79537962cc7090fc9b0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: e672402535215ca30d19cc480e39b42b0364f137
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="char-data-type-visual-basic"></a>文字型 (Char) (Visual Basic)
 0 から 65535 まで符号なし 16 ビット (2 バイト) コード ポイントを保持します。 各*コード ポイントが*、または文字コードを 1 つの Unicode 文字を表します。  
@@ -54,13 +46,13 @@ charVar = "Z"C
   
 ## <a name="programming-tips"></a>プログラミングのヒント  
   
--   **負の数。** `Char`符号なしの型は、負の値を表すことはできません。 いずれの場合は、使用しないで`Char`数値の値を保持します。  
+-   **負の数。** `Char` 符号なしの型は、負の値を表すことはできません。 いずれの場合は、使用しないで`Char`数値の値を保持します。  
   
 -   **相互運用の考慮事項。** オートメーション オブジェクトや COM オブジェクトなど、.NET Framework 用に作成されていないコンポーネントを使用する場合、他の環境では文字型の別のデータ幅 (8 ビット) ことに注意してください。 このようなコンポーネントを 8 ビットの引数を渡す場合として宣言`Byte`の代わりに`Char`新しい Visual Basic コードでします。  
   
 -   **拡大します。** `Char`拡大変換後のデータ型`String`です。 つまり、変換することができます`Char`に`String`は発生しないと、<xref:System.OverflowException?displayProperty=nameWithType>エラーです。  
   
--   **型宣言文字。** リテラルの型文字を付加する`C`1 文字の文字列にリテラルを強制的に、`Char`データ型。 `Char`識別子の型文字がありません。  
+-   **型宣言文字。** リテラルの型文字を付加する`C`1 文字の文字列にリテラルを強制的に、`Char`データ型。 `Char` 識別子の型文字がありません。  
   
 -   **Framework の型。** .NET Framework において対応する型は、<xref:System.Char?displayProperty=nameWithType> 構造体です。  
   

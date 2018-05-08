@@ -1,23 +1,12 @@
 ---
-title: ".NET Framework 4.5 ビルトイン アクティビティ ライブラリ"
-ms.custom: 
+title: .NET Framework 4.5 ビルトイン アクティビティ ライブラリ
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: e559e87b-6aed-491d-9546-e92bcec16fdf
-caps.latest.revision: "30"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: cabff74808b25ba523d61931afc624d0353b2be1
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 7692ed8d78455c859f8ee6ef19f40bddb60d9475
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="net-framework-45-built-in-activity-library"></a>.NET Framework 4.5 ビルトイン アクティビティ ライブラリ
 [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] には、拡張された機能を持つ新しいアクティビティ ライブラリが含まれています。 アクティビティには次の型があります。  

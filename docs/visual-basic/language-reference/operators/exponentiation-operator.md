@@ -1,12 +1,6 @@
 ---
 title: ^ 演算子 (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.^
 helpviewer_keywords:
@@ -20,14 +14,11 @@ helpviewer_keywords:
 - powers
 - arithmetic operators [Visual Basic], exponentiation
 ms.assetid: d89a1ca8-83da-4784-a87b-a9d7dceb3f62
-caps.latest.revision: 14
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 9e7159f289b687055c7d75cc8da58d6f76607a83
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 426c3e9913dadda1091f4ba53c66c6b65e40e768
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="-operator-visual-basic"></a>^ 演算子 (Visual Basic)
 別の数値の累乗する数値を生成します。  
@@ -40,10 +31,10 @@ number ^ exponent
   
 ## <a name="parts"></a>指定項目  
  `number`  
- 必須です。 任意の数式。  
+ 必須。 任意の数式。  
   
  `exponent`  
- 必須です。 任意の数式。  
+ 必須。 任意の数式。  
   
 ## <a name="result"></a>結果  
  結果は`number`の累乗`exponent`、として常に、`Double`値。  
@@ -68,23 +59,23 @@ number ^ exponent
   
  前の例では、次の結果が生成されます。  
   
- `exp1`4 (2 乗) に設定されます。  
+ `exp1` 4 (2 乗) に設定されます。  
   
- `exp2`19683 (3 乗、次にその値が 2 乗) に設定されます。  
+ `exp2` 19683 (3 乗、次にその値が 2 乗) に設定されます。  
   
- `exp3`-125 (-5 乗) に設定されます。  
+ `exp3` -125 (-5 乗) に設定されます。  
   
- `exp4`625 (4 乗-5) に設定されます。  
+ `exp4` 625 (4 乗-5) に設定されます。  
   
- `exp5`2 (8 の立方根) に設定されます。  
+ `exp5` 2 (8 の立方根) に設定されます。  
   
- `exp6`0.5 (1.0 8 の立方根で割った値) に設定されます。  
+ `exp6` 0.5 (1.0 8 の立方根で割った値) に設定されます。  
   
  上記の例の式のかっこの中の重要性に注意してください。 ため*演算子の優先順位*、Visual Basic は通常は、 `^` 、それ以外の前に、の演算子も、単項`–`演算子。 場合`exp4`と`exp6`が計算されたかっこがない場合、次の結果が生成されるとします。  
   
- `exp4 = -5 ^ 4`– (4 乗 5) として計算される-625 になります。  
+ `exp4 = -5 ^ 4` – (4 乗 5) として計算される-625 になります。  
   
- `exp6 = 8 ^ -1.0 / 3.0`(– 1 power または 0.125 8) として計算が 3.0 では 0.041666666666666666666666666666667 ことになりますで割った値します。  
+ `exp6 = 8 ^ -1.0 / 3.0` (– 1 power または 0.125 8) として計算が 3.0 では 0.041666666666666666666666666666667 ことになりますで割った値します。  
   
 ## <a name="see-also"></a>関連項目  
  [^= 演算子](../../../visual-basic/language-reference/operators/exponentiation-assignment-operator.md)  

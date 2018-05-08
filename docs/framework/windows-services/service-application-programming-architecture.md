@@ -1,13 +1,6 @@
 ---
-title: "サービス アプリケーションのプログラミング アーキテクチャ"
-ms.custom: 
+title: サービス アプリケーションのプログラミング アーキテクチャ
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -21,25 +14,22 @@ helpviewer_keywords:
 - ServiceProcessInstaller class, service application code model
 - Windows Service applications, states
 ms.assetid: 83230026-d068-4174-97ff-e264c896eb2f
-caps.latest.revision: "15"
 author: ghogen
-ms.author: ghogen
 manager: douge
-ms.workload: dotnet
-ms.openlocfilehash: 2d44ee323040346437261b51fddb707a30d1de6c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f0c760d0f9b65fc9b612a8bee8abb68fa5b4ecae
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="service-application-programming-architecture"></a>サービス アプリケーションのプログラミング アーキテクチャ
 継承するクラスに基づいて Windows サービス アプリケーション、<xref:System.ServiceProcess.ServiceBase?displayProperty=nameWithType>クラスです。 このクラスからメソッドをオーバーライドして、サービスの動作を決定するそれらの機能を定義します。  
   
  サービスの作成に関連する主要なクラスは次のとおりです。  
   
--   <xref:System.ServiceProcess.ServiceBase?displayProperty=nameWithType>— メソッドをオーバーライドする、<xref:System.ServiceProcess.ServiceBase>クラスのサービスを作成するときに、このサービス関数がクラスを継承する方法を決定するコードを定義します。  
+-   <xref:System.ServiceProcess.ServiceBase?displayProperty=nameWithType> — メソッドをオーバーライドする、<xref:System.ServiceProcess.ServiceBase>クラスのサービスを作成するときに、このサービス関数がクラスを継承する方法を決定するコードを定義します。  
   
--   <xref:System.ServiceProcess.ServiceProcessInstaller?displayProperty=nameWithType><xref:System.ServiceProcess.ServiceInstaller?displayProperty=nameWithType> -これらのクラスを使用してインストールし、サービスをアンインストールします。  
+-   <xref:System.ServiceProcess.ServiceProcessInstaller?displayProperty=nameWithType> <xref:System.ServiceProcess.ServiceInstaller?displayProperty=nameWithType> -これらのクラスを使用してインストールし、サービスをアンインストールします。  
   
  さらに、クラスの名前付き<xref:System.ServiceProcess.ServiceController>サービス自体を操作するために使用できます。 このクラスは、サービスの作成に関連するではありませんを開始し、サービスを停止し、コマンドを渡す、一連の列挙体を返すために使用できます。  
   
@@ -76,6 +66,6 @@ ms.lasthandoff: 12/22/2017
   
  呼ばれるコンポーネントを使用することも、<xref:System.ServiceProcess.ServiceController>と通信して、既存のサービスの動作を制御します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Windows サービス アプリケーションの概要](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)  
  [方法 : Windows サービスを作成する](../../../docs/framework/windows-services/how-to-create-windows-services.md)

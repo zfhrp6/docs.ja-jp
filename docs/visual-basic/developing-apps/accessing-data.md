@@ -12,11 +12,11 @@ ms.assetid: 3086ab38-3be5-4b22-9385-7d0e16b04f6a
 caps.latest.revision: 23
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 306a618f193f9223443938ae2a9e0996c1b5295c
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: fb6645279a71252ff0ac81348c460b8981771797
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="accessing-data-in-visual-basic-applications"></a>Visual Basic アプリケーションにおけるデータ アクセス
 Visual Basic には、データにアクセスするアプリケーションを開発する際に役立ついくつかの新機能が用意されています。 Windows アプリケーションのデータ バインド フォームは、[[データ ソース]](/visualstudio/data-tools/add-new-data-sources) ウィンドウからフォームに項目をドラッグすることにより作成できます。 データをコントロールにバインドするには、**[データ ソース]** ウィンドウから既存のコントロールに項目をドラッグします。  
@@ -26,7 +26,7 @@ Visual Basic には、データにアクセスするアプリケーションを�
  アプリケーションにデータ アクセス機能を取り込む方法について説明したページへのリンクを示します。
 
  [.NET 用の Visual Studio データ ツール](/visualstudio/data-tools/visual-studio-data-tools-for-dotnet)  
- [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] を使用して、データを操作するアプリケーションを作成する方法に関するページへのリンクを示します。  
+ Visual Studio を使用して、データを操作するアプリケーションを作成する方法に関するページへのリンクを示します。  
   
  [LINQ](../../visual-basic/programming-guide/language-features/linq/index.md)  
  Visual Basic での LINQ の使用方法について説明するトピックへのリンクを示します。  
@@ -41,7 +41,7 @@ Visual Basic には、データにアクセスするアプリケーションを�
  複数層データ アプリケーションを作成する方法に関するトピックへのリンクを示します。  
      
  [新しい接続の追加](/visualstudio/data-tools/add-new-connections)  
- [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] で、デザイン時ツールを使用してアプリケーションをデータに接続する方法と、ADO.NET 接続オブジェクトを使用してアプリケーションをデータに接続する方法に関するページへのリンクを示します。  
+ Visual Studio で、デザイン時ツールを使用してアプリケーションをデータに接続する方法と、ADO.NET 接続オブジェクトを使用してアプリケーションをデータに接続する方法に関するページへのリンクを示します。  
 
  [Visual Studio のデータセット ツール](/visualstudio/data-tools/dataset-tools-in-visual-studio)  
  データセットにデータを読み込む方法と、SQL ステートメントおよびストアド プロシージャを実行する方法を説明しているページへのリンクを示します。  

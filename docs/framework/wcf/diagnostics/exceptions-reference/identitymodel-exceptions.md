@@ -1,24 +1,12 @@
 ---
-title: "IdentityModel 例外"
-ms.custom: 
+title: IdentityModel 例外
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 4ef34497-8ff5-4621-b773-7731cc721231
-caps.latest.revision: "7"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 26bf6cb88d77fc9890a23c482913514f1dc856aa
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ee0b5537a415e1ea53c653ae8e8485e94cc713fd
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="identitymodel-exceptions"></a>IdentityModel 例外
 ここでは、IdentityModel によって生成されるすべての例外を示します。  
@@ -91,8 +79,8 @@ ms.lasthandoff: 12/22/2017
 |SAMLSignatureAlreadyRead|この署名は既に SAML アサーションに読み込まれています。|  
 |AlgorithmAndPrivateKeyMisMatch|指定されたアルゴリズムと秘密キーが適合しません。|  
 |EmptyTransformChainNotSupported|空の変換チェーンはサポートされていません。|  
-|SspiWrapperEncryptDecryptAssert1|Sspiwrapper::encryptdecrypthelper &#124;'オフセット ' が範囲外です。|  
-|SspiWrapperEncryptDecryptAssert2|Sspiwrapper::encryptdecrypthelper &#124;'サイズ ' が範囲外です。 SecurityTokenManagerCannotCreateAuthenticatorForRequirement=セキュリティ トークン マネージャーは、指定された要件に対応するトークン認証システムを作成できません。|  
+|SspiWrapperEncryptDecryptAssert1|Sspiwrapper::encryptdecrypthelper&#124;'offset' が範囲外です。|  
+|SspiWrapperEncryptDecryptAssert2|Sspiwrapper::encryptdecrypthelper&#124;'size' が範囲外です。 SecurityTokenManagerCannotCreateAuthenticatorForRequirement=セキュリティ トークン マネージャーは、指定された要件に対応するトークン認証システムを作成できません。|  
 |UnableToCreateKeyedHashAlgorithm|指定された署名アルゴリズムの指定された値から KeyedHashAlgorithm を作成できません。|  
 |SAMLUnableToLoadAssertion|\<Saml:assertion > 要素が読み込みに失敗しました。|  
 |X509FindValueMismatchMulti|指定された X509FindType では、引数 findValue の型が 2 つの値のいずれかである必要があります。 引数 findValue は別の型です。|  

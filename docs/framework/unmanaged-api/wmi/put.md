@@ -1,11 +1,7 @@
 ---
-title: "Put 関数 (アンマネージ API リファレンス)"
-description: "Put 関数では、名前付きプロパティに新しい値を割り当てます。"
+title: Put 関数 (アンマネージ API リファレンス)
+description: Put 関数では、名前付きプロパティに新しい値を割り当てます。
 ms.date: 11/06/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: reference
 api_name:
 - Put
 api_location:
@@ -20,14 +16,11 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 09d3edc74b34688d5cc36e688f634850cfb60910
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9f3ffe27bef6583b733fc04f2f25903d545daa74
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="put-function"></a>Put 関数
 新しい値を名前付きプロパティを設定します。
@@ -93,18 +86,18 @@ HRESULT Put (
 
 プロパティ設定されている場合、`Put`親クラスで関数が存在する場合、プロパティの型が、親クラスの型と一致しませんしない限り、プロパティの既定値を変更します。 プロパティが存在しないため、型の不一致は、プロパティが ceated を使用します。
 
-使用して、`vtType`パラメーター CIM クラス定義に新しいプロパティを作成する場合にのみと`pVal`は`null`を指すか、`VARIANT`型の`VT_NULL`します。 ここで、`vType`パラメーター プロパティの CIM 型を指定します。 その他のすべてのケースで`vtType`0 にする必要があります。 `vtType`基になるオブジェクトがインスタンスの場合も、0 をする必要があります (場合でも`Val`は`null`) ため、プロパティの型は固定され変更できません。   
+使用して、`vtType`パラメーター CIM クラス定義に新しいプロパティを作成する場合にのみと`pVal`は`null`を指すか、`VARIANT`型の`VT_NULL`します。 ここで、`vType`パラメーター プロパティの CIM 型を指定します。 その他のすべてのケースで`vtType`0 にする必要があります。 `vtType` 基になるオブジェクトがインスタンスの場合も、0 をする必要があります (場合でも`Val`は`null`) ため、プロパティの型は固定され変更できません。   
 
 ## <a name="example"></a>例
 
 例については、次を参照してください。、 [IWbemClassObject::Put](https://msdn.microsoft.com/library/aa391455(v=vs.85).aspx)メソッドです。
 
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** WMINet_Utils.idl  
   
- **.NET framework のバージョン:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **.NET framework のバージョン:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>関連項目  
 [WMI およびパフォーマンス カウンター (アンマネージ API リファレンス)](index.md)

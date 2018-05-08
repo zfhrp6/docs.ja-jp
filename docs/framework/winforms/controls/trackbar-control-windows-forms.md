@@ -1,28 +1,16 @@
 ---
-title: "TrackBar コントロール (Windows フォーム)"
-ms.custom: 
+title: TrackBar コントロール (Windows フォーム)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - sliders
 - slider controls [Windows Forms]
 - TrackBar control [Windows Forms]
 ms.assetid: 37d6aee3-7e8a-4a10-a99c-3a6e09199553
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 761a3217aa78f33cd781b9a4581eb6e409a5ff85
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 95a2459a75d0f14d0671ce2f38d771258b070053
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="trackbar-control-windows-forms"></a>TrackBar コントロール (Windows フォーム)
 Windows フォーム`TrackBar`コントロール ("slider"コントロールと呼ばれることもあります) を使用して大量の情報内を移動するかを視覚的に数値の設定を調整します。 `TrackBar`コントロールに 2 つの部分がある: スクロール ボックス、スライダーとティックとも呼ばれます。 つまみでは、調整可能な部分です。 その位置に対応して、<xref:System.Windows.Forms.TrackBar.Value%2A>プロパティです。 目盛りは、一定の間隔で間隔が視覚インジケーターです。 トラック バーは、増分値を指定し、水平方向または垂直方向に整列することができますをで移動します。 トラック バーの使用例はではカーソルの点滅速度やマウス速度を設定します。  

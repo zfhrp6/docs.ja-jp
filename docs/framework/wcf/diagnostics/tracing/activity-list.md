@@ -1,27 +1,15 @@
 ---
-title: "アクティビティ リスト"
-ms.custom: 
+title: アクティビティ リスト
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 5540e185-ce8e-4db3-83b0-2b9f5bf71829
-caps.latest.revision: "6"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 5e7a371d43237b795536711cf1745030e14d6eca
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: dc504c37b21a2d457f270331ab917747bafbb022
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="activity-list"></a>アクティビティ リスト
-ここでは、[!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] で定義されたすべてのアクティビティを示します。  
+このトピックでは、Windows Communication Foundation (WCF) によって定義されているすべてのアクティビティを示します。  
   
 > [!NOTE]
 >  また、ユーザー トレースをグループ化するために、アクティビティをプログラムによって定義することもできます。 詳細については、次を参照してください。[ユーザー コード トレースの出力](../../../../../docs/framework/wcf/diagnostics/tracing/emitting-user-code-traces.md)です。  
@@ -33,8 +21,8 @@ ms.lasthandoff: 12/22/2017
 |-----------|-------------------|-------------------|-----------------|  
 |A、M|アンビエント アクティビティ|N/A (ServiceModel によって制御されません)|ServiceModel コード (クライアント側またはサーバー側) を呼び出す前に、ID が TLS に設定されるアクティビティ。<br /><br /> 例 : [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] クライアントで open が呼び出されるか、serviceHost.open が呼び出されるアクティビティ。|  
 |B|構成体<br /><br /> 構築する。 ContractType: '[種類]'。|構成体||  
-|C|開く<br /><br /> [ClientBase &#124;です。ChannelFactory] です。 ContractType: '[種類]'。|開く||  
-|I|[ClientBase &#124; を閉じるChannelFactory] です。 ContractType: '[種類]'。|閉じる||  
+|C|開く<br /><br /> [ClientBase&#124;ChannelFactory] です。 ContractType: '[種類]'。|開く||  
+|I|閉じる [ClientBase&#124;ChannelFactory] です。 ContractType: '[種類]'。|閉じる||  
 |M|ServiceHost を構築する。 ServiceType: '[種類]'。|構成体||  
 |N|ServiceHost を開く。 ServiceType: '[種類]'。|開く||  
 |Z|ServiceHost を閉じる。 ServiceType: '[種類]'。|閉じる||  

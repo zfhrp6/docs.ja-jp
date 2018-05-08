@@ -1,12 +1,6 @@
 ---
-title: "Visual Basic における配列の次元"
-ms.custom: 
+title: Visual Basic における配列の次元
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - dimensions, arrays
 - arrays [Visual Basic], dimensions
@@ -15,14 +9,11 @@ helpviewer_keywords:
 - rectangular arrays
 - ranking, arrays
 ms.assetid: 385e911b-18c1-4e98-9924-c6d279101dd9
-caps.latest.revision: "22"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 21e170ca5942862a26e05428fffaea7d1e875e19
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: cf295288dd034d744dceb71b5c58278be5cc2a2f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="array-dimensions-in-visual-basic"></a>Visual Basic における配列の次元
 A*ディメンション*は、方向、配列の要素の仕様を変更できます。 月の日付ごとの売上を合計を保持する配列には、1 つのディメンション (月の日) があります。 月の日付ごとに、売り上げ高を部門によって合計を保持する配列には、2 つのディメンション (部署番号と月の日) があります。 配列がディメンションの数が呼び出されますその*ランク*です。  
@@ -35,13 +26,13 @@ A*ディメンション*は、方向、配列の要素の仕様を変更でき�
   
  次の図は、異なるランクを持つ配列の概念の構造を表示します。 図内の各要素は、これにアクセスするインデックス値を示します。 たとえば、インデックスを指定することによって、2 次元配列の 2 番目の行の最初の要素をアクセス`(1, 0)`です。  
   
- ![1 &#45;のグラフィック ダイアグラム; 次元配列](../../../../visual-basic/programming-guide/language-features/arrays/media/arrayexdimone.gif "ArrayExDimOne")  
+ ![1 つのグラフィック ダイアグラム&#45;次元配列](../../../../visual-basic/programming-guide/language-features/arrays/media/arrayexdimone.gif "ArrayExDimOne")  
 1 次元配列  
   
- ![2 &#45;のグラフィック ダイアグラム; 次元配列](../../../../visual-basic/programming-guide/language-features/arrays/media/arrayexdimtwo.gif "ArrayExDimTwo")  
+ ![2 つのグラフィック ダイアグラム&#45;次元配列](../../../../visual-basic/programming-guide/language-features/arrays/media/arrayexdimtwo.gif "ArrayExDimTwo")  
 2 次元配列  
   
- ![3 &#45;のグラフィック ダイアグラム; 次元配列](../../../../visual-basic/programming-guide/language-features/arrays/media/arrayexdimthree.gif "ArrayExDimThree")  
+ ![3 つのグラフィック ダイアグラム&#45;次元配列](../../../../visual-basic/programming-guide/language-features/arrays/media/arrayexdimthree.gif "ArrayExDimThree")  
 3 次元配列  
   
 ### <a name="one-dimension"></a>1 つのディメンション  

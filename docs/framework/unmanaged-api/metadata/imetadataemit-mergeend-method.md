@@ -1,14 +1,6 @@
 ---
-title: "IMetaDataEmit::MergeEnd メソッド"
-ms.custom: 
+title: IMetaDataEmit::MergeEnd メソッド
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - IMetaDataEmit.MergeEnd
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: 2d64315a-1af1-4c60-aedf-f8a781914aea
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 265fc007b5817e8dffd5846738a7a0003bbddf9d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b794a62a0ac0d253f1431be29b43101816dc7233
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="imetadataemitmergeend-method"></a>IMetaDataEmit::MergeEnd メソッド
 現在のマージのスコープを 1 つまたは複数の以前の呼び出しで指定されたすべてのメタデータ スコープ[imetadataemit::merge](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-merge-method.md)です。  
@@ -58,7 +46,7 @@ HRESULT MergeEnd ();
   
      モジュールのプロパティが既に設定されている現在のスコープのモジュールのプロパティはインポートされません。 ただし、現在のスコープでこのモジュールのプロパティが設定されていない場合、最初に検出された、1 回だけがインポートされます。 これらのモジュールのプロパティが再度発生する場合、重複しています。 (MVID) を除くすべてのモジュールのプロパティの値を比較し、重複部分が見つからない、エラーが発生します。  
   
--   型の定義 (`TypeDef`)、現在のスコープに重複がマージされません。 `TypeDef`オブジェクトはそれぞれに対して重複をチェック*オブジェクトの完全修飾名* + *GUID* + *バージョン番号*です。 名前または GUID のいずれかに一致があるその他の 2 つの要素のいずれかが異なる場合は、エラーが発生します。 それ以外の場合、3 つの項目をすべて一致する場合、`MergeEnd`エントリが重複しないことを確認するにはない場合、エラーが発生します。 この簡単なチェックを探します。  
+-   型の定義 (`TypeDef`)、現在のスコープに重複がマージされません。 `TypeDef` オブジェクトはそれぞれに対して重複をチェック*オブジェクトの完全修飾名* + *GUID* + *バージョン番号*です。 名前または GUID のいずれかに一致があるその他の 2 つの要素のいずれかが異なる場合は、エラーが発生します。 それ以外の場合、3 つの項目をすべて一致する場合、`MergeEnd`エントリが重複しないことを確認するにはない場合、エラーが発生します。 この簡単なチェックを探します。  
   
     -   同じメンバー宣言と同じ順序で発生しています。 メンバーとしてフラグが付いている`mdPrivateScope`(を参照してください、 [CorMethodAttr](../../../../docs/framework/unmanaged-api/metadata/cormethodattr-enumeration.md)列挙型) です。 この確認に含まれていない特別にマージされます。  
   
@@ -72,15 +60,15 @@ HRESULT MergeEnd ();
   
 -   アタッチされている項目がマージされた場合にのみ、カスタム属性がマージされます。 たとえば、クラスに関連付けられているカスタム属性は、クラスが最初に検出されたときにマージされます。 カスタム属性が関連付けられている場合、`TypeDef`または`MemberDef`(メンバー コンパイルのタイムスタンプ) などのコンパイル単位に固有であるはマージされませんおよび削除するか、このようなメタデータを更新するコンパイラの責任です。  
   
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** Cor.h  
   
  **ライブラリ:** MSCorEE.dll にリソースとして使用  
   
- **.NET framework のバージョン:**[!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]  
+ **.NET framework のバージョン:** [!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [IMetaDataEmit インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)  
  [IMetaDataEmit2 インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

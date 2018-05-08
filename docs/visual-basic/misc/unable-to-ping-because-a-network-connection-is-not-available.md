@@ -1,21 +1,14 @@
 ---
-title: "ネットワーク接続が利用できないため、ping を実行できません"
+title: ネットワーク接続が利用できないため、ping を実行できません
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vbrNetwork_NetworkNotAvailable
 ms.assetid: 8d2bac12-bc6a-42ae-b28b-80b026dfabce
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 057cb9f0fee4f6cee30348edc248121feab0b310
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 6b1d0408499d82da0fec58dce6dc799495ac708b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="unable-to-ping-because-a-network-connection-is-not-available"></a>ネットワーク接続が利用できないため、ping を実行できません
 ネットワーク接続が利用できないため、操作を実行できません。  
@@ -24,7 +17,7 @@ ms.lasthandoff: 01/19/2018
   
 -   ネットワークに接続し、操作をやり直します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [My.Computer.Network.Ping](xref:Microsoft.VisualBasic.Devices.Network.Ping%2A)  
  [My.Computer.Network.IsAvailable](xref:Microsoft.VisualBasic.Devices.Network.IsAvailable)  
  [Visual Basic による .NET Framework でのネットワーク操作](http://msdn.microsoft.com/library/c5379021-44ef-4d6a-acf5-e951fdcab6b2)  

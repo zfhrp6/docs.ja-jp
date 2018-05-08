@@ -1,13 +1,6 @@
 ---
-title: "ベクター グラフィックスの概要"
-ms.custom: 
+title: ベクター グラフィックスの概要
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,19 +9,14 @@ helpviewer_keywords:
 - coordinate systems
 - graphics [Windows Forms], vector graphics
 ms.assetid: 0195df81-66be-452d-bb53-5a582ebfdc09
-caps.latest.revision: "16"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 603b76c999933f177a9e48ddb819562b8e4dd8f8
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 31fec6d0d3769251d21783b4657d00b06431e942
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="vector-graphics-overview"></a>ベクター グラフィックスの概要
-[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]座標系上線、四角形、およびその他の図形を描画します。 さまざまな座標システムから選択できますが、既定座標系では、左上隅の原点は、x 軸が右と下向き y 軸 をポイントします。 既定の座標システムでメジャーの単位は、ピクセルです。  
+[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] 座標系上線、四角形、およびその他の図形を描画します。 さまざまな座標システムから選択できますが、既定座標系では、左上隅の原点は、x 軸が右と下向き y 軸 をポイントします。 既定の座標システムでメジャーの単位は、ピクセルです。  
   
 ## <a name="the-building-blocks-of-gdi"></a>GDI + の構成要素  
  ![ベクター グラフィックス](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art01.gif "AboutGdip02_Art01")  
@@ -37,7 +25,7 @@ ms.lasthandoff: 12/22/2017
   
  ![ベクター グラフィックス](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art02.gif "AboutGdip02_Art02")  
   
- 使用すると[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]線、四角形、または曲線を描画するには、描画される項目に関する特定のキー情報を提供します。 たとえば、2 つの点を提供することにより、行を指定でき、ポイント、高さ、幅を提供し、四角形を指定することができます。 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]ディスプレイ ドライバー ソフトウェアは、線、四角形、または曲線の表示にするピクセルをオンにするかを決定すると連携して動作します。 次の図は、(4, 2) のポイントからポイント (12, 8) に線を表示するのになっている (ピクセル) を示します。  
+ 使用すると[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]線、四角形、または曲線を描画するには、描画される項目に関する特定のキー情報を提供します。 たとえば、2 つの点を提供することにより、行を指定でき、ポイント、高さ、幅を提供し、四角形を指定することができます。 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] ディスプレイ ドライバー ソフトウェアは、線、四角形、または曲線の表示にするピクセルをオンにするかを決定すると連携して動作します。 次の図は、(4, 2) のポイントからポイント (12, 8) に線を表示するのになっている (ピクセル) を示します。  
   
  ![ベクター グラフィックス](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art03.gif "AboutGdip02_Art03")  
   
@@ -67,7 +55,7 @@ ms.lasthandoff: 12/22/2017
  [!code-csharp[LinesCurvesAndShapes#11](../../../../samples/snippets/csharp/VS_Snippets_Winforms/LinesCurvesAndShapes/CS/Class1.cs#11)]
  [!code-vb[LinesCurvesAndShapes#11](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/LinesCurvesAndShapes/VB/Class1.vb#11)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Drawing.Graphics?displayProperty=nameWithType>  
  <xref:System.Drawing.Pen?displayProperty=nameWithType>  
  [直線、曲線、および図形](../../../../docs/framework/winforms/advanced/lines-curves-and-shapes.md)  

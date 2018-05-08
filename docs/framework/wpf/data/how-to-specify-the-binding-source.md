@@ -1,13 +1,6 @@
 ---
-title: "方法 : バインディング ソースを指定する"
-ms.custom: 
+title: '方法 : バインディング ソースを指定する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,16 +9,11 @@ helpviewer_keywords:
 - data binding [WPF], binding source
 - binding sources [WPF]
 ms.assetid: 55d47757-2648-4a52-987f-b767953f168c
-caps.latest.revision: "16"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 23a4c180eb62dd152f1ed24c01b8103ccf1ec562
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 333a85bc59ded3fd42bef6aff5845c9a6ddeb49b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-specify-the-binding-source"></a>方法 : バインディング ソースを指定する
 データ バインディングでは、バインド ソース オブジェクトとは、そこからデータを取得するオブジェクトを指します。 このトピックでは、バインド ソースを指定するさまざまな方法について説明します。  
@@ -54,7 +42,7 @@ ms.lasthandoff: 12/22/2017
 |<xref:System.Windows.Data.Binding.RelativeSource%2A>|これは、バインディング ターゲットの場所を基準としてソースを指定する場合に便利です。 このプロパティを使用できる一般的なシナリオとして、要素の 1 つのプロパティを同じ要素の別のプロパティにバインドする場合や、スタイルまたはテンプレート内のバインドを定義する場合があります。 詳細については、「<xref:System.Windows.Data.Binding.RelativeSource%2A>」を参照してください。|  
 |<xref:System.Windows.Data.Binding.ElementName%2A>|バインド先の要素を表す文字列を指定します。 これは、アプリケーションの別の要素のプロパティにバインドする場合に便利です。 使用する場合など、 <xref:System.Windows.Controls.Slider> 、アプリケーションの他のコントロールの高さを制御する、またはバインドする場合、 <xref:System.Windows.Controls.ContentControl.Content%2A> 、コントロールを<xref:System.Windows.Controls.Primitives.Selector.SelectedValue%2A>のプロパティ、<xref:System.Windows.Controls.ListBox>コントロール。 詳細については、「<xref:System.Windows.Data.Binding.ElementName%2A>」を参照してください。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.FrameworkElement.DataContext%2A?displayProperty=nameWithType>  
  <xref:System.Windows.FrameworkContentElement.DataContext%2A?displayProperty=nameWithType>  
  [プロパティ値の継承](../../../../docs/framework/wpf/advanced/property-value-inheritance.md)  

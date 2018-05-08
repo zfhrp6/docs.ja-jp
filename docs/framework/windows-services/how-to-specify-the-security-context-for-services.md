@@ -1,13 +1,6 @@
 ---
-title: "方法 : サービスのセキュリティ コンテキストを指定する"
-ms.custom: 
+title: '方法 : サービスのセキュリティ コンテキストを指定する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - Windows Service applications, security
 - security [Visual Studio], contexts
@@ -17,16 +10,13 @@ helpviewer_keywords:
 - services, security
 - ServiceInstaller class, security context
 ms.assetid: 02187c7b-dbf2-45f2-96c2-e11010225a22
-caps.latest.revision: "10"
 author: ghogen
-ms.author: ghogen
 manager: douge
-ms.workload: dotnet
-ms.openlocfilehash: 9ce65358f6d63414dbe6798d3cc2464ee2741980
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e3e5ad7dd44dcaf1593ac80bbe6d0a367964e4e4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-specify-the-security-context-for-services"></a>方法 : サービスのセキュリティ コンテキストを指定する
 既定では、サービスは、ログイン ユーザーの場合よりも別のセキュリティ コンテキストで実行します。 既定のシステム アカウントのコンテキストで実行するサービスと呼ばれる`LocalSystem`、与えるさまざまなアクセス特権ユーザーのシステム リソースにします。 サービスを実行する別のユーザー アカウントを指定するには、この動作を変更することができます。  
@@ -54,7 +44,7 @@ ms.lasthandoff: 12/22/2017
   
 3.  **プロパティ**ウィンドウで、設定、<xref:System.ServiceProcess.ServiceProcessInstaller.Account%2A>適切な値にします。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Windows サービス アプリケーションの概要](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)  
  [方法 : サービス アプリケーションにインストーラーを追加する](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md)  
  [方法 : Windows サービスを作成する](../../../docs/framework/windows-services/how-to-create-windows-services.md)

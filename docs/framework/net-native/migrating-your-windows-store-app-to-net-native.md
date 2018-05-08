@@ -1,26 +1,14 @@
 ---
 title: Windows ストア アプリの .NET ネイティブへの移行
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 4153aa18-6f56-4a0a-865b-d3da743a1d05
-caps.latest.revision: ''
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: ce23d66f79f94af74250cff137499f6c8b1582ac
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: a316cd8ed82f9833b23fe313b8f4c4903bd0a433
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="migrating-your-windows-store-app-to-net-native"></a>Windows ストア アプリの .NET ネイティブへの移行
 [!INCLUDE[net_native](../../../includes/net-native-md.md)] は、Windows ストアまたは開発者のコンピューターでアプリの静的なコンパイルを行います。 これは、デバイス上で Just-In-Time (JIT) コンパイラまたは [ネイティブ イメージ ジェネレーター (Ngen.exe)](../../../docs/framework/tools/ngen-exe-native-image-generator.md) によって Windows ストア アプリに対して実行される動的なコンパイルとは異なります。 違いはありますが、 [!INCLUDE[net_native](../../../includes/net-native-md.md)] は [Windows ストア アプリ用 .NET](http://msdn.microsoft.com/library/windows/apps/br230302.aspx)との互換性を保持しようとします。 Windows ストア アプリ用 .NET で機能する大部分が [!INCLUDE[net_native](../../../includes/net-native-md.md)]でも機能します。  ただし、動作に違いがある場合もあります。 このドキュメントでは、次の領域における、標準の Windows ストア アプリ用 .NET と [!INCLUDE[net_native](../../../includes/net-native-md.md)] との違いについて説明します。  
@@ -214,9 +202,10 @@ ms.lasthandoff: 03/26/2018
   
 <a name="Interop"></a>   
 ### <a name="interop-differences"></a>相互運用の違い  
- **非推奨 API**  
+ 
+  **非推奨の API**  
   
- マネージド コードで相互運用性のために使用される頻度が低い API のいくつかが、非推奨になっています。 これらの API を [!INCLUDE[net_native](../../../includes/net-native-md.md)]で使用すると、 <xref:System.NotImplementedException> 例外か <xref:System.PlatformNotSupportedException> 例外がスローされるか、コンパイラ エラーになる場合があります。 Windows ストア アプリ用 .NET では、これらの API は廃止としてマークされていますが、これらの API を呼び出すとコンパイラ エラーではなくコンパイラの警告が生成されます。  
+ マネージド コードで相互運用性のために使用される頻度が低い API のいくつかが、非推奨にされました。 これらの API を [!INCLUDE[net_native](../../../includes/net-native-md.md)]で使用すると、 <xref:System.NotImplementedException> 例外か <xref:System.PlatformNotSupportedException> 例外がスローされるか、コンパイラ エラーになる場合があります。 Windows ストア アプリ用 .NET では、これらの API は廃止としてマークされていますが、これらの API を呼び出すとコンパイラ エラーではなくコンパイラの警告が生成されます。  
   
  非推奨の `VARIANT` マーシャリング用 API:  
   

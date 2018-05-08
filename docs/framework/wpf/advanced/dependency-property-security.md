@@ -1,13 +1,6 @@
 ---
-title: "依存関係プロパティのセキュリティ"
-ms.custom: 
+title: 依存関係プロパティのセキュリティ
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - wrappers [WPF], access
 - wrappers [WPF], security
@@ -17,16 +10,11 @@ helpviewer_keywords:
 - dependency properties [WPF], access
 - security [WPF], dependency properties
 ms.assetid: d10150ec-90c5-4571-8d35-84bafa2429a4
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 9cd6f9d7025de9f5deb836d48a8ce9c7134973d6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 825b2a3dc79300f0cc26514398b8de0abee64fd4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="dependency-property-security"></a>依存関係プロパティのセキュリティ
 依存関係プロパティは、一般に、パブリック プロパティと考える必要があります。 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] のプロパティ システムの性質のため、依存関係プロパティの値に関してセキュリティを保証することはできません。  
@@ -50,5 +38,5 @@ ms.lasthandoff: 12/22/2017
 ### <a name="validation-and-security"></a>検証とセキュリティ  
  要求を適用する、<xref:System.Windows.DependencyProperty.ValidateValueCallback%2A>と適切なセキュリティ メカニズムをなってをプロパティが設定されていることを防ぐために必要に応じてエラーの発生時に検証エラーを指定してください。 によって値の設定の無効化が強制実行<xref:System.Windows.DependencyProperty.ValidateValueCallback%2A>それらの呼び出し元は、アプリケーション ドメイン内で動作している場合、悪意のある呼び出し元が抑制も可能性があります。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [カスタム依存関係プロパティ](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)

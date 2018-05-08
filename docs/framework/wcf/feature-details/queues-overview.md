@@ -1,31 +1,17 @@
 ---
-title: "キューの概要"
-ms.custom: 
+title: キューの概要
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - queues [WCF], MSMQ integration
 ms.assetid: b8757992-ffce-40ad-9e9b-3243f6d0fce1
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: eb5d0f51fbbb6c8bad9bfbbfd9977368fdbd0666
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 85c8cb1fbbda9be14754174c7cb7c76513bd94c7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="queues-overview"></a>キューの概要
-ここでは、キューを使った通信の概要とその基本概念を解説します。 後の各セクションでは、キューの概念がどのように [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] に活かされているかを詳しく説明します。  
+ここでは、キューを使った通信の概要とその基本概念を解説します。 以降のセクションでは、ここで説明されている、キューの概念が Windows Communication Foundation (WCF) を指す方法の詳細に移動します。  
   
 ## <a name="basic-queuing-concepts"></a>キューの基本概念  
  分散アプリケーションの設計では、サービスとクライアントとの間の通信に適したトランスポートを選択することが重要になります。 使用するトランスポートの種類の決定には、いくつかの要素が影響します。 そのうちの 1 つである、サービス、クライアント、トランスポートの分離という重要な要素により、キューを使用するトランスポートと、TCP や HTTP などの直接的なトランスポートのどちらを使用するかが決定します。 TCP や HTTP などの直接的なトランスポートの性質により、サービスやクライアントの機能が停止したり、ネットワークに障害が発生したりすると、通信全体が停止します。 アプリケーションが全体として正常に機能するためには、サービス、クライアント、ネットワークがすべて揃って稼働している必要があります。 キューを使用するトランスポートでは、分離が実現されます。つまり、サービスやクライアントが停止したり、これらの間の通信リンクに障害が発生したりしても、障害が発生していないサービスやクライアントは引き続き機能します。  
@@ -86,7 +72,7 @@ ms.lasthandoff: 01/19/2018
 ## <a name="poison-message-queue-programming"></a>有害メッセージ キューのプログラミング  
  メッセージがターゲット キューに到達しても、サービス側で繰り返し処理に失敗する場合があります。 原因としては、アプリケーションがトランザクション内でキューからメッセージを読み込み、データベースを更新しようとしたところ、データベースの接続が一時的に切断されていた、というような状況が考えられます。 この場合は、トランザクションのロールバック、新たなトランザクションの作成、メッセージの再読み込みが行われます。 ただし、2 回目の試行で成功するかどうかはわかりません。 エラーの原因によっては、メッセージをアプリケーションに配信する処理が繰り返し失敗することがあります。 このようなメッセージは "有害" であると見なされ、 有害メッセージ キューに移されます。このキューの内容は、有害メッセージを処理するアプリケーションに渡すことができます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [WCF でのキュー](../../../../docs/framework/wcf/feature-details/queuing-in-wcf.md)  
  [WCF でのキュー](../../../../docs/framework/wcf/feature-details/queuing-in-wcf.md)  
  [セッションとキュー](../../../../docs/framework/wcf/samples/sessions-and-queues.md)  

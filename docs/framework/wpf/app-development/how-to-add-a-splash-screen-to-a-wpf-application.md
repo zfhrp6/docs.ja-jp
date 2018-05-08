@@ -1,29 +1,17 @@
 ---
-title: "方法 : スプラッシュ スクリーンを WPF アプリケーションに追加する"
-ms.custom: 
+title: '方法 : スプラッシュ スクリーンを WPF アプリケーションに追加する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - WPF [WPF], splash screen
 - startup window [WPF]
 - SplashScreen class [WPF]
 - splash screen [WPF]
 ms.assetid: d70a25c4-5fb9-4c27-b01d-b1b8ef39b3fd
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 121cbc1c07ea8f6458df81d861aea3f8e1f91086
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 06d6cb7c5a5081d3b6c4979ab50e1caaa726acbe
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-add-a-splash-screen-to-a-wpf-application"></a>方法 : スプラッシュ スクリーンを WPF アプリケーションに追加する
 このトピックは、[スタートアップ] ウィンドウを追加する方法を示しますまたは*スプラッシュ スクリーン*、Windows Presentation Foundation (WPF) アプリケーションにします。  
@@ -59,6 +47,6 @@ ms.lasthandoff: 01/19/2018
   
 -   スプラッシュ スクリーンのイメージをプロジェクトから除外します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.SplashScreen>  
  [NIB: 方法: 既存の項目をプロジェクトに追加します。](http://msdn.microsoft.com/library/15f4cfb7-78ab-457f-9f14-099a25a6a2d3)

@@ -1,13 +1,6 @@
 ---
-title: "ランタイム プロファイリング"
-ms.custom: 
+title: ランタイム プロファイリング
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - performance counters
 - common language runtime, profiling
@@ -18,16 +11,13 @@ helpviewer_keywords:
 - profiling applications
 - Performance Console
 ms.assetid: ccd68284-f3a8-47b8-bc3f-92e5fe3a1640
-caps.latest.revision: "22"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 4a8f3af4878e0f6911fcc55ec76b26649d517b3b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: fec1fb5a2dc3d6589f49d4a5864dabfb03a5477c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="runtime-profiling"></a>ランタイム プロファイリング
 プロファイリングは、任意の開発シナリオまたは配置シナリオでパフォーマンス データを収集する方法の 1 つです。 このセクションは、アプリケーションのパフォーマンスに関する情報の収集を必要とする開発者およびシステム管理者を対象にしています。  
@@ -39,7 +29,7 @@ ms.lasthandoff: 12/22/2017
   
 1.  コマンド プロンプトで、「 **perfmon**」と入力します。 **[パフォーマンス モニター]** コンソールが表示されます。  
   
-2.  **[監視ツール]** フォルダーで、 **[パフォーマンス モニター]**をクリックします。  
+2.  **[監視ツール]** フォルダーで、 **[パフォーマンス モニター]** をクリックします。  
   
 3.  パフォーマンス モニターのツールバーで、 **[追加]** アイコン (正符号) をクリックします (表示されている場合)。 表示されていない場合は、モニター ウィンドウで右クリックし、 **[カウンターの追加]** オプションを選択します。  
   
@@ -75,5 +65,5 @@ ms.lasthandoff: 12/22/2017
 |<xref:System.Diagnostics.PerformanceCounterInstaller?displayProperty=nameWithType>|`PerformanceCounter` コンポーネントのインストーラーを指定します。|  
 |<xref:System.Diagnostics.PerformanceCounterType?displayProperty=nameWithType>|`NextValue` の `PerformanceCounter`メソッドを計算する数式を指定します。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [パフォーマンス カウンター](../../../docs/framework/debug-trace-profile/performance-counters.md)

@@ -1,11 +1,6 @@
 ---
-title: "Structure ステートメント"
+title: Structure ステートメント
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Structure
 - Structure
@@ -17,14 +12,11 @@ helpviewer_keywords:
 - UDT (user-defined types)
 - types [Visual Basic], user-defined
 ms.assetid: 9bd1deea-2a89-4cdc-812c-6dcbb947c391
-caps.latest.revision: "28"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 43211bb10793acf3bfe0c1d7a35791114170ee7d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 6a3626706b226b0be253fd35fa60b33a71b86007
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="structure-statement"></a>Structure ステートメント
 構造体の名前を宣言し、構造体を構成する変数、プロパティ、イベント、およびプロシージャの定義を提供します。  
@@ -44,18 +36,18 @@ End Structure
   
 |用語|定義|  
 |---|---|  
-|`attributelist`|省略可能です。 参照してください[属性一覧](../../../visual-basic/language-reference/statements/attribute-list.md)です。|  
-|`accessmodifier`|省略可能です。 次のいずれかの値を指定します。<br /><br /> -   [パブリック](../../../visual-basic/language-reference/modifiers/public.md)<br />-   [保護されています。](../../../visual-basic/language-reference/modifiers/protected.md)<br />-   [Friend](../../../visual-basic/language-reference/modifiers/friend.md)<br />-   [プライベート](../../../visual-basic/language-reference/modifiers/private.md)<br />-   `Protected Friend`<br /><br /> 参照してください[Visual Basic でのレベルのアクセス](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)です。|  
-|`Shadows`|省略可能です。 参照してください[Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)です。|  
-|`Partial`|省略可能です。 構造体の部分定義を示します。 参照してください[部分](../../../visual-basic/language-reference/modifiers/partial.md)です。|  
-|`name`|必須です。 この構造体の名前です。 参照してください[宣言された要素の名前](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)です。|  
-|`Of`|省略可能です。 これがジェネリックな構造体であることを指定します。|  
+|`attributelist`|任意。 参照してください[属性一覧](../../../visual-basic/language-reference/statements/attribute-list.md)です。|  
+|`accessmodifier`|任意。 次のいずれかの値を指定します。<br /><br /> -   [パブリック](../../../visual-basic/language-reference/modifiers/public.md)<br />-   [保護されています。](../../../visual-basic/language-reference/modifiers/protected.md)<br />-   [Friend](../../../visual-basic/language-reference/modifiers/friend.md)<br />-   [プライベート](../../../visual-basic/language-reference/modifiers/private.md)<br />-   `Protected Friend`<br /><br /> 参照してください[Visual Basic でのレベルのアクセス](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)です。|  
+|`Shadows`|任意。 参照してください[Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)です。|  
+|`Partial`|任意。 構造体の部分定義を示します。 参照してください[部分](../../../visual-basic/language-reference/modifiers/partial.md)です。|  
+|`name`|必須。 この構造体の名前です。 参照してください[宣言された要素の名前](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)です。|  
+|`Of`|任意。 これがジェネリックな構造体であることを指定します。|  
 |`typelist`|使用するかどうかは必ず、[の](../../../visual-basic/language-reference/statements/of-clause.md)キーワード。 この構造体の型パラメーター リストを指定します。 参照してください[のリストを入力](../../../visual-basic/language-reference/statements/type-list.md)です。|  
-|`Implements`|省略可能です。 この構造体が、複数のインターフェイスのメンバーを実装していることを示します。 参照してください[ステートメントを実装します](../../../visual-basic/language-reference/statements/implements-statement.md)です。|  
+|`Implements`|任意。 この構造体が、複数のインターフェイスのメンバーを実装していることを示します。 参照してください[ステートメントを実装します](../../../visual-basic/language-reference/statements/implements-statement.md)です。|  
 |`interfacenames`|`Implements` ステートメントを使用する場合は必ず指定します。 この構造体が実装するインターフェイスの名前を指定します。|  
-|`datamemberdeclarations`|必須です。 0 個以上`Const`、 `Dim`、 `Enum`、または`Event`宣言ステートメント*データ メンバー*構造体の。|  
-|`methodmemberdeclarations`|省略可能です。 0 個以上の宣言`Function`、 `Operator`、 `Property`、または`Sub`として使用するプロシージャ*メソッド メンバー*構造体の。|  
-|`End Structure`|必須です。 `Structure` の定義を終了します。|  
+|`datamemberdeclarations`|必須。 0 個以上`Const`、 `Dim`、 `Enum`、または`Event`宣言ステートメント*データ メンバー*構造体の。|  
+|`methodmemberdeclarations`|任意。 0 個以上の宣言`Function`、 `Operator`、 `Property`、または`Sub`として使用するプロシージャ*メソッド メンバー*構造体の。|  
+|`End Structure`|必須。 `Structure` の定義を終了します。|  
   
 ## <a name="remarks"></a>コメント  
  `Structure` ステートメントは、カスタマイズできる複合値型を定義します。 A*構造*の以前のバージョンの Visual Basic のユーザー定義型 (UDT) を一般化しました。 詳細については、次を参照してください。[構造](../../../visual-basic/programming-guide/language-features/data-types/structures.md)です。  

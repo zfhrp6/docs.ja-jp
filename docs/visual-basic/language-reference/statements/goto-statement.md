@@ -1,12 +1,6 @@
 ---
 title: GoTo ステートメント
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.GoTo
 helpviewer_keywords:
@@ -19,14 +13,11 @@ helpviewer_keywords:
 - conditional statements [Visual Basic], GoTo statement
 - GoTo statement [Visual Basic], syntax
 ms.assetid: 313274c2-8ab3-4b9c-9ba3-0fd6798e4f6d
-caps.latest.revision: 19
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 22a6315e69cd6c797d462d0835e85bb1dde67dcc
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 27ebc677bab8b7f61a02408fddb30a6ec21c43cc
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="goto-statement"></a>GoTo ステートメント
 プロシージャ内の指定した行に無条件に分岐します。  
@@ -39,13 +30,13 @@ GoTo line
   
 ## <a name="part"></a>パーツ  
  `line`  
- 必須です。 任意の行ラベル。  
+ 必須。 任意の行ラベル。  
   
 ## <a name="remarks"></a>コメント  
  `GoTo`ステートメントの分岐が表示されるプロシージャ内の行にのみです。 行がある行をいる必要があります`GoTo`を参照できます。 詳細については、次を参照してください。[する方法: ラベル ステートメント](../../../visual-basic/programming-guide/program-structure/how-to-label-statements.md)です。  
   
 > [!NOTE]
->  `GoTo`ステートメントを使用するコードの管理を読み取ったりするが困難です。 可能な限り、制御構造を使用します。 詳細については、次を参照してください。[制御フロー](../../../visual-basic/programming-guide/language-features/control-flow/index.md)です。  
+>  `GoTo` ステートメントを使用するコードの管理を読み取ったりするが困難です。 可能な限り、制御構造を使用します。 詳細については、次を参照してください。[制御フロー](../../../visual-basic/programming-guide/language-features/control-flow/index.md)です。  
   
  使用することはできません、`GoTo`ステートメントの外部からの分岐を`For`しています.`Next`, `For Each`...`Next`, `SyncLock`...`End SyncLock`, `Try`...`Catch`...`Finally`, `With`...`End With`、または`Using`しています.`End Using`内のラベルに構築します。  
   
@@ -54,9 +45,9 @@ GoTo line
   
 |ブロックまたは地域|外部からへの分岐|外部への分岐からの内部|  
 |---------------------|-------------------------------|-------------------------------|  
-|`Try`ブロック|のみ、`Catch`同じ構築ブロック<sup>1</sup>|のみ、全体の構造の外部|  
-|`Catch`ブロック|許可されることはありません。|のみ、全体の構造の外部にまたは、`Try`同じ構築ブロック<sup>1</sup>|  
-|`Finally`ブロック|許可されることはありません。|許可されることはありません。|  
+|`Try` ブロック|のみ、`Catch`同じ構築ブロック<sup>1</sup>|のみ、全体の構造の外部|  
+|`Catch` ブロック|許可されることはありません。|のみ、全体の構造の外部にまたは、`Try`同じ構築ブロック<sup>1</sup>|  
+|`Finally` ブロック|許可されることはありません。|許可されることはありません。|  
   
  <sup>1</sup>場合`Try`しています.`Catch`...`Finally`コンストラクションは、別の入れ子になった、`Catch`ブロックに分岐、`Try`独自入れ子のレベルにあるではなく、他のブロック`Try`ブロックします。 入れ子になった`Try`しています.`Catch`...`Finally`構築は完全に含まれる必要があります、`Try`または`Catch`は構造の内部で入れ子にされているブロックです。  
   

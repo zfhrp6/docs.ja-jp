@@ -1,27 +1,15 @@
 ---
-title: "PropertyPath の XAML 構文"
-ms.custom: 
+title: PropertyPath の XAML 構文
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - PropertyPath object [WPF]
 - XAML [WPF], PropertyPath object
 ms.assetid: 0e3cdf07-abe6-460a-a9af-3764b4fd707f
-caps.latest.revision: "24"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 9778094eb098d1e119ef4ef0c25dd022130a11ae
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 547c7d009d2fecf863284324c7ea45006d20d20c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="propertypath-xaml-syntax"></a>PropertyPath の XAML 構文
 <xref:System.Windows.PropertyPath>オブジェクトは、複雑なインラインをサポートしている[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]をさまざまなプロパティを設定するための構文、<xref:System.Windows.PropertyPath>それらの値としての型。 このトピックのドキュメント、<xref:System.Windows.PropertyPath>構文バインドおよびアニメーションの構文に適用されるとします。  
@@ -29,7 +17,7 @@ ms.lasthandoff: 12/22/2017
   
 <a name="where"></a>   
 ## <a name="where-propertypath-is-used"></a>PropertyPath を使用する場所  
- <xref:System.Windows.PropertyPath>いくつかで使用される共通オブジェクト[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]機能します。 一般的なを使用しても<xref:System.Windows.PropertyPath>プロパティのパス情報を伝達するには、それぞれの使用法の機能領域で<xref:System.Windows.PropertyPath>種類が異なると使用されます。 そのため、機能ごとに構文を説明する方が実際的です。  
+ <xref:System.Windows.PropertyPath> いくつかで使用される共通オブジェクト[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]機能します。 一般的なを使用しても<xref:System.Windows.PropertyPath>プロパティのパス情報を伝達するには、それぞれの使用法の機能領域で<xref:System.Windows.PropertyPath>種類が異なると使用されます。 そのため、機能ごとに構文を説明する方が実際的です。  
   
  主に、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]使用<xref:System.Windows.PropertyPath>を対象となるアニメーション用ターゲット パスを記述して、オブジェクトのデータ ソースのプロパティを走査するためのオブジェクト モデルのパスを記述します。  
   
@@ -39,7 +27,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="propertypath-for-objects-in-data-binding"></a>データ バインディングにおけるオブジェクトの PropertyPath  
  データ バインディングは [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] の機能であり、依存関係プロパティのターゲット値にバインドできます。 ただし、このようなデータ バインディングのソースが依存関係プロパティである必要はなく、適切なデータ プロバイダーで認識される任意のプロパティ型でかまいません。 プロパティ パス用の使用は特に、<xref:System.Windows.Data.ObjectDataProvider>からバインディング ソースの取得に使用されます[!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)]オブジェクトとそのプロパティです。  
   
- そのデータ バインディングに注意してください[!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)]使用しない<xref:System.Windows.PropertyPath>は使用されないため、<xref:System.Windows.Data.Binding.Path%2A>で、<xref:System.Windows.Data.Binding>です。 使用する代わりに、<xref:System.Windows.Data.Binding.XPath%2A>に有効な XPath 構文を指定し、[!INCLUDE[TLA#tla_xmldom](../../../../includes/tlasharptla-xmldom-md.md)]データ。 <xref:System.Windows.Data.Binding.XPath%2A>文字列としても指定したが、ここでは文書化されていません。参照してください[XMLDataProvider および XPath クエリを使用して XML データにバインド](../../../../docs/framework/wpf/data/how-to-bind-to-xml-data-using-an-xmldataprovider-and-xpath-queries.md)です。  
+ そのデータ バインディングに注意してください[!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)]使用しない<xref:System.Windows.PropertyPath>は使用されないため、<xref:System.Windows.Data.Binding.Path%2A>で、<xref:System.Windows.Data.Binding>です。 使用する代わりに、<xref:System.Windows.Data.Binding.XPath%2A>に有効な XPath 構文を指定し、[!INCLUDE[TLA#tla_xmldom](../../../../includes/tlasharptla-xmldom-md.md)]データ。 <xref:System.Windows.Data.Binding.XPath%2A> 文字列としても指定したが、ここでは文書化されていません。参照してください[XMLDataProvider および XPath クエリを使用して XML データにバインド](../../../../docs/framework/wpf/data/how-to-bind-to-xml-data-using-an-xmldataprovider-and-xpath-queries.md)です。  
   
  データ バインディングにおけるプロパティ パスを理解するうえで鍵となるのは、個々のプロパティ値をバインドの対象にすることも、リストまたはコレクションを使用するターゲット プロパティにバインドすることもできるということです。 バインディングのインスタンスのコレクションをバインドする場合、<xref:System.Windows.Controls.ListBox>が展開され、コレクション内のデータ項目の数に応じて、プロパティのパスは、単独ではないコレクション アイテム、コレクション オブジェクトを参照する必要があります。 データ バインディング エンジンがデータ ソースのバインディング ターゲットの型に自動的に設定するなどの動作として使用されるコレクションを一致、<xref:System.Windows.Controls.ListBox>項目の配列を使用します。  
   
@@ -70,7 +58,7 @@ ms.lasthandoff: 12/22/2017
 <Binding Path="propertyName.propertyName2" .../>  
 ```  
   
- `propertyName`現在のプロパティの名前を指定する必要があります<xref:System.Windows.FrameworkElement.DataContext%2A>です。 パス プロパティ `propertyName` と `propertyName2` は、リレーションシップ内に存在する任意のプロパティにすることができます。`propertyName2` は、`propertyName` の値である型に存在するプロパティです。  
+ `propertyName` 現在のプロパティの名前を指定する必要があります<xref:System.Windows.FrameworkElement.DataContext%2A>です。 パス プロパティ `propertyName` と `propertyName2` は、リレーションシップ内に存在する任意のプロパティにすることができます。`propertyName2` は、`propertyName` の値である型に存在するプロパティです。  
   
 <a name="singleattached"></a>   
 ### <a name="single-property-attached-or-otherwise-type-qualified"></a>添付または型修飾された単一のプロパティ  
@@ -166,7 +154,7 @@ or
 <animation Storyboard.TargetProperty="propertyName" .../>  
 ```  
   
- `propertyName`指定した上に存在する依存関係プロパティの名前を指定する必要があります<xref:System.Windows.Media.Animation.Storyboard.TargetName%2A>型です。  
+ `propertyName` 指定した上に存在する依存関係プロパティの名前を指定する必要があります<xref:System.Windows.Media.Animation.Storyboard.TargetName%2A>型です。  
   
 <a name="indirectanim"></a>   
 ### <a name="indirect-property-targeting"></a>間接的なプロパティのターゲット設定  
@@ -175,7 +163,7 @@ or
 <animation Storyboard.TargetProperty="propertyName.propertyName2" .../>  
 ```  
   
- `propertyName`いずれかであるプロパティをする必要があります、<xref:System.Windows.Freezable>値の型、またはプリミティブ型、指定したに存在する<xref:System.Windows.Media.Animation.Storyboard.TargetName%2A>型です。  
+ `propertyName` いずれかであるプロパティをする必要があります、<xref:System.Windows.Freezable>値の型、またはプリミティブ型、指定したに存在する<xref:System.Windows.Media.Animation.Storyboard.TargetName%2A>型です。  
   
  `propertyName2` は、`propertyName` の値であるオブジェクトに存在する依存関係プロパティの名前である必要があります。 つまり、`propertyName2`である型の依存関係プロパティとして存在する必要があります、 `propertyName` <xref:System.Windows.DependencyProperty.PropertyType%2A>です。  
   
@@ -207,7 +195,7 @@ or
   
  一般に、<xref:System.Windows.PropertyPath>バインディングでの使用と最も単純なアニメーションと複雑なアニメーションの使用の 2 つの異なるコンス トラクターを使用するよう設計されています。 使用して、<xref:System.Windows.PropertyPath.%23ctor%28System.Object%29>オブジェクトの文字列の位置の使用法にバインドするための署名。 使用して、<xref:System.Windows.PropertyPath.%23ctor%28System.Object%29>ワンステップ アニメーション パス、オブジェクトの位置の署名、<xref:System.Windows.DependencyProperty>です。 使用して、<xref:System.Windows.PropertyPath.%23ctor%28System.String%2CSystem.Object%5B%5D%29>複雑なアニメーションの署名。 後者のコンストラクターでは、先頭のパラメーター用のトークン文字列と、トークン文字列内の位置に設定されるオブジェクトの配列を使用して、プロパティ パスのリレーションシップを定義します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.PropertyPath>  
  [データ バインディングの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)  
  [ストーリーボードの概要](../../../../docs/framework/wpf/graphics-multimedia/storyboards-overview.md)

@@ -1,27 +1,17 @@
 ---
-title: "競合 ETW イベント"
-ms.custom: 
+title: 競合 ETW イベント
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - contention events [.NET Framework]
 - ETW, contention events (CLR)
 ms.assetid: 6933e753-2f2a-425b-ae84-42138c957d76
-caps.latest.revision: "7"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a09419c208d4ac754eb48da0c8d1b5d93386eb3d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 3487b67ea49cecfd0da2b5b3f993ea54d562145d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="contention-etw-events"></a>競合 ETW イベント
 競合イベントは、ランタイムによって使用される <xref:System.Threading.Monitor?displayProperty=nameWithType> ロックまたはネイティブ ロックの競合が発生するたびに発生します。 競合は、あるスレッドが、別のスレッドが保持しているロックを待機しているときに発生します。  
@@ -34,7 +24,7 @@ ms.lasthandoff: 12/22/2017
   
  次の表にイベント情報を示します。  
   
-|イベント|イベント ID|いつ発生するか|  
+|event|イベント ID|いつ発生するか|  
 |-----------|--------------|-----------------|  
 |`ContentionStart_V1`|81|競合が開始されたとき。 このイベントには、スレッドがロックの取得を待機する前のスピン時間は含まれません。このイベントが発生するのは、スレッドがロックの取得を待機するときだけです。|  
 |`ContentionStop`|81|競合が終了したとき。|  
@@ -46,5 +36,5 @@ ms.lasthandoff: 12/22/2017
 |フラグ|win:UInt8|マネージの場合は 0、ネイティブの場合は 1 です。|  
 |ClrInstanceID|win:UInt16|CLR のインスタンスの一意の ID。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [CLR ETW イベント](../../../docs/framework/performance/clr-etw-events.md)

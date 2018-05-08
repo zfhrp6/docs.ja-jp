@@ -1,25 +1,15 @@
 ---
-title: "方法: 変数に値を格納する、および変数から値を取得する (Visual Basic)"
-ms.custom: 
+title: '方法: 変数に値を格納する、および変数から値を取得する (Visual Basic)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - variables [Visual Basic], retrieving values
 - variables [Visual Basic], storing data
 ms.assetid: 93744f46-bf78-4fa0-9640-1de01bc38d9a
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: fefb1979e35cd7b5fa1917f8f1a57af575e51234
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: bfda451cefff699561253910715d8450414b00ba
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-move-data-into-and-out-of-a-variable-visual-basic"></a>方法: 変数に値を格納する、および変数から値を取得する (Visual Basic)
 変数に値を格納するには、代入ステートメントの左側にある変数名を置きます。  
@@ -45,7 +35,7 @@ ms.lasthandoff: 11/21/2017
   
 -   式の中で、変数名を使用します。 変数を使用する任意の場所で使用できる、定数またはリテラルを除き、定数の値を定義する式。  
   
-     または  
+     - または -  
   
 -   等号の後、変数名を使用して (`=`) 代入ステートメントにサインインします。  
   

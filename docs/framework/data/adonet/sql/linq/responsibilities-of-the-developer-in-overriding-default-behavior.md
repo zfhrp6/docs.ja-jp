@@ -1,33 +1,21 @@
 ---
-title: "既定の動作をオーバーライドするときの開発者の責任"
-ms.custom: 
+title: 既定の動作をオーバーライドするときの開発者の責任
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: c6909ddd-e053-46a8-980c-0e12a9797be1
-caps.latest.revision: "2"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 7de5dbcad14ebfd253ba99f03a8d77e768f29941
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 90b8eedcc80c330a39efe97b6427beebeca913f9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="responsibilities-of-the-developer-in-overriding-default-behavior"></a>既定の動作をオーバーライドするときの開発者の責任
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]次の要件を強制しませんが、これらの要件が満たされていない場合の動作が定義されていません。  
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 次の要件を強制しませんが、これらの要件が満たされていない場合の動作が定義されていません。  
   
--   オーバーライドするメソッドでは、<xref:System.Data.Linq.DataContext.SubmitChanges%2A> も <xref:System.Data.Linq.Table%601.Attach%2A> も呼び出さないでください。 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]これらのメソッドがオーバーライド メソッドで呼び出された場合は、例外をスローします。  
+-   オーバーライドするメソッドでは、<xref:System.Data.Linq.DataContext.SubmitChanges%2A> も <xref:System.Data.Linq.Table%601.Attach%2A> も呼び出さないでください。 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] これらのメソッドがオーバーライド メソッドで呼び出された場合は、例外をスローします。  
   
 -   オーバーライド メソッドは、トランザクションの開始、コミット、および中断には使用できません。 <xref:System.Data.Linq.DataContext.SubmitChanges%2A> 操作はトランザクションの下で実行されます。 入れ子になった内側のトランザクションは、外側のトランザクションと干渉する可能性があります。 読み込みのオーバーライド メソッドでは、<xref:System.Transactions.Transaction> 内で実行されている操作でないことを確認した場合にのみ、トランザクションを開始できます。  
   
--   オーバーライド メソッドでは、該当するオプティミスティック同時実行の対応付けに従うことが望まれます。 オプティミスティック同時実行の競合が発生したときに、オーバーライド メソッドは <xref:System.Data.Linq.ChangeConflictException> をスローすることが望まれています。 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]適切に処理できるように、この例外をキャッチ、<xref:System.Data.Linq.DataContext.SubmitChanges%2A>上で提供されるオプション<xref:System.Data.Linq.DataContext.SubmitChanges%2A>です。  
+-   オーバーライド メソッドでは、該当するオプティミスティック同時実行の対応付けに従うことが望まれます。 オプティミスティック同時実行の競合が発生したときに、オーバーライド メソッドは <xref:System.Data.Linq.ChangeConflictException> をスローすることが望まれています。 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 適切に処理できるように、この例外をキャッチ、<xref:System.Data.Linq.DataContext.SubmitChanges%2A>上で提供されるオプション<xref:System.Data.Linq.DataContext.SubmitChanges%2A>です。  
   
 -   作成 (`Insert`) および `Update` のオーバーライド メソッドでは、操作が正常に完了した場合、データベースによって生成された列の値を、対応するオブジェクト メンバーに反映することが望まれます。  
   
@@ -37,5 +25,5 @@ ms.lasthandoff: 01/17/2018
   
 -   オーバーライド メソッドでは、決められた操作を実行することが望まれます。 Eager Loading、遅延読み込み、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] など、<xref:System.Data.Linq.DataContext.SubmitChanges%2A> 操作のセマンティクスでは、決められたサービスをオーバーライド メソッドで提供する必要があります。 たとえば、読み込みのオーバーライドで、データベースの内容をチェックせずに空のコレクションを返した場合、データの矛盾につながる可能性があります。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [挿入、更新、および削除の各操作のカスタマイズ](../../../../../../docs/framework/data/adonet/sql/linq/customizing-insert-update-and-delete-operations.md)

@@ -1,11 +1,6 @@
 ---
 title: -メイン
 ms.date: 03/13/2018
-ms.prod: .net
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - main compiler option [Visual Basic]
 - /main compiler option [Visual Basic]
@@ -13,11 +8,11 @@ helpviewer_keywords:
 ms.assetid: 83fc339d-6652-415d-b205-b5133319b5b0
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b22b4bb1b6649265eabc02beb6b0145f7c075b27
-ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
+ms.openlocfilehash: 51a527dfddd2b78ac1c0559420298a66eb4b63f3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="-main"></a>-メイン
 `Sub Main` プロシージャを格納するクラスまたはモジュールを指定します。  
@@ -30,7 +25,7 @@ ms.lasthandoff: 03/22/2018
   
 ## <a name="arguments"></a>引数  
  `location`  
- 必須。 クラスまたはを含むモジュールの名前、`Sub Main`プログラムの開始時に呼び出されるプロシージャです。 これがフォームになっている可能性があります**-メイン: モジュール**または**-main:namespace.module**です。  
+ 必須。 クラスまたはを含むモジュールの名前、`Sub Main`プログラムの開始時に呼び出されるプロシージャです。 これがフォームになっている可能性があります **-メイン: モジュール**または **-main:namespace.module**です。  
   
 ## <a name="remarks"></a>コメント  
  実行可能ファイルまたは Windows 実行可能プログラムを作成するときに、このオプションを使用します。 場合、 **-メイン**オプションを省略すると、コンパイラは、有効な共有検索`Sub Main`ですべてのパブリック クラスとモジュール。  

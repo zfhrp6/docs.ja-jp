@@ -1,28 +1,16 @@
 ---
-title: "パフォーマンスの最適化 : コントロール"
-ms.custom: 
+title: 'パフォーマンスの最適化 : コントロール'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - controls [WPF], improving performance
 - container recycling [WPF]
 - user interface virtualization [WPF]
 ms.assetid: 45a31c43-ea8a-4546-96c8-0631b9934179
-caps.latest.revision: "22"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 1b8008d104437454f36f6f425634c40968d5481a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9e4ceee26263a1d047aeda0881b955070de4326d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="optimizing-performance-controls"></a>パフォーマンスの最適化 : コントロール
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] には、大半の Windows アプリケーションで使用される一般的なユーザー インターフェイス (UI: User Interface) コンポーネントが多数含まれています。 このトピックでは、UI のパフォーマンスを向上させる方法について説明します。  
@@ -35,7 +23,7 @@ ms.lasthandoff: 12/22/2017
   
  UI の仮想化は、リスト コントロールにとって重要な処理です。 UI の仮想化とデータの仮想化を混同しないでください。 UI の仮想化では、表示される項目だけをメモリに格納しますが、データのバインディングがある場合はデータ構造体のすべてがメモリに格納されます。 これに対し、データの仮想化では、画面上に表示されているデータ項目だけがメモリに格納されます。  
   
- 既定では、UI の仮想化が有効になって、<xref:System.Windows.Controls.ListView>と<xref:System.Windows.Controls.ListBox>リスト項目がデータにバインドされる場合を制御します。 <xref:System.Windows.Controls.TreeView>設定して、仮想化を有効にすることができます、 <!--zz <xref:System.Windows.Controls.VirtualizingStackPanel.IsVirtualizing%2A?displayProperty=nameWithType> --> `IsVirtualizing`添付プロパティ`true`です。 派生するカスタム コントロールの UI 仮想化を有効にするかどうかは<xref:System.Windows.Controls.ItemsControl>または既存の項目のコントロールを使用する、<xref:System.Windows.Controls.StackPanel>クラスなど<xref:System.Windows.Controls.ComboBox>、設定することができます、<xref:System.Windows.Controls.ItemsControl.ItemsPanel%2A>に<xref:System.Windows.Controls.VirtualizingStackPanel>設定と<xref:System.Windows.Controls.VirtualizingPanel.IsVirtualizing%2A>に`true`. 残念ながら、これらのコントロールに対する UI の仮想化を知らずに無効にすることがあります。 UI の仮想化が無効になる条件を一覧で示します。  
+ 既定では、UI の仮想化が有効になって、<xref:System.Windows.Controls.ListView>と<xref:System.Windows.Controls.ListBox>リスト項目がデータにバインドされる場合を制御します。 <xref:System.Windows.Controls.TreeView> 設定して、仮想化を有効にすることができます、 <!--zz <xref:System.Windows.Controls.VirtualizingStackPanel.IsVirtualizing%2A?displayProperty=nameWithType> --> `IsVirtualizing`添付プロパティ`true`です。 派生するカスタム コントロールの UI 仮想化を有効にするかどうかは<xref:System.Windows.Controls.ItemsControl>または既存の項目のコントロールを使用する、<xref:System.Windows.Controls.StackPanel>クラスなど<xref:System.Windows.Controls.ComboBox>、設定することができます、<xref:System.Windows.Controls.ItemsControl.ItemsPanel%2A>に<xref:System.Windows.Controls.VirtualizingStackPanel>設定と<xref:System.Windows.Controls.VirtualizingPanel.IsVirtualizing%2A>に`true`. 残念ながら、これらのコントロールに対する UI の仮想化を知らずに無効にすることがあります。 UI の仮想化が無効になる条件を一覧で示します。  
   
 -   項目コンテナーは直接に追加された、<xref:System.Windows.Controls.ItemsControl>です。 たとえば、アプリケーションが明示的に追加<xref:System.Windows.Controls.ListBoxItem>オブジェクトを<xref:System.Windows.Controls.ListBox>、<xref:System.Windows.Controls.ListBox>は仮想化できません、<xref:System.Windows.Controls.ListBoxItem>オブジェクト。  
   
@@ -57,7 +45,7 @@ ms.lasthandoff: 12/22/2017
   
 <a name="Supporting"></a>   
 ## <a name="supporting-bidirectional-virtualization"></a>双方向仮想化のサポート  
- <xref:System.Windows.Controls.VirtualizingStackPanel>水平方向または垂直方向には、一方向に UI 仮想化の組み込みサポートを提供しています。 コントロールの双方向の仮想化を使用する場合は、拡張するカスタム パネルを実装する必要があります、<xref:System.Windows.Controls.VirtualizingStackPanel>クラスです。 <xref:System.Windows.Controls.VirtualizingStackPanel>クラスなどの仮想メソッドを公開<xref:System.Windows.Controls.VirtualizingStackPanel.OnViewportSizeChanged%2A>、 <xref:System.Windows.Controls.VirtualizingStackPanel.LineUp%2A>、 <xref:System.Windows.Controls.VirtualizingStackPanel.PageUp%2A>、および<xref:System.Windows.Controls.VirtualizingStackPanel.MouseWheelUp%2A>です。これらの仮想メソッドを使用すると、一覧の表示領域の変更を検出し、それに応じて処理できます。  
+ <xref:System.Windows.Controls.VirtualizingStackPanel> 水平方向または垂直方向には、一方向に UI 仮想化の組み込みサポートを提供しています。 コントロールの双方向の仮想化を使用する場合は、拡張するカスタム パネルを実装する必要があります、<xref:System.Windows.Controls.VirtualizingStackPanel>クラスです。 <xref:System.Windows.Controls.VirtualizingStackPanel>クラスなどの仮想メソッドを公開<xref:System.Windows.Controls.VirtualizingStackPanel.OnViewportSizeChanged%2A>、 <xref:System.Windows.Controls.VirtualizingStackPanel.LineUp%2A>、 <xref:System.Windows.Controls.VirtualizingStackPanel.PageUp%2A>、および<xref:System.Windows.Controls.VirtualizingStackPanel.MouseWheelUp%2A>です。これらの仮想メソッドを使用すると、一覧の表示領域の変更を検出し、それに応じて処理できます。  
   
 <a name="Optimizing"></a>   
 ## <a name="optimizing-templates"></a>テンプレートの最適化  
@@ -67,7 +55,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="deferred-scrolling"></a>遅延スクロール  
  既定では、ユーザーがスクロールバーのつまみをドラッグすると、コンテンツ ビューが連続的に更新されます。  コントロールのスクロールが遅い場合は、遅延スクロールの使用をご検討ください。  遅延スクロールでは、コンテンツは、ユーザーがつまみを離したときにのみ更新されます。  
   
- スクロールの遅延を実装するのには、設定、<xref:System.Windows.Controls.ScrollViewer.IsDeferredScrollingEnabled%2A>プロパティを`true`です。  <xref:System.Windows.Controls.ScrollViewer.IsDeferredScrollingEnabled%2A>添付プロパティは、に対して設定できる<xref:System.Windows.Controls.ScrollViewer>とを持つすべての制御、<xref:System.Windows.Controls.ScrollViewer>コントロール テンプレートにします。  
+ スクロールの遅延を実装するのには、設定、<xref:System.Windows.Controls.ScrollViewer.IsDeferredScrollingEnabled%2A>プロパティを`true`です。  <xref:System.Windows.Controls.ScrollViewer.IsDeferredScrollingEnabled%2A> 添付プロパティは、に対して設定できる<xref:System.Windows.Controls.ScrollViewer>とを持つすべての制御、<xref:System.Windows.Controls.ScrollViewer>コントロール テンプレートにします。  
   
 <a name="Controls"></a>   
 ## <a name="controls-that-implement-performance-features"></a>パフォーマンス機能を実装するコントロール  
@@ -86,7 +74,7 @@ ms.lasthandoff: 12/22/2017
 > [!NOTE]
 >  仮想化し、[リサイクル] コンテナーを有効にする方法の例については、<xref:System.Windows.Controls.TreeView>を参照してください[TreeView のパフォーマンスを向上させる](../../../../docs/framework/wpf/controls/how-to-improve-the-performance-of-a-treeview.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [レイアウト](../../../../docs/framework/wpf/advanced/layout.md)  
  [レイアウトとデザイン](../../../../docs/framework/wpf/advanced/optimizing-performance-layout-and-design.md)  
  [データ バインディング](../../../../docs/framework/wpf/advanced/optimizing-performance-data-binding.md)  

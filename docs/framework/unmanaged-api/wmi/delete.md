@@ -1,11 +1,7 @@
 ---
-title: "Delete 関数 (アンマネージ API リファレンス)"
-description: "Delete 関数は、CIM クラス定義から、指定されたプロパティとその修飾子のすべてを削除します。"
+title: Delete 関数 (アンマネージ API リファレンス)
+description: Delete 関数は、CIM クラス定義から、指定されたプロパティとその修飾子のすべてを削除します。
 ms.date: 11/06/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: reference
 api_name:
 - Delete
 api_location:
@@ -20,14 +16,11 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 30f5bf651990cafe06811019cf2b3d92f866f646
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e7fcf5cff9f95b06a834d73df4090bd1edfca61b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="delete-function"></a>関数を削除します。
 CIM クラス定義から、指定したプロパティとその修飾子のすべてを削除します。
@@ -53,7 +46,7 @@ HRESULT Delete (
 [in]ポインター、 [IWbemClassObject](https://msdn.microsoft.com/library/aa391433%28v=vs.85%29.aspx)インスタンス。
 
 `wszName`  
-[in]削除するプロパティの名前。 `wszName`有効なポインターである必要があります`LPCWSTR`です。
+[in]削除するプロパティの名前。 `wszName` 有効なポインターである必要があります`LPCWSTR`です。
 
 ## <a name="return-value"></a>戻り値
 
@@ -75,12 +68,12 @@ HRESULT Delete (
 
 この関数への呼び出しをラップする、 [IWbemClassObject::Delete](https://msdn.microsoft.com/library/aa391438(v=vs.85).aspx)メソッドです。
 
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** WMINet_Utils.idl  
   
- **.NET framework のバージョン:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **.NET framework のバージョン:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>関連項目  
 [WMI およびパフォーマンス カウンター (アンマネージ API リファレンス)](index.md)
