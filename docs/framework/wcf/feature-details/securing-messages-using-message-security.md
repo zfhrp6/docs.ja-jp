@@ -1,44 +1,32 @@
 ---
 title: メッセージ セキュリティを使用したメッセージのセキュリティ保護
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: a17ebe67-836b-4c52-9a81-2c3d58e225ee
-caps.latest.revision: 16
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload:
-- dotnet
-ms.openlocfilehash: 088b01151d0471527bbfc2ffa04b5b5064700081
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 1ebe2526e564ef24d20f1602fd5824b44e2e2bbd
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="securing-messages-using-message-security"></a>メッセージ セキュリティを使用したメッセージのセキュリティ保護
-ここでは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を使用した場合の <xref:System.ServiceModel.NetMsmqBinding> メッセージ セキュリティについて説明します。  
+使用する場合、このセクションでは WCF メッセージ セキュリティを説明<xref:System.ServiceModel.NetMsmqBinding>です。  
   
 > [!NOTE]
 >  このトピック全体を読み取る前にお勧めお読みになる[セキュリティの基本概念](../../../../docs/framework/wcf/feature-details/security-concepts.md)です。  
   
- 次の図は、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を使用する、キューに置かれた通信の概念モデルを表したものです。 この図および用語を使用して、トランスポート セキュリティの  
+ 次の図は、WCF を使用してキューに置かれた通信の概念モデルを提供します。 この図および用語を使用して、トランスポート セキュリティの  
   
  概念について解説します。  
   
  ![アプリケーション ダイアグラムをキューに置かれた](../../../../docs/framework/wcf/feature-details/media/distributed-queue-figure.jpg "分散キュー図")  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を使用してキューに置かれたメッセージを送信すると、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] メッセージはメッセージ キュー (MSMQ) メッセージの本文として添付されます。 トランスポート セキュリティが MSMQ メッセージ全体を保護するのに対し、メッセージ (SOAP) セキュリティは MSMQ メッセージの本文だけを保護します。  
+ 送信するには、WCF を使用してメッセージをキューに置かれた、WCF メッセージはメッセージ キュー (MSMQ) メッセージの本文として添付します。 トランスポート セキュリティが MSMQ メッセージ全体を保護するのに対し、メッセージ (SOAP) セキュリティは MSMQ メッセージの本文だけを保護します。  
   
- メッセージ セキュリティの重要な概念は、クライアントが受信側アプリケーション (サービス) のメッセージを保護する点にあります。これは、クライアントがターゲット キューのメッセージを保護するトランスポート セキュリティとは異なります。 したがって、メッセージ セキュリティを使用して [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] メッセージを保護する場合、MSMQ は何の役割も果たしません。  
+ メッセージ セキュリティの重要な概念は、クライアントが受信側アプリケーション (サービス) のメッセージを保護する点にあります。これは、クライアントがターゲット キューのメッセージを保護するトランスポート セキュリティとは異なります。 そのため、MSMQ 役割を果たしますありませんメッセージ セキュリティを使用して、WCF メッセージをセキュリティで保護するときにします。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] メッセージ セキュリティでは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] メッセージにセキュリティ ヘッダーが追加されます。これは、既存のセキュリティ インフラストラクチャ (証明書や Kerberos プロトコルなど) と統合されます。  
+ WCF メッセージ セキュリティは、証明書または Kerberos プロトコルなどの既存のセキュリティ インフラストラクチャと統合される WCF メッセージをセキュリティ ヘッダーを追加します。  
   
 ## <a name="message-credential-type"></a>メッセージ資格情報の種類  
  メッセージ セキュリティを使用すると、サービスとクライアントは、資格情報を提示して相互を認証します。 メッセージ セキュリティを選択するには、<xref:System.ServiceModel.NetMsmqBinding.Security%2A> モードを `Message` または `Both` (トランスポート セキュリティとメッセージ セキュリティの両方を使用) に設定します。  

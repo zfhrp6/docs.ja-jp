@@ -1,14 +1,6 @@
 ---
 title: 同期操作と非同期操作
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,22 +8,16 @@ helpviewer_keywords:
 - service contracts [WCF], synchronous operations
 - service contracts [WCF], asynchronous operations
 ms.assetid: db8a51cb-67e6-411b-9035-e5821ed350c9
-caps.latest.revision: 24
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: c626699dc5291f4d4f6d432e89708661b233f16d
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
-ms.translationtype: MT
+ms.openlocfilehash: 0b64d45797babff2da1649fb7469684342e65d47
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="synchronous-and-asynchronous-operations"></a>同期操作と非同期操作
 ここでは、非同期サービス操作の実装と呼び出しについて説明します。  
   
- 多くのアプリケーションは、メソッド呼び出しの実行中に有用な処理を続行できるように、メソッドを非同期的に呼び出します。 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] のサービスとクライアントは、アプリケーションの異なる 2 つのレベルで操作の非同期呼び出しに参加できます。これにより、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] アプリケーションの柔軟性がさらに高まり、対話機能とのバランスの取れたスループットを最大限に高めることができます。  
+ 多くのアプリケーションは、メソッド呼び出しの実行中に有用な処理を続行できるように、メソッドを非同期的に呼び出します。 Windows Communication Foundation (WCF) サービスとクライアントは、アプリケーションの提供する 2 つの異なるレベルでの操作の非同期呼び出しに参加できる[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]バランスを考慮してスループットを最大化する柔軟性がさらに多くのアプリケーション対話機能します。  
   
 ## <a name="types-of-asynchronous-operations"></a>非同期操作の種類  
  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] のすべてのサービス コントラクトでは、パラメーターの型と戻り値に関係なく、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] の属性を使用して、クライアントとサービス間の特定のメッセージ交換パターンを指定します。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] は、適切なサービス操作または実行元のクライアント コードに送受信メッセージを自動的にルーティングします。  

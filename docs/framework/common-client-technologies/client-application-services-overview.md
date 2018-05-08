@@ -19,24 +19,24 @@ ms.author: dotnetcontent
 manager: wpickett
 ms.workload:
 - dotnet
-ms.openlocfilehash: 9ddc1b505146e7ca31bca5acc5e9d19d258a860d
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: b166dc273eed83660565d9b3bc6a70ffc85547fa
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="client-application-services-overview"></a>クライアント アプリケーション サービスの概要
 クライアント アプリケーション サービスにより、Windows フォーム アプリケーションおよび Windows Presentation Foundation (WPF) アプリケーションから [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] ログイン サービス、ロール サービス、プロファイル サービスに簡単にアクセスできます。 [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] アプリケーション サービスは、[!INCLUDE[vs_orcas_long](../../../includes/vs-orcas-long-md.md)] と [!INCLUDE[net_v35_long](../../../includes/net-v35-long-md.md)] に付属している Microsoft ASP.NET 2.0 AJAX Extensions に含まれています。 これらのサービスにより、複数の Web ベースおよび Windows ベースのアプリケーションで、単一のサーバーから提供されるユーザー情報とユーザー管理機能を共有できます。  
   
  クライアント アプリケーション サービスには、Web サービス機能拡張モデルに組み込まれるクライアント サービス プロバイダーが含まれており、これにより、Windows ベースのアプリケーションで次のことが可能になります。  
   
--   シンプルなクライアント構成。 [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] プロジェクト デザイナーを使用するか、プロジェクトの App.config ファイルでクライアント サービス プロバイダーを指定することにより、ログイン サービス、ロール サービス、およびプロファイル サービスを有効化して構成することができます。 詳細については、「[方法 : クライアント アプリケーション サービスを構成する](../../../docs/framework/common-client-technologies/how-to-configure-client-application-services.md)」を参照してください。  
+-   シンプルなクライアント構成。 Visual Studio プロジェクト デザイナーを使用するか、プロジェクトの App.config ファイルでクライアント サービス プロバイダーを指定することにより、ログイン サービス、ロール サービス、およびプロファイル サービスを有効化して構成することができます。 詳細については、「 [How to: Configure Client Application Services](../../../docs/framework/common-client-technologies/how-to-configure-client-application-services.md)」を参照してください。  
   
 -   簡明なプログラミング。 クライアント アプリケーション サービスを有効にして構成すると、既存の [!INCLUDE[dnprdnlong](../../../includes/dnprdnlong-md.md)] のメンバーシップ クラス、ロール クラス、およびアプリケーション設定クラスから間接的にサービス プロバイダーにアクセスできるようになります。 クライアント アプリケーション サービスを実装する [!INCLUDE[net_v35_long](../../../includes/net-v35-long-md.md)] クラスに直接アクセスすることもできます。 しかし、ほとんどの場合、直接アクセスは不要です。 クライアント アプリケーション サービスのクラスの詳細については、このトピックの「クライアント アプリケーション サービスのクラス」を参照してください。  
   
 -   オフラインのサポート。 Windows ベースのアプリケーションは、多くの場合、接続頻度の低い環境下に置かれます。 アプリケーションがオンラインのときに、クライアント サービス プロバイダーは、サーバーから取得された値をオフライン時にも使用できるようにキャッシュします。  
   
--   [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] アプリケーション設定デザイナーとの統合。 [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] でプロジェクトに設定を追加するときに、クライアント設定サービス プロバイダーを介してアクセスされる設定を指定できます。  
+-   Visual Studio アプリケーション設定デザイナーとの統合。 Visual Studio でプロジェクトに設定を追加するときに、クライアント設定サービス プロバイダーを介してアクセスされる設定を指定できます。  
   
  以下のセクションでは、これらの機能について詳しく説明します。 [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] アプリケーション サービスの詳細については、「[ASP.NET アプリケーション サービスの概要](http://msdn.microsoft.com/library/1162e529-0d70-44b2-b3ab-83e60c695013)」を参照してください。  
   
@@ -61,9 +61,9 @@ ms.lasthandoff: 04/26/2018
  [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] ロール サービスの設定方法の詳細については、「[ASP.NET AJAX でのロール情報の使用](http://msdn.microsoft.com/library/280f6ad9-ba1a-4fc9-b0cc-22e39e54a82d)」を参照してください。  
   
 ## <a name="settings"></a>設定  
- クライアント アプリケーション サービスを使用して、既存の [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] プロファイル サービスからユーザー アプリケーション設定を取得できます。 クライアント アプリケーション サービスの Web 設定機能は、[!INCLUDE[dnprdnlong](../../../includes/dnprdnlong-md.md)] のアプリケーション設定機能と統合されています。 Web 設定を取得するには、まず、[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] プロジェクト デザイナーの **[設定]** タブを使用して、プロジェクトの `Settings` クラス (C# では `Properties.Settings.Default`、Visual Basic では `My.Settings` としてアクセスされる) を生成します。 **[設定]** タブの **[Web 設定の読み込み]** ボタンをクリックして Web 設定を読み込み、これを生成された `Settings` クラスに追加することができます。 すべての認証済みユーザーまたはすべての匿名ユーザーによって使用されるように構成された Web 設定を使用できます。  
+ クライアント アプリケーション サービスを使用して、既存の [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] プロファイル サービスからユーザー アプリケーション設定を取得できます。 クライアント アプリケーション サービスの Web 設定機能は、[!INCLUDE[dnprdnlong](../../../includes/dnprdnlong-md.md)] のアプリケーション設定機能と統合されています。 Web 設定を取得するには、まず、Visual Studio プロジェクト デザイナーの **[設定]** タブを使用して、プロジェクトの `Settings` クラス (C# では `Properties.Settings.Default`、Visual Basic では `My.Settings` としてアクセスされる) を生成します。 **[設定]** タブの **[Web 設定の読み込み]** ボタンをクリックして Web 設定を読み込み、これを生成された `Settings` クラスに追加することができます。 すべての認証済みユーザーまたはすべての匿名ユーザーによって使用されるように構成された Web 設定を使用できます。  
   
- アプリケーション設定の詳細については、「[アプリケーション設定の概要](../../../docs/framework/winforms/advanced/application-settings-overview.md)」を参照してください。 [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] で設定クラスを生成するのではなく独自の設定クラスを実装する方法の詳細については、「[方法: アプリケーション設定を作成する](../../../docs/framework/winforms/advanced/how-to-create-application-settings.md)」を参照してください。 [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] プロファイル サービスの設定方法の詳細については、「[ASP.NET AJAX でのプロファイル情報の使用](http://msdn.microsoft.com/library/91239ae6-d01c-4f4e-a433-eb9040dbed61)」を参照してください。  
+ アプリケーション設定の詳細については、「[アプリケーション設定の概要](../../../docs/framework/winforms/advanced/application-settings-overview.md)」を参照してください。 Visual Studio で設定クラスを生成するのではなく独自の設定クラスを実装する方法について詳しくは、「[方法: アプリケーション設定を作成する](../../../docs/framework/winforms/advanced/how-to-create-application-settings.md)」をご覧ください。 [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] プロファイル サービスの設定方法の詳細については、「[ASP.NET AJAX でのプロファイル情報の使用](http://msdn.microsoft.com/library/91239ae6-d01c-4f4e-a433-eb9040dbed61)」を参照してください。  
   
 ## <a name="client-application-services-classes"></a>クライアント アプリケーション サービスのクラス  
  次の表は、クライアント アプリケーション サービス機能を実装するクラスの説明です。  

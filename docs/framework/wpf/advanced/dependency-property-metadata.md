@@ -1,29 +1,17 @@
 ---
-title: "依存関係プロパティのメタデータ"
-ms.custom: 
+title: 依存関係プロパティのメタデータ
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - APIs [WPF], metadata
 - dependency properties [WPF], metadata
 - metadata [WPF], for dependency properties
 - overriding metadata [WPF]
 ms.assetid: d01ed009-b722-41bf-b82f-fe1a8cdc50dd
-caps.latest.revision: "24"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 5b5c4ee554e8a0148c7d8d8044735f66778e7117
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f0aa1d2962b0bccea7a0901877b29550319aaa3f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="dependency-property-metadata"></a>依存関係プロパティのメタデータ
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] プロパティ システムには、リフレクションや一般的な [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] 特性から得られる以上の詳細なプロパティ情報を提供するメタデータ報告システムがあります。 依存関係プロパティのメタデータは、依存関係プロパティを定義するクラスで個別に割り当てることも、依存関係プロパティを別のクラスに追加する際に変更することもできます。また、依存関係プロパティをその定義元の基本クラスから継承するすべての派生クラスで明確にオーバーライドすることもできます。  
@@ -48,7 +36,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="metadata-apis"></a>メタデータ API  
  ほとんどのプロパティのシステムで使用されるメタデータ情報を報告する型が、<xref:System.Windows.PropertyMetadata>クラスです。 メタデータ インスタンスは、依存関係プロパティをプロパティ システムに登録する際に必要に応じて指定されます。それ自体を所有者として追加する追加の型、または基本クラスの依存関係プロパティ定義から継承したメタデータをオーバーライドする追加の型に再度指定することもできます。 (プロパティの登録がメタデータを既定値を指定しない場合の<xref:System.Windows.PropertyMetadata>がそのクラスの既定値で作成します)。として登録されているメタデータが返される<xref:System.Windows.PropertyMetadata>を呼び出すと、さまざまな<xref:System.Windows.DependencyProperty.GetMetadata%2A>で依存関係プロパティのメタデータを取得するオーバー ロード、<xref:System.Windows.DependencyObject>インスタンス。  
   
- <xref:System.Windows.PropertyMetadata>アーキテクチャ部門 WPF フレームワーク レベルのクラスなどのより詳細なメタデータを提供する、クラスはから導き出されます。 <xref:System.Windows.UIPropertyMetadata>アニメーションがレポートを追加し、<xref:System.Windows.FrameworkPropertyMetadata>前のセクションに記載されている WPF フレームワーク レベルのプロパティを提供します。 依存関係プロパティが登録されると、これらを登録できます<xref:System.Windows.PropertyMetadata>クラスを派生します。 メタデータを調べるときに、基本<xref:System.Windows.PropertyMetadata>より特定のプロパティを確認するように、型を派生クラスにキャスト可能性があることができます。  
+ <xref:System.Windows.PropertyMetadata>アーキテクチャ部門 WPF フレームワーク レベルのクラスなどのより詳細なメタデータを提供する、クラスはから導き出されます。 <xref:System.Windows.UIPropertyMetadata> アニメーションがレポートを追加し、<xref:System.Windows.FrameworkPropertyMetadata>前のセクションに記載されている WPF フレームワーク レベルのプロパティを提供します。 依存関係プロパティが登録されると、これらを登録できます<xref:System.Windows.PropertyMetadata>クラスを派生します。 メタデータを調べるときに、基本<xref:System.Windows.PropertyMetadata>より特定のプロパティを確認するように、型を派生クラスにキャスト可能性があることができます。  
   
 > [!NOTE]
 >  指定できるプロパティの特性<xref:System.Windows.FrameworkPropertyMetadata>"flags"としては、このドキュメントで呼ばします。 フラグの列挙を使用してこれらの値を指定した依存関係プロパティの登録で使用するための新しいメタデータ インスタンスに作成するか、メタデータ オーバーライド、 <xref:System.Windows.FrameworkPropertyMetadataOptions> に列挙型の可能性のある連結された値を指定し、<xref:System.Windows.FrameworkPropertyMetadata>コンス トラクターです。 ただし、これを構築すると、これらのオプションの特性が内で公開された、<xref:System.Windows.FrameworkPropertyMetadata>として一連の構築の列挙値ではなくブール型プロパティです。 これらのブール型プロパティを使用すると、目的の情報を取得するためにフラグ列挙値に対してマスクを適用することなく、各条件をチェックすることができます。 コンス トラクターを使用して連結された<xref:System.Windows.FrameworkPropertyMetadataOptions>コンス トラクター シグネチャの長さを実際の構築されたメタデータ プロパティを公開します不連続より直観的なメタデータをクエリするために対し、適切で保持するためにします。  
@@ -75,13 +63,13 @@ ms.lasthandoff: 12/22/2017
   
  メタデータをオーバーライドすると、さまざまなメタデータ特性がマージされるか置き換えられます。  
   
--   <xref:System.Windows.PropertyMetadata.PropertyChangedCallback%2A>マージされています。 新しく追加した場合<xref:System.Windows.PropertyMetadata.PropertyChangedCallback%2A>、そのコールバックがメタデータに格納します。 指定しない場合、<xref:System.Windows.PropertyMetadata.PropertyChangedCallback%2A>の値よりも優先的に<xref:System.Windows.PropertyMetadata.PropertyChangedCallback%2A>がメタデータに指定する、最も近い先祖から参照として昇格します。  
+-   <xref:System.Windows.PropertyMetadata.PropertyChangedCallback%2A> マージされています。 新しく追加した場合<xref:System.Windows.PropertyMetadata.PropertyChangedCallback%2A>、そのコールバックがメタデータに格納します。 指定しない場合、<xref:System.Windows.PropertyMetadata.PropertyChangedCallback%2A>の値よりも優先的に<xref:System.Windows.PropertyMetadata.PropertyChangedCallback%2A>がメタデータに指定する、最も近い先祖から参照として昇格します。  
   
 -   実際のプロパティのシステム動作<xref:System.Windows.PropertyMetadata.PropertyChangedCallback%2A>は、階層内のすべてのメタデータ所有者の実装が保持され、テーブルに追加、プロパティのシステムでの実行の順序としていること、最派生クラスのコールバックが最初に呼び出されます。  
   
--   <xref:System.Windows.PropertyMetadata.DefaultValue%2A>置換されます。 指定しない場合、<xref:System.Windows.PropertyMetadata.DefaultValue%2A>の値よりも優先的に<xref:System.Windows.PropertyMetadata.DefaultValue%2A>はメタデータに指定する、最も近い先祖から取得します。  
+-   <xref:System.Windows.PropertyMetadata.DefaultValue%2A> 置換されます。 指定しない場合、<xref:System.Windows.PropertyMetadata.DefaultValue%2A>の値よりも優先的に<xref:System.Windows.PropertyMetadata.DefaultValue%2A>はメタデータに指定する、最も近い先祖から取得します。  
   
--   <xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A>実装は置き換えられます。 新しく追加した場合<xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A>、そのコールバックがメタデータに格納します。 指定しない場合、<xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A>の値よりも優先的に<xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A>がメタデータに指定する、最も近い先祖から参照として昇格します。  
+-   <xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A> 実装は置き換えられます。 新しく追加した場合<xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A>、そのコールバックがメタデータに格納します。 指定しない場合、<xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A>の値よりも優先的に<xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A>がメタデータに指定する、最も近い先祖から参照として昇格します。  
   
 -   プロパティのシステム動作はのみですが、<xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A>即時のメタデータでが呼び出されます。 他の参照がありません<xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A>階層内の実装が保持されます。  
   
@@ -102,7 +90,7 @@ ms.lasthandoff: 12/22/2017
 #### <a name="addowner-and-attached-properties"></a>AddOwner および添付プロパティ  
  呼び出すことができます<xref:System.Windows.DependencyProperty.AddOwner%2A>依存関係プロパティの添付プロパティの所有者のクラスによって定義されます。 通常、これは、以前の添付プロパティを非添付の依存関係プロパティとして公開する目的で行います。 公開は、<xref:System.Windows.DependencyProperty.AddOwner%2A>として値を返す、`public static readonly`依存関係プロパティの識別子として使用するためのフィールドし、プロパティは、メンバー テーブルが表示され、非添付プロパティをサポートするように、適切な「ラッパー」プロパティを定義しますクラスの使用率。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.PropertyMetadata>  
  <xref:System.Windows.DependencyObject>  
  <xref:System.Windows.DependencyProperty>  

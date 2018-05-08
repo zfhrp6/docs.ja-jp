@@ -1,13 +1,6 @@
 ---
-title: "外観をカスタマイズできるコントロールの作成"
-ms.custom: 
+title: 外観をカスタマイズできるコントロールの作成
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -20,20 +13,15 @@ helpviewer_keywords:
 - managing control states [WPF], VisualStateManager
 - VisualStateManager [WPF], best practice
 ms.assetid: 9e356d3d-a3d0-4b01-a25f-2d43e4d53fe5
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 4da96c3e33c6f7827619b408568fbbfe96c50a11
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9f539e7dbb105591375857122d738fddd87f6776
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="creating-a-control-that-has-a-customizable-appearance"></a>外観をカスタマイズできるコントロールの作成
 <a name="introduction"></a>
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]外観をカスタマイズできるコントロールを作成する機能を提供します。 たとえばの外観を変更することができます、<xref:System.Windows.Controls.CheckBox>どのような設定を超えるプロパティには、新たに作成する<xref:System.Windows.Controls.ControlTemplate>です。 次の図は、 <xref:System.Windows.Controls.CheckBox> 、既定値を使用する<xref:System.Windows.Controls.ControlTemplate>と<xref:System.Windows.Controls.CheckBox>を使用するカスタム<xref:System.Windows.Controls.ControlTemplate>です。  
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] 外観をカスタマイズできるコントロールを作成する機能を提供します。 たとえばの外観を変更することができます、<xref:System.Windows.Controls.CheckBox>どのような設定を超えるプロパティには、新たに作成する<xref:System.Windows.Controls.ControlTemplate>です。 次の図は、 <xref:System.Windows.Controls.CheckBox> 、既定値を使用する<xref:System.Windows.Controls.ControlTemplate>と<xref:System.Windows.Controls.CheckBox>を使用するカスタム<xref:System.Windows.Controls.ControlTemplate>です。  
   
  ![既定のコントロール テンプレート付きのチェック ボックスです。] (../../../../docs/framework/wpf/controls/media/ndp-checkboxdefault.png "NDP_CheckBoxDefault")  
 既定のコントロール テンプレートを使用する CheckBox  
@@ -89,7 +77,7 @@ ms.lasthandoff: 12/22/2017
   
  [!code-xaml[VSMCustomControl#VisualStructure](../../../../samples/snippets/csharp/VS_Snippets_Wpf/vsmcustomcontrol/csharp/window1.xaml#visualstructure)]  
   
- 視覚的な動作、`NumericUpDown`コントロールが負の値である場合、値が赤いフォントであります。  変更した場合、<xref:System.Windows.Controls.TextBlock.Foreground%2A>の<xref:System.Windows.Controls.TextBlock>ときにコードで、`Value`は負の値、`NumericUpDown`赤い負の値は常に表示します。 内のコントロールの視覚的な動作を指定する、<xref:System.Windows.Controls.ControlTemplate>を追加して<xref:System.Windows.VisualState>オブジェクトを<xref:System.Windows.Controls.ControlTemplate>です。  次の例は、<xref:System.Windows.VisualState>オブジェクトに対する、`Positive`と`Negative`状態です。  `Positive`および`Negative`(コントロールが常に 2 つのいずれかの) は相互に排他的なのでの例では、<xref:System.Windows.VisualState>を単一のオブジェクト<xref:System.Windows.VisualStateGroup>です。  コントロールに入るときに、 `Negative` 、状態、<xref:System.Windows.Controls.TextBlock.Foreground%2A>の<xref:System.Windows.Controls.TextBlock>赤色に変わります。  コントロールがの場合、 `Positive` 、状態、<xref:System.Windows.Controls.TextBlock.Foreground%2A>が戻された元の値。  定義する<xref:System.Windows.VisualState>内のオブジェクト、<xref:System.Windows.Controls.ControlTemplate>で詳しく説明は[、ControlTemplate を作成することで、既存のコントロールの外観のカスタマイズ](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)です。  
+ 視覚的な動作、`NumericUpDown`コントロールが負の値である場合、値が赤いフォントであります。  変更した場合、<xref:System.Windows.Controls.TextBlock.Foreground%2A>の<xref:System.Windows.Controls.TextBlock>ときにコードで、`Value`は負の値、`NumericUpDown`赤い負の値は常に表示します。 内のコントロールの視覚的な動作を指定する、<xref:System.Windows.Controls.ControlTemplate>を追加して<xref:System.Windows.VisualState>オブジェクトを<xref:System.Windows.Controls.ControlTemplate>です。  次の例は、<xref:System.Windows.VisualState>オブジェクトに対する、`Positive`と`Negative`状態です。  `Positive` および`Negative`(コントロールが常に 2 つのいずれかの) は相互に排他的なのでの例では、<xref:System.Windows.VisualState>を単一のオブジェクト<xref:System.Windows.VisualStateGroup>です。  コントロールに入るときに、 `Negative` 、状態、<xref:System.Windows.Controls.TextBlock.Foreground%2A>の<xref:System.Windows.Controls.TextBlock>赤色に変わります。  コントロールがの場合、 `Positive` 、状態、<xref:System.Windows.Controls.TextBlock.Foreground%2A>が戻された元の値。  定義する<xref:System.Windows.VisualState>内のオブジェクト、<xref:System.Windows.Controls.ControlTemplate>で詳しく説明は[、ControlTemplate を作成することで、既存のコントロールの外観のカスタマイズ](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)です。  
   
 > [!NOTE]
 >  設定して、<xref:System.Windows.VisualStateManager.VisualStateGroups%2A?displayProperty=nameWithType>添付プロパティのルートに<xref:System.Windows.FrameworkElement>の<xref:System.Windows.Controls.ControlTemplate>です。  
@@ -212,17 +200,17 @@ ms.lasthandoff: 12/22/2017
   
 -   A<xref:System.Windows.Controls.Primitives.RepeatButton>と呼ばれる`UpButton`です。  
   
--   A<xref:System.Windows.Controls.Primitives.RepeatButton>と呼ばれる`DownButton.`  
+-   A<xref:System.Windows.Controls.Primitives.RepeatButton>と呼ばれる `DownButton.`  
   
  コントロールは、次の状態であることができます。  
   
--   の`ValueStates`<xref:System.Windows.VisualStateGroup>  
+-   の `ValueStates`<xref:System.Windows.VisualStateGroup>  
   
     -   `Positive`  
   
     -   `Negative`  
   
--   の`FocusStates`<xref:System.Windows.VisualStateGroup>  
+-   の `FocusStates`<xref:System.Windows.VisualStateGroup>  
   
     -   `Focused`  
   
@@ -248,6 +236,6 @@ ms.lasthandoff: 12/22/2017
  [!code-csharp[VSMCustomControl#ControlLogic](../../../../samples/snippets/csharp/VS_Snippets_Wpf/vsmcustomcontrol/csharp/numericupdown.cs#controllogic)]
  [!code-vb[VSMCustomControl#ControlLogic](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/vsmcustomcontrol/visualbasic/numericupdown.vb#controllogic)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ControlTemplate の作成による既存のコントロールの外観のカスタマイズ](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)  
  [コントロールのカスタマイズ](../../../../docs/framework/wpf/controls/control-customization.md)

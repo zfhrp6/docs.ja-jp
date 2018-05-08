@@ -1,28 +1,16 @@
 ---
-title: "キーボード入力のしくみ"
-ms.custom: 
+title: キーボード入力のしくみ
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - keyboard input [Windows Forms], about keyboard input
 - keyboards [Windows Forms], keyboard input
 - Windows Forms, keyboard input
 ms.assetid: 9a29433c-a180-49bb-b74c-d187786584c8
-caps.latest.revision: "20"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 43b92051b6524a730735fea98d64ee64578b4e06
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a0b814a18f4a8b25fba9fa0b36da44954590f056
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-keyboard-input-works"></a>キーボード入力のしくみ
 Windows フォームは、Windows メッセージに応答してキーボード イベントを発生させることにより、キーボード入力を処理します。 多くの Windows フォーム アプリケーションは、キーボード イベントを処理することによってキーボード入力を排他的に処理します。 しかし、高度なキーボード入力のシナリオ (キーがコントロールに到達する前にインターセプトするなど) を実装するためには、キーボード メッセージのしくみについて理解することが必要です。 このトピックでは、Windows フォームが認識するキー データの種類について説明し、キーボード メッセージをルーティングする方法について概要を説明します。 キーボード イベントの詳細については、「[キーボード イベントの使用](../../../docs/framework/winforms/using-keyboard-events.md)」を参照してください。  
@@ -49,7 +37,7 @@ Windows フォームは、Windows メッセージに応答してキーボード 
 |アクション|関連メソッド|メモ|  
 |------------|--------------------|-----------|  
 |アクセラレータやメニュー ショートカットなどのコマンド キーの確認。|<xref:System.Windows.Forms.Control.ProcessCmdKey%2A>|このメソッドはコマンド キーを処理します。コマンド キーは通常のキーよりも優先順位が上です。 このメソッドが `true` を返した場合、キー メッセージはディスパッチされず、キー イベントも発生しません。 返された場合`false`、<xref:System.Windows.Forms.Control.IsInputKey%2A>は呼び出されます`.`|  
-|プリプロセスを必要とする特殊なキーまたは通常の文字キーを発生させるかを確認、<xref:System.Windows.Forms.Control.KeyDown>イベント コントロールにディスパッチするとします。|<xref:System.Windows.Forms.Control.IsInputKey%2A>|メソッドを返す場合`true`、コントロールが通常の文字を意味し、<xref:System.Windows.Forms.Control.KeyDown>イベントが発生します。 場合`false`、<xref:System.Windows.Forms.Control.ProcessDialogKey%2A>と呼びます。 **注:**するにはコントロール キーまたはキーの組み合わせを取得することを確認するには、処理、<xref:System.Windows.Forms.Control.PreviewKeyDown>イベントとセット<xref:System.Windows.Forms.PreviewKeyDownEventArgs.IsInputKey%2A>の<xref:System.Windows.Forms.PreviewKeyDownEventArgs>に`true`キーまたはキーをします。|  
+|プリプロセスを必要とする特殊なキーまたは通常の文字キーを発生させるかを確認、<xref:System.Windows.Forms.Control.KeyDown>イベント コントロールにディスパッチするとします。|<xref:System.Windows.Forms.Control.IsInputKey%2A>|メソッドを返す場合`true`、コントロールが通常の文字を意味し、<xref:System.Windows.Forms.Control.KeyDown>イベントが発生します。 場合`false`、<xref:System.Windows.Forms.Control.ProcessDialogKey%2A>と呼びます。 **注:** するにはコントロール キーまたはキーの組み合わせを取得することを確認するには、処理、<xref:System.Windows.Forms.Control.PreviewKeyDown>イベントとセット<xref:System.Windows.Forms.PreviewKeyDownEventArgs.IsInputKey%2A>の<xref:System.Windows.Forms.PreviewKeyDownEventArgs>に`true`キーまたはキーをします。|  
 |移動キー (Esc、Tab、Return、または方向キー) の確認。|<xref:System.Windows.Forms.Control.ProcessDialogKey%2A>|このメソッドはコントロール内で特別な機能 (コントロールとその親コントロールの間のフォーカスの切り替えなど) を実行する物理キーを処理します。 イミディ エイトのコントロールが、キーを処理しない場合、<xref:System.Windows.Forms.Control.ProcessDialogKey%2A>階層の最上位のコントロールに親コントロールで呼び出されるとします。 このメソッドが `true` を返した場合、前処理は完了し、キー イベントは生成されません。 返された場合`false`、<xref:System.Windows.Forms.Control.KeyDown>イベントが発生します。|  
   
 ### <a name="preprocessing-for-a-keypress-event"></a>KeyPress イベントの前処理  
@@ -73,13 +61,13 @@ Windows フォームは、Windows メッセージに応答してキーボード 
   
 |タスク|メソッド|  
 |----------|------------|  
-|ナビゲーション キーをインターセプトし、発生させる、<xref:System.Windows.Forms.Control.KeyDown>イベント。 たとえば、テキスト ボックス内で Tab や Return を処理するなど。|<xref:System.Windows.Forms.Control.IsInputKey%2A> をオーバーライドします。 **注:**代わりに、処理することができます、<xref:System.Windows.Forms.Control.PreviewKeyDown>イベントとセット<xref:System.Windows.Forms.PreviewKeyDownEventArgs.IsInputKey%2A>の<xref:System.Windows.Forms.PreviewKeyDownEventArgs>に`true`キーまたはキーをします。|  
+|ナビゲーション キーをインターセプトし、発生させる、<xref:System.Windows.Forms.Control.KeyDown>イベント。 たとえば、テキスト ボックス内で Tab や Return を処理するなど。|<xref:System.Windows.Forms.Control.IsInputKey%2A> をオーバーライドします。 **注:** 代わりに、処理することができます、<xref:System.Windows.Forms.Control.PreviewKeyDown>イベントとセット<xref:System.Windows.Forms.PreviewKeyDownEventArgs.IsInputKey%2A>の<xref:System.Windows.Forms.PreviewKeyDownEventArgs>に`true`キーまたはキーをします。|  
 |コントロールで特別な入力処理や移動処理を実行する。 たとえば、リスト コントロールで方向キーを使用して選択項目を変更するなど。|<xref:System.Windows.Forms.Control.ProcessDialogKey%2A> をオーバーライドします。|  
 |ナビゲーション キーをインターセプトし、発生させる、<xref:System.Windows.Forms.Control.KeyPress>イベント。 たとえば、スピン ボックス コントロールで方向キーを複数回押して、項目の移動を加速するなど。|<xref:System.Windows.Forms.Control.IsInputChar%2A> をオーバーライドします。|  
 |実行中に入力またはナビゲーションの特別な処理、<xref:System.Windows.Forms.Control.KeyPress>イベント。 たとえば、リスト コントロール内で "r" キーを押し続けると、r の文字で始まる項目にスキップするなど。|<xref:System.Windows.Forms.Control.ProcessDialogChar%2A> をオーバーライドします。|  
 |カスタムなニーモニックの処理を実行する。たとえば、ツール バーに配置されたオーナー描画ボタンのニーモニックを処理するなど。|<xref:System.Windows.Forms.Control.ProcessMnemonic%2A> をオーバーライドします。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.Keys>  
  <xref:System.Windows.Forms.Control.WndProc%2A>  
  <xref:System.Windows.Forms.Control.PreProcessMessage%2A>  

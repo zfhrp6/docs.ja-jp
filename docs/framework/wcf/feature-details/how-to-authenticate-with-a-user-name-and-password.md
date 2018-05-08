@@ -1,27 +1,18 @@
 ---
-title: "方法 : ユーザー名とパスワードで認証する"
+title: '方法 : ユーザー名とパスワードで認証する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: article
 helpviewer_keywords:
 - authentication [WCF], user name and password
 ms.assetid: a5415be2-0ef3-464c-9f76-c255cb8165a4
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 194a84ef7c2af3bfce6af3625eabf07d4d0b06fb
-ms.sourcegitcommit: 15316053918995cc1380163a7d7e7edd5c44e6d7
+ms.openlocfilehash: b37d296312be4c7694a2db55d85dd618e3252f14
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-authenticate-with-a-user-name-and-password"></a>方法 : ユーザー名とパスワードで認証する
 
-ここでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスが Windows ドメイン ユーザー名とパスワードを使用してクライアントを認証できるようにする方法を示します。 自己ホスト型 WCF サービスが稼働していることを前提としています。 基本的な自己ホスト型 WCF サービスは、「作成の例については[チュートリアル入門](../../../../docs/framework/wcf/getting-started-tutorial.md)です。 このトピックでは、サービスがコードで構成されているものとします。 構成ファイルを使用して同様のサービスを構成する例を参照してくださいを表示したい場合[メッセージ セキュリティ ユーザー名](../../../../docs/framework/wcf/samples/message-security-user-name.md)  
+このトピックでは、Windows ドメイン ユーザー名とパスワードを使用するクライアントの認証に Windows Communication Foundation (WCF) サービスを有効にする方法を示します。 自己ホスト型 WCF サービスが稼働していることを前提としています。 基本的な自己ホスト型 WCF サービスは、「作成の例については[チュートリアル入門](../../../../docs/framework/wcf/getting-started-tutorial.md)です。 このトピックでは、サービスがコードで構成されているものとします。 構成ファイルを使用して同様のサービスを構成する例を参照してくださいを表示したい場合[メッセージ セキュリティ ユーザー名](../../../../docs/framework/wcf/samples/message-security-user-name.md)  
   
  Windows ドメイン ユーザー名とパスワードを使用してクライアントを認証するようにサービスを構成するには、<xref:System.ServiceModel.WSHttpBinding> を使用し、その `Security.Mode` プロパティを `Message` に設定します。 また、ユーザー名とパスワードをクライアントからサービスに送信するときに X.509 証明書を指定する必要があります。この証明書は、ユーザー名とパスワードの暗号化に使用されます。  
   
@@ -48,7 +39,7 @@ ms.lasthandoff: 03/19/2018
     // ...  
     ```  
   
-     独自の証明書を使用する場合は、その証明書を参照するようにコードを変更します。 作成して、証明書の使用の詳細については、次を参照してください。[証明書の使用](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)です。 証明書がローカル コンピューターの信頼されたユーザー証明書ストア内に存在することを確認します。 Mmc.exe を実行し、選択してこれを行う、**ファイル**、**スナップインの追加/削除しています.**メニュー項目。 **を追加または削除スナップイン**ダイアログで、選択、**証明書スナップイン** をクリック**追加**です。 証明書スナップイン ダイアログで選択**コンピューター アカウント**です。 既定では、「メッセージ セキュリティ ユーザー名」のサンプルから生成された証明書は個人/証明書フォルダーに配置されます。  [MMC のウィンドウ内の列に発行] には、"localhost"として表示されます。 ドラッグ アンド ドロップした証明書を**信頼されたユーザー**フォルダーです。 これにより、WCF は、認証の実行時に、証明書を信頼された証明書として処理することができます。  
+     独自の証明書を使用する場合は、その証明書を参照するようにコードを変更します。 作成して、証明書の使用の詳細については、次を参照してください。[証明書の使用](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)です。 証明書がローカル コンピューターの信頼されたユーザー証明書ストア内に存在することを確認します。 Mmc.exe を実行し、選択してこれを行う、**ファイル**、**スナップインの追加/削除しています.** メニュー項目。 **を追加または削除スナップイン**ダイアログで、選択、**証明書スナップイン** をクリック**追加**です。 証明書スナップイン ダイアログで選択**コンピューター アカウント**です。 既定では、「メッセージ セキュリティ ユーザー名」のサンプルから生成された証明書は個人/証明書フォルダーに配置されます。  [MMC のウィンドウ内の列に発行] には、"localhost"として表示されます。 ドラッグ アンド ドロップした証明書を**信頼されたユーザー**フォルダーです。 これにより、WCF は、認証の実行時に、証明書を信頼された証明書として処理することができます。  
   
 ## <a name="to-call-the-service-passing-username-and-password"></a>ユーザー名とパスワードを渡すサービスを呼び出すには  
   

@@ -1,14 +1,6 @@
 ---
 title: Windows 認証エラーのデバッグ
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,31 +8,25 @@ helpviewer_keywords:
 - WCF, authentication
 - WCF, Windows authentication
 ms.assetid: 181be4bd-79b1-4a66-aee2-931887a6d7cc
-caps.latest.revision: 21
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 39c033d45488b827a4aee7439904db8094795db4
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: d9226324b69e5c27738abb35bb155a43964b9127
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="debugging-windows-authentication-errors"></a>Windows 認証エラーのデバッグ
-セキュリティ機構として Windows 認証を使用する場合、セキュリティ サポート プロバイダー インターフェイス (SSPI: Security Support Provider Interface) がセキュリティ プロセスを処理します。 SSPI 層でセキュリティ エラーが発生すると、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] によってこれらのエラーが示されます。 このトピックでは、エラーの診断に役立つフレームワークと一連の質問を示します。  
+セキュリティ機構として Windows 認証を使用する場合、セキュリティ サポート プロバイダー インターフェイス (SSPI: Security Support Provider Interface) がセキュリティ プロセスを処理します。 SSPI 層でセキュリティ エラーが発生したときに、Windows Communication Foundation (WCF) によって、表示されます。 このトピックでは、エラーの診断に役立つフレームワークと一連の質問を示します。  
   
  Kerberos プロトコルの概要については、次を参照してください。 [Kerberos の詳細](http://go.microsoft.com/fwlink/?LinkID=86946)以外の場合は、SSPI の概要」を参照して[SSPI](http://go.microsoft.com/fwlink/?LinkId=88941)です。  
   
- Windows 認証を[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]通常を使用して、 *Negotiate*クライアントとサービス間の Kerberos 相互認証を実行するセキュリティ サポート プロバイダー (SSP)、します。 Kerberos プロトコルを使用できない場合、既定では、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は NTLM (NT LAN Manager) にフォールバックします。 ただし、Kerberos プロトコルのみを使用するように (Kerberos を使用できない場合は例外をスローするように) [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を構成できます。 また、Kerberos プロトコルの制限付きの形式を使用するように [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を構成することもできます。  
+ Windows 認証の場合は、WCF が通常使用して、 *Negotiate*クライアントとサービス間の Kerberos 相互認証を実行するセキュリティ サポート プロバイダー (SSP)、します。 Kerberos プロトコルがない場合、WCF はフォールバック NT LAN Manager (NTLM) に既定で使用できます。 ただし、WCF、Kerberos プロトコルのみを使用する (および Kerberos が使用できない場合に例外をスローする) を構成することができます。 Kerberos プロトコルの制限付きのフォームを使用する WCF を構成することもできます。  
   
 ## <a name="debugging-methodology"></a>デバッグ方法  
  基本的な方法は次のとおりです。  
   
 1.  Windows 認証を使用しているかどうかを確認します。 他の方式を使用している場合には、このトピックは該当しません。  
   
-2.  Windows 認証を使用していることが確実である場合は、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の構成で Kerberos ダイレクトと Negotiate のどちらを使用しているかを確認します。  
+2.  Windows 認証を使用している場合は、WCF 構成で Kerberos ダイレクトまたはネゴシエートを使用するかどうかを決定します。  
   
 3.  構成で Kerberos プロトコルと NTLM のどちらを使用しているかを確認した後は、現在のコンテキストでのエラー メッセージを理解できます。  
   
@@ -75,7 +61,7 @@ ms.lasthandoff: 04/30/2018
 ### <a name="kerberos-protocol"></a>Kerberos プロトコル  
   
 #### <a name="spnupn-problems-with-the-kerberos-protocol"></a>Kerberos プロトコルでの SPN と UPN の問題  
- Windows 認証を使用し、SSPI が Kerberos プロトコルを使用またはネゴシエートする場合、クライアント エンドポイントが使用する URL には、サービス URL 内のサービスのホストの完全修飾ドメイン名が含まれている必要があります。 これは、これは最も一般的でサービスを実行している Active Directory ドメインにコンピューターが追加されたときに作成されるコンピューター (既定値) のサービス プリンシパル名 (SPN) キーへのアクセスが、サービスが実行されているアカウントにある前提としています、。ネットワーク サービス アカウント。 サービスがコンピューターの SPN キーにアクセスできない場合は、クライアントのエンドポイント ID でサービスを実行しているアカウントの正しい SPN またはユーザー プリンシパル名 (UPN: User Principal Name) を指定する必要があります。 方法の詳細についての[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]SPN と UPN との連携を参照してください[サービス Id と認証](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)です。  
+ Windows 認証を使用し、SSPI が Kerberos プロトコルを使用またはネゴシエートする場合、クライアント エンドポイントが使用する URL には、サービス URL 内のサービスのホストの完全修飾ドメイン名が含まれている必要があります。 これは、これは最も一般的でサービスを実行している Active Directory ドメインにコンピューターが追加されたときに作成されるコンピューター (既定値) のサービス プリンシパル名 (SPN) キーへのアクセスが、サービスが実行されているアカウントにある前提としています、。ネットワーク サービス アカウント。 サービスがコンピューターの SPN キーにアクセスできない場合は、クライアントのエンドポイント ID でサービスを実行しているアカウントの正しい SPN またはユーザー プリンシパル名 (UPN: User Principal Name) を指定する必要があります。 SPN と UPN の WCF のしくみの詳細については、次を参照してください。[サービス Id と認証](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)です。  
   
  Web ファームや Web ガーデンなどの負荷分散シナリオでは、各アプリケーションに一意のアカウントを定義し、そのアカウントに SPN を割り当て、アプリケーションのサービスすべてがそのアカウントで実行されるようにするのが一般的です。  
   
@@ -111,7 +97,7 @@ ms.lasthandoff: 04/30/2018
 ### <a name="ntlm-protocol"></a>NTLM プロトコル  
   
 #### <a name="negotiate-ssp-falls-back-to-ntlm-but-ntlm-is-disabled"></a>ネゴシエート SSP は NTLM にフォールバックするが、NTLM が無効になっている  
- <xref:System.ServiceModel.Security.WindowsClientCredential.AllowNtlm%2A> プロパティを `false` に設定すると、NTLM が使用されている場合、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] はベスト エフォートで例外をスローします。 ただし、このプロパティを `false` に設定しても、ネットワーク経由で NTLM 資格情報が送信されなくなるとは限りません。  
+ <xref:System.ServiceModel.Security.WindowsClientCredential.AllowNtlm%2A>プロパティに設定されている`false`、それが原因で、ベスト エフォート NTLM が使用されている場合に例外をスローするように、Windows Communication Foundation (WCF)。 ただし、このプロパティを `false` に設定しても、ネットワーク経由で NTLM 資格情報が送信されなくなるとは限りません。  
   
  NTLM へのフォールバックを無効にする方法を次に示します。  
   

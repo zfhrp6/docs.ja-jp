@@ -1,24 +1,12 @@
 ---
 title: Microsoft.Transactions.TransactionBridge.RegistrationCoordinatorFailed
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 96474056-0418-41e4-8c75-bbc0a853eaba
-caps.latest.revision: "6"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 583aa5685ee3da768bea06333b90817d5e17e838
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: dec86141a19c3e5edf5d13ed1ef8d2e8f2b38fba
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="microsofttransactionstransactionbridgeregistrationcoordinatorfailed"></a>Microsoft.Transactions.TransactionBridge.RegistrationCoordinatorFailed
 WS-AT プロトコル サービスは、Register メッセージをコーディネーターに送信できませんでした。  
@@ -29,7 +17,7 @@ WS-AT プロトコル サービスは、Register メッセージをコーディ�
 ## <a name="troubleshooting"></a>トラブルシューティング  
  トレース メッセージを調べて、メッセージの送信エラーの原因となった例外を確認してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [トレース](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
  [トレースを使用したアプリケーションのトラブルシューティング](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
  [管理と診断](../../../../../docs/framework/wcf/diagnostics/index.md)

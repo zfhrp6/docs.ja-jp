@@ -1,13 +1,6 @@
 ---
-title: "ガイドラインと最適な使用方法"
-ms.custom: 
+title: ガイドラインと最適な使用方法
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - WCF, guidelines
 - best practices [WCF], application design
@@ -15,19 +8,14 @@ helpviewer_keywords:
 - WCF, best practices
 - Windows Communication Foundation, guidelines
 ms.assetid: 5098ba46-6e8d-4e02-b0c5-d737f9fdad84
-caps.latest.revision: "18"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 6dc6ad423010cf881c62e2c22570c080cad6a1e0
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
-ms.translationtype: MT
+ms.openlocfilehash: 09996681b17d324d53c74b727b183f3a457cc664
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="guidelines-and-best-practices"></a>ガイドラインと最適な使用方法
-このセクションには、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] アプリケーションを作成する際のガイドラインとなるトピックが含まれています。  
+このセクションには、Windows Communication Foundation (WCF) アプリケーションを作成するためのガイドラインを提供するトピックが含まれています。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [ベスト プラクティス: データ コントラクトのバージョン管理](../../../docs/framework/wcf/best-practices-data-contract-versioning.md)  
@@ -55,7 +43,7 @@ ms.lasthandoff: 01/19/2018
   
  [基本的な WCF プログラミング](../../../docs/framework/wcf/basic-wcf-programming.md)  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Windows Communication Foundation とは](../../../docs/framework/wcf/whats-wcf.md)  
  [Windows Communication Foundation サンプル](http://msdn.microsoft.com/library/8ec9d192-5d81-4f64-bfd3-90c5e5858c91)  
  [概念](../../../docs/framework/wcf/conceptual-overview.md)  

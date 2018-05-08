@@ -1,23 +1,12 @@
 ---
-title: "トレースを使用したワークフロー実行時間の決定"
-ms.custom: 
+title: トレースを使用したワークフロー実行時間の決定
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: f04ad0fd-edc7-4cbc-8979-356f2a1131c4
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: f2687d045db28974e99b2f2b6a3222924a520720
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9f9c65f2c873d54da443db14e7f5797ef1e14174
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="determining-workflow-execution-duration-using-tracing"></a>トレースを使用したワークフロー実行時間の決定
 このトピックでは、ワークフロー トレースを使用して、正常に完了した自己ホスト型ワークフローの実行所要時間を決定する方法を示します。  
@@ -42,7 +31,7 @@ ms.lasthandoff: 12/22/2017
   
  **WorkflowInstance Id: ' 1bbac57b-3322-498e-9e27-8833fda3a5bf' が Closed 状態で完了しました。**  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ワークフロー トレース](../../../docs/framework/windows-workflow-foundation/workflow-tracing.md)  
  [Windows Server App Fabric の監視](http://go.microsoft.com/fwlink/?LinkId=201273)  
  [アプリケーション App Fabric の監視](http://go.microsoft.com/fwlink/?LinkId=201275)

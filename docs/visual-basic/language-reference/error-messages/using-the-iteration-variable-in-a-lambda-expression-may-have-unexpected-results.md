@@ -1,26 +1,17 @@
 ---
 title: ラムダ式内で繰り返し変数を使用すると、予期しない結果が発生する可能性があります。
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vbc42324
 - bc42324
 helpviewer_keywords:
 - BC42324
 ms.assetid: b5c2c4bd-3b2a-4a73-aaeb-55728eb03b68
-caps.latest.revision: 8
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: fb707cd4e09a149d21b70bb0f998a40c7ed58b49
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 7144a5fd4a197fddaf1ac4132df0ff70995ad067
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-the-iteration-variable-in-a-lambda-expression-may-have-unexpected-results"></a>ラムダ式内で繰り返し変数を使用すると、予期しない結果が発生する可能性があります。
 ラムダ式で繰り返し変数を使用する必要があります予期しない結果。 代わりに、ループ内でローカル変数を作成し、繰り返し変数の値を割り当てます。  

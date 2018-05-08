@@ -1,32 +1,20 @@
 ---
-title: "Windows Communication Foundation の基本概念"
-ms.custom: 
+title: Windows Communication Foundation の基本概念
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - WCF [WCF], concepts
 - concepts [WCF]
 - fundamentals [WCF]
 - Windows Communication Foundation [WCF], concepts
 ms.assetid: 3e7e0afd-7913-499d-bafb-eac7caacbc7a
-caps.latest.revision: "39"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 651515095a0c9f9e970fff2d77421cfa804fa701
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
-ms.translationtype: MT
+ms.openlocfilehash: 44b36fc917ceb30141d7d2235b8bb364d3b998c9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="fundamental-windows-communication-foundation-concepts"></a>Windows Communication Foundation の基本概念
-このトピックでは、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] アーキテクチャの概要について説明します。 ここでは、主要概念およびこれらの概念がどのように組み合わされているかについて説明します。 最も単純なバージョンの作成に関するチュートリアルについては、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]サービスとクライアントを参照してください[チュートリアル入門](../../../docs/framework/wcf/getting-started-tutorial.md)です。 学習する[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]プログラミングを参照してください[基本的な WCF プログラミング](../../../docs/framework/wcf/basic-wcf-programming.md)です。  
+このドキュメントでは、Windows Communication Foundation (WCF) アーキテクチャの概要を表示します。 ここでは、主要概念およびこれらの概念がどのように組み合わされているかについて説明します。 最も単純なバージョンの作成に関するチュートリアルについては、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]サービスとクライアントを参照してください[チュートリアル入門](../../../docs/framework/wcf/getting-started-tutorial.md)です。 学習する[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]プログラミングを参照してください[基本的な WCF プログラミング](../../../docs/framework/wcf/basic-wcf-programming.md)です。  
   
 ## <a name="wcf-fundamentals"></a>WCF の基礎  
  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] は、サービスとクライアント間でメッセージを送信するシステムを作成するためのランタイムおよび一連の API です。 同じコンピューター システム上、または別の企業内にあり、インターネット経由でアクセスするシステム上の他のアプリケーションと通信するアプリケーションを作成する場合にも、同じインフラストラクチャと API が使用されます。  
@@ -163,7 +151,7 @@ HTTPS://cohowinery:8005/ServiceModelSamples/CalculatorService
  WS-*  
  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] に実装された一連の Web サービス (WS) 仕様 (WS-Security や WS-ReliableMessaging など) の略称です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Windows Communication Foundation とは](../../../docs/framework/wcf/whats-wcf.md)  
  [Windows Communication Foundation のアーキテクチャ](../../../docs/framework/wcf/architecture.md)  
  [セキュリティ アーキテクチャ](http://msdn.microsoft.com/library/16593476-d36a-408d-808c-ae6fd483e28f)

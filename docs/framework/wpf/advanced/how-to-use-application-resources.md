@@ -1,27 +1,15 @@
 ---
-title: "方法: アプリケーション リソースを使用する"
-ms.custom: 
+title: '方法: アプリケーション リソースを使用する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - application resources [WPF]
 - resources [WPF], application resources
 ms.assetid: 507ea937-5191-406b-8797-0a3d9f94156d
-caps.latest.revision: "16"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: bac1fa1576e684a4b10f00310c08e4e7101a5df0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4305c49c4322d164e2481c1508dda7c038c14694
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-use-application-resources"></a>方法: アプリケーション リソースを使用する
 この例では、アプリケーション リソースを使用する方法を示します。  
@@ -36,7 +24,7 @@ ms.lasthandoff: 12/22/2017
   
  [!code-xaml[ResourcesApplication#ConsumingPage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ResourcesApplication/CS/page1.xaml#consumingpage)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [XAML リソース](../../../../docs/framework/wpf/advanced/xaml-resources.md)  
  [アプリケーション管理の概要](../../../../docs/framework/wpf/app-development/application-management-overview.md)  
  [方法トピック](../../../../docs/framework/wpf/advanced/resources-how-to-topics.md)

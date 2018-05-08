@@ -1,14 +1,6 @@
 ---
-title: "ISymUnmanagedDocument::GetCheckSum メソッド"
-ms.custom: 
+title: ISymUnmanagedDocument::GetCheckSum メソッド
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ISymUnmanagedDocument.GetCheckSum
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: 9bc881b3-e2ce-48a7-ad69-17eaaa304120
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 19cd8881bdbd482cb420717855593d7b9583ae51
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 660da82f1e6d6d3ea8ba084885331c895bc64542
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="isymunmanageddocumentgetchecksum-method"></a>ISymUnmanagedDocument::GetCheckSum メソッド
 チェックサムを取得します。  
@@ -60,5 +48,5 @@ HRESULT GetCheckSum(
 ## <a name="return-value"></a>戻り値  
  メソッドが成功した場合は S_OK、それ以外の場合、エラー コード。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ISymUnmanagedDocument インターフェイス](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocument-interface.md)

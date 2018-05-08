@@ -1,12 +1,6 @@
 ---
-title: "On Error ステートメント (Visual Basic)"
+title: On Error ステートメント (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.OnError
 helpviewer_keywords:
@@ -28,14 +22,11 @@ helpviewer_keywords:
 - run-time errors [Visual Basic], handling
 - On Error statement [Visual Basic]
 ms.assetid: ff947930-fb84-40cf-bd66-1ea219561d5c
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 96baa5d91d0a600b84ed832fb1e3b1ed71a9d89d
-ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
+ms.openlocfilehash: b2e32dcca2e29a178af6dc985da536b47f0ebae6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="on-error-statement-visual-basic"></a>On Error ステートメント (Visual Basic)
 エラー処理ルーチンを有効にし、プロシージャ内のルーチンの場所を指定しますエラー処理ルーチンを無効にも使用できます。  
@@ -89,16 +80,16 @@ On Error { GoTo [ line | 0 | -1 ] | Resume Next }
  注意して、`On Error GoTo`ステートメントは、例外クラスに関係なく、すべてのエラーをトラップします。  
   
 ## <a name="on-error-resume-next"></a>On Error Resume Next  
- `On Error Resume Next`実行をすぐに実行時エラーの原因となったステートメントを次のステートメントから続行するか、最新直後のステートメントを含むプロシージャの外に呼び出し、`On Error Resume Next`ステートメントです。 このステートメントは、実行時エラーに関係なく、引き続き実行できます。 プロシージャ内の別の場所に制御を転送するのではなく、エラーが発生すると、エラー処理ルーチンを配置することができます。 `On Error Resume Next`ステートメントになり、非アクティブな別のプロシージャが呼び出されたときに実行する必要があります、`On Error Resume Next`インライン内でエラー処理ルーチンをする場合、各ステートメントがルーチンを呼び出すとします。  
+ `On Error Resume Next` 実行をすぐに実行時エラーの原因となったステートメントを次のステートメントから続行するか、最新直後のステートメントを含むプロシージャの外に呼び出し、`On Error Resume Next`ステートメントです。 このステートメントは、実行時エラーに関係なく、引き続き実行できます。 プロシージャ内の別の場所に制御を転送するのではなく、エラーが発生すると、エラー処理ルーチンを配置することができます。 `On Error Resume Next`ステートメントになり、非アクティブな別のプロシージャが呼び出されたときに実行する必要があります、`On Error Resume Next`インライン内でエラー処理ルーチンをする場合、各ステートメントがルーチンを呼び出すとします。  
   
 > [!NOTE]
 >  `On Error Resume Next`コンストラクトことをお勧めする`On Error GoTo`他のオブジェクトへのアクセス中にエラーを処理するときにします。 チェック`Err`オブジェクトと対話をコードによってアクセスされたオブジェクトがあいまいさを削除した後です。 確認するオブジェクトのエラー コードを配置する`Err.Number`、どのオブジェクトが最初に、エラーを生成および (で指定されたオブジェクト`Err.Source`)。  
   
 ## <a name="on-error-goto-0"></a>On Error GoTo 0  
- `On Error GoTo 0`現在のプロシージャでのエラー処理を無効にします。 0 行目の手順には、番号 0 の行が含まれている場合でも、エラー処理コードの先頭として指定しません。 なし、`On Error GoTo 0`プロシージャが終了したときに、ステートメントでは、エラー ハンドラーが自動的に無効にします。  
+ `On Error GoTo 0` 現在のプロシージャでのエラー処理を無効にします。 0 行目の手順には、番号 0 の行が含まれている場合でも、エラー処理コードの先頭として指定しません。 なし、`On Error GoTo 0`プロシージャが終了したときに、ステートメントでは、エラー ハンドラーが自動的に無効にします。  
   
 ## <a name="on-error-goto--1"></a>On Error GoTo-1  
- `On Error GoTo -1`現在のプロシージャに、例外を無効にします。 指定しません行-1、エラー処理コードの先頭としてプロシージャには、-1 を番号の行が含まれている場合でもです。 なし、`On Error GoTo -1`プロシージャが終了したときに、ステートメントでは、例外が自動的に無効にします。  
+ `On Error GoTo -1` 現在のプロシージャに、例外を無効にします。 指定しません行-1、エラー処理コードの先頭としてプロシージャには、-1 を番号の行が含まれている場合でもです。 なし、`On Error GoTo -1`プロシージャが終了したときに、ステートメントでは、例外が自動的に無効にします。  
   
  エラー処理コードのエラーが発生していないときに実行を回避するのには、配置、 `Exit Sub`、 `Exit Function`、または`Exit Property`直前に次のフラグメントのように、エラー処理ルーチン ステートメント。  
   
@@ -121,12 +112,12 @@ On Error { GoTo [ line | 0 | -1 ] | Resume Next }
   
  [!code-vb[VbVbalrErrorHandling#20](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/on-error-statement_4.vb)]  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **Namespace:** [Microsoft.VisualBasic](../../../visual-basic/language-reference/runtime-library-members.md)  
   
  **アセンブリ:** Visual Basic Runtime Library (Microsoft.VisualBasic.dll)  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:Microsoft.VisualBasic.Information.Err%2A>  
  <xref:Microsoft.VisualBasic.ErrObject.Number%2A>  
  <xref:Microsoft.VisualBasic.ErrObject.Description%2A>  

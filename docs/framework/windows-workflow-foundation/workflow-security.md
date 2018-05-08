@@ -1,29 +1,17 @@
 ---
 title: ワークフローのセキュリティ
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - programming [WF], workflow security
 ms.assetid: d712a566-f435-44c0-b8c0-49298e84b114
-caps.latest.revision: 13
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: bfd7c3e36bf28c364adf3cd230522cfc40a9503b
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 8acfd0640478cf67309fe53a99707c7d96c5a635
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="workflow-security"></a>ワークフローのセキュリティ
-Windows Workflow Foundation (WF) は、Microsoft SQL Server など、いくつかのテクノロジと統合されて、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)]です。 これらのテクノロジと相互作用するうえで、不適切に実行された場合にワークフローでセキュリティの問題が発生することがあります。  
+Windows Workflow Foundation (WF) は、Microsoft SQL Server、Windows Communication Foundation (WCF) など、いくつかのテクノロジと統合されています。 これらのテクノロジと相互作用するうえで、不適切に実行された場合にワークフローでセキュリティの問題が発生することがあります。  
   
 ## <a name="persistence-security-concerns"></a>永続化のセキュリティに関する注意事項  
   
@@ -49,7 +37,7 @@ Windows Workflow Foundation (WF) は、Microsoft SQL Server など、いくつ�
   
 ## <a name="considerations-for-workflowservicehost"></a>WorkflowServiceHost に関する考慮事項  
   
--   ワークフローで使用されている [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] のエンドポイントは、セキュリティで保護される必要があります。 詳細については、次を参照してください。 [WCF セキュリティの概要](http://go.microsoft.com/fwlink/?LinkID=164975)です。  
+-   ワークフローで使用される Windows Communication Foundation (WCF) エンドポイントをセキュリティで保護する必要があります。 詳細については、次を参照してください。 [WCF セキュリティの概要](http://go.microsoft.com/fwlink/?LinkID=164975)です。  
   
 -   <xref:System.ServiceModel.ServiceAuthorizationManager> を使用して、ホスト レベルの認証を実装できます。 参照してください[操作方法: サービスのカスタム承認マネージャーを作成する](http://go.microsoft.com/fwlink/?LinkId=192228)詳細についてはします。 これは、次のサンプル」でも例示されて:[ワークフロー サービスのセキュリティ保護する](../../../docs/framework/windows-workflow-foundation/samples/securing-workflow-services.md)です。  
   

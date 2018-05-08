@@ -1,31 +1,17 @@
 ---
-title: "方法 : ストーリーボードを開始後に制御する"
-ms.custom: 
+title: '方法 : ストーリーボードを開始後に制御する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - Storyboards [WPF], controlling after start
 ms.assetid: 040f13f0-69f9-4ab5-be2b-079f4f80c7c0
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 051ac6fea73b207fb5ef4d6293c5e996552f1281
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 2407de5029007748de691a3020078b1241b02fd4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-control-a-storyboard-after-it-starts"></a>方法 : ストーリーボードを開始後に制御する
 この例では、コントロールにコードを使用して、<xref:System.Windows.Media.Animation.Storyboard>開始後にします。 ストーリー ボードを制御[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]を使用して<xref:System.Windows.Trigger>と<xref:System.Windows.TriggerAction>オブジェクトです。 例については、次を参照してください。[起動を制御、ストーリー ボードの後に、イベント トリガーを使用して](../../../../docs/framework/wpf/graphics-multimedia/how-to-use-event-triggers-to-control-a-storyboard-after-it-starts.md)です。  
@@ -50,11 +36,11 @@ ms.lasthandoff: 12/22/2017
   
  次の例では、いくつかのストーリー ボード メソッドは、ストーリー ボードを対話的に制御に使用されます。  
   
- **注:**でトリガーを使用したストーリー ボードを制御する例を参照する[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]を参照してください[イベント トリガーを使用して、ストーリー ボードの後に開始を制御する](../../../../docs/framework/wpf/graphics-multimedia/how-to-use-event-triggers-to-control-a-storyboard-after-it-starts.md)です。  
+ **注:** でトリガーを使用したストーリー ボードを制御する例を参照する[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]を参照してください[イベント トリガーを使用して、ストーリー ボードの後に開始を制御する](../../../../docs/framework/wpf/graphics-multimedia/how-to-use-event-triggers-to-control-a-storyboard-after-it-starts.md)です。  
   
 ## <a name="example"></a>例  
  [!code-csharp[timingbehaviors_procedural_snip#ControlStoryboardExampleUsingWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/timingbehaviors_procedural_snip/CSharp/ControlStoryboardExample.cs#controlstoryboardexampleusingwholepage)]
  [!code-vb[timingbehaviors_procedural_snip#ControlStoryboardExampleUsingWholePage](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/timingbehaviors_procedural_snip/visualbasic/controlstoryboardexample.vb#controlstoryboardexampleusingwholepage)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [開始後のストーリーボードをイベント トリガーを使用して制御する](../../../../docs/framework/wpf/graphics-multimedia/how-to-use-event-triggers-to-control-a-storyboard-after-it-starts.md)

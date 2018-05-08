@@ -1,14 +1,6 @@
 ---
-title: "MonthCalendar コントロールの概要 (Windows フォーム)"
-ms.custom: 
+title: MonthCalendar コントロールの概要 (Windows フォーム)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - MonthCalendar
 helpviewer_keywords:
@@ -16,17 +8,11 @@ helpviewer_keywords:
 - calendar controls [Windows Forms], Windows Forms
 - MonthCalendar control [Windows Forms], setting the first day of the week
 ms.assetid: 788c5325-b721-44ec-95bf-9b680ba0f6a2
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: a22667e4227067dfbf0baaad1838ab520e0ac7e4
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 7ed917afe2640fe2ffef4904a3795c5f0e84ded9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="monthcalendar-control-overview-windows-forms"></a>MonthCalendar コントロールの概要 (Windows フォーム)
 Windows フォーム<xref:System.Windows.Forms.MonthCalendar>コントロールがユーザーを表示し、日付情報を設定するための直感的なグラフィカル インターフェイスを表示します。 カレンダーを表示します。 は月、日、曜日、強調表示されている日付の選択範囲の下にある列に配置の番号付きの日を含むグリッドです。 月のキャプションのどちらかの側にある矢印ボタンをクリックして、別の月を選択できます。 異なり、類似<xref:System.Windows.Forms.DateTimePicker>コントロール、このコントロールに 1 つ以上の日付を選択できます。 詳細については、<xref:System.Windows.Forms.DateTimePicker>を制御しを参照してください[DateTimePicker コントロール](../../../../docs/framework/winforms/controls/datetimepicker-control-windows-forms.md)です。  
@@ -38,6 +24,6 @@ Windows フォーム<xref:System.Windows.Forms.MonthCalendar>コントロール�
   
  キー プロパティ、<xref:System.Windows.Forms.MonthCalendar>コントロールが<xref:System.Windows.Forms.MonthCalendar.SelectionRange%2A>コントロールで選択されている日付の範囲です。 <xref:System.Windows.Forms.MonthCalendar.SelectionRange%2A>値が選択できる設定日数の最大数を超えることはできません、<xref:System.Windows.Forms.MonthCalendar.MaxSelectionCount%2A>プロパティです。 ユーザーが選択できる最初と最後の日付がによって決定されます、<xref:System.Windows.Forms.MonthCalendar.MaxDate%2A>と<xref:System.Windows.Forms.MonthCalendar.MinDate%2A>プロパティです。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.MonthCalendar>  
  [MonthCalendar コントロール](../../../../docs/framework/winforms/controls/monthcalendar-control-windows-forms.md)

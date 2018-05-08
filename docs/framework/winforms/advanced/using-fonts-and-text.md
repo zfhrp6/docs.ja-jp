@@ -1,13 +1,6 @@
 ---
-title: "フォントとテキストの使用"
-ms.custom: 
+title: フォントとテキストの使用
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - GDI [Windows Forms], drawing text [Windows Forms]
 - text [Windows Forms], drawing in Windows Forms
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - fonts [Windows Forms], using in Windows Forms
 - strings [Windows Forms], drawing in Windows Forms
 ms.assetid: d43640f3-da94-4df2-a29d-a9d021a1c069
-caps.latest.revision: "16"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: f4febeed6aff2c18b5040020c2c1d3ee6cf59a52
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d157b51e24009d847dede9ea6a9f81c8898c5b06
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-fonts-and-text"></a>フォントとテキストの使用
 によって提供されるいくつかのクラスがある[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]と[!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)]Windows フォームでテキストを描画するためです。 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] <xref:System.Drawing.Graphics>クラスにはいくつか<xref:System.Drawing.Graphics.DrawString%2A>テキスト、位置、外接する四角形、フォント、および形式などのさまざまな機能を指定できるようにするメソッド。 さらに、描画し、メジャーを含むテキスト[!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)]静的<xref:System.Windows.Forms.TextRenderer.DrawText%2A>と<xref:System.Windows.Forms.TextRenderer.MeasureText%2A>によって提供されるメソッド、`TextRenderer`クラスです。 [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)]メソッドの場所、フォント、および形式を指定することも可能です。 いずれかを選択することができます[!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)]または[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]テキスト レンダリングされます。 ただし、[!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)]通常をより的確にパフォーマンスとより正確なテキストを測定します。 テキスト レンダリングに影響するその他のクラスに含まれる`FontFamily`、 `Font`、 <xref:System.Drawing.StringFormat>、および`TextFormatFlags`です。  

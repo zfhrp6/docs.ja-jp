@@ -1,13 +1,6 @@
 ---
-title: "DomainUpDown コントロール (Windows フォーム)"
-ms.custom: 
+title: DomainUpDown コントロール (Windows フォーム)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - DomainUpDown control [Windows Forms]
 - spin button control [Windows Forms], up-down controls
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - spin button control
 - up-down controls [Windows Forms], spin button controls
 ms.assetid: fb7cf017-e931-4a95-9d21-8caee4ee122a
-caps.latest.revision: "6"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 485640dc320809e9be5550d380b4fc9a2326e027
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: c23f374f1ec9cab6e43b12d32b97c40533ac36cb
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="domainupdown-control-windows-forms"></a>DomainUpDown コントロール (Windows フォーム)
 Windows フォーム<xref:System.Windows.Forms.DomainUpDown>コントロールよう組のボタンとテキスト ボックスの組み合わせの一覧を上または下に移動します。 コントロールは、表示し、選択肢の一覧から、テキスト文字列を設定します。 上下一覧内を移動するボタンをクリックして、上下の矢印キーを押すことによって、または、リスト内の項目に一致する文字列を入力して、ユーザーは、文字列を選択できます。 このコントロールの用途の 1 つでは、名前のアルファベット順に並べ替えられたリストから項目を選択するためです。 (一覧を並べ替えるには設定、<xref:System.Windows.Forms.DomainUpDown.Sorted%2A>プロパティを`true`)。このコントロールの機能は、リスト ボックスまたはコンボ ボックスによく似ていますが、非常に小さい領域を占有します。  

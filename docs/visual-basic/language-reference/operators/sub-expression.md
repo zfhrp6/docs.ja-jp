@@ -1,24 +1,16 @@
 ---
-title: "部分式 (Visual Basic)"
+title: 部分式 (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - lambda expressions [Visual Basic], sub expression
 - Sub Expression [Visual Basic]
 - subroutines [Visual Basic], sub expressions
 ms.assetid: 36b6bfd1-6539-4d8f-a5eb-6541a745ffde
-caps.latest.revision: "6"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 43e35bd0386bc56478603ec36437981785cc8ffb
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 602212e664fa3362742fb1ba0dc033610272d3af
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="sub-expression-visual-basic"></a>部分式 (Visual Basic)
 パラメーターとサブルーチン ラムダ式を定義するコードを宣言します。  
@@ -37,9 +29,9 @@ End Sub
   
 |用語|定義|  
 |---|---|  
-|`parameterlist`|省略可能です。 プロシージャのパラメーターを表すローカル変数名の一覧。 かっこは、リストが空の場合にも存在する必要があります。 詳細については、次を参照してください。[パラメーター リスト](../../../visual-basic/language-reference/statements/parameter-list.md)です。|  
-|`statement`|必須です。 1 つのステートメント。|  
-|`statements`|必須です。 ステートメントの一覧。|  
+|`parameterlist`|任意。 プロシージャのパラメーターを表すローカル変数名の一覧。 かっこは、リストが空の場合にも存在する必要があります。 詳細については、次を参照してください。[パラメーター リスト](../../../visual-basic/language-reference/statements/parameter-list.md)です。|  
+|`statement`|必須。 1 つのステートメント。|  
+|`statements`|必須。 ステートメントの一覧。|  
   
 ## <a name="remarks"></a>コメント  
  A*ラムダ式*名前がないサブルーチンは、1 つまたは複数のステートメントを実行します。 任意の場所、ラムダ式を使用することができますを使える、デリゲート型以外に引数として`RemoveHandler`です。 デリゲート、およびデリゲートでのラムダ式の使用に関する詳細については、次を参照してください。 [Delegate ステートメント](../../../visual-basic/language-reference/statements/delegate-statement.md)と[厳密でないデリゲート変換](../../../visual-basic/programming-guide/language-features/delegates/relaxed-delegate-conversion.md)です。  

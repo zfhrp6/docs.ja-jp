@@ -1,33 +1,19 @@
 ---
 title: Windows プロセス アクティブ化サービスでのホスティング
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - hosting services [WCF], WAS
 ms.assetid: d2b9d226-15b7-41fc-8c9a-cb651ac20ecd
-caps.latest.revision: 16
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: a31d66cd4b4430ec838b34fcd77d712698f9e1dc
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 5cd2244c4b44592e436dfd983985dca3c1a50144
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="hosting-in-windows-process-activation-service"></a>Windows プロセス アクティブ化サービスでのホスティング
-Windows プロセス アクティブ化サービス (WAS) は、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスをホストするアプリケーションが含まれるワーカー プロセスのアクティベーションと有効期間を管理します。 WAS プロセス モデルは HTTP の依存関係を取り除くことにより、HTTP サーバーの [!INCLUDE[iis601](../../../../includes/iis601-md.md)] プロセス モデルを一般化します。 これにより、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスは、メッセージ ベースのアクティベーションがサポートされ、特定のコンピューター上で多数のアプリケーションをホストできるホスト環境で、Net.TCP などの HTTP プロトコルと非 HTTP プロトコルの両方を使用できるようになります。  
+Windows プロセス アクティブ化サービス (WAS) は、ライセンス認証とアプリケーションを含む Windows Communication Foundation (WCF) サービスをホストするワーカー プロセスの有効期間を管理します。 WAS プロセス モデルは HTTP の依存関係を取り除くことにより、HTTP サーバーの [!INCLUDE[iis601](../../../../includes/iis601-md.md)] プロセス モデルを一般化します。 これにより、HTTP とメッセージ ベースのアクティブ化をサポートし、多数の特定のコンピューター上のアプリケーションをホストする機能を提供するホスト環境での Net.TCP などの非 HTTP プロトコルの両方を使用する WCF サービスです。  
   
- ビルドの詳細については、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WAS でホストする環境で実行されているサービスを参照してください[する方法: WAS で WCF サービスをホスト](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-was.md)です。  
+ WCF サービスの作成の詳細については、WAS ホスティング環境で実行するを参照してください[する方法: WAS で WCF サービスをホスト](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-was.md)です。  
   
  WAS プロセスモデルは、信頼性が高く管理も容易でリソースを効果的に使用する方法でアプリケーションのホストを実現するいくつかの機能を提供します。  
   

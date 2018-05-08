@@ -1,22 +1,12 @@
 ---
-title: "方法: コントロール (Visual Basic)、射影の型"
-ms.custom: 
+title: '方法: コントロール (Visual Basic)、射影の型'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: a0171276-0b46-4817-aee5-a8d5191b12fe
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 32c2c747fd2f1137fbf2ead28886669c041d065c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: efeb247c2b7662c71ec97ea1d8c1839361d82e14
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-control-the-type-of-a-projection-visual-basic"></a>方法: コントロール (Visual Basic)、射影の型
 射影は、1 つのデータのセットを取得し、フィルター処理し、その形式を変更し、その型も変更するプロセスです。 ほとんどのクエリ式は射影を実行します。 このセクション内のクエリ式は、ほとんどが <xref:System.Collections.Generic.IEnumerable%601> の <xref:System.Xml.Linq.XElement> に評価されますが、射影の型を制御して別の型のコレクションを作成することができます。 このトピックでは、その方法について説明します。  

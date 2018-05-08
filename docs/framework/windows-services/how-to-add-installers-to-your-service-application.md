@@ -1,13 +1,6 @@
 ---
-title: "方法 : サービス アプリケーションにインストーラーを追加する"
-ms.custom: 
+title: '方法 : サービス アプリケーションにインストーラーを追加する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - Windows Service applications, deploying
 - installation components, adding to services
@@ -17,16 +10,13 @@ helpviewer_keywords:
 - ServiceInstaller class, adding installers to services
 - ServiceProcessInstaller class, adding installers to services
 ms.assetid: 8b698e9a-b88e-4f44-ae45-e0c5ea0ae5a8
-caps.latest.revision: "14"
 author: ghogen
-ms.author: ghogen
 manager: douge
-ms.workload: dotnet
-ms.openlocfilehash: 15487d4311f896aa09c1c7712292058086a49b50
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: faece1d7ee752e4c17f39027ff8a97fc95ed451b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-add-installers-to-your-service-application"></a>方法 : サービス アプリケーションにインストーラーを追加する
 Visual Studio では、サービス アプリケーションに関連付けられているリソースをインストールするインストール コンポーネントが同梱されています。 インストール コンポーネントにインストールされていると、サービス コントロール マネージャー知らせます、サービスが存在するシステム上の個々 のサービスを登録します。 サービス アプリケーションを操作するときに自動的に適切なインストーラーをプロジェクトに追加する [プロパティ] ウィンドウでリンクを選択することができます。  
@@ -70,7 +60,7 @@ Visual Studio では、サービス アプリケーションに関連付けら�
     > [!NOTE]
     >  プロジェクト内の追加サービスごとに追加する必要があります<xref:System.ServiceProcess.ServiceInstaller>コンポーネントをプロジェクトの`ProjectInstaller`クラスです。 <xref:System.ServiceProcess.ServiceProcessInstaller>手順 3 で追加したコンポーネントがすべて、プロジェクト内の個々 のサービスのインストーラーの動作です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Windows サービス アプリケーションの概要](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)  
  [方法 : サービスをインストールおよびアンインストールする](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md)  
  [方法 : サービスを開始する](../../../docs/framework/windows-services/how-to-start-services.md)  

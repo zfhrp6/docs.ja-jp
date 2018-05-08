@@ -1,13 +1,6 @@
 ---
-title: "方法 : Windows フォームのボタンのクリックに応答する"
-ms.custom: 
+title: '方法 : Windows フォームのボタンのクリックに応答する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -22,16 +15,11 @@ helpviewer_keywords:
 - examples [Windows Forms], controls
 - Click event [Windows Forms], responding to
 ms.assetid: 7a4951bd-369c-4662-b246-28ad83eda484
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 28b0467c8b589882fe5afd7e884d0de55d8ca564
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 14a880c34f163dc6fece44c24d377822a741b0f2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-respond-to-windows-forms-button-clicks"></a>方法 : Windows フォームのボタンのクリックに応答する
 Windows フォームの最も基本的な使用<xref:System.Windows.Forms.Button>コントロールは、ボタンがクリックされたときに、いくつかのコードを実行します。  
@@ -42,7 +30,7 @@ Windows フォームの最も基本的な使用<xref:System.Windows.Forms.Button
   
 ### <a name="to-respond-to-a-button-click"></a>ボタンのクリックに応答するには  
   
--   ボタンの`Click`<xref:System.EventHandler>を実行するコードを記述します。 `Button1_Click`コントロールにバインドする必要があります。 詳細については、次を参照してください。[する方法: Windows フォームの時間の実行時のイベント ハンドラーの作成](../../../../docs/framework/winforms/how-to-create-event-handlers-at-run-time-for-windows-forms.md)です。  
+-   ボタンの`Click`<xref:System.EventHandler>を実行するコードを記述します。 `Button1_Click` コントロールにバインドする必要があります。 詳細については、次を参照してください。[する方法: Windows フォームの時間の実行時のイベント ハンドラーの作成](../../../../docs/framework/winforms/how-to-create-event-handlers-at-run-time-for-windows-forms.md)です。  
   
     ```vb  
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click  
@@ -66,7 +54,7 @@ Windows フォームの最も基本的な使用<xref:System.Windows.Forms.Button
        }  
     ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Button コントロールの概要](../../../../docs/framework/winforms/controls/button-control-overview-windows-forms.md)  
  [Windows フォームの Button コントロールを選択する方法](../../../../docs/framework/winforms/controls/ways-to-select-a-windows-forms-button-control.md)  
  [Button コントロール](../../../../docs/framework/winforms/controls/button-control-windows-forms.md)

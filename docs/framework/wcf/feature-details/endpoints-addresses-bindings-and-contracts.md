@@ -1,33 +1,19 @@
 ---
 title: 'エンドポイント : アドレス、バインディング、およびコントラクト'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - endpoints [WCF]
 - Windows Communication Foundation [WCF], endpoints
 - WCF [WCF], endpoints
 ms.assetid: 9ddc46ee-1883-4291-9926-28848c57e858
-caps.latest.revision: 14
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 477c23facd846580bac698ce6e61d02e11afe430
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 0909d1d10ab8932f27f7ca6cba6207d57fa4f4cc
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="endpoints-addresses-bindings-and-contracts"></a>エンドポイント : アドレス、バインディング、およびコントラクト
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]サービスにおけるすべての通信はサービスの*エンドポイント*を通じて発生します。 エンドポイントは、クライアントが [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスによって提供される機能にアクセスできるようにします。  
+使用して、Windows Communication Foundation (WCF) サービスとすべての通信が行われる、*エンドポイント*サービス。 エンドポイントは、WCF サービスによって提供される機能へのアクセスをクライアントに提供します。  
   
  各エンドポイントは、次の 4 つのプロパティで構成されます。  
   
@@ -39,12 +25,12 @@ ms.lasthandoff: 04/28/2018
   
 -   エンドポイントのローカル実装の詳細を指定する一連の動作。  
   
- ここでは、エンドポイントの構造と [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] オブジェクト モデルでの表現方法について説明します。  
+ このトピックでは、このエンドポイントの構造体について説明し、WCF オブジェクト モデルでの表現方法について説明します。  
   
 ## <a name="the-structure-of-an-endpoint"></a>エンドポイントの構造  
  各エンドポイントの構造は次のとおりです。  
   
--   アドレス : アドレスは、エンドポイントを一意に識別し、サービスの潜在的ユーザーにそのエンドポイントの場所を示します。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] オブジェクト モデルでは、<xref:System.ServiceModel.EndpointAddress> クラスで表されます。 <xref:System.ServiceModel.EndpointAddress> クラスには次のものが含まれます。  
+-   アドレス : アドレスは、エンドポイントを一意に識別し、サービスの潜在的ユーザーにそのエンドポイントの場所を示します。 WCF オブジェクト モデルで表されます、<xref:System.ServiceModel.EndpointAddress>クラスです。 <xref:System.ServiceModel.EndpointAddress> クラスには次のものが含まれます。  
   
     -   <xref:System.ServiceModel.EndpointAddress.Uri%2A> プロパティは、サービスのアドレスを表します。  
   
@@ -60,7 +46,7 @@ ms.lasthandoff: 04/28/2018
   
     -   必要なセキュリティ要件 (例 : SSL メッセージ セキュリティや SOAP メッセージ セキュリティ)。  
   
-     詳細については、次を参照してください。 [WCF のバインディングの概要](../../../../docs/framework/wcf/bindings-overview.md)です。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] オブジェクト モデルでは、バインディングは抽象基本クラス <xref:System.ServiceModel.Channels.Binding> で表されます。 ほとんどのシナリオでは、システム指定のバインディングを使用できます。 詳細については、次を参照してください。[システム指定のバインディング](../../../../docs/framework/wcf/system-provided-bindings.md)です。  
+     詳細については、次を参照してください。 [WCF のバインディングの概要](../../../../docs/framework/wcf/bindings-overview.md)です。 バインディングは、WCF オブジェクト モデルで抽象基本クラスで表される<xref:System.ServiceModel.Channels.Binding>です。 ほとんどのシナリオでは、システム指定のバインディングを使用できます。 詳細については、次を参照してください。[システム指定のバインディング](../../../../docs/framework/wcf/system-provided-bindings.md)です。  
   
 -   コントラクト : コントラクトは、エンドポイントがクライアントに公開する機能を示します。 コントラクトは、以下の項目を指定します。  
   
@@ -74,7 +60,7 @@ ms.lasthandoff: 04/28/2018
   
      詳細については、コントラクトを定義する、次を参照してください。[サービス コントラクトの設計](../../../../docs/framework/wcf/designing-service-contracts.md)です。  
   
--   動作 : エンドポイントの動作を使用すると、サービス エンドポイントのローカル動作をカスタマイズできます。 エンドポイントの動作では、これを実現ビルド プロセスに参加を[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]ランタイム。 エンドポイントの動作の一例は、<xref:System.ServiceModel.Description.ServiceEndpoint.ListenUri%2A> プロパティです。このプロパティにより、SOAP アドレスまたは Web サービス記述言語 (WSDL) アドレスとは異なるリッスン アドレスを指定できます。 詳細については、次を参照してください。 [ClientViaBehavior](../../../../docs/framework/wcf/diagnostics/wmi/clientviabehavior.md)です。  
+-   動作 : エンドポイントの動作を使用すると、サービス エンドポイントのローカル動作をカスタマイズできます。 エンドポイントの動作は、構築、WCFruntime プロセスに参加してこれを実現します。 エンドポイントの動作の一例は、<xref:System.ServiceModel.Description.ServiceEndpoint.ListenUri%2A> プロパティです。このプロパティにより、SOAP アドレスまたは Web サービス記述言語 (WSDL) アドレスとは異なるリッスン アドレスを指定できます。 詳細については、次を参照してください。 [ClientViaBehavior](../../../../docs/framework/wcf/diagnostics/wmi/clientviabehavior.md)です。  
   
 ## <a name="defining-endpoints"></a>エンドポイントの定義  
  サービスのエンドポイントは、コードを使用して強制的に指定するか、構成を介して宣言として指定することができます。 詳細については、次を参照してください。[する方法: 構成でサービス エンドポイントの作成](../../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-configuration.md)と[する方法: コードでサービス エンドポイントの作成](../../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-code.md)です。  
@@ -83,7 +69,7 @@ ms.lasthandoff: 04/28/2018
  このセクションでは、バインディング、エンドポイント、およびアドレスの目的を説明し、バインディングとエンドポイントの構成方法および `ClientVia` 動作と `ListenUri` プロパティの使用方法を示します。  
   
  [アドレス](../../../../docs/framework/wcf/feature-details/endpoint-addresses.md)  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] でのエンドポイントのアドレス指定の方法について説明します。  
+ WCF でのエンドポイントを指定する方法について説明します。  
   
  [バインディング](../../../../docs/framework/wcf/feature-details/bindings.md)  
  バインディングを使用して、クライアントとサービスが相互に通信するために必要なトランスポート、エンコーディング、およびプロトコルの詳細を指定する方法について説明します。  

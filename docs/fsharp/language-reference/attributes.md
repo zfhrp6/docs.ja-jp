@@ -1,17 +1,12 @@
 ---
 title: 属性 (F#)
 description: F# の属性がプログラミング構成要素に適用するメタデータを有効にする方法について説明します。
-author: cartermp
-ms.author: phcart
 ms.date: 05/16/2016
-ms.topic: language-reference
-ms.prod: dotnet-fsharp
-ms.devlang: fsharp
-ms.openlocfilehash: b8efc0cdc14e690bbc5c24456d0b1eaa3d55988e
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 107f5d9cbcce28c97fc5b738759ef27649fc45a4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="attributes"></a>属性
 

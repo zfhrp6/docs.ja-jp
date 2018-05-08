@@ -1,34 +1,20 @@
 ---
 title: メッセージ クラスの使用
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: d1d62bfb-2aa3-4170-b6f8-c93d3afdbbed
-caps.latest.revision: 14
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: c63a0a88997a1c35b24562bcca3e0fdb40ebfd41
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 0ff65d9173838a8eb8850253e62d822f06942f26
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-the-message-class"></a>メッセージ クラスの使用
-<xref:System.ServiceModel.Channels.Message> クラスは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] の基盤となるものです。 クライアントとサービスの間のすべての通信は、最終的には <xref:System.ServiceModel.Channels.Message> インスタンスの送受信となります。  
+<xref:System.ServiceModel.Channels.Message>クラスは、基本的な Windows Communication Foundation (WCF) にします。 クライアントとサービスの間のすべての通信は、最終的には <xref:System.ServiceModel.Channels.Message> インスタンスの送受信となります。  
   
- 通常は、<xref:System.ServiceModel.Channels.Message> クラスと直接対話することはありません。 その代わりに、データ コントラクト、メッセージ コントラクト、操作コントラクトなどの [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービス モデル コントラクトを使用して送受信メッセージを表します。 ただし、一部の高度なシナリオでは、<xref:System.ServiceModel.Channels.Message> を直接使用してプログラムを作成することができます。 たとえば、次のような場合に <xref:System.ServiceModel.Channels.Message> クラスを使用できます。  
+ 通常は、<xref:System.ServiceModel.Channels.Message> クラスと直接対話することはありません。 代わりに、データ コントラクト、メッセージ コントラクトおよび操作コントラクトなど、WCF サービスのモデル構造を使用して受信および送信メッセージを記述します。 ただし、一部の高度なシナリオでは、<xref:System.ServiceModel.Channels.Message> を直接使用してプログラムを作成することができます。 たとえば、次のような場合に <xref:System.ServiceModel.Channels.Message> クラスを使用できます。  
   
 -   [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] オブジェクトをシリアル化する以外の方法で送信メッセージの内容を作成する必要がある場合 (ディスク上のファイルからメッセージを直接作成する場合など)。  
   
@@ -36,7 +22,7 @@ ms.lasthandoff: 04/28/2018
   
 -   メッセージ コンテンツに関係なく、一般的な方法でメッセージを処理する必要がある場合 (メッセージをルーティングまたは転送する場合や、ルーターシステム、負荷分散システム、または発行/定期受信システムを構築する場合など)。  
   
- 使用する前に、<xref:System.ServiceModel.Channels.Message>クラス、理解しておく、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]のデータ転送アーキテクチャ[データ転送のアーキテクチャ概要](../../../../docs/framework/wcf/feature-details/data-transfer-architectural-overview.md)です。  
+ 使用する前に、<xref:System.ServiceModel.Channels.Message>クラス、WCF のデータ転送アーキテクチャを理解[データ転送のアーキテクチャ概要](../../../../docs/framework/wcf/feature-details/data-transfer-architectural-overview.md)です。  
   
  <xref:System.ServiceModel.Channels.Message> は、一般的な目的で使用するデータ コンテナーですが、その設計は SOAP プロトコルのメッセージ設計に厳密に従っています。 SOAP と同様に、メッセージには本文とヘッダーの両方があります。 メッセージ本文には実際のペイロード データが格納され、ヘッダーには追加の名前付きデータ コンテナーが格納されます。 本文とヘッダーの読み書きルールは異なります。たとえば、ヘッダーは必ずメモリにバッファーされるので順序や回数に関係なくアクセスできますが、本文は 1 度だけ読み取ってストリーミングできます。 通常 SOAP を使用する場合、メッセージ本文は SOAP 本文にマップされ、メッセージ ヘッダーは SOAP ヘッダーにマップされます。  
   
@@ -181,7 +167,7 @@ ms.lasthandoff: 04/28/2018
  ヘッダーの XML データにアクセスするには、<xref:System.ServiceModel.Channels.MessageHeaders.GetReaderAtHeader%2A> を呼び出し、特定のヘッダー インデックスの XML リーダーを返すことができます。 ヘッダーの内容をオブジェクトに逆シリアル化する場合は、<xref:System.ServiceModel.Channels.MessageHeaders.GetHeader%60%601%28System.Int32%29> または他のいずれかのオーバーロードを使用します。 最も基本的なオーバーロードは、既定の設定で構成された <xref:System.Runtime.Serialization.DataContractSerializer> を使用してヘッダーを逆シリアル化します。 異なるシリアライザーを使用したり、異なる構成の `DataContractSerializer` を使用したりする場合は、`XmlObjectSerializer` を受け取るオーバーロードの 1 つを使用します。 インデックスの代わりに、ヘッダー名、名前空間、オプションとして `Actor` 値のリストを受け取るオーバーロードもあります。これは、`FindHeader` と `GetHeader` の組み合わせです。  
   
 ## <a name="working-with-properties"></a>プロパティの操作  
- `Message` インスタンスには、任意の数の任意の型の名前付きオブジェクトを含めることができます。 このコレクションは、`Properties` 型の `MessageProperties` プロパティを使用してアクセスできます。 コレクションは、<xref:System.Collections.Generic.IDictionary%602> インターフェイスを実装しており、<xref:System.String> から <xref:System.Object> へのマッピングの機能を果たします。 通常、プロパティ値は、ネットワーク上のメッセージのどの部分にも直接マッピングされませんが、さまざまなメッセージ処理のヒントを [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] チャネル スタックのさまざまなチャネルまたは <xref:System.ServiceModel.Channels.MessageHeaders.CopyTo%28System.ServiceModel.Channels.MessageHeaderInfo%5B%5D%2CSystem.Int32%29> サービス フレームワークに提供します。 例については、次を参照してください。[データ転送のアーキテクチャ概要](../../../../docs/framework/wcf/feature-details/data-transfer-architectural-overview.md)です。  
+ `Message` インスタンスには、任意の数の任意の型の名前付きオブジェクトを含めることができます。 このコレクションは、`Properties` 型の `MessageProperties` プロパティを使用してアクセスできます。 コレクションは、<xref:System.Collections.Generic.IDictionary%602> インターフェイスを実装しており、<xref:System.String> から <xref:System.Object> へのマッピングの機能を果たします。 通常、プロパティの値は、ネットワーク上のメッセージの一部に直接マップされないが、さまざまなメッセージの処理のヒント、WCF チャネル スタックまたはさまざまなチャネルを提供、<xref:System.ServiceModel.Channels.MessageHeaders.CopyTo%28System.ServiceModel.Channels.MessageHeaderInfo%5B%5D%2CSystem.Int32%29>サービス フレームワークです。 例については、次を参照してください。[データ転送のアーキテクチャ概要](../../../../docs/framework/wcf/feature-details/data-transfer-architectural-overview.md)です。  
   
 ## <a name="inheriting-from-the-message-class"></a>Message クラスからの継承  
  `CreateMessage` を使用して作成された組み込みのメッセージ型がユーザーの要件を満たさない場合は、`Message` クラスから派生するクラスを作成します。  

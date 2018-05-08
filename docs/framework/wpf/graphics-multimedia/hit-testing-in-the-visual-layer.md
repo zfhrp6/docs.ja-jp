@@ -1,13 +1,6 @@
 ---
-title: "ビジュアル層でのヒット テスト"
-ms.custom: 
+title: ビジュアル層でのヒット テスト
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - hit testing functionality [WPF]
 - visual layer [WPF], hit testing functionality
 ms.assetid: b1a64b61-14be-4d75-b89a-5c67bebb2c7b
-caps.latest.revision: "42"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: f1bdecedece4581eaf8a010eddc0974e44fe88ab
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 60da11af51722e86a61c5e3298fafba2221f000b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="hit-testing-in-the-visual-layer"></a>ビジュアル層でのヒット テスト
 ここでは、ビジュアル層で提供されるヒット テスト機能の概要について説明します。 ヒット テストのサポートでは、geometry 型またはポイントの値の表示内容内かどうかを確認することができます、 <xref:System.Windows.Media.Visual>、複数のオブジェクトを選択する四角形を描くなどのユーザー インターフェイスの動作を実装することができます。  
@@ -61,7 +49,7 @@ ms.lasthandoff: 12/22/2017
   
  次の図では、四角形と三角形の両方のオブジェクト上に円オブジェクトがあります。 ヒット z オーダー値がある最上位のビジュアル オブジェクトをテストに興味のみ場合は、返されるビジュアル ヒット テスト列挙型を設定できます<xref:System.Windows.Media.HitTestResultBehavior.Stop>から、<xref:System.Windows.Media.HitTestResultCallback>を最初の項目の後にヒット テストの検査を停止します。  
   
- ![Z &#45;のダイアグラム; ビジュアル ツリーの順序](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-mmgraphics-visuals-hittest-2.png "wcpsdk_mmgraphics_visuals_hittest_2")  
+ ![Z のダイアグラム&#45;ビジュアル ツリーの順序](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-mmgraphics-visuals-hittest-2.png "wcpsdk_mmgraphics_visuals_hittest_2")  
 ビジュアル ツリーの z オーダーのダイアグラム  
   
  特定の時点または geometry 下にあるすべてのビジュアル オブジェクトを列挙する場合は、返す<xref:System.Windows.Media.HitTestResultBehavior.Continue>から、<xref:System.Windows.Media.HitTestResultCallback>です。 つまり、完全に隠されているものも含めて、他のオブジェクトの下にあるすべてのビジュアル オブジェクトに対してヒット テストを行うことができます。 詳細については、「ヒット テスト結果のコールバックの使用」のサンプル コードを参照してください。  
@@ -149,7 +137,7 @@ ms.lasthandoff: 12/22/2017
  [!code-csharp[HitTestingOverview#108](../../../../samples/snippets/csharp/VS_Snippets_Wpf/HitTestingOverview/CSharp/Window1.xaml.cs#108)]
  [!code-vb[HitTestingOverview#108](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/HitTestingOverview/visualbasic/window1.xaml.vb#108)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Media.VisualTreeHelper.HitTest%2A>  
  <xref:System.Windows.Media.HitTestResult>  
  <xref:System.Windows.Media.HitTestResultCallback>  

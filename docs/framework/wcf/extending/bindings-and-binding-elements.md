@@ -1,28 +1,14 @@
 ---
-title: "バインディングとバインド要素"
-ms.custom: 
+title: バインディングとバインド要素
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - binding elements [WCF]
 ms.assetid: 765ff77b-7682-4ea3-90eb-e4d751e37379
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 232d2d23ea88c834d2e28bae99cd2e001f6efac6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 32b8b9e1fbb3ae16f4dd81620658569a9408057b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="bindings-and-binding-elements"></a>バインディングとバインド要素
 バインディングと呼ばれる特別な構成要素のコレクションとは*バインド要素*されるたびに、クライアントは、サービス ランタイムによって評価されますが、またはサービス エンドポイントが構築されます。 バインディング内のバインド要素の型と順序に基づいて、エンドポイントのチャネル スタック内のプロトコル チャネルとトランスポート チャネルが選択され、スタック順が決定されます。  
@@ -32,7 +18,7 @@ ms.lasthandoff: 12/22/2017
  バインディングには、トランスポート バインド要素が 1 つだけ含まれている必要があります。 各トランスポート バインド要素は、1 つのメッセージ エンコード バインド要素をバインディングに追加することによってオーバーライドできる既定のメッセージ エンコード バインド要素です。 トランスポート バインド要素とエンコーダー バインド要素に加えて、バインディングには任意の数のプロトコル バインド要素を含めることもできます。この要素により、サービスに必要な機能を実装し、エンドポイント間で SOAP メッセージを送信することができます。 詳細については、「[を使用してサービスを構成してクライアントのバインド](../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)です。  
   
 ## <a name="extending-bindings-and-binding-elements"></a>バインディングとバインド要素の拡張  
- [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] には、広範なシナリオをカバーするシステム指定のバインディングが用意されています  (詳細については、次を参照してください[システム指定のバインディング](../../../../docs/framework/wcf/system-provided-bindings.md)。)。ただし、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] に用意されていないバインディングを作成し、使用することが必要になる場合もあります。 次のシナリオでは、新しいバインディングを作成する必要があります。  
+ Windows Communication Foundation (WCF) には、幅広いシナリオをカバーするシステム提供のバインディングが含まれています。 (詳細については、次を参照してください[システム指定のバインディング](../../../../docs/framework/wcf/system-provided-bindings.md)。)。ただし、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] に用意されていないバインディングを作成し、使用することが必要になる場合もあります。 次のシナリオでは、新しいバインディングを作成する必要があります。  
   
 -   新しいバインド要素 (新しいトランスポート バインド要素、エンコード バインド要素、またはプロトコル バインド要素) を使用する場合。そのバインド要素を含む新しいバインディングを作成する必要があります。 たとえば、UDP トランスポートのためのカスタム `UdpTransportBindingElement` を追加した場合は、そのカスタム バインド要素を使用する新しいバインディングを作成する必要があります。 使用してこの動作を実行する方法については、<xref:System.ServiceModel.Channels.CustomBinding?displayProperty=nameWithType>を入力しを参照してください[カスタム バインディング](../../../../docs/framework/wcf/extending/custom-bindings.md)です。  
   

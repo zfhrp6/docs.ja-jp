@@ -1,35 +1,21 @@
 ---
 title: POX アプリケーションとの相互運用性
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 449276b8-4633-46f0-85c9-81f01d127636
-caps.latest.revision: 15
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 42f6bbb1a5605bd0a604f5cfe31ce5ea48d9bb10
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 7522233723b6b91d5a7b27d3f82ca328e29ce3f7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="interoperability-with-pox-applications"></a>POX アプリケーションとの相互運用性
-"Plain Old XML"(POX) アプリケーションは、SOAP エンベロープで囲まれていない XML アプリケーション データのみを含んだ生の HTTP メッセージを交換して通信します。 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] では、POX メッセージを使用するサービスとクライアントの両方を提供できます。 サービスでは、POX メッセージを送受信する Web ブラウザーやスクリプト言語などのクライアントに対してエンドポイントを公開するサービスを [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を使用して実装できます。 クライアントでは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] プログラミング モデルを使用して、POX ベースのサービスと通信するクライアントを実装できます。  
+"Plain Old XML"(POX) アプリケーションは、SOAP エンベロープで囲まれていない XML アプリケーション データのみを含んだ生の HTTP メッセージを交換して通信します。 Windows Communication Foundation (WCF) には、サービスと POX メッセージを使用するクライアントの両方を指定できます。 サービスでは、Web ブラウザーなどのクライアントに対してエンドポイントを公開するサービスおよび POX メッセージを送受信するためのスクリプト言語の実装に WCF を使用できます。 クライアントでは、POX ベースのサービスと通信するクライアントを実装する、WCF プログラミング モデルを使用できます。  
   
 > [!NOTE]
 >  このドキュメントはもともと [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] 3.0 用に書かれたものです。  [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] 3.5 には POX アプリケーション用のサポートが組み込まれています。 参照の詳細については[WCF Web HTTP プログラミング モデル](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)  
   
 ## <a name="pox-programming-with-wcf"></a>WCF による POX プログラミング  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] POX メッセージを使用して HTTP 経由で通信するサービスを[ \<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)です。  
+ POX メッセージを使用して HTTP を介して通信する WCF サービス、 [ \<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)です。  
   
 ```xml  
 <customBinding>  
@@ -46,9 +32,9 @@ ms.lasthandoff: 04/30/2018
   
 -   [ \<TextMessageEncoding >](../../../../docs/framework/configure-apps/file-schema/wcf/textmessageencoding.md)です。  
   
- 標準の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] テキスト メッセージ エンコーダーで <xref:System.ServiceModel.Channels.MessageVersion.None%2A> 値を使用するように特別に構成することにより、SOAP エンベロープにラップされずに到着する XML メッセージ ペイロードを処理できるようになります。  
+ 標準の WCF テキスト メッセージ エンコーダーが使用する特別に構成された、<xref:System.ServiceModel.Channels.MessageVersion.None%2A>値で、XML メッセージのペイロードに到着しないと、SOAP エンベロープでラップを処理できるようにします。  
   
- POX メッセージを使用して HTTP を介して通信する [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントでも、次の強制コードに示すように、同様のバインディングを使用します。  
+ POX メッセージを使用して HTTP を介して通信する WCF クライアントは、(次の命令型コードに示すように)、同様のバインディングを使用します。  
   
 ```  
 private static Binding CreatePoxBinding()  
@@ -63,7 +49,7 @@ private static Binding CreatePoxBinding()
   
  POX クライアントでは、メッセージの送信先となる URI を明示的に指定する必要があるため、クライアントの <xref:System.ServiceModel.Channels.HttpTransportBindingElement> プロパティを <xref:System.ServiceModel.Channels.TransportBindingElement.ManualAddressing%2A> に設定することで、通常、`true` を手動アドレス指定モードに構成する必要があります。 これにより、アプリケーション コードによってメッセージのアドレスが明示的に指定されることになり、アプリケーションで異なる HTTP URI にメッセージを送信するたびに、新しい <xref:System.ServiceModel.ChannelFactory> を作成する必要がなくなります。  
   
- POX メッセージでは重要なプロトコル情報の搬送に SOAP ヘッダーを使用しないため、POX クライアントおよびサービスでは、メッセージの送受信に使用される、基になる HTTP 要求の情報を操作する必要が生じる場合がよく起こります。 HTTP ヘッダーやステータス コードなど、HTTP 固有のプロトコル情報は、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] プログラミング モデルでは次の 2 つのクラスを通じて表現されます。  
+ POX メッセージでは重要なプロトコル情報の搬送に SOAP ヘッダーを使用しないため、POX クライアントおよびサービスでは、メッセージの送受信に使用される、基になる HTTP 要求の情報を操作する必要が生じる場合がよく起こります。 2 つのクラスを使用して、WCF プログラミング モデルには、HTTP ヘッダーやステータス コードなどの HTTP 固有のプロトコル情報が示されます。  
   
 -   <xref:System.ServiceModel.Channels.HttpRequestMessageProperty> には、HTTP メソッドと要求ヘッダーなど、HTTP 要求についての情報が含まれます。  
   

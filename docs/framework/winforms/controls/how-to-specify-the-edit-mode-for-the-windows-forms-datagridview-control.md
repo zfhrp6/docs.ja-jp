@@ -1,13 +1,6 @@
 ---
-title: "方法 : Windows フォーム DataGridView コントロールの編集モードを指定する"
-ms.custom: 
+title: '方法 : Windows フォーム DataGridView コントロールの編集モードを指定する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - DataGridView control [Windows Forms], edit mode
 - data grids [Windows Forms], edit mode
 ms.assetid: 93e117e8-94c4-411b-ba31-645e475ed85c
-caps.latest.revision: "17"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 42773e29d7071c5bc5f3d5de3660c9891788b422
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5117dfe2e017cf4af1d352fdbf23c6599c0e56a9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-specify-the-edit-mode-for-the-windows-forms-datagridview-control"></a>方法 : Windows フォーム DataGridView コントロールの編集モードを指定する
 既定では、ユーザーが、現在の内容を編集できる<xref:System.Windows.Forms.DataGridView>テキスト ボックスのセルに入力するか、F2 キーを押します。 これにより、セル編集モードで、以下の条件をすべて満たしている場合。  
@@ -55,7 +43,7 @@ ms.lasthandoff: 12/22/2017
   
 -   <xref:System> アセンブリおよび <xref:System.Windows.Forms> アセンブリへの参照。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.DataGridView>  
  <xref:System.Windows.Forms.DataGridView.EditMode%2A?displayProperty=nameWithType>  
  [Windows フォーム DataGridView コントロールでのデータ入力](../../../../docs/framework/winforms/controls/data-entry-in-the-windows-forms-datagridview-control.md)

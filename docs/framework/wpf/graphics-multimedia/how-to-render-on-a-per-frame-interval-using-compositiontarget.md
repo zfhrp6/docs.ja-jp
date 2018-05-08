@@ -1,13 +1,6 @@
 ---
-title: "方法 : CompositionTarget を使用したフレームの間隔ごとの描画"
-ms.custom: 
+title: '方法 : CompositionTarget を使用したフレームの間隔ごとの描画'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,21 +8,16 @@ helpviewer_keywords:
 - CompositionTarget objects [WPF], rendering per frame
 - rendering per frame using CompositionTarget objects [WPF]
 ms.assetid: 701246cd-66b7-4d69-ada9-17b3b433d95d
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: eb7e917c59f11ed78f8d44fa4b674d8d572f3623
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 7c080c6deca63eacdf0e1123f4ca8bbb495ed9ca
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-render-on-a-per-frame-interval-using-compositiontarget"></a>方法 : CompositionTarget を使用したフレームの間隔ごとの描画
 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] のアニメーション エンジンには、フレームベースのアニメーションを作成するためのさまざまな機能が用意されています。 ただし、フレームベースの描画をさらにきめ細かく制御することが必要となるアプリケーション シナリオがあります。 <xref:System.Windows.Media.CompositionTarget>オブジェクトは、フレームごとのコールバックに基づくカスタム アニメーションを作成する機能を提供します。  
   
- <xref:System.Windows.Media.CompositionTarget>アプリケーションが描画される画面の表面を表す静的クラスです。 <xref:System.Windows.Media.CompositionTarget.Rendering>イベントはアプリケーションのシーンは描画たびに発生します。 レンダリング フレーム レートは、1 秒あたりのシーンの描画回数です。  
+ <xref:System.Windows.Media.CompositionTarget> アプリケーションが描画される画面の表面を表す静的クラスです。 <xref:System.Windows.Media.CompositionTarget.Rendering>イベントはアプリケーションのシーンは描画たびに発生します。 レンダリング フレーム レートは、1 秒あたりのシーンの描画回数です。  
   
 > [!NOTE]
 >  完全なコード サンプルを使用して、<xref:System.Windows.Media.CompositionTarget>を参照してください[CompositionTarget サンプルを使用して](http://go.microsoft.com/fwlink/?LinkID=160045)です。  
@@ -51,6 +39,6 @@ ms.lasthandoff: 12/22/2017
   
  追加または削除を表示する<xref:System.EventHandler>デリゲートがイベントを発生させるときに、イベントの終了後まで遅延されますを発生させます。 これは、方法と一致<xref:System.MulticastDelegate>-ベースのイベントは、共通言語ランタイム (CLR) を処理します。 また、描画イベントが特定の順序で呼び出されるかどうかは保証されません。 複数ある場合<xref:System.EventHandler>デリゲートを特定の順序に依存する、1 つを登録する必要があります<xref:System.Windows.Media.CompositionTarget.Rendering>イベントおよびマルチプレクシング正しい内のデリゲートでは、自分で注文します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Media.CompositionTarget>  
  [WPF グラフィックス レンダリングの概要](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)

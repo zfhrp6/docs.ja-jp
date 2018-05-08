@@ -1,23 +1,12 @@
 ---
-title: "TryCatch を使用した Flowchart アクティビティでのエラー処理"
-ms.custom: 
+title: TryCatch を使用した Flowchart アクティビティでのエラー処理
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 50922964-bfe0-4ba8-9422-0e7220d514fd
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 5a179ae5aaca959383a88105b96cbba2cebd1919
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: cc7630be868a5bdc1a07e8d935e5dd3269b4ae22
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="fault-handling-in-a-flowchart-activity-using-trycatch"></a>TryCatch を使用した Flowchart アクティビティでのエラー処理
 このサンプルでは、複雑な制御フロー アクティビティ内で <xref:System.Activities.Statements.TryCatch> アクティビティを使用する方法を示します。  
@@ -37,7 +26,7 @@ ms.lasthandoff: 12/22/2017
 |--------------------------|--------------------|  
 |Single|10|  
 |MNK|16|  
-|MWK|15 + (1 – 1/`numberOfKids`)\*10**注:**可能性のある、この計算がスローすることが、<xref:System.DivideByZeroException>です。 そのため、割引率の計算は、<xref:System.Activities.Statements.TryCatch> 例外をキャッチして割引率をゼロに設定する <xref:System.DivideByZeroException> アクティビティでラップされます。|  
+|MWK|15 + (1 – 1/`numberOfKids`)\*10**注:** 可能性のある、この計算がスローすることが、<xref:System.DivideByZeroException>です。 そのため、割引率の計算は、<xref:System.Activities.Statements.TryCatch> 例外をキャッチして割引率をゼロに設定する <xref:System.DivideByZeroException> アクティビティでラップされます。|  
   
 #### <a name="to-use-this-sample"></a>このサンプルを使用するには  
   
@@ -52,10 +41,10 @@ ms.lasthandoff: 12/22/2017
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
+>  このディレクトリが存在しない場合に、 [Windows Communication Foundation (WCF) および .NET Framework 4 向けの Windows Workflow Foundation (WF) サンプル](http://go.microsoft.com/fwlink/?LinkId=150780)すべて Windows Communication Foundation (WCF) をダウンロードして[!INCLUDE[wf1](../../../../includes/wf1-md.md)]サンプルです。 このサンプルは、次のディレクトリに格納されます。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Built-InActivities\FlowChartWithFaultHandling`  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Flowchart のワークフロー](../../../../docs/framework/windows-workflow-foundation/flowchart-workflows.md)  
  [例外](../../../../docs/framework/windows-workflow-foundation/exceptions.md)

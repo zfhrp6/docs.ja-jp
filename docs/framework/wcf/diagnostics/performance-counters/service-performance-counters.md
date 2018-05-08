@@ -1,24 +1,12 @@
 ---
-title: "サービス パフォーマンス カウンター"
-ms.custom: 
+title: サービス パフォーマンス カウンター
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 4210f549-31f2-4ea7-99bd-69eaffb98ddf
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 8145ff12f5a9befdef3cbf5edf69e5162c4d7014
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 71eff5c656a4782056ac518f105f73bc549da336
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="service-performance-counters"></a>サービス パフォーマンス カウンター
 サービスのパフォーマンス カウンターはサービス動作全体を測定し、サービス全体のパフォーマンスを診断するために使用できます。 パフォーマンス モニター (Perfmon.exe) を使用して表示する場合、これらのカウンターは、`ServiceModelService 4.0.0.0` パフォーマンス オブジェクトの下にあります。 インスタンスには次のパターンの名前が付けられています。  
@@ -28,7 +16,7 @@ ServiceName@ServiceBaseAddress
 ```  
   
 > [!CAUTION]
->  パフォーマンス カウンターのインスタンス名の長さには制限があります。 [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] カウンターのインスタンス名の長さが最大長を超えると、[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] によってインスタンス名の一部はハッシュ値に置き換えられます。  
+>  パフォーマンス カウンターのインスタンス名の長さには制限があります。 Windows Communication Foundation (WCF) カウンターのインスタンス名は、最大の長さを超えているときに[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)]インスタンス名の一部をハッシュ値に置き換えます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [パフォーマンス カウンター](../../../../../docs/framework/wcf/diagnostics/performance-counters/index.md)

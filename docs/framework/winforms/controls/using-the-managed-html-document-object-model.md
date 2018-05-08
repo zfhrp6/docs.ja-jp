@@ -1,28 +1,14 @@
 ---
-title: "マネージ HTML DOM (Document Object Model) の使用"
-ms.custom: 
+title: マネージ HTML DOM (Document Object Model) の使用
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - managed HTML DOM
 ms.assetid: a017dd5c-cd7b-47e4-952c-f4f54cb48409
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 876cee67f917291214d6ea8b9abf7d2975c1fd25
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 95b14ae455ef8fcd0a81decec21b8305f2573643
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-the-managed-html-document-object-model"></a>マネージ HTML DOM (Document Object Model) の使用
 マネージ HTML ドキュメント オブジェクト モデル (DOM) に基づくラッパーを提供する、[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]の Internet Explorer によって公開されている HTML クラスです。 ホストされている HTML ページを操作するこれらのクラスを使用して、<xref:System.Windows.Forms.WebBrowser>コントロール、または最初から新しいページを構築します。  
@@ -53,5 +39,5 @@ ms.lasthandoff: 12/22/2017
 ## <a name="related-sections"></a>関連項目  
  [WebBrowser コントロール](../../../../docs/framework/winforms/controls/webbrowser-control-windows-forms.md)  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [DHTML オブジェクト モデルについて](http://msdn.microsoft.com/library/default.asp?url=/workshop/author/om/doc_object.asp)

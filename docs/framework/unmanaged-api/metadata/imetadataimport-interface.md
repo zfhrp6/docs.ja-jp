@@ -1,14 +1,6 @@
 ---
-title: "IMetaDataImport インターフェイス"
-ms.custom: 
+title: IMetaDataImport インターフェイス
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - IMetaDataImport
 api_location:
@@ -22,17 +14,13 @@ helpviewer_keywords:
 ms.assetid: 0adbbd35-5e8d-4fec-8268-dc70a07c5975
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 1067582b506d60092bef9639dc4a96ba41306437
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: fdea4c456f04911c37acd69ced65ba841f7959ff
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="imetadataimport-interface"></a>IMetaDataImport インターフェイス
 ポータブル実行可能 (PE) ファイルまたはその他のソース (タイプ ライブラリ、スタンドアロンのランタイム メタデータ バイナリなど) から既存のメタデータをインポートおよび操作するメソッドを提供します。  
@@ -115,15 +103,15 @@ ms.lasthandoff: 12/22/2017
   
 -   Get メソッドは、メタデータ項目の単一値のプロパティを返すように特別にデザインされています。 プロパティが別の項目への参照である場合、その項目のトークンが返されます。 特定の値が要求されていないことを示すために、ポインター入力型を NULL に設定できます。 基本的にコレクション オブジェクトであるプロパティ (クラスが実装するインターフェイスのコレクションなど) を取得するには、列挙メソッドを使用します。  
   
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** Cor.h  
   
  **ライブラリ:** MsCorEE.dll にリソースとして使用  
   
- **.NET framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [メタデータ インターフェイス](../../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md)  
  [IMetaDataImport2 インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

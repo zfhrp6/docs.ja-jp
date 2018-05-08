@@ -1,24 +1,12 @@
 ---
-title: "ピア メッシュ"
-ms.custom: 
+title: ピア メッシュ
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: d93e312e-ac04-40f8-baea-5da1cacb546e
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 0f70c1dfba6ceb53cd674726702c471dbe508d46
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: afd9eae36f28c28b33b74c4456feb4ba8c91314d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="peer-meshes"></a>ピア メッシュ
 A*メッシュ*は互いに通信する、一意のメッシュ ID により識別されるピア ノードの名前付きコレクション (相関グラフ) 各ノードは複数の別のノードに接続されています。 接続状況が良好なメッシュでは、2 つのノード間にパスが存在します。メッシュの一番端のノード間には比較的少数のホップがあります。メッシュは、一部のノードまたは接続が落ちた場合でも、接続されたままになります。メッシュ内のアクティブ ノードは、エンドポイント情報と対応するメッシュ ID を公開して他のピアが検索できるようにします。  
@@ -42,4 +30,4 @@ A*メッシュ*は互いに通信する、一意のメッシュ ID により識�
   
 -   **メッセージの順序付け:** 1 つのソースから送信されたメッセージでに同じ順序またはソースが送信した順序では、他のすべてのパーティが到着しない可能性があります。 メッセージを特定の順序で配信する必要のあるアプリケーションでは、その順序をアプリケーションに組み込む必要があります (決まった値で増加する ID をすべてのメッセージに含めるなど)。  
   
--   **信頼できるメッセージング:**ピア チャネルでのすべてのピアによりメッセージの受信を確認するためのメカニズムが含まれません。 メッセージの配信を保証するには、信頼性の層をピア チャネルの上に記述する必要があります。
+-   **信頼できるメッセージング:** ピア チャネルでのすべてのピアによりメッセージの受信を確認するためのメカニズムが含まれません。 メッセージの配信を保証するには、信頼性の層をピア チャネルの上に記述する必要があります。

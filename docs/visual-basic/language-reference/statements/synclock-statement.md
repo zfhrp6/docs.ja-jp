@@ -1,11 +1,6 @@
 ---
-title: "SyncLock ステートメント"
+title: SyncLock ステートメント
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.SyncLock
 - SyncLock
@@ -14,14 +9,11 @@ helpviewer_keywords:
 - SyncLock statement [Visual Basic]
 - locks, threads
 ms.assetid: 14501703-298f-4d43-b139-c4b6366af176
-caps.latest.revision: "17"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: c363b41bb7a409c490a6e07d4a1a4f1bb44c1438
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: cf2aad9ec2ba67200d175fbcddfcb49afeac6efc
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="synclock-statement"></a>SyncLock ステートメント
 ブロックを実行する前にステートメント ブロックの排他ロックを取得します。  
@@ -45,7 +37,7 @@ End SyncLock
  終了、`SyncLock`ブロックします。  
   
 ## <a name="remarks"></a>コメント  
- `SyncLock`ステートメントが複数のスレッドを実行しない、ステートメント ブロック、同時にことを確認します。 `SyncLock`各スレッドが実行している他のスレッドがなくなるまで、ブロックを入力するを防ぎます。  
+ `SyncLock`ステートメントが複数のスレッドを実行しない、ステートメント ブロック、同時にことを確認します。 `SyncLock` 各スレッドが実行している他のスレッドがなくなるまで、ブロックを入力するを防ぎます。  
   
  最も一般的な使用`SyncLock`から複数のスレッドで同時に更新されているデータを保護することです。 場合は、データを操作するステートメントは、中断することがなく完了に移動する必要があります、その内部配置、`SyncLock`ブロックします。  
   
@@ -80,7 +72,7 @@ End SyncLock
   
  使用しないでも、`Me.GetType`ロック オブジェクトを提供するメソッドがデータを共有します。 これは、ため`GetType`常に同じを返します`Type`オブジェクトの特定のクラス名。 外部コードを呼び出すことが`GetType`クラスを使用している同じロック オブジェクトを取得します。 これは、結果から互いをブロックして 2 つのクラスとして、`SyncLock`ブロックします。  
   
-## <a name="examples"></a>例  
+## <a name="examples"></a>使用例  
   
 ### <a name="description"></a>説明  
  次の例では、メッセージの単純なリストを保持するクラスを示します。 配列内のメッセージを保持し、最後は、変数にその配列の要素を使用します。 `addAnotherMessage`プロシージャが最後の要素をインクリメントし、新しいメッセージを格納します。 これら 2 つの操作で保護されている、`SyncLock`と`End SyncLock`ステートメント、他のスレッドでは、最後の要素をもう一度インクリメント前に、新しいメッセージを格納する必要が最後の要素をインクリメントすると後であるためです。  
@@ -98,7 +90,7 @@ End SyncLock
   
 ### <a name="comments"></a>コメント  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Threading>  
  <xref:System.Threading.Monitor>  
  [スレッドの同期](../../programming-guide/concepts/threading/thread-synchronization.md)  

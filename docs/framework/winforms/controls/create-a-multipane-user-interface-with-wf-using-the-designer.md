@@ -1,28 +1,16 @@
 ---
-title: "方法 : デザイナーを使用して Windows フォームでマルチペイン ユーザー インターフェイスを作成する"
-ms.custom: 
+title: '方法 : デザイナーを使用して Windows フォームでマルチペイン ユーザー インターフェイスを作成する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - user interface [Windows Forms], multipane
 - SplitContainer control [Windows Forms], using the designer
 - multipane user interface
 ms.assetid: c3f9294d-a26c-4198-9242-f237f55f7573
-caps.latest.revision: "6"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 1752691b3cc6809f1a5da54a01e81de2d4037d19
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: d0faf86ce31dad6bc053b5af8902e500d2b1c75b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-a-multipane-user-interface-with-windows-forms-using-the-designer"></a>方法 : デザイナーを使用して Windows フォームでマルチペイン ユーザー インターフェイスを作成する
 Microsoft Outlook で使用される次のようなマルチペイン ユーザー インターフェイスを作成する次の手順で、**フォルダー**  ボックスの一覧、**メッセージ** ウィンドウで、および**プレビュー**ウィンドウです。 この方法は、主にコントロールをフォームにドッキングすることにより実現されます。  
@@ -57,6 +45,6 @@ Microsoft Outlook で使用される次のようなマルチペイン ユーザ�
   
      この時点でアプリケーションの開発、高度なユーザー インターフェイスを作成しました。 次の手順は、アプリケーション自体のプログラミングを進めるおそらく接続することによって、<xref:System.Windows.Forms.TreeView>コントロールと<xref:System.Windows.Forms.ListView>いくつかの種類のデータ ソースへのコントロールです。 コントロールをデータに接続する方法の詳細については、次を参照してください。[データ連結と Windows フォーム](../../../../docs/framework/winforms/data-binding-and-windows-forms.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.SplitContainer>  
  [SplitContainer コントロール](../../../../docs/framework/winforms/controls/splitcontainer-control-windows-forms.md)

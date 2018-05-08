@@ -1,12 +1,6 @@
 ---
 title: '- 演算子 (Visual Basic)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Negate
 - vb.-
@@ -23,14 +17,11 @@ helpviewer_keywords:
 - operators [Visual Basic], negation
 - minus operator [Visual Basic]
 ms.assetid: bff2c368-662d-4c92-ac87-1d9bdfd3426a
-caps.latest.revision: 14
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 4ffb7c96fe95e73dc857a15608df94ed8468f9df
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 4df8eb3844ed20fd24ca375f77cea46b9c6cee37
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="--operator-visual-basic"></a>- 演算子 (Visual Basic)
 2 つの数値式または数値式の負の値の差を返します。  
@@ -45,7 +36,7 @@ ms.lasthandoff: 11/21/2017
   
 ## <a name="parts"></a>指定項目  
  `expression1`  
- 必須です。 任意の数式。  
+ 必須。 任意の数式。  
   
  `expression2`  
  いない限り、必須、`–`演算子が負の値を計算します。 任意の数式。  

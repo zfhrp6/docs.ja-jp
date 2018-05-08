@@ -1,14 +1,6 @@
 ---
-title: "_CorValidateImage 関数"
-ms.custom: 
+title: _CorValidateImage 関数
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - _CorValidateImage
 api_location:
@@ -22,17 +14,13 @@ helpviewer_keywords:
 ms.assetid: 0117e080-05f9-4772-885d-e1847230947c
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 03deb62a84a1e9c6cee898fe0023c34b8c538ece
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 101271823f7b7877bb7f007588b6a164233e5b45
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="corvalidateimage-function"></a>_CorValidateImage 関数
 マネージ モジュール イメージを検証し、それらが読み込まれると、オペレーティング システム ローダーに通知します。  
@@ -74,7 +62,7 @@ STDAPI _CorValidateImage (
   
  実行可能イメージは、オペレーティング システム ローダーし、呼び出し、 [_CorExeMain](../../../../docs/framework/unmanaged-api/hosting/corexemain-function.md)関数の実行可能ファイルで指定されたエントリ ポイントに関係なく、します。 ローダーの呼び出し、DLL アセンブリのイメージ、 [_CorDllMain](../../../../docs/framework/unmanaged-api/hosting/cordllmain-function.md)関数。  
   
- `_CorExeMain`または`_CorDllMain`は、次の操作を実行します。  
+ `_CorExeMain` または`_CorDllMain`は、次の操作を実行します。  
   
 -   CLR を初期化します。  
   
@@ -84,14 +72,14 @@ STDAPI _CorValidateImage (
   
  ローダーの呼び出し、 [_CorImageUnloading](../../../../docs/framework/unmanaged-api/hosting/corimageunloading-function.md)管理されているときに機能モジュール イメージがアンロードされます。 ただし、この関数に任意のアクションを実行しませんだけを返します。  
   
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** Cor.h  
   
  **ライブラリ:** MsCorEE.dll にリソースとして含まれています。  
   
- **.NET framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [メタデータ グローバル静的関数](../../../../docs/framework/unmanaged-api/metadata/metadata-global-static-functions.md)

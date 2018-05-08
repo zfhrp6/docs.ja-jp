@@ -1,14 +1,6 @@
 ---
-title: "ModuleBindInfo 構造体"
-ms.custom: 
+title: ModuleBindInfo 構造体
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ModuleBindInfo
 api_location:
@@ -22,17 +14,13 @@ helpviewer_keywords:
 ms.assetid: 632d4adc-dbc9-4ce8-9397-abc3285c1c69
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 399ba2471b4dc7c5e372a56a9dcab8117068a693
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: dbaba00e029729fff5ad478a50134ff1e1858c0c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="modulebindinfo-structure"></a>ModuleBindInfo 構造体
 参照されるモジュールとそれを含むアセンブリに関する詳細情報を提供します。  
@@ -56,18 +44,18 @@ typedef struct _ModuleBindInfo {
 |`lpModuleName`|参照されるモジュールの名前。|  
   
 ## <a name="remarks"></a>コメント  
- `ModuleBindInfo`パラメーターとして渡される`IHostAssemblyStore::ProvideModule`です。 ホスト提供の一意識別子`dwAppDomainId`共通言語ランタイム (CLR) にします。 呼び出した後、 [ihostassemblystore::provideassembly](../../../../docs/framework/unmanaged-api/hosting/ihostassemblystore-provideassembly-method.md)ランタイム識別子を使用して決定メソッドが返されるかどうかの内容、`IStream`マップされています。 場合は、ランタイムは、ストリームを再割り当てするのではなく、既存のコピーを読み込みます。 ランタイムへの呼び出しから返されるストリームのルックアップ キーとしてこの識別子を使用するも、`IHostAssemblyStore::ProvideAssembly`メソッドです。 したがって、識別子は、アセンブリの要求だけモジュール同様の要求の一意である必要があります。  
+ `ModuleBindInfo` パラメーターとして渡される`IHostAssemblyStore::ProvideModule`です。 ホスト提供の一意識別子`dwAppDomainId`共通言語ランタイム (CLR) にします。 呼び出した後、 [ihostassemblystore::provideassembly](../../../../docs/framework/unmanaged-api/hosting/ihostassemblystore-provideassembly-method.md)ランタイム識別子を使用して決定メソッドが返されるかどうかの内容、`IStream`マップされています。 場合は、ランタイムは、ストリームを再割り当てするのではなく、既存のコピーを読み込みます。 ランタイムへの呼び出しから返されるストリームのルックアップ キーとしてこの識別子を使用するも、`IHostAssemblyStore::ProvideAssembly`メソッドです。 したがって、識別子は、アセンブリの要求だけモジュール同様の要求の一意である必要があります。  
   
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** MSCorEE.idl  
   
  **ライブラリ:** MSCorEE.dll にリソースとして含まれています。  
   
- **.NET framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ホスト構造体](../../../../docs/framework/unmanaged-api/hosting/hosting-structures.md)  
  [AssemblyBindInfo 構造体](../../../../docs/framework/unmanaged-api/hosting/assemblybindinfo-structure.md)  
  [ICLRAssemblyIdentityManager インターフェイス](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyidentitymanager-interface.md)  

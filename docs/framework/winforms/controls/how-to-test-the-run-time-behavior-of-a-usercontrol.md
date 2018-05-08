@@ -1,13 +1,6 @@
 ---
-title: "方法 : UserControl の実行時の動作をテストする"
-ms.custom: 
+title: '方法 : UserControl の実行時の動作をテストする'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - UserControl class [Windows Forms], testing
 - user controls [Windows Forms], testing
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - UserControl Test Container
 - UserControl class [Windows Forms], run-time behavior
 ms.assetid: 4e4d5c49-1346-40ac-9d96-40211b573583
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 48b7c47a14f27439c60280a5c4202e9f4af76397
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: ac846840f7d420da63f6bfe3db3772d7bf6cc730
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-test-the-run-time-behavior-of-a-usercontrol"></a>方法 : UserControl の実行時の動作をテストする
 開発する際に、<xref:System.Windows.Forms.UserControl>実行時の動作をテストする必要があります。 個別の Windows ベースのアプリケーション プロジェクトを作成し、テスト フォームにコントロールを配置することができますが、この手順は便利ではありません。 高速で簡単には、 **UserControl テスト コンテナー** Visual Studio が提供されます。 このテスト コンテナーは、Windows コントロール ライブラリ プロジェクトから直接起動します。  
@@ -77,7 +65,7 @@ ms.lasthandoff: 01/19/2018
   
 6.  使用して、**ユーザー コントロールの選択**<xref:System.Windows.Forms.ComboBox>から 2 つのユーザー コントロールの間で切り替えるには、**ファイルを開く**プロジェクト。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.UserControl>  
  [方法: 複合コントロールを作成する](../../../../docs/framework/winforms/controls/how-to-author-composite-controls.md)  
  [チュートリアル : Visual Basic による複合コントロールの作成](../../../../docs/framework/winforms/controls/walkthrough-authoring-a-composite-control-with-visual-basic.md)  

@@ -1,11 +1,6 @@
 ---
-title: "While...End While ステートメント (Visual Basic)"
+title: While...End While ステートメント (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.While
 - vb.While...EndWhile
@@ -14,14 +9,11 @@ helpviewer_keywords:
 - While statement [Visual Basic]
 - While...End While statements [Visual Basic]
 ms.assetid: b931d1ce-e8ed-44d8-a13d-92a4f5458a1e
-caps.latest.revision: "22"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 5f831f233eaa4f1c38d56f3a89bda9b0cf1bccaa
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 9f46a6ec65faef4448bdd25e30a6cc0c605cd0f2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="whileend-while-statement-visual-basic"></a>While...End While ステートメント (Visual Basic)
 指定された条件が限りは、一連のステートメントを実行`True`です。  
@@ -42,11 +34,11 @@ End While
   
 |用語|定義|  
 |---|---|  
-|`condition`|必須です。 `Boolean`式。 場合`condition`は`Nothing`、Visual Basic として扱います`False`です。|  
-|`statements`|省略可能です。 1 つまたは複数のステートメント次`While`、たびに実行される`condition`は`True`します。|  
-|`Continue While`|省略可能です。 次のイテレーションに制御を転送、`While`ブロックします。|  
-|`Exit While`|省略可能です。 うちの制御を転送、`While`ブロックします。|  
-|`End While`|必須です。 `While` ブロックの定義を終了します。|  
+|`condition`|必須。 `Boolean` 式。 場合`condition`は`Nothing`、Visual Basic として扱います`False`です。|  
+|`statements`|任意。 1 つまたは複数のステートメント次`While`、たびに実行される`condition`は`True`します。|  
+|`Continue While`|任意。 次のイテレーションに制御を転送、`While`ブロックします。|  
+|`Exit While`|任意。 うちの制御を転送、`While`ブロックします。|  
+|`End While`|必須。 `While` ブロックの定義を終了します。|  
   
 ## <a name="remarks"></a>コメント  
  使用して、`While...End While`条件が限り回数、不特定数のステートメントのセットを繰り返したいときに`True`です。 方がよい場合に、その条件をテストするか、結果の判定をより柔軟にテストする場合、[操作を行います.ステートメントをループ](../../../visual-basic/language-reference/statements/do-loop-statement.md)です。 セット回数だけ、ステートメントを繰り返し使用する場合、[をしています.次のステートメントの](../../../visual-basic/language-reference/statements/for-next-statement.md)は通常、ことをお勧めします。  
@@ -63,7 +55,7 @@ End While
  入れ子にすることができます`While`別内で 1 つのループを配置することでループします。 さまざまな種類の制御構造を入れ子にすることもできます。 詳細については、次を参照してください。[制御構造の入れ子になった](../../../visual-basic/programming-guide/language-features/control-flow/nested-control-structures.md)です。  
   
 ## <a name="exit-while"></a>中に終了  
- [終了中に](../../../visual-basic/language-reference/statements/exit-statement.md)ステートメントが終了する別の方法を提供できます、`While`ループします。 `Exit While`すぐに続くステートメントに制御を転送、`End While`ステートメントです。  
+ [終了中に](../../../visual-basic/language-reference/statements/exit-statement.md)ステートメントが終了する別の方法を提供できます、`While`ループします。 `Exit While` すぐに続くステートメントに制御を転送、`End While`ステートメントです。  
   
  通常使用`Exit While`いくつかの条件が評価された後 (たとえば、`If...Then...Else`構造) です。 不要な値が間違っているか、終了要求など、繰り返し処理を続行不可能になったりする条件を検出した場合、ループを終了する可能性があります。 使用することができます`Exit While`原因となる条件をテストするとき、*無限ループ*、これは、非常に大規模なまたは無限も可能回数だけ実行できるループします。 使用してできます`Exit While`ループをエスケープするためにします。  
   

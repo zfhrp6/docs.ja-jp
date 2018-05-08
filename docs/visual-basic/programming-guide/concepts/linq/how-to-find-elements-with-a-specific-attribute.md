@@ -1,22 +1,12 @@
 ---
-title: "方法: 特定の属性 (XPATH-LINQ to XML) を持つ要素を検索 (Visual Basic)"
-ms.custom: 
+title: '方法: 特定の属性 (XPATH-LINQ to XML) を持つ要素を検索 (Visual Basic)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 4bb38d2c-bc7c-4196-8909-aaf41fb86b28
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 3c4904ef70b2c978d73514302e726aba8f14fc20
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 9a50eb792a074d245651231678bfea72f124f344
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-find-elements-with-a-specific-attribute-xpath-linq-to-xml-visual-basic"></a>方法: 特定の属性 (XPATH-LINQ to XML) を持つ要素を検索 (Visual Basic)
 特定の属性を持つすべての要素を検索しなければならない場合があります。 属性の内容は問わず、 属性の存在に基づいて選択を行うような場合です。  

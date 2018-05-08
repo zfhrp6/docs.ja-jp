@@ -1,31 +1,17 @@
 ---
 title: '方法 : 構成でクライアント バインディングを指定する'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 4a7c79aa-50ee-4991-891e-adc0599323a7
-caps.latest.revision: 11
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 2441fd7507c5bb368405685598480650114b76a9
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: e2ea5a4b1c2ca9b661be5d4c653a3b5668bd26f5
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-specify-a-client-binding-in-configuration"></a>方法 : 構成でクライアント バインディングを指定する
 この例では、電卓サービスを使用するためのクライアント コンソール アプリケーションを作成し、そのクライアントのバインディングを構成で宣言によって指定します。 クライアントは `CalculatorService` にアクセスします。これにより、`ICalculator` インターフェイスが実装され、サービスとクライアントの両方で <xref:System.ServiceModel.BasicHttpBinding> クラスが使用されます。  
   
- ここで説明する手順は、電卓サービスが実行されていることを前提とします。 サービスを構築する方法については、次を参照してください。[する方法: 構成では、サービス バインドを指定して](../../../docs/framework/wcf/how-to-specify-a-service-binding-in-configuration.md)です。 また、使用、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)を[!INCLUDE[indigo1](../../../includes/indigo1-md.md)]クライアント コンポーネントを自動的に生成する提供します。 このツールにより、サービスにアクセスするためのクライアント コードと構成が生成されます。  
+ ここで説明する手順は、電卓サービスが実行されていることを前提とします。 サービスを構築する方法については、次を参照してください。[する方法: 構成では、サービス バインドを指定して](../../../docs/framework/wcf/how-to-specify-a-service-binding-in-configuration.md)です。 また、使用、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)クライアント コンポーネントを自動的に生成する Windows Communication Foundation (WCF) が提供します。 このツールにより、サービスにアクセスするためのクライアント コードと構成が生成されます。  
   
  クライアントは 2 つの部分で構成されます。 Svcutil.exe によって、`ClientCalculator` インターフェイスを実装する `ICalculator` が生成されます。 次に、`ClientCalculator` のインスタンスを作成することで、クライアント アプリケーションを作成します。  
   

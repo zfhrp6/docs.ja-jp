@@ -1,26 +1,12 @@
 ---
 title: 探索検索と FindCriteria
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 99016fa4-1778-495b-b4cc-0e22fbec42c6
-caps.latest.revision: 6
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 17ca5e12390e33525f0223917e4c72556a2a2ec7
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 70739647ac5904159b71121e86aa98e92981d4ab
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="discovery-find-and-findcriteria"></a>探索検索と FindCriteria
 探索検索操作は、1 つ以上のサービスを探索するためにクライアントによって開始される操作であり、探索における主要なアクションの 1 つです。 検索を実行すると、WS-Discovery Probe メッセージがネットワークを介して送信されます。 指定された条件に一致するサービスは、WS-Discovery ProbeMatch メッセージを使用して応答します。 探索メッセージの詳細については、次を参照してください。、 [Ws-discovery 仕様](http://go.microsoft.com/fwlink/?LinkID=122347)です。  
@@ -33,7 +19,7 @@ ms.lasthandoff: 04/30/2018
   
  検索条件は、次のとおりです。  
   
--   <xref:System.ServiceModel.Discovery.Configuration.ContractTypeNameElement> - 省略できます。 検索対象のサービスのコントラクト名、およびサービスの検索に通常使用される条件を指定します。 複数のコントラクト名が指定されると、すべてのコントラクトに一致するサービス エンドポイントのみが応答します。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、各エンドポイントでサポートされるコントラクトは 1 つだけです。  
+-   <xref:System.ServiceModel.Discovery.Configuration.ContractTypeNameElement> - 省略できます。 検索対象のサービスのコントラクト名、およびサービスの検索に通常使用される条件を指定します。 複数のコントラクト名が指定されると、すべてのコントラクトに一致するサービス エンドポイントのみが応答します。 WCF ではエンドポイントのみをサポートできること 1 つのコントラクトに注意してください。  
   
 -   <xref:System.ServiceModel.Discovery.Configuration.ScopeElement> - 省略できます。 Scopes は、個々のサービス エンドポイントの分類に使用される絶対 URI です。 複数のエンドポイントが同じコントラクトを公開し、これらのエンドポイントのサブセットを検索する手段が必要な場合は、これを使用できます。 複数のスコープが指定されると、すべてのスコープに一致するサービス エンドポイントのみが応答します。  
   

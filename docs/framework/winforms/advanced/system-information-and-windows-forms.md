@@ -1,13 +1,6 @@
 ---
-title: "システム情報と Windows フォーム"
-ms.custom: 
+title: システム情報と Windows フォーム
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,16 +10,11 @@ helpviewer_keywords:
 - user names [Windows Forms], retrieving
 - system information [Windows Forms]
 ms.assetid: 30cf43a3-8cb2-4ff3-862b-6c34576616a8
-caps.latest.revision: "7"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 685a62b885469a9cac8884cc045b67bac02bea80
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 727bcc53750081ae2d957527332ed3199c7d8e8b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="system-information-and-windows-forms"></a>システム情報と Windows フォーム
 コードで意思決定を行うために、アプリケーションが実行されているコンピューターに関する情報を収集するために必要な場合があります。 たとえば、のみ、特定のネットワークのドメインに接続されている場合に適用される関数がある可能性があります。ここでは、ドメインを確認して、ドメインが存在しない場合、関数を無効にする方法を必要があります。  
@@ -53,6 +41,6 @@ MessageBox.Show("Good morning " + User + ". You are connected to " _
   
  一部のより有用なメンバーの<xref:System.Windows.Forms.SystemInformation>クラスが含まれて<xref:System.Windows.Forms.SystemInformation.ComputerName%2A>、 <xref:System.Windows.Forms.SystemInformation.DbcsEnabled%2A>、 <xref:System.Windows.Forms.SystemInformation.PowerStatus%2A>、および<xref:System.Windows.Forms.SystemInformation.TerminalServerSession%2A>です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.SystemInformation>  
  [Windows フォームでの電源管理](../../../../docs/framework/winforms/advanced/power-management-in-windows-forms.md)

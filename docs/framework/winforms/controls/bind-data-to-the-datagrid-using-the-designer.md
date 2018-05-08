@@ -1,28 +1,16 @@
 ---
-title: "方法 : デザイナーを使用してデータを Windows フォーム DataGridView コントロールにバインドする"
-ms.custom: 
+title: '方法 : デザイナーを使用してデータを Windows フォーム DataGridView コントロールにバインドする'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - Windows Forms controls, binding to a data source
 - data sources [Windows Forms], binding to Windows Forms controls
 - DataGridView control [Windows Forms], data binding
 ms.assetid: f4f46009-cec2-441b-8668-6b5af057558b
-caps.latest.revision: "23"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 3a3c7422bc83c7ee1f09bac05333799708cd2f2f
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: abed528c9421b878f49817ca60f554cbe3d68a0c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-bind-data-to-the-windows-forms-datagridview-control-using-the-designer"></a>方法 : デザイナーを使用してデータを Windows フォーム DataGridView コントロールにバインドする
 接続するデザイナーを使用することができます、<xref:System.Windows.Forms.DataGridView>データベース、ビジネス オブジェクト、または Web サービスなど、いくつかの異なる種類のデータ ソースへのコントロールです。 デザイナーを使用してデータ ソースにコントロールをバインドすると、自動的にコントロールを<xref:System.Windows.Forms.BindingSource>コンポーネントをデータ ソースを表します。 さらに、データ ソースによって提供されるスキーマ情報に対応するように、このコントロールの列が自動的に生成されます。  
@@ -55,7 +43,7 @@ ms.lasthandoff: 01/19/2018
     > [!NOTE]
     >  プロジェクトにデータ ソースが既にある場合は、**[データソース]** ウィンドウを使用してデータ フォームを作成することもできます。 詳細については、「[[データ ソース] ウィンドウ](http://msdn.microsoft.com/library/0d20f699-cc95-45b3-8ecb-c7edf1f67992)」を参照してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.DataGridView>  
  <xref:System.Windows.Forms.BindingSource>  
  <xref:System.Windows.Forms.DataGridView.DataMember%2A?displayProperty=nameWithType>  

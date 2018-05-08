@@ -1,13 +1,6 @@
 ---
-title: "方法 : コマンドを有効にする"
-ms.custom: 
+title: '方法 : コマンドを有効にする'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - CommandBindings [WPF]
 - commanding [WPF]
 ms.assetid: d8016266-58d9-48f7-8298-a86b7ed49fbd
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b27f8544a44a252eb1a1afd6e096f303360c14e5
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 81ae2e46c4fdd8b46e2b72b9a1430437ebfe97b2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-enable-a-command"></a>方法 : コマンドを有効にする
 次の例は、のコマンドを使用する方法を示します[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]です。  関連付ける方法の例、<xref:System.Windows.Input.RoutedCommand>を<xref:System.Windows.Controls.Button>、作成、<xref:System.Windows.Input.CommandBinding>を実装するイベント ハンドラーを作成し、<xref:System.Windows.Input.RoutedCommand>です。  コマンド実行の詳細については、次を参照してください。、[コマンド実行の概要](../../../../docs/framework/wpf/advanced/commanding-overview.md)です。  
@@ -50,5 +38,5 @@ ms.lasthandoff: 12/22/2017
  [!code-csharp[EnableCloseCommand#CloseCommandHandler](../../../../samples/snippets/csharp/VS_Snippets_Wpf/EnableCloseCommand/CSharp/Window1.xaml.cs#closecommandhandler)]
  [!code-vb[EnableCloseCommand#CloseCommandHandler](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/EnableCloseCommand/VisualBasic/Window1.xaml.vb#closecommandhandler)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [コマンド実行の概要](../../../../docs/framework/wpf/advanced/commanding-overview.md)

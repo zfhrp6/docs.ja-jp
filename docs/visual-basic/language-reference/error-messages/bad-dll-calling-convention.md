@@ -1,23 +1,14 @@
 ---
 title: DLL を正しく呼び出せません。
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vbrID49
 ms.assetid: 7c7def45-b0ab-450f-ad3f-4383dfd9aed7
-caps.latest.revision: 8
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: daa84e82d2fbe1041af56fdd5cc3855efd814ddf
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: d8c7f7aea46162215115689305f4010cb513b020
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="bad-dll-calling-convention"></a>DLL を正しく呼び出せません。
 ダイナミック リンク ライブラリ (DLL) に渡された引数が、ルーチンによって予測されるを正確に一致する必要があります。 呼び出し規約は、サーバーの数、種類、および引数の順序を使用します。 プログラムが間違った型または引数の数が渡される DLL にルーチンを呼び出している可能性があります。  

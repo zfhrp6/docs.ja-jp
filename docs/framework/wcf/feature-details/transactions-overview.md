@@ -1,30 +1,16 @@
 ---
 title: Windows Communication Foundation のトランザクションの概要
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - transactions [WCF]
 - WCF, transactions
 - Windows Communication Foundation, transactions
 ms.assetid: c7757854-1207-4019-8b31-552578b7d570
-caps.latest.revision: 16
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 76edd7cf30d9da06db6e0c2f4624bf9a6d677eca
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 63f3826215f24a4bab6d84709c2f9da6a9c8f4f9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="windows-communication-foundation-transactions-overview"></a>Windows Communication Foundation のトランザクションの概要
 トランザクションを使用すると、一連の処理や操作を 1 つの不可分の実行単位にグループ化できます。 トランザクションとは、次の性質を持つ操作のコレクションです。  
@@ -37,9 +23,9 @@ ms.lasthandoff: 04/28/2018
   
 -   持続性。 マネージ リソース (データベース レコードなど) に対して 1 度コミットされた更新は、障害に直面しても永続的に残ります。  
   
- [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] は、Web サービスアプリケーション内で分散トランザクションを作成できる一連の豊富な機能を提供します。  
+ Windows Communication Foundation (WCF) では、Web サービス アプリケーションで分散トランザクションを作成することが可能な機能の豊富なセットを提供します。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、WS-AtomicTransaction (WS-AT) プロトコル サポートを実装します。このプロトコルにより [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションは、サードパーティ技術を使って作成された相互運用可能な Web サービスなど、相互運用可能アプリケーションにトランザクションをフローすることができます。 また、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、OLE トランザクション プロトコル サポートも実装します。このプロトコルは、トランザクションのフローを有効にする相互運用可能な機能が必要とされないシナリオで使用することができます。  
+ WCF では、WCF アプリケーションなどのサードパーティのテクノロジを使用して構築された相互運用の Web サービスの相互運用可能アプリケーションにトランザクションをフローできるように、Ws-atomictransaction (WS-AT) プロトコルのサポートを実装します。 WCF では、使用できるシナリオでトランザクション フローを有効にする相互運用機能が不要 OLE トランザクション プロトコルのサポートも実装します。  
   
  アプリケーション構成ファイルを使用してバインディングを構成し、トランザクション フローを有効にしたり無効にしたりできます。また、バインディングに目的のトランザクション プロトコルを設定できます。 さらに、構成ファイルを使用してサービス レベルでのトランザクションのタイムアウトを設定できます。 詳細については、次を参照してください。[トランザクション フローを有効にすると](../../../../docs/framework/wcf/feature-details/enabling-transaction-flow.md)です。  
   

@@ -1,11 +1,6 @@
 ---
-title: "RaiseEvent ステートメント"
+title: RaiseEvent ステートメント
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.RaiseEventMethod
 - vb.RaiseEvent
@@ -15,14 +10,11 @@ helpviewer_keywords:
 - RaiseEvent statement [Visual Basic]
 - event handlers, connecting events to
 ms.assetid: f82e380a-1e6b-4047-bea8-c853f4d2c742
-caps.latest.revision: "19"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: e6ba5ce4b009e0d8c675db07b56b9811c595ae2f
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: 19949fbdb1c1c54556876323d839b16fc01608f9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="raiseevent-statement"></a>RaiseEvent ステートメント
 クラス、フォーム、またはドキュメント内のモジュール レベルで宣言されているイベントをトリガーします。  
@@ -82,7 +74,7 @@ RaiseEvent eventname[( argumentlist )]
 > [!NOTE]
 >  `My.Application.DoEvents`の形式として、メソッドがまったく同じ方法でイベントを処理できません。 使用することができますを許可するフォームがイベントを直接処理する場合のマルチ スレッド化します。 詳細については、次を参照してください。[スレッド](../../programming-guide/concepts/threading/index.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [イベント](../../../visual-basic/programming-guide/language-features/events/index.md)  
  [Event ステートメント](../../../visual-basic/language-reference/statements/event-statement.md)  
  [AddHandler ステートメント](../../../visual-basic/language-reference/statements/addhandler-statement.md)  

@@ -1,24 +1,12 @@
 ---
-title: "DataContractSerializer と DataContractResolver を使用した NetDataContractSerializer 機能の提供"
-ms.custom: 
+title: DataContractSerializer と DataContractResolver を使用した NetDataContractSerializer 機能の提供
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 1376658f-f695-45f7-a7e0-94664e9619ff
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 5477f11b5bc00ff4816b3fac8d61b254ebaf5ba0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a9dde936f2daff669aabe36c5f03203a472d435c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-datacontractserializer-and-datacontractresolver-to-provide-the-functionality-of-netdatacontractserializer"></a>DataContractSerializer と DataContractResolver を使用した NetDataContractSerializer 機能の提供
 このサンプルでは、<xref:System.Runtime.Serialization.DataContractSerializer> を適切な <xref:System.Runtime.Serialization.DataContractResolver> と共に使用して、<xref:System.Runtime.Serialization.NetDataContractSerializer> と同じ機能を提供する方法を示します。 このサンプルで示すのは、<xref:System.Runtime.Serialization.DataContractResolver> を作成して <xref:System.Runtime.Serialization.DataContractSerializer> に追加する方法です。  
@@ -72,7 +60,7 @@ class MyDataContractResolver : DataContractResolver
   
 2.  ソリューション ファイルを右クリックして選択**プロパティ**です。  
   
-3.  **ソリューション プロパティ ページ**ダイアログ **共通プロパティ**、**スタートアップ プロジェクト****マルチ スタートアップ プロジェクト:**です。  
+3.  **ソリューション プロパティ ページ**ダイアログ **共通プロパティ**、**スタートアップ プロジェクト****マルチ スタートアップ プロジェクト:** です。  
   
 4.  横に、 **DCSwithDCR**プロジェクトで、**開始**から、**アクション**ドロップダウンします。  
   
@@ -89,8 +77,8 @@ class MyDataContractResolver : DataContractResolver
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
+>  このディレクトリが存在しない場合に、 [Windows Communication Foundation (WCF) および .NET Framework 4 向けの Windows Workflow Foundation (WF) サンプル](http://go.microsoft.com/fwlink/?LinkId=150780)すべて Windows Communication Foundation (WCF) をダウンロードして[!INCLUDE[wf1](../../../../includes/wf1-md.md)]サンプルです。 このサンプルは、次のディレクトリに格納されます。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Data\NetDcSasDcSwithDCR`  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目

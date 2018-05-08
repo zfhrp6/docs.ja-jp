@@ -1,13 +1,6 @@
 ---
-title: "GDI+ での領域"
-ms.custom: 
+title: GDI+ での領域
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,16 +9,11 @@ helpviewer_keywords:
 - drawing [Windows Forms], regions
 - regions
 ms.assetid: 52184f9b-16dd-4bbd-85be-029112644ceb
-caps.latest.revision: "15"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 2d3805c2d67f5241425ef72d3802aba996d33cfb
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: dc7f10571163d447802c90cd61d71b11d0e695d4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="regions-in-gdi"></a>GDI+ での領域
 領域は、出力デバイスの表示領域の一部です。 領域には、単純な (1 つの四角形) または複合型 (多角形と閉じた曲線の組み合わせ) を指定できます。 次の図は、2 つの領域を示します: 四角形は、1 つ構築され、パスから構築されました。  
@@ -50,7 +38,7 @@ ms.lasthandoff: 12/22/2017
  [!code-csharp[LinesCurvesAndShapes#61](../../../../samples/snippets/csharp/VS_Snippets_Winforms/LinesCurvesAndShapes/CS/Class1.cs#61)]
  [!code-vb[LinesCurvesAndShapes#61](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/LinesCurvesAndShapes/VB/Class1.vb#61)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Drawing.Region?displayProperty=nameWithType>  
  [直線、曲線、および図形](../../../../docs/framework/winforms/advanced/lines-curves-and-shapes.md)  
  [領域の使用](../../../../docs/framework/winforms/advanced/using-regions.md)

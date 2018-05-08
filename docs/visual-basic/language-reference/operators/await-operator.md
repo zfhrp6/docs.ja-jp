@@ -1,26 +1,17 @@
 ---
 title: Await 演算子 (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Await
 helpviewer_keywords:
 - Await operator [Visual Basic]
 - Await [Visual Basic]
 ms.assetid: 6b1ce283-e92b-4ba7-b081-7be7b3d37af9
-caps.latest.revision: 30
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: d639d1398c0f783fcfa40ee9ff278922fd6fc7b5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: b24b637969ced9b30644abda022db086dc91c1e3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="await-operator-visual-basic"></a>Await 演算子 (Visual Basic)
 `Await` 演算子は、非同期のメソッドまたはラムダ式のオペランドに適用されて、待機中のタスクが完了するまでメソッドの実行を中断します。 このタスクは、進行中の作業を表します。  
@@ -32,7 +23,7 @@ ms.lasthandoff: 11/21/2017
   
  適用するタスクでは通常、`Await`演算子を実装するメソッドへの呼び出しからの戻り値、[タスク ベースの非同期パターン](http://go.microsoft.com/fwlink/?LinkId=204847),、つまり、<xref:System.Threading.Tasks.Task>または<xref:System.Threading.Tasks.Task%601>です。  
   
- 次のコードでは、<xref:System.Net.Http.HttpClient> メソッドの <xref:System.Net.Http.HttpClient.GetByteArrayAsync%2A> が `getContentsTask` (`Task(Of Byte())`) を返します。 これにより、操作が完了したときに実際のバイト配列が生成されることが保証されます。 `Await` 演算子が `getContentsTask` に適用されているため、`SumPageSizesAsync` が完了するまで `getContentsTask` の実行が中断されます。 その間、コントロールは `SumPageSizesAsync` の呼び出し元に戻されます。 `getContentsTask` が終了すると、`Await` 式がバイト配列に評価されます。  
+ 次のコードでは、<xref:System.Net.Http.HttpClient> メソッドの <xref:System.Net.Http.HttpClient.GetByteArrayAsync%2A> が `getContentsTask` (`Task(Of Byte())`) を返します。 タスクにより、操作が完了したときに実際のバイト配列が生成されることが保証されます。 `Await` 演算子が `getContentsTask` に適用されているため、`SumPageSizesAsync` が完了するまで `getContentsTask` の実行が中断されます。 その間、コントロールは `SumPageSizesAsync` の呼び出し元に戻されます。 `getContentsTask` が終了すると、`Await` 式がバイト配列に評価されます。  
   
 ```vb  
 Private Async Function SumPageSizesAsync() As Task  

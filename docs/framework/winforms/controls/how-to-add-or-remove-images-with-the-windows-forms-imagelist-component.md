@@ -1,13 +1,6 @@
 ---
-title: "方法 : Windows フォームの ImageList コンポーネントにイメージを追加または削除する"
-ms.custom: 
+title: '方法 : Windows フォームの ImageList コンポーネントにイメージを追加または削除する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -20,16 +13,11 @@ helpviewer_keywords:
 - images [Windows Forms], adding to ImageList component
 - images [Windows Forms], displaying with controls
 ms.assetid: c5eacc56-f769-4e2e-bfb7-f756620913db
-caps.latest.revision: "15"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 4e09448cb834453a4c8fce4494ab9fbb53eb0dc3
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e5c563c4f46924a95936bc5a51862230f2cbdb99
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-add-or-remove-images-with-the-windows-forms-imagelist-component"></a>方法 : Windows フォームの ImageList コンポーネントにイメージを追加または削除する
 Windows フォーム<xref:System.Windows.Forms.ImageList>コンポーネントには通常、イメージ コントロールに関連付けられている前にします。 ただし、追加し、イメージ リスト コントロールとの関連付けの後イメージを削除します。  
@@ -154,7 +142,7 @@ imageList1.Images.Clear();
 imageList1.Images.RemoveByKey("myPhoto");  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ImageList コンポーネント](../../../../docs/framework/winforms/controls/imagelist-component-windows-forms.md)  
  [ImageList コンポーネントの概要](../../../../docs/framework/winforms/controls/imagelist-component-overview-windows-forms.md)  
  [イメージ、ビットマップ、メタファイル](../../../../docs/framework/winforms/advanced/images-bitmaps-and-metafiles.md)

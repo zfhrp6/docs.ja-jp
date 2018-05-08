@@ -1,27 +1,15 @@
 ---
-title: "XAMLServices クラスおよび基本的な XAML の読み取りまたは書き込み"
-ms.custom: 
+title: XAMLServices クラスおよび基本的な XAML の読み取りまたは書き込み
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - XAML [XAML Services], XamlServices class
 - XamlServices class [XAML Services], how to use
 ms.assetid: 6ac27fad-3687-4d7a-add1-3e90675fdfde
-caps.latest.revision: "11"
-author: wadepickett
-ms.author: wpickett
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 30d94534f0da0e3946d036fd8e0db59971615c0f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 27c7a45a45e8bbe3594813b29344d1548eecda5e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="xamlservices-class-and-basic-xaml-reading-or-writing"></a>XAMLServices クラスおよび基本的な XAML の読み取りまたは書き込み
 <xref:System.Xaml.XamlServices> は、XAML ノード ストリーム、またはこれらのノードから取得された XAML 型システム情報への固有のアクセスを必要としない XAML シナリオに対応するために使用できる、.NET Framework XAML サービスによって提供されるクラスです。 要約すると、<xref:System.Xaml.XamlServices> API は次のように説明できます。 `Load` または `Parse` to suppまたはt a XAML load path, `Save` to suppまたはt a XAML save path, and `Transform` で読み込みパスと保存パスを連結する方法を指定します。 `Transform` は、XAML スキーマを別の XAML スキーマに変更するために使用できます。 このトピックでは、それぞれの API 分類について要約し、特定のメソッド オーバーロード間の相違点について説明します。  
@@ -72,7 +60,7 @@ ms.lasthandoff: 12/22/2017
   
  XAML ノード ストリームの各ノードの確認に依存する操作については、通常、 <xref:System.Xaml.XamlServices.Transform%2A>は使用しません。 代わりに、読み込みパスから保存パスへの一連の操作を独自に定義し、独自のロジックを挿入する必要があります。 たとえば、独自のノード ループの中で XAML リーダーと XAML ライターのペアを使用します。 具体的に言うと、 <xref:System.Xaml.XamlXmlReader> を使用して最初の XAML を読み込み、 <xref:System.Xaml.XamlXmlReader.Read%2A> を連続的に呼び出してノードにステップ インします。 XAML ノード ストリーム レベルの操作では、個々のノード (型、メンバー、その他のノード) を調整して変換を適用するか、ノードをそのままにしておくことができます。 その後、ノードを `Write` の関連する <xref:System.Xaml.XamlObjectWriter> API に送り、オブジェクトを書き込みます。 詳細については、「 [Understanding XAML Node Stream Structures and Concepts](../../../docs/framework/xaml-services/understanding-xaml-node-stream-structures-and-concepts.md)」を参照してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Xaml.XamlObjectWriter>  
  <xref:System.Xaml.XamlServices>  
  [XAML サービス](../../../docs/framework/xaml-services/index.md)

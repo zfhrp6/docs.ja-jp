@@ -1,13 +1,6 @@
 ---
-title: "変換を使用した色のスケーリング"
-ms.custom: 
+title: 変換を使用した色のスケーリング
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - transformations [Windows Forms], for scaling colors
 - colors [Windows Forms], scaling
 ms.assetid: df23c887-7fd6-4b15-ad94-e30b5bd4b849
-caps.latest.revision: "13"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 7515f34858ef6f4b0495ac6fc545ae498d45c7f9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6cfe90cef42086672990c45c99961db3d29c3ff3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-transformations-to-scale-colors"></a>変換を使用した色のスケーリング
 拡大縮小変換は、番号で 4 つの色要素の 1 つ以上を乗算します。 拡大/縮小を表すカラー マトリックス エントリは、次の表で表されます。  
@@ -74,7 +62,7 @@ ms.lasthandoff: 12/22/2017
 |(1, 1, 0, 1)|(0.75, 0.65, 0, 1)|  
 |(1, 0, 1, 1)|(0.75, 0, 0.5, 1)|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Drawing.Imaging.ColorMatrix>  
  <xref:System.Drawing.Imaging.ImageAttributes>  
  [Windows フォームにおけるグラフィックスと描画](../../../../docs/framework/winforms/advanced/graphics-and-drawing-in-windows-forms.md)  

@@ -1,26 +1,12 @@
 ---
 title: 双方向通信
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: fb64192d-b3ea-4e02-9fb3-46a508d26c60
-caps.latest.revision: 24
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 9eb37e7e307bc9748113e5580ee96c8863d3ef89
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: dfc332533b714083d149b2c1c4892626d2990fb0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="two-way-communication"></a>双方向通信
 このサンプルでは、双方向のトランザクション化キューを MSMQ を介して実行する方法を示します。 このサンプルでは、`netMsmqBinding` バインディングを使用します。 このサンプルのサービスは自己ホスト型コンソール アプリケーションであるので、サンプルを実行すると、キューに置かれたメッセージをサービスが受信するようすを観察できます。  
@@ -86,7 +72,7 @@ public void SubmitPurchaseOrder(PurchaseOrder po, string reportOrderStatusTo)
  MSMQ キュー名は、構成ファイルの appSettings セクションで指定されます。 サービスのエンドポイントは、構成ファイルの System.ServiceModel セクションで定義されます。  
   
 > [!NOTE]
->  MSMQ のキュー名とエンドポイント アドレスでは、若干異なるアドレス表記が使用されています。 MSMQ のキュー名では、ドット (.) を使用してローカル コンピューターを表し、バックスラッシュを使用してパスを区切ります。 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] のエンドポイント アドレスでは、net.msmq: スキームを使用します。"localhost" を使用してローカル コンピュータを表し、スラッシュを使用してパスを区切ります。 リモート コンピューターでホストされているキューからの読み出しを行うには、"." や "localhost" をリモート コンピューター名に置き換えます。  
+>  MSMQ のキュー名とエンドポイント アドレスでは、若干異なるアドレス表記が使用されています。 MSMQ のキュー名では、ドット (.) を使用してローカル コンピューターを表し、バックスラッシュを使用してパスを区切ります。 Windows Communication Foundation (WCF) のエンドポイント アドレスは、net.msmq:: スキームは、ローカルのコンピューターを"localhost"を使用し、パスはスラッシュを使用します。 リモート コンピューターでホストされているキューからの読み出しを行うには、"." や "localhost" をリモート コンピューター名に置き換えます。  
   
  サービスは自己ホスト型です。 MSMQ トランスポートを使用する場合、使用するキューをあらかじめ作成しておく必要があります。 手動で作成することもコードで作成することもできます。 このサンプルでは、サービスがキューの存在を確認し、必要な場合はキューを作成します。 キュー名は構成ファイルから読み込まれます。 ベース アドレスを使って、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)サービスにプロキシを生成します。  
 
@@ -340,7 +326,7 @@ Status of order 124a1f69-3699-4b16-9bcc-43147a8756fc:Pending
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
+>  このディレクトリが存在しない場合に、 [Windows Communication Foundation (WCF) および .NET Framework 4 向けの Windows Workflow Foundation (WF) サンプル](http://go.microsoft.com/fwlink/?LinkId=150780)すべて Windows Communication Foundation (WCF) をダウンロードして[!INCLUDE[wf1](../../../../includes/wf1-md.md)]サンプルです。 このサンプルは、次のディレクトリに格納されます。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Binding\Net\MSMQ\Two-Way`  
   

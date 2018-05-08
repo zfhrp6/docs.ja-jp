@@ -1,11 +1,7 @@
 ---
-title: "CloneEnumWbemClassObject 関数 (アンマネージ API リファレンス)"
-description: "CloneEnumWbemClassObject 関数は、列挙子の論理コピーを作成します。"
+title: CloneEnumWbemClassObject 関数 (アンマネージ API リファレンス)
+description: CloneEnumWbemClassObject 関数は、列挙子の論理コピーを作成します。
 ms.date: 11/06/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: reference
 api_name:
 - CloneEnumWbemClassObject
 api_location:
@@ -20,14 +16,11 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 22bcf2731ff682bf538858fc66a7a94be7f5d7df
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 71e881eca541d6a987fa7d27e1d73903f843e26a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="cloneenumwbemclassobject-function"></a>CloneEnumWbemClassObject 関数
 列挙体の現在位置を保持、列挙子の論理コピーを作成します。  
@@ -56,7 +49,7 @@ HRESULT CloneEnumWbemClassObject (
 `authLevel`  
 [in]承認レベル。
 
-`impLevel`[in]権限借用レベルです。
+`impLevel` [in]権限借用レベルです。
 
 `pCurrentEnumWbemClassObject`  
 [out]ポインター、 [IEnumWbemClassObject](https://msdn.microsoft.com/library/aa390857(v=vs.85).aspx)クローンを作成するインスタンス。
@@ -94,12 +87,12 @@ HRESULT CloneEnumWbemClassObject (
 
 例については、次を参照してください。、 [IEnumWbemClassObject::Clone](https://msdn.microsoft.com/library/aa390859(v=vs.85).aspx)メソッドです。
 
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** WMINet_Utils.idl  
   
- **.NET framework のバージョン:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **.NET framework のバージョン:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>関連項目  
 [WMI およびパフォーマンス カウンター (アンマネージ API リファレンス)](index.md)

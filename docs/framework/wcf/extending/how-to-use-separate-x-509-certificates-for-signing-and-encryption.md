@@ -1,14 +1,6 @@
 ---
 title: '方法 : 署名および暗号化に個別の X.509 証明書を使用する'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,20 +9,14 @@ helpviewer_keywords:
 - ClientCredentials class
 - ClientCredentialsSecurityTokenManager class
 ms.assetid: 0b06ce4e-7835-4d82-8baf-d525c71a0e49
-caps.latest.revision: 11
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: f6103dd8f680752581a51cba7ba61c83522decc2
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
-ms.translationtype: MT
+ms.openlocfilehash: d171af8dbcbbdd51cc015986a2c69e0393fe56dc
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-use-separate-x509-certificates-for-signing-and-encryption"></a>方法 : 署名および暗号化に個別の X.509 証明書を使用する
-ここでは、クライアントとサービスの両方においてメッセージの署名と暗号化とで別の証明書を使用するように [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] を構成する方法を示します。  
+このトピックでは、メッセージの署名とクライアントとサービスの両方で暗号化を別々 の証明書を使用するように、Windows Communication Foundation (WCF) を構成する方法を示します。  
   
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では複数のクライアント証明書またはサービス証明書を設定する API が提供されていないため、署名と暗号化で別の証明書を使用できるようにするには、カスタム クライアント資格情報またはカスタム サービス資格情報 (あるいはその両方) を作成する必要があります。 さらに、複数の証明書の情報を利用し、指定されたキーの使用方法やメッセージの方向について適切なセキュリティ トークン プロバイダーを作成するために、セキュリティ トークン マネージャーを用意する必要があります。  
   

@@ -1,28 +1,16 @@
 ---
-title: "x:Arguments ディレクティブ"
-ms.custom: 
+title: x:Arguments ディレクティブ
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - x:Arguments directive [XAML Services]
 - Arguments directive in XAML [XAML Services]
 - XAML [XAML Services], x:Arguments directive
 ms.assetid: 87cc10b0-b610-4025-b6b0-ab27ca27c92e
-caps.latest.revision: "12"
-author: wadepickett
-ms.author: wpickett
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: bb1f5986a0d9f9eb69ade0228925ec06164cee4d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e0e7f380ec176e80d2422878a2e676d64985d660
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="xarguments-directive"></a>x:Arguments ディレクティブ
 XAML では、既定以外のコンス トラクター オブジェクト要素の宣言またはファクトリ メソッドのオブジェクトの宣言は、パッケージ構築引数。  
@@ -55,7 +43,7 @@ XAML では、既定以外のコンス トラクター オブジェクト要素�
 |`methodName`|いずれかを処理するファクトリ メソッドの名前`x:Arguments`引数。|  
   
 ## <a name="dependencies"></a>依存関係  
- `x:FactoryMethod`スコープと動作を変更することができます、`x:Arguments`適用されます。  
+ `x:FactoryMethod` スコープと動作を変更することができます、`x:Arguments`適用されます。  
   
  ない場合は`x:FactoryMethod`が指定されている`x:Arguments`バッキング コンス トラクターの代替の (既定値) のシグネチャに適用されます。  
   
@@ -66,7 +54,7 @@ XAML では、既定以外のコンス トラクター オブジェクト要素�
   
  `x:Arguments` XAML の使用法がプロパティ要素の使用、一般的な意味で、ディレクティブのマークアップが含まれるオブジェクト要素の型を参照していないためです。 では他のディレクティブなど`x:Code`要素に子コンテンツの既定値以外にするマークアップを解釈する範囲境界を定めます場所。 オブジェクトの各要素の XAML の型がどの特定のコンス トラクターのファクトリ メソッドのシグネチャを決定する、XAML パーサーで使用される引数の型に関する情報がどのように通信するこの例では、`x:Arguments`参照しようとして使用します。  
   
- `x:Arguments`オブジェクト要素の構築される必要がありますの前に、他のプロパティ要素、コンテンツ、内部のテキスト、またはオブジェクト要素の初期化の文字列。 内のオブジェクト要素`x:Arguments`その XAML の型とそのバッキング コンス トラクターまたはファクトリ メソッドによって許可されている属性および初期化文字列を含むことができます。 オブジェクトまたは引数のいずれかのカスタム XAML の型または外側にあるそれ以外の場合、既定の XAML 名前空間によって確立されたプレフィックスのマッピングを参照する XAML の型を指定できます。  
+ `x:Arguments` オブジェクト要素の構築される必要がありますの前に、他のプロパティ要素、コンテンツ、内部のテキスト、またはオブジェクト要素の初期化の文字列。 内のオブジェクト要素`x:Arguments`その XAML の型とそのバッキング コンス トラクターまたはファクトリ メソッドによって許可されている属性および初期化文字列を含むことができます。 オブジェクトまたは引数のいずれかのカスタム XAML の型または外側にあるそれ以外の場合、既定の XAML 名前空間によって確立されたプレフィックスのマッピングを参照する XAML の型を指定できます。  
   
  XAML プロセッサに引数を指定する方法を決定する、次のガイドラインを使用して`x:Arguments`オブジェクトを構築するために使用する必要があります。 場合`x:FactoryMethod`が指定されている情報と比較を指定した`x:FactoryMethod`(なおの値`x:FactoryMethod`メソッド名であり、名前付きメソッドはオーバー ロードを持つことができます。 場合`x:FactoryMethod`が指定されていない、一連のオブジェクトのすべてのパブリック コンス トラクター オーバー ロードに情報を比較します。 XAML の処理ロジックは、パラメーターの数を比較し、アリティが一致するオーバー ロードを選択します。 複数の一致がある場合、XAML プロセッサは必要があります指定されたオブジェクトの要素の XAML の型に基づくパラメーターの型を比較します。 複数のまま 1 つの一致がある場合は、XAML プロセッサの動作は定義されません。 場合、`x:FactoryMethod`が指定されているメソッドを解決することはできませんが、XAML プロセッサは、例外をスローする必要があります。  
   
@@ -117,6 +105,6 @@ public Food TryLookupFood(string name)
 </my:Food>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [.NET Framework XAML サービスで使用するためのカスタム型の定義](../../../docs/framework/xaml-services/defining-custom-types-for-use-with-net-framework-xaml-services.md)  
  [XAML の概要 (WPF)](../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)

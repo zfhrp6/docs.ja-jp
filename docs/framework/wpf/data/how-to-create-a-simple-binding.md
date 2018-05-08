@@ -1,30 +1,16 @@
 ---
-title: "方法 : 簡単なバインディングを作成する"
-ms.custom: 
+title: '方法 : 簡単なバインディングを作成する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - simple binding [WPF], creating
 - data binding [WPF], creating simple bindings
 - binding data [WPF], creating
 ms.assetid: 69b80f72-6259-44cb-8294-5bdcebca1e08
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: a595f255b014e08b4b5b2036a7b1940e46df268f
-ms.sourcegitcommit: 973a12d1e6962cd9a9c263fbfaad040ec8267fe9
+ms.openlocfilehash: 8910dd3ec6c9f72f9d8fb64cd33912f0d4318e5f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/22/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-a-simple-binding"></a>方法 : 簡単なバインディングを作成する
 この例は、単純なを作成する方法を示します<xref:System.Windows.Data.Binding>です。  
@@ -38,6 +24,6 @@ ms.lasthandoff: 02/22/2018
   
  強調表示された行を含む、`<TextBlock>`要素にバインドし、<xref:System.Windows.Controls.TextBlock>コントロールを`PersonName`プロパティです。 その結果、<xref:System.Windows.Controls.TextBlock>値"Joe"とともに表示されます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [データ バインディングの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)  
  [方法トピック](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)

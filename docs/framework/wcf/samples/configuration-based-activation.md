@@ -1,34 +1,22 @@
 ---
-title: "構成ベースのアクティブ化"
-ms.custom: 
+title: 構成ベースのアクティブ化
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 21bb762e-c43e-4b0c-887b-5e434d665838
-caps.latest.revision: "26"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: d520a46bc3380fc5dff76f5df866ae3411d5a6a7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 2829458d40e3efb180699122570b2775a90be9e6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="configuration-based-activation"></a>構成ベースのアクティブ化
-このサンプルでは、.svc ファイルを使用せずに [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスをアクティブ化する方法を示します。  
+このサンプルでは、.svc ファイルを必要とせずに Windows Communication Foundation (WCF) サービスをアクティブ化する方法を示します。  
   
 > [!IMPORTANT]
 >  サンプルは、既にコンピューターにインストールされている場合があります。 続行する前に、次の (既定の) ディレクトリを確認してください。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
+>  このディレクトリが存在しない場合に、 [Windows Communication Foundation (WCF) および .NET Framework 4 向けの Windows Workflow Foundation (WF) サンプル](http://go.microsoft.com/fwlink/?LinkId=150780)すべて Windows Communication Foundation (WCF) をダウンロードして[!INCLUDE[wf1](../../../../includes/wf1-md.md)]サンプルです。 このサンプルは、次のディレクトリに格納されます。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Hosting\ConfigBasedActivation`  
   
@@ -71,7 +59,7 @@ ms.lasthandoff: 12/22/2017
   
 7.  Ctrl と Shift キーを押しながら A キーを押して、サービス アドレスを設定します。  
   
-8.  アドレスを http://localhost/ServiceModelSamples/Calculator.svc に設定します。  
+8.  アドレスに設定http://localhost/ServiceModelSamples/Calculator.svcです。  
   
 9. `Add` 操作を実行します。 `n1` パラメーターの値を 10 に、`n2` パラメーターの値を 15 に設定します。  
   
@@ -89,5 +77,5 @@ ms.lasthandoff: 12/22/2017
   
 4.  1 つまたは複数コンピューター構成でサンプルを実行する手順についてで[Windows Communication Foundation サンプルの実行](../../../../docs/framework/wcf/samples/running-the-samples.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [AppFabric ホスティングと永続性のサンプル](http://go.microsoft.com/fwlink/?LinkId=193961)

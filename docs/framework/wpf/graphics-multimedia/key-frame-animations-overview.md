@@ -1,28 +1,16 @@
 ---
-title: "キー フレーム アニメーションの概要"
-ms.custom: 
+title: キー フレーム アニメーションの概要
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - animation [WPF], key-frame
 - key frames [WPF], about key-frame animations
 - multiple animation target values [WPF]
 ms.assetid: 10028f97-bb63-41fc-b8ad-663dac7ea203
-caps.latest.revision: "29"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 38f0f6ac030af08039438b7e766c3f0f5bed7534
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8a18e0637b0fea7a1a960b157123da10819b4687
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="key-frame-animations-overview"></a>キー フレーム アニメーションの概要
 このトピックでは、キー フレーム アニメーションの概要を説明します。 キー フレーム アニメーションでは、3 つ以上のターゲット値を使用してアニメーション化することができ、アニメーションの補間方式を制御できます。  
@@ -59,7 +47,7 @@ ms.lasthandoff: 12/22/2017
   
  *\<Type>* `AnimationUsingKeyFrames`  
   
- ここで、*\<Type>*は、クラスがアニメーション化する値の型です。  
+ ここで、*\<Type>* は、クラスがアニメーション化する値の型です。  
   
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] は、次のキー フレーム アニメーション クラスを提供します。  
   
@@ -92,7 +80,7 @@ ms.lasthandoff: 12/22/2017
   
  *\<InterpolationMethod>\<Type>* `KeyFrame`  
   
- ここで、*\<InterpolationMethod>*は、キー フレームで使用される補間方式であり、*\<Type>*は、クラスがアニメーション化する値の型です。 3 つの補間方式のすべてをサポートするキー フレーム アニメーションでは、3 種類のキー フレームを使用できます。 次の 3 つのキー フレームの種類を使用するなど、 <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames>: <xref:System.Windows.Media.Animation.DiscreteDoubleKeyFrame>、 <xref:System.Windows.Media.Animation.LinearDoubleKeyFrame>、および<xref:System.Windows.Media.Animation.SplineDoubleKeyFrame>です。 (補間方式については、後のセクションで詳しく説明します)。  
+ ここで、*\<InterpolationMethod>* は、キー フレームで使用される補間方式であり、*\<Type>* は、クラスがアニメーション化する値の型です。 3 つの補間方式のすべてをサポートするキー フレーム アニメーションでは、3 種類のキー フレームを使用できます。 次の 3 つのキー フレームの種類を使用するなど、 <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames>: <xref:System.Windows.Media.Animation.DiscreteDoubleKeyFrame>、 <xref:System.Windows.Media.Animation.LinearDoubleKeyFrame>、および<xref:System.Windows.Media.Animation.SplineDoubleKeyFrame>です。 (補間方式については、後のセクションで詳しく説明します)。  
   
  キー フレームの主な目的を指定する、<xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A>と<xref:System.Windows.Media.Animation.IKeyFrame.Value%2A>です。 すべての種類のキー フレームには、次の 2 つのプロパティがあります。  
   
@@ -290,11 +278,11 @@ ms.lasthandoff: 12/22/2017
   
 6.  解決するには、<xref:System.Windows.Media.Animation.KeyTime>キー フレームの値は解決されている最も近い場所に宣言されているキー フレームを使用してキー時刻を指定しない<xref:System.Windows.Media.Animation.KeyTime>値。  
   
-7.  解決するには残り<xref:System.Windows.Media.Animation.KeyTime.Paced%2A><xref:System.Windows.Media.Animation.KeyTime>値。 <xref:System.Windows.Media.Animation.KeyTime.Paced%2A><xref:System.Windows.Media.Animation.KeyTime>を使用して、<xref:System.Windows.Media.Animation.KeyTime>の近隣の値のキー フレームの解決時間を決定します。  目標は、アニメーションの速度がこのキー フレームの解決時間近くで一定であることを保証することです。  
+7.  解決するには残り<xref:System.Windows.Media.Animation.KeyTime.Paced%2A><xref:System.Windows.Media.Animation.KeyTime>値。 <xref:System.Windows.Media.Animation.KeyTime.Paced%2A> <xref:System.Windows.Media.Animation.KeyTime> 使用して、<xref:System.Windows.Media.Animation.KeyTime>の近隣の値のキー フレームの解決時間を決定します。  目標は、アニメーションの速度がこのキー フレームの解決時間近くで一定であることを保証することです。  
   
 8.  つまり解決された時刻 (主キー) の順序と (セカンダリ キー) の宣言の順序でのキー フレームを並べ替え、安定した並べ替えに使用するが、解決済みのキー フレームに基づく<xref:System.Windows.Media.Animation.KeyTime>値。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Media.Animation.KeyTime>  
  <xref:System.Windows.Media.Animation.KeySpline>  
  <xref:System.Windows.Media.Animation.Timeline>  

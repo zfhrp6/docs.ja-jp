@@ -1,32 +1,18 @@
 ---
 title: リソース消費の制御とパフォーマンスの向上
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 9a829669-5f76-4c88-80ec-92d0c62c0660
-caps.latest.revision: 18
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 6e864e0a90dbb46f440e2eba2b676413c72e0da9
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
-ms.translationtype: MT
+ms.openlocfilehash: 031261f50a0615efa7227d3655c90c3423e77796
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="controlling-resource-consumption-and-improving-performance"></a>リソース消費の制御とパフォーマンスの向上
-ここでは、リソース消費を制御し、パフォーマンス メトリックに影響を与える [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] アーキテクチャのさまざまな領域の各種プロパティについて説明します。  
+このトピックでは、リソースの消費量をコントロールに正常に機能し、パフォーマンス メトリックに影響する Windows Communication Foundation (WCF) アーキテクチャのさまざまな領域にさまざまなプロパティについて説明します。  
   
 ## <a name="properties-that-constrain-resource-consumption-in-wcf"></a>WCF でのリソース消費を制約するプロパティ  
- [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] では、セキュリティまたはパフォーマンスを向上する目的で、特定の種類のプロセスに制約が適用されます。 これらの制約には、クォータとスロットルという 2 つの主要な形式があります。 *クォータ*数に達しましたまたは超えた場合に、システムのある時点で即時例外をトリガーする制限します。 *調整*をスローする例外が直ちに発生しない制限します。 スロットル制限に達すると、例外がスローされる代わりに、そのスロットル値によって設定された制限の範囲内で処理が続行されます。 この制限された処理によって他の場所で例外が発生する可能性がありますが、これはアプリケーションに依存します。  
+ Windows Communication Foundation (WCF) では、セキュリティまたはパフォーマンスのためのプロセスの特定の種類の制約が適用されます。 これらの制約には、クォータとスロットルという 2 つの主要な形式があります。 *クォータ*数に達しましたまたは超えた場合に、システムのある時点で即時例外をトリガーする制限します。 *調整*をスローする例外が直ちに発生しない制限します。 スロットル制限に達すると、例外がスローされる代わりに、そのスロットル値によって設定された制限の範囲内で処理が続行されます。 この制限された処理によって他の場所で例外が発生する可能性がありますが、これはアプリケーションに依存します。  
   
  クォータとスロットルの違いに加え、シリアル化レベル、トランスポート レベル、およびアプリケーション レベルにも制約を加えるプロパティがあります。 たとえば、システム提供のすべてのトランスポート バインディング要素によって実装されるクォータである <xref:System.ServiceModel.Channels.TransportBindingElement.MaxReceivedMessageSize%2A?displayProperty=nameWithType> は、既定で 65,536 バイトに設定されます。これは、悪意のあるクライアントがサービスに対して、大量のメモリを消費させるサービス拒否攻撃を実行することを防ぐための措置です  (通常は、この値を下げることによってパフォーマンスを向上できます)。  
   

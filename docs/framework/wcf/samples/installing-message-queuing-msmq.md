@@ -1,26 +1,12 @@
 ---
 title: メッセージ キュー (MSMQ) のインストール
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 7ddcd497-3e04-427e-bc04-3610ad98b01e
-caps.latest.revision: ''
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: de9b67390d1260b5de26c146bd5afec7cfff4c42
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b54fab13d644cafda8a070280d672c60cf71b675
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="installing-message-queuing-msmq"></a>メッセージ キュー (MSMQ) のインストール
 メッセージ キュー 4.0 およびメッセージ キュー 3.0 をインストールする方法を次の手順に示します。  
@@ -44,7 +30,7 @@ ms.lasthandoff: 12/22/2017
   
 #### <a name="to-install-message-queuing-40-on-windows-7-or-windows-vista"></a>Windows 7 または Windows Vista にメッセージ キュー 4.0 をインストールするには  
   
-1.  **[コントロール パネル]**を開きます。  
+1.  **[コントロール パネル]** を開きます。  
   
 2.  をクリックして**プログラム**し、**プログラムと機能**をクリックして**Windows の機能のオンとオフを**です。  
   
@@ -54,13 +40,13 @@ ms.lasthandoff: 12/22/2017
   
     -   [MSMQ HTTP サポート]  
   
-4.  **[OK]**をクリックします。  
+4.  **[OK]** をクリックします。  
   
 5.  コンピューターを再起動するメッセージが表示されたら、クリックして**OK**インストールを完了します。  
   
 #### <a name="to-install-message-queuing-30-on-windows-xp-and-windows-server-2003"></a>Windows XP および Windows Server 2003 にメッセージ キュー 3.0 をインストールするには  
   
-1.  **[コントロール パネル]**を開きます。  
+1.  **[コントロール パネル]** を開きます。  
   
 2.  をクリックして**プログラムの追加と削除** をクリックし、 **Windows コンポーネントの追加**です。  
   
@@ -75,5 +61,5 @@ ms.lasthandoff: 12/22/2017
   
 6.  コンピューターを再起動するメッセージが表示されたら、クリックして**OK**インストールを完了します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [セットアップ手順](../../../../docs/framework/wcf/samples/set-up-instructions.md)

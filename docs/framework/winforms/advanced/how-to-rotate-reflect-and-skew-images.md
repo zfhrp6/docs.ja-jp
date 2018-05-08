@@ -1,13 +1,6 @@
 ---
-title: "方法 : イメージを回転、反転、および傾斜させる"
-ms.custom: 
+title: '方法 : イメージを回転、反転、および傾斜させる'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,16 +9,11 @@ helpviewer_keywords:
 - images [Windows Forms], rotating
 - images [Windows Forms], skewing
 ms.assetid: a3bf97eb-63ed-425a-ba07-dcc65efb567c
-caps.latest.revision: "13"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 163af74d27adcb7ec720a54bfd969bd704f7b1e5
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 7f580b4d3016f1ecedc33302fe57caeec5698aeb
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-rotate-reflect-and-skew-images"></a>方法 : イメージを回転、反転、および傾斜させる
 回転、反転、および元のイメージの左、右、上および左下コーナーの終点を指定することによって、イメージを傾けることができます。 次の 3 つのターゲット ポイントでは、元の四角形の画像を指定した平行四辺形にマップされるアフィン変換を決定します。  
@@ -59,5 +47,5 @@ ms.lasthandoff: 12/22/2017
 ## <a name="compiling-the-code"></a>コードのコンパイル  
  前の例は、Windows フォームで使用するために設計されていて、<xref:System.Windows.Forms.PaintEventArgs> イベント ハンドラーのパラメーターである `e`<xref:System.Windows.Forms.Control.Paint> を必要とします。 必ず置き換えて`Stripes.bmp`をシステム上で有効であるイメージへのパス。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [イメージ、ビットマップ、アイコン、およびメタファイルの操作](../../../../docs/framework/winforms/advanced/working-with-images-bitmaps-icons-and-metafiles.md)

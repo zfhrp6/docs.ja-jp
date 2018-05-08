@@ -1,13 +1,6 @@
 ---
-title: "変換の行列表現"
-ms.custom: 
+title: 変換の行列表現
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -23,16 +16,11 @@ helpviewer_keywords:
 - transformations [Windows Forms], translation
 - affine transformations
 ms.assetid: 0659fe00-9e0c-41c4-9118-016f2404c905
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c68a79f2a40117a980cb6206b74d42f885874aa8
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4c840d8a5abc89493bc684526ce76d34307f4ba1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="matrix-representation-of-transformations"></a>変換の行列表現
 M × n マトリックスは、一連の数字が m 個の行と n 個の列に配置します。 次の図は、いくつかのマトリックスを示します。  
@@ -90,7 +78,7 @@ M × n マトリックスは、一連の数字が m 個の行と n 個の列に�
   
  かどうかはまず、点 (2, 1): [2 1 1] マトリックスで表される — しを a、B、C、点 (2, 1) が使用される順番で 3 つの変換し、します。  
   
- [2 1 1]ABC [-2 5 1] を =  
+ [2 1 1]ABC = [-2 5 1]  
   
  はなく 3 つの独立した行列に複合変換の 3 つの部分を格納は、A を掛けることができますを複合変換全体を格納する 1 つの 3 倍 3 行列を取得するには、同時に、B、および C です。 たとえば、ABC D. を =D を掛けたポイントが A、B、C を掛けたポイントと同じ結果を提供し、  
   
@@ -114,6 +102,6 @@ M × n マトリックスは、一連の数字が m 個の行と n 個の列に�
   
  ![変換](../../../../docs/framework/winforms/advanced/media/aboutgdip05-art13.gif "AboutGdip05_art13")  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [座標系と変換](../../../../docs/framework/winforms/advanced/coordinate-systems-and-transformations.md)  
  [マネージ GDI+ での変換の使用](../../../../docs/framework/winforms/advanced/using-transformations-in-managed-gdi.md)

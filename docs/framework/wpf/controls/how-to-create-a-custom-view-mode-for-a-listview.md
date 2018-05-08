@@ -1,31 +1,17 @@
 ---
-title: "方法 : ListView のカスタム表示モードを作成する"
-ms.custom: 
+title: '方法 : ListView のカスタム表示モードを作成する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - ListView controls [WPF], creating custom View mode
 ms.assetid: 71077349-eeb9-4344-ab29-b5df96df3314
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: e67777b5568214dff889088708db166efc6ae4dd
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b8600a2e201fdbcb566e6a322e3ecdabbe1641ef
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-a-custom-view-mode-for-a-listview"></a>方法 : ListView のカスタム表示モードを作成する
 この例は、カスタムを作成する方法を示しています。<xref:System.Windows.Controls.ListView.View%2A>のモード、<xref:System.Windows.Controls.ListView>コントロール。  
@@ -55,7 +41,7 @@ ms.lasthandoff: 12/22/2017
   
  サンプル全体については、次を参照してください。[複数のビューのサンプルを含む ListView](http://go.microsoft.com/fwlink/?LinkID=160013)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Controls.ListView>  
  <xref:System.Windows.Controls.GridView>  
  [方法トピック](../../../../docs/framework/wpf/controls/listview-how-to-topics.md)  

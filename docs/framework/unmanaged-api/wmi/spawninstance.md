@@ -1,11 +1,7 @@
 ---
-title: "SpawnInstance 関数 (アンマネージ API リファレンス)"
-description: "SpawnInstance 関数では、クラスの新しいインスタンスを作成します。"
+title: SpawnInstance 関数 (アンマネージ API リファレンス)
+description: SpawnInstance 関数では、クラスの新しいインスタンスを作成します。
 ms.date: 11/06/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: reference
 api_name:
 - SpawnInstance
 api_location:
@@ -20,14 +16,11 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 68508f3000e7f4ac481f940ef4c715366c37125c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 3f8189f0adb62aa32cd0b85ca5a653aa466c7032
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="spawninstance-function"></a>SpawnInstance 関数
 クラスの新しいインスタンスを作成します。    
@@ -64,7 +57,7 @@ HRESULT SpawnInstance (
 
 |定数  |[値]  |説明  |
 |---------|---------|---------|
-| `WBEM_E_INCOMPLETE_CLASS` | 0x80041020 | `ptr`有効なクラス定義ではないと、新しいインスタンスを生成することはできません。 不完全か、それが登録されていない Windows 管理で呼び出すことによって[PutClassWmi](putclasswmi.md)です。 |
+| `WBEM_E_INCOMPLETE_CLASS` | 0x80041020 | `ptr` 有効なクラス定義ではないと、新しいインスタンスを生成することはできません。 不完全か、それが登録されていない Windows 管理で呼び出すことによって[PutClassWmi](putclasswmi.md)です。 |
 | `WBEM_E_OUT_OF_MEMORY` | 0x80041006 | 操作を完了するのに十分なメモリがあります。 |
 | `WBEM_E_INVALID_PARAMETER` | 0x80041008 | `ppNewClass` は `null` です。 |
 | `WBEM_S_NO_ERROR` | 0 | 関数呼び出しに成功しました。  |
@@ -73,19 +66,19 @@ HRESULT SpawnInstance (
 
 この関数への呼び出しをラップする、 [IWbemClassObject::SpawnInstance](https://msdn.microsoft.com/library/aa391458(v=vs.85).aspx)メソッドです。
 
-`ptr`クラス定義から取得する Windows の管理。 (インスタンスからインスタンスの生成がサポートされていることに注意してくださいが返されたインスタンスが空)。次のクラス定義を使用するには、新しいインスタンスを作成します。 呼び出し、 [PutInstanceWmi](putinstancewmi.md) Windows 管理インスタンスを作成する場合は、関数が必要です。
+`ptr` クラス定義から取得する Windows の管理。 (インスタンスからインスタンスの生成がサポートされていることに注意してくださいが返されたインスタンスが空)。次のクラス定義を使用するには、新しいインスタンスを作成します。 呼び出し、 [PutInstanceWmi](putinstancewmi.md) Windows 管理インスタンスを作成する場合は、関数が必要です。
 
 
 
 
 返される新しいオブジェクト`ppNewClass`現在のオブジェクトのサブクラスに自動的になります。 この動作はオーバーライドできません。 サブクラス (派生クラス) を作成できる他の方法はありません。
 
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** WMINet_Utils.idl  
   
- **.NET framework のバージョン:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **.NET framework のバージョン:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>関連項目  
 [WMI およびパフォーマンス カウンター (アンマネージ API リファレンス)](index.md)

@@ -15,11 +15,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: f28e103d6241d954dd6ac4f7e9c7fcb20a06ea0b
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 8100f986a98c9e4712603c45a88d48cbb93be649
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="walkthrough-using-dataflow-in-a-windows-forms-application"></a>チュートリアル: Windows フォーム アプリケーションでのデータフローの使用
 このドキュメントでは、Windows フォーム アプリケーションでイメージ処理を実行する、データフロー ブロックのネットワークを作成する方法を説明します。  
@@ -48,7 +48,7 @@ ms.lasthandoff: 04/26/2018
   
 #### <a name="to-create-the-windows-forms-application"></a>Windows フォーム アプリケーションを作成するには  
   
-1.  [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] で、Visual C# または Visual Basic **Windows フォーム アプリケーション** プロジェクトを作成します。 このドキュメントでは、プロジェクトの名前を `CompositeImages` とします。  
+1.  Visual Studio で、Visual C# または Visual Basic **Windows フォーム アプリケーション** プロジェクトを作成します。 このドキュメントでは、プロジェクトの名前を `CompositeImages` とします。  
   
 2.  メイン フォーム Form1.cs (Visual Basic の Form1.vb) のフォーム デザイナーで、<xref:System.Windows.Forms.ToolStrip> コントロールを追加します。  
   

@@ -1,24 +1,12 @@
 ---
-title: "X.509 証明書検証"
-ms.custom: 
+title: X.509 証明書検証
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 3b042379-02c4-4395-b927-e57c842fd3e0
-caps.latest.revision: "21"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 08ccbbf50db089841d2af2205c7a7cb289a8767c
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 3d9aa14af3ded11bcd373f38656763036e83b0bf
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="x509-certificate-validator"></a>X.509 証明書検証
 このサンプルでは、カスタム X.509 証明書検証を実装する方法を示します。 これは、アプリケーションの要件に適した組み込みの X.509 証明書検証モードがない場合に便利です。 このサンプルでは、自己発行の証明書を許可するカスタム検証を備えたサービスを示します。 クライアントはこのような証明書を使用して、このサービスに認証されます。  
@@ -365,6 +353,6 @@ serviceHost.Credentials.ClientCertificate.Authentication.CustomCertificateValida
 1.  サンプルの実行が終わったら、サンプル フォルダーにある Cleanup.bat を実行します。 これにより、証明書ストアからサーバー証明書とクライアント証明書が削除されます。  
   
 > [!NOTE]
->  このサンプルを複数のコンピューターで実行している場合、このスクリプトはサービス証明書をクライアントから削除しません。 複数のコンピューターで証明書を使用する [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サンプルを実行した場合は、CurrentUser - TrustedPeople ストアにインストールされたサービス証明書を忘れずに削除してください。 削除するには、コマンド `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>` を実行します。たとえば、`certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com` となります。  
+>  このサンプルを複数のコンピューターで実行している場合、このスクリプトはサービス証明書をクライアントから削除しません。 コンピューター間で証明書を使用する Windows Communication Foundation (WCF) サンプルを実行すると、必ず、CurrentUser - TrustedPeople ストアにインストールされているサービス証明書をオフにします。 削除するには、コマンド `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>` を実行します。たとえば、`certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com` となります。  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目

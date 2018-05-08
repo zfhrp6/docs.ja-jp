@@ -1,29 +1,15 @@
 ---
 title: サポートされていないシナリオ
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 72027d0f-146d-40c5-9d72-e94392c8bb40
-caps.latest.revision: 43
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: cfeca11f7d78e8aa2d201238e3a485576b3e0c82
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 5cc4e65ce4f93a352b651203757a484a9d90a85d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="unsupported-scenarios"></a>サポートされていないシナリオ
-さまざまな理由から、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] でサポートされていないセキュリティ シナリオがあります。 たとえば、[!INCLUDE[wxp](../../../../includes/wxp-md.md)] Home Edition は SSPI または Kerberos 認証プロトコルを実装しないため、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、このプラットフォーム上での Windows 認証を使用するサービスの実行をサポートしません。 Windows XP Home Edition で [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を実行している場合、ユーザー名/パスワードや HTTP/HTTPS 統合認証などの他の認証機構がサポートされます。  
+さまざまな理由で、Windows Communication Foundation (WCF) では、いくつかの特定のセキュリティ シナリオはサポートされません。 たとえば、 [!INCLUDE[wxp](../../../../includes/wxp-md.md)] Home Edition は SSPI または Kerberos 認証プロトコルを実装していない、したがって WCF サポートしていませんプラットフォーム上の Windows 認証でサービスを実行します。 ユーザー名/パスワードや HTTP/HTTPS 統合認証など、他の認証メカニズムは、Windows XP Home Edition で WCF を実行している場合にサポートされます。  
   
 ## <a name="impersonation-scenarios"></a>偽装シナリオ  
   
@@ -31,7 +17,7 @@ ms.lasthandoff: 04/30/2018
  WCF クライアントが、偽装で Windows 認証を使用して WCF サービスへの非同期呼び出しを行うと、偽装 ID ではなくクライアント プロセスの ID で認証が行われる場合があります。  
   
 ### <a name="windows-xp-and-secure-context-token-cookie-enabled"></a>Windows XP と有効化されたセキュリティ コンテキスト トークン クッキー  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では偽装はサポートされず、以下の条件に該当する場合、<xref:System.InvalidOperationException> が発生します。  
+ WCF が偽装をサポートしていませんし、<xref:System.InvalidOperationException>が、次の条件に当てはまる場合にスローされます。  
   
 -   オペレーティング システムが [!INCLUDE[wxp](../../../../includes/wxp-md.md)] である。  
   
@@ -49,7 +35,7 @@ ms.lasthandoff: 04/30/2018
 >  上記の要件は限定的です。 たとえば、<xref:System.ServiceModel.Channels.SecurityBindingElement.CreateKerberosBindingElement%2A> は Windows ID を生成するバインド要素を作成しますが、SCT を確立しません。 したがって、`Required` で [!INCLUDE[wxp](../../../../includes/wxp-md.md)] オプションと共に使用できます。  
   
 ### <a name="possible-aspnet-conflict"></a>考えられる ASP.NET との競合  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] と [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] はいずれも、偽装を有効にすることも無効にすることもできます。 このため、[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] が [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションをホストしている場合に、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] と [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] の構成設定の間で競合が発生する可能性があります。 競合が発生した場合、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の設定が優先されます。ただし、<xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A> プロパティを <xref:System.ServiceModel.ImpersonationOption.NotAllowed> に設定している場合は、[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] の偽装設定が優先されます。  
+ WCF と[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)]両方を有効にしたり、偽装を無効にします。 ときに[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)]WCF アプリケーションをホスト、WCF の間で競合が発生する可能性がありますと[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)]構成設定。 競合が発生した場合、WCF 設定が優先しない限り、<xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A>プロパティに設定されている<xref:System.ServiceModel.ImpersonationOption.NotAllowed>、その場合、[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)]権限借用設定が優先されます。  
   
 ### <a name="assembly-loads-may-fail-under-impersonation"></a>偽装を有効にすると、アセンブリの読み込みに失敗する場合がある  
  偽装されたコンテキストにアセンブリを読み込むためのアクセス権がない場合、共通言語ランタイム (CLR: Common Language Runtime) が AppDomain のアセンブリを初めて読み込もうとしたときに、その <xref:System.AppDomain> はエラーをキャッシュします。 この場合、偽装を元に戻した後、元に戻されたコンテキストにアセンブリを読み込むためのアクセス権があったとしても、それ以降のアセンブリの読み込みは失敗します。 これは、ユーザー コンテキストの変更後に、CLR が読み込みを再試行しないためです。 このエラーから回復するには、アプリケーション ドメインを再起動する必要があります。  
@@ -63,13 +49,13 @@ ms.lasthandoff: 04/30/2018
 ## <a name="cryptography"></a>暗号  
   
 ### <a name="sha-256-supported-only-for-symmetric-key-usages"></a>対称キーを使用する場合にのみサポートされる SHA-256  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、さまざまな暗号化アルゴリズムと署名ダイジェスト作成アルゴリズムをサポートしています。これらのアルゴリズムは、システム指定のバインディングでアルゴリズム スイートを使用して指定できます。 セキュリティを強化するため、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、署名ダイジェスト ハッシュを作成するためにセキュア ハッシュ アルゴリズム (SHA: Secure Hash Algorithm) 2 (具体的には SHA-256) をサポートしています。 このリリースは、Kerberos キーなどの対称キーを使用する場合、およびメッセージに署名するために X.509 証明書を使用しない場合に限り SHA-256 をサポートします。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] が現時点で RSA-SHA256 をサポートしていないため、[!INCLUDE[vstecwinfx](../../../../includes/vstecwinfx-md.md)] では (X.509 証明書で使用する) RSA 署名に SHA-256 ハッシュを使用できません。  
+ WCF では、さまざまな暗号化およびシステム指定のバインディングでアルゴリズム スイートを使用して指定できる署名ダイジェスト作成アルゴリズムをサポートします。 セキュリティを強化は、WCF は、署名ダイジェスト ハッシュを作成するためのセキュリティで保護されたハッシュ アルゴリズム (SHA) 2 アルゴリズム、具体的には、sha-256 をサポートします。 このリリースは、Kerberos キーなどの対称キーを使用する場合、およびメッセージに署名するために X.509 証明書を使用しない場合に限り SHA-256 をサポートします。 WCF が (X.509 証明書で使用する) RSA 署名をサポートしていませんで rsa-sha256 をサポートの現在がないのための sha-256 ハッシュを使用して、[!INCLUDE[vstecwinfx](../../../../includes/vstecwinfx-md.md)]です。  
   
 ### <a name="fips-compliant-sha-256-hashes-not-supported"></a>サポートされていない FIPS 準拠の SHA-256 ハッシュ  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、FIPS 準拠の SHA-256 ハッシュをサポートしていません。したがって、FIPS 準拠のアルゴリズムを使用する必要のあるシステムでは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、SHA-256 を使用するアルゴリズム スイートをサポートしません。  
+ Sha-256 を使用するアルゴリズム スイートが FIPS 準拠アルゴリズムの使用が必要なシステムで WCF でサポートされていないために、WCF は sha-256 FIPS 準拠のハッシュをサポートしません。  
   
 ### <a name="fips-compliant-algorithms-may-fail-if-registry-is-edited"></a>レジストリを編集すると、FIPS 準拠のアルゴリズムが失敗する場合がある  
- 連邦情報処理規格 (FIPS: Federal Information Processing Standards) 準拠のアルゴリズムを有効または無効にするには、Microsoft 管理コンソール (MMC: Microsoft Management Console) のローカル セキュリティ設定スナップインを使用します。 レジストリでこの設定にアクセスすることもできます。 ただし、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、レジストリを使用した設定のリセットをサポートしていません。 値を 1 または 0 以外に設定すると、CLR とオペレーティング システム間で不整合が発生する可能性があります。  
+ 連邦情報処理規格 (FIPS: Federal Information Processing Standards) 準拠のアルゴリズムを有効または無効にするには、Microsoft 管理コンソール (MMC: Microsoft Management Console) のローカル セキュリティ設定スナップインを使用します。 レジストリでこの設定にアクセスすることもできます。 ただし、WCF をサポートしないこと、レジストリを使用して、設定をリセットします。 値を 1 または 0 以外に設定すると、CLR とオペレーティング システム間で不整合が発生する可能性があります。  
   
 ### <a name="fips-compliant-aes-encryption-limitation"></a>FIPS 準拠の AES 暗号化の制限  
  FIPS 準拠の AES 暗号化は、ID レベルの偽装での双方向コールバックでは機能しません。  
@@ -86,7 +72,7 @@ ms.lasthandoff: 04/30/2018
 -   使用して、`certutil`証明書を照会するためのコマンドラインからコマンド。 詳細については、次を参照してください。[証明書のトラブルシューティングに関する Certutil のタスク](http://go.microsoft.com/fwlink/?LinkId=120056)です。  
   
 ## <a name="message-security-fails-if-using-aspnet-impersonation-and-aspnet-compatibility-is-required"></a>ASP.NET の偽装と ASP.NET 互換を使用する必要がある場合にメッセージ セキュリティが失敗する  
- 次の設定の組み合わせはクライアント認証の妨げとなる可能性があるため、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] はこの組み合わせをサポートしていません。  
+ WCF は、次の設定の組み合わせをサポートしていませんので、クライアント認証できなくなることができます。  
   
 -   [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] の偽装を有効にしている。 これは、Web.config ファイルに設定して、`impersonate`の属性、<`identity`> 要素を`true`です。  
   
@@ -94,7 +80,7 @@ ms.lasthandoff: 04/30/2018
   
 -   メッセージ モード セキュリティを使用している。  
   
- これを回避するには、[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] 互換モードを無効にします。 [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] 互換モードが必要である場合は、[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] の偽装機能を無効にし、代わりに [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] で提供される偽装機能を使用します。 詳細については、次を参照してください。[委任と偽装](../../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md)です。  
+ これを回避するには、[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] 互換モードを無効にします。 またはの場合、[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)]互換モードは必須では無効にする、[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)]権限の借用機能し、WCF に用意されている権限借用を代わりに使用します。 詳細については、次を参照してください。[委任と偽装](../../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md)です。  
   
 ## <a name="ipv6-literal-address-failure"></a>IPv6 リテラル アドレス エラー  
  クライアントとサービスが同じコンピューター上に存在し、サービスに対して IPv6 リテラル アドレスが使用されている場合は、セキュリティ要求が失敗します。  
@@ -102,7 +88,7 @@ ms.lasthandoff: 04/30/2018
  IPv6 リテラル アドレスは、サービスとクライアントがそれぞれ異なるコンピューター上に存在する場合に機能します。  
   
 ## <a name="wsdl-retrieval-failures-with-federated-trust"></a>フェデレーション信頼での WSDL 取得エラー  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、フェデレーション信頼チェーンの各ノードに対してドキュメントが正確に 1 つだけ要求されます。 エンドポイントを指定するときにループにならないように注意する必要があります。 ループになる場合の例の 1 つは、フェデレーション信頼チェーンの WSDL ダウンロードの使用で、同じ WSDL ドキュメントの中に複数のリンクがある場合です。 この問題がよく発生するシナリオは、セキュリティ トークン サーバーとセキュリティ トークン サービスが同じ ServiceHost の中にあるフェデレーション サービスです。  
+ WCF では、フェデレーション信頼チェーン内の各ノードの 1 つだけの WSDL ドキュメントが必要です。 エンドポイントを指定するときにループにならないように注意する必要があります。 ループになる場合の例の 1 つは、フェデレーション信頼チェーンの WSDL ダウンロードの使用で、同じ WSDL ドキュメントの中に複数のリンクがある場合です。 この問題がよく発生するシナリオは、セキュリティ トークン サーバーとセキュリティ トークン サービスが同じ ServiceHost の中にあるフェデレーション サービスです。  
   
  そのような状況の例は次の 3 つのエンドポイント アドレスを使うサービスです。  
   

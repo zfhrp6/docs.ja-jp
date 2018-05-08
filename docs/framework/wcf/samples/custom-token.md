@@ -1,27 +1,15 @@
 ---
-title: "カスタム トークン"
-ms.custom: 
+title: カスタム トークン
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: e7fd8b38-c370-454f-ba3e-19759019f03d
-caps.latest.revision: "28"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 53242a7411d261a6f2860fcf319725e40cfb6dcf
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
-ms.translationtype: MT
+ms.openlocfilehash: 5850f97d6d3a66aacf82ab1cb2338240a75a00fb
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="custom-token"></a>カスタム トークン
-このサンプルでは、カスタム トークンの実装を [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] アプリケーションに追加する方法を示します。 この例では、`CreditCardToken` を使用して、クライアントのクレジット カードに関する情報をサーバーに安全に渡します。 このトークンは、WS-Security メッセージ ヘッダー内で渡され、対称セキュリティ バインディング要素を使用してメッセージ本文と他のメッセージ ヘッダーと共に署名および暗号化されます。 これは、組み込みのトークンでは不十分な場合に役立ちます。 このサンプルでは、組み込みのトークンのいずれかを使用する代わりに、カスタム セキュリティ トークンをサービスに提供する方法を示します。 サービスは、要求/応答通信パターンを定義するコントラクトを実装します。  
+このサンプルでは、Windows Communication Foundation (WCF) アプリケーションにカスタム トークンの実装を追加する方法を示します。 この例では、`CreditCardToken` を使用して、クライアントのクレジット カードに関する情報をサーバーに安全に渡します。 このトークンは、WS-Security メッセージ ヘッダー内で渡され、対称セキュリティ バインディング要素を使用してメッセージ本文と他のメッセージ ヘッダーと共に署名および暗号化されます。 これは、組み込みのトークンでは不十分な場合に役立ちます。 このサンプルでは、組み込みのトークンのいずれかを使用する代わりに、カスタム セキュリティ トークンをサービスに提供する方法を示します。 サービスは、要求/応答通信パターンを定義するコントラクトを実装します。  
   
 > [!NOTE]
 >  このサンプルのセットアップ手順とビルド手順については、このトピックの最後を参照してください。  
@@ -645,4 +633,4 @@ string GetCallerCreditCardNumber()
   
 1.  サンプルの実行が終わったら、サンプル フォルダーにある Cleanup.bat を実行します。  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目

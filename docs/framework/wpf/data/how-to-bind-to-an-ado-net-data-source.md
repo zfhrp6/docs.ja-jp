@@ -1,13 +1,6 @@
 ---
-title: "方法 : ADO.NET データ ソースにバインドする"
-ms.custom: 
+title: '方法 : ADO.NET データ ソースにバインドする'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,16 +9,11 @@ helpviewer_keywords:
 - ADO.NET data sources [WPF], binding to
 - binding [WPF], to ADO.NET data sources
 ms.assetid: a70c6d7b-7b38-4fdf-b655-4804db7c8315
-caps.latest.revision: "15"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 760b59bfa0d556974109ccc0211c021ee76df5dc
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: c9e16b9fd100eb9aec7bee2f94307aa80371d5ec
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-bind-to-an-adonet-data-source"></a>方法 : ADO.NET データ ソースにバインドする
 この例では、バインド、 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] <xref:System.Windows.Controls.ListBox>コントロールを[!INCLUDE[TLA#tla_adonet](../../../../includes/tlasharptla-adonet-md.md)]`DataSet`です。  
@@ -40,13 +28,13 @@ ms.lasthandoff: 12/22/2017
   
  [!code-xaml[ADODataSet#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ADODataSet/CSharp/Window1.xaml#2)]  
   
- `BookItemTemplate`<xref:System.Windows.DataTemplate>データの表示方法を定義します。  
+ `BookItemTemplate` <xref:System.Windows.DataTemplate>データの表示方法を定義します。  
   
  [!code-xaml[ADODataSet#3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ADODataSet/CSharp/Window1.xaml#3)]  
   
  `IntColorConverter` は、`int` を 1 つの色に変換します。 このコンバーターの使用で、 <xref:System.Windows.Controls.TextBlock.Background%2A> 、3 番目の色<xref:System.Windows.Controls.TextBlock>が緑で表示場合の値`NumPages`350 より小さいと、赤をそれ以外の場合は。 コンバーターの実装は、ここでは示されていません。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Data.BindingListCollectionView>  
  [データ バインディングの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)  
  [方法トピック](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)

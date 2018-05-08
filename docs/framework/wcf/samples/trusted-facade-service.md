@@ -1,27 +1,15 @@
 ---
-title: "信頼されたファサード サービス"
-ms.custom: 
+title: 信頼されたファサード サービス
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: c34d1a8f-e45e-440b-a201-d143abdbac38
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 8c0d1d0473a821510ee70e386058a2b3249221dd
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
-ms.translationtype: MT
+ms.openlocfilehash: 08e115d297439910c16601051539a23a5a6bebc9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="trusted-facade-service"></a>信頼されたファサード サービス
-このシナリオのサンプルでは、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] セキュリティ インフラストラクチャを使用して、呼び出し元の ID 情報をあるサービスから別のサービスにフローする方法を示します。  
+このシナリオのサンプルは、Windows Communication Foundation (WCF) を使用して 1 つのサービスからの呼び出し元の id 情報フローする方法を示しますセキュリティ インフラストラクチャです。  
   
  ファサード サービスを使用してサービスから提供される機能をパブリック ネットワークに公開するのは、一般的なデザイン パターンです。 ファサード サービスは、通常は境界ネットワーク (DMZ、非武装地帯、およびスクリーン サブネットとも呼ばれます) 内に存在し、ビジネス ロジックを実装して内部データにアクセスする、バックエンド サービスと通信します。 ファサード サービスとバックエンド サービス間の通信チャネルはファイアウォールを通過し、通常は 1 つの目的のみに限定されます。  
   
@@ -298,8 +286,8 @@ Press <ENTER> to terminate client.
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
+>  このディレクトリが存在しない場合に、 [Windows Communication Foundation (WCF) および .NET Framework 4 向けの Windows Workflow Foundation (WF) サンプル](http://go.microsoft.com/fwlink/?LinkId=150780)すべて Windows Communication Foundation (WCF) をダウンロードして[!INCLUDE[wf1](../../../../includes/wf1-md.md)]サンプルです。 このサンプルは、次のディレクトリに格納されます。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Scenario\TrustedFacade`  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目

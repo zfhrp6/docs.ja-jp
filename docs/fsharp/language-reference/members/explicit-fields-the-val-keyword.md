@@ -1,17 +1,12 @@
 ---
 title: '明示的なフィールド: val キーワード (F#)'
 description: については、f# 'val' キーワードは、型を初期化せずにクラスまたは構造体の型に値を格納する場所を宣言するために使用します。
-author: cartermp
-ms.author: phcart
 ms.date: 05/16/2016
-ms.topic: language-reference
-ms.prod: dotnet-fsharp
-ms.devlang: fsharp
-ms.openlocfilehash: dc277680121976c0469b18c77bd84443cd251afb
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 2bd1aae24a5823ddcd6bb8f121d8110f4a211a6a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="explicit-fields-the-val-keyword"></a>明示的なフィールド: val キーワード
 

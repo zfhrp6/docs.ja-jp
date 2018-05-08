@@ -1,29 +1,15 @@
 ---
 title: Windows Communication Foundation サンプルの 1 回限りのセットアップの手順
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: a5848ffd-3eb5-432d-812e-bd948ccb6bca
-caps.latest.revision: 83
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: acb89c8c1819024ebdb77720654ab7280333e456
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: e3bf4d70217a8231fe4ddc5b9a15afdfe8f0522e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="one-time-setup-procedure-for-the-windows-communication-foundation-samples"></a>Windows Communication Foundation サンプルの 1 回限りのセットアップの手順
-ほとんどの [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サンプルは、インターネット インフォメーション サービス (IIS) でホストされ、共通の仮想ディレクトリから実行されます。 この 1 回限りのセットアップの手順では、ディスクにフォルダーを作成します。という名前の iis 仮想ディレクトリも追加**ServiceModelSamples**です。  
+ほとんどの Windows Communication Foundation (WCF) サンプルでは、インターネット インフォメーション サービス (IIS) でホストされているされ、共通の仮想ディレクトリから実行することができます。 この 1 回限りのセットアップの手順では、ディスクにフォルダーを作成します。という名前の iis 仮想ディレクトリも追加**ServiceModelSamples**です。  
   
  **ServiceModelSamples**の構築と、IIS でホストされるサービスを使用するすべてのサンプルを実行する仮想ディレクトリを使用します。 サンプルの実行に必要な仮想ディレクトリはこれだけです。 サンプルをビルドすると、この仮想ディレクトリにある、以前に配置されたサービスがすべて置き換えられます。この仮想ディレクトリには最近ビルドされたサンプルだけが配置されるため、そのサンプルしか使用できません。  
   

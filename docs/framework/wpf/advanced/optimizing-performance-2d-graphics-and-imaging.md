@@ -1,13 +1,6 @@
 ---
-title: "パフォーマンスの最適化 : 2D グラフィックスとイメージング"
-ms.custom: 
+title: 'パフォーマンスの最適化 : 2D グラフィックスとイメージング'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -19,16 +12,11 @@ helpviewer_keywords:
 - 2-D graphics [WPF]
 - images [WPF], optimizing performance
 ms.assetid: e335601e-28c8-4d64-ba27-778fffd55f72
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 99fc5e179fe7652868d47d93fbdcabd47bc8cab9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4e6b72dae863e89d70ec70c2cb99a5874581e9ea
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="optimizing-performance-2d-graphics-and-imaging"></a>パフォーマンスの最適化 : 2D グラフィックスとイメージング
 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] には、アプリケーションの要件に合わせて最適化できる広範な 2D グラフィックス機能とイメージング機能が用意されています。 このトピックでは、この領域でのパフォーマンスの最適化に関する情報を提供します。  
@@ -36,23 +24,23 @@ ms.lasthandoff: 12/22/2017
   
 <a name="Drawing_and_Shapes"></a>   
 ## <a name="drawing-and-shapes"></a>描画と図形  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]両方を提供<xref:System.Windows.Media.Drawing>と<xref:System.Windows.Shapes.Shape>グラフィックの描画コンテンツを表すオブジェクト。 ただし、<xref:System.Windows.Media.Drawing>オブジェクトよりシンプルなコンストラクト<xref:System.Windows.Shapes.Shape>オブジェクトし、パフォーマンス特性を指定します。  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 両方を提供<xref:System.Windows.Media.Drawing>と<xref:System.Windows.Shapes.Shape>グラフィックの描画コンテンツを表すオブジェクト。 ただし、<xref:System.Windows.Media.Drawing>オブジェクトよりシンプルなコンストラクト<xref:System.Windows.Shapes.Shape>オブジェクトし、パフォーマンス特性を指定します。  
   
  A<xref:System.Windows.Shapes.Shape>グラフィカル図形を画面に描画することができます。 派生しているため、<xref:System.Windows.FrameworkElement>クラス、<xref:System.Windows.Shapes.Shape>パネルとほとんどのコントロール内のオブジェクトで使用できます。  
   
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] には、グラフィックス サービスやレンダリング サービスへのアクセスのレイヤーがいくつか用意されています。 最上位のレイヤーで<xref:System.Windows.Shapes.Shape>オブジェクトが簡単に使用し、レイアウトやイベント処理など、多くの便利な機能を提供します。 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] には、すぐに使用できるさまざまな図形オブジェクトが用意されています。 すべての図形オブジェクトの継承、<xref:System.Windows.Shapes.Shape>クラスです。 使用可能な図形オブジェクトには、 <xref:System.Windows.Shapes.Ellipse>、 <xref:System.Windows.Shapes.Line>、 <xref:System.Windows.Shapes.Path>、 <xref:System.Windows.Shapes.Polygon>、 <xref:System.Windows.Shapes.Polyline>、および<xref:System.Windows.Shapes.Rectangle>です。  
   
- <xref:System.Windows.Media.Drawing>オブジェクト、その一方からは派生しません、<xref:System.Windows.FrameworkElement>クラスおよび表示の図形、画像、およびテキストの軽量の実装を提供します。  
+ <xref:System.Windows.Media.Drawing> オブジェクト、その一方からは派生しません、<xref:System.Windows.FrameworkElement>クラスおよび表示の図形、画像、およびテキストの軽量の実装を提供します。  
   
  次の 4 種類がある<xref:System.Windows.Media.Drawing>オブジェクト。  
   
--   <xref:System.Windows.Media.GeometryDrawing>図形を描画します。  
+-   <xref:System.Windows.Media.GeometryDrawing> 図形を描画します。  
   
--   <xref:System.Windows.Media.ImageDrawing>イメージを描画します。  
+-   <xref:System.Windows.Media.ImageDrawing> イメージを描画します。  
   
--   <xref:System.Windows.Media.GlyphRunDrawing>テキストを描画します。  
+-   <xref:System.Windows.Media.GlyphRunDrawing> テキストを描画します。  
   
--   <xref:System.Windows.Media.DrawingGroup>その他の図を描画します。 他の描画を 1 つの複合描画に結合するには、描画グループを使用します。  
+-   <xref:System.Windows.Media.DrawingGroup> その他の図を描画します。 他の描画を 1 つの複合描画に結合するには、描画グループを使用します。  
   
  <xref:System.Windows.Media.GeometryDrawing> Geometry コンテンツを表示するためにオブジェクトを使用します。 <xref:System.Windows.Media.Geometry>クラスと具象クラスなど、そこから派生する<xref:System.Windows.Media.CombinedGeometry>、 <xref:System.Windows.Media.EllipseGeometry>、および<xref:System.Windows.Media.PathGeometry>2D グラフィックのレンダリングする手段として、ヒット テストとクリッピングのサポートを提供します。 ジオメトリ オブジェクトを使用すると、たとえば、コントロールの領域を定義したり、イメージに適用するクリップ領域を定義したりすることができます。 ジオメトリ オブジェクトは、四角形や円などの単純な領域にすることも、2 つ以上のジオメトリ オブジェクトから作成された複合的な領域にすることもできます。 複雑な幾何学的領域を結合して作成できる<xref:System.Windows.Media.PathSegment>-など、オブジェクトの派生<xref:System.Windows.Media.ArcSegment>、 <xref:System.Windows.Media.BezierSegment>、および<xref:System.Windows.Media.QuadraticBezierSegment>です。  
   
@@ -64,7 +52,7 @@ ms.lasthandoff: 12/22/2017
   
 <a name="StreamGeometry_Objects"></a>   
 ## <a name="streamgeometry-objects"></a>StreamGeometry オブジェクト  
- <xref:System.Windows.Media.StreamGeometry>オブジェクトは、軽量な代替<xref:System.Windows.Media.PathGeometry>幾何学図形を作成するためです。 使用して、<xref:System.Windows.Media.StreamGeometry>複合ジオメトリを記述する必要がある場合。 <xref:System.Windows.Media.StreamGeometry>多くの処理用に最適化された<xref:System.Windows.Media.PathGeometry>オブジェクトし、多くの個々 の使用と比べてパフォーマンスが向上<xref:System.Windows.Media.PathGeometry>オブジェクト。  
+ <xref:System.Windows.Media.StreamGeometry>オブジェクトは、軽量な代替<xref:System.Windows.Media.PathGeometry>幾何学図形を作成するためです。 使用して、<xref:System.Windows.Media.StreamGeometry>複合ジオメトリを記述する必要がある場合。 <xref:System.Windows.Media.StreamGeometry> 多くの処理用に最適化された<xref:System.Windows.Media.PathGeometry>オブジェクトし、多くの個々 の使用と比べてパフォーマンスが向上<xref:System.Windows.Media.PathGeometry>オブジェクト。  
   
  次の例では、属性の構文を使用して、作成、三角形<xref:System.Windows.Media.StreamGeometry>で[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]です。  
   
@@ -91,7 +79,7 @@ ms.lasthandoff: 12/22/2017
 -   詳しくは、「 [イメージングの概要](../../../../docs/framework/wpf/graphics-multimedia/imaging-overview.md)」をご覧ください。  
   
 ### <a name="bitmapscalingmode"></a>BitmapScalingMode  
- ビットマップのスケーリングをアニメーション化する場合、既定の高品質イメージの再サンプリング アルゴリズムは、フレーム レートを低下させるほどシステム リソースを消費する場合があり、実際にはアニメーションの動きが滑らかでなくなることがあります。 設定して、<xref:System.Windows.Media.RenderOptions.BitmapScalingMode%2A>のプロパティ、<xref:System.Windows.Media.RenderOptions>オブジェクトを<xref:System.Windows.Media.BitmapScalingMode.LowQuality>ビットマップを拡張するときに滑らかなアニメーションを作成することができます。 <xref:System.Windows.Media.BitmapScalingMode.LowQuality>モードの通知、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]品質用に最適化されたアルゴリズムからに切り替える速度が最適化されたアルゴリズムのイメージを処理するときにレンダリング エンジンです。  
+ ビットマップのスケーリングをアニメーション化する場合、既定の高品質イメージの再サンプリング アルゴリズムは、フレーム レートを低下させるほどシステム リソースを消費する場合があり、実際にはアニメーションの動きが滑らかでなくなることがあります。 設定して、<xref:System.Windows.Media.RenderOptions.BitmapScalingMode%2A>のプロパティ、<xref:System.Windows.Media.RenderOptions>オブジェクトを<xref:System.Windows.Media.BitmapScalingMode.LowQuality>ビットマップを拡張するときに滑らかなアニメーションを作成することができます。 <xref:System.Windows.Media.BitmapScalingMode.LowQuality> モードの通知、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]品質用に最適化されたアルゴリズムからに切り替える速度が最適化されたアルゴリズムのイメージを処理するときにレンダリング エンジンです。  
   
  次の例は、設定する方法を示します、<xref:System.Windows.Media.BitmapScalingMode>イメージ オブジェクト。  
   
@@ -110,7 +98,7 @@ ms.lasthandoff: 12/22/2017
  [!code-csharp[RenderOptions#RenderOptionsSnippet3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/RenderOptions/CSharp/Window1.xaml.cs#renderoptionssnippet3)]
  [!code-vb[RenderOptions#RenderOptionsSnippet3](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/RenderOptions/visualbasic/window1.xaml.vb#renderoptionssnippet3)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [WPF アプリケーションのパフォーマンスの最適化](../../../../docs/framework/wpf/advanced/optimizing-wpf-application-performance.md)  
  [アプリケーション パフォーマンスの計画](../../../../docs/framework/wpf/advanced/planning-for-application-performance.md)  
  [ハードウェアの活用](../../../../docs/framework/wpf/advanced/optimizing-performance-taking-advantage-of-hardware.md)  

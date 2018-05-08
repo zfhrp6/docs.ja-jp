@@ -1,14 +1,6 @@
 ---
 title: 'チュートリアル: Windows フォーム DataGridView コントロールの 2 つを使用してマスター/詳細フォームを作成します。'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-winforms
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -18,17 +10,11 @@ helpviewer_keywords:
 - master-details lists [Windows Forms], displaying on Windows Forms
 - walkthroughs [Windows Forms], DataGridView control
 ms.assetid: c5fa29e8-47f7-4691-829b-0e697a691f36
-caps.latest.revision: 19
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: e5c3dfc547fe775b38ad4c2e658755268f791502
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: 38f7c6197fb3ee79119e41ab9620bc3aa2b21900
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="walkthrough-creating-a-masterdetail-form-using-two-windows-forms-datagridview-controls"></a>チュートリアル : Windows フォームの 2 つの DataGridView コントロールを使用したマスター/詳細形式のフォームの作成
 使用するための最も一般的なシナリオの 1 つ、<xref:System.Windows.Forms.DataGridView>コントロールは、*マスター/詳細*フォーム、2 つのデータベース テーブル間の親/子リレーションシップが表示されます。 詳細テーブルが、対応する子データの更新をマスター テーブルの行を選択します。  

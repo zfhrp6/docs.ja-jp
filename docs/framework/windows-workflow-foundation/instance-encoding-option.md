@@ -1,23 +1,12 @@
 ---
-title: "インスタンス エンコーディング オプション"
-ms.custom: 
+title: インスタンス エンコーディング オプション
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 89e4b029-4f68-438c-8117-9b21fe094ef4
-caps.latest.revision: "7"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a7664eecb68ff9aec0f5e3e31aa08058700f0e92
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: cfe45428f546b6f47709c321099efdf7fbb25ef4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="instance-encoding-option"></a>インスタンス エンコーディング オプション
 **インスタンス エンコーディング オプション**SQL Workflow Instance Store のプロパティを使用して、SQL 永続化プロバイダーが保存する前に GZip アルゴリズムを使用して、ワークフロー インスタンス状態情報を圧縮するかどうかを指定できます、永続性データベースに情報です。 このプロパティに使用できる値は GZip と None です。 既定値は None です。 これらのオプションを次の一覧で説明します。  

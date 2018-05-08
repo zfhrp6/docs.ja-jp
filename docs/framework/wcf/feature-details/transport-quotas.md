@@ -1,36 +1,22 @@
 ---
-title: "トランスポート クォータ"
-ms.custom: 
+title: トランスポート クォータ
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - transport quotas [WCF]
 ms.assetid: 3e71dd3d-f981-4d9c-9c06-ff8abb61b717
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 5e9d7fbf42f2ed9b8f68b1faf2e2425050b62eaa
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b6322bada88c6aef65b609f43fe92dda8dbab206
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="transport-quotas"></a>トランスポート クォータ
 トランスポート クォータは、接続がリソースを過剰に消費している時期を特定するポリシー機構です。 クォータとは、クォータ値を超えた場合に、それ以上のリソースの使用を禁止する確実な制限です。 トランスポート クォータは、悪質な、または意図的でないサービス拒否攻撃を防ぎます。  
   
- [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] トランスポートのクォータの既定値は、控えめなリソース割り当てに基づいています。 これらの既定値は開発環境、および小規模のインストール シナリオに適しています。 インストールでリソースが不足している場合、または追加リソースが使用可能であるにもかかわらず接続が制限されている場合、サービス管理者は、トランスポート クォータをレビューし、個別のクォータ値を調整する必要があります。  
+ Windows Communication Foundation (WCF) トランスポートでは、控えめなリソース割り当てに基づく既定のクォータ値があります。 これらの既定値は開発環境、および小規模のインストール シナリオに適しています。 インストールでリソースが不足している場合、または追加リソースが使用可能であるにもかかわらず接続が制限されている場合、サービス管理者は、トランスポート クォータをレビューし、個別のクォータ値を調整する必要があります。  
   
 ## <a name="types-of-transport-quotas"></a>トランスポート クォータの種類  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のトランスポートには 3 種類のクォータがあります。  
+ WCF トランスポートでは、次の 3 つの種類のクォータがあります。  
   
 -   *タイムアウト*サービス拒否攻撃を長時間にわたってのリソースを停滞を軽減します。  
   
@@ -39,11 +25,11 @@ ms.lasthandoff: 12/22/2017
 -   *コレクション サイズの制限*間接的にメモリを割り当てる、または供給に制限されているリソースの消費をバインドします。  
   
 ## <a name="transport-quota-descriptions"></a>トランスポート クォータの説明  
- ここでは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の標準トランスポートである、HTTP(S)、TCP/IP、および名前つきパイプで利用できるトランスポート クォータについて説明します。 カスタム トランスポートでは、このリストに含まれない独自の構成可能なクォータを公開できます。 カスタム トランスポートのクォータについては、ドキュメントを参照してください。  
+ このセクションでは、標準の WCF トランスポートに対して使用できるトランスポート クォータをについて説明します。 HTTP (S)、TCP/IP、および名前付きパイプです。 カスタム トランスポートでは、このリストに含まれない独自の構成可能なクォータを公開できます。 カスタム トランスポートのクォータについては、ドキュメントを参照してください。  
   
  各クォータ設定では、種類、最小値、および既定値を設定します。 クォータの最大値は、クォータの種類によって制限されます。 コンピューターの制限により、クォータを最大値に設定できない場合もあります。  
   
-|name|型|最小<br /><br /> value|既定値<br /><br /> value|説明|  
+|名前|型|最小<br /><br /> value|既定値<br /><br /> value|説明|  
 |----------|----------|--------------------|-----------------------|-----------------|  
 |`ChannelInitializationTimeout`|TimeSpan|1 目盛り|5 秒|最初の読み取り中に、接続が前文の送信を待機する最大時間。 このデータは、認証が行われる前に受信されます。 この設定は一般に、`ReceiveTimeout` クォータ値よりも大幅に小さな値になります。|  
 |`CloseTimeout`|TimeSpan|0|1 分|接続の終了を待機する最大時間。これを超えるとトランスポートで例外が発生します。|  
@@ -72,7 +58,7 @@ ms.lasthandoff: 12/22/2017
 ### <a name="controlling-transport-quotas-from-the-binding-element"></a>バインド要素によるトランスポート クォータの制御  
  バインド要素を介してトランスポート クォータを設定した場合、トランスポートの動作を最も柔軟に制御できます。 閉じる、開く、受信、送信の各操作の既定のタイムアウトは、チャネルを構築したときにバインディングから設定されます。  
   
-|name|HTTP|TCP/IP|名前付きパイプ|  
+|名前|HTTP|TCP/IP|名前付きパイプ|  
 |----------|----------|-------------|----------------|  
 |`ChannelInitializationTimeout`||x|X|  
 |`CloseTimeout`||||  
@@ -94,7 +80,7 @@ ms.lasthandoff: 12/22/2017
 ### <a name="controlling-transport-quotas-from-the-binding"></a>バインディングによるトランスポート クォータの制御  
  バインディングによるトランスポート クォータの設定では、選択対象のクォータがセットにまとめられます。ただし、最も一般的に使用するクォータ値にはアクセスできます。  
   
-|name|HTTP|TCP/IP|名前付きパイプ|  
+|名前|HTTP|TCP/IP|名前付きパイプ|  
 |----------|----------|-------------|----------------|  
 |`ChannelInitializationTimeout`||||  
 |`CloseTimeout`|x|X|X|  
@@ -120,7 +106,7 @@ ms.lasthandoff: 12/22/2017
 ### <a name="controlling-transport-quotas-from-configuration"></a>構成によるトランスポート クォータの制御  
  アプリケーション構成からバインディング上のプロパティに直接アクセスして、同じトランスポート クォータを設定できます。 構成ファイルでは、トランスポート クォータの名前は必ず小文字で始めます。 たとえば、バインディングの `CloseTimeout` プロパティは構成では `closeTimeout` 設定に対応し、バインディングの `MaxConnections` プロパティは構成では `maxConnections` 設定に対応します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Channels.HttpsTransportBindingElement>  
  <xref:System.ServiceModel.Channels.HttpTransportBindingElement>  
  <xref:System.ServiceModel.Channels.TcpTransportBindingElement>  

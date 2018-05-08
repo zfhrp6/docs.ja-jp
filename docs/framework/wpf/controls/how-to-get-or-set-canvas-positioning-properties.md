@@ -1,31 +1,17 @@
 ---
-title: "方法 : Canvas の配置プロパティを取得または設定する"
-ms.custom: 
+title: '方法 : Canvas の配置プロパティを取得または設定する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - Canvas control [WPF], setting positioning properties
 ms.assetid: 1636b950-2b5a-4507-8a10-c5034cc58b1c
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: d2b01657088c388ad09037716278dc0788de2abb
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 294b49d427a67da849ce930cf29a48f1735bf135
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-get-or-set-canvas-positioning-properties"></a>方法 : Canvas の配置プロパティを取得または設定する
 この例の配置のメソッドを使用する方法を示しています、<xref:System.Windows.Controls.Canvas>要素に子コンテンツを配置します。 この例の内容を使用して、<xref:System.Windows.Controls.ListBoxItem>を表す位置指定値し、のインスタンスに値を変換します<xref:System.Double>、これは必須の引数の位置を決定します。 値は文字列に変換し、内のテキストとして表示されます、<xref:System.Windows.Controls.TextBlock>要素を使用して、<xref:System.Windows.Controls.Canvas.GetLeft%2A>メソッドです。  
@@ -42,7 +28,7 @@ ms.lasthandoff: 12/22/2017
  [!code-csharp[CanvasPositioningProperties#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CanvasPositioningProperties/CSharp/Window1.xaml.cs#2)]
  [!code-vb[CanvasPositioningProperties#2](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/CanvasPositioningProperties/VisualBasic/Window1.xaml.vb#2)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Controls.Canvas>  
  <xref:System.Windows.Controls.ListBoxItem>  
  <xref:System.Windows.LengthConverter>  

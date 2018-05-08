@@ -1,24 +1,12 @@
 ---
-title: "方法: 別のワークフロー サービスを呼び出すワークフロー サービスを作成する"
-ms.custom: 
+title: '方法: 別のワークフロー サービスを呼び出すワークフロー サービスを作成する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 99b3ee3e-aeb7-4e6f-8321-60fe6140eb67
-caps.latest.revision: "7"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c99748e77f1fccd9512c8915d0f4068d0da51a41
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: fda5a7286c3d20c7cdc2093e58bfe3fbdcf1d1c1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-a-workflow-service-that-calls-another-workflow-service"></a>方法: 別のワークフロー サービスを呼び出すワークフロー サービスを作成する
 ワークフロー サービスでは、別のワークフロー サービスから情報を取得することが必要になる場合があります。  このトピックでは、別のワークフロー サービスからワークフロー サービスを呼び出す方法について説明します。 このトピックでは、2 つのワークフロー サービスを作成します。入力文字列を反転させるメソッドを持つワークフロー サービスと、その最初のサービスを使用して文字列を反転させた後、入力文字列を大文字に変換するワークフロー サービスです。  
@@ -77,7 +65,7 @@ ms.lasthandoff: 12/22/2017
   
 ### <a name="to-create-the-uppercaser-workflow-service"></a>UpperCaser ワークフロー サービスを作成するには  
   
-1.  NestedServices プロジェクトを右クリックし **追加**、**新しい項目の**します。 **ワークフロー**ノード、 **WCF ワークフロー サービス**、新しいサービスの名前と`UpperCaserService`です。 **[追加]**をクリックします。 これにより、UpperCaserService.xamlx という新しいワークフロー サービスがプロジェクトに追加されます。  
+1.  NestedServices プロジェクトを右クリックし **追加**、**新しい項目の**します。 **ワークフロー**ノード、 **WCF ワークフロー サービス**、新しいサービスの名前と`UpperCaserService`です。 **[追加]** をクリックします。 これにより、UpperCaserService.xamlx という新しいワークフロー サービスがプロジェクトに追加されます。  
   
 2.  デザイナーで UpperCaserService.xamlx を開いて、既存の削除**ReceiveRequest**と`SendReply`アクティビティ、およびドラッグ、`ReceiveAndSendReply`アクティビティを既存のシーケンス アクティビティにします。  
   
@@ -113,7 +101,7 @@ ms.lasthandoff: 12/22/2017
   
     4.  **TargetType**: NestedServices.StringLibrary  
   
-8.  ここで、修正済みの文字列で最初のサービスを呼び出します。 プロジェクトを右クリックし **サービス参照の追加**です。 http://localhost/NestedServices/StringReverserService.xamlx でサービス参照をサービスに追加し、プロジェクトをビルドして最初の Web サービスにアクセスするカスタム アクティビティを作成します。  
+8.  ここで、修正済みの文字列で最初のサービスを呼び出します。 プロジェクトを右クリックし **サービス参照の追加**です。 サービスにサービス参照の追加http://localhost/NestedServices/StringReverserService.xamlx最初の Web サービスにアクセスするカスタム アクティビティを作成するプロジェクトをビルドします。  
   
 9. 新しいアクティビティのインスタンス、ワークフローにドラッグ間、 **InvokeMethod**アクティビティおよび**SendReplyToReceive**アクティビティ。 変数 StringToReverse を新しいアクティビティの InputString プロパティに、変数 StringToReturn を StringToReturn プロパティに割り当てます。  
   
@@ -125,7 +113,7 @@ ms.lasthandoff: 12/22/2017
   
 1.  クライアントという新しいコンソール アプリケーション プロジェクトをソリューションに追加します。  
   
-2.  クライアント プロジェクトを右クリックし **サービス参照の追加**です。 表示されるウィンドウで  **Discover**です。 StringReverserService.xamlx を選択し、名前空間として「ReverseService」と入力します。  **[OK]**をクリックします。  
+2.  クライアント プロジェクトを右クリックし **サービス参照の追加**です。 表示されるウィンドウで  **Discover**です。 StringReverserService.xamlx を選択し、名前空間として「ReverseService」と入力します。  **[OK]** をクリックします。  
   
 3.  Program.cs の Main メソッドを次のコードで置き換えます。  
   

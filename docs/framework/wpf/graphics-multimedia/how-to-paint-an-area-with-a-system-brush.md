@@ -1,47 +1,35 @@
 ---
-title: "方法 : システム ブラシで領域を塗りつぶす"
-ms.custom: 
+title: '方法 : システム ブラシで領域を塗りつぶす'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - system brushes [WPF], painting with
 - painting [WPF], with system brushes
 - brushes [WPF], painting with system brushes [WPF]
 ms.assetid: 5141a763-9235-42cb-a6bb-afc75513eac7
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 87979c16d52262c665e2fb37fdf6d7550c5930c9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f8a66ffc283016d65a17b33e98ce28fe4cd1c242
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-paint-an-area-with-a-system-brush"></a>方法 : システム ブラシで領域を塗りつぶす
 <xref:System.Windows.SystemColors>クラスなどのシステム ブラシおよび色 へのアクセスの提供<xref:System.Windows.SystemColors.ControlBrush%2A>、 <xref:System.Windows.SystemColors.ControlBrushKey%2A>、および<xref:System.Windows.SystemColors.DesktopBrush%2A>です。 システム ブラシ、<xref:System.Windows.Media.SolidColorBrush>指定したシステム カラーを使用して領域を描画するオブジェクト。 システム ブラシは、常に純色の塗りつぶしを生成します。グラデーションを作成するために使用することはできません。  
   
  システム ブラシは、静的なリソースとしても、動的なリソースとしても使用できます。 アプリケーションの実行中にユーザーがシステム ブラシを変更したときにブラシを自動的に更新する場合は、動的なリソースを使用します。それ以外の場合は、静的なリソースを使用します。 SystemColors クラスには、厳密な名前付け規則に従うさまざまな静的プロパティが含まれます。  
   
--   *\<SystemColor>*Brush  
+-   *\<SystemColor>* Brush  
   
      静的参照を取得、<xref:System.Windows.Media.SolidColorBrush>の指定したシステム カラーです。  
   
--   *\<SystemColor>*BrushKey  
+-   *\<SystemColor>* BrushKey  
   
      参照を動的に取得、<xref:System.Windows.Media.SolidColorBrush>の指定したシステム カラーです。  
   
--   *\<SystemColor>*Color  
+-   *\<SystemColor>* Color  
   
      静的参照を取得、<xref:System.Windows.Media.Color>指定したシステム カラーの構造。  
   
--   *\<SystemColor>*ColorKey  
+-   *\<SystemColor>* ColorKey  
   
      参照を動的に取得、<xref:System.Windows.Media.Color>指定したシステム カラーの構造。  
   
@@ -58,6 +46,6 @@ ms.lasthandoff: 12/22/2017
   
  グラデーションのシステム カラーを使用する方法を示す例は、次を参照してください。[グラデーションのシステム カラーを使用して](../../../../docs/framework/wpf/graphics-multimedia/how-to-use-system-colors-in-a-gradient.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [グラデーションでシステム カラーを使用する](../../../../docs/framework/wpf/graphics-multimedia/how-to-use-system-colors-in-a-gradient.md)  
  [純色およびグラデーションによる塗りつぶしの概要](../../../../docs/framework/wpf/graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md)

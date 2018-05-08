@@ -1,27 +1,15 @@
 ---
 title: 実行中のワークフロー インスタンスの定義を更新する方法
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 26dfac36-ae23-4909-9867-62495b55fb5e
-caps.latest.revision: 6
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 9c0590f7fc9cd8cc48b725b83af55b4ed81a0e59
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 6492b08b45cf9e7767a14233c6aeb0dd648a3c82
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-update-the-definition-of-a-running-workflow-instance"></a>実行中のワークフロー インスタンスの定義を更新する方法
 動的更新は、ワークフロー アプリケーションの開発者が永続化されたワークフロー インスタンスのワークフロー定義を更新するためのメカニズムを提供します。 必要な変更には、バグ修正の実装、新しい要件の実装、または予期しない変更への対応があります。 チュートリアルでは、この手順は、動的更新を使用して永続化されたインスタンスを変更する方法を示します、`v1`で導入された新機能と一致するワークフローを推測数値[する方法: 複数のバージョンをワークフロー サイド バイ サイドのホスト](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md).  

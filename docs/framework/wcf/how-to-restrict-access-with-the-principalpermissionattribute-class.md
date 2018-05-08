@@ -1,14 +1,6 @@
 ---
 title: '方法 : PrincipalPermissionAttribute クラスでアクセスを制限する'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,17 +9,11 @@ helpviewer_keywords:
 - WCF, authorization
 - WCF, security
 ms.assetid: 5162f5c4-8781-4cc4-9425-bb7620eaeaf4
-caps.latest.revision: 23
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: dffeae6a114563ea6b030c303bd3ed3f3a27f4f5
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
-ms.translationtype: MT
+ms.openlocfilehash: a93726598b31ee57d583aca16012d615e90441f4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-restrict-access-with-the-principalpermissionattribute-class"></a>方法 : PrincipalPermissionAttribute クラスでアクセスを制限する
 Windows ドメイン コンピューターのリソースへのアクセスを制御することは、基本的なセキュリティ タスクです。 たとえば、給与情報のような機密データは、特定のユーザーだけが表示できるようにする必要があります。 ここでは、ユーザーが定義済みグループに属していることを要求することによって、メソッドへのアクセスを制限する方法について説明します。 作業用サンプルについては、次を参照してください。[サービス操作へのアクセスを承認する](../../../docs/framework/wcf/samples/authorizing-access-to-service-operations.md)です。  
@@ -52,7 +38,7 @@ Windows ドメイン コンピューターのリソースへのアクセスを�
   
 ### <a name="to-demand-user-membership"></a>ユーザー メンバーシップを要求するには  
   
-1.  実装されたサービス コントラクト コードを含む [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] コード ファイルを開きます。 コントラクトの実装の詳細については、次を参照してください。[サービス コントラクトを実装する](../../../docs/framework/wcf/implementing-service-contracts.md)です。  
+1.  実装するサービス コントラクト コードを含む Windows Communication Foundation (WCF) コード ファイルを開きます。 コントラクトの実装の詳細については、次を参照してください。[サービス コントラクトを実装する](../../../docs/framework/wcf/implementing-service-contracts.md)です。  
   
 2.  特定のグループに制限される必要がある各メソッドに <xref:System.Security.Permissions.PrincipalPermissionAttribute> 属性を適用します。 <xref:System.Security.Permissions.SecurityAttribute.Action%2A> プロパティを <xref:System.Security.Permissions.SecurityAction.Demand> に設定し、<xref:System.Security.Permissions.PrincipalPermissionAttribute.Role%2A> プロパティをグループの名前に設定します。 例えば:  
   

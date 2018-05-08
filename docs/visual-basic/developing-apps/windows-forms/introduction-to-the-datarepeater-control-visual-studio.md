@@ -1,23 +1,16 @@
 ---
-title: "DataRepeater コントロールの概要 (Visual Studio)"
+title: DataRepeater コントロールの概要 (Visual Studio)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - repeating data
 - DataRepeater, overview
 - DataRepeater
 ms.assetid: 78a52a1d-65f0-4ecb-97ff-53bc114300c5
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 699876cc568b22114e5ed8741c2fd0c053a137af
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: fc0cf9c358faf3e738eb3b24ec61577b88dbce4a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="introduction-to-the-datarepeater-control-visual-studio"></a>DataRepeater コントロールの概要 (Visual Studio)
 Visual Basic Power Packs の <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> コントロールは、データベース テーブルの行などの繰り返されるデータを表示するコントロールの、スクロール可能なコンテナーです。 データのレイアウトを詳細に制御する必要がある場合は、 <xref:System.Windows.Forms.DataGridView> コントロールの代わりにこのコントロールを使用できます。 <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> 「グループを繰り返し実行」関連するコントロールのスクロールのビューで複数のインスタンスを作成しています。 これにより、ユーザーを同時に複数のレコードを表示できます。  

@@ -1,32 +1,18 @@
 ---
 title: '方法 : Windows Communication Foundation クライアントを作成する'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - clients [WCF], running
 - WCF clients [WCF], running
 ms.assetid: a67884cc-1c4b-416b-8c96-5c954099f19f
-caps.latest.revision: ''
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 2591cad6354ec40f1fb6ead265c84a67adf3eec8
-ms.sourcegitcommit: 15316053918995cc1380163a7d7e7edd5c44e6d7
-ms.translationtype: MT
+ms.openlocfilehash: 962f1255f3c759d623850678005eff138353cc80
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-a-windows-communication-foundation-client"></a>方法 : Windows Communication Foundation クライアントを作成する
-これは、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] アプリケーションの作成に必要な 6 つのタスクのうち、4 番目のタスクです。 タスクの 6 つのすべての概要については、次を参照してください。、[チュートリアル入門](../../../docs/framework/wcf/getting-started-tutorial.md)トピックです。  
+これは、Windows Communication Foundation (WCF) アプリケーションを作成するために必要な 6 つのタスクのうちの 4 番目です。 タスクの 6 つのすべての概要については、次を参照してください。、[チュートリアル入門](../../../docs/framework/wcf/getting-started-tutorial.md)トピックです。  
   
  ここでは、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスからメタデータを取得し、このメタデータを使用して、サービスにアクセスできる [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアント プロキシを作成する方法について説明します。 このタスクを完了するには、Visual Studio に用意されている "サービス参照の追加" 機能を使用します。 このツールでは、サービスの MEX エンドポイントからメタデータを取得し、選択した言語 (既定では C#) でクライアント プロキシのマネージ ソース コード ファイルを生成します。 このツールでは、クライアント プロキシを作成する以外に、クライアントの構成ファイルの作成または更新も行います。この構成ファイルにより、クライアント アプリケーションはエンドポイントのいずれかにあるサービスに接続できるようになります。  
   
@@ -40,15 +26,15 @@ ms.lasthandoff: 03/19/2018
   
 ### <a name="to-create-a-windows-communication-foundation-client"></a>Windows Communication Foundation クライアントを作成するには  
   
-1.  はじめにソリューションを選択するを右クリックして新しいコンソール アプリケーション プロジェクトを作成する**追加**、**新しいプロジェクト**です。 **新しいプロジェクトの追加**ダイアログの の左側でダイアログ**Windows**  **c#**または**VB**です。 ダイアログの中央のセクションで選択**コンソール アプリケーション**です。 プロジェクトに `GettingStartedClient` という名前を付けます。  
+1.  はじめにソリューションを選択するを右クリックして新しいコンソール アプリケーション プロジェクトを作成する**追加**、**新しいプロジェクト**です。 **新しいプロジェクトの追加**ダイアログの の左側でダイアログ**Windows**  **c#** または**VB**です。 ダイアログの中央のセクションで選択**コンソール アプリケーション**です。 プロジェクトに `GettingStartedClient` という名前を付けます。  
   
-2.  右クリック GettingStartedClient プロジェクトのターゲット フレームワークを .NET Framework 4.5 に設定**GettingStartedClient**ソリューション エクスプ ローラーを選択して**プロパティ**です。 ラベルの付いたボックスの一覧で**ターゲット フレームワーク**選択**.NET Framework 4.5**です。 VB プロジェクトは少し異なり、GettingStartedClient プロジェクトのプロパティ ダイアログ ボックスのターゲット フレームワークを設定をクリックして、**コンパイル**、画面の左側にある タブでをクリックし、 **詳細設定コンパイル オプション**ダイアログ ボックスの左下隅にあるボタンをクリックします。 選択し、 **.NET Framework 4.5**というドロップダウン ボックスで**ターゲット フレームワーク**です。  
+2.  右クリック GettingStartedClient プロジェクトのターゲット フレームワークを .NET Framework 4.5 に設定**GettingStartedClient**ソリューション エクスプ ローラーを選択して**プロパティ**です。 ラベルの付いたボックスの一覧で**ターゲット フレームワーク**選択 **.NET Framework 4.5**です。 VB プロジェクトは少し異なり、GettingStartedClient プロジェクトのプロパティ ダイアログ ボックスのターゲット フレームワークを設定をクリックして、**コンパイル**、画面の左側にある タブでをクリックし、 **詳細設定コンパイル オプション**ダイアログ ボックスの左下隅にあるボタンをクリックします。 選択し、 **.NET Framework 4.5**というドロップダウン ボックスで**ターゲット フレームワーク**です。  
   
      ターゲット フレームワークを設定すると、ソリューションを再読み込みする Visual Studio 2011 キーを押して**OK**入力を求められたらです。  
   
 3.  右クリックして System.ServiceModel への参照を GettingStartedClient プロジェクトに追加、**参照**クリックし、ソリューション エクスプ ローラーで GettingStartedClient プロジェクトの下のフォルダー**追加**参照。 **参照の追加**ダイアログの  **Framework**ダイアログ ボックスの左側にあります。 [アセンブリの検索] ボックスに「`System.ServiceModel`」と入力します。 ダイアログの中央のセクションで選択**System.ServiceModel**をクリックして、**追加**ボタンをクリックし、をクリックして、**閉じる**ボタンをクリックします。 クリックして、ソリューションを保存、**すべて保存**メイン メニューの下のボタンをクリックします。  
   
-4.  次に、電卓サービスへのサービス参照を追加します。 これを実行する前に、GettingStartedHost コンソール アプリケーションを起動する必要があります。 ホストが実行されているソリューション エクスプ ローラーで GettingStartedClient プロジェクトの 参照 フォルダーを右クリックしてサービス参照の追加 ダイアログ ボックスの アドレス ボックスに次の URL でサービス参照の追加と種類を選択します HYPERLINK "http://localhost:8000/ServiceModelSamples/Service"  http://localhost:8000/ServiceModelSamples/Service とクリック、**移動**ボタンをクリックします。 "CalculatorService" が [サービス] ボックスに表示されたら、CalculatorService をダブルクリックして、そのサービスによって実装されているサービス コントラクトを展開して表示します。 同様をクリックして既定の名前空間のままにして、 **OK**ボタンをクリックします。  
+4.  次に、電卓サービスへのサービス参照を追加します。 これを実行する前に、GettingStartedHost コンソール アプリケーションを起動する必要があります。 ホストが実行されているソリューション エクスプ ローラーで GettingStartedClient プロジェクトの 参照 フォルダーを右クリックしてサービス参照の追加 ダイアログ ボックスの アドレス ボックスに次の URL でサービス参照の追加と種類を選択します HYPERLINK"。http://localhost:8000/ServiceModelSamples/Service" http://localhost:8000/ServiceModelSamples/Service  をクリックし、**移動**ボタンをクリックします。 "CalculatorService" が [サービス] ボックスに表示されたら、CalculatorService をダブルクリックして、そのサービスによって実装されているサービス コントラクトを展開して表示します。 同様をクリックして既定の名前空間のままにして、 **OK**ボタンをクリックします。  
   
      Visual Studio を使用してサービスへの参照を追加すると、ソリューション エクスプローラーで、新しい項目が GettingStartedClient プロジェクトの [サービス参照] フォルダーの下に表示されます。  使用する場合、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)ツールは、ソース コード ファイルおよび app.config ファイルが生成されます。  
   

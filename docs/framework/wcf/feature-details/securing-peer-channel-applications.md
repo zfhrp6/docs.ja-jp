@@ -1,24 +1,12 @@
 ---
-title: "セキュリティによるピア チャネル アプリケーションの保護"
-ms.custom: 
+title: セキュリティによるピア チャネル アプリケーションの保護
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: d4a0311d-3f78-4525-9c4b-5c93c4492f28
-caps.latest.revision: "13"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 7358852ffc50576f892c70fa2b212a8102d8ab85
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 725e629a187261a5bc50d880f75b942734df960b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="securing-peer-channel-applications"></a>セキュリティによるピア チャネル アプリケーションの保護
 [!INCLUDE[vstecwinfx](../../../../includes/vstecwinfx-md.md)] での他のバインディングと同様に、`NetPeerTcpBinding` には、既定で有効にされているセキュリティがあり、トランスポート ベースのセキュリティとメッセージ ベースのセキュリティが提供されます。 このトピックでは、これら 2 種類のセキュリティについて説明します。 セキュリティの種類は、バインディング仕様のセキュリティ モード タグ (<xref:System.ServiceModel.NetPeerTcpBinding.Security%2A>`Mode`) で指定します。  
@@ -52,6 +40,6 @@ ms.lasthandoff: 12/22/2017
 ## <a name="peer-channel-code-examples"></a>ピア チャネルのコード例  
  [ピア チャネルのシナリオ](../../../../docs/framework/wcf/feature-details/peer-channel-scenarios.md)  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ピア チャネルのセキュリティ](../../../../docs/framework/wcf/feature-details/peer-channel-security.md)  
  [ピア チャネル アプリケーションの構築](../../../../docs/framework/wcf/feature-details/building-a-peer-channel-application.md)

@@ -1,27 +1,15 @@
 ---
-title: "ToolStrip コントロール (Windows フォーム)"
-ms.custom: 
+title: ToolStrip コントロール (Windows フォーム)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - toolbars [Windows Forms]
 - ToolStrip control [Windows Forms]
 ms.assetid: e5ef455a-e049-429c-8005-30c93132fb79
-caps.latest.revision: "28"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 3f5f8ca82cf128647e7dd80676cad629f8480a48
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 49bf94959b2efb19ff6e3a273f4cd09905089b31
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="toolstrip-control-windows-forms"></a>ToolStrip コントロール (Windows フォーム)
 <xref:System.Windows.Forms.ToolStrip> コントロールは、Windows フォーム アプリケーションでメニュー、コントロール、およびユーザー コントロールをホストするツール バーです。  

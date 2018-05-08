@@ -1,13 +1,6 @@
 ---
-title: "Windows フォームでのヘルプの統合"
-ms.custom: 
+title: Windows フォームでのヘルプの統合
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - Help [Windows Forms], Windows Forms (using designer)
 - Windows Forms, Help (using designer)
@@ -16,16 +9,11 @@ helpviewer_keywords:
 - forms. Help (using designer)
 - Windows applications [Windows Forms], Help (using designer)
 ms.assetid: a8563d25-8a75-4bc7-a024-f1870591b50f
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 9563ce0ca95a728cc1a9aaa219fbc9fea2cd7153
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b16ba14eea68083cd7bdfc91c88375406137f450
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="integrating-user-help-in-windows-forms"></a>Windows フォームでのヘルプの統合
 これは、ユーザーが混乱したときにアシスタンスを有効に、よく見過ごされますに関して重要 Windows ベースのアプリケーションの構築のヘルプ システムです。 Windows フォームでは、次の 2 つの異なる種類のヘルプをサポート、それぞれによって提供される、 [HelpProvider コンポーネント](../../../../docs/framework/winforms/controls/helpprovider-component-windows-forms.md)です。 1 つ目は、HTML または HTML ヘルプ 1 のいずれかのヘルプ ファイルをユーザーを指す必要があります。*x*または大きい値の形式です。 2 番目できますを表示する簡単な"新機能"-個別のコントロールのヘルプを入力これは、ダイアログ ボックスで特に便利です。 ヘルプの両方の種類は、同じフォームで使用できます。  

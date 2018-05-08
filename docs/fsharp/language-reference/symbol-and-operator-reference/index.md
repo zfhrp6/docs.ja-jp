@@ -1,17 +1,12 @@
 ---
 title: シンボルと演算子のリファレンス (F#)
 description: シンボルと f# のプログラミング言語で使用する演算子について説明します。
-author: cartermp
-ms.author: phcart
 ms.date: 04/04/2018
-ms.topic: language-reference
-ms.prod: dotnet-fsharp
-ms.devlang: fsharp
-ms.openlocfilehash: 5b4b89ae29a067f2c793862a555fbcf78a800d88
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 79518b990f3a5c794f7658490bdadc2d5b985504
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="symbol-and-operator-reference"></a>シンボルと演算子のリファレンス
 

@@ -1,13 +1,6 @@
 ---
-title: "mc:Ignorable 属性"
-ms.custom: 
+title: mc:Ignorable 属性
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - mc XML namespace prefix [WPF]
 - mc:Ignorable attribute
@@ -16,16 +9,11 @@ helpviewer_keywords:
 - mc:ProcessContent attribute
 - XAML [WPF], mc:ProcessContent attribute
 ms.assetid: acd9a6ef-b7ca-4146-abb6-60f3b366e9ec
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 9767b721321b34030a2f276a90c618c658645207
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 7b8a2ef6e27bc6b25776157e59bef04b883fcb1a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="mcignorable-attribute"></a>mc:Ignorable 属性
 指定する[!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)]がマークアップ ファイルで発生した名前空間プレフィックスを無視する場合があります、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]プロセッサ。 `mc:Ignorable`属性は、カスタム名前空間のマッピングとのマークアップの互換性をサポートしている[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]バージョン管理します。  
@@ -66,7 +54,7 @@ ms.lasthandoff: 12/22/2017
   
  要素または属性として、要素名のプレフィックスの部分を識別する、`mc:Ignorable`によって処理されるときにエラーを生成しませんが、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]プロセッサ。 その属性を基になる型またはプログラミング構成要素を解決できませんでした、その要素は無視されます。 ただし、無視された要素が処理されていないその要素の副作用は、追加の要素の要件の追加の解析エラーを生成する可能性がありますも。 たとえば、特定の要素のコンテンツ モデル可能性がありますが必要なときに指定された子要素が 1 つの子要素、`mc:Ignorable`プレフィックス、および指定した子要素を型に解決できませんでした、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]プロセッサ可能性がありますエラーが発生します。  
   
- `mc:Ignorable`識別子の文字列に名前空間のマッピングにのみ適用されます。 `mc:Ignorable`名前空間のマッピングに指定のアセンブリには適用されません、[!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)]名前空間とアセンブリ (または、現在の実行可能ファイル、アセンブリと既定)。  
+ `mc:Ignorable` 識別子の文字列に名前空間のマッピングにのみ適用されます。 `mc:Ignorable` 名前空間のマッピングに指定のアセンブリには適用されません、[!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)]名前空間とアセンブリ (または、現在の実行可能ファイル、アセンブリと既定)。  
   
  実装する場合、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]プロセッサ、プロセッサの実装する必要がありますいないを発生させる解析または任意の要素またはとして識別されるプレフィックスで修飾された属性の型解決についてのエラーを処理`mc:Ignorable`です。 プロセッサの実装の読み込みまたは前に示した例では、1 つの子要素などの処理に失敗している、要素のセカンダリの結果は、例外が発生することができます。  
   
@@ -76,7 +64,7 @@ ms.lasthandoff: 12/22/2017
   
  [!INCLUDE[TLA#tla_mcxmlnsv1](../../../../includes/tlasharptla-mcxmlnsv1-md.md)]名前空間は、他の要素とのこの領域に記載されていない属性を定義、[!INCLUDE[TLA#tla_sdk](../../../../includes/tlasharptla-sdk-md.md)]です。 詳細については、次を参照してください。 [XML マークアップ互換性仕様](http://go.microsoft.com/fwlink/?LinkId=73824)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Markup.XamlReader>  
  [PresentationOptions:Freeze 属性](../../../../docs/framework/wpf/advanced/presentationoptions-freeze-attribute.md)  
  [XAML の概要 (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)  

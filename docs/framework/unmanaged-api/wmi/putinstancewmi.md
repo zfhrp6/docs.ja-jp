@@ -1,11 +1,7 @@
 ---
-title: "PutInstanceWmi 関数 (アンマネージ API リファレンス)"
-description: "PutInstanceWmi 関数を作成または既存のクラスのインスタンスを更新します。"
+title: PutInstanceWmi 関数 (アンマネージ API リファレンス)
+description: PutInstanceWmi 関数を作成または既存のクラスのインスタンスを更新します。
 ms.date: 11/06/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: reference
 api_name:
 - PutInstanceWmi
 api_location:
@@ -20,14 +16,11 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: b1996103eea87562226537f9aa90dc337c56313c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 0db08ef4938a88ee657e2d65dda70edac09df8ef
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="putinstancewmi-function"></a>PutInstanceWmi 関数
 作成するか、既存のクラスのインスタンスを更新します。 インスタンスは、WMI リポジトリに書き込まれます。 
@@ -76,11 +69,11 @@ HRESULT PutInstanceWmi (
 | `WBEM_E_ACCESS_DENIED` | 0x80041003 | ユーザーには、指定したクラスのインスタンスを更新するアクセス許可がありません。 |
 | `WBEM_E_FAILED` | 0x80041001 | 不明なエラーが発生しました。 |
 | `WBEM_E_INVALID_CLASS` | 0x80041010 | このインスタンスをサポートするクラスが正しくありません。 |
-| `WBEM_E_ILLEGAL_NULL` | 0x80041028 | `null`できないプロパティに指定されました`null`でマークされているいずれかなど、**インデックス**または**not_**修飾子です。 |
+| `WBEM_E_ILLEGAL_NULL` | 0x80041028 | `null`できないプロパティに指定されました`null`でマークされているいずれかなど、**インデックス**または**not_** 修飾子です。 |
 | `WBEM_E_INVALID_OBJECT` | 0x8004100f | 指定したインスタンスが正しくありません。 (たとえば、呼び出す`PutInstanceWmi`クラスにこの値を返します)。 |
 | `WBEM_E_INVALID_PARAMETER` | 0x80041008 | パラメーターが正しくありません。 |
 | `WBEM_E_ALREADY_EXISTS` | 0x80041019 | `WBEM_FLAG_CREATE_ONLY`フラグが指定されましたが、インスタンスは既に存在します。 |
-| `WBEM_E_NOT_FOUND` | 0x80041002 | `WBEM_FLAG_UPDATE_ONLY`指定された`lFlags`は、インスタンスが存在しません。 |
+| `WBEM_E_NOT_FOUND` | 0x80041002 | `WBEM_FLAG_UPDATE_ONLY` 指定された`lFlags`は、インスタンスが存在しません。 |
 | `WBEM_E_OUT_OF_MEMORY` | 0x80041006 | 操作を完了するのに十分なメモリがあります。 |
 | `WBEM_E_SHUTTING_DOWN` | 0x80041033 | WMI は、おそらく停止および再起動されました。 呼び出す[ConnectServerWmi](connectserverwmi.md)もう一度です。 |
 | `WBEM_E_TRANSPORT_FAILURE` | 0x80041015 | リモート プロシージャ コール (RPC) リンクで、現在のプロセスと WMI との間に失敗しました。 |
@@ -101,12 +94,12 @@ Windows の管理には、インスタンスの子クラスのいずれかのプ
 
 呼び出して追加のエラー情報を取得するには、関数呼び出しに失敗した場合、 [GetErrorInfo](geterrorinfo.md)関数。
 
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** WMINet_Utils.idl  
   
- **.NET framework のバージョン:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **.NET framework のバージョン:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>関連項目  
 [WMI およびパフォーマンス カウンター (アンマネージ API リファレンス)](index.md)

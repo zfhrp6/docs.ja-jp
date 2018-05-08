@@ -1,26 +1,12 @@
 ---
-title: "ルーティングの概要"
-ms.custom: 
+title: ルーティングの概要
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: bf6ceb38-6622-433b-9ee7-f79bc93497a1
-caps.latest.revision: 
-author: wadepickett
-ms.author: wpickett
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: e0fe14f096ae0914235ea1d23b874f0aea906d9d
-ms.sourcegitcommit: 15316053918995cc1380163a7d7e7edd5c44e6d7
+ms.openlocfilehash: 3ee7ea8271df47354a0897434bf8f203eaf09a51
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="routing-introduction"></a>ルーティングの概要
 ルーティング サービスは、メッセージの内容を基にメッセージをルーティングできる、プラグ可能な汎用の SOAP 中継局を提供します。 ルーティング サービスを使用すると、サービスの集計、サービスのバージョン管理、優先度ルーティング、マルチキャスト ルーティングなどのシナリオを実装できる複雑なルーティング ロジックを作成できます。 また、ルーティング サービスは、バックアップ エンドポイントのリストを設定できるエラー処理機能も提供します。バックアップ エンドポイントは、プライマリ送信先エンドポイントへの送信時に障害が発生した場合に、メッセージの送信先になります。  
@@ -111,7 +97,7 @@ serviceHost.Description.Behaviors.Add(
      new RoutingBehavior(rc));  
 ```  
   
- この例では、"http://localhost:8000/ルーティング サービスと、ルーターの"ルーティングされるメッセージの受信に使用されるアドレスを持つ 1 つのエンドポイントを公開するルーティング サービスを構成します。 メッセージは要求/応答エンドポイントにルーティングされるため、サービス エンドポイントは <xref:System.ServiceModel.Routing.IRequestReplyRouter> コントラクトを使用します。 この構成では、"http://localhost:8000/servicemodelsample/サービスの"メッセージのルーティング先を 1 つのクライアント エンドポイントも定義します。 "RoutingTable1"という名前 (表示されません) テーブルのフィルターがメッセージのルーティングに使用されるルーティング ロジックを保持しを使用して、サービス エンドポイントに関連付けられて、 **RoutingBehavior** (用構成ファイルの場合) または**RoutingConfiguration** (プログラムによる構成) 用です。  
+ この例のアドレスを持つ 1 つのエンドポイントを公開するルーティング サービスを構成する"http://localhost:8000/routingservice/router"、ルーティングされるメッセージの受信に使用されます。 メッセージは要求/応答エンドポイントにルーティングされるため、サービス エンドポイントは <xref:System.ServiceModel.Routing.IRequestReplyRouter> コントラクトを使用します。 この構成での 1 つのクライアント エンドポイントも定義"http://localhost:8000/servicemodelsample/service"メッセージをルーティングすることです。 "RoutingTable1"という名前 (表示されません) テーブルのフィルターがメッセージのルーティングに使用されるルーティング ロジックを保持しを使用して、サービス エンドポイントに関連付けられて、 **RoutingBehavior** (用構成ファイルの場合) または**RoutingConfiguration** (プログラムによる構成) 用です。  
   
 ### <a name="routing-logic"></a>ルーティング ロジック  
  メッセージのルーティングに使用されるルーティング ロジックを定義するには、受信メッセージに含まれるデータのうち、一意に識別して処理できるものを特定する必要があります。 たとえば、ルーティング先のすべてのエンドポイントが同じ SOAP アクションを共有する場合、メッセージに含まれる Action の値は、メッセージのルーティング先となる特定のエンドポイントを示す値としては不適切です。 ある特定のエンドポイントにメッセージを一意にルーティングする必要がある場合は、メッセージのルーティング先エンドポイントを一意に識別できるデータを基に、フィルター処理を行います。  
@@ -165,7 +151,7 @@ rc.FilterTable.Add(new MatchAllMessageFilter(), endpointList);
 > [!NOTE]
 >  既定でルーティング サービスによって評価されるのは、メッセージのヘッダーのみです。 フィルターがメッセージ本文にアクセスできるようにするには、<xref:System.ServiceModel.Routing.RoutingConfiguration.RouteOnHeadersOnly%2A> を `false` に設定します。  
   
- **Multicast**  
+ **マルチキャスト**  
   
  多くのルーティング サービス構成では、特定の 1 つのエンドポイントにのみメッセージをルーティングする排他的なフィルター ロジックが使用されますが、特定のメッセージを、複数の送信先エンドポイントにルーティングすることが必要な場合もあります。 メッセージを複数の送信先にマルチキャストするには、次の条件を満たす必要があります。  
   
@@ -173,7 +159,7 @@ rc.FilterTable.Add(new MatchAllMessageFilter(), endpointList);
   
 -   複数のフィルターが、メッセージの評価時に `true` を返す必要がある。  
   
- これらの条件が満たされる場合は、メッセージが、`true` に評価されたすべてのフィルターのすべてのエンドポイントにルーティングされます。 次の例では、メッセージ内のエンドポイント アドレスが http://localhost:8000/routingservice/router/rounding である場合、両方のエンドポイントにメッセージがルーティングされるルーティング構成を定義しています。  
+ これらの条件が満たされる場合は、メッセージが、`true` に評価されたすべてのフィルターのすべてのエンドポイントにルーティングされます。 次の例は、結果、メッセージ内のエンドポイント アドレスがある場合、両方のエンドポイントにルーティングされるメッセージ ルーティングの構成を定義http://localhost:8000/routingservice/router/roundingです。  
   
 ```xml  
 <!--ROUTING SECTION -->  

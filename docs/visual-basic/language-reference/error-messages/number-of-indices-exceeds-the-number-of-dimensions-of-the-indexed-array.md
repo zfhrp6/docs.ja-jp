@@ -1,26 +1,17 @@
 ---
 title: インデックス番号がインデックス付き配列の次元を超えています。
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - bc30106
 - vbc30106
 helpviewer_keywords:
 - BC30106
 ms.assetid: 2c5363e1-62c2-4f5a-b675-c7337aeb363d
-caps.latest.revision: 10
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 8fdf031734d441daca2073925f6d45d6ba9f1f52
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: d40a19aefdca65773d3d8e37a43d99178586fb1c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="number-of-indices-exceeds-the-number-of-dimensions-of-the-indexed-array"></a>インデックス番号がインデックス付き配列の次元を超えています。
 配列要素にアクセスするために使用されるインデックスの数は、配列のランク、つまり配列に宣言した次元の数とまったく同じである必要があります。  
@@ -29,7 +20,7 @@ ms.lasthandoff: 10/18/2017
   
 ## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
--   添字の合計数が、配列のランクと同じになるまでは、配列参照からの添字を削除します。 例:  
+-   添字の合計数が、配列のランクと同じになるまでは、配列参照からの添字を削除します。 例えば:  
   
     ```vb  
     Dim gameBoard(3, 3) As String  

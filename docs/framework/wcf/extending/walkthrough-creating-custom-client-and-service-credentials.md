@@ -1,35 +1,21 @@
 ---
 title: 'チュートリアル: カスタム クライアントおよびサービスの資格情報を作成する'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 2b5ba5c3-0c6c-48e9-9e46-54acaec443ba
-caps.latest.revision: 13
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: cf9f6c1ad5be3a2d63140f03f74713809624e277
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
-ms.translationtype: MT
+ms.openlocfilehash: 8c5608276de935f07dca88e343143112b8fdcc20
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="walkthrough-creating-custom-client-and-service-credentials"></a>チュートリアル: カスタム クライアントおよびサービスの資格情報を作成する
 このトピックでは、クライアントおよびサービスにカスタム資格情報を実装する方法と、これをアプリケーション コードから使用する方法について説明します。  
   
 ## <a name="credentials-extensibility-classes"></a>資格情報拡張クラス  
- <xref:System.ServiceModel.Description.ClientCredentials> クラスおよび <xref:System.ServiceModel.Description.ServiceCredentials> クラスは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] セキュリティ拡張のメイン エントリ ポイントです。 これらの資格情報クラスでは、アプリケーション コードから資格情報を設定し、資格情報の種類をセキュリティ トークンに変換する API を提供します  (*セキュリティ トークン*は SOAP メッセージ内の資格情報を送信するためのフォームです)。これらの資格情報クラスの役割は、次の 2 つの領域に分けることができます。  
+ <xref:System.ServiceModel.Description.ClientCredentials>と<xref:System.ServiceModel.Description.ServiceCredentials>クラスは、Windows Communication Foundation (WCF) のセキュリティ機能を拡張するメイン エントリ ポイントです。 これらの資格情報クラスでは、アプリケーション コードから資格情報を設定し、資格情報の種類をセキュリティ トークンに変換する API を提供します  (*セキュリティ トークン*は SOAP メッセージ内の資格情報を送信するためのフォームです)。これらの資格情報クラスの役割は、次の 2 つの領域に分けることができます。  
   
 -   アプリケーションで資格情報を設定するための API を提供します。  
   

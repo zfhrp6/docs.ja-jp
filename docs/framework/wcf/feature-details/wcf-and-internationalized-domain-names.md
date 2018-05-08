@@ -1,24 +1,12 @@
 ---
-title: "WCF と国際化ドメイン名"
-ms.custom: 
+title: WCF と国際化ドメイン名
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: c8a3e10a-8bc2-4a78-8d86-a562ba6e65fa
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 7a0a6cd2a809648aadfba9bac2c4ab35c26b4c65
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 24b7af660d5fd9629639d3b63d605ef619dcf009
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="wcf-and-internationalized-domain-names"></a>WCF と国際化ドメイン名
 国際化ドメイン名 (IDN) を持つ WCF サービスを許可するためのサポートが追加されました。 国際化ドメイン名とは、非 ASCII 文字を含むドメイン名です。 このサポートには、IDN 名を持つ WCF サービスをホストする機能と、IDN 名を持つ Web サービスとの通信を行う WCF クライアントをホストする機能の両方が含まれます。  
@@ -52,5 +40,5 @@ ms.lasthandoff: 12/22/2017
 > [!WARNING]
 >  Unicode 文字を applicationHost.exe.config に追加する場合は、UTF-8 エンコードを使用してファイルを保存してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [System.Uri](http://msdn.microsoft.com/library/system.uri.aspx)

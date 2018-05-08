@@ -1,25 +1,17 @@
 ---
-title: "ループ コントロール変数として宣言された配列を初期サイズで宣言することはできません"
+title: ループ コントロール変数として宣言された配列を初期サイズで宣言することはできません
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: 
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vbc32039
 - bc32039
 helpviewer_keywords:
 - BC32039
 ms.assetid: 1d8b6560-c9eb-4b71-a038-24c6f5a5ce46
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: ef36f14d5323a4592afe59573e249d8cfb218df9
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: f6cf397b1e76313ab399d5e39a43ae0263df619c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="array-declared-as-for-loop-control-variable-cannot-be-declared-with-an-initial-size"></a>ループ コントロール変数として宣言された配列を初期サイズで宣言することはできません
 A`For Each`ループとして配列を使用してその*要素*繰り返し変数がその配列を初期化します。  
@@ -40,7 +32,7 @@ For Each listElement(1) As Integer In arrayList
   
 -   宣言から初期化を削除、*要素*繰り返し変数。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [For...Next ステートメント](../../../visual-basic/language-reference/statements/for-next-statement.md)  
  [配列](../../../visual-basic/programming-guide/language-features/arrays/index.md)  
  [コレクション](../../../standard/collections/index.md)

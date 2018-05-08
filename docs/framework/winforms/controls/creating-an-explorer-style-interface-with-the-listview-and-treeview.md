@@ -1,13 +1,6 @@
 ---
-title: "チュートリアル : デザイナーを使用した、ListView コントロールと TreeView コントロールを含むエクスプローラー スタイルのインターフェイスの作成"
-ms.custom: 
+title: 'チュートリアル : デザイナーを使用した、ListView コントロールと TreeView コントロールを含むエクスプローラー スタイルのインターフェイスの作成'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -20,16 +13,11 @@ helpviewer_keywords:
 - ListView control [Windows Forms], explorer style interface
 - ListView control [Windows Forms], explorer-style interface
 ms.assetid: 9e5e7721-19e2-4890-b273-a43589fe99ff
-caps.latest.revision: "19"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 1d8d7991f706f8098e4ac475ae057771de200197
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 0a0208194bd6cf24f61c58ece88e41b674e924fc
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="walkthrough-creating-an-explorer-style-interface-with-the-listview-and-treeview-controls-using-the-designer"></a>チュートリアル : デザイナーを使用した、ListView コントロールと TreeView コントロールを含むエクスプローラー スタイルのインターフェイスの作成
 Visual Studio の利点の 1 つは、時間の短い形式でプロ並みの Windows フォーム アプリケーションを作成する権限です。 一般的なシナリオは、ユーザー インターフェイス (UI) を作成するとは<xref:System.Windows.Forms.ListView>と<xref:System.Windows.Forms.TreeView>Windows エクスプ ローラーの機能の Windows オペレーティング システムのようなコントロールです。 Windows エクスプ ローラーでは、ユーザーのコンピューター上のファイルとフォルダーの階層構造を表示します。  
@@ -39,15 +27,15 @@ Visual Studio の利点の 1 つは、時間の短い形式でプロ並みの Wi
   
 ### <a name="to-create-the-form-containing-a-listview-and-treeview-control"></a>ListView コントロールと TreeView コントロールを含むフォームを作成するには  
   
-1.  **[ファイル]** メニューの **[新規作成]**をポイントし、 **[プロジェクト]**をクリックします。  
+1.  **[ファイル]** メニューの **[新規作成]** をポイントし、 **[プロジェクト]** をクリックします。  
   
 2.  **新しいプロジェクト** ダイアログ ボックスで、次の操作します。  
   
-    1.  カテゴリで選択するか**Visual Basic**または**Visual c#**です。  
+    1.  カテゴリで選択するか**Visual Basic**または**Visual c#** です。  
   
     2.  テンプレートの一覧で選択**Windows フォーム アプリケーション**です。  
   
-3.  **[OK]**をクリックします。 新しい Windows フォーム プロジェクトが作成されます。  
+3.  **[OK]** をクリックします。 新しい Windows フォーム プロジェクトが作成されます。  
   
 4.  追加、<xref:System.Windows.Forms.SplitContainer>コントロールをフォームと設定、<xref:System.Windows.Forms.SplitContainer.Dock%2A>プロパティを<xref:System.Windows.Forms.DockStyle.Fill>です。  
   
@@ -111,7 +99,7 @@ Visual Studio の利点の 1 つは、時間の短い形式でプロ並みの Wi
   
 -   [方法: ショートカット メニューを TreeView ノードに追加する](../../../../docs/framework/winforms/controls/how-to-attach-a-shortcut-menu-to-a-treeview-node.md)  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.ListView>  
  <xref:System.Windows.Forms.TreeView>  
  [ListView コントロール](../../../../docs/framework/winforms/controls/listview-control-windows-forms.md)  

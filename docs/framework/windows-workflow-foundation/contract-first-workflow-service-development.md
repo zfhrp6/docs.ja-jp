@@ -1,24 +1,12 @@
 ---
 title: コントラクト優先ワークフロー サービスの開発
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: e5dbaa7b-005f-4330-848d-58ac4f42f093
-caps.latest.revision: 2
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 4bc0c8fafd80651114d85d2d6b06c57dec6199b5
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: 10129fcb40d86d1ca7e42bce68b072e9118bcc88
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="contract-first-workflow-service-development"></a>コントラクト優先ワークフロー サービスの開発
 以降で[!INCLUDE[net_v45](../../../includes/net-v45-md.md)]、Windows Workflow Foundation (WF) 機能のコントラクト優先ワークフローの開発という形で web サービスとワークフローの間の統合が向上しています。 コントラクト優先ワークフローの開発ツールでは、コードのコントラクトを先に設計できます。 その後、ツールボックス内に、コントラクト内の操作用のアクティビティ テンプレートが自動的に生成されます。 このトピックでは、ワークフロー サービスのアクティビティおよびプロパティをサービス コントラクトの属性にマップする方法の概要について説明します。 コントラクト優先ワークフロー サービスを作成する例については、次を参照してください。[する方法: 既存のサービス コントラクトを使用するワークフロー サービスを作成する](../../../docs/framework/windows-workflow-foundation/how-to-create-a-workflow-service-that-consumes-an-existing-service-contract.md)です。  

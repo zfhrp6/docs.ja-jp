@@ -1,29 +1,15 @@
 ---
 title: 探索プロキシを実装する方法
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 78d70e0a-f6c3-4cfb-a7ca-f66ebddadde0
-caps.latest.revision: 19
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 2e984a55137aec0042f8de0d69aa1310ed43a0df
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: c3088da4dbd042d0022a56c28c90e2fcfbf24ba4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-implement-a-discovery-proxy"></a>探索プロキシを実装する方法
-このトピックでは、探索プロキシの実装方法について説明します。 探索機能の詳細については[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]を参照してください[WCF Discovery の概要](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md)です。 探索プロキシを実装するには、抽象クラス <xref:System.ServiceModel.Discovery.DiscoveryProxy> を拡張するクラスを作成します。 このサンプルでは、他の多くのサポート クラスも定義され、使用されています。 `OnResolveAsyncResult`、`OnFindAsyncResult`、および `AsyncResult`。 これらのクラスは、<xref:System.IAsyncResult> インターフェイスを実装します。 詳細については<xref:System.IAsyncResult>を参照してください[System.IAsyncResult インターフェイス](xref:System.IAsyncResult)です。
+このトピックでは、探索プロキシの実装方法について説明します。 Windows Communication Foundation (WCF) での探索機能の詳細については、次を参照してください。 [WCF Discovery の概要](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md)です。 探索プロキシを実装するには、抽象クラス <xref:System.ServiceModel.Discovery.DiscoveryProxy> を拡張するクラスを作成します。 このサンプルでは、他の多くのサポート クラスも定義され、使用されています。 `OnResolveAsyncResult`、`OnFindAsyncResult`、および `AsyncResult`。 これらのクラスは、<xref:System.IAsyncResult> インターフェイスを実装します。 詳細については<xref:System.IAsyncResult>を参照してください[System.IAsyncResult インターフェイス](xref:System.IAsyncResult)です。
   
  このトピックでは、探索プロキシの実装を 3 つの主要な部分に分けて説明します。  
   

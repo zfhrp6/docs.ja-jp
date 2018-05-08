@@ -1,11 +1,6 @@
 ---
-title: "Order By 句 (Visual Basic)"
+title: Order By 句 (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.QueryOrderBy
 - vb.QueryAscending
@@ -15,14 +10,11 @@ helpviewer_keywords:
 - Order By clause [Visual Basic]
 - Order By statement [Visual Basic]
 ms.assetid: fa911282-6b81-44c7-acfa-46b5bb93df75
-caps.latest.revision: "16"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 21ee21942b966668a67b14aba72b8f9fc5ee903c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 7c60156ee81618530b42d5f61dbcac6f59c4f675
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="order-by-clause-visual-basic"></a>Order By 句 (Visual Basic)
 クエリ結果の並べ替え順序を指定します。  
@@ -35,7 +27,7 @@ Order By orderExp1 [ Ascending | Descending ] [, orderExp2 [...] ]
   
 ## <a name="parts"></a>指定項目  
  `orderExp1`  
- 必須です。 1 つまたは複数のフィールド現在のクエリ結果からを返される値を順序付ける方法を示すです。 フィールド名は、コンマ (,) で区切る必要があります。 昇順または降順に並べ替えを使用して、ソート済みとして、各フィールドを識別することができます、`Ascending`または`Descending`キーワード。 ない場合は`Ascending`または`Descending`キーワードを指定すると、既定の並べ替え順序は昇順です。 並べ替え順序フィールドには、左から右への優先順位が与えられます。  
+ 必須。 1 つまたは複数のフィールド現在のクエリ結果からを返される値を順序付ける方法を示すです。 フィールド名は、コンマ (,) で区切る必要があります。 昇順または降順に並べ替えを使用して、ソート済みとして、各フィールドを識別することができます、`Ascending`または`Descending`キーワード。 ない場合は`Ascending`または`Descending`キーワードを指定すると、既定の並べ替え順序は昇順です。 並べ替え順序フィールドには、左から右への優先順位が与えられます。  
   
 ## <a name="remarks"></a>コメント  
  使用することができます、`Order By`句、クエリの結果の並べ替えにします。 `Order By`句では、現在のスコープの範囲変数に基づく結果を並べ替えることができますのみです。 たとえば、`Select`句にそのスコープに対する新しい反復変数によりクエリ式で、新しいスコープが導入されています。 範囲変数の前に定義されている、`Select`後に使用できるクエリの句は、`Select`句。 したがってでは使用できませんのフィールドで、結果の並べ替えをする場合、`Select`句を付ける必要があります、`Order By`句の前に、`Select`句。 1 つはしなければならない場合の例は、結果の一部として返されないフィールドで、クエリの並べ替えを行うときにします。  

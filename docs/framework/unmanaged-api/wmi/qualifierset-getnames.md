@@ -1,11 +1,7 @@
 ---
-title: "QualifierSet_GetNames 関数 (アンマネージ API リファレンス)"
-description: "QualifierSet_GetNames 関数は、オブジェクトまたはプロパティから修飾子の名前を取得します。"
+title: QualifierSet_GetNames 関数 (アンマネージ API リファレンス)
+description: QualifierSet_GetNames 関数は、オブジェクトまたはプロパティから修飾子の名前を取得します。
 ms.date: 11/06/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: reference
 api_name:
 - QualifierSet_GetNames
 api_location:
@@ -20,14 +16,11 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 6077b448c2644f68d12679cf208ee921c2af119a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b7c96439cf50c18e336baa70cf463b9463203290
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="qualifiersetgetnames-function"></a>QualifierSet_GetNames 関数
 すべての修飾子のまたは現在のオブジェクトまたはプロパティから使用できる特定の修飾子の名前を取得します。 
@@ -62,7 +55,7 @@ HRESULT QualifierSet_GetNames (
 | `WBEM_FLAG_LOCAL_ONLY` | 0x10 | 現在のプロパティまたはオブジェクトに特定の修飾子の名前のみを返します。 <br/> プロパティの: (オーバーライドを含む)、プロパティに特定の修飾子のみを返すし、クラス定義から伝達されたこれらの修飾子されません。 <br/> インスタンス: インスタンス固有の修飾子名のみが返されます。 <br/> クラスの: 派生クラス beiong に特定の修飾子のみを返します。
 |`WBEM_FLAG_PROPAGATED_ONLY` | 0x20 | 別のオブジェクトから修飾子の名前のみが反映される戻り値。 <br/> プロパティ: から返される修飾子のみが反映されるこのプロパティに、クラス定義と、プロパティ自体からです。 <br/> インスタンス: クラス定義からこれらの修飾子のみが反映される戻り値。 <br/> クラスの: 戻り値の修飾子名前だけが、親クラスから継承します。 |
 
-`pstrNames`[out]新しい`SAFEARRAY`要求された名前を格納しています。 配列には、0 の要素を持つことができます。 エラーが発生した場合、新しい`SAFEARRAY`は返されません。
+`pstrNames` [out]新しい`SAFEARRAY`要求された名前を格納しています。 配列には、0 の要素を持つことができます。 エラーが発生した場合、新しい`SAFEARRAY`は返されません。
 
 ## <a name="return-value"></a>戻り値
 
@@ -82,12 +75,12 @@ HRESULT QualifierSet_GetNames (
 
 ゼロ修飾子があるためには、指定したオブジェクトのエラーではありませんで文字列の数`pstrNames`返された場合は 0 を指定する場合でも、この関数を返します`WBEM_S_NO_ERROR`です。
 
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** WMINet_Utils.idl  
   
- **.NET framework のバージョン:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **.NET framework のバージョン:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>関連項目  
 [WMI およびパフォーマンス カウンター (アンマネージ API リファレンス)](index.md)

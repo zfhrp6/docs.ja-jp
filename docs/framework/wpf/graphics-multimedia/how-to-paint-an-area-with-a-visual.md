@@ -1,13 +1,6 @@
 ---
-title: "方法 : ビジュアルで領域を塗りつぶす"
-ms.custom: 
+title: '方法 : ビジュアルで領域を塗りつぶす'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,16 +9,11 @@ helpviewer_keywords:
 - visuals [WPF], painting with
 - brushes [WPF], painting with visuals
 ms.assetid: 35f92996-1d03-4542-acc4-3469dcf09492
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 183117472cc74c958bdd7f807236eded97610b1c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ef6774f669e3fc0694ac743bf2b76d78adcf37a9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-paint-an-area-with-a-visual"></a>方法 : ビジュアルで領域を塗りつぶす
 この例を使用する方法を示しています、<xref:System.Windows.Media.VisualBrush>で領域を塗りつぶすクラス、<xref:System.Windows.Media.Visual>です。  
@@ -42,5 +30,5 @@ ms.lasthandoff: 12/22/2017
   
  このコード例に示されている例の一部である、<xref:System.Windows.Media.VisualBrush>クラスです。 サンプル全体については、次を参照してください。、 [VisualBrush サンプル](http://go.microsoft.com/fwlink/?LinkID=160049)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [イメージ、描画、およびビジュアルによる塗りつぶし](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)

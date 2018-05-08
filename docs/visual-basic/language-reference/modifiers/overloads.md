@@ -1,10 +1,6 @@
 ---
 title: Overloads (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Overloads
 - Overloads
@@ -14,14 +10,11 @@ helpviewer_keywords:
 - Shadows keyword [Visual Basic]
 - signature, hiding by
 ms.assetid: 0c6820b8-25b2-4664-bc59-5ca93c99c042
-caps.latest.revision: "15"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: a23a6b91681cbd814ac96464e1c340be99a0ecf0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: b68c13d192845fc4bedf1b34a40165ccc1a5ff75
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="overloads-visual-basic"></a>Overloads (Visual Basic)
 プロパティまたはプロシージャが、同じ名前の 1 つ以上の既存のプロパティまたはプロシージャを再度宣言することを示します。  
@@ -65,7 +58,7 @@ ms.lasthandoff: 11/21/2017
   
 -   **省略可能な修飾子です。** 同じクラス内でオーバーロードされるプロパティまたはプロシージャを複数定義する場合、`Overloads` 修飾子を使用する必要はありません。 ただし、宣言の 1 つで `Overloads` を使用した場合は、すべての宣言で Overloads を使用する必要があります。  
   
--   **シャドウとオーバー ロードします。** `Overloads`シャドウを既存のメンバーまたは基底クラスのオーバー ロードされたメンバーのセットにも使用できます。 この方法で `Overloads` を使用する場合は、基底クラスのメンバーと同じ名前とパラメーター リストを使用してプロパティまたはメソッドを宣言し、`Shadows` キーワードは指定しません。  
+-   **シャドウとオーバー ロードします。** `Overloads` シャドウを既存のメンバーまたは基底クラスのオーバー ロードされたメンバーのセットにも使用できます。 この方法で `Overloads` を使用する場合は、基底クラスのメンバーと同じ名前とパラメーター リストを使用してプロパティまたはメソッドを宣言し、`Shadows` キーワードは指定しません。  
   
  `Overrides` を使用する場合は、ライブラリ API と C# が連携しやすくなるように、コンパイラが暗黙的に `Overloads` を追加します。  
   

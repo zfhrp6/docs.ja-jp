@@ -1,12 +1,6 @@
 ---
 title: Skip While 句 (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.QuerySkipWhile
 helpviewer_keywords:
@@ -14,14 +8,11 @@ helpviewer_keywords:
 - Skip While clause [Visual Basic]
 - queries [Visual Basic], Skip While
 ms.assetid: 5dee8350-7520-4f1a-b00d-590cacd572d6
-caps.latest.revision: 16
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: f447a6d9b2eb58fa546ced6c96b987caf68fb3e5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 9d95dc4a9f61a9ec3a50f9d594b31d673c2d3764
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="skip-while-clause-visual-basic"></a>Skip While 句 (Visual Basic)
 指定された条件が `true` である限り、コレクションの要素をバイパスし、残りの要素を返します。  
@@ -36,7 +27,7 @@ Skip While expression
   
 |用語|定義|  
 |---|---|  
-|`expression`|必須です。 要素をテストするための条件を表す式。 式を返す必要があります、`Boolean`値またはそれと同等の機能など、`Integer`として評価される、`Boolean`です。|  
+|`expression`|必須。 要素をテストするための条件を表す式。 式を返す必要があります、`Boolean`値またはそれと同等の機能など、`Integer`として評価される、`Boolean`です。|  
   
 ## <a name="remarks"></a>コメント  
  `Skip While`句が指定されたまで、クエリ結果の先頭から要素をバイパス`expression`返します`false`です。 後に`expression`返します`false`クエリが、残りのすべての要素を返します。 `expression`残りの結果は無視されます。  

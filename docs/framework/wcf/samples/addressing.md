@@ -1,24 +1,12 @@
 ---
-title: "アドレス指定"
-ms.custom: 
+title: アドレス指定
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: d438e6f2-d0f3-43aa-b259-b51b5bda2e64
-caps.latest.revision: "21"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 21339d071ac26f073d0495814744535bd84f3a22
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 94ac903afb27f1b87f0ca8bf05cb891d0d9ee34c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="addressing"></a>アドレス指定
 アドレス指定のサンプルでは、エンドポイント アドレスのさまざまな特性と機能を示します。 サンプルがに基づいて、[作業の開始](../../../../docs/framework/wcf/samples/getting-started-sample.md)です。 このサンプルでは、サービスは自己ホスト型です。 サービスとクライアントは両方ともコンソール アプリケーションです。 サービスでは、エンドポイントの相対アドレスと絶対アドレスを組み合わせて複数のエンドポイントを定義します。  
@@ -51,7 +39,7 @@ ms.lasthandoff: 12/22/2017
           contract="Microsoft.ServiceModel.Samples.ICalculator" />  
 ```  
   
- この場合、相対アドレスが空 ("") のため、エンドポイント アドレスはベース アドレスと同じになります。 具体的には http://localhost:8000/servicemodelsamples/service です。  
+ この場合、相対アドレスが空 ("") のため、エンドポイント アドレスはベース アドレスと同じになります。 実際のエンドポイント アドレスがhttp://localhost:8000/servicemodelsamples/serviceです。  
   
  2 番目のエンドポイント定義でも、相対アドレスを指定します。次のサンプル構成を参照してください。  
   
@@ -64,7 +52,7 @@ ms.lasthandoff: 12/22/2017
           contract="Microsoft.ServiceModel.Samples.ICalculator" />  
 ```  
   
- 相対アドレス "test" がベース アドレスの末尾に追加されています。 具体的には http://localhost:8000/servicemodelsamples/service/test です。  
+ 相対アドレス "test" がベース アドレスの末尾に追加されています。 実際のエンドポイント アドレスがhttp://localhost:8000/servicemodelsamples/service/testです。  
   
  3 番目のエンドポイント定義では、絶対アドレスを指定します。次のサンプル構成を参照してください。  
   
@@ -74,7 +62,7 @@ ms.lasthandoff: 12/22/2017
           contract="Microsoft.ServiceModel.Samples.ICalculator" />  
 ```  
   
- このアドレスでは、ベース アドレスは使用されていません。 具体的には http://localhost:8001/hello/servicemodelsamples です。  
+ このアドレスでは、ベース アドレスは使用されていません。 実際のエンドポイント アドレスがhttp://localhost:8001/hello/servicemodelsamplesです。  
   
  4 番目のエンドポイント アドレスは、絶対アドレスと別のトランスポート (ここでは TCP) を指定しています。 このアドレスでは、ベース アドレスは使用されていません。 具体的には net.tcp://localhost:9000/servicemodelsamples/service です。  
   
@@ -143,8 +131,8 @@ Press <ENTER> to terminate client.
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
+>  このディレクトリが存在しない場合に、 [Windows Communication Foundation (WCF) および .NET Framework 4 向けの Windows Workflow Foundation (WF) サンプル](http://go.microsoft.com/fwlink/?LinkId=150780)すべて Windows Communication Foundation (WCF) をダウンロードして[!INCLUDE[wf1](../../../../includes/wf1-md.md)]サンプルです。 このサンプルは、次のディレクトリに格納されます。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Addressing`  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目

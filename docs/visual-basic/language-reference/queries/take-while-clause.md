@@ -1,12 +1,6 @@
 ---
 title: Take While 句 (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.QueryTakeWhile
 helpviewer_keywords:
@@ -14,14 +8,11 @@ helpviewer_keywords:
 - Take While clause [Visual Basic]
 - Take While statement [Visual Basic]
 ms.assetid: db8f9f2f-fc9f-4a6c-b0b8-1bf048147e11
-caps.latest.revision: 14
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 5c8add6c55bb9353bac3489e68f497cb32785aad
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 7e0a6bd77ca2594e9d74e669fcd9cddf91ee1cad
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="take-while-clause-visual-basic"></a>Take While 句 (Visual Basic)
 指定された条件が `true` である限り、コレクションの要素を含むようにし、残りの要素をバイパスします。  
@@ -36,7 +27,7 @@ Take While expression
   
 |用語|定義|  
 |---|---|  
-|`expression`|必須です。 要素をテストするための条件を表す式。 式を返す必要があります、`Boolean`値またはそれと同等の機能など、`Integer`として評価される、`Boolean`です。|  
+|`expression`|必須。 要素をテストするための条件を表す式。 式を返す必要があります、`Boolean`値またはそれと同等の機能など、`Integer`として評価される、`Boolean`です。|  
   
 ## <a name="remarks"></a>コメント  
  `Take While`句には、まで、指定されたクエリの結果の先頭から要素が含まれる`expression`返します`false`です。 後に、`expression`返します`false`クエリの残りのすべての要素をバイパスします。 `expression`残りの結果は無視されます。  

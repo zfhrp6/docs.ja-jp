@@ -1,27 +1,15 @@
 ---
-title: "カスタム有効期間"
-ms.custom: 
+title: カスタム有効期間
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 52806c07-b91c-48fe-b992-88a41924f51f
-caps.latest.revision: "5"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 1cbe73468e2ce1c8a4fe81a676c819b04d2ef760
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 1d9baa2d6eab476d5c8428208576f341e71fef2f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="custom-lifetime"></a>カスタム有効期間
-このサンプルでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] の共有サービス インスタンスにカスタムの有効期間サービスを提供する [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 拡張機能の作成方法を示します。  
+このサンプルは、共有用にカスタムの有効期間サービスを提供する Windows Communication Foundation (WCF) の拡張機能を記述する方法を示します。[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]サービス インスタンス。  
   
 > [!NOTE]
 >  このサンプルのセットアップ手順とビルド手順については、このトピックの最後を参照してください。  
@@ -229,8 +217,8 @@ public class EchoService : IEchoService
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
+>  このディレクトリが存在しない場合に、 [Windows Communication Foundation (WCF) および .NET Framework 4 向けの Windows Workflow Foundation (WF) サンプル](http://go.microsoft.com/fwlink/?LinkId=150780)すべて Windows Communication Foundation (WCF) をダウンロードして[!INCLUDE[wf1](../../../../includes/wf1-md.md)]サンプルです。 このサンプルは、次のディレクトリに格納されます。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Instancing\Lifetime`  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目

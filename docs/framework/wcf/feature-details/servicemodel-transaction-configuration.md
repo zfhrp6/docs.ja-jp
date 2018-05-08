@@ -1,34 +1,20 @@
 ---
 title: ServiceModel トランザクションの構成
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - transactions [WCF], ServiceModel configuration
 ms.assetid: 5636067a-7fbd-4485-aaa2-8141c502acf3
-caps.latest.revision: 8
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 96cf83be06949160cf3efa73344e4a7680d24e09
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 2c724e3f67bbf6554abffb44f101d2f28f748023
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="servicemodel-transaction-configuration"></a>ServiceModel トランザクションの構成
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] では、サービスのトランザクションを構成するために、`transactionFlow`、`transactionProtocol`、および `transactionTimeout` という 3 つの属性が用意されています。  
+Windows Communication Foundation (WCF) サービスのトランザクションを構成するための 3 つの属性の提供: `transactionFlow`、 `transactionProtocol`、および`transactionTimeout`です。  
   
 ## <a name="configuring-transactionflow"></a>transactionFlow の構成  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] に用意されているほとんどの定義済みバインディングには、`transactionFlow` 属性と `transactionProtocol` 属性が含まれています。これらの属性を使用すると、特定のトランザクション フロー プロトコルを使用する特定のエンドポイントの受信トランザクションを受け入れるようにバインディングを構成できます。 さらに、`transactionFlow` 要素とその `transactionProtocol` 属性を使用して、ユーザー独自のカスタム バインディングを構築できます。 構成要素の設定の詳細については、次を参照してください。 [\<バインディング >](../../../../docs/framework/misc/binding.md)と[WCF 構成スキーマ](../../../../docs/framework/configure-apps/file-schema/wcf/index.md)です。  
+ ほとんどの定義済みバインディングを含む WCF が提供されています、`transactionFlow`と`transactionProtocol`属性、特定のトランザクション フロー プロトコルを使用して特定のエンドポイントに対してトランザクションを受け入れるバインディングを構成することができるようにします。 さらに、`transactionFlow` 要素とその `transactionProtocol` 属性を使用して、ユーザー独自のカスタム バインディングを構築できます。 構成要素の設定の詳細については、次を参照してください。 [\<バインディング >](../../../../docs/framework/misc/binding.md)と[WCF 構成スキーマ](../../../../docs/framework/configure-apps/file-schema/wcf/index.md)です。  
   
  `transactionFlow` 属性は、バインディングを使用するサービス エンドポイントに対してトランザクション フローを有効にするかどうかを指定します。  
   
@@ -55,7 +41,7 @@ ms.lasthandoff: 04/30/2018
 ```  
   
 ## <a name="configuring-transactiontimeout"></a>transactionTimeout の構成  
- `transactionTimeout` サービスの [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 属性は、構成ファイルの `behavior` 要素内で構成できます。 次のコードでは、この設定方法について説明します。  
+ 構成することができます、`transactionTimeout`で WCF サービスの属性、`behavior`構成ファイルの要素。 次のコードでは、この設定方法について説明します。  
   
 ```xml  
 <configuration>  

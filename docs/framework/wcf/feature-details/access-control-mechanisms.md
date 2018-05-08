@@ -1,34 +1,20 @@
 ---
 title: アクセス制御機構
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - WCF security
 - access control [WCF]
 ms.assetid: 9d576122-3f55-4425-9acf-b23d0781e966
-caps.latest.revision: 13
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 89606d1e02b58f5f627d28b7354def848cd5a350
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 57ead53dd9e6bc1b2e3624791c7cc0c7d437cd7d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="access-control-mechanisms"></a>アクセス制御機構
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] では、複数の方法でアクセスを制御できます。 ここでは、正しい機構を選択して使用できるように、さまざまな機構について簡単に説明し、各機構を使用するタイミングに関するヒントを提供します。 ここでは、アクセス テクノロジを単純なものから順に示します。 最も単純なのは <xref:System.Security.Permissions.PrincipalPermissionAttribute> で、最も複雑なのは ID モデルです。  
+Windows Communication Foundation (WCF) のいくつかの方法でアクセスを制御することができます。 ここでは、正しい機構を選択して使用できるように、さまざまな機構について簡単に説明し、各機構を使用するタイミングに関するヒントを提供します。 ここでは、アクセス テクノロジを単純なものから順に示します。 最も単純なのは <xref:System.Security.Permissions.PrincipalPermissionAttribute> で、最も複雑なのは ID モデルです。  
   
- これらのメカニズム、権限借用と委任をに加えて[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]」で説明されて[委任と偽装](../../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md)です。  
+ これらのメカニズムに加えて偽装と WCF の委任」で説明されて[委任と偽装](../../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md)です。  
   
 ## <a name="principalpermissionattribute"></a>PrincipalPermissionAttribute  
  <xref:System.Security.Permissions.PrincipalPermissionAttribute> は、サービス メソッドへのアクセスを制限するために使用します。 この属性をメソッドに適用して使用すると、特定の呼び出し元の ID や Windows グループまたは [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] ロールでのメンバーシップを要求できます。 クライアントが、X.509 証明書を使用して認証された場合は、サブジェクト名と証明書の拇印で構成されるプライマリ ID がクライアントに割り当てられています。  
@@ -41,16 +27,16 @@ ms.lasthandoff: 04/30/2018
  [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] の機能の 1 つに、メンバーシップ プロバイダーがあります。 メンバーシップ プロバイダーは、厳密にはアクセス制御機構ではありませんが、これを使用すると、サービスのエンドポイントにアクセスできる ID のセットを制限することで、サービスへのアクセスを制御できます。 メンバーシップ機能には、ユーザー名/パスワードの組み合わせを設定できるデータベースが含まれています。この組み合わせによって、Web サイトのユーザーはサイトのアカウントを確立できます。 ユーザーがメンバーシップ プロバイダーを使用するサービスにアクセスするには、自分の名前とパスワードを使用してログオンする必要があります。  
   
 > [!NOTE]
->  [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] サービスが認証のために使用できるように、最初にこの [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 機能を使用してデータベースを設定しておく必要があります。  
+>  使用してデータベースを設定する必要があります最初、[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)]機能の前に、WCF サービスを使用すると承認に使用できます。  
   
  また、このメンバーシップ機能を使用すると、既存の [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] Web サイトにメンバーシップ データベースが既にある場合に、同じユーザー名とパスワードで承認された同じユーザーがサービスを使用できるようになります。  
   
- メンバーシップ機能を使用の詳細については、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]サービスを参照してください[する方法: ASP.NET メンバーシップ プロバイダーを使用して](../../../../docs/framework/wcf/feature-details/how-to-use-the-aspnet-membership-provider.md)です。  
+ WCF サービスで、このメンバーシップ機能を使用する方法の詳細については、次を参照してください。[する方法: ASP.NET メンバーシップ プロバイダーを使用して](../../../../docs/framework/wcf/feature-details/how-to-use-the-aspnet-membership-provider.md)です。  
   
 ## <a name="aspnet-role-provider"></a>ASP.NET ロール プロバイダー  
- [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] には、ロールを使用して承認を管理する機能もあります。 [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] ロール プロバイダーを使用すると、開発者は、ユーザーのロールを作成し、各ユーザーを 1 つまたは複数のロールに割り当てることができます。 メンバーシップ プロバイダーと同様に、ロールと割り当てはデータベースに格納され、[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] ロール プロバイダーの特定の実装によって提供されるツールを使用して設定できます。 また、メンバーシップ機能と同様に、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 開発者は、データベースの情報を使用してサービス ユーザーをロール別に承認できます。 たとえば、上記の `PrincipalPermissionAttribute` アクセス制御機構と組み合わせてロール プロバイダーを使用できます。  
+ [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] には、ロールを使用して承認を管理する機能もあります。 [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] ロール プロバイダーを使用すると、開発者は、ユーザーのロールを作成し、各ユーザーを 1 つまたは複数のロールに割り当てることができます。 メンバーシップ プロバイダーと同様に、ロールと割り当てはデータベースに格納され、[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] ロール プロバイダーの特定の実装によって提供されるツールを使用して設定できます。 として、メンバーシップ機能と WCF 開発者使用できますについては、データベースにユーザーを承認するサービスの役割で。 たとえば、上記の `PrincipalPermissionAttribute` アクセス制御機構と組み合わせてロール プロバイダーを使用できます。  
   
- [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] ロール プロバイダーは、[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] ロール プロバイダー データベースが既に存在し、同じルールとユーザー割り当てのセットを [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスで利用する場合にも使用できます。  
+ 使用することも、[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)]ロール プロバイダーが既にある場合[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)]ロール プロバイダー データベースし、WCF サービスで同じ一連のルールとユーザーの割り当てを使用する場合。  
   
  ロール プロバイダー機能の使用に関する詳細については、次を参照してください。[する方法: ASP.NET ロール プロバイダーを使用して、サービスと](../../../../docs/framework/wcf/feature-details/how-to-use-the-aspnet-role-provider-with-a-service.md)です。  
   
@@ -59,7 +45,7 @@ ms.lasthandoff: 04/30/2018
   
  また、AzMan と [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] ロール プロバイダーは、既存の AzMan インストールに既にアクセスでき、AzMan とロール プロバイダーの組み合わせの機能を使用してサービス ユーザーを承認する場合にも使用できます。  
   
- AzMan の詳細については、[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)]ロール プロバイダーを参照してください[How To: ASP.NET 2.0 で承認マネージャー (AzMan) を使用して](http://go.microsoft.com/fwlink/?LinkId=88951)です。 AzMan とロール プロバイダーを使用しての詳細については[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]services, を参照してください[する方法: サービスと ASP.NET の承認マネージャー ロール プロバイダーを使用して](../../../../docs/framework/wcf/feature-details/how-to-use-the-aspnet-authorization-manager-role-provider-with-a-service.md)です。  
+ AzMan の詳細については、[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)]ロール プロバイダーを参照してください[How To: ASP.NET 2.0 で承認マネージャー (AzMan) を使用して](http://go.microsoft.com/fwlink/?LinkId=88951)です。 AzMan とロール プロバイダーを使用して WCF サービスの詳細については、次を参照してください。[する方法: サービスと ASP.NET の承認マネージャー ロール プロバイダーを使用して](../../../../docs/framework/wcf/feature-details/how-to-use-the-aspnet-authorization-manager-role-provider-with-a-service.md)です。  
   
 ## <a name="identity-model"></a>ID モデル  
  ID モデルは、クライアントを承認するためのクレームとポリシーを管理できるようにする API のセットです。 ID モデルを使用すると、呼び出し元がサービスに対するそれ自体の認証に使用した資格情報に含まれるすべてのクレームを調べ、それらをサービスのポリシー セットと比較し、この比較に基づいてアクセスを許可または拒否できます。  

@@ -1,33 +1,19 @@
 ---
-title: "ディスパッチャーの拡張"
-ms.custom: 
+title: ディスパッチャーの拡張
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - dispatcher extensions [WCF]
 ms.assetid: d0ad15ac-fa12-4f27-80e8-7ac2271e5985
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 4240a19401d97cd0636d13a94fd07ad4ef753388
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: bc700aefc3b50102dc0a3faabbbcd09c1c8fc4bc
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="extending-dispatchers"></a>ディスパッチャーの拡張
 ディスパッチャーには、基になるチャネルから受信メッセージをプルし、そのメッセージをアプリケーション コードでのメソッド呼び出しに変換し、結果を呼び出し元に送信する役割があります。 ディスパッチャーの拡張を使用することで、この処理を変更できます。  メッセージやパラメーターの内容を検査または変更するメッセージ インスペクターまたはパラメーター インスペクターを実装できます。  また、メッセージが操作にルーティングされる方法を変更することも、他の機能を提供することもできます。  
   
- ここでは、<xref:System.ServiceModel.Dispatcher.DispatchRuntime> サービス アプリケーションで <xref:System.ServiceModel.Dispatcher.DispatchOperation> クラスと [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] クラスを使用して、ディスパッチャーの既定の実行動作を変更したり、メッセージ、パラメーター、または戻り値を、チャネル レイヤーから送信または取得する前後に途中受信したり、変更したりする方法について説明します。 相当するクライアント ランタイムのメッセージ処理の詳細については、次を参照してください。[を拡張するクライアント](../../../../docs/framework/wcf/extending/extending-clients.md)です。 役割を理解するを<xref:System.ServiceModel.IExtensibleObject%601>型が実行時のカスタマイズのさまざまなオブジェクト間で共有状態へのアクセスを再生しを参照してください[拡張可能なオブジェクト](../../../../docs/framework/wcf/extending/extensible-objects.md)です。  
+ このトピックを使用する方法について説明、<xref:System.ServiceModel.Dispatcher.DispatchRuntime>と<xref:System.ServiceModel.Dispatcher.DispatchOperation>クラスでは、Windows Communication Foundation (WCF) サービス、ディスパッチャーの既定の実行動作を変更するかを途中受信、メッセージ、パラメーターを変更またはまたはを返すアプリケーション前後送信またはチャネル レイヤーから取得する値。 相当するクライアント ランタイムのメッセージ処理の詳細については、次を参照してください。[を拡張するクライアント](../../../../docs/framework/wcf/extending/extending-clients.md)です。 役割を理解するを<xref:System.ServiceModel.IExtensibleObject%601>型が実行時のカスタマイズのさまざまなオブジェクト間で共有状態へのアクセスを再生しを参照してください[拡張可能なオブジェクト](../../../../docs/framework/wcf/extending/extensible-objects.md)です。  
   
 ## <a name="dispatchers"></a>ディスパッチャー  
  サービス モデル レイヤーは、開発者のプログラミング モデルと基になるメッセージ交換 (一般的に、チャネル レイヤーと呼ばれます) の間の変換を実行します。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、チャネル ディスパッチャーとエンドポイント ディスパッチャー (それぞれ <xref:System.ServiceModel.Dispatcher.ChannelDispatcher> と <xref:System.ServiceModel.Dispatcher.EndpointDispatcher>) は、新しいチャネルを受け入れて、メッセージ、操作ディスパッチ、操作呼び出し、および応答処理を受信するためのサービス コンポーネントです。 ディスパッチャー オブジェクトは、受信者のオブジェクトですが、双方向サービスでのコールバック コントラクトの実装も、検査、変更、または拡張のためにディスパッチャー オブジェクトを公開します。  
@@ -140,7 +126,7 @@ ms.lasthandoff: 12/22/2017
   
 -   <xref:System.ServiceModel.Dispatcher.DispatchOperation.ParameterInspectors%2A> プロパティでは、パラメーターと戻り値の検査または変更に使用できるカスタム パラメーター インスペクターを挿入できます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Dispatcher.DispatchRuntime>  
  <xref:System.ServiceModel.Dispatcher.DispatchOperation>  
  [方法 : サービスのメッセージを検査および変更する](../../../../docs/framework/wcf/extending/how-to-inspect-and-modify-messages-on-the-service.md)  

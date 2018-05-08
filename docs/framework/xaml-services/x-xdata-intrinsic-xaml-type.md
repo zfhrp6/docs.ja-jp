@@ -1,13 +1,6 @@
 ---
-title: "x:XData 組み込み XAML 型"
-ms.custom: 
+title: x:XData 組み込み XAML 型
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - x:XData
 - XData
@@ -17,19 +10,14 @@ helpviewer_keywords:
 - XData in XAML [XAML Services]
 - x:XData XAML directive element [XAML Services]
 ms.assetid: 7ce209c2-621b-4977-b643-565f7e663534
-caps.latest.revision: "17"
-author: wadepickett
-ms.author: wpickett
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ec46d0363e5b10d3bd3bd3f9c8f4d3694abc1c8d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 3a16379fd6104342529723bf6d0bc9fb4762cf92
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="xxdata-intrinsic-xaml-type"></a>x:XData 組み込み XAML 型
-XAML の運用環境での XML データ アイランドの配置を有効にします。 内の XML 要素`x:XData`機能を実行する既定の XAML 名前空間の一部、またはその他の XAML 名前空間かのように XAML プロセッサで扱うことはできません。 `x:XData`整形式の任意の XML を含めることができます。  
+XAML の運用環境での XML データ アイランドの配置を有効にします。 内の XML 要素`x:XData`機能を実行する既定の XAML 名前空間の一部、またはその他の XAML 名前空間かのように XAML プロセッサで扱うことはできません。 `x:XData` 整形式の任意の XML を含めることができます。  
   
 ## <a name="xaml-object-element-usage"></a>XAML オブジェクト要素の使用方法  
   
@@ -60,7 +48,7 @@ XAML の運用環境での XML データ アイランドの配置を有効にし
   
  技術的には、`x:XData`型のプロパティの内容として使用できる<xref:System.Xml.Serialization.IXmlSerializable>です。 ただし、<xref:System.Windows.Data.XmlDataProvider.XmlSerializer%2A?displayProperty=nameWithType>のみ著名な実装です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Data.XmlDataProvider>  
  [データ バインディングの概要](../../../docs/framework/wpf/data/data-binding-overview.md)  
  [バインドのマークアップ拡張機能](../../../docs/framework/wpf/advanced/binding-markup-extension.md)

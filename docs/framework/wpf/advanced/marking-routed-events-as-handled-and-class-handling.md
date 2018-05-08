@@ -1,13 +1,6 @@
 ---
-title: "ルーティング イベントの処理済みとしてのマーキング、およびクラス処理"
-ms.custom: 
+title: ルーティング イベントの処理済みとしてのマーキング、およびクラス処理
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - tunneling events [WPF]
 - class listeners [WPF]
@@ -24,16 +17,11 @@ helpviewer_keywords:
 - events [WPF], suppressing
 - bubbling events [WPF]
 ms.assetid: 5e745508-4861-4b48-b5f6-5fc7ce5289d2
-caps.latest.revision: "19"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b2c9a550e1423acb37da9645d09cdb4ccefcea66
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 2d696c85be0f46c5f08e1770f0d695dbb4d50cb9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="marking-routed-events-as-handled-and-class-handling"></a>ルーティング イベントの処理済みとしてのマーキング、およびクラス処理
 ルーティング イベントのハンドラーでは、イベント データ内で、イベントを処理済みとしてマークできます。 イベントを処理すると、ルートが事実上短縮されます。 クラス処理は、ルーティング イベントでサポートされているプログラミング概念です。 クラス ハンドラーでは、特定のルーティング イベントをクラス レベルのハンドラーで処理することができます。このハンドラーは、そのクラスのどのインスタンスのどのインスタンス ハンドラーよりも先に呼び出されます。  
@@ -62,7 +50,7 @@ ms.lasthandoff: 12/22/2017
   
 <a name="Class_Handlers_and_Instance_Handlers"></a>   
 ## <a name="class-handlers-and-instance-handlers"></a>クラス ハンドラーとインスタンス ハンドラー  
- ルーティング イベントでは、クラス リスナーとインスタンス リスナーという 2 種類のイベント リスナーが考慮されます。 型の特定が呼び出されるために、クラス リスナーが存在して<xref:System.Windows.EventManager> [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] 、<xref:System.Windows.EventManager.RegisterClassHandler%2A>、静的コンス トラクターで要素の基本クラスからクラス ハンドラーの仮想メソッドがオーバーライドされているか。 インスタンスのリスナーでは、特定のクラス インスタンス/要素を 1 つまたは複数のハンドラーが関連付けられるルーティング イベントへの呼び出しによって<xref:System.Windows.UIElement.AddHandler%2A>です。 既存の[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]ルーティング イベントに電話をかける<xref:System.Windows.UIElement.AddHandler%2A>の一部として、[!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)]イベント ラッパーは、{} を追加し、{} の実装方法も、イベントの削除、単純な[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]属性を使用してイベント ハンドラーのアタッチのメカニズム構文が有効になっているとします。 そのため、単純なであっても[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]使用状況最終的には、相当する、<xref:System.Windows.UIElement.AddHandler%2A>を呼び出します。  
+ ルーティング イベントでは、クラス リスナーとインスタンス リスナーという 2 種類のイベント リスナーが考慮されます。 型の特定が呼び出されるために、クラス リスナーが存在して<xref:System.Windows.EventManager> [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] 、<xref:System.Windows.EventManager.RegisterClassHandler%2A>、静的コンス トラクターで要素の基本クラスからクラス ハンドラーの仮想メソッドがオーバーライドされているか。 インスタンスのリスナーでは、特定のクラス インスタンス/要素を 1 つまたは複数のハンドラーが関連付けられるルーティング イベントへの呼び出しによって<xref:System.Windows.UIElement.AddHandler%2A>です。 既存の[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]ルーティング イベントに電話をかける<xref:System.Windows.UIElement.AddHandler%2A>の一部として、[!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)]イベント ラッパーが追加{}および削除{}方法も、イベントの実装、単純な[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]アタッチのメカニズム属性構文を使用してイベント ハンドラーが有効になっているとします。 そのため、単純なであっても[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]使用状況最終的には、相当する、<xref:System.Windows.UIElement.AddHandler%2A>を呼び出します。  
   
  登録されたハンドラー実装があるかどうか、ビジュアル ツリー内の各要素がチェックされます。 ハンドラーはルート全体で呼び出される可能性があり、呼び出される順序は、ルーティング イベントのルーティング戦略によってあらかじめ決まっています。 たとえば、バブル ルーティング イベントでは、ルーティング イベントを発生させた要素と同じ要素にアタッチされているハンドラーが最初に呼び出されます。 その後、ルーティング イベントは次の親要素に "浮上" します。アプリケーションのルート要素に到達するまで、これが繰り返されます。  
   
@@ -99,7 +87,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="deliberately-suppressing-input-events-for-control-compositing"></a>コントロール複合の入力イベントの意図的な抑制  
  ルーティング イベントのクラス処理は、主に入力イベントと複合コントロールに対して使用されます。 複合コントロールは、その名のとおり、複数の実用的なコントロールまたはコントロールの基底クラスで構成されています。 コントロールを作成する際に、それらの各サブコンポーネントで発生するすべての入力イベントを 1 つにまとめて、コントロール全体が 1 つのイベント ソースとしてイベントを報告するように作る場合があります。 また、コンポーネントからのイベントを完全に抑制する場合や、コンポーネントで定義された別のイベント (より多くの情報を含むイベントや、より具体的な動作を表すイベント) に置き換える場合もあります。 すべてのコンポーネントの作成者にすぐに表示されている標準的な例は、方法、 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] <xref:System.Windows.Controls.Button>最終的に解決される、直感的なイベントのすべてのボタンがある任意のマウス イベントを処理:<xref:System.Windows.Controls.Primitives.ButtonBase.Click>イベント。  
   
- <xref:System.Windows.Controls.Button>基底クラス (<xref:System.Windows.Controls.Primitives.ButtonBase>) から派生<xref:System.Windows.Controls.Control>からさらに派生した<xref:System.Windows.FrameworkElement>と<xref:System.Windows.UIElement>、コントロールの入力の処理は必要なイベント インフラストラクチャの大半、<xref:System.Windows.UIElement>レベル。 具体的には、<xref:System.Windows.UIElement>全般処理<xref:System.Windows.Input.Mouse>の境界内にマウス カーソルのヒット テストを処理し、最も一般的なに対する個別のイベントを提供するイベントのボタンがなど、操作、<xref:System.Windows.UIElement.MouseLeftButtonDown>です。 <xref:System.Windows.UIElement>仮想空白も提供<xref:System.Windows.UIElement.OnMouseLeftButtonDown%2A>の登録済みのクラスのハンドラーとして<xref:System.Windows.UIElement.MouseLeftButtonDown>、および<xref:System.Windows.Controls.Primitives.ButtonBase>をオーバーライドします。 同様に、<xref:System.Windows.Controls.Primitives.ButtonBase>はクラスのハンドラー<xref:System.Windows.UIElement.MouseLeftButtonUp>です。 実装では、上書きでは、イベント データを渡すでマークする<xref:System.Windows.RoutedEventArgs>インスタンスの設定によって処理される<xref:System.Windows.RoutedEventArgs.Handled%2A>に`true`、ことと同じイベント データがどのような継続する他のクラス ハンドラーへのルートの残りの部分とインスタンス ハンドラーまたはイベント セッターにも また、<xref:System.Windows.Controls.Primitives.ButtonBase.OnMouseLeftButtonUp%2A>オーバーライドを発生させる次に、<xref:System.Windows.Controls.Primitives.ButtonBase.Click>イベント。 ほとんどのリスナーの最終結果になります、<xref:System.Windows.UIElement.MouseLeftButtonDown>と<xref:System.Windows.UIElement.MouseLeftButtonUp>イベントが「非表示」とは代わりに置き換えられます<xref:System.Windows.Controls.Primitives.ButtonBase.Click>、つまりことがわかっているのでこのイベントが発生した場合は true ボタンと一部ではないから、詳細を保持するイベント。複合ピースのボタンのまたはその他の要素から完全です。  
+ <xref:System.Windows.Controls.Button>基底クラス (<xref:System.Windows.Controls.Primitives.ButtonBase>) から派生<xref:System.Windows.Controls.Control>からさらに派生した<xref:System.Windows.FrameworkElement>と<xref:System.Windows.UIElement>、コントロールの入力の処理は必要なイベント インフラストラクチャの大半、<xref:System.Windows.UIElement>レベル。 具体的には、<xref:System.Windows.UIElement>全般処理<xref:System.Windows.Input.Mouse>の境界内にマウス カーソルのヒット テストを処理し、最も一般的なに対する個別のイベントを提供するイベントのボタンがなど、操作、<xref:System.Windows.UIElement.MouseLeftButtonDown>です。 <xref:System.Windows.UIElement> 仮想空白も提供<xref:System.Windows.UIElement.OnMouseLeftButtonDown%2A>の登録済みのクラスのハンドラーとして<xref:System.Windows.UIElement.MouseLeftButtonDown>、および<xref:System.Windows.Controls.Primitives.ButtonBase>をオーバーライドします。 同様に、<xref:System.Windows.Controls.Primitives.ButtonBase>はクラスのハンドラー<xref:System.Windows.UIElement.MouseLeftButtonUp>です。 実装では、上書きでは、イベント データを渡すでマークする<xref:System.Windows.RoutedEventArgs>インスタンスの設定によって処理される<xref:System.Windows.RoutedEventArgs.Handled%2A>に`true`、ことと同じイベント データがどのような継続する他のクラス ハンドラーへのルートの残りの部分とインスタンス ハンドラーまたはイベント セッターにも また、<xref:System.Windows.Controls.Primitives.ButtonBase.OnMouseLeftButtonUp%2A>オーバーライドを発生させる次に、<xref:System.Windows.Controls.Primitives.ButtonBase.Click>イベント。 ほとんどのリスナーの最終結果になります、<xref:System.Windows.UIElement.MouseLeftButtonDown>と<xref:System.Windows.UIElement.MouseLeftButtonUp>イベントが「非表示」とは代わりに置き換えられます<xref:System.Windows.Controls.Primitives.ButtonBase.Click>、つまりことがわかっているのでこのイベントが発生した場合は true ボタンと一部ではないから、詳細を保持するイベント。複合ピースのボタンのまたはその他の要素から完全です。  
   
 <a name="WorkingAroundEventSuppressionByControls"></a>   
 ### <a name="working-around-event-suppression-by-controls"></a>コントロールによるイベント抑制の回避  
@@ -109,7 +97,7 @@ ms.lasthandoff: 12/22/2017
   
  2 つ目の方法は、トンネル バージョンとバブル バージョンのルーティング イベントがペアになっている入力イベントでのみ使用できます。 これらのルーティング イベントについて、対応するプレビュー/トンネル ルーティング イベントにハンドラーを追加することができます。 そのルーティング イベントはルートからトンネリングを開始するため、アプリケーション要素ツリーの先祖要素のレベルにプレビュー ハンドラーをアタッチしておけば、イベントがボタン クラス処理コードによってインターセプトされなくなります。 この方法を使用する場合は、プレビュー イベントを処理済みとしてマークする際に注意が必要です。 与えられたたとえば<xref:System.Windows.UIElement.PreviewMouseLeftButtonDown>としてイベントをマークした場合、ルート要素で処理されている<xref:System.Windows.RoutedEventArgs.Handled%2A>ハンドラーの実装では実際に抑制する、<xref:System.Windows.Controls.Primitives.ButtonBase.Click>イベント。 通常これは望ましくない動作です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.EventManager>  
  [プレビュー イベント](../../../../docs/framework/wpf/advanced/preview-events.md)  
  [カスタム ルーティング イベントを作成する](../../../../docs/framework/wpf/advanced/how-to-create-a-custom-routed-event.md)  

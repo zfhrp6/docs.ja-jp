@@ -1,17 +1,12 @@
 ---
 title: F# Interactive (fsi.exe) のリファレンス
 description: 使用方法を学習 f# Interactive (fsi.exe) は、コンソールで f# コードを対話的に実行する、または f# スクリプトを実行します。
-author: cartermp
-ms.author: phcart
 ms.date: 05/16/2016
-ms.topic: language-reference
-ms.prod: dotnet-fsharp
-ms.devlang: fsharp
-ms.openlocfilehash: e745562e4165ce6744fcb6d07268b1a5761194aa
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: b16ebcfe361ef50c7c7ba8510f01f6704e62ce3b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="interactive-programming-with-f"></a>F# による対話型プログラミング #
 
@@ -88,7 +83,7 @@ printfn "%A" (MyAssembly.myFunction 10 40)
 Command line arguments: 
 file1.fsx
 test
-60
+90
 ```
 
 ## <a name="related-topics"></a>関連トピック

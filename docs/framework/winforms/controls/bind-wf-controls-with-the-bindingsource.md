@@ -1,28 +1,16 @@
 ---
-title: "方法 : デザイナーを使用して Windows フォーム コントロールを BindingSource コンポーネントにバインドする"
-ms.custom: 
+title: '方法 : デザイナーを使用して Windows フォーム コントロールを BindingSource コンポーネントにバインドする'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - controls [Windows Forms], binding
 - BindingSource component [Windows Forms], binding controls
 - data binding [Windows Forms], BindingSource component
 ms.assetid: 391ae170-de5c-40f8-8233-91cb2ee4683a
-caps.latest.revision: "18"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 4cb803b3f08a2ac9bc2b0cb2dc6da2a72e92a0f7
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 3acbd17e8e969bb448e6deaf17dec23e44fa3bd4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-bind-windows-forms-controls-with-the-bindingsource-component-using-the-designer"></a>方法 : デザイナーを使用して Windows フォーム コントロールを BindingSource コンポーネントにバインドする
 コントロールがフォームに追加して、アプリケーションのユーザー インターフェイスを決定したら、実行時にユーザーは変更を アプリケーションに関連するデータを保存できるように、データ ソースにコントロールをバインドできます。  
@@ -42,7 +30,7 @@ ms.lasthandoff: 01/19/2018
   
 2.  **プロパティ**ウィンドウ。  
   
-    1.  展開して、 **(DataBindings)**ノード。  
+    1.  展開して、 **(DataBindings)** ノード。  
   
     2.  矢印をクリックして、次に、<xref:System.Windows.Forms.TextBox.Text%2A>プロパティです。  
   
@@ -64,13 +52,13 @@ ms.lasthandoff: 01/19/2018
   
 9. 必要な場合は、既定のデータセット名を変更します。  
   
-10. **[完了]**をクリックします。  
+10. **[完了]** をクリックします。  
   
 11. **プロパティ**ウィンドウで、矢印をクリックして、次に、<xref:System.Windows.Forms.TextBox.Text%2A>プロパティをもう一度です。 **データソース**UI 型エディターをバインドするフィールドの名前を選択する、<xref:System.Windows.Forms.TextBox>にします。  
   
      **データソース**UI 型エディターが閉じ、データ セット<xref:System.Windows.Forms.BindingSource>およびテーブル アダプターのデータ接続が、フォームに追加されたことを特定します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.BindingSource>  
  <xref:System.Windows.Forms.BindingNavigator>  
  [新しいデータ ソースの追加](/visualstudio/data-tools/add-new-data-sources)  

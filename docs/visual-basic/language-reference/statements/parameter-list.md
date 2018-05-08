@@ -1,11 +1,6 @@
 ---
-title: "パラメーターの一覧 (Visual Basic)"
+title: パラメーターの一覧 (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - Visual Basic code, procedures
 - parameters [Visual Basic], Visual Basic
@@ -15,14 +10,11 @@ helpviewer_keywords:
 - arguments [Visual Basic], Visual Basic
 - procedures [Visual Basic], parameter lists
 ms.assetid: 5d737319-0c34-4df9-a23d-188fc840becd
-caps.latest.revision: "19"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 2c7190b618aa98c91b826ca7c065660d3b19c31a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 147a2501219db9f1f1c10f9cf1a81aa395b5ec2b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="parameter-list-visual-basic"></a>パラメーターの一覧 (Visual Basic)
 プロシージャが呼び出された場合を想定パラメーターを指定します。 複数のパラメーターは、コンマで区切られます。 1 つのパラメーターの構文を次に示します。  
@@ -36,22 +28,22 @@ parametername[( )] [ As parametertype ] [ = defaultvalue ]
   
 ## <a name="parts"></a>指定項目  
  `attributelist`  
- 省略可能です。 このパラメーターに適用される属性の一覧です。 囲む必要があります、[属性リスト](../../../visual-basic/language-reference/statements/attribute-list.md)山かっこ ("`<`「と」`>`") です。  
+ 任意。 このパラメーターに適用される属性の一覧です。 囲む必要があります、[属性リスト](../../../visual-basic/language-reference/statements/attribute-list.md)山かっこ ("`<`「と」`>`") です。  
   
  `Optional`  
- 省略可能です。 プロシージャが呼び出されたときに、このパラメーターが必要ないことを指定します。  
+ 任意。 プロシージャが呼び出されたときに、このパラメーターが必要ないことを指定します。  
   
  `ByVal`  
- 省略可能です。 プロシージャが置換または呼び出し元のコードに対応する引数の基になる変数の要素を再割り当てできませんを指定します。  
+ 任意。 プロシージャが置換または呼び出し元のコードに対応する引数の基になる変数の要素を再割り当てできませんを指定します。  
   
  `ByRef`  
- 省略可能です。 プロシージャ要素を変更できます、基になる変数呼び出し元のコードに呼び出し元コード自体と同じようを指定します。  
+ 任意。 プロシージャ要素を変更できます、基になる変数呼び出し元のコードに呼び出し元コード自体と同じようを指定します。  
   
  `ParamArray`  
- 省略可能です。 パラメーター リストの最後のパラメーターが指定されたデータ型の要素の省略可能な配列であることを示します。 これにより、呼び出し元のコード、プロシージャに任意の数の引数を渡します。  
+ 任意。 パラメーター リストの最後のパラメーターが指定されたデータ型の要素の省略可能な配列であることを示します。 これにより、呼び出し元のコード、プロシージャに任意の数の引数を渡します。  
   
  `parametername`  
- 必須です。 パラメーターを表すローカル変数の名前です。  
+ 必須。 パラメーターを表すローカル変数の名前です。  
   
  `parametertype`  
  場合は必須`Option Strict`は`On`します。 パラメーターを表すローカル変数のデータ型。  

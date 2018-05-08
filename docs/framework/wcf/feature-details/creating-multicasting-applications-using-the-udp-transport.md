@@ -1,24 +1,12 @@
 ---
-title: "UDP トランスポートを使用するマルチキャスト アプリケーションの作成"
-ms.custom: 
+title: UDP トランスポートを使用するマルチキャスト アプリケーションの作成
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 7485154a-6e85-4a67-a9d4-9008e741d4df
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 57c30c8b6b381be931789f3f64cbd26943bb2b34
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 84b36029416a66ef03768aed7d0c789a41eed8ef
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="creating-multicasting-applications-using-the-udp-transport"></a>UDP トランスポートを使用するマルチキャスト アプリケーションの作成
 マルチキャスト アプリケーションは、ポイント ツー ポイント接続を確立することなく多数の受信者に小さいメッセージを同時に送信します。 このようなアプリケーションの重点は、信頼性よりも速度です。 つまり、特定のメッセージが実際に受信されるということよりも、迅速にデータを送信することの方が重要です。 WCF は、<xref:System.ServiceModel.UdpBinding> を使用して、書き込みマルチキャスト アプリケーションをサポートします。 このトランスポートは、サービスが複数のクライアントに小さいメッセージを同時に送信する必要がある場合に便利です。 株価表示器のアプリケーションは、このようなサービスの例です。  
@@ -102,7 +90,7 @@ while (true)
  このコードは、株式の情報を生成し、サービス コントラクト IStockTicker を使用してマルチキャストのメッセージを送信することによって、正しい UDP アドレスでリッスンするサービスを呼び出します。  
   
 ### <a name="udp-and-reliable-messaging"></a>UDP および信頼できるメッセージング  
- UDP バインディングでは、UDP プロトコルに軽量という性質があるために信頼できるメッセージングをサポートしていません。 メッセージがリモート エンドポイントによって受信されることを確認する必要がある場合は、HTTP や TCP などの信頼できるメッセージングをサポートするトランスポートを使用します。 信頼できるメッセージングの詳細については、http://go.microsoft.com/fwlink/?LinkId=231830 を参照してください。  
+ UDP バインディングでは、UDP プロトコルに軽量という性質があるために信頼できるメッセージングをサポートしていません。 メッセージがリモート エンドポイントによって受信されることを確認する必要がある場合は、HTTP や TCP などの信頼できるメッセージングをサポートするトランスポートを使用します。 詳細については、信頼できるメッセージングを参照してください。 http://go.microsoft.com/fwlink/?LinkId=231830  
   
 ### <a name="two-way-multicast-messaging"></a>双方向マルチキャストのメッセージング  
  マルチキャストのメッセージは通常、一方向ですが、UdpBinding は要求または応答メッセージ交換をサポートします。 UDP トランスポートを使用して送信されたメッセージには送信者と宛先のアドレスの両方が含まれます。 送信者のアドレスを使う場合は、送信中に悪意により変更されることがあるため、注意が必要です。  アドレスは、次のコードを使用してチェックすることができます。  

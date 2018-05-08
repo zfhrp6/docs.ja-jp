@@ -1,23 +1,12 @@
 ---
-title: "インスタンス完了アクション"
-ms.custom: 
+title: インスタンス完了アクション
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 90cc99d2-9fef-42fd-bcbf-a56917993721
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 3fa2eb347bc69a89545e6145154306f012e23490
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 646015fbcdb7c734ae8584c7ca3979d64b81339f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="instance-completion-action"></a>インスタンス完了アクション
 **インスタンス完了アクション**SQL Workflow Instance Store のプロパティかどうか、データやワークフロー インスタンスのメタデータが削除された永続性データベースからのインスタンスが完了した後を指定できます。 このプロパティの値を指定できます**DeleteAll**と**DeleteNothing**です。 これらのオプションについて次の一覧で説明します。  

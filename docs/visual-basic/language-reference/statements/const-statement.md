@@ -1,25 +1,16 @@
 ---
 title: Const ステートメント (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Const
 helpviewer_keywords:
 - Const statement [Visual Basic]
 ms.assetid: 495b318d-b7c5-4198-94f8-0790a541b07a
-caps.latest.revision: 28
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 720a465f1459b663a1fca2a48856f51762328459
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: bb4c524fa5c29efbcbe485fb5e86c8cf0fa432e8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="const-statement-visual-basic"></a>Const ステートメント (Visual Basic)
 宣言し、1 つまたは複数の定数を定義します。  
@@ -33,28 +24,28 @@ Const constantlist
   
 ## <a name="parts"></a>指定項目  
  `attributelist`  
- 省略可能です。 すべての定数に適用される属性の一覧は、このステートメントで宣言します。 参照してください[属性リスト](../../../visual-basic/language-reference/statements/attribute-list.md)山かっこ ("`<`「と」`>`") です。  
+ 任意。 すべての定数に適用される属性の一覧は、このステートメントで宣言します。 参照してください[属性リスト](../../../visual-basic/language-reference/statements/attribute-list.md)山かっこ ("`<`「と」`>`") です。  
   
  `accessmodifier`  
- 省略可能です。 これらの定数にアクセスできるコードを指定するのにには、これを使用します。 指定できます[パブリック](../../../visual-basic/language-reference/modifiers/public.md)、 [Protected](../../../visual-basic/language-reference/modifiers/protected.md)、[フレンド](../../../visual-basic/language-reference/modifiers/friend.md)、 `Protected Friend`、または[プライベート](../../../visual-basic/language-reference/modifiers/private.md)です。  
+ 任意。 これらの定数にアクセスできるコードを指定するのにには、これを使用します。 指定できます[パブリック](../../../visual-basic/language-reference/modifiers/public.md)、 [Protected](../../../visual-basic/language-reference/modifiers/protected.md)、[フレンド](../../../visual-basic/language-reference/modifiers/friend.md)、 `Protected Friend`、または[プライベート](../../../visual-basic/language-reference/modifiers/private.md)です。  
   
  `Shadows`  
- 省略可能です。 再宣言して、基底クラスのプログラミング要素を非表示にするには、これを使用します。 参照してください[Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)です。  
+ 任意。 再宣言して、基底クラスのプログラミング要素を非表示にするには、これを使用します。 参照してください[Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)です。  
   
  `constantlist`  
- 必須です。 このステートメントで宣言されている定数の一覧です。  
+ 必須。 このステートメントで宣言されている定数の一覧です。  
   
  `constant` `[ ,` `constant` `... ]`  
   
  `constant` の構文と指定項目は次のとおりです。  
   
- `constantname``[ As``datatype``] =``initializer`  
+ `constantname` `[ As` `datatype` `] =` `initializer`  
   
 |パーツ|説明|  
 |----------|-----------------|  
-|`constantname`|必須です。 定数の名前です。 参照してください[宣言された要素の名前](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)です。|  
+|`constantname`|必須。 定数の名前です。 参照してください[宣言された要素の名前](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)です。|  
 |`datatype`|場合は必須`Option Strict`は`On`します。 定数のデータ型。|  
-|`initializer`|必須です。 コンパイル時に評価され、式を定数に割り当てられています。|  
+|`initializer`|必須。 コンパイル時に評価され、式を定数に割り当てられています。|  
   
 ## <a name="remarks"></a>コメント  
  アプリケーションで変更されない値があれば、名前付き定数を定義でき、リテラル値の代わりに使用できます。 名前は、値よりも覚えやすくです。 定数を 1 回だけ定義し、コードでのさまざまな場所で使用できます。 以降のバージョンでは、値を再定義する必要がある場合、`Const`ステートメントは、唯一の場所を変更する必要があります。  

@@ -1,13 +1,6 @@
 ---
-title: "Windows フォーム コントロールのイベントの定義"
-ms.custom: 
+title: Windows フォーム コントロールのイベントの定義
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - events [Windows Forms], defining within Windows Forms custom controls
 - custom controls [Windows Forms], events using code
 ms.assetid: d89f1096-8061-42e2-a855-a1f053f1940a
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 900d4d402c905f10ec7db98421adcb0bc7f46048
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 552f2b8441ae5323f55f236fabb9f50f8f8b5ab0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="defining-an-event-in-windows-forms-controls"></a>Windows フォーム コントロールのイベントの定義
 カスタム イベントを定義する方法については、次を参照してください。[イベント](../../../../docs/standard/events/index.md)です。 関連データがないイベントを定義する場合、イベント データの基本型である <xref:System.EventArgs> を使用し、イベント デリゲートとして <xref:System.EventHandler> を使用します。 すべてを行うにはイベント メンバーとプロテクト定義`On` *EventName*イベントを発生させる方法です。  
@@ -88,7 +76,7 @@ public class FlashTrackBar : Control {
 }  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Windows フォーム コントロールのイベント](../../../../docs/framework/winforms/controls/events-in-windows-forms-controls.md)  
  [イベント](../../../../docs/standard/events/index.md)  
  [イベント](../../../../docs/standard/events/index.md)

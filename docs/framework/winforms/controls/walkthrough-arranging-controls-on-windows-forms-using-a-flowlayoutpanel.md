@@ -1,29 +1,17 @@
 ---
-title: "チュートリアル : FlowLayoutPanel を使用した Windows フォーム上のコントロールの配置"
-ms.custom: 
+title: 'チュートリアル : FlowLayoutPanel を使用した Windows フォーム上のコントロールの配置'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - FlowLayoutPanel control [Windows Forms], walkthroughs
 - Windows Forms controls, arranging
 - controls [Windows Forms], arranging with FlowLayoutPanel
 - layout [Windows Forms], walkthroughs
 ms.assetid: a1744323-0316-49c2-992e-ebfc0a976b85
-caps.latest.revision: "22"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: bb24e6479d60148f21da24ba9f53b6c3a4054e1e
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 573a0b8ee8e3fafea15b1fd111334da773beef11
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="walkthrough-arranging-controls-on-windows-forms-using-a-flowlayoutpanel"></a>チュートリアル : FlowLayoutPanel を使用した Windows フォーム上のコントロールの配置
 アプリケーションによっては、フォームのサイズを変更したり、コンテンツのサイズが変化したりしたときに、それに応じて自動的にレイアウトを調整するフォームが必要です。 動的なレイアウトが必要であり、かつコードで <xref:System.Windows.Forms.Control.Layout> イベントを明示的に処理しない場合は、レイアウト パネルの使用をご検討ください。  
@@ -198,7 +186,7 @@ ms.lasthandoff: 01/19/2018
   
 -   いずれかのコントロールの <xref:System.Windows.Forms.Control.Visible%2A> プロパティを `false` に設定し、これに呼応して <xref:System.Windows.Forms.FlowLayoutPanel> のフローがどのように変化するか確認します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.FlowLayoutPanel>  
  <xref:System.Windows.Forms.TableLayoutPanel>  
  [チュートリアル: TableLayoutPanel を使用した Windows フォーム上のコントロールの配置](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md)  

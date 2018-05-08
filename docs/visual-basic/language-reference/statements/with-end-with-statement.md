@@ -1,12 +1,6 @@
 ---
 title: With...End With ステートメント (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.With
 helpviewer_keywords:
@@ -21,14 +15,11 @@ helpviewer_keywords:
 - With block
 - End keyword [Visual Basic], With...End With statements
 ms.assetid: 340d5fbb-4f43-48ec-a024-80843c137817
-caps.latest.revision: 34
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: aa1f416e1bfdf6cdb51b098c0e2bd5e9912cb309
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 9c50d03454860979e3475cb381fefc2acc07cece
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="withend-with-statement-visual-basic"></a>With...End With ステートメント (Visual Basic)
 オブジェクトまたは構造のメンバーにアクセスする場合にステートメントで簡単な構文を使用できるように、単一のオブジェクトまたは構造を繰り返し参照する一連のステートメントを実行します。  構造体の使用時には、メンバー値の読み取りまたはメソッドの呼び出しのみを行うことができます。また、`With...End With` ステートメントで使用されている構造体のメンバーに値を割り当てようとすると、エラーが発生します。  
@@ -45,9 +36,9 @@ End With
   
 |用語|定義|  
 |---|---|  
-|`objectExpression`|必須です。 オブジェクトとして評価される式。 この式は、任意で複雑にできます。評価されるのは 1 回のみです。 基本データ型だけでなく、どのデータ型として評価される式でも指定できます。|  
-|`statements`|省略可能です。 `With` の評価によって生成されるオブジェクトのメンバーを参照できる、`End With` と `objectExpression` 間の 1 つ以上のステートメント。|  
-|`End With`|必須です。 `With` ブロックの定義を終了します。|  
+|`objectExpression`|必須。 オブジェクトとして評価される式。 この式は、任意で複雑にできます。評価されるのは 1 回のみです。 基本データ型だけでなく、どのデータ型として評価される式でも指定できます。|  
+|`statements`|任意。 `With` の評価によって生成されるオブジェクトのメンバーを参照できる、`End With` と `objectExpression` 間の 1 つ以上のステートメント。|  
+|`End With`|必須。 `With` ブロックの定義を終了します。|  
   
 ## <a name="remarks"></a>コメント  
  `With...End With` を使用すると、特定のオブジェクトの名前を複数回指定することなく、そのオブジェクトに対して一連のステートメントを実行できます。 `With` ステートメント ブロック内では、先頭に `With` ステートメント オブジェクトを付ける場合と同様に、先頭にピリオドを付けてオブジェクトのメンバーを指定できます。  

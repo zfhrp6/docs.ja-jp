@@ -1,12 +1,6 @@
 ---
 title: Set ステートメント (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Set
 helpviewer_keywords:
@@ -16,14 +10,11 @@ helpviewer_keywords:
 - write-only properties
 - properties [Visual Basic], write-only
 ms.assetid: 9ecc27b4-df84-420d-9075-db25455fb3cd
-caps.latest.revision: 16
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 3b18e6c858e64e78d7ab85fdaafd70e510f7a02f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: dbc48d14bac54809e4ddd12c87429bf407169950
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="set-statement-visual-basic"></a>Set ステートメント (Visual Basic)
 宣言、`Set`プロパティ プロシージャのプロパティに値を代入するために使用します。  
@@ -38,7 +29,7 @@ End Set
   
 ## <a name="parts"></a>指定項目  
  `attributelist`  
- 省略可能です。 参照してください[属性一覧](../../../visual-basic/language-reference/statements/attribute-list.md)です。  
+ 任意。 参照してください[属性一覧](../../../visual-basic/language-reference/statements/attribute-list.md)です。  
   
  `accessmodifier`  
  1 つの省略可能な`Get`と`Set`このプロパティ内のステートメント。 次のいずれかの値を指定します。  
@@ -54,16 +45,16 @@ End Set
  参照してください[Visual Basic でのレベルのアクセス](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)です。  
   
  `value`  
- 必須です。 プロパティの新しい値を格納するパラメーター。  
+ 必須。 プロパティの新しい値を格納するパラメーター。  
   
  `datatype`  
  場合は必須`Option Strict`は`On`します。 データ型、`value`パラメーター。 指定されたデータ型は、プロパティのデータ型と同じである必要があります、これ`Set`ステートメントを宣言します。  
   
  `statements`  
- 省略可能です。 場合に実行する 1 つまたは複数のステートメント、`Set`プロパティ プロシージャが呼び出されます。  
+ 任意。 場合に実行する 1 つまたは複数のステートメント、`Set`プロパティ プロシージャが呼び出されます。  
   
  `End Set`  
- 必須です。 定義を終了、`Set`プロパティ プロシージャです。  
+ 必須。 定義を終了、`Set`プロパティ プロシージャです。  
   
 ## <a name="remarks"></a>コメント  
  すべてのプロパティがあります、`Set`プロパティ プロシージャ、プロパティが設定されていない限り`ReadOnly`です。 `Set`プロパティの値を設定する手順を使用します。  
@@ -86,7 +77,7 @@ End Set
   
 -   **プロパティ プロシージャから取得します。** ときに、`Set`次のステートメントを格納する値が指定されている、プロシージャ呼び出し元のコードに戻ると、実行が継続します。  
   
-     `Set`プロパティ プロシージャは、いずれかを使用して返すことができます、 [Return ステートメント](../../../visual-basic/language-reference/statements/return-statement.md)または[Exit ステートメント](../../../visual-basic/language-reference/statements/exit-statement.md)です。  
+     `Set` プロパティ プロシージャは、いずれかを使用して返すことができます、 [Return ステートメント](../../../visual-basic/language-reference/statements/return-statement.md)または[Exit ステートメント](../../../visual-basic/language-reference/statements/exit-statement.md)です。  
   
      `Exit Property`と`Return`ステートメントでは、プロパティ プロシージャからすぐに終了します。 任意の数の`Exit Property`と`Return`ステートメントがどこにでも表示、プロシージャとを混在させること`Exit Property`と`Return`ステートメントです。  
   

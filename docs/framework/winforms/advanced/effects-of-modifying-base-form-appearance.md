@@ -1,13 +1,6 @@
 ---
-title: "基本フォームの外観を変更した場合の影響"
-ms.custom: 
+title: 基本フォームの外観を変更した場合の影響
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - parent forms [Windows Forms]
 - inherited forms [Windows Forms], modifications to base form
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - base forms
 - inheritance [Windows Forms], forms
 ms.assetid: 1c3f2b29-a05c-4c6f-aa1a-4e66b94f343a
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c5121238341afac46ad1c999710d51b5c203a1b6
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 7ba4a78395bb93caa1d1d86dc135825ca2a58845
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="effects-of-modifying-a-base-form39s-appearance"></a>基本フォームの外観を変更した場合の影響
 アプリケーションの開発中に、同じプロジェクト (または他のプロジェクト) 内の他のフォームの継承元となる、基本フォームの外観の変更が必要になることがよくあります。  
@@ -36,7 +24,7 @@ ms.lasthandoff: 01/19/2018
   
  実行時に基本フォームに変更を加えても、既にインスタンス化されている継承されたフォームには反映されません。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [base](~/docs/csharp/language-reference/keywords/base.md)  
  [方法: Windows フォームを継承する](../../../../docs/framework/winforms/advanced/how-to-inherit-windows-forms.md)  
  [Windows フォームのビジュアルの継承](../../../../docs/framework/winforms/advanced/windows-forms-visual-inheritance.md)

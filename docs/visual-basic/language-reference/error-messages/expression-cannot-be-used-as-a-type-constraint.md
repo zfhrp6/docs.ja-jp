@@ -1,28 +1,19 @@
 ---
-title: "&#39;です。&lt;式&gt;&#39; 型制約として使用することはできません"
+title: '&#39;&lt;式&gt;&#39;型制約として使用することはできません'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - bc32061
 - vbc32061
 helpviewer_keywords:
 - BC32061
 ms.assetid: b17821b7-fa14-4397-a211-6e2a14079f09
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: c7271018a93c97ed90dc272f7f5404c0f0a22d42
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: 8e9aad2ec65e037b15e19ca2e624fdc8f28bc94e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="39ltexpressiongt39-cannot-be-used-as-a-type-constraint"></a>&#39;です。&lt;式&gt;&#39; 型制約として使用することはできません
+# <a name="39ltexpressiongt39-cannot-be-used-as-a-type-constraint"></a>&#39;&lt;式&gt;&#39;型制約として使用することはできません
 制約リストに、型パラメーターについて有効な制約を表していない式が含まれています。  
   
  制約リストでは、型パラメーターに渡される型引数の要件が適用されます。 次の要件を任意の組み合わせで指定できます。  
@@ -51,7 +42,7 @@ ms.lasthandoff: 12/21/2017
   
 -   式でインターフェイスまたはクラスを参照する場合、コンパイラにそのインターフェイスまたはクラスへのアクセス権があることを確認します。 その名前を修飾し、プロジェクトに参照を追加することが必要な場合があります。 詳細についてを参照してください「の参照をプロジェクト」[宣言された要素への参照](../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Visual Basic におけるジェネリック型](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)  
  [値型と参照型](../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)  
  [宣言された要素の参照](../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)  

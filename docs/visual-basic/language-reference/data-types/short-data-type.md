@@ -1,11 +1,6 @@
 ---
-title: "Short 型 (Visual Basic)"
+title: Short 型 (Visual Basic)
 ms.date: 01/31/2018
-ms.prod: .net
-ms.suite: 
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 author: rpetrusha
 ms.author: ronpet
 f1_keywords:
@@ -23,11 +18,11 @@ helpviewer_keywords:
 - Short data type
 - literal type characters [Visual Basic], S
 ms.assetid: 65fcbcf3-a841-400e-885e-301497729a8b
-ms.openlocfilehash: 10c9869d4fb84cd013b22bc791bd31fad745f3d3
-ms.sourcegitcommit: d2da0142247ef42a219a5d2907f153e62dc6ea0d
+ms.openlocfilehash: ef99743828d8d80844486b651178622ff45fd554
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="short-data-type-visual-basic"></a>Short データ型 (Visual Basic)
 符号付き 16 ビット (2 バイト) 整数-32,768 からの値の範囲は、32,767 までです。  
@@ -52,7 +47,7 @@ Visual Basic 2017 から始めて、使用することできますもアンダ�
 
 [!code-vb[Short](../../../../samples/snippets/visualbasic/language-reference/data-types/numeric-literals.vb#ShortS)]
 
-Visual Basic 15.5 から始めて、使用することできますも、アンダー スコア文字 (`_`) のプレフィックスと 16 進数、バイナリ、または 8 進数の数字間に先行する区切り記号として。 例:
+Visual Basic 15.5 から始めて、使用することできますも、アンダー スコア文字 (`_`) のプレフィックスと 16 進数、バイナリ、または 8 進数の数字間に先行する区切り記号として。 例えば:
 
 ```vb
 Dim number As Short = &H_3264
@@ -70,7 +65,7 @@ Dim number = &H_3264S
 
 -   **拡大します。** `Short`拡大変換後のデータ型`Integer`、 `Long`、 `Decimal`、 `Single`、または`Double`です。 これは、`Short` エラーを発生させることなく、これらの型のいずれかに <xref:System.OverflowException?displayProperty=nameWithType> を変換できることを意味します。  
   
--   **型宣言文字。** あるリテラルにリテラルの型文字 `S` を付けると、そのリテラルは `Short` に変換されます。 `Short`識別子の型文字がありません。  
+-   **型宣言文字。** あるリテラルにリテラルの型文字 `S` を付けると、そのリテラルは `Short` に変換されます。 `Short` 識別子の型文字がありません。  
   
 -   **Framework の型。** .NET Framework において対応する型は、<xref:System.Int16?displayProperty=nameWithType> 構造体です。  
   

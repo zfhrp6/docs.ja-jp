@@ -1,14 +1,6 @@
 ---
-title: "StrongNameKeyGenEx 関数"
-ms.custom: 
+title: StrongNameKeyGenEx 関数
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - StrongNameKeyGenEx
 api_location:
@@ -22,17 +14,13 @@ helpviewer_keywords:
 ms.assetid: 36bd10b9-9857-45f3-8d3b-0da091d6169e
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: ae564f7c4e8333e33b2f2f6229034c3a1396a687
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5e65e962d099e944fe243b3acc0a7c25a3bb960c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="strongnamekeygenex-function"></a>StrongNameKeyGenEx 関数
 厳密な名前に使用するため、指定されたキー サイズで新しい公開/秘密キー ペアを生成します。  
@@ -53,7 +41,7 @@ BOOLEAN StrongNameKeyGenEx (
   
 #### <a name="parameters"></a>パラメーター  
  `wszKeyContainer`  
- [in]要求されたキー コンテナーの名前です。 `wszKeyContainer`一時的な名前を生成する場合は null か空でない文字列である必要があります。  
+ [in]要求されたキー コンテナーの名前です。 `wszKeyContainer` 一時的な名前を生成する場合は null か空でない文字列である必要があります。  
   
  `dwFlags`  
  [in]登録キーのままにするかどうかを指定します。 次の値がサポートされています。  
@@ -72,7 +60,7 @@ BOOLEAN StrongNameKeyGenEx (
  [out]サイズをバイト単位での`ppbKeyBlob`します。  
   
 ## <a name="return-value"></a>戻り値  
- `true`正常に終了します。それ以外の場合、`false`です。  
+ `true` 正常に終了します。それ以外の場合、`false`です。  
   
 ## <a name="remarks"></a>コメント  
  .NET Framework のバージョン 1.0 および 1.1 が必要な`dwKeySize`厳密な名前でアセンブリに署名する 1024 ビットのバージョン 2.0 には、2048 ビットのキーのサポートが追加されています。  
@@ -81,16 +69,16 @@ BOOLEAN StrongNameKeyGenEx (
   
  場合、`StrongNameKeyGenEx`関数が正常に完了、呼び出すしていない、 [StrongNameErrorInfo](../../../../docs/framework/unmanaged-api/strong-naming/strongnameerrorinfo-function.md)最後に生成されたエラーを取得します。  
   
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** StrongName.h  
   
  **ライブラリ:** MsCorEE.dll にリソースとして含まれています。  
   
- **.NET framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [StrongNameKeyGenEx メソッド](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamekeygenex-method.md)  
  [StrongNameKeyGen メソッド](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamekeygen-method.md)  
  [ICLRStrongName インターフェイス](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)

@@ -1,30 +1,16 @@
 ---
 title: DataGrid コントロールのサイズ変更方法
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-wpf
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - DataGrid control [WPF], sizing
 - size [WPF], DataGrid
 - automatically size DataGrid [WPF]
 ms.assetid: 96a0e47e-b010-4302-98ef-2daac446d8db
-caps.latest.revision: ''
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 4219dc88a263b73aa89812a2f841a920c804796b
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: 0019ac9ad82301506d2da279094b2c96e022e915
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="sizing-options-in-the-datagrid-control"></a>DataGrid コントロールのサイズ変更方法
 さまざまなオプションは、コントロールを使用する方法、<xref:System.Windows.Controls.DataGrid>自体のサイズを設定します。 <xref:System.Windows.Controls.DataGrid>、および個々 の行と列、<xref:System.Windows.Controls.DataGrid>その内容を自動的にサイズに設定することができます、または特定の値に設定することができます。 既定では、<xref:System.Windows.Controls.DataGrid>拡大およびその内容のサイズに合わせて縮小されます。  

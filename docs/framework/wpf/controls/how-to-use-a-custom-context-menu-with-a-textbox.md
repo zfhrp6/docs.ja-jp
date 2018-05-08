@@ -1,13 +1,6 @@
 ---
-title: "方法 : TextBox でカスタム コンテキスト メニューを使用する"
-ms.custom: 
+title: '方法 : TextBox でカスタム コンテキスト メニューを使用する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,16 +10,11 @@ helpviewer_keywords:
 - custom context menus [WPF]
 - TextBox control [WPF], custom content menus
 ms.assetid: 842d3cd5-6fa0-4be4-8d90-6c7466213b1c
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 4552031a08680af2f4d41702d2f76ed0c44af21b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: edcf6bdf381ae51a3354f9bc0b3c91d86e1f8f44
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-use-a-custom-context-menu-with-a-textbox"></a>方法 : TextBox でカスタム コンテキスト メニューを使用する
 この例を定義して用の単純なカスタムのコンテキスト メニューを実装する方法を示しています、<xref:System.Windows.Controls.TextBox>です。  
@@ -46,7 +34,7 @@ ms.lasthandoff: 12/22/2017
  [!code-csharp[TextBox_ContextMenu#_TextBox_ContextMenu](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TextBox_ContextMenu/CSharp/Window1.xaml.cs#_textbox_contextmenu)]
  [!code-vb[TextBox_ContextMenu#_TextBox_ContextMenu](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/TextBox_ContextMenu/VisualBasic/Window1.xaml.vb#_textbox_contextmenu)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [コンテキスト メニューでスペル チェックを使用する](../../../../docs/framework/wpf/controls/how-to-use-spell-checking-with-a-context-menu.md)  
  [TextBox の概要](../../../../docs/framework/wpf/controls/textbox-overview.md)  
  [RichTextBox の概要](../../../../docs/framework/wpf/controls/richtextbox-overview.md)

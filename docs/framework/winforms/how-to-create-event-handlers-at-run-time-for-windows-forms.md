@@ -1,13 +1,6 @@
 ---
-title: "方法 : Windows フォームで実行時にイベント ハンドラーを作成する"
-ms.custom: 
+title: '方法 : Windows フォームで実行時にイベント ハンドラーを作成する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -19,16 +12,11 @@ helpviewer_keywords:
 - examples [Windows Forms], event handling
 - Button control [Windows Forms], event handlers
 ms.assetid: 2e7c9e1a-61fe-444d-8113-3c5bacf1c8cb
-caps.latest.revision: "15"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a636e42c85ef3703a2831583aea9839e13effeaa
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 38453c751e6cc63827f3f1e9d20ad2ebdfc841d1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-event-handlers-at-run-time-for-windows-forms"></a>方法 : Windows フォームで実行時にイベント ハンドラーを作成する
 Windows フォーム デザイナーを使用してイベント ハンドラーを作成する他に、実行時にもイベント ハンドラーを作成できます。 これにより、プログラムが最初に起動したときにイベント ハンドラーを接続する代わりに、コード内に記述されている条件に基づいて、実行時にイベント ハンドラーを接続できます。  
@@ -83,7 +71,7 @@ Windows フォーム デザイナーを使用してイベント ハンドラー�
   
      <xref:System.ComponentModel.EventHandlerList.AddHandler%2A>上の Visual Basic のコードに示されているメソッドは、ボタンの click イベント ハンドラーを確立します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Windows フォーム内でのイベント ハンドラーの作成](../../../docs/framework/winforms/creating-event-handlers-in-windows-forms.md)  
  [イベント ハンドラーの概要](../../../docs/framework/winforms/event-handlers-overview-windows-forms.md)  
  [Visual Basic での継承されたイベント ハンドラーのトラブルシューティング](~/docs/visual-basic/programming-guide/language-features/events/troubleshooting-inherited-event-handlers.md)

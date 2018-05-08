@@ -1,13 +1,7 @@
 ---
-title: "方法 : XML ドキュメントのデジタル署名を検証する"
-ms.custom: 
+title: '方法 : XML ドキュメントのデジタル署名を検証する'
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -20,21 +14,16 @@ helpviewer_keywords:
 - XML digital signatures
 - digital signatures, verifying
 ms.assetid: a4d5ceb1-b9f5-47e8-9e4a-a2b39110002f
-caps.latest.revision: "8"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: c45ffbffd5eae812dbd9703ffde4423c94581234
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 6b2cb61f2cc7129153a71398c6fb219c4e3990a8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-verify-the-digital-signatures-of-xml-documents"></a>方法 : XML ドキュメントのデジタル署名を検証する
-<xref:System.Security.Cryptography.Xml> 名前空間にあるクラスを使用すると、デジタル署名で署名された XML データを検証できます。  XML デジタル署名 (XMLDSIG) を使用すると、データが署名後に変更されなかったことを確認できます。  XMLDSIG 標準の詳細については、Wide Web Consortium (W3C) 仕様 (http://www.w3.org/TR/xmldsig-core/) を参照してください。  
+<xref:System.Security.Cryptography.Xml> 名前空間にあるクラスを使用すると、デジタル署名で署名された XML データを検証できます。  XML デジタル署名 (XMLDSIG) を使用すると、データが署名後に変更されなかったことを確認できます。  XMLDSIG 標準の詳細についてにある World Wide Web Consortium (W3C) 仕様を参照してhttp://www.w3.org/TR/xmldsig-core/です。  
   
  この手順のコード例では、<`Signature`> 要素に格納されている XML デジタル署名の検証方法を示します。  この例では、キー コンテナーから RSA 公開キーを取得してから、キーを使用して署名を確認します。  
   
@@ -94,6 +83,6 @@ ms.lasthandoff: 12/23/2017
   
  秘密キーをソース コードに直接埋め込まないでください。  使用してアセンブリから、埋め込まれたキーを簡単に読み取ることができます、 [Ildasm.exe (IL 逆アセンブラー)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md)またはメモ帳などのテキスト エディターで、アセンブリを開くことができます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Security.Cryptography.Xml>  
  [方法: デジタル署名で XML ドキュメントに署名する](../../../docs/standard/security/how-to-sign-xml-documents-with-digital-signatures.md)

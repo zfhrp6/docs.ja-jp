@@ -1,11 +1,6 @@
 ---
-title: "遅延バインディングされたオーバー ロードの解決には適用できません &#39;です。&lt;procedurename&gt;&#39;へのアクセスのインスタンスがインターフェイス型であるためです。"
+title: 遅延バインディングされたオーバー ロードの解決には適用できません&#39; &lt;procedurename&gt; &#39;へのアクセスのインスタンスがインターフェイス型であるため
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vbc30933
 - bc30933
@@ -13,16 +8,13 @@ helpviewer_keywords:
 - overload resolution [Visual Basic], with late-bound argument
 - BC30933
 ms.assetid: 8182eea0-dd34-4d6e-9ca0-41d8713e9dc4
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: fb7f8a9f6eadfc9fd856ea57d362b43d25ff81a1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: e41cbf30f06547ef39553e31542e4e8b6df49a3b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="latebound-overload-resolution-cannot-be-applied-to-39ltprocedurenamegt39-because-the-accessing-instance-is-an-interface-type"></a>遅延バインディングされたオーバー ロードの解決には適用できません &#39;です。&lt;procedurename&gt;&#39;へのアクセスのインスタンスがインターフェイス型であるためです。
+# <a name="latebound-overload-resolution-cannot-be-applied-to-39ltprocedurenamegt39-because-the-accessing-instance-is-an-interface-type"></a>遅延バインディングされたオーバー ロードの解決には適用できません&#39; &lt;procedurename&gt; &#39;へのアクセスのインスタンスがインターフェイス型であるため
 オーバー ロードされたプロパティまたはプロシージャへの参照を解決するのには、コンパイラがしようとしていますが、型の引数であるため、参照が失敗した`Object`と参照元のオブジェクトには、インターフェイスのデータ型。 `Object`引数は、遅延バインディングとして参照を解決するのには、コンパイラを強制します。  
   
  このような場合は、コンパイラは、基になるインターフェイスの代わりに、実装するクラスをオーバー ロードを解決します。 クラスのオーバー ロードされたバージョンのいずれかの名前を変更、コンパイラでは、名前が異なるため、オーバー ロードするには、そのバージョンは考慮されません。 これで、コンパイラを無視する、名前を変更したバージョンの参照を解決するのには、適切な選択されている可能性があります。  

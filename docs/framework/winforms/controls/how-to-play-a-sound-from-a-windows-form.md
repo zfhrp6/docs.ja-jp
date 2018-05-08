@@ -1,13 +1,6 @@
 ---
-title: "方法 : Windows フォームからサウンドを再生する"
-ms.custom: 
+title: '方法 : Windows フォームからサウンドを再生する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -18,16 +11,11 @@ helpviewer_keywords:
 - My.Computer.Audio object [Windows Forms], playing sounds
 - examples [Windows Forms], sounds
 ms.assetid: 3d3350b7-1ebd-4e05-a738-48ca1160a19d
-caps.latest.revision: "15"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 31c9495e22af0e06869d54f02d4ce0e866e28dbb
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 853d0f78b4f6dba2dc84109270f79f4b010c27b4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-play-a-sound-from-a-windows-form"></a>方法 : Windows フォームからサウンドを再生する
 この例では、実行時に指定されたパスでサウンドを再生します。  
@@ -75,7 +63,7 @@ private void playSimpleSound()
 ## <a name="net-framework-security"></a>.NET Framework セキュリティ  
  ファイル名からファイルの内容を判断しないでください。 たとえば、`Form1.vb` というファイルは Visual Basic のソース ファイルではない可能性もあります。 アプリケーションでデータを使用する前に、入力をすべて検証してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Media.SoundPlayer>  
  [方法: Windows フォーム内でサウンドを非同期的に読み込む](../../../../docs/framework/winforms/controls/how-to-load-a-sound-asynchronously-within-a-windows-form.md)  
  

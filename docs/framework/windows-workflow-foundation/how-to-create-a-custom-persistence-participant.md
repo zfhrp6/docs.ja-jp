@@ -1,28 +1,17 @@
 ---
-title: "カスタム永続参加要素を作成する方法"
-ms.custom: 
+title: カスタム永続参加要素を作成する方法
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 1d9cc47a-8966-4286-94d5-4221403d9c06
-caps.latest.revision: "6"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ebc83f100b4303b73ba2e6d3dc41d0f82e8f2c22
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: fcd96e41d8fc7b36f9dff5f10e9bc2d9034d79b2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-a-custom-persistence-participant"></a>カスタム永続参加要素を作成する方法
 次の手順では、永続参加要素を作成します。 参照してください、[永続化に参加している](http://go.microsoft.com/fwlink/?LinkID=177735)サンプルと[ストア拡張](../../../docs/framework/windows-workflow-foundation/store-extensibility.md)永続参加要素のサンプルの実装に関するトピック。  
   
-1.  <xref:System.Activities.Persistence.PersistenceParticipant> または <xref:System.Activities.Persistence.PersistenceIOParticipant> クラスから派生するクラスを作成します。 PersistenceIOParticipant クラスには、IO 操作に参加できることに加え、PersistenceParticipant クラスと同じ拡張ポイントが備わっています。 次のうち、必要な手順を行います。  
+1.  <xref:System.Activities.Persistence.PersistenceParticipant> または <xref:System.Activities.Persistence.PersistenceIOParticipant> クラスから派生するクラスを作成します。 PersistenceIOParticipant クラスでは、I/O 操作に参加できることに加え、PersistenceParticipant クラスと同じ拡張ポイントを提供します。 次のうち、必要な手順を行います。  
   
 2.  <xref:System.Activities.Persistence.PersistenceParticipant.CollectValues%2A> メソッドを実装します。 **CollectValues**メソッドが 2 つのディクショナリ パラメーター、読み取り/書き込み値を格納するため、1 つは他の (後でクエリで使用)、書き込み専用の値を格納します。 このメソッドでは、永続参加要素に固有のデータをこれらのディクショナリに設定する必要があります。 各ディクショナリには、値の名前がキーとして格納されているほか、値そのものが <xref:System.Runtime.DurableInstancing.InstanceValue> オブジェクトとして格納されています。  
   
@@ -46,13 +35,13 @@ ms.lasthandoff: 12/22/2017
     protected virtual void PublishValues (IDictionary<XName,Object> readWriteValues)  
     ```  
   
-5.  実装、 **BeginOnSave**メソッド、参加要素が永続 IO 参加要素の場合。 このメソッドは保存操作中に呼び出されます。 このメソッドでは、永続化 (保存) しているワークフロー インスタンスに付随する IO を実行する必要があります。  ホストが、対応する永続化コマンドのトランザクションを使用している場合、同じトランザクションが Transaction.Current で確立されます。  さらに、PersistenceIOParticipant はトランザクションの一貫性の要件を通知することがあります。この場合、ホストはほかに使用されなければ、永続化のトランザクションを作成します。  
+5.  実装、 **BeginOnSave**メソッド参加者が I/O の永続参加要素である場合。 このメソッドは保存操作中に呼び出されます。 このメソッドでは、永続化 (保存) のワークフロー インスタンスに付随する I/O を実行する必要があります。  ホストが、対応する永続化コマンドのトランザクションを使用している場合、同じトランザクションが Transaction.Current で確立されます。  さらに、PersistenceIOParticipant はトランザクションの一貫性の要件を通知することがあります。この場合、ホストはほかに使用されなければ、永続化のトランザクションを作成します。  
   
     ```  
     protected virtual IAsyncResult BeginOnSave (IDictionary<XName,Object> readWriteValues, IDictionary<XName,Object> writeOnlyValues, TimeSpan timeout, AsyncCallback callback, Object state)  
     ```  
   
-6.  実装、 **BeginOnLoad**メソッド、参加要素が永続 IO 参加要素の場合。 このメソッドは読み込み操作中に呼び出されます。 このメソッドでは、ワークフロー インスタンスの読み込みに付随する IO を実行する必要があります。 ホストが、対応する永続化コマンドのトランザクションを使用している場合、同じトランザクションが Transaction.Current で確立されます。 さらに、PersistenceIOParticipant はトランザクションの一貫性の要件を通知することがあります。この場合、ホストはほかに使用されなければ、永続化のトランザクションを作成します。  
+6.  実装、 **BeginOnLoad**メソッド参加者が I/O の永続参加要素である場合。 このメソッドは読み込み操作中に呼び出されます。 このメソッドでワークフロー インスタンスの読み込みに付随する I/O を実行する必要があります。 ホストが、対応する永続化コマンドのトランザクションを使用している場合、同じトランザクションが Transaction.Current で確立されます。 さらに、I/O の永続化参加要素は 1 つは使用しない場合にそれ以外の場合、場合、ホストは、トランザクションを永続化を作成、トランザクションの一貫性の要件を通知する可能性があります。  
   
     ```  
     protected virtual IAsyncResult BeginOnLoad (IDictionary<XName,Object> readWriteValues, TimeSpan timeout, AsyncCallback callback, Object state)  

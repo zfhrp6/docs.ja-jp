@@ -1,31 +1,17 @@
 ---
 title: サービス ID と認証
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - authentication [WCF], specifying the identity of a service
 ms.assetid: a4c8f52c-5b30-45c4-a545-63244aba82be
-caps.latest.revision: 32
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 5bd550b7408e9db00daf7793cd0a7f1261e21ccf
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 21184098f90be3b64cfccd5ab98a1824cee50e48
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="service-identity-and-authentication"></a>サービス ID と認証
 サービスの*エンドポイント id*サービス Web サービス記述言語 (WSDL) から生成された値です。 この値は、すべてのクライアントに反映され、サービスの認証に使用されます。 クライアントがエンドポイントとの通信を開始し、サービスがクライアントに対して認証を行った後に、クライアントは、エンドポイント ID 値とエンドポイントの認証プロセスから返された実際の値を比較します。 この 2 つの値が一致した場合、クライアントは要求したサービス エンドポイントに接続していることを確認できます。 これは、関数は、保護として*フィッシング*クライアントが悪意のあるサービスによってホストされているエンドポイントにリダイレクトされるようにすることで。  
@@ -35,7 +21,7 @@ ms.lasthandoff: 04/30/2018
 > [!NOTE]
 >  認証に NTLM (NT LanMan) を使用する場合、NTLM ではクライアントがサーバーを認証できないため、サービス ID はチェックされません。 NTLM はコンピューターが Windows ワークグループの一部である場合、または Kerberos 認証をサポートしていない古いバージョンの Windows が実行されている場合に使用されます。  
   
- サービスに対してメッセージを送信するためにクライアントがセキュリティで保護されたチャネルを開始すると、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] インフラストラクチャはこのサービスを認証し、サービス ID がクライアントの使用するエンドポイント アドレスに指定された ID と一致する場合にのみメッセージを送信します。  
+ クライアントは、上にあるサービスにメッセージを送信するセキュリティで保護されたチャネルを開始するときに、Windows Communication Foundation (WCF) インフラストラクチャは、サービスを認証し、サービス id には、エンドポイントで指定された id が一致する場合にのみメッセージを送信クライアントのアドレスを使用します。  
   
  ID の処理は、次の 2 段階から成ります。  
   
@@ -45,7 +31,7 @@ ms.lasthandoff: 04/30/2018
   
  クライアントでの ID の処理は、サービスでのクライアント認証と似ています。 セキュリティで保護されたサービスは、クライアントの資格情報が認証されるまでコードを実行しません。 同様に、クライアントは、サービスのメタデータによって事前に認識されている内容に基づいて、サービスの資格情報が認証されるまでメッセージを送信しません。  
   
- <xref:System.ServiceModel.EndpointAddress.Identity%2A> クラスの <xref:System.ServiceModel.EndpointAddress> プロパティは、クライアントによって呼び出されるサービスの ID を表します。 サービスはこの <xref:System.ServiceModel.EndpointAddress.Identity%2A> をサービスのメタデータ内に公開します。 クライアントの開発者が実行されるとき、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)サービス エンドポイントに対して生成された構成がサービスの値を含む<xref:System.ServiceModel.EndpointAddress.Identity%2A>プロパティです。 (セキュリティが構成されている場合) [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] インフラストラクチャは、サービスが指定された ID を所有しているかどうかを検査します。  
+ <xref:System.ServiceModel.EndpointAddress.Identity%2A> クラスの <xref:System.ServiceModel.EndpointAddress> プロパティは、クライアントによって呼び出されるサービスの ID を表します。 サービスはこの <xref:System.ServiceModel.EndpointAddress.Identity%2A> をサービスのメタデータ内に公開します。 クライアントの開発者が実行されるとき、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)サービス エンドポイントに対して生成された構成がサービスの値を含む<xref:System.ServiceModel.EndpointAddress.Identity%2A>プロパティです。 (セキュリティで構成されている) 場合は、WCF インフラストラクチャでは、サービスが、指定された id を所有していることを確認します。  
   
 > [!IMPORTANT]
 >  メタデータには、サービスに要求される ID が含まれています。したがって、安全な方法 (サービスの HTTPS エンドポイントを作成するなど) でサービス メタデータを公開することをお勧めします。 詳細については、次を参照してください。[する方法: メタデータ エンドポイントをセキュリティで保護された](../../../../docs/framework/wcf/feature-details/how-to-secure-metadata-endpoints.md)です。  
@@ -75,7 +61,7 @@ ms.lasthandoff: 04/30/2018
   
   
 ## <a name="setting-identity-programmatically"></a>プログラムによる ID の設定  
- ID は、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] によって自動的に決定されるため、サービスで ID を明示的に指定する必要はありません。 ただし、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、必要に応じてエンドポイントの ID を指定できます。 特定の DNS ID を持つ新しいサービス エンドポイントを追加するコードを次に示します。  
+ WCF が自動的に判断されるため、サービスは、id を明示的に指定がありません。 ただし、WCF を使用、エンドポイントの id を指定するために必要な場合です。 特定の DNS ID を持つ新しいサービス エンドポイントを追加するコードを次に示します。  
   
  [!code-csharp[C_Identity#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_identity/cs/source.cs#5)]
  [!code-vb[C_Identity#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_identity/vb/source.vb#5)]  
@@ -99,13 +85,13 @@ ms.lasthandoff: 04/30/2018
   
  認証に X.509 証明書を使用するメッセージ レベルまたはトランスポート レベルの SSL (Secure Sockets Layer) を使用して認証を行うようにチャネルが構成されている場合、次の ID 値が有効になります。  
   
--   DNS。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、SSL ハンドシェイク中に提示された証明書に、クライアントの DNS ID に指定された値と等価の DNS または `CommonName` (CN) 属性が含まれているかどうかを確認します。 この検査は、サーバー証明書の有効性の確認とは別に行われます。 既定では、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、サーバー証明書が信頼されたルート証明機関によって発行されたものかどうかを検証します。  
+-   DNS。 WCF により、SSL ハンドシェイク中に指定された証明書に、DNS が含まれているか、 `CommonName` (CN) 属性をクライアントの DNS id に指定された値と同じにします。 この検査は、サーバー証明書の有効性の確認とは別に行われます。 既定では、WCF は、サーバー証明書が信頼されたルート証明機関によって発行されたことを検証します。  
   
--   証明書。 SSL ハンドシェイク中に、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、ID に指定された証明書の値が、リモート エンドポイントによって間違いなく提示されているかどうかを確認します。  
+-   証明書。 SSL ハンドシェイク中には、WCF は、リモート エンドポイントが、id に指定された証明書の値を提供するようにします。  
   
 -   証明書参照。 証明書と同じです。  
   
--   RSA。 SSL ハンドシェイク中に、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、ID に指定された RSA キーの値が、リモート エンドポイントによって間違いなく提示されているかどうかを確認します。  
+-   RSA。 SSL ハンドシェイク中には、WCF は、リモート エンドポイントが、id に指定された RSA キーを提供するようにします。  
   
  サービスが認証に Windows 資格情報を使用するメッセージ レベルまたはトランスポート レベル SSL の認証を行い、資格情報をネゴシエートする場合、次の ID 値が有効になります。  
   

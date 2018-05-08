@@ -1,11 +1,6 @@
 ---
-title: "Group Join 句 (Visual Basic)"
+title: Group Join 句 (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.QueryGroupJoinIn
 - vb.QueryGroupJoinOn
@@ -16,14 +11,11 @@ helpviewer_keywords:
 - Group Join statement [Visual Basic]
 - queries [Visual Basic], Group Join
 ms.assetid: 37dbf79c-7b5c-421b-bbb7-dadfd2b92a1c
-caps.latest.revision: "24"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: c43b41336393b40684aee79f88c1e6999ebda674
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 094281b0afb34451ae8539e4eb967043b21d379c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="group-join-clause-visual-basic"></a>Group Join 句 (Visual Basic)
 2 つのコレクションを、単一の階層コレクションに結合します。 結合操作は、一致するキーに基づいています。  
@@ -40,11 +32,11 @@ Group Join element [As type] In collection _
   
 |用語|定義|  
 |---|---|  
-|`element`|必須です。 結合するコレクションの制御変数にします。|  
-|`type`|省略可能です。 `element` の型。 ない場合は`type`が指定されているの種類`element`から推論される`collection`です。|  
-|`collection`|必須です。 左側にあるコレクションと結合するコレクション、`Group Join`演算子。 A`Group Join`句で入れ子にでき、`Join`句または別の`Group Join`句。|  
-|`key1``Equals``key2`|必ず指定します。 結合するコレクションのキーを識別します。 使用する必要があります、`Equals`演算子を結合するコレクションからキーを比較します。 使用して結合条件を組み合わせることができます、`And`演算子を複数のキーを識別します。 `key1`の左側にあるコレクションからパラメーターがある必要があります、`Join`演算子。 `key2`の右側にあるコレクションからパラメーターがある必要があります、`Join`演算子。<br /><br /> 結合条件で使用されるキーには、コレクションの 1 つ以上の項目を含む式を指定できます。 ただし、それぞれのキー式は、該当するコレクションの項目のみを含めることができます。|  
-|`expressionList`|必須です。 コレクションから要素のグループの集計方法を識別する 1 つまたは複数の式。 グループ化した結果のメンバー名を指定するのには、使用、`Group`キーワード (`<alias> = Group`)。 グループに適用する集計関数を含めることもできます。|  
+|`element`|必須。 結合するコレクションの制御変数にします。|  
+|`type`|任意。 `element` の型。 ない場合は`type`が指定されているの種類`element`から推論される`collection`です。|  
+|`collection`|必須。 左側にあるコレクションと結合するコレクション、`Group Join`演算子。 A`Group Join`句で入れ子にでき、`Join`句または別の`Group Join`句。|  
+|`key1` `Equals` `key2`|必須。 結合するコレクションのキーを識別します。 使用する必要があります、`Equals`演算子を結合するコレクションからキーを比較します。 使用して結合条件を組み合わせることができます、`And`演算子を複数のキーを識別します。 `key1`の左側にあるコレクションからパラメーターがある必要があります、`Join`演算子。 `key2`の右側にあるコレクションからパラメーターがある必要があります、`Join`演算子。<br /><br /> 結合条件で使用されるキーには、コレクションの 1 つ以上の項目を含む式を指定できます。 ただし、それぞれのキー式は、該当するコレクションの項目のみを含めることができます。|  
+|`expressionList`|必須。 コレクションから要素のグループの集計方法を識別する 1 つまたは複数の式。 グループ化した結果のメンバー名を指定するのには、使用、`Group`キーワード (`<alias> = Group`)。 グループに適用する集計関数を含めることもできます。|  
   
 ## <a name="remarks"></a>コメント  
  `Group Join`句が一致する結合するコレクションからキー値に基づいて 2 つのコレクションを結合します。 結果のコレクションには、最初のコレクションからキーの値に一致する 2 番目のコレクションから要素のコレクションを参照するメンバーを含めることができます。 第 2 のコレクションをグループ化された要素に適用する集計関数を指定することもできます。 集計関数については、次を参照してください。 [Aggregate 句](../../../visual-basic/language-reference/queries/aggregate-clause.md)です。  

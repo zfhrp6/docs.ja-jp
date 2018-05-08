@@ -1,29 +1,15 @@
 ---
 title: XAML のマークアップ拡張機能の概要
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-wpf
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - markup extensions [XAML Services], custom
 - XAML [XAML Services], markup extensions
 ms.assetid: 261b2b11-2dc0-462f-8c66-55b8c9c6e436
-caps.latest.revision: 14
-author: wadepickett
-ms.author: wpickett
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 464c5f547089d47906f2e227effe821357196c16
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 6b7c13355fe46d4b768699555bbaf522e3b49c73
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="markup-extensions-for-xaml-overview"></a>XAML のマークアップ拡張機能の概要
 マークアップ拡張機能は、プリミティブでも特定の XAML 型でもない値を取得するための XAML の手法です。 属性による使用では、マークアップ拡張機能は、左中かっこ `{` でマークアップ拡張機能スコープに入り、右中かっこ `}` で終了するという、既知の文字シーケンスを使用します。 .NET Framework XAML サービスを使用する場合は、System.Xaml アセンブリから XAML 言語の定義済みのマークアップ拡張機能をいくつか使用できます。 また、System.Xaml で定義された <xref:System.Windows.Markup.MarkupExtension> クラスからサブクラスを作成し、独自のマークアップ拡張機能を定義することもできます。 あるいは、特定のフレームワークを既に参照している場合は、そのフレームワークによって定義されたマークアップ拡張機能を使用することができます。  

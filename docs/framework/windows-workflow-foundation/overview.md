@@ -1,24 +1,12 @@
 ---
 title: Windows Workflow の概要
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: fc44adbe-1412-49ae-81af-0298be44aae6
-caps.latest.revision: 17
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: bc1aa65b413b87b27c05e7a12ce607d1cd30b89b
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 568797259087129ab4fc87a1f3523b0cce88eb4b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="windows-workflow-overview"></a>Windows Workflow の概要
 ワークフローは、一連の要素の単位と呼ばれる*アクティビティ*実際のプロセスを記述するモデルとして保存されています。 ワークフローでは、短期間だけ行われる業務や長期間にわたって行われる業務の各部分の実行順序と、それらの間の依存関係を表すことができます。 このような業務はモデルの最初から最後まで通して行われます。アクティビティには、人間によって実行されるものと、システム機能によって実行されるものがあります。  
@@ -34,7 +22,7 @@ ms.lasthandoff: 04/30/2018
   
  これらの各クラスは、アクティビティの実行に関与する <xref:System.Activities.ActivityInstance> として表されるコアのアクティビティ ランタイムをラップします。 実行するアプリケーション ドメイン内では、同時に複数の <xref:System.Activities.ActivityInstance> オブジェクトを使用できます。  
   
- 前述のホストと対話する 3 つのオブジェクトは、それぞれワークフロー プログラムと呼ばれるアクティビティのツリーから作成されます。 ワークフローは、これらの型を使用するか、<xref:System.Activities.ActivityInstance> をラップするカスタムのホストを使用して、コンソール アプリケーション、フォームに基づくアプリケーション、Windows サービス、[!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] Web サイト、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービスなどの任意の Windows プロセス内で実行できます。  
+ 前述のホストと対話する 3 つのオブジェクトは、それぞれワークフロー プログラムと呼ばれるアクティビティのツリーから作成されます。 これらの型またはラップするカスタム ホストを使用して<xref:System.Activities.ActivityInstance>、コンソール アプリケーションを含む任意の Windows プロセス内のワークフローを実行できるフォーム ベースのアプリケーション、Windows サービス、 [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] Web サイト、および Windows Communication Foundation (WCF) サービス。  
   
  ![ホスト プロセス内のワークフロー コンポーネント](../../../docs/framework/windows-workflow-foundation/media/44c79d1d-178b-4487-87ed-3e33015a3842.gif "44c79d1d-178b-4487-87ed-3e33015a3842")  
 ホスト プロセス内のワークフローのコンポーネント  

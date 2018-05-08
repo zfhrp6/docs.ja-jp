@@ -1,11 +1,6 @@
 ---
-title: "ReDim ステートメント (Visual Basic)"
+title: ReDim ステートメント (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.ReDim
 - vb.Preserve
@@ -31,14 +26,11 @@ helpviewer_keywords:
 - declaration statements [Visual Basic]
 - scalar variables [Visual Basic]
 ms.assetid: ad1c5e07-dcd7-4ae1-a79e-ad3f2dcc2083
-caps.latest.revision: "25"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 8cec66ee33bfd82b3abd623a0130f5635aa3d1d9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 9536ea8a6274e0b4a2589caf5aefa271a3567d32
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="redim-statement-visual-basic"></a>ReDim ステートメント (Visual Basic)
 配列変数の記憶域を再割り当てします。  
@@ -53,9 +45,9 @@ ReDim [ Preserve ] name(boundlist) [ ,  name(boundlist) [, ... ] ]
   
 |用語|定義|  
 |----------|----------------|  
-|`Preserve`|省略可能です。 最後の次元のサイズだけを変更したときに、既存の配列のデータを保持するために使用する修飾子|  
-|`name`|必須です。 配列変数名。 参照してください[宣言された要素の名前](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)です。|  
-|`boundlist`|必須です。 再定義された配列の各次元の境界を一覧表示します。|  
+|`Preserve`|任意。 最後の次元のサイズだけを変更したときに、既存の配列のデータを保持するために使用する修飾子|  
+|`name`|必須。 配列変数名。 参照してください[宣言された要素の名前](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)です。|  
+|`boundlist`|必須。 再定義された配列の各次元の境界を一覧表示します。|  
   
 ## <a name="remarks"></a>コメント  
  `ReDim` ステートメントを使用し、既に宣言されている配列の 1 つまたは複数の次元のサイズを変更できます。 大きな配列があり、その要素の一部が必要ない場合、`ReDim` で配列のサイズを減らし、メモリを解放できます。 一方で、配列に要素を追加する必要がある場合、`ReDim` は要素を追加できます。  
@@ -86,7 +78,7 @@ ReDim [ Preserve ] name(boundlist) [ ,  name(boundlist) [, ... ] ]
   
 ## <a name="behavior"></a>動作  
   
--   **配列置換。** `ReDim`既存の配列を解放し、同じランクを持つ新しい配列を作成します。 新しい配列は配列変数で解放された配列に取って代わります。  
+-   **配列置換。** `ReDim` 既存の配列を解放し、同じランクを持つ新しい配列を作成します。 新しい配列は配列変数で解放された配列に取って代わります。  
   
 -   **保持しない初期化。** `Preserve` を指定しない場合、`ReDim` はそのデータ型の既定値を使用し、新しい配列の要素を初期化します。  
   

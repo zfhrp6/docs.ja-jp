@@ -1,29 +1,17 @@
 ---
-title: "XAML での空白の処理"
-ms.custom: 
+title: XAML での空白の処理
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - East Asian characters [XAML Services]
 - XAML [XAML Services], whitespace processing
 - whitespace processing in XAML [XAML Services]
 - characters [XAML Services], East Asian
 ms.assetid: cc9cc377-7544-4fd0-b65b-117b90bb0b23
-caps.latest.revision: "20"
-author: wadepickett
-ms.author: wpickett
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c382be7dabca90ef201fa24cfb79472955347eef
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9f7d7ca900955b8899322533f9d69338042d88ab
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="whitespace-processing-in-xaml"></a>XAML での空白の処理
 XAML の言語規則では、空白の意味は [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] プロセッサの実装によって処理する必要があると定められています。 ここでは、それらの XAML 言語規則について説明します。 また、XAML プロセッサの [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] 実装およびシリアル化用の XAML ライターで定義されている追加の空白処理についても説明します。  
@@ -70,7 +58,7 @@ XAML の言語規則では、空白の意味は [!INCLUDE[TLA2#tla_xaml](../../.
   
 <a name="east_asian_characters"></a>   
 ## <a name="east-asian-characters"></a>東アジア言語の文字  
- "東アジア言語の文字" は、U+20000 ～ U+2FFFD および U+30000 ～ U+3FFFD の範囲の [!INCLUDE[TLA2#tla_unicode](../../../includes/tla2sharptla-unicode-md.md)] 文字のセットとして定義されています。 このサブセットは、「CJK 表意文字」と呼ばれることもあります。 詳細については、 [http://www.unicode.org](http://www.unicode.org/)を参照してください。  
+ "東アジア言語の文字" は、U+20000 ～ U+2FFFD および U+30000 ～ U+3FFFD の範囲の [!INCLUDE[TLA2#tla_unicode](../../../includes/tla2sharptla-unicode-md.md)] 文字のセットとして定義されています。 このサブセットは、「CJK 表意文字」と呼ばれることもあります。 詳細については、「[http://www.unicode.org](http://www.unicode.org/)」を参照してください。  
   
 <a name="whitespace_and_text_content_models"></a>   
 ## <a name="whitespace-and-text-content-models"></a>空白とテキスト コンテンツ モデル  
@@ -85,7 +73,7 @@ XAML の言語規則では、空白の意味は [!INCLUDE[TLA2#tla_xaml](../../.
   
  また、フロー ドキュメント モデルで改行を意味する特定のインライン要素では、空白が意味を持つコレクションでも、余分なスペースを挿入しないように注意する必要があります。 たとえば、<xref:System.Windows.Documents.LineBreak>要素と同じ目的には、 \<BR/> にタグを付ける[!INCLUDE[TLA2#tla_html](../../../includes/tla2sharptla-html-md.md)]、マークアップでは、読みやすくするため、通常、<xref:System.Windows.Documents.LineBreak>はで改行を入れて後続のテキストから区切られます。 その改行は、正規化されて後続の行の先頭のスペースになってはなりません。 その動作を有効にするために、 <xref:System.Windows.Documents.LineBreak> 要素のクラス定義は <xref:System.Windows.Markup.TrimSurroundingWhitespaceAttribute>を適用します。これは、 [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] を囲む空白を常にトリミングするという意味に <xref:System.Windows.Documents.LineBreak> プロセッサによって解釈されます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [XAML の概要 (WPF)](../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)  
  [XML 文字エンティティと XAML](../../../docs/framework/xaml-services/xml-character-entities-and-xaml.md)  
  [XAML における xml:space の処理](../../../docs/framework/xaml-services/xml-space-handling-in-xaml.md)

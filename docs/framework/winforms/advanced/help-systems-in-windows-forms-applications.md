@@ -1,13 +1,6 @@
 ---
-title: "Windows フォーム アプリケーションのヘルプ システム"
-ms.custom: 
+title: Windows フォーム アプリケーションのヘルプ システム
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - Help [Windows Forms], adding to Windows applications
 - Windows applications [Windows Forms], providing Help systems
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - Help [Windows Forms], Windows Forms
 - HelpProvider component [Windows Forms], providing Help in Windows applications
 ms.assetid: 2a96a278-432c-41fc-9e3c-5bfedf5e1267
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 1b2f5d067d487bbd5b91576927aee21a9a44fde0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 293e6ecda3d763a4526349ee164d87da62f5e36d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="help-systems-in-windows-forms-applications"></a>Windows フォーム アプリケーションのヘルプ システム
 1 つの最も重要な配慮をするように、アプリケーションの開発者は、ユーザーを提供できますが立つヘルプ システムです。 これは、ここでは有効にする混乱または混乱になるときです。 使用して簡単に実行が Windows ベースのアプリケーションにヘルプ システムを提供する、 [HelpProvider コンポーネント](../../../../docs/framework/winforms/controls/helpprovider-component-windows-forms.md)です。  
@@ -34,7 +22,7 @@ ms.lasthandoff: 12/22/2017
   
  HTML Help Workshop で HTML ヘルプ 1.x のファイルを生成することができます。 HTML ヘルプの詳細については、"HTML Help Workshop"または MSDN の他の HTML Help」トピックを参照してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Windows フォームでのヘルプの統合](../../../../docs/framework/winforms/advanced/integrating-user-help-in-windows-forms.md)  
  [HelpProvider コンポーネント](../../../../docs/framework/winforms/controls/helpprovider-component-windows-forms.md)  
  [ToolTip コンポーネント](../../../../docs/framework/winforms/controls/tooltip-component-windows-forms.md)  

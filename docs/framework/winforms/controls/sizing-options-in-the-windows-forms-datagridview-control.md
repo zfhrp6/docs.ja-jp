@@ -1,13 +1,6 @@
 ---
-title: "Windows フォーム DataGridView コントロールのサイズ変更オプション"
-ms.custom: 
+title: Windows フォーム DataGridView コントロールのサイズ変更オプション
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - DataGridView control [Windows Forms], row sizing
 - data grids [Windows Forms], column sizing
@@ -16,19 +9,14 @@ helpviewer_keywords:
 - data grids [Windows Forms], row sizing
 - data grids [Windows Forms], sizing options
 ms.assetid: a5620a9c-0d06-41e3-8934-c25ddb16c9e6
-caps.latest.revision: "29"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 6cefca8e6856680d509d6166eec4d97855f1babc
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6e3a7786970ef536da4ef7628cd33ae067ba90be
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="sizing-options-in-the-windows-forms-datagridview-control"></a>Windows フォーム DataGridView コントロールのサイズ変更オプション
-<xref:System.Windows.Forms.DataGridView>行、列、およびヘッダーは、多くの異なるオカレンスの結果としてのサイズを変更できます。 次の表は、その要因を示します。  
+<xref:System.Windows.Forms.DataGridView> 行、列、およびヘッダーは、多くの異なるオカレンスの結果としてのサイズを変更できます。 次の表は、その要因を示します。  
   
 |出現する位置|説明|  
 |----------------|-----------------|  
@@ -138,7 +126,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="content-based-sizing-options"></a>コンテンツ ベースのサイズ変更オプション  
  サイズ変更プロパティおよびメソッドで使用される列挙体では、コンテンツ ベースのサイズ変更と同様の値があります。 これらの値を適切なサイズの計算に使用するセルを制限できます。 すべてのサイズ変更の列挙は、表示されているセルを参照する名前を持つ値は、表示されている行のセルに計算を制限します。 行の除外は、大量の行を使用しているときに、パフォーマンスの低下を避けるために便利です。 計算またはヘッダー以外のセルのセルの値を制限することもできます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.DataGridView>  
  <xref:System.Windows.Forms.DataGridView.AllowUserToResizeColumns%2A?displayProperty=nameWithType>  
  <xref:System.Windows.Forms.DataGridView.AllowUserToResizeRows%2A?displayProperty=nameWithType>  

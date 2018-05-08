@@ -1,30 +1,18 @@
 ---
-title: "方法 : ポート共有を使用するように Windows Communication Foundation サービスを構成する"
-ms.custom: 
+title: '方法 : ポート共有を使用するように Windows Communication Foundation サービスを構成する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 6400bc71-a858-4ac2-8d5a-caa72d3b5482
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c0086e145ca2aab325764467742a4ff2e6e3c0b5
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 0a3aca2bac546c9142137afc025133bc1154ff90
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-configure-a-windows-communication-foundation-service-to-use-port-sharing"></a>方法 : ポート共有を使用するように Windows Communication Foundation サービスを構成する
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] アプリケーションで net.tcp:// ポート共有を使用する最も簡単な方法は、<xref:System.ServiceModel.NetTcpBinding> を使用してサービスを公開することです。  
+Windows Communication Foundation (WCF) アプリケーションで net.tcp:// ポート共有を使用する最も簡単な方法を使用してサービスを公開する、<xref:System.ServiceModel.NetTcpBinding>です。  
   
  このバインディングは、<xref:System.ServiceModel.NetTcpBinding.PortSharingEnabled%2A> プロパティを提供します。このプロパティは、このバインディングを使用して構成されるサービスに対して net.tcp:// ポート共有を有効にするかどうかを制御します。  
   
@@ -71,6 +59,6 @@ ms.lasthandoff: 01/19/2018
 </system.serviceModel>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Net.TCP ポート共有](http://msdn.microsoft.com/library/f13692ee-a179-4439-ae72-50db9534eded)  
  [方法 : Net.TCP ポート共有サービスを有効にする](../../../../docs/framework/wcf/feature-details/how-to-enable-the-net-tcp-port-sharing-service.md)

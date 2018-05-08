@@ -1,30 +1,16 @@
 ---
 title: 一方向サービス
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - Windows Communication Foundation [WCF], one-way service contracts
 - WCF [WCF], one-way service contracts
 - service contracts [WCF], defining one-way
 ms.assetid: 19053a36-4492-45a3-bfe6-0365ee0205a3
-caps.latest.revision: 18
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 380f6a10994c7eb69f4a59b222aa2d422151f247
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 03efc27f2ba54ca22f03e3ece84770fe0dcadbb3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="one-way-services"></a>一方向サービス
 サービス操作の既定の動作は、要求/応答パターンです。 要求/応答パターンでは、サービス操作がコードで `void` 型のメソッドとして表される場合であっても、クライアントは応答メッセージを待機します。 一方向操作では、メッセージが 1 つ送信されるだけです。 受信者は応答メッセージを送信せず、送信者もこれを待機しません。  
@@ -57,7 +43,7 @@ public interface IOneWayCalculator
  完全な例では、次を参照してください。、[一方向](../../../../docs/framework/wcf/samples/one-way.md)サンプルです。  
   
 ## <a name="clients-blocking-with-one-way-operations"></a>一方向操作でのクライアントのブロック  
- 一方向アプリケーションの中には、送信データをネットワーク接続に書き込むとすぐに処理を終了するものがある一方で、バインディングまたはサービスの実装により [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントが一方向操作を使用できなくなるというシナリオもあることを理解することが重要です。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント アプリケーションでは、送信データがネットワーク接続に書き込まれるまで [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント オブジェクトは処理を終了しません。 これは一方向操作を含め、すべてのメッセージ交換パターンについて当てはまることで、トランスポートへのデータの書き込みに何らかの問題があると、クライアントが処理を終了できなくなることを意味します。 問題の種類によっては、例外が発生したりサービスへのメッセージの送信に遅延が発生したりする結果となることがあります。  
+ 一方向アプリケーションは、書き込むとすぐ、送信データがネットワーク接続にいくつかのシナリオで、バインディングまたはサービスの実装を返すことができますが発生する一方向操作の使用をブロックする WCF クライアントを実現する重要です。 WCF クライアント アプリケーションで、送信データがネットワーク接続に書き込まれるまで、WCF クライアント オブジェクトは返されません。 これは一方向操作を含め、すべてのメッセージ交換パターンについて当てはまることで、トランスポートへのデータの書き込みに何らかの問題があると、クライアントが処理を終了できなくなることを意味します。 問題の種類によっては、例外が発生したりサービスへのメッセージの送信に遅延が発生したりする結果となることがあります。  
   
  たとえば、トランスポートがエンドポイントを見つけられない場合、大きな遅延なしに <xref:System.ServiceModel.EndpointNotFoundException?displayProperty=nameWithType> 例外がスローされます。 ただし、サービスが何らかの理由によりデータをネットワークから読み込めないために、クライアントのトランスポート送信操作が終了しない可能性もあります。 このような場合、クライアントのトランスポート バインディングで <xref:System.ServiceModel.Channels.Binding.SendTimeout%2A?displayProperty=nameWithType> 期間が経過すると、<xref:System.TimeoutException?displayProperty=nameWithType> がスローされますが、タイムアウト時間が経過するまで例外はスローされません。 またサービスに多数のメッセージが集中しているために、一定の期間が経過するまでサービスがメッセージを処理できないことがあります。 この場合も、サービスがメッセージを処理できるまで、または例外がスローされるまで、一方向クライアントはブロックします。  
   

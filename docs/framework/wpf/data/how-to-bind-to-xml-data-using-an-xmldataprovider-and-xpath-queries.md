@@ -1,28 +1,16 @@
 ---
-title: "方法 : XMLDataProvider と XPath クエリを使用して XML データにバインドする"
-ms.custom: 
+title: '方法 : XMLDataProvider と XPath クエリを使用して XML データにバインドする'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - XmlDataProvider [WPF], binding to XML data
 - data binding [WPF], binding to XML data using XmlDataProvider queries
 - binding [WPF], to XML data using XmlDataProvider queries
 ms.assetid: 7dcd018f-16aa-4870-8e47-c1b4ea31e574
-caps.latest.revision: "22"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 92037be2280eaa248951ff9bad82b7a1581a4fd9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: bb8eb727fb6614440721c4d34a7d1828182d2f14
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-bind-to-xml-data-using-an-xmldataprovider-and-xpath-queries"></a>方法 : XMLDataProvider と XPath クエリを使用して XML データにバインドする
 この例をバインドする方法を示しています。[!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)]データを使用して、<xref:System.Windows.Data.XmlDataProvider>です。  
@@ -55,7 +43,7 @@ ms.lasthandoff: 12/22/2017
   
 -   `XPath="*[position()>3]"` は、最初の 3 つを除くすべての書籍要素を返します。  
   
- 実行すると、 **XPath**クエリで返されます、<xref:System.Xml.XmlNode>または XmlNodes の一覧です。 <xref:System.Xml.XmlNode>[!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)]使用できるオブジェクト、<xref:System.Windows.Data.Binding.Path%2A>にバインドするプロパティ、[!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)]プロパティです。 前の例をもう一度考えてみます。 場合の例では、残りの部分は、同じまま変更して、<xref:System.Windows.Controls.TextBlock>には、次のバインドで返される XmlNodes の名前が表示されます、<xref:System.Windows.Controls.ListBox>です。 この場合、返されたノードの名前はすべて "*Book*" です。  
+ 実行すると、 **XPath**クエリで返されます、<xref:System.Xml.XmlNode>または XmlNodes の一覧です。 <xref:System.Xml.XmlNode> [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)]使用できるオブジェクト、<xref:System.Windows.Data.Binding.Path%2A>にバインドするプロパティ、[!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)]プロパティです。 前の例をもう一度考えてみます。 場合の例では、残りの部分は、同じまま変更して、<xref:System.Windows.Controls.TextBlock>には、次のバインドで返される XmlNodes の名前が表示されます、<xref:System.Windows.Controls.ListBox>です。 この場合、返されたノードの名前はすべて "*Book*" です。  
   
  [!code-xaml[XmlDataSourceVariation#XmlNodePath](../../../../samples/snippets/csharp/VS_Snippets_Wpf/XmlDataSourceVariation/CS/Page1.xaml#xmlnodepath)]  
   
@@ -69,7 +57,7 @@ ms.lasthandoff: 12/22/2017
 <XmlDataProvider x:Key="BookData" Source="http://MyUrl" XPath="Books"/>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Data.ObjectDataProvider>  
  [XDocument、XElement、または LINQ for XML クエリの結果にバインドする](../../../../docs/framework/wpf/data/how-to-bind-to-xdocument-xelement-or-linq-for-xml-query-results.md)  
  [階層 XML データでマスター詳細パターンを使用する](../../../../docs/framework/wpf/data/how-to-use-the-master-detail-pattern-with-hierarchical-xml-data.md)  

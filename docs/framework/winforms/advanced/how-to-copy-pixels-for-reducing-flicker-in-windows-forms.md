@@ -1,13 +1,6 @@
 ---
-title: "方法 :ピクセルをコピーして Windows フォームのちらつきを低減する"
-ms.custom: 
+title: 方法 :ピクセルをコピーして Windows フォームのちらつきを低減する
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -20,16 +13,11 @@ helpviewer_keywords:
 - flicker
 - bit-block transfer
 ms.assetid: 33b76910-13a3-4521-be98-5c097341ae3b
-caps.latest.revision: "13"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 17253e21739911d4aa0541fde9ae205b0be1c5a2
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 65428132c885191b62c3b4a76c8937bf8f3f6732
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-copy-pixels-for-reducing-flicker-in-windows-forms"></a>方法 :ピクセルをコピーして Windows フォームのちらつきを低減する
 単純なグラフィックをアニメーション化するときにユーザーことができる場合もありますが発生ちらつき、またはその他の望ましくない視覚効果。 この問題を制限する 1 つの方法は、プロセスを使用して、"bitblt"画像の上です。 Bitblt は、「ビット ブロック転送」色データの元の四角形にはピクセルからピクセルの四角形に。  
@@ -73,7 +61,7 @@ private void Form1_Paint(System.Object sender,
 ## <a name="compiling-the-code"></a>コードのコンパイル  
  上記のコードをフォームの実行は<xref:System.Windows.Forms.Control.Paint>イベント ハンドラー、フォームが再描画されると、グラフィックスが永続化できるようにします。 そのためグラフィックスに関連するメソッドを呼び出す必要はありません、 <xref:System.Windows.Forms.Form.Load> 、イベント ハンドラー描画済みのコンテンツが再描画されませんフォームがサイズ変更されるか、別の形式によって隠されるためです。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Drawing.CopyPixelOperation>  
  <xref:System.Drawing.Graphics.FillRectangle%2A?displayProperty=nameWithType>  
  <xref:System.Windows.Forms.Control.OnPaint%2A?displayProperty=nameWithType>  

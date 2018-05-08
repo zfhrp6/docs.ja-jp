@@ -1,27 +1,15 @@
 ---
-title: "WCF に必要なオペレーティング システム リソース"
-ms.custom: 
+title: WCF に必要なオペレーティング システム リソース
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: cdd9a331-53fe-4e0d-bdfe-782264aec5c9
-caps.latest.revision: "6"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: fde00011a7fffde4c4c75f9605758971b42627f4
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4522f1c59c8f74281a0e197338c6206ab29c229b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="operating-system-resources-required-by-wcf"></a>WCF に必要なオペレーティング システム リソース
-[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] は、オペレーティング システムで提供される複数のリソースに基づいて機能します。 このリソースを次の表に示します。  
+Windows Communication Foundation (WCF) は、関数に、オペレーティング システムによって提供されているいくつかのリソースに依存します。 このリソースを次の表に示します。  
   
 |リソース|説明|  
 |--------------|-----------------|  
@@ -29,5 +17,5 @@ ms.lasthandoff: 12/22/2017
 |インターネット インフォメーション サービス (IIS)|IIS を使用してアプリケーションをホストする場合に必要です。|  
 |Windows プロセス アクティブ化サービス (WAS)|WAS を使用してアプリケーションをホストする場合に必要です。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [システム要件](../../../docs/framework/wcf/wcf-system-requirements.md)

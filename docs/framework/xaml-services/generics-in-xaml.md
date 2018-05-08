@@ -1,28 +1,14 @@
 ---
 title: XAML のジェネリック
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-wpf
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - generics [XAML Services]
 ms.assetid: 835bfed7-585c-4216-ae67-b674edab8b92
-caps.latest.revision: 8
-author: wadepickett
-ms.author: wpickett
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: e64224edcb49d5040332b7cef9649c98cf26798b
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: faef74c57ac5ff9e3d4162accfc6552db55715bd
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="generics-in-xaml"></a>XAML のジェネリック
 System.Xaml に実装されている .NET Framework XAML サービスでは、CLR 型のジェネリック型を使用するためのサポートを提供します。 このサポートには、引数の型としてジェネリックの制約を指定して、適切な呼び出しによって、制約の適用が含まれます。`Add`メソッドのジェネリック コレクションの場合。 このトピックを使用して、XAML でのジェネリック型の参照の側面について説明します。  

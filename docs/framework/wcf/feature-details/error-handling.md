@@ -1,24 +1,12 @@
 ---
-title: "エラー処理"
-ms.custom: 
+title: エラー処理
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: c948841a-7db9-40ae-9b78-587d216cbcaf
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 29ae7505f3fcd460abe9e65974f564a296723aa1
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ffcc817eb463a1787972bc9c4ae1434ff74f7bb4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="error-handling"></a>エラー処理
 ## <a name="error-handling-in-windows-communication-foundation"></a>Windows Communication Foundation でのエラー処理  
@@ -78,5 +66,5 @@ ms.lasthandoff: 12/22/2017
   
  型変換のディスパッチ エラーは、エラー ハンドラーをインストールすることで、その他多くの種類のディスパッチ エラーと同様に調査できます。 IErrorHandler 機能拡張ポイントは、サービス レベルの例外を処理するために呼び出されます。 そこから、呼び出し元に返される応答を選択できます (カスタム タスクとレポートを実行することもできます)。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [基本的な WCF エラー処理](http://msdn.microsoft.com/library/gg281715.aspx)

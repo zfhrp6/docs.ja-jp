@@ -1,28 +1,14 @@
 ---
-title: "TypeConverters および XAML"
-ms.custom: 
+title: TypeConverters および XAML
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - XAML [WPF], TypeConverter class
 ms.assetid: f6313e4d-e89d-497d-ac87-b43511a1ae4b
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 1b7ee4b3b00a675cfafc884d41079b76656bdf49
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a6d41b5ad519302016ed7fa1d6a103af0f4f14d2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="typeconverters-and-xaml"></a>TypeConverters および XAML
 このトピックでは、一般的な XAML 言語機能として、文字列からの型変換の目的について説明します。 .NET Framework で、<xref:System.ComponentModel.TypeConverter>クラスは、特定の目的を XAML 属性の使用方法のプロパティ値として使用できる管理対象のカスタム クラスの実装の一部として機能します。 場合は、カスタム クラスを記述する、XAML 設定可能な属性値として使用できるようにするのには、クラスのインスタンスは、適用する必要があります、 <xref:System.ComponentModel.TypeConverterAttribute> 、クラスに記述するカスタム<xref:System.ComponentModel.TypeConverter>クラス、またはその両方です。  
@@ -69,7 +55,7 @@ ms.lasthandoff: 12/22/2017
  ここで、マークアップ拡張機能は、型コンバーターではなく必要な 1 つの一般的な状況を既に存在するオブジェクトへの参照を行います。 最高でステートレスな型コンバーターは、必要とは限らないの新しいインスタンスを生成だけでした。 マークアップ拡張機能の詳細については、次を参照してください。[マークアップ拡張機能と WPF XAML](../../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)です。  
   
 ### <a name="native-type-converters"></a>ネイティブな型コンバーター  
- XAML パーサーの WPF と .NET Framework の実装では、を持つネイティブ型の変換処理が通常と考えるのプリミティブ型がまだ特定の種類があります。 このような型の例として、 <xref:System.DateTime>が挙げられます。 この理由は、.NET Framework のアーキテクチャの動作方法に基づいて: 型<xref:System.DateTime>mscorlib、.NET の最も基本的なライブラリで定義されています。 <xref:System.DateTime>依存関係を導入する別のアセンブリから来る属性を持つ属性が設定されることはできません (<xref:System.ComponentModel.TypeConverterAttribute>は System から) ため、属性による通常の型コンバーターの検出機構がサポートされることはできません。 代わりに、XAML パーサーでは、このようなネイティブの処理が必要な型のリストを持つし、通常のプリミティブの処理方法と同様にこれらを処理します。 (の場合、<xref:System.DateTime>への呼び出しでは、この<xref:System.DateTime.Parse%2A>)。  
+ XAML パーサーの WPF と .NET Framework の実装では、を持つネイティブ型の変換処理が通常と考えるのプリミティブ型がまだ特定の種類があります。 このような型の例として、 <xref:System.DateTime>が挙げられます。 この理由は、.NET Framework のアーキテクチャの動作方法に基づいて: 型<xref:System.DateTime>mscorlib、.NET の最も基本的なライブラリで定義されています。 <xref:System.DateTime> 依存関係を導入する別のアセンブリから来る属性を持つ属性が設定されることはできません (<xref:System.ComponentModel.TypeConverterAttribute>は System から) ため、属性による通常の型コンバーターの検出機構がサポートされることはできません。 代わりに、XAML パーサーでは、このようなネイティブの処理が必要な型のリストを持つし、通常のプリミティブの処理方法と同様にこれらを処理します。 (の場合、<xref:System.DateTime>への呼び出しでは、この<xref:System.DateTime.Parse%2A>)。  
   
 <a name="Implementing_a_Type_Converter"></a>   
 ## <a name="implementing-a-type-converter"></a>型コンバーターの実装  
@@ -77,7 +63,7 @@ ms.lasthandoff: 12/22/2017
 ### <a name="typeconverter"></a>TypeConverter  
  <xref:System.Windows.Point>以前は、クラスの例<xref:System.Windows.PointConverter>述べたです。 XAML の目的で使用されるすべての型コンバーターは、基本クラスから派生するクラスを XAML の実装は .NET、<xref:System.ComponentModel.TypeConverter>です。 <xref:System.ComponentModel.TypeConverter> XAML の存在を前にある .NET Framework のバージョンに存在していたクラスです。 ビジュアル デザイナーでのプロパティ ダイアログ ボックスの文字列の変換を提供するが、元の使用法のいずれか。 Xaml での役割<xref:System.ComponentModel.TypeConverter>を展開すると、文字列の属性値を解析およびの文字列に戻す可能性のある特定のオブジェクト プロパティのランタイム値を処理できるようにする文字列に変換して、文字列からの変換の基底クラスが含まれます属性としてシリアル化します。  
   
- <xref:System.ComponentModel.TypeConverter>XAML の処理のための文字列との間の変換に関連する 4 つのメンバーを定義します。  
+ <xref:System.ComponentModel.TypeConverter> XAML の処理のための文字列との間の変換に関連する 4 つのメンバーを定義します。  
   
 -   <xref:System.ComponentModel.TypeConverter.CanConvertTo%2A>  
   
@@ -125,9 +111,9 @@ ms.lasthandoff: 12/22/2017
 ## <a name="applying-the-typeconverterattribute"></a>TypeConverterAttribute の適用  
  カスタム型コンバーターとして使用するために、XAML プロセッサによってカスタム クラスの型コンバーターを適用する必要がある、 [!INCLUDE[TLA#tla_netframewkattr](../../../../includes/tlasharptla-netframewkattr-md.md)] <xref:System.ComponentModel.TypeConverterAttribute>クラス定義にします。 属性を通して指定する <xref:System.ComponentModel.TypeConverterAttribute.ConverterTypeName%2A> は、カスタム型コンバーターの型名である必要があります。 この属性を適用するには、XAML プロセッサは、プロパティの型が、カスタムのクラス型で使用されている値を処理するときに、入力文字列と、オブジェクト インスタンスを返します。  
   
- また、プロパティごとに型コンバーターを提供することもできます。 適用する代わりに、 [!INCLUDE[TLA#tla_netframewkattr](../../../../includes/tlasharptla-netframewkattr-md.md)] <xref:System.ComponentModel.TypeConverterAttribute>クラス定義にプロパティの定義に適用 (メイン定義されません、 `get` / `set`内に実装)。 プロパティの型は、カスタム型コンバーターによって処理される型と一致する必要があります。 この属性を適用するには、Xaml では、そのプロパティの値を処理するときに、入力文字列を処理し、オブジェクト インスタンスを返します。 プロパティごとに型コンバーターを提供する手法は、[!INCLUDE[TLA#tla_netframewk](../../../../includes/tlasharptla-netframewk-md.md)] やその他のライブラリなど、クラス定義を制御することができず、<xref:System.ComponentModel.TypeConverterAttribute> を適用できないライブラリからプロパティの型を使用する場合に特に便利です。  
+ また、プロパティごとに型コンバーターを提供することもできます。 適用する代わりに、 [!INCLUDE[TLA#tla_netframewkattr](../../../../includes/tlasharptla-netframewkattr-md.md)] <xref:System.ComponentModel.TypeConverterAttribute>クラス定義にプロパティの定義に適用 (メイン定義されません、 `get` / `set`内に実装)。 プロパティの型は、カスタム型コンバーターによって処理される型と一致する必要があります。 この属性を適用するには、Xaml では、そのプロパティの値を処理するときに、入力文字列を処理し、オブジェクト インスタンスを返します。 プロパティごとに型コンバーター手法は、Microsoft .NET Framework とは、クラス定義を制御することはできませんし、適用できない他のいくつかのライブラリからプロパティの型を使用する場合に特に便利な<xref:System.ComponentModel.TypeConverterAttribute>があります。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ComponentModel.TypeConverter>  
  [XAML の概要 (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)  
  [マークアップ拡張機能と WPF XAML](../../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)  

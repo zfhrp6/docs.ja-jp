@@ -1,26 +1,15 @@
 ---
-title: "ワークフローの複数のバージョンを同時にホストする方法"
-ms.custom: 
+title: ワークフローの複数のバージョンを同時にホストする方法
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 09c575df-e0a3-4f3b-9e01-a7ac59d65287
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 96ae4d3e02b923187b3e0f88a7b18e84094fa584
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d8fef8523f827ab91729054ee87544879b1f1aa3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-host-multiple-versions-of-a-workflow-side-by-side"></a>ワークフローの複数のバージョンを同時にホストする方法
 `WorkflowIdentity` を使用すると、ワークフロー アプリケーションの開発者は、名前とバージョンをワークフロー定義に関連付け、永続化されたワークフロー インスタンスにこの情報を関連付けることができます。 この ID 情報は、ワークフロー アプリケーションの開発者がワークフロー定義の複数のバージョンの side-by-side 実行などのシナリオを有効にするために使用できます。また、動的更新などの他の機能の基礎となります。 チュートリアルのこの手順では、`WorkflowIdentity` を使用してワークフローの複数のバージョンを同時にホストする方法について説明します。  
@@ -51,7 +40,7 @@ ms.lasthandoff: 12/22/2017
 > [!NOTE]
 >  チュートリアル入門の各手順は、その前の手順に応じて異なります。 」からチュートリアルの完成版をダウンロードすることができます、前の手順を完了しなかった場合[Windows Workflow Foundation (WF45) - チュートリアル入門](http://go.microsoft.com/fwlink/?LinkID=248976)です。  
   
-###  <a name="BKMK_BackupCopy"></a>NumberGuessWorkflowActivities プロジェクトのコピーを作成するには  
+###  <a name="BKMK_BackupCopy"></a> NumberGuessWorkflowActivities プロジェクトのコピーを作成するには  
   
 1.  開く、 **WF45GettingStartedTutorial**でソリューション[!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)]が開いていない場合。  
   
@@ -74,10 +63,10 @@ ms.lasthandoff: 12/22/2017
   
 9. 開き直す、 **WF45GettingStartedTutorial**でソリューション[!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)]です。  
   
-###  <a name="BKMK_UpdateWorkflows"></a>ワークフローを更新するには  
+###  <a name="BKMK_UpdateWorkflows"></a> ワークフローを更新するには  
  ここでは、ワークフロー定義が更新されます。 ユーザーの推定値についてフィードバックを返す 2 つの `WriteLine` アクティビティが更新され、新しい `WriteLine` アクティビティが追加されます。新しいアクティビティは、数値が推定されるとゲームに関する追加情報を提供します。  
   
-####  <a name="BKMK_UpdateStateMachine"></a>StateMachine ワークフローを更新するには  
+####  <a name="BKMK_UpdateStateMachine"></a> StateMachine ワークフローを更新するには  
   
 1.  **ソリューション エクスプ ローラー**下で、 **NumberGuessWorkflowActivities**プロジェクトをダブルクリックして**StateMachineNumberGuessWorkflow.xaml**です。  
   
@@ -119,7 +108,7 @@ ms.lasthandoff: 12/22/2017
     Guess + " is correct. You guessed it in " + Turns + " turns."  
     ```  
   
-####  <a name="BKMK_UpdateFlowchart"></a>フローチャート ワークフローを更新するには  
+####  <a name="BKMK_UpdateFlowchart"></a> フローチャート ワークフローを更新するには  
   
 1.  **ソリューション エクスプ ローラー**下で、 **NumberGuessWorkflowActivities**プロジェクトをダブルクリックして**FlowchartNumberGuessWorkflow.xaml**です。  
   
@@ -155,7 +144,7 @@ ms.lasthandoff: 12/22/2017
     Guess + " is correct. You guessed it in " + Turns + " turns."  
     ```  
   
-####  <a name="BKMK_UpdateSequential"></a>シーケンシャル ワークフローを更新するには  
+####  <a name="BKMK_UpdateSequential"></a> シーケンシャル ワークフローを更新するには  
   
 1.  **ソリューション エクスプ ローラー**下で、 **NumberGuessWorkflowActivities**プロジェクトをダブルクリックして**SequentialNumberGuessWorkflow.xaml**です。  
   
@@ -191,7 +180,7 @@ ms.lasthandoff: 12/22/2017
     Guess + " is correct. You guessed it in " + Turns + " turns."  
     ```  
   
-###  <a name="BKMK_UpdateWorkflowVersionMap"></a>ワークフローの以前のバージョンを含める WorkflowVersionMap を更新します。  
+###  <a name="BKMK_UpdateWorkflowVersionMap"></a> ワークフローの以前のバージョンを含める WorkflowVersionMap を更新します。  
   
 1.  ダブルクリックして**WorkflowVersionMap.cs** (または**WorkflowVersionMap.vb**) 下にある、 **NumberGuessWorkflowHost**プロジェクトを開きます。  
   
@@ -559,7 +548,7 @@ ms.lasthandoff: 12/22/2017
     }  
     ```  
   
-###  <a name="BKMK_BuildAndRun"></a>ビルドおよびアプリケーションを実行するには  
+###  <a name="BKMK_BuildAndRun"></a> ビルドおよびアプリケーションを実行するには  
   
 1.  Ctrl キーと Shift キーを押しながら B キーを押してアプリケーションをビルドし、Ctrl キーを押しながら F5 キーを押して起動します。  
   

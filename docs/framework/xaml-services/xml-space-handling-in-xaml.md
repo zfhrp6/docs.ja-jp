@@ -1,29 +1,17 @@
 ---
-title: "XAML における xml:space の処理"
-ms.custom: 
+title: XAML における xml:space の処理
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - XAML [XAML Services], xml:space attribute
 - XAML [XAML Services], whitespace processing
 - xml:space attribute [XAML Services]
 - whitespace processing [XAML Services]
 ms.assetid: 5e1814f0-5b30-43d5-8c88-dede335a89d7
-caps.latest.revision: "15"
-author: wadepickett
-ms.author: wpickett
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 8b8356cdb47b6b834e8d9a6bb84b26445af6d865
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: af971ad9ea74e123b939ff8d8488e4e45c5d4aed
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="xmlspace-handling-in-xaml"></a>XAML における xml:space の処理
 `xml:space`属性はオブジェクト要素内で重要な空白の処理の動作を宣言する XML 定義の属性です。 この動作は、要素内に含まれるすべてのコンテンツ (内部テキ スト) に関連する場所`xml:space`が宣言されているし、もスコープの子要素にします。  
@@ -34,7 +22,7 @@ ms.lasthandoff: 12/22/2017
 <object xml:space="preserve" />  
 ```  
   
- \- または  
+ \- または -  
   
 ```xaml  
 <object xml:space="default" />  
@@ -51,6 +39,6 @@ ms.lasthandoff: 12/22/2017
   
  空白の XAML の処理の詳細については、次を参照してください。 [XAML での空白の処理](../../../docs/framework/xaml-services/whitespace-processing-in-xaml.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [XAML での空白の処理](../../../docs/framework/xaml-services/whitespace-processing-in-xaml.md)  
  [XAML の概要 (WPF)](../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)

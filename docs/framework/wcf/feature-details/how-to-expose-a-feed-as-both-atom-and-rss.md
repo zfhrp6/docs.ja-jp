@@ -1,32 +1,18 @@
 ---
 title: '方法 : Atom および RSS の両方としてフィードを公開する'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: fe374932-67f5-487d-9325-f868812b92e4
-caps.latest.revision: 23
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 14059ebc3efe57a38a093faed9cfbd254c372920
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 4780e43679d461509911a4abda689a0c16112e4a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-expose-a-feed-as-both-atom-and-rss"></a>方法 : Atom および RSS の両方としてフィードを公開する
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] では、配信フィードを公開するサービスを作成できます。 このトピックでは、Atom 1.0 と RSS 2.0 の両方を使用して配信フィードを公開する配信サービスを作成する方法について説明します。 このサービスは、どちらかの配信フォーマットを返すエンドポイントを公開します。 簡略化のため、この例で使用するサービスは自己ホスト型です。 運用環境では、このタイプのサービスは IIS または WAS でホストされます。 詳細については、さまざまな[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]オプションをホストするを参照してください[ホスティング](../../../../docs/framework/wcf/feature-details/hosting.md)です。  
+Windows Communication Foundation (WCF) では、配信フィードを公開するサービスを作成することができます。 このトピックでは、Atom 1.0 と RSS 2.0 の両方を使用して配信フィードを公開する配信サービスを作成する方法について説明します。 このサービスは、どちらかの配信フォーマットを返すエンドポイントを公開します。 簡略化のため、この例で使用するサービスは自己ホスト型です。 運用環境では、このタイプのサービスは IIS または WAS でホストされます。 詳細について、さまざまな WCF ホスト オプションは、次を参照してください。[ホスティング](../../../../docs/framework/wcf/feature-details/hosting.md)です。  
   
 ### <a name="to-create-a-basic-syndication-service"></a>基本的な配信サービスを作成するには  
   

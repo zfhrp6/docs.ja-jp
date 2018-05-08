@@ -1,29 +1,15 @@
 ---
 title: WPF の双方向機能の概要
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-wpf
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - Span elements [WPF]
 - bidirectional features [WPF]
 ms.assetid: fd850e25-7dba-408c-b521-8873e51dc968
-caps.latest.revision: 22
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: fa2349bca86676f4dc3e1703216a2b0dc50ccd59
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 7a2af8d7589ed1f0fceea1ba07d6802ffae1bdee
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="bidirectional-features-in-wpf-overview"></a>WPF の双方向機能の概要
 その他の開発プラットフォームとは異なり[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]双方向のコンテンツの迅速な開発をサポートする多くの機能にはたとえば、混合の左から右、および右には、同じドキュメント内データを除外します。 同時に、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]アラビア語やヘブライ語を話すユーザーなどの双方向機能を必要とするユーザーの最良のエクスペリエンスを作成します。  

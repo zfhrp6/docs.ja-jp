@@ -1,34 +1,20 @@
 ---
 title: リプレイ攻撃
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 7a17e040-93cd-4432-81b9-9f62fec78c8f
-caps.latest.revision: 10
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 4e827c51378b9f75835b9b98280b4995d2cae2fc
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 3139e0ea094f1f7483261ffd10026815e5d12f31
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="replay-attacks"></a>リプレイ攻撃
 A*リプレイ攻撃*攻撃者は、2 つのパーティ間でメッセージのストリームをコピーし、1 つまたは複数のパーティのストリームをリプレイするときに発生します。 攻撃が和らげられていない場合、攻撃対象になったコンピューターはストリームを正当なメッセージとして処理するため、項目の順序が重複するなど、望ましくない状況に陥ります。  
   
 ## <a name="bindings-may-be-subject-to-reflection-attacks"></a>バインディングはリフレクション攻撃にさらされる可能性がある  
- *リフレクション攻撃*からの応答として受信機と送信者に返信されるメッセージのリプレイです。 標準*リプレイ検出*で、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]メカニズムが自動的に処理しないこれです。  
+ *リフレクション攻撃*からの応答として受信機と送信者に返信されるメッセージのリプレイです。 標準*リプレイ検出*Windows Communication Foundation (WCF) のメカニズムが自動的に処理しないこれです。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のサービス モデルは、署名されたメッセージ ID を要求メッセージに追加し、署名された `relates-to` ヘッダーを応答メッセージに要求するため、既定でリフレクション攻撃が軽減されます。 その結果、要求メッセージを応答としてリプレイできません。 セキュリティで保護された信頼できるメッセージ (RM) シナリオでは、リフレクション攻撃は次の理由で軽減されます。  
+ WCF サービス モデルの要求メッセージに署名付きメッセージ ID を追加し、署名されたために、既定ではリフレクション攻撃が軽減`relates-to`ヘッダーを応答メッセージ。 その結果、要求メッセージを応答としてリプレイできません。 セキュリティで保護された信頼できるメッセージ (RM) シナリオでは、リフレクション攻撃は次の理由で軽減されます。  
   
 -   シーケンス メッセージの作成スキーマとシーケンス応答メッセージの作成スキーマが異なります。  
   

@@ -1,12 +1,6 @@
 ---
 title: Error ステートメント
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.error
 helpviewer_keywords:
@@ -16,14 +10,11 @@ helpviewer_keywords:
 - run-time errors [Visual Basic], codes
 - errors [Visual Basic], simulating
 ms.assetid: 85cd5c59-5224-4f02-aaf5-fcfefab17a29
-caps.latest.revision: 10
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 3cd3245fd3e9e62b1b6443e9787c97808a0d179d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 3ecfe18392de15dc937d90565b49641415dd7e0a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="error-statement"></a>Error ステートメント
 エラーの発生をシミュレートします。  
@@ -36,14 +27,14 @@ Error errornumber
   
 ## <a name="parts"></a>指定項目  
  `errornumber`  
- 必須です。 任意の有効なエラー番号を指定できます。  
+ 必須。 任意の有効なエラー番号を指定できます。  
   
 ## <a name="remarks"></a>コメント  
  `Error`ステートメントは、旧バージョンとの互換性のためサポートされます。 オブジェクトを作成するときに特に新しいコードを使用して、`Err`オブジェクトの`Raise`実行時エラーを生成する方法です。  
   
  場合`errornumber`が定義されている、`Error`ステートメントでは、エラー ハンドラーを呼び出し、プロパティの後に、`Err`オブジェクトには、次の既定値が割り当てられます。  
   
-|プロパティ|値|  
+|プロパティ|[値]|  
 |--------------|-----------|  
 |`Number`|引数として指定された値`Error`ステートメントです。 任意の有効なエラー番号を指定できます。|  
 |`Source`|現在の Visual Basic プロジェクトの名前です。|  

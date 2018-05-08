@@ -1,30 +1,18 @@
 ---
-title: "方法 : ストリーミングを有効にする"
-ms.custom: 
+title: '方法 : ストリーミングを有効にする'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 6ca2cf4b-c7a1-49d8-a79b-843a90556ba4
-caps.latest.revision: "13"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b75fe67d99fa611f248c8d5dbb779f47e2bc717d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b28764c4bad88511096ab09fd71cc2a73c735096
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-enable-streaming"></a>方法 : ストリーミングを有効にする
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] では、バッファー転送またはストリーミング転送を使用してメッセージを送信できます。 既定のバッファー転送モードでは、受信側がメッセージを読み取る前に、メッセージの送信が完了している必要があります。 ストリーミング転送モードでは、送信が完了していなくても、受信側でメッセージの処理を開始できます。 ストリーミング モードは、渡される情報が長い場合、または連続的に処理する場合に役立ちます。 ストリーミング モードは、メッセージが大きすぎてすべてをバッファーできない場合にも役立ちます。  
+Windows Communication Foundation (WCF) では、バッファリングまたはストリームのいずれかの転送を使用してメッセージを送信できます。 既定のバッファー転送モードでは、受信側がメッセージを読み取る前に、メッセージの送信が完了している必要があります。 ストリーミング転送モードでは、送信が完了していなくても、受信側でメッセージの処理を開始できます。 ストリーミング モードは、渡される情報が長い場合、または連続的に処理する場合に役立ちます。 ストリーミング モードは、メッセージが大きすぎてすべてをバッファーできない場合にも役立ちます。  
   
  ストリーミングを有効にするには、`OperationContract` を適切に定義し、トランスポート レベルでストリーミングを有効にします。  
   
@@ -85,6 +73,6 @@ ms.lasthandoff: 12/22/2017
      [!code-csharp[c_HowTo_EnableStreaming#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_enablestreaming/cs/service.cs#2)]
      [!code-vb[c_HowTo_EnableStreaming#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto_enablestreaming/vb/service.vb#2)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [大規模データとストリーミング](../../../../docs/framework/wcf/feature-details/large-data-and-streaming.md)  
  [ストリーム](../../../../docs/framework/wcf/samples/stream.md)

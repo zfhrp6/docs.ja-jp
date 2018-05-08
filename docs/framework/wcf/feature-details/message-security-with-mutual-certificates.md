@@ -1,30 +1,20 @@
 ---
-title: "メッセージ セキュリティと相互の証明書"
-ms.custom: 
+title: メッセージ セキュリティと相互の証明書
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 99d7a528-7ae4-4d39-a0f9-3066ea237de0
-caps.latest.revision: "18"
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: a60af220bf962e523a35bc5b8d8abca041a9fd46
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 1407593bf90b28a1890a8c18564b31d0aa67e0cd
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="message-security-with-mutual-certificates"></a>メッセージ セキュリティと相互の証明書
-次のシナリオでは、メッセージ セキュリティ モードを使用して保護されている [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスおよびクライアントを示します。 クライアントとサービスは、証明書を使用して認証されます。  
+次のシナリオでは、Windows Communication Foundation (WCF) サービスとメッセージ セキュリティ モードを使用してセキュリティで保護されたクライアントを示します。 クライアントとサービスは、証明書を使用して認証されます。  
   
  このシナリオは、X.509 証明書トークン プロファイルと共に WS-Security を使用するため、相互運用性があります。  
   
@@ -169,7 +159,7 @@ ms.lasthandoff: 12/22/2017
 </configuration>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [セキュリティの概要](../../../../docs/framework/wcf/feature-details/security-overview.md)  
  [Windows Server App Fabric のセキュリティ モデル](http://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)  
  [方法: を作成し、開発時に、トランスポート セキュリティに WCF で一時的な証明書をインストール](http://go.microsoft.com/fwlink/?LinkId=244264)

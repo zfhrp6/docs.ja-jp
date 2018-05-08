@@ -1,13 +1,6 @@
 ---
-title: "チュートリアル : 操作をバックグラウンドで実行する"
-ms.custom: 
+title: 'チュートリアル : 操作をバックグラウンドで実行する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -20,16 +13,11 @@ helpviewer_keywords:
 - threading [Windows Forms], background operations
 - background operations
 ms.assetid: 1b9a4e0a-f134-48ff-a1be-c461446a31ba
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ca0892e9d384eefb0fec87a7717222fefb779d12
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 59447bb589eb019f81beb1db2ea254a9fe3a889e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="walkthrough-running-an-operation-in-the-background"></a>チュートリアル : 操作をバックグラウンドで実行する
 完了に長い時間がかかる操作を実行しており、ユーザー インターフェイスで遅延が発生しないようにするには<xref:System.ComponentModel.BackgroundWorker> クラスを使用して別のスレッドで操作を実行できます。  
@@ -43,7 +31,7 @@ ms.lasthandoff: 01/19/2018
   
 1.  Windows フォーム デザイナーでアクティブなフォームにドラッグして 2 つ<xref:System.Windows.Forms.Button>から制御、**ツールボックス**には、フォーム、および設定、`Name`と<xref:System.Windows.Forms.Control.Text%2A>次の表に従って、ボタンのプロパティです。  
   
-    |ボタン|name|テキスト|  
+    |ボタン|名前|テキスト|  
     |------------|----------|----------|  
     |`button1`|`startBtn`|**Start**|  
     |`button2`|`cancelBtn`|**キャンセル**|  
@@ -111,7 +99,7 @@ ms.lasthandoff: 01/19/2018
   
 -   コンポーネントの非同期パターンをサポートするクラスを実装します。 詳細については、次を参照してください。[イベント ベースの非同期パターンを実装する](../../../../docs/standard/asynchronous-programming-patterns/implementing-the-event-based-asynchronous-pattern.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ComponentModel.BackgroundWorker>  
  <xref:System.ComponentModel.DoWorkEventArgs>  
  [方法: バックグラウンド操作を使用するフォームを実装する](../../../../docs/framework/winforms/controls/how-to-implement-a-form-that-uses-a-background-operation.md)  

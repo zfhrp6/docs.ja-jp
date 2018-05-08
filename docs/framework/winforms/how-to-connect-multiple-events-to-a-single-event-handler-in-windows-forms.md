@@ -1,14 +1,6 @@
 ---
-title: "方法 : Windows フォームの 1 つのイベント ハンドラーに複数のイベントを関連付ける"
-ms.custom: 
+title: '方法 : Windows フォームの 1 つのイベント ハンドラーに複数のイベントを関連付ける'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - vb
 helpviewer_keywords:
@@ -18,17 +10,11 @@ helpviewer_keywords:
 - Windows Forms controls, events
 - menu items [Windows Forms], multicasting event-handling methods
 ms.assetid: 5a20749a-41b5-4acc-8eb1-9e5040b0a2c4
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: bfd955b4153c7a2bc54d8b52ff1801541c3a7559
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 527a76376a4c1d5ad051f4768ca2bd42c3548b3d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-connect-multiple-events-to-a-single-event-handler-in-windows-forms"></a>方法 : Windows フォームの 1 つのイベント ハンドラーに複数のイベントを関連付ける
 アプリケーションの設計にする必要がありますを単一のイベント ハンドラーを使用して、複数のイベントまたは同じ手順を実行する複数のイベント。 たとえば、時間を短縮するように、フォーム上のボタンは、同じ機能を公開している場合に、同じイベントを発生させるためのメニュー コマンドでは多くの場合です。 C# の場合、[プロパティ] ウィンドウのイベント ビューを使用するかを使用してこれを行う、`Handles`キーワードおよび**クラス名**と**メソッド名**ドロップダウン ボックスでは、Visual Basic コード エディター。  
@@ -73,6 +59,6 @@ ms.lasthandoff: 12/22/2017
   
      コードは、既存のイベント ハンドラーにイベントをバインドするフォームに追加されます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Windows フォーム内でのイベント ハンドラーの作成](../../../docs/framework/winforms/creating-event-handlers-in-windows-forms.md)  
  [イベント ハンドラーの概要](../../../docs/framework/winforms/event-handlers-overview-windows-forms.md)

@@ -1,28 +1,16 @@
 ---
-title: "チュートリアル: WPF コンテンツへのスタイルの適用"
-ms.custom: 
+title: 'チュートリアル: WPF コンテンツへのスタイルの適用'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - WPF Designer [Windows Forms], styling WPF content
 - interoperability [WDF]
 - styles [Windows Forms], WPF content
 ms.assetid: e574aac7-7ea4-4cdb-8034-bab541f000df
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ae150e93958b622a772258ab41fa4281014dd567
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: d02e48daad705b29cb7e179417f665c34857896e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="walkthrough-styling-wpf-content"></a>チュートリアル: WPF コンテンツへのスタイルの適用
 このチュートリアルでは、Windows フォームでホストされている Windows Presentation Foundation (WPF) コントロールにスタイルを適用する方法について説明します。  
@@ -156,11 +144,11 @@ ms.lasthandoff: 01/19/2018
   
 3.  新しいスタイルが Button コントロールに適用されます。  
   
-4.  **デバッグ**メニューの [**デバッグの開始]**アプリケーションを実行します。  
+4.  **デバッグ**メニューの [**デバッグの開始]** アプリケーションを実行します。  
   
 5.  [OK] ボタンと [Cancel] ボタンをクリックして、違いを確認します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.Integration.ElementHost>  
  <xref:System.Windows.Forms.Integration.WindowsFormsHost>  
  [移行と相互運用性](../../../../docs/framework/wpf/advanced/migration-and-interoperability.md)  

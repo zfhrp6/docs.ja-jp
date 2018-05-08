@@ -1,29 +1,17 @@
 ---
-title: "BindingSource コンポーネント アーキテクチャ"
-ms.custom: 
+title: BindingSource コンポーネント アーキテクチャ
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - BindingSource component [Windows Forms], architecture
 - Windows Forms, data binding
 - BindingSource component [Windows Forms], about BindingSource component
 - data binding [Windows Forms], BindingSource component
 ms.assetid: 7bc69c90-8a11-48b1-9336-3adab5b41591
-caps.latest.revision: "23"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 25a69f31d8da8638cfc92ff94d8f90dbcb327158
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b0334bd7a0bc5ff46c43fd7ee549422d98c35efe
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="bindingsource-component-architecture"></a>BindingSource コンポーネント アーキテクチャ
 <xref:System.Windows.Forms.BindingSource>コンポーネントは、ユニバーサル データ ソースにすべての Windows フォーム コントロールをバインドすることができます。  
@@ -57,13 +45,13 @@ ms.lasthandoff: 12/22/2017
   
 -   一覧としてデータ ソースです。  
   
--   <xref:System.Windows.Forms.BindingSource>として、<xref:System.ComponentModel.IBindingList>です。  
+-   <xref:System.Windows.Forms.BindingSource> として、<xref:System.ComponentModel.IBindingList>です。  
   
 -   カスタム アイテムを作成します。  
   
 -   トランザクションのアイテムを作成します。  
   
--   <xref:System.Collections.IEnumerable>サポートしてください。  
+-   <xref:System.Collections.IEnumerable> サポートしてください。  
   
 -   デザイン時のサポート。  
   
@@ -120,7 +108,7 @@ ms.lasthandoff: 12/22/2017
 |Null 参照 (`Nothing` Visual Basic で) と<xref:System.Windows.Forms.BindingSource.DataMember%2A>設定|サポートされていません。発生させます<xref:System.ArgumentException>です。|  
 |リスト以外の型のオブジェクトまたはオブジェクト型"T"|空<xref:System.ComponentModel.IBindingList>型"T"です。|  
 |配列のインスタンス|<xref:System.ComponentModel.IBindingList>の配列要素を格納します。|  
-|<xref:System.Collections.IEnumerable>インスタンス|<xref:System.ComponentModel.IBindingList>を含む、<xref:System.Collections.IEnumerable>項目|  
+|<xref:System.Collections.IEnumerable> インスタンス|<xref:System.ComponentModel.IBindingList>を含む、<xref:System.Collections.IEnumerable>項目|  
 |"T"の種類を含むインスタンスを一覧表示します。|<xref:System.ComponentModel.IBindingList>型"T"を含むインスタンス。|  
   
  さらに、<xref:System.Windows.Forms.BindingSource.DataSource%2A>などの他の種類を一覧表示、設定できる<xref:System.ComponentModel.IListSource>と<xref:System.ComponentModel.ITypedList>、および<xref:System.Windows.Forms.BindingSource>適切に処理されます。 この場合、一覧に含まれている型には、既定のコンス トラクターが必要です。  
@@ -179,7 +167,7 @@ ms.lasthandoff: 12/22/2017
 ### <a name="integration-with-bindingnavigator"></a>BindingNavigator との統合  
  使用することができます、<xref:System.Windows.Forms.BindingSource>データ ソースへの Windows フォーム コントロールをバインドするコンポーネントですが、<xref:System.Windows.Forms.BindingNavigator>コントロールは操作専用に設計されています、<xref:System.Windows.Forms.BindingSource>コンポーネントです。 <xref:System.Windows.Forms.BindingNavigator>コントロールを制御するためのユーザー インターフェイスを提供する、<xref:System.Windows.Forms.BindingSource>コンポーネントの現在の項目。 既定では、<xref:System.Windows.Forms.BindingNavigator>コントロールには、ナビゲーション メソッドに対応するボタンが用意されています、<xref:System.Windows.Forms.BindingSource>コンポーネントです。 詳細については、次を参照してください。[する方法: Windows フォーム BindingNavigator コントロールにデータを移動](../../../../docs/framework/winforms/controls/how-to-navigate-data-with-the-windows-forms-bindingnavigator-control.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.BindingSource>  
  <xref:System.Windows.Forms.BindingNavigator>  
  [BindingSource コンポーネントの概要](../../../../docs/framework/winforms/controls/bindingsource-component-overview.md)  

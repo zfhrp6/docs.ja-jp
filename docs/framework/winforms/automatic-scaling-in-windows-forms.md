@@ -1,23 +1,15 @@
 ---
-title: "Windows フォームにおける自動スケーリング"
+title: Windows フォームにおける自動スケーリング
 ms.date: 06/15/2017
-ms.prod: .net-framework
-ms.technology: dotnet-winforms
-ms.topic: article
 helpviewer_keywords:
 - scalability [Windows Forms], automatic in Windows Forms
 - Windows Forms, automatic scaling
 ms.assetid: 68fad25b-afbc-44bd-8e1b-966fc43507a4
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 519053576aac0f55dfbfa4c87dbed6096f45abca
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e27c56d9a6d745c7d1ff83986e7996aa1bebc879
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="automatic-scaling-in-windows-forms"></a>Windows フォームにおける自動スケーリング
 自動スケーリングによって、特定のディスプレイの解像度またはシステムのフォントを持つマシンに合わせて設計されたフォームとコントロールを、ディスプレイの別の解像度やシステム フォントを持つ別のマシンで適切に表示することができます。 フォームとコントロールが、ユーザーとその他の開発者のマシンのネイティブ ウィンドウとその他のアプリケーションで、一貫性を持つよう適切にサイズ変更され、 自動スケーリングと視覚スタイルに対する [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] のサポートにより、各ユーザーのマシンのネイティブの Windows アプリケーションと比較した場合、[!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] アプリケーションが一貫したルック アンド フィールを維持することができます。
@@ -34,7 +26,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="original-support-for-automatic-scaling"></a>自動スケーリングの元のサポート
 [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] のバージョン 1.0 および 1.1 は、Windows の UI に使用される (Win32 SDK 値 **DEFAULT_GUI_FONT** で表す) 既定のフォントに依存した、簡単な方法で自動スケーリングをサポートしていました。 このフォントは、通常、ディスプレイの解像度が変更されたときにのみ変更されました。 自動スケーリングを実装するために、次のメカニズムが使用されていました。
 
-1. デザイン時は、<xref:System.Windows.Forms.Form.AutoScaleBaseSize%2A> プロパティ (これは現在推奨されていません) が、開発者のマシンの既定のシステム フォントの高さと幅に設定されていました。
+1. デザイン時は、<xref:System.Windows.Forms.Form.AutoScaleBaseSize%2A> プロパティ (これは現在非推奨とされます) が、開発者のマシンの既定のシステム フォントの高さと幅に設定されていました。
 
 2. 実行時は、ユーザーのマシンの既定のシステム フォントが <xref:System.Windows.Forms.Form> クラスの <xref:System.Windows.Forms.Control.Font%2A> プロパティを初期化するために使用されていました。
 

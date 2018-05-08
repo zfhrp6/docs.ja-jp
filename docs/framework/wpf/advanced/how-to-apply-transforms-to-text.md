@@ -1,13 +1,6 @@
 ---
-title: "方法 : テキストに変換を適用する"
-ms.custom: 
+title: '方法 : テキストに変換を適用する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - typography [WPF], rotated text
 - typography [WPF], scaled text
@@ -22,16 +15,11 @@ helpviewer_keywords:
 - scaled text [WPF]
 - typography [WPF], skewed text
 ms.assetid: 0d61678a-4185-4f2a-85c6-c1d020f96fa0
-caps.latest.revision: "7"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 9c1e26b31907e7794492b88ea3a696d3db4d37d7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 531537013ab3bbfba278ca63e14155341eefc826
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-apply-transforms-to-text"></a>方法 : テキストに変換を適用する
 変換を利用すると、アプリケーションのテキストの表示を変えることができます。 次の例は、内のテキストの表示には影響を描画変換のさまざまな種類を使用して、<xref:System.Windows.Controls.TextBlock>コントロール。  
@@ -79,5 +67,5 @@ ms.lasthandoff: 12/22/2017
 > [!NOTE]
 >  <xref:System.Windows.Media.Effects.DropShadowBitmapEffect>シャドウ効果を提供する豊富な一連の機能を提供します。 詳細については、次を参照してください。[影付きのテキストの作成](../../../../docs/framework/wpf/advanced/how-to-create-text-with-a-shadow.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [アニメーションをテキストに適用する](../../../../docs/framework/wpf/advanced/how-to-apply-animations-to-text.md)

@@ -1,28 +1,16 @@
 ---
-title: "方法 : Windows フォームの RichTextBox コントロールにスクロール バーを表示する"
-ms.custom: 
+title: '方法 : Windows フォームの RichTextBox コントロールにスクロール バーを表示する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - text boxes [Windows Forms], displaying scroll bars
 - scroll bars [Windows Forms], displaying in controls
 - RichTextBox control [Windows Forms], displaying scroll bars
 ms.assetid: cdeb42e1-86e8-410c-ba46-18aec264ef5f
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 4645e502544072cbc6268ae07e054ea5450d9c5c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5588aad5b2e38716c628947c6e06365e7053eb5f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-display-scroll-bars-in-the-windows-forms-richtextbox-control"></a>方法 : Windows フォームの RichTextBox コントロールにスクロール バーを表示する
 既定では、Windows フォーム<xref:System.Windows.Forms.RichTextBox>コントロールは、必要に応じて、垂直および水平スクロール バーを表示します。 7 つの可能な値がある、<xref:System.Windows.Forms.RichTextBox.ScrollBars%2A>のプロパティ、<xref:System.Windows.Forms.RichTextBox>コントロールで、次の表で説明します。  
@@ -50,7 +38,7 @@ ms.lasthandoff: 12/22/2017
     |`false`|コントロール内のテキスト行の区切りに到達するまで右にスクロールされますので、コントロールの幅に合わせて自動的に調整されません。 または、両方の水平スクロール バーを上に選択した場合は、この値を使用します。|  
     |`true` (既定値)|コントロール内のテキストは、コントロールの幅に合わせて自動的に調整します。 水平スクロール バーは表示されません。 1 つまたは複数の段落を表示する、上記の垂直スクロール バーまたは none を選択した場合は、この値を使用します。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.RichTextBoxScrollBars>  
  <xref:System.Windows.Forms.RichTextBox>  
  [RichTextBox コントロール](../../../../docs/framework/winforms/controls/richtextbox-control-windows-forms.md)  

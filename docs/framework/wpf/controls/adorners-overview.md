@@ -1,31 +1,17 @@
 ---
-title: "装飾の概要"
-ms.custom: 
+title: 装飾の概要
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - adorners [WPF], about adorners
 ms.assetid: 33d4c5c2-2daf-4e45-ba9a-5b673e2b8280
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 47b43b1b9848f91e77448d41609d8be5d60ecda5
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6dd38b9e24b42de8945c0e9729f8f30cf901fc3a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="adorners-overview"></a>装飾の概要
 装飾は、特殊な種類の<xref:System.Windows.FrameworkElement>で視覚的な手掛かりをユーザーに提供するために使用されます。 装飾は、要素への機能ハンドル追加やコントロールに関する状態情報の提供など、さまざまな用途に使用できます。  
@@ -89,7 +75,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="adorning-a-single-uielement"></a>単一の UIElement の装飾  
  特定の装飾にバインドする<xref:System.Windows.UIElement>、これらの手順に従います。  
   
-1.  静的メソッドを呼び出す<xref:System.Windows.Documents.AdornerLayer.GetAdornerLayer%2A>を取得する、<xref:System.Windows.Documents.AdornerLayer>オブジェクトに対して、<xref:System.Windows.UIElement>を装飾します。 <xref:System.Windows.Documents.AdornerLayer.GetAdornerLayer%2A>指定した位置を開始、ビジュアル ツリーを調べて<xref:System.Windows.UIElement>、し、見つかった最初の装飾層を返します。 (装飾層が見つからない場合、メソッドにより null が返されます)。  
+1.  静的メソッドを呼び出す<xref:System.Windows.Documents.AdornerLayer.GetAdornerLayer%2A>を取得する、<xref:System.Windows.Documents.AdornerLayer>オブジェクトに対して、<xref:System.Windows.UIElement>を装飾します。 <xref:System.Windows.Documents.AdornerLayer.GetAdornerLayer%2A> 指定した位置を開始、ビジュアル ツリーを調べて<xref:System.Windows.UIElement>、し、見つかった最初の装飾層を返します。 (装飾層が見つからない場合、メソッドにより null が返されます)。  
   
 2.  呼び出す、<xref:System.Windows.Documents.AdornerLayer.Add%2A>装飾をターゲットにバインドするメソッド<xref:System.Windows.UIElement>です。  
   
@@ -114,7 +100,7 @@ ms.lasthandoff: 12/22/2017
  [!code-csharp[Adorners_SimpleCircleAdorner#_AdornChildren](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Adorners_SimpleCircleAdorner/CSharp/Window1.xaml.cs#_adornchildren)]
  [!code-vb[Adorners_SimpleCircleAdorner#_AdornChildren](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/Adorners_SimpleCircleAdorner/VisualBasic/Window1.xaml.vb#_adornchildren)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Media.AdornerHitTestResult>  
  [WPF での図形と基本描画の概要](../../../../docs/framework/wpf/graphics-multimedia/shapes-and-basic-drawing-in-wpf-overview.md)  
  [イメージ、描画、およびビジュアルによる塗りつぶし](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)  

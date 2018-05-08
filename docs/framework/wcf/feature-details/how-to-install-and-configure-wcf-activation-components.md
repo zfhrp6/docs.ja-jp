@@ -1,41 +1,27 @@
 ---
-title: "方法 : WCF アクティブ化コンポーネントをインストールして設定する"
-ms.custom: 
+title: '方法 : WCF アクティブ化コンポーネントをインストールして設定する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - HTTP activation [WCF]
 ms.assetid: 33a7054a-73ec-464d-83e5-b203aeded658
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 78c63fe58872097058292a8b100b376959a2a0b2
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f362bd1e4a644488e85cdeca674d46ca340bde05
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-install-and-configure-wcf-activation-components"></a>方法 : WCF アクティブ化コンポーネントをインストールして設定する
-ここでは、HTTP ネットワーク プロトコルでは通信しない [!INCLUDE[wv](../../../../includes/wv-md.md)] サービスをホストするように Windows プロセス アクティブ化サービス (WAS: Windows Process Activation Service) を [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] に構成するために必要な手順について説明します。 以降の各セクションで、この構成に関する手順について概説します。  
+このトピックでは、Windows プロセス アクティブ化サービス (WAS とも呼ばれます) を設定するために必要な手順を説明で[!INCLUDE[wv](../../../../includes/wv-md.md)]HTTP 経由で通信を行わないサービスのネットワーク プロトコルの Windows Communication Foundation (WCF) をホストします。 以降の各セクションで、この構成に関する手順について概説します。  
   
--   [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アクティブ化コンポーネントをインストール (またはそのインストールを確認) します。  
+-   インストール (またはのインストールの確認) WCF アクティブ化コンポーネントです。  
   
 -   非 HTTP プロトコルをサポートようにする WAS を構成します。 次の手順では、TCP アクティベーション用に [!INCLUDE[wv](../../../../includes/wv-md.md)] を構成します。  
   
- インストールと構成が、確認後、[する方法: WAS で WCF サービスをホスト](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-was.md)を作成する手順については、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WAS を使用する非 HTTP エンドポイントを公開するサービスです。  
+ インストールと構成が、確認後、[する方法: WAS で WCF サービスをホスト](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-was.md)WAS を使用する非 HTTP エンドポイントを公開する WCF サービスを作成する手順についてはします。  
   
 ### <a name="to-install-the-wcf-non-http-activation-components"></a>WCF 非 HTTP アクティブ化コンポーネントをインストールするには  
   
-1.  クリックして、**開始**ボタンをクリックし、をクリックして**コントロール パネルの** です。  
+1.  クリックして、**開始**ボタンをクリックし、をクリックして**コントロール パネルの **です。  
   
 2.  をクリックして**プログラム**、クリックして**プログラムと機能**します。  
   
@@ -64,7 +50,7 @@ ms.lasthandoff: 12/22/2017
     ```  
   
     > [!NOTE]
-    >  このコマンドはテキスト 1 行です。 このコマンドにより、/\<*WCF アプリケーション*> 両方 http://localhost を使用してアクセスされるアプリケーションの*/\<WCF アプリケーション >*と net.tcp://localhost/*\<WCF アプリケーション >*です。  
+    >  このコマンドはテキスト 1 行です。 このコマンドにより、/\<*WCF アプリケーション*> アプリケーションへの両方を使用してアクセスhttp://localhost  */ \<WCF アプリケーション >* と net.tcp://localhost/*\<WCF アプリケーション >* です。  
   
      このサンプル用に追加した net.tcp サイト バインディングを削除します。  
   
@@ -113,7 +99,7 @@ ms.lasthandoff: 12/22/2017
     > [!NOTE]
     >  このコマンドはテキスト 1 行です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [TCP アクティベーション](../../../../docs/framework/wcf/samples/tcp-activation.md)  
  [MSMQ アクティベーション](../../../../docs/framework/wcf/samples/msmq-activation.md)  
  [NamedPipe アクティベーション](../../../../docs/framework/wcf/samples/namedpipe-activation.md)  

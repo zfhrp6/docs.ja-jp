@@ -1,14 +1,6 @@
 ---
 title: データ コントラクトのコレクション型
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,17 +9,11 @@ helpviewer_keywords:
 - data contracts [WCF], collection types
 - collection types [WCF]
 ms.assetid: 9b45b28e-0a82-4ea3-8c33-ec0094aff9d5
-caps.latest.revision: 19
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: c771d78c5e78feabcfe883934ed7ea3589c938d2
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: dccc53f13889e2073579af19e86459fe56b069e7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="collection-types-in-data-contracts"></a>データ コントラクトのコレクション型
 *"コレクション"* は、特定の型の項目のリストです。 [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]では、このようなリストは、配列や他のさまざまな型を使用して表すことができます (ジェネリック List、ジェネリック <xref:System.ComponentModel.BindingList%601>、 <xref:System.Collections.Specialized.StringCollection>、または <xref:System.Collections.ArrayList>)。 たとえば、コレクションでは指定された顧客のアドレスのリストを保持できます。 これらのコレクションは、実際の型に関係なく、 *リスト コレクション*と呼びます。  
@@ -86,7 +72,7 @@ ms.lasthandoff: 04/30/2018
   
  シリアル化の実行時には、宣言された型がインターフェイスの場合、使用される実際のインスタンスの型はそのインターフェイスを実装する任意の型になります。 前述の制限 (既定のコンストラクターと `Add` メソッドを持つ) は適用されません。 たとえば、ジェネリック <xref:System.Collections.ObjectModel.ReadOnlyCollection%601> 型のデータ メンバーを直接宣言できない場合でも、Customer2 のアドレスを Address のジェネリック <xref:System.Collections.ObjectModel.ReadOnlyCollection%601>のインスタンスに設定できます。  
   
- 逆シリアル化の実行時には、宣言された型がインターフェイスの場合、宣言されたインターフェイスを実装する型がシリアル化エンジンによって選択され、インスタンス化されます。 この場合、既知の型機構 (「 [Data Contract Known Types](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)」を参照) は無効になります。型の選択は [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]。  
+ 逆シリアル化の実行時には、宣言された型がインターフェイスの場合、宣言されたインターフェイスを実装する型がシリアル化エンジンによって選択され、インスタンス化されます。 既知の型機構 (」に記載[データ コントラクトの既知の型](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)) も何も起こりませんここでは型の選択は、WCF に組み込まれています。  
   
 ## <a name="customizing-collection-types"></a>コレクション型のカスタマイズ  
  コレクション型は、複数の用途を持つ <xref:System.Runtime.Serialization.CollectionDataContractAttribute> 属性を使用することによってカスタマイズできます。  
@@ -235,7 +221,7 @@ ms.lasthandoff: 04/30/2018
 ## <a name="collections-and-schema"></a>コレクションとスキーマ  
  すべての等価のコレクションは、XML スキーマ定義言語 (XSD: XML Schema Definition Language) スキーマで同様に表現されます。 このため、生成されたクライアント コードでもサーバーと同じコレクション型になることは通常ありません。 たとえば、サーバーで Integer データ メンバーのジェネリック <xref:System.Collections.Generic.List%601> を含むデータ コントラクトを使用していても、生成されたクライアント コードでは、この同じデータ メンバーが整数の配列になることがあります。  
   
- ディクショナリ コレクションは、それがディクショナリであることを示す [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]固有のスキーマ注釈でマークされます。そうしないと、キーと値を持つエントリが含まれた単純なリストと区別できなくなります。 データ コントラクト スキーマでのコレクションの表現方法の正確な記述については、「 [Data Contract Schema Reference](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md)」を参照してください。  
+ ディクショナリ コレクションがあることを示す辞書 WCF 固有のスキーマ注釈でマークされます。それ以外の場合、キーと値を持つエントリが含まれた単純なリストと区別はありません。 データ コントラクト スキーマでのコレクションの表現方法の正確な記述については、「 [Data Contract Schema Reference](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md)」を参照してください。  
   
  既定では、コードをインポートする際に、カスタマイズされていないコレクションの型は生成されません。 リスト コレクション型のデータ メンバーは配列としてインポートされ、ディクショナリ コレクション型のデータ メンバーはジェネリック ディクショナリとしてインポートされます。  
   

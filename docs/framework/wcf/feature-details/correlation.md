@@ -1,24 +1,12 @@
 ---
-title: "相関関係"
-ms.custom: 
+title: 相関関係
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 60151f6c-19b7-47af-9cdc-76c2ac95f301
-caps.latest.revision: "26"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 0a0be008eae45ca5bbe6ca77383bde433931b72e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9dbebf6d497a5cc109400d04206d39ad76321ba3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="correlation"></a>相関関係
 ワークフロー サービス アプリケーションが他のサービスと通信するときには、やり取りされるメッセージが、適切なワークフロー インスタンスにディスパッチされることが重要です。 相関関係によって、これを実現する機構が提供されます。 このセクションの各トピックでは、相関関係の概要を示し、さまざまなワークフロー サービス シナリオで相関関係を使用する方法について説明します。  
@@ -42,7 +30,7 @@ ms.lasthandoff: 12/22/2017
  [相関関係のトラブルシューティング](../../../../docs/framework/wcf/feature-details/troubleshooting-correlation.md)  
  相関関係のトラブルシューティング方法を説明します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Activities.CorrelationHandle>  
  <xref:System.ServiceModel.Activities.Send>  
  <xref:System.ServiceModel.Activities.Receive>  

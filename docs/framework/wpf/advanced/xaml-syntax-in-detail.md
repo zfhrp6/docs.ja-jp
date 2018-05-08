@@ -1,13 +1,6 @@
 ---
-title: "XAML 構文の詳細"
-ms.custom: 
+title: XAML 構文の詳細
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - XML [WPF], namespaces
 - XAML [WPF], parsing of attributes
@@ -36,16 +29,11 @@ helpviewer_keywords:
 - attribute syntax [XAML]
 - XAML [WPF], property element syntax
 ms.assetid: 67cce290-ca26-4c41-a797-b68aabc45479
-caps.latest.revision: "26"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 88e66210fd8066e82a11d07ea0cfeb83808d646c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d98141c0ad96ef1bd3958ae8d3166aedde76f535
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="xaml-syntax-in-detail"></a>XAML 構文の詳細
 このトピックでは、XAML 構文の要素の記述に使用する用語を定義します。 これらの条項は、具体的には、XAML や、XAML 言語レベルのサポート、System.Xaml で有効になっている基本的な XAML の概念を使用する他のフレームワークの WPF のドキュメントのどちらも、このドキュメントの残りの部分全体でよく使用されます。 このトピックのトピックで導入された基本的な用語を詳述[XAML の概要 (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)です。  
@@ -134,7 +122,7 @@ ms.lasthandoff: 12/22/2017
 ...  
 ```  
   
- XAML で設定可能な属性をサポートするフラグ列挙体は、WPF ではまれです。 ただし、このような 1 つの列挙は<xref:System.Windows.Media.StyleSimulations>します。 「解説」に示した例を変更するフラグ属性のコンマ区切り構文を使用することで、インスタンスの<xref:System.Windows.Documents.Glyphs>クラスです。`StyleSimulations = "BoldSimulation"`状態になる`StyleSimulations = "BoldSimulation,ItalicSimulation"`です。 <xref:System.Windows.Input.KeyBinding.Modifiers%2A?displayProperty=nameWithType>1 つ以上の列挙値を指定することができますを別のプロパティにです。 ただし、このプロパティは、特殊なケースであるため、<xref:System.Windows.Input.ModifierKeys>列挙体は、独自の型コンバーターをサポートしています。 修飾子の型コンバーターは、コンマ (,) ではなく、区切り記号として、正符号 (+) を使用します。 この変換には、"Ctrl + Alt"などの Microsoft Windows プログラミングでのキーの組み合わせを表す従来の構文がサポートしています。  
+ XAML で設定可能な属性をサポートするフラグ列挙体は、WPF ではまれです。 ただし、このような 1 つの列挙は<xref:System.Windows.Media.StyleSimulations>します。 「解説」に示した例を変更するフラグ属性のコンマ区切り構文を使用することで、インスタンスの<xref:System.Windows.Documents.Glyphs>クラスです。`StyleSimulations = "BoldSimulation"`状態になる`StyleSimulations = "BoldSimulation,ItalicSimulation"`です。 <xref:System.Windows.Input.KeyBinding.Modifiers%2A?displayProperty=nameWithType> 1 つ以上の列挙値を指定することができますを別のプロパティにです。 ただし、このプロパティは、特殊なケースであるため、<xref:System.Windows.Input.ModifierKeys>列挙体は、独自の型コンバーターをサポートしています。 修飾子の型コンバーターは、コンマ (,) ではなく、区切り記号として、正符号 (+) を使用します。 この変換には、"Ctrl + Alt"などの Microsoft Windows プログラミングでのキーの組み合わせを表す従来の構文がサポートしています。  
   
 ### <a name="properties-and-event-member-name-references"></a>プロパティとイベント メンバー名の参照  
  属性を指定する場合は、任意のプロパティやイベントを含むオブジェクト要素のためにインスタンス化した CLR 型のメンバーとして存在するを参照できます。  
@@ -267,7 +255,7 @@ ms.lasthandoff: 12/22/2017
   
  `<Button Style="{StaticResource MyStyle}">My button</Button>`  
   
- ここでは、`StaticResource`を識別、<xref:System.Windows.StaticResourceExtension>マークアップ拡張機能の実装を提供するクラス。 次の文字列`MyStyle`、既定以外の入力として使用される<xref:System.Windows.StaticResourceExtension>コンス トラクター、拡張子の文字列から取得したように、パラメーターが、要求されたを宣言<xref:System.Windows.ResourceKey>です。 `MyStyle`できると予想される、 [X:key](../../../../docs/framework/xaml-services/x-key-directive.md)の値、<xref:System.Windows.Style>リソースとして定義します。 [StaticResource マークアップ拡張機能](../../../../docs/framework/wpf/advanced/staticresource-markup-extension.md)使用状況が提供するリソースを使用することを要求、<xref:System.Windows.Style>読み込み時に静的リソースの検索ロジックを使用してプロパティ値。  
+ ここでは、`StaticResource`を識別、<xref:System.Windows.StaticResourceExtension>マークアップ拡張機能の実装を提供するクラス。 次の文字列`MyStyle`、既定以外の入力として使用される<xref:System.Windows.StaticResourceExtension>コンス トラクター、拡張子の文字列から取得したように、パラメーターが、要求されたを宣言<xref:System.Windows.ResourceKey>です。 `MyStyle` できると予想される、 [X:key](../../../../docs/framework/xaml-services/x-key-directive.md)の値、<xref:System.Windows.Style>リソースとして定義します。 [StaticResource マークアップ拡張機能](../../../../docs/framework/wpf/advanced/staticresource-markup-extension.md)使用状況が提供するリソースを使用することを要求、<xref:System.Windows.Style>読み込み時に静的リソースの検索ロジックを使用してプロパティ値。  
   
  マークアップ拡張機能の詳細については、 「[マークアップ拡張機能と WPF XAML](../../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)」を参照してください。 マークアップ拡張機能とその他の XAML プログラミングの一般的な .NET の XAML 実装で有効になっている機能の参照、次を参照してください[XAML Namespace (x:)。言語機能](../../../../docs/framework/xaml-services/xaml-namespace-x-language-features.md)します。 WPF 固有のマークアップ拡張機能を参照してください。 [WPF XAML 拡張](../../../../docs/framework/wpf/advanced/wpf-xaml-extensions.md)です。  
   
@@ -309,13 +297,13 @@ ms.lasthandoff: 12/22/2017
   
  [!code-xaml[XAMLOvwSupport#TypeNameProp](../../../../samples/snippets/csharp/VS_Snippets_Wpf/XAMLOvwSupport/CSharp/page8.xaml#typenameprop)]  
   
- `Button.Background`機能するためにそのプロパティの修飾参照<xref:System.Windows.Controls.Button>が成功した (<xref:System.Windows.Controls.Control.Background%2A>コントロールから継承された) と<xref:System.Windows.Controls.Button>はオブジェクト要素のクラスまたは基底クラス。 `Control.Background`機能するため、<xref:System.Windows.Controls.Control>クラスは、実際に定義<xref:System.Windows.Controls.Control.Background%2A>と<xref:System.Windows.Controls.Control>は、<xref:System.Windows.Controls.Button>基本クラスです。  
+ `Button.Background` 機能するためにそのプロパティの修飾参照<xref:System.Windows.Controls.Button>が成功した (<xref:System.Windows.Controls.Control.Background%2A>コントロールから継承された) と<xref:System.Windows.Controls.Button>はオブジェクト要素のクラスまたは基底クラス。 `Control.Background` 機能するため、<xref:System.Windows.Controls.Control>クラスは、実際に定義<xref:System.Windows.Controls.Control.Background%2A>と<xref:System.Windows.Controls.Control>は、<xref:System.Windows.Controls.Button>基本クラスです。  
   
  ただし、次*typeName*.*memberName* form の例はコメントが付けられたため表示しては機能しません。  
   
  [!code-xaml[XAMLOvwSupport#TypeNameBadProp](../../../../samples/snippets/csharp/VS_Snippets_Wpf/XAMLOvwSupport/CSharp/page8.xaml#typenamebadprop)]  
   
- <xref:System.Windows.Controls.Label>別の派生クラスは、 <xref:System.Windows.Controls.Control>、指定した場合と`Label.Background`内で、<xref:System.Windows.Controls.Label>オブジェクト要素の場合は、この使用法は有益です。 ただし、ため<xref:System.Windows.Controls.Label>クラスまたはの基本クラスではありません<xref:System.Windows.Controls.Button>、XAML プロセッサの動作を指定では、処理する`Label.Background`添付プロパティとして。 `Label.Background`使用可能な接続プロパティではなく、この使用法が失敗しました。  
+ <xref:System.Windows.Controls.Label> 別の派生クラスは、 <xref:System.Windows.Controls.Control>、指定した場合と`Label.Background`内で、<xref:System.Windows.Controls.Label>オブジェクト要素の場合は、この使用法は有益です。 ただし、ため<xref:System.Windows.Controls.Label>クラスまたはの基本クラスではありません<xref:System.Windows.Controls.Button>、XAML プロセッサの動作を指定では、処理する`Label.Background`添付プロパティとして。 `Label.Background` 使用可能な接続プロパティではなく、この使用法が失敗しました。  
   
 ### <a name="basetypenamemembername-property-elements"></a>baseTypeName.memberName プロパティ要素  
  操作方法、似たような方法で、 *typeName*.*memberName*フォームの動作属性の構文については、 *baseTypeName*.*memberName*構文のプロパティ要素構文に動作します。 たとえば、次の構文が動作します。  
@@ -326,7 +314,7 @@ ms.lasthandoff: 12/22/2017
   
  同じように、 *typeName*.*memberName*属性に関しては、フォーム*baseTypeName*.*memberName*マークアップでは、不適切なスタイルは、これを避ける必要があります。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [XAML の概要 (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)  
  [XAML 名前空間 (x:) 言語機能](../../../../docs/framework/xaml-services/xaml-namespace-x-language-features.md)  
  [WPF XAML 拡張機能](../../../../docs/framework/wpf/advanced/wpf-xaml-extensions.md)  

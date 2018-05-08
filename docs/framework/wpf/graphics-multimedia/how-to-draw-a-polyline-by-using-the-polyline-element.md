@@ -1,13 +1,6 @@
 ---
-title: "方法 : ポリライン要素を使用してポリラインを描画する"
-ms.custom: 
+title: '方法 : ポリライン要素を使用してポリラインを描画する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - connected lines [WPF]
 - polylines [WPF], drawing
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - lines [WPF], connected (see polylines)
 - drawing [WPF], polylines
 ms.assetid: 65db8935-d047-4295-87c4-b427ff3ad293
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 9b0b027aa34b310413fa02e81149292fabb40f79
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 2abfa29f7aca4bfc8c5f91e36fd974093a98a9e3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-draw-a-polyline-by-using-the-polyline-element"></a>方法 : ポリライン要素を使用してポリラインを描画する
 この例を使用して、接続されている行の系列は、多角形を描画する方法を示しています、<xref:System.Windows.Shapes.Polyline>要素。  
@@ -45,7 +33,7 @@ ms.lasthandoff: 12/22/2017
   
  この例より大きなサンプルの一部サンプル全体については、次を参照してください。[図形要素のサンプル](http://go.microsoft.com/fwlink/?LinkID=160037)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Shapes.Polyline>  
  <xref:System.Windows.Shapes.Polygon>  
  <xref:System.Windows.Shapes.Shape>  

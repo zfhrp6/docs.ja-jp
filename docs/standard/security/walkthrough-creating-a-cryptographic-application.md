@@ -1,13 +1,7 @@
 ---
-title: "チュートリアル : 暗号化アプリケーションの作成"
-ms.custom: 
+title: 'チュートリアル : 暗号化アプリケーションの作成'
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,18 +10,13 @@ helpviewer_keywords:
 - cryptography [NET Framework], cryptographic application example
 - cryptography [NET Framework], application example
 ms.assetid: abf48c11-1e72-431d-9562-39cf23e1a8ff
-caps.latest.revision: "17"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 869d35a15a028e6df09dea281ac653ab8b9a28d6
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 77debed932b78ae0aa1d8eebf54bd2d3bfbfea7a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="walkthrough-creating-a-cryptographic-application"></a>チュートリアル : 暗号化アプリケーションの作成
 このチュートリアルでは、コンテンツの暗号化および復号化の方法を示します。 コード例は、Windows フォーム アプリケーション向けに設計されています。 このアプリケーションは、スマート カードを使用するなどの実際のシナリオは示していません。 代わりに、暗号化と復号化の基礎を示しています。  
@@ -63,7 +52,7 @@ ms.lasthandoff: 12/23/2017
 ## <a name="creating-a-windows-forms-application"></a>Windows フォーム アプリケーションの作成  
  このチュートリアルにあるほとんどのコード例は、ボタン コントロールのイベント ハンドラーとして設計されています。 次の表は、サンプル アプリケーションに必要なコントロールと、コード例に一致する必要な名前を示しています。  
   
-|コントロール|name|テキストのプロパティ (必要に応じて)|  
+|コントロール|名前|テキストのプロパティ (必要に応じて)|  
 |-------------|----------|---------------------------------|  
 |<xref:System.Windows.Forms.Button>|`buttonEncryptFile`|ファイルの暗号化|  
 |<xref:System.Windows.Forms.Button>|`buttonDecryptFile`|ファイルの復号化|  
@@ -220,5 +209,5 @@ ms.lasthandoff: 12/23/2017
   
 2.  [`Decrypt File`] ボタンをクリックし、暗号化したファイルを選択します。 復号化するための完全なキーのペアがあるため、これは成功します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Cryptographic Services](../../../docs/standard/security/cryptographic-services.md)

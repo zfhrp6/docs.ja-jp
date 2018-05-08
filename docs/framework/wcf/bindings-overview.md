@@ -1,31 +1,17 @@
 ---
 title: Windows Communication Foundation のバインディングの概要
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - bindings [WCF], overview
 ms.assetid: cfb5842f-e0f9-4c56-a015-f2b33f258232
-caps.latest.revision: 16
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 58b3691c186dc6a33c94d9f8a1af96be488d67df
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
-ms.translationtype: MT
+ms.openlocfilehash: 38661c2ca0e3329f508e2740dfcdf69c0d5e4105
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="windows-communication-foundation-bindings-overview"></a>Windows Communication Foundation のバインディングの概要
-バインディングとは、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービスのエンドポイントへの接続に必要な通信の詳細設定を指定する際に使用するオブジェクトのことです。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスの各エンドポイントでは、バインディングを適切に指定する必要があります。 ここでは、バインディングによって定義される通信の詳細設定、バインディングの要素、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] に用意されているバインディング、およびエンドポイントにバインディングを指定する方法について説明します。  
+バインディングは、Windows Communication Foundation (WCF) サービスのエンドポイントに接続するために必要な通信の詳細を指定するために使用するオブジェクトです。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスの各エンドポイントでは、バインディングを適切に指定する必要があります。 ここでは、バインディングによって定義される通信の詳細設定、バインディングの要素、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] に用意されているバインディング、およびエンドポイントにバインディングを指定する方法について説明します。  
   
 ## <a name="what-a-binding-defines"></a>バインディングの定義内容  
  バインディングの情報は非常に基本的にも複雑にもなりえます。 最も基本的なバインディングはトランスポート プロトコル (HTTP など) のみを指定したもので、これはエンドポイントへの接続に必ず使用します。 一般的に、バインディングに含まれるエンドポイントへの接続方法を示す情報は、次のカテゴリのいずれかに当てはまります。  

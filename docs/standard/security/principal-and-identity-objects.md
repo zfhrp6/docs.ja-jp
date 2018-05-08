@@ -1,13 +1,7 @@
 ---
-title: "プリンシパル オブジェクトと ID オブジェクト"
-ms.custom: 
+title: プリンシパル オブジェクトと ID オブジェクト
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - WindowsIdentity objects
 - GenericIdentity objects
@@ -18,18 +12,13 @@ helpviewer_keywords:
 - security [.NET Framework], principals
 - WindowsPrincipal objects
 ms.assetid: aa5930ad-f3d7-40aa-b6f6-c6edcd5c64f7
-caps.latest.revision: "9"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 02c8b4b9f46f051e42fb2ae85a39b6ff48ad2f1a
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: bfc9a08377a281f7325b120a873fc9b27b8ad856
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="principal-and-identity-objects"></a>プリンシパル オブジェクトと ID オブジェクト
 マネージ コードには、id またはを通じてプリンシパルの役割を検出できる、<xref:System.Security.Principal.IPrincipal>への参照を含むオブジェクトを<xref:System.Security.Principal.IIdentity>オブジェクト。 ID オブジェクトとプリンシパル オブジェクトは、ユーザーとグループ アカウントのようななじみのある概念と比較するとわかりやすいでしょう。 ほとんどのネットワーク環境で、ユーザー アカウントは人またはプログラムを表し、グループ アカウントは特定のカテゴリのユーザーやそのユーザーが所有する権限を表します。 同様に、.NET Framework の ID オブジェクトはユーザーを表し、ロールはメンバーシップやセキュリティ コンテキストを表します。 .NET Framework で、プリンシパル オブジェクトは、ID オブジェクトとロールの両方をカプセル化します。 .NET Framework アプリケーションは、ID または一般的にはロール メンバーシップに基づいてプリンシパルに権限を付与します。  
@@ -52,7 +41,7 @@ ms.lasthandoff: 12/23/2017
   
  **プリンシパル** オブジェクトを同じプロセス内 (つまり同じコンピューター上の) アプリケーション ドメイン間で送信するとき、リモート処理インフラストラクチャが、呼び出し元のコンテキストに関連する**プリンシパル** オブジェクトへの参照を呼び出し先のコンテキストにコピーします。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [方法: WindowsPrincipal オブジェクトを作成する](../../../docs/standard/security/how-to-create-a-windowsprincipal-object.md)  
  [方法: GenericPrincipal オブジェクトと GenericIdentity オブジェクトを作成する](../../../docs/standard/security/how-to-create-genericprincipal-and-genericidentity-objects.md)  
  [プリンシパル オブジェクトの置き換え](../../../docs/standard/security/replacing-a-principal-object.md)  

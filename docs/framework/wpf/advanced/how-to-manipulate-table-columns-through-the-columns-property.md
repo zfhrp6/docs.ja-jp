@@ -1,13 +1,6 @@
 ---
-title: "方法: テーブル &#39; の操作の列プロパティを通じて s 列"
-ms.custom: 
+title: '方法: テーブルを操作&#39;列プロパティを通じて s 列'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,18 +10,13 @@ helpviewer_keywords:
 - tables [WPF], manipulating columns
 - Columns property [WPF]
 ms.assetid: 3f8884f4-7e1f-456b-be06-fbd3cf469bf3
-caps.latest.revision: "6"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 8264e49b29f5a790e37c97c3683d7bf09e850c3e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 916764c621738ddc651580f1232e1f579a17e6f0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="how-to-manipulate-a-table39s-columns-through-the-columns-property"></a>方法: テーブル &#39; の操作の列プロパティを通じて s 列
+# <a name="how-to-manipulate-a-table39s-columns-through-the-columns-property"></a>方法: テーブルを操作&#39;列プロパティを通じて s 列
 この例では、によって、テーブルの列で実行できる一般的な操作の一部を示しています、<xref:System.Windows.Documents.Table.Columns%2A>プロパティです。  
   
 ## <a name="example"></a>例  
@@ -76,7 +64,7 @@ ms.lasthandoff: 12/22/2017
  [!code-csharp[TableSnippets2#_Table_Columns_Clear](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TableSnippets2/CSharp/Window1.xaml.cs#_table_columns_clear)]
  [!code-vb[TableSnippets2#_Table_Columns_Clear](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/TableSnippets2/visualbasic/window1.xaml.vb#_table_columns_clear)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [テーブルの概要](../../../../docs/framework/wpf/advanced/table-overview.md)  
  [XAML を使用してテーブルを定義する](../../../../docs/framework/wpf/advanced/how-to-define-a-table-with-xaml.md)  
  [プログラムによってテーブルをビルドする](../../../../docs/framework/wpf/advanced/how-to-build-a-table-programmatically.md)  

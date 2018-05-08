@@ -1,26 +1,15 @@
 ---
-title: "WF 内のコレクション アクティビティ"
-ms.custom: 
+title: WF 内のコレクション アクティビティ
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 2680c3e2-9902-4968-b98d-cab776103dbe
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 52713566419eedbb5a39153541402920479eb500
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 442da07e78ee08b49ad0e023362cace23dcd5b8d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="collection-activities-in-wf"></a>WF 内のコレクション アクティビティ
-コレクション アクティビティはワークフローのコレクション オブジェクトの作業に使用します。 [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] には、コレクション内の項目の追加および削除、コレクション内の項目の存在を確認するテスト、およびコレクションの消去を行うシステム標準アクティビティがあります。 `ExistsInCollection`および`RemoveFromCollection`が、<xref:System.Activities.OutArgument%601>型の<xref:System.Boolean>結果を示します。  
+コレクション アクティビティはワークフローのコレクション オブジェクトの作業に使用します。 [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] には、コレクション内の項目の追加および削除、コレクション内の項目の存在を確認するテスト、およびコレクションの消去を行うシステム標準アクティビティがあります。 `ExistsInCollection` および`RemoveFromCollection`が、<xref:System.Activities.OutArgument%601>型の<xref:System.Boolean>結果を示します。  
   
 > [!IMPORTANT]
 >  コレクション アクティビティが、基礎となるコレクション オブジェクトの設定前に実行された場合、<xref:System.InvalidOperationException> がスローされ、アクティビティは失敗します。  
@@ -435,5 +424,5 @@ Activity wf = new Sequence
 </Sequence>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [命令型コードを使用してワークフロー、アクティビティ、および式を作成する方法](../../../docs/framework/windows-workflow-foundation/authoring-workflows-activities-and-expressions-using-imperative-code.md)

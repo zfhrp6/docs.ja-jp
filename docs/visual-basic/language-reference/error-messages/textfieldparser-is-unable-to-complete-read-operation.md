@@ -1,23 +1,14 @@
 ---
 title: 最大バッファーサイズを超えたため、TextFieldParser は読み取り操作を完了できません。
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vbrTextFieldParser_BufferExceededMaxSize
 ms.assetid: 36565e82-8458-4a08-86af-d9a7a2c32937
-caps.latest.revision: 8
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 222d74fbadad2742d9c560acdd1b6676286da211
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: afc7f08de1218565cc61fefda9b9dbd948c68c09
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="textfieldparser-is-unable-to-complete-the-read-operation-because-maximum-buffer-size-has-been-exceeded"></a>最大バッファーサイズを超えたため、TextFieldParser は読み取り操作を完了できません。
 バッファーの最大サイズ (バイト単位の 10,000, 000) を超過したため、操作を完了できません。  

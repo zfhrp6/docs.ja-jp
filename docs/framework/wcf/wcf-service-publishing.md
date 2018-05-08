@@ -1,29 +1,15 @@
 ---
 title: WCF サービス発行
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: c806b253-cd47-4b96-b831-e73cbf08808f
-caps.latest.revision: ''
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 823edadf7d387d1a509edbdf839ac6eeece5d41f
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
-ms.translationtype: MT
+ms.openlocfilehash: 9f76ab11e9697fc5af5c507d4dc9d944c433c918
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="wcf-service-publishing"></a>WCF サービス発行
-[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービス発行は、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス ホストと [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアントで構成される初期の開発環境から、テストの目的でアプリケーションを実際に実稼働環境に配置する場合に役立ちます。 最終的な配置計画を確定する前に、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービス発行を使用して、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスが正しく動作し、発行の準備ができていることを確認できます。 また、テスト用のさまざまなターゲットの場所に [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス ライブラリを配置することもできます。  
+Windows Communication Foundation (WCF) サービスの公開するために役立ちますによって提供される初期の開発環境から[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]サービス ホストと[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]実際には、実稼働環境にアプリケーションを配置するテスト用クライアントテスト目的での環境。 最終的な配置計画を確定する前に Windows Communication Foundation (WCF) サービスの公開をしていることを確認、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]サービスが正しく動作し、発行する準備ができました。 また、テスト用のさまざまなターゲットの場所に [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス ライブラリを配置することもできます。  
   
 ## <a name="supported-services-and-target-locations"></a>サポートされているサービスとターゲットの場所  
  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス発行は、一連の [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス ライブラリ テンプレートと、それらに対応する項目テンプレートから作成された、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスの発行をサポートしています。これには以下が含まれます。  
@@ -51,13 +37,13 @@ ms.lasthandoff: 03/26/2018
   
 3.  **発行**ウィンドウが表示されます。 クリックして、**しています**. サービスの配置先にするターゲットの場所を指定します。 ローカルの IIS、ファイル システム、または FTP サイトにアプリケーションを配置するを選択することができます。 ローカル IIS にアプリケーションを配置する場合、web サイトを選択してクリックして、その下にある web アプリケーションを作成、、**新しい Web アプリケーションの作成**右上隅にあるアイコン。  
   
-4.  クリックした後**発行**メイン ウィンドウで、Visual Studio が、指定したターゲットの場所にアプリケーションが配置され、Web.config、.svc、およびアセンブリ ファイルをコピー先のディレクトリにコピーします。 である必要があります。 .Svc ファイルの名前は"projectname.servicename.svc"です。 サービスが正常にパブリッシュされた後、Visual Studio の出力 ウィンドウで、「ハイパーリンク"http://localhost/WebApplicationFolderName"http://localhost/WebApplicationFolderName... に接続する」のようなホットリンクが表示されます。 Ctrl キーを押しながらリンクをクリックすると、Visual Studio の内側にブラウザー ページが開き、サービス ディレクトリ構造が表示されます。  
+4.  クリックした後**発行**メイン ウィンドウで、Visual Studio が、指定したターゲットの場所にアプリケーションが配置され、Web.config、.svc、およびアセンブリ ファイルをコピー先のディレクトリにコピーします。 である必要があります。 .Svc ファイルの名前は"projectname.servicename.svc"です。 サービスが正常に発行されると、「ハイパーリンクへの接続」のような Visual Studio の出力 ウィンドウでホットリンクを見つけることができますhttp://localhost/WebApplicationFolderName" http://localhost/WebApplicationFolderName ..."です。 Ctrl キーを押しながらリンクをクリックすると、Visual Studio の内側にブラウザー ページが開き、サービス ディレクトリ構造が表示されます。  
   
-     サイトを参照できない場合、IIS でディレクトリ ブラウザーが有効になっていない可能性があります。 有効にする「ものをしようとする」セクションで説明するヒントに従ってください。 代わりに、直接入力できます"ハイパーリンク"http://localhost/WebApplicationFolderName"http://localhost/WebApplicationFolderName/ProjectName.ServiceName.svc"をサービスのページを表示します。  
+     サイトを参照できない場合、IIS でディレクトリ ブラウザーが有効になっていない可能性があります。 有効にする「ものをしようとする」セクションで説明するヒントに従ってください。 また、直接入力できます"ハイパーリンク"http://localhost/WebApplicationFolderName" http://localhost/WebApplicationFolderName/ProjectName.ServiceName.svc"をサービスのページを表示します。  
   
  使用することができます**発行**をアセンブリ、構成、およびターゲットの場所にプロジェクトで定義されているすべてのサービスの .svc ファイルをコピーするかどうかを指定し、転送先に既存のファイルを上書きします。  
   
- ローカルの IIS にアプリケーションを配置すると、IIS セットアップに関連するエラーが発生することがあります。 IIS が正しくインストールされていることを確認してください。 お使いのブラウザーに"ハイパーリンク"http://localhost"http://localhost"を入力し、IIS の既定のページに表示されているかどうかをチェックできます。  ASP.NET または [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] が IIS に適切に登録されていないために問題が発生する場合もあります。 Visual Studio コマンド プロンプトを開くと、コマンド"aspnet_regiis.exe-ir"を実行すると、ASP.NET 登録に関する問題を修正または WCF 登録に関する問題を修正する"ServiceModelReg.exe – ia"コマンドを実行できます。  
+ ローカルの IIS にアプリケーションを配置すると、IIS セットアップに関連するエラーが発生することがあります。 IIS が正しくインストールされていることを確認してください。 「ハイパーリンク」を入力するhttp://localhost" http://localhost"ブラウザー チェックでかどうか、IIS の既定のページが表示されます。  ASP.NET または [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] が IIS に適切に登録されていないために問題が発生する場合もあります。 Visual Studio コマンド プロンプトを開くと、コマンド"aspnet_regiis.exe-ir"を実行すると、ASP.NET 登録に関する問題を修正または WCF 登録に関する問題を修正する"ServiceModelReg.exe – ia"コマンドを実行できます。  
   
 ## <a name="files-generated-for-publishing"></a>発行用に生成されるファイル  
  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス ライブラリを Web でホストできるようになる前に、アセンブリ ファイル、Web.config ファイル、および .svc ファイルがツールによって生成されます。 生成されたファイルは、すべてターゲットの場所にコピーされます。 その後でサービスが発行されます。  

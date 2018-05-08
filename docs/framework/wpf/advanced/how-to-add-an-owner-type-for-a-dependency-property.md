@@ -1,13 +1,6 @@
 ---
-title: "方法 : 依存関係プロパティの所有者の種類を追加する"
-ms.custom: 
+title: '方法 : 依存関係プロパティの所有者の種類を追加する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - classes [WPF], adding as owners of dependency properties
 - dependency properties [WPF], adding classes as owners of
 ms.assetid: edcce050-0576-4edb-a31a-3f909637b452
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b93934c8f84a7257445b530e27896342bdd73aea
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: bf3f73743d1c76145bf520ed859c27c4d3aaf662
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-add-an-owner-type-for-a-dependency-property"></a>方法 : 依存関係プロパティの所有者の種類を追加する
 この例では、異なる種類の登録されている依存関係プロパティの所有者としてクラスを追加する方法を示します。 これには、手順を実行して、 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]リーダーとプロパティ システムの両方のプロパティの追加の所有者として、クラスを認識することができます。 必要に応じて、所有者として追加すると、型固有のメタデータを提供する追加のクラスができます。  
@@ -41,6 +29,6 @@ ms.lasthandoff: 12/22/2017
 [!code-csharp[PropertySystemEsoterics#UnrelatedStateControl](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PropertySystemEsoterics/CSharp/SDKSampleLibrary/class1.cs#unrelatedstatecontrol)]
 [!code-vb[PropertySystemEsoterics#UnrelatedStateControl](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/PropertySystemEsoterics/visualbasic/sdksamplelibrary/class1.vb#unrelatedstatecontrol)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [カスタム依存関係プロパティ](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)  
  [依存関係プロパティの概要](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)

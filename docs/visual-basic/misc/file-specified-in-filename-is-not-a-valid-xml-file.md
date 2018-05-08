@@ -1,18 +1,12 @@
 ---
-title: "FileName で指定されたファイルは、正しい XML ファイルではありません"
+title: FileName で指定されたファイルは、正しい XML ファイルではありません
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-visual-basic
-ms.topic: article
 ms.assetid: c4c30bf3-e0ad-4bc8-89e0-2c3e49e9793b
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: f3275608a1871ac981eb5b3aa39f0be6ab4e758e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 3aecb0c2c87539717656a29f5b48f94fce3c8453
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="file-specified-in-filename-is-not-a-valid-xml-file"></a>FileName で指定されたファイルは、正しい XML ファイルではありません
 指定したファイル名は、正しい XML ファイルではありません。 XML ドキュメントの許可されている構造体とコンテンツを指定する場合、ドキュメント型定義 (DTD)、Microsoft XML-Data Reduced (XDR) スキーマ、または XML スキーマ定義言語 (XSD) スキーマを使用できます。 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]で XML 文法を指定する場合は、XSD スキーマをお勧めします。  
@@ -24,7 +18,7 @@ ms.lasthandoff: 11/21/2017
   
 -   正しいファイル名を指定していることを確認します。  
   
--   確認する必要のある XML ファイルを **XML デザイナー**に読み込んで、指定したファイルに正しい XML が含まれていることを確認します。 **[XML]** メニューで、 **[XML の整合性チェック]**をクリックします。 エラーは **[タスク一覧]**に表示されます。  
+-   確認する必要のある XML ファイルを **XML デザイナー**に読み込んで、指定したファイルに正しい XML が含まれていることを確認します。 **[XML]** メニューで、 **[XML の整合性チェック]** をクリックします。 エラーは **[タスク一覧]** に表示されます。  
   
 -   XML ファイルに関連付けられた XML スキーマがある場合は、定義された構造体にその要素が出現し、個々の要素のコンテンツがスキーマで指定された宣言されたデータ型に準拠していることを確認します。  
   

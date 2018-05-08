@@ -1,13 +1,6 @@
 ---
-title: "プロパティ変更イベント"
-ms.custom: 
+title: プロパティ変更イベント
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - dependency properties [WPF], change events
 - property value changes [WPF]
@@ -20,16 +13,11 @@ helpviewer_keywords:
 - identifying changed property events [WPF]
 - property triggers [WPF], definition of
 ms.assetid: 0a7989df-9674-4cc1-bc50-5d8ef5d9c055
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 46a11b072731daf420e35bc9c9cfd7d4fced1fe5
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ac2a44eb92e384851bbe6ac860fd9b46d3377a06
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="property-change-events"></a>プロパティ変更イベント
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] では、プロパティ値の変更に応答して発生するさまざまなイベントが定義されています。 通常、プロパティは依存関係プロパティです。 イベント自体は、ルーティング イベントのこともあれば、標準の [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] イベントのこともあります。 要素ツリーを通じて適切にルーティングされるプロパティ変更もあれば、プロパティが変更されたオブジェクトにのみ関係するプロパティ変更もあるため、イベントの定義はシナリオによって異なります。  
@@ -47,7 +35,7 @@ ms.lasthandoff: 12/22/2017
  プロパティがカスタムの依存関係プロパティの場合、またはを使用する派生クラスでインスタンス化コードが定義されている場合は、優れたメカニズムに組み込まれているプロパティの変更を追跡するため、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]プロパティ システム:プロパティ システム コールバック<xref:System.Windows.CoerceValueCallback>と<xref:System.Windows.PropertyChangedCallback>です。 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] プロパティ システムを使用して検証および強制型変換を行う方法の詳細については、「[依存関係プロパティのコールバックと検証](../../../../docs/framework/wpf/advanced/dependency-property-callbacks-and-validation.md)」および「[カスタム依存関係プロパティ](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)」を参照してください。  
   
 ### <a name="dependencypropertychanged-events"></a>DependencyPropertyChanged イベント  
- プロパティ変更イベントのシナリオの一部である型の別のペアが<xref:System.Windows.DependencyPropertyChangedEventArgs>と<xref:System.Windows.DependencyPropertyChangedEventHandler>です。 これらのプロパティ変更のイベントはルーティングされません。これらは、標準の [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] イベントです。 <xref:System.Windows.DependencyPropertyChangedEventArgs>レポートの種類から派生しないため、異常なイベント データは、<xref:System.EventArgs>です。<xref:System.Windows.DependencyPropertyChangedEventArgs>は構造体、クラスではありません。  
+ プロパティ変更イベントのシナリオの一部である型の別のペアが<xref:System.Windows.DependencyPropertyChangedEventArgs>と<xref:System.Windows.DependencyPropertyChangedEventHandler>です。 これらのプロパティ変更のイベントはルーティングされません。これらは、標準の [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] イベントです。 <xref:System.Windows.DependencyPropertyChangedEventArgs> レポートの種類から派生しないため、異常なイベント データは、<xref:System.EventArgs>です。<xref:System.Windows.DependencyPropertyChangedEventArgs>は構造体、クラスではありません。  
   
  使用するイベント<xref:System.Windows.DependencyPropertyChangedEventArgs>と<xref:System.Windows.DependencyPropertyChangedEventHandler>よりも若干より一般的な`RoutedPropertyChanged`イベント。 これらの型を使用するイベントの例は<xref:System.Windows.UIElement.IsMouseCapturedChanged>します。  
   
@@ -72,6 +60,6 @@ ms.lasthandoff: 12/22/2017
   
  プロパティ トリガーの詳細については、「[スタイルとテンプレート](../../../../docs/framework/wpf/controls/styling-and-templating.md)」を参照してください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ルーティング イベントの概要](../../../../docs/framework/wpf/advanced/routed-events-overview.md)  
  [依存関係プロパティの概要](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)

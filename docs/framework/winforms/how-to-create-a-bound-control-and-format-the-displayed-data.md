@@ -1,28 +1,16 @@
 ---
-title: "方法 : バインド コントロールを作成して表示データの書式を設定する"
-ms.custom: 
+title: '方法 : バインド コントロールを作成して表示データの書式を設定する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - data [Windows Forms], formatting
 - bound controls [Windows Forms], creating
 - bound controls [Windows Forms], formatting data
 ms.assetid: d5a56228-899d-41d9-8af8-87b3f4ec2f94
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 6088048ed27b2021e297494275f4e80f7c0cb681
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 9055ec9c4b646e0c86819e4e72db8ce20086bace
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-a-bound-control-and-format-the-displayed-data"></a>方法 : バインド コントロールを作成して表示データの書式を設定する
 Windows フォーム データ バインディングを使用して、データ バインド コントロールに表示されるデータの書式を設定することができます、**フォーマットと詳細バインド** ダイアログ ボックス。  
@@ -38,7 +26,7 @@ Windows フォーム データ バインディングを使用して、データ 
   
 2.  フォームでコントロールを選択し、[プロパティ] ウィンドウを開きます。  
   
-3.  展開して、 **(DataBindings)**プロパティ、し、 **(詳細)**ボックスで、省略記号ボタンをクリックして (![VisualStudioEllipsesButton スクリーン ショット](../../../docs/framework/winforms/media/vbellipsesbutton.png "vbEllipsesButton")) を表示する、**フォーマットと詳細バインド** ダイアログ ボックスは、そのコントロールのプロパティの一覧が掲載されています。  
+3.  展開して、 **(DataBindings)** プロパティ、し、 **(詳細)** ボックスで、省略記号ボタンをクリックして (![VisualStudioEllipsesButton スクリーン ショット](../../../docs/framework/winforms/media/vbellipsesbutton.png "vbEllipsesButton")) を表示する、**フォーマットと詳細バインド** ダイアログ ボックスは、そのコントロールのプロパティの一覧が掲載されています。  
   
 4.  プロパティを選択してバインドして、をクリックします、**バインド**矢印です。  
   
@@ -61,11 +49,11 @@ Windows フォーム データ バインディングを使用して、データ 
     |通貨|使用して小数点以下桁数を指定**小数点**アップダウン コントロール。|  
     |日付と時刻|日付と時刻を内の項目のいずれかを選択して表示する必要がある方法を選択、**型**選択ボックス。|  
     |指数|使用して小数点以下桁数を指定**小数点**アップダウン コントロール。|  
-    |カスタム|カスタム書式指定文字列を使用するように指定します。<br /><br /> 詳細については、次を参照してください。[型の書式設定](../../../docs/standard/base-types/formatting-types.md)です。 **注:**カスタム書式指定文字列は、データ ソースとバインドされたコントロール間のラウンド トリップが正常にする保証はありません。 その代わりに、バインディングで <xref:System.Windows.Forms.Binding.Parse> イベントまたは <xref:System.Windows.Forms.Binding.Format> イベントを処理し、イベント処理コードでカスタム書式を適用します。|  
+    |カスタム|カスタム書式指定文字列を使用するように指定します。<br /><br /> 詳細については、[型の書式設定](../../../docs/standard/base-types/formatting-types.md)に関するページをご覧ください。 **注:** カスタム書式指定文字列は、データ ソースとバインドされたコントロール間のラウンド トリップが正常にする保証はありません。 その代わりに、バインディングで <xref:System.Windows.Forms.Binding.Parse> イベントまたは <xref:System.Windows.Forms.Binding.Format> イベントを処理し、イベント処理コードでカスタム書式を適用します。|  
   
 8.  をクリックして**OK**を閉じる、**フォーマットと詳細バインド** ダイアログ ボックスと プロパティ ウィンドウに戻り値。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [方法: Windows フォームに単純バインド コントロールを作成する](../../../docs/framework/winforms/how-to-create-a-simple-bound-control-on-a-windows-form.md)  
  [Windows フォームでのユーザー入力の検証](../../../docs/framework/winforms/user-input-validation-in-windows-forms.md)  
  [Windows フォームでのデータ バインディング](../../../docs/framework/winforms/windows-forms-data-binding.md)

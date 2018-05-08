@@ -1,14 +1,6 @@
 ---
-title: "方法 : 形状のアウトラインを描画する"
-ms.custom: 
+title: '方法 : 形状のアウトラインを描画する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -27,17 +19,11 @@ helpviewer_keywords:
 - drawing [Windows Forms], circular shapes
 - shapes [Windows Forms], drawing
 ms.assetid: f4f9214c-607e-407d-8cdd-6549f0278451
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: eace68b646b3cdf75546527204bc41584ba64f85
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b674c4d80ba6c70c0bdff6d020527a039e5c7baa
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-draw-an-outlined-shape"></a>方法 : 形状のアウトラインを描画する
 この例では、フォームに記載された楕円と四角形を描画します。  
@@ -53,7 +39,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="robust-programming"></a>信頼性の高いプログラミング  
  常に呼び出す必要があります<xref:System.IDisposable.Dispose%2A>など、システム リソースを消費するすべてのオブジェクトに対する<xref:System.Drawing.Pen>と<xref:System.Drawing.Graphics>オブジェクト。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Drawing.Graphics.DrawEllipse%2A>  
  <xref:System.Windows.Forms.Control.OnPaint%2A>  
  <xref:System.Drawing.Graphics.DrawRectangle%2A>  

@@ -1,27 +1,15 @@
 ---
-title: "要求/応答の相関関係"
-ms.custom: 
+title: 要求/応答の相関関係
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: cf4379bf-2d08-43f3-9584-dfa30ffcb1f6
-caps.latest.revision: "7"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 38f4fc436afbcc5922badda22e9a6e565bc19a0c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: c38854ad42ad4dddce5171482f3ddcfe5bd16b61
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="request-reply-correlation"></a>要求/応答の相関関係
-要求-応答の相関関係を併用、 <xref:System.ServiceModel.Activities.Receive> / <xref:System.ServiceModel.Activities.SendReply>ペアを使用して、ワークフロー サービスでは、双方向の操作を実装する、 <xref:System.ServiceModel.Activities.Send> / <xref:System.ServiceModel.Activities.ReceiveReply>ペアを別の web サイトでの双方向の操作を呼び出すサービス。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスの双方向の操作を呼び出す場合、このサービスには、従来の命令型のコード ベースの [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスを使用することも、ワークフロー サービスを使用することもできます。 要求/応答の相関関係を使用するには、<xref:System.ServiceModel.BasicHttpBinding> などの双方向のバインドを使用する必要があります。 双方向の操作を呼び出す場合と実装する場合では、相関関係の初期化に同様の手順が使用されます。これらの手順については、このセクションで説明します。  
+要求-応答の相関関係を併用、 <xref:System.ServiceModel.Activities.Receive> / <xref:System.ServiceModel.Activities.SendReply>ペアを使用して、ワークフロー サービスでは、双方向の操作を実装する、 <xref:System.ServiceModel.Activities.Send> / <xref:System.ServiceModel.Activities.ReceiveReply>ペアを別の web サイトでの双方向の操作を呼び出すサービス。 WCF サービスの双方向の操作を呼び出すときに、サービスが、従来なることができるまたは命令型コードに基づく Windows Communication Foundation (WCF) サービスがワークフロー サービスを指定できます。 要求/応答の相関関係を使用するには、<xref:System.ServiceModel.BasicHttpBinding> などの双方向のバインドを使用する必要があります。 双方向の操作を呼び出す場合と実装する場合では、相関関係の初期化に同様の手順が使用されます。これらの手順については、このセクションで説明します。  
   
 ## <a name="using-correlation-in-a-two-way-operation-with-receivesendreply"></a>Receive/SendReply による双方向の操作での相関関係の使用  
  A <xref:System.ServiceModel.Activities.Receive> / <xref:System.ServiceModel.Activities.SendReply>ペアは、ワークフロー サービスに双方向の操作を実装するために使用します。 ランタイムは、要求/応答の相関関係を使用して、応答が正しい呼び出し元にディスパッチされるようにします。 ワークフローが <xref:System.ServiceModel.Activities.WorkflowServiceHost> を使用してホストされている場合、つまり、ワークフロー サービスの場合は、既定の相関関係の初期化で十分です。 このシナリオでは、 <xref:System.ServiceModel.Activities.Receive> / <xref:System.ServiceModel.Activities.SendReply>ペアは、ワークフローで使用して、特定の相関関係の構成は必要ありません。  

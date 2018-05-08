@@ -1,21 +1,14 @@
 ---
-title: "システムの日付を設定するためのセキュリティ アクセス許可が十分ではありません"
+title: システムの日付を設定するためのセキュリティ アクセス許可が十分ではありません
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vbrSetLocalDateFailure
 ms.assetid: ea2fe85a-a198-4c12-8754-ab38c36bef4c
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: e5cb3e43477d1a35c4ba5a116fc436c0dfbe1822
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: 70c51e44e282115b9200c97507414d873356ea10
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="insufficient-security-permissions-to-set-the-system-date"></a>システムの日付を設定するためのセキュリティ アクセス許可が十分ではありません
 システムの日付を設定するにはセキュリティ アクセス許可が不十分です。  
@@ -24,5 +17,5 @@ ms.lasthandoff: 12/21/2017
   
 -   システムの日付を設定できるセキュリティ アクセス許可に変更します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Security.Permissions>  

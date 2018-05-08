@@ -1,26 +1,14 @@
 ---
 title: WS トランスポート セキュリティ
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 33a20358-5e1b-458a-a6a9-15753bc7b99b
-caps.latest.revision: 22
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload:
-- dotnet
-ms.openlocfilehash: 4a332394877e33f6ab97b4be77da6c3267d85401
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: 66834a8bd8e783c0795cc65b3b197056b7c8da33
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ws-transport-security"></a>WS トランスポート セキュリティ
 このサンプルでは、<xref:System.ServiceModel.WSHttpBinding> バインディングを使用した SSL トランスポート セキュリティを示します。 既定で、`wsHttpBinding` バインディングは HTTP 通信を実現します。 トランスポート セキュリティ用に構成すると、バインディングは HTTPS 通信をサポートします。 このサンプルがに基づいて、[作業の開始](../../../../docs/framework/wcf/samples/getting-started-sample.md)電卓サービスを実装します。 `wsHttpBinding` は、クライアントとサービスのアプリケーション構成ファイルに指定され、構成されます。  
@@ -33,7 +21,7 @@ ms.lasthandoff: 04/27/2018
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
+>  このディレクトリが存在しない場合に、 [Windows Communication Foundation (WCF) および .NET Framework 4 向けの Windows Workflow Foundation (WF) サンプル](http://go.microsoft.com/fwlink/?LinkId=150780)すべて Windows Communication Foundation (WCF) をダウンロードして[!INCLUDE[wf1](../../../../includes/wf1-md.md)]サンプルです。 このサンプルは、次のディレクトリに格納されます。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\WS\wsTransportSecurity`  
   
@@ -64,7 +52,7 @@ ms.lasthandoff: 04/27/2018
   
  アドレス指定では https:// スキームを使用しています。 このバインディング構成により、セキュリティ モードが `Transport` に設定されます。 同じセキュリティ モードが、サービスの Web.config ファイルで指定される必要があります。  
   
- Https にアクセスしようとしたときにこのサンプルで使用する証明書は Makecert.exe で作成されたテスト証明書であるため、セキュリティ警告が表示されます: で対応するhttps://localhost/servicemodelsamples/service.svc、お使いのブラウザーからです。 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] クライアントがテスト証明書に対して問題なく動作するようにするには、クライアントにコードを追加して、セキュリティ警告を非表示にする必要があります。 そのためのコードとそれに必要なクラスは、本運用の証明書を使用するときには不要です。  
+ Https にアクセスしようとしたときにこのサンプルで使用する証明書は Makecert.exe で作成されたテスト証明書であるため、セキュリティ警告が表示されます: で対応するhttps://localhost/servicemodelsamples/service.svc、お使いのブラウザーからです。 場所がテスト証明書を使用する Windows Communication Foundation (WCF) クライアントを許可するには、セキュリティの警告を抑制するため、クライアント コードが追加されました。 そのためのコードとそれに必要なクラスは、本運用の証明書を使用するときには不要です。  
 
 ```csharp
 // This code is required only for test certificates like those created by Makecert.exe.  

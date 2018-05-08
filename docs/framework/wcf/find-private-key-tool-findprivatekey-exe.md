@@ -1,20 +1,12 @@
 ---
-title: "秘密キー検索ツール (FindPrivateKey.exe)"
+title: 秘密キー検索ツール (FindPrivateKey.exe)
 ms.date: 09/11/2017
-ms.prod: .net-framework
-ms.technology: dotnet-clr
-ms.topic: article
 ms.assetid: b8846a95-3fcc-4e8c-b9c0-128d975a6307
-caps.latest.revision: "13"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 4bdfa1a9e45332e8c2acbbc8cd8a09bd2f927fbc
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8f156cbb2f4fad8d51e356bd4dee2d72d9397ffb
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="find-private-key-tool-findprivatekeyexe"></a>秘密キー検索ツール (FindPrivateKey.exe)
 
@@ -40,8 +32,8 @@ FindPrivateKey<storeName> <storeLocation> [{ {-n <subjectName>} | {-t <thumbprin
 
 |オプション|説明|
 |------------|-----------------|
-|`/n <`*subjectName*`>`|証明書のサブジェクト名を指定します。|
-|`/t <`*拇印*`>`|証明書のサムプリントを指定します。 Certmgr.exe を使用して証明書のサムプリントを取得します。|
+|`/n <` *subjectName* `>`|証明書のサブジェクト名を指定します。|
+|`/t <` *拇印* `>`|証明書のサムプリントを指定します。 Certmgr.exe を使用して証明書のサムプリントを取得します。|
 |`/f`|ファイル名だけを出力します。|
 |`/d`|ディレクトリだけを出力します。|
 |`/a`|絶対ファイル名を出力します。|

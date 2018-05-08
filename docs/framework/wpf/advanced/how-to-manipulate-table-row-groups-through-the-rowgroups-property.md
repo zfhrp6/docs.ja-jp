@@ -1,13 +1,6 @@
 ---
-title: "方法: テーブル &#39; の操作の行グループのプロパティを使用して s 行グループ"
-ms.custom: 
+title: '方法: テーブルを操作&#39;s 行グループ、行グループのプロパティ'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,18 +10,13 @@ helpviewer_keywords:
 - documents [WPF], manipulating row groups through RowGroups property
 - properties [WPF], RowGroups [WPF], manipulating row groups
 ms.assetid: ea61440f-08ae-44ed-b314-5716aaaae3ed
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: f084819c3a5c39ea9d94a5741f8fb4a005d6040c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8cdf3b74fa5bf5a566c541ba035a1c7da7dd6949
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="how-to-manipulate-a-table39s-row-groups-through-the-rowgroups-property"></a>方法: テーブル &#39; の操作の行グループのプロパティを使用して s 行グループ
+# <a name="how-to-manipulate-a-table39s-row-groups-through-the-rowgroups-property"></a>方法: テーブルを操作&#39;s 行グループ、行グループのプロパティ
 この例を使用して、テーブルの行グループで実行できる一般的な操作の一部を示しています、<xref:System.Windows.Documents.Table.RowGroups%2A>プロパティです。  
   
 ## <a name="example"></a>例  
@@ -94,7 +82,7 @@ ms.lasthandoff: 12/22/2017
  [!code-csharp[TableSnippets2#_Table_RowGroups_Clear](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TableSnippets2/CSharp/Window1.xaml.cs#_table_rowgroups_clear)]
  [!code-vb[TableSnippets2#_Table_RowGroups_Clear](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/TableSnippets2/visualbasic/window1.xaml.vb#_table_rowgroups_clear)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [方法: 操作のインライン プロパティを介してフロー コンテンツ要素](../../../../docs/framework/wpf/advanced/how-to-manipulate-table-row-groups-through-the-rowgroups-property.md)  
  [Blocks プロパティを介して FlowDocument を操作する](../../../../docs/framework/wpf/advanced/how-to-manipulate-a-flowdocument-through-the-blocks-property.md)  
  [Columns プロパティによってテーブルの列を操作する](../../../../docs/framework/wpf/advanced/how-to-manipulate-table-columns-through-the-columns-property.md)

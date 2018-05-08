@@ -1,30 +1,18 @@
 ---
-title: "方法 : カスタム クレームを作成する"
-ms.custom: 
+title: '方法 : カスタム クレームを作成する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: d619976b-eda3-475e-ac23-c7988a2dceb0
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 92420b993a1959b03090181944a34a32ab500733
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: c1e8886ab3d9d90b217ce79078633433458bbe4b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-a-custom-claim"></a>方法 : カスタム クレームを作成する
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] の ID モデル インフラストラクチャでは、一連の組み込みクレームの種類と権限、およびその種類と権限を使用して <xref:System.IdentityModel.Claims.Claim> インスタンスを作成するヘルパー関数が提供されます。 この組み込みクレームは、既定で [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] をサポートするクライアント資格情報の型内にある情報をモデル化するように作成されています。 多くの場合はこの組み込みクレームで十分ですが、一部のアプリケーションでカスタム クレームが必要になる場合があります。 クレームは、クレームが適用されるリソースを示すクレームの種類と、リソースにアサートされる権限で構成されます。 このトピックでは、カスタム クレームを作成する方法について説明します。  
+Id モデル インフラストラクチャでは、Windows Communication Foundation (WCF) を作成するための組み込みクレームの種類とヘルパー関数の権限セットを提供する<xref:System.IdentityModel.Claims.Claim>その種類と権限を持つインスタンス。 この組み込みクレームは、既定で [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] をサポートするクライアント資格情報の型内にある情報をモデル化するように作成されています。 多くの場合はこの組み込みクレームで十分ですが、一部のアプリケーションでカスタム クレームが必要になる場合があります。 クレームは、クレームが適用されるリソースを示すクレームの種類と、リソースにアサートされる権限で構成されます。 このトピックでは、カスタム クレームを作成する方法について説明します。  
   
 ### <a name="to-create-a-custom-claim-that-is-based-on-a-primitive-data-type"></a>プリミティブ データ型に基づくカスタム クレームを作成するには  
   
@@ -85,7 +73,7 @@ ms.lasthandoff: 12/22/2017
  [!code-csharp[c_CustomClaim#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customclaim/cs/c_customclaim.cs#0)]
  [!code-vb[c_CustomClaim#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customclaim/vb/c_customclaim.vb#0)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.IdentityModel.Claims.Claim>  
  <xref:System.IdentityModel.Claims.Rights>  
  <xref:System.IdentityModel.Claims.ClaimTypes>  

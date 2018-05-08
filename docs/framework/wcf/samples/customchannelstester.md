@@ -1,24 +1,12 @@
 ---
 title: CustomChannelTester
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: ee1fa307-98b1-4647-8860-2e9217ba6082
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 92de7f168ce323a0d84975863564389ff389d680
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: eebe4f15095c7cefbd32971fd2f3ee308e9916b5
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="customchannelstester"></a>CustomChannelTester
 `CustomChannelsTester` は、カスタム チャネルの実装を、定義済みのサービス コントラクト セットに対してテストする際に使用できるツールです。 サービス コントラクト セットを選択し、XML ファイルを使用してこのツールに渡すことができます。 これを受け取ったツールは、メッセージ交換中にカスタム チャネル実装をテストするサービスとクライアントを生成します。  
@@ -39,7 +27,7 @@ ms.lasthandoff: 12/22/2017
   
      `/binding` オプションを使用する必要があります。  
   
-     "binding" が `/dll` で用意されているシステム指定のバインディングでない場合は、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] が必要です。  
+     `/dll` "binding"が Windows Communication Foundation (WCF) によって提供されるシステム指定のバインディングではない場合は必須です。  
   
      `/testspec` は省略可能です。  
   
@@ -80,4 +68,4 @@ ms.lasthandoff: 12/22/2017
     </TestSpec>  
     ```  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目

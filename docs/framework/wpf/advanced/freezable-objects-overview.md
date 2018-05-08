@@ -1,13 +1,6 @@
 ---
-title: "Freezable オブジェクトの概要"
-ms.custom: 
+title: Freezable オブジェクトの概要
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,16 +9,11 @@ helpviewer_keywords:
 - unfreezing Freezable objects [WPF]
 - classes [WPF], Freezable
 ms.assetid: 89c71692-4f43-4057-b611-67c6a8a863a2
-caps.latest.revision: "30"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 7390181570c6deeea77e5e76493a62e84107286b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d3b9f6f7af22b2a846f4ee34e8d4d00bb032fd69
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="freezable-objects-overview"></a>Freezable オブジェクトの概要
 このトピックを効果的に使用して作成する方法について説明<xref:System.Windows.Freezable>オブジェクトで、アプリケーションのパフォーマンスを改善する特別な機能を提供します。 Freezable オブジェクトの例には、ブラシ、ペン、変換、ジオメトリ、およびアニメーションが含まれます。  
@@ -101,7 +89,7 @@ ms.lasthandoff: 12/22/2017
   
  [!code-xaml[FreezableSample#FreezeFromMarkupWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FreezableSample/CS/FreezeFromMarkupExample.xaml#freezefrommarkupwholepage)]  
   
- 使用する、`Freeze`属性、プレゼンテーションのオプションの名前空間にマップする必要があります:`http://schemas.microsoft.com/winfx/2006/xaml/presentation/options`です。 `PresentationOptions`この名前空間のマッピングの推奨されるプレフィックスを示します。  
+ 使用する、`Freeze`属性、プレゼンテーションのオプションの名前空間にマップする必要があります:`http://schemas.microsoft.com/winfx/2006/xaml/presentation/options`です。 `PresentationOptions` この名前空間のマッピングの推奨されるプレフィックスを示します。  
   
 ```  
 xmlns:PresentationOptions="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options"   
@@ -172,7 +160,7 @@ mc:Ignorable="PresentationOptions"
   
  カスタムの例については<xref:System.Windows.Freezable>クラスを参照してください、[カスタム アニメーション サンプル](http://go.microsoft.com/fwlink/?LinkID=159981)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Freezable>  
  [カスタム アニメーションのサンプル](http://go.microsoft.com/fwlink/?LinkID=159981)  
  [依存関係プロパティの概要](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)  

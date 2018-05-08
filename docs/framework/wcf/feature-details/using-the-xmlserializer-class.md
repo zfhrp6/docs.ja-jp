@@ -1,37 +1,23 @@
 ---
 title: XmlSerializer クラスの使用
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - XmlSerializer [WCF], using
 ms.assetid: c680602d-39d3-44f1-bf22-8e6654ad5069
-caps.latest.revision: 26
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 5a628215848d46ec3fe24030dfb1dd55fc3383bf
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 72b08a58b8ed62a5db2bb210e73357cb3b5dab8e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-the-xmlserializer-class"></a>XmlSerializer クラスの使用
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] では、各種のシリアル化テクノロジを使用して、アプリケーション データをクライアントとサービス間で転送される XML に変換できます。この処理をシリアル化といいます。  
+Windows Communication Foundation (WCF) では、2 つの別のシリアル化テクノロジを使用して、クライアントとサービスには、シリアル化と呼ばれるプロセスの間で送信される XML に、アプリケーションのデータを有効にします。  
   
 ## <a name="datacontractserializer-as-the-default"></a>既定としての DataContractSerializer  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の既定では、データ型をシリアル化するのに <xref:System.Runtime.Serialization.DataContractSerializer> クラスが使用されます。 このシリアライザーは、次の型をサポートします。  
+ 既定で WCF を使用して、<xref:System.Runtime.Serialization.DataContractSerializer>データ型をシリアル化するクラス。 このシリアライザーは、次の型をサポートします。  
   
 -   プリミティブ型 (整数、文字列、バイト配列など) や、プリミティブとして処理される <xref:System.Xml.XmlElement> や <xref:System.DateTime> などの特殊な型。  
   
@@ -45,17 +31,17 @@ ms.lasthandoff: 04/30/2018
   
  多くの [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] 型は、上に記載した一覧のうち、下 2 つのカテゴリに分類され、したがってシリアル化可能です。 シリアル化可能な型の配列もシリアル化可能です。 完全な一覧についてを参照してください。[サービス コントラクトのデータ転送を指定する](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md)です。  
   
- 新しい <xref:System.Runtime.Serialization.DataContractSerializer> サービスを記述する方法としては、データ コントラクト型と共に使用される [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] が推奨されます。 詳細については、次を参照してください。[を使用してデータ コントラクト](../../../../docs/framework/wcf/feature-details/using-data-contracts.md)です。  
+ <xref:System.Runtime.Serialization.DataContractSerializer>コントラクト型のデータと共に使用される、新しい WCF サービスを作成することをお勧めします。 詳細については、次を参照してください。[を使用してデータ コントラクト](../../../../docs/framework/wcf/feature-details/using-data-contracts.md)です。  
   
 ## <a name="when-to-use-the-xmlserializer-class"></a>XmlSerializer クラスを使用する場合  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は <xref:System.Xml.Serialization.XmlSerializer> クラスもサポートします。 <xref:System.Xml.Serialization.XmlSerializer> クラスは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 独自のものではありません。 これは、[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] Web サービスが使用するのと同じシリアル化エンジンです。 <xref:System.Xml.Serialization.XmlSerializer> クラスでは、<xref:System.Runtime.Serialization.DataContractSerializer> クラスよりもサポートされる型の範囲がずっと狭くなりますが、結果の XML に対する制御の柔軟性に優れています。また、XML スキーマ定義言語 (XSD) 標準のサポート範囲が広く、 シリアル化可能な型で宣言型属性が要求されません。 詳細についてで XML シリアル化に関するトピックを参照してください、[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]ドキュメント。 <xref:System.Xml.Serialization.XmlSerializer> クラスは、データ コントラクト型をサポートしません。  
+ WCF でもサポートされる、<xref:System.Xml.Serialization.XmlSerializer>クラスです。 <xref:System.Xml.Serialization.XmlSerializer>クラスは WCF に固有ではありません。 これは、[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] Web サービスが使用するのと同じシリアル化エンジンです。 <xref:System.Xml.Serialization.XmlSerializer> クラスでは、<xref:System.Runtime.Serialization.DataContractSerializer> クラスよりもサポートされる型の範囲がずっと狭くなりますが、結果の XML に対する制御の柔軟性に優れています。また、XML スキーマ定義言語 (XSD) 標準のサポート範囲が広く、 シリアル化可能な型で宣言型属性が要求されません。 詳細についてで XML シリアル化に関するトピックを参照してください、[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]ドキュメント。 <xref:System.Xml.Serialization.XmlSerializer> クラスは、データ コントラクト型をサポートしません。  
   
  Svcutil.exe を使用する場合、または**サービス参照の追加**サード パーティのサービス用のクライアント コードを生成するか、適切なシリアライザー、サードパーティ スキーマを利用する Visual Studio の機能が自動的に選択します。 スキーマに <xref:System.Runtime.Serialization.DataContractSerializer> との互換性がない場合は、<xref:System.Xml.Serialization.XmlSerializer> が選択されます。  
   
 ## <a name="manually-switching-to-the-xmlserializer"></a>XmlSerializer への手動切り替え  
  <xref:System.Xml.Serialization.XmlSerializer> に手動で切り替える必要が生じる場合もあります。 たとえば、次のような場合です。  
   
--   アプリケーションを [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] Web サービスから [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] に移行するときに、新しいデータ コントラクト型を作成するのではなく、既存の <xref:System.Xml.Serialization.XmlSerializer> 互換の型を再利用する場合。  
+-   アプリケーションを移行するときに[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)]を既存の再利用することがありますを WCF Web サービス、 <xref:System.Xml.Serialization.XmlSerializer>-新しいデータを作成する代わりに、互換性のある型のコントラクト型。  
   
 -   メッセージに表示する XML に対する正確な制御が必要で、Web サービス記述言語 (WSDL) ドキュメントが利用できない場合。たとえば、DataContractSerializer と互換性がなく、標準化および公開されている特定のスキーマに従う必要のある型を使用して、サービスを作成する場合。  
   
@@ -82,7 +68,7 @@ ms.lasthandoff: 04/30/2018
   
  サービスで使用するシリアライザーはコントラクトにとって不可欠な部分です。別のバインディングを選択しても他の構成設定に変更しても、このシリアライザーを変更することはできません。  
   
- <xref:System.Xml.Serialization.XmlSerializer> クラスについては、セキュリティに関する重要な考慮事項が他にもあります。 まず、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クラスを使用するすべての <xref:System.Xml.Serialization.XmlSerializer> アプリケーションには、情報の漏えいから保護されたキーを使って署名することを強くお勧めします。 このことは、<xref:System.Xml.Serialization.XmlSerializer> に手動で切り替える場合と、自動切り替えが行われる場合 (Svcutil.exe やサービス参照の追加などのツールによる) の両方でお勧めします。 これは、ため、<xref:System.Xml.Serialization.XmlSerializer>シリアル化エンジンの読み込みをサポートしている*事前生成済みシリアル化アセンブリ*アプリケーションと同じキーで署名されている限り、します。 署名されていないアプリケーションは、アプリケーション フォルダーやグローバル アセンブリ キャッシュに配置される事前生成済みのシリアル化アセンブリで予想される名前に、悪意のあるアセンブリが一致するという危険性に対して完全に無防備になります。 もちろん、攻撃者がこのようなアクションを行うには、この 2 つの場所のいずれかに対する書き込みアクセスをまず取得する必要があります。  
+ <xref:System.Xml.Serialization.XmlSerializer> クラスについては、セキュリティに関する重要な考慮事項が他にもあります。 最初に、使用するすべての WCF アプリケーションを強くお勧めします。、<xref:System.Xml.Serialization.XmlSerializer>クラスは、情報の漏えいから保護するキーで署名します。 このことは、<xref:System.Xml.Serialization.XmlSerializer> に手動で切り替える場合と、自動切り替えが行われる場合 (Svcutil.exe やサービス参照の追加などのツールによる) の両方でお勧めします。 これは、ため、<xref:System.Xml.Serialization.XmlSerializer>シリアル化エンジンの読み込みをサポートしている*事前生成済みシリアル化アセンブリ*アプリケーションと同じキーで署名されている限り、します。 署名されていないアプリケーションは、アプリケーション フォルダーやグローバル アセンブリ キャッシュに配置される事前生成済みのシリアル化アセンブリで予想される名前に、悪意のあるアセンブリが一致するという危険性に対して完全に無防備になります。 もちろん、攻撃者がこのようなアクションを行うには、この 2 つの場所のいずれかに対する書き込みアクセスをまず取得する必要があります。  
   
  <xref:System.Xml.Serialization.XmlSerializer> を使用するときに必ず存在するもう 1 つの脅威は、システムの一時フォルダーへの書き込みアクセスに関連するものです。 <xref:System.Xml.Serialization.XmlSerializer>シリアル化エンジンを作成し、一時使用*シリアル化アセンブリ*このフォルダーにします。 一時フォルダーへの書き込みアクセスのあるプロセスであれば、悪意のあるコードによってこれらのシリアル化アセンブリが上書きされるおそれがあることに注意してください。  
   
@@ -100,11 +86,11 @@ ms.lasthandoff: 04/30/2018
  <xref:System.ServiceModel.MessageHeaderArrayAttribute> の使用時は、<xref:System.Xml.Serialization.XmlSerializer> 属性はサポートされません。  
   
 > [!NOTE]
->  この場合、<xref:System.Xml.Serialization.XmlSerializer> より前にリリースされた [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] によって、"スキーマのトップ レベルで宣言された要素に `maxOccurs` > 1 の値を含めることはできません。 `XmlArray` ではなく、`XmlArrayItem` または `XmlElementAttribute` を使うか、Wrapped パラメーター スタイルを使って 'more' のラッパー要素を指定してください。" という例外がスローされます。  
+>  この場合、 <xref:System.Xml.Serialization.XmlSerializer> WCF 前にリリースは、次の例外がスローされます:"スキーマの最上部で宣言された要素を持てません`maxOccurs`> 1。 `XmlArray` ではなく、`XmlArrayItem` または `XmlElementAttribute` を使うか、Wrapped パラメーター スタイルを使って 'more' のラッパー要素を指定してください。" という例外がスローされます。  
 >   
 >  この例外が出力された場合は、この状況が当てはまるかどうかを調査します。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、メッセージ コントラクトおよび操作コントラクトでの <xref:System.Xml.Serialization.SoapIncludeAttribute> 属性および <xref:System.Xml.Serialization.XmlIncludeAttribute> 属性はサポートされていません。代わりに、<xref:System.Runtime.Serialization.KnownTypeAttribute> 属性を使用してください。  
+ WCF がサポートしていません、<xref:System.Xml.Serialization.SoapIncludeAttribute>と<xref:System.Xml.Serialization.XmlIncludeAttribute>コントラクトのメッセージ コントラクトと操作属性を使用して、<xref:System.Runtime.Serialization.KnownTypeAttribute>属性の代わりにします。  
   
 ## <a name="types-that-implement-the-ixmlserializable-interface"></a>IXmlSerializable インターフェイスを実装する型  
  `IXmlSerializable` インターフェイスを実装する型は、`DataContractSerializer` で完全にサポートされます。 これらの型には、スキーマを制御するために必ず <xref:System.Xml.Serialization.XmlSchemaProviderAttribute> 属性を適用する必要があります。  
@@ -125,7 +111,7 @@ ms.lasthandoff: 04/30/2018
   
  `IXmlSerializable` を実装しており、以前に定義したコンテンツ型である型のデータ メンバーを逆シリアル化すると、デシリアライザーはそのデータ メンバーのラッパー要素に XML リーダーを配置し、<xref:System.Xml.Serialization.IXmlSerializable.ReadXml%2A> メソッドに制御を渡します。 このメソッドは、開始タグと終了タグを含む、要素全体を読み取る必要があります。 `ReadXml` コードでは、要素が空の場合も忘れずに処理してください。 また、`ReadXml` の実装では、特定の方法で名前が付けられたラッパー要素に依存しないようにしてください。 シリアライザーによって選択される名前は、異なる場合があります。  
   
- `IXmlSerializable` コンテンツ型は、たとえば <xref:System.Object> 型のデータ メンバーなどに、ポリモーフィックに割り当てることができます。 また、型インスタンスを null にすることもできます。 さらに、`IXmlSerializable` 型は、オブジェクト グラフの保存を有効にして <xref:System.Runtime.Serialization.NetDataContractSerializer> で使用することも可能です。 これらのすべての機能を実現するには、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] シリアライザーが特定の属性 (XML スキーマ インスタンス名前空間の "nil" と "type"、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 固有の名前空間の "Id"、"Ref"、"Type"、および "Assembly") をラッパー要素に追加する必要があります。  
+ `IXmlSerializable` コンテンツ型は、たとえば <xref:System.Object> 型のデータ メンバーなどに、ポリモーフィックに割り当てることができます。 また、型インスタンスを null にすることもできます。 さらに、`IXmlSerializable` 型は、オブジェクト グラフの保存を有効にして <xref:System.Runtime.Serialization.NetDataContractSerializer> で使用することも可能です。 これらすべての機能には、ラッパー要素に特定の属性を追加する WCF シリアライザーが必要があります ("nil"と WCF 固有の名前空間で XML スキーマ インスタンス名前空間と"Id"、"Ref"、"Type"および"Assembly"で"type") です。  
   
 #### <a name="attributes-to-ignore-when-implementing-readxml"></a>ReadXml を実装するときに無視する属性  
  `ReadXml` コードに制御を渡す前に、デシリアライザーは、XML 要素を調べ、前述の特別な XML 属性を検出し、その属性に従って動作します。 たとえば、"nil" が `true` の場合は、null 値が逆シリアル化され、`ReadXml` は呼び出されません。 ポリモーフィズムが検出された場合は、要素のコンテンツが別の型と同様に逆シリアル化されます。 ポリモーフィックに割り当てられた型の `ReadXml` 実装が呼び出されます。 どの場合も、これらの特別な属性がデシリアライザーによって処理されるため、`ReadXml` 実装ではこれらの属性を無視する必要があります。  

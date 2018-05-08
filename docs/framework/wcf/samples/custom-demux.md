@@ -1,29 +1,15 @@
 ---
 title: カスタム Demux
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: fc54065c-518e-4146-b24a-0fe00038bfa7
-caps.latest.revision: 41
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 45184c2d884347baef4090ed496e22e77aab5423
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
-ms.translationtype: MT
+ms.openlocfilehash: 76f8d60fdcc1fcba9942a78138e83104dfcd972b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="custom-demux"></a>カスタム Demux
-このサンプルでは、MSMQ メッセージ ヘッダーをさまざまなサービス操作にマップする方法を[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]を使用するサービス<xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding>で示したように 1 つのサービス操作の使用に限定されない、[メッセージ キューをWindows Communication Foundation](../../../../docs/framework/wcf/samples/message-queuing-to-wcf.md)と[メッセージ キューへの Windows Communication Foundation](../../../../docs/framework/wcf/samples/wcf-to-message-queuing.md)サンプルです。  
+このサンプルでは、MSMQ メッセージ ヘッダーをマップする方法のさまざまなサービス操作に Windows Communication Foundation (WCF) サービスを使用するように<xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding>で示したように 1 つのサービス操作の使用に限定されない、 [メッセージ キューに Windows Communication Foundation](../../../../docs/framework/wcf/samples/message-queuing-to-wcf.md)と[メッセージ キューへの Windows Communication Foundation](../../../../docs/framework/wcf/samples/wcf-to-message-queuing.md)サンプルです。  
   
  このサンプルのサービスは自己ホスト型コンソール アプリケーションであるので、サービスを実行すると、キューに置かれたメッセージを受信するようすを観察できます。  
   
@@ -202,7 +188,7 @@ Purchase Order 28fc457a-1a56-4fe0-9dde-156965c21ed6 is canceled
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
+>  このディレクトリが存在しない場合に、 [Windows Communication Foundation (WCF) および .NET Framework 4 向けの Windows Workflow Foundation (WF) サンプル](http://go.microsoft.com/fwlink/?LinkId=150780)すべて Windows Communication Foundation (WCF) をダウンロードして[!INCLUDE[wf1](../../../../includes/wf1-md.md)]サンプルです。 このサンプルは、次のディレクトリに格納されます。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\MSMQIntegration\CustomDemux`  
   

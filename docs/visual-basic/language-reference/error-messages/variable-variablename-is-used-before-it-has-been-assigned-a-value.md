@@ -1,28 +1,19 @@
 ---
-title: 変数 &#39;&lt;variablename&gt;&#39; は、値が割り当てられる前に使用
+title: 変数&#39; &lt;variablename&gt; &#39;は、値が割り当てられる前に使用
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vbc42104
 - BC42104
 helpviewer_keywords:
 - BC42104
 ms.assetid: 6909aa0b-b4a1-46f5-a18c-ba3e565c1dd8
-caps.latest.revision: 10
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 201667c250e15bb9af73e64e2d8c924c1952d1be
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: d314f952bd6e11adaac642ba63ed292f48cda805
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="variable-39ltvariablenamegt39-is-used-before-it-has-been-assigned-a-value"></a>変数 &#39;&lt;variablename&gt;&#39; は、値が割り当てられる前に使用
+# <a name="variable-39ltvariablenamegt39-is-used-before-it-has-been-assigned-a-value"></a>変数&#39; &lt;variablename&gt; &#39;は、値が割り当てられる前に使用
 変数 '\<variablename >' は、値が割り当てられる前に使用します。 結果として、実行時に null 参照の例外が発生する可能性があります。  
   
  アプリケーションが任意の値を割り当てる前に、変数を読み取るをコードに少なくとも 1 つの可能なパスがあります。  

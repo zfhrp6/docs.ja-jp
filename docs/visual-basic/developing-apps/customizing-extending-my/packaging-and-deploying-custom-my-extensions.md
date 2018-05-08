@@ -1,23 +1,16 @@
 ---
-title: "パッケージ化と配置カスタム My 拡張機能 (Visual Basic)"
+title: パッケージ化と配置カスタム My 拡張機能 (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - My namespace [Visual Basic], customizing
 - My namespace
 - My namespace [Visual Basic], extending
 ms.assetid: fd89c54b-0290-4c50-95a3-ff17d4487a21
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 94a9ea977d0add14ae9f0c9a889b008b94610ee0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 901d0b80a18d2f4d262cc65eb485dcc628bc6a08
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="packaging-and-deploying-custom-my-extensions-visual-basic"></a>パッケージ化と配置カスタム My 拡張機能 (Visual Basic)
 Visual Basic では、ユーザー設定を展開するための簡単な方法`My`Visual Studio テンプレートを使用して名前空間の拡張機能です。 対象のプロジェクト テンプレートを作成する場合、`My`拡張機能は、新しいプロジェクトの種類の不可欠なカスタムを含めることができますのみ`My`プロジェクト テンプレートをエクスポートするときに拡張機能のコード。 プロジェクト テンプレートのエクスポートの詳細については、次を参照してください。[する方法: プロジェクト テンプレートを作成する](/visualstudio/ide/how-to-create-project-templates)です。  
@@ -61,9 +54,9 @@ Visual Basic では、ユーザー設定を展開するための簡単な方法`
   
 |属性|説明|  
 |---|---|  
-|`ID`|必須です。 拡張機能の一意の識別子。 この ID を持つ拡張機能は、プロジェクトに既に追加されている場合、ユーザーは再度追加してプロンプトされません。|  
-|`Version`|必須です。 項目テンプレートのバージョン番号です。|  
-|`AssemblyFullName`|省略可能です。 アセンブリ名。 ユーザーを追加するように求められますがこのアセンブリへの参照がプロジェクトに追加されると、`My`この項目テンプレートからの拡張機能です。|  
+|`ID`|必須。 拡張機能の一意の識別子。 この ID を持つ拡張機能は、プロジェクトに既に追加されている場合、ユーザーは再度追加してプロンプトされません。|  
+|`Version`|必須。 項目テンプレートのバージョン番号です。|  
+|`AssemblyFullName`|任意。 アセンブリ名。 ユーザーを追加するように求められますがこのアセンブリへの参照がプロジェクトに追加されると、`My`この項目テンプレートからの拡張機能です。|  
   
 ### <a name="add-the-customdatasignature-element-to-the-vstemplate-file"></a>追加、 \<CustomDataSignature > 要素を .vstemplate ファイル  
  として、Visual Studio 項目テンプレートを識別する、`My`名前空間の拡張項目テンプレートの .vstemplate ファイルを変更することも必要があります。 追加する必要があります、`<CustomDataSignature>`要素を`<TemplateData>`要素。 `<CustomDataSignature>`要素は、テキストを含める必要があります`Microsoft.VisualBasic.MyExtension`の次の例に示すようにします。  
@@ -101,7 +94,7 @@ Visual Basic では、ユーザー設定を展開するための簡単な方法`
  テンプレートをインストールするには、Visual Basic 項目テンプレート フォルダー (たとえば、My documents \visual Studio 2008\Templates\Item Templates\Visual 基本)、圧縮フォルダー (.zip ファイル) をコピーできます。 また、Visual Studio インストーラー (.vsi) ファイルとしてテンプレートを公開することができます。  
   
 ## <a name="see-also"></a>関連項目  
- [拡張する、Visual Basic での My Namespace](../../../visual-basic/developing-apps/customizing-extending-my/extending-the-my-namespace.md)  
+ [Visual Basic における My 名前空間の拡張](../../../visual-basic/developing-apps/customizing-extending-my/extending-the-my-namespace.md)  
  [Visual Basic アプリケーション モデルの拡張](../../../visual-basic/developing-apps/customizing-extending-my/extending-the-visual-basic-application-model.md)  
  [My で利用可能なオブジェクトのカスタマイズ](../../../visual-basic/developing-apps/customizing-extending-my/customizing-which-objects-are-available-in-my.md)  
  [[マイ拡張] ページ、プロジェクト デザイナー](/visualstudio/ide/reference/my-extensions-page-project-designer-visual-basic)

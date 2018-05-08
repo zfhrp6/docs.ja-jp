@@ -1,23 +1,12 @@
 ---
-title: "条件付きアクティビティ グループ"
-ms.custom: 
+title: 条件付きアクティビティ グループ
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: f76ef924-34ce-48ae-8c8d-48faf9697754
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 7049f0ab787264893f334b8fe6aa0036e240a73f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 3560542b912f9697ec2e77c8d5c82e148a41d485
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="conditioned-activity-group"></a>条件付きアクティビティ グループ
 このサンプルは、旅行の予約アプリケーションです。 <xref:System.Workflow.Activities.ConditionedActivityGroup> (CAG) には、コード アクティビティである Car アクティビティと Airline アクティビティの 2 つがあります。 `SimpleCAGWorkflow` コンストラクタ内の ArrayList オブジェクト "travelNeedType" には、必要とされる旅行の予約の種類が設定されています。 `travelNeeds.Add` ステートメントの 1 つまたは両方をコメント化することで、CAG の動作を変更できます。 Car アクティビティと Airline アクティビティには、<xref:System.Workflow.Activities.ConditionedActivityGroup.WhenConditionProperty> の設定された <xref:System.Workflow.Activities.CodeCondition> 条件がそれぞれ含まれています。 Car アクティビティは、`travelNeeds` コレクションに `TravelNeeds.Car` のエントリがある場合にだけ実行され、Airline アクティビティは、`travelNeeds` コレクションに `TravelNeeds.Airline` のエントリがある場合にだけ実行されます。  
@@ -41,11 +30,11 @@ ms.lasthandoff: 12/22/2017
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
+>  このディレクトリが存在しない場合に、 [Windows Communication Foundation (WCF) および .NET Framework 4 向けの Windows Workflow Foundation (WF) サンプル](http://go.microsoft.com/fwlink/?LinkId=150780)すべて Windows Communication Foundation (WCF) をダウンロードして[!INCLUDE[wf1](../../../../includes/wf1-md.md)]サンプルです。 このサンプルは、次のディレクトリに格納されます。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Rules\SimpleCAG`  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Workflow.Activities.ConditionedActivityGroup>  
  <xref:System.Workflow.Activities.ConditionedActivityGroup.WhenConditionProperty>  
  <xref:System.Workflow.Activities.CodeCondition>  

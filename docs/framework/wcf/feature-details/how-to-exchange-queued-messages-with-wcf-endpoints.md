@@ -1,34 +1,20 @@
 ---
 title: '方法 : WCF エンドポイントを使用してキューに置かれたメッセージを交換する'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 938e7825-f63a-4c3d-b603-63772fabfdb3
-caps.latest.revision: 18
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 2f44f3a58e0a8283753cb682f25cf2f167450724
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: ab6ca46fad8ee1ededef5cc14a9654b79b2e6a8e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-exchange-queued-messages-with-wcf-endpoints"></a>方法 : WCF エンドポイントを使用してキューに置かれたメッセージを交換する
-キューを使用すると、通信中にサービスを使用できない場合でも、クライアントと [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービス間で信頼できるメッセージングを使用できます。 以下の手順は、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスの実装時に、標準のキューに置かれたバインディングを使用してクライアントとサービス間で永続的な通信を確保する方法を示しています。  
+キューを確認してくださいクライアントと Windows Communication Foundation (WCF) サービスの間で信頼できるメッセージングを発生する場合でも、通信時に、サービスは使用できません。 次の手順では、WCF サービスを実装するときに、クライアントと、標準を使用して、サービスの間で永続的な通信がバインド キューに登録することを確認する方法を示します。  
   
- ここでは、<xref:System.ServiceModel.NetMsmqBinding> を使用して [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントと [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービス間でキューによる通信を行う方法について説明します。  
+ このセクションを使用する方法について説明<xref:System.ServiceModel.NetMsmqBinding>の WCF クライアントと WCF サービスの間でキューに置かれた通信します。  
   
 ### <a name="to-use-queuing-in-a-wcf-service"></a>WCF サービスでキューを使用するには  
   
@@ -54,7 +40,7 @@ ms.lasthandoff: 04/30/2018
      [!code-csharp[S_Msmq_Transacted#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_msmq_transacted/cs/hostapp.cs#4)]
      [!code-vb[S_Msmq_Transacted#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_msmq_transacted/vb/hostapp.vb#4)]  
   
-5.  サービス アドレスを指定し、標準の <xref:System.ServiceModel.Description.ServiceEndpoint> バインディングを使用する <xref:System.ServiceModel.NetMsmqBinding> を構成で定義します。 使用しての詳細については[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]構成を参照してください[Windows Communication Foundation アプリケーションを構成する](http://msdn.microsoft.com/library/13cb368e-88d4-4c61-8eed-2af0361c6d7a)です。  
+5.  サービス アドレスを指定し、標準の <xref:System.ServiceModel.Description.ServiceEndpoint> バインディングを使用する <xref:System.ServiceModel.NetMsmqBinding> を構成で定義します。 詳細については、WCF 構成を使用して、次を参照してください。 [Windows Communication Foundation アプリケーションを構成する](http://msdn.microsoft.com/library/13cb368e-88d4-4c61-8eed-2af0361c6d7a)です。  
   
   
   
@@ -65,7 +51,7 @@ ms.lasthandoff: 04/30/2018
   
 ### <a name="to-create-a-client-for-the-queued-service"></a>キューに置かれたサービスのクライアントを作成するには  
   
-1.  次の例は、ホスト アプリケーションを実行し、Svcutil.exe ツールを使用して [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントを作成する方法を示します。  
+1.  次の例では、ホスト アプリケーションを実行し、Svcutil.exe ツールを使用して、WCF クライアントを作成する方法を示します。  
   
     ```  
     svcutil http://localhost:8000/ServiceModelSamples/service  
@@ -75,7 +61,7 @@ ms.lasthandoff: 04/30/2018
   
   
   
-3.  次の例に示すように、トランザクション キューに書き込むトランザクション スコープを作成し、`SubmitPurchaseOrder` 操作を呼び出して、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントを閉じます。  
+3.  呼び出し、トランザクション キューに書き込むトランザクション スコープを作成する、`SubmitPurchaseOrder`操作と閉じる、WCF クライアントは、次の例で示すようにします。  
   
      [!code-csharp[S_Msmq_Transacted#8](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_msmq_transacted/cs/client.cs#8)]
      [!code-vb[S_Msmq_Transacted#8](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_msmq_transacted/vb/client.vb#8)]  

@@ -1,29 +1,17 @@
 ---
-title: "探索プロキシのサンプル"
-ms.custom: 
+title: 探索プロキシのサンプル
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 1dfa02df-15b1-4e97-9c8e-f5f2772711b0
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 4b6e24c72002c7eef0e03af18f43992cc93b1d5c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e9cbfcb717f502a849d4d508d13df6c00b95db58
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="discovery-proxy-sample"></a>探索プロキシのサンプル
 このサンプルでは、既存のサービスに関する情報を格納するために探索プロキシの実装を作成する方法、およびクライアントからそのプロキシに情報のクエリを行う方法を示します。 このサンプルは、3 つのプロジェクトで構成されます。  
   
--   **サービス**: 単純な[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]探索プロキシに自らを登録する電卓サービス。  
+-   **サービス**: 探索プロキシに自らを登録する単純な Windows Communication Foundation (WCF) 電卓サービス。  
   
 -   **探索プロキシ**: 探索プロキシ サービスの実装です。  
   
@@ -37,7 +25,7 @@ ms.lasthandoff: 12/22/2017
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
+>  このディレクトリが存在しない場合に、 [Windows Communication Foundation (WCF) および .NET Framework 4 向けの Windows Workflow Foundation (WF) サンプル](http://go.microsoft.com/fwlink/?LinkId=150780)すべて Windows Communication Foundation (WCF) をダウンロードして[!INCLUDE[wf1](../../../../includes/wf1-md.md)]サンプルです。 このサンプルは、次のディレクトリに格納されます。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Discovery\DiscoveryProxy`  
   
@@ -66,4 +54,4 @@ ms.lasthandoff: 12/22/2017
   
 5.  最後に、クライアント、サービス、プロキシの順に終了します。 プロキシは、サービスのオフライン アナウンスを受け取るまでは実行されている必要があります。  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目

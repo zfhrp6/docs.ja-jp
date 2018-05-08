@@ -1,13 +1,7 @@
 ---
-title: "方法 : GenericPrincipal オブジェクトと GenericIdentity オブジェクトを作成する"
-ms.custom: 
+title: '方法 : GenericPrincipal オブジェクトと GenericIdentity オブジェクトを作成する'
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,18 +11,13 @@ helpviewer_keywords:
 - Creating GenericPrincipal Objects
 - GenericIdentity Objects
 ms.assetid: 465694cf-258b-4747-9dae-35b01a5bcdbb
-caps.latest.revision: "10"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: b10029c8b290ffaaa4a858fe3e5a6315031f1bab
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 65fd078b6be9dbcdfc03e34285d70a6bfe42d87b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-genericprincipal-and-genericidentity-objects"></a>方法 : GenericPrincipal オブジェクトと GenericIdentity オブジェクトを作成する
 使用することができます、<xref:System.Security.Principal.GenericIdentity>クラスと組み合わせて、 <xref:System.Security.Principal.GenericPrincipal> Windows ドメインの独立に存在する認証スキームを作成するクラス。  
@@ -150,7 +139,7 @@ The IsAuthenticated is: True
 Is this a Manager? True  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Security.Principal.GenericIdentity>  
  <xref:System.Security.Principal.GenericPrincipal>  
  <xref:System.Security.Permissions.PrincipalPermission>  

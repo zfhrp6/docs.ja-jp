@@ -1,11 +1,6 @@
 ---
-title: "OrElse 演算子 (Visual Basic)"
+title: OrElse 演算子 (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - OrElse
 - vb.OrElse
@@ -16,14 +11,11 @@ helpviewer_keywords:
 - short-circuit evaluation
 - OrElse operator [Visual Basic]
 ms.assetid: 253803d8-05b0-47d7-b213-abd222847779
-caps.latest.revision: "15"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 47239a1d2b5b20f2b8cacc9b9185a0f95f63dc84
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 1ee3c1a5b6089f44742281eb40e2a7e9cb3e2812
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="orelse-operator-visual-basic"></a>OrElse 演算子 (Visual Basic)
 ショート サーキットの 2 つの式の包括的論理和を実行します。  
@@ -36,13 +28,13 @@ result = expression1 OrElse expression2
   
 ## <a name="parts"></a>指定項目  
  `result`  
- 必須です。 任意のブール型 (`Boolean`) の式を指定します。  
+ 必須。 任意のブール型 (`Boolean`) の式を指定します。  
   
  `expression1`  
- 必須です。 任意のブール型 (`Boolean`) の式を指定します。  
+ 必須。 任意のブール型 (`Boolean`) の式を指定します。  
   
  `expression2`  
- 必須です。 任意のブール型 (`Boolean`) の式を指定します。  
+ 必須。 任意のブール型 (`Boolean`) の式を指定します。  
   
 ## <a name="remarks"></a>コメント  
  論理演算があると言われます*ショート サーキット*場合は、コンパイルされたコードが別の式の結果に応じて、1 つの式の評価をバイパスできます。 最初に評価される式の結果には、操作の最終的な結果が判断した場合必要はありませんを 2 番目の式を評価するため、最終的な結果を変更することはできません。 ショート サーキットによりでバイパスされる式が複雑な場合、またはプロシージャの呼び出しが含まれる場合、パフォーマンスが向上します。  

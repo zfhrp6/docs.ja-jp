@@ -1,13 +1,6 @@
 ---
-title: "方法 : デザイナーを使って Windows フォーム DataGrid コントロールの書式を設定する"
-ms.custom: 
+title: '方法 : デザイナーを使って Windows フォーム DataGrid コントロールの書式を設定する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - columns [Windows Forms], DataGrid controls
 - colors [Windows Forms], applying to DataGrid controls
@@ -16,16 +9,11 @@ helpviewer_keywords:
 - tables [Windows Forms], formatting in DataGrid control
 - formatting [Windows Forms]
 ms.assetid: 533b9814-6124-49dc-9fda-085f1502609f
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b47b0c2353764f5452c2bb3f6ca37af11d6d904c
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: c6069c2557ac220a37db7f16917a029d6fa49522
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-format-the-windows-forms-datagrid-control-using-the-designer"></a>方法 : デザイナーを使って Windows フォーム DataGrid コントロールの書式を設定する
 > [!NOTE]
@@ -108,7 +96,7 @@ ms.lasthandoff: 01/19/2018
     > [!NOTE]
     >  書式指定文字列の詳細については、次を参照してください。[型の書式設定](../../../../docs/standard/base-types/formatting-types.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.GridTableStylesCollection>  
  <xref:System.Windows.Forms.GridColumnStylesCollection>  
  <xref:System.Windows.Forms.DataGrid>  

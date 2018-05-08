@@ -1,24 +1,14 @@
 ---
 title: '方法: コレクション初期化子で使用される拡張メソッドを作成または追加する (Visual Basic)'
-ms.custom: ''
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - collection initializers [Visual Basic]
 ms.assetid: f64b52c7-8b11-4410-93a6-cb3aeebcc772
-caps.latest.revision: 8
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: d19ac8b03b992eb9b09b5cb45fdcceadad3a822a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 5e35ad80037e843fd3cbd9caa68dcb2a09d707e1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-an-add-extension-method-used-by-a-collection-initializer-visual-basic"></a>方法: コレクション初期化子で使用される拡張メソッドを作成または追加する (Visual Basic)
 コレクション初期化子を使用してコレクションを作成するときに、Visual Basic コンパイラはの検索、`Add`対象のコレクション型のメソッドのパラメーター、`Add`メソッド、コレクション初期化子内の値の型に一致します。 これは、`Add`メソッドを使用して、コレクション初期化子から値を持つコレクションを設定します。  

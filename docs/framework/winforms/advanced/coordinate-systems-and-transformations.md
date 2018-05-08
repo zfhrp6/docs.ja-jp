@@ -1,31 +1,19 @@
 ---
-title: "座標系と変換"
-ms.custom: 
+title: 座標系と変換
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - transformations
 - graphics [Windows Forms], transformations
 - matrix transformations
 ms.assetid: 9fef7451-bddf-4c68-9350-400d1f1f25a3
-caps.latest.revision: "13"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: d44805021f0070109ce67f28126d59d36e4175f8
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 1b91cbc21abe8cc92a9718a71712c52219ad0174
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="coordinate-systems-and-transformations"></a>座標系と変換
-[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]ワールド変換とページ変換を提供し、変換できるように (回転、拡大縮小、平行移動、およびなど) を描画する項目。 2 つの変換を使用して、さまざまな座標システムで動作することもできます。  
+[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] ワールド変換とページ変換を提供し、変換できるように (回転、拡大縮小、平行移動、およびなど) を描画する項目。 2 つの変換を使用して、さまざまな座標システムで動作することもできます。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [座標系の種類](../../../../docs/framework/winforms/advanced/types-of-coordinate-systems.md)  

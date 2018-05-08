@@ -1,11 +1,6 @@
 ---
 title: Declare Statement
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Declare
 - vb.Lib
@@ -32,14 +27,11 @@ helpviewer_keywords:
 - Visual Basic code, Sub procedures
 - Function procedures [Visual Basic], declaring
 ms.assetid: d3f21fb0-b804-4c99-97ed-583b23894cf1
-caps.latest.revision: "30"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 2560f34a5130ef7453b50ffb4495b67bf1dfa4c8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: bc6949c7b52e87b7b39dd2690cac915a5f0d15aa
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="declare-statement"></a>Declare Statement
 外部ファイルで実装されているプロシージャへの参照を宣言します。  
@@ -60,17 +52,17 @@ Declare [ charsetmodifier ] [ Function ] name Lib "libname" _
   
 |用語|定義|  
 |---|---|  
-|`attributelist`|省略可能です。 参照してください[属性一覧](../../../visual-basic/language-reference/statements/attribute-list.md)です。|  
-|`accessmodifier`|省略可能です。 次のいずれかの値を指定します。<br /><br /> -   [パブリック](../../../visual-basic/language-reference/modifiers/public.md)<br />-   [保護されています。](../../../visual-basic/language-reference/modifiers/protected.md)<br />-   [Friend](../../../visual-basic/language-reference/modifiers/friend.md)<br />-   [プライベート](../../../visual-basic/language-reference/modifiers/private.md)<br />-   `Protected Friend`<br /><br /> 参照してください[Visual Basic でのレベルのアクセス](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)です。|  
-|`Shadows`|省略可能です。 参照してください[Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)です。|  
-|`charsetmodifier`|省略可能です。 文字セットとファイルを指定の情報を検索します。 次のいずれかの値を指定します。<br /><br /> -   [Ansi](../../../visual-basic/language-reference/modifiers/ansi.md) (既定値)<br />-   [Unicode](../../../visual-basic/language-reference/modifiers/unicode.md)<br />-   [自動](../../../visual-basic/language-reference/modifiers/auto.md)|  
+|`attributelist`|任意。 参照してください[属性一覧](../../../visual-basic/language-reference/statements/attribute-list.md)です。|  
+|`accessmodifier`|任意。 次のいずれかの値を指定します。<br /><br /> -   [パブリック](../../../visual-basic/language-reference/modifiers/public.md)<br />-   [保護されています。](../../../visual-basic/language-reference/modifiers/protected.md)<br />-   [Friend](../../../visual-basic/language-reference/modifiers/friend.md)<br />-   [プライベート](../../../visual-basic/language-reference/modifiers/private.md)<br />-   `Protected Friend`<br /><br /> 参照してください[Visual Basic でのレベルのアクセス](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)です。|  
+|`Shadows`|任意。 参照してください[Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)です。|  
+|`charsetmodifier`|任意。 文字セットとファイルを指定の情報を検索します。 次のいずれかの値を指定します。<br /><br /> -   [Ansi](../../../visual-basic/language-reference/modifiers/ansi.md) (既定値)<br />-   [Unicode](../../../visual-basic/language-reference/modifiers/unicode.md)<br />-   [自動](../../../visual-basic/language-reference/modifiers/auto.md)|  
 |`Sub`|省略可能、ただしか`Sub`または`Function`表示する必要があります。 外部プロシージャが値を返さないことを示します。|  
 |`Function`|省略可能、ただしか`Sub`または`Function`表示する必要があります。 外部プロシージャが値を返すことを示します。|  
-|`name`|必須です。 この外部参照の名前です。 詳細については、次を参照してください。[宣言された要素の名前](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)です。|  
-|`Lib`|必須です。 導入されています、`Lib`句は、外部プロシージャを含む外部ファイル (DLL またはコード リソース) を識別します。|  
-|`libname`|必須です。 宣言されたプロシージャを含むファイルの名前。|  
-|`Alias`|省略可能です。 指定された名前で、ファイル内で宣言されているプロシージャを識別できないことを示す`name`です。 その id を指定する`aliasname`です。|  
-|`aliasname`|使用するかどうかは必ず、`Alias`キーワード。 2 つの方法のいずれかでプロシージャを識別する文字列。<br /><br /> 引用符で囲まれた、ファイルの内部でプロシージャのエントリ ポイント名 (`""`)<br /><br /> または<br /><br /> 番号記号 (`#`) とファイルの内部でプロシージャのエントリ ポイントの序数を指定する整数値|  
+|`name`|必須。 この外部参照の名前です。 詳細については、次を参照してください。[宣言された要素の名前](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)です。|  
+|`Lib`|必須。 導入されています、`Lib`句は、外部プロシージャを含む外部ファイル (DLL またはコード リソース) を識別します。|  
+|`libname`|必須。 宣言されたプロシージャを含むファイルの名前。|  
+|`Alias`|任意。 指定された名前で、ファイル内で宣言されているプロシージャを識別できないことを示す`name`です。 その id を指定する`aliasname`です。|  
+|`aliasname`|使用するかどうかは必ず、`Alias`キーワード。 2 つの方法のいずれかでプロシージャを識別する文字列。<br /><br /> 引用符で囲まれた、ファイルの内部でプロシージャのエントリ ポイント名 (`""`)<br /><br /> - または -<br /><br /> 番号記号 (`#`) とファイルの内部でプロシージャのエントリ ポイントの序数を指定する整数値|  
 |`parameterlist`|かどうか、プロシージャでは、パラメーターが必要です。 参照してください[パラメーター リスト](../../../visual-basic/language-reference/statements/parameter-list.md)です。|  
 |`returntype`|場合は必須`Function`が指定されていると`Option Strict`は`On`します。 プロシージャによって返される値のデータ型。|  
   
@@ -125,7 +117,7 @@ Declare [ charsetmodifier ] [ Function ] name Lib "libname" _
   
 -   **文字を設定します。** 指定できる`charsetmodifier`方法 Visual Basic が文字列マーシャ リングが外部プロシージャを呼び出すときにします。 `Ansi`修飾子に指示を ANSI 値に、すべての文字列をマーシャ リングする Visual Basic、および`Unicode`修飾子の指示を Unicode 値のすべての文字列をマーシャ リングします。 `Auto`修飾子は、Visual Basic .NET Framework に従って文字列をマーシャ リングにルールが外部参照に基づくように指示`name`、または`aliasname`指定されている場合。 既定値は `Ansi` です。  
   
-     `charsetmodifier`また、Visual Basic が外部ファイルの内部で外部プロシージャを検索する方法を指定します。 `Ansi`および`Unicode`検索するか、検索中にその名前を変更することがなく Visual Basic の直接両方です。 `Auto`Visual Basic ランタイム プラットフォームの基本文字セットを確認し、場合によっては外部プロシージャ名は次のように変更が送信されます。  
+     `charsetmodifier` また、Visual Basic が外部ファイルの内部で外部プロシージャを検索する方法を指定します。 `Ansi` および`Unicode`検索するか、検索中にその名前を変更することがなく Visual Basic の直接両方です。 `Auto` Visual Basic ランタイム プラットフォームの基本文字セットを確認し、場合によっては外部プロシージャ名は次のように変更が送信されます。  
   
     -   プラットフォームでは、ANSI、Windows 95、Windows 98 または Windows Millennium Edition などは、名前のまま変更せずに、外部の手順をまず検索します。 失敗した場合は、外部プロシージャ名の末尾に"A"を追加し、再度検索します。  
   

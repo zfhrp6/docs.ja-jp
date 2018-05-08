@@ -1,11 +1,6 @@
 ---
-title: "比較演算子 (Visual Basic)"
+title: 比較演算子 (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.<>
 - vb.>=
@@ -35,29 +30,26 @@ helpviewer_keywords:
 - Is operator [Visual Basic]
 - comparison operators [Visual Basic], Visual Basicl
 ms.assetid: d6cb12a8-e52e-46a7-8aaf-f804d634a825
-caps.latest.revision: "20"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: aa450f7978f46196663c7534b31597b04d80482a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 4e37f55b4c873c3dbea22a8edf0e5e2b58824720
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="comparison-operators-visual-basic"></a>比較演算子 (Visual Basic)
 Visual Basic で定義されている比較演算子を次に示します。  
   
- `<`演算子  
+ `<` 演算子  
   
- `<=`演算子  
+ `<=` 演算子  
   
- `>`演算子  
+ `>` 演算子  
   
- `>=`演算子  
+ `>=` 演算子  
   
- `=`演算子  
+ `=` 演算子  
   
- `<>`演算子  
+ `<>` 演算子  
   
  [Is 演算子](../../../visual-basic/language-reference/operators/is-operator.md)  
   
@@ -77,34 +69,34 @@ result = string Like pattern
   
 ## <a name="parts"></a>指定項目  
  `result`  
- 必須です。 A`Boolean`比較の結果を表す値です。  
+ 必須。 A`Boolean`比較の結果を表す値です。  
   
  `expression`  
- 必須です。 任意の式。  
+ 必須。 任意の式。  
   
  `comparisonoperator`  
- 必須です。 任意の比較演算子です。  
+ 必須。 任意の比較演算子です。  
   
  `object1`, `object2`  
- 必ず指定します。 いずれかは、オブジェクト名を参照します。  
+ 必須。 いずれかは、オブジェクト名を参照します。  
   
  `string`  
- 必須です。 任意のブール型 (`String`) の式を指定します。  
+ 必須。 任意のブール型 (`String`) の式を指定します。  
   
  `pattern`  
- 必須です。 どの`String`式または文字の範囲です。  
+ 必須。 どの`String`式または文字の範囲です。  
   
 ## <a name="remarks"></a>コメント  
  次の表は、比較演算子と判断する条件の一覧を含むかどうか`result`は`True`または`False`です。  
   
-|演算子|`True`もし|`False`もし|  
+|演算子|`True` もし|`False` もし|  
 |--------------|---------------|----------------|  
-|`<`(より小さい)|`expression1` < `expression2`|`expression1` >= `expression2`|  
-|`<=`(以下を)|`expression1` <= `expression2`|`expression1` > `expression2`|  
-|`>`(より大きい)|`expression1` > `expression2`|`expression1` <= `expression2`|  
-|`>=`(より大きいまたは等しい)|`expression1` >= `expression2`|`expression1` < `expression2`|  
-|`=`(等しい)|`expression1` = `expression2`|`expression1` <> `expression2`|  
-|`<>`(等しくない)|`expression1` <> `expression2`|`expression1` = `expression2`|  
+|`<` (より小さい)|`expression1` < `expression2`|`expression1` >= `expression2`|  
+|`<=` (以下を)|`expression1` <= `expression2`|`expression1` > `expression2`|  
+|`>` (より大きい)|`expression1` > `expression2`|`expression1` <= `expression2`|  
+|`>=` (より大きいまたは等しい)|`expression1` >= `expression2`|`expression1` < `expression2`|  
+|`=` (等しい)|`expression1` = `expression2`|`expression1` <> `expression2`|  
+|`<>` (等しくない)|`expression1` <> `expression2`|`expression1` = `expression2`|  
   
 > [!NOTE]
 >  [演算子を =](../../../visual-basic/language-reference/operators/assignment-operator.md)代入演算子としても使用されます。  
@@ -122,11 +114,11 @@ result = string Like pattern
 ## <a name="comparing-strings"></a>文字列の比較  
  依存する、アルファベット順の並べ替え順序に基づいて、文字列式を評価する文字列を比較するときに、`Option Compare`設定します。  
   
- `Option Compare Binary`ベース文字列の文字の内部バイナリ表現から派生した並べ替え順序で比較します。 並べ替え順序は、コード ページによって決まります。 次の例では、一般的なバイナリ並べ替え順序を示します。  
+ `Option Compare Binary` ベース文字列の文字の内部バイナリ表現から派生した並べ替え順序で比較します。 並べ替え順序は、コード ページによって決まります。 次の例では、一般的なバイナリ並べ替え順序を示します。  
   
  `A < B < E < Z < a < b < e < z < À < Ê < Ø < à < ê < ø`  
   
- `Option Compare Text`ベースでは、アプリケーションのロケールによって決まる、大文字と小文字、テキストの並べ替え順序での比較を文字列です。 設定すると`Option Compare Text`前の例での文字を並べ替えると、次のテキストの並べ替え順序が適用されます。  
+ `Option Compare Text` ベースでは、アプリケーションのロケールによって決まる、大文字と小文字、テキストの並べ替え順序での比較を文字列です。 設定すると`Option Compare Text`前の例での文字を並べ替えると、次のテキストの並べ替え順序が適用されます。  
   
  `(A=a) < (À= à) < (B=b) < (E=e) < (Ê= ê) < (Ø = ø) < (Z=z)`  
   
@@ -138,10 +130,10 @@ result = string Like pattern
   
 |オペランドの場合|比較では、|  
 |---------------------|-------------------|  
-|両方とも`String`|文字列の並べ替え特性に基づく比較を並べ替えます。|  
+|両方とも `String`|文字列の並べ替え特性に基づく比較を並べ替えます。|  
 |両方の数値|オブジェクトに変換されます`Double`、数値比較します。|  
-|1 つの数値型と 1 つ`String`|`String`に変換されますが、`Double`数値比較を実行します。 場合、`String`に変換できない`Double`、<xref:System.InvalidCastException>がスローされます。|  
-|一方または両方が以外の参照型です。`String`|<xref:System.InvalidCastException> がスローされます。|  
+|1 つの数値型と 1 つ `String`|`String`に変換されますが、`Double`数値比較を実行します。 場合、`String`に変換できない`Double`、<xref:System.InvalidCastException>がスローされます。|  
+|一方または両方が以外の参照型です。 `String`|<xref:System.InvalidCastException> がスローされます。|  
   
  数値の比較が扱う`Nothing`0 とします。 文字列比較扱う`Nothing`として`""`(空の文字列)。  
   

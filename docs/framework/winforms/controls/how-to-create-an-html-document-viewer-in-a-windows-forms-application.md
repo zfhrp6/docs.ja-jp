@@ -1,14 +1,6 @@
 ---
-title: "方法 : Windows フォーム アプリケーションで HTML ドキュメントビューアーを作成する"
-ms.custom: 
+title: '方法 : Windows フォーム アプリケーションで HTML ドキュメントビューアーを作成する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,17 +9,11 @@ helpviewer_keywords:
 - document viewers
 - Windows Forms, creating document viewers
 ms.assetid: 6a6338fe-f7ee-4f5e-9d8f-0465c57e9039
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 58f964be53c6ddb8abf0af539b773344ce09d948
-ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
+ms.openlocfilehash: 1330e20cc4fe7df86e51bebca28e4a71e3108673
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-an-html-document-viewer-in-a-windows-forms-application"></a>方法 : Windows フォーム アプリケーションで HTML ドキュメントビューアーを作成する
 使用することができます、<xref:System.Windows.Forms.WebBrowser>コントロールを表示し、インターネットの Web ブラウザーの全機能を提供せずに HTML ドキュメントを印刷します。 これは、HTML の書式設定機能を利用する場合、ユーザーは信頼されていない Web コントロールまたは悪意のあるスクリプト コードを含む可能性のある任意の Web ページを読み込むをしないようにする場合に便利です。 機能を制限することができます、 <xref:System.Windows.Forms.WebBrowser> HTML 電子メール ビューアーとして使用するか、アプリケーションで HTML 形式のヘルプを提供するなど、この方法を制御します。  
@@ -51,7 +37,7 @@ ms.lasthandoff: 02/01/2018
   
 -   `System` アセンブリおよび `System.Windows.Forms` アセンブリへの参照。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.WebBrowser>  
  <xref:System.Windows.Forms.WebBrowser.AllowWebBrowserDrop%2A>  
  <xref:System.Windows.Forms.WebBrowser.Url%2A>  

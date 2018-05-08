@@ -1,24 +1,12 @@
 ---
 title: C# の式
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 29110be7-f4e3-407e-8dbe-78102eb21115
-caps.latest.revision: 5
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 32fb7be6f8c465994b40814a94efd95d42a481da
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: fa6ffd3b1828db03fd6850d4904aee2339df7f31
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="c-expressions"></a>C# の式
 以降で[!INCLUDE[net_v45](../../../includes/net-v45-md.md)]、c# 式には、Windows Workflow Foundation (WF) ではサポートされています。 [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] で作成された、[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] を対象とする新しい C# ワークフロー プロジェクトでは C# 式が使用され、Visual Basic ワークフロー プロジェクトでは Visual Basic 式が使用されます。 Visual Basic 式を使用する既存の [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] ワークフロー プロジェクトは、プロジェクトの言語に関係なく [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] に移行することができ、サポートされています。 ここでは、[!INCLUDE[wf1](../../../includes/wf1-md.md)] での C# 式の概要について説明します。  

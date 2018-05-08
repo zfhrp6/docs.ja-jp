@@ -1,11 +1,6 @@
 ---
-title: "バイト型 (Byte) (Visual Basic)"
+title: バイト型 (Byte) (Visual Basic)
 ms.date: 01/31/2018
-ms.prod: .net
-ms.suite: 
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Byte
 helpviewer_keywords:
@@ -14,11 +9,11 @@ helpviewer_keywords:
 ms.assetid: eed44dff-eaee-4937-a89f-444e418e74f6
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 02234afc0dc51a2c1338cdd16d1f97765f64b45e
-ms.sourcegitcommit: d2da0142247ef42a219a5d2907f153e62dc6ea0d
+ms.openlocfilehash: 28189ab4ab1a9be9265d1cca020039b5302fb5d8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="byte-data-type-visual-basic"></a>Byte データ型 (Visual Basic)
 0 から 255 までの範囲の 8 ビット (1 バイト) の符号なし整数を保持します。
@@ -44,7 +39,7 @@ Visual Basic 2017 から始めて、使用することできますもアンダ�
 
 [!code-vb[Byte](../../../../samples/snippets/visualbasic/language-reference/data-types/numeric-literals.vb#ByteS)]  
 
-Visual Basic 15.5 から始めて、使用することできますも、アンダー スコア文字 (`_`) のプレフィックスと 16 進数、バイナリ、または 8 進数の数字間に先行する区切り記号として。 例:
+Visual Basic 15.5 から始めて、使用することできますも、アンダー スコア文字 (`_`) のプレフィックスと 16 進数、バイナリ、または 8 進数の数字間に先行する区切り記号として。 例えば:
 
 ```vb
 Dim number As Byte = &H_6A
@@ -60,7 +55,7 @@ Dim number As Byte = &H_6A
 
 -   **拡大します。** `Byte`拡大変換後のデータ型`Short`、 `UShort`、 `Integer`、 `UInteger`、 `Long`、 `ULong`、 `Decimal`、 `Single`、または`Double`です。 つまり、変換することができます`Byte`影響を受けずにこれらの型のいずれかに、<xref:System.OverflowException?displayProperty=nameWithType>エラーです。
   
--   **型宣言文字。** `Byte`リテラルの型文字または識別子の型文字がありません。
+-   **型宣言文字。** `Byte` リテラルの型文字または識別子の型文字がありません。
 
 -   **Framework の型。** .NET Framework において対応する型は、<xref:System.Byte?displayProperty=nameWithType> 構造体です。
 
@@ -70,7 +65,7 @@ Dim number As Byte = &H_6A
 
 [!code-vb[VbVbalrDataTypes#16](../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/byte-data-type_1.vb)]  
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
  <xref:System.Byte?displayProperty=nameWithType>  
  [データの種類](../../../visual-basic/language-reference/data-types/data-type-summary.md)  

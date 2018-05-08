@@ -1,13 +1,6 @@
 ---
-title: "Windows フォームにおけるマウス イベント"
-ms.custom: 
+title: Windows フォームにおけるマウス イベント
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - MouseLeave event [Windows Forms]
 - events [Windows Forms], mouse
@@ -22,16 +15,11 @@ helpviewer_keywords:
 - mouse [Windows Forms], events
 - MouseUp event
 ms.assetid: 8cf0070d-793b-4876-b09e-d20d28280fab
-caps.latest.revision: "15"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 5bde1c1045849fe5507081171711d5a00e99b0b4
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: cd5f87b1c1e2d32a6e7fa94dfce977c7432f7f86
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="mouse-events-in-windows-forms"></a>Windows フォームにおけるマウス イベント
 マウス入力を処理する場合、通常はマウスのポインターの位置とマウス ボタンの状態を確認しようとします。 このトピックでは、マウスのイベントからこの情報を取得する方法について詳しく説明し、Windows フォーム コントロールでマウス クリック イベントが発生する順序について説明します。 リストとすべてのマウス イベントの説明では、次を参照してください。[マウス入力のしくみ Windows フォームで](../../../docs/framework/winforms/how-mouse-input-works-in-windows-forms.md)です。  参照してください[イベント ハンドラーの概要 (Windows フォーム)](http://msdn.microsoft.com/library/be6fx1bb\(v=vs.110\))、[イベントの概要 (Windows フォーム)](http://msdn.microsoft.com/library/1h12f09z\(v=vs.110\))  
@@ -152,5 +140,5 @@ ms.lasthandoff: 12/22/2017
     > [!NOTE]
     >  マウス ボタンが押されているときにユーザーがポインターを切り替えコントロールの外に移動した (例 : <xref:System.Windows.Forms.Button> コントロールを押しているときにマウスを移動した) 場合、離された状態で切り替えコントロールが描画し、<xref:System.Windows.Forms.Control.MouseUp> イベントのみが発生します。 <xref:System.Windows.Forms.Control.Click> イベントまたは <xref:System.Windows.Forms.Control.MouseClick> イベントは、このような状況では発生しません。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Windows フォーム アプリケーションにおけるマウス入力](../../../docs/framework/winforms/mouse-input-in-a-windows-forms-application.md)

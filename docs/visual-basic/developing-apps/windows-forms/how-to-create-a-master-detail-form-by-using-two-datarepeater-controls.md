@@ -1,22 +1,14 @@
 ---
 title: '方法: 2 つの DataRepeater コントロール (Visual Studio) を使用してマスター/詳細フォームを作成します。'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - DataRepeater, master/detail tables
 ms.assetid: eec43ae3-05d8-45a1-8d41-3803c6359dbe
-caps.latest.revision: 7
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: f17cb86c3ea0ea056291a51becd7ecf9f73d0a73
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: 84639a5d49a3fa4a8c6845793c39fc8a67c31e02
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/10/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-a-masterdetail-form-by-using-two-datarepeater-controls-visual-studio"></a>方法 : 2 つの DataRepeater コントロールを使用してマスター/詳細形式のフォームを作成する (Visual Studio)
 関連するデータを表示するには 2 つ以上を使用して<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>マスター/詳細フォームを作成するコントロール。 いずれかで顧客の一覧を表示するなど、 <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>、ユーザーは、顧客を選択するときに、1 秒あたりその顧客の注文の一覧を表示および<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>です。  
@@ -31,7 +23,7 @@ ms.lasthandoff: 04/10/2018
   
 2.  コントロールをサイズ変更、サイド バイ サイド配置へのサイズと位置のハンドルをドラッグします。  
   
-3.  **[データ]** メニューの **[データ ソースの表示]**をクリックします。  
+3.  **[データ]** メニューの **[データ ソースの表示]** をクリックします。  
   
     > [!NOTE]
     >  場合、**データソース**ウィンドウが空の場合に、データ ソースを追加します。 詳細については、「[新しいデータ ソースの追加](/visualstudio/data-tools/add-new-data-sources)」を参照してください。  

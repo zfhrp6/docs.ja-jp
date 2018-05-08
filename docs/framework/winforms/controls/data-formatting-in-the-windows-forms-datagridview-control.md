@@ -1,28 +1,16 @@
 ---
-title: "Windows フォーム DataGridView コントロールでのデータの書式設定"
-ms.custom: 
+title: Windows フォーム DataGridView コントロールでのデータの書式設定
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - DataGridView control [Windows Forms], formatting data
 - data [Windows Forms], formatting in grids
 - data grids [Windows Forms], formatting data
 ms.assetid: 07bf558d-3748-42ba-8ba0-37fdef924081
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: f6ff3452a60d9cb80a71dacd5841b120b5efbf82
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ae1947cf7c3825553837fa5f1ee288114988d28f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="data-formatting-in-the-windows-forms-datagridview-control"></a>Windows フォーム DataGridView コントロールでのデータの書式設定
 <xref:System.Windows.Forms.DataGridView>コントロールがセルの値と、親列を表示するデータ型の間の自動変換を提供します。 テキスト ボックスの列はたとえば、日付、時刻、数、および列挙値の文字列形式を表示し、ユーザーが入力した文字列値をデータ ストアで必要な型に変換します。  
@@ -42,7 +30,7 @@ ms.lasthandoff: 12/22/2017
   
  ユーザー指定の値の既定の解析がニーズを満たさない場合は、処理、<xref:System.Windows.Forms.DataGridView.CellParsing>のイベント、<xref:System.Windows.Forms.DataGridView>カスタム解析を提供するコントロール。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.DataGridView>  
  <xref:System.Windows.Forms.DataGridViewCellStyle>  
  [Windows フォーム DataGridView コントロールでのデータの表示](../../../../docs/framework/winforms/controls/displaying-data-in-the-windows-forms-datagridview-control.md)  

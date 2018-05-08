@@ -1,11 +1,6 @@
 ---
-title: "REM ステートメント (Visual Basic)"
+title: REM ステートメント (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.'
 - vb.Rem
@@ -18,14 +13,11 @@ helpviewer_keywords:
 - Visual Basic code, comments
 - "' comment marker character [Visual Basic]"
 ms.assetid: 34126d7f-e0f9-476d-91e6-b31b398615dc
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: d64ce970e3e74437f5e8c63c8a4d578900902192
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 3bd526b08e1ba3be856e1e823cf8ef49ea9b6c97
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="rem-statement-visual-basic"></a>REM ステートメント (Visual Basic)
 プログラムのソース コードにコメントを記述するために使用します。  
@@ -39,7 +31,7 @@ REM comment
   
 ## <a name="parts"></a>指定項目  
  `comment`  
- 省略可能です。 含めるコメントのテキストです。 スペースは間で必要な`REM`キーワードと`comment`です。  
+ 任意。 含めるコメントのテキストです。 スペースは間で必要な`REM`キーワードと`comment`です。  
   
 ## <a name="remarks"></a>コメント  
  配置することができます、`REM`するか、行に単独でステートメントを使用すると別のステートメントを次の行に記述できます。 `REM`ステートメントは行の最後のステートメントである必要があります。 別のステートメントが続く場合、`REM`からそのステートメントをスペースで区切る必要があります。  

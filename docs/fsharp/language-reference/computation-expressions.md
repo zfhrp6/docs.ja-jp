@@ -1,17 +1,12 @@
 ---
 title: コンピュテーション式 (F#)
 description: F# でシーケンス処理することができ、制御フローの構成要素とバインディングを使用して結合する計算を作成するための便利な構文を作成する方法を説明します。
-author: cartermp
-ms.author: phcart
 ms.date: 05/16/2016
-ms.topic: language-reference
-ms.prod: dotnet-fsharp
-ms.devlang: fsharp
-ms.openlocfilehash: 990ea509e4fef84d3e3ee37471b28e2b8d019fad
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: a4ddb3fde284452bc901c5270551611e43742c1f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="computation-expressions"></a>コンピュテーション式
 

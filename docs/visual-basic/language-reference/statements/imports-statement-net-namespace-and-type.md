@@ -1,11 +1,6 @@
 ---
-title: "Imports ステートメント (.NET 名前空間および型)"
+title: Imports ステートメント (.NET 名前空間および型)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Imports
 - imports
@@ -21,14 +16,11 @@ helpviewer_keywords:
 - aliases [Visual Basic], import
 - declared elements [Visual Basic], container elements
 ms.assetid: 7062f8aa-d890-4232-9eed-92836e13fb6e
-caps.latest.revision: "40"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 46cc78c2fd039fb56fd4d1b797f2d09cbe95d317
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: ef569b0ed6428d24d019e00c500e4d4b91c83d49
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="imports-statement-net-namespace-and-type"></a>Imports ステートメント (.NET 名前空間および型)
 有効では、名前空間修飾なしで参照されるように名前を入力します。  
@@ -45,9 +37,9 @@ Imports [ aliasname = ] namespace.element
   
 |用語|定義|  
 |---|---|  
-|`aliasname`|省略可能です。 *インポート エイリアス*または名前ではコードを参照できます`namespace`完全修飾文字列の代わりにします。 参照してください[宣言された要素の名前](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)です。|  
-|`namespace`|必須です。 インポートされる名前空間の完全修飾名。 名前空間の文字列はネストできます任意のレベルに。|  
-|`element`|省略可能です。 プログラミング要素の名前は、名前空間で宣言されています。 任意のコンテナー要素を指定できます。|  
+|`aliasname`|任意。 *インポート エイリアス*または名前ではコードを参照できます`namespace`完全修飾文字列の代わりにします。 参照してください[宣言された要素の名前](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)です。|  
+|`namespace`|必須。 インポートされる名前空間の完全修飾名。 名前空間の文字列はネストできます任意のレベルに。|  
+|`element`|任意。 プログラミング要素の名前は、名前空間で宣言されています。 任意のコンテナー要素を指定できます。|  
   
 ## <a name="remarks"></a>コメント  
  `Imports`ステートメントにより、直接参照されるように指定した名前空間に含まれている型。  

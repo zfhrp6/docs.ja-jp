@@ -1,27 +1,15 @@
 ---
-title: "方法 : カスタム ポリシー アサーションをインポートする"
-ms.custom: 
+title: '方法 : カスタム ポリシー アサーションをインポートする'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 1f41d787-accb-4a10-bfc6-a807671d1581
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 916f5b820ce9e1c30c13a9834548c83e32bc3579
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b6155296e264bb3ae90aac2ee6b83797e632962e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-import-custom-policy-assertions"></a>方法 : カスタム ポリシー アサーションをインポートする
 ポリシー アサーションはサービス エンドポイントの機能と要件を説明します。  クライアント アプリケーションはサービス メタデータにあるポリシー アサーションを使用して、クライアント バインディングを構成したり、サービス エンドポイントのサービス コントラクトをカスタマイズしたりできます。  
@@ -51,7 +39,7 @@ ms.lasthandoff: 12/22/2017
   
 3.  ポリシー アサーションで指定されている機能または要件をサポートするバインディングまたはコントラクトのカスタマイズを実行します。 アサーションでは、通常、バインディングに特定の構成、または特定のバインド要素が必要です。 <xref:System.ServiceModel.Description.PolicyConversionContext.BindingElements%2A?displayProperty=nameWithType> プロパティにアクセスすることで、これらの変更を実行します。 これとは別に、コントラクトの変更が必要なアサーションがあります。  コントラクトへのアクセスと変更には、<xref:System.ServiceModel.Description.PolicyConversionContext.Contract%2A?displayProperty=nameWithType> プロパティを使用します。  ポリシー代替手段のインポートに失敗した場合、バインディングとコントラクトは同じなのに、ポリシー代替手段が異なるために、ポリシー インポーターが複数回呼び出されることがあるので注意してください。 作成するコードでは、この動作に対応する必要があります。  
   
-4.  アサーション コレクションからカスタム ポリシー アサーションを削除します。 アサーションを削除しない場合、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] は、ポリシーのインポートが失敗して、関連付けられているバインディングがインポートされていないと見なします。 <xref:System.ServiceModel.Description.PolicyAssertionCollection.Remove%2A?displayProperty=nameWithType> メソッドを使用して、カスタム ポリシー アサーションの検索とコレクションからの削除を一度に行う場合は、この手順を実行する必要はありません。  
+4.  アサーション コレクションからカスタム ポリシー アサーションを削除します。 アサーションを削除しない場合、Windows Communication Foundation (WCF) は、ポリシーのインポートに失敗しましたし、関連付けられているバインディングがインポートされていると仮定します。 <xref:System.ServiceModel.Description.PolicyAssertionCollection.Remove%2A?displayProperty=nameWithType> メソッドを使用して、カスタム ポリシー アサーションの検索とコレクションからの削除を一度に行う場合は、この手順を実行する必要はありません。  
   
 ### <a name="to-insert-the-custom-policy-importer-into-the-metadata-system-using-a-configuration-file"></a>構成ファイルを使用してメタデータ システムにカスタム ポリシー インポーターを挿入するには  
   
@@ -74,7 +62,7 @@ ms.lasthandoff: 12/22/2017
   
 1.  メタデータをインポートする前に、インポーターを <xref:System.ServiceModel.Description.MetadataImporter.PolicyImportExtensions%2A?displayProperty=nameWithType> プロパティに追加します (たとえば、<xref:System.ServiceModel.Description.WsdlImporter?displayProperty=nameWithType> を使用している場合)。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Description.MetadataResolver?displayProperty=nameWithType>  
  <xref:System.ServiceModel.Description.WsdlImporter?displayProperty=nameWithType>  
  <xref:System.ServiceModel.Description.MetadataResolver?displayProperty=nameWithType>  

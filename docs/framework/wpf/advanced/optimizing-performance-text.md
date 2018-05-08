@@ -1,13 +1,6 @@
 ---
-title: "パフォーマンスの最適化 : テキスト"
-ms.custom: 
+title: 'パフォーマンスの最適化 : テキスト'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -18,16 +11,11 @@ helpviewer_keywords:
 - text [WPF], performance
 - glyphs [WPF]
 ms.assetid: 66b1b9a7-8618-48db-b616-c57ea4327b98
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: f345893ca79d820ebb066d920cb49c6c46c47297
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 177f42dfa1c1be2b12d7e9e5283cf57f14c0880c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="optimizing-performance-text"></a>パフォーマンスの最適化 : テキスト
 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] には、機能豊富な [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] コントロールを使用した、テキスト コンテンツ表示のサポートが含まれています。 一般にテキスト レンダリングは 3 つの階層に分けることができます。  
@@ -43,7 +31,7 @@ ms.lasthandoff: 12/22/2017
   
 <a name="Glyph_Level"></a>   
 ## <a name="rendering-text-at-the-glyph-level"></a>グリフ レベルでのテキスト レンダリング  
- [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]直接アクセスできるグリフ レベルのマークアップを含む高度なテキストのサポートを提供<xref:System.Windows.Documents.Glyphs>をインターセプトし、テキストを書式設定後に永続化を希望するお客様向けです。 これらの機能は、下記のようなシナリオでのさまざまなテキスト レンダリング要件をサポートする不可欠なものです。  
+ [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] 直接アクセスできるグリフ レベルのマークアップを含む高度なテキストのサポートを提供<xref:System.Windows.Documents.Glyphs>をインターセプトし、テキストを書式設定後に永続化を希望するお客様向けです。 これらの機能は、下記のようなシナリオでのさまざまなテキスト レンダリング要件をサポートする不可欠なものです。  
   
 -   固定形式のドキュメントの画面表示。  
   
@@ -60,7 +48,7 @@ ms.lasthandoff: 12/22/2017
 -   以前のバージョンの [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] のクライアントおよびその他のコンピューティング デバイスを含む、固定形式のドキュメント表示。  
   
 > [!NOTE]
->  <xref:System.Windows.Documents.Glyphs>および<xref:System.Windows.Media.GlyphRun>固定形式のドキュメントの表示と印刷のシナリオ用に設計されています。 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]一般的なレイアウトをいくつかの要素を提供し、[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]などのシナリオ<xref:System.Windows.Controls.Label>と<xref:System.Windows.Controls.TextBlock>です。 レイアウトと [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] シナリオの詳細については、[WPF のタイポグラフィ](../../../../docs/framework/wpf/advanced/typography-in-wpf.md)を参照してください。  
+>  <xref:System.Windows.Documents.Glyphs> および<xref:System.Windows.Media.GlyphRun>固定形式のドキュメントの表示と印刷のシナリオ用に設計されています。 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] 一般的なレイアウトをいくつかの要素を提供し、[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]などのシナリオ<xref:System.Windows.Controls.Label>と<xref:System.Windows.Controls.TextBlock>です。 レイアウトと [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] シナリオの詳細については、[WPF のタイポグラフィ](../../../../docs/framework/wpf/advanced/typography-in-wpf.md)を参照してください。  
   
  次の例のプロパティを定義する方法を示して、<xref:System.Windows.Documents.Glyphs>オブジェクトに[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]です。 <xref:System.Windows.Documents.Glyphs>オブジェクトの出力を表す、<xref:System.Windows.Media.GlyphRun>で[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]です。 この例では、Arial、Courier New、Times New Roman フォントがローカル コンピューターの **C:\WINDOWS\Fonts** フォルダーにインストールされていると想定しています。  
   
@@ -69,7 +57,7 @@ ms.lasthandoff: 12/22/2017
 ### <a name="using-drawglyphrun"></a>DrawGlyphRun を使用する  
  カスタム コントロールがあるし、グリフをレンダリングするには、使用するかどうか、<xref:System.Windows.Media.DrawingContext.DrawGlyphRun%2A>メソッドです。  
   
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]カスタム書式を使用するとの下位レベル サービスも提供、<xref:System.Windows.Media.FormattedText>オブジェクト。 最も効率的な方法でテキストをレンダリングの[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]グリフ レベルを使用して、テキストの内容を生成することによって、<xref:System.Windows.Documents.Glyphs>と<xref:System.Windows.Media.GlyphRun>です。 この効率向上のコストが簡単に使用されるリッチ テキスト書式設定、組み込まれている機能の損失の[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]などのコントロール<xref:System.Windows.Controls.TextBlock>と<xref:System.Windows.Documents.FlowDocument>です。  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] カスタム書式を使用するとの下位レベル サービスも提供、<xref:System.Windows.Media.FormattedText>オブジェクト。 最も効率的な方法でテキストをレンダリングの[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]グリフ レベルを使用して、テキストの内容を生成することによって、<xref:System.Windows.Documents.Glyphs>と<xref:System.Windows.Media.GlyphRun>です。 この効率向上のコストが簡単に使用されるリッチ テキスト書式設定、組み込まれている機能の損失の[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]などのコントロール<xref:System.Windows.Controls.TextBlock>と<xref:System.Windows.Documents.FlowDocument>です。  
   
 <a name="FormattedText_Object"></a>   
 ## <a name="formattedtext-object"></a>FormattedText オブジェクト  
@@ -89,7 +77,7 @@ ms.lasthandoff: 12/22/2017
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] には画面にテキストを描画するための複数のコントロールが含まれています。 各コントロールは異なるシナリオを対象にしており、それぞれに一連の機能と制限があります。  
   
 ### <a name="flowdocument-impacts-performance-more-than-textblock-or-label"></a>FlowDocument は TextBlock やラベルよりもパフォーマンスへの影響が大きい  
- 一般に、<xref:System.Windows.Controls.TextBlock>制限付きのテキストのサポートが必要な場合、簡単な文など、要素を使用する必要があります、[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]です。 <xref:System.Windows.Controls.Label>最小限のテキストのサポートが必要な場合に使用できます。 <xref:System.Windows.Documents.FlowDocument>要素は、コンテンツの表示を機能豊富なサポートを再 flowable のドキュメントのコンテナーであり、したがって、使用するよりも大きい、パフォーマンスに影響があります、<xref:System.Windows.Controls.TextBlock>または<xref:System.Windows.Controls.Label>コントロール。  
+ 一般に、<xref:System.Windows.Controls.TextBlock>制限付きのテキストのサポートが必要な場合、簡単な文など、要素を使用する必要があります、[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]です。 <xref:System.Windows.Controls.Label> 最小限のテキストのサポートが必要な場合に使用できます。 <xref:System.Windows.Documents.FlowDocument>要素は、コンテンツの表示を機能豊富なサポートを再 flowable のドキュメントのコンテナーであり、したがって、使用するよりも大きい、パフォーマンスに影響があります、<xref:System.Windows.Controls.TextBlock>または<xref:System.Windows.Controls.Label>コントロール。  
   
  詳細については<xref:System.Windows.Documents.FlowDocument>を参照してください[フロー ドキュメントの概要](../../../../docs/framework/wpf/advanced/flow-document-overview.md)です。  
   
@@ -171,7 +159,7 @@ MouseEnter で表示されるハイパーリンク
 ### <a name="optimal-paragraph"></a>適切な段落  
  段落の最適化機能、<xref:System.Windows.Documents.FlowDocument>オブジェクトのレイアウトの段落の空白文字をできるだけ均等に分散できるようにします。 既定では、適切な段落の機能は無効です。 この機能を有効にするには、オブジェクトのできます<xref:System.Windows.Documents.FlowDocument.IsOptimalParagraphEnabled%2A>プロパティを`true`です。 ただし、この機能を有効にするとアプリケーションのパフォーマンスに影響します。 必要でない限り、適切な段落の機能を使用しないことをお勧めします。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [WPF アプリケーションのパフォーマンスの最適化](../../../../docs/framework/wpf/advanced/optimizing-wpf-application-performance.md)  
  [アプリケーション パフォーマンスの計画](../../../../docs/framework/wpf/advanced/planning-for-application-performance.md)  
  [ハードウェアの活用](../../../../docs/framework/wpf/advanced/optimizing-performance-taking-advantage-of-hardware.md)  

@@ -1,13 +1,6 @@
 ---
-title: "データ テンプレートの概要"
-ms.custom: 
+title: データ テンプレートの概要
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,16 +10,11 @@ helpviewer_keywords:
 - templates [WPF], data
 - data templates [WPF]
 ms.assetid: 0f4d9f8c-0230-4013-bd7b-e8e7fed01b4a
-caps.latest.revision: "25"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b3f1efefa4d32e3512b0dda6eca237a5e4938bf7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: feed791ac876c13dbd637f0455d3cfdd83a86e05
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="data-templating-overview"></a>データ テンプレートの概要
 WPF のデータ テンプレート モデルは、データのプレゼンテーションを定義する優れた柔軟性を提供します。 WPF のコントロールには、データ プレゼンテーションのカスタマイズをサポートする組み込み機能があります。 このトピックの内容が最初に定義する方法を示します、<xref:System.Windows.DataTemplate>し、カスタム ロジックと階層データを表示するためのサポートに基づくテンプレートの選択などのデータ テンプレート機能を紹介します。  
@@ -35,7 +23,7 @@ WPF のデータ テンプレート モデルは、データのプレゼンテ�
 ## <a name="prerequisites"></a>必須コンポーネント  
  このトピックは、データ テンプレートの機能に関するものであり、データ バインディングの概念の紹介ではありません。 データ バインディングの基本概念については、「[データ バインディングの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)」をご覧ください。  
   
- <xref:System.Windows.DataTemplate>データのプレゼンテーションについては、WPF のスタイルとテンプレートのモデルによって提供される多くの機能の 1 つです。 WPF のスタイルとテンプレートなど、モデルを使用する方法の概要については、<xref:System.Windows.Style>コントロールのプロパティを設定するを参照してください。、[スタイルとテンプレート](../../../../docs/framework/wpf/controls/styling-and-templating.md)トピックです。  
+ <xref:System.Windows.DataTemplate> データのプレゼンテーションについては、WPF のスタイルとテンプレートのモデルによって提供される多くの機能の 1 つです。 WPF のスタイルとテンプレートなど、モデルを使用する方法の概要については、<xref:System.Windows.Style>コントロールのプロパティを設定するを参照してください。、[スタイルとテンプレート](../../../../docs/framework/wpf/controls/styling-and-templating.md)トピックです。  
   
  さらであることを理解して`Resources`、新機能を有効にするオブジェクトなど、これは基本的に<xref:System.Windows.Style>と<xref:System.Windows.DataTemplate>再利用できるようにします。 リソースについて詳しくは、「[XAML リソース](../../../../docs/framework/wpf/advanced/xaml-resources.md)」をご覧ください。  
   
@@ -144,7 +132,7 @@ WPF のデータ テンプレート モデルは、データのプレゼンテ�
   
 <a name="what_belongs_in_datatemplate"></a>   
 ### <a name="what-belongs-in-a-datatemplate"></a>DataTemplate に含まれるもの  
- 内でトリガーを配置する前の例では、<xref:System.Windows.DataTemplate>を使用して、 <xref:System.Windows.DataTemplate>.<xref:System.Windows.DataTemplate.Triggers%2A>プロパティです。 <xref:System.Windows.Setter>トリガーの要素のプロパティの値を設定します (、<xref:System.Windows.Controls.Border>要素) 内にある、<xref:System.Windows.DataTemplate>です。 ただし場合、プロパティを`Setters`に不安が現在内にある要素のプロパティではない<xref:System.Windows.DataTemplate>を使用してプロパティを設定する適切な場合があります、<xref:System.Windows.Style>については、<xref:System.Windows.Controls.ListBoxItem>クラス (場合、バインドするコントロールは、 <xref:System.Windows.Controls.ListBox>)。 たとえば、する場合は、<xref:System.Windows.Trigger>アニメーション化する、<xref:System.Windows.UIElement.Opacity%2A>値アイテムのアイテムにマウスがポイントするとトリガーを定義する内で、<xref:System.Windows.Controls.ListBoxItem>スタイル。 例については、「[Introduction to Styling and Templating Sample](http://go.microsoft.com/fwlink/?LinkID=160010)」(スタイルとテンプレートのサンプルの概要) をご覧ください。  
+ 内でトリガーを配置する前の例では、<xref:System.Windows.DataTemplate>を使用して、<xref:System.Windows.DataTemplate>です。<xref:System.Windows.DataTemplate.Triggers%2A> プロパティを使用する方法を示します。 <xref:System.Windows.Setter>トリガーの要素のプロパティの値を設定します (、<xref:System.Windows.Controls.Border>要素) 内にある、<xref:System.Windows.DataTemplate>です。 ただし場合、プロパティを`Setters`に不安が現在内にある要素のプロパティではない<xref:System.Windows.DataTemplate>を使用してプロパティを設定する適切な場合があります、<xref:System.Windows.Style>については、<xref:System.Windows.Controls.ListBoxItem>クラス (場合、バインドするコントロールは、 <xref:System.Windows.Controls.ListBox>)。 たとえば、する場合は、<xref:System.Windows.Trigger>アニメーション化する、<xref:System.Windows.UIElement.Opacity%2A>値アイテムのアイテムにマウスがポイントするとトリガーを定義する内で、<xref:System.Windows.Controls.ListBoxItem>スタイル。 例については、「[Introduction to Styling and Templating Sample](http://go.microsoft.com/fwlink/?LinkID=160010)」(スタイルとテンプレートのサンプルの概要) をご覧ください。  
   
  一般に、考慮する、<xref:System.Windows.DataTemplate>が生成される各に適用されている<xref:System.Windows.Controls.ListBoxItem>(が実際に適用される方法と場所に関する詳細については、次を参照してください。、<xref:System.Windows.Controls.ItemsControl.ItemTemplate%2A>ページです。)。 <xref:System.Windows.DataTemplate>はプレゼンテーション層とデータ オブジェクトの外観だけに関与します。 ほとんどの場合、どのような項目などのプレゼンテーションの他のすべての側面次のように選択されているか、または<xref:System.Windows.Controls.ListBox>アイテム、レイアウトの定義に属していない、<xref:System.Windows.DataTemplate>です。 例については、「[ItemsControl のスタイルとテンプレートの設定](#DataTemplating_ItemsControl)」セクションをご覧ください。  
   
@@ -156,7 +144,7 @@ WPF のデータ テンプレート モデルは、データのプレゼンテ�
   
  [!code-xaml[DataTemplatingIntro_snip#ImportantTemplate](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DataTemplatingIntro_snip/CSharp/Window1.xaml#importanttemplate)]  
   
- この例で、 <xref:System.Windows.DataTemplate>.<xref:System.Windows.FrameworkTemplate.Resources%2A>プロパティです。 セクションでは、内の要素で共有されることで定義されているリソース、<xref:System.Windows.DataTemplate>です。  
+ この例で、<xref:System.Windows.DataTemplate>です。<xref:System.Windows.FrameworkTemplate.Resources%2A> プロパティを使用する方法を示します。 セクションでは、内の要素で共有されることで定義されているリソース、<xref:System.Windows.DataTemplate>です。  
   
  選択するためのロジックを提供する<xref:System.Windows.DataTemplate>に基づいて、使用するのには、`Priority`値のデータ オブジェクトのサブクラスを作成<xref:System.Windows.Controls.DataTemplateSelector>をオーバーライドし、<xref:System.Windows.Controls.DataTemplateSelector.SelectTemplate%2A>メソッドです。 次の例で、<xref:System.Windows.Controls.DataTemplateSelector.SelectTemplate%2A>メソッドの値に基づいて、適切なテンプレートを返すロジックの提供、`Priority`プロパティです。 エンベロープのリソースに返されるテンプレートが見つかった<xref:System.Windows.Window>要素。  
   
@@ -203,7 +191,7 @@ WPF のデータ テンプレート モデルは、データのプレゼンテ�
   
  ![HierarchicalDataTemplate サンプルのスクリーンショット](../../../../docs/framework/wpf/data/media/databinding-hierarchicaldatatemplate.png "DataBinding_HierarchicalDataTemplate")  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [データ バインディング](../../../../docs/framework/wpf/advanced/optimizing-performance-data-binding.md)  
  [DataTemplate によって生成された要素を検索する](../../../../docs/framework/wpf/data/how-to-find-datatemplate-generated-elements.md)  
  [スタイルとテンプレート](../../../../docs/framework/wpf/controls/styling-and-templating.md)  

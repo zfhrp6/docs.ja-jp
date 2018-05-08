@@ -1,24 +1,12 @@
 ---
-title: "WCF での複数の認証方式の使用"
-ms.custom: 
+title: WCF での複数の認証方式の使用
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: f32a56a0-e2b2-46bf-a302-29e1275917f9
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e570185b7df06a47e8c7fb3319328e760079415d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 140211f10f7cdc88a3df8eb8ea1c30df73b0c4c7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-multiple-authentication-schemes-with-wcf"></a>WCF での複数の認証方式の使用
 WCF では、単一のエンドポイントに複数の認証方式を指定できるようになりました。 さらに、Web ホスト サービスは、認証設定を IIS から直接継承できます。 自己ホスト型サービスは、使用可能な認証方式を指定できます。 IIS での認証設定の詳細については、次を参照してください[IIS 認証。](http://go.microsoft.com/fwlink/?LinkId=232458)  
@@ -130,7 +118,7 @@ else
     </binding>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [バインディングとセキュリティ](../../../../docs/framework/wcf/feature-details/bindings-and-security.md)  
  [エンドポイント : アドレス、バインディング、およびコントラクト](../../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)  
  [システムが提供するバインディングの構成](../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  

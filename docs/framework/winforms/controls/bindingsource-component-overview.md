@@ -1,29 +1,17 @@
 ---
-title: "BindingSource コンポーネントの概要"
-ms.custom: 
+title: BindingSource コンポーネントの概要
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - Windows Forms, data binding
 - controls [Windows Forms], binding to data
 - BindingSource component [Windows Forms], about BindingSource component
 - data binding [Windows Forms], BindingSource component
 ms.assetid: be838caf-fcb0-4b68-827f-58b2c04b747f
-caps.latest.revision: "26"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 291ceb32d7128a63ba9a251ce916c18adb100100
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 047df677ade3837e167845ace2bdc6ca14738c3c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="bindingsource-component-overview"></a>BindingSource コンポーネントの概要
 <xref:System.Windows.Forms.BindingSource> コンポーネントは、基になるデータ ソースにコントロールをバインドするプロセスを簡略化するように設計されています。 <xref:System.Windows.Forms.BindingSource> コンポーネントは、他のコントロールのバインド先となるパイプおよびデータ ソースの両方の働きをします。 このコンポーネントは、フォームのデータ接続を抽象化し、基になるデータ リストにコマンドを渡します。 また、コンポーネントに直接データを追加することにより、コンポーネント自体がデータ ソースとして機能するようにすることができます。  
@@ -68,7 +56,7 @@ ms.lasthandoff: 12/22/2017
 |<xref:System.Windows.Forms.BindingSource.Sort%2A> プロパティ|データ ソースが <xref:System.ComponentModel.IBindingList> である場合は、並べ替えに使用する列名と並べ替え順序情報を取得または設定します。 データ ソースが <xref:System.ComponentModel.IBindingListView> であり、高度な並べ替えをサポートしている場合は、並べ替えに使用する複数の列名と並べ替え順序情報を取得します。|  
 |<xref:System.Windows.Forms.BindingSource.Filter%2A> プロパティ|データ ソースが <xref:System.ComponentModel.IBindingListView> である場合は、表示する行のフィルター処理に使用する式を取得または設定します。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.BindingSource>  
  <xref:System.Windows.Forms.BindingNavigator>  
  [BindingSource コンポーネント アーキテクチャ](../../../../docs/framework/winforms/controls/bindingsource-component-architecture.md)  

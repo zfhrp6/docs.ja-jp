@@ -1,24 +1,12 @@
 ---
 title: アクティビティ検証の呼び出し
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 22bef766-c505-4fd4-ac0f-7b363b238969
-caps.latest.revision: 15
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: c334c13457b3e89e451f75e1ca9ea9e00aae1e21
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 7e8be762e6c5c67687864727dcd4ca1cde9a8e42
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="invoking-activity-validation"></a>アクティビティ検証の呼び出し
 アクティビティの検証は、アクティビティを実行する前にアクティビティの構成エラーを特定および報告する手段です。 検証が発生するのは、ワークフローがワークフロー デザイナーで修正され、検証エラーまたは警告がワークフロー デザイナーに表示されたときです。 ワーク フローの呼び出し時に検証も行われます。検証エラーが発生すると、既定の検証ロジックによって <xref:System.Activities.InvalidWorkflowException> がスローされます。 Windows Workflow Foundation (WF) の提供、<xref:System.Activities.Validation.ActivityValidationServices>ワークフロー アプリケーションやツールの開発者が明示的にアクティビティを検証するために使用するクラス。 このトピックでは、<xref:System.Activities.Validation.ActivityValidationServices> を使用してアクティビティの検証を実行する方法を説明します。  

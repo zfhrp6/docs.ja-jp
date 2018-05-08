@@ -1,31 +1,19 @@
 ---
-title: "Windows Communication Foundation のプライバシー情報"
-ms.custom: 
+title: Windows Communication Foundation のプライバシー情報
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - Windows Communication Foundation, privacy information
 - WCF, privacy information
 - privacy information [WCF]
 ms.assetid: c9553724-f3e7-45cb-9ea5-450a22d309d9
-caps.latest.revision: "34"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 2d0172b91393e4e9e373a247c33be938a3160e14
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
-ms.translationtype: MT
+ms.openlocfilehash: e9c4130cd4680d4cd68ca8c6ba36c38b5d065f58
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="windows-communication-foundation-privacy-information"></a>Windows Communication Foundation のプライバシー情報
-マイクロソフトは、エンド ユーザーのプライバシー保護に力を入れています。 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] (バージョン 3.0) を使用してアプリケーションを作成した場合、アプリケーションがエンド ユーザーのプライバシーに影響する可能性があります。 たとえば、アプリケーションが明示的にユーザーの連絡先情報を収集することがあります。つまり、アプリケーションがインターネットを経由して Web サイトに情報を要求したり、情報を送信したりすることがあります。 マイクロソフトの技術をアプリケーションに組み込んでいる場合、その技術にプライバシーに影響を与える可能性がある独自の動作が存在することがあります。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] では、アプリケーションの作成者またはエンド ユーザーが選択しない限り、アプリケーションからマイクロソフトに情報を送信することはありません。  
+マイクロソフトは、エンド ユーザーのプライバシー保護に力を入れています。 Windows Communication Foundation (WCF)、バージョン 3.0 を使用してアプリケーションをビルドするときに、アプリケーションにエンドユーザーのプライバシー影響を与える可能性があります。 たとえば、アプリケーションが明示的にユーザーの連絡先情報を収集することがあります。つまり、アプリケーションがインターネットを経由して Web サイトに情報を要求したり、情報を送信したりすることがあります。 マイクロソフトの技術をアプリケーションに組み込んでいる場合、その技術にプライバシーに影響を与える可能性がある独自の動作が存在することがあります。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] では、アプリケーションの作成者またはエンド ユーザーが選択しない限り、アプリケーションからマイクロソフトに情報を送信することはありません。  
   
 ## <a name="wcf-in-brief"></a>WCF の概要  
  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] とは、Microsoft .NET Framework を使用した分散メッセージング フレームワークで、これによって開発者は、分散アプリケーションを作成できます。 2 つのアプリケーション間で交換されるメッセージには、ヘッダーと本文情報が入ります。  
@@ -138,13 +126,13 @@ ms.lasthandoff: 01/19/2018
   
  削除されるキー :  
   
- \- For xmlns:wst="http://schemas.xmlsoap.org/ws/2004/04/trust" and xmlns:wst="http://schemas.xmlsoap.org/ws/2005/02/trust"  
+ \- Xmlns:wst ="http://schemas.xmlsoap.org/ws/2004/04/trust"および xmlns:wst ="http://schemas.xmlsoap.org/ws/2005/02/trust"  
   
  wst:BinarySecret  
   
  wst:Entropy  
   
- \-Xmlns:wsse ="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.1.xsd"と xmlns:wsse ="http://docs.oasis-open.org/wss/2005/xx/oasis-2005xx-wss-wssecurity-secext-1.1.xsd"  
+ \- Xmlns:wsse ="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.1.xsd"と xmlns:wsse ="http://docs.oasis-open.org/wss/2005/xx/oasis-2005xx-wss-wssecurity-secext-1.1.xsd"  
   
  wsse:Password  
   
@@ -152,13 +140,13 @@ ms.lasthandoff: 01/19/2018
   
  削除される個人情報の可能性がある情報 :  
   
- \-Xmlns:wsse ="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.1.xsd"と xmlns:wsse ="http://docs.oasis-open.org/wss/2005/xx/oasis-2005xx-wss-wssecurity-secext-1.1.xsd"  
+ \- Xmlns:wsse ="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.1.xsd"と xmlns:wsse ="http://docs.oasis-open.org/wss/2005/xx/oasis-2005xx-wss-wssecurity-secext-1.1.xsd"  
   
  wsse:Username  
   
  wsse:BinarySecurityToken  
   
- \- For xmlns:saml="urn:oasis:names:tc:SAML:1.0:assertion" the items in bold (below) are removed:  
+ \- Xmlns:saml ="urn: oasis: 名前: tc: SAML:1.0:assertion"(下記) 太字の項目が削除されます。  
   
  \<アサーション  
   
@@ -190,7 +178,7 @@ ms.lasthandoff: 01/19/2018
   
  -->  
   
- \</Conditions>?  
+ \</条件 > ですか?  
   
  \<アドバイス >  
   
@@ -200,7 +188,7 @@ ms.lasthandoff: 01/19/2018
   
  [any]*  
   
- \</Advice>?  
+ \</アドバイス > ですか?  
   
  <\!--抽象基本型  
   
@@ -222,7 +210,7 @@ ms.lasthandoff: 01/19/2018
   
  `</NameIdentifier>?`  
   
- \<SubjectConfirmation>  
+ \<SubjectConfirmation >  
   
  \<ConfirmationMethod > [anyUri]\</ConfirmationMethod > +  
   
@@ -282,7 +270,7 @@ ms.lasthandoff: 01/19/2018
   
  `<AttributeValue>[any]</AttributeValue>+`  
   
- \</Attribute>+  
+ \</属性 > +  
   
  \</AttributeStatement>*  
   
@@ -298,7 +286,7 @@ ms.lasthandoff: 01/19/2018
   
  \<アクション Namespace ="[uri]"> [文字列]\</Action > +  
   
- \<Evidence>  
+ \<証拠 >  
   
  \<AssertionIDReference > [ID]\</AssertionIDReference > +  
   
@@ -315,7 +303,7 @@ ms.lasthandoff: 01/19/2018
   
  次の名前空間の場合 :  
   
- xmlns:wst="http://schemas.xmlsoap.org/ws/2004/04/trust" と xmlns:wst="http://schemas.xmlsoap.org/ws/2005/02/trust" (有効なアクションがない場合など)  
+ xmlns:wst ="http://schemas.xmlsoap.org/ws/2004/04/trust"および xmlns:wst ="http://schemas.xmlsoap.org/ws/2005/02/trust"(たとえば、アクションがない場合利用)  
   
  キー交換を伴うこの本文要素について情報が削除されます。  
   
@@ -412,6 +400,6 @@ ms.lasthandoff: 01/19/2018
   
  Web サービス記述言語 (WSDL) には、ポートの定義が入ります。 各ポートには、エンドポイント アドレス、およびアプリケーションが使用するサービスを表すバインディングがあります。 WSDL の公開は、構成を使用して無効にできます。 コンピューターに保持される情報はありません。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [Windows Communication Foundation](http://msdn.microsoft.com/library/fd327ade-0260-4c40-adbe-b74645ba3277)  
  [セキュリティ](../../../docs/framework/wcf/feature-details/security.md)

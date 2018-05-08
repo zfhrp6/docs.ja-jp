@@ -1,27 +1,15 @@
 ---
-title: "タイミング動作の概要"
-ms.custom: 
+title: タイミング動作の概要
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - timing behaviors [WPF]
 - behaviors [WPF], timing
 ms.assetid: 5b714d46-bd46-48b8-b467-b4be89ba3091
-caps.latest.revision: "20"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 9305b69927a1ed0ad4f154ab972316f3dee951e9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 31a6b7d3b92e886d9c90fc39d69f31cf72b99666
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="timing-behaviors-overview"></a>タイミング動作の概要
 このトピックには、アニメーション、およびその他のタイミング動作がについて説明します<xref:System.Windows.Media.Animation.Timeline>オブジェクト。  
@@ -34,7 +22,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="timeline-types"></a>タイムラインの型  
  A<xref:System.Windows.Media.Animation.Timeline>時間のセグメントを表します。 用意されているプロパティを使用して、そのセグメントの長さ、開始時間、繰り返し回数、時間の進行の速度などを指定できます。  
   
- Timeline クラスを継承するクラスには、アニメーションやメディアの再生などの追加機能が用意されています。 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]次に示します<xref:System.Windows.Media.Animation.Timeline>型です。  
+ Timeline クラスを継承するクラスには、アニメーションやメディアの再生などの追加機能が用意されています。 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 次に示します<xref:System.Windows.Media.Animation.Timeline>型です。  
   
 |タイムラインの型|説明|  
 |-------------------|-----------------|  
@@ -127,13 +115,13 @@ ms.lasthandoff: 12/22/2017
 ## <a name="properties-that-control-the-speed-of-a-timeline"></a>タイムラインの速度を制御するプロパティ  
  <xref:System.Windows.Media.Animation.Timeline>クラスの速度を指定する 3 つのプロパティを提供します。  
   
--   <xref:System.Windows.Media.Animation.Timeline.SpeedRatio%2A>– 指定の時間の進行を親に対してそのレート、<xref:System.Windows.Media.Animation.Timeline>です。 1 より大きい値の処理速度の向上、<xref:System.Windows.Media.Animation.Timeline>とその子<xref:System.Windows.Media.Animation.Timeline>オブジェクト以外の値は 0 ~ 1 速度が低下することです。 1 つの値が示す<xref:System.Windows.Media.Animation.Timeline>親と同じ速度で進行します。 <xref:System.Windows.Media.Animation.Timeline.SpeedRatio%2A>コンテナ タイムラインの設定は、その子の<xref:System.Windows.Media.Animation.Timeline>オブジェクトもします。  
+-   <xref:System.Windows.Media.Animation.Timeline.SpeedRatio%2A> – 指定の時間の進行を親に対してそのレート、<xref:System.Windows.Media.Animation.Timeline>です。 1 より大きい値の処理速度の向上、<xref:System.Windows.Media.Animation.Timeline>とその子<xref:System.Windows.Media.Animation.Timeline>オブジェクト以外の値は 0 ~ 1 速度が低下することです。 1 つの値が示す<xref:System.Windows.Media.Animation.Timeline>親と同じ速度で進行します。 <xref:System.Windows.Media.Animation.Timeline.SpeedRatio%2A>コンテナ タイムラインの設定は、その子の<xref:System.Windows.Media.Animation.Timeline>オブジェクトもします。  
   
--   <xref:System.Windows.Media.Animation.Timeline.AccelerationRatio%2A>– の割合を指定する、<xref:System.Windows.Media.Animation.Timeline.Duration%2A>タイムラインの費やした加速します。 例については、次を参照してください。[する方法: 加速または減速アニメーション](../../../../docs/framework/wpf/graphics-multimedia/how-to-accelerate-or-decelerate-an-animation.md)です。 
+-   <xref:System.Windows.Media.Animation.Timeline.AccelerationRatio%2A> – の割合を指定する、<xref:System.Windows.Media.Animation.Timeline.Duration%2A>タイムラインの費やした加速します。 例については、次を参照してください。[する方法: 加速または減速アニメーション](../../../../docs/framework/wpf/graphics-multimedia/how-to-accelerate-or-decelerate-an-animation.md)です。 
   
--   <xref:System.Windows.Media.Animation.Timeline.DecelerationRatio%2A>-指定の割合、<xref:System.Windows.Media.Animation.Timeline.Duration%2A>タイムラインの費やした減速します。 例については、次を参照してください。[する方法: 加速または減速アニメーション](../../../../docs/framework/wpf/graphics-multimedia/how-to-accelerate-or-decelerate-an-animation.md)です。  
+-   <xref:System.Windows.Media.Animation.Timeline.DecelerationRatio%2A> -指定の割合、<xref:System.Windows.Media.Animation.Timeline.Duration%2A>タイムラインの費やした減速します。 例については、次を参照してください。[する方法: 加速または減速アニメーション](../../../../docs/framework/wpf/graphics-multimedia/how-to-accelerate-or-decelerate-an-animation.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)  
  [アニメーションとタイミング システムの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-and-timing-system-overview.md)  
  [タイミング イベントの概要](../../../../docs/framework/wpf/graphics-multimedia/timing-events-overview.md)  

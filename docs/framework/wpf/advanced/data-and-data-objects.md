@@ -1,13 +1,6 @@
 ---
-title: "データとデータ オブジェクト"
-ms.custom: 
+title: データとデータ オブジェクト
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,16 +9,11 @@ helpviewer_keywords:
 - DataFormats class [WPF]
 - DataObject class [WPF]
 ms.assetid: 5967d557-1867-420f-a524-ae3af78402da
-caps.latest.revision: "5"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: cb2354b61a0433981675ba55978f31937212cabc
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ff596dc7428c9d105a27999f216d33e735e35a22
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="data-and-data-objects"></a>データとデータ オブジェクト
 ドラッグ アンド ドロップ操作の一部として転送されるデータは、データ オブジェクトに格納されます。  概念的には、データ オブジェクトは、1 つ以上の次のペアで構成されます。  
@@ -47,7 +35,7 @@ ms.lasthandoff: 12/22/2017
 |<xref:System.Windows.IDataObject.GetFormats%2A>|このデータ オブジェクトのデータでは、またはに変換できる形式の一覧を返します。|  
 |<xref:System.Windows.IDataObject.SetData%2A>|このデータ オブジェクトに指定されたデータを格納します。|  
   
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]基本実装を提供<xref:System.Windows.IDataObject>で、<xref:System.Windows.DataObject>クラスです。 ストック<xref:System.Windows.DataObject>クラスは多くの一般的なデータ転送のシナリオのための十分なです。  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 基本実装を提供<xref:System.Windows.IDataObject>で、<xref:System.Windows.DataObject>クラスです。 ストック<xref:System.Windows.DataObject>クラスは多くの一般的なデータ転送のシナリオのための十分なです。  
   
  ビットマップ、CSV、ファイル、HTML、RTF、文字列、テキスト、およびオーディオなど、いくつかの定義済みの形式があります。 提供される定義済みのデータ形式については[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]を参照してください、<xref:System.Windows.DataFormats>クラスのリファレンス トピックです。  
   
@@ -86,7 +74,7 @@ ms.lasthandoff: 12/22/2017
  使用可能なデータ形式のデータ オブジェクトのクエリを実行するコードの例については、次を参照してください。[データ オブジェクト内のデータ形式を一覧表示](../../../../docs/framework/wpf/advanced/how-to-list-the-data-formats-in-a-data-object.md)です。  特定のデータ形式が存在するためのデータ オブジェクトを照会する例については、次を参照してください。[データ形式が存在かどうかを判断データ オブジェクトで](../../../../docs/framework/wpf/advanced/how-to-determine-if-a-data-format-is-present-in-a-data-object.md)です。  
   
 ### <a name="retrieving-data-from-a-data-object"></a>データ オブジェクトからのデータの取得  
- いずれかの呼び出しでは、特定の形式でデータ オブジェクトからデータを取得するだけで、<xref:System.Windows.DataObject.GetData%2A>メソッドと目的のデータ形式を指定します。  1 つ、<xref:System.Windows.DataObject.GetDataPresent%2A>特定のデータ形式の存在をチェックするメソッドを使用できます。  <xref:System.Windows.DataObject.GetData%2A>内のデータを返します、<xref:System.Object>以外の場合は、データ形式によってこのオブジェクトは、型固有のコンテナーにキャストすることができます。  
+ いずれかの呼び出しでは、特定の形式でデータ オブジェクトからデータを取得するだけで、<xref:System.Windows.DataObject.GetData%2A>メソッドと目的のデータ形式を指定します。  1 つ、<xref:System.Windows.DataObject.GetDataPresent%2A>特定のデータ形式の存在をチェックするメソッドを使用できます。  <xref:System.Windows.DataObject.GetData%2A> 内のデータを返します、<xref:System.Object>以外の場合は、データ形式によってこのオブジェクトは、型固有のコンテナーにキャストすることができます。  
   
  次のコード例を使用して、<xref:System.Windows.DataObject.GetDataPresent%28System.String%29>のオーバー ロードを確認して、指定したデータ形式が使用可能なかどうか (ネイティブまたは自動変換)。 例を使用してデータを取得する場合は、指定した書式を使用できる、<xref:System.Windows.DataObject.GetData%28System.String%29>メソッドです。  
   

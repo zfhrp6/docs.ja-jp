@@ -1,13 +1,6 @@
 ---
-title: "方法 : ストーリーボードを使用せずにプロパティをアニメーション化する"
-ms.custom: 
+title: '方法 : ストーリーボードを使用せずにプロパティをアニメーション化する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,16 +10,11 @@ helpviewer_keywords:
 - local animation [WPF]
 - animation [WPF], non-Storyboard (local)
 ms.assetid: d411db70-4df7-487d-82bc-95a7c1b2e7f8
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 4a1292dae3a6fc7e86387ecbe3bf2b1da6912cc0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 18f8fb4edf5f71904335180e43dd65bd9910bdef
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-animate-a-property-without-using-a-storyboard"></a>方法 : ストーリーボードを使用せずにプロパティをアニメーション化する
 この例を使用せず、プロパティにアニメーションを適用する方法を示しています、<xref:System.Windows.Media.Animation.Storyboard>です。  
@@ -47,7 +35,7 @@ ms.lasthandoff: 12/22/2017
   
  使用せずにアニメーション化するには、その他の方法がある<xref:System.Windows.Media.Animation.Storyboard>オブジェクトです。 詳細については、次を参照してください。[プロパティ アニメーションの技術概要](../../../../docs/framework/wpf/graphics-multimedia/property-animation-techniques-overview.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Media.Animation.AnimationTimeline>  
  <xref:System.Windows.Media.Animation.Animatable.BeginAnimation%2A>  
  <xref:System.Windows.Media.Animation>  

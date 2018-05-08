@@ -1,27 +1,15 @@
 ---
-title: "ClearType レジストリの設定"
-ms.custom: 
+title: ClearType レジストリの設定
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - ClearType [WPF], registry settings
 - typography [WPF], ClearType registry settings
 ms.assetid: 56f314bb-b30b-4f67-8492-8b8a9fa432ae
-caps.latest.revision: "18"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: d915af4ee436bb6c661a7b412b0e36702191339a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: cacdc47a35bfd197bcac29edc6f7c780d3b8578f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="cleartype-registry-settings"></a>ClearType レジストリの設定
 このトピックの概要を説明する、 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA#tla_ct](../../../../includes/tlasharptla-ct-md.md)]によって使用されているレジストリ設定[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]アプリケーションです。  
@@ -29,7 +17,7 @@ ms.lasthandoff: 12/22/2017
   
 <a name="overview"></a>   
 ## <a name="technology-overview"></a>テクノロジの概要  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]ディスプレイ デバイスを使用するテキストを表示するアプリケーション[!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)]機能強化された閲覧エクスペリエンスを提供します。 [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] は、ラップトップや Pocket PC の画面、フラット パネル モニターなど、既存の LCD (液晶ディスプレイ) でのテキストの読みやすさを向上させるために [!INCLUDE[TLA#tla_ms](../../../../includes/tlasharptla-ms-md.md)] が開発したソフトウェア テクノロジです。 [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] は、LCD 画面の各ピクセル内の個々の垂直カラー ストライプ要素にアクセスすることによって機能します。 詳細については[!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)]を参照してください[ClearType 概要](../../../../docs/framework/wpf/advanced/cleartype-overview.md)です。  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ディスプレイ デバイスを使用するテキストを表示するアプリケーション[!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)]機能強化された閲覧エクスペリエンスを提供します。 [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] は、ラップトップや Pocket PC の画面、フラット パネル モニターなど、既存の LCD (液晶ディスプレイ) でのテキストの読みやすさを向上させるために [!INCLUDE[TLA#tla_ms](../../../../includes/tlasharptla-ms-md.md)] が開発したソフトウェア テクノロジです。 [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] は、LCD 画面の各ピクセル内の個々の垂直カラー ストライプ要素にアクセスすることによって機能します。 詳細については[!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)]を参照してください[ClearType 概要](../../../../docs/framework/wpf/advanced/cleartype-overview.md)です。  
   
  表示されるテキストを[!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)]さまざまな表示のデバイスで表示したときに大幅に異なる表示されることができます。 たとえば、モニターの数が少ない実装青、緑、赤の順序でカラー ストライプ要素ではなく、一般的な赤、緑、青 ( [!INCLUDE[TLA#tla_rgb](../../../../includes/tlasharptla-rgb-md.md)]) 順序。  
   
@@ -39,7 +27,7 @@ ms.lasthandoff: 12/22/2017
   
 <a name="registry_settings"></a>   
 ## <a name="registry-settings"></a>レジストリ設定  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]制御するための 4 つのレジストリ設定の指定[!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)]機能。  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 制御するための 4 つのレジストリ設定の指定[!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)]機能。  
   
 |設定|説明|  
 |-------------|-----------------|  
@@ -71,7 +59,7 @@ ms.lasthandoff: 12/22/2017
  ![レジストリ エディターの ClearType 設定](../../../../docs/framework/wpf/advanced/media/cleartyperegistry01.png "ClearTypeRegistry01")  
   
 > [!NOTE]
->  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]アプリケーションとそうでないか 2 つのモードのいずれかのテキストのレンダリング[!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)]です。 なしのテキストを表示する際に[!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)]グレースケールのレンダリングと呼びます。  
+>  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションとそうでないか 2 つのモードのいずれかのテキストのレンダリング[!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)]です。 なしのテキストを表示する際に[!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)]グレースケールのレンダリングと呼びます。  
   
 <a name="gamma_level"></a>   
 ## <a name="gamma-level"></a>ガンマ レベル  
@@ -125,6 +113,6 @@ ms.lasthandoff: 12/22/2017
   
  ![レジストリ エディターの ClearType 設定](../../../../docs/framework/wpf/advanced/media/cleartyperegistry01.png "ClearTypeRegistry01")  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ClearType の概要](../../../../docs/framework/wpf/advanced/cleartype-overview.md)  
  [ClearType アンチエイリアシング](https://msdn.microsoft.com/library/dd183433(v=vs.85).aspx)

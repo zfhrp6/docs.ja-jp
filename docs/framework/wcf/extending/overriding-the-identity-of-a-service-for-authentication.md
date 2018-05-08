@@ -1,29 +1,15 @@
 ---
 title: 認証のためのサービスの ID のオーバーライド
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: d613a22b-07d7-41a4-bada-1adc653b9b5d
-caps.latest.revision: 9
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: f5383a1d241134318ce48c8c0c9f39f831396730
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
-ms.translationtype: MT
+ms.openlocfilehash: 6fbdd7f09c7ae15368972afbce896c5ecb39ccbe
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="overriding-the-identity-of-a-service-for-authentication"></a>認証のためのサービスの ID のオーバーライド
 クライアント資格情報の種類を選択すると、サービス メタデータで公開される ID の種類が指定されるため、通常、サービスで ID を設定する必要はありません。 たとえば、次の構成コードを使用して、 [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)要素とセット、`clientCredentialType`属性を Windows です。  
@@ -37,7 +23,7 @@ ms.lasthandoff: 04/30/2018
  Id 設定を示すサンプル アプリケーションを参照してください。[サービス Id サンプル](../../../../docs/framework/wcf/samples/service-identity-sample.md)です。 サービス id の詳細については、次を参照してください。[サービス Id と認証](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)です。  
   
 ## <a name="kerberos-authentication-and-identity"></a>Kerberos 認証と ID  
- 既定では、Windows 資格情報を使用するサービスが構成されている場合、 [ \<identity >](../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)要素を含む、 [ \<userPrincipalName >](../../../../docs/framework/configure-apps/file-schema/wcf/userprincipalname.md)または[ \<servicePrincipalName >](../../../../docs/framework/configure-apps/file-schema/wcf/serviceprincipalname.md)要素は、WSDL で生成します。 サービスが実行されている場合、 `LocalSystem`、 `LocalService`、または`NetworkService`アカウント、サービス プリンシパル名 (SPN) が既定の形式で生成された`host/` \< *hostname*> ためこれらのアカウントでは、コンピューターの SPN のデータにアクセスします。 サービスが別のアカウントで実行されている場合[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]形式の UPN を生成\< *username*>@<*domainName*`>`です。 これらが生成されるのは、Kerberos 認証では、サービスを認証するために UPN または SPN をクライアントに提供する必要があるからです。  
+ 既定では、Windows 資格情報を使用するサービスが構成されている場合、 [ \<identity >](../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)要素を含む、 [ \<userPrincipalName >](../../../../docs/framework/configure-apps/file-schema/wcf/userprincipalname.md)または[ \<servicePrincipalName >](../../../../docs/framework/configure-apps/file-schema/wcf/serviceprincipalname.md)要素は、WSDL で生成します。 サービスが実行されている場合、 `LocalSystem`、 `LocalService`、または`NetworkService`アカウント、サービス プリンシパル名 (SPN) が既定の形式で生成された`host/` \< *hostname*> ためこれらのアカウントでは、コンピューターの SPN のデータにアクセスします。 Windows Communication Foundation (WCF) の形式の UPN を生成、サービスが別のアカウントで実行されている場合\< *username*>@<*domainName* `>`. これらが生成されるのは、Kerberos 認証では、サービスを認証するために UPN または SPN をクライアントに提供する必要があるからです。  
   
  Setspn.exe ツールを使用して、他の SPN をドメイン内のサービスのアカウントに登録することもできます。 登録した SPN は、そのサービスの ID として使用できます。 このツールをダウンロードするを参照してください。 [Windows 2000 リソース キット ツール: Setspn.exe](http://go.microsoft.com/fwlink/?LinkId=91752)です。 ツールの詳細については、次を参照してください。 [Setspn の概要](http://go.microsoft.com/fwlink/?LinkId=61374)です。  
   

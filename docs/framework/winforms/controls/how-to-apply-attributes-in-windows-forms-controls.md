@@ -1,13 +1,6 @@
 ---
-title: "方法 : Windows フォーム コントロールに属性を適用する"
-ms.custom: 
+title: '方法 : Windows フォーム コントロールに属性を適用する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,16 +9,11 @@ helpviewer_keywords:
 - attributes [Windows Forms], applying
 - Windows Forms controls, applying attributes
 ms.assetid: af0a3f7f-155b-4ba1-83c4-9cf721331a06
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 9e4d5bfb445ce6ed37ad1dc63d92fde833ac9870
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 49c2aaa48a48e33a71b5112db31991975011551d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-apply-attributes-in-windows-forms-controls"></a>方法 : Windows フォーム コントロールに属性を適用する
 デザイン環境と正しく通信してを実行時に正しく実行するコンポーネントとコントロールを開発するには、クラスとメンバーに属性を正しく適用する必要があります。  
@@ -58,7 +46,7 @@ ms.lasthandoff: 12/22/2017
  [!code-vb[System.ComponentModel.AttributesDemoControl#20](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.AttributesDemoControl/VB/attributesdemocontrol.vb#20)]  
   
 ### <a name="typeconverter-attribute"></a>TypeConverter 属性  
- <xref:System.ComponentModel.TypeConverterAttribute>一般的に使用される別のクラス レベル属性です。 次のコード例の使用を示しています、`LogEntry`クラスです。 この例では、実装も示しています、<xref:System.ComponentModel.TypeConverter>の`LogEntry`と呼ばれる型`LogEntryTypeConverter`です。  
+ <xref:System.ComponentModel.TypeConverterAttribute> 一般的に使用される別のクラス レベル属性です。 次のコード例の使用を示しています、`LogEntry`クラスです。 この例では、実装も示しています、<xref:System.ComponentModel.TypeConverter>の`LogEntry`と呼ばれる型`LogEntryTypeConverter`です。  
   
  [!code-csharp[System.ComponentModel.AttributesDemoControl#5](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.AttributesDemoControl/CS/attributesdemocontrol.cs#5)]
  [!code-vb[System.ComponentModel.AttributesDemoControl#5](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.AttributesDemoControl/VB/attributesdemocontrol.vb#5)]  
@@ -88,7 +76,7 @@ ms.lasthandoff: 12/22/2017
   
 -   ホストするフォーム、`AttributesDemoControl`への参照が必要です、`AttributesDemoControl`アセンブリを構築できるようにします。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.IComparable>  
  <xref:System.Windows.Forms.DataGridView>  
  [.NET Framework を使用したカスタム Windows フォーム コントロールの開発](../../../../docs/framework/winforms/controls/developing-custom-windows-forms-controls.md)  

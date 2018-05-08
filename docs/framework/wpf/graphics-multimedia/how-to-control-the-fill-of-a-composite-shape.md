@@ -1,29 +1,17 @@
 ---
-title: "方法 : 複合図形の塗りつぶしを制御する"
-ms.custom: 
+title: '方法 : 複合図形の塗りつぶしを制御する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - shapes [WPF], composite [WPF], controlling fill
 - composite shapes [WPF], controlling fill
 - graphics [WPF], composite shapes
 - fill [WPF], controlling
 ms.assetid: c1c94575-9eca-48a5-a49a-2ec65259f229
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: bb7956ab70dc30c7d090b9616cc603df2dc0b4e1
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a9a17434f11f432f6446e09bd853ed0d2f23fbe8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-control-the-fill-of-a-composite-shape"></a>方法 : 複合図形の塗りつぶしを制御する
 <xref:System.Windows.Media.GeometryGroup.FillRule%2A>のプロパティ、<xref:System.Windows.Media.GeometryGroup>または<xref:System.Windows.Media.PathGeometry>、複合図形を使用して特定の時点のジオメトリの一部であるかどうかを決定する「ルール」を指定します。 2 つの値がある<xref:System.Windows.Media.FillRule>:<xref:System.Windows.Media.FillRule.EvenOdd>と<xref:System.Windows.Media.FillRule.Nonzero>です。 以下のセクションでは、これら 2 つの規則の使用方法を説明します。  
@@ -66,12 +54,12 @@ ms.lasthandoff: 12/22/2017
   
  ![ダイアグラム: 0 以外の FillRule プロパティ値](../../../../docs/framework/wpf/graphics-multimedia/media/fillrulenonzero4.png "FillRuleNonZero4")  
   
- **注:**の目的で<xref:System.Windows.Media.FillRule>、すべての図形が終了と見なされます。 セグメントにすき間がある場合は、架空の線を描画して、そのすき間を閉じます。 上の例では、リングに小さなすき間があります。 この場合、このすき間を通る射線は、別の方向に伸びる射線とは異なる結果を生じると思えるかもしれません。 このようなギャップと「虚数セグメント」のいずれかの拡大の図を次に示します (セグメントを適用する目的で描画される、 <xref:System.Windows.Media.FillRule>) を終了します。  
+ **注:** の目的で<xref:System.Windows.Media.FillRule>、すべての図形が終了と見なされます。 セグメントにすき間がある場合は、架空の線を描画して、そのすき間を閉じます。 上の例では、リングに小さなすき間があります。 この場合、このすき間を通る射線は、別の方向に伸びる射線とは異なる結果を生じると思えるかもしれません。 このようなギャップと「虚数セグメント」のいずれかの拡大の図を次に示します (セグメントを適用する目的で描画される、 <xref:System.Windows.Media.FillRule>) を終了します。  
   
  ![ダイアグラム: FillRule の場合、セグメントは常に閉じられる](../../../../docs/framework/wpf/graphics-multimedia/media/fillruleclosedshapes.png "FillRuleClosedShapes")  
   
 ## <a name="example"></a>例  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [複合図形を作成する](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-composite-shape.md)  
  [ジオメトリの概要](../../../../docs/framework/wpf/graphics-multimedia/geometry-overview.md)

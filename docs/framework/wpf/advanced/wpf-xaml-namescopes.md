@@ -1,13 +1,6 @@
 ---
-title: "WPF XAML 名前スコープ"
-ms.custom: 
+title: WPF XAML 名前スコープ
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - namescopes [WPF]
 - styles [WPF], namescopes in
@@ -17,16 +10,11 @@ helpviewer_keywords:
 - XAML [WPF], namescopes
 - classes [WPF], FrameworkContentElement
 ms.assetid: 52bbf4f2-15fc-40d4-837b-bb4c21ead7d4
-caps.latest.revision: "19"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: c4caaa9453cb3cec76a8606afb5601919eba607a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: c13dba48d21235c57be64d90b6547902e0428a6e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="wpf-xaml-namescopes"></a>WPF XAML 名前スコープ
 XAML 名前スコープを識別する概念のオブジェクトを XAML で定義されています。 XAML 名前スコープ内の名前は、オブジェクト ツリー内のオブジェクトの XAML で定義された名前と、対応するインスタンス間のリレーションシップを確立するために使用できます。 XAML 名前スコープ通常、 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] XAML アプリケーションのルート個々 の XAML ページを読み込むときに、マネージ コードは作成されます。 プログラミング オブジェクトとしての XAML 名前スコープが定義されている、<xref:System.Windows.Markup.INameScope>インターフェイスし、実際のクラスによって実装されても<xref:System.Windows.NameScope>します。  
@@ -47,7 +35,7 @@ XAML 名前スコープを識別する概念のオブジェクトを XAML で定
 ### <a name="adding-objects-to-runtime-object-trees"></a>オブジェクトをランタイム オブジェクト ツリーに追加します。  
  XAML が解析した時点では、WPF XAML 名前スコープが作成され、定義の時点を表します。 オブジェクトをオブジェクト ツリーの時点にそのツリーが生成される XAML が解析された後で追加した場合、`Name`または`x:Name`新しいオブジェクトの値が XAML 名前スコープ内の情報を自動的に更新されません。 XAML が読み込まれた後に、WPF XAML 名前スコープにオブジェクトの名前を追加するには、適切な実装を呼び出す必要があります<xref:System.Windows.Markup.INameScope.RegisterName%2A>XAML 名前スコープを定義するオブジェクトのルートである通常 XAML ページ。 名前が登録されていない場合、追加するオブジェクトで参照できません名前メソッドによってなど<xref:System.Windows.FrameworkElement.FindName%2A>、およびアニメーションのターゲットの名前を使用することはできません。  
   
- アプリケーション開発者向けの最も一般的なシナリオは、使用する<xref:System.Windows.FrameworkElement.RegisterName%2A>ページの現在のルートに XAML 名前スコープに名前を登録します。 <xref:System.Windows.FrameworkElement.RegisterName%2A>ストーリー ボードの重要なシナリオの一部のアニメーションでそのターゲット オブジェクトです。 詳細については、次を参照してください。[ストーリー ボードの概要](../../../../docs/framework/wpf/graphics-multimedia/storyboards-overview.md)です。  
+ アプリケーション開発者向けの最も一般的なシナリオは、使用する<xref:System.Windows.FrameworkElement.RegisterName%2A>ページの現在のルートに XAML 名前スコープに名前を登録します。 <xref:System.Windows.FrameworkElement.RegisterName%2A> ストーリー ボードの重要なシナリオの一部のアニメーションでそのターゲット オブジェクトです。 詳細については、次を参照してください。[ストーリー ボードの概要](../../../../docs/framework/wpf/graphics-multimedia/storyboards-overview.md)です。  
   
  呼び出す場合<xref:System.Windows.FrameworkElement.RegisterName%2A>XAML 名前スコープを定義するオブジェクト以外のオブジェクト、名前はまだ登録内で、呼び出し元のオブジェクトが保持されている XAML 名前スコープに呼び出したいた場合と<xref:System.Windows.FrameworkElement.RegisterName%2A>オブジェクトを定義する XAML 名前スコープにします。  
   
@@ -82,9 +70,9 @@ XAML 名前スコープを識別する概念のオブジェクトを XAML で定
   
 <a name="Namescopes_and_Name_related_APIs"></a>   
 ## <a name="xaml-namescopes-and-name-related-apis"></a>XAML 名前空間と名前に関連する Api  
- <xref:System.Windows.FrameworkElement><xref:System.Windows.FrameworkElement.FindName%2A>、<xref:System.Windows.FrameworkElement.RegisterName%2A>と<xref:System.Windows.FrameworkElement.UnregisterName%2A>メソッドです。 これらのメソッドを呼び出すオブジェクトに、XAML 名前空間が所有している場合、メソッドは、関連する XAML 名前スコープのメソッドを呼び出します。 それ以外の場合、親要素がオンになって、XAML 名前空間を所有するいると、XAML 名前空間が見つかるまでこのプロセスは、再帰的に (動作のために、XAML プロセッサ、存在が保証されるルートにある XAML 名前スコープ)。 <xref:System.Windows.FrameworkContentElement>例外が、類似の動作がありますをありません<xref:System.Windows.FrameworkContentElement>XAML 名前スコープを所有することです。 メソッドが上に存在<xref:System.Windows.FrameworkContentElement>呼び出しを最終的に転送できるように、<xref:System.Windows.FrameworkElement>親要素です。  
+ <xref:System.Windows.FrameworkElement> <xref:System.Windows.FrameworkElement.FindName%2A>、<xref:System.Windows.FrameworkElement.RegisterName%2A>と<xref:System.Windows.FrameworkElement.UnregisterName%2A>メソッドです。 これらのメソッドを呼び出すオブジェクトに、XAML 名前空間が所有している場合、メソッドは、関連する XAML 名前スコープのメソッドを呼び出します。 それ以外の場合、親要素がオンになって、XAML 名前空間を所有するいると、XAML 名前空間が見つかるまでこのプロセスは、再帰的に (動作のために、XAML プロセッサ、存在が保証されるルートにある XAML 名前スコープ)。 <xref:System.Windows.FrameworkContentElement> 例外が、類似の動作がありますをありません<xref:System.Windows.FrameworkContentElement>XAML 名前スコープを所有することです。 メソッドが上に存在<xref:System.Windows.FrameworkContentElement>呼び出しを最終的に転送できるように、<xref:System.Windows.FrameworkElement>親要素です。  
   
- <xref:System.Windows.NameScope.SetNameScope%2A>既存のオブジェクトに新しい XAML 名前スコープをマップに使用されます。 呼び出すことができます<xref:System.Windows.NameScope.SetNameScope%2A>も複数回リセットまたは XAML をオフにするためにスコープがするではありません一般的な使用方法です。 また、<xref:System.Windows.NameScope.GetNameScope%2A>コードからは通常使用されません。  
+ <xref:System.Windows.NameScope.SetNameScope%2A> 既存のオブジェクトに新しい XAML 名前スコープをマップに使用されます。 呼び出すことができます<xref:System.Windows.NameScope.SetNameScope%2A>も複数回リセットまたは XAML をオフにするためにスコープがするではありません一般的な使用方法です。 また、<xref:System.Windows.NameScope.GetNameScope%2A>コードからは通常使用されません。  
   
 ### <a name="xaml-namescope-implementations"></a>XAML 名前スコープの実装  
  次のクラスを実装<xref:System.Windows.Markup.INameScope>直接。  
@@ -97,9 +85,9 @@ XAML 名前スコープを識別する概念のオブジェクトを XAML で定
   
 -   <xref:System.Windows.FrameworkTemplate>  
   
- <xref:System.Windows.ResourceDictionary>XAML の名前や名前スコープ; を使用しません。使用してキー代わりに、ディクショナリの実装になっているためです。 唯一の理由<xref:System.Windows.ResourceDictionary>実装<xref:System.Windows.Markup.INameScope>true XAML 名前スコープの違いをわかりやすくユーザー コードに例外が発生にできるようにする方法とは、<xref:System.Windows.ResourceDictionary>キーを処理および XAML 名前スコープに適用されなかったことを確実にも、<xref:System.Windows.ResourceDictionary>親要素です。  
+ <xref:System.Windows.ResourceDictionary> XAML の名前や名前スコープ; を使用しません。使用してキー代わりに、ディクショナリの実装になっているためです。 唯一の理由<xref:System.Windows.ResourceDictionary>実装<xref:System.Windows.Markup.INameScope>true XAML 名前スコープの違いをわかりやすくユーザー コードに例外が発生にできるようにする方法とは、<xref:System.Windows.ResourceDictionary>キーを処理および XAML 名前スコープに適用されなかったことを確実にも、<xref:System.Windows.ResourceDictionary>親要素です。  
   
- <xref:System.Windows.FrameworkTemplate>および<xref:System.Windows.Style>実装<xref:System.Windows.Markup.INameScope>明示的なインターフェイスの定義を使用します。 明示的な実装を介してアクセスされるときに通常の動作にこれらの XAML 名前スコープを許可する、<xref:System.Windows.Markup.INameScope>インターフェイスは XAML 名前スコープが伝達される方法で[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]内部プロセスです。 明示的なインターフェイスの定義がの従来の API サーフェイスの一部ではないが、<xref:System.Windows.FrameworkTemplate>と<xref:System.Windows.Style>頻度の低いを呼び出す必要があるため、<xref:System.Windows.Markup.INameScope>メソッド<xref:System.Windows.FrameworkTemplate>と<xref:System.Windows.Style>はその他の API を使用して直接、または代わりにように<xref:System.Windows.FrameworkElement.GetTemplateChild%2A>です。  
+ <xref:System.Windows.FrameworkTemplate> および<xref:System.Windows.Style>実装<xref:System.Windows.Markup.INameScope>明示的なインターフェイスの定義を使用します。 明示的な実装を介してアクセスされるときに通常の動作にこれらの XAML 名前スコープを許可する、<xref:System.Windows.Markup.INameScope>インターフェイスは XAML 名前スコープが伝達される方法で[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]内部プロセスです。 明示的なインターフェイスの定義がの従来の API サーフェイスの一部ではないが、<xref:System.Windows.FrameworkTemplate>と<xref:System.Windows.Style>頻度の低いを呼び出す必要があるため、<xref:System.Windows.Markup.INameScope>メソッド<xref:System.Windows.FrameworkTemplate>と<xref:System.Windows.Style>はその他の API を使用して直接、または代わりにように<xref:System.Windows.FrameworkElement.GetTemplateChild%2A>です。  
   
  次のクラスを使用して、独自の XAML 名前スコープを定義する、<xref:System.Windows.NameScope?displayProperty=nameWithType>ヘルパー クラスおよびその XAML 名前スコープの実装を通じてへの接続、<xref:System.Windows.NameScope.NameScope%2A?displayProperty=nameWithType>添付プロパティ。  
   
@@ -107,6 +95,6 @@ XAML 名前スコープを識別する概念のオブジェクトを XAML で定
   
 -   <xref:System.Windows.FrameworkContentElement>  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [XAML 名前空間および WPF XAML の名前空間の割り当て](../../../../docs/framework/wpf/advanced/xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md)  
  [x:Name ディレクティブ](../../../../docs/framework/xaml-services/x-name-directive.md)

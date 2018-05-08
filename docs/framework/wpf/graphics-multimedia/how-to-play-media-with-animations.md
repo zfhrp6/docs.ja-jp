@@ -1,29 +1,17 @@
 ---
-title: "方法 : アニメーションを使用してメディアを再生する"
-ms.custom: 
+title: '方法 : アニメーションを使用してメディアを再生する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - multimedia [WPF], playback with animations
 - playback of media [WPF], with animations
 - animation [WPF], media playback with
 - media [WPF], playback with animations
 ms.assetid: 8982b7b7-1c6c-4b24-8801-b328862975f5
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 44ebb89c25fc37292f82533c929aae44854db5c9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 21c9b35828dca03c05def11cff22f1f1e33d45cc
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-play-media-with-animations"></a>方法 : アニメーションを使用してメディアを再生する
 この例を使用して、同時にメディアおよびアニメーションを再生する方法を示しています、<xref:System.Windows.Media.MediaTimeline>と<xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames>、同じクラス<xref:System.Windows.Media.Animation.Storyboard>です。  
@@ -35,7 +23,7 @@ ms.lasthandoff: 12/22/2017
   
  [!code-xaml[MediaGallery_snippet#MediaTimelinePlusAnimationExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/MediaGallery_snippet/CSharp/MediaTimelinePlusAnimationExample.xaml#mediatimelineplusanimationexamplewholepage)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Media.MediaTimeline>  
  <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames>  
  <xref:System.Windows.Media.Animation.Storyboard>  

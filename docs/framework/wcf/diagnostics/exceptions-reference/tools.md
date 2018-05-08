@@ -1,29 +1,15 @@
 ---
 title: ツール
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 89c907f9-313f-408c-992a-631f1eadf1da
-caps.latest.revision: ''
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 5badbb9142261fc1dc6c2b2d5af3c89c7af776b6
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: 6c4ada74c2fc6aba84eb1fe46f4d7cdee9978d13
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="tools"></a>ツール
-ここでは、[!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] ツールによって生成されるすべての例外を示します。  
+このトピックでは、Windows Communication Foundation (WCF) ツールによって生成されたすべての例外を示します。  
   
 ## <a name="exception-list"></a>例外の一覧  
   
@@ -88,7 +74,7 @@ ms.lasthandoff: 03/26/2018
 |ErrInputConflictsWithMode|指定された対象から読み取った入力が、他のオプションと矛盾しています。|  
 |ErrDuplicateValuePassedToTypeArg|指定された値が指定されたオプションに繰り返し、渡されました。 各型は 1 回しか指定できません。|  
 |ErrInputEPRFileParseError|指定された対象からエンドポイント参照を読み取ることができません。 XML の形式が正しく、有効であることを確認してください。|  
-|ErrCouldNotCreateCodeProvider|/{1} 引数に渡された指定された値に対してコード プロバイダーを作成できません。 コード プロバイダーが適切にインストールおよび構成されていることを確認してください。|  
+|ErrCouldNotCreateCodeProvider|渡された指定された値に対してコード プロバイダーを作成することはできません、/{1}引数。 コード プロバイダーが適切にインストールおよび構成されていることを確認してください。|  
 |ErrPathTooLongDirOnly|結果の指定されたパスが長すぎます。 指定された引数をレビューしてください。|  
 |HelpDataContractSerializer|シリアル化と逆シリアル化に DataContract シリアライザーを使用するデータ型を生成します。|  
 |ErrUnableToExportEndpoint|指定された名前空間の指定されたエンドポイント名を、アセンブリに対して読み込んだ構成ファイル内の指定されたサービス型にエクスポートしているときにエラーが発生しました。|  
@@ -138,7 +124,7 @@ ms.lasthandoff: 03/26/2018
 |GeneratingFiles|ファイルを生成しています...|  
 |ErrCannotSpecifyMultipleMappingsForNamespace|無効な値が、指定されたオプションに渡されました。 指定されたターゲット名前空間は、指定された複数の CLR 名前空間にマップできません。|  
 |ErrCouldNotLoadReferenceAssemblyAt|指定された参照アセンブリを読み込めません。|  
-|ParametersOut|\<file>|  
+|ParametersOut|\<ファイル >|  
 |NoCodeWasGeneratedSuggestDCOnly|スキーマからコントラクトを生成するには、指定されたオプションを使用してください。|  
 |ErrUnableToLoadInputConfig|指定された構成ファイルを読み込むことができません。|  
 |ErrUnexpectedDelimiter|オプションの先頭には、無効な引数区切り記号 (':' または '=') を使用できません。|  
