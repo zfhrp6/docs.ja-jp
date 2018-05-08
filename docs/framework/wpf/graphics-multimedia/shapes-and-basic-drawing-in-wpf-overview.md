@@ -1,13 +1,6 @@
 ---
-title: "WPF での図形と基本描画の概要"
-ms.custom: 
+title: WPF での図形と基本描画の概要
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -19,16 +12,11 @@ helpviewer_keywords:
 - vectors [WPF], drawing
 - Shape objects [WPF]
 ms.assetid: 66d7a6d6-e3b6-47bc-8dfe-8a1b26f7d901
-caps.latest.revision: "19"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 2912215cb8fb0090cef58e0201cc355da1f0bf19
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: adbf982da25ff445d277b7c1b5911217d9825c02
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="shapes-and-basic-drawing-in-wpf-overview"></a>WPF での図形と基本描画の概要
 このトピックでを使用して描画する方法の概要<xref:System.Windows.Shapes.Shape>オブジェクト。 A<xref:System.Windows.Shapes.Shape>の種類は、<xref:System.Windows.UIElement>形を画面に描画することができます。 UI 要素であるため<xref:System.Windows.Shapes.Shape>内のオブジェクトで使用できます<xref:System.Windows.Controls.Panel>要素およびほとんどのコントロールです。  
@@ -38,7 +26,7 @@ ms.lasthandoff: 12/22/2017
   
 <a name="shapes"></a>   
 ## <a name="shape-objects"></a>図形オブジェクト  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]すぐに使用できるいくつか提供<xref:System.Windows.Shapes.Shape>オブジェクト。  すべての図形オブジェクトの継承、<xref:System.Windows.Shapes.Shape>クラスです。 使用可能な図形オブジェクトには、 <xref:System.Windows.Shapes.Ellipse>、 <xref:System.Windows.Shapes.Line>、 <xref:System.Windows.Shapes.Path>、 <xref:System.Windows.Shapes.Polygon>、 <xref:System.Windows.Shapes.Polyline>、および<xref:System.Windows.Shapes.Rectangle>です。 <xref:System.Windows.Shapes.Shape>オブジェクトは、次の一般的なプロパティを共有します。  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] すぐに使用できるいくつか提供<xref:System.Windows.Shapes.Shape>オブジェクト。  すべての図形オブジェクトの継承、<xref:System.Windows.Shapes.Shape>クラスです。 使用可能な図形オブジェクトには、 <xref:System.Windows.Shapes.Ellipse>、 <xref:System.Windows.Shapes.Line>、 <xref:System.Windows.Shapes.Path>、 <xref:System.Windows.Shapes.Polygon>、 <xref:System.Windows.Shapes.Polyline>、および<xref:System.Windows.Shapes.Rectangle>です。 <xref:System.Windows.Shapes.Shape> オブジェクトは、次の一般的なプロパティを共有します。  
   
 -   <xref:System.Windows.Shapes.Shape.Stroke%2A>: 図形の輪郭を描画する方法について説明します。  
   
@@ -83,7 +71,7 @@ ms.lasthandoff: 12/22/2017
   
 <a name="pathgeometry"></a>   
 ### <a name="pathgeometry-and-pathsegments"></a>PathGeometry と PathSegment  
- <xref:System.Windows.Media.PathGeometry>オブジェクトは、1 つまたは複数の構成要素は<xref:System.Windows.Media.PathFigure>オブジェクトです。 各<xref:System.Windows.Media.PathFigure>異なる"図"または図形を表します。 各<xref:System.Windows.Media.PathFigure>はそれ自体から成る 1 つ以上の<xref:System.Windows.Media.PathSegment>それぞれ図や図形の接続の部分を表すオブジェクトします。 セグメントの種類、次のとおりです: <xref:System.Windows.Media.LineSegment>、 <xref:System.Windows.Media.BezierSegment>、および<xref:System.Windows.Media.ArcSegment>です。  
+ <xref:System.Windows.Media.PathGeometry> オブジェクトは、1 つまたは複数の構成要素は<xref:System.Windows.Media.PathFigure>オブジェクトです。 各<xref:System.Windows.Media.PathFigure>異なる"図"または図形を表します。 各<xref:System.Windows.Media.PathFigure>はそれ自体から成る 1 つ以上の<xref:System.Windows.Media.PathSegment>それぞれ図や図形の接続の部分を表すオブジェクトします。 セグメントの種類、次のとおりです: <xref:System.Windows.Media.LineSegment>、 <xref:System.Windows.Media.BezierSegment>、および<xref:System.Windows.Media.ArcSegment>です。  
   
  次の例で、 <xref:System.Windows.Shapes.Path> 2 次ベジエ曲線の描画に使用します。  
   
@@ -108,7 +96,7 @@ Data="M 100,200 C 100,25 400,350 400,175 H 280" />
   
  ![パスの図](../../../../docs/framework/wpf/graphics-multimedia/media/shape-ovw-path.PNG "shape_ovw_path")  
   
- <xref:System.Windows.Shapes.Path.Data%2A>属性文字列の先頭の座標システムで、パスの開始ポイントを確立する、M によって示される、"moveto"コマンドが、<xref:System.Windows.Controls.Canvas>です。 <xref:System.Windows.Shapes.Path>データのパラメーターは大文字小文字を区別します。 大文字の M では、新しい現在のポイントの絶対位置を示します。 小文字の m は、相対座標を示します。 最初のセグメントは、2 つの制御点 (100,25) と (400,350) を使用して描画される、始点が (100,200) で終点が (400,175) の 3 次ベジエ曲線です。 このセグメントは、C コマンドで、<xref:System.Windows.Shapes.Path.Data%2A>属性の文字列。 ここでも、大文字の C は絶対パスを示し、小文字の c は相対パスを示します。  
+ <xref:System.Windows.Shapes.Path.Data%2A>属性文字列の先頭の座標システムで、パスの開始ポイントを確立する、M によって示される、"moveto"コマンドが、<xref:System.Windows.Controls.Canvas>です。 <xref:System.Windows.Shapes.Path> データのパラメーターは大文字小文字を区別します。 大文字の M では、新しい現在のポイントの絶対位置を示します。 小文字の m は、相対座標を示します。 最初のセグメントは、2 つの制御点 (100,25) と (400,350) を使用して描画される、始点が (100,200) で終点が (400,175) の 3 次ベジエ曲線です。 このセグメントは、C コマンドで、<xref:System.Windows.Shapes.Path.Data%2A>属性の文字列。 ここでも、大文字の C は絶対パスを示し、小文字の c は相対パスを示します。  
   
  2 番目のセグメントは、絶対水平 "lineto" コマンド H で始まります。このコマンドは、前のサブパスの終点 (400,175) から新しい終点 (280,175) まで描画される直線を指定します。 指定された値は、水平"lineto"コマンドになっているため、 *x*-を調整します。  
   
@@ -116,7 +104,7 @@ Data="M 100,200 C 100,25 400,350 400,175 H 280" />
   
 <a name="fillpaint"></a>   
 ## <a name="painting-shapes"></a>図形の塗りつぶし  
- <xref:System.Windows.Media.Brush>オブジェクトは、図形の描画に使用<xref:System.Windows.Shapes.Shape.Stroke%2A>と<xref:System.Windows.Shapes.Shape.Fill%2A>です。 次の例、線、およびの塗りつぶし、<xref:System.Windows.Shapes.Ellipse>が指定されています。 ブラシ プロパティの有効な入力は、キーワードまたは 16 進数のカラー値のいずれかです。 使用可能な色のキーワードの詳細については、のプロパティを参照してください、<xref:System.Windows.Media.Colors>クラス内で、<xref:System.Windows.Media>名前空間。  
+ <xref:System.Windows.Media.Brush> オブジェクトは、図形の描画に使用<xref:System.Windows.Shapes.Shape.Stroke%2A>と<xref:System.Windows.Shapes.Shape.Fill%2A>です。 次の例、線、およびの塗りつぶし、<xref:System.Windows.Shapes.Ellipse>が指定されています。 ブラシ プロパティの有効な入力は、キーワードまたは 16 進数のカラー値のいずれかです。 使用可能な色のキーワードの詳細については、のプロパティを参照してください、<xref:System.Windows.Media.Colors>クラス内で、<xref:System.Windows.Media>名前空間。  
   
 ```  
 <Canvas Background="LightGray">   
@@ -213,7 +201,7 @@ myPolygon.StrokeThickness = 2;
 ## <a name="transforming-shapes"></a>図形の変換  
  <xref:System.Windows.Media.Transform>クラスは、2 次元平面内の図形を変換するための手段を提供します。  変換のさまざまな種類は、回転 (<xref:System.Windows.Media.RotateTransform>)、小数点以下桁数 (<xref:System.Windows.Media.ScaleTransform>)、傾斜 (<xref:System.Windows.Media.SkewTransform>)、および翻訳 (<xref:System.Windows.Media.TranslateTransform>)。  
   
- 図形に適用される一般的な変換は回転です。  回転するには、図形を作成、<xref:System.Windows.Media.RotateTransform>を指定し、<xref:System.Windows.Media.RotateTransform.Angle%2A>です。 <xref:System.Windows.Media.RotateTransform.Angle%2A> 45 の要素を 45 度回転角度が 90 の要素を 90 度回転; 時計回り時計回りします。 設定、<xref:System.Windows.Media.RotateTransform.CenterX%2A>と<xref:System.Windows.Media.RotateTransform.CenterY%2A>プロパティを要素を回転するポイントを制御する場合。 これらのプロパティ値は、変換する要素の座標空間で表します。 <xref:System.Windows.Media.RotateTransform.CenterX%2A>および<xref:System.Windows.Media.RotateTransform.CenterY%2A>ゼロの既定値があります。 最後に、適用、<xref:System.Windows.Media.RotateTransform>要素にします。 レイアウトに影響する変換しない場合は、設定、図形の<xref:System.Windows.UIElement.RenderTransform%2A>プロパティです。  
+ 図形に適用される一般的な変換は回転です。  回転するには、図形を作成、<xref:System.Windows.Media.RotateTransform>を指定し、<xref:System.Windows.Media.RotateTransform.Angle%2A>です。 <xref:System.Windows.Media.RotateTransform.Angle%2A> 45 の要素を 45 度回転角度が 90 の要素を 90 度回転; 時計回り時計回りします。 設定、<xref:System.Windows.Media.RotateTransform.CenterX%2A>と<xref:System.Windows.Media.RotateTransform.CenterY%2A>プロパティを要素を回転するポイントを制御する場合。 これらのプロパティ値は、変換する要素の座標空間で表します。 <xref:System.Windows.Media.RotateTransform.CenterX%2A> および<xref:System.Windows.Media.RotateTransform.CenterY%2A>ゼロの既定値があります。 最後に、適用、<xref:System.Windows.Media.RotateTransform>要素にします。 レイアウトに影響する変換しない場合は、設定、図形の<xref:System.Windows.UIElement.RenderTransform%2A>プロパティです。  
   
  次の例で、<xref:System.Windows.Media.RotateTransform>図形の左上隅 (0, 0) に関する図形 45 度回転するために使用します。  
   
@@ -229,7 +217,7 @@ myPolygon.StrokeThickness = 2;
   
  前の例では、単一の変換を各図形オブジェクトに適用しました。 適用するには複数の変換図形 (またはその他の UI 要素) を使用して、<xref:System.Windows.Media.TransformGroup>です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [2D グラフィックスとイメージング](../../../../docs/framework/wpf/advanced/optimizing-performance-2d-graphics-and-imaging.md)  
  [純色およびグラデーションによる塗りつぶしの概要](../../../../docs/framework/wpf/graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md)  
  [ジオメトリの概要](../../../../docs/framework/wpf/graphics-multimedia/geometry-overview.md)  

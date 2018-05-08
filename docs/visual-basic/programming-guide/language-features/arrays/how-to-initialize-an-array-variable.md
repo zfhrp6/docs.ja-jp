@@ -1,26 +1,17 @@
 ---
-title: "方法: Visual Basic で配列変数を初期化する"
-ms.custom: 
+title: '方法: Visual Basic で配列変数を初期化する'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - variables [Visual Basic], initializing
 - arrays [Visual Basic], variables
 - arrays [Visual Basic], initializing
 - arrays [Visual Basic], declaring
 ms.assetid: aadd7a60-7ca4-4608-b986-091f19e7fc10
-caps.latest.revision: "42"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 3ccdbed601d3fa87acb0833bc153c199b17a4eba
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: ee8cb91fd2fae9637a0d0e33fca63a4cdb9d2fce
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-initialize-an-array-variable-in-visual-basic"></a>方法: Visual Basic で配列変数を初期化する
 配列リテラルを `New` 句に含めること、および配列の初期値を指定することで、配列変数を初期化します。 型を指定するか、配列リテラル内の値から推論することを許可できます。 型を推論する方法の詳細についてを参照してください「を設定する、配列に初期値」[配列](../../../../visual-basic/programming-guide/language-features/arrays/index.md)です。  

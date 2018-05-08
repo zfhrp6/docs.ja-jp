@@ -1,34 +1,24 @@
 ---
-title: "Visual Basic における文字列の暗号化および暗号化"
-ms.custom: 
+title: Visual Basic における文字列の暗号化および暗号化
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - encryption [Visual Basic], strings
 - strings [Visual Basic], encrypting
 - decryption [Visual Basic], strings
 - strings [Visual Basic], decrypting
 ms.assetid: 1f51e40a-2f88-43e2-a83e-28a0b5c0d6fd
-caps.latest.revision: "18"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: fd9ec8e7af771db3f042e08c8ab30f6ed5832c2b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 96e56ab315a739fef9d5499b076a077f5294f39e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="walkthrough-encrypting-and-decrypting-strings-in-visual-basic"></a>チュートリアル : Visual Basic での文字列の暗号化と複合化
 このチュートリアルで使用する方法、<xref:System.Security.Cryptography.DESCryptoServiceProvider>クラスを暗号化および暗号化サービス プロバイダー (CSP) バージョンのトリプル データ暗号化標準を使用して文字列の暗号化を解除 (<xref:System.Security.Cryptography.TripleDES>) アルゴリズム。 最初の手順では、3 des アルゴリズムをカプセル化して、base 64 エンコード文字列として、暗号化されたデータを格納する単純なラッパー クラスを作成します。 その後、そのラッパーを使用して、パブリックにアクセスできるテキスト ファイルにプライベート ユーザー データを安全に保管します。  
   
  ユーザーの機密情報 (パスワードなど) を保護し、未承認ユーザーが資格情報を解読できないようにするには、暗号化を使用することができます。 これにより、ユーザーの資産を保護し、否認不可を提供する承認されたユーザーの id が盗まれないが保護することができます。 また、暗号化は、未承認ユーザーがアクセスできないユーザーのデータを保護できます。  
   
- 詳細については、次を参照してください。 [Cryptographic Services](../../../../standard/security/cryptographic-services.md)です。  
+ 詳細については、「[暗号サービス](../../../../standard/security/cryptographic-services.md)」をご覧ください。  
   
 > [!IMPORTANT]
 >  Rijndael (Advanced Encryption Standard [AES] と呼ばれるようになりました) および Triple Data Encryption Standard (3 des) アルゴリズム詳細いるため、DES よりも大きいセキュリティを実現負荷の大きい計算します。 詳細については、<xref:System.Security.Cryptography.DES> および <xref:System.Security.Cryptography.Rijndael> を参照してください。  

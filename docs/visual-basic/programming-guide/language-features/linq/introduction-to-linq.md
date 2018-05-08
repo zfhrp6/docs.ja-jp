@@ -1,13 +1,6 @@
 ---
 title: Visual Basic における LINQ の概要
-ms.custom: ''
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - queries [LINQ in Visual Basic], about LINQ in Visual Basic queries
 - query execution [LINQ in Visual Basic]
@@ -19,14 +12,11 @@ helpviewer_keywords:
 - deferred execution
 - iteration variables [Visual Basic]
 ms.assetid: 3047d86e-0d49-40e2-928b-dc02e46c7984
-caps.latest.revision: 28
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 1f41252d6f28c7b2ffb459b3374833fde56393f8
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: ae59cb4d6b812ba956ce55723e034f381db14aa1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="introduction-to-linq-in-visual-basic"></a>Visual Basic における LINQ の概要
 統合言語クエリ (LINQ) は、Visual Basic にクエリ機能を追加し、あらゆる種類のデータを操作する場合は、シンプルかつ強力な機能を提供します。 LINQ は、クエリを処理するデータベースに送信するまたはされた検索しているデータの種類ごとに異なるクエリ構文を使用ではなくは、Visual Basic 言語の一部としてクエリが導入されています。 LINQ では、データの型に関係なく、統一された構文を使用します。  

@@ -1,24 +1,15 @@
 ---
-title: "列挙型の概要 (Visual Basic)"
-ms.custom: 
+title: 列挙型の概要 (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - Visual Basic code, enumerations
 - enumerations [Visual Basic], about enumerations
 ms.assetid: b42a38ee-5e77-4f99-a037-e3a127ead89c
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 5d50e6bae880e5dc4dcde203708c6b07c05bb4e8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 67f1dda7031eb00f3198f15b3f79d5e513de2a91
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="enumerations-overview-visual-basic"></a>列挙型の概要 (Visual Basic)
 列挙体は、関連する定数のセットを使用して、定数値の名前に関連付ける便利な方法を提供します。 たとえば、一連の整数型の定数を曜日に関連付けて列挙型として宣言すると、コードで整数値ではなく曜日名を使用することができます。  
@@ -26,7 +17,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="tasks-involving-enumerations"></a>列挙体に関連するタスク  
  次の表は、列挙型に関する一般的なタスクを一覧表示します。  
   
-|目的|参照トピック|  
+|目的|解決方法については、|  
 |----------------|---------|  
 |事前に定義された列挙型を検索します。|[定数と列挙体](../../../../visual-basic/language-reference/constants-and-enumerations.md)|  
 |列挙体を宣言します。|[方法: 列挙型を宣言](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-declare-enumerations.md)|  

@@ -1,12 +1,6 @@
 ---
 title: Select 句 (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.QuerySelect
 helpviewer_keywords:
@@ -14,14 +8,11 @@ helpviewer_keywords:
 - Select clause [Visual Basic]
 - queries [Visual Basic], Select
 ms.assetid: 27a3f61c-5960-4692-9b91-4d0c4b6178fe
-caps.latest.revision: 21
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: a9d8cabcbd8554ca2aee639eaac8a52f0485a266
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 55c1e79b9e8e26483c1b7374a755bf977129169b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="select-clause-visual-basic"></a>Select 句 (Visual Basic)
 クエリの結果を定義します。  
@@ -34,10 +25,10 @@ Select [ var1 = ] fieldName1 [, [ var2 = ] fieldName2 [...] ]
   
 ## <a name="parts"></a>指定項目  
  `var1`  
- 省略可能です。 列の式の結果を参照に使用できるエイリアスです。  
+ 任意。 列の式の結果を参照に使用できるエイリアスです。  
   
  `fieldName1`  
- 必須です。 クエリの結果で返されるフィールドの名前。  
+ 必須。 クエリの結果で返されるフィールドの名前。  
   
 ## <a name="remarks"></a>コメント  
  使用することができます、`Select`句をクエリから返される結果を定義します。 これにより、クエリによって作成される新しい匿名型のメンバーを定義するか、またはクエリによって返される名前付きの型のメンバーを対象にすることができます。 `Select`句は、クエリの必要はありません。 ない場合は`Select`句を指定すると、現在のスコープで示されている範囲変数のすべてのメンバーに基づいた型が返されます。 詳細については、「[匿名型](../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)」を参照してください。 クエリでは、名前付きの型を作成するときの型の結果が返されます。<xref:System.Collections.Generic.IEnumerable%601>場所`T`は、作成された型です。  

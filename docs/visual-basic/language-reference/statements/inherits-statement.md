@@ -1,11 +1,6 @@
 ---
 title: Inherits Statement
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Inherits
 - Inherits
@@ -13,14 +8,11 @@ helpviewer_keywords:
 - Inherits statement [Visual Basic]
 - Inherits statement [Visual Basic], syntax
 ms.assetid: 9e6fe042-9af3-4341-8093-fc3537770cf2
-caps.latest.revision: "16"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: ae9ba54c3fd1ec3332c9f6260bc19a1293270ad8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 43a8aa4e9e04ee035cb52e9f829de13e5c022217
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="inherits-statement"></a>Inherits Statement
 現在のクラスまたはインターフェイスの属性、変数、プロパティ、プロシージャ、およびイベントを別のクラスまたはインターフェイスのセットから継承が発生します。  
@@ -35,7 +27,7 @@ Inherits basetypenames
   
 |用語|定義|  
 |---|---|  
-|`basetypenames`|必須です。 このクラスの派生元となるクラスの名前。<br /><br /> または<br /><br /> このインターフェイスの派生元のインターフェイスの名前。 コンマを使用して、複数の名前を区切ります。|  
+|`basetypenames`|必須。 このクラスの派生元となるクラスの名前。<br /><br /> - または -<br /><br /> このインターフェイスの派生元のインターフェイスの名前。 コンマを使用して、複数の名前を区切ります。|  
   
 ## <a name="remarks"></a>コメント  
  使用する場合、`Inherits`ステートメントはクラスまたはインターフェイスの定義では、最初の空白またはコメント以外の次の行である必要があります。 必要があります直後、`Class`または`Interface`ステートメントです。  

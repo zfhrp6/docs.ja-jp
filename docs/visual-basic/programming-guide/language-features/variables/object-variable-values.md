@@ -1,28 +1,17 @@
 ---
 title: オブジェクト変数の値 (Visual Basic)
-ms.custom: ''
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - object variables [Visual Basic], values
 - values [Visual Basic], of object variables
 - data types [Visual Basic], object variable
 - variables [Visual Basic], object
 ms.assetid: 31555704-58a3-49f1-9a0a-6421f605664f
-caps.latest.revision: 18
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 28307cc477f661c3046e125f297c1519485ad797
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: a5152ad0e5e5ac876783c2b191ee13e845593df8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="object-variable-values-visual-basic"></a>オブジェクト変数の値 (Visual Basic)
 変数、[オブジェクト データ型](../../../../visual-basic/language-reference/data-types/object-data-type.md)できる任意の型のデータを参照してください。 格納した値、`Object`変数が保持される他の場所で、メモリ内一方変数自体は、データへのポインターを保持します。  

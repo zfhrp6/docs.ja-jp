@@ -1,14 +1,6 @@
 ---
 title: '方法 : コントロールにツールボックス ビットマップを指定する'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-winforms
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,17 +9,11 @@ helpviewer_keywords:
 - custom controls [Windows Forms], Toolbox bitmaps
 - bitmaps [Windows Forms], custom controls
 ms.assetid: 0ed0840a-616d-41ba-a27d-3573241932ad
-caps.latest.revision: 20
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 5d34cbb88805d9c034df61aba89ebd7bb224b1da
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 3698d2fdbd0375d0a154d6ecea3a248b31da2aeb
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-provide-a-toolbox-bitmap-for-a-control"></a>方法 : コントロールにツールボックス ビットマップを指定する
 コントロールの特別なアイコンが表示する場合、**ツールボックス**を使用して特定のイメージを指定することができます、<xref:System.Drawing.ToolboxBitmapAttribute>です。 このクラスは "*属性*" であり、他のクラスに追加できる特殊なクラスです。 属性の詳細については、次を参照してください。[ビルド内にありません: Visual Basic での属性の概要](http://msdn.microsoft.com/library/0d0cff64-892d-4f57-83bd-bef388553d4f)Visual basic の場合と[属性](http://msdn.microsoft.com/library/ae334cee-d96c-4243-a5e3-06dd7fcaf205)Visual c# の場合。  

@@ -1,13 +1,6 @@
 ---
-title: "方法 : ツール バー ボタンのアイコンを定義する"
-ms.custom: 
+title: '方法 : ツール バー ボタンのアイコンを定義する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -20,22 +13,17 @@ helpviewer_keywords:
 - icons [Windows Forms], toolbar buttons
 - ToolBar control [Windows Forms], adding icons to buttons
 ms.assetid: 84db98b4-8566-49ce-b2c8-1fd66a5eb3a0
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: f7550fdc76cb3a025d8233ec538d38f23f9226a7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9c396f861307d1c8e722beaf38c6cb914d0630c6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-define-an-icon-for-a-toolbar-button"></a>方法 : ツール バー ボタンのアイコンを定義する
 > [!NOTE]
 >  <xref:System.Windows.Forms.ToolStrip> コントロールは、<xref:System.Windows.Forms.ToolBar> コントロールに代わると共に追加の機能を提供します。ただし、<xref:System.Windows.Forms.ToolBar> コントロールは、下位互換性を保つ目的および将来使用する目的で保持されます。  
   
- <xref:System.Windows.Forms.ToolBar>ボタンは、ユーザーがそれらに含まれるを識別しやすくのアイコンを表示できます。 これに画像を追加することによって実現、 [ImageList コンポーネント](../../../../docs/framework/winforms/controls/imagelist-component-windows-forms.md)コンポーネントと関連付ける、<xref:System.Windows.Forms.ImageList>コンポーネントを<xref:System.Windows.Forms.ToolBar>コントロール。  
+ <xref:System.Windows.Forms.ToolBar> ボタンは、ユーザーがそれらに含まれるを識別しやすくのアイコンを表示できます。 これに画像を追加することによって実現、 [ImageList コンポーネント](../../../../docs/framework/winforms/controls/imagelist-component-windows-forms.md)コンポーネントと関連付ける、<xref:System.Windows.Forms.ImageList>コンポーネントを<xref:System.Windows.Forms.ToolBar>コントロール。  
   
 ### <a name="to-set-an-icon-for-a-toolbar-button-programmatically"></a>ツール バー ボタンのアイコンをコードから設定するには  
   
@@ -126,7 +114,7 @@ ms.lasthandoff: 12/22/2017
        }  
     ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.ToolBar>  
  [方法: ツール バー ボタンのメニュー イベントをトリガーする](../../../../docs/framework/winforms/controls/how-to-trigger-menu-events-for-toolbar-buttons.md)  
  [ToolBar コントロール](../../../../docs/framework/winforms/controls/toolbar-control-windows-forms.md)  

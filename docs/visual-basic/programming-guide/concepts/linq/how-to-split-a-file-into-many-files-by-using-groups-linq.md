@@ -1,22 +1,12 @@
 ---
-title: "方法: 複数のファイルのファイル グループ (LINQ) (Visual Basic) を使用して分割"
-ms.custom: 
+title: '方法: 複数のファイルのファイル グループ (LINQ) (Visual Basic) を使用して分割'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 5e8b2a2b-0b1d-4933-8a2b-03e91dfaf77f
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 76fb89136e05ee803c1bb2c91674e6b216e4ed2d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 19b542e22aa6e987a21095025a136d7602057b2c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-split-a-file-into-many-files-by-using-groups-linq-visual-basic"></a>方法: 複数のファイルのファイル グループ (LINQ) (Visual Basic) を使用して分割
 この例では、2 つのファイルの内容をマージし、新しい方法でデータを整理する一連の新しいファイルを作成するための、1 つの方法を示します。  

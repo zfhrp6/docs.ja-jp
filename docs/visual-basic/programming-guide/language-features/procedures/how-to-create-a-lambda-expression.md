@@ -1,24 +1,15 @@
 ---
-title: "方法: ラムダ式を作成する (Visual Basic)"
-ms.custom: 
+title: '方法: ラムダ式を作成する (Visual Basic)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - lambda expressions [Visual Basic]
 - expressions [Visual Basic], lambda
 ms.assetid: 3279bd5c-80f7-410a-a7ba-f7085ed36aa5
-caps.latest.revision: "27"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 16365b64e5430be61c113ac7601154df260e4ca5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: f437166bc5206b4145d6508aa2131ec94d6eca95
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-a-lambda-expression-visual-basic"></a>方法: ラムダ式を作成する (Visual Basic)
 A*ラムダ式*は関数またはサブルーチンに名前がないです。 ラムダ式は、デリゲート型が有効な場所で使用できます。  

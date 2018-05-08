@@ -1,23 +1,16 @@
 ---
-title: 演算子は型 &#39; に対して無効です。&lt;typename&gt;&#39;です。
+title: 演算子は型に対して無効&#39; &lt;typename&gt;&#39;
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vbrNoValidOperator_OneOperand
 ms.assetid: 9d5e01db-d3e7-446a-8d39-6600c73fea20
-caps.latest.revision: 8
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 18d35140b10329232463211ced4b707f0a2f2c54
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 1f7d477f39880a49c51dc1febfbce40a51e06cbb
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="operator-is-not-valid-for-type-39lttypenamegt39"></a>演算子は型 &#39; に対して無効です。&lt;typename&gt;&#39;です。
+# <a name="operator-is-not-valid-for-type-39lttypenamegt39"></a>演算子は型に対して無効&#39; &lt;typename&gt;&#39;
 演算子は、型に適切ではありません。  
   
 ## <a name="to-correct-this-error"></a>このエラーを解決するには  

@@ -1,22 +1,12 @@
 ---
 title: AttributeUsage (Visual Basic)
-ms.custom: 
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 48757216-c21d-4051-86d5-8a3e03c39d2c
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 5f358068d00c042a979216cdda51dcc7e07abbc5
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: ae162c310511db160806501af895276a4a4bba5d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="attributeusage-visual-basic"></a>AttributeUsage (Visual Basic)
 カスタム属性クラスの使用方法を決定します。 `AttributeUsage` は、カスタム属性の定義に適用して新しい属性の適用方法を制御できる属性です。 明示的に適用するときの既定の設定は次のようになります。  
@@ -73,7 +63,7 @@ End Class
   
  この例では、`AllowMultiple` が `true` に設定されているので、`MultiUseAttr` を繰り返し適用できます。 示されているどちらの形式でも、複数の属性を適用できます。  
   
- `Inherited` を `false` に設定すると、属性化されたクラスから派生するクラスは属性を継承しません。 例:  
+ `Inherited` を `false` に設定すると、属性化されたクラスから派生するクラスは属性を継承しません。 例えば:  
   
 ```vb  
 Imports System  
@@ -170,7 +160,7 @@ A3
 A2  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Attribute>  
  <xref:System.Reflection>  
  [Visual Basic プログラミング ガイド](../../../../visual-basic/programming-guide/index.md)  

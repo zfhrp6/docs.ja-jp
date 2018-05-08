@@ -1,13 +1,6 @@
 ---
 title: 継承の基本 (Visual Basic)
-ms.custom: ''
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - derived classes [Visual Basic], inheritance
 - MyClass keyword [Visual Basic], using
@@ -27,14 +20,11 @@ helpviewer_keywords:
 - abstract classes [Visual Basic], inheritance
 - overriding, Overrides keyword
 ms.assetid: dfc8deba-f5b3-4d1d-a937-7cb826446fc5
-caps.latest.revision: 23
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 4e37dabefcbda48144af910298dd4d82c13b7042
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 9225e5fd9fa35ae06414018a109f66515f99363f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="inheritance-basics-visual-basic"></a>継承の基本 (Visual Basic)
 `Inherits`という、新しいクラスを宣言するステートメントを使用、*クラスを派生*と呼ばれる、既存のクラスに基づいて、*基底クラス*です。 派生クラスでは、継承、プロパティ、メソッド、イベント、フィールド、および、基底クラスで定義されている定数は、拡張できます。 次のセクションでは、継承、に対するルールの一部について説明し、方法クラスを変更するのに使用できる修飾子を継承継承されます。  

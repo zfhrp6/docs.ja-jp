@@ -1,11 +1,6 @@
 ---
 title: -libpath
 ms.date: 03/10/2018
-ms.prod: .net
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - libpath compiler option [Visual Basic]
 - /libpath compiler option [Visual Basic]
@@ -13,11 +8,11 @@ helpviewer_keywords:
 ms.assetid: 5f1c26c9-3455-4e89-bdf3-b12d6c2e655b
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: cff59d9b406045b4522d3a7d6e85528513214635
-ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
+ms.openlocfilehash: a5044bc0093960fdf6b063450d8d3a57575ff07c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="-libpath"></a>-libpath
 参照先アセンブリの場所を指定します。  
@@ -53,7 +48,7 @@ ms.lasthandoff: 03/22/2018
   
 |Visual Studio で/libpath を設定するには、統合開発環境|  
 |---|  
-|1.**ソリューション エクスプローラー**でプロジェクトを選択します。 **[プロジェクト]** メニューの **[プロパティ]** をクリックします。 <br />2.**[参照]** タブをクリックします。<br />3.クリックして、**パスを参照しています.**ボタンをクリックします。<br />4.**参照パス** ダイアログ ボックスで、ディレクトリ名を入力、**フォルダー:**ボックス。<br />5.をクリックして**フォルダーの追加**です。|  
+|1.**ソリューション エクスプローラー**でプロジェクトを選択します。 **[プロジェクト]** メニューの **[プロパティ]** をクリックします。 <br />2.**[参照]** タブをクリックします。<br />3.クリックして、**パスを参照しています.** ボタンをクリックします。<br />4.**参照パス** ダイアログ ボックスで、ディレクトリ名を入力、**フォルダー:** ボックス。<br />5.をクリックして**フォルダーの追加**です。|  
   
 ## <a name="example"></a>例  
  次のコードのコンパイル`T2.vb`.exe ファイルを作成します。 コンパイラは、アセンブリ参照の作業ディレクトリに、c: ドライブのルート ディレクトリ、および c: ドライブのアセンブリを新しいディレクトリに検索します。  

@@ -1,11 +1,6 @@
 ---
-title: "位置と名前による引数渡し (Visual Basic)"
-ms.custom: 
+title: 位置と名前による引数渡し (Visual Basic)
 ms.date: 02/01/2018
-ms.prod: .net
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - arguments [Visual Basic], passing by name
 - procedures [Visual Basic], arguments
@@ -29,11 +24,11 @@ helpviewer_keywords:
 ms.assetid: 1ad7358f-1da9-48da-a95b-f3c7ed41eff3
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 13f5e5a8da6a899d4920a25b250ca88b2a21f559
-ms.sourcegitcommit: 099aa20d9b6450d1b7452d782a55771a6ad8ff35
+ms.openlocfilehash: 49e313b2d5aa8302ea4b99e643e09f7b43659785
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="passing-arguments-by-position-and-by-name-visual-basic"></a>位置と名前による引数渡し (Visual Basic)
 呼び出すと、`Sub`または`Function`プロシージャの引数を渡すことができます*位置によって*— プロシージャの定義に表示される順序で — 渡したりすることができます*名前によって*、なし配置を考慮します。  
@@ -98,7 +93,7 @@ Visual Basic 15.5 から始めて、位置指定引数は、名前付き引数�
   
 名前で、パラメーター配列を渡すことはできません。 これは、プロシージャを呼び出すときのパラメーター配列に対してコンマで区切った不特定数を指定して、コンパイラは、単一の名前を 1 つ以上の引数を関連付けることはできませんです。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [手順](./index.md)  
  [プロシージャのパラメーターと引数](./procedure-parameters-and-arguments.md)  
  [方法: プロシージャに引数を渡す](./how-to-pass-arguments-to-a-procedure.md)  

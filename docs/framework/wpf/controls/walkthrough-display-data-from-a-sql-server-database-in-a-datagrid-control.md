@@ -1,13 +1,6 @@
 ---
-title: "チュートリアル: DataGrid コントロールで SQL Server データベースのデータを表示する"
-ms.custom: 
+title: 'チュートリアル: DataGrid コントロールで SQL Server データベースのデータを表示する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - DataGrid [WPF], displaying data from SQL Server
 - controls [WPF], DataGrid
 ms.assetid: 6810b048-0a23-4f86-bfa5-97f92b3cfab4
-caps.latest.revision: "13"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 0397206a05ef47a7fc9b130fbd13fa19a0d766fa
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 230d2c6843f9ae80126d9d0a2c949982aae24c76
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="walkthrough-display-data-from-a-sql-server-database-in-a-datagrid-control"></a>チュートリアル: DataGrid コントロールで SQL Server データベースのデータを表示する
 このチュートリアルで、SQL Server データベースからデータを取得およびそのデータを表示、<xref:System.Windows.Controls.DataGrid>コントロール。 LINQ を使用して、エンティティ クラスから指定されたデータを取得するクエリを記述するのにと、データを表すエンティティ クラスを作成するのにには、ADO.NET Entity Framework を使用します。  
@@ -68,7 +56,7 @@ ms.lasthandoff: 01/19/2018
   
      ![テーブルからの Product および ProductCategory の選択](../../../../docs/framework/wpf/controls/media/datagrid-sql-ef-step4.png "DataGrid_SQL_EF_Step4")  
   
-9. **[完了]**をクリックします。  
+9. **[完了]** をクリックします。  
   
      エンティティ デザイナーで、Product および ProductCategory エンティティが表示されます。  
   
@@ -112,6 +100,6 @@ ms.lasthandoff: 01/19/2018
   
 ## <a name="next-steps"></a>次の手順  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Controls.DataGrid>  
  [方法は i: どこから始めたら WPF アプリケーションで Entity Framework としますか。](http://go.microsoft.com/fwlink/?LinkId=159868)

@@ -1,34 +1,24 @@
 ---
-title: "初めての LINQ クエリの作成 (Visual Basic)"
-ms.custom: 
+title: 初めての LINQ クエリの作成 (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - queries [LINQ in Visual Basic], writing
 - LINQ queries [Visual Basic]
 - LINQ [Visual Basic], writing queries
 ms.assetid: 4affb732-3e9b-4479-aa31-1f9bd8183cbe
-caps.latest.revision: "56"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: c16bb28189d5525654328da2dc80d868bbe61bf5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: f426aac5358837563081d2bf9783f6d4fe04d853
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="writing-your-first-linq-query-visual-basic"></a>初めての LINQ クエリの作成 (Visual Basic)
 "*クエリ*" は、データ ソースからデータを取得する式です。 クエリは、専用のクエリ言語で表現されます。 時間の経過と共にさまざまな言語のために開発されたさまざまな種類のデータ ソース、たとえば、リレーショナル データベース用の SQL や XML 用の XQuery です。 これにより、アプリケーション開発者は、データ ソースまたはサポートされているデータ形式の種類ごとに新しいクエリ言語を習得するために必要です。  
   
- [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)]さまざまな種類のデータ ソースやデータ形式のデータを操作するための一貫したモデルを提供することで、この状況を簡単になります。 [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] クエリでは、操作の対象は常にオブジェクトになります。 同じ基本的なコーディング パターンを使用して、クエリ対象の XML ドキュメント内のデータ、SQL データベース、ADO.NET データセットとエンティティ、.NET Framework のコレクションと、その他のソースまたは形式を変換する、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]プロバイダーが用意されています。 このドキュメントは、作成の 3 つの段階と basic の使用について説明します。[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]クエリ。  
+ [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] さまざまな種類のデータ ソースやデータ形式のデータを操作するための一貫したモデルを提供することで、この状況を簡単になります。 [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] クエリでは、操作の対象は常にオブジェクトになります。 同じ基本的なコーディング パターンを使用して、クエリ対象の XML ドキュメント内のデータ、SQL データベース、ADO.NET データセットとエンティティ、.NET Framework のコレクションと、その他のソースまたは形式を変換する、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]プロバイダーが用意されています。 このドキュメントは、作成の 3 つの段階と basic の使用について説明します。[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]クエリ。  
   
 ## <a name="three-stages-of-a-query-operation"></a>クエリ操作の 3 つの段階  
- [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]クエリ操作は、3 つのアクションで構成されます。  
+ [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] クエリ操作は、3 つのアクションで構成されます。  
   
 1.  データ ソースを取得します。  
   

@@ -1,13 +1,6 @@
 ---
-title: "型文字 (Visual Basic)"
-ms.custom: 
+title: 型文字 (Visual Basic)
 ms.date: 01/31/2018
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - '&H prefix for hexadecimal values'
 - hexadecimal literals [Visual Basic]
@@ -45,12 +38,11 @@ helpviewer_keywords:
 ms.assetid: 6353cb9b-6ee4-4af6-a5a8-88ce39f90cc5
 author: rpetrusha
 ms.author: ronpet
-ms.manager: wpickett
-ms.openlocfilehash: 20a9a30689fb62a6956987b06470e76eeb42ebab
-ms.sourcegitcommit: 3a96c706e4dbb4667bf3bf37edac9e1666646f93
+ms.openlocfilehash: 9262c57c5773b947f18fd9e8cf9087bb8e02de7a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="type-characters-visual-basic"></a>文字 (Visual Basic)
 
@@ -141,7 +133,7 @@ Dim flags As UShort = &H8000US
 
 前の例では、 `counter` -32768 の 10 進値を持つと`flags`+32768 の 10 進値を持つファイルです。
 
-Visual Basic 15.5 から始めて、使用することできますも、アンダー スコア文字 (`_`) のプレフィックスと 16 進数、バイナリ、または 8 進数の数字間に先行する区切り記号として。 例:
+Visual Basic 15.5 から始めて、使用することできますも、アンダー スコア文字 (`_`) のプレフィックスと 16 進数、バイナリ、または 8 進数の数字間に先行する区切り記号として。 例えば:
 
 ```vb
 Dim number As Integer = &H_C305_F860
@@ -149,7 +141,7 @@ Dim number As Integer = &H_C305_F860
 
 [!INCLUDE [supporting-underscores](../../../../../includes/vb-separator-langversion.md)]
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
  [データの種類](../../../../visual-basic/programming-guide/language-features/data-types/index.md)  
  [基本データ型](../../../../visual-basic/programming-guide/language-features/data-types/elementary-data-types.md)  

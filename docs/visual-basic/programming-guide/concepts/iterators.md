@@ -1,21 +1,12 @@
 ---
-title: "反復子 (Visual Basic)"
-ms.custom: 
+title: 反復子 (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 ms.assetid: f26b5c1e-fe9d-4004-b287-da7919d717ae
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: f02249f7f30d2cd6b43aa75530ace099286c7d7f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: ecc48ad5bbddc82457a8d6cc8e60ee419fb593fa
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="iterators-visual-basic"></a>反復子 (Visual Basic)
 *反復子*を使用して、リストや配列などのコレクションをステップ実行することができます。  
@@ -221,7 +212,7 @@ Public Class Zoo
 End Class  
 ```  
   
-##  <a name="BKMK_TryBlocks"></a>Try ブロック  
+##  <a name="BKMK_TryBlocks"></a> Try ブロック  
  Visual Basic できるは、`Yield`内のステートメント、`Try`のブロック、[を再試行してください.キャッチしてください.Finally ステートメント](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)です。 A`Try`を持つブロック、`Yield`ステートメントが持つことができます`Catch`をブロックしてができます、`Finally`ブロックします。  
   
  次の例が含まれます`Try`、 `Catch`、および`Finally`iterator 関数内のブロックです。 `Finally` Iterator 関数内のブロックを実行する前に、`For Each`イテレーションが終了します。  
@@ -261,7 +252,7 @@ End Function
   
  場合、`For Each`本体 (iterator メソッド) ではなく、例外がスロー、 `Catch` iterator 関数内のブロックが実行されていないが、 `Finally` iterator 関数内のブロックを実行します。 A`Catch`反復子関数の内側のブロックは、iterator 関数内で発生する例外のみをキャッチします。  
   
-##  <a name="BKMK_AnonymousMethods"></a>匿名メソッド  
+##  <a name="BKMK_AnonymousMethods"></a> 匿名メソッド  
  Visual basic では、iterator 関数が匿名関数にできます。 次に例を示します。  
   
 ```vb  

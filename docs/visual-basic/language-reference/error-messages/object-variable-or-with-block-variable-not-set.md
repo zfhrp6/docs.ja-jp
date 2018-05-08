@@ -1,23 +1,14 @@
 ---
 title: オブジェクト変数または With ブロック変数が設定されていません。
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vbrID91
 ms.assetid: 2f03e611-f0ed-465c-99a2-a816e034faa3
-caps.latest.revision: 9
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 9e1f587e194acf744b6ec9b8f1bede3acef7b753
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: b2bd1be83f57dbdc7a64b407dc1052074e19c74b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="object-variable-or-with-block-variable-not-set"></a>オブジェクト変数または With ブロック変数が設定されていません。
 無効なオブジェクト変数を参照しています。   このエラーが発生する原因は複数あります。  
@@ -29,9 +20,9 @@ ms.lasthandoff: 11/21/2017
     > [!TIP]
     >  `Option Strict`ステートメントで暗黙の型の指定は許可されていません、`Object`型です。 型を省略すると、コンパイル時エラーが発生します。 参照してください[Option Strict ステートメント](../../../visual-basic/language-reference/statements/option-strict-statement.md)です。  
   
--   設定されているオブジェクトを参照しようとしています`Nothing`  
+-   設定されているオブジェクトを参照しようとしています `Nothing`  
   
-     。  
+     である必要があります。  
   
 -   適切に宣言されていない配列変数の要素にアクセスしようとするとします。  
   

@@ -1,12 +1,6 @@
 ---
-title: "Visual Basic におけるスコープ"
-ms.custom: 
+title: Visual Basic におけるスコープ
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - module scope [Visual Basic]
 - scope [Visual Basic], levels
@@ -21,14 +15,11 @@ helpviewer_keywords:
 - scope [Visual Basic], Visual Basic
 - procedure scope [Visual Basic]
 ms.assetid: 208106fe-79c9-4eec-93c6-55f08548895f
-caps.latest.revision: "17"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: a9bfda19b9f5ee96d45a0322541b35dfab7635d7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: d6692379626d787b728d6e92bd447c4a96e6680e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="scope-in-visual-basic"></a>Visual Basic におけるスコープ
 *スコープ*一連の名前に修飾子またはを通じて使用できるようにせずに参照できるすべてのコードは、宣言された要素の[Imports ステートメント (.NET Namespace よぶ型)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)です。 要素は、次のレベルのいずれかのスコープを持つことができます。  
@@ -61,7 +52,7 @@ ms.lasthandoff: 11/21/2017
   
 -   `Do` および `Loop`  
   
--   `For`[`Each`] と`Next`  
+-   `For` [`Each`] と `Next`  
   
 -   `If` および `End If`  
   
@@ -127,7 +118,7 @@ Public strMsg As String
   
  Namespace スコープには、入れ子になった名前空間が含まれています。 名前空間内で使用可能な要素もその名前空間内に入れ子に名前空間の中から使用できます。  
   
- いずれかのプロジェクトが含まれない場合[Namespace ステートメント](../../../../visual-basic/language-reference/statements/namespace-statement.md)s、プロジェクト内のすべてが同じ名前空間。 ここでは、名前空間のスコープはようなもののプロジェクト スコープ。 `Public`モジュール、クラス、または構造内の要素も、プロジェクトを参照する他のプロジェクトを使用できます。  
+ いずれかのプロジェクトが含まれない場合[Namespace ステートメント](../../../../visual-basic/language-reference/statements/namespace-statement.md)s、プロジェクト内のすべてが同じ名前空間。 ここでは、名前空間のスコープはようなもののプロジェクト スコープ。 `Public` モジュール、クラス、または構造内の要素も、プロジェクトを参照する他のプロジェクトを使用できます。  
   
 ## <a name="choice-of-scope"></a>スコープの選択  
  変数を宣言するときにおく必要がありますに注意、次の点スコープを選択します。  

@@ -1,14 +1,6 @@
 ---
 title: WPF アーキテクチャ
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-wpf
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - properties [WPF], attached
 - attached properties [WPF]
@@ -24,17 +16,11 @@ helpviewer_keywords:
 - data templates [WPF]
 - thread [WPF], affinity
 ms.assetid: 8579c10b-76ab-4c52-9691-195ce02333c8
-caps.latest.revision: 17
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 29c8e2d632c37a299389b1bdc7f3f19f7df2f7e7
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 70afa7e193832837650d72837b25e26e3b64c180
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="wpf-architecture"></a>WPF アーキテクチャ
 このトピックでは、Windows Presentation Foundation (WPF) のクラス階層のガイド付きツアーを提供します。 主要なサブシステムのほとんどをカバー [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]、それらの相互作用について説明します。 いくつかの設計担当者が行った選択の表示[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]です。  
@@ -64,7 +50,7 @@ ms.lasthandoff: 04/30/2018
 ## <a name="systemwindowsdependencyobject"></a>System.Windows.DependencyObject  
  ビルドで使用されるプライマリ アーキテクチャ理念のいずれかの[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]プロパティの設定をしたメソッドまたはイベント上にあります。 プロパティは宣言型であり、アクションではなくの目的を簡単を指定すると、詳細が許可されます。 これは、モデル ドリブン、またはデータ ドリブン、ユーザー インターフェイスのコンテンツを表示するためのシステムにもサポートされます。 この方針には、意図された効果をする可能性があります、バインドするアプリケーションの動作をより細かく制御するために他のプロパティを作成する必要があります。  
   
- 高度なプロパティ システムのプロパティによって、システムの詳細を確保するため、[!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)]提供が必要でした。 この機能の簡単な例は、変更通知です。 双方向バインディングを有効にするために、変更通知をサポートするバインドの両方の側を作成する必要があります。 プロパティの値に関連付けられている動作するために、プロパティ値が変更されたときに通知する必要があります。 [!INCLUDE[TLA#tla_netframewk](../../../../includes/tlasharptla-netframewk-md.md)]インターフェイスを持つ**INotifyPropertyChange**、ただし、これは省略可能な変更通知を発行するオブジェクトを許可します。  
+ 高度なプロパティ システムのプロパティによって、システムの詳細を確保するため、[!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)]提供が必要でした。 この機能の簡単な例は、変更通知です。 双方向バインディングを有効にするために、変更通知をサポートするバインドの両方の側を作成する必要があります。 プロパティの値に関連付けられている動作するために、プロパティ値が変更されたときに通知する必要があります。 Microsoft .NET Framework には、インターフェイス**INotifyPropertyChange**、ただし、これは省略可能な変更通知を発行するオブジェクトを許可します。  
   
  [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] 派生したより豊富なプロパティ システムを提供、<xref:System.Windows.DependencyObject>型です。 プロパティ システムは、プロパティ式間の依存関係の追跡、依存関係を変更するときに、プロパティの値を自動的に再評価という点で、「依存関係」プロパティのシステムでは真です。 継承したプロパティがある場合など (と同様に<xref:System.Windows.Controls.Control.FontSize%2A>)、値を継承する要素の親のプロパティが変更された場合、システムが自動的に更新します。  
   

@@ -1,13 +1,6 @@
 ---
-title: "WPF アドインの概要"
-ms.custom: 
+title: WPF アドインの概要
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - add-ins and XAML browser applications [WPF]
 - add-ins overview [WPF]
@@ -19,16 +12,11 @@ helpviewer_keywords:
 - add-ins [WPF], architecture
 - add-ins [WPF], limitations
 ms.assetid: 00b4c776-29a8-4dba-b603-280a0cdc2ade
-caps.latest.revision: "36"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ffd45957b41cdfd8488aedd865aa70ef5b2634b2
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 942f5706a83a9f9e9cd969701ed5625c57b76f83
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="wpf-add-ins-overview"></a>WPF アドインの概要
 <a name="Introduction"></a> [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] には、開発者がアドイン機能拡張をサポートするアプリケーションの作成に使用できるアドイン モデルが用意されています。 このアドイン モデルを使用することで、アプリケーション機能に統合され、アプリケーション機能を拡張するアドインを作成できます。 一部のシナリオでは、アドインが提供する [!INCLUDE[TLA2#tla_ui#plural](../../../../includes/tla2sharptla-uisharpplural-md.md)] をアプリケーションで表示する必要があります。このトピックでは、[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] が [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] アドイン モデルを強化してこうしたシナリオを実現するしくみ、背後にあるアーキテクチャ、その利点、および制限事項について説明します。  
@@ -115,7 +103,7 @@ ms.lasthandoff: 01/19/2018
   
  [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] 型は、リモート処理可能ではありません。 この問題を解決するため、[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] は [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] アドイン モデルを拡張して、アドインによって作成される [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] をホスト アプリケーションで表示できるようにします。 このサポートによって提供されます[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]によって 2 つの種類:<xref:System.AddIn.Contract.INativeHandleContract>インターフェイスとによって実装される 2 つの静的メソッド、<xref:System.AddIn.Pipeline.FrameworkElementAdapters>クラス:<xref:System.AddIn.Pipeline.FrameworkElementAdapters.ContractToViewAdapter%2A>と<xref:System.AddIn.Pipeline.FrameworkElementAdapters.ViewToContractAdapter%2A>です。 大まかに、これらの型とメソッドは次のように使用されます。  
   
-1.  [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]いる必要があります[!INCLUDE[TLA2#tla_ui#plural](../../../../includes/tla2sharptla-uisharpplural-md.md)]によって提供される、アドインから直接または間接的に派生するクラスは、<xref:System.Windows.FrameworkElement>図形、コントロール、ユーザー コントロール、レイアウト パネル、およびページなどです。  
+1.  [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] いる必要があります[!INCLUDE[TLA2#tla_ui#plural](../../../../includes/tla2sharptla-uisharpplural-md.md)]によって提供される、アドインから直接または間接的に派生するクラスは、<xref:System.Windows.FrameworkElement>図形、コントロール、ユーザー コントロール、レイアウト パネル、およびページなどです。  
   
 2.  として宣言する必要がありますコントラクトは、UI をアドインとホスト アプリケーションの間で渡されることを宣言する限り、 <xref:System.AddIn.Contract.INativeHandleContract> (されません、 <xref:System.Windows.FrameworkElement>) です。<xref:System.AddIn.Contract.INativeHandleContract>アドインでのリモート処理可能な表現である[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]分離の境界を越えて渡すことです。  
   
@@ -230,7 +218,7 @@ ms.lasthandoff: 01/19/2018
   
 -   ホスト アプリケーション側で[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]は再パッケージ化、<xref:System.Windows.Interop.HwndSource>内部として[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]から派生したクラス<xref:System.Windows.Interop.HwndHost>消費<xref:System.AddIn.Contract.INativeHandleContract>です。 このクラスのインスタンスがによって返される<xref:System.AddIn.Pipeline.FrameworkElementAdapters.ContractToViewAdapter%2A>ホスト アプリケーションにします。  
   
- <xref:System.Windows.Interop.HwndHost>表示に存在する[!INCLUDE[TLA2#tla_ui#plural](../../../../includes/tla2sharptla-uisharpplural-md.md)]から、ウィンドウ ハンドルによって識別される[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)][!INCLUDE[TLA2#tla_ui#plural](../../../../includes/tla2sharptla-uisharpplural-md.md)]です。 詳細については、「[WPF と Win32 の相互運用性](../../../../docs/framework/wpf/advanced/wpf-and-win32-interoperation.md)」を参照してください。  
+ <xref:System.Windows.Interop.HwndHost> 表示に存在する[!INCLUDE[TLA2#tla_ui#plural](../../../../includes/tla2sharptla-uisharpplural-md.md)]から、ウィンドウ ハンドルによって識別される[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)][!INCLUDE[TLA2#tla_ui#plural](../../../../includes/tla2sharptla-uisharpplural-md.md)]です。 詳細については、「[WPF と Win32 の相互運用性](../../../../docs/framework/wpf/advanced/wpf-and-win32-interoperation.md)」を参照してください。  
   
  要約すると、 <xref:System.AddIn.Contract.INativeHandleContract>、 <xref:System.AddIn.Pipeline.FrameworkElementAdapters.ViewToContractAdapter%2A>、および<xref:System.AddIn.Pipeline.FrameworkElementAdapters.ContractToViewAdapter%2A>のウィンドウ ハンドルを許可するのには存在、 [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]から、アドインによってカプセル化は、ホスト アプリケーションに渡される、<xref:System.Windows.Interop.HwndHost>とホストの表示アプリケーションの[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]します。  
   
@@ -293,7 +281,7 @@ ms.lasthandoff: 01/19/2018
 ## <a name="performance-optimization"></a>パフォーマンスの最適化  
  既定では、複数のアプリケーション ドメインが使用されていると、各アプリケーションで必要とされているさまざまな [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] アセンブリがすべてそのアプリケーションのドメインに読み込まれます。 その結果、新しいアプリケーション ドメインを作成してその中でアプリケーションを開始するために必要な時間がパフォーマンスに影響します。 ただし、[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] には、アセンブリが既に読み込まれている場合に、それをアプリケーション ドメイン間で共有するようアプリケーションに指示することで開始時間を短縮する手段が用意されています。 使用して、これを行う、<xref:System.LoaderOptimizationAttribute>属性は、エントリ ポイント メソッドに適用する必要があります (`Main`)。 この場合、アプリケーション定義を実装するコードのみを使用する必要があります (「[アプリケーション管理の概要](../../../../docs/framework/wpf/app-development/application-management-overview.md)」を参照)。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.LoaderOptimizationAttribute>  
  [アドインおよび拡張機能](../../../../docs/framework/add-ins/index.md)  
  [アプリケーション ドメイン](../../../../docs/framework/app-domains/application-domains.md)  

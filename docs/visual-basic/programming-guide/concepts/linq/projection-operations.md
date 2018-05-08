@@ -1,22 +1,12 @@
 ---
-title: "射影操作 (Visual Basic)"
-ms.custom: 
+title: 射影操作 (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: b8d38e6d-21cf-4619-8dbb-94476f4badc7
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 4927a27795881c34b689a2054ee8697575b53026
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: f4d1f7531ee69ebdbfb4ccd283f9f5dcb2f000af
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="projection-operations-visual-basic"></a>射影操作 (Visual Basic)
 射影とは、オブジェクトを、必要なプロパティだけで構成された別の形式に変換する操作のことをいいます。 射影を使用することにより、個々のオブジェクトから構築された新しい型を作成できます。 プロパティを投影し、それに対して数値演算関数を実行できます。 また、元のオブジェクトを変更せずに射影することもできます。  
@@ -32,7 +22,7 @@ ms.lasthandoff: 11/21/2017
   
 ## <a name="query-expression-syntax-examples"></a>クエリ式の構文例  
   
-### <a name="select"></a>[選択]  
+### <a name="select"></a>選択  
  次の例では、`Select` 句を使って、文字列リストにある各文字列の最初の文字を射影します。  
   
 ```vb  

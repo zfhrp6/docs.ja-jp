@@ -1,13 +1,6 @@
 ---
 title: 値型と参照型
-ms.custom: ''
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - reference data types [Visual Basic]
 - reference types [Visual Basic]
@@ -17,14 +10,11 @@ helpviewer_keywords:
 - data types [Visual Basic], value types
 - data types [Visual Basic], reference types
 ms.assetid: fc82ce15-5a40-4c5c-a1e1-a556830e7391
-caps.latest.revision: 14
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 9cbab25e4af6b96ae22fe18d0b8a8fdbc7a7c7a7
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 9456316f71a213905bcb50336533c4e618f5174a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="value-types-and-reference-types"></a>値型と参照型
 Visual basic でのデータ型は、分類に基づいて実装します。 Visual Basic データ型は、特定の型の変数が、独自のデータまたはデータへのポインターを格納するかどうかに基づいて分類できます。 独自のデータを保管する場合は、*値の型*以外の場合は別の場所はメモリ内のデータへのポインターを保持、*型参照*です。  

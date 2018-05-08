@@ -1,12 +1,6 @@
 ---
-title: "宣言された要素の特性 (Visual Basic)"
-ms.custom: 
+title: 宣言された要素の特性 (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - declared elements [Visual Basic], lifetime
 - access levels, declared elements
@@ -19,14 +13,11 @@ helpviewer_keywords:
 - data types [Visual Basic], declared elements
 - declared elements [Visual Basic], visibility
 ms.assetid: 1bc40fb8-b67c-4428-90a4-76b630ae2583
-caps.latest.revision: "16"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 26ee27d3a1d085c6ab45ae850dbdac700aa208a9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 26c9ec247a0b848d46df063bc7b85ceec30d81c3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="declared-element-characteristics-visual-basic"></a>宣言された要素の特性 (Visual Basic)
 A*特性*宣言された要素のコードとの対話方法に影響する要素の特定の側面がします。 宣言された各要素には、関連付けられている次の特性の 1 つ以上があります。  
@@ -42,22 +33,22 @@ A*特性*宣言された要素のコードとの対話方法に影響する要�
 ## <a name="characteristics-of-the-elements"></a>要素の特性  
  次の表は、宣言された要素と 1 つずつに適用される特性を示します。  
   
-|要素|データ型|有効期間|スコープ<sup>1</sup>|アクセス レベル|  
+|要素|データの種類|有効期間|スコープ<sup>1</sup>|アクセス レベル|  
 |-------------|---------------|--------------|------------------------|------------------|  
-|変数|はい|はい|はい|はい|  
-|定数|はい|いいえ|はい|はい|  
-|列挙|はい|いいえ|はい|はい|  
-|構造体|いいえ|いいえ|はい|はい|  
-|プロパティ|はい|はい|はい|はい|  
-|メソッド|いいえ|はい|はい|はい|  
-|プロシージャ (`Sub`または`Function`)|いいえ|はい|はい|はい|  
-|プロシージャ パラメーター|はい|はい|はい|いいえ|  
-|関数の戻り値|はい|はい|はい|いいえ|  
-|演算子|はい|いいえ|はい|はい|  
-|インターフェイス|いいえ|いいえ|はい|はい|  
-|クラス|いいえ|いいえ|はい|はい|  
-|イベント|いいえ|いいえ|はい|はい|  
-|Delegate|いいえ|いいえ|はい|はい|  
+|変数|[はい]|はい|はい|[はい]|  
+|定数|[はい]|いいえ|はい|[はい]|  
+|列挙|[はい]|いいえ|はい|[はい]|  
+|構造体|×|Ｘ|はい|[はい]|  
+|プロパティ|[はい]|はい|はい|[はい]|  
+|メソッド|×|はい|はい|[はい]|  
+|プロシージャ (`Sub`または`Function`)|×|はい|はい|[はい]|  
+|プロシージャ パラメーター|[はい]|はい|はい|×|  
+|関数の戻り値|[はい]|はい|はい|×|  
+|演算子|[はい]|いいえ|はい|[はい]|  
+|Interface|×|Ｘ|はい|[はい]|  
+|クラス|×|Ｘ|はい|[はい]|  
+|event|×|Ｘ|はい|[はい]|  
+|Delegate|×|Ｘ|はい|[はい]|  
   
  <sup>1</sup>スコープとも呼ば*可視性*です。  
   

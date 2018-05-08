@@ -1,22 +1,12 @@
 ---
-title: "マルチ スレッド アプリケーション (Visual Basic)"
-ms.custom: 
+title: マルチ スレッド アプリケーション (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 02b0444b-2e68-4f2c-bc28-28c046004017
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 19a4fe40e27a9edf8515e2734914aaf02d5e48b2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: ab4b8d1c77ae75aee6f2cf459258766f88d86abe
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="multithreaded-applications-visual-basic"></a>マルチ スレッド アプリケーション (Visual Basic)
 Visual Basic では、同時に複数のタスクを実行するアプリケーションを作成できます。 他のタスクを止める可能性があるタスクは個別のスレッドで実行できます。これは*マルチスレッド*や*フリー スレッド*と呼ばれているプロセスです。  
@@ -50,7 +40,7 @@ newThread.Abort()
 ### <a name="thread-methods"></a>スレッド メソッド  
  次の表は、個々のスレッドを制御できるメソッドをまとめたものです。  
   
-|メソッド|操作|  
+|メソッド|アクション|  
 |------------|------------|  
 |<xref:System.Threading.Thread.Start%2A>|スレッドの実行を開始します。|  
 |<xref:System.Threading.Thread.Sleep%2A>|指定した時間だけスレッドを一時停止します。|  
@@ -65,7 +55,7 @@ newThread.Abort()
 ### <a name="thread-properties"></a>スレッド プロパティ  
  スレッドには、便利なプロパティもあります。次の表をご覧ください。  
   
-|プロパティ|値|  
+|プロパティ|[値]|  
 |--------------|-----------|  
 |<xref:System.Threading.Thread.IsAlive%2A>|スレッドがアクティブな場合、値 `True` が含まれます。|  
 |<xref:System.Threading.Thread.IsBackground%2A>|スレッドがバックグラウンド スレッドかどうか、あるいはバックグラウンド スレッドにする必要があるかどうかを示すブール値を取得または設定します。 バックグラウンド スレッドはフォアグラウンド スレッドに似ていますが、プロセスの停止を阻止しません。 あるプロセスに属するフォアグラウンド スレッドがすべて停止すると、共通言語ランタイムは、アライブ状態のバックグラウンド スレッドで <xref:System.Threading.Thread.Abort%2A> メソッドを呼び出し、プロセスを終了します。|  

@@ -1,39 +1,25 @@
 ---
-title: "方法 : ICommandSource を実装する"
-ms.custom: 
+title: '方法 : ICommandSource を実装する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - ICommandSource interfaces [WPF], implementing
 ms.assetid: 7452dd39-6e11-44bf-806a-31d87f3772ac
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: d82a211f59fbdecdc932b7e57b242274e91cd5b2
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9308bfbbb7fff86ca5e93c1155cc29e4ee0d05f2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-implement-icommandsource"></a>方法 : ICommandSource を実装する
-この例は、実装することによってコマンド ソースを作成する方法を示します<xref:System.Windows.Input.ICommandSource>です。  コマンド ソースは、コマンドを呼び出す方法を認識しているオブジェクトです。  <xref:System.Windows.Input.ICommandSource>インターフェイスが 3 つのメンバーを公開: <xref:System.Windows.Input.ICommandSource.Command%2A>、 <xref:System.Windows.Input.ICommandSource.CommandParameter%2A>、および<xref:System.Windows.Input.ICommandSource.CommandTarget%2A>です。  <xref:System.Windows.Input.ICommandSource.Command%2A>呼び出されるコマンドです。 <xref:System.Windows.Input.ICommandSource.CommandParameter%2A>はコマンドのソースから、コマンドを処理するメソッドに渡されるユーザー定義データ型です。 <xref:System.Windows.Input.ICommandSource.CommandTarget%2A>コマンドが実行されているオブジェクトです。  
+この例は、実装することによってコマンド ソースを作成する方法を示します<xref:System.Windows.Input.ICommandSource>です。  コマンド ソースは、コマンドを呼び出す方法を認識しているオブジェクトです。  <xref:System.Windows.Input.ICommandSource>インターフェイスが 3 つのメンバーを公開: <xref:System.Windows.Input.ICommandSource.Command%2A>、 <xref:System.Windows.Input.ICommandSource.CommandParameter%2A>、および<xref:System.Windows.Input.ICommandSource.CommandTarget%2A>です。  <xref:System.Windows.Input.ICommandSource.Command%2A> 呼び出されるコマンドです。 <xref:System.Windows.Input.ICommandSource.CommandParameter%2A>はコマンドのソースから、コマンドを処理するメソッドに渡されるユーザー定義データ型です。 <xref:System.Windows.Input.ICommandSource.CommandTarget%2A>コマンドが実行されているオブジェクトです。  
   
  この例では、クラスが、どのサブクラスを作成、<xref:System.Windows.Controls.Slider>コントロールと実装<xref:System.Windows.Input.ICommandSource>です。  
   
 ## <a name="example"></a>例  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]実装するクラスのいくつか提供<xref:System.Windows.Input.ICommandSource>など<xref:System.Windows.Controls.Button>、 <xref:System.Windows.Controls.MenuItem>、および<xref:System.Windows.Controls.ListBoxItem>です。  コマンド ソースは、コマンドを呼び出す方法を定義します。   <xref:System.Windows.Controls.Button>および<xref:System.Windows.Controls.MenuItem>クリックしたときに、コマンドを呼び出します。  A<xref:System.Windows.Controls.ListBoxItem>ダブルクリックされたときにコマンドを呼び出します。 これらのクラスでは、コマンドのみになるソース、<xref:System.Windows.Input.ICommandSource.Command%2A>プロパティを設定します。  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 実装するクラスのいくつか提供<xref:System.Windows.Input.ICommandSource>など<xref:System.Windows.Controls.Button>、 <xref:System.Windows.Controls.MenuItem>、および<xref:System.Windows.Controls.ListBoxItem>です。  コマンド ソースは、コマンドを呼び出す方法を定義します。   <xref:System.Windows.Controls.Button> および<xref:System.Windows.Controls.MenuItem>クリックしたときに、コマンドを呼び出します。  A<xref:System.Windows.Controls.ListBoxItem>ダブルクリックされたときにコマンドを呼び出します。 これらのクラスでは、コマンドのみになるソース、<xref:System.Windows.Input.ICommandSource.Command%2A>プロパティを設定します。  
   
  この例で、スライダーを移動すると、コマンドを呼び出すより正確に言うと、ときに、<xref:System.Windows.Controls.Primitives.RangeBase.Value%2A>プロパティを変更します。  
   
@@ -71,7 +57,7 @@ ms.lasthandoff: 12/22/2017
  [!code-csharp[ImplementICommandSource#ImplementICommandExecute](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ImplementICommandSource/CSharp/CommandSlider.cs#implementicommandexecute)]
  [!code-vb[ImplementICommandSource#ImplementICommandExecute](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ImplementICommandSource/visualbasic/commandslider.vb#implementicommandexecute)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Input.ICommandSource>  
  <xref:System.Windows.Input.ICommand>  
  <xref:System.Windows.Input.RoutedCommand>  

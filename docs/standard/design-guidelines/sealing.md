@@ -1,31 +1,20 @@
 ---
 title: シール
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - limiting extensibility
 - classes [.NET Framework], sealing
 - preventing customization
 - sealed classes
 ms.assetid: cc42267f-bb7a-427a-845e-df97408528d4
-caps.latest.revision: 10
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 8a9ea7fd4f5df08631231db08ba7943a9c131012
-ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
+ms.openlocfilehash: 3f7202e10e41b9f114f42a4502ee2e6694bf3821
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="sealing"></a>シール
 オブジェクト指向フレームワークの機能の 1 つは、開発者が拡張およびフレームワークの設計者によって予期しない方法でカスタマイズできます。 これは、両方の電源および拡張可能なデザインの危険性です。 フレームワークをデザインするときは、そのため、非常に重要が必要な場合、機能拡張を慎重に設計して危険である場合は、機能拡張を制限します。  

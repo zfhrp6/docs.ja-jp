@@ -1,26 +1,17 @@
 ---
-title: "コード内の要素名としてのキーワード (Visual Basic)"
-ms.custom: 
+title: コード内の要素名としてのキーワード (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - Visual Basic code, naming conventions
 - keywords [Visual Basic], in code
 - name conflicts [Visual Basic]
 - element names [Visual Basic], in code
 ms.assetid: 2e4e8e02-23f7-49b9-a1c8-2b0402b6b525
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: f410a0eaac0dcc034d406a89ed1d01a8f228a583
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 53c3172e8518115d001c23be2430fbc87ae1b60f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="keywords-as-element-names-in-code-visual-basic"></a>コード内の要素名としてのキーワード (Visual Basic)
 すべてのプログラム要素 — 変数、クラス、またはメンバーなど、予約されたキーワードと同じ名前を持つことができます。 たとえば、という名前の変数を作成することができます`Loop`です。 ただし、そのバージョンを参照する —、制限と同じ名前を持つ`Loop`キーワード — 完全修飾文字列を付けますか、角かっこで囲んでする必要があります (`[ ]`) 次の例に示すように、します。  

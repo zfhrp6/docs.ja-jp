@@ -1,13 +1,6 @@
 ---
-title: "ThemeDictionary のマークアップ拡張機能"
-ms.custom: 
+title: ThemeDictionary のマークアップ拡張機能
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - ThemeDictionaryExtension
 - ThemeDictionary
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - ThemeDictionary markup extension [WPF]
 - XAML [WPF], ThemeDictionary markup extension
 ms.assetid: aa75e10b-13dd-4989-972d-51bab63a05e2
-caps.latest.revision: "18"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 2372961cdc889528f13e13dd1f1760608030275e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ea7c630be3f6d208f5c62e8b9e24606ff0df8466
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="themedictionary-markup-extension"></a>ThemeDictionary のマークアップ拡張機能
 カスタム コントロールの作成者やサード パーティ製コントロールをコントロールのスタイル設定に使用するテーマ固有のリソース ディクショナリを読み込めませんを統合するアプリケーションの手段を提供します。  
@@ -60,7 +48,7 @@ ms.lasthandoff: 12/22/2017
   
  属性構文は、このマークアップ拡張機能で使用される最も一般的な構文です。 `ThemeDictionary` 識別子文字列の後に設定される文字列トークンは、基になる <xref:System.Windows.ThemeDictionaryExtension.AssemblyName%2A> 拡張クラスの <xref:System.Windows.ThemeDictionaryExtension> 値として割り当てられます。  
   
- `ThemeDictionary`オブジェクトの要素の構文にも使用できます。 この例では、値を指定する、<xref:System.Windows.ThemeDictionaryExtension.AssemblyName%2A>プロパティは必須です。  
+ `ThemeDictionary` オブジェクトの要素の構文にも使用できます。 この例では、値を指定する、<xref:System.Windows.ThemeDictionaryExtension.AssemblyName%2A>プロパティは必須です。  
   
  `ThemeDictionary` は、<xref:System.Windows.Markup.StaticExtension.Member%2A> プロパティをプロパティおよび値のペアとして指定する詳細出力属性使用でも使用できます。  
   
@@ -74,7 +62,7 @@ ms.lasthandoff: 12/22/2017
   
  `ThemeDictionary` はマークアップ拡張機能です。 一般にマークアップ拡張機能を実装するのは、属性値をリテラル値やハンドラー名以外にエスケープする要件が存在し、その要件の適用範囲がグローバルで、特定の型やプロパティに型コンバーターを適用するだけにとどまらない場合です。 すべてのマークアップ拡張機能で[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]を使用して、{、}、規則は、それぞれの属性構文内の文字、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]プロセッサは、マークアップ拡張機能が、属性を処理する必要がありますを認識します。 詳細については、次を参照してください。[マークアップ拡張機能と WPF XAML](../../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [スタイルとテンプレート](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
  [XAML の概要 (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)  
  [マークアップ拡張機能と WPF XAML](../../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)  

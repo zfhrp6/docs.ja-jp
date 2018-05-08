@@ -1,12 +1,6 @@
 ---
-title: "方法: 省略可能なパラメーターを受け取るプロシージャをオーバーロードする (Visual Basic)"
-ms.custom: 
+title: '方法: 省略可能なパラメーターを受け取るプロシージャをオーバーロードする (Visual Basic)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - procedures [Visual Basic], parameters
 - procedure overloading [Visual Basic], optional parameters
@@ -16,14 +10,11 @@ helpviewer_keywords:
 - procedures [Visual Basic], overloading
 - procedures [Visual Basic], multiple versions
 ms.assetid: 825f9d56-4cde-43fd-993a-b9171717e2eb
-caps.latest.revision: "17"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: b4a863944d4f9ab265aab52578fbb704ca376de5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 1da1d67726a9669477721aabc0aace0119aa7e56
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-overload-a-procedure-that-takes-optional-parameters-visual-basic"></a>方法: 省略可能なパラメーターを受け取るプロシージャをオーバーロードする (Visual Basic)
 プロシージャが 1 つまたは複数場合[オプション](../../../../visual-basic/language-reference/modifiers/optional.md)パラメーター、暗黙的なオーバー ロードのいずれかに一致するオーバー ロード バージョンを定義することはできません。 詳細についてを参照してください"暗黙的なオーバー ロードの省略可能なパラメーター"[プロシージャのオーバー ロードでの考慮事項](./considerations-in-overloading-procedures.md)です。  

@@ -1,29 +1,15 @@
 ---
 title: WPF のグローバリゼーションおよびローカリゼーションの概要
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-wpf
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - globalization [WPF], about globalization
 - localization [WPF], about localization
 ms.assetid: 56e5a5c8-6c96-4d19-b8e1-a5be1dc564af
-caps.latest.revision: ''
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 6f2bc9021ca376b7b27f74efed6866a907b480ad
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: 957ba16886669acdfa5501ffe02501cbe6e57198
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="wpf-globalization-and-localization-overview"></a>WPF のグローバリゼーションおよびローカリゼーションの概要
 1 つの言語、製品の可用性を制限する場合は、潜在的な顧客の世界 6.5 と人口の割合をベースを制限します。 世界各国のユーザーに到達するようにアプリケーションを実行する場合に、製品のコスト効果の高いローカライズはより多くの顧客に最適かつ最も経済的な方法のいずれかです。  
@@ -67,7 +53,7 @@ ms.lasthandoff: 03/26/2018
   
 -   ローカリゼーション属性を使用して、選択的に省略することではなく制御<xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A>要素のプロパティです。 参照してください[ローカリゼーション属性とコメント](../../../../docs/framework/wpf/advanced/localization-attributes-and-comments.md)詳細についてはします。  
   
--   使用して**msbuild/t:updateuid**と**/t:checkuid**を追加および確認<xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A>プロパティで、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]です。 使用して<xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A>開発およびローカリゼーションの間での変更を追跡するプロパティです。 <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> プロパティを使用して、新しい開発上の変更をローカライズできます。 手動で追加する場合<xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A>プロパティを[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]タスクは通常面倒と正確さに欠けます。  
+-   使用して**msbuild/t:updateuid**と **/t:checkuid**を追加および確認<xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A>プロパティで、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]です。 使用して<xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A>開発およびローカリゼーションの間での変更を追跡するプロパティです。 <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> プロパティを使用して、新しい開発上の変更をローカライズできます。 手動で追加する場合<xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A>プロパティを[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]タスクは通常面倒と正確さに欠けます。  
   
     -   編集または変更しない<xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A>プロパティのローカライズを開始した後です。  
   
@@ -144,11 +130,11 @@ ms.lasthandoff: 03/26/2018
   
  [!code-xaml[GlobalizationRunDialog#GridColumnDef](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GlobalizationRunDialog/CS/Window1.xaml#gridcolumndef)]  
   
- 最初の 2 つの列で、**開く:**ラベルと<xref:System.Windows.Controls.ComboBox>を配置しているの 10% を使用して、[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]幅の合計します。  
+ 最初の 2 つの列で、**開く:** ラベルと<xref:System.Windows.Controls.ComboBox>を配置しているの 10% を使用して、[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]幅の合計します。  
   
  [!code-xaml[GlobalizationRunDialog#GridColumnDef2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GlobalizationRunDialog/CS/Window1.xaml#gridcolumndef2)]  
   
- 例では、の共有のサイズ変更機能を使用する注<xref:System.Windows.Controls.Grid>です。 最後の 3 つの列を活用これと同じでそれ自体を配置することによって<xref:System.Windows.Controls.DefinitionBase.SharedSizeGroup%2A>です。 プロパティの名前のいずれかと同様に、これにより、同じサイズを共有する列。 その場合に、「参照...」 ローカライズされますより長い文字列"Durchsuchen…"では、すべてのボタンを小さな [OK] ボタンと過度に大規模な"Durchsuchen…"ではなく幅で拡張。 ボタンをクリックします。  
+ 例では、の共有のサイズ変更機能を使用する注<xref:System.Windows.Controls.Grid>です。 最後の 3 つの列を活用これと同じでそれ自体を配置することによって<xref:System.Windows.Controls.DefinitionBase.SharedSizeGroup%2A>です。 プロパティの名前のいずれかと同様に、これにより、同じサイズを共有する列。 その場合に、「参照...」 ローカライズされますより長い文字列"Durchsuchen…"では、すべてのボタンを小さな [OK] ボタンと過度に大規模な"Durchsuchen…"ではなく幅で拡張。 を追加します。  
   
  **Xml:lang**  
   
@@ -158,7 +144,7 @@ ms.lasthandoff: 03/26/2018
   
  **サテライト リソース アセンブリの構築**  
   
- *In .csproj:*  
+ *.Csproj: で*  
   
  `<UICulture>en-US</UICulture>`  
   
@@ -208,7 +194,7 @@ ms.lasthandoff: 03/26/2018
   
  ローカリゼーションの最後の手順には、新しくローカライズされたサテライト アセンブリの作成が含まれます。 これには、次の LocBaml コマンドを使用します。  
   
- **LocBaml.exe /generate RunDialog.resources.dll /trans:RunDialog.resources.dll.CSV /out: . /cul:de-DE**  
+ **LocBaml.exe/生成 RunDialog.resources.dll/trans:RunDialog.resources.dll.CSV/out: です。/cul:de-DE**  
   
  ドイツ語で[!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)]、このリソースは自動的に読み込ま EN-US フォルダーではなくこの resources.dll がメイン アセンブリの横にある DE-DE フォルダーに配置されている場合。 ドイツ語版のない[!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)]これをテストするには、任意のカルチャにカルチャを設定[!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)](例: EN-US) を使用しているし、元の resources.dll を置き換えます。  
   
@@ -225,7 +211,7 @@ ms.lasthandoff: 03/26/2018
   
  de-DE\MyDialog.resources.dll または de\MyDialog.resources.dll の両方が使用できなくなった場合に、en-US\MyDialog.resources.dll ドイツ語の Windows で使用されます。  
   
-### <a name="microsoft-saudi-arabia-homepage"></a>Microsoft Saudi Arabia Homepage  
+### <a name="microsoft-saudi-arabia-homepage"></a>Microsoft サウジアラビア ホーム ページ  
  次の図は、英語とアラビア語のホーム ページを表示します。 このようなグラフィックスを生成する完全なサンプルを参照してください。[グローバリゼーション ホームページのサンプル](http://go.microsoft.com/fwlink/?LinkID=159990)です。  
   
  **英語：**  
@@ -249,7 +235,7 @@ ms.lasthandoff: 03/26/2018
   
  背景のグラデーション ブラシでもに反転するときに正しくことを確認ルート<xref:System.Windows.FrameworkElement.FlowDirection%2A>を変更します。  
   
- **FlowDirection="LeftToRight"**  
+ **FlowDirection"LeftToRight"を =**  
   
  ![左から右へのフロー](../../../../docs/framework/wpf/advanced/media/lefttoright.PNG "LeftToRight")  
   

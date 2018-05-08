@@ -1,13 +1,6 @@
 ---
-title: "ローカル型の推論 (Visual Basic)"
-ms.custom: 
+title: ローカル型の推論 (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - local type inference
 - vb.TypeInfer
@@ -19,14 +12,11 @@ helpviewer_keywords:
 - inference [Visual Basic]
 - type inference [Visual Basic]
 ms.assetid: b8307f18-2e56-4ab3-a45a-826873f400f6
-caps.latest.revision: "43"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: d753d1fbdc60f70dcf0513d809f28a112243c111
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: b33b8b2d17c240e380377528d4f5d2f511381a7d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="local-type-inference-visual-basic"></a>ローカル型の推論 (Visual Basic)
 Visual Basic コンパイラを使用して*型推論*なしで宣言されたローカル変数のデータ型を決定する、`As`句。 コンパイラは、初期化式の型から変数の型を推論します。 これにより、変数を宣言する型を明示的に指定せず、次の例に示すようにできます。 宣言の結果、両方とも`num1`と`num2`整数値として厳密に型指定します。  
@@ -46,7 +36,7 @@ Visual Basic コンパイラを使用して*型推論*なしで宣言された�
   
  事前バインディングされた変数の動作は、実行時にのみを型が認識されている、遅延バインディングされた変数の動作とは異なります。 型を事前に知ることにより、コンパイラを実行する前に問題を特定、正確には、メモリの割り当ておよびその他の最適化を実行できます。 事前バインディングでは、Visual Basic の統合開発環境 (IDE) オブジェクトのメンバーに関する IntelliSense のヘルプを提供することもできます。 事前バインディングは、パフォーマンスを優先もできます。 これは、遅延バインディングされた変数に格納されているすべてのデータは、種類としてラップする必要があるため`Object`、低速のプログラムは、実行時に、型のメンバーにアクセスするとします。  
   
-## <a name="examples"></a>例  
+## <a name="examples"></a>使用例  
  型の推論は発生せずにローカル変数が宣言されたときに、`As`句を初期化します。 コンパイラは、変数の型として割り当てられた初期値の型を使用します。 たとえば、次のコード行の各型の変数を宣言`String`です。  
   
  [!code-vb[VbVbalrTypeInference#2](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/local-type-inference_2.vb)]  
@@ -68,7 +58,7 @@ Visual Basic コンパイラを使用して*型推論*なしで宣言された�
  [!code-vb[VbVbalrTypeInference#5](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/local-type-inference_6.vb)]  
   
 ## <a name="option-infer"></a>Option Infer  
- `Option Infer`ローカル型推論が、特定のファイルで許可されているかどうかを指定できます。 有効にするにまたは、このオプションをブロックするファイルの先頭に次のステートメントのいずれかを入力します。  
+ `Option Infer` ローカル型推論が、特定のファイルで許可されているかどうかを指定できます。 有効にするにまたは、このオプションをブロックするファイルの先頭に次のステートメントのいずれかを入力します。  
   
  `Option Infer On`  
   

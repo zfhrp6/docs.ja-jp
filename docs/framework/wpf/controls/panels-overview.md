@@ -1,14 +1,6 @@
 ---
 title: パネルの概要
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-wpf
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,17 +9,11 @@ helpviewer_keywords:
 - Panel control [WPF], about Panel control
 - controls [WPF], Panel
 ms.assetid: f73644af-9941-4611-8754-6d4cef03fc44
-caps.latest.revision: 48
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: dd04413636c7d6182ff01712eecedbbd4ed02761
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: 65f5fa9eeffdeb6e7bc869d159b4b33d75fd7570
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="panels-overview"></a>パネルの概要
 <xref:System.Windows.Controls.Panel> 要素は要素の描画を制御するコンポーネント、そのサイズとディメンション、それらの位置およびその子コンテンツの配置。 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]は多数の定義済み<xref:System.Windows.Controls.Panel>要素だけでなくカスタムを作成する機能<xref:System.Windows.Controls.Panel>要素。  
@@ -107,7 +93,7 @@ ms.lasthandoff: 04/09/2018
   
 <a name="Panels_overview_Canvas_subsection"></a>   
 ### <a name="canvas"></a>Canvas  
- <xref:System.Windows.Controls.Canvas>要素は、絶対に従ってコンテンツを配置できるように*x -*と*y*座標。 要素は一意の場所に描画できます。または、要素が同じ座標を占める場合、マークアップに表示される順序が要素の描画順序を決定します。  
+ <xref:System.Windows.Controls.Canvas>要素は、絶対に従ってコンテンツを配置できるように*x -* と*y*座標。 要素は一意の場所に描画できます。または、要素が同じ座標を占める場合、マークアップに表示される順序が要素の描画順序を決定します。  
   
  <xref:System.Windows.Controls.Canvas> いずれかの最も柔軟なレイアウトのサポートを提供<xref:System.Windows.Controls.Panel>です。 高さと幅のプロパティを使用して、キャンバスの領域を定義し、内の要素が親の領域と相対的に絶対座標を割り当てられている<xref:System.Windows.Controls.Canvas>です。 アタッチされる 4 つのプロパティ、 <xref:System.Windows.Controls.Canvas.Left%2A?displayProperty=nameWithType>、 <xref:System.Windows.Controls.Canvas.Top%2A?displayProperty=nameWithType>、<xref:System.Windows.Controls.Canvas.Right%2A?displayProperty=nameWithType>と<xref:System.Windows.Controls.Canvas.Bottom%2A?displayProperty=nameWithType>、内のオブジェクト配置の詳細に制御する、<xref:System.Windows.Controls.Canvas>開発者は、画面上に正確に要素を配置したりできるようにします。  
   
@@ -245,7 +231,7 @@ ms.lasthandoff: 04/09/2018
   
  同様に、カスタム レイアウトの動作に基づいて派生クラス (など<xref:System.Windows.Controls.Canvas>または<xref:System.Windows.Controls.Grid>) をオーバーライドして定義することができます、<xref:System.Windows.FrameworkElement.ArrangeOverride%2A>と<xref:System.Windows.FrameworkElement.MeasureOverride%2A>メソッドです。  
   
- 次のマークアップがカスタムを作成する方法を示します<xref:System.Windows.Controls.Panel>要素。 この新しい<xref:System.Windows.Controls.Panel>として定義されている`PlotPanel`、ハード コーディングされたを使用して子要素の位置をサポートしている*x -*と*y*座標。 この例では、 <xref:System.Windows.Shapes.Rectangle> (表示されない) 要素はプロット時点 50 (*x*)、50 (*y*)。  
+ 次のマークアップがカスタムを作成する方法を示します<xref:System.Windows.Controls.Panel>要素。 この新しい<xref:System.Windows.Controls.Panel>として定義されている`PlotPanel`、ハード コーディングされたを使用して子要素の位置をサポートしている*x -* と*y*座標。 この例では、 <xref:System.Windows.Shapes.Rectangle> (表示されない) 要素はプロット時点 50 (*x*)、50 (*y*)。  
   
  [!code-cpp[PlotPanel#1](../../../../samples/snippets/cpp/VS_Snippets_Wpf/PlotPanel/CPP/PlotPanel.cpp#1)]
  [!code-csharp[PlotPanel#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PlotPanel/CSharp/PlotPanel.cs#1)]

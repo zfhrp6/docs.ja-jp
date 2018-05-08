@@ -1,10 +1,6 @@
 ---
 title: null 許容値型 (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.Nullable
 helpviewer_keywords:
@@ -14,13 +10,11 @@ helpviewer_keywords:
 - nullable types [Visual Basic]
 - data types [Visual Basic], nullable
 ms.assetid: 9ac3b602-6f96-4e6d-96f7-cd4e81c468a6
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 16df20be89a88aa68e06692594c208cee1ab2dea
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: bb44ad85347b494b63dde964b2b407d8f038f2b9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="nullable-value-types-visual-basic"></a>null 許容値型 (Visual Basic)
 特定の状況で定義されている値を持たない値の型と連携することがあります。 たとえば、データベース内のフィールドは、意味のある割り当てられた値を持つ、割り当てられた値がないとを区別する必要があります。 値の型は、通常の値または null 値のいずれかを拡張できます。 このような拡張機能が呼び出された、 *null 許容型*です。  
