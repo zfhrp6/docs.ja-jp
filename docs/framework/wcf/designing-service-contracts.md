@@ -1,37 +1,23 @@
 ---
 title: サービス コントラクトの設計
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - service contracts [WCF]
 ms.assetid: 8e89cbb9-ac84-4f0d-85ef-0eb6be0022fd
-caps.latest.revision: 34
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 14973d3612eb5739e0dfcd7b50409904ab5d6844
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
-ms.translationtype: MT
+ms.openlocfilehash: 6d1e9ba7f5546923b222f2d495aacdb2c1caaf96
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="designing-service-contracts"></a>サービス コントラクトの設計
 ここでは、サービス コントラクトの概要、定義方法、使用できる操作 (および基になるメッセージ交換の影響)、使用するデータ型、およびシナリオの要件を満たす操作を設計する際に役立つその他の問題について説明します。  
   
 ## <a name="creating-a-service-contract"></a>サービス コントラクトの作成  
- サービスは複数の操作を公開します。 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] アプリケーションでは、メソッドを作成し、<xref:System.ServiceModel.OperationContractAttribute> 属性でマークすることによって操作を定義します。 次に、サービス コントラクトを作成するために、<xref:System.ServiceModel.ServiceContractAttribute> 属性でマークされたインターフェイス内で操作を宣言するか、この属性でマークされたクラス内で操作を定義することにより、操作をグループ化します  (基本的な例では、次を参照してください[する方法: サービス コントラクトを定義する](../../../docs/framework/wcf/how-to-define-a-wcf-service-contract.md)。)。  
+ サービスは複数の操作を公開します。 Windows Communication Foundation (WCF) アプリケーションでは、メソッドを作成してでマークすることによって、操作を定義、<xref:System.ServiceModel.OperationContractAttribute>属性。 次に、サービス コントラクトを作成するために、<xref:System.ServiceModel.ServiceContractAttribute> 属性でマークされたインターフェイス内で操作を宣言するか、この属性でマークされたクラス内で操作を定義することにより、操作をグループ化します  (基本的な例では、次を参照してください[する方法: サービス コントラクトを定義する](../../../docs/framework/wcf/how-to-define-a-wcf-service-contract.md)。)。  
   
  <xref:System.ServiceModel.OperationContractAttribute> 属性を持たないメソッドはサービス操作ではないため、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスによって公開されることはありません。  
   
@@ -82,7 +68,7 @@ ms.lasthandoff: 04/30/2018
 >  操作シグネチャのパラメーター名の値はコントラクトに含まれ、大文字と小文字が区別されます。 ローカルでは同じパラメーター名を使用するが、公開されるメタデータでは名前を変更する場合は、<xref:System.ServiceModel.MessageParameterAttribute?displayProperty=nameWithType> を参照してください。  
   
 #### <a name="data-contracts"></a>データ コントラクト  
- [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] アプリケーションのようなサービス指向アプリケーションは、マイクロソフトとマイクロソフト以外の両方のプラットフォームで、できる限り多くのクライアント アプリケーションと相互運用できるように設計されています。 最大限の相互運用性を実現するために、使用する型を <xref:System.Runtime.Serialization.DataContractAttribute> 属性と <xref:System.Runtime.Serialization.DataMemberAttribute> 属性でマークして、データ コントラクトを作成することをお勧めします。データ コントラクトは、サービス コントラクトの一部であり、サービス操作で交換するデータを記述したものです。  
+ Windows Communication Foundation (WCF) アプリケーションと同様に、サービス指向のアプリケーションは、できる限り多くの Microsoft および Microsoft 以外のプラットフォーム上のクライアント アプリケーションとの相互運用に設計されています。 最大限の相互運用性を実現するために、使用する型を <xref:System.Runtime.Serialization.DataContractAttribute> 属性と <xref:System.Runtime.Serialization.DataMemberAttribute> 属性でマークして、データ コントラクトを作成することをお勧めします。データ コントラクトは、サービス コントラクトの一部であり、サービス操作で交換するデータを記述したものです。  
   
  データ コントラクトは opt-in 方式のコントラクトです。つまり、データ コントラクト属性を明示的に適用しない限り、型またはデータ メンバーはシリアル化されません。 データ コントラクトはマネージ コードのアクセス スコープとして関連付けられていません。プライベートのデータ メンバーはシリアル化され、パブリックにアクセスされる他の場所に送信されます  (データ コントラクトの基本的な例を参照してください[する方法: クラスまたは構造体に基本的なデータ コントラクトを作成する](../../../docs/framework/wcf/feature-details/how-to-create-a-basic-data-contract-for-a-class-or-structure.md)。)。[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]操作の機能を有効にする基になる SOAP メッセージの定義だけでなく、シリアル化データの種類に出入りするメッセージの本文を処理します。 使用するデータ型がシリアル化可能であれば、操作の設計時に、基盤となるメッセージ交換インフラストラクチャについて考える必要はありません。  
   

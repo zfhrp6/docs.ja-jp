@@ -1,30 +1,18 @@
 ---
-title: "アクティビティ"
-ms.custom: 
+title: アクティビティ
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 70471705-f55f-4da1-919f-4b580f172665
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: cbcf33aa734cde1d2458e46cd161f9ea5197a827
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 34281647f65157484c1e732bc67a6a4b2cf58db6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="activity"></a>アクティビティ
-ここでは、[!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] トレース モデルのアクティビティ トレースについて説明します。 アクティビティは、ユーザーがエラーの範囲を絞り込む上で役立つ処理単位です。 同じアクティビティで発生したエラーは直接関連します。 たとえば、メッセージを復号化できなかったために、ある操作が失敗したとします。 この操作とメッセージ復号化失敗のトレースは同じアクティビティ内に表示され、復号化エラーと要求エラー間の直接相関関係が示されます。  
+このトピックでは、Windows Communication Foundation (WCF) のトレース モデルでのアクティビティ トレースについて説明します。 アクティビティは、ユーザーがエラーの範囲を絞り込む上で役立つ処理単位です。 同じアクティビティで発生したエラーは直接関連します。 たとえば、メッセージを復号化できなかったために、ある操作が失敗したとします。 この操作とメッセージ復号化失敗のトレースは同じアクティビティ内に表示され、復号化エラーと要求エラー間の直接相関関係が示されます。  
   
 ## <a name="configuring-activity-tracing"></a>アクティビティ トレースの構成  
- [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)]アプリケーションを処理するための定義済みのアクティビティの提供 (を参照してください[アクティビティ リスト](../../../../../docs/framework/wcf/diagnostics/tracing/activity-list.md))。 また、ユーザー トレースをグループ化するために、アクティビティをプログラムによって定義することもできます。 詳細については、次を参照してください。[ユーザー コード トレースの出力](../../../../../docs/framework/wcf/diagnostics/tracing/emitting-user-code-traces.md)です。  
+ [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] アプリケーションを処理するための定義済みのアクティビティの提供 (を参照してください[アクティビティ リスト](../../../../../docs/framework/wcf/diagnostics/tracing/activity-list.md))。 また、ユーザー トレースをグループ化するために、アクティビティをプログラムによって定義することもできます。 詳細については、次を参照してください。[ユーザー コード トレースの出力](../../../../../docs/framework/wcf/diagnostics/tracing/emitting-user-code-traces.md)です。  
   
  実行時にアクティビティ トレースを出力するには、次の構成コードに示すように、`ActivityTracing` トレース ソースや、他の `System.ServiceModel` トレース ソースまたはカスタム トレース ソースの [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] 設定を使用します。  
   
@@ -108,7 +96,7 @@ traceSource.TraceEvent(TraceEventType.Warning, eventId, "Information");
   
 -   アクティビティはアクティビティを表します。オブジェクトとは限りません。 アクティビティとして解釈する必要があります"これが発生しているときにします。 である必要があります。 である必要があります。 (有効なトレース出力が発生したときに) これが発生していた" と解釈する必要があります。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [トレースの構成](../../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)  
  [サービス トレース ビューアーを使用した相関トレースの表示とトラブルシューティング](../../../../../docs/framework/wcf/diagnostics/tracing/using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md)  
  [エンドツーエンドのトレースのシナリオ](../../../../../docs/framework/wcf/diagnostics/tracing/end-to-end-tracing-scenarios.md)  

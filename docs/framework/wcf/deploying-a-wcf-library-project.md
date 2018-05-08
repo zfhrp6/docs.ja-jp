@@ -1,27 +1,15 @@
 ---
-title: "WCF ライブラリ プロジェクトの配置"
-ms.custom: 
+title: WCF ライブラリ プロジェクトの配置
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 9f9222fe-d358-443c-9a49-12c5498e35e7
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: bbbbff1d88559f8ab35caa48fcb04ff1cd7bf015
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 08a1d794aeeea1a41cd1eb3abf298f3f4a0f6d15
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="deploying-a-wcf-library-project"></a>WCF ライブラリ プロジェクトの配置
-ここでは、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービス ライブラリ プロジェクトの配置方法について説明します。  
+このトピックでは、Windows Communication Foundation (WCF) サービス ライブラリ プロジェクトを配置する方法について説明します。  
   
 ## <a name="deploying-a-wcf-service-library"></a>WCF サービス ライブラリの配置  
  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス ライブラリは、ダイナミックリンク ライブラリ (DLL) です。 それ自体を単独で実行することはできません。 ホスティング環境に配置する必要があります。 このプロセスの詳細については、次を参照してください。[ホスティングと WCF サービスの消費](http://go.microsoft.com/fwlink/?LinkId=99932)です。  

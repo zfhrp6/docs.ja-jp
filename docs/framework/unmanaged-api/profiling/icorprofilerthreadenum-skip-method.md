@@ -1,14 +1,6 @@
 ---
-title: "ICorProfilerThreadEnum::Skip メソッド"
-ms.custom: 
+title: ICorProfilerThreadEnum::Skip メソッド
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ICorProfilerThreadEnum.Skip
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: acb8b029-4a96-4ed7-ae3c-310204e5ceea
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: c1840722a250dd627a5214700dca95c48aa2e8d2
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: af6aab2483f0e92dc20936fe2b01e12590d99ca7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="icorprofilerthreadenumskip-method"></a>ICorProfilerThreadEnum::Skip メソッド
 指定した数の要素をスキップするため、この列挙子のカーソルを現在の位置から進めます。  
@@ -54,21 +42,21 @@ HRESULT Skip (    [in] ULONG celt
   
 |HRESULT|説明|  
 |-------------|-----------------|  
-|S_OK|`celt`要素がスキップされました。|  
+|S_OK|`celt` 要素がスキップされました。|  
 |S_FALSE|少ない`celt`要素がスキップされた複数の要素ではありませんがあることを示します。|  
   
 ## <a name="remarks"></a>コメント  
  この列挙子のカーソルの新しい位置は、(現在の位置) +`celt`です。  
   
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー** : CorProf.idl、CorProf.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET framework のバージョン:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **.NET framework のバージョン:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ICorProfilerThreadEnum インターフェイス](../../../../docs/framework/unmanaged-api/profiling/icorprofilerthreadenum-interface.md)  
  [プロファイリングのインターフェイス](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)

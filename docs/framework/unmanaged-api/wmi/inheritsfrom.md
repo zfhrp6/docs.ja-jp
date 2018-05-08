@@ -1,11 +1,7 @@
 ---
-title: "InheritsFrom 関数 (アンマネージ API リファレンス)"
-description: "InheritsFrom 関数は、クラスまたはインスタンスが特定の親クラスから派生しているかどうかを決定します。"
+title: InheritsFrom 関数 (アンマネージ API リファレンス)
+description: InheritsFrom 関数は、クラスまたはインスタンスが特定の親クラスから派生しているかどうかを決定します。
 ms.date: 11/06/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: reference
 api_name:
 - InheritsFrom
 api_location:
@@ -20,14 +16,11 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 0dce964829399e6761152a8ff424671b47cc6eb3
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 87a1c1ee44d3b192747bd785f538c0332300ff50
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="inheritsfrom-function"></a>InheritsFrom 関数
 現在のクラスまたはインスタンスが指定された親クラスから派生するかどうかを判断します。
@@ -53,7 +46,7 @@ HRESULT InheritsFrom (
 [in]ポインター、 [IWbemClassObject](https://msdn.microsoft.com/library/aa391433%28v=vs.85%29.aspx)インスタンス。
 
 `wszAncestor`  
-[in]クラスの名前です。 `wszAncestor`有効なをポイントする必要があります`LPCWSTR`です。
+[in]クラスの名前です。 `wszAncestor` 有効なをポイントする必要があります`LPCWSTR`です。
 
 ## <a name="return-value"></a>戻り値
 
@@ -69,12 +62,12 @@ HRESULT InheritsFrom (
 
 この関数への呼び出しをラップする、 [IWbemClassObject::InheritsFrom](https://msdn.microsoft.com/library/aa391452(v=vs.85).aspx)メソッドです。
 
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** WMINet_Utils.idl  
   
- **.NET framework のバージョン:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **.NET framework のバージョン:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>関連項目  
 [WMI およびパフォーマンス カウンター (アンマネージ API リファレンス)](index.md)

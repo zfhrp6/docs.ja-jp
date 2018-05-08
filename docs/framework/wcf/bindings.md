@@ -1,31 +1,17 @@
 ---
-title: "Windows Communication Foundation バインディング"
-ms.custom: 
+title: Windows Communication Foundation バインディング
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - bindings [WCF]
 ms.assetid: 845df323-be53-4848-92ef-ba67a406484d
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: e878aadf1c7df6042323c008ff52a4be8a9d817f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: d40faff2734095af42f94c60c630dde8494e5975
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="windows-communication-foundation-bindings"></a>Windows Communication Foundation バインディング
-バインディングは、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービス エンドポイントが他のエンドポイントと通信する方法を指定します。 バインディングでは、まず、使用するトランスポート (HTTP や TCP など) を指定する必要があります。 セキュリティやトランザクションのサポートなど、その他の特性もバインディングによって設定できます。  
+バインディングは、Windows Communication Foundation (WCF) サービス エンドポイントが他のエンドポイントと通信する方法を指定します。 バインディングでは、まず、使用するトランスポート (HTTP や TCP など) を指定する必要があります。 セキュリティやトランザクションのサポートなど、その他の特性もバインディングによって設定できます。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [WCF のバインディングの概要](../../../docs/framework/wcf/bindings-overview.md)  
@@ -48,5 +34,5 @@ ms.lasthandoff: 12/22/2017
   
  [バインディング](../../../docs/framework/wcf/feature-details/bindings.md)  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [カスタム バインディング](../../../docs/framework/wcf/extending/custom-bindings.md)

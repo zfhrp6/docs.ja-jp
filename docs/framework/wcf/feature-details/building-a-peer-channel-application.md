@@ -1,24 +1,12 @@
 ---
-title: "ピア チャネル アプリケーションの構築"
-ms.custom: 
+title: ピア チャネル アプリケーションの構築
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: a69a1b8f-8e15-45c5-87b8-bdb71e1c7ab8
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 1d3ca06c2e702ef64a05834116e1c89b4872b32b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ffeb973cbf82f1750fa2be90fa8362fda908322c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="building-a-peer-channel-application"></a>ピア チャネル アプリケーションの構築
 次のセクションでは、ピア チャネル アプリケーションの開発に関するガイダンスを示します。  
@@ -36,5 +24,5 @@ ms.lasthandoff: 12/22/2017
  [セキュリティによるピア チャネル アプリケーションの保護](../../../../docs/framework/wcf/feature-details/securing-peer-channel-applications.md)  
  トランスポート ベースとメッセージ ベースのセキュリティ、およびピア チャネル アプリケーションのベスト プラクティスについて説明します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ピア チャネルの概要](../../../../docs/framework/wcf/feature-details/peer-channel-concepts.md)

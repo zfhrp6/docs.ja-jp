@@ -1,34 +1,20 @@
 ---
-title: "動作を使用したランタイムの構成と拡張"
-ms.custom: 
+title: 動作を使用したランタイムの構成と拡張
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - attaching extensions using behaviors [WCF]
 ms.assetid: 149b99b6-6eb6-4f45-be22-c967279677d9
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 2ea157ea1ac73a287ba39c1468e7e9a5781d40a0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 05fd96574f072f8e349f83d11aca20bc5269dfc7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="configuring-and-extending-the-runtime-with-behaviors"></a>動作を使用したランタイムの構成と拡張
-動作を使用すると、既定の動作を変更したり、カスタム拡張機能を追加したりできます。カスタム拡張機能では、サービス構成の検査および検証や、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] クライアント アプリケーションとサービス アプリケーションのランタイム動作の変更を行います。 ここでは、動作インターフェイスとその実装方法について説明します。また、動作インターフェイスをサービスの説明 (サービス アプリケーションの場合) またはエンドポイント (クライアント アプリケーションの場合) にプログラムによって追加する方法と、構成ファイル内で追加する方法についても説明します。 詳細については、システム指定の動作を使用して、次を参照してください。[サービスの実行時の動作を指定する](../../../../docs/framework/wcf/specifying-service-run-time-behavior.md)と[クライアントの実行時の動作を指定する](../../../../docs/framework/wcf/specifying-client-run-time-behavior.md)です。  
+動作を使用すると、既定の動作を変更し、検査し、サービス構成を検証または Windows Communication Foundation (WCF) クライアントとサービス アプリケーションのランタイム動作を変更するカスタムの拡張機能を追加できます。 ここでは、動作インターフェイスとその実装方法について説明します。また、動作インターフェイスをサービスの説明 (サービス アプリケーションの場合) またはエンドポイント (クライアント アプリケーションの場合) にプログラムによって追加する方法と、構成ファイル内で追加する方法についても説明します。 詳細については、システム指定の動作を使用して、次を参照してください。[サービスの実行時の動作を指定する](../../../../docs/framework/wcf/specifying-service-run-time-behavior.md)と[クライアントの実行時の動作を指定する](../../../../docs/framework/wcf/specifying-client-run-time-behavior.md)です。  
   
 ## <a name="behaviors"></a>ビヘイビアー  
- 動作の型は、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] がサービス説明オブジェクト (サービスの場合) またはサービス エンド ポイント説明オブジェクト (クライアントの場合) を使用してランタイムを作成する前に、これらのオブジェクトに追加されます。このランタイムは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスまたは [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントを実行します。 ランタイムの構築プロセスでこれらの動作を呼び出すと、コントラクト、バインディング、およびアドレスによって構築されたランタイムを変更するランタイム プロパティやランタイム メソッドにアクセスできます。  
+ サービスまたはサービス エンドポイント説明オブジェクトに追加される動作の種類 (サービスまたはクライアントでそれぞれ) を実行するランタイムの作成に Windows Communication Foundation (WCF) によってがそれらのオブジェクトで使用する前に、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]サービスまたは、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]クライアント。 ランタイムの構築プロセスでこれらの動作を呼び出すと、コントラクト、バインディング、およびアドレスによって構築されたランタイムを変更するランタイム プロパティやランタイム メソッドにアクセスできます。  
   
 ### <a name="behavior-methods"></a>動作メソッド  
  すべての動作で、`AddBindingParameters` メソッド、`ApplyDispatchBehavior` メソッド、`Validate` メソッド、および `ApplyClientBehavior` メソッドを使用できます。ただし、<xref:System.ServiceModel.Description.IServiceBehavior> には、例外が 1 つあります。`ApplyClientBehavior` はクライアントで実行できないため、このメソッドを実装していません。  

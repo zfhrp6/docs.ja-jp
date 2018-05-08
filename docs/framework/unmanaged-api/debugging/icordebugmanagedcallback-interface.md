@@ -1,14 +1,6 @@
 ---
-title: "ICorDebugManagedCallback インターフェイス"
-ms.custom: 
+title: ICorDebugManagedCallback インターフェイス
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ICorDebugManagedCallback
 api_location:
@@ -22,17 +14,13 @@ helpviewer_keywords:
 ms.assetid: b47f1d61-c7dc-4196-b926-0b08c94f7041
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: fd864cbb5a95143f6dd7f55fc1b1fc57f9f42e98
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6c879af682e2d54ed3ae1e9821c0bd85b5cac27d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="icordebugmanagedcallback-interface"></a>ICorDebugManagedCallback インターフェイス
 デバッガーのコールバックを処理するメソッドを提供します。  
@@ -49,7 +37,7 @@ ms.lasthandoff: 12/22/2017
 |[CreateProcess メソッド](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-createprocess-method.md)|デバッガーは、プロセスをアタッチまたは、最初に起動されたときに通知します。|  
 |[CreateThread メソッド](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-createthread-method.md)|スレッドがマネージ コードの実行を開始したことをデバッガーに通知します。|  
 |[DebuggerError メソッド](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-debuggererror-method.md)|CLR からのイベントの処理を試行中にエラーが発生したことをデバッガーに通知します。|  
-|[EditAndContinueRemap メソッド](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-editandcontinueremap-method.md)|使用しないでください。 IDE に再割り当てイベントが送信されたことをデバッガーに通知します。|  
+|[EditAndContinueRemap メソッド](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-editandcontinueremap-method.md)|非推奨。 IDE に再割り当てイベントが送信されたことをデバッガーに通知します。|  
 |[EvalComplete メソッド](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-evalcomplete-method.md)|評価が完了したことをデバッガーに通知します。|  
 |[EvalException メソッド](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-evalexception-method.md)|評価版がハンドルされない例外で終了したことをデバッガーに通知します。|  
 |[Exception メソッド](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-exception-method.md)|マネージ コードから例外がスローされたことをデバッガーに通知します。|  
@@ -78,16 +66,16 @@ ms.lasthandoff: 12/22/2017
 > [!NOTE]
 >  このインターフェイスは、コンピューター間またはプロセス間でのリモート呼び出しをサポートしていません。  
   
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ICorDebug インターフェイス](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)  
  [ICorDebugManagedCallback2 インターフェイス](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-interface.md)  
  [デバッグ インターフェイス](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

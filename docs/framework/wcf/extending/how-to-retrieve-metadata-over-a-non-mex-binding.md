@@ -1,33 +1,19 @@
 ---
 title: '方法: MEX 以外のバインディングを介してメタデータを取得する'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 2292e124-81b2-4317-b881-ce9c1ec66ecb
-caps.latest.revision: 10
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: b469a08ad9759a2d5213f13256ec2def96107acc
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 198c343aa6f25d55e518990dc1dbd2667a8c17ad
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-retrieve-metadata-over-a-non-mex-binding"></a>方法: MEX 以外のバインディングを介してメタデータを取得する
 ここでは、MEX 以外のバインディングを介して MEX エンドポイントからメタデータを取得する方法を説明します。 このサンプルのコードがに基づいて、[カスタム セキュリティで保護されたメタデータ エンドポイント](../../../../docs/framework/wcf/samples/custom-secure-metadata-endpoint.md)サンプルです。  
   
 ### <a name="to-retrieve-metadata-over-a-non-mex-binding"></a>MEX 以外のバインディングを介してメタデータを取得するには  
   
-1.  MEX エンドポイントで使用されているバインディングを特定します。 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスの場合、サービスの構成ファイルにアクセスすることで MEX バインディングを特定できます。 この場合、MEX バインディングは、次のサービス構成で定義されています。  
+1.  MEX エンドポイントで使用されているバインディングを特定します。 Windows Communication Foundation (WCF) サービスのサービスの構成ファイルにアクセスして、MEX のバインディングを指定できます。 この場合、MEX バインディングは、次のサービス構成で定義されています。  
   
     ```xml  
     <services>  

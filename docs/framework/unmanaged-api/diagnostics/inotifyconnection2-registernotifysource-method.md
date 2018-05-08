@@ -1,14 +1,6 @@
 ---
-title: "INotifyConnection2::RegisterNotifySource メソッド"
-ms.custom: 
+title: INotifyConnection2::RegisterNotifySource メソッド
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - INotifyConnection2.RegisterNotifySource
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: 2632da80-6e4b-4429-8dee-b382745a5f81
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: a141872dc5699e5b317b21f03672fe0d76096392
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 3b4731a9503ab29a7d90ddd28c7ac0a5a761c1e0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="inotifyconnection2registernotifysource-method"></a>INotifyConnection2::RegisterNotifySource メソッド
 指定された通知のソースをインストールします。  
@@ -58,10 +46,10 @@ HRESULT RegisterNotifySource
 ## <a name="return-value"></a>戻り値  
  メソッドが成功した場合は S_OK です。  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** ProtocolNotify2.idl  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [INotifyConnection2 インターフェイス](../../../../docs/framework/unmanaged-api/diagnostics/inotifyconnection2-interface.md)  
  [INotifySource2 インターフェイス](../../../../docs/framework/unmanaged-api/diagnostics/inotifysource2-interface.md)  
  [INotifySink2 インターフェイス](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-interface.md)  
