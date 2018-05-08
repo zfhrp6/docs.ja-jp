@@ -64,7 +64,7 @@ ms.lasthandoff: 02/14/2018
 
 -   **データ コントラクト**  
   
-     [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] は [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)]を使用して作成されているため、適用するコントラクトを提供するコードフレンドリなメソッドが含まれています。 汎用的な型のコントラクトの 1 つにデータ コントラクトがあります。 本質的に、Visual C# または Visual Basic を使用してサービスをコード化した場合、データを処理する最も簡単な方法は、データ エンティティを表すクラスにデータ エンティティに属するプロパティを作成する方法です。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] には、このような簡単な方法でデータを使用する包括的なシステムがあります。 データを表すクラスを作成すると、設計したデータ型にクライアントが準拠できるメタデータがサービスによって自動生成されます。 [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [データコントラクトの使用](../../../docs/framework/wcf/feature-details/using-data-contracts.md)
+     [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] は [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)]を使用して作成されているため、適用するコントラクトを提供するコードフレンドリなメソッドが含まれています。 汎用的な型のコントラクトの 1 つにデータ コントラクトがあります。 本質的に、Visual C# または Visual Basic を使用してサービスをコード化した場合、データを処理する最も簡単な方法は、データ エンティティを表すクラスにデータ エンティティに属するプロパティを作成する方法です。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] には、このような簡単な方法でデータを使用する包括的なシステムがあります。 データを表すクラスを作成すると、設計したデータ型にクライアントが準拠できるメタデータがサービスによって自動生成されます。詳細については、「[!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [データコントラクトの使用](../../../docs/framework/wcf/feature-details/using-data-contracts.md)」を参照してください。
 
 -   **セキュリティ**  
   
