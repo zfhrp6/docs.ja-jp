@@ -2,11 +2,11 @@
 title: 信頼されたファサード サービス
 ms.date: 03/30/2017
 ms.assetid: c34d1a8f-e45e-440b-a201-d143abdbac38
-ms.openlocfilehash: 08e115d297439910c16601051539a23a5a6bebc9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: d5a4cfe63f2fc6facbe4ce78d1c0047349e303fd
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="trusted-facade-service"></a>信頼されたファサード サービス
 このシナリオのサンプルは、Windows Communication Foundation (WCF) を使用して 1 つのサービスからの呼び出し元の id 情報フローする方法を示しますセキュリティ インフラストラクチャです。  
@@ -21,7 +21,7 @@ ms.lasthandoff: 05/04/2018
   
 -   電卓バックエンド サービス  
   
- ファサード サービスは、要求を検証して呼び出し元を認証します。 認証と検証が正常に完了すると、ファサード サービスは、境界ネットワークから内部ネットワークへの制御された通信チャネルを使用して、バックエンド サービスに要求を転送します。 ファサード サービスは、転送される要求の一部として呼び出し元の ID に関する情報を格納し、バックエンド サービスがプロセスでこの情報を使用できるようにします。 呼び出し元の ID は、メッセージの `Username` ヘッダー内部にある `Security` セキュリティ トークンを使用して送信されます。 このサンプルでは、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] セキュリティ インフラストラクチャを使用し、この情報を送信して `Security` ヘッダーから抽出します。  
+ ファサード サービスは、要求を検証して呼び出し元を認証します。 認証と検証が正常に完了すると、ファサード サービスは、境界ネットワークから内部ネットワークへの制御された通信チャネルを使用して、バックエンド サービスに要求を転送します。 ファサード サービスは、転送される要求の一部として呼び出し元の ID に関する情報を格納し、バックエンド サービスがプロセスでこの情報を使用できるようにします。 呼び出し元の ID は、メッセージの `Username` ヘッダー内部にある `Security` セキュリティ トークンを使用して送信されます。 このサンプルでは、WCF のセキュリティ インフラストラクチャを使用して送信してからこの情報を抽出、`Security`ヘッダー。  
   
 > [!IMPORTANT]
 >  バックエンド サービスは、ファサード サービスを信頼して呼び出し元を認証します。 このため、バックエンド サービスは呼び出し元の再認証を行いません。つまり、ファサード サービスから転送された要求内の ID 情報を使用します。 こうした信頼関係があるので、バックエンド サービスでは、転送メッセージが信頼されたソース (この場合はファサード サービス) から送信されことを確認するために、ファサード サービスを認証する必要があります。  
@@ -110,7 +110,7 @@ public class MyUserNamePasswordValidator : UserNamePasswordValidator
   
  [\<セキュリティ >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md)最初の呼び出し元のユーザー名送信および抽出のバインド要素が行われます。 [ \<WindowsStreamSecurity >](../../../../docs/framework/configure-apps/file-schema/wcf/windowsstreamsecurity.md)と[ \<tcpTransport >](../../../../docs/framework/configure-apps/file-schema/wcf/tcptransport.md)ファサードおよびバックエンド サービスを認証するための注意し、メッセージ保護します。  
   
- 要求を転送するには、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] セキュリティ インフラストラクチャが、転送するメッセージに最初の呼び出し元のユーザー名を格納できるように、ファサード サービスの実装でこのユーザー名を提供する必要があります。 最初の呼び出し元のユーザー名をファサード サービスの実装で提供するには、ファサード サービスがバックエンド サービスとの通信に使用するクライアント プロキシ インスタンスの `ClientCredentials` プロパティに、このユーザー名を設定します。  
+ 要求を転送するにその WCF セキュリティ インフラストラクチャは、転送するメッセージにこれを配置できるように、ファサード サービスの実装は最初の呼び出し元のユーザー名を指定する必要があります。 最初の呼び出し元のユーザー名をファサード サービスの実装で提供するには、ファサード サービスがバックエンド サービスとの通信に使用するクライアント プロキシ インスタンスの `ClientCredentials` プロパティに、このユーザー名を設定します。  
   
  `GetCallerIdentity` メソッドをファサード サービスに実装する方法を次のコードに示します。 他のメソッドも同じパターンを使用します。  
   
@@ -125,9 +125,9 @@ public string GetCallerIdentity()
 }  
 ```  
   
- 前のコードに示すように、 `ClientCredentials` プロパティではパスワードは設定されず、ユーザー名のみが設定されています。 この場合、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] セキュリティ インフラストラクチャではユーザー名セキュリティ トークンが作成されますが、パスワードは指定されません。このシナリオで実際に必要となるのは、この設定です。  
+ 前のコードに示すように、 `ClientCredentials` プロパティではパスワードは設定されず、ユーザー名のみが設定されています。 WCF セキュリティのインフラストラクチャを作成、パスワードなしのユーザー名セキュリティ トークンここでは、このシナリオで必要なものは正確にします。  
   
- バックエンド サービスでは、ユーザー名セキュリティ トークンに含まれる情報が認証される必要があります。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] セキュリティの既定では、指定されたパスワードを使用してユーザーを Windows アカウントに割り当てようとします。 この場合、パスワードは指定されず、バックエンド サービスはユーザー名を認証する必要がありません。ファサード サービスで既に認証が行われているからです。 この機能を [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]に実装するには、強制的にユーザー名をトークンで指定するだけでその他の認証を実行しない、カスタム `UserNamePasswordValidator` を指定します。  
+ バックエンド サービスでは、ユーザー名セキュリティ トークンに含まれる情報が認証される必要があります。 既定では、WCF のセキュリティは提供されたパスワードを使用する Windows アカウントにユーザーをマップしようとします。 この場合、パスワードは指定されず、バックエンド サービスはユーザー名を認証する必要がありません。ファサード サービスで既に認証が行われているからです。 WCF では、カスタムのこの機能を実装する`UserNamePasswordValidator`は、提供を強制的にだけ、ユーザー名トークンで指定されたその他の認証は行われません。  
   
 ```  
 public class MyUserNamePasswordValidator : UserNamePasswordValidator  
@@ -208,7 +208,7 @@ public string GetCallerIdentity()
 }  
 ```  
   
- ファサード サービス アカウント情報は、 `ServiceSecurityContext.Current.WindowsIdentity` プロパティを使用して抽出されます。 最初の呼び出し元に関する情報にアクセスするには、バックエンド サービスで `ServiceSecurityContext.Current.AuthorizationContext.ClaimSets` プロパティを使用します。 そして、型 `Identity` を含む `Name`クレームを検索します。 このクレームは、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] セキュリティ インフラストラクチャによって、 `Username` セキュリティ トークンに含まれる情報から自動的に生成されます。  
+ ファサード サービス アカウント情報は、 `ServiceSecurityContext.Current.WindowsIdentity` プロパティを使用して抽出されます。 最初の呼び出し元に関する情報にアクセスするには、バックエンド サービスで `ServiceSecurityContext.Current.AuthorizationContext.ClaimSets` プロパティを使用します。 そして、型 `Identity` を含む `Name`クレームを検索します。 この要求に含まれる情報から WCF セキュリティ インフラストラクチャによって自動的に生成、`Username`セキュリティ トークン。  
   
 ## <a name="running-the-sample"></a>サンプルの実行  
  このサンプルを実行すると、操作要求および応答がクライアントのコンソール ウィンドウに表示されます。 クライアントをシャットダウンするには、クライアント ウィンドウで Enter キーを押します。 ファサード サービスまたはバックエンド サービスのコンソール ウィンドウで Enter キーを押すと、サービスがシャットダウンされます。  

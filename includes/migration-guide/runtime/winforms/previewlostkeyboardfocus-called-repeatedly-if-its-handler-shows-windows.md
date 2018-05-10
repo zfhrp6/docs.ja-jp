@@ -2,8 +2,8 @@
 
 |   |   |
 |---|---|
-|説明|.NET Framework 4.5 以降では、<xref:System.Windows.UIElement.PreviewLostKeyboardFocus> ハンドラーから <code>System.Windows.Forms.MessageBox.Show</code> を呼び出すと、メッセージ ボックスが閉じられたとき、ハンドラーが再実行して、メッセージ ボックスの無限ループになる可能性があります。|
-|提案される解決策|この問題を回避するには、2 つの方法があります。<ol><li><code>System.Windows.Forms.MessageBox.Show</code> の代わりに <code>System.Windows.MessageBox.Show</code> を呼び出すことによって回避できます。</li><li><xref:System.Windows.UIElement.LostKeyboardFocus> イベント ハンドラーから (<xref:System.Windows.UIElement.PreviewLostKeyboardFocus?displayProperty=name> イベント ハンドラーではなく) メッセージ ボックスを表示することによって回避できます。</li></ol>|
+|説明|.NET Framework 4.5 以降では、<xref:System.Windows.UIElement.PreviewLostKeyboardFocus> ハンドラーから <xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType> を呼び出すと、メッセージ ボックスが閉じられたとき、ハンドラーが再実行して、メッセージ ボックスの無限ループになる可能性があります。|
+|提案される解決策|この問題を回避するには、2 つの方法があります。<ol><li><xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType> の代わりに <xref:System.Windows.MessageBox.Show%2A?displayProperty=nameWithType> を呼び出すことによって回避できます。</li><li><xref:System.Windows.UIElement.LostKeyboardFocus?displayProperty=nameWithType> イベント ハンドラーから (<xref:System.Windows.UIElement.PreviewLostKeyboardFocus?displayProperty=name> イベント ハンドラーではなく) メッセージ ボックスを表示することによって回避できます。</li></ol>|
 |スコープ|エッジ|
 |Version|4.5|
 |型|ランタイム|

@@ -2,11 +2,11 @@
 title: ServiceModel 登録ツール (ServiceModelReg.exe)
 ms.date: 03/30/2017
 ms.assetid: 396ec5ae-e34f-4c64-a164-fcf50e86b6ac
-ms.openlocfilehash: 660bad0b80a80a21936c9c8a5d485fe05b8c8acf
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 5fab1a356cd035ed006bfe90d713e179907e0137
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="servicemodel-registration-tool-servicemodelregexe"></a>ServiceModel 登録ツール (ServiceModelReg.exe)
 このコマンド ライン ツールは、単一コンピューター上で WCF および WF コンポーネントの登録を管理するための機能を提供します。 WCF および WF コンポーネントはインストール時に構成されるため、通常の状況ではこのツールを使用する必要はありません。 しかし、サービスのアクティブ化に関する問題が発生する場合は、このツールを使用してコンポーネントを登録できます。  
@@ -41,7 +41,7 @@ ServiceModelReg.exe[(-ia|-ua|-r)|((-i|-u) -c:<command>)] [-v|-q] [-nologo] [-?]
 |`-?`|ヘルプ テキストを表示します。|  
   
 ## <a name="fixing-the-fileloadexception-error"></a>FileLoadException エラーの修正  
- コンピューターに以前のバージョンの [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] をインストールしている場合は、ServiceModelReg ツールを実行して新しいインストールを登録するときに、`FileLoadFoundException` エラーが発生することがあります。 旧バージョンのインストールから手動でファイルを削除しても、machine.config 設定が元のままである限り、このエラーが発生する可能性があります。  
+ 取得することがあります、コンピューターに WCF の以前のバージョンをインストールした場合、`FileLoadFoundException`新規インストールを登録する ServiceModelReg ツールを実行するとエラーが発生します。 旧バージョンのインストールから手動でファイルを削除しても、machine.config 設定が元のままである限り、このエラーが発生する可能性があります。  
   
  エラー メッセージは、次のようになります。  
   
@@ -50,7 +50,7 @@ Error: System.IO.FileLoadException: Could not load file or assembly 'System.Serv
 File name: 'System.ServiceModel, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089'  
 ```  
   
- System.ServiceModel Version 2.0.0.0 アセンブリが旧 CTP (Customer Technology Preview) リリースによってインストールされていたというエラー メッセージに注目する必要があります。 最新バージョンの System.ServiceModel アセンブリは、2.0.0.0 ではなく 3.0.0.0 です。 したがって、旧 CTP リリースの [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] がインストールされたままで、完全にはアンインストールされていないコンピューターに正式の [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] リリースをインストールすると、この問題が発生します。  
+ System.ServiceModel Version 2.0.0.0 アセンブリが旧 CTP (Customer Technology Preview) リリースによってインストールされていたというエラー メッセージに注目する必要があります。 最新バージョンの System.ServiceModel アセンブリは、2.0.0.0 ではなく 3.0.0.0 です。 そのため、WCF の以前の CTP リリースがインストールされも完全にアンインストールをコンピューターに正式な WCF リリースをインストールするときに、この問題が発生します。  
   
  ServiceModelReg.exe は、旧バージョンのエントリをクリーンアップすることも、新しいバージョンのエントリを登録することもできません。 唯一の回避策は、machine.config を手動で編集することです。このファイルは次の場所にあります。  
   
@@ -58,7 +58,7 @@ File name: 'System.ServiceModel, Version=2.0.0.0, Culture=neutral, PublicKeyToke
 %windir%\Microsoft.NET\Framework\v2.0.50727\config\machine.config   
 ```  
   
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] を 64 ビット コンピューターで実行している場合は、次の場所にある同じファイルも編集する必要があります。  
+ 64 ビット コンピューターで WCF を実行している場合は、またこの場所に同じファイルを編集する必要があります。  
   
 ```  
 %windir%\Microsoft.NET\Framework64\v2.0.50727\config\machine.config   

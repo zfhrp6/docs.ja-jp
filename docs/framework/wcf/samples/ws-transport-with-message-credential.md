@@ -2,11 +2,11 @@
 title: メッセージ資格情報付き WS トランスポート
 ms.date: 03/30/2017
 ms.assetid: 0d092f3a-b309-439b-920b-66d8f46a0e3c
-ms.openlocfilehash: acb2960fe3d563a05b0bdeee70af0d4093aae6f0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 708869f2350f01e75b949f4817fcf8aac35ea018
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="ws-transport-with-message-credential"></a>メッセージ資格情報付き WS トランスポート
 このサンプルでは、メッセージに含まれるクライアント資格情報と組み合わせて SSL トランスポート セキュリティを使用する例を示します。 このサンプルでは、`wsHttpBinding` バインディングを使用します。  
@@ -60,7 +60,7 @@ public string GetCallerIdentity()
   
  アドレス指定では https:// スキームを使用しています。 このバインディング構成により、セキュリティ モードが `TransportWithMessageCredential` に設定されます。 同じセキュリティ モードが、サービスの Web.config ファイルで指定される必要があります。  
   
- Https にアクセスしようとしたときにこのサンプルで使用する証明書は Makecert.exe で作成されたテスト証明書であるため、セキュリティ警告が表示されます: で対応するhttps://localhost/servicemodelsamples/service.svc、お使いのブラウザーからです。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントがテスト証明書に対して問題なく動作するようにするには、クライアントにコードを追加して、セキュリティ警告を非表示にする必要があります。 そのためのコードとそれに必要なクラスは、本運用の証明書を使用するときには不要です。  
+ Https にアクセスしようとしたときにこのサンプルで使用する証明書は Makecert.exe で作成されたテスト証明書であるため、セキュリティ警告が表示されます: で対応するhttps://localhost/servicemodelsamples/service.svc、お使いのブラウザーからです。 テスト証明書を使用する WCF クライアントを許可するには、セキュリティの警告を抑制するため、クライアント コードが追加されました。 そのためのコードとそれに必要なクラスは、本運用の証明書を使用するときには不要です。  
 
 ```csharp
 // WARNING: This code is only needed for test certificates such as those created by makecert. It is   

@@ -5,11 +5,11 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d613a22b-07d7-41a4-bada-1adc653b9b5d
-ms.openlocfilehash: 6fbdd7f09c7ae15368972afbce896c5ecb39ccbe
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 3df1f2490f8636d52ac75fad2469adadec2a57da
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="overriding-the-identity-of-a-service-for-authentication"></a>認証のためのサービスの ID のオーバーライド
 クライアント資格情報の種類を選択すると、サービス メタデータで公開される ID の種類が指定されるため、通常、サービスで ID を設定する必要はありません。 たとえば、次の構成コードを使用して、 [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)要素とセット、`clientCredentialType`属性を Windows です。  
@@ -30,9 +30,9 @@ ms.lasthandoff: 05/04/2018
 > [!NOTE]
 >  ネゴシエーションを行わずに Windows 資格情報を使用するには、サービスのユーザー アカウントが Active Directory ドメインに登録された SPN にアクセスできる必要があります。 これは、次の方法で行うことができます。  
   
--   サービスを実行するには、NetworkService アカウントまたは LocalSystem アカウントを使用します。 これらのアカウントは、コンピューターが Active Directory ドメインに参加したときに確立されたコンピューターの SPN にアクセスできるため、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、適切な SPN 要素を、サービスのメタデータ (WSDL) にあるサービスのエンドポイント内部に自動的に生成します。  
+-   サービスを実行するには、NetworkService アカウントまたは LocalSystem アカウントを使用します。 これらのアカウントに、コンピューターのコンピューター、Active Directory ドメインに参加するときに確立されている SPN へのアクセスがあるために、WCF は、サービスのメタデータ (WSDL)、サービスのエンドポイント内の適切な SPN 要素を自動的に生成します。  
   
--   任意の Active Directory ドメイン アカウントを使用してサービスを実行します。 この場合、そのドメイン アカウント用の SPN を確立します。これには、Setspn.exe ユーティリティ ツールを使用できます。 サービスのアカウント用の SPN を作成したら、SPN をそのメタデータ (WSDL) を通じてサービスのクライアントに公開するように [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を構成します。 これを行うには、アプリケーション構成ファイルまたはコードを使用して、公開されるエンドポイントのエンドポイント ID を設定します。  
+-   任意の Active Directory ドメイン アカウントを使用してサービスを実行します。 この場合、そのドメイン アカウント用の SPN を確立します。これには、Setspn.exe ユーティリティ ツールを使用できます。 サービスのアカウントの SPN を作成すると、その SPN をそのメタデータ (WSDL) を通じてサービスのクライアントに公開する WCF を構成します。 これを行うには、アプリケーション構成ファイルまたはコードを使用して、公開されるエンドポイントのエンドポイント ID を設定します。  
   
  詳細については、Spn、Kerberos プロトコル、および Active Directory を参照してください[Kerberos テクニカル Supplement for Windows](http://go.microsoft.com/fwlink/?LinkId=88330)です。  
   
@@ -59,7 +59,7 @@ ms.lasthandoff: 05/04/2018
   
   
 ### <a name="setting-identity-programmatically"></a>プログラムによる ID の設定  
- ID は、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] によって自動的に決定されるため、サービスで ID を明示的に指定する必要はありません。 ただし、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、必要に応じてエンドポイントの ID を指定できます。 特定の DNS ID を持つ新しいサービス エンドポイントを追加するコードを次に示します。  
+ WCF が自動的に判断されるため、サービスは、id を明示的に指定がありません。 ただし、WCF を使用、エンドポイントの id を指定するために必要な場合です。 特定の DNS ID を持つ新しいサービス エンドポイントを追加するコードを次に示します。  
   
  [!code-csharp[C_Identity#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_identity/cs/source.cs#5)]
  [!code-vb[C_Identity#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_identity/vb/source.vb#5)]  

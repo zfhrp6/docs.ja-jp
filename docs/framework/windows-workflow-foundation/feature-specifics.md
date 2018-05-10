@@ -1,29 +1,18 @@
 ---
-title: "Windows Workflow Foundation の機能仕様"
-ms.custom: 
+title: Windows Workflow Foundation の機能仕様
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: e84d12da-a055-45f6-b4d1-878d127b46b6
-caps.latest.revision: "6"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 6943a7eaeaecf8f11de7c10237979067c83c24d8
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 0f9bc81609379414ce022499e20791073d259cdc
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="windows-workflow-foundation-feature-specifics"></a>Windows Workflow Foundation の機能仕様
 [!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)] は、Windows Workflow Foundation にいくつかの機能を追加します。 このドキュメントでは、いくつかの新機能について説明し、役に立つ可能性のあるシナリオの詳細を示します。  
   
 ## <a name="messaging-activities"></a>メッセージング アクティビティ  
- メッセージング アクティビティ (<xref:System.ServiceModel.Activities.Receive>、 <xref:System.ServiceModel.Activities.SendReply>、 <xref:System.ServiceModel.Activities.Send>、 <xref:System.ServiceModel.Activities.ReceiveReply>) 送受信するように使用される[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]ワークフローからのメッセージ。  <xref:System.ServiceModel.Activities.Receive>および<xref:System.ServiceModel.Activities.SendReply>アクティビティはフォームに使用、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)]サービスの標準と同じように、WSDL を介して公開されている操作[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]web サービスです。  <xref:System.ServiceModel.Activities.Send>および<xref:System.ServiceModel.Activities.ReceiveReply>WCF のような web サービスを使用するために使用<xref:System.ServiceModel.ChannelFactory>以外の場合は、**サービス参照の追加**エクスペリエンスは、構成済みのアクティビティを生成する Workflow foundation も存在します。  
+ メッセージング アクティビティ (<xref:System.ServiceModel.Activities.Receive>、 <xref:System.ServiceModel.Activities.SendReply>、 <xref:System.ServiceModel.Activities.Send>、 <xref:System.ServiceModel.Activities.ReceiveReply>)、ワークフローから WCF メッセージを送受信するために使用します。  <xref:System.ServiceModel.Activities.Receive> および<xref:System.ServiceModel.Activities.SendReply>アクティビティは標準の WCF web サービスと同じように、WSDL を介して公開される Windows Communication Foundation (WCF) サービス操作の形成に使用します。  <xref:System.ServiceModel.Activities.Send> および<xref:System.ServiceModel.Activities.ReceiveReply>WCF のような web サービスを使用するために使用<xref:System.ServiceModel.ChannelFactory>以外の場合は、**サービス参照の追加**エクスペリエンスは、構成済みのアクティビティを生成する Workflow foundation も存在します。  
   
 ### <a name="getting-started-with-messaging-activities"></a>メッセージング アクティビティの概要  
   
@@ -45,11 +34,11 @@ ms.lasthandoff: 12/22/2017
  A`BestPriceFinder`サービスは呼び出す特定のルートの最適なチケット価格を検索する複数の航空会社サービス。  このシナリオを実装すると、価格の要求を受信し、バックエンド サービスから、価格を取得し、最適なコストを価格要求に応答するメッセージ アクティビティを使用する必要があります。  最適なコストを計算するためのビジネス ロジックを作成する他の標準のアクティビティを使用する必要も出てです。  
   
 ## <a name="workflowservicehost"></a>WorkflowServiceHost  
- <xref:System.ServiceModel.WorkflowServiceHost>を複数のインスタンスをサポートする既定のワークフロー ホストは、構成、および[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]メッセージング (ただし、ワークフローは、ホストされるためにメッセージングを使用する必要はありません)。  また、一連のサービス動作を介して永続性、追跡、およびインスタンス コントロールを統合します。  同じように[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]の<xref:System.ServiceModel.ServiceHost>、<xref:System.ServiceModel.WorkflowServiceHost>コンソールまたは WinForms/WPF アプリケーションまたは Windows サービスでの自己ホストしたり web ホスト (.xamlx ファイル) として IIS または WAS でします。  
+ <xref:System.ServiceModel.WorkflowServiceHost>が (ただし、ワークフローは、ホストされるためにメッセージングを使用する必要ありません)、複数のインスタンス、構成、および WCF メッセージングをサポートする既定のワークフローのホストです。  また、一連のサービス動作を介して永続性、追跡、およびインスタンス コントロールを統合します。  WCF のと同じように<xref:System.ServiceModel.ServiceHost>、<xref:System.ServiceModel.WorkflowServiceHost>コンソールまたは WinForms/WPF アプリケーションまたは Windows サービスでの自己ホストしたり web ホスト (.xamlx ファイル) として IIS または WAS でします。  
   
 ### <a name="getting-started-with-workflow-service-host"></a>ワークフロー サービス ホストの概要  
   
--   Visual Studio 2010 で、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] ワークフロー サービス アプリケーション プロジェクトを作成します。このプロジェクトは、Web ホスト環境で <xref:System.ServiceModel.WorkflowServiceHost> を使用するように設定されます。  
+-   Visual Studio 2010 で WCF ワークフロー サービス アプリケーション プロジェクトを作成します。 このプロジェクトを使用する設定は<xref:System.ServiceModel.WorkflowServiceHost>web ホスト環境でします。  
   
 -   非メッセージング ワークフローをホストするには、メッセージに基づいてインスタンスを作成するカスタム <xref:System.ServiceModel.Activities.WorkflowHostingEndpoint> を追加します。  
   
@@ -103,7 +92,7 @@ ms.lasthandoff: 12/22/2017
  注文処理ワークフローは、新しい注文の作成および実行されている既存の注文の更新処理に使用されます。  このシナリオを実装する必要が内のワークフローをホストする<xref:System.ServiceModel.WorkflowServiceHost>およびメッセージング アクティビティを使用します。  基づいた関連付けも必要になる、`orderId`を適切なワークフローに対する更新が行われることを確認します。  
   
 ## <a name="simplified-configuration"></a>簡略化された構成  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] 構成スキーマは複雑であり、探すのが難しい多くの機能をユーザーに提供します。 [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] では、次の機能で [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] ユーザーによるサービスの構成を支援することに重点を置いていました。  
+ WCF 構成スキーマは複雑であり、ユーザーに提供の多くの機能を見つけにくくします。 [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)]、WCF ユーザーが次の機能により、サービスを構成する際に役立つに重点を置いていました。  
   
 -   サービスごとの明示的な構成の必要性をなくします。 いずれかを構成しない場合\<service > 要素として、サービスおよびサービスでは、任意のエンドポイントをプログラムでは定義されていませんし、サービス、コントラクトおよびサービスのベース アドレスごとに 1 つに、一連のエンドポイントは自動的に追加します。サービスによって実装されます。  
   
@@ -111,7 +100,7 @@ ms.lasthandoff: 12/22/2017
   
 -   標準のエンドポイントは、事前に構成された再利用可能なエンドポイントを定義します。このエンドポイントは、1 つ以上のエンドポイント プロパティ (アドレス、バインド、およびコントラクト) に対して固定値を持ち、カスタム プロパティを定義できるようにします。  
   
--   最後に、<xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601> では [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアント構成を集中管理できます。これは、アプリケーション ドメインの読み込み時の後に構成が選択または変更されるシナリオで役立ちます。  
+-   最後に、 <xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601> WCF クライアントの構成、構成が選択されているか、アプリケーション ドメインの読み込み時間後に変更シナリオで役に立ちますの集中管理することができます。  
   
 ### <a name="getting-started"></a>作業の開始  
   
@@ -127,7 +116,7 @@ ms.lasthandoff: 12/22/2017
   
 ### <a name="simplified-configuration-scenarios"></a>簡略化された構成のシナリオ  
   
--   経験豊富な ASMX 開発者が [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] の使用開始を希望しています。 ただし、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] は複雑すぎると思われます。 構成ファイルに書き込む必要のある情報は何ですか。 .NET 4 では、構成ファイルをまったく使用しないこともできます。  
+-   経験豊かな ASMX 開発者は、WCF の使用を開始しようとします。 ただし、WCF は複雑すぎるいるように見えます。 構成ファイルに書き込む必要のある情報は何ですか。 .NET 4 では、構成ファイルをまったく使用しないこともできます。  
   
 -   既存の WCF サービスのセットは構成とメンテナンスが非常に困難です。 構成ファイルには、変更するのが非常に危険な XML コードが何千行もあります。 コード量を管理しやすい量に減らすための支援が必要です。  
   
@@ -283,7 +272,7 @@ ms.lasthandoff: 12/22/2017
  ユーザーに入力を求めるプロンプトを表示する必要があります。 通常の状況下では、開発者は <xref:System.Console.ReadLine%2A> のようなメソッド呼び出しを使用してユーザーの入力を求めます。 この設定の問題は、ユーザーが何か入力するまでプログラムが待機することです。 このシナリオでは、ブロッキング アクティビティのブロックを解除するためにタイムアウトが必要です。 一般的なシナリオでは、特定の期間内にタスクが完了する必要があります。 ブロッキング アクティビティのタイムアウトは、Pick が大量の値を追加するシナリオです。  
   
 ## <a name="wcf-routing-service"></a>WCF ルーティング サービス  
- ルーティング サービスは一般的なソフトウェア ルーターを制御できる方法が設計されています[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]メッセージをクライアントとサービス間のフロー。  ルーティング サービスすることができます、サービスからクライアントを切り離すことにより、構成の観点から、さまざまな自由度をサポートすることができます、柔軟性を使用して、サービスをホストする方法を検討する場合。  .NET 3.5 では、クライアントとサービスは緊密に結びついてます。クライアントは、すべてのサービスと通信するに必要なし、していた場所について知っておく必要があります。 また、.Net Framework 3.5 の WCF には次の制限がありました。  
+ 一般的なソフトウェア ルーターをクライアントとサービス間の WCFmessages のフローを制御できるようにするには、ルーティング サービスは設計されています。  ルーティング サービスすることができます、サービスからクライアントを切り離すことにより、構成の観点から、さまざまな自由度をサポートすることができます、柔軟性を使用して、サービスをホストする方法を検討する場合。  .NET 3.5 では、クライアントとサービスは緊密に結びついてます。クライアントは、すべてのサービスと通信するに必要なし、していた場所について知っておく必要があります。 また、.Net Framework 3.5 の WCF には次の制限がありました。  
   
 -   ロジックをクライアントにハードコーディングする必要があったため、エラー処理が複雑でした。  
   
@@ -305,7 +294,7 @@ ms.lasthandoff: 12/22/2017
   
 1.  ドキュメント:[ルーティング](../../../docs/framework/wcf/feature-details/routing.md)  
   
-2.  サンプル: [Services &#91; のルーティングWCF サンプル &#93;](../../../docs/framework/wcf/samples/routing-services.md)  
+2.  サンプル:[ルーティング サービス&#91;WCF サンプル&#93;](../../../docs/framework/wcf/samples/routing-services.md)  
   
 3.  ブログ:[ルーティング規則です。](http://go.microsoft.com/fwlink/?LinkId=204956)  
   
@@ -323,7 +312,7 @@ ms.lasthandoff: 12/22/2017
 -   クライアントは、障害またはサービスの使用不能に対してより堅牢になることができます。  
   
 ## <a name="wcf-discovery"></a>WCF Discovery  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] Discovery は、アプリケーション インフラストラクチャに探索メカニズムを組み込むことのできるフレームワーク テクノロジです。 これを使用して、サービスを探索可能にし、サービスを検索するようにクライアントを構成できます。 クライアントはエンドポイントでハードコーディングする必要がなくなるため、アプリケーションはより堅牢になりフォールト トレランスが向上します。 探索は、アプリケーションに自動構成機能をビルドするための最適なプラットフォームです。  
+ WCF Discovery は、アプリケーションのインフラストラクチャに探索メカニズムを組み込むことができますをフレームワーク テクノロジです。 これを使用して、サービスを探索可能にし、サービスを検索するようにクライアントを構成できます。 クライアントはエンドポイントでハードコーディングする必要がなくなるため、アプリケーションはより堅牢になりフォールト トレランスが向上します。 探索は、アプリケーションに自動構成機能をビルドするための最適なプラットフォームです。  
   
  製品は、WS-Discovery 標準の上に構築されます。 相互運用可能、拡張可能、および汎用的になるように設計されています。 製品では 2 つの操作モードがサポートされます。  
   

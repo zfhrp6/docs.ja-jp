@@ -1,14 +1,6 @@
 ---
-title: "ICorRuntimeHost::CreateDomainSetup メソッド"
-ms.custom: 
+title: ICorRuntimeHost::CreateDomainSetup メソッド
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ICorRuntimeHost.CreateDomainSetup
 api_location:
@@ -23,20 +15,16 @@ helpviewer_keywords:
 ms.assetid: c21dab60-fb65-47d9-8a94-7fd47ca53b48
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: e15f40402b222037f7ed8b23be3df36acafc73c9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: bf3aff2c3c4d10c4ee805a6110561d6fdcd63a55
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="icorruntimehostcreatedomainsetup-method"></a>ICorRuntimeHost::CreateDomainSetup メソッド
-インターフェイス ポインターの型を IAppDomainSetup を取得、<xref:System.AppDomainSetup?displayProperty=nameWithType>インスタンス。 `IAppDomainSetup`作成する前に、アプリケーション ドメインの側面を構成する方法を提供します。  
+インターフェイス ポインターの型を IAppDomainSetup を取得、<xref:System.AppDomainSetup?displayProperty=nameWithType>インスタンス。 `IAppDomainSetup` 作成する前に、アプリケーション ドメインの側面を構成する方法を提供します。  
   
 ## <a name="syntax"></a>構文  
   
@@ -62,8 +50,8 @@ HRESULT CreateDomainSetup (
 ## <a name="remarks"></a>コメント  
  このメソッドから返されるポインターは通常のパラメーターとして渡さ、 [CreateDomainEx](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-createdomainex-method.md)メソッドです。  
   
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** MSCorEE.h  
   
@@ -71,7 +59,7 @@ HRESULT CreateDomainSetup (
   
  **.NET framework のバージョン:** 1.0、1.1  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System._AppDomain>  
  <xref:System.AppDomain>  
  <xref:System.AppDomainSetup>  

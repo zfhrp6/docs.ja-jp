@@ -1,27 +1,15 @@
 ---
-title: "トランスポート: UDP"
-ms.custom: 
+title: 'トランスポート: UDP'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 738705de-ad3e-40e0-b363-90305bddb140
-caps.latest.revision: "48"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b7bb9f60340915f27c451d05bfbc28e1670c9d83
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 4f69730831ec57efc782a95d7412496aa69a4afb
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="transport-udp"></a>トランスポート: UDP
-UDP トランスポートのサンプルでは、UDP ユニキャストとマルチキャストを [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] カスタム トランスポートとして実装する方法を示します。 このサンプルでは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] でカスタム トランスポートを作成するための推奨手順について説明します。作成時には、チャネル フレームワークと次に示す [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のベスト プラクティスを使用します。 カスタム トランスポートを作成する手順は、次のとおりです。  
+UDP トランスポートのサンプルでは、UDP ユニキャストとマルチキャストをカスタムの Windows Communication Foundation (WCF) トランスポートとして実装する方法を示します。 このサンプルでは、WCF では、WCF のベスト プラクティスに従うと、チャネル フレームワークを使用してカスタム トランスポートを作成するための推奨手順について説明します。 カスタム トランスポートを作成する手順は、次のとおりです。  
   
 1.  チャネルの決定[メッセージ交換パターン](#MessageExchangePatterns)(IOutputChannel、IInputChannel、IDuplexChannel、IRequestChannel、または IReplyChannel) ChannelFactory と ChannelListener でサポートされます。 次に、こうしたインターフェイスのセッションフル バリエーションをサポートするかどうかを決定します。  
   
@@ -61,7 +49,7 @@ UDP トランスポートのサンプルでは、UDP ユニキャストとマル
 >  UDP トランスポートでは、サポートされている MEP はデータグラムだけです。これは、UDP が "ファイア アンド フォーゲット (撃ち放し)" のプロトコルだからです。  
   
 ### <a name="the-icommunicationobject-and-the-wcf-object-lifecycle"></a>ICommunicationObject および WCF オブジェクトのライフサイクル  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、通信に使用される <xref:System.ServiceModel.Channels.IChannel>、<xref:System.ServiceModel.Channels.IChannelFactory>、および <xref:System.ServiceModel.Channels.IChannelListener> などのオブジェクトのライフサイクルの管理に使用される共通ステート マシンです。 これらの通信オブジェクトには、5 つの状態があります。 これらの状態は、<xref:System.ServiceModel.CommunicationState> 列挙値で表され、次のようになります。  
+ WCF には、一般的なステート マシンのようなオブジェクトのライフ サイクルを管理するために使用される<xref:System.ServiceModel.Channels.IChannel>、 <xref:System.ServiceModel.Channels.IChannelFactory>、および<xref:System.ServiceModel.Channels.IChannelListener>通信に使用されています。 これらの通信オブジェクトには、5 つの状態があります。 これらの状態は、<xref:System.ServiceModel.CommunicationState> 列挙値で表され、次のようになります。  
   
 -   Created: <xref:System.ServiceModel.ICommunicationObject> が初めてインスタンス化されたときの状態です。 この状態では、入出力 (I/O) は行われません。  
   
@@ -79,7 +67,7 @@ UDP トランスポートのサンプルでは、UDP ユニキャストとマル
   
 <a name="ChannelAndChannelListener"></a>   
 ## <a name="channel-factory-and-channel-listener"></a>チャネル ファクトリとチャネル リスナー  
- カスタム トランスポートを記述する次の手順では、クライアント チャネルでの <xref:System.ServiceModel.Channels.IChannelFactory> の実装とサービス チャネルでの <xref:System.ServiceModel.Channels.IChannelListener> の実装を作成します。 チャネル レイヤーでは、チャネルの構築にファクトリ パターンが使用されます。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、このプロセスに対する基本クラス ヘルパーが用意されています  
+ カスタム トランスポートを記述する次の手順では、クライアント チャネルでの <xref:System.ServiceModel.Channels.IChannelFactory> の実装とサービス チャネルでの <xref:System.ServiceModel.Channels.IChannelListener> の実装を作成します。 チャネル レイヤーでは、チャネルの構築にファクトリ パターンが使用されます。 WCF では、このプロセスの基本クラス ヘルパーが用意されています。  
   
 -   <xref:System.ServiceModel.Channels.CommunicationObject> クラスには <xref:System.ServiceModel.ICommunicationObject> が実装され、前述の手順 2. で説明したステート マシンが強制実行されます。 
 
@@ -268,7 +256,7 @@ AddWSAddressingAssertion(context, encodingBindingElement.MessageVersion.Addressi
   
 -   カスタム バインディングの使用 : カスタム バインディングを使用すれば、バインディング要素の任意のセットに基づいて独自のバインディングを作成できます。  
   
--   バインディング要素が含まれるシステム指定のバインディングを使用することによって、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は `BasicHttpBinding`、`NetTcpBinding`、`WsHttpBinding` など、これらのシステム定義バインディングの数々を提供します。 これらの各バインドは、適切に定義されたプロファイルに関連付けられます。  
+-   バインド要素が含まれるシステム指定のバインディングを使用することによって、 WCF などのさまざまなこれらのシステム定義のバインディングの提供`BasicHttpBinding`、 `NetTcpBinding`、および`WsHttpBinding`です。 これらの各バインドは、適切に定義されたプロファイルに関連付けられます。  
   
  このサンプルでは、プロファイル バインディングを、`SampleProfileUdpBinding` から派生した <xref:System.ServiceModel.Channels.Binding> に実装します。 `SampleProfileUdpBinding` は、`UdpTransportBindingElement`、`TextMessageEncodingBindingElement CompositeDuplexBindingElement`、および `ReliableSessionBindingElement` の、最大 4 つのバインディング要素を格納します。  
   
@@ -488,6 +476,6 @@ svcutil http://localhost:8000/udpsample/ /reference:UdpTranport\bin\UdpTransport
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
+>  このディレクトリが存在しない場合に、 [Windows Communication Foundation (WCF) および .NET Framework 4 向けの Windows Workflow Foundation (WF) サンプル](http://go.microsoft.com/fwlink/?LinkId=150780)すべて Windows Communication Foundation (WCF) をダウンロードして[!INCLUDE[wf1](../../../../includes/wf1-md.md)]サンプルです。 このサンプルは、次のディレクトリに格納されます。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Transport\Udp`

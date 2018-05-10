@@ -1,28 +1,18 @@
 ---
-title: ".NET Framework のパフォーマンス カウンター"
-ms.custom: 
+title: .NET Framework のパフォーマンス カウンター
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - performance, .NET Framework applications
 - performance counters
 - performance monitoring, counters
 ms.assetid: 06a4ae8c-eeb2-4d5a-817e-b1b95c0653e1
-caps.latest.revision: "18"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 15486a55fc15ba2cc3cc64db50f317b39dfd77bb
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: bb46b6466ee0ee3d4cdc4b7c934e518fd9f7f082
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="performance-counters-in-the-net-framework"></a>.NET Framework のパフォーマンス カウンター
 このトピックでは、[パフォーマンス モニター](http://technet.microsoft.com/library/cc749249.aspx)で参照できるパフォーマンス カウンターの一覧を示します。  
@@ -260,6 +250,6 @@ for (int i = 0; i < Array.Length; i++)
 |**Stack Walk Depth**|最後のランタイム コード アクセス セキュリティ チェック時のスタックの深さを表示します。 ランタイム コード アクセス セキュリティ チェックは、スタックを調査することによって実行されます。 このカウンターは、平均値ではなく、最後に計測された値のみを表示します。|  
 |**Total Runtime Checks**|アプリケーションの開始後に実行されたランタイム コード アクセス セキュリティ チェックの総数を表示します。 ランタイム コード アクセス セキュリティ チェックは、呼び出し元が特別のアクセス許可を要求したときに実行されます。 ランタイム チェックは、呼び出し元からのすべての呼び出しに対して実行され、呼び出し元の現在のスレッド スタックをチェックします。 このカウンターを **Stack Walk Depth** カウンターと共に使用することで、セキュリティ チェック時に発生するパフォーマンス低下を把握できます。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [パフォーマンス カウンター](../../../docs/framework/debug-trace-profile/performance-counters.md)  
  [ランタイム プロファイリング](../../../docs/framework/debug-trace-profile/runtime-profiling.md)

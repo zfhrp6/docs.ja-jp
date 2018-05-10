@@ -2,11 +2,11 @@
 title: 'トランスポート : UDP 経由のカスタム トランザクションのサンプル'
 ms.date: 03/30/2017
 ms.assetid: 6cebf975-41bd-443e-9540-fd2463c3eb23
-ms.openlocfilehash: e395300df4cd9917b9662d4bc3b1e8d50d82914d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 911331d5f5120f33a6c442a1eb4b2be2c8269a0e
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="transport-custom-transactions-over-udp-sample"></a>トランスポート : UDP 経由のカスタム トランザクションのサンプル
 このサンプルがに基づいて、[トランスポート: UDP](../../../../docs/framework/wcf/samples/transport-udp.md)サンプル Windows Communication Foundation (WCF) で[トランスポート拡張](../../../../docs/framework/wcf/samples/transport-extensibility.md)です。 ここでは、カスタム トランザクション フローをサポートするように UDP トランスポートのサンプルを拡張し、<xref:System.ServiceModel.Channels.TransactionMessageProperty> プロパティの使用方法について説明します。  
@@ -47,7 +47,7 @@ int bytesSent = this.socket.SendTo(txmsgBuffer, 0, txmsgBuffer.Length, SocketFla
   
  `TransactionMessageBuffer.WriteTransactionMessageBuffer` は、メッセージ エンティティを使用して現在のトランザクションの反映トークンをマージし、それをバッファに配置する新しい機能を持つヘルパー メソッドです。  
   
- カスタム トランザクション フローのトランスポートの場合、クライアント実装では、トランザクション フローが必要なサービス操作と、この情報を [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] に渡す必要があるサービス操作を把握している必要があります。 また、ユーザー トランザクションをトランスポート層に転送するための機構もあります。 このサンプルでは、"[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] メッセージ インスペクタ" を使用して、この情報を取得します。 ここで実装されるクライアント メッセージ インスペクタは `TransactionFlowInspector` と呼ばれ、次のタスクを実行します。  
+ どのようなサービス操作がトランザクション フローを必要とカスタム トランザクション フローのトランスポート クライアントの実装が知る必要がありますを WCF にこの情報を渡します。 また、ユーザー トランザクションをトランスポート層に転送するための機構もあります。 このサンプルは、「WCF メッセージ インスペクタ」を使用してこの情報を取得します。 ここで実装されるクライアント メッセージ インスペクタは `TransactionFlowInspector` と呼ばれ、次のタスクを実行します。  
   
 -   指定されたメッセージ アクションに対してトランザクションをフローする必要があるかどうかを判断します (これは `IsTxFlowRequiredForThisOperation()` で行われます)。  
   

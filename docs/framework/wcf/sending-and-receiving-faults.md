@@ -7,11 +7,11 @@ dev_langs:
 helpviewer_keywords:
 - handling faults [WCF], sending
 ms.assetid: 7be6fb96-ce2a-450b-aebe-f932c6a4bc5d
-ms.openlocfilehash: 76fb07a6c9a5e0efdbf21f153f5fc2aea7f1880e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 5a4b4dc79b0f0dad661d99fae6377d1c86b673b6
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="sending-and-receiving-faults"></a>エラーの送受信
 SOAP エラーは、エラー状態情報をサービスからクライアントに伝達します。双方向通信の場合は、相互運用可能な方法でクライアントからサービスにも伝達します。 通常、サービスは、カスタムのエラー コンテンツを定義し、そのエラー コンテンツを返すことができる操作を指定します  (詳細については、次を参照してください[を指定するエラーの定義および](../../../docs/framework/wcf/defining-and-specifying-faults.md)。)。ここでは、対応するエラー状態が発生したときにサービスまたは双方向クライアントがエラーを送信する方法、およびクライアントまたはサービス アプリケーションがエラーを処理する方法について説明します。 Windows Communication Foundation (WCF) アプリケーションのエラー処理の概要については、次を参照してください。[を指定すると処理のエラー コントラクトおよびサービスの](../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md)します。  
@@ -25,26 +25,26 @@ SOAP エラーは、エラー状態情報をサービスからクライアント
  [!code-csharp[FaultContractAttribute#4](../../../samples/snippets/csharp/VS_Snippets_CFX/faultcontractattribute/cs/services.cs#4)]
  [!code-vb[FaultContractAttribute#4](../../../samples/snippets/visualbasic/VS_Snippets_CFX/faultcontractattribute/vb/services.vb#4)]  
   
- `GreetingFault` エラー情報をクライアントに伝達するには、適切なエラー状態をキャッチし、次のコード例に示すように、新しい <xref:System.ServiceModel.FaultException%601?displayProperty=nameWithType> オブジェクトを引数として使用して `GreetingFault` 型の新しい `GreetingFault` をスローします。 クライアントが [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアント アプリケーションの場合、これはマネージ例外として認識されます。この場合の型は、<xref:System.ServiceModel.FaultException%601?displayProperty=nameWithType> 型の `GreetingFault` です。  
+ `GreetingFault` エラー情報をクライアントに伝達するには、適切なエラー状態をキャッチし、次のコード例に示すように、新しい <xref:System.ServiceModel.FaultException%601?displayProperty=nameWithType> オブジェクトを引数として使用して `GreetingFault` 型の新しい `GreetingFault` をスローします。 これが、型がマネージ例外として発生、クライアントが WCF クライアント アプリケーションの場合は、<xref:System.ServiceModel.FaultException%601?displayProperty=nameWithType>型の`GreetingFault`します。  
   
  [!code-csharp[FaultContractAttribute#5](../../../samples/snippets/csharp/VS_Snippets_CFX/faultcontractattribute/cs/services.cs#5)]
  [!code-vb[FaultContractAttribute#5](../../../samples/snippets/visualbasic/VS_Snippets_CFX/faultcontractattribute/vb/services.vb#5)]  
   
 ### <a name="sending-undeclared-faults"></a>宣言されていないエラーの送信  
- 宣言されていないエラーを送信すると、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] アプリケーションの問題をすばやく診断してデバッグできます。これは非常に便利ですが、デバッグ ツールとしての有用性は制限されています。 一般的に、デバッグ時には <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> プロパティを使用することをお勧めします。 この値を true に設定すると、クライアントはこのエラーを <xref:System.ServiceModel.FaultException%601> 型の <xref:System.ServiceModel.ExceptionDetail> 例外として認識します。  
+ 送信元の宣言されていないエラーは、すばやく診断してデバッグ ツールとして、WCF アプリケーションがその有用性の問題をデバッグする非常に役立ちます。 一般的に、デバッグ時には <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> プロパティを使用することをお勧めします。 この値を true に設定すると、クライアントはこのエラーを <xref:System.ServiceModel.FaultException%601> 型の <xref:System.ServiceModel.ExceptionDetail> 例外として認識します。  
   
 > [!IMPORTANT]
->  マネージ例外が内部アプリケーション情報を開示する可能性があるので、<xref:System.ServiceModel.ServiceBehaviorAttribute.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> または <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> を `true` に設定すると、個人の身元を確認できる情報またはその他の機密情報を含む内部サービス操作例外に関する情報を [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアントで取得できます。  
+>  設定するため、マネージ コードの例外は、内部アプリケーション情報を公開できますが、<xref:System.ServiceModel.ServiceBehaviorAttribute.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType>または<xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType>に`true`個人など、内部サービス操作例外に関する情報を取得する WCF クライアントを許可します。特定できる情報やその他の機密情報。  
 >   
->  したがって、<xref:System.ServiceModel.ServiceBehaviorAttribute.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> または <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> を `true` に設定することは、サービス アプリケーションを一時的にデバッグする方法としてのみお勧めできます。 さらに、このようにして未処理のマネージ例外を返すメソッドの WSDL には、<xref:System.ServiceModel.FaultException%601> 型の <xref:System.ServiceModel.ExceptionDetail> のコントラクトが含まれません。 クライアントは、デバッグ情報を適切に取得するために、([!INCLUDE[indigo2](../../../includes/indigo2-md.md)] オブジェクトとして <xref:System.ServiceModel.FaultException?displayProperty=nameWithType> クライアントに返される) 不明な SOAP エラーの可能性について想定しておく必要があります。  
+>  したがって、<xref:System.ServiceModel.ServiceBehaviorAttribute.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> または <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> を `true` に設定することは、サービス アプリケーションを一時的にデバッグする方法としてのみお勧めできます。 さらに、このようにして未処理のマネージ例外を返すメソッドの WSDL には、<xref:System.ServiceModel.FaultException%601> 型の <xref:System.ServiceModel.ExceptionDetail> のコントラクトが含まれません。 クライアントが不明な SOAP エラーの可能性を求める必要があります (として WCF クライアントに返される<xref:System.ServiceModel.FaultException?displayProperty=nameWithType>オブジェクト) を正しくデバッグ情報を取得します。  
   
- 宣言されていない SOAP エラーを送信するには、<xref:System.ServiceModel.FaultException?displayProperty=nameWithType> (つまり、ジェネリック型の <xref:System.ServiceModel.FaultException%601> でない) オブジェクトをスローし、文字列をコンストラクターに渡します。 これは、スローされた [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] 例外として <xref:System.ServiceModel.FaultException?displayProperty=nameWithType> クライアント アプリケーションに公開されるため、<xref:System.ServiceModel.FaultException%601.ToString%2A?displayProperty=nameWithType> メソッドを呼び出して文字列を使用できます。  
+ 宣言されていない SOAP エラーを送信するには、<xref:System.ServiceModel.FaultException?displayProperty=nameWithType> (つまり、ジェネリック型の <xref:System.ServiceModel.FaultException%601> でない) オブジェクトをスローし、文字列をコンストラクターに渡します。 これは、スローされたとして WCF クライアント アプリケーションに公開される<xref:System.ServiceModel.FaultException?displayProperty=nameWithType>例外が格納されている文字列を呼び出して、<xref:System.ServiceModel.FaultException%601.ToString%2A?displayProperty=nameWithType>メソッドです。  
   
 > [!NOTE]
 >  文字列型の SOAP エラーを宣言し、これを型パラメーターが <xref:System.ServiceModel.FaultException%601> の <xref:System.String?displayProperty=nameWithType> としてサービス内でスローすると、文字列値が <xref:System.ServiceModel.FaultException%601.Detail%2A?displayProperty=nameWithType> プロパティに割り当てられるため、<xref:System.ServiceModel.FaultException%601.ToString%2A?displayProperty=nameWithType> から使用できません。  
   
 ## <a name="handling-faults"></a>エラーの処理  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアントでは、クライアント アプリケーションに関係する通信中の SOAP エラーは、マネージ例外として発生します。 プログラムの実行中にはさまざまな例外が発生する可能性がありますが、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアント プログラミング モデルを使用するアプリケーションは、通信の結果として、次の 2 種類の例外を処理できます。  
+ WCF クライアントでクライアント アプリケーションに関心のある通信中に発生した SOAP エラーは、マネージ例外として発生します。 任意のプログラムの実行中に発生することが多くの例外があるときに、WCF クライアント プログラミング モデルを使用するアプリケーションが通信の結果として次の 2 種類の例外を処理すると想定できます。  
   
 -   <xref:System.TimeoutException>  
   
@@ -61,7 +61,7 @@ SOAP エラーは、エラー状態情報をサービスからクライアント
  <xref:System.ServiceModel.FaultException%601> 例外は、操作コントラクト内に指定されたエラーが、双方向操作 (つまり、<xref:System.ServiceModel.OperationContractAttribute> に <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> が設定されている `false` 属性を持つメソッド) への応答で受信された場合に、クライアントでスローされます。  
   
 > [!NOTE]
->  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスの <xref:System.ServiceModel.ServiceBehaviorAttribute.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> プロパティまたは <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> プロパティが `true` に設定されている場合、クライアントは、この例外を <xref:System.ServiceModel.FaultException%601> 型の宣言されていない <xref:System.ServiceModel.ExceptionDetail> として認識します。 クライアントは、この特定のエラーをキャッチするか、<xref:System.ServiceModel.FaultException> の catch ブロックで処理できます。  
+>  WCF サービス発生した場合、<xref:System.ServiceModel.ServiceBehaviorAttribute.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType>または<xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType>プロパティに設定`true`として宣言されていないは、クライアントでこの<xref:System.ServiceModel.FaultException%601>型の<xref:System.ServiceModel.ExceptionDetail>します。 クライアントは、この特定のエラーをキャッチするか、<xref:System.ServiceModel.FaultException> の catch ブロックで処理できます。  
   
  通常、クライアントとサービスには、<xref:System.ServiceModel.FaultException%601>、<xref:System.TimeoutException>、および <xref:System.ServiceModel.CommunicationException> の各例外だけが関係します。  
   
@@ -74,13 +74,13 @@ SOAP エラーは、エラー状態情報をサービスからクライアント
  指定した例外が 1 つの操作から複数返される場合があることに注意してください。 その場合は、エラーごとに型が異なるため、個別に処理する必要があります。  
   
 ### <a name="handle-exceptions-when-closing-the-channel"></a>チャネルを閉じるときに例外を処理する  
- これまでの説明のほとんどは、アプリケーション メッセージの処理の過程で送信されるエラー (つまり、クライアント アプリケーションが [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアント オブジェクトの操作を呼び出す際に、クライアントによって明示的に送信されるメッセージ) に関するものでした。  
+ までの説明のほとんどでは、クライアント アプリケーションでの WCF クライアント オブジェクトの操作を呼び出すときに、クライアントによって明示的に送信されるメッセージには、アプリケーション メッセージの処理の過程で送信されるエラーしないでください。  
   
- ローカル オブジェクトでも、オブジェクトを破棄すると、リサイクル プロセスで起こる例外が発生したり、マスクされたりする場合があります。 同様のことは、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアント オブジェクトを使用する際にも発生します。 操作を呼び出すと、既に確立されている接続を通じてメッセージが送信されます。 また、チャネルを閉じると、すべての操作が正常に返されたとしても、接続を完全に閉じることができなかったり、接続が既に閉じたりしている場合には、例外がスローされる可能性があります。  
+ ローカル オブジェクトでも、オブジェクトを破棄すると、リサイクル プロセスで起こる例外が発生したり、マスクされたりする場合があります。 以下のように WCF クライアント オブジェクトを使用するときに発生します。 操作を呼び出すと、既に確立されている接続を通じてメッセージが送信されます。 また、チャネルを閉じると、すべての操作が正常に返されたとしても、接続を完全に閉じることができなかったり、接続が既に閉じたりしている場合には、例外がスローされる可能性があります。  
   
  通常、クライアント オブジェクトのチャネルは、次のいずれかが発生すると閉じられます。  
   
--   [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアント オブジェクトがリサイクルされるとき。  
+-   WCF クライアント オブジェクトがリサイクルされるときです。  
   
 -   クライアント アプリケーションが <xref:System.ServiceModel.ClientBase%601.Close%2A?displayProperty=nameWithType> を呼び出すとき。  
   
@@ -98,7 +98,7 @@ SOAP エラーは、エラー状態情報をサービスからクライアント
  次のコード例は、基本的なクライアント アプリケーションで、宣言されたエラーと宣言されていないエラーを含む SOAP エラー例外を処理する方法を示しています。  
   
 > [!NOTE]
->  このサンプル コードは、`using` コンストラクトを使用していません。 チャネルを閉じると例外が発生する可能性があるため、まず [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアントをアプリケーションで作成し、その [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] を同じ try ブロックで開いて使用してから、閉じることをお勧めします。 詳細については、「 [WCF クライアントの概要](../../../docs/framework/wcf/wcf-client-overview.md)と[Using ステートメントに関する問題を回避](../../../docs/framework/wcf/samples/avoiding-problems-with-the-using-statement.md)です。  
+>  このサンプル コードは、`using` コンストラクトを使用していません。 チャネルを閉じると、例外がスローすることができます、ために、アプリケーションを作成する WCF クライアントと、開き、および閉じる、WCF クライアントを同じ try ブロックことをお勧めします。 詳細については、「 [WCF クライアントの概要](../../../docs/framework/wcf/wcf-client-overview.md)と[Using ステートメントに関する問題を回避](../../../docs/framework/wcf/samples/avoiding-problems-with-the-using-statement.md)です。  
   
  [!code-csharp[FaultContractAttribute#3](../../../samples/snippets/csharp/VS_Snippets_CFX/faultcontractattribute/cs/client.cs#3)]
  [!code-vb[FaultContractAttribute#3](../../../samples/snippets/visualbasic/VS_Snippets_CFX/faultcontractattribute/vb/client.vb#3)]  

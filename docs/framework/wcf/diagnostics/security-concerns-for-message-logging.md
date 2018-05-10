@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: 21f513f2-815b-47f3-85a6-03c008510038
 author: BrucePerlerMS
 manager: mbaldwin
-ms.openlocfilehash: c8b2fe3300bacc76e63f9d533c613171d03600d7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 0ca5eee4d4a1fd0dfaabbf9160488eb2d88f3d3d
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="security-concerns-for-message-logging"></a>メッセージ ログ記録のセキュリティの考慮事項
 ここでは、メッセージ ログに表示される機密データだけでなく、メッセージ ログによって生成されるイベントを保護する方法についても説明します。  
@@ -16,7 +16,7 @@ ms.lasthandoff: 05/04/2018
 ## <a name="security-concerns"></a>セキュリティに関する注意事項  
   
 ### <a name="logging-sensitive-information"></a>機密情報のログ記録  
- Windows Communication Foundation (WCF) では、アプリケーション固有のヘッダーと本文内のデータは変更しません。 また、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、アプリケーション固有のヘッダーまたは本文データにある個人情報も追跡しません。  
+ Windows Communication Foundation (WCF) では、アプリケーション固有のヘッダーと本文内のデータは変更しません。 また、WCF では、アプリケーション固有のヘッダーまたは本文データにある個人情報は追跡しません。  
   
  メッセージのログ記録が有効になっていると、アプリケーション固有ヘッダー内にある個人情報 (クエリ文字列など)、および本文情報 (クレジット カード番号) がログ内で確認できるようになります。 アプリケーションを配置するユーザーは、構成ファイルとログ ファイルに対するアクセス制御を実施する必要があります。 この種の情報を表示しないようにするには、ログ記録を無効にするか、ログを共有する場合にこの種のデータにフィルターをかけて除外します。  
   

@@ -1,28 +1,18 @@
 ---
-title: "ガベージ コレクション ETW イベント"
-ms.custom: 
+title: ガベージ コレクション ETW イベント
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - GC events
 - garbage collection events [.NET Framework]
 - ETW, garbage collection events (CLR)
 ms.assetid: f14b6fd7-0966-4d87-bc89-54ef3a44a94a
-caps.latest.revision: "21"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 133d48baa9613ea698b6d6a21f0dfe88a798859c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 13f7e935ab999ccc3cd3ea1e308e8d686bed4171
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="garbage-collection-etw-events"></a>ガベージ コレクション ETW イベント
 <a name="top"></a> これらのイベントは、ガベージ コレクションに関連する情報を収集します。 ガベージ コレクションが実行された回数、ガベージ コレクションの間に解放されたメモリの量など、診断やデバッグに役立つ情報を入手できます。  
@@ -75,7 +65,7 @@ ms.lasthandoff: 12/22/2017
   
 |フィールド名|データ型|説明|  
 |----------------|---------------|-----------------|  
-|カウント|win:UInt32|*n* 回目のガベージ コレクション。|  
+|カウント|win:UInt32|*n*回めのガベージ コレクション。|  
 |奥行|win:UInt32|収集されるジェネレーション。|  
 |理由|win:UInt32|ガベージ コレクションが発生した理由:<br /><br /> 0x0 - 小さなオブジェクト ヒープの割り当て。<br /><br /> 0x1 - 強制実行。<br /><br /> 0x2 - メモリ不足。<br /><br /> 0x3 - 空。<br /><br /> 0x4 - 大きなオブジェクト ヒープの割り当て。<br /><br /> 0x5 - 領域不足 (小さなオブジェクト ヒープが対象)。<br /><br /> 0x6 - 領域不足 (大きなオブジェクト ヒープが対象)。<br /><br /> 0x7 - 強制実行されるが、ブロッキングとして強制されない。|  
 |型|win:UInt32|0x0 - バックグラウンド ガベージ コレクションの外部で発生するブロッキング ガベージ コレクション。<br /><br /> 0x1 - バックグラウンド ガベージ コレクション。<br /><br /> 0x2 - バックグラウンド ガベージ コレクションの実行中に発生するブロッキング ガベージ コレクション。|  
@@ -101,7 +91,7 @@ ms.lasthandoff: 12/22/2017
   
 |フィールド名|データ型|説明|  
 |----------------|---------------|-----------------|  
-|カウント|win:UInt32|*n* 回目のガベージ コレクション。|  
+|カウント|win:UInt32|*n*回めのガベージ コレクション。|  
 |奥行|win:UInt32|収集されたジェネレーション。|  
 |ClrInstanceID|win:UInt16|CLR または CoreCLR のインスタンスの一意の ID。|  
   
@@ -264,7 +254,7 @@ ms.lasthandoff: 12/22/2017
   
 |イベント|イベント ID|いつ発生するか|  
 |-----------|--------------|-----------------|  
-|`GCSuspendEEEnd_V1`|9|ガベージ コレクションのための実行エンジンの中断の終了。|  
+|`GCSuspendEEEnd_V1`|8|ガベージ コレクションのための実行エンジンの中断の終了。|  
   
  イベント データはありません。  
   
@@ -375,5 +365,5 @@ ms.lasthandoff: 12/22/2017
   
  イベント データはありません。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [CLR ETW イベント](../../../docs/framework/performance/clr-etw-events.md)

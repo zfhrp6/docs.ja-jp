@@ -2,11 +2,11 @@
 title: カスタム サービス ホスト
 ms.date: 03/30/2017
 ms.assetid: fe16ff50-7156-4499-9c32-13d8a79dc100
-ms.openlocfilehash: c081858d57d9575a616c7c057047b0593a177f3e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: c02ceb114a5346ea2a851f711f1ab9b50373cb75
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="custom-service-host"></a>カスタム サービス ホスト
 このサンプルでは、<xref:System.ServiceModel.ServiceHost> クラスから派生したカスタムのサービス ホストを使用して、サービスの実行時動作を変更する方法を示します。 この方法は、多数のサービスを共通方式で構成するという方法の代わりに使用でき、再利用可能です。 このサンプルでは、<xref:System.ServiceModel.Activation.ServiceHostFactory> クラスを使用して、カスタムの ServiceHost を、インターネット インフォメーション サービス (IIS) または Windows プロセス アクティブ化サービス (WAS) でホストされる環境で使用する方法も示します。  
@@ -121,7 +121,7 @@ host.Open();
  既定の <xref:System.ServiceModel.ServiceHost> クラスを使用してサービスをホストする場合と同様に、このカスタム ServiceHost も、サービスのエンドポイント構成をアプリケーションの構成ファイルから読み取ります。 ただし、カスタム ホストの内部でメタデータ公開を有効にするというロジックを追加したので、構成の中でメタデータ公開動作を明示的に有効化することは不要になりました。 この方法のメリットがはっきりと現れるのは、開発するアプリケーションに複数のサービスがあり、同じ構成要素を繰り返し記述することなく各サービスでメタデータ公開を有効化できるようにする場合です。  
   
 ## <a name="using-a-custom-servicehost-in-iis-or-was"></a>IIS または WAS でのカスタム ServiceHost の使用  
- カスタム サービス ホストを自己ホストのシナリオで使用することは簡単です。サービス ホストのインスタンスを作成して開くことは、アプリケーションのコードで行うからです。 ただし、IIS または WAS がホストする環境では、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のインフラストラクチャが、受信メッセージに応答してサービスのホストを動的にインスタンス化します。 このホスト環境でもカスタム サービス ホストを使用できますが、ServiceHostFactory の形式でコードを追加する必要があります。 次に示すコードは、カスタム <xref:System.ServiceModel.Activation.ServiceHostFactory> のインスタンスを返す、`SelfDescribingServiceHost` の派生クラスの例です。  
+ カスタム サービス ホストを自己ホストのシナリオで使用することは簡単です。サービス ホストのインスタンスを作成して開くことは、アプリケーションのコードで行うからです。 IIS または WAS がホストする環境で、ただし、WCF インフラストラクチャが動的にインスタンス化する受信メッセージに応答してサービスのホスト。 このホスト環境でもカスタム サービス ホストを使用できますが、ServiceHostFactory の形式でコードを追加する必要があります。 次に示すコードは、カスタム <xref:System.ServiceModel.Activation.ServiceHostFactory> のインスタンスを返す、`SelfDescribingServiceHost` の派生クラスの例です。  
   
 ```  
 public class SelfDescribingServiceHostFactory : ServiceHostFactory  
@@ -150,7 +150,7 @@ public class SelfDescribingServiceHostFactory : ServiceHostFactory
                language=c# Debug="true" %>  
 ```  
   
- ここでは、`Factory` 属性を `@ServiceHost` ディレクティブに追加し、カスタム ファクトリの CLR 型の名前を属性値として渡しました。 IIS または WAS がこのサービスのメッセージを受信すると、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ホスト インフラストラクチャによって最初に ServiceHostFactory のインスタンスが作成され、次に `ServiceHostFactory.CreateServiceHost()` が呼び出されてサービス ホスト自体のインスタンスが作成されます。  
+ ここでは、`Factory` 属性を `@ServiceHost` ディレクティブに追加し、カスタム ファクトリの CLR 型の名前を属性値として渡しました。 WCF ホスティング インフラストラクチャが最初に ServiceHostFactory のインスタンスを作成し、サービス ホスト自体を呼び出すことによってインスタンス化し IIS または WAS は、このサービスのメッセージを受信したときに`ServiceHostFactory.CreateServiceHost()`です。  
   
 ## <a name="running-the-sample"></a>サンプルの実行  
  このサンプルには完全な機能を持つクライアントとサービスの実装が用意されていますが、ここでの目的は、カスタム ホストを使用してサービスのランタイム動作を変更する方法を示すことです。次の手順を実行します。  

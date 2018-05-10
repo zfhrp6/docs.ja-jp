@@ -2,14 +2,14 @@
 title: ブリッジとエラー処理
 ms.date: 03/30/2017
 ms.assetid: 4ae87d1a-b615-4014-a494-a53f63ff0137
-ms.openlocfilehash: f13a55704422e8a958e55c489f6db11108b03c90
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 20f5af5736e5869ead0f7c50ce0fff22391ea730
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="bridging-and-error-handling"></a>ブリッジとエラー処理
-このサンプルでは、クライアントと異なるバインディングを使用するサービスの間の通信をブリッジの Windows Communication Foundation (WCF) ルーティング サービスを使用する方法を示します。 また、バックアップ サービスを使用してフェールオーバーのシナリオに対処する方法も示します。 ルーティング サービスは、コンテンツ ベースのルーターをアプリケーションに簡単に追加できるようにする [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] コンポーネントです。 このサンプルでは、標準の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 電卓のサンプルを改良し、ルーティング サービスを使用して通信するようにします。  
+このサンプルでは、クライアントと異なるバインディングを使用するサービスの間の通信をブリッジの Windows Communication Foundation (WCF) ルーティング サービスを使用する方法を示します。 また、バックアップ サービスを使用してフェールオーバーのシナリオに対処する方法も示します。 ルーティング サービスは、コンテンツ ベースのルーターをアプリケーションに含めるしやすく WCF コンポーネントです。 このサンプルは、ルーティング サービスを使用して通信するために標準の WCF 電卓のサンプルを適合させます。  
   
 > [!IMPORTANT]
 >  サンプルは、既にコンピューターにインストールされている場合があります。 続行する前に、次の (既定の) ディレクトリを確認してください。  

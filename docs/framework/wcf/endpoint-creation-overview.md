@@ -1,39 +1,25 @@
 ---
 title: エンドポイントの作成の概要
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - endpoints [WCF], overview
 ms.assetid: f4dce0fb-6f54-47e6-8054-86d7f574b91c
-caps.latest.revision: 40
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 3317bc47c03e0b100d094ba1d929a003dddab055
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 46ca6294d68537e86a319b55d8c11e3ae0084738
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="endpoint-creation-overview"></a>エンドポイントの作成の概要
-[!INCLUDE[indigo1](../../../includes/indigo1-md.md)]サービスにおけるすべての通信はサービスの*エンドポイント*を通じて発生します。 エンドポイントとは、クライアントに [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスがもつ機能へアクセスできるようにするものです。 このセクションでは、エンドポイントの構造およびエンドポイントの設定またはコードによる定義の方法の概要を説明します。  
+使用して、Windows Communication Foundation (WCF) サービスとすべての通信が行われる、*エンドポイント*サービス。 エンドポイントは、WCF サービスを提供する機能へのアクセスをクライアントに提供します。 このセクションでは、エンドポイントの構造およびエンドポイントの設定またはコードによる定義の方法の概要を説明します。  
   
 ## <a name="the-structure-of-an-endpoint"></a>エンドポイントの構造  
  各エンドポイントは、そのエンドポイントが存在する場所を示すアドレス、クライアントがエンドポイントと通信するための方法を指定するバインディング、および利用可能なメソッドを特定するコントラクトで構成されます。  
   
--   **アドレス**。 アドレスは、エンドポイントを一意に識別し、潜在的なユーザーにそのサービスの場所を示します。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]オブジェクト モデルでは、<xref:System.ServiceModel.EndpointAddress> アドレスで表されます。このアドレスは、URI (Uniform Resource Identifier) とアドレス プロパティ (ID、Web サービス記述言語 (WSDL) 要素、およびオプション ヘッダーのコレクションを含む) を格納します。 オプション ヘッダーは、エンドポイントの識別または対話のために、より詳細なアドレス指定情報を提供します。 詳細については、次を参照してください。[エンドポイント アドレスを指定する](../../../docs/framework/wcf/specifying-an-endpoint-address.md)です。  
+-   **アドレス**。 アドレスは、エンドポイントを一意に識別し、潜在的なユーザーにそのサービスの場所を示します。 WCF オブジェクト モデルで表されます、<xref:System.ServiceModel.EndpointAddress>アドレスで、統一リソース識別子 (URI) とアドレス プロパティを id、一部の Web サービス記述言語 (WSDL) 要素の省略可能なコレクションなどが含まれていますヘッダー。 オプション ヘッダーは、エンドポイントの識別または対話のために、より詳細なアドレス指定情報を提供します。 詳細については、次を参照してください。[エンドポイント アドレスを指定する](../../../docs/framework/wcf/specifying-an-endpoint-address.md)です。  
   
 -   **バインド**。 バインディングはエンドポイントとの通信方法を指定します。 バインディングによって、使用するトランスポート プロトコル (TCP や HTTP など)、メッセージに使用するエンコード (テキストやバイナリなど)、必要なセキュリティ要件 (SSL (Secure Sockets Layer) や SOAP メッセージ セキュリティなど) など、そのエンドポイントが通信を行う方法が指定されます。 詳細については、次を参照してください。[を使用してサービスを構成するとクライアントのバインド](../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)です。  
   

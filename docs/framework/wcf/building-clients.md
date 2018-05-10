@@ -5,24 +5,24 @@ helpviewer_keywords:
 - clients [WCF], building
 - clients [WCF]
 ms.assetid: 28dfff47-d95b-4cc2-9d5c-b3b9ba71fd50
-ms.openlocfilehash: 431f62c7de8161d0e687d8f1ee554c6d59ca69b6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: b5661c5aaa08d91c3944c4c108b23b03b012439a
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="building-clients"></a>クライアントを構築する
 このセクションのトピックでは、作成し、Windows Communication Foundation (WCF) クライアントを使用する方法を示します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [WCF クライアントの概要](../../../docs/framework/wcf/wcf-client-overview.md)  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアントとその動作の概要について説明します。  
+ WCF クライアントおよび動作のしくみの概要を示します。  
   
  [WCF クライアントを使用したサービスへのアクセス](../../../docs/framework/wcf/accessing-services-using-a-wcf-client.md)  
- クライアント アプリケーションで使用する [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアント オブジェクトを作成するための基本的な方法の概要について説明します。  
+ クライアント アプリケーションで使用するための WCF クライアント オブジェクトの作成の基本的な方法について説明します。  
   
  [クライアントのセキュリティ保護](../../../docs/framework/wcf/securing-clients.md)  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアントのセキュリティを構成する方法について説明します。  
+ WCF クライアントのセキュリティを構成する方法について説明します。  
   
 ## <a name="reference"></a>参照  
  <xref:System.ServiceModel.ClientBase%601>  

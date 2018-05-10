@@ -2,46 +2,46 @@
 title: WCF のテスト用クライアント (WcfTestClient.exe)
 ms.date: 03/30/2017
 ms.assetid: d4302855-677f-4640-aa90-c5d785d72fb7
-ms.openlocfilehash: fa06077cef3a53b796b85a1eb84bf0fdfba2f598
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 78be40268b46c4c85ee034db67d67ee0fbf2158f
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="wcf-test-client-wcftestclientexe"></a>WCF のテスト用クライアント (WcfTestClient.exe)
-Windows Communication Foundation (WCF) をテスト クライアント (WcfTestClient.exe) は、ユーザーがテスト パラメーターを入力し、その入力をサービスを有効にし、サービスを返信する応答を表示する GUI ツールです。 このツールを [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス ホストと組み合わせて使用すると、シームレスにサービスをテストできるようになります。  
+Windows Communication Foundation (WCF) をテスト クライアント (WcfTestClient.exe) は、ユーザーがテスト パラメーターを入力し、その入力をサービスを有効にし、サービスを返信する応答を表示する GUI ツールです。 テストできるように WCF サービス ホストと組み合わせると、シームレスにサービスを提供します。  
   
- 通常は入手できます、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]次の場所でのテスト用クライアント (WcfTestClient.exe): C:\Program Files (x86) \Microsoft Visual Studio\2017\Community\Common7\IDE - コミュニティでは、"Enterprise"、「担当者」または「コミュニティ」のいずれかの可能性がありますこれによって Visual Studio のレベルがインストールされます。
+ 通常、WCF テスト クライアント (WcfTestClient.exe) は、次の場所に入手できます: C:\Program Files (x86) \Microsoft Visual Studio\2017\Community\Common7\IDE - コミュニティされるいずれかの"Enterprise"、「担当者」または「コミュニティ」に依存Visual Studio のレベルがインストールされます。
   
 ## <a name="scenarios-for-using-test-client"></a>テスト用クライアントを使用するシナリオ  
- 以下のセクションで、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] のテスト用クライアントを使用して開発プロセスを効率化できる最も一般的なシナリオについて説明します。  
+ 次のセクションでは、WCF テスト クライアントを開発プロセスを効率化を使用できる最も一般的なシナリオについて説明します。  
   
 ### <a name="inside-visual-studio"></a>Visual Studio 内  
   
 #### <a name="wcf-service-host-starts-wcf-test-client-with-a-single-service"></a>WCF サービス ホストが、1 つのサービスを使用する WCF のテスト用クライアントを開始する  
- 新しい [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス プロジェクトを作成し、F5 キーを押してデバッガーを起動すると、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス ホストがプロジェクトのサービスのホストを開始します。 その後、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] のテスト用クライアントが開き、構成ファイルに定義されているサービス エンドポイントの一覧が表示されます。 ユーザーは、パラメーターをテストしてサービスを呼び出すことができ、このプロセスを繰り返して、サービスのテストおよび検証を継続的に行うことができます。  
+ 新しい WCF サービス プロジェクトを作成し、デバッガーの起動時に f5 キーを押すと、プロジェクトでサービスをホストする WCF サービス ホストが開始されます。 次に、WCF テスト クライアントが開き、構成ファイルで定義されているサービス エンドポイントの一覧を表示します。 ユーザーは、パラメーターをテストしてサービスを呼び出すことができ、このプロセスを繰り返して、サービスのテストおよび検証を継続的に行うことができます。  
   
 #### <a name="wcf-service-host-starts-wcf-test-client-with-multiple-services"></a>WCF サービス ホストが、複数のサービスを使用する WCF のテスト用クライアントを開始する  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアントは、複数のサービスを含むサービス プロジェクトをデバッグするためにも使用できます。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] のテスト用クライアントは、開始されると、自動的にプロジェクトのサービスのリストを反復処理し、テストするためにそれらを開きます。  
+ 複数のサービスを含むサービス プロジェクトをデバッグする際に WCF テスト クライアントを使用することもできます。 WCF テスト クライアントが開いたら、自動的にプロジェクトのサービスの一覧を繰り返し処理し、テストするためにそれらを開きます。  
   
 ### <a name="outside-visual-studio"></a>Visual Studio の外部  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアント (WcfTestClient.exe) を Visual Studio の外部で呼び出して、インターネット上の任意のサービスをテストすることもできます。 このツールを見つけるには、次の場所に移動します。  
+ インターネット上の任意のサービスをテストする Visual Studio の外部 WCF テスト クライアント (WcfTestClient.exe) を呼び出すこともできます。 このツールを見つけるには、次の場所に移動します。  
   
  C:\Program Files\Microsoft Visual Studio 9.0\Common7\IDE\  
   
  ツールを使用するには、ファイル名をダブルクリックしてこの場所からツールを開くか、コマンド ラインからツールを起動します。  
   
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアントは、任意の数の URI をコマンド ライン引数として受け取ります。  これらの引数には、テストできるサービスの URI を指定します。  
+ Uri の任意の数は、WCF テスト クライアントは、コマンドライン引数として受け取ります。  これらの引数には、テストできるサービスの URI を指定します。  
   
  `wcfTestClient.exe URI1 URI2 …`  
   
- 後に、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]テスト用クライアント ウィンドウを開くと、をクリックして**ファイル**->**サービスの追加**、開きたいサービスのエンドポイント アドレスを入力します。  
+ WCF テスト クライアント ウィンドウを開いた後にをクリックして**ファイル**->**サービスの追加**、開きたいサービスのエンドポイント アドレスを入力します。  
   
 ## <a name="wcf-test-client-user-interface"></a>WCF のテスト用クライアントのユーザー インターフェイス  
- 1 つのサービスまたは複数のサービスを使用する [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] のテスト用クライアントを使用できます。  
+ WCF テスト クライアントは、1 つのサービスまたは複数のサービスで使用できます。  
   
 ### <a name="service-operations"></a>サービス操作  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] のテスト用クライアントのメイン ウィンドウの左ペインには、使用できるすべてのサービスが、それぞれのエンドポイントおよび操作と共に表示されます。  
+ WCF テスト クライアントのメイン ウィンドウの左側のウィンドウには、すべての利用可能なサービス、および、それぞれのエンドポイントと操作が一覧表示します。  
   
  操作をダブルクリックすると、その操作の名前が付いた新しいタブ内の右ペインで、操作の内容を表示できます。  
   
@@ -69,12 +69,12 @@ Windows Communication Foundation (WCF) をテスト クライアント (WcfTestC
  場合、**新しいプロキシを開始** チェック ボックスをオンになって、新しいプロキシが開始された各**Invoke**、前のセッション シナリオが終了すると、およびサービスの状態をリセットします。  
   
 ### <a name="editing-client-configuration"></a>クライアント構成の編集  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] のテスト用クライアントのメイン ウィンドウの左ペインには、クライアントの構成ファイルが表示されます。 いずれかの項目をダブルクリックすると、右ペインにファイルの内容が表示されます。  
+ WCF テスト クライアントのメイン ウィンドウの左側のウィンドウには、クライアント構成ファイルが一覧表示します。 いずれかの項目をダブルクリックすると、右ペインにファイルの内容が表示されます。  
   
 #### <a name="edit-with-service-configuration-editor"></a>サービス構成エディターを使用した編集  
  右クリック**Config ファイル**、左側のウィンドウ クリックし、コンテキスト メニューで**SvcConfigEditor で編集**です。 サービス構成エディターが起動し、クライアント構成の内容が表示されます。 このツール内で構成を編集して保存できます。  
   
- サービス構成エディターでファイルを保存すると、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアントでは、ファイルが外部で変更されたことを通知する警告メッセージが表示され、ファイルを再度読み込むかどうかをたずねられます。  
+ サービス構成エディターでファイルを保存した後は、WCF テスト クライアントは、ファイルが外部で変更されましたし、再読み込みするかどうかを確認することを通知する警告メッセージを表示します。  
   
  選択した場合**はい**、[Client.dll.config] タブで設定内容がエディターで行った変更を反映します。  
   
@@ -84,14 +84,14 @@ Windows Communication Foundation (WCF) をテスト クライアント (WcfTestC
  すべての変更をキャンセルし、既定のクライアント構成に復元を右クリックしたい場合**Config ファイル**、左側のウィンドウ クリックし、コンテキスト メニューで**既定の構成に復元**です。既定の構成値が読み込まれ、[Client.dll.config] タブの内容を復元します。  
   
 #### <a name="validate-changes"></a>変更の検証  
- 保存した変更が [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアントに読み込まれると、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] スキーマに対して構成の有効性のチェックが行われます。 エラーが見つかった場合は、エラーの詳細を示すダイアログ ボックスが表示されます。  
+ 保存された変更は、WCF テスト クライアントに読み込まれるは、WCF スキーマに対して有効かどうか、構成がチェックされます。 エラーが見つかった場合は、エラーの詳細を示すダイアログ ボックスが表示されます。  
   
- プロキシの生成は、バイナリのコンパイル中、またはサービスの呼び出し、中に (つまり、および「... の編集」、「復元...」) の編集をサポートするメニュー項目が無効になります。 更新された構成が [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアントに読み込まれるときは、サービスの呼び出しも無効になります。  
+ プロキシの生成は、バイナリのコンパイル中、またはサービスの呼び出し、中に (つまり、および「... の編集」、「復元...」) の編集をサポートするメニュー項目が無効になります。 WCF テスト クライアントに更新された構成の読み込み時に、サービスの呼び出しも無効になります。  
   
 #### <a name="persist-client-configuration"></a>クライアント構成の保持  
- **ツール**->**オプション**->**クライアント構成** タブには、**常に再生成の構成時に起動します。サービス**オプションは、既定で有効にします。 このチェック ボックスがオンの場合は、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアントによってサービスが読み込まれるたびに、最新のサービス コントラクトとサービスの App.config ファイルに基づいて構成ファイルが再生成されます。  
+ **ツール**->**オプション**->**クライアント構成** タブには、**常に再生成の構成時に起動します。サービス**オプションは、既定で有効にします。 このオプションは、WCF テスト クライアントでサービスが読み込まれるたびに、最新のサービス コントラクトとサービスの App.config ファイルに基づいて構成ファイル再生することを指定します。  
   
- クライアントの構成を編集している場合、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]サービスとサービスのデバッグを常に、この更新ファイルを使用する場合は、ボックスをオフに、**を再生成**オプション。 このようにすると、サービスを更新して [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアントを再び開いた場合でも、Client.dll.config ファイルとして使用されるのは、更新されたサービスに基づいて再生成されたファイルではなく、以前に更新したファイルになります。  
+ WCF サービスのクライアントの構成を編集し、常に使用する、この更新ファイルをオフにすることができます、サービスをデバッグするかどうか、**を再生成**オプション。 これにより、サービスを更新し、WCF テスト クライアントを再び開く場合でも、Client.dll.config ファイルは、更新されたサービスに基づいて再生成の代わりに以前に更新したです。  
   
  ただし、再生成されたプロキシとの一貫性を保つために、構成ファイルの編集が必要になる場合があります。 サービスを更新したことが原因で、再生成されたプロキシと構成ファイルが一致しなくなると、サービスを呼び出したときにエラーが発生します。  
   
@@ -105,35 +105,35 @@ Windows Communication Foundation (WCF) をテスト クライアント (WcfTestC
 ### <a name="adding-removing-and-refreshing-services"></a>サービスの追加、削除、および更新  
   
 #### <a name="add-service"></a>サービスの追加  
- をクリックして**ファイル**->**サービスの追加**にサービスを追加する[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]テスト クライアントです。 次に、追加するサービスの URI (エンドポイント アドレス) を入力する必要があります。 サービスのアドレスには、MEX アドレスまたは WSDL アドレスを指定できます。  
+ をクリックして**ファイル**->**サービスの追加**WCF テスト クライアントにサービスを追加します。 次に、追加するサービスの URI (エンドポイント アドレス) を入力する必要があります。 サービスのアドレスには、MEX アドレスまたは WSDL アドレスを指定できます。  
   
- 10 の最近追加されたサービスのエンドポイントの一覧を見つけることもできます、**最近サービス**サブメニュー。 いずれかをクリックすると、選択したサービスが [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアントに追加されます。  
+ 10 の最近追加されたサービスのエンドポイントの一覧を見つけることもできます、**最近サービス**サブメニュー。 それらのいずれかを選択した場合、指定されたサービスは、WCF テスト クライアントに追加されます。  
   
  また、サービスのツリーのルートを右クリックすることもできます。**マイ サービス プロジェクト**、を選択し**サービスの追加**に同じ結果を実現します。  
   
  プロキシの生成中、バイナリのコンパイル中、またはサービスの呼び出し中は、サービスの追加をサポートするメニュー項目が無効になります。 また、サービスの呼び出しも無効になります。  
   
 #### <a name="remove-service"></a>サービスの削除  
- 削除して、選択するサービスのサービス ルートを右クリックして**サービスの削除**からサービスを削除する[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]テスト クライアントです。  
+ 削除して、選択するサービスのサービス ルートを右クリックして**サービスの削除**WCF テスト クライアントからサービスを削除します。  
   
  プロキシの生成中、バイナリのコンパイル中、またはサービスの呼び出し中は、サービスの削除をサポートするメニュー項目が無効になります。 また、サービスの呼び出しも無効になります。  
   
 #### <a name="refresh-service"></a>サービスの更新  
- 中にサービスへの変更が行われた場合[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]テスト クライアントが実行されていていることを確認する、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]そのサービスの実装をテスト用クライアントが最新では、サービスのサービス ルートを右クリックし **更新サービス**です。 更新後、サービスの状態はリセットされます。  
+ 変更が行われた場合、サービスに WCF テスト クライアントが実行されていると、そのサービスの WCF テスト クライアントの実装が最新であることを確認するときに右クリックし、サービスのサービス ルート**更新サービス**です。 更新後、サービスの状態はリセットされます。  
   
  プロキシの生成中、バイナリのコンパイル中、またはサービスの呼び出し中は、サービスの更新をサポートするメニュー項目が無効になります。 また、サービスの呼び出しも無効になります。  
   
 ## <a name="location-of-files-generated-by-the-test-client"></a>テスト クライアントが生成するファイルの場所  
- 既定では、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]テスト クライアントによって生成されたクライアント コードと構成ファイルは"%appdata%\Local\temp\Test Client Projects"フォルダーです。 このフォルダーは、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアントの終了後に削除されます。 構成ファイルが変更された場合[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]テスト クライアント、および**常に再生成 Config サービスの起動時**オプションが無効になっている、変更されたファイルは"My Documents\Test"キャッシュ Config"フォルダーにコピークライアント プロジェクト Documents\Test Client Projects"のマッピング (メタデータのアドレスの名前へのファイルの) XML ファイルをインデックスとして使用します。  
+ 既定では、WCF テスト クライアントによって生成されたクライアント コードと構成ファイルは"%appdata%\Local\temp\Test Client Projects"フォルダーです。 WCF テスト クライアントが終了した後、このフォルダーが削除されます。 WCF テスト クライアントで、構成ファイルが変更されたかどうか、**常に再生成 Config サービスの起動時**オプションが無効になっている、変更されたファイルは"My Documents\Test クライアント プロジェクトの下の"キャッシュ Config"フォルダーにコピーDocuments\Test Client Projects"のマッピング (メタデータのアドレスの名前へのファイルの) XML ファイルをインデックスとして使用します。  
   
- コマンド ラインから [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアントを起動し、`/ProjectPath` スイッチを使用して、生成されたファイルを格納する新しいパスを指定することもできます。また、`/RestoreProjectPath` スイッチを使用して、既定の場所を復元することもできます。 構文は次のとおりです。  
+ コマンドラインを使用して、WCF テスト クライアントを起動することも、`/ProjectPath`スイッチを生成されたファイルを格納する新しいパスを指定またはを使用して、`/RestoreProjectPath`スイッチを既定の場所を復元します。 構文は次のとおりです。  
   
  `wcfTestClient.exe /ProjectPath [desired location]`  
   
- このコマンドを実行しても、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアントは開きません。 フォルダーの場所が変更されるだけです。 このコマンドは、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアントが実行されているかどうかにかかわらず実行できます。 新しい場所は、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアントが再起動したときに適用されます。 場所の情報は、レジストリか、"%appdata%\Local\temp\Test Client Projects"フォルダーの WcfTestClient.exe.option ファイルに保存できます。  
+ このコマンドを実行しても、WCF テスト クライアントは開きません。 フォルダーの場所が変更されるだけです。 WCF テスト クライアントが実行されているかどうかどうかは、このコマンドを実行することができます。 新しい場所は、WCF テスト クライアントを再起動したときに適用されます。 場所の情報は、レジストリか、"%appdata%\Local\temp\Test Client Projects"フォルダーの WcfTestClient.exe.option ファイルに保存できます。  
   
 ## <a name="features-supported-by-wcf-test-client"></a>WCF のテスト用クライアントでサポートされる機能  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアントがサポートする機能を次に示します。  
+ WCF テスト クライアントでサポートされる機能の一覧を次に示します。  
   
 -   サービスの呼び出し : 要求/応答メッセージおよび一方向メッセージ  
   
@@ -145,7 +145,7 @@ Windows Communication Foundation (WCF) をテスト クライアント (WcfTestC
   
 -   XML シリアル化  
   
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアントでサポートされない機能を次に示します。  
+ WCF テスト クライアントでサポートされない機能の一覧を次に示します。  
   
 -   型: <xref:System.IO.Stream>、<xref:System.ServiceModel.Channels.Message>、<xref:System.Xml.XmlElement>、<xref:System.Xml.XmlAttribute>、<xref:System.Xml.XmlNode>、<xref:System.Xml.Serialization.IXmlSerializable> インターフェイスを実装する型 (関連する <xref:System.Xml.Serialization.XmlSchemaProviderAttribute> 属性を含む)、<xref:System.Xml.Linq.XDocument> 型と <xref:System.Xml.Linq.XElement> 型、および ADO.NET <xref:System.Data.DataTable> 型。  
   
@@ -158,11 +158,11 @@ Windows Communication Foundation (WCF) をテスト クライアント (WcfTestC
 -   バインディング : WSFederationBinding、任意のコンテキスト バインディングおよび HTTPS バインディング、WebHttpBinding (JSON 応答メッセージ サポート)  
   
 ## <a name="closing-wcf-test-client"></a>WCF のテスト用クライアントの終了  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] のテスト用クライアントは、次の方法で閉じることができます。  
+ 次のように WCF テスト クライアントを閉じることができます。  
   
--   **ファイル** メニューのをクリックして**終了**です。 代わりに、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]テスト クライアントのメイン ウィンドウ、をクリックして**閉じる**です。 これらのアクションのどちらもシャット ダウンも[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]サービスの自動ホストと Visual Studio のデバッグ処理を停止[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]テスト用クライアントは、Visual Studio によって起動されました。  
+-   **ファイル** メニューのをクリックして**終了**です。 また、WCF テスト クライアントのメイン ウィンドウで次のようにクリックします。**閉じる**です。 これらのアクションも WCF サービスの自動ホストをシャット ダウン、および Visual Studio で WCF テスト クライアントを起動した場合は、Visual Studio デバッグ プロセスを停止します。  
   
--   右クリックし、 **WCF サービス ホスト**をクリックして通知領域アイコン**終了します。** これは、両方がシャット ダウン[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]サービスの自動ホストと[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]Visual Studio デバッグ プロセスのテスト用クライアントと停止します。  
+-   右クリックし、 **WCF サービス ホスト**をクリックして通知領域アイコン**終了します。** これにより、シャット ダウン、WCF サービスの自動ホストと WCF テスト クライアントの両方と、Visual Studio のデバッグ処理を停止します。  
   
 ## <a name="see-also"></a>関連項目  
  [WCF サービス ホスト (WcfSvcHost.exe)](../../../docs/framework/wcf/wcf-service-host-wcfsvchost-exe.md)

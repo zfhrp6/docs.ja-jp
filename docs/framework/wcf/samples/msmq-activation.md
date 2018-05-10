@@ -2,11 +2,11 @@
 title: MSMQ アクティベーション
 ms.date: 03/30/2017
 ms.assetid: e3834149-7b8c-4a54-806b-b4296720f31d
-ms.openlocfilehash: ab414cb5535ce2b9062520c9d82e139ebdfc04c4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 4dc8cc2a3c6d9178f6507c87ae512a8929bd1380
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="msmq-activation"></a>MSMQ アクティベーション
 このサンプルでは、メッセージ キューから読み取ったアプリケーションを、Windows プロセス アクティブ化サービス (WAS) でホストする方法を示します。 このサンプルでは、`netMsmqBinding`に基づくと、[双方向通信](../../../../docs/framework/wcf/samples/two-way-communication.md)サンプルです。 この場合、サービスは Web ホスト アプリケーションの 1 つであり、クライアントは自己ホスト型です。クライアントはコンソールに出力して、送信された発注書のステータスを確認します。  
@@ -19,11 +19,11 @@ ms.lasthandoff: 05/04/2018
 >   
 >  \<InstallDrive >: \WF_WCF_Samples  
 >   
->  このディレクトリが存在しない場合に、Windows Communication Foundation (WCF) のハイパーリンクを参照してください。"http://go.microsoft.com/fwlink/?LinkId=150780"\t"_blank"と用の Windows Workflow Foundation (WF) サンプル[!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)]すべてダウンロードして[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]と[!INCLUDE[wf1](../../../../includes/wf1-md.md)]サンプルです。 このサンプルは、次のディレクトリに格納されます。  
+>  このディレクトリが存在しない場合に、Windows Communication Foundation (WCF) のハイパーリンクを参照してください。"http://go.microsoft.com/fwlink/?LinkId=150780"\t"_blank"と用の Windows Workflow Foundation (WF) サンプル[!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)]すべての WCF をダウンロードすると[!INCLUDE[wf1](../../../../includes/wf1-md.md)]サンプルです。 このサンプルは、次のディレクトリに格納されます。  
 >   
 >  \<InstallDrive >: \Samples\WCFWFCardSpace\WCF\Basic\Services\Hosting\WASHost\MsmqActivation です。  
   
- Windows プロセス アクティブ化サービス (WAS) は [!INCLUDE[lserver](../../../../includes/lserver-md.md)] の新しいプロセス アクティブ化機構です。WAS は、以前は HTTP ベースのアプリケーションでのみ使用できた IIS のような機能を、HTTP 以外のプロトコルを使用するアプリケーションに提供します。 Windows Communication Foundation (WCF) によってサポートされる非 HTTP プロトコルを介して受信されるアクティブ化要求を通信するために、リスナー アダプター インターフェイスを使用して[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]TCP、名前付きパイプ、MSMQ などです。 HTTP 以外のプロトコルを介して要求を受信する機能は、SMSvcHost.exe で実行されるマネージ Windows サービスによってホストされます。  
+ Windows プロセス アクティブ化サービス (WAS) は [!INCLUDE[lserver](../../../../includes/lserver-md.md)] の新しいプロセス アクティブ化機構です。WAS は、以前は HTTP ベースのアプリケーションでのみ使用できた IIS のような機能を、HTTP 以外のプロトコルを使用するアプリケーションに提供します。 Windows Communication Foundation (WCF) は、TCP、名前付きパイプ、MSMQ などの WCF でサポートされる非 HTTP プロトコルを介して受信されるアクティブ化要求を通信するために、リスナー アダプター インターフェイスを使用します。 HTTP 以外のプロトコルを介して要求を受信する機能は、SMSvcHost.exe で実行されるマネージ Windows サービスによってホストされます。  
   
  Net.Msmq リスナ アダプタ サービス (NetMsmqActivator) は、キュー内のメッセージに基づいてキューに置かれたアプリケーションをアクティブ化します。  
   
@@ -83,7 +83,7 @@ public class OrderProcessorService : IOrderProcessor
  MSMQ キュー名は、構成ファイルの appSettings セクションで指定されます。 サービスのエンドポイントは、構成ファイルの System.serviceModel セクションで定義されます。  
   
 > [!NOTE]
->  MSMQ のキュー名とエンドポイント アドレスでは、若干異なるアドレス表記が使用されています。 MSMQ のキュー名では、ドット (.) を使用してローカル コンピューターを表し、バックスラッシュを使用してパスを区切ります。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] エンドポイント アドレスでは net.msmq: スキームを指定します。ローカル コンピューターを表すのに "localhost" を使用し、パスの区切りにはスラッシュを使用します。 リモート コンピューターでホストされているキューからの読み出しを行うには、"." や "localhost" をリモート コンピューター名に置き換えます。  
+>  MSMQ のキュー名とエンドポイント アドレスでは、若干異なるアドレス表記が使用されています。 MSMQ のキュー名では、ドット (.) を使用してローカル コンピューターを表し、バックスラッシュを使用してパスを区切ります。 WCF エンドポイントのアドレスは、net.msmq:: スキームは、ローカル コンピューターを"localhost"を使用し、パスはスラッシュを使用します。 リモート コンピューターでホストされているキューからの読み出しを行うには、"." や "localhost" をリモート コンピューター名に置き換えます。  
   
  クラスの名前が付いた .svc ファイルは、WAS でのサービス コードのホストに使用されます。  
   
@@ -215,7 +215,7 @@ Status of order 70cf9d63-3dfa-4e69-81c2-23aa4478ebed :Pending
   
 1.  WAS のアクティブ化に必要な [!INCLUDE[iisver](../../../../includes/iisver-md.md)] がインストールされていることを確認します。  
   
-2.  実行したことを確認してください、 [Windows Communication Foundation サンプルの 1 回限りのセットアップ手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)です。 さらに、HTTP 以外の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アクティベーション コンポーネントをインストールする必要があります。  
+2.  実行したことを確認してください、 [Windows Communication Foundation サンプルの 1 回限りのセットアップ手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)です。 さらに、WCF 非 HTTP アクティブ化コンポーネントをインストールする必要があります。  
   
     1.  **開始** メニューの 選択**コントロール パネルの **です。  
   

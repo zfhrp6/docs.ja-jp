@@ -2,8 +2,8 @@
 
 |   |   |
 |---|---|
-|説明|.NET 4.0 では、<code>ObjectContext.Translate</code> および <code>ObjectContext.ExecuteStoreQuery</code> メソッドのジェネリック パラメーター <code>T</code> は、列挙型にできませんでした。 このシナリオがサポートされるようになりました。|
-|提案される解決策|.NET 4.0 では、列挙型に対して Translate または ExecuteStoreQuery が呼び出された場合、「0」が返されました。 この動作が望ましい場合は、呼び出しを定数 0 (または同等の列挙型) に置き換えてください。|
+|説明|.NET Framework 4.0 では、<code>ObjectContext.Translate</code> および <code>ObjectContext.ExecuteStoreQuery</code> メソッドのジェネリック パラメーター <code>T</code> を列挙型にすることはできませんでした。 このシナリオがサポートされるようになりました。|
+|提案される解決策|.NET Framework 4.0 では、列挙型に対して Translate または ExecuteStoreQuery が呼び出された場合、"0" が返されました。 この動作が望ましい場合は、呼び出しを定数 0 (または同等の列挙型) に置き換えてください。|
 |スコープ|エッジ|
 |Version|4.5|
 |型|ランタイム|

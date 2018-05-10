@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - Transactions
 ms.assetid: f8eecbcf-990a-4dbb-b29b-c3f9e3b396bd
-ms.openlocfilehash: 699ba3efad0c8b98aacfc4b64f2fdf03270478b0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: bf78b679be84efa416d088d5addaaa25a593abf4
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="ws-transaction-flow"></a>WS トランザクション フロー
 このサンプルでは、クライアントによって調整されるトランザクションの使用方法と、WS-AtomicTransaction プロトコルまたは OleTransactions プロトコルを使用するトランザクション フローに関するクライアントとサーバーのオプションの使用方法を示します。 このサンプルがに基づいて、[作業の開始](../../../../docs/framework/wcf/samples/getting-started-sample.md)、電卓サービスを実装するが、操作の属性が設定の使用をデモ、`TransactionFlowAttribute`で、 **TransactionFlowOption**どの程度トランザクションをフローが有効になっているを決定する列挙です。 フローされたトランザクションのスコープ内では、要求された操作のログがデータベースに書き込まれ、クライアント調整トランザクションが完了するまで保持されます。クライアント トランザクションが完了しない場合は、データベースに対する該当する更新はコミットされません。  
@@ -231,7 +231,7 @@ Press <ENTER> to terminate the service.
     > [!NOTE]
     >  複数コンピューター構成の場合は、次の説明に従って分散トランザクション コーディネーターを有効にし、Windows SDK の WsatConfig.exe ツールを使用して WCF トランザクション ネットワークのサポートを有効にします。 参照してください[Ws-atomic Transaction サポートの構成](http://go.microsoft.com/fwlink/?LinkId=190370)WsatConfig.exe を設定する方法についてはします。  
   
- サンプルを同じコンピューターまたは複数のコンピューターのどちらで実行する場合も、Microsoft 分散トランザクション コーディネーター (MSDTC) を構成してネットワーク トランザクション フローを有効にし、WsatConfig.exe ツールを使用して [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] トランザクション ネットワーク サポートを有効にする必要があります。  
+ 同じコンピューター上または異なるコンピューター上でサンプルを実行するかどうか、Microsoft 分散トランザクション コーディネーター (MSDTC) ネットワーク トランザクション フローを有効にし、WsatConfig.exe ツールを使用して WCF トランザクション ネットワーク サポートを有効にするを構成する必要があります。  
   
 ### <a name="to-configure-the-microsoft-distributed-transaction-coordinator-msdtc-to-support-running-the-sample"></a>Microsoft 分散トランザクション コーディネーター (MSDTC) を構成してサンプルを実行できるようにするには  
   

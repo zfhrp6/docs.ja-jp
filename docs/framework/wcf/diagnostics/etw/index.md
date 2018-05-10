@@ -6,18 +6,18 @@ helpviewer_keywords:
 - administration [WCF], analytic tracing
 - analytic tracing [WCF]
 ms.assetid: 1d518e47-a38d-41e8-93d7-8c3b361f6a56
-ms.openlocfilehash: a0e3e3d27283e588b161e2209c5a682558d18f79
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 210418b8a8765a1fc59658e9df57c92ce087c95f
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="analytic-tracing-with-etw"></a>ETW を使用した分析トレース
-Windows Communication Foundation (WCF) の分析トレースの実行中に診断情報をキャプチャする方法を提供する、[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)]サービス。 [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] スタック内のキー ポイントで [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] の分析トレース イベントが生成され、運用環境での [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] サービスのトラブルシューティングが可能になります。 分析トレースは[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)]サービスには影響を最小限製品のサーバーのパフォーマンスにホストする[!INCLUDE[netfx_current_long](../../../../../includes/netfx-current-long-md.md)] [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] services のようにこれらのイベントはイベント トレース for Windows (ETW) セッションに非常に効率よく生成されます。  
+Windows Communication Foundation (WCF) の分析トレースは、WCF サービスの実行中に診断情報をキャプチャする手段を提供します。 WCF 分析トレース イベントは、運用環境で WCF サービスのトラブルシューティングが可能に WCF スタック内のキー_ポイントで出力されます。 WCF サービスの分析トレースは最小限に影響を及ぼします製品のサーバーのパフォーマンスをホストする[!INCLUDE[netfx_current_long](../../../../../includes/netfx-current-long-md.md)]WCF サービスのようにこれらのイベントはイベント トレース for Windows (ETW) セッションに非常に効率よく生成されます。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [分析トレースの概要](../../../../../docs/framework/wcf/diagnostics/etw/analytic-tracing-overview.md)  
- [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] の分析トレースが [!INCLUDE[netfx_current_long](../../../../../includes/netfx-current-long-md.md)] でどのように機能するかについて説明します。  
+ WCF 分析トレースがでどのように動作するかについて説明[!INCLUDE[netfx_current_long](../../../../../includes/netfx-current-long-md.md)]です。  
   
  [分析トレースの動的な有効化](../../../../../docs/framework/wcf/diagnostics/etw/dynamically-enabling-analytic-tracing.md)  
  ETW を使用してトレースを動的に有効化または無効化する方法について説明します。  

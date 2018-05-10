@@ -6,18 +6,18 @@ helpviewer_keywords:
 ms.assetid: a015a040-9fdf-4147-9ea9-f83b570be1d4
 author: BrucePerlerMS
 manager: mbaldwin
-ms.openlocfilehash: 6ba6df24163064ee65c563253fa56a1ec574cffc
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 94aefe80674c5b4ec6fcce6a41d9b68e093f4262
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="extending-security"></a>セキュリティの拡張
 新しいクレームの種類とカスタム トークンに合わせて、Windows Communication Foundation (WCF) のセキュリティ インフラストラクチャを拡張できます。 このセクションの各トピックでは、この方法について説明します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [セキュリティ アーキテクチャ](http://msdn.microsoft.com/library/16593476-d36a-408d-808c-ae6fd483e28f)  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のセキュリティ システムのアーキテクチャについて解説します。  
+ WCF セキュリティ システムのアーキテクチャについて説明します。  
   
  [カスタム資格情報と資格情報の検証](../../../../docs/framework/wcf/extending/custom-credential-and-credential-validation.md)  
  カスタム資格情報の検証中に ID モデルを使用する方法について説明します。  

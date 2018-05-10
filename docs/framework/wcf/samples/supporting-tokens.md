@@ -2,11 +2,11 @@
 title: トークンのサポート
 ms.date: 03/30/2017
 ms.assetid: 65a8905d-92cc-4ab0-b6ed-1f710e40784e
-ms.openlocfilehash: 4f8cf62220955bef3f341c43b3c615f873387b2e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 8d8ff3cf4d5a060d135cbcf40c043681ce72b6e0
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="supporting-tokens"></a>トークンのサポート
 このトークンのサポート サンプルでは、WS-Security を使用するメッセージに追加トークンを追加する方法を示します。 この例では、ユーザー名セキュリティ トークンに加え、X.509 バイナリ セキュリティ トークンを追加します。 トークンは、WS-Security メッセージ ヘッダーでクライアントからサービスに渡されます。そのメッセージの一部は X.509 証明書を所有していることを受信側に証明するため、X.509 セキュリティ トークンに関連付けられた秘密キーで署名されます。 これは、複数のクレームをメッセージに関連付けて送信側を認証または承認する必要がある場合に便利です。 サービスは、要求/応答通信パターンを定義するコントラクトを実装します。  
@@ -345,7 +345,7 @@ void GetCallerIdentities(ServiceSecurityContext callerSecurityContext, out strin
 ```  
   
 ## <a name="running-the-sample"></a>サンプルの実行  
- このサンプルを実行すると、最初にクライアントから、ユーザー名トークンのユーザー名とパスワードを入力するように求められます。 サービス上の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、ユーザー名トークンで提供された値をシステムによって提供される ID にマップするので、必ずシステム アカウントの正しい値を入力してください。 その後、クライアントではサービスからの応答が表示されます。 クライアントをシャットダウンするには、クライアント ウィンドウで Enter キーを押します。  
+ このサンプルを実行すると、最初にクライアントから、ユーザー名トークンのユーザー名とパスワードを入力するように求められます。 システム アカウントの正しい値を提供するため必ず WCF サービスにはシステムによって提供された id に、ユーザー名トークンで指定された値をマップします。 その後、クライアントではサービスからの応答が表示されます。 クライアントをシャットダウンするには、クライアント ウィンドウで Enter キーを押します。  
   
 ## <a name="setup-batch-file"></a>セットアップ バッチ ファイル  
  このサンプルに用意されている Setup.bat バッチ ファイルを使用すると、適切な証明書を使用してサーバーを構成し、インターネット インフォメーション サービス (IIS) でホストされるアプリケーションを実行できるようになります。このアプリケーションは、サーバー証明書ベースのセキュリティを必要とします。 このバッチ ファイルは、別のコンピューターを使用する場合またはホストなしの場合に応じて変更する必要があります。  
@@ -464,6 +464,6 @@ iisreset
 -   サンプルの実行が終わったら、サンプル フォルダーにある Cleanup.bat を実行します。  
   
 > [!NOTE]
->  このサンプルを別のマシンで実行している場合、このスクリプトはサービス証明書をクライアントから削除しません。 別のコンピューターで証明書を使用する [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サンプルを実行した場合は、CurrentUser - TrustedPeople ストアにインストールされたサービス証明書を忘れずに削除してください。 削除するには、コマンド `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>` を実行します。たとえば、`certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com` となります。  
+>  このサンプルを別のマシンで実行している場合、このスクリプトはサービス証明書をクライアントから削除しません。 マシン間で証明書を使用して WCF サンプルを実行すると、必ず、CurrentUser - TrustedPeople ストアにインストールされているサービス証明書をオフにします。 削除するには、コマンド `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>` を実行します。たとえば、`certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com` となります。  
   
 ## <a name="see-also"></a>関連項目

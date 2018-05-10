@@ -1,27 +1,15 @@
 ---
-title: "LINQ to DataSet でのクエリ"
-ms.custom: 
+title: LINQ to DataSet でのクエリ
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: c1a78fa8-9f0c-40bc-a372-5575a48708fe
-caps.latest.revision: "3"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 7e07da38f7a75226d48ef84cc8d2dafd48f6e795
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: ef9334eec92ef06e5be07dae4391cdac43fed778
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="queries-in-linq-to-dataset"></a>LINQ to DataSet でのクエリ
 クエリは、データ ソースからデータを取得する式です。 一般に、クエリは専用のクエリ言語で表現されます。たとえば、リレーショナル データベースであれば SQL、XML であれば XQuery が使用されます。 そのため、開発者はクエリの対象となるデータ ソースやデータ形式ごとに新しいクエリ言語を習得する必要があります。 [!INCLUDE[vbteclinqext](../../../../includes/vbteclinqext-md.md)] は、データ ソースや形式の違いを意識せずにデータを扱うことのできる、より簡素化された一貫したモデルを提供します。 [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] クエリでは、常にプログラミング オブジェクトを操作することになります。  
@@ -37,7 +25,7 @@ ms.lasthandoff: 01/19/2018
  遅延実行によって一連の値を返すクエリとは対照的に、シングルトン値を返すクエリは直ちに実行されます。 シングルトン クエリの例としては、<xref:System.Linq.Enumerable.Count%2A>、<xref:System.Linq.Enumerable.Max%2A>、<xref:System.Linq.Enumerable.Average%2A>、<xref:System.Linq.Enumerable.First%2A> があります。 これらのシングルトン クエリは、結果を計算するためにはクエリ結果が必要であるため、直ちに実行されます。 たとえば、クエリ結果の平均を求めるためには、クエリを実行して、平均関数に入力データを与える必要があります。 シングルトン値を生成しないクエリでも、<xref:System.Linq.Enumerable.ToList%2A> メソッドまたは <xref:System.Linq.Enumerable.ToArray%2A> メソッドを使用することによって、即時実行を強制できます。 即時実行を強制するこの手法は、クエリの結果をキャッシュする場合などに使用すると効果的です。 遅延と直ちにクエリの実行の詳細については、次を参照してください。 [LINQ の概要](http://msdn.microsoft.com/library/6cc9af04-950a-4cc3-83d4-2aeb4abe4de9)です。  
   
 ## <a name="queries"></a>クエリ  
- [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]2 種類の構文でクエリを使って作成できます: クエリ式の構文とメソッド ベースのクエリ構文です。  
+ [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] 2 種類の構文でクエリを使って作成できます: クエリ式の構文とメソッド ベースのクエリ構文です。  
   
 ### <a name="query-expression-syntax"></a>クエリ式の構文  
  クエリ式は宣言型のクエリ構文です。 開発者は SQL に似た構文形式を C# または Visual Basic で用いてクエリを作成できます。 クエリ式の構文を使用することにより、フィルター、並べ替え、グループ化など、データ ソースに対するきわめて複雑な処理を最小限のコードで実行できます。 詳細については、次を参照してください。 [LINQ クエリ式](http://msdn.microsoft.com/library/40638f19-fb46-4d26-a2d9-a383b48f5ed4)と[基本的なクエリ操作 (Visual Basic)](~/docs/visual-basic/programming-guide/concepts/linq/basic-query-operations.md)です。  
@@ -70,7 +58,7 @@ ms.lasthandoff: 01/19/2018
  [!code-csharp[DP LINQ to DataSet Examples#ToArray2](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/CS/Program.cs#toarray2)]
  [!code-vb[DP LINQ to DataSet Examples#ToArray2](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/VB/Module1.vb#toarray2)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [プログラミング ガイド](../../../../docs/framework/data/adonet/programming-guide-linq-to-dataset.md)  
  [DataSet のクエリ](../../../../docs/framework/data/adonet/querying-datasets-linq-to-dataset.md)  
  [C# の LINQ の概要](~/docs/csharp/programming-guide/concepts/linq/getting-started-with-linq.md)  

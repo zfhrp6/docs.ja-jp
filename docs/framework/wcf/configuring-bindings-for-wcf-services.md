@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - binding configuration [WCF]
 ms.assetid: 99a85fd8-f7eb-4a84-a93e-7721b37d415c
-ms.openlocfilehash: 8fcb2fbf49984ce2b6aaf1f112575d05a3d7d038
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: b91c8ff5a78ef2b2b2db5ea26ae7a1733a97ffd0
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="configuring-bindings-for-windows-communication-foundation-services"></a>Windows Communication Foundation サービスのバインディングの構成
 アプリケーションの作成では、アプリケーションの配置後は各種決定事項を管理者に任せる場合がよくあります。 たとえば、どのサービス アドレス (URI (Uniform Resource Identifier)) を使用するかなどの情報は、多くの場合、前もって知る方法がありません。 アドレスをハードコーディングする代わりに、サービスの作成後に管理者が指定する方が便利です。  構成を活用することで、この柔軟性が得られます。  
@@ -39,9 +39,9 @@ ms.lasthandoff: 05/04/2018
   
  たとえば、指定すると、 [ \<basicHttpBinding >](../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md)要素は、エンドポイントのトランスポートとして HTTP を使用することを示します。 このエンドポイントを使用するサービスが開かれる実行時に、エンドポイントとの接続に HTTP が使用されます。  
   
- バインディングには、定義済みバインディングとカスタム バインドの 2 種類があります。 定義済みバインディングには、一般的なシナリオで使用される要素の組み合わせが含まれています。 定義済みバインディングの一覧を型には、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]提供を参照してください[システム指定のバインディング](../../../docs/framework/wcf/system-provided-bindings.md)です。 定義済みバインディング コレクションに、サービス アプリケーションに必要な正しい機能の組み合わせがないときは、カスタム バインドを作成して、そのアプリケーションの要件を満たすことができます。 カスタム バインドの詳細については、次を参照してください。 [ \<customBinding >](../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)です。  
+ バインディングには、定義済みバインディングとカスタム バインドの 2 種類があります。 定義済みバインディングには、一般的なシナリオで使用される要素の組み合わせが含まれています。 WCF が提供される定義済みバインドの種類の一覧は、次を参照してください。[システム指定のバインディング](../../../docs/framework/wcf/system-provided-bindings.md)です。 定義済みバインディング コレクションに、サービス アプリケーションに必要な正しい機能の組み合わせがないときは、カスタム バインドを作成して、そのアプリケーションの要件を満たすことができます。 カスタム バインドの詳細については、次を参照してください。 [ \<customBinding >](../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)です。  
   
- 次の 4 つの例は、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスの設定に使用される最も一般的なバインディング構成を示しています。  
+ 次の 4 つの例では、WCF サービスを設定するために使用される最も一般的なバインド構成を示しています。  
   
 #### <a name="specifying-an-endpoint-to-use-a-binding-type"></a>バインディングの種類を使用するエンドポイントの指定  
  最初の例は、アドレス、コントラクト、およびバインディングをそれぞれ 1 つずつ使用して構成されたエンドポイントを指定する方法を示しています。  

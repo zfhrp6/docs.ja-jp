@@ -1,27 +1,15 @@
 ---
-title: "SQL Server Express ユーザー インスタンス"
-ms.custom: 
+title: SQL Server Express ユーザー インスタンス
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 00c12376-cb26-4317-86ad-e6e9c089be57
-caps.latest.revision: "5"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 4b8b795454ab038b9e992c5e1187a0c4dcb46c76
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 0af929de17a29d497ce6cf6c8cb055d416ab8761
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="sql-server-express-user-instances"></a>SQL Server Express ユーザー インスタンス
 Microsoft SQL Server Express Edition (SQL Server Express) でサポートされる機能に、ユーザー インスタンスがあります。ユーザー インスタンスは、.NET Framework Data Provider for SQL Server (`SqlClient`) を使用している場合にしか利用できません。 ユーザー インスタンスは、親インスタンスによって生成される SQL Server Express データベース エンジンの独立したインスタンスです。 ユーザー インスタンスを使用すると、ローカル コンピューターの管理者以外のユーザーが、SQL Server Express データベースにアタッチして接続できます。 それぞれのインスタンスは、1 ユーザーあたり 1 インスタンスの原則に基づいて、個々のユーザーのセキュリティ コンテキストで実行されます。  
@@ -71,7 +59,7 @@ Initial Catalog=InstanceDB;
 > [!NOTE]
 >  使用することも、 <xref:System.Data.SqlClient.SqlConnectionStringBuilder> <xref:System.Data.SqlClient.SqlConnectionStringBuilder.UserInstance%2A>と<xref:System.Data.SqlClient.SqlConnectionStringBuilder.AttachDBFilename%2A>で接続文字列を作成するプロパティの実行時間。  
   
-### <a name="using-the-124datadirectory124-substitution-string"></a>使用して、&#124; DataDirectory &#124;です。置換文字列  
+### <a name="using-the-124datadirectory124-substitution-string"></a>使用して、 &#124;DataDirectory&#124;置換文字列  
  ADO.NET 2.0 では、`AttachDbFileName` が拡張されて、`|DataDirectory|` というパイプ記号で囲まれた置換文字列が導入されました。 `DataDirectory` に `AttachDbFileName` を組み合わせて使用することで、データ ファイルへの相対パスを指定でき、完全パスを使用する代わりに、データ ソースの相対パスに基づいて接続文字列を作成できます。  
   
  `DataDirectory` が表す物理的な場所は、アプリケーションの種類によって異なります。 次の例では、アタッチする Northwind.mdf ファイルが、アプリケーションの \app_data フォルダーに格納されています。  
@@ -161,7 +149,7 @@ private static void OpenSqlConnection()
   
 -   Windows 認証を使用した ASP.NET 専用ホスティング。 イントラネット上で、単一の SQL Server Express インスタンスをホストできます。 アプリケーションは、権限の借用ではなく、ASPNET Windows アカウントを使ってこのインスタンスに接続することになります。 サードパーティ製品を使ったホスティングや共有ホスティングのシナリオでユーザー インスタンスを使用することは避けてください。すべてのアプリケーションで同じユーザー インスタンスが使用され、アプリケーションを互いに分離することができなくなります。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [SQL Server と ADO.NET](../../../../../docs/framework/data/adonet/sql/index.md)  
  [接続文字列](../../../../../docs/framework/data/adonet/connection-strings.md)  
  [データ ソースへの接続](../../../../../docs/framework/data/adonet/connecting-to-a-data-source.md)  

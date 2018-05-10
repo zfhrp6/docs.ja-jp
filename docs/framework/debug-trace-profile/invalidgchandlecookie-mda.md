@@ -1,13 +1,6 @@
 ---
 title: invalidGCHandleCookie MDA
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - MDAs (managed debugging assistants), invalid cookies
 - cookies, invalid
@@ -15,21 +8,18 @@ helpviewer_keywords:
 - InvalidGCHandleCookie MDA
 - invalid cookies
 ms.assetid: 613ad742-3c11-401d-a6b3-893ceb8de4f8
-caps.latest.revision: "8"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 4f4cb7655d8d70cf46926cf193d6594523316e81
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 1f1542cf9d0568fe2ec35c046c358b7249231d42
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="invalidgchandlecookie-mda"></a>invalidGCHandleCookie MDA
 `invalidGCHandleCookie` マネージ デバッグ アシスタント (MDA) は、無効な <xref:System.IntPtr> Cookie から <xref:System.Runtime.InteropServices.GCHandle> への変換が試行されたときにアクティブ化されます。  
   
-## <a name="symptoms"></a>症状  
+## <a name="symptoms"></a>現象  
  <xref:System.Runtime.InteropServices.GCHandle> の使用または <xref:System.IntPtr> からの取得を試みているときのアクセス違反やメモリ破損などの定義されていない動作。  
   
 ## <a name="cause"></a>原因  
@@ -54,7 +44,7 @@ ms.lasthandoff: 12/22/2017
 </mdaConfig>  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Runtime.InteropServices.GCHandle.FromIntPtr%2A>  
  <xref:System.Runtime.InteropServices.GCHandle>  
  [マネージ デバッグ アシスタントによるエラーの診断](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)

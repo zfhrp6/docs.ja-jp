@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - Tracing and logging
 ms.assetid: a4f39bfc-3c5e-4d51-a312-71c5c3ce0afd
-ms.openlocfilehash: 5f0cca66798a9d84b01c9fde1147c28f14a953db
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 13d23c0f69c65dd3bd6b2714dd710eb7f97a1c07
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="tracing-and-message-logging"></a>トレースとメッセージ ログ
 このサンプルでは、トレースとメッセージ ログを有効にする方法を示します。 結果のトレースとメッセージ ログを使用して表示、[サービス トレース ビューアー ツール (SvcTraceViewer.exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md)です。 このサンプルがに基づいて、[作業の開始](../../../../docs/framework/wcf/samples/getting-started-sample.md)です。  
@@ -17,7 +17,7 @@ ms.lasthandoff: 05/04/2018
 >  このサンプルのセットアップ手順とビルド手順については、このトピックの最後を参照してください。  
   
 ## <a name="tracing"></a>トレース  
- Windows Communication Foundation (WCF) で定義されているトレース機構を使用して、<xref:System.Diagnostics>名前空間。 このトレース モデルのトレース データは、アプリケーションが実装するトレース ソースによって作成されます。 各ソースは、名前によって識別されます。 トレース コンシューマでは、情報を取得するトレース ソースのトレース リスナが作成されます。 トレース データを受け取るには、トレース ソースのリスナを作成する必要があります。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] でこれを行うには、サービス モデルのトレース ソース `switchValue` を設定することにより、次のコードをサービスまたはクライアントのどちらかの構成ファイルに追加します。  
+ Windows Communication Foundation (WCF) で定義されているトレース機構を使用して、<xref:System.Diagnostics>名前空間。 このトレース モデルのトレース データは、アプリケーションが実装するトレース ソースによって作成されます。 各ソースは、名前によって識別されます。 トレース コンシューマでは、情報を取得するトレース ソースのトレース リスナが作成されます。 トレース データを受け取るには、トレース ソースのリスナを作成する必要があります。 WCF では、そのため、サービス モデル トレース ソースを設定して、サービスまたはクライアントの構成ファイルに次のコードを追加して`switchValue`:  
   
 ```xml  
 <system.diagnostics>  
@@ -55,12 +55,12 @@ ms.lasthandoff: 05/04/2018
   
 -   転送や伝達を利用してアクティビティを相互に関連付けます。  
   
--   [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] トレースのパフォーマンスの負荷 (ログ ファイルによるディスク領域の負荷など) を軽減します。  
+-   WCF トレース (たとえば、ログ ファイルのディスク領域のコスト) のパフォーマンスの負荷を軽減します。  
   
  ユーザー定義のアクティビティ トレースの詳細についてを参照してください、[トレースを拡張する](../../../../docs/framework/wcf/samples/extending-tracing.md)サンプルです。  
   
 ## <a name="message-logging"></a>メッセージ ログ  
- メッセージ ログは、任意の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションのクライアントとサービスの両方で有効にできます。 メッセージ ログを有効にするには、クライアントとサービスのどちらかに次のコードを追加する必要があります。  
+ クライアントと WCF アプリケーションのサービスの両方で、メッセージのログ記録を有効にすることができます。 メッセージ ログを有効にするには、クライアントとサービスのどちらかに次のコードを追加する必要があります。  
   
 ```xml  
 <configuration>  

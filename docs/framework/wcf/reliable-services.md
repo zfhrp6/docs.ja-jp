@@ -8,14 +8,14 @@ helpviewer_keywords:
 - Windows Communication Foundation [WCF], reliable sessions
 - service contracts [WCF], reliable services
 ms.assetid: 07814ed0-0775-47f2-987b-d8134fdd5099
-ms.openlocfilehash: 02e0b8822c29490462fe74803a34222188afc910
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: f98da5db34686e3bf09cc14c42a2ff6b693201f6
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="reliable-services"></a>信頼できるサービス
-キューと信頼できるセッションは、信頼できるメッセージングを実装する Windows Communication Foundation (WCF) 機能を示します。 このトピックでは、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] の信頼できるメッセージング機能について説明します。  
+キューと信頼できるセッションは、信頼できるメッセージングを実装する Windows Communication Foundation (WCF) 機能を示します。 このトピックでは、WCF の信頼できるメッセージング機能について説明します。  
   
  *信頼できるメッセージング*方法、信頼できるメッセージング送信元は、(と呼ばれる、*ソース*) 信頼できるメッセージング送信先にメッセージを確実に転送 (と呼ばれる、*先*)。  
   
@@ -25,7 +25,7 @@ ms.lasthandoff: 05/04/2018
   
 -   送信元と送信先を互いに分離すること。 これにより、送信元または送信先が利用できない場合でも、送信元と送信先でのそれぞれ独立したエラーと回復が可能になると共に、信頼できるメッセージの転送と配信が実現されます。  
   
- 信頼できるメッセージングを実現すると、待ち時間が長くなることがよくあります。 *待機時間*メッセージ ソースから宛先に到達するまでにかかる時間です。 そこで、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] では、信頼できるメッセージングとして、次の 2 種類を提供します。  
+ 信頼できるメッセージングを実現すると、待ち時間が長くなることがよくあります。 *待機時間*メッセージ ソースから宛先に到達するまでにかかる時間です。 WCF には、そのため、信頼できるメッセージングの次の種類が用意されています。  
   
 -   [信頼できるセッション](../../../docs/framework/wcf/feature-details/reliable-sessions.md)コストの遅延が大きいことがなく信頼できる転送を提供します。  
   
@@ -37,7 +37,7 @@ ms.lasthandoff: 05/04/2018
  信頼できるセッションは、待ち時間の短い、信頼できるメッセージ転送を実現します。 これらは、TCP が IP ブリッジ経由のパケットで実現するものと同等の転送を、プロキシや中継局経由の SOAP メッセージで実現します。 信頼できるセッションの詳細については、次を参照してください。[信頼できるセッション](../../../docs/framework/wcf/feature-details/reliable-sessions.md)です。  
   
 ### <a name="queues"></a>キュー  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] のキューでは、待ち時間は長くなりますが、信頼できるメッセージの転送と共に送信元および送信先の分離が実現されます。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] のキュー通信は、Microsoft Message Queuing (MSMQ) に基づいています。  
+ WCF でのキューでは、ソースと待機時間が長くなりますが宛先の間のメッセージと分離の信頼できる転送を提供します。 WCF のキューに置かれた通信はメッセージ キュー (MSMQ) の上に組み込まれています。  
   
  MSMQ は Windows のオプション コンポーネントとして付属します。 MSMQ サービスは Windows サービスの 1 つとして実行されます。 MSMQ サービスは、送信元の代わりに転送キューで転送用のメッセージを取得し、ターゲット キューに配信します。 ターゲット キューは、送信先の代わりにメッセージを受け取り、後で送信先がメッセージを要求したときに配信します。 MSMQ マネージャーは信頼できるメッセージ転送プロトコルを実装するため、転送中にメッセージが失われることはありません。 このプロトコルは、ネイティブまたは SOAP リライアブル メッセージ プロトコル (SRMP) と呼ばれる SOAP ベースのプロトコルです。  
   

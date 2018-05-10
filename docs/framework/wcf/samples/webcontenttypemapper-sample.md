@@ -1,31 +1,19 @@
 ---
-title: "WebContentTypeMapper のサンプル"
-ms.custom: 
+title: WebContentTypeMapper のサンプル
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: a4fe59e7-44d8-43c6-a1f8-40c45223adca
-caps.latest.revision: "15"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 34adf191d3edbff33fe989cf036c32104a6754ae
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 89f13599e23f3e60ae4d9bc973debc436f46c147
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="webcontenttypemapper-sample"></a>WebContentTypeMapper のサンプル
-このサンプルでは、新しいコンテンツ タイプを [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] メッセージの本文の書式に割り当てる方法を示します。  
+このサンプルでは、Windows Communication Foundation (WCF) メッセージの本文の形式に新しいコンテンツの種類をマップする方法を示します。  
   
- <xref:System.ServiceModel.Description.WebHttpEndpoint> 要素は、Web メッセージ エンコーダーをプラグインします。これによって、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、JSON、XML、または生のバイナリ メッセージを同じエンドポイントで受信できるようになります。 このエンコーダは、要求の HTTP コンテンツ タイプを調べて、メッセージ本文の書式を決定します。 このサンプルでは、コンテンツ タイプと本文書式との間の割り当てを制御するための <xref:System.ServiceModel.Channels.WebContentTypeMapper> クラスを示します。  
+ <xref:System.ServiceModel.Description.WebHttpEndpoint>要素は、により、JSON、XML、または同じエンドポイントで生のバイナリ メッセージを受信する WCF Web メッセージ エンコーダーをプラグインします。 このエンコーダは、要求の HTTP コンテンツ タイプを調べて、メッセージ本文の書式を決定します。 このサンプルでは、コンテンツ タイプと本文書式との間の割り当てを制御するための <xref:System.ServiceModel.Channels.WebContentTypeMapper> クラスを示します。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、各コンテンツ タイプの既定の割り当てが用意されています。 たとえば、`application/json` は JSON に割り当てられ、`text/xml` は XML に割り当てられています。 JSON または XML に割り当てられていないコンテンツ タイプは、生のバイナリ形式に割り当てられます。  
+ WCF では、コンテンツの種類の既定のマッピングのセットを提供します。 たとえば、`application/json` は JSON に割り当てられ、`text/xml` は XML に割り当てられています。 JSON または XML に割り当てられていないコンテンツ タイプは、生のバイナリ形式に割り当てられます。  
   
  場合によっては (プッシュ スタイルの API など)、クライアントによって返されるコンテンツ タイプがサービス開発者によって制御されないことがあります。 たとえば、クライアントは `text/javascript` としてではなく `application/json` として JSON を返す場合があります。 この場合、サービス開発者は、特定のコンテンツ タイプを正しく処理できるように、次のサンプル コードに示すような <xref:System.ServiceModel.Channels.WebContentTypeMapper> の派生型を指定する必要があります。  
   
@@ -69,15 +57,15 @@ public class JsonContentTypeMapper : WebContentTypeMapper
   
 2.  ソリューションをビルドします WebContentTypeMapperSample.sln」の説明に従って[Windows Communication Foundation サンプルのビルド](../../../../docs/framework/wcf/samples/building-the-samples.md)です。  
   
-3.  http://localhost/ServiceModelSamples/JCTMClientPage.htm に移動します (プロジェクト ディレクトリ内からブラウザーで JCTMClientPage.htm を開かないでください)。  
+3.  移動http://localhost/ServiceModelSamples/JCTMClientPage.htm(開かないで JCTMClientPage.htm プロジェクト ディレクトリ内からブラウザーで)。  
   
 > [!IMPORTANT]
 >  サンプルは、既にコンピューターにインストールされている場合があります。 続行する前に、次の (既定の) ディレクトリを確認してください。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
+>  このディレクトリが存在しない場合に、 [Windows Communication Foundation (WCF) および .NET Framework 4 向けの Windows Workflow Foundation (WF) サンプル](http://go.microsoft.com/fwlink/?LinkId=150780)すべて Windows Communication Foundation (WCF) をダウンロードして[!INCLUDE[wf1](../../../../includes/wf1-md.md)]サンプルです。 このサンプルは、次のディレクトリに格納されます。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Ajax\WebContentTypeMapper`  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目

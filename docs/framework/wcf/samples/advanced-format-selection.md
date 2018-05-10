@@ -2,11 +2,11 @@
 title: 高度な形式選択
 ms.date: 03/30/2017
 ms.assetid: e02d9082-4d55-41d8-9329-98f6d1c77f06
-ms.openlocfilehash: 2d0e78bc1ec1dcd7e4a22b246f5cc35356f5f986
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 4913d8dbf69f574aa4f329279bed0d92710512f9
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="advanced-format-selection"></a>高度な形式選択
 このサンプルでは、新しい送信応答形式をサポートするために Windows Communication Foundation (WCF) の REST プログラミング モデルを拡張する方法を示します。 また、このサンプルでは T4 テンプレートを使用して応答を XHTML ページとして返し、ビュースタイル プログラミング モデルの実装方法も示します。  
@@ -18,7 +18,7 @@ ms.lasthandoff: 05/04/2018
   
  サービスから返される応答の形式は、最初は `format` クエリ文字列パラメーターで決定され、2 回目は要求で指定された HTTP Accept ヘッダーで決定されます。 `format` クエリ文字列パラメーターの値が前に示した形式のいずれかである場合、応答はその形式で返されます。 `format` クエリ文字列が存在しない場合、サービスは要求からの Accept ヘッダー要素を反復処理し、サービスがサポートする最初のコンテンツ タイプの形式を返します。  
   
- 操作の戻り値の型については注意が必要です。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] REST プログラミング モデルは、操作で  <xref:System.ServiceModel.Channels.Message> 以外の型が返される場合にのみ XML 応答形式と JSON 応答形式をネイティブでサポートします。 ただし、戻り値の型として <xref:System.ServiceModel.Channels.Message> が使用されている場合、メッセージの内容の形式の設定は、開発者によって完全に制御されています。  
+ 操作の戻り値の型については注意が必要です。 操作では、型を以外の値を返すときに、WCF REST プログラミング モデルをネイティブでのみが XML と JSON 応答形式をサポート<xref:System.ServiceModel.Channels.Message>です。 ただし、戻り値の型として <xref:System.ServiceModel.Channels.Message> が使用されている場合、メッセージの内容の形式の設定は、開発者によって完全に制御されています。  
   
  このサンプルでは、<xref:System.ServiceModel.Web.WebOperationContext.CreateXmlResponse%2A> メソッド、<xref:System.ServiceModel.Web.WebOperationContext.CreateJsonResponse%2A> メソッドおよび <xref:System.ServiceModel.Web.WebOperationContext.CreateAtom10Response%2A> メソッドを使用して、文字列の一覧を XML、JSON、および ATOM のメッセージにそれぞれシリアル化しています。 jpeg 応答形式の場合は、<xref:System.ServiceModel.Web.WebOperationContext.CreateStreamResponse%2A> メソッドが使用され、画像はストリームに保存されます。 XHTML 応答の場合、<xref:System.ServiceModel.Web.WebOperationContext.CreateTextResponse%2A> が事前に処理された T4 テンプレートと共に使用されます。この T4 テンプレートは .tt ファイルと自動生成された .cs ファイルで構成されます。 開発者は、.tt ファイルを使用して変数と制御構造を含むテンプレート フォームで応答を作成できます。 T4 の詳細については、次を参照してください。[を使用してテキスト テンプレートで成果物を生成する](http://go.microsoft.com/fwlink/?LinkId=166023)です。  
   

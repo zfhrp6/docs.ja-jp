@@ -2,14 +2,14 @@
 title: 'トランスポート : WSE 3.0 TCP 相互運用性'
 ms.date: 03/30/2017
 ms.assetid: 5f7c3708-acad-4eb3-acb9-d232c77d1486
-ms.openlocfilehash: fb877e6d55214e9a268a88b33a4613ca8df0eb8f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 8cdd88b354f2e07c84ccfda85c8552d37ca2f519
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="transport-wse-30-tcp-interoperability"></a>トランスポート : WSE 3.0 TCP 相互運用性
-WSE 3.0 TCP 相互運用性トランスポートのサンプルでは、カスタムの Windows Communication Foundation (WCF) トランスポートとして、TCP 二重セッションを実装する方法を示します。 さらに、チャネル レイヤーの拡張機能を使用して、ネットワーク経由で既存の配置システムと連結する方法も示します。 この [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] カスタム トランスポートを作成する方法を、次の手順に示します。  
+WSE 3.0 TCP 相互運用性トランスポートのサンプルでは、カスタムの Windows Communication Foundation (WCF) トランスポートとして、TCP 二重セッションを実装する方法を示します。 さらに、チャネル レイヤーの拡張機能を使用して、ネットワーク経由で既存の配置システムと連結する方法も示します。 次の手順では、このカスタムの WCF トランスポートをビルドする方法を示します。  
   
 1.  まず TCP ソケットを使用して、DIME フレームを使用する <xref:System.ServiceModel.Channels.IDuplexSessionChannel> のクライアント実装とサーバー実装を作成し、メッセージ境界を決定します。  
   
@@ -128,7 +128,7 @@ WSE 3.0 TCP 相互運用性トランスポートのサンプルでは、カス�
   
  `binding.Elements.Add(new WseTcpTransportBindingElement());`  
   
- テスト コードは 2 つのテストで構成されます。1 つ目のテストは、WSE 3.0 WSDL から生成されたコードを使用して型指定のあるクライアントを設定します。 2 つ目のテストは、メッセージを直接チャネル API 上に送信することによって、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] をクライアントとサーバーの両方として使用します。  
+ テスト コードは 2 つのテストで構成されます。1 つ目のテストは、WSE 3.0 WSDL から生成されたコードを使用して型指定のあるクライアントを設定します。 2 番目のテストでは、直接チャネル Api 上にメッセージを送信することによって、クライアントとサーバーの両方として WCF を使用します。  
   
  このサンプルを実行すると、次の出力が予測されます。  
   
@@ -182,7 +182,7 @@ Symbols:
   
     2.  StockService プロジェクトをスタートアップ プロジェクトに設定します。  
   
-    3.  StockService プロジェクトの StockService.cs を開き、`StockService` クラスの [Policy] 属性をコメント化します。 これにより、サンプルのセキュリティが無効になります。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は WSE 3.0 のセキュリティで保護されたエンドポイントと相互運用できますが、このサンプルではカスタム TCP トランスポートに重点を置くため、セキュリティを無効にします。  
+    3.  StockService プロジェクトの StockService.cs を開き、`StockService` クラスの [Policy] 属性をコメント化します。 これにより、サンプルのセキュリティが無効になります。 WCF は、WSE 3.0 のセキュリティで保護されたエンドポイントと相互運用できます、中には、このサンプルはカスタム TCP トランスポートに重点を置いてを保持するセキュリティが無効になります。  
   
     4.  F5 キーを押して、`TcpSyncStockService` を開始します。 サービスが新しいコンソール ウィンドウで開始します。  
   

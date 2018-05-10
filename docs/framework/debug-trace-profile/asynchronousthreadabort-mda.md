@@ -1,13 +1,6 @@
 ---
 title: asynchronousThreadAbort MDA
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - asynchronous thread aborts
 - AsynchronousThreadAbort MDA
@@ -15,21 +8,18 @@ helpviewer_keywords:
 - threading [.NET Framework], managed debugging assistants
 - MDAs (managed debugging assistants), asynchronous thread aborts
 ms.assetid: 9ebe40b2-d703-421e-8660-984acc42bfe0
-caps.latest.revision: "10"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ecd99b098a619d4ad132432f4fd163d32598c2ba
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: fd759a4167a667919a443bc6492c049631ad222c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="asynchronousthreadabort-mda"></a>asynchronousThreadAbort MDA
 `asynchronousThreadAbort` マネージ デバッグ アシスタント (MDA) は、スレッドが別のスレッドに非同期の中止処理を適用しようとするとアクティブになります。 同期のスレッド中止では、`asynchronousThreadAbort` MDA はアクティブになりません。
 
-## <a name="symptoms"></a>症状
+## <a name="symptoms"></a>現象
  メインのアプリケーション スレッドが中止されると、アプリケーションは未処理の <xref:System.Threading.ThreadAbortException> でクラッシュします。 アプリケーションが実行を続けると、アプリケーションがクラッシュした場合よりも悪い結果が生じ、さらにデータが破損する可能性があります。
 
  不可分であるべき操作が部分的に完了した後で中断された可能性があり、アプリケーション データは予測不能な状態のままになっています。 <xref:System.Threading.ThreadAbortException> は、コードの実行中に見かけ上はランダムなポイントから生成でき、例外の発生が予期されていない場所で生成されることもよくあります。 コードはこのような例外を処理できない場合があるため、破損した状態になります。
@@ -79,5 +69,5 @@ void FireMda()
 }
 ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
  <xref:System.Threading.Thread> [マネージ デバッグ アシスタントによるエラーの診断](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)

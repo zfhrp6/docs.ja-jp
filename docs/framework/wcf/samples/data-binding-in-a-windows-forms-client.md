@@ -2,11 +2,11 @@
 title: Windows フォーム クライアントのデータ バインディング
 ms.date: 03/30/2017
 ms.assetid: a2a30b37-d6e2-4552-820e-e60b2bbe8829
-ms.openlocfilehash: a84aeedba89cc7a5c267a0fd1f6c4f604fe80d43
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 38991390f2d0dd272b8d07041b61e6cf16db0cae
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="data-binding-in-a-windows-forms-client"></a>Windows フォーム クライアントのデータ バインディング
 このサンプルでは、Windows フォーム アプリケーションで Windows Communication Foundation (WCF) サービスによって返されるデータにバインドする方法を示します。  
@@ -14,11 +14,11 @@ ms.lasthandoff: 05/04/2018
 > [!NOTE]
 >  このサンプルのセットアップ手順とビルド手順については、この記事の最後を参照してください。  
   
- このサンプルでは、要求/応答通信パターンを定義するコントラクトを実装するサービスを示します。 このサンプルは、クライアントの Windows フォーム アプリケーション (.exe) と、インターネット インフォメーション サービス (IIS) によってホストされる [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] で構成されています。  
+ このサンプルでは、要求/応答通信パターンを定義するコントラクトを実装するサービスを示します。 このサンプルは、Windows フォーム アプリケーション (.exe) のクライアントとインターネット インフォメーション サービス (IIS) によってホストされる WCF サービスで構成されます。  
   
  コントラクトは `IWeatherService` インターフェイスによって定義されます。このインターフェイスでは、`GetWeatherData` という名前の操作が公開されます。 この操作は都市名の配列を受け付け、各都市の予想最高気温と最低気温を表す `WeatherData` オブジェクトの配列を返します。  
   
- データ バインディングは、Windows フォーム アプリケーションのクライアントで発生します。 `DataGridView` は Windows フォーム デザイナで定義し、データをグラフィック表示します。 さらに、`BindingSource` という中継局も作成されます。 `BindingSource` のデータ ソースは、サービスによって返されるデータ配列に設定されます。 `BindingSource` の目的は、データとデータ ビュー間を間接化するレイヤを提供することです。 データとの対話 (移動、並べ替え、フィルタ処理、更新など) はすべて、`BindingSource` コンポーネントを呼び出すことによって実行します。 `DataGridView` へのデータ バインディングを行うには、`datasource` の `DataGridView` を `BindingSource` オブジェクトに設定します。 これで、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスから返されるすべてのデータがユーザーに対してグラフィック表示されます。  ユーザーがボタンをクリックするたびに、返されたデータはデータ バインドされた `DataGridView` で自動的に更新されます。  
+ データ バインディングは、Windows フォーム アプリケーションのクライアントで発生します。 `DataGridView` は Windows フォーム デザイナで定義し、データをグラフィック表示します。 さらに、`BindingSource` という中継局も作成されます。 `BindingSource` のデータ ソースは、サービスによって返されるデータ配列に設定されます。 `BindingSource` の目的は、データとデータ ビュー間を間接化するレイヤを提供することです。 データとの対話 (移動、並べ替え、フィルタ処理、更新など) はすべて、`BindingSource` コンポーネントを呼び出すことによって実行します。 `DataGridView` へのデータ バインディングを行うには、`datasource` の `DataGridView` を `BindingSource` オブジェクトに設定します。 すべての WCF サービスから返されたデータがグラフィカルに表示されます。  ユーザーがボタンをクリックするたびに、返されたデータはデータ バインドされた `DataGridView` で自動的に更新されます。  
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>サンプルをセットアップ、ビルド、および実行するには  
   

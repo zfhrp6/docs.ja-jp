@@ -1,13 +1,6 @@
 ---
 title: dangerousThreadingAPI MDA
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - suspending threads
 - DangerousThreadingAPI MDA
@@ -17,21 +10,18 @@ helpviewer_keywords:
 - Suspend method
 - threading [.NET Framework], managed debugging assistants
 ms.assetid: 3e5efbc5-92e4-4229-b31f-ce368a1adb96
-caps.latest.revision: "10"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 4b7c4e7f5612cb6a46f16b6e42327e8430d548e3
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 02f16bd9560346cca9b24d4e5b8e760fdb3afd18
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="dangerousthreadingapi-mda"></a>dangerousThreadingAPI MDA
 `dangerousThreadingAPI` マネージ デバッグ アシスタント (MDA) は、現在のスレッド以外のスレッドで <xref:System.Threading.Thread.Suspend%2A?displayProperty=nameWithType> メソッドが呼び出されるとアクティブになります。  
   
-## <a name="symptoms"></a>症状  
+## <a name="symptoms"></a>現象  
  アプリケーションがいつまでも応答しないかハングアップしています。 システムまたはアプリケーションのデータが一時的に、またはアプリケーションのシャットダウン後も、予期しない状態のままになっている可能性があります。 一部の操作が予期したとおりに完了していません。  
   
  問題に伴うランダム性により、症状は大きく異なる場合があります。  
@@ -76,7 +66,7 @@ Thread t = new Thread(delegate() { Thread.Sleep(1000); });
 }  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Threading.Thread>  
  [マネージ デバッグ アシスタントによるエラーの診断](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)  
  [lock ステートメント](~/docs/csharp/language-reference/keywords/lock-statement.md)

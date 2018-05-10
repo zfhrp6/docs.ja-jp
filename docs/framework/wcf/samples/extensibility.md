@@ -2,11 +2,11 @@
 title: 機能拡張
 ms.date: 03/30/2017
 ms.assetid: cd7ddffc-a261-44aa-bd50-33c1c74f0df0
-ms.openlocfilehash: 7cba21715a6a0347e910300de46c1e47fd6e30bf
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 010d6d7b17d3cb39e19c23550ca3522d6ea73a21
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="extensibility"></a>機能拡張
 このセクションには、カスタム拡張機能と Windows Communication Foundation (WCF) の他の機能を処理するサンプルが含まれています。  
@@ -55,10 +55,10 @@ ms.lasthandoff: 05/04/2018
  シリアル化、逆シリアル化、スキーマのエクスポート、スキーマのインポートなどのプロセスを、データ コントラクト サロゲート クラスを使用してカスタマイズする方法を示します。  
   
  [エラー処理およびレポートに対する制御の拡張](../../../../docs/framework/wcf/samples/extending-control-over-error-handling-and-reporting.md)  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] インターフェイスを使用して、<xref:System.ServiceModel.Dispatcher.IErrorHandler> サービスのエラー処理およびエラー報告に対する制御を拡張する方法を示します。  
+ エラー処理とレポートを使用して WCF サービスのエラーに対する制御を拡張する方法を示します、<xref:System.ServiceModel.Dispatcher.IErrorHandler>インターフェイスです。  
   
  [メッセージ インスペクター](../../../../docs/framework/wcf/samples/message-inspectors.md)  
  クライアントとサービスのメッセージ インスペクターを実装して構成する方法を示します。  
   
  [WebContentTypeMapper](../../../../docs/framework/wcf/samples/webcontenttypemapper-sample.md)  
- 新しいコンテンツ タイプを [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] メッセージの本文の書式に割り当てる方法を示します。
+ 新しいコンテンツの種類を WCF メッセージ本文の形式にマップする方法を示します。

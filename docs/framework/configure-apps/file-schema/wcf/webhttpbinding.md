@@ -2,11 +2,11 @@
 title: '&lt;webHttpBinding&gt;'
 ms.date: 03/30/2017
 ms.assetid: 84179d77-825d-44b9-895a-ab08e7aa044d
-ms.openlocfilehash: abc08f81ac05aa42ff7247edf662f8dd4482fd4a
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
-ms.translationtype: HT
+ms.openlocfilehash: 3a5a0844da401607b2049069e7195fa996c62fba
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ltwebhttpbindinggt"></a>&lt;webHttpBinding&gt;
 SOAP メッセージに代わって HTTP 要求に応答する Windows Communication Foundation (WCF) Web サービスのエンドポイントを構成するために使用するバインド要素を定義します。  
@@ -86,9 +86,9 @@ SOAP メッセージに代わって HTTP 要求に応答する Windows Communica
 |[\<bindings>](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|この要素には、標準バインディングおよびカスタム バインドのコレクションが保持されます。|  
   
 ## <a name="remarks"></a>コメント  
- [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] Web プログラミング モデルを使用すると、開発者は、SOAP ベースのメッセージングに代わって "Plain Old XML" (POX) スタイルのメッセージングを使用する HTTP 要求を通じて [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] Web サービスを公開できます。 を HTTP 要求を使用するサービスと通信するクライアントとサービスのエンドポイントを構成する必要があります、 [ \<webHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/webhttpbinding.md)を持つ、 \<WebHttpBehavior > が付属しています。  
+ WCF Web プログラミング モデルにより、"plain old XML"を使用する HTTP 要求を通じて WCF Web サービスを公開する開発者 (POX) スタイルのメッセージング SOAP ベースのメッセージングの代わりにします。 を HTTP 要求を使用するサービスと通信するクライアントとサービスのエンドポイントを構成する必要があります、 [ \<webHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/webhttpbinding.md)を持つ、 \<WebHttpBehavior > が付属しています。  
   
- [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] の配信および ASP.AJAX 統合のサポートは、Web プログラミング モデル上に構築されます。 モデルの詳細については、次を参照してください。 [WCF Web HTTP プログラミング モデル](../../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)です。  
+ WCF での配信および ASP をサポートします。AJAX の統合は、どちらも、Web プログラミング モデル上に構築されます。 モデルの詳細については、次を参照してください。 [WCF Web HTTP プログラミング モデル](../../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)です。  
   
 ## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.WebHttpBinding>  

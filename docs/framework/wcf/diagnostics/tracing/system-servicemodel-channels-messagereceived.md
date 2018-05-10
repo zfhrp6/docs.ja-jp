@@ -2,11 +2,11 @@
 title: System.ServiceModel.Channels.MessageReceived
 ms.date: 03/30/2017
 ms.assetid: 9e6942a4-051f-416c-9674-7e729b9edd33
-ms.openlocfilehash: c1b9b4e911636ea144d5f7e907dcec6b6b8082d8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 1797fb95bbcfc538e1abdf610bedd07e953ede5d
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="systemservicemodelchannelsmessagereceived"></a>System.ServiceModel.Channels.MessageReceived
 System.ServiceModel.Channels.MessageReceived  
@@ -14,7 +14,7 @@ System.ServiceModel.Channels.MessageReceived
 ## <a name="description"></a>説明  
  チャネルを介してメッセージを受信しました。  
   
- このトレースは、[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] トレース ソースが情報レベルまたは詳細レベルで有効な場合に、`System.ServiceModel` メッセージが受信されるときに出力されます。 このトレースはアクティビティのグラフ ビューでメッセージの相関矢印を表示するために必要です。  
+ 場合、WCF メッセージを受信すると、このトレースが出力、`System.ServiceModel`トレース ソースが information レベルか verbose レベルで有効にします。 このトレースはアクティビティのグラフ ビューでメッセージの相関矢印を表示するために必要です。  
   
 ## <a name="see-also"></a>関連項目  
  [トレース](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  

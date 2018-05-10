@@ -2,11 +2,11 @@
 title: 永続的な二重
 ms.date: 03/30/2017
 ms.assetid: 4e76d1a1-f3d8-4a0f-8746-4a322cdff6eb
-ms.openlocfilehash: 91490eb3ee6c11f29bb49d8343b807e74e8d3bc2
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 3df5ba962ef33594df1eaebc20789fa9e2d35244
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="durable-duplex"></a>永続的な二重
 このサンプルを設定して、Windows Workflow Foundation (WF)、メッセージング アクティビティを使用して永続的な双方向メッセージ交換を構成する方法を示します。 永続的な双方向メッセージ交換は、長期間行われる双方向メッセージ交換です。 メッセージ交換の有効期間は、通信チャネルの有効期間およびサービス インスタンスのメモリ内有効期間よりも長い場合があります。  
@@ -41,7 +41,7 @@ ms.lasthandoff: 05/04/2018
 >  このサンプルで使用するバインディングはセキュリティで保護されていません。 アプリケーションを配置するときに、アプリケーションのセキュリティ要件に基づいてバインディングを構成する必要があります。  
   
 > [!NOTE]
->  このサンプルで使用するキューはトランザクション キューではありません。 セットアップする方法を示すサンプルについて[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]トランザクション キューを使用して交換のメッセージを参照してください、 [MSMQ アクティブ化](../../../../docs/framework/wcf/samples/msmq-activation.md)サンプルです。  
+>  このサンプルで使用するキューはトランザクション キューではありません。 トランザクション キューを使用して WCF メッセージの交換を設定する方法を示すサンプルについては、次を参照してください。、 [MSMQ アクティブ化](../../../../docs/framework/wcf/samples/msmq-activation.md)サンプルです。  
   
  Service1.xamlx によって Service2.xamlx に送信されるメッセージは、Service2.xamlx のアドレスと前に定義したカスタム バインドを使用して構成されるクライアント エンドポイントを使用して送信されます。 Service2.xamlx から Service1.xamlx へのコールバックは、アドレスが明示的に構成されていないクライアント エンドポイントを使用して送信されます。アドレスは、Service1.xamlx によって送信されるコールバック コンテキストから取得されます。 クライアント エンドポイントを定義するコード例を次に示します。  
   

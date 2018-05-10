@@ -4,19 +4,19 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - load balancing [WCF]
 ms.assetid: 148e0168-c08d-4886-8769-776d0953b80f
-ms.openlocfilehash: 9ad9c9c569137534addfa3b91f412fb0c0a4b808
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: c9d554dfd8d21b6e0e5f4aef0f4402e16485c2e8
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="load-balancing"></a>負荷分散
-Windows Communication Foundation (WCF) アプリケーションの容量を増やす方法の 1 つは負荷分散されたサーバー ファームに配置をスケール アウトすることです。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] アプリケーションは、ハードウェア ベースの負荷分散アプリケーションのほか、Windows Network Load Balancing のようなソフトウェアによる負荷分散も含む、標準的な負荷分散手法を使用して負荷分散できます。  
+Windows Communication Foundation (WCF) アプリケーションの容量を増やす方法の 1 つは負荷分散されたサーバー ファームに配置をスケール アウトすることです。 WCF アプリケーションは、標準的な負荷分散の手法を Windows ネットワーク負荷分散などのソフトウェア ロード バランサーを含むだけでなくハードウェア ベースの負荷分散を使用して負荷分散をすることができます。  
   
- 以下のセクションでは、システム提供の各種のバインディングを使用して構築された [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] アプリケーションを負荷分散するときの考慮事項について説明します。  
+ 次のセクションでは、負荷分散のさまざまなシステム指定のバインディングを使用して構築された WCF アプリケーションに関する考慮事項について説明します。  
   
 ## <a name="load-balancing-with-the-basic-http-binding"></a>基本 HTTP バインディングによる負荷分散  
- 負荷分散の面から見た場合、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] を使用して通信を行う <xref:System.ServiceModel.BasicHttpBinding> アプリケーションと、他の一般的なタイプの HTTP ネットワーク トラフィック (静的な HTML コンテンツ、ASP.NET ページ、ASMX Web サービス) との相違はありません。 このバインディングを使用する [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] チャネルは本質的にステートレスで、チャネルが閉じると接続を終了します。 したがって、<xref:System.ServiceModel.BasicHttpBinding> には既存の HTTP 負荷分散の手法で十分に対応できます。  
+ 負荷分散を使用して通信する WCF アプリケーションの観点から、<xref:System.ServiceModel.BasicHttpBinding>は、他の一般的なタイプの HTTP ネットワーク トラフィック (静的な HTML コンテンツ、ASP.NET ページ、ASMX Web サービス) は、まったく同じです。 このバインディングを使用する WCF チャネルは本質的にステートレスであるし、チャネルが閉じると接続を終了します。 したがって、<xref:System.ServiceModel.BasicHttpBinding> には既存の HTTP 負荷分散の手法で十分に対応できます。  
   
  既定では、<xref:System.ServiceModel.BasicHttpBinding> は、メッセージの接続 HTTP ヘッダーで `Keep-Alive` 値を送信することで、サポートするサービスにクライアントが永続的な接続を確立できるようにします。 この構成では、以前に確立した接続を再使用して同じサーバーへの後続するメッセージを送信できるため、スループットが向上します。 ただし、接続を再使用すると、クライアントが負荷分散ファーム内の特定サーバーと強く関連付けられてしまうため、ラウンドロビン方式の負荷分散の効果を損ねることがあります。 これを回避するには、`Keep-Alive` またはユーザー定義の <xref:System.ServiceModel.Channels.HttpTransportBindingElement.KeepAliveEnabled%2A> で <xref:System.ServiceModel.Channels.CustomBinding> プロパティを使用して、サーバーの HTTP <xref:System.ServiceModel.Channels.Binding> を無効にできます。 構成を使用してこれを行う例を次に示します。  
   

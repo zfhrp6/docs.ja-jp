@@ -2,11 +2,11 @@
 title: セットアップに関する問題のトラブルシューティング
 ms.date: 03/30/2017
 ms.assetid: 1644f885-c408-4d5f-a5c7-a1a907bc8acd
-ms.openlocfilehash: 806e8a1f45deec5861e3bcc9a9c06a93ce410c1a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 3c750aa4f9a4ec4750aa24ffcd685c9c349a45a7
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="troubleshooting-setup-issues"></a>セットアップに関する問題のトラブルシューティング
 このトピックでは、Windows Communication Foundation (WCF) がセットアップ問題のトラブルシューティングを行う方法について説明します。  
@@ -61,12 +61,12 @@ ms.lasthandoff: 05/04/2018
  [ワークフロー サービス登録ツール (WFServicesReg.exe)](../../../docs/framework/wcf/workflow-service-registration-tool-wfservicesreg-exe.md) %windir%\Microsoft.NET\framework\v3.5\ または %windir%\Microsoft.NET\framework64\v3.5\ にあります  
   
 ## <a name="configure-iis-properly-for-wcfwf-webhost-after-installing-net-framework-35"></a>.NET Framework 3.5 のインストール後に WCF/WF Webhost に対して IIS を適切に構成する  
- [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] のインストールでは、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] に関連する追加の IIS 構成設定の構成に失敗すると、インストール ログにエラーが記録され、インストールが続行されます。 WorkflowServices アプリケーションを実行しようとしても、必要な構成設定がないため、実行することはできません。 たとえば、xoml やルール サービスの読み込みに失敗する可能性があります。  
+ ときに[!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)]追加 WCF に関連する IIS の構成設定を構成するインストールに失敗した場合、インストール ログにエラーが記録が続行します。 WorkflowServices アプリケーションを実行しようとしても、必要な構成設定がないため、実行することはできません。 たとえば、xoml やルール サービスの読み込みに失敗する可能性があります。  
   
  回避策を使用して、この問題、[ワークフロー サービス登録ツール (WFServicesReg.exe)](../../../docs/framework/wcf/workflow-service-registration-tool-wfservicesreg-exe.md)で、`/c`正しく、マシンでスクリプト マップを IIS を構成するスイッチです。 [ワークフロー サービス登録ツール (WFServicesReg.exe)](../../../docs/framework/wcf/workflow-service-registration-tool-wfservicesreg-exe.md) %windir%\Microsoft.NET\framework\v3.5\ または %windir%\Microsoft.NET\framework64\v3.5\ にあります  
   
 ## <a name="could-not-load-type-systemservicemodelactivationhttpmodule-from-assembly-systemservicemodel-version-3000-cultureneutral-publickeytokenb77a5c561934e089"></a>アセンブリ 'System.ServiceModel, Version 3.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089' から型 'System.ServiceModel.Activation.HttpModule' を読み込むことができない  
- このエラーが発生[!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)]がインストールされているし、 [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] HTTP アクティブ化が有効にします。 この問題を解決するには、[!INCLUDE[vs2010](../../../includes/vs2010-md.md)] コマンド プロンプト内から次のコマンドを実行します。  
+ このエラーが発生[!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)]がインストールされているし、WCF HTTP アクティブ化が有効になっているとします。 この問題を解決するには、[!INCLUDE[vs2010](../../../includes/vs2010-md.md)] コマンド プロンプト内から次のコマンドを実行します。  
   
 ```Output  
 aspnet_regiis.exe -i -enable  

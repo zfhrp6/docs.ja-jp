@@ -1,14 +1,6 @@
 ---
 title: AddFile Method1
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - IALink.AddFile
 - AddFile
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: 9e707abb-f905-4568-9356-12aa21d1b11c
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 943ff2901ee0888860941e86d589060de729907d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 57a350fadfa77fdad545ca7ccf2f63d28607c2ba
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="addfile-method1"></a>AddFile Method1
 ファイルをアセンブリに追加されます。 非バインド モジュールの作成にも使用できます。  
@@ -58,7 +46,7 @@ HRESULT AddFile(
  追加するファイルの完全修飾名。  
   
  `dwFlags`  
- COM + FileDef フラグなど`ffContainsNoMetaData`と`ffWriteable`です。 `dwFlags`渡される[DefineFile メソッド](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-definefile-method.md)です。  
+ COM + FileDef フラグなど`ffContainsNoMetaData`と`ffWriteable`です。 `dwFlags` 渡される[DefineFile メソッド](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-definefile-method.md)です。  
   
  `pEmitter`  
  [IMetaDataEmit インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)メタデータを出力するために必要な場合に使用するインターフェイスです。  
@@ -69,10 +57,10 @@ HRESULT AddFile(
 ## <a name="return-value"></a>戻り値  
  メソッドが成功した場合は、S_OK を返します。  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  Alink.h が必要です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [IALink インターフェイス](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
  [IALink2 インターフェイス](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)  
  [ALink API](../../../../docs/framework/unmanaged-api/alink/index.md)

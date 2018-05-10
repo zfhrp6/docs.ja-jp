@@ -1,27 +1,17 @@
 ---
-title: "透過的セキュリティ コード"
-ms.custom: 
+title: 透過的セキュリティ コード
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - transparent code
 - security-transparent code
 ms.assetid: 4f3dd841-82f7-4659-aab0-6d2db2166c65
-caps.latest.revision: "24"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 97db1cef60af267087e86f86ecd0a77021604642
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6a491a87c896c76fa62f1702d1ef0e99fc404607
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="security-transparent-code"></a>透過的セキュリティ コード
 <a name="top"></a>
@@ -52,7 +42,7 @@ ms.lasthandoff: 12/22/2017
  透過性は、セキュリティ モデルを簡略化して安全なライブラリやアプリケーションを簡単に作成および配置できるようにするために、.NET Framework Version 2.0 で導入されました。 また、透過的なコードは、部分的に信頼されたアプリケーションを簡単に開発できるようにするために Microsoft Silverlight でも使用されます。  
   
 > [!NOTE]
->  部分的に信頼されたアプリケーションを開発する場合は、対象ホストで必要とされるアクセス許可に注意する必要があります。 一部のホストで許可されていないリソースを使用するアプリケーションを開発できます。 このアプリケーションではコンパイル エラーは発生しませんが、ホストされた環境に読み込まれるときにエラーが発生します。 Visual Studio を使用してアプリケーションを開発した場合は、開発環境から、部分信頼または制限されたアクセス許可セットでのデバッグを有効にできます。 詳細については、次を参照してください。[する方法: アクセス許可が制限された ClickOnce アプリケーションをデバッグ](/visualstudio/deployment/how-to-debug-a-clickonce-application-with-restricted-permissions)です。 ClickOnce アプリケーションに対して用意されている "アクセス許可の検出" 機能は、部分的に信頼されたアプリケーションにも使用できます。  
+>  部分的に信頼されたアプリケーションを開発する場合は、対象ホストで必要とされるアクセス許可に注意する必要があります。 一部のホストで許可されていないリソースを使用するアプリケーションを開発できます。 このアプリケーションではコンパイル エラーは発生しませんが、ホストされた環境に読み込まれるときにエラーが発生します。 Visual Studio を使用してアプリケーションを開発した場合は、開発環境から、部分信頼または制限されたアクセス許可セットでのデバッグを有効にできます。 詳細については、「 [方法 : アクセス許可が制限された ClickOnce アプリケーションをデバッグする](/visualstudio/deployment/how-to-debug-a-clickonce-application-with-restricted-permissions)」を参照してください。 ClickOnce アプリケーションに対して用意されている "アクセス許可の検出" 機能は、部分的に信頼されたアプリケーションにも使用できます。  
   
  [ページのトップへ](#top)  
   
@@ -115,6 +105,6 @@ ms.lasthandoff: 12/22/2017
 ## <a name="transparency-enforcement"></a>透過性の適用  
  透過性規則は、透過性が計算されるまで適用されません。 このとき、透過性規則に違反すると、<xref:System.InvalidOperationException> がスローされます。 透過性が計算されるタイミングは、複数の要因によって左右されるので予測できません。 できる限り遅く計算されます。 [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] では、アセンブリ レベルの透過性の計算は、.NET Framework 2.0 よりも早く実行されます。 保証されるのは、必要になるまでに透過性の計算が行われるということだけです。 これは、メソッドがコンパイルされてメソッドのエラーが検出される時点が JIT コンパイラで変更される方法に似ています。 透過性の計算は、コードに透過性エラーがない場合は目に見えません。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [セキュリティ透過的なコード、レベル 1](../../../docs/framework/misc/security-transparent-code-level-1.md)  
  [透過的セキュリティ コード、レベル 2](../../../docs/framework/misc/security-transparent-code-level-2.md)

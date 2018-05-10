@@ -10,20 +10,20 @@ helpviewer_keywords:
 - WSSecurityTokenSerializer class
 - SecurityToken class
 ms.assetid: 6d892973-1558-4115-a9e1-696777776125
-ms.openlocfilehash: eb227075b1a696216e62e851aa8b10c7511ac93f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 2198d5548b09ba05eeb11466a6fd2d3a1262de94
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="how-to-create-a-custom-token"></a>方法 : カスタム トークンを作成する
 ここでは、<xref:System.IdentityModel.Tokens.SecurityToken> を使用してカスタムのセキュリティ トークンを作成する方法と、作成したトークンを、カスタム セキュリティ トークン プロバイダーおよび認証システムと統合する方法について説明します。 完全なコード例については、[カスタム トークン](../../../../docs/framework/wcf/samples/custom-token.md)サンプルです。  
   
- A*セキュリティ トークン*本質的には、XML 要素を SOAP メッセージ内の送信者に関するクレームを表すために、Windows Communication Foundation (WCF) のセキュリティ フレームワークによって使用されます。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] セキュリティは、システム指定の認証モードで使用するさまざまなトークンを提供します。 たとえば、<xref:System.IdentityModel.Tokens.X509SecurityToken> クラスによって表される X.509 証明書セキュリティ トークンや、<xref:System.IdentityModel.Tokens.UserNameSecurityToken> クラスによって表されるユーザー名セキュリティ トークンなどがあります。  
+ A*セキュリティ トークン*本質的には、XML 要素を SOAP メッセージ内の送信者に関するクレームを表すために、Windows Communication Foundation (WCF) のセキュリティ フレームワークによって使用されます。 WCF セキュリティは、システムによって提供される認証モードのさまざまなトークンを提供します。 たとえば、<xref:System.IdentityModel.Tokens.X509SecurityToken> クラスによって表される X.509 証明書セキュリティ トークンや、<xref:System.IdentityModel.Tokens.UserNameSecurityToken> クラスによって表されるユーザー名セキュリティ トークンなどがあります。  
   
  認証モードや資格情報は、指定した種類のトークンではサポートされないことがあります。 そのような場合は、SOAP メッセージ内部のカスタム資格情報の XML 表現を提供するカスタム セキュリティ トークンを作成する必要があります。  
   
- 以下の手順は、カスタム セキュリティ トークンの作成方法と、これを [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] セキュリティ インフラストラクチャに統合する方法を示しています。 ここでは、クライアントのクレジット カードに関する情報をサーバーに渡す際に使用するクレジット カード トークンを作成します。  
+ 次の手順では、カスタム セキュリティ トークンを作成する方法と、WCF のセキュリティ インフラストラクチャを統合する方法を示しています。 ここでは、クライアントのクレジット カードに関する情報をサーバーに渡す際に使用するクレジット カード トークンを作成します。  
   
  カスタムの資格情報およびセキュリティ トークン マネージャーの詳細については、次を参照してください。[チュートリアル: カスタムのクライアントを作成するとサービスの資格情報](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md)です。  
   
@@ -43,7 +43,7 @@ ms.lasthandoff: 05/04/2018
      [!code-csharp[c_CustomToken#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customtoken/cs/source.cs#4)]
      [!code-vb[c_CustomToken#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customtoken/vb/source.vb#4)]  
   
- 次に、カスタム セキュリティ トークンを表すクラスを作成する必要があります。 このクラスは、セキュリティ トークン プロバイダー、認証システム、およびシリアライザーの各クラスが、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] セキュリティ インフラストラクチャとの間で、セキュリティ トークンに関する情報を受け渡しする際に使用します。  
+ 次に、カスタム セキュリティ トークンを表すクラスを作成する必要があります。 このクラスは、WCF のセキュリティ インフラストラクチャとの間のセキュリティ トークンに関する情報を渡すセキュリティ トークン プロバイダー、認証システム、およびシリアライザー クラスで使用します。  
   
 #### <a name="to-create-a-custom-security-token-class"></a>カスタム セキュリティ トークン クラスを作成するには  
   
@@ -51,14 +51,14 @@ ms.lasthandoff: 05/04/2018
   
 2.  <xref:System.IdentityModel.Tokens.SecurityToken.Id%2A> プロパティをオーバーライドします。 このプロパティを使用して、SOAP メッセージ内の他の要素からセキュリティ トークンの XML 表現をポイントするためのセキュリティ トークンのローカル識別子を取得します。 次の例では、トークン識別子をコンストラクター パラメーターとしてこのプロパティに渡すことも、セキュリティ トークン インスタンスを作成するたびに新しいランダムな識別子を生成することもできます。  
   
-3.  <xref:System.IdentityModel.Tokens.SecurityToken.SecurityKeys%2A> プロパティを実装します。 このプロパティは、セキュリティ トークン インスタンスが表すセキュリティ キーのコレクションを返します。 これらのキーを使用して、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、SOAP メッセージの一部に署名したり、暗号化したりできます。 次の例では、クレジット カード セキュリティ トークンにはセキュリティ キーを含めることができません。そのため、実装は、常に空のコレクションを返します。  
+3.  <xref:System.IdentityModel.Tokens.SecurityToken.SecurityKeys%2A> プロパティを実装します。 このプロパティは、セキュリティ トークン インスタンスが表すセキュリティ キーのコレクションを返します。 このようなキーは、WCF によって署名または暗号化、SOAP メッセージの部分に使用できます。 次の例では、クレジット カード セキュリティ トークンにはセキュリティ キーを含めることができません。そのため、実装は、常に空のコレクションを返します。  
   
-4.  <xref:System.IdentityModel.Tokens.SecurityToken.ValidFrom%2A> プロパティと <xref:System.IdentityModel.Tokens.SecurityToken.ValidTo%2A> プロパティをオーバーライドします。 これらのプロパティを使用して、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、セキュリティ トークン インスタンスの有効性を判別します。 次の例では、クレジット カード セキュリティ トークンに有効期限のみが含まれているため、`ValidFrom` プロパティは、インスタンスの作成日時を表す <xref:System.DateTime> を返します。  
+4.  <xref:System.IdentityModel.Tokens.SecurityToken.ValidFrom%2A> プロパティと <xref:System.IdentityModel.Tokens.SecurityToken.ValidTo%2A> プロパティをオーバーライドします。 これらのプロパティは、WCF によって、セキュリティ トークン インスタンスの有効性の判定に使用されます。 次の例では、クレジット カード セキュリティ トークンに有効期限のみが含まれているため、`ValidFrom` プロパティは、インスタンスの作成日時を表す <xref:System.DateTime> を返します。  
   
      [!code-csharp[c_CustomToken#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customtoken/cs/source.cs#1)]
      [!code-vb[c_CustomToken#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customtoken/vb/source.vb#1)]  
   
- セキュリティ トークンの新しい種類を作成したときは、<xref:System.ServiceModel.Security.Tokens.SecurityTokenParameters> クラスの実装が必要です。 この実装をセキュリティ バインド要素構成で使用して、新しいトークンの種類を表します。 セキュリティ トークンのパラメーター クラスは、メッセージを処理するときに実際のセキュリティ トークン インスタンスを一致させるためのテンプレートとして使用できます。 このテンプレートは、セキュリティ トークンを使用したり、認証したりする際に適合する必要がある条件を指定するためにアプリケーションで使用できる追加のプロパティを提供します。 次の例では、追加のプロパティを指定しないため、使用または検証するセキュリティ トークン インスタンスを [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] インフラストラクチャが検索するときに、該当するセキュリティ トークンの種類だけが一致項目になります。  
+ セキュリティ トークンの新しい種類を作成したときは、<xref:System.ServiceModel.Security.Tokens.SecurityTokenParameters> クラスの実装が必要です。 この実装をセキュリティ バインド要素構成で使用して、新しいトークンの種類を表します。 セキュリティ トークンのパラメーター クラスは、メッセージを処理するときに実際のセキュリティ トークン インスタンスを一致させるためのテンプレートとして使用できます。 このテンプレートは、セキュリティ トークンを使用したり、認証したりする際に適合する必要がある条件を指定するためにアプリケーションで使用できる追加のプロパティを提供します。 次の例では、WCF インフラストラクチャが使用するかを検証するセキュリティ トークン インスタンスを検索するときにトークンの種類が一致するセキュリティに限って、追加のプロパティは追加されません。  
   
 #### <a name="to-create-a-custom-security-token-parameters-class"></a>カスタム セキュリティ トークン パラメーター クラスを作成するには  
   
@@ -72,17 +72,17 @@ ms.lasthandoff: 05/04/2018
   
 5.  <xref:System.ServiceModel.Security.Tokens.SecurityTokenParameters.SupportsClientWindowsIdentity%2A> の読み取り専用プロパティを実装します。 このクラスで表されているセキュリティ トークンの種類を Windows アカウントにマップできる場合、このプロパティは `true` を返します。 その場合、認証結果が <xref:System.Security.Principal.WindowsIdentity> クラス インスタンスによって表されます。 次の例では、Windows アカウントにトークンをマップすることができません。  
   
-6.  <xref:System.ServiceModel.Security.Tokens.SecurityTokenParameters.CreateKeyIdentifierClause%28System.IdentityModel.Tokens.SecurityToken%2CSystem.ServiceModel.Security.Tokens.SecurityTokenReferenceStyle%29> メソッドを実装します。 このメソッドは、セキュリティ トークン パラメーター クラスによって表されるセキュリティ トークン インスタンスへの参照が必要なときに [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] セキュリティ フレームワークによって呼び出されます。 このメソッドには、実際のセキュリティ トークン インスタンスと、要求されている参照の型を指定する <xref:System.ServiceModel.Security.Tokens.SecurityTokenReferenceStyle> の両方が引数として渡されます。 次の例では、内部参照だけがクレジット カード セキュリティ トークンでサポートされます。 <xref:System.IdentityModel.Tokens.SecurityToken> クラスは、内部参照を作成する機能を備えているため、実装には追加のコードが必要ありません。  
+6.  <xref:System.ServiceModel.Security.Tokens.SecurityTokenParameters.CreateKeyIdentifierClause%28System.IdentityModel.Tokens.SecurityToken%2CSystem.ServiceModel.Security.Tokens.SecurityTokenReferenceStyle%29> メソッドを実装します。 このセキュリティ トークン パラメーター クラスによって表されるセキュリティ トークン インスタンスへの参照を必要とする場合、このメソッドが WCF のセキュリティ フレームワークによって呼び出されます。 このメソッドには、実際のセキュリティ トークン インスタンスと、要求されている参照の型を指定する <xref:System.ServiceModel.Security.Tokens.SecurityTokenReferenceStyle> の両方が引数として渡されます。 次の例では、内部参照だけがクレジット カード セキュリティ トークンでサポートされます。 <xref:System.IdentityModel.Tokens.SecurityToken> クラスは、内部参照を作成する機能を備えているため、実装には追加のコードが必要ありません。  
   
-7.  <xref:System.ServiceModel.Security.Tokens.SecurityTokenParameters.InitializeSecurityTokenRequirement%28System.IdentityModel.Selectors.SecurityTokenRequirement%29> メソッドを実装します。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、このメソッドを呼び出して、セキュリティ トークン パラメーター クラス インスタンスを <xref:System.IdentityModel.Selectors.SecurityTokenRequirement> クラスのインスタンスに変換します。 変換結果は、適切なセキュリティ トークン インスタンスを作成するためにセキュリティ トークン プロバイダーによって使用されます。  
+7.  <xref:System.ServiceModel.Security.Tokens.SecurityTokenParameters.InitializeSecurityTokenRequirement%28System.IdentityModel.Selectors.SecurityTokenRequirement%29> メソッドを実装します。 このメソッドは、セキュリティ トークン パラメーター クラス インスタンスのインスタンスに変換する WCF、<xref:System.IdentityModel.Selectors.SecurityTokenRequirement>クラスです。 変換結果は、適切なセキュリティ トークン インスタンスを作成するためにセキュリティ トークン プロバイダーによって使用されます。  
   
      [!code-csharp[c_CustomToken#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customtoken/cs/source.cs#2)]
      [!code-vb[c_CustomToken#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customtoken/vb/source.vb#2)]  
   
- セキュリティ トークンは、SOAP メッセージ内で送信されますが、そのためには、セキュリティ トークンのインメモリ表現とネットワーク上表現の間での変換機構が必要です。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、セキュリティ トークン シリアライザーを使用してこのタスクを実行します。 すべてのカスタム トークンには、カスタム セキュリティ トークンを SOAP メッセージからシリアル化および逆シリアル化できるカスタム セキュリティ トークン シリアライザーを関連付ける必要があります。  
+ セキュリティ トークンは、SOAP メッセージ内で送信されますが、そのためには、セキュリティ トークンのインメモリ表現とネットワーク上表現の間での変換機構が必要です。 WCF では、セキュリティ トークン シリアライザーを使用して、このタスクを実行します。 すべてのカスタム トークンには、カスタム セキュリティ トークンを SOAP メッセージからシリアル化および逆シリアル化できるカスタム セキュリティ トークン シリアライザーを関連付ける必要があります。  
   
 > [!NOTE]
->  派生キーは、既定で有効になっています。 カスタム セキュリティ トークンを作成し、プライマリ トークンとして使用する場合、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、そのトークンからキーが派生します。 キーを派生する一方、カスタム セキュリティ トークン シリアライザーが呼び出され、<xref:System.IdentityModel.Tokens.SecurityKeyIdentifierClause> をシリアル化しながら、そのカスタム セキュリティ トークンの `DerivedKeyToken` をネットワークに送出します。 受信側では、ネットワーク外でのトークンの逆シリアル化時に、`DerivedKeyToken` シリアライザーは、トークンのすぐ下のトップレベルの子として `SecurityTokenReference` 要素を必要とします。 カスタム セキュリティ トークン シリアライザーによる句型のシリアル化時に `SecurityTokenReference` 要素が追加されていなかった場合、例外がスローされます。  
+>  派生キーは、既定で有効になっています。 カスタム セキュリティ トークンを作成して、プライマリ トークンとして使用する場合、WCF はそこからキーを派生します。 キーを派生する一方、カスタム セキュリティ トークン シリアライザーが呼び出され、<xref:System.IdentityModel.Tokens.SecurityKeyIdentifierClause> をシリアル化しながら、そのカスタム セキュリティ トークンの `DerivedKeyToken` をネットワークに送出します。 受信側では、ネットワーク外でのトークンの逆シリアル化時に、`DerivedKeyToken` シリアライザーは、トークンのすぐ下のトップレベルの子として `SecurityTokenReference` 要素を必要とします。 カスタム セキュリティ トークン シリアライザーによる句型のシリアル化時に `SecurityTokenReference` 要素が追加されていなかった場合、例外がスローされます。  
   
 #### <a name="to-create-a-custom-security-token-serializer"></a>カスタム セキュリティ トークン シリアライザーを作成するには  
   
@@ -138,7 +138,7 @@ ms.lasthandoff: 05/04/2018
      [!code-csharp[c_customToken#11](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customtoken/cs/source.cs#11)]
      [!code-vb[c_customToken#11](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customtoken/vb/source.vb#11)]  
   
- 事前に作成したカスタム セキュリティ トークン パラメーター クラスを使用して、サービスとの通信時にカスタム セキュリティ トークンを使用する必要があることを [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] セキュリティ フレームワークに伝えます。 この方法を次の手順に示します。  
+ 以前作成したカスタム セキュリティ トークン パラメーター クラスは WCF セキュリティ フレームワークにサービスと通信するときに、カスタム セキュリティ トークンを使用する必要があるかを知らせるに使用されます。 この方法を次の手順に示します。  
   
 #### <a name="to-integrate-the-custom-security-token-with-the-binding"></a>カスタム セキュリティ トークンをバインディングと統合するには  
   

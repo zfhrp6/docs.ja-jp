@@ -2,11 +2,11 @@
 title: ASP.NET クライアントでのデータ バインディング
 ms.date: 03/30/2017
 ms.assetid: 68b49fa6-94e7-4d4c-a34e-902a2b3770b6
-ms.openlocfilehash: c0f3cbb08f0078bf364ef720635f7afda3257611
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 8fdebec272fbedf23233e03ba7c6fe2d64cb18cc
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="data-binding-in-an-aspnet-client"></a>ASP.NET クライアントでのデータ バインディング
 このサンプルでは、Web フォーム アプリケーションで一般的な Windows Communication Foundation (WCF) サービスによって返されるデータをバインドする方法を示します。  
@@ -14,11 +14,11 @@ ms.lasthandoff: 05/04/2018
 > [!NOTE]
 >  このサンプルのセットアップ手順とビルド手順については、このトピックの最後を参照してください。  
   
- このサンプルでは、要求/応答通信パターンを定義するコントラクトを実装するサービスを示します。 このサンプルは、ブラウザからアクセスできるクライアントの Web フォーム アプリケーションと、インターネット インフォメーション サービス (IIS) によってホストされる [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスとで構成されています。  
+ このサンプルでは、要求/応答通信パターンを定義するコントラクトを実装するサービスを示します。 このサンプルは、クライアント ブラウザーとインターネット インフォメーション サービス (IIS) によってホストされる WCF サービスからアクセスできる Web フォーム アプリケーションで構成されます。  
   
  サービスは、要求/応答通信パターンを定義するコントラクトを実装します。 コントラクトは `IWeatherService` インターフェイスによって定義されます。このインターフェイスでは、`GetWeatherData` という名前の操作が公開されます。 この操作は都市名の配列を受け付け、各都市の予想最高気温と最低気温を表す `WeatherData` オブジェクトの配列を返します。  
   
- [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] クライアントの .aspx ページには DataGrid Web コントロールが定義されています。このコントロールには、サービスによって返されるデータのグラフィック表示が含まれます。 .aspx ページのコードによって気象データ用の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスが呼び出され、そのデータは `WeatherData` オブジェクトの配列に返されます。 DataGrid の `DataSource` プロパティをこの配列に設定することにより、データを取得する場所を指定します。 データ バインディングは、DataGrid の `DataBind` メソッドが呼び出されたときに発生します。 このすべてのコードに含まれている、します。`aspx` ページの`Page_Load`DataGrid のたびにユーザーがブラウザーにページのデータを更新するためのメソッドを更新します。  
+ [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] クライアントの .aspx ページには DataGrid Web コントロールが定義されています。このコントロールには、サービスによって返されるデータのグラフィック表示が含まれます。 .Aspx ページ上のコードの気象データ用の WCF サービスを呼び出すし、データの配列を返します`WeatherData`オブジェクト。 DataGrid の `DataSource` プロパティをこの配列に設定することにより、データを取得する場所を指定します。 データ バインディングは、DataGrid の `DataBind` メソッドが呼び出されたときに発生します。 このすべてのコードに含まれている、します。`aspx` ページの`Page_Load`DataGrid のたびにユーザーがブラウザーにページのデータを更新するためのメソッドを更新します。  
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>サンプルをセットアップ、ビルド、および実行するには  
   

@@ -2,11 +2,11 @@
 title: 予期される例外
 ms.date: 03/30/2017
 ms.assetid: 299a6987-ae6b-43c6-987f-12b034b583ae
-ms.openlocfilehash: 9552bf5178e3309d46e0f9220311c9e1a811c4b9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 6c4af62e0870cdd670c46ead169033ff72902fc0
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="expected-exceptions"></a>予期される例外
 このサンプルでは、型指定のあるクライアントを使用する際に、予期される例外をキャッチする方法を示します。 このサンプルがに基づいて、[作業の開始](../../../../docs/framework/wcf/samples/getting-started-sample.md)電卓サービスを実装します。 この例では、クライアントはコンソール アプリケーション (.exe) であり、サービスはインターネット インフォメーション サービス (IIS) によってホストされます。  
@@ -16,9 +16,9 @@ ms.lasthandoff: 05/04/2018
   
  このサンプルでは、正しいプログラムが処理する必要のある `TimeoutException` および `CommunicationException` という 2 種類の予期される例外を、キャッチして処理する方法を示します。  
   
- Windows Communication Foundation (WCF) クライアント上の通信メソッドからスローされる例外は、必要なまたは予期しないです。 予期しない例外には、`OutOfMemoryException` などの致命的なエラーや、`ArgumentNullException` や `InvalidOperationException` などのプログラミング エラーが含まれます。 一般に、予期しないエラーを処理する有効な方法はありません。したがって [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントの通信メソッドを呼び出す際、通常は、予期しないエラーをキャッチしないでください。  
+ Windows Communication Foundation (WCF) クライアント上の通信メソッドからスローされる例外は、必要なまたは予期しないです。 予期しない例外には、`OutOfMemoryException` などの致命的なエラーや、`ArgumentNullException` や `InvalidOperationException` などのプログラミング エラーが含まれます。 通常、予期しないエラーを処理するをキャッチせずに WCF クライアントの通信メソッドを呼び出すときに通常する便利な方法はありません。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントの通信メソッドからの予期される例外には、`TimeoutException`、`CommunicationException`、および `CommunicationException` の任意の派生クラスが含まれます。 これらの例外は通信中の問題を示しますが、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントを中止して通信エラーを報告することによって安全に処理できます。 どのアプリケーションでも外部要因によってこうしたエラーが発生する可能性があるので、正しいアプリケーションはこのようなエラーをキャッチし、発生した場合には回復させる必要があります。  
+ WCF クライアントの通信メソッドからの例外は、期待どおり`TimeoutException`、 `CommunicationException`、いずれかの派生クラスと`CommunicationException`です。 これらは、WCF クライアントを中止し、通信エラーを報告して安全に処理できる通信中に問題を示します。 どのアプリケーションでも外部要因によってこうしたエラーが発生する可能性があるので、正しいアプリケーションはこのようなエラーをキャッチし、発生した場合には回復させる必要があります。  
   
  `CommunicationException` の派生クラスには、クライアントがスローできるものがいくつかあります。 状況によっては、アプリケーションでこれらのサブクラスをキャッチして特別な処理を行うこともできます。しかし、それ以外の場合は `CommunicationException` として処理する必要があります。 この処理は、より具体的な例外の種類を最初にキャッチし、後の catch 句で `CommunicationException` をキャッチすることによって実現できます。  
   

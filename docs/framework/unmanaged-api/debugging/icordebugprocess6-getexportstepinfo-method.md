@@ -1,24 +1,14 @@
 ---
-title: "ICorDebugProcess6::GetExportStepInfo メソッド"
-ms.custom: 
+title: ICorDebugProcess6::GetExportStepInfo メソッド
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 ms.assetid: a927e0ac-f110-426d-bbec-9377a29c8f17
-caps.latest.revision: "4"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: d3c69bbc904f54636e56be6d235d1070b9fecf1c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4d0758a8603b7c31844b39c9f3beefea04e0a029
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="icordebugprocess6getexportstepinfo-method"></a>ICorDebugProcess6::GetExportStepInfo メソッド
 マネージ コードのステップ実行に役立つランタイム エクスポート関数の情報を提供します。  
@@ -48,7 +38,7 @@ HRESULT GetExportStepInfo(
 |戻り値|説明|  
 |------------------|-----------------|  
 |`S_OK`|メソッド呼び出しに成功しました。|  
-|`E_POINTER`|`pInvokeKind`または`pInvokePurpose`は**null**です。|  
+|`E_POINTER`|`pInvokeKind` または`pInvokePurpose`は**null**です。|  
 |その他の失敗した `HRESULT` 値。|必要に応じて。|  
   
 ## <a name="remarks"></a>コメント  
@@ -56,15 +46,15 @@ HRESULT GetExportStepInfo(
 > [!NOTE]
 >  このメソッドは .NET ネイティブでのみ使用できます。  
   
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET framework のバージョン:**[!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
+ **.NET framework のバージョン:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ICorDebugProcess6 インターフェイス](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess6-interface.md)  
  [デバッグ インターフェイス](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

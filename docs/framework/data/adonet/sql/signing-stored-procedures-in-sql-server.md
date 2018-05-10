@@ -1,26 +1,12 @@
 ---
-title: "SQL Server でのストアド プロシージャの署名"
-ms.custom: 
+title: SQL Server でのストアド プロシージャの署名
 ms.date: 01/05/2018
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: eeed752c-0084-48e5-9dca-381353007a0d
-caps.latest.revision: 
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload:
-- dotnet
-ms.openlocfilehash: 15771cc214ee17bc2c98bab2423013483d1355f1
-ms.sourcegitcommit: f28752eab00d2bd97e971542c0f49ce63cfbc239
+ms.openlocfilehash: 98dfaa6d5293cb1ad85f70be3388fb333daef373
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/29/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="signing-stored-procedures-in-sql-server"></a>SQL Server でのストアド プロシージャの署名
  デジタル署名は、署名者の秘密キーで暗号化されたデータ ダイジェストです。 秘密キーにより、デジタル署名がその保持者または所有者に固有であることが保証されます。 ストアド プロシージャ、関数 (インライン テーブル値関数) を除く、トリガー、およびアセンブリを署名することができます。  
@@ -67,7 +53,7 @@ ms.lasthandoff: 01/29/2018
 |[モジュール署名](http://go.microsoft.com/fwlink/?LinkId=98590)SQL Server オンライン ブック|モジュールの署名について説明し、サンプル シナリオと、関連する Transact-SQL のトピックへのリンクを示します。|  
 |[証明書でストアド プロシージャの署名](http://msdn.microsoft.com/library/bb283630.aspx)SQL Server オンライン ブック|証明書を使用したストアド プロシージャの署名のチュートリアルです。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ADO.NET アプリケーションのセキュリティ保護](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
  [SQL Server セキュリティの概要](../../../../../docs/framework/data/adonet/sql/overview-of-sql-server-security.md)  
  [SQL Server におけるアプリケーション セキュリティのシナリオ](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)  

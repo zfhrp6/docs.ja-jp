@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - message logging [WCF]
 ms.assetid: 0ff4c857-8f09-4b85-9dc0-89084706e4c9
-ms.openlocfilehash: 4c75b0f27e82b8cfe9327a9911d27d4e435ddf81
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: cea307b4e3920ff6413d6db28c2ce1e640b673f9
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="configuring-message-logging"></a>メッセージ ログの構成
 ここでは、さまざまなシナリオでのメッセージ ログの構成方法を示します。  
@@ -66,7 +66,7 @@ ms.lasthandoff: 05/04/2018
   
  送信メッセージの場合は、メッセージがユーザー コードから出力された直後およびメッセージがネットワークに出力される直前に、ログが記録されます。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、サービスとトランスポートの 2 種類のレベルでメッセージを記録します。 不正なメッセージも記録されます。 3 つのカテゴリは互いに独立しており、構成で個別に有効にすることができます。  
+ WCF では、次の 2 つの異なるレベル、サービスとトランスポートでメッセージを記録します。 不正なメッセージも記録されます。 3 つのカテゴリは互いに独立しており、構成で個別に有効にすることができます。  
   
  `logMessagesAtServiceLevel` 要素の `logMalformedMessages`、`logMessagesAtTransportLevel`、および `messageLogging` の各属性を設定することによって、ログ レベルを制御することができます。  
   
@@ -77,7 +77,7 @@ ms.lasthandoff: 05/04/2018
  このレイヤーで記録されるメッセージは、ネットワーク上での転送に向けてエンコードできる状態になっているもの、および転送後にデコードできる状態になっているものです。 フィルターを定義した場合は、そのフィルターと一致するメッセージだけが記録されます。 それ以外の場合は、トランスポート レイヤーのすべてのメッセージが記録されます。 このレイヤーでは、信頼できるメッセージング メッセージを含むすべてのインフラストラクチャ メッセージが記録されます。 ストリーム メッセージの場合は、ヘッダーだけが記録されます。 また、セキュリティで保護されたメッセージも、HTTPS などのセキュリティで保護されたトランスポートを使用している場合を除き、暗号化された状態でこのレベルで記録されます。  
   
 ### <a name="malformed-level"></a>不正レベル  
- 不正なメッセージとは、処理の任意の段階で [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] スタックによって拒否されたメッセージのことです。 正しくないメッセージは、そのままの状態で記録されます。暗号化されていれば、暗号化されたままで、適切でない XML も、そのままになります。 `maxSizeOfMessageToLog` は、CDATA として記録されるメッセージのサイズを定義します。 `maxSizeOfMessageToLog` の既定値は 256 K です。 この属性の詳細については、その他のオプションを参照してください。  
+ 形式が正しくないメッセージは、処理のいずれかの段階にある WCF スタックによって拒否されたメッセージです。 正しくないメッセージは、そのままの状態で記録されます。暗号化されていれば、暗号化されたままで、適切でない XML も、そのままになります。 `maxSizeOfMessageToLog` は、CDATA として記録されるメッセージのサイズを定義します。 `maxSizeOfMessageToLog` の既定値は 256 K です。 この属性の詳細については、その他のオプションを参照してください。  
   
 ### <a name="other-options"></a>その他のオプション  
  ログ レベルに加えて、次のオプションを指定することができます。  

@@ -2,11 +2,11 @@
 title: 仮想ディレクトリのセットアップ手順
 ms.date: 03/30/2017
 ms.assetid: 3c62cab5-81a4-48b6-ac8c-9ce33a85a157
-ms.openlocfilehash: a6fc8309563e78f919fe1e2009c1f46801c32913
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 3ff578b69590071ef2135e777b3105e7c226563e
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="virtual-directory-setup-instructions"></a>仮想ディレクトリのセットアップ手順
 Windows Communication Foundation (WCF) サンプルは %SystemDrive%\inetpub\wwwroot\servicemodelsamples フォルダーにマップされている servicemodelsamples という仮想ディレクトリを共有します。  
@@ -35,12 +35,12 @@ Windows Communication Foundation (WCF) サンプルは %SystemDrive%\inetpub\www
 7.  **[OK]** をクリックします。 Web アプリケーションが、WCF サンプル用に作成されました。  
   
     > [!NOTE]
-    >  すべての [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サンプルで同じ servicemodelsamples Web アプリケーションを使用するため、この作業は 1 回だけ実行してください。  
+    >  このタスクは、同じ servicemodelsamples Web アプリケーションを使用するすべての WCF サンプルために、1 回だけ実行する必要があります。  
   
     > [!NOTE]
     >  このドキュメントでは、`virtual directory`という用語は `Web application`と同じ意味で使用しています。  
   
-     仮想ディレクトリの作成に加えて、さらに仮想ディレクトリのプロパティを設定し、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスの実行を有効にする必要があります。 詳細については、以下を参照してください。  
+     仮想ディレクトリを作成するだけでなく、実行する WCF サービスを有効にするには、そのプロパティを設定することも必要があります。 詳細については、以下を参照してください。  
   
 #### <a name="to-create-a-virtual-directory-in-iis-51-or-60"></a>仮想ディレクトリを IIS 5.1 または 6.0 で作成するには  
   
@@ -52,7 +52,7 @@ Windows Communication Foundation (WCF) サンプルは %SystemDrive%\inetpub\www
   
 4.  ウィザードで、次のように入力します。`servicemodelsamples`として作成している仮想ディレクトリのエイリアスです。  
   
-5.  パスを %SystemDrive%\inetpub\wwwroot\servicemodelsamples に設定します。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サンプルの多くは、ビルド時にサービス実行可能ファイルをこの場所にコピーします。  
+5.  パスを %SystemDrive%\inetpub\wwwroot\servicemodelsamples に設定します。 WCF サンプルの多くは、ビルド時にサービス実行可能ファイルをこの場所にコピーします。  
   
 6.  **[次へ]** をクリックします。  
   
@@ -65,7 +65,7 @@ Windows Communication Foundation (WCF) サンプルは %SystemDrive%\inetpub\www
 8.  をクリックして **[次へ]**、順にクリック**完了**ウィザードを完了します。  
   
     > [!NOTE]
-    >  すべての [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サンプルで同じ servicemodelsamples 仮想ディレクトリを使用するため、この作業は 1 回だけ実行してください。  
+    >  このタスクは、すべての WCF サンプルには、同じ servicemodelsamples 仮想ディレクトリが使用するため、1 回だけ実行する必要があります。  
   
 #### <a name="to-set-additional-virtual-directory-properties-in-iis-70-or-75"></a>IIS 7.0 での他の仮想ディレクトリのプロパティまたは 7.5 を設定するには  
   

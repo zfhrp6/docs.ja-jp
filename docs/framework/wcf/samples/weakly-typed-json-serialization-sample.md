@@ -2,16 +2,16 @@
 title: 弱い型指定の JSON のシリアル化のサンプル
 ms.date: 03/30/2017
 ms.assetid: 0b30e501-4ef5-474d-9fad-a9d559cf9c52
-ms.openlocfilehash: 66e68985da94df11a81ba6d387438fe29dd96d56
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 294c00bd18b5fabba5baa20770fd593031a98994
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="weakly-typed-json-serialization-sample"></a>弱い型指定の JSON のシリアル化のサンプル
 特定のワイヤ形式にユーザー定義型をシリアル化するときや、ユーザー定義型にワイヤ形式を逆シリアル化するときは、そのユーザー定義型がサービスとクライアントの両方で使用可能である必要があります。 通常、これを実現するために、 <xref:System.Runtime.Serialization.DataContractAttribute> 属性がこのユーザー定義型に適用され、 <xref:System.Runtime.Serialization.DataMemberAttribute> 属性がそのメンバに適用されます。 この機構は、「 [How to: Serialize and Deserialize JSON Data](../../../../docs/framework/wcf/feature-details/how-to-serialize-and-deserialize-json-data.md)」トピックで説明されているように、JavaScript Object Notation (JSON) オブジェクトを使用する場合にも適用されます。  
   
- 一部のシナリオで Windows Communication Foundation (WCF) サービスまたはクライアントは、サービスまたは開発者の制御外にあるクライアントによって生成された JSON オブジェクトにアクセスする必要があります。 より多くの Web サービスによって JSON API がパブリックとして公開されると、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 開発者がローカルのユーザー定義型を構築し、任意の JSON オブジェクトを逆シリアル化することが実用的でなくなる可能性があります。 このサンプルでは、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 開発者がユーザー定義型を作成せずに、逆シリアル化された任意の JSON オブジェクトを使用できる機構を示します。 このしくみは、JSON オブジェクトが逆シリアル化される型がコンパイル時に不明なため、JSON オブジェクトの *弱い型指定のシリアル化* と呼ばれます。  
+ 一部のシナリオで Windows Communication Foundation (WCF) サービスまたはクライアントは、サービスまたは開発者の制御外にあるクライアントによって生成された JSON オブジェクトにアクセスする必要があります。 多くの Web サービスには、JSON Api がパブリックにさらされる、任意の JSON オブジェクトを逆シリアル化先のローカルのユーザー定義型を構築するために WCF 開発者現実的ではありませんになることができます。 このサンプルでは、ユーザー定義型を作成せずに、逆シリアル化された、任意の JSON オブジェクトで作業する開発者は WCF メカニズムを提供します。 このしくみは、JSON オブジェクトが逆シリアル化される型がコンパイル時に不明なため、JSON オブジェクトの *弱い型指定のシリアル化* と呼ばれます。  
   
 > [!NOTE]
 >  このサンプルのセットアップ手順とビルド手順については、このトピックの最後を参照してください。  
@@ -22,7 +22,7 @@ ms.lasthandoff: 05/04/2018
 {"personal": {"name": "Paul", "age": 23, "height": 1.7, "isSingle": true, "luckyNumbers": [5,17,21]}, "favoriteBands": ["Band ABC", "Band XYZ"]}  
 ```  
   
- このオブジェクトを逆シリアル化するために、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントは次のユーザー定義型を実装する必要があります。  
+ このオブジェクトを逆シリアル化、WCF クライアントは、次のユーザー定義型を実装する必要があります。  
   
 ```  
 [DataContract]  

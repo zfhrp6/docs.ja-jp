@@ -2,11 +2,11 @@
 title: カスタム チャネル ディスパッチャー
 ms.date: 03/30/2017
 ms.assetid: 813acf03-9661-4d57-a3c7-eeab497321c6
-ms.openlocfilehash: 7cd27d485efe7fe91e7c59627bf14e188e85f386
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 2f7bb67f45c3aa9eb0cb58fa2f30744d5500fab0
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="custom-channel-dispatcher"></a>カスタム チャネル ディスパッチャー
 このサンプルでは、<xref:System.ServiceModel.ServiceHostBase> を直接実装することによって、カスタマイズした方法でチャネル スタックを作成する方法と、Web ホスト環境でカスタム チャネル ディスパッチャーを作成する方法を示します。 チャネル ディスパッチャーは、<xref:System.ServiceModel.Channels.IChannelListener> と対話してチャネルを受け入れ、チャネル スタックからメッセージを取得します。 このサンプルには、<xref:System.ServiceModel.Activation.VirtualPathExtension> を使用して Web ホスト環境でチャネル スタックを作成する方法を示す基本的なサンプルも用意されています。  
@@ -22,13 +22,13 @@ ms.lasthandoff: 05/04/2018
  ディスパッチャーは、まずチャネル リスナーを開き、次にシングルトン応答チャネルを受け入れます。 このチャネルを使用して、無限ループでメッセージ (応答) の送信を開始します。 要求ごとに、応答メッセージを作成し、クライアントに返信します。  
   
 ## <a name="creating-a-response-message"></a>応答メッセージの作成  
- メッセージ処理は型 `MyServiceManager` で実装されます。 `HandleRequest` メソッドでは、要求がサポートされているかどうか確認するために、メッセージの `Action` ヘッダーが最初にチェックされます。 定義済みの SOAP アクション"http://tempuri.org/HelloWorld/Hello"メッセージのフィルター処理を提供するが定義されています。 これは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の <xref:System.ServiceModel.ServiceHost> 実装におけるサービス コントラクトの概念と似ています。  
+ メッセージ処理は型 `MyServiceManager` で実装されます。 `HandleRequest` メソッドでは、要求がサポートされているかどうか確認するために、メッセージの `Action` ヘッダーが最初にチェックされます。 定義済みの SOAP アクション"http://tempuri.org/HelloWorld/Hello"メッセージのフィルター処理を提供するが定義されています。 これは、サービス コントラクトの概念の WCF 実装と同様<xref:System.ServiceModel.ServiceHost>です。  
   
  正しい SOAP アクションの場合、サンプルでは、<xref:System.ServiceModel.ServiceHost> の場合と同じように、要求されたメッセージ データを取得し、要求に対して対応する応答を生成します。  
   
  特に、この場合、正しくコンパイルされていることを確認するためにブラウザーからサービスを参照できるように、カスタム HTML メッセージを返して HTTP-GET 動詞を処理します。 SOAP アクションが一致しない場合は、エラー メッセージを返信して、要求がサポートされていないことを示します。  
   
- このサンプルのクライアントは、サービスから何も引き受けない標準の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントです。 そのため、サービスは、標準の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]<xref:System.ServiceModel.ServiceHost> 実装から取得した内容と一致するように特別に設計されています。 したがって、クライアントに必要なのはサービス コントラクトだけです。  
+ このサンプルのクライアントは、サービスから何も引き受けない通常の WCF クライアントです。 そのため、そのサービスが通常の WCF から取得した内容と一致するように設計<xref:System.ServiceModel.ServiceHost>実装します。 したがって、クライアントに必要なのはサービス コントラクトだけです。  
   
 ## <a name="using-the-sample"></a>サンプルの使用  
  クライアント アプリケーションを直接実行すると、次の出力が生成されます。  

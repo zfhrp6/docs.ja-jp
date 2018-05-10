@@ -10,11 +10,11 @@ helpviewer_keywords:
 - streaming data provider [WCF Data Services]
 - WCF Data Services, streams
 ms.assetid: f0978fe4-5f9f-42aa-a5c2-df395d7c9495
-ms.openlocfilehash: 119877802bc6d685cd5b440cedb6ab71b20abf45
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: d65ea58bc2e98ab2607ce105b496ac0a870362b0
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="streaming-provider-wcf-data-services"></a>ストリーミング プロバイダー (WCF Data Services)
 データ サービスは、ラージ オブジェクトのバイナリ データを公開できます。 このバイナリ データは、ビデオ ストリームとオーディオ ストリーム、画像、ドキュメント ファイル、またはその他の種類のバイナリのメディアを表すことができます。 データ モデルのエンティティに 1 つ以上のバイナリ プロパティが含まれている場合、データ サービスは、このバイナリ データを応答フィードのエントリ内に Base-64 としてエンコードして返します。 読み込みと、この方法で大きなバイナリ データをシリアル化するには、パフォーマンスに影響するので、[!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]が所属するエンティティの独立したバイナリ データを取得するためのメカニズムを定義します。 これは、バイナリ データとエンティティを分離して 1 つ以上のデータ ストリームを生成することで実現されます。  
@@ -79,12 +79,12 @@ ms.lasthandoff: 05/04/2018
  データ サービスを作成する方法に関する一般情報は、次を参照してください。[データ サービスの構成](../../../../docs/framework/data/wcf/configuring-the-data-service-wcf-data-services.md)です。  
   
 ## <a name="enabling-large-binary-streams-in-the-hosting-environment"></a>ホスト環境での大きなバイナリ ストリームの有効化  
- [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] Web アプリケーションのデータ サービスを作成する場合、Windows Communication Foundation (WCF) を使用して HTTP プロトコルが実装されます。 既定では、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 65 K のバイト数のみを HTTP メッセージのサイズを制限します。 また、データ サービスに対する大きなバイナリ データのストリーミングを可能にするには、大きなバイナリ ファイルを有効にして、転送にストリームを使用するように Web アプリケーションを構成する必要もあります。 そのためには、アプリケーションの Web.config ファイルの `<configuration />` 要素に次の内容を追加します。  
+ [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] Web アプリケーションのデータ サービスを作成する場合、Windows Communication Foundation (WCF) を使用して HTTP プロトコルが実装されます。 既定では、WCF では HTTP メッセージのサイズは 65K バイトのみに制限されます。 また、データ サービスに対する大きなバイナリ データのストリーミングを可能にするには、大きなバイナリ ファイルを有効にして、転送にストリームを使用するように Web アプリケーションを構成する必要もあります。 そのためには、アプリケーションの Web.config ファイルの `<configuration />` 要素に次の内容を追加します。  
   
   
   
 > [!NOTE]
->  <xref:System.ServiceModel.TransferMode.Streamed?displayProperty=nameWithType> 転送モードを使用して、要求メッセージと応答メッセージの両方のバイナリ データをストリーミングし、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] によってバッファリングされないようにする必要があります。  
+>  使用する必要があります、<xref:System.ServiceModel.TransferMode.Streamed?displayProperty=nameWithType>転送モードを要求と応答のメッセージでバイナリ データをストリーミングし、WCF によってバッファリングされないことを確認します。  
   
  詳細については、次を参照してください。[メッセージ転送ストリーミング](../../../../docs/framework/wcf/feature-details/streaming-message-transfer.md)と[トランスポート クォータ](../../../../docs/framework/wcf/feature-details/transport-quotas.md)です。  
   

@@ -2,11 +2,11 @@
 title: WCF 拡張に対するカスタム メタデータのエクスポート
 ms.date: 03/30/2017
 ms.assetid: 53c93882-f8ba-4192-965b-787b5e3f09c0
-ms.openlocfilehash: 8d9f5e223bb47fc8997f6509ec882b282e1ee8b5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: c2ae547f10e96a1fdc16fc428e98145fc81c59d5
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="exporting-custom-metadata-for-a-wcf-extension"></a>WCF 拡張に対するカスタム メタデータのエクスポート
 Windows Communication Foundation (WCF) では、メタデータのエクスポートは、サービス エンドポイントを記述するそれらを並行してクライアントを使用してサービスを使用する方法を理解する標準化表現のプロセスです。 カスタム メタデータは、システム指定のメタデータ エクスポーターでエクスポートできない XML 要素で構成されます。 通常、これは、ユーザー定義動作のカスタム WSDL 要素とバインド要素、およびバインディングとコントラクトの機能と要件に関するポリシー アサーションを含みます。  
@@ -14,7 +14,7 @@ Windows Communication Foundation (WCF) では、メタデータのエクスポ�
  ここでは、カスタム WSDL またはポリシー アサーションのエクスポートについて説明し、エクスポート プロセス自体には重点を置きません。 エクスポートし、メタデータは、カスタムまたはシステムで構築されるかどうかに関係なくメタデータをインポートする型を使用する方法の詳細については、次を参照してください。[エクスポートおよびインポートするメタデータ](../../../../docs/framework/wcf/feature-details/exporting-and-importing-metadata.md)です。  
   
 ## <a name="overview"></a>概要  
- <xref:System.ServiceModel.Description.ServiceMetadataBehavior?displayProperty=nameWithType> を使用してメタデータを公開すると、システム指定の属性とバインディングを使用して <xref:System.ServiceModel.Description.ServiceDescription?displayProperty=nameWithType> がサポートできるすべてのコントラクトとバインディングについて、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] が検査され、XSD と WSDL (ポリシー アサーションを含む) が生成されます。 ただし、カスタム動作属性やバインド要素を適切にエクスポートするには、あらかじめサポートしておく必要があります。  
+ 使用してメタデータを公開すると、<xref:System.ServiceModel.Description.ServiceMetadataBehavior?displayProperty=nameWithType>では、<xref:System.ServiceModel.Description.ServiceDescription?displayProperty=nameWithType>が検証され、XSD と WSDL のポリシー アサーションを含む--はすべてのコントラクトと WCF は、システム指定の属性とバインディングを使用してサポートできるバインディングを生成します。 ただし、カスタム動作属性やバインド要素を適切にエクスポートするには、あらかじめサポートしておく必要があります。  
   
  ここでは、次の内容について説明します。  
   

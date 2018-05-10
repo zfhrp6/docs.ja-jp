@@ -2,11 +2,11 @@
 title: Windows Communication Foundation でのメッセージ キュー
 ms.date: 03/30/2017
 ms.assetid: 78d0d0c9-648e-4d4a-8f0a-14d9cafeead9
-ms.openlocfilehash: 83c16fc097cc6eca76578730bcad0491b648c5c8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 0864098a55cbd7b43100bf9e0a1836e749eb2bc9
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="windows-communication-foundation-to-message-queuing"></a>Windows Communication Foundation でのメッセージ キュー
 このサンプルでは、Windows Communication Foundation (WCF) アプリケーションがメッセージ キュー (MSMQ) アプリケーションにメッセージを送信する方法を示します。 サービスは自己ホスト型コンソール アプリケーションであるので、キューに置かれたメッセージをサービスが受信するようすを観察できます。 サービスとクライアントは同時に実行されていなくてもかまいません。  
@@ -95,9 +95,9 @@ Console.WriteLine("Order has been submitted:{0}", po);
 client.Close();  
 ```
 
- クライアントは、MSMQ メッセージをキューに送信するためにカスタム クライアントを順に使用します。 メッセージを受信して処理するアプリケーションが MSMQ アプリケーションであり、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションではないので、2 つのアプリケーション間で暗黙のサービス コントラクトはありません。 したがって、このシナリオでは Svcutil.exe ツールを使用してプロキシを作成することはできません。  
+ クライアントは、MSMQ メッセージをキューに送信するためにカスタム クライアントを順に使用します。 受信してメッセージを処理するアプリケーションは、MSMQ アプリケーションと WCF アプリケーションではありませんは暗黙のサービス コントラクト、2 つのアプリケーション間です。 したがって、このシナリオでは Svcutil.exe ツールを使用してプロキシを作成することはできません。  
   
- カスタム クライアントは基本的に、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] バインディングを使用してメッセージを送信するすべての `MsmqIntegration` アプリケーションで同じです。 他のクライアントと異なり、サービス操作の範囲は含まれません。 メッセージ送信操作のみです。  
+ カスタムのクライアントには基本的を使用するすべての WCF アプリケーションの同じ、`MsmqIntegration`メッセージを送信するバインディング。 他のクライアントと異なり、サービス操作の範囲は含まれません。 メッセージ送信操作のみです。  
 
 ```csharp
 [System.ServiceModel.ServiceContractAttribute(Namespace = "http://Microsoft.ServiceModel.Samples")]  

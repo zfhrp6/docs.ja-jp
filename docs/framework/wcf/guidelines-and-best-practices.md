@@ -8,11 +8,11 @@ helpviewer_keywords:
 - WCF, best practices
 - Windows Communication Foundation, guidelines
 ms.assetid: 5098ba46-6e8d-4e02-b0c5-d737f9fdad84
-ms.openlocfilehash: 09996681b17d324d53c74b727b183f3a457cc664
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 40e0d2e8d9293792e295f1b1a45de84f4d66d8af
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="guidelines-and-best-practices"></a>ガイドラインと最適な使用方法
 このセクションには、Windows Communication Foundation (WCF) アプリケーションを作成するためのガイドラインを提供するトピックが含まれています。  
@@ -22,7 +22,7 @@ ms.lasthandoff: 05/04/2018
  将来のバージョンが作成されても影響を受けることのないデータ コントラクトを作成する方法と、そのタイミングについて説明します。  
   
  [サービスのバージョン管理](../../../docs/framework/wcf/service-versioning.md)  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] でのバージョン管理の考え方について説明します。 たとえば、変化するビジネス要件や IT 要件を満たしたり、問題を修復したりするために、展開後にサービス (およびサービスによって公開されるエンドポイント) を変更しなければならない場合があります。 変更が発生するたびに、新しいバージョンのサービスが導入されます。  
+ WCF でのバージョン管理を考慮する方法について説明します。 たとえば、変化するビジネス要件や IT 要件を満たしたり、問題を修復したりするために、展開後にサービス (およびサービスによって公開されるエンドポイント) を変更しなければならない場合があります。 変更が発生するたびに、新しいバージョンのサービスが導入されます。  
   
  [負荷分散](../../../docs/framework/wcf/load-balancing.md)  
  Web ファームでの負荷分散のガイドラインを示します。  

@@ -1,14 +1,6 @@
 ---
-title: "IMetaDataDispenserEx::SetOption メソッド"
-ms.custom: 
+title: IMetaDataDispenserEx::SetOption メソッド
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - IMetaDataDispenserEx.SetOption
 api_location:
@@ -23,17 +15,13 @@ helpviewer_keywords:
 ms.assetid: 9f1c7ccd-7fb2-41d8-aa00-24b823376527
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 96810ba0eab99d1df58f0b68b85ef4da8ce7084e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: cfe600b54eb03a07ea01375355c5ff94190e5d9d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="imetadatadispenserexsetoption-method"></a>IMetaDataDispenserEx::SetOption メソッド
 現在のメタデータ スコープに指定された値を指定されたオプションを設定します。 オプションは、現在のメタデータ スコープへの呼び出しの処理方法を制御します。  
@@ -57,7 +45,7 @@ HRESULT SetOption (
 ## <a name="remarks"></a>コメント  
  次の表に、使用可能な Guid を`optionId`パラメーターが指すことができ、対応する有効な値の`pValue`パラメーター。  
   
-|GUID|説明|`pValue`パラメーター|  
+|GUID|説明|`pValue` パラメーター|  
 |----------|-----------------|------------------------|  
 |MetaDataCheckDuplicatesFor|重複をチェックする項目を制御します。 呼び出すたびに、 [IMetaDataEmit](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)を新しい項目を作成するメソッドを現在のスコープ内の項目は既に存在するかどうかを確認するメソッドを依頼することができます。 存在を確認するなど、`mdMethodDef`項目です。 ここでは、呼び出す[imetadataemit::definemethod](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definemethod-method.md)、メソッドが、現在のスコープに存在ないことを確認します。 このチェックは、特定のメソッドを一意に識別するキーを使用して: 親の種類、名前、および署名されます。|UI4、型のバリアントをする必要があるありの値の組み合わせを含める必要があります、 [CorCheckDuplicatesFor](../../../../docs/framework/unmanaged-api/metadata/corcheckduplicatesfor-enumeration.md)列挙します。|  
 |MetaDataRefToDefCheck|参照項目コントロールは、定義に変換されます。 既定では、メタデータ エンジンは、参照されているアイテムが実際には、現在のスコープで定義されている場合、その定義に参照されているアイテムを変換することで、コードが最適化されます。|UI4、型のバリアントをする必要があるありの値の組み合わせを含める必要があります、 [CorRefToDefCheck](../../../../docs/framework/unmanaged-api/metadata/correftodefcheck-enumeration.md)列挙します。|  
@@ -73,15 +61,15 @@ HRESULT SetOption (
 |MetaDataMergerOptions|メタデータのマージ オプションを指定します。|UI4、型のバリアントをする必要があるありの値の組み合わせを含める必要があります、`MergeFlags`列挙体は、CorHdr.h ファイルで説明します。|  
 |MetaDataPreserveLocalRefs|定義にローカル参照の最適化を無効にします。|値の組み合わせを含める必要があります、 [CorLocalRefPreservation](../../../../docs/framework/unmanaged-api/metadata/corlocalrefpreservation-enumeration.md)列挙します。|  
   
-## <a name="requirements"></a>必要条件  
- **Platform:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **Platform:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** Cor.h  
   
  **ライブラリ:** MsCorEE.dll にリソースとして使用  
   
- **.NET framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [IMetaDataDispenserEx インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenserex-interface.md)  
  [IMetaDataDispenser インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenser-interface.md)

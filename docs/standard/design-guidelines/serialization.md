@@ -1,26 +1,15 @@
 ---
 title: Serialization1
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: bebb27ac-9712-4196-9931-de19fc04dbac
-caps.latest.revision: 4
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 14b2f596245eb7f9cdcb9b3e30eeb100180cd793
-ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
+ms.openlocfilehash: db06feefdd9697fd53d64bce60ae11c7e74f8c88
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="serialization"></a>シリアル化
 シリアル化は、オブジェクトを簡単に永続化または転送できる形式に変換するプロセスです。 たとえば、オブジェクトをシリアル化、HTTP を使用して、移行先コンピューターで逆シリアル化した、インターネット経由で転送できます。  

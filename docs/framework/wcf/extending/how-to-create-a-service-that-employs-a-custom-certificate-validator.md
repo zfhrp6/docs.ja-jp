@@ -1,36 +1,22 @@
 ---
-title: "方法 : カスタム証明書検証を使用するサービスを作成する"
-ms.custom: 
+title: '方法 : カスタム証明書検証を使用するサービスを作成する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - WCF, authentication
 ms.assetid: bb0190ff-0738-4e54-8d22-c97d343708bf
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: e0a48801b1d4674b81a0e4b54a80b69d026ce2af
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: cc768f5e5086e6eba1ccac9d969eac14e14ceb2f
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="how-to-create-a-service-that-employs-a-custom-certificate-validator"></a>方法 : カスタム証明書検証を使用するサービスを作成する
 このトピックでは、カスタム証明書検証を実装する方法、クライアントまたはサービスの資格情報の設定により、既定の証明書検証機能を、カスタム証明書検証で置き換える方法について解説します。  
   
- X.509 証明書を使ってクライアントやサービスを認証する場合、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] の既定では、Windows 証明書ストアと Crypto API を使用して証明書が検証され、信頼できるかどうかが確認されます。 ただし、組み込みの検証機能では不十分で、処理内容を変更する必要がある場合もあります。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、ユーザーがカスタムの証明書検証機能を追加して、検証ロジックを簡単に変更できます。 カスタムの証明書検証機能が指定されている場合、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、組み込みの検証機能ではなく、カスタムの検証処理のみが使用されます。  
+ X.509 証明書がクライアントまたはサービスの認証に使用されている場合既定で Windows Communication Foundation (WCF) を使用して、Windows 証明書ストアと Crypto API 証明書を検証し、信頼されていることを確認してください。 ただし、組み込みの検証機能では不十分で、処理内容を変更する必要がある場合もあります。 WCF には、ユーザーがカスタム証明書検証を追加することで、検証ロジックを変更する簡単な方法が用意されています。 カスタム証明書検証が指定されている場合、WCF は組み込みの証明書の検証ロジックを使用しませんが、代わりにカスタムの検証に依存します。  
   
 ## <a name="procedures"></a>手順  
   
@@ -142,5 +128,5 @@ ms.lasthandoff: 12/22/2017
  [!code-csharp[c_CustomCertificateValidator#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customcertificatevalidator/cs/source.cs#3)]
  [!code-vb[c_CustomCertificateValidator#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customcertificatevalidator/vb/source.vb#3)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.IdentityModel.Selectors.X509CertificateValidator>

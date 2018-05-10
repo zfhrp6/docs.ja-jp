@@ -2,11 +2,11 @@
 title: チュートリアル入門のトラブルシューティング
 ms.date: 03/30/2017
 ms.assetid: 69a21511-0871-4c41-9a53-93110e84d7fd
-ms.openlocfilehash: 863e9dd1253624c025e830f589068068cb996413
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 12812bd1ef88eab14a8defed0b71657b0d33c618
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="troubleshooting-the-getting-started-tutorial"></a>チュートリアル入門のトラブルシューティング
 このトピックでは、チュートリアル入門の作業中に遭遇する最も一般的な問題とその解決方法の一覧を示します。  
@@ -31,7 +31,7 @@ ms.lasthandoff: 05/04/2018
   
 <a name="BKMK_q2"></a>   
 ## <a name="attempting-to-run-the-service-application-http-could-not-register-url-http8000servicemodelsamplesservice-your-process-does-not-have-access-rights-to-this-namespace"></a>サービス アプリケーションを実行しようとしています: HTTP が URL を登録できませんでしたhttp://+:8000/ServiceModelSamples/Service/です。 プロセスにこの名前空間へのアクセス権がありません。  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスをホストするプロセスは、管理特権で実行する必要があります。 サービスを [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] の内部から実行する場合は、管理者として [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] を実行する必要があります。 行うためには**開始**を右クリックして[!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)]選択**管理者として実行**です。 サービスをコマンド ライン プロンプトから実行する場合は、同様の方法で管理者としてコマンド ライン プロンプトを開始する必要があります。 をクリックして**開始**を右クリックして**コマンド プロンプト**を選択して**管理者として実行**です。  
+ WCF サービスをホストするプロセスは、管理者特権で実行する必要があります。 サービスを [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] の内部から実行する場合は、管理者として [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] を実行する必要があります。 行うためには**開始**を右クリックして[!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)]選択**管理者として実行**です。 サービスをコマンド ライン プロンプトから実行する場合は、同様の方法で管理者としてコマンド ライン プロンプトを開始する必要があります。 をクリックして**開始**を右クリックして**コマンド プロンプト**を選択して**管理者として実行**です。  
   
 <a name="BKMK_q3"></a>   
 ## <a name="attempting-to-use-the-svcutilexe-tool-svcutil-is-not-recognized-as-an-internal-or-external-command-operable-program-or-batch-file"></a>Svcutil.exe ツールを使用しようとすると次のエラーが発生する: 'svcutil' は、内部コマンドまたは外部コマンド、操作可能なプログラムまたはバッチ ファイルとして認識されていません。  

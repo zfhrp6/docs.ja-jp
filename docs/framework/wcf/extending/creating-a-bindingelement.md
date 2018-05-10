@@ -2,17 +2,17 @@
 title: BindingElement の作成
 ms.date: 03/30/2017
 ms.assetid: 01a35307-a41f-4ef6-a3db-322af40afc99
-ms.openlocfilehash: fdc3ec1fef86ad31434ea372740497969c7ae6a7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 96924e97ad3fcc121ef7b28125301060d8448514
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="creating-a-bindingelement"></a>BindingElement の作成
-バインディングとバインド要素 (を拡張したオブジェクト<xref:System.ServiceModel.Channels.Binding?displayProperty=nameWithType>と<xref:System.ServiceModel.Channels.BindingElement?displayProperty=nameWithType>、それぞれ) は、Windows Communication Foundation (WCF) アプリケーションのモデルがチャネル ファクトリとチャネル リスナーに関連付けられている場所です。 結合がないカスタム チャネルを使用する必要がありますチャネル レベルでのプログラミング」の説明に従って[サービス チャネル レベルのプログラミング](../../../../docs/framework/wcf/extending/service-channel-level-programming.md)と[クライアント チャネル レベルのプログラミング](../../../../docs/framework/wcf/extending/client-channel-level-programming.md)です。 チャネルを使用して有効にする最小要件について説明[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]の開発、<xref:System.ServiceModel.Channels.BindingElement>チャネル、および手順 4 の説明に従って、アプリケーションから使用を有効にする の[開発チャネル](../../../../docs/framework/wcf/extending/developing-channels.md)です。  
+バインディングとバインド要素 (を拡張したオブジェクト<xref:System.ServiceModel.Channels.Binding?displayProperty=nameWithType>と<xref:System.ServiceModel.Channels.BindingElement?displayProperty=nameWithType>、それぞれ) は、Windows Communication Foundation (WCF) アプリケーションのモデルがチャネル ファクトリとチャネル リスナーに関連付けられている場所です。 結合がないカスタム チャネルを使用する必要がありますチャネル レベルでのプログラミング」の説明に従って[サービス チャネル レベルのプログラミング](../../../../docs/framework/wcf/extending/service-channel-level-programming.md)と[クライアント チャネル レベルのプログラミング](../../../../docs/framework/wcf/extending/client-channel-level-programming.md)です。 Wcf での開発、チャネルを使用して有効にする最小要件について説明、<xref:System.ServiceModel.Channels.BindingElement>チャネル、および手順 4 の説明に従って、アプリケーションから使用を有効にする の[開発チャネル](../../../../docs/framework/wcf/extending/developing-channels.md)です。  
   
 ## <a name="overview"></a>概要  
- チャネルの <xref:System.ServiceModel.Channels.BindingElement> を作成しておくと、開発者は [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーション内でチャネルを使用できるようになります。 <xref:System.ServiceModel.Channels.BindingElement> オブジェクトを <xref:System.ServiceModel.ServiceHost?displayProperty=nameWithType> クラスから使用することにより、チャネルの正確な型情報を指定しなくても [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションをチャネルに接続できます。  
+ 作成する、<xref:System.ServiceModel.Channels.BindingElement>チャネルにより、WCF アプリケーションで使用する開発者用です。 <xref:System.ServiceModel.Channels.BindingElement> オブジェクトを使用する、<xref:System.ServiceModel.ServiceHost?displayProperty=nameWithType>しなくても、チャネルの正確な型情報をチャネル WCF アプリケーションを接続するクラス。  
   
  1 回、<xref:System.ServiceModel.Channels.BindingElement>が作成されるで残りのチャネルの開発手順を説明する次の要件に応じて複数の機能を有効にできます[開発チャネル](../../../../docs/framework/wcf/extending/developing-channels.md)です。  
   

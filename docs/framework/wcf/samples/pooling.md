@@ -2,11 +2,11 @@
 title: Pooling
 ms.date: 03/30/2017
 ms.assetid: 688dfb30-b79a-4cad-a687-8302f8a9ad6a
-ms.openlocfilehash: 2c864bd0c1d27e9c771a1b97e756c04b107ac2b8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 6554ec9c5eaefaf8c9e39d2a8d92982716cc18c5
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="pooling"></a>Pooling
 このサンプルでは、オブジェクト プールをサポートするように、Windows Communication Foundation (WCF) を拡張する方法を示します。 サンプルでは、エンタープライズ サービスの`ObjectPoolingAttribute` 属性機能と、構文および意味が同じ属性を作成する方法を示します。 オブジェクト プールにより、アプリケーションのパフォーマンスが大幅に向上します。 ただし、適切に使用しないと逆効果になる場合があります。 オブジェクト プールは、負荷のかかる初期化が要求される、使用頻度の高いオブジェクトの再作成によるオーバーヘッドを減少させます。 ただし、プールされたオブジェクト上のメソッドへの呼び出しが完了するのに非常に時間がかかる場合、オブジェクト プールは、最大プール サイズに達するとすぐに追加要求をキューに置きます。 そのため、タイムアウト例外がスローされることによって、いくつかのオブジェクトの作成要求が失敗する場合があります。  
@@ -14,14 +14,14 @@ ms.lasthandoff: 05/04/2018
 > [!NOTE]
 >  このサンプルのセットアップ手順とビルド手順については、このトピックの最後を参照してください。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 拡張機能作成の最初の手順は、使用する機能拡張ポイントの決定です。  
+ WCF 拡張機能の作成の最初の手順では、使用する機能拡張ポイントを決定します。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]用語*ディスパッチャー*実行時コンポーネントをユーザーのサービスでのメソッド呼び出しに着信メッセージを変換して、出力方向のメソッドから戻り値を変換するためにはメッセージ。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスは、各エンドポイントのディスパッチャを作成します。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントに関連付けられたコントラクトが双方向コントラクトであるとき、このクライアントではディスパッチャを使用する必要があります。  
+ WCF では、用語*ディスパッチャー*は送信メッセージにそのメソッドから戻り値の変換にしたり、ユーザーのサービスでのメソッド呼び出しに着信メッセージを変換する実行時コンポーネントを表します。 WCF サービスでは、各エンドポイントのディスパッチャを作成します。 WCF クライアントは、そのクライアントに関連付けられたコントラクトが双方向コントラクトの場合、ディスパッチャを使用する必要があります。  
   
  チャネル ディスパッチャとエンドポイント ディスパッチャでは、ディスパッチャの動作を制御するさまざまなプロパティが公開されているため、チャネル全体の拡張とコントラクト全体の拡張を行うことができます。 さらに <xref:System.ServiceModel.Dispatcher.EndpointDispatcher.DispatchRuntime%2A> プロパティにより、ディスパッチ処理を検査、変更、またはカスタマイズすることもできます。 このサンプルでは、サービス クラスのインスタンスを提供するオブジェクトをポイントする <xref:System.ServiceModel.Dispatcher.DispatchRuntime.InstanceProvider%2A> プロパティに焦点を当てています。  
   
 ## <a name="the-iinstanceprovider"></a>IInstanceProvider  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、ディスパッチャは <xref:System.ServiceModel.Dispatcher.DispatchRuntime.InstanceProvider%2A> インターフェイスを実装している <xref:System.ServiceModel.Dispatcher.IInstanceProvider> を使用して、サービス クラスのインスタンスを作成します。 このインターフェイスには、次の 3 つのメソッドが含まれています。  
+ WCF では、ディスパッチャーは、サービスを使用してクラスのインスタンスを作成、<xref:System.ServiceModel.Dispatcher.DispatchRuntime.InstanceProvider%2A>を実装する、<xref:System.ServiceModel.Dispatcher.IInstanceProvider>インターフェイスです。 このインターフェイスには、次の 3 つのメソッドが含まれています。  
   
 -   <xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%28System.ServiceModel.InstanceContext%2CSystem.ServiceModel.Channels.Message%29>: メッセージが到着すると、このディスパッチャは <xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%28System.ServiceModel.InstanceContext%2CSystem.ServiceModel.Channels.Message%29> メソッドを呼び出し、メッセージを処理するためのサービス クラスのインスタンスを作成します。 このメソッドの呼び出し頻度は <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> プロパティで決まります。 たとえば <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> プロパティが <xref:System.ServiceModel.InstanceContextMode.PerCall> に設定されている場合、サービス クラスの新しいインスタンスが作成され、到着する各メッセージが処理されます。したがって、<xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%28System.ServiceModel.InstanceContext%2CSystem.ServiceModel.Channels.Message%29> はメッセージが到着するたびに呼び出されます。  
   
@@ -100,7 +100,7 @@ void IInstanceProvider.ReleaseInstance(InstanceContext instanceContext, object i
   
  このサンプルではカスタム属性を使用します。 <xref:System.ServiceModel.ServiceHost> が構築されると、サービスの種類の定義で使用されている属性が調べられ、使用可能な動作がサービス説明の動作コレクションに追加されます。  
   
- インターフェイス <xref:System.ServiceModel.Description.IServiceBehavior> には、<xref:System.ServiceModel.Description.IServiceBehavior.Validate%2A>、<xref:System.ServiceModel.Description.IServiceBehavior.AddBindingParameters%2A>、および <xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A> の 3 つのメソッドがあります。 <xref:System.ServiceModel.Description.IServiceBehavior.Validate%2A> メソッドを使用すると、確実に動作をサービスに適用できます。 このサンプルでは、これを実装することによって、サービスが <xref:System.ServiceModel.InstanceContextMode.Single> を使用して構成されないようにします。 <xref:System.ServiceModel.Description.IServiceBehavior.AddBindingParameters%2A> メソッドは、サービスのバインディングの構成に使用されます。 このシナリオでは、このメソッドは必要ありません。 <xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A> はサービスのディスパッチャの構成に使用されます。 このメソッドは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の初期化中に <xref:System.ServiceModel.ServiceHost> によって呼び出されます。 このメソッドには次のパラメータが渡されます。  
+ インターフェイス <xref:System.ServiceModel.Description.IServiceBehavior> には、<xref:System.ServiceModel.Description.IServiceBehavior.Validate%2A>、<xref:System.ServiceModel.Description.IServiceBehavior.AddBindingParameters%2A>、および <xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A> の 3 つのメソッドがあります。 <xref:System.ServiceModel.Description.IServiceBehavior.Validate%2A> メソッドを使用すると、確実に動作をサービスに適用できます。 このサンプルでは、これを実装することによって、サービスが <xref:System.ServiceModel.InstanceContextMode.Single> を使用して構成されないようにします。 <xref:System.ServiceModel.Description.IServiceBehavior.AddBindingParameters%2A> メソッドは、サービスのバインディングの構成に使用されます。 このシナリオでは、このメソッドは必要ありません。 <xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A> はサービスのディスパッチャの構成に使用されます。 このメソッドは WCF ときに、<xref:System.ServiceModel.ServiceHost>初期化しています。 このメソッドには次のパラメータが渡されます。  
   
 -   `Description` : この引数は、サービス全体のサービスの説明を提供します。 これを使用すると、サービスのエンドポイント、コントラクト、バインディング、およびその他のデータに関する説明データを検査できます。  
   
@@ -177,7 +177,7 @@ InvalidOperationException(ResourceHelper.GetString("ExNullThrottle"));
   
  <xref:System.ServiceModel.Description.IServiceBehavior> 実装のほかにも、<xref:System.EnterpriseServices.ObjectPoolingAttribute> クラスには属性引数を使用してオブジェクト プールをカスタマイズするいくつかのメンバがあります。 こうしたメンバには <xref:System.EnterpriseServices.ObjectPoolingAttribute.MaxPoolSize%2A>、<xref:System.EnterpriseServices.ObjectPoolingAttribute.MinPoolSize%2A>、<xref:System.EnterpriseServices.ObjectPoolingAttribute.CreationTimeout%2A> などがあり、.NET Enterprise Services で提供されるオブジェクト プール機能のセットに一致します。  
   
- オブジェクト プールの動作は、新しく作成されたカスタム [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 属性を使用してサービス実装に注釈を付けることにより、`ObjectPooling` サービスに追加できるようになりました。  
+ オブジェクト プールの動作は今すぐを新しく作成されたカスタムのサービスの実装に注釈を付ける WCF サービスに追加された`ObjectPooling`属性。  
   
 ```  
 [ObjectPooling(MaxPoolSize=1024, MinPoolSize=10, CreationTimeout=30000)]      

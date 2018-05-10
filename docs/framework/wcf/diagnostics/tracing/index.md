@@ -1,31 +1,17 @@
 ---
 title: トレース
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 2649eae2-dbf8-421c-9cfb-cfa9e01de87f
-caps.latest.revision: 12
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 75870850a7df01d255d3512dde2a550e2a6c205a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6f427425b1bbf19ecd8b30fb1498634a7a3d5fa9
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="tracing"></a>トレース
-[!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] には、エラーの監視と分析のための、アプリケーションの実装と診断データが用意されています。 アプリケーションの動作やエラー原因を調べるために、デバッガーの代わりにトレースを使用できます。 コンポーネント間でエラーと処理を関連付けて、エンドツーエンドの調査を行うこともできます。  
+Windows Communication Foundation (WCF) は、エラーの監視と分析のアプリケーションのインストルメンテーション データと診断データを提供します。 アプリケーションの動作やエラー原因を調べるために、デバッガーの代わりにトレースを使用できます。 コンポーネント間でエラーと処理を関連付けて、エンドツーエンドの調査を行うこともできます。  
   
- [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] では次の診断トレース データが出力されます。  
+ WCF には、次の診断トレース データが出力されます。  
   
 -   操作呼び出し、コード例外、警告、その他の重要な処理イベントなど、アプリケーションのすべてのコンポーネントにおける処理マイルストーンのトレース。  
   
@@ -50,7 +36,7 @@ ms.lasthandoff: 12/22/2017
   
  [トレースの参照](../../../../../docs/framework/wcf/diagnostics/tracing/traces-reference.md)  
   
- ここでは [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] が生成するトレースをすべて列挙します。  
+ このトピックでは、WCF によって生成されたすべてのトレースを示します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [サービス トレース ビューアー ツール (SvcTraceViewer.exe)](../../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md)

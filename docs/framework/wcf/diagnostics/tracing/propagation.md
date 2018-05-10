@@ -2,11 +2,11 @@
 title: 伝達
 ms.date: 03/30/2017
 ms.assetid: f8181e75-d693-48d1-b333-a776ad3b382a
-ms.openlocfilehash: 5d848a2b74402d0adf125488481f5b82e0b09781
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: f4e92c6dec163d191c507dd80bb0d9dc129c6e96
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="propagation"></a>伝達
 このトピックでは、Windows Communication Foundation (WCF) のトレース モデルでのアクティビティ伝達について説明します。  
@@ -20,7 +20,7 @@ ms.lasthandoff: 05/04/2018
 <source name="System.ServiceModel" switchValue="Verbose,ActivityTracing" propagateActivity="true" >  
 ```  
   
- アクティビティの伝達は構成可能な機能です。この機能を構成すると、[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] は TLS のアクティビティ ID が含まれたヘッダーを送信メッセージに追加します。 サーバー側の以降のトレースでこの ID を含めることにより、クライアントとサーバーのアクティビティを相互に関連付けることができます。  
+ アクティビティの伝達は、TLS のアクティビティ ID が含まれた、送信メッセージにヘッダーを追加する WCF の原因となる構成可能な機能です。 サーバー側の以降のトレースでこの ID を含めることにより、クライアントとサーバーのアクティビティを相互に関連付けることができます。  
   
 ## <a name="propagation-definition"></a>伝達の定義  
  次のすべての条件に該当する場合に、アクティビティ M の gAId がアクティビティ N に伝達されます。  

@@ -2,11 +2,11 @@
 title: SRMP
 ms.date: 03/30/2017
 ms.assetid: cf37078c-dcb4-45e0-acaf-2f196521b226
-ms.openlocfilehash: 5c2079f1aa90821448c88de53d311d064bb6e65b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: c746897666ae78844df35c2989c803d852c3f70e
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="srmp"></a>SRMP
 このサンプルでは、HTTP 経由でメッセージ キュー (MSMQ) を使用して、トランザクション キューによる通信を実行する方法を示します。  
@@ -37,7 +37,7 @@ ms.lasthandoff: 05/04/2018
  このサンプルを実行するには、MSMQ に加え、IIS をサービス コンピュータとクライアント コンピュータの両方にインストールする必要があります。  
   
 ## <a name="demonstrates"></a>使用例  
- このサンプルでは、HTTP 経由で MSMQ を使用して、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] キューに置かれたメッセージを送信する方法を示します。 これは、SRMP メッセージングとも呼ばれます。 キューに置かれたメッセージが送信されると、送信元コンピュータの MSMQ は、このメッセージを TCP または HTTP トランスポート経由で受信キュー マネージャに転送します。 SRMP を選択すると、HTTP をキュー転送用のトランスポートとして選択したことになります。 SRMP Secure を選択すると、HTTPS を使用できます。  
+ このサンプルでは、WCF の送信では HTTP 経由で MSMQ を使用してメッセージをキューに登録します。 これは、SRMP メッセージングとも呼ばれます。 キューに置かれたメッセージが送信されると、送信元コンピュータの MSMQ は、このメッセージを TCP または HTTP トランスポート経由で受信キュー マネージャに転送します。 SRMP を選択すると、HTTP をキュー転送用のトランスポートとして選択したことになります。 SRMP Secure を選択すると、HTTPS を使用できます。  
   
 ## <a name="example"></a>例  
  このサンプル コードはトランザクションのサンプルに基づいています。 SRMP を使用してキューにメッセージを送信したり、キューからメッセージを受信したりする方法は、ネイティブ プロトコルを使用してメッセージを送受信する方法と同じです。  

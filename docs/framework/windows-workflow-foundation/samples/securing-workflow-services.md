@@ -2,11 +2,11 @@
 title: ワークフロー サービスのセキュリティ保護
 ms.date: 03/30/2017
 ms.assetid: 53f84ad5-1ed1-4114-8d0d-b12e8a021c6e
-ms.openlocfilehash: ac02b5ffcfc14ea4aab9e8aafd5f6a4cbcdef3b4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 5dbd724f3a2f8febfc74719584f4d69cbf75b567
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="securing-workflow-services"></a>ワークフロー サービスのセキュリティ保護
 セキュリティで保護されたワークフロー サービス サンプルでは、次の手順を示します。  
@@ -21,7 +21,7 @@ ms.lasthandoff: 05/04/2018
  WCF セキュリティを使用して、クライアントとワークフロー サービス間の通信、クレーム ベースの承認を保護します。  
   
 ## <a name="discussion"></a>説明  
- このサンプルでは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] セキュリティ インフラストラクチャを使用して、通常の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスと同様にワークフロー サービスをセキュリティで保護する方法を示します。 具体的には、承認にカスタム クレームを使用します。 この例では、<xref:System.ServiceModel.WSHttpBinding> とメッセージ モード セキュリティを Windows 資格情報と共に使用します。  
+ このサンプルでは、通常の WCF サービスの場合と同様に、ワークフロー サービスをセキュリティで保護する WCF のセキュリティ インフラストラクチャの使用を示します。 具体的には、承認にカスタム クレームを使用します。 この例では、<xref:System.ServiceModel.WSHttpBinding> とメッセージ モード セキュリティを Windows 資格情報と共に使用します。  
   
  カスタムの <xref:System.IdentityModel.Policy.IAuthorizationPolicy> (`CustomNameCheckerPolicy`) は、クライアントの Windows ユーザー名をチェックし、特定の文字がないか確認します。 該当する文字がある場合は、クレームを作成して <xref:System.IdentityModel.Policy.EvaluationContext> に追加します。 このようにすることで、カスタム ポリシーは、クライアントのユーザー名にこの文字が含まれていることを示すステートメントを作成します。 このクレームは、呼び出しの有効期間においてクエリできます。 該当の文字は `Constants.cs` で検索できます。  
   

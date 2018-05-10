@@ -4,16 +4,11 @@ description: .NET Core でのバージョン管理のしくみについて説明
 author: bleroy
 ms.author: mairaw
 ms.date: 02/13/2018
-ms.topic: conceptual
-ms.prod: dotnet-core
-ms.devlang: dotnet
-ms.workload:
-- dotnetcore
-ms.openlocfilehash: 437bea33f26c9ae445cf412657f4d23fcce18873
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 0cfd620d2b6e6e60531b0e2aa938c1ed64b6af23
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="net-core-versioning"></a>.NET Core バージョン管理
 
@@ -21,7 +16,7 @@ ms.lasthandoff: 04/28/2018
 
 この記事では、.NET Core SDK とランタイムのバージョン管理方法を明確にすることを目的としています。
 
-.NET Core には個別にバージョン管理される多くの移動するパーツがあります。 ただし、.NET Core 2.0 以降では、すべてのユーザーが ".NET Core" 全体のバージョンとして理解する簡単に理解できる最上位** レベルのバージョンがあります。 このドキュメントの残りの部分は、これらすべてのパーツのバージョン管理の詳細について説明します。 たとえばパッケージ マネージャーの場合は、これらの詳細が重要になる可能性があります。
+.NET Core には個別にバージョン管理される多くの移動するパーツがあります。 ただし、.NET Core 2.0 以降では、すべてのユーザーが ".NET Core" 全体のバージョンとして理解する簡単に理解できる最上位*レベ*ルのバージョンがあります。 このドキュメントの残りの部分は、これらすべてのパーツのバージョン管理の詳細について説明します。 たとえばパッケージ マネージャーの場合は、これらの詳細が重要になる可能性があります。
 
 > [!IMPORTANT]
 > このトピックで説明されているバージョン管理の詳細は、.NET Core SDK ランタイムの現在のバージョンには適用されません。

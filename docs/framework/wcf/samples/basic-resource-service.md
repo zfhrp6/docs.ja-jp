@@ -2,21 +2,21 @@
 title: 基本的なリソース サービス
 ms.date: 03/30/2017
 ms.assetid: 4360063e-cc8c-4648-846e-c05a5af51a7a
-ms.openlocfilehash: 3ec743bbbb6d18d972701c3149179d6f615d1884
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 62b2b863f38647e81468065fd69fc4933afc5b16
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="basic-resource-service"></a>基本的なリソース サービス
-このサンプルでは、取得をサポートする顧客のコレクションを公開する Windows Communication Foundation (WCF) REST プログラミング モデルを使用して HTTP ベースのサービスを実装して、追加、削除、および置換操作する方法を示します。 このサンプルは、自己ホスト型 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] HTTP サービス (Service.cs) と、サービスの作成およびサービスへの呼び出しを行うコンソール アプリケーション (program.cs) の 2 つのコンポーネントで構成されています。  
+このサンプルでは、取得をサポートする顧客のコレクションを公開する Windows Communication Foundation (WCF) REST プログラミング モデルを使用して HTTP ベースのサービスを実装して、追加、削除、および置換操作する方法を示します。 このサンプルでは、自己ホスト型 WCF HTTP サービス (Service.cs) とサービスを作成し、それを呼び出すコンソール アプリケーション (program.cs) 2 つのコンポーネントで構成されます。  
   
 ## <a name="sample-details"></a>サンプルの詳細  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスでは、リソース指向の REST 方式で顧客のコレクションが公開されます。 つまり、顧客のコレクションには一意の URI があり、コレクションにはすべての顧客が含まれます。 このサービスは、コレクション全体を取得するための、コレクションの URI への HTTP `GET` の送信と、新しい顧客をコレクションに追加するための、コレクションの URI への HTTP `POST` の送信をサポートしています。 また、個々の顧客の URI では、顧客の詳細を取得する HTTP `GET`、顧客の詳細を置換する HTTP `PUT`、コレクションから顧客を削除する HTTP `DELETE` をサポートしています。 新しい顧客がコレクションに追加されると、サービスはその顧客に一意の URI を割り当て、顧客の詳細の一部として URI を格納します。 また、応答の Location HTTP ヘッダーを使用して、クライアントの URI と通信します。  
+ WCF サービスは、リソース指向の REST 方式で顧客のコレクションを公開します。 つまり、顧客のコレクションには一意の URI があり、コレクションにはすべての顧客が含まれます。 このサービスは、コレクション全体を取得するための、コレクションの URI への HTTP `GET` の送信と、新しい顧客をコレクションに追加するための、コレクションの URI への HTTP `POST` の送信をサポートしています。 また、個々の顧客の URI では、顧客の詳細を取得する HTTP `GET`、顧客の詳細を置換する HTTP `PUT`、コレクションから顧客を削除する HTTP `DELETE` をサポートしています。 新しい顧客がコレクションに追加されると、サービスはその顧客に一意の URI を割り当て、顧客の詳細の一部として URI を格納します。 また、応答の Location HTTP ヘッダーを使用して、クライアントの URI と通信します。  
   
- App.config ファイルでは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] に設定されている <xref:System.ServiceModel.Description.WebHttpEndpoint> プロパティを持つ既定の <xref:System.ServiceModel.Description.WebHttpEndpoint.HelpEnabled%2A> を使用して、`true` サービスを構成します。 その結果、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] によって、自動的な HTML ベースのヘルプ ページが `http://localhost:8000/Customers/help` に作成されます。このページでは、サービスに対する HTTP 要求の作成方法とサービスの HTTP 応答へのアクセス方法に関する情報 (顧客の詳細を XML と JSON で表す方法の例など) が提供されます。  
+ App.config ファイルでは、<xref:System.ServiceModel.Description.WebHttpEndpoint> に設定されている <xref:System.ServiceModel.Description.WebHttpEndpoint.HelpEnabled%2A> プロパティを持つ既定の `true` を使用して、WCF サービスを構成します。 WCF がで自動 HTML ベースのヘルプ ページをどのように作成する結果として、 `http://localhost:8000/Customers/help` HTTP を構築する方法についてはサービスに対する要求と、サービスの HTTP 応答のインスタンスにアクセスする方法がどのように顧客の詳細の例を提供します。XML と JSON で表されます。  
   
- 顧客のコレクション (一般的には、任意のリソース) をこの方法で公開すると、クライアントは、URI と HTTP の `GET`、`PUT`、`DELETE`、および `POST` を使用して一貫した方法でサービスと対話することができます。 Program.cs では、<xref:System.Net.HttpWebRequest> を使用してこのようなクライアントを作成する方法を示します。 これは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] REST サービスにアクセスする 1 つの方法にすぎません。 <xref:System.ServiceModel.ChannelFactory> や <xref:System.Net.WebClient> などの他の .NET Framework クラスを使用して、サービスにアクセスすることも可能です。 SDK 内の他のサンプル (など、[基本 HTTP サービス](../../../../docs/framework/wcf/samples/basic-http-service.md)サンプルおよび[自動形式選択](../../../../docs/framework/wcf/samples/automatic-format-selection.md)サンプル) との通信にこれらのクラスを使用する方法を示して、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]サービス。  
+ 顧客のコレクション (一般的には、任意のリソース) をこの方法で公開すると、クライアントは、URI と HTTP の `GET`、`PUT`、`DELETE`、および `POST` を使用して一貫した方法でサービスと対話することができます。 Program.cs では、<xref:System.Net.HttpWebRequest> を使用してこのようなクライアントを作成する方法を示します。 これは WCF REST サービスにアクセスする方法の 1 つであることに注意してください。 <xref:System.ServiceModel.ChannelFactory> や <xref:System.Net.WebClient> などの他の .NET Framework クラスを使用して、サービスにアクセスすることも可能です。 SDK 内の他のサンプル (など、[基本 HTTP サービス](../../../../docs/framework/wcf/samples/basic-http-service.md)サンプルおよび[自動形式選択](../../../../docs/framework/wcf/samples/automatic-format-selection.md)サンプル) WCF サービスと通信するためにこれらのクラスを使用する方法を示します。  
   
  このサンプルは、コンソール アプリケーション内で実行される自己ホスト型サービスとクライアントで構成されています。 コンソール アプリケーションが実行されると、クライアントはサービスに要求を発行し、応答からの適切な情報をコンソール ウィンドウに書き込みます。  
   

@@ -4,14 +4,14 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - service creation [WCF]
 ms.assetid: 7cf21bfe-23bd-46aa-8033-609f851dbf76
-ms.openlocfilehash: df86b0750a0fb8760d77fa36ec0806a1c5a9c0a0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: b20167ad776f3524e4516b71e43ab8cdb5c2aea4
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="basic-programming-lifecycle"></a>基本的なプログラミング ライフサイクル
-Windows Communication Foundation (WCF) では、アプリケーションにいるかどうか、同じコンピューター上または異なるアプリケーション プラットフォーム上、インターネット経由で通信を使用できます。 ここでは、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] アプリケーションを構築するために必要な作業について説明します。 実際のサンプル アプリケーションでは、次を参照してください。[チュートリアル入門](../../../docs/framework/wcf/getting-started-tutorial.md)です。  
+Windows Communication Foundation (WCF) では、アプリケーションにいるかどうか、同じコンピューター上または異なるアプリケーション プラットフォーム上、インターネット経由で通信を使用できます。 このトピックでは、WCF アプリケーションを構築するために必要なタスクについて説明します。 実際のサンプル アプリケーションでは、次を参照してください。[チュートリアル入門](../../../docs/framework/wcf/getting-started-tutorial.md)です。  
   
 ## <a name="the-basic-tasks"></a>基本的なタスク  
  基本的な作業は、次の順序で行います。  

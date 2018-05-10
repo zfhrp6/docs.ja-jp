@@ -5,11 +5,11 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: f2d34e43-fa8b-46d2-91cf-d2960e13e16b
-ms.openlocfilehash: 99d46b19e744190c50a2ba316fe0f59a8f6cf07b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: a9f03419c5c924f129b3ec8580ee25693c218715
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="how-to-create-a-custom-client-identity-verifier"></a>方法 : カスタム クライアント ID 検証機能を作成する
 *Identity* Windows Communication Foundation (WCF) の機能により、クライアントに事前に予想されるサービスの id を指定します。 サーバーがクライアントに対して自身を認証するたびに、ID がこの予想 ID と照合されます (Id およびそのしくみの詳細については、次を参照してください[サービス Id と認証](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)。)。  
@@ -43,7 +43,7 @@ ms.lasthandoff: 05/04/2018
   
 ### <a name="to-implement-the-trygetidentity-method"></a>TryGetIdentity メソッドを実装するには  
   
-1.  <xref:System.ServiceModel.Security.IdentityVerifier.TryGetIdentity%2A> メソッドを実装します。このメソッドは、クライアントが <xref:System.ServiceModel.EndpointIdentity> クラスのインスタンスを返すことができるかどうかを判定します。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] インフラストラクチャは、まず `TryGetIdentity` メソッドの実装を呼び出して、メッセージからサービスの ID を取得します。 次に、インフラストラクチャは、返された `CheckAccess` と `EndpointIdentity` を使用して <xref:System.IdentityModel.Policy.AuthorizationContext> 実装を呼び出します。  
+1.  <xref:System.ServiceModel.Security.IdentityVerifier.TryGetIdentity%2A> メソッドを実装します。このメソッドは、クライアントが <xref:System.ServiceModel.EndpointIdentity> クラスのインスタンスを返すことができるかどうかを判定します。 実装を呼び出す、WCF インフラストラクチャ、`TryGetIdentity`メッセージからサービスの id を取得するには、最初のメソッドです。 次に、インフラストラクチャは、返された `CheckAccess` と `EndpointIdentity` を使用して <xref:System.IdentityModel.Policy.AuthorizationContext> 実装を呼び出します。  
   
 2.  `TryGetIdentity` メソッドに次のコードを追加します。  
   

@@ -1,13 +1,6 @@
 ---
-title: "方法 : データ コレクションの既定のビューを取得する"
-ms.custom: 
+title: '方法 : データ コレクションの既定のビューを取得する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,16 +8,11 @@ helpviewer_keywords:
 - data collections [WPF], creating views of
 - data binding [WPF], creating views of data collections
 ms.assetid: b641e96c-c2f6-42ea-9c5d-bac81176ad65
-caps.latest.revision: "15"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ebb74e1db2e63269f70a13ef8520ab1383ecae08
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e8e6928391a98a132f1dbb39edfda0d73d2eebdb
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-get-the-default-view-of-a-data-collection"></a>方法 : データ コレクションの既定のビューを取得する
 ビューでは、並べ替え、フィルター処理、または条件をグループ化に応じて、さまざまな方法で表示する同じデータ収集を許可します。 すべてのコレクションには、バインディング ソースとしてコレクションを指定するときに、実際のバインド ソースとして使用される 1 つの共有の既定ビューがあります。 この例では、コレクションの既定のビューを取得する方法を示します。  
@@ -43,6 +31,6 @@ ms.lasthandoff: 12/22/2017
   
  コレクション ビューによって提供される機能の例については、次を参照してください[ビューのデータを並べ替える](../../../../docs/framework/wpf/data/how-to-sort-data-in-a-view.md)、[のビューのフィルター データ](../../../../docs/framework/wpf/data/how-to-filter-data-in-a-view.md)、および[移動を通じて、内のオブジェクト データ CollectionView](../../../../docs/framework/wpf/data/how-to-navigate-through-the-objects-in-a-data-collectionview.md).  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [XAML でビューを使用してデータの並べ替えおよびグループ化を行う](../../../../docs/framework/wpf/data/how-to-sort-and-group-data-using-a-view-in-xaml.md)  
  [方法トピック](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)

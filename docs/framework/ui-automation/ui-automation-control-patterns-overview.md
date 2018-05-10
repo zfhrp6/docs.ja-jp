@@ -1,27 +1,18 @@
 ---
-title: "UI オートメーション コントロール パターンの概要"
-ms.custom: 
+title: UI オートメーション コントロール パターンの概要
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-bcl
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - control patterns
 - UI Automation, control patterns
 ms.assetid: cc229b33-234b-469b-ad60-f0254f32d45d
-caps.latest.revision: "34"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: e675681d1de3aa46645047da61ae8aac2ea0ba31
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 1b02618676a1162681c67d34a2c6f43def07893c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ui-automation-control-patterns-overview"></a>UI オートメーション コントロール パターンの概要
 > [!NOTE]
@@ -83,7 +74,7 @@ ms.lasthandoff: 12/22/2017
 |<xref:System.Windows.Automation.ValuePattern>|<xref:System.Windows.Automation.Provider.IValueProvider>|クライアントで、値の範囲をサポートしないコントロールで値を取得したり、設定したりできます。 たとえば、日時指定のピッカーなどがあります。|  
 |<xref:System.Windows.Automation.WindowPattern>|<xref:System.Windows.Automation.Provider.IWindowProvider>|[!INCLUDE[TLA#tla_win](../../../includes/tlasharptla-win-md.md)] オペレーティング システムの基本概念であるウィンドウに固有の情報を公開します。 ウィンドウのコントロールの例として、最上位のアプリケーション ウィンドウ ([!INCLUDE[TLA#tla_word](../../../includes/tlasharptla-word-md.md)]や [!INCLUDE[TLA#tla_winexpl](../../../includes/tlasharptla-winexpl-md.md)]など)、 [!INCLUDE[TLA#tla_mdi](../../../includes/tlasharptla-mdi-md.md)] 子ウィンドウ、ダイアログがあります。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [クライアントの UI オートメーション コントロール パターン](../../../docs/framework/ui-automation/ui-automation-control-patterns-for-clients.md)  
  [UI オートメーション クライアントのコントロール パターン マッピング](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md)  
  [UI オートメーションの概要](../../../docs/framework/ui-automation/ui-automation-overview.md)  

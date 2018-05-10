@@ -7,11 +7,11 @@ dev_langs:
 helpviewer_keywords:
 - service contracts [WCF]
 ms.assetid: 8e89cbb9-ac84-4f0d-85ef-0eb6be0022fd
-ms.openlocfilehash: 6d1e9ba7f5546923b222f2d495aacdb2c1caaf96
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 163c551103a68ac320e482b1daa0a0c19b2b8fed
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="designing-service-contracts"></a>サービス コントラクトの設計
 ここでは、サービス コントラクトの概要、定義方法、使用できる操作 (および基になるメッセージ交換の影響)、使用するデータ型、およびシナリオの要件を満たす操作を設計する際に役立つその他の問題について説明します。  
@@ -19,7 +19,7 @@ ms.lasthandoff: 05/04/2018
 ## <a name="creating-a-service-contract"></a>サービス コントラクトの作成  
  サービスは複数の操作を公開します。 Windows Communication Foundation (WCF) アプリケーションでは、メソッドを作成してでマークすることによって、操作を定義、<xref:System.ServiceModel.OperationContractAttribute>属性。 次に、サービス コントラクトを作成するために、<xref:System.ServiceModel.ServiceContractAttribute> 属性でマークされたインターフェイス内で操作を宣言するか、この属性でマークされたクラス内で操作を定義することにより、操作をグループ化します  (基本的な例では、次を参照してください[する方法: サービス コントラクトを定義する](../../../docs/framework/wcf/how-to-define-a-wcf-service-contract.md)。)。  
   
- <xref:System.ServiceModel.OperationContractAttribute> 属性を持たないメソッドはサービス操作ではないため、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスによって公開されることはありません。  
+ すべてのメソッドがない、<xref:System.ServiceModel.OperationContractAttribute>属性は、サービス操作ではないと、WCF サービスによって公開されていません。  
   
  ここでは、サービス コントラクトの設計時に決定すべき以下のポイントについて説明します。  
   
@@ -34,7 +34,7 @@ ms.lasthandoff: 05/04/2018
 -   操作の入力と出力の制限  
   
 ## <a name="classes-or-interfaces"></a>クラスとインターフェイス  
- クラスとインターフェイスは、いずれも機能のグループ化を表します。したがって、どちらを使用しても [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス コントラクトを定義できます。 ただし、インターフェイスはサービス コントラクトを直接モデル化するため、インターフェイスを使用することをお勧めします。 実装のないインターフェイスは、特定のシグネチャを持つメソッドのグループ化を定義しているにすぎません。 サービス コントラクト インターフェイスを実装してはじめて、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスを実装したことになります。  
+ 機能のグループ化を表すクラスとインターフェイスの両方と、両方を使用して WCF サービス コントラクトを定義するため、します。 ただし、インターフェイスはサービス コントラクトを直接モデル化するため、インターフェイスを使用することをお勧めします。 実装のないインターフェイスは、特定のシグネチャを持つメソッドのグループ化を定義しているにすぎません。 サービス コントラクト インターフェイスを実装し、WCF サービスを実装しています。  
   
  サービス コントラクト インターフェイスには、次のようにマネージ インターフェイスのあらゆる利点がもたらされます。  
   
@@ -70,12 +70,12 @@ ms.lasthandoff: 05/04/2018
 #### <a name="data-contracts"></a>データ コントラクト  
  Windows Communication Foundation (WCF) アプリケーションと同様に、サービス指向のアプリケーションは、できる限り多くの Microsoft および Microsoft 以外のプラットフォーム上のクライアント アプリケーションとの相互運用に設計されています。 最大限の相互運用性を実現するために、使用する型を <xref:System.Runtime.Serialization.DataContractAttribute> 属性と <xref:System.Runtime.Serialization.DataMemberAttribute> 属性でマークして、データ コントラクトを作成することをお勧めします。データ コントラクトは、サービス コントラクトの一部であり、サービス操作で交換するデータを記述したものです。  
   
- データ コントラクトは opt-in 方式のコントラクトです。つまり、データ コントラクト属性を明示的に適用しない限り、型またはデータ メンバーはシリアル化されません。 データ コントラクトはマネージ コードのアクセス スコープとして関連付けられていません。プライベートのデータ メンバーはシリアル化され、パブリックにアクセスされる他の場所に送信されます  (データ コントラクトの基本的な例を参照してください[する方法: クラスまたは構造体に基本的なデータ コントラクトを作成する](../../../docs/framework/wcf/feature-details/how-to-create-a-basic-data-contract-for-a-class-or-structure.md)。)。[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]操作の機能を有効にする基になる SOAP メッセージの定義だけでなく、シリアル化データの種類に出入りするメッセージの本文を処理します。 使用するデータ型がシリアル化可能であれば、操作の設計時に、基盤となるメッセージ交換インフラストラクチャについて考える必要はありません。  
+ データ コントラクトは opt-in 方式のコントラクトです。つまり、データ コントラクト属性を明示的に適用しない限り、型またはデータ メンバーはシリアル化されません。 データ コントラクトはマネージ コードのアクセス スコープとして関連付けられていません。プライベートのデータ メンバーはシリアル化され、パブリックにアクセスされる他の場所に送信されます  (データ コントラクトの基本的な例を参照してください[する方法: クラスまたは構造体に基本的なデータ コントラクトを作成する](../../../docs/framework/wcf/feature-details/how-to-create-a-basic-data-contract-for-a-class-or-structure.md)。)。WCF では、操作の機能を有効にする基になる SOAP メッセージの定義だけでなく、シリアル化データの種類に出入りするメッセージの本文を処理します。 使用するデータ型がシリアル化可能であれば、操作の設計時に、基盤となるメッセージ交換インフラストラクチャについて考える必要はありません。  
   
- 通常の [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] アプリケーションは <xref:System.Runtime.Serialization.DataContractAttribute> 属性および <xref:System.Runtime.Serialization.DataMemberAttribute> 属性を使用して操作のデータ コントラクトを作成しますが、他のシリアル化機構を使用することもできます。 <xref:System.Runtime.Serialization.ISerializable>、<xref:System.SerializableAttribute>、および <xref:System.Xml.Serialization.IXmlSerializable> の各標準機構はすべて、基になる SOAP メッセージへのデータ型のシリアル化を処理します。このメッセージはアプリケーション間でデータ型を伝達します。 使用するデータ型で特別なサポートが必要な場合は、さらに多くのシリアル化方法を使用できます。 内のデータ型のシリアル化の選択肢の詳細については[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]アプリケーションを参照してください[サービス コントラクトのデータ転送を指定する](../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md)です。  
+ 通常の WCF アプリケーションを使用しますが、<xref:System.Runtime.Serialization.DataContractAttribute>と<xref:System.Runtime.Serialization.DataMemberAttribute>操作については、データ コントラクトを作成する属性の他のシリアル化機構を使用することができます。 <xref:System.Runtime.Serialization.ISerializable>、<xref:System.SerializableAttribute>、および <xref:System.Xml.Serialization.IXmlSerializable> の各標準機構はすべて、基になる SOAP メッセージへのデータ型のシリアル化を処理します。このメッセージはアプリケーション間でデータ型を伝達します。 使用するデータ型で特別なサポートが必要な場合は、さらに多くのシリアル化方法を使用できます。 WCF アプリケーションでのデータ型のシリアル化の選択肢の詳細については、次を参照してください。[サービス コントラクトのデータ転送を指定する](../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md)です。  
   
 #### <a name="mapping-parameters-and-return-values-to-message-exchanges"></a>メッセージ交換へのパラメーターと戻り値のマッピング  
- サービス操作は、特定の標準セキュリティ、トランザクション、およびセッション関連の機能をサポートするためにアプリケーションが必要とするデータに加え、アプリケーション データをやり取りする SOAP メッセージの基になる交換によってサポートされます。 これは大文字と小文字であるため、サービス操作のシグネチャは、基になるによって決まります*メッセージ交換パターン*(MEP)、データ転送と操作に必要な機能をサポートすることができます。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] プログラミング モデルでは、要求/応答、一方向、および双方向の 3 つのメッセージ パターンを指定できます。  
+ サービス操作は、特定の標準セキュリティ、トランザクション、およびセッション関連の機能をサポートするためにアプリケーションが必要とするデータに加え、アプリケーション データをやり取りする SOAP メッセージの基になる交換によってサポートされます。 これは大文字と小文字であるため、サービス操作のシグネチャは、基になるによって決まります*メッセージ交換パターン*(MEP)、データ転送と操作に必要な機能をサポートすることができます。 WCF プログラミング モデルで 3 つのパターンを指定できます: 要求/応答、一方向、および双方向メッセージ パターンです。  
   
 ##### <a name="requestreply"></a>要求/応答  
  要求/応答パターンでは、要求の送信側 (クライアント アプリケーション) は、その要求に関連付けられた応答を受信します。 このパターンでは、1 つの操作において、1 つ以上のパラメーターを操作に渡し、戻り値を呼び出し元に返すことができるため、このパターンが既定の MEP となります。 たとえば、次の C# コード例は、文字列を 1 つ受け取り、文字列を返す基本的なサービス操作を示しています。  
@@ -92,7 +92,7 @@ string Hello(string greeting);
 Function Hello (ByVal greeting As String) As String  
 ```  
   
- この操作シグネチャは、基になるメッセージ交換の形式を指定しています。 相関関係がない場合、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] は戻り値の対象となる操作を特定できません。  
+ この操作シグネチャは、基になるメッセージ交換の形式を指定しています。 相関関係がない場合は、WCF は、戻り値の対象とする操作を特定できません。  
   
  返すサービス操作を別の基になるメッセージ パターンを指定する場合を除いてもなお`void`(`Nothing` Visual Basic で) 要求/応答メッセージ交換は、します。 クライアントが操作を非同期で呼び出していない場合、通常、メッセージが空の場合でも、戻りメッセージを受信するまでクライアントは処理を中止します。 クライアントが応答で空のメッセージを受信するまで制御が戻らない操作の C# コード例を次に示します。  
   
@@ -108,10 +108,10 @@ void Hello(string greeting);
 Sub Hello (ByVal greeting As String)  
 ```  
   
- 上記の例では、実行に時間のかかる操作の場合に、クライアントのパフォーマンスと応答性が低下するおそれがありますが、要求/応答操作で `void` を返す場合でも、この操作には利点があります。 最も明らかな利点は、応答メッセージで SOAP エラーを返すことが可能であるということです。これにより、通信と処理のどちらで発生したかに関係なく、サービス関連の何らかのエラー状態が発生したことがわかります。 サービス コントラクトに指定された SOAP エラーは、<xref:System.ServiceModel.FaultException%601> オブジェクトとしてクライアント アプリケーションに渡されます。このオブジェクトの型パラメーターは、サービス コントラクトで指定された型です。 これにより、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスのエラー状態をクライアントに通知しやすくなります。 例外、SOAP エラー、およびエラー処理の詳細については、次を参照してください。[を指定すると処理のエラー コントラクトおよびサービスの](../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md)します。 要求/応答サービスとクライアントの例を参照してください[する方法: 要求/応答コントラクトを作成する](../../../docs/framework/wcf/feature-details/how-to-create-a-request-reply-contract.md)です。 要求/応答パターンで問題の詳細については、次を参照してください。[要求/応答サービス](../../../docs/framework/wcf/feature-details/request-reply-services.md)です。  
+ 上記の例では、実行に時間のかかる操作の場合に、クライアントのパフォーマンスと応答性が低下するおそれがありますが、要求/応答操作で `void` を返す場合でも、この操作には利点があります。 最も明らかな利点は、応答メッセージで SOAP エラーを返すことが可能であるということです。これにより、通信と処理のどちらで発生したかに関係なく、サービス関連の何らかのエラー状態が発生したことがわかります。 サービス コントラクトに指定された SOAP エラーは、<xref:System.ServiceModel.FaultException%601> オブジェクトとしてクライアント アプリケーションに渡されます。このオブジェクトの型パラメーターは、サービス コントラクトで指定された型です。 これにより、エラー状態に関するクライアントに通知の WCF サービスに簡単です。 例外、SOAP エラー、およびエラー処理の詳細については、次を参照してください。[を指定すると処理のエラー コントラクトおよびサービスの](../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md)します。 要求/応答サービスとクライアントの例を参照してください[する方法: 要求/応答コントラクトを作成する](../../../docs/framework/wcf/feature-details/how-to-create-a-request-reply-contract.md)です。 要求/応答パターンで問題の詳細については、次を参照してください。[要求/応答サービス](../../../docs/framework/wcf/feature-details/request-reply-services.md)です。  
   
 ##### <a name="one-way"></a>一方向  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス アプリケーションのクライアントが操作の完了まで待機する必要がなく、SOAP エラーも処理しない場合は、操作で一方向メッセージ パターンを指定できます。 一方向操作では、クライアントが操作を呼び出し、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] がメッセージをネットワークに書き込んだら、クライアントは処理を続行できます。 通常、これは、送信メッセージで送信するデータが膨大な量でない限り、(データ送信時にエラーが発生しなければ) クライアントはほぼすぐに実行を続けることを意味します。 この種のメッセージ交換パターンでは、クライアントからサービス アプリケーションへのイベントのような動作をサポートします。  
+ WCF サービス アプリケーションのクライアント操作が完了するを待たない必要があります、SOAP エラーを処理しない場合、操作は一方向メッセージ パターンを指定できます。 一方向の操作は、いずれかをクライアントが操作を呼び出すし、WCF は、ネットワークにメッセージを書き込みます後の処理を続行します。 通常、これは、送信メッセージで送信するデータが膨大な量でない限り、(データ送信時にエラーが発生しなければ) クライアントはほぼすぐに実行を続けることを意味します。 この種のメッセージ交換パターンでは、クライアントからサービス アプリケーションへのイベントのような動作をサポートします。  
   
  1 つのメッセージを送信し、何も受信しないメッセージ交換では、`void` 以外の戻り値を指定したサービス操作をサポートすることはできません。この場合、<xref:System.InvalidOperationException> 例外がスローされます。  
   

@@ -8,33 +8,33 @@ helpviewer_keywords:
 - Windows Communication Foundation [WCF], basic programming
 - Windows Communication Foundation [WCF], programming
 ms.assetid: 3ae3d498-f43c-4ecc-8cc0-6cbe36b62593
-ms.openlocfilehash: de56725f926ec9f6d4cc39c8160fa7af0f3ab80a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: cbdc693197344fe570c1462f6ca3115018eb69d6
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="basic-wcf-programming"></a>基本的な WCF プログラミング
 このセクションでは、Windows Communication Foundation (WCF) アプリケーションを作成するための基礎を表示します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [基本的なプログラミング ライフサイクル](../../../docs/framework/wcf/basic-programming-lifecycle.md)  
- 設計、ビルド、展開から成る [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスおよびクライアント アプリケーションのライフサイクルについて説明します。  
+ 設計、構築、および WCF サービスとクライアント アプリケーションの展開のライフ サイクルについて説明します。  
   
  [サービスの設計と実装](../../../docs/framework/wcf/designing-and-implementing-services.md)  
  サービス コントラクトの設計および実装方法、メッセージ交換パターンの選択方法、エラー コントラクトの指定方法、およびその他のサービスの基本的な側面について説明します。  
   
  [サービスの構成](../../../docs/framework/wcf/configuring-services.md)  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスを構成して、コントラクト要件のサポート、ローカル ランタイム動作のカスタマイズ、およびサービスを公開するアドレスの指定を行う方法について説明します。  
+ コントラクトの要件をサポート、ローカル ランタイム動作をカスタマイズして、サービスを公開するアドレスを指定する WCF サービスを構成する方法について説明します。  
   
  [ホスティング サービス](../../../docs/framework/wcf/hosting-services.md)  
  アプリケーションでサービスをホストするときの基本について説明します。  
   
  [クライアントを構築する](../../../docs/framework/wcf/building-clients.md)  
- サービスからのメタデータの取得、取得したメタデータの [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアント コードへの変換、セキュリティ問題の処理、および [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアントのビルド、構成、ホスティングを行う方法について説明します。  
+ サービスからメタデータを取得、WCF クライアント コードに変換する、セキュリティの問題を処理し、ビルド、構成、および WCF クライアントをホストする方法について説明します。  
   
  [拡張機能の概要](../../../docs/framework/wcf/introduction-to-extensibility.md)  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] を拡張してカスタム ソリューションを作成する方法について説明します。  
+ カスタム ソリューションを作成する WCF の拡張方法について説明します。  
   
  [WCF トラブルシューティング クイックスタート](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md)  
  最も起こりやすい問題の一部を挙げ、その問題の解決方法とその問題の詳細情報を掲載している場所について説明します。  

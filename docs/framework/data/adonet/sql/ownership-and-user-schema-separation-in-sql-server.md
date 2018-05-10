@@ -1,24 +1,12 @@
 ---
-title: "SQL Server における所有権とユーザーとスキーマの分離"
-ms.custom: 
+title: SQL Server における所有権とユーザーとスキーマの分離
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 242830c1-31b5-4427-828c-cc22ff339f30
-caps.latest.revision: "6"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 8f78cd816be7a4c68853a25f89859bbe2452bb9c
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 69d0c0dee6141b80908c8cdc36dfe21ff318f423
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ownership-and-user-schema-separation-in-sql-server"></a>SQL Server における所有権とユーザーとスキーマの分離
 オブジェクトの所有者は、それを管理するための取り消し不可能な権限を持ちます。これは SQL Server のセキュリティの核となる概念です。 オブジェクトの所有者から権限を削除することはできません。また、特定のユーザーがデータベース内のオブジェクトを所有しているときに、そのユーザーをデータベースから削除することもできません。  
@@ -68,7 +56,7 @@ Server.Database.DatabaseSchema.DatabaseObject
 |--------------|-----------------|  
 |[ユーザーとスキーマの分離](http://msdn.microsoft.com/library/ms190387.aspx)SQL Server オンライン ブック|ユーザーとスキーマの分離によって導入された変更について説明します。 新しい動作とそれが所有権、カタログ ビュー、および権限に与える影響を取り上げています。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ADO.NET アプリケーションのセキュリティ保護](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
  [SQL Server におけるアプリケーション セキュリティのシナリオ](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)  
  [SQL Server での認証](../../../../../docs/framework/data/adonet/sql/authentication-in-sql-server.md)  

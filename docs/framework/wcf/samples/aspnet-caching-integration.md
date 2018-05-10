@@ -1,24 +1,12 @@
 ---
-title: "ASP.NET キャッシュ統合"
-ms.custom: 
+title: ASP.NET キャッシュ統合
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: f581923a-8a72-42fc-bd6a-46de2aaeecc1
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 0d56c435088be383821d17250e230cae848d2bab
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 744ecbff8b51565906ff4c619ba8c8aecff123c7
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="aspnet-caching-integration"></a>ASP.NET キャッシュ統合
 このサンプルでは、WCF WEB HTTP プログラミング モデルで ASP.NET 出力キャッシュを利用する方法を示します。 参照してください、[基本的なリソース サービス](../../../../docs/framework/wcf/samples/basic-resource-service.md)の自己ホスト型のバージョンの深さのサービスの実装について説明する、このシナリオのサンプルです。 ここでは、ASP.NET 出力キャッシュ統合機能について集中的に説明します。  
@@ -31,16 +19,16 @@ ms.lasthandoff: 12/22/2017
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
+>  このディレクトリが存在しない場合に、 [Windows Communication Foundation (WCF) および .NET Framework 4 向けの Windows Workflow Foundation (WF) サンプル](http://go.microsoft.com/fwlink/?LinkId=150780)すべて Windows Communication Foundation (WCF) をダウンロードして[!INCLUDE[wf1](../../../../includes/wf1-md.md)]サンプルです。 このサンプルは、次のディレクトリに格納されます。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Web\AspNetCachingIntegration`  
   
 ## <a name="discussion"></a>説明  
- このサンプルでは、<xref:System.ServiceModel.Web.AspNetCacheProfileAttribute> サービスで ASP.NET 出力キャッシュを利用するために、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] を使用します。 <xref:System.ServiceModel.Web.AspNetCacheProfileAttribute> は、サービス操作に適用される属性で、特定の操作からの応答に適用する構成ファイル内のキャッシュ プロファイルの名前を指定します。  
+ このサンプルでは、<xref:System.ServiceModel.Web.AspNetCacheProfileAttribute>のために、ASP.NET 出力キャッシュ、Windows Communication Foundation (WCF) サービスをします。 <xref:System.ServiceModel.Web.AspNetCacheProfileAttribute> は、サービス操作に適用される属性で、特定の操作からの応答に適用する構成ファイル内のキャッシュ プロファイルの名前を指定します。  
   
  サンプル サービス プロジェクトの Service.cs ファイルの両方、`GetCustomer`と`GetCustomers`とマークされた操作、 <xref:System.ServiceModel.Web.AspNetCacheProfileAttribute>、"CacheFor60Seconds"キャッシュ プロファイル名を提供します。 サービス プロジェクトの Web.config ファイルでキャッシュ プロファイル"CacheFor60Seconds"は下で提供、<`caching`> の要素 <`system.web`>。 このキャッシュ プロファイルでの値、`duration`属性は「60」で、このプロファイルに関連付けられた応答は 60 秒間に、ASP.NET 出力キャッシュにキャッシュされます。 また、このキャッシュ プロファイルの`varmByParam`属性の値が異なるため要求を"format"に設定されて、`format`クエリ文字列パラメーター、応答は別々 にキャッシュします。 最後に、キャッシュ プロファイルの`varyByHeader`Accept ヘッダー値が異なる要求の応答を個別にキャッシュされるため、属性が"Accept"に設定します。  
   
- Client プロジェクトの Program.cs では、<xref:System.Net.HttpWebRequest> を使用してこのようなクライアントを作成する方法を示します。 これは、WCF サービスにアクセスする 1 つの方法にすぎません。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] チャネル ファクトリや <xref:System.Net.WebClient> などの他の .NET Framework クラスを使用して、サービスにアクセスすることも可能です。 SDK 内の他のサンプル (など、[基本 HTTP サービス](../../../../docs/framework/wcf/samples/basic-http-service.md)サンプルおよび[自動形式選択](../../../../docs/framework/wcf/samples/automatic-format-selection.md)サンプル) との通信にこれらのクラスを使用する方法を示す、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]サービス。  
+ Client プロジェクトの Program.cs では、<xref:System.Net.HttpWebRequest> を使用してこのようなクライアントを作成する方法を示します。 これは、WCF サービスにアクセスする 1 つの方法にすぎません。 WCF チャネル ファクトリと同様に他の .NET Framework クラスを使用して、サービスにアクセスすることも、<xref:System.Net.WebClient>です。 SDK 内の他のサンプル (など、[基本 HTTP サービス](../../../../docs/framework/wcf/samples/basic-http-service.md)サンプルおよび[自動形式選択](../../../../docs/framework/wcf/samples/automatic-format-selection.md)サンプル) をこれらのクラスを使用して WCF サービスと通信する方法を示しています。  
   
 ## <a name="to-run-the-sample"></a>サンプルを実行するには  
  このサンプルは、3 つのプロジェクトで構成されます。  

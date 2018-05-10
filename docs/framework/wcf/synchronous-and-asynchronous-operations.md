@@ -8,23 +8,23 @@ helpviewer_keywords:
 - service contracts [WCF], synchronous operations
 - service contracts [WCF], asynchronous operations
 ms.assetid: db8a51cb-67e6-411b-9035-e5821ed350c9
-ms.openlocfilehash: 0b64d45797babff2da1649fb7469684342e65d47
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 6c464dc79e0f38b72f724fafcef59916d766e2d0
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="synchronous-and-asynchronous-operations"></a>同期操作と非同期操作
 ここでは、非同期サービス操作の実装と呼び出しについて説明します。  
   
- 多くのアプリケーションは、メソッド呼び出しの実行中に有用な処理を続行できるように、メソッドを非同期的に呼び出します。 Windows Communication Foundation (WCF) サービスとクライアントは、アプリケーションの提供する 2 つの異なるレベルでの操作の非同期呼び出しに参加できる[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]バランスを考慮してスループットを最大化する柔軟性がさらに多くのアプリケーション対話機能します。  
+ 多くのアプリケーションは、メソッド呼び出しの実行中に有用な処理を続行できるように、メソッドを非同期的に呼び出します。 Windows Communication Foundation (WCF) サービスとクライアント アプリケーションの WCF アプリケーションの対話機能に対してバランスの取れたスループットを最大化するより高い柔軟性を提供する 2 つの異なるレベルでの操作の非同期呼び出しに参加できます.  
   
 ## <a name="types-of-asynchronous-operations"></a>非同期操作の種類  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] のすべてのサービス コントラクトでは、パラメーターの型と戻り値に関係なく、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] の属性を使用して、クライアントとサービス間の特定のメッセージ交換パターンを指定します。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] は、適切なサービス操作または実行元のクライアント コードに送受信メッセージを自動的にルーティングします。  
+ すべてのサービスは、パラメーターの型に関係なく、WCF では、コントラクト、戻り値と WCF 属性を使用して、クライアントとサービス間の特定のメッセージ交換パターンを指定します。 WCF は、適切なサービス操作の実行中のクライアント コードを自動的に受信および送信メッセージをルーティングします。  
   
  クライアントが所有するのは、特定操作のメッセージ交換パターンが指定されたサービス コントラクトのみです。 基盤となるメッセージ交換パターンに従っている限り、クライアントは選択する任意のプログラミング モデルを開発者に提供できます。 同様に、サービスも、指定されたメッセージ パターンに従っている限り、任意の方法で操作を実装できます。  
   
- サービス コントラクトがサービスとクライアントの両方の実装から独立していることで、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] アプリケーションでは次の形式の非同期実行が可能になります。  
+ サービスまたはクライアントのいずれかの実装からサービス コントラクトの独立性には、WCF アプリケーションの非同期実行の次の形式が有効にします。  
   
 -   クライアントは、同期メッセージ交換を使用して要求/応答操作を非同期に呼び出すことができます。  
   
@@ -147,7 +147,7 @@ Function DoWork(ByVal data As String, ByRef inout As String, _out outonly As out
 >  <xref:System.ServiceModel.OperationContractAttribute> 属性は、`BeginDoWork` のメソッドにのみ適用されます。 生成されるコントラクトには、`DoWork` という名前の WSDL 操作が 1 つ含まれます。  
   
 ### <a name="client-side-asynchronous-invocations"></a>クライアント側の非同期呼び出し  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアント アプリケーションでは、既に説明した 3 つの非同期呼び出しモデルをどれでも使用できます。  
+ WCF クライアント アプリケーションは、任意の前に説明した 3 つの非同期呼び出しモデルを使用できます。  
   
  タスク ベースのモデルを使用する場合は、次のコードに示すように、await キーワードを使用して操作を呼び出すだけです。  
   
@@ -161,9 +161,9 @@ await simpleServiceClient.SampleMethodTaskAsync("hello, world");
 svcutil http://localhost:8000/servicemodelsamples/service/mex /async /tcv:Version35  
 ```  
   
- これらのオプションを指定すると、Svcutil.exe によって、イベント インフラストラクチャを持つ [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアント クラスが生成されます。このインフラストラクチャにより、呼び出し元アプリケーションは、応答を受信して適切なアクションを実行するイベント ハンドラーを実装し、割り当てることができます。 完全な例では、次を参照してください。[する方法: サービスの操作を非同期に呼び出す](../../../docs/framework/wcf/feature-details/how-to-call-wcf-service-operations-asynchronously.md)です。  
+ これは、Svcutil.exe は、イベント インフラストラクチャを実装し、応答を受信し、適切な操作をイベント ハンドラーを割り当てるには、呼び出し元のアプリケーションを有効にすると WCF クライアント クラスを生成します。 完全な例では、次を参照してください。[する方法: サービスの操作を非同期に呼び出す](../../../docs/framework/wcf/feature-details/how-to-call-wcf-service-operations-asynchronously.md)です。  
   
- イベント ベースの非同期モデルは、[!INCLUDE[netfx35_long](../../../includes/netfx35-long-md.md)] でのみ使用できます。 また、[!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] を使用して [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアント チャネルを作成した場合は、<xref:System.ServiceModel.ChannelFactory%601?displayProperty=nameWithType> でもサポートされません。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアント チャネル オブジェクトを使用する場合、<xref:System.IAsyncResult?displayProperty=nameWithType> オブジェクトを使用して操作を非同期に呼び出す必要があります。 このアプローチを使用するには指定、 **/async**コマンドとオプション、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)次の例のように、します。  
+ イベント ベースの非同期モデルは、[!INCLUDE[netfx35_long](../../../includes/netfx35-long-md.md)] でのみ使用できます。 さらに、これはサポートされていませんでも[!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)]を使用して、WCF クライアント チャネルを作成するときに、<xref:System.ServiceModel.ChannelFactory%601?displayProperty=nameWithType>です。 WCF クライアント チャネル オブジェクトで使用する必要があります<xref:System.IAsyncResult?displayProperty=nameWithType>操作を非同期で呼び出すオブジェクト。 このアプローチを使用するには指定、 **/async**コマンドとオプション、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)次の例のように、します。  
   
 ```  
 svcutil http://localhost:8000/servicemodelsamples/service/mex /async   

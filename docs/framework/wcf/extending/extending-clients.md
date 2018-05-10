@@ -4,23 +4,23 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - proxy extensions [WCF]
 ms.assetid: 1328c61c-06e5-455f-9ebd-ceefb59d3867
-ms.openlocfilehash: 7eea247602d24c545e0de5fa9df50e83aae8ed7f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 95340a9ae6ac5a3face81d5fe6f61ea134fb6ad2
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="extending-clients"></a>クライアントの拡張
 呼び出し側のアプリケーションでは、サービス モデル レイヤーが、アプリケーション コードでのメソッド呼び出しを送信メッセージに変換し、それらを基になるチャネルにプッシュし、結果をアプリケーション コードで戻り値と出力パラメーターに変換して、変換結果を呼び出し側に返します。 サービス モデル拡張は、クライアントやディスパッチャーの機能、カスタム動作、メッセージとパラメーターの途中受信、およびその他の拡張機能に関連する実行や通信の動作と機能を変更または実装します。  
   
- このトピックを使用する方法について説明、<xref:System.ServiceModel.Dispatcher.ClientRuntime>と<xref:System.ServiceModel.Dispatcher.ClientOperation>の既定の実行動作を変更する Windows Communication Foundation (WCF) クライアント アプリケーション内のクラス、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]クライアントまたは途中受信メッセージをまたは変更、パラメーター、または前後送信またはチャネル レイヤーから取得する値を返します。 サービス ランタイムの拡張の詳細については、次を参照してください。[ディスパッチャーの拡張](../../../../docs/framework/wcf/extending/extending-dispatchers.md)です。 動作を変更して、クライアント ランタイムにカスタマイズ オブジェクトを挿入に関する詳細については、次を参照してください。[を構成すると、ランタイムのビヘイビアーの使用を拡張する](../../../../docs/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md)です。  
+ このトピックを使用する方法について説明、<xref:System.ServiceModel.Dispatcher.ClientRuntime>と<xref:System.ServiceModel.Dispatcher.ClientOperation>の WCF クライアントまたは途中受信をまたは変更するメッセージ、パラメーター、既定の実行動作を変更または戻り値の Windows Communication Foundation (WCF) クライアント アプリケーション内のクラス前の送信またはチャネル レイヤーから取得する前後にします。 サービス ランタイムの拡張の詳細については、次を参照してください。[ディスパッチャーの拡張](../../../../docs/framework/wcf/extending/extending-dispatchers.md)です。 動作を変更して、クライアント ランタイムにカスタマイズ オブジェクトを挿入に関する詳細については、次を参照してください。[を構成すると、ランタイムのビヘイビアーの使用を拡張する](../../../../docs/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md)です。  
   
 ## <a name="clients"></a>クライアント  
- クライアントでは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント オブジェクトまたはクライアント チャネルが、メソッド呼び出しを送信メッセージに、受信メッセージを操作結果に変換し、この操作結果を呼び出し側のアプリケーションに返します  (クライアントの種類の詳細については、次を参照してください[WCF クライアント アーキテクチャ](../../../../docs/framework/wcf/feature-details/client-architecture.md)。)。  
+ クライアントでは、WCF クライアント オブジェクトまたはクライアント チャネルは、メソッドの呼び出しを送信メッセージおよび受信メッセージの呼び出し元のアプリケーションに返される操作の結果に変換します。 (クライアントの種類の詳細については、次を参照してください[WCF クライアント アーキテクチャ](../../../../docs/framework/wcf/feature-details/client-architecture.md)。)。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントの種類には、このようなエンドポイント レベルと操作レベルの機能を処理するランタイム型があります。 アプリケーションが操作を呼び出すと、<xref:System.ServiceModel.Dispatcher.ClientOperation> が送信オブジェクトをメッセージに変換し、インターセプターを処理し、送信呼び出しがターゲット コントラクトに適合することを確認してから、送信メッセージを <xref:System.ServiceModel.Dispatcher.ClientRuntime> に渡します。このクラスは、送信チャネル (双方向サービスの場合には、さらに受信チャネル) の作成と管理、追加の送信メッセージ処理 (ヘッダーの変更など)、メッセージ インターセプターの両方向での処理、および適切なクライアント側 <xref:System.ServiceModel.Dispatcher.DispatchRuntime> オブジェクトへの受信双方向呼び出しのルーティングを実行します。 <xref:System.ServiceModel.Dispatcher.ClientOperation> と <xref:System.ServiceModel.Dispatcher.ClientRuntime> は、共にメッセージ (エラーを含む) がクライアントに返されるときに同様のサービスを提供します。  
+ WCF クライアントの種類では、このエンドポイントと操作レベルの機能を処理するランタイム型があります。 アプリケーションが操作を呼び出すと、<xref:System.ServiceModel.Dispatcher.ClientOperation> が送信オブジェクトをメッセージに変換し、インターセプターを処理し、送信呼び出しがターゲット コントラクトに適合することを確認してから、送信メッセージを <xref:System.ServiceModel.Dispatcher.ClientRuntime> に渡します。このクラスは、送信チャネル (双方向サービスの場合には、さらに受信チャネル) の作成と管理、追加の送信メッセージ処理 (ヘッダーの変更など)、メッセージ インターセプターの両方向での処理、および適切なクライアント側 <xref:System.ServiceModel.Dispatcher.DispatchRuntime> オブジェクトへの受信双方向呼び出しのルーティングを実行します。 <xref:System.ServiceModel.Dispatcher.ClientOperation> と <xref:System.ServiceModel.Dispatcher.ClientRuntime> は、共にメッセージ (エラーを含む) がクライアントに返されるときに同様のサービスを提供します。  
   
- これら 2 つのランタイム クラスは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のクライアント オブジェクトとチャネルの処理をカスタマイズするための主要な拡張機能です。 <xref:System.ServiceModel.Dispatcher.ClientRuntime> クラスは、ユーザーが、コントラクト内のすべてのメッセージについてクライアント実行を途中受信して拡張できるようにします。 <xref:System.ServiceModel.Dispatcher.ClientOperation> クラスは、ユーザーが、特定の操作内のすべてのメッセージについてクライアント実行を途中受信して拡張できるようにします。  
+ これら 2 つのランタイム クラスは、WCF クライアント オブジェクトとチャネルの処理をカスタマイズする主要な拡張機能です。 <xref:System.ServiceModel.Dispatcher.ClientRuntime> クラスは、ユーザーが、コントラクト内のすべてのメッセージについてクライアント実行を途中受信して拡張できるようにします。 <xref:System.ServiceModel.Dispatcher.ClientOperation> クラスは、ユーザーが、特定の操作内のすべてのメッセージについてクライアント実行を途中受信して拡張できるようにします。  
   
  プロパティの変更やカスタマイズの挿入は、コントラクト、エンドポイント、および操作の各動作を使用して行います。 これらの種類の動作を使用して、クライアント ランタイムのカスタマイズを実行する方法の詳細については、次を参照してください。[を構成すると、ランタイムのビヘイビアーの使用を拡張する](../../../../docs/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md)です。  
   
@@ -33,7 +33,7 @@ ms.lasthandoff: 05/04/2018
   
 -   カスタム メッセージの変換。 アプリケーション コードを変更するのではなく、ランタイムのメッセージに特定の変換を適用する必要が生じる場合があります (バージョン管理の場合など)。 これもまた、メッセージ インターセプター インターフェイスで実行可能です。  
   
--   カスタム データ モデル。 既定で [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] でサポートされているオブジェクト (つまり、<xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType> オブジェクト、<xref:System.Xml.Serialization.XmlSerializer?displayProperty=nameWithType> オブジェクト、および <xref:System.ServiceModel.Channels.Message?displayProperty=nameWithType> オブジェクト) 以外のデータ モデルやシリアル化モデルをユーザーが必要とする場合があります。 これは、メッセージ フォーマッタ インターフェイスを実装することで対応できます。 詳細については、<xref:System.ServiceModel.Dispatcher.IClientMessageFormatter?displayProperty=nameWithType> および <xref:System.ServiceModel.Dispatcher.ClientOperation.Formatter%2A?displayProperty=nameWithType> プロパティのトピックを参照してください。  
+-   カスタム データ モデル。 ユーザーが WCF では既定ではサポートされている以外のデータまたはシリアル化モデルを持つ可能性があります (つまり、 <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType>、 <xref:System.Xml.Serialization.XmlSerializer?displayProperty=nameWithType>、および<xref:System.ServiceModel.Channels.Message?displayProperty=nameWithType>オブジェクト)。 これは、メッセージ フォーマッタ インターフェイスを実装することで対応できます。 詳細については、<xref:System.ServiceModel.Dispatcher.IClientMessageFormatter?displayProperty=nameWithType> および <xref:System.ServiceModel.Dispatcher.ClientOperation.Formatter%2A?displayProperty=nameWithType> プロパティのトピックを参照してください。  
   
 -   カスタム パラメーターの検証。 XML ではなく、型指定されたパラメーターが有効になるようにする必要が生じる場合があります。 これは、パラメーター インスペクター インターフェイスを使用して実行できます。 例については、次を参照してください。[する方法: 検査パラメーターまたは変更](../../../../docs/framework/wcf/extending/how-to-inspect-or-modify-parameters.md)または[クライアント検証](../../../../docs/framework/wcf/samples/client-validation.md)です。  
   
@@ -52,7 +52,7 @@ ms.lasthandoff: 05/04/2018
   
 -   <xref:System.ServiceModel.Dispatcher.ClientRuntime.Via%2A> プロパティは、トランスポート レベルでメッセージの送信先の値を設定して、メッセージの中継者やその他のシナリオをサポートします。  
   
--   <xref:System.ServiceModel.Dispatcher.ClientRuntime.MessageInspectors%2A> プロパティは、<xref:System.ServiceModel.Dispatcher.IClientMessageInspector> オブジェクトのコレクションを取得します。このコレクションには、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 経由のすべてのメッセージに対応するカスタム メッセージ インターセプターを追加できます。  
+-   <xref:System.ServiceModel.Dispatcher.ClientRuntime.MessageInspectors%2A>プロパティのコレクションを取得する<xref:System.ServiceModel.Dispatcher.IClientMessageInspector>オブジェクトは、WCF クライアント経由のすべてのメッセージのカスタム メッセージ インターセプターを追加することができます。  
   
  また、コントラクト情報を取得するその他のプロパティも多数用意されています。  
   
@@ -62,22 +62,22 @@ ms.lasthandoff: 05/04/2018
   
 -   <xref:System.ServiceModel.Dispatcher.ClientRuntime.ContractClientType%2A>  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントが双方向 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントの場合は、次のプロパティもコールバック [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント情報を取得します。  
+ WCF クライアントが双方向の WCF クライアントの場合は、次のプロパティもコールバック WCF クライアントの情報を取得します。  
   
 -   <xref:System.ServiceModel.Dispatcher.ClientRuntime.CallbackClientType%2A>  
   
 -   <xref:System.ServiceModel.Dispatcher.ClientRuntime.CallbackDispatchRuntime%2A>  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のクライアント実行を [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント全体で拡張するには、<xref:System.ServiceModel.Dispatcher.ClientRuntime> クラスに用意されているプロパティを調べ、目的の機能を作成するために、プロパティを変更するか、またはインターフェイスを実装してプロパティに追加するかを確認します。 作成する特定の拡張を選択した後は、適切な <xref:System.ServiceModel.Dispatcher.ClientRuntime> プロパティにその拡張を挿入します。挿入するには、実行時に <xref:System.ServiceModel.Dispatcher.ClientRuntime> クラスにアクセスを提供するクライアント動作を実装します。  
+ WCF クライアントの実行を WCF クライアント全体にわたってにで使用可能なプロパティを確認、<xref:System.ServiceModel.Dispatcher.ClientRuntime>クラス プロパティを変更するか、インターフェイスを実装してプロパティへの追加ことを求めている機能を作成するかどうかを確認します。 作成する特定の拡張を選択した後は、適切な <xref:System.ServiceModel.Dispatcher.ClientRuntime> プロパティにその拡張を挿入します。挿入するには、実行時に <xref:System.ServiceModel.Dispatcher.ClientRuntime> クラスにアクセスを提供するクライアント動作を実装します。  
   
  カスタム拡張オブジェクトは、操作動作 (<xref:System.ServiceModel.Description.IOperationBehavior> を実装するオブジェクト)、コントラクト動作 (<xref:System.ServiceModel.Description.IContractBehavior> を実装するオブジェクト)、またはエンドポイント動作 (<xref:System.ServiceModel.Description.IEndpointBehavior> を実装するオブジェクト) を使用して、コレクションに挿入できます。 インストール動作オブジェクトは、プログラムで直接に、または宣言を介して (カスタム属性を実装して)、さらにアプリケーション構成ファイルを使用して動作を挿入できるようにするカスタム <xref:System.ServiceModel.Configuration.BehaviorExtensionElement> オブジェクトを実装することにより、適切な動作コレクションに追加されます。 詳細については、「[を構成して、ランタイムのビヘイビアーの使用を拡張する](../../../../docs/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md)です。  
   
- 間での傍受を示す例について、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]クライアントを参照してください[する方法: 変更がクライアントにメッセージを検査または](../../../../docs/framework/wcf/extending/how-to-inspect-or-modify-messages-on-the-client.md)です。  
+ WCF クライアントの間での傍受を示す例については、次を参照してください。[する方法: 変更は、クライアントにメッセージを検査または](../../../../docs/framework/wcf/extending/how-to-inspect-or-modify-messages-on-the-client.md)です。  
   
 ### <a name="using-the-clientoperation-class"></a>ClientOperation クラスの使用  
  <xref:System.ServiceModel.Dispatcher.ClientOperation> クラスは、1 つのサービス操作のスコープ内だけに適用されるカスタムの拡張を実現するために、クライアント ランタイムに対して変更または挿入を行う場所です。 (コントラクト中のすべてのメッセージに対するクライアントのランタイム動作を変更するには、<xref:System.ServiceModel.Dispatcher.ClientRuntime> クラスを使用します。)  
   
- <xref:System.ServiceModel.Dispatcher.ClientRuntime.Operations%2A> プロパティを使用して、特定のサービス操作を表す <xref:System.ServiceModel.Dispatcher.ClientOperation> オブジェクトを検索します。 次の各プロパティを使用すると、カスタム オブジェクトを [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント システムに挿入できます。  
+ <xref:System.ServiceModel.Dispatcher.ClientRuntime.Operations%2A> プロパティを使用して、特定のサービス操作を表す <xref:System.ServiceModel.Dispatcher.ClientOperation> オブジェクトを検索します。 次のプロパティでは、WCF クライアント システムにカスタム オブジェクトを挿入を行うことができます。  
   
 -   <xref:System.ServiceModel.Dispatcher.ClientOperation.Formatter%2A> プロパティは、特定の操作用に <xref:System.ServiceModel.Dispatcher.IClientMessageFormatter> のカスタムの実装を挿入したり、現在のフォーマッタを変更するために使用します。  
   
@@ -91,7 +91,7 @@ ms.lasthandoff: 05/04/2018
   
 -   要求メッセージの WS-Addressing 操作を制御する場合に <xref:System.ServiceModel.Dispatcher.ClientOperation.Action%2A> プロパティを使用します。  
   
--   <xref:System.ServiceModel.Dispatcher.ClientOperation.BeginMethod%2A> プロパティと <xref:System.ServiceModel.Dispatcher.ClientOperation.EndMethod%2A> プロパティは、非同期操作に関連付けられる [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント メソッドを指定するために使用します。  
+-   使用して、<xref:System.ServiceModel.Dispatcher.ClientOperation.BeginMethod%2A>と<xref:System.ServiceModel.Dispatcher.ClientOperation.EndMethod%2A>WCF クライアント メソッドか、非同期操作に関連付けられているを指定します。  
   
 -   <xref:System.ServiceModel.Dispatcher.ClientOperation.FaultContractInfos%2A> プロパティは、SOAP エラーの際に詳細な型として表示できる型を含むコレクションを取得するために使用します。  
   
@@ -105,13 +105,13 @@ ms.lasthandoff: 05/04/2018
   
 -   <xref:System.ServiceModel.Dispatcher.ClientOperation.SyncMethod%2A> プロパティは、操作にマップされるメソッドを制御するために使用します。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のクライアント実行を 1 つのサービス操作でのみ拡張するには、<xref:System.ServiceModel.Dispatcher.ClientOperation> クラスに用意されているプロパティを調べ、目的の機能を作成するために、プロパティを変更するか、またはインターフェイスを実装してプロパティに追加するかを確認します。 作成する特定の拡張を選択した後は、適切な <xref:System.ServiceModel.Dispatcher.ClientOperation> プロパティにその拡張を挿入します。挿入するには、実行時に <xref:System.ServiceModel.Dispatcher.ClientOperation> クラスにアクセスを提供するクライアント動作を実装します。 これで、その動作の内部で、<xref:System.ServiceModel.Dispatcher.ClientRuntime> プロパティを要件に合わせて変更できるようになります。  
+ WCF クライアントの実行を 1 つだけのサービス操作を拡張する上で使用できるプロパティを確認、<xref:System.ServiceModel.Dispatcher.ClientOperation>クラス プロパティを変更するか、インターフェイスを実装してプロパティへの追加ことを求めている機能を作成するかどうかを確認します。 作成する特定の拡張を選択した後は、適切な <xref:System.ServiceModel.Dispatcher.ClientOperation> プロパティにその拡張を挿入します。挿入するには、実行時に <xref:System.ServiceModel.Dispatcher.ClientOperation> クラスにアクセスを提供するクライアント動作を実装します。 これで、その動作の内部で、<xref:System.ServiceModel.Dispatcher.ClientRuntime> プロパティを要件に合わせて変更できるようになります。  
   
  通常は、操作動作 (<xref:System.ServiceModel.Description.IOperationBehavior> を実装するオブジェクト) の実装で十分ですが、エンドポイント動作とコントラクト動作を使用して、特定の操作の <xref:System.ServiceModel.Description.OperationDescription> を検索し、これに動作を関連付けても同じことを実現できます。 詳細については、「[を構成して、ランタイムのビヘイビアーの使用を拡張する](../../../../docs/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md)です。  
   
  構成からカスタム動作を使用するには、カスタム動作構成セクション ハンドラーを使用して動作をインストールします。 また、カスタム属性を作成することによって動作をインストールすることもできます。  
   
- 間での傍受を示す例については、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]クライアントを参照してください[する方法: 検査パラメーターまたは変更](../../../../docs/framework/wcf/extending/how-to-inspect-or-modify-parameters.md)です。  
+ WCF クライアントの間での傍受を示す例については、次を参照してください。[する方法: 検査パラメーターまたは変更](../../../../docs/framework/wcf/extending/how-to-inspect-or-modify-parameters.md)です。  
   
 ## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Dispatcher.ClientRuntime>  

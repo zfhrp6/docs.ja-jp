@@ -1,37 +1,25 @@
 ---
-title: "セットアップ手順"
-ms.custom: 
+title: セットアップ手順
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - WCF Samples [WCF], setup
 - Windows Communication Foundation Samples [WCF], setup
 ms.assetid: 0be7d232-485b-4f6d-9ed0-b4243c907376
-caps.latest.revision: "19"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 14163ecca60e516f7e88d4e453e8f4addd960340
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: cbb23281d94bbd1edc66b0a3b9caafca62304487
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="set-up-instructions"></a>セットアップ手順
-このトピックでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスの実行に必要なサービスをセットアップする方法について説明します。  
+この一連のトピックでは、Windows Communication Foundation (WCF) サービスを実行するために必要なサービスを設定する方法について説明します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [Windows Communication Foundation サンプルの 1 回限りのセットアップの手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サンプルのセットアップ手順について説明します。  
+ WCF サンプルを設定するための手順の概要を示します。  
   
  [ファイアウォール手順](../../../../docs/framework/wcf/samples/firewall-instructions.md)  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスを機能させる Windows ファイアウォールをセットアップするために必要な手順について説明します。  
+ 機能する WCF サービスを許可する Windows ファイアウォールを設定するために必要な手順について説明します。  
   
  [インターネット インフォメーション サービスのホスティング手順](../../../../docs/framework/wcf/samples/internet-information-service-hosting-instructions.md)  
  IIS のセットアップに必要な手順について説明します。  
@@ -43,10 +31,10 @@ ms.lasthandoff: 01/19/2018
  仮想ディレクトリの作成に必要な手順について説明します。  
   
  [Windows Communication Foundation サンプルのビルド](../../../../docs/framework/wcf/samples/building-the-samples.md)  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サンプルをビルドする手順について説明します。  
+ WCF サンプルを構築する手順について説明します。  
   
  [Windows Communication Foundation サンプルの実行](../../../../docs/framework/wcf/samples/running-the-samples.md)  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サンプルを同じコンピュータで実行する手順、および複数のコンピュータで実行する手順について説明します。  
+ 同じコンピューター上およびマシン間では、WCF サンプルを実行する手順について説明します。  
   
  [ピア ツー ピア サービスの有効化](http://msdn.microsoft.com/library/e7a0fcf4-b0e5-4b26-a7e3-f0f37b60a1f9)  
  ピアツーピアのメッセージ サービス用の組み込みリゾルバである Windows ピアツーピア コンポーネントのインストール手順について説明します。  

@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - user-defined bindings [WCF]
 ms.assetid: c4960675-d701-4bc9-b400-36a752fdd08b
-ms.openlocfilehash: 82fe3baada73b89291311a891069c6ee3f19cf20
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: c9d37163770f2fd192a6fd2a03878b28f0237646
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="creating-user-defined-bindings"></a>ユーザー定義バインディングの作成
 システムから提供されないバインディングを作成する方法はいくつかあります。  
@@ -26,9 +26,9 @@ ms.lasthandoff: 05/04/2018
   
  プロトコル バインド要素 : この要素はメッセージで動作する上位処理ステップを表します。 このバインド要素で作成したチャネルとリスナーを使って、メッセージ内容の追加、削除、変更が可能です。 特定のバインディングには、それぞれが <xref:System.ServiceModel.Channels.BindingElement> を継承する任意の数のプロトコル バインド要素を含めることができます。 Windows Communication Foundation (WCF) など、いくつかのプロトコル バインド要素が含まれています、<xref:System.ServiceModel.Channels.ReliableSessionBindingElement>と<xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>です。  
   
- エンコーディング バインド要素 : この要素は、メッセージとネットワーク転送が可能なエンコーディングとの間の変換を表します。 一般的な [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] バインディングには、エンコーディング バインド要素が 1 つだけ含まれます。 エンコーディング バインド要素の例として、<xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement>、<xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement>、<xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement> などがあります。 エンコーディング バインド要素がバインディングに指定されていない場合、既定のエンコーディングが使用されます。 既定値は、トランスポートが HTTP の場合はテキスト、それ以外の場合はバイナリです。  
+ エンコーディング バインド要素 : この要素は、メッセージとネットワーク転送が可能なエンコーディングとの間の変換を表します。 通常の WCF バインディングには、1 つのエンコーディング バインド要素が含まれます。 エンコーディング バインド要素の例として、<xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement>、<xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement>、<xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement> などがあります。 エンコーディング バインド要素がバインディングに指定されていない場合、既定のエンコーディングが使用されます。 既定値は、トランスポートが HTTP の場合はテキスト、それ以外の場合はバイナリです。  
   
- トランスポート バインド要素 : この要素は、トランスポート プロトコルでのエンコーディング メッセージの送信を表します。 一般的な [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] バインディングには、<xref:System.ServiceModel.Channels.TransportBindingElement> から派生したトランスポート バインド要素が 1 つだけ含まれます。 トランスポート バインド要素の例として、<xref:System.ServiceModel.Channels.TcpTransportBindingElement>、<xref:System.ServiceModel.Channels.HttpTransportBindingElement>、<xref:System.ServiceModel.Channels.NamedPipeTransportBindingElement> などがあります。  
+ トランスポート バインド要素 : この要素は、トランスポート プロトコルでのエンコーディング メッセージの送信を表します。 通常の WCF バインドがから継承される、ただ 1 つのトランスポート バインド要素を含める<xref:System.ServiceModel.Channels.TransportBindingElement>です。 トランスポート バインド要素の例として、<xref:System.ServiceModel.Channels.TcpTransportBindingElement>、<xref:System.ServiceModel.Channels.HttpTransportBindingElement>、<xref:System.ServiceModel.Channels.NamedPipeTransportBindingElement> などがあります。  
   
  新しいバインディングを作成する場合、バインド要素の追加順序が重要になります。 バインド要素は必ず次の順序で追加します。  
   
@@ -39,12 +39,12 @@ ms.lasthandoff: 05/04/2018
 |セキュリティ|<xref:System.ServiceModel.Channels.SecurityBindingElement?displayProperty=nameWithType>|Ｘ|  
 |複合二重|<xref:System.ServiceModel.Channels.CompositeDuplexBindingElement?displayProperty=nameWithType>|Ｘ|  
 |エンコーディング|テキスト、バイナリ、MTOM、カスタム|○*|  
-|Transport|TCP、名前付きパイプ、HTTP、HTTPS、MSMQ、およびカスタム|はい|  
+|Transport|TCP、名前付きパイプ、HTTP、HTTPS、MSMQ、およびカスタム|[はい]|  
   
- *エンコーディングは各バインディングに必要であるため、エンコーディングが指定されていない場合、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は既定のエンコーディングを自動的に追加します。 既定値は、HTTP および HTTPS トランスポートの場合はテキスト/XML、それ以外の場合はバイナリです。  
+ * エンコーディングが必要なため、各バインドにエンコーディングが指定されていない場合、WCF は、既定のエンコーディングを追加します。 既定値は、HTTP および HTTPS トランスポートの場合はテキスト/XML、それ以外の場合はバイナリです。  
   
 ## <a name="creating-a-new-binding-element"></a>新しいバインド要素の作成  
- <xref:System.ServiceModel.Channels.BindingElement> が提供する [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] から派生した型のほかに、独自のバインド要素を作成できます。 これにより、他のシステムが提供する型を使ってスタックに組み込むことのできる独自の <xref:System.ServiceModel.Channels.BindingElement> を作成して、バインディングのスタックを作成する方法や、バインディングのスタックに追加するコンポーネントをカスタマイズできます。  
+ 派生した型だけでなく<xref:System.ServiceModel.Channels.BindingElement>は独自のバインディング要素を作成する、WCF によって提供されます。 これにより、他のシステムが提供する型を使ってスタックに組み込むことのできる独自の <xref:System.ServiceModel.Channels.BindingElement> を作成して、バインディングのスタックを作成する方法や、バインディングのスタックに追加するコンポーネントをカスタマイズできます。  
   
  たとえば、メッセージをデータベースに記録する機能を持つ `LoggingBindingElement` を実装する場合、それをチャネル スタックのトランスポート チャネルの上に配置する必要があります。 この場合、アプリケーションでは、次の例に示すように、`LoggingBindingElement` と共に `TcpTransportBindingElement` が組み込まれたカスタム バインディングが作成されます。  
   
@@ -64,7 +64,7 @@ Binding customBinding = new CustomBinding(
   
  ユーザー定義のバインディングは、少なくとも <xref:System.ServiceModel.Channels.Binding.CreateBindingElements%2A> メソッドと <xref:System.ServiceModel.Channels.Binding.Scheme%2A> プロパティを実装する必要があります。  
   
- <xref:System.ServiceModel.Channels.Binding.CreateBindingElements%2A> メソッドは、バインディングのバインド要素を格納している新しい <xref:System.ServiceModel.Channels.BindingElementCollection> を返します。 このコレクションは順序付けられており、始めにプロトコル バインド要素を格納し、次にエンコーディング バインド要素、その次にトランスポート バインド要素を格納する必要があります。 使用する場合、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]システム指定のバインディング要素では、順序の規則で指定されたバインド要素を従う必要があります[カスタム バインディング](../../../../docs/framework/wcf/extending/custom-bindings.md)です。 このコレクションから、ユーザー定義のバインディング クラス内で参照されるオブジェクトを参照すべきではありません。このため、バインディングの作成者は、`Clone()` を呼び出すたびに <xref:System.ServiceModel.Channels.BindingElementCollection> の <xref:System.ServiceModel.Channels.Binding.CreateBindingElements%2A> を返す必要があります。  
+ <xref:System.ServiceModel.Channels.Binding.CreateBindingElements%2A> メソッドは、バインディングのバインド要素を格納している新しい <xref:System.ServiceModel.Channels.BindingElementCollection> を返します。 このコレクションは順序付けられており、始めにプロトコル バインド要素を格納し、次にエンコーディング バインド要素、その次にトランスポート バインド要素を格納する必要があります。 WCF システム指定のバインディング要素を使用する場合は、順序の規則で指定されたバインド要素を行う必要があります[カスタム バインディング](../../../../docs/framework/wcf/extending/custom-bindings.md)です。 このコレクションから、ユーザー定義のバインディング クラス内で参照されるオブジェクトを参照すべきではありません。このため、バインディングの作成者は、`Clone()` を呼び出すたびに <xref:System.ServiceModel.Channels.BindingElementCollection> の <xref:System.ServiceModel.Channels.Binding.CreateBindingElements%2A> を返す必要があります。  
   
  <xref:System.ServiceModel.Channels.Binding.Scheme%2A> プロパティは、バインディングで使用するトランスポート プロトコルの URI スキームを表します。 たとえば、 *WSHttpBinding*と*NetTcpBinding* 、それぞれから"http"および"net.tcp"を返します<xref:System.ServiceModel.Channels.Binding.Scheme%2A>プロパティです。  
   

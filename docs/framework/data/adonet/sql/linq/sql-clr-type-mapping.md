@@ -1,24 +1,12 @@
 ---
-title: "SQL と CLR の型マッピング"
-ms.custom: 
+title: SQL と CLR の型マッピング
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 4ed76327-54a7-414b-82a9-7579bfcec04b
-caps.latest.revision: "4"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: cc6a3d38b8534c9727562cb3fb82f96fa60db7ec
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 5437529d9293951ad34abda435b538b4f404c600
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="sql-clr-type-mapping"></a>SQL と CLR の型マッピング
 LINQ to SQL では、リレーショナル データベースのデータ モデルが、任意のプログラミング言語で表されるオブジェクト モデルに対応付けられています。 アプリケーションが実行されると、LINQ to SQL は、オブジェクト モデルの統合言語クエリを SQL に変換し、それをデータベースに送信して実行します。 データベースから結果が返されると、LINQ to SQL はその結果をプログラミング言語で操作できるオブジェクトに変換し直します。  
@@ -206,7 +194,7 @@ LINQ to SQL では、リレーショナル データベースのデータ モデ
 >  SQL Server の `DATETIME2` 型、`DATETIMEOFFSET` 型、`DATE` 型、および `TIME` 型は、Microsoft SQL Server 2008 以降で使用できます。 Microsoft .NET Framework version 3.5 SP1 以降の LINQ to SQL では、これらの新しい型へのマッピングがサポートされています。  
   
 ### <a name="systemdatetime"></a>System.Datetime  
- CLR の <xref:System.DateTime?displayProperty=nameWithType> 型の範囲と有効桁数の値は、`DATETIME` メソッドの既定の型マッピングである SQL Server の <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> 型の範囲と有効桁数より大きな値です。 `DATETIME` の範囲外の日付に関連する例外を回避するには、Microsoft SQL Server 2008 以降で利用できる `DATETIME2` を使用してください。 `DATETIME2`範囲と CLR の有効桁数に照合できる<xref:System.DateTime?displayProperty=nameWithType>です。  
+ CLR の <xref:System.DateTime?displayProperty=nameWithType> 型の範囲と有効桁数の値は、`DATETIME` メソッドの既定の型マッピングである SQL Server の <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> 型の範囲と有効桁数より大きな値です。 `DATETIME` の範囲外の日付に関連する例外を回避するには、Microsoft SQL Server 2008 以降で利用できる `DATETIME2` を使用してください。 `DATETIME2` 範囲と CLR の有効桁数に照合できる<xref:System.DateTime?displayProperty=nameWithType>です。  
   
  SQL Server の日付には、CLR で十分にサポートされている機能である <xref:System.TimeZone> の概念がありません。 <xref:System.TimeZone> の値は、元の <xref:System.TimeZone> の情報にかかわらず、<xref:System.DateTimeKind> 変換なしでそのまま保存されます。 <xref:System.DateTime> 値がデータベースから取得される場合、その値は、<xref:System.DateTime> が <xref:System.DateTimeKind> の状態で、そのまま <xref:System.DateTimeKind.Unspecified> に読み込まれます。 詳細についてはサポートされている<xref:System.DateTime?displayProperty=nameWithType>メソッドを参照してください[System.DateTime メソッド](../../../../../../docs/framework/data/adonet/sql/linq/system-datetime-methods.md)です。  
   
@@ -224,7 +212,7 @@ LINQ to SQL では、リレーショナル データベースのデータ モデ
 |`BINARY(50)`|<xref:System.Data.Linq.Binary?displayProperty=nameWithType>|  
 |`VARBINARY(50)`|<xref:System.Data.Linq.Binary?displayProperty=nameWithType>|  
 |`VARBINARY(MAX)`|<xref:System.Data.Linq.Binary?displayProperty=nameWithType>|  
-|`VARBINARY(MAX)``FILESTREAM`属性|<xref:System.Data.Linq.Binary?displayProperty=nameWithType>|  
+|`VARBINARY(MAX)` `FILESTREAM`属性|<xref:System.Data.Linq.Binary?displayProperty=nameWithType>|  
 |`IMAGE`|<xref:System.Data.Linq.Binary?displayProperty=nameWithType>|  
 |`TIMESTAMP`|<xref:System.Data.Linq.Binary?displayProperty=nameWithType>|  
   
@@ -265,7 +253,7 @@ LINQ to SQL では、リレーショナル データベースのデータ モデ
   
  LINQ to SQL では、ここに示したその他の型に対する上記以外の型マッピングはサポートされません。  詳細については、次を参照してください。、[型マッピングの実行時動作の関係](#BehaviorMatrix)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [属性ベースの対応付け](../../../../../../docs/framework/data/adonet/sql/linq/attribute-based-mapping.md)  
  [外部マップ](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md)  
  [データ型と関数](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md)  

@@ -21,7 +21,7 @@ ms.lasthandoff: 05/04/2018
   
  新しいサイズを決定するために使用するセルを制限する多くのオプションがあります。 たとえば、現在表示されている行の値のみに基づいて、その列の幅のサイズを自動的に変更するコントロールを構成できます。 これにより、大量の行を処理するときの非効率性を回避できますが、この場合では、 <xref:System.Windows.Forms.DataGridView.AutoResizeColumns%2A> などのサイズ調整のメソッドを使用して、選択時にサイズを調整することをお勧めします。  
   
- 自動サイズ変更の詳細については、「 [Sizing Options in the Windows Forms DataGridView Control](../../../../docs/framework/winforms/controls/sizing-options-in-the-windows-forms-datagridview-control.md)」を参照してください。  
+ 自動サイズ変更の詳細については、「 [Windows フォーム DataGridView コントロールのサイズ変更オプション](../../../../docs/framework/winforms/controls/sizing-options-in-the-windows-forms-datagridview-control.md)」を参照してください。  
   
  次のコード例は、自動サイズ変更に使用できるオプションを示します。  
   

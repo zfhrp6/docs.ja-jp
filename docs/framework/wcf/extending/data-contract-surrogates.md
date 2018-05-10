@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - data contracts [WCF], surrogates
 ms.assetid: 8c31134c-46c5-4ed7-94af-bab0ac0dfce5
-ms.openlocfilehash: 455900b1ac5d10c02e6b1341e737eb6874c874f4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: b06cb45d6075c8de1da973a11e2edec6792df304
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="data-contract-surrogates"></a>データ コントラクト サロゲート
 データ コントラクト*サロゲート*データ コントラクト モデルに基づいて構築されている高度な機能です。 この機能は、型をシリアル化または逆シリアル化する方法や、型をメタデータに投影する方法をユーザーが変更する場合に、型のカスタマイズと置換に使用することを目的としています。 サロゲートを使用できるのは、型のデータ コントラクトが指定されていない場合、フィールドやプロパティが <xref:System.Runtime.Serialization.DataMemberAttribute> 属性でマークされていない場合、またはユーザーがスキーマのバリエーションを動的に作成することを希望している場合などです。  
@@ -133,7 +133,7 @@ ms.lasthandoff: 05/04/2018
  このメソッドは、スキーマのエクスポートとインポートの開始時に呼び出されます。 このメソッドは、エクスポートまたはインポートするスキーマで使用されるカスタム データ型を返します。 メソッドには、型のコレクションである <xref:System.Collections.ObjectModel.Collection%601> (`customDataTypes` パラメーター) が渡されます。 このメソッドでは、既知の型をこのコレクションに追加する必要があります。 既知のカスタム データ型は、<xref:System.Runtime.Serialization.DataContractSerializer> を使用したカスタム データのシリアル化と逆シリアル化を可能にするために必要となります。 詳細については、次を参照してください。[データ コントラクトの既知の型](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)です。  
   
 ## <a name="implementing-a-surrogate"></a>サロゲートの実装  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] でデータ コントラクト サロゲートを使用するには、いくつかの特別な手順に従う必要があります。  
+ WCF でのデータ コントラクト サロゲートを使用するのには、いくつかの特別な手順を行う必要があります。  
   
 ### <a name="to-use-a-surrogate-for-serialization-and-deserialization"></a>シリアル化と逆シリアル化にサロゲートを使用するには  
  サロゲートを使用してデータのシリアル化と逆シリアル化を実行するには、<xref:System.Runtime.Serialization.DataContractSerializer> を使用します。 <xref:System.Runtime.Serialization.DataContractSerializer> は、<xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior> によって作成されます。 サロゲートも指定する必要があります。  
@@ -174,7 +174,7 @@ ms.lasthandoff: 05/04/2018
      [!code-csharp[C_IDataContractSurrogate#9](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_idatacontractsurrogate/cs/source.cs#9)]  
   
 ### <a name="to-use-a-surrogate-for-metadata-export"></a>メタデータのエクスポートにサロゲートを使用するには  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] からサービスのメタデータをエクスポートする場合、既定では WSDL と XSD スキーマを生成する必要があります。 データ コントラクト型の XSD スキーマを生成するコンポーネント (<xref:System.Runtime.Serialization.XsdDataContractExporter>) に、サロゲートを追加する必要があります。 これを行うには、<xref:System.ServiceModel.Description.IWsdlExportExtension> を実装する動作を使用して <xref:System.ServiceModel.Description.WsdlExporter> を変更するか、メタデータをエクスポートする際に使用する <xref:System.ServiceModel.Description.WsdlExporter> を直接変更します。  
+ 既定では、WCF のサービスのメタデータをエクスポートするときに、WSDL と XSD スキーマを生成する必要があります。 データ コントラクト型の XSD スキーマを生成するコンポーネント (<xref:System.Runtime.Serialization.XsdDataContractExporter>) に、サロゲートを追加する必要があります。 これを行うには、<xref:System.ServiceModel.Description.IWsdlExportExtension> を実装する動作を使用して <xref:System.ServiceModel.Description.WsdlExporter> を変更するか、メタデータをエクスポートする際に使用する <xref:System.ServiceModel.Description.WsdlExporter> を直接変更します。  
   
 ##### <a name="to-use-a-surrogate-for-metadata-export"></a>メタデータのエクスポートにサロゲートを使用するには  
   

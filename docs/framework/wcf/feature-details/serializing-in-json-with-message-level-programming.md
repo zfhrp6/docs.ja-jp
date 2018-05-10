@@ -1,24 +1,12 @@
 ---
-title: "メッセージ レベルのプログラミングによる JSON 形式でのシリアル化"
-ms.custom: 
+title: メッセージ レベルのプログラミングによる JSON 形式でのシリアル化
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 5f940ba2-57ee-4c49-a779-957c5e7e71fa
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: bfa8952c54f29d88cb4975c1924b9c3e94c1c226
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a2568c30d34e39aaf1708a9fb3e186f86b17f5b7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="serializing-in-json-with-message-level-programming"></a>メッセージ レベルのプログラミングによる JSON 形式でのシリアル化
 WCF は、JSON 形式でのデータのシリアル化をサポートします。 このトピックでは、<xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> を使用して型をシリアル化することを WCF に命令する方法について説明します。  
@@ -42,7 +30,7 @@ WCF は、JSON 形式でのデータのシリアル化をサポートします�
                     new WebBodyFormatMessageProperty(WebContentFormat.Json)); // Use JSON format  
 ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [AJAX の統合と JSON のサポート](../../../../docs/framework/wcf/feature-details/ajax-integration-and-json-support.md)  
  [スタンドアロン JSON のシリアル化](../../../../docs/framework/wcf/feature-details/stand-alone-json-serialization.md)  
  [JSON シリアル化](../../../../docs/framework/wcf/samples/json-serialization.md)

@@ -2,30 +2,30 @@
 title: Services2
 ms.date: 03/30/2017
 ms.assetid: 462a2218-f8c6-4fb7-95bc-64765459c429
-ms.openlocfilehash: ef5de3fc51e43a88adb021b66732492f03d9d912
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 2b6d8322caa32246d6171af50c7773342ac11de2
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="services"></a>サービス
 このセクションには、Windows Communication Foundation (WCF) サービスを示すサンプルが含まれています。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [ホスティング](../../../../docs/framework/wcf/feature-details/hosting.md)  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスをホストする方法を示します。  
+ WCF サービスのホスティングについて説明します。  
   
  [サービス相互運用性](../../../../docs/framework/wcf/samples/service-interoperability.md)  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] と他のサービス技術間の対話を示します。  
+ WCF と他のサービス技術間の相互作用をについて説明します。  
   
  [ビヘイビアー](../../../../docs/framework/wcf/samples/behaviors.md)  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスの動作を示します。  
+ WCF サービスの動作を示します。  
   
  [サービス セキュリティ](../../../../docs/framework/wcf/samples/service-security.md)  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービス セキュリティを示します。  
+ WCF サービスのセキュリティを示します。  
   
  [WCF サービスの簡略化された構成](../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md)  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を使用して、一般的なサービスおよびクライアントを実装して構成する方法を示します。  
+ 実装して、一般的なサービスと WCF を使用してクライアントを構成する方法を示します。  
   
  [標準エンドポイントの使用](../../../../docs/framework/wcf/samples/usage-of-standard-endpoints.md)  
  サービスの構成ファイルでの標準エンドポイントの使用方法を示します。  
@@ -55,7 +55,7 @@ ms.lasthandoff: 05/04/2018
  単一 `ListenUri` で複数のエンドポイントをホストするサービスを示します。  
   
  [OperationContextScope](../../../../docs/framework/wcf/samples/operationcontextscope.md)  
- ヘッダーを使用して [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 呼び出しに関する追加情報を送信する方法を示します。  
+ ヘッダーを使用して WCF 呼び出し上余分な情報を送信する方法を示します。  
   
  [サービスの説明](../../../../docs/framework/wcf/samples/service-description.md)  
  サービスが実行時にそのサービスの説明情報を取得する方法を示します。  

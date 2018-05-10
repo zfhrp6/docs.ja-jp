@@ -5,14 +5,14 @@ helpviewer_keywords:
 - WCF, tools
 - Windows Communication Foundation, tools
 ms.assetid: 399a47b4-bfea-434b-8e83-f76b5063d79d
-ms.openlocfilehash: 7d42ab9711a8d0b46ec3d35eec979e276a8c74a7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 27a18d436d4ee63cb6e65ed5981b65d55aadf036
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="windows-communication-foundation-tools"></a>Windows Communication Foundation ツール
-Microsoft Windows Communication Foundation (WCF) ツールが作成、展開、および管理を容易にできるようにするように設計[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]アプリケーションです。 このセクションには、これらのツールに関する詳細な情報があります。 ツールはサポートされていません。  
+Microsoft Windows Communication Foundation (WCF) ツールは、作成、展開、および WCF アプリケーションの管理を容易にできるように設計されています。 このセクションには、これらのツールに関する詳細な情報があります。 ツールはサポートされていません。  
   
  すべてのツールは、コマンド ラインから実行できます。  
   
@@ -29,7 +29,7 @@ Microsoft Windows Communication Foundation (WCF) ツールが作成、展開、�
 |[WS-AtomicTransaction 構成ユーティリティ (wsatConfig.exe)](../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md)|コマンド ライン ツールを使用して、基本的な WS-AtomicTransaction サポート設定を構成します。|  
 |[WS-AtomicTransaction 構成 MMC スナップイン](../../../docs/framework/wcf/ws-atomictransaction-configuration-mmc-snap-in.md)|MMC スナップインを使用して、基本的な WS-AtomicTransaction サポート設定を構成します。|  
 |[ワークフロー サービス登録ツール (WFServicesReg.exe)](../../../docs/framework/wcf/workflow-service-registration-tool-wfservicesreg-exe.md)|Windows ワークフロー サービスを登録します。|  
-|[WCF サービス ホスト (WcfSvcHost.exe)](../../../docs/framework/wcf/wcf-service-host-wcfsvchost-exe.md)|ライブラリ (*.dll) ファイルに含まれている [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスをホストします。|  
+|[WCF サービス ホスト (WcfSvcHost.exe)](../../../docs/framework/wcf/wcf-service-host-wcfsvchost-exe.md)|ライブラリ (*.dll) ファイルに含まれる WCF サービスをホスト|  
 |[WCF のテスト用クライアント (WcfTestClient.exe)](../../../docs/framework/wcf/wcf-test-client-wcftestclient-exe.md)|任意の型のパラメーターを入力し、その入力をサービスに送信して、サービスから返される応答を表示するために使用される GUI ツールです。|  
 |[コントラクト優先ツール](../../../docs/framework/wcf/contract-first-tool.md)|XSD データ コントラクトからコード クラスを作成する Visual Studio のビルド タスク。|  
   

@@ -1,14 +1,6 @@
 ---
-title: "IDebugAutoAttach インターフェイス"
-ms.custom: 
+title: IDebugAutoAttach インターフェイス
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - IDebugAutoAttach
 api_location:
@@ -22,17 +14,13 @@ helpviewer_keywords:
 ms.assetid: d4cc51ac-c1d6-41b9-ab8e-ef0073f13241
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 45fdabcbd70d58d1ebb279665346ffd41ad9f204
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9a88f8b2ad1ac59cf7044ca5d7ace5a468510b6f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="idebugautoattach-interface"></a>IDebugAutoAttach インターフェイス
 サーバー起動デバッガーの自動アタッチ用インターフェイスを定義します。  
@@ -43,8 +31,8 @@ ms.lasthandoff: 12/22/2017
 |------------|-----------------|  
 |[AutoAttach メソッド](../../../../docs/framework/unmanaged-api/diagnostics/idebugautoattach-autoattach-method.md)|サーバー起動デバッガーの自動実行をアタッチします。|  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** DbgAutoAttach.idl  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [シンボル ストア診断インターフェイス](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)

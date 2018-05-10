@@ -2,7 +2,7 @@
 
 |   |   |
 |---|---|
-|説明|.NET 4.5 では、WPF テキスト ボックスの既定の元に戻す上限は 100 です (.NET 4.0 では無制限でした)。|
+|説明|.NET Framework 4.5 では、WPF テキスト ボックスの既定の元に戻す上限は 100 です (.NET Framework 4.0 では無制限でした)。|
 |提案される解決策|元に戻す上限が 100 では低すぎる場合、<xref:System.Windows.Controls.Primitives.TextBoxBase.UndoLimit> を使用して上限を明示的に設定できます。|
 |スコープ|エッジ|
 |Version|4.5|

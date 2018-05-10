@@ -5,11 +5,11 @@ helpviewer_keywords:
 - Windows Communication Foundation [WCF]
 - WCF [WCF]
 ms.assetid: 149348a6-bf82-4ccc-9604-fa7cc88c0749
-ms.openlocfilehash: f3b8abb2a8e0079dc18624c5ac0408a2738f06b6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 56054216dc6e90e789c230acb3d56565a9ba3d69
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="developing-service-oriented-applications-with-wcf"></a>WCF でのサービス指向アプリケーションの開発
 このセクションでは、サービス指向アプリケーションを構築するための統一プログラミング モデルを提供する Windows Communication Foundation (WCF) について説明します。 これを使用して開発者は、プラットフォーム間を統合し、既存のコンポーネントと相互運用する、セキュリティで保護された信頼性の高いトランザクション型のソリューションを構築できます。
@@ -34,7 +34,7 @@ ms.lasthandoff: 05/04/2018
  Windows Communication Foundation アプリケーションを作成するための基礎について説明します。  
   
  [WCF 機能の詳細](../../../docs/framework/wcf/feature-details/index.md)  
- 必要な [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] 機能を選択するためのトピックを示します。  
+ 使用する必要がある WCF の機能や機能を選択するのに便利なトピックを示します。  
   
  [WCF の拡張](../../../docs/framework/wcf/extending/index.md)  
  WCF ランタイム コンポーネントを変更および拡張する方法について説明します。  
@@ -67,7 +67,7 @@ ms.lasthandoff: 05/04/2018
  Windows Communication Foundation のさまざまな特性について説明するサンプルがあります。  
   
  [Windows Communication Foundation 用語集](../../../docs/framework/wcf/glossary.md)  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] に固有の用語の一覧を示します。  
+ WCF に固有の用語の一覧を表示します。  
   
  [一般的なリファレンス](../../../docs/framework/wcf/general-reference.md)  
  このセクションでは、Windows Communication Foundation のクライアントおよびサービスの設定に使用される要素について説明します。  

@@ -8,11 +8,11 @@ helpviewer_keywords:
 - WCF, security
 - ProtectionLevel property
 ms.assetid: 0c034608-a1ac-4007-8287-b1382eaa8bf2
-ms.openlocfilehash: 0f17d6e787a48edd562559f52ac015edf7bc702c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 157e660a8b4d3866b9ab1994c409f82f16ac8359
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="understanding-protection-level"></a>保護レベルの理解
 `ProtectionLevel` プロパティは、<xref:System.ServiceModel.ServiceContractAttribute> クラス、<xref:System.ServiceModel.OperationContractAttribute> クラスなど、多くのクラスで使用されています。 このプロパティは、メッセージの一部または全体を保護する方法を制御します。 このトピックでは、Windows Communication Foundation (WCF) の機能とそのしくみについて説明します。  
@@ -39,7 +39,7 @@ ms.lasthandoff: 05/04/2018
   
 -   `ProtectionLevel` 、開発者を設定する方法、*最低レベル*バインドする必要がありますに準拠しています。 サービスの展開時に、構成内で指定されている実際のバインドは、最低レベルをサポートしている場合もあれば、サポートしていない場合もあります。 たとえば、<xref:System.ServiceModel.BasicHttpBinding> クラスは既定の設定ではセキュリティを提供しません (提供するように設定することもできます)。 そのため、`None` 以外に設定したコントラクトとこのバインドを使用すると、例外がスローされます。  
   
--   サービスで、すべてのメッセージに対して最低限の `ProtectionLevel` を `Sign` に設定することが求められる場合、([!INCLUDE[indigo2](../../../includes/indigo2-md.md)] 以外の手法で作成された可能性のある) クライアントでは、すべてのメッセージを暗号化し、署名することができます (要求された最低レベルを満たします)。 この場合、クライアントが最低レベル以上の処理を実行するため、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] は例外をスローしません。 ただし、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] アプリケーション (サービスまたはクライアント) では、可能な場合でもメッセージ部分を過剰に保護することはなく、最低レベルが順守されることに注意してください。 また、セキュリティ モードとして `Transport` を使用すると、トランスポートをより詳細なレベルで保護できないため、メッセージ ストリームを過剰に保護する可能性があることに注意してください。  
+-   サービスが必要がある場合、最小`ProtectionLevel`すべてのメッセージは`Sign`、(おそらくは WCF 以外のテクノロジで作成される) クライアントが暗号化し、署名のすべてのメッセージ (これは必要な最低レベル以上)。 この場合、クライアントが最小値よりも多く行われるために、WCF は例外をスローしません。 ただし、こと WCF アプリケーション (サービスまたはクライアント) がない過剰セキュリティで保護メッセージ部分可能な場合は、最低レベルに準拠することに注意してください。 また、セキュリティ モードとして `Transport` を使用すると、トランスポートをより詳細なレベルで保護できないため、メッセージ ストリームを過剰に保護する可能性があることに注意してください。  
   
 -   `ProtectionLevel` を明示的に `Sign` と `EncryptAndSign` のいずれかに設定する場合、セキュリティを有効にしたバインドを使用する必要があります。使用しない場合は、例外がスローされます。  
   

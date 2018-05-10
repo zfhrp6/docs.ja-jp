@@ -7,11 +7,11 @@ helpviewer_keywords:
 - deploying [WCF Data Services
 - developing applications [WCF Data Services]
 ms.assetid: 6557c0e3-5aea-4f6e-bc14-77ad317a168b
-ms.openlocfilehash: e02b7317eef8e7124bd5ba9ceef201cddc9bbea1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: ca0f78239e6e259ec5bd75e9f93af5c3a4b7adf1
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="developing-and-deploying-wcf-data-services"></a>WCF Data Services の開発と配置
 このトピックでは、 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]の開発と配置について説明します。 複数の基本情報については[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]を参照してください[作業の開始](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md)と[概要](../../../../docs/framework/data/wcf/wcf-data-services-overview.md)です。  
@@ -75,7 +75,7 @@ ms.lasthandoff: 05/04/2018
   
 -   データ サービスをデバッグするときは、HTTP 検査プログラムを使用すると、要求メッセージおよび応答メッセージの内容を検査できるので非常に便利です。 生のパケットを表示できるネットワーク パケット アナライザーを使用すると、データ サービスの HTTP 要求および HTTP 応答を検査できます。  
   
--   データ サービスのデバッグ時は、通常の操作時以上に、データ サービスの詳細なエラー情報が必要になることがあります。 データ サービスから詳細なエラー情報を取得するには、 <xref:System.Data.Services.DataServiceConfiguration.UseVerboseErrors%2A> の <xref:System.Data.Services.DataServiceConfiguration> プロパティを `true` に設定し、データ サービス クラスの <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A> 属性の <xref:System.ServiceModel.Description.ServiceDebugBehavior> プロパティを `true`に設定します。 詳細については、投稿をご覧ください。 [WCF Data Services のデバッグ](http://go.microsoft.com/fwlink/?LinkId=201868)です。 また、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] でトレースを有効にして、HTTP メッセージング レイヤーで発生した例外を表示することもできます。 詳細については、「 [Configuring Tracing](../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)」を参照してください。  
+-   データ サービスのデバッグ時は、通常の操作時以上に、データ サービスの詳細なエラー情報が必要になることがあります。 データ サービスから詳細なエラー情報を取得するには、 <xref:System.Data.Services.DataServiceConfiguration.UseVerboseErrors%2A> の <xref:System.Data.Services.DataServiceConfiguration> プロパティを `true` に設定し、データ サービス クラスの <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A> 属性の <xref:System.ServiceModel.Description.ServiceDebugBehavior> プロパティを `true`に設定します。 詳細については、投稿をご覧ください。 [WCF Data Services のデバッグ](http://go.microsoft.com/fwlink/?LinkId=201868)です。 また、HTTP メッセージング レイヤーで発生した例外を表示する WCF でのトレースを有効にすることができます。 詳細については、「 [Configuring Tracing](../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)」を参照してください。  
   
 -   データ サービスは通常として開発、[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)]アプリケーション プロジェクトができますもサービスを作成するデータとして、 [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] Visual Studio での Web サイト プロジェクト。 2 種類のプロジェクト間の相違点については、次を参照してください。 [NIB: Web アプリケーション プロジェクトと Visual Studio での Web サイト プロジェクト](http://msdn.microsoft.com/library/2861815e-f5a2-4378-a2f8-b8a86dc012f5)です。  
   
@@ -116,7 +116,7 @@ ms.lasthandoff: 05/04/2018
   
 -   [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] プロバイダーを使用して SQL Server データベースにアクセスするデータ サービスを配置する場合、データ サービスの配置でのデータ構造、データ、またはその両方の反映も必要になることがあります。 Visual Studio がこれを行うレプリケーション先データベースのスクリプト (.sql ファイル) を自動的に作成し、これらのスクリプトは、の Web 配置パッケージに含めることができます、[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)]アプリケーションです。 詳細については、次を参照してください。 [NIB: 方法: Web アプリケーション プロジェクトでのデータベースを配置](http://msdn.microsoft.com/library/683b33f1-8a3d-45cf-af6e-61ab50fc518b)です。 [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] Web サイト、こうことを使用して、 **Database Publishing Wizard** Visual Studio でします。 詳細については、「 [Deploying a Database by Using the Database Publishing Wizard](http://msdn.microsoft.com/library/1e3682e7-8b57-4da6-a393-af9640ccf8b7)」を参照してください。  
   
--   [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] には基本的な [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の実装が含まれているので、Windows Server AppFabric を使用して、Windows Server で実行されている IIS に配置されたデータ サービスを監視できます。 Windows Server AppFabric を使用してデータ サービスを監視する方法の詳細については、投稿をご覧ください。 [Windows Server AppFabric で WCF データ サービスを追跡](http://go.microsoft.com/fwlink/?LinkID=202005)です。  
+-   [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]基本的な WCF 実装を含む Windows Server で実行されている IIS に配置されたデータ サービスを監視する Windows Server AppFabric を使用することができます。 Windows Server AppFabric を使用してデータ サービスを監視する方法の詳細については、投稿をご覧ください。 [Windows Server AppFabric で WCF データ サービスを追跡](http://go.microsoft.com/fwlink/?LinkID=202005)です。  
   
 ## <a name="see-also"></a>関連項目  
  [データ サービスのホスティング](../../../../docs/framework/data/wcf/hosting-the-data-service-wcf-data-services.md)  

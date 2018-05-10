@@ -5,14 +5,14 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 05b0549b-882d-4660-b6f0-5678543e5475
-ms.openlocfilehash: 83b796c76887c6ba30ddb3c985ee43ab8dce2ec9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 0bacf874e09aca82b2f2685a146612cdef0673db
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="how-to-create-a-custom-authorization-policy"></a>方法 : カスタム承認ポリシーを作成する
-Id モデル インフラストラクチャ Windows Communication Foundation (WCF) では、クレーム ベースの承認モデルをサポートします。 クレームは、トークンから抽出され、状況に応じてカスタム承認ポリシーによって処理されてから、承認決定を行う際に確認できる <xref:System.IdentityModel.Policy.AuthorizationContext> に格納されます。 カスタム ポリシーを使用して、入力トークンからのクレームを、アプリケーションが要求するクレームに変換することができます。 この方法では、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] がサポートするトークンの種類から抽出される個々のクレームの詳細から、アプリケーション レイヤーを分離できます。 このトピックでは、カスタム承認ポリシーの実装方法と、サービスで使用するポリシーのコレクションにカスタム承認ポリシーを追加する方法について説明します。  
+Id モデル インフラストラクチャ Windows Communication Foundation (WCF) では、クレーム ベースの承認モデルをサポートします。 クレームは、トークンから抽出され、状況に応じてカスタム承認ポリシーによって処理されてから、承認決定を行う際に確認できる <xref:System.IdentityModel.Policy.AuthorizationContext> に格納されます。 カスタム ポリシーを使用して、入力トークンからのクレームを、アプリケーションが要求するクレームに変換することができます。 この方法では、WCF でサポートされる、さまざまなトークンの種類から提供されるさまざまなクレームの詳細についてはからアプリケーション層を隔離することができます。 このトピックでは、カスタム承認ポリシーの実装方法と、サービスで使用するポリシーのコレクションにカスタム承認ポリシーを追加する方法について説明します。  
   
 ### <a name="to-implement-a-custom-authorization-policy"></a>カスタム承認ポリシーを実装するには  
   

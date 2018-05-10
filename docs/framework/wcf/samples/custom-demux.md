@@ -2,11 +2,11 @@
 title: カスタム Demux
 ms.date: 03/30/2017
 ms.assetid: fc54065c-518e-4146-b24a-0fe00038bfa7
-ms.openlocfilehash: 76f8d60fdcc1fcba9942a78138e83104dfcd972b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: e88672f152b87740feef1345b3eac213916a1527
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="custom-demux"></a>カスタム Demux
 このサンプルでは、MSMQ メッセージ ヘッダーをマップする方法のさまざまなサービス操作に Windows Communication Foundation (WCF) サービスを使用するように<xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding>で示したように 1 つのサービス操作の使用に限定されない、 [メッセージ キューに Windows Communication Foundation](../../../../docs/framework/wcf/samples/message-queuing-to-wcf.md)と[メッセージ キューへの Windows Communication Foundation](../../../../docs/framework/wcf/samples/wcf-to-message-queuing.md)サンプルです。  
@@ -108,7 +108,7 @@ public static void Main()
  MSMQ キュー名は、構成ファイルの appSettings セクションで指定されます。  
   
 > [!NOTE]
->  キュー名では、ドット (.) を使用してローカル コンピューターを表し、バックスラッシュを使用してパスを区切ります。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] エンドポイント アドレスでは msmq.formatname スキームが指定され、ローカル コンピューターを表す localhost が使用されます。 このスキームの後には、MSMQ 形式名のアドレス指定ガイドラインに沿って正しく書式設定されたキューのアドレスが続きます。  
+>  キュー名では、ドット (.) を使用してローカル コンピューターを表し、バックスラッシュを使用してパスを区切ります。 WCF エンドポイントのアドレスは、msmq.formatname スキームを指定し、localhost を使用して、ローカル コンピューターのします。 このスキームの後には、MSMQ 形式名のアドレス指定ガイドラインに沿って正しく書式設定されたキューのアドレスが続きます。  
   
 ```xml  
 <appSettings>  

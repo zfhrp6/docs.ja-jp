@@ -2,14 +2,14 @@
 title: WCF サービス付き ASMX クライアント
 ms.date: 03/30/2017
 ms.assetid: 3ea381ee-ac7d-4d62-8c6c-12dc3650879f
-ms.openlocfilehash: 5a0262361eac35ac45c3861deee13133011754ad
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 93a881e486d82183fc42c524f3d83527c649516d
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="asmx-client-with-a-wcf-service"></a>WCF サービス付き ASMX クライアント
-このサンプルは、Windows Communication Foundation (WCF) を使用してサービスを作成し、以外からサービスにアクセスする方法を示します。[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ASMX クライアントなどのクライアントです。  
+このサンプルでは、Windows Communication Foundation (WCF) を使用してサービスを作成し、ASMX クライアントなど、WCF 以外のクライアントからサービスにアクセスする方法を示します。  
   
 > [!NOTE]
 >  このサンプルのセットアップ手順とビルド手順については、このトピックの最後を参照してください。  
@@ -33,7 +33,7 @@ public interface ICalculator
 }  
 ```  
   
- <xref:System.Runtime.Serialization.DataContractSerializer> と <xref:System.Xml.Serialization.XmlSerializer> は、CLR 型を XML 表現にマップします。 <xref:System.Runtime.Serialization.DataContractSerializer> は一部の XML 表現を、XmlSerializer とは異なる方法で解釈します。 XmlSerializer を使用する場合、Wsdl.exe などの [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 以外のプロキシ ジェネレータでは、より使いやすいインターフェイスが生成されます。 <xref:System.ServiceModel.XmlSerializerFormatAttribute>に適用される、`ICalculator`インターフェイスを XML に CLR 型のマッピングに対して XmlSerializer を使用することを確認します。 このサービス実装は、計算を行い、結果を返します。  
+ <xref:System.Runtime.Serialization.DataContractSerializer> と <xref:System.Xml.Serialization.XmlSerializer> は、CLR 型を XML 表現にマップします。 <xref:System.Runtime.Serialization.DataContractSerializer> は一部の XML 表現を、XmlSerializer とは異なる方法で解釈します。 Wsdl.exe などの非 WCF プロキシ ジェネレーターは、XmlSerializer を使用しているときより使いやすいインターフェイスを生成します。 <xref:System.ServiceModel.XmlSerializerFormatAttribute>に適用される、`ICalculator`インターフェイスを XML に CLR 型のマッピングに対して XmlSerializer を使用することを確認します。 このサービス実装は、計算を行い、結果を返します。  
   
  サービスは、そのサービスとの通信に使用する単一エンドポイントを公開します。エンドポイントは構成ファイル (Web.config) で定義します。 エンドポイントは、アドレス、バインディング、およびコントラクトがそれぞれ 1 つずつで構成されます。 サービスは、インターネット インフォメーション サービス (IIS) ホストから提供されるベース アドレスで、エンドポイントを公開します。 `binding` 属性は basicHttpBinding に設定されます。これにより、WS-I Basic Profile 1.1 に準拠した SOAP 1.1 を使用する HTTP 通信を実現します。次のサンプル構成を参照してください。  
   
@@ -49,7 +49,7 @@ public interface ICalculator
 </services>  
 ```  
   
- ASMX クライアントは [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスとの通信に、Web サービス記述言語 (WSDL) ユーティリティ (Wsdl.exe) によって生成された、型指定のあるプロキシを使用します。 型指定のあるプロキシは、ファイル generatedClient.cs に含まれています。 WSDL ユーティリティは、指定されたサービスが使用するメタデータを取得し、クライアントが通信に使用する型指定のあるプロキシを生成します。 既定では、フレームワークはメタデータを公開しません。 プロキシを生成するために必要なメタデータを公開するを追加する必要があります、 [ \<serviceMetadata >](../../../../docs/framework/configure-apps/file-schema/wcf/servicemetadata.md)設定とその`httpGetEnabled`属性を`True`次の構成で示すようにします。  
+ ASMX クライアントは、Web サービス記述言語 (WSDL) ユーティリティ (Wsdl.exe) によって生成される型指定されたプロキシを使用して WCF サービスと通信します。 型指定のあるプロキシは、ファイル generatedClient.cs に含まれています。 WSDL ユーティリティは、指定されたサービスが使用するメタデータを取得し、クライアントが通信に使用する型指定のあるプロキシを生成します。 既定では、フレームワークはメタデータを公開しません。 プロキシを生成するために必要なメタデータを公開するを追加する必要があります、 [ \<serviceMetadata >](../../../../docs/framework/configure-apps/file-schema/wcf/servicemetadata.md)設定とその`httpGetEnabled`属性を`True`次の構成で示すようにします。  
   
 ```xml  
 <behaviors>  

@@ -1,19 +1,19 @@
 ---
-title: "C# および Visual Studio Code の使用を開始する - C# ガイド"
-description: "Visual Studio Code を使用した、C# で初めての .NET Core アプリケーションを作成してデバッグする方法について説明します。"
+title: C# および Visual Studio Code の使用を開始する - C# ガイド
+description: Visual Studio Code を使用した、C# で初めての .NET Core アプリケーションを作成してデバッグする方法について説明します。
 author: kendrahavens
 ms.author: mairaw
 ms.date: 09/27/2017
-ms.topic: article
+ms.topic: conceptual
 ms.prod: .net
 ms.technology: devlang-csharp
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: 0c37040220bb7f38cdd75176bb9ed2a2199b7096
-ms.sourcegitcommit: 099aa20d9b6450d1b7452d782a55771a6ad8ff35
+ms.openlocfilehash: d4ee1c9ef66ef61156453786f65d16470d7a5ea2
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="get-started-with-c-and-visual-studio-code"></a>C# および Visual Studio Code の使用を開始する
 

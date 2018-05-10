@@ -1,34 +1,22 @@
 ---
 title: クライアントのセキュリティ保護
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - clients [WCF], security considerations
 ms.assetid: 44c8578c-9a5b-4acd-8168-1c30a027c4c5
-caps.latest.revision: 22
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload:
-- dotnet
-ms.openlocfilehash: 7d06df1a9c4ef5a7cb64f71d2f7afc77c41a0e6f
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: dfbe1fcce8a3b860e88dae4f5af43adfedbe9890
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="securing-clients"></a>クライアントのセキュリティ保護
-[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] では、サービスがクライアントのセキュリティ要件を決定します。 つまり、使用するセキュリティ モード、およびクライアントが資格情報を提供するかどうかは、サービスによって指定されます。 そのため、クライアントをセキュリティで保護するプロセスは、サービスから取得したメタデータ (公開されている場合) を使用してクライアントを構築するという簡単なものになります。 クライアントを構成する方法は、メタデータによって指定されます。 クライアントが資格情報を提供することをサービスが要求する場合、要件に適した資格情報を取得する必要があります。 ここでは、このプロセスについて詳しく説明します。 セキュリティで保護されたサービスの作成の詳細については、次を参照してください。 [Services のセキュリティ保護](../../../docs/framework/wcf/securing-services.md)です。  
+Windows Communication Foundation (WCF) サービスでは、クライアントのセキュリティ要件が決まります。 つまり、使用するセキュリティ モード、およびクライアントが資格情報を提供するかどうかは、サービスによって指定されます。 そのため、クライアントをセキュリティで保護するプロセスは、サービスから取得したメタデータ (公開されている場合) を使用してクライアントを構築するという簡単なものになります。 クライアントを構成する方法は、メタデータによって指定されます。 クライアントが資格情報を提供することをサービスが要求する場合、要件に適した資格情報を取得する必要があります。 ここでは、このプロセスについて詳しく説明します。 セキュリティで保護されたサービスの作成の詳細については、次を参照してください。 [Services のセキュリティ保護](../../../docs/framework/wcf/securing-services.md)です。  
   
 ## <a name="the-service-specifies-security"></a>サービスによるセキュリティの指定  
- 既定では、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] バインディングのセキュリティ機能は有効になっています  (<xref:System.ServiceModel.BasicHttpBinding> を除く)。そのため、サービスが [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] を使用して作成されている場合、認証、機密性、および整合性を確実にするセキュリティが実装される可能性が高くなります。 この場合、サービスが提供するメタデータによって、セキュリティで保護された通信チャネルの確立に必要なものが示されます。 サービス メタデータにセキュリティ要件がまったく含まれていない場合には、サービスでセキュリティ スキーム (SSL (Secure Sockets Layer) over HTTP など) を強制する方法はありません。 ただし、サービスがクライアントに資格情報の提供を求める場合は、クライアントの開発者、展開担当者、または管理者は、クライアントがサービスに対して認証を受けるときに実際に使用する資格情報を提供する必要があります。  
+ 既定では、WCF バインドは有効になっているセキュリティ機能があります。 (<xref:System.ServiceModel.BasicHttpBinding> を除く)。したがって、サービスは、WCF を使用して作成されている場合は、認証、機密性、整合性をようにセキュリティが実装される可能性が高くします。 この場合、サービスが提供するメタデータによって、セキュリティで保護された通信チャネルの確立に必要なものが示されます。 サービス メタデータにセキュリティ要件がまったく含まれていない場合には、サービスでセキュリティ スキーム (SSL (Secure Sockets Layer) over HTTP など) を強制する方法はありません。 ただし、サービスがクライアントに資格情報の提供を求める場合は、クライアントの開発者、展開担当者、または管理者は、クライアントがサービスに対して認証を受けるときに実際に使用する資格情報を提供する必要があります。  
   
 ## <a name="obtaining-metadata"></a>メタデータの取得  
  クライアントを作成する場合、最初の手順はクライアントが通信を行うサービスからメタデータを取得することです。 これは、次の 2 つの方法で行うことができます。 最初に場合、サービス メタデータ交換 (MEX) エンドポイントを公開するか HTTP または HTTPS 経由でそのメタデータを利用をダウンロードできますを使用して、メタデータ、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)、両方を生成します。構成ファイルと同様に、クライアントは、コード ファイル。 (詳細については、ツールを使用して、次を参照してください[へのアクセスを、WCF クライアントを使用してサービス](../../../docs/framework/wcf/accessing-services-using-a-wcf-client.md)。)。サービスにより MEX エンドポイントが公開されておらず、かつ HTTP または HTTPS 上でメタデータが使用可能になっていない場合は、サービス作成者に連絡して、セキュリティ要件とメタデータについて記述したドキュメントを入手する必要があります。  

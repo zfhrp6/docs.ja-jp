@@ -2,11 +2,11 @@
 title: WSStreamedHttpBinding
 ms.date: 03/30/2017
 ms.assetid: 97ce4d3d-ca6f-45fa-b33b-2429bb84e65b
-ms.openlocfilehash: f146e469a323dffa2cdb9b76b6956be97747b2de
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: b0a4c316957a002f7541d230f96299e3f43ef778
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="wsstreamedhttpbinding"></a>WSStreamedHttpBinding
 このサンプルでは、HTTP トランスポート使用時にストリーミングをサポートする目的でデザインされたバインディングを作成する方法を示します。  
@@ -51,7 +51,7 @@ ms.lasthandoff: 05/04/2018
   
 2.  構成サポートを追加する  
   
-     構成を使用してトランスポートを公開するため、サンプルではさらに、`WSStreamedHttpBindingConfigurationElement` クラスと `WSStreamedHttpBindingSection` クラスという 2 つのクラスを実装します。 クラス `WSStreamedHttpBindingSection` は <xref:System.ServiceModel.Configuration.StandardBindingCollectionElement%602> で、`WSStreamedHttpBinding` を [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の構成システムに公開します。 実装の大部分は `WSStreamedHttpBindingConfigurationElement` で代行されます。これは <xref:System.ServiceModel.Configuration.StandardBindingElement> の派生です。 クラス `WSStreamedHttpBindingConfigurationElement` には `WSStreamedHttpBinding` のプロパティに対応するプロパティがあり、各構成要素をバインディングにマップする関数があります。  
+     構成を使用してトランスポートを公開するため、サンプルではさらに、`WSStreamedHttpBindingConfigurationElement` クラスと `WSStreamedHttpBindingSection` クラスという 2 つのクラスを実装します。 クラス`WSStreamedHttpBindingSection`は、<xref:System.ServiceModel.Configuration.StandardBindingCollectionElement%602>を公開する`WSStreamedHttpBinding`WCF 構成システムにします。 実装の大部分は `WSStreamedHttpBindingConfigurationElement` で代行されます。これは <xref:System.ServiceModel.Configuration.StandardBindingElement> の派生です。 クラス `WSStreamedHttpBindingConfigurationElement` には `WSStreamedHttpBinding` のプロパティに対応するプロパティがあり、各構成要素をバインディングにマップする関数があります。  
   
      次のセクションをサービスの構成ファイルに追加することにより、ハンドラを構成システムに登録します。  
   
@@ -133,7 +133,7 @@ public class StreamedEchoService : IStreamedEchoService
 ```  
   
 ## <a name="the-wsstreamedhttpbinding-sample-client"></a>WSStreamedHttpBinding クライアントのサンプル  
- `WSStreamedHttpBinding` を使用してサービスとやり取りするクライアントは、クライアント サブディレクトリにあります。 セキュリティの警告を表示など、ブラウザーに HTTPS アドレスにアクセスしようとしたときにこのサンプルで使用する証明書は Makecert.exe で作成されたテスト証明書であるため、https://localhost/servicemodelsamples/service.svcです。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントがテスト証明書に対して問題なく動作するようにするには、クライアントにコードを追加して、セキュリティ警告を非表示にする必要があります。 そのためのコードとそれに必要なクラスは、本運用の証明書を使用するときには不要です。  
+ `WSStreamedHttpBinding` を使用してサービスとやり取りするクライアントは、クライアント サブディレクトリにあります。 セキュリティの警告を表示など、ブラウザーに HTTPS アドレスにアクセスしようとしたときにこのサンプルで使用する証明書は Makecert.exe で作成されたテスト証明書であるため、https://localhost/servicemodelsamples/service.svcです。 テスト証明書を使用する WCF クライアントを許可するには、セキュリティの警告を抑制するため、クライアント コードが追加されました。 そのためのコードとそれに必要なクラスは、本運用の証明書を使用するときには不要です。  
   
 ```  
 // WARNING: This code is only required for test certificates such as those created by makecert. It is   

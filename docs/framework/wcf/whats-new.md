@@ -5,11 +5,11 @@ helpviewer_keywords:
 - WCF [WCF], what's new
 - Windows Communication Foundation [WCF], what's new
 ms.assetid: 7e93fe73-af93-46b5-9f63-32f761ee40cf
-ms.openlocfilehash: 1d4ac2fe884a3c6696dc70ea2de9967a23fc6605
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 910da1073f0dc787be26d2c87b5bf49b4115aaef
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="what39s-new-in-windows-communication-foundation-45"></a>Windows Communication Foundation 4.5 の新機能
 このトピックでは、Windows Communication Foundation (WCF) の新機能について説明します。  
@@ -73,7 +73,7 @@ ms.lasthandoff: 05/04/2018
  新規および既存の WCF サービスの開発者がサービスを構成するうえで役立つよう、Visual Studio の XML エディターでは、サービス構成ファイルに含まれる各構成要素とそのプロパティにツールヒントが表示されるようになりました。  
   
 ## <a name="configuring-wcf-services-in-code"></a>コード内での WCF サービスの構成  
- Windows Communication Foundation (WCF) では、構成ファイルまたはコードを使用してサービスの構成をすることができます。  構成ファイルは、サービスを配置した後に構成する必要がある場合に便利です。 構成ファイルを使用する場合、IT 専門家は構成ファイルを更新するだけで、再コンパイルの必要はありません。 ただし、構成ファイルの管理は複雑で難しくなる場合があります。 構成ファイルのデバッグはサポートされていません。また、構成要素は名前で参照されるため、構成ファイルの作成時にエラーが発生しやすく、構成ファイルの作成が困難になります。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] では、コードでサービスを構成することもできます。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] の以前のバージョン (4.0 以前) では、自己ホスト型のシナリオであれば、コードで簡単にサービスを構成できました。また、<xref:System.ServiceModel.ServiceHost> クラスを使用すると、ServiceHost.Open を呼び出す前にエンドポイントと動作を構成できました。 ただし、Web ホストのシナリオでは、<xref:System.ServiceModel.ServiceHost> クラスにアクセスできません。 Web ホスト サービスを構成するには、`System.ServiceModel.ServiceHostFactory` を作成して必要な構成を実行する <xref:System.ServiceModel.Activation.ServiceHostFactory> を作成する必要がありました。 .NET 4.5 以降では、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] を使用すると、自己ホスト型サービスと Web ホスト サービスの両方をコードで簡単に構成できます。 詳細については、次を参照してください。[コードで WCF サービスを構成する](../../../docs/framework/wcf/configuring-wcf-services-in-code.md)です。  
+ Windows Communication Foundation (WCF) では、構成ファイルまたはコードを使用してサービスの構成をすることができます。  構成ファイルは、サービスを配置した後に構成する必要がある場合に便利です。 構成ファイルを使用する場合、IT 専門家は構成ファイルを更新するだけで、再コンパイルの必要はありません。 ただし、構成ファイルの管理は複雑で難しくなる場合があります。 構成ファイルのデバッグはサポートされていません。また、構成要素は名前で参照されるため、構成ファイルの作成時にエラーが発生しやすく、構成ファイルの作成が困難になります。 WCF では、コードでサービスを構成することもできます。 以前のバージョンのコードで WCF (4.0 およびそれ以前) 構成サービスが自己ホスト型では、簡単、<xref:System.ServiceModel.ServiceHost>クラスを使用するエンドポイントと、ServiceHost.Open を呼び出す前に動作を構成します。 ただし、Web ホストのシナリオでは、<xref:System.ServiceModel.ServiceHost> クラスにアクセスできません。 Web ホスト サービスを構成するには、`System.ServiceModel.ServiceHostFactory` を作成して必要な構成を実行する <xref:System.ServiceModel.Activation.ServiceHostFactory> を作成する必要がありました。 .NET 4.5 以降で、WCF では、両方を構成する簡単な方法は自己ホスト型し、web ホスト サービスでコードを提供します。 詳細については、次を参照してください。[コードで WCF サービスを構成する](../../../docs/framework/wcf/configuring-wcf-services-in-code.md)です。  
   
 ## <a name="channelfactory-caching"></a>ChannelFactory のキャッシュ  
  WCF クライアント アプリケーションでは、<xref:System.ServiceModel.ChannelFactory%601> クラスを使用して WCF サービスとの通信チャネルを作成します。  <xref:System.ServiceModel.ChannelFactory%601> インスタンスを作成する場合は、次の操作が必要になるため、オーバーヘッドが生じます。  
@@ -107,7 +107,7 @@ ms.lasthandoff: 05/04/2018
  プロジェクトで定義されるカスタム属性の構成ファイル内の属性値では、構成の迅速で正確な操作を簡単にするために Intellisense がサポートされています。  
   
 ## <a name="configuration-tooltips"></a>構成のツールヒント  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] の要素と属性のツールヒントが XML エディターで表示され、要素または属性の目的をより簡単かつ正確に特定できるようになりました。  
+ WCF 要素と属性ようになりました、XML エディターでのヒントをより簡単を持ち、要素または属性の目的を正確に特定します。  
   
 ## <a name="paste-data-as-classes"></a>クラスとしてのデータの貼り付け  
  WCF プロジェクトでは、XML で定義されたデータ型 (サービスで公開されるデータ型など) をコード ページに直接貼り付けることができます。 XML 型は CLR 型として貼り付けられます。 参照してください[XML からデータ型クラスを生成する](../../../docs/framework/wcf/generating-data-type-classes-from-xml.md)詳細についてはします。  

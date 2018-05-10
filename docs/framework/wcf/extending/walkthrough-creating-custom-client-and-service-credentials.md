@@ -5,11 +5,11 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 2b5ba5c3-0c6c-48e9-9e46-54acaec443ba
-ms.openlocfilehash: 8c5608276de935f07dca88e343143112b8fdcc20
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 5ba6d2016a36809910561543a531dd4d44aac9b9
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="walkthrough-creating-custom-client-and-service-credentials"></a>チュートリアル: カスタム クライアントおよびサービスの資格情報を作成する
 このトピックでは、クライアントおよびサービスにカスタム資格情報を実装する方法と、これをアプリケーション コードから使用する方法について説明します。  
@@ -23,12 +23,12 @@ ms.lasthandoff: 05/04/2018
   
  <xref:System.ServiceModel.Description.ClientCredentials> クラスと <xref:System.ServiceModel.Description.ServiceCredentials> クラスは、どちらも <xref:System.ServiceModel.Security.SecurityCredentialsManager> を返すためのコントラクトを定義する <xref:System.IdentityModel.Selectors.SecurityTokenManager> 抽象クラスから継承されます。  
   
- 資格情報クラスとに合う方法の詳細については、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]セキュリティ アーキテクチャを参照してください[セキュリティ アーキテクチャ](http://msdn.microsoft.com/library/16593476-d36a-408d-808c-ae6fd483e28f)です。  
+ 資格情報クラスおよび WCF のセキュリティ アーキテクチャに適合する方法の詳細については、次を参照してください。[セキュリティ アーキテクチャ](http://msdn.microsoft.com/library/16593476-d36a-408d-808c-ae6fd483e28f)です。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] で提供される既定の実装では、システム指定の資格情報の種類をサポートし、これらの資格情報の種類を処理できるセキュリティ トークン マネージャーを作成します。  
+ WCF で提供される既定の実装では、システム指定の資格情報の種類をサポートし、セキュリティにはこれらの資格情報の種類を処理できトークン マネージャーを作成します。  
   
 ## <a name="reasons-to-customize"></a>カスタマイズする理由  
- クライアントまたはサービスの資格情報クラスをカスタマイズする場合、いくつかの理由があります。 最大の理由として、システム指定の資格情報の種類の処理について、特に以下の必要性が生じたために [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の既定のセキュリティ動作を変更する必要があることが挙げられます。  
+ クライアントまたはサービスの資格情報クラスをカスタマイズする場合、いくつかの理由があります。 特に、次のようなシステム指定の資格情報の種類の処理について既定の WCF セキュリティ動作を変更する必要が何よりもです。  
   
 -   他の拡張ポイントを使用した場合には不可能な変更  
   
@@ -39,7 +39,7 @@ ms.lasthandoff: 05/04/2018
  このトピックでは、カスタムのクライアント資格情報およびサービス資格情報を実装する方法と、これをアプリケーション コードから使用する方法について説明します。  
   
 ## <a name="first-in-a-series"></a>最初の手順  
- 資格情報をカスタマイズする理由は、資格情報の準備、セキュリティ トークンのシリアル化、または認証に関する [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の動作を変更することにあるため、カスタム資格情報クラスの作成は最初の手順にすぎません。 このセクションの他のトピックでは、カスタムのシリアライザーと認証システムを作成する方法について説明します。 カスタム資格情報クラスの作成は、このような観点からすると、一連のトピックの最初の手順になります。 これに続く処理 (カスタムのシリアライザーおよび認証システムの作成) は、カスタム資格情報の作成後にのみ可能になります。 このトピックに基づく他のトピックには、次のものがあります。  
+ カスタムの資格情報クラスの作成が最初の手順のみ資格情報の準備、セキュリティ トークンのシリアル化、または認証に関する WCF 動作を変更するのには資格情報をカスタマイズするためです。 このセクションの他のトピックでは、カスタムのシリアライザーと認証システムを作成する方法について説明します。 カスタム資格情報クラスの作成は、このような観点からすると、一連のトピックの最初の手順になります。 これに続く処理 (カスタムのシリアライザーおよび認証システムの作成) は、カスタム資格情報の作成後にのみ可能になります。 このトピックに基づく他のトピックには、次のものがあります。  
   
 -   [方法 : カスタム セキュリティ トークン プロバイダーを作成する](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-provider.md)  
   
@@ -55,7 +55,7 @@ ms.lasthandoff: 05/04/2018
   
 2.  任意。 新しい資格情報の種類に新しいメソッドまたはプロパティを追加します。 新しい資格情報の種類を追加しない場合は、この手順を省略します。 次の例では、`CreditCardNumber` プロパティを追加します。  
   
-3.  <xref:System.ServiceModel.Security.SecurityCredentialsManager.CreateSecurityTokenManager%2A> メソッドをオーバーライドします。 カスタム クライアント資格情報が使用されると、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] セキュリティ インフラストラクチャによってこのメソッドが自動的に呼び出されます。 このメソッドは、<xref:System.IdentityModel.Selectors.SecurityTokenManager> クラスの実装のインスタンスを作成して返す役割を担います。  
+3.  <xref:System.ServiceModel.Security.SecurityCredentialsManager.CreateSecurityTokenManager%2A> メソッドをオーバーライドします。 このメソッドは自動的にこのカスタム クライアント資格情報を使用する場合も、WCF セキュリティ インフラストラクチャによって呼び出されます。 このメソッドは、<xref:System.IdentityModel.Selectors.SecurityTokenManager> クラスの実装のインスタンスを作成して返す役割を担います。  
   
     > [!IMPORTANT]
     >  カスタム セキュリティ トークン マネージャーを作成するために、<xref:System.ServiceModel.Security.SecurityCredentialsManager.CreateSecurityTokenManager%2A> メソッドがオーバーライドされることに注意する必要があります。 <xref:System.ServiceModel.ClientCredentialsSecurityTokenManager> から派生したセキュリティ トークン マネージャーは、実際のセキュリティ トークンを作成するために、<xref:System.IdentityModel.Selectors.SecurityTokenProvider> から派生したカスタム セキュリティ トークン プロバイダーを返す必要があります。 このパターンに従ってセキュリティ トークンを作成しないと、<xref:System.ServiceModel.ChannelFactory> オブジェクトがキャッシュされたとき (これは、WCF クライアント プロキシの既定の動作です)、権限の昇格攻撃を受ける可能性があり、アプリケーションが正常に機能しない場合があります。 カスタム資格情報オブジェクトは、<xref:System.ServiceModel.ChannelFactory> の一部としてキャッシュされます。 ただし、カスタム <xref:System.IdentityModel.Selectors.SecurityTokenManager> がすべての呼び出し時に作成され、これにより、トークン作成ロジックが <xref:System.IdentityModel.Selectors.SecurityTokenManager> にある限り、セキュリティの脅威が軽減されます。  
@@ -89,7 +89,7 @@ ms.lasthandoff: 05/04/2018
      [!code-csharp[c_CustomCredentials#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customcredentials/cs/source.cs#3)]
      [!code-vb[c_CustomCredentials#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customcredentials/vb/client/client.vb#3)]  
   
- 上記の手順は、アプリケーション コードからクライアント資格情報を使用する方法を示しています。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の資格情報は、アプリケーション構成ファイルを使用して構成することもできます。 ソースの変更、再コンパイル、再展開を行うことなくアプリケーションのパラメーターを変更できるため、ハードコーディングを行うよりもアプリケーション構成ファイルの使用を一般にお勧めします。  
+ 上記の手順は、アプリケーション コードからクライアント資格情報を使用する方法を示しています。 WCF の資格情報は、アプリケーション構成ファイルを使用して構成することもできます。 ソースの変更、再コンパイル、再展開を行うことなくアプリケーションのパラメーターを変更できるため、ハードコーディングを行うよりもアプリケーション構成ファイルの使用を一般にお勧めします。  
   
  次の手順では、カスタム資格情報の構成をサポートする方法について説明します。  
   
@@ -108,7 +108,7 @@ ms.lasthandoff: 05/04/2018
      [!code-csharp[c_CustomCredentials#7](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customcredentials/cs/source.cs#7)]
      [!code-vb[c_CustomCredentials#7](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customcredentials/vb/service/service.vb#7)]  
   
- 構成ハンドラー クラスを作成したら、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の構成フレームワークに統合できます。 これにより、次の手順で示すように、カスタム クライアント資格情報をクライアント エンドポイント動作要素で使用できるようになります。  
+ 構成ハンドラー クラスを作成したら、WCF 構成フレームワークに統合できます。 これにより、次の手順で示すように、カスタム クライアント資格情報をクライアント エンドポイント動作要素で使用できるようになります。  
   
 #### <a name="to-register-and-use-a-custom-client-credentials-configuration-handler-in-the-application-configuration"></a>カスタム クライアント資格情報構成ハンドラーをアプリケーション構成に登録して使用するには  
   
@@ -146,7 +146,7 @@ ms.lasthandoff: 05/04/2018
   
 2.  任意。 追加している新しい資格情報の値に API を提供するために新しいプロパティを追加します。 新しい資格情報の値を追加しない場合は、この手順を省略します。 次の例では、`AdditionalCertificate` プロパティを追加します。  
   
-3.  <xref:System.ServiceModel.Security.SecurityCredentialsManager.CreateSecurityTokenManager%2A> メソッドをオーバーライドします。 カスタム クライアント資格情報が使用されると、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] インフラストラクチャによって、このメソッドが自動的に呼び出されます。 このメソッドは、<xref:System.IdentityModel.Selectors.SecurityTokenManager> クラスの実装のインスタンスを作成して返す役割を担います (次の手順で説明)。  
+3.  <xref:System.ServiceModel.Security.SecurityCredentialsManager.CreateSecurityTokenManager%2A> メソッドをオーバーライドします。 このメソッドは、カスタム クライアント資格情報を使用すると自動的に、WCF インフラストラクチャによって呼び出されます。 このメソッドは、<xref:System.IdentityModel.Selectors.SecurityTokenManager> クラスの実装のインスタンスを作成して返す役割を担います (次の手順で説明)。  
   
 4.  任意。 <xref:System.ServiceModel.Description.ServiceCredentials.CloneCore%2A> メソッドをオーバーライドします。 この手順は、カスタム クライアント資格情報の実装に新しいプロパティまたは内部フィールドを追加する場合にのみ必要になります。  
   

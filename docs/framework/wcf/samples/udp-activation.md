@@ -2,11 +2,11 @@
 title: UDP アクティベーション
 ms.date: 03/30/2017
 ms.assetid: 4b0ccd10-0dfb-4603-93f9-f0857c581cb7
-ms.openlocfilehash: 6dd1ee02b51dc969af0ba1bc418b7fb20f6f0ed6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 9f7600bff17c015f28c3fb94ed5360561d45c65b
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="udp-activation"></a>UDP アクティベーション
 このサンプルがに基づいて、[トランスポート: UDP](../../../../docs/framework/wcf/samples/transport-udp.md)サンプルです。 拡張されて、[トランスポート: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) Windows プロセス アクティブ化サービス (WAS) を使用するプロセス アクティブ化をサポートするサンプルです。  
@@ -20,7 +20,7 @@ ms.lasthandoff: 05/04/2018
 -   UDP カスタム トランスポート経由でメッセージを受信するサービス。WAS によってアクティブ化されるワーカー プロセス内でホストされています。  
   
 ## <a name="udp-protocol-activator"></a>UDP プロトコル アクティベータ  
- UDP プロトコル アクティベータは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントと [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービス間のブリッジです。 トランスポート層で UDP プロトコルを介するデータ通信を実現します。 主な機能は、次の 2 つです。  
+ UDP プロトコル アクティベータは、WCF クライアントと WCF サービス間のブリッジです。 トランスポート層で UDP プロトコルを介するデータ通信を実現します。 主な機能は、次の 2 つです。  
   
 -   WAS リスナ アダプタ (LA)。WAS と連携し、受信メッセージに応答してプロセスをアクティブ化します。  
   
@@ -55,7 +55,7 @@ ms.lasthandoff: 05/04/2018
  UDP プロトコル リスナはプロトコル アクティベータ内部のモジュールで、仮想アプリケーションの代わりに UDP エンドポイントでリッスンします。 これは `UdpSocketListener` クラスに実装されています。 エンドポイントは `IPEndpoint` として表され、このポート番号はサイトのプロトコルのバインディングから抽出されます。  
   
 ### <a name="control-service"></a>サービスの制御  
- このサンプルでは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を使用してアクティベータと WAS ワーカー プロセス間で通信を行います。 アクティベータに存在するサービスは、コントロール サービスと呼ばれます。  
+ このサンプルでは、WCF を使用してアクティベータと WAS ワーカー プロセスの間で通信するためにします。 アクティベータに存在するサービスは、コントロール サービスと呼ばれます。  
   
 ## <a name="protocol-handlers"></a>プロトコル ハンドラー  
  リスナ アダプタが `WebhostOpenListenerChannelInstance` を呼び出した後、ワーカー プロセスが開始されていない場合は WAS プロセス マネージャによって開始されます。 ワーカー プロセス内部のアプリケーション マネージャは、UDP プロセス プロトコル ハンドラ (PPH) を読み込み、`ListenerChannelId` を要求します。 次に呼び出して、PPH`IAdphManager`です。`StartAppDomainProtocolListenerChannel` UDP AppDomain プロトコル ハンドラ (ADPH) を開始します。  

@@ -2,17 +2,17 @@
 title: Windows Communication Foundation サンプルのビルド
 ms.date: 03/30/2017
 ms.assetid: 2899e7a5-9cb2-4e8d-b8d2-f31391549198
-ms.openlocfilehash: 5493972306092fc3309b0993d595f22c74c8603a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 637b862d81ce4eeddc56acb24a527e6937f33f64
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="building-the-windows-communication-foundation-samples"></a>Windows Communication Foundation サンプルのビルド
 Visual Studio 2010 を使用してまたはを使用して、Windows Communication Foundation (WCF) サンプルをビルドすることができます、 **msbuild**コマンドラインからコマンド。 ここでは、両方の手順について説明します。  
   
 > [!NOTE]
->  構築またはのいずれかを実行する前に、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]サンプル、確実に実行する、 [Windows Communication Foundation サンプルの 1 回限りのセットアップ手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)です。  
+>  ビルドまたは WCF サンプルを実行して、前に行うことを確認してください、 [Windows Communication Foundation サンプルの 1 回限りのセットアップ手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)です。  
   
 ### <a name="to-build-the-sample-using-a-command-prompt"></a>コマンド プロンプトを使用してサンプルをビルドするには  
   

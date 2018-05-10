@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: c44fb338-9527-4dd0-8607-b8787d15acb4
 author: BrucePerlerMS
 manager: mbaldwin
-ms.openlocfilehash: 81fc656784dadf0706e2ae3feda09cd08b886560
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: ec8af8c7df9335774b1f3953f88c2aad438963b6
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="pii-security-lockdown"></a>PII セキュリティ ロックダウン
 このサンプルでは、によって、Windows Communication Foundation (WCF) サービスの複数のセキュリティ関連機能を制御する方法を示します。  
@@ -29,11 +29,11 @@ ms.lasthandoff: 05/04/2018
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Management\SecurityLockdown`  
   
 ## <a name="discussion"></a>説明  
- これらの各機能を単独または組み合わせて使用することにより、サービスのさまざまなセキュリティを制御できます。 ただし、ここでの記述は [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスのセキュリティ保護について完全に説明するものではありません。  
+ これらの各機能を単独または組み合わせて使用することにより、サービスのさまざまなセキュリティを制御できます。 これは、WCF サービスのセキュリティを保護する明確なガイドではありません。  
   
  .NET Framework の構成ファイルには、データベースに接続するための接続文字列などの機密情報を格納できます。 共有の Web ホストのシナリオでは、この情報をサービスの構成ファイル内で暗号化して、構成ファイル内に含まれるデータを偶発的に表示されないようにすることが望ましい場合があります。 .NET Framework 2.0 以降のバージョンでは、Windows データ保護アプリケーション プログラミング インターフェイス (DPAPI) または RSA 暗号化プロバイダを使用して、構成ファイルの一部を暗号化できます。 DPAPI または RSA を使用して aspnet_regiis.exe を実行すると、構成ファイルの選択部分を暗号化できます。  
   
- Web ホストのシナリオでは、他のサービスのサブディレクトリにサービスを設定できます。 構成値を決定する既定の意味的方法によると、入れ子になったディレクトリ内の構成ファイルで親ディレクトリの構成値をオーバーライドできます。 特定の状況では、さまざまな理由でこれが望ましくない場合があります。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービス構成では、オーバーライドされた構成値を使用して入れ子になったサービスを実行する場合、入れ子になった構成が例外を生成できるように、構成値をロックすることができます。  
+ Web ホストのシナリオでは、他のサービスのサブディレクトリにサービスを設定できます。 構成値を決定する既定の意味的方法によると、入れ子になったディレクトリ内の構成ファイルで親ディレクトリの構成値をオーバーライドできます。 特定の状況では、さまざまな理由でこれが望ましくない場合があります。 入れ子になった構成できるように、構成値のロックが例外を生成を使用して、入れ子になったサービスは実行時に WCF サービスの構成では、構成値をオーバーライドします。  
   
  このサンプルでは、トレースおよびメッセージ ログによる、ユーザー名やパスワードなどの個人を特定できる既知の情報 (PII) のログ記録を制御する方法を示します。 既定では、既知の PII のログ記録は無効です。ただし特定の状況では、PII のログ記録はアプリケーションをデバック処理する際に重要になる場合があります。 このサンプルがに基づいて、[作業の開始](../../../../docs/framework/wcf/samples/getting-started-sample.md)です。 さらに、このサンプルではトレースとメッセージ ログを使用します。 詳細については、次を参照してください。、[トレースとメッセージ ログ](../../../../docs/framework/wcf/samples/tracing-and-message-logging.md)サンプルです。  
   

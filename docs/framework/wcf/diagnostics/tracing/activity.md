@@ -2,19 +2,19 @@
 title: アクティビティ
 ms.date: 03/30/2017
 ms.assetid: 70471705-f55f-4da1-919f-4b580f172665
-ms.openlocfilehash: 34281647f65157484c1e732bc67a6a4b2cf58db6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 3100d5bb60dc1b11d23b0705f4d6f23a3675ac51
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="activity"></a>アクティビティ
 このトピックでは、Windows Communication Foundation (WCF) のトレース モデルでのアクティビティ トレースについて説明します。 アクティビティは、ユーザーがエラーの範囲を絞り込む上で役立つ処理単位です。 同じアクティビティで発生したエラーは直接関連します。 たとえば、メッセージを復号化できなかったために、ある操作が失敗したとします。 この操作とメッセージ復号化失敗のトレースは同じアクティビティ内に表示され、復号化エラーと要求エラー間の直接相関関係が示されます。  
   
 ## <a name="configuring-activity-tracing"></a>アクティビティ トレースの構成  
- [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] アプリケーションを処理するための定義済みのアクティビティの提供 (を参照してください[アクティビティ リスト](../../../../../docs/framework/wcf/diagnostics/tracing/activity-list.md))。 また、ユーザー トレースをグループ化するために、アクティビティをプログラムによって定義することもできます。 詳細については、次を参照してください。[ユーザー コード トレースの出力](../../../../../docs/framework/wcf/diagnostics/tracing/emitting-user-code-traces.md)です。  
+ WCF には、アプリケーションを処理するための定義済みのアクティビティが用意されています (を参照してください[アクティビティ リスト](../../../../../docs/framework/wcf/diagnostics/tracing/activity-list.md))。 また、ユーザー トレースをグループ化するために、アクティビティをプログラムによって定義することもできます。 詳細については、次を参照してください。[ユーザー コード トレースの出力](../../../../../docs/framework/wcf/diagnostics/tracing/emitting-user-code-traces.md)です。  
   
- 実行時にアクティビティ トレースを出力するには、次の構成コードに示すように、`ActivityTracing` トレース ソースや、他の `System.ServiceModel` トレース ソースまたはカスタム トレース ソースの [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] 設定を使用します。  
+ 実行時にアクティビティ トレースを出力するには、`ActivityTracing`の設定、`System.ServiceModel`構成コードを次に示すように、ソース、またはその他の WCF またはカスタム トレース ソースをトレースします。  
   
 ```xml  
 <source name="System.ServiceModel" switchValue="Verbose,ActivityTracing">  
@@ -88,7 +88,7 @@ traceSource.TraceEvent(TraceEventType.Warning, eventId, "Information");
   
 -   アクティビティは処理の境界を示します。処理の境界は、システム管理者にとって重要であり、サポートを容易にする上でも役立ちます。  
   
--   [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] の各メソッド (クライアントとサーバーの両方) は、新しいアクティビティを開始し、(処理の終了後に) その新しいアクティビティを終了した後、アンビエント アクティビティに戻ることによって境界が設定されます。  
+-   各 WCF メソッドは、クライアントとサーバーの両方の境界が設定によって、新しいアクティビティを開始し、(この作業を実行すると) 後に新しいアクティビティを終了し、アンビエント アクティビティに返すことです。  
   
 -   接続のリッスンやメッセージの待機など、長時間にわたって実行される (継続中の) アクティビティは、対応する開始マーカーと終了マーカーによって表されます。  
   

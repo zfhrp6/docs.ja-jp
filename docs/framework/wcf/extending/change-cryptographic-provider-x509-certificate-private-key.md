@@ -8,16 +8,16 @@ helpviewer_keywords:
 - cryptographic provider [WCF], changing
 - cryptographic provider [WCF]
 ms.assetid: b4254406-272e-4774-bd61-27e39bbb6c12
-ms.openlocfilehash: be6033efc03e25967af8bbb3266b0f60df02eaba
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 633e87bca302adc0963e1bf52d2470c9dbae81a5
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="how-to-change-the-cryptographic-provider-for-an-x509-certificate39s-private-key"></a>方法: X.509 証明書の暗号化サービス プロバイダーを変更する&#39;s 秘密キー
 このトピックでは、X.509 証明書の秘密キーを提供するために使用する暗号化サービス プロバイダーを変更する方法と、Windows Communication Foundation (WCF) のセキュリティ フレームワークにプロバイダーを統合する方法を示します。 証明書の使用の詳細については、次を参照してください。[証明書の使用](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)です。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]セキュリティ フレームワーク」の説明に従って、新しいセキュリティ トークンの種類を導入する方法を提供する[する方法: カスタム トークンを作成する](../../../../docs/framework/wcf/extending/how-to-create-a-custom-token.md)です。 また、カスタム トークンを使用して既存のシステム指定のトークンを置き換えることも可能です。  
+ WCF セキュリティ フレームワーク」の説明に従って、新しいセキュリティ トークンの種類を導入する方法を提供する[する方法: カスタム トークンを作成する](../../../../docs/framework/wcf/extending/how-to-create-a-custom-token.md)です。 また、カスタム トークンを使用して既存のシステム指定のトークンを置き換えることも可能です。  
   
  このトピックでは、システム指定の X.509 セキュリティ トークンが、証明書の秘密キーに別の実装を提供するカスタムの X.509 トークンによって置き換えられます。 これは、実際の秘密キーが、既定の Windows 暗号化プロバイダーとは異なる暗号化プロバイダーから提供されるシナリオで役立ちます。 別の暗号化プロバイダーの例として、ハードウェア セキュリティ モジュールがあります。このモジュールでは、すべての秘密キー関連の暗号操作を実行し、メモリに秘密キーを格納しないので、システムのセキュリティが向上します。  
   
@@ -32,11 +32,11 @@ ms.lasthandoff: 05/04/2018
   
 2.  <xref:System.IdentityModel.Tokens.SecurityKey.KeySize%2A> 読み取り専用プロパティをオーバーライドします。 このプロパティは、証明書の公開キーと秘密キーのペアの実際のキー サイズを返します。  
   
-3.  <xref:System.IdentityModel.Tokens.SecurityKey.DecryptKey%2A> メソッドをオーバーライドします。 このメソッドは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のセキュリティ フレームワークによって呼び出され、対称キーを証明書の秘密キーで復号化します (このキーは、以前に証明書の公開キーで暗号化されています)。  
+3.  <xref:System.IdentityModel.Tokens.SecurityKey.DecryptKey%2A> メソッドをオーバーライドします。 このメソッドは、証明書の秘密キーで対称キーの暗号化を解除するのには WCF セキュリティ フレームワークによって呼び出されます。 (このキーは、以前に証明書の公開キーで暗号化されています)。  
   
-4.  <xref:System.IdentityModel.Tokens.AsymmetricSecurityKey.GetAsymmetricAlgorithm%2A> メソッドをオーバーライドします。 このメソッドは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のセキュリティ フレームワークによって呼び出され、このメソッドに渡されるパラメーターに応じて、証明書の秘密キーまたは公開キーの暗号化プロバイダーを表す <xref:System.Security.Cryptography.AsymmetricAlgorithm> クラスのインスタンスを取得します。  
+4.  <xref:System.IdentityModel.Tokens.AsymmetricSecurityKey.GetAsymmetricAlgorithm%2A> メソッドをオーバーライドします。 このメソッドは、のインスタンスを取得するために WCF セキュリティ フレームワークによって呼び出されますが、<xref:System.Security.Cryptography.AsymmetricAlgorithm>メソッドに渡されるか、証明書のプライベートまたはパブリック キーのパラメーターに応じて、暗号化サービス プロバイダーを表すクラス。  
   
-5.  省略可能です。 <xref:System.IdentityModel.Tokens.AsymmetricSecurityKey.GetHashAlgorithmForSignature%2A> メソッドをオーバーライドします。 <xref:System.Security.Cryptography.HashAlgorithm> クラスの別の実装が必要な場合は、このメソッドをオーバーライドします。  
+5.  任意。 <xref:System.IdentityModel.Tokens.AsymmetricSecurityKey.GetHashAlgorithmForSignature%2A> メソッドをオーバーライドします。 <xref:System.Security.Cryptography.HashAlgorithm> クラスの別の実装が必要な場合は、このメソッドをオーバーライドします。  
   
 6.  <xref:System.IdentityModel.Tokens.AsymmetricSecurityKey.GetSignatureFormatter%2A> メソッドをオーバーライドします。 このメソッドは、証明書の秘密キーに関連付けられた <xref:System.Security.Cryptography.AsymmetricSignatureFormatter> クラスのインスタンスを返します。  
   
@@ -45,7 +45,7 @@ ms.lasthandoff: 05/04/2018
      [!code-csharp[c_CustomX509Token#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customx509token/cs/source.cs#1)]
      [!code-vb[c_CustomX509Token#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customx509token/vb/source.vb#1)]  
   
- 次の手順は、システム指定の X.509 セキュリティ トークンを置き換えるために、前の手順で作成したカスタムの X.509 非対称セキュリティ キーの実装を [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のセキュリティ フレームワークに統合する方法を示しています。  
+ 次の手順は、トークンをカスタム X.509 非対称セキュリティ キー実装システム指定の X.509 セキュリティを置換するために、WCF のセキュリティ フレームワークでは、前述の手順で作成したを統合する方法を示します。  
   
 #### <a name="to-replace-the-system-provided-x509-security-token-with-a-custom-x509-asymmetric-security-key-token"></a>システム指定の X.509 セキュリティ トークンをカスタムの X.509 非対称セキュリティ キー トークンで置き換えるには  
   

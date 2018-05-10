@@ -2,11 +2,11 @@
 title: メッセージ フローの概要
 ms.date: 03/30/2017
 ms.assetid: fb0899e1-84cc-4d90-b45b-dc5a50063943
-ms.openlocfilehash: 056737b9d057101568274ab8d24c0c0e2780f93a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: aea0ca4c5a8574f6039cd055561ce7da0099841b
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="message-flow-overview"></a>メッセージ フローの概要
 相互接続されたサービスを持つ分散システムでは、サービス間の因果関係を調べる必要があります。 状態監視、トラブルシューティング、原因分析などの重要なシナリオをサポートするには、要求フローに含まれるさまざまなコンポーネントを理解することが重要です。 .NET Framework 4 では、多様なサービス間でトレースを関連付けることができるように、次の機能のサポートが追加されています。  
@@ -25,7 +25,7 @@ ms.lasthandoff: 05/04/2018
   
 2.  分析トレースを有効にしていない場合は展開**Applications and Services Logs**、 **Microsoft**、 **Windows**、**アプリケーション サーバー-アプリケーション**. 選択**ビュー**、 **分析およびデバッグ ログ**です。 右クリック**分析**選択**ログの有効化**です。 トレースが表示されるように、イベント ビューアーを開いたままにします。  
   
-3.  作成したサンプルを開き、[チュートリアル入門](../../../../docs/framework/wcf/getting-started-tutorial.md)で[!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)]です。 サービスを作成できるように、管理者として [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] を実行する必要があることに注意してください。 ある場合、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]サンプルのインストール、開くことができます、[作業の開始](../../../../docs/framework/wcf/samples/getting-started-sample.md)チュートリアルに完成したプロジェクトが含まれています。  
+3.  作成したサンプルを開き、[チュートリアル入門](../../../../docs/framework/wcf/getting-started-tutorial.md)で[!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)]です。 サービスを作成できるように、管理者として [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] を実行する必要があることに注意してください。 WCF サンプルのインストールがあれば、開くことができます、[作業の開始](../../../../docs/framework/wcf/samples/getting-started-sample.md)チュートリアルに完成したプロジェクトが含まれています。  
   
 4.  右クリックし、**サービス**プロジェクトし、選択**追加**、**新しい項目の**します。 選択**アプリケーション構成ファイル** をクリック**OK**です。  
   

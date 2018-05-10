@@ -2,11 +2,11 @@
 title: アドレス ヘッダー
 ms.date: 03/30/2017
 ms.assetid: b0c94d4a-3bde-4b4d-bb6d-9f12bc3a6940
-ms.openlocfilehash: c0e3807aadc18c7737f3a5e354135721cbfccf3e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 276649c17a04822eb27eb4e3ed9cbe711b384edc
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="address-headers"></a>アドレス ヘッダー
 アドレス ヘッダーのサンプルでは、クライアントが Windows Communication Foundation (WCF) を使用してサービスに参照パラメーターを渡すことができる方法を示します。  
@@ -14,9 +14,9 @@ ms.lasthandoff: 05/04/2018
 > [!NOTE]
 >  このサンプルのセットアップ手順とビルド手順については、このトピックの最後を参照してください。  
   
- WS-Addressing 仕様では、特定の Web サービスのエンドポイントのアドレスを指定するための方法として、エンドポイント参照の概念が定義されています。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、エンドポイント参照は `EndpointAddress` クラスを通じてモデル化されます。`EndpointAddress` は、`ServiceEndpoint` クラスの Address フィールドの型です。  
+ WS-Addressing 仕様では、特定の Web サービスのエンドポイントのアドレスを指定するための方法として、エンドポイント参照の概念が定義されています。 WCF では、エンドポイント参照は、モデル化を使用して、`EndpointAddress`クラス -`EndpointAddress`の Address フィールドの種類、`ServiceEndpoint`クラスです。  
   
- エンドポイント参照モデルの一部では、各参照は、追加の識別情報を追加する複数の参照パラメータを伝達できます。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、これらの参照パラメータは `AddressHeader` クラスのインスタンスとしてモデル化されます。  
+ エンドポイント参照モデルの一部では、各参照は、追加の識別情報を追加する複数の参照パラメータを伝達できます。 WCF では、これらの参照パラメーターがのインスタンスとしてモデル化`AddressHeader`クラスです。  
   
  このサンプルでは、クライアントはクライアント エンドポイントの `EndpointAddress` に参照パラメータを追加します。 サービスはこの参照パラメータを検索し、その値を "Hello" サービス操作のロジックに使用します。  
   

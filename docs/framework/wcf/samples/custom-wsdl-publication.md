@@ -2,11 +2,11 @@
 title: カスタム WSDL パブリケーション
 ms.date: 03/30/2017
 ms.assetid: 3b3e8103-2c95-4db3-a05b-46aa8e9d4d29
-ms.openlocfilehash: e475a37b5c8e868cf06d7764d561755112ed943e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: b75aa2269d9c21a6f6d7f579d3c0b6f547a92332
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="custom-wsdl-publication"></a>カスタム WSDL パブリケーション
 このサンプルでは、次の方法を示します。  
@@ -230,7 +230,7 @@ public void GenerateOperation(OperationContractGenerationContext context)
 </client>  
 ```  
   
- カスタム インポータが指定されると、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] メタデータ システムはカスタム インポータを、この目的のために作成された <xref:System.ServiceModel.Description.WsdlImporter> に読み込みます。 このサンプルでは、<xref:System.ServiceModel.Description.MetadataExchangeClient> を使用してメタデータをダウンロードし、適切に構成された <xref:System.ServiceModel.Description.WsdlImporter> を使用してサンプルで作成されたカスタム インポータによってメタデータをインポートします。さらに、<xref:System.ServiceModel.Description.ServiceContractGenerator> を使用して、変更されたコントラクト情報を Visual Basic および C# のクライアント コードにコンパイルします。このコードは Intellisense をサポートする Visual Studio で使用するか、または XML ドキュメントにコンパイルできます。  
+ カスタム インポーターを指定すると、WCF メタデータが読み込まれます。 カスタム インポーターに<xref:System.ServiceModel.Description.WsdlImporter>その目的用に作成します。 このサンプルでは、<xref:System.ServiceModel.Description.MetadataExchangeClient> を使用してメタデータをダウンロードし、適切に構成された <xref:System.ServiceModel.Description.WsdlImporter> を使用してサンプルで作成されたカスタム インポータによってメタデータをインポートします。さらに、<xref:System.ServiceModel.Description.ServiceContractGenerator> を使用して、変更されたコントラクト情報を Visual Basic および C# のクライアント コードにコンパイルします。このコードは Intellisense をサポートする Visual Studio で使用するか、または XML ドキュメントにコンパイルできます。  
   
 ```  
 /// From WSDL Documentation:  

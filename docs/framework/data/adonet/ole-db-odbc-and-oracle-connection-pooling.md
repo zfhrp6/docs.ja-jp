@@ -2,11 +2,11 @@
 title: OLE DB、ODBC、および Oracle 接続プール
 ms.date: 03/30/2017
 ms.assetid: 2bd83b1e-3ea9-43c4-bade-d9cdb9bbbb04
-ms.openlocfilehash: 2e42b52bb75008fd34f3e4bef1788626d96368bc
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 5b70f6aeeae565684158aeb135d0d3e765e694d1
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="ole-db-odbc-and-oracle-connection-pooling"></a>OLE DB、ODBC、および Oracle 接続プール
 接続をプールすると、アプリケーションのパフォーマンスとスケーラビリティを大幅に改善できます。 このセクションでは、OLE DB、ODBC、および Oracle 用の .NET Framework データ プロバイダーの接続プールについて説明します。  
@@ -26,8 +26,6 @@ Provider=SQLOLEDB;OLE DB Services=-4;Data Source=localhost;Integrated Security=S
  .NET Framework Data Provider for ODBC の接続プールは、接続に使用される ODBC ドライバー マネージャーによって管理されるため、.NET Framework Data Provider for ODBC の影響は受けません。  
   
  有効にするにまたは、接続プールを無効にする、開く**ODBC データ ソース アドミニストレーター**コントロール パネルの [管理ツール] フォルダーにします。 **接続プーリング** タブでは、インストールされている各 ODBC ドライバーに対する接続プール パラメーターを指定することができます。 ODBC ドライバーの接続プールを変更すると、その ODBC ドライバーを使用するすべてのアプリケーションに影響します。  
-  
- ODBC 接続プールの詳細については、次を参照してください。[情報: よく寄せられる質問に関する ODBC 接続プーリング](http://support.microsoft.com/kb/169470)です。  
   
 ## <a name="connection-pooling-for-oracleclient"></a>OracleClient の接続プール  
  Oracle の .NET データ プロバイダーは ADO.NET クライアント アプリケーションに自動的に接続プールを提供します。 また、接続プール機能の動作を制御する接続文字列修飾子を指定することもできます (このトピックの後の「接続文字列キーワードによる接続プールの制御」を参照してください)。  

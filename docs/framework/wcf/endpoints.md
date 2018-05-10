@@ -4,14 +4,14 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - endpoints [WCF]
 ms.assetid: bd0c310f-dd9f-4081-9be2-3db5909850b6
-ms.openlocfilehash: 2588cc0bd70932aa91d300d8ecbe35cd2bcd7d00
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: b55abe937701f8708643efa2ea4cb62514b3521b
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="windows-communication-foundation-endpoints"></a>Windows Communication Foundation エンドポイント
-使用して、Windows Communication Foundation (WCF) サービスとすべての通信が行われる、*エンドポイント*サービス。 エンドポイントは、クライアントが [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスによって提供される機能にアクセスできるようにします。  
+使用して、Windows Communication Foundation (WCF) サービスとすべての通信が行われる、*エンドポイント*サービス。 エンドポイントは、WCF サービスを提供する機能へのアクセスをクライアントに提供します。  
   
  エンドポイントを作成する方法の詳細については、次を参照してください。[エンドポイントの作成の概要](../../../docs/framework/wcf/endpoint-creation-overview.md)です。 エンドポイントは次の要素から成ります。  
   
@@ -34,7 +34,7 @@ ms.lasthandoff: 05/04/2018
  エンドポイントの構造を説明し、構成やコード内にエンドポイントを定義する方法と、ランタイムによって提供される既定のエンドポイント、バインディング、および動作の使用方法を解説します。  
   
  [エンドポイント アドレスの指定](../../../docs/framework/wcf/specifying-an-endpoint-address.md)  
- エンドポイントを通して [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスと通信する方法を解説します。  
+ 使用するエンドポイントを介して WCF サービスとの通信を実行する方法について説明します。  
   
  [方法 : 構成にサービス エンドポイントを作成する](../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-configuration.md)  
  構成でサービス エンドポイントを作成する方法を解説します。  

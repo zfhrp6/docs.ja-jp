@@ -2,11 +2,11 @@
 title: HTTP、TCP、または名前付きパイプを使用した同期シナリオ
 ms.date: 03/30/2017
 ms.assetid: 7e90af1b-f8f6-41b9-a63a-8490ada502b1
-ms.openlocfilehash: 03f4fdcaa5fc59efe7e92d2cb900212ed5ebae77
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 11a5d8f43d12d35728c65c7a60ad8a4fa2fc1b3a
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="synchronous-scenarios-using-http-tcp-or-named-pipe"></a>HTTP、TCP、または名前付きパイプを使用した同期シナリオ
 ここでは、シングル スレッド クライアントで HTTP、TCP、または名前付きパイプを使用したときの、さまざまな同期要求/応答シナリオでのアクティビティと転送について説明します。 参照してください[HTTP、TCP、または名前付きパイプを使用して非同期シナリオ](../../../../../docs/framework/wcf/diagnostics/tracing/asynchronous-scenarios-using-http-tcp-or-named-pipe.md)マルチ スレッドの要求についての詳細。  
@@ -54,7 +54,7 @@ ms.lasthandoff: 05/04/2018
  前述のシナリオとの違いは、応答メッセージとして SOAP エラー メッセージが返されることだけです。 場合`propagateActivity` = `true`、要求メッセージのアクティビティ ID が SOAP エラー メッセージに追加します。  
   
 ## <a name="synchronous-one-way-without-errors"></a>エラーを伴わない同期一方向  
- 最初のシナリオとの違いは、メッセージがサーバーに返されないことだけです。 HTTP ベースのプロトコルの場合は、ステータス (有効またはエラー) がクライアントに返されます。 それは、[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] プロトコル スタックのなかで HTTP プロトコルだけが、要求/応答セマンティクスを使用するからです。 TCP 処理は [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] からは見えないため、受信確認はクライアントに送信されません。  
+ 最初のシナリオとの違いは、メッセージがサーバーに返されないことだけです。 HTTP ベースのプロトコルの場合は、ステータス (有効またはエラー) がクライアントに返されます。 これは、HTTP が WCF プロトコル スタックの一部である要求-応答セマンティクスで唯一のプロトコルであるためです。 TCP 処理は、WCF の非表示であるために、クライアントに受信確認は送信されません。  
   
 ## <a name="synchronous-one-way-with-errors"></a>エラーを伴う同期一方向  
  メッセージの処理中 (Q 以降) にエラーが発生しても、クライアントには通知が返されません。 これは、「エラーを伴わない同期一方向要求/応答」のシナリオと同じです。 エラー メッセージを受信する必要がある場合は、一方向のシナリオを使用しないでください。  

@@ -5,11 +5,11 @@ helpviewer_keywords:
 - WCF [WCF], troubleshooting
 - Windows Communication Foundation [WCF], troubleshooting
 ms.assetid: a9ea7a53-f31a-46eb-806e-898e465a4992
-ms.openlocfilehash: 5a6ea4f3ba121f419d1a8c46fc2534988a93d554
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: e752f6f4428d01474d643f1571935cb7d96d41ca
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="wcf-troubleshooting-quickstart"></a>WCF トラブルシューティング クイックスタート
 このトピックでは、WCF クライアントと WCF サービスの開発時に生じるさまざまな既知の問題の一覧を示します。 発生している問題がこの一覧にない場合は、サービスに対してトレースを構成することをお勧めします。 これにより、トレース ファイル ビューアーで表示し、サービス内で発生することがある例外に関する詳細情報を取得できるトレース ファイルが生成されます。 トレースの構成の詳細については、「 [Configuring Tracing](../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)」を参照してください。 トレース ファイル ビューアーの詳細については、「 [Service Trace Viewer Tool (SvcTraceViewer.exe)](../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md)」を参照してください。  
@@ -153,7 +153,7 @@ public class MyServiceHost : ServiceHost
   
 <a name="BKMK_q6"></a>   
 ## <a name="it-seems-like-one-way-and-request-reply-operations-return-at-roughly-the-same-speed-when-the-reply-contains-no-data-whats-happening"></a>応答にデータがない場合、一方向操作と要求/応答操作が戻る速度がほぼ同じになるようです。 どうしてでしょうか。  
- 操作を一方向に指定すると、操作コントラクトは入力メッセージを受け入れるだけで、出力メッセージを返しません。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]では、送信データがネットワークに書き込まれるか、例外がスローされたとき、すべてのクライアント呼び出しが戻ります。 一方向操作は同様に動作し、この操作では、サービスが見つからない場合は例外をスローし、サービスがネットワークからのデータの受け入れ準備を完了していない場合はブロックできます。 このため、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]では通常、一方向呼び出しは要求/応答よりも速くクライアントに戻りますが、ネットワーク上でデータの送信速度が遅くなると、一方向操作の速度も要求/応答操作の速度と同様に遅くなります。 詳細については、次を参照してください。[一方向サービス](../../../docs/framework/wcf/feature-details/one-way-services.md)と[にアクセスするサービスの WCF クライアントを使用して](../../../docs/framework/wcf/feature-details/accessing-services-using-a-client.md)です。  
+ 操作を一方向に指定すると、操作コントラクトは入力メッセージを受け入れるだけで、出力メッセージを返しません。 WCF では、すべてのクライアント呼び出しは、送信データがネットワークに書き込まれたか、例外がスローされたときを返します。 一方向操作は同様に動作し、この操作では、サービスが見つからない場合は例外をスローし、サービスがネットワークからのデータの受け入れ準備を完了していない場合はブロックできます。 通常 WCF では、これにより、一方向呼び出しは要求/応答よりも速くクライアントに返す速度が遅くなる、ネットワーク上で、送信データの送信には、一方向操作と要求/応答操作が速度が低下します。 詳細については、次を参照してください。[一方向サービス](../../../docs/framework/wcf/feature-details/one-way-services.md)と[にアクセスするサービスの WCF クライアントを使用して](../../../docs/framework/wcf/feature-details/accessing-services-using-a-client.md)です。  
   
 <a name="BKMK_q77"></a>   
 ## <a name="im-using-an-x509-certificate-with-my-service-and-i-get-a-systemsecuritycryptographycryptographicexception-whats-happening"></a>サービスで X.509 証明書を使用していますが、System.Security.Cryptography.CryptographicException を受け取ります。 どうしてでしょうか。  
@@ -169,7 +169,7 @@ public class MyServiceHost : ServiceHost
   
 <a name="BKMK_q99"></a>   
 ## <a name="im-using-one-of-my-tracing-tools-and-i-get-an-endpointnotfoundexception-whats-happening"></a>トレース ツールの 1 つを使用していますが、EndpointNotFoundException を受け取りました。 どうしてでしょうか。  
- 使用しているトレース ツールが、システム指定の [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] トレース機構でなく、アドレス フィルターの不一致があることを示す <xref:System.ServiceModel.EndpointNotFoundException> を受け取った場合は、 <xref:System.ServiceModel.Description.ClientViaBehavior> クラスを使用してメッセージをトレース ユーティリティに送信し、そのユーティリティがそのメッセージをサービス アドレスにリダイレクトするようにする必要があります。 <xref:System.ServiceModel.Description.ClientViaBehavior> クラスは、 `Via` アドレス指定ヘッダーを変更して、 `To` アドレス指定ヘッダーで示されている最終受信者とは別に、次のネットワーク アドレスを指定します。 ただし、このとき、エンドポイント アドレスは `To` 値の設定に使用されるので変更しないでください。  
+ システム標準の WCF トレース機構ではないトレース ツールを使用して、表示される場合、<xref:System.ServiceModel.EndpointNotFoundException>アドレス フィルターの不一致が発生しました、使用する必要があることを示す、<xref:System.ServiceModel.Description.ClientViaBehavior>トレース ユーティリティへのメッセージを送信するためのクラスとこれらのメッセージをサービス アドレスにリダイレクトする、ユーティリティがあります。 <xref:System.ServiceModel.Description.ClientViaBehavior> クラスは、 `Via` アドレス指定ヘッダーを変更して、 `To` アドレス指定ヘッダーで示されている最終受信者とは別に、次のネットワーク アドレスを指定します。 ただし、このとき、エンドポイント アドレスは `To` 値の設定に使用されるので変更しないでください。  
   
  次のコード例は、クライアント構成ファイルの例を示しています。  
   

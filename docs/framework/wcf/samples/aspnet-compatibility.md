@@ -1,27 +1,15 @@
 ---
-title: "ASP.NET 互換性"
-ms.custom: 
+title: ASP.NET 互換性
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: c8b51f1e-c096-4c42-ad99-0519887bbbc5
-caps.latest.revision: "25"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 751fe96caa2be63e925b3107fa2c198b523bef72
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 35d9362fde21faf4998051e85f66fc4ddfb8b94b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="aspnet-compatibility"></a>ASP.NET 互換性
-このサンプルでは、[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] で [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] 互換性モードを有効にする方法を示します。 [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] 互換性モードで実行されるサービスは [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] アプリケーション パイプラインに完全に組み込まれるので、ファイルや URL の承認、セッション状態、[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] クラスなどの <xref:System.Web.HttpContext> の機能を使用できるようになります。 <xref:System.Web.HttpContext> クラスを使用すると、クッキー、セッション、およびその他の [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] 機能にアクセスできます。 このモードでは、バインディングは HTTP トランスポートを使用し、サービス自体は IIS でホストされる必要があります。  
+このサンプルは、有効にする方法を示します。[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)]互換モードでは、Windows Communication Foundation (WCF)。 [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] 互換性モードで実行されるサービスは [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] アプリケーション パイプラインに完全に組み込まれるので、ファイルや URL の承認、セッション状態、[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] クラスなどの <xref:System.Web.HttpContext> の機能を使用できるようになります。 <xref:System.Web.HttpContext> クラスを使用すると、クッキー、セッション、およびその他の [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] 機能にアクセスできます。 このモードでは、バインディングは HTTP トランスポートを使用し、サービス自体は IIS でホストされる必要があります。  
   
  このサンプルでは、クライアントはコンソール アプリケーション (.exe) で、サービスはインターネット インフォメーション サービス (IIS) によってホストされています。  
   
@@ -31,17 +19,17 @@ ms.lasthandoff: 12/22/2017
 > [!NOTE]
 >  このサンプルを実行するには、[!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)] アプリケーション プールが必要です。 新しいアプリケーション プールの作成または既定のアプリケーション プールの変更を行うには、次の手順に従います。  
 >   
->  1.  **[コントロール パネル]**を開きます。  開く、**管理ツール**アプレット、**システムとセキュリティ**見出し。 開く、**インターネット インフォメーション サービス (IIS) マネージャー**アプレットします。  
+>  1.  **[コントロール パネル]** を開きます。  開く、**管理ツール**アプレット、**システムとセキュリティ**見出し。 開く、**インターネット インフォメーション サービス (IIS) マネージャー**アプレットします。  
 > 2.  ツリー ビューを展開し、**接続**ウィンドウです。 選択、**アプリケーション プール**ノード。  
-> 3.  使用する既定のアプリケーション プールを設定する[!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)](既存のサイトと非互換性の問題が発生する可能性があります、) を右クリックし、 **DefaultAppPool**リスト項目と選択**基本設定しています.**. 設定、 **.Net Framework のバージョン**プルダウンを**.Net Framework v4.0.30128** (またはそれ以降)。  
-> 4.  使用する新しいアプリケーション プールを作成する[!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)](互換性を保持する他のアプリケーション)、右クリックし、**アプリケーション プール**ノード**アプリケーション プールの追加しています.**. 新しいアプリケーション プールの名前を指定し、設定、 **.Net Framework のバージョン**プルダウンを**.Net Framework v4.0.30128** (またはそれ以降)。 下、セットアップを実行する手順は、後に右クリックし、 **ServiceModelSamples**アプリケーションと選択**アプリケーションの管理**、**詳細設定しています.**. 設定、**アプリケーション プール**新しいアプリケーション プールにします。  
+> 3.  使用する既定のアプリケーション プールを設定する[!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)](既存のサイトと非互換性の問題が発生する可能性があります、) を右クリックし、 **DefaultAppPool**リスト項目と選択**基本設定しています.**. 設定、 **.Net Framework のバージョン**プルダウンを **.Net Framework v4.0.30128** (またはそれ以降)。  
+> 4.  使用する新しいアプリケーション プールを作成する[!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)](互換性を保持する他のアプリケーション)、右クリックし、**アプリケーション プール**ノード**アプリケーション プールの追加しています.**. 新しいアプリケーション プールの名前を指定し、設定、 **.Net Framework のバージョン**プルダウンを **.Net Framework v4.0.30128** (またはそれ以降)。 下、セットアップを実行する手順は、後に右クリックし、 **ServiceModelSamples**アプリケーションと選択**アプリケーションの管理**、**詳細設定しています.**. 設定、**アプリケーション プール**新しいアプリケーション プールにします。  
   
 > [!IMPORTANT]
 >  サンプルは、既にコンピューターにインストールされている場合があります。 続行する前に、次の (既定の) ディレクトリを確認してください。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
+>  このディレクトリが存在しない場合に、 [Windows Communication Foundation (WCF) および .NET Framework 4 向けの Windows Workflow Foundation (WF) サンプル](http://go.microsoft.com/fwlink/?LinkId=150780)すべて Windows Communication Foundation (WCF) をダウンロードして[!INCLUDE[wf1](../../../../includes/wf1-md.md)]サンプルです。 このサンプルは、次のディレクトリに格納されます。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Hosting\WebHost\ASPNetCompatibility`  
   
@@ -136,5 +124,5 @@ Press <ENTER> to terminate client.
   
 4.  1 つまたは複数コンピューター構成でサンプルを実行する手順についてで[Windows Communication Foundation サンプルの実行](../../../../docs/framework/wcf/samples/running-the-samples.md)です。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [AppFabric ホスティングと永続性のサンプル](http://go.microsoft.com/fwlink/?LinkId=193961)

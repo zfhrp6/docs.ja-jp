@@ -1,24 +1,14 @@
 ---
-title: "方法: WIF トレースを使用してクレーム対応アプリケーションおよびサービスをデバッグする"
-ms.custom: 
+title: '方法: WIF トレースを使用してクレーム対応アプリケーションおよびサービスをデバッグする'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 3d51ba59-3adb-4ca4-bd33-5027531af687
-caps.latest.revision: "7"
 author: BrucePerlerMS
-ms.author: bruceper
 manager: mbaldwin
-ms.workload: dotnet
-ms.openlocfilehash: 4243313d88b22aa9f755a3586ea0c5fbe08cd891
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 0f2126a83e6a5638eb492bb2a529dbf4cdab1714
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-debug-claims-aware-applications-and-services-using-wif-tracing"></a>方法: WIF トレースを使用してクレーム対応アプリケーションおよびサービスをデバッグする
 ## <a name="applies-to"></a>対象  
@@ -114,7 +104,7 @@ ms.lasthandoff: 12/22/2017
   
 |**エラー ID**|**エラー メッセージ**|**エラーを修復するために必要な操作**|  
 |-|-|-|  
-|ID4175|セキュリティ トークンの発行者は、IssuerNameRegistry で認識されませんでした。  この発行者からのセキュリティ トークンを承認するには、この発行者の有効な名前を返すように IssuerNameRegistry を構成します。|このエラーは、MMC スナップインから拇印をコピーして、*Web.config* ファイルに貼り付けると発生する可能性があります。 具体的には、[証明書のプロパティ] ウィンドウからコピーするときに、テキスト文字列内で余分な印刷できない文字を取得することがあります。 この余分な文字により、拇印との照合が失敗します。正しく拇印をコピーするための手順については、こちら ([http://msdn.microsoft.com/library/ff359102.aspx](http://msdn.microsoft.com/library/ff359102.aspx)) を参照してください。|  
+|ID4175|セキュリティ トークンの発行者は、IssuerNameRegistry で認識されませんでした。  この発行者からのセキュリティ トークンを承認するには、この発行者の有効な名前を返すように IssuerNameRegistry を構成します。|このエラーは、MMC スナップインから拇印をコピーして、*Web.config* ファイルに貼り付けると発生する可能性があります。 具体的には、[証明書のプロパティ] ウィンドウからコピーするときに、テキスト文字列内で余分な印刷できない文字を取得することがあります。 この余分な文字は、拇印一致が失敗するとします。正しく拇印をコピーする手順を参照してください。 [http://msdn.microsoft.com/library/ff359102.aspx](http://msdn.microsoft.com/library/ff359102.aspx)|  
   
 ## <a name="related-items"></a>関連項目  
   

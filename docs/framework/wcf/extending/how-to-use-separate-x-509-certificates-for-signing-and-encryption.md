@@ -9,16 +9,16 @@ helpviewer_keywords:
 - ClientCredentials class
 - ClientCredentialsSecurityTokenManager class
 ms.assetid: 0b06ce4e-7835-4d82-8baf-d525c71a0e49
-ms.openlocfilehash: d171af8dbcbbdd51cc015986a2c69e0393fe56dc
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: d4c2e34b3e123e6fa9d8dc8e544f621b39861592
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="how-to-use-separate-x509-certificates-for-signing-and-encryption"></a>方法 : 署名および暗号化に個別の X.509 証明書を使用する
 このトピックでは、メッセージの署名とクライアントとサービスの両方で暗号化を別々 の証明書を使用するように、Windows Communication Foundation (WCF) を構成する方法を示します。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では複数のクライアント証明書またはサービス証明書を設定する API が提供されていないため、署名と暗号化で別の証明書を使用できるようにするには、カスタム クライアント資格情報またはカスタム サービス資格情報 (あるいはその両方) を作成する必要があります。 さらに、複数の証明書の情報を利用し、指定されたキーの使用方法やメッセージの方向について適切なセキュリティ トークン プロバイダーを作成するために、セキュリティ トークン マネージャーを用意する必要があります。  
+ 署名と暗号化に使用する別の証明書を有効にするには、WCF クライアントまたはサービスの複数の証明書を設定する API を提供しないためには、カスタムのクライアントまたはサービスの資格情報 (または両方) を作成する必要があります。 さらに、複数の証明書の情報を利用し、指定されたキーの使用方法やメッセージの方向について適切なセキュリティ トークン プロバイダーを作成するために、セキュリティ トークン マネージャーを用意する必要があります。  
   
  使用される主要なクラス、そのクラスの継承元のクラス (上向きの矢印で表示)、および特定のメソッドおよびプロパティの戻り値の型を次の図に示します。  
   

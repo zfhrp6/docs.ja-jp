@@ -1,24 +1,12 @@
 ---
-title: "メッセージ交換パターンの選択"
-ms.custom: 
+title: メッセージ交換パターンの選択
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 0f502ca1-6a8e-4607-ba15-59198c0e6146
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 961f5e84fb46a791127a9d80c0f03d2b87fdea77
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ac5ff841eb4e314c1c9d04c895d7a22766da003e
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="choosing-a-message-exchange-pattern"></a>メッセージ交換パターンの選択
 カスタム トランスポートを記述する最初の手順は、これを決定する*メッセージ交換パターン*(Mep) を開発するチャネルに必要なです。 ここでは、使用できるオプションとさまざまな要件について説明します。 これで説明されているチャネル開発タスクの一覧の最初のタスクは、[開発チャネル](../../../../docs/framework/wcf/extending/developing-channels.md)です。  
@@ -59,7 +47,7 @@ ms.lasthandoff: 12/22/2017
 >  UDP トランスポートでは、サポートされている MEP はデータグラムだけです。これは、UDP がファイア アンド フォーゲット (撃ち放し) のプロトコルだからです。  
   
 ## <a name="sessions-and-sessionful-channels"></a>セッションとセッションの多いチャネル  
- ネットワーク プロトコルには、接続指向プロトコル (TCP など) とコネクションレス プロトコル (UDP など) があります。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、接続に似た論理アブストラクションを意味する "セッション" という用語を使用します。 セッションの多い WCF プロトコルは、接続指向ネットワーク プロトコルに似ており、セッションの少ない WCF プロトコルは、コネクションレス ネットワーク プロトコルに似ています。  
+ ネットワーク プロトコルには、接続指向プロトコル (TCP など) とコネクションレス プロトコル (UDP など) があります。 WCF では、用語のセッションを使用して、接続に似た論理アブストラクションを意味します。 セッションの多い WCF プロトコルは、接続指向ネットワーク プロトコルに似ており、セッションの少ない WCF プロトコルは、コネクションレス ネットワーク プロトコルに似ています。  
   
  チャネル オブジェクト モデルでは、各論理セッションは、セッションの多いチャネルの 1 つのインスタンスとしてマニフェストされます。 したがって、クライアントによって作成され、サービスで受け入れられるすべての新しいセッションは、それぞれの側のセッションの多い新しいチャネルに対応します。 セッションの少ないチャネルの構造 (上) と、セッションの多いチャネルの構造 (下) を次の図に示します。  
   
@@ -103,5 +91,5 @@ ms.lasthandoff: 12/22/2017
   
 -   チャネルで <xref:System.ServiceModel.ICommunicationObject.Abort%2A> が呼び出されたときに、I/O を実行せずにセッションをその場で終了します。 このときも、何も実行しないことを意味する場合もあれば、ネットワーク接続または他のリソースの中止を伴う場合もあります。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [チャネル モデルの概要](../../../../docs/framework/wcf/extending/channel-model-overview.md)

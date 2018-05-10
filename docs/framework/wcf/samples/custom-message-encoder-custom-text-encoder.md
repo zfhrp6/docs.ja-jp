@@ -2,11 +2,11 @@
 title: 'カスタム メッセージ エンコーダー : カスタム テキスト エンコーダー'
 ms.date: 03/30/2017
 ms.assetid: 68ff5c74-3d33-4b44-bcae-e1d2f5dea0de
-ms.openlocfilehash: 975cfd44834ed31a5d723fdca0fe467cba63e68d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 369706ecdc2e37a5fb62a448a273b045fe424df8
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="custom-message-encoder-custom-text-encoder"></a>カスタム メッセージ エンコーダー : カスタム テキスト エンコーダー
 このサンプルでは、Windows Communication Foundation (WCF) を使用してカスタム テキスト メッセージ エンコーダーを実装する方法を示します。  
@@ -20,7 +20,7 @@ ms.lasthandoff: 05/04/2018
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\MessageEncoder\Text`  
   
- <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement> の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] でサポートされているエンコーディングは、UTF-8、UTF-16、および Big Endean Unicode のみです。 このサンプルのカスタム テキスト メッセージ エンコーダーでは、すべてのプラットフォームでサポートされ、相互運用に必要とされる可能性のある文字エンコーディングがサポートされます。 このサンプルは、クライアント コンソール プログラム (.exe)、インターネット インフォメーション サービス (IIS) によってホストされるサービス ライブラリ (.dll)、およびテキスト メッセージ エンコーダー ライブラリ (.dll) で構成されています。 サービスは、要求/応答通信パターンを定義するコントラクトを実装します。 このコントラクトは `ICalculator` インターフェイスによって定義されており、算術演算 (加算、減算、乗算、および 除算) を公開しています。 クライアントは指定された算術演算を同期要求し、サービスは結果と共に応答します。 クライアントとサービスはどちらも、既定の `CustomTextMessageEncoder` の代わりに <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement> を使用します。  
+ <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement> WCF utf-8、utf-16、および Big Endean Unicode エンコーディングのみをサポートしています。 このサンプルのカスタム テキスト メッセージ エンコーダーでは、すべてのプラットフォームでサポートされ、相互運用に必要とされる可能性のある文字エンコーディングがサポートされます。 このサンプルは、クライアント コンソール プログラム (.exe)、インターネット インフォメーション サービス (IIS) によってホストされるサービス ライブラリ (.dll)、およびテキスト メッセージ エンコーダー ライブラリ (.dll) で構成されています。 サービスは、要求/応答通信パターンを定義するコントラクトを実装します。 このコントラクトは `ICalculator` インターフェイスによって定義されており、算術演算 (加算、減算、乗算、および 除算) を公開しています。 クライアントは指定された算術演算を同期要求し、サービスは結果と共に応答します。 クライアントとサービスはどちらも、既定の `CustomTextMessageEncoder` の代わりに <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement> を使用します。  
   
  カスタム エンコーダーの実装は、メッセージ エンコーダー ファクトリ、メッセージ エンコーダー、メッセージ エンコーディング バインド要素、および構成ハンドラーで構成され、次が示されます。  
   
@@ -47,7 +47,7 @@ ms.lasthandoff: 05/04/2018
 4.  1 つまたは複数コンピューター構成でサンプルを実行する手順についてで[Windows Communication Foundation サンプルの実行](../../../../docs/framework/wcf/samples/running-the-samples.md)です。  
   
 ## <a name="message-encoder-factory-and-the-message-encoder"></a>メッセージ エンコーダー ファクトリとメッセージ エンコーダー  
- <xref:System.ServiceModel.ServiceHost> またはクライアント チャネルが開かれると、デザイン時コンポーネント `CustomTextMessageBindingElement` は `CustomTextMessageEncoderFactory` を作成します。 このファクトリは、`CustomTextMessageEncoder` を作成します。 メッセージ エンコーダーは、ストリーミング モードとバッファー モードの両方で動作し、 <xref:System.Xml.XmlReader> と <xref:System.Xml.XmlWriter> を使用してメッセージの読み取りと書き込みを行います。 UTF-8、UTF-16、および Big-Endean Unicode だけをサポートするように最適化された [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の XML リーダーとライターとは異なり、これらのリーダーとライターはプラットフォームでサポートされるすべてのエンコーディングをサポートします。  
+ <xref:System.ServiceModel.ServiceHost> またはクライアント チャネルが開かれると、デザイン時コンポーネント `CustomTextMessageBindingElement` は `CustomTextMessageEncoderFactory` を作成します。 このファクトリは、`CustomTextMessageEncoder` を作成します。 メッセージ エンコーダーは、ストリーミング モードとバッファー モードの両方で動作し、 <xref:System.Xml.XmlReader> と <xref:System.Xml.XmlWriter> を使用してメッセージの読み取りと書き込みを行います。 最適化された XML リーダーと utf-8、utf-16、および Big-endean Unicode だけをサポートする WCF のライターではなくこれらのリーダーとライターをサポート プラットフォームがサポートされているすべてのエンコーディングします。  
   
  カスタム テキスト メッセージ エンコーダーのコード例を次に示します。  
   
@@ -190,11 +190,11 @@ public class CustomTextMessageEncoderFactory : MessageEncoderFactory
 ```  
   
 ## <a name="message-encoding-binding-element"></a>メッセージ エンコーディング バインド要素  
- このバインディング要素により、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ランタイム スタックの構成が可能になります。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーション内でカスタム メッセージ エンコーダーを使用するには、ランタイム スタックの適切なレベルで適切な設定を使用してメッセージ エンコーダー ファクトリを作成する、バインディング要素が必要です。  
+ バインド要素には、WCF ランタイム スタックの構成ができるようにします。 WCF アプリケーションでカスタム メッセージ エンコーダーを使用するには、バインド要素が必要なランタイム スタックの適切なレベルで適切な設定で、メッセージ エンコーダー ファクトリを作成します。  
   
- `CustomTextMessageBindingElement` は <xref:System.ServiceModel.Channels.BindingElement> 基本クラスから派生し、<xref:System.ServiceModel.Channels.MessageEncodingBindingElement> クラスを継承します。 これによって、他の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] コンポーネントは、このバインディング要素をメッセージ エンコーディング バインディング要素として認識できます。 <xref:System.ServiceModel.Channels.MessageEncodingBindingElement.CreateMessageEncoderFactory%2A> を実装すると、一致するメッセージ エンコーダー ファクトリのインスタンスが適切に設定されて返されます。  
+ `CustomTextMessageBindingElement` は <xref:System.ServiceModel.Channels.BindingElement> 基本クラスから派生し、<xref:System.ServiceModel.Channels.MessageEncodingBindingElement> クラスを継承します。 これにより、このバインド要素、メッセージ エンコーディング バインド要素として認識するその他の WCF コンポーネントです。 <xref:System.ServiceModel.Channels.MessageEncodingBindingElement.CreateMessageEncoderFactory%2A> を実装すると、一致するメッセージ エンコーダー ファクトリのインスタンスが適切に設定されて返されます。  
   
- `CustomTextMessageBindingElement` は、プロパティを介して `MessageVersion`、`ContentType`、および `Encoding` の設定を公開します。 エンコーダーは、Soap11Addressing と Soap12Addressing1 の両方のバージョンをサポートします。 既定値は Soap11Addressing1 です。 また、`ContentType` の既定値は "text/xml" です。 `Encoding` プロパティでは、必要な文字エンコーディングの値を設定できます。 サンプルのクライアントとサービスでは、ISO-8859-1 (Latin1) 文字エンコーディングを使用します。この規格は、<xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement> の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ではサポートされません。  
+ `CustomTextMessageBindingElement` は、プロパティを介して `MessageVersion`、`ContentType`、および `Encoding` の設定を公開します。 エンコーダーは、Soap11Addressing と Soap12Addressing1 の両方のバージョンをサポートします。 既定値は Soap11Addressing1 です。 また、`ContentType` の既定値は "text/xml" です。 `Encoding` プロパティでは、必要な文字エンコーディングの値を設定できます。 サンプルのクライアントとサービスを使用して ISO 8859-1 (Latin1) 文字エン コードでサポートされていない、 <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement> WCF のです。  
   
  カスタム テキスト メッセージ エンコーダーを使用してプログラムでバインディングを作成する方法を次のコードに示します。  
   

@@ -1,31 +1,19 @@
 ---
-title: "カスタム バインド"
-ms.custom: 
+title: カスタム バインド
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 3c9537ea-9708-4ebc-b861-219f2e2db53d
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 2a5206887c154292194f790f8cf9c49798cf57c5
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f28aa83aa22a87f76e955d6b4eb7cfa9f6d7fcdd
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="custom-binding"></a>カスタム バインド
 このセクションには、エンドポイント要素のカスタム バインド属性の使用方法を示すサンプルが含まれています。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [カスタム バインド強制](../../../../docs/framework/wcf/samples/custom-binding-imperative.md)  
- 強制コードを書き込むことにより、構成ファイルや生成された [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントを使用せずにカスタム バインディングを定義して使用する方法を示します。  
+ 定義して構成ファイルまたは生成された WCF クライアントを使用せず、カスタム バインドを使用する命令型コードを記述する方法を示します。  
   
  [カスタム バインドのトランスポートとエンコード](../../../../docs/framework/wcf/samples/custom-binding-transport-and-encoding.md)  
  さまざまなトランスポートとメッセージ エンコーディング要素を使用してカスタム バインドを構成する方法を示します。  

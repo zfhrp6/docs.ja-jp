@@ -4,17 +4,17 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - attaching extensions using behaviors [WCF]
 ms.assetid: 149b99b6-6eb6-4f45-be22-c967279677d9
-ms.openlocfilehash: 05fd96574f072f8e349f83d11aca20bc5269dfc7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: af95fa01fc9caffb8a4f0e85d3457c7f3fa60320
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="configuring-and-extending-the-runtime-with-behaviors"></a>動作を使用したランタイムの構成と拡張
 動作を使用すると、既定の動作を変更し、検査し、サービス構成を検証または Windows Communication Foundation (WCF) クライアントとサービス アプリケーションのランタイム動作を変更するカスタムの拡張機能を追加できます。 ここでは、動作インターフェイスとその実装方法について説明します。また、動作インターフェイスをサービスの説明 (サービス アプリケーションの場合) またはエンドポイント (クライアント アプリケーションの場合) にプログラムによって追加する方法と、構成ファイル内で追加する方法についても説明します。 詳細については、システム指定の動作を使用して、次を参照してください。[サービスの実行時の動作を指定する](../../../../docs/framework/wcf/specifying-service-run-time-behavior.md)と[クライアントの実行時の動作を指定する](../../../../docs/framework/wcf/specifying-client-run-time-behavior.md)です。  
   
 ## <a name="behaviors"></a>ビヘイビアー  
- サービスまたはサービス エンドポイント説明オブジェクトに追加される動作の種類 (サービスまたはクライアントでそれぞれ) を実行するランタイムの作成に Windows Communication Foundation (WCF) によってがそれらのオブジェクトで使用する前に、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]サービスまたは、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]クライアント。 ランタイムの構築プロセスでこれらの動作を呼び出すと、コントラクト、バインディング、およびアドレスによって構築されたランタイムを変更するランタイム プロパティやランタイム メソッドにアクセスできます。  
+ サービスまたはサービス エンドポイント説明オブジェクトに追加される動作の種類 (サービスまたはクライアントでそれぞれ) これらのオブジェクトは、WCF サービスまたは WCF クライアントを実行するランタイムの作成に Windows Communication Foundation (WCF) によってを使用する前にします。 ランタイムの構築プロセスでこれらの動作を呼び出すと、コントラクト、バインディング、およびアドレスによって構築されたランタイムを変更するランタイム プロパティやランタイム メソッドにアクセスできます。  
   
 ### <a name="behavior-methods"></a>動作メソッド  
  すべての動作で、`AddBindingParameters` メソッド、`ApplyDispatchBehavior` メソッド、`Validate` メソッド、および `ApplyClientBehavior` メソッドを使用できます。ただし、<xref:System.ServiceModel.Description.IServiceBehavior> には、例外が 1 つあります。`ApplyClientBehavior` はクライアントで実行できないため、このメソッドを実装していません。  
@@ -33,9 +33,9 @@ ms.lasthandoff: 05/04/2018
 > [!NOTE]
 >  ランタイム プロパティと、クライアントの実行動作を変更に使用できる拡張機能の種類の詳細については、次を参照してください。[を拡張するクライアント](../../../../docs/framework/wcf/extending/extending-clients.md)です。 ランタイム プロパティと、サービス ディスパッチャの実行動作を変更に使用できる拡張機能の種類の詳細については、次を参照してください。[ディスパッチャーの拡張](../../../../docs/framework/wcf/extending/extending-dispatchers.md)です。  
   
- ほとんどの [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ユーザーは、ランタイムと直接やり取りすることはありません。代わりに、構成ファイル内のクラスや動作で、コア プログラミング モデルの構成要素 (エンドポイント、コントラクト、バインディング、アドレス、動作属性など) を使用します。 これらの構成要素の構成、*説明ツリー*サービスをサポートするためにランタイムを構築するための完全な仕様はまたはクライアントが、説明ツリーによって記述します。  
+ WCF のほとんどのユーザーはいないランタイム直接やり取りです。代わりに、コア プログラミング モデルの構成要素のエンドポイント、コントラクト、バインディング、アドレス、およびクラスや動作の構成ファイル内での動作属性などを使用します。 これらの構成要素の構成、*説明ツリー*サービスをサポートするためにランタイムを構築するための完全な仕様はまたはクライアントが、説明ツリーによって記述します。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、次の 4 種類の動作があります。  
+ WCF の動作の 4 種類あります。  
   
 -   サービスの動作 (<xref:System.ServiceModel.Description.IServiceBehavior> 型) : <xref:System.ServiceModel.ServiceHostBase> を含むサービス ランタイム全体のカスタマイズを実現します。  
   
@@ -64,24 +64,24 @@ ms.lasthandoff: 05/04/2018
   
 3.  構成を拡張するカスタムの <xref:System.ServiceModel.Configuration.BehaviorExtensionElement> を実装する方法。 これにより、アプリケーション構成ファイルからサービスの動作を使用できるようになります。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のサービスの動作の例として、<xref:System.ServiceModel.ServiceBehaviorAttribute> 属性、<xref:System.ServiceModel.Description.ServiceThrottlingBehavior>、<xref:System.ServiceModel.Description.ServiceMetadataBehavior> 動作などがあります。  
+ Wcf サービスの動作の例を示します、<xref:System.ServiceModel.ServiceBehaviorAttribute>属性を<xref:System.ServiceModel.Description.ServiceThrottlingBehavior>、および<xref:System.ServiceModel.Description.ServiceMetadataBehavior>動作します。  
   
 #### <a name="contract-behaviors"></a>コントラクトの動作  
  <xref:System.ServiceModel.Description.IContractBehavior> インターフェイスを実装するコントラクトの動作は、コントラクト全体にわたり、クライアント ランタイムとサービス ランタイムを拡張する際に使用します。  
   
- コントラクトの動作をコントラクトに追加する場合、2 つの方法があります。  1 つは、コントラクト インターフェイスで使用するカスタム属性を作成する方法です。 コントラクト インターフェイスを <xref:System.ServiceModel.ServiceHost> または <xref:System.ServiceModel.ChannelFactory%601> に渡すと、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] はインターフェイスの属性を検査します。 属性のいずれかが <xref:System.ServiceModel.Description.IContractBehavior> の実装である場合、そのインターフェイス用に作成された <xref:System.ServiceModel.Description.ContractDescription?displayProperty=nameWithType> の動作コレクションに追加されます。  
+ コントラクトの動作をコントラクトに追加する場合、2 つの方法があります。  1 つは、コントラクト インターフェイスで使用するカスタム属性を作成する方法です。 コントラクト インターフェイスが渡されたときにいずれかに、<xref:System.ServiceModel.ServiceHost>または<xref:System.ServiceModel.ChannelFactory%601>WCF は、インターフェイスの属性を検査します。 属性のいずれかが <xref:System.ServiceModel.Description.IContractBehavior> の実装である場合、そのインターフェイス用に作成された <xref:System.ServiceModel.Description.ContractDescription?displayProperty=nameWithType> の動作コレクションに追加されます。  
   
  カスタム コントラクトの動作属性に <xref:System.ServiceModel.Description.IContractBehaviorAttribute?displayProperty=nameWithType> を実装することもできます。 この場合、適用先に応じて動作は次のようになります。  
   
- •コントラクト インターフェイスに適用した場合。 この場合、動作は任意のエンドポイント内の該当の型のすべてのコントラクトに適用されます。[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、<xref:System.ServiceModel.Description.IContractBehaviorAttribute.TargetContract%2A?displayProperty=nameWithType> プロパティの値を無視します。  
+ •コントラクト インターフェイスに適用した場合。 この場合、動作は任意のエンドポイントにこの種類のすべてのコントラクトに適用し、WCF の値を無視する、<xref:System.ServiceModel.Description.IContractBehaviorAttribute.TargetContract%2A?displayProperty=nameWithType>プロパティです。  
   
  •サービス クラスに適用した場合。 この場合、動作はコントラクトが <xref:System.ServiceModel.Description.IContractBehaviorAttribute.TargetContract%2A> プロパティの値であるエンドポイントにのみ適用されます。  
   
- •コールバック クラスに適用した場合。 この場合、動作は双方向クライアントのエンドポイントに適用されます。[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、<xref:System.ServiceModel.Description.IContractBehaviorAttribute.TargetContract%2A> プロパティの値を無視します。  
+ •コールバック クラスに適用した場合。 この場合、動作は双方向クライアントのエンドポイントに適用し、WCF の値を無視する、<xref:System.ServiceModel.Description.IContractBehaviorAttribute.TargetContract%2A>プロパティです。  
   
  2 番目の方法として、<xref:System.ServiceModel.Description.ContractDescription> の動作コレクションに動作を追加する方法があります。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のコントラクトの動作の例として、<xref:System.ServiceModel.DeliveryRequirementsAttribute?displayProperty=nameWithType> 属性などがあります。 詳細および例については、リファレンス トピックを参照してください。  
+ WCF のコントラクトの動作の例として、<xref:System.ServiceModel.DeliveryRequirementsAttribute?displayProperty=nameWithType>属性。 詳細および例については、リファレンス トピックを参照してください。  
   
 #### <a name="endpoint-behaviors"></a>エンドポイントの動作  
  <xref:System.ServiceModel.Description.IEndpointBehavior> を実装するエンドポイントの動作は、特定のエンドポイントのサービス ランタイムまたはクライアント ランタイム全体を変更する主要機構です。  
@@ -97,11 +97,11 @@ ms.lasthandoff: 05/04/2018
 #### <a name="operation-behaviors"></a>操作の動作  
  <xref:System.ServiceModel.Description.IOperationBehavior> インターフェイスを実装する操作の動作は、各操作のクライアント ランタイムとサービス ランタイムを拡張する際に使用します。  
   
- 操作の動作を操作に追加する場合、2 つの方法があります。 1 つは、操作をモデル化するメソッドで使用するカスタム属性を作成する方法です。 <xref:System.ServiceModel.ServiceHost> または <xref:System.ServiceModel.ChannelFactory> に操作を追加すると、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、その操作用に作成された <xref:System.ServiceModel.Description.IOperationBehavior> の動作コレクションに任意の <xref:System.ServiceModel.Description.OperationDescription> 属性を追加します。  
+ 操作の動作を操作に追加する場合、2 つの方法があります。 1 つは、操作をモデル化するメソッドで使用するカスタム属性を作成する方法です。 操作がいずれかに追加されたとき、<xref:System.ServiceModel.ServiceHost>または<xref:System.ServiceModel.ChannelFactory>、あれば追加します。 WCF<xref:System.ServiceModel.Description.IOperationBehavior>動作コレクションに属性を、<xref:System.ServiceModel.Description.OperationDescription>その操作用に作成します。  
   
  2 番目の機構は、構成された <xref:System.ServiceModel.Description.OperationDescription> の動作コレクションに動作を直接追加します。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の操作の動作の例として、<xref:System.ServiceModel.OperationBehaviorAttribute> や <xref:System.ServiceModel.TransactionFlowAttribute> などがあります。  
+ WCF での操作の動作の例として、<xref:System.ServiceModel.OperationBehaviorAttribute>と<xref:System.ServiceModel.TransactionFlowAttribute>です。  
   
  詳細および例については、リファレンス トピックを参照してください。  
   

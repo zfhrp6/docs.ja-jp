@@ -2,21 +2,21 @@
 title: WCF 拡張に対するカスタム メタデータのインポート
 ms.date: 03/30/2017
 ms.assetid: 78beb28f-408a-4c75-9c3c-caefe9595b1a
-ms.openlocfilehash: bb7124cbce3fa38d00446b6568c85fc3136ee180
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 99e2bd7c0ce1fd4a8154a0d6d9650487197d98d8
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="importing-custom-metadata-for-a-wcf-extension"></a>WCF 拡張に対するカスタム メタデータのインポート
-Windows Communication Foundation (WCF) では、メタデータのインポートは、そのメタデータからサービスまたはコンポーネントの抽象表現を生成するプロセスです。 たとえば、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、<xref:System.ServiceModel.Description.ServiceEndpoint> インスタンス、<xref:System.ServiceModel.Channels.Binding> インスタンス、または <xref:System.ServiceModel.Description.ContractDescription> インスタンスをサービスの WSDL ドキュメントからインポートできます。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のサービス メタデータをインポートするには、<xref:System.ServiceModel.Description.MetadataImporter?displayProperty=nameWithType> 抽象クラスの実装を使用します。 <xref:System.ServiceModel.Description.MetadataImporter> クラスから派生した型では、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の WS-Policy インポート ロジックを利用したメタデータ形式のインポートをサポートします。  
+Windows Communication Foundation (WCF) では、メタデータのインポートは、そのメタデータからサービスまたはコンポーネントの抽象表現を生成するプロセスです。 たとえば、WCF をインポートできます<xref:System.ServiceModel.Description.ServiceEndpoint>インスタンス、<xref:System.ServiceModel.Channels.Binding>インスタンスまたは<xref:System.ServiceModel.Description.ContractDescription>サービスの WSDL からインスタンスを文書化します。 WCF でのサービス メタデータをインポートするには、実装を使用、<xref:System.ServiceModel.Description.MetadataImporter?displayProperty=nameWithType>抽象クラスです。 派生する型、 <xref:System.ServiceModel.Description.MetadataImporter> Ws-policy を利用したメタデータ形式をインポートする WCF のロジックをインポートするをクラスがサポートを実装します。  
   
  カスタム メタデータは、システム指定のメタデータ インポーターでインポートできない XML 要素で構成されます。 通常、これにはカスタム WSDL 拡張とカスタム ポリシー アサーションが含まれます。  
   
  ここでは、カスタム WSDL 拡張とカスタム ポリシー アサーションをインポートする方法について説明します。 インポート プロセス自体には重点を置きません。 エクスポートし、メタデータは、カスタムまたはシステムでサポートされているかどうかに関係なくメタデータをインポートする型を使用する方法の詳細については、次を参照してください。[エクスポートおよびインポートするメタデータ](../../../../docs/framework/wcf/feature-details/exporting-and-importing-metadata.md)です。  
   
 ## <a name="overview"></a>概要  
- <xref:System.ServiceModel.Description.WsdlImporter?displayProperty=nameWithType> 型は、<xref:System.ServiceModel.Description.MetadataImporter> に含まれる [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 抽象クラスの実装です。 <xref:System.ServiceModel.Description.WsdlImporter> 型は、<xref:System.ServiceModel.Description.MetadataSet?displayProperty=nameWithType> オブジェクトにまとめられた、結び付けられているポリシーを使用して WSDL メタデータをインポートします。 既定のインポーターが認識しないポリシー アサーションおよび WSDL 拡張は、インポートに使用される登録済みのカスタム ポリシーおよびカスタム WDSL インポーターに渡されます。 通常、インポーターは、ユーザー定義のバインド要素をサポートしたりインポートされたコントラクトを変更したりする目的で実装されます。  
+ <xref:System.ServiceModel.Description.WsdlImporter?displayProperty=nameWithType>型の実装は、 <xref:System.ServiceModel.Description.MetadataImporter> WCF に含まれているクラスを抽象化します。 <xref:System.ServiceModel.Description.WsdlImporter> 型は、<xref:System.ServiceModel.Description.MetadataSet?displayProperty=nameWithType> オブジェクトにまとめられた、結び付けられているポリシーを使用して WSDL メタデータをインポートします。 既定のインポーターが認識しないポリシー アサーションおよび WSDL 拡張は、インポートに使用される登録済みのカスタム ポリシーおよびカスタム WDSL インポーターに渡されます。 通常、インポーターは、ユーザー定義のバインド要素をサポートしたりインポートされたコントラクトを変更したりする目的で実装されます。  
   
  ここでは、次の内容について説明します。  
   

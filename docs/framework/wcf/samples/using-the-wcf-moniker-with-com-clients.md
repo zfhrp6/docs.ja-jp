@@ -2,11 +2,11 @@
 title: WCF モニカーの COM クライアントと組み合わせての使用
 ms.date: 03/30/2017
 ms.assetid: e2799bfe-88bd-49d7-9d6d-ac16a9b16b04
-ms.openlocfilehash: 79040cd267d354d32b3e957dc70fcc65b09b0fc8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 6d47b9c655db932bb9a4243533fbd01bcf25e0df
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="using-the-wcf-moniker-with-com-clients"></a>WCF モニカーの COM クライアントと組み合わせての使用
 このサンプルでは、Windows Communication Foundation (WCF) サービス モニカーを使用して、Web サービスを Microsoft Office Visual Basic for Applications (Office VBA) や Visual Basic 6.0 などの COM ベースの開発環境に統合する方法を示します。 このサンプルは、Windows スクリプト ホストのクライアント (.vbs)、サポート クライアント ライブラリ (.dll)、およびインターネット インフォメーション サービス (IIS) でホストされるサービス ライブラリ (.dll) で構成されています。 このサービスは電卓サービスの 1 つであり、COM クライアントはサービスの算術演算 (Add、Subtract、Multiply、および Divide) を呼び出します。 クライアント アクティビティは、メッセージ ボックス ウィンドウに表示されます。  
@@ -99,7 +99,7 @@ contractType={9213C6D2-5A6F-3D26-839B-3BA9B82228D3}")
 WScript.Echo "Typed service moniker: 100 + 15.99 = " & typedServiceMoniker.Add(100, 15.99)  
 ```  
   
- サンプルを実行すると、操作の応答が Windows スクリプト ホストのメッセージ ボックス ウィンドウに表示されます。 ここでは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスと通信する型指定のあるモニカーを使用して、COM の呼び出しを行う COM クライアントを示します。 クライアント アプリケーションでは COM が使用されますが、サービスとの通信は Web サービス呼び出しのみで構成されます。  
+ サンプルを実行すると、操作の応答が Windows スクリプト ホストのメッセージ ボックス ウィンドウに表示されます。 これにより、WCF サービスと通信するために型指定されたモニカーを使用して、COM の呼び出しを行う COM クライアントが示されます。 クライアント アプリケーションでは COM が使用されますが、サービスとの通信は Web サービス呼び出しのみで構成されます。  
   
 ## <a name="wsdl-contract"></a>WSDL コントラクト  
  WSDL コントラクトと共にモニカーを使用するには、クライアント ライブラリを登録する必要はありません。ただし、ブラウサを使用してサービスの WSDL エンドポイントにアクセスするなど、帯域外機構を通じてサービスの WSDL コントラクトを取得する必要があります。 これにより、モニカーは実行時にそのコントラクトにアクセスできるようになります。  
@@ -135,7 +135,7 @@ Set wsdlServiceMoniker = GetObject(wsdlMonikerString)
 -   コントラクトの名前と名前空間。 WSDL に複数のコントラクトが含まれている場合があるので、識別情報が必要です。  
   
     > [!NOTE]
-    >  既定では、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスは、使用される名前空間ごとに異なる WSDL ファイルを生成します。 これらのファイルは、WSDL インポート コンストラクターを使用してリンクされます。 モニカーでは単一の WSDL 定義が想定されているので、サービスはこのサンプルで示すように単一の名前空間を使用するか、または別のファイルを手動でマージする必要があります。  
+    >  既定では、WCF サービスが名前空間ごとに異なる WSDL ファイルを生成を使用します。 これらのファイルは、WSDL インポート コンストラクターを使用してリンクされます。 モニカーでは単一の WSDL 定義が想定されているので、サービスはこのサンプルで示すように単一の名前空間を使用するか、または別のファイルを手動でマージする必要があります。  
   
  サービス モニカーを使用してプロキシ インスタンスを構築しておくと、クライアント アプリケーションはプロキシでメソッドを呼び出すことができます。これにより、対応するサービス操作を呼び出すサービス モニカー インフラストラクチャは次のようになります。  
   
@@ -144,7 +144,7 @@ Set wsdlServiceMoniker = GetObject(wsdlMonikerString)
 WScript.Echo "WSDL service moniker: 145 - 76.54 = " & wsdlServiceMoniker.Subtract(145, 76.54)  
 ```  
   
- サンプルを実行すると、操作の応答が Windows スクリプト ホストのメッセージ ボックス ウィンドウに表示されます。 ここでは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスと通信するモニカーを WSDL コントラクトと共に使用して、COM の呼び出しを行う COM クライアントを示します。  
+ サンプルを実行すると、操作の応答が Windows スクリプト ホストのメッセージ ボックス ウィンドウに表示されます。 これにより、WCF サービスと通信するために WSDL コントラクトと共にモニカーを使用して、COM の呼び出しを行う COM クライアントが示されます。  
   
 ## <a name="metadata-exchange-contract"></a>Metadata Exchange コントラクト  
  MEX コントラクトと共にモニカーを使用するには、WSDL コントラクトと同様、クライアント登録は必要ありません。 サービスのコントラクトは、実行時に Metadata Exchange を内部使用して取得されます。  
@@ -179,7 +179,7 @@ Set mexServiceMoniker = GetObject(mexMonikerString)
 WScript.Echo "MEX service moniker: 9 * 81.25 = " & mexServiceMoniker.Multiply(9, 81.25)  
 ```  
   
- サンプルを実行すると、操作の応答が Windows スクリプト ホストのメッセージ ボックス ウィンドウに表示されます。 ここでは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスと通信するモニカーを MEX コントラクトと共に使用して、COM の呼び出しを行う COM クライアントを示します。  
+ サンプルを実行すると、操作の応答が Windows スクリプト ホストのメッセージ ボックス ウィンドウに表示されます。 これは、MEX コントラクトと共にモニカーを使用して WCF サービスと通信するために、COM の呼び出しを行う COM クライアントを示しています。  
   
 #### <a name="to-set-up-and-build-the-sample"></a>サンプルをセットアップしてビルドするには  
   

@@ -2,11 +2,11 @@
 title: カスタム バインディングを介したメタデータの公開と取得
 ms.date: 03/30/2017
 ms.assetid: 904e11b4-d90e-45c6-9ee5-c3472c90008c
-ms.openlocfilehash: 607cf70e8e226e6c97a785f2478ad3a655b21a7c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 528f7662ee3a1f956427e5e42f540816f55027f8
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="publishing-and-retrieving-metadata-over-a-custom-binding"></a>カスタム バインディングを介したメタデータの公開と取得
 <xref:System.ServiceModel.Description.ServiceMetadataBehavior?displayProperty=nameWithType> は、サービスにメタデータ エンドポイントを追加するためのサポートを提供します。 これらのメタデータ エンドポイントがある URL に HTTP GET 要求に応答できる、 `?wsdl` querystring および Ws-metadataexchange (MEX) 仕様で定義された Ws-transfer GET 要求にします。 MEX エンドポイントは、<xref:System.ServiceModel.Description.IMetadataExchange?displayProperty=nameWithType> コントラクトを実装します。  
@@ -19,7 +19,7 @@ ms.lasthandoff: 05/04/2018
 ## <a name="retrieving-metadata-over-a-custom-binding"></a>カスタム バインドを介したメタデータの取得  
  メタデータは、標準の HTTP 要求または HTTPS GET 要求を使用して HTTP Get および HTTPS Get メタデータ エンドポイントから取得できます。  
   
- MEX メタデータ エンドポイントからメタデータを取得するには、通常、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] でサポートされている標準の MEX バインディングのいずれかを使用できます。 詳細については、「<xref:System.ServiceModel.Description.MetadataExchangeBindings?displayProperty=nameWithType>」を参照してください。 <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> 型および Svcutil.exe ツールでは、指定したメタデータ エンドポイントのアドレスに基づいて、標準の MEX バインディングの 1 つが自動的に選択されます。  
+ WCF でサポートされている標準の MEX バインディングのいずれかを使用することができます、通常、MEX メタデータ エンドポイントからメタデータを取得します。 詳細については、「<xref:System.ServiceModel.Description.MetadataExchangeBindings?displayProperty=nameWithType>」を参照してください。 <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> 型および Svcutil.exe ツールでは、指定したメタデータ エンドポイントのアドレスに基づいて、標準の MEX バインディングの 1 つが自動的に選択されます。  
   
  MEX メタデータ エンドポイントで標準の MEX バインディングとは異なるバインディングを使用する場合は、コードを使用するか、<xref:System.ServiceModel.Description.MetadataExchangeClient> クライアント エンドポイント構成を提供することにより、<xref:System.ServiceModel.Description.IMetadataExchange> で使用されるバインディングを構成できます。 Svcutil.exe ツールは、構成ファイルから、メタデータ エンドポイント アドレスの URI スキームと同じ名前を持つ <xref:System.ServiceModel.Description.IMetadataExchange> クライアント エンドポイント構成を自動的に読み込みます。  
   

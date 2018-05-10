@@ -1,10 +1,6 @@
 ---
 title: COM 呼び出し可能ラッパー
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -18,14 +14,11 @@ helpviewer_keywords:
 ms.assetid: d04be3b5-27b9-4f5b-8469-a44149fabf78
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 270d7e85491f0f4ada797910d4fc12c1a14be625
-ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
+ms.openlocfilehash: 21f7b0d56a788b4161fb7e99899b4dd15a434152
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="com-callable-wrapper"></a>COM 呼び出し可能ラッパー
 COM クライアントが .NET オブジェクトを呼び出すと、共通言語ランタイムがマネージ オブジェクトとそのオブジェクトのための COM 呼び出し可能ラッパー (CCW: COM Callable Wrapper) を作成します。 COM クライアントは .NET オブジェクトを直接参照できないため、CCW をマネージ オブジェクトのプロキシとして使用します。  

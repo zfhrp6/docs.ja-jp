@@ -2,11 +2,11 @@
 title: 例外とエラーの処理
 ms.date: 03/30/2017
 ms.assetid: a64d01c6-f221-4f58-93e5-da4e87a5682e
-ms.openlocfilehash: a7fb7b5dd5755b9d534d9a96af3db598a44b42b0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 494a0665f5bad2c7da3998cf77ced79314ca2f36
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="handling-exceptions-and-faults"></a>例外とエラーの処理
 例外は、サービスまたはクライアント実装内でエラーをローカルに伝達するために使用されます。 一方、エラーは、サーバーからクライアントまたはクライアントからサーバーのように、サービス境界を越えてエラーを伝達するために使用されます。 このようなエラーに加え、多くの場合、トランスポート チャネルはトランスポート固有の機構を使用して、トランスポート レベルのエラーを伝達します。 たとえば、HTTP トランスポートは、404 などのステータス コードを使用して、存在しないエンドポイントの URL (エラーを返信するエンドポイントが存在しないこと) を伝達します。 このドキュメントは、カスタム チャネル作成者にガイダンスを示す 3 つのセクションで構成されています。 最初のセクションでは、例外を定義しスローする状況と方法に関するガイダンスを示します。 2 番目のセクションでは、エラーの生成と使用に関するガイダンスを示します。 3 番目のセクションでは、実行中のアプリケーションのトラブルシューティングを行う際に、カスタム チャネルのユーザーにとって役立つトレース情報を提供する方法について説明します。  
@@ -15,7 +15,7 @@ ms.lasthandoff: 05/04/2018
  例外をスローする場合、2 つの点に留意します。まず、例外は、ユーザーがその例外に適切に対処できる正しいコードを作成できるような種類であることが必要です。 もう 1 つは、例外では、問題点、エラーの影響、およびエラーの修正方法をユーザーが理解できるだけの情報を提供する必要があります。 次のセクションでは、例外の種類と Windows Communication Foundation (WCF) チャネルのメッセージに関するガイダンスを提供します。 また、「Design Guidelines for Exceptions」に記載された .NET の例外に関する一般的なガイダンスも示します。  
   
 ### <a name="exception-types"></a>例外の種類  
- チャネルがスローするすべての例外は、<xref:System.TimeoutException?displayProperty=nameWithType>、<xref:System.ServiceModel.CommunicationException?displayProperty=nameWithType>、または <xref:System.ServiceModel.CommunicationException> から派生した種類のいずれかである必要があります  (<xref:System.ObjectDisposedException> のような例外をスローすることもできますが、これは呼び出し元のコードがチャネルを誤用したことを示す場合だけです。 チャネルが正しく使用されている場合は、指定の例外だけをスローする必要があります)。[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、<xref:System.ServiceModel.CommunicationException> から派生し、チャネルで使用するように設計された 7 種類の例外が用意されています。 <xref:System.ServiceModel.CommunicationException> から派生した例外には、システムのその他の部分で使用するように設計されているものもあります。 これらの例外の種類を以下に示します。  
+ チャネルがスローするすべての例外は、<xref:System.TimeoutException?displayProperty=nameWithType>、<xref:System.ServiceModel.CommunicationException?displayProperty=nameWithType>、または <xref:System.ServiceModel.CommunicationException> から派生した種類のいずれかである必要があります  (<xref:System.ObjectDisposedException> のような例外をスローすることもできますが、これは呼び出し元のコードがチャネルを誤用したことを示す場合だけです。 チャネルが正しく使用されている場合にする必要がありますのみ特定の例外をスローします。)派生する 7 つの例外型を提供する WCF<xref:System.ServiceModel.CommunicationException>チャネルで使用するよう設計されています。 <xref:System.ServiceModel.CommunicationException> から派生した例外には、システムのその他の部分で使用するように設計されているものもあります。 これらの例外の種類を以下に示します。  
   
 |例外の種類|説明|内部例外の内容|回復方法|  
 |--------------------|-------------|-----------------------------|-----------------------|  
@@ -131,7 +131,7 @@ public class FaultConverter
 }  
 ```  
   
- カスタム エラーを生成する各チャネルは `FaultConverter` を実装し、`GetProperty<FaultConverter>` の呼び出しからこれを返す必要があります。 カスタム `OnTryCreateFaultMessage` 実装では、例外をエラーに変換するか、内部チャネルの `FaultConverter` に委任する必要があります。 チャネルがトランスポートの場合は、例外を変換するか、エンコーダーの `FaultConverter` または `FaultConverter` に用意された既定の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] に委任する必要があります。 既定の `FaultConverter` は、WS-Addressing および SOAP で指定されたエラー メッセージに対応するエラーを変換します。 `OnTryCreateFaultMessage` 実装の例を次に示します。  
+ カスタム エラーを生成する各チャネルは `FaultConverter` を実装し、`GetProperty<FaultConverter>` の呼び出しからこれを返す必要があります。 カスタム `OnTryCreateFaultMessage` 実装では、例外をエラーに変換するか、内部チャネルの `FaultConverter` に委任する必要があります。 場合は、チャネルがトランスポートにする必要がありますいずれかが例外を変換またはに委任エンコーダーの`FaultConverter`または既定`FaultConverter`WCF で提供します。 既定の `FaultConverter` は、WS-Addressing および SOAP で指定されたエラー メッセージに対応するエラーを変換します。 `OnTryCreateFaultMessage` 実装の例を次に示します。  
   
 ```  
 public override bool OnTryCreateFaultMessage(Exception exception,   
@@ -186,7 +186,7 @@ public override bool OnTryCreateFaultMessage(Exception exception,
   
 3.  スタックの単一のレイヤーを対象とするエラー (例 : WS-RM シーケンス番号エラー)。  
   
- カテゴリ 1 です。 一般に、WS-Addressing エラーおよび SOAP エラーです。 `FaultConverter` に用意された [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 基本クラスでは、WS-Addressing および SOAP で指定されたエラー メッセージに対応するエラーを変換するため、カスタム チャネル作成者がこれらの例外の変換を処理する必要はありません。  
+ カテゴリ 1 です。 一般に、WS-Addressing エラーおよび SOAP エラーです。 基本`FaultConverter`WCF によってエラー メッセージに対応するエラーを変換で指定された Ws-addressing および SOAP のため、これらの例外の変換を処理する必要はありません自分で提供されるクラスです。  
   
  2 のカテゴリ。 レイヤーに関するメッセージ情報を完全に使用しているわけではないメッセージに対して、そのレイヤーがプロパティを追加したときに発生します。 後で上位のレイヤーがメッセージ情報をさらに処理するために、メッセージ プロパティを要求したときに、エラーが検出されることがあります。 このようなチャネルでは、前述の `GetProperty` を実装して、上位のレイヤーが適切なエラーを返すことができるようにする必要があります。 プロパティの例として、TransactionMessageProperty があります。 このプロパティは、ヘッダー内のすべてのデータが完全には検証されずにメッセージに追加されます (この検証には、分散トランザクション コーディネーター (DTC) への接続が必要になることがあります)。  
   
@@ -285,7 +285,7 @@ public override bool OnTryCreateException(
  明確な回復シナリオが用意されたエラー状態については、`ProtocolException` の派生クラスを定義することを検討してください。  
   
 ### <a name="mustunderstand-processing"></a>MustUnderstand の処理  
- SOAP には、必須のヘッダーが受信側で認識されなかったことを通知するための一般的なエラーが定義されています。 このエラーは、`mustUnderstand` エラーと呼ばれます。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、カスタム チャネルで `mustUnderstand` エラーを生成することはありません。 代わりに、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 通信スタックの最上位にある [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ディスパッチャーが、MustUndestand=true としてマークされたすべてのヘッダーが基になるスタックで認識されているかどうかをチェックします。 認識されていないヘッダーが見つかった場合、その時点で `mustUnderstand` エラーが生成されます  (ユーザーは、この `mustUnderstand` の処理を無効にし、すべてのメッセージ ヘッダーをアプリケーションで受信するようにすることができます。 その場合、`mustUnderstand` の処理はアプリケーションが実行します)。生成されたエラーには、NotUnderstood ヘッダーが含まれます。このヘッダーには、MustUnderstand=true でマークされたヘッダーの中で、認識されなかったすべてのヘッダーの名前が含まれています。  
+ SOAP には、必須のヘッダーが受信側で認識されなかったことを通知するための一般的なエラーが定義されています。 このエラーは、`mustUnderstand` エラーと呼ばれます。 カスタム チャネル WCF では、生成されません`mustUnderstand`エラーです。 代わりに、WCF 通信スタックの最上部にある、WCF ディスパッチャーかを確認する、MustUndestand としてマークされたすべてのヘッダー = true、基になるスタックで認識します。 認識されていないヘッダーが見つかった場合、その時点で `mustUnderstand` エラーが生成されます  (ユーザーは、この `mustUnderstand` の処理を無効にし、すべてのメッセージ ヘッダーをアプリケーションで受信するようにすることができます。 その場合、`mustUnderstand` の処理はアプリケーションが実行します)。生成されたエラーには、NotUnderstood ヘッダーが含まれます。このヘッダーには、MustUnderstand=true でマークされたヘッダーの中で、認識されなかったすべてのヘッダーの名前が含まれています。  
   
  プロトコル チャネルから MustUnderstand=true でマークされたカスタム ヘッダーを送信し、`mustUnderstand` エラーを受信した場合、そのエラーが送信したヘッダーに起因するものかどうかを確認する必要があります。 `MessageFault` クラスには、このために役立つ 2 つのメンバーが存在します。  
   
@@ -310,14 +310,14 @@ public class MessageFault
   
 -   <xref:System.Diagnostics.TraceSource?displayProperty=nameWithType> は、書き込むトレース情報のソースです。<xref:System.Diagnostics.TraceListener?displayProperty=nameWithType> は、<xref:System.Diagnostics.TraceSource> からトレースする情報を受け取り、リスナー固有の送信先に出力する具象リスナーの抽象基本クラスです。 たとえば、<xref:System.Diagnostics.XmlWriterTraceListener> は、トレース情報を XML ファイルに出力します。 最後に、<xref:System.Diagnostics.TraceSwitch?displayProperty=nameWithType> を使用すると、アプリケーション ユーザーがトレースの詳細出力レベルを制御できます。通常、このクラスは構成で指定します。  
   
--   コア コンポーネントに加えて使用できます、[サービス トレース ビューアー ツール (SvcTraceViewer.exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md)ビューと検索に[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]トレースします。 このツールは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] によって生成され、<xref:System.Diagnostics.XmlWriterTraceListener> を使用して書き込まれるトレース ファイル用に特別に設計されています。 トレースに関与するさまざまなコンポーネントを次の図に示します。  
+-   コア コンポーネントに加えて使用できます、[サービス トレース ビューアー ツール (SvcTraceViewer.exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md)トレースの表示と、WCF を検索します。 このツールは、WCF によって生成されるトレース ファイルを使用して書き込まれます専用に設計された<xref:System.Diagnostics.XmlWriterTraceListener>です。 トレースに関与するさまざまなコンポーネントを次の図に示します。  
   
  ![例外とエラーの処理](../../../../docs/framework/wcf/extending/media/wcfc-tracinginchannelsc.gif "wcfc_TracingInChannelsc")  
   
 ### <a name="tracing-from-a-custom-channel"></a>カスタム チャネルからのトレース  
  実行中のアプリケーションにデバッガーをアタッチできないときに問題の診断を支援するために、カスタム チャネルはトレース メッセージを書き込む必要あります。 この場合、<xref:System.Diagnostics.TraceSource> のインスタンス化と、トレースを書き込むためのメソッドの呼び出しの 2 つの高度なタスクが必要となります。  
   
- <xref:System.Diagnostics.TraceSource> をインスタンス化する場合、指定した文字列が対象のソースの名前になります。 この名前を使用して、トレース ソースを構成 (有効化/無効化/トレース レベルの設定) します。 また、トレース出力にもこの名前が表示されます。 カスタム チャネルは、一意のソース名を使用して、トレース出力の利用者にトレース情報のソースがわかるようにする必要があります。 トレース ソースの名前として、情報を書き込むアセンブリの名前を使用するのが一般的です。 たとえば、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、System.ServiceModel アセンブリから書き込まれる情報のトレース ソースとして、System.ServiceModel を使用します。  
+ <xref:System.Diagnostics.TraceSource> をインスタンス化する場合、指定した文字列が対象のソースの名前になります。 この名前を使用して、トレース ソースを構成 (有効化/無効化/トレース レベルの設定) します。 また、トレース出力にもこの名前が表示されます。 カスタム チャネルは、一意のソース名を使用して、トレース出力の利用者にトレース情報のソースがわかるようにする必要があります。 トレース ソースの名前として、情報を書き込むアセンブリの名前を使用するのが一般的です。 たとえば、WCF System.ServiceModel トレース ソースとしては情報を使用、System.ServiceModel アセンブリから書き込まれます。  
   
  トレース ソースを用意したら、<xref:System.Diagnostics.TraceSource.TraceData%2A>、<xref:System.Diagnostics.TraceSource.TraceEvent%2A>、または <xref:System.Diagnostics.TraceSource.TraceInformation%2A> の各メソッドを呼び出して、トレース エントリをトレース リスナーに書き込みます。 書き込む各トレース エントリのイベントの種類は、<xref:System.Diagnostics.TraceEventType> に定義されたイベントの種類のいずれかとして分類する必要があります。 この分類と構成でのトレース レベルの設定によって、トレース エントリをリスナーに出力するかどうかが決まります。 たとえば、構成でトレース レベルを `Warning` に設定すると、`Warning`、`Error`、および `Critical` の各トレース エントリを書き込むことができますが、Information エントリと Verbose エントリはブロックされます。 トレース ソースをインスタンス化し、Information レベルでエントリを書き込む例を次に示します。  
   
@@ -402,4 +402,4 @@ udpsource.TraceInformation("UdpInputChannel received a message");
 </E2ETraceEvent>  
 ```  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] トレース ビューアーは、上記の `TraceRecord` 要素のスキーマを認識し、その子要素からデータを抽出して表形式で表示します。 チャネルで構造化されたアプリケーション データをトレースするときには、このスキーマを使用して Svctraceviewer.exe のユーザーがデータを判読しやすいようにします。
+ WCF トレース ビューアーのスキーマを認識する、`TraceRecord`前に示した要素とその子要素からデータを抽出し、それを表形式で表示します。 チャネルで構造化されたアプリケーション データをトレースするときには、このスキーマを使用して Svctraceviewer.exe のユーザーがデータを判読しやすいようにします。

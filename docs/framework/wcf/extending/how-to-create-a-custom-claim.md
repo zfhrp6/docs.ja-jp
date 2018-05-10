@@ -5,14 +5,14 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d619976b-eda3-475e-ac23-c7988a2dceb0
-ms.openlocfilehash: c1e8886ab3d9d90b217ce79078633433458bbe4b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 3ee707ae4e2a7dafeb7cb42d6d56eeece8f23306
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="how-to-create-a-custom-claim"></a>方法 : カスタム クレームを作成する
-Id モデル インフラストラクチャでは、Windows Communication Foundation (WCF) を作成するための組み込みクレームの種類とヘルパー関数の権限セットを提供する<xref:System.IdentityModel.Claims.Claim>その種類と権限を持つインスタンス。 この組み込みクレームは、既定で [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] をサポートするクライアント資格情報の型内にある情報をモデル化するように作成されています。 多くの場合はこの組み込みクレームで十分ですが、一部のアプリケーションでカスタム クレームが必要になる場合があります。 クレームは、クレームが適用されるリソースを示すクレームの種類と、リソースにアサートされる権限で構成されます。 このトピックでは、カスタム クレームを作成する方法について説明します。  
+Id モデル インフラストラクチャでは、Windows Communication Foundation (WCF) を作成するための組み込みクレームの種類とヘルパー関数の権限セットを提供する<xref:System.IdentityModel.Claims.Claim>その種類と権限を持つインスタンス。 この組み込みクレームは、モデルに関する情報を WCF でサポートされるクライアント資格情報の種類に既定で設計されています。 多くの場合はこの組み込みクレームで十分ですが、一部のアプリケーションでカスタム クレームが必要になる場合があります。 クレームは、クレームが適用されるリソースを示すクレームの種類と、リソースにアサートされる権限で構成されます。 このトピックでは、カスタム クレームを作成する方法について説明します。  
   
 ### <a name="to-create-a-custom-claim-that-is-based-on-a-primitive-data-type"></a>プリミティブ データ型に基づくカスタム クレームを作成するには  
   
@@ -20,15 +20,15 @@ Id モデル インフラストラクチャでは、Windows Communication Founda
   
     1.  クレームの種類の一意の値を指定します。  
   
-         クレームの種類は一意の文字列識別子です。 カスタム クレームを作成する場合、クレームの種類に使用されている文字列識別子が一意になるようにしてください。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] によって定義されたクレームの種類の一覧については、<xref:System.IdentityModel.Claims.ClaimTypes> クラスを参照してください。  
+         クレームの種類は一意の文字列識別子です。 カスタム クレームを作成する場合、クレームの種類に使用されている文字列識別子が一意になるようにしてください。 WCF で定義されているクレームの種類の一覧は、次を参照してください。、<xref:System.IdentityModel.Claims.ClaimTypes>クラスです。  
   
     2.  プリミティブ データ型とリソースの値を選択します。  
   
-         リソースはオブジェクトです。 CLR 型のリソースにはプリミティブを指定できます。たとえば、<xref:System.String> や <xref:System.Int32>、または任意のシリアル化可能な型を指定できます。 クレームは [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] によりさまざまな点でシリアル化されるため、CLR 型のリソースはシリアル化可能なものにする必要があります。 プリミティブ型はシリアル化できます。  
+         リソースはオブジェクトです。 CLR 型のリソースにはプリミティブを指定できます。たとえば、<xref:System.String> や <xref:System.Int32>、または任意のシリアル化可能な型を指定できます。 リソースの CLR 型は、WCF によってクレームがさまざまな点でシリアル化されるため、シリアル化可能でなければなりません。 プリミティブ型はシリアル化できます。  
   
-    3.  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] で定義されている権限か、カスタム権限の一意の値を選択します。  
+    3.  WCF またはカスタム権限の一意の値によって定義されている権限を選択します。  
   
-         権限は一意の文字列識別子です。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] で定義された権限は <xref:System.IdentityModel.Claims.Rights> クラスで定義されています。  
+         権限は一意の文字列識別子です。 WCF で定義されている権利がで定義されている、<xref:System.IdentityModel.Claims.Rights>クラスです。  
   
          カスタム クレームを作成する場合、権限に使用されている文字列識別子が一意になるようにしてください。  
   
@@ -43,11 +43,11 @@ Id モデル インフラストラクチャでは、Windows Communication Founda
   
     1.  クレームの種類の一意の値を指定します。  
   
-         クレームの種類は一意の文字列識別子です。 カスタム クレームを作成する場合、クレームの種類に使用されている文字列識別子が一意になるようにしてください。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] によって定義されたクレームの種類の一覧については、<xref:System.IdentityModel.Claims.ClaimTypes> クラスを参照してください。  
+         クレームの種類は一意の文字列識別子です。 カスタム クレームを作成する場合、クレームの種類に使用されている文字列識別子が一意になるようにしてください。 WCF で定義されているクレームの種類の一覧は、次を参照してください。、<xref:System.IdentityModel.Claims.ClaimTypes>クラスです。  
   
     2.  リソース用のシリアル化可能な、プリミティブ型以外の型を選択または定義します。  
   
-         リソースはオブジェクトです。 クレームは [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] によりさまざまな点でシリアル化されるため、CLR 型のリソースはシリアル化可能なものにする必要があります。 プリミティブ型は既にシリアル化できます。  
+         リソースはオブジェクトです。 リソースの CLR 型は、WCF によってクレームがさまざまな点でシリアル化されるため、シリアル化可能でなければなりません。 プリミティブ型は既にシリアル化できます。  
   
          新しい型を作成する場合は、<xref:System.Runtime.Serialization.DataContractAttribute> をクラスに適用します。 また、クレームの一部としてシリアル化する必要のある新しい型のすべてのメンバーにも <xref:System.Runtime.Serialization.DataMemberAttribute> 属性を適用します。  
   
@@ -56,9 +56,9 @@ Id モデル インフラストラクチャでは、Windows Communication Founda
          [!code-csharp[c_CustomClaim#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customclaim/cs/c_customclaim.cs#2)] 
          [!code-vb[c_CustomClaim#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customclaim/vb/c_customclaim.vb#2)]        
   
-    3.  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] で定義されている権限か、カスタム権限の一意の値を選択します。  
+    3.  WCF またはカスタム権限の一意の値によって定義されている権限を選択します。  
   
-         権限は一意の文字列識別子です。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] で定義された権限は <xref:System.IdentityModel.Claims.Rights> クラスで定義されています。  
+         権限は一意の文字列識別子です。 WCF で定義されている権利がで定義されている、<xref:System.IdentityModel.Claims.Rights>クラスです。  
   
          カスタム クレームを作成する場合、権限に使用されている文字列識別子が一意になるようにしてください。  
   

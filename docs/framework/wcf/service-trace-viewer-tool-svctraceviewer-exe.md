@@ -1,27 +1,15 @@
 ---
-title: "サービス トレース ビューアー ツール (SvcTraceViewer.exe)"
-ms.custom: 
+title: サービス トレース ビューアー ツール (SvcTraceViewer.exe)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 9027efd3-df8d-47ed-8bcd-f53d55ed803c
-caps.latest.revision: "55"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 7526f5cda302618b2f240e5ae1c126e60b9ab5e6
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 215e34a3e7b075463ceeaa15386d3a347ffff064
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="service-trace-viewer-tool-svctraceviewerexe"></a>サービス トレース ビューアー ツール (SvcTraceViewer.exe)
-[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] のサービス トレース ビューアー ツールは、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] によって生成される診断トレースの分析に役立ちます。 サービス トレース ビューアーを使用すると、ログのトレース メッセージを容易にマージ、表示、およびフィルター処理できるため、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスの問題を診断、修復、および検証できます。  
+Windows Communication Foundation (WCF) サービス トレース ビューアー ツールを使用して、WCF によって生成される診断トレースを分析できます。 サービス トレース ビューアーは、マージ、表示、および診断、修復、および WCF サービスの問題を確認できるように、ログのトレース メッセージをフィルター処理を簡単にする方法を提供します。  
   
 ## <a name="configuring-tracing"></a>トレースの構成  
  診断トレースは、アプリケーションの操作で発生している内容を示す情報を提供します。 名前が示すように、操作を開始点から中間点を通過して終了点まで追跡できます。  
@@ -67,7 +55,7 @@ ms.lasthandoff: 01/19/2018
 ### <a name="opening-and-viewing-wcf-trace-files"></a>WCF トレース ファイルを開いて表示する  
  サービス トレース ビューアーは、次の 3 種類のファイルをサポートします。  
   
--   [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] トレース ファイル (.svcLog)  
+-   WCF トレース ファイル (.svcLog)  
   
 -   イベント トレース ファイル (.etl)  
   
@@ -77,7 +65,7 @@ ms.lasthandoff: 01/19/2018
   
 ##### <a name="to-open-a-trace-file"></a>トレース ファイルを開くには  
   
-1.  移動する、コマンド ウィンドウを使用して、サービス トレース ビューアーを起動、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]インストール場所 (C:\Program files \microsoft SDKs\Windows\v6.0\Bin) と入力`SvcTraceViewer.exe`です。  
+1.  WCF のインストール場所 (C:\Program files \microsoft SDKs\Windows\v6.0\Bin) に移動し、入力し、コマンド ウィンドウを使用して、サービス トレース ビューアーを起動`SvcTraceViewer.exe`です。  
   
 > [!NOTE]
 >  サービス トレース ビューアー ツールは、2 種類のファイル .svclog と .stvproj を関連付けることができます。 コマンド ラインで 2 つのパラメーターを使用して、ファイル拡張子を登録および登録解除できます。  
@@ -99,7 +87,7 @@ ms.lasthandoff: 01/19/2018
 >  200 MB を超えるトレース ログ ファイルを読み込むことはお勧めできません。 この制限を超えるファイルを読み込もうとすると、使用するコンピューター リソースによっては読み込みプロセスに時間がかかる場合があります。 サービス トレース ビューアー ツールが長時間応答しない場合や、コンピューターのメモリを使い果たしてしまう場合があります。 これを回避するには、部分読み込みを構成することをお勧めします。 部分読み込みの方法の詳細については、「規模の大きいトレース ファイルの読み込み」セクションを参照してください。  
   
 #### <a name="event-tracing-and-crimson-tracing"></a>イベント トレースと Crimson トレース  
- ビューアーのネイティブ形式は、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] が出力するアクティビティ トレース形式です。 別の形式で出力されるトレースは、ビューアーが表示する前に変換される必要があります。 現在では、ビューアーはアクティビティ トレース形式の他に、イベント トレースと Crimson トレースをサポートします。  
+ ビューアーのネイティブ形式は、WCF を出力するアクティビティ トレース形式です。 別の形式で出力されるトレースは、ビューアーが表示する前に変換される必要があります。 現在では、ビューアーはアクティビティ トレース形式の他に、イベント トレースと Crimson トレースをサポートします。  
   
  アクティビティ トレースを含まないファイルを開くと、ビューアーはそのファイルを変換しようとします。 変換されるトレース データを含むファイルの名前と場所を指定する必要があります。 データが変換されたら、ビューアーは新しいファイルの内容を表示します。  
   
@@ -116,7 +104,7 @@ ms.lasthandoff: 01/19/2018
 -   **プロジェクト** タブで、プロジェクトにファイルを追加することができます。  
   
 ### <a name="viewing-wcf-traces"></a>WCF トレースの表示  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] は、アクティビティ トレース形式を使用してトレースを出力します。 アクティビティ トレース モデルでは、各トレースはそれぞれの目的に従ってアクティビティにグループ化されます。 論理制御フローは、アクティビティ間で転送されます。 たとえば、アプリケーションの有効期間の間、多くの "メッセージ送信アクティビティ" が出現したり消えたりします。 トレースとアクティビティ、およびサービス トレース ビューアーのユーザー インターフェイスにも表示する方法の詳細については、次を参照してください。[相関トレースの表示とトラブルシューティング サービス トレース ビューアーを使用して](../../../docs/framework/wcf/diagnostics/tracing/using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md)です。  
+ WCF では、アクティビティ トレース形式を使用してトレースを出力します。 アクティビティ トレース モデルでは、各トレースはそれぞれの目的に従ってアクティビティにグループ化されます。 論理制御フローは、アクティビティ間で転送されます。 たとえば、アプリケーションの有効期間の間、多くの "メッセージ送信アクティビティ" が出現したり消えたりします。 トレースとアクティビティ、およびサービス トレース ビューアーのユーザー インターフェイスにも表示する方法の詳細については、次を参照してください。[相関トレースの表示とトラブルシューティング サービス トレース ビューアーを使用して](../../../docs/framework/wcf/diagnostics/tracing/using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md)です。  
   
 #### <a name="switching-to-different-views"></a>別のビューへの切り替え  
  サービス トレース ビューアーは、次の別のビューを提供します。 ビューアーの左側のウィンドウでタブとして表示されからアクセスすることもできますが、**ビュー**メニュー。  
@@ -229,7 +217,7 @@ ms.lasthandoff: 01/19/2018
   
 -   フィルター ツール バーから定義済みのフィルターとカスタム フィルターにアクセスできます。 有効にすることができます、**ビュー**メニュー。  
   
--   ビューアーの定義済みフィルターを使用して、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] トレースの部分を選択的にフィルター処理できます。 既定では、すべてのインフラストラクチャ トレースが通過できるように設定されます。 このフィルターの設定がで定義されている、**フィルター オプション**の下にあるサブメニュー**ビュー**メニュー。  
+-   ビューアーの定義済みのフィルターは、WCF トレースの部分を選択的にフィルター処理に使用できます。 既定では、すべてのインフラストラクチャ トレースが通過できるように設定されます。 このフィルターの設定がで定義されている、**フィルター オプション**の下にあるサブメニュー**ビュー**メニュー。  
   
 -   カスタム XPath フィルターを使用すると、フィルター処理を完全に制御できます。 定義されている、**カスタム フィルター** **ビュー**メニュー。  
   
@@ -249,7 +237,7 @@ ms.lasthandoff: 01/19/2018
  **クリア**ボタンは、すべてのトレースが通過を許可する定義済みおよびカスタムのフィルターをリセットします。  
   
 #### <a name="filter-options"></a>フィルター オプション  
- ビューアーは、ビューから [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] トレースを自動的に削除できます。 トランザクション関連のトレースをビューから削除するなど、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] の特定の領域から出力されるトレースを選択的に削除できます。  
+ ビューアーは、ビューから WCF トレースを自動的に削除できます。 トランザクション関連のトレースをビューから削除するなど、WCF の特定の領域から出力されるトレースを選択的に削除できます。  
   
  このフィルターの設定がで定義されている、**フィルター オプション**の下にあるサブメニュー**ビュー**メニュー。  
   
@@ -272,7 +260,7 @@ ms.lasthandoff: 01/19/2018
   
 4.  左側のツリー ビューは、手順 1. で選択したトレース レコードの構造を表示します。 検索条件の作成対象となる要素を参照します。 この例では、XPath で検索する ThreadID を参照:/E2ETraceEvent/System/Execution/@ThreadIDノード。 ツリー ビューで ThreadID 属性をダブルクリックします。 これにより、ダイアログの右側に属性の式が作成されます。  
   
-5.  ThreadID 条件のパラメーター フィールドを None から ‘{0}’ に変更します。 この手順によって、フィルターの適用時に ThreadID 値を構成できます。 (「フィルターの適用方法」セクションを参照してください)。パラメーターは 4 つまで定義できます。 条件は、OR 演算子を使用して結合されます。  
+5.  [なし] から ThreadID 条件のパラメーター フィールドを変更する '{0}' です。 この手順によって、フィルターの適用時に ThreadID 値を構成できます。 (「フィルターの適用方法」セクションを参照してください)。パラメーターは 4 つまで定義できます。 条件は、OR 演算子を使用して結合されます。  
   
 6.  をクリックして**Ok**フィルターを作成します。  
   
@@ -288,7 +276,7 @@ ms.lasthandoff: 01/19/2018
   
 3.  少なくともフィルター名と XPath 式を指定します。  
   
-4.  **[OK]**をクリックします。  
+4.  **[OK]** をクリックします。  
   
 ###### <a name="applying-a-custom-filter"></a>カスタム フィルターの適用  
  カスタム フィルターを作成したら、フィルター ツール バーからアクセスできます。 適用するフィルターを選択して、**検索で**フィルター ツールバーのフィールドです。 前の例では、「Thread ID」を選択します。  
@@ -297,7 +285,7 @@ ms.lasthandoff: 01/19/2018
   
 2.  をクリックして**Filter Now**、し、操作の結果を確認します。  
   
- フィルターには、複数のパラメーターを使用する場合は、入力を使用して区切り記号として ';'、**検索**フィールドです。 たとえば、‘1;findValue;text’ という文字列は、3 つのパラメーターを定義します。 ビューアーは、フィルターの {0} パラメーターに ‘1’ を適用します。 ‘findValue’ と ‘text’ はそれぞれ、{1} と {2} に適用されます。  
+ フィルターには、複数のパラメーターを使用する場合は、入力を使用して区切り記号として ';'、**検索**フィールドです。 たとえば、‘1;findValue;text’ という文字列は、3 つのパラメーターを定義します。 ビューアーは '1' に適用されます、{0}フィルターのパラメーターです。 'findValue' と 'text' に適用されます{1}と{2}それぞれします。  
   
 ###### <a name="sharing-custom-filters"></a>カスタム フィルターの共有  
  カスタム フィルターは、異なるセッション間や異なるユーザー間で共有できます。 フィルターを定義ファイルにエクスポートしたり、このファイルを別の場所にインポートすることができます。  
@@ -359,7 +347,7 @@ ms.lasthandoff: 01/19/2018
 -   ステップ後退: を使用して、**アクティビティ** メニューまたは F9 キーを押します。 トレース ペインで「を」矢印キーを使用することもできます。  
   
 > [!NOTE]
->  これを使用すると、別のプロセスで発生するアクティビティに移動したり、コンピューター間で有効なアクティビティ ID を [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] メッセージが別のコンピューターに移動できるため、別のコンピューターで発生するアクティビティにも移動できます。  
+>  これは、処理するには別のプロセスで、または、別のコンピューターにも発生しているアクティビティ WCF メッセージがアクティビティのマシンに配置されている Id を伝達できるためです。  
   
 #### <a name="follow-transfer"></a>転送の追跡  
  転送トレースは、トレース ファイルの特別なトレースです。 アクティビティは、転送トレースによって別のアクティビティに転送できます。 たとえば、「アクティビティ A」は、"アクティビティ B"に転送できます。 このような場合は、転送トレース「アクティビティ A」名前"To: Activity"と転送アイコン。 この転送トレースは、2 つのトレース間のリンクです。 "アクティビティ B"である可能性があります「アクティビティ A」に転送するアクティビティの最後に、転送トレースします。 これは、A が B を呼び出した後に B が返すプログラムの関数呼び出しに類似しています。  
@@ -429,26 +417,26 @@ ms.lasthandoff: 01/19/2018
   
 |アイコン|説明|  
 |----------|-----------------|  
-|![Message Log トレース](../../../docs/framework/wcf/media/7c66e994-2476-4260-a0db-98948b9af197.gif "7c66e994-2476-4260-a0db-98948b9af197")|Message Log トレース : [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] トレース ソースが有効な場合に、メッセージ ログ機能によって `System.ServiceModel.MessageLogging` メッセージがログに記録されるときに出力されるトレース。 このトレースをクリックすると、メッセージが表示されます。 メッセージには、構成可能なログ ポイントが 4 つ (ServiceLevelSendRequest、TransportSend、TransportReceive、および ServiceLevelReceiveRequest) あり、これらは、メッセージ ログ トレースの `messageSource` 属性でも指定できます。|  
-|![Message Received トレース](../../../docs/framework/wcf/media/de4f586c-c5dd-41ec-b1c3-ac56b4dfa35c.gif "de4f586c-c5dd-41ec-b1c3-ac56b4dfa35c")|Message Received トレース : [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] トレース ソースが Information レベルか Verbose レベルで有効な場合に、`System.ServiceModel` メッセージが受信されるときに出力されるトレース。 このトレースはアクティビティでメッセージ相関矢印を表示するために不可欠な**グラフ**ビュー。|  
-|![Message Sent トレース](../../../docs/framework/wcf/media/558943c4-17cf-4c12-9405-677e995ac387.gif "558943c4-17cf-4c12-9405-677e995ac387")|Message Sent トレース : [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] トレース ソースが Information レベルか Verbose レベルで有効な場合に、`System.ServiceModel` メッセージが送信されるときに出力されるトレース。 このトレースはアクティビティでメッセージ相関矢印を表示するために不可欠な**グラフ**ビュー。|  
+|![Message Log トレース](../../../docs/framework/wcf/media/7c66e994-2476-4260-a0db-98948b9af197.gif "7c66e994-2476-4260-a0db-98948b9af197")|Message Log トレース: メッセージ ログ機能によって、WCF メッセージが記録されたときに出力されるトレース時に、`System.ServiceModel.MessageLogging`トレース ソースが有効にします。 このトレースをクリックすると、メッセージが表示されます。 メッセージには、構成可能なログ ポイントが 4 つ (ServiceLevelSendRequest、TransportSend、TransportReceive、および ServiceLevelReceiveRequest) あり、これらは、メッセージ ログ トレースの `messageSource` 属性でも指定できます。|  
+|![Message Received トレース](../../../docs/framework/wcf/media/de4f586c-c5dd-41ec-b1c3-ac56b4dfa35c.gif "de4f586c-c5dd-41ec-b1c3-ac56b4dfa35c")|Message Received トレース: 場合、WCF メッセージを受信したときに出力されるトレース、 `System.ServiceModel` Information レベルか Verbose レベルでトレース ソースが有効にします。 このトレースはアクティビティでメッセージ相関矢印を表示するために不可欠な**グラフ**ビュー。|  
+|![Message Sent トレース](../../../docs/framework/wcf/media/558943c4-17cf-4c12-9405-677e995ac387.gif "558943c4-17cf-4c12-9405-677e995ac387")|Message Sent トレース: 場合、WCF メッセージが送信されるときに出力されるトレース、 `System.ServiceModel` Information レベルか Verbose レベルでトレース ソースが有効にします。 このトレースはアクティビティでメッセージ相関矢印を表示するために不可欠な**グラフ**ビュー。|  
   
 ### <a name="activities"></a>アクティビティ  
   
 |アイコン|説明|  
 |----------|-----------------|  
-|![Activity](../../../docs/framework/wcf/media/wcfc-defaultactivityc.gif "wcfc_defaultActivityc")|Activity: 現在のアクティビティが一般的なアクティビティであることを示します。|  
+|![アクティビティ](../../../docs/framework/wcf/media/wcfc-defaultactivityc.gif "wcfc_defaultActivityc")|Activity: 現在のアクティビティが一般的なアクティビティであることを示します。|  
 |![ルート アクティビティ](../../../docs/framework/wcf/media/5dc8e0eb-1c32-4076-8c66-594935beaee9.gif "5dc8e0eb-1c32-4076-8c66-594935beaee9")|Root アクティビティ: プロセスのルート アクティビティを示します。|  
   
 ### <a name="wcf-activities"></a>WCF アクティビティ  
   
 |アイコン|説明|  
 |----------|-----------------|  
-|![環境アクティビティ](../../../docs/framework/wcf/media/29fa00ac-cf78-46e5-822d-56222fff61d1.gif "29fa00ac-cf78-46e5-822d-56222fff61d1")|Environment アクティビティ : [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] ホストまたはクライアントを作成したり、開いたり、閉じたりするアクティビティ。 これらの段階で発生したエラーは、このアクティビティで表示されます。|  
+|![環境アクティビティ](../../../docs/framework/wcf/media/29fa00ac-cf78-46e5-822d-56222fff61d1.gif "29fa00ac-cf78-46e5-822d-56222fff61d1")|Environment アクティビティ: アクティビティを作成したり、開いたり WCF ホストまたはクライアントを閉じます。 これらの段階で発生したエラーは、このアクティビティで表示されます。|  
 |![Listen アクティビティ](../../../docs/framework/wcf/media/d7b135f6-ec7d-45d7-9913-037ab30e4c26.gif "d7b135f6-ec7d-45d7-9913-037ab30e4c26")|Listen アクティビティ: リスナーに関連するトレースをログに記録するアクティビティ。 このアクティビティ内で、リスナー情報と接続要求を表示できます。|  
 |![Receive Bytes アクティビティ](../../../docs/framework/wcf/media/2f628580-b80f-45a7-925b-616c96426c0e.gif "2f628580-b80f-45a7-925b-616c96426c0e")|Receive Bytes アクティビティ: 2 つのエンドポイント間の接続上で受信バイトに関連するすべてのトレースをグループ化するアクティビティ。 このアクティビティは、http.sys などのアクティビティを伝達する転送アクティビティと相関させる場合に必要です。 中止などの接続エラーが、このアクティビティで表示されます。|  
-|![Process Message アクティビティ](../../../docs/framework/wcf/media/wcfc-executionactivityiconc.GIF "wcfc_ExecutionActivityIconc")|Process Message アクティビティ : [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] メッセージの作成に関連するトレースをグループ化するアクティビティ。 不正なエンベロープや誤った形式のメッセージが原因のエラーが、このアクティビティで表示されます。 このアクティビティ内で、メッセージ ヘッダーを調べて、アクティビティ ID が呼び出し元から伝達されたかどうかを確認できます。 これが可能であれば、読み出し元と呼び出し先のトレース間を相関するために、Process Action アクティビティ (次のアイコン) に転送するときに、伝達されたアクティビティ ID をそのアクティビティに割り当てることもできます。|  
-|![Message Log トレース](../../../docs/framework/wcf/media/7c66e994-2476-4260-a0db-98948b9af197.gif "7c66e994-2476-4260-a0db-98948b9af197")|Process Action アクティビティ : 2 つのエンドポイント間の [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] 要求に関連するすべてのトレースをグループ化するアクティビティ。 両方のエンドポイントの構成で、`propagateActivity` が `true` に設定されている場合は、両方のエンドポイントのすべてのトレースが、直接相関関係を示すために 1 つのアクティビティにマージされます。 このアクティビティは、転送やセキュリティの処理、ユーザー コード境界への拡張、および戻り (応答が存在する場合) で発生するエラーを含みます。|  
+|![Process Message アクティビティ](../../../docs/framework/wcf/media/wcfc-executionactivityiconc.GIF "wcfc_ExecutionActivityIconc")|Process Message アクティビティ: WCF メッセージの作成に関連するトレースをグループ化するアクティビティ。 不正なエンベロープや誤った形式のメッセージが原因のエラーが、このアクティビティで表示されます。 このアクティビティ内で、メッセージ ヘッダーを調べて、アクティビティ ID が呼び出し元から伝達されたかどうかを確認できます。 これが可能であれば、読み出し元と呼び出し先のトレース間を相関するために、Process Action アクティビティ (次のアイコン) に転送するときに、伝達されたアクティビティ ID をそのアクティビティに割り当てることもできます。|  
+|![Message Log トレース](../../../docs/framework/wcf/media/7c66e994-2476-4260-a0db-98948b9af197.gif "7c66e994-2476-4260-a0db-98948b9af197")|Process Action アクティビティ: 2 つのエンドポイント間で、WCF 要求に関連するすべてのトレースをグループ化するアクティビティ。 両方のエンドポイントの構成で、`propagateActivity` が `true` に設定されている場合は、両方のエンドポイントのすべてのトレースが、直接相関関係を示すために 1 つのアクティビティにマージされます。 このアクティビティは、転送やセキュリティの処理、ユーザー コード境界への拡張、および戻り (応答が存在する場合) で発生するエラーを含みます。|  
 |![Process Message アクティビティ](../../../docs/framework/wcf/media/wcfc-executionactivityiconc.GIF "wcfc_ExecutionActivityIconc")|Execute User Code アクティビティ: 要求を処理するユーザー コードのトレースをグループ化するアクティビティ。|  
   
 ## <a name="troubleshooting"></a>トラブルシューティング  
@@ -460,7 +448,7 @@ ms.lasthandoff: 01/19/2018
   
  アラビア語のオペレーティング システムを使用して作成されたトレース ログを開く場合に、時間ベースのフィルターが機能しません。 たとえば、2005 年がアラビア カレンダーの 1427 年に対応します。 ただし、サービス トレース ビューアー ツールのフィルターがサポートする時間の範囲は、1752 年より前の日付を含みません。 このことは、フィルターで正しい日付を選択できないことを示します。 この問題を解決するのには、カスタム フィルターを作成することができます (**ビューまたはカスタム フィルター**) 特定の時間範囲を含めるには、XPath 式を使用します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [サービス トレース ビューアーを使用した相関トレースの表示とトラブルシューティング](../../../docs/framework/wcf/diagnostics/tracing/using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md)  
  [トレースの構成](../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)  
  [アクティビティ トレースと伝達のエンド ツー エンド トレースの相関関係](http://msdn.microsoft.com/library/2c11a905-64f8-47b5-bae5-a74fc666137e)

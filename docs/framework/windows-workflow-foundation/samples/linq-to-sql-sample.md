@@ -2,21 +2,21 @@
 title: LINQ to SQL のサンプル
 ms.date: 03/30/2017
 ms.assetid: 5f39db9e-0e62-42c9-8c98-bb8b54cec98c
-ms.openlocfilehash: a5c84dab941a50ddd5edb065004343cc304fd0f3
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 3cfcaf3de1a22b8bb5505083f127a9888b99dbd8
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="linq-to-sql-sample"></a>LINQ to SQL のサンプル
 このサンプルでは、SQL Server データベース内のテーブルの LINQ to SQL クエリ エンティティを使用するアクティビティを作成する方法を示します。  
   
 > [!IMPORTANT]
->  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サンプルは、既にコンピューターにインストールされている場合があります。 続行する前に、次の (既定の) ディレクトリを確認してください。  
+>  WCF サンプルは、既にコンピューターにインストールできます。 続行する前に、次の (既定の) ディレクトリを確認してください。  
 >   
 >  `<InstallDrive>:\Samples\WCFWFCardspace`  
 >   
->  このディレクトリが存在しない場合は、このページの上部にあるサンプルのダウンロードのリンクをクリックします。 このリンクをクリックすると、[!INCLUDE[wf1](../../../../includes/wf1-md.md)]、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]、および [!INCLUDE[infocard](../../../../includes/infocard-md.md)] のサンプルがすべてダウンロードおよびインストールされます。 このサンプルは、次のディレクトリに格納されます。  
+>  このディレクトリが存在しない場合は、このページの上部にあるサンプルのダウンロードのリンクをクリックします。 このリンクがダウンロードしのすべてをインストールすることに注意してください、 [!INCLUDE[wf1](../../../../includes/wf1-md.md)]、WCF、および[!INCLUDE[infocard](../../../../includes/infocard-md.md)]サンプルです。 このサンプルは、次のディレクトリに格納されます。  
 >   
 >  `<InstallDrive>:\Samples\WCFWFCardSpace\WF\Scenario\ActivityLibrary\Linq\LinqToSql`  
   

@@ -2,17 +2,17 @@
 title: 転送
 ms.date: 03/30/2017
 ms.assetid: dfcfa36c-d3bb-44b4-aa15-1c922c6f73e6
-ms.openlocfilehash: 7daa486286e022b24be32df7335ddbd5db7233f0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: aa7535aa393544077a9802b5c3255d6e5f6accda
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="transfer"></a>転送
 このトピックでは、Windows Communication Foundation (WCF) のアクティビティ トレース モデルで使用される転送について説明します。  
   
 ## <a name="transfer-definition"></a>転送の定義  
- アクティビティ間の転送は、エンドポイント内の関連アクティビティで発生したイベント間の因果関係を表します。 制御が 2 つのアクティビティ間を流れる場合 (アクティビティの境界を越えたメソッド呼び出しなど)、転送によってこれらのアクティビティが関連付けられます。 [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] では、サービスでバイトを受信すると、"リッスン" アクティビティが "バイトを受信" アクティビティに転送され、このアクティビティでメッセージ オブジェクトが作成されます。 エンド ツー エンドのトレース シナリオと、それぞれのアクティビティとデザインのトレースの一覧は、次を参照してください。[エンド ツー エンドのトレース シナリオ](../../../../../docs/framework/wcf/diagnostics/tracing/end-to-end-tracing-scenarios.md)です。  
+ アクティビティ間の転送は、エンドポイント内の関連アクティビティで発生したイベント間の因果関係を表します。 制御が 2 つのアクティビティ間を流れる場合 (アクティビティの境界を越えたメソッド呼び出しなど)、転送によってこれらのアクティビティが関連付けられます。 WCF では、バイトをサービスで受信するときに"リッスン"アクティビティがアクティビティに転送、バイトを受信、メッセージ オブジェクトが作成される場所です。 エンド ツー エンドのトレース シナリオと、それぞれのアクティビティとデザインのトレースの一覧は、次を参照してください。[エンド ツー エンドのトレース シナリオ](../../../../../docs/framework/wcf/diagnostics/tracing/end-to-end-tracing-scenarios.md)です。  
   
  転送トレースを出力するには、次の構成コードのように、トレース ソースに `ActivityTracing` を設定します。  
   

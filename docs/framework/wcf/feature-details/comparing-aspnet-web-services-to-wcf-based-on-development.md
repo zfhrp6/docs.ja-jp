@@ -1,29 +1,15 @@
 ---
 title: 開発者の視点から見た ASP.NET Web サービスと WCF との比較
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: f362d00e-ce82-484f-9d4f-27e579d5c320
-caps.latest.revision: 10
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 8e60d28314c47907cc825871b88a0dc771cd0511
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: fcf2d204d9d59a29024ff09d92be2a7b9339fce9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="comparing-aspnet-web-services-to-wcf-based-on-development"></a>開発者の視点から見た ASP.NET Web サービスと WCF との比較
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] には ASP.NET 互換モードがあります。このモードにすると、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションを ASP.NET Web サービスと同じようにプログラミングおよび構成し、動作を真似ることができます。 以下のセクションでは、ASP.NET Web サービスと [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を、それぞれの技術を使ってアプリケーションを開発する視点から比較してみます。  
+Windows Communication Foundation (WCF) では、WCF アプリケーションをプログラミングおよび ASP.NET Web サービスのように構成を有効にして、その動作を模倣する ASP.NET 互換モード オプションがあります。 次のセクションでは、ASP.NET Web サービスを比較し、WCF が両方のテクノロジを使用してアプリケーションを開発するための要件に基づいています。  
   
 ## <a name="data-representation"></a>データ表現  
  ASP.NET で Web サービスを開発する場合、通常はまず、このサービスが使う複合データ型の定義から始めます。 ASP.NET は <xref:System.Xml.Serialization.XmlSerializer> を利用して、.NET Framework 型で表されたデータを XML 形式に変換してサービスとの間でやり取りしたり、XML 形式で受け取ったデータを .NET Framework オブジェクトに変換したりします。 ASP.NET サービスで使用する複合データ型を定義するには、<xref:System.Xml.Serialization.XmlSerializer> で XML 形式にシリアル化したり、XML 形式から逆シリアル化したりできる .NET Framework クラスの定義が必要です。 クラス定義は手で記述するほか、XML スキーマの型定義から生成することも可能です。それにはコマンド ライン上で実行する XML スキーマ/データ型サポート ユーティリティである xsd.exe を使います。  
@@ -38,9 +24,9 @@ ms.lasthandoff: 04/09/2018
   
 -   <xref:System.Xml.Serialization> 名前空間の属性型は、大部分が .NET Framework クラスやそのメンバーに追加可能であり、これにより、XML での当該クラスのインスタンスの表現方法を制御できます。  
   
- 通常、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションの開発も、複合型の定義から始めます。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] でも ASP.NET Web サービスと同じ .NET Framework 型を使用できます。  
+ WCF アプリケーションの開発通常も開始複合型の定義を使用します。 ASP.NET Web サービスと同じ .NET Framework の型を使用するのには、WCF を作成できます。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] <xref:System.Runtime.Serialization.DataContractAttribute>と<xref:System.Runtime.Serialization.DataMemberAttribute>型のインスタンスは、XML、およびどの特定のフィールドまたはプロパティの型をシリアル化する、次の例に示すようにシリアル化されることを示すために .NET Framework の型に追加できますコードです。  
+ WCF<xref:System.Runtime.Serialization.DataContractAttribute>と<xref:System.Runtime.Serialization.DataMemberAttribute>型のインスタンスは、XML、およびどの特定のフィールドまたはプロパティの型をシリアル化する、次のサンプル コードに示すようにシリアル化されることを示すために .NET Framework の型に追加できます。  
   
 ```  
 //Example One:   
@@ -156,7 +142,7 @@ public class LineItem
 }  
 ```  
   
- <xref:System.Runtime.Serialization.DataContractAttribute> は、当該型の中にシリアル化可能なフィールドやプロパティがあることを示し、具体的にどのフィールドやプロパティをシリアル化できるかを <xref:System.Runtime.Serialization.DataMemberAttribute> で示します。 <xref:System.Runtime.Serialization.DataContractAttribute> はクラスにも構造体にも適用できます。 <xref:System.Runtime.Serialization.DataMemberAttribute> はフィールドやプロパティに適用します。これはパブリックでもプライベートでもかまいません。 <xref:System.Runtime.Serialization.DataContractAttribute> が適用された型のインスタンスのことを、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ではデータ コントラクトと呼びます。 これを XML 形式にシリアル化するには <xref:System.Runtime.Serialization.DataContractSerializer> を使います。  
+ <xref:System.Runtime.Serialization.DataContractAttribute> は、当該型の中にシリアル化可能なフィールドやプロパティがあることを示し、具体的にどのフィールドやプロパティをシリアル化できるかを <xref:System.Runtime.Serialization.DataMemberAttribute> で示します。 <xref:System.Runtime.Serialization.DataContractAttribute> はクラスにも構造体にも適用できます。 <xref:System.Runtime.Serialization.DataMemberAttribute> はフィールドやプロパティに適用します。これはパブリックでもプライベートでもかまいません。 ある型のインスタンス、<xref:System.Runtime.Serialization.DataContractAttribute>に適用されるそれらと呼ばれます WCF でのデータ コントラクトします。 これを XML 形式にシリアル化するには <xref:System.Runtime.Serialization.DataContractSerializer> を使います。  
   
  <xref:System.Runtime.Serialization.DataContractSerializer> を使う場合と、<xref:System.Xml.Serialization.XmlSerializer> および <xref:System.Xml.Serialization> 名前空間に定義された属性を使う場合の、主な違いを以下に示します。  
   
@@ -215,7 +201,7 @@ public class LineItem
  Windows ソフトウェア開発キット (SDK) というコマンド ライン ツールが含まれています、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)です。 ASP.NET Web サービスで使用される xsd.exe ツールと同様に Svcutil.exe は、XML スキーマから .NET データ型の定義を生成することができます。 <xref:System.Runtime.Serialization.DataContractSerializer> が XML スキーマで定義された形式の XML を出力できる場合、型はデータ コントラクトの形に変換されます。そうでなければ、<xref:System.Xml.Serialization.XmlSerializer> を使用してシリアル化します。 Svcutil.exe から生成することも、XML スキーマ データ コントラクトを使用してその`dataContractOnly`スイッチします。  
   
 > [!NOTE]
->  ASP.NET Web サービスは <xref:System.Xml.Serialization.XmlSerializer> を使うようになっています。ASP.NET 互換モードの [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスが ASP.NET Web サービスの動作を真似るようになっていますが、<xref:System.Xml.Serialization.XmlSerializer> を使わなければならないわけではありません。 必要であれば ASP.NET 互換モードでも <xref:System.Runtime.Serialization.DataContractSerializer> も使えるようになっています。  
+>  ASP.NET Web サービスを使用して、 <xref:System.Xml.Serialization.XmlSerializer>、WCF の ASP.NET 互換モードは、ASP.NET Web サービスの動作を模倣する WCF サービス、ASP.NET 互換性オプションが制限していない 1 つを使用して、<xref:System.Xml.Serialization.XmlSerializer>です。 必要であれば ASP.NET 互換モードでも <xref:System.Runtime.Serialization.DataContractSerializer> も使えるようになっています。  
   
 ## <a name="service-development"></a>サービスの開発  
  ASP.NET を使用してサービスを開発する場合、通常は <xref:System.Web.Services.WebService> 属性をクラスに追加し、<xref:System.Web.Services.WebMethodAttribute> を当該クラスのサービスに対する操作メソッドに追加します。  
@@ -254,7 +240,7 @@ public class Service : IEcho
   
  <xref:System.Web.Services.WebService> 属性を持つインターフェイスは、サービスによって実行される操作のコントラクトを構成し、またそれをさまざまなクラスで再利用することによって、同じコントラクトをさまざまな方法で実装できるので、このオプションの使用をお勧めします。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] エンドポイントをいくつか定義することにより提供されます。 エンドポイントは、アドレス、バインディング、サービス コントラクトで定義します。 アドレスとは、サービスが配備された場所のことです。 バインディングはサービスとの通信方法を表します。 サービス コントラクトとは、サービスが実行できる操作の定義のことです。  
+ WCF サービスは、1 つまたは複数の WCF エンドポイントの定義によって提供されます。 エンドポイントは、アドレス、バインディング、サービス コントラクトで定義します。 アドレスとは、サービスが配備された場所のことです。 バインディングはサービスとの通信方法を表します。 サービス コントラクトとは、サービスが実行できる操作の定義のことです。  
   
  サービス コントラクトは通常、インターフェイスに <xref:System.ServiceModel.ServiceContractAttribute> および <xref:System.ServiceModel.OperationContractAttribute> を追加して定義します。  
   
@@ -267,7 +253,7 @@ public interface IEcho
 }  
 ```  
   
- <xref:System.ServiceModel.ServiceContractAttribute> は、当該インターフェイスが [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービス コントラクトを定義することを表します。また、<xref:System.ServiceModel.OperationContractAttribute> は、インターフェイスのどのメソッドが (存在する場合) サービス コントラクトの操作を定義しているかを表します。  
+ <xref:System.ServiceModel.ServiceContractAttribute> 、インターフェイスが、WCF サービス コントラクトを定義することを指定し、 <xref:System.ServiceModel.OperationContractAttribute> 、存在する場合、インターフェイスのメソッドを定義するサービス コントラクトの操作を示します。  
   
  このようにして定義されたサービス コントラクトをクラスとして実装します。サービス コントラクトを定義するインターフェイスを実装するクラスという形で記述します。  
   
@@ -281,9 +267,9 @@ public class Service : IEcho
 }  
 ```  
   
- サービス コントラクトを実装したクラスは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ではサービスとして参照できます。  
+ WCF サービスとしての入力をサービス コントラクトを実装するクラスと呼びます。  
   
- 次に、アドレスとバインディングを、サービス型と関連付けます。 これは通常、構成ファイルを直接編集するか、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] に収録されている構成エディターを使って行います。 構成ファイルの例を以下に示します。  
+ 次に、アドレスとバインディングを、サービス型と関連付けます。 通常、ファイルを直接編集することによって、または WCF に用意されている構成エディターを使用して構成ファイルで行われます。 構成ファイルの例を以下に示します。  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8" ?>  
@@ -309,15 +295,15 @@ public class Service : IEcho
 |WSHttpBinding|HTTP 上の WS-* プロトコルに対応した Web サービスやクライアントとの相互運用性。|  
 |WSDualHttpBinding|双方向 HTTP 通信。最初のメッセージの受信者は送信元に直接は応答せず、代わりに、WS-* プロトコルに準拠した HTTP で、ある期間にわたって任意の数の応答を送信することができます。|  
 |WSFederationBinding|HTTP 通信。サービスのリソースに対するアクセスを、明示的に指定された資格情報プロバイダーによって発行された証明書に基づいて制御することができます。|  
-|NetTcpBinding|ネットワーク全体に分散する [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ソフトウェア エンティティ間の、安全性や信頼性を確保した高速通信。|  
-|NetNamedPipeBinding|同一コンピューター上の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ソフトウェア エンティティ間の、安全性や信頼性を確保した高速通信。|  
-|NetMsmqBinding|[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ソフトウェア エンティティ間の、MSMQ を使用した通信。|  
-|MsmqIntegrationBinding|[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ソフトウェアと他のソフトウェア エンティティ間の、MSMQ を使用した通信。|  
-|NetPeerTcpBinding|[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ソフトウェア エンティティ間の、Windows ピアツーピア ネットワークを使用した通信。|  
+|NetTcpBinding|ネットワーク経由で WCF ソフトウェア エンティティ間のセキュリティで保護された、信頼性の高い、高パフォーマンス通信します。|  
+|NetNamedPipeBinding|同じコンピューター上の WCF ソフトウェア エンティティ間のセキュリティで保護された、信頼性の高い、高パフォーマンス通信します。|  
+|NetMsmqBinding|MSMQ を使用して WCF ソフトウェア エンティティ間の通信します。|  
+|MsmqIntegrationBinding|WCF のソフトウェア エンティティと MSMQ を使用して別のソフトウェア エンティティ間の通信します。|  
+|NetPeerTcpBinding|Windows ピア ツー ピア ネットワークを使用して WCF ソフトウェア エンティティ間の通信します。|  
   
  システム指定のバインディングである <xref:System.ServiceModel.BasicHttpBinding> には、ASP.NET Web サービスが対応している一連のプロトコルが組み込まれています。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーション用の独自バインディングは、バインド要素クラスのコレクションとして定義し、各クラスに個々のプロトコルを実装して [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] で使えるようにすることができます。 追加のプロトコルを表す、新しいバインド要素を記述することも可能です。  
+ WCF アプリケーション用の独自バインディングは、WCF を使用して個々 のプロトコルを実装するバインド要素クラスのコレクションとして簡単に定義されます。 追加のプロトコルを表す、新しいバインド要素を記述することも可能です。  
   
  サービス型の内部的な動作は、動作を表すクラス群のプロパティで調整できます。 次の例で、<xref:System.ServiceModel.ServiceBehaviorAttribute> クラスは、サービス型がマルチスレッド処理されることを指定しています。  
   
@@ -339,7 +325,7 @@ public class DerivativesCalculatorServiceType: IDerivativesCalculator
   
  サービス ファイルをインターネット インフォメーション サービス (IIS) の ASP.NET アプリケーション ルート、アセンブリをアプリケーション ルートのサブディレクトリ \bin 以下にコピーすると、 このサービス ファイルの URL (Uniform Resource Locator) でアプリケーションにアクセスできるようになります。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスは、IIS 5.1 や 6.0 の他、IIS 7.0 の一部として提供される Windows プロセス アクティブ化サービス (WAS) や、.NET アプリケーション上でホストすることができます。 ただし IIS 5.1/6.0 の場合、通信トランスポート プロトコルは HTTP に限ります。  
+ および任意の .NET アプリケーション内で IIS 5.1 または 6.0 では、Windows プロセス アクティブ化サービス (WAS) は IIS 7.0 の一部として提供する、WCF サービスをホスト簡単にできます。 ただし IIS 5.1/6.0 の場合、通信トランスポート プロトコルは HTTP に限ります。  
   
  IIS 5.1/6.0 または WAS 上でサービスをホストする手順を以下に示します。  
   
@@ -357,7 +343,7 @@ public class DerivativesCalculatorServiceType: IDerivativesCalculator
   
  するとアプリケーションには、アプリケーション ルートに置いたサービス ファイルの URL でアクセスできるようになります。  
   
- .NET アプリケーション上で [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスをホストする場合は、サービス型をコンパイルしてクラス ライブラリ アセンブリを生成し、これをアプリケーションが参照できるようにします。アプリケーション側では、<xref:System.ServiceModel.ServiceHost> クラスを使って、サービスを管理できるようプログラムを記述します。 サービスを管理する基本的なプログラムの例を以下に示します。  
+ .NET アプリケーション内で WCF サービスをホストするサービス型、アプリケーションによって参照されるクラス ライブラリ アセンブリをコンパイルし、サービスを使用して、ホストにアプリケーションをプログラミング、<xref:System.ServiceModel.ServiceHost>クラスです。 サービスを管理する基本的なプログラムの例を以下に示します。  
   
 ```  
 string httpBaseAddress = "http://www.contoso.com:8000/";  
@@ -382,9 +368,9 @@ typeof(Service), //"Service" is the name of the service type baseAdresses))
   
  この例では <xref:System.ServiceModel.ServiceHost> の構築時にトランスポート プロトコルに対してアドレスを指定しています。 このアドレスをベース アドレスと呼びます。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスのエンドポイントは、エンドポイントのホストに設定されたベース アドレスから見た相対アドレスで表します。 ホストではトランスポート プロトコルごとに 1 つベース アドレスを設定できます。 上記の構成ファイルの構成例では、エンドポイントに対して選択された <xref:System.ServiceModel.BasicHttpBinding> はトランスポート プロトコルとして HTTP を使用しているので、エンドポイント `EchoService` のアドレスは、HTTP に対して設定されたベース アドレスを基準としたものになります。 前の例で、ホストの場合、HTTP ベース アドレスはhttp://www.contoso.com:8000/します。 なお、IIS や WAS 上でホストされているサービスの場合、ベース アドレスはサービス ファイルの URL になります。  
+ WCF サービスのエンドポイントに指定されたアドレスは、エンドポイントのホストのベース アドレスに対する相対アドレスです。 ホストではトランスポート プロトコルごとに 1 つベース アドレスを設定できます。 上記の構成ファイルの構成例では、エンドポイントに対して選択された <xref:System.ServiceModel.BasicHttpBinding> はトランスポート プロトコルとして HTTP を使用しているので、エンドポイント `EchoService` のアドレスは、HTTP に対して設定されたベース アドレスを基準としたものになります。 前の例で、ホストの場合、HTTP ベース アドレスはhttp://www.contoso.com:8000/します。 なお、IIS や WAS 上でホストされているサービスの場合、ベース アドレスはサービス ファイルの URL になります。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を ASP.NET 互換モードで動かせるのは、IIS や WAS 上でホストされていて、トランスポート プロトコルとしてもっぱら HTTP を使うサービスに限ります。 ASP.NET 互換モードは、次の 2 つの手順で切り替えます。  
+ WCF の ASP.NET 互換モード オプションを使用する IIS または WAS、およびが構成されている HTTP でトランスポート プロトコルとしてのみでホストされているサービスのみが可能です。 ASP.NET 互換モードは、次の 2 つの手順で切り替えます。  
   
 1.  プログラムの開発者は、サービス型に <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute> 属性を追加し、ASP.NET 互換モードに切り替えることができる、または切り替えることが必須である旨の指定をしておく必要があります。  
   
@@ -407,7 +393,7 @@ typeof(Service), //"Service" is the name of the service type baseAdresses))
     </configuration>  
     ```  
   
-     [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションは、サービス ファイルの拡張子として .svc ではなく .asmx を使用するように構成することも可能です。  
+     WCF アプリケーションは、.asmx を使用する、拡張子として .svc ではなく、サービス ファイルを構成することもできます。  
   
     ```xml  
     <system.web>  
@@ -427,14 +413,14 @@ typeof(Service), //"Service" is the name of the service type baseAdresses))
     </system.web>  
     ```  
   
-     このように構成すると、.asmx サービス ファイルの URL を使用するようクライアント側を変更しなくても、サービスは [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を使用するようになります。  
+     このオプションでは、Url を使用して、.asmx サービス ファイルのサービスを変更するときに WCF を使用して構成されているクライアントを変更する必要がなくなります保存できます。  
   
 ## <a name="client-development"></a>クライアント開発  
- ASP.NET Web サービスのクライアントの開発にはコマンド ライン ツール WSDL.exe を使用します.asmx ファイルの URL を入力として指定します。 対応するツールによって提供される[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]は[ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)です。 これは、サービス コントラクトおよび [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント クラスの定義から、コード モジュールを生成します。 また、サービスのアドレスとバインディングを指定して、構成ファイルを生成することもできます。  
+ ASP.NET Web サービスのクライアントの開発にはコマンド ライン ツール WSDL.exe を使用します.asmx ファイルの URL を入力として指定します。 WCF に用意された、対応するツールは[ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)です。 サービス コントラクトの定義と WCF クライアント クラスの定義を持つコード モジュールを生成します。 また、サービスのアドレスとバインディングを指定して、構成ファイルを生成することもできます。  
   
  リモート サービスのクライアントを開発する場合、通常は、非同期パターンに従ってプログラムを記述するようお勧めします。 WSDL.exe ツールは、特段の指定をしなくても、同期パターンと非同期パターンを使ったコードをそれぞれ生成します。 によって生成されたコード、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)いずれかのパターンを提供できます。 特に指定しなければ同期パターン用です。 `/async` スイッチを指定して実行すれば、生成されるコードは非同期パターン用になります。  
   
- ASP.NET の WSDL.exe で生成した [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント クラスの名前が、Svcutil.exe で生成した [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント クラスの名前と一致するとは限りません。 特に、<xref:System.Xml.Serialization.XmlSerializer> でシリアル化したクラスのプロパティ名は、Svcutil.exe で生成した場合 "Property" という接頭辞が付きますが、WSDL.exe の場合はそうなりません。  
+ ASP によって生成された WCF クライアント クラス内の名前を示す保証はありません。NET の WSDL.exe ツールでは、既定では、Svcutil.exe ツールによって生成された WCF クライアント クラス内の名前と一致します。 特に、<xref:System.Xml.Serialization.XmlSerializer> でシリアル化したクラスのプロパティ名は、Svcutil.exe で生成した場合 "Property" という接頭辞が付きますが、WSDL.exe の場合はそうなりません。  
   
 ## <a name="message-representation"></a>メッセージ表現  
  ASP.NET Web サービスとやり取りする SOAP メッセージのヘッダーはカスタマイズ可能です。 <xref:System.Web.Services.Protocols.SoapHeader> の派生クラスでヘッダーの構造を定義し、<xref:System.Web.Services.Protocols.SoapHeaderAttribute> でヘッダーが存在することを指定します。  
@@ -484,7 +470,7 @@ public class Service: WebService, IEcho
 }  
 ```  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、サービスとやり取りする SOAP メッセージの構造を記述する、<xref:System.ServiceModel.MessageContractAttribute>、<xref:System.ServiceModel.MessageHeaderAttribute>、および <xref:System.ServiceModel.MessageBodyMemberAttribute> という属性があります。  
+ WCF は、属性、 <xref:System.ServiceModel.MessageContractAttribute>、 <xref:System.ServiceModel.MessageHeaderAttribute>、および<xref:System.ServiceModel.MessageBodyMemberAttribute>サービスによって送受信される SOAP メッセージの構造を記述します。  
   
 ```  
 [DataContract]  
@@ -524,7 +510,7 @@ public interface IItemService
 }  
 ```  
   
- この構文でメッセージ構造を明示的に記述できますが、ASP.NET Web サービスのコードからメッセージ構造を導くことも可能です。 ASP.NET の構文では、メッセージ ヘッダーは上記の例の `ProtocolHeader` のようにサービスのプロパティとして表現されますが、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ではメッセージのプロパティとしてより厳密に表現できます。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ではさらに、エンドポイントの構成にメッセージ ヘッダーを追加することも可能です。  
+ この構文でメッセージ構造を明示的に記述できますが、ASP.NET Web サービスのコードからメッセージ構造を導くことも可能です。 また、ASP.NET の構文ではメッセージ ヘッダーとして表現されます、サービスのプロパティなど、`ProtocolHeader`前の例では、プロパティが WCF の構文ではメッセージのプロパティとしてより正確に表されます。 また、WCF では、エンドポイントの構成に追加するメッセージ ヘッダーができます。  
   
 ```xml  
 <service name="Service ">  
@@ -559,11 +545,11 @@ public interface IEcho
   
  ASP.NET が WSDL で生成したサービス記述はカスタマイズ可能です。 <xref:System.Web.Services.Description.ServiceDescriptionFormatExtension> の派生クラスを作成し、WSDL による記述に項目を追加する、という形でカスタマイズします。  
   
- WSDL で記述したクエリを HTTP GET 要求として発行して、IIS 5.1/6.0 または WAS でホストされていて HTTP エンドポイントを持つ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスの .svc ファイルを取得しようとすると、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は WSDL によるサービス記述を生成して返します。 httpGetEnabled が true に設定されている場合は、WSDL で記述したクエリを HTTP GET 要求として、.NET アプリケーション上でホストされているサービスの HTTP ベース アドレスに発行しても同じ効力があります。  
+ WCF サービスを記述する wsdl 応答には、WCF サービスの .svc ファイルに対するクエリの WSDL に HTTP GET 要求を発行する、IIS 51 内でホストされている HTTP エンドポイントを持つ、6.0 または WAS からさせます。 httpGetEnabled が true に設定されている場合は、WSDL で記述したクエリを HTTP GET 要求として、.NET アプリケーション上でホストされているサービスの HTTP ベース アドレスに発行しても同じ効力があります。  
   
- 一方、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、WS-MetadataExchange 要求に対しても、WSDL によるサービス記述を生成して返します。 ASP.NET Web サービスには、WS-MetadataExchange 要求に応答する機能がありません。  
+ ただし、WCF は、サービスの説明に生成された WSDL を使って、Ws-metadataexchange 要求にも応答します。 ASP.NET Web サービスには、WS-MetadataExchange 要求に応答する機能がありません。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] が WSDL で生成したサービス記述は広範なカスタマイズが可能です。 <xref:System.ServiceModel.Description.ServiceMetadataBehavior> クラスには、WSDL による記述をカスタマイズするための機能がいくつか組み込まれています。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] も、WSDL による記述を生成する代わりに、所定の URL に置いた静的な WSDL ファイルを使用するように構成できます。  
+ WCF によって生成される WSDL を広範囲にカスタマイズできます。 <xref:System.ServiceModel.Description.ServiceMetadataBehavior> クラスには、WSDL による記述をカスタマイズするための機能がいくつか組み込まれています。 WCF ではなくファイルを使用して、静的な WSDL で特定の URL が、WSDL を生成しないことにも構成することができます。  
   
 ```xml  
 <behaviors>  
@@ -581,7 +567,7 @@ public interface IEcho
 ## <a name="exception-handling"></a>例外処理  
  ASP.NET Web サービスでは、処理できない例外が発生すると、SOAP エラーとしてクライアントに返されます。 また、<xref:System.Web.Services.Protocols.SoapException> クラスのインスタンスを明示的にスローして、クライアント側に SOAP エラーの詳しい状況を通知し、より適切に管理させることも可能です。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスでは、処理できない例外が発生しても SOAP エラーとしてクライアントに返すことはありません。重要な情報が不用意に表示され、第三者に漏洩するのを防ぐためです。 ただしデバッグ目的で、このような例外をクライアントに返すように設定することは可能です。  
+ WCF サービスで未処理の例外は返されませんをクライアントに機密情報が誤って、例外を通じて公開されることを防ぐために SOAP エラーとして。 ただしデバッグ目的で、このような例外をクライアントに返すように設定することは可能です。  
   
  SOAP エラーをクライアントに返す場合、データ コントラクト型を汎用型 <xref:System.ServiceModel.FaultException%601> のインスタンスとしてキャストし、これをスローする方法が使えます。 また、操作に <xref:System.ServiceModel.FaultContractAttribute> 属性を追加して、操作で生じうるエラーを指定する方法もあります。  
   
@@ -638,9 +624,9 @@ public class Service : WebService, IEcho
   
  ASP.NET では、<xref:System.Web.HttpContext> の Session プロパティでアクセスするセッション状態情報の、実際の格納場所を細かく制御できます。 格納場所としては、クッキー内、データベース内、稼動中のサーバーのメモリ上、状態管理用の特別なサーバーのメモリ上があり、 サービスの構成ファイルで指定します。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、状態管理用に拡張可能なオブジェクトがいくつか用意されています。 いずれも <xref:System.ServiceModel.IExtensibleObject%601> を実装しています。 中でも重要な拡張可能オブジェクトは、<xref:System.ServiceModel.ServiceHostBase> および <xref:System.ServiceModel.InstanceContext> です。 `ServiceHostBase` を使用すると、同一ホスト上の全サービス型のあらゆるインスタンスからアクセスできる状態を管理できます。一方、`InstanceContext` を使用すると、同じサービス型のインスタンス内で実行されるコードからアクセスできる状態を管理できます。  
+ WCF では、状態管理の拡張可能なオブジェクトを提供します。 いずれも <xref:System.ServiceModel.IExtensibleObject%601> を実装しています。 中でも重要な拡張可能オブジェクトは、<xref:System.ServiceModel.ServiceHostBase> および <xref:System.ServiceModel.InstanceContext> です。 `ServiceHostBase` を使用すると、同一ホスト上の全サービス型のあらゆるインスタンスからアクセスできる状態を管理できます。一方、`InstanceContext` を使用すると、同じサービス型のインスタンス内で実行されるコードからアクセスできる状態を管理できます。  
   
- 次の例で、サービス型 `TradingSystem` には <xref:System.ServiceModel.ServiceBehaviorAttribute> という属性があります。同じ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント インスタンスからの呼び出しはすべて、同じサービス型のインスタンスに転送されることを表します。  
+ ここでは、サービスの種類、`TradingSystem`が、<xref:System.ServiceModel.ServiceBehaviorAttribute>同じ WCF クライアント インスタンスからのすべての呼び出しが、サービス型の同じインスタンスにルーティングされることを指定します。  
   
 ```  
 [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerSession)]  
@@ -679,18 +665,18 @@ void ITradingService.AddTrade(Trade trade)
 }  
 ```  
   
- ASP.NET では <xref:System.Web.HttpContext> クラスで管理する状態情報の実際の格納場所を制御できますが、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の場合、少なくとも初期バージョンのままでは、まったく制御ができません。 これも [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスの ASP.NET 互換モードを推奨する理由の 1 つです。 このような制御が不可欠な応用の場合、ASP.NET 互換モードにすれば、ASP.NET と同様に <xref:System.Web.HttpContext> クラスの機能を活用できるばかりでなく、<xref:System.Web.HttpContext> クラスで管理する状態情報の実際の格納場所も制御できます。  
+ 状態の情報が、ASP.NET 経由でコントロールを提供する一方、<xref:System.Web.HttpContext>クラスが格納されている実際には、WCF には、少なくとも、初期のバージョンでは拡張可能なオブジェクトの格納場所を制御します。 WCF サービスの ASP.NET 互換モードを選択する最適な理由を構成するとします。 このような制御が不可欠な応用の場合、ASP.NET 互換モードにすれば、ASP.NET と同様に <xref:System.Web.HttpContext> クラスの機能を活用できるばかりでなく、<xref:System.Web.HttpContext> クラスで管理する状態情報の実際の格納場所も制御できます。  
   
 ## <a name="security"></a>セキュリティ  
- ASP.NET Web サービスのセキュリティ保全の手順は、IIS アプリケーションのセキュリティ保全の手順と同じです。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションは IIS に限らずどんな .NET 実行可能ファイル上でも動作するので、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションのセキュリティ保全の手順も IIS の機能に依存しないものにする必要があります。 しかし ASP.NET Web サービスが提供する機能は、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスからも、ASP.NET 互換モードで動作していれば利用できます。  
+ ASP.NET Web サービスのセキュリティ保全の手順は、IIS アプリケーションのセキュリティ保全の手順と同じです。 WCF アプリケーションは、IIS 内だけでなく、その .NET 実行可能ファイル内でも、ホストされていることができます、ための WCF アプリケーションをセキュリティで保護するためのオプションに IIS の機能から独立して行う必要があります。 ただし、ASP.NET Web サービスを提供する機能も ASP.NET 互換モードで実行されている WCF サービスで利用できます。  
   
 ### <a name="security-authentication"></a>セキュリティ : 認証  
- IIS にはアプリケーションへのアクセス制御機能が組み込まれており、匿名アクセスの他、Windows 認証、ダイジェスト認証、基本認証、.NET パスポート認証など、さまざまな認証モードを切り替えることができます。 Windows 認証は、ASP.NET Web サービスへのアクセス制御に使えます。 しかし [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションを IIS 上でホストする場合、アプリケーションへの匿名アクセスを許可するように IIS を構成し、認証処理は [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 自身で、Windows 認証その他により行えるようにしなければなりません。 他の認証方法としては、ユーザー名トークン、X.509 証明書、SAML トークン、CardSpace カードなどが組み込まれていますが、独自の認証機構を定義することも可能です。  
+ IIS にはアプリケーションへのアクセス制御機能が組み込まれており、匿名アクセスの他、Windows 認証、ダイジェスト認証、基本認証、.NET パスポート認証など、さまざまな認証モードを切り替えることができます。 Windows 認証は、ASP.NET Web サービスへのアクセス制御に使えます。 ただし、WCF アプリケーションは、IIS でホストされる、ときに、その認証は、さまざまな他のオプションの Windows 認証をサポートして、WCF によって管理できるように、アプリケーションへの匿名アクセスを許可するように IIS を構成する必要があります。 他の認証方法としては、ユーザー名トークン、X.509 証明書、SAML トークン、CardSpace カードなどが組み込まれていますが、独自の認証機構を定義することも可能です。  
   
 ### <a name="security-impersonation"></a>セキュリティ : 偽装  
- ASP.NET Web サービスは ASP.NET の ID 要素を使用して、あるユーザーに偽装することができます。あらかじめ設定した特定のユーザーでなくても、要求に資格情報が添えられていれば、その要求元ユーザーに偽装できます。 ASP.NET 互換モードで動作する [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションでは、この要素を使って偽装を構成できます。  
+ ASP.NET Web サービスは ASP.NET の ID 要素を使用して、あるユーザーに偽装することができます。あらかじめ設定した特定のユーザーでなくても、要求に資格情報が添えられていれば、その要求元ユーザーに偽装できます。 その要素は、ASP.NET 互換モードで実行される WCF アプリケーションの権限借用の構成を使用することができます。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、特定のユーザーに偽装する、独自の ID 要素を設定できるようになっています。 また、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のクライアント側とサービス側で、別々に偽装を構成できます。 クライアント側では、要求を送信する現在のユーザーに偽装する構成が可能です。  
+ WCF 構成システムは、特定の権限を借用するユーザーを指定するため、独自の id 要素を提供します。 また、WCF クライアントとサービス別に構成できます権限借用のためです。 クライアント側では、要求を送信する現在のユーザーに偽装する構成が可能です。  
   
 ```xml  
 <behaviors>  
@@ -710,14 +696,14 @@ public void Receive(Message input)
 ```  
   
 ### <a name="security-authorization-using-access-control-lists"></a>セキュリティ : アクセス制御リストによる承認  
- アクセス制御リスト (ACL) を使って .asmx ファイルへのアクセスを制限できます。 しかし、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の .svc ファイルに対しては、ASP.NET 互換モードでない限り、ACL でアクセス制限することはできません。  
+ アクセス制御リスト (ACL) を使って .asmx ファイルへのアクセスを制限できます。 ただし、WCF .svc ファイルの Acl は、ASP.NET 互換モードでを除き無視されます。  
   
 ### <a name="security-role-based-authorization"></a>セキュリティ : ロール ベースの承認  
  IIS の Windows 認証オプションを、ASP.NET 構成言語の承認要素と組み合わせて使用すると、ASP.NET Web サービスに対し、各ユーザーが属する Windows グループに基づくロール ベースの承認機構を提供できます。 ASP.NET 2.0 には、より汎用的なロール ベースの承認機構である、ロール プロバイダーが導入されました。  
   
  ロール プロバイダーとは、ユーザーが割り当てられたロールに関する問い合わせを行う、基本インターフェイスを実装したクラス群です。各ロール プロバイダーには、さまざまな情報源から必要な情報を取得する手段が組み込まれています。 ASP.NET 2.0 には、Microsoft SQL Server データベースからロールの割り当てを検索できるロール プロバイダーと、Windows Server 2003 承認マネージャーから検索できるロール プロバイダーがあります。  
   
- .NET アプリケーションでは、ロール プロバイダーの機構は ASP.NET と独立に使われています。これは [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションも同様です。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーション用の構成例を以下に示します。このように、ASP.NET のロール プロバイダーの使い方は、<xref:System.ServiceModel.Description.ServiceAuthorizationBehavior> で選択できます。  
+ ロール プロバイダーの機構は、WCF アプリケーションを含む、任意の .NET アプリケーションで ASP.NET とは無関係に実際に使用することができます。 WCF アプリケーションの次のサンプルの構成方法を示します ASP.NET ロール プロバイダーを使用して選択したオプション、<xref:System.ServiceModel.Description.ServiceAuthorizationBehavior>です。  
   
 ```xml  
 <system.serviceModel>  
@@ -739,9 +725,9 @@ public void Receive(Message input)
 ```  
   
 ### <a name="security-claims-based-authorization"></a>セキュリティ : クレーム ベースの承認  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] に導入された革新的な機能の 1 つで、保護されたリソースへのアクセスを、クレーム ベースで承認するというものです。 クレームは、型、権限、および値で構成されます。たとえば、運転免許証を考えてみましょう。 ここには所持者に関する誕生日などの情報 (ここでいう「クレーム」) が記載されています。 つまり、クレームの型は「誕生日」、値は運転者の実際の誕生日です。 また、クレームの権限は、所持者がこの値に対してできることを表します。 誕生日について言えば、所持者はこの情報を「見る」ことはできますが、「書き換える」ことはできません。 クレーム ベースの承認は、ロール ベースの承認を包含する概念です。というのも、ロールはクレームの 1 つの型であると考えることができるからです。  
+ WCF の最も重要な技術革新の 1 つは、クレーム ベースの保護されたリソースへのアクセスを承認するための完全なサポートです。 クレームは、型、権限、および値で構成されます。たとえば、運転免許証を考えてみましょう。 ここには所持者に関する誕生日などの情報 (ここでいう「クレーム」) が記載されています。 つまり、クレームの型は「誕生日」、値は運転者の実際の誕生日です。 また、クレームの権限は、所持者がこの値に対してできることを表します。 誕生日について言えば、所持者はこの情報を「見る」ことはできますが、「書き換える」ことはできません。 クレーム ベースの承認は、ロール ベースの承認を包含する概念です。というのも、ロールはクレームの 1 つの型であると考えることができるからです。  
   
- クレーム ベースの承認では、一連のクレームを操作のアクセス要求と比較し、その結果に応じてアクセスを許可または拒否します。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、クレーム ベースの承認を実行するクラスも、`ServiceAuthorizationManager` の <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior> プロパティで指定します。  
+ クレーム ベースの承認では、一連のクレームを操作のアクセス要求と比較し、その結果に応じてアクセスを許可または拒否します。 WCF を使用して値を割り当てることによって信頼性情報ベースの承認をもう一度実行するクラスを指定することができます、`ServiceAuthorizationManager`プロパティ<xref:System.ServiceModel.Description.ServiceAuthorizationBehavior>です。  
   
 ```xml  
 <behaviors>  
@@ -753,15 +739,15 @@ public void Receive(Message input)
 </behaviors>  
 ```  
   
- クレーム ベースの承認を行うクラスは、<xref:System.ServiceModel.ServiceAuthorizationManager> を継承し、`AccessCheck()` メソッドだけをオーバーライドして定義します。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、このメソッドを、サービスの操作が起動されたときに呼び出します。該当するユーザーのクレームを <xref:System.ServiceModel.OperationContext> プロパティに設定した、`ServiceSecurityContext.AuthorizationContext` オブジェクトを引数として渡します。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、提示されたセキュリティ トークンからユーザーに関するクレームを抽出、アセンブルし、要求された操作を許可してもよいかどうかを評価します。  
+ クレーム ベースの承認を行うクラスは、<xref:System.ServiceModel.ServiceAuthorizationManager> を継承し、`AccessCheck()` メソッドだけをオーバーライドして定義します。 WCF がサービスの操作が呼び出され、提供されるたびに、そのメソッドを呼び出す、<xref:System.ServiceModel.OperationContext>ユーザーの要求を持つオブジェクトでその`ServiceSecurityContext.AuthorizationContext`プロパティです。 WCF はセキュリティ トークンからユーザーに関するクレームをアセンブルし、認証のままにするは、ユーザー、それらの要求が問題の操作に十分であるかどうかを評価します。  
   
- どのようなセキュリティ トークンからでも自動的にクレームをアセンブルできることが、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の革新的な技術です。これにより、認証機構と完全に独立して、クレーム ベースの承認を行うコードを実装できるようになりました。 これに対し、ACL やロール ベースの承認は、Windows 認証と密に関連し合っています。  
+ WCF は、セキュリティの任意の種類からの要求を自動的にアセンブル トークンは非常に重要な技術革新の場合、コードを完全に独立して、認証メカニズムのクレーム ベースの承認を可能になったためです。 これに対し、ACL やロール ベースの承認は、Windows 認証と密に関連し合っています。  
   
 ### <a name="security-confidentiality"></a>セキュリティ : 機密性  
- ASP.NET Web サービスとの間でやり取りするメッセージの機密性は、トランスポート層で、IIS 上のアプリケーションが Secure Hypertext Transfer Protocol (HTTPS) を使うように構成することによって確保します。 IIS 上でホストされている [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションについても同様です。 しかし、IIS 以外でホストされている [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションも、安全なトランスポート プロトコルを使うように構成できます。 さらに [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションは、メッセージを転送前に WS-Security プロトコルにより保護するように構成することも可能です。 メッセージの本体を WS-Security で保護することにより、最終送信先に到達するまでの中継ノードで機密が洩れないようにすることができます。  
+ ASP.NET Web サービスとの間でやり取りするメッセージの機密性は、トランスポート層で、IIS 上のアプリケーションが Secure Hypertext Transfer Protocol (HTTPS) を使うように構成することによって確保します。 同じ IIS でホストされる WCF アプリケーションを実行できます。 ただし、IIS の外部でホストされている WCF アプリケーションは、セキュリティで保護されたトランスポート プロトコルを使用しても構成できます。 重要な WCF アプリケーションを構成して、Ws-security プロトコルを使用して、配送される前に、メッセージをセキュリティで保護することもできます。 メッセージの本体を WS-Security で保護することにより、最終送信先に到達するまでの中継ノードで機密が洩れないようにすることができます。  
   
 ## <a name="globalization"></a>グローバリゼーション  
- ASP.NET 構成言語では、個々のサービスごとにカルチャを指定することができます。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] でこの設定ができるのは、ASP.NET 互換モードの場合に限ります。 ASP.NET 互換モードでない [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスをローカライズするためには、サービス型をコンパイルしてカルチャごとのアセンブリを生成し、エンドポイントもカルチャごとのアセンブリそれぞれについて用意する必要があります。  
+ ASP.NET 構成言語では、個々のサービスごとにカルチャを指定することができます。 WCF では、ASP.NET 互換モードで以外には、その構成設定はサポートされません。 ASP.NET 互換モードを使用しない WCF サービスをローカライズするには、カルチャに固有のアセンブリにサービスの種類をコンパイルして、各カルチャに固有のアセンブリのカルチャに固有の別個のエンドポイントがあります。  
   
 ## <a name="see-also"></a>関連項目  
  [使用目的と使用標準に基づく ASP.NET Web サービスと WCF との比較](../../../../docs/framework/wcf/feature-details/comparing-aspnet-web-services-to-wcf-based-on-purpose-and-standards-used.md)

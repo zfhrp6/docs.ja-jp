@@ -9,11 +9,11 @@ helpviewer_keywords:
 ms.assetid: d171b5ca-96ef-47ff-800c-c138023cf76e
 author: BrucePerlerMS
 manager: mbaldwin
-ms.openlocfilehash: 5ed09947350a284dd7701b37bad93912f79f7e3c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 2fa8d753d5fb168c14ee71cbbf6de62e0e4aff9e
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="how-to-secure-a-service-with-windows-credentials"></a>方法 : Windows 資格情報でサービスをセキュリティで保護する
 このトピックでは、Windows ドメインに存在し、同じドメイン内のクライアントによって呼び出される Windows Communication Foundation (WCF) サービスのトランスポート セキュリティを有効にする方法を示します。 このシナリオの詳細については、次を参照してください。[トランスポート セキュリティと Windows 認証](../../../docs/framework/wcf/feature-details/transport-security-with-windows-authentication.md)です。 サンプル アプリケーションについては、次を参照してください。、 [WSHttpBinding](../../../docs/framework/wcf/samples/wshttpbinding.md)サンプルです。  
@@ -75,7 +75,7 @@ ms.lasthandoff: 05/04/2018
   
 ##### <a name="to-use-a-binding-in-a-client-with-code"></a>コードによってクライアントでバインディングを使用するには  
   
-1.  SvcUtil.exe ツールを使用して、サービスのメタデータからプロキシ コードを生成します。 詳細については、次を参照してください。[する方法: クライアントを作成する](../../../docs/framework/wcf/how-to-create-a-wcf-client.md)です。 生成されたプロキシ コードは <xref:System.ServiceModel.ClientBase%601> クラスから継承しているので、各クライアントには、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスとの通信に必要なコンストラクター、メソッド、およびプロパティが確実に定義されます。 この例では、生成されたコードに、`CalculatorClient` インターフェイスを実装した `ICalculator` クラスが追加されるので、サービス コードとの互換が可能になります。  
+1.  SvcUtil.exe ツールを使用して、サービスのメタデータからプロキシ コードを生成します。 詳細については、次を参照してください。[する方法: クライアントを作成する](../../../docs/framework/wcf/how-to-create-a-wcf-client.md)です。 生成されたプロキシ コードが継承、<xref:System.ServiceModel.ClientBase%601>クラスは、すべてのクライアントが必要なコンス トラクター、メソッド、および WCF サービスと通信するためにプロパティにあることを確認します。 この例では、生成されたコードに、`CalculatorClient` インターフェイスを実装した `ICalculator` クラスが追加されるので、サービス コードとの互換が可能になります。  
   
 2.  この手順のコードは、クライアント プログラムの `Main` メソッドの先頭に挿入します。  
   

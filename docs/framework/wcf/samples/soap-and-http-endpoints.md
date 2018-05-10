@@ -2,24 +2,24 @@
 title: SOAP エンドポイントおよび HTTP エンドポイント
 ms.date: 03/30/2017
 ms.assetid: e3c8be75-9dda-4afa-89b6-a82cb3b73cf8
-ms.openlocfilehash: bf11563b937426c3c1701e7fed79e82e4e4669ad
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 4c8a4695dbcaee2f0e7584418fbeac12815fa967
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="soap-and-http-endpoints"></a>SOAP エンドポイントおよび HTTP エンドポイント
-このサンプルでは、RPC ベースのサービスを実装して、SOAP 形式で公開する方法と、"Plain Old XML"(POX) 形式を使用して、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Web プログラミング モデルです。 参照してください、[基本 HTTP サービス](../../../../docs/framework/wcf/samples/basic-http-service.md)サービス用の HTTP バインドの詳細についてはサンプルです。 このサンプルでは、さまざまなバインドを使用して SOAP および HTTP で RPC ベースのサービスを公開する方法について詳しく示します。  
+このサンプルでは、RPC ベースのサービスを実装して、SOAP 形式および WCF Web プログラミング モデルを使用して、"Plain Old XML"(POX) 形式で公開する方法を示します。 参照してください、[基本 HTTP サービス](../../../../docs/framework/wcf/samples/basic-http-service.md)サービス用の HTTP バインドの詳細についてはサンプルです。 このサンプルでは、さまざまなバインドを使用して SOAP および HTTP で RPC ベースのサービスを公開する方法について詳しく示します。  
   
 ## <a name="demonstrates"></a>使用例  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を使用した SOAP および HTTP での RPC サービスの公開。  
+ SOAP、WCF を使用して HTTP 経由の RPC サービスを公開します。  
   
 ## <a name="discussion"></a>説明  
- このサンプルは、2 つのコンポーネントで構成されています。1 つは [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスを含む Web アプリケーション プロジェクト (Service) で、もう 1 つは SOAP バインドと HTTP バインドを使用してサービス操作を呼び出すコンソール アプリケーション (Client) です。  
+ このサンプルは、2 つのコンポーネントで構成されています: WCF サービスと SOAP および HTTP バインドを使用してサービス操作を呼び出すコンソール アプリケーション (クライアント) を含む Web アプリケーション プロジェクト (サービス)。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスは、入力として渡された文字列をエコーする、`GetData` と `PutData` の 2 つの操作を公開します。 サービス操作には、<xref:System.ServiceModel.Web.WebGetAttribute> および <xref:System.ServiceModel.Web.WebInvokeAttribute> を使用して注釈が付けられます。 これらの属性は、これらの操作の HTTP 投影を制御します。 また、サービス操作には、<xref:System.ServiceModel.OperationContractAttribute> を使用して注釈が付けられます。この属性では、サービス操作を SOAP バインディングで公開できます。 サービスの `PutData` メソッドは <xref:System.ServiceModel.Web.WebFaultException> をスローします。この例外は、HTTP では HTTP ステータス コードを使用して返送され、SOAP では SOAP エラーとして返送されます。  
+ WCF サービスは、2 つの操作を公開`GetData`と`PutData`– 入力として渡された文字列をエコーします。 サービス操作には、<xref:System.ServiceModel.Web.WebGetAttribute> および <xref:System.ServiceModel.Web.WebInvokeAttribute> を使用して注釈が付けられます。 これらの属性は、これらの操作の HTTP 投影を制御します。 また、サービス操作には、<xref:System.ServiceModel.OperationContractAttribute> を使用して注釈が付けられます。この属性では、サービス操作を SOAP バインディングで公開できます。 サービスの `PutData` メソッドは <xref:System.ServiceModel.Web.WebFaultException> をスローします。この例外は、HTTP では HTTP ステータス コードを使用して返送され、SOAP では SOAP エラーとして返送されます。  
   
- Web.config ファイルは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスを次の 3 つのエンドポイントで設定します。  
+ Web.config ファイルでは、3 つのエンドポイントで WCF サービスを構成します。  
   
 -   SOAP ベースのクライアントからアクセスするためのサービス メタデータを公開する ~/service.svc/mex エンドポイント  
   

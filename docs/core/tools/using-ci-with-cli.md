@@ -1,22 +1,20 @@
 ---
-title: "継続的インテグレーション (CI) で .NET Core SDK とツールを使用する"
-description: ".NET Core SDK とそのツールをビルド サーバーで使用する方法に関する情報。"
-keywords: ".NET, .NET Core, 継続的インテグレーション, ci, ビルド, 自動化, Travis CI, AppVeyor, Visual Studio Team Services, vsts"
+title: 継続的インテグレーション (CI) で .NET Core SDK とツールを使用する
+description: .NET Core SDK とそのツールをビルド サーバーで使用する方法に関する情報。
 author: guardrex
 ms.author: mairaw
 ms.date: 05/18/2017
-ms.topic: article
-ms.prod: .net-core
+ms.topic: conceptual
+ms.prod: dotnet-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
-ms.assetid: 0d6e1e34-277c-4aaf-9880-3ebf81023857
 ms.workload:
 - dotnetcore
-ms.openlocfilehash: 552865f225ceac9e7a365452ee06d7fefeeb7213
-ms.sourcegitcommit: 655fd4f78741967f80c409cef98347fdcf77857d
+ms.openlocfilehash: 76165b515bace71ca9269e587a817876c0e9eecf
+ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="using-net-core-sdk-and-tools-in-continuous-integration-ci"></a>継続的インテグレーション (CI) で .NET Core SDK とツールを使用する
 

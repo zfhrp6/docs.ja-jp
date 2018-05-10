@@ -1,12 +1,12 @@
 ---
-title: "非同期プログラミング モデル (APM)"
-ms.custom: 
+title: 非同期プログラミング モデル (APM)
+ms.custom: ''
 ms.date: 03/30/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - ending asynchronous operations
@@ -17,7 +17,7 @@ helpviewer_keywords:
 - stopping asynchronous operations
 - asynchronous programming, beginning operations
 ms.assetid: c9b3501e-6bc6-40f9-8efd-4b6d9e39ccf0
-caps.latest.revision: 
+caps.latest.revision: 13
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
@@ -71,9 +71,9 @@ ms.lasthandoff: 12/23/2017
   
  非同期操作が完了するまでアプリケーションをブロックする必要がない場合は、次のいずれかの方法を使用します。  
   
--   <xref:System.IAsyncResult.IsCompleted%2A> プロパティを定期的に確認し、操作が完了したときに **End***OperationName* を呼び出して、操作完了ステータスをポーリングします。 この手法の例については、「 [Polling for the Status of an Asynchronous Operation](../../../docs/standard/asynchronous-programming-patterns/polling-for-the-status-of-an-asynchronous-operation.md)」を参照してください。  
+-   <xref:System.IAsyncResult.IsCompleted%2A> プロパティを定期的に確認し、操作が完了したときに **End***OperationName* を呼び出して、操作完了ステータスをポーリングします。 この手法の例については、「 [非同期操作のステータスのポーリング](../../../docs/standard/asynchronous-programming-patterns/polling-for-the-status-of-an-asynchronous-operation.md)」を参照してください。  
   
--   <xref:System.AsyncCallback> デリゲートを使用して、操作が完了したときに呼び出されるメソッドを指定します。 この手法の例については、「 [Using an AsyncCallback Delegate to End an Asynchronous Operation](../../../docs/standard/asynchronous-programming-patterns/using-an-asynccallback-delegate-to-end-an-asynchronous-operation.md)」を参照してください。  
+-   <xref:System.AsyncCallback> デリゲートを使用して、操作が完了したときに呼び出されるメソッドを指定します。 この手法の例については、「 [AsyncCallback デリゲートの使用による非同期操作の終了](../../../docs/standard/asynchronous-programming-patterns/using-an-asynccallback-delegate-to-end-an-asynchronous-operation.md)」を参照してください。  
   
 ## <a name="see-also"></a>参照  
  [イベント ベースの非同期パターン (EAP)](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md)  

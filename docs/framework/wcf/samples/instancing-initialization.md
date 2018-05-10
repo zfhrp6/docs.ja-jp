@@ -2,11 +2,11 @@
 title: 初期化のインスタンス化
 ms.date: 03/30/2017
 ms.assetid: 154d049f-2140-4696-b494-c7e53f6775ef
-ms.openlocfilehash: 75b8d2a2696d5900fd7bffe42dbaf62b9f6ce694
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: ae01254760219f2b408ef9d9663c4158e2802be8
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="instancing-initialization"></a>初期化のインスタンス化
 このサンプルを拡張、[プーリング](../../../../docs/framework/wcf/samples/pooling.md)インターフェイスを定義することでサンプル`IObjectControl`でのアクティブ化と非アクティブ化するオブジェクトの初期化をカスタマイズします。 クライアントは、オブジェクトをプールに返すメソッドや、プールに返さないメソッドを呼び出します。  
@@ -15,12 +15,12 @@ ms.lasthandoff: 05/04/2018
 >  このサンプルのセットアップ手順とビルド手順については、このトピックの最後を参照してください。  
   
 ## <a name="extensibility-points"></a>拡張ポイント  
- Windows Communication Foundation (WCF) 拡張機能の作成の最初の手順では、使用する機能拡張ポイントを決定します。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]、用語*EndpointDispatcher*実行時コンポーネントが受信メッセージをユーザーのサービス上のメソッド呼び出しに変換するためにそのメソッドから戻り値を変換したりするには、送信メッセージ。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスは、各エンドポイントの EndpointDispatcher を作成します。  
+ Windows Communication Foundation (WCF) 拡張機能の作成の最初の手順では、使用する機能拡張ポイントを決定します。 WCF では、用語*EndpointDispatcher*は送信メッセージにそのメソッドから戻り値の変換にしたり、ユーザーのサービスでのメソッド呼び出しに着信メッセージを変換する実行時コンポーネントを表します. WCF サービスでは、各エンドポイントの EndpointDispatcher を作成します。  
   
  EndpointDispatcher は <xref:System.ServiceModel.Dispatcher.EndpointDispatcher> クラスを使用して、(サービスによって送受信されるすべてのメッセージの) エンドポイント スコープ拡張を提供します。 このクラスにより、EndpointDispatcher の動作を制御するさまざまなプロパティをカスタマイズできます。 このサンプルでは、サービス クラスのインスタンスを提供するオブジェクトをポイントする <xref:System.ServiceModel.Dispatcher.DispatchRuntime.InstanceProvider%2A> プロパティに焦点を当てています。  
   
 ## <a name="iinstanceprovider"></a>IInstanceProvider  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、EndpointDispatcher は <xref:System.ServiceModel.Dispatcher.IInstanceProvider> インターフェイスを実装しているインスタンス プロバイダを使用して、サービス クラスのインスタンスを作成します。 このインターフェイスに含まれるメソッドは、次の 2 つのみです。  
+ WCF では、EndpointDispatcher を実装するインスタンス プロバイダーを使用して、サービス クラスのインスタンスを作成、<xref:System.ServiceModel.Dispatcher.IInstanceProvider>インターフェイスです。 このインターフェイスに含まれるメソッドは、次の 2 つのみです。  
   
 -   <xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%2A>: メッセージが到着すると、このディスパッチャは <xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%2A> メソッドを呼び出し、メッセージを処理するためのサービス クラスのインスタンスを作成します。 このメソッドの呼び出し頻度は <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> プロパティで決まります。 たとえば <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> プロパティが <xref:System.ServiceModel.InstanceContextMode.PerCall?displayProperty=nameWithType> に設定されている場合、サービス クラスの新しいインスタンスが作成され、到着する各メッセージが処理されます。したがって、<xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%2A> はメッセージが到着するたびに呼び出されます。  
   
@@ -153,7 +153,7 @@ if (activeObjectsCount == 0)
   
  このサンプルではカスタム属性を使用します。 <xref:System.ServiceModel.ServiceHost> が構築されると、サービスの種類の定義で使用されている属性が調べられ、使用可能な動作がサービス説明の動作コレクションに追加されます。  
   
- <xref:System.ServiceModel.Description.IServiceBehavior>インターフェイスには 3 つの方法: <xref:System.ServiceModel.Description.IServiceBehavior.Validate%2A> `,` <xref:System.ServiceModel.Description.IServiceBehavior.AddBindingParameters%2A> `,`と<xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A>です。 これらのメソッドは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の初期化中に <xref:System.ServiceModel.ServiceHost> によって呼び出されます。 最初に、<xref:System.ServiceModel.Description.IServiceBehavior.Validate%2A?displayProperty=nameWithType> が呼び出されます。このメソッドによってサービスの不整合性を検査できます。 次に、<xref:System.ServiceModel.Description.IServiceBehavior.AddBindingParameters%2A?displayProperty=nameWithType> が呼び出されます。このメソッドは、非常に高度なシナリオでのみ必要です。 最後に、<xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A?displayProperty=nameWithType> が呼び出されます。このメソッドはランタイムを構成します。 次のパラメータは、<xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A?displayProperty=nameWithType> に渡されます。  
+ <xref:System.ServiceModel.Description.IServiceBehavior>インターフェイスには 3 つの方法: <xref:System.ServiceModel.Description.IServiceBehavior.Validate%2A> `,` <xref:System.ServiceModel.Description.IServiceBehavior.AddBindingParameters%2A> `,`と<xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A>です。 これらのメソッドは、WCF によって呼び出されるときに、<xref:System.ServiceModel.ServiceHost>初期化しています。 最初に、<xref:System.ServiceModel.Description.IServiceBehavior.Validate%2A?displayProperty=nameWithType> が呼び出されます。このメソッドによってサービスの不整合性を検査できます。 次に、<xref:System.ServiceModel.Description.IServiceBehavior.AddBindingParameters%2A?displayProperty=nameWithType> が呼び出されます。このメソッドは、非常に高度なシナリオでのみ必要です。 最後に、<xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A?displayProperty=nameWithType> が呼び出されます。このメソッドはランタイムを構成します。 次のパラメータは、<xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A?displayProperty=nameWithType> に渡されます。  
   
 -   `Description` : このパラメータは、サービス全体のサービスの説明を提供します。 これを使用すると、サービスのエンドポイント、コントラクト、バインディング、およびサービスに関連するその他のデータに関する説明データを検査できます。  
   
@@ -189,7 +189,7 @@ public void ApplyDispatchBehavior(ServiceDescription description, ServiceHostBas
   
  <xref:System.ServiceModel.Description.IServiceBehavior> 実装のほかにも、`ObjectPoolingAttribute` クラスには属性引数を使用してオブジェクト プールをカスタマイズするいくつかのメンバがあります。 こうしたメンバには `MaxSize`、`MinSize`、`Enabled`、`CreationTimeout` などがあり、.NET Enterprise Services で提供されるオブジェクト プール機能のセットに一致します。  
   
- オブジェクト プールの動作は、新しく作成されたカスタム [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 属性を使用してサービス実装に注釈を付けることにより、`ObjectPooling` サービスに追加できるようになりました。  
+ オブジェクト プールの動作は今すぐを新しく作成されたカスタムのサービスの実装に注釈を付ける WCF サービスに追加された`ObjectPooling`属性。  
   
 ```  
 [ObjectPooling(MaxSize=1024, MinSize=10, CreationTimeout=30000]      

@@ -1,27 +1,15 @@
 ---
-title: "WS バインディング"
-ms.custom: 
+title: WS バインディング
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 629945b2-d771-46d7-a87b-5df3b2e460da
-caps.latest.revision: "7"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: f733aaf62d37f9c8ca853a0958e627a4f354121d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 11480b91c6ac6a5501029dfdf10cd81d3fa18820
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="ws-binding"></a>WS バインディング
-このセクションには、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] での Windows サービスのバインディングを示すサンプルが含まれています。  
+このセクションには、Windows サービスのバインディングで Windows Communication Foundation (WCF) を示すサンプルが含まれています。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [WS トランザクション フロー](../../../../docs/framework/wcf/samples/ws-transaction-flow.md)  
@@ -37,7 +25,7 @@ ms.lasthandoff: 12/22/2017
  WSHttpBinding で Message Transmission Optimization Mechanism (MTOM) メッセージ エンコーディングを使用する方法を示します。  
   
  [WSHttpBinding](../../../../docs/framework/wcf/samples/wshttpbinding.md)  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を使用して、一般的なサービスと一般的なクライアントを実装する方法を示します。  
+ 一般的なサービスと WCF を使用して一般的なクライアントを実装する方法を示します。  
   
  [WS 信頼できるセッション](../../../../docs/framework/wcf/samples/ws-reliable-session.md)  
  信頼できるセッションの使用方法を示します。  
@@ -46,7 +34,7 @@ ms.lasthandoff: 12/22/2017
  <xref:System.ServiceModel.WSHttpBinding> バインディングを使用した SSL トランスポート セキュリティの使用方法を示します。  
   
  [メッセージ セキュリティ バインディング](../../../../docs/framework/wcf/samples/message-security-binding.md)  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のメッセージ セキュリティを使用して示します。  
+ WCF でのメッセージ セキュリティの使用方法を示します。  
   
  [メッセージ資格情報付き WS トランスポート](../../../../docs/framework/wcf/samples/ws-transport-with-message-credential.md)  
  このサンプルでは、メッセージに含まれるクライアント資格情報と組み合わせて SSL トランスポート セキュリティを使用する例を示します。

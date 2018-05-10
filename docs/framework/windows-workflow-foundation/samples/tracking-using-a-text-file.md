@@ -1,24 +1,12 @@
 ---
 title: テキスト ファイルを使用した追跡
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 56a82682-73c2-4b91-a206-4d8bb12c561b
-caps.latest.revision: 13
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 32aab8ae875158fed62c70cbc2d7506ba6c8d3c5
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: aa59ab8304c68873c938f42fc585be883b234ecc
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="tracking-using-a-text-file"></a>テキスト ファイルを使用した追跡
 このサンプルでは、カスタム追跡参加要素を作成することで、Windows Workflow Foundation (WF) の追跡を拡張する方法を示します。 追跡参加要素は、出力された追跡レコードをランタイムから受け取る .NET Framework クラスです。 追跡参加要素を作成して、シナリオに必要な出力先に追跡イベントを転送することができます。 たとえば、ETW (Event Tracing for Windows) 追跡参加要素は、[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] の一部として提供されています。 このサンプルの追跡参加要素は、レコードを XML 形式でテキスト ファイルに書き込みます。  
@@ -29,7 +17,7 @@ ms.lasthandoff: 04/27/2018
 |クラス|説明|  
 |-----------|-----------------|  
 |`TextFileTrackingExtensionElement`|<xref:System.ServiceModel.Configuration.BehaviorExtensionElement> を使用して、テキスト ファイルの追跡参加要素の構成に使用される構成セクションを定義します。 これにより、ユーザーは、標準の .NET Framework 構成ファイルを使用してログ ファイルの出力先を指定できます。|  
-|`TextFileTrackingBehavior`|[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の動作によって、ユーザーは、拡張機能をランタイムに挿入できるようになります。 この動作によって、サービスの開始時に追跡参加要素がサービスに追加されます。|  
+|`TextFileTrackingBehavior`|WCF での動作を拡張機能をランタイムに挿入できるようにします。 この動作によって、サービスの開始時に追跡参加要素がサービスに追加されます。|  
 |`TextFileTrackingParticipant`|実行時に追跡参加要素を受け取って XML としてログ ファイルに格納する追跡参加要素。|  
   
 ## <a name="behavior-extension-elements-configuration"></a>動作拡張要素の構成  
@@ -98,7 +86,7 @@ ms.lasthandoff: 04/27/2018
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
+>  このディレクトリが存在しない場合に、 [Windows Communication Foundation (WCF) および .NET Framework 4 向けの Windows Workflow Foundation (WF) サンプル](http://go.microsoft.com/fwlink/?LinkId=150780)すべて Windows Communication Foundation (WCF) をダウンロードして[!INCLUDE[wf1](../../../../includes/wf1-md.md)]サンプルです。 このサンプルは、次のディレクトリに格納されます。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Tracking\TextFileTracking`  
   

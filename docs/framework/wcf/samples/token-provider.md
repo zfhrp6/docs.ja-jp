@@ -4,18 +4,18 @@ ms.date: 03/30/2017
 ms.assetid: 947986cf-9946-4987-84e5-a14678d96edb
 author: BrucePerlerMS
 manager: mbaldwin
-ms.openlocfilehash: 97602a261f1e86cb70b38f21080c2a2e792605e8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: d513ddd41d87da7274f961969d261724b49aab65
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="token-provider"></a>トークン プロバイダー
-このサンプルでは、カスタム トークン プロバイダーを実装する方法を示します。 資格情報をセキュリティ インフラストラクチャに提供するトークン プロバイダーでは、Windows Communication Foundation (WCF) が使用されます。 一般的に、トークン プロバイダーは、ターゲットをチェックし、適切な証明書を発行して、セキュリティ インフラストラクチャがメッセージのセキュリティを保護できるようにします。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、既定の Credential Manager Token Provider が付属しています。 また、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、[!INCLUDE[infocard](../../../../includes/infocard-md.md)] トークン プロバイダーも付属しています。 カスタム トークン プロバイダーは、次の場合に便利です。  
+このサンプルでは、カスタム トークン プロバイダーを実装する方法を示します。 資格情報をセキュリティ インフラストラクチャに提供するトークン プロバイダーでは、Windows Communication Foundation (WCF) が使用されます。 一般的に、トークン プロバイダーは、ターゲットをチェックし、適切な証明書を発行して、セキュリティ インフラストラクチャがメッセージのセキュリティを保護できるようにします。 WCF は、既定の Credential Manager Token Provider に付属します。 WCF も付属しています、[!INCLUDE[infocard](../../../../includes/infocard-md.md)]トークン プロバイダー。 カスタム トークン プロバイダーは、次の場合に便利です。  
   
 -   トークン プロバイダーが連携動作できない資格情報ストアがある場合。  
   
--   資格情報をユーザーが詳細を提供した時点から [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント フレームワークが資格情報を使用した時点に変換するための、独自のカスタム メカニズムを提供する場合。  
+-   ユーザーが WCF クライアント フレームワークが資格情報を使用する場合に詳細を提供するときに、ポイントからの資格情報を変換するための独自のカスタム メカニズムを提供する場合は。  
   
 -   カスタム トークンを構築している場合。  
   
@@ -108,7 +108,7 @@ ms.lasthandoff: 05/04/2018
 </system.serviceModel>  
 ```  
   
- カスタム トークン プロバイダーを開発して [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のセキュリティ フレームワークに統合する方法を、次の手順に示します。  
+ 次の手順では、カスタム トークン プロバイダーを開発し、WCF のセキュリティ フレームワークに統合する方法を示します。  
   
 1.  カスタム トークン プロバイダーを作成します。  
   

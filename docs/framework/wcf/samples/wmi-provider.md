@@ -2,18 +2,18 @@
 title: WMI プロバイダー
 ms.date: 03/30/2017
 ms.assetid: 462f0db3-f4a4-4a4b-ac26-41fc25c670a4
-ms.openlocfilehash: 202923ab1d09b0ce836dbfce7360dd22a479a900
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: d135466c402fa21b6a1b11f208ca900f58748bdb
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="wmi-provider"></a>WMI プロバイダー
-このサンプルに組み込まれている Windows Management Instrumentation (WMI) プロバイダーを使用して、実行時に Windows Communication Foundation (WCF) サービスからデータを収集する方法を示します[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]です。 また、このサンプルでは、ユーザー定義の WMI オブジェクトをサービスに追加する方法も示します。 サンプル用の WMI プロバイダーをアクティブ化、[作業の開始](../../../../docs/framework/wcf/samples/getting-started-sample.md)からデータを収集する方法を説明し、`ICalculator`実行時にサービス。  
+このサンプルでは、実行時に Windows Communication Foundation (WCF) サービスから WCF に組み込まれている Windows Management Instrumentation (WMI) プロバイダーを使用してデータを収集する方法を示します。 また、このサンプルでは、ユーザー定義の WMI オブジェクトをサービスに追加する方法も示します。 サンプル用の WMI プロバイダーをアクティブ化、[作業の開始](../../../../docs/framework/wcf/samples/getting-started-sample.md)からデータを収集する方法を説明し、`ICalculator`実行時にサービス。  
   
  WMI は、Web ベースのエンタープライズ管理 (WBEM) 標準をマイクロソフトが実装したものです。 WMI SDK の詳細については、次を参照してください。 [Windows Management Instrumentation](https://msdn.microsoft.com/library/aa394582.aspx)です。 WBEM は、アプリケーションが Management Instrumentation を外部管理ツールに開示する業界標準の方法です。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は WMI プロバイダーを実装しています。これは、WBEAM と互換性のあるインターフェイスを通して実行時にインストルメンテーションを公開するコンポーネントです。 管理ツールは、実行時にインターフェイスを介してサービスに接続できます。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、アドレス、バインディング、動作、リスナーなどのサービスの属性を公開します。  
+ WCF では、WMI プロバイダー、WBEM と互換性のあるインターフェイスを通して実行時にインストルメンテーションを公開するコンポーネントを実装します。 管理ツールは、実行時にインターフェイスを介してサービスに接続できます。 WCF では、アドレス、バインディング、動作、リスナーなどのサービスの属性を公開します。  
   
  組み込みの WMI プロバイダーは、アプリケーションの構成ファイルでアクティブにされます。 これには、`wmiProviderEnabled`の属性、 [\<診断 >](../../../../docs/framework/configure-apps/file-schema/wcf/diagnostics.md)で、 [ \<system.serviceModel >](../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md)セクションで、次の例のように構成:  
   
@@ -35,7 +35,7 @@ ms.lasthandoff: 05/04/2018
   
  このサンプルでは、2 つの Java スクリプトを使用します。1 つ目は、コンピューター上で実行されているサービスとその一部のプロパティを列挙するスクリプトで、2 つ目はユーザー定義の WMI データを表示するスクリプトです。 スクリプトは、WMI プロバイダーへの接続を開き、データを解析し、収集されたデータを表示します。  
   
- サンプルを開始して、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスの実行中インスタンスを作成します。 サービスの実行中は、コマンド プロンプトで次のコマンドを入力することによって、それぞれの Java スクリプトを実行してください。  
+ サンプルを開始して、WCF サービスの実行中のインスタンスを作成します。 サービスの実行中は、コマンド プロンプトで次のコマンドを入力することによって、それぞれの Java スクリプトを実行してください。  
   
 ```  
 cscript EnumerateServices.js  
@@ -116,7 +116,7 @@ cscript EnumerateCustomObjects.js
   
  この出力は、コンピューター上で 1 つのサービスが実行中であることを示しています。 サービスは、`ICalculator` コントラクトを実装する 1 つのエンドポイントを公開します。 このエンドポイントによって実装されている動作とバインディングの設定は、メッセージ スタックの個々の要素の合計として表示されます。  
   
- WMI は、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] インフラストラクチャの Management Instrumentation を公開するだけではありません。 独自のドメイン固有のデータ アイテムを、同じ機構を使用して公開できます。 WMI は、Web サービスの検査と制御のための統一された機構です。  
+ WMI では、WCF インフラストラクチャの management instrumentation を公開することに限定されません。 独自のドメイン固有のデータ アイテムを、同じ機構を使用して公開できます。 WMI は、Web サービスの検査と制御のための統一された機構です。  
   
 #### <a name="to-set-up-build-and-run-the-sample"></a>サンプルをセットアップ、ビルド、および実行するには  
   
@@ -129,7 +129,7 @@ cscript EnumerateCustomObjects.js
 4.  1 つまたは複数コンピューター構成でサンプルを実行する手順についてで[Windows Communication Foundation サンプルの実行](../../../../docs/framework/wcf/samples/running-the-samples.md)です。  
   
     > [!NOTE]
-    >  ASP.NET のインストール後に [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] をインストールした場合は、"%WINDIR%\Microsoft.Net\Framework\v3.0\Windows Communication Foundation\servicemodelreg.exe " -r -x を実行し、ASPNET アカウントに WMI オブジェクトを公開する権限を付与する必要がある場合があります。  
+    >  ASP.NET のインストール後に WCF がインストールされている場合場合があります"%WINDIR%\ を実行する必要があります。Microsoft.Net\Framework\v3.0\Windows 通信 Foundation\servicemodelreg.exe"-r-x WMI オブジェクトをパブリッシュする、ASPNET アカウントの権限を付与します。  
   
 5.  コマンド `cscript EnumerateServices.js` または `cscript EnumerateCustomObjects.js` を使用して、WMI を通じて示されるサンプルのデータを表示します。  
   

@@ -2,17 +2,17 @@
 title: フェデレーション サンプル
 ms.date: 03/30/2017
 ms.assetid: 7e9da0ca-e925-4644-aa96-8bfaf649d4bb
-ms.openlocfilehash: 38581c7003c30038ee1a3438caa96b7f2782a23e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: a9c2b91f7d8bdf24476c76fcd479b7f2fb44c90f
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="federation-sample"></a>フェデレーション サンプル
 このサンプルではフェデレーション セキュリティを示します。  
   
 ## <a name="sample-details"></a>サンプルの詳細  
- Windows Communication Foundation (WCF) を介してフェデレーション セキュリティ アーキテクチャを展開するためサポートを提供する、`wsFederationHttpBinding`です。 `wsFederationHttpBinding` は、セキュリティで保護された、信頼できる、相互運用が可能なバインディングを提供します。このバインディングでは、要求/応答の通信のための基になるトランスポート機構として HTTP を使用でき、エンコーディングのためのワイヤ形式として Text/XML を使用できます。 内のフェデレーションの詳細については[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]を参照してください[フェデレーション](../../../../docs/framework/wcf/feature-details/federation.md)です。  
+ Windows Communication Foundation (WCF) を介してフェデレーション セキュリティ アーキテクチャを展開するためサポートを提供する、`wsFederationHttpBinding`です。 `wsFederationHttpBinding` は、セキュリティで保護された、信頼できる、相互運用が可能なバインディングを提供します。このバインディングでは、要求/応答の通信のための基になるトランスポート機構として HTTP を使用でき、エンコーディングのためのワイヤ形式として Text/XML を使用できます。 WCF でのフェデレーションの詳細については、次を参照してください。[フェデレーション](../../../../docs/framework/wcf/feature-details/federation.md)です。  
   
  シナリオは、次の 4 つの部分から構成されます。  
   

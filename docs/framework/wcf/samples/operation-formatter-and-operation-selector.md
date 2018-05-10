@@ -2,14 +2,14 @@
 title: 操作フォーマッタと操作セレクター
 ms.date: 03/30/2017
 ms.assetid: 1c27e9fe-11f8-4377-8140-828207b98a0e
-ms.openlocfilehash: 469b7f2c99652cb6fceb2e8f12f1c74f0140b5ec
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: db548e99c99ba6f29cc1c6e998d0e7485cd41046
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="operation-formatter-and-operation-selector"></a>操作フォーマッタと操作セレクター
-このサンプルでは、Windows Communication Foundation (WCF) の機能拡張ポイントを使用して、どのようなから別の形式でメッセージ データを許可する方法を示します[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]が必要です。 既定では、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]フォーマッタの下に含まれるメソッドのパラメーターを想定して、`soap:body`要素。 このサンプルでは、代わりに HTTP GET クエリ文字列のパラメータ データを解析するカスタム操作フォーマッタを実装し、そのデータを使用してメソッドを呼び出す方法を示します。  
+このサンプルでは、Windows Communication Foundation (WCF) の機能拡張ポイントを使用して、WCF で期待から別の形式でメッセージ データを許可する方法を示します。 WCF のフォーマッタを既定では、含まれるメソッドのパラメーターを想定して、`soap:body`要素。 このサンプルでは、代わりに HTTP GET クエリ文字列のパラメータ データを解析するカスタム操作フォーマッタを実装し、そのデータを使用してメソッドを呼び出す方法を示します。  
   
  サンプルがに基づいて、[作業の開始](../../../../docs/framework/wcf/samples/getting-started-sample.md)を実装する、`ICalculator`サービス コントラクト。 加算、減算、乗算、および除算のメッセージを変更して、クライアントからサーバーへの要求を行うための HTTP GET と、サーバーからクライアントへの要求を行うための POX メッセージ付きの HTTP POST を使用する方法を示します。  
   
@@ -28,8 +28,8 @@ ms.lasthandoff: 05/04/2018
 > [!NOTE]
 >  このサンプルのセットアップ手順とビルド手順については、このトピックの最後を参照してください。  
   
-## <a name="key-concepts"></a>重要な概念  
- `QueryStringFormatter` - この操作フォーマッタは [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 内のコンポーネントで、メッセージをパラメータ オブジェクトの配列に変換したり、逆にパラメータ オブジェクトの配列をメッセージに変換したりします。 この操作は、クライアント上では <xref:System.ServiceModel.Dispatcher.IClientMessageFormatter> インターフェイスを使用して、サーバー上では <xref:System.ServiceModel.Dispatcher.IDispatchMessageFormatter> インターフェイスを使用して行われます。 これらのインターフェイスを使用すると、ユーザーは `Serialize` メソッドと `Deserialize` メソッドから要求メッセージと応答メッセージを取得できます。  
+## <a name="key-concepts"></a>主要な概念  
+ `QueryStringFormatter` -この操作フォーマッタは、wcf メッセージをメッセージにパラメーター オブジェクトの配列とパラメーター オブジェクトの配列に変換を担当するコンポーネントです。 この操作は、クライアント上では <xref:System.ServiceModel.Dispatcher.IClientMessageFormatter> インターフェイスを使用して、サーバー上では <xref:System.ServiceModel.Dispatcher.IDispatchMessageFormatter> インターフェイスを使用して行われます。 これらのインターフェイスを使用すると、ユーザーは `Serialize` メソッドと `Deserialize` メソッドから要求メッセージと応答メッセージを取得できます。  
   
  このサンプルでは、`QueryStringFormatter` にこれら両方のインターフェイスが実装され、クライアントとサーバーで実装されます。  
   
@@ -59,10 +59,10 @@ ms.lasthandoff: 05/04/2018
   
  <xref:System.ServiceModel.Dispatcher.DispatchRuntime.OperationSelector%2A> は <xref:System.ServiceModel.Dispatcher.IDispatchOperationSelector> 実装に設定されます。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、既定では完全一致のアドレス フィルタを使用します。 受信メッセージ上の URI には、操作名のサフィックスと、その後にパラメータ データを格納するクエリ文字列が含まれています。したがって、アドレス フィルタは、エンドポイントの動作によっても、プレフィックスが一致するフィルタに変更されます。 使用して、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] <xref:System.ServiceModel.Dispatcher.PrefixEndpointAddressMessageFilter>この目的のためです。  
+ 既定では、WCF は、完全一致のアドレス フィルターを使用します。 受信メッセージ上の URI には、操作名のサフィックスと、その後にパラメータ データを格納するクエリ文字列が含まれています。したがって、アドレス フィルタは、エンドポイントの動作によっても、プレフィックスが一致するフィルタに変更されます。 WCF を使用して<xref:System.ServiceModel.Dispatcher.PrefixEndpointAddressMessageFilter>この目的のためです。  
   
 ### <a name="installing-operation-formatters"></a>操作フォーマッタのインストール  
- フォーマッタを指定する操作の動作は一意です。 このような動作は、常に既定で操作ごとに実装され、必要な操作フォーマッタを作成します。 ただし、これらの動作は他の操作動作と同様に見えるため、他の属性では識別できません。 置換動作をインストールするには、この実装で、既定で [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 型ローダーによってインストールされる特定のフォーマッタの動作を検索し、その動作に置き換えるか、または互換性のある動作を追加して既定の動作後に実行する必要があります。  
+ フォーマッタを指定する操作の動作は一意です。 このような動作は、常に既定で操作ごとに実装され、必要な操作フォーマッタを作成します。 ただし、これらの動作は他の操作動作と同様に見えるため、他の属性では識別できません。 置換動作をインストールするには、実装が既定とするか、WCF 型ローダーによってインストールされている特定のフォーマッタの動作を置き換えることを探しますか、ビヘイビアーを追加する互換性のある既定の動作後に実行する必要があります。  
   
  これらの操作フォーマッタの動作は、<xref:System.ServiceModel.Channels.CommunicationObject.Open%2A?displayProperty=nameWithType> を呼び出す前にプログラムでセットアップするか、または既定のフォーマッタ動作後に実行される操作動作を指定することによってセットアップすることができます。 ただし、エンドポイント動作を介したセットアップ (および構成を介したセットアップ) は容易ではありません。この動作モデルでは、動作によって別の動作を置き換えることはできず、他の方法で説明ツリーを変更することもできないためです。  
   

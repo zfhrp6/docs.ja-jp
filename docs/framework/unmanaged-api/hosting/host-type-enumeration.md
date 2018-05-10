@@ -1,14 +1,6 @@
 ---
-title: "HOST_TYPE 列挙型"
-ms.custom: 
+title: HOST_TYPE 列挙型
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - HOST_TYPE
 api_location:
@@ -22,17 +14,13 @@ helpviewer_keywords:
 ms.assetid: 51f848be-84c5-4036-9839-c762c576bbf5
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: a8c910dd06109a8a69f29517812737d4b4dcef21
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: fce759877ad5e3c9041344647781da07ad19a45a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="hosttype-enumeration"></a>HOST_TYPE 列挙型
 アプリケーションを起動するホストの種類を指定する値が含まれています。  
@@ -55,14 +43,14 @@ typedef enum {
 |`HOST_TYPE_CORFLAG`|アプリケーションを直接起動します。 独自の .exe ファイルからアプリケーションを起動します。<br /><br /> 完全に信頼されたアプリケーションには、この値を使用します。|  
 |`HOST_TYPE_DEFAULT`|HOST_TYPE_APPLAUNCH と同じです。|  
   
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+## <a name="requirements"></a>要件  
+ **プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
   
  **ヘッダー:** MSCorEE.h  
   
  **ライブラリ:** MSCorEE.dll  
   
- **.NET framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ホスティングの列挙型](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)

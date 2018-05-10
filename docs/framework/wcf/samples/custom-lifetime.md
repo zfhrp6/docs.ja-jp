@@ -2,20 +2,20 @@
 title: カスタム有効期間
 ms.date: 03/30/2017
 ms.assetid: 52806c07-b91c-48fe-b992-88a41924f51f
-ms.openlocfilehash: 1d9baa2d6eab476d5c8428208576f341e71fef2f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: e41c970739b8036730fa601433ce7157e01d7e19
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="custom-lifetime"></a>カスタム有効期間
-このサンプルは、共有用にカスタムの有効期間サービスを提供する Windows Communication Foundation (WCF) の拡張機能を記述する方法を示します。[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]サービス インスタンス。  
+このサンプルでは、WCF サービスの共有インスタンス用のカスタムの有効期間サービスを提供する Windows Communication Foundation (WCF) 拡張機能を記述する方法を示します。  
   
 > [!NOTE]
 >  このサンプルのセットアップ手順とビルド手順については、このトピックの最後を参照してください。  
   
 ## <a name="shared-instancing"></a>共有インスタンス化  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、サービス インスタンス用にいくつかのインスタンス化モードが用意されています。 このトピックで説明する共有インスタンス化モードでは、サービス インスタンスを複数のチャネルで共有できます。 クライアントは、インスタンスのエンドポイント アドレスをローカルで解決するか、サービスのファクトリ メソッドと通信して実行中のインスタンスのエンドポイント アドレスを取得することができます。 エンドポイント アドレスを取得したら、新しいチャネルを作成して通信を開始することができます。 次のコード例は、クライアント アプリケーションが既存のサービス インスタンスへの新しいチャネルを作成する方法を示しています。  
+ WCF には、サービス インスタンス用の複数のインスタンス化モードが用意されています。 このトピックで説明する共有インスタンス化モードでは、サービス インスタンスを複数のチャネルで共有できます。 クライアントは、インスタンスのエンドポイント アドレスをローカルで解決するか、サービスのファクトリ メソッドと通信して実行中のインスタンスのエンドポイント アドレスを取得することができます。 エンドポイント アドレスを取得したら、新しいチャネルを作成して通信を開始することができます。 次のコード例は、クライアント アプリケーションが既存のサービス インスタンスへの新しいチャネルを作成する方法を示しています。  
   
 ```  
 // Create the first channel.  
@@ -34,12 +34,12 @@ ChannelFactory<IEchoService> channelFactory2 =
 IEchoService proxy2 = channelFactory2.CreateChannel();  
 ```  
   
- 他のインスタンス化モードとは異なり、共有インスタンス化モードでは、独特の方法でサービス インスタンスを解放します。 インスタンスのすべてのチャネルが閉じると、サービスの [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ランタイムによってタイマーが開始されます。 タイムアウトになるまでに誰も接続しなかった場合、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] はインスタンスを解放してリソースを要求します。 切り離し手順の一環として、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、インスタンスを解放する前にすべての <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider.IsIdle%2A> 実装の <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider> メソッドを呼び出します。 そのすべてが `true` を返す場合は、インスタンスが解放されます。 それ以外の場合、<xref:System.ServiceModel.Dispatcher.IInstanceContextProvider> 実装は、コールバック メソッドを使用してアイドル状態であることを`Dispatcher`に通知します。  
+ 他のインスタンス化モードとは異なり、共有インスタンス化モードでは、独特の方法でサービス インスタンスを解放します。 インスタンスは、すべてのチャネルが閉じられると、サービスの WCF ランタイムはタイマーを開始します。 誰も接続タイムアウトの有効期限が切れる前に場合、WCF は、インスタンスを解放し、リソースを要求します。 WCF を呼び出す切り離し手順の一部として、<xref:System.ServiceModel.Dispatcher.IInstanceContextProvider.IsIdle%2A>すべてのメソッド<xref:System.ServiceModel.Dispatcher.IInstanceContextProvider>インスタンスを解放する前に実装します。 そのすべてが `true` を返す場合は、インスタンスが解放されます。 それ以外の場合、<xref:System.ServiceModel.Dispatcher.IInstanceContextProvider> 実装は、コールバック メソッドを使用してアイドル状態であることを`Dispatcher`に通知します。  
   
  既定では、<xref:System.ServiceModel.InstanceContext> のアイドル タイムアウト値は 1 分です。 ただし、このサンプルでは、カスタム拡張機能を使用してこれを延長する方法を示します。  
   
 ## <a name="extending-the-instancecontext"></a>InstanceContext の拡張  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の <xref:System.ServiceModel.InstanceContext> は、サービス インスタンスと`Dispatcher`の間のリンクです。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、拡張可能オブジェクト パターンを使用して新しい状態または動作を追加することで、このランタイム コンポーネントを拡張できます。 拡張可能オブジェクト パターンは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、既存のランタイム クラスに新しい機能を付け加えて拡張するため、またはオブジェクトに新しい状態の機能を追加するために使用されます。 拡張可能オブジェクト パターンには、`IExtensibleObject<T>`、`IExtension<T>`、および `IExtensionCollection<T>` の 3 つのインターフェイスがあります。  
+ WCF では、<xref:System.ServiceModel.InstanceContext>サービス インスタンスの間のリンクは、および`Dispatcher`です。 WCF では、その拡張可能オブジェクト パターンを使用して新しい状態または動作を追加することによってこのランタイム コンポーネントを拡張することができます。 拡張可能オブジェクト パターンは WCF で使用されるか、新しい機能を持つ既存のランタイム クラスを拡張するか、オブジェクトに新しい状態の機能を追加します。 拡張可能オブジェクト パターンには、`IExtensibleObject<T>`、`IExtension<T>`、および `IExtensionCollection<T>` の 3 つのインターフェイスがあります。  
   
  `IExtensibleObject<T>` インターフェイスは、機能をカスタマイズするための拡張が可能なオブジェクトによって実装されます。  
   
@@ -80,7 +80,7 @@ class CustomLeaseExtension : IExtension<InstanceContext>, ICustomLease
 }  
 ```  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] が <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider.IsIdle%2A> 実装で <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider> メソッドを呼び出すと、この呼び出しは <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider.IsIdle%2A> の `CustomLeaseExtension` メソッドにルーティングされます。 次に、`CustomLeaseExtension` はそのプライベート状態をチェックし、<xref:System.ServiceModel.InstanceContext> がアイドル状態かどうかを確認します。 アイドル状態の場合は、`true` を返します。 それ以外の場合は、延長された指定の有効期間のタイマーが開始されます。  
+ WCF が呼び出す場合、<xref:System.ServiceModel.Dispatcher.IInstanceContextProvider.IsIdle%2A>メソッドで、<xref:System.ServiceModel.Dispatcher.IInstanceContextProvider>にこの呼び出しをルーティングの実装、<xref:System.ServiceModel.Dispatcher.IInstanceContextProvider.IsIdle%2A>のメソッド、`CustomLeaseExtension`です。 次に、`CustomLeaseExtension` はそのプライベート状態をチェックし、<xref:System.ServiceModel.InstanceContext> がアイドル状態かどうかを確認します。 アイドル状態の場合は、`true` を返します。 それ以外の場合は、延長された指定の有効期間のタイマーが開始されます。  
   
 ```  
 public bool IsIdle  
@@ -116,7 +116,7 @@ void idleTimer_Elapsed(object sender, ElapsedEventArgs args)
   
  アイドル状態に移行中のインスタンスに新しいメッセージが届いたときに、実行中のタイマーを更新する方法はありません。  
   
- このサンプルでは、<xref:System.ServiceModel.Dispatcher.IInstanceContextProvider> メソッドの呼び出しを受け取って <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider.IsIdle%2A> にルーティングするために `CustomLeaseExtension` を実装します。 <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider> 実装は、`CustomLifetimeLease` クラスに含まれています。 <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider.IsIdle%2A> メソッドは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] がサービス インスタンスを解放するときに呼び出されます。 ただし、ServiceBehavior の `ISharedSessionInstance` コレクションに存在する特定の <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider> 実装のインスタンスは 1 つだけです。 つまり、<xref:System.ServiceModel.InstanceContext> が [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] メソッドをチェックする時点で閉じられている <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider.IsIdle%2A> を知る方法はありません。 したがって、このサンプルでは、スレッド ロックを使用して <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider.IsIdle%2A> メソッドへの要求をシリアル化します。  
+ このサンプルでは、<xref:System.ServiceModel.Dispatcher.IInstanceContextProvider> メソッドの呼び出しを受け取って <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider.IsIdle%2A> にルーティングするために `CustomLeaseExtension` を実装します。 <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider> 実装は、`CustomLifetimeLease` クラスに含まれています。 <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider.IsIdle%2A> WCF がサービス インスタンスを解放しようとしてがの場合、メソッドが呼び出されます。 ただし、ServiceBehavior の `ISharedSessionInstance` コレクションに存在する特定の <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider> 実装のインスタンスは 1 つだけです。 つまり、知る方法はありません、 <xref:System.ServiceModel.InstanceContext> WCF チェック時に閉じられる、<xref:System.ServiceModel.Dispatcher.IInstanceContextProvider.IsIdle%2A>メソッドです。 したがって、このサンプルでは、スレッド ロックを使用して <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider.IsIdle%2A> メソッドへの要求をシリアル化します。  
   
 > [!IMPORTANT]
 >  シリアル化はアプリケーションのパフォーマンスに大きな影響を及ぼす可能性があるので、スレッド ロックは使用しないことをお勧めします。  
@@ -160,7 +160,7 @@ public void NotifyIdle(InstanceContextIdleCallback callback,
   
  `ICustomLease.IsIdle` プロパティをチェックする前に、Callback プロパティを設定する必要があります。これは、アイドル状態になったときに `CustomLeaseExtension` がディスパッチャーに通知するために不可欠です。 `ICustomLease.IsIdle` が `true` を返す場合は、`isIdle` プライベート メンバーが `CustomLifetimeLease` で単に `true` に設定され、コールバック メソッドが呼び出されます。 このコードではロックが使用されているので、他のスレッドではこのプライベート メンバーの値を変更できません。 次にディスパッチャーが `ISharedSessionLifetime.IsIdle` をチェックするときに `true` が返されて、ディスパッチャーがインスタンスを解放できるようになります。  
   
- これでカスタム拡張機能の基礎が完成したので、この拡張機能をサービス モデルにフックする必要があります。 `CustomLeaseExtension` 実装を <xref:System.ServiceModel.InstanceContext> にフックするために、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、<xref:System.ServiceModel.Dispatcher.IInstanceContextInitializer> のブートストラップを実行する <xref:System.ServiceModel.InstanceContext> インターフェイスが用意されています。 このサンプルでは、`CustomLeaseInitializer` クラスでこのインターフェイスを実装し、`CustomLeaseExtension` のインスタンスを唯一のメソッドの初期化から得られる <xref:System.ServiceModel.InstanceContext.Extensions%2A> コレクションに追加します。 このメソッドは、<xref:System.ServiceModel.InstanceContext> の初期化中にディスパッチャーによって呼び出されます。  
+ これでカスタム拡張機能の基礎が完成したので、この拡張機能をサービス モデルにフックする必要があります。 フックするために、`CustomLeaseExtension`を実装、 <xref:System.ServiceModel.InstanceContext>、WCF の提供、<xref:System.ServiceModel.Dispatcher.IInstanceContextInitializer>のブートス トラップを実行するインターフェイス<xref:System.ServiceModel.InstanceContext>です。 このサンプルでは、`CustomLeaseInitializer` クラスでこのインターフェイスを実装し、`CustomLeaseExtension` のインスタンスを唯一のメソッドの初期化から得られる <xref:System.ServiceModel.InstanceContext.Extensions%2A> コレクションに追加します。 このメソッドは、<xref:System.ServiceModel.InstanceContext> の初期化中にディスパッチャーによって呼び出されます。  
   
 ```  
 public void Initialize(InstanceContext instanceContext, Message message)  

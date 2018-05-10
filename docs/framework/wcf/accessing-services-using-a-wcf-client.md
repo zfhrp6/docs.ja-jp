@@ -7,20 +7,20 @@ dev_langs:
 helpviewer_keywords:
 - clients [WCF], consuming services
 ms.assetid: d780af9f-73c5-42db-9e52-077a5e4de7fe
-ms.openlocfilehash: d29483995a1fbf7a8c9918db0c3b65f7deac1e44
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: b0bde07dbeb70eaafbde4d90627d245554ad7ca6
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="accessing-services-using-a-wcf-client"></a>WCF クライアントを使用したサービスへのアクセス
-サービスを作成したら、次に、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアント プロキシを作成します。 クライアント アプリケーションは、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアント プロキシを使用してサービスと通信します。 通常、クライアント アプリケーションはサービスのメタデータをインポートし、サービスを呼び出すことのできる [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアント コードを生成します。  
+サービスを作成した後、次の手順は、WCF クライアント プロキシを作成するは。 クライアント アプリケーションでは、WCF クライアント プロキシを使用して、サービスと通信します。 クライアント アプリケーションは、通常、サービスを呼び出すために使用する WCF クライアント コードを生成するサービスのメタデータをインポートします。  
   
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアントを作成するための基本手順は、次のとおりです。  
+ WCF クライアントを作成するための基本的な手順を以下に示します。  
   
 1.  サービス コードをコンパイルします。  
   
-2.  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアント プロキシを生成します。  
+2.  WCF クライアント プロキシを生成します。  
   
 3.  WCF クライアント プロキシをインスタンス化します。  
   
@@ -39,7 +39,7 @@ Svcutil.exe <service's Metadata Exchange (MEX) address or HTTP GET address>
 Svcutil.exe <list of WSDL and XSD files on file system>  
 ```  
   
- 結果として、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアント コードが格納されたコード ファイルが作成されます。クライアント アプリケーションはこのコードを使用してサービスを呼び出すことができます。  
+ クライアント アプリケーション サービスの呼び出しを使用している WCF クライアント コードを含むコード ファイルになります。  
   
  このツールを使用して構成ファイルを生成することもできます。  
   
@@ -79,7 +79,7 @@ Public Interface ICalculator
 End Interface
 ```
   
- ServiceModel メタデータ ユーティリティ ツールと、Visual Studio の "サービス参照の追加" により、次の [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアント クラスが生成されます。 このクラスは <xref:System.ServiceModel.ClientBase%601> ジェネリック クラスから継承されたもので、`ICalculator` インターフェイスを実装します。 このツールは、`ICalculator` インターフェイス (この例には表示されていません) も生成します。  
+ ServiceModel メタデータ ユーティリティ ツールと Visual Studio でのサービス参照の追加は、次の WCF クライアント クラスを生成します。 このクラスは <xref:System.ServiceModel.ClientBase%601> ジェネリック クラスから継承されたもので、`ICalculator` インターフェイスを実装します。 このツールは、`ICalculator` インターフェイス (この例には表示されていません) も生成します。  
   
 ```csharp
 public partial class CalculatorClient : System.ServiceModel.ClientBase<ICalculator>, ICalculator
@@ -147,7 +147,7 @@ End Class
 ```
   
 ## <a name="using-the-wcf-client"></a>WCF クライアントの使用  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアントを使用するには、次のコードのように [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアントのインスタンスを作成し、次にそのメソッドを呼び出します。  
+ WCF クライアントを使用するには、WCF クライアントのインスタンスを作成し、次のコードに示すように、そのメソッドを呼び出します。  
   
 ```csharp
 // Create a client object with the given client endpoint configuration.
@@ -172,7 +172,7 @@ Console.WriteLine("Add({0},{1}) = {2}", value1, value2, result)
 ```
   
 ## <a name="debugging-exceptions-thrown-by-a-client"></a>クライアントによってスローされた例外のデバッグ  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアントからスローされる例外の多くは、サービスで発生した例外が原因となって引き起こされます。 いくつかの例を次に示します。  
+ WCF クライアントによってスローされた多くの例外は、サービスで例外が原因です。 いくつかの例を次に示します。  
   
 -   <xref:System.Net.Sockets.SocketException>: 既存の接続がリモート ホストによって強制終了されました。  
   

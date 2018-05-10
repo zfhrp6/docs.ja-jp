@@ -5,11 +5,11 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 8d8dcd85-0a05-4c44-8861-4a0b3b90cca9
-ms.openlocfilehash: e48c519f6e10be4521d75345845eb5c019ec342c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 4d1ee0671a45b12e70f8f43ed2ea83b0a22d6c98
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="service-channel-level-programming"></a>サービス チャネル レベルのプログラミング
 このトピックを使用せずに Windows Communication Foundation (WCF) サービス アプリケーションを記述する方法について説明、<xref:System.ServiceModel.ServiceHost?displayProperty=nameWithType>とその関連付けられたオブジェクト モデルです。  
@@ -28,7 +28,7 @@ ms.lasthandoff: 05/04/2018
 5.  すべてのチャネル オブジェクトを閉じます。  
   
 #### <a name="creating-a-binding"></a>バインディングの作成  
- メッセージのリッスンと受信の最初の手順として、バインディングを作成します。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、組み込みバインディングまたはシステム標準のバインディングが複数付属しており、そのうちの 1 個をインスタンス化することによって直接使用できます。 また、CustomBinding クラスをインスタンス化することにより、独自のバインディングを作成することもできます。手順 1. のコードは、この処理を実行します。  
+ メッセージのリッスンと受信の最初の手順として、バインディングを作成します。 WCF は、組み込みまたはシステム提供バインディングがいくつかうちの 1 つのインスタンス化が直接使用することができますに付属します。 また、CustomBinding クラスをインスタンス化することにより、独自のバインディングを作成することもできます。手順 1. のコードは、この処理を実行します。  
   
  後のコード例は、<xref:System.ServiceModel.Channels.CustomBinding?displayProperty=nameWithType> のインスタンスを作成し、その Elements コレクションに <xref:System.ServiceModel.Channels.HttpTransportBindingElement?displayProperty=nameWithType> を追加します。Elements コレクションは、チャネル スタックを作成するために使用されるバインド要素のコレクションです。 この例では、Elements コレクションには <xref:System.ServiceModel.Channels.HttpTransportBindingElement> しか含まれないため、チャネル スタックは HTTP トランスポート チャネルだけを持ちます。  
   

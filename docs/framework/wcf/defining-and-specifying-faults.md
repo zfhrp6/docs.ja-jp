@@ -8,11 +8,11 @@ helpviewer_keywords:
 - handling faults [WCF], specifying
 - handling faults [WCF], defining
 ms.assetid: c00c84f1-962d-46a7-b07f-ebc4f80fbfc1
-ms.openlocfilehash: b71aaf22c98c7f8e62b5c02449a45ec75567d064
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 99e0c22a66eb1d839f1594cf53373a74fc3dd02d
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="defining-and-specifying-faults"></a>エラーの定義と指定
 SOAP エラーを使用する目的は、エラー状態情報をサービスからクライアントに伝達し、双方向のシナリオでは、相互利用が可能な手段でクライアントからサービスにも伝達することです。 ここでは、カスタムのエラー コンテンツをいつどのように定義し、そのエラーを返す操作をどのように指定するかについて説明します。 サービス、または双方向のクライアントがエラーを送信する方法と、クライアントまたはサービス アプリケーションがこのようなエラーを処理する方法の詳細については、次を参照してください。[送信と受信エラー](../../../docs/framework/wcf/sending-and-receiving-faults.md)です。 Windows Communication Foundation (WCF) アプリケーションのエラー処理の概要については、次を参照してください。[を指定すると処理のエラー コントラクトおよびサービスの](../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md)します。  
@@ -27,7 +27,7 @@ SOAP エラーを使用する目的は、エラー状態情報をサービスか
 3.  操作でスローされた特定の SOAP エラーがクライアントに公開されるように、WSDL でその操作にマークします。  
   
 ### <a name="defining-error-conditions-that-clients-should-know-about"></a>クライアントに通知する必要があるエラー状態の定義  
- SOAP エラーは、特定の操作に関するフォールト情報を伝達するためにパブリックに記述されたメッセージです。 これらのメッセージは、WSDL で他の操作メッセージと共に記述されているので、クライアントは、操作を呼び出した時点でこのようなエラー処理を予測できます。 ただし、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスはマネージ コードで記述されています。マネージ コードで記述されたどのエラー状態をフォールトに変換し、クライアントに返す必要があるかを決定することによって、サービスのエラー状態やバグは、クライアントとの間でエラーに関して行われる正規のメッセージ交換から分離することができます。  
+ SOAP エラーは、特定の操作に関するフォールト情報を伝達するためにパブリックに記述されたメッセージです。 これらのメッセージは、WSDL で他の操作メッセージと共に記述されているので、クライアントは、操作を呼び出した時点でこのようなエラー処理を予測できます。 WCF サービスがマネージ コードで条件がフォールトに変換され、クライアントに返されるエラーを提供する正式なエラーからのエラー状況と、サービスでのバグを分離することを決定する、マネージ コードで記述されているため、クライアントがあるメッセージを交換します。  
   
  たとえば、次のコード例には、2 つの整数を受け取り、別の整数を返す操作があります。 ここではいくつかの例外がスローされる可能性があります。そのため、エラー コントラクトを設計するときに、クライアントにとって重要なエラー状態を判別する必要があります。 この場合、サービスでは <xref:System.DivideByZeroException?displayProperty=nameWithType> 例外を検出する必要があります。  
   
@@ -84,7 +84,7 @@ End Class
   
  SOAP 標準に従って、エラーには、`Action`、`Code`、および `Reason` を指定することができます。 `Action` は、<xref:System.ServiceModel.FaultContractAttribute.Action%2A> プロパティによって制御されます。 <xref:System.ServiceModel.FaultException.Code%2A> プロパティと <xref:System.ServiceModel.FaultException.Reason%2A> プロパティは、ジェネリック <xref:System.ServiceModel.FaultException?displayProperty=nameWithType> の親クラスである <xref:System.ServiceModel.FaultException%601?displayProperty=nameWithType> クラスのプロパティです。 `Code` プロパティには、<xref:System.ServiceModel.FaultCode.SubCode%2A> メンバーが含まれています。  
   
- エラーを生成する非サービスを利用する場合には、特定の制限事項があります。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] では、スキーマによって記述され、データ コントラクトと互換性のある、詳細な型を持つエラーしかサポートされません。 たとえば、上記のように [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] では、詳細な型で XML 属性を使用するエラーや、詳細セクションに複数のトップレベル要素を持つエラーがサポートされていません。  
+ エラーを生成する非サービスを利用する場合には、特定の制限事項があります。 WCF では、詳細な型でのエラーのみ、スキーマを示すと、データ コントラクトと互換性があります。 たとえば、前述のように、WCF はできません、詳細な型で XML 属性を使用するエラーや詳細セクションに 2 つ以上の最上位要素を持つエラー。  
   
 ## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.FaultContractAttribute>  

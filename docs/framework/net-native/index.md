@@ -1,14 +1,6 @@
 ---
 title: .NET ネイティブによるアプリのコンパイル
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - native compilation
 - .NET and native code
@@ -16,20 +8,16 @@ helpviewer_keywords:
 - .NET Native
 - C# and native compilation
 ms.assetid: 47cd5648-9469-4b1d-804c-43cc04384045
-caps.latest.revision: 27
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: dec4d465b53f939f8fa711950ba6a000bd304e13
-ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
+ms.openlocfilehash: 1ecc707bb07d6d17ae4115b483cc8f52083f3933
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="compiling-apps-with-net-native"></a>.NET ネイティブによるアプリのコンパイル
-[!INCLUDE[net_native](../../../includes/net-native-md.md)]Visual Studio 2015 およびそれ以降のバージョンに含まれているプリコンパイル テクノロジを構築および Windows アプリを展開するためです。 マネージ コード (C# または Visual Basic) で記述された、.NET Framework および Windows 10 を対象とするアプリのリリース バージョンを自動的にネイティブ コードにコンパイルします。  
+[!INCLUDE[net_native](../../../includes/net-native-md.md)] Visual Studio 2015 およびそれ以降のバージョンに含まれているプリコンパイル テクノロジを構築および Windows アプリを展開するためです。 マネージ コード (C# または Visual Basic) で記述された、.NET Framework および Windows 10 を対象とするアプリのリリース バージョンを自動的にネイティブ コードにコンパイルします。  
   
  通常、.NET Framework を対象とするアプリは中間言語 (IL) にコンパイルされます。 実行時に、Just-In-Time (JIT) コンパイラによって IL がネイティブ コードに変換されます。 これに対し、 [!INCLUDE[net_native](../../../includes/net-native-md.md)] は、Windows アプリを直接ネイティブ コードにコンパイルします。 開発者にとって、これは次のことを意味します。  
   
@@ -92,5 +80,5 @@ ms.lasthandoff: 01/05/2018
   
 -   [.NET ネイティブの一般的なトラブルシューティング](../../../docs/framework/net-native/net-native-general-troubleshooting.md)  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [.NET ネイティブに関する FAQ](http://msdn.microsoft.com/vstudio/dn642499.aspx)

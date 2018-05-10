@@ -5,22 +5,22 @@ helpviewer_keywords:
 - clients [WCF], running
 - WCF clients [WCF], running
 ms.assetid: a67884cc-1c4b-416b-8c96-5c954099f19f
-ms.openlocfilehash: 962f1255f3c759d623850678005eff138353cc80
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: d2932293536f875d8986d8d49842cddc196ced0f
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="how-to-create-a-windows-communication-foundation-client"></a>方法 : Windows Communication Foundation クライアントを作成する
 これは、Windows Communication Foundation (WCF) アプリケーションを作成するために必要な 6 つのタスクのうちの 4 番目です。 タスクの 6 つのすべての概要については、次を参照してください。、[チュートリアル入門](../../../docs/framework/wcf/getting-started-tutorial.md)トピックです。  
   
- ここでは、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスからメタデータを取得し、このメタデータを使用して、サービスにアクセスできる [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアント プロキシを作成する方法について説明します。 このタスクを完了するには、Visual Studio に用意されている "サービス参照の追加" 機能を使用します。 このツールでは、サービスの MEX エンドポイントからメタデータを取得し、選択した言語 (既定では C#) でクライアント プロキシのマネージ ソース コード ファイルを生成します。 このツールでは、クライアント プロキシを作成する以外に、クライアントの構成ファイルの作成または更新も行います。この構成ファイルにより、クライアント アプリケーションはエンドポイントのいずれかにあるサービスに接続できるようになります。  
+ このトピックでは、WCF サービスからメタデータを取得しを使用して、サービスにアクセスできる、WCF プロキシを作成する方法について説明します。 このタスクを完了するには、Visual Studio に用意されている "サービス参照の追加" 機能を使用します。 このツールでは、サービスの MEX エンドポイントからメタデータを取得し、選択した言語 (既定では C#) でクライアント プロキシのマネージ ソース コード ファイルを生成します。 このツールでは、クライアント プロキシを作成する以外に、クライアントの構成ファイルの作成または更新も行います。この構成ファイルにより、クライアント アプリケーションはエンドポイントのいずれかにあるサービスに接続できるようになります。  
   
 > [!NOTE]
 >  使用することも、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)プロキシ クラスおよび Visual Studio 内でサービス参照の追加を使用する代わりに構成を生成するツールです。  
   
 > [!WARNING]
->  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] のクラス ライブラリ プロジェクトから [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] サービスを呼び出すときは、サービス参照の追加機能を使用して、プロキシおよび関連構成ファイルを自動的に生成できます。  この構成ファイルはクラス ライブラリ プロジェクトで使用されません。 クラス ライブラリを呼び出す実行可能ファイルの app.config ファイルに、生成された構成ファイル内の設定を追加する必要があります。  
+>  クラス ライブラリ プロジェクトから WCF サービスを呼び出すときに[!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)]プロキシおよび関連構成ファイルを自動的に生成する、サービス参照の追加機能を使用することができます。  この構成ファイルはクラス ライブラリ プロジェクトで使用されません。 クラス ライブラリを呼び出す実行可能ファイルの app.config ファイルに、生成された構成ファイル内の設定を追加する必要があります。  
   
  クライアント アプリケーションは、生成されたプロキシ クラスを使用してサービスと通信します。 この手順で説明されて[する方法: クライアントを使用して](../../../docs/framework/wcf/how-to-use-a-wcf-client.md)です。  
   

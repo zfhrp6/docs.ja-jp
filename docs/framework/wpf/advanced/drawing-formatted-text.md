@@ -84,7 +84,7 @@ FormattedText オブジェクトを使用して表示されるテキスト
  ![テキストのパス ジオメトリに続く球](../../../../docs/framework/wpf/advanced/media/textpathgeometry01.gif "TextPathGeometry01")  
 テキストのパス ジオメトリに続く球  
   
- 詳細については、「[How to: Create a PathGeometry Animation for Text](http://msdn.microsoft.com/library/29f8051e-798a-463f-a926-a099a99e9c67)」(方法: テキストの PathGeometry アニメーションを作成する) を参照してください。  
+ 詳細については、「[方法: テキストの PathGeometry アニメーションを作成する](http://msdn.microsoft.com/library/29f8051e-798a-463f-a926-a099a99e9c67)」 を参照してください。  
   
  その他の興味深い使用の書式設定されたテキストを作成するに変換された後、<xref:System.Windows.Media.PathGeometry>オブジェクト。 たとえば、ビデオをクリップしてテキスト内に表示することができます。  
   

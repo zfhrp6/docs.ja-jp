@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - dispatcher extensions [WCF]
 ms.assetid: d0ad15ac-fa12-4f27-80e8-7ac2271e5985
-ms.openlocfilehash: bc700aefc3b50102dc0a3faabbbcd09c1c8fc4bc
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 653b22adb5ed53c9c3eb44db598ad5d1c50ff1a9
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="extending-dispatchers"></a>ディスパッチャーの拡張
 ディスパッチャーには、基になるチャネルから受信メッセージをプルし、そのメッセージをアプリケーション コードでのメソッド呼び出しに変換し、結果を呼び出し元に送信する役割があります。 ディスパッチャーの拡張を使用することで、この処理を変更できます。  メッセージやパラメーターの内容を検査または変更するメッセージ インスペクターまたはパラメーター インスペクターを実装できます。  また、メッセージが操作にルーティングされる方法を変更することも、他の機能を提供することもできます。  
@@ -16,7 +16,7 @@ ms.lasthandoff: 05/04/2018
  このトピックを使用する方法について説明、<xref:System.ServiceModel.Dispatcher.DispatchRuntime>と<xref:System.ServiceModel.Dispatcher.DispatchOperation>クラスでは、Windows Communication Foundation (WCF) サービス、ディスパッチャーの既定の実行動作を変更するかを途中受信、メッセージ、パラメーターを変更またはまたはを返すアプリケーション前後送信またはチャネル レイヤーから取得する値。 相当するクライアント ランタイムのメッセージ処理の詳細については、次を参照してください。[を拡張するクライアント](../../../../docs/framework/wcf/extending/extending-clients.md)です。 役割を理解するを<xref:System.ServiceModel.IExtensibleObject%601>型が実行時のカスタマイズのさまざまなオブジェクト間で共有状態へのアクセスを再生しを参照してください[拡張可能なオブジェクト](../../../../docs/framework/wcf/extending/extensible-objects.md)です。  
   
 ## <a name="dispatchers"></a>ディスパッチャー  
- サービス モデル レイヤーは、開発者のプログラミング モデルと基になるメッセージ交換 (一般的に、チャネル レイヤーと呼ばれます) の間の変換を実行します。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、チャネル ディスパッチャーとエンドポイント ディスパッチャー (それぞれ <xref:System.ServiceModel.Dispatcher.ChannelDispatcher> と <xref:System.ServiceModel.Dispatcher.EndpointDispatcher>) は、新しいチャネルを受け入れて、メッセージ、操作ディスパッチ、操作呼び出し、および応答処理を受信するためのサービス コンポーネントです。 ディスパッチャー オブジェクトは、受信者のオブジェクトですが、双方向サービスでのコールバック コントラクトの実装も、検査、変更、または拡張のためにディスパッチャー オブジェクトを公開します。  
+ サービス モデル レイヤーは、開発者のプログラミング モデルと基になるメッセージ交換 (一般的に、チャネル レイヤーと呼ばれます) の間の変換を実行します。 WCF チャネルとエンドポイント ディスパッチャーに (<xref:System.ServiceModel.Dispatcher.ChannelDispatcher>と<xref:System.ServiceModel.Dispatcher.EndpointDispatcher>、それぞれ) は、サービス コンポーネントがメッセージを受信、操作のディスパッチと呼び出し、および応答の処理、新しいチャネルを受け入れるよう担当します。 ディスパッチャー オブジェクトは、受信者のオブジェクトですが、双方向サービスでのコールバック コントラクトの実装も、検査、変更、または拡張のためにディスパッチャー オブジェクトを公開します。  
   
  チャネル ディスパッチャー (およびコンパニオン <xref:System.ServiceModel.Channels.IChannelListener>) は、基になるチャネルからメッセージをプルし、そのメッセージをそれぞれのエンドポイント ディスパッチャーに渡します。 各エンドポイント ディスパッチャーには、メッセージを適切な <xref:System.ServiceModel.Dispatcher.DispatchRuntime> にルーティングする <xref:System.ServiceModel.Dispatcher.DispatchOperation> があります。これには、操作を実装するメソッドを呼び出す役割があります。 さまざまなオプションの拡張クラスおよび必須の拡張クラスが呼び出されます。 ここでは、この要素を組み合わせる方法、基本機能を拡張するためにプロパティを変更し、ユーザーのコードをプラグインする方法について説明します。  
   
@@ -45,7 +45,7 @@ ms.lasthandoff: 05/04/2018
   
 -   カスタム メッセージの変換。 ランタイムのメッセージに特定の変換を適用できます (バージョン管理の場合など)。 これもまた、メッセージ インターセプター インターフェイスで実行可能です。  
   
--   カスタム データ モデル。 既定で [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] でサポートされているモデル (つまり、<xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType>、<xref:System.Xml.Serialization.XmlSerializer?displayProperty=nameWithType>、および未加工メッセージ) 以外のデータ シリアル化モデルを持つことができます。 これは、メッセージ フォーマッタ インターフェイスを実装することで対応できます。 例については、次を参照してください。[操作フォーマッタと操作セレクター](../../../../docs/framework/wcf/samples/operation-formatter-and-operation-selector.md)です。  
+-   カスタム データ モデル。 ユーザーは、WCF では既定ではサポートされている以外のデータのシリアル化モデルを持つことができます (つまり、 <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType>、 <xref:System.Xml.Serialization.XmlSerializer?displayProperty=nameWithType>、および未加工メッセージ)。 これは、メッセージ フォーマッタ インターフェイスを実装することで対応できます。 例については、次を参照してください。[操作フォーマッタと操作セレクター](../../../../docs/framework/wcf/samples/operation-formatter-and-operation-selector.md)です。  
   
 -   カスタム パラメーターの検証。 XML ではなく、型指定されたパラメーターが有効になるようにすることができます。 これは、パラメーター インスペクター インターフェイスを使用して実行できます。  
   
@@ -60,9 +60,9 @@ ms.lasthandoff: 05/04/2018
 -   カスタム承認動作。 コントラクトまたは操作のランタイム要素を拡張し、メッセージに存在するトークンに基づくセキュリティ チェックを追加することによって、カスタムのアクセス制御を実装できます。 これは、メッセージ インターセプター インターフェイスまたはパラメーター インターセプター インターフェイスを使用して実行できます。 例については、次を参照してください。[セキュリティ拡張](../../../../docs/framework/wcf/samples/security-extensibility.md)です。  
   
     > [!CAUTION]
-    >  セキュリティ プロパティを変更すると、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションのセキュリティを損なう可能性があるので、注意してセキュリティ関連の変更を行い、配置する前に十分テストすることをお勧めします。  
+    >  セキュリティのプロパティを変更すると、WCF アプリケーションのセキュリティを侵害する可能性がある、ためセキュリティ関連の変更を慎重に着手するときし、展開する前に徹底的にテストすることを強くお勧めします。  
   
--   カスタム WCF ランタイム バリデーター。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションに対して企業レベルのポリシーを実施するために、サービス、コントラクト、およびバインディングを調査するカスタム バリデーターをインストールできます。 (たとえばを参照してください[する方法: 企業内のロックのダウン エンドポイント](../../../../docs/framework/wcf/extending/how-to-lock-down-endpoints-in-the-enterprise.md))。  
+-   カスタム WCF ランタイム バリデーター。 WCF アプリケーションに対して企業レベルのポリシーを適用するには、サービス、コントラクト、およびバインドを確認するカスタム バリデーターをインストールすることができます。 (たとえばを参照してください[する方法: 企業内のロックのダウン エンドポイント](../../../../docs/framework/wcf/extending/how-to-lock-down-endpoints-in-the-enterprise.md))。  
   
 ### <a name="using-the-dispatchruntime-class"></a>DispatchRuntime クラスの使用  
  <xref:System.ServiceModel.Dispatcher.DispatchRuntime> クラスを使用して、サービスまたは個別のエンドポイントの既定動作を変更するか、またはカスタム変更を実装したオブジェクトを次のサービス プロセス (または双方向クライアントの場合、クライアント プロセス) の一方または両方に挿入します。  

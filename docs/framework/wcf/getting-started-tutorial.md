@@ -6,14 +6,14 @@ helpviewer_keywords:
 - Windows Communication Foundation [WCF], getting started
 - getting started [WCF]
 ms.assetid: df939177-73cb-4440-bd95-092a421516a1
-ms.openlocfilehash: 4a095e5391f3b532211b82a190c7010f41283e31
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 64d9fc09d56c417c2226d030ef6f5ee7204c4eb6
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="getting-started-tutorial"></a>チュートリアル入門
-このセクションに含まれているトピックはクイック露出プログラミングの経験 Windows Communication Foundation (WCF) にすることを目的としています。 これらは、このトピックに記載されているリストの順番どおりに完了するように設計されています。 このチュートリアルを通じて [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスおよびクライアント アプリケーションの作成に必要な手順について理解することができます。 サービスは 1 つ以上のエンドポイントを公開し、それぞれのエンドポイントは 1 つ以上のサービス操作を公開します。 *エンドポイント*サービスのアドレス、サービスがある、クライアントは、サービスと機能を定義するコントラクトと通信する必要がある方法を説明する情報を含んでいるバインディングを指定します。クライアントにサービスによって提供されます。  
+このセクションに含まれているトピックはクイック露出プログラミングの経験 Windows Communication Foundation (WCF) にすることを目的としています。 これらは、このトピックに記載されているリストの順番どおりに完了するように設計されています。 このチュートリアルでの作業では、WCF サービスとクライアント アプリケーションの作成に必要な手順の概要を理解できます。 サービスは 1 つ以上のエンドポイントを公開し、それぞれのエンドポイントは 1 つ以上のサービス操作を公開します。 *エンドポイント*サービスのアドレス、サービスがある、クライアントは、サービスと機能を定義するコントラクトと通信する必要がある方法を説明する情報を含んでいるバインディングを指定します。クライアントにサービスによって提供されます。  
   
  このチュートリアルの一連のトピックを終了すると、サービスを実行し、クライアントからそのサービスを呼び出すことができるようになります。 最初の 3 つのトピックでは、サービス コントラクトを定義する方法、サービス コントラクトを実装する方法、およびサービスをホストする方法について説明します。 作成したサービスは、コンソール アプリケーション内で自己ホストされます。 また、サービスは、インターネット インフォメーション サービス (IIS) でホストすることもできます。 これを行う方法の詳細については、次を参照してください。[する方法: IIS で WCF サービスをホスト](../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-iis.md)です。 サービスはコードで構成されますが、構成ファイル内で構成することもできます。 構成ファイルの使用の詳細については、次を参照してください。[構成ファイルを使用してサービスを構成する](../../../docs/framework/wcf/configuring-services-using-configuration-files.md)です。  
   
@@ -30,7 +30,7 @@ ms.lasthandoff: 05/04/2018
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [方法: サービス コントラクトを定義する](../../../docs/framework/wcf/how-to-define-a-wcf-service-contract.md)  
- ユーザー定義のインターフェイスを使用して、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] コントラクトを作成する方法について説明します。 コントラクトは、サービスが公開する機能を定義します。  
+ ユーザー定義のインターフェイスを使用して WCF コントラクトを作成する方法について説明します。 コントラクトは、サービスが公開する機能を定義します。  
   
  [方法: サービス コントラクトを実装する](../../../docs/framework/wcf/how-to-implement-a-wcf-contract.md)  
  サービス コントラクトを実装する方法について説明します。 定義したコントラクトはサービスのクラスと共に実装する必要があります。  
@@ -39,13 +39,13 @@ ms.lasthandoff: 05/04/2018
  サービスのエンドポイントをコードで構成する方法と、コンソール アプリケーションでサービスをホストする方法について説明します。 サービスをアクティブにするには、サービスをランタイム環境内で構成してホストする必要があります。 この環境によってサービスが作成され、サービスのコンテキストと有効期間が制御されます。  
   
  [方法: クライアントを作成する](../../../docs/framework/wcf/how-to-create-a-wcf-client.md)  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスから [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアント プロキシを作成するために使用するメタデータを取得する方法について説明します。 このプロセスでは、Visual Studio 2011 の "サービス参照の追加" 機能を使用します。  
+ WCF サービスから WCF クライアント プロキシを作成するために使用するメタデータを取得する方法について説明します。 このプロセスでは、Visual Studio 2011 の "サービス参照の追加" 機能を使用します。  
   
  [方法: クライアントを構成する](../../../docs/framework/wcf/how-to-configure-a-basic-wcf-client.md)  
  WCF クライアントの構成方法について説明します。クライアントを構成するには、クライアントがサービスへのアクセスに使用するエンドポイントを指定する必要があります。  
   
  [方法: クライアントを使用する](../../../docs/framework/wcf/how-to-use-a-wcf-client.md)  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアント プロキシを使用してサービス操作を呼び出す方法について説明します。  
+ サービス操作を呼び出す、WCF クライアント プロキシを使用する方法について説明します。  
   
 ## <a name="reference"></a>参照  
  <xref:System.ServiceModel.ServiceContractAttribute>  

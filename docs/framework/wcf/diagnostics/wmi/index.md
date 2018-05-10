@@ -1,34 +1,20 @@
 ---
 title: 診断用の WMI (Windows Management Instrumentation) の使用
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: fe48738d-e31b-454d-b5ec-24c85c6bf79a
-caps.latest.revision: 24
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 2e01418844db4197cea2f9292f72b9089e77a596
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 3b06cc61714b3fdc63086d2b79b087540bece698
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="using-windows-management-instrumentation-for-diagnostics"></a>診断用の WMI (Windows Management Instrumentation) の使用
-[!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] は [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] WMI (Windows Management Instrumentation) プロバイダーを介して実行時のサービスの検査データを公開します。  
+Windows Communication Foundation (WCF) では、WCF Windows Management Instrumentation (WMI) プロバイダーを介して実行時のサービスの検査データを公開します。  
   
 ## <a name="enabling-wmi"></a>WMI の有効化  
  WMI は、Web ベースのエンタープライズ管理 (WBEM) 標準をマイクロソフトが実装したものです。 WMI SDK の詳細については、次を参照してください。 [Windows Management Instrumentation](https://msdn.microsoft.com/library/aa394582.aspx)です。 WBEM は、アプリケーションが Management Instrumentation を外部管理ツールに開示する業界標準の方法です。  
   
- WMI プロバイダーは、WBEM と互換性のあるインターフェイスを通して実行時にインストルメンテーションを公開するコンポーネントです。 これは、属性と値のペアを持つ WMI オブジェクトのセットで構成されます。 ペアには多くの単純型を指定できます。 管理ツールは、実行時にインターフェイスを介してサービスに接続できます。 [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] は、アドレス、バインディング、動作、リスナーなどのサービスの属性を公開します。  
+ WMI プロバイダーは、WBEM と互換性のあるインターフェイスを通して実行時にインストルメンテーションを公開するコンポーネントです。 これは、属性と値のペアを持つ WMI オブジェクトのセットで構成されます。 ペアには多くの単純型を指定できます。 管理ツールは、実行時にインターフェイスを介してサービスに接続できます。 WCF では、アドレス、バインディング、動作、リスナーなどのサービスの属性を公開します。  
   
  組み込みの WMI プロバイダーは、アプリケーションの構成ファイルでアクティブにできます。 これには、`wmiProviderEnabled`の属性、 [\<診断 >](../../../../../docs/framework/configure-apps/file-schema/wcf/diagnostics.md)で、 [ \<system.serviceModel >](../../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md)セクションで、次の例のように構成します。  
   
@@ -52,18 +38,18 @@ ms.lasthandoff: 04/30/2018
   
  構成ファイルで、メッセージ ログのメッセージ ログ トレース リスナーまたはトレースの `System.ServiceModel` トレース リスナーが指定されていない場合、WMI が変更を受け入れても変更は有効になりません。 各リスナーを正しく設定の詳細については、次を参照してください。[メッセージ ログの構成](../../../../../docs/framework/wcf/diagnostics/configuring-message-logging.md)と[トレースの構成](../../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)です。 構成で設定された他のすべてのトレース ソースのトレース レベルは、アプリケーションが開始されると有効になり変更できません。  
   
- [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] は、スクリプト用に `GetOperationCounterInstanceName` メソッドを公開します。 このメソッドに操作名を指定した場合、このメソッドはパフォーマンス カウンターのインスタンス名を返します。 ただし、このメソッドは入力を検証しません。 したがって、正しくない操作名を指定した場合、正しくないカウンター名が返されます。  
+ WCF では公開、`GetOperationCounterInstanceName`スクリプト作成のためのメソッドです。 このメソッドに操作名を指定した場合、このメソッドはパフォーマンス カウンターのインスタンス名を返します。 ただし、このメソッドは入力を検証しません。 したがって、正しくない操作名を指定した場合、正しくないカウンター名が返されます。  
   
- 接続先サービスの `OutgoingChannel` クライアントが `Service` メソッド内に作成されていない場合、[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] インスタンスの `Service` プロパティは、別のサービスに接続するのに、そのサービスにより開かれたチャネルをカウントしません。  
+ `OutgoingChannel`のプロパティ、`Service`インスタンス内で目的のサービスに WCF クライアントを作成していない場合は、別のサービスへの接続にサービスによって開かれたチャネルはカウントしません、`Service`メソッドです。  
   
  **注意**WMI でのみサポート、<xref:System.TimeSpan>最大 3 つの 10 進数のポイントの値します。 たとえば、サービスでプロパティの 1 つを <xref:System.TimeSpan.MaxValue> に設定した場合、WMI ではその値を小数点以下 3 桁より下を切り捨て表示します。  
   
 ## <a name="security"></a>セキュリティ  
- [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] WMI プロバイダーは環境内のサービスの検索を許しているため、環境へのアクセスの許可については十分に注意する必要があります。 既定の "管理者のみ" のアクセスを緩めた場合、信頼性の低いパーティに環境内の機密性のあるデータへのアクセスを許可する場合があります。 特にリモート WMI アクセスに対するアクセス許可を緩めた場合、大量の攻撃を受ける可能性があります。 過剰の WMI 要求により大量の処理が発生した場合、パフォーマンスが低下する可能性があります。  
+ WCF WMI プロバイダーは、環境でサービスの検出を可能であるために注意が必要極端なをへのアクセス権を付与します。 既定の "管理者のみ" のアクセスを緩めた場合、信頼性の低いパーティに環境内の機密性のあるデータへのアクセスを許可する場合があります。 特にリモート WMI アクセスに対するアクセス許可を緩めた場合、大量の攻撃を受ける可能性があります。 過剰の WMI 要求により大量の処理が発生した場合、パフォーマンスが低下する可能性があります。  
   
  さらに、MOF ファイルに対するアクセス許可を緩めた場合、信頼性の低いパーティが WMI の動作を操作して WMI スキーマに読み込まれるオブジェクトを変更することができます。 たとえば、フィールドを削除して、重要データを管理者から隠したり、例外を設定しないかまたは例外の原因とならないフィールドを追加したりすることができます。  
   
- [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] WMI プロバイダーの既定では、"メソッドの実行"、"プロバイダーによる書き込み"、"アカウントの有効化" 権限が管理者に付与され、"アカウントの有効化" 権限が ASP.NET、ローカル サービス、ネットワーク サービスに付与されます。 特に、[!INCLUDE[wv](../../../../../includes/wv-md.md)] 以外のプラットフォームでは、ASP.NET アカウントは WMI ServiceModel 名前空間に対して読み取りアクセスが可能です。 特定のユーザー グループに対してこれらの権限を付与したくない場合は、WMI プロバイダーを非アクティブにするか (既定では無効に設定されています)、特定のユーザー グループのアクセスを無効にする必要があります。  
+ 既定で、WCF WMI プロバイダー与えられます「メソッドの実行」、「プロバイダーによる書き込み」、および「アカウントを有効化」権限が管理者、および ASP.NET、ローカル サービスおよびネットワーク サービスに対するアクセス許可を「アカウントを有効化」します。 特に、[!INCLUDE[wv](../../../../../includes/wv-md.md)] 以外のプラットフォームでは、ASP.NET アカウントは WMI ServiceModel 名前空間に対して読み取りアクセスが可能です。 特定のユーザー グループに対してこれらの権限を付与したくない場合は、WMI プロバイダーを非アクティブにするか (既定では無効に設定されています)、特定のユーザー グループのアクセスを無効にする必要があります。  
   
  また、構成を使用して WMI を有効にする場合、ユーザー権限が不十分のため WMI が有効にならない場合があります。 ただし、このエラーを記録するイベントはイベント ログに書き込まれません。  
   
@@ -163,7 +149,7 @@ Whoami /user
  これにより、現在のユーザーの SID が提供されますが、この方法を使用して任意のユーザーで SID を取得することはできません。 SID を取得する別の方法が使用するには、 [getsid.exe](http://go.microsoft.com/fwlink/?LinkId=186467)ツールから、[管理タスク用の Windows 2000 リソース キット ツール](http://go.microsoft.com/fwlink/?LinkId=178660)です。 このツールは、2 人のユーザー (ローカルまたはドメイン) の SID を比較し、副作用として、2 つの SID をコマンド ラインに出力します。 詳細については、次を参照してください。 [Well Known Sid](http://go.microsoft.com/fwlink/?LinkId=186468)です。  
   
 ## <a name="accessing-remote-wmi-object-instances"></a>リモート WMI オブジェクトのインスタンスへのアクセス  
- リモート コンピューターの [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] WMI インスタンスにアクセスする必要がある場合、アクセスに使用するツールのパケットのプライバシーを有効にする必要があります。 次のセクションでは、WMI CIM Studio、Windows Management Instrumentation テスト、および .NET SDK 2.0 を使用してこれらを実現する方法を説明します。  
+ リモート コンピューターでの WCF WMI インスタンスにアクセスする必要がある場合、パケットのプライバシー アクセスに使用するツールを有効にする必要があります。 次のセクションでは、WMI CIM Studio、Windows Management Instrumentation テスト、および .NET SDK 2.0 を使用してこれらを実現する方法を説明します。  
   
 ### <a name="wmi-cim-studio"></a>WMI CIM Studio  
  インストールした場合[WMI 管理ツール](http://go.microsoft.com/fwlink/?LinkId=95185)インスタンスにアクセスする WMI WMI CIM Studio を使用することができます。 このツールは次のフォルダーにあります。  

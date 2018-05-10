@@ -2,14 +2,14 @@
 title: HttpCookieSession
 ms.date: 03/30/2017
 ms.assetid: 101cb624-8303-448a-a3af-933247c1e109
-ms.openlocfilehash: 54e2459f5b480d8f53df42a08d4ebc8ac07b128c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 64a7cba7b1bbc55a4504e3af4784fcb2a84f0fa1
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="httpcookiesession"></a>HttpCookieSession
-このサンプルでは、カスタム プロトコル チャネルを作成し、セッション管理用の HTTP クッキーを使用する方法を示します。 このチャネルを有効にまたは Windows Communication Foundation (WCF) サービスと ASMX クライアント間の通信[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]クライアントと ASMX サービス。  
+このサンプルでは、カスタム プロトコル チャネルを作成し、セッション管理用の HTTP クッキーを使用する方法を示します。 このチャネルには、Windows Communication Foundation (WCF) サービスと ASMX クライアント間または WCF クライアントと ASMX サービス間の通信ができるようにします。  
   
  クライアントがセッション ベースの ASMX Web サービス内で Web メソッドを呼び出すと、[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] エンジンは次の処理を行います。  
   
@@ -74,7 +74,7 @@ ms.lasthandoff: 05/04/2018
 InputQueue<RequestContext> requestQueue;  
 ```  
   
- ユーザーが <xref:System.ServiceModel.Channels.IReplyChannel.ReceiveRequest%2A> メソッドを呼び出したときに、このメッセージ キューにメッセージがない場合は、チャネルは指定された時間分待機した後にシャットダウンします。 これにより、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 以外のクライアント用に作成されたセッション チャネルがクリーンアップされます。  
+ ユーザーが <xref:System.ServiceModel.Channels.IReplyChannel.ReceiveRequest%2A> メソッドを呼び出したときに、このメッセージ キューにメッセージがない場合は、チャネルは指定された時間分待機した後にシャットダウンします。 WCF 以外のクライアント用に作成されたセッション チャネルがクリーンアップされます。  
   
  `channelMapping` を使用して `ReplySessionChannels` を追跡します。受け入れられたすべてのチャネルが閉じられた後で、基になる `innerChannel` を閉じます。 この方法により、`HttpCookieReplySessionChannel` は `HttpCookieReplySessionChannelListener` の有効期間を過ぎても存在できます。 また、リスナのガベージ コレクトは気にする必要はありません。受け入れられたチャネルは、`OnClosed` コールバックを介してそのチャネルのリスナへの参照を保持するためです。  
   
@@ -82,7 +82,7 @@ InputQueue<RequestContext> requestQueue;
  対応するクライアント チャネルは、`HttpCookieSessionChannelFactory` クラスにあります。 チャネルの作成中、チャネル ファクトリは内部要求チャネルを `HttpCookieRequestSessionChannel` でラップします。 `HttpCookieRequestSessionChannel` クラスは、基になる要求チャネルへの呼び出しを転送します。 クライアントがプロキシを閉じると、`HttpCookieRequestSessionChannel` はチャネルが閉じられようとしていることを示すメッセージをサービスに送信します。 そのため、サービス チャネル スタックは、使用中のセッション チャネルを正常にシャットダウンできます。  
   
 ## <a name="binding-and-binding-element"></a>バインディングとバインド要素  
- サービス チャネルおよびクライアント チャネルを作成した後の次の手順は、それらのチャネルを [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ランタイムに統合することです。 チャネルは、バインディングとバインディング要素を介して [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] に公開されます。 バインディングは、1 つまたは複数のバインディング要素で構成されています。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、いくつかのシステム定義バインディングが用意されています。たとえば、BasicHttpBinding や WSHttpBinding などがあります。 `HttpCookieSessionBindingElement` クラスには、バインディング要素の実装が含まれています。 この実装によってチャネル リスナとチャネル ファクトリの作成メソッドがオーバーライドされ、必要なチャネル リスナまたはチャネル ファクトリがインスタンス化されます。  
+ サービスとクライアントのチャネルを作成した後は、次の手順は、WCF ランタイムに統合するは。 チャネルは、wcf バインディングとバインド要素を介して公開されます。 バインディングは、1 つまたは複数のバインド要素で構成されています。 WCF は、いくつかのシステム定義バインディングです。たとえば、BasicHttpBinding や WSHttpBinding などです。 `HttpCookieSessionBindingElement` クラスには、バインディング要素の実装が含まれています。 この実装によってチャネル リスナとチャネル ファクトリの作成メソッドがオーバーライドされ、必要なチャネル リスナまたはチャネル ファクトリがインスタンス化されます。  
   
  このサンプルでは、サービスの説明のポリシー アサーションを使用します。 これにより、サンプルのチャネルの要件を、そのサービスを利用できる他のクライアントに公開できます。 たとえば、このバインド要素はポリシー アサーションを公開し、セッションがサポートされていることを潜在的なクライアントに通知します。 このサンプルでは、バインディング要素の構成で `ExchangeTerminateMessage` プロパティが有効になっています。そのため、サービスで余分なメッセージ交換アクションがサポートされ、セッションでのメッセージ交換が終了されることを示すために必要なアサーションが追加されます。 その後、クライアントはこのアクションを使用できます。 `HttpCookieSessionBindingElement` から作成されたポリシー アサーションを、次の WSDL コードに示します。  
   

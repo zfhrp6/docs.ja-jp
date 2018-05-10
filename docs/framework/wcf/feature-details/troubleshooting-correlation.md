@@ -1,26 +1,12 @@
 ---
 title: 相関関係のトラブルシューティング
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 98003875-233d-4512-a688-4b2a1b0b5371
-caps.latest.revision: 11
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 2de3a8cac6e12d898173f8181b295c3e2e461cc7
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
-ms.translationtype: HT
+ms.openlocfilehash: c597012a5ff69ecb700c51e00ac7d1218962e9ad
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="troubleshooting-correlation"></a>相関関係のトラブルシューティング
 相関関係は、ワークフロー サービス メッセージを互いに関連付けたり、正しいワークフロー インスタンスに関連付けたりするために使用されますが、正しく構成されていないと、メッセージが受信されず、アプリケーションが正しく機能しなくなります。 ここでは、相関関係のトラブルシューティングのいくつかの方法の概要と、相関関係を使用するときに発生する一般的な問題について説明します。  
@@ -146,7 +132,7 @@ supports the context protocol and has a valid context initialized.
  詳細については、次を参照してください。[コンテキスト交換](../../../../docs/framework/wcf/feature-details/context-exchange-correlation.md)です。  
   
 ## <a name="common-request-reply-correlation-issues"></a>要求/応答の相関関係の一般的な問題  
- 要求-応答の相関関係を併用、 <xref:System.ServiceModel.Activities.Receive> / <xref:System.ServiceModel.Activities.SendReply>ペアを使用して、ワークフロー サービスでは、双方向の操作を実装する、 <xref:System.ServiceModel.Activities.Send> / <xref:System.ServiceModel.Activities.ReceiveReply>ペアを別の web サイトでの双方向の操作を呼び出すサービス。 WCF サービスの双方向の操作を呼び出す場合、このサービスには、従来の命令型のコード ベースの [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスを使用することも、ワークフロー サービスを使用することもできます。 要求/応答の相関関係を使用するには、<xref:System.ServiceModel.BasicHttpBinding> などの双方向のバインドを使用する必要があります。操作が双方向である必要もあります。  
+ 要求-応答の相関関係を併用、 <xref:System.ServiceModel.Activities.Receive> / <xref:System.ServiceModel.Activities.SendReply>ペアを使用して、ワークフロー サービスでは、双方向の操作を実装する、 <xref:System.ServiceModel.Activities.Send> / <xref:System.ServiceModel.Activities.ReceiveReply>ペアを別の web サイトでの双方向の操作を呼び出すサービス。 WCF サービスの双方向の操作を呼び出すときに、サービスが、従来なることができるまたは命令型コードに基づいた WCF サービスがワークフロー サービスを指定できます。 要求/応答の相関関係を使用するには、<xref:System.ServiceModel.BasicHttpBinding> などの双方向のバインドを使用する必要があります。操作が双方向である必要もあります。  
   
  ワークフロー サービスが双方向の操作を並行または重複<xref:System.ServiceModel.Activities.Receive> / <xref:System.ServiceModel.Activities.SendReply>または<xref:System.ServiceModel.Activities.Send> / <xref:System.ServiceModel.Activities.ReceiveReply>のペア、暗黙の関連付け処理で提供される管理<xref:System.ServiceModel.Activities.WorkflowServiceHost>、特に高負荷のシナリオでは十分でないと、メッセージのルーティングを正しくない可能性があります。 この問題が発生しないようにするために、要求/応答の相関関係を使用する際には常に <xref:System.ServiceModel.Activities.CorrelationHandle> を明示的に指定することをお勧めします。 使用する場合、 **SendAndReceiveReply**と**ReceiveAndSendReply** [メッセージング] セクションのテンプレート、**ツールボックス**ワークフロー デザイナーで、 <xref:System.ServiceModel.Activities.CorrelationHandle>既定では明示的に構成します。 コードを使用してワークフローを作成する場合は、ペアの最初のアクティビティの <xref:System.ServiceModel.Activities.CorrelationHandle> で <xref:System.ServiceModel.Activities.Receive.CorrelationInitializers%2A> を指定します。 次の例では、<xref:System.ServiceModel.Activities.Receive> で <xref:System.ServiceModel.Activities.CorrelationInitializer.CorrelationHandle%2A> を明示的に指定して <xref:System.ServiceModel.Activities.RequestReplyCorrelationInitializer> アクティビティを構成しています。  
   

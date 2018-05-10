@@ -4,18 +4,18 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - WCF clients [WCF], using
 ms.assetid: 190349fc-0573-49c7-bb85-8e316df7f31f
-ms.openlocfilehash: 6667a8e9862054d7d8d5b20e70dfbe699de02eab
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 79431588e27b02a40d5898929f1bdf644c8a79cd
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="how-to-use-a-windows-communication-foundation-client"></a>方法 : Windows Communication Foundation クライアントを使用する
 これは、基本的な Windows Communication Foundation (WCF) アプリケーションを作成するために必要な 6 つのタスクの最後のタスクです。 タスクの 6 つのすべての概要については、次を参照してください。、[チュートリアル入門](../../../docs/framework/wcf/getting-started-tutorial.md)トピックです。  
   
- Windows Communication Foundation (WCF) プロキシを作成して、構成、クライアント インスタンスを作成すると、クライアント アプリケーションのコンパイルし通信するために使用されることができます、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]サービス。 このトピックでは、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアントをインスタンス化し、使用する手順について説明します。 この手順は、次の 3 つの手順で構成されます。  
+ Windows Communication Foundation (WCF) プロキシを作成して構成すると、クライアント インスタンスを作成して、クライアント アプリケーションのコンパイルし WCF サービスと通信するために使用できます。 このトピックでは、インスタンス化して、WCF クライアントを使用するための手順について説明します。 この手順は、次の 3 つの手順で構成されます。  
   
-1.  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアントをインスタンス化します。  
+1.  WCF クライアントをインスタンス化します。  
   
 2.  生成されたプロキシからサービス操作を呼び出します。  
   

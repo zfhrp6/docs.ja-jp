@@ -1,27 +1,15 @@
 ---
-title: "トークン認証システム"
-ms.custom: 
+title: トークン認証システム
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 84382f2c-f6b1-4c32-82fa-aebc8f6064db
-caps.latest.revision: "22"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 76f3913f5cf6166793cb6f95ef3658c24e2453b4
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 4681dea4fd39b039346d22c02c478323ff53e240
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="token-authenticator"></a>トークン認証システム
-このサンプルでは、カスタム トークンの認証システムを実装する方法を示します。 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] のトークン認証システムは、メッセージと共に使用されるトークンの検証、このトークンに自己矛盾がないことの確認、およびこのトークンに関連付けられている ID の認証に使用されます。  
+このサンプルでは、カスタム トークンの認証システムを実装する方法を示します。 トークン認証システムの Windows Communication Foundation (WCF) が自己矛盾がないと id の認証トークンに関連付けられていることを確認するメッセージで使用されるトークンの検証に使用されます。  
   
  カスタム トークン認証システムは次のようなさまざまな場合に役立ちます。  
   
@@ -35,11 +23,11 @@ ms.lasthandoff: 01/19/2018
   
 -   サーバーがカスタム トークン認証システムを使用してクライアント資格情報を検証する方法。  
   
--   [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービス コードとカスタム トークン認証システムを結び付ける方法。  
+-   どの WCF サービス コードは、カスタム トークン認証システムを結び付けるです。  
   
 -   サーバーの X.509 証明書を使用してそのサーバーを認証する方法。  
   
- さらにこのサンプルでは、カスタム トークン認証システムの処理後に [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] から呼び出し元の ID にアクセスするための方法も示します。  
+ このサンプルでは、呼び出し元の id はカスタム トークン認証プロセスの後に WCF からアクセスできる、方法も示します。  
   
  サービスは、そのサービスとの通信に使用する単一エンドポイントを公開します。エンドポイントは App.config 構成ファイルで定義します。 エンドポイントは、アドレス、バインディング、およびコントラクトがそれぞれ 1 つずつで構成されます。 バインディングの構成には、標準の `wsHttpBinding` が使用されます。このセキュリティ モードは、`wsHttpBinding` の既定モードであるメッセージに設定されます。 このサンプルは、クライアント ユーザー名認証を使用するように標準の `wsHttpBinding`を設定します。 また、サービスは `serviceCredentials` 動作を使用してサービス証明書の構成も行います。 `securityCredentials` 動作を使用すると、サービス証明書を指定できます。 クライアントはサービス証明書を使用して、サービスを認証し、メッセージを保護します。 次の構成では、次のセットアップ手順で説明しているサンプル セットアップでインストールされる localhost 証明書を参照しています。  
   
@@ -378,4 +366,4 @@ static void DisplayIdentityInformation()
   
 1.  サンプルの実行が終わったら、サンプル フォルダーにある Cleanup.bat を実行します。  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目

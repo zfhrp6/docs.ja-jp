@@ -2,16 +2,16 @@
 title: JSON および XML 形式の AJAX サービスのサンプル
 ms.date: 03/30/2017
 ms.assetid: 8ea5860d-0c42-4ae9-941a-e07efdd8e29c
-ms.openlocfilehash: 1973be48457d3164bec6b8df236c07f5bfa6b897
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 32964c287b0064daf529aa4c1e28f0927d29a6d5
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="ajax-service-with-json-and-xml-sample"></a>JSON および XML 形式の AJAX サービスのサンプル
 このサンプルでは、Windows Communication Foundation (WCF) を使用して、JavaScript Object Notation (JSON) または XML データを返す Asynchronous JavaScript and XML (AJAX) サービスを作成する方法を示します。 AJAX サービスには、Web ブラウザー クライアントから JavaScript コードを使用してアクセスできます。 このサンプルでビルド、[基本的な AJAX サービス](../../../../docs/framework/wcf/samples/basic-ajax-service.md)サンプルです。  
   
- 他の AJAX サンプルとは異なり、このサンプルでは ASP.NET AJAX および <xref:System.Web.UI.ScriptManager> コントロールを使用しません。 追加の構成を行うと、JavaScript を使用して HTML ページから [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] AJAX サービスにアクセスできます。このシナリオを次に示します。 使用する例については[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]ASP.NET AJAX を参照してください。 [AJAX サンプル](http://msdn.microsoft.com/library/f3fa45b3-44d5-4926-8cc4-a13c30a3bf3e)です。  
+ 他の AJAX サンプルとは異なり、このサンプルでは ASP.NET AJAX および <xref:System.Web.UI.ScriptManager> コントロールを使用しません。 追加の構成、WCF AJAX サービスは、JavaScript を使用して HTML ページからアクセスできるし、このシナリオを示します。 WCF を ASP.NET AJAX と共に使用しての例は、次を参照してください。 [AJAX サンプル](http://msdn.microsoft.com/library/f3fa45b3-44d5-4926-8cc4-a13c30a3bf3e)です。  
   
  このサンプルでは、JSON と XML 間で操作の応答のタイプを切り替える方法を示します。 この機能は、サービスが ASP.NET AJAX または HTML/JavaScript クライアント ページでアクセスできるように構成されているかどうかにかかわらず使用できます。  
   
@@ -39,7 +39,7 @@ ms.lasthandoff: 05/04/2018
   
  既定のデータ形式<xref:System.ServiceModel.Description.WebHttpEndpoint>の既定のデータ形式の中には、XML、 <xref:System.ServiceModel.Description.WebScriptEndpoint> JSON がします。 詳細については、次を参照してください。 [ASP.NET を使用せずに作成する WCF AJAX サービス](../../../../docs/framework/wcf/feature-details/creating-wcf-ajax-services-without-aspnet.md)です。  
   
- 次に示すサンプル内のサービスは、2 つの操作が設定された標準の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスです。 どちらの操作でも <xref:System.ServiceModel.Web.WebMessageBodyStyle.Wrapped> または <xref:System.ServiceModel.Web.WebGetAttribute> 属性に <xref:System.ServiceModel.Web.WebInvokeAttribute> の本文スタイルが必要です。この本文スタイルは、`webHttp` 動作に固有で、JSON/XML データ形式の切り替えに影響しません。  
+ 次のサンプルのサービスには、2 つの操作の標準の WCF サービスです。 どちらの操作でも <xref:System.ServiceModel.Web.WebMessageBodyStyle.Wrapped> または <xref:System.ServiceModel.Web.WebGetAttribute> 属性に <xref:System.ServiceModel.Web.WebInvokeAttribute> の本文スタイルが必要です。この本文スタイルは、`webHttp` 動作に固有で、JSON/XML データ形式の切り替えに影響しません。  
 
 ```csharp
 [OperationContract]  
@@ -57,7 +57,7 @@ MathResult DoMathXml(double n1, double n2);
 MathResult DoMathJson(double n1, double n2);  
 ```
 
- どちらの場合でも、操作により、標準の `MathResult` データ コントラクト型である複合型 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] が返されます。  
+ どちらの場合、操作が返す複合型では、ことに注意してください`MathResult`、標準的な WCF データ コントラクト型です。  
   
  クライアント Web ページ XmlAjaxClientPage.htm には、ユーザーがクリックしたときに、上記の 2 つの操作のいずれかを呼び出す JavaScript コードが含まれています、**計算 (return JSON) を実行する**または**calculation (return XML) を実行します。**ページのボタンです。 サービスを呼び出すコードによって JSON 本文が作成され、HTTP POST を使用して送信されます。 要求を手動で作成、JavaScript とは異なり、[基本的な AJAX サービス](../../../../docs/framework/wcf/samples/basic-ajax-service.md)サンプルと ASP.NET AJAX を使用して、他のサンプルです。  
 

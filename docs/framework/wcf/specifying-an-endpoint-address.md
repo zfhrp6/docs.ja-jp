@@ -7,17 +7,17 @@ dev_langs:
 helpviewer_keywords:
 - endpoints [WCF], addressing
 ms.assetid: ac24f5ad-9558-4298-b168-c473c68e819b
-ms.openlocfilehash: 784b0fe3e2b23287d458f9aa4d8276e10dd6ed97
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: f7e2253c527cbb2b6f21b222b1e9691c2ecff01f
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="specifying-an-endpoint-address"></a>エンドポイント アドレスの指定
 Windows Communication Foundation (WCF) サービスとすべての通信は、そのエンドポイントを介して行われます。 各 <xref:System.ServiceModel.Description.ServiceEndpoint> は、<xref:System.ServiceModel.Description.ServiceEndpoint.Address%2A>、<xref:System.ServiceModel.Description.ServiceEndpoint.Binding%2A>、および <xref:System.ServiceModel.Description.ServiceEndpoint.Contract%2A> で構成されます。 コントラクトでは、使用できる操作を指定します。 バインディングでは、サービスとの通信方法を指定し、アドレスでは、サービスの場所を指定します。 各エンドポイントには、一意のアドレスを設定する必要があります。 エンドポイント アドレスは、<xref:System.ServiceModel.EndpointAddress> クラスによって表します。このクラスは、サービスのアドレスを表す URI (Uniform Resource Identifier)、サービスのセキュリティ ID を表す <xref:System.ServiceModel.EndpointAddress.Identity%2A>、およびオプションの <xref:System.ServiceModel.EndpointAddress.Headers%2A> のコレクションで構成されます。 オプション ヘッダーは、エンドポイントの識別または対話のために、より詳細なアドレス指定情報を提供します。 たとえば、ヘッダーを使用して、受信メッセージの処理方法や、エンドポイントからの応答メッセージの送信先を指定できるほか、複数のサービス インスタンスが使用できる場合に、特定ユーザーからの受信メッセージの処理に使用するインスタンスを指定できます。  
   
 ## <a name="definition-of-an-endpoint-address"></a>エンドポイント アドレスの定義  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] の <xref:System.ServiceModel.EndpointAddress> は、WS-Addressing 仕様で定義されているエンドポイント参照 (EPR) をモデル化します。  
+ WCF では、 <xref:System.ServiceModel.EndpointAddress> Ws-addressing 仕様で定義されているエンドポイント参照 (EPR) をモデル化します。  
   
  ほとんどのトランスポートの URI アドレスは、4 つの部分から構成されます。 この URI をたとえば、"http://www.fabrikam.com:322/mathservice.svc/secureEndpoint"は次の 4 つの部分があります。  
   
@@ -29,11 +29,11 @@ Windows Communication Foundation (WCF) サービスとすべての通信は、�
   
 -   パス : /mathservice.svc/secureEndpoint  
   
- EPR モデルの一部では、各エンドポイント参照は、追加の識別情報を追加する複数の参照パラメーターを伝達できます。 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] では、これらの参照パラメーターは <xref:System.ServiceModel.Channels.AddressHeader> クラスのインスタンスとしてモデル化されます。  
+ EPR モデルの一部では、各エンドポイント参照は、追加の識別情報を追加する複数の参照パラメーターを伝達できます。 WCF では、これらの参照パラメーターがのインスタンスとしてモデル化、<xref:System.ServiceModel.Channels.AddressHeader>クラスです。  
   
  サービスのエンドポイント アドレスはコードを使用して強制的に指定するか、構成を介して宣言として指定できます。 設置済みサービスのバインドおよびアドレスは一般的に、サービスの開発中に使用されるものとは異なるので、コード内でエンドポイントを定義することは通常、実用的ではありません。 一般に、サービス エンドポイントの定義にはコードではなく、構成を使用する方がより実用的です。 バインディング情報とアドレス情報をコードに含めないことで、変更時にアプリケーションの再コンパイルや再展開を行う必要がなくなります。 エンドポイントがコードまたは構成で指定されていない場合、ランタイムは、サービスで実装されたコントラクトごとに、1 つの既定のエンドポイントを各ベース アドレスに追加します。  
   
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] でサービスのエンドポイント アドレスを指定するには 2 つの方法があります。 サービスに関連付けられた各エンドポイントに対して絶対アドレスを指定する方法と、<xref:System.ServiceModel.ServiceHost> のベース アドレスを設定して、このベース アドレスから相対的に定義されるアドレスをサービスに関連付けられた各エンドポイントに対して指定する方法です。 サービスのエンドポイント アドレスを指定するには、構成とコードのいずれかで、これらの各方法を使用します。 相対アドレスを指定しない場合、サービスはベース アドレスを使用します。 サービスに対して複数のベース アドレスを設定することもできますが、サービスが各トランスポートに対して設定できるベース アドレスは 1 つに限られます。 複数のエンドポイントがある場合、各エンドポイントには異なるバインディングで構成されるため、それぞれのアドレスは一意になります。 異なるコントラクトで同じバインディングを使用するエンドポイントは同じアドレスを使用できます。  
+ WCF では、サービスのエンドポイント アドレスを指定する 2 つの方法ができます。 サービスに関連付けられた各エンドポイントに対して絶対アドレスを指定する方法と、<xref:System.ServiceModel.ServiceHost> のベース アドレスを設定して、このベース アドレスから相対的に定義されるアドレスをサービスに関連付けられた各エンドポイントに対して指定する方法です。 サービスのエンドポイント アドレスを指定するには、構成とコードのいずれかで、これらの各方法を使用します。 相対アドレスを指定しない場合、サービスはベース アドレスを使用します。 サービスに対して複数のベース アドレスを設定することもできますが、サービスが各トランスポートに対して設定できるベース アドレスは 1 つに限られます。 複数のエンドポイントがある場合、各エンドポイントには異なるバインディングで構成されるため、それぞれのアドレスは一意になります。 異なるコントラクトで同じバインディングを使用するエンドポイントは同じアドレスを使用できます。  
   
  IIS でホストする場合、ユーザーは <xref:System.ServiceModel.ServiceHost> インスタンスを管理できません。 IIS でホストしているサービスでは、サービスの .svc ファイルで指定されているアドレスが常にベース アドレスになります。 そのため、IIS でホストされるサービスのエンドポイントでは、相対エンドポイント アドレスを使用する必要があります。 完全修飾されたエンドポイント アドレスを指定すると、サービスの展開時にエラーとなる可能性があります。 詳細については、次を参照してください。[インターネット WCF サービスを展開する](../../../docs/framework/wcf/feature-details/deploying-an-internet-information-services-hosted-wcf-service.md)です。  
   

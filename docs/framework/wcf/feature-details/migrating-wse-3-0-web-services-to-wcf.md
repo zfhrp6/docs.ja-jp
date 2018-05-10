@@ -1,36 +1,22 @@
 ---
 title: WSE 3.0 Web サービスの WCF への移行
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 7bc5fff7-a2b2-4dbc-86cc-ecf73653dcdc
-caps.latest.revision: ''
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: a7e7187eb6ed444ba2c28aa301ce4b3b16129030
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
+ms.openlocfilehash: fea56d5737b47dabd5632477b7daed23fcfaf249
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="migrating-wse-30-web-services-to-wcf"></a>WSE 3.0 Web サービスの WCF への移行
-WSE 3.0 Web サービスを [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] に移行する利点には、パフォーマンスの向上と、追加のトランスポート、追加のセキュリティ シナリオ、および WS-* 仕様のサポートなどがあります。 WSE 3.0 から [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] に移行した Web サービスでは、パフォーマンスが最大 200% から 400% 向上する可能性があります。 サポートされているトランスポートの詳細については[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]を参照してください[トランスポート選択](../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)です。 によってサポートされるシナリオの一覧については[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]を参照してください[一般的なセキュリティ シナリオ](../../../../docs/framework/wcf/feature-details/common-security-scenarios.md)です。 サポートされている仕様の一覧については[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]を参照してください[Web サービス プロトコルの相互運用性ガイド](../../../../docs/framework/wcf/feature-details/web-services-protocols-interoperability-guide.md)です。  
+移行する WSE 3.0 Web サービスには、Windows Communication Foundation (WCF) の利点を示しますパフォーマンスの向上とサポートの追加のトランスポート、追加のセキュリティ シナリオ、および ws-* 仕様です。 WSE 3.0 から WCF に移行する Web サービスは、最大で 200 ~ 400% パフォーマンスが向上発生があります。 WCF でサポートされているトランスポートの詳細については、次を参照してください。[トランスポート選択](../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)です。 WCF によりサポートされるシナリオの一覧は、次を参照してください。[一般的なセキュリティ シナリオ](../../../../docs/framework/wcf/feature-details/common-security-scenarios.md)です。 WCF でサポートされている仕様の一覧は、次を参照してください。 [Web サービス プロトコルの相互運用性ガイド](../../../../docs/framework/wcf/feature-details/web-services-protocols-interoperability-guide.md)です。  
   
- 以下の各セクションでは、WSE 3.0 Web サービスの特定の機能を [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] に移行する方法についてのガイドラインを示します。  
+ 次のセクションでは、WSE 3.0 Web サービスの特定の機能を WCF に移行する方法のガイダンスを提供します。  
   
 ## <a name="general"></a>全般  
- WSE 3.0 アプリケーションと [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションには、ネットワーク レベルの相互運用性と、共通の用語セットが含まれます。 WSE 3.0 アプリケーションと [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションは、両方がサポートする WS-* 仕様セットに基づき、ネットワーク レベルで相互運用できます。 WSE 3.0 アプリケーションや [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションの展開時には、WSE の設定不要なセキュリティ アサーションの名前や認証モードなど、共通の用語セットが使用されます。  
+ WSE 3.0 と WCF アプリケーションには、ネットワーク レベルの相互運用性と共通の用語セットが含まれます。 WSE 3.0 と WCF アプリケーションは、ネットワーク レベルで相互運用 ws-のセットに基づく *、両方をサポートする仕様。 WSE 3.0 または WCF アプリケーションの開発時に WSE モードおよび認証モードで、設定不要のセキュリティ アサーションの名前などの用語の共通セットがあります。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] と ASP.NET または WSE 3.0 のプログラミング モデルの間には、類似した側面が数多くありますが、同一ではありません。 詳細については、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]プログラミング モデルを参照してください[基本的なプログラミング ライフ サイクル](../../../../docs/framework/wcf/basic-programming-lifecycle.md)です。  
+ WCF と ASP.NET 間のような多くの側面がありますが、WSE 3.0 のプログラミング モデルが異なるです。 WCF プログラミング モデルについての詳細については、「[基本的なプログラミング ライフ サイクル](../../../../docs/framework/wcf/basic-programming-lifecycle.md)です。  
   
 > [!NOTE]
 >  WSE Web サービスを WCF に移行する、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)ツールは、クライアントを生成するために使用できます。 ただし、このクライアントには、WCF サービスの開始点として使用できるインターフェイスとクラスも含まれます。 生成されるインターフェイスの <xref:System.ServiceModel.OperationContractAttribute> 属性は、<xref:System.ServiceModel.OperationContractAttribute.ReplyAction%2A> プロパティが `*` に設定されたコントラクトのメンバーに適用されます。 WSE クライアントは、この設定では、Web サービスを呼び出して、次の例外がスローされます**Web.services3.responseprocessingexception:: WSE910:、応答メッセージの処理中にエラーが発生し、内側のエラーを見つけることができます。例外**です。 このエラーを軽減するには、<xref:System.ServiceModel.OperationContractAttribute.ReplyAction%2A> 属性の <xref:System.ServiceModel.OperationContractAttribute> プロパティを `null` 以外の値 (`http://Microsoft.WCF.Documentation/ResponseToOCAMethod` など) に設定します。  
@@ -38,7 +24,7 @@ WSE 3.0 Web サービスを [!INCLUDE[indigo1](../../../../includes/indigo1-md.m
 ## <a name="security"></a>セキュリティ  
   
 ### <a name="wse-30-web-services-that-are-secured-using-a-policy-file"></a>ポリシー ファイルを使用してセキュリティ保護される WSE 3.0 Web サービス  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスは、構成ファイルを使用してサービスをセキュリティで保護できます。この機構は、WSE 3.0 ポリシー ファイルと似ています。 WSE 3.0 でポリシー ファイルを使用して Web サービスをセキュリティ保護するときは、設定不要のセキュリティ アサーションまたはカスタム ポリシー アサーションを使用します。 設定不要のセキュリティ アサーションは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] セキュリティ バインド要素の認証モードに厳密にマップされます。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 認証モードと WSE 3.0 の設定不要のセキュリティ アサーションには、同一または類似の名前が付けられているだけでなく、これらは同じ資格情報の種類を使用してメッセージをセキュリティ保護します。 たとえば、WSE 3.0 の設定不要の `usernameForCertificate` セキュリティ アサーションは、`UsernameForCertificate` の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 認証モードにマップされます。 WSE 3.0 の設定不要の `usernameForCertificate` セキュリティ アサーションを使用する最小ポリシーが、カスタム バインディングの `UsernameForCertificate` の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 認証モードにどのようにマップされるかを次のコード例に示します。  
+ WCF サービスは、構成ファイルを使用してサービスをセキュリティで保護して、その機構は WSE 3.0 ポリシー ファイルに似ています。 WSE 3.0 でポリシー ファイルを使用して Web サービスをセキュリティ保護するときは、設定不要のセキュリティ アサーションまたはカスタム ポリシー アサーションを使用します。 設定不要のセキュリティ アサーションは、WCF のセキュリティ バインド要素の認証モードに厳密にマップします。 だけでなく、WCF 認証モードと WSE 3.0 の設定不要のセキュリティ アサーションの名前は同じまたは、同様に、同じ資格情報の種類を使用してメッセージを保護します。 インスタンス、 `usernameForCertificate` WSE 3.0 の設定不要のセキュリティ アサーションにマップ、 `UsernameForCertificate` WCF での認証モードです。 次のコード例は、方法を使用する最小ポリシーを示しています。、 `usernameForCertificate` WSE 3.0 の設定不要のセキュリティ アサーションにマップする`UsernameForCertificate`WCF での認証モード、カスタム バインドにします。  
   
  **WSE 3.0**  
   
@@ -63,9 +49,9 @@ WSE 3.0 Web サービスを [!INCLUDE[indigo1](../../../../includes/indigo1-md.m
 </customBinding>  
 ```  
   
- ポリシー ファイルで指定されている WSE 3.0 Web サービスのセキュリティ設定を [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] に移行するには、構成ファイルでカスタム バインディングを作成し、設定不要のセキュリティ アサーションを同等の認証モードに設定する必要があります。 さらに、WSE 3.0 クライアントがサービスと通信するときに 2004 年 8 月版の WS-Addressing 仕様を使用するように、カスタム バインドを構成する必要もあります。 移行後の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスが WSE 3.0 クライアントと通信する必要がなく、等価のセキュリティの保持のみが必要な場合は、カスタム バインディングを作成する代わりに [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] システム定義のバインディングと適切なセキュリティ設定を使用することを考慮してください。  
+ WCF へのポリシー ファイルで指定されている WSE 3.0 Web サービスのセキュリティ設定を移行するには、構成ファイルで、カスタム バインディングを作成し、設定不要のセキュリティ アサーションは、同等の認証モードを設定する必要があります。 さらに、WSE 3.0 クライアントがサービスと通信するときに 2004 年 8 月版の WS-Addressing 仕様を使用するように、カスタム バインドを構成する必要もあります。 移行済みの WCF サービスが WSE 3.0 クライアントとの通信は不要し、等価のセキュリティを管理する必要があります、カスタム バインドを作成する代わりに適切なセキュリティ設定で、WCF のシステム定義バインディングの使用を検討します。  
   
- WSE 3.0 ポリシー ファイルと [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の同等のカスタム バインディングとの対応関係を次の表に示します。  
+ 次の表は、WSE 3.0 ポリシー ファイルと WCF で同等のカスタム バインディング間のマッピングを一覧表示します。  
   
 |WSE 3.0 の設定不要のセキュリティ アサーション|WCF のカスタム バインド構成|  
 |----------------------------------------|--------------------------------------|  
@@ -74,33 +60,33 @@ WSE 3.0 Web サービスを [!INCLUDE[indigo1](../../../../includes/indigo1-md.m
 |\<usernameForCertificateSecurity />|`<customBinding>   <binding name="MyBinding">     <security authenticationMode="UsernameForCertificate"/>     <textMessageEncoding messageVersion="Soap12WSAddressingAugust2004" />   </binding> </customBinding>`|  
 |\<anonymousForCertificateSecurity />|`<customBinding>   <binding name="MyBinding">     <security authenticationMode="AnonymousForCertificate"/>     <textMessageEncoding messageVersion="Soap12WSAddressingAugust2004" />   </binding> </customBinding>`|  
 |\<kerberosSecurity />|`<customBinding>   <binding name="MyBinding">     <security authenticationMode="Kerberos"/>     <textMessageEncoding messageVersion="Soap12WSAddressingAugust2004" />   </binding> </customBinding>`|  
-|\<mutualCertificate11Security />|`<customBinding>   <binding name="MyBinding">     <security authenticationMode="MutualCertificate"/>     <textMessageEncoding messageVersion="Soap12WSAddressingAugust2004" />   </binding> </customBinding>`|  
+|\<mutualCertificate11Security/>|`<customBinding>   <binding name="MyBinding">     <security authenticationMode="MutualCertificate"/>     <textMessageEncoding messageVersion="Soap12WSAddressingAugust2004" />   </binding> </customBinding>`|  
   
  WCF でのカスタム バインドの作成の詳細については、次を参照してください。[カスタム バインド](../../../../docs/framework/wcf/extending/custom-bindings.md)です。  
   
 ### <a name="wse-30-web-services-that-are-secured-using-application-code"></a>アプリケーション コードを使用してセキュリティ保護される WSE 3.0 Web サービス  
- WSE 3.0 と [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のいずれを使用する場合でも、構成ではなくアプリケーション コードでセキュリティ要件を指定できます。 WSE 3.0 でこれを行うには、`Policy` クラスの派生クラスを作成してから、`Add` メソッドを呼び出して要件を追加します。 セキュリティ要件を指定するコードの詳細については、次を参照してください。[する方法: セキュリティで保護された Web サービスなしを使用して、ポリシー ファイル](http://go.microsoft.com/fwlink/?LinkId=73747)です。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] でセキュリティ要件をコードで指定するには、<xref:System.ServiceModel.Channels.BindingElementCollection> クラスのインスタンスを作成し、<xref:System.ServiceModel.Channels.SecurityBindingElement> のインスタンスを <xref:System.ServiceModel.Channels.BindingElementCollection> に追加します。 セキュリティ アサーション要件は、<xref:System.ServiceModel.Channels.SecurityBindingElement> クラスの静的認証モード ヘルパー メソッドを使用して設定します。 使用してコードでのセキュリティ要件の指定の詳細については[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]を参照してください[する方法: SecurityBindingElement 作成するカスタム バインドを使用して、](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)と[する方法: の SecurityBindingElement を作成します。認証モードを指定した](../../../../docs/framework/wcf/feature-details/how-to-create-a-securitybindingelement-for-a-specified-authentication-mode.md)です。  
+ WSE 3.0 または WCF を使用するかどうかは、構成ではなく、アプリケーション コードでセキュリティ要件を指定できます。 WSE 3.0 でこれを行うには、`Policy` クラスの派生クラスを作成してから、`Add` メソッドを呼び出して要件を追加します。 セキュリティ要件を指定するコードの詳細については、次を参照してください。[する方法: セキュリティで保護された Web サービスなしを使用して、ポリシー ファイル](http://go.microsoft.com/fwlink/?LinkId=73747)です。 WCF では、コードでセキュリティ要件を指定するのインスタンスを作成、<xref:System.ServiceModel.Channels.BindingElementCollection>クラスおよびインスタンスの追加、<xref:System.ServiceModel.Channels.SecurityBindingElement>を<xref:System.ServiceModel.Channels.BindingElementCollection>です。 セキュリティ アサーション要件は、<xref:System.ServiceModel.Channels.SecurityBindingElement> クラスの静的認証モード ヘルパー メソッドを使用して設定します。 WCF を使用してコードでセキュリティ要件を指定する方法の詳細については、次を参照してください[する方法: SecurityBindingElement 作成するカスタム バインドを使用して、](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)と[する方法: は指定されたため、SecurityBindingElement を作成します。認証モード](../../../../docs/framework/wcf/feature-details/how-to-create-a-securitybindingelement-for-a-specified-authentication-mode.md)です。  
   
 ### <a name="wse-30-custom-policy-assertion"></a>WSE 3.0 カスタム ポリシー アサーション  
- WSE 3.0 には、2 種類のカスタム ポリシー アサーションがあります。一方は SOAP メッセージをセキュリティで保護し、もう一方は SOAP メッセージをセキュリティで保護しません。 SOAP メッセージをセキュリティで保護するポリシー アサーションは WSE 3.0 の `SecurityPolicyAssertion` クラスから派生します。[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]<xref:System.ServiceModel.Channels.SecurityBindingElement>でこれと概念的に等価なものは  クラスです。  
+ WSE 3.0 には、2 種類のカスタム ポリシー アサーションがあります。一方は SOAP メッセージをセキュリティで保護し、もう一方は SOAP メッセージをセキュリティで保護しません。 WSE 3.0 から派生して、SOAP メッセージをセキュリティで保護するポリシー アサーション`SecurityPolicyAssertion`クラスと、WCF の概念と同じでは、<xref:System.ServiceModel.Channels.SecurityBindingElement>クラスです。  
   
- 注意すべき重要な点は、WSE 3.0 の設定不要のセキュリティ アサーションは [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 認証モードのサブセットであるということです。 WSE 3.0 でカスタム ポリシー アサーションを既に作成している場合は、同等の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 認証モードが存在する可能性があります。 たとえば、WSE 3.0 は、設定不要の `UsernameOverTransport` セキュリティ アサーションと等価な CertificateOverTransport セキュリティ アサーションを提供しませんが、クライアントを認証するために X.509 証明書を使用します。 このシナリオ用の独自のカスタム ポリシー アサーションを定義していれば、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] によって移行が容易になります。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] はこのシナリオの認証モードを定義します。このため、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の <xref:System.ServiceModel.Channels.SecurityBindingElement> の構成に静的認証モード ヘルパー メソッドを使用できます。  
+ 重要な注意点は、WSE 3.0 の設定不要のセキュリティ アサーション WCF 認証モードのサブセットであることです。 WSE 3.0 カスタム ポリシー アサーションを作成した場合と同等の WCF 認証モードである可能性があります。 たとえば、WSE 3.0 は、設定不要の `UsernameOverTransport` セキュリティ アサーションと等価な CertificateOverTransport セキュリティ アサーションを提供しませんが、クライアントを認証するために X.509 証明書を使用します。 このシナリオでは、独自のカスタム ポリシー アサーションを定義した場合は、WCF によって移行が容易です。 利用する静的認証モード ヘルパー メソッドを WCF を構成するために、WCF がこのシナリオでは、認証モードを定義<xref:System.ServiceModel.Channels.SecurityBindingElement>です。  
   
- SOAP メッセージをセキュリティで保護するカスタム ポリシー アサーションと等価な [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 認証モードが存在しない場合は、<xref:System.ServiceModel.Channels.TransportSecurityBindingElement>、<xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>、<xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement>[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のいずれかのクラスからクラスを派生し、等価なバインド要素を指定します。 詳細については、次を参照してください。[する方法: SecurityBindingElement 作成するカスタム バインドを使用して、](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)です。  
+ SOAP メッセージを保護するカスタム ポリシー アサーションと等価である WCF 認証モードがない場合、派生クラスを<xref:System.ServiceModel.Channels.TransportSecurityBindingElement>、<xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>または<xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement>WCF クラスし、等価なバインド要素を指定します。 詳細については、次を参照してください。[する方法: SecurityBindingElement 作成するカスタム バインドを使用して、](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)です。  
   
  SOAP メッセージ セキュリティで保護するカスタム ポリシー アサーションを変換するには、次を参照してください。 [Filtering](../../../../docs/framework/wcf/feature-details/filtering.md)サンプルとサンプル[カスタム メッセージ インターセプター](../../../../docs/framework/wcf/samples/custom-message-interceptor.md)です。  
   
 ### <a name="wse-30-custom-security-token"></a>WSE 3.0 カスタム セキュリティ トークン  
- カスタム トークンを作成するための [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] プログラミング モデルは、WSE 3.0 と異なります。 WSE でカスタム トークンを作成する方法については、次を参照してください。[カスタム セキュリティ トークンの作成](http://go.microsoft.com/fwlink/?LinkID=73750)です。 カスタム トークンを作成する方法について[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]を参照してください[する方法: カスタム トークンを作成する](../../../../docs/framework/wcf/extending/how-to-create-a-custom-token.md)です。  
+ カスタム トークンを作成するための WCF プログラミング モデルは、WSE 3.0 とは異なるです。 WSE でカスタム トークンを作成する方法については、次を参照してください。[カスタム セキュリティ トークンの作成](http://go.microsoft.com/fwlink/?LinkID=73750)です。 WCF では、カスタム トークンを作成する方法については、次を参照してください。[する方法: カスタム トークンを作成する](../../../../docs/framework/wcf/extending/how-to-create-a-custom-token.md)です。  
   
 ### <a name="wse-30-custom-token-manager"></a>WSE 3.0 カスタム トークン マネージャー  
- カスタム トークン マネージャーを作成するためのプログラミング モデルは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] と WSE 3.0 で異なります。 カスタム トークン マネージャーとカスタム セキュリティ トークンに必要なその他のコンポーネントを作成する方法の詳細については、次を参照してください。[する方法: カスタム トークンを作成する](../../../../docs/framework/wcf/extending/how-to-create-a-custom-token.md)です。  
+ カスタム トークン マネージャーを作成するためのプログラミング モデルは、WSE 3.0 と WCF で異なるです。 カスタム トークン マネージャーとカスタム セキュリティ トークンに必要なその他のコンポーネントを作成する方法の詳細については、次を参照してください。[する方法: カスタム トークンを作成する](../../../../docs/framework/wcf/extending/how-to-create-a-custom-token.md)です。  
   
 > [!NOTE]
->  カスタムの `UsernameToken` セキュリティ トークン マネージャーを既に作成している場合、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、カスタム セキュリティ マネージャーを作成するよりも簡単に認証ロジックを指定する機構が提供されています。 詳細については、次を参照してください。[する方法: カスタム ユーザー名およびパスワード検証を使用して](../../../../docs/framework/wcf/feature-details/how-to-use-a-custom-user-name-and-password-validator.md)です。  
+>  カスタムを作成した場合`UsernameToken`セキュリティ トークン マネージャーは、WCF には、カスタム セキュリティ トークン マネージャーを作成するよりも認証ロジックを指定するを容易に行えるが用意されています。 詳細については、次を参照してください。[する方法: カスタム ユーザー名およびパスワード検証を使用して](../../../../docs/framework/wcf/feature-details/how-to-use-a-custom-user-name-and-password-validator.md)です。  
   
 ### <a name="wse-30-web-services-that-use-mtom-encoded-soap-messages"></a>MTOM エンコードされた SOAP メッセージを使用する WSE 3.0 Web サービス  
- WSE 3.0 アプリケーションと同様に、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションでは、MTOM メッセージ エンコードを構成で指定できます。 この設定を移行するには追加、 [ \<mtomMessageEncoding >](../../../../docs/framework/configure-apps/file-schema/wcf/mtommessageencoding.md)サービスのバインドにします。 WSE 3.0 での MTOM エンコードの指定方法と、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] での等価な MTOM エンコードの指定方法を、次のコード例に示します。  
+ WSE 3 アプリケーションのように、WCF アプリケーションは、MTOM メッセージの構成でのエンコードを指定できます。 この設定を移行するには追加、 [ \<mtomMessageEncoding >](../../../../docs/framework/configure-apps/file-schema/wcf/mtommessageencoding.md)サービスのバインドにします。 次のコード例では、MTOM エンコーディングを指定する方法 WSE 3.0 の WCF で同等であるサービスを示します。  
   
  **WSE 3.0**  
   
@@ -128,12 +114,12 @@ WSE 3.0 Web サービスを [!INCLUDE[indigo1](../../../../includes/indigo1-md.m
 ## <a name="transports"></a>トランスポート  
   
 ### <a name="tcp"></a>TCP  
- 既定では、TCP トランスポートを使用して SOAP メッセージを送信する WSE 3.0 クライアントおよび Web サービスは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のクライアントおよび Web サービスと相互運用できません。 このような非互換性は、TCP プロトコルで使用されるフレームの違いとパフォーマンス上の理由に起因します。 ただし、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のサンプルでは、WSE 3.0 と相互運用するカスタム TCP セッションの実装方法を詳しく示しています。 このサンプルに関する詳細については、次を参照してください。[トランスポート: WSE 3.0 TCP 相互運用性](../../../../docs/framework/wcf/samples/transport-wse-3-0-tcp-interoperability.md)です。  
+ 既定では、WSE 3.0 クライアントおよび TCP トランスポートを使用して SOAP メッセージを送信する Web サービス相互運用不可能 WCF クライアントと Web サービスを使用します。 このような非互換性は、TCP プロトコルで使用されるフレームの違いとパフォーマンス上の理由に起因します。 ただし、WCF サンプルでは、WSE 3.0 と相互運用するカスタム TCP セッションを実装する方法について説明します。 このサンプルに関する詳細については、次を参照してください。[トランスポート: WSE 3.0 TCP 相互運用性](../../../../docs/framework/wcf/samples/transport-wse-3-0-tcp-interoperability.md)です。  
   
- 指定する、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]アプリケーションが TCP トランスポートを使用して、使用して、 [ \<netTcpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/nettcpbinding.md)です。  
+ WCF アプリケーションが TCP トランスポートを使用することを指定するには、使用、 [ \<netTcpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/nettcpbinding.md)です。  
   
 ### <a name="custom-transport"></a>カスタム トランスポート  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] において WSE 3.0 カスタム トランスポートに相当するのは、チャネル拡張です。 チャネル拡張機能の作成に関する詳細については、「 [、チャネル レイヤの拡張](../../../../docs/framework/wcf/extending/extending-the-channel-layer.md)です。  
+ WCF での WSE 3.0 カスタム トランスポートの該当するショートカットは、チャネル拡張です。 チャネル拡張機能の作成に関する詳細については、「 [、チャネル レイヤの拡張](../../../../docs/framework/wcf/extending/extending-the-channel-layer.md)です。  
   
 ## <a name="see-also"></a>関連項目  
  [基本的なプログラミング ライフサイクル](../../../../docs/framework/wcf/basic-programming-lifecycle.md)  

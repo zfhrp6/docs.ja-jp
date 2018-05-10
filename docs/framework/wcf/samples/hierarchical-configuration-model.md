@@ -1,30 +1,18 @@
 ---
-title: "階層的な構成モデル"
-ms.custom: 
+title: 階層的な構成モデル
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 28dcc698-226c-4b77-9e51-8bf45a36216c
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: cf8e7b37b6430be1eed9bc037bfa06aeb825b866
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 233a8d4ba36835ab26e0c4a8cd044cf60d497a0b
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="hierarchical-configuration-model"></a>階層的な構成モデル
 このサンプルでは、サービスの構成ファイルの階層を実装する方法を示します。 また、バインド、サービス動作、およびエンドポイント動作を階層の上位レベルから継承する方法も示します。  
   
 ## <a name="sample-details"></a>サンプルの詳細  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の [!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)] 用に開発された機能の 1 つとして、階層的な構成モデルの強化があります。 階層的な構成モデルは、たとえば、Machine.config -> Rootweb.config -> Web.config のように定義されます。[!INCLUDE[netfx40_short](../../../../includes/netfx40-short-md.md)] では、構成階層の上位レベルで定義されるこれらのバインドおよび動作が、明示的な構成なしにサービスに追加されます。 このサンプルでは、コンピューター レベルまたはアプリケーション レベルで定義された構成要素に依存することによって簡単なサービス構成を実現する方法を示します。  
+ WCF 用に開発された、機能の 1 つ[!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)]階層構造の構成モデルの改善します。 階層的な構成モデルは、たとえば、Machine.config -> Rootweb.config -> Web.config のように定義されます。[!INCLUDE[netfx40_short](../../../../includes/netfx40-short-md.md)] では、構成階層の上位レベルで定義されるこれらのバインドおよび動作が、明示的な構成なしにサービスに追加されます。 このサンプルでは、コンピューター レベルまたはアプリケーション レベルで定義された構成要素に依存することによって簡単なサービス構成を実現する方法を示します。  
   
  このサンプルは、階層の 3 つのレベルで定義された 9 個のサービスから構成されます。 `Service1` はルートになります。 `Service2` と `Service3` は `Service1` から既定の要素を継承します。 `Service4`、`Service5`、`Service6`、および `Service7` は、階層の第 3 レベルで定義され、`Service3` から既定の要素を継承します。 最後に、`Service10` および `Service11` は階層の第 4 レベルに置かれます。  
   
@@ -80,9 +68,9 @@ public interface IDesc
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
+>  このディレクトリが存在しない場合に、 [Windows Communication Foundation (WCF) および .NET Framework 4 向けの Windows Workflow Foundation (WF) サンプル](http://go.microsoft.com/fwlink/?LinkId=150780)すべて Windows Communication Foundation (WCF) をダウンロードして[!INCLUDE[wf1](../../../../includes/wf1-md.md)]サンプルです。 このサンプルは、次のディレクトリに格納されます。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\ConfigHierarchicalModel`  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [AppFabric 管理のサンプル](http://go.microsoft.com/fwlink/?LinkId=193960)

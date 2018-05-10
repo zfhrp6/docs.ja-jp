@@ -1,24 +1,12 @@
 ---
-title: "SQL Server でのストアド プロシージャを使用した権限の管理"
-ms.custom: 
+title: SQL Server でのストアド プロシージャを使用した権限の管理
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 08fa34e8-2ffa-470d-ba62-e511a5f8558e
-caps.latest.revision: "6"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 38bdc4d41e4b42f2dccaf059d84f6b8b45967ff5
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 2472481156f44b55726243e9d939522e46796070
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="managing-permissions-with-stored-procedures-in-sql-server"></a>SQL Server でのストアド プロシージャを使用した権限の管理
 データベースを多層的に防御する 1 つの方法として、あらゆるデータ アクセスをストアド プロシージャまたはユーザー定義関数を使って実装することが考えられます。 テーブルなど、基になるオブジェクトに対する権限をすべて取り消すか拒否し、ストアド プロシージャに対して EXECUTE 権限を付与するようにします。 こうすることで、データやデータベース オブジェクトの周囲にセキュリティの境界を設けることができます。  
@@ -67,7 +55,7 @@ ms.lasthandoff: 01/17/2018
 |--------------|-----------------|  
 |[ストアド プロシージャ](http://msdn.microsoft.com/library/ms190782.aspx)と[SQL インジェクション](http://go.microsoft.com/fwlink/?LinkId=98234)SQL Server オンライン ブック|ストアド プロシージャの作成方法と SQL インジェクションのしくみについて説明します。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [ADO.NET アプリケーションのセキュリティ保護](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
  [SQL Server セキュリティの概要](../../../../../docs/framework/data/adonet/sql/overview-of-sql-server-security.md)  
  [SQL Server におけるアプリケーション セキュリティのシナリオ](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)  

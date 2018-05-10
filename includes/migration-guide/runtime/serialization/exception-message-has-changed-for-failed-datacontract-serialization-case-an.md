@@ -3,7 +3,7 @@
 |   |   |
 |---|---|
 |説明|.NET Framework 4.6 以降では、"既知の型" がないために <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=name> または <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer?displayProperty=name> のシリアル化または逆シリアル化が失敗した場合に提供される例外メッセージが明確化されました。|
-|提案される解決策|アプリは、特定の例外メッセージに依存しないようにする必要があります。 アプリがこのメッセージに依存している場合は、新しいメッセージを使うように更新するか、(可能であれば) 例外の種類のみに依存するように変更してください。|
+|提案される解決策|アプリは、特定の例外メッセージに依存しないようにする必要があります。 アプリがこのメッセージに依存している場合は、新しいメッセージを使うように更新するか、(可能であれば) 例外の種類のみに依存するように変更します。|
 |スコープ|エッジ|
 |Version|4.6|
 |型|ランタイム|

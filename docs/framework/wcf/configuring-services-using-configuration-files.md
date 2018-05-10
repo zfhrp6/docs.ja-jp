@@ -4,16 +4,16 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - configuring services [WCF]
 ms.assetid: c9c8cd32-2c9d-4541-ad0d-16dff6bd2a00
-ms.openlocfilehash: abfe502c6b50234037cad786a658edc3d479cc9e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 19ba0e585dfdd2ee47781b04a3d1a5bbdba60371
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="configuring-services-using-configuration-files"></a>構成ファイルを使用してサービスを構成する方法
 構成ファイルで Windows Communication Foundation (WCF) サービスを構成する柔軟性がエンドポイントを提供して、サービス動作のデータではなく、配置時にデザイン時です。 ここでは使用可能な主要な技術について説明します。  
   
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスは、 [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] の構成技術を使用して構成できます。 通常、XML 要素は、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスをホストするインターネット インフォメーション サービス (IIS) サイトの Web.config ファイルに追加されます。 この要素によって、コンピューターごとにエンドポイント アドレス (サービスと通信するために使用する実際のアドレス) などの詳細情報を変更できます。 また、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] には、システム指定の要素がいくつか用意されており、これらの要素によって、サービスの最も基本的な機能を簡単に選択できます。 [!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)]以降では、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] には、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] 構成要件を簡略化する新しい既定の構成モデルが付属しています。 特定のサービスに対し [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] 構成を指定しないと、ランタイムは自動的にいくつかの標準エンドポイントおよびバインディング/動作でサービスを構成します。 実際、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] アプリケーションのプログラミングにおいては、構成ファイルの記述が作業の大きな部分を占めます。  
+ WCF サービスが構成可能なを使用して、[!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)]テクノロジ構成します。 ほとんどの場合、XML 要素は、WCF サービスをホストするインターネット インフォメーション サービス (IIS) サイトの Web.config ファイルに追加されます。 この要素によって、コンピューターごとにエンドポイント アドレス (サービスと通信するために使用する実際のアドレス) などの詳細情報を変更できます。 さらに、WCF には、サービスの最も基本的な機能をすばやく選択することはいくつかのシステム指定の要素が含まれています。 以降で[!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)]WCF の WCF 構成の要件を簡略化する新しい既定の構成モデルが付属します。 特定のサービスの WCF 構成を指定しない場合、ランタイムはサービスを自動的にいくつかの標準エンドポイントおよびバインディング/動作を構成します。 構成ファイルの記述は、メジャー、実際には、WCF アプリケーションのプログラミングの一部です。  
   
  詳細については、次を参照してください。[を構成するサービスのバインディングの](../../../docs/framework/wcf/configuring-bindings-for-wcf-services.md)します。 一連の最もよく使用される要素を参照してください[システム指定のバインディング](../../../docs/framework/wcf/system-provided-bindings.md)です。 既定のエンドポイント、バインディング、および動作の詳細については、次を参照してください。[簡略化された構成](../../../docs/framework/wcf/simplified-configuration.md)と[WCF サービスの構成を簡略化](../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md)です。  
   
@@ -21,7 +21,7 @@ ms.lasthandoff: 05/04/2018
 >  2 つの異なるバージョンのサービスが配置される side-by-side のシナリオを配置する場合、構成ファイルで参照されるアセンブリの部分名を指定する必要があります。 これは構成ファイルがすべてのバージョンのサービスで共有されて、異なるバージョンの .NET Framework で実行される可能性があるためです。  
   
 ## <a name="systemconfiguration-webconfig-and-appconfig"></a>System.Configuration: Web.config と App.config  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] では、 [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)]の System.Configuration 構成システムを使用します。  
+ WCF の System.Configuration 構成システムを使用して、[!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)]です。  
   
  を Visual Studio でサービスを構成する場合は、Web.config ファイルまたは App.config ファイルを使用して、設定を指定します。 選択する構成ファイル名は、サービスに選択したホスト環境によって異なります。 サービスのホストに IIS を使用している場合は、Web.config ファイルを使用します。 他のホスト環境を使用している場合、App.config ファイルを使用します。  
   
@@ -115,7 +115,7 @@ ms.lasthandoff: 05/04/2018
  [\<behavior>](../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-servicebehaviors.md)  
   
 ## <a name="how-to-use-binding-and-behavior-configurations"></a>バインディングと動作の構成を使用する方法  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] では、構成で参照システムを使用することによって、エンドポイント間で構成を簡単に共有できます。 構成値を直接エンドポイントに割り当てるのではなく、バインディング関連の構成値を `bindingConfiguration` セクションの `<binding>` 要素にグループ化します。 バインディング構成とは、バインディングの設定の名前付きグループです。 エンドポイントは、名前によって `bindingConfiguration` を参照できます。  
+ WCF では、簡単に共有の構成で参照システムを使用してエンドポイント間で構成します。 構成値を直接エンドポイントに割り当てるのではなく、バインディング関連の構成値を `bindingConfiguration` セクションの `<binding>` 要素にグループ化します。 バインディング構成とは、バインディングの設定の名前付きグループです。 エンドポイントは、名前によって `bindingConfiguration` を参照できます。  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  

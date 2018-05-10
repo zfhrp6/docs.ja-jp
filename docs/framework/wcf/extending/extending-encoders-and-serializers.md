@@ -2,11 +2,11 @@
 title: エンコーダーとシリアライザーの拡張
 ms.date: 03/30/2017
 ms.assetid: 97aec970-d73c-469c-9b93-8b86be701c44
-ms.openlocfilehash: d5ba3e7b057968d81a8a33e195a760fc82a3670b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 914654c6f3b5ff89529efc271daef40dfd3f092f
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="extending-encoders-and-serializers"></a>エンコーダーとシリアライザーの拡張
 このセクションのトピックでは、Windows Communication Foundation (WCF) のシリアル化システムを拡張する方法について説明します。  
@@ -16,4 +16,4 @@ ms.lasthandoff: 05/04/2018
  データ コントラクト サロゲート クラスを使用して、シリアル化、逆シリアル化、スキーマのエクスポート、およびスキーマのインポートをカスタマイズする方法について説明します。  
   
  [カスタム メッセージ フォーマッタ](../../../../docs/framework/wcf/extending/custom-message-formatters.md)  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] メッセージと CLR 型間のシリアル化および逆シリアル化を制御するために使用できるカスタム メッセージ フォーマッタについて説明します。
+ CLR 型に、WCF メッセージの逆シリアル化とシリアル化を制御するために使用するカスタム メッセージ フォーマッタについて説明します。

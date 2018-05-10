@@ -1,41 +1,27 @@
 ---
 title: 'ベスト プラクティス : データ コントラクトのバージョン管理'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - data contracts
 - service contracts
 - best practices [WCF], data contract versioning
 - Windows Communication Foundation, data contracts
 ms.assetid: bf0ab338-4d36-4e12-8002-8ebfdeb346cb
-caps.latest.revision: 24
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 6ea139f6b854a299760df4c7cb8c315b58701ab8
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 33db8749656a8bb001f0a1797c77451476a126f2
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="best-practices-data-contract-versioning"></a>ベスト プラクティス : データ コントラクトのバージョン管理
 このトピックでは、長期的に容易に拡張させることのできるデータ コントラクトを作成するためのベスト プラクティスをいくつか紹介します。 データ コントラクトの詳細については、トピックを参照してください。[を使用してデータ コントラクト](../../../docs/framework/wcf/feature-details/using-data-contracts.md)です。  
   
 ## <a name="note-on-schema-validation"></a>スキーマ検証に関する注意事項  
- データ コントラクトのバージョン管理に関してまず注意を要することは、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] がエクスポートしたデータ コントラクト スキーマには、省略可能を示すマークが既定で各要素に付けられることを除き、バージョン管理のサポートがないという点です。  
+ データ コントラクトのバージョン管理をについて説明することが重要 Windows Communication Foundation (WCF) によってエクスポートされたデータ コントラクト スキーマに要素を既定では省略可能としてマークされてことを除き、任意のバージョン管理サポートがないことに注意してください。  
   
  したがって、新しいデータ メンバーを追加するなどの一般的なバージョン管理シナリオであっても、スキーマに関してはシームレスに実装することはできません。 新しいバージョンのデータ コントラクト (この例ではデータ メンバーが追加されたもの) を、古いスキーマに基づいて検証することはできません。  
   
- ただし、スキーマへの厳密な準拠が要求されない場合も数多くあります。 ASP.NET を使って実現される、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] Web サービスや XML Web サービスなど多くの Web サービス プラットフォームでは、特に必要な場合を除いてスキーマ検証が実施されないので、スキーマに定義されていない要素も容認されます。 このようなプラットフォームであればバージョン管理は容易です。  
+ ただし、スキーマへの厳密な準拠が要求されない場合も数多くあります。 ASP.NET を使用して作成された WCF および XML Web サービスを含む、多くの Web サービス プラットフォームは既定ではスキーマ検証を実行するありませんしてそのため、スキーマで説明されていない余分な要素を許容します。 このようなプラットフォームであればバージョン管理は容易です。  
   
  これらのことから、データ コントラクトのバージョン管理に関するガイドラインには、厳密なスキーマ検証が必要な場合とそうでない場合の 2 種類があります。  
   
@@ -50,7 +36,7 @@ ms.lasthandoff: 04/30/2018
   
  詳細については、ベスト プラクティスを参照してください:[サービスのバージョン管理](../../../docs/framework/wcf/service-versioning.md)です。  
   
- アプリケーションから送信するメッセージは厳密にスキーマに適合させる必要があるが、外部から受信したメッセージがこれに適合しているとは限らない、という場合もあります。 この場合、受信したメッセージには、異質なデータが含まれているおそれがあります。 異質な値も [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]に格納され、そのまま返されるので、スキーマに適合しないというメッセージが送信される結果になります。 これを回避するには、ラウンド トリップ機能を無効にする必要があります。 これには、2 つの方法があります。  
+ アプリケーションから送信するメッセージは厳密にスキーマに適合させる必要があるが、外部から受信したメッセージがこれに適合しているとは限らない、という場合もあります。 この場合、受信したメッセージには、異質なデータが含まれているおそれがあります。 余分な値が格納されているし、WCF によって返されるスキーマが無効なメッセージが送信されるための結果。 これを回避するには、ラウンド トリップ機能を無効にする必要があります。 これには、2 つの方法があります。  
   
 -   独自に定義した型に <xref:System.Runtime.Serialization.IExtensibleDataObject> インターフェイスを実装しない。  
   
