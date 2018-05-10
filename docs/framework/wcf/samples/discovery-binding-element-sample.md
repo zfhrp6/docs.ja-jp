@@ -2,20 +2,20 @@
 title: 探索バインド要素のサンプル
 ms.date: 03/30/2017
 ms.assetid: af513015-85bf-417b-8729-1bdff77ff6d6
-ms.openlocfilehash: 7dc38acbe91e03f579414294da07bff5cc53cc4c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 853f5cebfd745b3413d605dcfbf0e395e103b4f1
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="discovery-binding-element-sample"></a>探索バインド要素のサンプル
 このサンプルでは、探索クライアント バインド要素を使用してサービスを探索する方法を示します。 この機能を使用すると、開発者は、探索クライアント チャネルを既存のクライアント チャネル スタックに追加することにより、プログラミング モデルをきわめて直感的にすることができます。 関連付けられたチャネルが開いている場合、サービスのアドレスは探索を使用して解決されます。 このサンプルは、次のプロジェクトで構成されています。  
   
--   **CalculatorService**: 探索可能な[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]サービス。  
+-   **CalculatorService**: 探索可能な WCF サービスです。  
   
--   **CalculatorClient**: A[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]の検索し、呼び出し、CalculatorService を探索クライアント チャネルを使用するクライアント アプリケーション。  
+-   **CalculatorClient**: を検索し、CalculatorService を呼び出して、探索クライアント チャネルを使用する WCF クライアント アプリケーション。  
   
--   **DynamicCalculatorClient**: A[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]を検索し、CalculatorService を呼び出して、動的エンドポイントを使用するクライアント アプリケーション。  
+-   **DynamicCalculatorClient**: を検索し、CalculatorService を呼び出す動的エンドポイントを使用する WCF クライアント アプリケーション。  
   
 > [!IMPORTANT]
 >  サンプルは、既にコンピューターにインストールされている場合があります。 続行する前に、次の (既定の) ディレクトリを確認してください。  

@@ -2,11 +2,11 @@
 title: ユーザー コード トレースの出力
 ms.date: 03/30/2017
 ms.assetid: fa54186a-8ffa-4332-b0e7-63867126fd49
-ms.openlocfilehash: 120827bff85d4bc347274cad1370d291caba1c3d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 18b424139f4c1656193f80cf76c704af2b2887e3
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="emitting-user-code-traces"></a>ユーザー コード トレースの出力
 Windows Communication Foundation (WCF) によって生成されるインストルメンテーション データを収集するための構成でのトレースを有効にするだけでなくもユーザー コードでプログラムからトレースを出力することができます。 この方法では、インストルメンテーション データを能動的に作成でき、後でそのデータを診断目的で詳細に調べることができます。 ここでは、この方法について説明します。  
@@ -65,9 +65,9 @@ Trace.CorrelationManager.ActivityId = oldID;
  クライアントとサービスの両方の構成ファイルで、`propagateActivity` トレース ソースの `true` 属性を `System.ServiceModel` に設定した場合、Add 要求に対するサービス処理は、クライアントに定義されたものと同じアクティビティで発生します。 サービスに独自のアクティビティと転送が定義されている場合、そのサービス トレースは、クライアントにより伝達されたアクティビティには表示されません。 その代わり、クライアントから ID が伝達されたアクティビティに、転送トレースにより、関連付けられたアクティビティにサービス トレースが表示されます。  
   
 > [!NOTE]
->  `propagateActivity` 属性がクライアントとサービスの両方で `true` に設定されている場合、[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] によりサービスの操作スコープ内のアンビエント アクティビティが設定されます。  
+>  場合、`propagateActivity`属性に設定されている`true`両方のクライアントとサービスで、WCF によってサービスの操作スコープ内のアンビエント アクティビティが設定されます。  
   
- 次のコードを使用して、アクティビティが [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] によってスコープ内に設定されたかどうかをチェックできます。  
+ 次のコードを使用すると、アクティビティは、WCF によってスコープで設定されたかどうかを確認します。  
   
 ```  
 // Check if an activity was set in scope by WCF, if it was   
@@ -135,7 +135,7 @@ ts.TraceEvent(TraceEventType.Warning, 0, "Throwing exception " + "exceptionMessa
  ![ユーザーを出力するトレース ビューアーを使用した&#45;トレース コード](../../../../../docs/framework/wcf/diagnostics/tracing/media/e2etrace3.gif "e2eTrace3")  
 エラーの相関関係のグラフ表示  
   
- 以前のトレースを取得するには、ユーザー トレース ソースに対して `ActivityTracing` を設定し、`propagateActivity=true` トレース ソースに対して `System.ServiceModel` を設定します。 ユーザー コード間のアクティビティの伝達を有効にするため、`ActivityTracing` トレース ソースの `System.ServiceModel` は設定されていません  (ServiceModel アクティビティがオンになっている場合、クライアントに定義されているアクティビティ ID がサービス ユーザー コードにまで伝達されることはありません。ただし、転送は、クライアントおよびサービスのユーザー コード アクティビティと、中間の [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] アクティビティを相互に関連付けます)。  
+ 以前のトレースを取得するには、ユーザー トレース ソースに対して `ActivityTracing` を設定し、`propagateActivity=true` トレース ソースに対して `System.ServiceModel` を設定します。 ユーザー コード間のアクティビティの伝達を有効にするため、`ActivityTracing` トレース ソースの `System.ServiceModel` は設定されていません  (ServiceModel アクティビティ トレースが on の場合、クライアントに定義されたアクティビティ ID は反映されませんにサービスのユーザー コードです。転送では、ただし、関連しているクライアントとサービスのユーザー コード アクティビティの中間の WCF 活動。)  
   
  アクティビティを定義してアクティビティ ID を伝達することにより、エンドポイント間でエラーの直接相関関係を実行できます。 このようにして、エラーの根本原因をよりすばやく見つけることができるようになります。  
   

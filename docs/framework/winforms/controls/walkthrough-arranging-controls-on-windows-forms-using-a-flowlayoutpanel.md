@@ -18,7 +18,7 @@ ms.lasthandoff: 05/04/2018
   
  <xref:System.Windows.Forms.FlowLayoutPanel> コントロールと <xref:System.Windows.Forms.TableLayoutPanel> コントロールを使用すると、コントロールをフォームに直感的な方法で配置できます。 これら 2 つのコントロールは、それぞれに含まれる子コントロールの相対位置を制御するための自動的で構成可能な機能を提供します。また、どちらも実行時に動的なレイアウト機能を提供するため、親フォームの寸法の変更に応じて子コントロールのサイズと位置を変更できます。 レイアウト パネルは他のレイアウト パネルの入れ子にすることができるため、高度なユーザー インターフェイスを実現できます。  
   
- <xref:System.Windows.Forms.TableLayoutPanel> HTML と同様の機能を提供する、グリッドに内容を整列\<テーブル > 要素。 セルは行と列に配置され、それぞれに異なるサイズを設定できます。 詳細については、「 [Walkthrough: Arranging Controls on Windows Forms Using a TableLayoutPanel](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md)」を参照してください。  
+ <xref:System.Windows.Forms.TableLayoutPanel> HTML と同様の機能を提供する、グリッドに内容を整列\<テーブル > 要素。 セルは行と列に配置され、それぞれに異なるサイズを設定できます。 詳細については、「 [チュートリアル : TableLayoutPanel を使用した Windows フォーム上のコントロールの配置](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md)」を参照してください。  
   
  <xref:System.Windows.Forms.FlowLayoutPanel> はその内容を特定のフローの方向 (水平または垂直) に配置します。 ある行から次の行、またはある列から次の列に内容をラップすることができます。 また、ラップする代わりにクリップすることもできます。 このチュートリアルでは、以下のタスクを行います。  
   

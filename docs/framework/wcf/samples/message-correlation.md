@@ -2,11 +2,11 @@
 title: メッセージ相関
 ms.date: 03/30/2017
 ms.assetid: 3f62babd-c991-421f-bcd8-391655c82a1f
-ms.openlocfilehash: 1573cdafafb5861099b275caa888c79d23cafeb1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 7105c66153625b4a7a2b9a2d61a2ab2821cab2af
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="message-correlation"></a>メッセージ相関
 このサンプルでは、Windows Communication Foundation (WCF) サービスに、メッセージ キュー (MSMQ) アプリケーションが MSMQ メッセージを送信する方法および要求/応答シナリオでは、送信者と受信者のアプリケーション間でメッセージを相関する方法を示します。 このサンプルでは、msmqIntegrationBinding バインディングを使用します。 この場合、サービスは自己ホスト型コンソール アプリケーションで、サービスがキュー内のメッセージを受信したかどうかを監視できます。 k  
@@ -64,9 +64,9 @@ public class OrderProcessorService : IOrderProcessor
 }  
 ```
 
- サービスは、MSMQ メッセージをキューに送信するためにカスタム クライアント `OrderResponseClient` を使用します。 メッセージを受信して処理するアプリケーションが MSMQ アプリケーションであり、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションではないので、2 つのアプリケーション間で暗黙のサービス コントラクトはありません。 したがって、このシナリオでは Svcutil.exe ツールを使用してプロキシを作成することはできません。  
+ サービスは、MSMQ メッセージをキューに送信するためにカスタム クライアント `OrderResponseClient` を使用します。 受信してメッセージを処理するアプリケーションは、MSMQ アプリケーションと WCF アプリケーションではありませんは暗黙のサービス コントラクト、2 つのアプリケーション間です。 したがって、このシナリオでは Svcutil.exe ツールを使用してプロキシを作成することはできません。  
   
- カスタム プロキシは基本的に、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] バインディングを使用してメッセージを送信するすべての `msmqIntegrationBinding` アプリケーションで同じです。 他のプロキシと異なり、サービス操作の範囲は含まれません。 メッセージ送信操作のみです。  
+ カスタム プロキシは基本的に、使用するすべての WCF アプリケーションの同じ、`msmqIntegrationBinding`メッセージを送信するバインディング。 他のプロキシと異なり、サービス操作の範囲は含まれません。 メッセージ送信操作のみです。  
 
 ```csharp
 [System.ServiceModel.ServiceContractAttribute(Namespace = "http://Microsoft.ServiceModel.Samples")]  
@@ -212,7 +212,7 @@ static void PlaceOrder()
  発注の応答を受信する MSMQ キューは、構成ファイルの appSettings セクションで指定されます。次のサンプル構成を参照してください。  
   
 > [!NOTE]
->  キュー名では、ドット (.) を使用してローカル コンピューターを表し、バックスラッシュを使用してパスを区切ります。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] エンドポイント アドレスでは msmq.formatname スキームが指定され、ローカル コンピューターを表す "localhost" が使用されます。 URI の msmq.formatname の後には、MSMQ ガイドラインに沿って正しく書式設定された形式名が続きます。  
+>  キュー名では、ドット (.) を使用してローカル コンピューターを表し、バックスラッシュを使用してパスを区切ります。 WCF エンドポイントのアドレスは msmq.formatname スキームを指定し、ローカル コンピューターを"localhost"を使用します。 URI の msmq.formatname の後には、MSMQ ガイドラインに沿って正しく書式設定された形式名が続きます。  
   
 ```xml  
 <appSettings>  

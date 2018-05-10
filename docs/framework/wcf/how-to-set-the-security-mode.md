@@ -11,18 +11,18 @@ helpviewer_keywords:
 ms.assetid: 6e01dd9f-b5dd-4474-b24c-06e124de4ff7
 author: BrucePerlerMS
 manager: mbaldwin
-ms.openlocfilehash: ddcf6983a7308bc1a615b11e86f17da1302d5085
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: e8c08fba0e4a74eafab00e75977a9f756c1b1cfa
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="how-to-set-the-security-mode"></a>方法 : セキュリティ モードを設定する
 Windows Communication Foundation (WCF) のセキュリティがほとんどの定義済みバインド上にある 3 つの一般的なセキュリティ モード トランスポート、メッセージ、および"メッセージ資格情報付きトランスポート。"。 これ以外に、2 つのバインディングに固有の 2 つのモードがあります。<xref:System.ServiceModel.BasicHttpBinding> の "トランスポート資格情報専用" モードと、<xref:System.ServiceModel.NetMsmqBinding> の "両方" モードです。 ここでは、3 つの共通のセキュリティモードである <xref:System.ServiceModel.SecurityMode.Transport>、<xref:System.ServiceModel.SecurityMode.Message>、および <xref:System.ServiceModel.SecurityMode.TransportWithMessageCredential> に重点を置いて説明します。  
   
  ただし、これらのモードがすべての定義済みバインディングでサポートされるわけではありません。 ここでは、<xref:System.ServiceModel.WSHttpBinding> クラスと <xref:System.ServiceModel.NetTcpBinding> クラスでモードを設定し、プログラムと構成の両方を使用してモードを設定する方法を示します。  
   
- 詳細については、次を参照してください。[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]セキュリティ、を参照してください[セキュリティの概要](../../../docs/framework/wcf/feature-details/security-overview.md)、 [Services のセキュリティ保護](../../../docs/framework/wcf/securing-services.md)、および[Services のセキュリティ保護とクライアント](../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)です。 トランスポート モードおよびメッセージの詳細については、次を参照してください。[トランスポート セキュリティ](../../../docs/framework/wcf/feature-details/transport-security.md)と[メッセージ セキュリティ](../../../docs/framework/wcf/feature-details/message-security-in-wcf.md)です。  
+ 詳細についてを参照してください、WCF のセキュリティを参照してください。[セキュリティの概要](../../../docs/framework/wcf/feature-details/security-overview.md)、 [Services のセキュリティ保護](../../../docs/framework/wcf/securing-services.md)、および[セキュリティで保護するサービスとクライアント](../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)です。 トランスポート モードおよびメッセージの詳細については、次を参照してください。[トランスポート セキュリティ](../../../docs/framework/wcf/feature-details/transport-security.md)と[メッセージ セキュリティ](../../../docs/framework/wcf/feature-details/message-security-in-wcf.md)です。  
   
 ### <a name="to-set-the-security-mode-in-code"></a>コードでセキュリティ モードを設定するには  
   

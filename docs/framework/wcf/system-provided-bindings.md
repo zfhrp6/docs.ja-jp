@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - bindings [WCF], system-provided
 ms.assetid: 2c243746-45ce-4588-995e-c17126a579a6
-ms.openlocfilehash: 12382b0886970bc48345107008ee449d9653ec4f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 97a8e9fd8f0e2c906f14556fcdccd7ef0d3c8033
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="system-provided-bindings"></a>システム標準のバインディング
 バインディングにより、エンドポイントとの通信で使用する通信メカニズムが指定され、エンドポイントへの接続方法が示されます。 バインディングには次の要素が含まれます。  
@@ -30,7 +30,7 @@ ms.lasthandoff: 05/04/2018
 >  他の方法によってデータをセキュリティ保護している場合を除き、セキュリティをサポートしないバインディングやセキュリティが無効になっているバインディングでは、双方向コントラクトを使用しないでください。  
   
 ## <a name="system-provided-bindings"></a>システム標準のバインディング  
- 次のバインディングは [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] に付属します。  
+ 次のバインディングは、WCF に付属します。  
   
 |バインド|構成要素|説明|  
 |-------------|---------------------------|-----------------|  
@@ -40,14 +40,14 @@ ms.lasthandoff: 05/04/2018
 |<xref:System.ServiceModel.WSFederationHttpBinding>|[\<wsFederationHttpBinding>](../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md)|フェデレーションに属す組織のユーザーを効率的に認証および承認できる WS-Federation プロトコルをサポートする、セキュリティで保護された相互操作可能なバインディング。|  
 |<xref:System.ServiceModel.NetHttpBinding>|\<netHttpBinding>|HTTP や WebSocket のサービスを使用するように設計され、既定ではバイナリ エンコードを使用するバインディング。|  
 |<xref:System.ServiceModel.NetHttpsBinding>|\<netHttpsBinding >|HTTP や WebSocket のサービスを使用するように設計され、既定ではバイナリ エンコードを使用するセキュリティで保護されたバインディング。|  
-|<xref:System.ServiceModel.NetTcpBinding>|[\<netTcpBinding>](../../../docs/framework/configure-apps/file-schema/wcf/nettcpbinding.md)|[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] アプリケーション間での複数コンピューターの通信に適した、セキュリティで保護された最適バインディング。|  
-|<xref:System.ServiceModel.NetNamedPipeBinding>|[\<netNamedPipeBinding >](../../../docs/framework/configure-apps/file-schema/wcf/netnamedpipebinding.md)|[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] アプリケーション間でのコンピューター通信に適した、セキュリティで保護された信頼できる最適バインディング。|  
-|<xref:System.ServiceModel.NetMsmqBinding>|[\<netMsmqBinding >](../../../docs/framework/configure-apps/file-schema/wcf/netmsmqbinding.md)|[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] アプリケーション間での複数コンピューターの通信に適した、キューに置かれたバインディング。|  
+|<xref:System.ServiceModel.NetTcpBinding>|[\<netTcpBinding>](../../../docs/framework/configure-apps/file-schema/wcf/nettcpbinding.md)|セキュリティで保護された最適バインディング WCF アプリケーション間でのコンピューター間通信に適しています。|  
+|<xref:System.ServiceModel.NetNamedPipeBinding>|[\<netNamedPipeBinding >](../../../docs/framework/configure-apps/file-schema/wcf/netnamedpipebinding.md)|WCF アプリケーション間のコンピューター上の通信に適した、セキュリティで保護された信頼できる最適化されたバインディング。|  
+|<xref:System.ServiceModel.NetMsmqBinding>|[\<netMsmqBinding >](../../../docs/framework/configure-apps/file-schema/wcf/netmsmqbinding.md)|WCF アプリケーション間のコンピューター間通信に適した、キューに置かれたバインドです。|  
 |<xref:System.ServiceModel.NetPeerTcpBinding>|[\<netPeerTcpBinding >](../../../docs/framework/configure-apps/file-schema/wcf/netpeertcpbinding.md)|セキュリティで保護された、複数のコンピューター通信を可能にするバインディング。|  
-|<xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding>|[\<msmqIntegrationBinding>](../../../docs/framework/configure-apps/file-schema/wcf/msmqintegrationbinding.md)|[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] アプリケーションとメッセージ キュー (MSMQ: Message Queuing) アプリケーション間のコンピューター間通信に適したバインディング。|  
+|<xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding>|[\<msmqIntegrationBinding>](../../../docs/framework/configure-apps/file-schema/wcf/msmqintegrationbinding.md)|WCF アプリケーションと既存のメッセージ キュー アプリケーション間のコンピューター間通信に適したバインディング。|  
 |<xref:System.ServiceModel.BasicHttpContextBinding>|[\<basicHttpContextBinding >](../../../docs/framework/configure-apps/file-schema/wcf/basichttpcontextbinding.md)|WS-Basic Profile に適合する Web サービスとの通信に適したバインディング。このバインディングでは、HTTP クッキーを使用してコンテキストを交換できるようになります。|  
-|<xref:System.ServiceModel.NetTcpContextBinding>|[\<netTcpContextBinding >](../../../docs/framework/configure-apps/file-schema/wcf/nettcpcontextbinding.md)|[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] アプリケーション間での複数コンピューターの通信に適した、セキュリティで保護された最適バインディング。このバインディングでは、SOAP ヘッダーを使用してコンテキストを交換できるようになります。|  
-|<xref:System.ServiceModel.WebHttpBinding>|[\<webHttpBinding>](../../../docs/framework/configure-apps/file-schema/wcf/webhttpbinding.md)|SOAP メッセージではなく、HTTP 要求を介して公開される [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] Web サービスのエンドポイントを構成するために使用されるバインディング。|  
+|<xref:System.ServiceModel.NetTcpContextBinding>|[\<netTcpContextBinding >](../../../docs/framework/configure-apps/file-schema/wcf/nettcpcontextbinding.md)|SOAP ヘッダーを使用してコンテキストを交換する、セキュリティで保護された最適バインディング WCF アプリケーション間でのコンピューター間通信に適したを有効にします。|  
+|<xref:System.ServiceModel.WebHttpBinding>|[\<webHttpBinding>](../../../docs/framework/configure-apps/file-schema/wcf/webhttpbinding.md)|SOAP メッセージに代わって HTTP 要求を介して公開される WCF Web サービスのエンドポイントを構成するために使用するバインディング。|  
 |<xref:System.ServiceModel.WSHttpContextBinding>|[\<wsHttpContextBinding >](../../../docs/framework/configure-apps/file-schema/wcf/wshttpcontextbinding.md)|セキュリティで保護されたと |<xref:System.ServiceModel.UdpBinding>|\<udpBinding>|単純なメッセージを複数のクライアントに同時に送信するために使用されるバインディング。|  
   
  各システム指定のバインディングの機能を次の表に示します。 各バインディングをこの表の列に示します。機能とその説明は 2 番目の表の行に示します。 次の表に、使用されるバインディングの省略形のキーを示します。 バインディングを選択するには、必要な行の機能がすべて含まれる列を調べます。  

@@ -2,22 +2,22 @@
 title: SAML トークン プロバイダー
 ms.date: 03/30/2017
 ms.assetid: eb16e5e2-4c8d-4f61-a479-9c965fcec80c
-ms.openlocfilehash: 56c432b0874f59fed87c0d892732422161d668ed
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 519bde6b2849328efdeb2f295bde4749fbb652ca
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="saml-token-provider"></a>SAML トークン プロバイダー
-このサンプルでは、カスタム クライアントの SAML トークン プロバイダーを実装する方法を示します。 資格情報をセキュリティ インフラストラクチャに提供するトークン プロバイダーでは、Windows Communication Foundation (WCF) が使用されます。 一般的に、トークン プロバイダーは、ターゲットをチェックし、適切な証明書を発行して、セキュリティ インフラストラクチャがメッセージのセキュリティを保護できるようにします。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、既定の Credential Manager Token Provider が付属しています。 また、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、[!INCLUDE[infocard](../../../../includes/infocard-md.md)] トークン プロバイダーも付属しています。 カスタム トークン プロバイダーは、次の場合に便利です。  
+このサンプルでは、カスタム クライアントの SAML トークン プロバイダーを実装する方法を示します。 資格情報をセキュリティ インフラストラクチャに提供するトークン プロバイダーでは、Windows Communication Foundation (WCF) が使用されます。 一般的に、トークン プロバイダーは、ターゲットをチェックし、適切な証明書を発行して、セキュリティ インフラストラクチャがメッセージのセキュリティを保護できるようにします。 WCF は、既定の Credential Manager Token Provider に付属します。 WCF も付属しています、[!INCLUDE[infocard](../../../../includes/infocard-md.md)]トークン プロバイダー。 カスタム トークン プロバイダーは、次の場合に便利です。  
   
 -   トークン プロバイダーが連携動作できない資格情報ストアがある場合。  
   
--   資格情報をユーザーが詳細を提供した時点から [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント フレームワークが資格情報を使用した時点に変換するための、独自のカスタム メカニズムを提供する場合。  
+-   ユーザーが WCF クライアント フレームワークが資格情報を使用する場合に詳細を提供するときに、ポイントからの資格情報を変換するための独自のカスタム メカニズムを提供する場合は。  
   
 -   カスタム トークンを構築している場合。  
   
- このサンプルでは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント フレームワーク以外から取得した SAML トークンを使用できるようにする、カスタム トークン プロバイダーを構築する方法を示します。  
+ このサンプルでは、SAML トークンが使用する WCF クライアント フレームワークの外部から取得したことを許可するカスタム トークン プロバイダーを構築する方法を示します。  
   
  このサンプルに示されている手順の概要は次のとおりです。  
   
@@ -25,7 +25,7 @@ ms.lasthandoff: 05/04/2018
   
 -   SAML トークンをカスタム クライアント資格情報に渡す手順。  
   
--   SAML トークンを [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント フレームワークに提供する手順。  
+-   どのように、SAML トークンは、WCF クライアント フレームワークに提供されています。  
   
 -   サーバーがクライアントによってサーバーの X.509 証明書を使用して認証される手順。  
   
@@ -110,7 +110,7 @@ ms.lasthandoff: 05/04/2018
 </system.serviceModel>  
 ```  
   
- カスタムの SAML トークン プロバイダーを開発して [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のセキュリティ フレームワークに統合する方法を、次の手順に示します。  
+ 次の手順は、カスタムの SAML トークン プロバイダーを開発して、WCF と統合する方法を示します: セキュリティ フレームワーク。  
   
 1.  カスタムの SAML トークン プロバイダーを作成します。  
   
