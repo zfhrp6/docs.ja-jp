@@ -3,12 +3,12 @@ title: リレーショナル データベースを azure に移行します。
 description: Azure のクラウドと Windows コンテナーの既存の .NET アプリケーションを最新化 |リレーショナル データベースを azure に移行します。
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 10/26/2017
-ms.openlocfilehash: efc558115d184ed53a963eab2acdd847a12dbb3c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.date: 04/28/2018
+ms.openlocfilehash: fe1bf5820c2306beb380749b34d5a56964e016e4
+ms.sourcegitcommit: 88f251b08bf0718ce119f3d7302f514b74895038
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="migrate-your-relational-databases-to-azure"></a>リレーショナル データベースを azure に移行します。
 
@@ -26,7 +26,7 @@ Azure では、(純粋なリフト アンド シフト) の IaaS Vm に直接、
 
 Azure SQL データベースのマネージ インスタンスは、SQL Server インスタンス レベルの機能の追加要件または標準の Azure SQL データベース (1 つのデータベース モデル) で提供される機能以外の分離の要件がある場合に最適なオプションです。 この最後の 1 つは、最も PaaS 指向の選択は、従来の SQL server のと同じ機能を提供していません。 移行では、frictions を表面化可能性があります。
 
-たとえば、インスタンス レベルの SQL Server 機能の詳細な投資を行ってきましたする組織は恩恵をマネージ インスタンスの SQL への移行します。 例としてインスタンス レベルの SQL Server 機能の SQL 共通言語ランタイム (CLR) 統合、SQL Server エージェントやデータベースにまたがるクエリを実行します。 これらの機能のサポートは、標準の Azure SQL データベース (単一データベース モデル) でご利用いただけません。
+たとえば、インスタンス レベルの SQL Server 機能の詳細な投資を行ってきましたする組織は恩恵をマネージ インスタンスの SQL への移行します。 例としてインスタンス レベルの SQL Server 機能の SQL 共通言語ランタイム (CLR) 統合、SQL Server エージェントやデータベースにまたがるクエリを実行します。 これらの機能のサポートでは、標準の Azure SQL データベース (単一データベース モデル) で使用できません。
 
 厳しくの業界で動作して、セキュリティのための分離を維持する必要がある組織もメリットがあるマネージ インスタンスの SQL モデルを選択します。
 
@@ -56,9 +56,9 @@ Azure SQL データベースでのマネージ インスタンスには、次の
 
 前述のように、標準の Azure SQL Database は、完全に管理されたリレーショナル DBaaS がします。 現在、SQL データベースは、世界中の 38 データ センター間で何百万もの実稼働データベースを管理します。 これは、さまざまなアプリケーションや世界規模での高度なデータ処理を必要とするデータが集中する、ミッション クリティカルなアプリケーションにするために、簡単なトランザクション データの管理からのワークロードをサポートします。
 
-その完全 PaaS 機能によるものであり、効率的料金の最終的なコストの削減と -に移行する標準の Azure SQL Database、「既定の選択肢」としてそのは basic、standard SQL データベース、および追加のインスタンスの機能がないアプリケーションがある場合。 SQL CLR 統合、SQL Server エージェント、およびデータベースにまたがるクエリを実行するように SQL Server の機能は標準の Azure SQL データベースではサポートされていません。 これらの機能が、Azure SQL データベースのマネージ インスタンス モデルでのみ使用できます。
+その完全 PaaS 機能のための価格よりの最終的なコストの削減と -に移行する標準の Azure SQL Database、「既定の選択肢」としてそのは basic、standard SQL データベース、および追加のインスタンスの機能がないアプリケーションがある場合。 SQL CLR 統合、SQL Server エージェント、およびデータベースにまたがるクエリを実行するように SQL Server の機能は標準の Azure SQL データベースではサポートされていません。 これらの機能が、Azure SQL データベースのマネージ インスタンス モデルでのみ使用できます。
 
-Azure SQL データベースは、アプリの開発者に組み込まれているのみインテリジェント クラウド データベース サービスです。 場で、マルチ テナント アプリケーションを効率的に配信するため、ダウンタイムなしのスケールを設定するだけのクラウド データベース サービスです。 最終的には、Azure SQL データベース状態のままに導入するより多くの時間とに要する時間、高速化します。 セキュリティで保護されたアプリケーションをビルドし、言語と使用するプラットフォームを使用して、SQL データベースに接続できます。
+Azure SQL データベースは、アプリの開発者に組み込まれているのみインテリジェント クラウド データベース サービスです。 場で、マルチ テナント アプリケーションを効率的に配信するため、ダウンタイムなしのスケールを設定するだけのクラウド データベース サービスです。 最終的には、Azure SQL データベース状態のままに導入するより多くの時間とに要する時間、高速化します。 セキュリティで保護されたアプリをビルドし、言語と使用するプラットフォームを使用して、SQL データベースに接続できます。
 
 Azure SQL Database には次の利点があります。
 
@@ -76,13 +76,13 @@ Azure SQL Database には次の利点があります。
 
 - ハイブリッドおよび移行を含む、SQL Server 2016 との互換性
 
-標準の Azure SQL データベースでは、Azure SQL データベースのマネージ インスタンスよりは、PaaS に近づきます。 マネージ クラウドから複数のメリットになるため、使用可能な場合に試してください。 しかし、Azure SQL データベースは正規の主な相違点あり、内部設置型 SQL Server インスタンス。 、、、既存のアプリケーションのデータベースの要件、および企業の要件とポリシーに応じて、できない可能性があります最善の選択、クラウドへの移行を計画するときにします。
+標準の Azure SQL データベースでは、Azure SQL データベースのマネージ インスタンスよりは、PaaS に近づきます。 管理対象のクラウドから多くのメリットになるために、標準の Azure SQL データベースを選びます。 しかし、Azure SQL データベースは正規の主な相違点あり、内部設置型 SQL Server インスタンス。 、、、既存のアプリケーションのデータベースの要件、および企業の要件とポリシーに応じて、できない可能性があります最善の選択、クラウドへの移行を計画するときにします。
 
 ## <a name="when-to-move-your-original-rdbms-to-a-vm-iaas"></a>場合に、元の RDBMS を VM (IaaS) に移動するには
 
 移行オプションの 1 つは、元のリレーショナル データベース管理システム (RDBMS)、Oracle、IBM DB2、MySQL、PostgreSQL、または SQL Server を含む Azure VM で実行されているようなサーバーを移動します。 最小限の変更、またはまったく変更せずにクラウドへの移行を最も高速をまったく必要とする既存のアプリケーションがある場合は、IaaS クラウドへの移行を直接が正当なオプションにあります。 クラウドのすべての利点を活用する最善の方法ができない可能性がありますが、最も高速な初期パスである可能性があります。
 
-現在、Microsoft Azure サポートされている最大[331 の別のデータベース サーバー](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/category/databases?page=1&subcategories=databases-all) IaaS Vm としてデプロイします。 SQL Server、Oracle、MySQL、PostgreSQL、および IBM DB2 の場合のような一般的な Rdbms および Cloudera したり MariaDB、DataStax、MongoDB、Cassandra などその他の多くの NoSQL データベースが含まれます。
+現在、Microsoft Azure サポートされている最大[331 の別のデータベース サーバー](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/category/databases?page=1&subcategories=databases-all) IaaS Vm としてデプロイします。 これらには、SQL Server、Oracle、MySQL、PostgreSQL、および IBM DB2 の場合のような一般的な RDBMS および Cloudera したり MariaDB、DataStax、MongoDB、Cassandra などその他の多くの NoSQL データベースが含まれます。
 
 > [!NOTE]
 > 移動するは、Azure VM に、RDBMS 可能性があります (であるため IaaS) クラウドにデータを移行する最も簡単な方法は、この方法には、IT チーム (データベース管理者および IT 担当者向け) で多大な投資が必要があります。 企業内のチームを設定して高可用性、災害復旧、および SQL Server の修正プログラムの適用を管理できるようにする必要があります。 このコンテキストでは、カスタマイズされた環境に、完全な管理者権限も必要です。
@@ -127,4 +127,4 @@ Azure データベースの移行サービスを使用してデータベース�
 
 >[!div class="step-by-step"]
 [前へ](lift-and-shift-existing-apps-azure-iaas.md)
-[次へ](lift-and-shift-existing-apps-devops/index.md)
+[次へ](modernize-existing-apps-to-cloud-optimized/index.md)

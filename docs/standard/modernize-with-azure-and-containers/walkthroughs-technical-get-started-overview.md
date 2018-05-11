@@ -3,12 +3,12 @@ title: チュートリアルと技術は、開始の概要を取得します。
 description: Azure のクラウドと Windows コンテナーの既存の .NET アプリケーションを最新化 |チュートリアルと技術は、開始の概要を取得します。
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 10/26/2017
-ms.openlocfilehash: b41fe9e8b492b1348cc5615f6254d5fd3ddebf25
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.date: 04/28/2018
+ms.openlocfilehash: 27de9d1c5475855a22f2d8a3518982605277f6d9
+ms.sourcegitcommit: 88f251b08bf0718ce119f3d7302f514b74895038
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="walkthroughs-and-technical-get-started-overview"></a>チュートリアルと技術は、開始の概要を取得します。
 
@@ -22,9 +22,11 @@ ms.lasthandoff: 05/04/2018
 
 次のチュートリアルの各アプリケーションを使用して、新しいサンプル eShopLegacy と eShopModernizing で GitHub で利用可能である[ https://github.com/dotnet-architecture/eShopModernizing](https://github.com/dotnet-architecture/eShopModernizing)です。
 
-- **EShop レガシ アプリケーションのツアー**
+- **EShop レガシ アプリ (基準の最新化) のツアー**
 
-- **Windows コンテナーで、既存の .NET アプリケーションを containerize します。**
+- **Windows コンテナーで (WebForms & MVC) 既存の ASP.NET web アプリを containerize します。**
+
+- **Windows コンテナーで既存の WCF サービス (N 層アプリケーション) を containerize します。**
 
 - **Azure Vm を Windows コンテナー ベースのアプリを展開します。**
 
@@ -32,59 +34,61 @@ ms.lasthandoff: 05/04/2018
 
 - **Azure Service Fabric に Windows コンテナー ベースのアプリを展開します。**
 
+
 ## <a name="walkthrough-1-tour-of-eshop-legacy-apps"></a>EShop レガシ アプリケーションのチュートリアル 1: ツアー
 
 ### <a name="technical-walkthrough-availability"></a>技術的なチュートリアルの可用性
 
 技術的なチュートリアルは、eShopModernizing GitHub リポジトリの wiki で入手できます。
 
-[https://github.com/dotnet-architecture/eShopModernizing/wiki/01.-Tour-on-eShopModernizing-apps-implementation-code](https://github.com/dotnet-architecture/eShopModernizing/wiki/01.-Tour-on-eShopModernizing-apps-implementation-code)
+[eShopModernizing wiki チュートリアル](https://github.com/dotnet-architecture/eShopModernizing/wiki)
+
 
 ### <a name="overview"></a>概要
 
-このチュートリアルでは、次の 2 つのサンプルのレガシ アプリケーションの最初の実装を調べることができます。 両方のサンプル アプリは、モノリシックのアーキテクチャを持ち、従来の ASP.NET を使用して作成されました。 1 つのアプリケーションが ASP.NET に基づく 4.x MVC です。2 番目のアプリケーションは、ASP.NET 4.x Web フォームに基づいています。 両方のアプリケーションが、 [GitHub リポジトリの eShopModernizing](https://github.com/dotnet-architecture/eShopModernizing)です。
+このチュートリアルでは、次の 3 つのサンプルのレガシ アプリケーションの最初の実装を調べることができます。 最初の 2 つのサンプル web アプリケーションは、単体のアーキテクチャを持ち、従来の ASP.NET を使用して作成されました。 1 つのアプリケーションが ASP.NET に基づく 4.x MVC です。2 番目のアプリケーションは、ASP.NET 4.x Web フォームに基づいています。 3 番目のアプリはクライアント WinForms アプリケーションとサーバー側で構成される 3 層アプリ[Windows Communication Foundation (WCF)](../../framework/wcf/whats-wcf.md)サービス。
 
-両方のサンプル アプリを containerize すると同様の方法を containerize するクラシック[Windows Communication Foundation](../../framework/wcf/whats-wcf.md)をデスクトップ アプリケーションとして使用する (WCF) アプリケーションです。 例については、次を参照してください。 [eShopModernizingWCFWinForms](https://github.com/dotnet-architecture/eShopModernizingWCFWinForms)です。
+これらすべてのアプリケーションは、 [GitHub リポジトリの eShopModernizing](https://github.com/dotnet-architecture/eShopModernizing)です。
 
 ### <a name="goals"></a>目的
 
 このチュートリアルの主な目的は、これらのアプリとそのコードおよび構成について理解するだけです。 テスト目的で SQL データベースを使用せず、モック データを使用して、生成されるように、アプリを構成することができます。 このオプションの構成は、分離された方法で依存関係の挿入に基づいています。
 
-### <a name="scenario"></a>シナリオ
+### <a name="scenario-1-aspnet-web-apps"></a>シナリオ 1: ASP.NET Web アプリ
 
-図 5-1 は、元のレガシ アプリケーションの簡単なシナリオを示しています。
+次の図は、元のレガシ ASP.NET web アプリケーションの簡単なシナリオを示します。
 
-> ![元のレガシ アプリケーションのシナリオを単純なアーキテクチャ](./media/image5-1.png)
+> ![元のレガシ ASP.NET web アプリケーションのシナリオを単純なアーキテクチャ](./media/image5-1.png)
 >
-> **図 5-1** 元のレガシ アプリケーションのシナリオを単純なアーキテクチャ
 
-ビジネス ドメインの観点から両方のアプリは管理機能に同じカタログを提供します。 EShop エンタープライズ チームのメンバーは表示および製品カタログを編集するアプリを使用します。 図 5-2 は、最初のアプリのスクリーン ショットを示しています。
+ビジネス ドメインの観点から両方のアプリは管理機能に同じカタログを提供します。 EShop エンタープライズ チームのメンバーは表示および製品カタログを編集するアプリを使用します。 
+
+次の図は、最初のアプリのスクリーン ショットを示します。
 
 ![ASP.NET MVC と ASP.NET Web フォーム アプリケーション (既存の/レガシ テクノロジ)](./media/image5-2.png)
 
-> **図 5-2** ASP.NET MVC と ASP.NET Web フォーム アプリケーション (既存の/レガシ テクノロジ)
+依存関係 ASP.NET 4.x か (いずれかの MVC または Web フォームの) 以前のバージョンは、コードが ASP.NET Core MVC を使用して、完全に記述し直すされない限り、これらのアプリケーションを .NET Core で実行されないことです。 
 
-これらは、参照およびカタログのエントリを変更するために使用する web アプリケーションです。 両方のアプリが同じビジネス/機能の機能を提供するファクトは単に比較のためです。 ASP.NET MVC と ASP.NET Web フォームのフレームワークを使用して作成されたアプリのような近代化プロセスを表示できます。
+### <a name="scenario-2-wcf-service-and-winforms-client-app-3-tier-app"></a>シナリオ 2: WCF サービスと WinForms クライアント アプリ (アプリが 3 層)
 
-依存関係 ASP.NET 4.x か (いずれかの MVC または Web フォームの) 以前のバージョンは、コードが ASP.NET Core MVC を使用して、完全に記述し直すされない限り、これらのアプリケーションを .NET Core で実行されないことです。 これは、ポイントを再構築、またはコードを書き換えるにしない場合することができます、既存のアプリケーションを containerize もを使用して同じ .NET テクノロジと、同じコードを示しています。 コンテナーでは、レガシ コードを変更することがなくこのようなアプリケーションを実行する方法を確認できます。
+次の図は、元の 3 層のレガシ アプリケーションの簡単なシナリオを示します。
+
+> ![WCF サービスと元レガシ 3 層アプリケーションおよび WinForms クライアント アプリのシナリオを単純なアーキテクチャ](./media/image5-1.5.png)
+>
 
 ### <a name="benefits"></a>利点
 
-このチュートリアルのメリットは、単純な: だけに慣れれば、コードとアプリケーションの構成、依存関係の挿入に基づいています。 その後、containerize および今後の複数の環境に展開するときに、この方法で試すことができます。
+このチュートリアルのメリットは、単純な: コードと最初のアプリに精通して表示します。
 
 ### <a name="next-steps"></a>次の手順
 
 GitHub wiki 上には、このコンテンツをさらに詳しい情報を表示します。
 
-[https://github.com/dotnet-architecture/eShopModernizing/wiki/01.-Tour-on-eShopModernizing-apps-implementation-code](https://github.com/dotnet-architecture/eShopModernizing/wiki/01.-Tour-on-eShopModernizing-apps-implementation-code)
+  - [ASP.NET MVC のベースラインをツアーと Web フォーム「レガシ」アプリ](https://github.com/dotnet-architecture/eShopModernizing/wiki/01.-Tour-on-the-ASP.NET-MVC-and-WebForms-apps-implementation-code)
+  - [WCF サービスの基準と WinForms (3 層)「レガシ」アプリのツアー](https://github.com/dotnet-architecture/eShopModernizing/wiki/21.-Tour-on-the-WCF-service-and-WinForms-apps)
+
 
 ## <a name="walkthrough-2-containerize-your-existing-net-applications-with-windows-containers"></a>チュートリアル 2: Windows コンテナーで、既存の .NET アプリケーションを Containerize します。
-
-### <a name="technical-walkthrough-availability"></a>技術的なチュートリアルの可用性
-
-技術的なチュートリアルは、eShopModernizing GitHub リポジトリの wiki で入手できます。
-
-[https://github.com/dotnet-architecture/eShopModernizing/wiki/02.-How-to-containerize-the-.NET-Framework-web-apps-with-Windows-Containers-and-Docker](https://github.com/dotnet-architecture/eShopModernizing/wiki/02.-How-to-containerize-the-.NET-Framework-web-apps-with-Windows-Containers-and-Docker)
 
 ### <a name="overview"></a>概要
 
@@ -102,13 +106,20 @@ Windows コンテナーの MVC、Web フォーム、または WCF、運用、開
 
 このチュートリアルは、Docker 方法は、Visual Studio 2017 ツールに焦点を当てていますが、他の 2 つのアプローチが Dockerfile を使用してに関して類似しています。
 
-### <a name="scenario"></a>シナリオ
+### <a name="scenario-1-containerized-aspnet-web-apps"></a>シナリオ 1: コンテナーの ASP.NET web アプリ
 
-図 5-3 は、コンテナー化 eShop レガシ アプリケーションのシナリオを示しています。
+次の図は、コンテナー化 eShop レガシ web アプリのアプリケーションのシナリオを示します。
 
-> ![開発環境でのコンテナー化アプリケーションの簡略化されたアーキテクチャ図](./media/image5-3.png)
+> ![開発環境での ASP.NET アプリケーションのコンテナーの簡略化されたアーキテクチャ図](./media/image5-3.png)
 >
-> **図 5-3** 開発環境でのコンテナー化アプリケーションの簡略化されたアーキテクチャ図
+
+
+### <a name="scenario-2-containerized-wcf-service"></a>シナリオ 2: コンテナーの WCF サービス
+
+次の図は、コンテナー化の WCF サービスと 3 層アプリケーションのシナリオを示します。 
+
+> ![開発環境でのコンテナー化の WCF サービスのアーキテクチャ図を簡素化されます。](./media/image5-3.5.png)
+>
 
 ### <a name="benefits"></a>利点
 
@@ -122,15 +133,18 @@ Windows コンテナーの MVC、Web フォーム、または WCF、運用、開
 
 ### <a name="next-steps"></a>次の手順
 
-GitHub wiki 上には、このコンテンツをさらに詳しい情報を表示します。 [https://github.com/dotnet-architecture/eShopModernizing/wiki/02.-How-to-containerize-the-.NET-Framework-web-apps-with-Windows-Containers-and-Docker](https://github.com/dotnet-architecture/eShopModernizing/wiki/02.-How-to-containerize-the-.NET-Framework-web-apps-with-Windows-Containers-and-Docker)
+GitHub wiki 上には、このコンテンツをさらに詳しい情報を表示します。
+
+  - [Windows コンテナーと Docker で .NET Framework の web アプリを containerize する方法](https://github.com/dotnet-architecture/eShopModernizing/wiki/02.-How-to-containerize-the-.NET-Framework-web-apps-with-Windows-Containers-and-Docker)
+  - [WCF サービスに Docker のサポートを追加します。](https://github.com/dotnet-architecture/eShopModernizing/wiki/22.-Adding-Docker-Support)
+
+
 
 ## <a name="walkthrough-3-deploy-your-windows-containers-based-app-to-azure-vms"></a>チュートリアル 3: Azure Vm を Windows コンテナー ベースのアプリを展開します。
 
 ### <a name="technical-walkthrough-availability"></a>技術的なチュートリアルの可用性
 
-技術的なチュートリアルは、eShopModernizing GitHub リポジトリの wiki で入手できます。
-
-[https://github.com/dotnet-architecture/eShopModernizing/wiki/03.-How-to-deploy-your-Windows-Containers-based-app-into-Azure-VMs-(Including-CI-CD)](https://github.com/dotnet-architecture/eShopModernizing/wiki/03.-How-to-deploy-your-Windows-Containers-based-app-into-Azure-VMs-(Including-CI-CD))
+技術的なチュートリアルは、eShopModernizing GitHub リポジトリの wiki で入手できます。 [https://github.com/dotnet-architecture/eShopModernizing/wiki/03.-How-to-deploy-your-Windows-Containers-based-app-into-Azure-VMs-(Including-CI-CD)](https://github.com/dotnet-architecture/eShopModernizing/wiki/03.-How-to-deploy-your-Windows-Containers-based-app-into-Azure-VMs-(Including-CI-CD))
 
 ### <a name="overview"></a>概要
 
@@ -178,7 +192,46 @@ GitHub wiki 上には、このコンテンツをさらに詳しい情報を表�
 
 [https://github.com/dotnet-architecture/eShopModernizing/wiki/03.-How-to-deploy-your-Windows-Containers-based-app-into-Azure-VMs-(Including-CI-CD)](https://github.com/dotnet-architecture/eShopModernizing/wiki/03.-How-to-deploy-your-Windows-Containers-based-app-into-Azure-VMs-(Including-CI-CD))
 
-## <a name="walkthrough-4-deploy-your-windows-containers-based-apps-to-kubernetes-in-azure-container-service"></a>チュートリアル 4: Azure のコンテナー サービスで Kubernetes に Windows コンテナー ベースのアプリを展開します。
+## <a name="walkthrough-4-deploy-your-windows-containers-based-apps-to-azure-container-instances-aci"></a>チュートリアル 4: Azure のコンテナー インスタンス (ACI) に Windows コンテナー ベースのアプリを展開します。
+
+### <a name="technical-walkthrough-availability"></a>技術的なチュートリアルの可用性
+
+技術的なチュートリアルは、eShopModernizing GitHub リポジトリの wiki で入手できます。
+
+[ACI (Azure のコンテナー インスタンス) に、アプリを展開します。](https://github.com/dotnet-architecture/eShopModernizing/wiki/05.-Deploying-the-Apps-to-ACI-(Azure-Container-Instances))
+
+### <a name="overview"></a>概要
+
+[Azure コンテナー インスタンス (ACI)](https://docs.microsoft.com/en-us/azure/container-instances/)コンテナーの単一のインスタンスを展開するコンテナー開発/テスト/ステージング環境がある最も簡単な方法です。
+
+### <a name="goals"></a>目的
+
+このチュートリアルは、主なシナリオ Azure コンテナー インスタンス (ACI) と ACI に eShopModernizing アプリを展開する方法に Windows コンテナーを展開するときにします。
+
+### <a name="scenarios"></a>シナリオ
+
+1 つまたはすべて (MVC アプリ、web フォーム アプリケーションまたは WCF サービス) のアプリの展開など ACI に eShopModernizing アプリの展開のバリエーションがあります。 次に示す次のシナリオでことができます、コンテナーとして ACI (Azure のコンテナー インスタンス) に ASP.NET MVC アプリケーションと、これらの両方に展開されている SQL Server のコンテナーを参照します。
+
+![開発環境から ACI を展開します。](./media/image5-3.5.6.png)
+
+### <a name="benefits"></a>利点
+
+Azure のコンテナー インスタンスでは、簡単に作成し、仮想マシンをプロビジョニングまたは高レベルのサービスを採用することがなく、Azure では、Docker コンテナーを管理します。 ACI で直接 Azure での Windows コンテナーを展開してへの公開インターネット完全修飾ドメイン名 (FQDN) を数秒で (Docker Hub または Azure コンテナーのように Docker レジストリで準備ができて、Windows コンテナー イメージがある場合にレジストリ)。
+
+### <a name="considerations"></a>注意事項
+
+いずれか完全な .NET Framework による Windows コンテナーを展開する/ASP.NET または SQL Server には、Azure コンテナー インスタンス (ACI) が Docker イメージに存在するために (Windows コンテナーでの Windows Server 2016) のような通常の Docker ホストに展開すると非常に高速ではありませんたびに (プル Docker レジストリから) ダウンロードし、SQL コンテナー イメージ (15.1 GB) と ASP.NET のコンテナーのイメージ (13.9 GB) のサイズは大幅に大きなただし、これは、独自の docker ホスト (永続的にオンラインを維持することよりはるかに低コストAzure で Windows コンテナーの VM で Windows Server 2016) であり、その一方で、運用環境の配置の優れた選択肢 (AKS/ACS) を Azure または Azure Service Fabric で Kubernetes と同様に全体の orchestrator を言うまでもありません。
+
+メイン最後に、としては、Azure コンテナー インスタンスを使用して開発およびテスト シナリオの場合とパイプラインの CI/CD に非常に説得力のあるオプション。
+
+## <a name="next-steps"></a>次の手順
+
+GitHub wiki 上には、このコンテンツをさらに詳しい情報を表示します。 
+
+[https://github.com/dotnet-architecture/eShopModernizing/wiki/05.-Deploying-the-Apps-to-ACI-(Azure-Container-Instances)](https://github.com/dotnet-architecture/eShopModernizing/wiki/05.-Deploying-the-Apps-to-ACI-(Azure-Container-Instances)TBD)
+
+
+## <a name="walkthrough-5-deploy-your-windows-containers-based-apps-to-kubernetes-in-azure-container-service"></a>チュートリアル 5: Azure のコンテナー サービスで Kubernetes に Windows コンテナー ベースのアプリを展開します。
 
 ### <a name="technical-walkthrough-availability"></a>技術的なチュートリアルの可用性
 
@@ -238,7 +291,7 @@ Kubernetes と開発者は他のユーザー間で、次の機能を容易にす
 
 GitHub wiki 上には、このコンテンツをさらに詳しい情報を表示します。 [https://github.com/dotnet-architecture/eShopModernizing/wiki/04.-How-to-deploy-your-Windows-Containers-based-apps-into-Kubernetes-in-Azure-Container-Service-(Including-C-CD)](https://github.com/dotnet-architecture/eShopModernizing/wiki/04.-How-to-deploy-your-Windows-Containers-based-apps-into-Kubernetes-in-Azure-Container-Service-(Including-C-CD))
 
-## <a name="walkthrough-5-deploy-your-windows-containers-based-apps-to-azure-service-fabric"></a>チュートリアル 5: Azure Service Fabric を Windows コンテナー ベースのアプリを展開します。
+## <a name="walkthrough-6-deploy-your-windows-containers-based-apps-to-azure-service-fabric"></a>チュートリアル 6: Azure Service Fabric を Windows コンテナー ベースのアプリを展開します。
 
 ### <a name="technical-walkthrough-availability"></a>技術的なチュートリアルの可用性
 

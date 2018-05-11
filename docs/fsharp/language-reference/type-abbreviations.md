@@ -2,11 +2,11 @@
 title: 型略称 (F#)
 description: F# 型の省略形型に名前を付けるより意味のあるコードを読みやすくためにについて説明します。
 ms.date: 05/16/2016
-ms.openlocfilehash: cd0b2365aecc5d5b73df95a4b94ae4dd8327446d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e222caa41a20a64071c94cffea6ea7b2bec8eb22
+ms.sourcegitcommit: ff1d40507b3eb6e2185478e37c66c66be6de46f1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/11/2018
 ---
 # <a name="type-abbreviations"></a>型略称
 
@@ -15,11 +15,13 @@ A*型略称*エイリアスまたは型の代替名です。
 ## <a name="syntax"></a>構文
 
 ```fsharp
-type type-abbreviation = type-name
+type [accessibility-modifier] type-abbreviation = type-name
 ```
 
 ## <a name="remarks"></a>コメント
 型の省略形を使用すると、コードを読みやすくために、型、わかりやすい名前を付けます。 種類が書き込みに面倒なを使いやすい名を作成するのにも使用できます。さらに、型を使用するすべてのコードを変更しなくても、基になる型を変更しやすく型の省略形を使用することができます。 単純型の省略形を次に示します。
+
+型の省略形のユーザー補助機能が既定で`public`です。
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet2301.fs)]
 

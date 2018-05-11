@@ -2,11 +2,11 @@
 title: インターフェイス (F#)
 description: F# でインターフェイスが他のクラスを実装する関連するメンバーのセットを指定する方法について説明します。
 ms.date: 05/16/2016
-ms.openlocfilehash: 174e30c03cd555d2d9c89c88bd80e06a2cdcef46
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 54ae8a2840ce26814be25f08c3ed02e12df6b7c0
+ms.sourcegitcommit: ff1d40507b3eb6e2185478e37c66c66be6de46f1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/11/2018
 ---
 # <a name="interfaces"></a>インターフェイス
 
@@ -17,7 +17,7 @@ ms.lasthandoff: 05/04/2018
 ```fsharp
 // Interface declaration:
 [ attributes ]
-type interface-name =
+type [accessibility-modifier] interface-name =
     [ interface ]     [ inherit base-interface-name ...]
     abstract member1 : [ argument-types1 -> ] return-type1
     abstract member2 : [ argument-types2 -> ] return-type2
@@ -42,6 +42,8 @@ let class-name (argument-list) =
 
 ## <a name="remarks"></a>コメント
 インターフェイスの宣言では、メンバーを実装していないする点を除いて、クラス宣言が似ています。 代わりに、すべてのメンバーが、抽象キーワードによって示される`abstract`です。 抽象メソッドのメソッド本体を指定しません。 ただしもと共にメソッドとして、メンバーの個別の定義を含めることで、既定の実装を用意することができます、`default`キーワード。 これは、他の .NET 言語の基本クラスでの仮想メソッドの作成と同じです。 このような仮想メソッドは、インターフェイスを実装するクラスでオーバーライドできます。
+
+インターフェイスの既定のアクセシビリティが`public`です。
 
 各メソッドのパラメーターに f# の通常の構文を使用して名前を付けることができます必要に応じて。
 

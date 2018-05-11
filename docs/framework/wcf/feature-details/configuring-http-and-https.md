@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - configuring HTTP [WCF]
 ms.assetid: b0c29a86-bc0c-41b3-bc1e-4eb5bb5714d4
-ms.openlocfilehash: 70c947724abf8da68ec8f7e6d858e26fec62dce5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ed9c7a444018e7c5e9ac00de82133cce633fac93
+ms.sourcegitcommit: 88f251b08bf0718ce119f3d7302f514b74895038
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="configuring-http-and-https"></a>HTTP および HTTPS の構成
 WCF サービスと WCF クライアントは、HTTP および HTTPS を介して通信できます。 HTTP または HTTPS の設定は、インターネット インフォメーション サービス (IIS) またはコマンド ライン ツールを使用して構成します。 WCF サービスが IIS でホストされている場合は、IIS 内で HTTP または HTTPS の設定を構成できます (inetmgr.exe ツールを使用)。 WCF サービスが自己ホスト型の場合は、コマンド ライン ツールを使用して HTTP または HTTPS の設定を構成します。  
@@ -19,7 +19,7 @@ WCF サービスと WCF クライアントは、HTTP および HTTPS を介し�
   
  実行しているときに[!INCLUDE[ws2003](../../../../includes/ws2003-md.md)]または[!INCLUDE[wxp](../../../../includes/wxp-md.md)]、HttpCfg.exe ツールを使用します。 [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] ではこのツールが自動的にインストールされます。 実行しているときに[!INCLUDE[wxp](../../../../includes/wxp-md.md)]、ツールをダウンロードする[Windows XP Service Pack 2 サポート ツール](http://go.microsoft.com/fwlink/?LinkId=88606)です。 詳細については、次を参照してください。 [Httpcfg の概要](http://go.microsoft.com/fwlink/?LinkId=88605)です。  
   
- [!INCLUDE[wv](../../../../includes/wv-md.md)] または Windows 7 を実行している場合は、Netsh.exe ツールを使用してこれらの設定を構成します。  
+ 実行しているときに[!INCLUDE[wv](../../../../includes/wv-md.md)]Windows 7、Netsh.exe ツールを使用してこれらの設定を構成することもできます。  
   
 ## <a name="configuring-namespace-reservations"></a>名前空間予約の構成  
  名前空間予約では、HTTP URL 名前空間の一部に対する権限を特定のユーザー グループに割り当てます。 予約によって、名前空間のその部分でリッスンするサービスを作成する権限をユーザーに与えます。 予約は URL プレフィックスを使用します。つまり、予約は予約パスのすべてのサブパスを範囲とします。 名前空間予約では、2 つの方法でワイルドカードを使用できます。 HTTP サーバー API のドキュメントについて説明します、[ワイルドカードを含む名前空間クレーム間の解決順序](http://go.microsoft.com/fwlink/?LinkId=94841)です。  
