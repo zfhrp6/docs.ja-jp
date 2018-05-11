@@ -2,11 +2,11 @@
 title: パフォーマンス カウンターの使用
 ms.date: 03/30/2017
 ms.assetid: 00a787af-1876-473c-a48d-f52b51e28a3f
-ms.openlocfilehash: 2e25551494a433c53832127fdb0a32cb4eccac47
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 8784b4a481b8313d370aad1d8f265dcb44ab3ed6
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="using-performance-counters"></a>パフォーマンス カウンターの使用
 このサンプルでは、ユーザー定義のパフォーマンス カウンターを作成する方法と Windows Communication Foundation (WCF) パフォーマンス カウンターにアクセスする方法を示します。 このサンプルがに基づいて、[作業の開始](../../../../docs/framework/wcf/samples/getting-started-sample.md)です。  
@@ -28,7 +28,7 @@ ms.lasthandoff: 05/04/2018
   
  このタスクを実行することもを使用して、[構成エディター ツール (SvcConfigEditor.exe)](../../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md)です。  
   
- パフォーマンス カウンタが有効な場合は、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] パフォーマンス カウンタのスイート全体がサービスについて有効です。 .NET Framework は、`ServiceModelService`、`ServiceModelEndpoint`、および `ServiceModelOperation` の 3 つのレベルで、パフォーマンス データを自動的に保持します。 これらの各レベルには、"呼び出し"、"1 秒あたりの呼び出し回数"、"承認されていないセキュリティ呼び出し" などのパフォーマンス カウンタがあります。  
+ パフォーマンス カウンターを有効にすると、サービスの WCF パフォーマンス カウンタのスイート全体が有効にします。 .NET Framework は、`ServiceModelService`、`ServiceModelEndpoint`、および `ServiceModelOperation` の 3 つのレベルで、パフォーマンス データを自動的に保持します。 これらの各レベルには、"呼び出し"、"1 秒あたりの呼び出し回数"、"承認されていないセキュリティ呼び出し" などのパフォーマンス カウンタがあります。  
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>サンプルをセットアップ、ビルド、および実行するには  
   
@@ -47,16 +47,16 @@ ms.lasthandoff: 05/04/2018
   
 2.  一覧表示されているパフォーマンス カウンタを削除するには、削除するパフォーマンス カウンタを選択して Del キーを押します。  
   
-3.  追加[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]グラフ ウィンドウを右クリックしてカウンター**カウンターの追加**です。 **カウンターの追加**ダイアログ ボックスで、 **ServiceModelOperation 3.0.0.0、ServiceModelEndpoint 3.0.0.0、または ServiceModelService 3.0.0.0**パフォーマンス オブジェクト でドロップダウン リスト ボックス。 表示するカウンタを一覧から選択します。  
+3.  グラフ ウィンドウを右クリックして、WCF のカウンターを追加**カウンターの追加**です。 **カウンターの追加**ダイアログ ボックスで、 **ServiceModelOperation 3.0.0.0、ServiceModelEndpoint 3.0.0.0、または ServiceModelService 3.0.0.0**パフォーマンス オブジェクト でドロップダウン リスト ボックス。 表示するカウンタを一覧から選択します。  
   
     > [!NOTE]
-    >  コンピューター上で [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスが実行されていない場合は、サービスの [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] パフォーマンス カウンターは存在しません。  
+    >  WCF サービスがコンピューター上で実行されていない場合、サービスの WCF パフォーマンス カウンタはありません。  
   
 ### <a name="to-use-the-configuration-editor-to-enable-counters"></a>構成エディターを使用してカウンターを有効にするには  
   
 1.  SvcConfigEditor.exe のインスタンスを開きます。  
   
-2.  ファイル メニューをクリックして**開く** をクリックし、 **Config ファイル.**.  
+2.  ファイル メニューをクリックして**開く** をクリックし、 **Config ファイル...**.  
   
 3.  サンプル アプリケーションの service フォルダーに移動し、Web.config ファイルを開きます。  
   

@@ -2,11 +2,11 @@
 title: コントラクト優先ツール
 ms.date: 03/30/2017
 ms.assetid: 0a880690-f460-4475-a5f4-9f91ce08fcc6
-ms.openlocfilehash: b8d38cc31eacf1d8eb29aaaf7d6ef29056ff9b79
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: f061f4dd37861c1cf3dd0cc8318de9f0f65b90e4
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="contract-first-tool"></a>コントラクト優先ツール
 サービス コントラクトは、多くの場合、既存のサービスから作成する必要があります。 [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] では、コントラクト優先ツールを使用して、データ コントラクト クラスを既存のサービスから自動的に作成できます。 コントラクト優先ツールを使用するには、XML スキーマ定義ファイル (XSD) をローカルにダウンロードする必要があります。ツールは、HTTP 経由でリモート データ コントラクトをインポートすることはできません。  
@@ -55,10 +55,10 @@ ms.lasthandoff: 05/04/2018
 </xs:schema>  
 ```  
   
- 上記のサービス コントラクトをプロジェクトに追加するには、プロジェクトを右クリックして**新規追加しています.**. [テンプレート] ダイアログ ボックスの [WCF] ペインで [スキーマ定義] を選択し、新しいファイルの名前を SampleContract.xsd にします。 上のコードをコピーし、新しいファイルのコード ビューに貼り付けます。  
+ 上記のサービス コントラクトをプロジェクトに追加するには、プロジェクトを右クリックして**新規追加しています...**. [テンプレート] ダイアログ ボックスの [WCF] ペインで [スキーマ定義] を選択し、新しいファイルの名前を SampleContract.xsd にします。 上のコードをコピーし、新しいファイルのコード ビューに貼り付けます。  
   
 ## <a name="configuring-contract-first-options"></a>コントラクト優先のオプションの構成  
- プロパティのメニューでコントラクト優先のオプションを構成することができます、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]プロジェクト。 コントラクト優先の開発を有効にするを選択して、**型定義言語として有効にする XSD**プロジェクトのプロパティ ウィンドウの [WCF] ページでチェック ボックスをオンします。  
+ コントラクト優先のオプションは、WCF プロジェクトのプロパティのメニューで構成できます。 コントラクト優先の開発を有効にするを選択して、**型定義言語として有効にする XSD**プロジェクトのプロパティ ウィンドウの [WCF] ページでチェック ボックスをオンします。  
   
  ![WCF プロジェクト オプションを示すコントラクト&#45;最初](../../../docs/framework/wcf/media/contractfirstoptions.png "ContractFirstOptions")  
   
