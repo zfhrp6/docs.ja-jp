@@ -2,14 +2,14 @@
 title: SystemWebRouting 統合サンプル
 ms.date: 03/30/2017
 ms.assetid: f1c94802-95c4-49e4-b1e2-ee9dd126ff93
-ms.openlocfilehash: 43785f84cb3852a35f1ed3bd555287842455a89b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 52b908d354771cb2b351e339881647462340b716
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="systemwebrouting-integration-sample"></a>SystemWebRouting 統合サンプル
-このサンプルでは、<xref:System.Web.Routing> 名前空間のクラスとのホスト層の統合を示します。 <xref:System.Web.Routing> 名前空間のクラスを使用すると、物理リソースに直接対応しない URL をアプリケーションで使用できます。 開発者は Web ルーティングを使用することで、後で実際の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスにマップされる HTTP の仮想アドレスを作成できます。 これは、物理ファイルやリソースを配置せずに WCF サービスをホストする必要がある場合、または .html や .aspx などのファイルがない URL を使用してサービスにアクセスする必要がある場合に役立ちます。 このサンプルでは、<xref:System.Web.Routing.RouteTable> クラスを使用して、global.asax で定義された実行中のサービスにマップされる仮想 URI を作成する方法を示します。 
+このサンプルでは、<xref:System.Web.Routing> 名前空間のクラスとのホスト層の統合を示します。 <xref:System.Web.Routing> 名前空間のクラスを使用すると、物理リソースに直接対応しない URL をアプリケーションで使用できます。 Web のルーティングを使用するには、実際の WCF サービスにバックアップし、マップされている http 仮想アドレスを作成する開発者ができるようにします。 これは、物理ファイルやリソースを配置せずに WCF サービスをホストする必要がある場合、または .html や .aspx などのファイルがない URL を使用してサービスにアクセスする必要がある場合に役立ちます。 このサンプルでは、<xref:System.Web.Routing.RouteTable> クラスを使用して、global.asax で定義された実行中のサービスにマップされる仮想 URI を作成する方法を示します。 
 
 > [!NOTE]
 >  <xref:System.Web.Routing> 名前空間のクラスは、HTTP でホストされるサービスに対してのみ機能します。  
@@ -37,7 +37,7 @@ ms.lasthandoff: 05/04/2018
   
      サンプルのディレクトリの一覧が表示されます。 ファイル拡張子が .svc のファイルがないことに注意してください。  
   
-3.  アドレス バーに追加`movies`url、そのためことを読み取りますhttp://localhost:[ポート]/[映画 ENTER キーを押します。  
+3.  アドレス バーに追加`movies`url、そのためことを読み取りますhttp://localhost:[ポート]/映画 ENTER キーを押します。  
   
      movies フィードがブラウザーに表示されます。  
   
@@ -67,7 +67,7 @@ ms.lasthandoff: 05/04/2018
   
 4.  Web アプリケーションを右クリックしてアプリケーションを起動**アプリケーションの管理**し**参照**です。  
   
-5.  アドレス バーに追加`movies`URL にこれは読み取りhttp://localhost:[ポート]/[映画 ENTER キーを押します。  
+5.  アドレス バーに追加`movies`URL にこれは読み取りhttp://localhost:[ポート]/映画 ENTER キーを押します。  
   
      movies フィードがブラウザーに表示されます。  
   
