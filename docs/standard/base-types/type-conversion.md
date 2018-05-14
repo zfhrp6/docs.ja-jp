@@ -1,13 +1,7 @@
 ---
-title: ".NET Framework における型変換"
-ms.custom: 
+title: .NET Framework における型変換
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -30,18 +24,13 @@ helpviewer_keywords:
 - Implicit operator
 - data types [.NET Framework], converting
 ms.assetid: ba36154f-064c-47d3-9f05-72f93a7ca96d
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: d8bbf57625e1d944ab4e97235e718eef7b61a3a4
-ms.sourcegitcommit: 96cc82cac4650adfb65ba351506d8a8fbcd17b5c
+ms.openlocfilehash: 5c542a38152a21a62208bee81e123923fb05d0e7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="type-conversion-in-the-net-framework"></a>.NET Framework における型変換
 <a name="top"></a> すべての値には関連付けられた型があり、その値に割り振られる容量、可能な値の範囲、使用できるメンバーなどの属性を定義しています。 多くの値は複数の型として表現できます。 たとえば、値 4 は整数または浮動小数点数として表現できます。 型変換を実行すると、変換元の型の値と等価な値が新しい型で作成されますが、それが元のオブジェクトと同一である (値が正確に一致する) とは限りません。  
@@ -62,7 +51,7 @@ ms.lasthandoff: 02/19/2018
   
 -   `Explicit` 演算子。型の間で使用できる縮小変換を定義します。 詳細については、「[Explicit 演算子を使用する明示的な変換](#explicit_conversion_with_the_explicit_operator)」を参照してください。  
   
--   <xref:System.IConvertible> インターフェイス。.NET Framework の各基本データ型への変換を定義します。 詳細については、「[IConvertible インターフェイス](#the_iconvertible_interface)」を参照してください。  
+-   <xref:System.IConvertible> インターフェイス。 .NET Framework の各基本データ型への変換を定義します。 詳細については、「[IConvertible インターフェイス](#the_iconvertible_interface)」を参照してください。  
   
 -   <xref:System.Convert> クラス。<xref:System.IConvertible> インターフェイスにメソッドを実装する一連のメソッドを提供します。 詳細については、「[Convert クラス](#Convert)」を参照してください。  
   

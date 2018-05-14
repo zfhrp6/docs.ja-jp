@@ -65,7 +65,7 @@ End With
  終了するために必要な`Property`プロシージャの定義が、対応する開始[Get ステートメント](../../../visual-basic/language-reference/statements/get-statement.md)です。 実行されると、`End``Get`ステートメントでは、プロパティの値を要求したステートメントに制御が戻ります。  
   
  `If`  
- 終了するために必要な`If`しています.`Then`...`Else`ブロック定義が、対応する開始`If`ステートメントです。 参照してください[場合.そうしたら。。。Else ステートメント](../../../visual-basic/language-reference/statements/if-then-else-statement.md)です。  
+ 終了するために必要な`If`しています.`Then`...`Else`ブロック定義が、対応する開始`If`ステートメントです。 参照してください[場合.そうしたら...Else ステートメント](../../../visual-basic/language-reference/statements/if-then-else-statement.md)です。  
   
  `Interface`  
  開始されて、対応するインターフェイス定義を終了するために必要な[インターフェイス ステートメント](../../../visual-basic/language-reference/statements/interface-statement.md)です。  

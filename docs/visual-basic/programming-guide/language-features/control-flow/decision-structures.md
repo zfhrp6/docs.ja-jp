@@ -20,10 +20,10 @@ Visual Basic では、条件をテストし、そのテストの結果に応じ�
   
  次の図は、条件が真性をテストし、true と false であるかに応じて異なる処理を実行する条件判断構造を示します。  
   
- ![If のフロー チャートしています.そうしたら。。。他の構築](../../../../visual-basic/programming-guide/language-features/control-flow/media/ifthenelse.gif "IfThenElse")  
+ ![If のフロー チャートしています.そうしたら...他の構築](../../../../visual-basic/programming-guide/language-features/control-flow/media/ifthenelse.gif "IfThenElse")  
 条件が true と false の場合は、別の操作を実行  
   
-## <a name="ifthenelse-construction"></a>もし。。。そうしたら。。。他の構築  
+## <a name="ifthenelse-construction"></a>もし...そうしたら...他の構築  
  `If...Then...Else` 構造では、1 つまたは複数の条件をテストし、各条件に応じて 1 つまたは複数のステートメントを実行できます。 条件をテストし、次の方法でアクションを実行できます。  
   
 -   条件の場合は、1 つまたは複数のステートメントを実行します。 `True`  
@@ -34,10 +34,10 @@ Visual Basic では、条件をテストし、そのテストの結果に応じ�
   
 -   先行する条件が場合は、追加の条件をテストします。 `False`  
   
- これらすべての可能性を提供する制御構造が、[場合.そうしたら。。。Else ステートメント](../../../../visual-basic/language-reference/statements/if-then-else-statement.md)です。 1 つのテストと 1 つのステートメントを実行している場合は、単一行のバージョンを使用できます。 複雑な条件およびアクションのセットがある場合は、複数行のバージョンを使用することができます。  
+ これらすべての可能性を提供する制御構造が、[場合.そうしたら...Else ステートメント](../../../../visual-basic/language-reference/statements/if-then-else-statement.md)です。 1 つのテストと 1 つのステートメントを実行している場合は、単一行のバージョンを使用できます。 複雑な条件およびアクションのセットがある場合は、複数行のバージョンを使用することができます。  
   
 ## <a name="selectcase-construction"></a>このオプションを選択するとしてください.ケースの構築  
- `Select...Case`構築では、1 回式を評価し、別の使用可能な値に基づいたステートメントのさまざまなセットを実行することができます。 詳細については、次を参照してください[を選択しています.。ステートメントの case](../../../../visual-basic/language-reference/statements/select-case-statement.md)です。  
+ `Select...Case`構築では、1 回式を評価し、別の使用可能な値に基づいたステートメントのさまざまなセットを実行することができます。 詳細については、次を参照してください[を選択しています...ステートメントの case](../../../../visual-basic/language-reference/statements/select-case-statement.md)です。  
   
 ## <a name="trycatchfinally-construction"></a>Try しています.キャッチしてください.最後に構築  
  `Try...Catch...Finally` 構造では、一連のステートメントのいずれかの例外が発生した場合にコントロールを保持する環境下でステートメントを実行できます。 さまざまな例外のさまざまな操作を実行することができます。 必要に応じて、全体を終了する前に実行されるコードのブロックを指定することができます`Try...Catch...Finally`どうなるかに関係なく、構築します。 詳しくは、「[Try...Catch...Finally ステートメント](../../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)」をご覧ください。  
