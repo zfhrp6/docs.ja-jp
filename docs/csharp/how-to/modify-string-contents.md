@@ -1,19 +1,13 @@
 ---
 title: '方法: 文字列の内容を変更する - C# ガイド'
 ms.date: 02/26/2018
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - strings [C#], modifying
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 2f193f09458829ec6f358b9330334b68f092ee80
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: 99102fe90f5f675235e2993b7dd99f59214862d2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-modify-string-contents-in-c"></a>方法: C# で文字列の内容を変更する #
 

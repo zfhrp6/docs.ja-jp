@@ -1,20 +1,13 @@
 ---
-title: "デリゲートの一般的なパターン"
-description: "コンポーネント間の密接な結合を避けるための、コードでのデリゲートの一般的な使用パターンについて説明します。"
-keywords: .NET, .NET Core
-author: BillWagner
-ms.author: wiwagn
+title: デリゲートの一般的なパターン
+description: コンポーネント間の密接な結合を避けるための、コードでのデリゲートの一般的な使用パターンについて説明します。
 ms.date: 06/20/2016
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.devlang: csharp
 ms.assetid: 0ff8fdfd-6a11-4327-b061-0f2526f35b43
-ms.openlocfilehash: 83214800fb997e9274cacfd1bae85ab07c4515a2
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: fceab2b9c6bbd1d687566820366459ec57ae7a2d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="common-patterns-for-delegates"></a>デリゲートの一般的なパターン
 

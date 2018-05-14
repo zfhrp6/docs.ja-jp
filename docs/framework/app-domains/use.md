@@ -1,28 +1,18 @@
 ---
-title: "アプリケーション ドメインの使用"
-ms.custom: 
+title: アプリケーション ドメインの使用
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-bcl
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - application domains, about
 - common language runtime, application domains
 - runtime, application domains
 ms.assetid: c6d99815-e022-4d2c-9420-1d7ab5b9d504
-caps.latest.revision: "15"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: eade3728c8a51785214cf3d8de53d8a64a668f1f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5ebd1de46eb2757098a369b58dd9a6c0009e5b95
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="using-application-domains"></a>アプリケーション ドメインの使用
 アプリケーション ドメインには、共通言語ランタイムに使用できる分離の単位が用意されています。 アプリケーション ドメインはプロセス内で作成され、実行されます。 通常、アプリケーション ドメインはランタイム ホストによって作成されます。ランタイム ホストは、ランタイムをプロセスに読み込み、アプリケーション ドメイン内でユーザー コードを実行する処理を担当します。 ランタイム ホストはプロセスと既定のアプリケーション ドメインを作成し、その中でマネージ コードを実行します。 ランタイム ホストには、ASP.NET、Microsoft Internet Explorer、Windows シェルなどがあります。  

@@ -1,20 +1,13 @@
 ---
-title: "デリゲートとイベント"
-description: ".NET Core ドキュメントのデリゲートとイベントに関する情報の場所を確認します。"
-keywords: .NET, .NET Core
-author: BillWagner
-ms.author: wiwagn
+title: デリゲートとイベント
+description: .NET Core ドキュメントのデリゲートとイベントに関する情報の場所を確認します。
 ms.date: 06/20/2016
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.devlang: csharp
 ms.assetid: 4e80e053-8022-4987-a8a0-209caec0315d
-ms.openlocfilehash: e511b5057cb83119819a1403d56f23f738488a3f
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 939bb0f441e5a18b1ae8d48fe9a8021bd2dad3f2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="delegates--events"></a>デリゲートとイベント
 

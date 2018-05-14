@@ -1,20 +1,13 @@
 ---
-title: "基本型 - C# ガイド"
-description: "すべての C# プログラムの中核となる型 (数値、文字列、オブジェクト) について説明します"
-keywords: .NET, .NET Core, C#
-author: BillWagner
-ms.author: wiwagn
+title: 基本型 - C# ガイド
+description: すべての C# プログラムの中核となる型 (数値、文字列、オブジェクト) について説明します
 ms.date: 10/10/2016
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.devlang: csharp
 ms.assetid: 95c686ba-ae4f-440e-8e94-0dbd6e04d11f
-ms.openlocfilehash: 398a73f72a9a31c6b2a19a626f704f65564f4fbd
-ms.sourcegitcommit: bbde43da655ae7bea1977f7af7345eb87bd7fd5f
+ms.openlocfilehash: 2e62a461e41f4172bd6dd512a71babb998924978
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="types-variables-and-values"></a>型、変数、および値  
 C# は、厳密に型指定された言語です。 すべての変数および定数は、値に評価されるすべての式がそうであるように、型を持ちます。 すべてのメソッド シグネチャで、各入力パラメーターの型と戻り値の型が指定されます。 .NET Framework クラス ライブラリでは、一連の組み込みの数値型が定義され、さらにファイル システム、ネットワーク接続、オブジェクトのコレクション、オブジェクトの配列、日付など、さまざまな論理構造を表すより複雑な型も定義されています。 一般的な C# プログラムでは、クラス ライブラリで定義されている型と、そのプログラムの問題領域に固有の概念をモデル化するユーザー定義の型が使用されます。  
@@ -62,7 +55,7 @@ C# には、整数、浮動小数点値、ブール式、テキスト文字、10
 カスタムの型を独自に作成するには、[struct](language-reference/keywords/class.md)、[class](language-reference/keywords/class.md)、[interface](language-reference/keywords/interface.md)、[enum](language-reference/keywords/enum.md) の各構成要素を使用します。 .NET Framework のクラス ライブラリ自体が、マイクロソフトによって提供された、ユーザーが独自のアプリケーションで使用できるカスタムの型のコレクションです。 既定では、クラス ライブラリで最も頻繁に使用される型は任意の C# プログラムで使用可能になっています。 その他の型は、その型が定義されているアセンブリへのプロジェクト参照を明示的に追加した場合にのみ使用可能になります。 コンパイラがアセンブリを参照できるようになると、そのアセンブリ内で宣言されている型の変数 (および定数) をソース コード内で宣言できるようになります。 
   
 ## <a name="generic-types"></a>ジェネリック型  
-クライアント コードが型のインスタンスを作成したときに提供される実際の型 (*具象型*) のプレースホルダーとして使用される 1 つ以上の*型パラメーター*で、型を宣言することもできます。 このような型は、"*ジェネリック型*" と呼ばれます。 たとえば、.NET Framework の型 <xref:System.Collections.Generic.List%601> には、慣例により *T* という名前が与えられる 1 つの型パラメーターがあります。この型のインスタンスを作成するときには、たとえば文字列の場合なら、リストに含まれるオブジェクトの型を次のように指定します。  
+クライアント コードが型のインスタンスを作成したときに提供される実際の型 (*具象型*) のプレースホルダーとして使用される 1 つ以上の*型パラメーター*で、型を宣言することもできます。 このような型は、*ジェネリック型*と呼ばれます。 たとえば、.NET Framework の型 <xref:System.Collections.Generic.List%601> には、慣例により *T* という名前が与えられる 1 つの型パラメーターがあります。この型のインスタンスを作成するときには、たとえば文字列の場合なら、リストに含まれるオブジェクトの型を次のように指定します。  
   
 [!code-csharp[Generic types](../../samples/snippets/csharp/concepts/basic-types/generic-type.cs)] 
   

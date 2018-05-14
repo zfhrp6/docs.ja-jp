@@ -2,11 +2,11 @@
 title: シグネチャ (F#)
 description: F# シグネチャ ファイルを使用して、型、名前空間、モジュールなど f# プログラム要素、一連のパブリック シグネチャに関する情報を保持する方法を説明します。
 ms.date: 05/16/2016
-ms.openlocfilehash: 04539a871dda9eedd1495e0e5b1f3f5026bae037
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6e182a1a0ac7f3f9fab27026e582d83ee737822e
+ms.sourcegitcommit: e5bb395ec86f536e114314184288f40a8c745e2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="signatures"></a>シグネチャ
 
@@ -64,6 +64,9 @@ ms.lasthandoff: 05/04/2018
 
 
 - シグネチャと実装のパラメーターのパターン ( *アリティ*とも呼ばれます) は、一致している必要があります。
+
+
+- シグネチャ ファイル内のパラメーター名は、対応する実装ファイルと異なる場合、署名ファイル内の名前が代用されます、デバッグまたはプロファイルのときに問題が発生する可能性があります。 このような不一致、3218 をプロジェクト ファイルで警告を有効にする] の通知を受信する場合、またはコンパイラを呼び出すとき (を参照してください`--warnon`[[コンパイラ オプション](compiler-options.md))。
 
 
 次のコード例では、適切な属性と共に名前空間、モジュール、関数値、型シグネチャを持つシグネチャ ファイルの例を示します。 また、対応する実装ファイルも示します。

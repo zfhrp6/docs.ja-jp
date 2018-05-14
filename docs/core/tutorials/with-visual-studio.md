@@ -4,17 +4,11 @@ description: Visual Studio 2017 で C# を使用した、単純な .NET Core コ
 author: BillWagner
 ms.author: wiwagn
 ms.date: 09/13/2017
-ms.topic: conceptual
-ms.prod: dotnet-core
-ms.technology: devlang-csharp
-ms.devlang: csharp
-ms.workload:
-- dotnetcore
-ms.openlocfilehash: 7abc0cc087553e2cac10c8cc1da560a048b8e323
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: d68ae899e5dc7c37a9c92e79aeae452b000b0960
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="build-a-c-hello-world-application-with-net-core-in-visual-studio-2017"></a>Visual Studio 2017 での .NET Core を使用した C# Hello World アプリケーションの構築
 

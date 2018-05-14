@@ -1,10 +1,6 @@
 ---
-title: "-resource (C# コンパイラ オプション)"
+title: -resource (C# コンパイラ オプション)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - /resource
 helpviewer_keywords:
@@ -15,14 +11,11 @@ helpviewer_keywords:
 - res compiler option [C#]
 - resource compiler option [C#]
 ms.assetid: 5212666e-98ab-47e4-a497-b5545ab15c7f
-caps.latest.revision: 
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: a305f98b09d390afbeba7b55ab44ff09abc74617
-ms.sourcegitcommit: dd6ea7f0e581ac84e0a90d9b23c463fcf1ec3ce7
+ms.openlocfilehash: 8744d0f85859367ada51e4c44e767e681a3487bf
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="-resource-c-compiler-options"></a>-resource (C# コンパイラ オプション)
 指定されたリソースを出力ファイルに埋め込みます。  
@@ -62,7 +55,7 @@ ms.lasthandoff: 01/23/2018
   
 3.  選択したファイルの **[プロパティ]** ウィンドウで、**[ビルド アクション]** を選択します。  
   
-4.  **[ビルド アクション]** を **[埋め込まれたリソース]**に設定します。  
+4.  **[ビルド アクション]** を **[埋め込まれたリソース]** に設定します。  
   
  このコンパイラ オプションをプログラムで設定する方法については、「<xref:VSLangProj80.FileProperties2.BuildAction%2A>」を参照してください。  
   

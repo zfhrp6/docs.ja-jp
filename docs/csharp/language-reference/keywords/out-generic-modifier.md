@@ -1,21 +1,15 @@
 ---
-title: "out (ジェネリック修飾子) (C# リファレンス)"
+title: out (ジェネリック修飾子) (C# リファレンス)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - covariance, out keyword [C#]
 - out keyword [C#]
 ms.assetid: f8c20dec-a8bc-426a-9882-4076b1db1e00
-caps.latest.revision: "15"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 25019408387bbf085475482c74a3fc6001321b24
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.openlocfilehash: 95ccbe3ab5bf2d326e1154af0b169972a24f7e38
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="out-generic-modifier-c-reference"></a>out (ジェネリック修飾子) (C# リファレンス)
 ジェネリック型パラメーターの `out` キーワードは、型パラメーターが共変であることを指定します。 `out` キーワードは、ジェネリック インターフェイスとデリゲートで使用できます。  
@@ -52,7 +46,7 @@ ms.lasthandoff: 12/02/2017
 ## <a name="c-language-specification"></a>C# 言語仕様  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ジェネリック インターフェイスの分散](../../programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md)  
  [in](../../../csharp/language-reference/keywords/in-generic-modifier.md)  
  [修飾子](../../../csharp/language-reference/keywords/modifiers.md)

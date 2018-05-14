@@ -1,21 +1,15 @@
 ---
-title: "繰り返しステートメント (C# リファレンス)"
+title: 繰り返しステートメント (C# リファレンス)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - iteration statements [C#]
 - loop structures [C#]
 ms.assetid: 7d494566-bf75-4ee8-979f-0f964209437e
-caps.latest.revision: "12"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 6977248fecb61944fac95e4f2bdf976308566f1d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 77069447c2f752413d35cfa7261e71fe4ad06fd2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="iteration-statements-c-reference"></a>繰り返しステートメント (C# リファレンス)
 繰り返しステートメントを使ってループを作成できます。 繰り返しステートメントでは、ループ終了条件に応じて、埋め込まれたステートメントが複数回実行されます。 これらのステートメントは、[ジャンプ ステートメント](../../../csharp/language-reference/keywords/jump-statements.md)が実行された場合を除き、順番に実行されます。  
@@ -32,7 +26,7 @@ ms.lasthandoff: 11/21/2017
   
 -   [while](../../../csharp/language-reference/keywords/while.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C# リファレンス](../../../csharp/language-reference/index.md)  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
  [C# のキーワード](../../../csharp/language-reference/keywords/index.md)  

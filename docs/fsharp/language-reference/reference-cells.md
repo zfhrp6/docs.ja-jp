@@ -2,11 +2,11 @@
 title: 参照セル (F#)
 description: F# 参照セルの記憶域の場所を有効にすると、参照セマンティクスを持つ変更可能な値を作成する方法について説明します。
 ms.date: 05/16/2016
-ms.openlocfilehash: d68726619bdfce5a9ed9bd94d6434427644cd9f1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3a632425356a250f07e5babd2751b9923eec6552
+ms.sourcegitcommit: e5bb395ec86f536e114314184288f40a8c745e2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="reference-cells"></a>参照セル
 
@@ -81,6 +81,9 @@ let ref x = { contents = x }
 >[!NOTE]
 C# プログラマでは、その ref 異なる動作を f# で c# では、知っておく必要があります。 など、ref 引数を渡すときに使用するが、同じ効果 f# と c# ではします。
 
+>[!NOTE]
+`mutable` 変数が自動的に昇格する`'a ref`; クロージャでキャプチャされる場合は、次を参照してください。[値](values/index.md)です。
+
 ## <a name="consuming-c-ref-returns"></a>使用 (C#)`ref`を返します
 
 使用できる 4.1 以降では f#、 `ref` c# で生成されるを返します。  このような呼び出しの結果は、`byref<_>`ポインター。
@@ -132,3 +135,5 @@ let f (x: byref<int>) = &x
 [パラメーターと引数](parameters-and-arguments.md)
 
 [シンボルと演算子のリファレンス](symbol-and-operator-reference/index.md)
+
+[値](values/index.md)

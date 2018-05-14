@@ -1,9 +1,6 @@
 ---
-title: "if-else (C# リファレンス)"
+title: if-else (C# リファレンス)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.topic: article
 f1_keywords:
 - if_CSharpKeyword
 - else
@@ -13,14 +10,11 @@ helpviewer_keywords:
 - else keyword [C#]
 - if keyword [C#]
 ms.assetid: d9a1d562-8cf5-4bd4-9ba7-8ad970cd25b2
-caps.latest.revision: "32"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: a0ecc915af00caffeba92a8308a60bc24198d477
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: eb8fe4c3a02cab8f8c887ec37244bede04b8a663
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="if-else-c-reference"></a>if-else (C# リファレンス)
 `if` ステートメントは、 `Boolean` 式の値に基づいて実行するステートメントを決定します。 次の例では、 `Boolean` 変数 `result` を `true` に設定してから、 `if` ステートメントにチェックインします。 出力は `The condition is true`になります。  
@@ -134,7 +128,7 @@ if (!(m >= n || m >= p))
 ## <a name="c-language-specification"></a>C# 言語仕様  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C# リファレンス](../../../csharp/language-reference/index.md)  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
  [C# のキーワード](../../../csharp/language-reference/keywords/index.md)  

@@ -1,13 +1,6 @@
 ---
-title: "共通言語ランタイムのアセンブリ"
-ms.custom: 
+title: 共通言語ランタイムのアセンブリ
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-bcl
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - dynamic assemblies
 - security [.NET Framework], boundaries
@@ -19,16 +12,13 @@ helpviewer_keywords:
 - version boundaries
 - type boundaries
 ms.assetid: 2cfebe19-7436-49f1-bd99-3c4019f0b676
-caps.latest.revision: "15"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: a4123ea28b317d432f9a36ea0c084d7fdacc7ffe
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: eefd3773d26fe71741668a9df366f041ba0ae0a4
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="assemblies-in-the-common-language-runtime"></a>共通言語ランタイムのアセンブリ
 アセンブリは .NET Framework アプリケーションのビルド ブロックであり、配置、バージョン管理、再利用、アクティブ化のスコープの指定、およびセキュリティ アクセス許可の基本単位となります。 アセンブリは、相互に連携して 1 つの論理的な機能単位を形成するように構築された型やリソースの集合です。 共通言語ランタイムは、型の実装に関して必要な情報をアセンブリから取得します。 共通言語ランタイムにとって、型はアセンブリのコンテキストの外部には存在しません。  
@@ -55,7 +45,7 @@ ms.lasthandoff: 12/22/2017
   
 ## <a name="related-topics"></a>関連トピック  
   
-|タイトル|説明|  
+|Title|説明|  
 |-----------|-----------------|  
 |[アセンブリの内容](../../../docs/framework/app-domains/assembly-contents.md)|アセンブリを構成する要素について説明します。|  
 |[アセンブリ マニフェスト](../../../docs/framework/app-domains/assembly-manifest.md)|アセンブリ マニフェストのデータについて説明し、データをアセンブリに格納する方法について説明します。|  

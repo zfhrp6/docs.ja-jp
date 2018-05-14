@@ -1,9 +1,6 @@
 ---
-title: "group 句 (C# リファレンス)"
+title: group 句 (C# リファレンス)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.topic: article
 f1_keywords:
 - group
 - group_CSharpKeyword
@@ -11,14 +8,11 @@ helpviewer_keywords:
 - group keyword [C#]
 - group clause [C#]
 ms.assetid: c817242e-b12c-4baa-a57e-73ee138f34d1
-caps.latest.revision: "24"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: a2f67b2c90e1cced92d6fc7d47768b58bf155360
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 2674986013afccf0a61267e49ca186d2ccb380e5
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="group-clause-c-reference"></a>group 句 (C# リファレンス)
 `group` 句は、グループのキー値に一致する 0 個以上の項目を含む <xref:System.Linq.IGrouping%602> オブジェクトのシーケンスを返します。 たとえば、各文字列の最初の文字に基づいて文字列のシーケンスをグループ化することができます。 この場合、最初の文字がキーで、型は [char](../../../csharp/language-reference/keywords/char.md) であり、各 <xref:System.Linq.IGrouping%602> オブジェクトの `Key` プロパティに格納されています。 コンパイラは、キーの型を推論します。  
@@ -80,7 +74,7 @@ group person by new {name = person.surname, city = person.city};
 ## <a name="remarks"></a>コメント  
  コンパイル時に `group` 句が <xref:System.Linq.Enumerable.GroupBy%2A> メソッドの呼び出しに変換されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Linq.IGrouping%602>  
  <xref:System.Linq.Enumerable.GroupBy%2A>  
  <xref:System.Linq.Enumerable.ThenBy%2A>  

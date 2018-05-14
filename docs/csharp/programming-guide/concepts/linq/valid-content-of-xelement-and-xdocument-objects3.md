@@ -1,21 +1,12 @@
 ---
-title: "XElement オブジェクトと XDocument オブジェクトの有効なコンテンツ"
-ms.custom: 
+title: XElement オブジェクトと XDocument オブジェクトの有効なコンテンツ
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: 0d253586-2b97-459f-b1a7-f30f38f3ed9f
-caps.latest.revision: "5"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 113a187c9a852420ffcef3893a415a24bae2c655
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 32521941bacdf8d689a81f6136d427307481ddc9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="valid-content-of-xelement-and-xdocument-objects"></a>XElement オブジェクトと XDocument オブジェクトの有効なコンテンツ
 ここでは、コンストラクターやメソッドに渡すことができる有効な引数について説明します。これらのコンストラクターやメソッドは、コンテンツを要素やドキュメントに追加するためのものです。  
@@ -96,5 +87,5 @@ ms.lasthandoff: 10/18/2017
 |<xref:System.Xml.Linq.XContainer.ReplaceNodes%2A>|子ノードを新しいコンテンツに置き換えます。|  
 |<xref:System.Xml.Linq.XNode.ReplaceWith%2A>|ノードを新しいコンテンツに置き換えます。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [XML ツリーの作成 (C#)](../../../../csharp/programming-guide/concepts/linq/creating-xml-trees.md)

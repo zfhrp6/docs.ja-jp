@@ -1,24 +1,17 @@
 ---
 title: sizeof (C# リファレンス)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - sizeof_CSharpKeyword
 - sizeof
 helpviewer_keywords:
 - sizeof keyword [C#]
 ms.assetid: c548592c-677c-4f40-a4ce-e613f7529141
-caps.latest.revision: 20
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 0148ae8381804ca9286315251582c8ab40778369
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 83038255160ec778c71120566cf8f99092761add
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="sizeof-c-reference"></a>sizeof (C# リファレンス)
 アンマネージ型のサイズ (バイト単位) を取得するときに使用します。 アンマネージ型には、以下の表に示す組み込み型のほか、次の型も含まれます。  
@@ -41,7 +34,7 @@ int intSize = sizeof(int);
   
  `sizeof` 演算子はオーバーロードできません。 `sizeof` 演算子により返される値の型は `int` です。 次の表に、特定の組み込み型をオペランドとする `sizeof` 式と、代用される定数値を示します。  
   
-|式|定数値|  
+|正規表現|定数値|  
 |----------------|--------------------|  
 |`sizeof(sbyte)`|1|  
 |`sizeof(byte)`|1|  
@@ -65,7 +58,7 @@ int intSize = sizeof(int);
 ## <a name="c-language-specification"></a>C# 言語仕様  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C# リファレンス](../../../csharp/language-reference/index.md)  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
  [C# のキーワード](../../../csharp/language-reference/keywords/index.md)  

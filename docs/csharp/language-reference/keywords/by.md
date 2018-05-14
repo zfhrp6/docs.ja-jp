@@ -1,24 +1,17 @@
 ---
 title: by (C# リファレンス)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - by
 - by_CSharpKeyword
 helpviewer_keywords:
 - by keyword [C#]
 ms.assetid: efe6f0e3-be40-4df2-a144-c7db968ae052
-caps.latest.revision: 6
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: bbbf64eb86c3cca5de659bffce7c5c0639461f85
-ms.sourcegitcommit: 7e99f66ef09d2903e22c789c67ff5a10aa953b2f
+ms.openlocfilehash: 40aa97b06640c74aea37efa245a315ef9a0f7040
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="by-c-reference"></a>by (C# リファレンス)
 `by` コンテキスト キーワードは、クエリ式の `group` 句で使用され、返される項目をグループ化する方法を指定します。 詳しくは、「[group 句](../../../csharp/language-reference/keywords/group-clause.md)」をご覧ください。  
@@ -28,5 +21,5 @@ ms.lasthandoff: 11/18/2017
   
  [!code-csharp[csrefKeywordsContextual#10](../../../csharp/language-reference/keywords/codesnippet/CSharp/by_1.cs)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [LINQ クエリ式](../../../csharp/programming-guide/linq-query-expressions/index.md)

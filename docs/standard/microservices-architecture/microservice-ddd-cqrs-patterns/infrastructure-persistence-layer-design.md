@@ -1,21 +1,14 @@
 ---
 title: インフラストラクチャの永続レイヤーの設計
 description: '.NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ | インフラストラクチャの永続レイヤーの設計'
-keywords: Docker, マイクロサービス, ASP.NET, コンテナー
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 11/08/2017
-ms.prod: .net-core
-ms.technology: dotnet-docker
-ms.topic: article
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: cab12426308be258134e0385c5a6eb6cdb5d544b
-ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
+ms.openlocfilehash: 2b15fcaeaa8934caceaeab963123650354abf291
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="designing-the-infrastructure-persistence-layer"></a>インフラストラクチャの永続レイヤーの設計
 

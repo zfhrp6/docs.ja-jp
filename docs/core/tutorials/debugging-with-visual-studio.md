@@ -4,17 +4,11 @@ description: C# または Visual Basic で記述された Hello World アプリ�
 author: BillWagner
 ms.author: wiwagn
 ms.date: 12/15/2017
-ms.topic: conceptual
-ms.prod: dotnet-core
-ms.technology: devlang-csharp
-ms.devlang: csharp
-ms.workload:
-- dotnetcore
-ms.openlocfilehash: 20f84c049236d2d3526901466ab406c40855c269
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 3c130c2eebdf79c1db171cb2171aa68dfff728a9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="debug-your-hello-world-application-with-visual-studio-2017"></a>Visual Studio 2017 での Hello World アプリケーションのデバッグ
 

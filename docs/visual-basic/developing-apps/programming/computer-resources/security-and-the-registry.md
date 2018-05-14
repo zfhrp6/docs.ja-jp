@@ -1,24 +1,15 @@
 ---
-title: "セキュリティとレジストリ (Visual Basic)"
-ms.custom: 
+title: セキュリティとレジストリ (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - security [Visual Basic], registry
 - registry [Visual Basic], security issues
 ms.assetid: 9980aff7-2f69-492b-8f66-29a9a76d3df5
-caps.latest.revision: "17"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 0961d21417cbb5efcd9f38112c4e8ecb393faccd
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: ddfe8f88763ee2db78d25d72e6c9cb3456ccd13f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="security-and-the-registry-visual-basic"></a>セキュリティとレジストリ (Visual Basic)
 ここでは、レジストリにデータを格納するときのセキュリティへの影響について説明します。  
@@ -32,7 +23,7 @@ ms.lasthandoff: 11/21/2017
   
  レジストリ アクセス許可のアクセス値は <xref:System.Security.Permissions.RegistryPermissionAccess> 列挙型により定義されます。 次の表はそのメンバーの詳細です。  
   
-|値|レジストリ変数へのアクセス|  
+|[値]|レジストリ変数へのアクセス|  
 |-----------|----------------------------------|  
 |`AllAccess`|作成、読み取り、書き込み|  
 |`Create`|作成|  
@@ -46,6 +37,6 @@ ms.lasthandoff: 11/21/2017
 > [!IMPORTANT]
 >  Web アプリケーションからレジストリを読み取るとき、現在のユーザーの ID は Web アプリケーションに実装されている認証と偽装によって決まります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:Microsoft.VisualBasic.MyServices.RegistryProxy>  
  [レジストリからの読み取りとレジストリへの書き込み](../../../../visual-basic/developing-apps/programming/computer-resources/reading-from-and-writing-to-the-registry.md)

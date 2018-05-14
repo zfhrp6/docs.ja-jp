@@ -1,20 +1,13 @@
 ---
-title: "デリゲートの概要"
-description: "この概要トピックでは、基本的な概念を紹介し、デリゲートの言語上の設計目標について説明します。"
-keywords: .NET, .NET Core
-author: BillWagner
-ms.author: wiwagn
+title: デリゲートの概要
+description: この概要トピックでは、基本的な概念を紹介し、デリゲートの言語上の設計目標について説明します。
 ms.date: 06/20/2016
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.devlang: csharp
 ms.assetid: 59b61d77-84e5-457b-8da5-fb5f24ca6ed6
-ms.openlocfilehash: dd4c68fb4f960d0c2d5cbdc9e699650070cacaf1
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: d42d9d10aeaa153f12933fa3a59e58719f7741e7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="introduction-to-delegates"></a>デリゲートの概要
 

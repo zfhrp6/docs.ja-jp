@@ -1,24 +1,12 @@
 ---
-title: "完全なコードの一覧"
-ms.custom: 
+title: 完全なコードの一覧
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: e4edbe7f-8503-42cb-a8a1-4f49c78e5e00
-caps.latest.revision: "6"
-author: wadepickett
-ms.author: wpickett
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 980ab21355e9f9fb130a7d17453861ae1daf626c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 837fe8e349eb2ac103c55079925a34924e5bb4c3
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="full-code-listings"></a>完全なコードの一覧
 このトピックには、[操作と慣性](../../../docs/framework/common-client-technologies/manipulations-and-inertia.md)プロセッサを使用するアプリケーション用の全コードが含まれています。  
