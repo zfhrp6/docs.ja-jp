@@ -1,12 +1,6 @@
 ---
 title: Property Statement
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vb.PropertySet
 - vb.Property
@@ -17,19 +11,16 @@ helpviewer_keywords:
 - property procedures [Visual Basic], Property statements
 - Property keyword [Visual Basic]
 ms.assetid: 3155edaf-8ebd-45c6-9cef-11d5d2dc8d38
-caps.latest.revision: 41
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 558b62dd8c676532355ef12134ad8cb803b70796
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: 70738ecf739b8e50078903dc108fdc8f97d29636
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="property-statement"></a><span data-ttu-id="59f2f-102">Property Statement</span><span class="sxs-lookup"><span data-stu-id="59f2f-102">Property Statement</span></span>
-<span data-ttu-id="59f2f-103">プロパティ、および格納およびプロパティの値を取得するためのプロパティ プロシージャの名前を宣言します。</span><span class="sxs-lookup"><span data-stu-id="59f2f-103">Declares the name of a property, and the property procedures used to store and retrieve the value of the property.</span></span>  
+# <a name="property-statement"></a><span data-ttu-id="948c1-102">Property Statement</span><span class="sxs-lookup"><span data-stu-id="948c1-102">Property Statement</span></span>
+<span data-ttu-id="948c1-103">プロパティ、および格納およびプロパティの値を取得するためのプロパティ プロシージャの名前を宣言します。</span><span class="sxs-lookup"><span data-stu-id="948c1-103">Declares the name of a property, and the property procedures used to store and retrieve the value of the property.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="59f2f-104">構文</span><span class="sxs-lookup"><span data-stu-id="59f2f-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="948c1-104">構文</span><span class="sxs-lookup"><span data-stu-id="948c1-104">Syntax</span></span>  
   
 ```vb  
 [ <attributelist> ] [ Default ] [ accessmodifier ]   
@@ -48,45 +39,45 @@ End Property
 Property name ( [ parameterlist ] ) [ As returntype ] [ Implements implementslist ]  
 ```  
   
-## <a name="parts"></a><span data-ttu-id="59f2f-105">指定項目</span><span class="sxs-lookup"><span data-stu-id="59f2f-105">Parts</span></span>  
+## <a name="parts"></a><span data-ttu-id="948c1-105">指定項目</span><span class="sxs-lookup"><span data-stu-id="948c1-105">Parts</span></span>  
   
 -   `attributelist`  
   
-     <span data-ttu-id="59f2f-106">任意。</span><span class="sxs-lookup"><span data-stu-id="59f2f-106">Optional.</span></span> <span data-ttu-id="59f2f-107">このプロパティに適用される属性の一覧または`Get`または`Set`プロシージャです。</span><span class="sxs-lookup"><span data-stu-id="59f2f-107">List of attributes that apply to this property or `Get` or `Set` procedure.</span></span> <span data-ttu-id="59f2f-108">参照してください[属性一覧](../../../visual-basic/language-reference/statements/attribute-list.md)です。</span><span class="sxs-lookup"><span data-stu-id="59f2f-108">See [Attribute List](../../../visual-basic/language-reference/statements/attribute-list.md).</span></span>  
+     <span data-ttu-id="948c1-106">任意。</span><span class="sxs-lookup"><span data-stu-id="948c1-106">Optional.</span></span> <span data-ttu-id="948c1-107">このプロパティに適用される属性の一覧または`Get`または`Set`プロシージャです。</span><span class="sxs-lookup"><span data-stu-id="948c1-107">List of attributes that apply to this property or `Get` or `Set` procedure.</span></span> <span data-ttu-id="948c1-108">参照してください[属性一覧](../../../visual-basic/language-reference/statements/attribute-list.md)です。</span><span class="sxs-lookup"><span data-stu-id="948c1-108">See [Attribute List](../../../visual-basic/language-reference/statements/attribute-list.md).</span></span>  
   
 -   `Default`  
   
-     <span data-ttu-id="59f2f-109">任意。</span><span class="sxs-lookup"><span data-stu-id="59f2f-109">Optional.</span></span> <span data-ttu-id="59f2f-110">このプロパティは、既定のプロパティをクラスまたは構造体が定義されていることを指定します。</span><span class="sxs-lookup"><span data-stu-id="59f2f-110">Specifies that this property is the default property for the class or structure on which it is defined.</span></span> <span data-ttu-id="59f2f-111">既定のプロパティのパラメーターを受け入れる必要がありますとに設定してプロパティ名を指定しなくても取得します。</span><span class="sxs-lookup"><span data-stu-id="59f2f-111">Default properties must accept parameters and can be set and retrieved without specifying the property name.</span></span> <span data-ttu-id="59f2f-112">としてプロパティを宣言する場合`Default`、使用することはできません`Private`プロパティまたはプロパティ プロシージャのいずれか。</span><span class="sxs-lookup"><span data-stu-id="59f2f-112">If you declare the property as `Default`, you cannot use `Private` on the property or on either of its property procedures.</span></span>  
+     <span data-ttu-id="948c1-109">任意。</span><span class="sxs-lookup"><span data-stu-id="948c1-109">Optional.</span></span> <span data-ttu-id="948c1-110">このプロパティは、既定のプロパティをクラスまたは構造体が定義されていることを指定します。</span><span class="sxs-lookup"><span data-stu-id="948c1-110">Specifies that this property is the default property for the class or structure on which it is defined.</span></span> <span data-ttu-id="948c1-111">既定のプロパティのパラメーターを受け入れる必要がありますとに設定してプロパティ名を指定しなくても取得します。</span><span class="sxs-lookup"><span data-stu-id="948c1-111">Default properties must accept parameters and can be set and retrieved without specifying the property name.</span></span> <span data-ttu-id="948c1-112">としてプロパティを宣言する場合`Default`、使用することはできません`Private`プロパティまたはプロパティ プロシージャのいずれか。</span><span class="sxs-lookup"><span data-stu-id="948c1-112">If you declare the property as `Default`, you cannot use `Private` on the property or on either of its property procedures.</span></span>  
   
 -   `accessmodifier`  
   
-     <span data-ttu-id="59f2f-113">省略可能な`Property`ステートメントおよび最大で 1 つの`Get`と`Set`ステートメントです。</span><span class="sxs-lookup"><span data-stu-id="59f2f-113">Optional on the `Property` statement and on at most one of the `Get` and `Set` statements.</span></span> <span data-ttu-id="59f2f-114">次のいずれかの値を指定します。</span><span class="sxs-lookup"><span data-stu-id="59f2f-114">Can be one of the following:</span></span>  
+     <span data-ttu-id="948c1-113">省略可能な`Property`ステートメントおよび最大で 1 つの`Get`と`Set`ステートメントです。</span><span class="sxs-lookup"><span data-stu-id="948c1-113">Optional on the `Property` statement and on at most one of the `Get` and `Set` statements.</span></span> <span data-ttu-id="948c1-114">次のいずれかの値を指定します。</span><span class="sxs-lookup"><span data-stu-id="948c1-114">Can be one of the following:</span></span>  
   
-    -   [<span data-ttu-id="59f2f-115">Public</span><span class="sxs-lookup"><span data-stu-id="59f2f-115">Public</span></span>](../../../visual-basic/language-reference/modifiers/public.md)  
+    -   [<span data-ttu-id="948c1-115">Public</span><span class="sxs-lookup"><span data-stu-id="948c1-115">Public</span></span>](../../../visual-basic/language-reference/modifiers/public.md)  
   
-    -   [<span data-ttu-id="59f2f-116">Protected</span><span class="sxs-lookup"><span data-stu-id="59f2f-116">Protected</span></span>](../../../visual-basic/language-reference/modifiers/protected.md)  
+    -   [<span data-ttu-id="948c1-116">Protected</span><span class="sxs-lookup"><span data-stu-id="948c1-116">Protected</span></span>](../../../visual-basic/language-reference/modifiers/protected.md)  
   
-    -   [<span data-ttu-id="59f2f-117">Friend</span><span class="sxs-lookup"><span data-stu-id="59f2f-117">Friend</span></span>](../../../visual-basic/language-reference/modifiers/friend.md)  
+    -   [<span data-ttu-id="948c1-117">Friend</span><span class="sxs-lookup"><span data-stu-id="948c1-117">Friend</span></span>](../../../visual-basic/language-reference/modifiers/friend.md)  
   
-    -   [<span data-ttu-id="59f2f-118">Private</span><span class="sxs-lookup"><span data-stu-id="59f2f-118">Private</span></span>](../../../visual-basic/language-reference/modifiers/private.md)  
+    -   [<span data-ttu-id="948c1-118">Private</span><span class="sxs-lookup"><span data-stu-id="948c1-118">Private</span></span>](../../../visual-basic/language-reference/modifiers/private.md)  
   
     -   `Protected Friend`  
   
-     <span data-ttu-id="59f2f-119">参照してください[Visual Basic でのレベルのアクセス](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)です。</span><span class="sxs-lookup"><span data-stu-id="59f2f-119">See [Access levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).</span></span>  
+     <span data-ttu-id="948c1-119">参照してください[Visual Basic でのレベルのアクセス](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)です。</span><span class="sxs-lookup"><span data-stu-id="948c1-119">See [Access levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).</span></span>  
   
 -   `propertymodifiers`  
   
-     <span data-ttu-id="59f2f-120">任意。</span><span class="sxs-lookup"><span data-stu-id="59f2f-120">Optional.</span></span> <span data-ttu-id="59f2f-121">次のいずれかの値を指定します。</span><span class="sxs-lookup"><span data-stu-id="59f2f-121">Can be one of the following:</span></span>  
+     <span data-ttu-id="948c1-120">任意。</span><span class="sxs-lookup"><span data-stu-id="948c1-120">Optional.</span></span> <span data-ttu-id="948c1-121">次のいずれかの値を指定します。</span><span class="sxs-lookup"><span data-stu-id="948c1-121">Can be one of the following:</span></span>  
   
-    -   [<span data-ttu-id="59f2f-122">オーバーロード</span><span class="sxs-lookup"><span data-stu-id="59f2f-122">Overloads</span></span>](../../../visual-basic/language-reference/modifiers/overloads.md)  
+    -   [<span data-ttu-id="948c1-122">オーバーロード</span><span class="sxs-lookup"><span data-stu-id="948c1-122">Overloads</span></span>](../../../visual-basic/language-reference/modifiers/overloads.md)  
   
-    -   [<span data-ttu-id="59f2f-123">Overrides</span><span class="sxs-lookup"><span data-stu-id="59f2f-123">Overrides</span></span>](../../../visual-basic/language-reference/modifiers/overrides.md)  
+    -   [<span data-ttu-id="948c1-123">Overrides</span><span class="sxs-lookup"><span data-stu-id="948c1-123">Overrides</span></span>](../../../visual-basic/language-reference/modifiers/overrides.md)  
   
-    -   [<span data-ttu-id="59f2f-124">Overridable</span><span class="sxs-lookup"><span data-stu-id="59f2f-124">Overridable</span></span>](../../../visual-basic/language-reference/modifiers/overridable.md)  
+    -   [<span data-ttu-id="948c1-124">Overridable</span><span class="sxs-lookup"><span data-stu-id="948c1-124">Overridable</span></span>](../../../visual-basic/language-reference/modifiers/overridable.md)  
   
-    -   [<span data-ttu-id="59f2f-125">NotOverridable</span><span class="sxs-lookup"><span data-stu-id="59f2f-125">NotOverridable</span></span>](../../../visual-basic/language-reference/modifiers/notoverridable.md)  
+    -   [<span data-ttu-id="948c1-125">NotOverridable</span><span class="sxs-lookup"><span data-stu-id="948c1-125">NotOverridable</span></span>](../../../visual-basic/language-reference/modifiers/notoverridable.md)  
   
-    -   [<span data-ttu-id="59f2f-126">MustOverride</span><span class="sxs-lookup"><span data-stu-id="59f2f-126">MustOverride</span></span>](../../../visual-basic/language-reference/modifiers/mustoverride.md)  
+    -   [<span data-ttu-id="948c1-126">MustOverride</span><span class="sxs-lookup"><span data-stu-id="948c1-126">MustOverride</span></span>](../../../visual-basic/language-reference/modifiers/mustoverride.md)  
   
     -   `MustOverride Overrides`  
   
@@ -94,129 +85,129 @@ Property name ( [ parameterlist ] ) [ As returntype ] [ Implements implementslis
   
 -   `Shared`  
   
-     <span data-ttu-id="59f2f-127">任意。</span><span class="sxs-lookup"><span data-stu-id="59f2f-127">Optional.</span></span> <span data-ttu-id="59f2f-128">参照してください[共有](../../../visual-basic/language-reference/modifiers/shared.md)です。</span><span class="sxs-lookup"><span data-stu-id="59f2f-128">See [Shared](../../../visual-basic/language-reference/modifiers/shared.md).</span></span>  
+     <span data-ttu-id="948c1-127">任意。</span><span class="sxs-lookup"><span data-stu-id="948c1-127">Optional.</span></span> <span data-ttu-id="948c1-128">参照してください[共有](../../../visual-basic/language-reference/modifiers/shared.md)です。</span><span class="sxs-lookup"><span data-stu-id="948c1-128">See [Shared](../../../visual-basic/language-reference/modifiers/shared.md).</span></span>  
   
 -   `Shadows`  
   
-     <span data-ttu-id="59f2f-129">任意。</span><span class="sxs-lookup"><span data-stu-id="59f2f-129">Optional.</span></span> <span data-ttu-id="59f2f-130">参照してください[Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)です。</span><span class="sxs-lookup"><span data-stu-id="59f2f-130">See [Shadows](../../../visual-basic/language-reference/modifiers/shadows.md).</span></span>  
+     <span data-ttu-id="948c1-129">任意。</span><span class="sxs-lookup"><span data-stu-id="948c1-129">Optional.</span></span> <span data-ttu-id="948c1-130">参照してください[Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)です。</span><span class="sxs-lookup"><span data-stu-id="948c1-130">See [Shadows](../../../visual-basic/language-reference/modifiers/shadows.md).</span></span>  
   
 -   `ReadOnly`  
   
-     <span data-ttu-id="59f2f-131">任意。</span><span class="sxs-lookup"><span data-stu-id="59f2f-131">Optional.</span></span> <span data-ttu-id="59f2f-132">参照してください[ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md)です。</span><span class="sxs-lookup"><span data-stu-id="59f2f-132">See [ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md).</span></span>  
+     <span data-ttu-id="948c1-131">任意。</span><span class="sxs-lookup"><span data-stu-id="948c1-131">Optional.</span></span> <span data-ttu-id="948c1-132">参照してください[ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md)です。</span><span class="sxs-lookup"><span data-stu-id="948c1-132">See [ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md).</span></span>  
   
 -   `WriteOnly`  
   
-     <span data-ttu-id="59f2f-133">任意。</span><span class="sxs-lookup"><span data-stu-id="59f2f-133">Optional.</span></span> <span data-ttu-id="59f2f-134">参照してください[WriteOnly](../../../visual-basic/language-reference/modifiers/writeonly.md)です。</span><span class="sxs-lookup"><span data-stu-id="59f2f-134">See [WriteOnly](../../../visual-basic/language-reference/modifiers/writeonly.md).</span></span>  
+     <span data-ttu-id="948c1-133">任意。</span><span class="sxs-lookup"><span data-stu-id="948c1-133">Optional.</span></span> <span data-ttu-id="948c1-134">参照してください[WriteOnly](../../../visual-basic/language-reference/modifiers/writeonly.md)です。</span><span class="sxs-lookup"><span data-stu-id="948c1-134">See [WriteOnly](../../../visual-basic/language-reference/modifiers/writeonly.md).</span></span>  
   
 -   `Iterator`  
   
-     <span data-ttu-id="59f2f-135">任意。</span><span class="sxs-lookup"><span data-stu-id="59f2f-135">Optional.</span></span> <span data-ttu-id="59f2f-136">参照してください[反復子](../../../visual-basic/language-reference/modifiers/iterator.md)です。</span><span class="sxs-lookup"><span data-stu-id="59f2f-136">See [Iterator](../../../visual-basic/language-reference/modifiers/iterator.md).</span></span>  
+     <span data-ttu-id="948c1-135">任意。</span><span class="sxs-lookup"><span data-stu-id="948c1-135">Optional.</span></span> <span data-ttu-id="948c1-136">参照してください[反復子](../../../visual-basic/language-reference/modifiers/iterator.md)です。</span><span class="sxs-lookup"><span data-stu-id="948c1-136">See [Iterator](../../../visual-basic/language-reference/modifiers/iterator.md).</span></span>  
   
 -   `name`  
   
-     <span data-ttu-id="59f2f-137">必須。</span><span class="sxs-lookup"><span data-stu-id="59f2f-137">Required.</span></span> <span data-ttu-id="59f2f-138">プロパティ名。</span><span class="sxs-lookup"><span data-stu-id="59f2f-138">Name of the property.</span></span> <span data-ttu-id="59f2f-139">参照してください[宣言された要素の名前](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)です。</span><span class="sxs-lookup"><span data-stu-id="59f2f-139">See [Declared Element Names](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).</span></span>  
+     <span data-ttu-id="948c1-137">必須。</span><span class="sxs-lookup"><span data-stu-id="948c1-137">Required.</span></span> <span data-ttu-id="948c1-138">プロパティ名。</span><span class="sxs-lookup"><span data-stu-id="948c1-138">Name of the property.</span></span> <span data-ttu-id="948c1-139">参照してください[宣言された要素の名前](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)です。</span><span class="sxs-lookup"><span data-stu-id="948c1-139">See [Declared Element Names](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).</span></span>  
   
 -   `parameterlist`  
   
-     <span data-ttu-id="59f2f-140">任意。</span><span class="sxs-lookup"><span data-stu-id="59f2f-140">Optional.</span></span> <span data-ttu-id="59f2f-141">このプロパティのパラメーターとの考えられる追加のパラメーターを表すローカル変数名の一覧、`Set`プロシージャです。</span><span class="sxs-lookup"><span data-stu-id="59f2f-141">List of local variable names representing the parameters of this property, and possible additional parameters of the `Set` procedure.</span></span> <span data-ttu-id="59f2f-142">参照してください[パラメーター リスト](../../../visual-basic/language-reference/statements/parameter-list.md)です。</span><span class="sxs-lookup"><span data-stu-id="59f2f-142">See [Parameter List](../../../visual-basic/language-reference/statements/parameter-list.md).</span></span>  
+     <span data-ttu-id="948c1-140">任意。</span><span class="sxs-lookup"><span data-stu-id="948c1-140">Optional.</span></span> <span data-ttu-id="948c1-141">このプロパティのパラメーターとの考えられる追加のパラメーターを表すローカル変数名の一覧、`Set`プロシージャです。</span><span class="sxs-lookup"><span data-stu-id="948c1-141">List of local variable names representing the parameters of this property, and possible additional parameters of the `Set` procedure.</span></span> <span data-ttu-id="948c1-142">参照してください[パラメーター リスト](../../../visual-basic/language-reference/statements/parameter-list.md)です。</span><span class="sxs-lookup"><span data-stu-id="948c1-142">See [Parameter List](../../../visual-basic/language-reference/statements/parameter-list.md).</span></span>  
   
 -   `returntype`  
   
-     <span data-ttu-id="59f2f-143">場合は必須`Option``Strict`は`On`します。</span><span class="sxs-lookup"><span data-stu-id="59f2f-143">Required if `Option``Strict` is `On`.</span></span> <span data-ttu-id="59f2f-144">このプロパティによって返される値のデータ型。</span><span class="sxs-lookup"><span data-stu-id="59f2f-144">Data type of the value returned by this property.</span></span>  
+     <span data-ttu-id="948c1-143">場合は必須`Option``Strict`は`On`します。</span><span class="sxs-lookup"><span data-stu-id="948c1-143">Required if `Option``Strict` is `On`.</span></span> <span data-ttu-id="948c1-144">このプロパティによって返される値のデータ型。</span><span class="sxs-lookup"><span data-stu-id="948c1-144">Data type of the value returned by this property.</span></span>  
   
 -   `Implements`  
   
-     <span data-ttu-id="59f2f-145">任意。</span><span class="sxs-lookup"><span data-stu-id="59f2f-145">Optional.</span></span> <span data-ttu-id="59f2f-146">このプロパティには、このプロパティの包含クラスまたは構造体によって実装されるインターフェイスで定義されている 1 つずつ、1 つまたは複数のプロパティが実装されていることを示します。</span><span class="sxs-lookup"><span data-stu-id="59f2f-146">Indicates that this property implements one or more properties, each one defined in an interface implemented by this property's containing class or structure.</span></span> <span data-ttu-id="59f2f-147">参照してください[ステートメントを実装します](../../../visual-basic/language-reference/statements/implements-statement.md)です。</span><span class="sxs-lookup"><span data-stu-id="59f2f-147">See [Implements Statement](../../../visual-basic/language-reference/statements/implements-statement.md).</span></span>  
+     <span data-ttu-id="948c1-145">任意。</span><span class="sxs-lookup"><span data-stu-id="948c1-145">Optional.</span></span> <span data-ttu-id="948c1-146">このプロパティには、このプロパティの包含クラスまたは構造体によって実装されるインターフェイスで定義されている 1 つずつ、1 つまたは複数のプロパティが実装されていることを示します。</span><span class="sxs-lookup"><span data-stu-id="948c1-146">Indicates that this property implements one or more properties, each one defined in an interface implemented by this property's containing class or structure.</span></span> <span data-ttu-id="948c1-147">参照してください[ステートメントを実装します](../../../visual-basic/language-reference/statements/implements-statement.md)です。</span><span class="sxs-lookup"><span data-stu-id="948c1-147">See [Implements Statement](../../../visual-basic/language-reference/statements/implements-statement.md).</span></span>  
   
 -   `implementslist`  
   
-     <span data-ttu-id="59f2f-148">`Implements` を指定する場合は、必ず指定します。</span><span class="sxs-lookup"><span data-stu-id="59f2f-148">Required if `Implements` is supplied.</span></span> <span data-ttu-id="59f2f-149">実装されているプロパティの一覧です。</span><span class="sxs-lookup"><span data-stu-id="59f2f-149">List of properties being implemented.</span></span>  
+     <span data-ttu-id="948c1-148">`Implements` を指定する場合は、必ず指定します。</span><span class="sxs-lookup"><span data-stu-id="948c1-148">Required if `Implements` is supplied.</span></span> <span data-ttu-id="948c1-149">実装されているプロパティの一覧です。</span><span class="sxs-lookup"><span data-stu-id="948c1-149">List of properties being implemented.</span></span>  
   
      `implementedproperty [ , implementedproperty ... ]`  
   
-     <span data-ttu-id="59f2f-150">`implementedproperty` の構文と指定項目は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="59f2f-150">Each `implementedproperty` has the following syntax and parts:</span></span>  
+     <span data-ttu-id="948c1-150">`implementedproperty` の構文と指定項目は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="948c1-150">Each `implementedproperty` has the following syntax and parts:</span></span>  
   
      `interface.definedname`  
   
-    |<span data-ttu-id="59f2f-151">パーツ</span><span class="sxs-lookup"><span data-stu-id="59f2f-151">Part</span></span>|<span data-ttu-id="59f2f-152">説明</span><span class="sxs-lookup"><span data-stu-id="59f2f-152">Description</span></span>|  
+    |<span data-ttu-id="948c1-151">パーツ</span><span class="sxs-lookup"><span data-stu-id="948c1-151">Part</span></span>|<span data-ttu-id="948c1-152">説明</span><span class="sxs-lookup"><span data-stu-id="948c1-152">Description</span></span>|  
     |---|---|  
-    |`interface`|<span data-ttu-id="59f2f-153">必須。</span><span class="sxs-lookup"><span data-stu-id="59f2f-153">Required.</span></span> <span data-ttu-id="59f2f-154">このプロパティによって実装されるインターフェイスの名前には、クラスまたは構造体を含むのです。</span><span class="sxs-lookup"><span data-stu-id="59f2f-154">Name of an interface implemented by this property's containing class or structure.</span></span>|  
-    |`definedname`|<span data-ttu-id="59f2f-155">必須。</span><span class="sxs-lookup"><span data-stu-id="59f2f-155">Required.</span></span> <span data-ttu-id="59f2f-156">名前のプロパティを定義する`interface`です。</span><span class="sxs-lookup"><span data-stu-id="59f2f-156">Name by which the property is defined in `interface`.</span></span>|  
+    |`interface`|<span data-ttu-id="948c1-153">必須。</span><span class="sxs-lookup"><span data-stu-id="948c1-153">Required.</span></span> <span data-ttu-id="948c1-154">このプロパティによって実装されるインターフェイスの名前には、クラスまたは構造体を含むのです。</span><span class="sxs-lookup"><span data-stu-id="948c1-154">Name of an interface implemented by this property's containing class or structure.</span></span>|  
+    |`definedname`|<span data-ttu-id="948c1-155">必須。</span><span class="sxs-lookup"><span data-stu-id="948c1-155">Required.</span></span> <span data-ttu-id="948c1-156">名前のプロパティを定義する`interface`です。</span><span class="sxs-lookup"><span data-stu-id="948c1-156">Name by which the property is defined in `interface`.</span></span>|  
   
 -   `Get`  
   
-     <span data-ttu-id="59f2f-157">任意。</span><span class="sxs-lookup"><span data-stu-id="59f2f-157">Optional.</span></span> <span data-ttu-id="59f2f-158">プロパティがマークされているかどうかに必要な`WriteOnly`します。</span><span class="sxs-lookup"><span data-stu-id="59f2f-158">Required if the property is marked `WriteOnly`.</span></span> <span data-ttu-id="59f2f-159">開始、`Get`プロパティ プロシージャをプロパティの値を返すために使用します。</span><span class="sxs-lookup"><span data-stu-id="59f2f-159">Starts a `Get` property procedure that is used to return the value of the property.</span></span>  
+     <span data-ttu-id="948c1-157">任意。</span><span class="sxs-lookup"><span data-stu-id="948c1-157">Optional.</span></span> <span data-ttu-id="948c1-158">プロパティがマークされているかどうかに必要な`WriteOnly`します。</span><span class="sxs-lookup"><span data-stu-id="948c1-158">Required if the property is marked `WriteOnly`.</span></span> <span data-ttu-id="948c1-159">開始、`Get`プロパティ プロシージャをプロパティの値を返すために使用します。</span><span class="sxs-lookup"><span data-stu-id="948c1-159">Starts a `Get` property procedure that is used to return the value of the property.</span></span>  
   
 -   `statements`  
   
-     <span data-ttu-id="59f2f-160">任意。</span><span class="sxs-lookup"><span data-stu-id="59f2f-160">Optional.</span></span> <span data-ttu-id="59f2f-161">内で実行するステートメントのブロック、`Get`または`Set`プロシージャです。</span><span class="sxs-lookup"><span data-stu-id="59f2f-161">Block of statements to run within the `Get` or `Set` procedure.</span></span>  
+     <span data-ttu-id="948c1-160">任意。</span><span class="sxs-lookup"><span data-stu-id="948c1-160">Optional.</span></span> <span data-ttu-id="948c1-161">内で実行するステートメントのブロック、`Get`または`Set`プロシージャです。</span><span class="sxs-lookup"><span data-stu-id="948c1-161">Block of statements to run within the `Get` or `Set` procedure.</span></span>  
   
 -   `End Get`  
   
-     <span data-ttu-id="59f2f-162">終了、`Get`プロパティ プロシージャです。</span><span class="sxs-lookup"><span data-stu-id="59f2f-162">Terminates the `Get` property procedure.</span></span>  
+     <span data-ttu-id="948c1-162">終了、`Get`プロパティ プロシージャです。</span><span class="sxs-lookup"><span data-stu-id="948c1-162">Terminates the `Get` property procedure.</span></span>  
   
 -   `Set`  
   
-     <span data-ttu-id="59f2f-163">任意。</span><span class="sxs-lookup"><span data-stu-id="59f2f-163">Optional.</span></span> <span data-ttu-id="59f2f-164">プロパティがマークされているかどうかに必要な`ReadOnly`します。</span><span class="sxs-lookup"><span data-stu-id="59f2f-164">Required if the property is marked `ReadOnly`.</span></span> <span data-ttu-id="59f2f-165">開始、`Set`プロパティ プロシージャ、プロパティの値を格納するために使用します。</span><span class="sxs-lookup"><span data-stu-id="59f2f-165">Starts a `Set` property procedure that is used to store the value of the property.</span></span>  
+     <span data-ttu-id="948c1-163">任意。</span><span class="sxs-lookup"><span data-stu-id="948c1-163">Optional.</span></span> <span data-ttu-id="948c1-164">プロパティがマークされているかどうかに必要な`ReadOnly`します。</span><span class="sxs-lookup"><span data-stu-id="948c1-164">Required if the property is marked `ReadOnly`.</span></span> <span data-ttu-id="948c1-165">開始、`Set`プロパティ プロシージャ、プロパティの値を格納するために使用します。</span><span class="sxs-lookup"><span data-stu-id="948c1-165">Starts a `Set` property procedure that is used to store the value of the property.</span></span>  
   
 -   `End Set`  
   
-     <span data-ttu-id="59f2f-166">終了、`Set`プロパティ プロシージャです。</span><span class="sxs-lookup"><span data-stu-id="59f2f-166">Terminates the `Set` property procedure.</span></span>  
+     <span data-ttu-id="948c1-166">終了、`Set`プロパティ プロシージャです。</span><span class="sxs-lookup"><span data-stu-id="948c1-166">Terminates the `Set` property procedure.</span></span>  
   
 -   `End Property`  
   
-     <span data-ttu-id="59f2f-167">このプロパティの定義を終了します。</span><span class="sxs-lookup"><span data-stu-id="59f2f-167">Terminates the definition of this property.</span></span>  
+     <span data-ttu-id="948c1-167">このプロパティの定義を終了します。</span><span class="sxs-lookup"><span data-stu-id="948c1-167">Terminates the definition of this property.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="59f2f-168">コメント</span><span class="sxs-lookup"><span data-stu-id="59f2f-168">Remarks</span></span>  
- <span data-ttu-id="59f2f-169">`Property`ステートメントには、プロパティの宣言が導入されています。</span><span class="sxs-lookup"><span data-stu-id="59f2f-169">The `Property` statement introduces the declaration of a property.</span></span> <span data-ttu-id="59f2f-170">プロパティを持つことができます、 `Get` (読み取り専用)、プロシージャ、`Set`プロシージャ (書き込み専用)、または両方 (読み取り/書き込み)。</span><span class="sxs-lookup"><span data-stu-id="59f2f-170">A property can have a `Get` procedure (read only), a `Set` procedure (write only), or both (read-write).</span></span> <span data-ttu-id="59f2f-171">省略することができます、`Get`と`Set`自動実装プロパティを使用する場合、そのプロシージャです。</span><span class="sxs-lookup"><span data-stu-id="59f2f-171">You can omit the `Get` and `Set` procedure when using an auto-implemented property.</span></span> <span data-ttu-id="59f2f-172">詳細については、「[自動実装プロパティ](../../../visual-basic/programming-guide/language-features/procedures/auto-implemented-properties.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="59f2f-172">For more information, see [Auto-Implemented Properties](../../../visual-basic/programming-guide/language-features/procedures/auto-implemented-properties.md).</span></span>  
+## <a name="remarks"></a><span data-ttu-id="948c1-168">コメント</span><span class="sxs-lookup"><span data-stu-id="948c1-168">Remarks</span></span>  
+ <span data-ttu-id="948c1-169">`Property`ステートメントには、プロパティの宣言が導入されています。</span><span class="sxs-lookup"><span data-stu-id="948c1-169">The `Property` statement introduces the declaration of a property.</span></span> <span data-ttu-id="948c1-170">プロパティを持つことができます、 `Get` (読み取り専用)、プロシージャ、`Set`プロシージャ (書き込み専用)、または両方 (読み取り/書き込み)。</span><span class="sxs-lookup"><span data-stu-id="948c1-170">A property can have a `Get` procedure (read only), a `Set` procedure (write only), or both (read-write).</span></span> <span data-ttu-id="948c1-171">省略することができます、`Get`と`Set`自動実装プロパティを使用する場合、そのプロシージャです。</span><span class="sxs-lookup"><span data-stu-id="948c1-171">You can omit the `Get` and `Set` procedure when using an auto-implemented property.</span></span> <span data-ttu-id="948c1-172">詳細については、「[自動実装プロパティ](../../../visual-basic/programming-guide/language-features/procedures/auto-implemented-properties.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="948c1-172">For more information, see [Auto-Implemented Properties](../../../visual-basic/programming-guide/language-features/procedures/auto-implemented-properties.md).</span></span>  
   
- <span data-ttu-id="59f2f-173">使用することができます`Property`クラス レベルでのみです。</span><span class="sxs-lookup"><span data-stu-id="59f2f-173">You can use `Property` only at class level.</span></span> <span data-ttu-id="59f2f-174">つまり、*宣言コンテキスト*プロパティは、クラス、構造体、モジュール、またはインターフェイスである必要があり、ソース ファイル、名前空間、プロシージャ、またはブロックすることはできません。</span><span class="sxs-lookup"><span data-stu-id="59f2f-174">This means the *declaration context* for a property must be a class, structure, module, or interface, and cannot be a source file, namespace, procedure, or block.</span></span> <span data-ttu-id="59f2f-175">詳細については、「[宣言コンテキストと既定のアクセス レベル](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="59f2f-175">For more information, see [Declaration Contexts and Default Access Levels](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md).</span></span>  
+ <span data-ttu-id="948c1-173">使用することができます`Property`クラス レベルでのみです。</span><span class="sxs-lookup"><span data-stu-id="948c1-173">You can use `Property` only at class level.</span></span> <span data-ttu-id="948c1-174">つまり、*宣言コンテキスト*プロパティは、クラス、構造体、モジュール、またはインターフェイスである必要があり、ソース ファイル、名前空間、プロシージャ、またはブロックすることはできません。</span><span class="sxs-lookup"><span data-stu-id="948c1-174">This means the *declaration context* for a property must be a class, structure, module, or interface, and cannot be a source file, namespace, procedure, or block.</span></span> <span data-ttu-id="948c1-175">詳細については、「[宣言コンテキストと既定のアクセス レベル](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="948c1-175">For more information, see [Declaration Contexts and Default Access Levels](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md).</span></span>  
   
- <span data-ttu-id="59f2f-176">既定では、プロパティは、パブリック アクセスを使用します。</span><span class="sxs-lookup"><span data-stu-id="59f2f-176">By default, properties use public access.</span></span> <span data-ttu-id="59f2f-177">アクセス修飾子を使って、このプロパティのアクセス レベルを調整することができます、`Property`ステートメント、および、必要に応じて調整できますより制限の厳しいアクセス レベルは、プロパティ プロシージャのいずれか。</span><span class="sxs-lookup"><span data-stu-id="59f2f-177">You can adjust a property's access level with an access modifier on the `Property` statement, and you can optionally adjust one of its property procedures to a more restrictive access level.</span></span>  
+ <span data-ttu-id="948c1-176">既定では、プロパティは、パブリック アクセスを使用します。</span><span class="sxs-lookup"><span data-stu-id="948c1-176">By default, properties use public access.</span></span> <span data-ttu-id="948c1-177">アクセス修飾子を使って、このプロパティのアクセス レベルを調整することができます、`Property`ステートメント、および、必要に応じて調整できますより制限の厳しいアクセス レベルは、プロパティ プロシージャのいずれか。</span><span class="sxs-lookup"><span data-stu-id="948c1-177">You can adjust a property's access level with an access modifier on the `Property` statement, and you can optionally adjust one of its property procedures to a more restrictive access level.</span></span>  
   
- <span data-ttu-id="59f2f-178">Visual Basic のパラメーターを渡す、`Set`プロパティの割り当て時にプロシージャです。</span><span class="sxs-lookup"><span data-stu-id="59f2f-178">Visual Basic passes a parameter to the `Set` procedure during property assignments.</span></span> <span data-ttu-id="59f2f-179">パラメーターを指定しない場合`Set`、統合開発環境 (IDE) という名前の暗黙のパラメーターを使用して`value`です。</span><span class="sxs-lookup"><span data-stu-id="59f2f-179">If you do not supply a parameter for `Set`, the integrated development environment (IDE) uses an implicit parameter named `value`.</span></span> <span data-ttu-id="59f2f-180">このパラメーターは、プロパティに割り当てられる値を保持します。</span><span class="sxs-lookup"><span data-stu-id="59f2f-180">This parameter holds the value to be assigned to the property.</span></span> <span data-ttu-id="59f2f-181">通常プライベート ローカル変数にこの値を格納して返すたびに、`Get`プロシージャが呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="59f2f-181">You typically store this value in a private local variable and return it whenever the `Get` procedure is called.</span></span>  
+ <span data-ttu-id="948c1-178">Visual Basic のパラメーターを渡す、`Set`プロパティの割り当て時にプロシージャです。</span><span class="sxs-lookup"><span data-stu-id="948c1-178">Visual Basic passes a parameter to the `Set` procedure during property assignments.</span></span> <span data-ttu-id="948c1-179">パラメーターを指定しない場合`Set`、統合開発環境 (IDE) という名前の暗黙のパラメーターを使用して`value`です。</span><span class="sxs-lookup"><span data-stu-id="948c1-179">If you do not supply a parameter for `Set`, the integrated development environment (IDE) uses an implicit parameter named `value`.</span></span> <span data-ttu-id="948c1-180">このパラメーターは、プロパティに割り当てられる値を保持します。</span><span class="sxs-lookup"><span data-stu-id="948c1-180">This parameter holds the value to be assigned to the property.</span></span> <span data-ttu-id="948c1-181">通常プライベート ローカル変数にこの値を格納して返すたびに、`Get`プロシージャが呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="948c1-181">You typically store this value in a private local variable and return it whenever the `Get` procedure is called.</span></span>  
   
-## <a name="rules"></a><span data-ttu-id="59f2f-182">ルール</span><span class="sxs-lookup"><span data-stu-id="59f2f-182">Rules</span></span>  
+## <a name="rules"></a><span data-ttu-id="948c1-182">ルール</span><span class="sxs-lookup"><span data-stu-id="948c1-182">Rules</span></span>  
   
--   <span data-ttu-id="59f2f-183">**混合アクセス レベル。**</span><span class="sxs-lookup"><span data-stu-id="59f2f-183">**Mixed Access Levels.**</span></span> <span data-ttu-id="59f2f-184">必要に応じていずれかの異なるアクセス レベルを指定することができます、読み取り/書き込みプロパティを定義する場合、`Get`または`Set`プロシージャが、両方は使用できません。</span><span class="sxs-lookup"><span data-stu-id="59f2f-184">If you are defining a read-write property, you can optionally specify a different access level for either the `Get` or the `Set` procedure, but not both.</span></span> <span data-ttu-id="59f2f-185">これを行うと、プロシージャのアクセス レベルがプロパティのアクセス レベルよりも制限する必要があります。</span><span class="sxs-lookup"><span data-stu-id="59f2f-185">If you do this, the procedure access level must be more restrictive than the property's access level.</span></span> <span data-ttu-id="59f2f-186">プロパティが宣言されている場合など、 `Friend`、宣言することができます、`Set`プロシージャ`Private`、ではなく`Public`です。</span><span class="sxs-lookup"><span data-stu-id="59f2f-186">For example, if the property is declared `Friend`, you can declare the `Set` procedure `Private`, but not `Public`.</span></span>  
+-   <span data-ttu-id="948c1-183">**混合アクセス レベル。**</span><span class="sxs-lookup"><span data-stu-id="948c1-183">**Mixed Access Levels.**</span></span> <span data-ttu-id="948c1-184">必要に応じていずれかの異なるアクセス レベルを指定することができます、読み取り/書き込みプロパティを定義する場合、`Get`または`Set`プロシージャが、両方は使用できません。</span><span class="sxs-lookup"><span data-stu-id="948c1-184">If you are defining a read-write property, you can optionally specify a different access level for either the `Get` or the `Set` procedure, but not both.</span></span> <span data-ttu-id="948c1-185">これを行うと、プロシージャのアクセス レベルがプロパティのアクセス レベルよりも制限する必要があります。</span><span class="sxs-lookup"><span data-stu-id="948c1-185">If you do this, the procedure access level must be more restrictive than the property's access level.</span></span> <span data-ttu-id="948c1-186">プロパティが宣言されている場合など、 `Friend`、宣言することができます、`Set`プロシージャ`Private`、ではなく`Public`です。</span><span class="sxs-lookup"><span data-stu-id="948c1-186">For example, if the property is declared `Friend`, you can declare the `Set` procedure `Private`, but not `Public`.</span></span>  
   
-     <span data-ttu-id="59f2f-187">定義する場合、`ReadOnly`または`WriteOnly`プロパティ、1 つのプロパティ プロシージャ (`Get`または`Set`、それぞれ) すべてのプロパティを表します。</span><span class="sxs-lookup"><span data-stu-id="59f2f-187">If you are defining a `ReadOnly` or `WriteOnly` property, the single property procedure (`Get` or `Set`, respectively) represents all of the property.</span></span> <span data-ttu-id="59f2f-188">プロパティの 2 つのアクセス レベルを設定することがあるために、このような手順は、異なるアクセス レベルを宣言できません。</span><span class="sxs-lookup"><span data-stu-id="59f2f-188">You cannot declare a different access level for such a procedure, because that would set two access levels for the property.</span></span>  
+     <span data-ttu-id="948c1-187">定義する場合、`ReadOnly`または`WriteOnly`プロパティ、1 つのプロパティ プロシージャ (`Get`または`Set`、それぞれ) すべてのプロパティを表します。</span><span class="sxs-lookup"><span data-stu-id="948c1-187">If you are defining a `ReadOnly` or `WriteOnly` property, the single property procedure (`Get` or `Set`, respectively) represents all of the property.</span></span> <span data-ttu-id="948c1-188">プロパティの 2 つのアクセス レベルを設定することがあるために、このような手順は、異なるアクセス レベルを宣言できません。</span><span class="sxs-lookup"><span data-stu-id="948c1-188">You cannot declare a different access level for such a procedure, because that would set two access levels for the property.</span></span>  
   
--   <span data-ttu-id="59f2f-189">**型を返します。**</span><span class="sxs-lookup"><span data-stu-id="59f2f-189">**Return Type.**</span></span> <span data-ttu-id="59f2f-190">`Property`ステートメントが返す値のデータ型を宣言できます。</span><span class="sxs-lookup"><span data-stu-id="59f2f-190">The `Property` statement can declare the data type of the value it returns.</span></span> <span data-ttu-id="59f2f-191">任意のデータ型または列挙型、構造体、クラス、またはインターフェイスの名前を指定することができます。</span><span class="sxs-lookup"><span data-stu-id="59f2f-191">You can specify any data type or the name of an enumeration, structure, class, or interface.</span></span>  
+-   <span data-ttu-id="948c1-189">**型を返します。**</span><span class="sxs-lookup"><span data-stu-id="948c1-189">**Return Type.**</span></span> <span data-ttu-id="948c1-190">`Property`ステートメントが返す値のデータ型を宣言できます。</span><span class="sxs-lookup"><span data-stu-id="948c1-190">The `Property` statement can declare the data type of the value it returns.</span></span> <span data-ttu-id="948c1-191">任意のデータ型または列挙型、構造体、クラス、またはインターフェイスの名前を指定することができます。</span><span class="sxs-lookup"><span data-stu-id="948c1-191">You can specify any data type or the name of an enumeration, structure, class, or interface.</span></span>  
   
-     <span data-ttu-id="59f2f-192">指定しない場合`returntype`、プロパティから返される`Object`です。</span><span class="sxs-lookup"><span data-stu-id="59f2f-192">If you do not specify `returntype`, the property returns `Object`.</span></span>  
+     <span data-ttu-id="948c1-192">指定しない場合`returntype`、プロパティから返される`Object`です。</span><span class="sxs-lookup"><span data-stu-id="948c1-192">If you do not specify `returntype`, the property returns `Object`.</span></span>  
   
--   <span data-ttu-id="59f2f-193">**実装です。**</span><span class="sxs-lookup"><span data-stu-id="59f2f-193">**Implementation.**</span></span> <span data-ttu-id="59f2f-194">このプロパティで使用する場合、`Implements`キーワードを含むクラスまたは構造体があります、`Implements`直後のステートメントの`Class`または`Structure`ステートメントです。</span><span class="sxs-lookup"><span data-stu-id="59f2f-194">If this property uses the `Implements` keyword, the containing class or structure must have an `Implements` statement immediately following its `Class` or `Structure` statement.</span></span> <span data-ttu-id="59f2f-195">`Implements`ステートメントで指定された各インターフェイスを含める必要があります`implementslist`です。</span><span class="sxs-lookup"><span data-stu-id="59f2f-195">The `Implements` statement must include each interface specified in `implementslist`.</span></span> <span data-ttu-id="59f2f-196">ただし、インターフェイスを定義する名前、 `Property` (で`definedname`) すると、このプロパティの名前と同じである必要はありません (で`name`)。</span><span class="sxs-lookup"><span data-stu-id="59f2f-196">However, the name by which an interface defines the `Property` (in `definedname`) does not have to be the same as the name of this property (in `name`).</span></span>  
+-   <span data-ttu-id="948c1-193">**実装です。**</span><span class="sxs-lookup"><span data-stu-id="948c1-193">**Implementation.**</span></span> <span data-ttu-id="948c1-194">このプロパティで使用する場合、`Implements`キーワードを含むクラスまたは構造体があります、`Implements`直後のステートメントの`Class`または`Structure`ステートメントです。</span><span class="sxs-lookup"><span data-stu-id="948c1-194">If this property uses the `Implements` keyword, the containing class or structure must have an `Implements` statement immediately following its `Class` or `Structure` statement.</span></span> <span data-ttu-id="948c1-195">`Implements`ステートメントで指定された各インターフェイスを含める必要があります`implementslist`です。</span><span class="sxs-lookup"><span data-stu-id="948c1-195">The `Implements` statement must include each interface specified in `implementslist`.</span></span> <span data-ttu-id="948c1-196">ただし、インターフェイスを定義する名前、 `Property` (で`definedname`) すると、このプロパティの名前と同じである必要はありません (で`name`)。</span><span class="sxs-lookup"><span data-stu-id="948c1-196">However, the name by which an interface defines the `Property` (in `definedname`) does not have to be the same as the name of this property (in `name`).</span></span>  
   
-## <a name="behavior"></a><span data-ttu-id="59f2f-197">動作</span><span class="sxs-lookup"><span data-stu-id="59f2f-197">Behavior</span></span>  
+## <a name="behavior"></a><span data-ttu-id="948c1-197">動作</span><span class="sxs-lookup"><span data-stu-id="948c1-197">Behavior</span></span>  
   
--   <span data-ttu-id="59f2f-198">**プロパティ プロシージャから取得します。**</span><span class="sxs-lookup"><span data-stu-id="59f2f-198">**Returning from a Property Procedure.**</span></span> <span data-ttu-id="59f2f-199">ときに、`Get`または`Set`起動したステートメントに続くステートメントと、プロシージャ呼び出し元のコードに戻ると、実行が継続します。</span><span class="sxs-lookup"><span data-stu-id="59f2f-199">When the `Get` or `Set` procedure returns to the calling code, execution continues with the statement following the statement that invoked it.</span></span>  
+-   <span data-ttu-id="948c1-198">**プロパティ プロシージャから取得します。**</span><span class="sxs-lookup"><span data-stu-id="948c1-198">**Returning from a Property Procedure.**</span></span> <span data-ttu-id="948c1-199">ときに、`Get`または`Set`起動したステートメントに続くステートメントと、プロシージャ呼び出し元のコードに戻ると、実行が継続します。</span><span class="sxs-lookup"><span data-stu-id="948c1-199">When the `Get` or `Set` procedure returns to the calling code, execution continues with the statement following the statement that invoked it.</span></span>  
   
-     <span data-ttu-id="59f2f-200">`Exit Property`と`Return`ステートメントでは、プロパティ プロシージャからすぐに終了します。</span><span class="sxs-lookup"><span data-stu-id="59f2f-200">The `Exit Property` and `Return` statements cause an immediate exit from a property procedure.</span></span> <span data-ttu-id="59f2f-201">任意の数の`Exit Property`と`Return`ステートメントがどこにでも表示、プロシージャとを混在させること`Exit Property`と`Return`ステートメントです。</span><span class="sxs-lookup"><span data-stu-id="59f2f-201">Any number of `Exit Property` and `Return` statements can appear anywhere in the procedure, and you can mix `Exit Property` and `Return` statements.</span></span>  
+     <span data-ttu-id="948c1-200">`Exit Property`と`Return`ステートメントでは、プロパティ プロシージャからすぐに終了します。</span><span class="sxs-lookup"><span data-stu-id="948c1-200">The `Exit Property` and `Return` statements cause an immediate exit from a property procedure.</span></span> <span data-ttu-id="948c1-201">任意の数の`Exit Property`と`Return`ステートメントがどこにでも表示、プロシージャとを混在させること`Exit Property`と`Return`ステートメントです。</span><span class="sxs-lookup"><span data-stu-id="948c1-201">Any number of `Exit Property` and `Return` statements can appear anywhere in the procedure, and you can mix `Exit Property` and `Return` statements.</span></span>  
   
--   <span data-ttu-id="59f2f-202">**値を返します。**</span><span class="sxs-lookup"><span data-stu-id="59f2f-202">**Return Value.**</span></span> <span data-ttu-id="59f2f-203">値を返す、`Get`プロシージャ、プロパティ名に値を割り当てるか、含めることで、`Return`ステートメントです。</span><span class="sxs-lookup"><span data-stu-id="59f2f-203">To return a value from a `Get` procedure, you can either assign the value to the property name or include it in a `Return` statement.</span></span> <span data-ttu-id="59f2f-204">次の例では、戻り値を割り当てて、プロパティ名に`quoteForTheDay`しを使用して、`Exit Property`を返すステートメントです。</span><span class="sxs-lookup"><span data-stu-id="59f2f-204">The following example assigns the return value to the property name `quoteForTheDay` and then uses the `Exit Property` statement to return.</span></span>  
+-   <span data-ttu-id="948c1-202">**値を返します。**</span><span class="sxs-lookup"><span data-stu-id="948c1-202">**Return Value.**</span></span> <span data-ttu-id="948c1-203">値を返す、`Get`プロシージャ、プロパティ名に値を割り当てるか、含めることで、`Return`ステートメントです。</span><span class="sxs-lookup"><span data-stu-id="948c1-203">To return a value from a `Get` procedure, you can either assign the value to the property name or include it in a `Return` statement.</span></span> <span data-ttu-id="948c1-204">次の例では、戻り値を割り当てて、プロパティ名に`quoteForTheDay`しを使用して、`Exit Property`を返すステートメントです。</span><span class="sxs-lookup"><span data-stu-id="948c1-204">The following example assigns the return value to the property name `quoteForTheDay` and then uses the `Exit Property` statement to return.</span></span>  
   
      [!code-vb[VbVbalrStatements#27](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/property-statement_1.vb)]  
   
      [!code-vb[VbVbalrStatements#28](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/property-statement_2.vb)]  
   
-     <span data-ttu-id="59f2f-205">使用する場合`Exit Property`、値を割り当てることがなく`name`、`Get`プロシージャは、プロパティのデータ型の既定値を返します。</span><span class="sxs-lookup"><span data-stu-id="59f2f-205">If you use `Exit Property` without assigning a value to `name`, the `Get` procedure returns the default value for the property's data type.</span></span>  
+     <span data-ttu-id="948c1-205">使用する場合`Exit Property`、値を割り当てることがなく`name`、`Get`プロシージャは、プロパティのデータ型の既定値を返します。</span><span class="sxs-lookup"><span data-stu-id="948c1-205">If you use `Exit Property` without assigning a value to `name`, the `Get` procedure returns the default value for the property's data type.</span></span>  
   
-     <span data-ttu-id="59f2f-206">`Return`同時ステートメントは、代入、`Get`プロシージャを返す値し、手順を終了します。</span><span class="sxs-lookup"><span data-stu-id="59f2f-206">The `Return` statement at the same time assigns the `Get` procedure return value and exits the procedure.</span></span> <span data-ttu-id="59f2f-207">この例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="59f2f-207">The following example shows this.</span></span>  
+     <span data-ttu-id="948c1-206">`Return`同時ステートメントは、代入、`Get`プロシージャを返す値し、手順を終了します。</span><span class="sxs-lookup"><span data-stu-id="948c1-206">The `Return` statement at the same time assigns the `Get` procedure return value and exits the procedure.</span></span> <span data-ttu-id="948c1-207">この例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="948c1-207">The following example shows this.</span></span>  
   
      [!code-vb[VbVbalrStatements#27](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/property-statement_1.vb)]  
   
      [!code-vb[VbVbalrStatements#29](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/property-statement_3.vb)]  
   
-## <a name="example"></a><span data-ttu-id="59f2f-208">例</span><span class="sxs-lookup"><span data-stu-id="59f2f-208">Example</span></span>  
- <span data-ttu-id="59f2f-209">次の例では、クラスのプロパティを宣言します。</span><span class="sxs-lookup"><span data-stu-id="59f2f-209">The following example declares a property in a class.</span></span>  
+## <a name="example"></a><span data-ttu-id="948c1-208">例</span><span class="sxs-lookup"><span data-stu-id="948c1-208">Example</span></span>  
+ <span data-ttu-id="948c1-209">次の例では、クラスのプロパティを宣言します。</span><span class="sxs-lookup"><span data-stu-id="948c1-209">The following example declares a property in a class.</span></span>  
   
  [!code-vb[VbVbalrStatements#51](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/property-statement_4.vb)]  
   
-## <a name="see-also"></a><span data-ttu-id="59f2f-210">関連項目</span><span class="sxs-lookup"><span data-stu-id="59f2f-210">See Also</span></span>  
- [<span data-ttu-id="59f2f-211">自動実装プロパティ</span><span class="sxs-lookup"><span data-stu-id="59f2f-211">Auto-Implemented Properties</span></span>](../../../visual-basic/programming-guide/language-features/procedures/auto-implemented-properties.md)  
- [<span data-ttu-id="59f2f-212">クラスとオブジェクト</span><span class="sxs-lookup"><span data-stu-id="59f2f-212">Objects and Classes</span></span>](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)  
- [<span data-ttu-id="59f2f-213">Get ステートメント</span><span class="sxs-lookup"><span data-stu-id="59f2f-213">Get Statement</span></span>](../../../visual-basic/language-reference/statements/get-statement.md)  
- [<span data-ttu-id="59f2f-214">Set ステートメント</span><span class="sxs-lookup"><span data-stu-id="59f2f-214">Set Statement</span></span>](../../../visual-basic/language-reference/statements/set-statement.md)  
- [<span data-ttu-id="59f2f-215">パラメーター リスト</span><span class="sxs-lookup"><span data-stu-id="59f2f-215">Parameter List</span></span>](../../../visual-basic/language-reference/statements/parameter-list.md)  
- [<span data-ttu-id="59f2f-216">既定値</span><span class="sxs-lookup"><span data-stu-id="59f2f-216">Default</span></span>](../../../visual-basic/language-reference/modifiers/default.md)
+## <a name="see-also"></a><span data-ttu-id="948c1-210">関連項目</span><span class="sxs-lookup"><span data-stu-id="948c1-210">See Also</span></span>  
+ [<span data-ttu-id="948c1-211">自動実装プロパティ</span><span class="sxs-lookup"><span data-stu-id="948c1-211">Auto-Implemented Properties</span></span>](../../../visual-basic/programming-guide/language-features/procedures/auto-implemented-properties.md)  
+ [<span data-ttu-id="948c1-212">クラスとオブジェクト</span><span class="sxs-lookup"><span data-stu-id="948c1-212">Objects and Classes</span></span>](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)  
+ [<span data-ttu-id="948c1-213">Get ステートメント</span><span class="sxs-lookup"><span data-stu-id="948c1-213">Get Statement</span></span>](../../../visual-basic/language-reference/statements/get-statement.md)  
+ [<span data-ttu-id="948c1-214">Set ステートメント</span><span class="sxs-lookup"><span data-stu-id="948c1-214">Set Statement</span></span>](../../../visual-basic/language-reference/statements/set-statement.md)  
+ [<span data-ttu-id="948c1-215">パラメーター リスト</span><span class="sxs-lookup"><span data-stu-id="948c1-215">Parameter List</span></span>](../../../visual-basic/language-reference/statements/parameter-list.md)  
+ [<span data-ttu-id="948c1-216">既定値</span><span class="sxs-lookup"><span data-stu-id="948c1-216">Default</span></span>](../../../visual-basic/language-reference/modifiers/default.md)

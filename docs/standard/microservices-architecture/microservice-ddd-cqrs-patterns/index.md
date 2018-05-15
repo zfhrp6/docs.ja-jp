@@ -1,90 +1,83 @@
 ---
 title: マイクロサービスで DDD と CQRS パターンを使ってビジネスの複雑さに取り組む
 description: コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | マイクロサービスで DDD と CQRS パターンを使ってビジネスの複雑さに取り組む
-keywords: Docker, マイクロサービス, ASP.NET, コンテナー
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
-ms.prod: .net-core
-ms.technology: dotnet-docker
-ms.topic: article
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 8098c62ac18593d8044d52cb24c4cd8859972e68
-ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
+ms.openlocfilehash: ef8e0b08c7ba4ddb78144df54d407998cd40fc55
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="tackling-business-complexity-in-a-microservice-with-ddd-and-cqrs-patterns"></a><span data-ttu-id="4d038-104">マイクロサービスで DDD と CQRS パターンを使ってビジネスの複雑さに取り組む</span><span class="sxs-lookup"><span data-stu-id="4d038-104">Tackling Business Complexity in a Microservice with DDD and CQRS Patterns</span></span>
+# <a name="tackling-business-complexity-in-a-microservice-with-ddd-and-cqrs-patterns"></a><span data-ttu-id="e3d14-103">マイクロサービスで DDD と CQRS パターンを使ってビジネスの複雑さに取り組む</span><span class="sxs-lookup"><span data-stu-id="e3d14-103">Tackling Business Complexity in a Microservice with DDD and CQRS Patterns</span></span>
 
-<span data-ttu-id="4d038-105">*ビジネス ドメインの理解を反映するマイクロソフトサービスまたはコンテキスト境界ごとのドメイン モデルを設計する*</span><span class="sxs-lookup"><span data-stu-id="4d038-105">*Design a domain model for each microservice or Bounded Context that reflects understanding of the business domain.*</span></span>
+<span data-ttu-id="e3d14-104">*ビジネス ドメインの理解を反映するマイクロソフトサービスまたはコンテキスト境界ごとのドメイン モデルを設計する*</span><span class="sxs-lookup"><span data-stu-id="e3d14-104">*Design a domain model for each microservice or Bounded Context that reflects understanding of the business domain.*</span></span>
 
-<span data-ttu-id="4d038-106">このセクションでは、複雑なサブシステムへの取り組みが必要な場合に実装する高度なマイクロサービスについて、またドメイン専門家の知識と絶えず変化するビジネス ルールに由来するマイクロサービスについて説明します。</span><span class="sxs-lookup"><span data-stu-id="4d038-106">This section focuses on more advanced microservices that you implement when you need to tackle complex subsystems, or microservices derived from the knowledge of domain experts with ever-changing business rules.</span></span> <span data-ttu-id="4d038-107">このセクションで使用するアーキテクチャ パターンは、図 9-1 に示すように、ドメイン駆動設計 (DDD: Domain-Driven Design) とコマンドクエリ責務分離 (CQRS: Command and Query Responsibility Segregation) の手法に基づいています。</span><span class="sxs-lookup"><span data-stu-id="4d038-107">The architecture patterns used in this section are based on domain-driven design (DDD) and Command and Query Responsibility Segregation (CQRS) approaches, as illustrated in Figure 9-1.</span></span>
+<span data-ttu-id="e3d14-105">このセクションでは、複雑なサブシステムへの取り組みが必要な場合に実装する高度なマイクロサービスについて、またドメイン専門家の知識と絶えず変化するビジネス ルールに由来するマイクロサービスについて説明します。</span><span class="sxs-lookup"><span data-stu-id="e3d14-105">This section focuses on more advanced microservices that you implement when you need to tackle complex subsystems, or microservices derived from the knowledge of domain experts with ever-changing business rules.</span></span> <span data-ttu-id="e3d14-106">このセクションで使用するアーキテクチャ パターンは、図 9-1 に示すように、ドメイン駆動設計 (DDD: Domain-Driven Design) とコマンドクエリ責務分離 (CQRS: Command and Query Responsibility Segregation) の手法に基づいています。</span><span class="sxs-lookup"><span data-stu-id="e3d14-106">The architecture patterns used in this section are based on domain-driven design (DDD) and Command and Query Responsibility Segregation (CQRS) approaches, as illustrated in Figure 9-1.</span></span>
 
 ![](./media/image1.png)
 
-<span data-ttu-id="4d038-108">**図 9-1**</span><span class="sxs-lookup"><span data-stu-id="4d038-108">**Figure 9-1**.</span></span> <span data-ttu-id="4d038-109">外部マイクロサービス アーキテクチャとマイクロサービスごとの内部アーキテクチャ パターンとの対比</span><span class="sxs-lookup"><span data-stu-id="4d038-109">External microservice architecture versus internal architecture patterns for each microservice</span></span>
+<span data-ttu-id="e3d14-107">**図 9-1**</span><span class="sxs-lookup"><span data-stu-id="e3d14-107">**Figure 9-1**.</span></span> <span data-ttu-id="e3d14-108">外部マイクロサービス アーキテクチャとマイクロサービスごとの内部アーキテクチャ パターンとの対比</span><span class="sxs-lookup"><span data-stu-id="e3d14-108">External microservice architecture versus internal architecture patterns for each microservice</span></span>
 
-<span data-ttu-id="4d038-110">ただし、ASP.NET Core Web API サービスの実装方法や Swashbuckle による Swagger メタデータの公開方法など、データ駆動型マイクロサービスのテクニックのほとんどは、DDD パターンで内部的に実装される高度なマイクロサービスにも適用されます。</span><span class="sxs-lookup"><span data-stu-id="4d038-110">However, most of the techniques for data driven microservices, such as how to implement an ASP.NET Core Web API service or how to expose Swagger metadata with Swashbuckle, are also applicable to the more advanced microservices implemented internally with DDD patterns.</span></span> <span data-ttu-id="4d038-111">前述した実施方法のほとんどはここでも、または任意の種類のマイクロ サービスにも適用されるため、このセクションは前のセクションの内容を増補するものとなっています。</span><span class="sxs-lookup"><span data-stu-id="4d038-111">This section is an extension of the previous sections, because most of the practices explained earlier also apply here or for any kind of microservice.</span></span>
+<span data-ttu-id="e3d14-109">ただし、ASP.NET Core Web API サービスの実装方法や Swashbuckle による Swagger メタデータの公開方法など、データ駆動型マイクロサービスのテクニックのほとんどは、DDD パターンで内部的に実装される高度なマイクロサービスにも適用されます。</span><span class="sxs-lookup"><span data-stu-id="e3d14-109">However, most of the techniques for data driven microservices, such as how to implement an ASP.NET Core Web API service or how to expose Swagger metadata with Swashbuckle, are also applicable to the more advanced microservices implemented internally with DDD patterns.</span></span> <span data-ttu-id="e3d14-110">前述した実施方法のほとんどはここでも、または任意の種類のマイクロ サービスにも適用されるため、このセクションは前のセクションの内容を増補するものとなっています。</span><span class="sxs-lookup"><span data-stu-id="e3d14-110">This section is an extension of the previous sections, because most of the practices explained earlier also apply here or for any kind of microservice.</span></span>
 
-<span data-ttu-id="4d038-112">このセクションでは、まず eShopOnContainers 参照アプリケーションで使用される簡略化された CQRS パターンの詳細を示します。</span><span class="sxs-lookup"><span data-stu-id="4d038-112">This section first provides details on the simplified CQRS patterns used in the eShopOnContainers reference application.</span></span> <span data-ttu-id="4d038-113">後で DDD 手法の概要を説明しますが、そこでは、アプリケーションで再利用できる一般的なパターンを確認できます。</span><span class="sxs-lookup"><span data-stu-id="4d038-113">Later, you will get an overview of the DDD techniques that enable you to find common patterns that you can reuse in your applications.</span></span>
+<span data-ttu-id="e3d14-111">このセクションでは、まず eShopOnContainers 参照アプリケーションで使用される簡略化された CQRS パターンの詳細を示します。</span><span class="sxs-lookup"><span data-stu-id="e3d14-111">This section first provides details on the simplified CQRS patterns used in the eShopOnContainers reference application.</span></span> <span data-ttu-id="e3d14-112">後で DDD 手法の概要を説明しますが、そこでは、アプリケーションで再利用できる一般的なパターンを確認できます。</span><span class="sxs-lookup"><span data-stu-id="e3d14-112">Later, you will get an overview of the DDD techniques that enable you to find common patterns that you can reuse in your applications.</span></span>
 
-<span data-ttu-id="4d038-114">DDD は、学習用に豊富な技術資料が提供されている大きなテーマです。</span><span class="sxs-lookup"><span data-stu-id="4d038-114">DDD is a large topic with a rich set of resources for learning.</span></span> <span data-ttu-id="4d038-115">入門書としては、Eric Evans 著の『[Domain-Driven Design](https://domainlanguage.com/ddd/)』 (ドメイン駆動設計)、さらに Vaughn Vernon、Jimmy Nilsson、Greg Young、Udi Dahan、Jimmy Bogard の各氏、およびその他多くの DDD/CQRS の専門家による技術資料などを利用できます。</span><span class="sxs-lookup"><span data-stu-id="4d038-115">You can start with books like [Domain-Driven Design](https://domainlanguage.com/ddd/) by Eric Evans and additional materials from Vaughn Vernon, Jimmy Nilsson, Greg Young, Udi Dahan, Jimmy Bogard, and many other DDD/CQRS experts.</span></span> <span data-ttu-id="4d038-116">ただし、DDD 手法の適用方法の習得には何より、具体的なビジネス ドメイン内で専門家との対話、ホワイトボードを使った議論、ドメイン モデリングのセッションを利用する試みが必要です。</span><span class="sxs-lookup"><span data-stu-id="4d038-116">But most of all you need to try to learn how to apply DDD techniques from the conversations, whiteboarding, and domain modeling sessions with the experts in your concrete business domain.</span></span>
+<span data-ttu-id="e3d14-113">DDD は、学習用に豊富な技術資料が提供されている大きなテーマです。</span><span class="sxs-lookup"><span data-stu-id="e3d14-113">DDD is a large topic with a rich set of resources for learning.</span></span> <span data-ttu-id="e3d14-114">入門書としては、Eric Evans 著の『[Domain-Driven Design](https://domainlanguage.com/ddd/)』 (ドメイン駆動設計)、さらに Vaughn Vernon、Jimmy Nilsson、Greg Young、Udi Dahan、Jimmy Bogard の各氏、およびその他多くの DDD/CQRS の専門家による技術資料などを利用できます。</span><span class="sxs-lookup"><span data-stu-id="e3d14-114">You can start with books like [Domain-Driven Design](https://domainlanguage.com/ddd/) by Eric Evans and additional materials from Vaughn Vernon, Jimmy Nilsson, Greg Young, Udi Dahan, Jimmy Bogard, and many other DDD/CQRS experts.</span></span> <span data-ttu-id="e3d14-115">ただし、DDD 手法の適用方法の習得には何より、具体的なビジネス ドメイン内で専門家との対話、ホワイトボードを使った議論、ドメイン モデリングのセッションを利用する試みが必要です。</span><span class="sxs-lookup"><span data-stu-id="e3d14-115">But most of all you need to try to learn how to apply DDD techniques from the conversations, whiteboarding, and domain modeling sessions with the experts in your concrete business domain.</span></span>
 
-#### <a name="additional-resources"></a><span data-ttu-id="4d038-117">その他の技術情報</span><span class="sxs-lookup"><span data-stu-id="4d038-117">Additional resources</span></span>
+#### <a name="additional-resources"></a><span data-ttu-id="e3d14-116">その他の技術情報</span><span class="sxs-lookup"><span data-stu-id="e3d14-116">Additional resources</span></span>
 
-##### <a name="ddd-domain-driven-design"></a><span data-ttu-id="4d038-118">DDD (ドメイン駆動設計)</span><span class="sxs-lookup"><span data-stu-id="4d038-118">DDD (Domain-Driven Design)</span></span>
+##### <a name="ddd-domain-driven-design"></a><span data-ttu-id="e3d14-117">DDD (ドメイン駆動設計)</span><span class="sxs-lookup"><span data-stu-id="e3d14-117">DDD (Domain-Driven Design)</span></span>
 
--   <span data-ttu-id="4d038-119">**Eric Evans。ドメイン言語**
-    [*https://domainlanguage.com/*](https://domainlanguage.com/)</span><span class="sxs-lookup"><span data-stu-id="4d038-119">**Eric Evans. Domain Language**
+-   <span data-ttu-id="e3d14-118">**Eric Evans。ドメイン言語**
+    [*https://domainlanguage.com/*](https://domainlanguage.com/)</span><span class="sxs-lookup"><span data-stu-id="e3d14-118">**Eric Evans. Domain Language**
 [*https://domainlanguage.com/*](https://domainlanguage.com/)</span></span>
 
--   <span data-ttu-id="4d038-120">**Martin Fowler。ドメイン駆動設計**
-    [*https://martinfowler.com/tags/domain%20driven%20design.html*](https://martinfowler.com/tags/domain%20driven%20design.html)</span><span class="sxs-lookup"><span data-stu-id="4d038-120">**Martin Fowler. Domain-Driven Design**
+-   <span data-ttu-id="e3d14-119">**Martin Fowler。ドメイン駆動設計**
+    [*https://martinfowler.com/tags/domain%20driven%20design.html*](https://martinfowler.com/tags/domain%20driven%20design.html)</span><span class="sxs-lookup"><span data-stu-id="e3d14-119">**Martin Fowler. Domain-Driven Design**
 [*https://martinfowler.com/tags/domain%20driven%20design.html*](https://martinfowler.com/tags/domain%20driven%20design.html)</span></span>
 
--   <span data-ttu-id="4d038-121">**Jimmy Bogard。ドメインの強化: 入門**
-    [*https://lostechies.com/jimmybogard/2010/02/04/strengthening-your-domain-a-primer/*](https://lostechies.com/jimmybogard/2010/02/04/strengthening-your-domain-a-primer/)</span><span class="sxs-lookup"><span data-stu-id="4d038-121">**Jimmy Bogard. Strengthening your domain: a primer**
+-   <span data-ttu-id="e3d14-120">**Jimmy Bogard。ドメインの強化: 入門**
+    [*https://lostechies.com/jimmybogard/2010/02/04/strengthening-your-domain-a-primer/*](https://lostechies.com/jimmybogard/2010/02/04/strengthening-your-domain-a-primer/)</span><span class="sxs-lookup"><span data-stu-id="e3d14-120">**Jimmy Bogard. Strengthening your domain: a primer**
 [*https://lostechies.com/jimmybogard/2010/02/04/strengthening-your-domain-a-primer/*](https://lostechies.com/jimmybogard/2010/02/04/strengthening-your-domain-a-primer/)</span></span>
 
-##### <a name="ddd-books"></a><span data-ttu-id="4d038-122">DDD 関連の書籍</span><span class="sxs-lookup"><span data-stu-id="4d038-122">DDD books</span></span>
+##### <a name="ddd-books"></a><span data-ttu-id="e3d14-121">DDD 関連の書籍</span><span class="sxs-lookup"><span data-stu-id="e3d14-121">DDD books</span></span>
 
--   <span data-ttu-id="4d038-123">**Eric Evans。Domain-Driven Design: Tackling Complexity in the Heart of Software (エリック・エヴァンスのドメイン駆動設計)**
-    [*https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/*](https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/)</span><span class="sxs-lookup"><span data-stu-id="4d038-123">**Eric Evans. Domain-Driven Design: Tackling Complexity in the Heart of Software**
+-   <span data-ttu-id="e3d14-122">**Eric Evans。Domain-Driven Design: Tackling Complexity in the Heart of Software (エリック・エヴァンスのドメイン駆動設計)**
+    [*https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/*](https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/)</span><span class="sxs-lookup"><span data-stu-id="e3d14-122">**Eric Evans. Domain-Driven Design: Tackling Complexity in the Heart of Software**
 [*https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/*](https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/)</span></span>
 
--   <span data-ttu-id="4d038-124">**Eric Evans。Domain-Driven Design Reference: Definitions and Pattern Summaries (ドメイン駆動設計のリファレンス: 定義とパターンの概要)**
-    [*https://www.amazon.com/Domain-Driven-Design-Reference-Definitions-2014-09-22/dp/B01N8YB4ZO/*](https://www.amazon.com/Domain-Driven-Design-Reference-Definitions-2014-09-22/dp/B01N8YB4ZO/)</span><span class="sxs-lookup"><span data-stu-id="4d038-124">**Eric Evans. Domain-Driven Design Reference: Definitions and Pattern Summaries**
+-   <span data-ttu-id="e3d14-123">**Eric Evans。Domain-Driven Design Reference: Definitions and Pattern Summaries (ドメイン駆動設計のリファレンス: 定義とパターンの概要)**
+    [*https://www.amazon.com/Domain-Driven-Design-Reference-Definitions-2014-09-22/dp/B01N8YB4ZO/*](https://www.amazon.com/Domain-Driven-Design-Reference-Definitions-2014-09-22/dp/B01N8YB4ZO/)</span><span class="sxs-lookup"><span data-stu-id="e3d14-123">**Eric Evans. Domain-Driven Design Reference: Definitions and Pattern Summaries**
 [*https://www.amazon.com/Domain-Driven-Design-Reference-Definitions-2014-09-22/dp/B01N8YB4ZO/*](https://www.amazon.com/Domain-Driven-Design-Reference-Definitions-2014-09-22/dp/B01N8YB4ZO/)</span></span>
 
--   <span data-ttu-id="4d038-125">**Vaughn Vernon。実践ドメイン駆動設計**
-    [*https://www.amazon.com/Implementing-Domain-Driven-Design-Vaughn-Vernon/dp/0321834577/*](https://www.amazon.com/Implementing-Domain-Driven-Design-Vaughn-Vernon/dp/0321834577/)</span><span class="sxs-lookup"><span data-stu-id="4d038-125">**Vaughn Vernon. Implementing Domain-Driven Design**
+-   <span data-ttu-id="e3d14-124">**Vaughn Vernon。ドメイン駆動型設計の実装**
+    [*https://www.amazon.com/Implementing-Domain-Driven-Design-Vaughn-Vernon/dp/0321834577/*](https://www.amazon.com/Implementing-Domain-Driven-Design-Vaughn-Vernon/dp/0321834577/)</span><span class="sxs-lookup"><span data-stu-id="e3d14-124">**Vaughn Vernon. Implementing Domain-Driven Design**
 [*https://www.amazon.com/Implementing-Domain-Driven-Design-Vaughn-Vernon/dp/0321834577/*](https://www.amazon.com/Implementing-Domain-Driven-Design-Vaughn-Vernon/dp/0321834577/)</span></span>
 
--   <span data-ttu-id="4d038-126">**Vaughn Vernon。Domain-Driven Design Distilled (ドメイン駆動設計の基本)**
-    [*https://www.amazon.com/Domain-Driven-Design-Distilled-Vaughn-Vernon/dp/0134434420/*](https://www.amazon.com/Domain-Driven-Design-Distilled-Vaughn-Vernon/dp/0134434420/)</span><span class="sxs-lookup"><span data-stu-id="4d038-126">**Vaughn Vernon. Domain-Driven Design Distilled**
+-   <span data-ttu-id="e3d14-125">**Vaughn Vernon。Domain-Driven Design Distilled (ドメイン駆動設計の基本)**
+    [*https://www.amazon.com/Domain-Driven-Design-Distilled-Vaughn-Vernon/dp/0134434420/*](https://www.amazon.com/Domain-Driven-Design-Distilled-Vaughn-Vernon/dp/0134434420/)</span><span class="sxs-lookup"><span data-stu-id="e3d14-125">**Vaughn Vernon. Domain-Driven Design Distilled**
 [*https://www.amazon.com/Domain-Driven-Design-Distilled-Vaughn-Vernon/dp/0134434420/*](https://www.amazon.com/Domain-Driven-Design-Distilled-Vaughn-Vernon/dp/0134434420/)</span></span>
 
--   <span data-ttu-id="4d038-127">**Jimmy Nilsson。ドメイン駆動**
-    [*https://www.amazon.com/Applying-Domain-Driven-Design-Patterns-Examples/dp/0321268202/*](https://www.amazon.com/Applying-Domain-Driven-Design-Patterns-Examples/dp/0321268202/)</span><span class="sxs-lookup"><span data-stu-id="4d038-127">**Jimmy Nilsson. Applying Domain-Driven Design and Patterns**
+-   <span data-ttu-id="e3d14-126">**Jimmy Nilsson。ドメイン駆動**
+    [*https://www.amazon.com/Applying-Domain-Driven-Design-Patterns-Examples/dp/0321268202/*](https://www.amazon.com/Applying-Domain-Driven-Design-Patterns-Examples/dp/0321268202/)</span><span class="sxs-lookup"><span data-stu-id="e3d14-126">**Jimmy Nilsson. Applying Domain-Driven Design and Patterns**
 [*https://www.amazon.com/Applying-Domain-Driven-Design-Patterns-Examples/dp/0321268202/*](https://www.amazon.com/Applying-Domain-Driven-Design-Patterns-Examples/dp/0321268202/)</span></span>
 
--   <span data-ttu-id="4d038-128">**Cesar de la Torre。N-Layered Domain-Oriented Architecture Guide with .NET (.NET による N 層ドメイン指向アーキテクチャ ガイド)**
-    [*https://www.amazon.com/N-Layered-Domain-Oriented-Architecture-Guide-NET/dp/8493903612/*](https://www.amazon.com/N-Layered-Domain-Oriented-Architecture-Guide-NET/dp/8493903612/)</span><span class="sxs-lookup"><span data-stu-id="4d038-128">**Cesar de la Torre. N-Layered Domain-Oriented Architecture Guide with .NET**
+-   <span data-ttu-id="e3d14-127">**Cesar de la Torre。N-Layered Domain-Oriented Architecture Guide with .NET (.NET による N 層ドメイン指向アーキテクチャ ガイド)**
+    [*https://www.amazon.com/N-Layered-Domain-Oriented-Architecture-Guide-NET/dp/8493903612/*](https://www.amazon.com/N-Layered-Domain-Oriented-Architecture-Guide-NET/dp/8493903612/)</span><span class="sxs-lookup"><span data-stu-id="e3d14-127">**Cesar de la Torre. N-Layered Domain-Oriented Architecture Guide with .NET**
 [*https://www.amazon.com/N-Layered-Domain-Oriented-Architecture-Guide-NET/dp/8493903612/*](https://www.amazon.com/N-Layered-Domain-Oriented-Architecture-Guide-NET/dp/8493903612/)</span></span>
 
--   <span data-ttu-id="4d038-129">**Abel Avram および Floyd Marinescu。Domain-Driven Design Quickly (ドメイン駆動設計簡易ガイド)**
-    [*https://www.amazon.com/Domain-Driven-Design-Quickly-Abel-Avram/dp/1411609255/*](https://www.amazon.com/Domain-Driven-Design-Quickly-Abel-Avram/dp/1411609255/)</span><span class="sxs-lookup"><span data-stu-id="4d038-129">**Abel Avram and Floyd Marinescu. Domain-Driven Design Quickly**
+-   <span data-ttu-id="e3d14-128">**Abel Avram および Floyd Marinescu。Domain-Driven Design Quickly (ドメイン駆動設計簡易ガイド)**
+    [*https://www.amazon.com/Domain-Driven-Design-Quickly-Abel-Avram/dp/1411609255/*](https://www.amazon.com/Domain-Driven-Design-Quickly-Abel-Avram/dp/1411609255/)</span><span class="sxs-lookup"><span data-stu-id="e3d14-128">**Abel Avram and Floyd Marinescu. Domain-Driven Design Quickly**
 [*https://www.amazon.com/Domain-Driven-Design-Quickly-Abel-Avram/dp/1411609255/*](https://www.amazon.com/Domain-Driven-Design-Quickly-Abel-Avram/dp/1411609255/)</span></span>
 
-<span data-ttu-id="4d038-130">DDD に関するトレーニング</span><span class="sxs-lookup"><span data-stu-id="4d038-130">DDD training</span></span>
+<span data-ttu-id="e3d14-129">DDD に関するトレーニング</span><span class="sxs-lookup"><span data-stu-id="e3d14-129">DDD training</span></span>
 
--   <span data-ttu-id="4d038-131">**Julie Lerman および Steve Smith。Domain-Driven Design Fundamentals (ドメイン駆動設計の基礎)**
-    [*http://bit.ly/PS-DDD*](http://bit.ly/PS-DDD)</span><span class="sxs-lookup"><span data-stu-id="4d038-131">**Julie Lerman and Steve Smith. Domain-Driven Design Fundamentals**
+-   <span data-ttu-id="e3d14-130">**Julie Lerman および Steve Smith。Domain-Driven Design Fundamentals (ドメイン駆動設計の基礎)**
+    [*http://bit.ly/PS-DDD*](http://bit.ly/PS-DDD)</span><span class="sxs-lookup"><span data-stu-id="e3d14-130">**Julie Lerman and Steve Smith. Domain-Driven Design Fundamentals**
 [*http://bit.ly/PS-DDD*](http://bit.ly/PS-DDD)</span></span>
 
 
 >[!div class="step-by-step"]
-<span data-ttu-id="4d038-132">[前へ] (../multi-container-microservice-net-applications/background-tasks-with-ihostedservice.md) [次へ] (apply-simplified-microservice-cqrs-ddd-patterns.md)</span><span class="sxs-lookup"><span data-stu-id="4d038-132">[Previous] (../multi-container-microservice-net-applications/background-tasks-with-ihostedservice.md) [Next] (apply-simplified-microservice-cqrs-ddd-patterns.md)</span></span>
+<span data-ttu-id="e3d14-131">[前へ] (../multi-container-microservice-net-applications/background-tasks-with-ihostedservice.md) [次へ] (apply-simplified-microservice-cqrs-ddd-patterns.md)</span><span class="sxs-lookup"><span data-stu-id="e3d14-131">[Previous] (../multi-container-microservice-net-applications/background-tasks-with-ihostedservice.md) [Next] (apply-simplified-microservice-cqrs-ddd-patterns.md)</span></span>

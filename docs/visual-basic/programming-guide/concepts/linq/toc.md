@@ -87,7 +87,6 @@
 ## [方法: 名前空間プレフィックスを制御する (LINQ to XML)](how-to-control-namespace-prefixes-linq-to-xml.md)
 ## [既定名前空間のスコープ](scope-of-default-namespaces.md)
 ## [グローバル名前空間の使用 (LINQ to XML)](working-with-global-namespaces-linq-to-xml.md)
-## [名前空間 (LINQ to XML)](namespaces-linq-to-xml.md)
 ## [方法: 名前空間内の XML に対するクエリを記述する](how-to-write-queries-on-xml-in-namespaces.md)
 
 # [XML ツリーのシリアル化](serializing-xml-trees.md)

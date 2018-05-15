@@ -1,13 +1,6 @@
 ---
 title: Function プロシージャ (Visual Basic)
-ms.custom: ''
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - Function procedures
 - return values [Visual Basic], function procedures
@@ -16,26 +9,23 @@ helpviewer_keywords:
 - procedures [Visual Basic], Function procedures
 - syntax [Visual Basic], function procedures
 ms.assetid: 1b9f632c-553b-4cb6-920a-ded117ead8c0
-caps.latest.revision: 27
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: ad4f55a9dd9fbd68c36dd53a01f97ddb03c2bb9b
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 887c930cb757b012542c97d64a57a62882a2eed3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="function-procedures-visual-basic"></a><span data-ttu-id="bc113-102">Function プロシージャ (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="bc113-102">Function Procedures (Visual Basic)</span></span>
-<span data-ttu-id="bc113-103">A`Function`プロシージャは、一連の Visual Basic ステートメントで囲まれた、`Function`と`End Function`ステートメントです。</span><span class="sxs-lookup"><span data-stu-id="bc113-103">A `Function` procedure is a series of Visual Basic statements enclosed by the `Function` and `End Function` statements.</span></span> <span data-ttu-id="bc113-104">`Function`手順がタスクを実行し、呼び出し元のコードにコントロールを返します。</span><span class="sxs-lookup"><span data-stu-id="bc113-104">The `Function` procedure performs a task and then returns control to the calling code.</span></span> <span data-ttu-id="bc113-105">コントロールが返されたときにも、呼び出し元のコードに値を返します。</span><span class="sxs-lookup"><span data-stu-id="bc113-105">When it returns control, it also returns a value to the calling code.</span></span>  
+# <a name="function-procedures-visual-basic"></a><span data-ttu-id="dcf12-102">Function プロシージャ (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="dcf12-102">Function Procedures (Visual Basic)</span></span>
+<span data-ttu-id="dcf12-103">A`Function`プロシージャは、一連の Visual Basic ステートメントで囲まれた、`Function`と`End Function`ステートメントです。</span><span class="sxs-lookup"><span data-stu-id="dcf12-103">A `Function` procedure is a series of Visual Basic statements enclosed by the `Function` and `End Function` statements.</span></span> <span data-ttu-id="dcf12-104">`Function`手順がタスクを実行し、呼び出し元のコードにコントロールを返します。</span><span class="sxs-lookup"><span data-stu-id="dcf12-104">The `Function` procedure performs a task and then returns control to the calling code.</span></span> <span data-ttu-id="dcf12-105">コントロールが返されたときにも、呼び出し元のコードに値を返します。</span><span class="sxs-lookup"><span data-stu-id="dcf12-105">When it returns control, it also returns a value to the calling code.</span></span>  
   
- <span data-ttu-id="bc113-106">プロシージャが呼び出されるたびに、そのステートメントの実行、以降の後に実行可能ファイルの最初のステートメントで、`Function`ステートメントと最初で終了するまで`End Function`、 `Exit Function`、または`Return`ステートメントが発生しました。</span><span class="sxs-lookup"><span data-stu-id="bc113-106">Each time the procedure is called, its statements run, starting with the first executable statement after the `Function` statement and ending with the first `End Function`, `Exit Function`, or `Return` statement encountered.</span></span>  
+ <span data-ttu-id="dcf12-106">プロシージャが呼び出されるたびに、そのステートメントの実行、以降の後に実行可能ファイルの最初のステートメントで、`Function`ステートメントと最初で終了するまで`End Function`、 `Exit Function`、または`Return`ステートメントが発生しました。</span><span class="sxs-lookup"><span data-stu-id="dcf12-106">Each time the procedure is called, its statements run, starting with the first executable statement after the `Function` statement and ending with the first `End Function`, `Exit Function`, or `Return` statement encountered.</span></span>  
   
- <span data-ttu-id="bc113-107">定義することができます、`Function`モジュール、クラスまたは構造体」の手順です。</span><span class="sxs-lookup"><span data-stu-id="bc113-107">You can define a `Function` procedure in a module, class, or structure.</span></span> <span data-ttu-id="bc113-108">`Public`どこからでも呼び出すことを意味する既定では、モジュール、クラス、またはそれを定義する構造体へのアクセス権を持つアプリケーションでします。</span><span class="sxs-lookup"><span data-stu-id="bc113-108">It is `Public` by default, which means you can call it from anywhere in your application that has access to the module, class, or structure in which you defined it.</span></span>  
+ <span data-ttu-id="dcf12-107">定義することができます、`Function`モジュール、クラスまたは構造体」の手順です。</span><span class="sxs-lookup"><span data-stu-id="dcf12-107">You can define a `Function` procedure in a module, class, or structure.</span></span> <span data-ttu-id="dcf12-108">`Public`どこからでも呼び出すことを意味する既定では、モジュール、クラス、またはそれを定義する構造体へのアクセス権を持つアプリケーションでします。</span><span class="sxs-lookup"><span data-stu-id="dcf12-108">It is `Public` by default, which means you can call it from anywhere in your application that has access to the module, class, or structure in which you defined it.</span></span>  
   
- <span data-ttu-id="bc113-109">A`Function`プロシージャは、定数、変数、または式で、呼び出し元のコードに渡されるなどの引数を渡すことができます。</span><span class="sxs-lookup"><span data-stu-id="bc113-109">A `Function` procedure can take arguments, such as constants, variables, or expressions, which are passed to it by the calling code.</span></span>  
+ <span data-ttu-id="dcf12-109">A`Function`プロシージャは、定数、変数、または式で、呼び出し元のコードに渡されるなどの引数を渡すことができます。</span><span class="sxs-lookup"><span data-stu-id="dcf12-109">A `Function` procedure can take arguments, such as constants, variables, or expressions, which are passed to it by the calling code.</span></span>  
   
-## <a name="declaration-syntax"></a><span data-ttu-id="bc113-110">宣言の構文</span><span class="sxs-lookup"><span data-stu-id="bc113-110">Declaration Syntax</span></span>  
- <span data-ttu-id="bc113-111">宣言の構文、`Function`手順のとおりです。</span><span class="sxs-lookup"><span data-stu-id="bc113-111">The syntax for declaring a `Function` procedure is as follows:</span></span>  
+## <a name="declaration-syntax"></a><span data-ttu-id="dcf12-110">宣言の構文</span><span class="sxs-lookup"><span data-stu-id="dcf12-110">Declaration Syntax</span></span>  
+ <span data-ttu-id="dcf12-111">宣言の構文、`Function`手順のとおりです。</span><span class="sxs-lookup"><span data-stu-id="dcf12-111">The syntax for declaring a `Function` procedure is as follows:</span></span>  
   
 ```vb  
 [Modifiers] Function FunctionName [(ParameterList)] As ReturnType  
@@ -43,12 +33,12 @@ ms.lasthandoff: 04/26/2018
 End Function  
 ```  
   
- <span data-ttu-id="bc113-112">*修飾子*アクセス レベルとオーバー ロード、オーバーライド、共有、およびシャドウに関する情報を指定できます。</span><span class="sxs-lookup"><span data-stu-id="bc113-112">The *modifiers* can specify access level and information regarding overloading, overriding, sharing, and shadowing.</span></span> <span data-ttu-id="bc113-113">詳細については、次を参照してください。[関数ステートメント](../../../../visual-basic/language-reference/statements/function-statement.md)です。</span><span class="sxs-lookup"><span data-stu-id="bc113-113">For more information, see [Function Statement](../../../../visual-basic/language-reference/statements/function-statement.md).</span></span>  
+ <span data-ttu-id="dcf12-112">*修飾子*アクセス レベルとオーバー ロード、オーバーライド、共有、およびシャドウに関する情報を指定できます。</span><span class="sxs-lookup"><span data-stu-id="dcf12-112">The *modifiers* can specify access level and information regarding overloading, overriding, sharing, and shadowing.</span></span> <span data-ttu-id="dcf12-113">詳細については、次を参照してください。[関数ステートメント](../../../../visual-basic/language-reference/statements/function-statement.md)です。</span><span class="sxs-lookup"><span data-stu-id="dcf12-113">For more information, see [Function Statement](../../../../visual-basic/language-reference/statements/function-statement.md).</span></span>  
   
- <span data-ttu-id="bc113-114">各パラメーターを宣言すると、同様の操作を行う[Sub プロシージャ](./sub-procedures.md)です。</span><span class="sxs-lookup"><span data-stu-id="bc113-114">You declare each parameter the same way you do for [Sub Procedures](./sub-procedures.md).</span></span>  
+ <span data-ttu-id="dcf12-114">各パラメーターを宣言すると、同様の操作を行う[Sub プロシージャ](./sub-procedures.md)です。</span><span class="sxs-lookup"><span data-stu-id="dcf12-114">You declare each parameter the same way you do for [Sub Procedures](./sub-procedures.md).</span></span>  
   
-### <a name="data-type"></a><span data-ttu-id="bc113-115">データの種類</span><span class="sxs-lookup"><span data-stu-id="bc113-115">Data Type</span></span>  
- <span data-ttu-id="bc113-116">各`Function`手順では、データ型か、単にすべての変数です。</span><span class="sxs-lookup"><span data-stu-id="bc113-116">Every `Function` procedure has a data type, just as every variable does.</span></span> <span data-ttu-id="bc113-117">このデータ型がで指定された、`As`句、`Function`ステートメント、およびその呼び出し元のコードに関数が返す値のデータ型が決まります。</span><span class="sxs-lookup"><span data-stu-id="bc113-117">This data type is specified by the `As` clause in the `Function` statement, and it determines the data type of the value the function returns to the calling code.</span></span> <span data-ttu-id="bc113-118">次の宣言の例では、この問題を説明します。</span><span class="sxs-lookup"><span data-stu-id="bc113-118">The following sample declarations illustrate this.</span></span>  
+### <a name="data-type"></a><span data-ttu-id="dcf12-115">データの種類</span><span class="sxs-lookup"><span data-stu-id="dcf12-115">Data Type</span></span>  
+ <span data-ttu-id="dcf12-116">各`Function`手順では、データ型か、単にすべての変数です。</span><span class="sxs-lookup"><span data-stu-id="dcf12-116">Every `Function` procedure has a data type, just as every variable does.</span></span> <span data-ttu-id="dcf12-117">このデータ型がで指定された、`As`句、`Function`ステートメント、およびその呼び出し元のコードに関数が返す値のデータ型が決まります。</span><span class="sxs-lookup"><span data-stu-id="dcf12-117">This data type is specified by the `As` clause in the `Function` statement, and it determines the data type of the value the function returns to the calling code.</span></span> <span data-ttu-id="dcf12-118">次の宣言の例では、この問題を説明します。</span><span class="sxs-lookup"><span data-stu-id="dcf12-118">The following sample declarations illustrate this.</span></span>  
   
 ```vb  
 Function yesterday() As Date  
@@ -58,12 +48,12 @@ Function findSqrt(ByVal radicand As Single) As Single
 End Function  
 ```  
   
- <span data-ttu-id="bc113-119">詳細についてを参照してください「部分」[関数ステートメント](../../../../visual-basic/language-reference/statements/function-statement.md)です。</span><span class="sxs-lookup"><span data-stu-id="bc113-119">For more information, see "Parts" in [Function Statement](../../../../visual-basic/language-reference/statements/function-statement.md).</span></span>  
+ <span data-ttu-id="dcf12-119">詳細についてを参照してください「部分」[関数ステートメント](../../../../visual-basic/language-reference/statements/function-statement.md)です。</span><span class="sxs-lookup"><span data-stu-id="dcf12-119">For more information, see "Parts" in [Function Statement](../../../../visual-basic/language-reference/statements/function-statement.md).</span></span>  
   
-## <a name="returning-values"></a><span data-ttu-id="bc113-120">値を返す</span><span class="sxs-lookup"><span data-stu-id="bc113-120">Returning Values</span></span>  
- <span data-ttu-id="bc113-121">値、`Function`プロシージャが呼び出し元のコードには、戻り値と呼ばれるを送信します。</span><span class="sxs-lookup"><span data-stu-id="bc113-121">The value a `Function` procedure sends back to the calling code is called its return value.</span></span> <span data-ttu-id="bc113-122">プロシージャは、2 つの方法のいずれかでこの値を返します。</span><span class="sxs-lookup"><span data-stu-id="bc113-122">The procedure returns this value in one of two ways:</span></span>  
+## <a name="returning-values"></a><span data-ttu-id="dcf12-120">値を返す</span><span class="sxs-lookup"><span data-stu-id="dcf12-120">Returning Values</span></span>  
+ <span data-ttu-id="dcf12-121">値、`Function`プロシージャが呼び出し元のコードには、戻り値と呼ばれるを送信します。</span><span class="sxs-lookup"><span data-stu-id="dcf12-121">The value a `Function` procedure sends back to the calling code is called its return value.</span></span> <span data-ttu-id="dcf12-122">プロシージャは、2 つの方法のいずれかでこの値を返します。</span><span class="sxs-lookup"><span data-stu-id="dcf12-122">The procedure returns this value in one of two ways:</span></span>  
   
--   <span data-ttu-id="bc113-123">使用して、`Return`を返し、戻り値を指定するステートメントを呼び出し元のプログラムをすぐに制御します。</span><span class="sxs-lookup"><span data-stu-id="bc113-123">It uses the `Return` statement to specify the return value, and returns control immediately to the calling program.</span></span> <span data-ttu-id="bc113-124">次に例を示します。</span><span class="sxs-lookup"><span data-stu-id="bc113-124">The following example illustrates this.</span></span>  
+-   <span data-ttu-id="dcf12-123">使用して、`Return`を返し、戻り値を指定するステートメントを呼び出し元のプログラムをすぐに制御します。</span><span class="sxs-lookup"><span data-stu-id="dcf12-123">It uses the `Return` statement to specify the return value, and returns control immediately to the calling program.</span></span> <span data-ttu-id="dcf12-124">次に例を示します。</span><span class="sxs-lookup"><span data-stu-id="dcf12-124">The following example illustrates this.</span></span>  
   
 ```vb  
 Function FunctionName [(ParameterList)] As ReturnType  
@@ -73,7 +63,7 @@ Function FunctionName [(ParameterList)] As ReturnType
 End Function  
 ```  
   
--   <span data-ttu-id="bc113-125">プロシージャの 1 つまたは複数のステートメントで独自の関数名に値を割り当てます。</span><span class="sxs-lookup"><span data-stu-id="bc113-125">It assigns a value to its own function name in one or more statements of the procedure.</span></span> <span data-ttu-id="bc113-126">までの呼び出し元のプログラムに制御を返さない、`Exit Function`または`End Function`ステートメントを実行します。</span><span class="sxs-lookup"><span data-stu-id="bc113-126">Control does not return to the calling program until an `Exit Function` or `End Function` statement is executed.</span></span> <span data-ttu-id="bc113-127">次に例を示します。</span><span class="sxs-lookup"><span data-stu-id="bc113-127">The following example illustrates this.</span></span>  
+-   <span data-ttu-id="dcf12-125">プロシージャの 1 つまたは複数のステートメントで独自の関数名に値を割り当てます。</span><span class="sxs-lookup"><span data-stu-id="dcf12-125">It assigns a value to its own function name in one or more statements of the procedure.</span></span> <span data-ttu-id="dcf12-126">までの呼び出し元のプログラムに制御を返さない、`Exit Function`または`End Function`ステートメントを実行します。</span><span class="sxs-lookup"><span data-stu-id="dcf12-126">Control does not return to the calling program until an `Exit Function` or `End Function` statement is executed.</span></span> <span data-ttu-id="dcf12-127">次に例を示します。</span><span class="sxs-lookup"><span data-stu-id="dcf12-127">The following example illustrates this.</span></span>  
   
 ```vb  
 Function FunctionName [(ParameterList)] As ReturnType  
@@ -83,37 +73,37 @@ Function FunctionName [(ParameterList)] As ReturnType
 End Function  
 ```  
   
- <span data-ttu-id="bc113-128">関数名 に戻り値を割り当てることの利点は、コントロールを返さないプロシージャから検出するまで、`Exit Function`または`End Function`ステートメントです。</span><span class="sxs-lookup"><span data-stu-id="bc113-128">The advantage of assigning the return value to the function name is that control does not return from the procedure until it encounters an `Exit Function` or `End Function` statement.</span></span> <span data-ttu-id="bc113-129">これにより、一時的な値を割り当てるし、必要に応じて後で調整することができます。</span><span class="sxs-lookup"><span data-stu-id="bc113-129">This allows you to assign a preliminary value and adjust it later if necessary.</span></span>  
+ <span data-ttu-id="dcf12-128">関数名 に戻り値を割り当てることの利点は、コントロールを返さないプロシージャから検出するまで、`Exit Function`または`End Function`ステートメントです。</span><span class="sxs-lookup"><span data-stu-id="dcf12-128">The advantage of assigning the return value to the function name is that control does not return from the procedure until it encounters an `Exit Function` or `End Function` statement.</span></span> <span data-ttu-id="dcf12-129">これにより、一時的な値を割り当てるし、必要に応じて後で調整することができます。</span><span class="sxs-lookup"><span data-stu-id="dcf12-129">This allows you to assign a preliminary value and adjust it later if necessary.</span></span>  
   
- <span data-ttu-id="bc113-130">値を取得する方法の詳細については、次を参照してください。[関数ステートメント](../../../../visual-basic/language-reference/statements/function-statement.md)です。</span><span class="sxs-lookup"><span data-stu-id="bc113-130">For more information about returning values, see [Function Statement](../../../../visual-basic/language-reference/statements/function-statement.md).</span></span> <span data-ttu-id="bc113-131">配列を取得する方法については、次を参照してください。[配列](../../../../visual-basic/programming-guide/language-features/arrays/index.md)です。</span><span class="sxs-lookup"><span data-stu-id="bc113-131">For information about returning arrays, see [Arrays](../../../../visual-basic/programming-guide/language-features/arrays/index.md).</span></span>  
+ <span data-ttu-id="dcf12-130">値を取得する方法の詳細については、次を参照してください。[関数ステートメント](../../../../visual-basic/language-reference/statements/function-statement.md)です。</span><span class="sxs-lookup"><span data-stu-id="dcf12-130">For more information about returning values, see [Function Statement](../../../../visual-basic/language-reference/statements/function-statement.md).</span></span> <span data-ttu-id="dcf12-131">配列を取得する方法については、次を参照してください。[配列](../../../../visual-basic/programming-guide/language-features/arrays/index.md)です。</span><span class="sxs-lookup"><span data-stu-id="dcf12-131">For information about returning arrays, see [Arrays](../../../../visual-basic/programming-guide/language-features/arrays/index.md).</span></span>  
   
-## <a name="calling-syntax"></a><span data-ttu-id="bc113-132">呼び出し構文</span><span class="sxs-lookup"><span data-stu-id="bc113-132">Calling Syntax</span></span>  
- <span data-ttu-id="bc113-133">呼び出す、`Function`名前と右側にある、式または代入ステートメントのいずれかの引数を含めることによってプロシージャです。</span><span class="sxs-lookup"><span data-stu-id="bc113-133">You invoke a `Function` procedure by including its name and arguments either on the right side of an assignment statement or in an expression.</span></span> <span data-ttu-id="bc113-134">省略可能ではないすべての引数の値を指定する必要があり、引数リストをかっこで囲む必要があります。</span><span class="sxs-lookup"><span data-stu-id="bc113-134">You must provide values for all arguments that are not optional, and you must enclose the argument list in parentheses.</span></span> <span data-ttu-id="bc113-135">引数がない場合は、かっこを省略することができます。</span><span class="sxs-lookup"><span data-stu-id="bc113-135">If no arguments are supplied, you can optionally omit the parentheses.</span></span>  
+## <a name="calling-syntax"></a><span data-ttu-id="dcf12-132">呼び出し構文</span><span class="sxs-lookup"><span data-stu-id="dcf12-132">Calling Syntax</span></span>  
+ <span data-ttu-id="dcf12-133">呼び出す、`Function`名前と右側にある、式または代入ステートメントのいずれかの引数を含めることによってプロシージャです。</span><span class="sxs-lookup"><span data-stu-id="dcf12-133">You invoke a `Function` procedure by including its name and arguments either on the right side of an assignment statement or in an expression.</span></span> <span data-ttu-id="dcf12-134">省略可能ではないすべての引数の値を指定する必要があり、引数リストをかっこで囲む必要があります。</span><span class="sxs-lookup"><span data-stu-id="dcf12-134">You must provide values for all arguments that are not optional, and you must enclose the argument list in parentheses.</span></span> <span data-ttu-id="dcf12-135">引数がない場合は、かっこを省略することができます。</span><span class="sxs-lookup"><span data-stu-id="dcf12-135">If no arguments are supplied, you can optionally omit the parentheses.</span></span>  
   
- <span data-ttu-id="bc113-136">呼び出しの構文、`Function`手順のとおりです。</span><span class="sxs-lookup"><span data-stu-id="bc113-136">The syntax for a call to a `Function` procedure is as follows:</span></span>  
+ <span data-ttu-id="dcf12-136">呼び出しの構文、`Function`手順のとおりです。</span><span class="sxs-lookup"><span data-stu-id="dcf12-136">The syntax for a call to a `Function` procedure is as follows:</span></span>  
   
- <span data-ttu-id="bc113-137">*左辺値*`=`*functionname* `[(` *argumentlist*  `)]`</span><span class="sxs-lookup"><span data-stu-id="bc113-137">*lvalue*  `=`  *functionname* `[(` *argumentlist* `)]`</span></span>  
+ <span data-ttu-id="dcf12-137">*左辺値*`=`*functionname* `[(` *argumentlist* `)]`</span><span class="sxs-lookup"><span data-stu-id="dcf12-137">*lvalue*  `=`  *functionname* `[(` *argumentlist* `)]`</span></span>  
   
- <span data-ttu-id="bc113-138">`If ((` *関数は functionname* `[(` *argumentlist* `)] / 3) <=`*式*  `) Then`</span><span class="sxs-lookup"><span data-stu-id="bc113-138">`If ((` *functionname* `[(` *argumentlist* `)] / 3) <=`  *expression* `) Then`</span></span>  
+ <span data-ttu-id="dcf12-138">`If ((` *関数は functionname* `[(` *argumentlist* `)] / 3) <=`*式* `) Then`</span><span class="sxs-lookup"><span data-stu-id="dcf12-138">`If ((` *functionname* `[(` *argumentlist* `)] / 3) <=`  *expression* `) Then`</span></span>  
   
- <span data-ttu-id="bc113-139">呼び出すと、`Function`手順がありません、戻り値を使用します。</span><span class="sxs-lookup"><span data-stu-id="bc113-139">When you call a `Function` procedure, you do not have to use its return value.</span></span> <span data-ttu-id="bc113-140">そうしないと場合、は、関数のすべてのアクションが実行されますが、戻り値は無視されます。</span><span class="sxs-lookup"><span data-stu-id="bc113-140">If you do not, all the actions of the function are performed, but the return value is ignored.</span></span> <span data-ttu-id="bc113-141"><xref:Microsoft.VisualBasic.Interaction.MsgBox%2A> 多くの場合、この方法で呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="bc113-141"><xref:Microsoft.VisualBasic.Interaction.MsgBox%2A> is often called in this manner.</span></span>  
+ <span data-ttu-id="dcf12-139">呼び出すと、`Function`手順がありません、戻り値を使用します。</span><span class="sxs-lookup"><span data-stu-id="dcf12-139">When you call a `Function` procedure, you do not have to use its return value.</span></span> <span data-ttu-id="dcf12-140">そうしないと場合、は、関数のすべてのアクションが実行されますが、戻り値は無視されます。</span><span class="sxs-lookup"><span data-stu-id="dcf12-140">If you do not, all the actions of the function are performed, but the return value is ignored.</span></span> <span data-ttu-id="dcf12-141"><xref:Microsoft.VisualBasic.Interaction.MsgBox%2A> 多くの場合、この方法で呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="dcf12-141"><xref:Microsoft.VisualBasic.Interaction.MsgBox%2A> is often called in this manner.</span></span>  
   
-### <a name="illustration-of-declaration-and-call"></a><span data-ttu-id="bc113-142">宣言と呼び出しの図</span><span class="sxs-lookup"><span data-stu-id="bc113-142">Illustration of Declaration and Call</span></span>  
- <span data-ttu-id="bc113-143">次`Function`最長側では、やの他の 2 つの辺の値を指定、直角三角形の斜辺を計算します。</span><span class="sxs-lookup"><span data-stu-id="bc113-143">The following `Function` procedure calculates the longest side, or hypotenuse, of a right triangle, given the values for the other two sides.</span></span>  
+### <a name="illustration-of-declaration-and-call"></a><span data-ttu-id="dcf12-142">宣言と呼び出しの図</span><span class="sxs-lookup"><span data-stu-id="dcf12-142">Illustration of Declaration and Call</span></span>  
+ <span data-ttu-id="dcf12-143">次`Function`最長側では、やの他の 2 つの辺の値を指定、直角三角形の斜辺を計算します。</span><span class="sxs-lookup"><span data-stu-id="dcf12-143">The following `Function` procedure calculates the longest side, or hypotenuse, of a right triangle, given the values for the other two sides.</span></span>  
   
  [!code-vb[VbVbcnProcedures#1](./codesnippet/VisualBasic/function-procedures_1.vb)]  
   
- <span data-ttu-id="bc113-144">次の例では、一般的な呼び出しを`hypotenuse`です。</span><span class="sxs-lookup"><span data-stu-id="bc113-144">The following example shows a typical call to `hypotenuse`.</span></span>  
+ <span data-ttu-id="dcf12-144">次の例では、一般的な呼び出しを`hypotenuse`です。</span><span class="sxs-lookup"><span data-stu-id="dcf12-144">The following example shows a typical call to `hypotenuse`.</span></span>  
   
  [!code-vb[VbVbcnProcedures#6](./codesnippet/VisualBasic/function-procedures_2.vb)]  
   
-## <a name="see-also"></a><span data-ttu-id="bc113-145">関連項目</span><span class="sxs-lookup"><span data-stu-id="bc113-145">See Also</span></span>  
- [<span data-ttu-id="bc113-146">手順</span><span class="sxs-lookup"><span data-stu-id="bc113-146">Procedures</span></span>](./index.md)  
- [<span data-ttu-id="bc113-147">Sub プロシージャ</span><span class="sxs-lookup"><span data-stu-id="bc113-147">Sub Procedures</span></span>](./sub-procedures.md)  
- [<span data-ttu-id="bc113-148">Property プロシージャ</span><span class="sxs-lookup"><span data-stu-id="bc113-148">Property Procedures</span></span>](./property-procedures.md)  
- [<span data-ttu-id="bc113-149">演算子プロシージャ</span><span class="sxs-lookup"><span data-stu-id="bc113-149">Operator Procedures</span></span>](./operator-procedures.md)  
- [<span data-ttu-id="bc113-150">プロシージャのパラメーターと引数</span><span class="sxs-lookup"><span data-stu-id="bc113-150">Procedure Parameters and Arguments</span></span>](./procedure-parameters-and-arguments.md)  
- [<span data-ttu-id="bc113-151">Function ステートメント</span><span class="sxs-lookup"><span data-stu-id="bc113-151">Function Statement</span></span>](../../../../visual-basic/language-reference/statements/function-statement.md)  
- [<span data-ttu-id="bc113-152">方法 : 値を返すプロシージャを作成する</span><span class="sxs-lookup"><span data-stu-id="bc113-152">How to: Create a Procedure that Returns a Value</span></span>](./how-to-create-a-procedure-that-returns-a-value.md)  
- [<span data-ttu-id="bc113-153">方法 : プロシージャから値を返す</span><span class="sxs-lookup"><span data-stu-id="bc113-153">How to: Return a Value from a Procedure</span></span>](./how-to-return-a-value-from-a-procedure.md)  
- [<span data-ttu-id="bc113-154">方法: 値を返すプロシージャを呼び出す</span><span class="sxs-lookup"><span data-stu-id="bc113-154">How to: Call a Procedure That Returns a Value</span></span>](./how-to-call-a-procedure-that-returns-a-value.md)
+## <a name="see-also"></a><span data-ttu-id="dcf12-145">関連項目</span><span class="sxs-lookup"><span data-stu-id="dcf12-145">See Also</span></span>  
+ [<span data-ttu-id="dcf12-146">手順</span><span class="sxs-lookup"><span data-stu-id="dcf12-146">Procedures</span></span>](./index.md)  
+ [<span data-ttu-id="dcf12-147">Sub プロシージャ</span><span class="sxs-lookup"><span data-stu-id="dcf12-147">Sub Procedures</span></span>](./sub-procedures.md)  
+ [<span data-ttu-id="dcf12-148">Property プロシージャ</span><span class="sxs-lookup"><span data-stu-id="dcf12-148">Property Procedures</span></span>](./property-procedures.md)  
+ [<span data-ttu-id="dcf12-149">演算子プロシージャ</span><span class="sxs-lookup"><span data-stu-id="dcf12-149">Operator Procedures</span></span>](./operator-procedures.md)  
+ [<span data-ttu-id="dcf12-150">プロシージャのパラメーターと引数</span><span class="sxs-lookup"><span data-stu-id="dcf12-150">Procedure Parameters and Arguments</span></span>](./procedure-parameters-and-arguments.md)  
+ [<span data-ttu-id="dcf12-151">Function ステートメント</span><span class="sxs-lookup"><span data-stu-id="dcf12-151">Function Statement</span></span>](../../../../visual-basic/language-reference/statements/function-statement.md)  
+ [<span data-ttu-id="dcf12-152">方法 : 値を返すプロシージャを作成する</span><span class="sxs-lookup"><span data-stu-id="dcf12-152">How to: Create a Procedure that Returns a Value</span></span>](./how-to-create-a-procedure-that-returns-a-value.md)  
+ [<span data-ttu-id="dcf12-153">方法 : プロシージャから値を返す</span><span class="sxs-lookup"><span data-stu-id="dcf12-153">How to: Return a Value from a Procedure</span></span>](./how-to-return-a-value-from-a-procedure.md)  
+ [<span data-ttu-id="dcf12-154">方法: 値を返すプロシージャを呼び出す</span><span class="sxs-lookup"><span data-stu-id="dcf12-154">How to: Call a Procedure That Returns a Value</span></span>](./how-to-call-a-procedure-that-returns-a-value.md)

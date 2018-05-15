@@ -1,28 +1,18 @@
 ---
-title: "方法: 省略可能な要素 (Visual Basic) でフィルター"
-ms.custom: 
+title: '方法: 省略可能な要素 (Visual Basic) でフィルター'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: a74b76ad-6889-4185-a189-d6ef2c63841e
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 32183a26a02640c655030eff18d62329fb1c125a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 2748f2296af78073042d7348cceba6544f2daa10
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="how-to-filter-on-an-optional-element-visual-basic"></a><span data-ttu-id="9313e-102">方法: 省略可能な要素 (Visual Basic) でフィルター</span><span class="sxs-lookup"><span data-stu-id="9313e-102">How to: Filter on an Optional Element (Visual Basic)</span></span>
-<span data-ttu-id="9313e-103">要素に対するフィルター処理が、その要素が XML ドキュメント内に存在しているかどうか明確でない場合でも必要になることがあります。</span><span class="sxs-lookup"><span data-stu-id="9313e-103">Sometimes you want to filter for an element even though you are not sure it exists in your XML document.</span></span> <span data-ttu-id="9313e-104">特定の要素が子要素を持たない場合、その要素に対するフィルター処理によって null 参照例外が発生しないように検索を実行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="9313e-104">The search should be executed so that if the particular element does not have the child element, you do not trigger a null reference exception by filtering for it.</span></span> <span data-ttu-id="9313e-105">次の例では、`Child5` 要素には `Type` 子要素はありませんが、クエリは正常に実行されます。</span><span class="sxs-lookup"><span data-stu-id="9313e-105">In the following example, the `Child5` element does not have a `Type` child element, but the query still executes correctly.</span></span>  
+# <a name="how-to-filter-on-an-optional-element-visual-basic"></a><span data-ttu-id="a5952-102">方法: 省略可能な要素 (Visual Basic) でフィルター</span><span class="sxs-lookup"><span data-stu-id="a5952-102">How to: Filter on an Optional Element (Visual Basic)</span></span>
+<span data-ttu-id="a5952-103">要素に対するフィルター処理が、その要素が XML ドキュメント内に存在しているかどうか明確でない場合でも必要になることがあります。</span><span class="sxs-lookup"><span data-stu-id="a5952-103">Sometimes you want to filter for an element even though you are not sure it exists in your XML document.</span></span> <span data-ttu-id="a5952-104">特定の要素が子要素を持たない場合、その要素に対するフィルター処理によって null 参照例外が発生しないように検索を実行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a5952-104">The search should be executed so that if the particular element does not have the child element, you do not trigger a null reference exception by filtering for it.</span></span> <span data-ttu-id="a5952-105">次の例では、`Child5` 要素には `Type` 子要素はありませんが、クエリは正常に実行されます。</span><span class="sxs-lookup"><span data-stu-id="a5952-105">In the following example, the `Child5` element does not have a `Type` child element, but the query still executes correctly.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="9313e-106">例</span><span class="sxs-lookup"><span data-stu-id="9313e-106">Example</span></span>  
- <span data-ttu-id="9313e-107">この例では、<xref:System.Xml.Linq.Extensions.Elements%2A> 拡張メソッドを使用しています。</span><span class="sxs-lookup"><span data-stu-id="9313e-107">This example uses the <xref:System.Xml.Linq.Extensions.Elements%2A> extension method.</span></span>  
+## <a name="example"></a><span data-ttu-id="a5952-106">例</span><span class="sxs-lookup"><span data-stu-id="a5952-106">Example</span></span>  
+ <span data-ttu-id="a5952-107">この例では、<xref:System.Xml.Linq.Extensions.Elements%2A> 拡張メソッドを使用しています。</span><span class="sxs-lookup"><span data-stu-id="a5952-107">This example uses the <xref:System.Xml.Linq.Extensions.Elements%2A> extension method.</span></span>  
   
 ```vb  
 Dim root As XElement = _   
@@ -57,7 +47,7 @@ For Each str In cList
 Next  
 ```  
   
- <span data-ttu-id="9313e-108">このコードを実行すると、次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="9313e-108">This code produces the following output:</span></span>  
+ <span data-ttu-id="a5952-108">このコードを実行すると、次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="a5952-108">This code produces the following output:</span></span>  
   
 ```  
 Child One Text  
@@ -65,8 +55,8 @@ Child Two Text
 Child Four Text  
 ```  
   
-## <a name="example"></a><span data-ttu-id="9313e-109">例</span><span class="sxs-lookup"><span data-stu-id="9313e-109">Example</span></span>  
- <span data-ttu-id="9313e-110">次の例は名前空間に含まれている XML 用のクエリです。これらのクエリは上の例と同じ機能を表しています。</span><span class="sxs-lookup"><span data-stu-id="9313e-110">The following example shows the same query for XML that is in a namespace.</span></span> <span data-ttu-id="9313e-111">詳細については、次を参照してください。 [XML 名前空間 (Visual Basic) の操作](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md)です。</span><span class="sxs-lookup"><span data-stu-id="9313e-111">For more information, see [Working with XML Namespaces (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md).</span></span>  
+## <a name="example"></a><span data-ttu-id="a5952-109">例</span><span class="sxs-lookup"><span data-stu-id="a5952-109">Example</span></span>  
+ <span data-ttu-id="a5952-110">次の例は名前空間に含まれている XML 用のクエリです。これらのクエリは上の例と同じ機能を表しています。</span><span class="sxs-lookup"><span data-stu-id="a5952-110">The following example shows the same query for XML that is in a namespace.</span></span> <span data-ttu-id="a5952-111">詳細については、次を参照してください。 [XML 名前空間 (Visual Basic) の操作](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md)です。</span><span class="sxs-lookup"><span data-stu-id="a5952-111">For more information, see [Working with XML Namespaces (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md).</span></span>  
   
 ```vb  
 Imports <xmlns='http://www.adatum.com'>  
@@ -107,7 +97,7 @@ Module Module1
 End Module  
 ```  
   
- <span data-ttu-id="9313e-112">このコードを実行すると、次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="9313e-112">This code produces the following output:</span></span>  
+ <span data-ttu-id="a5952-112">このコードを実行すると、次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="a5952-112">This code produces the following output:</span></span>  
   
 ```  
 Child One Text  
@@ -115,13 +105,13 @@ Child Two Text
 Child Four Text  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="9313e-113">関連項目</span><span class="sxs-lookup"><span data-stu-id="9313e-113">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="a5952-113">関連項目</span><span class="sxs-lookup"><span data-stu-id="a5952-113">See Also</span></span>  
  <xref:System.Xml.Linq.XElement.Attribute%2A?displayProperty=nameWithType>  
  <xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=nameWithType>  
  <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=nameWithType>  
- [<span data-ttu-id="9313e-114">基本的なクエリ (LINQ to XML) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="9313e-114">Basic Queries (LINQ to XML) (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)  
- [<span data-ttu-id="9313e-115">XML 子軸プロパティ</span><span class="sxs-lookup"><span data-stu-id="9313e-115">XML Child Axis Property</span></span>](../../../../visual-basic/language-reference/xml-axis/xml-child-axis-property.md)  
- [<span data-ttu-id="9313e-116">XML 属性軸プロパティ</span><span class="sxs-lookup"><span data-stu-id="9313e-116">XML Attribute Axis Property</span></span>](../../../../visual-basic/language-reference/xml-axis/xml-attribute-axis-property.md)  
- [<span data-ttu-id="9313e-117">XML Value プロパティ</span><span class="sxs-lookup"><span data-stu-id="9313e-117">XML Value Property</span></span>](../../../../visual-basic/language-reference/xml-axis/xml-value-property.md)  
- [<span data-ttu-id="9313e-118">標準クエリ演算子の概要 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="9313e-118">Standard Query Operators Overview (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)  
- [<span data-ttu-id="9313e-119">射影操作 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="9313e-119">Projection Operations (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/projection-operations.md)
+ [<span data-ttu-id="a5952-114">基本的なクエリ (LINQ to XML) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="a5952-114">Basic Queries (LINQ to XML) (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)  
+ [<span data-ttu-id="a5952-115">XML 子軸プロパティ</span><span class="sxs-lookup"><span data-stu-id="a5952-115">XML Child Axis Property</span></span>](../../../../visual-basic/language-reference/xml-axis/xml-child-axis-property.md)  
+ [<span data-ttu-id="a5952-116">XML 属性軸プロパティ</span><span class="sxs-lookup"><span data-stu-id="a5952-116">XML Attribute Axis Property</span></span>](../../../../visual-basic/language-reference/xml-axis/xml-attribute-axis-property.md)  
+ [<span data-ttu-id="a5952-117">XML Value プロパティ</span><span class="sxs-lookup"><span data-stu-id="a5952-117">XML Value Property</span></span>](../../../../visual-basic/language-reference/xml-axis/xml-value-property.md)  
+ [<span data-ttu-id="a5952-118">標準クエリ演算子の概要 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="a5952-118">Standard Query Operators Overview (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)  
+ [<span data-ttu-id="a5952-119">射影操作 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="a5952-119">Projection Operations (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/projection-operations.md)

@@ -1,27 +1,17 @@
 ---
-title: "方法: クエリ (LINQ) (Visual Basic) のフォルダー内のファイルの内容"
-ms.custom: 
+title: '方法: クエリ (LINQ) (Visual Basic) のフォルダー内のファイルの内容'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: edacbcd3-f3e4-4429-a8be-28a58dc0dd70
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 053a0b206b5e5fc71fb83967a70da205a8988978
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: e0f5e07065ebe210a927491a3f55f891f9934e60
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="how-to-query-the-contents-of-files-in-a-folder-linq-visual-basic"></a><span data-ttu-id="b5a5c-102">方法: クエリ (LINQ) (Visual Basic) のフォルダー内のファイルの内容</span><span class="sxs-lookup"><span data-stu-id="b5a5c-102">How to: Query the Contents of Files in a Folder (LINQ) (Visual Basic)</span></span>
-<span data-ttu-id="b5a5c-103">この例では、指定したディレクトリ ツリーに含まれるすべてのファイルを照会し、個々のファイルを開いて、その内容を調べています。</span><span class="sxs-lookup"><span data-stu-id="b5a5c-103">This example shows how to query over all the files in a specified directory tree, open each file, and inspect its contents.</span></span> <span data-ttu-id="b5a5c-104">同様の手法を使えば、ディレクトリ ツリーの内容に対するインデックスや逆インデックスを作成することもできます。</span><span class="sxs-lookup"><span data-stu-id="b5a5c-104">This type of technique could be used to create indexes or reverse indexes of the contents of a directory tree.</span></span> <span data-ttu-id="b5a5c-105">この例で行っているのは単純な文字列検索です。</span><span class="sxs-lookup"><span data-stu-id="b5a5c-105">A simple string search is performed in this example.</span></span> <span data-ttu-id="b5a5c-106">しかし正規表現を使うと、もっと複雑なパターン マッチングを行うことができます。</span><span class="sxs-lookup"><span data-stu-id="b5a5c-106">However, more complex types of pattern matching can be performed with a regular expression.</span></span> <span data-ttu-id="b5a5c-107">詳細については、次を参照してください。[する方法: 正規表現 (Visual Basic) での LINQ クエリの結合](../../../../visual-basic/programming-guide/concepts/linq/how-to-combine-linq-queries-with-regular-expressions.md)です。</span><span class="sxs-lookup"><span data-stu-id="b5a5c-107">For more information, see [How to: Combine LINQ Queries with Regular Expressions (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-combine-linq-queries-with-regular-expressions.md).</span></span>  
+# <a name="how-to-query-the-contents-of-files-in-a-folder-linq-visual-basic"></a><span data-ttu-id="f58e3-102">方法: クエリ (LINQ) (Visual Basic) のフォルダー内のファイルの内容</span><span class="sxs-lookup"><span data-stu-id="f58e3-102">How to: Query the Contents of Files in a Folder (LINQ) (Visual Basic)</span></span>
+<span data-ttu-id="f58e3-103">この例では、指定したディレクトリ ツリーに含まれるすべてのファイルを照会し、個々のファイルを開いて、その内容を調べています。</span><span class="sxs-lookup"><span data-stu-id="f58e3-103">This example shows how to query over all the files in a specified directory tree, open each file, and inspect its contents.</span></span> <span data-ttu-id="f58e3-104">同様の手法を使えば、ディレクトリ ツリーの内容に対するインデックスや逆インデックスを作成することもできます。</span><span class="sxs-lookup"><span data-stu-id="f58e3-104">This type of technique could be used to create indexes or reverse indexes of the contents of a directory tree.</span></span> <span data-ttu-id="f58e3-105">この例で行っているのは単純な文字列検索です。</span><span class="sxs-lookup"><span data-stu-id="f58e3-105">A simple string search is performed in this example.</span></span> <span data-ttu-id="f58e3-106">しかし正規表現を使うと、もっと複雑なパターン マッチングを行うことができます。</span><span class="sxs-lookup"><span data-stu-id="f58e3-106">However, more complex types of pattern matching can be performed with a regular expression.</span></span> <span data-ttu-id="f58e3-107">詳細については、次を参照してください。[する方法: 正規表現 (Visual Basic) での LINQ クエリの結合](../../../../visual-basic/programming-guide/concepts/linq/how-to-combine-linq-queries-with-regular-expressions.md)です。</span><span class="sxs-lookup"><span data-stu-id="f58e3-107">For more information, see [How to: Combine LINQ Queries with Regular Expressions (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-combine-linq-queries-with-regular-expressions.md).</span></span>  
   
-## <a name="example"></a><span data-ttu-id="b5a5c-108">例</span><span class="sxs-lookup"><span data-stu-id="b5a5c-108">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="f58e3-108">例</span><span class="sxs-lookup"><span data-stu-id="f58e3-108">Example</span></span>  
   
 ```vb  
 Module Module1  
@@ -79,9 +69,9 @@ Module Module1
 End Module  
 ```  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="b5a5c-109">コードのコンパイル</span><span class="sxs-lookup"><span data-stu-id="b5a5c-109">Compiling the Code</span></span>  
- <span data-ttu-id="b5a5c-110">.NET Framework Version 3.5 以降を対象とするプロジェクトを作成します。System.Core.dll および System.Linq 名前空間の `Imports` ステートメントを参照設定します。</span><span class="sxs-lookup"><span data-stu-id="b5a5c-110">Create a project that targets the .NET Framework version 3.5 or higher with a reference to System.Core.dll and a `Imports` statement for the System.Linq namespace.</span></span>  
+## <a name="compiling-the-code"></a><span data-ttu-id="f58e3-109">コードのコンパイル</span><span class="sxs-lookup"><span data-stu-id="f58e3-109">Compiling the Code</span></span>  
+ <span data-ttu-id="f58e3-110">.NET Framework Version 3.5 以降を対象とするプロジェクトを作成します。System.Core.dll および System.Linq 名前空間の `Imports` ステートメントを参照設定します。</span><span class="sxs-lookup"><span data-stu-id="f58e3-110">Create a project that targets the .NET Framework version 3.5 or higher with a reference to System.Core.dll and a `Imports` statement for the System.Linq namespace.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="b5a5c-111">関連項目</span><span class="sxs-lookup"><span data-stu-id="b5a5c-111">See Also</span></span>  
- [<span data-ttu-id="b5a5c-112">LINQ to Objects (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="b5a5c-112">LINQ to Objects (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)  
- [<span data-ttu-id="b5a5c-113">LINQ とファイル ディレクトリ (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="b5a5c-113">LINQ and File Directories (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)
+## <a name="see-also"></a><span data-ttu-id="f58e3-111">関連項目</span><span class="sxs-lookup"><span data-stu-id="f58e3-111">See Also</span></span>  
+ [<span data-ttu-id="f58e3-112">LINQ to Objects (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="f58e3-112">LINQ to Objects (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)  
+ [<span data-ttu-id="f58e3-113">LINQ とファイル ディレクトリ (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="f58e3-113">LINQ and File Directories (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)

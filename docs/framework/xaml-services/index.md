@@ -22,7 +22,7 @@ ms.workload:
 - dotnet
 ms.openlocfilehash: f36f22e8bf68520f5f57280d33cf37990feb2df6
 ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/28/2018
 ---

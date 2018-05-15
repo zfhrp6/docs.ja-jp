@@ -1,26 +1,20 @@
 ---
-title: "名前を指定する必要があります"
+title: 名前を指定する必要があります
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-visual-basic
-ms.topic: article
 ms.assetid: 9056bc12-951c-4b86-a44a-473d7c8d5f75
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 1b7c57f55b589a265a0c8b905262de2fffddbd0c
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: 95c0c434810c56aa967e6003a07958a1b5386bd1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="you-must-specify-a-name"></a><span data-ttu-id="483c4-102">名前を指定する必要があります</span><span class="sxs-lookup"><span data-stu-id="483c4-102">You must specify a name</span></span>
-<span data-ttu-id="483c4-103">ファイル名の変更などのファイル操作を実行するときは、名前を指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="483c4-103">When performing file operations such as renaming a file, you must specify the name.</span></span>  
+# <a name="you-must-specify-a-name"></a><span data-ttu-id="aafa8-102">名前を指定する必要があります</span><span class="sxs-lookup"><span data-stu-id="aafa8-102">You must specify a name</span></span>
+<span data-ttu-id="aafa8-103">ファイル名の変更などのファイル操作を実行するときは、名前を指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="aafa8-103">When performing file operations such as renaming a file, you must specify the name.</span></span>  
   
-## <a name="to-correct-this-error"></a><span data-ttu-id="483c4-104">このエラーを解決するには</span><span class="sxs-lookup"><span data-stu-id="483c4-104">To correct this error</span></span>  
+## <a name="to-correct-this-error"></a><span data-ttu-id="aafa8-104">このエラーを解決するには</span><span class="sxs-lookup"><span data-stu-id="aafa8-104">To correct this error</span></span>  
   
--   <span data-ttu-id="483c4-105">名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="483c4-105">Specify the name.</span></span>  
+-   <span data-ttu-id="aafa8-105">名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="aafa8-105">Specify the name.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="483c4-106">参照</span><span class="sxs-lookup"><span data-stu-id="483c4-106">See Also</span></span>  
- [<span data-ttu-id="483c4-107">エラーの種類</span><span class="sxs-lookup"><span data-stu-id="483c4-107">Error Types</span></span>](../../visual-basic/programming-guide/language-features/error-types.md)  
- [<span data-ttu-id="483c4-108">My.Computer.FileSystem</span><span class="sxs-lookup"><span data-stu-id="483c4-108">My.Computer.FileSystem</span></span>](xref:Microsoft.VisualBasic.FileIO.FileSystem)
+## <a name="see-also"></a><span data-ttu-id="aafa8-106">関連項目</span><span class="sxs-lookup"><span data-stu-id="aafa8-106">See Also</span></span>  
+ [<span data-ttu-id="aafa8-107">エラーの種類</span><span class="sxs-lookup"><span data-stu-id="aafa8-107">Error Types</span></span>](../../visual-basic/programming-guide/language-features/error-types.md)  
+ [<span data-ttu-id="aafa8-108">My.Computer.FileSystem</span><span class="sxs-lookup"><span data-stu-id="aafa8-108">My.Computer.FileSystem</span></span>](xref:Microsoft.VisualBasic.FileIO.FileSystem)

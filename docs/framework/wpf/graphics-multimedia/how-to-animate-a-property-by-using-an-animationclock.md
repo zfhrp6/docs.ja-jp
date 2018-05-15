@@ -1,13 +1,6 @@
 ---
-title: "方法 : AnimationClock を使用してプロパティをアニメーション化する"
-ms.custom: 
+title: '方法 : AnimationClock を使用してプロパティをアニメーション化する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,39 +8,34 @@ helpviewer_keywords:
 - animation [WPF], properties [WPF], with AnimationClocks
 - AnimationClocks [WPF]
 ms.assetid: e6542021-714c-4675-9567-04f1c7380834
-caps.latest.revision: "13"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 145ff1be88f1af6692a8cf374e871479ed38d7bf
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b8c64586d0dc5dc2e565fe4cb002e0f9cd4109af
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="how-to-animate-a-property-by-using-an-animationclock"></a><span data-ttu-id="9a525-102">方法 : AnimationClock を使用してプロパティをアニメーション化する</span><span class="sxs-lookup"><span data-stu-id="9a525-102">How to: Animate a Property by Using an AnimationClock</span></span>
-<span data-ttu-id="9a525-103">この例を使用する方法を示しています。<xref:System.Windows.Media.Animation.Clock>プロパティをアニメーション化するオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="9a525-103">This example shows how to use <xref:System.Windows.Media.Animation.Clock> objects to animate a property.</span></span>  
+# <a name="how-to-animate-a-property-by-using-an-animationclock"></a><span data-ttu-id="14c61-102">方法 : AnimationClock を使用してプロパティをアニメーション化する</span><span class="sxs-lookup"><span data-stu-id="14c61-102">How to: Animate a Property by Using an AnimationClock</span></span>
+<span data-ttu-id="14c61-103">この例を使用する方法を示しています。<xref:System.Windows.Media.Animation.Clock>プロパティをアニメーション化するオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="14c61-103">This example shows how to use <xref:System.Windows.Media.Animation.Clock> objects to animate a property.</span></span>  
   
- <span data-ttu-id="9a525-104">依存関係プロパティをアニメーション化するには次の 3 つの方法があります。</span><span class="sxs-lookup"><span data-stu-id="9a525-104">There are three ways to animate a dependency property:</span></span>  
+ <span data-ttu-id="14c61-104">依存関係プロパティをアニメーション化するには次の 3 つの方法があります。</span><span class="sxs-lookup"><span data-stu-id="14c61-104">There are three ways to animate a dependency property:</span></span>  
   
--   <span data-ttu-id="9a525-105">作成、<xref:System.Windows.Media.Animation.AnimationTimeline>を使用してそのプロパティに関連付けると、<xref:System.Windows.Media.Animation.Storyboard>です。</span><span class="sxs-lookup"><span data-stu-id="9a525-105">Create an <xref:System.Windows.Media.Animation.AnimationTimeline> and associate it with that property by using a <xref:System.Windows.Media.Animation.Storyboard>.</span></span>  
+-   <span data-ttu-id="14c61-105">作成、<xref:System.Windows.Media.Animation.AnimationTimeline>を使用してそのプロパティに関連付けると、<xref:System.Windows.Media.Animation.Storyboard>です。</span><span class="sxs-lookup"><span data-stu-id="14c61-105">Create an <xref:System.Windows.Media.Animation.AnimationTimeline> and associate it with that property by using a <xref:System.Windows.Media.Animation.Storyboard>.</span></span>  
   
--   <span data-ttu-id="9a525-106">オブジェクトの<xref:System.Windows.Media.Animation.Animatable.BeginAnimation%2A>メソッドを 1 つを適用する<xref:System.Windows.Media.Animation.AnimationTimeline>対象のプロパティにします。</span><span class="sxs-lookup"><span data-stu-id="9a525-106">Use the object's <xref:System.Windows.Media.Animation.Animatable.BeginAnimation%2A> method to apply a single <xref:System.Windows.Media.Animation.AnimationTimeline> to a target property.</span></span>  
+-   <span data-ttu-id="14c61-106">オブジェクトの<xref:System.Windows.Media.Animation.Animatable.BeginAnimation%2A>メソッドを 1 つを適用する<xref:System.Windows.Media.Animation.AnimationTimeline>対象のプロパティにします。</span><span class="sxs-lookup"><span data-stu-id="14c61-106">Use the object's <xref:System.Windows.Media.Animation.Animatable.BeginAnimation%2A> method to apply a single <xref:System.Windows.Media.Animation.AnimationTimeline> to a target property.</span></span>  
   
--   <span data-ttu-id="9a525-107">作成、<xref:System.Windows.Media.Animation.AnimationClock>から、<xref:System.Windows.Media.Animation.AnimationTimeline>し、プロパティに適用します。</span><span class="sxs-lookup"><span data-stu-id="9a525-107">Create an <xref:System.Windows.Media.Animation.AnimationClock> from an <xref:System.Windows.Media.Animation.AnimationTimeline> and apply it to a property.</span></span>  
+-   <span data-ttu-id="14c61-107">作成、<xref:System.Windows.Media.Animation.AnimationClock>から、<xref:System.Windows.Media.Animation.AnimationTimeline>し、プロパティに適用します。</span><span class="sxs-lookup"><span data-stu-id="14c61-107">Create an <xref:System.Windows.Media.Animation.AnimationClock> from an <xref:System.Windows.Media.Animation.AnimationTimeline> and apply it to a property.</span></span>  
   
- <span data-ttu-id="9a525-108"><xref:System.Windows.Media.Animation.Storyboard>オブジェクトおよび<xref:System.Windows.Media.Animation.Animatable.BeginAnimation%2A>メソッドに直接作成および時計を配布することがなくプロパティをアニメーション化することが有効にする (例については、次を参照してください[ストーリー ボードを使用してプロパティをアニメーション化](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-property-by-using-a-storyboard.md)と[プロパティなしをアニメーション化します。ストーリー ボードを使って](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-property-without-using-a-storyboard.md)) です。クロックが作成され、自動的に配布します。</span><span class="sxs-lookup"><span data-stu-id="9a525-108"><xref:System.Windows.Media.Animation.Storyboard> objects and the <xref:System.Windows.Media.Animation.Animatable.BeginAnimation%2A> method enable you to animate properties without directly creating and distributing clocks (for examples, see [Animate a Property by Using a Storyboard](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-property-by-using-a-storyboard.md) and [Animate a Property Without Using a Storyboard](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-property-without-using-a-storyboard.md)); clocks are created and distributed for you automatically.</span></span>  
+ <span data-ttu-id="14c61-108"><xref:System.Windows.Media.Animation.Storyboard> オブジェクトおよび<xref:System.Windows.Media.Animation.Animatable.BeginAnimation%2A>メソッドに直接作成および時計を配布することがなくプロパティをアニメーション化することが有効にする (例については、次を参照してください[ストーリー ボードを使用してプロパティをアニメーション化](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-property-by-using-a-storyboard.md)と[プロパティなしをアニメーション化します。ストーリー ボードを使って](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-property-without-using-a-storyboard.md)) です。クロックが作成され、自動的に配布します。</span><span class="sxs-lookup"><span data-stu-id="14c61-108"><xref:System.Windows.Media.Animation.Storyboard> objects and the <xref:System.Windows.Media.Animation.Animatable.BeginAnimation%2A> method enable you to animate properties without directly creating and distributing clocks (for examples, see [Animate a Property by Using a Storyboard](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-property-by-using-a-storyboard.md) and [Animate a Property Without Using a Storyboard](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-property-without-using-a-storyboard.md)); clocks are created and distributed for you automatically.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="9a525-109">例</span><span class="sxs-lookup"><span data-stu-id="9a525-109">Example</span></span>  
- <span data-ttu-id="9a525-110">次の例を作成する方法を示しています、<xref:System.Windows.Media.Animation.AnimationClock>し、同様の 2 つのプロパティに適用します。</span><span class="sxs-lookup"><span data-stu-id="9a525-110">The following example shows how to create an <xref:System.Windows.Media.Animation.AnimationClock> and apply it to two similar properties.</span></span>  
+## <a name="example"></a><span data-ttu-id="14c61-109">例</span><span class="sxs-lookup"><span data-stu-id="14c61-109">Example</span></span>  
+ <span data-ttu-id="14c61-110">次の例を作成する方法を示しています、<xref:System.Windows.Media.Animation.AnimationClock>し、同様の 2 つのプロパティに適用します。</span><span class="sxs-lookup"><span data-stu-id="14c61-110">The following example shows how to create an <xref:System.Windows.Media.Animation.AnimationClock> and apply it to two similar properties.</span></span>  
   
  [!code-csharp[timingbehaviors_procedural_snip#GraphicsMMCreateAnimationClockWholeClass](../../../../samples/snippets/csharp/VS_Snippets_Wpf/timingbehaviors_procedural_snip/CSharp/AnimationClockExample.cs#graphicsmmcreateanimationclockwholeclass)]
  [!code-vb[timingbehaviors_procedural_snip#GraphicsMMCreateAnimationClockWholeClass](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/timingbehaviors_procedural_snip/visualbasic/animationclockexample.vb#graphicsmmcreateanimationclockwholeclass)]  
   
- <span data-ttu-id="9a525-111">対話的に制御する方法を示す例については、<xref:System.Windows.Media.Animation.Clock>が起動したらを参照してください。[クロックを対話的に制御する](../../../../docs/framework/wpf/graphics-multimedia/how-to-interactively-control-a-clock.md)です。</span><span class="sxs-lookup"><span data-stu-id="9a525-111">For an example showing how to interactively control a <xref:System.Windows.Media.Animation.Clock> after it starts, see [Interactively Control a Clock](../../../../docs/framework/wpf/graphics-multimedia/how-to-interactively-control-a-clock.md).</span></span>  
+ <span data-ttu-id="14c61-111">対話的に制御する方法を示す例については、<xref:System.Windows.Media.Animation.Clock>が起動したらを参照してください。[クロックを対話的に制御する](../../../../docs/framework/wpf/graphics-multimedia/how-to-interactively-control-a-clock.md)です。</span><span class="sxs-lookup"><span data-stu-id="14c61-111">For an example showing how to interactively control a <xref:System.Windows.Media.Animation.Clock> after it starts, see [Interactively Control a Clock](../../../../docs/framework/wpf/graphics-multimedia/how-to-interactively-control-a-clock.md).</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="9a525-112">参照</span><span class="sxs-lookup"><span data-stu-id="9a525-112">See Also</span></span>  
- [<span data-ttu-id="9a525-113">ストーリーボードを使ってプロパティをアニメーション化する</span><span class="sxs-lookup"><span data-stu-id="9a525-113">Animate a Property by Using a Storyboard</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-property-by-using-a-storyboard.md)  
- [<span data-ttu-id="9a525-114">ストーリーボードを使用せずにプロパティをアニメーション化する</span><span class="sxs-lookup"><span data-stu-id="9a525-114">Animate a Property Without Using a Storyboard</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-property-without-using-a-storyboard.md)  
- [<span data-ttu-id="9a525-115">プロパティ アニメーションの手法の概要</span><span class="sxs-lookup"><span data-stu-id="9a525-115">Property Animation Techniques Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/property-animation-techniques-overview.md)
+## <a name="see-also"></a><span data-ttu-id="14c61-112">関連項目</span><span class="sxs-lookup"><span data-stu-id="14c61-112">See Also</span></span>  
+ [<span data-ttu-id="14c61-113">ストーリーボードを使ってプロパティをアニメーション化する</span><span class="sxs-lookup"><span data-stu-id="14c61-113">Animate a Property by Using a Storyboard</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-property-by-using-a-storyboard.md)  
+ [<span data-ttu-id="14c61-114">ストーリーボードを使用せずにプロパティをアニメーション化する</span><span class="sxs-lookup"><span data-stu-id="14c61-114">Animate a Property Without Using a Storyboard</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-property-without-using-a-storyboard.md)  
+ [<span data-ttu-id="14c61-115">プロパティ アニメーションの手法の概要</span><span class="sxs-lookup"><span data-stu-id="14c61-115">Property Animation Techniques Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/property-animation-techniques-overview.md)

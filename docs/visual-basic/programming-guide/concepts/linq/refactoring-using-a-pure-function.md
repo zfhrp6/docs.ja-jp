@@ -1,32 +1,22 @@
 ---
-title: "純粋関数 (Visual Basic) を使用したリファクタリング"
-ms.custom: 
+title: 純粋関数 (Visual Basic) を使用したリファクタリング
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: af0ea62f-4f57-4868-b624-a85524055935
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 7a8114dcfde7adbbdb1016bae4f2916dc28b6854
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: fe1ad3b189891a1655e014dc49dac00c79507a7c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="refactoring-using-a-pure-function-visual-basic"></a><span data-ttu-id="c8316-102">純粋関数 (Visual Basic) を使用したリファクタリング</span><span class="sxs-lookup"><span data-stu-id="c8316-102">Refactoring Using a Pure Function (Visual Basic)</span></span>
-<span data-ttu-id="c8316-103">次の例には、前の例がリファクタリングした[拡張メソッド (Visual Basic) を使用したリファクタリング](../../../../visual-basic/programming-guide/concepts/linq/refactoring-using-an-extension-method.md)、この例では、段落のテキストは、純粋な静的メソッドに移動を検索するコードでは、純粋関数を使用する`ParagraphText`.</span><span class="sxs-lookup"><span data-stu-id="c8316-103">The following example refactors the previous example, [Refactoring Using an Extension Method (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/refactoring-using-an-extension-method.md), to use a pure function In this example, the code to find the text of a paragraph is moved to the pure static method `ParagraphText`.</span></span>  
+# <a name="refactoring-using-a-pure-function-visual-basic"></a><span data-ttu-id="50604-102">純粋関数 (Visual Basic) を使用したリファクタリング</span><span class="sxs-lookup"><span data-stu-id="50604-102">Refactoring Using a Pure Function (Visual Basic)</span></span>
+<span data-ttu-id="50604-103">次の例には、前の例がリファクタリングした[拡張メソッド (Visual Basic) を使用したリファクタリング](../../../../visual-basic/programming-guide/concepts/linq/refactoring-using-an-extension-method.md)、この例では、段落のテキストは、純粋な静的メソッドに移動を検索するコードでは、純粋関数を使用する`ParagraphText`.</span><span class="sxs-lookup"><span data-stu-id="50604-103">The following example refactors the previous example, [Refactoring Using an Extension Method (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/refactoring-using-an-extension-method.md), to use a pure function In this example, the code to find the text of a paragraph is moved to the pure static method `ParagraphText`.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="c8316-104">例</span><span class="sxs-lookup"><span data-stu-id="c8316-104">Example</span></span>  
- <span data-ttu-id="c8316-105">この例では、WordprocessingML ドキュメントを処理して、WordprocessingML ドキュメントから段落ノードを取得します。</span><span class="sxs-lookup"><span data-stu-id="c8316-105">This example processes a WordprocessingML document, retrieving the paragraph nodes from a WordprocessingML document.</span></span> <span data-ttu-id="c8316-106">それぞれの段落のスタイルも特定します。</span><span class="sxs-lookup"><span data-stu-id="c8316-106">It also identifies the style of each paragraph.</span></span> <span data-ttu-id="c8316-107">この例は、このチュートリアルのこれまでの例に基づいています。</span><span class="sxs-lookup"><span data-stu-id="c8316-107">This example builds on the previous examples in this tutorial.</span></span> <span data-ttu-id="c8316-108">リファクタリングされたコードについては、以下のコード内にあるコメントで説明が示されています。</span><span class="sxs-lookup"><span data-stu-id="c8316-108">The refactored code is called out in comments in the code below.</span></span>  
+## <a name="example"></a><span data-ttu-id="50604-104">例</span><span class="sxs-lookup"><span data-stu-id="50604-104">Example</span></span>  
+ <span data-ttu-id="50604-105">この例では、WordprocessingML ドキュメントを処理して、WordprocessingML ドキュメントから段落ノードを取得します。</span><span class="sxs-lookup"><span data-stu-id="50604-105">This example processes a WordprocessingML document, retrieving the paragraph nodes from a WordprocessingML document.</span></span> <span data-ttu-id="50604-106">それぞれの段落のスタイルも特定します。</span><span class="sxs-lookup"><span data-stu-id="50604-106">It also identifies the style of each paragraph.</span></span> <span data-ttu-id="50604-107">この例は、このチュートリアルのこれまでの例に基づいています。</span><span class="sxs-lookup"><span data-stu-id="50604-107">This example builds on the previous examples in this tutorial.</span></span> <span data-ttu-id="50604-108">リファクタリングされたコードについては、以下のコード内にあるコメントで説明が示されています。</span><span class="sxs-lookup"><span data-stu-id="50604-108">The refactored code is called out in comments in the code below.</span></span>  
   
- <span data-ttu-id="c8316-109">この例のソース ドキュメントを作成する方法の詳細については、次を参照してください。[ソース Office Open XML ドキュメント (Visual Basic) を作成する](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md)です。</span><span class="sxs-lookup"><span data-stu-id="c8316-109">For instructions for creating the source document for this example, see [Creating the Source Office Open XML Document (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).</span></span>  
+ <span data-ttu-id="50604-109">この例のソース ドキュメントを作成する方法の詳細については、次を参照してください。[ソース Office Open XML ドキュメント (Visual Basic) を作成する](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md)です。</span><span class="sxs-lookup"><span data-stu-id="50604-109">For instructions for creating the source document for this example, see [Creating the Source Office Open XML Document (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).</span></span>  
   
- <span data-ttu-id="c8316-110">この例では、WindowsBase アセンブリのクラスを使用します。</span><span class="sxs-lookup"><span data-stu-id="c8316-110">This example uses classes from the WindowsBase assembly.</span></span> <span data-ttu-id="c8316-111">また、<xref:System.IO.Packaging?displayProperty=nameWithType> 名前空間内の型を使用します。</span><span class="sxs-lookup"><span data-stu-id="c8316-111">It uses types in the <xref:System.IO.Packaging?displayProperty=nameWithType> namespace.</span></span>  
+ <span data-ttu-id="50604-110">この例では、WindowsBase アセンブリのクラスを使用します。</span><span class="sxs-lookup"><span data-stu-id="50604-110">This example uses classes from the WindowsBase assembly.</span></span> <span data-ttu-id="50604-111">また、<xref:System.IO.Packaging?displayProperty=nameWithType> 名前空間内の型を使用します。</span><span class="sxs-lookup"><span data-stu-id="50604-111">It uses types in the <xref:System.IO.Packaging?displayProperty=nameWithType> namespace.</span></span>  
   
 ```vb  
 Imports <xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">  
@@ -156,7 +146,7 @@ Module Module1
 End Module   
 ```  
   
- <span data-ttu-id="c8316-112">この例では、リファクタリング前と同じ出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="c8316-112">This example produces the same output as before the refactoring:</span></span>  
+ <span data-ttu-id="50604-112">この例では、リファクタリング前と同じ出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="50604-112">This example produces the same output as before the refactoring:</span></span>  
   
 ```  
 StyleName:Heading1 >Parsing WordprocessingML with LINQ to XML<  
@@ -176,12 +166,12 @@ StyleName:Normal ><
 StyleName:Code >Hello World<  
 ```  
   
-### <a name="next-steps"></a><span data-ttu-id="c8316-113">次の手順</span><span class="sxs-lookup"><span data-stu-id="c8316-113">Next Steps</span></span>  
- <span data-ttu-id="c8316-114">次の例では、XML を別の形式に射影する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="c8316-114">The next example shows how to project XML into a different shape:</span></span>  
+### <a name="next-steps"></a><span data-ttu-id="50604-113">次の手順</span><span class="sxs-lookup"><span data-stu-id="50604-113">Next Steps</span></span>  
+ <span data-ttu-id="50604-114">次の例では、XML を別の形式に射影する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="50604-114">The next example shows how to project XML into a different shape:</span></span>  
   
--   [<span data-ttu-id="c8316-115">別の図形 (Visual Basic) で XML を射影すること</span><span class="sxs-lookup"><span data-stu-id="c8316-115">Projecting XML in a Different Shape (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/projecting-xml-in-a-different-shape.md)  
+-   [<span data-ttu-id="50604-115">別の図形 (Visual Basic) で XML を射影すること</span><span class="sxs-lookup"><span data-stu-id="50604-115">Projecting XML in a Different Shape (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/projecting-xml-in-a-different-shape.md)  
   
-## <a name="see-also"></a><span data-ttu-id="c8316-116">関連項目</span><span class="sxs-lookup"><span data-stu-id="c8316-116">See Also</span></span>  
- [<span data-ttu-id="c8316-117">チュートリアル: WordprocessingML ドキュメント (Visual Basic) 内のコンテンツの操作</span><span class="sxs-lookup"><span data-stu-id="c8316-117">Tutorial: Manipulating Content in a WordprocessingML Document (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)  
- [<span data-ttu-id="c8316-118">拡張メソッド (Visual Basic) を使用したリファクタリング</span><span class="sxs-lookup"><span data-stu-id="c8316-118">Refactoring Using an Extension Method (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/refactoring-using-an-extension-method.md)  
- [<span data-ttu-id="c8316-119">純粋関数 (Visual Basic) へのリファクタリング</span><span class="sxs-lookup"><span data-stu-id="c8316-119">Refactoring Into Pure Functions (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/refactoring-into-pure-functions.md)
+## <a name="see-also"></a><span data-ttu-id="50604-116">関連項目</span><span class="sxs-lookup"><span data-stu-id="50604-116">See Also</span></span>  
+ [<span data-ttu-id="50604-117">チュートリアル: WordprocessingML ドキュメント (Visual Basic) 内のコンテンツの操作</span><span class="sxs-lookup"><span data-stu-id="50604-117">Tutorial: Manipulating Content in a WordprocessingML Document (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)  
+ [<span data-ttu-id="50604-118">拡張メソッド (Visual Basic) を使用したリファクタリング</span><span class="sxs-lookup"><span data-stu-id="50604-118">Refactoring Using an Extension Method (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/refactoring-using-an-extension-method.md)  
+ [<span data-ttu-id="50604-119">純粋関数 (Visual Basic) へのリファクタリング</span><span class="sxs-lookup"><span data-stu-id="50604-119">Refactoring Into Pure Functions (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/refactoring-into-pure-functions.md)

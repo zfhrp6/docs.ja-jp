@@ -1,10 +1,7 @@
 ---
-title: "方法: .NET 標準オブジェクトがシリアル化可能なかどうかを判断します。"
-description: "実行時に、標準の .NET 型をシリアル化できるかどうかを確認する方法を示します。"
-ms.custom: 
+title: '方法: .NET 標準オブジェクトがシリアル化可能なかどうかを判断します。'
+description: 実行時に、標準の .NET 型をシリアル化できるかどうかを確認する方法を示します。
 ms.date: 10/20/2017
-ms.prod: .net
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -13,34 +10,30 @@ helpviewer_keywords:
 - objects, serializing steps
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 8246e825202b3eb02db5d11f1fe55b4a0d14a4ea
-ms.sourcegitcommit: 099aa20d9b6450d1b7452d782a55771a6ad8ff35
+ms.openlocfilehash: 247eed2e7091930c6bcfaa524296b45350dd6510
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2018
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="how-to-determine-if-a-net-standard-object-is-serializable"></a><span data-ttu-id="767c4-103">方法: .NET 標準オブジェクトがシリアル化可能なかどうかを判断します。</span><span class="sxs-lookup"><span data-stu-id="767c4-103">How to: Determine if a .NET Standard object is serializable</span></span>
+# <a name="how-to-determine-if-a-net-standard-object-is-serializable"></a><span data-ttu-id="285fa-103">方法: .NET 標準オブジェクトがシリアル化可能なかどうかを判断します。</span><span class="sxs-lookup"><span data-stu-id="285fa-103">How to: Determine if a .NET Standard object is serializable</span></span>
 
-<span data-ttu-id="767c4-104">.NET 標準は、型とそのバージョンの標準に準拠している特定の .NET 実装上に存在する必要があるメンバーを定義する仕様です。</span><span class="sxs-lookup"><span data-stu-id="767c4-104">The .NET Standard is a specification that defines the types and members that must be present on specific .NET implementations that conform to that version of the standard.</span></span> <span data-ttu-id="767c4-105">ただし、.NET 標準定義しません、型がシリアル化できるかどうか。</span><span class="sxs-lookup"><span data-stu-id="767c4-105">However, the .NET Standard does not define whether a type is serializable.</span></span> <span data-ttu-id="767c4-106">.NET 標準ライブラリで定義された型がでマークされていない、<xref:System.SerializableAttribute>属性。</span><span class="sxs-lookup"><span data-stu-id="767c4-106">The types defined in the .NET Standard Library are not marked with the <xref:System.SerializableAttribute> attribute.</span></span> <span data-ttu-id="767c4-107">代わりに、.NET Core と .NET Framework などの特定の .NET 実装は、特定の型がシリアル化できるかどうかを判断するために解放します。</span><span class="sxs-lookup"><span data-stu-id="767c4-107">Instead, specific .NET implementations, such as the .NET Framework and .NET Core, are free to determine whether a particular type is serializable.</span></span> 
+<span data-ttu-id="285fa-104">.NET 標準は、型とそのバージョンの標準に準拠している特定の .NET 実装上に存在する必要があるメンバーを定義する仕様です。</span><span class="sxs-lookup"><span data-stu-id="285fa-104">The .NET Standard is a specification that defines the types and members that must be present on specific .NET implementations that conform to that version of the standard.</span></span> <span data-ttu-id="285fa-105">ただし、.NET 標準定義しません、型がシリアル化できるかどうか。</span><span class="sxs-lookup"><span data-stu-id="285fa-105">However, the .NET Standard does not define whether a type is serializable.</span></span> <span data-ttu-id="285fa-106">.NET 標準ライブラリで定義された型がでマークされていない、<xref:System.SerializableAttribute>属性。</span><span class="sxs-lookup"><span data-stu-id="285fa-106">The types defined in the .NET Standard Library are not marked with the <xref:System.SerializableAttribute> attribute.</span></span> <span data-ttu-id="285fa-107">代わりに、.NET Core と .NET Framework などの特定の .NET 実装は、特定の型がシリアル化できるかどうかを判断するために解放します。</span><span class="sxs-lookup"><span data-stu-id="285fa-107">Instead, specific .NET implementations, such as the .NET Framework and .NET Core, are free to determine whether a particular type is serializable.</span></span> 
 
-<span data-ttu-id="767c4-108">対象とする .NET 標準のライブラリを開発した場合は、.NET 標準をサポートする .NET の実装によって、ライブラリを使用できます。</span><span class="sxs-lookup"><span data-stu-id="767c4-108">If you've developed a library that targets the .NET Standard, your library can be consumed by any .NET implementation that supports the .NET Standard.</span></span> <span data-ttu-id="767c4-109">つまり、ことはできませんがわかっている事前に特定の型がシリアル化できるかどうかのみ、実行時にシリアル化可能なことがあるかどうかを判断できます。</span><span class="sxs-lookup"><span data-stu-id="767c4-109">This means that you cannot know in advance whether a particular type is serializable; you can only determine whether it is serializable at run time.</span></span>
+<span data-ttu-id="285fa-108">対象とする .NET 標準のライブラリを開発した場合は、.NET 標準をサポートする .NET の実装によって、ライブラリを使用できます。</span><span class="sxs-lookup"><span data-stu-id="285fa-108">If you've developed a library that targets the .NET Standard, your library can be consumed by any .NET implementation that supports the .NET Standard.</span></span> <span data-ttu-id="285fa-109">つまり、ことはできませんがわかっている事前に特定の型がシリアル化できるかどうかのみ、実行時にシリアル化可能なことがあるかどうかを判断できます。</span><span class="sxs-lookup"><span data-stu-id="285fa-109">This means that you cannot know in advance whether a particular type is serializable; you can only determine whether it is serializable at run time.</span></span>
 
-<span data-ttu-id="767c4-110">値を取得することによって、オブジェクトが実行時にシリアル化可能かどうかを判断できます、<xref:System.Type.IsSerializable>のプロパティ、<xref:System.Type>そのオブジェクトの型を表すオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="767c4-110">You can determine whether an object is serializable at runtime by retrieving the value of the <xref:System.Type.IsSerializable> property of a <xref:System.Type> object that represents that object's type.</span></span> <span data-ttu-id="767c4-111">次の例では、1 つの実装を提供します。</span><span class="sxs-lookup"><span data-stu-id="767c4-111">The following example provides one implementation.</span></span> <span data-ttu-id="767c4-112">定義する、`IsSerializable(Object)`拡張メソッドを示すかどうか、<xref:System.Object>インスタンスをシリアル化することができます。</span><span class="sxs-lookup"><span data-stu-id="767c4-112">It defines an `IsSerializable(Object)` extension method that indicates whether any <xref:System.Object> instance can be serialized.</span></span>
+<span data-ttu-id="285fa-110">値を取得することによって、オブジェクトが実行時にシリアル化可能かどうかを判断できます、<xref:System.Type.IsSerializable>のプロパティ、<xref:System.Type>そのオブジェクトの型を表すオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="285fa-110">You can determine whether an object is serializable at runtime by retrieving the value of the <xref:System.Type.IsSerializable> property of a <xref:System.Type> object that represents that object's type.</span></span> <span data-ttu-id="285fa-111">次の例では、1 つの実装を提供します。</span><span class="sxs-lookup"><span data-stu-id="285fa-111">The following example provides one implementation.</span></span> <span data-ttu-id="285fa-112">定義する、`IsSerializable(Object)`拡張メソッドを示すかどうか、<xref:System.Object>インスタンスをシリアル化することができます。</span><span class="sxs-lookup"><span data-stu-id="285fa-112">It defines an `IsSerializable(Object)` extension method that indicates whether any <xref:System.Object> instance can be serialized.</span></span>
 
 [!code-csharp[is-a-type-serializable](~/samples/snippets/standard/serialization/is-serializable/csharp/program.cs#2)]
 [!code-vb[is-a-type-serializable](~/samples/snippets/standard/serialization/is-serializable/vb/library.vb#2)]
 
-<span data-ttu-id="767c4-113">かどうかをシリアル化して、次の例として、現在の .NET 実装に逆シリアル化を決定する方法を任意のオブジェクトを渡すことができますし、します。</span><span class="sxs-lookup"><span data-stu-id="767c4-113">You can then pass any object to the method to determine whether it can be serialized and deserialized on the current .NET implementation, as the following example shows:</span></span>
+<span data-ttu-id="285fa-113">かどうかをシリアル化して、次の例として、現在の .NET 実装に逆シリアル化を決定する方法を任意のオブジェクトを渡すことができますし、します。</span><span class="sxs-lookup"><span data-stu-id="285fa-113">You can then pass any object to the method to determine whether it can be serialized and deserialized on the current .NET implementation, as the following example shows:</span></span>
 
 [!code-csharp[test-is-a-type-serializable](~/samples/snippets/standard/serialization/is-serializable/csharp/program.cs#1)]
 [!code-vb[test-is-a-type-serializable](~/samples/snippets/standard/serialization/is-serializable/vb/program.vb#1)]
 
-# <a name="see-also"></a><span data-ttu-id="767c4-114">関連項目</span><span class="sxs-lookup"><span data-stu-id="767c4-114">See also</span></span>
+# <a name="see-also"></a><span data-ttu-id="285fa-114">関連項目</span><span class="sxs-lookup"><span data-stu-id="285fa-114">See also</span></span>
 
-<span data-ttu-id="767c4-115">[バイナリ シリアル化](binary-serialization.md) </span><span class="sxs-lookup"><span data-stu-id="767c4-115">[Binary serialization](binary-serialization.md) </span></span>  
-<span data-ttu-id="767c4-116"><xref:System.SerializableAttribute?displayProperty=nameWithType></span><span class="sxs-lookup"><span data-stu-id="767c4-116"><xref:System.SerializableAttribute?displayProperty=nameWithType></span></span>    
+<span data-ttu-id="285fa-115">[バイナリ シリアル化](binary-serialization.md) </span><span class="sxs-lookup"><span data-stu-id="285fa-115">[Binary serialization](binary-serialization.md) </span></span>  
+<xref:System.SerializableAttribute?displayProperty=nameWithType>    
 <xref:System.Type.IsSerializable?displayProperty=nameWithType>   
