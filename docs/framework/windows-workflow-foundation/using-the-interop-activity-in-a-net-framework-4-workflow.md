@@ -1,24 +1,12 @@
 ---
 title: .NET Framework 4 ワークフローでの相互運用アクティビティの使用
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 9bb747f0-eb33-4f70-84cd-317382372dcd
-caps.latest.revision: 20
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: ebef74097d22c9624a29470f4cda231bbb32fe90
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
-ms.translationtype: HT
+ms.openlocfilehash: 64e8aef01aefa23dc98b42ab835de097d6c222df
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-the-interop-activity-in-a-net-framework-4-workflow"></a>.NET Framework 4 ワークフローでの相互運用アクティビティの使用
 [!INCLUDE[vstecwinfx](../../../includes/vstecwinfx-md.md)] または [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] を使用して作成したアクティビティは、[!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] アクティビティを使うことにより <xref:System.Activities.Statements.Interop> ワークフローで使用できます。 ここでは、<xref:System.Activities.Statements.Interop> アクティビティの概要について説明します。  
@@ -40,7 +28,7 @@ ms.lasthandoff: 04/28/2018
   
 3.  選択**空のソリューション**から、 **Visual Studio ソリューション** ボックスの一覧です。 型`PolicyInteropDemo`で、**名前**ボックスし、をクリックして**OK**です。  
   
-4.  右クリック**PolicyInteropDemo**で**ソリューション エクスプ ローラー**選択**追加**し**新しいプロジェクト.**.  
+4.  右クリック**PolicyInteropDemo**で**ソリューション エクスプ ローラー**選択**追加**し**新しいプロジェクト**.  
   
     > [!TIP]
     >  場合、**ソリューション エクスプ ローラー**ウィンドウが表示されている、select**ソリューション エクスプ ローラー**から、**ビュー**メニュー。  
@@ -53,7 +41,7 @@ ms.lasthandoff: 04/28/2018
   
 #### <a name="to-create-the-discountcalculator-activity"></a>DiscountCalculator アクティビティを作成するには  
   
-1.  右クリック**PolicyActivityLibrary**で**ソリューション エクスプ ローラー**選択**追加**し**アクティビティ.**.  
+1.  右クリック**PolicyActivityLibrary**で**ソリューション エクスプ ローラー**選択**追加**し**アクティビティ**.  
   
 2.  選択**アクティビティ (コード分離付き)** から、 **Visual c# アイテム** ボックスの一覧です。 型`DiscountCalculator`で、**名前**ボックスし、をクリックして**OK**です。  
   
@@ -86,7 +74,7 @@ ms.lasthandoff: 04/28/2018
     > [!TIP]
     >  場合、**プロパティ**ウィンドウが表示されていない、選択**プロパティ ウィンドウ**から、**ビュー**メニュー。  
   
-3.  選択**新規 をクリックしています.**.  
+3.  選択**新規 をクリックしています**.  
   
 4.  をクリックして**規則の追加**です。  
   
@@ -163,7 +151,7 @@ Rule3: IF this.DiscountPercent > 0
   
 #### <a name="to-create-the-host-application"></a>ホスト アプリケーションを作成するには  
   
-1.  右クリック**PolicyInteropDemo**で**ソリューション エクスプ ローラー**選択**追加**、し**新しいプロジェクト.**.  
+1.  右クリック**PolicyInteropDemo**で**ソリューション エクスプ ローラー**選択**追加**、し**新しいプロジェクト**.  
   
 2.  いることを確認 **.NET Framework 4.5** .NET Framework のバージョンのドロップダウン リストで選択され、選択**ワークフロー コンソール アプリケーション**から、 **Visual c# アイテム** ボックスの一覧です。  
   
@@ -173,11 +161,11 @@ Rule3: IF this.DiscountPercent > 0
   
 5.  **ターゲット フレームワーク**ドロップダウン ボックスの一覧で選択を変更するから **.NET Framework 4 Client Profile**に **.NET Framework 4.5**です。 をクリックして**はい**ことを確認します。  
   
-6.  右クリック**PolicyInteropHost**で**ソリューション エクスプ ローラー**選択**参照の追加.**.  
+6.  右クリック**PolicyInteropHost**で**ソリューション エクスプ ローラー**選択**参照の追加**.  
   
 7.  選択**PolicyActivityLibrary**から、**プロジェクト** タブでをクリックし、 **OK**です。  
   
-8.  右クリック**PolicyInteropHost**で**ソリューション エクスプ ローラー**選択**参照の追加.**.  
+8.  右クリック**PolicyInteropHost**で**ソリューション エクスプ ローラー**選択**参照の追加**.  
   
 9. 選択**System.Workflow.Activities**、 **System.Workflow.ComponentModel**、し**System.Workflow.Runtime**から、 **.NET** タブでをクリックし、 **OK**です。  
   
@@ -276,7 +264,7 @@ Rule3: IF this.DiscountPercent > 0
   
 1.  右クリック**Workflow1.xaml**で**ソリューション エクスプ ローラー**選択**削除**です。 **[OK]** をクリックして確定します。  
   
-2.  右クリック**PolicyInteropHost**で**ソリューション エクスプ ローラー**選択**追加**、**新しい項目の追加.**.  
+2.  右クリック**PolicyInteropHost**で**ソリューション エクスプ ローラー**選択**追加**、**新しい項目の追加**.  
   
 3.  展開して、 **Visual c# アイテム**ノード**ワークフロー**です。 選択**アクティビティ**から、 **Visual c# アイテム** ボックスの一覧です。  
   

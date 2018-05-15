@@ -1,23 +1,12 @@
 ---
-title: "方法: カスタム アクティビティ デザイナーを作成する"
-ms.custom: 
+title: '方法: カスタム アクティビティ デザイナーを作成する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 2f3aade6-facc-44ef-9657-a407ef8b9b31
-caps.latest.revision: "25"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 10fc7461c077d73fedb1e326f88156e4a816cdee
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e4aab60a598be2d6df5546ab1c98a289b4aef04a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-a-custom-activity-designer"></a>方法: カスタム アクティビティ デザイナーを作成する
 カスタム アクティビティ デザイナーは、通常、関連付けられたアクティビティを他のアクティビティと組み合わせることができるように実装されます。他のアクティビティのデザイナーは、アクティビティと一緒にデザイン サーフェイスにドロップできます。 この機能は、カスタム アクティビティ デザイナーが、任意のアクティビティを配置できる「ドロップ ゾーン」とも、デザイン画面上の要素の結果のコレクションを管理するための手段を提供することが必要です。 ここでは、そのようなドロップ ゾーンを含むカスタム アクティビティ デザイナーを作成する方法と、デザイナー要素のコレクションを管理するために必要な編集機能を提供するカスタム アクティビティ デザイナーを作成する方法を説明します。  
@@ -36,9 +25,9 @@ ms.lasthandoff: 12/22/2017
   
 ### <a name="to-create-a-custom-activity-designer-with-a-drop-zone-using-workflowitempresenter"></a>WorkflowItemPresenter を使用してドロップ ゾーンを含むカスタム アクティビティ デザイナーを作成するには  
   
-1.  [!INCLUDE[vs2010](../../../includes/vs2010-md.md)] を起動します。  
+1.  [!INCLUDE[vs2010](../../../includes/vs2010-md.md)]を起動します。  
   
-2.  **ファイル**] メニューのをポイント**新規**、し、[**プロジェクト.**.  
+2.  **ファイル** メニューのをポイント**新規**、し、**プロジェクト**.  
   
      **[新しいプロジェクト]** ダイアログ ボックスが表示されます。  
   
@@ -52,13 +41,13 @@ ms.lasthandoff: 12/22/2017
   
 7.  **ソリューション**ボックスで、既定値をそのまま使用します。  
   
-8.  **[OK]**をクリックします。  
+8.  **[OK]** をクリックします。  
   
-9. MainWindows.xaml ファイルを右クリックして、**ソリューション エクスプ ローラー**[**削除**ことを確認および**[ok]**で、 **Microsoft Visual Studio**] ダイアログ ボックス。  
+9. MainWindows.xaml ファイルを右クリックして、**ソリューション エクスプ ローラー**[**削除**ことを確認および **[ok]** で、 **Microsoft Visual Studio**] ダイアログ ボックス。  
   
 10. UsingWorkflowItemPresenter プロジェクトを右クリックして**ソリューション エクスプ ローラー****追加**、し**新しい項目の追加.** 呼び出すこと、**新しい項目の追加**ダイアログし、選択、 **WPF**からカテゴリ、**インストールされたテンプレート**左側のセクションでします。  
   
-11. 選択、**ウィンドウ (WPF)**テンプレート、名前を付けます`RehostingWFDesigner`、 をクリック**追加**です。  
+11. 選択、**ウィンドウ (WPF)** テンプレート、名前を付けます`RehostingWFDesigner`、 をクリック**追加**です。  
   
 12. RehostingWFDesigner.xaml ファイルを開き、次のコードを貼り付けてアプリケーションの UI を定義します。  
   
@@ -352,10 +341,10 @@ ms.lasthandoff: 12/22/2017
     }  
     ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Activities.Presentation.ActivityDesigner>  
  <xref:System.Activities.Presentation.WorkflowItemPresenter>  
  <xref:System.Activities.Presentation.WorkflowItemsPresenter>  
  <xref:System.Activities.Presentation.WorkflowViewElement>  
  <xref:System.Activities.Presentation.Model.ModelItem>  
- [ワークフロー デザイン操作のカスタマイズ](../../../docs/framework/windows-workflow-foundation/customizing-the-workflow-design-experience.md)
+ [ワークフローのデザイン エクスペリエンスのカスタマイズ](../../../docs/framework/windows-workflow-foundation/customizing-the-workflow-design-experience.md)

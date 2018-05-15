@@ -1,13 +1,6 @@
 ---
-title: "データ バインディングの概要"
-ms.custom: 
+title: データ バインディングの概要
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,16 +10,11 @@ helpviewer_keywords:
 - data binding [WPF], about data binding
 - conversion for data binding [WPF]
 ms.assetid: c707c95f-7811-401d-956e-2fffd019a211
-caps.latest.revision: "78"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 817a7ba73c37c15afa1be402da38e828d2aba426
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 0b58cde738e2584662fa5f9ad90634931674f48b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="data-binding-overview"></a>データ バインディングの概要
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] データ バインディングは、データを表示したり操作するための単純で一貫した方法をアプリケーションに提供します。 要素は、[!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] オブジェクトおよび [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] の形式のさまざまなデータ ソースのデータにバインドできます。 <xref:System.Windows.Controls.ContentControl>などの s<xref:System.Windows.Controls.Button>と<xref:System.Windows.Controls.ItemsControl>など s<xref:System.Windows.Controls.ListBox>と<xref:System.Windows.Controls.ListView>を 1 つのデータ項目の柔軟なスタイルまたはデータ項目のコレクションを有効にする機能が組み込まれました。 並べ替えビュー、フィルター ビュー、およびグループ ビューは、データの上に生成できます。  
@@ -94,11 +82,11 @@ ms.lasthandoff: 12/22/2017
   
  ![データ バインディングのデータ フロー](../../../../docs/framework/wpf/data/media/databinding-dataflow.png "DataBinding_DataFlow")  
   
--   <xref:System.Windows.Data.BindingMode.OneWay>バインディング ターゲット プロパティを自動的に更新するソース プロパティへの変更がターゲット プロパティへの変更は、ソース プロパティには反映されません。 この型のバインディングは、バインドされているコントロールが暗黙的な読み取り専用の場合に適しています。 たとえば、株価情報などのソースにバインドしたり、またはターゲット プロパティに、データ バインドされたテーブルの背景色などのように、変更用コントロール インターフェイスがない可能性もあります。 ターゲット プロパティの変更を監視する必要がない場合は、<xref:System.Windows.Data.BindingMode.OneWay> バインディング モードを使うことにより、<xref:System.Windows.Data.BindingMode.TwoWay> バインディング モードのオーバーヘッドを回避できます。  
+-   <xref:System.Windows.Data.BindingMode.OneWay> バインディング ターゲット プロパティを自動的に更新するソース プロパティへの変更がターゲット プロパティへの変更は、ソース プロパティには反映されません。 この型のバインディングは、バインドされているコントロールが暗黙的な読み取り専用の場合に適しています。 たとえば、株価情報などのソースにバインドしたり、またはターゲット プロパティに、データ バインドされたテーブルの背景色などのように、変更用コントロール インターフェイスがない可能性もあります。 ターゲット プロパティの変更を監視する必要がない場合は、<xref:System.Windows.Data.BindingMode.OneWay> バインディング モードを使うことにより、<xref:System.Windows.Data.BindingMode.TwoWay> バインディング モードのオーバーヘッドを回避できます。  
   
--   <xref:System.Windows.Data.BindingMode.TwoWay>バインディングでは、基になるプロパティまたは他を自動的に更新する対象プロパティのいずれかの変更が発生します。 この型のバインディングは、編集可能なフォームや完全対話型の [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] シナリオに適しています。 ほとんどのプロパティは既定<xref:System.Windows.Data.BindingMode.OneWay>バインディングがいくつかの依存関係プロパティ (通常はユーザーが編集できるコントロールなどのプロパティ、<xref:System.Windows.Controls.TextBox.Text%2A>のプロパティ<xref:System.Windows.Controls.TextBox>と<xref:System.Windows.Controls.Primitives.ToggleButton.IsChecked%2A>プロパティの<xref:System.Windows.Controls.CheckBox>)の既定値は<xref:System.Windows.Data.BindingMode.TwoWay>バインドします。 依存関係プロパティが既定で一方向と双方向のどちらでバインドされるかをプログラムで判断する 1 つの方法として、<xref:System.Windows.DependencyProperty.GetMetadata%2A> を使用してそのプロパティのプロパティ メタデータを取得してから、<xref:System.Windows.FrameworkPropertyMetadata.BindsTwoWayByDefault%2A> プロパティのブール値を確認することがきます。  
+-   <xref:System.Windows.Data.BindingMode.TwoWay> バインディングでは、基になるプロパティまたは他を自動的に更新する対象プロパティのいずれかの変更が発生します。 この型のバインディングは、編集可能なフォームや完全対話型の [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] シナリオに適しています。 ほとんどのプロパティは既定<xref:System.Windows.Data.BindingMode.OneWay>バインディングがいくつかの依存関係プロパティ (通常はユーザーが編集できるコントロールなどのプロパティ、<xref:System.Windows.Controls.TextBox.Text%2A>のプロパティ<xref:System.Windows.Controls.TextBox>と<xref:System.Windows.Controls.Primitives.ToggleButton.IsChecked%2A>プロパティの<xref:System.Windows.Controls.CheckBox>)の既定値は<xref:System.Windows.Data.BindingMode.TwoWay>バインドします。 依存関係プロパティが既定で一方向と双方向のどちらでバインドされるかをプログラムで判断する 1 つの方法として、<xref:System.Windows.DependencyProperty.GetMetadata%2A> を使用してそのプロパティのプロパティ メタデータを取得してから、<xref:System.Windows.FrameworkPropertyMetadata.BindsTwoWayByDefault%2A> プロパティのブール値を確認することがきます。  
   
--   <xref:System.Windows.Data.BindingMode.OneWayToSource>逆順になって<xref:System.Windows.Data.BindingMode.OneWay>バインディング; がソース プロパティを更新対象プロパティが変更されたときにします。 1 つのサンプル シナリオは、[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] からのソース値のみを再評価する必要があるかどうかです。  
+-   <xref:System.Windows.Data.BindingMode.OneWayToSource> 逆順になって<xref:System.Windows.Data.BindingMode.OneWay>バインディング; がソース プロパティを更新対象プロパティが変更されたときにします。 1 つのサンプル シナリオは、[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] からのソース値のみを再評価する必要があるかどうかです。  
   
 -   図に示されていませんが<xref:System.Windows.Data.BindingMode.OneTime>バインド、それが原因で、ターゲット プロパティを初期化するために、ソース プロパティが、後続の変更は反映されません。 これは、データ コンテキストが変更されるか、データ コンテキスト内のオブジェクトが変更された場合に、その変更がターゲット プロパティに反映されないことを意味します。 この型のバインディングは、現在の状態のスナップショットが用途に合っている場合や、データが完全に静的である場合に適しています。 また、ソース プロパティの値を使用してターゲット プロパティを初期化するときにデータ コンテキストが事前にわからない場合にも、この型のバインディングは便利です。 基本的に、この型のバインディングは、ソース値が変わらない場合にパフォーマンスを向上させる <xref:System.Windows.Data.BindingMode.OneWay> バインディングを簡易化したものです。  
   
@@ -125,8 +113,8 @@ ms.lasthandoff: 12/22/2017
 |UpdateSourceTrigger の値|ソース値が更新されるとき|TextBox のサンプル シナリオ|  
 |-------------------------------|----------------------------------------|----------------------------------|  
 |LostFocus (の既定の<xref:System.Windows.Controls.TextBox.Text%2A?displayProperty=nameWithType>)|TextBox コントロールがフォーカスを失ったとき|A<xref:System.Windows.Controls.TextBox>検証ロジックに関連付けられている (データの検証」セクションを参照してください)|  
-|PropertyChanged|入力すると、<xref:System.Windows.Controls.TextBox>|<xref:System.Windows.Controls.TextBox>チャット ルーム ウィンドウのコントロール|  
-|Explicit|アプリケーションを呼び出すと<xref:System.Windows.Data.BindingExpression.UpdateSource%2A>|<xref:System.Windows.Controls.TextBox>(ユーザーが [送信] ボタンをクリックした場合にのみ、ソースの値を更新) 編集可能なフォーム コントロール|  
+|PropertyChanged|入力すると、 <xref:System.Windows.Controls.TextBox>|<xref:System.Windows.Controls.TextBox> チャット ルーム ウィンドウのコントロール|  
+|Explicit|アプリケーションを呼び出すと <xref:System.Windows.Data.BindingExpression.UpdateSource%2A>|<xref:System.Windows.Controls.TextBox> (ユーザーが [送信] ボタンをクリックした場合にのみ、ソースの値を更新) 編集可能なフォーム コントロール|  
   
  例については、「[TextBox テキストでソースを更新するタイミングを制御する](../../../../docs/framework/wpf/data/how-to-control-when-the-textbox-text-updates-the-source.md)」を参照してください。  
   
@@ -236,7 +224,7 @@ ms.lasthandoff: 12/22/2017
 ### <a name="how-to-implement-collections"></a>コレクションを実装する方法  
  実装する任意のコレクションを列挙することができます、<xref:System.Collections.IEnumerable>インターフェイスです。 ただし、コレクションの挿入や削除を更新できるように動的なバインドを設定する、[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]コレクションは、自動的に実装する必要があります、<xref:System.Collections.Specialized.INotifyCollectionChanged>インターフェイスです。 このインターフェイスは、基になるコレクションが変更されたときに発生させるイベントを公開します。  
   
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]提供、<xref:System.Collections.ObjectModel.ObservableCollection%601>クラスは、これは組み込みの実装を公開するデータの収集、<xref:System.Collections.Specialized.INotifyCollectionChanged>インターフェイスです。 ソース オブジェクトからターゲットへのデータ値の転送を完全にサポートするには、バインド可能なプロパティをサポートするコレクション内の各オブジェクト必要がありますで実装することに注意してください、<xref:System.ComponentModel.INotifyPropertyChanged>インターフェイスです。 詳しくは、「[バインディング ソースの概要](../../../../docs/framework/wpf/data/binding-sources-overview.md)」をご覧ください。  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 提供、<xref:System.Collections.ObjectModel.ObservableCollection%601>クラスは、これは組み込みの実装を公開するデータの収集、<xref:System.Collections.Specialized.INotifyCollectionChanged>インターフェイスです。 ソース オブジェクトからターゲットへのデータ値の転送を完全にサポートするには、バインド可能なプロパティをサポートするコレクション内の各オブジェクト必要がありますで実装することに注意してください、<xref:System.ComponentModel.INotifyPropertyChanged>インターフェイスです。 詳しくは、「[バインディング ソースの概要](../../../../docs/framework/wpf/data/binding-sources-overview.md)」をご覧ください。  
   
  独自のコレクションを実装する前に、使用を検討して<xref:System.Collections.ObjectModel.ObservableCollection%601>またはなどの既存のコレクションのいずれかのクラス<xref:System.Collections.Generic.List%601>、 <xref:System.Collections.ObjectModel.Collection%601>、および<xref:System.ComponentModel.BindingList%601>、その他の多くの間でします。 高度なシナリオをした独自のコレクションを実装する場合は、使用を検討して<xref:System.Collections.IList>インデックスとそのため、最適なパフォーマンスで個別にアクセスできるオブジェクトの非ジェネリック コレクションを提供します。  
   
@@ -269,7 +257,7 @@ ms.lasthandoff: 12/22/2017
   
 |ソース コレクションの型|コレクション ビューの型|メモ|  
 |----------------------------|--------------------------|-----------|  
-|<xref:System.Collections.IEnumerable>|基づく内部の型<xref:System.Windows.Data.CollectionView>|項目のグループ化は不可|  
+|<xref:System.Collections.IEnumerable>|基づく内部の型 <xref:System.Windows.Data.CollectionView>|項目のグループ化は不可|  
 |<xref:System.Collections.IList>|<xref:System.Windows.Data.ListCollectionView>|最も高速|  
 |<xref:System.ComponentModel.IBindingList>|<xref:System.Windows.Data.BindingListCollectionView>||  
   
@@ -373,7 +361,7 @@ ms.lasthandoff: 12/22/2017
   
  [!code-xaml[DataBindingLab#DefaultValidation](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/AddProductWindow.xaml#defaultvalidation)]  
   
- A<xref:System.Windows.Controls.ValidationRule>オブジェクトでは、プロパティの値が有効かどうかを確認します。 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]組み込みの次の 2 種類が<xref:System.Windows.Controls.ValidationRule>オブジェクト。  
+ A<xref:System.Windows.Controls.ValidationRule>オブジェクトでは、プロパティの値が有効かどうかを確認します。 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 組み込みの次の 2 種類が<xref:System.Windows.Controls.ValidationRule>オブジェクト。  
   
 -   A<xref:System.Windows.Controls.ExceptionValidationRule>バインディング ソース プロパティの更新中にスローされる例外をチェックします。 前述の例では、`StartPrice` は整数型です。 ユーザーが整数に変換できない値を入力すると、例外がスローされ、バインディングが無効としてマークされます。 設定を別の構文、<xref:System.Windows.Controls.ExceptionValidationRule>は明示的に設定する、<xref:System.Windows.Data.Binding.ValidatesOnExceptions%2A>プロパティを`true`上、<xref:System.Windows.Data.Binding>または<xref:System.Windows.Data.MultiBinding>オブジェクト。  
   
@@ -429,7 +417,7 @@ ms.lasthandoff: 12/22/2017
   
 6.  バインディング エンジンは、任意のカスタムがあるかを確認<xref:System.Windows.Controls.ValidationRule>オブジェクトで定義されている<xref:System.Windows.Controls.ValidationRule.ValidationStep%2A>に設定されている<xref:System.Windows.Controls.ValidationStep.CommittedValue>を<xref:System.Windows.Data.Binding>、呼び出している場合、<xref:System.Windows.Controls.ValidationRule.Validate%2A>メソッドをそれぞれ<xref:System.Windows.Controls.ValidationRule>を持つ<xref:System.Windows.Controls.ValidationRule.ValidationStep%2A>に設定<xref:System.Windows.Controls.ValidationStep.CommittedValue>中にエラーが、それらのいずれかが実行されるまで、またはそれらのすべてに合格するまでです。  
   
- 場合、<xref:System.Windows.Controls.ValidationRule>渡しませんバインディング エンジンが作成時に、このプロセス全体を通じて、<xref:System.Windows.Controls.ValidationError>オブジェクトを追加して、<xref:System.Windows.Controls.Validation.Errors%2A?displayProperty=nameWithType>バインドされている要素のコレクション。 エンジンは、バインディングの前に、実行、<xref:System.Windows.Controls.ValidationRule>任意指定のステップでは、オブジェクトのいずれかを削除します<xref:System.Windows.Controls.ValidationError>に追加された、<xref:System.Windows.Controls.Validation.Errors%2A?displayProperty=nameWithType>そのステップ中にバインドされている要素のプロパティに接続します。 たとえば場合、<xref:System.Windows.Controls.ValidationRule>が<xref:System.Windows.Controls.ValidationRule.ValidationStep%2A>に設定されている<xref:System.Windows.Controls.ValidationStep.UpdatedValue>に失敗しました次回の検証プロセスが発生すると、バインディング エンジンが削除される<xref:System.Windows.Controls.ValidationError>前にいずれかの呼び出しの直前に<xref:System.Windows.Controls.ValidationRule>を持つ<xref:System.Windows.Controls.ValidationRule.ValidationStep%2A>に設定。<xref:System.Windows.Controls.ValidationStep.UpdatedValue>.  
+ 場合、<xref:System.Windows.Controls.ValidationRule>渡しませんバインディング エンジンが作成時に、このプロセス全体を通じて、<xref:System.Windows.Controls.ValidationError>オブジェクトを追加して、<xref:System.Windows.Controls.Validation.Errors%2A?displayProperty=nameWithType>バインドされている要素のコレクション。 エンジンは、バインディングの前に、実行、<xref:System.Windows.Controls.ValidationRule>任意指定のステップでは、オブジェクトのいずれかを削除します<xref:System.Windows.Controls.ValidationError>に追加された、<xref:System.Windows.Controls.Validation.Errors%2A?displayProperty=nameWithType>そのステップ中にバインドされている要素のプロパティに接続します。 たとえば場合、<xref:System.Windows.Controls.ValidationRule>が<xref:System.Windows.Controls.ValidationRule.ValidationStep%2A>に設定されている<xref:System.Windows.Controls.ValidationStep.UpdatedValue>に失敗しました次回の検証プロセスが発生すると、バインディング エンジンが削除される<xref:System.Windows.Controls.ValidationError>前にいずれかの呼び出しの直前に<xref:System.Windows.Controls.ValidationRule>を持つ<xref:System.Windows.Controls.ValidationRule.ValidationStep%2A>に設定<xref:System.Windows.Controls.ValidationStep.UpdatedValue>。  
   
  ときに<xref:System.Windows.Controls.Validation.Errors%2A?displayProperty=nameWithType>は空でなく、<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType>接続されている要素のプロパティが`true`です。 また場合、<xref:System.Windows.Data.Binding.NotifyOnValidationError%2A>のプロパティ、<xref:System.Windows.Data.Binding>に設定されている`true`、バインディング エンジンが発生し、<xref:System.Windows.Controls.Validation.Error?displayProperty=nameWithType>要素のイベントをアタッチします。  
   
@@ -440,7 +428,7 @@ ms.lasthandoff: 12/22/2017
 ## <a name="debugging-mechanism"></a>デバッグのメカニズム  
  添付プロパティを設定することができます<xref:System.Diagnostics.PresentationTraceSources.TraceLevel%2A?displayProperty=nameWithType>特定のバインドの状態に関する情報を受信するバインディングに関連するオブジェクト。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Controls.DataErrorValidationRule>  
  [WPF Version 4.5 の新機能](../../../../docs/framework/wpf/getting-started/whats-new.md)  
  [LINQ クエリの結果にバインドする](../../../../docs/framework/wpf/data/how-to-bind-to-the-results-of-a-linq-query.md)  

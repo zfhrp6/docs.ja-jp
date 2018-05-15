@@ -1,9 +1,6 @@
 ---
-title: "foreach、in (C# リファレンス)"
+title: foreach、in (C# リファレンス)
 ms.date: 10/11/2017
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.topic: article
 f1_keywords:
 - foreach
 - foreach_CSharpKeyword
@@ -12,14 +9,11 @@ helpviewer_keywords:
 - foreach statement [C#]
 - in keyword [C#]
 ms.assetid: 5a9c5ddc-5fd3-457a-9bb6-9abffcd874ec
-caps.latest.revision: "29"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: d5601682d53a01ff07aba7e416aa81ded4c03e4e
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: f00ae873e615f653d3e760f82b157a57fdaef6ed
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="foreach-in-c-reference"></a>foreach、in (C# リファレンス)
 `foreach` ステートメントは、<xref:System.Collections.IEnumerable?displayProperty=nameWithType> インターフェイスまたは <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> インターフェイスを実装する配列またはオブジェクト コレクションのそれぞれの要素に対して埋め込みステートメントを繰り返します。 `foreach` ステートメントは、コレクションを繰り返し処理して目的の情報を取得するために使用しますが、予期しない副作用を防ぐため、ソース コレクションに対する項目の追加または削除には使用しないでください。 ソース コレクションに対して項目を追加または削除する必要がある場合は、[for](for.md) ループを使います。
@@ -37,10 +31,10 @@ ms.lasthandoff: 10/18/2017
  [方法: foreach を使用してコレクション クラスにアクセスする](../../programming-guide/classes-and-structs/how-to-access-a-collection-class-with-foreach.md)  
 
 ## <a name="example"></a>例
- 次のコードでは、3 つの例を示します。
+ 次のコードは、3 つの例を示しています。
 
 > [!TIP]
-> 構文をテストし、ユース ケースに似ている別の使用を再試行してください。 例を変更することができます。 編集し、「実行」、もう一度押しますコードを実行するには、"Run"キーを押します。
+> 例を変更して構文の実験をしたり、自身のユース ケースにより近い異なる使用方法を試したりできます。 「実行」を押してコードを実行し、編集したら再び「実行」を押します。
 
 -   整数の配列の内容を表示する一般的な `foreach` ループ
 
@@ -57,7 +51,7 @@ ms.lasthandoff: 10/18/2017
 ## <a name="c-language-specification"></a>C# 言語仕様
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 
 [C# リファレンス](../index.md)
 

@@ -1,20 +1,13 @@
 ---
-title: "System.Delegate と ’delegate’ キーワード"
-description: "デリゲートをサポートする .NET Framework のクラスと、それが ’delegate’ キーワードにどのように対応付けられるかについて取り上げます。"
-keywords: .NET, .NET Core
-author: BillWagner
-ms.author: wiwagn
+title: System.Delegate と `delegate` キーワード
+description: デリゲートをサポートする .NET Framework のクラスと、それが ’delegate’ キーワードにどのように対応付けられるかについて取り上げます。
 ms.date: 06/20/2016
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.devlang: csharp
 ms.assetid: f3742fda-13c2-4283-8966-9e21c2674393
-ms.openlocfilehash: 09c7da7c780389d3819cf23a533cc425b43ad5ff
-ms.sourcegitcommit: bbde43da655ae7bea1977f7af7345eb87bd7fd5f
+ms.openlocfilehash: 2265d081b884a19cda6fc9d80a0f621a30c87e2a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="systemdelegate-and-the-delegate-keyword"></a>System.Delegate と `delegate` キーワード
 
@@ -120,7 +113,7 @@ Sort() の例では、通常、デリゲートに 1 つのターゲット メソ
 
 ## <a name="delegate-and-multicastdelegate-classes"></a>Delegate クラスと MulticastDelegate クラス
 
-前述の言語サポートは、デリゲートの操作で一般的に必要となる機能と支援を提供します。 これらの機能は、.NET Core framework での 2 つのクラスに組み込まれて:<xref:System.Delegate>と<xref:System.MulticastDelegate>です。
+前述の言語サポートは、デリゲートの操作で一般的に必要となる機能と支援を提供します。 これらの機能は、.NET Core Framework の 2 つのクラスである <xref:System.Delegate> と <xref:System.MulticastDelegate> に基づいています。
 
 `System.Delegate` クラスと、その直接的なサブクラス `System.MulticastDelegate` は、デリゲートの作成、デリゲート ターゲットとしてのメソッドの登録、デリゲート ターゲットとして登録されているすべてのメソッドの呼び出しについてフレームワークをサポートします。 
 

@@ -1,24 +1,12 @@
 ---
 title: 既存のサービス コントラクトを使用するワークフロー サービスを作成する方法
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 11d11b59-acc4-48bf-8e4b-e97b516aa0a9
-caps.latest.revision: 5
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: c7c28d8c2edbda5a42a290786b0ff40e3ab6dd5b
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
-ms.translationtype: HT
+ms.openlocfilehash: 146b3bba3a880c780644eecd277827823793b5e8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-create-a-workflow-service-that-consumes-an-existing-service-contract"></a>既存のサービス コントラクトを使用するワークフロー サービスを作成する方法
 [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] では、コントラクト優先ワークフローの開発という形で、Web サービスとワークフローの統合が向上しています。 コントラクト優先ワークフローの開発ツールでは、コードのコントラクトを先に設計できます。 その後、ツールボックス内に、コントラクト内の操作用のアクティビティ テンプレートが自動的に生成されます。  
@@ -34,7 +22,7 @@ ms.lasthandoff: 04/30/2018
   
 ### <a name="creating-the-service-contract"></a>サービス コントラクトの作成  
   
-1.  プロジェクトを右クリックして**ソリューション エクスプ ローラー**選択**追加**、**新しい項目の追加.**. 選択、**コード**、左側のノードと**クラス**右側のテンプレートです。 新しいクラスの名前を`IBookService` をクリック**Ok**です。  
+1.  プロジェクトを右クリックして**ソリューション エクスプ ローラー**選択**追加**、**新しい項目の追加**. 選択、**コード**、左側のノードと**クラス**右側のテンプレートです。 新しいクラスの名前を`IBookService` をクリック**Ok**です。  
   
 2.  表示されるコード ウィンドウの上部で、`System.Servicemodel` に対する Using ステートメントを追加します。  
   

@@ -1,23 +1,12 @@
 ---
-title: "アクティビティのローカライズ"
-ms.custom: 
+title: アクティビティのローカライズ
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 8ee7bc16-e609-469a-a3e8-8062952e2676
-caps.latest.revision: "5"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ccabcda9e26751db80ee7e955458d0eee0cae7e9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 23a6d5c2ed202f030397eb70382896468a68a724
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="activity-localization"></a>アクティビティのローカライズ
 ワークフロー アプリケーションとコンポーネントが他のカルチャおよび言語にローカライズされる可能性がある場合は、再コンパイルせずにローカライズできるようにリソース文字列を使用する必要があります。  
@@ -29,9 +18,9 @@ ms.lasthandoff: 12/22/2017
   
 #### <a name="using-resource-files-for-localized-strings"></a>ローカライズ文字列へのリソース ファイルの使用  
   
-1.  [!INCLUDE[vs2010](../../../includes/vs2010-md.md)]でプロジェクトを右クリックして**ソリューション エクスプ ローラー**選択**追加しています.**、**新しい項目の追加.**.  
+1.  [!INCLUDE[vs2010](../../../includes/vs2010-md.md)]でプロジェクトを右クリックして**ソリューション エクスプ ローラー**選択**追加しています.**、**新しい項目の追加**.  
   
-2.  選択**リソース ファイル**ErrorResources.resx というファイル名を入力します。 **[追加]**をクリックします。  
+2.  選択**リソース ファイル**ErrorResources.resx というファイル名を入力します。 **[追加]** をクリックします。  
   
 3.  リソース ファイルを開きます。 新しいエントリを追加、**名前**が ErrorString と**値**の「アクティビティが正しくありません」。  
   

@@ -1,20 +1,13 @@
 ---
-title: "厳密に型指定されたデリゲート"
-description: "デリゲートを必要とする機能を作成するときに、汎用デリゲート型を使用してカスタム型を宣言する方法について説明します。"
-keywords: .NET, .NET Core
-author: BillWagner
-ms.author: wiwagn
+title: 厳密に型指定されたデリゲート
+description: デリゲートを必要とする機能を作成するときに、汎用デリゲート型を使用してカスタム型を宣言する方法について説明します。
 ms.date: 06/20/2016
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.devlang: csharp
 ms.assetid: 564a683d-352b-4e57-8bac-b466529daf6b
-ms.openlocfilehash: 467ba18f8e032b9b3b8f480d4b10c92d0d7ba3b9
-ms.sourcegitcommit: bbde43da655ae7bea1977f7af7345eb87bd7fd5f
+ms.openlocfilehash: 2e4cc1c7bfa0aaa90f3aaefa0da64c5486a9d10f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="strongly-typed-delegates"></a>厳密に型指定されたデリゲート
 
@@ -39,7 +32,7 @@ public delegate void Action<in T1, in T2>(T1 arg1, T2 arg2);
 
 ジェネリック型引数の `in` 修飾子については、共変性についての記事で取り上げます。
 
-バリエーションがある、`Action`などを含む最大 16 個の引数をデリゲート<xref:System.Action%6016>です。
+`Action` デリゲートには、最大 16 の引数を含むバリエーションが存在します (例: <xref:System.Action%6016>)。
 これらの定義では、デリゲート引数のそれぞれに異なるジェネリック引数が使われているという点が重要です。それによってきわめて高い柔軟性が実現されているからです。 メソッドの一連の引数は、必ずしも同じ型である必要はありませんが、同じ型である場合もあります。
 
 戻り値を持たないデリゲート型には、いずれかの `Action` 型を使用します。
@@ -55,12 +48,12 @@ public delegate TResult Func<in T1, in T2, out TResult>(T1 arg1, T2 arg2);
 
 ジェネリック型引数 result の `out` 修飾子については、共変性についての記事で取り上げます。
 
-バリエーションがある、`Func`などを最大 16 個の入力引数を持つデリゲート<xref:System.Func%6017>です。
+`Func` デリゲートには、最大 16 の入力引数を含むバリエーションが存在します (例: <xref:System.Func%6017>)。
 慣例上、`Func` に宣言されているすべての型パラメーターの最後に出現する型が常に実行結果の型になります。
 
 値を返すデリゲート型には、いずれかの `Func` 型を使用します。
 
-また、特殊な<xref:System.Predicate%601>テストを 1 つの値を返すデリゲートの型。
+また、単一の値に対する判定結果を返すデリゲートに特化された <xref:System.Predicate%601> という型も存在します。
 
 ```csharp
 public delegate bool Predicate<in T>(T obj);
