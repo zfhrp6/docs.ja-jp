@@ -1,39 +1,27 @@
 ---
 title: 5009 - DCGenWriterStop
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 8489e542-b2ab-4c31-9150-08d4f6704150
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: dce73e4bc55ce83c8e28001d3e39a64ce013e0cd
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a3eaa58e9fd66c49aca3979d652e26f5762d3ed1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="5009---dcgenwriterstop"></a><span data-ttu-id="98b0b-102">5009 - DCGenWriterStop</span><span class="sxs-lookup"><span data-stu-id="98b0b-102">5009 - DCGenWriterStop</span></span>
-## <a name="properties"></a><span data-ttu-id="98b0b-103">プロパティ</span><span class="sxs-lookup"><span data-stu-id="98b0b-103">Properties</span></span>  
+# <a name="5009---dcgenwriterstop"></a><span data-ttu-id="27653-102">5009 - DCGenWriterStop</span><span class="sxs-lookup"><span data-stu-id="27653-102">5009 - DCGenWriterStop</span></span>
+## <a name="properties"></a><span data-ttu-id="27653-103">プロパティ</span><span class="sxs-lookup"><span data-stu-id="27653-103">Properties</span></span>  
   
 |||  
 |-|-|  
-|<span data-ttu-id="98b0b-104">ID</span><span class="sxs-lookup"><span data-stu-id="98b0b-104">ID</span></span>|<span data-ttu-id="98b0b-105">5009</span><span class="sxs-lookup"><span data-stu-id="98b0b-105">5009</span></span>|  
-|<span data-ttu-id="98b0b-106">キーワード</span><span class="sxs-lookup"><span data-stu-id="98b0b-106">Keywords</span></span>|<span data-ttu-id="98b0b-107">シリアル化</span><span class="sxs-lookup"><span data-stu-id="98b0b-107">Serialization</span></span>|  
-|<span data-ttu-id="98b0b-108">レベル</span><span class="sxs-lookup"><span data-stu-id="98b0b-108">Level</span></span>|<span data-ttu-id="98b0b-109">詳細</span><span class="sxs-lookup"><span data-stu-id="98b0b-109">Verbose</span></span>|  
-|<span data-ttu-id="98b0b-110">チャネル</span><span class="sxs-lookup"><span data-stu-id="98b0b-110">Channel</span></span>|<span data-ttu-id="98b0b-111">Microsoft-Windows-Application Server-Applications/Debug</span><span class="sxs-lookup"><span data-stu-id="98b0b-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
+|<span data-ttu-id="27653-104">ID</span><span class="sxs-lookup"><span data-stu-id="27653-104">ID</span></span>|<span data-ttu-id="27653-105">5009</span><span class="sxs-lookup"><span data-stu-id="27653-105">5009</span></span>|  
+|<span data-ttu-id="27653-106">キーワード</span><span class="sxs-lookup"><span data-stu-id="27653-106">Keywords</span></span>|<span data-ttu-id="27653-107">シリアル化</span><span class="sxs-lookup"><span data-stu-id="27653-107">Serialization</span></span>|  
+|<span data-ttu-id="27653-108">レベル</span><span class="sxs-lookup"><span data-stu-id="27653-108">Level</span></span>|<span data-ttu-id="27653-109">詳細</span><span class="sxs-lookup"><span data-stu-id="27653-109">Verbose</span></span>|  
+|<span data-ttu-id="27653-110">チャネル</span><span class="sxs-lookup"><span data-stu-id="27653-110">Channel</span></span>|<span data-ttu-id="27653-111">Microsoft-Windows-Application Server-Applications/Debug</span><span class="sxs-lookup"><span data-stu-id="27653-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
   
-## <a name="description"></a><span data-ttu-id="98b0b-112">説明</span><span class="sxs-lookup"><span data-stu-id="98b0b-112">Description</span></span>  
- <span data-ttu-id="98b0b-113">このイベントは、DataContract のライターの生成が停止すると生成されます。</span><span class="sxs-lookup"><span data-stu-id="98b0b-113">This event is emitted when the DataContract generate writer stops.</span></span>  
+## <a name="description"></a><span data-ttu-id="27653-112">説明</span><span class="sxs-lookup"><span data-stu-id="27653-112">Description</span></span>  
+ <span data-ttu-id="27653-113">このイベントは、DataContract のライターの生成が停止すると生成されます。</span><span class="sxs-lookup"><span data-stu-id="27653-113">This event is emitted when the DataContract generate writer stops.</span></span>  
   
-## <a name="message"></a><span data-ttu-id="98b0b-114">メッセージ</span><span class="sxs-lookup"><span data-stu-id="98b0b-114">Message</span></span>  
- <span data-ttu-id="98b0b-115">DataContract のライターの生成を停止します。</span><span class="sxs-lookup"><span data-stu-id="98b0b-115">DataContract generate writer stop.</span></span>  
+## <a name="message"></a><span data-ttu-id="27653-114">メッセージ</span><span class="sxs-lookup"><span data-stu-id="27653-114">Message</span></span>  
+ <span data-ttu-id="27653-115">DataContract のライターの生成を停止します。</span><span class="sxs-lookup"><span data-stu-id="27653-115">DataContract generate writer stop.</span></span>  
   
-## <a name="details"></a><span data-ttu-id="98b0b-116">詳細</span><span class="sxs-lookup"><span data-stu-id="98b0b-116">Details</span></span>
+## <a name="details"></a><span data-ttu-id="27653-116">詳細</span><span class="sxs-lookup"><span data-stu-id="27653-116">Details</span></span>

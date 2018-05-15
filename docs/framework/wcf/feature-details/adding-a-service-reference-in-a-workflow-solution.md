@@ -1,31 +1,19 @@
 ---
-title: "ワークフロー ソリューションでのサービス参照の追加"
-ms.custom: 
+title: ワークフロー ソリューションでのサービス参照の追加
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 83574cf3-9803-49bc-837f-432936dc9c76
-caps.latest.revision: "5"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ee974ee5a9f4564b0e44256bc4773f9898d89fc6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 01bf4b0040d545ce42a9a7c803767aa4925de75e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="adding-a-service-reference-in-a-workflow-solution"></a><span data-ttu-id="c4fd4-102">ワークフロー ソリューションでのサービス参照の追加</span><span class="sxs-lookup"><span data-stu-id="c4fd4-102">Adding a Service Reference in a Workflow Solution</span></span>
-<span data-ttu-id="c4fd4-103">ワークフロー アプリケーションでのサービス参照の追加は、通常の WCF アプリケーションとは動作が少し異なります。</span><span class="sxs-lookup"><span data-stu-id="c4fd4-103">Adding a service reference in a workflow application works a little differently than a regular WCF application.</span></span> <span data-ttu-id="c4fd4-104">[サービス参照の追加] を選択し、サービスの URL を指定すると、メタデータがダウンロードされ、カスタム アクティビティが生成されて、参照を追加した WCF サービスまたは WCF ワークフロー サービスを呼び出すことができるようになります。</span><span class="sxs-lookup"><span data-stu-id="c4fd4-104">When you select Add Service Reference and specify the URL to the service the metadata is downloaded and custom activities are generated that allow you to call the WCF service or WCF workflow service you added a reference to.</span></span> <span data-ttu-id="c4fd4-105">サービス参照を追加した後、生成されたアクティビティがビルドされるように、ソリューションを再ビルドします。</span><span class="sxs-lookup"><span data-stu-id="c4fd4-105">After adding a service reference, rebuild the solution so the generated activities are built.</span></span> <span data-ttu-id="c4fd4-106">これにより、アクティビティがワークフロー デザイナー ツールボックスに表示されます。</span><span class="sxs-lookup"><span data-stu-id="c4fd4-106">They will then appear in the workflow designer toolbox.</span></span> <span data-ttu-id="c4fd4-107">ただし、この方法が機能するのはワークフロー ソリューション内でサービス参照を追加する場合だけであることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="c4fd4-107">Note however, that this will only work if you are adding a service reference within a workflow solution.</span></span> <span data-ttu-id="c4fd4-108">次の web キャストは、その他の種類のプロジェクトでサービス参照を追加する方法を示します: [Web プロジェクトでワークフローから WCF サービスを呼び出す](http://go.microsoft.com/fwlink/?LinkId=207725)です。</span><span class="sxs-lookup"><span data-stu-id="c4fd4-108">The following web cast shows how to add a service reference in other types of projects: [Calling a WCF Service from a Workflow in a Web Project](http://go.microsoft.com/fwlink/?LinkId=207725).</span></span>  
+# <a name="adding-a-service-reference-in-a-workflow-solution"></a><span data-ttu-id="92d4f-102">ワークフロー ソリューションでのサービス参照の追加</span><span class="sxs-lookup"><span data-stu-id="92d4f-102">Adding a Service Reference in a Workflow Solution</span></span>
+<span data-ttu-id="92d4f-103">ワークフロー アプリケーションでのサービス参照の追加は、通常の WCF アプリケーションとは動作が少し異なります。</span><span class="sxs-lookup"><span data-stu-id="92d4f-103">Adding a service reference in a workflow application works a little differently than a regular WCF application.</span></span> <span data-ttu-id="92d4f-104">[サービス参照の追加] を選択し、サービスの URL を指定すると、メタデータがダウンロードされ、カスタム アクティビティが生成されて、参照を追加した WCF サービスまたは WCF ワークフロー サービスを呼び出すことができるようになります。</span><span class="sxs-lookup"><span data-stu-id="92d4f-104">When you select Add Service Reference and specify the URL to the service the metadata is downloaded and custom activities are generated that allow you to call the WCF service or WCF workflow service you added a reference to.</span></span> <span data-ttu-id="92d4f-105">サービス参照を追加した後、生成されたアクティビティがビルドされるように、ソリューションを再ビルドします。</span><span class="sxs-lookup"><span data-stu-id="92d4f-105">After adding a service reference, rebuild the solution so the generated activities are built.</span></span> <span data-ttu-id="92d4f-106">これにより、アクティビティがワークフロー デザイナー ツールボックスに表示されます。</span><span class="sxs-lookup"><span data-stu-id="92d4f-106">They will then appear in the workflow designer toolbox.</span></span> <span data-ttu-id="92d4f-107">ただし、この方法が機能するのはワークフロー ソリューション内でサービス参照を追加する場合だけであることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="92d4f-107">Note however, that this will only work if you are adding a service reference within a workflow solution.</span></span> <span data-ttu-id="92d4f-108">次の web キャストは、その他の種類のプロジェクトでサービス参照を追加する方法を示します: [Web プロジェクトでワークフローから WCF サービスを呼び出す](http://go.microsoft.com/fwlink/?LinkId=207725)です。</span><span class="sxs-lookup"><span data-stu-id="92d4f-108">The following web cast shows how to add a service reference in other types of projects: [Calling a WCF Service from a Workflow in a Web Project](http://go.microsoft.com/fwlink/?LinkId=207725).</span></span>  
   
- <span data-ttu-id="c4fd4-109">同じ操作名が含まれるサービスへのサービス参照を複数追加すると、問題が発生します。</span><span class="sxs-lookup"><span data-stu-id="c4fd4-109">Adding two or more service references to services that contain the same operation name will cause a problem.</span></span> <span data-ttu-id="c4fd4-110">生成されたアクティビティは最初のサービス操作しか呼び出しません。</span><span class="sxs-lookup"><span data-stu-id="c4fd4-110">The generated activities will call only the first service operation.</span></span> <span data-ttu-id="c4fd4-111">この問題を回避するには、サービス操作を別々の名前に変更するか、生成された各アクティビティ内でエンドポイント構成名を変更します。</span><span class="sxs-lookup"><span data-stu-id="c4fd4-111">To work around this issue rename the service operations so they are different or change the endpoint configuration name within each generated activity.</span></span>  
+ <span data-ttu-id="92d4f-109">同じ操作名が含まれるサービスへのサービス参照を複数追加すると、問題が発生します。</span><span class="sxs-lookup"><span data-stu-id="92d4f-109">Adding two or more service references to services that contain the same operation name will cause a problem.</span></span> <span data-ttu-id="92d4f-110">生成されたアクティビティは最初のサービス操作しか呼び出しません。</span><span class="sxs-lookup"><span data-stu-id="92d4f-110">The generated activities will call only the first service operation.</span></span> <span data-ttu-id="92d4f-111">この問題を回避するには、サービス操作を別々の名前に変更するか、生成された各アクティビティ内でエンドポイント構成名を変更します。</span><span class="sxs-lookup"><span data-stu-id="92d4f-111">To work around this issue rename the service operations so they are different or change the endpoint configuration name within each generated activity.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="c4fd4-112">参照</span><span class="sxs-lookup"><span data-stu-id="c4fd4-112">See Also</span></span>  
- [<span data-ttu-id="c4fd4-113">ワークフロー サービス</span><span class="sxs-lookup"><span data-stu-id="c4fd4-113">Workflow Services</span></span>](../../../../docs/framework/wcf/feature-details/workflow-services.md)  
- [<span data-ttu-id="c4fd4-114">方法 : 別のワークフロー サービスを呼び出すワークフロー サービスを作成する</span><span class="sxs-lookup"><span data-stu-id="c4fd4-114">How to: Create a Workflow Service That Calls Another Workflow Service</span></span>](../../../../docs/framework/wcf/feature-details/how-to-create-a-workflow-service-that-calls-another-workflow-service.md)  
- [<span data-ttu-id="c4fd4-115">Web プロジェクトでワークフローから WCF サービスの呼び出し</span><span class="sxs-lookup"><span data-stu-id="c4fd4-115">Calling a WCF Service from a Workflow in a Web Project</span></span>](http://go.microsoft.com/fwlink/?LinkId=207725)
+## <a name="see-also"></a><span data-ttu-id="92d4f-112">関連項目</span><span class="sxs-lookup"><span data-stu-id="92d4f-112">See Also</span></span>  
+ [<span data-ttu-id="92d4f-113">ワークフロー サービス</span><span class="sxs-lookup"><span data-stu-id="92d4f-113">Workflow Services</span></span>](../../../../docs/framework/wcf/feature-details/workflow-services.md)  
+ [<span data-ttu-id="92d4f-114">方法 : 別のワークフロー サービスを呼び出すワークフロー サービスを作成する</span><span class="sxs-lookup"><span data-stu-id="92d4f-114">How to: Create a Workflow Service That Calls Another Workflow Service</span></span>](../../../../docs/framework/wcf/feature-details/how-to-create-a-workflow-service-that-calls-another-workflow-service.md)  
+ [<span data-ttu-id="92d4f-115">Web プロジェクトでワークフローから WCF サービスの呼び出し</span><span class="sxs-lookup"><span data-stu-id="92d4f-115">Calling a WCF Service from a Workflow in a Web Project</span></span>](http://go.microsoft.com/fwlink/?LinkId=207725)

@@ -1,32 +1,20 @@
 ---
 title: System.ServiceModel.ComIntegration.ComIntegrationDllHostInitializerStopped
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 6b2912d4-21a4-4a9c-bb68-8626fca5cc39
-caps.latest.revision: "5"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 23109551be8ac02f48c563d358a978140eef45ac
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 1ab04af94bb2ab7ad6ebfd4afcdff6b0230e457c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="systemservicemodelcomintegrationcomintegrationdllhostinitializerstopped"></a><span data-ttu-id="51694-102">System.ServiceModel.ComIntegration.ComIntegrationDllHostInitializerStopped</span><span class="sxs-lookup"><span data-stu-id="51694-102">System.ServiceModel.ComIntegration.ComIntegrationDllHostInitializerStopped</span></span>
-<span data-ttu-id="51694-103">System.ServiceModel.ComIntegration.ComIntegrationDllHostInitializerStopped</span><span class="sxs-lookup"><span data-stu-id="51694-103">System.ServiceModel.ComIntegration.ComIntegrationDllHostInitializerStopped</span></span>  
+# <a name="systemservicemodelcomintegrationcomintegrationdllhostinitializerstopped"></a><span data-ttu-id="024d0-102">System.ServiceModel.ComIntegration.ComIntegrationDllHostInitializerStopped</span><span class="sxs-lookup"><span data-stu-id="024d0-102">System.ServiceModel.ComIntegration.ComIntegrationDllHostInitializerStopped</span></span>
+<span data-ttu-id="024d0-103">System.ServiceModel.ComIntegration.ComIntegrationDllHostInitializerStopped</span><span class="sxs-lookup"><span data-stu-id="024d0-103">System.ServiceModel.ComIntegration.ComIntegrationDllHostInitializerStopped</span></span>  
   
-## <a name="description"></a><span data-ttu-id="51694-104">説明</span><span class="sxs-lookup"><span data-stu-id="51694-104">Description</span></span>  
- <span data-ttu-id="51694-105">ServiceModelInitializer は、構成されたサービスを停止しました。</span><span class="sxs-lookup"><span data-stu-id="51694-105">The ServiceModelInitializer has stopped the configured services.</span></span>  
+## <a name="description"></a><span data-ttu-id="024d0-104">説明</span><span class="sxs-lookup"><span data-stu-id="024d0-104">Description</span></span>  
+ <span data-ttu-id="024d0-105">ServiceModelInitializer は、構成されたサービスを停止しました。</span><span class="sxs-lookup"><span data-stu-id="024d0-105">The ServiceModelInitializer has stopped the configured services.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="51694-106">参照</span><span class="sxs-lookup"><span data-stu-id="51694-106">See Also</span></span>  
- [<span data-ttu-id="51694-107">トレース</span><span class="sxs-lookup"><span data-stu-id="51694-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="51694-108">トレースを使用したアプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="51694-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="51694-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="51694-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="024d0-106">関連項目</span><span class="sxs-lookup"><span data-stu-id="024d0-106">See Also</span></span>  
+ [<span data-ttu-id="024d0-107">トレース</span><span class="sxs-lookup"><span data-stu-id="024d0-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="024d0-108">トレースを使用したアプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="024d0-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="024d0-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="024d0-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

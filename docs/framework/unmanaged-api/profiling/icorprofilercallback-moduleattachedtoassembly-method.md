@@ -1,14 +1,6 @@
 ---
-title: "ICorProfilerCallback::ModuleAttachedToAssembly メソッド"
-ms.custom: 
+title: ICorProfilerCallback::ModuleAttachedToAssembly メソッド
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ICorProfilerCallback.ModuleAttachedToAssembly
 api_location:
@@ -23,22 +15,18 @@ helpviewer_keywords:
 ms.assetid: b595798a-5d40-4cac-ab4f-911c61d2c5d2
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 6183014bf5487d0eebccf2fb70a13c363212046b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e6b5281e30c48471131fa12e5106f7d0a6826e1b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="icorprofilercallbackmoduleattachedtoassembly-method"></a><span data-ttu-id="6b996-102">ICorProfilerCallback::ModuleAttachedToAssembly メソッド</span><span class="sxs-lookup"><span data-stu-id="6b996-102">ICorProfilerCallback::ModuleAttachedToAssembly Method</span></span>
-<span data-ttu-id="6b996-103">モジュールが、親アセンブリにアタッチされていることをプロファイラーに通知します。</span><span class="sxs-lookup"><span data-stu-id="6b996-103">Notifies the profiler that a module is being attached to its parent assembly.</span></span>  
+# <a name="icorprofilercallbackmoduleattachedtoassembly-method"></a><span data-ttu-id="1b127-102">ICorProfilerCallback::ModuleAttachedToAssembly メソッド</span><span class="sxs-lookup"><span data-stu-id="1b127-102">ICorProfilerCallback::ModuleAttachedToAssembly Method</span></span>
+<span data-ttu-id="1b127-103">モジュールが、親アセンブリにアタッチされていることをプロファイラーに通知します。</span><span class="sxs-lookup"><span data-stu-id="1b127-103">Notifies the profiler that a module is being attached to its parent assembly.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="6b996-104">構文</span><span class="sxs-lookup"><span data-stu-id="6b996-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="1b127-104">構文</span><span class="sxs-lookup"><span data-stu-id="1b127-104">Syntax</span></span>  
   
 ```  
 HRESULT ModuleAttachedToAssembly(  
@@ -46,24 +34,24 @@ HRESULT ModuleAttachedToAssembly(
     [in] AssemblyID AssemblyId);  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="6b996-105">パラメーター</span><span class="sxs-lookup"><span data-stu-id="6b996-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="1b127-105">パラメーター</span><span class="sxs-lookup"><span data-stu-id="1b127-105">Parameters</span></span>  
  `moduleId`  
- <span data-ttu-id="6b996-106">[in]アタッチされるモジュールの ID。</span><span class="sxs-lookup"><span data-stu-id="6b996-106">[in] The ID of the module that is being attached.</span></span>  
+ <span data-ttu-id="1b127-106">[in]アタッチされるモジュールの ID。</span><span class="sxs-lookup"><span data-stu-id="1b127-106">[in] The ID of the module that is being attached.</span></span>  
   
  `AssemblyId`  
- <span data-ttu-id="6b996-107">[in]モジュールが関連付けられている親アセンブリの ID。</span><span class="sxs-lookup"><span data-stu-id="6b996-107">[in] The ID of the parent assembly to which the module is attached.</span></span>  
+ <span data-ttu-id="1b127-107">[in]モジュールが関連付けられている親アセンブリの ID。</span><span class="sxs-lookup"><span data-stu-id="1b127-107">[in] The ID of the parent assembly to which the module is attached.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="6b996-108">コメント</span><span class="sxs-lookup"><span data-stu-id="6b996-108">Remarks</span></span>  
- <span data-ttu-id="6b996-109">呼び出すことによってインポート アドレス テーブル (IAT) を通じて、モジュールを読み込むことができる`LoadLibrary`、またはメタデータの参照を使用します。</span><span class="sxs-lookup"><span data-stu-id="6b996-109">A module can be loaded through an import address table (IAT), through a call to `LoadLibrary`, or through a metadata reference.</span></span> <span data-ttu-id="6b996-110">その結果、共通言語ランタイム (CLR) ローダーでは、モジュールが住んでいるアセンブリを判断するための複数のコード パスがあります。</span><span class="sxs-lookup"><span data-stu-id="6b996-110">As a result, the common language runtime (CLR) loader has multiple code paths for determining the assembly in which a module lives.</span></span> <span data-ttu-id="6b996-111">したがって、可能であれば後に[icorprofilercallback::moduleloadfinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleloadfinished-method.md)が呼び出されると、モジュールには、どのようなアセンブリはわからない内にあるし、親アセンブリ ID を取得することはできません。</span><span class="sxs-lookup"><span data-stu-id="6b996-111">Therefore, it is possible that after [ICorProfilerCallback::ModuleLoadFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleloadfinished-method.md) is called, the module does not know what assembly it is in and getting the parent assembly ID is not possible.</span></span> <span data-ttu-id="6b996-112">`ModuleAttachedToAssembly`モジュールが、親アセンブリとその親アセンブリの ID を取得できるに関連付けられている場合、メソッドが呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="6b996-112">The `ModuleAttachedToAssembly` method is called when the module is attached to its parent assembly and its parent assembly ID can be obtained.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="1b127-108">コメント</span><span class="sxs-lookup"><span data-stu-id="1b127-108">Remarks</span></span>  
+ <span data-ttu-id="1b127-109">呼び出すことによってインポート アドレス テーブル (IAT) を通じて、モジュールを読み込むことができる`LoadLibrary`、またはメタデータの参照を使用します。</span><span class="sxs-lookup"><span data-stu-id="1b127-109">A module can be loaded through an import address table (IAT), through a call to `LoadLibrary`, or through a metadata reference.</span></span> <span data-ttu-id="1b127-110">その結果、共通言語ランタイム (CLR) ローダーでは、モジュールが住んでいるアセンブリを判断するための複数のコード パスがあります。</span><span class="sxs-lookup"><span data-stu-id="1b127-110">As a result, the common language runtime (CLR) loader has multiple code paths for determining the assembly in which a module lives.</span></span> <span data-ttu-id="1b127-111">したがって、可能であれば後に[icorprofilercallback::moduleloadfinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleloadfinished-method.md)が呼び出されると、モジュールには、どのようなアセンブリはわからない内にあるし、親アセンブリ ID を取得することはできません。</span><span class="sxs-lookup"><span data-stu-id="1b127-111">Therefore, it is possible that after [ICorProfilerCallback::ModuleLoadFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleloadfinished-method.md) is called, the module does not know what assembly it is in and getting the parent assembly ID is not possible.</span></span> <span data-ttu-id="1b127-112">`ModuleAttachedToAssembly`モジュールが、親アセンブリとその親アセンブリの ID を取得できるに関連付けられている場合、メソッドが呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="1b127-112">The `ModuleAttachedToAssembly` method is called when the module is attached to its parent assembly and its parent assembly ID can be obtained.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="6b996-113">必要条件</span><span class="sxs-lookup"><span data-stu-id="6b996-113">Requirements</span></span>  
- <span data-ttu-id="6b996-114">**プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="6b996-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="1b127-113">要件</span><span class="sxs-lookup"><span data-stu-id="1b127-113">Requirements</span></span>  
+ <span data-ttu-id="1b127-114">**プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="1b127-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="6b996-115">**ヘッダー** : CorProf.idl、CorProf.h</span><span class="sxs-lookup"><span data-stu-id="6b996-115">**Header:** CorProf.idl, CorProf.h</span></span>  
+ <span data-ttu-id="1b127-115">**ヘッダー** : CorProf.idl、CorProf.h</span><span class="sxs-lookup"><span data-stu-id="1b127-115">**Header:** CorProf.idl, CorProf.h</span></span>  
   
- <span data-ttu-id="6b996-116">**ライブラリ:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="6b996-116">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="1b127-116">**ライブラリ:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="1b127-116">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="6b996-117">**.NET framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="6b996-117">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="1b127-117">**.NET framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="1b127-117">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="6b996-118">参照</span><span class="sxs-lookup"><span data-stu-id="6b996-118">See Also</span></span>  
- [<span data-ttu-id="6b996-119">ICorProfilerCallback インターフェイス</span><span class="sxs-lookup"><span data-stu-id="6b996-119">ICorProfilerCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+## <a name="see-also"></a><span data-ttu-id="1b127-118">関連項目</span><span class="sxs-lookup"><span data-stu-id="1b127-118">See Also</span></span>  
+ [<span data-ttu-id="1b127-119">ICorProfilerCallback インターフェイス</span><span class="sxs-lookup"><span data-stu-id="1b127-119">ICorProfilerCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)

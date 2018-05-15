@@ -1,34 +1,20 @@
 ---
 title: チャネル ファクトリ
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 09b53aa1-b13c-476c-a461-e82fcacd2a8b
-caps.latest.revision: 24
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 37b5f880b18f4caac9dc452d93129922ecc33543
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: a528cc759ad550b21845dfd351d4e7808cfb6b56
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="channel-factory"></a><span data-ttu-id="cfc86-102">チャネル ファクトリ</span><span class="sxs-lookup"><span data-stu-id="cfc86-102">Channel Factory</span></span>
-<span data-ttu-id="cfc86-103">このサンプルでは、クライアント アプリケーションが、生成されたクライアントではなく <xref:System.ServiceModel.ChannelFactory> クラスを含むチャネルを作成できる方法を示します。</span><span class="sxs-lookup"><span data-stu-id="cfc86-103">This sample demonstrates how a client application can create a channel with the <xref:System.ServiceModel.ChannelFactory> class instead of a generated client.</span></span> <span data-ttu-id="cfc86-104">このサンプルがに基づいて、[作業の開始](../../../../docs/framework/wcf/samples/getting-started-sample.md)電卓サービスを実装します。</span><span class="sxs-lookup"><span data-stu-id="cfc86-104">This sample is based on the [Getting Started](../../../../docs/framework/wcf/samples/getting-started-sample.md) that implements a calculator service.</span></span>  
+# <a name="channel-factory"></a><span data-ttu-id="5df3a-102">チャネル ファクトリ</span><span class="sxs-lookup"><span data-stu-id="5df3a-102">Channel Factory</span></span>
+<span data-ttu-id="5df3a-103">このサンプルでは、クライアント アプリケーションが、生成されたクライアントではなく <xref:System.ServiceModel.ChannelFactory> クラスを含むチャネルを作成できる方法を示します。</span><span class="sxs-lookup"><span data-stu-id="5df3a-103">This sample demonstrates how a client application can create a channel with the <xref:System.ServiceModel.ChannelFactory> class instead of a generated client.</span></span> <span data-ttu-id="5df3a-104">このサンプルがに基づいて、[作業の開始](../../../../docs/framework/wcf/samples/getting-started-sample.md)電卓サービスを実装します。</span><span class="sxs-lookup"><span data-stu-id="5df3a-104">This sample is based on the [Getting Started](../../../../docs/framework/wcf/samples/getting-started-sample.md) that implements a calculator service.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="cfc86-105">このサンプルのセットアップ手順とビルド手順については、このトピックの最後を参照してください。</span><span class="sxs-lookup"><span data-stu-id="cfc86-105">The setup procedure and build instructions for this sample are located at the end of this topic.</span></span>  
+>  <span data-ttu-id="5df3a-105">このサンプルのセットアップ手順とビルド手順については、このトピックの最後を参照してください。</span><span class="sxs-lookup"><span data-stu-id="5df3a-105">The setup procedure and build instructions for this sample are located at the end of this topic.</span></span>  
   
- <span data-ttu-id="cfc86-106">このサンプルは、<xref:System.ServiceModel.ChannelFactory%601> クラスを使用して、サービス エンドポイントにチャネルを作成します。</span><span class="sxs-lookup"><span data-stu-id="cfc86-106">This sample uses the <xref:System.ServiceModel.ChannelFactory%601> class to create a channel to a service endpoint.</span></span> <span data-ttu-id="cfc86-107">クライアントの種類を生成するサービス エンドポイントにチャネルを作成する通常、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)し、生成された型のインスタンスを作成します。</span><span class="sxs-lookup"><span data-stu-id="cfc86-107">Typically, to create a channel to a service endpoint you generate a client type with the [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) and create an instance of the generated type.</span></span> <span data-ttu-id="cfc86-108">また、<xref:System.ServiceModel.ChannelFactory%601> クラスを使用してチャネルを作成することもできます。サンプルを参照してください。</span><span class="sxs-lookup"><span data-stu-id="cfc86-108">You can also create a channel by using the <xref:System.ServiceModel.ChannelFactory%601> class, as demonstrated in this sample.</span></span> <span data-ttu-id="cfc86-109">次のサンプル コードで作成したサービスがサービスに同じ、[作業の開始](../../../../docs/framework/wcf/samples/getting-started-sample.md)です。</span><span class="sxs-lookup"><span data-stu-id="cfc86-109">The service created by the following sample code is identical to the service in the [Getting Started](../../../../docs/framework/wcf/samples/getting-started-sample.md).</span></span>  
+ <span data-ttu-id="5df3a-106">このサンプルは、<xref:System.ServiceModel.ChannelFactory%601> クラスを使用して、サービス エンドポイントにチャネルを作成します。</span><span class="sxs-lookup"><span data-stu-id="5df3a-106">This sample uses the <xref:System.ServiceModel.ChannelFactory%601> class to create a channel to a service endpoint.</span></span> <span data-ttu-id="5df3a-107">クライアントの種類を生成するサービス エンドポイントにチャネルを作成する通常、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)し、生成された型のインスタンスを作成します。</span><span class="sxs-lookup"><span data-stu-id="5df3a-107">Typically, to create a channel to a service endpoint you generate a client type with the [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) and create an instance of the generated type.</span></span> <span data-ttu-id="5df3a-108">また、<xref:System.ServiceModel.ChannelFactory%601> クラスを使用してチャネルを作成することもできます。サンプルを参照してください。</span><span class="sxs-lookup"><span data-stu-id="5df3a-108">You can also create a channel by using the <xref:System.ServiceModel.ChannelFactory%601> class, as demonstrated in this sample.</span></span> <span data-ttu-id="5df3a-109">次のサンプル コードで作成したサービスがサービスに同じ、[作業の開始](../../../../docs/framework/wcf/samples/getting-started-sample.md)です。</span><span class="sxs-lookup"><span data-stu-id="5df3a-109">The service created by the following sample code is identical to the service in the [Getting Started](../../../../docs/framework/wcf/samples/getting-started-sample.md).</span></span>  
   
 ```csharp  
 EndpointAddress address = new EndpointAddress("http://localhost/servicemodelsamples/service.svc");  
@@ -39,9 +25,9 @@ ICalculator channel = factory.CreateChannel();
 ```  
   
 > [!IMPORTANT]
->  <span data-ttu-id="cfc86-110">このサンプルを複数コンピュータのシナリオで実行している場合は、前述のコードの "localhost" を、サービスを実行中のコンピュータの完全修飾名に置き換える必要があります。</span><span class="sxs-lookup"><span data-stu-id="cfc86-110">If you are running this sample in a cross-machine scenario, you must replace "localhost" in the preceding code with the fully-qualified name of the machine that is running the service.</span></span> <span data-ttu-id="cfc86-111">このサンプルは、エンドポイント アドレスを設定する構成を使用していません。したがって、コード内でアドレスを設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="cfc86-111">This sample does not use configuration to set the endpoint address, so this must be done in code.</span></span>  
+>  <span data-ttu-id="5df3a-110">このサンプルを複数コンピュータのシナリオで実行している場合は、前述のコードの "localhost" を、サービスを実行中のコンピュータの完全修飾名に置き換える必要があります。</span><span class="sxs-lookup"><span data-stu-id="5df3a-110">If you are running this sample in a cross-machine scenario, you must replace "localhost" in the preceding code with the fully-qualified name of the machine that is running the service.</span></span> <span data-ttu-id="5df3a-111">このサンプルは、エンドポイント アドレスを設定する構成を使用していません。したがって、コード内でアドレスを設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="5df3a-111">This sample does not use configuration to set the endpoint address, so this must be done in code.</span></span>  
   
- <span data-ttu-id="cfc86-112">チャネルが作成されたら、生成されたクライアントと同様にサービス操作を呼び出すことができます。</span><span class="sxs-lookup"><span data-stu-id="cfc86-112">Once the channel is created, service operations can be invoked just as with a generated client.</span></span>  
+ <span data-ttu-id="5df3a-112">チャネルが作成されたら、生成されたクライアントと同様にサービス操作を呼び出すことができます。</span><span class="sxs-lookup"><span data-stu-id="5df3a-112">Once the channel is created, service operations can be invoked just as with a generated client.</span></span>  
   
 ```csharp  
 // Call the Add service operation.  
@@ -51,14 +37,14 @@ double result = channel.Add(value1, value2);
 Console.WriteLine("Add({0},{1}) = {2}", value1, value2, result);  
 ```  
   
- <span data-ttu-id="cfc86-113">チャネルを閉じるには、最初にチャネルを <xref:System.ServiceModel.IClientChannel> インターフェイスにキャストする必要があります。</span><span class="sxs-lookup"><span data-stu-id="cfc86-113">To close the channel, it must first be cast to an <xref:System.ServiceModel.IClientChannel> interface.</span></span> <span data-ttu-id="cfc86-114">これは、生成されたチャネルが `ICalculator` インターフェイスによってクライアント アプリケーション内で宣言されているからです。このインターフェイスには `Add` および `Subtract` などのメソッドは含まれていますが、`Close` は含まれていません。</span><span class="sxs-lookup"><span data-stu-id="cfc86-114">This is because the channel as generated is declared in the client application using the `ICalculator` interface, which has methods like `Add` and `Subtract` but not `Close`.</span></span> <span data-ttu-id="cfc86-115">`Close` メソッドは、<xref:System.ServiceModel.ICommunicationObject> インターフェイスで発生します。</span><span class="sxs-lookup"><span data-stu-id="cfc86-115">The `Close` method originates on the <xref:System.ServiceModel.ICommunicationObject> interface.</span></span>  
+ <span data-ttu-id="5df3a-113">チャネルを閉じるには、最初にチャネルを <xref:System.ServiceModel.IClientChannel> インターフェイスにキャストする必要があります。</span><span class="sxs-lookup"><span data-stu-id="5df3a-113">To close the channel, it must first be cast to an <xref:System.ServiceModel.IClientChannel> interface.</span></span> <span data-ttu-id="5df3a-114">これは、生成されたチャネルが `ICalculator` インターフェイスによってクライアント アプリケーション内で宣言されているからです。このインターフェイスには `Add` および `Subtract` などのメソッドは含まれていますが、`Close` は含まれていません。</span><span class="sxs-lookup"><span data-stu-id="5df3a-114">This is because the channel as generated is declared in the client application using the `ICalculator` interface, which has methods like `Add` and `Subtract` but not `Close`.</span></span> <span data-ttu-id="5df3a-115">`Close` メソッドは、<xref:System.ServiceModel.ICommunicationObject> インターフェイスで発生します。</span><span class="sxs-lookup"><span data-stu-id="5df3a-115">The `Close` method originates on the <xref:System.ServiceModel.ICommunicationObject> interface.</span></span>  
   
 ```csharp  
 // Close the channel.  
  ((IClientChannel)client).Close();  
 ```  
   
- <span data-ttu-id="cfc86-116">このサンプルを実行すると、操作要求および応答がクライアントのコンソール ウィンドウに表示されます。</span><span class="sxs-lookup"><span data-stu-id="cfc86-116">When you run the sample, the operation requests and responses are displayed in the client console window.</span></span> <span data-ttu-id="cfc86-117">クライアント アプリケーションをシャットダウンするには、クライアント ウィンドウで Enter キーを押します。</span><span class="sxs-lookup"><span data-stu-id="cfc86-117">Press ENTER in the client window to shut down the client application.</span></span>  
+ <span data-ttu-id="5df3a-116">このサンプルを実行すると、操作要求および応答がクライアントのコンソール ウィンドウに表示されます。</span><span class="sxs-lookup"><span data-stu-id="5df3a-116">When you run the sample, the operation requests and responses are displayed in the client console window.</span></span> <span data-ttu-id="5df3a-117">クライアント アプリケーションをシャットダウンするには、クライアント ウィンドウで Enter キーを押します。</span><span class="sxs-lookup"><span data-stu-id="5df3a-117">Press ENTER in the client window to shut down the client application.</span></span>  
   
 ```  
 Add(100,15.99) = 115.99  
@@ -69,29 +55,29 @@ Divide(22,7) = 3.14285714285714
 Press <ENTER> to terminate client.  
 ```  
   
-### <a name="to-set-up-build-and-run-the-sample"></a><span data-ttu-id="cfc86-118">サンプルをセットアップ、ビルド、および実行するには</span><span class="sxs-lookup"><span data-stu-id="cfc86-118">To set up, build, and run the sample</span></span>  
+### <a name="to-set-up-build-and-run-the-sample"></a><span data-ttu-id="5df3a-118">サンプルをセットアップ、ビルド、および実行するには</span><span class="sxs-lookup"><span data-stu-id="5df3a-118">To set up, build, and run the sample</span></span>  
   
-1.  <span data-ttu-id="cfc86-119">実行したことを確認してください、 [Windows Communication Foundation サンプルの 1 回限りのセットアップ手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)です。</span><span class="sxs-lookup"><span data-stu-id="cfc86-119">Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span></span>  
+1.  <span data-ttu-id="5df3a-119">実行したことを確認してください、 [Windows Communication Foundation サンプルの 1 回限りのセットアップ手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)です。</span><span class="sxs-lookup"><span data-stu-id="5df3a-119">Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span></span>  
   
-2.  <span data-ttu-id="cfc86-120">ソリューションの C# 版または Visual Basic .NET 版をビルドするには、「 [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md)」の手順に従います。</span><span class="sxs-lookup"><span data-stu-id="cfc86-120">To build the C# or Visual Basic .NET edition of the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span></span> <span data-ttu-id="cfc86-121">このサンプルではメタデータの公開は有効化されないことに注意してください。</span><span class="sxs-lookup"><span data-stu-id="cfc86-121">Note that this sample does not enable metadata publishing.</span></span> <span data-ttu-id="cfc86-122">最初にこのサンプルのメタデータ公開を有効にして、クライアント型を再生成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="cfc86-122">You must first enable metadata publishing for this sample to regenerate the client type.</span></span>  
+2.  <span data-ttu-id="5df3a-120">ソリューションの C# 版または Visual Basic .NET 版をビルドするには、「 [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md)」の手順に従います。</span><span class="sxs-lookup"><span data-stu-id="5df3a-120">To build the C# or Visual Basic .NET edition of the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span></span> <span data-ttu-id="5df3a-121">このサンプルではメタデータの公開は有効化されないことに注意してください。</span><span class="sxs-lookup"><span data-stu-id="5df3a-121">Note that this sample does not enable metadata publishing.</span></span> <span data-ttu-id="5df3a-122">最初にこのサンプルのメタデータ公開を有効にして、クライアント型を再生成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="5df3a-122">You must first enable metadata publishing for this sample to regenerate the client type.</span></span>  
   
-3.  <span data-ttu-id="cfc86-123">1 つまたは複数コンピューター構成でサンプルを実行する手順についてで[Windows Communication Foundation サンプルの実行](../../../../docs/framework/wcf/samples/running-the-samples.md)です。</span><span class="sxs-lookup"><span data-stu-id="cfc86-123">To run the sample in a single- or cross-machine configuration, follow the instructions in [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).</span></span>  
+3.  <span data-ttu-id="5df3a-123">1 つまたは複数コンピューター構成でサンプルを実行する手順についてで[Windows Communication Foundation サンプルの実行](../../../../docs/framework/wcf/samples/running-the-samples.md)です。</span><span class="sxs-lookup"><span data-stu-id="5df3a-123">To run the sample in a single- or cross-machine configuration, follow the instructions in [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).</span></span>  
   
-### <a name="to-run-the-sample-cross-machine"></a><span data-ttu-id="cfc86-124">サンプルを複数コンピュータで実行するには</span><span class="sxs-lookup"><span data-stu-id="cfc86-124">To run the sample cross machine</span></span>  
+### <a name="to-run-the-sample-cross-machine"></a><span data-ttu-id="5df3a-124">サンプルを複数コンピュータで実行するには</span><span class="sxs-lookup"><span data-stu-id="5df3a-124">To run the sample cross machine</span></span>  
   
-1.  <span data-ttu-id="cfc86-125">次のコードの "localhost" を、サービスを実行中のコンピューターの完全修飾名に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="cfc86-125">Replace "localhost" in the following code with the fully-qualified name of the machine that is running the service.</span></span>  
+1.  <span data-ttu-id="5df3a-125">次のコードの "localhost" を、サービスを実行中のコンピューターの完全修飾名に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="5df3a-125">Replace "localhost" in the following code with the fully-qualified name of the machine that is running the service.</span></span>  
   
     ```csharp  
     EndpointAddress address = new EndpointAddress("http://localhost/servicemodelsamples/service.svc");  
     ```  
   
 > [!IMPORTANT]
->  <span data-ttu-id="cfc86-126">サンプルは、既にコンピューターにインストールされている場合があります。</span><span class="sxs-lookup"><span data-stu-id="cfc86-126">The samples may already be installed on your machine.</span></span> <span data-ttu-id="cfc86-127">続行する前に、次の (既定の) ディレクトリを確認してください。</span><span class="sxs-lookup"><span data-stu-id="cfc86-127">Check for the following (default) directory before continuing.</span></span>  
+>  <span data-ttu-id="5df3a-126">サンプルは、既にコンピューターにインストールされている場合があります。</span><span class="sxs-lookup"><span data-stu-id="5df3a-126">The samples may already be installed on your machine.</span></span> <span data-ttu-id="5df3a-127">続行する前に、次の (既定の) ディレクトリを確認してください。</span><span class="sxs-lookup"><span data-stu-id="5df3a-127">Check for the following (default) directory before continuing.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  <span data-ttu-id="cfc86-128">このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。</span><span class="sxs-lookup"><span data-stu-id="cfc86-128">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="cfc86-129">このサンプルは、次のディレクトリに格納されます。</span><span class="sxs-lookup"><span data-stu-id="cfc86-129">This sample is located in the following directory.</span></span>  
+>  <span data-ttu-id="5df3a-128">このディレクトリが存在しない場合に、 [Windows Communication Foundation (WCF) および .NET Framework 4 向けの Windows Workflow Foundation (WF) サンプル](http://go.microsoft.com/fwlink/?LinkId=150780)すべて Windows Communication Foundation (WCF) をダウンロードして[!INCLUDE[wf1](../../../../includes/wf1-md.md)]サンプルです。</span><span class="sxs-lookup"><span data-stu-id="5df3a-128">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all Windows Communication Foundation (WCF) and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="5df3a-129">このサンプルは、次のディレクトリに格納されます。</span><span class="sxs-lookup"><span data-stu-id="5df3a-129">This sample is located in the following directory.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Client\ChannelFactory`  
   
-## <a name="see-also"></a><span data-ttu-id="cfc86-130">関連項目</span><span class="sxs-lookup"><span data-stu-id="cfc86-130">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="5df3a-130">関連項目</span><span class="sxs-lookup"><span data-stu-id="5df3a-130">See Also</span></span>

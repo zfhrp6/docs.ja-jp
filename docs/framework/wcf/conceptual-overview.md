@@ -1,53 +1,41 @@
 ---
-title: "概念"
-ms.custom: 
+title: 概念
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - WCF [WCF], concepts
 - Windows Communication Foundation [WCF], concepts
 ms.assetid: 503fae4b-014c-44df-a9c7-c76ec4ed4229
-caps.latest.revision: "24"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 837ba9cbc5885c5d586ee1d65627b2d1424b4924
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 7a885bd4ff0d3c35e26fd0f37e82a41abf713b6e
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/07/2018
 ---
-# <a name="conceptual-overview"></a><span data-ttu-id="5c170-102">概念</span><span class="sxs-lookup"><span data-stu-id="5c170-102">Conceptual Overview</span></span>
-<span data-ttu-id="5c170-103">ここでは、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] メッセージング システムおよびその使用をサポートしているクラスの概要について説明します。</span><span class="sxs-lookup"><span data-stu-id="5c170-103">This topic summarizes information about the [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] messaging system and the classes that support its use.</span></span>  
+# <a name="conceptual-overview"></a><span data-ttu-id="e8b33-102">概念</span><span class="sxs-lookup"><span data-stu-id="e8b33-102">Conceptual Overview</span></span>
+<span data-ttu-id="e8b33-103">このトピックは、情報は、Windows Communication Foundation (WCF) メッセージング システムおよびその使用をサポートするクラスをまとめたものです。</span><span class="sxs-lookup"><span data-stu-id="e8b33-103">This topic summarizes information about the Windows Communication Foundation (WCF) messaging system and the classes that support its use.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="5c170-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="5c170-104">In This Section</span></span>  
- [<span data-ttu-id="5c170-105">Windows Communication Foundation とは</span><span class="sxs-lookup"><span data-stu-id="5c170-105">What Is Windows Communication Foundation</span></span>](../../../docs/framework/wcf/whats-wcf.md)  
- <span data-ttu-id="5c170-106">[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] の概要です。</span><span class="sxs-lookup"><span data-stu-id="5c170-106">A brief overview of [!INCLUDE[indigo2](../../../includes/indigo2-md.md)].</span></span>  
+## <a name="in-this-section"></a><span data-ttu-id="e8b33-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="e8b33-104">In This Section</span></span>  
+ [<span data-ttu-id="e8b33-105">Windows Communication Foundation とは</span><span class="sxs-lookup"><span data-stu-id="e8b33-105">What Is Windows Communication Foundation</span></span>](../../../docs/framework/wcf/whats-wcf.md)  
+ <span data-ttu-id="e8b33-106">WCF の概要です。</span><span class="sxs-lookup"><span data-stu-id="e8b33-106">A brief overview of WCF.</span></span>  
   
- [<span data-ttu-id="5c170-107">Windows Communication Foundation の基本概念</span><span class="sxs-lookup"><span data-stu-id="5c170-107">Fundamental Windows Communication Foundation Concepts</span></span>](../../../docs/framework/wcf/fundamental-concepts.md)  
- <span data-ttu-id="5c170-108">[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] プログラミング モデルの主要概念についての概要です。</span><span class="sxs-lookup"><span data-stu-id="5c170-108">An outline of the major concepts of the [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] programming model.</span></span>  
+ [<span data-ttu-id="e8b33-107">Windows Communication Foundation の基本概念</span><span class="sxs-lookup"><span data-stu-id="e8b33-107">Fundamental Windows Communication Foundation Concepts</span></span>](../../../docs/framework/wcf/fundamental-concepts.md)  
+ <span data-ttu-id="e8b33-108">WCF プログラミング モデルの主要な概念の概要です。</span><span class="sxs-lookup"><span data-stu-id="e8b33-108">An outline of the major concepts of the WCF programming model.</span></span>  
   
- [<span data-ttu-id="5c170-109">Windows Communication Foundation のアーキテクチャ</span><span class="sxs-lookup"><span data-stu-id="5c170-109">Windows Communication Foundation Architecture</span></span>](../../../docs/framework/wcf/architecture.md)  
- <span data-ttu-id="5c170-110">[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] アーキテクチャを図で説明します。</span><span class="sxs-lookup"><span data-stu-id="5c170-110">A graphical representation of the [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] architecture.</span></span>  
+ [<span data-ttu-id="e8b33-109">Windows Communication Foundation のアーキテクチャ</span><span class="sxs-lookup"><span data-stu-id="e8b33-109">Windows Communication Foundation Architecture</span></span>](../../../docs/framework/wcf/architecture.md)  
+ <span data-ttu-id="e8b33-110">WCF アーキテクチャのグラフィック表示します。</span><span class="sxs-lookup"><span data-stu-id="e8b33-110">A graphical representation of the WCF architecture.</span></span>  
   
-## <a name="reference"></a><span data-ttu-id="5c170-111">参照</span><span class="sxs-lookup"><span data-stu-id="5c170-111">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="e8b33-111">参照</span><span class="sxs-lookup"><span data-stu-id="e8b33-111">Reference</span></span>  
  <xref:System.ServiceModel>  
   
-## <a name="related-sections"></a><span data-ttu-id="5c170-112">関連項目</span><span class="sxs-lookup"><span data-stu-id="5c170-112">Related Sections</span></span>  
- [<span data-ttu-id="5c170-113">基本的な WCF プログラミング</span><span class="sxs-lookup"><span data-stu-id="5c170-113">Basic WCF Programming</span></span>](../../../docs/framework/wcf/basic-wcf-programming.md)  
+## <a name="related-sections"></a><span data-ttu-id="e8b33-112">関連項目</span><span class="sxs-lookup"><span data-stu-id="e8b33-112">Related Sections</span></span>  
+ [<span data-ttu-id="e8b33-113">基本的な WCF プログラミング</span><span class="sxs-lookup"><span data-stu-id="e8b33-113">Basic WCF Programming</span></span>](../../../docs/framework/wcf/basic-wcf-programming.md)  
   
- [<span data-ttu-id="5c170-114">ガイドラインとベスト プラクティス</span><span class="sxs-lookup"><span data-stu-id="5c170-114">Guidelines and Best Practices</span></span>](../../../docs/framework/wcf/guidelines-and-best-practices.md)  
+ [<span data-ttu-id="e8b33-114">ガイドラインとベスト プラクティス</span><span class="sxs-lookup"><span data-stu-id="e8b33-114">Guidelines and Best Practices</span></span>](../../../docs/framework/wcf/guidelines-and-best-practices.md)  
   
- [<span data-ttu-id="5c170-115">Windows Communication Foundation サンプル</span><span class="sxs-lookup"><span data-stu-id="5c170-115">Windows Communication Foundation Samples</span></span>](../../../docs/framework/wcf/samples/index.md)  
+ [<span data-ttu-id="e8b33-115">Windows Communication Foundation サンプル</span><span class="sxs-lookup"><span data-stu-id="e8b33-115">Windows Communication Foundation Samples</span></span>](../../../docs/framework/wcf/samples/index.md)  
   
- [<span data-ttu-id="5c170-116">ツール</span><span class="sxs-lookup"><span data-stu-id="5c170-116">Tools</span></span>](../../../docs/framework/wcf/diagnostics/exceptions-reference/tools.md)  
+ [<span data-ttu-id="e8b33-116">ツール</span><span class="sxs-lookup"><span data-stu-id="e8b33-116">Tools</span></span>](../../../docs/framework/wcf/diagnostics/exceptions-reference/tools.md)  
   
- [<span data-ttu-id="5c170-117">システム要件</span><span class="sxs-lookup"><span data-stu-id="5c170-117">System Requirements</span></span>](../../../docs/framework/wcf/wcf-system-requirements.md)  
+ [<span data-ttu-id="e8b33-117">システム要件</span><span class="sxs-lookup"><span data-stu-id="e8b33-117">System Requirements</span></span>](../../../docs/framework/wcf/wcf-system-requirements.md)  
   
- [<span data-ttu-id="5c170-118">一般的なリファレンス</span><span class="sxs-lookup"><span data-stu-id="5c170-118">General Reference</span></span>](../../../docs/framework/wcf/general-reference.md)
+ [<span data-ttu-id="e8b33-118">一般的なリファレンス</span><span class="sxs-lookup"><span data-stu-id="e8b33-118">General Reference</span></span>](../../../docs/framework/wcf/general-reference.md)

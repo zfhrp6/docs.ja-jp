@@ -1,14 +1,6 @@
 ---
-title: "IHostTaskManager::CallNeedsHostHook メソッド"
-ms.custom: 
+title: IHostTaskManager::CallNeedsHostHook メソッド
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - IHostTaskManager.CallNeedsHostHook
 api_location:
@@ -23,22 +15,18 @@ helpviewer_keywords:
 ms.assetid: b60f1f59-9825-4b57-961f-d2979518e6a7
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 4774c9f37f73692bf8d9455c51e76aa4c590f925
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 983cad5ed87d0666ed71a805a3b3f7a3c7e7c091
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="ihosttaskmanagercallneedshosthook-method"></a><span data-ttu-id="2b1b8-102">IHostTaskManager::CallNeedsHostHook メソッド</span><span class="sxs-lookup"><span data-stu-id="2b1b8-102">IHostTaskManager::CallNeedsHostHook Method</span></span>
-<span data-ttu-id="2b1b8-103">共通言語ランタイム (CLR) が指定されたアンマネージ関数呼び出しをインライン展開をできるかどうかを指定するホストを有効にします。</span><span class="sxs-lookup"><span data-stu-id="2b1b8-103">Enables the host to specify whether the common language runtime (CLR) can inline the specified call to an unmanaged function.</span></span>  
+# <a name="ihosttaskmanagercallneedshosthook-method"></a><span data-ttu-id="cb86d-102">IHostTaskManager::CallNeedsHostHook メソッド</span><span class="sxs-lookup"><span data-stu-id="cb86d-102">IHostTaskManager::CallNeedsHostHook Method</span></span>
+<span data-ttu-id="cb86d-103">共通言語ランタイム (CLR) が指定されたアンマネージ関数呼び出しをインライン展開をできるかどうかを指定するホストを有効にします。</span><span class="sxs-lookup"><span data-stu-id="cb86d-103">Enables the host to specify whether the common language runtime (CLR) can inline the specified call to an unmanaged function.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="2b1b8-104">構文</span><span class="sxs-lookup"><span data-stu-id="2b1b8-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="cb86d-104">構文</span><span class="sxs-lookup"><span data-stu-id="cb86d-104">Syntax</span></span>  
   
 ```  
 HRESULT CallNeedsHostHook (  
@@ -47,40 +35,40 @@ HRESULT CallNeedsHostHook (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="2b1b8-105">パラメーター</span><span class="sxs-lookup"><span data-stu-id="2b1b8-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="cb86d-105">パラメーター</span><span class="sxs-lookup"><span data-stu-id="cb86d-105">Parameters</span></span>  
  `target`  
- <span data-ttu-id="2b1b8-106">[in]呼び出されるをアンマネージ関数のマップされたポータブル実行可能 (PE) ファイル内のアドレス。</span><span class="sxs-lookup"><span data-stu-id="2b1b8-106">[in] The address within the mapped portable executable (PE) file of the unmanaged function that is to be called.</span></span>  
+ <span data-ttu-id="cb86d-106">[in]呼び出されるをアンマネージ関数のマップされたポータブル実行可能 (PE) ファイル内のアドレス。</span><span class="sxs-lookup"><span data-stu-id="cb86d-106">[in] The address within the mapped portable executable (PE) file of the unmanaged function that is to be called.</span></span>  
   
  `pbCallNeedsHostHook`  
- <span data-ttu-id="2b1b8-107">[out]ホストにフックするへの呼び出しが必要とするかどうかを示すブール値へのポインター。</span><span class="sxs-lookup"><span data-stu-id="2b1b8-107">[out] A pointer to a Boolean value that indicates whether the host requires the call to be hooked.</span></span>  
+ <span data-ttu-id="cb86d-107">[out]ホストにフックするへの呼び出しが必要とするかどうかを示すブール値へのポインター。</span><span class="sxs-lookup"><span data-stu-id="cb86d-107">[out] A pointer to a Boolean value that indicates whether the host requires the call to be hooked.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="2b1b8-108">戻り値</span><span class="sxs-lookup"><span data-stu-id="2b1b8-108">Return Value</span></span>  
+## <a name="return-value"></a><span data-ttu-id="cb86d-108">戻り値</span><span class="sxs-lookup"><span data-stu-id="cb86d-108">Return Value</span></span>  
   
-|<span data-ttu-id="2b1b8-109">HRESULT</span><span class="sxs-lookup"><span data-stu-id="2b1b8-109">HRESULT</span></span>|<span data-ttu-id="2b1b8-110">説明</span><span class="sxs-lookup"><span data-stu-id="2b1b8-110">Description</span></span>|  
+|<span data-ttu-id="cb86d-109">HRESULT</span><span class="sxs-lookup"><span data-stu-id="cb86d-109">HRESULT</span></span>|<span data-ttu-id="cb86d-110">説明</span><span class="sxs-lookup"><span data-stu-id="cb86d-110">Description</span></span>|  
 |-------------|-----------------|  
-|<span data-ttu-id="2b1b8-111">S_OK</span><span class="sxs-lookup"><span data-stu-id="2b1b8-111">S_OK</span></span>|<span data-ttu-id="2b1b8-112">`CallNeedsHostHook`正常に返されます。</span><span class="sxs-lookup"><span data-stu-id="2b1b8-112">`CallNeedsHostHook` returned successfully.</span></span>|  
-|<span data-ttu-id="2b1b8-113">HOST_E_CLRNOTAVAILABLE</span><span class="sxs-lookup"><span data-stu-id="2b1b8-113">HOST_E_CLRNOTAVAILABLE</span></span>|<span data-ttu-id="2b1b8-114">CLR が、プロセスに読み込まれていませんまたは CLR は、状態をマネージ コードを実行またはできないの呼び出しは正常に処理します。</span><span class="sxs-lookup"><span data-stu-id="2b1b8-114">The CLR has not been loaded into a process, or the CLR is in a state in which it cannot run managed code or process the call successfully.</span></span>|  
-|<span data-ttu-id="2b1b8-115">HOST_E_TIMEOUT</span><span class="sxs-lookup"><span data-stu-id="2b1b8-115">HOST_E_TIMEOUT</span></span>|<span data-ttu-id="2b1b8-116">呼び出しがタイムアウトしました。</span><span class="sxs-lookup"><span data-stu-id="2b1b8-116">The call timed out.</span></span>|  
-|<span data-ttu-id="2b1b8-117">HOST_E_NOT_OWNER</span><span class="sxs-lookup"><span data-stu-id="2b1b8-117">HOST_E_NOT_OWNER</span></span>|<span data-ttu-id="2b1b8-118">呼び出し元は、ロックを所有していません。</span><span class="sxs-lookup"><span data-stu-id="2b1b8-118">The caller does not own the lock.</span></span>|  
-|<span data-ttu-id="2b1b8-119">HOST_E_ABANDONED</span><span class="sxs-lookup"><span data-stu-id="2b1b8-119">HOST_E_ABANDONED</span></span>|<span data-ttu-id="2b1b8-120">イベントがキャンセルされましたブロックされたスレッドまたはファイバーが待機しています。</span><span class="sxs-lookup"><span data-stu-id="2b1b8-120">An event was canceled while a blocked thread or fiber was waiting on it.</span></span>|  
-|<span data-ttu-id="2b1b8-121">E_FAIL</span><span class="sxs-lookup"><span data-stu-id="2b1b8-121">E_FAIL</span></span>|<span data-ttu-id="2b1b8-122">不明な致命的なエラーが発生しました。</span><span class="sxs-lookup"><span data-stu-id="2b1b8-122">An unknown catastrophic failure has occurred.</span></span> <span data-ttu-id="2b1b8-123">メソッドには、E_FAIL が返される、ときに、CLR は、プロセス内で使用可能ではなくなりました。</span><span class="sxs-lookup"><span data-stu-id="2b1b8-123">When a method returns E_FAIL, the CLR is no longer usable within the process.</span></span> <span data-ttu-id="2b1b8-124">メソッドのホストに以降の呼び出しでは、HOST_E_CLRNOTAVAILABLE を返します。</span><span class="sxs-lookup"><span data-stu-id="2b1b8-124">Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.</span></span>|  
+|<span data-ttu-id="cb86d-111">S_OK</span><span class="sxs-lookup"><span data-stu-id="cb86d-111">S_OK</span></span>|<span data-ttu-id="cb86d-112">`CallNeedsHostHook` 正常に返されます。</span><span class="sxs-lookup"><span data-stu-id="cb86d-112">`CallNeedsHostHook` returned successfully.</span></span>|  
+|<span data-ttu-id="cb86d-113">HOST_E_CLRNOTAVAILABLE</span><span class="sxs-lookup"><span data-stu-id="cb86d-113">HOST_E_CLRNOTAVAILABLE</span></span>|<span data-ttu-id="cb86d-114">CLR が、プロセスに読み込まれていませんまたは CLR は、状態をマネージ コードを実行またはできないの呼び出しは正常に処理します。</span><span class="sxs-lookup"><span data-stu-id="cb86d-114">The CLR has not been loaded into a process, or the CLR is in a state in which it cannot run managed code or process the call successfully.</span></span>|  
+|<span data-ttu-id="cb86d-115">HOST_E_TIMEOUT</span><span class="sxs-lookup"><span data-stu-id="cb86d-115">HOST_E_TIMEOUT</span></span>|<span data-ttu-id="cb86d-116">呼び出しがタイムアウトしました。</span><span class="sxs-lookup"><span data-stu-id="cb86d-116">The call timed out.</span></span>|  
+|<span data-ttu-id="cb86d-117">HOST_E_NOT_OWNER</span><span class="sxs-lookup"><span data-stu-id="cb86d-117">HOST_E_NOT_OWNER</span></span>|<span data-ttu-id="cb86d-118">呼び出し元は、ロックを所有していません。</span><span class="sxs-lookup"><span data-stu-id="cb86d-118">The caller does not own the lock.</span></span>|  
+|<span data-ttu-id="cb86d-119">HOST_E_ABANDONED</span><span class="sxs-lookup"><span data-stu-id="cb86d-119">HOST_E_ABANDONED</span></span>|<span data-ttu-id="cb86d-120">イベントがキャンセルされましたブロックされたスレッドまたはファイバーが待機しています。</span><span class="sxs-lookup"><span data-stu-id="cb86d-120">An event was canceled while a blocked thread or fiber was waiting on it.</span></span>|  
+|<span data-ttu-id="cb86d-121">E_FAIL</span><span class="sxs-lookup"><span data-stu-id="cb86d-121">E_FAIL</span></span>|<span data-ttu-id="cb86d-122">不明な致命的なエラーが発生しました。</span><span class="sxs-lookup"><span data-stu-id="cb86d-122">An unknown catastrophic failure has occurred.</span></span> <span data-ttu-id="cb86d-123">メソッドには、E_FAIL が返される、ときに、CLR は、プロセス内で使用可能ではなくなりました。</span><span class="sxs-lookup"><span data-stu-id="cb86d-123">When a method returns E_FAIL, the CLR is no longer usable within the process.</span></span> <span data-ttu-id="cb86d-124">メソッドのホストに以降の呼び出しでは、HOST_E_CLRNOTAVAILABLE を返します。</span><span class="sxs-lookup"><span data-stu-id="cb86d-124">Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="2b1b8-125">コメント</span><span class="sxs-lookup"><span data-stu-id="2b1b8-125">Remarks</span></span>  
- <span data-ttu-id="2b1b8-126">各プラットフォームの分析を実行している CLR コードの実行を最適化するため、呼び出しがインライン展開できるかどうかを決定するコンパイル時に呼び出しを起動します。</span><span class="sxs-lookup"><span data-stu-id="2b1b8-126">To help optimize code execution, the CLR performs an analysis of each platform invoke call during compilation to determine whether the call can be inlined.</span></span> <span data-ttu-id="2b1b8-127">`CallNeedsHostHook`アンマネージ関数の呼び出しをフックすることを要求することによってその意思決定を上書きするホストを有効にします。</span><span class="sxs-lookup"><span data-stu-id="2b1b8-127">`CallNeedsHostHook` enables the host to override that decision by requiring that a call to an unmanaged function be hooked.</span></span> <span data-ttu-id="2b1b8-128">フックをホストには、ランタイムは、呼び出しをインライン展開にしません。</span><span class="sxs-lookup"><span data-stu-id="2b1b8-128">If the host requires a hook, the runtime does not inline the call.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="cb86d-125">コメント</span><span class="sxs-lookup"><span data-stu-id="cb86d-125">Remarks</span></span>  
+ <span data-ttu-id="cb86d-126">各プラットフォームの分析を実行している CLR コードの実行を最適化するため、呼び出しがインライン展開できるかどうかを決定するコンパイル時に呼び出しを起動します。</span><span class="sxs-lookup"><span data-stu-id="cb86d-126">To help optimize code execution, the CLR performs an analysis of each platform invoke call during compilation to determine whether the call can be inlined.</span></span> <span data-ttu-id="cb86d-127">`CallNeedsHostHook` アンマネージ関数の呼び出しをフックすることを要求することによってその意思決定を上書きするホストを有効にします。</span><span class="sxs-lookup"><span data-stu-id="cb86d-127">`CallNeedsHostHook` enables the host to override that decision by requiring that a call to an unmanaged function be hooked.</span></span> <span data-ttu-id="cb86d-128">フックをホストには、ランタイムは、呼び出しをインライン展開にしません。</span><span class="sxs-lookup"><span data-stu-id="cb86d-128">If the host requires a hook, the runtime does not inline the call.</span></span>  
   
- <span data-ttu-id="2b1b8-129">通常、ホストは要求フックを浮動小数点の状態を調整する必要がありますまたは呼び出しは、ホストがメモリまたは取得されたロックのランタイムの要求を追跡できない状態になるという通知を受信したとき。</span><span class="sxs-lookup"><span data-stu-id="2b1b8-129">The host typically would require a hook where it must adjust a floating-point state, or upon receiving notification that a call is entering a state where the host cannot track the runtime's requests for memory or any locks taken.</span></span> <span data-ttu-id="2b1b8-130">ホストでは、呼び出しをフックすることが必要な場合、ランタイムをホストに通知遷移して、マネージ コードから呼び出しを使用して[EnterRuntime](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-enterruntime-method.md)、 [LeaveRuntime](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-leaveruntime-method.md)、 [ReverseEnterRuntime](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-reverseenterruntime-method.md)、および[ReverseLeaveRuntime](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-reverseleaveruntime-method.md)です。</span><span class="sxs-lookup"><span data-stu-id="2b1b8-130">When the host requires that the call be hooked, the runtime notifies the host of transitions to and from managed code by using calls to [EnterRuntime](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-enterruntime-method.md), [LeaveRuntime](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-leaveruntime-method.md), [ReverseEnterRuntime](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-reverseenterruntime-method.md), and [ReverseLeaveRuntime](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-reverseleaveruntime-method.md).</span></span>  
+ <span data-ttu-id="cb86d-129">通常、ホストは要求フックを浮動小数点の状態を調整する必要がありますまたは呼び出しは、ホストがメモリまたは取得されたロックのランタイムの要求を追跡できない状態になるという通知を受信したとき。</span><span class="sxs-lookup"><span data-stu-id="cb86d-129">The host typically would require a hook where it must adjust a floating-point state, or upon receiving notification that a call is entering a state where the host cannot track the runtime's requests for memory or any locks taken.</span></span> <span data-ttu-id="cb86d-130">ホストでは、呼び出しをフックすることが必要な場合、ランタイムをホストに通知遷移して、マネージ コードから呼び出しを使用して[EnterRuntime](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-enterruntime-method.md)、 [LeaveRuntime](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-leaveruntime-method.md)、 [ReverseEnterRuntime](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-reverseenterruntime-method.md)、および[ReverseLeaveRuntime](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-reverseleaveruntime-method.md)です。</span><span class="sxs-lookup"><span data-stu-id="cb86d-130">When the host requires that the call be hooked, the runtime notifies the host of transitions to and from managed code by using calls to [EnterRuntime](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-enterruntime-method.md), [LeaveRuntime](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-leaveruntime-method.md), [ReverseEnterRuntime](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-reverseenterruntime-method.md), and [ReverseLeaveRuntime](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-reverseleaveruntime-method.md).</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="2b1b8-131">必要条件</span><span class="sxs-lookup"><span data-stu-id="2b1b8-131">Requirements</span></span>  
- <span data-ttu-id="2b1b8-132">**プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="2b1b8-132">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="cb86d-131">要件</span><span class="sxs-lookup"><span data-stu-id="cb86d-131">Requirements</span></span>  
+ <span data-ttu-id="cb86d-132">**プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="cb86d-132">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="2b1b8-133">**ヘッダー:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="2b1b8-133">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="cb86d-133">**ヘッダー:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="cb86d-133">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="2b1b8-134">**ライブラリ:** MSCorEE.dll にリソースとして含まれています。</span><span class="sxs-lookup"><span data-stu-id="2b1b8-134">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="cb86d-134">**ライブラリ:** MSCorEE.dll にリソースとして含まれています。</span><span class="sxs-lookup"><span data-stu-id="cb86d-134">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="2b1b8-135">**.NET framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="2b1b8-135">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="cb86d-135">**.NET framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="cb86d-135">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="2b1b8-136">参照</span><span class="sxs-lookup"><span data-stu-id="2b1b8-136">See Also</span></span>  
- [<span data-ttu-id="2b1b8-137">ICLRTask インターフェイス</span><span class="sxs-lookup"><span data-stu-id="2b1b8-137">ICLRTask Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)  
- [<span data-ttu-id="2b1b8-138">ICLRTaskManager インターフェイス</span><span class="sxs-lookup"><span data-stu-id="2b1b8-138">ICLRTaskManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrtaskmanager-interface.md)  
- [<span data-ttu-id="2b1b8-139">IHostTask インターフェイス</span><span class="sxs-lookup"><span data-stu-id="2b1b8-139">IHostTask Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md)  
- [<span data-ttu-id="2b1b8-140">IHostTaskManager インターフェイス</span><span class="sxs-lookup"><span data-stu-id="2b1b8-140">IHostTaskManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-interface.md)
+## <a name="see-also"></a><span data-ttu-id="cb86d-136">関連項目</span><span class="sxs-lookup"><span data-stu-id="cb86d-136">See Also</span></span>  
+ [<span data-ttu-id="cb86d-137">ICLRTask インターフェイス</span><span class="sxs-lookup"><span data-stu-id="cb86d-137">ICLRTask Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)  
+ [<span data-ttu-id="cb86d-138">ICLRTaskManager インターフェイス</span><span class="sxs-lookup"><span data-stu-id="cb86d-138">ICLRTaskManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrtaskmanager-interface.md)  
+ [<span data-ttu-id="cb86d-139">IHostTask インターフェイス</span><span class="sxs-lookup"><span data-stu-id="cb86d-139">IHostTask Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md)  
+ [<span data-ttu-id="cb86d-140">IHostTaskManager インターフェイス</span><span class="sxs-lookup"><span data-stu-id="cb86d-140">IHostTaskManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-interface.md)

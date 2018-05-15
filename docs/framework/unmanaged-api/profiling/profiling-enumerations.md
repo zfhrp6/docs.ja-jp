@@ -1,89 +1,79 @@
 ---
-title: "列挙体のプロファイリング"
-ms.custom: 
+title: 列挙体のプロファイリング
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 helpviewer_keywords:
 - profiling enumerations [.NET Framework]
 - enumerations [.NET Framework profiling]
 - unmanaged enumerations [.NET Framework], profiling
 ms.assetid: 8d5f9570-9853-4ce8-8101-df235d5b258e
-caps.latest.revision: "21"
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 84ac67b35bdbf686edb2fa35cc651aad4c19516b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 996352637f34b0b6c0d12e611a6d9e70ab85230e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="profiling-enumerations"></a><span data-ttu-id="5594c-102">列挙体のプロファイリング</span><span class="sxs-lookup"><span data-stu-id="5594c-102">Profiling Enumerations</span></span>
-<span data-ttu-id="5594c-103">このセクションでは、プロファイル API が使用するアンマネージ列挙について説明します。</span><span class="sxs-lookup"><span data-stu-id="5594c-103">This section describes the unmanaged enumerations that the profiling API uses.</span></span>  
+# <a name="profiling-enumerations"></a><span data-ttu-id="b8e1d-102">列挙体のプロファイリング</span><span class="sxs-lookup"><span data-stu-id="b8e1d-102">Profiling Enumerations</span></span>
+<span data-ttu-id="b8e1d-103">このセクションでは、プロファイル API が使用するアンマネージ列挙について説明します。</span><span class="sxs-lookup"><span data-stu-id="b8e1d-103">This section describes the unmanaged enumerations that the profiling API uses.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="5594c-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="5594c-104">In This Section</span></span>  
- [<span data-ttu-id="5594c-105">COR_PRF_CLAUSE_TYPE 列挙型</span><span class="sxs-lookup"><span data-stu-id="5594c-105">COR_PRF_CLAUSE_TYPE Enumeration</span></span>](../../../../docs/framework/unmanaged-api/profiling/cor-prf-clause-type-enumeration.md)  
- <span data-ttu-id="5594c-106">コードが入った、または出た例外句のタイプを示します。</span><span class="sxs-lookup"><span data-stu-id="5594c-106">Indicates the type of exception clause that the code has just entered or left.</span></span>  
+## <a name="in-this-section"></a><span data-ttu-id="b8e1d-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="b8e1d-104">In This Section</span></span>  
+ [<span data-ttu-id="b8e1d-105">COR_PRF_CLAUSE_TYPE 列挙型</span><span class="sxs-lookup"><span data-stu-id="b8e1d-105">COR_PRF_CLAUSE_TYPE Enumeration</span></span>](../../../../docs/framework/unmanaged-api/profiling/cor-prf-clause-type-enumeration.md)  
+ <span data-ttu-id="b8e1d-106">コードが入った、または出た例外句のタイプを示します。</span><span class="sxs-lookup"><span data-stu-id="b8e1d-106">Indicates the type of exception clause that the code has just entered or left.</span></span>  
   
- [<span data-ttu-id="5594c-107">COR_PRF_CODEGEN_FLAGS 列挙型</span><span class="sxs-lookup"><span data-stu-id="5594c-107">COR_PRF_CODEGEN_FLAGS Enumeration</span></span>](../../../../docs/framework/unmanaged-api/profiling/cor-prf-codegen-flags-enumeration.md)  
- <span data-ttu-id="5594c-108">コード生成フラグを設定することができますを定義、 [icorprofilerfunctioncontrol::setcodegenflags](../../../../docs/framework/unmanaged-api/profiling/icorprofilerfunctioncontrol-setcodegenflags-method.md)メソッドです。</span><span class="sxs-lookup"><span data-stu-id="5594c-108">Defines the code generation flags that can be set with the [ICorProfilerFunctionControl::SetCodegenFlags](../../../../docs/framework/unmanaged-api/profiling/icorprofilerfunctioncontrol-setcodegenflags-method.md) method.</span></span>  
+ [<span data-ttu-id="b8e1d-107">COR_PRF_CODEGEN_FLAGS 列挙型</span><span class="sxs-lookup"><span data-stu-id="b8e1d-107">COR_PRF_CODEGEN_FLAGS Enumeration</span></span>](../../../../docs/framework/unmanaged-api/profiling/cor-prf-codegen-flags-enumeration.md)  
+ <span data-ttu-id="b8e1d-108">コード生成フラグを設定することができますを定義、 [icorprofilerfunctioncontrol::setcodegenflags](../../../../docs/framework/unmanaged-api/profiling/icorprofilerfunctioncontrol-setcodegenflags-method.md)メソッドです。</span><span class="sxs-lookup"><span data-stu-id="b8e1d-108">Defines the code generation flags that can be set with the [ICorProfilerFunctionControl::SetCodegenFlags](../../../../docs/framework/unmanaged-api/profiling/icorprofilerfunctioncontrol-setcodegenflags-method.md) method.</span></span>  
   
- [<span data-ttu-id="5594c-109">COR_PRF_FINALIZER_FLAGS 列挙型</span><span class="sxs-lookup"><span data-stu-id="5594c-109">COR_PRF_FINALIZER_FLAGS Enumeration</span></span>](../../../../docs/framework/unmanaged-api/profiling/cor-prf-finalizer-flags-enumeration.md)  
- <span data-ttu-id="5594c-110">オブジェクトのファイナライザーを記述します。</span><span class="sxs-lookup"><span data-stu-id="5594c-110">Describes the finalizer for an object.</span></span>  
+ [<span data-ttu-id="b8e1d-109">COR_PRF_FINALIZER_FLAGS 列挙型</span><span class="sxs-lookup"><span data-stu-id="b8e1d-109">COR_PRF_FINALIZER_FLAGS Enumeration</span></span>](../../../../docs/framework/unmanaged-api/profiling/cor-prf-finalizer-flags-enumeration.md)  
+ <span data-ttu-id="b8e1d-110">オブジェクトのファイナライザーを記述します。</span><span class="sxs-lookup"><span data-stu-id="b8e1d-110">Describes the finalizer for an object.</span></span>  
   
- [<span data-ttu-id="5594c-111">COR_PRF_GC_GENERATION 列挙型</span><span class="sxs-lookup"><span data-stu-id="5594c-111">COR_PRF_GC_GENERATION Enumeration</span></span>](../../../../docs/framework/unmanaged-api/profiling/cor-prf-gc-generation-enumeration.md)  
- <span data-ttu-id="5594c-112">ガベージ コレクションのジェネレーションを識別します。</span><span class="sxs-lookup"><span data-stu-id="5594c-112">Identifies a garbage collection generation.</span></span>  
+ [<span data-ttu-id="b8e1d-111">COR_PRF_GC_GENERATION 列挙型</span><span class="sxs-lookup"><span data-stu-id="b8e1d-111">COR_PRF_GC_GENERATION Enumeration</span></span>](../../../../docs/framework/unmanaged-api/profiling/cor-prf-gc-generation-enumeration.md)  
+ <span data-ttu-id="b8e1d-112">ガベージ コレクションのジェネレーションを識別します。</span><span class="sxs-lookup"><span data-stu-id="b8e1d-112">Identifies a garbage collection generation.</span></span>  
   
- [<span data-ttu-id="5594c-113">COR_PRF_GC_REASON 列挙型</span><span class="sxs-lookup"><span data-stu-id="5594c-113">COR_PRF_GC_REASON Enumeration</span></span>](../../../../docs/framework/unmanaged-api/profiling/cor-prf-gc-reason-enumeration.md)  
- <span data-ttu-id="5594c-114">ガベージ コレクションが発生している理由を示します。</span><span class="sxs-lookup"><span data-stu-id="5594c-114">Indicates the reason that garbage collection is occurring.</span></span>  
+ [<span data-ttu-id="b8e1d-113">COR_PRF_GC_REASON 列挙型</span><span class="sxs-lookup"><span data-stu-id="b8e1d-113">COR_PRF_GC_REASON Enumeration</span></span>](../../../../docs/framework/unmanaged-api/profiling/cor-prf-gc-reason-enumeration.md)  
+ <span data-ttu-id="b8e1d-114">ガベージ コレクションが発生している理由を示します。</span><span class="sxs-lookup"><span data-stu-id="b8e1d-114">Indicates the reason that garbage collection is occurring.</span></span>  
   
- [<span data-ttu-id="5594c-115">COR_PRF_GC_ROOT_FLAGS 列挙型</span><span class="sxs-lookup"><span data-stu-id="5594c-115">COR_PRF_GC_ROOT_FLAGS Enumeration</span></span>](../../../../docs/framework/unmanaged-api/profiling/cor-prf-gc-root-flags-enumeration.md)  
- <span data-ttu-id="5594c-116">ガベージ コレクターのルートのプロパティを示します。</span><span class="sxs-lookup"><span data-stu-id="5594c-116">Indicates properties of a garbage collector root.</span></span>  
+ [<span data-ttu-id="b8e1d-115">COR_PRF_GC_ROOT_FLAGS 列挙型</span><span class="sxs-lookup"><span data-stu-id="b8e1d-115">COR_PRF_GC_ROOT_FLAGS Enumeration</span></span>](../../../../docs/framework/unmanaged-api/profiling/cor-prf-gc-root-flags-enumeration.md)  
+ <span data-ttu-id="b8e1d-116">ガベージ コレクターのルートのプロパティを示します。</span><span class="sxs-lookup"><span data-stu-id="b8e1d-116">Indicates properties of a garbage collector root.</span></span>  
   
- [<span data-ttu-id="5594c-117">COR_PRF_GC_ROOT_KIND 列挙型</span><span class="sxs-lookup"><span data-stu-id="5594c-117">COR_PRF_GC_ROOT_KIND Enumeration</span></span>](../../../../docs/framework/unmanaged-api/profiling/cor-prf-gc-root-kind-enumeration.md)  
- <span data-ttu-id="5594c-118">によって公開されるガベージ コレクターのルートの種類を示す、 [icorprofilercallback 2::rootreferences2](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-rootreferences2-method.md)コールバック。</span><span class="sxs-lookup"><span data-stu-id="5594c-118">Indicates the kind of garbage collector root that is exposed by the [ICorProfilerCallback2::RootReferences2](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-rootreferences2-method.md) callback.</span></span>  
+ [<span data-ttu-id="b8e1d-117">COR_PRF_GC_ROOT_KIND 列挙型</span><span class="sxs-lookup"><span data-stu-id="b8e1d-117">COR_PRF_GC_ROOT_KIND Enumeration</span></span>](../../../../docs/framework/unmanaged-api/profiling/cor-prf-gc-root-kind-enumeration.md)  
+ <span data-ttu-id="b8e1d-118">によって公開されるガベージ コレクターのルートの種類を示す、 [icorprofilercallback 2::rootreferences2](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-rootreferences2-method.md)コールバック。</span><span class="sxs-lookup"><span data-stu-id="b8e1d-118">Indicates the kind of garbage collector root that is exposed by the [ICorProfilerCallback2::RootReferences2](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-rootreferences2-method.md) callback.</span></span>  
   
- [<span data-ttu-id="5594c-119">COR_PRF_HIGH_MONITOR 列挙型</span><span class="sxs-lookup"><span data-stu-id="5594c-119">COR_PRF_HIGH_MONITOR Enumeration</span></span>](../../../../docs/framework/unmanaged-api/profiling/cor-prf-high-monitor-enumeration.md)  
- <span data-ttu-id="5594c-120">:Seteventmask2 フラグを提供、 [COR_PRF_MONITOR](../../../../docs/framework/unmanaged-api/profiling/cor-prf-monitor-enumeration.md)ために、プロファイラーが指定する列挙体、 [icorprofilerinfo 5::seteventmask2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo5-seteventmask2-method.md)メソッドの読み込み時にします。</span><span class="sxs-lookup"><span data-stu-id="5594c-120">Provides flags in addition to those found in the [COR_PRF_MONITOR](../../../../docs/framework/unmanaged-api/profiling/cor-prf-monitor-enumeration.md) enumeration that the profiler can specify to the [ICorProfilerInfo5::SetEventMask2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo5-seteventmask2-method.md) method when it is loading.</span></span>  
+ [<span data-ttu-id="b8e1d-119">COR_PRF_HIGH_MONITOR 列挙型</span><span class="sxs-lookup"><span data-stu-id="b8e1d-119">COR_PRF_HIGH_MONITOR Enumeration</span></span>](../../../../docs/framework/unmanaged-api/profiling/cor-prf-high-monitor-enumeration.md)  
+ <span data-ttu-id="b8e1d-120">:Seteventmask2 フラグを提供、 [COR_PRF_MONITOR](../../../../docs/framework/unmanaged-api/profiling/cor-prf-monitor-enumeration.md)ために、プロファイラーが指定する列挙体、 [icorprofilerinfo 5::seteventmask2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo5-seteventmask2-method.md)メソッドの読み込み時にします。</span><span class="sxs-lookup"><span data-stu-id="b8e1d-120">Provides flags in addition to those found in the [COR_PRF_MONITOR](../../../../docs/framework/unmanaged-api/profiling/cor-prf-monitor-enumeration.md) enumeration that the profiler can specify to the [ICorProfilerInfo5::SetEventMask2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo5-seteventmask2-method.md) method when it is loading.</span></span>  
   
- [<span data-ttu-id="5594c-121">COR_PRF_JIT_CACHE 列挙型</span><span class="sxs-lookup"><span data-stu-id="5594c-121">COR_PRF_JIT_CACHE Enumeration</span></span>](../../../../docs/framework/unmanaged-api/profiling/cor-prf-jit-cache-enumeration.md)  
- <span data-ttu-id="5594c-122">キャッシュされている関数検索の結果を示します。</span><span class="sxs-lookup"><span data-stu-id="5594c-122">Indicates the result of a cached function search.</span></span>  
+ [<span data-ttu-id="b8e1d-121">COR_PRF_JIT_CACHE 列挙型</span><span class="sxs-lookup"><span data-stu-id="b8e1d-121">COR_PRF_JIT_CACHE Enumeration</span></span>](../../../../docs/framework/unmanaged-api/profiling/cor-prf-jit-cache-enumeration.md)  
+ <span data-ttu-id="b8e1d-122">キャッシュされている関数検索の結果を示します。</span><span class="sxs-lookup"><span data-stu-id="b8e1d-122">Indicates the result of a cached function search.</span></span>  
   
- [<span data-ttu-id="5594c-123">COR_PRF_MISC 列挙型</span><span class="sxs-lookup"><span data-stu-id="5594c-123">COR_PRF_MISC Enumeration</span></span>](../../../../docs/framework/unmanaged-api/profiling/cor-prf-misc-enumeration.md)  
- <span data-ttu-id="5594c-124">特殊な識別子を指定する定数値を含めます。</span><span class="sxs-lookup"><span data-stu-id="5594c-124">Contains constant values that specify special identifiers.</span></span>  
+ [<span data-ttu-id="b8e1d-123">COR_PRF_MISC 列挙型</span><span class="sxs-lookup"><span data-stu-id="b8e1d-123">COR_PRF_MISC Enumeration</span></span>](../../../../docs/framework/unmanaged-api/profiling/cor-prf-misc-enumeration.md)  
+ <span data-ttu-id="b8e1d-124">特殊な識別子を指定する定数値を含めます。</span><span class="sxs-lookup"><span data-stu-id="b8e1d-124">Contains constant values that specify special identifiers.</span></span>  
   
- [<span data-ttu-id="5594c-125">COR_PRF_MODULE_FLAGS 列挙型</span><span class="sxs-lookup"><span data-stu-id="5594c-125">COR_PRF_MODULE_FLAGS Enumeration</span></span>](../../../../docs/framework/unmanaged-api/profiling/cor-prf-module-flags-enumeration.md)  
- <span data-ttu-id="5594c-126">モジュールのプロパティを指定します。</span><span class="sxs-lookup"><span data-stu-id="5594c-126">Specifies the properties of a module.</span></span>  
+ [<span data-ttu-id="b8e1d-125">COR_PRF_MODULE_FLAGS 列挙型</span><span class="sxs-lookup"><span data-stu-id="b8e1d-125">COR_PRF_MODULE_FLAGS Enumeration</span></span>](../../../../docs/framework/unmanaged-api/profiling/cor-prf-module-flags-enumeration.md)  
+ <span data-ttu-id="b8e1d-126">モジュールのプロパティを指定します。</span><span class="sxs-lookup"><span data-stu-id="b8e1d-126">Specifies the properties of a module.</span></span>  
   
- [<span data-ttu-id="5594c-127">COR_PRF_MONITOR 列挙型</span><span class="sxs-lookup"><span data-stu-id="5594c-127">COR_PRF_MONITOR Enumeration</span></span>](../../../../docs/framework/unmanaged-api/profiling/cor-prf-monitor-enumeration.md)  
- <span data-ttu-id="5594c-128">プロファイラーがサブスクライブしようとする動作、機能、またはイベントの指定で使用する値を含めます。</span><span class="sxs-lookup"><span data-stu-id="5594c-128">Contains values that are used to specify behavior, capabilities, or events to which the profiler wishes to subscribe.</span></span>  
+ [<span data-ttu-id="b8e1d-127">COR_PRF_MONITOR 列挙型</span><span class="sxs-lookup"><span data-stu-id="b8e1d-127">COR_PRF_MONITOR Enumeration</span></span>](../../../../docs/framework/unmanaged-api/profiling/cor-prf-monitor-enumeration.md)  
+ <span data-ttu-id="b8e1d-128">プロファイラーがサブスクライブしようとする動作、機能、またはイベントの指定で使用する値を含めます。</span><span class="sxs-lookup"><span data-stu-id="b8e1d-128">Contains values that are used to specify behavior, capabilities, or events to which the profiler wishes to subscribe.</span></span>  
   
- [<span data-ttu-id="5594c-129">COR_PRF_RUNTIME_TYPE 列挙型</span><span class="sxs-lookup"><span data-stu-id="5594c-129">COR_PRF_RUNTIME_TYPE Enumeration</span></span>](../../../../docs/framework/unmanaged-api/profiling/cor-prf-runtime-type-enumeration.md)  
- <span data-ttu-id="5594c-130">共通言語ランタイムのバージョンを表す値を含めます。</span><span class="sxs-lookup"><span data-stu-id="5594c-130">Contains values that indicate the version of the common language runtime.</span></span>  
+ [<span data-ttu-id="b8e1d-129">COR_PRF_RUNTIME_TYPE 列挙型</span><span class="sxs-lookup"><span data-stu-id="b8e1d-129">COR_PRF_RUNTIME_TYPE Enumeration</span></span>](../../../../docs/framework/unmanaged-api/profiling/cor-prf-runtime-type-enumeration.md)  
+ <span data-ttu-id="b8e1d-130">共通言語ランタイムのバージョンを表す値を含めます。</span><span class="sxs-lookup"><span data-stu-id="b8e1d-130">Contains values that indicate the version of the common language runtime.</span></span>  
   
- [<span data-ttu-id="5594c-131">COR_PRF_SNAPSHOT_INFO 列挙型</span><span class="sxs-lookup"><span data-stu-id="5594c-131">COR_PRF_SNAPSHOT_INFO Enumeration</span></span>](../../../../docs/framework/unmanaged-api/profiling/cor-prf-snapshot-info-enumeration.md)  
- <span data-ttu-id="5594c-132">プロファイラーの `StackSnapshotCallback` 関数への各呼び出しにおいて、スタック スナップショットでどのくらいのデータが返されるかを指定します。</span><span class="sxs-lookup"><span data-stu-id="5594c-132">Specifies how much data to pass back with a stack snapshot in each call to the profiler's `StackSnapshotCallback` function.</span></span>  
+ [<span data-ttu-id="b8e1d-131">COR_PRF_SNAPSHOT_INFO 列挙型</span><span class="sxs-lookup"><span data-stu-id="b8e1d-131">COR_PRF_SNAPSHOT_INFO Enumeration</span></span>](../../../../docs/framework/unmanaged-api/profiling/cor-prf-snapshot-info-enumeration.md)  
+ <span data-ttu-id="b8e1d-132">プロファイラーの `StackSnapshotCallback` 関数への各呼び出しにおいて、スタック スナップショットでどのくらいのデータが返されるかを指定します。</span><span class="sxs-lookup"><span data-stu-id="b8e1d-132">Specifies how much data to pass back with a stack snapshot in each call to the profiler's `StackSnapshotCallback` function.</span></span>  
   
- [<span data-ttu-id="5594c-133">COR_PRF_STATIC_TYPE 列挙型</span><span class="sxs-lookup"><span data-stu-id="5594c-133">COR_PRF_STATIC_TYPE Enumeration</span></span>](../../../../docs/framework/unmanaged-api/profiling/cor-prf-static-type-enumeration.md)  
- <span data-ttu-id="5594c-134">フィールドが静的であるかどうかを示し、静的な場合は、フィールドに適用される静的なクオリティを示します。</span><span class="sxs-lookup"><span data-stu-id="5594c-134">Indicates whether a field is static and, if so, the static quality that applies to the field.</span></span>  
+ [<span data-ttu-id="b8e1d-133">COR_PRF_STATIC_TYPE 列挙型</span><span class="sxs-lookup"><span data-stu-id="b8e1d-133">COR_PRF_STATIC_TYPE Enumeration</span></span>](../../../../docs/framework/unmanaged-api/profiling/cor-prf-static-type-enumeration.md)  
+ <span data-ttu-id="b8e1d-134">フィールドが静的であるかどうかを示し、静的な場合は、フィールドに適用される静的なクオリティを示します。</span><span class="sxs-lookup"><span data-stu-id="b8e1d-134">Indicates whether a field is static and, if so, the static quality that applies to the field.</span></span>  
   
- [<span data-ttu-id="5594c-135">COR_PRF_SUSPEND_REASON 列挙型</span><span class="sxs-lookup"><span data-stu-id="5594c-135">COR_PRF_SUSPEND_REASON Enumeration</span></span>](../../../../docs/framework/unmanaged-api/profiling/cor-prf-suspend-reason-enumeration.md)  
- <span data-ttu-id="5594c-136">ランタイムが中断された理由を示します。</span><span class="sxs-lookup"><span data-stu-id="5594c-136">Indicates the reason that the runtime was suspended.</span></span>  
+ [<span data-ttu-id="b8e1d-135">COR_PRF_SUSPEND_REASON 列挙型</span><span class="sxs-lookup"><span data-stu-id="b8e1d-135">COR_PRF_SUSPEND_REASON Enumeration</span></span>](../../../../docs/framework/unmanaged-api/profiling/cor-prf-suspend-reason-enumeration.md)  
+ <span data-ttu-id="b8e1d-136">ランタイムが中断された理由を示します。</span><span class="sxs-lookup"><span data-stu-id="b8e1d-136">Indicates the reason that the runtime was suspended.</span></span>  
   
- [<span data-ttu-id="5594c-137">COR_PRF_TRANSITION_REASON 列挙型</span><span class="sxs-lookup"><span data-stu-id="5594c-137">COR_PRF_TRANSITION_REASON Enumeration</span></span>](../../../../docs/framework/unmanaged-api/profiling/cor-prf-transition-reason-enumeration.md)  
- <span data-ttu-id="5594c-138">マネージ コードからアンマネージ コードへ、またはその逆の遷移の理由を示します。</span><span class="sxs-lookup"><span data-stu-id="5594c-138">Indicates the reason for a transition from managed to unmanaged code, or vice versa.</span></span>  
+ [<span data-ttu-id="b8e1d-137">COR_PRF_TRANSITION_REASON 列挙型</span><span class="sxs-lookup"><span data-stu-id="b8e1d-137">COR_PRF_TRANSITION_REASON Enumeration</span></span>](../../../../docs/framework/unmanaged-api/profiling/cor-prf-transition-reason-enumeration.md)  
+ <span data-ttu-id="b8e1d-138">マネージ コードからアンマネージ コードへ、またはその逆の遷移の理由を示します。</span><span class="sxs-lookup"><span data-stu-id="b8e1d-138">Indicates the reason for a transition from managed to unmanaged code, or vice versa.</span></span>  
   
-## <a name="related-sections"></a><span data-ttu-id="5594c-139">関連項目</span><span class="sxs-lookup"><span data-stu-id="5594c-139">Related Sections</span></span>  
- [<span data-ttu-id="5594c-140">プロファイルの概要</span><span class="sxs-lookup"><span data-stu-id="5594c-140">Profiling Overview</span></span>](../../../../docs/framework/unmanaged-api/profiling/profiling-overview.md)  
+## <a name="related-sections"></a><span data-ttu-id="b8e1d-139">関連項目</span><span class="sxs-lookup"><span data-stu-id="b8e1d-139">Related Sections</span></span>  
+ [<span data-ttu-id="b8e1d-140">プロファイルの概要</span><span class="sxs-lookup"><span data-stu-id="b8e1d-140">Profiling Overview</span></span>](../../../../docs/framework/unmanaged-api/profiling/profiling-overview.md)  
   
- [<span data-ttu-id="5594c-141">プロファイリングのインターフェイス</span><span class="sxs-lookup"><span data-stu-id="5594c-141">Profiling Interfaces</span></span>](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)  
+ [<span data-ttu-id="b8e1d-141">プロファイリングのインターフェイス</span><span class="sxs-lookup"><span data-stu-id="b8e1d-141">Profiling Interfaces</span></span>](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)  
   
- [<span data-ttu-id="5594c-142">グローバル静的関数のプロファイル</span><span class="sxs-lookup"><span data-stu-id="5594c-142">Profiling Global Static Functions</span></span>](../../../../docs/framework/unmanaged-api/profiling/profiling-global-static-functions.md)  
+ [<span data-ttu-id="b8e1d-142">グローバル静的関数のプロファイル</span><span class="sxs-lookup"><span data-stu-id="b8e1d-142">Profiling Global Static Functions</span></span>](../../../../docs/framework/unmanaged-api/profiling/profiling-global-static-functions.md)  
   
- [<span data-ttu-id="5594c-143">構造体のプロファイリング</span><span class="sxs-lookup"><span data-stu-id="5594c-143">Profiling Structures</span></span>](../../../../docs/framework/unmanaged-api/profiling/profiling-structures.md)
+ [<span data-ttu-id="b8e1d-143">構造体のプロファイリング</span><span class="sxs-lookup"><span data-stu-id="b8e1d-143">Profiling Structures</span></span>](../../../../docs/framework/unmanaged-api/profiling/profiling-structures.md)

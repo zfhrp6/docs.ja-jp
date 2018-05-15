@@ -1,57 +1,45 @@
 ---
-title: "WAS アクティベーション アーキテクチャ"
-ms.custom: 
+title: WAS アクティベーション アーキテクチャ
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 58aeffb0-8f3f-4b40-80c8-15f3f1652fd3
-caps.latest.revision: "16"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 7563510fdd44336cb5f8c50705edefd732082347
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 0c91ebd605fbe503dd11da7167512648afd86449
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="was-activation-architecture"></a><span data-ttu-id="bf6d0-102">WAS アクティベーション アーキテクチャ</span><span class="sxs-lookup"><span data-stu-id="bf6d0-102">WAS Activation Architecture</span></span>
-<span data-ttu-id="bf6d0-103">ここでは、Windows プロセス アクティブ化サービス (WAS とも呼ばれます) の各コンポーネントについて説明します。</span><span class="sxs-lookup"><span data-stu-id="bf6d0-103">This topic itemizes and discusses the components of the Windows Process Activation Service (also known as WAS).</span></span>  
+# <a name="was-activation-architecture"></a><span data-ttu-id="e5041-102">WAS アクティベーション アーキテクチャ</span><span class="sxs-lookup"><span data-stu-id="e5041-102">WAS Activation Architecture</span></span>
+<span data-ttu-id="e5041-103">ここでは、Windows プロセス アクティブ化サービス (WAS とも呼ばれます) の各コンポーネントについて説明します。</span><span class="sxs-lookup"><span data-stu-id="e5041-103">This topic itemizes and discusses the components of the Windows Process Activation Service (also known as WAS).</span></span>  
   
-## <a name="activation-components"></a><span data-ttu-id="bf6d0-104">アクティベーション コンポーネント</span><span class="sxs-lookup"><span data-stu-id="bf6d0-104">Activation Components</span></span>  
- <span data-ttu-id="bf6d0-105">WAS は、複数のアーキテクチャ コンポーネントで構成されます。</span><span class="sxs-lookup"><span data-stu-id="bf6d0-105">WAS consists of several architectural components:</span></span>  
+## <a name="activation-components"></a><span data-ttu-id="e5041-104">アクティベーション コンポーネント</span><span class="sxs-lookup"><span data-stu-id="e5041-104">Activation Components</span></span>  
+ <span data-ttu-id="e5041-105">WAS は、複数のアーキテクチャ コンポーネントで構成されます。</span><span class="sxs-lookup"><span data-stu-id="e5041-105">WAS consists of several architectural components:</span></span>  
   
--   <span data-ttu-id="bf6d0-106">リスナー アダプター : </span><span class="sxs-lookup"><span data-stu-id="bf6d0-106">Listener adapters.</span></span> <span data-ttu-id="bf6d0-107">特定のネットワーク プロトコルでメッセージを受信し、WAS と通信して、受信メッセージを適切なワーカー プロセスにルーティングする Windows サービス。</span><span class="sxs-lookup"><span data-stu-id="bf6d0-107">Windows services that receive messages on specific network protocols and communicate with WAS to route incoming messages to the correct worker process.</span></span>  
+-   <span data-ttu-id="e5041-106">リスナー アダプター : </span><span class="sxs-lookup"><span data-stu-id="e5041-106">Listener adapters.</span></span> <span data-ttu-id="e5041-107">特定のネットワーク プロトコルでメッセージを受信し、WAS と通信して、受信メッセージを適切なワーカー プロセスにルーティングする Windows サービス。</span><span class="sxs-lookup"><span data-stu-id="e5041-107">Windows services that receive messages on specific network protocols and communicate with WAS to route incoming messages to the correct worker process.</span></span>  
   
--   <span data-ttu-id="bf6d0-108">WAS : </span><span class="sxs-lookup"><span data-stu-id="bf6d0-108">WAS.</span></span> <span data-ttu-id="bf6d0-109">ワーカー プロセスの作成と有効期間を管理する Windows サービス。</span><span class="sxs-lookup"><span data-stu-id="bf6d0-109">The Windows service that manages the creation and lifetime of worker processes.</span></span>  
+-   <span data-ttu-id="e5041-108">WAS : </span><span class="sxs-lookup"><span data-stu-id="e5041-108">WAS.</span></span> <span data-ttu-id="e5041-109">ワーカー プロセスの作成と有効期間を管理する Windows サービス。</span><span class="sxs-lookup"><span data-stu-id="e5041-109">The Windows service that manages the creation and lifetime of worker processes.</span></span>  
   
--   <span data-ttu-id="bf6d0-110">汎用ワーカー プロセス実行可能ファイル (w3wp.exe)。</span><span class="sxs-lookup"><span data-stu-id="bf6d0-110">The generic worker process executable (w3wp.exe).</span></span>  
+-   <span data-ttu-id="e5041-110">汎用ワーカー プロセス実行可能ファイル (w3wp.exe)。</span><span class="sxs-lookup"><span data-stu-id="e5041-110">The generic worker process executable (w3wp.exe).</span></span>  
   
--   <span data-ttu-id="bf6d0-111">アプリケーション マネージャー : </span><span class="sxs-lookup"><span data-stu-id="bf6d0-111">Application manager.</span></span> <span data-ttu-id="bf6d0-112">ワーカー プロセス内のアプリケーションをホストするアプリケーション ドメインの作成と有効期間を管理します。</span><span class="sxs-lookup"><span data-stu-id="bf6d0-112">Manages the creation and lifetime of application domains that host applications within the worker process.</span></span>  
+-   <span data-ttu-id="e5041-111">アプリケーション マネージャー : </span><span class="sxs-lookup"><span data-stu-id="e5041-111">Application manager.</span></span> <span data-ttu-id="e5041-112">ワーカー プロセス内のアプリケーションをホストするアプリケーション ドメインの作成と有効期間を管理します。</span><span class="sxs-lookup"><span data-stu-id="e5041-112">Manages the creation and lifetime of application domains that host applications within the worker process.</span></span>  
   
--   <span data-ttu-id="bf6d0-113">プロトコル ハンドラー : </span><span class="sxs-lookup"><span data-stu-id="bf6d0-113">Protocol handlers.</span></span> <span data-ttu-id="bf6d0-114">ワーカー プロセスで実行され、ワーカー プロセスと個々のリスナー アダプター間の通信を管理するプロトコル固有のコンポーネント。</span><span class="sxs-lookup"><span data-stu-id="bf6d0-114">Protocol-specific components that run in the worker process and manage communication between the worker process and the individual listener adapters.</span></span> <span data-ttu-id="bf6d0-115">プロトコル ハンドラーには、プロセス プロトコル ハンドラーと AppDomain プロトコル ハンドラーの 2 種類があります。</span><span class="sxs-lookup"><span data-stu-id="bf6d0-115">Two types of protocol handlers exist: process protocol handlers and AppDomain protocol handlers.</span></span>  
+-   <span data-ttu-id="e5041-113">プロトコル ハンドラー : </span><span class="sxs-lookup"><span data-stu-id="e5041-113">Protocol handlers.</span></span> <span data-ttu-id="e5041-114">ワーカー プロセスで実行され、ワーカー プロセスと個々のリスナー アダプター間の通信を管理するプロトコル固有のコンポーネント。</span><span class="sxs-lookup"><span data-stu-id="e5041-114">Protocol-specific components that run in the worker process and manage communication between the worker process and the individual listener adapters.</span></span> <span data-ttu-id="e5041-115">プロトコル ハンドラーには、プロセス プロトコル ハンドラーと AppDomain プロトコル ハンドラーの 2 種類があります。</span><span class="sxs-lookup"><span data-stu-id="e5041-115">Two types of protocol handlers exist: process protocol handlers and AppDomain protocol handlers.</span></span>  
   
- <span data-ttu-id="bf6d0-116">ワーカー プロセス インスタンスをアクティブ化する場合、WAS は必要なプロセス プロトコル ハンドラーをワーカー プロセスに読み込み、アプリケーション マネージャーを使用して、アプリケーションをホストするアプリケーション ドメインを作成します。</span><span class="sxs-lookup"><span data-stu-id="bf6d0-116">When WAS activates a worker process instance, it loads the process protocol handlers required into the worker process and uses the application manager to create an application domain to host the application.</span></span> <span data-ttu-id="bf6d0-117">アプリケーション ドメインは、アプリケーションのコードと、アプリケーションが使用するネットワーク プロトコルに必要な AppDomain プロトコル ハンドラーを読み込みます。</span><span class="sxs-lookup"><span data-stu-id="bf6d0-117">The application domain loads the application’s code as well as the AppDomain protocol handlers that the network protocols used by the application require.</span></span>  
+ <span data-ttu-id="e5041-116">ワーカー プロセス インスタンスをアクティブ化する場合、WAS は必要なプロセス プロトコル ハンドラーをワーカー プロセスに読み込み、アプリケーション マネージャーを使用して、アプリケーションをホストするアプリケーション ドメインを作成します。</span><span class="sxs-lookup"><span data-stu-id="e5041-116">When WAS activates a worker process instance, it loads the process protocol handlers required into the worker process and uses the application manager to create an application domain to host the application.</span></span> <span data-ttu-id="e5041-117">アプリケーション ドメインは、アプリケーションのコードと、アプリケーションが使用するネットワーク プロトコルに必要な AppDomain プロトコル ハンドラーを読み込みます。</span><span class="sxs-lookup"><span data-stu-id="e5041-117">The application domain loads the application’s code as well as the AppDomain protocol handlers that the network protocols used by the application require.</span></span>  
   
- <span data-ttu-id="bf6d0-118">![WAS アーキテクチャ](../../../../docs/framework/wcf/feature-details/media/wasarchitecture.gif "WASArchitecture")</span><span class="sxs-lookup"><span data-stu-id="bf6d0-118">![WAS Architecture](../../../../docs/framework/wcf/feature-details/media/wasarchitecture.gif "WASArchitecture")</span></span>  
+ <span data-ttu-id="e5041-118">![WAS アーキテクチャ](../../../../docs/framework/wcf/feature-details/media/wasarchitecture.gif "WASArchitecture")</span><span class="sxs-lookup"><span data-stu-id="e5041-118">![WAS Architecture](../../../../docs/framework/wcf/feature-details/media/wasarchitecture.gif "WASArchitecture")</span></span>  
   
-### <a name="listener-adapters"></a><span data-ttu-id="bf6d0-119">リスナー アダプター</span><span class="sxs-lookup"><span data-stu-id="bf6d0-119">Listener Adapters</span></span>  
- <span data-ttu-id="bf6d0-120">リスナー アダプターは個別の Windows サービスであり、リッスンするネットワーク プロトコルを使用して、メッセージ受信に使用されるネットワーク通信ロジックを実装します。</span><span class="sxs-lookup"><span data-stu-id="bf6d0-120">Listener adapters are individual Windows services that implement the network communication logic used to receive messages using the network protocol on which they listen.</span></span> <span data-ttu-id="bf6d0-121">次の表は、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] プロトコルのリスナー アダプターの一覧です。</span><span class="sxs-lookup"><span data-stu-id="bf6d0-121">The following table lists the listener adapters for [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] protocols.</span></span>  
+### <a name="listener-adapters"></a><span data-ttu-id="e5041-119">リスナー アダプター</span><span class="sxs-lookup"><span data-stu-id="e5041-119">Listener Adapters</span></span>  
+ <span data-ttu-id="e5041-120">リスナー アダプターは個別の Windows サービスであり、リッスンするネットワーク プロトコルを使用して、メッセージ受信に使用されるネットワーク通信ロジックを実装します。</span><span class="sxs-lookup"><span data-stu-id="e5041-120">Listener adapters are individual Windows services that implement the network communication logic used to receive messages using the network protocol on which they listen.</span></span> <span data-ttu-id="e5041-121">次の表には、Windows Communication Foundation (WCF) プロトコルのリスナー アダプターが一覧表示します。</span><span class="sxs-lookup"><span data-stu-id="e5041-121">The following table lists the listener adapters for Windows Communication Foundation (WCF) protocols.</span></span>  
   
-|<span data-ttu-id="bf6d0-122">リスナー アダプターのサービス名</span><span class="sxs-lookup"><span data-stu-id="bf6d0-122">Listener adapter service name</span></span>|<span data-ttu-id="bf6d0-123">プロトコル</span><span class="sxs-lookup"><span data-stu-id="bf6d0-123">Protocol</span></span>|<span data-ttu-id="bf6d0-124">メモ</span><span class="sxs-lookup"><span data-stu-id="bf6d0-124">Notes</span></span>|  
+|<span data-ttu-id="e5041-122">リスナー アダプターのサービス名</span><span class="sxs-lookup"><span data-stu-id="e5041-122">Listener adapter service name</span></span>|<span data-ttu-id="e5041-123">プロトコル</span><span class="sxs-lookup"><span data-stu-id="e5041-123">Protocol</span></span>|<span data-ttu-id="e5041-124">メモ</span><span class="sxs-lookup"><span data-stu-id="e5041-124">Notes</span></span>|  
 |-----------------------------------|--------------|-----------|  
-|<span data-ttu-id="bf6d0-125">W3SVC</span><span class="sxs-lookup"><span data-stu-id="bf6d0-125">W3SVC</span></span>|<span data-ttu-id="bf6d0-126">http</span><span class="sxs-lookup"><span data-stu-id="bf6d0-126">http</span></span>|<span data-ttu-id="bf6d0-127">IIS 7.0 と [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の両方に HTTP アクティベーションを提供する共通コンポーネントです。</span><span class="sxs-lookup"><span data-stu-id="bf6d0-127">Common component that provides HTTP activation for both IIS 7.0 and [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].</span></span>|  
-|<span data-ttu-id="bf6d0-128">NetTcpActivator</span><span class="sxs-lookup"><span data-stu-id="bf6d0-128">NetTcpActivator</span></span>|<span data-ttu-id="bf6d0-129">net.tcp</span><span class="sxs-lookup"><span data-stu-id="bf6d0-129">net.tcp</span></span>|<span data-ttu-id="bf6d0-130">NetTcpPortSharing サービスに依存します。</span><span class="sxs-lookup"><span data-stu-id="bf6d0-130">Depends on the NetTcpPortSharing service.</span></span>|  
-|<span data-ttu-id="bf6d0-131">NetPipeActivator</span><span class="sxs-lookup"><span data-stu-id="bf6d0-131">NetPipeActivator</span></span>|<span data-ttu-id="bf6d0-132">net.pipe</span><span class="sxs-lookup"><span data-stu-id="bf6d0-132">net.pipe</span></span>||  
-|<span data-ttu-id="bf6d0-133">NetMsmqActivator</span><span class="sxs-lookup"><span data-stu-id="bf6d0-133">NetMsmqActivator</span></span>|<span data-ttu-id="bf6d0-134">net.msmq</span><span class="sxs-lookup"><span data-stu-id="bf6d0-134">net.msmq</span></span>|<span data-ttu-id="bf6d0-135">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ベースのメッセージ キュー アプリケーションで使用します。</span><span class="sxs-lookup"><span data-stu-id="bf6d0-135">For use with [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]-based Message Queuing applications.</span></span>|  
-|<span data-ttu-id="bf6d0-136">NetMsmqActivator</span><span class="sxs-lookup"><span data-stu-id="bf6d0-136">NetMsmqActivator</span></span>|<span data-ttu-id="bf6d0-137">msmq.formatname</span><span class="sxs-lookup"><span data-stu-id="bf6d0-137">msmq.formatname</span></span>|<span data-ttu-id="bf6d0-138">既存のメッセージ キュー アプリケーションとの下位互換性を提供します。</span><span class="sxs-lookup"><span data-stu-id="bf6d0-138">Provides backwards compatibility with existing Message Queuing applications.</span></span>|  
+|<span data-ttu-id="e5041-125">W3SVC</span><span class="sxs-lookup"><span data-stu-id="e5041-125">W3SVC</span></span>|<span data-ttu-id="e5041-126">http</span><span class="sxs-lookup"><span data-stu-id="e5041-126">http</span></span>|<span data-ttu-id="e5041-127">IIS 7.0 と WCF HTTP アクティブ化を提供する共通のコンポーネント。</span><span class="sxs-lookup"><span data-stu-id="e5041-127">Common component that provides HTTP activation for both IIS 7.0 and WCF.</span></span>|  
+|<span data-ttu-id="e5041-128">NetTcpActivator</span><span class="sxs-lookup"><span data-stu-id="e5041-128">NetTcpActivator</span></span>|<span data-ttu-id="e5041-129">net.tcp</span><span class="sxs-lookup"><span data-stu-id="e5041-129">net.tcp</span></span>|<span data-ttu-id="e5041-130">NetTcpPortSharing サービスに依存します。</span><span class="sxs-lookup"><span data-stu-id="e5041-130">Depends on the NetTcpPortSharing service.</span></span>|  
+|<span data-ttu-id="e5041-131">NetPipeActivator</span><span class="sxs-lookup"><span data-stu-id="e5041-131">NetPipeActivator</span></span>|<span data-ttu-id="e5041-132">net.pipe</span><span class="sxs-lookup"><span data-stu-id="e5041-132">net.pipe</span></span>||  
+|<span data-ttu-id="e5041-133">NetMsmqActivator</span><span class="sxs-lookup"><span data-stu-id="e5041-133">NetMsmqActivator</span></span>|<span data-ttu-id="e5041-134">net.msmq</span><span class="sxs-lookup"><span data-stu-id="e5041-134">net.msmq</span></span>|<span data-ttu-id="e5041-135">メッセージ キューの WCF ベースのアプリケーションで使用します。</span><span class="sxs-lookup"><span data-stu-id="e5041-135">For use with WCF-based Message Queuing applications.</span></span>|  
+|<span data-ttu-id="e5041-136">NetMsmqActivator</span><span class="sxs-lookup"><span data-stu-id="e5041-136">NetMsmqActivator</span></span>|<span data-ttu-id="e5041-137">msmq.formatname</span><span class="sxs-lookup"><span data-stu-id="e5041-137">msmq.formatname</span></span>|<span data-ttu-id="e5041-138">既存のメッセージ キュー アプリケーションとの下位互換性を提供します。</span><span class="sxs-lookup"><span data-stu-id="e5041-138">Provides backwards compatibility with existing Message Queuing applications.</span></span>|  
   
- <span data-ttu-id="bf6d0-139">次の XML サンプルに示すように、特定プロトコルのリスナー アダプターは、インストール時に applicationHost.config ファイルに登録されます。</span><span class="sxs-lookup"><span data-stu-id="bf6d0-139">Listener adapters for specific protocols are registered during installation in the applicationHost.config file, as shown in the following XML example.</span></span>  
+ <span data-ttu-id="e5041-139">次の XML サンプルに示すように、特定プロトコルのリスナー アダプターは、インストール時に applicationHost.config ファイルに登録されます。</span><span class="sxs-lookup"><span data-stu-id="e5041-139">Listener adapters for specific protocols are registered during installation in the applicationHost.config file, as shown in the following XML example.</span></span>  
   
 ```xml  
 <system.applicationHost>  
@@ -69,8 +57,8 @@ ms.lasthandoff: 12/22/2017
 </system.applicationHost>  
 ```  
   
-### <a name="protocol-handlers"></a><span data-ttu-id="bf6d0-140">プロトコル ハンドラー</span><span class="sxs-lookup"><span data-stu-id="bf6d0-140">Protocol Handlers</span></span>  
- <span data-ttu-id="bf6d0-141">特定のプロトコルのプロセス プロトコル ハンドラーと AppDomain プロトコル ハンドラーは、コンピューター レベルの Web.config ファイルに登録されます。</span><span class="sxs-lookup"><span data-stu-id="bf6d0-141">Process and AppDomain protocol handlers for specific protocols are registered in the machine-level Web.config file.</span></span>  
+### <a name="protocol-handlers"></a><span data-ttu-id="e5041-140">プロトコル ハンドラー</span><span class="sxs-lookup"><span data-stu-id="e5041-140">Protocol Handlers</span></span>  
+ <span data-ttu-id="e5041-141">特定のプロトコルのプロセス プロトコル ハンドラーと AppDomain プロトコル ハンドラーは、コンピューター レベルの Web.config ファイルに登録されます。</span><span class="sxs-lookup"><span data-stu-id="e5041-141">Process and AppDomain protocol handlers for specific protocols are registered in the machine-level Web.config file.</span></span>  
   
 ```xml  
 <system.web>  
@@ -96,6 +84,6 @@ ms.lasthandoff: 12/22/2017
 </system.web>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="bf6d0-142">参照</span><span class="sxs-lookup"><span data-stu-id="bf6d0-142">See Also</span></span>  
- [<span data-ttu-id="bf6d0-143">WCF で使用するための WAS を設定する</span><span class="sxs-lookup"><span data-stu-id="bf6d0-143">Configuring WAS for Use with WCF</span></span>](../../../../docs/framework/wcf/feature-details/configuring-the-wpa--service-for-use-with-wcf.md)  
- [<span data-ttu-id="bf6d0-144">Windows Server App Fabric のホスティング機能</span><span class="sxs-lookup"><span data-stu-id="bf6d0-144">Windows Server App Fabric Hosting Features</span></span>](http://go.microsoft.com/fwlink/?LinkId=201276)
+## <a name="see-also"></a><span data-ttu-id="e5041-142">関連項目</span><span class="sxs-lookup"><span data-stu-id="e5041-142">See Also</span></span>  
+ [<span data-ttu-id="e5041-143">WCF で使用するための WAS を設定する</span><span class="sxs-lookup"><span data-stu-id="e5041-143">Configuring WAS for Use with WCF</span></span>](../../../../docs/framework/wcf/feature-details/configuring-the-wpa--service-for-use-with-wcf.md)  
+ [<span data-ttu-id="e5041-144">Windows Server App Fabric のホスティング機能</span><span class="sxs-lookup"><span data-stu-id="e5041-144">Windows Server App Fabric Hosting Features</span></span>](http://go.microsoft.com/fwlink/?LinkId=201276)

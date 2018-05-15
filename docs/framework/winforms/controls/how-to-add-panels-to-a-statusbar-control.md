@@ -1,13 +1,6 @@
 ---
-title: "方法 : StatusBar コントロールにパネルを追加する"
-ms.custom: 
+title: '方法 : StatusBar コントロールにパネルを追加する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,31 +10,26 @@ helpviewer_keywords:
 - status bars [Windows Forms], adding panels
 - StatusBar control [Windows Forms], adding panels
 ms.assetid: 835e3902-288c-4c38-9d69-0696d8695009
-caps.latest.revision: "15"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 044fffa06a3900e64e66f5f87f259e34340f4959
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: fa5246d76e09091350a5d5276f2c06824b9906d1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="how-to-add-panels-to-a-statusbar-control"></a><span data-ttu-id="ed13f-102">方法 : StatusBar コントロールにパネルを追加する</span><span class="sxs-lookup"><span data-stu-id="ed13f-102">How to: Add Panels to a StatusBar Control</span></span>
+# <a name="how-to-add-panels-to-a-statusbar-control"></a><span data-ttu-id="d1717-102">方法 : StatusBar コントロールにパネルを追加する</span><span class="sxs-lookup"><span data-stu-id="d1717-102">How to: Add Panels to a StatusBar Control</span></span>
 > [!IMPORTANT]
->  <span data-ttu-id="ed13f-103"><xref:System.Windows.Forms.StatusStrip>と<xref:System.Windows.Forms.ToolStripStatusLabel>コントロールの置換し、する機能を追加、<xref:System.Windows.Forms.StatusBar>と<xref:System.Windows.Forms.StatusBarPanel>コントロールですただし、、<xref:System.Windows.Forms.StatusBar>と<xref:System.Windows.Forms.StatusBarPanel>場合、旧バージョンとの互換性と将来の使用の両方のコントロールが保持されますします。選択します。</span><span class="sxs-lookup"><span data-stu-id="ed13f-103">The <xref:System.Windows.Forms.StatusStrip> and <xref:System.Windows.Forms.ToolStripStatusLabel> controls replace and add functionality to the <xref:System.Windows.Forms.StatusBar> and <xref:System.Windows.Forms.StatusBarPanel> controls; however, the <xref:System.Windows.Forms.StatusBar> and <xref:System.Windows.Forms.StatusBarPanel> controls are retained for both backward compatibility and future use, if you choose.</span></span>  
+>  <span data-ttu-id="d1717-103"><xref:System.Windows.Forms.StatusStrip>と<xref:System.Windows.Forms.ToolStripStatusLabel>コントロールの置換し、する機能を追加、<xref:System.Windows.Forms.StatusBar>と<xref:System.Windows.Forms.StatusBarPanel>コントロールですただし、、<xref:System.Windows.Forms.StatusBar>と<xref:System.Windows.Forms.StatusBarPanel>場合、旧バージョンとの互換性と将来の使用の両方のコントロールが保持されますします。選択します。</span><span class="sxs-lookup"><span data-stu-id="d1717-103">The <xref:System.Windows.Forms.StatusStrip> and <xref:System.Windows.Forms.ToolStripStatusLabel> controls replace and add functionality to the <xref:System.Windows.Forms.StatusBar> and <xref:System.Windows.Forms.StatusBarPanel> controls; however, the <xref:System.Windows.Forms.StatusBar> and <xref:System.Windows.Forms.StatusBarPanel> controls are retained for both backward compatibility and future use, if you choose.</span></span>  
   
- <span data-ttu-id="ed13f-104">内のプログラミング可能な領域、 [StatusBar コントロール](../../../../docs/framework/winforms/controls/statusbar-control-windows-forms.md)コントロールのインスタンスから成る、<xref:System.Windows.Forms.StatusBarPanel>クラスです。</span><span class="sxs-lookup"><span data-stu-id="ed13f-104">The programmable area within a [StatusBar Control](../../../../docs/framework/winforms/controls/statusbar-control-windows-forms.md) control consists of instances of the <xref:System.Windows.Forms.StatusBarPanel> class.</span></span> <span data-ttu-id="ed13f-105">追加を追加するには、<xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection>クラスです。</span><span class="sxs-lookup"><span data-stu-id="ed13f-105">These are added through additions to the <xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection> class.</span></span>  
+ <span data-ttu-id="d1717-104">内のプログラミング可能な領域、 [StatusBar コントロール](../../../../docs/framework/winforms/controls/statusbar-control-windows-forms.md)コントロールのインスタンスから成る、<xref:System.Windows.Forms.StatusBarPanel>クラスです。</span><span class="sxs-lookup"><span data-stu-id="d1717-104">The programmable area within a [StatusBar Control](../../../../docs/framework/winforms/controls/statusbar-control-windows-forms.md) control consists of instances of the <xref:System.Windows.Forms.StatusBarPanel> class.</span></span> <span data-ttu-id="d1717-105">追加を追加するには、<xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection>クラスです。</span><span class="sxs-lookup"><span data-stu-id="d1717-105">These are added through additions to the <xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection> class.</span></span>  
   
-### <a name="to-add-panels-to-a-status-bar"></a><span data-ttu-id="ed13f-106">ステータス バーにパネルを追加するには</span><span class="sxs-lookup"><span data-stu-id="ed13f-106">To add panels to a status bar</span></span>  
+### <a name="to-add-panels-to-a-status-bar"></a><span data-ttu-id="d1717-106">ステータス バーにパネルを追加するには</span><span class="sxs-lookup"><span data-stu-id="d1717-106">To add panels to a status bar</span></span>  
   
-1.  <span data-ttu-id="ed13f-107">プロシージャでは、ステータス バー パネルの作成に追加することによって、<xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection>です。</span><span class="sxs-lookup"><span data-stu-id="ed13f-107">In a procedure, create status-bar panels by adding them to the <xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection>.</span></span> <span data-ttu-id="ed13f-108">を通じて渡されたインデックスを使用して個々 のパネルのプロパティの設定を指定、<xref:System.Windows.Forms.StatusBar.Panels%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="ed13f-108">Specify property settings for individual panels by using its index passed through the <xref:System.Windows.Forms.StatusBar.Panels%2A> property.</span></span>  
+1.  <span data-ttu-id="d1717-107">プロシージャでは、ステータス バー パネルの作成に追加することによって、<xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection>です。</span><span class="sxs-lookup"><span data-stu-id="d1717-107">In a procedure, create status-bar panels by adding them to the <xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection>.</span></span> <span data-ttu-id="d1717-108">を通じて渡されたインデックスを使用して個々 のパネルのプロパティの設定を指定、<xref:System.Windows.Forms.StatusBar.Panels%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="d1717-108">Specify property settings for individual panels by using its index passed through the <xref:System.Windows.Forms.StatusBar.Panels%2A> property.</span></span>  
   
-     <span data-ttu-id="ed13f-109">アイコンの場所は次のコード例では、パスが設定、**マイ ドキュメント**フォルダーです。</span><span class="sxs-lookup"><span data-stu-id="ed13f-109">In the following code example, the path set for the location of the icon is the **My Documents** folder.</span></span> <span data-ttu-id="ed13f-110">この場所は、Windows オペレーティング システムを実行しているほとんどのコンピューターがこのフォルダーを含めることを想定するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="ed13f-110">This location is used because you can assume that most computers running the Windows operating system will include this folder.</span></span> <span data-ttu-id="ed13f-111">この場所を選択すると、最小限のシステム アクセスのレベルを持つユーザーは、アプリケーションを安全に実行もできます。</span><span class="sxs-lookup"><span data-stu-id="ed13f-111">Choosing this location also allows users with minimal system access levels to safely run the application.</span></span> <span data-ttu-id="ed13f-112">次の例には、フォームが必要です、<xref:System.Windows.Forms.StatusBar>コントロールが既に追加されています。</span><span class="sxs-lookup"><span data-stu-id="ed13f-112">The following example requires a form with a <xref:System.Windows.Forms.StatusBar> control already added.</span></span>  
+     <span data-ttu-id="d1717-109">アイコンの場所は次のコード例では、パスが設定、**マイ ドキュメント**フォルダーです。</span><span class="sxs-lookup"><span data-stu-id="d1717-109">In the following code example, the path set for the location of the icon is the **My Documents** folder.</span></span> <span data-ttu-id="d1717-110">この場所は、Windows オペレーティング システムを実行しているほとんどのコンピューターがこのフォルダーを含めることを想定するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="d1717-110">This location is used because you can assume that most computers running the Windows operating system will include this folder.</span></span> <span data-ttu-id="d1717-111">この場所を選択すると、最小限のシステム アクセスのレベルを持つユーザーは、アプリケーションを安全に実行もできます。</span><span class="sxs-lookup"><span data-stu-id="d1717-111">Choosing this location also allows users with minimal system access levels to safely run the application.</span></span> <span data-ttu-id="d1717-112">次の例には、フォームが必要です、<xref:System.Windows.Forms.StatusBar>コントロールが既に追加されています。</span><span class="sxs-lookup"><span data-stu-id="d1717-112">The following example requires a form with a <xref:System.Windows.Forms.StatusBar> control already added.</span></span>  
   
     > [!NOTE]
-    >  <span data-ttu-id="ed13f-113"><xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection>は、0 から始まるコレクションので、コードが続行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="ed13f-113">The <xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection> is a zero-based collection, so code should proceed accordingly.</span></span>  
+    >  <span data-ttu-id="d1717-113"><xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection>は、0 から始まるコレクションので、コードが続行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="d1717-113">The <xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection> is a zero-based collection, so code should proceed accordingly.</span></span>  
   
     ```vb  
     Public Sub CreateStatusBarPanels()  
@@ -131,11 +119,11 @@ ms.lasthandoff: 01/19/2018
        }  
     ```  
   
-## <a name="see-also"></a><span data-ttu-id="ed13f-114">参照</span><span class="sxs-lookup"><span data-stu-id="ed13f-114">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="d1717-114">関連項目</span><span class="sxs-lookup"><span data-stu-id="d1717-114">See Also</span></span>  
  <xref:System.Windows.Forms.StatusBar>  
  <xref:System.Windows.Forms.ToolStripStatusLabel>  
- [<span data-ttu-id="ed13f-115">コレクション エディター ダイアログ ボックス</span><span class="sxs-lookup"><span data-stu-id="ed13f-115">Collection Editor Dialog Box</span></span>](http://msdn.microsoft.com/library/53fb3aad-bffa-4da5-ac89-8438e6fc803c)  
- [<span data-ttu-id="ed13f-116">方法: ステータス バー パネルのサイズを設定する</span><span class="sxs-lookup"><span data-stu-id="ed13f-116">How to: Set the Size of Status-Bar Panels</span></span>](../../../../docs/framework/winforms/controls/how-to-set-the-size-of-status-bar-panels.md)  
- [<span data-ttu-id="ed13f-117">チュートリアル: ステータス バー情報の実行時更新</span><span class="sxs-lookup"><span data-stu-id="ed13f-117">Walkthrough: Updating Status Bar Information at Run Time</span></span>](../../../../docs/framework/winforms/controls/walkthrough-updating-status-bar-information-at-run-time.md)  
- [<span data-ttu-id="ed13f-118">方法: Windows フォームの StatusBar コントロールでクリックされたパネルを確認する</span><span class="sxs-lookup"><span data-stu-id="ed13f-118">How to: Determine Which Panel in the Windows Forms StatusBar Control Was Clicked</span></span>](../../../../docs/framework/winforms/controls/determine-which-panel-wf-statusbar-control-was-clicked.md)  
- [<span data-ttu-id="ed13f-119">StatusBar コントロールの概要</span><span class="sxs-lookup"><span data-stu-id="ed13f-119">StatusBar Control Overview</span></span>](../../../../docs/framework/winforms/controls/statusbar-control-overview-windows-forms.md)
+ [<span data-ttu-id="d1717-115">コレクション エディター ダイアログ ボックス</span><span class="sxs-lookup"><span data-stu-id="d1717-115">Collection Editor Dialog Box</span></span>](http://msdn.microsoft.com/library/53fb3aad-bffa-4da5-ac89-8438e6fc803c)  
+ [<span data-ttu-id="d1717-116">方法: ステータス バー パネルのサイズを設定する</span><span class="sxs-lookup"><span data-stu-id="d1717-116">How to: Set the Size of Status-Bar Panels</span></span>](../../../../docs/framework/winforms/controls/how-to-set-the-size-of-status-bar-panels.md)  
+ [<span data-ttu-id="d1717-117">チュートリアル: ステータス バー情報の実行時更新</span><span class="sxs-lookup"><span data-stu-id="d1717-117">Walkthrough: Updating Status Bar Information at Run Time</span></span>](../../../../docs/framework/winforms/controls/walkthrough-updating-status-bar-information-at-run-time.md)  
+ [<span data-ttu-id="d1717-118">方法: Windows フォームの StatusBar コントロールでクリックされたパネルを確認する</span><span class="sxs-lookup"><span data-stu-id="d1717-118">How to: Determine Which Panel in the Windows Forms StatusBar Control Was Clicked</span></span>](../../../../docs/framework/winforms/controls/determine-which-panel-wf-statusbar-control-was-clicked.md)  
+ [<span data-ttu-id="d1717-119">StatusBar コントロールの概要</span><span class="sxs-lookup"><span data-stu-id="d1717-119">StatusBar Control Overview</span></span>](../../../../docs/framework/winforms/controls/statusbar-control-overview-windows-forms.md)

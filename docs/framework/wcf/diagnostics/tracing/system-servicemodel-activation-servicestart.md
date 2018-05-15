@@ -1,32 +1,20 @@
 ---
 title: System.ServiceModel.Activation.ServiceStart
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 29203bbc-db8d-4bb9-a614-351579902ca6
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: f1ca7c46906e7ffc5e325bdb1f345e52e1a2167e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 2d01902e79bd56fa69ab9fd5fccdae1a47d840e9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="systemservicemodelactivationservicestart"></a><span data-ttu-id="f67a0-102">System.ServiceModel.Activation.ServiceStart</span><span class="sxs-lookup"><span data-stu-id="f67a0-102">System.ServiceModel.Activation.ServiceStart</span></span>
-<span data-ttu-id="f67a0-103">System.ServiceModel.Activation.ServiceStart</span><span class="sxs-lookup"><span data-stu-id="f67a0-103">System.ServiceModel.Activation.ServiceStart</span></span>  
+# <a name="systemservicemodelactivationservicestart"></a><span data-ttu-id="e2b2c-102">System.ServiceModel.Activation.ServiceStart</span><span class="sxs-lookup"><span data-stu-id="e2b2c-102">System.ServiceModel.Activation.ServiceStart</span></span>
+<span data-ttu-id="e2b2c-103">System.ServiceModel.Activation.ServiceStart</span><span class="sxs-lookup"><span data-stu-id="e2b2c-103">System.ServiceModel.Activation.ServiceStart</span></span>  
   
-## <a name="description"></a><span data-ttu-id="f67a0-104">説明</span><span class="sxs-lookup"><span data-stu-id="f67a0-104">Description</span></span>  
- <span data-ttu-id="f67a0-105">サービスを開始する要求を受信しました。</span><span class="sxs-lookup"><span data-stu-id="f67a0-105">A request to start the service was received.</span></span>  
+## <a name="description"></a><span data-ttu-id="e2b2c-104">説明</span><span class="sxs-lookup"><span data-stu-id="e2b2c-104">Description</span></span>  
+ <span data-ttu-id="e2b2c-105">サービスを開始する要求を受信しました。</span><span class="sxs-lookup"><span data-stu-id="e2b2c-105">A request to start the service was received.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="f67a0-106">参照</span><span class="sxs-lookup"><span data-stu-id="f67a0-106">See Also</span></span>  
- [<span data-ttu-id="f67a0-107">トレース</span><span class="sxs-lookup"><span data-stu-id="f67a0-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="f67a0-108">トレースを使用したアプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="f67a0-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="f67a0-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="f67a0-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="e2b2c-106">関連項目</span><span class="sxs-lookup"><span data-stu-id="e2b2c-106">See Also</span></span>  
+ [<span data-ttu-id="e2b2c-107">トレース</span><span class="sxs-lookup"><span data-stu-id="e2b2c-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="e2b2c-108">トレースを使用したアプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="e2b2c-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="e2b2c-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="e2b2c-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

@@ -1,32 +1,20 @@
 ---
 title: System.ServiceModel.ComIntegration.ComIntegrationDllHostInitializerAddingHost
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 404bed8d-44d9-419f-972b-2809fec2a0f1
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 68f2b43e230d37440c2ba72017b9127ca16714f0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ed1f0a1924b4447b8da27cff08366700116419d4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="systemservicemodelcomintegrationcomintegrationdllhostinitializeraddinghost"></a><span data-ttu-id="22753-102">System.ServiceModel.ComIntegration.ComIntegrationDllHostInitializerAddingHost</span><span class="sxs-lookup"><span data-stu-id="22753-102">System.ServiceModel.ComIntegration.ComIntegrationDllHostInitializerAddingHost</span></span>
-<span data-ttu-id="22753-103">System.ServiceModel.ComIntegration.ComIntegrationDllHostInitializerAddingHost</span><span class="sxs-lookup"><span data-stu-id="22753-103">System.ServiceModel.ComIntegration.ComIntegrationDllHostInitializerAddingHost</span></span>  
+# <a name="systemservicemodelcomintegrationcomintegrationdllhostinitializeraddinghost"></a><span data-ttu-id="c01fa-102">System.ServiceModel.ComIntegration.ComIntegrationDllHostInitializerAddingHost</span><span class="sxs-lookup"><span data-stu-id="c01fa-102">System.ServiceModel.ComIntegration.ComIntegrationDllHostInitializerAddingHost</span></span>
+<span data-ttu-id="c01fa-103">System.ServiceModel.ComIntegration.ComIntegrationDllHostInitializerAddingHost</span><span class="sxs-lookup"><span data-stu-id="c01fa-103">System.ServiceModel.ComIntegration.ComIntegrationDllHostInitializerAddingHost</span></span>  
   
-## <a name="description"></a><span data-ttu-id="22753-104">説明</span><span class="sxs-lookup"><span data-stu-id="22753-104">Description</span></span>  
- <span data-ttu-id="22753-105">ComPlus : DllHost 初期化子 : ホストを追加しています。</span><span class="sxs-lookup"><span data-stu-id="22753-105">ComPlus: DllHost initializer: Adding host.</span></span>  
+## <a name="description"></a><span data-ttu-id="c01fa-104">説明</span><span class="sxs-lookup"><span data-stu-id="c01fa-104">Description</span></span>  
+ <span data-ttu-id="c01fa-105">ComPlus : DllHost 初期化子 : ホストを追加しています。</span><span class="sxs-lookup"><span data-stu-id="c01fa-105">ComPlus: DllHost initializer: Adding host.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="22753-106">参照</span><span class="sxs-lookup"><span data-stu-id="22753-106">See Also</span></span>  
- [<span data-ttu-id="22753-107">トレース</span><span class="sxs-lookup"><span data-stu-id="22753-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="22753-108">トレースを使用したアプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="22753-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="22753-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="22753-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="c01fa-106">関連項目</span><span class="sxs-lookup"><span data-stu-id="c01fa-106">See Also</span></span>  
+ [<span data-ttu-id="c01fa-107">トレース</span><span class="sxs-lookup"><span data-stu-id="c01fa-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="c01fa-108">トレースを使用したアプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="c01fa-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="c01fa-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="c01fa-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

@@ -1,43 +1,31 @@
 ---
 title: Contract2
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 305eeb65-a52f-459e-9aa8-0ef071eade16
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: abdbe581f53931d72a8d60f6b1767c03d5205c9f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 1b751e3d4fd6eae01e3fcd7500f844427d46524c
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/07/2018
 ---
-# <a name="contract"></a><span data-ttu-id="7951f-102">コントラクト</span><span class="sxs-lookup"><span data-stu-id="7951f-102">Contract</span></span>
-<span data-ttu-id="7951f-103">このセクションには、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] のコントラクトを示すサンプルが含まれています。</span><span class="sxs-lookup"><span data-stu-id="7951f-103">This section contains samples that demonstrate contracts in [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].</span></span>  
+# <a name="contract"></a><span data-ttu-id="21f43-102">コントラクト</span><span class="sxs-lookup"><span data-stu-id="21f43-102">Contract</span></span>
+<span data-ttu-id="21f43-103">このセクションには、コントラクトでは、Windows Communication Foundation (WCF) を示すサンプルが含まれています。</span><span class="sxs-lookup"><span data-stu-id="21f43-103">This section contains samples that demonstrate contracts in Windows Communication Foundation (WCF).</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="7951f-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="7951f-104">In This Section</span></span>  
- [<span data-ttu-id="7951f-105">データ コントラクト</span><span class="sxs-lookup"><span data-stu-id="7951f-105">Data Contracts</span></span>](../../../../docs/framework/wcf/samples/data-contracts.md)  
- <span data-ttu-id="7951f-106">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のデータ コントラクトを示します。</span><span class="sxs-lookup"><span data-stu-id="7951f-106">Demonstrates data contracts in [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].</span></span>  
+## <a name="in-this-section"></a><span data-ttu-id="21f43-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="21f43-104">In This Section</span></span>  
+ [<span data-ttu-id="21f43-105">データ コントラクト</span><span class="sxs-lookup"><span data-stu-id="21f43-105">Data Contracts</span></span>](../../../../docs/framework/wcf/samples/data-contracts.md)  
+ <span data-ttu-id="21f43-106">WCF でのデータ コントラクトを示しています。</span><span class="sxs-lookup"><span data-stu-id="21f43-106">Demonstrates data contracts in WCF.</span></span>  
   
- [<span data-ttu-id="7951f-107">メッセージ コントラクト</span><span class="sxs-lookup"><span data-stu-id="7951f-107">Message Contracts</span></span>](../../../../docs/framework/wcf/samples/message-contracts.md)  
- <span data-ttu-id="7951f-108">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のメッセージ コントラクトを示します。</span><span class="sxs-lookup"><span data-stu-id="7951f-108">Demonstrates message contracts in [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].</span></span>  
+ [<span data-ttu-id="21f43-107">メッセージ コントラクト</span><span class="sxs-lookup"><span data-stu-id="21f43-107">Message Contracts</span></span>](../../../../docs/framework/wcf/samples/message-contracts.md)  
+ <span data-ttu-id="21f43-108">WCF でのメッセージ コントラクトを示しています。</span><span class="sxs-lookup"><span data-stu-id="21f43-108">Demonstrates message contracts in WCF.</span></span>  
   
- [<span data-ttu-id="7951f-109">サービス コントラクト</span><span class="sxs-lookup"><span data-stu-id="7951f-109">Service Contracts</span></span>](../../../../docs/framework/wcf/samples/service-contracts.md)  
- <span data-ttu-id="7951f-110">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のサービス コントラクトを示します。</span><span class="sxs-lookup"><span data-stu-id="7951f-110">Demonstrates service contracts in [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].</span></span>  
+ [<span data-ttu-id="21f43-109">サービス コントラクト</span><span class="sxs-lookup"><span data-stu-id="21f43-109">Service Contracts</span></span>](../../../../docs/framework/wcf/samples/service-contracts.md)  
+ <span data-ttu-id="21f43-110">WCF でのサービス コントラクトを示しています。</span><span class="sxs-lookup"><span data-stu-id="21f43-110">Demonstrates service contracts in WCF.</span></span>  
   
- [<span data-ttu-id="7951f-111">DataContractResolver</span><span class="sxs-lookup"><span data-stu-id="7951f-111">DataContractResolver</span></span>](../../../../docs/framework/wcf/samples/datacontractresolver.md)  
- <span data-ttu-id="7951f-112"><xref:System.Runtime.Serialization.DataContractResolver> クラスを使用して、シリアル化プロセスおよび逆シリアル化プロセスをカスタマイズする方法を示します。</span><span class="sxs-lookup"><span data-stu-id="7951f-112">Demonstrates how the serialization and deserialization processes can be customized by using the <xref:System.Runtime.Serialization.DataContractResolver> class.</span></span>  
+ [<span data-ttu-id="21f43-111">DataContractResolver</span><span class="sxs-lookup"><span data-stu-id="21f43-111">DataContractResolver</span></span>](../../../../docs/framework/wcf/samples/datacontractresolver.md)  
+ <span data-ttu-id="21f43-112"><xref:System.Runtime.Serialization.DataContractResolver> クラスを使用して、シリアル化プロセスおよび逆シリアル化プロセスをカスタマイズする方法を示します。</span><span class="sxs-lookup"><span data-stu-id="21f43-112">Demonstrates how the serialization and deserialization processes can be customized by using the <xref:System.Runtime.Serialization.DataContractResolver> class.</span></span>  
   
- [<span data-ttu-id="7951f-113">KnownAssemblyAttribute</span><span class="sxs-lookup"><span data-stu-id="7951f-113">KnownAssemblyAttribute</span></span>](../../../../docs/framework/wcf/samples/knownassemblyattribute.md)  
- <span data-ttu-id="7951f-114">シリアル化および逆シリアル化時に既知の型を動的に追加する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="7951f-114">Demonstrates how to dynamically add known types during serialization and deserialization.</span></span>  
+ [<span data-ttu-id="21f43-113">KnownAssemblyAttribute</span><span class="sxs-lookup"><span data-stu-id="21f43-113">KnownAssemblyAttribute</span></span>](../../../../docs/framework/wcf/samples/knownassemblyattribute.md)  
+ <span data-ttu-id="21f43-114">シリアル化および逆シリアル化時に既知の型を動的に追加する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="21f43-114">Demonstrates how to dynamically add known types during serialization and deserialization.</span></span>  
   
- [<span data-ttu-id="7951f-115">DataContractSerializer と DataContractResolver を使用した NetDataContractSerializer 機能の提供</span><span class="sxs-lookup"><span data-stu-id="7951f-115">Using DataContractSerializer and DataContractResolver to Provide the Functionality of NetDataContractSerializer</span></span>](../../../../docs/framework/wcf/samples/datacontractserializer-datacontractresolver-netdatacontractserializer.md)  
- <span data-ttu-id="7951f-116"><xref:System.Runtime.Serialization.DataContractSerializer> を適切な <xref:System.Runtime.Serialization.DataContractResolver> と共に使用して、<xref:System.Runtime.Serialization.NetDataContractSerializer> と同じ機能を提供する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="7951f-116">Demonstrates how to use <xref:System.Runtime.Serialization.DataContractSerializer> with an appropriate <xref:System.Runtime.Serialization.DataContractResolver> provides the same functionality as <xref:System.Runtime.Serialization.NetDataContractSerializer>.</span></span>
+ [<span data-ttu-id="21f43-115">DataContractSerializer と DataContractResolver を使用した NetDataContractSerializer 機能の提供</span><span class="sxs-lookup"><span data-stu-id="21f43-115">Using DataContractSerializer and DataContractResolver to Provide the Functionality of NetDataContractSerializer</span></span>](../../../../docs/framework/wcf/samples/datacontractserializer-datacontractresolver-netdatacontractserializer.md)  
+ <span data-ttu-id="21f43-116"><xref:System.Runtime.Serialization.DataContractSerializer> を適切な <xref:System.Runtime.Serialization.DataContractResolver> と共に使用して、<xref:System.Runtime.Serialization.NetDataContractSerializer> と同じ機能を提供する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="21f43-116">Demonstrates how to use <xref:System.Runtime.Serialization.DataContractSerializer> with an appropriate <xref:System.Runtime.Serialization.DataContractResolver> provides the same functionality as <xref:System.Runtime.Serialization.NetDataContractSerializer>.</span></span>

@@ -1,32 +1,20 @@
 ---
 title: System.Runtime.Serialization.XsdImportBegin
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: c4b0c97d-2aab-42c3-a921-724a11e40fce
-caps.latest.revision: "5"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 8193d79a31bb9cafc7a3de69c129ecbd78619962
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 3d2ac7346b049c4e03d67c2a6b3fc2a251517701
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="systemruntimeserializationxsdimportbegin"></a><span data-ttu-id="27138-102">System.Runtime.Serialization.XsdImportBegin</span><span class="sxs-lookup"><span data-stu-id="27138-102">System.Runtime.Serialization.XsdImportBegin</span></span>
-<span data-ttu-id="27138-103">System.Runtime.Serialization.XsdImportBegin</span><span class="sxs-lookup"><span data-stu-id="27138-103">System.Runtime.Serialization.XsdImportBegin</span></span>  
+# <a name="systemruntimeserializationxsdimportbegin"></a><span data-ttu-id="c7a2c-102">System.Runtime.Serialization.XsdImportBegin</span><span class="sxs-lookup"><span data-stu-id="c7a2c-102">System.Runtime.Serialization.XsdImportBegin</span></span>
+<span data-ttu-id="c7a2c-103">System.Runtime.Serialization.XsdImportBegin</span><span class="sxs-lookup"><span data-stu-id="c7a2c-103">System.Runtime.Serialization.XsdImportBegin</span></span>  
   
-## <a name="description"></a><span data-ttu-id="27138-104">説明</span><span class="sxs-lookup"><span data-stu-id="27138-104">Description</span></span>  
- <span data-ttu-id="27138-105">スキーマのインポートを開始します。</span><span class="sxs-lookup"><span data-stu-id="27138-105">Starting schema import.</span></span>  
+## <a name="description"></a><span data-ttu-id="c7a2c-104">説明</span><span class="sxs-lookup"><span data-stu-id="c7a2c-104">Description</span></span>  
+ <span data-ttu-id="c7a2c-105">スキーマのインポートを開始します。</span><span class="sxs-lookup"><span data-stu-id="c7a2c-105">Starting schema import.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="27138-106">参照</span><span class="sxs-lookup"><span data-stu-id="27138-106">See Also</span></span>  
- [<span data-ttu-id="27138-107">トレース</span><span class="sxs-lookup"><span data-stu-id="27138-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="27138-108">トレースを使用したアプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="27138-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="27138-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="27138-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="c7a2c-106">関連項目</span><span class="sxs-lookup"><span data-stu-id="c7a2c-106">See Also</span></span>  
+ [<span data-ttu-id="c7a2c-107">トレース</span><span class="sxs-lookup"><span data-stu-id="c7a2c-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="c7a2c-108">トレースを使用したアプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="c7a2c-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="c7a2c-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="c7a2c-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
