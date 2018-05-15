@@ -1,30 +1,18 @@
 ---
-title: "DataRow の比較 (LINQ to DataSet)"
-ms.custom: 
+title: DataRow の比較 (LINQ to DataSet)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 8fe0eadf-297b-487c-8d4b-7816753c2883
-caps.latest.revision: "2"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 78f3e701e63d83a8aa6ae1350ed10229e0200d37
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 79fc91092badfd871a1409e2ee602272f3eae100
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="comparing-datarows-linq-to-dataset"></a><span data-ttu-id="40497-102">DataRow の比較 (LINQ to DataSet)</span><span class="sxs-lookup"><span data-stu-id="40497-102">Comparing DataRows (LINQ to DataSet)</span></span>
-[!INCLUDE[vbteclinqext](../../../../includes/vbteclinqext-md.md)]<span data-ttu-id="40497-103"> では、ソース要素を比較し、両者が等しいかどうかを調べるための各種の集合演算子が定義されています。</span><span class="sxs-lookup"><span data-stu-id="40497-103"> defines various set operators to compare source elements to see if they are equal.</span></span> [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)]<span data-ttu-id="40497-104"> が提供している集合演算子は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="40497-104"> provides the following set operators:</span></span>  
+# <a name="comparing-datarows-linq-to-dataset"></a><span data-ttu-id="8f4d0-102">DataRow の比較 (LINQ to DataSet)</span><span class="sxs-lookup"><span data-stu-id="8f4d0-102">Comparing DataRows (LINQ to DataSet)</span></span>
+[!INCLUDE[vbteclinqext](../../../../includes/vbteclinqext-md.md)]<span data-ttu-id="8f4d0-103"> では、ソース要素を比較し、両者が等しいかどうかを調べるための各種の集合演算子が定義されています。</span><span class="sxs-lookup"><span data-stu-id="8f4d0-103"> defines various set operators to compare source elements to see if they are equal.</span></span> [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)]<span data-ttu-id="8f4d0-104"> が提供している集合演算子は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="8f4d0-104"> provides the following set operators:</span></span>  
   
 -   <xref:System.Linq.Enumerable.Distinct%2A>  
   
@@ -34,22 +22,22 @@ ms.lasthandoff: 01/17/2018
   
 -   <xref:System.Linq.Enumerable.Except%2A>  
   
- <span data-ttu-id="40497-105">これらの演算子は、要素のコレクションに対して <xref:System.Collections.Generic.IEqualityComparer%601.GetHashCode%2A> メソッドおよび <xref:System.Collections.Generic.IEqualityComparer%601.Equals%2A> メソッドを呼び出すことによってソース要素を比較します。</span><span class="sxs-lookup"><span data-stu-id="40497-105">These operators compare source elements by calling the <xref:System.Collections.Generic.IEqualityComparer%601.GetHashCode%2A> and <xref:System.Collections.Generic.IEqualityComparer%601.Equals%2A> methods on each collection of elements.</span></span> <span data-ttu-id="40497-106"><xref:System.Data.DataRow> の場合、これらの演算子によって実行されるのは参照の比較です。表形式のデータに対する集合演算においては適切な動作とは言えません。</span><span class="sxs-lookup"><span data-stu-id="40497-106">In the case of a <xref:System.Data.DataRow>, these operators perform a reference comparison, which is generally not the ideal behavior for set operations over tabular data.</span></span> <span data-ttu-id="40497-107">通常、集合演算で重要なのは要素の値が等しいかどうかであって、要素の参照が等しいかどうかではありません。</span><span class="sxs-lookup"><span data-stu-id="40497-107">For set operations, you usually want to determine whether the element values are equal and not the element references.</span></span> <span data-ttu-id="40497-108">このような理由から、<xref:System.Data.DataRowComparer> に [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] クラスが追加されました。</span><span class="sxs-lookup"><span data-stu-id="40497-108">Therefore, the <xref:System.Data.DataRowComparer> class has been added to [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)].</span></span> <span data-ttu-id="40497-109">このクラスを使用することで行の値を比較できます。</span><span class="sxs-lookup"><span data-stu-id="40497-109">This class can be used to compare row values.</span></span>  
+ <span data-ttu-id="8f4d0-105">これらの演算子は、要素のコレクションに対して <xref:System.Collections.Generic.IEqualityComparer%601.GetHashCode%2A> メソッドおよび <xref:System.Collections.Generic.IEqualityComparer%601.Equals%2A> メソッドを呼び出すことによってソース要素を比較します。</span><span class="sxs-lookup"><span data-stu-id="8f4d0-105">These operators compare source elements by calling the <xref:System.Collections.Generic.IEqualityComparer%601.GetHashCode%2A> and <xref:System.Collections.Generic.IEqualityComparer%601.Equals%2A> methods on each collection of elements.</span></span> <span data-ttu-id="8f4d0-106"><xref:System.Data.DataRow> の場合、これらの演算子によって実行されるのは参照の比較です。表形式のデータに対する集合演算においては適切な動作とは言えません。</span><span class="sxs-lookup"><span data-stu-id="8f4d0-106">In the case of a <xref:System.Data.DataRow>, these operators perform a reference comparison, which is generally not the ideal behavior for set operations over tabular data.</span></span> <span data-ttu-id="8f4d0-107">通常、集合演算で重要なのは要素の値が等しいかどうかであって、要素の参照が等しいかどうかではありません。</span><span class="sxs-lookup"><span data-stu-id="8f4d0-107">For set operations, you usually want to determine whether the element values are equal and not the element references.</span></span> <span data-ttu-id="8f4d0-108">このような理由から、<xref:System.Data.DataRowComparer> に [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] クラスが追加されました。</span><span class="sxs-lookup"><span data-stu-id="8f4d0-108">Therefore, the <xref:System.Data.DataRowComparer> class has been added to [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)].</span></span> <span data-ttu-id="8f4d0-109">このクラスを使用することで行の値を比較できます。</span><span class="sxs-lookup"><span data-stu-id="8f4d0-109">This class can be used to compare row values.</span></span>  
   
- <span data-ttu-id="40497-110"><xref:System.Data.DataRowComparer> クラスには、<xref:System.Data.DataRow> の値を比較するための機能が実装されています。このクラスを <xref:System.Linq.Enumerable.Distinct%2A> などの集合演算に使用できます。</span><span class="sxs-lookup"><span data-stu-id="40497-110">The <xref:System.Data.DataRowComparer> class contains a value comparison implementation for <xref:System.Data.DataRow>, so this class can be used for set operations such as <xref:System.Linq.Enumerable.Distinct%2A>.</span></span> <span data-ttu-id="40497-111">このクラスを直接インスタンス化することはできません。代わりに、<xref:System.Data.DataRowComparer.Default%2A> プロパティを使用して、<xref:System.Data.DataRowComparer%601> のインスタンスを取得する必要があります。</span><span class="sxs-lookup"><span data-stu-id="40497-111">This class cannot be directly instantiated; instead, the <xref:System.Data.DataRowComparer.Default%2A> property must be used to return an instance of the <xref:System.Data.DataRowComparer%601>.</span></span> <span data-ttu-id="40497-112">その後、<xref:System.Data.DataRowComparer%601.Equals%2A> メソッドを呼び出す際、比較する 2 つの <xref:System.Data.DataRow> オブジェクトを入力パラメーターとして渡します。</span><span class="sxs-lookup"><span data-stu-id="40497-112">The <xref:System.Data.DataRowComparer%601.Equals%2A> method is then called and the two <xref:System.Data.DataRow> objects to be compared are passed in as input parameters.</span></span> <span data-ttu-id="40497-113"><xref:System.Data.DataRowComparer%601.Equals%2A> メソッドは、2 つの `true` オブジェクトに含まれる一連の列値が等しければ <xref:System.Data.DataRow> を、それ以外の場合は `false` を返します。</span><span class="sxs-lookup"><span data-stu-id="40497-113">The <xref:System.Data.DataRowComparer%601.Equals%2A> method returns `true` if the ordered set of column values in both <xref:System.Data.DataRow> objects are equal; otherwise, `false`.</span></span>  
+ <span data-ttu-id="8f4d0-110"><xref:System.Data.DataRowComparer> クラスには、<xref:System.Data.DataRow> の値を比較するための機能が実装されています。このクラスを <xref:System.Linq.Enumerable.Distinct%2A> などの集合演算に使用できます。</span><span class="sxs-lookup"><span data-stu-id="8f4d0-110">The <xref:System.Data.DataRowComparer> class contains a value comparison implementation for <xref:System.Data.DataRow>, so this class can be used for set operations such as <xref:System.Linq.Enumerable.Distinct%2A>.</span></span> <span data-ttu-id="8f4d0-111">このクラスを直接インスタンス化することはできません。代わりに、<xref:System.Data.DataRowComparer.Default%2A> プロパティを使用して、<xref:System.Data.DataRowComparer%601> のインスタンスを取得する必要があります。</span><span class="sxs-lookup"><span data-stu-id="8f4d0-111">This class cannot be directly instantiated; instead, the <xref:System.Data.DataRowComparer.Default%2A> property must be used to return an instance of the <xref:System.Data.DataRowComparer%601>.</span></span> <span data-ttu-id="8f4d0-112">その後、<xref:System.Data.DataRowComparer%601.Equals%2A> メソッドを呼び出す際、比較する 2 つの <xref:System.Data.DataRow> オブジェクトを入力パラメーターとして渡します。</span><span class="sxs-lookup"><span data-stu-id="8f4d0-112">The <xref:System.Data.DataRowComparer%601.Equals%2A> method is then called and the two <xref:System.Data.DataRow> objects to be compared are passed in as input parameters.</span></span> <span data-ttu-id="8f4d0-113"><xref:System.Data.DataRowComparer%601.Equals%2A> メソッドは、2 つの `true` オブジェクトに含まれる一連の列値が等しければ <xref:System.Data.DataRow> を、それ以外の場合は `false` を返します。</span><span class="sxs-lookup"><span data-stu-id="8f4d0-113">The <xref:System.Data.DataRowComparer%601.Equals%2A> method returns `true` if the ordered set of column values in both <xref:System.Data.DataRow> objects are equal; otherwise, `false`.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="40497-114">例</span><span class="sxs-lookup"><span data-stu-id="40497-114">Example</span></span>  
- <span data-ttu-id="40497-115">この例では、両方のテーブルに存在する連絡先を `Intersect` を使用して取得します。</span><span class="sxs-lookup"><span data-stu-id="40497-115">This example uses `Intersect` to return contacts that appear in both tables.</span></span>  
+## <a name="example"></a><span data-ttu-id="8f4d0-114">例</span><span class="sxs-lookup"><span data-stu-id="8f4d0-114">Example</span></span>  
+ <span data-ttu-id="8f4d0-115">この例では、両方のテーブルに存在する連絡先を `Intersect` を使用して取得します。</span><span class="sxs-lookup"><span data-stu-id="8f4d0-115">This example uses `Intersect` to return contacts that appear in both tables.</span></span>  
   
  [!code-csharp[DP LINQ to DataSet Examples#Intersect2](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/CS/Program.cs#intersect2)]
  [!code-vb[DP LINQ to DataSet Examples#Intersect2](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/VB/Module1.vb#intersect2)]  
   
-### <a name="example"></a><span data-ttu-id="40497-116">例</span><span class="sxs-lookup"><span data-stu-id="40497-116">Example</span></span>  
- <span data-ttu-id="40497-117">次の例では、2 つの行を比較して、そのハッシュ コードを取得します。</span><span class="sxs-lookup"><span data-stu-id="40497-117">The following example compares two rows and gets their hash codes.</span></span>  
+### <a name="example"></a><span data-ttu-id="8f4d0-116">例</span><span class="sxs-lookup"><span data-stu-id="8f4d0-116">Example</span></span>  
+ <span data-ttu-id="8f4d0-117">次の例では、2 つの行を比較して、そのハッシュ コードを取得します。</span><span class="sxs-lookup"><span data-stu-id="8f4d0-117">The following example compares two rows and gets their hash codes.</span></span>  
   
  [!code-vb[DP LINQ to DataSet Examples#CompareDifferentRows](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/VB/Module1.vb#comparedifferentrows)]  
   
-## <a name="see-also"></a><span data-ttu-id="40497-118">参照</span><span class="sxs-lookup"><span data-stu-id="40497-118">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="8f4d0-118">関連項目</span><span class="sxs-lookup"><span data-stu-id="8f4d0-118">See Also</span></span>  
  <xref:System.Data.DataRowComparer>  
- [<span data-ttu-id="40497-119">DataSet へのデータの読み込み</span><span class="sxs-lookup"><span data-stu-id="40497-119">Loading Data Into a DataSet</span></span>](../../../../docs/framework/data/adonet/loading-data-into-a-dataset.md)  
- [<span data-ttu-id="40497-120">LINQ to DataSet の例</span><span class="sxs-lookup"><span data-stu-id="40497-120">LINQ to DataSet Examples</span></span>](../../../../docs/framework/data/adonet/linq-to-dataset-examples.md)
+ [<span data-ttu-id="8f4d0-119">DataSet へのデータの読み込み</span><span class="sxs-lookup"><span data-stu-id="8f4d0-119">Loading Data Into a DataSet</span></span>](../../../../docs/framework/data/adonet/loading-data-into-a-dataset.md)  
+ [<span data-ttu-id="8f4d0-120">LINQ to DataSet の例</span><span class="sxs-lookup"><span data-stu-id="8f4d0-120">LINQ to DataSet Examples</span></span>](../../../../docs/framework/data/adonet/linq-to-dataset-examples.md)

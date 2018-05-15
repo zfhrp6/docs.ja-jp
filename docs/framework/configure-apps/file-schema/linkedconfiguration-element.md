@@ -1,13 +1,6 @@
 ---
-title: "&lt;linkedConfiguration&gt;要素"
-ms.custom: 
+title: '&lt;linkedConfiguration&gt;要素'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/assemblyBinding/linkedConfiguration
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#linkedConfiguration
@@ -18,71 +11,69 @@ helpviewer_keywords:
 - linked configuration files
 - linkedConfiguration Element
 ms.assetid: 8eb34f3b-427e-4288-a7ff-c73f489deb45
-caps.latest.revision: "6"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: dffff7fefa80f420e61045b21b0e0c1a170e2911
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 71769efa1233fc8a693219dc02ae56ea39c164e7
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="linkedconfiguration-element"></a><span data-ttu-id="aa77d-102">\<linkedConfiguration > 要素</span><span class="sxs-lookup"><span data-stu-id="aa77d-102">\<linkedConfiguration> element</span></span>
+# <a name="linkedconfiguration-element"></a><span data-ttu-id="06860-102">\<linkedConfiguration > 要素</span><span class="sxs-lookup"><span data-stu-id="06860-102">\<linkedConfiguration> element</span></span>
 
-<span data-ttu-id="aa77d-103">インクルードする構成ファイルを指定します。</span><span class="sxs-lookup"><span data-stu-id="aa77d-103">Specifies a configuration file to include.</span></span>
+<span data-ttu-id="06860-103">インクルードする構成ファイルを指定します。</span><span class="sxs-lookup"><span data-stu-id="06860-103">Specifies a configuration file to include.</span></span>
 
-<span data-ttu-id="aa77d-104">[**\<configuration>**](~/docs/framework/configure-apps/file-schema/configuration-element.md) </span><span class="sxs-lookup"><span data-stu-id="aa77d-104">[**\<configuration>**](~/docs/framework/configure-apps/file-schema/configuration-element.md) </span></span>  
-<span data-ttu-id="aa77d-105">&nbsp;&nbsp;[**\<assemblyBinding >**](~/docs/framework/configure-apps/file-schema/assemblybinding-element-for-configuration.md) </span><span class="sxs-lookup"><span data-stu-id="aa77d-105">&nbsp;&nbsp;[**\<assemblyBinding>**](~/docs/framework/configure-apps/file-schema/assemblybinding-element-for-configuration.md) </span></span>  
-<span data-ttu-id="aa77d-106">&nbsp;&nbsp;&nbsp;&nbsp;**\<linkedConfiguration >**</span><span class="sxs-lookup"><span data-stu-id="aa77d-106">&nbsp;&nbsp;&nbsp;&nbsp;**\<linkedConfiguration>**</span></span>
+<span data-ttu-id="06860-104">[**\<configuration>**](~/docs/framework/configure-apps/file-schema/configuration-element.md) </span><span class="sxs-lookup"><span data-stu-id="06860-104">[**\<configuration>**](~/docs/framework/configure-apps/file-schema/configuration-element.md) </span></span>  
+<span data-ttu-id="06860-105">&nbsp;&nbsp;[**\<assemblyBinding >**](~/docs/framework/configure-apps/file-schema/assemblybinding-element-for-configuration.md) </span><span class="sxs-lookup"><span data-stu-id="06860-105">&nbsp;&nbsp;[**\<assemblyBinding>**](~/docs/framework/configure-apps/file-schema/assemblybinding-element-for-configuration.md) </span></span>  
+<span data-ttu-id="06860-106">&nbsp;&nbsp;&nbsp;&nbsp;**\<linkedConfiguration >**</span><span class="sxs-lookup"><span data-stu-id="06860-106">&nbsp;&nbsp;&nbsp;&nbsp;**\<linkedConfiguration>**</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="aa77d-107">構文</span><span class="sxs-lookup"><span data-stu-id="aa77d-107">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="06860-107">構文</span><span class="sxs-lookup"><span data-stu-id="06860-107">Syntax</span></span>
 
 ```xml
 <linkedConfiguration href="URL of linked configuration file" />
 ```
 
-## <a name="attribute"></a><span data-ttu-id="aa77d-108">属性</span><span class="sxs-lookup"><span data-stu-id="aa77d-108">Attribute</span></span>
+## <a name="attribute"></a><span data-ttu-id="06860-108">属性</span><span class="sxs-lookup"><span data-stu-id="06860-108">Attribute</span></span>
 
-|           | <span data-ttu-id="aa77d-109">説明</span><span class="sxs-lookup"><span data-stu-id="aa77d-109">Description</span></span> |
+|           | <span data-ttu-id="06860-109">説明</span><span class="sxs-lookup"><span data-stu-id="06860-109">Description</span></span> |
 | --------- | ----------- |
-| <span data-ttu-id="aa77d-110">**href**</span><span class="sxs-lookup"><span data-stu-id="aa77d-110">**href**</span></span>  | <span data-ttu-id="aa77d-111">必須の属性です。</span><span class="sxs-lookup"><span data-stu-id="aa77d-111">Required attribute.</span></span><br><br><span data-ttu-id="aa77d-112">含める構成ファイルの URL です。</span><span class="sxs-lookup"><span data-stu-id="aa77d-112">The URL of the configuration file to include.</span></span> <span data-ttu-id="aa77d-113">サポートされている唯一の形式、 **href**属性は`file://`します。</span><span class="sxs-lookup"><span data-stu-id="aa77d-113">The only format supported for the **href** attribute is `file://`.</span></span> <span data-ttu-id="aa77d-114">ローカル ファイルと UNC ファイルがサポートされています。</span><span class="sxs-lookup"><span data-stu-id="aa77d-114">Local files and UNC files are supported.</span></span> |
+| <span data-ttu-id="06860-110">**href**</span><span class="sxs-lookup"><span data-stu-id="06860-110">**href**</span></span>  | <span data-ttu-id="06860-111">必須の属性です。</span><span class="sxs-lookup"><span data-stu-id="06860-111">Required attribute.</span></span><br><br><span data-ttu-id="06860-112">含める構成ファイルの URL です。</span><span class="sxs-lookup"><span data-stu-id="06860-112">The URL of the configuration file to include.</span></span> <span data-ttu-id="06860-113">サポートされている唯一の形式、 **href**属性は`file://`します。</span><span class="sxs-lookup"><span data-stu-id="06860-113">The only format supported for the **href** attribute is `file://`.</span></span> <span data-ttu-id="06860-114">ローカル ファイルと UNC ファイルがサポートされています。</span><span class="sxs-lookup"><span data-stu-id="06860-114">Local files and UNC files are supported.</span></span> |
 
-## <a name="parent-element"></a><span data-ttu-id="aa77d-115">親要素</span><span class="sxs-lookup"><span data-stu-id="aa77d-115">Parent element</span></span>
+## <a name="parent-element"></a><span data-ttu-id="06860-115">親要素</span><span class="sxs-lookup"><span data-stu-id="06860-115">Parent element</span></span>
 
-|     | <span data-ttu-id="aa77d-116">説明</span><span class="sxs-lookup"><span data-stu-id="aa77d-116">Description</span></span> |
+|     | <span data-ttu-id="06860-116">説明</span><span class="sxs-lookup"><span data-stu-id="06860-116">Description</span></span> |
 | --- | ----------- |
-| [<span data-ttu-id="aa77d-117">**\<assemblyBinding >**要素</span><span class="sxs-lookup"><span data-stu-id="aa77d-117">**\<assemblyBinding>** Element</span></span>](~/docs/framework/configure-apps/file-schema/assemblybinding-element-for-configuration.md) | <span data-ttu-id="aa77d-118">構成レベルでのアセンブリ バインディング ポリシーを指定します。</span><span class="sxs-lookup"><span data-stu-id="aa77d-118">Specifies assembly binding policy at the configuration level.</span></span> |
+| [<span data-ttu-id="06860-117">**\<assemblyBinding >** 要素</span><span class="sxs-lookup"><span data-stu-id="06860-117">**\<assemblyBinding>** Element</span></span>](~/docs/framework/configure-apps/file-schema/assemblybinding-element-for-configuration.md) | <span data-ttu-id="06860-118">構成レベルでのアセンブリ バインディング ポリシーを指定します。</span><span class="sxs-lookup"><span data-stu-id="06860-118">Specifies assembly binding policy at the configuration level.</span></span> |
 
-## <a name="child-elements"></a><span data-ttu-id="aa77d-119">子要素</span><span class="sxs-lookup"><span data-stu-id="aa77d-119">Child elements</span></span>
+## <a name="child-elements"></a><span data-ttu-id="06860-119">子要素</span><span class="sxs-lookup"><span data-stu-id="06860-119">Child elements</span></span>
 
-<span data-ttu-id="aa77d-120">なし</span><span class="sxs-lookup"><span data-stu-id="aa77d-120">None</span></span>
+<span data-ttu-id="06860-120">なし</span><span class="sxs-lookup"><span data-stu-id="06860-120">None</span></span>
 
-## <a name="remarks"></a><span data-ttu-id="aa77d-121">コメント</span><span class="sxs-lookup"><span data-stu-id="aa77d-121">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="06860-121">コメント</span><span class="sxs-lookup"><span data-stu-id="06860-121">Remarks</span></span>
 
-<span data-ttu-id="aa77d-122"> **\<LinkedConfiguration >**要素は、サービス コンポーネントのアセンブリの簡略化します。</span><span class="sxs-lookup"><span data-stu-id="aa77d-122">The **\<linkedConfiguration>** element simplifies servicing for component assemblies.</span></span> <span data-ttu-id="aa77d-123">アセンブリを使用するアプリケーションの構成ファイルを使用できる 1 つまたは複数のアプリケーションでは、既知の場所に存在する構成ファイルがあるアセンブリを使用する場合、  **\<linkedConfiguration >**構成情報を直接含むのではなく、アセンブリの構成ファイルを含める要素。</span><span class="sxs-lookup"><span data-stu-id="aa77d-123">If one or more applications use an assembly that has a configuration file residing in a well-known location, the configuration files of the applications that use the assembly can use the **\<linkedConfiguration>** element to include the assembly configuration file, rather than including configuration information directly.</span></span> <span data-ttu-id="aa77d-124">コンポーネント アセンブリが処理された場合は、アセンブリを使用するすべてのアプリケーションに更新された構成情報を提供一般的な構成ファイルを更新します。</span><span class="sxs-lookup"><span data-stu-id="aa77d-124">When the component assembly is serviced, updating the common configuration file provides updated configuration information to all applications that use the assembly.</span></span>
+<span data-ttu-id="06860-122">**\<LinkedConfiguration >** 要素は、サービス コンポーネントのアセンブリの簡略化します。</span><span class="sxs-lookup"><span data-stu-id="06860-122">The **\<linkedConfiguration>** element simplifies servicing for component assemblies.</span></span> <span data-ttu-id="06860-123">アセンブリを使用するアプリケーションの構成ファイルを使用できる 1 つまたは複数のアプリケーションでは、既知の場所に存在する構成ファイルがあるアセンブリを使用する場合、  **\<linkedConfiguration >** 構成情報を直接含むのではなく、アセンブリの構成ファイルを含める要素。</span><span class="sxs-lookup"><span data-stu-id="06860-123">If one or more applications use an assembly that has a configuration file residing in a well-known location, the configuration files of the applications that use the assembly can use the **\<linkedConfiguration>** element to include the assembly configuration file, rather than including configuration information directly.</span></span> <span data-ttu-id="06860-124">コンポーネント アセンブリが処理された場合は、アセンブリを使用するすべてのアプリケーションに更新された構成情報を提供一般的な構成ファイルを更新します。</span><span class="sxs-lookup"><span data-stu-id="06860-124">When the component assembly is serviced, updating the common configuration file provides updated configuration information to all applications that use the assembly.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="aa77d-125"> **\<LinkedConfiguration >** Windows サイド バイ サイド マニフェストと共にアプリケーションに要素がサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="aa77d-125">The **\<linkedConfiguration>** element is not supported for applications with Windows side-by-side manifests.</span></span>
+> <span data-ttu-id="06860-125">**\<LinkedConfiguration >** Windows サイド バイ サイド マニフェストと共にアプリケーションに要素がサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="06860-125">The **\<linkedConfiguration>** element is not supported for applications with Windows side-by-side manifests.</span></span>
 
-<span data-ttu-id="aa77d-126">次の規則は、リンクされた構成ファイルの使用を制御します。</span><span class="sxs-lookup"><span data-stu-id="aa77d-126">The following rules govern the use of linked configuration files:</span></span>
+<span data-ttu-id="06860-126">次の規則は、リンクされた構成ファイルの使用を制御します。</span><span class="sxs-lookup"><span data-stu-id="06860-126">The following rules govern the use of linked configuration files:</span></span>
 
-- <span data-ttu-id="aa77d-127">インクルードされる構成ファイルの設定はのみローダー バインド ポリシーには影響され、ローダーによってのみ使用されます。</span><span class="sxs-lookup"><span data-stu-id="aa77d-127">The settings in included configuration files only affect loader binding policy and are used only by the loader.</span></span> <span data-ttu-id="aa77d-128">インクルードされる構成ファイルではバインディング ポリシー以外の設定を使用できますが、これらの設定は何も影響がありません。</span><span class="sxs-lookup"><span data-stu-id="aa77d-128">The included configuration files can have settings other than binding policies, but those settings don't have any effect.</span></span>
+- <span data-ttu-id="06860-127">インクルードされる構成ファイルの設定はのみローダー バインド ポリシーには影響され、ローダーによってのみ使用されます。</span><span class="sxs-lookup"><span data-stu-id="06860-127">The settings in included configuration files only affect loader binding policy and are used only by the loader.</span></span> <span data-ttu-id="06860-128">インクルードされる構成ファイルではバインディング ポリシー以外の設定を使用できますが、これらの設定は何も影響がありません。</span><span class="sxs-lookup"><span data-stu-id="06860-128">The included configuration files can have settings other than binding policies, but those settings don't have any effect.</span></span>
 
-- <span data-ttu-id="aa77d-129">サポートされている唯一の形式、`href`属性は`file://`します。</span><span class="sxs-lookup"><span data-stu-id="aa77d-129">The only format supported for the `href` attribute is `file://`.</span></span> <span data-ttu-id="aa77d-130">ローカル ファイルと UNC ファイルがサポートされています。</span><span class="sxs-lookup"><span data-stu-id="aa77d-130">Local files and UNC files are supported.</span></span>
+- <span data-ttu-id="06860-129">サポートされている唯一の形式、`href`属性は`file://`します。</span><span class="sxs-lookup"><span data-stu-id="06860-129">The only format supported for the `href` attribute is `file://`.</span></span> <span data-ttu-id="06860-130">ローカル ファイルと UNC ファイルがサポートされています。</span><span class="sxs-lookup"><span data-stu-id="06860-130">Local files and UNC files are supported.</span></span>
 
-- <span data-ttu-id="aa77d-131">構成ファイルごとにリンクされている構成の数に制約はありません。</span><span class="sxs-lookup"><span data-stu-id="aa77d-131">There is no constraint on the number of linked configurations per configuration file.</span></span>
+- <span data-ttu-id="06860-131">構成ファイルごとにリンクされている構成の数に制約はありません。</span><span class="sxs-lookup"><span data-stu-id="06860-131">There is no constraint on the number of linked configurations per configuration file.</span></span>
 
-- <span data-ttu-id="aa77d-132">すべてのリンクされた構成ファイルを結合し、1 つのファイルの動作と同様に、 `#include` C/C++ のディレクティブ。</span><span class="sxs-lookup"><span data-stu-id="aa77d-132">All linked configuration files are merged to form one file, similar to the behavior of the `#include` directive in C/C++.</span></span>
+- <span data-ttu-id="06860-132">すべてのリンクされた構成ファイルを結合し、1 つのファイルの動作と同様に、 `#include` C/C++ のディレクティブ。</span><span class="sxs-lookup"><span data-stu-id="06860-132">All linked configuration files are merged to form one file, similar to the behavior of the `#include` directive in C/C++.</span></span>
 
-- <span data-ttu-id="aa77d-133"> **\<LinkedConfiguration >**要素がアプリケーション構成ファイルでのみ使用できます。 では無視されます*Machine.config*です。</span><span class="sxs-lookup"><span data-stu-id="aa77d-133">The **\<linkedConfiguration>** element is allowed only in application configuration files; it's ignored in *Machine.config*.</span></span>
+- <span data-ttu-id="06860-133">**\<LinkedConfiguration >** 要素がアプリケーション構成ファイルでのみ使用できます。 では無視されます*Machine.config*です。</span><span class="sxs-lookup"><span data-stu-id="06860-133">The **\<linkedConfiguration>** element is allowed only in application configuration files; it's ignored in *Machine.config*.</span></span>
 
-- <span data-ttu-id="aa77d-134">循環参照が検出され、終了します。</span><span class="sxs-lookup"><span data-stu-id="aa77d-134">Circular references are detected and terminated.</span></span> <span data-ttu-id="aa77d-135">つまり場合、  **\<linkedConfiguration >**ループを形成する一連の構成ファイルの要素、ループが検出され、停止します。</span><span class="sxs-lookup"><span data-stu-id="aa77d-135">That is, if the **\<linkedConfiguration>** elements of a series of configuration files form a loop, the loop is detected and stopped.</span></span>
+- <span data-ttu-id="06860-134">循環参照が検出され、終了します。</span><span class="sxs-lookup"><span data-stu-id="06860-134">Circular references are detected and terminated.</span></span> <span data-ttu-id="06860-135">つまり場合、  **\<linkedConfiguration >** ループを形成する一連の構成ファイルの要素、ループが検出され、停止します。</span><span class="sxs-lookup"><span data-stu-id="06860-135">That is, if the **\<linkedConfiguration>** elements of a series of configuration files form a loop, the loop is detected and stopped.</span></span>
 
-## <a name="example"></a><span data-ttu-id="aa77d-136">例</span><span class="sxs-lookup"><span data-stu-id="aa77d-136">Example</span></span>
+## <a name="example"></a><span data-ttu-id="06860-136">例</span><span class="sxs-lookup"><span data-stu-id="06860-136">Example</span></span>
 
-<span data-ttu-id="aa77d-137">次の例では、ローカル ハード_ディスクからの構成ファイルをインクルードする方法を示します。</span><span class="sxs-lookup"><span data-stu-id="aa77d-137">The following example shows how to include configuration file from the local hard disk:</span></span>
+<span data-ttu-id="06860-137">次の例では、ローカル ハード_ディスクからの構成ファイルをインクルードする方法を示します。</span><span class="sxs-lookup"><span data-stu-id="06860-137">The following example shows how to include configuration file from the local hard disk:</span></span>
 
 ```xml
 <configuration>
@@ -92,7 +83,7 @@ ms.lasthandoff: 12/22/2017
 </configuration>
 ```
 
-## <a name="see-also"></a><span data-ttu-id="aa77d-138">関連項目</span><span class="sxs-lookup"><span data-stu-id="aa77d-138">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="06860-138">関連項目</span><span class="sxs-lookup"><span data-stu-id="06860-138">See also</span></span>
 
-<span data-ttu-id="aa77d-139">[**\<assemblyBinding >**要素](~/docs/framework/configure-apps/file-schema/assemblybinding-element-for-configuration.md) </span><span class="sxs-lookup"><span data-stu-id="aa77d-139">[**\<assemblyBinding>** Element](~/docs/framework/configure-apps/file-schema/assemblybinding-element-for-configuration.md) </span></span>  
-[<span data-ttu-id="aa77d-140">.NET Framework の構成ファイル スキーマ</span><span class="sxs-lookup"><span data-stu-id="aa77d-140">Configuration file schema for the .NET Framework</span></span>](~/docs/framework/configure-apps/file-schema/index.md)
+<span data-ttu-id="06860-139">[**\<assemblyBinding >** 要素](~/docs/framework/configure-apps/file-schema/assemblybinding-element-for-configuration.md) </span><span class="sxs-lookup"><span data-stu-id="06860-139">[**\<assemblyBinding>** Element](~/docs/framework/configure-apps/file-schema/assemblybinding-element-for-configuration.md) </span></span>  
+[<span data-ttu-id="06860-140">.NET Framework の構成ファイル スキーマ</span><span class="sxs-lookup"><span data-stu-id="06860-140">Configuration file schema for the .NET Framework</span></span>](~/docs/framework/configure-apps/file-schema/index.md)

@@ -1,6 +1,6 @@
 ---
 title: where (ジェネリック型制約) (C# リファレンス)
-ms.date: 07/20/2015
+ms.date: 04/12/2018
 ms.prod: .net
 ms.technology:
 - devlang-csharp
@@ -10,62 +10,67 @@ f1_keywords:
 - whereconstraint_CSharpKeyword
 helpviewer_keywords:
 - where (generic type constraint) [C#]
-ms.assetid: d7aa871b-0714-416a-bab2-96f87ada4310
-caps.latest.revision: 10
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: f2b7b159689aa771d3f9d59e3b1dd340c85b1d79
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 16be19e342016becd100e2c21434393c3f36f815
+ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 04/27/2018
 ---
-# <a name="where-generic-type-constraint-c-reference"></a><span data-ttu-id="6491d-102">where (ジェネリック型制約) (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="6491d-102">where (generic type constraint) (C# Reference)</span></span>
-<span data-ttu-id="6491d-103">ジェネリック型定義では、ジェネリック宣言で定義されている型パラメーターの引数として使用できる型に対する制約を指定する場合に `where` 句を使用します。</span><span class="sxs-lookup"><span data-stu-id="6491d-103">In a generic type definition, the `where` clause is used to specify constraints on the types that can be used as arguments for a type parameter defined in a generic declaration.</span></span> <span data-ttu-id="6491d-104">たとえば、型パラメーター `T` が <xref:System.IComparable%601> インターフェイスを実装するように、次のように `MyGenericClass` ジェネリック クラスを宣言できます。</span><span class="sxs-lookup"><span data-stu-id="6491d-104">For example, you can declare a generic class, `MyGenericClass`, such that the type parameter `T` implements the <xref:System.IComparable%601> interface:</span></span>  
-  
-```csharp  
-public class MyGenericClass<T> where T:IComparable { }  
-```  
-  
+# <a name="where-generic-type-constraint-c-reference"></a><span data-ttu-id="1485f-102">where (ジェネリック型制約) (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="1485f-102">where (generic type constraint) (C# Reference)</span></span>
+
+<span data-ttu-id="1485f-103">ジェネリック定義の `where` 句では、型の制約を指定します。この型は、ジェネリック型、メソッド、デリゲート、またはローカル関数における型パラメーターの引数として使用されます。</span><span class="sxs-lookup"><span data-stu-id="1485f-103">The `where` clause in a generic definition specifies constraints on the types that are used as arguments for type parameters in a generic type, method, delegate, or local function.</span></span> <span data-ttu-id="1485f-104">制約では、インターフェイス (基底クラス) を指定したり、参照、値、またはアンマネージド型となるジェネリック型を要求したりすることができます。</span><span class="sxs-lookup"><span data-stu-id="1485f-104">Constraints can specify interfaces, base classes, or require a generic type to be a reference, value or unmanaged type.</span></span> <span data-ttu-id="1485f-105">それらにより型引数が処理する必要がある機能が宣言されえます。</span><span class="sxs-lookup"><span data-stu-id="1485f-105">They declare capabilities that the type argument must possess.</span></span>
+
+<span data-ttu-id="1485f-106">たとえば、型パラメーター `T` が <xref:System.IComparable%601> インターフェイスを実装するように、次のように `MyGenericClass` ジェネリック クラスを宣言できます。</span><span class="sxs-lookup"><span data-stu-id="1485f-106">For example, you can declare a generic class, `MyGenericClass`, such that the type parameter `T` implements the <xref:System.IComparable%601> interface:</span></span>
+
+[!code-csharp[using an interface constraint](../../../../samples/snippets/csharp/keywords/GenericWhereConstraints.cs#1)]
+
 > [!NOTE]
->  <span data-ttu-id="6491d-105">クエリ式での where 句の詳細については、「[where 句](../../../csharp/language-reference/keywords/where-clause.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="6491d-105">For more information on the where clause in a query expression, see [where clause](../../../csharp/language-reference/keywords/where-clause.md).</span></span>  
-  
- <span data-ttu-id="6491d-106">`where` 句には、インターフェイス制約だけでなく基底クラス制約も含めることができます。基底クラス制約は、ジェネリック型の型引数として使用する型には、基底クラスとして指定されているクラス (または基底クラス自体) が含まれている必要があることを指定します。</span><span class="sxs-lookup"><span data-stu-id="6491d-106">In addition to interface constraints, a `where` clause can include a base class constraint, which states that a type must have the specified class as a base class (or be that class itself) in order to be used as a type argument for that generic type.</span></span> <span data-ttu-id="6491d-107">このような制約を使用する場合は、型パラメーターに関する制約よりも前に制約を記述する必要があります。</span><span class="sxs-lookup"><span data-stu-id="6491d-107">If such a constraint is used, it must appear before any other constraints on that type parameter.</span></span>  
-  
- [!code-csharp[csrefKeywordsContextual#6](../../../csharp/language-reference/keywords/codesnippet/CSharp/where-generic-type-constraint_1.cs)]  
-  
- <span data-ttu-id="6491d-108">`where` 句には、コンストラクター制約を含めることもできます。</span><span class="sxs-lookup"><span data-stu-id="6491d-108">The `where` clause may also include a constructor constraint.</span></span> <span data-ttu-id="6491d-109">新しい演算子を使用して、型パラメーターのインスタンスを作成することができます。ただし、その場合は、型パラメーターにコンストラクター制約 `new()` で制約を指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="6491d-109">It is possible to create an instance of a type parameter using the new operator; however, in order to do so the type parameter must be constrained by the constructor constraint, `new()`.</span></span> <span data-ttu-id="6491d-110">[new() 制約](../../../csharp/language-reference/keywords/new-constraint.md)に基づいて、コンパイラは、指定されている型引数には、アクセス可能なパラメーターなしの (または既定の) コンストラクターが必要であることを認識します。</span><span class="sxs-lookup"><span data-stu-id="6491d-110">The [new() Constraint](../../../csharp/language-reference/keywords/new-constraint.md) lets the compiler know that any type argument supplied must have an accessible parameterless--or default-- constructor.</span></span> <span data-ttu-id="6491d-111">例:</span><span class="sxs-lookup"><span data-stu-id="6491d-111">For example:</span></span>  
-  
- [!code-csharp[csrefKeywordsContextual#7](../../../csharp/language-reference/keywords/codesnippet/CSharp/where-generic-type-constraint_2.cs)]  
-  
- <span data-ttu-id="6491d-112">`new()` 制約は `where` 句の最後に示されます。</span><span class="sxs-lookup"><span data-stu-id="6491d-112">The `new()` constraint appears last in the `where` clause.</span></span>  
-  
- <span data-ttu-id="6491d-113">複数の型パラメーターがある場合には、型パラメーターごとに `where` 句を 1 つずつ使用します。次に例を示します。</span><span class="sxs-lookup"><span data-stu-id="6491d-113">With multiple type parameters, use one `where` clause for each type parameter, for example:</span></span>  
-  
- [!code-csharp[csrefKeywordsContextual#8](../../../csharp/language-reference/keywords/codesnippet/CSharp/where-generic-type-constraint_3.cs)]  
-  
- <span data-ttu-id="6491d-114">次に示すように、ジェネリック メソッドの型パラメーターにも制約を適用できます。</span><span class="sxs-lookup"><span data-stu-id="6491d-114">You can also attach constraints to type parameters of generic methods, like this:</span></span>  
-  
-```csharp  
-public bool MyMethod<T>(T t) where T : IMyInterface { }  
-```  
-  
- <span data-ttu-id="6491d-115">デリゲートに対する型パラメーター制約を記述する構文は、メソッドの構文と同じである点に注意してください。</span><span class="sxs-lookup"><span data-stu-id="6491d-115">Notice that the syntax to describe type parameter constraints on delegates is the same as that of methods:</span></span>  
-  
-```csharp  
-delegate T MyDelegate<T>() where T : new()  
-```  
-  
- <span data-ttu-id="6491d-116">汎用デリゲートについては、「[汎用デリゲート](../../../csharp/programming-guide/generics/generic-delegates.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="6491d-116">For information on generic delegates, see [Generic Delegates](../../../csharp/programming-guide/generics/generic-delegates.md).</span></span>  
-  
- <span data-ttu-id="6491d-117">制約の構文と使用方法の詳細については、「[型パラメーターの制約](../../../csharp/programming-guide/generics/constraints-on-type-parameters.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="6491d-117">For details on the syntax and use of constraints, see [Constraints on Type Parameters](../../../csharp/programming-guide/generics/constraints-on-type-parameters.md).</span></span>  
-  
-## <a name="c-language-specification"></a><span data-ttu-id="6491d-118">C# 言語仕様</span><span class="sxs-lookup"><span data-stu-id="6491d-118">C# Language Specification</span></span>  
- [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
-  
-## <a name="see-also"></a><span data-ttu-id="6491d-119">関連項目</span><span class="sxs-lookup"><span data-stu-id="6491d-119">See Also</span></span>  
- [<span data-ttu-id="6491d-120">C# リファレンス</span><span class="sxs-lookup"><span data-stu-id="6491d-120">C# Reference</span></span>](../../../csharp/language-reference/index.md)  
- [<span data-ttu-id="6491d-121">C# プログラミング ガイド</span><span class="sxs-lookup"><span data-stu-id="6491d-121">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)  
- [<span data-ttu-id="6491d-122">ジェネリックの概要</span><span class="sxs-lookup"><span data-stu-id="6491d-122">Introduction to Generics</span></span>](../../../csharp/programming-guide/generics/introduction-to-generics.md)  
- [<span data-ttu-id="6491d-123">new 制約</span><span class="sxs-lookup"><span data-stu-id="6491d-123">new Constraint</span></span>](../../../csharp/language-reference/keywords/new-constraint.md)  
- [<span data-ttu-id="6491d-124">型パラメーターの制約</span><span class="sxs-lookup"><span data-stu-id="6491d-124">Constraints on Type Parameters</span></span>](../../../csharp/programming-guide/generics/constraints-on-type-parameters.md)
+> <span data-ttu-id="1485f-107">クエリ式での where 句の詳細については、「[where 句](where-clause.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="1485f-107">For more information on the where clause in a query expression, see [where clause](where-clause.md).</span></span>
+
+<span data-ttu-id="1485f-108">`where` 句には基底クラスの制約を含めることもできます。</span><span class="sxs-lookup"><span data-stu-id="1485f-108">The `where` clause can also include a base class constraint.</span></span> <span data-ttu-id="1485f-109">基底クラスの制約は、ジェネリック型の型引数として使用する型には、ジェネリック型の型引数として使用される基底クラスとして指定されているクラス (または基底クラス自体) が含まれている必要があることを指定します。</span><span class="sxs-lookup"><span data-stu-id="1485f-109">The base class constraint states that a type to be used as a type argument for that generic type has the specified class as a base class (or is that base class) to be used as a type argument for that generic type.</span></span> <span data-ttu-id="1485f-110">基底クラスの制約を使用する場合は、型パラメーターに関する制約よりも前に制約を記述する必要があります。</span><span class="sxs-lookup"><span data-stu-id="1485f-110">If the base class constraint is used, it must appear before any other constraints on that type parameter.</span></span> <span data-ttu-id="1485f-111">一部の型は、基底クラスの制約として許可されません (<xref:System.Object>、<xref:System.Array>、<xref:System.ValueType>)。</span><span class="sxs-lookup"><span data-stu-id="1485f-111">Some types are disallowed as a base class constraint: <xref:System.Object>, <xref:System.Array>, and <xref:System.ValueType>.</span></span> <span data-ttu-id="1485f-112">C# 7.3 より前は、<xref:System.Enum>、<xref:System.Delegate>、<xref:System.MulticastDelegate> も基底クラスの制約として許可されていません。</span><span class="sxs-lookup"><span data-stu-id="1485f-112">Prior to C# 7.3, <xref:System.Enum>, <xref:System.Delegate>, and <xref:System.MulticastDelegate> were also disallowed as base class constraints.</span></span> <span data-ttu-id="1485f-113">次の例では、この型は基底クラスとして指定できるようになったことを示しています。</span><span class="sxs-lookup"><span data-stu-id="1485f-113">The following example shows the types that can now be specified as a base class:</span></span>
+
+[!code-csharp[using an interface constraint](../../../../samples/snippets/csharp/keywords/GenericWhereConstraints.cs#2)]
+
+<span data-ttu-id="1485f-114">`where` 句では、型が `class` または `struct` であることを指定できます。</span><span class="sxs-lookup"><span data-stu-id="1485f-114">The `where` clause can specify that the type is a `class` or a `struct`.</span></span> <span data-ttu-id="1485f-115">`struct` 制約では、`System.ValueType` の基底クラスの制約を指定する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="1485f-115">The `struct` constraint removes the need to specify a base class constraint of `System.ValueType`.</span></span> <span data-ttu-id="1485f-116">`System.ValueType` 型は基底クラスの制約として使用できません。</span><span class="sxs-lookup"><span data-stu-id="1485f-116">The `System.ValueType` type may not be used as a base class constraint.</span></span> <span data-ttu-id="1485f-117">`class` 制約と `struct` 制約の両方の例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="1485f-117">The following example shows both the `class` and `struct` constraints:</span></span>
+
+[!code-csharp[using the class and struct constraints](../../../../samples/snippets/csharp/keywords/GenericWhereConstraints.cs#3)]
+
+<span data-ttu-id="1485f-118">`where` 句には、`unmanaged` 制約を含めることもできます。</span><span class="sxs-lookup"><span data-stu-id="1485f-118">The `where` clause may also include an `unmanaged` constraint.</span></span> <span data-ttu-id="1485f-119">`unmanaged` 制約では、**アンマネージド型**と呼ばれる型に対して型パラメーターを制限します。</span><span class="sxs-lookup"><span data-stu-id="1485f-119">The `unmanaged` constraint limits the type parameter to types known as **unmanaged types**.</span></span> <span data-ttu-id="1485f-120">**アンマネージド型**は参照型ではない型であり、任意の入れ子のレベルに参照型フィールドを含みません。</span><span class="sxs-lookup"><span data-stu-id="1485f-120">An **unmanaged type** is a type that isn't a reference type and doesn't contain reference type fields at any level of nesting.</span></span> <span data-ttu-id="1485f-121">`unmanaged` 制約を使用すると、C# でローレベルの相互運用コードを記述しやすくなります。</span><span class="sxs-lookup"><span data-stu-id="1485f-121">The `unmanaged` constraint makes it easier to write low-level interop code in C#.</span></span> <span data-ttu-id="1485f-122">この制約では、すべてのアンマネージド型にわたって再利用可能なルーチンを可能にします。</span><span class="sxs-lookup"><span data-stu-id="1485f-122">This constraint enables reusable routines across all unmanaged types.</span></span> <span data-ttu-id="1485f-123">`unmanaged` 制約は、`class` や `struct` 制約と組み合わせることはできません。</span><span class="sxs-lookup"><span data-stu-id="1485f-123">The `unmanaged` constraint can't be combined with the `class` or `struct` constraint.</span></span> <span data-ttu-id="1485f-124">`unmanaged` 制約は `struct` にする必要がある型を適用します。</span><span class="sxs-lookup"><span data-stu-id="1485f-124">The `unmanaged` constraint enforces that the type must be a `struct`:</span></span>
+
+[!code-csharp[using the unmanaged constraint](../../../../samples/snippets/csharp/keywords/GenericWhereConstraints.cs#4)]
+
+<span data-ttu-id="1485f-125">`where` 句には、コンストラクター制約 `new()` を含めることもできます。</span><span class="sxs-lookup"><span data-stu-id="1485f-125">The `where` clause may also include a constructor constraint, `new()`.</span></span> <span data-ttu-id="1485f-126">その制約では、`new` 演算子を使用して型パラメーターのインスタンスを作成できるようにします。</span><span class="sxs-lookup"><span data-stu-id="1485f-126">That constraint makes it possible to create an instance of a type parameter using the `new` operator.</span></span> <span data-ttu-id="1485f-127">[new() 制約](new-constraint.md)に基づいて、コンパイラは、指定されている型引数には、アクセス可能なパラメーターなしの (または既定の) コンストラクターが必要であることを認識します。</span><span class="sxs-lookup"><span data-stu-id="1485f-127">The [new() Constraint](new-constraint.md) lets the compiler know that any type argument supplied must have an accessible parameterless--or default-- constructor.</span></span> <span data-ttu-id="1485f-128">例:</span><span class="sxs-lookup"><span data-stu-id="1485f-128">For example:</span></span>
+
+[!code-csharp[using the new constraint](../../../../samples/snippets/csharp/keywords/GenericWhereConstraints.cs#5)]
+
+<span data-ttu-id="1485f-129">`new()` 制約は `where` 句の最後に示されます。</span><span class="sxs-lookup"><span data-stu-id="1485f-129">The `new()` constraint appears last in the `where` clause.</span></span> <span data-ttu-id="1485f-130">`new()` 制約は、`struct` や `unmanaged` 制約と組み合わせることはできません。</span><span class="sxs-lookup"><span data-stu-id="1485f-130">The `new()` constraint can't be combined with the `struct` or `unmanaged` constraints.</span></span> <span data-ttu-id="1485f-131">それらの制約を満たすすべての型には、`new()` 制約を重複させて、アクセス可能なパラメーターなしのコンストラクターが含まれている必要があります。</span><span class="sxs-lookup"><span data-stu-id="1485f-131">All types satisfying those constraints must have an accessible parameterless constructor, making the `new()` constraint redundant.</span></span>
+
+<span data-ttu-id="1485f-132">複数の型パラメーターがある場合には、型パラメーターごとに `where` 句を 1 つずつ使用します。次に例を示します。</span><span class="sxs-lookup"><span data-stu-id="1485f-132">With multiple type parameters, use one `where` clause for each type parameter, for example:</span></span>
+
+[!code-csharp[using multiple where constraints](../../../../samples/snippets/csharp/keywords/GenericWhereConstraints.cs#6)]
+
+<span data-ttu-id="1485f-133">次の例に示すように、ジェネリック メソッドの型パラメーターにも制約を適用できます。</span><span class="sxs-lookup"><span data-stu-id="1485f-133">You can also attach constraints to type parameters of generic methods, as shown in the following example:</span></span>
+
+[!code-csharp[where constraints with generic methods](../../../../samples/snippets/csharp/keywords/GenericWhereConstraints.cs#7)]
+
+<span data-ttu-id="1485f-134">デリゲートに対する型パラメーター制約を記述する構文は、メソッドの構文と同じである点に注意してください。</span><span class="sxs-lookup"><span data-stu-id="1485f-134">Notice that the syntax to describe type parameter constraints on delegates is the same as that of methods:</span></span>
+
+[!code-csharp[where constraints with generic methods](../../../../samples/snippets/csharp/keywords/GenericWhereConstraints.cs#8)]
+
+<span data-ttu-id="1485f-135">汎用デリゲートについては、「[汎用デリゲート](../../../csharp/programming-guide/generics/generic-delegates.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="1485f-135">For information on generic delegates, see [Generic Delegates](../../../csharp/programming-guide/generics/generic-delegates.md).</span></span>
+
+<span data-ttu-id="1485f-136">制約の構文と使用方法の詳細については、「[型パラメーターの制約](../../../csharp/programming-guide/generics/constraints-on-type-parameters.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="1485f-136">For details on the syntax and use of constraints, see [Constraints on Type Parameters](../../../csharp/programming-guide/generics/constraints-on-type-parameters.md).</span></span>
+
+## <a name="c-language-specification"></a><span data-ttu-id="1485f-137">C# 言語仕様</span><span class="sxs-lookup"><span data-stu-id="1485f-137">C# language specification</span></span>
+
+ [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
+
+## <a name="see-also"></a><span data-ttu-id="1485f-138">関連項目</span><span class="sxs-lookup"><span data-stu-id="1485f-138">See also</span></span>
+
+ [<span data-ttu-id="1485f-139">C# リファレンス</span><span class="sxs-lookup"><span data-stu-id="1485f-139">C# Reference</span></span>](../../../csharp/language-reference/index.md)  
+ [<span data-ttu-id="1485f-140">C# プログラミング ガイド</span><span class="sxs-lookup"><span data-stu-id="1485f-140">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)  
+ [<span data-ttu-id="1485f-141">ジェネリックの概要</span><span class="sxs-lookup"><span data-stu-id="1485f-141">Introduction to Generics</span></span>](../../../csharp/programming-guide/generics/introduction-to-generics.md)  
+ [<span data-ttu-id="1485f-142">new 制約</span><span class="sxs-lookup"><span data-stu-id="1485f-142">new Constraint</span></span>](../../../csharp/language-reference/keywords/new-constraint.md)  
+ [<span data-ttu-id="1485f-143">型パラメーターの制約</span><span class="sxs-lookup"><span data-stu-id="1485f-143">Constraints on Type Parameters</span></span>](../../../csharp/programming-guide/generics/constraints-on-type-parameters.md)  

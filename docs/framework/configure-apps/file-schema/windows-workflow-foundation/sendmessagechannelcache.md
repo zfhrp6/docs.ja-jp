@@ -1,35 +1,24 @@
 ---
 title: '&lt;sendMessageChannelCache&gt;'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
 ms.topic: reference
 ms.assetid: 241e428e-5030-4b13-8a0a-69f05288d3d9
-caps.latest.revision: 3
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 739115dfdf26dd184d4fc217a1819dda7d7c73a0
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 9fb68fb8ef4b1fa74a36005c80dc568e227c6473
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="ltsendmessagechannelcachegt"></a><span data-ttu-id="94e0b-102">&lt;sendMessageChannelCache&gt;</span><span class="sxs-lookup"><span data-stu-id="94e0b-102">&lt;sendMessageChannelCache&gt;</span></span>
-<span data-ttu-id="94e0b-103">キャッシュ共有レベル、チャネル ファクトリ キャッシュの設定および送信メッセージング アクティビティを使用してサービス エンドポイントにメッセージを送信するワークフローのチャネル キャッシュの設定のカスタマイズをできるサービス動作です。</span><span class="sxs-lookup"><span data-stu-id="94e0b-103">A service behavior that enables the customization of the cache sharing levels, the settings of the channel factory cache, and the settings of the channel cache for workflows that send messages to service endpoints using Send messaging activities.</span></span>  
+# <a name="ltsendmessagechannelcachegt"></a><span data-ttu-id="93264-102">&lt;sendMessageChannelCache&gt;</span><span class="sxs-lookup"><span data-stu-id="93264-102">&lt;sendMessageChannelCache&gt;</span></span>
+<span data-ttu-id="93264-103">キャッシュ共有レベル、チャネル ファクトリ キャッシュの設定および送信メッセージング アクティビティを使用してサービス エンドポイントにメッセージを送信するワークフローのチャネル キャッシュの設定のカスタマイズをできるサービス動作です。</span><span class="sxs-lookup"><span data-stu-id="93264-103">A service behavior that enables the customization of the cache sharing levels, the settings of the channel factory cache, and the settings of the channel cache for workflows that send messages to service endpoints using Send messaging activities.</span></span>  
   
-<span data-ttu-id="94e0b-104">\<system.ServiceModel ></span><span class="sxs-lookup"><span data-stu-id="94e0b-104">\<system.ServiceModel></span></span>  
-<span data-ttu-id="94e0b-105">\<ビヘイビアー ></span><span class="sxs-lookup"><span data-stu-id="94e0b-105">\<behaviors></span></span>  
-<span data-ttu-id="94e0b-106">\<serviceBehaviors></span><span class="sxs-lookup"><span data-stu-id="94e0b-106">\<serviceBehaviors></span></span>  
-<span data-ttu-id="94e0b-107">\<behavior></span><span class="sxs-lookup"><span data-stu-id="94e0b-107">\<behavior></span></span>  
-<span data-ttu-id="94e0b-108">\<sendMessageChannelCache ></span><span class="sxs-lookup"><span data-stu-id="94e0b-108">\<sendMessageChannelCache></span></span>  
+<span data-ttu-id="93264-104">\<system.ServiceModel ></span><span class="sxs-lookup"><span data-stu-id="93264-104">\<system.ServiceModel></span></span>  
+<span data-ttu-id="93264-105">\<ビヘイビアー ></span><span class="sxs-lookup"><span data-stu-id="93264-105">\<behaviors></span></span>  
+<span data-ttu-id="93264-106">\<serviceBehaviors></span><span class="sxs-lookup"><span data-stu-id="93264-106">\<serviceBehaviors></span></span>  
+<span data-ttu-id="93264-107">\<behavior></span><span class="sxs-lookup"><span data-stu-id="93264-107">\<behavior></span></span>  
+<span data-ttu-id="93264-108">\<sendMessageChannelCache ></span><span class="sxs-lookup"><span data-stu-id="93264-108">\<sendMessageChannelCache></span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="94e0b-109">構文</span><span class="sxs-lookup"><span data-stu-id="94e0b-109">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="93264-109">構文</span><span class="sxs-lookup"><span data-stu-id="93264-109">Syntax</span></span>  
   
 ```xml  
 <behaviors>
@@ -48,37 +37,37 @@ ms.lasthandoff: 04/30/2018
 </behaviors>  
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="94e0b-110">属性および要素</span><span class="sxs-lookup"><span data-stu-id="94e0b-110">Attributes and Elements</span></span>  
- <span data-ttu-id="94e0b-111">以降のセクションでは、属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="94e0b-111">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="93264-110">属性および要素</span><span class="sxs-lookup"><span data-stu-id="93264-110">Attributes and Elements</span></span>  
+ <span data-ttu-id="93264-111">以降のセクションでは、属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="93264-111">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="94e0b-112">属性</span><span class="sxs-lookup"><span data-stu-id="94e0b-112">Attributes</span></span>  
+### <a name="attributes"></a><span data-ttu-id="93264-112">属性</span><span class="sxs-lookup"><span data-stu-id="93264-112">Attributes</span></span>  
   
-|<span data-ttu-id="94e0b-113">属性</span><span class="sxs-lookup"><span data-stu-id="94e0b-113">Attribute</span></span>|<span data-ttu-id="94e0b-114">説明</span><span class="sxs-lookup"><span data-stu-id="94e0b-114">Description</span></span>|  
+|<span data-ttu-id="93264-113">属性</span><span class="sxs-lookup"><span data-stu-id="93264-113">Attribute</span></span>|<span data-ttu-id="93264-114">説明</span><span class="sxs-lookup"><span data-stu-id="93264-114">Description</span></span>|  
 |---------------|-----------------|  
-|<span data-ttu-id="94e0b-115">allowUnsafeCaching</span><span class="sxs-lookup"><span data-stu-id="94e0b-115">allowUnsafeCaching</span></span>|<span data-ttu-id="94e0b-116">キャッシュをオンにするかどうかを示すブール値。</span><span class="sxs-lookup"><span data-stu-id="94e0b-116">A Boolean value that indicates whether to turn caching on.</span></span> <span data-ttu-id="94e0b-117">ワークフロー サービスにカスタムのバインディングまたは動作がある場合は、キャッシュが安全性を損う可能性があるため、既定では無効になります。</span><span class="sxs-lookup"><span data-stu-id="94e0b-117">If your workflow service has custom bindings or custom behaviors, caching could be unsecure and therefore is disabled by default.</span></span> <span data-ttu-id="94e0b-118">ただし、有効にする場合のキャッシュにこのプロパティを設定**true**です。</span><span class="sxs-lookup"><span data-stu-id="94e0b-118">However, if you want to turn caching on set this property to **true**.</span></span>|  
+|<span data-ttu-id="93264-115">allowUnsafeCaching</span><span class="sxs-lookup"><span data-stu-id="93264-115">allowUnsafeCaching</span></span>|<span data-ttu-id="93264-116">キャッシュをオンにするかどうかを示すブール値。</span><span class="sxs-lookup"><span data-stu-id="93264-116">A Boolean value that indicates whether to turn caching on.</span></span> <span data-ttu-id="93264-117">ワークフロー サービスにカスタムのバインディングまたは動作がある場合は、キャッシュが安全性を損う可能性があるため、既定では無効になります。</span><span class="sxs-lookup"><span data-stu-id="93264-117">If your workflow service has custom bindings or custom behaviors, caching could be unsecure and therefore is disabled by default.</span></span> <span data-ttu-id="93264-118">ただし、有効にする場合のキャッシュにこのプロパティを設定**true**です。</span><span class="sxs-lookup"><span data-stu-id="93264-118">However, if you want to turn caching on set this property to **true**.</span></span>|  
   
-### <a name="child-elements"></a><span data-ttu-id="94e0b-119">子要素</span><span class="sxs-lookup"><span data-stu-id="94e0b-119">Child Elements</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="93264-119">子要素</span><span class="sxs-lookup"><span data-stu-id="93264-119">Child Elements</span></span>  
   
-|<span data-ttu-id="94e0b-120">要素</span><span class="sxs-lookup"><span data-stu-id="94e0b-120">Element</span></span>|<span data-ttu-id="94e0b-121">説明</span><span class="sxs-lookup"><span data-stu-id="94e0b-121">Description</span></span>|  
+|<span data-ttu-id="93264-120">要素</span><span class="sxs-lookup"><span data-stu-id="93264-120">Element</span></span>|<span data-ttu-id="93264-121">説明</span><span class="sxs-lookup"><span data-stu-id="93264-121">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="94e0b-122">\<channelSettings ></span><span class="sxs-lookup"><span data-stu-id="94e0b-122">\<channelSettings></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/channelsettings.md)|<span data-ttu-id="94e0b-123">チャネル キャッシュの設定を指定します。</span><span class="sxs-lookup"><span data-stu-id="94e0b-123">Specifies the settings of the channel cache.</span></span>|  
-|[<span data-ttu-id="94e0b-124">\<factorySettings ></span><span class="sxs-lookup"><span data-stu-id="94e0b-124">\<factorySettings></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/factorysettings.md)|<span data-ttu-id="94e0b-125">チャネル ファクトリ キャッシュの設定を指定します。</span><span class="sxs-lookup"><span data-stu-id="94e0b-125">Specifies the settings of the channel factory cache.</span></span>|  
+|[<span data-ttu-id="93264-122">\<channelSettings ></span><span class="sxs-lookup"><span data-stu-id="93264-122">\<channelSettings></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/channelsettings.md)|<span data-ttu-id="93264-123">チャネル キャッシュの設定を指定します。</span><span class="sxs-lookup"><span data-stu-id="93264-123">Specifies the settings of the channel cache.</span></span>|  
+|[<span data-ttu-id="93264-124">\<factorySettings ></span><span class="sxs-lookup"><span data-stu-id="93264-124">\<factorySettings></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/factorysettings.md)|<span data-ttu-id="93264-125">チャネル ファクトリ キャッシュの設定を指定します。</span><span class="sxs-lookup"><span data-stu-id="93264-125">Specifies the settings of the channel factory cache.</span></span>|  
   
-### <a name="parent-elements"></a><span data-ttu-id="94e0b-126">親要素</span><span class="sxs-lookup"><span data-stu-id="94e0b-126">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="93264-126">親要素</span><span class="sxs-lookup"><span data-stu-id="93264-126">Parent Elements</span></span>  
   
-|<span data-ttu-id="94e0b-127">要素</span><span class="sxs-lookup"><span data-stu-id="94e0b-127">Element</span></span>|<span data-ttu-id="94e0b-128">説明</span><span class="sxs-lookup"><span data-stu-id="94e0b-128">Description</span></span>|  
+|<span data-ttu-id="93264-127">要素</span><span class="sxs-lookup"><span data-stu-id="93264-127">Element</span></span>|<span data-ttu-id="93264-128">説明</span><span class="sxs-lookup"><span data-stu-id="93264-128">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="94e0b-129">\<動作 > の\<serviceBehaviors ></span><span class="sxs-lookup"><span data-stu-id="94e0b-129">\<behavior> of \<serviceBehaviors></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/behavior-of-servicebehaviors-of-workflow.md)|<span data-ttu-id="94e0b-130">動作の要素を指定します。</span><span class="sxs-lookup"><span data-stu-id="94e0b-130">Specifies a behavior element.</span></span>|  
+|[<span data-ttu-id="93264-129">\<動作 > の\<serviceBehaviors ></span><span class="sxs-lookup"><span data-stu-id="93264-129">\<behavior> of \<serviceBehaviors></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/behavior-of-servicebehaviors-of-workflow.md)|<span data-ttu-id="93264-130">動作の要素を指定します。</span><span class="sxs-lookup"><span data-stu-id="93264-130">Specifies a behavior element.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="94e0b-131">コメント</span><span class="sxs-lookup"><span data-stu-id="94e0b-131">Remarks</span></span>  
- <span data-ttu-id="94e0b-132">このサービス動作は、サービス エンドポイントにメッセージを送信するワークフローを対象としています。</span><span class="sxs-lookup"><span data-stu-id="94e0b-132">This service behavior is intended for workflows that send messages to service endpoints.</span></span> <span data-ttu-id="94e0b-133">これらのワークフローは、通常はクライアント ワークフローですが、<xref:System.ServiceModel.WorkflowServiceHost> でホストされるワークフロー サービスである場合もあります。</span><span class="sxs-lookup"><span data-stu-id="94e0b-133">These workflows are typically client workflows but could also be workflow services that are hosted in a <xref:System.ServiceModel.WorkflowServiceHost>.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="93264-131">コメント</span><span class="sxs-lookup"><span data-stu-id="93264-131">Remarks</span></span>  
+ <span data-ttu-id="93264-132">このサービス動作は、サービス エンドポイントにメッセージを送信するワークフローを対象としています。</span><span class="sxs-lookup"><span data-stu-id="93264-132">This service behavior is intended for workflows that send messages to service endpoints.</span></span> <span data-ttu-id="93264-133">これらのワークフローは、通常はクライアント ワークフローですが、<xref:System.ServiceModel.WorkflowServiceHost> でホストされるワークフロー サービスである場合もあります。</span><span class="sxs-lookup"><span data-stu-id="93264-133">These workflows are typically client workflows but could also be workflow services that are hosted in a <xref:System.ServiceModel.WorkflowServiceHost>.</span></span>  
   
- <span data-ttu-id="94e0b-134">既定では、<xref:System.ServiceModel.WorkflowServiceHost> によってホストされるワークフローでは、<xref:System.ServiceModel.Activities.Send> メッセージング アクティビティが使用するキャッシュは <xref:System.ServiceModel.WorkflowServiceHost> のすべてのワークフロー インスタンス間で共有されます (ホストレベルのキャッシュ)。</span><span class="sxs-lookup"><span data-stu-id="94e0b-134">By default, in a workflow hosted by a <xref:System.ServiceModel.WorkflowServiceHost>, the cache used by <xref:System.ServiceModel.Activities.Send> messaging activities is shared across all workflow instances in the <xref:System.ServiceModel.WorkflowServiceHost> (host-level caching).</span></span> <span data-ttu-id="94e0b-135"><xref:System.ServiceModel.WorkflowServiceHost> によってホストされないクライアント ワークフローの場合、キャッシュを使用できるのはワークフロー インスタンスだけです (インスタンスレベルのキャッシュ)。</span><span class="sxs-lookup"><span data-stu-id="94e0b-135">For a client workflow that is not hosted by a <xref:System.ServiceModel.WorkflowServiceHost>, the cache is available only to the workflow instance (instance-level caching).</span></span> <span data-ttu-id="94e0b-136">構成でエンドポイントが定義されているワークフローに送信アクティビティがある場合、キャッシュは既定で無効になります。</span><span class="sxs-lookup"><span data-stu-id="94e0b-136">Caching is disabled by default for any send activity in your workflow that has endpoints defined in configuration.</span></span>  
+ <span data-ttu-id="93264-134">既定では、<xref:System.ServiceModel.WorkflowServiceHost> によってホストされるワークフローでは、<xref:System.ServiceModel.Activities.Send> メッセージング アクティビティが使用するキャッシュは <xref:System.ServiceModel.WorkflowServiceHost> のすべてのワークフロー インスタンス間で共有されます (ホストレベルのキャッシュ)。</span><span class="sxs-lookup"><span data-stu-id="93264-134">By default, in a workflow hosted by a <xref:System.ServiceModel.WorkflowServiceHost>, the cache used by <xref:System.ServiceModel.Activities.Send> messaging activities is shared across all workflow instances in the <xref:System.ServiceModel.WorkflowServiceHost> (host-level caching).</span></span> <span data-ttu-id="93264-135"><xref:System.ServiceModel.WorkflowServiceHost> によってホストされないクライアント ワークフローの場合、キャッシュを使用できるのはワークフロー インスタンスだけです (インスタンスレベルのキャッシュ)。</span><span class="sxs-lookup"><span data-stu-id="93264-135">For a client workflow that is not hosted by a <xref:System.ServiceModel.WorkflowServiceHost>, the cache is available only to the workflow instance (instance-level caching).</span></span> <span data-ttu-id="93264-136">構成でエンドポイントが定義されているワークフローに送信アクティビティがある場合、キャッシュは既定で無効になります。</span><span class="sxs-lookup"><span data-stu-id="93264-136">Caching is disabled by default for any send activity in your workflow that has endpoints defined in configuration.</span></span>  
   
- <span data-ttu-id="94e0b-137">既定のキャッシュ共有レベルとチャネル ファクトリおよびチャネル キャッシュのキャッシュ設定を変更する方法の詳細については、次を参照してください。[送信アクティビティのキャッシュ共有レベルを変更する](../../../../../docs/framework/wcf/feature-details/changing-the-cache-sharing-levels-for-send-activities.md)です。</span><span class="sxs-lookup"><span data-stu-id="94e0b-137">For more information about how to change the default cache sharing levels and cache settings for the channel factory and channel cache, see [Changing the Cache Sharing Levels for Send Activities](../../../../../docs/framework/wcf/feature-details/changing-the-cache-sharing-levels-for-send-activities.md).</span></span>  
+ <span data-ttu-id="93264-137">既定のキャッシュ共有レベルとチャネル ファクトリおよびチャネル キャッシュのキャッシュ設定を変更する方法の詳細については、次を参照してください。[送信アクティビティのキャッシュ共有レベルを変更する](../../../../../docs/framework/wcf/feature-details/changing-the-cache-sharing-levels-for-send-activities.md)です。</span><span class="sxs-lookup"><span data-stu-id="93264-137">For more information about how to change the default cache sharing levels and cache settings for the channel factory and channel cache, see [Changing the Cache Sharing Levels for Send Activities](../../../../../docs/framework/wcf/feature-details/changing-the-cache-sharing-levels-for-send-activities.md).</span></span>  
   
-## <a name="example"></a><span data-ttu-id="94e0b-138">例</span><span class="sxs-lookup"><span data-stu-id="94e0b-138">Example</span></span>  
- <span data-ttu-id="94e0b-139">ホストされたワークフロー サービスでは、ファクトリ キャッシュとチャネル キャッシュの設定をアプリケーション構成ファイルで指定できます。</span><span class="sxs-lookup"><span data-stu-id="94e0b-139">In a hosted workflow service, you can specify the factory cache and channel cache settings in the application configuration file.</span></span> <span data-ttu-id="94e0b-140">これを行うには、ファクトリ キャッシュおよびチャネル キャッシュのキャッシュ設定を含むサービス動作を追加し、そのサービス動作をサービスに追加します。</span><span class="sxs-lookup"><span data-stu-id="94e0b-140">To do so, add a service behavior that contains the cache settings for the factory and channel cache and add this service behavior to your service.</span></span> <span data-ttu-id="94e0b-141">次の例を含む構成ファイルの内容を示しています、 **MyChannelCacheBehavior**サービス、カスタム ファクトリ キャッシュおよびチャネル キャッシュの設定で動作します。</span><span class="sxs-lookup"><span data-stu-id="94e0b-141">The following example shows the contents of a configuration file that contains the **MyChannelCacheBehavior**  service behavior with the custom factory cache and channel cache settings.</span></span> <span data-ttu-id="94e0b-142">このサービスの動作がを通じてサービスに追加されて、 **behaviorConfiguarion**属性。</span><span class="sxs-lookup"><span data-stu-id="94e0b-142">This service behavior is added to the service through the **behaviorConfiguarion** attribute.</span></span>  
+## <a name="example"></a><span data-ttu-id="93264-138">例</span><span class="sxs-lookup"><span data-stu-id="93264-138">Example</span></span>  
+ <span data-ttu-id="93264-139">ホストされたワークフロー サービスでは、ファクトリ キャッシュとチャネル キャッシュの設定をアプリケーション構成ファイルで指定できます。</span><span class="sxs-lookup"><span data-stu-id="93264-139">In a hosted workflow service, you can specify the factory cache and channel cache settings in the application configuration file.</span></span> <span data-ttu-id="93264-140">これを行うには、ファクトリ キャッシュおよびチャネル キャッシュのキャッシュ設定を含むサービス動作を追加し、そのサービス動作をサービスに追加します。</span><span class="sxs-lookup"><span data-stu-id="93264-140">To do so, add a service behavior that contains the cache settings for the factory and channel cache and add this service behavior to your service.</span></span> <span data-ttu-id="93264-141">次の例を含む構成ファイルの内容を示しています、 **MyChannelCacheBehavior**サービス、カスタム ファクトリ キャッシュおよびチャネル キャッシュの設定で動作します。</span><span class="sxs-lookup"><span data-stu-id="93264-141">The following example shows the contents of a configuration file that contains the **MyChannelCacheBehavior**  service behavior with the custom factory cache and channel cache settings.</span></span> <span data-ttu-id="93264-142">このサービスの動作がを通じてサービスに追加されて、 **behaviorConfiguarion**属性。</span><span class="sxs-lookup"><span data-stu-id="93264-142">This service behavior is added to the service through the **behaviorConfiguarion** attribute.</span></span>  
   
 ```xml  
 <configuration>    
@@ -102,8 +91,8 @@ ms.lasthandoff: 04/30/2018
 </configuration>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="94e0b-143">関連項目</span><span class="sxs-lookup"><span data-stu-id="94e0b-143">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="93264-143">関連項目</span><span class="sxs-lookup"><span data-stu-id="93264-143">See Also</span></span>  
  <xref:System.ServiceModel.Activities.SendMessageChannelCache>  
  <xref:System.ServiceModel.Activities.Configuration.SendMessageChannelCacheElement>  
  <xref:System.ServiceModel.Activities.Send>  
- [<span data-ttu-id="94e0b-144">Send アクティビティのキャッシュ共有レベルの変更</span><span class="sxs-lookup"><span data-stu-id="94e0b-144">Changing the Cache Sharing Levels for Send Activities</span></span>](../../../../../docs/framework/wcf/feature-details/changing-the-cache-sharing-levels-for-send-activities.md)
+ [<span data-ttu-id="93264-144">Send アクティビティのキャッシュ共有レベルの変更</span><span class="sxs-lookup"><span data-stu-id="93264-144">Changing the Cache Sharing Levels for Send Activities</span></span>](../../../../../docs/framework/wcf/feature-details/changing-the-cache-sharing-levels-for-send-activities.md)

@@ -1,37 +1,25 @@
 ---
 title: '&lt;allowedAudienceUris&gt;'
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 0f4dc73d-d95d-4193-9755-7df4cf2b8e1c
-caps.latest.revision: "7"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: bd3b197ffe771f72544dc3e61f49583c08fa5821
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b7a4ae230e9b8788d9ac23147a3fcf21637dadaf
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="ltallowedaudienceurisgt"></a><span data-ttu-id="e49a7-102">&lt;allowedAudienceUris&gt;</span><span class="sxs-lookup"><span data-stu-id="e49a7-102">&lt;allowedAudienceUris&gt;</span></span>
-<span data-ttu-id="e49a7-103"><xref:System.IdentityModel.Tokens.SamlSecurityToken> インスタンスにより有効と見なされるように、<xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator> セキュリティ トークンのターゲットとなる URI のコレクションを表します。</span><span class="sxs-lookup"><span data-stu-id="e49a7-103">Represents a collection of target URIs for which the <xref:System.IdentityModel.Tokens.SamlSecurityToken> security token can be targeted for in order to be considered valid by a <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator> instance.</span></span>  
+# <a name="ltallowedaudienceurisgt"></a><span data-ttu-id="95fdc-102">&lt;allowedAudienceUris&gt;</span><span class="sxs-lookup"><span data-stu-id="95fdc-102">&lt;allowedAudienceUris&gt;</span></span>
+<span data-ttu-id="95fdc-103"><xref:System.IdentityModel.Tokens.SamlSecurityToken> インスタンスにより有効と見なされるように、<xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator> セキュリティ トークンのターゲットとなる URI のコレクションを表します。</span><span class="sxs-lookup"><span data-stu-id="95fdc-103">Represents a collection of target URIs for which the <xref:System.IdentityModel.Tokens.SamlSecurityToken> security token can be targeted for in order to be considered valid by a <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator> instance.</span></span>  
   
- <span data-ttu-id="e49a7-104">\<システムです。ServiceModel ></span><span class="sxs-lookup"><span data-stu-id="e49a7-104">\<system.ServiceModel></span></span>  
-<span data-ttu-id="e49a7-105">\<ビヘイビアー ></span><span class="sxs-lookup"><span data-stu-id="e49a7-105">\<behaviors></span></span>  
-<span data-ttu-id="e49a7-106">\<serviceBehaviors ></span><span class="sxs-lookup"><span data-stu-id="e49a7-106">\<serviceBehaviors></span></span>  
-<span data-ttu-id="e49a7-107">\<動作 ></span><span class="sxs-lookup"><span data-stu-id="e49a7-107">\<behavior></span></span>  
-<span data-ttu-id="e49a7-108">\<serviceCredentials ></span><span class="sxs-lookup"><span data-stu-id="e49a7-108">\<serviceCredentials></span></span>  
-<span data-ttu-id="e49a7-109">\<issuedTokenAuthentication ></span><span class="sxs-lookup"><span data-stu-id="e49a7-109">\<issuedTokenAuthentication></span></span>  
-<span data-ttu-id="e49a7-110">\<allowedAudienceUris ></span><span class="sxs-lookup"><span data-stu-id="e49a7-110">\<allowedAudienceUris></span></span>  
+ <span data-ttu-id="95fdc-104">\<system.ServiceModel ></span><span class="sxs-lookup"><span data-stu-id="95fdc-104">\<system.ServiceModel></span></span>  
+<span data-ttu-id="95fdc-105">\<ビヘイビアー ></span><span class="sxs-lookup"><span data-stu-id="95fdc-105">\<behaviors></span></span>  
+<span data-ttu-id="95fdc-106">\<serviceBehaviors></span><span class="sxs-lookup"><span data-stu-id="95fdc-106">\<serviceBehaviors></span></span>  
+<span data-ttu-id="95fdc-107">\<behavior></span><span class="sxs-lookup"><span data-stu-id="95fdc-107">\<behavior></span></span>  
+<span data-ttu-id="95fdc-108">\<serviceCredentials></span><span class="sxs-lookup"><span data-stu-id="95fdc-108">\<serviceCredentials></span></span>  
+<span data-ttu-id="95fdc-109">\<issuedTokenAuthentication ></span><span class="sxs-lookup"><span data-stu-id="95fdc-109">\<issuedTokenAuthentication></span></span>  
+<span data-ttu-id="95fdc-110">\<allowedAudienceUris ></span><span class="sxs-lookup"><span data-stu-id="95fdc-110">\<allowedAudienceUris></span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="e49a7-111">構文</span><span class="sxs-lookup"><span data-stu-id="e49a7-111">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="95fdc-111">構文</span><span class="sxs-lookup"><span data-stu-id="95fdc-111">Syntax</span></span>  
   
 ```xml  
 <allowedAudienceUris>  
@@ -39,36 +27,36 @@ ms.lasthandoff: 12/22/2017
 </allowedAudienceUris>  
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="e49a7-112">属性および要素</span><span class="sxs-lookup"><span data-stu-id="e49a7-112">Attributes and Elements</span></span>  
- <span data-ttu-id="e49a7-113">以降のセクションでは、属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="e49a7-113">The following sections describe attributes, child elements, and parent elements</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="95fdc-112">属性および要素</span><span class="sxs-lookup"><span data-stu-id="95fdc-112">Attributes and Elements</span></span>  
+ <span data-ttu-id="95fdc-113">以降のセクションでは、属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="95fdc-113">The following sections describe attributes, child elements, and parent elements</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="e49a7-114">属性</span><span class="sxs-lookup"><span data-stu-id="e49a7-114">Attributes</span></span>  
- <span data-ttu-id="e49a7-115">なし。</span><span class="sxs-lookup"><span data-stu-id="e49a7-115">None.</span></span>  
+### <a name="attributes"></a><span data-ttu-id="95fdc-114">属性</span><span class="sxs-lookup"><span data-stu-id="95fdc-114">Attributes</span></span>  
+ <span data-ttu-id="95fdc-115">なし。</span><span class="sxs-lookup"><span data-stu-id="95fdc-115">None.</span></span>  
   
-### <a name="child-elements"></a><span data-ttu-id="e49a7-116">子要素</span><span class="sxs-lookup"><span data-stu-id="e49a7-116">Child Elements</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="95fdc-116">子要素</span><span class="sxs-lookup"><span data-stu-id="95fdc-116">Child Elements</span></span>  
   
-|<span data-ttu-id="e49a7-117">要素</span><span class="sxs-lookup"><span data-stu-id="e49a7-117">Element</span></span>|<span data-ttu-id="e49a7-118">説明</span><span class="sxs-lookup"><span data-stu-id="e49a7-118">Description</span></span>|  
+|<span data-ttu-id="95fdc-117">要素</span><span class="sxs-lookup"><span data-stu-id="95fdc-117">Element</span></span>|<span data-ttu-id="95fdc-118">説明</span><span class="sxs-lookup"><span data-stu-id="95fdc-118">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="e49a7-119">\<add></span><span class="sxs-lookup"><span data-stu-id="e49a7-119">\<add></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/add-of-allowedaudienceuris.md)|<span data-ttu-id="e49a7-120"><xref:System.IdentityModel.Tokens.SamlSecurityToken> インスタンスにより有効と見なされるように、<xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator> セキュリティ トークンのターゲットとなる URI を追加します。</span><span class="sxs-lookup"><span data-stu-id="e49a7-120">Adds a target Uri for which the <xref:System.IdentityModel.Tokens.SamlSecurityToken> security token can be targeted for in order to be considered valid by a <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator> instance.</span></span>|  
+|[<span data-ttu-id="95fdc-119">\<add></span><span class="sxs-lookup"><span data-stu-id="95fdc-119">\<add></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/add-of-allowedaudienceuris.md)|<span data-ttu-id="95fdc-120"><xref:System.IdentityModel.Tokens.SamlSecurityToken> インスタンスにより有効と見なされるように、<xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator> セキュリティ トークンのターゲットとなる URI を追加します。</span><span class="sxs-lookup"><span data-stu-id="95fdc-120">Adds a target Uri for which the <xref:System.IdentityModel.Tokens.SamlSecurityToken> security token can be targeted for in order to be considered valid by a <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator> instance.</span></span>|  
   
-### <a name="parent-elements"></a><span data-ttu-id="e49a7-121">親要素</span><span class="sxs-lookup"><span data-stu-id="e49a7-121">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="95fdc-121">親要素</span><span class="sxs-lookup"><span data-stu-id="95fdc-121">Parent Elements</span></span>  
   
-|<span data-ttu-id="e49a7-122">要素</span><span class="sxs-lookup"><span data-stu-id="e49a7-122">Element</span></span>|<span data-ttu-id="e49a7-123">説明</span><span class="sxs-lookup"><span data-stu-id="e49a7-123">Description</span></span>|  
+|<span data-ttu-id="95fdc-122">要素</span><span class="sxs-lookup"><span data-stu-id="95fdc-122">Element</span></span>|<span data-ttu-id="95fdc-123">説明</span><span class="sxs-lookup"><span data-stu-id="95fdc-123">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="e49a7-124">\<issuedTokenAuthentication ></span><span class="sxs-lookup"><span data-stu-id="e49a7-124">\<issuedTokenAuthentication></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/issuedtokenauthentication-of-servicecredentials.md)|<span data-ttu-id="e49a7-125">サービス資格情報として発行されるトークンを指定します。</span><span class="sxs-lookup"><span data-stu-id="e49a7-125">Specifies a token issued as a service credential.</span></span>|  
+|[<span data-ttu-id="95fdc-124">\<issuedTokenAuthentication ></span><span class="sxs-lookup"><span data-stu-id="95fdc-124">\<issuedTokenAuthentication></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/issuedtokenauthentication-of-servicecredentials.md)|<span data-ttu-id="95fdc-125">サービス資格情報として発行されるトークンを指定します。</span><span class="sxs-lookup"><span data-stu-id="95fdc-125">Specifies a token issued as a service credential.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="e49a7-126">コメント</span><span class="sxs-lookup"><span data-stu-id="e49a7-126">Remarks</span></span>  
- <span data-ttu-id="e49a7-127">このコレクションは、<xref:System.IdentityModel.Tokens.SamlSecurityToken> セキュリティ トークンを発行するセキュリティ トークン サービス (STS) を利用するフェデレーション アプリケーションで使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="e49a7-127">You should use this collection in a federated application that utilizes a security token service (STS) that issues <xref:System.IdentityModel.Tokens.SamlSecurityToken> security tokens.</span></span> <span data-ttu-id="e49a7-128">STS がセキュリティ トークンを発行する場合、このセキュリティ トークンに <xref:System.IdentityModel.Tokens.SamlAudienceRestrictionCondition> を追加して、セキュリティ トークンの提供先となる Web サービスの URI を指定できます。</span><span class="sxs-lookup"><span data-stu-id="e49a7-128">When the STS issues the security token, it can specify the URI of the Web services for which the security token is intended by adding a <xref:System.IdentityModel.Tokens.SamlAudienceRestrictionCondition> to the security token.</span></span> <span data-ttu-id="e49a7-129">これにより、受け取り側 <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator> Web サービスは、次のようにしてこのチェックが行われるように指定することで、発行されたセキュリティ トークンがこの Web サービスを対象としていることを確認できます。</span><span class="sxs-lookup"><span data-stu-id="e49a7-129">That allows the <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator> for the recipient Web service to verify that the issued security token is intended for this Web service by specifying that this check should happen by doing the following:</span></span>  
+## <a name="remarks"></a><span data-ttu-id="95fdc-126">コメント</span><span class="sxs-lookup"><span data-stu-id="95fdc-126">Remarks</span></span>  
+ <span data-ttu-id="95fdc-127">このコレクションは、<xref:System.IdentityModel.Tokens.SamlSecurityToken> セキュリティ トークンを発行するセキュリティ トークン サービス (STS) を利用するフェデレーション アプリケーションで使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="95fdc-127">You should use this collection in a federated application that utilizes a security token service (STS) that issues <xref:System.IdentityModel.Tokens.SamlSecurityToken> security tokens.</span></span> <span data-ttu-id="95fdc-128">STS がセキュリティ トークンを発行する場合、このセキュリティ トークンに <xref:System.IdentityModel.Tokens.SamlAudienceRestrictionCondition> を追加して、セキュリティ トークンの提供先となる Web サービスの URI を指定できます。</span><span class="sxs-lookup"><span data-stu-id="95fdc-128">When the STS issues the security token, it can specify the URI of the Web services for which the security token is intended by adding a <xref:System.IdentityModel.Tokens.SamlAudienceRestrictionCondition> to the security token.</span></span> <span data-ttu-id="95fdc-129">これにより、受け取り側 <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator> Web サービスは、次のようにしてこのチェックが行われるように指定することで、発行されたセキュリティ トークンがこの Web サービスを対象としていることを確認できます。</span><span class="sxs-lookup"><span data-stu-id="95fdc-129">That allows the <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator> for the recipient Web service to verify that the issued security token is intended for this Web service by specifying that this check should happen by doing the following:</span></span>  
   
--   <span data-ttu-id="e49a7-130">`audienceUriMode` の `<issuedTokenAuthentication>` 属性を <xref:System.IdentityModel.Selectors.AudienceUriMode.Always> または <xref:System.IdentityModel.Selectors.AudienceUriMode.BearerKeyOnly> に設定します。</span><span class="sxs-lookup"><span data-stu-id="e49a7-130">Set the `audienceUriMode` attribute of `<issuedTokenAuthentication>` to <xref:System.IdentityModel.Selectors.AudienceUriMode.Always> or <xref:System.IdentityModel.Selectors.AudienceUriMode.BearerKeyOnly>.</span></span>  
+-   <span data-ttu-id="95fdc-130">`audienceUriMode` の `<issuedTokenAuthentication>` 属性を <xref:System.IdentityModel.Selectors.AudienceUriMode.Always> または <xref:System.IdentityModel.Selectors.AudienceUriMode.BearerKeyOnly> に設定します。</span><span class="sxs-lookup"><span data-stu-id="95fdc-130">Set the `audienceUriMode` attribute of `<issuedTokenAuthentication>` to <xref:System.IdentityModel.Selectors.AudienceUriMode.Always> or <xref:System.IdentityModel.Selectors.AudienceUriMode.BearerKeyOnly>.</span></span>  
   
--   <span data-ttu-id="e49a7-131">このコレクションに URI を追加して、有効な URI のセットを指定します。</span><span class="sxs-lookup"><span data-stu-id="e49a7-131">Specify the set of valid URIs, by adding the URIs to this collection.</span></span>  
+-   <span data-ttu-id="95fdc-131">このコレクションに URI を追加して、有効な URI のセットを指定します。</span><span class="sxs-lookup"><span data-stu-id="95fdc-131">Specify the set of valid URIs, by adding the URIs to this collection.</span></span>  
   
- <span data-ttu-id="e49a7-132">詳細については、「<xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="e49a7-132">For more information, see <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator>.</span></span>  
+ <span data-ttu-id="95fdc-132">詳細については、「<xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="95fdc-132">For more information, see <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator>.</span></span>  
   
- <span data-ttu-id="e49a7-133">この構成要素を使用する方法については、次を参照してください。[する方法: フェデレーション サービスの資格情報の構成](../../../../../docs/framework/wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md)です。</span><span class="sxs-lookup"><span data-stu-id="e49a7-133">For more information on using this configuration element, see [How to: Configure Credentials on a Federation Service](../../../../../docs/framework/wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md).</span></span>  
+ <span data-ttu-id="95fdc-133">この構成要素を使用する方法については、次を参照してください。[する方法: フェデレーション サービスの資格情報の構成](../../../../../docs/framework/wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md)です。</span><span class="sxs-lookup"><span data-stu-id="95fdc-133">For more information on using this configuration element, see [How to: Configure Credentials on a Federation Service](../../../../../docs/framework/wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md).</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="e49a7-134">参照</span><span class="sxs-lookup"><span data-stu-id="e49a7-134">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="95fdc-134">関連項目</span><span class="sxs-lookup"><span data-stu-id="95fdc-134">See Also</span></span>  
  <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator>  
  <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator.AllowedAudienceUris%2A>  
  <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator.AudienceUriMode%2A>  
@@ -76,8 +64,8 @@ ms.lasthandoff: 12/22/2017
  <xref:System.ServiceModel.Configuration.AllowedAudienceUriElementCollection>  
  <xref:System.ServiceModel.Configuration.AllowedAudienceUriElement>  
  <xref:System.ServiceModel.Security.IssuedTokenServiceCredential.AllowedAudienceUris%2A>  
- [<span data-ttu-id="e49a7-135">\<issuedTokenAuthentication ></span><span class="sxs-lookup"><span data-stu-id="e49a7-135">\<issuedTokenAuthentication></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/issuedtokenauthentication-of-servicecredentials.md)  
- [<span data-ttu-id="e49a7-136">\<add></span><span class="sxs-lookup"><span data-stu-id="e49a7-136">\<add></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/add-of-allowedaudienceuris.md)  
- [<span data-ttu-id="e49a7-137">セキュリティ動作</span><span class="sxs-lookup"><span data-stu-id="e49a7-137">Security Behaviors</span></span>](../../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)  
- [<span data-ttu-id="e49a7-138">サービスおよびクライアントのセキュリティ保護</span><span class="sxs-lookup"><span data-stu-id="e49a7-138">Securing Services and Clients</span></span>](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
- [<span data-ttu-id="e49a7-139">方法 : フェデレーション サービスで資格情報を設定する</span><span class="sxs-lookup"><span data-stu-id="e49a7-139">How to: Configure Credentials on a Federation Service</span></span>](../../../../../docs/framework/wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md)
+ [<span data-ttu-id="95fdc-135">\<issuedTokenAuthentication ></span><span class="sxs-lookup"><span data-stu-id="95fdc-135">\<issuedTokenAuthentication></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/issuedtokenauthentication-of-servicecredentials.md)  
+ [<span data-ttu-id="95fdc-136">\<add></span><span class="sxs-lookup"><span data-stu-id="95fdc-136">\<add></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/add-of-allowedaudienceuris.md)  
+ [<span data-ttu-id="95fdc-137">セキュリティ動作</span><span class="sxs-lookup"><span data-stu-id="95fdc-137">Security Behaviors</span></span>](../../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)  
+ [<span data-ttu-id="95fdc-138">サービスおよびクライアントのセキュリティ保護</span><span class="sxs-lookup"><span data-stu-id="95fdc-138">Securing Services and Clients</span></span>](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
+ [<span data-ttu-id="95fdc-139">方法 : フェデレーション サービスで資格情報を設定する</span><span class="sxs-lookup"><span data-stu-id="95fdc-139">How to: Configure Credentials on a Federation Service</span></span>](../../../../../docs/framework/wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md)

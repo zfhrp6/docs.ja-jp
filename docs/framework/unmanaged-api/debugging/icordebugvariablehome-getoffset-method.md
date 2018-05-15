@@ -1,14 +1,6 @@
 ---
-title: "ICorDebugVariableHome::GetOffset メソッド"
-ms.custom: 
+title: ICorDebugVariableHome::GetOffset メソッド
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 api_name:
 - ICorDebugVariableHome.GetOffset
 api_location:
@@ -23,22 +15,18 @@ helpviewer_keywords:
 ms.assetid: f025c2e5-3f6c-4be8-9ffe-c8b214617dfe
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 09f80a362d4b44d13c39218b9d7a0db11ef49f78
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9a2ea7273fec62654c168d6786d3644b184ff7f3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="icordebugvariablehomegetoffset-method"></a><span data-ttu-id="13c9f-102">ICorDebugVariableHome::GetOffset メソッド</span><span class="sxs-lookup"><span data-stu-id="13c9f-102">ICorDebugVariableHome::GetOffset Method</span></span>
-<span data-ttu-id="13c9f-103">変数のベース レジスタからのオフセットを取得します。</span><span class="sxs-lookup"><span data-stu-id="13c9f-103">Gets the offset from the base register for a variable.</span></span>  
+# <a name="icordebugvariablehomegetoffset-method"></a><span data-ttu-id="0d2f6-102">ICorDebugVariableHome::GetOffset メソッド</span><span class="sxs-lookup"><span data-stu-id="0d2f6-102">ICorDebugVariableHome::GetOffset Method</span></span>
+<span data-ttu-id="0d2f6-103">変数のベース レジスタからのオフセットを取得します。</span><span class="sxs-lookup"><span data-stu-id="0d2f6-103">Gets the offset from the base register for a variable.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="13c9f-104">構文</span><span class="sxs-lookup"><span data-stu-id="13c9f-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="0d2f6-104">構文</span><span class="sxs-lookup"><span data-stu-id="0d2f6-104">Syntax</span></span>  
   
 ```  
 HRESULT GetOffset(  
@@ -46,26 +34,26 @@ HRESULT GetOffset(
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="13c9f-105">パラメーター</span><span class="sxs-lookup"><span data-stu-id="13c9f-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="0d2f6-105">パラメーター</span><span class="sxs-lookup"><span data-stu-id="0d2f6-105">Parameters</span></span>  
  `pOffset`  
- <span data-ttu-id="13c9f-106">[out]ベース レジスタからのオフセット。</span><span class="sxs-lookup"><span data-stu-id="13c9f-106">[out] The offset from the base register.</span></span>  
+ <span data-ttu-id="0d2f6-106">[out]ベース レジスタからのオフセット。</span><span class="sxs-lookup"><span data-stu-id="0d2f6-106">[out] The offset from the base register.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="13c9f-107">戻り値</span><span class="sxs-lookup"><span data-stu-id="13c9f-107">Return Value</span></span>  
- <span data-ttu-id="13c9f-108">メソッドは、次の値を返します。</span><span class="sxs-lookup"><span data-stu-id="13c9f-108">The method returns the following values:</span></span>  
+## <a name="return-value"></a><span data-ttu-id="0d2f6-107">戻り値</span><span class="sxs-lookup"><span data-stu-id="0d2f6-107">Return Value</span></span>  
+ <span data-ttu-id="0d2f6-108">メソッドは、次の値を返します。</span><span class="sxs-lookup"><span data-stu-id="0d2f6-108">The method returns the following values:</span></span>  
   
-|<span data-ttu-id="13c9f-109">[値]</span><span class="sxs-lookup"><span data-stu-id="13c9f-109">Value</span></span>|<span data-ttu-id="13c9f-110">説明</span><span class="sxs-lookup"><span data-stu-id="13c9f-110">Description</span></span>|  
+|<span data-ttu-id="0d2f6-109">[値]</span><span class="sxs-lookup"><span data-stu-id="0d2f6-109">Value</span></span>|<span data-ttu-id="0d2f6-110">説明</span><span class="sxs-lookup"><span data-stu-id="0d2f6-110">Description</span></span>|  
 |-----------|-----------------|  
-|`S_OK`|<span data-ttu-id="13c9f-111">変数は、レジスタの相対メモリの場所には。</span><span class="sxs-lookup"><span data-stu-id="13c9f-111">The variable is in a register-relative memory location.</span></span>|  
-|`E_FAIL`|<span data-ttu-id="13c9f-112">変数は、レジスタの相対メモリの場所ではありません。</span><span class="sxs-lookup"><span data-stu-id="13c9f-112">The variable is not in a register-relative memory location.</span></span>|  
+|`S_OK`|<span data-ttu-id="0d2f6-111">変数は、レジスタの相対メモリの場所には。</span><span class="sxs-lookup"><span data-stu-id="0d2f6-111">The variable is in a register-relative memory location.</span></span>|  
+|`E_FAIL`|<span data-ttu-id="0d2f6-112">変数は、レジスタの相対メモリの場所ではありません。</span><span class="sxs-lookup"><span data-stu-id="0d2f6-112">The variable is not in a register-relative memory location.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="13c9f-113">必要条件</span><span class="sxs-lookup"><span data-stu-id="13c9f-113">Requirements</span></span>  
- <span data-ttu-id="13c9f-114">**プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="13c9f-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="0d2f6-113">要件</span><span class="sxs-lookup"><span data-stu-id="0d2f6-113">Requirements</span></span>  
+ <span data-ttu-id="0d2f6-114">**プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="0d2f6-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="13c9f-115">**ヘッダー:** CorDebug.idl、CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="13c9f-115">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="0d2f6-115">**ヘッダー:** CorDebug.idl、CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="0d2f6-115">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="13c9f-116">**ライブラリ:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="13c9f-116">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="0d2f6-116">**ライブラリ:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="0d2f6-116">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="13c9f-117">**.NET framework のバージョン:**[!INCLUDE[net_current_v462plus](../../../../includes/net-current-v462plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="13c9f-117">**.NET Framework Versions:** [!INCLUDE[net_current_v462plus](../../../../includes/net-current-v462plus-md.md)]</span></span>  
+ <span data-ttu-id="0d2f6-117">**.NET framework のバージョン:** [!INCLUDE[net_current_v462plus](../../../../includes/net-current-v462plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="0d2f6-117">**.NET Framework Versions:** [!INCLUDE[net_current_v462plus](../../../../includes/net-current-v462plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="13c9f-118">参照</span><span class="sxs-lookup"><span data-stu-id="13c9f-118">See Also</span></span>  
- [<span data-ttu-id="13c9f-119">ICorDebugVariableHome インターフェイス</span><span class="sxs-lookup"><span data-stu-id="13c9f-119">ICorDebugVariableHome Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md)
+## <a name="see-also"></a><span data-ttu-id="0d2f6-118">関連項目</span><span class="sxs-lookup"><span data-stu-id="0d2f6-118">See Also</span></span>  
+ [<span data-ttu-id="0d2f6-119">ICorDebugVariableHome インターフェイス</span><span class="sxs-lookup"><span data-stu-id="0d2f6-119">ICorDebugVariableHome Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md)

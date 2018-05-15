@@ -1,47 +1,33 @@
 ---
-title: "方法: 非同期 Windows Presentation Framework アプリケーションを作成する (WCF Data Services)"
-ms.custom: 
+title: '方法: 非同期 Windows Presentation Framework アプリケーションを作成する (WCF Data Services)'
 ms.date: 03/30/2017
-ms.prod: .net-framework-oob
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - WCF Data Services, asynchronous operations
 ms.assetid: 834614df-1427-4839-b0be-90f68e5afffd
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 8e922ad20f9954a17f63f42559877f0a05a2ba1a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d6acf3cbbfce491ebf98513b116d76ef9feb6d08
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="how-to-create-an-asynchronous-windows-presentation-framework-application-wcf-data-services"></a><span data-ttu-id="f119f-102">方法: 非同期 Windows Presentation Framework アプリケーションを作成する (WCF Data Services)</span><span class="sxs-lookup"><span data-stu-id="f119f-102">How to: Create an Asynchronous Windows Presentation Framework Application (WCF Data Services)</span></span>
-<span data-ttu-id="f119f-103">[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] では、データ サービスから取得したデータを Windows Presentation Framework (WPF) アプリケーションの UI 要素にバインドできます。</span><span class="sxs-lookup"><span data-stu-id="f119f-103">With [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], you can bind data obtained from a data service to UI element of a Windows Presentation Framework (WPF) application.</span></span> <span data-ttu-id="f119f-104">詳細については、次を参照してください。[コントロールへのデータ バインディング](../../../../docs/framework/data/wcf/binding-data-to-controls-wcf-data-services.md)です。により、アプリケーションのデータ サービス要求に応答を待機中に応答し続けるに非同期の方法でデータ サービスに対する操作を実行することもできます。</span><span class="sxs-lookup"><span data-stu-id="f119f-104">For more information, see [Binding Data to Controls](../../../../docs/framework/data/wcf/binding-data-to-controls-wcf-data-services.md).You can also execute operations against the data service in an asynchronous manner, which enables the application to continue to respond while waiting for a response to a data service request.</span></span> <span data-ttu-id="f119f-105">データ サービスに非同期でアクセスするには、Silverlight 用のアプリケーションが必要です。</span><span class="sxs-lookup"><span data-stu-id="f119f-105">Applications for Silverlight are required to access the data service asynchronously.</span></span> <span data-ttu-id="f119f-106">詳細については、次を参照してください。[非同期操作](../../../../docs/framework/data/wcf/asynchronous-operations-wcf-data-services.md)です。</span><span class="sxs-lookup"><span data-stu-id="f119f-106">For more information, see [Asynchronous Operations](../../../../docs/framework/data/wcf/asynchronous-operations-wcf-data-services.md).</span></span>  
+# <a name="how-to-create-an-asynchronous-windows-presentation-framework-application-wcf-data-services"></a><span data-ttu-id="89588-102">方法: 非同期 Windows Presentation Framework アプリケーションを作成する (WCF Data Services)</span><span class="sxs-lookup"><span data-stu-id="89588-102">How to: Create an Asynchronous Windows Presentation Framework Application (WCF Data Services)</span></span>
+<span data-ttu-id="89588-103">[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] では、データ サービスから取得したデータを Windows Presentation Framework (WPF) アプリケーションの UI 要素にバインドできます。</span><span class="sxs-lookup"><span data-stu-id="89588-103">With [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], you can bind data obtained from a data service to UI element of a Windows Presentation Framework (WPF) application.</span></span> <span data-ttu-id="89588-104">詳細については、次を参照してください。[コントロールへのデータ バインディング](../../../../docs/framework/data/wcf/binding-data-to-controls-wcf-data-services.md)です。により、アプリケーションのデータ サービス要求に応答を待機中に応答し続けるに非同期の方法でデータ サービスに対する操作を実行することもできます。</span><span class="sxs-lookup"><span data-stu-id="89588-104">For more information, see [Binding Data to Controls](../../../../docs/framework/data/wcf/binding-data-to-controls-wcf-data-services.md).You can also execute operations against the data service in an asynchronous manner, which enables the application to continue to respond while waiting for a response to a data service request.</span></span> <span data-ttu-id="89588-105">データ サービスに非同期でアクセスするには、Silverlight 用のアプリケーションが必要です。</span><span class="sxs-lookup"><span data-stu-id="89588-105">Applications for Silverlight are required to access the data service asynchronously.</span></span> <span data-ttu-id="89588-106">詳細については、次を参照してください。[非同期操作](../../../../docs/framework/data/wcf/asynchronous-operations-wcf-data-services.md)です。</span><span class="sxs-lookup"><span data-stu-id="89588-106">For more information, see [Asynchronous Operations](../../../../docs/framework/data/wcf/asynchronous-operations-wcf-data-services.md).</span></span>  
   
- <span data-ttu-id="f119f-107">このトピックでは、データ サービスに非同期でアクセスして、結果を WPF アプリケーションの要素にバインドする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="f119f-107">This topic shows how to access a data service asynchronously and bind the results to elements of a WPF application.</span></span> <span data-ttu-id="f119f-108">このトピックの例では、Northwind サンプル データ サービスおよび自動生成されたクライアント データ サービス クラスを使用します。</span><span class="sxs-lookup"><span data-stu-id="f119f-108">The examples in this topic use the Northwind sample data service and autogenerated client data service classes.</span></span> <span data-ttu-id="f119f-109">完了したときにこのサービスおよびクライアント データ クラスが作成された、 [WCF Data Services クイック スタート](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md)です。</span><span class="sxs-lookup"><span data-stu-id="f119f-109">This service and the client data classes are created when you complete the [WCF Data Services quickstart](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md).</span></span>  
+ <span data-ttu-id="89588-107">このトピックでは、データ サービスに非同期でアクセスして、結果を WPF アプリケーションの要素にバインドする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="89588-107">This topic shows how to access a data service asynchronously and bind the results to elements of a WPF application.</span></span> <span data-ttu-id="89588-108">このトピックの例では、Northwind サンプル データ サービスおよび自動生成されたクライアント データ サービス クラスを使用します。</span><span class="sxs-lookup"><span data-stu-id="89588-108">The examples in this topic use the Northwind sample data service and autogenerated client data service classes.</span></span> <span data-ttu-id="89588-109">完了したときにこのサービスおよびクライアント データ クラスが作成された、 [WCF Data Services クイック スタート](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md)です。</span><span class="sxs-lookup"><span data-stu-id="89588-109">This service and the client data classes are created when you complete the [WCF Data Services quickstart](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md).</span></span>  
   
-## <a name="example"></a><span data-ttu-id="f119f-110">例</span><span class="sxs-lookup"><span data-stu-id="f119f-110">Example</span></span>  
- <span data-ttu-id="f119f-111">次の XAML は、WPF アプリケーションのウィンドウを定義します。</span><span class="sxs-lookup"><span data-stu-id="f119f-111">The following XAML defines the window of the WPF application.</span></span>  
+## <a name="example"></a><span data-ttu-id="89588-110">例</span><span class="sxs-lookup"><span data-stu-id="89588-110">Example</span></span>  
+ <span data-ttu-id="89588-111">次の XAML は、WPF アプリケーションのウィンドウを定義します。</span><span class="sxs-lookup"><span data-stu-id="89588-111">The following XAML defines the window of the WPF application.</span></span>  
   
  [!code-xaml[Astoria Northwind Client#WpfDataBindingAsyncXaml](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/customerordersasync.xaml#wpfdatabindingasyncxaml)]  
   
-## <a name="example"></a><span data-ttu-id="f119f-112">例</span><span class="sxs-lookup"><span data-stu-id="f119f-112">Example</span></span>  
- <span data-ttu-id="f119f-113">次の XAML ファイルの分離コード ページは、データ サービスを使用して非同期クエリを実行し、結果を WPF ウィンドウの要素にバインドします。</span><span class="sxs-lookup"><span data-stu-id="f119f-113">The following code-behind page for the XAML file executes an asynchronous query by using the data service and binds the results to elements in the WPF window.</span></span>  
+## <a name="example"></a><span data-ttu-id="89588-112">例</span><span class="sxs-lookup"><span data-stu-id="89588-112">Example</span></span>  
+ <span data-ttu-id="89588-113">次の XAML ファイルの分離コード ページは、データ サービスを使用して非同期クエリを実行し、結果を WPF ウィンドウの要素にバインドします。</span><span class="sxs-lookup"><span data-stu-id="89588-113">The following code-behind page for the XAML file executes an asynchronous query by using the data service and binds the results to elements in the WPF window.</span></span>  
   
  [!code-csharp[Astoria Northwind Client#WpfDataBindingAsync](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/customerordersasync.xaml.cs#wpfdatabindingasync)]
  [!code-vb[Astoria Northwind Client#WpfDataBindingAsync](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/customerordersasync.xaml.vb#wpfdatabindingasync)]  
   
-## <a name="see-also"></a><span data-ttu-id="f119f-114">参照</span><span class="sxs-lookup"><span data-stu-id="f119f-114">See Also</span></span>  
- [<span data-ttu-id="f119f-115">WCF Data Services クライアント ライブラリ</span><span class="sxs-lookup"><span data-stu-id="f119f-115">WCF Data Services Client Library</span></span>](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)
+## <a name="see-also"></a><span data-ttu-id="89588-114">関連項目</span><span class="sxs-lookup"><span data-stu-id="89588-114">See Also</span></span>  
+ [<span data-ttu-id="89588-115">WCF Data Services クライアント ライブラリ</span><span class="sxs-lookup"><span data-stu-id="89588-115">WCF Data Services Client Library</span></span>](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)

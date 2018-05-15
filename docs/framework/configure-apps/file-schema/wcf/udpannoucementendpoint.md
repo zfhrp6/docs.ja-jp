@@ -1,32 +1,20 @@
 ---
 title: '&lt;udpAnnoucementEndpoint&gt;'
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 5b3fa9c5-f372-4df9-a9d6-1e426063b721
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 73f4dd1374164a005c600b81dcf4fa558a57c803
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a6dbec19beb3800603bd745bacbd6cbcbcdaa739
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="ltudpannoucementendpointgt"></a><span data-ttu-id="9666a-102">&lt;udpAnnoucementEndpoint&gt;</span><span class="sxs-lookup"><span data-stu-id="9666a-102">&lt;udpAnnoucementEndpoint&gt;</span></span>
-<span data-ttu-id="9666a-103">この構成要素は、UDP バインディングを使用してアナウンス メッセージを送信するためにサービスが使用する標準エンドポイントを定義します。</span><span class="sxs-lookup"><span data-stu-id="9666a-103">This configuration element defines a standard endpoint that is used by services to send announcement messages over a UDP binding.</span></span> <span data-ttu-id="9666a-104">これには固定コントラクトがあり、2 つの探索のバージョンをサポートします。</span><span class="sxs-lookup"><span data-stu-id="9666a-104">It has a fixed contract and supports two discovery versions.</span></span> <span data-ttu-id="9666a-105">また、WS-Discovery の仕様 (WS-Discovery April 2005 または WS-Discovery V1.1) に規定された固定 UDP バインディングと既定のアドレスも備えています。</span><span class="sxs-lookup"><span data-stu-id="9666a-105">In addition it has a fixed UDP binding and a default address value as specified in the WS-Discovery specifications (WS-Discovery April 2005 or WS-Discovery version 1.1).</span></span> <span data-ttu-id="9666a-106">アナウンス メッセージの送受信に使用するマルチキャスト アドレスを指定できます。</span><span class="sxs-lookup"><span data-stu-id="9666a-106">You can specify the multicast address to use for sending and receiving the announcement messages.</span></span>  
+# <a name="ltudpannoucementendpointgt"></a><span data-ttu-id="6d3e1-102">&lt;udpAnnoucementEndpoint&gt;</span><span class="sxs-lookup"><span data-stu-id="6d3e1-102">&lt;udpAnnoucementEndpoint&gt;</span></span>
+<span data-ttu-id="6d3e1-103">この構成要素は、UDP バインディングを使用してアナウンス メッセージを送信するためにサービスが使用する標準エンドポイントを定義します。</span><span class="sxs-lookup"><span data-stu-id="6d3e1-103">This configuration element defines a standard endpoint that is used by services to send announcement messages over a UDP binding.</span></span> <span data-ttu-id="6d3e1-104">これには固定コントラクトがあり、2 つの探索のバージョンをサポートします。</span><span class="sxs-lookup"><span data-stu-id="6d3e1-104">It has a fixed contract and supports two discovery versions.</span></span> <span data-ttu-id="6d3e1-105">また、WS-Discovery の仕様 (WS-Discovery April 2005 または WS-Discovery V1.1) に規定された固定 UDP バインディングと既定のアドレスも備えています。</span><span class="sxs-lookup"><span data-stu-id="6d3e1-105">In addition it has a fixed UDP binding and a default address value as specified in the WS-Discovery specifications (WS-Discovery April 2005 or WS-Discovery version 1.1).</span></span> <span data-ttu-id="6d3e1-106">アナウンス メッセージの送受信に使用するマルチキャスト アドレスを指定できます。</span><span class="sxs-lookup"><span data-stu-id="6d3e1-106">You can specify the multicast address to use for sending and receiving the announcement messages.</span></span>  
   
-<span data-ttu-id="9666a-107">\<システムです。ServiceModel ></span><span class="sxs-lookup"><span data-stu-id="9666a-107">\<system.ServiceModel></span></span>  
-<span data-ttu-id="9666a-108">\<standardEndpoints ></span><span class="sxs-lookup"><span data-stu-id="9666a-108">\<standardEndpoints></span></span>  
+<span data-ttu-id="6d3e1-107">\<system.ServiceModel ></span><span class="sxs-lookup"><span data-stu-id="6d3e1-107">\<system.ServiceModel></span></span>  
+<span data-ttu-id="6d3e1-108">\<standardEndpoints ></span><span class="sxs-lookup"><span data-stu-id="6d3e1-108">\<standardEndpoints></span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="9666a-109">構文</span><span class="sxs-lookup"><span data-stu-id="9666a-109">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="6d3e1-109">構文</span><span class="sxs-lookup"><span data-stu-id="6d3e1-109">Syntax</span></span>  
   
 ```xml  
 <system.serviceModel>  
@@ -41,32 +29,32 @@ ms.lasthandoff: 12/22/2017
 </system.serviceModel>  
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="9666a-110">属性および要素</span><span class="sxs-lookup"><span data-stu-id="9666a-110">Attributes and Elements</span></span>  
- <span data-ttu-id="9666a-111">以降のセクションでは、属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="9666a-111">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="6d3e1-110">属性および要素</span><span class="sxs-lookup"><span data-stu-id="6d3e1-110">Attributes and Elements</span></span>  
+ <span data-ttu-id="6d3e1-111">以降のセクションでは、属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="6d3e1-111">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="9666a-112">属性</span><span class="sxs-lookup"><span data-stu-id="9666a-112">Attributes</span></span>  
+### <a name="attributes"></a><span data-ttu-id="6d3e1-112">属性</span><span class="sxs-lookup"><span data-stu-id="6d3e1-112">Attributes</span></span>  
   
-|<span data-ttu-id="9666a-113">属性</span><span class="sxs-lookup"><span data-stu-id="9666a-113">Attribute</span></span>|<span data-ttu-id="9666a-114">説明</span><span class="sxs-lookup"><span data-stu-id="9666a-114">Description</span></span>|  
+|<span data-ttu-id="6d3e1-113">属性</span><span class="sxs-lookup"><span data-stu-id="6d3e1-113">Attribute</span></span>|<span data-ttu-id="6d3e1-114">説明</span><span class="sxs-lookup"><span data-stu-id="6d3e1-114">Description</span></span>|  
 |---------------|-----------------|  
-|<span data-ttu-id="9666a-115">discoveryVersion</span><span class="sxs-lookup"><span data-stu-id="9666a-115">discoveryVersion</span></span>|<span data-ttu-id="9666a-116">WS-Discovery プロトコルの 2 つのバージョンのうち、1 つを指定する文字列。</span><span class="sxs-lookup"><span data-stu-id="9666a-116">A string that specifies one of the two versions of WS-Discovery protocol.</span></span> <span data-ttu-id="9666a-117">有効値は WSDiscovery11 と WSDiscoveryApril2005 です。</span><span class="sxs-lookup"><span data-stu-id="9666a-117">Valid values are WSDiscovery11 and WSDiscoveryApril2005.</span></span> <span data-ttu-id="9666a-118">この値は、<xref:System.ServiceModel.Discovery.Configuration.AnnouncementEndpointElement.DiscoveryVersion> 型です。</span><span class="sxs-lookup"><span data-stu-id="9666a-118">This value is of type <xref:System.ServiceModel.Discovery.Configuration.AnnouncementEndpointElement.DiscoveryVersion>.</span></span>|  
-|<span data-ttu-id="9666a-119">maxAnnouncementDelay</span><span class="sxs-lookup"><span data-stu-id="9666a-119">maxAnnouncementDelay</span></span>|<span data-ttu-id="9666a-120">Discovery プロトコルが Hello メッセージを送信するまでの待機時間の最大値を指定する Timespan 値。</span><span class="sxs-lookup"><span data-stu-id="9666a-120">A Timespan value that specifies the maximum value for the delay the Discovery protocol will wait before sending a Hello message.</span></span> <span data-ttu-id="9666a-121">メッセージは送信前に 0 からこの属性値の間のランダムな時間だけ待機します。</span><span class="sxs-lookup"><span data-stu-id="9666a-121">The messages will wait for a random time value between 0 and the value of this attribute before being sent.</span></span> <span data-ttu-id="9666a-122">この属性はランダムな短い待機時間を設定するために使用されるもので、ネットワークが機能しなくなり、すべてのサービスが同時にオンラインに戻ったときにネットワーク ストームが発生することを防ぎます。</span><span class="sxs-lookup"><span data-stu-id="9666a-122">This attribute is used to set a small, random delay to prevent network storms when a network goes out and all services come back online at the same time.</span></span>|  
-|<span data-ttu-id="9666a-123">multicastAddress</span><span class="sxs-lookup"><span data-stu-id="9666a-123">multicastAddress</span></span>|<span data-ttu-id="9666a-124">探索メッセージの送受信に使用するマルチキャスト アドレスを指定する URI。</span><span class="sxs-lookup"><span data-stu-id="9666a-124">A URI that specifies a multicast address to use for sending and receiving the discovery messages.</span></span> <span data-ttu-id="9666a-125">既定値は、プロトコル仕様に準じたマルチキャスト アドレスです。</span><span class="sxs-lookup"><span data-stu-id="9666a-125">The default value is the multicast address as conformant to the protocol specification.</span></span>|  
-|<span data-ttu-id="9666a-126">name</span><span class="sxs-lookup"><span data-stu-id="9666a-126">name</span></span>|<span data-ttu-id="9666a-127">標準エンドポイントの構成名を指定する文字列。</span><span class="sxs-lookup"><span data-stu-id="9666a-127">A String that specifies the name of the configuration of the standard endpoint.</span></span> <span data-ttu-id="9666a-128">この名前は、サービス エンドポイントの `endpointConfiguration` 属性で使用され、標準エンドポイントと構成を関連付けます。</span><span class="sxs-lookup"><span data-stu-id="9666a-128">The name is used in the `endpointConfiguration` attribute of the service endpoint to link a standard endpoint to its configuration.</span></span>|  
+|<span data-ttu-id="6d3e1-115">discoveryVersion</span><span class="sxs-lookup"><span data-stu-id="6d3e1-115">discoveryVersion</span></span>|<span data-ttu-id="6d3e1-116">WS-Discovery プロトコルの 2 つのバージョンのうち、1 つを指定する文字列。</span><span class="sxs-lookup"><span data-stu-id="6d3e1-116">A string that specifies one of the two versions of WS-Discovery protocol.</span></span> <span data-ttu-id="6d3e1-117">有効値は WSDiscovery11 と WSDiscoveryApril2005 です。</span><span class="sxs-lookup"><span data-stu-id="6d3e1-117">Valid values are WSDiscovery11 and WSDiscoveryApril2005.</span></span> <span data-ttu-id="6d3e1-118">この値は、<xref:System.ServiceModel.Discovery.Configuration.AnnouncementEndpointElement.DiscoveryVersion> 型です。</span><span class="sxs-lookup"><span data-stu-id="6d3e1-118">This value is of type <xref:System.ServiceModel.Discovery.Configuration.AnnouncementEndpointElement.DiscoveryVersion>.</span></span>|  
+|<span data-ttu-id="6d3e1-119">maxAnnouncementDelay</span><span class="sxs-lookup"><span data-stu-id="6d3e1-119">maxAnnouncementDelay</span></span>|<span data-ttu-id="6d3e1-120">Discovery プロトコルが Hello メッセージを送信するまでの待機時間の最大値を指定する Timespan 値。</span><span class="sxs-lookup"><span data-stu-id="6d3e1-120">A Timespan value that specifies the maximum value for the delay the Discovery protocol will wait before sending a Hello message.</span></span> <span data-ttu-id="6d3e1-121">メッセージは送信前に 0 からこの属性値の間のランダムな時間だけ待機します。</span><span class="sxs-lookup"><span data-stu-id="6d3e1-121">The messages will wait for a random time value between 0 and the value of this attribute before being sent.</span></span> <span data-ttu-id="6d3e1-122">この属性はランダムな短い待機時間を設定するために使用されるもので、ネットワークが機能しなくなり、すべてのサービスが同時にオンラインに戻ったときにネットワーク ストームが発生することを防ぎます。</span><span class="sxs-lookup"><span data-stu-id="6d3e1-122">This attribute is used to set a small, random delay to prevent network storms when a network goes out and all services come back online at the same time.</span></span>|  
+|<span data-ttu-id="6d3e1-123">multicastAddress</span><span class="sxs-lookup"><span data-stu-id="6d3e1-123">multicastAddress</span></span>|<span data-ttu-id="6d3e1-124">探索メッセージの送受信に使用するマルチキャスト アドレスを指定する URI。</span><span class="sxs-lookup"><span data-stu-id="6d3e1-124">A URI that specifies a multicast address to use for sending and receiving the discovery messages.</span></span> <span data-ttu-id="6d3e1-125">既定値は、プロトコル仕様に準じたマルチキャスト アドレスです。</span><span class="sxs-lookup"><span data-stu-id="6d3e1-125">The default value is the multicast address as conformant to the protocol specification.</span></span>|  
+|<span data-ttu-id="6d3e1-126">name</span><span class="sxs-lookup"><span data-stu-id="6d3e1-126">name</span></span>|<span data-ttu-id="6d3e1-127">標準エンドポイントの構成名を指定する文字列。</span><span class="sxs-lookup"><span data-stu-id="6d3e1-127">A String that specifies the name of the configuration of the standard endpoint.</span></span> <span data-ttu-id="6d3e1-128">この名前は、サービス エンドポイントの `endpointConfiguration` 属性で使用され、標準エンドポイントと構成を関連付けます。</span><span class="sxs-lookup"><span data-stu-id="6d3e1-128">The name is used in the `endpointConfiguration` attribute of the service endpoint to link a standard endpoint to its configuration.</span></span>|  
   
-### <a name="child-elements"></a><span data-ttu-id="9666a-129">子要素</span><span class="sxs-lookup"><span data-stu-id="9666a-129">Child Elements</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="6d3e1-129">子要素</span><span class="sxs-lookup"><span data-stu-id="6d3e1-129">Child Elements</span></span>  
   
-|<span data-ttu-id="9666a-130">要素</span><span class="sxs-lookup"><span data-stu-id="9666a-130">Element</span></span>|<span data-ttu-id="9666a-131">説明</span><span class="sxs-lookup"><span data-stu-id="9666a-131">Description</span></span>|  
+|<span data-ttu-id="6d3e1-130">要素</span><span class="sxs-lookup"><span data-stu-id="6d3e1-130">Element</span></span>|<span data-ttu-id="6d3e1-131">説明</span><span class="sxs-lookup"><span data-stu-id="6d3e1-131">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="9666a-132">\<udpTransportSettings ></span><span class="sxs-lookup"><span data-stu-id="9666a-132">\<udpTransportSettings></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/udptransportsettings.md)|<span data-ttu-id="9666a-133">UDP エンドポイントの UDP トランスポートを構成できる設定のコレクション。</span><span class="sxs-lookup"><span data-stu-id="9666a-133">A collection of settings that allow you to configure UDP transport for the UDP endpoint.</span></span>|  
+|[<span data-ttu-id="6d3e1-132">\<udpTransportSettings ></span><span class="sxs-lookup"><span data-stu-id="6d3e1-132">\<udpTransportSettings></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/udptransportsettings.md)|<span data-ttu-id="6d3e1-133">UDP エンドポイントの UDP トランスポートを構成できる設定のコレクション。</span><span class="sxs-lookup"><span data-stu-id="6d3e1-133">A collection of settings that allow you to configure UDP transport for the UDP endpoint.</span></span>|  
   
-### <a name="parent-elements"></a><span data-ttu-id="9666a-134">親要素</span><span class="sxs-lookup"><span data-stu-id="9666a-134">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="6d3e1-134">親要素</span><span class="sxs-lookup"><span data-stu-id="6d3e1-134">Parent Elements</span></span>  
   
-|<span data-ttu-id="9666a-135">要素</span><span class="sxs-lookup"><span data-stu-id="9666a-135">Element</span></span>|<span data-ttu-id="9666a-136">説明</span><span class="sxs-lookup"><span data-stu-id="9666a-136">Description</span></span>|  
+|<span data-ttu-id="6d3e1-135">要素</span><span class="sxs-lookup"><span data-stu-id="6d3e1-135">Element</span></span>|<span data-ttu-id="6d3e1-136">説明</span><span class="sxs-lookup"><span data-stu-id="6d3e1-136">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="9666a-137">\<standardEndpoints ></span><span class="sxs-lookup"><span data-stu-id="9666a-137">\<standardEndpoints></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/standardendpoints.md)|<span data-ttu-id="9666a-138">1 つ以上のプロパティ (アドレス、バインディング、コントラクト) が固定されている、あらかじめ定義されたエンドポイントである標準エンドポイントのコレクション。</span><span class="sxs-lookup"><span data-stu-id="9666a-138">A collection of standard endpoints that are pre-defined endpoints with one or more of their properties (address, binding, contract) fixed.</span></span>|  
+|[<span data-ttu-id="6d3e1-137">\<standardEndpoints ></span><span class="sxs-lookup"><span data-stu-id="6d3e1-137">\<standardEndpoints></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/standardendpoints.md)|<span data-ttu-id="6d3e1-138">1 つ以上のプロパティ (アドレス、バインディング、コントラクト) が固定されている、あらかじめ定義されたエンドポイントである標準エンドポイントのコレクション。</span><span class="sxs-lookup"><span data-stu-id="6d3e1-138">A collection of standard endpoints that are pre-defined endpoints with one or more of their properties (address, binding, contract) fixed.</span></span>|  
   
-## <a name="example"></a><span data-ttu-id="9666a-139">例</span><span class="sxs-lookup"><span data-stu-id="9666a-139">Example</span></span>  
- <span data-ttu-id="9666a-140">既定のマルチキャスト アドレスを使用した UDP マルチキャスト トランスポート経由、および指定されたマルチキャスト アドレスを使用した UDP マルチキャスト トランスポート経由でアナウンスをリッスンするクライアントの例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="9666a-140">The following example demonstrates a client listening for announcement over a UDP multicast transport with default multicast address, and UDP multicast transport with specified multicast address.</span></span>  
+## <a name="example"></a><span data-ttu-id="6d3e1-139">例</span><span class="sxs-lookup"><span data-stu-id="6d3e1-139">Example</span></span>  
+ <span data-ttu-id="6d3e1-140">既定のマルチキャスト アドレスを使用した UDP マルチキャスト トランスポート経由、および指定されたマルチキャスト アドレスを使用した UDP マルチキャスト トランスポート経由でアナウンスをリッスンするクライアントの例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="6d3e1-140">The following example demonstrates a client listening for announcement over a UDP multicast transport with default multicast address, and UDP multicast transport with specified multicast address.</span></span>  
   
 ```xml  
 <services>  
@@ -90,5 +78,5 @@ ms.lasthandoff: 12/22/2017
 </standardEndpoints>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="9666a-141">参照</span><span class="sxs-lookup"><span data-stu-id="9666a-141">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="6d3e1-141">関連項目</span><span class="sxs-lookup"><span data-stu-id="6d3e1-141">See Also</span></span>  
  <xref:System.ServiceModel.Discovery.UdpAnnouncementEndpoint>

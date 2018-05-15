@@ -1,11 +1,6 @@
 ---
 title: Microsoft.VisualStudio.Activities.Asr.ClientActivityBuilder
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
 ms.topic: reference
 api_name:
 - Microsoft.VisualStudio.Activities.Asr.ClientActivityBuilder
@@ -14,27 +9,21 @@ api_location:
 api_type:
 - Assembly
 ms.assetid: e7287d3f-59ee-448f-b7fe-b640508501a5
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 76a764018a0939edbba98d9deda541dce3c34ffb
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: c34e7f02e154e075b3c2298d08001614a7de0e8c
+ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="microsoftvisualstudioactivitiesasrclientactivitybuilder"></a><span data-ttu-id="02634-102">Microsoft.VisualStudio.Activities.Asr.ClientActivityBuilder</span><span class="sxs-lookup"><span data-stu-id="02634-102">Microsoft.VisualStudio.Activities.Asr.ClientActivityBuilder</span></span>
-<span data-ttu-id="02634-103">このクラスを使用して、ワークフロー アクティビティにデータを提供する <xref:System.Activities.ActivityBuilder> オブジェクトを作成および構成します。</span><span class="sxs-lookup"><span data-stu-id="02634-103">Use this class to create and configure a <xref:System.Activities.ActivityBuilder> object that provides data for a workflow activity.</span></span>  
+# <a name="microsoftvisualstudioactivitiesasrclientactivitybuilder"></a><span data-ttu-id="b839b-102">Microsoft.VisualStudio.Activities.Asr.ClientActivityBuilder</span><span class="sxs-lookup"><span data-stu-id="b839b-102">Microsoft.VisualStudio.Activities.Asr.ClientActivityBuilder</span></span>
+<span data-ttu-id="b839b-103">このクラスを使用して、ワークフロー アクティビティにデータを提供する <xref:System.Activities.ActivityBuilder> オブジェクトを作成および構成します。</span><span class="sxs-lookup"><span data-stu-id="b839b-103">Use this class to create and configure a <xref:System.Activities.ActivityBuilder> object that provides data for a workflow activity.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="02634-104">構文</span><span class="sxs-lookup"><span data-stu-id="02634-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="b839b-104">構文</span><span class="sxs-lookup"><span data-stu-id="b839b-104">Syntax</span></span>  
   
 ```csharp  
 public class ClientActivityBuilder   
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="02634-105">参照</span><span class="sxs-lookup"><span data-stu-id="02634-105">See Also</span></span>  
- [<span data-ttu-id="02634-106">Microsoft.VisualStudio.Activities.Asr.ClientActivityBuilder.Build</span><span class="sxs-lookup"><span data-stu-id="02634-106">Microsoft.VisualStudio.Activities.Asr.ClientActivityBuilder.Build</span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/microsoft-visualstudio-activities-asr-clientactivitybuilder-build.md)  
- [<span data-ttu-id="02634-107">Microsoft.VisualStudio.Activities.Asr.ClientActivityBuilder..ctor</span><span class="sxs-lookup"><span data-stu-id="02634-107">Microsoft.VisualStudio.Activities.Asr.ClientActivityBuilder..ctor</span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/microsoft-visualstudio-activities-asr-clientactivitybuilder-ctor.md)
+## <a name="see-also"></a><span data-ttu-id="b839b-105">関連項目</span><span class="sxs-lookup"><span data-stu-id="b839b-105">See Also</span></span>  
+ [<span data-ttu-id="b839b-106">Microsoft.VisualStudio.Activities.Asr.ClientActivityBuilder.Build</span><span class="sxs-lookup"><span data-stu-id="b839b-106">Microsoft.VisualStudio.Activities.Asr.ClientActivityBuilder.Build</span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/microsoft-visualstudio-activities-asr-clientactivitybuilder-build.md)  
+ [<span data-ttu-id="b839b-107">Microsoft.VisualStudio.Activities.Asr.ClientActivityBuilder..ctor</span><span class="sxs-lookup"><span data-stu-id="b839b-107">Microsoft.VisualStudio.Activities.Asr.ClientActivityBuilder..ctor</span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/microsoft-visualstudio-activities-asr-clientactivitybuilder-ctor.md)

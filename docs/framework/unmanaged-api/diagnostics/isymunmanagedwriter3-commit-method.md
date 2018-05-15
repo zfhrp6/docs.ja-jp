@@ -1,14 +1,6 @@
 ---
-title: "ISymUnmanagedWriter3::Commit メソッド"
-ms.custom: 
+title: ISymUnmanagedWriter3::Commit メソッド
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ISymUnmanagedWriter3.Commit
 api_location:
@@ -23,32 +15,28 @@ helpviewer_keywords:
 ms.assetid: f6961922-46ec-4d2c-8369-85f880731f37
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 10c36f1972e3c55b22a472c81ec8499fcfde3405
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9e4e2cd49bdffd0a1293a5601cb44e4804e2b1ed
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="isymunmanagedwriter3commit-method"></a><span data-ttu-id="eda8c-102">ISymUnmanagedWriter3::Commit メソッド</span><span class="sxs-lookup"><span data-stu-id="eda8c-102">ISymUnmanagedWriter3::Commit Method</span></span>
-<span data-ttu-id="eda8c-103">ストリームにこれまでに書き込まれた変更をコミットします。</span><span class="sxs-lookup"><span data-stu-id="eda8c-103">Commits the changes written so far to the stream.</span></span>  
+# <a name="isymunmanagedwriter3commit-method"></a><span data-ttu-id="131fa-102">ISymUnmanagedWriter3::Commit メソッド</span><span class="sxs-lookup"><span data-stu-id="131fa-102">ISymUnmanagedWriter3::Commit Method</span></span>
+<span data-ttu-id="131fa-103">ストリームにこれまでに書き込まれた変更をコミットします。</span><span class="sxs-lookup"><span data-stu-id="131fa-103">Commits the changes written so far to the stream.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="eda8c-104">構文</span><span class="sxs-lookup"><span data-stu-id="eda8c-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="131fa-104">構文</span><span class="sxs-lookup"><span data-stu-id="131fa-104">Syntax</span></span>  
   
 ```  
 HRESULT Commit();  
 ```  
   
-## <a name="return-value"></a><span data-ttu-id="eda8c-105">戻り値</span><span class="sxs-lookup"><span data-stu-id="eda8c-105">Return Value</span></span>  
- <span data-ttu-id="eda8c-106">メソッドが成功した場合は S_OK、それ以外の場合、E_FAIL またはその他のエラー コード。</span><span class="sxs-lookup"><span data-stu-id="eda8c-106">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="131fa-105">戻り値</span><span class="sxs-lookup"><span data-stu-id="131fa-105">Return Value</span></span>  
+ <span data-ttu-id="131fa-106">メソッドが成功した場合は S_OK、それ以外の場合、E_FAIL またはその他のエラー コード。</span><span class="sxs-lookup"><span data-stu-id="131fa-106">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="eda8c-107">必要条件</span><span class="sxs-lookup"><span data-stu-id="eda8c-107">Requirements</span></span>  
- <span data-ttu-id="eda8c-108">**ヘッダー:** CorSym.idl、CorSym.h</span><span class="sxs-lookup"><span data-stu-id="eda8c-108">**Header:** CorSym.idl , CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="131fa-107">要件</span><span class="sxs-lookup"><span data-stu-id="131fa-107">Requirements</span></span>  
+ <span data-ttu-id="131fa-108">**ヘッダー:** CorSym.idl、CorSym.h</span><span class="sxs-lookup"><span data-stu-id="131fa-108">**Header:** CorSym.idl , CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="eda8c-109">参照</span><span class="sxs-lookup"><span data-stu-id="eda8c-109">See Also</span></span>  
- [<span data-ttu-id="eda8c-110">ISymUnmanagedWriter3 インターフェイス</span><span class="sxs-lookup"><span data-stu-id="eda8c-110">ISymUnmanagedWriter3 Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter3-interface.md)
+## <a name="see-also"></a><span data-ttu-id="131fa-109">関連項目</span><span class="sxs-lookup"><span data-stu-id="131fa-109">See Also</span></span>  
+ [<span data-ttu-id="131fa-110">ISymUnmanagedWriter3 インターフェイス</span><span class="sxs-lookup"><span data-stu-id="131fa-110">ISymUnmanagedWriter3 Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter3-interface.md)

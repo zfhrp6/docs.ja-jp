@@ -1,14 +1,6 @@
 ---
-title: "ICorDebugEditAndContinueSnapshot::GetMvid メソッド"
-ms.custom: 
+title: ICorDebugEditAndContinueSnapshot::GetMvid メソッド
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ICorDebugEditAndContinueSnapshot.GetMvid
 api_location:
@@ -23,20 +15,16 @@ helpviewer_keywords:
 ms.assetid: d7e916a6-1c39-4676-972d-da3d8546044b
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 973feab63d0a741fddb8cc96e1d48e1ae5a33892
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 0f1b08adfcef20fe6912f94d97d78c50875c2bdb
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="icordebugeditandcontinuesnapshotgetmvid-method"></a><span data-ttu-id="153cc-102">ICorDebugEditAndContinueSnapshot::GetMvid メソッド</span><span class="sxs-lookup"><span data-stu-id="153cc-102">ICorDebugEditAndContinueSnapshot::GetMvid Method</span></span>
-<span data-ttu-id="153cc-103">`GetMvid` は互換性のために残されています。</span><span class="sxs-lookup"><span data-stu-id="153cc-103">`GetMvid` is obsolete.</span></span> <span data-ttu-id="153cc-104">このメソッドを呼び出さないでください。</span><span class="sxs-lookup"><span data-stu-id="153cc-104">Do not call this method.</span></span>  
+# <a name="icordebugeditandcontinuesnapshotgetmvid-method"></a><span data-ttu-id="4c70e-102">ICorDebugEditAndContinueSnapshot::GetMvid メソッド</span><span class="sxs-lookup"><span data-stu-id="4c70e-102">ICorDebugEditAndContinueSnapshot::GetMvid Method</span></span>
+<span data-ttu-id="4c70e-103">`GetMvid` は互換性のために残されています。</span><span class="sxs-lookup"><span data-stu-id="4c70e-103">`GetMvid` is obsolete.</span></span> <span data-ttu-id="4c70e-104">このメソッドを呼び出さないでください。</span><span class="sxs-lookup"><span data-stu-id="4c70e-104">Do not call this method.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="153cc-105">参照</span><span class="sxs-lookup"><span data-stu-id="153cc-105">See Also</span></span>  
- [<span data-ttu-id="153cc-106">デバッグ インターフェイス</span><span class="sxs-lookup"><span data-stu-id="153cc-106">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+## <a name="see-also"></a><span data-ttu-id="4c70e-105">関連項目</span><span class="sxs-lookup"><span data-stu-id="4c70e-105">See Also</span></span>  
+ [<span data-ttu-id="4c70e-106">デバッグ インターフェイス</span><span class="sxs-lookup"><span data-stu-id="4c70e-106">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

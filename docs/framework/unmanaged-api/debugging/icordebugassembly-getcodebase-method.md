@@ -1,14 +1,6 @@
 ---
-title: "ICorDebugAssembly::GetCodeBase メソッド"
-ms.custom: 
+title: ICorDebugAssembly::GetCodeBase メソッド
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ICorDebugAssembly.GetCodeBase
 api_location:
@@ -23,22 +15,18 @@ helpviewer_keywords:
 ms.assetid: 48adc154-9058-4fef-9c43-e9aad80e4dbf
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 24ac81f841be21fe477ad46ef210e2f7d1595acb
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f6236d6b5349a9c2a528a85559c0cbc02c8da381
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="icordebugassemblygetcodebase-method"></a><span data-ttu-id="523d3-102">ICorDebugAssembly::GetCodeBase メソッド</span><span class="sxs-lookup"><span data-stu-id="523d3-102">ICorDebugAssembly::GetCodeBase Method</span></span>
-<span data-ttu-id="523d3-103">.NET Framework の現在のバージョンでは、このメソッドが実装されていません。</span><span class="sxs-lookup"><span data-stu-id="523d3-103">This method is not implemented in the current version of the .NET Framework.</span></span>  
+# <a name="icordebugassemblygetcodebase-method"></a><span data-ttu-id="8fb46-102">ICorDebugAssembly::GetCodeBase メソッド</span><span class="sxs-lookup"><span data-stu-id="8fb46-102">ICorDebugAssembly::GetCodeBase Method</span></span>
+<span data-ttu-id="8fb46-103">.NET Framework の現在のバージョンでは、このメソッドが実装されていません。</span><span class="sxs-lookup"><span data-stu-id="8fb46-103">This method is not implemented in the current version of the .NET Framework.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="523d3-104">構文</span><span class="sxs-lookup"><span data-stu-id="523d3-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="8fb46-104">構文</span><span class="sxs-lookup"><span data-stu-id="8fb46-104">Syntax</span></span>  
   
 ```  
 HRESULT GetCodeBase (  

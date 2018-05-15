@@ -4,32 +4,27 @@ description: dotnet add 参照コマンドは、プロジェクト間参照を�
 author: mairaw
 ms.author: mairaw
 ms.date: 09/19/2017
-ms.topic: conceptual
-ms.prod: dotnet-core
-ms.technology: dotnet-cli
-ms.workload:
-- dotnetcore
-ms.openlocfilehash: c82696eee2fbe4bbad86e59cf5de1c2e74d048f6
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: ee9c058b83238655bd90a4bf5c809a9d0e4c13d6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="dotnet-add-reference"></a><span data-ttu-id="f3329-103">dotnet-add 参照</span><span class="sxs-lookup"><span data-stu-id="f3329-103">dotnet-add reference</span></span>
+# <a name="dotnet-add-reference"></a><span data-ttu-id="6922d-103">dotnet-add 参照</span><span class="sxs-lookup"><span data-stu-id="6922d-103">dotnet-add reference</span></span>
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
-## <a name="name"></a><span data-ttu-id="f3329-104">name</span><span class="sxs-lookup"><span data-stu-id="f3329-104">Name</span></span>
+## <a name="name"></a><span data-ttu-id="6922d-104">name</span><span class="sxs-lookup"><span data-stu-id="6922d-104">Name</span></span>
 
-<span data-ttu-id="f3329-105">`dotnet add reference` - プロジェクト間 (P2P) 参照を追加します。</span><span class="sxs-lookup"><span data-stu-id="f3329-105">`dotnet add reference` - Adds project-to-project (P2P) references.</span></span>
+<span data-ttu-id="6922d-105">`dotnet add reference` - プロジェクト間 (P2P) 参照を追加します。</span><span class="sxs-lookup"><span data-stu-id="6922d-105">`dotnet add reference` - Adds project-to-project (P2P) references.</span></span>
 
-## <a name="synopsis"></a><span data-ttu-id="f3329-106">構文</span><span class="sxs-lookup"><span data-stu-id="f3329-106">Synopsis</span></span>
+## <a name="synopsis"></a><span data-ttu-id="6922d-106">構文</span><span class="sxs-lookup"><span data-stu-id="6922d-106">Synopsis</span></span>
 
 `dotnet add [<PROJECT>] reference [-f|--framework] <PROJECT_REFERENCES> [-h|--help]`
 
-## <a name="description"></a><span data-ttu-id="f3329-107">説明</span><span class="sxs-lookup"><span data-stu-id="f3329-107">Description</span></span>
+## <a name="description"></a><span data-ttu-id="6922d-107">説明</span><span class="sxs-lookup"><span data-stu-id="6922d-107">Description</span></span>
 
-<span data-ttu-id="f3329-108">`dotnet add reference` コマンドは、プロジェクトにプロジェクト参照を追加する便利なオプションを提供します。</span><span class="sxs-lookup"><span data-stu-id="f3329-108">The `dotnet add reference` command provides a convenient option to add project references to a project.</span></span> <span data-ttu-id="f3329-109">このコマンドを実行すると、[`<ProjectReference>`](/visualstudio/msbuild/common-msbuild-project-items) 要素がプロジェクト ファイルに追加されます。</span><span class="sxs-lookup"><span data-stu-id="f3329-109">After running the command, the [`<ProjectReference>`](/visualstudio/msbuild/common-msbuild-project-items) elements are added to the project file.</span></span>
+<span data-ttu-id="6922d-108">`dotnet add reference` コマンドは、プロジェクトにプロジェクト参照を追加する便利なオプションを提供します。</span><span class="sxs-lookup"><span data-stu-id="6922d-108">The `dotnet add reference` command provides a convenient option to add project references to a project.</span></span> <span data-ttu-id="6922d-109">このコマンドを実行すると、[`<ProjectReference>`](/visualstudio/msbuild/common-msbuild-project-items) 要素がプロジェクト ファイルに追加されます。</span><span class="sxs-lookup"><span data-stu-id="6922d-109">After running the command, the [`<ProjectReference>`](/visualstudio/msbuild/common-msbuild-project-items) elements are added to the project file.</span></span>
 
 ```xml
 <ItemGroup>
@@ -39,36 +34,36 @@ ms.lasthandoff: 04/28/2018
 </ItemGroup>
 ```
 
-## <a name="arguments"></a><span data-ttu-id="f3329-110">引数</span><span class="sxs-lookup"><span data-stu-id="f3329-110">Arguments</span></span>
+## <a name="arguments"></a><span data-ttu-id="6922d-110">引数</span><span class="sxs-lookup"><span data-stu-id="6922d-110">Arguments</span></span>
 
 `PROJECT`
 
-<span data-ttu-id="f3329-111">プロジェクト ファイルを指定します。</span><span class="sxs-lookup"><span data-stu-id="f3329-111">Specifies the project file.</span></span> <span data-ttu-id="f3329-112">指定されていない場合、現在のディレクトリで検索されます。</span><span class="sxs-lookup"><span data-stu-id="f3329-112">If not specified, the command searches the current directory for one.</span></span>
+<span data-ttu-id="6922d-111">プロジェクト ファイルを指定します。</span><span class="sxs-lookup"><span data-stu-id="6922d-111">Specifies the project file.</span></span> <span data-ttu-id="6922d-112">指定されていない場合、現在のディレクトリで検索されます。</span><span class="sxs-lookup"><span data-stu-id="6922d-112">If not specified, the command searches the current directory for one.</span></span>
 
 `PROJECT_REFERENCES`
 
-<span data-ttu-id="f3329-113">追加するプロジェクト間参照 (P2P) です。</span><span class="sxs-lookup"><span data-stu-id="f3329-113">Project-to-project (P2P) references to add.</span></span> <span data-ttu-id="f3329-114">1 つ以上のプロジェクトを指定します。</span><span class="sxs-lookup"><span data-stu-id="f3329-114">Specify one or more projects.</span></span> <span data-ttu-id="f3329-115">[glob パターン](https://en.wikipedia.org/wiki/Glob_(programming))は Unix/Linux ベースのシステムで利用できます。</span><span class="sxs-lookup"><span data-stu-id="f3329-115">[Glob patterns](https://en.wikipedia.org/wiki/Glob_(programming)) are supported on Unix/Linux-based systems.</span></span>
+<span data-ttu-id="6922d-113">追加するプロジェクト間参照 (P2P) です。</span><span class="sxs-lookup"><span data-stu-id="6922d-113">Project-to-project (P2P) references to add.</span></span> <span data-ttu-id="6922d-114">1 つ以上のプロジェクトを指定します。</span><span class="sxs-lookup"><span data-stu-id="6922d-114">Specify one or more projects.</span></span> <span data-ttu-id="6922d-115">[glob パターン](https://en.wikipedia.org/wiki/Glob_(programming))は Unix/Linux ベースのシステムで利用できます。</span><span class="sxs-lookup"><span data-stu-id="6922d-115">[Glob patterns](https://en.wikipedia.org/wiki/Glob_(programming)) are supported on Unix/Linux-based systems.</span></span>
 
-## <a name="options"></a><span data-ttu-id="f3329-116">オプション</span><span class="sxs-lookup"><span data-stu-id="f3329-116">Options</span></span>
+## <a name="options"></a><span data-ttu-id="6922d-116">オプション</span><span class="sxs-lookup"><span data-stu-id="6922d-116">Options</span></span>
 
 `-h|--help`
 
-<span data-ttu-id="f3329-117">コマンドの短いヘルプを印刷します。</span><span class="sxs-lookup"><span data-stu-id="f3329-117">Prints out a short help for the command.</span></span>
+<span data-ttu-id="6922d-117">コマンドの短いヘルプを印刷します。</span><span class="sxs-lookup"><span data-stu-id="6922d-117">Prints out a short help for the command.</span></span>
 
 `-f|--framework <FRAMEWORK>`
 
-<span data-ttu-id="f3329-118">特定の[フレームワーク](../../standard/frameworks.md)を対象にしている場合にのみ、プロジェクト参照を追加します。</span><span class="sxs-lookup"><span data-stu-id="f3329-118">Adds project references only when targeting a specific [framework](../../standard/frameworks.md).</span></span>
+<span data-ttu-id="6922d-118">特定の[フレームワーク](../../standard/frameworks.md)を対象にしている場合にのみ、プロジェクト参照を追加します。</span><span class="sxs-lookup"><span data-stu-id="6922d-118">Adds project references only when targeting a specific [framework](../../standard/frameworks.md).</span></span>
 
-## <a name="examples"></a><span data-ttu-id="f3329-119">使用例</span><span class="sxs-lookup"><span data-stu-id="f3329-119">Examples</span></span>
+## <a name="examples"></a><span data-ttu-id="6922d-119">使用例</span><span class="sxs-lookup"><span data-stu-id="6922d-119">Examples</span></span>
 
-<span data-ttu-id="f3329-120">プロジェクト参照を追加する:</span><span class="sxs-lookup"><span data-stu-id="f3329-120">Add a project reference:</span></span>
+<span data-ttu-id="6922d-120">プロジェクト参照を追加する:</span><span class="sxs-lookup"><span data-stu-id="6922d-120">Add a project reference:</span></span>
 
 `dotnet add app/app.csproj reference lib/lib.csproj`
 
-<span data-ttu-id="f3329-121">現在のディレクトリのプロジェクトに複数のプロジェクト参照を追加する:</span><span class="sxs-lookup"><span data-stu-id="f3329-121">Add multiple project references to the project in the current directory:</span></span>
+<span data-ttu-id="6922d-121">現在のディレクトリのプロジェクトに複数のプロジェクト参照を追加する:</span><span class="sxs-lookup"><span data-stu-id="6922d-121">Add multiple project references to the project in the current directory:</span></span>
 
 `dotnet add reference lib1/lib1.csproj lib2/lib2.csproj`
 
-<span data-ttu-id="f3329-122">Linux/Unix で glob パターンを使って複数のプロジェクト参照を追加する:</span><span class="sxs-lookup"><span data-stu-id="f3329-122">Add multiple project references using a globbing pattern on Linux/Unix:</span></span>
+<span data-ttu-id="6922d-122">Linux/Unix で glob パターンを使って複数のプロジェクト参照を追加する:</span><span class="sxs-lookup"><span data-stu-id="6922d-122">Add multiple project references using a globbing pattern on Linux/Unix:</span></span>
 
 `dotnet add app/app.csproj reference **/*.csproj`

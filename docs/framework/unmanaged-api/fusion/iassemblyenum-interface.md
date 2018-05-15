@@ -1,14 +1,6 @@
 ---
-title: "IAssemblyEnum インターフェイス"
-ms.custom: 
+title: IAssemblyEnum インターフェイス
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - IAssemblyEnum
 api_location:
@@ -22,36 +14,32 @@ helpviewer_keywords:
 ms.assetid: 634ef9f9-e94b-4776-a9e1-866df9a76c8f
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: ca74970ea7c2b98ad65e279fc1cc128b2e55aeb5
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f4af4d0a6049c789db371d84b564d261453968b1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="iassemblyenum-interface"></a><span data-ttu-id="913eb-102">IAssemblyEnum インターフェイス</span><span class="sxs-lookup"><span data-stu-id="913eb-102">IAssemblyEnum Interface</span></span>
-<span data-ttu-id="913eb-103">配列の列挙子を表す`IAssemblyName`オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="913eb-103">Represents an enumerator for an array of `IAssemblyName` objects.</span></span>  
+# <a name="iassemblyenum-interface"></a><span data-ttu-id="bb41a-102">IAssemblyEnum インターフェイス</span><span class="sxs-lookup"><span data-stu-id="bb41a-102">IAssemblyEnum Interface</span></span>
+<span data-ttu-id="bb41a-103">配列の列挙子を表す`IAssemblyName`オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="bb41a-103">Represents an enumerator for an array of `IAssemblyName` objects.</span></span>  
   
-## <a name="methods"></a><span data-ttu-id="913eb-104">メソッド</span><span class="sxs-lookup"><span data-stu-id="913eb-104">Methods</span></span>  
+## <a name="methods"></a><span data-ttu-id="bb41a-104">メソッド</span><span class="sxs-lookup"><span data-stu-id="bb41a-104">Methods</span></span>  
   
-|<span data-ttu-id="913eb-105">メソッド</span><span class="sxs-lookup"><span data-stu-id="913eb-105">Method</span></span>|<span data-ttu-id="913eb-106">説明</span><span class="sxs-lookup"><span data-stu-id="913eb-106">Description</span></span>|  
+|<span data-ttu-id="bb41a-105">メソッド</span><span class="sxs-lookup"><span data-stu-id="bb41a-105">Method</span></span>|<span data-ttu-id="bb41a-106">説明</span><span class="sxs-lookup"><span data-stu-id="bb41a-106">Description</span></span>|  
 |------------|-----------------|  
-|[<span data-ttu-id="913eb-107">Clone メソッド</span><span class="sxs-lookup"><span data-stu-id="913eb-107">Clone Method</span></span>](../../../../docs/framework/unmanaged-api/fusion/iassemblyenum-clone-method.md)|<span data-ttu-id="913eb-108">これのシャロー コピーを作成`IAssemblyEnum`オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="913eb-108">Creates a shallow copy of this `IAssemblyEnum` object.</span></span>|  
-|[<span data-ttu-id="913eb-109">GetNextAssembly メソッド</span><span class="sxs-lookup"><span data-stu-id="913eb-109">GetNextAssembly Method</span></span>](../../../../docs/framework/unmanaged-api/fusion/iassemblyenum-getnextassembly-method.md)|<span data-ttu-id="913eb-110">ポインターを取得`IAssemblyName`これに含まれている`IAssemblyEnum`オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="913eb-110">Gets a pointer to the next `IAssemblyName` contained in this `IAssemblyEnum` object.</span></span>|  
-|[<span data-ttu-id="913eb-111">Reset メソッド</span><span class="sxs-lookup"><span data-stu-id="913eb-111">Reset Method</span></span>](../../../../docs/framework/unmanaged-api/fusion/iassemblyenum-reset-method.md)|<span data-ttu-id="913eb-112">これをリセット`IAssemblyEnum`オブジェクトを開始位置。</span><span class="sxs-lookup"><span data-stu-id="913eb-112">Resets this `IAssemblyEnum` object to its starting position.</span></span>|  
+|[<span data-ttu-id="bb41a-107">Clone メソッド</span><span class="sxs-lookup"><span data-stu-id="bb41a-107">Clone Method</span></span>](../../../../docs/framework/unmanaged-api/fusion/iassemblyenum-clone-method.md)|<span data-ttu-id="bb41a-108">これのシャロー コピーを作成`IAssemblyEnum`オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="bb41a-108">Creates a shallow copy of this `IAssemblyEnum` object.</span></span>|  
+|[<span data-ttu-id="bb41a-109">GetNextAssembly メソッド</span><span class="sxs-lookup"><span data-stu-id="bb41a-109">GetNextAssembly Method</span></span>](../../../../docs/framework/unmanaged-api/fusion/iassemblyenum-getnextassembly-method.md)|<span data-ttu-id="bb41a-110">ポインターを取得`IAssemblyName`これに含まれている`IAssemblyEnum`オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="bb41a-110">Gets a pointer to the next `IAssemblyName` contained in this `IAssemblyEnum` object.</span></span>|  
+|[<span data-ttu-id="bb41a-111">Reset メソッド</span><span class="sxs-lookup"><span data-stu-id="bb41a-111">Reset Method</span></span>](../../../../docs/framework/unmanaged-api/fusion/iassemblyenum-reset-method.md)|<span data-ttu-id="bb41a-112">これをリセット`IAssemblyEnum`オブジェクトを開始位置。</span><span class="sxs-lookup"><span data-stu-id="bb41a-112">Resets this `IAssemblyEnum` object to its starting position.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="913eb-113">必要条件</span><span class="sxs-lookup"><span data-stu-id="913eb-113">Requirements</span></span>  
- <span data-ttu-id="913eb-114">**プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="913eb-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="bb41a-113">要件</span><span class="sxs-lookup"><span data-stu-id="bb41a-113">Requirements</span></span>  
+ <span data-ttu-id="bb41a-114">**プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="bb41a-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="913eb-115">**ヘッダー:** Fusion.h</span><span class="sxs-lookup"><span data-stu-id="913eb-115">**Header:** Fusion.h</span></span>  
+ <span data-ttu-id="bb41a-115">**ヘッダー:** Fusion.h</span><span class="sxs-lookup"><span data-stu-id="bb41a-115">**Header:** Fusion.h</span></span>  
   
- <span data-ttu-id="913eb-116">**.NET framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="913eb-116">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="bb41a-116">**.NET framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="bb41a-116">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="913eb-117">参照</span><span class="sxs-lookup"><span data-stu-id="913eb-117">See Also</span></span>  
- [<span data-ttu-id="913eb-118">Fusion インターフェイス</span><span class="sxs-lookup"><span data-stu-id="913eb-118">Fusion Interfaces</span></span>](../../../../docs/framework/unmanaged-api/fusion/fusion-interfaces.md)  
- [<span data-ttu-id="913eb-119">IAssemblyName インターフェイス</span><span class="sxs-lookup"><span data-stu-id="913eb-119">IAssemblyName Interface</span></span>](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md)
+## <a name="see-also"></a><span data-ttu-id="bb41a-117">関連項目</span><span class="sxs-lookup"><span data-stu-id="bb41a-117">See Also</span></span>  
+ [<span data-ttu-id="bb41a-118">Fusion インターフェイス</span><span class="sxs-lookup"><span data-stu-id="bb41a-118">Fusion Interfaces</span></span>](../../../../docs/framework/unmanaged-api/fusion/fusion-interfaces.md)  
+ [<span data-ttu-id="bb41a-119">IAssemblyName インターフェイス</span><span class="sxs-lookup"><span data-stu-id="bb41a-119">IAssemblyName Interface</span></span>](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md)
