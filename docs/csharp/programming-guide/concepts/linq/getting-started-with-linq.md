@@ -1,26 +1,17 @@
 ---
-title: "C# の LINQ の概要"
-ms.custom: 
+title: C# の LINQ の概要
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - LINQ [C#]
 - queries [LINQ in C#]
 - LINQ, C#
 - queries [LINQ], LINQ in C#
 ms.assetid: b8700c1f-05c9-4380-b6eb-e34c4da38e54
-caps.latest.revision: "17"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 1e8f520f1fa5146f68bae0b634f8b2b1d5d875d9
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 843126d86df36b2aeaa8f57248afb930b92a9ff0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="getting-started-with-linq-in-c"></a>C# の LINQ の概要
 このセクションには、LINQ に関する他のドキュメントとサンプルを理解するのに役立つ基本的な背景情報が含まれます。  

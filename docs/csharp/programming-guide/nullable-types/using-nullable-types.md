@@ -1,28 +1,21 @@
 ---
-title: "Null 許容型の使用 (C# プログラミング ガイド)"
+title: Null 許容型の使用 (C# プログラミング ガイド)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - nullable types [C#], about nullable types
 ms.assetid: 0bacbe72-ce15-4b14-83e1-9c14e6380c28
-caps.latest.revision: 
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: c8a42392bbcd2e53c54ff4c13bf98c048262ae4d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: d2fe0f34c45d3de0516a71ca5ed4dc807df4bf93
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-nullable-types-c-programming-guide"></a>Null 許容型の使用 (C# プログラミング ガイド)
 Null 許容型は、基底の型のすべての値と、追加の [null](../../../csharp/language-reference/keywords/null.md) 値を表すことができます。 Null 許容型は、次のいずれかの形式で宣言します。  
   
  `System.Nullable<T> variable`  
   
- または  
+ - または -  
   
  `T? variable`  
   
@@ -103,19 +96,19 @@ Null 許容型は、基底の型のすべての値と、追加の [null](../../.
   
  これらの演算子の結果を以下の表に示します。  
   
-|X|y|x&y|x&#124;y|  
+|x|y|x&y|x&#124;y|  
 |-------|-------|---------|--------------|  
-|true|TRUE|TRUE|TRUE|  
-|TRUE|false|false|TRUE|  
-|TRUE|null|null|TRUE|  
-|false|TRUE|false|TRUE|  
-|false|false|false|false|  
-|false|null|false|null|  
-|null|TRUE|null|TRUE|  
-|null|false|false|null|  
+|true|true|true|true|  
+|TRUE|False|false|true|  
+|true|null|null|true|  
+|False|true|False|true|  
+|False|False|False|False|  
+|False|null|False|null|  
+|null|true|null|true|  
+|null|False|False|null|  
 |null|null|null|null|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
  [Null 許容型](../../../csharp/programming-guide/nullable-types/index.md)  
  [Null 許容型のボックス化](../../../csharp/programming-guide/nullable-types/boxing-nullable-types.md)  

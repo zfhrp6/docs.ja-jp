@@ -1,13 +1,6 @@
 ---
-title: "Fuslogvw.exe (アセンブリ バインディング ログ ビューアー)"
-ms.custom: 
+title: Fuslogvw.exe (アセンブリ バインディング ログ ビューアー)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - failed assembly binds
 - Fuslogvw.exe
@@ -16,16 +9,13 @@ helpviewer_keywords:
 - locating assemblies
 - Assembly Binding Log Viewer
 ms.assetid: e32fa443-0778-4cc3-bf36-5c8ea297d296
-caps.latest.revision: "35"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 170e9ca4ed2b9ad17ec9120321612c37da32e453
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 73fa08f92a4572a501be65f05e8141c349cc003e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="fuslogvwexe-assembly-binding-log-viewer"></a>Fuslogvw.exe (アセンブリ バインディング ログ ビューアー)
 アセンブリ バインディング ログ ビューアーは、アセンブリ バインドの詳細を表示します。 この情報は、.NET Framework が実行時にアセンブリを見つけられない原因を診断する場合に役立ちます。 通常、このようなエラーは、アセンブリが間違った位置に配置されているか、無効になったネイティブ イメージが存在するか、バージョン番号またはカルチャの不一致が存在する場合に発生します。 通常、共通言語ランタイムによるアセンブリ検出エラーは、アプリケーション内で <xref:System.TypeLoadException> として示されます。  
@@ -47,7 +37,7 @@ fuslogvw
   
 1.  **[Default]** を選択すると、すべてのアプリケーションの種類のバインド エラーが表示されます。 既定では、ログ エントリは wininet キャッシュのディスクのユーザーごとのディレクトリに格納されます。  
   
-2.  **[Custom]** を選択すると、指定したカスタム ディレクトリのバインド エラーが表示されます。 **ログ設定** ダイアログの カスタム ログのパス を使用して、ランタイムがログを格納するカスタムの場所を有効なディレクトリ名に指定する必要があります。 このディレクトリはクリーンで、ランタイムが生成するファイルだけが含まれている必要があります。 このディレクトリに、ログに記録するエラーを生成する実行可能ファイルが含まれている場合は、その実行可能ファイルと同じ名前でディレクトリの作成が試行されるため、そのエラーはログに記録されません。 また、ログの位置から実行可能ファイルを実行しようとすると、失敗します。  
+2.  **[Custom]** を選択すると、指定したカスタム ディレクトリのバインド エラーが表示されます。 **[ログ設定]** ダイアログの [カスタム ログのパス を使用して、ランタイムがログを格納するカスタムの場所を有効なディレクトリ名に指定する必要があります。 このディレクトリはクリーンで、ランタイムが生成するファイルだけが含まれている必要があります。 このディレクトリに、ログに記録するエラーを生成する実行可能ファイルが含まれている場合は、その実行可能ファイルと同じ名前でディレクトリの作成が試行されるため、そのエラーはログに記録されません。 また、ログの位置から実行可能ファイルを実行しようとすると、失敗します。  
   
     > [!NOTE]
     >  カスタム バインド位置ではなく、既定のバインド位置を使用することをお勧めします。 ランタイムは wininet キャッシュに既定のバインド位置を格納するので、この位置は自動的に消去されます。カスタム バインド位置を指定する場合は、この位置を削除する手段を独自に組み込む必要があります。  

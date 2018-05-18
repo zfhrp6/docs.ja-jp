@@ -1,21 +1,14 @@
 ---
-title: "方法 : 派生クラスから基本クラス イベントを発生させる (C# プログラミング ガイド)"
+title: '方法 : 派生クラスから基本クラス イベントを発生させる (C# プログラミング ガイド)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - events [C#], in derived classes
 ms.assetid: 2d20556a-0aad-46fc-845e-f85d86ea617a
-caps.latest.revision: 
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: c9da65958ce827fab642f4a6310d0c68dfb951a6
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: e064c318f16c2fe87aa980b7dec7468b1e61ab25
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-raise-base-class-events-in-derived-classes-c-programming-guide"></a>方法 : 派生クラスから基本クラス イベントを発生させる (C# プログラミング ガイド)
 ここでは単純な例を使用し、派生クラスからも発生させることができるように基底クラスでイベントを宣言する標準的な方法について説明します。 このパターンは、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] クラス ライブラリの Windows フォーム クラスで広く使用されています。  
@@ -28,7 +21,7 @@ ms.lasthandoff: 12/09/2017
 ## <a name="example"></a>例  
  [!code-csharp[csProgGuideEvents#1](../../../csharp/programming-guide/events/codesnippet/CSharp/how-to-raise-base-class-events-in-derived-classes_1.cs)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
  [イベント](../../../csharp/programming-guide/events/index.md)  
  [デリゲート](../../../csharp/programming-guide/delegates/index.md)  

@@ -1,13 +1,7 @@
 ---
-title: ".NET での型の書式設定"
-ms.custom: 
+title: .NET での型の書式設定
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -31,18 +25,13 @@ helpviewer_keywords:
 - custom formatting [.NET Framework]
 - strings [.NET Framework], formatting
 ms.assetid: 0d1364da-5b30-4d42-8e6b-03378343343f
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 201212251bf99e5a5bab7685544079968bbebdb1
-ms.sourcegitcommit: 6a9030eb5bd0f00e1d144f81958adb195cfb1f6f
+ms.openlocfilehash: 10dd7e007ecd24ec3f127ab9c102cd758dfc7d75
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="formatting-types-in-net"></a>.NET での型の書式設定
 <a name="Introduction"></a> 書式設定とはクラス、構造体、または列挙値のインスタンスを文字列形式に変換するプロセスのことで、多くの場合、変換した文字列をユーザーに表示したり、逆シリアル化して元のデータ型を復元したりするために行います。 この変換には次のような問題がある場合があります。  
@@ -401,7 +390,7 @@ ms.lasthandoff: 01/10/2018
  [!code-csharp[Conceptual.Formatting.Overview#15](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.formatting.overview/cs/icustomformatter1.cs#15)]
  [!code-vb[Conceptual.Formatting.Overview#15](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.formatting.overview/vb/icustomformatter1.vb#15)]  
   
- `ByteByByteFormatter` クラスを使用して整数値の書式を設定する例を次に示します。 <xref:System.ICustomFormatter.Format%2A?displayProperty=nameWithType> メソッドが 2 回目の <xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> メソッド呼び出しで複数回呼び出されることに注意してください。また、既定の <xref:System.Globalization.NumberFormatInfo> プロバイダーは、`ByteByByteFormatter.Format` メソッドが "N0" 書式指定文字列を認識せず、null 参照 (Visual Basic の場合は  `Nothing`) を返すため、3 回目のメソッド呼び出しで使用されます。  
+ `ByteByByteFormatter` クラスを使用して整数値の書式を設定する例を次に示します。 <xref:System.ICustomFormatter.Format%2A?displayProperty=nameWithType> メソッドが 2 回目の <xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> メソッド呼び出しで複数回呼び出されることに注意してください。また、既定の <xref:System.Globalization.NumberFormatInfo> プロバイダーは、`ByteByByteFormatter.Format` メソッドが "N0" 書式指定文字列を認識せず、null 参照 (Visual Basic の場合は  ) を返すため、3 回目のメソッド呼び出しでは既定の`Nothing` ) に相当する書式指定子。  
   
  [!code-csharp[Conceptual.Formatting.Overview#16](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.formatting.overview/cs/icustomformatter1.cs#16)]
  [!code-vb[Conceptual.Formatting.Overview#16](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.formatting.overview/vb/icustomformatter1.vb#16)]  

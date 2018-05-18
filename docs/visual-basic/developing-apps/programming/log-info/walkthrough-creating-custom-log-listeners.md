@@ -1,24 +1,15 @@
 ---
-title: "カスタム ログ リスナーの作成 (Visual Basic)"
-ms.custom: 
+title: カスタム ログ リスナーの作成 (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - custom log listeners
 - My.Application.Log object, custom log listeners
 ms.assetid: 0e019115-4b25-4820-afb1-af8c6e391698
-caps.latest.revision: "19"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: f141421350b0ad7b8287e43b676a9439eae1f24c
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: 6139a1fef2b2c37bc2c8a6167febd060d8d01fb1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="walkthrough-creating-custom-log-listeners-visual-basic"></a>チュートリアル: カスタム ログ リスナーの作成 (Visual Basic)
 このチュートリアルでは、カスタム ログ リスナーを作成する方法と、`My.Application.Log` オブジェクトの出力を待機するように構成する方法について説明します。  
@@ -45,7 +36,7 @@ ms.lasthandoff: 12/21/2017
   
 #### <a name="to-strongly-name-the-log-listener-assembly"></a>ログ リスナー アセンブリに厳密な名前を付けるには  
   
-1.  **ソリューション エクスプローラー**でプロジェクトを選択します。 **[プロジェクト]** メニューの **[プロパティ]**をクリックします。   
+1.  **ソリューション エクスプローラー**でプロジェクトを選択します。 **[プロジェクト]** メニューの **[プロパティ]** をクリックします。   
   
 2.  **[署名]** タブをクリックします。  
   
@@ -59,7 +50,7 @@ ms.lasthandoff: 12/21/2017
   
 6.  **[パスワードの入力]** および **[パスワードの確認入力]** ボックスにパスワードを入力します。  
   
-7.  **[OK]**をクリックします。  
+7.  **[OK]** をクリックします。  
   
 8.  アプリケーションをリビルドします。  
   
@@ -82,17 +73,17 @@ ms.lasthandoff: 12/21/2017
   
 #### <a name="to-add-the-listener-to-myapplicationlog"></a>My.Application.Log にリスナーを追加するには  
   
-1.  **ソリューション エクスプローラー** で app.config を右クリックし、 **[開く]**を選択します。  
+1.  **ソリューション エクスプローラー** で app.config を右クリックし、 **[開く]** を選択します。  
   
      - または -  
   
      app.config ファイルがある場合は、次の操作を行います。  
   
-    1.  **[プロジェクト]** メニューの **[新しい項目の追加]**をクリックします。  
+    1.  **[プロジェクト]** メニューの **[新しい項目の追加]** をクリックします。  
   
-    2.  **[新しい項目の追加]** ダイアログ ボックスで、 **[アプリケーション構成ファイル]**を選択します。  
+    2.  **[新しい項目の追加]** ダイアログ ボックスで、 **[アプリケーション構成ファイル]** を選択します。  
   
-    3.  **[追加]**をクリックします。  
+    3.  **[追加]** をクリックします。  
   
 2.  `<listeners>` セクション内にある、 `<source>` 属性が "DefaultSource" の `name` セクションで、 `<sources>` セクションを見つけます。 `<sources>` セクションは、最上位の `<system.diagnostics>` セクション内の `<configuration>` セクションにあります。  
   

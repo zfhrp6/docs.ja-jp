@@ -5,11 +5,11 @@ hide_bc: true
 title: .NET ドキュメント
 description: .NET で、C#、Visual Basic、および F# を使用して任意のプラットフォームでさまざまなアプリケーションを作成する方法を説明します。 API リファレンス、サンプル コード、チュートリアルなどを参照します。
 ms.custom: updateeachrelease
-ms.openlocfilehash: 7fbafb9a5ca939b4ca8bb78d38b66767e3cf6ab9
-ms.sourcegitcommit: c03eef711abe961a85db2b4d0715257d1524aef6
+ms.openlocfilehash: f5967e21fcda580635dd53f976e2e5dabc0fbce8
+ms.sourcegitcommit: ff1d40507b3eb6e2185478e37c66c66be6de46f1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/08/2018
+ms.lasthandoff: 05/11/2018
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -231,7 +231,7 @@ ms.lasthandoff: 05/08/2018
                                                 <p><a href="/dotnet/machine-learning/tutorials">チュートリアル</a></p>
                                                 <p><a href="/dotnet/machine-learning/resources">リソース</a></p>
                                                 <p><a href="/dotnet/machine-learning/resources/glossary">用語集</a></p>
-                                                <p><a href="/dotnet/api?view=ml-dotnet">ML.NET API</a></p>
+                                                <p><a href="/dotnet/api?view=ml-dotnet">ML.NET API リファレンス</a></p>
                                             </div>
                                         </div>
                                     </div>

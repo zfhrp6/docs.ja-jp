@@ -1,31 +1,20 @@
 ---
-title: "PLINQ データのサンプル"
-ms.custom: 
+title: PLINQ データのサンプル
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - PLINQ queries, sample data
 ms.assetid: 4fccbb35-eaa5-44e9-a252-a5c3d4bc7604
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 4b1aaa6f3027283ff20088d6122f9b4ec4bb1111
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 3dd16f46b7d7eb80021a67583f51feae182a2cc9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="plinq-data-sample"></a>PLINQ データのサンプル
 このサンプルには、.csv 形式のデータ例と、データを顧客、製品、注文、その他の詳細のメモリ内コレクションに変換するメソッドが含まれています。 PLINQ でさらに試す場合は、他の特定のトピックのコード例をこのトピックのコードに貼り付けて、`Main` メソッドから呼び出すことができます。 また、独自の PLINQ クエリでこのデータを使用することもできます。  
@@ -41,7 +30,7 @@ ms.lasthandoff: 12/23/2017
   
 2.  これらの手順の次に示すコードを使用して、Module1.vb または Program.cs のコンテンツを置き換えます。  
   
-3.  **[プロジェクト]** メニューの **[新しい項目の追加]**をクリックします。 **[テキスト ファイル]** を選択してから **[OK]** をクリックします。 このトピックのデータをコピーし、新しいテキスト ファイルに貼り付けます。 **[ファイル]** メニューで **[保存]** をクリックし、ファイルに Plinqdata.csv という名前を付けてから、ソース コード ファイルを含むフォルダーに保存します。  
+3.  **[プロジェクト]** メニューの **[新しい項目の追加]** をクリックします。 **[テキスト ファイル]** を選択してから **[OK]** をクリックします。 このトピックのデータをコピーし、新しいテキスト ファイルに貼り付けます。 **[ファイル]** メニューで **[保存]** をクリックし、ファイルに Plinqdata.csv という名前を付けてから、ソース コード ファイルを含むフォルダーに保存します。  
   
 4.  F5 キーを押し、プロジェクトが正常にビルドされ、実行されることを確認します。 次の出力がコンソール ウィンドウに表示されます。  
   

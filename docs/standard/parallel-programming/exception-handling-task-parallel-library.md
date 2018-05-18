@@ -1,31 +1,20 @@
 ---
-title: "例外処理 (タスク並列ライブラリ)"
-ms.custom: 
+title: 例外処理 (タスク並列ライブラリ)
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - tasks, exceptions
 ms.assetid: beb51e50-9061-4d3d-908c-56a4f7c2e8c1
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 86b4d105b7d79abbd25b342774705866119ada68
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 16ab0b8967ac394540f201fcc9098024faaccaa7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="exception-handling-task-parallel-library"></a>例外処理 (タスク並列ライブラリ)
 タスク内で実行中のユーザー コードによってスローされた、ハンドルされない例外は、呼び出し元のスレッドに反映されます。ただし、このトピックの後半で説明している特定の状況を除きます。 静的な、またはインスタンスの <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType> メソッドまたは <!--zz <xref:System.Threading.Tasks.Task%601.Wait%2A?displayProperty=nameWithType>  --> `Wait` メソッドの 1 つを使用し、その呼び出しを `try`/`catch` ステートメント内に入れて例外を処理すると、例外が反映されます。 タスクが、アタッチされた子タスクの親である場合、または複数のタスクを待機している場合、複数の例外がスローされることがあります。  
@@ -49,7 +38,7 @@ ms.lasthandoff: 12/23/2017
  連結しているスレッドへ例外が上方向に通知されると、例外が発生した後も、タスクによって一部の項目の処理が続行される可能性があります。  
   
 > [!NOTE]
->  [マイ コードのみ] が有効になっている場合、Visual Studio では、例外をスローする行で処理が中断され、"ユーザー コードで処理されない例外" に関するエラー メッセージが表示されることがあります。 このエラーは問題にはなりません。 F5 キーを押して続行し、以下の例に示す例外処理動作を確認できます。 Visual Studio による処理が最初のエラーで中断しないようにするには、 **[ツール]** メニューの [オプション]、[デバッグ] の順にクリックし、[全般] で **[マイ コードのみを有効にする]**チェック ボックスをオフにします。  
+>  [マイ コードのみ] が有効になっている場合、Visual Studio では、例外をスローする行で処理が中断され、"ユーザー コードで処理されない例外" に関するエラー メッセージが表示されることがあります。 このエラーは問題にはなりません。 F5 キーを押して続行し、以下の例に示す例外処理動作を確認できます。 Visual Studio による処理が最初のエラーで中断しないようにするには、 **[ツール]** メニューの [オプション]、[デバッグ] の順にクリックし、[全般] で **[マイ コードのみを有効にする]** チェック ボックスをオフにします。  
   
 ## <a name="attached-child-tasks-and-nested-aggregateexceptions"></a>アタッチされた子タスクと入れ子の AggregateExceptions  
  タスクに、例外をスローする子タスクがアタッチされている場合、その例外は親タスクに反映される前に <xref:System.AggregateException> でラップされます。つまり、呼び出し元のスレッドに反映される前に、その例外が固有の <xref:System.AggregateException> でラップされるということです。 このような場合、<xref:System.AggregateException.InnerExceptions%2A>、<xref:System.AggregateException>、<xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType>、<!--zz <xref:System.Threading.Tasks.Task%601.Wait%2A?displayProperty=nameWithType>  --> `Wait` の各メソッドでキャッチされた <xref:System.Threading.Tasks.Task.WaitAny%2A> 例外の <xref:System.Threading.Tasks.Task.WaitAll%2A> プロパティには、違反の原因となった元の例外ではなく、1 つ以上の <xref:System.AggregateException> インスタンスが含まれます。 入れ子の <xref:System.AggregateException> 例外を反復処理しなくて済むようにするには、<xref:System.AggregateException.Flatten%2A> メソッドを使用して入れ子の <xref:System.AggregateException> をすべて削除します。これにより、<xref:System.AggregateException.InnerExceptions%2A?displayProperty=nameWithType> プロパティに元の例外が含まれるようになります。 次の例では、入れ子の <xref:System.AggregateException> インスタンスが 1 つのループで平坦化され、処理されています。  

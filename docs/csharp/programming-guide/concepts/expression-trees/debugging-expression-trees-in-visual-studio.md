@@ -1,21 +1,12 @@
 ---
-title: "式ツリーのデバッグ (Visual Studio) (C#)"
-ms.custom: 
+title: 式ツリーのデバッグ (Visual Studio) (C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: 1369fa25-0fbd-4b92-98d0-8df79c49c27a
-caps.latest.revision: "4"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: d74df8ba339526e20850cd8b8f1a4b37c20e22ab
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 0b3017f2800a2eb7332028b9cfe6ed9877222087
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="debugging-expression-trees-in-visual-studio-c"></a>式ツリーのデバッグ (Visual Studio) (C#)
 アプリケーションをデバッグするときに、式ツリーの構造および内容を分析できます。 式ツリーの構造を簡単に確認する場合は、`DebugView` プロパティを使用できます。このプロパティは、デバッグ モードでのみ使用できます。 デバッグの詳細については、「[Visual Studio でのデバッグ](/visualstudio/debugger/debugging-in-visual-studio)」を参照してください。  
@@ -37,9 +28,9 @@ ms.lasthandoff: 11/21/2017
   
  パラメーターに名前がない場合、`$var1` や `$var2` など、自動的に生成された名前が割り当てられます。  
   
-### <a name="examples"></a>例  
+### <a name="examples"></a>使用例  
   
-|式|`DebugView` プロパティ|  
+|正規表現|`DebugView` プロパティ|  
 |----------------|--------------------------|  
 |`ParameterExpression numParam =  Expression.Parameter(typeof(int), "num");`|`$num`|  
 |`ParameterExpression numParam =  Expression.Parameter(typeof(int));`|`$var1`|  
@@ -58,9 +49,9 @@ ms.lasthandoff: 11/21/2017
 |<xref:System.Single>|F|  
 |<xref:System.Decimal>|M|  
   
-### <a name="examples"></a>例  
+### <a name="examples"></a>使用例  
   
-|式|`DebugView` プロパティ|  
+|正規表現|`DebugView` プロパティ|  
 |----------------|--------------------------|  
 |`int num = 10; ConstantExpression expr = Expression.Constant(num);`|10|  
 |`double num = 10; ConstantExpression expr = Expression.Constant(num);`|10D|  
@@ -68,9 +59,9 @@ ms.lasthandoff: 11/21/2017
 ## <a name="blockexpression"></a>BlockExpression  
  <xref:System.Linq.Expressions.BlockExpression> オブジェクトの型が、ブロック内の最後の式の型と異なる場合、その型が `DebugInfo` プロパティに山かっこ (\< および >) で囲まれて表示されます。 それ以外の場合、<xref:System.Linq.Expressions.BlockExpression> オブジェクトの型は表示されません。  
   
-### <a name="examples"></a>例  
+### <a name="examples"></a>使用例  
   
-|式|`DebugView` プロパティ|  
+|正規表現|`DebugView` プロパティ|  
 |----------------|--------------------------|  
 |`BlockExpression block = Expression.Block(Expression.Constant("test"));`|`.Block() {`<br /><br /> `"test"`<br /><br /> `}`|  
 |`BlockExpression block =  Expression.Block(typeof(Object), Expression.Constant("test"));`|`.Block<System.Object>() {`<br /><br /> `"test"`<br /><br /> `}`|  
@@ -80,9 +71,9 @@ ms.lasthandoff: 11/21/2017
   
  ラムダ式に名前がない場合、`#Lambda1` や `#Lambda2` など、自動的に生成された名前が割り当てられます。  
   
-### <a name="examples"></a>例  
+### <a name="examples"></a>使用例  
   
-|式|`DebugView` プロパティ|  
+|正規表現|`DebugView` プロパティ|  
 |----------------|--------------------------|  
 |`LambdaExpression lambda =  Expression.Lambda<Func<int>>(Expression.Constant(1));`|`.Lambda #Lambda1<System.Func'1[System.Int32]>() {`<br /><br /> `1`<br /><br /> `}`|  
 |`LambdaExpression lambda =  Expression.Lambda<Func<int>>(Expression.Constant(1), "SampleLambda", null);`|`.Lambda SampleLambda<System.Func'1[System.Int32]>() {`<br /><br /> `1`<br /><br /> `}`|  
@@ -94,9 +85,9 @@ ms.lasthandoff: 11/21/2017
   
  ラベルに名前がない場合、`#Label1` や `#Label2` など、自動的に生成された名前が割り当てられます。  
   
-### <a name="examples"></a>例  
+### <a name="examples"></a>使用例  
   
-|式|`DebugView` プロパティ|  
+|正規表現|`DebugView` プロパティ|  
 |----------------|--------------------------|  
 |`LabelTarget target = Expression.Label(typeof(int), "SampleLabel"); BlockExpression block = Expression.Block( Expression.Goto(target, Expression.Constant(0)), Expression.Label(target, Expression.Constant(-1)));`|`.Block() {`<br /><br /> `.Goto SampleLabel { 0 };`<br /><br /> `.Label`<br /><br /> `-1`<br /><br /> `.LabelTarget SampleLabel:`<br /><br /> `}`|  
 |`LabelTarget target = Expression.Label(); BlockExpression block = Expression.Block( Expression.Goto(target5), Expression.Label(target5));`|`.Block() {`<br /><br /> `.Goto #Label1 { };`<br /><br /> `.Label`<br /><br /> `.LabelTarget #Label1:`<br /><br /> `}`|  
@@ -104,14 +95,14 @@ ms.lasthandoff: 11/21/2017
 ## <a name="checked-operators"></a>checked 演算子  
  checked 演算子は、演算子の前に "#" 記号が付く形式で表示されます。 たとえば、checked 加算演算子は `#+` と表示されます。  
   
-### <a name="examples"></a>例  
+### <a name="examples"></a>使用例  
   
-|式|`DebugView` プロパティ|  
+|正規表現|`DebugView` プロパティ|  
 |----------------|--------------------------|  
 |`Expression expr = Expression.AddChecked( Expression.Constant(1), Expression.Constant(2));`|`1 #+ 2`|  
 |`Expression expr = Expression.ConvertChecked( Expression.Constant(10.0), typeof(int));`|`#(System.Int32)10D`|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [式ツリー (C#)](../../../../csharp/programming-guide/concepts/expression-trees/index.md)  
  [Visual Studio でのデバッグ](/visualstudio/debugger/debugging-in-visual-studio)  
  [カスタム ビジュアライザーを作成する](/visualstudio/debugger/create-custom-visualizers-of-data)

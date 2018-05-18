@@ -1,21 +1,12 @@
 ---
-title: "方法: コンテキストに基づいて要素を検索するクエリを記述する (C#)"
-ms.custom: 
+title: '方法: コンテキストに基づいて要素を検索するクエリを記述する (C#)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: 3ff79ef0-fc8b-42fe-8cc0-10dc32b06b4e
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: a9e818c5e0967a6d146cd48b81aebcba4bbdde3f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 3b09be121c3e1da12614d1c09a806b09386732df
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-write-a-query-that-finds-elements-based-on-context-c"></a>方法: コンテキストに基づいて要素を検索するクエリを記述する (C#)
 コンテキストに基づいて要素を選択するクエリの記述が必要になる場合があります。 つまり、前の兄弟要素や次の兄弟要素に基づいてフィルターしたり、 子要素や祖先要素に基づいてフィルターすることが必要になる場合が考えられます。  
@@ -106,7 +97,7 @@ id = 3
 id = 6  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Xml.Linq.XElement.Parse%2A>  
  <xref:System.Xml.Linq.XContainer.Descendants%2A>  
  <xref:System.Xml.Linq.XNode.ElementsAfterSelf%2A>  

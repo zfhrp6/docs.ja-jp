@@ -1,21 +1,12 @@
 ---
-title: "チュートリアル: BackgroundWorker コンポーネントでのマルチスレッド (C#)"
-ms.custom: 
+title: 'チュートリアル: BackgroundWorker コンポーネントでのマルチスレッド (C#)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: ff670fbf-a0ac-40c1-ab08-9ed53768f880
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 72d6e9ab42ca270ebe0691be23ebe181b973620d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: bc334261dbea7759d1bb571cc61a5f00f84531a4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="walkthrough-multithreading-with-the-backgroundworker-component-c"></a>チュートリアル: BackgroundWorker コンポーネントでのマルチスレッド (C#)
 このチュートリアルでは、テキスト ファイルで単語を検索する、マルチスレッドの Windows Forms アプリケーションを作成する方法について説明します。 具体的には、次のタスクについて説明します。  
@@ -47,7 +38,7 @@ ms.lasthandoff: 11/21/2017
   
 4.  各テキスト ボックスの横にラベルを追加します。 次の表のように、各ラベルの `Text` プロパティを設定します。  
   
-    |オブジェクト|プロパティ|設定|  
+    |Object|プロパティ|設定|  
     |------------|--------------|-------------|  
     |1 つ目のラベル|`Text`|[ソース ファイル]|  
     |2 つ目のラベル|`Text`|Compare String|  
@@ -73,7 +64,7 @@ ms.lasthandoff: 11/21/2017
   
 2.  テンプレート ウィンドウから **[クラス]** を選択し、名前 フィールドに「`Words.cs`」と入力します。  
   
-3.  **[追加]**をクリックします。 `Words` クラスが表示されます。  
+3.  **[追加]** をクリックします。 `Words` クラスが表示されます。  
   
 4.  `Words` クラスに次のコードを追加します。  
   
@@ -282,6 +273,6 @@ ms.lasthandoff: 11/21/2017
 ## <a name="next-steps"></a>次の手順  
  このアプリケーションには、基本的なエラー処理が含まれており、 このアプリケーションは空白の検索文字列を検出します。 その他のエラーを処理できるようにすれば、このプログラムの堅牢性をさらに高めることができます (カウントできる単語や行の最大数を超えた場合の処理を追加するなど)。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [スレッド処理 (C#)](../../../../csharp/programming-guide/concepts/threading/index.md)  
  [方法: イベント サブスクリプションとサブスクリプションの解除](../../../../csharp/programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md)

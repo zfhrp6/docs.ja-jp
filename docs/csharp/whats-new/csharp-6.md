@@ -1,19 +1,13 @@
 ---
 title: C# 6 の新機能 - C# ガイド
 description: C# バージョン 6 の新機能について説明します
-keywords: .NET, .NET Core
-author: BillWagner
 ms.date: 09/22/2016
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.devlang: csharp
 ms.assetid: 4d879f69-f889-4d3f-a781-75194e143400
-ms.openlocfilehash: ea54e9a05120134eea8e1bc9d82302a7513b43e7
-ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
+ms.openlocfilehash: 00aeb3ed940acfca748a1a9eb876fd0133baf6c0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="whats-new-in-c-6"></a>C# 6 の新機能
 
@@ -30,7 +24,7 @@ C# の 6.0 リリースには、開発者の生産性を向上させる多くの
 * [null 条件演算子](#null-conditional-operators):
     - null 条件演算子で null をチェックしながら、オブジェクトのメンバーに簡潔かつ安全にアクセスできます。
 * [文字列補間](#string-interpolation):
-    - 位置指定引数の代わりに、インライン式を使用して書式設定文字列式を記述できます。
+    - 位置指定引数の代わりに、インライン式を使用して書式設定文字列式をを記述できます。
 * [例外フィルター](#exception-filters):
     - 例外のプロパティやその他のプログラム状態に基づいて、式をキャッチできます。 
 * [nameof 式](#nameof-expressions):
@@ -177,7 +171,7 @@ Null 値はコードを複雑にします。 開発者は変数のアクセス�
 メソッドを条件付きで呼び出すためにも使用できます。 Null 条件演算子を使用したメンバー関数の最も一般的な用途は、`null` である可能性があるデリゲート (またはイベント ハンドラー) を安全に呼び出すことです。  これを行うには、`?.` 演算子を使用してデリゲートの `Invoke` メソッドを呼び出し、メンバーにアクセスします。 この例は、  
 [デリゲート パターン](../delegates-patterns.md#handling-null-delegates)に関するトピックに記載されています。
 
-`?.` 演算子のルールでは、演算子の左側が 1 回だけ評価されることが保証されています。 これは重要なことであり、これによって多くの表現方法が可能になります (イベント ハンドラーを使用した例を含む)。 まずは、イベント ハンドラーを使用した例から見ていきましょう。 以前のバージョンの C# では、コードを次のように記述することが推奨されていました。
+`?.` 演算子のルールでは、、演算子の左側が 1 回だけ評価されることが保証されています。 これは重要なことであり、これによって多くの表現方法が可能になります (イベント ハンドラーを使用した例を含む)。 まずは、イベント ハンドラーを使用した例から見ていきましょう。 以前のバージョンの C# では、コードを次のように記述することが推奨されていました。
 
 ```csharp
 var handler = this.SomethingHappened;

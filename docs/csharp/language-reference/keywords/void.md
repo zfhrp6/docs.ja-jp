@@ -1,24 +1,17 @@
 ---
-title: "void (C# リファレンス)"
+title: void (C# リファレンス)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - void_CSharpKeyword
 - void
 helpviewer_keywords:
 - void keyword [C#]
 ms.assetid: 0d2d8a95-fe20-4fbd-bf5d-c1e54bce71d4
-caps.latest.revision: 
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: a71cac30132417abce60cdde54322b5f2067d39d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: e66efc287fc3ed0fcc15963a827fccb788c38753
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="void-c-reference"></a>void (C# リファレンス)
 メソッドの戻り値の型として使用した場合、`void` はメソッドが値を返さないことを指定します。

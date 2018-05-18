@@ -1,19 +1,13 @@
 ---
 title: クラスの概要チュートリアル - C# ローカル クイックスタート
 description: 初めての C# プログラムを作成し、オブジェクト指向の概念を確認します
-author: billwagner
-ms.author: wiwagn
 ms.date: 10/11/2017
-ms.topic: get-started-article
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: dd3fff6f74c92a45545e8e36f28eab351b39b37e
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: 5d3363a34fb684985b3b060dce2784090f25a1b9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="introduction-to-classes"></a>クラスの概要
 

@@ -1,22 +1,16 @@
 ---
-title: "C# チュートリアル"
+title: C# チュートリアル
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - walkthroughs [C#]
 - walkthroughs [Visual Studio], Visual C#
 - Visual C#, walkthroughs
 ms.assetid: 2d07b972-ef69-4676-9aef-e1784728e1ff
-caps.latest.revision: "28"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 92aef08636b7bba3a61367f8a707c82c75f8d3d3
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: aaf57e666faf18010c7f267f96e6958c73e58bcf
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="c-walkthroughs"></a>C# チュートリアル
 チュートリアルでは、製品や特定の機能領域について学習を開始するのに適した一般的なシナリオについて詳細な手順を示します。  
@@ -74,6 +68,6 @@ ms.lasthandoff: 12/09/2017
  [配置のサンプルとチュートリアル](/visualstudio/deployment/clickonce-deployment-samples-and-walkthroughs)  
  一般的な配置シナリオの詳細な例を示します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C# プログラミング ガイド](../csharp/programming-guide/index.md)  
  [Visual Studio のサンプル](/visualstudio/ide/visual-studio-samples)

@@ -1,26 +1,17 @@
 ---
 title: 言語への非依存性、および言語非依存コンポーネント
 description: C#、C++/CLI、F#、IronPython、VB、Visual COBOL、PowerShell など、.NET でサポートされる多くの言語の中のいずれかで開発する方法を説明します。
-keywords: .NET, .NET Core
-author: dotnet-bot
-ms.author: dotnetcontent
 ms.date: 07/22/2016
-ms.topic: article
 dev_langs:
 - csharp
 - vb
-ms.prod: .net
 ms.technology: dotnet-standard
-ms.devlang: dotnet
 ms.assetid: 2dbed1bc-86f5-43cd-9a57-adbb1c5efba4
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 2745bc67c926f50c28f5fdfb122ee94a85f020ec
-ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
+ms.openlocfilehash: 2e54f49f111c545a329a64ede400dc1354020f43
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="language-independence-and-language-independent-components"></a>言語への非依存性、および言語非依存コンポーネント
 

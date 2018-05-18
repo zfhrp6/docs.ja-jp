@@ -1,21 +1,12 @@
 ---
-title: "マルチスレッド プロシージャのパラメーターと戻り値 (C#)"
-ms.custom: 
+title: マルチスレッド プロシージャのパラメーターと戻り値 (C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: ba63c30c-d9f0-4962-b5c7-9d83ba851e6a
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: fec0ad955439f0cd683ad56c8d6433eed2417304
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: e27f8e67ff03260e1d13fa633064efc2059e6bdf
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="parameters-and-return-values-for-multithreaded-procedures-c"></a>マルチスレッド プロシージャのパラメーターと戻り値 (C#)
 マルチスレッド アプリケーションでの値の受け渡しは複雑です。それは、引数を受け取らず値を返さないプロシージャへの参照をスレッド クラスのコンストラクターに渡す必要があるためです。 以下のセクションでは、異なるスレッドのプロシージャからパラメーターを指定して値を返す単純な方法を示します。  
@@ -125,7 +116,7 @@ private void BackgroundWorker1_RunWorkerCompleted(
   
  スレッド プールのスレッドにパラメーターと戻り値を提供するには、<xref:System.Threading.ThreadPool.QueueUserWorkItem%2A> メソッドの省略可能な `ByVal` 状態オブジェクト変数を使用します。 スレッド タイマーのスレッドもこの目的で状態オブジェクトをサポートしています。 スレッド プールおよびスレッド タイマーの詳細については、「[スレッド プール (C#)](../../../../csharp/programming-guide/concepts/threading/thread-pooling.md)」および「[スレッド タイマー (C#)](../../../../csharp/programming-guide/concepts/threading/thread-timers.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [チュートリアル: BackgroundWorker コンポーネントでのマルチスレッド (C#)](../../../../csharp/programming-guide/concepts/threading/walkthrough-multithreading-with-the-backgroundworker-component.md)  
  [スレッド プール (C#)](../../../../csharp/programming-guide/concepts/threading/thread-pooling.md)  
  [スレッドの同期 (C#)](../../../../csharp/programming-guide/concepts/threading/thread-synchronization.md)  

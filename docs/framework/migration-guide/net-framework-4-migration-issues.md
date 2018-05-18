@@ -1,24 +1,17 @@
 ---
 title: .NET Framework 4 への移行に関する問題
 ms.date: 05/02/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: article
 helpviewer_keywords:
 - .NET Framework 4, migration
 - application compatibility
 ms.assetid: df478548-8c05-4de2-8ba7-adcdbe1c2a60
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- mariaw
-ms.openlocfilehash: 05c86759b16fa4e1cbf31b7409601cb6b91cd08e
-ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
+ms.openlocfilehash: aa8cbe0cc87e656eeb8cd0234875a87ade9c05f5
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="net-framework-4-migration-issues"></a>.NET Framework 4 への移行に関する問題
 
@@ -63,7 +56,7 @@ Beta 2 より後の移行に関する問題については、「[Migration Issue
 | **ASP.NET 2.0 アプリケーションでの HttpException エラー** | ASP.NET 4 を IIS 6 で有効にした後、(Windows Server 2003 または Windows Server 2003 R2 の) IIS 6 で実行された ASP.NET 2.0 アプリケーションで次のようなエラーが発生する可能性があります。`System.Web.HttpException: Path '/[yourApplicationRoot]/eurl.axd/[Value]' was not found.` | * Web サイトの実行に ASP.NET 4 が必要ない場合は、サイトをリマップして ASP.NET 2.0 が代わりに使用されるようにします。<br><br>- または -<br><br>* Web サイトの実行に ASP.NET 4 が必要な場合は、ASP.NET 2.0 の子仮想ディレクトリをすべて、ASP.NET 2.0 にマップされた別の Web サイトに移動させます。<br><br>- または -<br><br>* 拡張子なしの URL を無効にします。 詳細については、ASP.NET Web サイトの「[ASP.NET 4 Breaking Changes (ASP.NET 4 の互換性に影響する変更点)](http://go.microsoft.com/fwlink/?LinkId=182908)」の「ASP.NET 2.0 Applications Might Generate HttpException Errors That Reference eurl.axd (ASP.NET 2.0 アプリケーションで eurl.axd を参照する HttpException エラーが発生することがある)」をご覧ください。 |
 | **メンバーシップ タイプ** | ASP.NET メンバーシップで使用される一部のタイプ (例: <xref:System.Web.Security.MembershipProvider>) は、System.Web.dll から System.Web.ApplicationServices.dll アセンブリに移動しました。 これらのタイプは、クライアントのタイプと拡張 .NET Framework SKU のタイプとの間のアーキテクチャ層の依存関係を解決するために移動しました。 | 旧バージョンの ASP.NET からアップグレードされた、移動したメンバーシップ タイプを使用するクラス ライブラリを ASP.NET 4 プロジェクトで使用すると、コンパイルに失敗することがあります。 この場合は、System.Web.ApplicationServices.dll への参照をクラス ライブラリ プロジェクトに追加します。 |
 | **メニュー コントロールの変更** | <xref:System.Web.UI.WebControls.Menu> コントロールの変更によって、以下の動作が発生します。<br><br>* <xref:System.Web.UI.WebControls.MenuRenderingMode> が `List` に設定されている場合、または <xref:System.Web.UI.WebControls.MenuRenderingMode> が `Default` に設定され、<xref:System.Web.Configuration.PagesSection.ControlRenderingCompatibilityVersion> が `4.0` 以降に設定されている場合、<xref:System.Web.UI.WebControls.MenuItem.PopOutImageUrl> プロパティは無効です。<br>* <xref:System.Web.UI.WebControls.Menu.StaticPopOutImageUrl%2A> プロパティと <xref:System.Web.UI.WebControls.Menu.DynamicPopOutImageUrl> プロパティに設定されたパスに円記号 (\\) が含まれている場合、イメージはレンダリングされません  (旧バージョンの ASP.NET では、パスに円記号を含めることができました)。 | * 個々のメニュー項目に対して <xref:System.Web.UI.WebControls.MenuItem.PopOutImageUrl> プロパティを設定する代わりに、親の <xref:System.Web.UI.WebControls.Menu> コントロールの <xref:System.Web.UI.WebControls.Menu.StaticPopOutImageUrl%2A> または <xref:System.Web.UI.WebControls.Menu.DynamicPopOutImageUrl> を設定します。<br><br>- または -<br><br><xref:System.Web.UI.WebControls.MenuRenderingMode> を `Table` に設定します。または、<xref:System.Web.UI.WebControls.MenuRenderingMode> を `Default` に設定し、<xref:System.Web.Configuration.PagesSection.ControlRenderingCompatibilityVersion> を `3.5` に設定します。 これらの設定により、<xref:System.Web.UI.WebControls.Menu> コントロールで、旧バージョンの ASP.NET で使用された HTML テーブル ベースのレイアウトが使用されます。<br>* <xref:System.Web.UI.WebControls.Menu.StaticPopOutImageUrl%2A> プロパティまたは <xref:System.Web.UI.WebControls.Menu.DynamicPopOutImageUrl> プロパティのパスに円記号 (\\) が含まれている場合は、スラッシュ文字 (/) に置き換えます。 |
-| **Web.config ファイル内の Mobile アセンブリ** | 以前のバージョンの ASP.NET では、System.Web.Mobile.dll アセンブリへの参照は、`system.web`/`compilation` の `assemblies` セクションにある、ルートの Web.config ファイルに含まれていました。 パフォーマンスを向上させるために、このアセンブリへの参照は削除されました。<br><br>注: System.Web.Mobile.dll アセンブリと ASP.NET モバイル コントロールは ASP.NET 4 に含まれていますが、それらの使用は推奨されません。 | このアセンブリに含まれる型を使用する場合は、ルートの Web.config ファイルまたはアプリケーションの Web.config ファイルにアセンブリへの参照を追加します。 |
+| **Web.config ファイル内の Mobile アセンブリ** | 以前のバージョンの ASP.NET では、System.Web.Mobile.dll アセンブリへの参照は、`system.web`/`compilation` の `assemblies` セクションにある、ルートの Web.config ファイルに含まれていました。 パフォーマンスを向上させるために、このアセンブリへの参照は削除されました。<br><br>注: System.Web.Mobile.dll アセンブリと ASP.NET モバイル コントロールは ASP.NET 4 に含まれていますが、それらの使用は非推奨とされました。 | このアセンブリに含まれる型を使用する場合は、ルートの Web.config ファイルまたはアプリケーションの Web.config ファイルにアセンブリへの参照を追加します。 |
 | **出力キャッシュ** | ASP.NET 1.0 のバグが原因で、出力キャッシュの設定として `Location="ServerAndClient"` が指定されたキャッシュ ページでは、応答に `Vary:*` HTTP ヘッダーが生成されていました。 その結果、クライアント ブラウザーに対して、ローカルにページをキャッシュしないように指示がなされていました。 ASP.NET 1.1 では、<xref:System.Web.HttpCachePolicy.SetOmitVaryStar%2A> メソッドが追加され、`Vary:*` ヘッダーを抑制するためにこのメソッドを呼び出すことができました。 ただし、バグ報告では、開発者が既存の `SetOmitVaryStar` の動作を認識していないことが示唆されています。<br><br>ASP.NET 4 では、次のディレクティブを指定する応答から `Vary:*` HTTP ヘッダーは生成されなくなりました。<br><br>`<%@ OutputCache Location="ServerAndClient" %>`<br><br>そのため、<xref:System.Web.HttpCachePolicy.SetOmitVaryStar%2A> ヘッダーを無効にするための `Vary:*` メソッドは不要になりました。 `Location` 属性に "ServerAndClient" を指定するアプリケーションでは、<xref:System.Web.HttpCachePolicy.SetOmitVaryStar%2A> を呼び出す必要なくブラウザーにページをキャッシュできます。 | アプリケーション内のページで `Vary:*` を生成する必要がある場合は、次の例に示すように <xref:System.Web.HttpResponse.AppendHeader%2A> メソッドを呼び出します。<br><br>`System.Web.HttpResponse.AppendHeader("Vary","*");`<br><br>または、出力キャッシュ `Location` 属性の値を "Server" に変更できます。 |
 | **ページの解析** | ASP.NET Web ページ (.aspx ファイル) とユーザー コントロール (.ascx ファイル) のページ パーサーは、旧バージョンの ASP.NET よりも ASP.NET 4 の方が厳密であり、無効とみなされて警告が出力されるマークアップの数が、旧バージョンに比べて多くなります。 | ページの実行時に出力されたエラー メッセージを調べて、無効なマークアップが原因で発生したエラーを修正します。 |
 | **Passport 型** | Passport (現在の Live ID SDK) の変更により、ASP.NET 2.0 に組み込まれた Passport のサポートは廃止され、サポートされなくなりました。 その結果、<xref:System.Web.Security> の Passport に関連する型は、`ObsoleteAttribute` 属性としてマークされるようになりました。 | <xref:System.Web.Security> 名前空間の Passport 型 (たとえば、<xref:System.Web.Security.PassportIdentity>) を使用するコードは、[SDK](http://go.microsoft.com/fwlink/?LinkId=106346) を使用するように変更してください。 |
@@ -82,7 +75,7 @@ Beta 2 より後の移行に関する問題については、「[Migration Issue
 | **CardSpace** | Windows CardSpace は、.NET Framework には含まれる形ではなく、単独で提供されるようになりました。 | [Microsoft ダウンロード センター](http://go.microsoft.com/fwlink/?LinkId=199868)から Windows CardSpace をダウンロードします。 |
 | **構成ファイル** | .NET Framework によるアプリケーション構成ファイルへのアクセス方法が修正されました。 | アプリケーション構成ファイルの名前が *アプリケーション名.config* の場合は、*アプリケーション名.exe.config* に変更します。たとえば、*MyApp.config* を *MyApp.exe.config* に変更します。 |
 | **C# コード コンパイラ** | <xref:Microsoft.CSharp> 名前空間にあった `Compiler` クラス、`CompilerError` クラス、`ErrorLevel` クラスは使用できなくなったため、これらのアセンブリ (cscompmgd.dll) は .NET Framework に含まれていません。 | <xref:System.CodeDom.Compiler.CodeDomProvider>クラスや <xref:System.CodeDom.Compiler> 名前空間の他のクラスを使用します。 詳細については、「[CodeDOM の使用](https://msdn.microsoft.com/library/y2k85ax6(v=vs.100).aspx)」をご覧ください。 |
-| **ホスティング** (アンマネージ API) | ホスティング機能を改善するために、ホスティング アクティブ化 API の一部が使用されなくなりました。 インプロセス side-by-side 実行機能を使用すると、アプリケーションは複数のバージョンの .NET Framework を同じプロセスで読み込んで起動することができます。 たとえば、.NET Framework 2.0 SP1 ベースのアドイン (またはコンポーネント) と .NET Framework 4 ベースのアドインを同じプロセスで読み込むアプリケーションを実行できます。 古いコンポーネントは古いバージョンの .NET Framework を引き続き使用し、新しいコンポーネントは新しいバージョンの .NET Framework を使用します。 | 「[インプロセスの side-by-side 実行](/dotnet/framework/deployment/in-process-side-by-side-execution)」で説明されている構成を使用します。 |
+| **ホスティング** (アンマネージ API) | ホスティング機能を改善するために、ホスティング アクティブ化 API の一部が非推奨となくなりました。 インプロセス side-by-side 実行機能を使用すると、アプリケーションは複数のバージョンの .NET Framework を同じプロセスで読み込んで起動することができます。 たとえば、.NET Framework 2.0 SP1 ベースのアドイン (またはコンポーネント) と .NET Framework 4 ベースのアドインを同じプロセスで読み込むアプリケーションを実行できます。 古いコンポーネントは古いバージョンの .NET Framework を引き続き使用し、新しいコンポーネントは新しいバージョンの .NET Framework を使用します。 | 「[インプロセスの side-by-side 実行](/dotnet/framework/deployment/in-process-side-by-side-execution)」で説明されている構成を使用します。 |
 | **新しいセキュリティ モデル** | 「[.NET Framework 4 におけるセキュリティの変更点](https://msdn.microsoft.com/library/dd233103(v=vs.100).aspx)」で説明しているように、コード アクセス セキュリティ (CAS) ポリシーはオフになり、簡略化されたモデルで置換されています。 | アプリケーションで CAS に依存している場合は、変更が必要になることがあります。 詳細については、「[コード アクセス セキュリティ ポリシーの互換性と移行](/dotnet/framework/misc/code-access-security-policy-compatibility-and-migration)」をご覧ください。 |
 
 ### <a name="date-and-time"></a>日付と時刻

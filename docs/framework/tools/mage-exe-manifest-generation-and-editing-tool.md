@@ -1,27 +1,15 @@
 ---
-title: "Mage.exe (マニフェストの生成および編集ツール)"
-ms.custom: 
+title: Mage.exe (マニフェストの生成および編集ツール)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - Manifest Generation and Editing tool
 - Mage.exe
 ms.assetid: 77dfe576-2962-407e-af13-82255df725a1
-caps.latest.revision: "68"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 405503ac824ccf443d8ada7387d65e55876cb3e5
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 551173a7ed8d60ca1870159cd7e533720275bd20
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="mageexe-manifest-generation-and-editing-tool"></a>Mage.exe (マニフェストの生成および編集ツール)
 マニフェストの生成および編集ツール (Mage.exe) は、アプリケーション マニフェストおよび配置マニフェストの作成と編集をサポートするコマンド ライン ツールです。 コマンド ライン ツールであるため、Mage.exe は、バッチ スクリプトから実行することも、 [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] アプリケーションなど他の Windows ベースのアプリケーションから実行することもできます。  
@@ -30,7 +18,7 @@ ms.lasthandoff: 12/22/2017
   
  このツールは、Visual Studio と共に自動的にインストールされます。 このツールを実行するには、開発者コマンド プロンプト (または、Windows 7 の Visual Studio コマンド プロンプト) を使用します。 詳細については、「[Visual Studio 用開発者コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)」を参照してください。  
   
- [!INCLUDE[vs_dev10_long](../../../includes/vs-dev10-long-md.md)] セットアップには、2 つのバージョンの Mage.exe および MageUI.exe がコンポーネントとして含まれています。 バージョン情報を確認するには、MageUI.exe を実行し、 **[ヘルプ]**をクリックして、 **[バージョン情報]**をクリックします。 このドキュメントでは、バージョン 4.0.x.x の Mage.exe および MageUI.exe について説明します。  
+ [!INCLUDE[vs_dev10_long](../../../includes/vs-dev10-long-md.md)] セットアップには、2 つのバージョンの Mage.exe および MageUI.exe がコンポーネントとして含まれています。 バージョン情報を確認するには、MageUI.exe を実行し、 **[ヘルプ]** をクリックして、 **[バージョン情報]** をクリックします。 このドキュメントでは、バージョン 4.0.x.x の Mage.exe および MageUI.exe について説明します。  
   
  コマンド プロンプトに次のように入力します。  
   

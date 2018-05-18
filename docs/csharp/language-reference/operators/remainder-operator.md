@@ -1,24 +1,17 @@
 ---
 title: '% 演算子 (C# リファレンス)'
 ms.date: 04/04/2018
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - '%_CSharpKeyword'
 helpviewer_keywords:
 - remainder operator [C#]
 - '% operator [C#]'
 ms.assetid: 3b74f4f9-fd9c-45e7-84fa-c8d71a0dfad7
-caps.latest.revision: 15
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 796b4a40347fc5881db27a8a8a28404c7c4e8c5b
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: b906feb22aaec97e58da562b615baae01f3e0719
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="-operator-c-reference"></a>% 演算子 (C# リファレンス)
 剰余演算子 (`%`) は、最初のオペランドを 2 番目のオペランドで除算した後の剰余を計算します。 すべての数値型には定義済みの剰余演算子があります。 

@@ -1,21 +1,15 @@
 ---
-title: "クエリ キーワード (C# リファレンス)"
+title: クエリ キーワード (C# リファレンス)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - query keywords [C#]
 - LINQ [C#], query keywords
 ms.assetid: 6c9bec16-dbd7-4a7c-a060-fe4600b2021f
-caps.latest.revision: "15"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 30526e7bc4f99110d421855866381d9b7934d31c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 3889e07813c5626372f27bdc33e37d803684b441
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="query-keywords-c-reference"></a>クエリ キーワード (C# リファレンス)
 このセクションでは、クエリ式で使用するコンテキスト キーワードについて説明します。  
@@ -39,7 +33,7 @@ ms.lasthandoff: 11/21/2017
 |[ascending](../../../csharp/language-reference/keywords/ascending.md)|[orderby](../../../csharp/language-reference/keywords/orderby-clause.md) 句のコンテキスト キーワードです。|  
 |[descending](../../../csharp/language-reference/keywords/descending.md)|[orderby](../../../csharp/language-reference/keywords/orderby-clause.md) 句のコンテキスト キーワードです。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C# のキーワード](../../../csharp/language-reference/keywords/index.md)  
  [統合言語クエリ (LINQ)](../../programming-guide/concepts/linq/index.md)  
  [LINQ クエリ式](../../../csharp/programming-guide/linq-query-expressions/index.md)  

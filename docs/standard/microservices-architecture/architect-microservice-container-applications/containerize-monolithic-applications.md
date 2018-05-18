@@ -1,21 +1,14 @@
 ---
-title: "モノリシック アプリケーションのコンテナー化"
-description: "コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | モノリシック アプリケーションのコンテナー化"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
+title: モノリシック アプリケーションのコンテナー化
+description: コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | モノリシック アプリケーションのコンテナー化
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
-ms.prod: .net-core
-ms.technology: dotnet-docker
-ms.topic: article
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: fc01054e4352a711d2203e694001a1204dedadf9
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: f5d00c6ce4c965d66937dae3f8e5453883afb4b7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="containerizing-monolithic-applications"></a>モノリシック アプリケーションのコンテナー化
 
@@ -51,7 +44,7 @@ QA 環境または制限された実稼働環境として、図 4-3 に示すよ
 
 **図 4-3** 1 つのコンテナー アプリケーションをスケール アップする複数のホストの例
 
-さまざまなホストへの展開は、従来の展開手法で管理できます。 Docker ホストは、`docker run` や `docker-compose` などのコマンドを使用して手動で管理するか、継続的配信 (CD) パイプラインなどのオートメーションによって管理できます。
+さまざまなホストへの展開は、従来の展開手法で管理できます。 Docker ホストは、`docker run` や `docker-compose` などのコマンドを使用して手動で管理するか、継続的デリバリー (CD) パイプラインなどのオートメーションによって管理できます。
 
 ## <a name="deploying-a-monolithic-application-as-a-container"></a>モノリシック アプリケーションをコンテナーとして展開する
 

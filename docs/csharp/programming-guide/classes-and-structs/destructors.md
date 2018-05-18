@@ -1,22 +1,16 @@
 ---
-title: "ファイナライザー (C# プログラミング ガイド)"
+title: ファイナライザー (C# プログラミング ガイド)
 ms.date: 05/10/2017
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - ~ [C#], in finalizers
 - C# language, finalizers
 - finalizers [C#]
 ms.assetid: 1ae6e46d-a4b1-4a49-abe5-b97f53d9e049
-caps.latest.revision: "24"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: b1efe92c371e44eb2d650eb07facc3e7030e9766
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: fc15818883736015419f8599d482185bbab5120a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="finalizers-c-programming-guide"></a>ファイナライザー (C# プログラミング ガイド)
 ファイナライザーは、クラスのインスタンスを破棄するために使います。  
@@ -88,7 +82,7 @@ protected override void Finalize()
 ## <a name="c-language-specification"></a>C# 言語仕様  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.IDisposable>  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
  [コンストラクター](../../../csharp/programming-guide/classes-and-structs/constructors.md)  

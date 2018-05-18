@@ -1,13 +1,7 @@
 ---
-title: "方法 : ローカライズされた日付/時刻情報を Web ユーザーに表示する"
-ms.custom: 
+title: '方法 : ローカライズされた日付/時刻情報を Web ユーザーに表示する'
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - formatting [.NET Framework], dates
 - parsing strings [.NET Framework], date and time strings
@@ -16,18 +10,13 @@ helpviewer_keywords:
 - displaying date and time data
 - localized date displays [.NET Framework]
 ms.assetid: 377fe93c-32be-421a-a30a-be639a46ede8
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: b6c68ddd29b8221a073b00ade87e3b9d3dc870b8
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 63775d48ca2e11cfa121f3b7aeaff708d86e50de
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-display-localized-date-and-time-information-to-web-users"></a>方法 : ローカライズされた日付/時刻情報を Web ユーザーに表示する
 Web ページは世界中で表示されるため、ユーザーとの通信時の日時値の解析処理は、(通常は Web サーバーのローカル カルチャの形式である) 既定の形式には依存しないようにする必要があります。 代わりに、ユーザーが入力する日時文字列を処理する Web フォームで、ユーザーの優先カルチャで文字列が解析されるようにする必要があります。 同様に、日時データは、ユーザーのカルチャに準拠する形式でユーザーに表示されるようにする必要があります。 このトピックでは、その方法について説明します。  
@@ -107,7 +96,7 @@ Web ページは世界中で表示されるため、ユーザーとの通信時�
 ## <a name="compiling-the-code"></a>コードのコンパイル  
  コードをコンパイルするには、コードビハインドなしに [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] Web ページを作成します。 次いで、すべての既存のコードが置換されるよう、例を Web ページにコピーします。 [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] Web ページには、次のコントロールが含まれている必要があります。  
   
--   コードで参照されない <xref:System.Web.UI.WebControls.Label> コントロール。 その <xref:System.Web.UI.WebControls.TextBox.Text%2A> プロパティを "Enter a Number:\(数字を入力:\)" に設定します。  
+-   <xref:System.Web.UI.WebControls.Label> コントロール。これはコードで参照されません。 その <xref:System.Web.UI.WebControls.TextBox.Text%2A> プロパティを "Enter a Number:\(数字を入力:\)" に設定します。  
   
 -   `DateString` という名前の <xref:System.Web.UI.WebControls.TextBox> コントロール。  
   
@@ -116,7 +105,7 @@ Web ページは世界中で表示されるため、ユーザーとの通信時�
 -   `DateInfo` という名前の <xref:System.Web.UI.WebControls.HiddenField> コントロール。  
   
 ## <a name="net-framework-security"></a>.NET Framework セキュリティ  
- ユーザーが HTML ストリームにスクリプトを挿入することを防ぐには、ユーザー入力が直接サーバーにエコー バックされないようにする必要があります。 代わりに、<xref:System.Web.HttpServerUtility.HtmlEncode%2A?displayProperty=nameWithType> メソッドを利用して暗号化されるようにします。  
+ ユーザーが HTML ストリームにスクリプトを挿入する行為を防ぐために、サーバー応答でユーザー入力がエコーのように返されないようにしてください。 代わりに、<xref:System.Web.HttpServerUtility.HtmlEncode%2A?displayProperty=nameWithType> メソッドを利用して暗号化されるようにします。  
   
 ## <a name="see-also"></a>参照  
  [書式設定操作の実行](../../../docs/standard/base-types/performing-formatting-operations.md)  

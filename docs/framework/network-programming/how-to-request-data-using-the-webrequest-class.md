@@ -1,12 +1,6 @@
 ---
-title: "方法: WebRequest クラスを使用してデータを要求する"
-ms.custom: 
+title: '方法: WebRequest クラスを使用してデータを要求する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,17 +11,14 @@ helpviewer_keywords:
 - receiving data, using WebRequest class
 - Internet, requesting data
 ms.assetid: 368b8d0f-dc5e-4469-a8b8-b2adbf5dd800
-caps.latest.revision: 
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload:
-- dotnet
-ms.openlocfilehash: 463a59444d3f93e5560e149033fd845ac8cbe62d
-ms.sourcegitcommit: 15316053918995cc1380163a7d7e7edd5c44e6d7
-ms.translationtype: MT
+ms.openlocfilehash: e02ad4772d3ba84a2735a2e146a9979862d75989
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-request-data-using-the-webrequest-class"></a>方法: WebRequest クラスを使用してデータを要求する
 次の手順では、たとえば、Web ページやファイルなどのリソースをサーバーから要求するための手順について説明します。 リソースは URI で識別される必要があります。  
@@ -183,7 +174,7 @@ Namespace Examples.System.Net
 End Namespace  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [インターネット要求の作成](../../../docs/framework/network-programming/creating-internet-requests.md)  
  [ネットワーク上でストリームを使用する](../../../docs/framework/network-programming/using-streams-on-the-network.md)  
  [プロキシを介したインターネットへのアクセス](../../../docs/framework/network-programming/accessing-the-internet-through-a-proxy.md)  

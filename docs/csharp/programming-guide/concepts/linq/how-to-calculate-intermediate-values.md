@@ -1,21 +1,12 @@
 ---
-title: "方法: 中間値を計算する (C#)"
-ms.custom: 
+title: '方法: 中間値を計算する (C#)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: 7fd3001f-f8f9-4bce-879f-d4c7af8a04fe
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 93aa3683315b88c0ca85abc0eaff3efc8a15452a
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 47b84e7186cf579d9229dc82b12ed621e1f58e2a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-calculate-intermediate-values-c"></a>方法: 中間値を計算する (C#)
 この例では、並べ替え、フィルタリング、および選択を実行する際に使用できる中間値を計算する方法について説明します。  
@@ -23,7 +14,7 @@ ms.lasthandoff: 10/18/2017
 ## <a name="example"></a>例  
  次の例では、`Let` 句を使用します。  
   
- この例では、「[サンプル XML ファイル: 数値データ (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-numerical-data-linq-to-xml.md)」の XML ドキュメントを使用します。  
+ この例では、「[サンプル XML ファイル: 数値データ (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-numerical-data-linq-to-xml.md)」の XML ドキュメントを使います。  
   
 ```csharp  
 XElement root = XElement.Load("Data.xml");  
@@ -75,5 +66,5 @@ foreach (decimal ex in extensions)
 435.00  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [基本的なクエリ (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)

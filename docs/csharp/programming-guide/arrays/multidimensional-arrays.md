@@ -1,21 +1,15 @@
 ---
-title: "多次元配列 (C# プログラミング ガイド)"
+title: 多次元配列 (C# プログラミング ガイド)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - arrays [C#], multidimensional
 - multidimensional arrays [C#]
 ms.assetid: 020ce02e-7dff-4273-8e53-bf0b33747232
-caps.latest.revision: "16"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: ab3a93c21ddb9541a6149967605b851ea5a50a3c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 12cc7ff4f0a688145f2dee130e66dbe9a05ec7e7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="multidimensional-arrays-c-programming-guide"></a>多次元配列 (C# プログラミング ガイド)
 配列は 1 つ以上の配列を持つことができます。 たとえば、次の宣言は、4 行と 2 列の 2 次元の配列を作成します。  
@@ -51,7 +45,7 @@ ms.lasthandoff: 11/21/2017
   
  [!code-csharp[csProgGuideArrays#17](../../../csharp/programming-guide/arrays/codesnippet/CSharp/multidimensional-arrays_8.cs)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
  [配列](../../../csharp/programming-guide/arrays/index.md)  
  [1 次元配列](../../../csharp/programming-guide/arrays/single-dimensional-arrays.md)  

@@ -1113,7 +1113,7 @@
 # [ML.NET ガイド](machine-learning/index.md)
 ## [チュートリアル](machine-learning/tutorials/index.md)
 ### [感情分析 (分類)](machine-learning/tutorials/sentiment-analysis.md)
-### [タクシー時間予測 (回帰)](machine-learning/tutorials/taxi-fare.md)
+### [タクシー代予測 (回帰)](machine-learning/tutorials/taxi-fare.md)
 ## [リソース](machine-learning/resources/index.md)
 ### [Machine Learning 用語集](machine-learning/resources/glossary.md)
 ### [Machine Learning の基本](machine-learning/resources/basics.md)

@@ -128,7 +128,7 @@ ms.lasthandoff: 05/04/2018
 3.  <xref:System.Windows.Forms.Button> 内の <xref:System.Windows.Forms.FlowLayoutPanel> コントロールをすべて選び、 <xref:System.Windows.Forms.Control.Margin%2A> プロパティの値を **20**に設定します。 <xref:System.Windows.Forms.Button> コントロール間の間隔が広がり、各コントロールが離れることにご注意ください。 すべての子コントロールを表示するには、 <xref:System.Windows.Forms.FlowLayoutPanel> コントロールのサイズを拡大する必要がある場合があります。  
   
 ## <a name="inserting-controls-by-double-clicking-them-in-the-toolbox"></a>ツールボックスでのダブルクリックによるコントロールの挿入  
- <xref:System.Windows.Forms.FlowLayoutPanel> ツールボックス **でコントロールをダブルクリックすると、**コントロールに内容を挿入できます。  
+ <xref:System.Windows.Forms.FlowLayoutPanel> ツールボックス **でコントロールをダブルクリックすると、** コントロールに内容を挿入できます。  
   
 #### <a name="to-insert-controls-by-double-clicking-in-the-toolbox"></a>ツールボックスでダブルクリックしてコントロールを挿入するには  
   

@@ -1,10 +1,6 @@
 ---
 title: 型のリファレンス表 (C# リファレンス)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - cs.referencetables
 helpviewer_keywords:
@@ -12,14 +8,11 @@ helpviewer_keywords:
 - types [C#], reference tables
 - C# language, data types
 ms.assetid: 1d2b6a9b-31fd-4fa6-a7b2-bfd9c806ac8a
-caps.latest.revision: 9
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: da259bb13a6adcfc09d6a24b6b340b7b6105300e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: c432140dfd009518290ac6a21129cfb968f661b2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="reference-tables-for-types-c-reference"></a>型のリファレンス表 (C# リファレンス)
 次のリファレンス表に C# の型をまとめて示します。  
@@ -40,7 +33,7 @@ ms.lasthandoff: 11/21/2017
   
  数値型の出力の書式設定については、「[数値結果テーブルの書式設定](../../../csharp/language-reference/keywords/formatting-numeric-results-table.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C# リファレンス](../../../csharp/language-reference/index.md)  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
  [参照型](../../../csharp/language-reference/keywords/reference-types.md)  

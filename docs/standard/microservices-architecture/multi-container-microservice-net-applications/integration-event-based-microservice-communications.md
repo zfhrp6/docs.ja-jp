@@ -1,21 +1,14 @@
 ---
-title: "マイクロサービス間でイベント ベースの通信を実装する (統合イベント)"
-description: "コンテナー化された .NET アプリケーション向けの .NET マイクロサービス アーキテクチャ | マイクロサービス間でイベント ベースの通信を実装する (統合イベント)"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
+title: マイクロサービス間でイベント ベースの通信を実装する (統合イベント)
+description: コンテナー化された .NET アプリケーション向けの .NET マイクロサービス アーキテクチャ | マイクロサービス間でイベント ベースの通信を実装する (統合イベント)
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 12/11/2017
-ms.prod: .net-core
-ms.technology: dotnet-docker
-ms.topic: article
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 50ab0be6b92304eee4bc46643c867ee2827fc805
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 5d7037f91cb338721f91d35567246ebbca018a3c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="implementing-event-based-communication-between-microservices-integration-events"></a>マイクロサービス間でイベント ベースの通信を実装する (統合イベント)
 

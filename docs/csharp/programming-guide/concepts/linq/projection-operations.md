@@ -1,21 +1,12 @@
 ---
-title: "射影操作 (C#)"
-ms.custom: 
+title: 射影操作 (C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: 98df573a-aad9-4b8c-9a71-844be2c4fb41
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 4a05a4f228e64405ba24d967193d9e7a487ae473
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: a044982c21246fd4e8c1cbdbb9801ae7b29d05c6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="projection-operations-c"></a>射影操作 (C#)
 射影とは、オブジェクトを、必要なプロパティだけで構成された別の形式に変換する操作のことをいいます。 射影を使用することにより、個々のオブジェクトから構築された新しい型を作成できます。 プロパティを投影し、それに対して数値演算関数を実行できます。 また、元のオブジェクトを変更せずに射影することもできます。  
@@ -31,7 +22,7 @@ ms.lasthandoff: 11/21/2017
   
 ## <a name="query-expression-syntax-examples"></a>クエリ式の構文例  
   
-### <a name="select"></a>[選択]  
+### <a name="select"></a>選択  
  次の例では、`select` 句を使って、文字列リストにある各文字列の最初の文字を射影します。  
   
 ```csharp  
@@ -167,7 +158,7 @@ static void SelectVsSelectMany()
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Linq>  
  [標準クエリ演算子の概要 (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)  
  [select 句](../../../../csharp/language-reference/keywords/select-clause.md)  

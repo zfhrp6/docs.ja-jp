@@ -1,28 +1,21 @@
 ---
-title: "デリゲートの使用 (C# プログラミング ガイド)"
+title: デリゲートの使用 (C# プログラミング ガイド)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - delegates [C#], how to use
 ms.assetid: 99a2fc27-a32e-4a34-921c-e65497520eec
-caps.latest.revision: 
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: cef62448388299f310fa26ecb632485b6538c032
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: b27c94570fdf76808e8a7df67b34466bde20de7f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-delegates-c-programming-guide"></a>デリゲートの使用 (C# プログラミング ガイド)
 [デリゲート](../../../csharp/language-reference/keywords/delegate.md)は、C および C++ の関数ポインターのようなメソッドを安全にカプセル化する型です。 ただし、C 関数ポインターとは異なり、デリゲートはオブジェクト指向で、タイプ セーフで、安全です。 デリゲートの型は、デリゲートの名前によって定義されます。 次の例では、引数として[文字列](../../../csharp/language-reference/keywords/string.md)を受け取り、[void](../../../csharp/language-reference/keywords/void.md) を返すメソッドをカプセル化できる `Del` という名前のデリゲートを宣言しています。  
   
  [!code-csharp[csProgGuideDelegates#21](../../../csharp/programming-guide/delegates/codesnippet/CSharp/using-delegates_1.cs)]  
   
- デリゲート オブジェクトは、通常、デリゲートがラップするメソッドの名前を指定して構成されるか、[匿名メソッド](../../../csharp/programming-guide/statements-expressions-operators/anonymous-methods.md)を使用して構成されます。 デリゲートがインスタンス化されると、デリゲートに対するメソッドの呼び出しが、デリゲートからメソッドに渡されます。 呼び出し元によってデリゲートに渡されるパラメーターはメソッドに渡され、戻り値がある場合は、デリゲートによってメソッドから呼び出し元に返されます。 これは、デリゲートの呼び出しと呼ばれます。 インスタンス化されたデリゲートは、ラップされたメソッドそのものであるかのように呼び出すことができます。 次に例を示します。  
+ デリゲート オブジェクトは、通常、デリゲートがラップするメソッドの名前を指定して構成されるか、[匿名メソッド](../../../csharp/programming-guide/statements-expressions-operators/anonymous-methods.md)を使用して構成されます。 デリゲートがインスタンス化されると、デリゲートに対するメソッドの呼び出しが、デリゲートからメソッドに渡されます。 呼び出し元によってデリゲートに渡されるパラメーターはメソッドに渡され、戻り値がある場合は、デリゲートによってメソッドから呼び出し元に返されます。 これは、デリゲートの呼び出しと呼ばれます。 インスタンス化されたデリゲートは、ラップされたメソッドそのものであるかのように呼び出すことができます。 例:  
   
  [!code-csharp[csProgGuideDelegates#22](../../../csharp/programming-guide/delegates/codesnippet/CSharp/using-delegates_2.cs)]  
   
@@ -50,11 +43,11 @@ ms.lasthandoff: 11/21/2017
   
  以前に示した静的な `DelegateMethod` と共に、`Del` インスタンスによってラップできるメソッドが 3 つあります。  
   
- デリゲートは、呼び出されたときに複数のメソッドを呼び出すことができます。 これはマルチキャスティングと呼ばれます。 デリゲートのメソッドの一覧 (呼び出しリスト) に追加のメソッドを追加するには、加算演算子または加算代入演算子 ('+' または '+=') を使用して 2 つのデリゲートを追加する必要があります。 次に例を示します。  
+ デリゲートは、呼び出されたときに複数のメソッドを呼び出すことができます。 これはマルチキャスティングと呼ばれます。 デリゲートのメソッドの一覧 (呼び出しリスト) に追加のメソッドを追加するには、加算演算子または加算代入演算子 ('+' または '+=') を使用して 2 つのデリゲートを追加する必要があります。 例:  
   
  [!code-csharp[csProgGuideDelegates#27](../../../csharp/programming-guide/delegates/codesnippet/CSharp/using-delegates_7.cs)]  
   
- この時点で、`allMethodsDelegate` には、呼び出しリスト内の 3 つのメソッド (`Method1`、`Method2`、`DelegateMethod`) が含まれています。 元の 3 つのデリゲートである `d1`、`d2`、および `d3` は変更されません。 `allMethodsDelegate` が呼び出されると、すべての 3 つのメソッドが順に呼び出されます。 デリゲートで参照パラメーターを使用する場合、参照は、3 つのメソッドに順番に渡され、1 つのメソッドによって行われた変更は、次のメソッドに示されます。 いずれかのメソッドがメソッド内でキャッチされない例外をスローした場合、デリゲートの呼び出し元に例外が渡され、呼び出しリスト内の後続のメソッドは呼び出されません。 デリゲートに戻り値や out パラメーターがある場合、デリゲートは戻り値と最後に呼び出されたメソッドのパラメーターを返します。 呼び出しリストからメソッドを削除するには、デクリメント演算子またはデクリメント代入演算子 ('-' または '-=') を使用します。 次に例を示します。  
+ この時点で、`allMethodsDelegate` には、呼び出しリスト内の 3 つのメソッド (`Method1`、`Method2`、`DelegateMethod`) が含まれています。 元の 3 つのデリゲートである `d1`、`d2`、および `d3` は変更されません。 `allMethodsDelegate` が呼び出されると、すべての 3 つのメソッドが順に呼び出されます。 デリゲートで参照パラメーターを使用する場合、参照は、3 つのメソッドに順番に渡され、1 つのメソッドによって行われた変更は、次のメソッドに示されます。 いずれかのメソッドがメソッド内でキャッチされない例外をスローした場合、デリゲートの呼び出し元に例外が渡され、呼び出しリスト内の後続のメソッドは呼び出されません。 デリゲートに戻り値や out パラメーターがある場合、デリゲートは戻り値と最後に呼び出されたメソッドのパラメーターを返します。 呼び出しリストからメソッドを削除するには、デクリメント演算子またはデクリメント代入演算子 ('-' または '-=') を使用します。 例:  
   
  [!code-csharp[csProgGuideDelegates#28](../../../csharp/programming-guide/delegates/codesnippet/CSharp/using-delegates_8.cs)]  
   
@@ -70,7 +63,7 @@ ms.lasthandoff: 11/21/2017
   
  [!code-csharp[csProgGuideDelegates#30](../../../csharp/programming-guide/delegates/codesnippet/CSharp/using-delegates_10.cs)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
  [デリゲート](../../../csharp/programming-guide/delegates/index.md)  
  [デリゲートの分散の使用](http://msdn.microsoft.com/library/e6acad03-93e0-4efb-a158-8696d5eb4ecf)  

@@ -1,26 +1,15 @@
 ---
-title: "XSLT コンパイラ (xsltc.exe)"
-ms.custom: 
+title: XSLT コンパイラ (xsltc.exe)
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 672a5ac8-8305-4d28-ba10-11089c2c0924
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 36696617d1e28a370f6b15f15fb39bc816973f15
-ms.sourcegitcommit: ba765893e3efcece67d99fd6d5ce0074b050d1d9
+ms.openlocfilehash: aef49f70f3a60151aa053a1a94a06bc71401531e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="xslt-compiler-xsltcexe"></a>XSLT コンパイラ (xsltc.exe)
 XSLT コンパイラ (xsltc.exe) は、XSLT スタイル シートをコンパイルしてアセンブリを生成します。 コンパイルしたスタイル シートを <xref:System.Xml.Xsl.XslCompiledTransform.Load%28System.Type%29?displayProperty=nameWithType> メソッドに直接渡すことができます。 xsltc.exe を使用して署名があるアセンブリを生成することはできません。  
@@ -47,7 +36,7 @@ xsltc [options] [/class:<name>] <sourceFile> [[/class:<name>] <sourceFile>...]
 |`/debug[`+&#124;-`]`|デバッグ情報を生成するかどうかを指定します。<br /><br /> `+` または `/debug` を指定すると、コンパイラによりデバッグ情報が生成され、プログラム データベース (PDB) ファイルに記録されます。 生成される PDB ファイルの名前は `assemblyName`.pdb です。<br /><br /> `-` を指定しない場合、`/debug` の指定が有効となります。これを指定した場合、デバッグ情報は作成されません。 製品版のアセンブリが生成されます。 **注:** デバッグ モードでコンパイルすると、XSLT のパフォーマンスが大きな影響を受けることがあります。|  
 |`/help`|このツールのコマンド構文とオプションを表示します。|  
 |`/nologo`|コンパイラの著作権メッセージが表示されないようにします。|  
-|`/platform:` `string`|アセンブリを実行できるプラットフォームを指定します。 次に、有効なプラットフォームの値を示します。<br /><br /> `x86` : 32 ビット x86 互換共通言語ランタイムにより実行できるように、アセンブリをコンパイルします。<br /><br /> `x64` : AMD64 または EM64T 命令セットをサポートするコンピューターで 64 ビット共通言語ランタイムにより実行できるように、アセンブリをコンパイルします<br /><br /> [!INCLUDE[vcpritanium](../../../../includes/vcpritanium-md.md)] [!INCLUDE[vcpritanium](../../../../includes/vcpritanium-md.md)] プロセッサを搭載したコンピューターで 64 ビット共通言語ランタイムにより実行できるように、アセンブリをコンパイルします。<br /><br /> `anycpu` : 任意のプラットフォーム上で実行できるように、アセンブリをコンパイルします。 既定値です。|  
+|`/platform:` `string`|アセンブリを実行できるプラットフォームを指定します。 次に、有効なプラットフォームの値を示します。<br /><br /> `x86` : 32 ビット x86 互換共通言語ランタイムにより実行できるように、アセンブリをコンパイルします。<br /><br /> `x64` : AMD64 または EM64T 命令セットをサポートするコンピューターで 64 ビット共通言語ランタイムにより実行できるように、アセンブリをコンパイルします<br /><br /> [!INCLUDE[vcpritanium](../../../../includes/vcpritanium-md.md)] : [!INCLUDE[vcpritanium](../../../../includes/vcpritanium-md.md)] プロセッサを搭載したコンピューターで 64 ビット共通言語ランタイムにより実行できるように、アセンブリをコンパイルします。<br /><br /> `anycpu` : 任意のプラットフォーム上で実行できるように、アセンブリをコンパイルします。 既定値です。|  
 |`/out:` `assemblyName`|出力となるアセンブリの名前を指定します。 複数のスタイル シートが存在している場合、既定のアセンブリ名はメインのスタイル シートか最初のスタイル シートの名前になります。<br /><br /> スタイル シートにスクリプトが含まれている場合、スクリプトは別のアセンブリに保存されます。 スクリプト アセンブリ名は、メインのアセンブリ名から生成されます。 たとえば、アセンブリ名を CustOrders.dll と指定した場合、最初のスクリプト アセンブリは CustOrders_Script1.dll という名前になります。|  
 |`/settings:` `document+-, script+-, DTD+-,`|スタイル シートで `document()` 関数、XSLT スクリプト、またはドキュメント型定義 (DTD) を許可するかどうかを指定します。<br /><br /> 既定では、DTD、`document()` 関数、スクリプトのサポートは無効になっています。|  
 |`@` `file`|コンパイラ オプションを含むファイルを指定できます。|  

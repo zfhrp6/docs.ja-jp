@@ -1,21 +1,12 @@
 ---
-title: "マルチスレッド アプリケーション (C#)"
-ms.custom: 
+title: マルチスレッド アプリケーション (C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: b7015cfb-d506-4eac-b2f8-b2caaa9cc977
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 48b056172e3260952155eb40a1a393d86da78344
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: ee4d92ae0ad3dadf6568b367522817484cb7337f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="multithreaded-applications-c"></a>マルチスレッド アプリケーション (C#)
 C# では、複数のタスクを同時に実行するアプリケーションを記述できます。 他のタスクを止める可能性があるタスクは個別のスレッドで実行できます。これは*マルチスレッド*や*フリー スレッド*と呼ばれているプロセスです。  
@@ -50,7 +41,7 @@ newThread.Abort();
 ### <a name="thread-methods"></a>スレッド メソッド  
  次の表は、個々のスレッドを制御できるメソッドをまとめたものです。  
   
-|メソッド|操作|  
+|メソッド|アクション|  
 |------------|------------|  
 |<xref:System.Threading.Thread.Start%2A>|スレッドの実行を開始します。|  
 |<xref:System.Threading.Thread.Sleep%2A>|指定した時間だけスレッドを一時停止します。|  
@@ -65,7 +56,7 @@ newThread.Abort();
 ### <a name="thread-properties"></a>スレッド プロパティ  
  スレッドには、便利なプロパティもあります。次の表をご覧ください。  
   
-|プロパティ|値|  
+|プロパティ|[値]|  
 |--------------|-----------|  
 |<xref:System.Threading.Thread.IsAlive%2A>|スレッドがアクティブな場合、値 `True` が含まれます。|  
 |<xref:System.Threading.Thread.IsBackground%2A>|スレッドがバックグラウンド スレッドかどうか、あるいはバックグラウンド スレッドにする必要があるかどうかを示すブール値を取得または設定します。 バックグラウンド スレッドはフォアグラウンド スレッドに似ていますが、プロセスの停止を阻止しません。 あるプロセスに属するフォアグラウンド スレッドがすべて停止すると、共通言語ランタイムは、アライブ状態のバックグラウンド スレッドで <xref:System.Threading.Thread.Abort%2A> メソッドを呼び出し、プロセスを終了します。|  
@@ -81,7 +72,7 @@ newThread.Abort();
 ## <a name="foreground-and-background-threads"></a>フォアグラウンド スレッドとバックグラウンド スレッド  
  *フォアグラウンド スレッド*は無期限で実行されます。*バックグラウンド スレッド*は、最後のフォアグラウンド スレッドが停止した直後に停止します。 <xref:System.Threading.Thread.IsBackground%2A> プロパティを利用し、スレッドのバックグラウンド状態を確認したり、変更したりできます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Threading.Thread>  
  [スレッドの同期 (C#)](../../../../csharp/programming-guide/concepts/threading/thread-synchronization.md)  
  [マルチスレッド プロシージャのパラメーターと戻り値 (C#)](../../../../csharp/programming-guide/concepts/threading/parameters-and-return-values-for-multithreaded-procedures.md)  

@@ -1,23 +1,16 @@
 ---
-title: ".NET のツアー"
-description: ".NET のいくつかの優れた機能についてのガイド付きツアーです。"
-keywords: ".NET, .NET Core, ツアー, プログラミング言語, アンセーフ, メモリ管理, タイプ セーフ, 非同期"
+title: .NET のツアー
+description: .NET のいくつかの優れた機能についてのガイド付きツアーです。
 author: cartermp
 ms.author: wiwagn
 ms.date: 05/22/2017
-ms.topic: article
-ms.prod: .net
 ms.technology: dotnet-standard
-ms.devlang: dotnet
 ms.assetid: bbfe6465-329d-4982-869d-472e7ef85d93
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 9dca33f01c119c185717efa0666146191503f577
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: b1925397fb7cad5e55f992feaa5be2e2d837aac8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="tour-of-net"></a>.NET のツアー
 

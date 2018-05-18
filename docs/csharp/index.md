@@ -8,11 +8,11 @@ helpviewer_keywords:
 - Help, Visual C# documentation
 - C# language
 - Visual C#
-ms.openlocfilehash: 598ddfbe16a1a09326d811b4eafcf87f3ca6e971
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4d349f8aff5e3d48a2bc738e848d2a251805e260
+ms.sourcegitcommit: ff1d40507b3eb6e2185478e37c66c66be6de46f1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/11/2018
 ---
 # <a name="c-guide"></a>C# のガイド
 
@@ -43,8 +43,8 @@ C# ガイドにはいくつかのセクションがあります。 順番に読�
 * [C# のツアー](tour-of-csharp/index.md)
   * ここでは、C# 言語の概要を示します。 C# プログラムの構成要素と C# 言語の機能についても説明します。 また、C# のすべての構文要素を使った小さなサンプルを示し、C# 言語に関する主なトピックについて説明します。
 
-* [最新の機能](whats-new/index.md)
-  * C# 言語の新機能について説明し、 C# インタラクティブ (C# の REPL) や .NET コンパイラ プラットフォーム SDK などの新しいツールを紹介しています。 このセクションでは、C# 言語がどのように進化しているか、および新しいツールが生産性の向上にどのように役立つかについて説明します。
+* [C# の新機能](whats-new/index.md)
+  * C# 言語の最新の言語リリースと履歴に追加された新機能の概要を提供します。
 
 <!--
 * [.NET Compiler Platform SDK](roslyn-sdk/index.md)

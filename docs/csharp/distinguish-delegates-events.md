@@ -1,20 +1,13 @@
 ---
-title: "デリゲートとイベントの識別"
-description: "デリゲートとイベントの違いと、.NET Core の各機能を使用する状況について説明します。"
-keywords: .NET, .NET Core
-author: BillWagner
-ms.author: wiwagn
+title: デリゲートとイベントの識別
+description: デリゲートとイベントの違いと、.NET Core の各機能を使用する状況について説明します。
 ms.date: 06/20/2016
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.devlang: csharp
 ms.assetid: 0fdc8629-2fdb-4a7c-a433-5b9d04eaf911
-ms.openlocfilehash: 3026a0d853cb17dcf05d3b98d814044d743e48dc
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 2f9c26519d93314f4991829191723df5426b23b7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="distinguishing-delegates-and-events"></a>デリゲートとイベントの識別
 

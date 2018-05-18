@@ -1,29 +1,18 @@
 ---
-title: "XmlSchemaCollection を使用した XDR 検証"
-ms.custom: 
+title: XmlSchemaCollection を使用した XDR 検証
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 00833027-1428-4586-83c1-42f5de3323d1
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: f875169d43a2f733050b46c76cea0891b4cfabf7
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 4d4e970423693bbe221f0146ecc07dd69e27bc35
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="xdr-validation-with-xmlschemacollection"></a>XmlSchemaCollection を使用した XDR 検証
 検証の基準とする XDR (XML-Data Reduced) スキーマが **XmlSchemaCollection** に格納されている場合、そのスキーマは、XmlSchemaCollection に追加したときに指定された名前空間 URI に関連付けられています。 **XmlValidatingReader** は、XML ドキュメント内の名前空間 URI を、コレクション内のその URI に対応するスキーマに割り当てます。  

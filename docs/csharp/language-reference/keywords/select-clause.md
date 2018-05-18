@@ -1,9 +1,6 @@
 ---
-title: "select 句 (C# リファレンス)"
+title: select 句 (C# リファレンス)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.topic: article
 f1_keywords:
 - select_CSharpKeyword
 - select
@@ -11,14 +8,11 @@ helpviewer_keywords:
 - select keyword [C#]
 - select clause [C#]
 ms.assetid: df01e266-5781-4aaa-80c4-67cf28ea093f
-caps.latest.revision: "19"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: f40bc26d1812e76ac618c5a0ddf23c4cef2700d0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 6e7277b5d714e48059fe1ed7e8b85e46a14a840c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="select-clause-c-reference"></a>select 句 (C# リファレンス)
 クエリ式で、`select` 句は、クエリが実行されたときに生成される値の型を指定します。 結果は、以前のすべての句の評価と `select` 句自体の式に基づいています。 クエリ式は、`select` 句または [group](../../../csharp/language-reference/keywords/group-clause.md) 句のいずれかで終了する必要があります。  
@@ -39,11 +33,11 @@ ms.lasthandoff: 11/21/2017
 ## <a name="remarks"></a>コメント  
  コンパイル時に、`select` 句は、<xref:System.Linq.Enumerable.Select%2A> 標準クエリ演算子へのメソッドの呼び出しに変換されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C# リファレンス](../../../csharp/language-reference/index.md)  
  [クエリ キーワード (LINQ)](../../../csharp/language-reference/keywords/query-keywords.md)  
  [from 句](../../../csharp/language-reference/keywords/from-clause.md)  
- [partial (メソッド) (c# リファレンス)](../../../csharp/language-reference/keywords/partial-method.md)  
+ [partial (メソッド) (C# リファレンス)](../../../csharp/language-reference/keywords/partial-method.md)  
  [匿名型](../../../csharp/programming-guide/classes-and-structs/anonymous-types.md)  
  [LINQ クエリ式](../../../csharp/programming-guide/linq-query-expressions/index.md)  
  [C# の LINQ の概要](../../../csharp/programming-guide/concepts/linq/getting-started-with-linq.md)

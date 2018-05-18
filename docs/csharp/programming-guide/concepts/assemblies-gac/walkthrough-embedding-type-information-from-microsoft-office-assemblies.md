@@ -1,21 +1,12 @@
 ---
-title: "チュートリアル: Visual Studio で Microsoft Office アセンブリからの型情報を埋め込む (C#)"
-ms.custom: 
+title: 'チュートリアル: Visual Studio で Microsoft Office アセンブリからの型情報を埋め込む (C#)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: 3320e866-01f1-4b7f-8932-049a7b2d2a9b
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 45ec4521da08a9a1f4bdc3b433d3f8d765960526
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 8e7eb5c797ca87f87950d530112ec64f1327ae0c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="walkthrough-embedding-type-information-from-microsoft-office-assemblies-in-visual-studio-c"></a>チュートリアル: Visual Studio で Microsoft Office アセンブリからの型情報を埋め込む (C#)
 COM オブジェクトを参照するアプリケーションに型情報を埋め込むと、プライマリ相互運用機能アセンブリ (PIA: Primary Interop Assembly) を使用する必要がなくなります。 また、埋め込み型情報を使用することで、バージョンに依存しないアプリケーションを作成できます。 つまり、複数のバージョンの COM ライブラリの型を使用するようにプログラムを記述でき、バージョンごとに固有の PIA が不要になります。 この方法は、Microsoft Office ライブラリのオブジェクトを使用するアプリケーション向けの一般的なシナリオです。 型情報を埋め込むと、プログラムの同じビルドで、異なるコンピューター上にある異なるバージョンの Microsoft Office と連携できます。Microsoft Office のバージョンごとにプログラムや PIA を再配置する必要はありません。  
@@ -33,7 +24,7 @@ COM オブジェクトを参照するアプリケーションに型情報を埋�
   
 1.  Excel がインストールされているコンピューターで Visual Studio を起動します。  
   
-2.  **[ファイル]** メニューで、 **[新規]**、 **[プロジェクト]**をクリックします。  
+2.  **[ファイル]** メニューで、 **[新規]**、 **[プロジェクト]** をクリックします。  
   
 3.  **[新しいプロジェクト]** ダイアログ ボックスの **[プロジェクトの種類]** ペインで、**[Windows]** が選択されていることを確認します。 **[テンプレート]** ペインの **[コンソール アプリケーション]** を選択します。 **[名前]** ボックスに「`CreateExcelWorkbook`」と入力して、 **[OK]** を選択します。 新しいプロジェクトが作成されます。  
   
@@ -132,6 +123,6 @@ COM オブジェクトを参照するアプリケーションに型情報を埋�
   
 5.  プログラム例で指定した場所 (C:\SampleFolder\SampleWorkbook.xls) に Excel ブックが作成されていることを確認します。  
   
-## <a name="see-also"></a>関連項目  
- [チュートリアル: Visual Studio (c#) でのマネージ アセンブリから型の埋め込み](../../../../csharp/programming-guide/concepts/assemblies-gac/walkthrough-embedding-types-from-managed-assemblies-in-visual-studio.md)  
+## <a name="see-also"></a>参照  
+ [チュートリアル: Visual Studio でマネージ アセンブリからの型を埋め込む (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/walkthrough-embedding-types-from-managed-assemblies-in-visual-studio.md)  
  [/link (C# コンパイラ オプション)](../../../../csharp/language-reference/compiler-options/link-compiler-option.md)

@@ -1,21 +1,12 @@
 ---
-title: "方法: 親の属性を検索する (XPath-LINQ to XML) (C#)"
-ms.custom: 
+title: '方法: 親の属性を検索する (XPath-LINQ to XML) (C#)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: dbef9d89-a5c4-431f-80cc-7a2ebf323f86
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: eeb1bea8c82eaff904ec1076e92609cd16024d28
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 6f796bfb8f8b0051af4e31f6e82a503dbfbbc334
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-find-an-attribute-of-the-parent-xpath-linq-to-xml-c"></a>方法: 親の属性を検索する (XPath-LINQ to XML) (C#)
 このトピックでは、親要素に移動してその属性を検索する方法を示します。  
@@ -61,5 +52,5 @@ Results are identical
 id="bk101"  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [XPath ユーザー向けの LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

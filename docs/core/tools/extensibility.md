@@ -4,17 +4,11 @@ description: コマンド ライン インターフェイス (CLI) ツールを�
 author: blackdwarf
 ms.author: mairaw
 ms.date: 04/12/2017
-ms.topic: conceptual
-ms.prod: dotnet-core
-ms.technology: dotnet-cli
-ms.devlang: dotnet
-ms.workload:
-- dotnetcore
-ms.openlocfilehash: 11cf9843f5c10ed7114d45a8c6be0ffeff2b6bad
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: 6cabd3959a29878788916ae26589be408c12e0ca
+ms.sourcegitcommit: 88f251b08bf0718ce119f3d7302f514b74895038
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="net-core-cli-tools-extensibility-model"></a>.NET Core CLI ツールの拡張モデル
 
@@ -26,15 +20,15 @@ CLI ツールは、主に次の 3 つの方法で拡張できます。
 
 1. [プロジェクトごとに NuGet パッケージを使用](#per-project-based-extensibility)
 
-  各プロジェクトのツールはプロジェクトのコンテキスト内に含まれますが、復元によって簡単にインストールできます。
+   各プロジェクトのツールはプロジェクトのコンテキスト内に含まれますが、復元によって簡単にインストールできます。
 
 2. [カスタム ターゲットを持つ NuGet パッケージを使用](#custom-targets)
 
-  カスタム ターゲットを使用すると、カスタム タスクを使用してビルド プロセスを簡単に拡張できます。
+   カスタム ターゲットを使用すると、カスタム タスクを使用してビルド プロセスを簡単に拡張できます。
 
 3. [システムのパスを使用](#path-based-extensibility)
 
-  パス ベースのツールは、一般的に単一のコンピューターで使用できるプロジェクト間のツールに適しています。
+   パス ベースのツールは、一般的に単一のコンピューターで使用できるプロジェクト間のツールに適しています。
 
 上記で概説されている 3 つの拡張メカニズムは排他的ではありません。 メカニズムの 1 つ、すべて、または組み合わせて使用することができます。 選択するメカニズムは、拡張機能で実現しようとしている目標によって大きく異なります。
 

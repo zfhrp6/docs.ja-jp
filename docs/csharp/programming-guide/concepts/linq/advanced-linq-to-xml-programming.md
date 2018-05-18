@@ -1,21 +1,12 @@
 ---
-title: "高度な LINQ to XML プログラミング (C#)"
-ms.custom: 
+title: 高度な LINQ to XML プログラミング (C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: 2e012d40-532b-49ea-b1fc-152e616bdfa3
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 0f451700dbd2bf9f924eacf6c3685b88ff2c8849
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: e455b2b579c56632d5e06b4da5c44a71ea150416
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="advanced-linq-to-xml-programming-c"></a>高度な LINQ to XML プログラミング (C#)
 ここでは、特定の [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] シナリオにおける上級開発者だけを対象とした情報を紹介します。  
@@ -36,5 +27,5 @@ ms.lasthandoff: 10/18/2017
 |[XElement オブジェクトを含むオブジェクト グラフのシリアル化 (C#)](../../../../csharp/programming-guide/concepts/linq/serializing-object-graphs-that-contain-xelement-objects.md)|<xref:System.Xml.Linq.XElement> オブジェクトおよび <xref:System.Xml.Linq.XDocument> オブジェクトを含むオブジェクト グラフをシリアル化する方法について説明します。|  
 |[LINQ to XML による WPF のデータ バインディング](/visualstudio/designers/wpf-data-binding-with-linq-to-xml)|Windows Presentation Foundation アプリケーションでのデータ バインディングのデータ ソースとして LINQ to XML を使用する方法について説明します。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [プログラミング ガイド (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/programming-guide-linq-to-xml.md)

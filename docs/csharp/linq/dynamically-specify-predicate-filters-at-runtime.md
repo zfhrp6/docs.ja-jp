@@ -1,20 +1,13 @@
 ---
-title: "実行時における述語フィルターの動的指定"
-description: "実行時に述語フィルターを動的に指定する方法"
-keywords: .NET, .NET Core, C#
-author: BillWagner
-manager: wpickett
-ms.author: wiwagn
+title: 実行時における述語フィルターの動的指定
+description: 実行時に述語フィルターを動的に指定する方法
 ms.date: 12/1/2016
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-csharp
 ms.assetid: 90238470-0767-497c-916c-52d0d16845e0
-ms.openlocfilehash: 06bc594ac1357e7dca6c182fa28310559a79875c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: fa3426a513758d8c30bf381ec480b9b8d12a5f81
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="dynamically-specify-predicate-filters-at-runtime"></a>実行時における述語フィルターの動的指定
 
@@ -75,6 +68,6 @@ ms.lasthandoff: 11/21/2017
 4.  1 から 4 の整数をコマンド ライン引数としてプロジェクトを実行します。  
   
  
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [LINQ クエリ式](index.md)  
  [where 句](../language-reference/keywords/where-clause.md)

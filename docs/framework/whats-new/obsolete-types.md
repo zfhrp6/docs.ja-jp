@@ -1,30 +1,18 @@
 ---
 title: .NET Framework で互換性のために残されている型
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - .NET Framework 4.5, obsolete types
 - types, obsolete in .NET Framework 4.5
 - obsolete types [.NET Framework]
 ms.assetid: e636d024-0fac-45eb-b721-25a8c0ceca8f
-caps.latest.revision: ''
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: f30b9e245ad38b0e861590e9b2ca3658a2b5e967
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
-ms.translationtype: MT
+ms.openlocfilehash: a5668292eaae2b05bbc056196a35a9b8840b7177
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="obsolete-types-in-the-net-framework"></a>.NET Framework で互換性のために残されている型
 <a name="introduction"></a> この記事の表に、[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] と [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] で互換性のために残されている型をアセンブリ別に示します。 各アセンブリで互換性のために残されている型と推奨される代替型の一覧を表示するには、以下のリンクを使用してください。 これらの型は廃止されているため、そのメンバーもすべて廃止されます。 .NET Framework クラス ライブラリで互換性のために残されているその他のメンバーの一覧については、[互換性のために残されているメンバー](../../../docs/framework/whats-new/obsolete-members.md)に関する記事をご覧ください。  
@@ -93,8 +81,8 @@ ms.lasthandoff: 03/26/2018
 |<xref:System.ExecutionEngineException?displayProperty=nameWithType>|以前には、この型は、ランタイムで未定義の致命的なエラーを示していました。 ランタイムがこの例外を発生させることはなくなりましたが、この型は互換性のために残されています。|  
 |<xref:System.Collections.CaseInsensitiveHashCodeProvider?displayProperty=nameWithType>|代わりに、<xref:System.StringComparer?displayProperty=nameWithType> を使用してください。|  
 |<xref:System.Collections.IHashCodeProvider?displayProperty=nameWithType>|代わりに、<xref:System.Collections.IEqualityComparer?displayProperty=nameWithType> を使用してください。|  
-|<xref:System.Configuration.Assemblies.AssemblyHash?displayProperty=nameWithType>|<xref:System.Configuration.Assemblies.AssemblyHash> クラスの使用は推奨されていません。|  
-|<xref:System.Diagnostics.Contracts.Internal.ContractHelper?displayProperty=nameWithType>|最初に .NET Framework 4.5 で廃止されました。 代わりに、System.Runtime.CompilerServices 名前空間の <xref:System.Runtime.CompilerServices.ContractHelper?displayProperty=nameWithType> クラスを使用してください。|  
+|<xref:System.Configuration.Assemblies.AssemblyHash?displayProperty=nameWithType>|<xref:System.Configuration.Assemblies.AssemblyHash> クラスの使用は非推奨とされました。|  
+|<xref:System.Diagnostics.Contracts.Internal.ContractHelper?displayProperty=nameWithType>|最初に .NET Framework 4.5 で非推奨とされました。 代わりに、System.Runtime.CompilerServices 名前空間の <xref:System.Runtime.CompilerServices.ContractHelper?displayProperty=nameWithType> クラスを使用してください。|  
 |<xref:System.Reflection.Emit.UnmanagedMarshal?displayProperty=nameWithType>|代替 API を使用できます。代わりに、<xref:System.Runtime.InteropServices.MarshalAsAttribute?displayProperty=nameWithType> カスタム属性を生成してください。|  
 |<xref:System.Runtime.InteropServices.BIND_OPTS?displayProperty=nameWithType>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.BIND_OPTS?displayProperty=nameWithType> を使用してください。|  
 |<xref:System.Runtime.InteropServices.BINDPTR?displayProperty=nameWithType>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.BINDPTR?displayProperty=nameWithType> を使用してください。|  
@@ -108,8 +96,8 @@ ms.lasthandoff: 03/26/2018
 |<xref:System.Runtime.InteropServices.FUNCDESC?displayProperty=nameWithType>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.FUNCDESC?displayProperty=nameWithType> を使用してください。|  
 |<xref:System.Runtime.InteropServices.FUNCFLAGS?displayProperty=nameWithType>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.FUNCFLAGS?displayProperty=nameWithType> を使用してください。|  
 |<xref:System.Runtime.InteropServices.FUNCKIND?displayProperty=nameWithType>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.FUNCKIND?displayProperty=nameWithType> を使用してください。|  
-|<xref:System.Runtime.InteropServices.IDispatchImplAttribute?displayProperty=nameWithType>|この属性の使用は推奨されていません。この属性は、将来のバージョンでは削除されます。|  
-|<xref:System.Runtime.InteropServices.IDispatchImplType?displayProperty=nameWithType>|<xref:System.Runtime.InteropServices.IDispatchImplAttribute?displayProperty=nameWithType> の使用は推奨されていません。|  
+|<xref:System.Runtime.InteropServices.IDispatchImplAttribute?displayProperty=nameWithType>|この属性の使用は非推奨とされました。この属性は、将来のバージョンでは削除されます。|  
+|<xref:System.Runtime.InteropServices.IDispatchImplType?displayProperty=nameWithType>|<xref:System.Runtime.InteropServices.IDispatchImplAttribute?displayProperty=nameWithType> の使用は非推奨とされます。|  
 |<xref:System.Runtime.InteropServices.IDLDESC?displayProperty=nameWithType>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.IDLDESC?displayProperty=nameWithType> を使用してください。|  
 |<xref:System.Runtime.InteropServices.IDLFLAG?displayProperty=nameWithType>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.IDLFLAG?displayProperty=nameWithType> を使用してください。|  
 |<xref:System.Runtime.InteropServices.IMPLTYPEFLAGS?displayProperty=nameWithType>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.IMPLTYPEFLAGS?displayProperty=nameWithType> を使用してください。|  
@@ -117,7 +105,7 @@ ms.lasthandoff: 03/26/2018
 |<xref:System.Runtime.InteropServices.LIBFLAGS?displayProperty=nameWithType>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.LIBFLAGS?displayProperty=nameWithType> を使用してください。|  
 |<xref:System.Runtime.InteropServices.PARAMDESC?displayProperty=nameWithType>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.PARAMDESC?displayProperty=nameWithType> を使用してください。|  
 |<xref:System.Runtime.InteropServices.PARAMFLAG?displayProperty=nameWithType>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.PARAMFLAG?displayProperty=nameWithType> を使用してください。|  
-|<xref:System.Runtime.InteropServices.SetWin32ContextInIDispatchAttribute?displayProperty=nameWithType>|この属性は推奨されていません。 アプリケーション ドメインでは、IDispatch の呼び出しでアクティベーション コンテキスト境界は考慮されなくなりました。|  
+|<xref:System.Runtime.InteropServices.SetWin32ContextInIDispatchAttribute?displayProperty=nameWithType>|この属性は非推奨とされました。 アプリケーション ドメインでは、IDispatch の呼び出しでアクティベーション コンテキスト境界は考慮されなくなりました。|  
 |<xref:System.Runtime.InteropServices.STATSTG?displayProperty=nameWithType>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.STATSTG?displayProperty=nameWithType> を使用してください。|  
 |<xref:System.Runtime.InteropServices.SYSKIND?displayProperty=nameWithType>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.SYSKIND?displayProperty=nameWithType> を使用してください。|  
 |<xref:System.Runtime.InteropServices.TYPEATTR?displayProperty=nameWithType>|代わりに、<xref:System.Runtime.InteropServices.ComTypes.TYPEATTR?displayProperty=nameWithType> を使用してください。|  
@@ -164,8 +152,10 @@ ms.lasthandoff: 03/26/2018
   
 |型|メッセージ|  
 |----------|-------------|  
-|<xref:System.Data.DataSysDescriptionAttribute?displayProperty=nameWithType>|<xref:System.Data.DataSysDescriptionAttribute> の使用は推奨されていません。|  
-|<xref:System.Data.PropertyAttributes?displayProperty=nameWithType>|<xref:System.Data.PropertyAttributes> の使用は推奨されていません。|  
+|<xref:System.Data.DataSysDescriptionAttribute?displayProperty=nameWithType>|
+  <xref:System.Data.DataSysDescriptionAttribute> の使用は非推奨とされました。|  
+|<xref:System.Data.PropertyAttributes?displayProperty=nameWithType>|
+  <xref:System.Data.PropertyAttributes> の使用は非推奨とされました。|  
 |<xref:System.Data.TypedDataSetGenerator?displayProperty=nameWithType>|<xref:System.Data.TypedDataSetGenerator> クラスは、将来のリリースでは削除されます。 System.Design.dll の <xref:System.Data.Design.TypedDataSetGenerator?displayProperty=nameWithType> を使用してください。|  
 |<xref:System.Xml.XmlDataDocument?displayProperty=nameWithType>|<xref:System.Xml.XmlDataDocument> クラスは、将来のリリースでは削除されます。|  
   
@@ -176,14 +166,22 @@ ms.lasthandoff: 03/26/2018
   
 |型|メッセージ|  
 |----------|-------------|  
-|<xref:System.Data.OracleClient.OracleClientFactory?displayProperty=nameWithType>|<xref:System.Data.OracleClient.OracleClientFactory> の使用は推奨されていません。|  
-|<xref:System.Data.OracleClient.OracleCommand?displayProperty=nameWithType>|<xref:System.Data.OracleClient.OracleCommand> の使用は推奨されていません。|  
-|<xref:System.Data.OracleClient.OracleCommandBuilder?displayProperty=nameWithType>|<xref:System.Data.OracleClient.OracleCommandBuilder> の使用は推奨されていません。|  
-|<xref:System.Data.OracleClient.OracleConnection?displayProperty=nameWithType>|<xref:System.Data.OracleClient.OracleConnection> の使用は推奨されていません。|  
-|<xref:System.Data.OracleClient.OracleConnectionStringBuilder?displayProperty=nameWithType>|<xref:System.Data.OracleClient.OracleConnectionStringBuilder> の使用は推奨されていません。|  
-|<xref:System.Data.OracleClient.OracleDataAdapter?displayProperty=nameWithType>|<xref:System.Data.OracleClient.OracleDataAdapter> の使用は推奨されていません。|  
-|<xref:System.Data.OracleClient.OraclePermission?displayProperty=nameWithType>|<xref:System.Data.OracleClient.OraclePermission> の使用は推奨されていません。|  
-|<xref:System.Data.OracleClient.OraclePermissionAttribute?displayProperty=nameWithType>|<xref:System.Data.OracleClient.OraclePermissionAttribute?displayProperty=nameWithType> の使用は推奨されていません。|  
+|<xref:System.Data.OracleClient.OracleClientFactory?displayProperty=nameWithType>|
+  <xref:System.Data.OracleClient.OracleClientFactory> の使用は非推奨とされました。|  
+|<xref:System.Data.OracleClient.OracleCommand?displayProperty=nameWithType>|
+  <xref:System.Data.OracleClient.OracleCommand> の使用は非推奨とされました。|  
+|<xref:System.Data.OracleClient.OracleCommandBuilder?displayProperty=nameWithType>|
+  <xref:System.Data.OracleClient.OracleCommandBuilder> の使用は非推奨とされました。|  
+|<xref:System.Data.OracleClient.OracleConnection?displayProperty=nameWithType>|
+  <xref:System.Data.OracleClient.OracleConnection> の使用は非推奨とされました。|  
+|<xref:System.Data.OracleClient.OracleConnectionStringBuilder?displayProperty=nameWithType>|
+  <xref:System.Data.OracleClient.OracleConnectionStringBuilder> の使用は非推奨とされました。|  
+|<xref:System.Data.OracleClient.OracleDataAdapter?displayProperty=nameWithType>|
+  <xref:System.Data.OracleClient.OracleDataAdapter> の使用は非推奨とされました。|  
+|<xref:System.Data.OracleClient.OraclePermission?displayProperty=nameWithType>|
+  <xref:System.Data.OracleClient.OraclePermission> の使用は非推奨とされました。|  
+|<xref:System.Data.OracleClient.OraclePermissionAttribute?displayProperty=nameWithType>|
+  <xref:System.Data.OracleClient.OraclePermissionAttribute?displayProperty=nameWithType> の使用は非推奨とされました。|  
   
  [ページのトップへ](#introduction)  
   
@@ -192,7 +190,7 @@ ms.lasthandoff: 03/26/2018
   
 |型|メッセージ|  
 |----------|-------------|  
-|<xref:System.ComponentModel.Design.LocalizationExtenderProvider?displayProperty=nameWithType>|このクラスの使用は推奨されていません。 代わりに、<xref:System.ComponentModel.Design.Serialization.CodeDomLocalizationProvider?displayProperty=nameWithType> を使用してください。|  
+|<xref:System.ComponentModel.Design.LocalizationExtenderProvider?displayProperty=nameWithType>|このクラスの使用は非推奨とされました。 代わりに、<xref:System.ComponentModel.Design.Serialization.CodeDomLocalizationProvider?displayProperty=nameWithType> を使用してください。|  
 |<xref:System.Web.UI.Design.DataBindingCollectionConverter?displayProperty=nameWithType>|データ バインディングの編集は、プロパティ グリッドではなく、<xref:System.ComponentModel.Design.DesignerActionList?displayProperty=nameWithType> から起動されるので、この型の使用は推奨されていません。|  
 |<xref:System.Web.UI.Design.DataBindingCollectionEditor?displayProperty=nameWithType>|データ バインディングの編集は、プロパティ グリッドではなく、<xref:System.ComponentModel.Design.DesignerActionList?displayProperty=nameWithType> から起動されるので、この型の使用は推奨されていません。|  
 |<xref:System.Web.UI.Design.IControlDesignerBehavior?displayProperty=nameWithType>|別の方法として、<xref:System.Web.UI.Design.IControlDesignerTag?displayProperty=nameWithType> および <xref:System.Web.UI.Design.IControlDesignerView?displayProperty=nameWithType> を使用することをお勧めします。|  
@@ -214,13 +212,13 @@ ms.lasthandoff: 03/26/2018
   
 |型|メッセージ|  
 |----------|-------------|  
-|<xref:System.ComponentModel.IComNativeDescriptorHandler?displayProperty=nameWithType>|このインターフェイスの使用は推奨されていません。 代わりに、<xref:System.ComponentModel.TypeDescriptionProvider?displayProperty=nameWithType> をハンドル型 <xref:System.ComponentModel.TypeDescriptor.ComObjectType%2A?displayProperty=nameWithType> に追加します。|  
+|<xref:System.ComponentModel.IComNativeDescriptorHandler?displayProperty=nameWithType>|このインターフェイスの使用は非推奨とされました。 代わりに、<xref:System.ComponentModel.TypeDescriptionProvider?displayProperty=nameWithType> をハンドル型 <xref:System.ComponentModel.TypeDescriptor.ComObjectType%2A?displayProperty=nameWithType> に追加します。|  
 |<xref:System.ComponentModel.RecommendedAsConfigurableAttribute?displayProperty=nameWithType>|新しい設定モデルを操作するには、代わりに、<xref:System.ComponentModel.SettingsBindableAttribute?displayProperty=nameWithType> を使用してください。|  
-|<xref:System.ComponentModel.Design.Serialization.RootDesignerSerializerAttribute?displayProperty=nameWithType>|この属性は推奨されていません。 代わりに、<xref:System.ComponentModel.Design.Serialization.DesignerSerializerAttribute?displayProperty=nameWithType> を使用してください。 たとえば、CodeDom のルート デザイナーを指定するには、`DesignerSerializerAttribute\(...,typeof\(TypeCodeDomSerializer\)\)` を使用します。|  
-|<xref:System.Diagnostics.DiagnosticsConfigurationHandler?displayProperty=nameWithType>|このクラスの使用は推奨されていません。|  
-|<xref:System.Diagnostics.PerformanceCounterManager?displayProperty=nameWithType>|このクラスの使用は推奨されていません。 代わりに、<xref:System.Diagnostics.PerformanceCounter?displayProperty=nameWithType> クラスからパフォーマンス カウンターを使用してください。|  
-|<xref:System.Net.GlobalProxySelection?displayProperty=nameWithType>|このクラスの使用は推奨されていません。 グローバルな既定のプロキシにアクセスして設定するには、代わりに、<xref:System.Net.WebRequest.DefaultWebProxy%2A?displayProperty=nameWithType> を使用してください。 <xref:System.Net.GlobalProxySelection.GetEmptyWebProxy%2A?displayProperty=nameWithType> の代わりに、'null' を使用してください。|  
-|<xref:System.Net.Sockets.SocketClientAccessPolicyProtocol?displayProperty=nameWithType>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> この型を使用すると、コンパイラ エラーが発生します。<br /><br /> この API は、.NET Framework インフラストラクチャをサポートします。独自に作成したコードから直接使用するためのものではありません。|  
+|<xref:System.ComponentModel.Design.Serialization.RootDesignerSerializerAttribute?displayProperty=nameWithType>|この属性は非推奨とされました。 代わりに、<xref:System.ComponentModel.Design.Serialization.DesignerSerializerAttribute?displayProperty=nameWithType> を使用してください。 たとえば、CodeDom のルート デザイナーを指定するには、`DesignerSerializerAttribute\(...,typeof\(TypeCodeDomSerializer\)\)` を使用します。|  
+|<xref:System.Diagnostics.DiagnosticsConfigurationHandler?displayProperty=nameWithType>|このクラスの使用は非推奨とされました。|  
+|<xref:System.Diagnostics.PerformanceCounterManager?displayProperty=nameWithType>|このクラスの使用は非推奨とされました。 代わりに、<xref:System.Diagnostics.PerformanceCounter?displayProperty=nameWithType> クラスからパフォーマンス カウンターを使用してください。|  
+|<xref:System.Net.GlobalProxySelection?displayProperty=nameWithType>|このクラスの使用は非推奨とされました。 グローバルな既定のプロキシにアクセスして設定するには、代わりに、<xref:System.Net.WebRequest.DefaultWebProxy%2A?displayProperty=nameWithType> を使用してください。 <xref:System.Net.GlobalProxySelection.GetEmptyWebProxy%2A?displayProperty=nameWithType> の代わりに、'null' を使用してください。|  
+|<xref:System.Net.Sockets.SocketClientAccessPolicyProtocol?displayProperty=nameWithType>|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> この型を使用すると、コンパイラ エラーが発生します。<br /><br /> この API は、.NET Framework インフラストラクチャをサポートします。独自に作成したコードから直接使用するためのものではありません。|  
   
  [ページのトップへ](#introduction)  
   
@@ -229,7 +227,7 @@ ms.lasthandoff: 03/26/2018
   
 |型|メッセージ|  
 |----------|-------------|  
-|<xref:System.EnterpriseServices.RegistrationHelperTx?displayProperty=nameWithType>|<xref:System.EnterpriseServices.RegistrationHelperTx> クラスの使用は推奨されていません。|  
+|<xref:System.EnterpriseServices.RegistrationHelperTx?displayProperty=nameWithType>|<xref:System.EnterpriseServices.RegistrationHelperTx> クラスの使用は非推奨とされました。|  
   
  [ページのトップへ](#introduction)  
   
@@ -238,31 +236,31 @@ ms.lasthandoff: 03/26/2018
   
 |型|メッセージ|  
 |----------|-------------|  
-|<xref:System.Net.INetworkProgress?displayProperty=nameWithType>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> この型を使用すると、コンパイラ エラーが発生します。<br /><br /> この API は、.NET Framework インフラストラクチャをサポートします。独自に作成したコードから直接使用するためのものではありません。|  
-|<xref:System.Net.IUnsafeWebRequestCreate?displayProperty=nameWithType>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> この型を使用すると、コンパイラ エラーが発生します。<br /><br /> この API は、.NET Framework インフラストラクチャをサポートします。独自に作成したコードから直接使用するためのものではありません。|  
-|<xref:System.Net.NetworkProgressChangedEventArgs?displayProperty=nameWithType>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> この型を使用すると、コンパイラ エラーが発生します。<br /><br /> この API は、.NET Framework インフラストラクチャをサポートします。独自に作成したコードから直接使用するためのものではありません。|  
-|<xref:System.Net.UiSynchronizationContext?displayProperty=nameWithType>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> この型を使用すると、コンパイラ エラーが発生します。<br /><br /> この API は、.NET Framework インフラストラクチャをサポートします。独自に作成したコードから直接使用するためのものではありません。|  
-|<xref:System.Net.Sockets.HttpPolicyDownloaderProtocol?displayProperty=nameWithType>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> この型を使用すると、コンパイラ エラーが発生します。<br /><br /> この API は、.NET Framework インフラストラクチャをサポートします。独自に作成したコードから直接使用するためのものではありません。|  
-|<xref:System.Net.Sockets.SecurityCriticalAction?displayProperty=nameWithType>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> この型を使用すると、コンパイラ エラーが発生します。<br /><br /> この API は、.NET Framework インフラストラクチャをサポートします。独自に作成したコードから直接使用するためのものではありません。|  
-|<xref:System.Net.Sockets.SocketPolicy?displayProperty=nameWithType>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> この型を使用すると、コンパイラ エラーが発生します。<br /><br /> この API は、.NET Framework インフラストラクチャをサポートします。独自に作成したコードから直接使用するためのものではありません。|  
-|<xref:System.Net.Sockets.UdpAnySourceMulticastClient?displayProperty=nameWithType>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> この型を使用すると、コンパイラ エラーが発生します。<br /><br /> この API は、.NET Framework インフラストラクチャをサポートします。独自に作成したコードから直接使用するためのものではありません。|  
-|<xref:System.Net.Sockets.UdpSingleSourceMulticastClient?displayProperty=nameWithType>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> この型を使用すると、コンパイラ エラーが発生します。<br /><br /> この API は、.NET Framework インフラストラクチャをサポートします。独自に作成したコードから直接使用するためのものではありません。|  
+|<xref:System.Net.INetworkProgress?displayProperty=nameWithType>|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> この型を使用すると、コンパイラ エラーが発生します。<br /><br /> この API は、.NET Framework インフラストラクチャをサポートします。独自に作成したコードから直接使用するためのものではありません。|  
+|<xref:System.Net.IUnsafeWebRequestCreate?displayProperty=nameWithType>|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> この型を使用すると、コンパイラ エラーが発生します。<br /><br /> この API は、.NET Framework インフラストラクチャをサポートします。独自に作成したコードから直接使用するためのものではありません。|  
+|<xref:System.Net.NetworkProgressChangedEventArgs?displayProperty=nameWithType>|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> この型を使用すると、コンパイラ エラーが発生します。<br /><br /> この API は、.NET Framework インフラストラクチャをサポートします。独自に作成したコードから直接使用するためのものではありません。|  
+|<xref:System.Net.UiSynchronizationContext?displayProperty=nameWithType>|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> この型を使用すると、コンパイラ エラーが発生します。<br /><br /> この API は、.NET Framework インフラストラクチャをサポートします。独自に作成したコードから直接使用するためのものではありません。|  
+|<xref:System.Net.Sockets.HttpPolicyDownloaderProtocol?displayProperty=nameWithType>|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> この型を使用すると、コンパイラ エラーが発生します。<br /><br /> この API は、.NET Framework インフラストラクチャをサポートします。独自に作成したコードから直接使用するためのものではありません。|  
+|<xref:System.Net.Sockets.SecurityCriticalAction?displayProperty=nameWithType>|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> この型を使用すると、コンパイラ エラーが発生します。<br /><br /> この API は、.NET Framework インフラストラクチャをサポートします。独自に作成したコードから直接使用するためのものではありません。|  
+|<xref:System.Net.Sockets.SocketPolicy?displayProperty=nameWithType>|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> この型を使用すると、コンパイラ エラーが発生します。<br /><br /> この API は、.NET Framework インフラストラクチャをサポートします。独自に作成したコードから直接使用するためのものではありません。|  
+|<xref:System.Net.Sockets.UdpAnySourceMulticastClient?displayProperty=nameWithType>|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> この型を使用すると、コンパイラ エラーが発生します。<br /><br /> この API は、.NET Framework インフラストラクチャをサポートします。独自に作成したコードから直接使用するためのものではありません。|  
+|<xref:System.Net.Sockets.UdpSingleSourceMulticastClient?displayProperty=nameWithType>|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> この型を使用すると、コンパイラ エラーが発生します。<br /><br /> この API は、.NET Framework インフラストラクチャをサポートします。独自に作成したコードから直接使用するためのものではありません。|  
   
  [ページのトップへ](#introduction)  
   
 <a name="servicemodel"></a>   
 ### <a name="assembly-systemservicemodeldll"></a>アセンブリ: System.ServiceModel.dll  
   
-|種類|メッセージ|  
+|型|メッセージ|  
 |----------|-------------|  
-|<xref:System.ServiceModel.NetPeerTcpBinding?displayProperty=nameWithType>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> ピア チャネルの機能は互換性のために残されていますが、今後削除される予定です。|  
-|<xref:System.ServiceModel.Channels.HttpCookieContainerBindingElement?displayProperty=nameWithType>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> この型は互換性のために残されています。 Http <xref:System.Net.CookieContainer> を有効にするには、Http バインドか `AllowCookies` で <xref:System.ServiceModel.Channels.HttpTransportBindingElement> プロパティを使用します。|  
-|<xref:System.ServiceModel.Channels.PeerCustomResolverBindingElement?displayProperty=nameWithType>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> ピア チャネルの機能は互換性のために残されていますが、今後削除される予定です。|  
-|<xref:System.ServiceModel.Channels.PeerTransportBindingElement?displayProperty=nameWithType>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> ピア チャネルの機能は互換性のために残されていますが、今後削除される予定です。|  
-|<xref:System.ServiceModel.Configuration.NetPeerTcpBindingCollectionElement?displayProperty=nameWithType>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> ピア チャネルの機能は互換性のために残されていますが、今後削除される予定です。|  
-|<xref:System.ServiceModel.Configuration.NetPeerTcpBindingElement?displayProperty=nameWithType>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> ピア チャネルの機能は互換性のために残されていますが、今後削除される予定です。|  
-|<xref:System.ServiceModel.Configuration.PeerTransportElement?displayProperty=nameWithType>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> ピア チャネルの機能は互換性のために残されていますが、今後削除される予定です。|  
-|<xref:System.ServiceModel.PeerResolvers.CustomPeerResolverService?displayProperty=nameWithType>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> ピア チャネルの機能は互換性のために残されていますが、今後削除される予定です。|  
+|<xref:System.ServiceModel.NetPeerTcpBinding?displayProperty=nameWithType>|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> ピア チャネルの機能は互換性のために残されていますが、今後削除される予定です。|  
+|<xref:System.ServiceModel.Channels.HttpCookieContainerBindingElement?displayProperty=nameWithType>|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> この型は互換性のために残されています。 Http <xref:System.Net.CookieContainer> を有効にするには、Http バインドか `AllowCookies` で <xref:System.ServiceModel.Channels.HttpTransportBindingElement> プロパティを使用します。|  
+|<xref:System.ServiceModel.Channels.PeerCustomResolverBindingElement?displayProperty=nameWithType>|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> ピア チャネルの機能は互換性のために残されていますが、今後削除される予定です。|  
+|<xref:System.ServiceModel.Channels.PeerTransportBindingElement?displayProperty=nameWithType>|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> ピア チャネルの機能は互換性のために残されていますが、今後削除される予定です。|  
+|<xref:System.ServiceModel.Configuration.NetPeerTcpBindingCollectionElement?displayProperty=nameWithType>|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> ピア チャネルの機能は互換性のために残されていますが、今後削除される予定です。|  
+|<xref:System.ServiceModel.Configuration.NetPeerTcpBindingElement?displayProperty=nameWithType>|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> ピア チャネルの機能は互換性のために残されていますが、今後削除される予定です。|  
+|<xref:System.ServiceModel.Configuration.PeerTransportElement?displayProperty=nameWithType>|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> ピア チャネルの機能は互換性のために残されていますが、今後削除される予定です。|  
+|<xref:System.ServiceModel.PeerResolvers.CustomPeerResolverService?displayProperty=nameWithType>|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> ピア チャネルの機能は互換性のために残されていますが、今後削除される予定です。|  
   
  [ページのトップへ](#introduction)  
   
@@ -290,200 +288,200 @@ ms.lasthandoff: 03/26/2018
 <a name="mobile"></a>   
 ### <a name="assembly-systemwebmobiledll"></a>アセンブリ: System.Web.Mobile.dll  
   
-|種類|メッセージ|  
+|型|メッセージ|  
 |----------|-------------|  
-|<xref:System.Web.Mobile.CookielessData?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.Mobile.DeviceFilterElement?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.Mobile.DeviceFilterElementCollection?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.Mobile.DeviceFiltersSection?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.Mobile.ErrorHandlerModule?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.Mobile.MobileCapabilities?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.Mobile.MobileDeviceCapabilitiesSectionHandler?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.Mobile.MobileErrorInfo?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.Mobile.MobileFormsAuthentication?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.Design.MobileControls.IMobileDesigner?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.Design.MobileControls.IMobileWebFormServices?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.Design.MobileControls.MobileResource?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.Design.MobileControls.Converters.DataFieldConverter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.Design.MobileControls.Converters.DataMemberConverter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.AdRotator?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Alignment?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.ArrayListCollectionBase?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.BaseValidator?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.BooleanOption?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Calendar?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Command?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.CommandFormat?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.CompareValidator?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Constants?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.ControlElement?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.ControlElementCollection?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.ControlPager?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.CustomValidator?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.DesignerAdapterAttribute?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.DeviceElement?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.DeviceElementCollection?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.DeviceOverridableAttribute?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.DeviceSpecific?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.DeviceSpecificChoice?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.DeviceSpecificChoiceCollection?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.DeviceSpecificChoiceControlBuilder?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.DeviceSpecificChoiceTemplateBuilder?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.DeviceSpecificChoiceTemplateContainer?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.DeviceSpecificControlBuilder?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.ErrorFormatterPage?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.FontInfo?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.FontSize?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Form?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.FormControlBuilder?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.FormMethod?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.IControlAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Image?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.IObjectListFieldCollection?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.IPageAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.ItemPager?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.ITemplateable?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Label?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Link?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.List?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.ListCommandEventArgs?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.ListCommandEventHandler?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.ListControlBuilder?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.ListDataBindEventArgs?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.ListDataBindEventHandler?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.ListDecoration?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.ListSelectType?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.LiteralLink?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.LiteralText?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.LiteralTextContainerControlBuilder?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.LiteralTextControlBuilder?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.LoadItemsEventArgs?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.LoadItemsEventHandler?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.MobileControl?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.MobileControlBuilder?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.MobileControlsSection?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.MobileControlsSectionHandler?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.MobileListItem?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.MobileListItemCollection?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.MobileListItemType?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.MobilePage?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.MobileTypeNameConverter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.MobileUserControl?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.ObjectList?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.ObjectListCommand?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.ObjectListCommandCollection?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.ObjectListCommandEventArgs?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.ObjectListCommandEventHandler?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.ObjectListControlBuilder?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.ObjectListDataBindEventArgs?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.ObjectListDataBindEventHandler?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.ObjectListField?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.ObjectListFieldCollection?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.ObjectListItem?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.ObjectListItemCollection?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.ObjectListSelectEventArgs?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.ObjectListSelectEventHandler?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.ObjectListShowCommandsEventArgs?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.ObjectListShowCommandsEventHandler?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.ObjectListTitleAttribute?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.ObjectListViewMode?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.PagedControl?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.PagerStyle?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Panel?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.PanelControlBuilder?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.PersistNameAttribute?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.PhoneCall?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.RangeValidator?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.RegularExpressionValidator?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.RequiredFieldValidator?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.SelectionList?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Style?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.StyleSheet?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.StyleSheetControlBuilder?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.TemplateContainer?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.TextBox?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.TextBoxControlBuilder?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.TextControl?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.TextView?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.TextViewElement?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.ValidationSummary?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Wrapping?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.ChtmlCalendarAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.ChtmlCommandAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.ChtmlFormAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.ChtmlImageAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.ChtmlLinkAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.ChtmlMobileTextWriter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.ChtmlPageAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.ChtmlPhoneCallAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.ChtmlSelectionListAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.ChtmlTextBoxAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.ControlAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.HtmlCalendarAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.HtmlCommandAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.HtmlControlAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.HtmlFormAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.HtmlImageAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.HtmlLabelAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.HtmlLinkAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.HtmlListAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.HtmlLiteralTextAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.HtmlMobileTextWriter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.HtmlObjectListAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.HtmlPageAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.HtmlPanelAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.HtmlPhoneCallAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.HtmlSelectionListAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.HtmlTextBoxAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.HtmlTextViewAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.HtmlValidationSummaryAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.HtmlValidatorAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.MobileTextWriter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.MultiPartWriter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.UpWmlMobileTextWriter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.UpWmlPageAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.WmlCalendarAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.WmlCommandAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.WmlControlAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.WmlFormAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.WmlImageAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.WmlLabelAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.WmlLinkAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.WmlListAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.WmlLiteralTextAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.WmlMobileTextWriter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.WmlObjectListAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.WmlPageAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.WmlPanelAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.WmlPhoneCallAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.WmlPostFieldType?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.WmlSelectionListAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.WmlTextBoxAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.WmlTextViewAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.WmlValidationSummaryAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.WmlValidatorAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.Doctype?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.StyleSheetLocation?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlCalendarAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlCommandAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlControlAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlCssHandler?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlFormAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlImageAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlLabelAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlLinkAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlListAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlLiteralTextAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlMobileTextWriter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlObjectListAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlPageAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlPanelAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlPhoneCallAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlSelectionListAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlTextBoxAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlTextViewAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlValidationSummaryAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
-|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlValidatorAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は推奨されていません。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.Mobile.CookielessData?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.Mobile.DeviceFilterElement?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.Mobile.DeviceFilterElementCollection?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.Mobile.DeviceFiltersSection?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.Mobile.ErrorHandlerModule?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.Mobile.MobileCapabilities?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.Mobile.MobileDeviceCapabilitiesSectionHandler?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.Mobile.MobileErrorInfo?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.Mobile.MobileFormsAuthentication?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.Design.MobileControls.IMobileDesigner?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.Design.MobileControls.IMobileWebFormServices?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.Design.MobileControls.MobileResource?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.Design.MobileControls.Converters.DataFieldConverter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.Design.MobileControls.Converters.DataMemberConverter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.AdRotator?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Alignment?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.ArrayListCollectionBase?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.BaseValidator?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.BooleanOption?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Calendar?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Command?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.CommandFormat?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.CompareValidator?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Constants?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.ControlElement?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.ControlElementCollection?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.ControlPager?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.CustomValidator?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.DesignerAdapterAttribute?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.DeviceElement?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.DeviceElementCollection?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.DeviceOverridableAttribute?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.DeviceSpecific?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.DeviceSpecificChoice?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.DeviceSpecificChoiceCollection?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.DeviceSpecificChoiceControlBuilder?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.DeviceSpecificChoiceTemplateBuilder?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.DeviceSpecificChoiceTemplateContainer?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.DeviceSpecificControlBuilder?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.ErrorFormatterPage?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.FontInfo?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.FontSize?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Form?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.FormControlBuilder?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.FormMethod?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.IControlAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Image?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.IObjectListFieldCollection?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.IPageAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.ItemPager?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.ITemplateable?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Label?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Link?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.List?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.ListCommandEventArgs?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.ListCommandEventHandler?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.ListControlBuilder?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.ListDataBindEventArgs?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.ListDataBindEventHandler?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.ListDecoration?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.ListSelectType?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.LiteralLink?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.LiteralText?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.LiteralTextContainerControlBuilder?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.LiteralTextControlBuilder?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.LoadItemsEventArgs?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.LoadItemsEventHandler?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.MobileControl?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.MobileControlBuilder?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.MobileControlsSection?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.MobileControlsSectionHandler?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.MobileListItem?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.MobileListItemCollection?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.MobileListItemType?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.MobilePage?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.MobileTypeNameConverter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.MobileUserControl?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.ObjectList?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.ObjectListCommand?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.ObjectListCommandCollection?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.ObjectListCommandEventArgs?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.ObjectListCommandEventHandler?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.ObjectListControlBuilder?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.ObjectListDataBindEventArgs?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.ObjectListDataBindEventHandler?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.ObjectListField?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.ObjectListFieldCollection?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.ObjectListItem?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.ObjectListItemCollection?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.ObjectListSelectEventArgs?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.ObjectListSelectEventHandler?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.ObjectListShowCommandsEventArgs?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.ObjectListShowCommandsEventHandler?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.ObjectListTitleAttribute?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.ObjectListViewMode?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.PagedControl?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.PagerStyle?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Panel?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.PanelControlBuilder?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.PersistNameAttribute?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.PhoneCall?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.RangeValidator?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.RegularExpressionValidator?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.RequiredFieldValidator?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.SelectionList?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Style?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.StyleSheet?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.StyleSheetControlBuilder?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.TemplateContainer?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.TextBox?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.TextBoxControlBuilder?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.TextControl?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.TextView?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.TextViewElement?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.ValidationSummary?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Wrapping?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.ChtmlCalendarAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.ChtmlCommandAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.ChtmlFormAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.ChtmlImageAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.ChtmlLinkAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.ChtmlMobileTextWriter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.ChtmlPageAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.ChtmlPhoneCallAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.ChtmlSelectionListAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.ChtmlTextBoxAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.ControlAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.HtmlCalendarAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.HtmlCommandAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.HtmlControlAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.HtmlFormAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.HtmlImageAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.HtmlLabelAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.HtmlLinkAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.HtmlListAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.HtmlLiteralTextAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.HtmlMobileTextWriter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.HtmlObjectListAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.HtmlPageAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.HtmlPanelAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.HtmlPhoneCallAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.HtmlSelectionListAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.HtmlTextBoxAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.HtmlTextViewAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.HtmlValidationSummaryAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.HtmlValidatorAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.MobileTextWriter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.MultiPartWriter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.UpWmlMobileTextWriter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.UpWmlPageAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.WmlCalendarAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.WmlCommandAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.WmlControlAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.WmlFormAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.WmlImageAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.WmlLabelAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.WmlLinkAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.WmlListAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.WmlLiteralTextAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.WmlMobileTextWriter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.WmlObjectListAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.WmlPageAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.WmlPanelAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.WmlPhoneCallAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.WmlPostFieldType?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.WmlSelectionListAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.WmlTextBoxAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.WmlTextViewAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.WmlValidationSummaryAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.WmlValidatorAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.Doctype?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.StyleSheetLocation?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlCalendarAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlCommandAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlControlAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlCssHandler?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlFormAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlImageAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlLabelAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlLinkAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlListAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlLiteralTextAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlMobileTextWriter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlObjectListAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlPageAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlPanelAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlPhoneCallAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlSelectionListAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlTextBoxAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlTextViewAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlValidationSummaryAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
+|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlValidatorAdapter?displayProperty=nameWithType>|System.Web.Mobile.dll アセンブリの使用は非推奨とされました。今後は使用しないでください。 ASP.NET モバイル アプリケーションを開発する方法については、[モバイル向け ASP.NET](http://go.microsoft.com/fwlink/?LinkId=157231) に関するページをご覧ください。|  
   
  [ページのトップへ](#introduction)  
   
@@ -492,11 +490,11 @@ ms.lasthandoff: 03/26/2018
   
 |型|メッセージ|  
 |----------|-------------|  
-|<xref:System.Workflow.Activities?displayProperty=nameWithType> 名前空間のすべての型|最初に .NET Framework 4.5 で廃止されました。<br /><br /> System.Workflow.\* 型の使用は推奨されていません。 代わりに、<xref:System.Activities>.\* の新しい型を使用してください。|  
-|<xref:System.Workflow.Activities.Configuration.ActiveDirectoryRoleFactoryConfiguration?displayProperty=nameWithType>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> System.Workflow.\* 型の使用は推奨されていません。 代わりに、<xref:System.Activities>.\* の新しい型を使用してください。|  
-|<xref:System.Workflow.Activities.Rules.RuleActionTrackingEvent?displayProperty=nameWithType>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> System.Workflow.\* 型の使用は推奨されていません。 代わりに、<xref:System.Activities>.\* の新しい型を使用してください。|  
-|<xref:System.Workflow.Activities.Rules.RuleConditionReference?displayProperty=nameWithType>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> System.Workflow.\* 型の使用は推奨されていません。 代わりに、<xref:System.Activities>.\* の新しい型を使用してください。|  
-|<xref:System.Workflow.Activities.Rules.RuleSetReference?displayProperty=nameWithType>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> System.Workflow.\* 型の使用は推奨されていません。 代わりに、<xref:System.Activities>.\* の新しい型を使用してください。|  
+|<xref:System.Workflow.Activities?displayProperty=nameWithType> 名前空間のすべての型|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> System.Workflow.\* 型の使用は非推奨とされます。 代わりに、<xref:System.Activities>.\* の新しい型を使用してください。|  
+|<xref:System.Workflow.Activities.Configuration.ActiveDirectoryRoleFactoryConfiguration?displayProperty=nameWithType>|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> System.Workflow.\* 型の使用は非推奨とされます。 代わりに、<xref:System.Activities>.\* の新しい型を使用してください。|  
+|<xref:System.Workflow.Activities.Rules.RuleActionTrackingEvent?displayProperty=nameWithType>|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> System.Workflow.\* 型の使用は非推奨とされます。 代わりに、<xref:System.Activities>.\* の新しい型を使用してください。|  
+|<xref:System.Workflow.Activities.Rules.RuleConditionReference?displayProperty=nameWithType>|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> System.Workflow.\* 型の使用は非推奨とされます。 代わりに、<xref:System.Activities>.\* の新しい型を使用してください。|  
+|<xref:System.Workflow.Activities.Rules.RuleSetReference?displayProperty=nameWithType>|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> System.Workflow.\* 型の使用は非推奨とされます。 代わりに、<xref:System.Activities>.\* の新しい型を使用してください。|  
   
  [ページのトップへ](#introduction)  
   
@@ -505,16 +503,16 @@ ms.lasthandoff: 03/26/2018
   
 |型|メッセージ|  
 |----------|-------------|  
-|<xref:System.Workflow.ComponentModel> と <xref:System.Workflow.ComponentModel.GetValueOverride?displayProperty=nameWithType> を除く <xref:System.Workflow.ComponentModel.SetValueOverride?displayProperty=nameWithType> 名前空間のすべての型。|最初に .NET Framework 4.5 で廃止されました。<br /><br /> System.Workflow.\* 型の使用は推奨されていません。 代わりに、<xref:System.Activities>.\* の新しい型を使用してください。|  
-|<xref:System.Workflow.ComponentModel.Compiler> と <xref:System.Workflow.ComponentModel.Compiler.ValidationError?displayProperty=nameWithType> を除く <xref:System.Workflow.ComponentModel.Compiler.ValidationErrorCollection?displayProperty=nameWithType> 名前空間のすべての型。|最初に .NET Framework 4.5 で廃止されました。<br /><br /> System.Workflow.\* 型の使用は推奨されていません。 代わりに、<xref:System.Activities>.\* の新しい型を使用してください。|  
-|<xref:System.Workflow.ComponentModel.Design> を除く<xref:System.Workflow.ComponentModel.Design.ConnectorEventHandler> 名前空間のすべての型|最初に .NET Framework 4.5 で廃止されました。<br /><br /> System.Workflow.\* 型の使用は推奨されていません。 代わりに、<xref:System.Activities>.\* の新しい型を使用してください。|  
-|<xref:System.Workflow.ComponentModel.Serialization.ActivityCodeDomSerializationManager?displayProperty=nameWithType>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> System.Workflow.\* 型の使用は推奨されていません。 代わりに、<xref:System.Activities>.\* の新しい型を使用してください。|  
-|<xref:System.Workflow.ComponentModel.Serialization.ActivityCodeDomSerializer?displayProperty=nameWithType>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> System.Workflow.\* 型の使用は推奨されていません。 代わりに、<xref:System.Activities>.\* の新しい型を使用してください。|  
-|<xref:System.Workflow.ComponentModel.Serialization.ActivityMarkupSerializer?displayProperty=nameWithType>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> System.Workflow.\* 型の使用は推奨されていません。 代わりに、<xref:System.Activities>.\* の新しい型を使用してください。|  
-|<xref:System.Workflow.ComponentModel.Serialization.ActivitySurrogateSelector?displayProperty=nameWithType>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> System.Workflow.\* 型の使用は推奨されていません。 代わりに、<xref:System.Activities>.\* の新しい型を使用してください。|  
-|<xref:System.Workflow.ComponentModel.Serialization.ActivityTypeCodeDomSerializer?displayProperty=nameWithType>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> System.Workflow.\* 型の使用は推奨されていません。 代わりに、<xref:System.Activities>.\* の新しい型を使用してください。|  
-|<xref:System.Workflow.ComponentModel.Serialization.CompositeActivityMarkupSerializer?displayProperty=nameWithType>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> System.Workflow.\* 型の使用は推奨されていません。 代わりに、<xref:System.Activities>.\* の新しい型を使用してください。|  
-|<xref:System.Workflow.ComponentModel.Serialization.DependencyObjectCodeDomSerializer?displayProperty=nameWithType>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> System.Workflow.\* 型の使用は推奨されていません。 代わりに、<xref:System.Activities>.\* の新しい型を使用してください。|  
+|<xref:System.Workflow.ComponentModel> と <xref:System.Workflow.ComponentModel.GetValueOverride?displayProperty=nameWithType> を除く <xref:System.Workflow.ComponentModel.SetValueOverride?displayProperty=nameWithType> 名前空間のすべての型。|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> System.Workflow.\* 型の使用は非推奨とされます。 代わりに、<xref:System.Activities>.\* の新しい型を使用してください。|  
+|<xref:System.Workflow.ComponentModel.Compiler> と <xref:System.Workflow.ComponentModel.Compiler.ValidationError?displayProperty=nameWithType> を除く <xref:System.Workflow.ComponentModel.Compiler.ValidationErrorCollection?displayProperty=nameWithType> 名前空間のすべての型。|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> System.Workflow.\* 型の使用は非推奨とされます。 代わりに、<xref:System.Activities>.\* の新しい型を使用してください。|  
+|<xref:System.Workflow.ComponentModel.Design> を除く<xref:System.Workflow.ComponentModel.Design.ConnectorEventHandler> 名前空間のすべての型|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> System.Workflow.\* 型の使用は非推奨とされます。 代わりに、<xref:System.Activities>.\* の新しい型を使用してください。|  
+|<xref:System.Workflow.ComponentModel.Serialization.ActivityCodeDomSerializationManager?displayProperty=nameWithType>|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> System.Workflow.\* 型の使用は非推奨とされます。 代わりに、<xref:System.Activities>.\* の新しい型を使用してください。|  
+|<xref:System.Workflow.ComponentModel.Serialization.ActivityCodeDomSerializer?displayProperty=nameWithType>|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> System.Workflow.\* 型の使用は非推奨とされます。 代わりに、<xref:System.Activities>.\* の新しい型を使用してください。|  
+|<xref:System.Workflow.ComponentModel.Serialization.ActivityMarkupSerializer?displayProperty=nameWithType>|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> System.Workflow.\* 型の使用は非推奨とされます。 代わりに、<xref:System.Activities>.\* の新しい型を使用してください。|  
+|<xref:System.Workflow.ComponentModel.Serialization.ActivitySurrogateSelector?displayProperty=nameWithType>|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> System.Workflow.\* 型の使用は非推奨とされます。 代わりに、<xref:System.Activities>.\* の新しい型を使用してください。|  
+|<xref:System.Workflow.ComponentModel.Serialization.ActivityTypeCodeDomSerializer?displayProperty=nameWithType>|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> System.Workflow.\* 型の使用は非推奨とされます。 代わりに、<xref:System.Activities>.\* の新しい型を使用してください。|  
+|<xref:System.Workflow.ComponentModel.Serialization.CompositeActivityMarkupSerializer?displayProperty=nameWithType>|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> System.Workflow.\* 型の使用は非推奨とされます。 代わりに、<xref:System.Activities>.\* の新しい型を使用してください。|  
+|<xref:System.Workflow.ComponentModel.Serialization.DependencyObjectCodeDomSerializer?displayProperty=nameWithType>|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> System.Workflow.\* 型の使用は非推奨とされます。 代わりに、<xref:System.Activities>.\* の新しい型を使用してください。|  
   
  [ページのトップへ](#introduction)  
   
@@ -523,13 +521,13 @@ ms.lasthandoff: 03/26/2018
   
 |型|メッセージ|  
 |----------|-------------| 
-|<xref:System.Activities.Statements.Interop>|最初に .NET Framework 4.5 で廃止されました。<br /><br />Workflow Foundation 3.0 の型の使用は推奨されていません。 代わりに、<xref:System.Activities>.\* の Workflow 4.0 の型を使用してください。|  
-|<xref:System.Activities.Tracking.InteropTrackingRecord>|最初に .NET Framework 4.5 で廃止されました。<br /><br />Workflow Foundation 3.0 の型の使用は推奨されていません。 代わりに、<xref:System.Activities>.\* の Workflow 4.0 の型を使用してください。|   
-|<xref:System.Workflow.Runtime> 名前空間のすべての型|最初に .NET Framework 4.5 で廃止されました。<br /><br /> System.Workflow.\* 型の使用は推奨されていません。 代わりに、<xref:System.Activities>.\* の新しい型を使用してください。|  
-|<xref:System.Workflow.Runtime.Configuration> 名前空間のすべての型|最初に .NET Framework 4.5 で廃止されました。<br /><br /> System.Workflow.\* 型の使用は推奨されていません。 代わりに、<xref:System.Activities>.\* の新しい型を使用してください。|  
-|<xref:System.Workflow.Runtime.DebugEngine> を除く<xref:System.Workflow.Runtime.DebugEngine.DebugEngineCallback> 名前空間のすべての型|最初に .NET Framework 4.5 で廃止されました。<br /><br /> System.Workflow.\* 型の使用は推奨されていません。 代わりに、<xref:System.Activities>.\* の新しい型を使用してください。|  
-|<xref:System.Workflow.Runtime.Hosting> を除く<xref:System.Workflow.Runtime.Hosting.WorkflowCommitWorkBatchService.CommitWorkBatchCallback> 名前空間のすべての型|最初に .NET Framework 4.5 で廃止されました。<br /><br /> System.Workflow.\* 型の使用は推奨されていません。 代わりに、<xref:System.Activities>.\* の新しい型を使用してください。|  
-|<xref:System.Workflow.Runtime.Tracking> 名前空間のすべての型|最初に .NET Framework 4.5 で廃止されました。<br /><br /> System.Workflow.\* 型の使用は推奨されていません。 代わりに、<xref:System.Activities>.\* の新しい型を使用してください。|  
+|<xref:System.Activities.Statements.Interop>|最初に .NET Framework 4.5 で非推奨とされました。<br /><br />Workflow Foundation 3.0 の型の使用は非推奨とされました。 代わりに、<xref:System.Activities>.\* の Workflow 4.0 の型を使用してください。|  
+|<xref:System.Activities.Tracking.InteropTrackingRecord>|最初に .NET Framework 4.5 で非推奨とされました。<br /><br />Workflow Foundation 3.0 の型の使用は非推奨とされました。 代わりに、<xref:System.Activities>.\* の Workflow 4.0 の型を使用してください。|   
+|<xref:System.Workflow.Runtime> 名前空間のすべての型|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> System.Workflow.\* 型の使用は非推奨とされます。 代わりに、<xref:System.Activities>.\* の新しい型を使用してください。|  
+|<xref:System.Workflow.Runtime.Configuration> 名前空間のすべての型|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> System.Workflow.\* 型の使用は非推奨とされます。 代わりに、<xref:System.Activities>.\* の新しい型を使用してください。|  
+|<xref:System.Workflow.Runtime.DebugEngine> を除く<xref:System.Workflow.Runtime.DebugEngine.DebugEngineCallback> 名前空間のすべての型|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> System.Workflow.\* 型の使用は非推奨とされます。 代わりに、<xref:System.Activities>.\* の新しい型を使用してください。|  
+|<xref:System.Workflow.Runtime.Hosting> を除く<xref:System.Workflow.Runtime.Hosting.WorkflowCommitWorkBatchService.CommitWorkBatchCallback> 名前空間のすべての型|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> System.Workflow.\* 型の使用は非推奨とされます。 代わりに、<xref:System.Activities>.\* の新しい型を使用してください。|  
+|<xref:System.Workflow.Runtime.Tracking> 名前空間のすべての型|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> System.Workflow.\* 型の使用は非推奨とされます。 代わりに、<xref:System.Activities>.\* の新しい型を使用してください。|  
   
  [ページのトップへ](#introduction)  
   
@@ -538,34 +536,34 @@ ms.lasthandoff: 03/26/2018
   
 |型|メッセージ|  
 |----------|-------------|  
-|<xref:System.ServiceModel.WorkflowServiceHost?displayProperty=nameWithType>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
-|<xref:System.ServiceModel.Activation.WorkflowServiceHostFactory?displayProperty=nameWithType>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
-|<xref:System.ServiceModel.Activities.Description.WorkflowRuntimeEndpoint?displayProperty=nameWithType>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
-|<xref:System.ServiceModel.Configuration.ExtendedWorkflowRuntimeServiceElementCollection?displayProperty=nameWithType>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
-|<xref:System.ServiceModel.Configuration.PersistenceProviderElement?displayProperty=nameWithType>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
-|<xref:System.ServiceModel.Configuration.WorkflowRuntimeElement?displayProperty=nameWithType>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
-|<xref:System.ServiceModel.Description.DurableOperationAttribute?displayProperty=nameWithType>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
-|<xref:System.ServiceModel.Description.DurableServiceAttribute?displayProperty=nameWithType>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
-|<xref:System.ServiceModel.Description.PersistenceProviderBehavior?displayProperty=nameWithType>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
-|<xref:System.ServiceModel.Description.UnknownExceptionAction?displayProperty=nameWithType>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
-|<xref:System.ServiceModel.Description.WorkflowRuntimeBehavior?displayProperty=nameWithType>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
-|<xref:System.ServiceModel.Dispatcher.DurableOperationContext?displayProperty=nameWithType>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
-|<xref:System.ServiceModel.Persistence.InstanceLockException?displayProperty=nameWithType>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
-|<xref:System.ServiceModel.Persistence.InstanceNotFoundException?displayProperty=nameWithType>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
-|<xref:System.ServiceModel.Persistence.LockingPersistenceProvider?displayProperty=nameWithType>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
-|<xref:System.ServiceModel.Persistence.PersistenceException?displayProperty=nameWithType>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
-|<xref:System.ServiceModel.Persistence.PersistenceProvider?displayProperty=nameWithType>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
-|<xref:System.ServiceModel.Persistence.PersistenceProviderFactory?displayProperty=nameWithType>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
-|<xref:System.ServiceModel.Persistence.SqlPersistenceProviderFactory?displayProperty=nameWithType>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
-|<xref:System.Workflow.Activities?displayProperty=nameWithType> 名前空間のすべての型|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
-|<xref:System.Workflow.Runtime.Hosting.ChannelManagerService?displayProperty=nameWithType>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> WF 3 の型は廃止されました。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
+|<xref:System.ServiceModel.WorkflowServiceHost?displayProperty=nameWithType>|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> WF 3 の型は非推奨とされます。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
+|<xref:System.ServiceModel.Activation.WorkflowServiceHostFactory?displayProperty=nameWithType>|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> WF 3 の型は非推奨とされます。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
+|<xref:System.ServiceModel.Activities.Description.WorkflowRuntimeEndpoint?displayProperty=nameWithType>|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> WF 3 の型は非推奨とされます。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
+|<xref:System.ServiceModel.Configuration.ExtendedWorkflowRuntimeServiceElementCollection?displayProperty=nameWithType>|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> WF 3 の型は非推奨とされます。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
+|<xref:System.ServiceModel.Configuration.PersistenceProviderElement?displayProperty=nameWithType>|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> WF 3 の型は非推奨とされます。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
+|<xref:System.ServiceModel.Configuration.WorkflowRuntimeElement?displayProperty=nameWithType>|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> WF 3 の型は非推奨とされます。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
+|<xref:System.ServiceModel.Description.DurableOperationAttribute?displayProperty=nameWithType>|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> WF 3 の型は非推奨とされます。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
+|<xref:System.ServiceModel.Description.DurableServiceAttribute?displayProperty=nameWithType>|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> WF 3 の型は非推奨とされます。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
+|<xref:System.ServiceModel.Description.PersistenceProviderBehavior?displayProperty=nameWithType>|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> WF 3 の型は非推奨とされます。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
+|<xref:System.ServiceModel.Description.UnknownExceptionAction?displayProperty=nameWithType>|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> WF 3 の型は非推奨とされます。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
+|<xref:System.ServiceModel.Description.WorkflowRuntimeBehavior?displayProperty=nameWithType>|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> WF 3 の型は非推奨とされます。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
+|<xref:System.ServiceModel.Dispatcher.DurableOperationContext?displayProperty=nameWithType>|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> WF 3 の型は非推奨とされます。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
+|<xref:System.ServiceModel.Persistence.InstanceLockException?displayProperty=nameWithType>|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> WF 3 の型は非推奨とされます。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
+|<xref:System.ServiceModel.Persistence.InstanceNotFoundException?displayProperty=nameWithType>|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> WF 3 の型は非推奨とされます。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
+|<xref:System.ServiceModel.Persistence.LockingPersistenceProvider?displayProperty=nameWithType>|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> WF 3 の型は非推奨とされます。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
+|<xref:System.ServiceModel.Persistence.PersistenceException?displayProperty=nameWithType>|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> WF 3 の型は非推奨とされます。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
+|<xref:System.ServiceModel.Persistence.PersistenceProvider?displayProperty=nameWithType>|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> WF 3 の型は非推奨とされます。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
+|<xref:System.ServiceModel.Persistence.PersistenceProviderFactory?displayProperty=nameWithType>|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> WF 3 の型は非推奨とされます。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
+|<xref:System.ServiceModel.Persistence.SqlPersistenceProviderFactory?displayProperty=nameWithType>|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> WF 3 の型は非推奨とされます。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
+|<xref:System.Workflow.Activities?displayProperty=nameWithType> 名前空間のすべての型|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> WF 3 の型は非推奨とされます。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
+|<xref:System.Workflow.Runtime.Hosting.ChannelManagerService?displayProperty=nameWithType>|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> WF 3 の型は非推奨とされます。 代わりに、<xref:System.Activities>.\* の新しい WF 4 型を使用してください。|  
   
  [ページのトップへ](#introduction)  
   
 <a name="xaml"></a>   
 ### <a name="assembly-systemxamldll"></a>アセンブリ: System.Xaml.dll  
   
-|種類|メッセージ|  
+|型|メッセージ|  
 |----------|-------------|  
 |<xref:System.Windows.Markup.AcceptedMarkupExtensionExpressionTypeAttribute?displayProperty=nameWithType>|これは、XAML パーサーでは使用されなくなりました。 <xref:System.Windows.Markup.XamlSetMarkupExtensionAttribute?displayProperty=nameWithType> を参照してください。|  
   
@@ -576,11 +574,11 @@ ms.lasthandoff: 03/26/2018
   
 |型|メッセージ|  
 |----------|-------------|  
-|<xref:System.Xml.IApplicationResourceStreamResolver?displayProperty=nameWithType>|最初に .NET Framework 4.5 で廃止されました。<br /><br /> この型を使用すると、コンパイラ エラーが発生します。<br /><br /> この API は、.NET Framework インフラストラクチャをサポートします。独自に作成したコードから直接使用するためのものではありません。|  
+|<xref:System.Xml.IApplicationResourceStreamResolver?displayProperty=nameWithType>|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> この型を使用すると、コンパイラ エラーが発生します。<br /><br /> この API は、.NET Framework インフラストラクチャをサポートします。独自に作成したコードから直接使用するためのものではありません。|  
 |<xref:System.Xml.Schema.XmlSchemaCollection?displayProperty=nameWithType>|スキーマ コンパイルおよび検証には、<xref:System.Xml.Schema.XmlSchemaSet?displayProperty=nameWithType> を使用してください。|  
 |<xref:System.Xml.XmlValidatingReader?displayProperty=nameWithType>|代わりに、適切な <xref:System.Xml.XmlReader?displayProperty=nameWithType> を使用する <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> メソッドによって作成された <xref:System.Xml.XmlReaderSettings?displayProperty=nameWithType> を使用してください。|  
 |<xref:System.Xml.XmlXapResolver?displayProperty=nameWithType>|この型を使用すると、コンパイラ エラーが発生します。 この API は、.NET Framework インフラストラクチャをサポートします。独自に作成したコードから直接使用するためのものではありません。|  
-|<xref:System.Xml.Xsl.XslTransform?displayProperty=nameWithType>|このクラスの使用は推奨されていません。 代わりに、<xref:System.Xml.Xsl.XslCompiledTransform?displayProperty=nameWithType> を使用してください。|  
+|<xref:System.Xml.Xsl.XslTransform?displayProperty=nameWithType>|このクラスの使用は非推奨とされました。 代わりに、<xref:System.Xml.Xsl.XslCompiledTransform?displayProperty=nameWithType> を使用してください。|  
   
  [ページのトップへ](#introduction)  
   
@@ -589,7 +587,8 @@ ms.lasthandoff: 03/26/2018
   
 |型|メッセージ|  
 |----------|-------------|  
-|<xref:System.Windows.Markup.IReceiveMarkupExtension?displayProperty=nameWithType>|<xref:System.Windows.Markup.IReceiveMarkupExtension?displayProperty=nameWithType> の使用は推奨されていません。 このインターフェイスは、使用されなくなりました。|  
+|<xref:System.Windows.Markup.IReceiveMarkupExtension?displayProperty=nameWithType>|
+  <xref:System.Windows.Markup.IReceiveMarkupExtension?displayProperty=nameWithType> の使用は非推奨とされました。 このインターフェイスは、使用されなくなりました。|  
   
  [ページのトップへ](#introduction)  
   
@@ -608,8 +607,8 @@ ms.lasthandoff: 03/26/2018
   
 |型|メッセージ|  
 |----------|-------------|  
-|<xref:Microsoft.Build.BuildEngine.Engine?displayProperty=nameWithType>|このクラスの使用は推奨されていません。 代わりに、*Microsoft.Build* アセンブリの <xref:Microsoft.Build.Evaluation.ProjectCollection?displayProperty=nameWithType> を使用してください。|  
-|<xref:Microsoft.Build.BuildEngine.Project?displayProperty=nameWithType>|このクラスの使用は推奨されていません。 代わりに、*Microsoft.Build* アセンブリの <xref:Microsoft.Build.Evaluation.ProjectCollection?displayProperty=nameWithType> を使用してください。|  
+|<xref:Microsoft.Build.BuildEngine.Engine?displayProperty=nameWithType>|このクラスの使用は非推奨とされました。 代わりに、*Microsoft.Build* アセンブリの <xref:Microsoft.Build.Evaluation.ProjectCollection?displayProperty=nameWithType> を使用してください。|  
+|<xref:Microsoft.Build.BuildEngine.Project?displayProperty=nameWithType>|このクラスの使用は非推奨とされました。 代わりに、*Microsoft.Build* アセンブリの <xref:Microsoft.Build.Evaluation.ProjectCollection?displayProperty=nameWithType> を使用してください。|  
   
  [ページのトップへ](#introduction)  
   
@@ -618,24 +617,24 @@ ms.lasthandoff: 03/26/2018
   
 |型|メッセージ|  
 |----------|-------------|  
-|<xref:Microsoft.JScript.Vsa.BaseVsaEngine?displayProperty=nameWithType>|この型の使用は推奨されていません。Visual Studio 2005 の時点から使用は推奨されておらず、これに代わる機能はありません。 詳細については、<xref:System.CodeDom.Compiler.ICodeCompiler?displayProperty=nameWithType> のドキュメントを参照してください。|  
-|<xref:Microsoft.JScript.Vsa.BaseVsaSite?displayProperty=nameWithType>|この型の使用は推奨されていません。Visual Studio 2005 の時点から使用は推奨されておらず、これに代わる機能はありません。 詳細については、<xref:System.CodeDom.Compiler.ICodeCompiler?displayProperty=nameWithType> のドキュメントを参照してください。|  
-|<xref:Microsoft.JScript.Vsa.BaseVsaStartup?displayProperty=nameWithType>|この型の使用は推奨されていません。Visual Studio 2005 の時点から使用は推奨されておらず、これに代わる機能はありません。 詳細については、<xref:System.CodeDom.Compiler.ICodeCompiler?displayProperty=nameWithType> のドキュメントを参照してください。|  
-|<xref:Microsoft.JScript.Vsa.IJSVsaCodeItem?displayProperty=nameWithType>|この型の使用は推奨されていません。Visual Studio 2005 の時点から使用は推奨されておらず、これに代わる機能はありません。 詳細については、<xref:System.CodeDom.Compiler.ICodeCompiler?displayProperty=nameWithType> のドキュメントを参照してください。|  
-|<xref:Microsoft.JScript.Vsa.IJSVsaEngine?displayProperty=nameWithType>|この型の使用は推奨されていません。Visual Studio 2005 の時点から使用は推奨されておらず、これに代わる機能はありません。 詳細については、<xref:System.CodeDom.Compiler.ICodeCompiler?displayProperty=nameWithType> のドキュメントを参照してください。|  
-|<xref:Microsoft.JScript.Vsa.IJSVsaError?displayProperty=nameWithType>|この型の使用は推奨されていません。Visual Studio 2005 の時点から使用は推奨されておらず、これに代わる機能はありません。 詳細については、<xref:System.CodeDom.Compiler.ICodeCompiler?displayProperty=nameWithType> のドキュメントを参照してください。|  
-|<xref:Microsoft.JScript.Vsa.IJSVsaGlobalItem?displayProperty=nameWithType>|この型の使用は推奨されていません。Visual Studio 2005 の時点から使用は推奨されておらず、これに代わる機能はありません。 詳細については、<xref:System.CodeDom.Compiler.ICodeCompiler?displayProperty=nameWithType> のドキュメントを参照してください。|  
-|<xref:Microsoft.JScript.Vsa.IJSVsaItem?displayProperty=nameWithType>|この型の使用は推奨されていません。Visual Studio 2005 の時点から使用は推奨されておらず、これに代わる機能はありません。 詳細については、<xref:System.CodeDom.Compiler.ICodeCompiler?displayProperty=nameWithType> のドキュメントを参照してください。|  
-|<xref:Microsoft.JScript.Vsa.IJSVsaItems?displayProperty=nameWithType>|この型の使用は推奨されていません。Visual Studio 2005 の時点から使用は推奨されておらず、これに代わる機能はありません。 詳細については、<xref:System.CodeDom.Compiler.ICodeCompiler?displayProperty=nameWithType> のドキュメントを参照してください。|  
-|<xref:Microsoft.JScript.Vsa.IJSVsaPersistSite?displayProperty=nameWithType>|この型の使用は推奨されていません。Visual Studio 2005 の時点から使用は推奨されておらず、これに代わる機能はありません。 詳細については、<xref:System.CodeDom.Compiler.ICodeCompiler?displayProperty=nameWithType> のドキュメントを参照してください。|  
-|<xref:Microsoft.JScript.Vsa.IJSVsaReferenceItem?displayProperty=nameWithType>|この型の使用は推奨されていません。Visual Studio 2005 の時点から使用は推奨されておらず、これに代わる機能はありません。 詳細については、<xref:System.CodeDom.Compiler.ICodeCompiler?displayProperty=nameWithType> のドキュメントを参照してください。|  
-|<xref:Microsoft.JScript.Vsa.IJSVsaSite?displayProperty=nameWithType>|この型の使用は推奨されていません。Visual Studio 2005 の時点から使用は推奨されておらず、これに代わる機能はありません。 詳細については、<xref:System.CodeDom.Compiler.ICodeCompiler?displayProperty=nameWithType> のドキュメントを参照してください。|  
-|<xref:Microsoft.JScript.Vsa.JSVsaError?displayProperty=nameWithType>|この型の使用は推奨されていません。Visual Studio 2005 の時点から使用は推奨されておらず、これに代わる機能はありません。 詳細については、<xref:System.CodeDom.Compiler.ICodeCompiler?displayProperty=nameWithType> のドキュメントを参照してください。|  
-|<xref:Microsoft.JScript.Vsa.JSVsaException?displayProperty=nameWithType>|この型の使用は推奨されていません。Visual Studio 2005 の時点から使用は推奨されておらず、これに代わる機能はありません。 詳細については、<xref:System.CodeDom.Compiler.ICodeCompiler?displayProperty=nameWithType> のドキュメントを参照してください。|  
-|<xref:Microsoft.JScript.Vsa.JSVsaItemFlag?displayProperty=nameWithType>|この型の使用は推奨されていません。Visual Studio 2005 の時点から使用は推奨されておらず、これに代わる機能はありません。 詳細については、<xref:System.CodeDom.Compiler.ICodeCompiler?displayProperty=nameWithType> のドキュメントを参照してください。|  
-|<xref:Microsoft.JScript.Vsa.JSVsaItemType?displayProperty=nameWithType>|この型の使用は推奨されていません。Visual Studio 2005 の時点から使用は推奨されておらず、これに代わる機能はありません。 詳細については、<xref:System.CodeDom.Compiler.ICodeCompiler?displayProperty=nameWithType> のドキュメントを参照してください。|  
-|<xref:Microsoft.JScript.Vsa.ResInfo?displayProperty=nameWithType>|この型の使用は推奨されていません。Visual Studio 2005 の時点から使用は推奨されておらず、これに代わる機能はありません。 詳細については、<xref:System.CodeDom.Compiler.ICodeCompiler?displayProperty=nameWithType> のドキュメントを参照してください。|  
-|<xref:Microsoft.JScript.Vsa.VsaEngine?displayProperty=nameWithType>|この型の使用は推奨されていません。Visual Studio 2005 の時点から使用は推奨されておらず、これに代わる機能はありません。 詳細については、<xref:System.CodeDom.Compiler.ICodeCompiler?displayProperty=nameWithType> のドキュメントを参照してください。|  
+|<xref:Microsoft.JScript.Vsa.BaseVsaEngine?displayProperty=nameWithType>|この型の使用は推奨されていません。Visual Studio 2005 の時点から非推奨とされており、これに代わる機能はありません。 詳細については、<xref:System.CodeDom.Compiler.ICodeCompiler?displayProperty=nameWithType> のドキュメントを参照してください。|  
+|<xref:Microsoft.JScript.Vsa.BaseVsaSite?displayProperty=nameWithType>|この型の使用は推奨されていません。Visual Studio 2005 の時点から非推奨とされており、これに代わる機能はありません。 詳細については、<xref:System.CodeDom.Compiler.ICodeCompiler?displayProperty=nameWithType> のドキュメントを参照してください。|  
+|<xref:Microsoft.JScript.Vsa.BaseVsaStartup?displayProperty=nameWithType>|この型の使用は推奨されていません。Visual Studio 2005 の時点から非推奨とされており、これに代わる機能はありません。 詳細については、<xref:System.CodeDom.Compiler.ICodeCompiler?displayProperty=nameWithType> のドキュメントを参照してください。|  
+|<xref:Microsoft.JScript.Vsa.IJSVsaCodeItem?displayProperty=nameWithType>|この型の使用は推奨されていません。Visual Studio 2005 の時点から非推奨とされており、これに代わる機能はありません。 詳細については、<xref:System.CodeDom.Compiler.ICodeCompiler?displayProperty=nameWithType> のドキュメントを参照してください。|  
+|<xref:Microsoft.JScript.Vsa.IJSVsaEngine?displayProperty=nameWithType>|この型の使用は推奨されていません。Visual Studio 2005 の時点から非推奨とされており、これに代わる機能はありません。 詳細については、<xref:System.CodeDom.Compiler.ICodeCompiler?displayProperty=nameWithType> のドキュメントを参照してください。|  
+|<xref:Microsoft.JScript.Vsa.IJSVsaError?displayProperty=nameWithType>|この型の使用は推奨されていません。Visual Studio 2005 の時点から非推奨とされており、これに代わる機能はありません。 詳細については、<xref:System.CodeDom.Compiler.ICodeCompiler?displayProperty=nameWithType> のドキュメントを参照してください。|  
+|<xref:Microsoft.JScript.Vsa.IJSVsaGlobalItem?displayProperty=nameWithType>|この型の使用は推奨されていません。Visual Studio 2005 の時点から非推奨とされており、これに代わる機能はありません。 詳細については、<xref:System.CodeDom.Compiler.ICodeCompiler?displayProperty=nameWithType> のドキュメントを参照してください。|  
+|<xref:Microsoft.JScript.Vsa.IJSVsaItem?displayProperty=nameWithType>|この型の使用は推奨されていません。Visual Studio 2005 の時点から非推奨とされており、これに代わる機能はありません。 詳細については、<xref:System.CodeDom.Compiler.ICodeCompiler?displayProperty=nameWithType> のドキュメントを参照してください。|  
+|<xref:Microsoft.JScript.Vsa.IJSVsaItems?displayProperty=nameWithType>|この型の使用は推奨されていません。Visual Studio 2005 の時点から非推奨とされており、これに代わる機能はありません。 詳細については、<xref:System.CodeDom.Compiler.ICodeCompiler?displayProperty=nameWithType> のドキュメントを参照してください。|  
+|<xref:Microsoft.JScript.Vsa.IJSVsaPersistSite?displayProperty=nameWithType>|この型の使用は推奨されていません。Visual Studio 2005 の時点から非推奨とされており、これに代わる機能はありません。 詳細については、<xref:System.CodeDom.Compiler.ICodeCompiler?displayProperty=nameWithType> のドキュメントを参照してください。|  
+|<xref:Microsoft.JScript.Vsa.IJSVsaReferenceItem?displayProperty=nameWithType>|この型の使用は推奨されていません。Visual Studio 2005 の時点から非推奨とされており、これに代わる機能はありません。 詳細については、<xref:System.CodeDom.Compiler.ICodeCompiler?displayProperty=nameWithType> のドキュメントを参照してください。|  
+|<xref:Microsoft.JScript.Vsa.IJSVsaSite?displayProperty=nameWithType>|この型の使用は推奨されていません。Visual Studio 2005 の時点から非推奨とされており、これに代わる機能はありません。 詳細については、<xref:System.CodeDom.Compiler.ICodeCompiler?displayProperty=nameWithType> のドキュメントを参照してください。|  
+|<xref:Microsoft.JScript.Vsa.JSVsaError?displayProperty=nameWithType>|この型の使用は推奨されていません。Visual Studio 2005 の時点から非推奨とされており、これに代わる機能はありません。 詳細については、<xref:System.CodeDom.Compiler.ICodeCompiler?displayProperty=nameWithType> のドキュメントを参照してください。|  
+|<xref:Microsoft.JScript.Vsa.JSVsaException?displayProperty=nameWithType>|この型の使用は推奨されていません。Visual Studio 2005 の時点から非推奨とされており、これに代わる機能はありません。 詳細については、<xref:System.CodeDom.Compiler.ICodeCompiler?displayProperty=nameWithType> のドキュメントを参照してください。|  
+|<xref:Microsoft.JScript.Vsa.JSVsaItemFlag?displayProperty=nameWithType>|この型の使用は推奨されていません。Visual Studio 2005 の時点から非推奨とされており、これに代わる機能はありません。 詳細については、<xref:System.CodeDom.Compiler.ICodeCompiler?displayProperty=nameWithType> のドキュメントを参照してください。|  
+|<xref:Microsoft.JScript.Vsa.JSVsaItemType?displayProperty=nameWithType>|この型の使用は推奨されていません。Visual Studio 2005 の時点から非推奨とされており、これに代わる機能はありません。 詳細については、<xref:System.CodeDom.Compiler.ICodeCompiler?displayProperty=nameWithType> のドキュメントを参照してください。|  
+|<xref:Microsoft.JScript.Vsa.ResInfo?displayProperty=nameWithType>|この型の使用は推奨されていません。Visual Studio 2005 の時点から非推奨とされており、これに代わる機能はありません。 詳細については、<xref:System.CodeDom.Compiler.ICodeCompiler?displayProperty=nameWithType> のドキュメントを参照してください。|  
+|<xref:Microsoft.JScript.Vsa.VsaEngine?displayProperty=nameWithType>|この型の使用は推奨されていません。Visual Studio 2005 の時点から非推奨とされており、これに代わる機能はありません。 詳細については、<xref:System.CodeDom.Compiler.ICodeCompiler?displayProperty=nameWithType> のドキュメントを参照してください。|  
   
  [ページのトップへ](#introduction)  
   
@@ -787,6 +786,6 @@ ms.lasthandoff: 03/26/2018
 |<xref:Microsoft.VisualC.NeedsCopyConstructorModifier?displayProperty=nameWithType>|Microsoft.VisualC.dll は互換性のために残されているアセンブリであり、下位互換性のためだけに存在します。|  
 |<xref:Microsoft.VisualC.NoSignSpecifiedModifier?displayProperty=nameWithType>|Microsoft.VisualC.dll は互換性のために残されているアセンブリであり、下位互換性のためだけに存在します。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [クラス ライブラリの互換性のために残されている機能](../../../docs/framework/whats-new/whats-obsolete.md)  
  [互換性のために残されているメンバー](../../../docs/framework/whats-new/obsolete-members.md)

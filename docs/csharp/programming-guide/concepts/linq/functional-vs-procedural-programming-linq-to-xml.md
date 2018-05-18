@@ -1,21 +1,12 @@
 ---
-title: "関数型プログラミングと手続き型プログラミング (LINQ to XML) (C#)"
-ms.custom: 
+title: 関数型プログラミングと手続き型プログラミング (LINQ to XML) (C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: fc64e39c-a487-4882-9169-da4de97917d9
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: b6aa8ce45afdb68f7ff544b8c8f2f5e1e4a79533
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 16d78e967fd5379940ac93c82e3bb59c60941e58
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="functional-vs-procedural-programming-linq-to-xml-c"></a>関数型プログラミングと手続き型プログラミング (LINQ to XML) (C#)
 XML アプリケーションには、次のようにさまざまな種類があります。  
@@ -48,5 +39,5 @@ XML アプリケーションには、次のようにさまざまな種類があ�
   
  関数型変換の記述に関するチュートリアルについては、「[XML の純粋関数型変換 (C#)](../../../../csharp/programming-guide/concepts/linq/pure-functional-transformations-of-xml.md)」をご覧ください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [LINQ to XML プログラミングの概要 (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-programming-overview.md)

@@ -1,21 +1,12 @@
 ---
-title: "データ型の変換 (C#)"
-ms.custom: 
+title: データ型の変換 (C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: 46e5682f-77a1-4302-8f93-a2b53c408808
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 4733694c2a9fd7c83520b0bf2edea6ebffb47041
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 374ce15b8329c02c6b496a276a40fd9a60596e1f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="converting-data-types-c"></a>データ型の変換 (C#)
 変換メソッドは、入力オブジェクトの型を変更します。  
@@ -82,7 +73,7 @@ static void Cast()
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Linq>  
  [標準クエリ演算子の概要 (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)  
  [from 句](../../../../csharp/language-reference/keywords/from-clause.md)  

@@ -1,21 +1,12 @@
 ---
-title: "LINQ to XML プログラミングの概要 (C#)"
-ms.custom: 
+title: LINQ to XML プログラミングの概要 (C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: 2dfa9b6f-5890-461d-b81c-316853c7f320
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 4306be3540577bf921eff71dbd9dd822707b33dd
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: c461d4b4082293d91d18538596cfa03d9445c224
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="linq-to-xml-programming-overview-c"></a>LINQ to XML プログラミングの概要 (C#)
 以下のトピックでは、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] クラスに関する概要情報と、最も重要な 3 つのクラスに関する詳細情報について説明します。  
@@ -31,5 +22,5 @@ ms.lasthandoff: 10/18/2017
 |[XDocument クラスの概要 (C#)](../../../../csharp/programming-guide/concepts/linq/xdocument-class-overview.md)|XML ドキュメントを表す <xref:System.Xml.Linq.XDocument> クラスについて説明します。|  
 |[方法: LINQ to XML の例をビルドする (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-build-linq-to-xml-examples.md)|LINQ to XML の例のビルドに必要な `Using` ディレクティブについて説明します。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [プログラミング ガイド (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/programming-guide-linq-to-xml.md)

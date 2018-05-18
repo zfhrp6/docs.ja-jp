@@ -1,21 +1,12 @@
 ---
-title: "サンプル XML ファイル: 名前空間内の複数の購買発注書 2"
-ms.custom: 
+title: 'サンプル XML ファイル: 名前空間内の複数の購買発注書 2'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: 595024f2-374a-4615-acb5-64fa1600f377
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: d774862cec3a3cf23dd909f12d6ab271cbcbbae6
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 03ca5cfbf198f576a52e6ceb5eb085195d599d3b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="sample-xml-file-multiple-purchase-orders-in-a-namespace"></a>サンプル XML ファイル : 名前空間内の複数の購買発注書
 次の XML ファイルは、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] ドキュメントのさまざまな例で使用されます。 このファイルには、複数の購買発注書が含まれています。 XML は名前空間に含まれています。  
@@ -117,5 +108,5 @@ ms.lasthandoff: 10/18/2017
 </aw:PurchaseOrders>  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [サンプル XML ドキュメント (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)

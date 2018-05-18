@@ -1,21 +1,12 @@
 ---
-title: "共通属性 (C#)"
-ms.custom: 
+title: 共通属性 (C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: 785a0526-6c0e-4599-8c61-ccdc88dd9965
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 4e0a8912aa60e4c2918bb812963d83fae8d529f1
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: 771460f8547252448be1b74526ec2babb719c3fa
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="common-attributes-c"></a>共通属性 (C#)
 このトピックでは、C# プログラムで最もよく使用される属性について説明します。  
@@ -237,7 +228,7 @@ class SampleClass
   
  呼び出し元情報属性の詳細については、「[呼び出し元情報 (C#)](../../../../csharp/programming-guide/concepts/caller-information.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Reflection>  
  <xref:System.Attribute>  
  [C# プログラミング ガイド](../../../../csharp/programming-guide/index.md)  

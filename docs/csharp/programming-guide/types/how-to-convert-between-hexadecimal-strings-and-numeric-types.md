@@ -1,23 +1,17 @@
 ---
-title: "方法: 16 進文字列と数値型の間で変換する (C# プログラミング ガイド)"
+title: '方法: 16 進文字列と数値型の間で変換する (C# プログラミング ガイド)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - hexadecimal strings [C#], converting to numeric type
 - conversions [C#], hexidecimal strings
 - strings [C#], converting hexadecimal strings
 - hexadecimal strings [C#]
 ms.assetid: 7115c49f-7d1d-40c3-8bd9-aae0cc1d46b6
-caps.latest.revision: "19"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 91e5cff52c67e1e7930d92da7c87ab1f4a3120af
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 1a5bde0a9169a78e179a69c7a2f4080e5a465f54
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-convert-between-hexadecimal-strings-and-numeric-types-c-programming-guide"></a>方法: 16 進文字列と数値型の間で変換する (C# プログラミング ガイド)
 以下の例では、次のタスクを実行する方法について説明します。  
@@ -57,7 +51,7 @@ ms.lasthandoff: 11/21/2017
   
  [!code-csharp[csProgGuideTypes#38](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/how-to-convert-between-hexadecimal-strings-and-numeric-types_5.cs)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [標準の数値書式指定文字列](../../../standard/base-types/standard-numeric-format-strings.md)  
  [型](../../../csharp/programming-guide/types/index.md)  
  [方法: 文字列が数値を表しているかどうかを確認する](../../../csharp/programming-guide/strings/how-to-determine-whether-a-string-represents-a-numeric-value.md)

@@ -1,13 +1,6 @@
 ---
-title: "Ilasm.exe (IL アセンブラー)"
-ms.custom: 
+title: Ilasm.exe (IL アセンブラー)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - MSIL generators
 - metadata, MSIL Assembler
@@ -18,16 +11,13 @@ helpviewer_keywords:
 - Ilasm.exe
 - verifying MSIL performance
 ms.assetid: 4ca3a4f0-4400-47ce-8936-8e219961c76f
-caps.latest.revision: "41"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 2507acc7ddf41d921af0b86622b1e85208191767
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4009fe4910af81c685ee015c7801b040a90c25aa
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ilasmexe-il-assembler"></a>Ilasm.exe (IL アセンブラー)
 
@@ -88,7 +78,7 @@ ilasm [options] filename [[options]filename...]
 |**/?**|このツールのコマンド構文とオプションを表示します。|
 
 > [!NOTE]
-> *Ilasm.exe* に関するすべてのオプションでは大文字と小文字が区別されず、先頭の 3 文字で認識されます。 たとえば、**/lis** は **/listing** と等価であり、**/res:**myresfile.res は **/resource:**myresfile.res と等価です。引数を伴うオプションの場合は、オプションと引数の間に区切り記号としてコロン (:) または等号 (=) を挿入できます。 たとえば、**/output**:*file.ext* は **/output**=*file.ext* と等価です。
+> *Ilasm.exe* に関するすべてのオプションでは大文字と小文字が区別されず、先頭の 3 文字で認識されます。 たとえば、**/lis** は **/listing** と等価であり、**/res:** myresfile.res は **/resource:** myresfile.res と等価です。引数を伴うオプションの場合は、オプションと引数の間に区切り記号としてコロン (:) または等号 (=) を挿入できます。 たとえば、**/output**:*file.ext* は **/output**=*file.ext* と等価です。
 
 ## <a name="remarks"></a>コメント
 
@@ -156,13 +146,13 @@ IL ファイル *myTestFile.il* をアセンブルして実行可能ファイル
 ilasm myTestFile
 ```
 
-IL ファイル *myTestFile.il* をアセンブルして*.dll* ファイル *myTestFile.dll* を生成するコマンドを次に示します。
+IL ファイル *myTestFile.il* をアセンブルして *.dll* ファイル *myTestFile.dll* を生成するコマンドを次に示します。
 
 ```console
 ilasm myTestFile /dll
 ```
 
-IL ファイル *myTestFile.il* をアセンブルして*.dll* ファイル *myNewTestFile.dll* を生成するコマンドを次に示します。
+IL ファイル *myTestFile.il* をアセンブルして *.dll* ファイル *myNewTestFile.dll* を生成するコマンドを次に示します。
 
 ```console
 ilasm myTestFile /dll /output:myNewTestFile.dll

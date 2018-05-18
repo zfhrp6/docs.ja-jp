@@ -1,28 +1,17 @@
 ---
-title: ".NET Framework アプリケーションの基本事項"
-ms.custom: 
+title: .NET Framework アプリケーションの基本事項
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - .NET Framework development
 ms.assetid: 653da4ba-3752-4d1f-a08a-de017dc86ecc
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: f830064c585e1024bdc304c6356327ddc8c059f3
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: f05f66af71b86ccaefe19c0ddce2bfe7572f1084
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="net-framework-application-essentials"></a>.NET Framework アプリケーションの基本事項
 .NET Framework ドキュメントのこのセクションでは、.NET Framework での基本的なアプリケーション開発タスクに関する情報を提供します。  

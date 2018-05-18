@@ -1,21 +1,19 @@
 ---
-title: ".NET API アナライザー"
-description: "非推奨の API およびプラットフォームの互換性の問題を検出するのに .NET API アナライザーがどのように役立つかについて説明します。"
+title: .NET API アナライザー
+description: 非推奨の API およびプラットフォームの互換性の問題を検出するのに .NET API アナライザーがどのように役立つかについて説明します。
 author: oliag
 ms.author: mairaw
 ms.date: 01/30/2018
-ms.topic: article
-ms.prod: .net
 ms.technology: dotnet-standard
-ms.openlocfilehash: 81ab7e32b2af6048d822243226f1054ebd1ca419
-ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
+ms.openlocfilehash: ac0e777e1df837ff7e9fbe185c462f56765e47bf
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="net-api-analyzer"></a>.NET API アナライザー
 
-.NET API アナライザーは、さまざまなプラットフォームでの C# API の互換性リスクの可能性および非推奨 API の呼び出しを検出する Roslyn アナライザーです。 開発のすべての段階ですべての C# 開発者に役立ちます。
+.NET API アナライザーは、さまざまなプラットフォームでの C# API の互換性リスクの可能性および非推奨の API の呼び出しを検出する Roslyn アナライザーです。 開発のすべての段階ですべての C# 開発者に役立ちます。
 
 API アナライザーは、NuGet パッケージ [Microsoft.DotNet.Analyzers.Compatibility](https://www.nuget.org/packages/Microsoft.DotNet.Analyzers.Compatibility/) として提供されています。 プロジェクトでこれを参照すると、コードが自動的に監視されて、問題のある API 使用が示されます。 また、電球アイコンをクリックすると、考えられる修正方法の提案を得ることもできます。 ドロップダウン メニューには、警告を抑制するオプションが含まれます。
 
@@ -26,9 +24,9 @@ API アナライザーは、NuGet パッケージ [Microsoft.DotNet.Analyzers.Co
 
 * Visual Studio 2017 または Visual Studio for Mac (すべてのバージョン)。
 
-## <a name="discovering-deprecated-apis"></a>非推奨 API の検出
+## <a name="discovering-deprecated-apis"></a>非推奨の API の検出
 
-### <a name="what-are-deprecated-apis"></a>非推奨 API とは
+### <a name="what-are-deprecated-apis"></a>非推奨の API とは
 
 .NET ファミリは大規模な製品のセットであり、より適切に顧客のニーズに対応するため頻繁にアップグレードされています。 当然、API が廃止されたり新しいものに置き換えられたりすることがあります。 より優れた代替 API が存在する API は、非推奨と見なされます。 API が非推奨であり使ってはならないことを通知する手段の 1 つは、<xref:System.ObsoleteAttribute> 属性で API をマークすることです。 この方法の欠点は、すべての非推奨 API に対して診断 ID が 1 つしかないことです (C# の場合、[CS0612](../../csharp/misc/cs0612.md))。 これによって、次のことが起こります。
 - ケースごとに専用のドキュメントを作成できません。
@@ -39,7 +37,7 @@ API アナライザーは、DE (Deprecation Error の略) で始まる API 固�
 
 ### <a name="using-the-api-analyzer"></a>API アナライザーの使用
 
-非推奨 API (<xref:System.Net.WebClient> など) がコードで使われていると、API アナライザーは緑の波線でそれを強調します。 API 呼び出しをポイントすると、次の例のように、電球アイコンと API の非推奨に関する情報が表示されます。
+非推奨の API (<xref:System.Net.WebClient> など) がコードで使われていると、API アナライザーは緑の波線でそれを強調します。 API 呼び出しをポイントすると、次の例のように、電球アイコンと API の非推奨に関する情報が表示されます。
 
 !["緑の波線が表示された WebClient API と左側の電球アイコンのスクリーンショット"](media/api-analyzer/green-squiggle.jpg)
 
@@ -72,7 +70,7 @@ ID をクリックすると、API が非推奨になった理由に関する詳�
 
 ## <a name="discovering-cross-platform-issues"></a>クロスプラットフォームの問題の検出
 
-非推奨 API と同様に、アナライザーはクロスプラットフォームではないすべての API を識別します。 たとえば、<xref:System.Console.WindowWidth?displayProperty=nameWithType> は Windows では動作しますが、Linux や macOS では動作しません。 診断 ID は、**[エラー一覧]** ウィンドウに表示されます。 右クリックして **[クイック アクションとリファクタリング]** を選ぶことで、その警告を抑制することができます。 2 つのオプション (非推奨のメンバーを使い続けて警告を抑制するか、まったく使わない) がある非推奨の場合とは異なり、特定のプラットフォーム用にのみコードを開発している場合は、コードを実行する予定のない他のすべてのプラットフォームですべての警告を抑制できます。 そのために必要なことは、プロジェクト ファイルを編集し、無視するすべてのプラットフォームを列記した `PlatformCompatIgnore` プロパティを追加するだけです。 指定できる値は、`Linux`、`MacOSX`、`Windows` です。
+非推奨の API と同様に、アナライザーはクロスプラットフォームではないすべての API を識別します。 たとえば、<xref:System.Console.WindowWidth?displayProperty=nameWithType> は Windows では動作しますが、Linux や macOS では動作しません。 診断 ID は、**[エラー一覧]** ウィンドウに表示されます。 右クリックして **[クイック アクションとリファクタリング]** を選ぶことで、その警告を抑制することができます。 2 つのオプション (非推奨のメンバーを使い続けて警告を抑制するか、まったく使わない) がある非推奨の場合とは異なり、特定のプラットフォーム用にのみコードを開発している場合は、コードを実行する予定のない他のすべてのプラットフォームですべての警告を抑制できます。 そのために必要なことは、プロジェクト ファイルを編集し、無視するすべてのプラットフォームを列記した `PlatformCompatIgnore` プロパティを追加するだけです。 指定できる値は、`Linux`、`MacOSX`、`Windows` です。
 
 ```xml
 <PropertyGroup>
@@ -107,7 +105,7 @@ if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
 
 ## <a name="configuration"></a>構成
 
-ユーザーは、診断の処理方法を決定します (警告、エラー、提案、オフ)。 たとえば、設計者は、互換性の問題をエラーとして扱い、一部の非推奨 API の呼び出しでは警告を生成し、それ以外については提案を生成するだけにする、といったことを決定できます。 これを、診断 ID 別およびプロジェクト別に構成できます。 そのためには、**ソリューション エクスプローラー**で、プロジェクトの **[依存関係]** ノードに移動します。 ノード **[依存関係]** > **[アナライザー]** > **[Microsoft.DotNet.Analyzers.Compatibility]** を展開します。 診断 ID を右クリックし、**[ルール セットの重要度を設定]** を選んで、目的のオプションを選びます。
+ユーザーは、診断の処理方法を決定します (警告、エラー、提案、オフ)。 たとえば、設計者は、互換性の問題をエラーとして扱い、一部の非推奨の API の呼び出しでは警告を生成し、それ以外については提案を生成するだけにする、といったことを決定できます。 これを、診断 ID 別およびプロジェクト別に構成できます。 そのためには、**ソリューション エクスプローラー**で、プロジェクトの **[依存関係]** ノードに移動します。 ノード **[依存関係]** > **[アナライザー]** > **[Microsoft.DotNet.Analyzers.Compatibility]** を展開します。 診断 ID を右クリックし、**[ルール セットの重要度を設定]** を選んで、目的のオプションを選びます。
 
 !["診断とルール セットの重要度のポップアップ ダイアログが表示されているソリューション エクスプローラーのスクリーンショット"](media/api-analyzer/disable-notifications.jpg)
 

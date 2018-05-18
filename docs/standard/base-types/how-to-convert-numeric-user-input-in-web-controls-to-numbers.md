@@ -1,13 +1,7 @@
 ---
-title: "方法 : Web コントロールでの数値のユーザー入力を数値に変換する"
-ms.custom: 
+title: '方法 : Web コントロールでの数値のユーザー入力を数値に変換する'
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -19,18 +13,13 @@ helpviewer_keywords:
 - converting numeric user input to number
 - numbers [.NET Framework], converting numeric user input to number
 ms.assetid: f27ddfb8-7479-4b79-8879-02a3bd8402d4
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: c93f1cda765b5f25fccddcfc27442b857262605f
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 24016ea68e17aa66432928c43d1de970fc13a55b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-convert-numeric-user-input-in-web-controls-to-numbers"></a>方法 : Web コントロールでの数値のユーザー入力を数値に変換する
 Web ページは世界中のあらゆる場所で表示され、利用者はほぼ無限の形式で <xref:System.Web.UI.WebControls.TextBox> コントロールに数値データを入力できます。 結果として、Web ページの利用者の住んでいる地域 (ロケール) や文化 (カルチャ) を判断することが非常に重要となります。 ユーザー入力を解析するとき、ユーザーのロケールとカルチャによって定義される書式設定規則を適用できます。  
@@ -65,7 +54,7 @@ Web ページは世界中のあらゆる場所で表示され、利用者はほ�
   
  この例は、`useUserOverride` パラメーターが `false` に設定された <xref:System.Globalization.CultureInfo.%23ctor%2A> コンストラクターを呼び出し、新しい <xref:System.Globalization.CultureInfo> オブジェクトを作成します。 これにより、カルチャ名がサーバーの既定のカルチャ名の場合、クラス コンストラクターによって作成される新しい <xref:System.Globalization.CultureInfo> オブジェクトにカルチャの既定の設定が含まれます。サーバーの **[地域と言語のオプション]** アプリケーションでオーバーライドされた設定は反映されません。 サーバーで設定がオーバーライドされた場合、その値がユーザーのシステムに残ったり、ユーザーの入力に反映されたりすることは通常はありえません。  
   
- コードは、ユーザーの入力の変換後の形となる数値型の `Parse` または `TryParse` メソッドを呼び出すことができます。 1 回の解析操作には、Parse メソッドへの呼び出しが複数回必要な場合もあります。 その結果、解析処理が失敗した場合、`false` が返されるので、`TryParse` メソッドの方が優れています。 対照的に、1 つの Web アプリケーションにおいて `Parse` メソッドで何度もスローされる例外を処理することは、非常に不経済的です。  
+ コードは、ユーザーの入力の変換後の形となる数値型の `Parse` または `TryParse` メソッドを呼び出すことができます。 1 回の解析操作には、Parse メソッドへの呼び出しが複数回必要な場合もあります。 その結果、解析処理が失敗した場合、`false` が返されるので、`TryParse` メソッドの方が優れています。 対照的に、1 つの Web アプリケーションで `Parse` メソッドで何度もスローされる例外を処理することは、非常に不経済です。  
   
 ## <a name="compiling-the-code"></a>コードのコンパイル  
  コードをコンパイルするには、[!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] 分離コード ページにそれをコピーします。すべての既存コードが置換されます。 [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] Web には、次のコントロールを含めてください。  

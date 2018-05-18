@@ -1,21 +1,14 @@
 ---
-title: "方法 : デリゲートを宣言し、インスタンス化して使用する (C# プログラミング ガイド)"
+title: '方法 : デリゲートを宣言し、インスタンス化して使用する (C# プログラミング ガイド)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - delegates [C#], declaring and instantiating
 ms.assetid: 61c4895f-f785-48f8-8bfe-db73b411c4ae
-caps.latest.revision: 
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: b5a5329b9e99fcd5830a57eb8f97b4edb67ad8a7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 19e5883135d65a648bb6afb74a475b761f572a95
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-declare-instantiate-and-use-a-delegate-c-programming-guide"></a>方法 : デリゲートを宣言し、インスタンス化して使用する (C# プログラミング ガイド)
 C# 1.0 以降では、次の例に示すようにデリゲートを宣言できます。  
@@ -36,7 +29,7 @@ C# 1.0 以降では、次の例に示すようにデリゲートを宣言でき�
   
  [!code-csharp[csProgGuideDelegates#31](../../../csharp/programming-guide/delegates/codesnippet/CSharp/how-to-declare-instantiate-and-use-a-delegate_5.cs)]  
   
- 詳しくは、「[ラムダ式](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)」をご覧ください。  
+ 詳細については、「[ラムダ式](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)」を参照してください。  
   
  次の例で、デリゲートの宣言、インスタンス化、および使用の方法について説明します。 `BookDB` クラスにより、書籍のデータベースを保持する書店データベースをカプセル化します。 これは、データベース内にあるすべてのペーパーバックを検索し、各ペーパーバックに対してデリゲートを呼び出す `ProcessPaperbackBooks` メソッドを公開します。 使用する `delegate` 型には `ProcessBookDelegate` という名前を付けます。 `Test` クラスでは、このクラスを使用してペーパーバックのタイトルと平均価格を出力します。  
   
@@ -77,7 +70,7 @@ C# 1.0 以降では、次の例に示すようにデリゲートを宣言でき�
   
      デリゲートは、この例に示すように同期的に呼び出すことも、`BeginInvoke` メソッドおよび `EndInvoke` メソッドを使用して非同期的に呼び出すこともできます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
  [イベント](../../../csharp/programming-guide/events/index.md)  
  [デリゲート](../../../csharp/programming-guide/delegates/index.md)

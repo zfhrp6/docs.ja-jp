@@ -1,9 +1,6 @@
 ---
-title: "方法: 型の値の等価性を定義する (C# プログラミング ガイド)"
+title: '方法: 型の値の等価性を定義する (C# プログラミング ガイド)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - overriding Equals method [C#]
 - object equivalence [C#]
@@ -11,14 +8,11 @@ helpviewer_keywords:
 - value equality [C#]
 - equivalence [C#]
 ms.assetid: 4084581e-b931-498b-9534-cf7ef5b68690
-caps.latest.revision: "15"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 933be6aa27b5720a9a9d8d7b45e1eed73f9cd60b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: c0105371bd39c3999aafca867a7bb7a59fd367c1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-define-value-equality-for-a-type-c-programming-guide"></a>方法: 型の値の等価性を定義する (C# プログラミング ガイド)
 クラスまたは構造体を定義する場合は、型に値の等価性 (同値) のカスタム定義を作成することが有用かどうかを判断します。 通常、値の等価性を実装するのは、その型のオブジェクトがある種のコレクションに追加されることが想定されている場合、または、そのオブジェクトの主な目的が一連のフィールドまたはプロパティを格納することである場合です。 値の等価性は、型のすべてのフィールドおよびプロパティの比較に基づいて定義できます。また、サブセットに基づいて定義することもできます。 ただし、いずれの場合も、クラスおよび構造体の両方について、等価性を保証する 5 つの条件に従って実装する必要があります。  
@@ -67,6 +61,6 @@ ms.lasthandoff: 11/21/2017
   
  [==](../../../csharp/language-reference/operators/equality-comparison-operator.md) 演算子および [!=](../../../csharp/language-reference/operators/not-equal-operator.md) 演算子は、構造体が明示的にその演算子をオーバーロードしない限り、その構造体を操作できません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [等価比較](../../../csharp/programming-guide/statements-expressions-operators/equality-comparisons.md)  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)

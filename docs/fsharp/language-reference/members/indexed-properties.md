@@ -4,7 +4,7 @@ description: F# でインデックス付きのプロパティは順序付けさ�
 ms.date: 05/16/2016
 ms.openlocfilehash: b3945c7fc22977373b601856036178e890abc13e
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
 ---

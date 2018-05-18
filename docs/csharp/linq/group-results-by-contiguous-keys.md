@@ -1,26 +1,19 @@
 ---
-title: "連続するキーで結果をグループ化する"
-description: "連続するキーで結果をグループ化する方法。"
-keywords: .NET, .NET Core, C#
-author: BillWagner
-manager: wpickett
-ms.author: wiwagn
+title: 連続するキーで結果をグループ化する
+description: 連続するキーで結果をグループ化する方法。
 ms.date: 12/1/2016
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-csharp
 ms.assetid: cbda9c08-151b-4c9e-82f7-c3d7f3dac66b
-ms.openlocfilehash: cdd06a6fad037291bbc5aa011b47bb668fa2f062
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: a8d6ac133932a12154d5b23454065144c7652067
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="group-results-by-contiguous-keys"></a>連続するキーで結果をグループ化する
 
 要素をグループ化し、連続するキーのサブシーケンスを表すチャンクにする方法を次の例に示します。 たとえば、次の一連のキーと値のペアがあるとします。  
   
-|キー|値|  
+|キー|[値]|  
 |---------|-----------|  
 |A|水|  
 |A|think|  

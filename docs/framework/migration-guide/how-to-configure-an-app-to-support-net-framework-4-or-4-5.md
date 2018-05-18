@@ -1,30 +1,18 @@
 ---
 title: '方法: .NET Framework 4 または 4.5 をサポートするアプリを構成する'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - configuring apps to support .NET Framework 4
 - .NET Framework 4, configuring apps
 - .NET Framework 4.5, configuring apps
 ms.assetid: 63c6b9a8-0088-4077-9aa3-521ab7290f79
-caps.latest.revision: ''
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 4ba3d248dbdd81cf2e2e4445d1e1eb160605542c
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
-ms.translationtype: MT
+ms.openlocfilehash: 45044e286fa48149c117e97c2e22aa8a0b7d5ce3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-configure-an-app-to-support-net-framework-4-or-45"></a>方法: .NET Framework 4 または 4.5 をサポートするアプリを構成する
 共通言語ランタイム (CLR) をホストするすべてのアプリでは、マネージ コードを実行するために CLR を開始または*アクティブ化*する必要があります。 通常、.NET Framework アプリはビルドされた CLR のバージョンで実行されますが、アプリケーション構成ファイル (app.config ファイルと呼ばれることもあります) を使用して、デスクトップ アプリのこの動作を変更できます。 ただし、アプリケーション構成ファイルを使用して Windows ストア アプリまたは Windows Phone アプリの既定のアクティベーション動作は変更できません。 この記事では、デスクトップ アプリを .NET Framework の別のバージョンで実行できるようにする方法を説明し、Version 4 または 4.5 を対象とする方法の例を示します。  
@@ -92,6 +80,6 @@ ms.lasthandoff: 03/26/2018
   
  \* このエラー メッセージの詳細と回避方法については、「[.NET Framework 初期化エラー: ユーザー エクスペリエンスの管理](../../../docs/framework/deployment/initialization-errors-managing-the-user-experience.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [.NET Framework 1.1 からの移行](../../../docs/framework/migration-guide/migrating-from-the-net-framework-1-1.md)  
  [移行ガイド](../../../docs/framework/migration-guide/index.md)

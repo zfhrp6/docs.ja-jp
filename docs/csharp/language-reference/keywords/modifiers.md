@@ -1,21 +1,15 @@
 ---
-title: "修飾子 (C# リファレンス)"
+title: 修飾子 (C# リファレンス)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - keywords [C#], modifiers
 - modifiers [C#]
 ms.assetid: c96691dd-b357-49ec-b5ae-03ca214fadfb
-caps.latest.revision: "18"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 31bdfb74c5803e0108aab5b7733ea7b725f7ef3c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 241cbc767a3d094d664cf77f488e4154812d7516
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="modifiers-c-reference"></a>修飾子 (C# リファレンス)
 修飾子は、型および型メンバーの宣言を修飾するために使用されます。 ここでは、C# の修飾子について説明します。  
@@ -38,7 +32,7 @@ ms.lasthandoff: 11/21/2017
 |[virtual](../../../csharp/language-reference/keywords/virtual.md)|メソッドまたはアクセサーを宣言します。これらの実装は、派生クラスでオーバーライドするメンバーによって変更できます。|  
 |[volatile](../../../csharp/language-reference/keywords/volatile.md)|オペレーティング システム、ハードウェア、現在実行中のスレッドなどによって、フィールドがプログラム中で変更される場合があることを示します。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C# リファレンス](../../../csharp/language-reference/index.md)  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
  [C# のキーワード](../../../csharp/language-reference/keywords/index.md)

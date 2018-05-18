@@ -1,31 +1,19 @@
 ---
 title: Al.exe (アセンブリ リンカー)
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - Al.exe
 - Assembly Linker
 - modules, Assembly Linker
 - assembly manifest, Assembly Linker
 ms.assetid: b5382965-0053-47cf-b92f-862860275a01
-caps.latest.revision: ''
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 830c141a13f2a7676e120600e05d786093a5ff44
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
-ms.translationtype: MT
+ms.openlocfilehash: 5a9789669f6d896bfbaf4ccf5cbd0eccdd710980
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="alexe-assembly-linker"></a>Al.exe (アセンブリ リンカー)
 
@@ -52,7 +40,7 @@ al sources options
 | ------ | ----------- |
 |`file`[,`target`]|`file` (モジュール) の内容を `target` で名前が指定されたファイルにコピーします。 コピーが完了すると、*Al.exe* は `target` をコンパイルしてアセンブリを生成します。|
 |**/embed[resource]:** `file`[,`name`[,`private`]]|`file` で指定したリソースをアセンブリ マニフェストを含むイメージに埋め込みます。*Al.exe* は、`file` の内容をポータブル実行可能 (PE) イメージにコピーします。<br /><br /> `name` パラメーターは、リソースの内部識別子です。 既定では、リソースはアセンブリでパブリックに指定されており、他のアセンブリから参照できます。 `private` を指定すると、そのリソースを他のアセンブリから参照できなくなります。<br /><br /> `file` が[リソース ファイル ジェネレーター (*Resgen.exe*)](../../../docs/framework/tools/resgen-exe-resource-file-generator.md) や開発環境などで作成された .NET Framework リソース ファイルである場合は、<xref:System.Resources> のメンバーを使用してそのファイルにアクセスできます。 詳細については、「<xref:System.Resources.ResourceManager>」を参照してください。 それ以外のすべてのリソースに対しては、`GetManifestResource` の <xref:System.Reflection.Assembly>* メソッドを使用して、実行時にリソースにアクセスします。<br /><br /> リソース ファイルだけが *Al.exe* に渡された場合は、出力ファイルはサテライト リソース アセンブリになります。|
-|**/link[resource]:** `file`[,`name`[,`target`[,`private`]]]|リソース ファイルをアセンブリにリンクします。 `file` によって指定されたリソースがアセンブリの一部になります。ファイルはコピーされません。 `file` パラメーターには、任意のファイル形式を指定できます。 たとえば、`file` パラメーターとしてネイティブ DLL を指定できます。 このようにすると、ネイティブ DLL はアセンブリの一部になるので、グローバル アセンブリ キャッシュにインストールして、アセンブリ内のマネージ コードからアクセスできます。 **/linkresource** コンパイラ オプションを使用して、これを実行することもできます。 詳しくは、「[/linkresource (C# コンパイラ オプション)](~/docs/csharp/language-reference/compiler-options/linkresource-compiler-option.md)」をご覧ください。<br /><br /> `name` パラメーターは、リソースの内部識別子です。 `target` パラメーターは、*Al.exe* が `file` をコピーする対象のパスおよびファイル名を指定します*。* コピーが完了すると、*Al.exe* は `target` をコンパイルしてアセンブリを生成します。 既定では、リソースはアセンブリでパブリックに指定されており、他のアセンブリから参照できます。 `private` を指定すると、そのリソースを他のアセンブリから参照できなくなります。<br /><br /> `file` がリソース ファイル ジェネレーター (*Resgen.exe*) や開発環境などで作成された .NET Framework リソース ファイルである場合は、<xref:System.Resources> 名前空間のメンバーを使用してそのファイルにアクセスできます。 詳細については、「<xref:System.Resources.ResourceManager>」を参照してください。 それ以外のすべてのリソースに対しては、`GetManifestResource` クラスの <xref:System.Reflection.Assembly>* メソッドを使用して、実行時にリソースにアクセスします。<br /><br /> リソース ファイルだけが *Al.exe* に渡された場合は、出力ファイルはサテライト リソース アセンブリになります。|
+|**/link[resource]:** `file`[,`name`[,`target`[,`private`]]]|リソース ファイルをアセンブリにリンクします。 `file` によって指定されたリソースがアセンブリの一部になります。ファイルはコピーされません。 `file` パラメーターには、任意のファイル形式を指定できます。 たとえば、`file` パラメーターとしてネイティブ DLL を指定できます。 このようにすると、ネイティブ DLL はアセンブリの一部になるので、グローバル アセンブリ キャッシュにインストールして、アセンブリ内のマネージ コードからアクセスできます。 **/linkresource** コンパイラ オプションを使用して、これを実行することもできます。 詳しくは、「[/linkresource (C# コンパイラ オプション)](~/docs/csharp/language-reference/compiler-options/linkresource-compiler-option.md)」をご覧ください。<br /><br /> `name` パラメーターは、リソースの内部識別子です。 `target` パラメーターは、*Al.exe* が `file` をコピーする対象のパスおよびファイル名を指定します *。* コピーが完了すると、*Al.exe* は `target` をコンパイルしてアセンブリを生成します。 既定では、リソースはアセンブリでパブリックに指定されており、他のアセンブリから参照できます。 `private` を指定すると、そのリソースを他のアセンブリから参照できなくなります。<br /><br /> `file` がリソース ファイル ジェネレーター (*Resgen.exe*) や開発環境などで作成された .NET Framework リソース ファイルである場合は、<xref:System.Resources> 名前空間のメンバーを使用してそのファイルにアクセスできます。 詳細については、「<xref:System.Resources.ResourceManager>」を参照してください。 それ以外のすべてのリソースに対しては、`GetManifestResource` クラスの <xref:System.Reflection.Assembly>* メソッドを使用して、実行時にリソースにアクセスします。<br /><br /> リソース ファイルだけが *Al.exe* に渡された場合は、出力ファイルはサテライト リソース アセンブリになります。|
 
 指定できる `options` を次に示します。**/out** オプションは必ず指定する必要があります。
 
@@ -84,7 +72,7 @@ al sources options
 |**/template:** `filename`|カルチャ フィールドを除く、すべてのアセンブリ メタデータの継承元であるアセンブリ (`filename`) を指定します。<br /><br /> **/template** を指定して作成したアセンブリは、サテライト アセンブリになります。|
 |**/title:** `text`|アセンブリの **Title** フィールドに文字列を指定します。 `text` に空白が含まれている場合は、文字列を二重引用符 (" ") で囲みます。 この文字列はアセンブリのカスタム属性であり、リフレクションを使用して表示するために使用できます。<br /><br /> **/win32res** を指定しないと、**/title** が Win32 **Description** リソースとしてエクスプローラーに表示され、アプリケーションのフレンドリ名としてシェルによって使用されます。 この文字列は、複数のアプリケーションでサポートされる種類のファイルに対するショートカット メニューの **[ファイルを開くアプリケーションの選択]** サブメニューにも表示されます。<br /><br /> テキストが空の文字列の場合、Win32 **Description** リソースは単一の空白として表示されます。<br /><br /> **/win32res** を指定した場合は、Win32 リソース情報に対して **/title** は無効になります。<br /><br /> このオプションは、任意の MSIL モジュールのソース コードでカスタム属性 (<xref:System.Reflection.AssemblyTitleAttribute>) として指定することもできます。|
 |**/trade[mark]:** `text`|アセンブリの **Trademark** フィールドに文字列を指定します。 `text` に空白が含まれている場合は、文字列を二重引用符 (" ") で囲みます。 この文字列はアセンブリのカスタム属性であり、リフレクションを使用して表示するために使用できます。<br /><br /> **/win32res** を指定しないと、**/trademark** が Win32 **Trademark** リソースとしてエクスプローラーに表示されます。<br /><br /> テキストが空の文字列の場合、Win32 **Trademark** リソースは単一の空白として表示されます。<br /><br /> **/win32res** を指定した場合は、Win32 リソース情報に対して **/trademark** は無効になります。<br /><br /> このオプションは、任意の MSIL モジュールのソース コードでカスタム属性 (<xref:System.Reflection.AssemblyTrademarkAttribute>) として指定することもできます。|
-|**/v[ersion]:** `version`|アセンブリのバージョン情報を指定します。 バージョン文字列の形式は `major`.`minor`.`build`.`revision` です。既定値は 0 です。<br /><br /> **/version** を指定する場合、`major` も指定する必要があります。 `major` と `minor` を指定する場合、`build` に対してアスタリスク (\*) を指定できます。 その場合、`build` は現地時間の 2000 年 1 月 1 日以降の経過日数と等しい値になり、`revision` は現地時間の当日の午前 0 時以降の経過秒数を 2 で割った値と等しくなります。<br /><br /> `major`、`minor`、および `build` を指定する場合、`revision` に対してアスタリスクを指定できます。 その場合、`revision` は現地時間の当日の午前 0 時以降の経過秒数を 2 で割った値と等しくなります。<br /><br /> まとめると、有効なバージョン文字列は次のようになります。<br /><br /> X<br /><br /> X.X<br /><br /> X.X.\*<br /><br /> X.X.X<br /><br /> X.X.X.\*<br /><br /> X.X.X.X<br /><br /> X は 65535 を除く unsigned short 定数 (0 ～ 65534) です。<br /><br /> **/win32res** を指定しないと、**/version** が Win32 **Assembly Version** リソースとして使用されます。<br /><br /> **/win32res**、**/productversion**、および **/fileversion** を指定しない場合、**/version** が **Assembly Version**、File Version、および **Product Version** Win32 リソースに対して使用されます。<br /><br /> **/win32res** を指定した場合は、Win32 リソース情報に対して **/version** は無効になります。<br /><br /> このオプションは、任意の MSIL モジュールのソース コードでカスタム属性 (<xref:System.Reflection.AssemblyVersionAttribute>) として指定することもできます。|
+|**/v[ersion]:** `version`|アセンブリのバージョン情報を指定します。 バージョン文字列の形式は `major`.`minor`.`build`.`revision` です。既定値は 0 です。<br /><br /> **/version** を指定する場合、`major` も指定する必要があります。 `major` と `minor` を指定する場合、`build` に対してアスタリスク (\*) を指定できます。 その場合、`build` は現地時間の 2000 年 1 月 1 日以降の経過日数と等しい値になり、`revision` は現地時間の当日の午前 0 時以降の経過秒数を 2 で割った値と等しくなります。<br /><br /> `major`、`minor`、および `build` を指定する場合、`revision` に対してアスタリスクを指定できます。 その場合、`revision` は現地時間の当日の午前 0 時以降の経過秒数を 2 で割った値と等しくなります。<br /><br /> まとめると、有効なバージョン文字列は次のようになります。<br /><br /> x<br /><br /> X.X<br /><br /> X.X.\*<br /><br /> X.X.X<br /><br /> X.X.X.\*<br /><br /> X.X.X.X<br /><br /> X は 65535 を除く unsigned short 定数 (0 ～ 65534) です。<br /><br /> **/win32res** を指定しないと、**/version** が Win32 **Assembly Version** リソースとして使用されます。<br /><br /> **/win32res**、**/productversion**、および **/fileversion** を指定しない場合、**/version** が **Assembly Version**、File Version、および **Product Version** Win32 リソースに対して使用されます。<br /><br /> **/win32res** を指定した場合は、Win32 リソース情報に対して **/version** は無効になります。<br /><br /> このオプションは、任意の MSIL モジュールのソース コードでカスタム属性 (<xref:System.Reflection.AssemblyVersionAttribute>) として指定することもできます。|
 |**/win32icon:** `filename`|.ico ファイルをアセンブリに挿入します。 この .ico ファイルは、エクスプローラーにおける出力ファイルの視覚的な表現を提供します。|
 |**/win32res:** `filename`|Win32 リソース (.res ファイル) を出力ファイルに挿入します。 Win32 リソース ファイルは、リソース コンパイラを使用して作成できます。 リソース コンパイラは、Visual C++ プログラムをコンパイルするときに呼び出されます。 .res ファイルは .rc ファイルから作成されます。|
 |`@filename`|*Al.exe* コマンドが格納されている応答ファイルを指定します。<br /><br /> 応答ファイルでは、コマンドは各行に 1 つずつ指定されるか、複数のコマンドが 1 行に空白で区切られて指定されます。|

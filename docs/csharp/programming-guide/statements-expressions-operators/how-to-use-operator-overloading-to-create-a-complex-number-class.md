@@ -1,10 +1,6 @@
 ---
-title: "方法 : 演算子のオーバーロードを使用して複素数クラスを作成する (C# プログラミング ガイド)"
+title: '方法 : 演算子のオーバーロードを使用して複素数クラスを作成する (C# プログラミング ガイド)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - complex numbers [C#]
 - classes [C#], operator overloading
@@ -12,14 +8,11 @@ helpviewer_keywords:
 - operator overloading [C#], using to create classes
 - operators [C#], overloading to create a complex number class
 ms.assetid: c9b8d982-5112-413f-bae3-b42ae3248ddf
-caps.latest.revision: 
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: e851b9d8a46f9cab73883a7b38761fed749c4f93
-ms.sourcegitcommit: 22a48b64a0150a60b00b4fc4d8c62cde7f1670c4
+ms.openlocfilehash: d746355dac1b99690a5a94c829bd35598c6c8be8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-use-operator-overloading-to-create-a-complex-number-class-c-programming-guide"></a>方法 : 演算子のオーバーロードを使用して複素数クラスを作成する (C# プログラミング ガイド)
 この例では、演算子のオーバーロードを使用して、複素数の加算を定義する複素数クラス `Complex` を作成する方法を示します。 プログラムは、`ToString` メソッドのオーバーライドを使用して、数値の虚数部と実数部、および加算結果を表示します。  

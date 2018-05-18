@@ -1,26 +1,17 @@
 ---
-title: "ファイル エンコーディング (Visual Basic)"
-ms.custom: 
+title: ファイル エンコーディング (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - character encodings
 - files [Visual Basic], encoding
 - Unicode, file encoding
 - file encoding
 ms.assetid: ea2c5f5f-bbb1-4150-9928-b9951fa6bc57
-caps.latest.revision: "8"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: deaab4371ab0d5d15c627bfd6352a7090bf08024
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 30aba517b3b0fbb5fa5bea48134934b2c2d26e50
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="file-encodings-visual-basic"></a>ファイル エンコーディング (Visual Basic)
 ファイル エンコーディングは、文字エンコーディングとも呼ばれ、テキストを処理するときの文字の表現方法を指定します。 言語で処理できる (または処理できない) 文字という観点から、あるエンコードが他のエンコーディングよりも望ましいということがありますが、一般的には Unicode が好まれます。  
@@ -35,7 +26,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="encoding-class"></a>Encoding クラス  
  <xref:System.Text.Encoding> クラスは文字エンコーディングを表します。 次の表は、利用可能なエンコーディングの型の一覧とそれぞれの説明です。  
   
-|名前|説明|
+|name|説明|
 |---|---|    
 |<xref:System.Text.ASCIIEncoding>|Unicode 文字の ASCII 文字エンコードを表します。|  
 |<xref:System.Text.UnicodeEncoding>|Unicode 文字の UTF-16 エンコーディングを表します。|  
@@ -43,6 +34,6 @@ ms.lasthandoff: 11/21/2017
 |<xref:System.Text.UTF7Encoding>|Unicode 文字の UTF-7 エンコードを表します。|  
 |<xref:System.Text.UTF8Encoding>|Unicode 文字の UTF-8 エンコードを表します。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [ファイルの読み取り](../../../../visual-basic/developing-apps/programming/drives-directories-files/reading-from-files.md)  
  [ファイルへの書き込み](../../../../visual-basic/developing-apps/programming/drives-directories-files/writing-to-files.md)

@@ -4,11 +4,11 @@ description: .NET Core は、Windows、Linux、および Mac アプリを作成�
 author: richlander
 ms.author: mairaw
 ms.date: 06/20/2016
-ms.openlocfilehash: 7a2548a177f6e62e9c76c336c6e270a139d9fce0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1f413e4efa8b33877917330855f4881c3fbf0854
+ms.sourcegitcommit: 88f251b08bf0718ce119f3d7302f514b74895038
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="net-core-guide"></a>.NET Core のガイド
 
@@ -31,14 +31,14 @@ ms.lasthandoff: 05/04/2018
 
 - [.NET ランタイム](https://github.com/dotnet/coreclr)。型システム、アセンブリ読み込み、ガベージ コレクター、ネイティブ相互運用機能、およびその他の基本的なサービスを提供します。 
 - 一連の[フレームワーク ライブラリ](https://github.com/dotnet/corefx)。プリミティブ データ型、アプリ コンポジションの種類、および基本的なユーティリティを提供します。 
-- [SDK ツールのセット](https://github.com/dotnet/cli)と[言語コンパイラ](https://github.com/dotnet/roslyn)。[.NET Core SDK](sdk.md) に含まれており、ベース開発者エクスペリエンスを有効にします。
-- 'dotnet' アプリケ ホスト。.NET Core アプリの起動に使用されます。 ランタイムの選択、ランタイムのホスト、アセンブリ読み込みポリシーの提供、およびアプリの起動を行います。 同じホストが、ほぼ同じ方法で SDK ツールの起動にも使用されます。
+- [SDK ツールのセット](https://github.com/dotnet/cli)と言語コンパイラ ([Roslyn](https://github.com/dotnet/roslyn) および [F#](https://github.com/microsoft/visualfsharp))。[.NET Core SDK](sdk.md) に含まれており、ベース開発者エクスペリエンスを有効にします。
+- 'dotnet' アプリケ ホスト。 .NET Core アプリの起動に使用されます。 ランタイムの選択、ランタイムのホスト、アセンブリ読み込みポリシーの提供、およびアプリの起動を行います。 同じホストが、ほぼ同じ方法で SDK ツールの起動にも使用されます。
 
 ### <a name="languages"></a>言語
 
 .NET Core のアプリケーションとライブラリを記述するには、C#、Visual Basic および F# 言語を使用できます。 コンパイラは .NET Core 上で実行され、任意の実行場所で .NET Core 用の開発を可能にします。 一般的に、コンパイラは直接使用せず、SDK ツールを使用して間接的に使用します。
 
-C#、Visual Basic および F# コンパイラと .NET Core ツールは、Visual Studio、[Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp)、Sublime Text、Vim などの複数のテキスト エディターおよび IDE に統合されているか、または統合することができます。これにより、任意のコーディング環境および OS で .NET Core 開発を行うことができます。 この統合は、1 つには [OmniSharp プロジェクト](http://www.omnisharp.net/)の優れた要員によって提供されます。
+C#、Visual Basic および F# コンパイラと .NET Core ツールは、Visual Studio、[Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp)、Sublime Text、Vim などの複数のテキスト エディターおよび IDE に統合されているか、または統合することができます。これにより、任意のコーディング環境および OS で .NET Core 開発を行うことができます。 この統合は、一部は [OmniSharp プロジェクト](http://www.omnisharp.net/)と [Ionide](http://ionide.io) の優れた要員によって提供されます。
 
 ### <a name="net-apis-and-compatibility"></a>.NET API と互換性
 

@@ -1,21 +1,12 @@
 ---
-title: "連結演算 (C#)"
-ms.custom: 
+title: 連結演算 (C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: 890ee104-c590-457e-8a7f-b2b5da0fb417
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: f59d94004eeeaa5812dfb7d5424bdbb3364e7237
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 37816cd488e92fd09b257b5a1d1cccf0e5bf4cbc
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="concatenation-operations-c"></a>連結演算 (C#)
 連結とは、1 つのシーケンスを別のシーケンスに追加する演算を指します。  
@@ -32,7 +23,7 @@ ms.lasthandoff: 11/21/2017
 |-----------------|-----------------|---------------------------------|----------------------|  
 |Concat|2 つのシーケンスを連結して 1 つのシーケンスにします。|該当なし。|<xref:System.Linq.Enumerable.Concat%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Concat%2A?displayProperty=nameWithType>|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Linq>  
  [標準クエリ演算子の概要 (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)  
  [方法: 文字列コレクションを結合および比較する (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-combine-and-compare-string-collections-linq.md)

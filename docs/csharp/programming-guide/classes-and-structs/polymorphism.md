@@ -1,21 +1,15 @@
 ---
-title: "ポリモーフィズム (C# プログラミング ガイド)"
+title: ポリモーフィズム (C# プログラミング ガイド)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - C# language, polymorphism
 - polymorphism [C#]
 ms.assetid: 086af969-29a5-4ce8-a993-0b7d53839dab
-caps.latest.revision: "31"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 601c8cf626c846ca6c5d6bc2338e271e6b93544a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 8bbf93d14a16b06441ba48b9d4e19cfd249e9146
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="polymorphism-c-programming-guide"></a>ポリモーフィズム (C# プログラミング ガイド)
 ポリモーフィズムは、カプセル化と継承に次ぐ、オブジェクト指向プログラミングの第 3 の柱と言われることがよくあります。 ポリモーフィズムは、ギリシャ語で "多形" を意味し、次の 2 つの側面を持っています。  
@@ -62,7 +56,7 @@ ms.lasthandoff: 11/21/2017
   
  [!code-csharp[csProgGuideInheritance#18](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/polymorphism_4.cs)]  
   
- 基底クラスのメンバーが隠ぺいされても、派生クラスのインスタンスを基底クラスのインスタンスにキャストすることで、クライアント コードから基底クラスのメンバーにアクセスできます。 次に例を示します。  
+ 基底クラスのメンバーが隠ぺいされても、派生クラスのインスタンスを基底クラスのインスタンスにキャストすることで、クライアント コードから基底クラスのメンバーにアクセスできます。 例:  
   
  [!code-csharp[csProgGuideInheritance#19](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/polymorphism_5.cs)]  
   
@@ -99,7 +93,7 @@ ms.lasthandoff: 11/21/2017
   
 -   [方法: ToString メソッドをオーバーライドする](../../../csharp/programming-guide/classes-and-structs/how-to-override-the-tostring-method.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
  [継承](../../../csharp/programming-guide/classes-and-structs/inheritance.md)  

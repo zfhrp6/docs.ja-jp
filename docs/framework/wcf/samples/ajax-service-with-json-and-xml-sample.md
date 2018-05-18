@@ -59,7 +59,7 @@ MathResult DoMathJson(double n1, double n2);
 
  どちらの場合、操作が返す複合型では、ことに注意してください`MathResult`、標準的な WCF データ コントラクト型です。  
   
- クライアント Web ページ XmlAjaxClientPage.htm には、ユーザーがクリックしたときに、上記の 2 つの操作のいずれかを呼び出す JavaScript コードが含まれています、**計算 (return JSON) を実行する**または**calculation (return XML) を実行します。**ページのボタンです。 サービスを呼び出すコードによって JSON 本文が作成され、HTTP POST を使用して送信されます。 要求を手動で作成、JavaScript とは異なり、[基本的な AJAX サービス](../../../../docs/framework/wcf/samples/basic-ajax-service.md)サンプルと ASP.NET AJAX を使用して、他のサンプルです。  
+ クライアント Web ページ XmlAjaxClientPage.htm には、ユーザーがクリックしたときに、上記の 2 つの操作のいずれかを呼び出す JavaScript コードが含まれています、**計算 (return JSON) を実行する**または**calculation (return XML) を実行します。** ページのボタンです。 サービスを呼び出すコードによって JSON 本文が作成され、HTTP POST を使用して送信されます。 要求を手動で作成、JavaScript とは異なり、[基本的な AJAX サービス](../../../../docs/framework/wcf/samples/basic-ajax-service.md)サンプルと ASP.NET AJAX を使用して、他のサンプルです。  
 
 ```csharp
 // Create HTTP request  

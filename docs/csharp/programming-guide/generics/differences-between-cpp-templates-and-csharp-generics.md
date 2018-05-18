@@ -1,21 +1,14 @@
 ---
-title: "C++ テンプレートと C# ジェネリックの違い (C# プログラミング ガイド)"
+title: C++ テンプレートと C# ジェネリックの違い (C# プログラミング ガイド)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - generics [C#], vs. C++ templates
 ms.assetid: 1da6beeb-d4a4-4da0-87b7-0cfbe04920b7
-caps.latest.revision: 
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: aea1b51c26a8f3de56ea66b9cf89e75bfeb59d81
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: db3311c7fa81d48137c542f320d0abef791e5116
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="differences-between-c-templates-and-c-generics-c-programming-guide"></a>C++ テンプレートと C# ジェネリックの違い (C# プログラミング ガイド)
 C# ジェネリックと C++ テンプレートのいずれも、パラメーター化された型のサポートを提供する言語機能です。 ただし、これら 2 つにはさまざまな違いがあります。 構文レベルでは、C# ジェネリックの場合、パラメーター化された型の取り扱いが単純であり、C++ テンプレートのような複雑さがありません。 さらに、C++ テンプレートで提供されるすべての機能が、C# でも提供されるわけではありません。 実装レベルでは、C# ジェネリック型の代入は実行時に行われ、その結果、インスタンス化されたオブジェクトのジェネリック型情報が保存されるという点が最も大きな違いです。 詳細については、「[ランタイムのジェネリック](../../../csharp/programming-guide/generics/generics-in-the-run-time.md)」を参照してください。  
@@ -38,7 +31,7 @@ C# ジェネリックと C++ テンプレートのいずれも、パラメータ
   
 -   C++ では、テンプレート内のすべての型パラメーターに対して有効でない可能性のあるコードを使用できます。このようなコードは、型パラメーターとして使用されている特定の型に対してチェックされます。 C# では、制約を満たすすべての型で正常に動作するようにクラスのコードを記述する必要があります。 たとえば、C++ では、型パラメーターのオブジェクトで算術演算子 `+` および `-` を使用し、これらの演算子をサポートしない型を使ってテンプレートをインスタンス化するとエラーを生成する関数を記述できます。 C# では、このような関数は許可されません。許可される言語構成要素は、制約から推定できるものだけに限られます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
  [ジェネリックの概要](../../../csharp/programming-guide/generics/introduction-to-generics.md)  
  [テンプレート](/cpp/cpp/templates-cpp)

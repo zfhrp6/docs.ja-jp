@@ -1,14 +1,6 @@
 ---
 title: デスクトップ アプリケーションに対するサテライト アセンブリの作成
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-bcl
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -31,17 +23,13 @@ helpviewer_keywords:
 - compiling satellite assemblies
 - re-signing assemblies
 ms.assetid: 8d5c6044-2919-41d2-8321-274706b295ac
-caps.latest.revision: ''
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 2f75da3332c8172a6a888e6f40c66383866799ea
-ms.sourcegitcommit: 498799639937c89de777361aab74261efe7b79ea
+ms.openlocfilehash: c308c7e16f106d00e5fd1b5ad820f8b330f4bbbf
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="creating-satellite-assemblies-for-desktop-apps"></a>デスクトップ アプリケーションに対するサテライト アセンブリの作成
 リソース ファイルはローカライズされたアプリケーションの中心的な役割を果たします。 これを使用することで、アプリケーションでは、ユーザー固有の言語とカルチャで文字列、イメージ、およびその他のデータを表示し、ユーザー固有の言語またはカルチャ用のリソースが使用できない場合には代替データを提供できるようになります。 .NET Framework ではハブ アンド スポーク モデルを使用して、ローカライズされたリソースを見つけて取得します。 ハブはニュートラルまたは既定のカルチャと呼ばれる、単一カルチャ用のリソースとローカライズできない実行可能コードを含むメイン アセンブリです。 既定のカルチャはアプリケーションで使用されるフォールバック カルチャです。これは、ローカライズされたリソースが使用できない場合に使用されます。 アプリケーションの既定のカルチャにカルチャを指定するために <xref:System.Resources.NeutralResourcesLanguageAttribute> 属性を使用します。 各スポークは、単一のローカライズされたカルチャ用のリソースを含むがコードは含まないサテライト アセンブリに接続します。 サテライト アセンブリはメイン アセンブリには含まれないため、アプリケーションのメイン アセンブリを置換しなくても、特定のカルチャに対応するリソースを簡単に更新または置換できます。  
@@ -87,11 +75,11 @@ al -target:lib -embed:strings.de.resources -culture:de -out:Example.resources.dl
   
 |オプション|説明|  
 |------------|-----------------|  
-|**/target:**lib|サテライト アセンブリがライブラリ (.dll) ファイルにコンパイルされることを示します。 サテライト アセンブリが実行可能コードを含まず、アプリケーションのメイン アセンブリではないため、サテライト アセンブリは DLL として保存する必要があります。|  
-|**/embed:**strings.de.resources|Al.exe でのアセンブリのコンパイル時に埋め込むリソース ファイルの名前を指定します。 サテライト アセンブリに複数の .resources ファイルを埋め込むことはできますが、ハブ アンド スポーク モデルに従う場合は、カルチャごとに 1 つのサテライト アセンブリをコンパイルする必要があります。 ただし、文字列とオブジェクトに対して別の .resources ファイルを作成することができます。|  
-|**/culture:**de|コンパイルするリソースのカルチャを指定します。 共通言語ランタイムは、指定されたカルチャ用のリソースを検索するときに、この情報を使用します。 このオプションを省略しても、Al.exe ではリソースがコンパイルされますが、ランタイムはユーザーからの要求時にリソースを見つけられなくなります。|  
-|**/out:**Example.resources.dll|出力ファイルの名前を指定します。 名前は命名標準 *baseName*.resources.*extension* に従う必要があります。ここで、*baseName* はメイン アセンブリの名前、*extension* は有効なファイル名拡張子 (.dll など) です。 ランタイムは、出力ファイルの名前でサテライト アセンブリのカルチャを判断することはできないことに注意してください。**/culture** オプションを使用して指定する必要があります。|  
-|**/template:**Example.dll|カルチャ フィールドを除く、すべてのアセンブリ メタデータをサテライト アセンブリが継承するアセンブリを指定します。 このオプションがサテライト アセンブリに影響するのは、[厳密な名前](../../../docs/framework/app-domains/strong-named-assemblies.md)を持つアセンブリを指定する場合のみです。|  
+|**/target:** lib|サテライト アセンブリがライブラリ (.dll) ファイルにコンパイルされることを示します。 サテライト アセンブリが実行可能コードを含まず、アプリケーションのメイン アセンブリではないため、サテライト アセンブリは DLL として保存する必要があります。|  
+|**/embed:** strings.de.resources|Al.exe でのアセンブリのコンパイル時に埋め込むリソース ファイルの名前を指定します。 サテライト アセンブリに複数の .resources ファイルを埋め込むことはできますが、ハブ アンド スポーク モデルに従う場合は、カルチャごとに 1 つのサテライト アセンブリをコンパイルする必要があります。 ただし、文字列とオブジェクトに対して別の .resources ファイルを作成することができます。|  
+|**/culture:** de|コンパイルするリソースのカルチャを指定します。 共通言語ランタイムは、指定されたカルチャ用のリソースを検索するときに、この情報を使用します。 このオプションを省略しても、Al.exe ではリソースがコンパイルされますが、ランタイムはユーザーからの要求時にリソースを見つけられなくなります。|  
+|**/out:** Example.resources.dll|出力ファイルの名前を指定します。 名前は命名標準 *baseName*.resources.*extension* に従う必要があります。ここで、*baseName* はメイン アセンブリの名前、*extension* は有効なファイル名拡張子 (.dll など) です。 ランタイムは、出力ファイルの名前でサテライト アセンブリのカルチャを判断することはできないことに注意してください。**/culture** オプションを使用して指定する必要があります。|  
+|**/template:** Example.dll|カルチャ フィールドを除く、すべてのアセンブリ メタデータをサテライト アセンブリが継承するアセンブリを指定します。 このオプションがサテライト アセンブリに影響するのは、[厳密な名前](../../../docs/framework/app-domains/strong-named-assemblies.md)を持つアセンブリを指定する場合のみです。|  
   
  Al.exe で使用できるオプションの一覧については、「[アセンブリ リンカー (Al.exe)](../../../docs/framework/tools/al-exe-assembly-linker.md)」を参照してください。  
   

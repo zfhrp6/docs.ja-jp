@@ -1,13 +1,7 @@
 ---
-title: "メタデータと自己言及的なコンポーネント"
-ms.custom: 
+title: メタデータと自己言及的なコンポーネント
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -21,18 +15,13 @@ helpviewer_keywords:
 - PE files, metadata
 - components [.NET Framework], metadata
 ms.assetid: 3dd13c5d-a508-455b-8dce-0a852882a5a7
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: ac08dcf305e8cc0c1a3be3b8300ed9981e7d84d4
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 3bc603d90ae4636ac50ab9cbabf7d176309498b4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="metadata-and-self-describing-components"></a>メタデータと自己言及的なコンポーネント
 以前は、ある 1 つの言語で記述されたソフトウェア コンポーネント (.exe または .dll) で、別の言語で記述されたコンポーネントを使用するのは簡単ではありませんでした。 COM により、この問題が解決するための手段が提供されるようになりました。 .NET Framework では、コンパイラからすべてのモジュールやアセンブリに追加の宣言情報を挿入できるようになり、コンポーネントの相互運用性が大幅に強化されています。 メタデータと呼ばれるこの情報により、コンポーネント間のシームレスな相互作用がサポートされます。  
@@ -162,7 +151,7 @@ IL_000d:  call int32 ConsoleApplication.MyApp::Add(int32,int32) /* 06000003 */
   
  JIT コンパイラはこのメソッド全体の MSIL を読み取って詳細に分析し、このメソッドの効率的なネイティブ命令を生成します。 `IL_000d` で、`Add` メソッドのメタデータ トークン (`/*` `06000003 */`) が検出されます。ランタイムは、このトークンを使用して **MethodDef** テーブルの 3 行目を調べます。  
   
- **メソッドが記述されているメタデータ トークンによって参照される、**MethodDef`Add` テーブルの一部の例を次の表に示します。 このアセンブリにはほかにもメタデータ テーブルが存在し、それぞれ独自の値を持っていますが、ここでは、このテーブルだけを参照します。  
+ **メソッドが記述されているメタデータ トークンによって参照される、** MethodDef`Add` テーブルの一部の例を次の表に示します。 このアセンブリにはほかにもメタデータ テーブルが存在し、それぞれ独自の値を持っていますが、ここでは、このテーブルだけを参照します。  
   
 |行|Relative Virtual Address (RVA)|ImplFlags|フラグ|name<br /><br /> (文字列ヒープを指す)|Signature (BLOB ヒープを指す)|  
 |---------|--------------------------------------|---------------|-----------|-----------------------------------------|----------------------------------------|  

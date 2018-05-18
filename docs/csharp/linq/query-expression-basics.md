@@ -1,20 +1,13 @@
 ---
-title: "クエリ式の基本"
-description: "クエリ式に関連する概念について説明します"
-keywords: .NET, .NET Core, C#
-author: BillWagner
-manager: wpickett
-ms.author: wiwagn
+title: クエリ式の基本
+description: クエリ式に関連する概念について説明します
 ms.date: 11/30/2016
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-csharp
 ms.assetid: 027db1f8-346f-44d2-a16e-043fcea3a4e0
-ms.openlocfilehash: 7a1cf9eea4c5d75c6bcb6d2f0d5f68a07e3158d0
-ms.sourcegitcommit: 39b65a49271e082add68cb737b48fdbe09d24718
+ms.openlocfilehash: d211b0770bdc69f513e4129c818f96650de63e77
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/30/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="query-expression-basics"></a>クエリ式の基本
 
@@ -24,7 +17,7 @@ ms.lasthandoff: 11/30/2017
   
  一般に、ソース データは、同じ種類の要素のシーケンスとして論理的に編成されます。 たとえば、SQL データベース テーブルには、行のシーケンスが含まれています。 XML ファイルには、XML 要素のシーケンスがあります (ただし、これらはツリー構造で階層化されています)。 メモリ内コレクションには、オブジェクトのシーケンスが含まれています。 
   
- アプリケーションの観点から言うと、元のソース データの特定の型や構造体は重要ではありません。 アプリケーションは常に、ソース データを <xref:System.Collections.Generic.IEnumerable%601> または <xref:System.Linq.IQueryable%601> コレクションとして認識します。 たとえば、LINQ to XML では、ソース データは `IEnumerable`\<<xref:System.Xml.Linq.XElement>> として表示されます。  
+ アプリケーションの観点から言うと、元のソース データの特定の型や構造体はは重要ではありません。 アプリケーションは常に、ソース データを <xref:System.Collections.Generic.IEnumerable%601> または <xref:System.Linq.IQueryable%601> コレクションとして認識します。 たとえば、LINQ to XML では、ソース データは `IEnumerable`\<<xref:System.Xml.Linq.XElement>> として表示されます。  
   
  クエリは、このソース シーケンスに対して、次の 3 つのうち、いずれかの操作を行います。  
   
@@ -175,7 +168,7 @@ ms.lasthandoff: 11/30/2017
   
  詳しくは、「[方法: グループ化操作でサブクエリを実行する](perform-a-subquery-on-a-grouping-operation.md)」をご覧ください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C# プログラミング ガイド](../programming-guide/index.md)  
  [LINQ クエリ式](index.md)  
  [クエリ キーワード (LINQ)](../language-reference/keywords/query-keywords.md)  

@@ -1,20 +1,13 @@
 ---
-title: "C# プログラムの構造 - C# 言語のツアー"
-description: "C# プログラムの基本的な構造について説明します"
-keywords: .NET .NET Core
-author: BillWagner
-ms.author: wiwagn
+title: C# プログラムの構造 - C# 言語のツアー
+description: C# プログラムの基本的な構造について説明します
 ms.date: 08/10/2016
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.devlang: csharp
 ms.assetid: 984f0314-507f-47a0-af56-9011243f5e65
-ms.openlocfilehash: 8d8f443f8458cd392c75e9787e612ca1cc3518c7
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: dee24077f9f6287780320d979c44aef5230be81e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="program-structure"></a>プログラムの構造
 

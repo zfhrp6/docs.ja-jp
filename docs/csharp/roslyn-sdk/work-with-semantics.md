@@ -1,18 +1,13 @@
 ---
-title: ".NET Compiler Platform SDK セマンティック モデルの使用"
-description: "この概要は、コードのセマンティック モデルを理解して操作するために使用する型を理解するためのものです。"
-author: billwagner
-ms.author: wiwagn
+title: .NET Compiler Platform SDK セマンティック モデルの使用
+description: この概要は、コードのセマンティック モデルを理解して操作するために使用する型を理解するためのものです。
 ms.date: 10/15/2017
-ms.topic: conceptual
-ms.prod: .net
-ms.devlang: devlang-csharp
 ms.custom: mvc
-ms.openlocfilehash: 28366093c516f5367d82c0bdfc53749e764361ef
-ms.sourcegitcommit: d095094e942eedf09530ea5636fbaf9029853027
+ms.openlocfilehash: cf34e2ab9688325f58cb54755db4142a883fca77
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/19/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="work-with-semantics"></a>セマンティクスの使用
 

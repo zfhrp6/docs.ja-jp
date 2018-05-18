@@ -1,21 +1,15 @@
 ---
-title: "インターフェイスのプロパティ (C# プログラミング ガイド)"
+title: インターフェイスのプロパティ (C# プログラミング ガイド)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - properties [C#], on interfaces
 - interfaces [C#], properties
 ms.assetid: 6503e9ed-33d7-44ec-b4c1-cc16c084b795
-caps.latest.revision: "13"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 1da48adf73cccb28d9cff641948db52b40b8c1bb
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: bfa03c7ebe82f3f6a03666d908a5fa9d4e386172
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="interface-properties-c-programming-guide"></a>インターフェイスのプロパティ (C# プログラミング ガイド)
 [interface](../../../csharp/language-reference/keywords/interface.md) でプロパティを宣言することができます。 インターフェイスのインデクサー アクセサーの例を次に示します。  
@@ -55,7 +49,7 @@ ms.lasthandoff: 11/21/2017
   
  `Employee name: Hazem Abolrous`  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
  [プロパティ](../../../csharp/programming-guide/classes-and-structs/properties.md)  
  [プロパティの使用](../../../csharp/programming-guide/classes-and-structs/using-properties.md)  

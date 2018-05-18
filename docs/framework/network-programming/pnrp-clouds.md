@@ -1,23 +1,15 @@
 ---
-title: "PNRP クラウド"
-ms.custom: 
+title: PNRP クラウド
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: a82e2bf1-62ab-4c2d-83f3-3217a6aead2e
-caps.latest.revision: "4"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: f142c7aaa71ab2dbee1d2955f2c235a65e6c8bfa
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: ef3f4fd2f7333c5a78024edf7eb536e9254c0293
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="pnrp-clouds"></a>PNRP クラウド
 PNRP "クラウド" は、ネットワーク経由で相互に通信できるノードのセットを表します。 "クラウド" という用語は、"ピア メッシュ" や "ピアツーピア グラフ" と同義です。  
@@ -32,7 +24,7 @@ PNRP "クラウド" は、ネットワーク経由で相互に通信できるノ
   
 -   リンクローカル クラウドは、リンクローカル IPv6 アドレス スコープとリンクローカル アドレスに対応します。 リンクローカル クラウドは特定のリンクに使います。このリンクは通常、ローカルにアタッチされているサブネットに相当します。 リンクローカル クラウドは複数存在できます。  
   
- 3 番目のクラウドであるサイト固有クラウドは、IPv6 アドレス スコープとサイトローカル アドレスに対応します。 サイト固有クラウドは古いクラウドですが、PNRP ではまだサポートされています。  
+ 3 番目のクラウドであるサイト固有クラウドは、IPv6 アドレス スコープとサイトローカル アドレスに対応します。 サイト固有クラウドは非推奨とされますが、PNRP ではまだサポートされています。  
   
 ## <a name="clouds"></a>クラウド  
  PNRP クラウドは、<xref:System.Net.PeerToPeer.Cloud> クラスのインスタンスで表されます。 ピアを使うクラウドのグループは、列挙可能な <xref:System.Net.PeerToPeer.CloudCollection> クラスのインスタンスによって表されます。 現在のピアに認識される PNRP クラウドのコレクションは、静的 <xref:System.Net.PeerToPeer.Cloud.GetAvailableClouds%2A> メソッドを呼び出すことによって取得できます。  

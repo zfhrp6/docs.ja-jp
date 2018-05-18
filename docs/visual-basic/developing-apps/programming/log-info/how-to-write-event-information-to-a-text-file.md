@@ -1,42 +1,33 @@
 ---
-title: "方法: イベント情報をテキスト ファイルに書き込む (Visual Basic)"
-ms.custom: 
+title: '方法: イベント情報をテキスト ファイルに書き込む (Visual Basic)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - event logs [Visual Studio], writing event information
 - text files [Visual Basic], writing event information to a text file
 - events [Visual Basic], writing event information to a text file
 ms.assetid: 9ca7cc03-bf99-4933-9e5e-61ee28e9a6b4
-caps.latest.revision: "20"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 944d874de5c3872f9efe5e287e5354c94c792b95
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 3adb594ee42b7b1fad77a54af04bb9f37f30c19a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-write-event-information-to-a-text-file-visual-basic"></a>方法: イベント情報をテキスト ファイルに書き込む (Visual Basic)
 `My.Application.Log` オブジェクトおよび `My.Log` オブジェクトを使用すると、アプリケーション内で発生したイベントに関する情報をログに記録できます。 この例では、`My.Application.Log.WriteEntry` メソッドを使ってトレース情報をログ ファイルに記録する方法を示します。  
   
 ### <a name="to-add-and-configure-the-file-log-listener"></a>ファイル ログ リスナーを追加および構成するには  
   
-1.  **ソリューション エクスプローラー** で app.config を右クリックし、 **[開く]**を選択します。  
+1.  **ソリューション エクスプローラー** で app.config を右クリックし、 **[開く]** を選択します。  
   
      \- または  
   
      app.config ファイルがない場合は、次の操作を行います。  
   
-    1.  **[プロジェクト]** メニューの **[新しい項目の追加]**をクリックします。  
+    1.  **[プロジェクト]** メニューの **[新しい項目の追加]** をクリックします。  
   
-    2.  **[新しい項目の追加]** ダイアログ ボックスで、 **[アプリケーション構成ファイル]**を選択します。  
+    2.  **[新しい項目の追加]** ダイアログ ボックスで、 **[アプリケーション構成ファイル]** を選択します。  
   
-    3.  **[追加]**をクリックします。  
+    3.  **[追加]** をクリックします。  
   
 2.  アプリケーション構成ファイルで `<listeners>` セクションを見つけます。  
   
@@ -73,7 +64,7 @@ ms.lasthandoff: 11/21/2017
   
      アセンブリに対してファイル ログ リスナーを設定すると、リスナーはそのアセンブリから `My.Application.Log` によって書き込まれたすべてのメッセージを受け取ります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:Microsoft.VisualBasic.Logging.Log?displayProperty=nameWithType>  
  <xref:Microsoft.VisualBasic.Logging.Log.WriteEntry%2A>  
  <xref:Microsoft.VisualBasic.Logging.Log.WriteException%2A>  

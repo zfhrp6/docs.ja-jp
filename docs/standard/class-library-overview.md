@@ -1,13 +1,7 @@
 ---
-title: ".NET クラス ライブラリの概要"
-ms.custom: 
+title: .NET クラス ライブラリの概要
 ms.date: 02/08/2018
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - classes [.NET Framework], library overview
 - classes [.NET Core], library overview
@@ -45,15 +39,11 @@ helpviewer_keywords:
 ms.assetid: 7e4c5921-955d-4b06-8709-101873acf157
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: ffa64d3a1f9ade7a97b15edfdecbad566c871c12
-ms.sourcegitcommit: cec0525b2121c36198379525e69aa5388266db5b
+ms.openlocfilehash: c6c61e4721e6daa548db2fffccc75606e98f71cc
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="net-class-library-overview"></a>.NET クラス ライブラリの概要
 .NET 実装には、開発プロセスを高速化および最適化し、システム機能へのアクセスを提供する、クラス、インターフェイス、デリゲート、および値の型が含まれます。 言語間での相互運用性を確保するために、.NET のほとんどの型は CLS (共通言語仕様) に準拠しています。そのため、コンパイラが CLS に準拠しているすべてのプログラミング言語でこれらの型を使用できます。  

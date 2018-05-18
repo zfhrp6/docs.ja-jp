@@ -1,21 +1,12 @@
 ---
-title: "パフォーマンス (LINQ to XML) (C#)"
-ms.custom: 
+title: パフォーマンス (LINQ to XML) (C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: 43c9f1b7-9bd3-489c-b45c-cb09173a3718
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: af1dc264722fc38ac4d20377233419583bebf3e1
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 93c753c9bc408abb3db652f435ac1b0c87f93898
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="performance-linq-to-xml-c"></a>パフォーマンス (LINQ to XML) (C#)
 ここでは、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] のパフォーマンス、特に関数型構築とクエリのパフォーマンスについて説明します。  
@@ -33,5 +24,5 @@ ms.lasthandoff: 10/18/2017
  [静的にコンパイルされたクエリ (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/statically-compiled-queries-linq-to-xml.md)  
  XPath 式エバリュエーターで実行される必要がある解析や処理と比較した場合の、静的にコンパイルされたクエリに関するパフォーマンス情報を提供します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [プログラミング ガイド (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/programming-guide-linq-to-xml.md)

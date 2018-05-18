@@ -1,18 +1,13 @@
 ---
 title: 構文解析の概要 (Roslyn API)
 description: 構文ツリーの走査、クエリおよびウォークに関する概要。
-author: billwagner
-ms.author: wiwagn
 ms.date: 02/05/2018
-ms.topic: conceptual
-ms.prod: .net
-ms.technology: devlang-csharp
 ms.custom: mvc
-ms.openlocfilehash: 9e42253e520b89fd8a864dead8c17d53bdb8a439
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: e377fe10e094e958627c3503fc39b7e2d02b3d7a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/10/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="get-started-with-syntax-analysis"></a>構文解析の概要
 
@@ -81,7 +76,7 @@ Syntax API を使用してコード ファイルで何でも見つけること�
 
 次のようにして、新しい C# の **Stand-Alone Code Analysis Tool** プロジェクトを作成します。
 
-* Visual Studio で、**[ファイル]** > **[新規]** > **[プロジェクト]** の順に選択して、[新しいプロジェクト] ダイアログを表示します。
+* Visual Studio で、**[ファイル]**、**[新規]**、 > **[プロジェクト]** の順に選択して、[新しいプロジェクト] ダイアログを表示します。
 * **[Visual C#]** > **[機能拡張]** で、**[Stand-Alone Code Analysis Tool]** を選択します。
 * プロジェクトに "**SyntaxTreeManualTraversal**" という名前を付けて、[OK] をクリックします。
 

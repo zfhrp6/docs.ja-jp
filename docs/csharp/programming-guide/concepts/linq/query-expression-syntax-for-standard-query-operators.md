@@ -1,21 +1,12 @@
 ---
-title: "標準クエリ演算子のクエリ式構文 (C#)"
-ms.custom: 
+title: 標準クエリ演算子のクエリ式構文 (C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: e1e17ef2-68ff-4c26-b6e2-015668227fa5
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: f662f23948f5d18c31a981a2f46d78f382ff5c96
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 48ca1173439559832ac7e578eac1e11c2bf34be2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="query-expression-syntax-for-standard-query-operators-c"></a>標準クエリ演算子のクエリ式構文 (C#)
 頻繁に使用される標準クエリ演算子の中には、C# 言語専用のキーワード構文が使用されているものがあります。こうした構文では、標準クエリ演算子を、"*クエリ式*" の一部として呼び出すことができます。 クエリ式は*メソッド ベース*の方法とは異なり、より読み取りやすいクエリの表現形式です。 クエリ式の句は、コンパイル時にクエリ メソッドへの呼び出しに変換されます。  
@@ -26,7 +17,7 @@ ms.lasthandoff: 11/21/2017
 |メソッド|C# のクエリ式の構文|  
 |------------|---------------------------------|  
 |<xref:System.Linq.Enumerable.Cast%2A>|明示的に型指定された範囲変数を使用します。例:<br /><br /> `from int i in numbers`<br /><br /> (詳しくは、「[from 句](../../../../csharp/language-reference/keywords/from-clause.md)」をご覧ください。)|  
-|<xref:System.Linq.Enumerable.GroupBy%2A>|`group … by`<br /><br /> または<br /><br /> `group … by … into …`<br /><br /> (詳しくは、「[group 句](../../../../csharp/language-reference/keywords/group-clause.md)」をご覧ください。)|  
+|<xref:System.Linq.Enumerable.GroupBy%2A>|`group … by`<br /><br /> - または -<br /><br /> `group … by … into …`<br /><br /> (詳しくは、「[group 句](../../../../csharp/language-reference/keywords/group-clause.md)」をご覧ください。)|  
 |<xref:System.Linq.Enumerable.GroupJoin%60%604%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Collections.Generic.IEnumerable%7B%60%601%7D%2CSystem.Func%7B%60%600%2C%60%602%7D%2CSystem.Func%7B%60%601%2C%60%602%7D%2CSystem.Func%7B%60%600%2CSystem.Collections.Generic.IEnumerable%7B%60%601%7D%2C%60%603%7D%29>|`join … in … on … equals … into …`<br /><br /> (詳しくは、「[join 句](../../../../csharp/language-reference/keywords/join-clause.md)」をご覧ください。)|  
 |<xref:System.Linq.Enumerable.Join%60%604%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Collections.Generic.IEnumerable%7B%60%601%7D%2CSystem.Func%7B%60%600%2C%60%602%7D%2CSystem.Func%7B%60%601%2C%60%602%7D%2CSystem.Func%7B%60%600%2C%60%601%2C%60%603%7D%29>|`join … in … on … equals …`<br /><br /> (詳しくは、「[join 句](../../../../csharp/language-reference/keywords/join-clause.md)」をご覧ください。)|  
 |<xref:System.Linq.Enumerable.OrderBy%60%602%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2C%60%601%7D%29>|`orderby`<br /><br /> (詳しくは、「[orderby 句](../../../../csharp/language-reference/keywords/orderby-clause.md)」をご覧ください。)|  
@@ -37,7 +28,7 @@ ms.lasthandoff: 11/21/2017
 |<xref:System.Linq.Enumerable.ThenByDescending%60%602%28System.Linq.IOrderedEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2C%60%601%7D%29>|`orderby …, … descending`<br /><br /> (詳しくは、「[orderby 句](../../../../csharp/language-reference/keywords/orderby-clause.md)」をご覧ください。)|  
 |<xref:System.Linq.Enumerable.Where%2A>|`where`<br /><br /> (詳しくは、「[where 句](../../../../csharp/language-reference/keywords/where-clause.md)」をご覧ください。)|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Linq.Enumerable>  
  <xref:System.Linq.Queryable>  
  [標準クエリ演算子の概要 (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)  

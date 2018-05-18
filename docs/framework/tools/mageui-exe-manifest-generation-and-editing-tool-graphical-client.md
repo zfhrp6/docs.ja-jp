@@ -1,34 +1,22 @@
 ---
-title: "MageUI.exe (マニフェスト生成および編集ツールのグラフィカル クライアント)"
-ms.custom: 
+title: MageUI.exe (マニフェスト生成および編集ツールのグラフィカル クライアント)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - Manifest Generation and Editing tool
 - MageUI.exe
 ms.assetid: f9e130a6-8117-49c4-839c-c988f641dc14
-caps.latest.revision: "38"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: ec4ac8d89d2d3a7d0dce11e5057db80190e7b963
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 0772fcb32ce4d7500b358db312241e489b3a24c1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="mageuiexe-manifest-generation-and-editing-tool-graphical-client"></a>MageUI.exe (マニフェスト生成および編集ツールのグラフィカル クライアント)
 MageUI.exe でサポートされている機能は、コマンド ライン ツール Mage.exe の機能と同じですが、MageUI.exe には、Windows ベースのユーザー インターフェイス (UI) があります。 このツールを使用すると、配置マニフェストおよびアプリケーション マニフェストを作成および編集でき、これらのマニフェストに署名することができます。 MageUI.exe で作成される新しいマニフェストは、[!INCLUDE[net_client_v40_long](../../../includes/net-client-v40-long-md.md)] を対象とします。 以前のバージョンの .NET Framework を対象にするには、以前のバージョンの MageUI.exe を使用する必要があります。 マニフェストに対してアセンブリの追加または削除を実行しても、既存のマニフェストに再署名しても、MageUI.exe は [!INCLUDE[net_client_v40_long](../../../includes/net-client-v40-long-md.md)] を対象にするようにマニフェストを更新しません。 詳しくは、「[Mage.exe (マニフェストの生成および編集ツール)](../../../docs/framework/tools/mage-exe-manifest-generation-and-editing-tool.md)」をご覧ください。  
   
  このツールは、Visual Studio と共に自動的にインストールされます。 このツールを実行するには、開発者コマンド プロンプト (または、Windows 7 の Visual Studio コマンド プロンプト) を使用します。 詳細については、「[Visual Studio 用開発者コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)」を参照してください。  
   
- [!INCLUDE[vs_dev10_long](../../../includes/vs-dev10-long-md.md)] セットアップには、2 つのバージョンの Mage.exe および MageUI.exe がコンポーネントとして含まれています。 バージョン情報を確認するには、MageUI.exe を実行し、 **[ヘルプ]**をクリックして、 **[バージョン情報]**をクリックします。 このドキュメントでは、バージョン 4.0.x.x の Mage.exe および MageUI.exe について説明します。  
+ [!INCLUDE[vs_dev10_long](../../../includes/vs-dev10-long-md.md)] セットアップには、2 つのバージョンの Mage.exe および MageUI.exe がコンポーネントとして含まれています。 バージョン情報を確認するには、MageUI.exe を実行し、 **[ヘルプ]** をクリックして、 **[バージョン情報]** をクリックします。 このドキュメントでは、バージョン 4.0.x.x の Mage.exe および MageUI.exe について説明します。  
   
 > [!NOTE]
 >  MageUI.exe は、MageUI.exe を使用して証明書で署名済みのアプリケーション マニフェストを保存する場合、[compatibleFrameworks](/visualstudio/deployment/compatibleframeworks-element-clickonce-deployment) 要素をサポートしません。 代わりに [Mage.exe](../../../docs/framework/tools/mage-exe-manifest-generation-and-editing-tool.md) を使用する必要があります。  

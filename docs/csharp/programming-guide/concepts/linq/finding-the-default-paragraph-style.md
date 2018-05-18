@@ -1,21 +1,12 @@
 ---
-title: "既定の段落スタイルの検索 (C#)"
-ms.custom: 
+title: 既定の段落スタイルの検索 (C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: be102177-8ab0-444a-b671-7023e555ffdb
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: e2664620127e6e3ed9f723a7c23012905be3781b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: e29ca281e1867a72a76a28765912c39675ca0f27
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="finding-the-default-paragraph-style-c"></a>既定の段落スタイルの検索 (C#)
 「WordprocessingML ドキュメント内の情報の操作」チュートリアルでの最初のタスクは、ドキュメント内にある段落の既定のスタイルを検索することです。  
@@ -96,5 +87,5 @@ The default style is: Normal
   
 -   [段落とそのスタイルの取得 (C#)](../../../../csharp/programming-guide/concepts/linq/retrieving-the-paragraphs-and-their-styles.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [チュートリアル: WordprocessingML ドキュメント内のコンテンツの操作](http://msdn.microsoft.com/library/2696355e-4f83-4eaf-91b2-baa721f42fb4)

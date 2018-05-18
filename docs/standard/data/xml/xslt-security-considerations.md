@@ -1,26 +1,15 @@
 ---
-title: "XSLT のセキュリティに関する考慮事項"
-ms.custom: 
+title: XSLT のセキュリティに関する考慮事項
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: fea695be-617c-4977-9567-140e820436fc
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 7388bbc388dd46a30486a2300150bc9d1566593e
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 9c448e4cd4f40865a11a23af51e134da4b8ba2f7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="xslt-security-considerations"></a>XSLT のセキュリティに関する考慮事項
 XSLT 言語には、優れた性能と柔軟性を兼ね備えた豊富な機能が用意されています。 ただし、多くの機能を利用できることが便利であると同時に、外部から不正に利用される可能性もあります。 XSLT を安全に使用するために、XSLT の使用に伴うさまざまなセキュリティ上の問題とそのリスクを軽減するための基本的な対策を理解しておく必要があります。  

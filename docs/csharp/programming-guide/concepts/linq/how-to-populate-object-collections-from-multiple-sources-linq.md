@@ -1,21 +1,12 @@
 ---
-title: "方法: 複数のソースからオブジェクト コレクションにデータを設定する (LINQ) (C#)"
-ms.custom: 
+title: '方法: 複数のソースからオブジェクト コレクションにデータを設定する (LINQ) (C#)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: 8ad7d480-b46c-4ccc-8c57-76f2d04ccc6d
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: a3d3f0f9380e13addac38e32d4cc095d60e19bcf
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 3ff51b0b5f04a44f83db2590bd7005097b1c0161
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-populate-object-collections-from-multiple-sources-linq-c"></a>方法: 複数のソースからオブジェクト コレクションにデータを設定する (LINQ) (C#)
 この例では、さまざまなソースから一連の新しい型にデータをマージする方法を示します。  
@@ -144,7 +135,7 @@ foreach (var student in queryNamesScores2)
 ## <a name="compiling-the-code"></a>コードのコンパイル  
  .NET Framework Version 3.5 以降を対象とするプロジェクトを作成します。System.Core.dll を参照設定し、System.Linq 名前空間と System.IO 名前空間を `using` ディレクティブで指定します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [LINQ と文字列 (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)  
  [オブジェクト初期化子とコレクション初期化子](../../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md)  
  [匿名型](../../../../csharp/programming-guide/classes-and-structs/anonymous-types.md)

@@ -1,24 +1,15 @@
 ---
-title: "アプリケーション設定へのアクセス (Visual Basic)"
-ms.custom: 
+title: アプリケーション設定へのアクセス (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - My.Settings object [Visual Basic], application settings
 - examples [Visual Basic], application settings
 ms.assetid: e38d0cc7-247a-46ca-ba04-f2913f0adb2e
-caps.latest.revision: "15"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: ea87d6a1d20a7d85b063990f6e401f90548627be
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 3b933287d18a2519969852117fc6f847e9ead461
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="accessing-application-settings-visual-basic"></a>アプリケーション設定へのアクセス (Visual Basic)
 このセクションのトピックでは、`My.Settings` オブジェクトと、それを使用して実行できるタスクについて説明します。  
@@ -28,10 +19,10 @@ ms.lasthandoff: 11/21/2017
   
  `My.Settings` オブジェクトのメソッドを使用すると、現在のユーザー設定を保存するか、または最後に保存した値に戻すことができます。  
   
-## <a name="tasks"></a>タスク  
+## <a name="tasks"></a>[タスク]  
  次の表に示すのは、アプリケーションのフォームにアクセスする方法を示す例です。  
   
-|目的|参照トピック|  
+|終了|解決方法については、|  
 |--------|---------|  
 |ユーザー設定の値を更新する|[方法: Visual Basic でユーザー設定を変更する](../../../../visual-basic/developing-apps/programming/app-settings/how-to-change-user-settings.md)|  
 |アプリケーション設定とユーザー設定をプロパティ グリッドに表示する|[方法: Visual Basic でユーザー設定のためのプロパティ グリッドを作成する](../../../../visual-basic/developing-apps/programming/app-settings/how-to-create-property-grids-for-user-settings.md)|  
