@@ -12,8 +12,8 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-connect-to-a-database"></a>方法 : データベースに接続する
-データベースへの接続、データベースからのオブジェクトの取得、およびデータベースへの変更内容の反映では、<xref:System.Data.Linq.DataContext> を仲介役として使用します。 使用する、<xref:System.Data.Linq.DataContext>使用したのと同様、 [!INCLUDE[vstecado](../../../../../../includes/vstecado-md.md)] <xref:System.Data.SqlClient.SqlConnection>です。 つまり、接続または接続文字列を指定して、<xref:System.Data.Linq.DataContext> を初期化します。 詳細については、次を参照してください。 [DataContext メソッド (O/r デザイナー)](/visualstudio/data-tools/datacontext-methods-o-r-designer)です。  
-  
+データベースへの接続、データベースからのオブジェクトの取得、およびデータベースへの変更内容の反映において、<xref:System.Data.Linq.DataContext> は主要な仲介役です。[!INCLUDE[vstecado](../../../../../../includes/vstecado-md.md)] <xref:System.Data.SqlClient.SqlConnection> を使用するのと同じように <xref:System.Data.Linq.DataContext> を使用します。 つまり、接続または接続文字列を指定して <xref:System.Data.Linq.DataContext> を初期化します。 詳細については [DataContext メソッド (O/R デザイナー)](/visualstudio/data-tools/datacontext-methods-o-r-designer) を参照してください。
+
  <xref:System.Data.Linq.DataContext> の役割は、オブジェクトを求める要求を、データベースに対して発行する SQL クエリに変換し、その結果からオブジェクトを組み立てることです。 <xref:System.Data.Linq.DataContext> では、標準クエリ演算子と同じ演算子パターン ([!INCLUDE[vbteclinqext](../../../../../../includes/vbteclinqext-md.md)] や `Where` など) を実装することで、`Select` を使用できます。  
   
 > [!IMPORTANT]
