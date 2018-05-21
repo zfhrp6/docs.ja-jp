@@ -1,33 +1,24 @@
 ---
-title: "方法: 空のクエリ結果セットをデバッグする (C#)"
-ms.custom: 
+title: '方法: 空のクエリ結果セットをデバッグする (C#)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: b569f0dc-425e-45a6-acbf-770fb761c981
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: f8fb77a65c2c5023685251435d3028ffa9b3c2b3
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: a425327c6ba7168f7070d53a39fa64be991d4ddf
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="how-to-debug-empty-query-results-sets-c"></a><span data-ttu-id="eb54e-102">方法: 空のクエリ結果セットをデバッグする (C#)</span><span class="sxs-lookup"><span data-stu-id="eb54e-102">How to: Debug Empty Query Results Sets (C#)</span></span>
-<span data-ttu-id="eb54e-103">XML ツリーのクエリにおける最も一般的な問題の 1 つは、XML ツリーに既定の名前空間がある場合に、XML が名前空間に含まれていないものとして開発者がクエリを記述してしまうことです。</span><span class="sxs-lookup"><span data-stu-id="eb54e-103">One of the most common problems when querying XML trees is that if the XML tree has a default namespace, the developer sometimes writes the query as though the XML were not in a namespace.</span></span>  
+# <a name="how-to-debug-empty-query-results-sets-c"></a><span data-ttu-id="7b355-102">方法: 空のクエリ結果セットをデバッグする (C#)</span><span class="sxs-lookup"><span data-stu-id="7b355-102">How to: Debug Empty Query Results Sets (C#)</span></span>
+<span data-ttu-id="7b355-103">XML ツリーのクエリにおける最も一般的な問題の 1 つは、XML ツリーに既定の名前空間がある場合に、XML が名前空間に含まれていないものとして開発者がクエリを記述してしまうことです。</span><span class="sxs-lookup"><span data-stu-id="7b355-103">One of the most common problems when querying XML trees is that if the XML tree has a default namespace, the developer sometimes writes the query as though the XML were not in a namespace.</span></span>  
   
- <span data-ttu-id="eb54e-104">このトピックの最初に示す一連の例では、既定の名前空間内の XML が読み込まれ、クエリが不適切に実行される典型的な例を示しています。</span><span class="sxs-lookup"><span data-stu-id="eb54e-104">The first set of examples in this topic shows a typical way that XML in a default namespace is loaded, and is queried improperly.</span></span>  
+ <span data-ttu-id="7b355-104">このトピックの最初に示す一連の例では、既定の名前空間内の XML が読み込まれ、クエリが不適切に実行される典型的な例を示しています。</span><span class="sxs-lookup"><span data-stu-id="7b355-104">The first set of examples in this topic shows a typical way that XML in a default namespace is loaded, and is queried improperly.</span></span>  
   
- <span data-ttu-id="eb54e-105">2 番目に示す一連の例では、名前空間内の XML に対してクエリを実行できるようにするために必要な修正を示しています。</span><span class="sxs-lookup"><span data-stu-id="eb54e-105">The second set of examples show the necessary corrections so that you can query XML in a namespace.</span></span>  
+ <span data-ttu-id="7b355-105">2 番目に示す一連の例では、名前空間内の XML に対してクエリを実行できるようにするために必要な修正を示しています。</span><span class="sxs-lookup"><span data-stu-id="7b355-105">The second set of examples show the necessary corrections so that you can query XML in a namespace.</span></span>  
   
- <span data-ttu-id="eb54e-106">詳細については、「[XML 名前空間の使用 (C#)](../../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="eb54e-106">For more information, see [Working with XML Namespaces (C#)](../../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md).</span></span>  
+ <span data-ttu-id="7b355-106">詳細については、「[XML 名前空間の使用 (C#)](../../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="7b355-106">For more information, see [Working with XML Namespaces (C#)](../../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md).</span></span>  
   
-## <a name="example"></a><span data-ttu-id="eb54e-107">例</span><span class="sxs-lookup"><span data-stu-id="eb54e-107">Example</span></span>  
- <span data-ttu-id="eb54e-108">この例では、名前空間内にある XML の作成、および空の結果セットを返すクエリを示します。</span><span class="sxs-lookup"><span data-stu-id="eb54e-108">This example shows creation of XML in a namespace, and a query that returns an empty result set.</span></span>  
+## <a name="example"></a><span data-ttu-id="7b355-107">例</span><span class="sxs-lookup"><span data-stu-id="7b355-107">Example</span></span>  
+ <span data-ttu-id="7b355-108">この例では、名前空間内にある XML の作成、および空の結果セットを返すクエリを示します。</span><span class="sxs-lookup"><span data-stu-id="7b355-108">This example shows creation of XML in a namespace, and a query that returns an empty result set.</span></span>  
   
 ```csharp  
 XElement root = XElement.Parse(  
@@ -48,17 +39,17 @@ foreach (XElement el in c1)
 Console.WriteLine("End of result set");  
 ```  
   
- <span data-ttu-id="eb54e-109">この例を実行すると、次の結果が得られます。</span><span class="sxs-lookup"><span data-stu-id="eb54e-109">This example produces the following result:</span></span>  
+ <span data-ttu-id="7b355-109">この例を実行すると、次の結果が得られます。</span><span class="sxs-lookup"><span data-stu-id="7b355-109">This example produces the following result:</span></span>  
   
 ```  
 Result set follows:  
 End of result set  
 ```  
   
-## <a name="example"></a><span data-ttu-id="eb54e-110">例</span><span class="sxs-lookup"><span data-stu-id="eb54e-110">Example</span></span>  
- <span data-ttu-id="eb54e-111">この例では、名前空間内にある XML の作成と、適切に記述されたクエリを示します。</span><span class="sxs-lookup"><span data-stu-id="eb54e-111">This example shows creation of XML in a namespace, and a query that is coded properly.</span></span>  
+## <a name="example"></a><span data-ttu-id="7b355-110">例</span><span class="sxs-lookup"><span data-stu-id="7b355-110">Example</span></span>  
+ <span data-ttu-id="7b355-111">この例では、名前空間内にある XML の作成と、適切に記述されたクエリを示します。</span><span class="sxs-lookup"><span data-stu-id="7b355-111">This example shows creation of XML in a namespace, and a query that is coded properly.</span></span>  
   
- <span data-ttu-id="eb54e-112">解決方法は、<xref:System.Xml.Linq.XNamespace> オブジェクトを宣言して初期化し、そのオブジェクトを <xref:System.Xml.Linq.XName> オブジェクトの指定時に使用することです。</span><span class="sxs-lookup"><span data-stu-id="eb54e-112">The solution is to declare and initialize an <xref:System.Xml.Linq.XNamespace> object, and to use it when specifying <xref:System.Xml.Linq.XName> objects.</span></span> <span data-ttu-id="eb54e-113">この場合、<xref:System.Xml.Linq.XElement.Elements%2A> メソッドの引数は <xref:System.Xml.Linq.XName> オブジェクトです。</span><span class="sxs-lookup"><span data-stu-id="eb54e-113">In this case, the argument to the <xref:System.Xml.Linq.XElement.Elements%2A> method is an <xref:System.Xml.Linq.XName> object.</span></span>  
+ <span data-ttu-id="7b355-112">解決方法は、<xref:System.Xml.Linq.XNamespace> オブジェクトを宣言して初期化し、そのオブジェクトを <xref:System.Xml.Linq.XName> オブジェクトの指定時に使用することです。</span><span class="sxs-lookup"><span data-stu-id="7b355-112">The solution is to declare and initialize an <xref:System.Xml.Linq.XNamespace> object, and to use it when specifying <xref:System.Xml.Linq.XName> objects.</span></span> <span data-ttu-id="7b355-113">この場合、<xref:System.Xml.Linq.XElement.Elements%2A> メソッドの引数は <xref:System.Xml.Linq.XName> オブジェクトです。</span><span class="sxs-lookup"><span data-stu-id="7b355-113">In this case, the argument to the <xref:System.Xml.Linq.XElement.Elements%2A> method is an <xref:System.Xml.Linq.XName> object.</span></span>  
   
 ```csharp  
 XElement root = XElement.Parse(  
@@ -80,7 +71,7 @@ foreach (XElement el in c1)
 Console.WriteLine("End of result set");  
 ```  
   
- <span data-ttu-id="eb54e-114">この例を実行すると、次の結果が得られます。</span><span class="sxs-lookup"><span data-stu-id="eb54e-114">This example produces the following result:</span></span>  
+ <span data-ttu-id="7b355-114">この例を実行すると、次の結果が得られます。</span><span class="sxs-lookup"><span data-stu-id="7b355-114">This example produces the following result:</span></span>  
   
 ```  
 Result set follows:  
@@ -90,5 +81,5 @@ Result set follows:
 End of result set  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="eb54e-115">関連項目</span><span class="sxs-lookup"><span data-stu-id="eb54e-115">See Also</span></span>  
- [<span data-ttu-id="eb54e-116">基本的なクエリ (LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="eb54e-116">Basic Queries (LINQ to XML) (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)
+## <a name="see-also"></a><span data-ttu-id="7b355-115">参照</span><span class="sxs-lookup"><span data-stu-id="7b355-115">See Also</span></span>  
+ [<span data-ttu-id="7b355-116">基本的なクエリ (LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="7b355-116">Basic Queries (LINQ to XML) (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)

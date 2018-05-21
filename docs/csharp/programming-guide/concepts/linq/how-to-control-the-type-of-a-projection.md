@@ -1,29 +1,20 @@
 ---
-title: "方法: プロジェクションの型を制御する (C#)"
-ms.custom: 
+title: '方法: プロジェクションの型を制御する (C#)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: e4db6b7e-4cc9-4c8f-af85-94acf32aa348
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 9b7b5b39ca308449b09023bc21446859a728e738
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 67ca04d9f3412def8d8c940c9ed932bf9da3287b
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/07/2018
 ---
-# <a name="how-to-control-the-type-of-a-projection-c"></a><span data-ttu-id="283b8-102">方法: プロジェクションの型を制御する (C#)</span><span class="sxs-lookup"><span data-stu-id="283b8-102">How to: Control the Type of a Projection (C#)</span></span>
-<span data-ttu-id="283b8-103">射影は、1 つのデータのセットを取得し、フィルター処理し、その形式を変更し、その型も変更するプロセスです。</span><span class="sxs-lookup"><span data-stu-id="283b8-103">Projection is the process of taking one set of data, filtering it, changing its shape, and even changing its type.</span></span> <span data-ttu-id="283b8-104">ほとんどのクエリ式は射影を実行します。</span><span class="sxs-lookup"><span data-stu-id="283b8-104">Most query expressions perform projections.</span></span> <span data-ttu-id="283b8-105">このセクション内のクエリ式は、ほとんどが <xref:System.Collections.Generic.IEnumerable%601> の <xref:System.Xml.Linq.XElement> に評価されますが、射影の型を制御して別の型のコレクションを作成することができます。</span><span class="sxs-lookup"><span data-stu-id="283b8-105">Most of the query expressions shown in this section evaluate to <xref:System.Collections.Generic.IEnumerable%601> of <xref:System.Xml.Linq.XElement>, but you can control the type of the projection to create collections of other types.</span></span> <span data-ttu-id="283b8-106">このトピックでは、その方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="283b8-106">This topic shows how to do this.</span></span>  
+# <a name="how-to-control-the-type-of-a-projection-c"></a><span data-ttu-id="9824e-102">方法: プロジェクションの型を制御する (C#)</span><span class="sxs-lookup"><span data-stu-id="9824e-102">How to: Control the Type of a Projection (C#)</span></span>
+<span data-ttu-id="9824e-103">射影は、1 つのデータのセットを取得し、フィルター処理し、その形式を変更し、その型も変更するプロセスです。</span><span class="sxs-lookup"><span data-stu-id="9824e-103">Projection is the process of taking one set of data, filtering it, changing its shape, and even changing its type.</span></span> <span data-ttu-id="9824e-104">ほとんどのクエリ式は射影を実行します。</span><span class="sxs-lookup"><span data-stu-id="9824e-104">Most query expressions perform projections.</span></span> <span data-ttu-id="9824e-105">このセクション内のクエリ式は、ほとんどが <xref:System.Collections.Generic.IEnumerable%601> の <xref:System.Xml.Linq.XElement> に評価されますが、射影の型を制御して別の型のコレクションを作成することができます。</span><span class="sxs-lookup"><span data-stu-id="9824e-105">Most of the query expressions shown in this section evaluate to <xref:System.Collections.Generic.IEnumerable%601> of <xref:System.Xml.Linq.XElement>, but you can control the type of the projection to create collections of other types.</span></span> <span data-ttu-id="9824e-106">このトピックでは、その方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="9824e-106">This topic shows how to do this.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="283b8-107">例</span><span class="sxs-lookup"><span data-stu-id="283b8-107">Example</span></span>  
- <span data-ttu-id="283b8-108">次の例では、`Customer` という新しい型を定義します。</span><span class="sxs-lookup"><span data-stu-id="283b8-108">The following example defines a new type, `Customer`.</span></span> <span data-ttu-id="283b8-109">次に、クエリ式の `Customer` 句で新しい `Select` オブジェクトをインスタンス化します。</span><span class="sxs-lookup"><span data-stu-id="283b8-109">The query expression then instantiates new `Customer` objects in the `Select` clause.</span></span> <span data-ttu-id="283b8-110">これによって、クエリ式の型が <xref:System.Collections.Generic.IEnumerable%601> の `Customer` になります。</span><span class="sxs-lookup"><span data-stu-id="283b8-110">This causes the type of the query expression to be <xref:System.Collections.Generic.IEnumerable%601> of `Customer`.</span></span>  
+## <a name="example"></a><span data-ttu-id="9824e-107">例</span><span class="sxs-lookup"><span data-stu-id="9824e-107">Example</span></span>  
+ <span data-ttu-id="9824e-108">次の例では、`Customer` という新しい型を定義します。</span><span class="sxs-lookup"><span data-stu-id="9824e-108">The following example defines a new type, `Customer`.</span></span> <span data-ttu-id="9824e-109">次に、クエリ式の `Customer` 句で新しい `Select` オブジェクトをインスタンス化します。</span><span class="sxs-lookup"><span data-stu-id="9824e-109">The query expression then instantiates new `Customer` objects in the `Select` clause.</span></span> <span data-ttu-id="9824e-110">これによって、クエリ式の型が <xref:System.Collections.Generic.IEnumerable%601> の `Customer` になります。</span><span class="sxs-lookup"><span data-stu-id="9824e-110">This causes the type of the query expression to be <xref:System.Collections.Generic.IEnumerable%601> of `Customer`.</span></span>  
   
- <span data-ttu-id="283b8-111">この例では、「[サンプル XML ファイル: 顧客と注文 (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml-2.md)」の XML ドキュメントを使用します。</span><span class="sxs-lookup"><span data-stu-id="283b8-111">This example uses the following XML document: [Sample XML File: Customers and Orders (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml-2.md).</span></span>  
+ <span data-ttu-id="9824e-111">この例では、「[サンプル XML ファイル: 顧客と注文 (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml-2.md)」の XML ドキュメントを使用します。</span><span class="sxs-lookup"><span data-stu-id="9824e-111">This example uses the following XML document: [Sample XML File: Customers and Orders (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml-2.md).</span></span>  
   
 ```csharp  
 public class Customer  
@@ -68,7 +59,7 @@ class Program
 }  
 ```  
   
- <span data-ttu-id="283b8-112">このコードを実行すると、次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="283b8-112">This code produces the following output:</span></span>  
+ <span data-ttu-id="9824e-112">このコードを実行すると、次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="9824e-112">This code produces the following output:</span></span>  
   
 ```  
 GREAL:Great Lakes Food Market:Howard Snyder  
@@ -77,6 +68,6 @@ LAZYK:Lazy K Kountry Store:John Steel
 LETSS:Let's Stop N Shop:Jaime Yorres  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="283b8-113">関連項目</span><span class="sxs-lookup"><span data-stu-id="283b8-113">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="9824e-113">参照</span><span class="sxs-lookup"><span data-stu-id="9824e-113">See Also</span></span>  
  <xref:System.Linq.Enumerable.Select%2A>  
- [<span data-ttu-id="283b8-114">プロジェクションと変換 (LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="283b8-114">Projections and Transformations (LINQ to XML) (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)
+ [<span data-ttu-id="9824e-114">プロジェクションと変換 (LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="9824e-114">Projections and Transformations (LINQ to XML) (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)

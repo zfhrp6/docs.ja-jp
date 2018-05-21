@@ -1,37 +1,28 @@
 ---
-title: "WordprocessingML ドキュメント1 のスタイル パーツ"
-ms.custom: 
+title: WordprocessingML ドキュメント1 のスタイル パーツ
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: 5458bccf-3898-4661-904b-7d280c9239a9
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: c3b2a7d520752612697755996e8bde463ff290fc
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: e55e9ea8a2e8e35c5de7ee7442d3e8eec261906b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="style-part-of-a-wordprocessingml-document"></a><span data-ttu-id="c258e-102">WordprocessingML ドキュメントのスタイル パーツ</span><span class="sxs-lookup"><span data-stu-id="c258e-102">Style Part of a WordprocessingML Document</span></span>
-<span data-ttu-id="c258e-103">このトピックでは、Office Open XML WordprocessingML ドキュメントのスタイル パーツの例について説明します。</span><span class="sxs-lookup"><span data-stu-id="c258e-103">This topic shows an example of the style part of the Office Open XML WordprocessingML document.</span></span>  
+# <a name="style-part-of-a-wordprocessingml-document"></a><span data-ttu-id="85d6f-102">WordprocessingML ドキュメントのスタイル パーツ</span><span class="sxs-lookup"><span data-stu-id="85d6f-102">Style Part of a WordprocessingML Document</span></span>
+<span data-ttu-id="85d6f-103">このトピックでは、Office Open XML WordprocessingML ドキュメントのスタイル パーツの例について説明します。</span><span class="sxs-lookup"><span data-stu-id="85d6f-103">This topic shows an example of the style part of the Office Open XML WordprocessingML document.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="c258e-104">例</span><span class="sxs-lookup"><span data-stu-id="c258e-104">Example</span></span>  
- <span data-ttu-id="c258e-105">Office Open XML WordprocessingML ドキュメントのスタイル パーツを構成する XML の例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="c258e-105">The following example is the XML that makes up the style part of an Office Open XML WordprocessingML document.</span></span>  
+## <a name="example"></a><span data-ttu-id="85d6f-104">例</span><span class="sxs-lookup"><span data-stu-id="85d6f-104">Example</span></span>  
+ <span data-ttu-id="85d6f-105">Office Open XML WordprocessingML ドキュメントのスタイル パーツを構成する XML の例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="85d6f-105">The following example is the XML that makes up the style part of an Office Open XML WordprocessingML document.</span></span>  
   
- <span data-ttu-id="c258e-106">既定の段落スタイルには、次の開始タグを持つ要素があります。</span><span class="sxs-lookup"><span data-stu-id="c258e-106">The default paragraph style has an element with the following opening tag:</span></span>  
+ <span data-ttu-id="85d6f-106">既定の段落スタイルには、次の開始タグを持つ要素があります。</span><span class="sxs-lookup"><span data-stu-id="85d6f-106">The default paragraph style has an element with the following opening tag:</span></span>  
   
 ```  
 <w:style w:type="paragraph" w:default="1" w:styleId="Normal">  
 ```  
   
- <span data-ttu-id="c258e-107">既定のスタイル識別子を検索するクエリを記述するときは、既定のスタイルを持つパラグラフのスタイルをクエリで識別できるようにするために、この情報を理解しておく必要があります。</span><span class="sxs-lookup"><span data-stu-id="c258e-107">You need to know this information when you write the query to find the default style identifier, so that the query can identify the style of paragraphs that have the default style.</span></span>  
+ <span data-ttu-id="85d6f-107">既定のスタイル識別子を検索するクエリを記述するときは、既定のスタイルを持つパラグラフのスタイルをクエリで識別できるようにするために、この情報を理解しておく必要があります。</span><span class="sxs-lookup"><span data-stu-id="85d6f-107">You need to know this information when you write the query to find the default style identifier, so that the query can identify the style of paragraphs that have the default style.</span></span>  
   
- <span data-ttu-id="c258e-108">これらのドキュメントは、Microsoft Word によって生成される通常のドキュメントと比べると非常に単純です。</span><span class="sxs-lookup"><span data-stu-id="c258e-108">Note that these documents are very simple when compared to typical documents that Microsoft Word generates.</span></span> <span data-ttu-id="c258e-109">多くの場合、Word では多数の追加情報、追加の書式設定、およびメタデータが保存されます。</span><span class="sxs-lookup"><span data-stu-id="c258e-109">In many cases, Word saves a great deal of additional information, additional formatting and metadata.</span></span> <span data-ttu-id="c258e-110">さらに、この例とは異なり、Word では行を読みやすくするための書式設定が行われません。代わりに、XML はインデントなしで保存されます。</span><span class="sxs-lookup"><span data-stu-id="c258e-110">Furthermore, Word does not format the lines to be easily readable as in this example; instead, the XML is saved without indentation.</span></span> <span data-ttu-id="c258e-111">ただし、すべての WordprocessingML ドキュメントは、同一の XML 基本構造を共有します。</span><span class="sxs-lookup"><span data-stu-id="c258e-111">However, all WordprocessingML documents share the same basic XML shape.</span></span> <span data-ttu-id="c258e-112">このため、このチュートリアルで提供されるクエリは、より複雑なドキュメントを処理することができます。</span><span class="sxs-lookup"><span data-stu-id="c258e-112">Because of this, the queries presented in this tutorial will work with more complicated documents.</span></span>  
+ <span data-ttu-id="85d6f-108">これらのドキュメントは、Microsoft Word によって生成される通常のドキュメントと比べると非常に単純です。</span><span class="sxs-lookup"><span data-stu-id="85d6f-108">Note that these documents are very simple when compared to typical documents that Microsoft Word generates.</span></span> <span data-ttu-id="85d6f-109">多くの場合、Word では多数の追加情報、追加の書式設定、およびメタデータが保存されます。</span><span class="sxs-lookup"><span data-stu-id="85d6f-109">In many cases, Word saves a great deal of additional information, additional formatting and metadata.</span></span> <span data-ttu-id="85d6f-110">さらに、この例とは異なり、Word では行を読みやすくするための書式設定が行われません。代わりに、XML はインデントなしで保存されます。</span><span class="sxs-lookup"><span data-stu-id="85d6f-110">Furthermore, Word does not format the lines to be easily readable as in this example; instead, the XML is saved without indentation.</span></span> <span data-ttu-id="85d6f-111">ただし、すべての WordprocessingML ドキュメントは、同一の XML 基本構造を共有します。</span><span class="sxs-lookup"><span data-stu-id="85d6f-111">However, all WordprocessingML documents share the same basic XML shape.</span></span> <span data-ttu-id="85d6f-112">このため、このチュートリアルで提供されるクエリは、より複雑なドキュメントを処理することができます。</span><span class="sxs-lookup"><span data-stu-id="85d6f-112">Because of this, the queries presented in this tutorial will work with more complicated documents.</span></span>  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -148,5 +139,5 @@ ms.lasthandoff: 10/18/2017
 </w:styles>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="c258e-113">関連項目</span><span class="sxs-lookup"><span data-stu-id="c258e-113">See Also</span></span>  
- [<span data-ttu-id="c258e-114">Office Open XML WordprocessingML ドキュメントの詳細 (C#)</span><span class="sxs-lookup"><span data-stu-id="c258e-114">Details of Office Open XML WordprocessingML Documents (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/details-of-office-open-xml-wordprocessingml-documents.md)
+## <a name="see-also"></a><span data-ttu-id="85d6f-113">参照</span><span class="sxs-lookup"><span data-stu-id="85d6f-113">See Also</span></span>  
+ [<span data-ttu-id="85d6f-114">Office Open XML WordprocessingML ドキュメントの詳細 (C#)</span><span class="sxs-lookup"><span data-stu-id="85d6f-114">Details of Office Open XML WordprocessingML Documents (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/details-of-office-open-xml-wordprocessingml-documents.md)

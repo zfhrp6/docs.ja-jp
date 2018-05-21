@@ -1,26 +1,17 @@
 ---
-title: "サンプル XML ファイル: 名前空間内の一般的な購買発注書 1"
-ms.custom: 
+title: 'サンプル XML ファイル: 名前空間内の一般的な購買発注書 1'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: 84dc3339-ea32-4ccc-9af6-ab38ddfecced
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 4e85dc10de556f37d63438b4c2d19f52e181efad
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 0adee32a3ee4d2347bd2e0a84024fe478346987a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="sample-xml-file-typical-purchase-order-in-a-namespace"></a><span data-ttu-id="5b89a-102">サンプル XML ファイル : 名前空間内の一般的な購買発注書</span><span class="sxs-lookup"><span data-stu-id="5b89a-102">Sample XML File: Typical Purchase Order in a Namespace</span></span>
-<span data-ttu-id="5b89a-103">次の XML ファイルは、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] ドキュメントのさまざまな例で使用されます。</span><span class="sxs-lookup"><span data-stu-id="5b89a-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="5b89a-104">このファイルは、一般的な購買発注書です。</span><span class="sxs-lookup"><span data-stu-id="5b89a-104">This file is a typical purchase order.</span></span> <span data-ttu-id="5b89a-105">XML は名前空間に含まれています。</span><span class="sxs-lookup"><span data-stu-id="5b89a-105">The XML is in a namespace.</span></span>  
+# <a name="sample-xml-file-typical-purchase-order-in-a-namespace"></a><span data-ttu-id="170ba-102">サンプル XML ファイル : 名前空間内の一般的な購買発注書</span><span class="sxs-lookup"><span data-stu-id="170ba-102">Sample XML File: Typical Purchase Order in a Namespace</span></span>
+<span data-ttu-id="170ba-103">次の XML ファイルは、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] ドキュメントのさまざまな例で使用されます。</span><span class="sxs-lookup"><span data-stu-id="170ba-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="170ba-104">このファイルは、一般的な購買発注書です。</span><span class="sxs-lookup"><span data-stu-id="170ba-104">This file is a typical purchase order.</span></span> <span data-ttu-id="170ba-105">XML は名前空間に含まれています。</span><span class="sxs-lookup"><span data-stu-id="170ba-105">The XML is in a namespace.</span></span>  
   
-## <a name="purchaseorderinnamespacexml"></a><span data-ttu-id="5b89a-106">PurchaseOrderInNamespace.xml</span><span class="sxs-lookup"><span data-stu-id="5b89a-106">PurchaseOrderInNamespace.xml</span></span>  
+## <a name="purchaseorderinnamespacexml"></a><span data-ttu-id="170ba-106">PurchaseOrderInNamespace.xml</span><span class="sxs-lookup"><span data-stu-id="170ba-106">PurchaseOrderInNamespace.xml</span></span>  
   
 ```xml  
 <?xml version="1.0"?>  
@@ -62,5 +53,5 @@ ms.lasthandoff: 10/18/2017
 </aw:PurchaseOrder>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="5b89a-107">関連項目</span><span class="sxs-lookup"><span data-stu-id="5b89a-107">See Also</span></span>  
- [<span data-ttu-id="5b89a-108">サンプル XML ドキュメント (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="5b89a-108">Sample XML Documents (LINQ to XML)</span></span>](../../../../csharp/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
+## <a name="see-also"></a><span data-ttu-id="170ba-107">参照</span><span class="sxs-lookup"><span data-stu-id="170ba-107">See Also</span></span>  
+ [<span data-ttu-id="170ba-108">サンプル XML ドキュメント (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="170ba-108">Sample XML Documents (LINQ to XML)</span></span>](../../../../csharp/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)

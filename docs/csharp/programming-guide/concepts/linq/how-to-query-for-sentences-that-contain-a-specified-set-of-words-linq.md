@@ -1,26 +1,17 @@
 ---
-title: "方法 : 指定された単語のセットを含む文章を照会する (LINQ) (C#)"
-ms.custom: 
+title: '方法 : 指定された単語のセットを含む文章を照会する (LINQ) (C#)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: 0724b429-4b87-4d26-a7b1-409358f3fc20
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: befc93a21388a87fdfd2416349b1310e82378f18
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 736078ccf97ba3e61748932c3e48fb436b2c5564
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="how-to-query-for-sentences-that-contain-a-specified-set-of-words-linq-c"></a><span data-ttu-id="3a73d-102">方法 : 指定された単語のセットを含む文章を照会する (LINQ) (C#)</span><span class="sxs-lookup"><span data-stu-id="3a73d-102">How to: Query for Sentences that Contain a Specified Set of Words (LINQ) (C#)</span></span>
-<span data-ttu-id="3a73d-103">この例は、指定された一連の単語と一致する文言を含む文をテキスト ファイルから検索する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="3a73d-103">This example shows how to find sentences in a text file that contain matches for each of a specified set of words.</span></span> <span data-ttu-id="3a73d-104">この例では検索語句の配列をハードコーディングしていますが、実行時に動的に設定することもできます。</span><span class="sxs-lookup"><span data-stu-id="3a73d-104">Although the array of search terms is hard-coded in this example, it could also be populated dynamically at runtime.</span></span> <span data-ttu-id="3a73d-105">この例のクエリを実行すると、"Historically"、"data"、"integrated" という単語をすべて含んだ文が返されます。</span><span class="sxs-lookup"><span data-stu-id="3a73d-105">In this example, the query returns the sentences that contain the words "Historically," "data," and "integrated."</span></span>  
+# <a name="how-to-query-for-sentences-that-contain-a-specified-set-of-words-linq-c"></a><span data-ttu-id="9552f-102">方法 : 指定された単語のセットを含む文章を照会する (LINQ) (C#)</span><span class="sxs-lookup"><span data-stu-id="9552f-102">How to: Query for Sentences that Contain a Specified Set of Words (LINQ) (C#)</span></span>
+<span data-ttu-id="9552f-103">この例は、指定された一連の単語と一致する文言を含む文をテキスト ファイルから検索する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="9552f-103">This example shows how to find sentences in a text file that contain matches for each of a specified set of words.</span></span> <span data-ttu-id="9552f-104">この例では検索語句の配列をハードコーディングしていますが、実行時に動的に設定することもできます。</span><span class="sxs-lookup"><span data-stu-id="9552f-104">Although the array of search terms is hard-coded in this example, it could also be populated dynamically at runtime.</span></span> <span data-ttu-id="9552f-105">この例のクエリを実行すると、"Historically"、"data"、"integrated" という単語をすべて含んだ文が返されます。</span><span class="sxs-lookup"><span data-stu-id="9552f-105">In this example, the query returns the sentences that contain the words "Historically," "data," and "integrated."</span></span>  
   
-## <a name="example"></a><span data-ttu-id="3a73d-106">例</span><span class="sxs-lookup"><span data-stu-id="3a73d-106">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="9552f-106">例</span><span class="sxs-lookup"><span data-stu-id="9552f-106">Example</span></span>  
   
 ```csharp  
 class FindSentences  
@@ -70,12 +61,12 @@ Historically, the world of data and the world of objects have not been well inte
 */  
 ```  
   
- <span data-ttu-id="3a73d-107">このクエリではまず、テキストを文単位に分割し、個々の単語を保持する文字列の配列に分割しています。</span><span class="sxs-lookup"><span data-stu-id="3a73d-107">The query works by first splitting the text into sentences, and then splitting the sentences into an array of strings that hold each word.</span></span> <span data-ttu-id="3a73d-108">その各配列について、重複する単語を <xref:System.Linq.Enumerable.Distinct%2A> メソッドですべて削除したうえで、それらの単語の配列と `wordsToMatch` 配列との <xref:System.Linq.Enumerable.Intersect%2A> 演算を実行します。</span><span class="sxs-lookup"><span data-stu-id="3a73d-108">For each of these arrays, the <xref:System.Linq.Enumerable.Distinct%2A> method removes all duplicate words, and then the query performs an <xref:System.Linq.Enumerable.Intersect%2A> operation on the word array and the `wordsToMatch` array.</span></span> <span data-ttu-id="3a73d-109">共通部分のカウントと `wordsToMatch` 配列のカウントとが一致した場合、文を構成する単語内にすべての検索語句が見つかったものとして判断され、該当する文が返されます。</span><span class="sxs-lookup"><span data-stu-id="3a73d-109">If the count of the intersection is the same as the count of the `wordsToMatch` array, all words were found in the words and the original sentence is returned.</span></span>  
+ <span data-ttu-id="9552f-107">このクエリではまず、テキストを文単位に分割し、個々の単語を保持する文字列の配列に分割しています。</span><span class="sxs-lookup"><span data-stu-id="9552f-107">The query works by first splitting the text into sentences, and then splitting the sentences into an array of strings that hold each word.</span></span> <span data-ttu-id="9552f-108">その各配列について、重複する単語を <xref:System.Linq.Enumerable.Distinct%2A> メソッドですべて削除したうえで、それらの単語の配列と `wordsToMatch` 配列との <xref:System.Linq.Enumerable.Intersect%2A> 演算を実行します。</span><span class="sxs-lookup"><span data-stu-id="9552f-108">For each of these arrays, the <xref:System.Linq.Enumerable.Distinct%2A> method removes all duplicate words, and then the query performs an <xref:System.Linq.Enumerable.Intersect%2A> operation on the word array and the `wordsToMatch` array.</span></span> <span data-ttu-id="9552f-109">共通部分のカウントと `wordsToMatch` 配列のカウントとが一致した場合、文を構成する単語内にすべての検索語句が見つかったものとして判断され、該当する文が返されます。</span><span class="sxs-lookup"><span data-stu-id="9552f-109">If the count of the intersection is the same as the count of the `wordsToMatch` array, all words were found in the words and the original sentence is returned.</span></span>  
   
- <span data-ttu-id="3a73d-110">句読点を文字列から削除するために、<xref:System.String.Split%2A> の呼び出しでは句読点を区切り記号として使用しています。</span><span class="sxs-lookup"><span data-stu-id="3a73d-110">In the call to <xref:System.String.Split%2A>, the punctuation marks are used as separators in order to remove them from the string.</span></span> <span data-ttu-id="3a73d-111">この処理がないと、たとえば "Historically," という文字列があった場合に、`wordsToMatch` 配列内の "Historically" と一致しません。</span><span class="sxs-lookup"><span data-stu-id="3a73d-111">If you did not do this, for example you could have a string "Historically," that would not match "Historically" in the `wordsToMatch` array.</span></span> <span data-ttu-id="3a73d-112">ソース テキストに使われている句読点の種類によっては、別の区切り記号を使う必要があります。</span><span class="sxs-lookup"><span data-stu-id="3a73d-112">You may have to use additional separators, depending on the types of punctuation found in the source text.</span></span>  
+ <span data-ttu-id="9552f-110">句読点を文字列から削除するために、<xref:System.String.Split%2A> の呼び出しでは句読点を区切り記号として使用しています。</span><span class="sxs-lookup"><span data-stu-id="9552f-110">In the call to <xref:System.String.Split%2A>, the punctuation marks are used as separators in order to remove them from the string.</span></span> <span data-ttu-id="9552f-111">この処理がないと、たとえば "Historically," という文字列があった場合に、`wordsToMatch` 配列内の "Historically" と一致しません。</span><span class="sxs-lookup"><span data-stu-id="9552f-111">If you did not do this, for example you could have a string "Historically," that would not match "Historically" in the `wordsToMatch` array.</span></span> <span data-ttu-id="9552f-112">ソース テキストに使われている句読点の種類によっては、別の区切り記号を使う必要があります。</span><span class="sxs-lookup"><span data-stu-id="9552f-112">You may have to use additional separators, depending on the types of punctuation found in the source text.</span></span>  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="3a73d-113">コードのコンパイル</span><span class="sxs-lookup"><span data-stu-id="3a73d-113">Compiling the Code</span></span>  
- <span data-ttu-id="3a73d-114">.NET Framework Version 3.5 以降を対象とするプロジェクトを作成します。System.Core.dll を参照設定し、System.Linq 名前空間と System.IO 名前空間を `using` ディレクティブで指定します。</span><span class="sxs-lookup"><span data-stu-id="3a73d-114">Create a project that targets the .NET Framework  version 3.5 or higher, with a reference to System.Core.dll and `using` directives for the System.Linq and System.IO namespaces.</span></span>  
+## <a name="compiling-the-code"></a><span data-ttu-id="9552f-113">コードのコンパイル</span><span class="sxs-lookup"><span data-stu-id="9552f-113">Compiling the Code</span></span>  
+ <span data-ttu-id="9552f-114">.NET Framework Version 3.5 以降を対象とするプロジェクトを作成します。System.Core.dll を参照設定し、System.Linq 名前空間と System.IO 名前空間を `using` ディレクティブで指定します。</span><span class="sxs-lookup"><span data-stu-id="9552f-114">Create a project that targets the .NET Framework  version 3.5 or higher, with a reference to System.Core.dll and `using` directives for the System.Linq and System.IO namespaces.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="3a73d-115">関連項目</span><span class="sxs-lookup"><span data-stu-id="3a73d-115">See Also</span></span>  
- [<span data-ttu-id="3a73d-116">LINQ と文字列 (C#)</span><span class="sxs-lookup"><span data-stu-id="3a73d-116">LINQ and Strings (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)
+## <a name="see-also"></a><span data-ttu-id="9552f-115">参照</span><span class="sxs-lookup"><span data-stu-id="9552f-115">See Also</span></span>  
+ [<span data-ttu-id="9552f-116">LINQ と文字列 (C#)</span><span class="sxs-lookup"><span data-stu-id="9552f-116">LINQ and Strings (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)

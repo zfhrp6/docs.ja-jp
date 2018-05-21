@@ -1,31 +1,22 @@
 ---
-title: "方法: 子要素の子孫を検索する (XPath-LINQ to XML) (C#)"
-ms.custom: 
+title: '方法: 子要素の子孫を検索する (XPath-LINQ to XML) (C#)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: 505b7512-bb8b-4f85-abbf-491f039c961e
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 873cfe6a725a932ac4616e7ccf0ea11e3f6479f5
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 548ec3f76a17ef8575e7e5e90ef4cbf8d2666a64
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="how-to-find-descendants-of-a-child-element-xpath-linq-to-xml-c"></a><span data-ttu-id="ccb41-102">方法: 子要素の子孫を検索する (XPath-LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="ccb41-102">How to: Find Descendants of a Child Element (XPath-LINQ to XML) (C#)</span></span>
-<span data-ttu-id="ccb41-103">このトピックでは、特定の名前を持つ子要素の子孫要素を取得する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="ccb41-103">This topic shows how to get the descendant elements of a child element with a particular name.</span></span>  
+# <a name="how-to-find-descendants-of-a-child-element-xpath-linq-to-xml-c"></a><span data-ttu-id="63bb6-102">方法: 子要素の子孫を検索する (XPath-LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="63bb6-102">How to: Find Descendants of a Child Element (XPath-LINQ to XML) (C#)</span></span>
+<span data-ttu-id="63bb6-103">このトピックでは、特定の名前を持つ子要素の子孫要素を取得する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="63bb6-103">This topic shows how to get the descendant elements of a child element with a particular name.</span></span>  
   
- <span data-ttu-id="ccb41-104">XPath 式を次に示します。</span><span class="sxs-lookup"><span data-stu-id="ccb41-104">The XPath expression is:</span></span>  
+ <span data-ttu-id="63bb6-104">XPath 式を次に示します。</span><span class="sxs-lookup"><span data-stu-id="63bb6-104">The XPath expression is:</span></span>  
   
  `./Paragraph//Text/text()`  
   
-## <a name="example"></a><span data-ttu-id="ccb41-105">例</span><span class="sxs-lookup"><span data-stu-id="ccb41-105">Example</span></span>  
- <span data-ttu-id="ccb41-106">この例では、ワード プロセッシング ドキュメントの XML 表現からテキストを抽出する際に発生する問題をシミュレートします。</span><span class="sxs-lookup"><span data-stu-id="ccb41-106">This example simulates the problems of extracting text from an XML representation of a word processing document.</span></span> <span data-ttu-id="ccb41-107">最初にすべての `Paragraph` 要素を選択し、次に各 `Text` 要素の `Paragraph` 子孫要素をすべて選択します。</span><span class="sxs-lookup"><span data-stu-id="ccb41-107">It first selects all `Paragraph` elements, and then it selects all `Text` descendant elements of each `Paragraph` element.</span></span> <span data-ttu-id="ccb41-108">`Text` 要素の `Comment` 子孫要素は選択しません。</span><span class="sxs-lookup"><span data-stu-id="ccb41-108">This doesn't select the descendant `Text` elements of the `Comment` element.</span></span>  
+## <a name="example"></a><span data-ttu-id="63bb6-105">例</span><span class="sxs-lookup"><span data-stu-id="63bb6-105">Example</span></span>  
+ <span data-ttu-id="63bb6-106">この例では、ワード プロセッシング ドキュメントの XML 表現からテキストを抽出する際に発生する問題をシミュレートします。</span><span class="sxs-lookup"><span data-stu-id="63bb6-106">This example simulates the problems of extracting text from an XML representation of a word processing document.</span></span> <span data-ttu-id="63bb6-107">最初にすべての `Paragraph` 要素を選択し、次に各 `Text` 要素の `Paragraph` 子孫要素をすべて選択します。</span><span class="sxs-lookup"><span data-stu-id="63bb6-107">It first selects all `Paragraph` elements, and then it selects all `Text` descendant elements of each `Paragraph` element.</span></span> <span data-ttu-id="63bb6-108">`Text` 要素の `Comment` 子孫要素は選択しません。</span><span class="sxs-lookup"><span data-stu-id="63bb6-108">This doesn't select the descendant `Text` elements of the `Comment` element.</span></span>  
   
 ```csharp  
 XElement root = XElement.Parse(  
@@ -76,12 +67,12 @@ else
 Console.WriteLine(str2);  
 ```  
   
- <span data-ttu-id="ccb41-109">この例を実行すると、次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="ccb41-109">This example produces the following output:</span></span>  
+ <span data-ttu-id="63bb6-109">この例を実行すると、次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="63bb6-109">This example produces the following output:</span></span>  
   
 ```  
 Results are identical  
 This is the start of a sentence.  This is a second sentence.  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="ccb41-110">関連項目</span><span class="sxs-lookup"><span data-stu-id="ccb41-110">See Also</span></span>  
- [<span data-ttu-id="ccb41-111">XPath ユーザー向けの LINQ to XML (C#)</span><span class="sxs-lookup"><span data-stu-id="ccb41-111">LINQ to XML for XPath Users (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+## <a name="see-also"></a><span data-ttu-id="63bb6-110">参照</span><span class="sxs-lookup"><span data-stu-id="63bb6-110">See Also</span></span>  
+ [<span data-ttu-id="63bb6-111">XPath ユーザー向けの LINQ to XML (C#)</span><span class="sxs-lookup"><span data-stu-id="63bb6-111">LINQ to XML for XPath Users (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

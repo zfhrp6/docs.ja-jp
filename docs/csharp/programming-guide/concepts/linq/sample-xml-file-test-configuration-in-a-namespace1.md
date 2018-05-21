@@ -1,26 +1,17 @@
 ---
-title: "サンプル XML ファイル: 名前空間内のテスト構成 1"
-ms.custom: 
+title: 'サンプル XML ファイル: 名前空間内のテスト構成 1'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: e75ad1bc-5636-4623-9a34-a286a8c485d6
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: fecab66eae4b5ed93788435757aed555b708eb3f
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 04d66eaa7fd134fdf368614ca94261b80c16d4d9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="sample-xml-file-test-configuration-in-a-namespace"></a><span data-ttu-id="731a3-102">サンプル XML ファイル : 名前空間内のテスト構成</span><span class="sxs-lookup"><span data-stu-id="731a3-102">Sample XML File: Test Configuration in a Namespace</span></span>
-<span data-ttu-id="731a3-103">次の XML ファイルは、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] ドキュメントのさまざまな例で使用されます。</span><span class="sxs-lookup"><span data-stu-id="731a3-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="731a3-104">これはテスト構成ファイルです。</span><span class="sxs-lookup"><span data-stu-id="731a3-104">This is a test configuration file.</span></span> <span data-ttu-id="731a3-105">XML は名前空間に含まれています。</span><span class="sxs-lookup"><span data-stu-id="731a3-105">The XML is in a namespace.</span></span>  
+# <a name="sample-xml-file-test-configuration-in-a-namespace"></a><span data-ttu-id="e882f-102">サンプル XML ファイル : 名前空間内のテスト構成</span><span class="sxs-lookup"><span data-stu-id="e882f-102">Sample XML File: Test Configuration in a Namespace</span></span>
+<span data-ttu-id="e882f-103">次の XML ファイルは、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] ドキュメントのさまざまな例で使用されます。</span><span class="sxs-lookup"><span data-stu-id="e882f-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="e882f-104">これはテスト構成ファイルです。</span><span class="sxs-lookup"><span data-stu-id="e882f-104">This is a test configuration file.</span></span> <span data-ttu-id="e882f-105">XML は名前空間に含まれています。</span><span class="sxs-lookup"><span data-stu-id="e882f-105">The XML is in a namespace.</span></span>  
   
-## <a name="testconfiginnamespacexml"></a><span data-ttu-id="731a3-106">TestConfigInNamespace.xml</span><span class="sxs-lookup"><span data-stu-id="731a3-106">TestConfigInNamespace.xml</span></span>  
+## <a name="testconfiginnamespacexml"></a><span data-ttu-id="e882f-106">TestConfigInNamespace.xml</span><span class="sxs-lookup"><span data-stu-id="e882f-106">TestConfigInNamespace.xml</span></span>  
   
 ```xml  
 <?xml version="1.0"?>  
@@ -64,5 +55,5 @@ ms.lasthandoff: 10/18/2017
 </Tests>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="731a3-107">関連項目</span><span class="sxs-lookup"><span data-stu-id="731a3-107">See Also</span></span>  
- [<span data-ttu-id="731a3-108">サンプル XML ドキュメント (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="731a3-108">Sample XML Documents (LINQ to XML)</span></span>](../../../../csharp/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
+## <a name="see-also"></a><span data-ttu-id="e882f-107">参照</span><span class="sxs-lookup"><span data-stu-id="e882f-107">See Also</span></span>  
+ [<span data-ttu-id="e882f-108">サンプル XML ドキュメント (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="e882f-108">Sample XML Documents (LINQ to XML)</span></span>](../../../../csharp/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)

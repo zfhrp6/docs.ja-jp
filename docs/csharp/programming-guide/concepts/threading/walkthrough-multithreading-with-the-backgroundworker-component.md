@@ -1,81 +1,72 @@
 ---
-title: "チュートリアル: BackgroundWorker コンポーネントでのマルチスレッド (C#)"
-ms.custom: 
+title: 'チュートリアル: BackgroundWorker コンポーネントでのマルチスレッド (C#)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: ff670fbf-a0ac-40c1-ab08-9ed53768f880
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 72d6e9ab42ca270ebe0691be23ebe181b973620d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: bc334261dbea7759d1bb571cc61a5f00f84531a4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="walkthrough-multithreading-with-the-backgroundworker-component-c"></a><span data-ttu-id="e9043-102">チュートリアル: BackgroundWorker コンポーネントでのマルチスレッド (C#)</span><span class="sxs-lookup"><span data-stu-id="e9043-102">Walkthrough: Multithreading with the BackgroundWorker Component (C#)</span></span>
-<span data-ttu-id="e9043-103">このチュートリアルでは、テキスト ファイルで単語を検索する、マルチスレッドの Windows Forms アプリケーションを作成する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="e9043-103">This walkthrough demonstrates how to create a multithreaded Windows Forms application that searches a text file for occurrences of a word.</span></span> <span data-ttu-id="e9043-104">具体的には、次のタスクについて説明します。</span><span class="sxs-lookup"><span data-stu-id="e9043-104">It demonstrates:</span></span>  
+# <a name="walkthrough-multithreading-with-the-backgroundworker-component-c"></a><span data-ttu-id="e07cb-102">チュートリアル: BackgroundWorker コンポーネントでのマルチスレッド (C#)</span><span class="sxs-lookup"><span data-stu-id="e07cb-102">Walkthrough: Multithreading with the BackgroundWorker Component (C#)</span></span>
+<span data-ttu-id="e07cb-103">このチュートリアルでは、テキスト ファイルで単語を検索する、マルチスレッドの Windows Forms アプリケーションを作成する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="e07cb-103">This walkthrough demonstrates how to create a multithreaded Windows Forms application that searches a text file for occurrences of a word.</span></span> <span data-ttu-id="e07cb-104">具体的には、次のタスクについて説明します。</span><span class="sxs-lookup"><span data-stu-id="e07cb-104">It demonstrates:</span></span>  
   
--   <span data-ttu-id="e9043-105"><xref:System.ComponentModel.BackgroundWorker> コンポーネントによって呼び出すことができるメソッドを使用してクラスを定義する。</span><span class="sxs-lookup"><span data-stu-id="e9043-105">Defining a class with a method that can be called by the <xref:System.ComponentModel.BackgroundWorker> component.</span></span>  
+-   <span data-ttu-id="e07cb-105"><xref:System.ComponentModel.BackgroundWorker> コンポーネントによって呼び出すことができるメソッドを使用してクラスを定義する。</span><span class="sxs-lookup"><span data-stu-id="e07cb-105">Defining a class with a method that can be called by the <xref:System.ComponentModel.BackgroundWorker> component.</span></span>  
   
--   <span data-ttu-id="e9043-106"><xref:System.ComponentModel.BackgroundWorker> コンポーネントによって生成されたイベントを処理する。</span><span class="sxs-lookup"><span data-stu-id="e9043-106">Handling events raised by the <xref:System.ComponentModel.BackgroundWorker> component.</span></span>  
+-   <span data-ttu-id="e07cb-106"><xref:System.ComponentModel.BackgroundWorker> コンポーネントによって生成されたイベントを処理する。</span><span class="sxs-lookup"><span data-stu-id="e07cb-106">Handling events raised by the <xref:System.ComponentModel.BackgroundWorker> component.</span></span>  
   
--   <span data-ttu-id="e9043-107"><xref:System.ComponentModel.BackgroundWorker> コンポーネントを起動してメソッドを実行する。</span><span class="sxs-lookup"><span data-stu-id="e9043-107">Starting a <xref:System.ComponentModel.BackgroundWorker> component to run a method.</span></span>  
+-   <span data-ttu-id="e07cb-107"><xref:System.ComponentModel.BackgroundWorker> コンポーネントを起動してメソッドを実行する。</span><span class="sxs-lookup"><span data-stu-id="e07cb-107">Starting a <xref:System.ComponentModel.BackgroundWorker> component to run a method.</span></span>  
   
--   <span data-ttu-id="e9043-108"><xref:System.ComponentModel.BackgroundWorker> コンポーネントを停止する `Cancel` ボタンを実装する。</span><span class="sxs-lookup"><span data-stu-id="e9043-108">Implementing a `Cancel` button that stops the <xref:System.ComponentModel.BackgroundWorker> component.</span></span>  
+-   <span data-ttu-id="e07cb-108"><xref:System.ComponentModel.BackgroundWorker> コンポーネントを停止する `Cancel` ボタンを実装する。</span><span class="sxs-lookup"><span data-stu-id="e07cb-108">Implementing a `Cancel` button that stops the <xref:System.ComponentModel.BackgroundWorker> component.</span></span>  
   
-### <a name="to-create-the-user-interface"></a><span data-ttu-id="e9043-109">ユーザー インターフェイスを作成するには</span><span class="sxs-lookup"><span data-stu-id="e9043-109">To create the user interface</span></span>  
+### <a name="to-create-the-user-interface"></a><span data-ttu-id="e07cb-109">ユーザー インターフェイスを作成するには</span><span class="sxs-lookup"><span data-stu-id="e07cb-109">To create the user interface</span></span>  
   
-1.  <span data-ttu-id="e9043-110">新しい C# Windows フォーム アプリケーション プロジェクトを開き、`Form1` という名前のフォームを作成します。</span><span class="sxs-lookup"><span data-stu-id="e9043-110">Open a new C# Windows Forms Application project, and create a form named `Form1`.</span></span>  
+1.  <span data-ttu-id="e07cb-110">新しい C# Windows フォーム アプリケーション プロジェクトを開き、`Form1` という名前のフォームを作成します。</span><span class="sxs-lookup"><span data-stu-id="e07cb-110">Open a new C# Windows Forms Application project, and create a form named `Form1`.</span></span>  
   
-2.  <span data-ttu-id="e9043-111">`Form1` に、2 つのボタンと 4 つのテキスト ボックスを追加します。</span><span class="sxs-lookup"><span data-stu-id="e9043-111">Add two buttons and four text boxes to `Form1`.</span></span>  
+2.  <span data-ttu-id="e07cb-111">`Form1` に、2 つのボタンと 4 つのテキスト ボックスを追加します。</span><span class="sxs-lookup"><span data-stu-id="e07cb-111">Add two buttons and four text boxes to `Form1`.</span></span>  
   
-3.  <span data-ttu-id="e9043-112">次の表のように、各オブジェクトに名前を付けます。</span><span class="sxs-lookup"><span data-stu-id="e9043-112">Name the objects as shown in the following table.</span></span>  
+3.  <span data-ttu-id="e07cb-112">次の表のように、各オブジェクトに名前を付けます。</span><span class="sxs-lookup"><span data-stu-id="e07cb-112">Name the objects as shown in the following table.</span></span>  
   
-    |<span data-ttu-id="e9043-113">オブジェクト</span><span class="sxs-lookup"><span data-stu-id="e9043-113">Object</span></span>|<span data-ttu-id="e9043-114">プロパティ</span><span class="sxs-lookup"><span data-stu-id="e9043-114">Property</span></span>|<span data-ttu-id="e9043-115">設定</span><span class="sxs-lookup"><span data-stu-id="e9043-115">Setting</span></span>|  
+    |<span data-ttu-id="e07cb-113">オブジェクト</span><span class="sxs-lookup"><span data-stu-id="e07cb-113">Object</span></span>|<span data-ttu-id="e07cb-114">プロパティ</span><span class="sxs-lookup"><span data-stu-id="e07cb-114">Property</span></span>|<span data-ttu-id="e07cb-115">設定</span><span class="sxs-lookup"><span data-stu-id="e07cb-115">Setting</span></span>|  
     |------------|--------------|-------------|  
-    |<span data-ttu-id="e9043-116">1 つ目のボタン</span><span class="sxs-lookup"><span data-stu-id="e9043-116">First button</span></span>|<span data-ttu-id="e9043-117">`Name`, `Text`</span><span class="sxs-lookup"><span data-stu-id="e9043-117">`Name`, `Text`</span></span>|<span data-ttu-id="e9043-118">Start, Start</span><span class="sxs-lookup"><span data-stu-id="e9043-118">Start, Start</span></span>|  
-    |<span data-ttu-id="e9043-119">2 つ目のボタン</span><span class="sxs-lookup"><span data-stu-id="e9043-119">Second button</span></span>|<span data-ttu-id="e9043-120">`Name`, `Text`</span><span class="sxs-lookup"><span data-stu-id="e9043-120">`Name`, `Text`</span></span>|<span data-ttu-id="e9043-121">Cancel, Cancel</span><span class="sxs-lookup"><span data-stu-id="e9043-121">Cancel, Cancel</span></span>|  
-    |<span data-ttu-id="e9043-122">1 つ目のテキスト ボックス</span><span class="sxs-lookup"><span data-stu-id="e9043-122">First text box</span></span>|<span data-ttu-id="e9043-123">`Name`, `Text`</span><span class="sxs-lookup"><span data-stu-id="e9043-123">`Name`, `Text`</span></span>|<span data-ttu-id="e9043-124">SourceFile, ""</span><span class="sxs-lookup"><span data-stu-id="e9043-124">SourceFile, ""</span></span>|  
-    |<span data-ttu-id="e9043-125">2 つ目のテキスト ボックス</span><span class="sxs-lookup"><span data-stu-id="e9043-125">Second text box</span></span>|<span data-ttu-id="e9043-126">`Name`, `Text`</span><span class="sxs-lookup"><span data-stu-id="e9043-126">`Name`, `Text`</span></span>|<span data-ttu-id="e9043-127">CompareString, ""</span><span class="sxs-lookup"><span data-stu-id="e9043-127">CompareString, ""</span></span>|  
-    |<span data-ttu-id="e9043-128">3 つ目のテキスト ボックス</span><span class="sxs-lookup"><span data-stu-id="e9043-128">Third text box</span></span>|<span data-ttu-id="e9043-129">`Name`, `Text`</span><span class="sxs-lookup"><span data-stu-id="e9043-129">`Name`, `Text`</span></span>|<span data-ttu-id="e9043-130">WordsCounted, "0"</span><span class="sxs-lookup"><span data-stu-id="e9043-130">WordsCounted, "0"</span></span>|  
-    |<span data-ttu-id="e9043-131">4 つ目のテキスト ボックス</span><span class="sxs-lookup"><span data-stu-id="e9043-131">Fourth text box</span></span>|<span data-ttu-id="e9043-132">`Name`, `Text`</span><span class="sxs-lookup"><span data-stu-id="e9043-132">`Name`, `Text`</span></span>|<span data-ttu-id="e9043-133">LinesCounted, "0"</span><span class="sxs-lookup"><span data-stu-id="e9043-133">LinesCounted, "0"</span></span>|  
+    |<span data-ttu-id="e07cb-116">1 つ目のボタン</span><span class="sxs-lookup"><span data-stu-id="e07cb-116">First button</span></span>|<span data-ttu-id="e07cb-117">`Name`, `Text`</span><span class="sxs-lookup"><span data-stu-id="e07cb-117">`Name`, `Text`</span></span>|<span data-ttu-id="e07cb-118">Start, Start</span><span class="sxs-lookup"><span data-stu-id="e07cb-118">Start, Start</span></span>|  
+    |<span data-ttu-id="e07cb-119">2 つ目のボタン</span><span class="sxs-lookup"><span data-stu-id="e07cb-119">Second button</span></span>|<span data-ttu-id="e07cb-120">`Name`, `Text`</span><span class="sxs-lookup"><span data-stu-id="e07cb-120">`Name`, `Text`</span></span>|<span data-ttu-id="e07cb-121">Cancel, Cancel</span><span class="sxs-lookup"><span data-stu-id="e07cb-121">Cancel, Cancel</span></span>|  
+    |<span data-ttu-id="e07cb-122">1 つ目のテキスト ボックス</span><span class="sxs-lookup"><span data-stu-id="e07cb-122">First text box</span></span>|<span data-ttu-id="e07cb-123">`Name`, `Text`</span><span class="sxs-lookup"><span data-stu-id="e07cb-123">`Name`, `Text`</span></span>|<span data-ttu-id="e07cb-124">SourceFile, ""</span><span class="sxs-lookup"><span data-stu-id="e07cb-124">SourceFile, ""</span></span>|  
+    |<span data-ttu-id="e07cb-125">2 つ目のテキスト ボックス</span><span class="sxs-lookup"><span data-stu-id="e07cb-125">Second text box</span></span>|<span data-ttu-id="e07cb-126">`Name`, `Text`</span><span class="sxs-lookup"><span data-stu-id="e07cb-126">`Name`, `Text`</span></span>|<span data-ttu-id="e07cb-127">CompareString, ""</span><span class="sxs-lookup"><span data-stu-id="e07cb-127">CompareString, ""</span></span>|  
+    |<span data-ttu-id="e07cb-128">3 つ目のテキスト ボックス</span><span class="sxs-lookup"><span data-stu-id="e07cb-128">Third text box</span></span>|<span data-ttu-id="e07cb-129">`Name`, `Text`</span><span class="sxs-lookup"><span data-stu-id="e07cb-129">`Name`, `Text`</span></span>|<span data-ttu-id="e07cb-130">WordsCounted, "0"</span><span class="sxs-lookup"><span data-stu-id="e07cb-130">WordsCounted, "0"</span></span>|  
+    |<span data-ttu-id="e07cb-131">4 つ目のテキスト ボックス</span><span class="sxs-lookup"><span data-stu-id="e07cb-131">Fourth text box</span></span>|<span data-ttu-id="e07cb-132">`Name`, `Text`</span><span class="sxs-lookup"><span data-stu-id="e07cb-132">`Name`, `Text`</span></span>|<span data-ttu-id="e07cb-133">LinesCounted, "0"</span><span class="sxs-lookup"><span data-stu-id="e07cb-133">LinesCounted, "0"</span></span>|  
   
-4.  <span data-ttu-id="e9043-134">各テキスト ボックスの横にラベルを追加します。</span><span class="sxs-lookup"><span data-stu-id="e9043-134">Add a label next to each text box.</span></span> <span data-ttu-id="e9043-135">次の表のように、各ラベルの `Text` プロパティを設定します。</span><span class="sxs-lookup"><span data-stu-id="e9043-135">Set the `Text` property for each label as shown in the following table.</span></span>  
+4.  <span data-ttu-id="e07cb-134">各テキスト ボックスの横にラベルを追加します。</span><span class="sxs-lookup"><span data-stu-id="e07cb-134">Add a label next to each text box.</span></span> <span data-ttu-id="e07cb-135">次の表のように、各ラベルの `Text` プロパティを設定します。</span><span class="sxs-lookup"><span data-stu-id="e07cb-135">Set the `Text` property for each label as shown in the following table.</span></span>  
   
-    |<span data-ttu-id="e9043-136">オブジェクト</span><span class="sxs-lookup"><span data-stu-id="e9043-136">Object</span></span>|<span data-ttu-id="e9043-137">プロパティ</span><span class="sxs-lookup"><span data-stu-id="e9043-137">Property</span></span>|<span data-ttu-id="e9043-138">設定</span><span class="sxs-lookup"><span data-stu-id="e9043-138">Setting</span></span>|  
+    |<span data-ttu-id="e07cb-136">Object</span><span class="sxs-lookup"><span data-stu-id="e07cb-136">Object</span></span>|<span data-ttu-id="e07cb-137">プロパティ</span><span class="sxs-lookup"><span data-stu-id="e07cb-137">Property</span></span>|<span data-ttu-id="e07cb-138">設定</span><span class="sxs-lookup"><span data-stu-id="e07cb-138">Setting</span></span>|  
     |------------|--------------|-------------|  
-    |<span data-ttu-id="e9043-139">1 つ目のラベル</span><span class="sxs-lookup"><span data-stu-id="e9043-139">First label</span></span>|`Text`|<span data-ttu-id="e9043-140">[ソース ファイル]</span><span class="sxs-lookup"><span data-stu-id="e9043-140">Source File</span></span>|  
-    |<span data-ttu-id="e9043-141">2 つ目のラベル</span><span class="sxs-lookup"><span data-stu-id="e9043-141">Second label</span></span>|`Text`|<span data-ttu-id="e9043-142">Compare String</span><span class="sxs-lookup"><span data-stu-id="e9043-142">Compare String</span></span>|  
-    |<span data-ttu-id="e9043-143">3 つ目のラベル</span><span class="sxs-lookup"><span data-stu-id="e9043-143">Third label</span></span>|`Text`|<span data-ttu-id="e9043-144">Matching Words</span><span class="sxs-lookup"><span data-stu-id="e9043-144">Matching Words</span></span>|  
-    |<span data-ttu-id="e9043-145">4 つ目のラベル</span><span class="sxs-lookup"><span data-stu-id="e9043-145">Fourth label</span></span>|`Text`|<span data-ttu-id="e9043-146">Lines Counted</span><span class="sxs-lookup"><span data-stu-id="e9043-146">Lines Counted</span></span>|  
+    |<span data-ttu-id="e07cb-139">1 つ目のラベル</span><span class="sxs-lookup"><span data-stu-id="e07cb-139">First label</span></span>|`Text`|<span data-ttu-id="e07cb-140">[ソース ファイル]</span><span class="sxs-lookup"><span data-stu-id="e07cb-140">Source File</span></span>|  
+    |<span data-ttu-id="e07cb-141">2 つ目のラベル</span><span class="sxs-lookup"><span data-stu-id="e07cb-141">Second label</span></span>|`Text`|<span data-ttu-id="e07cb-142">Compare String</span><span class="sxs-lookup"><span data-stu-id="e07cb-142">Compare String</span></span>|  
+    |<span data-ttu-id="e07cb-143">3 つ目のラベル</span><span class="sxs-lookup"><span data-stu-id="e07cb-143">Third label</span></span>|`Text`|<span data-ttu-id="e07cb-144">Matching Words</span><span class="sxs-lookup"><span data-stu-id="e07cb-144">Matching Words</span></span>|  
+    |<span data-ttu-id="e07cb-145">4 つ目のラベル</span><span class="sxs-lookup"><span data-stu-id="e07cb-145">Fourth label</span></span>|`Text`|<span data-ttu-id="e07cb-146">Lines Counted</span><span class="sxs-lookup"><span data-stu-id="e07cb-146">Lines Counted</span></span>|  
   
-### <a name="to-create-a-backgroundworker-component-and-subscribe-to-its-events"></a><span data-ttu-id="e9043-147">BackgroundWorker コンポーネントを作成し、そのイベントをサブスクライブするには</span><span class="sxs-lookup"><span data-stu-id="e9043-147">To create a BackgroundWorker component and subscribe to its events</span></span>  
+### <a name="to-create-a-backgroundworker-component-and-subscribe-to-its-events"></a><span data-ttu-id="e07cb-147">BackgroundWorker コンポーネントを作成し、そのイベントをサブスクライブするには</span><span class="sxs-lookup"><span data-stu-id="e07cb-147">To create a BackgroundWorker component and subscribe to its events</span></span>  
   
-1.  <span data-ttu-id="e9043-148">**[ツールボックス]** の **[コンポーネント]** セクションから、<xref:System.ComponentModel.BackgroundWorker> コンポーネントをフォームに追加します。</span><span class="sxs-lookup"><span data-stu-id="e9043-148">Add a <xref:System.ComponentModel.BackgroundWorker> component from the **Components** section of the **ToolBox** to the form.</span></span> <span data-ttu-id="e9043-149">追加したコンポーネントは、フォームのコンポーネント トレイに表示されます。</span><span class="sxs-lookup"><span data-stu-id="e9043-149">It will appear in the form's component tray.</span></span>  
+1.  <span data-ttu-id="e07cb-148">**[ツールボックス]** の **[コンポーネント]** セクションから、<xref:System.ComponentModel.BackgroundWorker> コンポーネントをフォームに追加します。</span><span class="sxs-lookup"><span data-stu-id="e07cb-148">Add a <xref:System.ComponentModel.BackgroundWorker> component from the **Components** section of the **ToolBox** to the form.</span></span> <span data-ttu-id="e07cb-149">追加したコンポーネントは、フォームのコンポーネント トレイに表示されます。</span><span class="sxs-lookup"><span data-stu-id="e07cb-149">It will appear in the form's component tray.</span></span>  
   
-2.  <span data-ttu-id="e9043-150">BackgroundWorker1 オブジェクトについて、次のプロパティを設定します。</span><span class="sxs-lookup"><span data-stu-id="e9043-150">Set the following properties for the backgroundWorker1 object.</span></span>  
+2.  <span data-ttu-id="e07cb-150">BackgroundWorker1 オブジェクトについて、次のプロパティを設定します。</span><span class="sxs-lookup"><span data-stu-id="e07cb-150">Set the following properties for the backgroundWorker1 object.</span></span>  
   
-    |<span data-ttu-id="e9043-151">プロパティ</span><span class="sxs-lookup"><span data-stu-id="e9043-151">Property</span></span>|<span data-ttu-id="e9043-152">設定</span><span class="sxs-lookup"><span data-stu-id="e9043-152">Setting</span></span>|  
+    |<span data-ttu-id="e07cb-151">プロパティ</span><span class="sxs-lookup"><span data-stu-id="e07cb-151">Property</span></span>|<span data-ttu-id="e07cb-152">設定</span><span class="sxs-lookup"><span data-stu-id="e07cb-152">Setting</span></span>|  
     |--------------|-------------|  
-    |`WorkerReportsProgress`|<span data-ttu-id="e9043-153">True</span><span class="sxs-lookup"><span data-stu-id="e9043-153">True</span></span>|  
-    |`WorkerSupportsCancellation`|<span data-ttu-id="e9043-154">True</span><span class="sxs-lookup"><span data-stu-id="e9043-154">True</span></span>|  
+    |`WorkerReportsProgress`|<span data-ttu-id="e07cb-153">True</span><span class="sxs-lookup"><span data-stu-id="e07cb-153">True</span></span>|  
+    |`WorkerSupportsCancellation`|<span data-ttu-id="e07cb-154">True</span><span class="sxs-lookup"><span data-stu-id="e07cb-154">True</span></span>|  
   
-3.  <span data-ttu-id="e9043-155">BackgroundWorker1 オブジェクトのイベントをサブスクライブします。</span><span class="sxs-lookup"><span data-stu-id="e9043-155">Subscribe to the events of the backgroundWorker1 object.</span></span> <span data-ttu-id="e9043-156">**[プロパティ]** ウィンドウの上部で、**[イベント]** アイコンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="e9043-156">At the top of the **Properties** window, click the **Events** icon.</span></span> <span data-ttu-id="e9043-157">`RunWorkerCompleted` イベントをダブルクリックして、イベント ハンドラー メソッドを作成します。</span><span class="sxs-lookup"><span data-stu-id="e9043-157">Double-click the `RunWorkerCompleted` event to create an event handler method.</span></span> <span data-ttu-id="e9043-158">`ProgressChanged` イベントと `DoWork` イベントについても、同じ操作を行いいます。</span><span class="sxs-lookup"><span data-stu-id="e9043-158">Do the same for the `ProgressChanged` and `DoWork` events.</span></span>  
+3.  <span data-ttu-id="e07cb-155">BackgroundWorker1 オブジェクトのイベントをサブスクライブします。</span><span class="sxs-lookup"><span data-stu-id="e07cb-155">Subscribe to the events of the backgroundWorker1 object.</span></span> <span data-ttu-id="e07cb-156">**[プロパティ]** ウィンドウの上部で、**[イベント]** アイコンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="e07cb-156">At the top of the **Properties** window, click the **Events** icon.</span></span> <span data-ttu-id="e07cb-157">`RunWorkerCompleted` イベントをダブルクリックして、イベント ハンドラー メソッドを作成します。</span><span class="sxs-lookup"><span data-stu-id="e07cb-157">Double-click the `RunWorkerCompleted` event to create an event handler method.</span></span> <span data-ttu-id="e07cb-158">`ProgressChanged` イベントと `DoWork` イベントについても、同じ操作を行いいます。</span><span class="sxs-lookup"><span data-stu-id="e07cb-158">Do the same for the `ProgressChanged` and `DoWork` events.</span></span>  
   
-### <a name="to-define-the-method-that-will-run-on-a-separate-thread"></a><span data-ttu-id="e9043-159">個別のスレッドで実行されるメソッドを定義するには</span><span class="sxs-lookup"><span data-stu-id="e9043-159">To define the method that will run on a separate thread</span></span>  
+### <a name="to-define-the-method-that-will-run-on-a-separate-thread"></a><span data-ttu-id="e07cb-159">個別のスレッドで実行されるメソッドを定義するには</span><span class="sxs-lookup"><span data-stu-id="e07cb-159">To define the method that will run on a separate thread</span></span>  
   
-1.  <span data-ttu-id="e9043-160">**[プロジェクト]** メニューの **[クラスの追加]** を選択して、プロジェクトにクラスを追加します。</span><span class="sxs-lookup"><span data-stu-id="e9043-160">From the **Project** menu, choose **Add Class** to add a class to the project.</span></span> <span data-ttu-id="e9043-161">**[新しい項目の追加]** ダイアログ ボックスが表示されます。</span><span class="sxs-lookup"><span data-stu-id="e9043-161">The **Add New Item** dialog box is displayed.</span></span>  
+1.  <span data-ttu-id="e07cb-160">**[プロジェクト]** メニューの **[クラスの追加]** を選択して、プロジェクトにクラスを追加します。</span><span class="sxs-lookup"><span data-stu-id="e07cb-160">From the **Project** menu, choose **Add Class** to add a class to the project.</span></span> <span data-ttu-id="e07cb-161">**[新しい項目の追加]** ダイアログ ボックスが表示されます。</span><span class="sxs-lookup"><span data-stu-id="e07cb-161">The **Add New Item** dialog box is displayed.</span></span>  
   
-2.  <span data-ttu-id="e9043-162">テンプレート ウィンドウから **[クラス]** を選択し、名前 フィールドに「`Words.cs`」と入力します。</span><span class="sxs-lookup"><span data-stu-id="e9043-162">Select **Class** from the templates window and enter `Words.cs` in the name field.</span></span>  
+2.  <span data-ttu-id="e07cb-162">テンプレート ウィンドウから **[クラス]** を選択し、名前 フィールドに「`Words.cs`」と入力します。</span><span class="sxs-lookup"><span data-stu-id="e07cb-162">Select **Class** from the templates window and enter `Words.cs` in the name field.</span></span>  
   
-3.  <span data-ttu-id="e9043-163">**[追加]**をクリックします。</span><span class="sxs-lookup"><span data-stu-id="e9043-163">Click **Add**.</span></span> <span data-ttu-id="e9043-164">`Words` クラスが表示されます。</span><span class="sxs-lookup"><span data-stu-id="e9043-164">The `Words` class is displayed.</span></span>  
+3.  <span data-ttu-id="e07cb-163">**[追加]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="e07cb-163">Click **Add**.</span></span> <span data-ttu-id="e07cb-164">`Words` クラスが表示されます。</span><span class="sxs-lookup"><span data-stu-id="e07cb-164">The `Words` class is displayed.</span></span>  
   
-4.  <span data-ttu-id="e9043-165">`Words` クラスに次のコードを追加します。</span><span class="sxs-lookup"><span data-stu-id="e9043-165">Add the following code to the `Words` class:</span></span>  
+4.  <span data-ttu-id="e07cb-165">`Words` クラスに次のコードを追加します。</span><span class="sxs-lookup"><span data-stu-id="e07cb-165">Add the following code to the `Words` class:</span></span>  
   
     ```csharp  
     public class Words  
@@ -176,9 +167,9 @@ ms.lasthandoff: 11/21/2017
     }  
     ```  
   
-### <a name="to-handle-events-from-the-thread"></a><span data-ttu-id="e9043-166">スレッドからイベントを処理するには</span><span class="sxs-lookup"><span data-stu-id="e9043-166">To handle events from the thread</span></span>  
+### <a name="to-handle-events-from-the-thread"></a><span data-ttu-id="e07cb-166">スレッドからイベントを処理するには</span><span class="sxs-lookup"><span data-stu-id="e07cb-166">To handle events from the thread</span></span>  
   
--   <span data-ttu-id="e9043-167">メイン フォームに次のイベント ハンドラーを追加します。</span><span class="sxs-lookup"><span data-stu-id="e9043-167">Add the following event handlers to your main form:</span></span>  
+-   <span data-ttu-id="e07cb-167">メイン フォームに次のイベント ハンドラーを追加します。</span><span class="sxs-lookup"><span data-stu-id="e07cb-167">Add the following event handlers to your main form:</span></span>  
   
     ```csharp  
     private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)  
@@ -203,9 +194,9 @@ ms.lasthandoff: 11/21/2017
     }  
     ```  
   
-### <a name="to-start-and-call-a-new-thread-that-runs-the-wordcount-method"></a><span data-ttu-id="e9043-168">WordCount メソッドを実行する新しいスレッドを起動して呼び出すには</span><span class="sxs-lookup"><span data-stu-id="e9043-168">To start and call a new thread that runs the WordCount method</span></span>  
+### <a name="to-start-and-call-a-new-thread-that-runs-the-wordcount-method"></a><span data-ttu-id="e07cb-168">WordCount メソッドを実行する新しいスレッドを起動して呼び出すには</span><span class="sxs-lookup"><span data-stu-id="e07cb-168">To start and call a new thread that runs the WordCount method</span></span>  
   
-1.  <span data-ttu-id="e9043-169">プログラムに次のプロシージャを追加します。</span><span class="sxs-lookup"><span data-stu-id="e9043-169">Add the following procedures to your program:</span></span>  
+1.  <span data-ttu-id="e07cb-169">プログラムに次のプロシージャを追加します。</span><span class="sxs-lookup"><span data-stu-id="e07cb-169">Add the following procedures to your program:</span></span>  
   
     ```csharp  
     private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)  
@@ -237,7 +228,7 @@ ms.lasthandoff: 11/21/2017
     }  
     ```  
   
-2.  <span data-ttu-id="e9043-170">フォーム上の `Start` ボタンから `StartThread` メソッドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="e9043-170">Call the `StartThread` method from the `Start` button on your form:</span></span>  
+2.  <span data-ttu-id="e07cb-170">フォーム上の `Start` ボタンから `StartThread` メソッドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="e07cb-170">Call the `StartThread` method from the `Start` button on your form:</span></span>  
   
     ```csharp  
     private void Start_Click(object sender, EventArgs e)  
@@ -246,9 +237,9 @@ ms.lasthandoff: 11/21/2017
     }  
     ```  
   
-    ##### <a name="to-implement-a-cancel-button-that-stops-the-thread"></a><span data-ttu-id="e9043-171">スレッドを停止するためのキャンセル ボタンを実装するには</span><span class="sxs-lookup"><span data-stu-id="e9043-171">To implement a Cancel button that stops the thread</span></span>  
+    ##### <a name="to-implement-a-cancel-button-that-stops-the-thread"></a><span data-ttu-id="e07cb-171">スレッドを停止するためのキャンセル ボタンを実装するには</span><span class="sxs-lookup"><span data-stu-id="e07cb-171">To implement a Cancel button that stops the thread</span></span>  
   
-    -   <span data-ttu-id="e9043-172">`Cancel` ボタンの `Click` イベント ハンドラーから、`StopThread` プロシージャを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="e9043-172">Call the `StopThread` procedure from the `Click` event handler for the `Cancel` button.</span></span>  
+    -   <span data-ttu-id="e07cb-172">`Cancel` ボタンの `Click` イベント ハンドラーから、`StopThread` プロシージャを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="e07cb-172">Call the `StopThread` procedure from the `Click` event handler for the `Cancel` button.</span></span>  
   
         ```csharp  
         private void Cancel_Click(object sender, EventArgs e)  
@@ -258,30 +249,30 @@ ms.lasthandoff: 11/21/2017
         }  
         ```  
   
-## <a name="testing"></a><span data-ttu-id="e9043-173">テスト中</span><span class="sxs-lookup"><span data-stu-id="e9043-173">Testing</span></span>  
- <span data-ttu-id="e9043-174">アプリケーションをテストして、正常に動作していることを確認できます。</span><span class="sxs-lookup"><span data-stu-id="e9043-174">You can now test the application to make sure it works correctly.</span></span>  
+## <a name="testing"></a><span data-ttu-id="e07cb-173">テスト中</span><span class="sxs-lookup"><span data-stu-id="e07cb-173">Testing</span></span>  
+ <span data-ttu-id="e07cb-174">アプリケーションをテストして、正常に動作していることを確認できます。</span><span class="sxs-lookup"><span data-stu-id="e07cb-174">You can now test the application to make sure it works correctly.</span></span>  
   
-#### <a name="to-test-the-application"></a><span data-ttu-id="e9043-175">アプリケーションをテストするには</span><span class="sxs-lookup"><span data-stu-id="e9043-175">To test the application</span></span>  
+#### <a name="to-test-the-application"></a><span data-ttu-id="e07cb-175">アプリケーションをテストするには</span><span class="sxs-lookup"><span data-stu-id="e07cb-175">To test the application</span></span>  
   
-1.  <span data-ttu-id="e9043-176">F5 キーを押してアプリケーションを実行します。</span><span class="sxs-lookup"><span data-stu-id="e9043-176">Press F5 to run the application.</span></span>  
+1.  <span data-ttu-id="e07cb-176">F5 キーを押してアプリケーションを実行します。</span><span class="sxs-lookup"><span data-stu-id="e07cb-176">Press F5 to run the application.</span></span>  
   
-2.  <span data-ttu-id="e9043-177">フォームが表示されたら、テストするファイルのファイル パスを `sourceFile` ボックスに入力します。</span><span class="sxs-lookup"><span data-stu-id="e9043-177">When the form is displayed, enter the file path for the file you want to test in the `sourceFile` box.</span></span> <span data-ttu-id="e9043-178">たとえば、テスト ファイルの名前が Test.txt の場合は、「C:\Test.txt」と入力します。</span><span class="sxs-lookup"><span data-stu-id="e9043-178">For example, assuming your test file is named Test.txt, enter C:\Test.txt.</span></span>  
+2.  <span data-ttu-id="e07cb-177">フォームが表示されたら、テストするファイルのファイル パスを `sourceFile` ボックスに入力します。</span><span class="sxs-lookup"><span data-stu-id="e07cb-177">When the form is displayed, enter the file path for the file you want to test in the `sourceFile` box.</span></span> <span data-ttu-id="e07cb-178">たとえば、テスト ファイルの名前が Test.txt の場合は、「C:\Test.txt」と入力します。</span><span class="sxs-lookup"><span data-stu-id="e07cb-178">For example, assuming your test file is named Test.txt, enter C:\Test.txt.</span></span>  
   
-3.  <span data-ttu-id="e9043-179">2 つ目のテキスト ボックスに、テキスト ファイル内で検索する単語または語句を入力します。</span><span class="sxs-lookup"><span data-stu-id="e9043-179">In the second text box, enter a word or phrase for the application to search for in the text file.</span></span>  
+3.  <span data-ttu-id="e07cb-179">2 つ目のテキスト ボックスに、テキスト ファイル内で検索する単語または語句を入力します。</span><span class="sxs-lookup"><span data-stu-id="e07cb-179">In the second text box, enter a word or phrase for the application to search for in the text file.</span></span>  
   
-4.  <span data-ttu-id="e9043-180">[`Start`] ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="e9043-180">Click the `Start` button.</span></span> <span data-ttu-id="e9043-181">`LinesCounted` ボタンがすぐにインクリメントし始めます。</span><span class="sxs-lookup"><span data-stu-id="e9043-181">The `LinesCounted` button should begin incrementing immediately.</span></span> <span data-ttu-id="e9043-182">処理が完了すると、「Finished Counting」というメッセージが表示されます。</span><span class="sxs-lookup"><span data-stu-id="e9043-182">The application displays the message "Finished Counting" when it is done.</span></span>  
+4.  <span data-ttu-id="e07cb-180">[`Start`] ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="e07cb-180">Click the `Start` button.</span></span> <span data-ttu-id="e07cb-181">`LinesCounted` ボタンがすぐにインクリメントし始めます。</span><span class="sxs-lookup"><span data-stu-id="e07cb-181">The `LinesCounted` button should begin incrementing immediately.</span></span> <span data-ttu-id="e07cb-182">処理が完了すると、「Finished Counting」というメッセージが表示されます。</span><span class="sxs-lookup"><span data-stu-id="e07cb-182">The application displays the message "Finished Counting" when it is done.</span></span>  
   
-#### <a name="to-test-the-cancel-button"></a><span data-ttu-id="e9043-183">キャンセル ボタンをテストするには</span><span class="sxs-lookup"><span data-stu-id="e9043-183">To test the Cancel button</span></span>  
+#### <a name="to-test-the-cancel-button"></a><span data-ttu-id="e07cb-183">キャンセル ボタンをテストするには</span><span class="sxs-lookup"><span data-stu-id="e07cb-183">To test the Cancel button</span></span>  
   
-1.  <span data-ttu-id="e9043-184">F5 キーを押してアプリケーションを起動し、前の手順で説明したように、ファイル名を入力して単語を検索します。</span><span class="sxs-lookup"><span data-stu-id="e9043-184">Press F5 to start the application, and enter the file name and search word as described in the previous procedure.</span></span> <span data-ttu-id="e9043-185">処理が完了する前にプロシージャをキャンセルできるだけの時間が必要なので、選択したファイルが十分なサイズであることを確認します。</span><span class="sxs-lookup"><span data-stu-id="e9043-185">Make sure that the file you choose is large enough to ensure you will have time to cancel the procedure before it is finished.</span></span>  
+1.  <span data-ttu-id="e07cb-184">F5 キーを押してアプリケーションを起動し、前の手順で説明したように、ファイル名を入力して単語を検索します。</span><span class="sxs-lookup"><span data-stu-id="e07cb-184">Press F5 to start the application, and enter the file name and search word as described in the previous procedure.</span></span> <span data-ttu-id="e07cb-185">処理が完了する前にプロシージャをキャンセルできるだけの時間が必要なので、選択したファイルが十分なサイズであることを確認します。</span><span class="sxs-lookup"><span data-stu-id="e07cb-185">Make sure that the file you choose is large enough to ensure you will have time to cancel the procedure before it is finished.</span></span>  
   
-2.  <span data-ttu-id="e9043-186">`Start` ボタンをクリックしてアプリケーションを起動します。</span><span class="sxs-lookup"><span data-stu-id="e9043-186">Click the `Start` button to start the application.</span></span>  
+2.  <span data-ttu-id="e07cb-186">`Start` ボタンをクリックしてアプリケーションを起動します。</span><span class="sxs-lookup"><span data-stu-id="e07cb-186">Click the `Start` button to start the application.</span></span>  
   
-3.  <span data-ttu-id="e9043-187">[`Cancel`] ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="e9043-187">Click the `Cancel` button.</span></span> <span data-ttu-id="e9043-188">アプリケーションがすぐにカウントを停止します。</span><span class="sxs-lookup"><span data-stu-id="e9043-188">The application should stop counting immediately.</span></span>  
+3.  <span data-ttu-id="e07cb-187">[`Cancel`] ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="e07cb-187">Click the `Cancel` button.</span></span> <span data-ttu-id="e07cb-188">アプリケーションがすぐにカウントを停止します。</span><span class="sxs-lookup"><span data-stu-id="e07cb-188">The application should stop counting immediately.</span></span>  
   
-## <a name="next-steps"></a><span data-ttu-id="e9043-189">次の手順</span><span class="sxs-lookup"><span data-stu-id="e9043-189">Next Steps</span></span>  
- <span data-ttu-id="e9043-190">このアプリケーションには、基本的なエラー処理が含まれており、</span><span class="sxs-lookup"><span data-stu-id="e9043-190">This application contains some basic error handling.</span></span> <span data-ttu-id="e9043-191">このアプリケーションは空白の検索文字列を検出します。</span><span class="sxs-lookup"><span data-stu-id="e9043-191">It detects blank search strings.</span></span> <span data-ttu-id="e9043-192">その他のエラーを処理できるようにすれば、このプログラムの堅牢性をさらに高めることができます (カウントできる単語や行の最大数を超えた場合の処理を追加するなど)。</span><span class="sxs-lookup"><span data-stu-id="e9043-192">You can make this program more robust by handling other errors, such as exceeding the maximum number of words or lines that can be counted.</span></span>  
+## <a name="next-steps"></a><span data-ttu-id="e07cb-189">次の手順</span><span class="sxs-lookup"><span data-stu-id="e07cb-189">Next Steps</span></span>  
+ <span data-ttu-id="e07cb-190">このアプリケーションには、基本的なエラー処理が含まれており、</span><span class="sxs-lookup"><span data-stu-id="e07cb-190">This application contains some basic error handling.</span></span> <span data-ttu-id="e07cb-191">このアプリケーションは空白の検索文字列を検出します。</span><span class="sxs-lookup"><span data-stu-id="e07cb-191">It detects blank search strings.</span></span> <span data-ttu-id="e07cb-192">その他のエラーを処理できるようにすれば、このプログラムの堅牢性をさらに高めることができます (カウントできる単語や行の最大数を超えた場合の処理を追加するなど)。</span><span class="sxs-lookup"><span data-stu-id="e07cb-192">You can make this program more robust by handling other errors, such as exceeding the maximum number of words or lines that can be counted.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="e9043-193">関連項目</span><span class="sxs-lookup"><span data-stu-id="e9043-193">See Also</span></span>  
- [<span data-ttu-id="e9043-194">スレッド処理 (C#)</span><span class="sxs-lookup"><span data-stu-id="e9043-194">Threading (C#)</span></span>](../../../../csharp/programming-guide/concepts/threading/index.md)  
- [<span data-ttu-id="e9043-195">方法: イベント サブスクリプションとサブスクリプションの解除</span><span class="sxs-lookup"><span data-stu-id="e9043-195">How to: Subscribe to and Unsubscribe from Events</span></span>](../../../../csharp/programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md)
+## <a name="see-also"></a><span data-ttu-id="e07cb-193">参照</span><span class="sxs-lookup"><span data-stu-id="e07cb-193">See Also</span></span>  
+ [<span data-ttu-id="e07cb-194">スレッド処理 (C#)</span><span class="sxs-lookup"><span data-stu-id="e07cb-194">Threading (C#)</span></span>](../../../../csharp/programming-guide/concepts/threading/index.md)  
+ [<span data-ttu-id="e07cb-195">方法: イベント サブスクリプションとサブスクリプションの解除</span><span class="sxs-lookup"><span data-stu-id="e07cb-195">How to: Subscribe to and Unsubscribe from Events</span></span>](../../../../csharp/programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md)

@@ -1,37 +1,28 @@
 ---
-title: "標準クエリ演算子の連結 (C#)"
-ms.custom: 
+title: 標準クエリ演算子の連結 (C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: 66f2b0a9-2c23-4735-988e-bbc9dfb55c7b
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 47e936bffd79784b0ee6850bfc29d1d1f5b3224d
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 9e59c12873b8e8afeaad43b8ffbe400b43b55747
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="chaining-standard-query-operators-together-c"></a><span data-ttu-id="de290-102">標準クエリ演算子の連結 (C#)</span><span class="sxs-lookup"><span data-stu-id="de290-102">Chaining Standard Query Operators Together (C#)</span></span>
-<span data-ttu-id="de290-103">これは「[チュートリアル: クエリの連結 (C#)](../../../../csharp/programming-guide/concepts/linq/tutorial-chaining-queries-together.md)」チュートリアルの最後のトピックです。</span><span class="sxs-lookup"><span data-stu-id="de290-103">This is the final topic in the [Tutorial: Chaining Queries Together (C#)](../../../../csharp/programming-guide/concepts/linq/tutorial-chaining-queries-together.md) tutorial.</span></span>  
+# <a name="chaining-standard-query-operators-together-c"></a><span data-ttu-id="ff075-102">標準クエリ演算子の連結 (C#)</span><span class="sxs-lookup"><span data-stu-id="ff075-102">Chaining Standard Query Operators Together (C#)</span></span>
+<span data-ttu-id="ff075-103">これは「[チュートリアル: クエリの連結 (C#)](../../../../csharp/programming-guide/concepts/linq/tutorial-chaining-queries-together.md)」チュートリアルの最後のトピックです。</span><span class="sxs-lookup"><span data-stu-id="ff075-103">This is the final topic in the [Tutorial: Chaining Queries Together (C#)](../../../../csharp/programming-guide/concepts/linq/tutorial-chaining-queries-together.md) tutorial.</span></span>  
   
- <span data-ttu-id="de290-104">標準クエリ演算子も連結することができます。</span><span class="sxs-lookup"><span data-stu-id="de290-104">The standard query operators can also be chained together.</span></span> <span data-ttu-id="de290-105">たとえば、<xref:System.Linq.Enumerable.Where%2A?displayProperty=nameWithType> 演算子を挿入することができます。また、この演算子はレイジー方式でも機能します。</span><span class="sxs-lookup"><span data-stu-id="de290-105">For example, you can interject the <xref:System.Linq.Enumerable.Where%2A?displayProperty=nameWithType> operator, and it also operates in a lazy fashion.</span></span> <span data-ttu-id="de290-106">この演算子によって中間結果が具体化されることはありません。</span><span class="sxs-lookup"><span data-stu-id="de290-106">No intermediate results are materialized by it.</span></span>  
+ <span data-ttu-id="ff075-104">標準クエリ演算子も連結することができます。</span><span class="sxs-lookup"><span data-stu-id="ff075-104">The standard query operators can also be chained together.</span></span> <span data-ttu-id="ff075-105">たとえば、<xref:System.Linq.Enumerable.Where%2A?displayProperty=nameWithType> 演算子を挿入することができます。また、この演算子はレイジー方式でも機能します。</span><span class="sxs-lookup"><span data-stu-id="ff075-105">For example, you can interject the <xref:System.Linq.Enumerable.Where%2A?displayProperty=nameWithType> operator, and it also operates in a lazy fashion.</span></span> <span data-ttu-id="ff075-106">この演算子によって中間結果が具体化されることはありません。</span><span class="sxs-lookup"><span data-stu-id="ff075-106">No intermediate results are materialized by it.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="de290-107">例</span><span class="sxs-lookup"><span data-stu-id="de290-107">Example</span></span>  
- <span data-ttu-id="de290-108">この例では、<xref:System.Linq.Enumerable.Where%2A> の前に `ConvertCollectionToUpperCase` メソッドが呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="de290-108">In this example, the <xref:System.Linq.Enumerable.Where%2A> method is called before calling `ConvertCollectionToUpperCase`.</span></span> <span data-ttu-id="de290-109"><xref:System.Linq.Enumerable.Where%2A> メソッドは、このチュートリアルの前の例で使用したレイジー メソッド (`ConvertCollectionToUpperCase` および `AppendString`) とほぼ同様に動作しますが、この例では異なる点もあります。</span><span class="sxs-lookup"><span data-stu-id="de290-109">The <xref:System.Linq.Enumerable.Where%2A> method operates in almost exactly the same way as the lazy methods used in previous examples in this tutorial, `ConvertCollectionToUpperCase` and `AppendString`.</span></span>  
+## <a name="example"></a><span data-ttu-id="ff075-107">例</span><span class="sxs-lookup"><span data-stu-id="ff075-107">Example</span></span>  
+ <span data-ttu-id="ff075-108">この例では、<xref:System.Linq.Enumerable.Where%2A> の前に `ConvertCollectionToUpperCase` メソッドが呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="ff075-108">In this example, the <xref:System.Linq.Enumerable.Where%2A> method is called before calling `ConvertCollectionToUpperCase`.</span></span> <span data-ttu-id="ff075-109"><xref:System.Linq.Enumerable.Where%2A> メソッドは、このチュートリアルの前の例で使用したレイジー メソッド (`ConvertCollectionToUpperCase` および `AppendString`) とほぼ同様に動作しますが、この例では異なる点もあります。</span><span class="sxs-lookup"><span data-stu-id="ff075-109">The <xref:System.Linq.Enumerable.Where%2A> method operates in almost exactly the same way as the lazy methods used in previous examples in this tutorial, `ConvertCollectionToUpperCase` and `AppendString`.</span></span>  
   
- <span data-ttu-id="de290-110">異なる点とは、この場合の <xref:System.Linq.Enumerable.Where%2A> メソッドではソース コレクションを反復処理し、最初の項目を述語に渡さないことを決定してから、述語に渡す次の項目を取得します。</span><span class="sxs-lookup"><span data-stu-id="de290-110">One difference is that in this case, the <xref:System.Linq.Enumerable.Where%2A> method iterates through its source collection, determines that the first item does not pass the predicate, and then gets the next item, which does pass.</span></span> <span data-ttu-id="de290-111">その後、2 番目の項目を生成します。</span><span class="sxs-lookup"><span data-stu-id="de290-111">It then yields the second item.</span></span>  
+ <span data-ttu-id="ff075-110">異なる点とは、この場合の <xref:System.Linq.Enumerable.Where%2A> メソッドではソース コレクションを反復処理し、最初の項目を述語に渡さないことを決定してから、述語に渡す次の項目を取得します。</span><span class="sxs-lookup"><span data-stu-id="ff075-110">One difference is that in this case, the <xref:System.Linq.Enumerable.Where%2A> method iterates through its source collection, determines that the first item does not pass the predicate, and then gets the next item, which does pass.</span></span> <span data-ttu-id="ff075-111">その後、2 番目の項目を生成します。</span><span class="sxs-lookup"><span data-stu-id="ff075-111">It then yields the second item.</span></span>  
   
- <span data-ttu-id="de290-112">ただし、基本的な考え方は同じです。つまり、中間コレクションは、必要がない限り具体化されません。</span><span class="sxs-lookup"><span data-stu-id="de290-112">However, the basic idea is the same: Intermediate collections are not materialized unless they have to be.</span></span>  
+ <span data-ttu-id="ff075-112">ただし、基本的な考え方は同じです。つまり、中間コレクションは、必要がない限り具体化されません。</span><span class="sxs-lookup"><span data-stu-id="ff075-112">However, the basic idea is the same: Intermediate collections are not materialized unless they have to be.</span></span>  
   
- <span data-ttu-id="de290-113">クエリ式が使用されている場合、そのクエリ式は標準クエリ演算子への呼び出しに変換され、同じ原則が適用されます。</span><span class="sxs-lookup"><span data-stu-id="de290-113">When query expressions are used, they are converted to calls to the standard query operators, and the same principles apply.</span></span>  
+ <span data-ttu-id="ff075-113">クエリ式が使用されている場合、そのクエリ式は標準クエリ演算子への呼び出しに変換され、同じ原則が適用されます。</span><span class="sxs-lookup"><span data-stu-id="ff075-113">When query expressions are used, they are converted to calls to the standard query operators, and the same principles apply.</span></span>  
   
- <span data-ttu-id="de290-114">Office Open XML ドキュメントに対してクエリを実行するこのセクションの例はすべて、同じ原則を使用します。</span><span class="sxs-lookup"><span data-stu-id="de290-114">All of the examples in this section that are querying Office Open XML documents use the same principle.</span></span> <span data-ttu-id="de290-115">遅延実行およびレイジー評価は、LINQ (および LINQ to XML) を効果的に使用するために理解しておく必要がある基本的概念です。</span><span class="sxs-lookup"><span data-stu-id="de290-115">Deferred execution and lazy evaluation are some of the fundamental concepts that you must understand  to use LINQ (and LINQ to XML) effectively.</span></span>  
+ <span data-ttu-id="ff075-114">Office Open XML ドキュメントに対してクエリを実行するこのセクションの例はすべて、同じ原則を使用します。</span><span class="sxs-lookup"><span data-stu-id="ff075-114">All of the examples in this section that are querying Office Open XML documents use the same principle.</span></span> <span data-ttu-id="ff075-115">遅延実行およびレイジー評価は、LINQ (および LINQ to XML) を効果的に使用するために理解しておく必要がある基本的概念です。</span><span class="sxs-lookup"><span data-stu-id="ff075-115">Deferred execution and lazy evaluation are some of the fundamental concepts that you must understand  to use LINQ (and LINQ to XML) effectively.</span></span>  
   
 ```csharp  
 public static class LocalExtensions  
@@ -81,7 +72,7 @@ class Program
 }  
 ```  
   
- <span data-ttu-id="de290-116">この例を実行すると、次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="de290-116">This example produces the following output:</span></span>  
+ <span data-ttu-id="ff075-116">この例を実行すると、次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="ff075-116">This example produces the following output:</span></span>  
   
 ```  
 ToUpper: source >abc<  
@@ -94,5 +85,5 @@ AppendString: source >GHI<
 Main: str >GHI!!!<  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="de290-117">関連項目</span><span class="sxs-lookup"><span data-stu-id="de290-117">See Also</span></span>  
- [<span data-ttu-id="de290-118">チュートリアル: クエリの連結 (C#)</span><span class="sxs-lookup"><span data-stu-id="de290-118">Tutorial: Chaining Queries Together (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/tutorial-chaining-queries-together.md)
+## <a name="see-also"></a><span data-ttu-id="ff075-117">参照</span><span class="sxs-lookup"><span data-stu-id="ff075-117">See Also</span></span>  
+ [<span data-ttu-id="ff075-118">チュートリアル: クエリの連結 (C#)</span><span class="sxs-lookup"><span data-stu-id="ff075-118">Tutorial: Chaining Queries Together (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/tutorial-chaining-queries-together.md)
