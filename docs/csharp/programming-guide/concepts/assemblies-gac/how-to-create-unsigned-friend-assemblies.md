@@ -1,30 +1,21 @@
 ---
-title: "方法: 署名のないフレンド アセンブリを作成する (C#)"
-ms.custom: 
+title: '方法: 署名のないフレンド アセンブリを作成する (C#)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: 78cbc4f0-b021-4141-a4ff-eb4edbd814ca
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 854df39394ef10bf2404fb3f762586fb102fba7b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 676b9d3c641f45736af50bc2290426e261b591c4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="how-to-create-unsigned-friend-assemblies-c"></a><span data-ttu-id="764ab-102">方法: 署名のないフレンド アセンブリを作成する (C#)</span><span class="sxs-lookup"><span data-stu-id="764ab-102">How to: Create Unsigned Friend Assemblies (C#)</span></span>
-<span data-ttu-id="764ab-103">この例では、署名のないアセンブリと共にフレンド アセンブリを使用する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="764ab-103">This example shows how to use friend assemblies with assemblies that are unsigned.</span></span>  
+# <a name="how-to-create-unsigned-friend-assemblies-c"></a><span data-ttu-id="c87c0-102">方法: 署名のないフレンド アセンブリを作成する (C#)</span><span class="sxs-lookup"><span data-stu-id="c87c0-102">How to: Create Unsigned Friend Assemblies (C#)</span></span>
+<span data-ttu-id="c87c0-103">この例では、署名のないアセンブリと共にフレンド アセンブリを使用する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="c87c0-103">This example shows how to use friend assemblies with assemblies that are unsigned.</span></span>  
   
-### <a name="to-create-an-assembly-and-a-friend-assembly"></a><span data-ttu-id="764ab-104">署名のないアセンブリとフレンド アセンブリを作成するには</span><span class="sxs-lookup"><span data-stu-id="764ab-104">To create an assembly and a friend assembly</span></span>  
+### <a name="to-create-an-assembly-and-a-friend-assembly"></a><span data-ttu-id="c87c0-104">署名のないアセンブリとフレンド アセンブリを作成するには</span><span class="sxs-lookup"><span data-stu-id="c87c0-104">To create an assembly and a friend assembly</span></span>  
   
-1.  <span data-ttu-id="764ab-105">コマンド プロンプトを開きます。</span><span class="sxs-lookup"><span data-stu-id="764ab-105">Open a command prompt.</span></span>  
+1.  <span data-ttu-id="c87c0-105">コマンド プロンプトを開きます。</span><span class="sxs-lookup"><span data-stu-id="c87c0-105">Open a command prompt.</span></span>  
   
-2.  <span data-ttu-id="764ab-106">次のコードを含む、`friend_signed_A.` という名前の C# ファイルを作成します。</span><span class="sxs-lookup"><span data-stu-id="764ab-106">Create a C# file named `friend_signed_A.` that contains the following code.</span></span> <span data-ttu-id="764ab-107">コードでは <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> 属性を使用して、フレンド アセンブリとして friend_signed_B を宣言します。</span><span class="sxs-lookup"><span data-stu-id="764ab-107">The code uses the <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> attribute to declare friend_signed_B as a friend assembly.</span></span>  
+2.  <span data-ttu-id="c87c0-106">次のコードを含む、`friend_signed_A.` という名前の C# ファイルを作成します。</span><span class="sxs-lookup"><span data-stu-id="c87c0-106">Create a C# file named `friend_signed_A.` that contains the following code.</span></span> <span data-ttu-id="c87c0-107">コードでは <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> 属性を使用して、フレンド アセンブリとして friend_signed_B を宣言します。</span><span class="sxs-lookup"><span data-stu-id="c87c0-107">The code uses the <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> attribute to declare friend_signed_B as a friend assembly.</span></span>  
   
     ```csharp  
     // friend_unsigned_A.cs  
@@ -54,13 +45,13 @@ ms.lasthandoff: 11/21/2017
     }  
     ```  
   
-3.  <span data-ttu-id="764ab-108">次のコマンドを使用して friend_signed_A をコンパイルして署名します。</span><span class="sxs-lookup"><span data-stu-id="764ab-108">Compile and sign friend_signed_A by using the following command.</span></span>  
+3.  <span data-ttu-id="c87c0-108">次のコマンドを使用して friend_signed_A をコンパイルして署名します。</span><span class="sxs-lookup"><span data-stu-id="c87c0-108">Compile and sign friend_signed_A by using the following command.</span></span>  
   
     ```csharp  
     csc /target:library friend_unsigned_A.cs  
     ```  
   
-4.  <span data-ttu-id="764ab-109">次のコードを含む、`friend_unsigned_B` という名前の C# ファイルを作成します。</span><span class="sxs-lookup"><span data-stu-id="764ab-109">Create a C# file named `friend_unsigned_B` that contains the following code.</span></span> <span data-ttu-id="764ab-110">friend_unsigned_A が friend_unsigned_B をフレンド アセンブリとして指定しているため、friend_unsigned_B 内のコードは、friend_unsigned_A の `internal` 型とメンバーにアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="764ab-110">Because friend_unsigned_A specifies friend_unsigned_B as a friend assembly, the code in friend_unsigned_B can access `internal` types and members from friend_unsigned_A.</span></span>  
+4.  <span data-ttu-id="c87c0-109">次のコードを含む、`friend_unsigned_B` という名前の C# ファイルを作成します。</span><span class="sxs-lookup"><span data-stu-id="c87c0-109">Create a C# file named `friend_unsigned_B` that contains the following code.</span></span> <span data-ttu-id="c87c0-110">friend_unsigned_A が friend_unsigned_B をフレンド アセンブリとして指定しているため、friend_unsigned_B 内のコードは、friend_unsigned_A の `internal` 型とメンバーにアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="c87c0-110">Because friend_unsigned_A specifies friend_unsigned_B as a friend assembly, the code in friend_unsigned_B can access `internal` types and members from friend_unsigned_A.</span></span>  
   
     ```csharp  
     // friend_unsigned_B.cs  
@@ -83,24 +74,24 @@ ms.lasthandoff: 11/21/2017
     }  
     ```  
   
-5.  <span data-ttu-id="764ab-111">次のコマンドを使用して friend_signed_B をコンパイルします。</span><span class="sxs-lookup"><span data-stu-id="764ab-111">Compile friend_signed_B by using the following command.</span></span>  
+5.  <span data-ttu-id="c87c0-111">次のコマンドを使用して friend_signed_B をコンパイルします。</span><span class="sxs-lookup"><span data-stu-id="c87c0-111">Compile friend_signed_B by using the following command.</span></span>  
   
     ```csharp  
     csc /r:friend_unsigned_A.dll /out:friend_unsigned_B.exe friend_unsigned_B.cs  
     ```  
   
-     <span data-ttu-id="764ab-112">コンパイラによって生成されるアセンブリの名前は、<xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> 属性に渡されるフレンド アセンブリ名と一致している必要があります。</span><span class="sxs-lookup"><span data-stu-id="764ab-112">The name of the assembly that is generated by the compiler must match the friend assembly name that is passed to the <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> attribute.</span></span> <span data-ttu-id="764ab-113">`/out` コンパイラ オプションを使用して、出力アセンブリ (.exe または .dll) の名前を明示的に指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="764ab-113">You must explicitly specify the name of the output assembly (.exe or .dll) by using the `/out` compiler option.</span></span> <span data-ttu-id="764ab-114">詳しくは、「[/out (C# コンパイラ オプション)](../../../../csharp/language-reference/compiler-options/out-compiler-option.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="764ab-114">For more information, see [/out (C# Compiler Options)](../../../../csharp/language-reference/compiler-options/out-compiler-option.md).</span></span>  
+     <span data-ttu-id="c87c0-112">コンパイラによって生成されるアセンブリの名前は、<xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> 属性に渡されるフレンド アセンブリ名と一致している必要があります。</span><span class="sxs-lookup"><span data-stu-id="c87c0-112">The name of the assembly that is generated by the compiler must match the friend assembly name that is passed to the <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> attribute.</span></span> <span data-ttu-id="c87c0-113">`/out` コンパイラ オプションを使用して、出力アセンブリ (.exe または .dll) の名前を明示的に指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c87c0-113">You must explicitly specify the name of the output assembly (.exe or .dll) by using the `/out` compiler option.</span></span> <span data-ttu-id="c87c0-114">詳しくは、「[/out (C# コンパイラ オプション)](../../../../csharp/language-reference/compiler-options/out-compiler-option.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="c87c0-114">For more information, see [/out (C# Compiler Options)](../../../../csharp/language-reference/compiler-options/out-compiler-option.md).</span></span>  
   
-6.  <span data-ttu-id="764ab-115">friend_signed_B.exe ファイルを実行します。</span><span class="sxs-lookup"><span data-stu-id="764ab-115">Run the friend_signed_B.exe file.</span></span>  
+6.  <span data-ttu-id="c87c0-115">friend_signed_B.exe ファイルを実行します。</span><span class="sxs-lookup"><span data-stu-id="c87c0-115">Run the friend_signed_B.exe file.</span></span>  
   
-     <span data-ttu-id="764ab-116">プログラムによって 2 つの文字列 "Class1.Test" と "Class2.Test" が出力されます。</span><span class="sxs-lookup"><span data-stu-id="764ab-116">The program prints two strings: "Class1.Test" and "Class2.Test".</span></span>  
+     <span data-ttu-id="c87c0-116">プログラムによって 2 つの文字列 "Class1.Test" と "Class2.Test" が出力されます。</span><span class="sxs-lookup"><span data-stu-id="c87c0-116">The program prints two strings: "Class1.Test" and "Class2.Test".</span></span>  
   
-## <a name="net-framework-security"></a><span data-ttu-id="764ab-117">.NET Framework セキュリティ</span><span class="sxs-lookup"><span data-stu-id="764ab-117">.NET Framework Security</span></span>  
- <span data-ttu-id="764ab-118"><xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> 属性と <xref:System.Security.Permissions.StrongNameIdentityPermission> クラスには類似点があります。</span><span class="sxs-lookup"><span data-stu-id="764ab-118">There are similarities between the <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> attribute and the <xref:System.Security.Permissions.StrongNameIdentityPermission> class.</span></span> <span data-ttu-id="764ab-119">主な違いは、<xref:System.Security.Permissions.StrongNameIdentityPermission> はセキュリティ アクセス許可を要求することで特定のコード セクションを実行できますが、<xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> 属性では `internal` 型とメンバーの参照可能範囲を制御することです。</span><span class="sxs-lookup"><span data-stu-id="764ab-119">The main difference is that <xref:System.Security.Permissions.StrongNameIdentityPermission> can demand security permissions to run a particular section of code, whereas the <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> attribute controls the visibility of `internal` types and members.</span></span>  
+## <a name="net-framework-security"></a><span data-ttu-id="c87c0-117">.NET Framework セキュリティ</span><span class="sxs-lookup"><span data-stu-id="c87c0-117">.NET Framework Security</span></span>  
+ <span data-ttu-id="c87c0-118"><xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> 属性と <xref:System.Security.Permissions.StrongNameIdentityPermission> クラスには類似点があります。</span><span class="sxs-lookup"><span data-stu-id="c87c0-118">There are similarities between the <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> attribute and the <xref:System.Security.Permissions.StrongNameIdentityPermission> class.</span></span> <span data-ttu-id="c87c0-119">主な違いは、<xref:System.Security.Permissions.StrongNameIdentityPermission> はセキュリティ アクセス許可を要求することで特定のコード セクションを実行できますが、<xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> 属性では `internal` 型とメンバーの参照可能範囲を制御することです。</span><span class="sxs-lookup"><span data-stu-id="c87c0-119">The main difference is that <xref:System.Security.Permissions.StrongNameIdentityPermission> can demand security permissions to run a particular section of code, whereas the <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> attribute controls the visibility of `internal` types and members.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="764ab-120">関連項目</span><span class="sxs-lookup"><span data-stu-id="764ab-120">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="c87c0-120">参照</span><span class="sxs-lookup"><span data-stu-id="c87c0-120">See Also</span></span>  
  <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>  
- [<span data-ttu-id="764ab-121">アセンブリとグローバル アセンブリ キャッシュ (C#)</span><span class="sxs-lookup"><span data-stu-id="764ab-121">Assemblies and the Global Assembly Cache (C#)</span></span>](../../../../csharp/programming-guide/concepts/assemblies-gac/index.md)  
- [<span data-ttu-id="764ab-122">フレンド アセンブリ (c#)</span><span class="sxs-lookup"><span data-stu-id="764ab-122">Friend Assemblies (C#)</span></span>](../../../../csharp/programming-guide/concepts/assemblies-gac/friend-assemblies.md)  
- [<span data-ttu-id="764ab-123">方法: 署名されたフレンド アセンブリ (c#) を作成します。</span><span class="sxs-lookup"><span data-stu-id="764ab-123">How to: Create Signed Friend Assemblies (C#)</span></span>](../../../../csharp/programming-guide/concepts/assemblies-gac/how-to-create-signed-friend-assemblies.md)  
- [<span data-ttu-id="764ab-124">C# プログラミング ガイド</span><span class="sxs-lookup"><span data-stu-id="764ab-124">C# Programming Guide</span></span>](../../../../csharp/programming-guide/index.md)
+ [<span data-ttu-id="c87c0-121">アセンブリとグローバル アセンブリ キャッシュ (C#)</span><span class="sxs-lookup"><span data-stu-id="c87c0-121">Assemblies and the Global Assembly Cache (C#)</span></span>](../../../../csharp/programming-guide/concepts/assemblies-gac/index.md)  
+ [<span data-ttu-id="c87c0-122">フレンド アセンブリ (C#)</span><span class="sxs-lookup"><span data-stu-id="c87c0-122">Friend Assemblies (C#)</span></span>](../../../../csharp/programming-guide/concepts/assemblies-gac/friend-assemblies.md)  
+ [<span data-ttu-id="c87c0-123">方法: 署名されたフレンド アセンブリを作成する (C#)</span><span class="sxs-lookup"><span data-stu-id="c87c0-123">How to: Create Signed Friend Assemblies (C#)</span></span>](../../../../csharp/programming-guide/concepts/assemblies-gac/how-to-create-signed-friend-assemblies.md)  
+ [<span data-ttu-id="c87c0-124">C# プログラミング ガイド</span><span class="sxs-lookup"><span data-stu-id="c87c0-124">C# Programming Guide</span></span>](../../../../csharp/programming-guide/index.md)
