@@ -1,21 +1,14 @@
 ---
-title: "サーキット ブレーカー パターンの実装"
-description: ".NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ | サーキット ブレーカー パターンの実装"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
+title: サーキット ブレーカー パターンの実装
+description: '.NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ | サーキット ブレーカー パターンの実装'
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 11/12/2017
-ms.prod: .net-core
-ms.technology: dotnet-docker
-ms.topic: article
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 5d7db6899068f84f9165022cfbf17767a75e7db9
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: dea94d8eda3341cca5e3aaf6b3c8369c27381135
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="implementing-the-circuit-breaker-pattern"></a>サーキット ブレーカー パターンの実装
 
@@ -238,7 +231,7 @@ Policy.Handle<HttpResponseException>() // etc
 -   **再試行パターン**
     [*https://docs.microsoft.com/azure/architecture/patterns/retry*](https://docs.microsoft.com/azure/architecture/patterns/retry)
 
--   **接続の回復** (Entity Framework Core) [*https://docs.microsoft.com/ef/core/miscellaneous/connection-resiliency*](https://docs.microsoft.com/ef/core/miscellaneous/connection-resiliency)
+-   **接続の回復性** (Entity Framework Core) [*https://docs.microsoft.com/ef/core/miscellaneous/connection-resiliency*](https://docs.microsoft.com/ef/core/miscellaneous/connection-resiliency)
 
 -   **Polly** (.NET の復元および一時的な障害処理ライブラリ) [*https://github.com/App-vNext/Polly*](https://github.com/App-vNext/Polly)
 

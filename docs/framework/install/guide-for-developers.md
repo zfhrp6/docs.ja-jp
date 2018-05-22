@@ -1,11 +1,7 @@
 ---
 title: 開発者向けの .NET Framework のインストール
 ms.custom: updateeachrelease
-ms.date: 03/23/2018
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: get-started-article
+ms.date: 04/10/2018
 helpviewer_keywords:
 - .NET Framework redistributable package, downloading
 - .NET Framework, installing
@@ -14,14 +10,11 @@ helpviewer_keywords:
 ms.assetid: daf9d9d5-84ac-4bd9-a864-27665ffd0f5c
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: b5cfa21306ccad78825d5f46c78c00a24ff67436
-ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
+ms.openlocfilehash: 157ff544df95740a96cf74fdc740feed7acde7ab
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="install-the-net-framework-for-developers"></a>開発者向けの .NET Framework のインストール
 
@@ -43,8 +36,9 @@ ms.lasthandoff: 03/28/2018
   
 |.NET Framework のバージョン|Developer のインストール|再頒布可能なインストール|プラットフォームのサポート|  
 |----------------------------|----------------------------|----------------------------------|----------------------|  
-|**4.7.1**|[.NET Framework 4.7.1 Developer Pack](http://go.microsoft.com/fwlink/?LinkId=852105)|[4.7.1 Web インストーラーのダウンロード ページ](http://go.microsoft.com/fwlink/?LinkId=852095)<br /><br /> [4.7.1 オフライン インストーラーのダウンロード ページ](http://go.microsoft.com/fwlink/?LinkId=852107)|このバージョンを含む製品 <br/>Windows 10 Fall Creators Update<br/>Windows Server、バージョン 1709<br /><br /> インストール可能なバージョン<br/> Windows 10 Creators Update <br /> Windows 10 Anniversary Update<br /> Windows 8.1 以前<br /> Windows Server 2012 R2 以前<br /> (完全な一覧については、「[システム要件](~/docs/framework/get-started/system-requirements.md)」を参照してください)||
-|**4.7**|[NET Framework 4.7 Developer Pack](http://go.microsoft.com/fwlink/?LinkId=825319)|[4.7 Web インストーラーのダウンロード ページ](http://go.microsoft.com/fwlink/?LinkId=825299)<br /><br /> [4.7 オフライン インストーラーのダウンロード ページ](http://go.microsoft.com/fwlink/?LinkId=825303)|このバージョンを含む製品 <br/>Windows 10 Creators Update<br /><br /> インストール可能なバージョン<br /> Windows 10 Anniversary Update<br /> Windows 8.1 以前<br /> Windows Server 2012 R2 以前<br /> (完全な一覧については、「[システム要件](~/docs/framework/get-started/system-requirements.md)」を参照してください)||
+|**4.7.2**|[.NET Framework 4.7.2 Developer Pack](http://go.microsoft.com/fwlink/?LinkId=863261)|[ダウンロード センター 4.7.2 Web インストーラー](http://go.microsoft.com/fwlink/?LinkId=863262)<br/><br/>[ダウンロード センター 4.7.2 オフライン インストーラー](http://go.microsoft.com/fwlink/?LinkId=863265)|このバージョンを含む製品 <br/>Windows 10 April 2018 Update<br /><br /> インストール可能なバージョン<br/> <br/>Windows 10 Fall Creators Update<br/>Windows 10 Creators Update <br /> Windows 10 Anniversary Update<br /> Windows 8.1 以前<br /> Windows Server バージョン 1709 以前<br /> (完全な一覧については、「[システム要件](~/docs/framework/get-started/system-requirements.md)」を参照してください)||
+|**4.7.1**|[.NET Framework 4.7.1 Developer Pack](http://go.microsoft.com/fwlink/?LinkId=852105)|[4.7.1 Web インストーラーのダウンロード ページ](http://go.microsoft.com/fwlink/?LinkId=852095)<br /><br /> [4.7.1 オフライン インストーラーのダウンロード ページ](http://go.microsoft.com/fwlink/?LinkId=852107)|このバージョンを含む製品 <br/>Windows 10 Fall Creators Update<br/>Windows Server、バージョン 1709<br /><br /> インストール可能なバージョン<br/> Windows 10 Creators Update <br /> Windows 10 Anniversary Update<br /> Windows 8.1 以前<br /> Windows Server 2016 以前<br /> (完全な一覧については、「[システム要件](~/docs/framework/get-started/system-requirements.md)」を参照してください)||
+|**4.7**|[NET Framework 4.7 Developer Pack](http://go.microsoft.com/fwlink/?LinkId=825319)|[4.7 Web インストーラーのダウンロード ページ](http://go.microsoft.com/fwlink/?LinkId=825299)<br /><br /> [4.7 オフライン インストーラーのダウンロード ページ](http://go.microsoft.com/fwlink/?LinkId=825303)|このバージョンを含む製品 <br/>Windows 10 Creators Update<br /><br /> インストール可能なバージョン<br /> Windows 10 Anniversary Update<br /> Windows 8.1 以前<br /> Windows Server 2016 以前<br /> (完全な一覧については、「[システム要件](~/docs/framework/get-started/system-requirements.md)」を参照してください)||
 |**4.6.2**|[NET Framework 4.6.2 Developer Pack](http://go.microsoft.com/fwlink/?LinkId=780617)|[4.6.2 Web インストーラーのダウンロード ページ](http://go.microsoft.com/fwlink/?LinkId=780597)<br /><br /> [4.6.2 オフライン インストーラーのダウンロード ページ](http://go.microsoft.com/fwlink/?LinkId=780601)|このバージョンを含む製品 <br /> Windows 10 Anniversary Update<br /><br /> インストール可能なバージョン<br /> Windows 10 の 11 月更新版 <br/> Windows 10 <br /> Windows 8.1 以前<br /> Windows Server 2012 R2 以前<br /> (完全な一覧については、「[システム要件](~/docs/framework/get-started/system-requirements.md)」を参照してください)|
 |**4.6.1**|[NET Framework 4.6.1 Developer Pack](http://go.microsoft.com/fwlink/?LinkId=690706)|[4.6.1 Web インストーラーのダウンロード ページ](http://go.microsoft.com/fwlink/?LinkId=671729)<br /><br /> [4.6.1 オフライン インストーラーのダウンロード ページ](http://go.microsoft.com/fwlink/?LinkId=671744)|インストール可能なバージョン<br /> Windows 10 <br /> Windows 8.1 以前<br /> Windows Server 2012 R2 以前<br /> (完全な一覧については、「[システム要件](~/docs/framework/get-started/system-requirements.md)」を参照してください)|
 |**4.6**|[!INCLUDE[vs_dev14](../../../includes/vs-dev14-md.md)] に含まれています。 詳しくは、「[Visual Studio 2015 へようこそ](http://msdn.microsoft.com/library/dd831853\(v=vs.140\).aspx)」をご覧ください。<br /><br /> [Microsoft .NET Framework 4.6 Targeting Pack](http://go.microsoft.com/fwlink/?LinkId=528261)|[4.6 Web インストーラーのダウンロード ページ](http://go.microsoft.com/fwlink/?LinkId=528259)<br /><br /> [4.6 オフライン インストーラーのダウンロード ページ](http://go.microsoft.com/fwlink/?LinkId=528233)|このバージョンを含む製品 <br /> Windows 10 <br />[!INCLUDE[vs_dev14](../../../includes/vs-dev14-md.md)]<br /><br /> インストール可能なバージョン<br /> Windows 8.1 以前<br /> Windows Server 2012 R2 以前<br /> (完全な一覧については、「[システム要件](~/docs/framework/get-started/system-requirements.md)」を参照してください)|  
@@ -73,7 +67,9 @@ ms.lasthandoff: 03/28/2018
 
 *Targeting Pack* は、Visual Studio や他の開発環境で開発するときに、アプリを .NET Framework の特定のバージョンを対象にすることができます。 *Developer Pack* には、.NET Framework の特定のバージョンと、それに付随する SDK が、その対応する Targeting Pack と共に含まれます。
 
-.NET Framework 4.5.1 または 4.5.2 の Developer Pack、.NET Framework 4.6 の Targeting Pack、および .NET Framework 4.6.1、4.6.2、4.7、または 4.7.1 の Developer Pack は、Visual Studio などの統合開発環境で使用する .NET Framework の特定のバージョンの参照アセンブリ、言語パック、IntelliSense ファイルを提供します。  Visual Studio を使用している場合、Developer Pack または Targeting Pack をインストールすると、新しいプロジェクトを作成するときに .NET Framework のインストール済みバージョンがターゲットの選択肢に追加されます。  次のいずれかを選択します。  
+.NET Framework 4.5.1 または 4.5.2 の Developer Pack、.NET Framework 4.6 の Targeting Pack、および .NET Framework 4.6.1、4.6.2、4.7、4.7.1、4.7.2 の Developer Pack は、Visual Studio などの統合開発環境で使用する .NET Framework の特定のバージョンの参照アセンブリ、言語パック、IntelliSense ファイルを提供します。  Visual Studio を使用している場合、Developer Pack または Targeting Pack をインストールすると、新しいプロジェクトを作成するときに .NET Framework のインストール済みバージョンがターゲットの選択肢に追加されます。  次のいずれかを選択します。  
+
+- [Microsoft .NET Framework 4.7.2 Developer Pack](http://go.microsoft.com/fwlink/?LinkId=863261)
 
 - [Microsoft .NET Framework 4.7.1 Developer Pack](http://go.microsoft.com/fwlink/?LinkId=852105)
 
@@ -113,6 +109,8 @@ Web インストーラーとオフライン インストーラーはどちらも
   
 1.  インストールする .NET Framework のバージョンのダウンロード ページを開きます。  
 
+    - .NET Framework 4.7.2 ([Web インストーラー](http://go.microsoft.com/fwlink/?LinkId=863262)または[オフライン インストーラー](http://go.microsoft.com/fwlink/p/?LinkId=863265))
+
     - .NET Framework 4.7.1 ([Web インストーラー](http://go.microsoft.com/fwlink/?LinkId=852095)または[オフライン インストーラー](http://go.microsoft.com/fwlink/p/?LinkId=852107))
 
     - .NET Framework 4.7 ([Web インストーラー](http://go.microsoft.com/fwlink/?LinkId=825299)または[オフライン インストーラー](http://go.microsoft.com/fwlink/p/?LinkId=825303))
@@ -148,7 +146,7 @@ Web インストーラーとオフライン インストーラーはどちらも
   
  **インストールに関する注意事項:**  
   
-- [!INCLUDE[net_v451](../../../includes/net-v451-md.md)]、4.5.2、[!INCLUDE[net_v46](../../../includes/net-v46-md.md)]、4.6.1、4.6.2、4.7、4.7.1 は [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] のインプレース更新です。  
+- [!INCLUDE[net_v451](../../../includes/net-v451-md.md)]、4.5.2、[!INCLUDE[net_v46](../../../includes/net-v46-md.md)]、4.6.1、4.6.2、4.7、4.7.1、4.7.2 は [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] のインプレース更新です。  
   
 - [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] とそのポイント リリース、[!INCLUDE[net_v46](../../../includes/net-v46-md.md)] とそのポイント リリース、.NET Framework 4.7 とそのポイント リリースは [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] を置き換えます。 [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] がインストールされたシステムにこれらのバージョンをインストールすると、アセンブリが置換されます。
   
@@ -167,6 +165,8 @@ Web インストーラーとオフライン インストーラーはどちらも
 > 言語パックには、アプリの実行に必要な .NET Framework コンポーネントは含まれていません。言語パックをインストールする前に、Web インストーラーまたはオフライン インストーラーを実行する必要があります。 既に言語パックをインストールしてある場合は、まず言語パックをアンインストールしてから、.NET Framework をインストールし、言語パックを再インストールします。  
   
 1.  インストールした .NET Framework のバージョンに対応する言語パックのダウンロード ページを開きます。  
+
+    - [.NET Framework 4.7.2 の言語パック](http://go.microsoft.com/fwlink/?LinkID=863258) 
   
     - [.NET Framework 4.7.1 の言語パック](http://go.microsoft.com/fwlink/?LinkID=852090) 
 

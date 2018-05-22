@@ -1,21 +1,12 @@
 ---
-title: "チュートリアル: Visual Studio でマネージ アセンブリからの型を埋め込む (C#)"
-ms.custom: 
+title: 'チュートリアル: Visual Studio でマネージ アセンブリからの型を埋め込む (C#)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: 55ed13c9-c5bb-4bc2-bcd8-0587eb568864
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 5b07b940d6287de0caf41c7d15f3036ad4041ad0
-ms.sourcegitcommit: 8ed4ebc15b5ef89d06a7507dc9d5e306e30accf7
+ms.openlocfilehash: 90bb523e3eb42cea2cd0a9d1e753e4d9b9873c0c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="walkthrough-embedding-types-from-managed-assemblies-in-visual-studio-c"></a>チュートリアル: Visual Studio でマネージ アセンブリからの型を埋め込む (C#)
 厳密な名前を持つマネージ アセンブリから型情報を埋め込むと、アプリケーション内で型を疎結合して、バージョンに依存しないプログラムを実現できます。 つまり、各バージョン用の再コンパイルを必要とすることなく、マネージ ライブラリの複数のバージョンから型を使用するプログラムを記述できます。  
@@ -88,7 +79,7 @@ ms.lasthandoff: 12/14/2017
     }  
     ```  
   
-7.  **[ツール]** メニューの **[GUID の作成]**をクリックします。 **[GUID の作成]**ダイアログ ボックスで、**[レジストリ形式]** をクリックし、**[コピー]** をクリックします。 **[終了]** をクリックします。  
+7.  **[ツール]** メニューの **[GUID の作成]** をクリックします。 **[GUID の作成]** ダイアログ ボックスで、**[レジストリ形式]** をクリックし、**[コピー]** をクリックします。 **[終了]** をクリックします。  
   
 8.  `Guid` 属性で、サンプルの GUID を削除し、**[GUID の作成]** ダイアログ ボックスからコピーした GUID を貼り付けます。 コピーした GUID から中かっこ ({}) を削除します。  
   
@@ -240,7 +231,7 @@ ms.lasthandoff: 12/14/2017
   
 6.  ファイル エクスプローラーで、出力パスのフォルダー (たとえば、C:\TypeEquivalenceSample) を開きます。 TypeEquivalenceClient.exe をダブルクリックして、プログラムを実行します。 プログラムでは、再コンパイルを行わなくても、新バージョンの TypeEquivalenceRuntime アセンブリが反映されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [/link (C# コンパイラ オプション)](../../../../csharp/language-reference/compiler-options/link-compiler-option.md)  
  [C# プログラミング ガイド](../../../../csharp/programming-guide/index.md)  
  [アセンブリを使用したプログラミング](../../../../framework/app-domains/programming-with-assemblies.md)  

@@ -1,21 +1,14 @@
 ---
 title: 単純なデータ ドリブン CRUD マイクロサービスの作成
 description: コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | 単純なデータ ドリブン CRUD マイクロサービスの作成
-keywords: Docker, マイクロサービス, ASP.NET, コンテナー
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 12/11/2017
-ms.prod: .net-core
-ms.technology: dotnet-docker
-ms.topic: article
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: ca4bfd31b505754b508555ff2771a6380ae023b4
-ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
+ms.openlocfilehash: 85694cbfe8c30b8430200f0ffbd01379f11b3f9d
+ms.sourcegitcommit: c03eef711abe961a85db2b4d0715257d1524aef6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="creating-a-simple-data-driven-crud-microservice"></a>単純なデータ ドリブン CRUD マイクロサービスの作成
 
@@ -262,7 +255,7 @@ catalog.api:
 
 最後に、前のコード例の ConfigureServices メソッドで示されているように、構成 \["ConnectionString"\] を使用してコードから値を取得できます。
 
-ただし運用環境では、接続文字列などのシークレットを格納する方法について、追加の方法を調べることが必要な場合があります。 通常は、[Docker Swarm シークレットの管理](https://docs.docker.com/engine/swarm/secrets/)で行えるのと同様に、選択したオーケストレーターで管理されます。
+ただし、運用環境では、接続文字列などのシークレットを格納する方法について、追加の方法を調べることが必要な場合があります。 通常は、[Docker Swarm シークレットの管理](https://docs.docker.com/engine/swarm/secrets/)で行えるのと同様に、選択したオーケストレーターで管理されます。
 
 ### <a name="implementing-versioning-in-aspnet-web-apis"></a>ASP.NET Web API でのバージョン管理の実装
 

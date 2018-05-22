@@ -1,26 +1,12 @@
 ---
 title: '方法 : Windows Server AppFabric を使用してワークフロー サービスをホストする'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 83b62cce-5fc2-4c6d-b27c-5742ba3bac73
-caps.latest.revision: 7
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: ef60a291af39a39d3427d74b8a6ea7d00382c8d6
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
-ms.translationtype: HT
+ms.openlocfilehash: a1e2312beed61b340e034a48c36f739e799b1bf8
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-host-a-workflow-service-with-windows-server-app-fabric"></a>方法 : Windows Server AppFabric を使用してワークフロー サービスをホストする
 AppFabric でのワークフロー サービスのホスティングは IIS/WAS でのホスティングに似ています。 唯一の違いは、ワークフロー サービスの投入、監視、および管理のために AppFabric に用意されているツールです。 このトピックで作成したワークフロー サービスを使用して、[実行時間の長いワークフロー サービスを作成する](../../../../docs/framework/wcf/feature-details/creating-a-long-running-workflow-service.md)です。 ワークフロー サービスの作成方法はそちらのトピックで説明されています。 このトピックでは、AppFabric を使用したワークフロー サービスのホスティング方法を説明します。 Windows Server App Fabric の詳細については、次を参照してください。 [Windows Server App Fabric ドキュメント](http://go.microsoft.com/fwlink/?LinkID=193037&clcid=0x409)です。 下の手順を完了する前に、Windows Server AppFabric がインストールされていることを確認してください。  インターネット インフォメーション サービス (inetmgr.exe) を開いてでサーバー名をクリックして、**接続**サイトをクリックし、をクリックして**既定の Web サイト**です。 画面の右側にある必要がありますと呼ばれるセクションを参照して**App Fabric**です。 (右側のペインの一番上に表示される) このセクションが表示されない場合は、AppFabric がインストールされていません。 Windows Server App Fabric のインストールの詳細については、次を参照してください。[をインストールする Windows Server Appfabric](http://go.microsoft.com/fwlink/?LinkId=193136)です。  
@@ -43,11 +29,11 @@ AppFabric でのワークフロー サービスのホスティングは IIS/WAS 
   
 2.  OrderService 仮想ディレクトリに移動し、**接続**ウィンドウです。  
   
-3.  [Orderservice] を右クリックし、選択**管理の WCF と WF サービス**、**構成しています.**. **WCF と WF アプリケーションの構成** ダイアログ ボックスが表示されます。  
+3.  [Orderservice] を右クリックし、選択**管理の WCF と WF サービス**、**構成しています**. **WCF と WF アプリケーションの構成** ダイアログ ボックスが表示されます。  
   
 4.  選択、**全般**の次のスクリーン ショットに示すように、アプリケーションに関する一般情報を表示するタブです。  
   
-     ![App Fabric の構成] ダイアログ ボックスの [全般] タブ](../../../../docs/framework/wcf/feature-details/media/appfabricconfiguration-general.gif "AppFabricConfiguration-全般")  
+     ![App Fabric の構成 ダイアログ ボックスの [全般] タブ](../../../../docs/framework/wcf/feature-details/media/appfabricconfiguration-general.gif "AppFabricConfiguration-全般")  
   
 5.  選択、**監視**タブです。次のスクリーン ショットに示すような各種の監視設定が表示されます。  
   

@@ -1,26 +1,15 @@
 ---
-title: "XML データ型から CLR 型へのマッピング"
-ms.custom: 
+title: XML データ型から CLR 型へのマッピング
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: cabdfcad-f359-479b-b71c-8b2fad42ca49
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: a90e7e58eba3938e8869ed48a118b44f47c2bf4e
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: d06876b91c72b939768d480e40631a8e85170bc9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="mapping-xml-data-types-to-clr-types"></a>XML データ型から CLR 型へのマッピング
 XML データ型と共通言語ランタイム (CLR) 型の既定のマッピングを次の表に示します。  
@@ -28,7 +17,7 @@ XML データ型と共通言語ランタイム (CLR) 型の既定のマッピン
 ## <a name="the-following-table-describes-the-default-mappings-of-an-xml-data-type-to-a-clr-type"></a>次の表は、XML データ型から CLR 型への既定のマッピングを示しています。  
   
 > [!NOTE]
->  `xs` および `xdt` のプレフィックスは、それぞれ http://www.w3.org/2001/XMLSchema および http://www.w3.org/2003/05/xpath-datatypes 名前空間 URI に対応します。  
+>  `xs` および `xdt` のプレフィックスは、それぞれ http://www.w3.org/2001/XMLSchema および http://www.w3.org/2003/05/xpath-datatypes 名前空間 URI にマッピングされます。  
   
 |XML 型|CLR 型|  
 |--------------|--------------|  

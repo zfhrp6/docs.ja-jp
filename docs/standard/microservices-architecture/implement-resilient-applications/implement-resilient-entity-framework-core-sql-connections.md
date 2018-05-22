@@ -1,21 +1,14 @@
 ---
-title: "回復力の高い Entity Framework Core SQL 接続の実装"
-description: "コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | 回復力の高い Entity Framework Core SQL 接続の実装"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
+title: 回復力の高い Entity Framework Core SQL 接続の実装
+description: コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | 回復力の高い Entity Framework Core SQL 接続の実装
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
-ms.prod: .net-core
-ms.technology: dotnet-docker
-ms.topic: article
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: b37d2c5683aff44165d0330c8d42fc881effbb76
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 54d0df517514c359c155de35d34e1e0f56eed4eb
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="implementing-resilient-entity-framework-core-sql-connections"></a>回復力の高い Entity Framework Core SQL 接続の実装
 
@@ -91,10 +84,10 @@ public async Task<IActionResult> UpdateProduct([FromBody]CatalogItem
 
 ## <a name="additional-resources"></a>その他の技術情報
 
--   **Entity Framework による接続の回復性とコマンドのインターセプト**
+-   **Entity Framework での接続回復性とコマンド傍受**
     [*https://docs.microsoft.com/azure/architecture/patterns/category/resiliency*](https://docs.microsoft.com/azure/architecture/patterns/category/resiliency)
 
--   **Cesar de la Torre。回復力のある Entity Framework Core SQL の接続とトランザクションの使用**
+-   **Cesar de la Torre。回復力の高い Entity Framework Core SQL 接続とトランザクションの使用**
     <https://blogs.msdn.microsoft.com/cesardelatorre/2017/03/26/using-resilient-entity-framework-core-sql-connections-and-transactions-retries-with-exponential-backoff/>
 
 

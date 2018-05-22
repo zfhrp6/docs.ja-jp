@@ -185,7 +185,7 @@ ms.lasthandoff: 05/04/2018
   
 3.  F5 キーを押してアプリケーションをビルドし、実行します。  
   
-4.  をクリックして、**を非表示 をクリックします。**を作成するボタン、<xref:System.Windows.Forms.Integration.WindowsFormsHost>要素を非表示します。  
+4.  をクリックして、**を非表示 をクリックします。** を作成するボタン、<xref:System.Windows.Forms.Integration.WindowsFormsHost>要素を非表示します。  
   
 5.  をクリックして、**を折りたたみます**を非表示にするにはボタン、<xref:System.Windows.Forms.Integration.WindowsFormsHost>要素をレイアウトから完全です。 ときに、[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]コントロールが折りたたまれている、周囲の要素がその領域を占有するように再配置します。  
   

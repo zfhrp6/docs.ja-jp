@@ -1,10 +1,6 @@
 ---
 title: Null 条件演算子 (C# および Visual Basic)
 ms.date: 04/03/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -16,17 +12,16 @@ helpviewer_keywords:
 - ?[] operator [C#]
 - ?[] operator [Visual Basic]
 ms.assetid: 9c7b2c8f-a785-44ca-836c-407bfb6d27f5
-caps.latest.revision: 3
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 3ffeaa3c2088d0bb2c000704cfe312b0f9453b68
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: da771fa4a2a89dca308508ea81ef8e0060efa7f0
+ms.sourcegitcommit: e5bb395ec86f536e114314184288f40a8c745e2e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="-and--null-conditional-operators-c-and-visual-basic"></a>?. および ?[] Null 条件演算子 (C# および Visual Basic)
-メンバー アクセス (`?.`) またはインデックス (`?[]`) 操作を実行する前に、null をテストするために使用されます。  これらの演算子を使用すると、null チェックの処理のために記述するコードを少なくすることができます (特に、データ構造を下っていく場合)。  
+メンバー アクセス (`?.`) またはインデックス (`?[]`) 操作を実行する前に、左の演算子の値を null に対してテストします。左側のオペランドが `null` に評価される場合、`null` が返されます。 
+
+これらの演算子を使用すると、null チェックの処理のために記述するコードを少なくすることができます (特に、データ構造を下っていく場合)。  
   
 ```csharp  
 int? length = customers?.Length; // null if customers is null   
@@ -69,16 +64,14 @@ If handler IsNot Nothing
  新しい方法は格段に単純です。  
   
 ```csharp
-PropertyChanged?.Invoke(e)  
+PropertyChanged?.Invoke(…)  
 ```  
 
 ```vb
-PropertyChanged?.Invoke(e)
+PropertyChanged?.Invoke(…)
 ```  
   
- コンパイラが `PropertyChanged` を評価するためのコードを一度しか生成せず、一時変数に結果が保持されるため、新しい方法はスレッド セーフです。  
-  
- null 条件デリゲート呼び出し構文 `PropertyChanged?(e)` がないため、`Invoke` メソッドを明示的に呼び出す必要があります。  
+ コンパイラが `PropertyChanged` を評価するためのコードを一度しか生成せず、一時変数に結果が保持されるため、新しい方法はスレッド セーフです。 null 条件デリゲート呼び出し構文 `PropertyChanged?(e)` がないため、`Invoke` メソッドを明示的に呼び出す必要があります。  
   
 ## <a name="language-specifications"></a>言語仕様  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
@@ -89,5 +82,4 @@ PropertyChanged?.Invoke(e)
  [?? (Null 合体演算子)](null-conditional-operator.md)  
  [C# リファレンス](../../../csharp/language-reference/index.md)  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
- [Visual Basic の言語リファレンス](../../../visual-basic/language-reference/index.md)  
  [Visual Basic プログラミング ガイド](../../../visual-basic/programming-guide/index.md)

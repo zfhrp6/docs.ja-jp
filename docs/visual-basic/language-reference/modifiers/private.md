@@ -7,20 +7,23 @@ helpviewer_keywords:
 - Private keyword [Visual Basic]
 - Private keyword [Visual Basic], syntax
 ms.assetid: aba74a2e-5824-4613-bf63-b9ec7787f4e6
-ms.openlocfilehash: d7935cf691d961591ff5e3d2a290afb88de9165a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 40b64b8d2b6306d458b7a9cc657c5b7dc4270eb2
+ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="private-visual-basic"></a>Private (Visual Basic)
 1 つまたは複数の宣言されたプログラミング要素がすべて含まれている型内からなど、宣言のコンテキストからのみアクセスできることを指定します。  
   
 ## <a name="remarks"></a>コメント  
  プログラミング要素は、独自の機能または機密データを含む、通常する場合、できるだけ厳密にへのアクセスを制限します。 最大の制限は、モジュール、クラス、またはそれへのアクセスを定義する構造体のみを許可することで実現します。 この方法で要素へのアクセスを制限するために宣言できます`Private`です。  
-  
+
+> [!NOTE]
+> 使用することも、[プライベート保護](private-protected.md)メンバーにそのクラス内、および、含んでいるアセンブリにある派生クラスからアクセスできるよう、アクセス修飾子。
+
 ## <a name="rules"></a>ルール  
-  
+
 -   **宣言コンテキスト。** `Private` は、モジュール レベルでのみ使用できます。 つまりの宣言コンテキスト、`Private`要素は、モジュール、クラス、または構造体にある必要があるあり、ソース ファイル、名前空間、インターフェイス、またはプロシージャにすることはできません。  
   
 ## <a name="behavior"></a>動作  
@@ -59,7 +62,8 @@ ms.lasthandoff: 05/04/2018
  [Public](../../../visual-basic/language-reference/modifiers/public.md)  
  [Protected](../../../visual-basic/language-reference/modifiers/protected.md)  
  [Friend](../../../visual-basic/language-reference/modifiers/friend.md)  
- [Visual Basic でのアクセス レベル](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)  
+ [保護されたプライベート](./private-protected.md)   
+ [Protected Friend](./protected-friend.md)[Visual Basic でのレベルのアクセス    ](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)  
  [手順](../../../visual-basic/programming-guide/language-features/procedures/index.md)  
  [構造体](../../../visual-basic/programming-guide/language-features/data-types/structures.md)  
  [クラスとオブジェクト](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)

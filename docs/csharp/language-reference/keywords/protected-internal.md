@@ -1,24 +1,20 @@
 ---
-title: "保護された内部 (c# リファレンス)"
+title: protected internal (C# リファレンス)
 ms.date: 11/15/2017
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.topic: article
 author: sputier
-ms.author: wiwagn
-ms.openlocfilehash: f9004a5e8d65179c9ff2e30688e63c14c95ab431
-ms.sourcegitcommit: 7e99f66ef09d2903e22c789c67ff5a10aa953b2f
+ms.openlocfilehash: 5ba2c811a1a4f095bcee65ed6678a7dc50fe94db
+ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 05/15/2018
 ---
-# <a name="protected-internal-c-reference"></a>保護された内部 (c# リファレンス)
-`protected internal`キーワードの組み合わせは、メンバー アクセス修飾子。 プロテクト内部メンバーは、現在のアセンブリとは、含んでいるクラスから派生した型からアクセス可能です。 `protected internal` と他のアクセス修飾子の比較については、「[アクセシビリティ レベル](../../../csharp/language-reference/keywords/accessibility-levels.md)」を参照してください。 
+# <a name="protected-internal-c-reference"></a>protected internal (C# リファレンス)
+キーワード組み合わせ `protected internal` はメンバー アクセス修飾子です。 protected internal メンバーには、現在のアセンブリから、または包含クラスから派生した型からアクセスできます。 `protected internal` と他のアクセス修飾子の比較については、「[アクセシビリティ レベル](../../../csharp/language-reference/keywords/accessibility-levels.md)」を参照してください。 
    
 ## <a name="example"></a>例  
- 基底クラスのプロテクト内部メンバーは、含んでいるアセンブリ内の任意の型からアクセスします。 派生クラス型の変数を使用して、アクセスが行われる場合にのみ、別のアセンブリ内にある派生クラスではアクセスもできます。 たとえば、次のコード セグメントを考えてみます。  
+ 基底クラスのプロテクト内部メンバーは、包含アセンブリ内の任意の型からアクセスします。 派生クラス型の変数経由でアクセスする場合にのみ、別のアセンブリにある派生クラスでもアクセスできます。 たとえば、次のコード セグメントを考えてみます。  
 
-```
+```csharp
 // Assembly1.cs  
 // Compile with: /target:library  
 public class BaseClass   
@@ -36,7 +32,7 @@ class TestAccess
 }  
 ```  
   
-```  
+```csharp  
 // Assembly2.cs  
 // Compile with: /reference:Assembly1.dll  
 class DerivedClass : BaseClass   
@@ -55,14 +51,14 @@ class DerivedClass : BaseClass
     }
 } 
 ```  
- この例には、2 つのファイル (`Assembly1.cs` と `Assembly2.cs`) が含まれています。 最初のファイルにはパブリック基底クラスが含まれています`BaseClass`、および別のクラス、`TestAccess`です。 `BaseClass`プロテクトの内部メンバーを所有している`myValue`、によってアクセスされる、`TestAccess`型です。 2 番目のファイルへのアクセスに`myValue`のインスタンスを通じて`BaseClass`、派生クラスのインスタンスを使用してこのメンバーへのアクセス中にエラーが生成されます`DerivedClass`は成功します。 
+ この例には、2 つのファイル (`Assembly1.cs` と `Assembly2.cs`) が含まれています。 最初のファイルには public 基底クラスである `BaseClass` ともう 1 つのクラスである `TestAccess` が含まれています。 `BaseClass` は protected internal メンバーの `myValue` を持っています。これは `TestAccess` 型にアクセスされます。 2 番目のファイルでは、`BaseClass` のインスタンス経由で `myValue` にアクセスしようとするとエラーが発生します。一方で、派生クラス `DerivedClass` のインスタンスからこのメンバーにアクセスすると成功します。 
 
- 構造体のメンバーにすることはできません`protected internal`のため、構造体は継承できません。  
+ 構造体は継承できないため、構造体メンバーは `protected internal` になりません。  
   
 ## <a name="c-language-specification"></a>C# 言語仕様  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C# リファレンス](../../../csharp/language-reference/index.md)   
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
  [C# のキーワード](../../../csharp/language-reference/keywords/index.md)   
@@ -72,4 +68,4 @@ class DerivedClass : BaseClass
  [public](../../../csharp/language-reference/keywords/public.md)   
  [private](../../../csharp/language-reference/keywords/private.md)   
  [internal](../../../csharp/language-reference/keywords/internal.md)   
- [Internal virtual キーワードのセキュリティに関する注意事項](https://msdn.microsoft.com/library/heyd8kky(v=vs.110))
+ [Internal Virtual キーワードのセキュリティ関連事項](https://msdn.microsoft.com/library/heyd8kky(v=vs.110))

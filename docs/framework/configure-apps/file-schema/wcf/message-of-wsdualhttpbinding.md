@@ -2,11 +2,11 @@
 title: '&lt;wsDualHttpBinding&gt; の &lt;message&gt;'
 ms.date: 03/30/2017
 ms.assetid: 75101744-eed8-4d61-91f4-5fc4473a21f2
-ms.openlocfilehash: 6881937f1bffe8fdc42c71fff8c36fccaacf0f7c
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
-ms.translationtype: HT
+ms.openlocfilehash: 29bb222cff120d1b3600c8da9f73c54fdc389a35
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="ltmessagegt-of-ltwsdualhttpbindinggt"></a>&lt;wsDualHttpBinding&gt; の &lt;message&gt;
 メッセージ レベル セキュリティを定義、 [ \<wsDualHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wsdualhttpbinding.md)です。  
@@ -40,7 +40,7 @@ ms.lasthandoff: 05/03/2018
 |---------------|-----------------|  
 |algorithmSuite|省略可能です。 メッセージの暗号化とキー ラップ アルゴリズムを設定します。 アルゴリズムとキー サイズは、<xref:System.ServiceModel.Security.SecurityAlgorithmSuite> クラスにより決まります。 これらのアルゴリズムは、Security Policy Language (WS-SecurityPolicy) の仕様で指定されているアルゴリズムに対応付けられています。<br /><br /> 有効値については、以下を参照してください。 既定値は `Basic256` です。|  
 |clientCredentialType|省略可能です。 セキュリティ モード `Message` を使用してクライアント認証を実行するときに使用される資格情報の種類を指定します。 有効値については、以下を参照してください。 既定値は、`Windows` です。<br /><br /> この属性は <xref:System.ServiceModel.MessageCredentialType> 型です。|  
-|negotiateServiceCredential|省略可能です。 サービス資格情報がクライアントの帯域外で提供されるか、ネゴシエーションのプロセスによってサービスからクライアントに取得されるかを指定するブール値。 そのようなネゴシエーションは、通常のメッセージ交換の準備です。<br /><br /> 場合、`clientCredentialType`属性が [なし]、[ユーザー名、またはこの属性を設定、証明書に等しい`false`サービス証明書がクライアントの帯域外で使用可能であり、クライアントがサービス証明書を指定する必要があることを意味 (を使用して、[ \<serviceCertificate >](../../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md)) で、 [ \<serviceCredentials >](../../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md)サービス動作。 このモードは、WS-Trust および WS-SecureConversation が実装された SOAP スタックと同時使用できます。<br /><br /> `ClientCredentialType` 属性が `Windows` に設定されている場合、この属性を `false` に設定すると Kerberos ベースの認証が指定されます。 これは、クライアントおよびサービスが同じ Kerberos ドメインの一部でなければならないことを意味します。 このモードは、Kerberos トークン プロファイル (OASIS WSS TC で定義) に加えて WS-Trust および WS-SecureConversation が実装された SOAP スタックと同時使用できます。 この属性が `true` の場合、SOAP メッセージを介して SPNego 交換をトンネル化する .NET SOAP ネゴシエーションが行われます。<br /><br /> 既定値は、`true` です。|  
+|negotiateServiceCredential|省略可能です。 サービス資格情報がクライアントの帯域外で提供されるか、ネゴシエーションのプロセスによってサービスからクライアントに取得されるかを指定するブール値。 そのようなネゴシエーションは、通常のメッセージ交換の準備です。<br /><br /> 場合、`clientCredentialType`属性が [なし]、ユーザー名、またはこの属性を設定、証明書に等しい`false`サービス証明書がクライアントの帯域外で使用可能であり、クライアントがサービス証明書を指定する必要があることを意味 (を使用して、[ \<serviceCertificate >](../../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md)) で、 [ \<serviceCredentials >](../../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md)サービス動作。 このモードは、WS-Trust および WS-SecureConversation が実装された SOAP スタックと同時使用できます。<br /><br /> `ClientCredentialType` 属性が `Windows` に設定されている場合、この属性を `false` に設定すると Kerberos ベースの認証が指定されます。 これは、クライアントおよびサービスが同じ Kerberos ドメインの一部でなければならないことを意味します。 このモードは、Kerberos トークン プロファイル (OASIS WSS TC で定義) に加えて WS-Trust および WS-SecureConversation が実装された SOAP スタックと同時使用できます。 この属性が `true` の場合、SOAP メッセージを介して SPNego 交換をトンネル化する .NET SOAP ネゴシエーションが行われます。<br /><br /> 既定値は、`true` です。|  
   
 ## <a name="algorithmsuite-attribute"></a>algorithmSuite 属性  
   
@@ -69,7 +69,7 @@ ms.lasthandoff: 05/03/2018
 |-----------|-----------------|  
 |なし|サービスが匿名クライアントと対話できるようになります。 サービス側では、サービスがクライアントの資格情報を必要としないことを示しています。 クライアント側では、クライアントがクライアントの資格情報を提示しないことを示しています。|  
 |Windows|SOAP 交換を、Windows 資格情報の認証されたコンテキストで行うことが可能になります。 `negotiateServiceCredential` 属性が `true` に設定されている場合、SSPI ネゴシエーションと Kerberos (同時使用可能な標準) のいずれかが実行されます。|  
-|UserName|サービスが、UserName 資格情報を使用したクライアントの認証を要求できるようにします。 [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] は、パスワード ダイジェストの送信、またはパスワードを使用したキーの派生、およびメッセージ セキュリティでのそのようなキーの使用をサポートしません。 そのため、[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] では UserName 資格情報を使用する場合は、トランスポートが強制的にセキュリティで保護されます。 この資格情報モードは、`negotiateServiceCredential` 属性に基づいて、同時実行可能な交換か、同時実行できないネゴシエーションのいずれかになります。|  
+|UserName|サービスが、UserName 資格情報を使用したクライアントの認証を要求できるようにします。 WCF では、パスワード ダイジェストの送信、またはパスワードを使用して、メッセージ セキュリティのようなキーを使用してキーの派生は使用できません。 そのため、WCF は、UserName 資格情報を使用する場合、トランスポートは、セキュリティで保護を適用します。 この資格情報モードは、`negotiateServiceCredential` 属性に基づいて、同時実行可能な交換か、同時実行できないネゴシエーションのいずれかになります。|  
 |証明書|証明書を使用したクライアントの認証を、サービスで要求することが可能になります。 メッセージのセキュリティ モードが使用されており、`negotiateServiceCredential` 属性が `false` に設定されている場合、クライアントをサービス証明書で準備する必要があります。|  
 |IssuedToken|カスタム トークン (通常はセキュリティ トークン サービスにより発行される) を指定します。|  
   

@@ -1,21 +1,14 @@
 ---
-title: "入れ子にされた型 (C# プログラミング ガイド)"
+title: 入れ子にされた型 (C# プログラミング ガイド)
 ms.date: 07/10/2017
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - nested types [C#]
 ms.assetid: f2e1b315-e3d1-48ce-977f-7bae0960ba99
-caps.latest.revision: 
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: ab13c68b638062ab89c90dbfc51b51b8d72d3bde
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 57356fbf4bff218932d1f1b4c62532f10c175757
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="nested-types-c-programming-guide"></a>入れ子にされた型 (C# プログラミング ガイド)
 [クラス](../../../csharp/language-reference/keywords/class.md)や[構造体](../../../csharp/language-reference/keywords/struct.md)の中で定義された型は、入れ子にされた型と呼ばれます。 例:  
@@ -26,9 +19,9 @@ ms.lasthandoff: 11/21/2017
 
 次のように、[アクセス修飾子](../../language-reference/keywords/access-modifiers.md)を指定して、入れ子にされた型のアクセシビリティを定義することもできます。
 
-- 入れ子にされた型の**クラス**できます[パブリック](../../../csharp/language-reference/keywords/public.md)、[保護](../../../csharp/language-reference/keywords/protected.md)、[内部](../../../csharp/language-reference/keywords/internal.md)、[内部保護](../../../csharp/language-reference/keywords/protected-internal.md)、[プライベート](../../../csharp/language-reference/keywords/private.md)または[保護されたプライベート](../../../csharp/language-reference/keywords/private-protected.md)です。 
+- **クラス**の入れ子にされた型は、[public](../../../csharp/language-reference/keywords/public.md)、[protected](../../../csharp/language-reference/keywords/protected.md)、[internal](../../../csharp/language-reference/keywords/internal.md)、[protected internal](../../../csharp/language-reference/keywords/protected-internal.md)、[private](../../../csharp/language-reference/keywords/private.md)、[private protected](../../../csharp/language-reference/keywords/private-protected.md) になります。 
 
-   ただし、定義、 `protected`、`protected internal`または`private protected`内のクラスを入れ子になった、[クラスをシール](../../language-reference/keywords/sealed.md)コンパイラの警告が生成されます[CS0628](../../misc/cs0628.md)、「新規のプロテクト メンバーはシール クラスで宣言されています」。
+   ただし、[シール クラス](../../language-reference/keywords/sealed.md)内で `protected`、`protected internal`、`private protected` の入れ子にされたクラスを定義すると、コンパイラの警告 [CS0628](../../misc/cs0628.md)、"新規のプロテクト メンバーがシール クラスで宣言されました" が生成されます。
   
 - **構造体**の入れ子にされた型は、は、[public](../../../csharp/language-reference/keywords/public.md)、[internal](../../../csharp/language-reference/keywords/internal.md)、または [private](../../../csharp/language-reference/keywords/private.md) のいずれかが可能です。
   
@@ -46,7 +39,7 @@ ms.lasthandoff: 11/21/2017
   
  [!code-csharp[csProgGuideObjects#71](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/nested-types_4.cs)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
  [クラスと構造体](../../../csharp/programming-guide/classes-and-structs/index.md)  
  [アクセス修飾子](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)  

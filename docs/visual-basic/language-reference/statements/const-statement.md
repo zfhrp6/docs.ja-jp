@@ -1,16 +1,16 @@
 ---
 title: Const ステートメント (Visual Basic)
-ms.date: 07/20/2015
+ms.date: 05/12/2018
 f1_keywords:
 - vb.Const
 helpviewer_keywords:
 - Const statement [Visual Basic]
 ms.assetid: 495b318d-b7c5-4198-94f8-0790a541b07a
-ms.openlocfilehash: bb4c524fa5c29efbcbe485fb5e86c8cf0fa432e8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a5842e284eaa858e7a66160060123edc21858a3a
+ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="const-statement-visual-basic"></a>Const ステートメント (Visual Basic)
 宣言し、1 つまたは複数の定数を定義します。  
@@ -27,7 +27,7 @@ Const constantlist
  任意。 すべての定数に適用される属性の一覧は、このステートメントで宣言します。 参照してください[属性リスト](../../../visual-basic/language-reference/statements/attribute-list.md)山かっこ ("`<`「と」`>`") です。  
   
  `accessmodifier`  
- 任意。 これらの定数にアクセスできるコードを指定するのにには、これを使用します。 指定できます[パブリック](../../../visual-basic/language-reference/modifiers/public.md)、 [Protected](../../../visual-basic/language-reference/modifiers/protected.md)、[フレンド](../../../visual-basic/language-reference/modifiers/friend.md)、 `Protected Friend`、または[プライベート](../../../visual-basic/language-reference/modifiers/private.md)です。  
+ 任意。 これらの定数にアクセスできるコードを指定するのにには、これを使用します。 指定できます[パブリック](../../../visual-basic/language-reference/modifiers/public.md)、 [Protected](../../../visual-basic/language-reference/modifiers/protected.md)、[フレンド](../../../visual-basic/language-reference/modifiers/friend.md)、 [Protected Friend](../modifiers/protected-friend.md)、[プライベート](../../../visual-basic/language-reference/modifiers/private.md)、または[保護されたプライベート](../../language-reference/modifiers/private-protected.md)です。
   
  `Shadows`  
  任意。 再宣言して、基底クラスのプログラミング要素を非表示にするには、これを使用します。 参照してください[Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)です。  

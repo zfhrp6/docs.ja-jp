@@ -1,8 +1,6 @@
 ---
-title: "ネットワーク プログラミングの .NET Framework セキュリティ"
+title: ネットワーク プログラミングにおけるセキュリティ - .NET Framework
 ms.date: 03/14/2018
-ms.prod: .net-framework
-ms.topic: article
 helpviewer_keywords:
 - sending data, Internet security
 - protocols, Internet security
@@ -17,13 +15,11 @@ ms.assetid: afb07899-2707-49ab-a57f-e0caf20d0171
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload:
-- dotnet
-ms.openlocfilehash: 2dd4133c31cf0595c06485a76490d78d469a0d38
-ms.sourcegitcommit: 1c0b0f082b3f300e54b4d069b317ac724c88ddc3
-ms.translationtype: MT
+ms.openlocfilehash: a684fd1a7ce8cce52e00511b114cb4905ed0a42b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="security-in-network-programming"></a>ネットワーク プログラミングにおけるセキュリティ
 
@@ -31,8 +27,8 @@ ms.lasthandoff: 03/16/2018
   
 ## <a name="in-this-section"></a>このセクションの内容
 
-[.NET Framework で、トランスポート層セキュリティ (TLS) のベスト プラクティス](tls.md)  
-.NET Framwork で TLS のベスト プラクティスをについて説明します。
+[.NET Framework でのトランスポート層セキュリティ (TLS) のベスト プラクティス](tls.md)  
+.NET Framwork での TLS ベスト プラクティスについて説明します。
  
 [Secure Sockets Layer の使用](../../../docs/framework/network-programming/using-secure-sockets-layer.md)  
 SSL (Secure Sockets Layer) 接続を使用する方法について説明します。  

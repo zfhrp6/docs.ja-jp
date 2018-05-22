@@ -1,21 +1,14 @@
 ---
-title: "コンテナーとして実行するデータベース サーバーの使用"
-description: "コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | コンテナーとして実行するデータベース サーバーの使用"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
+title: コンテナーとして実行するデータベース サーバーの使用
+description: コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | コンテナーとして実行するデータベース サーバーの使用
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/30/2017
-ms.prod: .net-core
-ms.technology: dotnet-docker
-ms.topic: article
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 70dd3686519fc38ae35910284948ccf95e743ef7
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 8ff6afbe9618df918e0a965fa1202bbb999eee5c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-a-database-server-running-as-a-container"></a>コンテナーとして実行するデータベース サーバーの使用
 
@@ -54,10 +47,10 @@ SQL Server のコンテナーとしての実行は、SQL Server のインスタ�
 
 #### <a name="additional-resources"></a>その他の技術情報
 
--   **Run the SQL Server Docker image on Linux, Mac, or Windows (Linux、Mac、または Windows 上での SQL Server Docker イメージの実行)**
+-   **Linux、Mac、Windows で SQL Server Docker イメージを実行する**
     [*https://docs.microsoft.com/sql/linux/sql-server-linux-setup-docker*](https://docs.microsoft.com/sql/linux/sql-server-linux-setup-docker)
 
--   **Connect and query SQL Server on Linux with sqlcmd(sqlcmd を使用した Linux 上の SQL Server の接続とクエリ)**
+-   **Linux で sqlcmd を使用して SQL Server に接続してクエリする**
     [*https://docs.microsoft.com/sql/linux/sql-server-linux-connect-and-query-sqlcmd*](https://docs.microsoft.com/sql/linux/sql-server-linux-connect-and-query-sqlcmd)
 
 ### <a name="seeding-with-test-data-on-web-application-startup"></a>Web アプリケーションの起動時のテスト データのシード処理

@@ -1,24 +1,17 @@
 ---
-title: ".NET Framework のバージョンおよび依存関係"
+title: .NET Framework のバージョンおよび依存関係
 ms.custom: updateeachrelease
-ms.date: 10/17/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: article
+ms.date: 04/10/2018
 helpviewer_keywords:
 - versions, .NET Framework
 ms.assetid: f75a72de-e2f2-4a7a-9574-3f278684ea90
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: b6c5699fdcf68e99cd3049cf3150e44d14f4e614
-ms.sourcegitcommit: 96cc82cac4650adfb65ba351506d8a8fbcd17b5c
+ms.openlocfilehash: 05099f67ecefe914516ba0ca62ae67060a087b8e
+ms.sourcegitcommit: 88f251b08bf0718ce119f3d7302f514b74895038
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="net-framework-versions-and-dependencies"></a>.NET Framework のバージョンおよび依存関係
 .NET Framework の各バージョンには、共通言語ランタイム (CLR)、基底クラス ライブラリ、およびその他のマネージ ライブラリが含まれています。 このトピックでは、.NET Framework の各バージョンの主要な機能について説明し、基になっている CLR のバージョンおよび関連する開発環境に関する情報と、Windows オペレーティング システムでインストールされる .NET Framework のバージョンを示します。  
@@ -36,7 +29,8 @@ ms.lasthandoff: 02/19/2018
   
 |.NET Framework のバージョン|CLR バージョン|フィーチャー|Visual Studio バージョンに含まれる|✓ このバージョンを含む製品<br />+ インストール可能<br />Windows|✓ このバージョンを含む製品<br />+ インストール可能<br />Windows Server|インストールされた .NET バージョンを確認するには|  
 |----------------------------|-----------------|--------------|---------------------------------------|----------------------------------------------------|-----------------------------------------------------------|-----------------------------------------| 
-|4.7.1|4|- .NET Standard 2.0 のサポート。<br/> - 構成ビルダーのサポート。実行時、構成ファイルを作成できます。<br/> - ランタイム機能検出。事前定義されている機能がランタイム環境でサポートされているかどうかを判断できます。<br/> - シリアル化可能な値タプル。<br/> - ガベージ コレクションのパフォーマンス改善。<br/> - 移植可能 PDB のサポート。<br/> - <xref:System.Messaging.Message.HashAlgorithm%2A?displayProperty=nameWithType> の SHA-2 サポート。<br/> - <xref:System.Web.HttpCookie.TryParse%2A?displayProperty=nameWithType> メソッドによる ASP.NET Cookie 解析のサポート。<br/> - ASP.NET フォーム認証資格情報の SHA-2 ハッシュ。<br/> - アプリ開発者のためのさまざまなアクセシビリティ改善。「[What's new in accessibility in the .NET Framework](../whats-new/whats-new-in-accessibility.md)」 (.NET Framework のアクセシビリティの新機能) を参照してください。| | ✓  10 Fall Creators Update <br/> <br/> + 10 Creators Update <br/> + 10 Anniversary Update <br/> + 8.1 <br/> +7| + 2016 <br/> + 2012 R2 <br/> + 2012 <br/> + 2008 R2 SP1 |`Release` DWORD を使用:<br/><br/> - 461308 (Windows 10 Creators Update) <br/> - 461310 (その他すべての OS バージョン) <br/><br/> ([手順](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md)に関するページを参照) 
+|4.7.2|4|- さまざまな暗号化の強化。<br/> - ZIP アーカイブの展開時のパフォーマンスを改善しました。<br/> - コレクション クラスの追加 API。<br/> - Web フォームでの依存関係挿入のサポート。<br/> - ASP.NET で同じサイトの Cookie をサポートします。<br/> - 追加の <xref:System.Net.Http.HttpClientHandler> プロパティの実装。<br/> - SQLClient による Azure Active Directory のユニバーサル認証と多要素認証のサポート。<br/> - SqlClient によるエンクレーブベースの Always Encrypted のサポート。<br/> - WPF でのソースによる ResourceDictionaries の検索、ResourceDictionary 所有者の検索、StaticResource 参照の検索のサポート。<br/> - ClickOnce を使用して Windows フォーム、WPF、および Visual Studio Tools for Office (VSTO) の HDPI 対応アプリケーションを展開できるようになりました。<br/> - さまざまなアクセシビリティ改善。「[.NET Framework のアクセシビリティの新機能](../whats-new/whats-new-in-accessibility.md)」を参照してください。| |✓  10 April 2018 Update <br/><br/> + 10 Fall Creators Update <br/> <br/> + 10 Creators Update <br/> + 10 Anniversary Update <br/> + 8.1 <br/> +7 | + 2016 <br/> + 2012 R2 <br/> + 2012 <br/> + 2008 R2 SP1 |`Release` DWORD を使用:<br/><br/> - 461808 (Windows 10 April 2018 Update) <br/> - 461814 (その他すべての OS バージョン) <br/><br/> ([手順](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md)に関するページを参照)|
+|4.7.1|4|- .NET Standard 2.0 のサポート。<br/> - 構成ビルダーのサポート。実行時、構成ファイルを作成できます。<br/> - ランタイム機能検出。事前定義されている機能がランタイム環境でサポートされているかどうかを判断できます。<br/> - シリアル化可能な値タプル。<br/> - ガベージ コレクションのパフォーマンス改善。<br/> - 移植可能 PDB のサポート。<br/> - <xref:System.Messaging.Message.HashAlgorithm%2A?displayProperty=nameWithType> の SHA-2 サポート。<br/> - <xref:System.Web.HttpCookie.TryParse%2A?displayProperty=nameWithType> メソッドによる ASP.NET Cookie 解析のサポート。<br/> - ASP.NET フォーム認証資格情報の SHA-2 ハッシュ。<br/> - アプリ開発者のためのさまざまなアクセシビリティ改善。「[What's new in accessibility in the .NET Framework](../whats-new/whats-new-in-accessibility.md)」 (.NET Framework のアクセシビリティの新機能) を参照してください。| | ✓  10 Fall Creators Update <br/> <br/> + 10 Creators Update <br/> + 10 Anniversary Update <br/> + 8.1 <br/> +7| + 2016 <br/> + 2012 R2 <br/> + 2012 <br/> + 2008 R2 SP1 |`Release` DWORD を使用:<br/><br/> - 461308 (Windows 10 Creators Update) <br/> - 461310 (その他すべての OS バージョン) <br/><br/> ([手順](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md)に関するページを参照)| 
 |4.7|4|- オペレーティング システムによって提供されるレベルの TLS サポートに対応。<br/> - TLS1.1 または TLS1.2 の既定のメッセージ セキュリティ設定を構成する機能。 <br /> - <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> の信頼性の向上。 <br /> - WCF アプリケーションでのシリアル化と逆シリアル化の信頼性の向上。 <br /> - ASP.NET オブジェクト キャッシュの拡張機能。 <br /> - WPF アプリケーション用の Windows Ink Services Platform (WISP) に代わる `WM_POINTER` Windows メッセージに基づくタッチ/スタイラス スタックのサポート。 <br /> - Windows Print Document Package API を使用した WPF アプリケーションでの印刷。<br /> - 拡張された高 DPI およびマルチ モニターによる Windows 10 Creators Update で実行される Windows フォーム アプリケーションのサポート。 | | ✓ 10 Creators Update <br/> <br/> + 10 Anniversary Update <br/> + 8.1 <br/> +7| + 2016 <br/> + 2012 R2 <br/> + 2012 <br/> + 2008 R2 SP1 |`Release` DWORD を使用:<br/><br/> - 460798 (Windows 10 Creators Update) <br/> - 460805 (その他すべての OS バージョン) <br/><br/> ([手順](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md)に関するページを参照) |  
 |4.6.2|4|- 暗号化の機能強化。FIS 186-3 DSA を含む X509 証明書のサポート、保存されたキーの対称暗号化のサポート、SHA-2 のハッシュの <xref:System.Security.Cryptography.Xml.SignedXml> サポートが含まれます。また、ECDiffieHellman キー派生ルーチンへの入力がわかりやすくなりました。<br />- Windows Presentation Foundation (WPF) アプリでのソフト キーボードのサポートおよびモニターごとの DPI。<br />- TLS 1.1 プロトコルと TLS 1.2 プロトコルでの ClickOnce のサポート。<br />- Windows フォームおよび WPF アプリの UWP アプリへの変換のサポート。||✓  10 Anniversary Update<br /><br /> + 10 の 11 月の更新プログラム <br/> + 10 <br/> + 8.1<br />+ 7|✓ 2016<br /><br /> + 2012 R2<br />+ 2012<br />+ 2008 R2 SP1|`Release` DWORD を使用:<br /><br /> - 394802 (Windows 10 Anniversary Update)<br />- 394806 (その他すべての OS バージョン)<br /><br /> ([手順](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md)に関するページを参照)|  
 |4.6.1|4|- ECDSA を含む X509 証明書のサポート<br />- ADO.NET のハードウェア保護キーに対する Always Encrypted のサポート<br />- WPF におけるスペル チェック機能の向上<br />-   [その他...](../../../docs/framework/whats-new/index.md)||✓  10 の 11 月の更新プログラム<br /><br /> + 10<br />+ 8.1<br />+ 8<br />+ 7|+ 2012 R2<br />+ 2012<br />+ 2008 R2 SP1|`Release` DWORD を使用:<br /><br /> - 394254 (Windows 10 November Update)<br />- 394271 (その他すべての OS バージョン)<br /><br /> ([手順](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md)に関するページを参照)|  

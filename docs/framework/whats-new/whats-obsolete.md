@@ -1,10 +1,7 @@
 ---
-title: ".NET Framework クラス ライブラリの互換性のために残されている機能"
+title: .NET Framework クラス ライブラリの互換性のために残されている機能
 ms.custom: updateeachrelease
-ms.date: 10/17/2017
-ms.prod: .net-framework
-ms.technology: dotnet-clr
-ms.topic: article
+ms.date: 04/10/2018
 helpviewer_keywords:
 - obsolete [.NET Framework]
 - what's obsolete [.NET Framework]
@@ -12,13 +9,11 @@ helpviewer_keywords:
 ms.assetid: d356a43a-73df-4ae2-a457-b9628074c7cd
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: d5fc41473c4a3ea812013ee7e5204c22d0a694d7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 01969eff86e5b1e8e4e2bdc4950df9fb5291f5b6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="what39s-obsolete-in-the-net-framework-class-library"></a>.NET Framework クラス ライブラリの互換性のために残されている機能
 .NET Framework は進化しています。 バージョンが新しくなるたびに、新しい機能を提供する新しい型と新しいメンバーが追加されています。 既存の型とそのメンバーも変更されています。 たとえば、一部の型は、その型がサポートするテクノロジが新しいテクノロジに置き換えられることで重要度が下がり、一部のメソッドは、より便利な新しいメソッドまたはより多くの機能を備えた新しいメソッドに置き換えられています。  
@@ -26,7 +21,8 @@ ms.lasthandoff: 12/22/2017
  .NET Framework と共通言語ランタイムでは、下位互換性をサポートするように努めています (.NET Framework の特定のバージョンで開発したアプリケーションを、.NET Framework の次期バージョンで実行できるようにするためです)。 そのため、型または型のメンバーを単純に削除することはできません。 そこで、.NET Framework では、型または型のメンバーが使用されなくなったことを示すために、その型またはメンバーを旧式 (互換性のために残されている) または非推奨として指定しています。 型またはメンバーを非推奨とする場合は、開発者がその型またはメンバーが削除予定であることを認識してその削除に対応できるように、指定を行う必要があります。 ただし、そのような型またはメンバーを使用する既存のコードは、.NET Framework の次期バージョンで引き続き実行できます。  
   
 > [!NOTE]
->  *旧式*と*非推奨*という用語は、.NET Framework の型とメンバーに対して使用する場合は同じ意味です。  
+>  
+  *旧式*と*非推奨*という用語は、.NET Framework の型とメンバーに対して使用する場合は同じ意味です。  
   
 ## <a name="the-obsoleteattribute-attribute"></a>ObsoleteAttribute 属性  
  .NET Framework では、型または型のメンバーが旧式であることを示すために、その型またはメンバーに <xref:System.ObsoleteAttribute> 属性を指定します。 この属性が型またはメンバーに適用されている場合、その型またはメンバーは .NET Framework の将来のバージョンで削除される予定であることを意味します。ただし、そのメンバーを使用するコンパイル済みコードに影響はありません。  
@@ -62,7 +58,7 @@ ms.lasthandoff: 12/22/2017
   
 |.NET Framework のバージョン|`version` 文字列|
 |-|-|  
-|4.7 (4.7.1 を含む)|v4.0|  
+|4.7 (4.7.1 と 4.7.2 を含む)|v4.0|  
 |4.6 (4.6.1 と 4.6.2 を含む)|v4.0|  
 |4.5 (4.5.1 および 4.5.2 を含む)|v4.0|  
 |4|v4.0|  
@@ -71,7 +67,7 @@ ms.lasthandoff: 12/22/2017
 |1.1|v1.1.4322|  
 |1|v1.0.3705|  
   
-## <a name="obsolete-lists-for-the-net-framework-45-and-46"></a>.NET Framework 4.5 および 4.6 の互換性のために残されている機能の一覧  
+## <a name="obsolete-lists-for-the-net-framework-45-and-later-versions"></a>.NET Framework 4.5 以降のバージョンの互換性のために残されている古い機能の一覧  
  [互換性のために残されている型](../../../docs/framework/whats-new/obsolete-types.md)  
   
  [互換性のために残されているメンバー](../../../docs/framework/whats-new/obsolete-members.md)  

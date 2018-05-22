@@ -8,11 +8,11 @@ helpviewer_keywords:
 - conditional-OR operator (||) [C#]
 - '|| operator [C#]'
 ms.assetid: 7d442d8e-400d-421f-b4d2-034bf82bcbdc
-ms.openlocfilehash: ce0834874f9c5b4c5154a798492600d6ac45a4c6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d22e57d097edb0fe52b604e9c6431e167c410f0b
+ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/15/2018
 ---
 # <a name="-operator-c-reference"></a>|| 演算子 (C# リファレンス)
 条件付き OR 演算子 (`||`) では、`bool` オペランドの論理 OR が実行されます。 最初のオペランドが `true` と評価されると、2 番目のオペランドは評価されません。 最初のオペランドが `false` と評価されると、2 番目の演算子は、OR 式を、全体として、`true` または `false` に評価するかどうかを判断します。  
@@ -20,13 +20,13 @@ ms.lasthandoff: 05/04/2018
 ## <a name="remarks"></a>コメント  
  次の演算は、  
   
-```  
+```csharp  
 x || y  
 ```  
   
  次の演算に対応しています。  
   
-```  
+```csharp  
 x | y  
 ```  
   

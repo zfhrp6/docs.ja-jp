@@ -1,21 +1,14 @@
 ---
-title: "実稼働時に機密情報を保護するために Azure Key Vault を使用する"
-description: ".NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ | 実稼働時に機密情報を保護するために Azure Key Vault を使用する"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
+title: 実稼働時に機密情報を保護するために Azure Key Vault を使用する
+description: '.NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ | 実稼働時に機密情報を保護するために Azure Key Vault を使用する'
 author: mjrousos
 ms.author: wiwagn
 ms.date: 05/26/2017
-ms.prod: .net-core
-ms.technology: dotnet-docker
-ms.topic: article
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: cb289c7361362c225eac8b9898bac276c4b623b4
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 5ad5686909c29eba5916cbcc4b7115a16108a004
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-azure-key-vault-to-protect-secrets-at-production-time"></a>実稼働時に機密情報を保護するために Azure Key Vault を使用する
 
@@ -68,13 +61,13 @@ var kvClient = new KeyVaultClient(new KeyVaultClient.AuthenticationCallback(asyn
 -   **Azure Key Vault を使用したアプリケーション シークレットの保護**
     [*https://docs.microsoft.com/azure/guidance/guidance-multitenant-identity-keyvault*](https://docs.microsoft.com/azure/guidance/guidance-multitenant-identity-keyvault)
 
--   **開発時のアプリ シークレットの安全な保存**
+-   **開発中のアプリ シークレットの安全な保存**
     [*https://docs.microsoft.com/aspnet/core/security/app-secrets*](https://docs.microsoft.com/aspnet/core/security/app-secrets)
 
 -   **データ保護の構成**
     [*https://docs.microsoft.com/aspnet/core/security/data-protection/configuration/overview*](https://docs.microsoft.com/aspnet/core/security/data-protection/configuration/overview)
 
--   **キーの管理と有効期間**
+-   **キー管理と有効期間**
     [*https://docs.microsoft.com/aspnet/core/security/data-protection/configuration/default-settings\#data-protection-default-settings*](https://docs.microsoft.com/aspnet/core/security/data-protection/configuration/default-settings#data-protection-default-settings)
 
 -   **Microsoft.Extensions.Configuration.DockerSecrets.** GitHub リポジトリ。

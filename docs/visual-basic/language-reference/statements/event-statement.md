@@ -1,6 +1,6 @@
 ---
 title: Event ステートメント
-ms.date: 07/20/2015
+ms.date: 05/12/2018
 f1_keywords:
 - vb.Event
 - vb.Custom
@@ -18,11 +18,11 @@ helpviewer_keywords:
 - ByRef keyword [Visual Basic], Event statements
 - declaring user-defined events
 ms.assetid: 306ff8ed-74dd-4b6a-bd2f-e91b17474042
-ms.openlocfilehash: 967eedcf1f4d0c9a19775f294167b915cca25a9c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: d59dc8e7b01612af0e4c8f6c1018269580284c46
+ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="event-statement"></a>Event ステートメント
 ユーザー定義イベントを宣言します。  
@@ -58,7 +58,7 @@ End Event
 |パーツ|説明|  
 |---|---|  
 |`attrlist`|任意。 このイベントに適用される属性の一覧です。 複数の属性を指定するときは、コンマで区切ります。 囲む必要があります、[属性リスト](../../../visual-basic/language-reference/statements/attribute-list.md)山かっこ ("`<`「と」`>`") です。|  
-|`accessmodifier`|任意。 どのようなコードからイベントにアクセスできるのかを指定します。 次のいずれかの値を指定します。<br /><br /> -   [パブリック](../../../visual-basic/language-reference/modifiers/public.md): 宣言された要素にアクセスできる任意のコードがアクセスできます。<br />-   [保護されている](../../../visual-basic/language-reference/modifiers/protected.md)— のみがそのクラスまたは派生クラス内でコードがアクセスできます。<br />-   [フレンド](../../../visual-basic/language-reference/modifiers/friend.md)— のみ同じアセンブリ内のコードがアクセスできます。<br />-   [プライベート](../../../visual-basic/language-reference/modifiers/private.md): 宣言された要素のコードからのみアクセスできます。<br /><br /> `Protected Friend` と指定すると、イベントのクラス、その派生クラス、または同じアセンブリ内のコードからアクセスできます。|  
+|`accessmodifier`|任意。 どのようなコードからイベントにアクセスできるのかを指定します。 次のいずれかの値を指定します。<br /><br /> -   [パブリック](../../../visual-basic/language-reference/modifiers/public.md): 宣言された要素にアクセスできる任意のコードがアクセスできます。<br />-   [保護されている](../../../visual-basic/language-reference/modifiers/protected.md)— のみがそのクラスまたは派生クラス内でコードがアクセスできます。<br />-   [フレンド](../../../visual-basic/language-reference/modifiers/friend.md)— のみ同じアセンブリ内のコードがアクセスできます。<br />-   [プライベート](../../../visual-basic/language-reference/modifiers/private.md): 宣言された要素のコードからのみアクセスできます。<br /> -   [Protected Friend](../../language-reference/modifiers/protected-friend.md)-のみ、イベントのクラス、派生クラスでは、または同じアセンブリ内のコードがアクセスできます。 <br />- [プライベート Protected](../../language-reference/modifiers/private-protected.md)-のみ、イベントのクラスまたは派生クラスで、同じアセンブリ内のコードがアクセスできます。|  
 |`Shared`|任意。 このイベントがクラスまたは構造体の特定のインスタンスに関連付けられないことを指定します。|  
 |`Shadows`|任意。 このイベントが、基本クラスにある、同じ名前を持つプログラミング要素、またはオーバーロードされる要素のセットを宣言し直して隠ぺいすることを示します。 宣言された要素は、他の任意の種類の要素でシャドウできます。<br /><br /> シャドウされた要素は、その要素をシャドウする派生クラスからは使用できません。ただし、シャドウする要素がアクセスできない要素の場合は例外です。 たとえば、`Private` 要素が基本クラスの要素をシャドウすると、`Private` 要素へのアクセス許可を持たないコードは、代わりに基本クラスにアクセスします。|  
 |`eventname`|必須。 イベントの名前です。変数の標準的な名前付け規則に従って名前を付けます。|  

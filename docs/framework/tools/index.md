@@ -9,16 +9,16 @@ helpviewer_keywords:
 ms.assetid: a2ca532d-91f7-426a-9303-417c2ee1247c
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 65614d906abc2dec5dc5891b16b595cf9ef9d56f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a8ec8a5b1f665196fee62a4556e59201f45a6bff
+ms.sourcegitcommit: 895c7602386a6dfe7ca4facce3d965b27e5c6e87
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/19/2018
 ---
 # <a name="net-framework-tools"></a>.NET Framework ツール
 .NET Framework ツールを使用すると、.NET Framework に対応したアプリケーションやコンポーネントを簡単に作成、配置、および管理できます。  
   
- ここで説明する .NET Framework ツールの大半は、Visual Studio のインストール時に自動的にインストールされます。 (インストールに関する情報については、[Visual Studio のダウンロード](http://go.microsoft.com/fwlink/?LinkID=325532) を参照してください)。  
+ここで説明する .NET Framework ツールの大半は、Visual Studio のインストール時に自動的にインストールされます。 Visual Studio は、[Visual Studio のダウンロード](https://www.visualstudio.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017) ページからダウンロードできます。
   
  アセンブリ キャッシュ ビューアー (Shfusion.dll) を除き、これらのツールはすべてコマンド ラインから実行できます。 エクスプローラーから Shfusion.dll にアクセスする必要があります。  
   

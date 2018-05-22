@@ -1,20 +1,12 @@
 ---
 title: プロパティ
 description: C# のプロパティについて説明します。C# のプロパティには、検証、計算値、遅延評価、プロパティ変更通知の機能があります。
-keywords: .NET, .NET Core
-author: BillWagner
-ms.author: wiwagn
-ms.date: 04/03/2017
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.devlang: csharp
-ms.assetid: 6950d25a-bba1-4744-b7c7-a3cc90438c55
-ms.openlocfilehash: 05e51d527dc3c05301fc85d7717c751dc46bf9fa
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.date: 04/25/2018
+ms.openlocfilehash: d4fa7b6117bec63c41318dd4bcc3850ce55a5907
+ms.sourcegitcommit: 88f251b08bf0718ce119f3d7302f514b74895038
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="properties"></a>プロパティ
 
@@ -27,74 +19,32 @@ C# のプロパティは、非常に優れた機能です。 開発者は C# で
 
 プロパティの構文は、フィールドを自然に拡張したものです。 フィールドで格納場所を定義します。
 
-```csharp
-public class Person
-{
-    public string FirstName;
-    // remaining implementation removed from listing
-}
-```
+[!code-csharp[Person class with public fields](../../samples/snippets/csharp/properties/Person.cs#1)]
 
 プロパティの定義には、プロパティの値を取得する `get` アクセサーとプロパティに値を割り当てる `set` アクセサーの宣言が含まれます。
 
-```csharp
-public class Person
-{
-    public string FirstName { get; set; }
-
-    // remaining implementation removed from listing
-}
-```
+[!code-csharp[Person class with public properties](../../samples/snippets/csharp/properties/Person.cs#2)]
 
 上記の構文は "*自動プロパティ*" の構文です。 コンパイラによって、プロパティをバックアップするフィールドの格納場所が生成されます。 また、`get` アクセサーと `set` アクセサーの本体もコンパイラによって実装されます。
 
 場合によっては、その型の既定以外の値にプロパティを初期化する必要があります。  C# では、プロパティの右中かっこの後で値を設定することにより可能です。 `FirstName` プロパティの初期値は `null` より空の文字列の方がよい場合があります。 その場合は次に示すように指定します。
 
-```csharp
-public class Person
-{
-    public string FirstName { get; set; } = string.Empty;
+[!code-csharp[Person class with properties and initializer](../../samples/snippets/csharp/properties/Person.cs#3)]
 
-    // remaining implementation removed from listing
-}
-```
-
-これは、このトピックで後述するように、読み取り専用プロパティに最も役立ちます。
+この記事で後述するように、特定の初期化は読み取り専用プロパティに最も役に立ちます。
 
 格納場所は、下に示すように、開発者が定義することもできます。
 
-```csharp
-public class Person
-{
-    public string FirstName
-    {
-        get { return firstName; }
-        set { firstName = value; }
-    }
-    private string firstName;
-    // remaining implementation removed from listing
-}
-```
+[!code-csharp[Person class with properties and backing field](../../samples/snippets/csharp/properties/Person.cs#4)]
 
 プロパティの実装が 1 つの式の場合は、*式形式のメンバー*を get アクセス操作子または set アクセス操作子に使用できます。
 
-```csharp
-public class Person
-{
-    public string FirstName
-    {
-        get => firstName;
-        set => firstName = value;
-    }
-    private string firstName;
-    // remaining implementation removed from listing
-}
-```
+[!code-csharp[Person class with properties and expression bodied getters and setters](../../samples/snippets/csharp/properties/Person.cs#5)]
 
-このトピックでは、該当する箇所ではこの簡単な構文を使います。
+この記事では、該当する箇所ではこの簡単な構文を使います。
 
 上に示したプロパティの定義は、読み取り/書き込みプロパティです。 set アクセサーの `value` に注目してください。 `set` アクセサーには常に、`value` という名前のパラメーターが 1 つあります。 `get` アクセサーは、プロパティの型に変換可能な値を返す必要があります (この例では `string`)。
- 
+
 これが構文の基本です。 さまざまな設計手法をサポートするバリエーションが多数あります。 これらを詳しく確認しながら、各種シナリオに応じた構文の選択肢を見てみましょう。
 
 ## <a name="scenarios"></a>シナリオ
@@ -105,23 +55,11 @@ public class Person
 
 `set` アクセサーにコードを記述すると、プロパティが表す値を常に有効な値にすることができます。 たとえば、`Person` クラスに設定されているルールの 1 つに、名前は無指定または空白文字にできないというものがあるとします。 これは次のように記述できます。
 
-```csharp
-public class Person
-{
-    public string FirstName
-    {
-        get => firstName;
-        set
-        {
-            if (string.IsNullOrWhiteSpace(value))
-                throw new ArgumentException("First name must not be blank");
-            firstName = value;
-        }
-    }
-    private string firstName;
-    // remaining implementation removed from listing
-}
-```
+[!code-csharp[Validating property setters](../../samples/snippets/csharp/properties/Person.cs#6)]
+
+上記の例は、プロパティ セッターの検証の一部として `throw` 式を使用して簡略化できます。
+
+[!code-csharp[Validating property setters](../../samples/snippets/csharp/properties/Person.cs#7)]
 
 上記の例では、名前を無指定または空白文字にしてはいけないというルールが強制的に適用されます。 もし開発者が下のように指定すると、
 
@@ -131,43 +69,24 @@ hero.FirstName = "";
 
 この割り当てに対して `ArgumentException` がスローされます。 プロパティの set アクセサーの戻り値は void でなければならないため、例外をスローすることで set アクセサーにエラーを報告します。
 
-これが検証のシンプルな例です。 この構文を拡張して、シナリオに必要なあらゆる要素に対応できます。 たとえば、各種プロパティ間の関係をチェックしたり、外部条件に対して検証したりできます。 C# で有効なステートメントは、すべてプロパティ アクセサーでも有効です。
+この構文を拡張して、シナリオに必要なあらゆる要素に対応できます。 たとえば、各種プロパティ間の関係をチェックしたり、外部条件に対して検証したりできます。 C# で有効なステートメントは、すべてプロパティ アクセサーでも有効です。
 
 ### <a name="read-only"></a>読み取り専用
 
 ここまでのプロパティ定義はすべて、パブリック アクセサーを持つ読み取り/書き込みプロパティでした。 これ以外にも、プロパティに有効なアクセシビリティがあります。
 たとえば、読み取り専用プロパティを作成したり、set アクセサーと get アクセサーに異なるアクセシビリティを設定したりすることができます。 具体例として、`Person` クラスで、クラス内の他のメソッドからのみ `FirstName` プロパティの値を変更できるようにしたい場合は、 set アクセサーのアクセシビリティを `public` ではなく `private` に設定します。
 
-```csharp
-public class Person
-{
-    public string FirstName { get; private set; }
-
-    // remaining implementation removed from listing
-}
-```
+[!code-csharp[Using a private setter for a publicly readonly property](../../samples/snippets/csharp/properties/Person.cs#8)]
 
 これで、`FirstName` プロパティにはどのコードからもアクセスできる一方で、値の割り当ては `Person` クラス内の他のコードからしかできなくなります。
 
-制限を設定するアクセス修飾子を set アクセサーと get アクセサーのどちらか 1 つに追加することもできます。 個々のアクセサーには、プロパティ定義のアクセス修飾子よりも制限が強いアクセス修飾子を設定する必要があります。 上記は、`FirstName` プロパティが `public` ですが set アクセサーが `private` であるため、有効です。 `public` なアクセサーを持つ `private` なプロパティを宣言することはできません。 プロパティの宣言では、`protected`、`internal`、`protected internal`、`private protected`、`private` を宣言することもできます。   
+制限を設定するアクセス修飾子を set アクセサーと get アクセサーのどちらか 1 つに追加することもできます。 個々のアクセサーには、プロパティ定義のアクセス修飾子よりも制限が強いアクセス修飾子を設定する必要があります。 上記は、`FirstName` プロパティが `public` ですが set アクセサーが `private` であるため、有効です。 `public` なアクセサーを持つ `private` なプロパティを宣言することはできません。 プロパティの宣言では、`protected`、`internal`、`protected internal`、`private` を宣言することもできます。
 
 `get` アクセサーに制限の高い修飾子を設定することも有効です。 たとえば、`public` なプロパティで、`get` アクセサーを `private` に制限できます。 ただし、このようなシナリオは実際にはほとんどありません。
 
 また、コンストラクターやプロパティの初期化子でのみ設定できるように、プロパティに対する変更を制限することもできます。 `Person` クラスを次のように変更することができます。
 
-```csharp
-public class Person
-{
-    public Person(string firstName)
-    {
-        this.FirstName = firstName;
-    }
-
-    public string FirstName { get; }
-
-    // remaining implementation removed from listing
-}
-```
+[!code-csharp[A readonly auto implemented property](../../samples/snippets/csharp/properties/Person.cs#9)]
 
 この機能は、読み取り専用プロパティとして公開されるコレクションを初期化する場合に最もよく使われます。
 
@@ -182,134 +101,48 @@ public class Measurements
 
 プロパティが返す値は、メンバー フィールドの値でなくてもかまいません。 計算された値を返すプロパティを作成できます。 姓と名を連結する計算をしてフルネームを返すように `Person` オブジェクトを拡張してみましょう。
 
-```csharp
-public class Person
-{
-    public string FirstName { get; set; }
-
-    public string LastName { get; set; }
-
-    public string FullName { get { return $"{FirstName} {LastName}"; } }
-}
-```
+[!code-csharp[A computed property](../../samples/snippets/csharp/properties/Person.cs#10)]
 
 上の例では、"[文字列補間](../csharp/language-reference/tokens/interpolated.md)" 機能を使用して、フルネームを表す書式設定された文字列を作成しています。
 
-"*式形式のメンバー*" を使用することもできます。式形式のメンバーを使用すると、計算された `FullName` プロパティを簡潔な方法で作成できます。
+*式形式のメンバー*を使用することもできます。式形式のメンバーを使用すると、計算された `FullName` プロパティを簡潔な方法で作成できます。
 
-```csharp
-public class Person
-{
-    public string FirstName { get; set; }
+[!code-csharp[A computed property using an expression bodied member](../../samples/snippets/csharp/properties/Person.cs#11)]
 
-    public string LastName { get; set; }
+*式形式のメンバー*では、式が 1 つだけ含まれたメソッドを定義する*ラムダ式*構文を使用します。 ここでは、その式が Person オブジェクトのフルネームを返しています。
 
-    public string FullName =>  $"{FirstName} {LastName}";
-}
-```
- 
-"*式形式のメンバー*" では、式が 1 つだけ含まれたメソッドを定義する "*ラムダ式*" 構文を使用します。 ここでは、その式が Person オブジェクトのフルネームを返しています。
+### <a name="cached-evaluated-properties"></a>キャッシュ済みの評価されたプロパティ
 
-### <a name="lazy-evaluated-properties"></a>遅延評価されたプロパティ
+計算されたプロパティの概念をストレージと組み合わせて、*キャッシュ済みの評価されたプロパティ*を作成できます。  たとえば、`FullName` プロパティを更新して、プロパティが最初にアクセスされたときに文字列が書式設定されるようにすることができます。
 
-計算されたプロパティの概念をストレージと組み合わせて、"*遅延評価されたプロパティ*" を作成できます。  たとえば、`FullName` プロパティを更新して、プロパティが最初にアクセスされたときに文字列が書式設定されるようにすることができます。
+[!code-csharp[Caching the value of a computed property](../../samples/snippets/csharp/properties/Person.cs#12)]
 
-```csharp
-public class Person
-{
-    public string FirstName { get; set; }
+ただし、上記のコードにはバグが含まれています。 コードによって `FirstName` プロパティと `LastName` プロパティのいずれかの値が更新されると、以前に評価された `fullName` フィールドは無効になります。 `fullName` フィールドが再計算されるように、`FirstName` プロパティと `LastName` プロパティの `set` アクセサーを変更します。
 
-    public string LastName { get; set; }
-
-    private string fullName;
-    public string FullName
-    {
-        get
-        {
-            if (fullName == null)
-                fullName = $"{FirstName} {LastName}";
-            return fullName;
-        }
-    }
-}
-```
-
-ただし、上記のコードにはバグが含まれています。 コードによって `FirstName` プロパティと `LastName` プロパティのいずれかの値が更新されると、以前に評価された `fullName` フィールドは無効になります。 `fullName` フィールドが再計算されるように、`FirstName` プロパティと `LastName` プロパティの `set` アクセサーを更新する必要があります。
-
-```csharp
-public class Person
-{
-    private string firstName;
-    public string FirstName
-    {
-        get => firstName;
-        set
-        {
-            firstName = value;
-            fullName = null;
-        }
-    }
-
-    private string lastName;
-    public string LastName
-    {
-        get => lastName;
-        set
-        {
-            lastName = value;
-            fullName = null;
-        }
-    }
-
-    private string fullName;
-    public string FullName
-    {
-        get
-        {
-            if (fullName == null)
-                fullName = $"{FirstName} {LastName}";
-            return fullName;
-        }
-    }
-}
-```
+[!code-csharp[Invalidating the cache correctly](../../samples/snippets/csharp/properties/Person.cs#13)]
 
 上の最終版では、必要になった場合にのみ `FullName` プロパティが評価されます。
-以前に計算されたものが有効であれば、それが使用されます。 状態が変化したことで、以前に計算されたバージョンが無効になると、再計算が行われます。 このクラスを使用するにあたって、開発者は実装の詳細を知っている必要はありません。 内部で変化があっても Person オブジェクトの使用には影響しません。 これが、プロパティを使用してオブジェクトのデータ メンバーを公開するする重要な利点です。
- 
-### <a name="inotifypropertychanged"></a>INotifyPropertyChanged
+以前に計算されたものが有効であれば、それが使用されます。 状態が変化したことで、以前に計算されたバージョンが無効になると、再計算が行われます。 このクラスを使用するにあたって、開発者は実装の詳細を知っている必要はありません。 内部で変化があっても Person オブジェクトの使用には影響しません。 これが、プロパティを使用してオブジェクトのデータ メンバーを公開する重要な利点です。
 
-プロパティ アクセサーでコードを記述する必要があるシナリオとして、値が変更されたことをデータ バインディング クライアントに通知するための `INotifyPropertyChanged` インターフェイスのサポートというものもあります。 プロパティの値が変更されると、オブジェクトはその変更を示す `PropertyChanged` イベントを発生させます。 データ バインディング ライブラリは、その変更に基づいて表示要素を更新します。 下のコードは、この Person クラスの `FirstName` プロパティに `INotifyPropertyChanged` を実装する方法を示しています。
+### <a name="attaching-attributes-to-auto-implemented-properties"></a>自動実装プロパティに属性をアタッチする
 
-```csharp
-public class Person : INotifyPropertyChanged
-{
-    public string FirstName
-    {
-        get => firstName;
-        set
-        {
-            if (string.IsNullOrWhiteSpace(value))
-                throw new ArgumentException("First name must not be blank");
-            if (value != firstName)
-            {
-                PropertyChanged?.Invoke(this, 
-                    new PropertyChangedEventArgs(nameof(FirstName)));
-            }
-            firstName = value;
-        }
-    }
-    private string firstName;
+C# 7.3 以降、自動実装プロパティのコンパイラの生成したバッキング フィールドにフィールド属性をアタッチできるようになりました。 たとえば、一意の整数 `Id` プロパティを追加する `Person` クラスのリビジョンについて考えてみましょう。
+自動実装プロパティを使用して `Id` プロパティを記述しますが、この設計では `Id` プロパティの永続化を呼び出しません。 <xref:System.NonSerializedAttribute> は、プロパティではなく、フィールドにのみアタッチすることができます。 次の例のように、属性に対して `field:` 指定子を使用して `Id` プロパティのバッキング フィールドに <xref:System.NonSerializedAttribute> をアタッチできます。
 
-    public event PropertyChangedEventHandler PropertyChanged;
-    // remaining implementation removed from listing
-}
-```
+[!code-csharp[Attaching attributes to a backing field](../../samples/snippets/csharp/properties/Person.cs#14)]
 
-`?.` は "*null 条件演算子*" と呼ばれる演算子です。 演算子の右側を評価する前に、null 参照がないかをチェックします。 チェックの結果、`PropertyChanged` イベントに対するサブスクライバーがない場合は、イベントを発生させるコードは実行されません。 その場合、評価は行われず `NullReferenceException` がスローされます。 詳細については、[`events`](delegates-events.md) に関するページを参照してください。 上記の例では、新たに `nameof` という演算子を使用して、記号としてのプロパティ名を文字列に変換しています。
+この手法は、自動実装プロパティのバッキング フィールドにアタッチする任意の属性に利用できます。
+
+### <a name="implementing-inotifypropertychanged"></a>INotifyPropertyChanged を実装する
+
+プロパティ アクセサーでコードを記述する必要があるシナリオとして、値が変更されたことをデータ バインディング クライアントに通知するための <xref:System.ComponentModel.INotifyPropertyChanged> インターフェイスのサポートというものもあります。 プロパティの値が変更されると、オブジェクトはその変更を示す <xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged?displayProperty=nameWithType> イベントを発生させます。 データ バインディング ライブラリは、その変更に基づいて表示要素を更新します。 下のコードは、この Person クラスの `FirstName` プロパティに `INotifyPropertyChanged` を実装する方法を示しています。
+
+[!code-csharp[invalidating the cache correctly](../../samples/snippets/csharp/properties/Person.cs#15)]
+
+`?.` は "*null 条件演算子*" と呼ばれる演算子です。 演算子の右側を評価する前に、null 参照がないかをチェックします。 チェックの結果、`PropertyChanged` イベントに対するサブスクライバーがない場合は、イベントを発生させるコードは実行されません。 その場合、評価は行われず `NullReferenceException` がスローされます。 詳細については、「[`events`](delegates-events.md)」を参照してください。 上記の例では、新たに `nameof` という演算子を使用して、記号としてのプロパティ名を文字列に変換しています。
 `nameof` を使用すると、プロパティ名にタイプミスが含まれるというエラーを減らすことができます。
 
-これも、アクセサーでコードを記述することで目的のシナリオをサポートできるケースの一例です。
+<xref:System.ComponentModel.INotifyPropertyChanged> の実装も、アクセサーでコードを記述することで目的のシナリオをサポートできるケースの一例です。
 
 ## <a name="summing-up"></a>まとめ
 

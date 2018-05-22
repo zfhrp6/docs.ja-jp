@@ -1,20 +1,16 @@
 ---
 title: using static ディレクティブ (C# リファレンス)
 ms.date: 03/10/2017
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - using static directive [C#]
 ms.assetid: 8b8f9e34-c75e-469b-ba85-6f2eb4090314
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5838bede475cf2ad1b72518770241e86206a06bb
-ms.sourcegitcommit: 7e99f66ef09d2903e22c789c67ff5a10aa953b2f
+ms.openlocfilehash: c9b7508c6e751f83fdc16a700ad68aa7de36e497
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="using-static-directive-c-reference"></a>using static ディレクティブ (C# リファレンス)
 
@@ -52,7 +48,7 @@ using static <fully-qualified-type-name>
 
 [!code-csharp[using-static#3](../../../../samples/snippets/csharp/language-reference/keywords/using/using-static3.cs)]
 
-上の例では、`using static` ディレクティブを <xref:System.Double> 型に適用することもできます。 これは必要を呼び出すこと、<xref:System.Double.TryParse(System.String,System.Double@)>型名を指定せずメソッドです。 ただし、どの数値型の `TryParse` メソッドが呼び出されたかを判断するために `using static` ステートメントを確認する必要が出てくるため、コードが読みにくくなります。
+上の例では、`using static` ディレクティブを <xref:System.Double> 型に適用することもできます。 それにより、型名を指定せずに、<xref:System.Double.TryParse(System.String,System.Double@)> メソッドを呼び出せるようになります。 ただし、どの数値型の `TryParse` メソッドが呼び出されたかを判断するために `using static` ステートメントを確認する必要が出てくるため、コードが読みにくくなります。
 
 ## <a name="see-also"></a>関連項目
 

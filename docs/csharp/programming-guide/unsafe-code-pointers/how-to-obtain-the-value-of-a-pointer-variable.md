@@ -1,23 +1,17 @@
 ---
-title: "方法 : ポインター変数の値を取得する (C# プログラミング ガイド)"
+title: '方法 : ポインター変数の値を取得する (C# プログラミング ガイド)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - pointer expressions [C#], indirection
 - pointers [C#], indirection
 - variables [C#], pointers
 - pointers [C#], * operator
 ms.assetid: 460a813a-4995-44c1-9de2-213b91dc7668
-caps.latest.revision: "17"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 8065c10bec737789f13dcbafe147b50eedb9da36
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: c53026149837681235c6d1001707a25b9c8b40b2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-obtain-the-value-of-a-pointer-variable-c-programming-guide"></a>方法 : ポインター変数の値を取得する (C# プログラミング ガイド)
 ポインターが指す位置にある変数を取得するには、ポインター間接演算子を使用します。 この式は次の形式になります。`p` はポインター型です。  
@@ -37,11 +31,11 @@ ms.lasthandoff: 11/21/2017
   
  [!code-csharp[csProgGuidePointers#6](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/CSharp/how-to-obtain-the-value-of-a-pointer-variable_2.cs)]  
   
- **一定の値 = Z**  
+ **theChar の値 = Z**  
 **theChar のアドレス = 12F718**  
 **pChar の値 = Z**   
 **pInt の値 = 90**    
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
  [ポインター式](../../../csharp/programming-guide/unsafe-code-pointers/pointer-expressions.md)  
  [ポインター型](../../../csharp/programming-guide/unsafe-code-pointers/pointer-types.md)  

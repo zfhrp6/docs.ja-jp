@@ -1,12 +1,12 @@
 ---
-title: F# コード formattin のガイドライン
+title: F# コードのガイドラインを書式設定
 description: F# コードを書式設定するためのガイドラインを説明します。
 ms.date: 05/14/2018
-ms.openlocfilehash: e5c700ca9ae3968243f11c1237b9e4b26e580dcf
-ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
-ms.translationtype: HT
+ms.openlocfilehash: 1433b6891a6a0ddcdc082c141365ae54fa40c27b
+ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/15/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="f-code-formatting-guidelines"></a>F# コードのガイドラインを書式設定
 
@@ -324,19 +324,10 @@ let function1 arg1 arg2 arg3 arg4 =
 
 ### <a name="formatting-pipeline-operators"></a>パイプライン演算子を書式設定
 
-パイプライン`|>`操作対象の式のすぐ下にある行の先頭に移動する必要があります。
+パイプライン`|>`演算子は、上で動作する式の下に移動する必要があります。
 
 ```fsharp
-// OK
-let methods2 = System.AppDomain.CurrentDomain.GetAssemblies()
-               |> List.ofArray
-               |> List.map (fun assm -> assm.GetTypes())
-               |> Array.concat
-               |> List.ofArray
-               |> List.map (fun t -> t.GetMethods())
-               |> Array.concat
-
-// OK, but prefer previous
+// Preferred approach
 let methods2 =
     System.AppDomain.CurrentDomain.GetAssemblies()
     |> List.ofArray
@@ -481,6 +472,56 @@ type MyClass() =
 let emailMyBossTheLatestResults =
     ...
 ```
+
+### <a name="use-camelcase-for-parameters"></a>パラメーターのキャメル ケースを使用します。
+
+すべてのパラメーターは、.NET の名前付け規則に従ってキャメル ケースを使用してください。
+
+```fsharp
+module MyModule =
+    let myFunction paramOne paramTwo = ...
+
+type MyClass() =
+    member this.MyMethod(paramOne, paramTwo) = ...
+```
+
+### <a name="use-pascalcase-for-modules"></a>PascalCase モジュールを使用します。
+
+(最上位レベル、内部、プライベート、入れ子になった) のすべてのモジュールは PascalCase を使用する必要があります。
+
+```fsharp
+module MyTopLevelModule
+
+module Helpers =
+    module private SuperHelpers =
+        ...
+
+    ...
+```
+
+### <a name="use-pascalcase-for-type-declarations-members-and-labels"></a>型の宣言、メンバー、およびラベルの PascalCase を使用します。
+
+クラス、インターフェイス、構造体、列挙体、デリゲート、レコード、および判別共用体はすべての名前は PascalCase です。 型およびレコード、判別共用体のラベル内のメンバーは、PascalCase を使用してもする必要があります。
+
+```fsharp
+type IMyInterface =
+    abstract Something: int
+
+type MyClass() =
+    member this.MyMethod(x, y) = x + y
+
+type MyRecord = { IntVal: int; StringVal: string }
+
+type SchoolPerson =
+    | Professor
+    | Student
+    | Advisor
+    | Administrator
+```
+
+### <a name="use-pascalcase-for-constructs-intrinsic-to-net"></a>.NET の組み込みのコンス トラクターに対して PascalCase を使用します。
+
+名前空間、例外、イベント、およびプロジェクト/`.dll`名では、PascalCase も使用してください。 だけでなくこれにより、他の .NET 言語から消費にコンシューマーをより自然な感覚も発生する可能性が .NET の名前付け規則と一致します。
 
 ### <a name="avoid-underscores-in-names"></a>名前にアンダー スコアを回避します。
 

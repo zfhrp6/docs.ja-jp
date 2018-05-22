@@ -5,11 +5,11 @@ helpviewer_keywords:
 - implicitly-typed local variables [C#]
 - var [C#]
 ms.assetid: b9218fb2-ef5d-4814-8a8e-2bc29b0bbc9b
-ms.openlocfilehash: a3cb2490247a6e9fdb51b73d405173d29263393c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c6c2bae39764e78fad2510bbc8937b0ac790bef5
+ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/15/2018
 ---
 # <a name="implicitly-typed-local-variables-c-programming-guide"></a>暗黙的に型指定されるローカル変数 (C# プログラミング ガイド)
 ローカル変数は、明示的な型を指定しないで宣言できます。 `var` キーワードは、初期化ステートメントの右辺にある式から変数の型を推論するようにコンパイラに指示します。 推論される型は、組み込み型、匿名型、ユーザー定義型、または .NET Framework クラス ライブラリで定義されている型である可能性があります。 `var` で配列を初期化する方法の詳細については、「[暗黙的に型指定される配列](../../../csharp/programming-guide/arrays/implicitly-typed-arrays.md)」を参照してください。  
@@ -26,19 +26,19 @@ ms.lasthandoff: 05/04/2018
   
 -   [for](../../../csharp/language-reference/keywords/for.md) 初期化ステートメント。  
   
-    ```  
+    ```csharp  
     for(var x = 1; x < 10; x++)  
     ```  
   
 -   [foreach](../../../csharp/language-reference/keywords/foreach-in.md) 初期化ステートメント。  
   
-    ```  
+    ```csharp  
     foreach(var item in list){...}  
     ```  
   
 -   [using](../../../csharp/language-reference/keywords/using-statement.md) ステートメント。  
   
-    ```  
+    ```csharp  
     using (var file = new StreamReader("C:\\myfile.txt")) {...}  
     ```  
   

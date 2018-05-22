@@ -5,11 +5,11 @@ helpviewer_keywords:
 - types [C#], built-in
 - built-in C# types
 ms.assetid: 54f901f2-bf2f-472c-ae8d-73e8ecfc57fe
-ms.openlocfilehash: 7407d18c58dd3d12337c6845627d83f02eaf7fa0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 120347e5bff7f0d6c7120af0cb250936ca39ea16
+ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/15/2018
 ---
 # <a name="built-in-types-table-c-reference"></a>組み込み型の一覧表 (C# リファレンス)
 次の表は、C# の組み込み型のキーワードを示しています。これは、<xref:System> 名前空間の定義済み型の別名です。  
@@ -37,14 +37,14 @@ ms.lasthandoff: 05/04/2018
   
  C# 型のキーワードと別名は相互に交換できます。 たとえば、整数の変数を宣言するには、次のいずれかの宣言を使用します。  
   
-```  
+```csharp  
 int x = 123;  
 System.Int32 x = 123;  
 ```  
   
  C# 型の実際の型を表示するには、`GetType()` システム メソッドを使用します。 たとえば、次のステートメントは、`myVariable` の型を表すシステムの別名を表示します。  
   
-```  
+```csharp  
 Console.WriteLine(myVariable.GetType());  
 ```  
   

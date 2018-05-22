@@ -1,10 +1,6 @@
 ---
 title: '方法: インストールされている .NET Framework バージョンを確認する'
-ms.date: 01/24/2018
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: article
+ms.date: 04/10/2018
 dev_langs:
 - csharp
 - vb
@@ -15,14 +11,11 @@ helpviewer_keywords:
 ms.assetid: 40a67826-e4df-4f59-a651-d9eb0fdc755d
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: edf1e5a53f6f578f943cf8775a798b5681d2d9dd
-ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
+ms.openlocfilehash: 3677ff7cc27847d56802206c793a574d61b1464c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-determine-which-net-framework-versions-are-installed"></a>方法: インストールされている .NET Framework バージョンを確認する
 
@@ -98,11 +91,12 @@ ms.lasthandoff: 04/09/2018
     |378675|Windows 8.1 または Windows Server 2012 R2 でインストールされた .NET Framework 4.5.1|
     |378758|Windows 8、Windows 7 SP1、または Windows Vista SP2 上でインストールされた .NET Framework 4.5.1|
     |379893|.NET Framework 4.5.2|
-    |Windows 10 システム上: 393295<br /><br /> その他すべての OS バージョン上: 393297|[!INCLUDE[net_v46](../../../includes/net-v46-md.md)]|
-    |Windows 10 の 11 月更新版のシステムの場合: 394254<br /><br /> 他のすべての OS バージョンの場合: 394271|[!INCLUDE[net_v461](../../../includes/net-v461-md.md)]|
-    |Windows 10 Anniversary Update の場合: 394802<br /><br /> 他のすべての OS バージョンの場合: 394806|[!INCLUDE[net_v462](../../../includes/net-v462-md.md)]| 
-    |Windows 10 Creators Update の場合: 460798<br/><br/> その他すべての OS バージョン上: 460805 | .NET Framework 4.7 |
-    |Windows 10 Fall Creators Update の場合: 461308<br/><br/> その他のすべての OS バージョン: 461310 | .NET Framework 4.7.1 |
+    |Windows 10 システムのみ: 393295<br /><br /> その他すべての OS バージョン上: 393297|[!INCLUDE[net_v46](../../../includes/net-v46-md.md)]|
+    |Windows 10 の 11 月更新版のシステムのみ: 394254<br /><br /> 他のすべての OS バージョンの場合: 394271|[!INCLUDE[net_v461](../../../includes/net-v461-md.md)]|
+    |Windows 10 Anniversary Update のみ: 394802<br /><br /> 他のすべての OS バージョンの場合: 394806|[!INCLUDE[net_v462](../../../includes/net-v462-md.md)]| 
+    |Windows 10 Creators Update のみ: 460798<br/><br/> その他すべての OS バージョン上: 460805 | .NET Framework 4.7 |
+    |Windows 10 Fall Creators Update のみ: 461308<br/><br/> その他のすべての OS バージョン: 461310 | .NET Framework 4.7.1 |
+    |Windows 10 April 2018 Update のみ: 461808<br/><br/> その他のすべての OS バージョン: 461814| .NET Framework 4.7.2 |
     
 <a name="net_c"></a> 
 ## <a name="to-find-net-framework-versions-by-querying-the-registry-in-code-net-framework-1-4"></a>コードでレジストリを照会して .NET Framework のバージョンを検索するには (.NET Framework 1 ～ 4)
@@ -153,7 +147,9 @@ ms.lasthandoff: 04/09/2018
     |その他のすべての Windows OS バージョンにインストールされた .NET Framework 4.7|460805|
     |Windows 10 Fall Creators Update にインストールされた .NET Framework 4.7.1|461308|
     |その他のすべての Windows OS バージョンにインストールされた .NET Framework 4.7.1|461310|
-
+    |Windows 10 April 2018 Update にインストールされた .NET Framework 4.7.2|461808|
+    |その他のすべての Windows OS バージョンにインストールされた .NET Framework 4.7.2|461814|
+    
      レジストリの `Release` 値を確認して [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] 以降のバージョンの .NET Framework がインストールされているかどうかを判断する例を次に示します。
 
      [!code-csharp[ListVersions#5](../../../samples/snippets/csharp/framework/migration-guide/versions-installed3.cs)]
@@ -186,7 +182,8 @@ ms.lasthandoff: 04/09/2018
     |[!INCLUDE[net_v462](../../../includes/net-v462-md.md)]|394802|
     |.NET Framework 4.7|460798|
     |.NET Framework 4.7.1|461308|
-    
+    |.NET Framework 4.7.2|461808|
+
 <a name="clr_a"></a> 
 ## <a name="to-find-the-current-runtime-version-by-using-the-clrver-tool"></a>Clrver ツールを使用して現在のランタイムのバージョンを確認する方法
 

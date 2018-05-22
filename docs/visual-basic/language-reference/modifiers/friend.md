@@ -10,11 +10,11 @@ helpviewer_keywords:
 - Protected Friend keyword combination
 - Friend keyword [Visual Basic], and Protected
 ms.assetid: b664605e-1c79-4728-b996-aa59c50846bc
-ms.openlocfilehash: 756a18da74ff49cbefaf6a63980302bbcb141713
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d906fc8ada19f22059da44acbd76dd07dacd4801
+ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="friend-visual-basic"></a>Friend (Visual Basic)
 1 つまたは複数の宣言されたプログラミング要素がその宣言を含むアセンブリ内からのみアクセスできることを指定します。  
@@ -27,9 +27,10 @@ ms.lasthandoff: 05/04/2018
  `Friend` アクセスは、アプリケーションのプログラミング要素に望ましいレベルでは多くの場合と`Friend`インターフェイス、モジュール、クラスまたは構造のレベルで既定のアクセス。  
   
  使用することができます`Friend`モジュール、インターフェイス、または名前空間レベルでのみです。 したがって、宣言コンテキスト、`Friend`ソース ファイル、名前空間、インターフェイス、モジュール、クラスまたは構造体を要素として使用することがあります。 プロシージャをすることはできません。  
-  
- 使用することができます、`Friend`修飾子と共に、 [Protected](../../../visual-basic/language-reference/modifiers/protected.md)同じ宣言内での修飾子です。 この組み合わせを設定すると、両方とも`Friend`アクセスと保護されたアクセスで宣言された要素、および派生クラス独自のクラスからは、同じアセンブリに任意の場所からアクセスできるようにします。 指定できます`Protected Friend`クラスのメンバーでのみです。  
-  
+
+> [!NOTE]
+> 使用することも、 [Protected Friend](protected-friend.md)アクセス修飾子は、クラス メンバーをそのクラスの派生クラスからそのクラスが定義されている同じアセンブリ内からアクセスできるようになります。 使用して、同じアセンブリ内の派生クラスからそのクラス内からのメンバーへのアクセスを制限する、[プライベート保護](private-protected.md)アクセス修飾子。
+
  比較について`Friend`と、その他のアクセス修飾子を参照してください[Visual Basic でのレベルのアクセス](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)です。  
   
 > [!NOTE]
@@ -74,6 +75,8 @@ ms.lasthandoff: 05/04/2018
  [Public](../../../visual-basic/language-reference/modifiers/public.md)  
  [Protected](../../../visual-basic/language-reference/modifiers/protected.md)  
  [Private](../../../visual-basic/language-reference/modifiers/private.md)  
+ [保護されたプライベート](./private-protected.md)   
+ [保護されたフレンド](./protected-friend.md)   
  [Visual Basic でのアクセス レベル](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)  
  [手順](../../../visual-basic/programming-guide/language-features/procedures/index.md)  
  [構造体](../../../visual-basic/programming-guide/language-features/data-types/structures.md)  

@@ -1,34 +1,25 @@
 ---
-title: "キーボードへのアクセス (Visual Basic)"
-ms.custom: 
+title: キーボードへのアクセス (Visual Basic)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - keyboards [Visual Basic], accessing [Visual Basic]
 - My.Computer.Keyboard object [Visual Basic], tasks
 - keystrokes
 - CapsLock property
 ms.assetid: aa37d54c-5c98-4b44-b98a-c26d2a03c038
-caps.latest.revision: "11"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 39ca8afbfd43d26b5d171a6a3789c61b992c1b50
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 9f37c9ab0eb3b0943d1ae0720690a95e8c491704
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="accessing-the-keyboard-visual-basic"></a>キーボードへのアクセス (Visual Basic)
 `My.Computer.Keyboard` オブジェクトは、現在どのキーが押されているかなど、キーボードの現在の状態にアクセスするためのプロパティを提供します。また、キーストロークを作業中のウィンドウに送る方法を提供します。  
   
-## <a name="tasks"></a>タスク  
+## <a name="tasks"></a>[タスク]  
  この表は `My.Computer.Keyboard` オブジェクトに関連するタスクを一覧にしたものであり、各タスクの実行方法を実演するトピックにここからアクセスできます。  
   
-|目的|参照トピック|  
+|終了|解決方法については、|  
 |--------|---------|  
 |CAPS LOCK がオンになっているかどうかを判断する|<xref:Microsoft.VisualBasic.Devices.Keyboard.CapsLock%2A>|  
 |SHIFT キーが押されているかどうかを判断する|<xref:Microsoft.VisualBasic.Devices.Keyboard.ShiftKeyDown%2A>|  
@@ -38,6 +29,6 @@ ms.lasthandoff: 11/21/2017
 |SCROLL LOCK がオンになっているかどうかを判断する|<xref:Microsoft.VisualBasic.Devices.Keyboard.ScrollLock%2A>|  
 |アプリケーションを起動してキーストロークを送る|[方法: アプリケーションを起動してキーストロークを送る (Visual Basic)](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-start-an-application-and-send-it-keystrokes.md)|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:Microsoft.VisualBasic.Devices.Keyboard>  
  <xref:System.Windows.Forms.Keys?displayProperty=nameWithType>

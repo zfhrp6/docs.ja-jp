@@ -1,12 +1,6 @@
 ---
-title: "方法: ネットワークのトレースを構成する"
-ms.custom: 
+title: '方法: ネットワークのトレースを構成する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - formatting [.NET Framework], network tracing
 - network tracing, configuring
@@ -17,21 +11,19 @@ helpviewer_keywords:
 - application configuration files, network tracing
 - sockets, trace output
 ms.assetid: 5ef9fe4b-8d3d-490e-9259-1d014b2181af
-caps.latest.revision: "23"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: b58887dc2614ab31a422eb74ce8d0805cf8153bf
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
-ms.translationtype: MT
+ms.openlocfilehash: 77eb199e5e8bbfb0874f8189a8daa2904b31d48e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-configure-network-tracing"></a>方法: ネットワークのトレースを構成する
 アプリケーションまたはコンピューターの構成ファイルには、ネットワークのトレースの形式と内容を決定する設定が保持されます。 この手順に従う前に、トレースが有効になっていることを確認します。 トレースの有効化については、「[ネットワークのトレースの有効化](../../../docs/framework/network-programming/enabling-network-tracing.md)」を参照してください。  
   
- コンピューター構成ファイルの machine.config は、Windows をインストールしたディレクトリの %Windir%\Microsoft.NET\Framework フォルダーに格納されます。 (たとえば、C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\machine.config または C:\Windows\ コンピューターにインストールされている .NET Framework のバージョンごとに、%Windir%\Microsoft.NET\Framework の下のフォルダーに別々 の machine.config ファイルがあります。Microsoft.NET\Framework64\v4.0.30319\Config\machine.config。)。  
+ コンピューター構成ファイルの machine.config は、Windows をインストールしたディレクトリの %Windir%\Microsoft.NET\Framework フォルダーに格納されます。 コンピューターにインストールされた .NET Framework のバージョンごとに、%Windir%\Microsoft.NET\Framework の下のフォルダーに別々の machine.config ファイルがあります (例: C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\machine.config または C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Config\machine.config)。  
   
  これらの設定は、コンピューター構成ファイルよりも優先されるアプリケーション構成ファイルでも行うことができます。  
   

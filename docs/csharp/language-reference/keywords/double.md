@@ -7,11 +7,11 @@ f1_keywords:
 helpviewer_keywords:
 - double data type [C#]
 ms.assetid: 0980e11b-6004-4102-abcf-cfc280fc6991
-ms.openlocfilehash: e2524c907781bd3ce618acb0bdd087acb4b10f75
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3683b51dfd0ef653ab8bfff6705b96a37e21a10a
+ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/15/2018
 ---
 # <a name="double-c-reference"></a>double (C# リファレンス)
 `double` キーワードは、64 ビット浮動小数点値を格納する単純な型を示します。 次の表では、`double` 型の有効桁数とおおよその範囲を示します。  
@@ -23,7 +23,7 @@ ms.lasthandoff: 05/04/2018
 ## <a name="literals"></a>リテラル  
  既定では、代入演算子の右辺にある実数値リテラルは `double` として扱われます。 ただし、整数を `double` として処理する場合、次のようにサフィックスの d または D を使用します。  
   
-```  
+```csharp  
 double x = 3D;  
 ```  
   

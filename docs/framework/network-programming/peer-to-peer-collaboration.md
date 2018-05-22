@@ -1,27 +1,18 @@
 ---
-title: "ピアツーピア コラボレーション"
-ms.custom: 
+title: ピアツーピア コラボレーション
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: b6216d88-bccb-4a59-9f1c-9f751708e811
-caps.latest.revision: 
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload:
-- dotnet
-ms.openlocfilehash: 5060e12fb6a9fcc1bac1dfe6ccdcbaea9f2e6385
-ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
-ms.translationtype: MT
+ms.openlocfilehash: a933c81105399a9411fcb749a06e47bf769cf532
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="peer-to-peer-collaboration"></a>ピアツーピア コラボレーション
-ピアツーピア ネットワーキングは、インターネットのエッジに存在する比較的処理能力の高いコンピューター (パーソナル コンピューター) を、単なるクライアントベースのコンピューティング以上のタスクに利用する方法です。 最新のパーソナル コンピューター (PC) は、非常に高速なプロセッサ、膨大なメモリ、およびどれもが完全に使用される電子メールや Web 閲覧などの一般的なコンピューティング タスクを実行するときに、大規模なハード ディスクがします。 最新の PC は、さまざまな種類のアプリケーションでクライアントとサーバーの両方 (ピア) として簡単に機能できます。  
+ピアツーピア ネットワーキングは、インターネットのエッジに存在する比較的処理能力の高いコンピューター (パーソナル コンピューター) を、単なるクライアントベースのコンピューティング以上のタスクに利用する方法です。 最新のパーソナル コンピューター (PC) は、非常に高速なプロセッサに大容量のメモリとハード ディスクを備えています。しかし、メールや Web 閲覧などの一般的なコンピューティング タスクを実行するとき、それらはいずれも最大活用されていません。 最新の PC は、さまざまな種類のアプリケーションでクライアントとサーバーの両方 (ピア) として簡単に機能できます。  
   
 -   ピアツーピア コラボレーションのインフラストラクチャは、Windows Vista 以降のプラットフォームの "近くの人と接続" サービスを利用する Microsoft Windows ピアツーピア インフラストラクチャを簡略化した実装です。 "近くの人と接続" サービスが機能するサブネット内のピア対応アプリケーションでの使用に適していますが、インターネットのエンドポイントや連絡先も処理できます。 一般的な連絡先マネージャーが組み込まれており、それを Live Messenger やその他の Live 対応アプリケーションで使用して、連絡先エンドポイント、空き時間、プレゼンスを確認できます。  
   

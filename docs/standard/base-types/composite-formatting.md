@@ -1,13 +1,7 @@
 ---
 title: 複合書式指定
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -19,18 +13,13 @@ helpviewer_keywords:
 - composite formatting
 - objects [.NET Framework], formatting multiple objects
 ms.assetid: 87b7d528-73f6-43c6-b71a-f23043039a49
-caps.latest.revision: 36
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 473669b4aaa0782fec32fb0e2d89875c4ab7a838
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 4922470633f3dec8e2e2f898bdf544f5aa4deded
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="composite-formatting"></a>複合書式指定
 .NET の複合書式指定機能は、オブジェクトのリストおよび複合書式指定文字列を入力として使用します。 複合書式指定文字列は、固定テキストに、書式指定項目と呼ばれるインデックス化されたプレースホルダーが混合されて構成されます。このプレースホルダーはリスト内のオブジェクトに対応します。 書式設定操作によって生成される結果の文字列は、元の固定テキストに文字列で表されたリスト内のオブジェクトが混合されて構成されます。  
@@ -123,13 +112,13 @@ ms.lasthandoff: 04/30/2018
  [!code-vb[Formatting.Composite#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Composite/vb/Escaping1.vb#2)]  
   
 ### <a name="processing-order"></a>処理の順序  
- 複合書式指定メソッドの呼び出しに、値が <xref:System.IFormatProvider> でない `null` 引数が含まれている場合、ランタイムはその <xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType> メソッドを呼び出して、<xref:System.ICustomFormatter> 実装を要求します。 このメソッドが <xref:System.ICustomFormatter> 実装を返すことができる場合、実装は後で使用できるようにキャッシュされます。  
+ 複合書式指定メソッドの呼び出しに、値が <xref:System.IFormatProvider> でない `null` 引数が含まれている場合、ランタイムはその <xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType> メソッドを呼び出して、<xref:System.ICustomFormatter> 実装を要求します。 このメソッドが <xref:System.ICustomFormatter> 実装を返すことができる場合、実装は複合書式指定メソッドの呼び出しの期間中キャッシュされます。
   
- 書式指定項目に対応するパラメーター リストのそれぞれの値は、次の手順を実行することで文字列に変換されます。 最初の 3 つの手順の条件のいずれかに該当する場合は、その手順で値の文字列形式が返され、後続の手順は実行されません。  
+ 書式指定項目に対応するパラメーター リストのそれぞれの値は、次のように文字列に変換されます。  
   
-1.  書式設定する値が `null` の場合は、空の文字列 ("") が返されます。  
+1.  書式設定する値が `null` の場合は、空の文字列 <xref:System.String.Empty?displayProperty=nameWithType> が返されます。  
   
-2.  <xref:System.ICustomFormatter> 実装が利用できる場合、ランタイムはその <xref:System.ICustomFormatter.Format%2A> メソッドを呼び出します。 メソッドには書式指定項目の *formatString* 値 (ある場合) または `null` (ない場合) と、<xref:System.IFormatProvider> 実装が渡されます。  
+2.  <xref:System.ICustomFormatter> 実装が利用できる場合、ランタイムはその <xref:System.ICustomFormatter.Format%2A> メソッドを呼び出します。 メソッドには書式指定項目の *formatString* 値 (ある場合) または `null` (ない場合) と、<xref:System.IFormatProvider> 実装が渡されます。 <xref:System.ICustomFormatter.Format%2A?displayProperty=nameWithType> メソッドの呼び出しから `null` が返ると、実行は次のステップに進みます。それ以外の場合は、<xref:System.ICustomFormatter.Format%2A?displayProperty=nameWithType> の呼び出しの結果が返されます。
   
 3.  値が <xref:System.IFormattable> インターフェイスを実装している場合は、インターフェイスの <xref:System.IFormattable.ToString%28System.String%2CSystem.IFormatProvider%29> メソッドが呼び出されます。 メソッドは、*formatString* 値 (書式指定項目内に値がある場合) または `null` (ない場合) を受け取ります。 <xref:System.IFormatProvider> 引数は、次のように判断されます。  
   

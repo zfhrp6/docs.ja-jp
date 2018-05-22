@@ -1,14 +1,6 @@
 ---
 title: WPF アプリケーションのリソース ファイル、コンテンツ ファイル、およびデータ ファイル
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-wpf
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -25,17 +17,11 @@ helpviewer_keywords:
 - application development [WPF], files
 - application management [WPF]
 ms.assetid: 7ad2943b-3961-41d3-8fc6-1582d43f5d99
-caps.latest.revision: 25
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: bcf0a725b7b3467a50a9f51850709dd972da217d
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
-ms.translationtype: HT
+ms.openlocfilehash: 571b8f71ce233011ae6fc7a6d4d53c5029d27d69
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="wpf-application-resource-content-and-data-files"></a>WPF アプリケーションのリソース ファイル、コンテンツ ファイル、およびデータ ファイル
 [!INCLUDE[TLA#tla_win](../../../../includes/tlasharptla-win-md.md)] データを含む実行可能でないなどのファイルに多くの場合、依存するアプリケーション[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]イメージ、ビデオ、およびオーディオです。 Windows Presentation Foundation (WPF) は、構成、識別、およびこれらの種類のアプリケーションのデータ ファイルと呼ばれる、データ ファイルを使用して特別なサポートを提供します。 このサポートの中心となるのは、次のような特定のアプリケーション データ ファイルの種類のセットです。  
@@ -211,7 +197,7 @@ ms.lasthandoff: 04/30/2018
 ### <a name="configuring-site-of-origin-files"></a>起点サイト ファイルの構成  
  従来の配置を使用する必要がある場合は、サイトの元のファイルの存在しないまたは不明なコンパイル時に、いずれかの使用など、実行時に、必要なファイルを確保するための機構を使用できます、`XCopy`コマンド ライン プログラムや、 [!INCLUDE[TLA#tla_wininstall](../../../../includes/tlasharptla-wininstall-md.md)].  
   
- わかっている場合はコンパイル時にファイルを元のサイトに配置されるけれどもまだ明示的な依存関係を回避するにそれらのファイルを追加することができます、[!INCLUDE[TLA#tla_msbuild](../../../../includes/tlasharptla-msbuild-md.md)]としてプロジェクト`None`項目。 コンテンツのファイルで設定する必要がある、 [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] `CopyToOutputDirectory`元のファイルのサイトが [いずれかを指定することによってビルドされたアセンブリに対応する場所にコピーされていることを指定する属性、`Always`値または`PreserveNewest`値。  
+ わかっている場合はコンパイル時にファイルを元のサイトに配置されるけれどもまだ明示的な依存関係を回避するにそれらのファイルを追加することができます、[!INCLUDE[TLA#tla_msbuild](../../../../includes/tlasharptla-msbuild-md.md)]としてプロジェクト`None`項目。 コンテンツのファイルで設定する必要がある、 [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] `CopyToOutputDirectory`元のファイルのサイトがいずれかを指定することによってビルドされたアセンブリに対応する場所にコピーされていることを指定する属性、`Always`値または`PreserveNewest`値。  
   
 ```xml  
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ... >  

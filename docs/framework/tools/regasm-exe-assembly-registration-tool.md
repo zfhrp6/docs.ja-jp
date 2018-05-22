@@ -1,29 +1,19 @@
 ---
-title: "Regasm.exe (アセンブリ登録ツール)"
-ms.custom: 
+title: Regasm.exe (アセンブリ登録ツール)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - Assembly Registration tool
 - assemblies [.NET Framework], registering
 - Regasm.exe
 - registering assemblies
 ms.assetid: e190e342-36ef-4651-a0b4-0e8c2c0281cb
-caps.latest.revision: "20"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b2762080c66c3c9451e7c7c3d4621d8cb9d4846e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 11ccdb4c75af2b37595d9be977f2ab881ebe1184
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="regasmexe-assembly-registration-tool"></a>Regasm.exe (アセンブリ登録ツール)
 アセンブリ登録ツールは、1 つのアセンブリに含まれるメタデータを読み込み、必要なエントリをレジストリに追加します。これにより、COM クライアントによって .NET Framework クラスが自動的に作成されます。 クラスが登録されると、どの COM クライアントでも、そのクラスを COM クラスであるかのように使用できます。 クラスの登録は、アセンブリのインストール時に 1 回だけ行われます。 実際に登録されるまでは、アセンブリに含まれるクラスのインスタンスを COM から作成することはできません。  

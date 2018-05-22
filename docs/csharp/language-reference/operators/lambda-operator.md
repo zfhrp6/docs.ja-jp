@@ -1,31 +1,25 @@
 ---
 title: =&gt; 演算子 (C# リファレンス)
 ms.date: 10/02/2017
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - =>_CSharpKeyword
 helpviewer_keywords:
 - lambda operator [C#]
 - => operator [C#]
 - lambda expressions [C#], => operator
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 44cb0485aefa8b0ab10a00ae0525180020ce436d
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: d1565e262fbd3ebcee2d1576a2a0c8ed3ba8ce38
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="gt-operator-c-reference"></a>=&gt; 演算子 (C# リファレンス)
 
-`=>`演算子は、c# での 2 つの方法で使用できます。
+C# では、`=>` 演算子を 2 通りの方法で使用できます。
 
-- として、[ラムダ演算子](#lamba-operator)で、[ラムダ式](../../lambda-expressions.md)、入力変数をラムダの本体から分離しています。
+- [ラムダ式](../../lambda-expressions.md)の[ラムダ演算子](#lamba-operator)として使用する場合、入力変数とラムダ本体が切り離されます。
  
-- [式の本体の定義](#expression-body-definition)メンバー名、メンバーの実装から分離します。 
+- [式本体の定義](#expression-body-definition)で、メンバー名とメンバー実装が切り離されます。 
 
 ## <a name="lambda-operator"></a>ラムダ演算子
 
@@ -88,24 +82,24 @@ static void Main(string[] args)
     // nine  
 }  
 ```  
-## <a name="expression-body-definition"></a>式の本体の定義
+## <a name="expression-body-definition"></a>式本体の定義
 
-式本体の定義は、高度に圧縮された、読み取り可能な形式でメンバーの実装を提供します。 次の一般的な構文があります。
+式本体の定義を使用すると、メンバーの実装が簡潔でわかりやすい形式になります。 一般的な構文は次のようになります。
 
 ```csharp
 member => expression;
 ```
-この *expression* には有効な式を指定します。 注意してください*式*できます、*ステートメント式*だけで、メンバーの戻り値の型が`void`メンバーがコンス トラクターまたはファイナライザーの場合またはします。
+この *expression* には有効な式を指定します。 メンバーの戻り値の型が `void` の場合か、メンバーがコンストラクターかファイナライザーの場合にのみ、*式*は*ステートメント式*になります。
 
-メソッドとプロパティの get ステートメントの式の本体の定義は、以降 C# 6 でサポートされます。 式の本文の定義のコンス トラクター、ファイナライザー、プロパティの set ステートメント、し、インデクサーの c# 7 以降がサポートされています。
+メソッドとプロパティの get ステートメントの場合、C# 6 以降で式本体の定義を利用できます。 コンストラクター、ファイナライザー、プロパティの set ステートメント、インデクサーの場合、C# 7 以降で式本体の定義を利用できます。
 
-次の式本体の定義は、`Person.ToString`メソッド。
+`Person.ToString` メソッドの式本体の定義は次のようになります。
 
 ```csharp
 public override string ToString() => $"{fname} {lname}".Trim();
 ```
 
-次のメソッド定義のためのショートハンド バージョンであります。
+次のメソッド定義を短くしたものです。
 
 ```csharp
 public override string ToString()
@@ -113,10 +107,10 @@ public override string ToString()
    return $"{fname} {lname}".Trim();
 }
 ```
-詳細については式の本文の定義についてを参照してください。[式の本文メンバー](../../programming-guide/statements-expressions-operators/expression-bodied-members.md)です。
+式本体の定義の詳細については、[式形式メンバー](../../programming-guide/statements-expressions-operators/expression-bodied-members.md)に関するページを参照してください。
 
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [C# リファレンス](../../../csharp/language-reference/index.md)   
 [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
 [ラムダ式](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)   
-[式の本文メンバー](../../programming-guide/statements-expressions-operators/expression-bodied-members.md)です。
+[式形式のメンバー](../../programming-guide/statements-expressions-operators/expression-bodied-members.md)

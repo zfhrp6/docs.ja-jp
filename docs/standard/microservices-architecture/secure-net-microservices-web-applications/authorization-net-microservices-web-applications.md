@@ -1,21 +1,14 @@
 ---
-title: ".NET マイクロサービスと Web アプリケーションでの承認について"
-description: "コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | .NET マイクロサービスと Web アプリケーションでの承認について"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
+title: .NET マイクロサービスと Web アプリケーションでの承認について
+description: コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | .NET マイクロサービスと Web アプリケーションでの承認について
 author: mjrousos
 ms.author: wiwagn
 ms.date: 05/26/2017
-ms.prod: .net-core
-ms.technology: dotnet-docker
-ms.topic: article
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 6cd7be9bc8216aecf85f99a76e859b411a8735b0
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 2ea56f5a28d115fc5d91a98604b82565c8bf5c78
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="about-authorization-in-net-microservices-and-web-applications"></a>.NET マイクロサービスと Web アプリケーションでの承認について
 
@@ -119,16 +112,16 @@ services.AddAuthorization(options =>
 
 ## <a name="additional-resources"></a>その他の技術情報
 
--   **ASP.NET Core 認証**
+-   **ASP.NET Core の認証**
     [*https://docs.microsoft.com/aspnet/core/security/authentication/identity*](https://docs.microsoft.com/aspnet/core/security/authentication/identity)
 
--   **ASP.NET Core 承認**
+-   **ASP.NET Core の承認**
     [*https://docs.microsoft.com/aspnet/core/security/authorization/introduction*](https://docs.microsoft.com/aspnet/core/security/authorization/introduction)
 
--   **ロールベースの承認**
+-   **ロール ベースの承認**
     [*https://docs.microsoft.com/aspnet/core/security/authorization/roles*](https://docs.microsoft.com/aspnet/core/security/authorization/roles)
 
--   **カスタム ポリシーベースの承認**
+-   **カスタム ポリシー ベースの承認**
     [*https://docs.microsoft.com/aspnet/core/security/authorization/policies*](https://docs.microsoft.com/aspnet/core/security/authorization/policies)
 
 

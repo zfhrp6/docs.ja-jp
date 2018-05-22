@@ -10,11 +10,11 @@ helpviewer_keywords:
 ms.assetid: 1d971dd7-10fc-4692-8dac-30ca308fc0fa
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c6d12740333d869b2fd43914437a6f5b5f62f843
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1c0f831426762ddcb21e4c1c1191e20435a13deb
+ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="whats-new-in-the-net-framework"></a>.NET Framework の新機能
 <a name="introduction"></a> この記事では、.NET Framework の次のバージョンにおける主な新機能と機能強化の概要を示します。  
@@ -49,7 +49,7 @@ ms.lasthandoff: 05/04/2018
 
 .NET Framework 4.7.2 は、Windows 10、Windows 8.1、Windows 7 SP1、および Windows Server 2008 R2 SP1 以降に相当するサーバー プラットフォームにインストールできます。 .NET Framework 4.7.2 は、Web インストーラーまたはオフライン インストーラーを使用してインストールできます。 ほとんどのユーザーにお勧めする方法は、Web インストーラーの使用です。
 
-[.NET Framework 4.7.2 Developer Pack](http://go.microsoft.com/fwlink/?LinkId=863261) をインストールすれば、Visual Studio 2012 以降で、.NET Framework 4.7.2 をインストール対象に設定できます。 
+[.NET Framework 4.7.2 Developer Pack](http://go.microsoft.com/fwlink/?LinkId=874338) をインストールすれば、Visual Studio 2012 以降で、.NET Framework 4.7.2 をインストール対象に設定できます。 
 
 ### <a name="whats-new-in-the-net-framework-472"></a>.NET Framework 4.7.2 の新機能
 

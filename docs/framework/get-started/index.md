@@ -8,11 +8,11 @@ helpviewer_keywords:
 ms.assetid: c693fd34-88fe-4d90-b332-19eeadf3b7e7
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d62ae73c9a2789087785e1fba6b227245ee08a10
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1ecac9d30b390be886e9d81f11623070301f7d38
+ms.sourcegitcommit: 895c7602386a6dfe7ca4facce3d965b27e5c6e87
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/19/2018
 ---
 # <a name="get-started-with-the-net-framework"></a>.NET Framework の概要
 
@@ -70,7 +70,7 @@ Windows 8 よりも前の Windows バージョンで .NET Framework を削除す
 
 2. .NET Framework でサポートされている、アプリ開発に使用する言語を選択します。 Microsoft の [Visual Basic](../../visual-basic/index.md)、[C#](../../csharp/index.md)、[F#](../../fsharp/index.md)、および C++ と CLI を含む多くの言語から選択できます。 (.NET Framework のアプリを開発できるプログラミング言語は、[共通言語基盤 (CLI) 仕様](http://go.microsoft.com/fwlink/?LinkId=199862)に準拠します)。
 
-3. アプリの作成に使用する、選択したプログラミング言語をサポートする開発環境を選択してインストールします。 [Visual Studio](http://go.microsoft.com/fwlink/?LinkId=325532) は、.NET Framework アプリ用の Microsoft 統合開発環境 (IDE) です。 これには、いくつかエディションがあります。
+3. アプリの作成に使用する、選択したプログラミング言語をサポートする開発環境を選択してインストールします。 [Visual Studio](https://www.visualstudio.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017) は、.NET Framework アプリ用の Microsoft 統合開発環境 (IDE) です。 これには、いくつかエディションがあります。
 
 .NET Framework を対象にしたアプリの開発の詳細については、「[.NET Framework の開発ガイド](../../../docs/framework/development-guide.md)」を参照してください。
 

@@ -1,12 +1,6 @@
 ---
-title: "Visual Basic でのファイルおよびディレクトリの作成、削除、および移動"
-ms.custom: 
+title: Visual Basic でのファイルおよびディレクトリの作成、削除、および移動
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.topic: article
 helpviewer_keywords:
 - examples [Visual Basic], moving files and directories
 - I/O [Visual Basic], deleting folders
@@ -28,14 +22,11 @@ helpviewer_keywords:
 - I/O [Visual Basic], renaming folders
 - I/O [Visual Basic], moving files
 ms.assetid: 8f814fcc-4c42-4dbb-a131-005ec445ac9e
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 388d8567235230003f0b770c2266e4a4d77ca754
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 8b734b553e0ef4c14e372892e53b1184798390e6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="creating-deleting-and-moving-files-and-directories-in-visual-basic"></a>Visual Basic でのファイルおよびディレクトリの作成、削除、および移動
 このセクションでは、Visual Basic でのファイルとディレクトリの作成、削除、移動、名前変更に関連するタスクを列挙します。  

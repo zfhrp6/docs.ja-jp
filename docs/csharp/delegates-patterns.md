@@ -3,11 +3,11 @@ title: デリゲートの一般的なパターン
 description: コンポーネント間の密接な結合を避けるための、コードでのデリゲートの一般的な使用パターンについて説明します。
 ms.date: 06/20/2016
 ms.assetid: 0ff8fdfd-6a11-4327-b061-0f2526f35b43
-ms.openlocfilehash: fceab2b9c6bbd1d687566820366459ec57ae7a2d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b9762841656aa362589d01ed011407aeedfe4a20
+ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="common-patterns-for-delegates"></a>デリゲートの一般的なパターン
 
@@ -27,7 +27,7 @@ var smallNumbers = numbers.Where(n => n < 10);
 Where メソッドのプロトタイプは次のとおりです。
 
 ```csharp
-public static IEnumerable<TSource> Where<in TSource> (IEnumerable<TSource> source, Func<TSource, bool> predicate);
+public static IEnumerable<TSource> Where<TSource> (this IEnumerable<TSource> source, Func<TSource, bool> predicate);
 ```
 
 この例は、LINQ のすべてのメソッドに当てはまります。 具体的なクエリを扱うコードには、すべてデリゲートが使われているのです。 きわめて強力な API デザイン パターンなので、しっかり覚えて自分のものにしてください。

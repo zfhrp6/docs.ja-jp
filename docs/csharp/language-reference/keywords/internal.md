@@ -1,29 +1,22 @@
 ---
 title: internal (C# リファレンス)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - internal_CSharpKeyword
 - internal
 helpviewer_keywords:
 - internal keyword [C#]
 ms.assetid: 6ee0785c-d7c8-49b8-bb72-0a4dfbcb6461
-caps.latest.revision: 23
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: a3b115022ed2b38dfcfbbfad3c5fc00e0203b255
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: e636cb1edfa19b08c52ff09439e66aeb1424046a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="internal-c-reference"></a>internal (C# リファレンス)
 `internal` キーワードは、型と型のメンバーを示す[アクセス修飾子](../../../csharp/language-reference/keywords/access-modifiers.md)です。 
   
- > このページで対象`internal`アクセスします。 `internal`キーワードはまたの一部、 [ `protected internal` ](./protected-internal.md)アクセス修飾子。
+ > このページでは、`internal` アクセスについて説明します。 `internal` キーワードも [`protected internal`](./protected-internal.md) アクセス修飾子に含まれます。
   
 internal 型またはメンバーは、次の例のように、同じアセンブリ内のファイルでのみアクセスできます。  
   
@@ -95,7 +88,7 @@ public class TestAccess
 ## <a name="c-language-specification"></a>C# 言語仕様  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C# リファレンス](../../../csharp/language-reference/index.md)  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
  [C# のキーワード](../../../csharp/language-reference/keywords/index.md)  

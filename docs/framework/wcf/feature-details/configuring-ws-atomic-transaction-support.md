@@ -1,28 +1,14 @@
 ---
 title: WS-AtomicTransaction サポートの構成
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - WS-AT protocol [WCF], configuring WS-Atomic Transaction
 ms.assetid: cb9f1c9c-1439-4172-b9bc-b01c3e09ac48
-caps.latest.revision: 31
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: b2d94c96b8cc225344300540d9fc406a4742db2a
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
-ms.translationtype: HT
+ms.openlocfilehash: a89caad51f098e17bca1a5ba3df600a6dbf1dd9f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="configuring-ws-atomic-transaction-support"></a>WS-AtomicTransaction サポートの構成
 ここでは、WS-AtomicTransaction (WS-AT) 構成ユーティリティを使用して WS-AT サポートを構成する方法について説明します。  
@@ -36,7 +22,7 @@ ms.lasthandoff: 04/30/2018
   
  コマンド ライン ツールの詳細については、次を参照してください。 [Ws-atomictransaction 構成ユーティリティ (wsatConfig.exe)](../../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md)です。  
   
- 実行している場合[!INCLUDE[wxp](../../../../includes/wxp-md.md)]または[!INCLUDE[ws2003](../../../../includes/ws2003-md.md)]に移動して、MMC スナップインにアクセスできる**コントロール パネル]、[管理ツール]、[コンポーネント サービス**を右クリック、**マイ コンピューター**、および選択すると**プロパティ**です。 この場所では、Microsoft 分散トランザクション コーディネーター (MSDTC) を構成することもできます。 構成できるオプションは、[グループ化されて、 **WS-AT**タブです。Windows Vista を実行している場合または[!INCLUDE[lserver](../../../../includes/lserver-md.md)]、MMC スナップインでにあります をクリックして、**開始** ボタン、および入力`dcomcnfg.exe`で、**検索**ボックス。 MMC が開いているときに移動、**マイ Computer\Distributed トランザクション コーディネーター DTC**ノードを右クリックし、**プロパティ**です。 構成できるオプションは、グループ化されて、 **WS-AT**タブです。  
+ 実行している場合[!INCLUDE[wxp](../../../../includes/wxp-md.md)]または[!INCLUDE[ws2003](../../../../includes/ws2003-md.md)]に移動して、MMC スナップインにアクセスできる**コントロール パネル]、[管理ツール]、[コンポーネント サービス**を右クリック、**マイ コンピューター**、および選択すると**プロパティ**です。 この場所では、Microsoft 分散トランザクション コーディネーター (MSDTC) を構成することもできます。 構成できるオプションは、グループ化されて、 **WS-AT**タブです。Windows Vista を実行している場合または[!INCLUDE[lserver](../../../../includes/lserver-md.md)]、MMC スナップインでにあります をクリックして、**開始** ボタン、および入力`dcomcnfg.exe`で、**検索**ボックス。 MMC が開いているときに移動、**マイ Computer\Distributed トランザクション コーディネーター DTC**ノードを右クリックし、**プロパティ**です。 構成できるオプションは、グループ化されて、 **WS-AT**タブです。  
   
  スナップインの詳細については、次を参照してください。、 [Ws-atomictransaction 構成 MMC スナップインで](../../../../docs/framework/wcf/ws-atomictransaction-configuration-mmc-snap-in.md)です。  
   
@@ -111,7 +97,7 @@ ms.lasthandoff: 04/30/2018
   
  WS-AT プロトコル サービスは、ETW トレース セッションを通じて統合 ServiceModel トレースもサポートします。 これにより、既存のトランザクション トレースに加えて、より詳細な通信固有のトレースが得られます。  これらの追加トレースを有効にするには、次の手順を実行します。  
   
-1.  開く、**開始/実行** メニューの 入力 ボックスに「regedit」を入力し、、選択**OK**です。  
+1.  開く、**開始/実行** メニューの [入力] ボックスに「regedit」を入力し、、選択**OK**です。  
   
 2.  **レジストリ エディター**Hkey_Local_Machine\SOFTWARE\Microsoft\WSAT\3.0\、左側のウィンドウで次のフォルダーに移動  
   

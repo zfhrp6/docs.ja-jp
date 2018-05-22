@@ -14,11 +14,11 @@ helpviewer_keywords:
 ms.assetid: 113a8bbf-6875-4a72-a49d-ca2d92e19cc8
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 04028a2b350493a3cc8f2c92bafafd9658fc7c58
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 811443dbd8e2483f7fc1b0f8c44afb4ebcd9efcf
+ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/18/2018
 ---
 # <a name="application-domains"></a>アプリケーション ドメイン
 オペレーティング システムやランタイム環境では、通常、複数のアプリケーションがなんらかの形で分離されています。 たとえば、Windows ではプロセスを使用してアプリケーションが分離されています。 このような分離は、あるアプリケーションで実行されているコードが、関係のない別のアプリケーションに悪影響をもたらさないようにするために必要です。  
@@ -74,11 +74,11 @@ ms.lasthandoff: 05/03/2018
   
  アセンブリをドメインに中立として読み込むかどうかに関して、次の 3 つのオプションがあります。  
   
--   <xref:System.LoaderOptimization> では、常にドメインに中立として読み込まれる Mscorlib を除き、どのアセンブリもドメインに中立として読み込まれません。 この設定は、ホストがプロセス内で 1 つのアプリケーションだけを実行する場合に一般的に使用されるため、シングル ドメインと呼ばれます。  
-  
--   <xref:System.LoaderOptimization> では、すべてのアセンブリがドメインに中立として読み込まれます。 この設定は、同じコードを実行する複数のアプリケーション ドメインが 1 つのプロセス内に存在する場合に使用します。  
-  
--   <xref:System.LoaderOptimization> では、厳密な名前が付いたアセンブリとそのすべての依存関係がグローバル アセンブリ キャッシュにインストールされている場合に、それらのアセンブリがドメインに中立として読み込まれます。 その他のアセンブリは、それらが読み込まれる各アプリケーション ドメインで個別に読み込まれ、JIT でコンパイルされるため、プロセスからアンロードできます。 この設定は、同じプロセスで複数のアプリケーションが実行されている場合、または多数のアプリケーション ドメインで共有されているアセンブリと、プロセスからアンロードする必要があるアセンブリが混在している場合に使用します。  
+- <xref:System.LoaderOptimization.SingleDomain?displayProperty=nameWithType> では、常にドメインに中立として読み込まれる Mscorlib を除き、どのアセンブリもドメインに中立として読み込まれません。 この設定は、ホストがプロセス内で 1 つのアプリケーションだけを実行する場合に一般的に使用されるため、シングル ドメインと呼ばれます。
+
+- <xref:System.LoaderOptimization.MultiDomain?displayProperty=nameWithType> では、すべてのアセンブリがドメインに中立として読み込まれます。 この設定は、同じコードを実行する複数のアプリケーション ドメインが 1 つのプロセス内に存在する場合に使用します。
+
+- <xref:System.LoaderOptimization.MultiDomainHost?displayProperty=nameWithType> では、厳密な名前が付いたアセンブリとそのすべての依存関係がグローバル アセンブリ キャッシュにインストールされている場合に、それらのアセンブリがドメインに中立として読み込まれます。 その他のアセンブリは、それらが読み込まれる各アプリケーション ドメインで個別に読み込まれ、JIT でコンパイルされるため、プロセスからアンロードできます。 この設定は、同じプロセスで複数のアプリケーションが実行されている場合、または多数のアプリケーション ドメインで共有されているアセンブリと、プロセスからアンロードする必要があるアセンブリが混在している場合に使用します。
   
  <xref:System.Reflection.Assembly.LoadFrom%2A> クラスの <xref:System.Reflection.Assembly> メソッドを使用して読み込み元を指定して読み込まれたアセンブリ、またはバイト配列を指定する <xref:System.Reflection.Assembly.Load%2A> メソッドのオーバーロードを使用してイメージから読み込まれたアセンブリについては、JIT コンパイル コードを共有できません。  
   

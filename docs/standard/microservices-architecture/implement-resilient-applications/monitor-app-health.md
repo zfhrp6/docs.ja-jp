@@ -1,21 +1,14 @@
 ---
-title: "正常性の監視"
-description: "コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | 正常性の監視"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
+title: 正常性の監視
+description: コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | 正常性の監視
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 12/11/2017
-ms.prod: .net-core
-ms.technology: dotnet-docker
-ms.topic: article
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 76821e27613335609527b867a6b94dac551f6235
-ms.sourcegitcommit: 15316053918995cc1380163a7d7e7edd5c44e6d7
-ms.translationtype: MT
+ms.openlocfilehash: 81c4fc7662212bb3c6586a590d87e731220b7b7c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="health-monitoring"></a>正常性の監視
 
@@ -27,7 +20,7 @@ ms.lasthandoff: 03/19/2018
 
 ## <a name="implementing-health-checks-in-aspnet-core-services"></a>ASP.NET Core サービスでの正常性チェックの実装
 
-ASP.NET Core マイクロサービスまたは Web アプリケーションを開発する場合、ASP.NET チームの `HealthChecks` という名前のライブラリを使用することができます。 早期リリースはこの [GitHub リポジトリ](https://github.com/dotnet-architecture/HealthChecks)から入手できます。
+ASP.NET Core マイクロサービスまたは Web アプリケーションを開発する場合、ASP.NET チームの `HealthChecks` という名前の帯域外ライブラリ (ASP.NETCore に正式には含まれません) を使用することができます。 これは、[GitHub リポジトリ](https://github.com/dotnet-architecture/HealthChecks)から入手できます。
 
 このライブラリは使いやすく、アプリケーションに必要な特定の外部リソース (SQL Server データベースやリモート API など) が正しく動作していることを検証できる機能を提供します。 このライブラリを使用すれば、リソースが正常であるかどうかを判断することもできます。これについては後で説明します。
 
@@ -37,7 +30,7 @@ ASP.NET Core マイクロサービスまたは Web アプリケーションを�
 
 EShopOnContainers サンプル アプリケーションでの HealthChecks ライブラリの使用方法を確認することができます。 開始するには、各マイクロサービスの正常性状態の構成要素を定義する必要があります。 サンプル アプリケーションでは、マイクロサービス API が HTTP 経由でアクセス可能である場合と、それに関連する SQL Server データベースも使用可能である場合、マイクロサービスは正常な状態です。
 
-将来的には、HealthChecks ライブラリを NuGet パッケージとしてインストールできるようになります。 ただし、このドキュメントの作成時点では、ソリューションの一部として、コードをダウンロードしてコンパイルする必要があります。 利用可能なコードを複製https://github.com/dotnet-architecture/HealthChecksし、ソリューションに、次のフォルダーをコピーします。
+将来的には、HealthChecks ライブラリを NuGet パッケージとしてインストールできるようになります。 ただし、このドキュメントの作成時点では、ソリューションの一部として、コードをダウンロードしてコンパイルする必要があります。 https://github.com/dotnet-architecture/HealthChecks にあるコードを複製し、次のフォルダーをソリューションにコピーします。
 
   - src/common
   - src/Microsoft.AspNetCore.HealthChecks
@@ -190,12 +183,12 @@ Azure Service Fabric を使用している場合は、単純な正常性チェ�
 
 ## <a name="additional-resources"></a>その他の技術情報
 
--   **ASP.NET Core HealthChecks** (初期リリース) [*https://github.com/aspnet/HealthChecks/*](https://github.com/aspnet/HealthChecks/)
+-   **ASP.NET Core HealthChecks** (早期リリース) [*https://github.com/aspnet/HealthChecks/*](https://github.com/aspnet/HealthChecks/)
 
--   **Service Fabric の正常性の監視の概要**
+-   **Service Fabric 正常性監視の概要**
     [*https://docs.microsoft.com/azure/service-fabric/service-fabric-health-introduction*](https://docs.microsoft.com/azure/service-fabric/service-fabric-health-introduction)
 
--   **Azure の Application Insights**
+-   **Azure Application Insights**
     [*https://azure.microsoft.com/services/application-insights/*](https://azure.microsoft.com/services/application-insights/)
 
 -   **Microsoft Operations Management Suite**

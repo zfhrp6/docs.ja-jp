@@ -1,21 +1,12 @@
 ---
-title: "LINQ to XML クラスの概要 (C#)"
-ms.custom: 
+title: LINQ to XML クラスの概要 (C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: bf666100-5392-4968-97f4-f6b9d3287d7b
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 0dc4307c3cf87fa9b5cb38bdaa9d9bf77adf1424
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 619bf59c2b10cbb699f8e5b177991da9a0a2b238
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="linq-to-xml-classes-overview-c"></a>LINQ to XML クラスの概要 (C#)
 このトピックでは、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] 名前空間内の <xref:System.Xml.Linq> クラスの一覧を示し、各クラスについて簡単に説明します。  
@@ -86,7 +77,7 @@ ms.lasthandoff: 10/18/2017
  <xref:System.Xml.Linq.XObjectChange> は、<xref:System.Xml.Linq.XObject> に対してイベントが生成されるときのイベントの種類を指定します。  
   
 ### <a name="xobjectchangeeventargs-class"></a>XObjectChangeEventArgs クラス  
- <xref:System.Xml.Linq.XObjectChangeEventArgs> には、<xref:System.Xml.Linq.XObject.Changing> イベントおよび <xref:System.Xml.Linq.XObject.Changed> イベントのデータが用意されています。  
+ <xref:System.Xml.Linq.XObjectChangeEventArgs> には、<xref:System.Xml.Linq.XObject.Changing> イベントと <xref:System.Xml.Linq.XObject.Changed> イベントのデータが用意されています。  
   
 ### <a name="xprocessinginstruction-class"></a>XProcessingInstruction クラス  
  <xref:System.Xml.Linq.XProcessingInstruction> は、XML 処理命令を表します。 処理命令は、XML を処理するアプリケーションに情報を伝達します。  
@@ -94,5 +85,5 @@ ms.lasthandoff: 10/18/2017
 ### <a name="xtext-class"></a>XText クラス  
  <xref:System.Xml.Linq.XText> は、テキスト ノードを表します。 このクラスを使用する必要はほとんどありません。 このクラスは、主に混合コンテンツに使用されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [LINQ to XML プログラミングの概要 (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-programming-overview.md)

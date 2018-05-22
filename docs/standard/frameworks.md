@@ -3,19 +3,14 @@ title: ターゲット フレームワーク
 description: .NET Core アプリとライブラリのターゲット フレームワークについて説明します。
 author: richlander
 ms.author: mairaw
-ms.date: 09/22/2017
-ms.topic: article
+ms.date: 04/16/2018
 ms.custom: updateeachrelease
-ms.prod: .net
 ms.technology: dotnet-standard
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: e9f47647a1d4dc82b2df2ea8905f8d0a1e705b96
-ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
+ms.openlocfilehash: fa8049c9e33f0f6b2f16fd8572d6500ba1860c2e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="target-frameworks"></a>ターゲット フレームワーク
 
@@ -31,13 +26,13 @@ ms.lasthandoff: 04/18/2018
 
 ## <a name="latest-target-framework-versions"></a>最新のターゲット フレームワークのバージョン
 
-次の表では、最も一般的なターゲット フレームワーク、それらの参照方法、およびそれらが実装する [.NET Standard](~/docs/standard/net-standard.md) のバージョンを定義します。 これらのターゲット フレームワークのバージョンは、最新の安定したバージョンです。 プレリリース バージョンは記載されていません。 ターゲット フレームワーク モニカー (TFM) は、.NET アプリまたはライブラリのターゲット フレームワークを指定するための標準化されたトークン形式です。 
+次の表では、最も一般的なターゲット フレームワーク、それらの参照方法、およびそれらが実装する [.NET Standard](~/docs/standard/net-standard.md) のバージョンを定義します。 これらのターゲット フレームワークのバージョンは、最新の安定したバージョンです。 プレリリース バージョンは記載されていません。 ターゲット フレームワーク モニカー (TFM) は、.NET アプリまたはライブラリのターゲット フレームワークを指定するための標準化されたトークン形式です。
 
-| [対象とする Framework]      | [最新バージョン] | ターゲット フレームワーク モニカー (TFM) | 実装済み <br/> .NET Standard バージョン |
-| :-------------------: | :------------: | :----------------------------: | :-------------------------------------: |
-| .NET Standard         | 2.0            | netstandard2.0                 | N/A                                     |
-| .NET Core アプリケーション | 2.0            | netcoreapp2.0                  | 2.0                                     |
-| .NET Framework        | 4.7.1          | net471                         | 2.0                                     |
+| [対象とする Framework]      | Latest <br/> 安定バージョン | ターゲット フレームワーク モニカー (TFM) | 実装済み <br/> .NET Standard バージョン |
+| :-------------------: | :-------------------------: | :----------------------------: | :-------------------------------------: |
+| .NET Standard         | 2.0                         | netstandard2.0                 | N/A                                     |
+| .NET Core アプリケーション | 2.0                         | netcoreapp2.0                  | 2.0                                     |
+| .NET Framework        | 4.7.2                       | net472                         | 2.0                                     |
 
 ## <a name="supported-target-framework-versions"></a>サポートされるターゲット フレームワークのバージョン
 
@@ -46,8 +41,8 @@ ms.lasthandoff: 04/18/2018
 | [対象とする Framework]           | TFM |
 | -------------------------- | --- |
 | .NET Standard              | netstandard1.0<br>netstandard1.1<br>netstandard1.2<br>netstandard1.3<br>netstandard1.4<br>netstandard1.5<br>netstandard1.6<br>netstandard2.0 |
-| .NET Core                  | netcoreapp1.0<br>netcoreapp1.1<br>netcoreapp2.0 |
-| .NET Framework             | net11<br>net20<br>net35<br>net40<br>net403<br>net45<br>net451<br>net452<br>net46<br>net461<br>net462<br>net47<br>net471 |
+| .NET Core                  | netcoreapp1.0<br>netcoreapp1.1<br>netcoreapp2.0<br>netcoreapp2.1 |
+| .NET Framework             | net11<br>net20<br>net35<br>net40<br>net403<br>net45<br>net451<br>net452<br>net46<br>net461<br>net462<br>net47<br>net471<br>net472 |
 | Windows ストア              | netcore [netcore45]<br>netcore45 [win] [win8]<br>netcore451 [win81] |
 | .NET Micro Framework       | netmf |
 | Silverlight                | sl4<br>sl5 |
@@ -118,11 +113,11 @@ public class MyClass
 
 [!INCLUDE [Preprocessor symbols](~/includes/preprocessor-symbols.md)]
 
-## <a name="deprecated-target-frameworks"></a>使用されていないターゲット フレームワーク
+## <a name="deprecated-target-frameworks"></a>非推奨のターゲット フレームワーク
 
-次のターゲット フレームワークは使用されていません。 これらのターゲット フレームワークをターゲットにするパッケージは、指定されている代替フレームワークに移行する必要があります。
+次のターゲット フレームワークは非推奨とされます。 これらのターゲット フレームワークをターゲットにするパッケージは、指定されている代替フレームワークに移行する必要があります。
 
-| 使用されていない TFM                                                                             | Replacement |
+| 非推奨の TFM                                                                             | Replacement |
 | ------------------------------------------------------------------------------------------ | ----------- |
 | aspnet50<br>aspnetcore50<br>dnxcore50<br>dnx<br>dnx45<br>dnx451<br>dnx452                  | netcoreapp  |
 | dotnet<br>dotnet50<br>dotnet51<br>dotnet52<br>dotnet53<br>dotnet54<br>dotnet55<br>dotnet56 | netstandard |
@@ -135,10 +130,10 @@ public class MyClass
 
 ## <a name="see-also"></a>関連項目
 
-[パッケージ、メタパッケージ、フレームワーク](~/docs/core/packages.md)  
-[クロス プラットフォーム ツールによるライブラリの開発](~/docs/core/tutorials/libraries.md)  
-[.NET Standard](~/docs/standard/net-standard.md)  
-[.NET Core バージョン管理](~/docs/core/versions/index.md)  
+[パッケージ、メタパッケージ、フレームワーク](../core/packages.md)  
+[クロス プラットフォーム ツールによるライブラリの開発](../core/tutorials/libraries.md)  
+[.NET Standard](net-standard.md)  
+[.NET Core バージョン管理](../core/versions/index.md)  
 [dotnet/standard GitHub リポジトリ](https://github.com/dotnet/standard)  
 [NuGet Tools GitHub リポジトリ](https://github.com/joelverhagen/NuGetTools)  
 [.NET のフレームワーク プロファイル](https://blog.stephencleary.com/2012/05/framework-profiles-in-net.html)

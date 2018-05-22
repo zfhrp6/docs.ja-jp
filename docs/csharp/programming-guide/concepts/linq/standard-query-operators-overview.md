@@ -1,21 +1,12 @@
 ---
-title: "標準クエリ演算子の概要 (C#)"
-ms.custom: 
+title: 標準クエリ演算子の概要 (C#)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: 812fa119-5f65-4139-b4fa-55dccd8dc3ac
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: bcf64b87eb7fa1cba863f809dc11ab0ccb68ea9b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 36bd5927e64ffacb97beac28b8e7790204e08c5c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="standard-query-operators-overview-c"></a>標準クエリ演算子の概要 (C#)
 "*標準クエリ演算子*" は、LINQ パターンを形成するメソッドです。 これらのメソッドの大部分はシーケンスに対して機能します。ここでシーケンスとは、<xref:System.Collections.Generic.IEnumerable%601> インターフェイスまたは <xref:System.Linq.IQueryable%601> インターフェイスを実装している型のオブジェクトのことです。 標準クエリ演算子には、フィルター処理、プロジェクション、集計、並べ替えなどのクエリ機能が用意されています。  
@@ -111,10 +102,10 @@ foreach (var obj in query)
   
  [集計操作 (C#)](../../../../csharp/programming-guide/concepts/linq/aggregation-operations.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Linq.Enumerable>  
  <xref:System.Linq.Queryable>  
  [LINQ クエリの概要 (C#)](../../../../csharp/programming-guide/concepts/linq/introduction-to-linq-queries.md)  
- [標準クエリ演算子 (c#) のクエリ式の構文](../../../../csharp/programming-guide/concepts/linq/query-expression-syntax-for-standard-query-operators.md)  
+ [標準クエリ演算子のクエリ式構文 (C#)](../../../../csharp/programming-guide/concepts/linq/query-expression-syntax-for-standard-query-operators.md)  
  [実行方法による標準クエリ演算子の分類 (C#)](../../../../csharp/programming-guide/concepts/linq/classification-of-standard-query-operators-by-manner-of-execution.md)  
  [拡張メソッド](../../../../csharp/programming-guide/classes-and-structs/extension-methods.md)

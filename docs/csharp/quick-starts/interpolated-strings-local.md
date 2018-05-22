@@ -4,16 +4,12 @@ description: このクイックスタートでは、C# で文字列補間機能�
 author: rpetrusha
 ms.author: ronpet
 ms.date: 04/14/2018
-ms.topic: get-started-article
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: 7ef904e30475d2cc0584f2baf56bc33a68e172d4
-ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
+ms.openlocfilehash: 314626e276f50178e2855b8c8a1edc104546d574
+ms.sourcegitcommit: 88f251b08bf0718ce119f3d7302f514b74895038
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="string-interpolation"></a>文字列補間
 
@@ -52,7 +48,7 @@ Console.WriteLine($"Hello, {name}. It's a pleasure to meet you!");
 
 前のセクションでは、文字列補間を使用して、1 つの文字列内に別の文字列を挿入しましたが、 挿入式の結果を任意のデータ型にすることもできます。 挿入文字列にさまざまなデータ型の値を含めてみましょう。
 
-次の例では、`Name` [プロパティ](../properties.md)と `ToString` メソッドを持つ、ユーザー指定データ型 `Vegetable` を定義します。 クライアント コードは、そのメソッドを使用して、`Vegetable` インスタンスの文字列表現を取得できます。 この例の `Vegetable.ToString` メソッドでは、`Vegetable` コンストラクターで初期化される `Name` プロパティの値を返します。
+次の例では、`Name` [ プロパティ](../properties.md)と `ToString` メソッドを持つ、ユーザー指定データ型 `Vegetable` を定義します。 クライアント コードは、そのメソッドを使用して、`Vegetable` インスタンスの文字列表現を取得できます。 この例の `Vegetable.ToString` メソッドでは、`Vegetable` コンストラクターで初期化される `Name` プロパティの値を返します。
 
 ```csharp
 public Vegetable(string name) => Name = name;
@@ -173,4 +169,4 @@ Console.WriteLine($"[{DateTime.Now,-20:d}] Hour [{DateTime.Now,-10:HH}] [{1063.3
 
 [リスト コレクション](arrays-and-collections.md)のクイックスタートを、ご自身の開発環境でも使い続けることができます。
 
-文字列補間の詳細については、C# リファレンスの[文字列補間](../language-reference/tokens/interpolated.md)に関するページを参照してください。
+詳細については、[文字列補間](../language-reference/tokens/interpolated.md)に関するトピックと「[C# における文字列補間](../tutorials/string-interpolation.md)」チュートリアルを参照してください。

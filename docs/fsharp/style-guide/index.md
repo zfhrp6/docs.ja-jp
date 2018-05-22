@@ -2,11 +2,11 @@
 title: F# スタイル ガイド
 description: 適切な f# コードの 5 つの原則について説明します。
 ms.date: 05/14/2018
-ms.openlocfilehash: 317fc2c101449b0500a54dd9fea3d426757af5cd
-ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
-ms.translationtype: HT
+ms.openlocfilehash: 6d8c1336ca991040a8f6e13290d209cb3b70054d
+ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/15/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="f-style-guide"></a>F# スタイル ガイド
 
@@ -40,8 +40,8 @@ ms.lasthandoff: 05/15/2018
 
 ## <a name="next-steps"></a>次の手順
 
-[F# の書式設定に関するガイドライン](formatting.md)読みやすくなるようにコードを書式設定する方法についてガイダンスを提供します。
+[F# コードのガイドラインを書式設定](formatting.md)読みやすくなるようにコードを書式設定する方法についてガイダンスを提供します。
 
 [F# コーディング規則](conventions.md)コードベース f# プログラミングの表現方法より大きな f# の長期的な保守に役立つガイダンスを提供します。
 
-[F# コンポーネントのデザイン ガイドライン](component-design-guidelines.md)は、f# などのコンポーネント ライブラリを作成するためのガイダンスの包括的なセット。
+[F# コンポーネントのデザイン ガイドライン](component-design-guidelines.md)f# などのコンポーネント ライブラリを作成するためのガイダンスを提供します。

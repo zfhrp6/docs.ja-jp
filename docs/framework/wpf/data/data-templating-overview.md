@@ -10,11 +10,11 @@ helpviewer_keywords:
 - templates [WPF], data
 - data templates [WPF]
 ms.assetid: 0f4d9f8c-0230-4013-bd7b-e8e7fed01b4a
-ms.openlocfilehash: feed791ac876c13dbd637f0455d3cfdd83a86e05
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7aed418fe5e2c7d8a217f3016655f39c99300d53
+ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/15/2018
 ---
 # <a name="data-templating-overview"></a>データ テンプレートの概要
 WPF のデータ テンプレート モデルは、データのプレゼンテーションを定義する優れた柔軟性を提供します。 WPF のコントロールには、データ プレゼンテーションのカスタマイズをサポートする組み込み機能があります。 このトピックの内容が最初に定義する方法を示します、<xref:System.Windows.DataTemplate>し、カスタム ロジックと階層データを表示するためのサポートに基づくテンプレートの選択などのデータ テンプレート機能を紹介します。  
@@ -132,7 +132,8 @@ WPF のデータ テンプレート モデルは、データのプレゼンテ�
   
 <a name="what_belongs_in_datatemplate"></a>   
 ### <a name="what-belongs-in-a-datatemplate"></a>DataTemplate に含まれるもの  
- 内でトリガーを配置する前の例では、<xref:System.Windows.DataTemplate>を使用して、<xref:System.Windows.DataTemplate>です。<xref:System.Windows.DataTemplate.Triggers%2A> プロパティを使用する方法を示します。 <xref:System.Windows.Setter>トリガーの要素のプロパティの値を設定します (、<xref:System.Windows.Controls.Border>要素) 内にある、<xref:System.Windows.DataTemplate>です。 ただし場合、プロパティを`Setters`に不安が現在内にある要素のプロパティではない<xref:System.Windows.DataTemplate>を使用してプロパティを設定する適切な場合があります、<xref:System.Windows.Style>については、<xref:System.Windows.Controls.ListBoxItem>クラス (場合、バインドするコントロールは、 <xref:System.Windows.Controls.ListBox>)。 たとえば、する場合は、<xref:System.Windows.Trigger>アニメーション化する、<xref:System.Windows.UIElement.Opacity%2A>値アイテムのアイテムにマウスがポイントするとトリガーを定義する内で、<xref:System.Windows.Controls.ListBoxItem>スタイル。 例については、「[Introduction to Styling and Templating Sample](http://go.microsoft.com/fwlink/?LinkID=160010)」(スタイルとテンプレートのサンプルの概要) をご覧ください。  
+
+内でトリガーを配置する前の例では、<xref:System.Windows.DataTemplate>を使用して、<xref:System.Windows.DataTemplate>です。<xref:System.Windows.DataTemplate.Triggers%2A> プロパティを使用する方法を示します。 <xref:System.Windows.Setter>トリガーの要素のプロパティの値を設定します (、<xref:System.Windows.Controls.Border>要素) 内にある、<xref:System.Windows.DataTemplate>です。 ただし場合、プロパティを`Setters`に不安が現在内にある要素のプロパティではない<xref:System.Windows.DataTemplate>を使用してプロパティを設定する適切な場合があります、<xref:System.Windows.Style>については、<xref:System.Windows.Controls.ListBoxItem>クラス (場合、バインドするコントロールは、 <xref:System.Windows.Controls.ListBox>)。 たとえば、する場合は、<xref:System.Windows.Trigger>アニメーション化する、<xref:System.Windows.UIElement.Opacity%2A>値アイテムのアイテムにマウスがポイントするとトリガーを定義する内で、<xref:System.Windows.Controls.ListBoxItem>スタイル。 例については、「[Introduction to Styling and Templating Sample](https://github.com/Microsoft/WPF-Samples/tree/master/Styles%20&%20Templates/IntroToStylingAndTemplating)」(スタイルとテンプレートのサンプルの概要) をご覧ください。
   
  一般に、考慮する、<xref:System.Windows.DataTemplate>が生成される各に適用されている<xref:System.Windows.Controls.ListBoxItem>(が実際に適用される方法と場所に関する詳細については、次を参照してください。、<xref:System.Windows.Controls.ItemsControl.ItemTemplate%2A>ページです。)。 <xref:System.Windows.DataTemplate>はプレゼンテーション層とデータ オブジェクトの外観だけに関与します。 ほとんどの場合、どのような項目などのプレゼンテーションの他のすべての側面次のように選択されているか、または<xref:System.Windows.Controls.ListBox>アイテム、レイアウトの定義に属していない、<xref:System.Windows.DataTemplate>です。 例については、「[ItemsControl のスタイルとテンプレートの設定](#DataTemplating_ItemsControl)」セクションをご覧ください。  
   
@@ -164,9 +165,9 @@ WPF のデータ テンプレート モデルは、データのプレゼンテ�
  代わりに、テンプレート セレクターを<xref:System.Windows.Controls.ListBox>次のように表示されます。  
   
  ![データ テンプレートのサンプルのスクリーンショット](../../../../docs/framework/wpf/data/media/datatemplatingintro-fig7.png "DataTemplatingIntro_fig7")  
-  
- これがこの例の結論です。 完全なサンプルについては、「[Introduction to Data Templating Sample](http://go.microsoft.com/fwlink/?LinkID=160009)」(データ テンプレート サンプルの概要) をご覧ください。  
-  
+
+これがこの例の結論です。 完全なサンプルについては、「[Introduction to Data Templating Sample](https://github.com/Microsoft/WPF-Samples/tree/master/Data%20Binding/DataTemplatingIntro)」(データ テンプレート サンプルの概要) をご覧ください。
+
 <a name="DataTemplating_ItemsControl"></a>   
 ## <a name="styling-and-templating-an-itemscontrol"></a>ItemsControl のスタイルとテンプレートの設定  
  場合でも、<xref:System.Windows.Controls.ItemsControl>使用できる唯一のコントロール型ではない、<xref:System.Windows.DataTemplate>が非常に一般的なシナリオにバインドする、<xref:System.Windows.Controls.ItemsControl>をコレクションにします。 [DataTemplate に何が属する](#what_belongs_in_datatemplate)に説明したセクションの定義、<xref:System.Windows.DataTemplate>データの表示で考慮する必要がありますのみです。 ときに適していません。 使用するかを知るために、<xref:System.Windows.DataTemplate>によって提供されるさまざまなスタイルとテンプレートのプロパティを理解することが重要、<xref:System.Windows.Controls.ItemsControl>です。 次の例は、これらの各プロパティの機能がわかるように設計されています。 <xref:System.Windows.Controls.ItemsControl>この例にバインドされている同じ`Tasks`前の例のコレクション。 わかりやすいように、この例のスタイルとテンプレートはすべてインラインで宣言されています。  

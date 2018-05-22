@@ -1,21 +1,14 @@
 ---
-title: "ドメイン モデル レイヤーでの検証の設計"
-description: "コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | ドメイン モデル レイヤーでの検証の設計"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
+title: ドメイン モデル レイヤーでの検証の設計
+description: コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | ドメイン モデル レイヤーでの検証の設計
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
-ms.prod: .net-core
-ms.technology: dotnet-docker
-ms.topic: article
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: e7a111ce20039f8c87d3c3d63efdeaf38a4e1e96
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: ce3cb0c79cbd492224ce1d4ecb25cd02062f11cd
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="designing-validations-in-the-domain-model-layer"></a>ドメイン モデル レイヤーでの検証の設計
 
@@ -115,25 +108,25 @@ UI 層内でモデルの検証を許可するために、入力を受け取る V
 
 ## <a name="additional-resources"></a>その他の技術情報
 
--   **Rachel Appel。「ASP.NET Core MVC でのモデルの検証の概要」**
+-   **Rachel Appel。ASP.NET Core MVC でのモデル検証の概要**
     [*https://docs.microsoft.com/aspnet/core/mvc/models/validation*](https://docs.microsoft.com/aspnet/core/mvc/models/validation)
 
--   **Rick Anderson の 「検証の追加」**
+-   **Rick Anderson の 検証の追加**
     [*https://docs.microsoft.com/aspnet/core/tutorials/first-mvc-app/validation*](https://docs.microsoft.com/aspnet/core/tutorials/first-mvc-app/validation)
 
--   **Martin Fowler。「Replacing Throwing Exceptions with Notification in Validations」 (検証で例外のスローを通知と置き換える)**
+-   **Martin Fowler。検証で例外のスローを通知に置き換える**
     [*https://martinfowler.com/articles/replaceThrowWithNotification.html*](https://martinfowler.com/articles/replaceThrowWithNotification.html)
 
--   **「Specification and Notification Patterns」 (仕様パターンと通知パターン)**
+-   **仕様と通知のパターン**
     [*https://www.codeproject.com/Tips/790758/Specification-and-Notification-Patterns*](https://www.codeproject.com/Tips/790758/Specification-and-Notification-Patterns)
 
--   **Lev Gorodinski。「Validation in Domain-Driven Design (DDD)」 (DDD (ドメイン駆動設計) での検証)**
+-   **Lev Gorodinski。ドメイン駆動設計 (DDD) での検証**
     [*http://gorodinski.com/blog/2012/05/19/validation-in-domain-driven-design-ddd/*](http://gorodinski.com/blog/2012/05/19/validation-in-domain-driven-design-ddd/)
 
--   **Colin Jack。「Domain Model Validation」 (ドメイン モデルの検証)**
+-   **Colin Jack。ドメイン モデルの検証**
     [*http://colinjack.blogspot.com/2008/03/domain-model-validation.html*](http://colinjack.blogspot.com/2008/03/domain-model-validation.html)
 
--   **Jimmy Bogard。「Validation in a DDD world」 (DDD 世界での検証)**
+-   **Jimmy Bogard。DDD 世界での検証**
     [*https://lostechies.com/jimmybogard/2009/02/15/validation-in-a-ddd-world/*](https://lostechies.com/jimmybogard/2009/02/15/validation-in-a-ddd-world/)
 
 

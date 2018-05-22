@@ -3,11 +3,11 @@ title: F# のガイド
 description: このガイドでは、f#、.NET で実行される関数型プログラミング言語のさまざまな学習教材の概要を説明します。
 author: jackfoxy
 ms.date: 03/19/2018
-ms.openlocfilehash: 393214a5da7445d8ee3dced844da8592f4ca6d31
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: cb829e904c006467e1470752b4fe8757ca694b05
+ms.sourcegitcommit: 895c7602386a6dfe7ca4facce3d965b27e5c6e87
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/19/2018
 ---
 # <a name="f-guide"></a>F# のガイド
 
@@ -49,6 +49,8 @@ F# は、その中心に生産性が向上します。 F# 用ツール サポー
 [F# では、.NET Core CLI を使用して使ってみる](get-started/get-started-command-line.md)コマンド ライン ツールを使用する場合。
 
 [F# および Xamarin の概要](https://docs.microsoft.com/xamarin/cross-platform/platform/fsharp/)f# とモバイルのプログラミングに関するします。
+
+[Azure のノートブックの f#](https://notebooks.azure.com/Microsoft/libraries/samples/html/FSharp%20for%20Azure%20Notebooks.ipynb)無料でホストされている Jupyter ノートブックで f# を学習するためのチュートリアルです。
 
 ## <a name="references"></a>参照
 

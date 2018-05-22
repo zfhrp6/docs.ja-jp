@@ -5,11 +5,11 @@ hide_bc: true
 title: .NET ドキュメント
 description: .NET で、C#、Visual Basic、および F# を使用して任意のプラットフォームでさまざまなアプリケーションを作成する方法を説明します。 API リファレンス、サンプル コード、チュートリアルなどを参照します。
 ms.custom: updateeachrelease
-ms.openlocfilehash: f5967e21fcda580635dd53f976e2e5dabc0fbce8
-ms.sourcegitcommit: ff1d40507b3eb6e2185478e37c66c66be6de46f1
+ms.openlocfilehash: 3a2501d4eb0e40930bb119fb27f9cb630bc2a884
+ms.sourcegitcommit: 88f251b08bf0718ce119f3d7302f514b74895038
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/11/2018
+ms.lasthandoff: 05/10/2018
 ---
 <div id="main" class="v2">
     <div class="container">

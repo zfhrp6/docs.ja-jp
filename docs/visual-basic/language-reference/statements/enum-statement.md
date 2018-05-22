@@ -11,11 +11,11 @@ helpviewer_keywords:
 - variables [Visual Basic], enumeration
 - constants [Visual Basic], enumerated
 ms.assetid: a45e51f1-65ff-48e1-bf32-79130f137377
-ms.openlocfilehash: 89de51f2551437d102ccdc5a0f1ff5f23b53e47f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7cac4d5bde9ec617a1877a0605dc6dbab67ddf7f
+ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="enum-statement-visual-basic"></a>Enum ステートメント (Visual Basic)
 列挙体を宣言し、そのメンバーの値を定義します。  
@@ -49,8 +49,10 @@ End Enum
   
     -   [Private](../../../visual-basic/language-reference/modifiers/private.md)  
   
-     指定できます`Protected``Friend`列挙型のクラス、派生クラスでは、または同じアセンブリ内のコードからアクセスできるようにします。  
-  
+    - [保護されたフレンド](../../language-reference/modifiers/protected-friend.md)
+    
+    - [保護されたプライベート](../../language-reference/modifiers/private-protected.md)
+
 -   `Shadows`  
   
      任意。 この列挙体を宣言し、同じ名前を持つプログラミング要素、または基底クラスのオーバー ロードされる要素のセットを非表示にすることを指定します。 指定できます[Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)のみ列挙体自体ではなく、メンバーのいずれか。  

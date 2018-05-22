@@ -1,22 +1,18 @@
 ---
-title: "private protected (c# リファレンス)"
+title: private protected (C# リファレンス)
 ms.date: 11/15/2017
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.topic: article
 author: sputier
-ms.author: wiwagn
-ms.openlocfilehash: 5f7abd2569d5bad5af64161042e4e5d21e741c8c
-ms.sourcegitcommit: 7e99f66ef09d2903e22c789c67ff5a10aa953b2f
+ms.openlocfilehash: b85b227989c9f79aa11486310f540b92ce5bdda6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="private-protected-c-reference"></a>private protected (c# リファレンス)
-`private protected`キーワードの組み合わせは、メンバー アクセス修飾子。 プライベート、プロテクト メンバーは、含んでいるアセンブリ内でのみが、外側のクラスから派生した型からアクセス可能です。 `private protected` と他のアクセス修飾子の比較については、「[アクセシビリティ レベル](../../../csharp/language-reference/keywords/accessibility-levels.md)」を参照してください。 
+# <a name="private-protected-c-reference"></a>private protected (C# リファレンス)
+キーワード組み合わせ `private protected` はメンバー アクセス修飾子です。 private protected メンバーには、包含クラスから誘導された型でアクセスできますが、その包含アセンブリ内に限られます。 `private protected` と他のアクセス修飾子の比較については、「[アクセシビリティ レベル](../../../csharp/language-reference/keywords/accessibility-levels.md)」を参照してください。 
    
 ## <a name="example"></a>例  
- 変数の静的な型が派生クラス型である場合にのみ、基底クラスのプライベート、プロテクト メンバーは、含んでいるアセンブリでの派生型からアクセス可能です。 たとえば、次のコード セグメントを考えてみます。  
+ 基底クラスの private protected メンバーには、変数の静的な型が派生クラス型の場合にのみ、その包含アセンブリで派生型からアクセスできます。 たとえば、次のコード セグメントを考えてみます。  
   
  ```
  // Assembly1.cs  
@@ -55,15 +51,15 @@ ms.lasthandoff: 11/18/2017
      }
  }
 ```  
- この例には、2 つのファイル (`Assembly1.cs` と `Assembly2.cs`) が含まれています。 最初のファイルにはパブリック基底クラスが含まれています`BaseClass`、および、その派生型`DerivedClass1`です。 `BaseClass`プライベートのプロテクト メンバーを所有している`myValue`、どの`DerivedClass1`に 2 つの方法でアクセスしようとしています。 最初の試行にアクセスする`myValue`のインスタンスを通じて`BaseClass`でエラーが発生します。 ただし、継承されたメンバーとして使用しようとすると、`DerivedClass1`は成功します。
-2 番目のファイルへのアクセスに`myValue`の継承されたメンバーと`DerivedClass2`Assembly1 での派生型からアクセス可能なだけ、エラーが生成されます。 
+ この例には、2 つのファイル (`Assembly1.cs` と `Assembly2.cs`) が含まれています。 最初のファイルには public 基底クラスである `BaseClass` とそれから派生した型である `DerivedClass1` が含まれています。 `BaseClass` は private protected メンバー `myValue` を持っています。`DerivedClass1` はこれに 2 通りのアクセスを試行します。 最初に `BaseClass` のインスタンス経由で `myValue` にアクセスしようとするとエラーが出ます。 ただし、`DerivedClass1` で継承されたメンバーとして使用してみると成功します。
+2 番目のファイルでは、`DerivedClass2` の継承されたメンバーとして `myValue` にアクセスしようとしてエラーを出します。これには Assembly1 の派生型のみがアクセスできるためです。 
 
- 構造体のメンバーにすることはできません`private protected`のため、構造体は継承できません。  
+ 構造体は継承できないため、構造体メンバーは `private protected` になりません。  
   
 ## <a name="c-language-specification"></a>C# 言語仕様  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C# リファレンス](../../../csharp/language-reference/index.md)   
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
  [C# のキーワード](../../../csharp/language-reference/keywords/index.md)   
@@ -73,4 +69,4 @@ ms.lasthandoff: 11/18/2017
  [public](../../../csharp/language-reference/keywords/public.md)   
  [private](../../../csharp/language-reference/keywords/private.md)   
  [internal](../../../csharp/language-reference/keywords/internal.md)   
- [Internal virtual キーワードのセキュリティに関する注意事項](https://msdn.microsoft.com/library/heyd8kky(v=vs.110))
+ [Internal Virtual キーワードのセキュリティ関連事項](https://msdn.microsoft.com/library/heyd8kky(v=vs.110))

@@ -285,7 +285,12 @@
 ### [Visual Studio for Mac の使用を開始する](fsharp/get-started/get-started-with-visual-studio-for-mac.md)
 ### [Visual Studio Code および Ionide の概要](fsharp/get-started/get-started-vscode.md)
 ### [.NET Core CLI の概要](fsharp/get-started/get-started-command-line.md)
-<!--## [Tutorials](fsharp/tutorials/index.md)-->
+
+## [F# スタイル ガイド](fsharp/style-guide/index.md)
+### [F# のフォーマットに関するガイドライン](fsharp/style-guide/formatting.md)
+### [F# のコーディング規則](fsharp/style-guide/conventions.md)
+### [F# コンポーネント デザインのガイドライン](fsharp/style-guide/component-design-guidelines.md)
+
 ## チュートリアル
 ### [F# Interactive](fsharp/tutorials/fsharp-interactive/index.md)
 ### [型プロバイダー](fsharp/tutorials/type-providers/index.md)

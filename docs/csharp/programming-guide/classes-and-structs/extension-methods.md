@@ -6,11 +6,11 @@ helpviewer_keywords:
 - extension methods [C#]
 - methods [C#], extension
 ms.assetid: 175ce3ff-9bbf-4e64-8421-faeb81a0bb51
-ms.openlocfilehash: bf25ddda2c7e381f0b43798b28179b18338d71cb
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e2e63953e130dc83ce83bcdd2f8e9a2ffc7fe5f3
+ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/15/2018
 ---
 # <a name="extension-methods-c-programming-guide"></a>拡張メソッド (C# プログラミング ガイド)
 拡張メソッドを使用すると、新規の派生型の作成、再コンパイル、または元の型の変更を行うことなく既存の型にメソッドを "追加" できます。 拡張メソッドは特別な種類の静的メソッドですが、拡張された型のインスタンス メソッドのように呼び出します。 C#、F#、および Visual Basic で作成されたクライアント コードの場合は、拡張メソッドの呼び出しと、型で実際に定義されたメソッドの呼び出しに明確な違いはありません。  
@@ -29,13 +29,13 @@ ms.lasthandoff: 05/04/2018
   
  この `WordCount` ディレクティブを使用することで、`using` 拡張メソッドをスコープに取り込むことができます。  
   
-```  
+```csharp  
 using ExtensionMethods;  
 ```  
   
  また、この構文を使用することで、アプリケーションから呼び出すことができます。  
   
-```  
+```csharp  
 string s = "Hello Extension Methods";  
 int i = s.WordCount();  
 ```  
@@ -46,7 +46,7 @@ int i = s.WordCount();
   
  一般的には、独自の拡張メソッドを実装するよりも、拡張メソッドを呼び出すことの方がはるかに多くなります。 拡張メソッドは、インスタンス メソッドの構文を使用して呼び出すので、特別な知識がなくてもクライアント コードからそれらを使用できます。 メソッドが定義されている名前空間に関する `using` ディレクティブを追加するだけで、特定の型の拡張メソッドを使用できるようになります。 たとえば、標準クエリ演算子を使用するには、次の `using` ディレクティブをコードに追加します。  
   
-```  
+```csharp  
 using System.Linq;  
 ```  
   

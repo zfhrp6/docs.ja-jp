@@ -1,125 +1,113 @@
 ---
-title: 文字列補間 - C
-description: C# 6 の文字列補間の動作について
-keywords: .NET、.NET Core、C#、文字列
-author: mgroves
-ms.author: wiwagn
-ms.date: 03/06/2017
-ms.topic: article
-ms.prod: .net
-ms.technology: devlang-csharp
-ms.devlang: csharp
-ms.assetid: f8806f6b-3ac7-4ee6-9b3e-c524d5301ae9
-ms.openlocfilehash: a9578d006861b987871071961437345c378a5b58
-ms.sourcegitcommit: 935d5267c44f9bce801468ef95f44572f1417e8c
+title: C# における文字列補間
+description: C# の文字列補間を使用した結果文字列に書式設定された式の結果を含める方法について説明します。
+author: pkulikov
+ms.date: 05/09/2018
+ms.openlocfilehash: 447e87cd4aae49896f0efbb8ece6097181079266
+ms.sourcegitcommit: ff1d40507b3eb6e2185478e37c66c66be6de46f1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 05/11/2018
 ---
 # <a name="string-interpolation-in-c"></a>C# における文字列補間 #
 
-文字列補間は、文字列内のプレースホルダーを文字列変数の値によって置き換える方法です。 C# 6 より前は、これは <xref:System.String.Format%2A?displayProperty=nameWithType> を使用して行われました。 それでも動作しますが、番号付きのプレースホルダーを使用するため読みにくく冗長になります。
+このチュートリアルは、[文字列補間](../language-reference/tokens/interpolated.md)を使用して結果文字列に式の結果を書式設定したものを含める方法を示しています。 例では、基本的な C# の概念と .NET の型の書式設定について理解していることを前提としています。 文字列補間や .NET の型の書式設定の経験がない場合は、最初に[対話型の文字列補間に関するクイックスタート](../quick-starts/interpolated-strings.yml)を参照してください。 .NET の型の書式設定の詳細については、「[.NET での型の書式設定](../../standard/base-types/formatting-types.md)」のトピックを参照してください。
 
-他のプログラミング言語ではすでに、文字列補間の機能を組み込んでいました。 たとえば PHP では次のようになります。
+[!INCLUDE[interactive-note](~/includes/csharp-interactive-note.md)]
 
-```php
-$name = "Jonas";
-echo "My name is $name.";
-// This will output "My name is Jonas."
-```
+## <a name="introduction"></a>はじめに
 
-C# 6 でついに、この形式の文字列補間ができるようになりました。 文字列の前に `$` を使用して、それらの値の変数または式に置き換えると示すことができます。
+[文字列補間](../language-reference/tokens/interpolated.md)機能は、[複合書式設定](../../standard/base-types/composite-formatting.md)機能の上に構築されていて、結果文字列に書式設定された式の結果を含めるためのより読みやすく、便利な構文を提供します。
 
-## <a name="prerequisites"></a>必須コンポーネント
-お使いのコンピューターを、.NET Core が実行されるように設定する必要があります。 インストールの手順については、[.NET Core](https://www.microsoft.com/net/core) のページを参照してください。
-このアプリケーションは、Windows、Ubuntu Linux、macOS または Docker コンテナーで実行できます。 お好みのコード エディターをインストールしてください。 次の説明では、オープン ソースのクロス プラットフォーム エディターである [Visual Studio Code](https://code.visualstudio.com/) を使用しています。 しかし、他の使い慣れたツールを使用しても構いません。
+文字列リテラルを挿入文字列として識別するため、先頭に `$` の記号を追加してください。 挿入文字列の値を返す、有効な C# の式を埋め込むことができます。 次の例では、式が評価されるとすぐにその結果が文字列に変換され、結果文字列に含まれています。
 
-## <a name="create-the-application"></a>アプリケーションを作成する
+[!code-csharp-interactive[string interpolation example](~/samples/snippets/csharp/tutorials/string-interpolation/Program.cs#1)]
 
-すべてのツールをインストールしたら、新しい .NET Core アプリケーションを作成します。 コマンド ライン ジェネレーターを使用するには、`interpolated` などプロジェクトのディレクトリを作成し、好みのシェルで次のコマンドを実行します。
+例に示すように、式を中かっこで囲むことで挿入文字列に含めることができます。
 
 ```
-dotnet new console
+{<interpolatedExpression>}
 ```
 
-このコマンドでは、プロジェクト ファイル *interpolated.csproj* およびソース コード ファイル *Program.cs* とともに、必要最低限の .NET Core プロジェクトが作成されます。 `dotnet restore` を実行して、このプロジェクトのコンパイルに必要な依存関係を復元する必要があります。
+コンパイル時には通常、挿入文字列が <xref:System.String.Format%2A?displayProperty=nameWithType> メソッドの呼び出しに変換されます。 これにより、[文字列の複合書式設定](../../standard/base-types/composite-formatting.md)のすべての機能が、挿入文字列でも使用できるようになります。
 
-[!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
+## <a name="how-to-specify-a-format-string-for-an-interpolated-expression"></a>挿入文字列の書式設定文字列を指定する方法
 
-プログラムを実行するには `dotnet run` を使用します。 コンソールに "Hello, World" という出力が表示されます。
-
-
-
-## <a name="intro-to-string-interpolation"></a>文字列補間の概要
-
-<xref:System.String.Format%2A?displayProperty=nameWithType> を使用して、文字列で、その文字列に続く引数で置き換えられる "プレースホルダー" を指定します。 たとえば、次のようになります。
-
-[!code-csharp[String.Format example](../../../samples/snippets/csharp/new-in-6/string-interpolation.cs#StringFormatExample)]  
-
-これにより "My name is Matt Groves" と出力されます。
-
-C# 6 では `String.Format` を使用する代わりに `$` 記号とともに付加して文字列で直接変数を使用することにより、補間文字列を定義します。 たとえば、次のようになります。
-
-[!code-csharp[Interpolation example](../../../samples/snippets/csharp/new-in-6/string-interpolation.cs#InterpolationExample)]  
-
-使用するのは変数のみとは限りません。 角かっこ内で任意の式を使用することができます。 たとえば、次のようになります。
-
-[!code-csharp[Interpolation expression example](../../../samples/snippets/csharp/new-in-6/string-interpolation.cs#InterpolationExpressionExample)]  
-
-この出力は以下のようになります。
+コロン (":") と書式設定文字列を持つ挿入式に従って、式の結果の型でサポートされる書式設定文字列を指定します。
 
 ```
-This is line number 1
-This is line number 2
-This is line number 3
-This is line number 4
-This is line number 5
+{<interpolatedExpression>:<formatString>}
 ```
 
-## <a name="how-string-interpolation-works"></a>文字列補間の動作
+次の例は、日時や数値による結果を生成する式の標準とカスタムの書式設定文字列を指定する方法を示しています。
 
-背後では、この文字列補間の構文はコンパイラによって `String.Format` に変換されます。 そのため、[前に `String.Format` で実行したのと同様のこと](../../standard/base-types/formatting-types.md)ができます。
+[!code-csharp-interactive[format string example](~/samples/snippets/csharp/tutorials/string-interpolation/Program.cs#2)]
 
-たとえば、パディングと数値の書式設定を追加できます。
+詳細については、「[複合書式設定](../../standard/base-types/composite-formatting.md)」トピックの「[Format String コンポーネント](../../standard/base-types/composite-formatting.md#format-string-component)」のセクションを参照してください。 このセクションでは、.NET の基本データ型でサポートされる標準とカスタムの書式設定文字列について説明するトピックへのリンクを提供しています。
 
-[!code-csharp[Interpolation formatting example](../../../samples/snippets/csharp/new-in-6/string-interpolation.cs#InterpolationFormattingExample)]  
+## <a name="how-to-control-the-field-width-and-alignment-of-the-formatted-interpolated-expression"></a>書式設定された挿入式のフィールドの幅と配置を制御する方法
 
-上記はこのような出力となります。
+コンマ (",") と定数式を持つ挿入式に従って、書式設定された式の結果の最小フィールド幅と配置を指定します。
 
 ```
-998        5,177.67
-999        6,719.30
-1000       9,910.61
-1001       529.34
-1002       1,349.86
-1003       2,660.82
-1004       6,227.77
+{<interpolatedExpression>,<alignment>}
 ```
 
-変数名が見つからない場合、コンパイル時エラーが生成されます。
+*alignment* の値が正の値である場合、書式設定された式の結果は右揃えになります。負の値である場合は、左揃えになります。
 
-たとえば、次のようになります。
+配置と書式設定文字列の両方を指定する必要がある場合は、alignment コンポーネントから開始します。
 
-```csharp
-var animal = "fox";
-var localizeMe = $"The {adj} brown {animal} jumped over the lazy {otheranimal}";
-var adj = "quick";
-Console.WriteLine(localizeMe);
+```
+{<interpolatedExpression>,<alignment>:<formatString>}
 ```
 
-これをコンパイルすると、エラーが発生します。
- 
-* `Cannot use local variable 'adj' before it is declared` - 変数 `adj` が補間された文字列の*後までに*宣言されなかった。
-* `The name 'otheranimal' does not exist in the current context` - `otheranimal` と呼ばれる変数が宣言すらされていない。
+次の例は、配置を指定する方法を示し、テキスト フィールドを区切るためにパイプ文字 ("|") を使用しています。
 
-## <a name="localization-and-internationalization"></a>ローカリゼーションと国際化
+[!code-csharp-interactive[alignment example](~/samples/snippets/csharp/tutorials/string-interpolation/Program.cs#3)]
 
-補間された文字列は <xref:System.IFormattable?displayProperty=nameWithType> と <xref:System.FormattableString?displayProperty=nameWithType> をサポートしており、国際化するのに役立ちます。
+出力例が示すように、書式設定された式の結果の長さが指定したフィールドの幅を超える場合、*alignment* の値は無視されます。
 
-既定では、補間された文字列は現在のカルチャを使用します。 別のカルチャを使用するには、補間された文字列を `IFormattable` としてキャストします。 たとえば、次のようになります。
+詳細については、「[複合書式設定](../../standard/base-types/composite-formatting.md)」トピックの「[Alignment コンポーネント](../../standard/base-types/composite-formatting.md#alignment-component)」のセクションを参照してください。
 
-[!code-csharp[Interpolation internationalization example](../../../samples/snippets/csharp/new-in-6/string-interpolation.cs#InterpolationInternationalizationExample)]  
+## <a name="how-to-use-escape-sequences-in-an-interpolated-string"></a>挿入文字列でエスケープ シーケンスを使用する方法
 
-## <a name="conclusion"></a>まとめ 
+挿入文字列は、通常の文字列リテラルで使用できるすべてのエスケープ シーケンスをサポートします。 詳細については、「[文字列のエスケープ シーケンス](../programming-guide/strings/index.md#string-escape-sequences)」を参照してください。
 
-このチュートリアルでは、C# 6 の文字列補間機能の使用方法について説明しました。 これは基本的に、シンプルな `String.Format` ステートメントを書き込む簡潔な方法で、より高度な使い方をするには注意が必要です。 詳細については、[文字列補間](../../csharp//language-reference/tokens/interpolated.md)に関するトピックを参照してください。
+エスケープ シーケンスをリテラルで解釈するには、[verbatim](../language-reference/tokens/verbatim.md) 文字列リテラルを使用します。 verbatim 挿入文字列は、`@` 文字が続く `$` 文字で始まります。
+
+中かっこ "{" または "}" を結果文字列に含める場合は、2 つの中かっこ "{{" または "}}" を使用します。 詳細については、「[複合書式設定](../../standard/base-types/composite-formatting.md)」トピックの「[エスケープ中かっこ ({})](../../standard/base-types/composite-formatting.md#escaping-braces)」のセクションを参照してください。
+
+次の例は、結果文字列に中かっこを含め、verbatim 挿入文字列を作成する方法を示しています。
+
+[!code-csharp-interactive[escape sequence example](~/samples/snippets/csharp/tutorials/string-interpolation/Program.cs#4)]
+
+## <a name="how-to-use-a-ternary-conditional-operator--in-an-interpolated-expression"></a>挿入式で三項条件演算子 `?:` を使用する方法
+
+コロン (":") が挿入式の項目で特別な意味を持つときに、式で[条件演算子](../language-reference/operators/conditional-operator.md)を使用するには、次の例が示すようにその式をかっこで囲みます。
+
+[!code-csharp-interactive[conditional operator example](~/samples/snippets/csharp/tutorials/string-interpolation/Program.cs#5)]
+
+## <a name="how-to-create-a-culture-specific-result-string-with-string-interpolation"></a>文字列補間を使用してカルチャ固有の結果文字列を作成する方法
+
+既定では、挿入文字列は、すべての書式設定操作に対して <xref:System.Globalization.CultureInfo.CurrentCulture?displayProperty=nameWithType> プロパティで定義された現在のカルチャを使用します。 カルチャ固有の結果文字列を作成するには、<xref:System.FormattableString?displayProperty=nameWithType> インスタンスへの挿入文字列の暗黙的変換を使用し、その <xref:System.FormattableString.ToString(System.IFormatProvider)> メソッドを呼び出します。 その方法を次の例に示します。
+
+[!code-csharp-interactive[specify different cultures](~/samples/snippets/csharp/tutorials/string-interpolation/Program.cs#6)]
+
+例に示すように、<xref:System.FormattableString> インスタンスを 1 回使用して、さまざまなカルチャに対する複数の結果文字列を生成することができます。
+
+## <a name="how-to-create-a-result-string-using-the-invariant-culture"></a>インバリアント カルチャを使用して結果文字列を作成する方法
+
+<xref:System.FormattableString.ToString(System.IFormatProvider)?displayProperty=nameWithType> メソッドと共に静的な <xref:System.FormattableString.Invariant%2A?displayProperty=nameWithType> メソッドを使用して、<xref:System.Globalization.CultureInfo.InvariantCulture> の結果文字列に挿入文字列を解決することができます。 その方法を次の例に示します。
+
+[!code-csharp-interactive[format with invariant culture](~/samples/snippets/csharp/tutorials/string-interpolation/Program.cs#7)]
+
+## <a name="conclusion"></a>まとめ
+
+このチュートリアルでは、文字列補間の使用に関する一般的なシナリオについて説明しています。 文字列補間の詳細については、[文字列補間](../language-reference/tokens/interpolated.md)に関するトピックを参照してください。 .NET の型の書式設定の詳細については、「[.NET での型の書式設定](../../standard/base-types/formatting-types.md)」および「[複合書式設定](../../standard/base-types/composite-formatting.md)」のトピックを参照してください。
+
+## <a name="see-also"></a>関連項目
+
+<xref:System.String.Format%2A?displayProperty=nameWithType>  
+<xref:System.FormattableString?displayProperty=nameWithType>  
+<xref:System.IFormattable?displayProperty=nameWithType>  
+[文字列](../programming-guide/strings/index.md)  

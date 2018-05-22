@@ -1,21 +1,14 @@
 ---
-title: "フィールド (C# プログラミング ガイド)"
+title: フィールド (C# プログラミング ガイド)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 helpviewer_keywords:
 - fields [C#]
 ms.assetid: 3cbb2f61-75f8-4cce-b4ef-f5d1b3de0db7
-caps.latest.revision: 
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: acf4ade68235a196fd6d2f3c6c71279748f3dd71
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 31073772fd42244167b5e68959ebb373ec759025
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="fields-c-programming-guide"></a>フィールド (C# プログラミング ガイド)
 *フィールド*とは、[クラス](../../../csharp/language-reference/keywords/class.md)または[構造体](../../../csharp/language-reference/keywords/struct.md)で直接宣言される任意の型の変数です。 フィールドは、それを含んでいる型の*メンバー*です。  
@@ -43,7 +36,7 @@ ms.lasthandoff: 11/21/2017
 > [!NOTE]
 >  フィールドの初期化子は、他のインスタンス フィールドを参照できません。  
   
- フィールドとしてマークできる[パブリック](../../../csharp/language-reference/keywords/public.md)、[プライベート](../../../csharp/language-reference/keywords/private.md)、[保護](../../../csharp/language-reference/keywords/protected.md)、[内部](../../../csharp/language-reference/keywords/internal.md)、[内部保護](../../../csharp/language-reference/keywords/protected-internal.md)または[保護されたプライベート](../../../csharp/language-reference/keywords/private-protected.md)です。 これらのアクセス修飾子により、クラスのユーザーがフィールドにアクセスする方法が定義されます。 詳細については、「[アクセス修飾子](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)」を参照してください。  
+ フィールドは、[public](../../../csharp/language-reference/keywords/public.md)、[private](../../../csharp/language-reference/keywords/private.md)、[protected](../../../csharp/language-reference/keywords/protected.md)、[internal](../../../csharp/language-reference/keywords/internal.md)、[protected internal](../../../csharp/language-reference/keywords/protected-internal.md) または [private protected](../../../csharp/language-reference/keywords/private-protected.md) としてマークできます。 これらのアクセス修飾子により、クラスのユーザーがフィールドにアクセスする方法が定義されます。 詳細については、「[アクセス修飾子](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)」を参照してください。  
   
  必要に応じて、フィールドを[静的](../../../csharp/language-reference/keywords/static.md)に宣言することもできます。 その場合、クラスのインスタンスが存在しなくても、呼び出し元がいつでもフィールドを使用できるようになります。 詳細については、「[静的クラスと静的クラス メンバー](../../../csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members.md)」を参照してください。  
   
@@ -52,7 +45,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="c-language-specification"></a>C# 言語仕様  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
  [クラスと構造体](../../../csharp/programming-guide/classes-and-structs/index.md)  
  [コンストラクターの使用](../../../csharp/programming-guide/classes-and-structs/using-constructors.md)  

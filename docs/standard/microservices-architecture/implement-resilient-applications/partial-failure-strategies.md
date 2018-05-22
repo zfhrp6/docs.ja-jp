@@ -1,21 +1,14 @@
 ---
-title: "部分的なエラーを処理するための戦略"
-description: "コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | 部分的なエラーを処理するための戦略"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
+title: 部分的なエラーを処理するための戦略
+description: コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | 部分的なエラーを処理するための戦略
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
-ms.prod: .net-core
-ms.technology: dotnet-docker
-ms.topic: article
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 0b5fdb03e4b0d0c2d4e8aa8a897fd46d56707f11
-ms.sourcegitcommit: c3957fdb990060559d73cca44ab3e2c7b4d049c0
+ms.openlocfilehash: f1b2b59af96bf28035eeb32eb15eaa4105677cf4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="strategies-for-handling-partial-failure"></a>部分的なエラーを処理するための戦略
 
@@ -35,16 +28,16 @@ ms.lasthandoff: 03/05/2018
 
 ## <a name="additional-resources"></a>その他の技術情報
 
--   **回復性のパターン**
+-   **回復性パターン**
     [*https://docs.microsoft.com/azure/architecture/patterns/category/resiliency*](https://docs.microsoft.com/azure/architecture/patterns/category/resiliency)
 
--   **Adding Resilience and Optimizing Performance** (回復性の追加とパフォーマンスの最適化)
+-   **回復性の追加とパフォーマンスの最適化**
     [*https://msdn.microsoft.com/library/jj591574.aspx*](https://msdn.microsoft.com/library/jj591574.aspx)
 
 -   **Bulkhead** (バルクヘッド)。 GitHub リポジトリ。 Polly ポリシーを使用した実装。\
     [*https://github.com/App-vNext/Polly/wiki/Bulkhead*](https://github.com/App-vNext/Polly/wiki/Bulkhead)
 
--   **回復性に優れた Azure 用アプリケーションの設計**
+-   **Azure 用の回復性の高いアプリケーションの設計**
     [*https://docs.microsoft.com/azure/architecture/resiliency/*](https://docs.microsoft.com/azure/architecture/resiliency/)
 
 -   **一時的フォールト処理**

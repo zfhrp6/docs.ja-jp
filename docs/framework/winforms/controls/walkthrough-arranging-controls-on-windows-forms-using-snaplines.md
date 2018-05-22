@@ -1,29 +1,17 @@
 ---
-title: "チュートリアル : スナップ線を使用した Windows フォーム上のコントロールの配置"
-ms.custom: 
+title: 'チュートリアル : スナップ線を使用した Windows フォーム上のコントロールの配置'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - controls [Windows Forms], arranging with snaplines
 - snaplines [Windows Forms], arranging Windows Forms controls
 - SnapLine class [Windows Forms], walkthroughs
 - Windows Forms controls, arranging
 ms.assetid: d5c9edc7-cf30-4a97-8ebe-201d569340f8
-caps.latest.revision: "24"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: bd8bc5e227bd68fc3c5c59d80549322ca742bcf9
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: f8e8122f82bc6a8c4fab17b8b73c07d08bab4d26
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="walkthrough-arranging-controls-on-windows-forms-using-snaplines"></a>チュートリアル : スナップ線を使用した Windows フォーム上のコントロールの配置
 フォーム上のコントロールを正確に配置することは、多くのアプリケーションで優先度の高い作業です。 Windows フォーム デザイナーでは、これを実現するさまざまなレイアウト ツールを提供します。 最も重要な 1 つは、<xref:System.Windows.Forms.Design.Behavior.SnapLine>機能します。  
@@ -233,7 +221,7 @@ ms.lasthandoff: 01/19/2018
   
 #### <a name="to-disable-snaplines-in-the-design-environment"></a>デザイン環境のスナップ線を無効にするには  
   
-1.  **ツール**メニューを開き、**オプション** ダイアログ ボックス。 Windows フォーム デザイナー ダイアログ ボックスを開きます。 詳細については、[[全般]、Windows フォーム デザイナー、オプション ダイアログ ボックス](http://msdn.microsoft.com/library/8dd170af-72f0-4212-b04b-034ceee92834)です。  
+1.  **ツール**メニューを開き、**オプション** ダイアログ ボックス。 Windows フォーム デザイナー ダイアログ ボックスを開きます。 詳細については、「 [全般、Windows フォーム デザイナー、オプション ダイアログ ボックス](http://msdn.microsoft.com/library/8dd170af-72f0-4212-b04b-034ceee92834)です。  
   
 2.  選択、**全般**ノード。 **レイアウト モード**セクションからの選択を変更**スナップ線**に**SnapToGrid**です。  
   
@@ -250,7 +238,7 @@ ms.lasthandoff: 01/19/2018
   
  Windows ユーザー インターフェイスの設計方法については、ブックを参照してください。 *Microsoft Windows ユーザー エクスペリエンス、ユーザー インターフェイスの開発者とデザイナーの Official Guidelines* Redmond、WA: Microsoft Press、1999 年。 (USBN: 0-7356-0566-1)。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Forms.Design.Behavior.SnapLine>  
  [チュートリアル: FlowLayoutPanel を使用した Windows フォーム上のコントロールの配置](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-a-flowlayoutpanel.md)  
  [チュートリアル: TableLayoutPanel を使用した Windows フォーム上のコントロールの配置](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md)  

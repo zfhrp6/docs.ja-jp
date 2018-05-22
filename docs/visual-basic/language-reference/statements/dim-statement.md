@@ -1,6 +1,6 @@
 ---
 title: Dim ステートメント (Visual Basic)
-ms.date: 07/20/2015
+ms.date: 05/12/2018
 f1_keywords:
 - vb.Dim
 - Dim
@@ -29,11 +29,11 @@ helpviewer_keywords:
 - Dim statement [Visual Basic], syntax
 - variables [Visual Basic], member and local
 ms.assetid: fae3eca1-f0b2-4400-994b-7aa58a848448
-ms.openlocfilehash: c051572e83b915346d48ec12fb5d97f77b47e4c6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b3384b771748a1f2c9e841407042f81ce6ebe76d
+ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="dim-statement-visual-basic"></a>Dim ステートメント (Visual Basic)
 宣言し、1 つまたは複数の変数の記憶域を割り当てます。  
@@ -63,8 +63,10 @@ Dim [ WithEvents ] variablelist
   
     -   [Private](../../../visual-basic/language-reference/modifiers/private.md)  
   
-    -   `Protected Friend`  
-  
+    -   [保護されたフレンド](../../language-reference/modifiers/protected-friend.md)
+    
+    - [保護されたプライベート](../../language-reference/modifiers/private-protected.md)
+
      参照してください[Visual Basic でのレベルのアクセス](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)です。  
   
 -   `Shared`  
@@ -248,7 +250,7 @@ Dim twoDimensions(,) As Integer = {{0, 1, 2}, {10, 11, 12}}
   
 |データ型が指定されているか|初期化子が指定されているか|例|結果|  
 |---|---|---|---|  
-|Ｘ|×|`Dim qty`|場合[Option Strict](../../../visual-basic/language-reference/statements/option-strict-statement.md)に設定されている変数 off (既定)、`Nothing`です。<br /><br /> `Option Strict` がオンの場合、コンパイル時エラーが発生します。|  
+|Ｘ|いいえ|`Dim qty`|場合[Option Strict](../../../visual-basic/language-reference/statements/option-strict-statement.md)に設定されている変数 off (既定)、`Nothing`です。<br /><br /> `Option Strict` がオンの場合、コンパイル時エラーが発生します。|  
 |Ｘ|[はい]|`Dim qty = 5`|場合[Option Infer](../../../visual-basic/language-reference/statements/option-infer-statement.md) on (既定値) は、変数は、データが初期化子の型します。 参照してください[ローカル型推論](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)です。<br /><br /> `Option Infer` がオフで、`Option Strict` がオフの場合、変数は `Object` のデータ型になります。<br /><br /> `Option Infer` がオフで、`Option Strict` がオンの場合、コンパイル時エラーが発生します。|  
 |○|Ｘ|`Dim qty As Integer`|変数は、データ型の既定値に初期化されます。 このセクションの後半の表を参照してください。|  
 |[はい]|○|`Dim qty  As Integer = 5`|初期化子のデータ型を指定したデータ型に変換できない場合は、コンパイル時エラーが発生します。|  

@@ -1,19 +1,15 @@
 ---
-title: "Windows Vista への .NET Framework のインストール"
-description: "Windows Vista に .NET Framework をインストールする方法について説明します。"
+title: Windows Vista への .NET Framework のインストール
+description: Windows Vista に .NET Framework をインストールする方法について説明します。
+ms.custom: updateeachrelease
 author: rlander
 ms.author: mairaw
-keywords: ".Net Framework, インストール"
 ms.date: 08/03/2017
-ms.topic: article
-ms.prod: .net-framework
-ms.devlang: dotnet
-ms.workload: dotnet
-ms.openlocfilehash: 5dc89529cdd3c5ab1f35e30a7ff601be88667de7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 595533b9f7c0dcc766914a1812001772d0ffa247
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="install-the-net-framework-on-windows-vista-and-windows-server-2008"></a>Windows Vista と Windows Server 2008 に .NET Framework をインストールする
 
@@ -21,7 +17,7 @@ ms.lasthandoff: 12/22/2017
 
 ![このアプリケーションを開始できませんでした。](./media/this-application-could-not-be-started.png)
 
-これらの手順は、必要な .NET Framework バージョンをインストールする場合に役立ちます。 [.NET Framework 4.7.1](https://www.microsoft.com/en-us/download/details.aspx?id=56115&desc=dotnet47) が最新バージョンです。 Windows Vista と Windows Server 2008 ではサポートされていません。 [Windows 10 Fall Creators Update](https://www.microsoft.com/software-download/windows10) と [Windows Server 2016 Version 1709](https://docs.microsoft.com/windows-server/get-started/get-started-with-1709) に含まれています。
+これらの手順は、必要な .NET Framework バージョンをインストールする場合に役立ちます。 [.NET Framework 4.7.2](http://go.microsoft.com/fwlink/?LinkID=863255) が最新バージョンです。 Windows Vista と Windows Server 2008 ではサポートされていません。 [Windows 10 April 2018 Update](https://www.microsoft.com/software-download/windows10) に付属しています。
 
 ## <a name="net-framework-46"></a>.NET Framework 4.6
 

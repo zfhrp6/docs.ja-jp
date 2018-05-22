@@ -1,29 +1,22 @@
 ---
 title: virtual (C# リファレンス)
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - virtual_CSharpKeyword
 - virtual
 helpviewer_keywords:
 - virtual keyword [C#]
 ms.assetid: 5da9abae-bc1e-434f-8bea-3601b8dcb3b2
-caps.latest.revision: 26
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: dce3333646bca6f558e3760849b6cffdb34a6c0b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 5a188e9a7cbb7a1c497d577039c2b2578eaa7526
+ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/15/2018
 ---
 # <a name="virtual-c-reference"></a>virtual (C# リファレンス)
 `virtual` キーワードは、メソッド、プロパティ、インデクサー、またはイベント宣言を変更し、それを派生クラスでオーバーライドできるようにするために使用されます。 たとえば、次のメソッドはそれを継承する任意のクラスでオーバーライドできます。  
   
-```  
+```csharp  
 public virtual double Area()   
 {  
     return x * y;  
@@ -37,7 +30,7 @@ public virtual double Area()
   
  既定では、メソッドは仮想ではありません。 非仮想メソッドをオーバーライドすることはできません。  
   
- 使用することはできません、`virtual`修飾子を`static`、 `abstract`、 `private`、または`override`修飾子です。 次のコードは、仮想のプロパティの例です。  
+ `virtual` 修飾子を、`static`、`abstract`、`private`、`override` 修飾子と共に使用することはできません。 次のコードは、仮想のプロパティの例です。  
   
  [!code-csharp[csrefKeywordsModifiers#26](../../../csharp/language-reference/keywords/codesnippet/CSharp/virtual_1.cs)]  
   
@@ -52,7 +45,7 @@ public virtual double Area()
   
  次の宣言に示すように、継承されたクラス (`Circle`、 `Sphere`、および `Cylinder`) はいずれも、基底クラスを初期化するコンス トラクターを使用します。  
   
-```  
+```csharp  
 public Cylinder(double r, double h): base(r, h) {}  
 ```  
   
@@ -63,7 +56,7 @@ public Cylinder(double r, double h): base(r, h) {}
 ## <a name="c-language-specification"></a>C# 言語仕様  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [C# リファレンス](../../../csharp/language-reference/index.md)  
  [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
  [修飾子](../../../csharp/language-reference/keywords/modifiers.md)  

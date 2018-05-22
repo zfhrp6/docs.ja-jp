@@ -1,14 +1,6 @@
 ---
 title: 'チュートリアル : ビジュアル継承のデモンストレーション'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-winforms
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -19,17 +11,11 @@ helpviewer_keywords:
 - walkthroughs [Windows Forms], visual inheritance
 - Windows Forms, inheritance
 ms.assetid: 01966086-3142-450e-8210-3fd4cb33f591
-caps.latest.revision: 24
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: e76ddcb33980db1a6d1b6e602c1b71da60b53381
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
-ms.translationtype: HT
+ms.openlocfilehash: 61239d9b547be73a14618d41feeb9aeea9f8ded6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="walkthrough-demonstrating-visual-inheritance"></a>チュートリアル : ビジュアル継承のデモンストレーション
 ビジュアル継承により、基本フォームのコントロールを表示して、新しいコントロールを追加できます。 このチュートリアルでは、基本フォームを作成してクラス ライブラリにコンパイルします。 このクラス ライブラリを別のプロジェクトにインポートして、基本フォームから継承する新しいフォームを作成します。 このチュートリアルでは、次の作業を行う方法について説明します。  
@@ -95,7 +81,7 @@ ms.lasthandoff: 04/26/2018
   
     -   設定、**修飾子**プロパティを**Protected**です。 継承するフォームができるようになります**Form1**のプロパティを変更する**btnProtected**です。  
   
-4.  ダブルクリックして、 **Say こんにちは**のイベント ハンドラーを追加するボタン、 ** をクリックして**イベント。  
+4.  ダブルクリックして、 **Say こんにちは**のイベント ハンドラーを追加するボタン、 **をクリックして**イベント。  
   
 5.  イベント ハンドラーに次のコードを追加します。  
   
@@ -109,7 +95,7 @@ ms.lasthandoff: 04/26/2018
   
 #### <a name="to-add-a-button-that-cannot-be-modified-by-inheritors-of-the-base-form"></a>基本フォームの継承元により変更できないボタンを追加するには  
   
-1.  クリックしてデザイン ビューに切り替え、 **Form1.vb [デザイン]、[Form1.cs [デザイン]、または Form1.jsl の [デザイン]** コード エディターの上または F7 キーを押してタブです。  
+1.  クリックしてデザイン ビューに切り替え、 **Form1.vb [デザイン]、Form1.cs [デザイン]、または Form1.jsl の [デザイン]** コード エディターの上または F7 キーを押してタブです。  
   
 2.  2 番目のボタンを追加し、そのプロパティを次のように設定します。  
   
@@ -119,7 +105,7 @@ ms.lasthandoff: 04/26/2018
   
     -   設定、**修飾子**プロパティを**プライベート**です。 継承するフォームが不可能になります。 **Form1**のプロパティを変更する**btnPrivate**です。  
   
-3.  ダブルクリックして、 **Say Goodbye**のイベント ハンドラーを追加するボタン、 ** をクリックして**イベント。 イベントの手順で、次のコード行を配置します。  
+3.  ダブルクリックして、 **Say Goodbye**のイベント ハンドラーを追加するボタン、 **をクリックして**イベント。 イベントの手順で、次のコード行を配置します。  
   
     ```vb  
     MessageBox.Show("Goodbye!")  

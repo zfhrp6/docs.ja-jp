@@ -1,31 +1,17 @@
 ---
-title: "バインドのマークアップ拡張機能"
-ms.custom: 
+title: バインドのマークアップ拡張機能
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - Binding
 helpviewer_keywords:
 - Binding markup extensions [WPF]
 - XAML [WPF], Binding markup extension
 ms.assetid: 83d6e2a4-1b0c-4fc8-bd96-b5e98800ab63
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: cc6a0616c6b462ffe6aca0a9adf27ac2ac7b7828
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8fc860f52f8fde2aed3cae224c05bbcf08b864d3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="binding-markup-extension"></a>バインドのマークアップ拡張機能
 データ バインドされた値、中間式オブジェクトを作成して、要素と実行時にバインディングに適用されるデータ コンテキストを解釈するプロパティの値を延期します。  
@@ -125,7 +111,7 @@ ms.lasthandoff: 12/22/2017
  基本的なレベルでのデータ バインディングについては、このトピックでは説明しません。 参照してください[データ バインディングの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)です。  
   
 > [!NOTE]
->  <xref:System.Windows.Data.MultiBinding>および<xref:System.Windows.Data.PriorityBinding>サポートしていない、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]拡張構文です。 代わりに、プロパティ要素を使用します。 参照トピックをご覧ください<xref:System.Windows.Data.MultiBinding>と<xref:System.Windows.Data.PriorityBinding>です。  
+>  <xref:System.Windows.Data.MultiBinding> および<xref:System.Windows.Data.PriorityBinding>サポートしていない、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]拡張構文です。 代わりに、プロパティ要素を使用します。 参照トピックをご覧ください<xref:System.Windows.Data.MultiBinding>と<xref:System.Windows.Data.PriorityBinding>です。  
   
  XAML のブール値は、大文字小文字を区別します。 たとえばするを指定するか`{Binding NotifyOnValidationError=true}`または`{Binding NotifyOnValidationError=True}`です。  
   
@@ -133,9 +119,9 @@ ms.lasthandoff: 12/22/2017
   
  `Binding` はマークアップ拡張機能です。 一般にマークアップ拡張機能を実装するは、属性の値名、リテラル値やハンドラー以外にエスケープする必要があるし、要件が特定の型やプロパティに起因する型コンバーターよりも多くのグローバル場合。 XAML の使用中のすべてのマークアップ拡張機能、`{`と`}`マークアップ拡張機能が文字列の内容を処理する必要がありますを XAML プロセッサが認識する規則は、それぞれの属性構文内の文字です。 詳細については、次を参照してください。[マークアップ拡張機能と WPF XAML](../../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)です。  
   
- `Binding`非定型のマークアップ拡張機能を<xref:System.Windows.Data.Binding>WPF の XAML 実装の拡張機能を実装するクラスは、他のいくつかのメソッドと XAML に関連していないプロパティにも実装します。 他のメンバーがさせるものでは<xref:System.Windows.Data.Binding>汎用性と自己完結型のクラスで、XAML マークアップ拡張機能として機能しているだけでなく多くのデータ バインディングのシナリオに対処できます。  
+ `Binding` 非定型のマークアップ拡張機能を<xref:System.Windows.Data.Binding>WPF の XAML 実装の拡張機能を実装するクラスは、他のいくつかのメソッドと XAML に関連していないプロパティにも実装します。 他のメンバーがさせるものでは<xref:System.Windows.Data.Binding>汎用性と自己完結型のクラスで、XAML マークアップ拡張機能として機能しているだけでなく多くのデータ バインディングのシナリオに対処できます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Windows.Data.Binding>  
  [データ バインディングの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)  
  [XAML の概要 (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)  

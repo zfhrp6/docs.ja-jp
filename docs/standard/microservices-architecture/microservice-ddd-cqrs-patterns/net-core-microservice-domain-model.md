@@ -1,21 +1,14 @@
 ---
-title: ".NET Core でマイクロサービス ドメイン モデルを実装する"
-description: ".NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ | .NET Core でマイクロサービス ドメイン モデルを実装する"
-keywords: "Docker, マイクロサービス, ASP.NET, コンテナー"
+title: .NET Core でマイクロサービス ドメイン モデルを実装する
+description: '.NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ | .NET Core でマイクロサービス ドメイン モデルを実装する'
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 11/09/2017
-ms.prod: .net-core
-ms.technology: dotnet-docker
-ms.topic: article
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 0b954efffe2ee7e3e2bdaa49bd1057d72d69088c
-ms.sourcegitcommit: 96cc82cac4650adfb65ba351506d8a8fbcd17b5c
+ms.openlocfilehash: e0c931405b8b7e3b52bdcbd511737b449dc74273
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="implementing-a-microservice-domain-model-with-net-core"></a>.NET Core でマイクロサービス ドメイン モデルを実装する 
 
@@ -179,7 +172,7 @@ EF Core 1.1 以降の機能で列をフィールドにマップすれば、プ�
     [*https://vaughnvernon.co/?p=879*](https://vaughnvernon.co/?p=879)
 
 -   **Julie Lerman。ドメイン駆動設計のコーディング: データを重視する開発者のためのヒント**
-    [*https://msdn.microsoft.com/ja-JP/magazine/dn342868.aspx*](https://msdn.microsoft.com/en-us/magazine/dn342868.aspx)
+    [*https://msdn.microsoft.com/en-us/magazine/dn342868.aspx*](https://msdn.microsoft.com/en-us/magazine/dn342868.aspx)
 
 -   **Udi Dahan。完全にカプセル化されたドメイン モデルを作成する方法**
     [*http://udidahan.com/2008/02/29/how-to-create-fully-encapsulated-domain-models/*](http://udidahan.com/2008/02/29/how-to-create-fully-encapsulated-domain-models/)
