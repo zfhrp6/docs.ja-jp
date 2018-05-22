@@ -1,35 +1,26 @@
 ---
-title: "方法: 要求のキャッシュ ポリシーを設定する"
-ms.custom: 
+title: '方法: 要求のキャッシュ ポリシーを設定する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - request cache policies
 ms.assetid: 39c15e40-586b-4ac9-9cce-146f74b7e545
-caps.latest.revision: 
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload:
-- dotnet
-ms.openlocfilehash: 3ff59bab2963d78425f9b7f4b41bdb679ed8e6f6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 98cd64aaab66d69c29c022d770b34bb0efdb4bef
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="how-to-set-cache-policy-for-a-request"></a><span data-ttu-id="b26ab-102">方法: 要求のキャッシュ ポリシーを設定する</span><span class="sxs-lookup"><span data-stu-id="b26ab-102">How to: Set Cache Policy for a Request</span></span>
-<span data-ttu-id="b26ab-103">次の例では、要求のキャッシュ ポリシーの設定方法を示します。</span><span class="sxs-lookup"><span data-stu-id="b26ab-103">The following example demonstrates setting a cache policy for a request.</span></span> <span data-ttu-id="b26ab-104">入力の例は、http://www.contoso.com/ などの URI です。</span><span class="sxs-lookup"><span data-stu-id="b26ab-104">The example input is a URI such as http://www.contoso.com/.</span></span>  
+# <a name="how-to-set-cache-policy-for-a-request"></a><span data-ttu-id="1dc8c-102">方法: 要求のキャッシュ ポリシーを設定する</span><span class="sxs-lookup"><span data-stu-id="1dc8c-102">How to: Set Cache Policy for a Request</span></span>
+<span data-ttu-id="1dc8c-103">次の例では、要求のキャッシュ ポリシーの設定方法を示します。</span><span class="sxs-lookup"><span data-stu-id="1dc8c-103">The following example demonstrates setting a cache policy for a request.</span></span> <span data-ttu-id="1dc8c-104">入力の例は、http://www.contoso.com/ などの URI です。</span><span class="sxs-lookup"><span data-stu-id="1dc8c-104">The example input is a URI such as http://www.contoso.com/.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="b26ab-105">例</span><span class="sxs-lookup"><span data-stu-id="b26ab-105">Example</span></span>  
- <span data-ttu-id="b26ab-106">次のコード例では、リソースがキャッシュ内にある時間が 1 日より短い場合に、要求されたリソースの使用を許可するキャッシュ ポリシーを作成します。</span><span class="sxs-lookup"><span data-stu-id="b26ab-106">The following code example creates a cache policy that allows the requested resource to be used from the cache if it has not been in the cache for longer than one day.</span></span> <span data-ttu-id="b26ab-107">この例では、リソースがキャッシュから使用されたかどうかを示すメッセージ ( たとえば、`"The response was retrieved from the cache : False."`) が表示され、リソースが表示されます。</span><span class="sxs-lookup"><span data-stu-id="b26ab-107">The example displays a message that indicates whether the resource was used from the cache—for example, `"The response was retrieved from the cache : False."`—and then displays the resource.</span></span> <span data-ttu-id="b26ab-108">要求は、クライアントとサーバー間にある任意のキャッシュによって満たすことができます。</span><span class="sxs-lookup"><span data-stu-id="b26ab-108">A request can be fulfilled by any cache between the client and server.</span></span>  
+## <a name="example"></a><span data-ttu-id="1dc8c-105">例</span><span class="sxs-lookup"><span data-stu-id="1dc8c-105">Example</span></span>  
+ <span data-ttu-id="1dc8c-106">次のコード例では、リソースがキャッシュ内にある時間が 1 日より短い場合に、要求されたリソースの使用を許可するキャッシュ ポリシーを作成します。</span><span class="sxs-lookup"><span data-stu-id="1dc8c-106">The following code example creates a cache policy that allows the requested resource to be used from the cache if it has not been in the cache for longer than one day.</span></span> <span data-ttu-id="1dc8c-107">この例では、リソースがキャッシュから使用されたかどうかを示すメッセージ ( たとえば、`"The response was retrieved from the cache : False."`) が表示され、リソースが表示されます。</span><span class="sxs-lookup"><span data-stu-id="1dc8c-107">The example displays a message that indicates whether the resource was used from the cache—for example, `"The response was retrieved from the cache : False."`—and then displays the resource.</span></span> <span data-ttu-id="1dc8c-108">要求は、クライアントとサーバー間にある任意のキャッシュによって満たすことができます。</span><span class="sxs-lookup"><span data-stu-id="1dc8c-108">A request can be fulfilled by any cache between the client and server.</span></span>  
   
 ```csharp  
 using System;  
@@ -116,9 +107,9 @@ Namespace Examples.System.Net.Cache
 End Namespace  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="b26ab-109">参照</span><span class="sxs-lookup"><span data-stu-id="b26ab-109">See Also</span></span>  
- [<span data-ttu-id="b26ab-110">ネットワーク アプリケーションのキャッシュ管理</span><span class="sxs-lookup"><span data-stu-id="b26ab-110">Cache Management for Network Applications</span></span>](../../../docs/framework/network-programming/cache-management-for-network-applications.md)  
- [<span data-ttu-id="b26ab-111">キャッシュ ポリシー</span><span class="sxs-lookup"><span data-stu-id="b26ab-111">Cache Policy</span></span>](../../../docs/framework/network-programming/cache-policy.md)  
- [<span data-ttu-id="b26ab-112">場所ベースのキャッシュ ポリシー</span><span class="sxs-lookup"><span data-stu-id="b26ab-112">Location-Based Cache Policies</span></span>](../../../docs/framework/network-programming/location-based-cache-policies.md)  
- [<span data-ttu-id="b26ab-113">時間ベースのキャッシュ ポリシー</span><span class="sxs-lookup"><span data-stu-id="b26ab-113">Time-Based Cache Policies</span></span>](../../../docs/framework/network-programming/time-based-cache-policies.md)  
- [<span data-ttu-id="b26ab-114">\<requestCaching> 要素 (ネットワーク設定)</span><span class="sxs-lookup"><span data-stu-id="b26ab-114">\<requestCaching> Element (Network Settings)</span></span>](../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)
+## <a name="see-also"></a><span data-ttu-id="1dc8c-109">参照</span><span class="sxs-lookup"><span data-stu-id="1dc8c-109">See Also</span></span>  
+ [<span data-ttu-id="1dc8c-110">ネットワーク アプリケーションのキャッシュ管理</span><span class="sxs-lookup"><span data-stu-id="1dc8c-110">Cache Management for Network Applications</span></span>](../../../docs/framework/network-programming/cache-management-for-network-applications.md)  
+ [<span data-ttu-id="1dc8c-111">キャッシュ ポリシー</span><span class="sxs-lookup"><span data-stu-id="1dc8c-111">Cache Policy</span></span>](../../../docs/framework/network-programming/cache-policy.md)  
+ [<span data-ttu-id="1dc8c-112">場所ベースのキャッシュ ポリシー</span><span class="sxs-lookup"><span data-stu-id="1dc8c-112">Location-Based Cache Policies</span></span>](../../../docs/framework/network-programming/location-based-cache-policies.md)  
+ [<span data-ttu-id="1dc8c-113">時間ベースのキャッシュ ポリシー</span><span class="sxs-lookup"><span data-stu-id="1dc8c-113">Time-Based Cache Policies</span></span>](../../../docs/framework/network-programming/time-based-cache-policies.md)  
+ [<span data-ttu-id="1dc8c-114">\<requestCaching> 要素 (ネットワーク設定)</span><span class="sxs-lookup"><span data-stu-id="1dc8c-114">\<requestCaching> Element (Network Settings)</span></span>](../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)
