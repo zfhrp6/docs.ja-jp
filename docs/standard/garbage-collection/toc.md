@@ -4,6 +4,7 @@
 ### [IDisposable を実装するオブジェクトの使用](using-objects.md)
 ## [ガベージ コレクション](index.md)
 ### [ガベージ コレクションの基礎](fundamentals.md)
+### [大きなオブジェクト ヒープ](large-object-heap.md)
 ### [ガベージ コレクションとパフォーマンス](performance.md)
 ### [発生したコレクション](induced.md)
 ### [待機モード](latency.md)

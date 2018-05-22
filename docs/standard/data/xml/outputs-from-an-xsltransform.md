@@ -1,71 +1,60 @@
 ---
 title: XslTransform からの出力
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 8e149d32-4b2f-493f-9e4b-d0d93475acde
-caps.latest.revision: ''
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 647f3829f4b26791c063d5646669b2fcb7ab6684
-ms.sourcegitcommit: c883637b41ee028786edceece4fa872939d2e64c
-ms.translationtype: MT
+ms.openlocfilehash: cd22d59375a46c267c6df70727d9ca52e6843214
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2018
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="outputs-from-an-xsltransform"></a><span data-ttu-id="72706-102">XslTransform からの出力</span><span class="sxs-lookup"><span data-stu-id="72706-102">Outputs from an XslTransform</span></span>
-<span data-ttu-id="72706-103">スタイル シートは、`<xsl:output>` ステートメントと `method` 属性を使って出力形式を決定できます。次の表では、<xref:System.Xml.Xsl.XslTransform.Transform%2A> メソッドを使用して出力を書き出し、出力形式を <xref:System.IO.Stream> または <xref:System.IO.TextWriter> として宣言した場合に出力形式がどうなるかを説明します。</span><span class="sxs-lookup"><span data-stu-id="72706-103">Since style sheets can determine the output format using an `<xsl:output>` statement with the `method` attribute, the following table describes what the output format is when the <xref:System.Xml.Xsl.XslTransform.Transform%2A> method is used to write the output, and the output format is declared as a <xref:System.IO.Stream> or <xref:System.IO.TextWriter>.</span></span>  
+# <a name="outputs-from-an-xsltransform"></a><span data-ttu-id="ce200-102">XslTransform からの出力</span><span class="sxs-lookup"><span data-stu-id="ce200-102">Outputs from an XslTransform</span></span>
+<span data-ttu-id="ce200-103">スタイル シートは、`<xsl:output>` ステートメントと `method` 属性を使って出力形式を決定できます。次の表では、<xref:System.Xml.Xsl.XslTransform.Transform%2A> メソッドを使用して出力を書き出し、出力形式を <xref:System.IO.Stream> または <xref:System.IO.TextWriter> として宣言した場合に出力形式がどうなるかを説明します。</span><span class="sxs-lookup"><span data-stu-id="ce200-103">Since style sheets can determine the output format using an `<xsl:output>` statement with the `method` attribute, the following table describes what the output format is when the <xref:System.Xml.Xsl.XslTransform.Transform%2A> method is used to write the output, and the output format is declared as a <xref:System.IO.Stream> or <xref:System.IO.TextWriter>.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="72706-104"><xref:System.Xml.Xsl.XslTransform> では、[!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)] クラスが廃止されています。</span><span class="sxs-lookup"><span data-stu-id="72706-104">The <xref:System.Xml.Xsl.XslTransform> class is obsolete in the [!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)].</span></span> <span data-ttu-id="72706-105"><xref:System.Xml.Xsl.XslCompiledTransform> クラスを使用して XSLT (Extensible Stylesheet Language for Transformations) 変換を実行できます。</span><span class="sxs-lookup"><span data-stu-id="72706-105">You can perform Extensible Stylesheet Language for Transformations (XSLT) transformations using the <xref:System.Xml.Xsl.XslCompiledTransform> class.</span></span> <span data-ttu-id="72706-106">詳しくは、「[XslCompiledTransform クラスの使用](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md)」および「[XslTransform クラスからの移行](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="72706-106">See [Using the XslCompiledTransform Class](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md) and [Migrating From the XslTransform Class](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md) for more information.</span></span>  
+>  <span data-ttu-id="ce200-104"><xref:System.Xml.Xsl.XslTransform> では、[!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)] クラスが廃止されています。</span><span class="sxs-lookup"><span data-stu-id="ce200-104">The <xref:System.Xml.Xsl.XslTransform> class is obsolete in the [!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)].</span></span> <span data-ttu-id="ce200-105"><xref:System.Xml.Xsl.XslCompiledTransform> クラスを使用して XSLT (Extensible Stylesheet Language for Transformations) 変換を実行できます。</span><span class="sxs-lookup"><span data-stu-id="ce200-105">You can perform Extensible Stylesheet Language for Transformations (XSLT) transformations using the <xref:System.Xml.Xsl.XslCompiledTransform> class.</span></span> <span data-ttu-id="ce200-106">詳しくは、「[XslCompiledTransform クラスの使用](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md)」および「[XslTransform クラスからの移行](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="ce200-106">See [Using the XslCompiledTransform Class](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md) and [Migrating From the XslTransform Class](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md) for more information.</span></span>  
   
- <span data-ttu-id="72706-107">スタイル シートは、`<xsl:output>` ステートメントと `method` 属性を使って出力形式を決定できます。次の表では、<xref:System.Xml.Xsl.XslTransform.Transform%2A> メソッドを使用して出力を書き出し、出力形式を <xref:System.IO.Stream> または <xref:System.IO.TextWriter> として宣言した場合に出力形式がどうなるかを説明します。</span><span class="sxs-lookup"><span data-stu-id="72706-107">Since style sheets can determine the output format using an `<xsl:output>` statement with the `method` attribute, the following table describes what the output format is when the <xref:System.Xml.Xsl.XslTransform.Transform%2A> method is used to write the output, and the output format is declared as a <xref:System.IO.Stream> or <xref:System.IO.TextWriter>.</span></span> <span data-ttu-id="72706-108"><xref:System.Xml.Xsl.XslTransform.Transform%2A> メソッドを `<xsl:output>` ステートメントと共に使用して出力の種類を宣言した場合に得られる結果を次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="72706-108">The following table describes what happens when an output type is declared by the <xref:System.Xml.Xsl.XslTransform.Transform%2A> method in conjunction with the use of an `<xsl:output>` statement:</span></span>  
+ <span data-ttu-id="ce200-107">スタイル シートは、`<xsl:output>` ステートメントと `method` 属性を使って出力形式を決定できます。次の表では、<xref:System.Xml.Xsl.XslTransform.Transform%2A> メソッドを使用して出力を書き出し、出力形式を <xref:System.IO.Stream> または <xref:System.IO.TextWriter> として宣言した場合に出力形式がどうなるかを説明します。</span><span class="sxs-lookup"><span data-stu-id="ce200-107">Since style sheets can determine the output format using an `<xsl:output>` statement with the `method` attribute, the following table describes what the output format is when the <xref:System.Xml.Xsl.XslTransform.Transform%2A> method is used to write the output, and the output format is declared as a <xref:System.IO.Stream> or <xref:System.IO.TextWriter>.</span></span> <span data-ttu-id="ce200-108"><xref:System.Xml.Xsl.XslTransform.Transform%2A> メソッドを `<xsl:output>` ステートメントと共に使用して出力の種類を宣言した場合に得られる結果を次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="ce200-108">The following table describes what happens when an output type is declared by the <xref:System.Xml.Xsl.XslTransform.Transform%2A> method in conjunction with the use of an `<xsl:output>` statement:</span></span>  
   
-|<span data-ttu-id="72706-109">\<xsl:output method = > attribute</span><span class="sxs-lookup"><span data-stu-id="72706-109">\<xsl:output method = > attribute</span></span>|<span data-ttu-id="72706-110">結果の形式</span><span class="sxs-lookup"><span data-stu-id="72706-110">Result format</span></span>|  
+|<span data-ttu-id="ce200-109">\<xsl:output method = > attribute</span><span class="sxs-lookup"><span data-stu-id="ce200-109">\<xsl:output method = > attribute</span></span>|<span data-ttu-id="ce200-110">結果の形式</span><span class="sxs-lookup"><span data-stu-id="ce200-110">Result format</span></span>|  
 |-----------------------------------------|-------------------|  
-|<span data-ttu-id="72706-111">method="xml"</span><span class="sxs-lookup"><span data-stu-id="72706-111">method="xml"</span></span>|<span data-ttu-id="72706-112">XML</span><span class="sxs-lookup"><span data-stu-id="72706-112">XML</span></span>|  
-|<span data-ttu-id="72706-113">method="html"</span><span class="sxs-lookup"><span data-stu-id="72706-113">method="html"</span></span>|<span data-ttu-id="72706-114">HTML</span><span class="sxs-lookup"><span data-stu-id="72706-114">HTML</span></span>|  
-|<span data-ttu-id="72706-115">method="text"</span><span class="sxs-lookup"><span data-stu-id="72706-115">method="text"</span></span>|<span data-ttu-id="72706-116">Text</span><span class="sxs-lookup"><span data-stu-id="72706-116">Text</span></span>|  
+|<span data-ttu-id="ce200-111">method="xml"</span><span class="sxs-lookup"><span data-stu-id="ce200-111">method="xml"</span></span>|<span data-ttu-id="ce200-112">XML</span><span class="sxs-lookup"><span data-stu-id="ce200-112">XML</span></span>|  
+|<span data-ttu-id="ce200-113">method="html"</span><span class="sxs-lookup"><span data-stu-id="ce200-113">method="html"</span></span>|<span data-ttu-id="ce200-114">HTML</span><span class="sxs-lookup"><span data-stu-id="ce200-114">HTML</span></span>|  
+|<span data-ttu-id="ce200-115">method="text"</span><span class="sxs-lookup"><span data-stu-id="ce200-115">method="text"</span></span>|<span data-ttu-id="ce200-116">テキスト</span><span class="sxs-lookup"><span data-stu-id="ce200-116">Text</span></span>|  
   
 > [!NOTE]
->  <span data-ttu-id="72706-117">メモ: `<xsl:output>` メソッドの出力が <xref:System.Xml.Xsl.XslTransform.Transform%2A> または <xref:System.Xml.XmlReader> である場合、<xref:System.Xml.XmlWriter> ステートメントは無視されます。</span><span class="sxs-lookup"><span data-stu-id="72706-117">Note: The `<xsl:output>` statement is ignored when the output of the <xref:System.Xml.Xsl.XslTransform.Transform%2A> method is an <xref:System.Xml.XmlReader> or <xref:System.Xml.XmlWriter>.</span></span>  
+>  <span data-ttu-id="ce200-117">メモ: `<xsl:output>` メソッドの出力が <xref:System.Xml.Xsl.XslTransform.Transform%2A> または <xref:System.Xml.XmlReader> である場合、<xref:System.Xml.XmlWriter> ステートメントは無視されます。</span><span class="sxs-lookup"><span data-stu-id="ce200-117">Note: The `<xsl:output>` statement is ignored when the output of the <xref:System.Xml.Xsl.XslTransform.Transform%2A> method is an <xref:System.Xml.XmlReader> or <xref:System.Xml.XmlWriter>.</span></span>  
   
- <span data-ttu-id="72706-118"><xref:System.Xml.Xsl.XslTransform.Transform%2A> メソッドの出力が <xref:System.IO.Stream> または <xref:System.IO.TextWriter> である場合は、次の属性がサポートされます。</span><span class="sxs-lookup"><span data-stu-id="72706-118">The following attributes are supported when the <xref:System.Xml.Xsl.XslTransform.Transform%2A> method output is a <xref:System.IO.Stream> or <xref:System.IO.TextWriter>:</span></span>  
+ <span data-ttu-id="ce200-118"><xref:System.Xml.Xsl.XslTransform.Transform%2A> メソッドの出力が <xref:System.IO.Stream> または <xref:System.IO.TextWriter> である場合は、次の属性がサポートされます。</span><span class="sxs-lookup"><span data-stu-id="ce200-118">The following attributes are supported when the <xref:System.Xml.Xsl.XslTransform.Transform%2A> method output is a <xref:System.IO.Stream> or <xref:System.IO.TextWriter>:</span></span>  
   
--   <span data-ttu-id="72706-119">encoding\*</span><span class="sxs-lookup"><span data-stu-id="72706-119">encoding\*</span></span>  
+-   <span data-ttu-id="ce200-119">encoding\*</span><span class="sxs-lookup"><span data-stu-id="ce200-119">encoding\*</span></span>  
   
--   <span data-ttu-id="72706-120">omit-xml-declaration</span><span class="sxs-lookup"><span data-stu-id="72706-120">omit-xml-declaration</span></span>  
+-   <span data-ttu-id="ce200-120">omit-xml-declaration</span><span class="sxs-lookup"><span data-stu-id="ce200-120">omit-xml-declaration</span></span>  
   
--   <span data-ttu-id="72706-121">スタンドアロン</span><span class="sxs-lookup"><span data-stu-id="72706-121">standalone</span></span>  
+-   <span data-ttu-id="ce200-121">スタンドアロン</span><span class="sxs-lookup"><span data-stu-id="ce200-121">standalone</span></span>  
   
--   <span data-ttu-id="72706-122">doctype-public</span><span class="sxs-lookup"><span data-stu-id="72706-122">doctype-public</span></span>  
+-   <span data-ttu-id="ce200-122">doctype-public</span><span class="sxs-lookup"><span data-stu-id="ce200-122">doctype-public</span></span>  
   
--   <span data-ttu-id="72706-123">doctype-system</span><span class="sxs-lookup"><span data-stu-id="72706-123">doctype-system</span></span>  
+-   <span data-ttu-id="ce200-123">doctype-system</span><span class="sxs-lookup"><span data-stu-id="ce200-123">doctype-system</span></span>  
   
--   <span data-ttu-id="72706-124">cdata-section-elements</span><span class="sxs-lookup"><span data-stu-id="72706-124">cdata-section-elements</span></span>  
+-   <span data-ttu-id="ce200-124">cdata-section-elements</span><span class="sxs-lookup"><span data-stu-id="ce200-124">cdata-section-elements</span></span>  
   
--   <span data-ttu-id="72706-125">indent</span><span class="sxs-lookup"><span data-stu-id="72706-125">indent</span></span>  
+-   <span data-ttu-id="ce200-125">indent</span><span class="sxs-lookup"><span data-stu-id="ce200-125">indent</span></span>  
   
     > [!NOTE]
-    >  <span data-ttu-id="72706-126">\*<xref:System.Xml.Xsl.XslTransform.Transform%2A> メソッドが出力を <xref:System.IO.TextWriter> に送信する場合、encoding 属性は無視されます。</span><span class="sxs-lookup"><span data-stu-id="72706-126">\*the encoding attribute is ignored when the <xref:System.Xml.Xsl.XslTransform.Transform%2A> method is sending its output to a <xref:System.IO.TextWriter>.</span></span> <span data-ttu-id="72706-127">その場合は、encoding 属性の代わりに <xref:System.IO.TextWriter> の encoding プロパティが使用されます。</span><span class="sxs-lookup"><span data-stu-id="72706-127">The encoding property on the <xref:System.IO.TextWriter> is used instead.</span></span>  
+    >  <span data-ttu-id="ce200-126">\*<xref:System.Xml.Xsl.XslTransform.Transform%2A> メソッドが出力を <xref:System.IO.TextWriter> に送信する場合、encoding 属性は無視されます。</span><span class="sxs-lookup"><span data-stu-id="ce200-126">\*the encoding attribute is ignored when the <xref:System.Xml.Xsl.XslTransform.Transform%2A> method is sending its output to a <xref:System.IO.TextWriter>.</span></span> <span data-ttu-id="ce200-127">その場合は、encoding 属性の代わりに <xref:System.IO.TextWriter> の encoding プロパティが使用されます。</span><span class="sxs-lookup"><span data-stu-id="ce200-127">The encoding property on the <xref:System.IO.TextWriter> is used instead.</span></span>  
   
- <span data-ttu-id="72706-128"><xref:System.Xml.Xsl.XslTransform.Transform%2A> メソッドの出力が <xref:System.IO.Stream> の場合、次の属性は無視されます。</span><span class="sxs-lookup"><span data-stu-id="72706-128">The following attribute is ignored when the <xref:System.Xml.Xsl.XslTransform.Transform%2A> method output is a <xref:System.IO.Stream>:</span></span>  
+ <span data-ttu-id="ce200-128"><xref:System.Xml.Xsl.XslTransform.Transform%2A> メソッドの出力が <xref:System.IO.Stream> の場合、次の属性は無視されます。</span><span class="sxs-lookup"><span data-stu-id="ce200-128">The following attribute is ignored when the <xref:System.Xml.Xsl.XslTransform.Transform%2A> method output is a <xref:System.IO.Stream>:</span></span>  
   
--   <span data-ttu-id="72706-129">version : バージョンは常に 1.0 です。</span><span class="sxs-lookup"><span data-stu-id="72706-129">version: the version is always 1.0</span></span>  
+-   <span data-ttu-id="ce200-129">version : バージョンは常に 1.0 です。</span><span class="sxs-lookup"><span data-stu-id="ce200-129">version: the version is always 1.0</span></span>  
   
--   <span data-ttu-id="72706-130">media-type : メディア タイプです。</span><span class="sxs-lookup"><span data-stu-id="72706-130">media-type: the media-type</span></span>  
+-   <span data-ttu-id="ce200-130">media-type : メディア タイプです。</span><span class="sxs-lookup"><span data-stu-id="ce200-130">media-type: the media-type</span></span>  
   
-## <a name="escaping-special-characters"></a><span data-ttu-id="72706-131">特殊文字のエスケープ</span><span class="sxs-lookup"><span data-stu-id="72706-131">Escaping Special Characters</span></span>  
- <span data-ttu-id="72706-132">`<xsl:text disable-output-escaping>` 記号の代わりに `<&lt>` を使用するなど、特殊文字を XML 形式にエスケープする必要があるかどうかを示すには、`"<"` タグを使用します。</span><span class="sxs-lookup"><span data-stu-id="72706-132">The `<xsl:text disable-output-escaping>` tag is used to indicate whether or not special characters need to be escaped into an XML form (for example, using `<&lt>` in place of the `"<"` symbol) or left in the present condition.</span></span> <span data-ttu-id="72706-133">`disable-output-escaping` オブジェクトまたは <xref:System.Xml.XmlReader> オブジェクトへの変換では <xref:System.Xml.XmlWriter> 属性が無視されるため、特殊文字はこのタグの影響を受けません。</span><span class="sxs-lookup"><span data-stu-id="72706-133">The `disable-output-escaping` attribute is ignored when transforming to an <xref:System.Xml.XmlReader> or <xref:System.Xml.XmlWriter> object and has no effect on special characters.</span></span>  
+## <a name="escaping-special-characters"></a><span data-ttu-id="ce200-131">特殊文字のエスケープ</span><span class="sxs-lookup"><span data-stu-id="ce200-131">Escaping Special Characters</span></span>  
+ <span data-ttu-id="ce200-132">`<xsl:text disable-output-escaping>` 記号の代わりに `<&lt>` を使用するなど、特殊文字を XML 形式にエスケープする必要があるかどうかを示すには、`"<"` タグを使用します。</span><span class="sxs-lookup"><span data-stu-id="ce200-132">The `<xsl:text disable-output-escaping>` tag is used to indicate whether or not special characters need to be escaped into an XML form (for example, using `<&lt>` in place of the `"<"` symbol) or left in the present condition.</span></span> <span data-ttu-id="ce200-133">`disable-output-escaping` オブジェクトまたは <xref:System.Xml.XmlReader> オブジェクトへの変換では <xref:System.Xml.XmlWriter> 属性が無視されるため、特殊文字はこのタグの影響を受けません。</span><span class="sxs-lookup"><span data-stu-id="ce200-133">The `disable-output-escaping` attribute is ignored when transforming to an <xref:System.Xml.XmlReader> or <xref:System.Xml.XmlWriter> object and has no effect on special characters.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="72706-134">関連項目</span><span class="sxs-lookup"><span data-stu-id="72706-134">See Also</span></span>  
- [<span data-ttu-id="72706-135">XslTransform クラスによる XSLT プロセッサの実装</span><span class="sxs-lookup"><span data-stu-id="72706-135">XslTransform Class Implements the XSLT Processor</span></span>](../../../../docs/standard/data/xml/xsltransform-class-implements-the-xslt-processor.md)
+## <a name="see-also"></a><span data-ttu-id="ce200-134">参照</span><span class="sxs-lookup"><span data-stu-id="ce200-134">See Also</span></span>  
+ [<span data-ttu-id="ce200-135">XslTransform クラスによる XSLT プロセッサの実装</span><span class="sxs-lookup"><span data-stu-id="ce200-135">XslTransform Class Implements the XSLT Processor</span></span>](../../../../docs/standard/data/xml/xsltransform-class-implements-the-xslt-processor.md)

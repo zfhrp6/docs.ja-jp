@@ -1,13 +1,7 @@
 ---
-title: "方法 : 分離ストレージでストアを削除する"
-ms.custom: 
+title: '方法 : 分離ストレージでストアを削除する'
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -21,33 +15,28 @@ helpviewer_keywords:
 - storing data using isolated storage, deleting stores
 - data storage using isolated storage, deleting stores
 ms.assetid: 3947e333-5af6-4601-b2f1-24d4d6129cf3
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 3ae04deeb8d23b496a9111b0d4b5b68e12ac1439
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 776984cf1cc17d5c1becc91d4491fa6dbc9e2c17
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="how-to-delete-stores-in-isolated-storage"></a><span data-ttu-id="2e37f-102">方法 : 分離ストレージでストアを削除する</span><span class="sxs-lookup"><span data-stu-id="2e37f-102">How to: Delete Stores in Isolated Storage</span></span>
-<span data-ttu-id="2e37f-103">分離ストレージ ファイルを削除するため、 <xref:System.IO.IsolatedStorage.IsolatedStorageFile> クラスは 2 つのメソッドを提供します。</span><span class="sxs-lookup"><span data-stu-id="2e37f-103">The <xref:System.IO.IsolatedStorage.IsolatedStorageFile> class supplies two methods for deleting isolated storage files:</span></span>  
+# <a name="how-to-delete-stores-in-isolated-storage"></a><span data-ttu-id="b0ebc-102">方法 : 分離ストレージでストアを削除する</span><span class="sxs-lookup"><span data-stu-id="b0ebc-102">How to: Delete Stores in Isolated Storage</span></span>
+<span data-ttu-id="b0ebc-103">分離ストレージ ファイルを削除するため、 <xref:System.IO.IsolatedStorage.IsolatedStorageFile> クラスは 2 つのメソッドを提供します。</span><span class="sxs-lookup"><span data-stu-id="b0ebc-103">The <xref:System.IO.IsolatedStorage.IsolatedStorageFile> class supplies two methods for deleting isolated storage files:</span></span>  
   
--   <span data-ttu-id="2e37f-104">インスタンス メソッド <xref:System.IO.IsolatedStorage.IsolatedStorageFile.Remove> は引数を使わず、そのインスタンス メソッドを呼び出すストアを削除します。</span><span class="sxs-lookup"><span data-stu-id="2e37f-104">The instance method <xref:System.IO.IsolatedStorage.IsolatedStorageFile.Remove> does not take any arguments and deletes the store that calls it.</span></span> <span data-ttu-id="2e37f-105">この操作にアクセス許可は必要ありません。</span><span class="sxs-lookup"><span data-stu-id="2e37f-105">No permissions are required for this operation.</span></span> <span data-ttu-id="2e37f-106">ストアにアクセスできるすべてのコードは、その内部の一部のデータやすべてのデータを削除できます。</span><span class="sxs-lookup"><span data-stu-id="2e37f-106">Any code that can access the store can delete any or all the data inside it.</span></span>  
+-   <span data-ttu-id="b0ebc-104">インスタンス メソッド <xref:System.IO.IsolatedStorage.IsolatedStorageFile.Remove> は引数を使わず、そのインスタンス メソッドを呼び出すストアを削除します。</span><span class="sxs-lookup"><span data-stu-id="b0ebc-104">The instance method <xref:System.IO.IsolatedStorage.IsolatedStorageFile.Remove> does not take any arguments and deletes the store that calls it.</span></span> <span data-ttu-id="b0ebc-105">この操作にアクセス許可は必要ありません。</span><span class="sxs-lookup"><span data-stu-id="b0ebc-105">No permissions are required for this operation.</span></span> <span data-ttu-id="b0ebc-106">ストアにアクセスできるすべてのコードは、その内部の一部のデータやすべてのデータを削除できます。</span><span class="sxs-lookup"><span data-stu-id="b0ebc-106">Any code that can access the store can delete any or all the data inside it.</span></span>  
   
--   <span data-ttu-id="2e37f-107">静的メソッド <xref:System.IO.IsolatedStorage.IsolatedStorageFile.Remove%28System.IO.IsolatedStorage.IsolatedStorageScope%29> は <xref:System.IO.IsolatedStorage.IsolatedStorageScope.User> 列挙値を使い、コードを実行するユーザーのすべてのストアを削除します。</span><span class="sxs-lookup"><span data-stu-id="2e37f-107">The static method <xref:System.IO.IsolatedStorage.IsolatedStorageFile.Remove%28System.IO.IsolatedStorage.IsolatedStorageScope%29> takes the <xref:System.IO.IsolatedStorage.IsolatedStorageScope.User> enumeration value, and deletes all the stores for the user who is running the code.</span></span> <span data-ttu-id="2e37f-108">この操作を実行するには、 <xref:System.Security.Permissions.IsolatedStorageFilePermission> の値に対する <xref:System.Security.Permissions.IsolatedStorageContainment.AdministerIsolatedStorageByUser> アクセス許可が必要です。</span><span class="sxs-lookup"><span data-stu-id="2e37f-108">This operation requires <xref:System.Security.Permissions.IsolatedStorageFilePermission> permission for the <xref:System.Security.Permissions.IsolatedStorageContainment.AdministerIsolatedStorageByUser> value.</span></span>  
+-   <span data-ttu-id="b0ebc-107">静的メソッド <xref:System.IO.IsolatedStorage.IsolatedStorageFile.Remove%28System.IO.IsolatedStorage.IsolatedStorageScope%29> は <xref:System.IO.IsolatedStorage.IsolatedStorageScope.User> 列挙値を使い、コードを実行するユーザーのすべてのストアを削除します。</span><span class="sxs-lookup"><span data-stu-id="b0ebc-107">The static method <xref:System.IO.IsolatedStorage.IsolatedStorageFile.Remove%28System.IO.IsolatedStorage.IsolatedStorageScope%29> takes the <xref:System.IO.IsolatedStorage.IsolatedStorageScope.User> enumeration value, and deletes all the stores for the user who is running the code.</span></span> <span data-ttu-id="b0ebc-108">この操作を実行するには、 <xref:System.Security.Permissions.IsolatedStorageFilePermission> の値に対する <xref:System.Security.Permissions.IsolatedStorageContainment.AdministerIsolatedStorageByUser> アクセス許可が必要です。</span><span class="sxs-lookup"><span data-stu-id="b0ebc-108">This operation requires <xref:System.Security.Permissions.IsolatedStorageFilePermission> permission for the <xref:System.Security.Permissions.IsolatedStorageContainment.AdministerIsolatedStorageByUser> value.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="2e37f-109">例</span><span class="sxs-lookup"><span data-stu-id="2e37f-109">Example</span></span>  
- <span data-ttu-id="2e37f-110">静的およびンスタンス <xref:System.IO.IsolatedStorage.IsolatedStorageFile.Remove%2A> メソッドの使い方を次のコード例に示します。</span><span class="sxs-lookup"><span data-stu-id="2e37f-110">The following code example demonstrates the use of the static and instance <xref:System.IO.IsolatedStorage.IsolatedStorageFile.Remove%2A> methods.</span></span> <span data-ttu-id="2e37f-111">クラスは、次の 2 つのストアを取得します。1 つは、ユーザーとアセンブリで使うように分離して、もう 1 つは、ユーザー、ドメイン、アセンブリで使うように分離します。</span><span class="sxs-lookup"><span data-stu-id="2e37f-111">The class obtains two stores; one is isolated for user and assembly and the other is isolated for user, domain, and assembly.</span></span> <span data-ttu-id="2e37f-112">次に、分離ストレージ ファイル <xref:System.IO.IsolatedStorage.IsolatedStorageFile.Remove> の  `isoStore1`メソッドを呼び出すことにより、ユーザー、ドメイン、アセンブリのストアが削除されます。</span><span class="sxs-lookup"><span data-stu-id="2e37f-112">The user, domain, and assembly store is then deleted by calling the <xref:System.IO.IsolatedStorage.IsolatedStorageFile.Remove> method of the isolated storage file  `isoStore1`.</span></span> <span data-ttu-id="2e37f-113">その後、静的メソッド <xref:System.IO.IsolatedStorage.IsolatedStorageFile.Remove%28System.IO.IsolatedStorage.IsolatedStorageScope%29>を呼び出すことによって、ユーザーの残りのストアすべてを削除します。</span><span class="sxs-lookup"><span data-stu-id="2e37f-113">Then, all remaining stores for the user are deleted by calling the static method <xref:System.IO.IsolatedStorage.IsolatedStorageFile.Remove%28System.IO.IsolatedStorage.IsolatedStorageScope%29>.</span></span>  
+## <a name="example"></a><span data-ttu-id="b0ebc-109">例</span><span class="sxs-lookup"><span data-stu-id="b0ebc-109">Example</span></span>  
+ <span data-ttu-id="b0ebc-110">静的およびンスタンス <xref:System.IO.IsolatedStorage.IsolatedStorageFile.Remove%2A> メソッドの使い方を次のコード例に示します。</span><span class="sxs-lookup"><span data-stu-id="b0ebc-110">The following code example demonstrates the use of the static and instance <xref:System.IO.IsolatedStorage.IsolatedStorageFile.Remove%2A> methods.</span></span> <span data-ttu-id="b0ebc-111">クラスは、次の 2 つのストアを取得します。1 つは、ユーザーとアセンブリで使うように分離して、もう 1 つは、ユーザー、ドメイン、アセンブリで使うように分離します。</span><span class="sxs-lookup"><span data-stu-id="b0ebc-111">The class obtains two stores; one is isolated for user and assembly and the other is isolated for user, domain, and assembly.</span></span> <span data-ttu-id="b0ebc-112">次に、分離ストレージ ファイル <xref:System.IO.IsolatedStorage.IsolatedStorageFile.Remove> の  `isoStore1`メソッドを呼び出すことにより、ユーザー、ドメイン、アセンブリのストアが削除されます。</span><span class="sxs-lookup"><span data-stu-id="b0ebc-112">The user, domain, and assembly store is then deleted by calling the <xref:System.IO.IsolatedStorage.IsolatedStorageFile.Remove> method of the isolated storage file  `isoStore1`.</span></span> <span data-ttu-id="b0ebc-113">その後、静的メソッド <xref:System.IO.IsolatedStorage.IsolatedStorageFile.Remove%28System.IO.IsolatedStorage.IsolatedStorageScope%29>を呼び出すことによって、ユーザーの残りのストアすべてを削除します。</span><span class="sxs-lookup"><span data-stu-id="b0ebc-113">Then, all remaining stores for the user are deleted by calling the static method <xref:System.IO.IsolatedStorage.IsolatedStorageFile.Remove%28System.IO.IsolatedStorage.IsolatedStorageScope%29>.</span></span>  
   
  [!code-cpp[Conceptual.IsolatedStorage#3](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.isolatedstorage/cpp/source3.cpp#3)]
  [!code-csharp[Conceptual.IsolatedStorage#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.isolatedstorage/cs/source3.cs#3)]
  [!code-vb[Conceptual.IsolatedStorage#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.isolatedstorage/vb/source3.vb#3)]  
   
-## <a name="see-also"></a><span data-ttu-id="2e37f-114">参照</span><span class="sxs-lookup"><span data-stu-id="2e37f-114">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="b0ebc-114">参照</span><span class="sxs-lookup"><span data-stu-id="b0ebc-114">See Also</span></span>  
  <xref:System.IO.IsolatedStorage.IsolatedStorageFile>  
- [<span data-ttu-id="2e37f-115">分離ストレージ</span><span class="sxs-lookup"><span data-stu-id="2e37f-115">Isolated Storage</span></span>](../../../docs/standard/io/isolated-storage.md)
+ [<span data-ttu-id="b0ebc-115">分離ストレージ</span><span class="sxs-lookup"><span data-stu-id="b0ebc-115">Isolated Storage</span></span>](../../../docs/standard/io/isolated-storage.md)

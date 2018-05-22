@@ -1,54 +1,43 @@
 ---
-title: "保持されずに展開されるエンティティ参照"
-ms.custom: 
+title: 保持されずに展開されるエンティティ参照
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: ffd97806-ab43-4538-8de2-5828bfbbde57
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 00b997865c614756ea5fd9567ded3baa469f4c62
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: aa03532200a89aa164648c1278c9dbafc2aee214
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="entity-references-are-expanded-and-not-preserved"></a><span data-ttu-id="2cc5a-102">保持されずに展開されるエンティティ参照</span><span class="sxs-lookup"><span data-stu-id="2cc5a-102">Entity References are Expanded and Not Preserved</span></span>
-<span data-ttu-id="2cc5a-103">エンティティ参照が展開され、それが表すテキストに置き換えられる場合には、**XmlEntityReference** ノードは作成されません。</span><span class="sxs-lookup"><span data-stu-id="2cc5a-103">When the entity reference is expanded and replaced by the text it represents, the **XmlEntityReference** node is not created.</span></span> <span data-ttu-id="2cc5a-104">この場合はエンティティ宣言が解析され、宣言のコンテンツから作成されたノードが **XmlEntityReference** の代わりにコピーされます。</span><span class="sxs-lookup"><span data-stu-id="2cc5a-104">Instead, the entity declaration is parsed, and nodes created from the content in the declaration are copied in the place of the **XmlEntityReference**.</span></span> <span data-ttu-id="2cc5a-105">したがって、`&publisher;` の例では、`&publisher;` は保存されず、代わりに **XmlText** ノードが作成されます。</span><span class="sxs-lookup"><span data-stu-id="2cc5a-105">Therefore, in the `&publisher;` example, the `&publisher;` is not saved, but instead, an **XmlText** node is created.</span></span>  
+# <a name="entity-references-are-expanded-and-not-preserved"></a><span data-ttu-id="2c3cb-102">保持されずに展開されるエンティティ参照</span><span class="sxs-lookup"><span data-stu-id="2c3cb-102">Entity References are Expanded and Not Preserved</span></span>
+<span data-ttu-id="2c3cb-103">エンティティ参照が展開され、それが表すテキストに置き換えられる場合には、**XmlEntityReference** ノードは作成されません。</span><span class="sxs-lookup"><span data-stu-id="2c3cb-103">When the entity reference is expanded and replaced by the text it represents, the **XmlEntityReference** node is not created.</span></span> <span data-ttu-id="2c3cb-104">この場合はエンティティ宣言が解析され、宣言のコンテンツから作成されたノードが **XmlEntityReference** の代わりにコピーされます。</span><span class="sxs-lookup"><span data-stu-id="2c3cb-104">Instead, the entity declaration is parsed, and nodes created from the content in the declaration are copied in the place of the **XmlEntityReference**.</span></span> <span data-ttu-id="2c3cb-105">したがって、`&publisher;` の例では、`&publisher;` は保存されず、代わりに **XmlText** ノードが作成されます。</span><span class="sxs-lookup"><span data-stu-id="2c3cb-105">Therefore, in the `&publisher;` example, the `&publisher;` is not saved, but instead, an **XmlText** node is created.</span></span>  
   
- <span data-ttu-id="2cc5a-106">![展開されたツリー構造](../../../../docs/standard/data/xml/media/xmlentityref-expanded-nodes.gif "xmlentityref_expanded_nodes")</span><span class="sxs-lookup"><span data-stu-id="2cc5a-106">![expanded tree structure](../../../../docs/standard/data/xml/media/xmlentityref-expanded-nodes.gif "xmlentityref_expanded_nodes")</span></span>  
-<span data-ttu-id="2cc5a-107">エンティティ参照が展開される場合のツリー構造</span><span class="sxs-lookup"><span data-stu-id="2cc5a-107">Tree structure for entity references that are expanded</span></span>  
+ <span data-ttu-id="2c3cb-106">![展開されたツリー構造](../../../../docs/standard/data/xml/media/xmlentityref-expanded-nodes.gif "xmlentityref_expanded_nodes")</span><span class="sxs-lookup"><span data-stu-id="2c3cb-106">![expanded tree structure](../../../../docs/standard/data/xml/media/xmlentityref-expanded-nodes.gif "xmlentityref_expanded_nodes")</span></span>  
+<span data-ttu-id="2c3cb-107">エンティティ参照が展開される場合のツリー構造</span><span class="sxs-lookup"><span data-stu-id="2c3cb-107">Tree structure for entity references that are expanded</span></span>  
   
- <span data-ttu-id="2cc5a-108">`B` や `<` などの文字エンティティは保持されません。</span><span class="sxs-lookup"><span data-stu-id="2cc5a-108">Character entities such as `B` or `<` are not preserved.</span></span> <span data-ttu-id="2cc5a-109">文字エンティティは常に展開され、テキスト ノードとして表されます。</span><span class="sxs-lookup"><span data-stu-id="2cc5a-109">Instead, they are always expanded and represented as text nodes.</span></span>  
+ <span data-ttu-id="2c3cb-108">`B` や `<` などの文字エンティティは保持されません。</span><span class="sxs-lookup"><span data-stu-id="2c3cb-108">Character entities such as `B` or `<` are not preserved.</span></span> <span data-ttu-id="2c3cb-109">文字エンティティは常に展開され、テキスト ノードとして表されます。</span><span class="sxs-lookup"><span data-stu-id="2c3cb-109">Instead, they are always expanded and represented as text nodes.</span></span>  
   
- <span data-ttu-id="2cc5a-110">**XmlEntityReference** ノードと、それに付随するエンティティ参照の子ノードを保持するには、**EntityHandling** フラグを **ExpandCharEntities** に設定します。</span><span class="sxs-lookup"><span data-stu-id="2cc5a-110">To preserve **XmlEntityReference** nodes and child nodes of the entity reference attached to it, set the **EntityHandling** flag to **ExpandCharEntities**.</span></span> <span data-ttu-id="2cc5a-111">それ以外の場合は、**EntityHandling** フラグを既定の **ExpandEntities** のままにしておきます。</span><span class="sxs-lookup"><span data-stu-id="2cc5a-111">Otherwise, leave the **EntityHandling** flag at the default, which is to **ExpandEntities**.</span></span> <span data-ttu-id="2cc5a-112">その場合、DOM ではエンティティ参照ノードが認識されません。</span><span class="sxs-lookup"><span data-stu-id="2cc5a-112">In this case, you will not see entity reference nodes in the DOM.</span></span> <span data-ttu-id="2cc5a-113">エンティティ参照ノードは、エンティティ宣言の子ノードのコピーに置き換えられます。</span><span class="sxs-lookup"><span data-stu-id="2cc5a-113">The nodes are replaced by the nodes that are copies of the child nodes of the entity declaration.</span></span>  
+ <span data-ttu-id="2c3cb-110">**XmlEntityReference** ノードと、それに付随するエンティティ参照の子ノードを保持するには、**EntityHandling** フラグを **ExpandCharEntities** に設定します。</span><span class="sxs-lookup"><span data-stu-id="2c3cb-110">To preserve **XmlEntityReference** nodes and child nodes of the entity reference attached to it, set the **EntityHandling** flag to **ExpandCharEntities**.</span></span> <span data-ttu-id="2c3cb-111">それ以外の場合は、**EntityHandling** フラグを既定の **ExpandEntities** のままにしておきます。</span><span class="sxs-lookup"><span data-stu-id="2c3cb-111">Otherwise, leave the **EntityHandling** flag at the default, which is to **ExpandEntities**.</span></span> <span data-ttu-id="2c3cb-112">その場合、DOM ではエンティティ参照ノードが認識されません。</span><span class="sxs-lookup"><span data-stu-id="2c3cb-112">In this case, you will not see entity reference nodes in the DOM.</span></span> <span data-ttu-id="2c3cb-113">エンティティ参照ノードは、エンティティ宣言の子ノードのコピーに置き換えられます。</span><span class="sxs-lookup"><span data-stu-id="2c3cb-113">The nodes are replaced by the nodes that are copies of the child nodes of the entity declaration.</span></span>  
   
- <span data-ttu-id="2cc5a-114">エンティティ参照を保持しない場合の副作用の 1 つとして、そのドキュメントを保存して別のアプリケーションに渡したとき、受け取る側のアプリケーションでは、エンティティ参照によってノードが生成されたことを識別できないという点があります。</span><span class="sxs-lookup"><span data-stu-id="2cc5a-114">One side effect of not preserving entity references is that when the document is saved and passed on to another application, the receiving application does not know that the nodes were generated by an entity reference.</span></span> <span data-ttu-id="2cc5a-115">しかし、エンティティ参照を保持する場合は、受け取り側アプリケーションがエンティティ参照を認識し、子ノードを読み取ります。</span><span class="sxs-lookup"><span data-stu-id="2cc5a-115">However, when entity references are preserved, a receiving application sees an entity reference and reads the child nodes.</span></span> <span data-ttu-id="2cc5a-116">子ノードが、エンティティ宣言に含まれていた情報を表していることは明らかです。</span><span class="sxs-lookup"><span data-stu-id="2cc5a-116">It is apparent that the child nodes represent the information that was in the entity declaration.</span></span> <span data-ttu-id="2cc5a-117">たとえば、エンティティ参照が保持される場合、DOM の構造は理論的に次のようになります。</span><span class="sxs-lookup"><span data-stu-id="2cc5a-117">For example, the DOM theoretically has the following structure if entity references are preserved.</span></span>  
+ <span data-ttu-id="2c3cb-114">エンティティ参照を保持しない場合の副作用の 1 つとして、そのドキュメントを保存して別のアプリケーションに渡したとき、受け取る側のアプリケーションでは、エンティティ参照によってノードが生成されたことを識別できないという点があります。</span><span class="sxs-lookup"><span data-stu-id="2c3cb-114">One side effect of not preserving entity references is that when the document is saved and passed on to another application, the receiving application does not know that the nodes were generated by an entity reference.</span></span> <span data-ttu-id="2c3cb-115">しかし、エンティティ参照を保持する場合は、受け取り側アプリケーションがエンティティ参照を認識し、子ノードを読み取ります。</span><span class="sxs-lookup"><span data-stu-id="2c3cb-115">However, when entity references are preserved, a receiving application sees an entity reference and reads the child nodes.</span></span> <span data-ttu-id="2c3cb-116">子ノードが、エンティティ宣言に含まれていた情報を表していることは明らかです。</span><span class="sxs-lookup"><span data-stu-id="2c3cb-116">It is apparent that the child nodes represent the information that was in the entity declaration.</span></span> <span data-ttu-id="2c3cb-117">たとえば、エンティティ参照が保持される場合、DOM の構造は理論的に次のようになります。</span><span class="sxs-lookup"><span data-stu-id="2c3cb-117">For example, the DOM theoretically has the following structure if entity references are preserved.</span></span>  
   
- <span data-ttu-id="2cc5a-118">XmlElement: publisher</span><span class="sxs-lookup"><span data-stu-id="2cc5a-118">XmlElement: publisher</span></span>  
+ <span data-ttu-id="2c3cb-118">XmlElement: publisher</span><span class="sxs-lookup"><span data-stu-id="2c3cb-118">XmlElement: publisher</span></span>  
   
- <span data-ttu-id="2cc5a-119">XmlEntityReference: `&publisher;`</span><span class="sxs-lookup"><span data-stu-id="2cc5a-119">XmlEntityReference: `&publisher;`</span></span>  
+ <span data-ttu-id="2c3cb-119">XmlEntityReference: `&publisher;`</span><span class="sxs-lookup"><span data-stu-id="2c3cb-119">XmlEntityReference: `&publisher;`</span></span>  
   
- <span data-ttu-id="2cc5a-120">XmlText: Microsoft Press</span><span class="sxs-lookup"><span data-stu-id="2cc5a-120">XmlText: Microsoft Press</span></span>  
+ <span data-ttu-id="2c3cb-120">XmlText: Microsoft Press</span><span class="sxs-lookup"><span data-stu-id="2c3cb-120">XmlText: Microsoft Press</span></span>  
   
- <span data-ttu-id="2cc5a-121">DOM でエンティティ参照が展開される場合は、次のようなツリー構造になります。既定のメソッドでは、エンティティ参照が展開されます。</span><span class="sxs-lookup"><span data-stu-id="2cc5a-121">If entity references are expanded in the DOM, which is the default method, the structure has this type of tree:</span></span>  
+ <span data-ttu-id="2c3cb-121">DOM でエンティティ参照が展開される場合は、次のようなツリー構造になります。既定のメソッドでは、エンティティ参照が展開されます。</span><span class="sxs-lookup"><span data-stu-id="2c3cb-121">If entity references are expanded in the DOM, which is the default method, the structure has this type of tree:</span></span>  
   
- <span data-ttu-id="2cc5a-122">XmlElement: publisher</span><span class="sxs-lookup"><span data-stu-id="2cc5a-122">XmlElement: publisher</span></span>  
+ <span data-ttu-id="2c3cb-122">XmlElement: publisher</span><span class="sxs-lookup"><span data-stu-id="2c3cb-122">XmlElement: publisher</span></span>  
   
- <span data-ttu-id="2cc5a-123">XmlText: Microsoft Press</span><span class="sxs-lookup"><span data-stu-id="2cc5a-123">XmlText: Microsoft Press</span></span>  
+ <span data-ttu-id="2c3cb-123">XmlText: Microsoft Press</span><span class="sxs-lookup"><span data-stu-id="2c3cb-123">XmlText: Microsoft Press</span></span>  
   
- <span data-ttu-id="2cc5a-124">エンティティ参照がないため、受け取る側のアプリケーションでは、"Microsoft Press" を含む **XmlText** ノードがエンティティ宣言から作成されたことを識別できません。</span><span class="sxs-lookup"><span data-stu-id="2cc5a-124">Notice that the entity reference node is gone, and the receiving application cannot tell that the **XmlText** node containing "Microsoft Press" was created from an entity declaration.</span></span>  
+ <span data-ttu-id="2c3cb-124">エンティティ参照がないため、受け取る側のアプリケーションでは、"Microsoft Press" を含む **XmlText** ノードがエンティティ宣言から作成されたことを識別できません。</span><span class="sxs-lookup"><span data-stu-id="2c3cb-124">Notice that the entity reference node is gone, and the receiving application cannot tell that the **XmlText** node containing "Microsoft Press" was created from an entity declaration.</span></span>  
   
- <span data-ttu-id="2cc5a-125">エンティティを解決できないリーダーを使用すると、**Load** メソッドは、エンティティ参照を見つけたときに例外をスローします。</span><span class="sxs-lookup"><span data-stu-id="2cc5a-125">If you use a reader that cannot resolve entities, the **Load** method throws an exception when it encounters an entity reference.</span></span>  
+ <span data-ttu-id="2c3cb-125">エンティティを解決できないリーダーを使用すると、**Load** メソッドは、エンティティ参照を見つけたときに例外をスローします。</span><span class="sxs-lookup"><span data-stu-id="2c3cb-125">If you use a reader that cannot resolve entities, the **Load** method throws an exception when it encounters an entity reference.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="2cc5a-126">参照</span><span class="sxs-lookup"><span data-stu-id="2cc5a-126">See Also</span></span>  
- [<span data-ttu-id="2cc5a-127">XML ドキュメント オブジェクト モデル (DOM)</span><span class="sxs-lookup"><span data-stu-id="2cc5a-127">XML Document Object Model (DOM)</span></span>](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+## <a name="see-also"></a><span data-ttu-id="2c3cb-126">参照</span><span class="sxs-lookup"><span data-stu-id="2c3cb-126">See Also</span></span>  
+ [<span data-ttu-id="2c3cb-127">XML ドキュメント オブジェクト モデル (DOM)</span><span class="sxs-lookup"><span data-stu-id="2c3cb-127">XML Document Object Model (DOM)</span></span>](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

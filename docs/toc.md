@@ -285,7 +285,12 @@
 ### [Visual Studio for Mac の使用を開始する](fsharp/get-started/get-started-with-visual-studio-for-mac.md)
 ### [Visual Studio Code および Ionide の概要](fsharp/get-started/get-started-vscode.md)
 ### [.NET Core CLI の概要](fsharp/get-started/get-started-command-line.md)
-<!--## [Tutorials](fsharp/tutorials/index.md)-->
+
+## [F# スタイル ガイド](fsharp/style-guide/index.md)
+### [F# コードのフォーマットに関するガイドライン](fsharp/style-guide/formatting.md)
+### [F# のコーディング規則](fsharp/style-guide/conventions.md)
+### [F# コンポーネント デザインのガイドライン](fsharp/style-guide/component-design-guidelines.md)
+
 ## チュートリアル
 ### [F# Interactive](fsharp/tutorials/fsharp-interactive/index.md)
 ### [型プロバイダー](fsharp/tutorials/type-providers/index.md)
@@ -1113,7 +1118,7 @@
 # [ML.NET ガイド](machine-learning/index.md)
 ## [チュートリアル](machine-learning/tutorials/index.md)
 ### [感情分析 (分類)](machine-learning/tutorials/sentiment-analysis.md)
-### [タクシー時間予測 (回帰)](machine-learning/tutorials/taxi-fare.md)
+### [タクシー代予測 (回帰)](machine-learning/tutorials/taxi-fare.md)
 ## [リソース](machine-learning/resources/index.md)
 ### [Machine Learning 用語集](machine-learning/resources/glossary.md)
 ### [Machine Learning の基本](machine-learning/resources/basics.md)

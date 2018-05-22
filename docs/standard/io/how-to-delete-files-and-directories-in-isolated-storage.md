@@ -1,13 +1,7 @@
 ---
-title: "方法 : 分離ストレージでファイルおよびディレクトリを削除する"
-ms.custom: 
+title: '方法 : 分離ストレージでファイルおよびディレクトリを削除する'
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -23,33 +17,28 @@ helpviewer_keywords:
 - storing data using isolated storage, deleting files and directories
 - deleting directories within isolated stage file
 ms.assetid: 8fcc0dea-435b-4d40-ba4d-ba056265c202
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: cd17b85dbdc9315654d042e18d28fbfd0e2dcc52
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 9e8de7a1b5de580ca768ec0dfbcbfab2d8cb6271
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="how-to-delete-files-and-directories-in-isolated-storage"></a><span data-ttu-id="20eb9-102">方法 : 分離ストレージでファイルおよびディレクトリを削除する</span><span class="sxs-lookup"><span data-stu-id="20eb9-102">How to: Delete Files and Directories in Isolated Storage</span></span>
-<span data-ttu-id="20eb9-103">分離ストレージ ファイル内のディレクトリとファイルを削除することができます。</span><span class="sxs-lookup"><span data-stu-id="20eb9-103">You can delete directories and files within an isolated storage file.</span></span> <span data-ttu-id="20eb9-104">ストア内では、ファイル名とディレクトリ名はオペレーティング システムに依存し、仮想ファイル システムのルートに対して相対的に指定されます。</span><span class="sxs-lookup"><span data-stu-id="20eb9-104">Within a store, file and directory names are operating-system dependent and are specified as relative to the root of the virtual file system.</span></span> <span data-ttu-id="20eb9-105">Windows オペレーティング システムでは大文字小文字は区別されません。</span><span class="sxs-lookup"><span data-stu-id="20eb9-105">They are not case-sensitive on Windows operating systems.</span></span>  
+# <a name="how-to-delete-files-and-directories-in-isolated-storage"></a><span data-ttu-id="ac3c8-102">方法 : 分離ストレージでファイルおよびディレクトリを削除する</span><span class="sxs-lookup"><span data-stu-id="ac3c8-102">How to: Delete Files and Directories in Isolated Storage</span></span>
+<span data-ttu-id="ac3c8-103">分離ストレージ ファイル内のディレクトリとファイルを削除することができます。</span><span class="sxs-lookup"><span data-stu-id="ac3c8-103">You can delete directories and files within an isolated storage file.</span></span> <span data-ttu-id="ac3c8-104">ストア内では、ファイル名とディレクトリ名はオペレーティング システムに依存し、仮想ファイル システムのルートに対して相対的に指定されます。</span><span class="sxs-lookup"><span data-stu-id="ac3c8-104">Within a store, file and directory names are operating-system dependent and are specified as relative to the root of the virtual file system.</span></span> <span data-ttu-id="ac3c8-105">Windows オペレーティング システムでは大文字小文字は区別されません。</span><span class="sxs-lookup"><span data-stu-id="ac3c8-105">They are not case-sensitive on Windows operating systems.</span></span>  
   
- <span data-ttu-id="20eb9-106"><xref:System.IO.IsolatedStorage.IsolatedStorageFile?displayProperty=nameWithType> クラスには、<xref:System.IO.IsolatedStorage.IsolatedStorageFile.DeleteDirectory%2A> と <xref:System.IO.IsolatedStorage.IsolatedStorageFile.DeleteFile%2A> のディレクトリおよびファイルを削除するメソッドが 2 つあります。</span><span class="sxs-lookup"><span data-stu-id="20eb9-106">The <xref:System.IO.IsolatedStorage.IsolatedStorageFile?displayProperty=nameWithType> class supplies two methods for deleting directories and files: <xref:System.IO.IsolatedStorage.IsolatedStorageFile.DeleteDirectory%2A> and <xref:System.IO.IsolatedStorage.IsolatedStorageFile.DeleteFile%2A>.</span></span> <span data-ttu-id="20eb9-107">存在しないファイルまたはディレクトリを削除しようとする場合、<xref:System.IO.IsolatedStorage.IsolatedStorageException> の例外がスローされます。</span><span class="sxs-lookup"><span data-stu-id="20eb9-107">An <xref:System.IO.IsolatedStorage.IsolatedStorageException> exception is thrown if you try to delete a file or directory that does not exist.</span></span> <span data-ttu-id="20eb9-108">名前にワイルドカード文字を含める場合、<xref:System.IO.IsolatedStorage.IsolatedStorageFile.DeleteDirectory%2A> は <xref:System.IO.IsolatedStorage.IsolatedStorageException> の例外をスローし、<xref:System.IO.IsolatedStorage.IsolatedStorageFile.DeleteFile%2A> は <xref:System.ArgumentException> の例外をスローします。</span><span class="sxs-lookup"><span data-stu-id="20eb9-108">If you include a wildcard character in the name, <xref:System.IO.IsolatedStorage.IsolatedStorageFile.DeleteDirectory%2A> throws an <xref:System.IO.IsolatedStorage.IsolatedStorageException> exception, and <xref:System.IO.IsolatedStorage.IsolatedStorageFile.DeleteFile%2A> throws an <xref:System.ArgumentException> exception.</span></span>  
+ <span data-ttu-id="ac3c8-106"><xref:System.IO.IsolatedStorage.IsolatedStorageFile?displayProperty=nameWithType> クラスには、<xref:System.IO.IsolatedStorage.IsolatedStorageFile.DeleteDirectory%2A> と <xref:System.IO.IsolatedStorage.IsolatedStorageFile.DeleteFile%2A> のディレクトリおよびファイルを削除するメソッドが 2 つあります。</span><span class="sxs-lookup"><span data-stu-id="ac3c8-106">The <xref:System.IO.IsolatedStorage.IsolatedStorageFile?displayProperty=nameWithType> class supplies two methods for deleting directories and files: <xref:System.IO.IsolatedStorage.IsolatedStorageFile.DeleteDirectory%2A> and <xref:System.IO.IsolatedStorage.IsolatedStorageFile.DeleteFile%2A>.</span></span> <span data-ttu-id="ac3c8-107">存在しないファイルまたはディレクトリを削除しようとする場合、<xref:System.IO.IsolatedStorage.IsolatedStorageException> の例外がスローされます。</span><span class="sxs-lookup"><span data-stu-id="ac3c8-107">An <xref:System.IO.IsolatedStorage.IsolatedStorageException> exception is thrown if you try to delete a file or directory that does not exist.</span></span> <span data-ttu-id="ac3c8-108">名前にワイルドカード文字を含める場合、<xref:System.IO.IsolatedStorage.IsolatedStorageFile.DeleteDirectory%2A> は <xref:System.IO.IsolatedStorage.IsolatedStorageException> の例外をスローし、<xref:System.IO.IsolatedStorage.IsolatedStorageFile.DeleteFile%2A> は <xref:System.ArgumentException> の例外をスローします。</span><span class="sxs-lookup"><span data-stu-id="ac3c8-108">If you include a wildcard character in the name, <xref:System.IO.IsolatedStorage.IsolatedStorageFile.DeleteDirectory%2A> throws an <xref:System.IO.IsolatedStorage.IsolatedStorageException> exception, and <xref:System.IO.IsolatedStorage.IsolatedStorageFile.DeleteFile%2A> throws an <xref:System.ArgumentException> exception.</span></span>  
   
- <span data-ttu-id="20eb9-109">ディレクトリにファイルまたはサブディレクトリが含まれている場合、<xref:System.IO.IsolatedStorage.IsolatedStorageFile.DeleteDirectory%2A> メソッドは失敗します。</span><span class="sxs-lookup"><span data-stu-id="20eb9-109">The <xref:System.IO.IsolatedStorage.IsolatedStorageFile.DeleteDirectory%2A> method fails if the directory contains any files or subdirectories.</span></span> <span data-ttu-id="20eb9-110"><xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetFileNames%2A> と <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetDirectoryNames%2A> のメソッドを使用すると、既存のファイルとディレクトリを取得することができます。</span><span class="sxs-lookup"><span data-stu-id="20eb9-110">You can use the <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetFileNames%2A> and <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetDirectoryNames%2A> methods to retrieve the existing files and directories.</span></span> <span data-ttu-id="20eb9-111">ストアの仮想ファイル システムを検索する方法の詳細については、「[方法 : 分離ストレージ内でファイルおよびディレクトリを検索する](../../../docs/standard/io/how-to-find-existing-files-and-directories-in-isolated-storage.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="20eb9-111">For more information about searching the virtual file system of a store, see [How to: Find Existing Files and Directories in Isolated Storage](../../../docs/standard/io/how-to-find-existing-files-and-directories-in-isolated-storage.md).</span></span>  
+ <span data-ttu-id="ac3c8-109">ディレクトリにファイルまたはサブディレクトリが含まれている場合、<xref:System.IO.IsolatedStorage.IsolatedStorageFile.DeleteDirectory%2A> メソッドは失敗します。</span><span class="sxs-lookup"><span data-stu-id="ac3c8-109">The <xref:System.IO.IsolatedStorage.IsolatedStorageFile.DeleteDirectory%2A> method fails if the directory contains any files or subdirectories.</span></span> <span data-ttu-id="ac3c8-110"><xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetFileNames%2A> と <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetDirectoryNames%2A> のメソッドを使用すると、既存のファイルとディレクトリを取得することができます。</span><span class="sxs-lookup"><span data-stu-id="ac3c8-110">You can use the <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetFileNames%2A> and <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetDirectoryNames%2A> methods to retrieve the existing files and directories.</span></span> <span data-ttu-id="ac3c8-111">ストアの仮想ファイル システムを検索する方法の詳細については、「[方法 : 分離ストレージ内でファイルおよびディレクトリを検索する](../../../docs/standard/io/how-to-find-existing-files-and-directories-in-isolated-storage.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="ac3c8-111">For more information about searching the virtual file system of a store, see [How to: Find Existing Files and Directories in Isolated Storage](../../../docs/standard/io/how-to-find-existing-files-and-directories-in-isolated-storage.md).</span></span>  
   
-## <a name="example"></a><span data-ttu-id="20eb9-112">例</span><span class="sxs-lookup"><span data-stu-id="20eb9-112">Example</span></span>  
- <span data-ttu-id="20eb9-113">次のコード例は、いくつかのディレクトリとファイルを作成して削除します。</span><span class="sxs-lookup"><span data-stu-id="20eb9-113">The following code example creates and then deletes several directories and files.</span></span>  
+## <a name="example"></a><span data-ttu-id="ac3c8-112">例</span><span class="sxs-lookup"><span data-stu-id="ac3c8-112">Example</span></span>  
+ <span data-ttu-id="ac3c8-113">次のコード例は、いくつかのディレクトリとファイルを作成して削除します。</span><span class="sxs-lookup"><span data-stu-id="ac3c8-113">The following code example creates and then deletes several directories and files.</span></span>  
   
  [!code-cpp[Conceptual.IsolatedStorage#4](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.isolatedstorage/cpp/source4.cpp#4)]
  [!code-csharp[Conceptual.IsolatedStorage#4](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.isolatedstorage/cs/source4.cs#4)]
  [!code-vb[Conceptual.IsolatedStorage#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.isolatedstorage/vb/source4.vb#4)]  
   
-## <a name="see-also"></a><span data-ttu-id="20eb9-114">参照</span><span class="sxs-lookup"><span data-stu-id="20eb9-114">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="ac3c8-114">参照</span><span class="sxs-lookup"><span data-stu-id="ac3c8-114">See Also</span></span>  
  <xref:System.IO.IsolatedStorage.IsolatedStorageFile?displayProperty=nameWithType>  
- [<span data-ttu-id="20eb9-115">分離ストレージ</span><span class="sxs-lookup"><span data-stu-id="20eb9-115">Isolated Storage</span></span>](../../../docs/standard/io/isolated-storage.md)
+ [<span data-ttu-id="ac3c8-115">分離ストレージ</span><span class="sxs-lookup"><span data-stu-id="ac3c8-115">Isolated Storage</span></span>](../../../docs/standard/io/isolated-storage.md)

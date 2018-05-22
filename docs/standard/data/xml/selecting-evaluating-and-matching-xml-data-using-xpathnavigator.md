@@ -1,55 +1,44 @@
 ---
-title: "XPathNavigator を使用した XML データの選択、評価、および照合"
-ms.custom: 
+title: XPathNavigator を使用した XML データの選択、評価、および照合
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 46e059f8-4dc8-4185-9236-784be95228ed
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: e503c5be7bb23d15c2b11ef1b31c2eeb5e4d5aa8
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 55344de87672c09305c03c25047c2f3cc3bdab7e
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="selecting-evaluating-and-matching-xml-data-using-xpathnavigator"></a><span data-ttu-id="745db-102">XPathNavigator を使用した XML データの選択、評価、および照合</span><span class="sxs-lookup"><span data-stu-id="745db-102">Selecting, Evaluating and Matching XML Data using XPathNavigator</span></span>
-<span data-ttu-id="745db-103"><xref:System.Xml.XPath.XPathNavigator> クラスは、XPath クエリによる <xref:System.Xml.XPath.XPathDocument> または <xref:System.Xml.XmlDocument> オブジェクト内のノードの選択、XPath 式の結果の評価と検査、および <xref:System.Xml.XPath.XPathDocument> または <xref:System.Xml.XmlDocument> オブジェクト内のノードが指定された XPath 式に一致するかどうかの判定のためのメソッドを提供します。</span><span class="sxs-lookup"><span data-stu-id="745db-103">The <xref:System.Xml.XPath.XPathNavigator> class provides methods to select nodes in an <xref:System.Xml.XPath.XPathDocument> or <xref:System.Xml.XmlDocument> object using an XPath query, evaluate and examine the results of an XPath expression, and determine if a node in an <xref:System.Xml.XPath.XPathDocument> or <xref:System.Xml.XmlDocument> object matches a given XPath expression.</span></span> <span data-ttu-id="745db-104">以下のトピックでは、これらの概念および <xref:System.Xml.XPath.XPathDocument> または <xref:System.Xml.XmlDocument> オブジェクト内のノードの選択、評価、および照合に関連する他の概念について説明します。</span><span class="sxs-lookup"><span data-stu-id="745db-104">These and other concepts that relate to selecting, evaluating and matching nodes in an <xref:System.Xml.XPath.XPathDocument> or <xref:System.Xml.XmlDocument> object are described in the following topics.</span></span>  
+# <a name="selecting-evaluating-and-matching-xml-data-using-xpathnavigator"></a><span data-ttu-id="d6050-102">XPathNavigator を使用した XML データの選択、評価、および照合</span><span class="sxs-lookup"><span data-stu-id="d6050-102">Selecting, Evaluating and Matching XML Data using XPathNavigator</span></span>
+<span data-ttu-id="d6050-103"><xref:System.Xml.XPath.XPathNavigator> クラスは、XPath クエリによる <xref:System.Xml.XPath.XPathDocument> または <xref:System.Xml.XmlDocument> オブジェクト内のノードの選択、XPath 式の結果の評価と検査、および <xref:System.Xml.XPath.XPathDocument> または <xref:System.Xml.XmlDocument> オブジェクト内のノードが指定された XPath 式に一致するかどうかの判定のためのメソッドを提供します。</span><span class="sxs-lookup"><span data-stu-id="d6050-103">The <xref:System.Xml.XPath.XPathNavigator> class provides methods to select nodes in an <xref:System.Xml.XPath.XPathDocument> or <xref:System.Xml.XmlDocument> object using an XPath query, evaluate and examine the results of an XPath expression, and determine if a node in an <xref:System.Xml.XPath.XPathDocument> or <xref:System.Xml.XmlDocument> object matches a given XPath expression.</span></span> <span data-ttu-id="d6050-104">以下のトピックでは、これらの概念および <xref:System.Xml.XPath.XPathDocument> または <xref:System.Xml.XmlDocument> オブジェクト内のノードの選択、評価、および照合に関連する他の概念について説明します。</span><span class="sxs-lookup"><span data-stu-id="d6050-104">These and other concepts that relate to selecting, evaluating and matching nodes in an <xref:System.Xml.XPath.XPathDocument> or <xref:System.Xml.XmlDocument> object are described in the following topics.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="745db-105">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="745db-105">In This Section</span></span>  
- [<span data-ttu-id="745db-106">XPathNavigator を使用した XML データの選択</span><span class="sxs-lookup"><span data-stu-id="745db-106">Select XML Data Using XPathNavigator</span></span>](../../../../docs/standard/data/xml/select-xml-data-using-xpathnavigator.md)  
- <span data-ttu-id="745db-107"><xref:System.Xml.XPath.XPathNavigator> オブジェクトまたは <xref:System.Xml.XPath.XPathDocument> オブジェクト内で XPath 式を使用してノード セットを選択するために使用される <xref:System.Xml.XmlDocument> クラスの一連のメソッドについて説明します。</span><span class="sxs-lookup"><span data-stu-id="745db-107">Describes the set of <xref:System.Xml.XPath.XPathNavigator> class methods used to select a set of nodes in an <xref:System.Xml.XPath.XPathDocument> or <xref:System.Xml.XmlDocument> object using an XPath expression.</span></span>  
+## <a name="in-this-section"></a><span data-ttu-id="d6050-105">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="d6050-105">In This Section</span></span>  
+ [<span data-ttu-id="d6050-106">XPathNavigator を使用した XML データの選択</span><span class="sxs-lookup"><span data-stu-id="d6050-106">Select XML Data Using XPathNavigator</span></span>](../../../../docs/standard/data/xml/select-xml-data-using-xpathnavigator.md)  
+ <span data-ttu-id="d6050-107"><xref:System.Xml.XPath.XPathNavigator> オブジェクトまたは <xref:System.Xml.XPath.XPathDocument> オブジェクト内で XPath 式を使用してノード セットを選択するために使用される <xref:System.Xml.XmlDocument> クラスの一連のメソッドについて説明します。</span><span class="sxs-lookup"><span data-stu-id="d6050-107">Describes the set of <xref:System.Xml.XPath.XPathNavigator> class methods used to select a set of nodes in an <xref:System.Xml.XPath.XPathDocument> or <xref:System.Xml.XmlDocument> object using an XPath expression.</span></span>  
   
- [<span data-ttu-id="745db-108">XPathNavigator による XPath 式の評価</span><span class="sxs-lookup"><span data-stu-id="745db-108">Evaluate XPath Expressions using XPathNavigator</span></span>](../../../../docs/standard/data/xml/evaluate-xpath-expressions-using-xpathnavigator.md)  
- <span data-ttu-id="745db-109">XPath 式の評価に使用される <xref:System.Xml.XPath.XPathNavigator.Evaluate%2A> クラスの <xref:System.Xml.XPath.XPathNavigator> メソッドについて説明します。</span><span class="sxs-lookup"><span data-stu-id="745db-109">Describes the <xref:System.Xml.XPath.XPathNavigator.Evaluate%2A> method of the <xref:System.Xml.XPath.XPathNavigator> class used to evaluate an XPath expression.</span></span>  
+ [<span data-ttu-id="d6050-108">XPathNavigator による XPath 式の評価</span><span class="sxs-lookup"><span data-stu-id="d6050-108">Evaluate XPath Expressions using XPathNavigator</span></span>](../../../../docs/standard/data/xml/evaluate-xpath-expressions-using-xpathnavigator.md)  
+ <span data-ttu-id="d6050-109">XPath 式の評価に使用される <xref:System.Xml.XPath.XPathNavigator.Evaluate%2A> クラスの <xref:System.Xml.XPath.XPathNavigator> メソッドについて説明します。</span><span class="sxs-lookup"><span data-stu-id="d6050-109">Describes the <xref:System.Xml.XPath.XPathNavigator.Evaluate%2A> method of the <xref:System.Xml.XPath.XPathNavigator> class used to evaluate an XPath expression.</span></span>  
   
- [<span data-ttu-id="745db-110">XPathNavigator によるノードの一致</span><span class="sxs-lookup"><span data-stu-id="745db-110">Matching Nodes using XPathNavigator</span></span>](../../../../docs/standard/data/xml/matching-nodes-using-xpathnavigator.md)  
- <span data-ttu-id="745db-111">ノードが XPath 式に一致するかどうかを判定するために使用される <xref:System.Xml.XPath.XPathNavigator.Matches%2A> クラスの <xref:System.Xml.XPath.XPathNavigator> メソッドについて説明します。</span><span class="sxs-lookup"><span data-stu-id="745db-111">Describes the <xref:System.Xml.XPath.XPathNavigator.Matches%2A> method of the <xref:System.Xml.XPath.XPathNavigator> class used to determine if a node matches an XPath expression.</span></span>  
+ [<span data-ttu-id="d6050-110">XPathNavigator によるノードの一致</span><span class="sxs-lookup"><span data-stu-id="d6050-110">Matching Nodes using XPathNavigator</span></span>](../../../../docs/standard/data/xml/matching-nodes-using-xpathnavigator.md)  
+ <span data-ttu-id="d6050-111">ノードが XPath 式に一致するかどうかを判定するために使用される <xref:System.Xml.XPath.XPathNavigator.Matches%2A> クラスの <xref:System.Xml.XPath.XPathNavigator> メソッドについて説明します。</span><span class="sxs-lookup"><span data-stu-id="d6050-111">Describes the <xref:System.Xml.XPath.XPathNavigator.Matches%2A> method of the <xref:System.Xml.XPath.XPathNavigator> class used to determine if a node matches an XPath expression.</span></span>  
   
- [<span data-ttu-id="745db-112">XPath クエリで認識されるノード型</span><span class="sxs-lookup"><span data-stu-id="745db-112">Node Types Recognized with XPath Queries</span></span>](../../../../docs/standard/data/xml/node-types-recognized-with-xpath-queries.md)  
- <span data-ttu-id="745db-113">XPath クエリで認識されるノードの型について説明します。</span><span class="sxs-lookup"><span data-stu-id="745db-113">Describes the types of nodes recognized in an XPath query.</span></span>  
+ [<span data-ttu-id="d6050-112">XPath クエリで認識されるノード型</span><span class="sxs-lookup"><span data-stu-id="d6050-112">Node Types Recognized with XPath Queries</span></span>](../../../../docs/standard/data/xml/node-types-recognized-with-xpath-queries.md)  
+ <span data-ttu-id="d6050-113">XPath クエリで認識されるノードの型について説明します。</span><span class="sxs-lookup"><span data-stu-id="d6050-113">Describes the types of nodes recognized in an XPath query.</span></span>  
   
- [<span data-ttu-id="745db-114">XPath クエリおよび名前空間</span><span class="sxs-lookup"><span data-stu-id="745db-114">XPath Queries and Namespaces</span></span>](../../../../docs/standard/data/xml/xpath-queries-and-namespaces.md)  
- <span data-ttu-id="745db-115">XPath クエリでの名前空間の使用について説明します。</span><span class="sxs-lookup"><span data-stu-id="745db-115">Describes the use of namespaces in an XPath query.</span></span>  
+ [<span data-ttu-id="d6050-114">XPath クエリおよび名前空間</span><span class="sxs-lookup"><span data-stu-id="d6050-114">XPath Queries and Namespaces</span></span>](../../../../docs/standard/data/xml/xpath-queries-and-namespaces.md)  
+ <span data-ttu-id="d6050-115">XPath クエリでの名前空間の使用について説明します。</span><span class="sxs-lookup"><span data-stu-id="d6050-115">Describes the use of namespaces in an XPath query.</span></span>  
   
- [<span data-ttu-id="745db-116">コンパイルされた XPath 式</span><span class="sxs-lookup"><span data-stu-id="745db-116">Compiled XPath Expressions</span></span>](../../../../docs/standard/data/xml/compiled-xpath-expressions.md)  
- <span data-ttu-id="745db-117">コンパイル済みの XPath クエリを表す <xref:System.Xml.XPath.XPathExpression> クラスについて説明します。</span><span class="sxs-lookup"><span data-stu-id="745db-117">Describes the <xref:System.Xml.XPath.XPathExpression> class that represents a compiled XPath query.</span></span>  
+ [<span data-ttu-id="d6050-116">コンパイルされた XPath 式</span><span class="sxs-lookup"><span data-stu-id="d6050-116">Compiled XPath Expressions</span></span>](../../../../docs/standard/data/xml/compiled-xpath-expressions.md)  
+ <span data-ttu-id="d6050-117">コンパイル済みの XPath クエリを表す <xref:System.Xml.XPath.XPathExpression> クラスについて説明します。</span><span class="sxs-lookup"><span data-stu-id="d6050-117">Describes the <xref:System.Xml.XPath.XPathExpression> class that represents a compiled XPath query.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="745db-118">参照</span><span class="sxs-lookup"><span data-stu-id="745db-118">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="d6050-118">参照</span><span class="sxs-lookup"><span data-stu-id="d6050-118">See Also</span></span>  
  <xref:System.Xml.XmlDocument>  
  <xref:System.Xml.XPath.XPathDocument>  
  <xref:System.Xml.XPath.XPathNavigator>  
- [<span data-ttu-id="745db-119">XPath データ モデルを使用した XML データの処理</span><span class="sxs-lookup"><span data-stu-id="745db-119">Process XML Data Using the XPath Data Model</span></span>](../../../../docs/standard/data/xml/process-xml-data-using-the-xpath-data-model.md)  
- [<span data-ttu-id="745db-120">XPathDocument および XmlDocument を使用した XML データの読み取り</span><span class="sxs-lookup"><span data-stu-id="745db-120">Reading XML Data using XPathDocument and XmlDocument</span></span>](../../../../docs/standard/data/xml/reading-xml-data-using-xpathdocument-and-xmldocument.md)  
- [<span data-ttu-id="745db-121">XPathNavigator による XML データへのアクセス</span><span class="sxs-lookup"><span data-stu-id="745db-121">Accessing XML Data using XPathNavigator</span></span>](../../../../docs/standard/data/xml/accessing-xml-data-using-xpathnavigator.md)  
- [<span data-ttu-id="745db-122">XPathNavigator による XML データの編集</span><span class="sxs-lookup"><span data-stu-id="745db-122">Editing XML Data using XPathNavigator</span></span>](../../../../docs/standard/data/xml/editing-xml-data-using-xpathnavigator.md)  
- [<span data-ttu-id="745db-123">XPathNavigator を使用したスキーマ検証</span><span class="sxs-lookup"><span data-stu-id="745db-123">Schema Validation using XPathNavigator</span></span>](../../../../docs/standard/data/xml/schema-validation-using-xpathnavigator.md)
+ [<span data-ttu-id="d6050-119">XPath データ モデルを使用した XML データの処理</span><span class="sxs-lookup"><span data-stu-id="d6050-119">Process XML Data Using the XPath Data Model</span></span>](../../../../docs/standard/data/xml/process-xml-data-using-the-xpath-data-model.md)  
+ [<span data-ttu-id="d6050-120">XPathDocument および XmlDocument を使用した XML データの読み取り</span><span class="sxs-lookup"><span data-stu-id="d6050-120">Reading XML Data using XPathDocument and XmlDocument</span></span>](../../../../docs/standard/data/xml/reading-xml-data-using-xpathdocument-and-xmldocument.md)  
+ [<span data-ttu-id="d6050-121">XPathNavigator による XML データへのアクセス</span><span class="sxs-lookup"><span data-stu-id="d6050-121">Accessing XML Data using XPathNavigator</span></span>](../../../../docs/standard/data/xml/accessing-xml-data-using-xpathnavigator.md)  
+ [<span data-ttu-id="d6050-122">XPathNavigator による XML データの編集</span><span class="sxs-lookup"><span data-stu-id="d6050-122">Editing XML Data using XPathNavigator</span></span>](../../../../docs/standard/data/xml/editing-xml-data-using-xpathnavigator.md)  
+ [<span data-ttu-id="d6050-123">XPathNavigator を使用したスキーマ検証</span><span class="sxs-lookup"><span data-stu-id="d6050-123">Schema Validation using XPathNavigator</span></span>](../../../../docs/standard/data/xml/schema-validation-using-xpathnavigator.md)

@@ -1,45 +1,34 @@
 ---
-title: "DOM の拡張"
-ms.custom: 
+title: DOM の拡張
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: b5489c96-4afd-439a-a25d-fc82eb4a148d
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 06cac8d76b17f3ef32931ea21d0556085f05d7b1
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 93821b844d35f005afa1702e4f7922ca1320c962
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="extending-the-dom"></a><span data-ttu-id="f1748-102">DOM の拡張</span><span class="sxs-lookup"><span data-stu-id="f1748-102">Extending the DOM</span></span>
-<span data-ttu-id="f1748-103">Microsoft .NET Framework は、XML ドキュメント オブジェクト モデル (DOM) の実装を提供するクラスの基本セットを備えています。</span><span class="sxs-lookup"><span data-stu-id="f1748-103">The Microsoft .NET Framework includes a base set of classes that provides an implementation of the XML Document Object Model (DOM).</span></span> <span data-ttu-id="f1748-104"><xref:System.Xml.XmlNode> およびその派生クラスのメソッドとプロパティを利用して、XML ドキュメントの内容および構造の中で移動し、それらに対してクエリを実行し、それらを変更することができます。</span><span class="sxs-lookup"><span data-stu-id="f1748-104">The <xref:System.Xml.XmlNode>, and its derived classes, provides methods and properties that allow you to navigate, query, and modify the content and structure of an XML document.</span></span>  
+# <a name="extending-the-dom"></a><span data-ttu-id="60159-102">DOM の拡張</span><span class="sxs-lookup"><span data-stu-id="60159-102">Extending the DOM</span></span>
+<span data-ttu-id="60159-103">Microsoft .NET Framework は、XML ドキュメント オブジェクト モデル (DOM) の実装を提供するクラスの基本セットを備えています。</span><span class="sxs-lookup"><span data-stu-id="60159-103">The Microsoft .NET Framework includes a base set of classes that provides an implementation of the XML Document Object Model (DOM).</span></span> <span data-ttu-id="60159-104"><xref:System.Xml.XmlNode> およびその派生クラスのメソッドとプロパティを利用して、XML ドキュメントの内容および構造の中で移動し、それらに対してクエリを実行し、それらを変更することができます。</span><span class="sxs-lookup"><span data-stu-id="60159-104">The <xref:System.Xml.XmlNode>, and its derived classes, provides methods and properties that allow you to navigate, query, and modify the content and structure of an XML document.</span></span>  
   
- <span data-ttu-id="f1748-105">DOM を使用して XML コンテンツをメモリに読み込むと、作成されたノードには、ノード名やノード型などの情報が格納されます。</span><span class="sxs-lookup"><span data-stu-id="f1748-105">When XML content is loaded into memory using the DOM, the nodes created contain information such as node name, node type, and so on.</span></span> <span data-ttu-id="f1748-106">場合によっては、基本クラスによっては提供されない特定のノード情報が必要になることもあります。</span><span class="sxs-lookup"><span data-stu-id="f1748-106">There may be occasions where you require specific node information that the base classes do not provide.</span></span> <span data-ttu-id="f1748-107">たとえば、ノードの行番号と位置が必要な場合です。</span><span class="sxs-lookup"><span data-stu-id="f1748-107">For example, you may want to see the line number and position of the node.</span></span> <span data-ttu-id="f1748-108">このような場合は、既存の DOM クラスから新しいクラスを派生させ、追加機能を持たせることができます。</span><span class="sxs-lookup"><span data-stu-id="f1748-108">In this case, you can derive new classes from the existing DOM classes and add additional functionality.</span></span>  
+ <span data-ttu-id="60159-105">DOM を使用して XML コンテンツをメモリに読み込むと、作成されたノードには、ノード名やノード型などの情報が格納されます。</span><span class="sxs-lookup"><span data-stu-id="60159-105">When XML content is loaded into memory using the DOM, the nodes created contain information such as node name, node type, and so on.</span></span> <span data-ttu-id="60159-106">場合によっては、基本クラスによっては提供されない特定のノード情報が必要になることもあります。</span><span class="sxs-lookup"><span data-stu-id="60159-106">There may be occasions where you require specific node information that the base classes do not provide.</span></span> <span data-ttu-id="60159-107">たとえば、ノードの行番号と位置が必要な場合です。</span><span class="sxs-lookup"><span data-stu-id="60159-107">For example, you may want to see the line number and position of the node.</span></span> <span data-ttu-id="60159-108">このような場合は、既存の DOM クラスから新しいクラスを派生させ、追加機能を持たせることができます。</span><span class="sxs-lookup"><span data-stu-id="60159-108">In this case, you can derive new classes from the existing DOM classes and add additional functionality.</span></span>  
   
- <span data-ttu-id="f1748-109">新しいクラスを派生させるときの一般的なガイドラインは、次の 2 つです。</span><span class="sxs-lookup"><span data-stu-id="f1748-109">There are two general guidelines when deriving new classes:</span></span>  
+ <span data-ttu-id="60159-109">新しいクラスを派生させるときの一般的なガイドラインは、次の 2 つです。</span><span class="sxs-lookup"><span data-stu-id="60159-109">There are two general guidelines when deriving new classes:</span></span>  
   
--   <span data-ttu-id="f1748-110"><xref:System.Xml.XmlNode> クラスからはクラスを派生させないことをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="f1748-110">It is recommended that you never derive from the <xref:System.Xml.XmlNode> class.</span></span> <span data-ttu-id="f1748-111">その代わりに、目的とするノード型に対応するクラスからクラスを派生させることをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="f1748-111">Instead, it is recommended that you derive classes from the class corresponding to the node type that you are interested in.</span></span> <span data-ttu-id="f1748-112">たとえば、属性ノードの追加情報を返すようにする場合は、<xref:System.Xml.XmlAttribute> クラスからクラスを派生させます。</span><span class="sxs-lookup"><span data-stu-id="f1748-112">For example, if you want to return additional information on attribute nodes, you can derive from the <xref:System.Xml.XmlAttribute> class.</span></span>  
+-   <span data-ttu-id="60159-110"><xref:System.Xml.XmlNode> クラスからはクラスを派生させないことをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="60159-110">It is recommended that you never derive from the <xref:System.Xml.XmlNode> class.</span></span> <span data-ttu-id="60159-111">その代わりに、目的とするノード型に対応するクラスからクラスを派生させることをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="60159-111">Instead, it is recommended that you derive classes from the class corresponding to the node type that you are interested in.</span></span> <span data-ttu-id="60159-112">たとえば、属性ノードの追加情報を返すようにする場合は、<xref:System.Xml.XmlAttribute> クラスからクラスを派生させます。</span><span class="sxs-lookup"><span data-stu-id="60159-112">For example, if you want to return additional information on attribute nodes, you can derive from the <xref:System.Xml.XmlAttribute> class.</span></span>  
   
--   <span data-ttu-id="f1748-113">ノード作成メソッド以外の関数をオーバーライドするときは、常にその関数の基本バージョンを呼び出してから、他の処理を追加することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="f1748-113">Except for the node creation methods, it is recommended that when overriding a function, you should always call the base version of the function and then add any additional processing.</span></span>  
+-   <span data-ttu-id="60159-113">ノード作成メソッド以外の関数をオーバーライドするときは、常にその関数の基本バージョンを呼び出してから、他の処理を追加することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="60159-113">Except for the node creation methods, it is recommended that when overriding a function, you should always call the base version of the function and then add any additional processing.</span></span>  
   
-## <a name="creating-your-own-node-instances"></a><span data-ttu-id="f1748-114">独自のノード インスタンスの作成</span><span class="sxs-lookup"><span data-stu-id="f1748-114">Creating Your Own Node Instances</span></span>  
- <span data-ttu-id="f1748-115"><xref:System.Xml.XmlDocument> クラスは、ノード作成メソッドを持っています。</span><span class="sxs-lookup"><span data-stu-id="f1748-115">The <xref:System.Xml.XmlDocument> class contains node creation methods.</span></span> <span data-ttu-id="f1748-116">XML ファイルが読み込まれると、ノード作成メソッドが呼び出され、ノードが作成されます。</span><span class="sxs-lookup"><span data-stu-id="f1748-116">When an XML file is loaded, these methods are called to create the nodes.</span></span> <span data-ttu-id="f1748-117">これらのメソッドをオーバーライドすると、ドキュメントが読み込まれるときに独自のノード インスタンスを作成できます。</span><span class="sxs-lookup"><span data-stu-id="f1748-117">You can override these methods so that your node instances are created when a document is loaded.</span></span> <span data-ttu-id="f1748-118">たとえば、<xref:System.Xml.XmlElement> クラスを拡張すると、<xref:System.Xml.XmlDocument> クラスが継承され、<xref:System.Xml.XmlDocument.CreateElement%2A> メソッドがオーバーライドされます。</span><span class="sxs-lookup"><span data-stu-id="f1748-118">For example, if you have extended the <xref:System.Xml.XmlElement> class, you would inherit the <xref:System.Xml.XmlDocument> class and override the <xref:System.Xml.XmlDocument.CreateElement%2A> method.</span></span>  
+## <a name="creating-your-own-node-instances"></a><span data-ttu-id="60159-114">独自のノード インスタンスの作成</span><span class="sxs-lookup"><span data-stu-id="60159-114">Creating Your Own Node Instances</span></span>  
+ <span data-ttu-id="60159-115"><xref:System.Xml.XmlDocument> クラスは、ノード作成メソッドを持っています。</span><span class="sxs-lookup"><span data-stu-id="60159-115">The <xref:System.Xml.XmlDocument> class contains node creation methods.</span></span> <span data-ttu-id="60159-116">XML ファイルが読み込まれると、ノード作成メソッドが呼び出され、ノードが作成されます。</span><span class="sxs-lookup"><span data-stu-id="60159-116">When an XML file is loaded, these methods are called to create the nodes.</span></span> <span data-ttu-id="60159-117">これらのメソッドをオーバーライドすると、ドキュメントが読み込まれるときに独自のノード インスタンスを作成できます。</span><span class="sxs-lookup"><span data-stu-id="60159-117">You can override these methods so that your node instances are created when a document is loaded.</span></span> <span data-ttu-id="60159-118">たとえば、<xref:System.Xml.XmlElement> クラスを拡張すると、<xref:System.Xml.XmlDocument> クラスが継承され、<xref:System.Xml.XmlDocument.CreateElement%2A> メソッドがオーバーライドされます。</span><span class="sxs-lookup"><span data-stu-id="60159-118">For example, if you have extended the <xref:System.Xml.XmlElement> class, you would inherit the <xref:System.Xml.XmlDocument> class and override the <xref:System.Xml.XmlDocument.CreateElement%2A> method.</span></span>  
   
- <span data-ttu-id="f1748-119"><xref:System.Xml.XmlDocument.CreateElement%2A> メソッドをオーバーライドし、<xref:System.Xml.XmlElement> クラスの独自の実装を返す方法を次の例に示します。</span><span class="sxs-lookup"><span data-stu-id="f1748-119">The following example shows how to override the <xref:System.Xml.XmlDocument.CreateElement%2A> method to return your implementation of the <xref:System.Xml.XmlElement> class.</span></span>  
+ <span data-ttu-id="60159-119"><xref:System.Xml.XmlDocument.CreateElement%2A> メソッドをオーバーライドし、<xref:System.Xml.XmlElement> クラスの独自の実装を返す方法を次の例に示します。</span><span class="sxs-lookup"><span data-stu-id="60159-119">The following example shows how to override the <xref:System.Xml.XmlDocument.CreateElement%2A> method to return your implementation of the <xref:System.Xml.XmlElement> class.</span></span>  
   
 ```vb  
 Class LineInfoDocument  
@@ -59,10 +48,10 @@ class LineInfoDocument : XmlDocument {
   }  
 ```  
   
-## <a name="extending-a-class"></a><span data-ttu-id="f1748-120">クラスの拡張</span><span class="sxs-lookup"><span data-stu-id="f1748-120">Extending a Class</span></span>  
- <span data-ttu-id="f1748-121">クラスを拡張するには、既存の DOM クラスの 1 つから独自のクラスを派生させます。</span><span class="sxs-lookup"><span data-stu-id="f1748-121">To extend a class, derive your class from one of the existing DOM classes.</span></span> <span data-ttu-id="f1748-122">その後、基本クラスの仮想メソッドやプロパティをオーバーライドしたり、独自のメソッドやプロパティを追加します。</span><span class="sxs-lookup"><span data-stu-id="f1748-122">You can then override any of the virtual methods or properties in the base class, or add your own.</span></span>  
+## <a name="extending-a-class"></a><span data-ttu-id="60159-120">クラスの拡張</span><span class="sxs-lookup"><span data-stu-id="60159-120">Extending a Class</span></span>  
+ <span data-ttu-id="60159-121">クラスを拡張するには、既存の DOM クラスの 1 つから独自のクラスを派生させます。</span><span class="sxs-lookup"><span data-stu-id="60159-121">To extend a class, derive your class from one of the existing DOM classes.</span></span> <span data-ttu-id="60159-122">その後、基本クラスの仮想メソッドやプロパティをオーバーライドしたり、独自のメソッドやプロパティを追加します。</span><span class="sxs-lookup"><span data-stu-id="60159-122">You can then override any of the virtual methods or properties in the base class, or add your own.</span></span>  
   
- <span data-ttu-id="f1748-123">次の例では、<xref:System.Xml.XmlElement> クラスと <xref:System.Xml.IXmlLineInfo> インターフェイスを実装する新しいクラスを作成しています。</span><span class="sxs-lookup"><span data-stu-id="f1748-123">In the following example, a new class is created, which implements the <xref:System.Xml.XmlElement> class and the <xref:System.Xml.IXmlLineInfo> interface.</span></span> <span data-ttu-id="f1748-124">行番号を収集できるようにする追加のメソッドとプロパティが定義されます。</span><span class="sxs-lookup"><span data-stu-id="f1748-124">Additional methods and properties are defined which allows users to gather line information.</span></span>  
+ <span data-ttu-id="60159-123">次の例では、<xref:System.Xml.XmlElement> クラスと <xref:System.Xml.IXmlLineInfo> インターフェイスを実装する新しいクラスを作成しています。</span><span class="sxs-lookup"><span data-stu-id="60159-123">In the following example, a new class is created, which implements the <xref:System.Xml.XmlElement> class and the <xref:System.Xml.IXmlLineInfo> interface.</span></span> <span data-ttu-id="60159-124">行番号を収集できるようにする追加のメソッドとプロパティが定義されます。</span><span class="sxs-lookup"><span data-stu-id="60159-124">Additional methods and properties are defined which allows users to gather line information.</span></span>  
   
 ```vb  
 Class LineInfoElement  
@@ -126,8 +115,8 @@ class LineInfoElement : XmlElement, IXmlLineInfo {
 } // End LineInfoElement class.  
 ```  
   
-### <a name="example"></a><span data-ttu-id="f1748-125">例</span><span class="sxs-lookup"><span data-stu-id="f1748-125">Example</span></span>  
- <span data-ttu-id="f1748-126">XML ドキュメントの要素数を数える例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="f1748-126">The following example counts the number of elements in an XML document.</span></span>  
+### <a name="example"></a><span data-ttu-id="60159-125">例</span><span class="sxs-lookup"><span data-stu-id="60159-125">Example</span></span>  
+ <span data-ttu-id="60159-126">XML ドキュメントの要素数を数える例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="60159-126">The following example counts the number of elements in an XML document.</span></span>  
   
 ```vb  
 Imports System  
@@ -229,8 +218,8 @@ public class Test {
 }   
 ```  
   
-##### <a name="input"></a><span data-ttu-id="f1748-127">入力</span><span class="sxs-lookup"><span data-stu-id="f1748-127">Input</span></span>  
- <span data-ttu-id="f1748-128">book.xml</span><span class="sxs-lookup"><span data-stu-id="f1748-128">book.xml</span></span>  
+##### <a name="input"></a><span data-ttu-id="60159-127">入力</span><span class="sxs-lookup"><span data-stu-id="60159-127">Input</span></span>  
+ <span data-ttu-id="60159-128">book.xml</span><span class="sxs-lookup"><span data-stu-id="60159-128">book.xml</span></span>  
   
 ```xml  
 <!--sample XML fragment-->  
@@ -240,23 +229,23 @@ public class Test {
 </book>  
 ```  
   
-##### <a name="output"></a><span data-ttu-id="f1748-129">出力</span><span class="sxs-lookup"><span data-stu-id="f1748-129">Output</span></span>  
+##### <a name="output"></a><span data-ttu-id="60159-129">出力</span><span class="sxs-lookup"><span data-stu-id="60159-129">Output</span></span>  
   
 ```  
 Number of elements in book.xml: 3  
 ```  
   
- <span data-ttu-id="f1748-130">XML DOM クラス (System.Xml) を拡張する方法の例については、www.gotdotnet.com/userfiles/XMLDom/extendDOM.zip を参照してください。</span><span class="sxs-lookup"><span data-stu-id="f1748-130">For an example showing how to extend the XML DOM classes (System.Xml), see www.gotdotnet.com/userfiles/XMLDom/extendDOM.zip.</span></span>  
+ <span data-ttu-id="60159-130">XML DOM クラス (System.Xml) を拡張する方法の例については、www.gotdotnet.com/userfiles/XMLDom/extendDOM.zip を参照してください。</span><span class="sxs-lookup"><span data-stu-id="60159-130">For an example showing how to extend the XML DOM classes (System.Xml), see www.gotdotnet.com/userfiles/XMLDom/extendDOM.zip.</span></span>  
   
-## <a name="node-event-handler"></a><span data-ttu-id="f1748-131">ノード イベント ハンドラー</span><span class="sxs-lookup"><span data-stu-id="f1748-131">Node Event Handler</span></span>  
- <span data-ttu-id="f1748-132">.NET Framework による DOM の実装には、XML ドキュメントのノードが変更されたときにイベントを受け取って処理できるようにする、イベント システムも含まれています。</span><span class="sxs-lookup"><span data-stu-id="f1748-132">The .NET Framework implementation of the DOM also includes an event system that enables you to receive and handle events when nodes in an XML document change.</span></span> <span data-ttu-id="f1748-133"><xref:System.Xml.XmlNodeChangedEventHandler> クラスと <xref:System.Xml.XmlNodeChangedEventArgs> クラスを使用して、`NodeChanged` イベント、`NodeChanging` イベント、`NodeInserted` イベント、`NodeInserting` イベント、`NodeRemoved` イベント、および `NodeRemoving` イベントをキャプチャできます。</span><span class="sxs-lookup"><span data-stu-id="f1748-133">Using the <xref:System.Xml.XmlNodeChangedEventHandler> and <xref:System.Xml.XmlNodeChangedEventArgs> classes, you can capture `NodeChanged`, `NodeChanging`, `NodeInserted`, `NodeInserting`, `NodeRemoved`, and `NodeRemoving` events.</span></span>  
+## <a name="node-event-handler"></a><span data-ttu-id="60159-131">ノード イベント ハンドラー</span><span class="sxs-lookup"><span data-stu-id="60159-131">Node Event Handler</span></span>  
+ <span data-ttu-id="60159-132">.NET Framework による DOM の実装には、XML ドキュメントのノードが変更されたときにイベントを受け取って処理できるようにする、イベント システムも含まれています。</span><span class="sxs-lookup"><span data-stu-id="60159-132">The .NET Framework implementation of the DOM also includes an event system that enables you to receive and handle events when nodes in an XML document change.</span></span> <span data-ttu-id="60159-133"><xref:System.Xml.XmlNodeChangedEventHandler> クラスと <xref:System.Xml.XmlNodeChangedEventArgs> クラスを使用して、`NodeChanged` イベント、`NodeChanging` イベント、`NodeInserted` イベント、`NodeInserting` イベント、`NodeRemoved` イベント、および `NodeRemoving` イベントをキャプチャできます。</span><span class="sxs-lookup"><span data-stu-id="60159-133">Using the <xref:System.Xml.XmlNodeChangedEventHandler> and <xref:System.Xml.XmlNodeChangedEventArgs> classes, you can capture `NodeChanged`, `NodeChanging`, `NodeInserted`, `NodeInserting`, `NodeRemoved`, and `NodeRemoving` events.</span></span>  
   
- <span data-ttu-id="f1748-134">イベント処理プロセスは、派生クラスでも、元の DOM クラスとまったく同じように動作します。</span><span class="sxs-lookup"><span data-stu-id="f1748-134">The event-handling process works exactly the same in derived classes as it would in the original DOM classes.</span></span>  
+ <span data-ttu-id="60159-134">イベント処理プロセスは、派生クラスでも、元の DOM クラスとまったく同じように動作します。</span><span class="sxs-lookup"><span data-stu-id="60159-134">The event-handling process works exactly the same in derived classes as it would in the original DOM classes.</span></span>  
   
- <span data-ttu-id="f1748-135">ノード イベント処理については、「[イベント](../../../../docs/standard/events/index.md)」と「<xref:System.Xml.XmlNodeChangedEventHandler>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="f1748-135">For more information regarding node event handling, see [Events](../../../../docs/standard/events/index.md) and <xref:System.Xml.XmlNodeChangedEventHandler>.</span></span>  
+ <span data-ttu-id="60159-135">ノード イベント処理については、「[イベント](../../../../docs/standard/events/index.md)」と「<xref:System.Xml.XmlNodeChangedEventHandler>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="60159-135">For more information regarding node event handling, see [Events](../../../../docs/standard/events/index.md) and <xref:System.Xml.XmlNodeChangedEventHandler>.</span></span>  
   
-## <a name="default-attributes-and-the-createelement-method"></a><span data-ttu-id="f1748-136">既定の属性と CreateElement メソッド</span><span class="sxs-lookup"><span data-stu-id="f1748-136">Default Attributes and the CreateElement Method</span></span>  
- <span data-ttu-id="f1748-137">派生クラスの <xref:System.Xml.XmlDocument.CreateElement%2A> メソッドをオーバーライドした場合は、ドキュメントの編集中に新しい要素を作成しても、既定の属性は追加されません。</span><span class="sxs-lookup"><span data-stu-id="f1748-137">If you are overriding the <xref:System.Xml.XmlDocument.CreateElement%2A> method in a derived class, default attributes are not added when you are creating new elements while editing the document.</span></span> <span data-ttu-id="f1748-138">これは編集中だけの問題です。</span><span class="sxs-lookup"><span data-stu-id="f1748-138">This is only an issue while editing.</span></span> <span data-ttu-id="f1748-139"><xref:System.Xml.XmlDocument.CreateElement%2A> メソッドが既定の属性を <xref:System.Xml.XmlDocument> に追加する機能を実行するため、この機能は <xref:System.Xml.XmlDocument.CreateElement%2A> メソッドにコーディングする必要があります。</span><span class="sxs-lookup"><span data-stu-id="f1748-139">Because the <xref:System.Xml.XmlDocument.CreateElement%2A> method is responsible for adding default attributes to an <xref:System.Xml.XmlDocument>, you must code this functionality in the <xref:System.Xml.XmlDocument.CreateElement%2A> method.</span></span> <span data-ttu-id="f1748-140">既定の属性が含まれた <xref:System.Xml.XmlDocument> を読み込めば、既定の属性が正しく処理されます。</span><span class="sxs-lookup"><span data-stu-id="f1748-140">If you are loading an <xref:System.Xml.XmlDocument> that includes default attributes, they will be handled correctly.</span></span> <span data-ttu-id="f1748-141">既定の属性の詳細については、「[DOM の要素に対する新しい属性の作成](../../../../docs/standard/data/xml/creating-new-attributes-for-elements-in-the-dom.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="f1748-141">For more information on default attributes, see [Creating New Attributes for Elements in the DOM](../../../../docs/standard/data/xml/creating-new-attributes-for-elements-in-the-dom.md).</span></span>  
+## <a name="default-attributes-and-the-createelement-method"></a><span data-ttu-id="60159-136">既定の属性と CreateElement メソッド</span><span class="sxs-lookup"><span data-stu-id="60159-136">Default Attributes and the CreateElement Method</span></span>  
+ <span data-ttu-id="60159-137">派生クラスの <xref:System.Xml.XmlDocument.CreateElement%2A> メソッドをオーバーライドした場合は、ドキュメントの編集中に新しい要素を作成しても、既定の属性は追加されません。</span><span class="sxs-lookup"><span data-stu-id="60159-137">If you are overriding the <xref:System.Xml.XmlDocument.CreateElement%2A> method in a derived class, default attributes are not added when you are creating new elements while editing the document.</span></span> <span data-ttu-id="60159-138">これは編集中だけの問題です。</span><span class="sxs-lookup"><span data-stu-id="60159-138">This is only an issue while editing.</span></span> <span data-ttu-id="60159-139"><xref:System.Xml.XmlDocument.CreateElement%2A> メソッドが既定の属性を <xref:System.Xml.XmlDocument> に追加する機能を実行するため、この機能は <xref:System.Xml.XmlDocument.CreateElement%2A> メソッドにコーディングする必要があります。</span><span class="sxs-lookup"><span data-stu-id="60159-139">Because the <xref:System.Xml.XmlDocument.CreateElement%2A> method is responsible for adding default attributes to an <xref:System.Xml.XmlDocument>, you must code this functionality in the <xref:System.Xml.XmlDocument.CreateElement%2A> method.</span></span> <span data-ttu-id="60159-140">既定の属性が含まれた <xref:System.Xml.XmlDocument> を読み込めば、既定の属性が正しく処理されます。</span><span class="sxs-lookup"><span data-stu-id="60159-140">If you are loading an <xref:System.Xml.XmlDocument> that includes default attributes, they will be handled correctly.</span></span> <span data-ttu-id="60159-141">既定の属性の詳細については、「[DOM の要素に対する新しい属性の作成](../../../../docs/standard/data/xml/creating-new-attributes-for-elements-in-the-dom.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="60159-141">For more information on default attributes, see [Creating New Attributes for Elements in the DOM](../../../../docs/standard/data/xml/creating-new-attributes-for-elements-in-the-dom.md).</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="f1748-142">参照</span><span class="sxs-lookup"><span data-stu-id="f1748-142">See Also</span></span>  
- [<span data-ttu-id="f1748-143">XML ドキュメント オブジェクト モデル (DOM)</span><span class="sxs-lookup"><span data-stu-id="f1748-143">XML Document Object Model (DOM)</span></span>](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+## <a name="see-also"></a><span data-ttu-id="60159-142">参照</span><span class="sxs-lookup"><span data-stu-id="60159-142">See Also</span></span>  
+ [<span data-ttu-id="60159-143">XML ドキュメント オブジェクト モデル (DOM)</span><span class="sxs-lookup"><span data-stu-id="60159-143">XML Document Object Model (DOM)</span></span>](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
