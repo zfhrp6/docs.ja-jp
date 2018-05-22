@@ -1,31 +1,22 @@
 ---
-title: "方法: ホストに対して ping を実行"
-ms.custom: 
+title: '方法: ホストに対して ping を実行'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - Ping
 ms.assetid: bbf20f5b-eca1-4661-af04-cb8837f9af05
-caps.latest.revision: 
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload:
-- dotnet
-ms.openlocfilehash: 21370d87793bac9ea70e9faf7529e5d6ae16f4ec
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 62ab62520e42fcf3ecfb8bd7fd6b57485451e6e4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="how-to-ping-a-host"></a><span data-ttu-id="9b51b-102">方法: ホストに対して ping を実行</span><span class="sxs-lookup"><span data-stu-id="9b51b-102">How to: Ping a Host</span></span>
-<span data-ttu-id="9b51b-103">このサンプルでは、リモート ホストに対して ping を実行する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="9b51b-103">This sample shows how to ping a remote host.</span></span>  
+# <a name="how-to-ping-a-host"></a><span data-ttu-id="e23c0-102">方法: ホストに対して ping を実行</span><span class="sxs-lookup"><span data-stu-id="e23c0-102">How to: Ping a Host</span></span>
+<span data-ttu-id="e23c0-103">このサンプルでは、リモート ホストに対して ping を実行する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="e23c0-103">This sample shows how to ping a remote host.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="9b51b-104">例</span><span class="sxs-lookup"><span data-stu-id="9b51b-104">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="e23c0-104">例</span><span class="sxs-lookup"><span data-stu-id="e23c0-104">Example</span></span>  
   
 ```  
 using System;  
@@ -131,7 +122,7 @@ namespace Examples.System.Net.NetworkInformation.PingTest
 }  
 ```  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="9b51b-105">コードのコンパイル</span><span class="sxs-lookup"><span data-stu-id="9b51b-105">Compiling the Code</span></span>  
- <span data-ttu-id="9b51b-106">この例で必要な要素は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="9b51b-106">This example requires:</span></span>  
+## <a name="compiling-the-code"></a><span data-ttu-id="e23c0-105">コードのコンパイル</span><span class="sxs-lookup"><span data-stu-id="e23c0-105">Compiling the Code</span></span>  
+ <span data-ttu-id="e23c0-106">この例で必要な要素は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="e23c0-106">This example requires:</span></span>  
   
--   <span data-ttu-id="9b51b-107">**System.Net** 名前空間への参照。</span><span class="sxs-lookup"><span data-stu-id="9b51b-107">References to the **System.Net** namespace.</span></span>
+-   <span data-ttu-id="e23c0-107">**System.Net** 名前空間への参照。</span><span class="sxs-lookup"><span data-stu-id="e23c0-107">References to the **System.Net** namespace.</span></span>
