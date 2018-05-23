@@ -7,11 +7,11 @@ helpviewer_keywords:
 - Visual C# compiler, options listed alphabetically
 - Visual C#, compiler options listed alphabetically
 ms.assetid: 43535ea0-ca47-4a15-b528-615087a86092
-ms.openlocfilehash: f0c9e0ff5881695cc9426610056677d6053376a2
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1198249afe6933342aea1a05515e6766603ab147
+ms.sourcegitcommit: 895c7602386a6dfe7ca4facce3d965b27e5c6e87
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/19/2018
 ---
 # <a name="c-compiler-options-listed-alphabetically"></a>アルファベット順の C# コンパイラ オプションの一覧
 次のコンパイラ オプションは、アルファベット順に並んでいます。 カテゴリ別の一覧については、「[カテゴリ別の C# コンパイラ オプションの一覧](listed-by-category.md)」をご覧ください。  
@@ -42,7 +42,7 @@ ms.lasthandoff: 05/04/2018
 |-incremental|インクリメンタル コンパイルを有効にします [廃止]。|  
 |[-keycontainer](keycontainer-compiler-option.md)|厳密な名前のキー コンテナーを指定します。|  
 |[-keyfile](keyfile-compiler-option.md)|厳密な名前のキー ファイルを指定します。|  
-|[-langversion:\<string>](langversion-compiler-option.md)|言語バージョンのモード: Default、ISO-1、ISO-2、3、4、5、6、7、7.1、または Latest を指定します。 |  
+|[-langversion:\<string>](langversion-compiler-option.md)|言語バージョン: Default、ISO-1、ISO-2、3、4、5、6、7、7.1、7.2、7.3 または Latest を指定します。 |  
 |[/lib](lib-compiler-option.md)|参照を検索する追加のディレクトリを指定します。|  
 |[-link](link-compiler-option.md)|指定したアセンブリ内の COM 型情報をプロジェクトで使用できるようにします。|  
 |[-linkresource](linkresource-compiler-option.md)|このアセンブリに指定されたリソースをリンクします。|  

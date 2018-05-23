@@ -1,6 +1,6 @@
 ---
 title: Checked と Unchecked (C# リファレンス)
-ms.date: 07/20/2015
+ms.date: 05/15/2018
 helpviewer_keywords:
 - operators [C#], checked and unchecked
 - exceptions [C#], overflow checking
@@ -9,33 +9,33 @@ helpviewer_keywords:
 - unchecked statement [C#]
 - statements [C#], checked and unchecked
 ms.assetid: a84bc877-2c7f-4396-8735-1ce97c42f35e
-ms.openlocfilehash: 26ea8a7864d93b8d64661db2b0dc1df6634f989a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f8e292a67fab49b5fc3616e438d063eca2617274
+ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/18/2018
 ---
 # <a name="checked-and-unchecked-c-reference"></a>Checked と Unchecked (C# リファレンス)
-C# のステートメントは、checked または unchecked のいずれかのコンテキストで実行できます。 checked コンテキストでは、算術オーバーフローにより例外が発生します。 unchecked コンテキストでは、算術オーバーフローは無視され、結果は切り捨てられます。  
+C# のステートメントは、checked または unchecked のいずれかのコンテキストで実行できます。 checked コンテキストでは、算術オーバーフローにより例外が発生します。 unchecked コンテキストでは、算術オーバーフローが無視され、結果の格納先の型に収まらない上位ビットが破棄されて、結果が切り詰められます。  
   
--   [checked](../../../csharp/language-reference/keywords/checked.md): checked コンテキストを指定します。  
+-   [checked](checked.md): checked コンテキストを指定します。  
   
--   [unchecked](../../../csharp/language-reference/keywords/unchecked.md): unchecked コンテキストを指定します。  
-  
- `checked` と `unchecked` が両方とも指定されない場合、既定のコンテキストはコンパイラ オプションなどの外的要因に依存します。  
+-   [unchecked](unchecked.md): unchecked コンテキストを指定します。  
   
  オーバーフロー チェックにより、次の操作が影響を受けます。  
   
 -   整数型で次の定義済み演算子を使用する式:  
   
-     `++` `--` - (単項)   `+` -   `*` `/`  
+     `++` `--` (単項) `-` `+` `-` `*` `/`  
   
--   整数型間の明示的な数値変換。  
+-   整数型間か、`float` または `double` から整数型へのの明示的な数値変換。  
   
- [/checked](../../../csharp/language-reference/compiler-options/checked-compiler-option.md) コンパイラ オプションにより、`checked` または `unchecked` キーワードの明示的な範囲内にはないすべての整数の算術ステートメントに対して、checked コンテキストまたは unchecked コンテキストを指定できます。  
+ `checked` と `unchecked` のいずれも指定されない場合、非定数式 (実行時に評価される式) の既定のコンテキストが [-checked](../compiler-options/checked-compiler-option.md) コンパイラ オプションの値によって定義されます。 既定では、そのオプションの値の設定が解除され、算術演算が unchecked コンテキストで実行されます。
+ 
+ 定数式 (コンパイル時に完全に評価される式) の場合、既定のコンテキストは常に確認されます。 定数式が unchecked コンテキストに明示的に配置されていない限り、式のコンパイル時の評価中に発生するオーバーフローによってコンパイル時エラーが発生します。
   
 ## <a name="see-also"></a>参照  
- [C# リファレンス](../../../csharp/language-reference/index.md)  
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
- [C# のキーワード](../../../csharp/language-reference/keywords/index.md)  
- [ステートメントのキーワード](../../../csharp/language-reference/keywords/statement-keywords.md)
+ [C# リファレンス](../index.md)  
+ [C# プログラミング ガイド](../../programming-guide/index.md)  
+ [C# のキーワード](index.md)  
+ [ステートメントのキーワード](statement-keywords.md)

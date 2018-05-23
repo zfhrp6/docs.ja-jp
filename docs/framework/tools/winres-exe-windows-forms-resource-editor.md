@@ -1,6 +1,6 @@
 ---
 title: Winres.exe (Windows フォーム リソース エディター)
-ms.date: 03/30/2017
+ms.date: 05/21/2018
 helpviewer_keywords:
 - Winres.exe
 - Windows Forms Resource Editor
@@ -12,17 +12,20 @@ helpviewer_keywords:
 ms.assetid: cb8bc835-9221-4888-af53-1a4f5fad6c48
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 69ba816e5b7cf05ef094153b7ff044d573ac1760
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 14e90916261250452c1f07e66a46bee400da0428
+ms.sourcegitcommit: 895c7602386a6dfe7ca4facce3d965b27e5c6e87
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/19/2018
 ---
 # <a name="winresexe-windows-forms-resource-editor"></a>Winres.exe (Windows フォーム リソース エディター)
 Windows フォーム リソース エディター (Winres.exe) は、ビジュアル レイアウト ツールです。ローカリゼーションの専門家は、このツールにより、Windows フォームのユーザー インターフェイス (UI: User Interface) で使用されるリソースをローカライズできます。 Winres.exe への入力として使用される .resx ファイルおよび .resources ファイルは、Microsoft Visual Studio などのビジュアル デザイン環境を使用して作成できます。 .NET Framework アプリケーションにおけるリソースの配置については、「[デスクトップ アプリケーションのリソース](../../../docs/framework/resources/index.md)」を参照してください。  
   
  このツールは、Visual Studio と共に自動的にインストールされます。 このツールを実行するには、開発者コマンド プロンプト (または、Windows 7 の Visual Studio コマンド プロンプト) を使用します。 詳細については、「[Visual Studio 用開発者コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)」を参照してください。  
-  
+
+> [!IMPORTANT]
+> 信頼できるソースから .resx ファイルのみを読み込んで使用する必要があります。 ResX ファイルには、実行可能コードを含めることができ、セキュリティの観点から実行可能ファイル (.exe) として扱われる必要があります。
+
  コマンド プロンプトに次のように入力します。  
   
 ## <a name="syntax"></a>構文  

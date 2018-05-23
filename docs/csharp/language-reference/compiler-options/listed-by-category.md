@@ -6,11 +6,11 @@ helpviewer_keywords:
 - compiler options [C#], listed by category
 - Visual C#, compiler options listed by category
 ms.assetid: 96437ecc-6502-4cd3-b070-e9386a298e83
-ms.openlocfilehash: a3352b9f929382c7d5b7d0c62ef4022560caf371
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f02ae84544a60a992177332d528dd7970f84bf3f
+ms.sourcegitcommit: 895c7602386a6dfe7ca4facce3d965b27e5c6e87
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/19/2018
 ---
 # <a name="c-compiler-options-listed-by-category"></a>カテゴリ別の C# コンパイラ オプションの一覧
 次のコンパイラ オプションは、カテゴリ別に並んでいます。 アルファベット順の一覧については、「[アルファベット順の C# コンパイラ オプションの一覧](listed-alphabetically.md)」を参照してください。  
@@ -91,7 +91,7 @@ ms.lasthandoff: 05/04/2018
 |[-codepage](codepage-compiler-option.md)|コンパイルですべてのソース コード ファイルに使用するコード ページを指定します。|  
 |[-help](help-compiler-option.md)|stdout にコンパイラ オプションの一覧を表示します。|  
 |[-highentropyva](highentropyva-compiler-option.md)|実行可能ファイルが ASLR (Address Space Layout Randomization) をサポートするように指定します。|  
-|[-langversion](langversion-compiler-option.md)|言語バージョンのモード: Default、ISO-1、ISO-2、3、4、5、6、7、7.1、または Latest を指定します。 |  
+|[-langversion](langversion-compiler-option.md)|言語バージョン: Default、ISO-1、ISO-2、3、4、5、6、7、7.1、7.2、7.3 または Latest を指定します。 |  
 |[-main](main-compiler-option.md)|**Main** メソッドの場所を指定します。|  
 |[-noconfig](noconfig-compiler-option.md)|csc.rsp でコンパイルにしないようコンパイラに指示します。|  
 |[-nologo](nologo-compiler-option.md)|コンパイラの著作権情報が表示されないようにします。|  

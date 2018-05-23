@@ -9,14 +9,15 @@ helpviewer_keywords:
 - foreach statement [C#]
 - in keyword [C#]
 ms.assetid: 5a9c5ddc-5fd3-457a-9bb6-9abffcd874ec
-ms.openlocfilehash: f00ae873e615f653d3e760f82b157a57fdaef6ed
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c0b1481988a2e3199fc6d06ca30cb5194ab2f44c
+ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/18/2018
 ---
 # <a name="foreach-in-c-reference"></a>foreach、in (C# リファレンス)
-`foreach` ステートメントは、<xref:System.Collections.IEnumerable?displayProperty=nameWithType> インターフェイスまたは <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> インターフェイスを実装する配列またはオブジェクト コレクションのそれぞれの要素に対して埋め込みステートメントを繰り返します。 `foreach` ステートメントは、コレクションを繰り返し処理して目的の情報を取得するために使用しますが、予期しない副作用を防ぐため、ソース コレクションに対する項目の追加または削除には使用しないでください。 ソース コレクションに対して項目を追加または削除する必要がある場合は、[for](for.md) ループを使います。
+
+`foreach` ステートメントは、<xref:System.Collections.IEnumerable?displayProperty=nameWithType> インターフェイスまたは <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> インターフェイスを実装する配列またはオブジェクト コレクションのそれぞれの要素に対して埋め込みステートメントを繰り返します。 [foreach ステートメント](/dotnet/csharp/language-reference/language-specification/statements#the-foreach-statement)は、コレクションを繰り返し処理して目的の情報を取得するために使用しますが、予期しない副作用を防ぐため、ソース コレクションに対する項目の追加または削除には使用しないでください。 ソース コレクションに対して項目を追加または削除する必要がある場合は、[for](for.md) ループを使います。
   
  埋め込みステートメントは、配列またはコレクション内の各要素に対して繰り返し実行されます。 コレクション内の全要素に対する繰り返しが完了すると、制御は、`foreach` ブロックに続く次のステートメントに移動します。
   
@@ -31,7 +32,8 @@ ms.lasthandoff: 05/04/2018
  [方法: foreach を使用してコレクション クラスにアクセスする](../../programming-guide/classes-and-structs/how-to-access-a-collection-class-with-foreach.md)  
 
 ## <a name="example"></a>例
- 次のコードは、3 つの例を示しています。
+
+次のコードは、3 つの例を示しています。
 
 > [!TIP]
 > 例を変更して構文の実験をしたり、自身のユース ケースにより近い異なる使用方法を試したりできます。 「実行」を押してコードを実行し、編集したら再び「実行」を押します。
@@ -49,9 +51,12 @@ ms.lasthandoff: 05/04/2018
 [!code-csharp-interactive[csrefKeywordsIteration#4](./codesnippet/CSharp/foreach-in_1.cs#L51-L69)]
  
 ## <a name="c-language-specification"></a>C# 言語仕様
+
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
 ## <a name="see-also"></a>参照  
+
+[foreach ステートメント (C# 言語仕様)](/dotnet/csharp/language-reference/language-specification/statements#the-foreach-statement)
 
 [C# リファレンス](../index.md)
 
