@@ -17,7 +17,7 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 554ea7c54973852510e539000baf03bdce8e7bcf
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
 ---
@@ -66,7 +66,7 @@ ms.lasthandoff: 05/04/2018
 |<xref:System.Runtime.InteropServices.TypeLibTypeAttribute>|元はこの型のために COM タイプ ライブラリからインポートされた **TYPEFLAGS** が含まれます。|  
 |<xref:System.Runtime.InteropServices.TypeLibVarAttribute>|元はこの変数のために COM タイプ ライブラリからインポートされた **VARFLAGS** が含まれます。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Runtime.InteropServices>  
  [COM への .NET Framework コンポーネントの公開](../../../docs/framework/interop/exposing-dotnet-components-to-com.md)  
  [属性](../../../docs/standard/attributes/index.md)  

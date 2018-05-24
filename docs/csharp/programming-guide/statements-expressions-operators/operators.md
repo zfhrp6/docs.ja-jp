@@ -6,11 +6,11 @@ helpviewer_keywords:
 - C# language, operators
 - operators [C#], about operators
 ms.assetid: 214e7b83-1a41-4f7c-9867-64e9c0bab39f
-ms.openlocfilehash: d2eace5782b3a070a22acf751fd68340fa939a0b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 76371985e340945793310247ec48d9b0cb747aed
+ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="operators-c-programming-guide"></a>演算子 (C# プログラミング ガイド)
 C# では、 *演算子* は式またはステートメントの中で 1 つ以上の *オペランド* に適用されるプログラム要素です。 インクリメント演算子 (`++`) や `new`など、1 つのオペランドを受け取る演算子を *単項* 演算子と言います。 算術演算子 (`+`、`-`、`*`、`/`) など、2 つのオペランドを受け取る演算子を *二項* 演算子と言います。 条件演算子 (`?:`) は、3 つのオペランドを受け取る、C# でただ 1 つの三項演算子です。  
@@ -114,7 +114,7 @@ C# では、 *演算子* は式またはステートメントの中で 1 つ以�
 |論理 OR|x [&#124;](../../../csharp/language-reference/operators/or-operator.md) y|整数のビットごとの OR、ブール型の論理 OR。|  
 |条件 AND|x [&&](../../../csharp/language-reference/operators/conditional-and-operator.md) y|x が true の場合にのみ y を評価します。|  
 |条件 OR|x [&#124;&#124;](../../../csharp/language-reference/operators/conditional-or-operator.md) y|x が false の場合にのみ y を評価します。|  
-|Null 合体演算子|x [??](../../../csharp/language-reference/operators/null-conditional-operator.md) Y|x が null の場合は y と評価され、それ以外の場合は x と評価されます。|  
+|Null 合体演算子|x [??](../../../csharp/language-reference/operators/null-coalescing-operator.md) Y|x が null の場合は y と評価され、それ以外の場合は x と評価されます。|  
 |条件|x [?](../../../csharp/language-reference/operators/conditional-operator.md) y : z|x が true の場合は y と評価され、x が false の場合は z と評価されます。|  
   
  **代入演算子と匿名演算子**  

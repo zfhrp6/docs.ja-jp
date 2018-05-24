@@ -6,7 +6,7 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 187bff7c75ba2a0887e3c5728a484a9231936511
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
 ---
@@ -420,7 +420,7 @@ if (sessionBoundObject.GetCurrentValue() == "Hello")
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [基本的な WCF プログラミング](../../../docs/framework/wcf/basic-wcf-programming.md)  
  [サービスの設計と実装](../../../docs/framework/wcf/designing-and-implementing-services.md)  
  [クライアントを構築する](../../../docs/framework/wcf/building-clients.md)  

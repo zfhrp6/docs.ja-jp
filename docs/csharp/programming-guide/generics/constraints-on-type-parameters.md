@@ -6,11 +6,11 @@ helpviewer_keywords:
 - type constraints [C#]
 - type parameters [C#], constraints
 - unbound type parameter [C#]
-ms.openlocfilehash: 1d6487f4136b5a3f8bfc2e1721ae268e06f5ba98
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b5ad639309238912aa27b58c95466b4f37052699
+ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="constraints-on-type-parameters-c-programming-guide"></a>型パラメーターの制約 (C# プログラミング ガイド)
 
@@ -18,7 +18,7 @@ ms.lasthandoff: 05/04/2018
 
 |制約|説明|
 |----------------|-----------------|
-|`where T: struct`|この型引数は値の型である必要があります。 <xref:System.Nullable> を除く任意の値の型を指定できます。 詳細については、「[Null 許容型の使用](../nullable-types/using-nullable-types.md)」を参照してください。|
+|`where T : struct`|この型引数は値の型である必要があります。 <xref:System.Nullable> を除く任意の値の型を指定できます。 詳細については、「[Null 許容型の使用](../nullable-types/using-nullable-types.md)」を参照してください。|
 |`where T : class`|この型引数は参照型である必要があります。 この制約は、任意のクラス、インターフェイス、デリゲート、または配列型にも適用されます。|
 |`where T : unmanaged`|この型引数は、参照型である必要はなく、任意の入れ子のレベルに参照型メンバーを含める必要はありません。|
 |`where T : new()`|この型引数には、パラメーターなしのパブリック コンストラクターが必要です。 `new()` 制約を別の制約と併用する場合、この制約を最後に指定する必要があります。|

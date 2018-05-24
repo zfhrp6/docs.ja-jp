@@ -17,7 +17,7 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 330d8ff784218483caf153b5c14f8a30df2d2452
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
 ---
@@ -30,7 +30,7 @@ User32.dll で **MessageBox** 関数を定義し、引数として単純な文�
   
  その他の例については、「[Marshaling Data with Platform Invoke](../../../docs/framework/interop/marshaling-data-with-platform-invoke.md)」(プラットフォーム呼び出しによるデータのマーシャリング) を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Runtime.InteropServices.DllImportAttribute>  
  [マネージ コードでのプロトタイプの作成](../../../docs/framework/interop/creating-prototypes-in-managed-code.md)  
  [文字セットの指定](../../../docs/framework/interop/specifying-a-character-set.md)

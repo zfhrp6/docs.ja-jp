@@ -9,7 +9,7 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: acef752cf54d28dd1f07431b5dbbadbac0b7849e
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
 ---
@@ -72,5 +72,5 @@ ms.lasthandoff: 05/04/2018
   
  クラス型とオブジェクト型は COM 相互運用でのみサポートされます。 [!INCLUDE[vbprvblong](../../../includes/vbprvblong-md.md)]、C#、および C++ の対応する型については、「[クラス ライブラリの概要](../../../docs/standard/class-library-overview.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [既定のマーシャリング動作](../../../docs/framework/interop/default-marshaling-behavior.md)

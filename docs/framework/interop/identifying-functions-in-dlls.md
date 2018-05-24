@@ -15,7 +15,7 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: bc160678817266dc649f60dc3f2cc77044c05691
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
 ---
@@ -44,7 +44,7 @@ DLL 関数の ID は、次の要素で構成されます。
   
  Win32 API の詳細については、プラットフォーム SDK を参照してください。 プラットフォーム呼び出しで使用する .NET ベースの宣言を作成する方法を示す例については、「[プラットフォーム呼び出しによるデータのマーシャリング](../../../docs/framework/interop/marshaling-data-with-platform-invoke.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [アンマネージ DLL 関数の処理](../../../docs/framework/interop/consuming-unmanaged-dll-functions.md)  
  [エントリ ポイントの指定](../../../docs/framework/interop/specifying-an-entry-point.md)  
  [DLL 関数を保持するクラスの作成](../../../docs/framework/interop/creating-a-class-to-hold-dll-functions.md)  

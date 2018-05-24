@@ -11,11 +11,11 @@ ms.author: ronpet
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 68513d2535ea9e19a42f9e58b9d423e17008f9de
-ms.sourcegitcommit: ff1d40507b3eb6e2185478e37c66c66be6de46f1
+ms.openlocfilehash: abb1f72a10a4aff448dea22b5c9415111c25eaab
+ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/11/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="the-large-object-heap-on-windows-systems"></a>Windows システムの大きなオブジェクト ヒープ
 
@@ -317,13 +317,3 @@ CLR 2.0 では *VM Hoarding* という機能が追加されました。これは
 VM Hoarding は、メモリ不足の例外を回避するために、システム上で実行されている優先度の高いアプリである一部のサーバー アプリなど、既に取得されているセグメントに保持する必要があるアプリケーションでも役立ちます。
 
 この機能を使用する際には、アプリケーションを慎重にテストして、アプリケーションのメモリ使用量が十分に安定しているのを確認することを強くお勧めします。
-bp kernel32!virtualalloc "j (dwo(@esp+8)>800000) 'kb';'g'"
-```
-
-This command breaks into the debugger and shows the callstack only if [VirtualAlloc](https://msdn.microsoft.com/library/windows/desktop/aa366887(v=vs.85).aspx) is called with an allocation size greater than 8MB (0x800000).
-
-CLR 2.0 added a feature called *VM Hoarding* that can be useful for scenarious where segments (including on the large and small object heaps) are frequently acquired and released. To specify VM Hoarding, you specify a startup flag called `STARTUP_HOARD_GC_VM` via the hosting API. Instead of releasing empty segments back to the OS, the CLR decommits the memory on these segments and puts them on a standby list. (Note that the CLR doesn't do this for segments that are too large.) The CLR later uses those segments to satisfy new segment requests. The next time that your app needs a new segment, the CLR uses one from this standby list if it can find one that’s big enough.
-
-VM hoarding is also useful for applications that want to hold onto the segments that they already acquired, such as some server apps that are the dominant apps running on the system, to avoid out of memory exceptions.
-
-We strongly recommend that you carefully test your application when you use this feature to ensure your application has fairly stable memory usage.
