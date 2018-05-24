@@ -231,8 +231,8 @@
 ### [タプル](csharp/tuples.md)
 ### [タプルおよびその他の型の分解](csharp/deconstruct.md)
 ### [インターフェイス](csharp/programming-guide/interfaces/index.md)
-#### [メソッド](csharp/methods.md)
-#### [ラムダ式](csharp/lambda-expressions.md)
+### [メソッド](csharp/methods.md)
+### [ラムダ式](csharp/lambda-expressions.md)
 ### [プロパティ](csharp/properties.md)
 ### [インデクサー](csharp/indexers.md)
 ### [破棄](csharp/discards.md)
@@ -287,7 +287,7 @@
 ### [.NET Core CLI の概要](fsharp/get-started/get-started-command-line.md)
 
 ## [F# スタイル ガイド](fsharp/style-guide/index.md)
-### [F# のフォーマットに関するガイドライン](fsharp/style-guide/formatting.md)
+### [F# コードのフォーマットに関するガイドライン](fsharp/style-guide/formatting.md)
 ### [F# のコーディング規則](fsharp/style-guide/conventions.md)
 ### [F# コンポーネント デザインのガイドライン](fsharp/style-guide/component-design-guidelines.md)
 

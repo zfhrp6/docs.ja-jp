@@ -9,11 +9,11 @@ helpviewer_keywords:
 - styles [WPF], GroupBox
 - templates [WPF], GroupBox
 ms.assetid: 33df7037-0a1b-476f-b9d0-41566a777699
-ms.openlocfilehash: 57f5411f880ae7bafe852e9e84db1995ccd70e68
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 539bf5b0ef8772ea469123442d152726d0948be9
+ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="groupbox-styles-and-templates"></a>GroupBox のスタイルとテンプレート
 <a name="introduction"></a> このトピックは、のスタイルとテンプレートについて説明します、<xref:System.Windows.Controls.GroupBox>コントロール。 既定値を変更することができます<xref:System.Windows.Controls.ControlTemplate>コントロールの外観を一意にします。 詳細については、「[ControlTemplate の作成による既存のコントロールの外観のカスタマイズ](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)」を参照してください。  
@@ -42,7 +42,7 @@ ms.lasthandoff: 05/04/2018
   
  [!code-xaml[ControlTemplateExamples#Resources](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/shared.xaml#resources)]  
   
- 完全なサンプルについては、[Styling with ControlTemplates Sample](http://go.microsoft.com/fwlink/?LinkID=160041)を参照してください。  
+ 完全なサンプルについては、[Styling with ControlTemplates Sample](https://github.com/Microsoft/WPF-Samples/tree/master/Styles%20&%20Templates/IntroToStylingAndTemplating)を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
  <xref:System.Windows.FrameworkElement.Style%2A>  

@@ -15,11 +15,11 @@ helpviewer_keywords:
 - characters [WPF], curly brace
 - DynamicResource markup extensions [WPF]
 ms.assetid: 618dc745-8b14-4886-833f-486d2254bb78
-ms.openlocfilehash: f18a369157c1e37411a3c8d8b6dfcce99bc347c6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e2fb1e64f957b49743d8dfb19091bca50303e2d2
+ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="markup-extensions-and-wpf-xaml"></a>マークアップ拡張機能と WPF XAML
 ここでは XAML のマークアップ拡張の概念について、構文規則、目的、その基になるクラス オブジェクト モデルなどを説明します。 マークアップ拡張は、XAML 言語、および XAML サービスの .NET 実装の一般的な機能です。 ここでは、WPF XAML で使用するマークアップ拡張について特に詳しく説明します。  
@@ -64,7 +64,7 @@ ms.lasthandoff: 05/04/2018
   
 -   `RelativeSource` ソース情報を提供する<xref:System.Windows.Data.Binding>実行時のオブジェクト ツリーで、いくつかの可能なリレーションシップを移動することができます。 これにより、周囲のオブジェクト ツリーに関する完全な知識がなくても、多目的のテンプレートで作成されるバインド、またはコードで作成されるバインドに対して、特殊なソースを指定することができます。 詳細については、「[RelativeSource のマークアップ拡張機能](../../../../docs/framework/wpf/advanced/relativesource-markupextension.md)」を参照してください。  
   
--   `TemplateBinding` により、コントロール テンプレートがテンプレート プロパティの値を使用できるようになります。それらの値は、テンプレートを使用するクラスのオブジェクト モデルで定義されたプロパティから取られます。 つまり、テンプレート定義内のプロパティが、テンプレートを適用する場合にのみ存在するコンテキストにアクセスできます。 詳細については、「[TemplateBinding のマークアップ拡張機能](../../../../docs/framework/wpf/advanced/templatebinding-markup-extension.md)」を参照してください。 `TemplateBinding` の実際の使用方法の詳細については、「[ControlTemplate を使用したスタイル設定のサンプル](http://go.microsoft.com/fwlink/?LinkID=160041)」を参照してください。  
+-   `TemplateBinding` により、コントロール テンプレートがテンプレート プロパティの値を使用できるようになります。それらの値は、テンプレートを使用するクラスのオブジェクト モデルで定義されたプロパティから取られます。 つまり、テンプレート定義内のプロパティが、テンプレートを適用する場合にのみ存在するコンテキストにアクセスできます。 詳細については、「[TemplateBinding のマークアップ拡張機能](../../../../docs/framework/wpf/advanced/templatebinding-markup-extension.md)」を参照してください。 `TemplateBinding` の実際の使用方法の詳細については、「[ControlTemplate を使用したスタイル設定のサンプル](https://github.com/Microsoft/WPF-Samples/tree/master/Styles%20&%20Templates/IntroToStylingAndTemplating)」を参照してください。  
   
 -   `ColorConvertedBitmap` は、比較的高度なイメージング シナリオをサポートします。 詳細については、「[ColorConvertedBitmap のマークアップ拡張機能](../../../../docs/framework/wpf/advanced/colorconvertedbitmap-markup-extension.md)」を参照してください。  
   

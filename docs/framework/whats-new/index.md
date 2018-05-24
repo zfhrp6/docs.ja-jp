@@ -10,11 +10,11 @@ helpviewer_keywords:
 ms.assetid: 1d971dd7-10fc-4692-8dac-30ca308fc0fa
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1c0f831426762ddcb21e4c1c1191e20435a13deb
-ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
+ms.openlocfilehash: b1e54aa8a9751a01e8856a3e9e71d63b55772f2c
+ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/17/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="whats-new-in-the-net-framework"></a>.NET Framework の新機能
 <a name="introduction"></a> この記事では、.NET Framework の次のバージョンにおける主な新機能と機能強化の概要を示します。  
@@ -657,8 +657,6 @@ End Class
 | name                                 | [値]                                     |
 | ------------------------------------ | ----------------------------------------- |
 | 評価は、1 から 10 の範囲である必要があります。 | La note doit être comprise entre 1 et 10. |
-
- This file can then
 
  また、データ注釈ローカリゼーションを拡張することができます。 開発者は、<xref:System.Web.Globalization.IStringLocalizerProvider> インターフェイスを実装してリソース ファイル以外の場所にローカリゼーション文字列を格納することで、独自の文字列ローカライザー プロバイダーにプラグインできます。
 
@@ -1488,7 +1486,7 @@ SqlClient で、AlwaysOn 可用性グループ (AG) へのより高速な接続�
 
 - **コード ページのエンコーディングのサポート**
 
-      [!INCLUDE[net_core](../../../includes/net-core-md.md)] primarily supports the Unicode encodings and by default provides limited support for code page encodings. You can add support for code page encodings available in the .NET Framework but unsupported in [!INCLUDE[net_core](../../../includes/net-core-md.md)] by registering code page encodings with the <xref:System.Text.Encoding.RegisterProvider%2A?displayProperty=nameWithType> method. For more information, see <xref:System.Text.CodePagesEncodingProvider?displayProperty=nameWithType>.
+     [!INCLUDE[net_core](../../../includes/net-core-md.md)] は、本来 Unicode エンコードをサポートし、既定ではコード ページ エンコーディングに関するサポートは限定的です。 <xref:System.Text.Encoding.RegisterProvider%2A?displayProperty=nameWithType> メソッドを使用してコード ページ エンコーディングを登録することで、.NET Framework では利用できるものの [!INCLUDE[net_core](../../../includes/net-core-md.md)] ではサポートされていないコード ページ エンコーディングのサポートを追加できます。 詳細については、「<xref:System.Text.CodePagesEncodingProvider?displayProperty=nameWithType>」を参照してください。
 
 - **.NET ネイティブ**
 

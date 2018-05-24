@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: 123457ac-4223-4273-bb58-3bc0e4957e9d
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 51b4758690257b999cce51f3e80fd263a6d5e275
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 846d41c31687df98b019f103e42cf586a23d8ff1
+ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="writing-large-responsive-net-framework-apps"></a>規模が大きく、応答性の高い .NET Framework アプリの作成
 この記事では、大規模な .NET Framework アプリや、ファイルやデータベースなど大量のデータを処理するアプリのパフォーマンス改善のヒントを説明します。 説明するヒントは C# および Visual Basic コンパイラを マネージ コードで作成し直した際に得られたものです。この記事では C# コンパイラでの実際の例をいくつか紹介します。  
@@ -433,7 +433,7 @@ class Compilation { /*...*/
 }  
 ```  
   
- このコードは `cachedResult` の型を `Task<SyntaxTree>` に変更し、`async` からの元のコードを保持する `GetSyntaxTreeAsync()` ヘルパー関数を採用しています。  `GetSyntaxTreeAsync()` は [null 合体演算子](~/docs/csharp/language-reference/operators/null-conditional-operator.md)を使用して、`cachedResult` が null でない場合にそれを返します。  `cachedResult` が null の場合、`GetSyntaxTreeAsync()` は `GetSyntaxTreeUncachedAsync()` を呼び出し、結果をキャッシュします。  `GetSyntaxTreeAsync()` は、通常のコードのようには、`GetSyntaxTreeUncachedAsync()` 呼び出しを待たないことに注意してください。  待機しないということは、`GetSyntaxTreeUncachedAsync()` がその <xref:System.Threading.Tasks.Task> オブジェクトを返す場合、`GetSyntaxTreeAsync()` が即時に<xref:System.Threading.Tasks.Task> を返すことになります。  この時点で、キャッシュされた結果は <xref:System.Threading.Tasks.Task> であるため、キャシュされた結果を返すための割り当ては行われません。  
+ このコードは `cachedResult` の型を `Task<SyntaxTree>` に変更し、`async` からの元のコードを保持する `GetSyntaxTreeAsync()` ヘルパー関数を採用しています。  `GetSyntaxTreeAsync()` は [null 合体演算子](../../csharp/language-reference/operators/null-coalescing-operator.md)を使用して、`cachedResult` が null でない場合にそれを返します。  `cachedResult` が null の場合、`GetSyntaxTreeAsync()` は `GetSyntaxTreeUncachedAsync()` を呼び出し、結果をキャッシュします。  `GetSyntaxTreeAsync()` は、通常のコードのようには、`GetSyntaxTreeUncachedAsync()` 呼び出しを待たないことに注意してください。  待機しないということは、`GetSyntaxTreeUncachedAsync()` がその <xref:System.Threading.Tasks.Task> オブジェクトを返す場合、`GetSyntaxTreeAsync()` が即時に<xref:System.Threading.Tasks.Task> を返すことになります。  この時点で、キャッシュされた結果は <xref:System.Threading.Tasks.Task> であるため、キャシュされた結果を返すための割り当ては行われません。  
   
 ### <a name="additional-considerations"></a>その他の考慮事項  
  大きなアプリまたは大量データを処理するアプリで発生する可能性がある問題に関するその他の点を次に説明します。  

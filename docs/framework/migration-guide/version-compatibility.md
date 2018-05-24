@@ -1,10 +1,7 @@
 ---
-title: ".NET Framework のバージョンの互換性"
+title: .NET Framework のバージョンの互換性
 ms.custom: updateeachrelease
-ms.date: 10/17/2017
-ms.prod: .net-framework
-ms.technology: dotnet-clr
-ms.topic: article
+ms.date: 04/10/2018
 helpviewer_keywords:
 - .NET Framework, version compatibility
 - .NET Framework 4.5, compatibility with earlier versions
@@ -12,16 +9,14 @@ helpviewer_keywords:
 ms.assetid: 2f25e522-456a-48c3-8a53-e5f39275649f
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 45bb0174bd4c757b6e51621f36b25eb5f4354c94
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 15c5455bd604765ebcd78aa418d2f74f4141628d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="version-compatibility-in-the-net-framework"></a>.NET Framework のバージョンの互換性
-下位互換とは、プラットフォームの特定のバージョンで開発されたアプリが、そのプラットフォームの新しいバージョンでも実行できることを意味します。 .NET Framework では、下位互換性が最大限に高められています。 .NET Framework のあるバージョンで記述されたソース コードは、.NET Framework の新しいバージョンでコンパイルでき、.NET Framework のあるバージョンで実行されるバイナリは、新しいバージョンの .NET Framework でも同じように動作します。  
+下位互換とは、プラットフォームの特定のバージョンで開発されたアプリが、そのプラットフォームの新しいバージョンでも実行できることを意味します。 .NET Framework では、下位互換性が最大限に高められています。.NET Framework のあるバージョンで記述されたソース コードは、.NET Framework の新しいバージョンでコンパイルでき、.NET Framework のあるバージョンで実行されるバイナリは、新しいバージョンの .NET Framework でも同じように動作します。  
   
 <a name="Apps"></a>   
 ## <a name="version-compatibility-for-apps"></a>アプリのバージョンの互換性  
@@ -50,7 +45,7 @@ ms.lasthandoff: 12/22/2017
   
  現実的には、この互換性は、.NET Framework のわずかな変更やプログラミング技法の変化によって損なわれている可能性があります。 たとえば、.NET Framework 4.5 でのパフォーマンスの向上によって、旧バージョンでは発生しなかった競合状態が顕在化する可能性があります。 同様に、.NET Framework アセンブリへのハードコーディングされたパスの使用、.NET Framework の特定のバージョンでの等値比較の実行、およびリフレクションの使用によるプライベート フィールドの値の取得は、下位互換性のない動作です。 さらに、各バージョンの .NET Framework には、バグの修正とセキュリティに関連する変更が含まれており、これらが一部のアプリとコンポーネントの互換性に影響する可能性があります。  
   
- アプリまたはコンポーネントが .NET Framework 4.5 (ポイント リリースである [!INCLUDE[net_v451](../../../includes/net-v451-md.md)]、4.5.2、4.6、4.6.1、4.6.2、4.7 または 4.7.1 を含む) で期待どおりに動作しない場合は、次のチェックリストを参考にしてください。  
+ アプリまたはコンポーネントが .NET Framework 4.5 (ポイント リリースである [!INCLUDE[net_v451](../../../includes/net-v451-md.md)]、4.5.2、4.6、4.6.1、4.6.2、4.7、4.7.1、または 4.7.2 を含む) で期待どおりに動作しない場合は、次のチェックリストを参考にしてください。  
   
 -  アプリが .NET Framework 4.0 以降の任意の .NET Framework バージョンで実行できるように開発されている場合、「[.NET Framework のアプリケーションの互換性](application-compatibility.md)」を参照し、ターゲットの .NET Framework バージョンとアプリを実行しているバージョン間の違いの一覧を作成します。  
 
@@ -64,7 +59,7 @@ ms.lasthandoff: 12/22/2017
   
 -   アプリが正常に動作しない原因が [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] での変更によるものとわかった場合は、「[ランタイム設定スキーマ](../../../docs/framework/configure-apps/file-schema/runtime/index.md)」を参照して、アプリの構成ファイルのランタイム設定を使用して以前の動作を復元できるかどうかを確認してください。  
   
--   説明されていない問題が発生した場合は、[Microsoft Connect](http://go.microsoft.com/fwlink/?LinkID=154815) にバグを報告し、[netfxcf@microsoft.com](mailto:netfxcf@microsoft.com) にバグ番号を連絡してください。  
+-   説明されていない問題が発生した場合は、[.NET の開発者コミュニティ サイト](https://developercommunity.visualstudio.com/spaces/61/index.html)で問題を提起するか、[Microsoft/dotnet GitHub リポジトリ](https://github.com/microsoft/dotnet/issues)で issue を作成してください。
   
 ## <a name="compatibility-and-side-by-side-execution"></a>互換性と side-by-side 実行  
  問題の適切な解決策が見つからない場合は、.NET Framework 4.5 (またはそのポイント リリース) は Version 1.1、2.0、3.5 と side-by-side で実行でき、Version 4 に置き換わるインプレース更新であることを思い出してください。 Version 1.1、2.0、3.5 を対象とするアプリでは、適切なバージョンの .NET Framework を対象コンピューターにインストールして、アプリを最良の環境で実行できます。 side-by-side 実行について詳しくは、[side-by-side 実行](../../../docs/framework/deployment/side-by-side-execution.md)に関するページを参照してください。  

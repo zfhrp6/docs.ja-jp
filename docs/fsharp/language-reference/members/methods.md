@@ -2,11 +2,11 @@
 title: メソッド (F#)
 description: F# メソッドは公開し、オブジェクトと型の動作と機能の実装に使用される型に関連付けられている関数、方法を説明します。
 ms.date: 05/16/2016
-ms.openlocfilehash: 6e0b0789d97a9671425fb08c56c84ba1f66dfbe6
-ms.sourcegitcommit: e5bb395ec86f536e114314184288f40a8c745e2e
+ms.openlocfilehash: e30300b4dd6cc26712a5adbc8abf720f2c312a6f
+ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="methods"></a>メソッド
 
@@ -18,33 +18,33 @@ A*メソッド*型に関連付けられている関数です。 オブジェク�
 ```fsharp
 // Instance method definition.
 [ attributes ]
-member [inline] self-identifier.method-nameparameter-list [ : return-type ]=
+member [inline] self-identifier.method-name parameter-list [ : return-type ] =
     method-body
 
 // Static method definition.
 [ attributes ]
-static member [inline] method-nameparameter-list [ : return-type ]=
+static member [inline] method-name parameter-list [ : return-type ] =
     method-body
 
 // Abstract method declaration or virtual dispatch slot.
 [ attributes ]
-abstract member self-identifier.method-name : type-signature
+abstract member method-name : type-signature
 
 // Virtual method declaration and default implementation.
 [ attributes ]
-abstract member [inline] self-identifier.method-name : type-signature
+abstract member method-name : type-signature
 [ attributes ]
-default [inline] self-identifier.method-nameparameter-list[ : return-type ] =
+default self-identifier.method-name parameter-list [ : return-type ] =
     method-body
 
 // Override of inherited virtual method.
 [ attributes ]
-override member [inline] self-identifier.method-nameparameter-list [ : return-type ]=
+override self-identifier.method-name parameter-list [ : return-type ] =
     method-body
 
 // Optional and DefaultParameterValue attributes on input parameters
 [ attributes ]
-[ modifier ] member [inline] self-identifier.method-name ([<Optional; DefaultParameterValue([ default-value ])>] input) [ : return-type ]
+[ modifier ] member [inline] self-identifier.method-name ([<Optional; DefaultParameterValue( default-value )>] input) [ : return-type ]
 ```
 
 ## <a name="remarks"></a>コメント

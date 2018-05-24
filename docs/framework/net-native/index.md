@@ -10,11 +10,11 @@ helpviewer_keywords:
 ms.assetid: 47cd5648-9469-4b1d-804c-43cc04384045
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1ecc707bb07d6d17ae4115b483cc8f52083f3933
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6900bca2bd94f52ea5603c752681163cde52ce19
+ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="compiling-apps-with-net-native"></a>.NET ネイティブによるアプリのコンパイル
 [!INCLUDE[net_native](../../../includes/net-native-md.md)] Visual Studio 2015 およびそれ以降のバージョンに含まれているプリコンパイル テクノロジを構築および Windows アプリを展開するためです。 マネージ コード (C# または Visual Basic) で記述された、.NET Framework および Windows 10 を対象とするアプリのリリース バージョンを自動的にネイティブ コードにコンパイルします。  
@@ -78,7 +78,4 @@ ms.lasthandoff: 05/04/2018
   
 -   [Windows ストア アプリの .NET ネイティブへの移行](../../../docs/framework/net-native/migrating-your-windows-store-app-to-net-native.md)  
   
--   [.NET ネイティブの一般的なトラブルシューティング](../../../docs/framework/net-native/net-native-general-troubleshooting.md)  
-  
-## <a name="see-also"></a>関連項目  
- [.NET ネイティブに関する FAQ](http://msdn.microsoft.com/vstudio/dn642499.aspx)
+-   [.NET ネイティブの一般的なトラブルシューティング](../../../docs/framework/net-native/net-native-general-troubleshooting.md)

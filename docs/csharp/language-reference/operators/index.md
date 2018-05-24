@@ -18,11 +18,11 @@ helpviewer_keywords:
 - keywords [C#], operators
 - arithmetic operators [C#]
 ms.assetid: 0301e31f-22ad-49af-ac3c-d5eae7f0ac43
-ms.openlocfilehash: d4b570c93b4bf5f612a74de80fc2cceea2063cc0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2b0441dfebb6692cbea0d1ab7909d7b8f04490cb
+ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="c-operators"></a>C# 演算子
 C# には、多くの演算子が用意されています。演算子とは、式で実行する演算 (数値演算、インデックス作成、関数呼び出しなど) を指定する記号のことです。 多くの演算子は、ユーザー定義型に適用する際に[オーバーロード](../../../csharp/programming-guide/statements-expressions-operators/overloadable-operators.md)して、その意味を変更できます。  
@@ -160,7 +160,7 @@ C# には、多くの演算子が用意されています。演算子とは、�
 ## <a name="null-coalescing-operator"></a>Null 合体演算子  
  この演算子は、前のセクションより優先順位が低く、次のセクションより優先順位が高くなります。  
   
- [x ?? y](../../../csharp/language-reference/operators/null-conditional-operator.md) – `x` が `null` 以外の場合は x を返します。null の場合は `y` を返します。  
+ [x ?? y](../../../csharp/language-reference/operators/null-coalescing-operator.md) – `x` が `null` 以外の場合は x を返します。null の場合は `y` を返します。  
   
 ## <a name="conditional-operator"></a>条件演算子  
  この演算子は、前のセクションより優先順位が低く、次のセクションより優先順位が高くなります。  

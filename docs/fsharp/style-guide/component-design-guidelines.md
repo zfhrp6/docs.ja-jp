@@ -2,11 +2,11 @@
 title: F# でコンポーネントのデザイン ガイドライン
 description: F# で他の呼び出し元で消費するためのコンポーネントを記述するためのガイドラインを説明します。
 ms.date: 05/14/2018
-ms.openlocfilehash: 7859baac76be01b2cfbdc8602b6cc417cfe5106f
-ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
+ms.openlocfilehash: 7e71710b1bc2fe3e8d7a5a091513a1432650dc04
+ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/15/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="f-component-design-guidelines"></a>F# でコンポーネントのデザイン ガイドライン
 
@@ -483,7 +483,7 @@ type MultiMap<'Key,'Value> = Map<'Key,'Value list>
 
 他の .NET 言語から使用するためのライブラリをデザインする場合に従う必要が、 [.NET ライブラリ デザイン ガイドライン](../../standard/design-guidelines/index.md)です。 このドキュメントでこれらのライブラリは f# ではなく、標準の .NET ライブラリとしてというラベルが付いた-制限なし構築 f# を使用するライブラリが直面しています。 標準の .NET ライブラリのデザインには、f# の使用を最小限に抑えることによって、.NET Framework の残りの部分と一貫性のある使い慣れたと慣用 Api を提供することを意味のパブリック API で特定のコンス トラクターです。 ルールは、次のセクションで説明します。
 
-### <a name="namespace-and-type-sesign-for-libraries-for-use-from-other-net-languages"></a>Namespace と型の sesign (の他の .NET 言語から使用するライブラリ)
+### <a name="namespace-and-type-design-for-libraries-for-use-from-other-net-languages"></a>Namespace と型のデザイン (の他の .NET 言語から使用するライブラリ)
 
 #### <a name="apply-the-net-naming-conventions-to-the-public-api-of-your-components"></a>コンポーネントのパブリック API への .NET の名前付け規則を適用します。
 

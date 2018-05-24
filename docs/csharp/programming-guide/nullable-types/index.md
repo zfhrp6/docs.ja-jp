@@ -6,11 +6,11 @@ helpviewer_keywords:
 - C# language, nullable types
 - types [C#], nullable
 ms.assetid: e473cb01-28ca-42be-9cea-f717055d72c6
-ms.openlocfilehash: 10a2d4ab248276d9fdbe9d2bba40ccdd02a77408
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: fcff492f420a60a41b373bf9042ed0c2d66d0446
+ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="nullable-types-c-programming-guide"></a>Null 許容型 (C# プログラミング ガイド)
 Null 許容型は、<xref:System.Nullable%601?displayProperty=nameWithType> 構造体のインスタンスです。 Null 許容型は、基になる値型の適切な範囲の値だけでなく、`null` 値も表すことができます。 たとえば、`Nullable<Int32>` ("Null 許容の Int32" と読みます) には、-2147483648 ～ 2147483647 の範囲の任意の値または `null` 値を割り当てることができます。 `Nullable<bool>` には、[true](../../../csharp/language-reference/keywords/true.md)、[false](../../../csharp/language-reference/keywords/false.md)、または [null](../../../csharp/language-reference/keywords/null.md) の値を割り当てることができます。 数値型と Boolean 型に `null` を割り当てる機能は、値が割り当てられていない可能性がある要素を含むデータベースとその他のデータ型を処理するときに特に役に立ちます。 たとえば、データベースの Boolean フィールドには、値 `true` または `false` が格納されている可能性がありますが、未定義である可能性もあります。 
@@ -51,7 +51,7 @@ Null 許容型は、<xref:System.Nullable%601?displayProperty=nameWithType> 構�
   
 -   [Null 許容型のボックス化](../../../csharp/programming-guide/nullable-types/boxing-nullable-types.md)  
   
--   [??演算子](../../../csharp/language-reference/operators/null-conditional-operator.md)  
+-   [??演算子](../../../csharp/language-reference/operators/null-coalescing-operator.md)  
   
 ## <a name="c-language-specification"></a>C# 言語仕様  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  

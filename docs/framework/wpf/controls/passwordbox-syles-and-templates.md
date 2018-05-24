@@ -11,7 +11,7 @@ helpviewer_keywords:
 ms.assetid: deb52107-959f-4a60-b303-d21a0a933060
 ms.openlocfilehash: a5002aa9596eb45ad92ef67ebc599efac32e94b4
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
 ---

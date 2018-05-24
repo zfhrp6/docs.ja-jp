@@ -9,11 +9,11 @@ helpviewer_keywords:
 ms.assetid: e9fd53f2-ed56-4b09-b2ea-e9bc9d65e6d6
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8fb58f8e7a1fef711de28534fbe53dfc9d7084ac
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ee4d884a0efbeb6e57ed727396bf3bcb39979774
+ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/15/2018
 ---
 # <a name="regular-expression-examples"></a>正規表現の例
 このセクションでは、一般的なアプリケーションで正規表現を使用するときのコード例を示します。  
@@ -35,7 +35,7 @@ ms.lasthandoff: 05/04/2018
  文字列から無効な非英数文字を取り除く例を示します。  
   
  [方法: 文字列が有効な電子メール形式であるかどうかを検証する](../../../docs/standard/base-types/how-to-verify-that-strings-are-in-valid-email-format.md)  
- 文字列が有効な電子メール形式であることを確認するために使用できる例を示します。  
+ 文字列が有効な電子メール形式であることを確認する例を次に示します。  
   
 ## <a name="reference"></a>参照  
  <xref:System.Text.RegularExpressions>  

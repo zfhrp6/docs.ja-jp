@@ -11,11 +11,11 @@ helpviewer_keywords:
 ms.assetid: c0a9bcdf-3df8-4db3-b1b6-abbdb2af809a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7ed306098852e93d43a4055fd1d9b8cf97a01766
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f5fef84250f9dbc10a921a6844f7020c72835cea
+ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="default-marshaling-behavior"></a>既定のマーシャリングの動作
 相互運用マーシャリングは、メソッドのパラメーターに関連付けられたデータが、マネージ メモリとアンマネージ メモリの間で渡されるときに、どのように動作するかを指示する規則に従って機能します。 これらの組み込みの規則は、データ型の変換などのマーシャリング動作、呼び出し先が渡されたデータを変更してその変更を呼び出し元にこ返すことが可能かどうか、およびどのような状況のときにマーシャラーがパフォーマンスの最適化を実現するかを制御します。  
@@ -345,7 +345,7 @@ interface _Graphics {
 }  
 ```  
   
- 値と参照をプラットフォーム呼び出しにマーシャリングする際に使用されるものと同じ規則が、COM インターフェイスを介してマーシャリングする際にも使用されます。 たとえば、`Point` 値型のインスタンスが .NET Framework から COM に渡されるとき、`Point` は値によって渡されます。 `Point` 値型が参照によって渡される場合、`Point` へのポインターはスタックで渡されます。 相互運用マーシャラーは、どちらの方向でも、より高いレベルの間接参照 (**Point \*\***) はサポートしていません。  
+ 値と参照をプラットフォーム呼び出しにマーシャリングする際に使用されるものと同じ規則が、COM インターフェイスを介してマーシャリングする際にも使用されます。 たとえば、`Point` 値型のインスタンスが .NET Framework から COM に渡されるとき、`Point` は値によって渡されます。 `Point` 値型が参照によって渡される場合、`Point` へのポインターはスタックで渡されます。 相互運用マーシャラーはより高いレベルの間接参照をサポートしていません (**ポイント** \* \*) いずれかの方向。  
   
 > [!NOTE]
 >  <xref:System.Runtime.InteropServices.LayoutKind> 列挙値が **Explicit** に設定された構造体は、エクスポートされたタイプ ライブラリが明示的なレイアウトを表現できないので、COM 相互運用で使用することはできません。  

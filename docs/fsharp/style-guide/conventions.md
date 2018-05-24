@@ -2,11 +2,11 @@
 title: F# でのコーディング規則
 description: F# コードを記述する場合は、一般的なガイドラインと表現方法を説明します。
 ms.date: 05/14/2018
-ms.openlocfilehash: 4db1e2b4fef97fc060f717a080cd762f9fe08ee0
-ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
-ms.translationtype: HT
+ms.openlocfilehash: f3d16f735ddc1901aeaa5ebb39e2fa2b70a3d836
+ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/15/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="f-coding-conventions"></a>F# でのコーディング規則
 
@@ -91,7 +91,7 @@ let parsed = StringTokenization.parse s // Must qualify to use 'parse'
 
 F# で宣言の順序が重要な使用含む`open`ステートメントです。 これとは異なり、C# の場合は、ここでの効果`using`と`using static`はファイルでこれらのステートメントの順序に依存しません。
 
-F# で、スコープ内に開かれた要素をシャドウするため他のユーザーは既に存在します。 つまり、その並べ替え`open`ステートメントは、コードの意味を変更できます。 結果として、英数字順 (または pseudorandomly) の並べ替えは一般的に使用しないで、意図した動作の違いを生成するようにします。
+F# では、スコープに開かれた要素は既に組み込まれている他のユーザーでシャドウできます。 つまり、その並べ替え`open`コードの意味をステートメントが変わる可能性があります。 その結果、すべての並べ替えは、任意`open`ステートメント (たとえば、英数字順) 通常は推奨されません、意図した動作の違いを生成するようにします。
 
 代わりに、ことをお勧めして並べ替えること[位相的](https://en.wikipedia.org/wiki/Topological_sorting); は、注文、`open`順序内のステートメント_レイヤー_定義は、システムのです。 英数字のトポロジの異なるレイヤー内での並べ替えを行うことがありますも見なされます。
 
@@ -108,12 +108,11 @@ open System.IO
 open System.Reflection
 open System.Text
 
-open Microsoft.FSharp.Core.Printf
 open Microsoft.FSharp.Compiler
 open Microsoft.FSharp.Compiler.AbstractIL
+open Microsoft.FSharp.Compiler.AbstractIL.Diagnostics
 open Microsoft.FSharp.Compiler.AbstractIL.IL
 open Microsoft.FSharp.Compiler.AbstractIL.ILBinaryReader
-open Microsoft.FSharp.Compiler.AbstractIL.Diagnostics
 open Microsoft.FSharp.Compiler.AbstractIL.Internal
 open Microsoft.FSharp.Compiler.AbstractIL.Internal.Library
 
@@ -123,24 +122,23 @@ open Microsoft.FSharp.Compiler.CompileOps
 open Microsoft.FSharp.Compiler.CompileOptions
 open Microsoft.FSharp.Compiler.Driver
 open Microsoft.FSharp.Compiler.ErrorLogger
+open Microsoft.FSharp.Compiler.Infos
+open Microsoft.FSharp.Compiler.InfoReader
+open Microsoft.FSharp.Compiler.Lexhelp
+open Microsoft.FSharp.Compiler.Layout
 open Microsoft.FSharp.Compiler.Lib
+open Microsoft.FSharp.Compiler.NameResolution
 open Microsoft.FSharp.Compiler.PrettyNaming
 open Microsoft.FSharp.Compiler.Parser
 open Microsoft.FSharp.Compiler.Range
-open Microsoft.FSharp.Compiler.Lexhelp
-open Microsoft.FSharp.Compiler.Layout
 open Microsoft.FSharp.Compiler.Tast
 open Microsoft.FSharp.Compiler.Tastops
 open Microsoft.FSharp.Compiler.TcGlobals
-open Microsoft.FSharp.Compiler.Infos
-open Microsoft.FSharp.Compiler.InfoReader
-open Microsoft.FSharp.Compiler.NameResolution
 open Microsoft.FSharp.Compiler.TypeChecker
 open Microsoft.FSharp.Compiler.SourceCodeServices.SymbolHelpers
 
 open Internal.Utilities
 open Internal.Utilities.Collections
-open Microsoft.FSharp.Compiler.Layout.TaggedTextOps
 ```
 
 改行が各レイヤーが後で並べ替えられる英数字順にトポロジのレイヤーを区切ることに注意してください。 これは、クリーンに値を誤ってシャドウせずコードを整理します。
@@ -154,7 +152,9 @@ open Microsoft.FSharp.Compiler.Layout.TaggedTextOps
 module MyApi =
     let dep1 = File.ReadAllText "/Users/{your name}/connectionstring.txt"
     let dep2 = Environment.GetEnvironmentVariable "DEP_2"
-    let dep3 = Random().Next() // Random is not thread-safe
+
+    let private r = Random()
+    let dep3() = r.Next() // Problematic if multiple threads use this
 
     let function1 arg = doStuffWith dep1 dep2 dep3 arg
     let function2 arg = doSutffWith dep1 dep2 dep3 arg
@@ -162,7 +162,9 @@ module MyApi =
 
 これをお勧め頻繁に不適切な理由はいくつかの。
 
-まず、かなって API 自体を共有状態に依存します。 アクセスするたとえばに複数の呼び出し元スレッドをしようとする可能性があります、`dep3`値 (および、スレッド セーフではありません)。 次に、コードベース自体にアプリケーションの構成をプッシュします。 これは、大規模なコードベースを管理するが困難です。
+コードベースでアプリケーションの構成をプッシュする最初に、`dep1`と`dep2`です。 これは、大規模なコードベースで維持するが困難です。
+
+第二に、静的に初期化されたデータは、自体のコンポーネントが複数のスレッドを使用する場合、スレッド セーフではない値を含めないでください。 この違反が明確に`dep3`です。
 
 最後に、モジュールの初期化は、静的コンス トラクターに、全体のコンパイル単位をコンパイルします。 場合は、そのモジュール内の let バインドされた値の初期化でエラーの発生が明らかに、`TypeInitializationException`アプリケーション全体の有効期間にわたってしキャッシュされました。 これは、診断が難しいことができます。 通常は、内部例外については、理由を試みることができますが場合がない、根本原因を示しませんします。
 
@@ -318,7 +320,7 @@ let tryReadAllTextIfPresent (path : string) =
 
 ## <a name="partial-application-and-point-free-programming"></a>一部のアプリケーションとプログラミングのポイントを必要としません。
 
-F# ポイントを必要としないスタイルで一部のアプリケーションであるため、プログラムにさまざまな方法をサポートします。 モジュールまたは何かの実装内でコードを再利用と役に立つこのことができますが、一般的にはないものをパブリックに公開します。 一般に、ポイントを必要としないプログラミングは、それ自体の長所があり、いないスタイルに従事している人の重要な知的バリアを追加できます。 F# のプログラミングのポイントを必要としないが適切なトレーニング済みの数学的の基本的なラムダ計算に慣れていない方のため困難になります。
+F# ポイントを必要としないスタイルで一部のアプリケーションであるため、プログラムにさまざまな方法をサポートします。 モジュールまたは何かの実装内でコードを再利用と役に立つこのことができますが、一般的にはないものをパブリックに公開します。 一般に、ポイントを必要としないプログラミングは、それ自体の長所があり、いないスタイルに従事している人の重要な知的バリアを追加できます。
 
 ### <a name="do-not-use-partial-application-and-currying-in-public-apis"></a>部分的に適用し、パブリック Api で、カリー化を使用しないでください。
 

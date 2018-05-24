@@ -15,11 +15,11 @@ helpviewer_keywords:
 - styles [WPF], triggers
 - styles [WPF], event triggers
 ms.assetid: 481765e5-5467-4a75-9f7b-e10e2ac410d9
-ms.openlocfilehash: 85911647c089d51bafe2d65d1c5db907599b06d4
-ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
+ms.openlocfilehash: 9c2c38020bb57a008d0948a360a5b2cbe401089d
+ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/15/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="styling-and-templating"></a>スタイルとテンプレート
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]スタイルとテンプレートは、開発者および設計者が視覚的に説得力のある効果を作成し、製品の一貫した外観を作成できる、一連の機能 (スタイル、テンプレート、トリガー、およびストーリーボード) を表します。 開発者や設計者は、アプリケーション単位で広範囲に外観をカスタマイズできますが、アプリケーション内およびアプリケーション間で外観の保守および共有を可能にするには、強力なスタイルとテンプレートのモデルが必要です。 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] はそのモデルを提供します。  
@@ -28,10 +28,8 @@ ms.lasthandoff: 05/15/2018
   
  この概要では、アプリケーションのスタイルとテンプレートの側面に焦点を当てています。データ バインディングの概念については説明しません。 データ バインディングの詳細については、「[データ バインディングの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)」を参照してください。  
   
- また、スタイルとテンプレートの再利用を使用できるようにするリソースを理解する必要もあります。 リソースの詳細については、「[XAML Resources](../../../../docs/framework/wpf/advanced/xaml-resources.md)」を参照してください。  
-  
- 
-  
+ また、スタイルとテンプレートの再利用を使用できるようにするリソースを理解する必要もあります。 リソースの詳細については、「[XAML Resources](../../../../docs/framework/wpf/advanced/xaml-resources.md)」を参照してください。
+
 <a name="styling_and_templating_sample"></a>   
 ## <a name="styling-and-templating-sample"></a>スタイルとテンプレートのサンプル  
  この概要で使用するコード例は、次の図に示すように単純な写真のサンプルに基づいています。  
@@ -184,9 +182,9 @@ ms.lasthandoff: 05/15/2018
   
  複数のアプリケーションでテーマを再利用できる個別ファイルとしてリソース ディクショナリを定義できます。 また、同じ種類のリソースだが値が異なる複数のリソース ディクショナリを定義して、交換できるテーマを作成することもできます。 アプリケーションをスキニングする場合、これらのスタイルまたはその他のリソースをアプリケーション レベルで再定義することを推奨します。  
   
- スタイル テンプレートなど、複数のアプリケーションで、リソースのセットを共有するには、作成、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]ファイルし、定義、<xref:System.Windows.ResourceDictionary>です。 たとえば、[ControlTemplates サンプルを使用したスタイル](http://go.microsoft.com/fwlink/?LinkID=160041)の一部を示す次の図を見てください。  
-  
- ![コントロール テンプレートの例](../../../../docs/framework/wpf/controls/media/stylingintro-controltemplateexamples.png "StylingIntro_ControlTemplateExamples")  
+ スタイル テンプレートなど、複数のアプリケーションで、リソースのセットを共有するには、作成、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]ファイルし、定義、<xref:System.Windows.ResourceDictionary>です。 たとえば、[ControlTemplates サンプルを使用したスタイル](https://github.com/Microsoft/WPF-Samples/tree/master/Styles%20&%20Templates/IntroToStylingAndTemplating)の一部を示す次の図を見てください。
+
+![コントロール テンプレートの例](../../../../docs/framework/wpf/controls/media/stylingintro-controltemplateexamples.png "StylingIntro_ControlTemplateExamples")  
   
  サンプルの [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] ファイルを確認すると、すべてのファイルに次の項目が含まれていることがわかります。  
   

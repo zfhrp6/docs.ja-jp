@@ -3,12 +3,12 @@ title: Windows における .NET Core の前提条件
 description: Windows コンピューターで .NET Core アプリケーションを開発および実行する場合に必要な依存関係について説明します。
 author: JRAlexander
 ms.author: johalex
-ms.date: 04/24/2018
-ms.openlocfilehash: 7c6f39f004ebc39ca714ce419a38d842fcf8f0cb
-ms.sourcegitcommit: ff1d40507b3eb6e2185478e37c66c66be6de46f1
+ms.date: 05/18/2018
+ms.openlocfilehash: 3d172c83f0a79744afbaeeff52d7fea62d9b98b6
+ms.sourcegitcommit: 895c7602386a6dfe7ca4facce3d965b27e5c6e87
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/11/2018
+ms.lasthandoff: 05/19/2018
 ---
 # <a name="prerequisites-for-net-core-on-windows"></a>Windows における .NET Core の前提条件
 
@@ -28,11 +28,13 @@ ms.lasthandoff: 05/11/2018
 * Windows Server 2008 R2 SP1 (フル サーバーまたは Server Core)
 * Windows Server 2012 SP1 (フル サーバーまたは Server Core)
 * Windows Server 2012 R2 (フル サーバーまたは Server Core)
-* Windows Server 2016 (フル サーバー、Server Core または Nano Server)
+* Windows Server 2016 以降のバージョン (フル サーバー、Server Core、または Nano Server)
 
-.NET Core 2.x がサポートされるオペレーティング システムの完全なリストは、「[.NET Core 2.x - Supported OS Versions](https://github.com/dotnet/core/blob/master/release-notes/2.0/2.0-supported-os.md)」 (.NET Core 2.x がサポートされる OS のバージョン) を参照してください。
+次の記事では、.NET Core がサポートされたオペレーティング システム (バージョンごと) の完全な一覧を示します。
 
-.NET Core 1.x がサポートされるオペレーティング システムの完全なリストは、「[.NET Core 1.x Supported OS Versions](https://github.com/dotnet/core/blob/master/release-notes/1.0/1.0-supported-os.md)」 (.NET Core 1.x がサポートされる OS のバージョン) を参照してください。
+* [.NET Core 2.1 - サポートされている OS バージョン](https://github.com/dotnet/core/blob/master/release-notes/2.1/2.1-supported-os.md)
+* [.NET Core 2.0 - サポートされている OS バージョン](https://github.com/dotnet/core/blob/master/release-notes/2.0/2.0-supported-os.md)
+* [.NET Core 1.x - サポートされている OS バージョン](https://github.com/dotnet/core/blob/master/release-notes/1.0/1.0-supported-os.md)
 
 ## <a name="net-core-dependencies"></a>.NET Core の依存関係
 
@@ -46,7 +48,13 @@ ms.lasthandoff: 05/11/2018
 * *.zip* ファイルを使用して .NET Core をインストールする。 これにはビルド/CI/CD サーバーを含めることができます。
 
 > [!NOTE]
-> *Windows 8.1 以前のバージョン、または Windows Server 2012 R2 以前のバージョンの場合:* Windows のインストールが最新であることと、Windows Update からインストールできる [KB2999226](https://support.microsoft.com/en-us/help/2999226/update-for-universal-c-runtime-in-windows) が含まれていることを確認してください。 この更新プログラムがインストールされていない場合は、.NET Core アプリケーションを起動するときに、次のようなエラーが表示されます。`The program can't start because api-ms-win-crt-runtime-1-1-0.dll is missing from your computer. Try reinstalling the program to fix this problem.`
+> **Windows 8.1 以前のバージョン、または Windows Server 2012 R2 以前のバージョンの場合:**
+>
+> Windows のインストールが最新であり、Windows Update から修正プログラム [KB2999226](https://support.microsoft.com/en-us/help/2999226/update-for-universal-c-runtime-in-windows) をインストールしていることを確認してください。 この更新プログラムがインストールされていない場合は、.NET Core アプリケーションを起動するときに、次のようなエラーが表示されます。`The program can't start because api-ms-win-crt-runtime-1-1-0.dll is missing from your computer. Try reinstalling the program to fix this problem.`
+>
+> **Windows 7 または Windows Server 2008 R2 の場合:**
+>
+> KB2999226 に加え、[KB2533623](https://support.microsoft.com/en-us/help/2533623/microsoft-security-advisory-insecure-library-loading-could-allow-remot) もインストールされていることを確認します。 この更新プログラムがインストールされていない場合は、.NET Core アプリケーションを起動するときに、次のようなエラーが表示されます。`The library hostfxr.dll was found, but loading it from C:\<path_to_app>\hostfxr.dll failed`
 
 ## <a name="prerequisites-with-visual-studio-2017"></a>Visual Studio 2017 の前提条件
 
@@ -96,6 +104,6 @@ Visual Studio で .NET Core 1.x アプリを開発するには、(**[その他�
 >
 > * **[ヘルプ]** メニューの **[About Microsoft Visual Studio]** (Microsoft Visual Studio のバージョン情報) を選択します。
 > * **[Microsoft Visual Studio のバージョン情報]** ダイアログで、バージョン番号を確認します。
->   * .NET Core 2.1 Preview 1 アプリの場合は、Visual Studio 2017 バージョン 15.6 Preview 6 以降です。
+>   * .NET Core 2.1 RC アプリの場合は、Visual Studio 2017 バージョン 15.7 以降です。
 >   * .NET Core 2.0 アプリの場合は、Visual Studio 2017 バージョン 15.3 以降です。
 >   * .NET Core 1.x アプリの場合は、Visual Studio 2017 バージョン 15.0 以降です。

@@ -11,7 +11,7 @@ helpviewer_keywords:
 ms.assetid: 6bd4ff8f-ea6a-4084-ac58-e7a67446ce1c
 ms.openlocfilehash: 4674e5d2271910b08fd94ce294e9247e0e4c1691
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
 ---
