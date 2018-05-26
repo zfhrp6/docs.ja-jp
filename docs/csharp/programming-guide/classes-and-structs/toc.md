@@ -47,7 +47,6 @@
 ## [オブジェクト初期化子とコレクション初期化子](object-and-collection-initializers.md)
 ### [方法: オブジェクト初期化子を使用してオブジェクトを初期化する](how-to-initialize-objects-by-using-an-object-initializer.md)
 ### [方法: コレクション初期化子を使用してディクショナリを初期化する](how-to-initialize-a-dictionary-with-a-collection-initializer.md)
-## [方法: foreach を使用してコレクション クラスにアクセスする](how-to-access-a-collection-class-with-foreach.md)
 ## [入れ子にされた型](nested-types.md)
 ## [部分クラスと部分メソッド](partial-classes-and-methods.md)
 ## [匿名型](anonymous-types.md)
