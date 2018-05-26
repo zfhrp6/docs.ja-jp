@@ -2,11 +2,11 @@
 title: レコード (F#)
 description: F# のレコードがオプションでメンバーの名前付きの値の単純な集計を表現する方法について説明します。
 ms.date: 05/16/2016
-ms.openlocfilehash: 5bd1f76937bf5839b7da5cae7dea578747ec9b99
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ffb853ee11ff8cacb45dadf6ef14a4f29400aad4
+ms.sourcegitcommit: 54231aa56fca059e9297888a96fbca1d4cf3746c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="records"></a>レコード
 
@@ -16,15 +16,15 @@ ms.lasthandoff: 05/04/2018
 
 ```fsharp
 [ attributes ]
-type [accessibility-modifier] typename = {
-    [ mutable ] label1 : type1;
-    [ mutable ] label2 : type2;
-    ...
-}
+type [accessibility-modifier] typename =
+    { [ mutable ] label1 : type1;
+      [ mutable ] label2 : type2;
+      ... }
     [ member-list ]
 ```
 
 ## <a name="remarks"></a>コメント
+
 前の構文で*typename*レコードの種類の名前を指定*label1*と*label2*と呼ばれる値の名前は、*ラベル*、および*type1*と*type2*これらの値の種類を示します。 *メンバー リスト*省略可能な型のメンバーの一覧を示します。  使用することができます、`[<Struct>]`参照型であるレコードではなく、構造体レコードを作成する属性。
 
 いくつかの例を次に示します。
@@ -48,6 +48,7 @@ type [accessibility-modifier] typename = {
 メソッドは、クラス型と同様のレコードの種類に対して定義できます。
 
 ## <a name="creating-records-by-using-record-expressions"></a>レコード式を使用してレコードを作成します。
+
 レコードで定義されているラベルを使用してレコードを初期化することができます。 これを行う式を呼びます、*式を記録*です。 中かっこを使用して、区切り記号としてセミコロンを使用してレコード式を囲みます。
 
 次の例では、レコードを作成する方法を示します。
@@ -77,20 +78,19 @@ type [accessibility-modifier] typename = {
 ```fsharp
 // Rather than use [<DefaultValue>], define a default record.
 type MyRecord =
-{
-    field1 : int
-    field2 : int
-}
+    { Field1 : int
+      Field2 : int }
 
-let defaultRecord1 = { field1 = 0; field2 = 0 }
-let defaultRecord2 = { field1 = 1; field2 = 25 }
+let defaultRecord1 = { Field1 = 0; Field2 = 0 }
+let defaultRecord2 = { Field1 = 1; Field2 = 25 }
 
 // Use the with keyword to populate only a few chosen fields
 // and leave the rest with default values.
-let rr3 = { defaultRecord1 with field2 = 42 }
+let rr3 = { defaultRecord1 with Field2 = 42 }
 ```
 
 ## <a name="pattern-matching-with-records"></a>レコードを使用したパターン マッチ
+
 レコードは、パターン マッチで使用できます。 いくつかのフィールドを明示的に指定し、一致が発生したときに割り当てられる他のフィールドの変数を設定できます。 これを次のコード例に示します。
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet1910.fs)]
@@ -104,17 +104,25 @@ Point is at (10.000000, 0.000000, -1.000000).
 ```
 
 ## <a name="differences-between-records-and-classes"></a>レコードおよびクラス間の相違点
+
 レコードのフィールドとは異なり、クラスからプロパティとして自動的に公開されているし、それらが作成時に使用され、レコードのコピー。 レコードの作成は、クラスの構築からも異なります。 レコードの種類では、コンス トラクターを定義できません。 代わりに、このトピックで説明する構築構文が適用されます。 クラスは、コンス トラクターのパラメーター、フィールド、およびプロパティ間の直接の関係のあるありません。
 
 共用体と構造体の型と同様には、レコードは、構造の等値セマンティクスを持ちます。 クラスは、参照を持つ等値セマンティクスです。 次のコード例はこの処理方法を示しています。
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet1911.fs)]
 
+このコードの出力は次のとおりです。
+
+```
+The records are equal.
+```
+
 クラスと同じコードを記述する場合、2 つのクラス オブジェクトしない場合は等しくためとアドレスのみを比較するように 2 つの値をヒープ上の 2 つのオブジェクトを表します (クラス型のオーバーライドしない限り、`System.Object.Equals`メソッド)。
 
 レコードに等しいかどうかを参照する必要がある場合、属性を追加`[<ReferenceEquality>]`レコード上。
 
 ## <a name="see-also"></a>関連項目
+
 [F# の型](fsharp-types.md)
 
 [クラス](classes.md)
