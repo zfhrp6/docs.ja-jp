@@ -3,11 +3,11 @@ title: Docker でホストされているマイクロサービス - C
 description: Docker コンテナーで実行される ASP.NET Core サービスを作成する方法を学ぶ
 ms.date: 02/03/2017
 ms.assetid: 87e93838-a363-4813-b859-7356023d98ed
-ms.openlocfilehash: eacfa87e465e5f7737dbd2bfc4c6a77ffc5531c3
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7428051c1d9a29ba98ca1f28288b3c50ea36ae1a
+ms.sourcegitcommit: 54231aa56fca059e9297888a96fbca1d4cf3746c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="microservices-hosted-in-docker"></a>Docker でホストされているマイクロサービス
 
@@ -237,7 +237,7 @@ WORKDIR /app
 
 # copy csproj and restore as distinct layers
 
-COPY WeatherMicroservice.csproj .
+COPY WeatherMicroService.csproj .
 RUN dotnet restore 
 
 # copy and build everything else
@@ -255,7 +255,7 @@ RUN dotnet publish -c Release -o out
 ファイルの最後の行で、アプリケーションが実行されます。
 
 ```
-ENTRYPOINT ["dotnet", "out/WeatherMicroservice.dll", "--server.urls", "http://0.0.0.0:5000"]
+ENTRYPOINT ["dotnet", "out/WeatherMicroService.dll", "--server.urls", "http://0.0.0.0:5000"]
 ```
 
 この構成されたポートは、Dockerfile の最終行の `dotnet` への `--server.urls` 引数で参照されます。 `ENTRYPOINT` コマンドは、どのコマンドとコマンド ラインのオプションによってサービスが開始されるかを、Docker に通知します。 

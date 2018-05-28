@@ -14,7 +14,7 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 583cfb6e3a5145c6c0dfc82ec9ff64c6d87414ba
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
 ---
@@ -48,13 +48,13 @@ COM 相互運用機能が提供するラッパーをについて説明します�
 COM 型の型情報をアセンブリに埋め込む方法と、共通言語ランタイムが埋め込みの COM 型の等価性を決定する方法について説明します。
 
 [方法: Tlbimp.exe を使用してプライマリ相互運用機能アセンブリを生成する](how-to-generate-primary-interop-assemblies-using-tlbimp-exe.md)  
-使用してプライマリ相互運用機能アセンブリを生成する方法について説明*Tlbimp.exe* (タイプ ライブラリ インポーター)。
+*Tlbimp.exe* (タイプ ライブラリ インポーター) を使用して、プライマリ相互運用機能アセンブリを生成する方法について説明します。
 
 [方法: プライマリ相互運用機能アセンブリを登録する](how-to-register-primary-interop-assemblies.md)  
 プロジェクトで参照する前に、プライマリ相互運用機能アセンブリを登録する方法について説明します。
 
 [登録を必要としない COM 相互運用機能](registration-free-com-interop.md)  
-COM 相互運用機能が Windows レジストリを使用せずコンポーネントをアクティブに方法について説明します。
+COM 相互運用機能によって Windows レジストリを使用せずにコンポーネントをアクティブ化する方法を説明します。
 
 [方法: 登録を必要としないアクティベーション用の .NET Framework ベースの COM コンポーネントを構成する](configure-net-framework-based-com-components-for-reg.md)  
-作成し、コンポーネント マニフェストを埋め込む方法と、アプリケーション マニフェストを作成する方法について説明します。
+アプリケーション マニフェストを作成する方法と、コンポーネント マニフェストを作成して埋め込む方法について説明します。

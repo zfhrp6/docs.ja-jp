@@ -1,6 +1,6 @@
 ---
 title: C# 6.0 のドラフト言語仕様
-ms.date: 07/01/2017
+ms.date: 05/22/2018
 ms.topic: language-reference
 helpviewer_keywords:
 - C# language, specification
@@ -8,23 +8,24 @@ helpviewer_keywords:
 - Visual C#, C# language specification
 - language specification [C#]
 ms.assetid: e5d5a5cc-636b-4bff-b9c8-a8edc6207c22
-ms.openlocfilehash: 66ee5534d87da90fe4bce793a3841b13ff7cc04e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5ed035d5e1e524de9f86254d03e3276966293bf6
+ms.sourcegitcommit: 77d9a94dac4c05827ed0663d95e0f9ad35d6682e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/24/2018
 ---
 # <a name="c-60-draft-language-specification"></a>C# 6.0 のドラフト言語仕様
-C# 言語仕様は、C# の構文と使用法に関する信頼性のある情報源です。 この仕様には、Visual C# のドキュメントで取り上げられていない多数の点を含め、C# 言語に関する詳細情報が全面的に網羅されています。
 
-この仕様のバージョン 5.0 を [Microsoft ダウンロード センター](http://www.microsoft.com/download/details.aspx?id=7029)からダウンロードすることができます。 Visual Studio 2015 をインストールした場合は、そのコンピューターの Program Files (x86)/Microsoft Visual Studio 14.0/VC#/Specifications/1033 フォルダーにも仕様が含まれています。 別のバージョンの Visual Studio をインストールした場合、または英語以外の言語で Visual Studio をインストールした場合は、適切なパスに変更してください。
+C# 言語仕様は、C# の構文と使用法に関する信頼性のある情報源です。 この仕様には、C# のドキュメントで取り上げられていない多数の点を含め、C# 言語に関する詳細情報が全面的に網羅されています。
+
+仕様のバージョン 5.0 が、[Standard ECMA-334 5th Edition](https://www.ecma-international.org/publications/files/ECMA-ST/Ecma-334.pdf) ドキュメントとして 2017 年 12 月にリリースされています。
 
 バージョン 6.0 の仕様は標準として承認されていません。 このサイトには、[*ドラフト*の C# 6.0 仕様](../../../../_csharplang/spec/introduction.md)が含まれています。 [dotnet/csharplang GitHub レポジトリ](https://github.com/dotnet/csharplang/blob/master/spec/README.md)に含まれているマークダウン ファイルから作成されています。
 
 ドラフト仕様の問題は [dotnet/csharplang](https://github.com/dotnet/csharplang/issues) リポジトリで作成する必要があります。 見つけたエラーを修正したい場合は、同じレポジトリに[プル要求](https://github.com/dotnet/csharplang/pulls)を送信できます。
 
-## <a name="see-also"></a>参照  
- [C# リファレンス](../../language-reference/index.md)  
+## <a name="see-also"></a>関連項目
+ [C# リファレンス](../index.md)  
  [C# プログラミング ガイド](../../programming-guide/index.md)
 
 >[!div class="step-by-step"]

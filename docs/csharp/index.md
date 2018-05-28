@@ -8,11 +8,11 @@ helpviewer_keywords:
 - Help, Visual C# documentation
 - C# language
 - Visual C#
-ms.openlocfilehash: 4d349f8aff5e3d48a2bc738e848d2a251805e260
-ms.sourcegitcommit: ff1d40507b3eb6e2185478e37c66c66be6de46f1
+ms.openlocfilehash: 15c10d8891e87ab241104e6aa760c221e8b9e249
+ms.sourcegitcommit: 77d9a94dac4c05827ed0663d95e0f9ad35d6682e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/11/2018
+ms.lasthandoff: 05/24/2018
 ---
 # <a name="c-guide"></a>C# のガイド
 
@@ -61,7 +61,7 @@ C# ガイドにはいくつかのセクションがあります。 順番に読�
   * C# 言語に関するリファレンス資料が含まれています。 この資料は、C# の構文とセマンティクスを理解するのに役立ちます。 型、演算子、属性、プリプロセッサ ディレクティブ、コンパイラ スイッチ、およびコンパイラのエラーと警告に関するリファレンス情報も含まれています。
 
 * [C# 言語仕様](../csharp/language-reference/language-specification/index.md)
-  * Microsoft Word 形式で作成された最新バージョンの C# 仕様へのリンクを紹介します。
+  * C# 言語仕様の最新バージョンへのリンク。
 
 ## <a name="see-also"></a>関連項目
 

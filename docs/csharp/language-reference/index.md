@@ -8,11 +8,11 @@ helpviewer_keywords:
 - C# language, reference
 - reference, C# language
 ms.assetid: 06de3167-c16c-4e1a-b3c5-c27841d4569a
-ms.openlocfilehash: 7ed85e294e25535f7600dab425a74adbbdbc4bc3
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c9400c2836d923fe92ed88ec947a1953800bc47d
+ms.sourcegitcommit: 77d9a94dac4c05827ed0663d95e0f9ad35d6682e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/24/2018
 ---
 # <a name="c-reference"></a>C# リファレンス
 このセクションでは、C# のキーワード、演算子、特殊文字、プリプロセッサ ディレクティブ、コンパイラ オプション、およびコンパイラのエラーと警告ン関する参考資料を紹介します。  
@@ -37,11 +37,12 @@ ms.lasthandoff: 05/04/2018
  C# コンパイラのエラーや警告の原因と修正法を示すコード スニペットを示します。  
   
  [C# 言語仕様](../../csharp/language-reference/language-specification/index.md)  
- Microsoft Word 形式で作成された最新バージョンの C# 言語仕様へのポインターを紹介します。  
+ C# 言語仕様の最新バージョンへのリンクを提供します。  
   
 ## <a name="related-sections"></a>関連項目  
 
- [C#](../../csharp/index.md) Visual C# ドキュメントへのポータルを提供します。  
+ [C# のガイド](../../csharp/index.md)  
+ Visual C# ドキュメントへのポータルを提供します。  
   
  [Visual C# 開発環境の使用](/visualstudio/csharp-ide/using-the-visual-studio-development-environment-for-csharp)  
  IDE およびエディターについて説明する概念トピックおよびタスク トピックへのリンクを提供します。  
