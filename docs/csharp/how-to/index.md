@@ -2,11 +2,11 @@
 title: 方法に関する記事 (C# ガイド)
 description: 簡単なヒントと、焦点を絞った短いコード サンプルのコレクション
 ms.date: 12/20/2017
-ms.openlocfilehash: b8164abd84647fc9118acc6e0b84e7fd46838fe9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 209af8858de1a791997d254f5a2ddd5dd1803bff
+ms.sourcegitcommit: 54231aa56fca059e9297888a96fbca1d4cf3746c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="how-to-c"></a>方法 (C#)
 
@@ -43,9 +43,8 @@ C# の開発者には常識といえるヒントやコツがいくつかあり�
 次の記事は、データのコレクションの操作に役立ちます。
 
 - [コレクション初期化子を使用してディクショナリを初期化する](../programming-guide/classes-and-structs/how-to-initialize-a-dictionary-with-a-collection-initializer.md)。
-- [`foreach` を使用してコレクション内のすべての要素にアクセスする](../programming-guide/classes-and-structs/how-to-access-a-collection-class-with-foreach.md)。
 
-## <a name="strings"></a>文字列
+## <a name="working-with-strings"></a>文字列の処理
 
 文字列は、文字列の表示または操作に使用される基本的なデータ型です。 次の記事で、文字列に関する一般的なプラクティスを説明しています。
 

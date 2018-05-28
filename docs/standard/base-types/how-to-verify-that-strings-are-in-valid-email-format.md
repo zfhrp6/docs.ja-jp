@@ -20,14 +20,17 @@ helpviewer_keywords:
 ms.assetid: 7536af08-4e86-4953-98a1-a8298623df92
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 573a3e954bf15bdbcf8b1885c10f68a222329ac1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 02c942dea3314581ce8f758bb9ed3ce88c2fe150
+ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/15/2018
 ---
 # <a name="how-to-verify-that-strings-are-in-valid-email-format"></a>方法 : 文字列が有効な電子メール形式であるかどうかを検証する
 正規表現を使用して文字列の形式が有効な電子メール形式であるかどうかを検証する例を次に示します。  
+
+> [!NOTE]
+>  文字列が有効なメール アドレス形式かどうかを確認するには、<xref:System.Net.Mail.MailAddress?displayProperty=nameWithType> クラスを使うことをお勧めします。 そのためには、メール アドレスの文字列を <xref:System.Net.Mail.MailAddress.%23ctor%28System.String%29?displayProperty=nameWithType> クラスのコンストラクターに渡します。文字列が認識されない形式の場合、<xref:System.FormatException> がスローされます。  
   
 ## <a name="example"></a>例  
  次の例では、 `IsValidEmail` メソッドを定義します。このメソッドは、文字列に有効な電子メール アドレスが含まれている場合に `true` を返し、含まれていない場合に `false` を返します。それ以外の動作は行いません。  
@@ -67,9 +70,6 @@ ms.lasthandoff: 05/04/2018
 |<code>&#124;(([0-9a-z][-0-9a-z]*[0-9a-z]*\.)+</code>|@ に続く文字が左角かっこでない場合は、値が A - Z、a - z、または 0 - 9 の 1 つの英数字の後に、ハイフンの 0 回以上の出現、A - Z、a - z、または 0 - 9 の値の 0 個または 1 つの英数字、さらにピリオドが続くパターンと一致します。 このパターンは 1 回以上繰り返すことができ、後ろに最上位ドメイン名が続く必要があります。|  
 |`[a-z0-9][\-a-z0-9]{0,22}[a-z0-9]))`|最上位ドメイン名では、最初の文字と最後の文字が英数字文字 (a ～ z、A ～ Z、0 ～ 9) である必要があります。 また、0 ～ 22 文字の ASCII 文字 (英数字またはハイフン) を含めることができます。|  
 |`$`|入力文字列の末尾で照合を終了します。|  
-  
-> [!NOTE]
->  電子メール アドレスの検証に正規表現を使用する代わりに、<xref:System.Net.Mail.MailAddress?displayProperty=nameWithType> クラスを使用できます。 電子メール アドレスが有効であるかどうかを判別するには、電子メール アドレスを<xref:System.Net.Mail.MailAddress.%23ctor%28System.String%29?displayProperty=nameWithType> クラス コンストラクターに渡します。  
   
 ## <a name="compiling-the-code"></a>コードのコンパイル  
  `IsValidEmail` メソッドと `DomainMapper` メソッドは、正規表現ユーティリティ メソッドのライブラリに含めることができるほか、アプリケーション クラス内のプライベートな静的メソッドやインスタンス メソッドとして含めることもできます。  
