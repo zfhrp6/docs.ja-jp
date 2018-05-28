@@ -15,12 +15,12 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 0d9825deae22e856cf520e6173d53278539c576c
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
 ---
 # <a name="how-to-map-hresults-and-exceptions"></a>方法: HRESULT に例外を割り当てる
-COM メソッドでは、HRESULT を返してエラーを報告します.NET メソッドでは、例外をスローしてエラーを報告します。 ランタイムは、この 2 つの間の遷移を処理します。 .NET Framework の例外クラスはそれぞれ HRESULT に割り当てられます。  
+COM メソッドでは、HRESULT を返してエラーを報告します。 .NET メソッドでは、例外をスローしてエラーを報告します。 ランタイムは、この 2 つの間の遷移を処理します。 .NET Framework の例外クラスはそれぞれ HRESULT に割り当てられます。  
   
  ユーザー定義の例外クラスは、適切な HRESULT であればどの HRESULT でも指定できます。 これらの例外クラスでは、例外オブジェクトの **HResult** フィールドを設定することで例外が生成されたときに返される HRESULT を動的に変更できます。 アンマネージ プロセスの .NET オブジェクトに実装されている **IErrorInfo** インターフェイスを通じて、クライアントに例外についての追加情報が提供されます。  
   
@@ -141,6 +141,6 @@ CMyClass::MethodThatThrows
   
  **Message**、**Source**、および **StackTrace** などの例外フィールドは、**StackOverflowException** では使用できません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [高度な COM 相互運用性](https://msdn.microsoft.com/library/3ada36e5-2390-4d70-b490-6ad8de92f2fb(v=vs.100))  
  [例外](../../standard/exceptions/index.md)
