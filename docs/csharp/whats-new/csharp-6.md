@@ -3,12 +3,12 @@ title: C# 6 の新機能 - C# ガイド
 description: C# バージョン 6 の新機能について説明します
 ms.date: 09/22/2016
 ms.assetid: 4d879f69-f889-4d3f-a781-75194e143400
-ms.openlocfilehash: d9f5c5ca94c04a873e4e98863f9fea3b8f477c1c
-ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
+ms.openlocfilehash: c23d4f45441451fbf8a2ad2f939bdb1ed6144154
+ms.sourcegitcommit: b7763f3435635850a76d4cbcf09bdce6c019208a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "34458006"
+ms.lasthandoff: 05/25/2018
+ms.locfileid: "34483490"
 ---
 # <a name="whats-new-in-c-6"></a>C# 6 の新機能
 
@@ -342,11 +342,11 @@ C# 6 では、catch 式でも await を使用することができます。 次�
 
 ## <a name="index-initializers"></a>インデックス初期化子
 
-*インデックス初期化子*は、コレクション初期化子の一貫性を高める 2 つの機能のうちの 1 つです。 C# の以前のリリースでは、*コレクション初期化子*はシーケンス スタイルのコレクションでのみ使用できました。
+*インデックス初期化子*は、インデックスの使用によってコレクション初期化子の一貫性を高める 2 つの機能のうちの 1 つです。 C# の以前のリリースでは、キーと値のペアを中かっこで囲むことで <xref:System.Collections.Generic.Dictionary%602> を含めたシーケンス スタイルのコレクションでのみ*コレクション初期化子*を使用できました。
 
 [!code-csharp[ListInitializer](../../../samples/snippets/csharp/new-in-6/initializers.cs#ListInitializer)]
 
-C# 6 では、<xref:System.Collections.Generic.Dictionary%602> コレクションや、それと同様の型でも使用できるようになりました。
+C# 6 では、<xref:System.Collections.Generic.Dictionary%602> コレクションや、それと同様の型でも使用できるようになりました。 新しい構文は、インデックスを使用したコレクションへの割り当てをサポートしています。
 
 [!code-csharp[DictionaryInitializer](../../../samples/snippets/csharp/new-in-6/initializers.cs#DictionaryInitializer)]
 
