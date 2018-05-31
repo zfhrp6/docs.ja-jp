@@ -126,7 +126,7 @@ Microsoft は、ここで示すガイドラインに従ってサンプルおよ�
  `On Error Goto` は使用しないでください。  
   
 ### <a name="use-the-isnot-keyword"></a>IsNot キーワードの使用  
- `IsNot` の代わりに `Not...Is Nothing` キーワードを使用します。  
+ `Not...Is Nothing` の代わりに `IsNot` キーワードを使用します。  
   
 ### <a name="new-keyword"></a>New キーワード  
   
