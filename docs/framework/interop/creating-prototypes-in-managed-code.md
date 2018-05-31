@@ -1,10 +1,6 @@
 ---
 title: マネージ コードでのプロトタイプの作成
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -21,28 +17,25 @@ helpviewer_keywords:
 - DLL functions
 - object fields in platform invoke
 ms.assetid: ecdcf25d-cae3-4f07-a2b6-8397ac6dc42d
-caps.latest.revision: 22
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: c59a05c5f6abfa30a71ccf7608f8a84738f99c3a
-ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
-ms.translationtype: MT
+ms.openlocfilehash: b305158ac87f01044bae5455cea07ca3b3a2e491
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33398210"
 ---
-# <a name="creating-prototypes-in-managed-code"></a><span data-ttu-id="cec45-102">マネージ コードでのプロトタイプの作成</span><span class="sxs-lookup"><span data-stu-id="cec45-102">Creating Prototypes in Managed Code</span></span>
-<span data-ttu-id="cec45-103">このトピックは、アンマネージ関数にアクセスする方法について説明し、マネージ コードでメソッドの定義の注釈を設定するいくつかの属性フィールドを紹介しています。</span><span class="sxs-lookup"><span data-stu-id="cec45-103">This topic describes how to access unmanaged functions and introduces several attribute fields that annotate method definition in managed code.</span></span> <span data-ttu-id="cec45-104">プラットフォーム呼び出しで使用する .NET ベースの宣言を作成する方法を示す例については、「[プラットフォーム呼び出しによるデータのマーシャリング](marshaling-data-with-platform-invoke.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="cec45-104">For examples that demonstrate how to construct .NET-based declarations to be used with platform invoke, see [Marshaling Data with Platform Invoke](marshaling-data-with-platform-invoke.md).</span></span>  
+# <a name="creating-prototypes-in-managed-code"></a><span data-ttu-id="e7d60-102">マネージ コードでのプロトタイプの作成</span><span class="sxs-lookup"><span data-stu-id="e7d60-102">Creating Prototypes in Managed Code</span></span>
+<span data-ttu-id="e7d60-103">このトピックは、アンマネージ関数にアクセスする方法について説明し、マネージ コードでメソッドの定義の注釈を設定するいくつかの属性フィールドを紹介しています。</span><span class="sxs-lookup"><span data-stu-id="e7d60-103">This topic describes how to access unmanaged functions and introduces several attribute fields that annotate method definition in managed code.</span></span> <span data-ttu-id="e7d60-104">プラットフォーム呼び出しで使用する .NET ベースの宣言を作成する方法を示す例については、「[プラットフォーム呼び出しによるデータのマーシャリング](marshaling-data-with-platform-invoke.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="e7d60-104">For examples that demonstrate how to construct .NET-based declarations to be used with platform invoke, see [Marshaling Data with Platform Invoke](marshaling-data-with-platform-invoke.md).</span></span>  
   
- <span data-ttu-id="cec45-105">マネージ コードからアンマネージ DLL 関数にアクセスする前に、関数の名前とエクスポートする DLL の名前を知っている必要があります。</span><span class="sxs-lookup"><span data-stu-id="cec45-105">Before you can access an unmanaged DLL function from managed code, you need to know the name of the function and the name of the DLL that exports it.</span></span> <span data-ttu-id="cec45-106">この情報を使用すると、マネージ DLL に実装されているアンマネージ関数の定義の作成を開始できます。</span><span class="sxs-lookup"><span data-stu-id="cec45-106">With this information, you can begin to write the managed definition for an unmanaged function that is implemented in a DLL.</span></span> <span data-ttu-id="cec45-107">さらに、プラットフォーム呼び出しが関数を作成し、関数間でデータをマーシャリングする方法を調整できます。</span><span class="sxs-lookup"><span data-stu-id="cec45-107">Furthermore, you can adjust the way that platform invoke creates the function and marshals data to and from the function.</span></span>  
+ <span data-ttu-id="e7d60-105">マネージ コードからアンマネージ DLL 関数にアクセスする前に、関数の名前とエクスポートする DLL の名前を知っている必要があります。</span><span class="sxs-lookup"><span data-stu-id="e7d60-105">Before you can access an unmanaged DLL function from managed code, you need to know the name of the function and the name of the DLL that exports it.</span></span> <span data-ttu-id="e7d60-106">この情報を使用すると、マネージ DLL に実装されているアンマネージ関数の定義の作成を開始できます。</span><span class="sxs-lookup"><span data-stu-id="e7d60-106">With this information, you can begin to write the managed definition for an unmanaged function that is implemented in a DLL.</span></span> <span data-ttu-id="e7d60-107">さらに、プラットフォーム呼び出しが関数を作成し、関数間でデータをマーシャリングする方法を調整できます。</span><span class="sxs-lookup"><span data-stu-id="e7d60-107">Furthermore, you can adjust the way that platform invoke creates the function and marshals data to and from the function.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="cec45-108">文字列を割り当てる Win32 API 関数を使用して、`LocalFree` などのメソッドを使用して文字列を解放できます。</span><span class="sxs-lookup"><span data-stu-id="cec45-108">Win32 API functions that allocate a string enable you to free the string by using a method such as `LocalFree`.</span></span> <span data-ttu-id="cec45-109">プラットフォーム呼び出しは、このようなパラメーターを異なる方法で処理します。</span><span class="sxs-lookup"><span data-stu-id="cec45-109">Platform invoke handles such parameters differently.</span></span> <span data-ttu-id="cec45-110">プラットフォーム呼び出しでは、パラメーターを `String` 型の代わりに `IntPtr` 型にします。</span><span class="sxs-lookup"><span data-stu-id="cec45-110">For platform invoke calls, make the parameter an `IntPtr` type instead of a `String` type.</span></span> <span data-ttu-id="cec45-111"><xref:System.Runtime.InteropServices.Marshal?displayProperty=nameWithType> クラスにより提供されるメソッドを使用して、型を手動で文字列に変換し、手動で解放します。</span><span class="sxs-lookup"><span data-stu-id="cec45-111">Use methods that are provided by the <xref:System.Runtime.InteropServices.Marshal?displayProperty=nameWithType> class to convert the type to a string manually and free it manually.</span></span>  
+>  <span data-ttu-id="e7d60-108">文字列を割り当てる Win32 API 関数を使用して、`LocalFree` などのメソッドを使用して文字列を解放できます。</span><span class="sxs-lookup"><span data-stu-id="e7d60-108">Win32 API functions that allocate a string enable you to free the string by using a method such as `LocalFree`.</span></span> <span data-ttu-id="e7d60-109">プラットフォーム呼び出しは、このようなパラメーターを異なる方法で処理します。</span><span class="sxs-lookup"><span data-stu-id="e7d60-109">Platform invoke handles such parameters differently.</span></span> <span data-ttu-id="e7d60-110">プラットフォーム呼び出しでは、パラメーターを `String` 型の代わりに `IntPtr` 型にします。</span><span class="sxs-lookup"><span data-stu-id="e7d60-110">For platform invoke calls, make the parameter an `IntPtr` type instead of a `String` type.</span></span> <span data-ttu-id="e7d60-111"><xref:System.Runtime.InteropServices.Marshal?displayProperty=nameWithType> クラスにより提供されるメソッドを使用して、型を手動で文字列に変換し、手動で解放します。</span><span class="sxs-lookup"><span data-stu-id="e7d60-111">Use methods that are provided by the <xref:System.Runtime.InteropServices.Marshal?displayProperty=nameWithType> class to convert the type to a string manually and free it manually.</span></span>  
   
-## <a name="declaration-basics"></a><span data-ttu-id="cec45-112">宣言の基本</span><span class="sxs-lookup"><span data-stu-id="cec45-112">Declaration Basics</span></span>  
- <span data-ttu-id="cec45-113">アンマネージ関数に対するマネージ定義は、次の例で確認できるように、言語に依存します。</span><span class="sxs-lookup"><span data-stu-id="cec45-113">Managed definitions to unmanaged functions are language-dependent, as you can see in the following examples.</span></span> <span data-ttu-id="cec45-114">完全なコード例については、「[プラットフォーム呼び出しの例](platform-invoke-examples.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="cec45-114">For more complete code examples, see [Platform Invoke Examples](platform-invoke-examples.md).</span></span>  
+## <a name="declaration-basics"></a><span data-ttu-id="e7d60-112">宣言の基本</span><span class="sxs-lookup"><span data-stu-id="e7d60-112">Declaration Basics</span></span>  
+ <span data-ttu-id="e7d60-113">アンマネージ関数に対するマネージ定義は、次の例で確認できるように、言語に依存します。</span><span class="sxs-lookup"><span data-stu-id="e7d60-113">Managed definitions to unmanaged functions are language-dependent, as you can see in the following examples.</span></span> <span data-ttu-id="e7d60-114">完全なコード例については、「[プラットフォーム呼び出しの例](platform-invoke-examples.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="e7d60-114">For more complete code examples, see [Platform Invoke Examples](platform-invoke-examples.md).</span></span>  
   
 ```vb  
 Imports System.Runtime.InteropServices  
@@ -54,7 +47,7 @@ Public Class Win32
 End Class  
 ```  
   
- <span data-ttu-id="cec45-115"><xref:System.Runtime.InteropServices.DllImportAttribute.BestFitMapping>、<xref:System.Runtime.InteropServices.DllImportAttribute.CallingConvention>、<xref:System.Runtime.InteropServices.DllImportAttribute.ExactSpelling>、<xref:System.Runtime.InteropServices.DllImportAttribute.PreserveSig>、<xref:System.Runtime.InteropServices.DllImportAttribute.SetLastError>、または <xref:System.Runtime.InteropServices.DllImportAttribute.ThrowOnUnmappableChar> の各フィールドを [!INCLUDE[vbprvbext](../../../includes/vbprvbext-md.md)] 宣言に適用するには、`Declare` ステートメントの代わりに <xref:System.Runtime.InteropServices.DllImportAttribute> 属性を使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="cec45-115">To apply the <xref:System.Runtime.InteropServices.DllImportAttribute.BestFitMapping>, <xref:System.Runtime.InteropServices.DllImportAttribute.CallingConvention>, <xref:System.Runtime.InteropServices.DllImportAttribute.ExactSpelling>, <xref:System.Runtime.InteropServices.DllImportAttribute.PreserveSig>, <xref:System.Runtime.InteropServices.DllImportAttribute.SetLastError>, or <xref:System.Runtime.InteropServices.DllImportAttribute.ThrowOnUnmappableChar> fields to a [!INCLUDE[vbprvbext](../../../includes/vbprvbext-md.md)] declaration, you must use the <xref:System.Runtime.InteropServices.DllImportAttribute> attribute instead of the `Declare` statement.</span></span>  
+ <span data-ttu-id="e7d60-115"><xref:System.Runtime.InteropServices.DllImportAttribute.BestFitMapping>、<xref:System.Runtime.InteropServices.DllImportAttribute.CallingConvention>、<xref:System.Runtime.InteropServices.DllImportAttribute.ExactSpelling>、<xref:System.Runtime.InteropServices.DllImportAttribute.PreserveSig>、<xref:System.Runtime.InteropServices.DllImportAttribute.SetLastError>、または <xref:System.Runtime.InteropServices.DllImportAttribute.ThrowOnUnmappableChar> の各フィールドを [!INCLUDE[vbprvbext](../../../includes/vbprvbext-md.md)] 宣言に適用するには、`Declare` ステートメントの代わりに <xref:System.Runtime.InteropServices.DllImportAttribute> 属性を使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="e7d60-115">To apply the <xref:System.Runtime.InteropServices.DllImportAttribute.BestFitMapping>, <xref:System.Runtime.InteropServices.DllImportAttribute.CallingConvention>, <xref:System.Runtime.InteropServices.DllImportAttribute.ExactSpelling>, <xref:System.Runtime.InteropServices.DllImportAttribute.PreserveSig>, <xref:System.Runtime.InteropServices.DllImportAttribute.SetLastError>, or <xref:System.Runtime.InteropServices.DllImportAttribute.ThrowOnUnmappableChar> fields to a [!INCLUDE[vbprvbext](../../../includes/vbprvbext-md.md)] declaration, you must use the <xref:System.Runtime.InteropServices.DllImportAttribute> attribute instead of the `Declare` statement.</span></span>  
   
 ```vb  
 Imports System.Runtime.InteropServices  
@@ -81,31 +74,31 @@ using namespace System::Runtime::InteropServices;
     String* pCaption unsigned int uType);  
 ```  
   
-## <a name="adjusting-the-definition"></a><span data-ttu-id="cec45-116">定義の調整</span><span class="sxs-lookup"><span data-stu-id="cec45-116">Adjusting the Definition</span></span>  
- <span data-ttu-id="cec45-117">明示的に設定するかどうかに関係なく、属性フィールドは作業はマネージ コードの動作を動作中に定義します。</span><span class="sxs-lookup"><span data-stu-id="cec45-117">Whether you set them explicitly or not, attribute fields are at work defining the behavior of managed code.</span></span> <span data-ttu-id="cec45-118">プラットフォーム呼び出しは、アセンブリ内のメタデータとして存在するさまざまなフィールドで設定された既定値どおりに動作します。</span><span class="sxs-lookup"><span data-stu-id="cec45-118">Platform invoke operates according to the default values set on various fields that exist as metadata in an assembly.</span></span> <span data-ttu-id="cec45-119">1 つまたは複数のフィールドの値を調整することによって、この既定の動作を変更することができます。</span><span class="sxs-lookup"><span data-stu-id="cec45-119">You can alter this default behavior by adjusting the values of one or more fields.</span></span> <span data-ttu-id="cec45-120">多くの場合、<xref:System.Runtime.InteropServices.DllImportAttribute> を使用して値を設定します。</span><span class="sxs-lookup"><span data-stu-id="cec45-120">In many cases, you use the <xref:System.Runtime.InteropServices.DllImportAttribute> to set a value.</span></span>  
+## <a name="adjusting-the-definition"></a><span data-ttu-id="e7d60-116">定義の調整</span><span class="sxs-lookup"><span data-stu-id="e7d60-116">Adjusting the Definition</span></span>  
+ <span data-ttu-id="e7d60-117">明示的に設定するかどうかに関係なく、属性フィールドは作業はマネージ コードの動作を動作中に定義します。</span><span class="sxs-lookup"><span data-stu-id="e7d60-117">Whether you set them explicitly or not, attribute fields are at work defining the behavior of managed code.</span></span> <span data-ttu-id="e7d60-118">プラットフォーム呼び出しは、アセンブリ内のメタデータとして存在するさまざまなフィールドで設定された既定値どおりに動作します。</span><span class="sxs-lookup"><span data-stu-id="e7d60-118">Platform invoke operates according to the default values set on various fields that exist as metadata in an assembly.</span></span> <span data-ttu-id="e7d60-119">1 つまたは複数のフィールドの値を調整することによって、この既定の動作を変更することができます。</span><span class="sxs-lookup"><span data-stu-id="e7d60-119">You can alter this default behavior by adjusting the values of one or more fields.</span></span> <span data-ttu-id="e7d60-120">多くの場合、<xref:System.Runtime.InteropServices.DllImportAttribute> を使用して値を設定します。</span><span class="sxs-lookup"><span data-stu-id="e7d60-120">In many cases, you use the <xref:System.Runtime.InteropServices.DllImportAttribute> to set a value.</span></span>  
   
- <span data-ttu-id="cec45-121">次の表では、プラットフォーム呼び出しに関連する属性フィールドの完全なセットを一覧表示します。</span><span class="sxs-lookup"><span data-stu-id="cec45-121">The following table lists the complete set of attribute fields that pertain to platform invoke.</span></span> <span data-ttu-id="cec45-122">各フィールドについては、表に既定値とこれらのフィールドを使用してアンマネージ DLL 関数を定義する方法に関する情報へのリンクが含まれます。</span><span class="sxs-lookup"><span data-stu-id="cec45-122">For each field, the table includes the default value and a link to information on how to use these fields to define unmanaged DLL functions.</span></span>  
+ <span data-ttu-id="e7d60-121">次の表では、プラットフォーム呼び出しに関連する属性フィールドの完全なセットを一覧表示します。</span><span class="sxs-lookup"><span data-stu-id="e7d60-121">The following table lists the complete set of attribute fields that pertain to platform invoke.</span></span> <span data-ttu-id="e7d60-122">各フィールドについては、表に既定値とこれらのフィールドを使用してアンマネージ DLL 関数を定義する方法に関する情報へのリンクが含まれます。</span><span class="sxs-lookup"><span data-stu-id="e7d60-122">For each field, the table includes the default value and a link to information on how to use these fields to define unmanaged DLL functions.</span></span>  
   
-|<span data-ttu-id="cec45-123">フィールド</span><span class="sxs-lookup"><span data-stu-id="cec45-123">Field</span></span>|<span data-ttu-id="cec45-124">説明</span><span class="sxs-lookup"><span data-stu-id="cec45-124">Description</span></span>|  
+|<span data-ttu-id="e7d60-123">フィールド</span><span class="sxs-lookup"><span data-stu-id="e7d60-123">Field</span></span>|<span data-ttu-id="e7d60-124">説明</span><span class="sxs-lookup"><span data-stu-id="e7d60-124">Description</span></span>|  
 |-----------|-----------------|  
-|<xref:System.Runtime.InteropServices.DllImportAttribute.BestFitMapping>|<span data-ttu-id="cec45-125">最適なマッピングを有効または無効にします。</span><span class="sxs-lookup"><span data-stu-id="cec45-125">Enables or disables best-fit mapping.</span></span>|  
-|<xref:System.Runtime.InteropServices.DllImportAttribute.CallingConvention>|<span data-ttu-id="cec45-126">メソッドの引数を渡すときに使用する呼び出し規則を指定します。</span><span class="sxs-lookup"><span data-stu-id="cec45-126">Specifies the calling convention to use in passing method arguments.</span></span> <span data-ttu-id="cec45-127">既定値は `WinAPI` で、32 ビットの Intel ベース プラットフォームの `__stdcall` に対応します。</span><span class="sxs-lookup"><span data-stu-id="cec45-127">The default is `WinAPI`, which corresponds to `__stdcall` for the 32-bit Intel-based platforms.</span></span>|  
-|<xref:System.Runtime.InteropServices.DllImportAttribute.CharSet>|<span data-ttu-id="cec45-128">名前修飾および文字列の引数を関数にマーシャリングする方法を管理します。</span><span class="sxs-lookup"><span data-stu-id="cec45-128">Controls name mangling and the way that string arguments should be marshaled to the function.</span></span> <span data-ttu-id="cec45-129">既定値は、`CharSet.Ansi` です。</span><span class="sxs-lookup"><span data-stu-id="cec45-129">The default is `CharSet.Ansi`.</span></span>|  
-|<xref:System.Runtime.InteropServices.DllImportAttribute.EntryPoint>|<span data-ttu-id="cec45-130">呼び出される DLL エントリ ポイントを指定します。</span><span class="sxs-lookup"><span data-stu-id="cec45-130">Specifies the DLL entry point to be called.</span></span>|  
-|<xref:System.Runtime.InteropServices.DllImportAttribute.ExactSpelling>|<span data-ttu-id="cec45-131">文字セットに対応するエントリ ポイントを変更する必要があるかどうかを制御します。</span><span class="sxs-lookup"><span data-stu-id="cec45-131">Controls whether an entry point should be modified to correspond to the character set.</span></span> <span data-ttu-id="cec45-132">既定値は、プログラミング言語によって異なります。</span><span class="sxs-lookup"><span data-stu-id="cec45-132">The default value varies by programming language.</span></span>|  
-|<xref:System.Runtime.InteropServices.DllImportAttribute.PreserveSig>|<span data-ttu-id="cec45-133">マネージ メソッドのシグネチャが、HRESULT を返すアンマネージ シグネチャに変換され、戻り値の追加の [out, retval] 引数を持つかどうかを制御します。</span><span class="sxs-lookup"><span data-stu-id="cec45-133">Controls whether the managed method signature should be transformed into an unmanaged signature that returns an HRESULT and has an additional [out, retval] argument for the return value.</span></span><br /><br /> <span data-ttu-id="cec45-134">既定値は `true` です (シグネチャは変換されません)。</span><span class="sxs-lookup"><span data-stu-id="cec45-134">The default is `true` (the signature should not be transformed).</span></span>|  
-|<xref:System.Runtime.InteropServices.DllImportAttribute.SetLastError>|<span data-ttu-id="cec45-135">呼び出し元が `Marshal.GetLastWin32Error` API の関数を使用して、メソッドの実行中にエラーが発生したかどうかを判断できるようにします。</span><span class="sxs-lookup"><span data-stu-id="cec45-135">Enables the caller to use the `Marshal.GetLastWin32Error` API function to determine whether an error occurred while executing the method.</span></span> <span data-ttu-id="cec45-136">Visual Basic では既定値は `true`、C# および C++ では既定値は `false` です。</span><span class="sxs-lookup"><span data-stu-id="cec45-136">In Visual Basic, the default is `true`; in C# and C++, the default is `false`.</span></span>|  
-|<xref:System.Runtime.InteropServices.DllImportAttribute.ThrowOnUnmappableChar>|<span data-ttu-id="cec45-137">ANSI の"?" 文字に変換されるマップできない Unicode 文字での例外のスローを制御します。</span><span class="sxs-lookup"><span data-stu-id="cec45-137">Controls throwing of an exception on an unmappable Unicode character that is converted to an ANSI "?" character.</span></span>|  
+|<xref:System.Runtime.InteropServices.DllImportAttribute.BestFitMapping>|<span data-ttu-id="e7d60-125">最適なマッピングを有効または無効にします。</span><span class="sxs-lookup"><span data-stu-id="e7d60-125">Enables or disables best-fit mapping.</span></span>|  
+|<xref:System.Runtime.InteropServices.DllImportAttribute.CallingConvention>|<span data-ttu-id="e7d60-126">メソッドの引数を渡すときに使用する呼び出し規則を指定します。</span><span class="sxs-lookup"><span data-stu-id="e7d60-126">Specifies the calling convention to use in passing method arguments.</span></span> <span data-ttu-id="e7d60-127">既定値は `WinAPI` で、32 ビットの Intel ベース プラットフォームの `__stdcall` に対応します。</span><span class="sxs-lookup"><span data-stu-id="e7d60-127">The default is `WinAPI`, which corresponds to `__stdcall` for the 32-bit Intel-based platforms.</span></span>|  
+|<xref:System.Runtime.InteropServices.DllImportAttribute.CharSet>|<span data-ttu-id="e7d60-128">名前修飾および文字列の引数を関数にマーシャリングする方法を管理します。</span><span class="sxs-lookup"><span data-stu-id="e7d60-128">Controls name mangling and the way that string arguments should be marshaled to the function.</span></span> <span data-ttu-id="e7d60-129">既定値は、`CharSet.Ansi` です。</span><span class="sxs-lookup"><span data-stu-id="e7d60-129">The default is `CharSet.Ansi`.</span></span>|  
+|<xref:System.Runtime.InteropServices.DllImportAttribute.EntryPoint>|<span data-ttu-id="e7d60-130">呼び出される DLL エントリ ポイントを指定します。</span><span class="sxs-lookup"><span data-stu-id="e7d60-130">Specifies the DLL entry point to be called.</span></span>|  
+|<xref:System.Runtime.InteropServices.DllImportAttribute.ExactSpelling>|<span data-ttu-id="e7d60-131">文字セットに対応するエントリ ポイントを変更する必要があるかどうかを制御します。</span><span class="sxs-lookup"><span data-stu-id="e7d60-131">Controls whether an entry point should be modified to correspond to the character set.</span></span> <span data-ttu-id="e7d60-132">既定値は、プログラミング言語によって異なります。</span><span class="sxs-lookup"><span data-stu-id="e7d60-132">The default value varies by programming language.</span></span>|  
+|<xref:System.Runtime.InteropServices.DllImportAttribute.PreserveSig>|<span data-ttu-id="e7d60-133">マネージ メソッドのシグネチャが、HRESULT を返すアンマネージ シグネチャに変換され、戻り値の追加の [out, retval] 引数を持つかどうかを制御します。</span><span class="sxs-lookup"><span data-stu-id="e7d60-133">Controls whether the managed method signature should be transformed into an unmanaged signature that returns an HRESULT and has an additional [out, retval] argument for the return value.</span></span><br /><br /> <span data-ttu-id="e7d60-134">既定値は `true` です (シグネチャは変換されません)。</span><span class="sxs-lookup"><span data-stu-id="e7d60-134">The default is `true` (the signature should not be transformed).</span></span>|  
+|<xref:System.Runtime.InteropServices.DllImportAttribute.SetLastError>|<span data-ttu-id="e7d60-135">呼び出し元が `Marshal.GetLastWin32Error` API の関数を使用して、メソッドの実行中にエラーが発生したかどうかを判断できるようにします。</span><span class="sxs-lookup"><span data-stu-id="e7d60-135">Enables the caller to use the `Marshal.GetLastWin32Error` API function to determine whether an error occurred while executing the method.</span></span> <span data-ttu-id="e7d60-136">Visual Basic では既定値は `true`、C# および C++ では既定値は `false` です。</span><span class="sxs-lookup"><span data-stu-id="e7d60-136">In Visual Basic, the default is `true`; in C# and C++, the default is `false`.</span></span>|  
+|<xref:System.Runtime.InteropServices.DllImportAttribute.ThrowOnUnmappableChar>|<span data-ttu-id="e7d60-137">ANSI の"?" 文字に変換されるマップできない Unicode 文字での例外のスローを制御します。</span><span class="sxs-lookup"><span data-stu-id="e7d60-137">Controls throwing of an exception on an unmappable Unicode character that is converted to an ANSI "?" character.</span></span>|  
   
- <span data-ttu-id="cec45-138">詳細なリファレンス情報については、「<xref:System.Runtime.InteropServices.DllImportAttribute>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="cec45-138">For detailed reference information, see <xref:System.Runtime.InteropServices.DllImportAttribute>.</span></span>  
+ <span data-ttu-id="e7d60-138">詳細なリファレンス情報については、「<xref:System.Runtime.InteropServices.DllImportAttribute>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="e7d60-138">For detailed reference information, see <xref:System.Runtime.InteropServices.DllImportAttribute>.</span></span>  
   
-## <a name="platform-invoke-security-considerations"></a><span data-ttu-id="cec45-139">プラットフォーム呼び出しのセキュリティに関する考慮事項</span><span class="sxs-lookup"><span data-stu-id="cec45-139">Platform invoke security considerations</span></span>  
- <span data-ttu-id="cec45-140"><xref:System.Security.Permissions.SecurityAction> 列挙型の `Assert`、`Deny`、および `PermitOnly` のメンバーは、*スタック ウォーク修飾子*と呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="cec45-140">The `Assert`, `Deny`, and `PermitOnly` members of the <xref:System.Security.Permissions.SecurityAction> enumeration are referred to as *stack walk modifiers*.</span></span> <span data-ttu-id="cec45-141">プラットフォーム呼び出しの宣言および COM インターフェイス定義言語 (IDL) ステートメントの宣言属性として使用される場合、これらのメンバーは無視されます。</span><span class="sxs-lookup"><span data-stu-id="cec45-141">These members are ignored if they are used as declarative attributes on platform invoke declarations and COM Interface Definition Language (IDL) statements.</span></span>  
+## <a name="platform-invoke-security-considerations"></a><span data-ttu-id="e7d60-139">プラットフォーム呼び出しのセキュリティに関する考慮事項</span><span class="sxs-lookup"><span data-stu-id="e7d60-139">Platform invoke security considerations</span></span>  
+ <span data-ttu-id="e7d60-140"><xref:System.Security.Permissions.SecurityAction> 列挙型の `Assert`、`Deny`、および `PermitOnly` のメンバーは、*スタック ウォーク修飾子*と呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="e7d60-140">The `Assert`, `Deny`, and `PermitOnly` members of the <xref:System.Security.Permissions.SecurityAction> enumeration are referred to as *stack walk modifiers*.</span></span> <span data-ttu-id="e7d60-141">プラットフォーム呼び出しの宣言および COM インターフェイス定義言語 (IDL) ステートメントの宣言属性として使用される場合、これらのメンバーは無視されます。</span><span class="sxs-lookup"><span data-stu-id="e7d60-141">These members are ignored if they are used as declarative attributes on platform invoke declarations and COM Interface Definition Language (IDL) statements.</span></span>  
   
-### <a name="platform-invoke-examples"></a><span data-ttu-id="cec45-142">プラットフォーム呼び出しの例</span><span class="sxs-lookup"><span data-stu-id="cec45-142">Platform Invoke Examples</span></span>  
- <span data-ttu-id="cec45-143">このセクションのプラットフォーム呼び出しのサンプルは、`RegistryPermission` スタック ウォーク修飾子を持つ属性の使用方法を示します。</span><span class="sxs-lookup"><span data-stu-id="cec45-143">The platform invoke samples in this section illustrate the use of the `RegistryPermission` attribute with the stack walk modifiers.</span></span>  
+### <a name="platform-invoke-examples"></a><span data-ttu-id="e7d60-142">プラットフォーム呼び出しの例</span><span class="sxs-lookup"><span data-stu-id="e7d60-142">Platform Invoke Examples</span></span>  
+ <span data-ttu-id="e7d60-143">このセクションのプラットフォーム呼び出しのサンプルは、`RegistryPermission` スタック ウォーク修飾子を持つ属性の使用方法を示します。</span><span class="sxs-lookup"><span data-stu-id="e7d60-143">The platform invoke samples in this section illustrate the use of the `RegistryPermission` attribute with the stack walk modifiers.</span></span>  
   
- <span data-ttu-id="cec45-144">次のコード例では、 <xref:System.Security.Permissions.SecurityAction> `Assert`、 `Deny`、および`PermitOnly`修飾子は無視されます。</span><span class="sxs-lookup"><span data-stu-id="cec45-144">In the following code example, the <xref:System.Security.Permissions.SecurityAction>`Assert`, `Deny`, and `PermitOnly` modifiers are ignored.</span></span>  
+ <span data-ttu-id="e7d60-144">次のコード例では、<xref:System.Security.Permissions.SecurityAction>`Assert`、`Deny`、および `PermitOnly` 修飾子は無視されます。</span><span class="sxs-lookup"><span data-stu-id="e7d60-144">In the following code example, the <xref:System.Security.Permissions.SecurityAction>`Assert`, `Deny`, and `PermitOnly` modifiers are ignored.</span></span>  
   
 ```  
 [DllImport("MyClass.dll", EntryPoint = "CallRegistryPermission")]  
@@ -121,7 +114,7 @@ using namespace System::Runtime::InteropServices;
     private static extern bool CallRegistryPermissionDeny();  
 ```  
   
- <span data-ttu-id="cec45-145">ただし、次の例の `Demand` 修飾子は受け入れられます。</span><span class="sxs-lookup"><span data-stu-id="cec45-145">However, the `Demand` modifier in the following example is accepted.</span></span>  
+ <span data-ttu-id="e7d60-145">ただし、次の例の `Demand` 修飾子は受け入れられます。</span><span class="sxs-lookup"><span data-stu-id="e7d60-145">However, the `Demand` modifier in the following example is accepted.</span></span>  
   
 ```  
 [DllImport("MyClass.dll", EntryPoint = "CallRegistryPermission")]  
@@ -129,7 +122,7 @@ using namespace System::Runtime::InteropServices;
     private static extern bool CallRegistryPermissionDeny();  
 ```  
   
- <span data-ttu-id="cec45-146">プラットフォーム呼び出しを含む (ラップする) クラスに配置されている場合、<xref:System.Security.Permissions.SecurityAction> 修飾子は正常に機能します。</span><span class="sxs-lookup"><span data-stu-id="cec45-146"><xref:System.Security.Permissions.SecurityAction> modifiers do work correctly if they are placed on a class that contains (wraps) the platform invoke call.</span></span>  
+ <span data-ttu-id="e7d60-146">プラットフォーム呼び出しを含む (ラップする) クラスに配置されている場合、<xref:System.Security.Permissions.SecurityAction> 修飾子は正常に機能します。</span><span class="sxs-lookup"><span data-stu-id="e7d60-146"><xref:System.Security.Permissions.SecurityAction> modifiers do work correctly if they are placed on a class that contains (wraps) the platform invoke call.</span></span>  
   
 ```cpp  
       [RegistryPermission(SecurityAction.Demand, Unrestricted = true)]  
@@ -150,7 +143,7 @@ class PInvokeWrapper
 }  
 ```  
   
- <span data-ttu-id="cec45-147"><xref:System.Security.Permissions.SecurityAction> 修飾子は、プラットフォーム呼び出しの呼び出し元に配置されたネストしたシナリオでも正しく動作します。</span><span class="sxs-lookup"><span data-stu-id="cec45-147"><xref:System.Security.Permissions.SecurityAction> modifiers also work correctly in a nested scenario where they are placed on the caller of the platform invoke call:</span></span>  
+ <span data-ttu-id="e7d60-147"><xref:System.Security.Permissions.SecurityAction> 修飾子は、プラットフォーム呼び出しの呼び出し元に配置されたネストしたシナリオでも正しく動作します。</span><span class="sxs-lookup"><span data-stu-id="e7d60-147"><xref:System.Security.Permissions.SecurityAction> modifiers also work correctly in a nested scenario where they are placed on the caller of the platform invoke call:</span></span>  
   
 ```cpp  
       {  
@@ -181,10 +174,10 @@ class PInvokeScenario
 }  
 ```  
   
-#### <a name="com-interop-examples"></a><span data-ttu-id="cec45-148">COM 相互運用機能の例</span><span class="sxs-lookup"><span data-stu-id="cec45-148">COM Interop Examples</span></span>  
- <span data-ttu-id="cec45-149">このセクションの次の COM 相互運用機能の例は、スタック ウォーク修飾子を持つ `RegistryPermission` 属性の使用方法を示します。</span><span class="sxs-lookup"><span data-stu-id="cec45-149">The COM interop samples in this section illustrate the use of the `RegistryPermission` attribute with the stack walk modifiers.</span></span>  
+#### <a name="com-interop-examples"></a><span data-ttu-id="e7d60-148">COM 相互運用機能の例</span><span class="sxs-lookup"><span data-stu-id="e7d60-148">COM Interop Examples</span></span>  
+ <span data-ttu-id="e7d60-149">このセクションの次の COM 相互運用機能の例は、スタック ウォーク修飾子を持つ `RegistryPermission` 属性の使用方法を示します。</span><span class="sxs-lookup"><span data-stu-id="e7d60-149">The COM interop samples in this section illustrate the use of the `RegistryPermission` attribute with the stack walk modifiers.</span></span>  
   
- <span data-ttu-id="cec45-150">次の COM 相互運用機能のインターフェイスの宣言は、前のセクションのプラットフォーム呼び出しの例と同様に、`Assert`、`Deny`、および `PermitOnly` の修飾子を無視します。</span><span class="sxs-lookup"><span data-stu-id="cec45-150">The following COM interop interface declarations ignore the `Assert`, `Deny`, and `PermitOnly` modifiers, similarly to the platform invoke examples in the previous section.</span></span>  
+ <span data-ttu-id="e7d60-150">次の COM 相互運用機能のインターフェイスの宣言は、前のセクションのプラットフォーム呼び出しの例と同様に、`Assert`、`Deny`、および `PermitOnly` の修飾子を無視します。</span><span class="sxs-lookup"><span data-stu-id="e7d60-150">The following COM interop interface declarations ignore the `Assert`, `Deny`, and `PermitOnly` modifiers, similarly to the platform invoke examples in the previous section.</span></span>  
   
 ```  
 [ComImport, Guid("12345678-43E6-43c9-9A13-47F40B338DE0")]  
@@ -215,7 +208,7 @@ interface IAssertStubsItf
 }  
 ```  
   
- <span data-ttu-id="cec45-151">さらに、次の例に示すように、`Demand` 修飾子は COM 相互運用機能のインターフェイスの宣言のシナリオでは許可されません。</span><span class="sxs-lookup"><span data-stu-id="cec45-151">Additionally, the `Demand` modifier is not accepted in COM interop interface declaration scenarios, as shown in the following example.</span></span>  
+ <span data-ttu-id="e7d60-151">さらに、次の例に示すように、`Demand` 修飾子は COM 相互運用機能のインターフェイスの宣言のシナリオでは許可されません。</span><span class="sxs-lookup"><span data-stu-id="e7d60-151">Additionally, the `Demand` modifier is not accepted in COM interop interface declaration scenarios, as shown in the following example.</span></span>  
   
 ```  
 [ComImport, Guid("12345678-43E6-43c9-9A13-47F40B338DE0")]  
@@ -228,12 +221,12 @@ interface IDemandStubsItf
 }  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="cec45-152">関連項目</span><span class="sxs-lookup"><span data-stu-id="cec45-152">See Also</span></span>  
- [<span data-ttu-id="cec45-153">アンマネージ DLL 関数の処理</span><span class="sxs-lookup"><span data-stu-id="cec45-153">Consuming Unmanaged DLL Functions</span></span>](consuming-unmanaged-dll-functions.md)  
- [<span data-ttu-id="cec45-154">エントリ ポイントの指定</span><span class="sxs-lookup"><span data-stu-id="cec45-154">Specifying an Entry Point</span></span>](specifying-an-entry-point.md)  
- [<span data-ttu-id="cec45-155">文字セットの指定</span><span class="sxs-lookup"><span data-stu-id="cec45-155">Specifying a Character Set</span></span>](specifying-a-character-set.md)  
- [<span data-ttu-id="cec45-156">プラットフォーム呼び出しの例</span><span class="sxs-lookup"><span data-stu-id="cec45-156">Platform Invoke Examples</span></span>](platform-invoke-examples.md)  
- <span data-ttu-id="cec45-157">[プラットフォーム呼び出しのセキュリティに関する考慮事項](https://msdn.microsoft.com/library/bbcc67f7-50b5-4917-88ed-cb15470409fb(v=vs.100))</span><span class="sxs-lookup"><span data-stu-id="cec45-157">[Platform Invoke Security Considerations](https://msdn.microsoft.com/library/bbcc67f7-50b5-4917-88ed-cb15470409fb(v=vs.100))</span></span>  
- [<span data-ttu-id="cec45-158">DLL 内の関数の識別</span><span class="sxs-lookup"><span data-stu-id="cec45-158">Identifying Functions in DLLs</span></span>](identifying-functions-in-dlls.md)  
- [<span data-ttu-id="cec45-159">DLL 関数を保持するクラスの作成</span><span class="sxs-lookup"><span data-stu-id="cec45-159">Creating a Class to Hold DLL Functions</span></span>](creating-a-class-to-hold-dll-functions.md)  
- [<span data-ttu-id="cec45-160">DLL 関数の呼び出し</span><span class="sxs-lookup"><span data-stu-id="cec45-160">Calling a DLL Function</span></span>](calling-a-dll-function.md)
+## <a name="see-also"></a><span data-ttu-id="e7d60-152">参照</span><span class="sxs-lookup"><span data-stu-id="e7d60-152">See Also</span></span>  
+ [<span data-ttu-id="e7d60-153">アンマネージ DLL 関数の処理</span><span class="sxs-lookup"><span data-stu-id="e7d60-153">Consuming Unmanaged DLL Functions</span></span>](consuming-unmanaged-dll-functions.md)  
+ [<span data-ttu-id="e7d60-154">エントリ ポイントの指定</span><span class="sxs-lookup"><span data-stu-id="e7d60-154">Specifying an Entry Point</span></span>](specifying-an-entry-point.md)  
+ [<span data-ttu-id="e7d60-155">文字セットの指定</span><span class="sxs-lookup"><span data-stu-id="e7d60-155">Specifying a Character Set</span></span>](specifying-a-character-set.md)  
+ [<span data-ttu-id="e7d60-156">プラットフォーム呼び出しの例</span><span class="sxs-lookup"><span data-stu-id="e7d60-156">Platform Invoke Examples</span></span>](platform-invoke-examples.md)  
+ <span data-ttu-id="e7d60-157">[プラットフォーム呼び出しのセキュリティに関する考慮事項](https://msdn.microsoft.com/library/bbcc67f7-50b5-4917-88ed-cb15470409fb(v=vs.100))</span><span class="sxs-lookup"><span data-stu-id="e7d60-157">[Platform Invoke Security Considerations](https://msdn.microsoft.com/library/bbcc67f7-50b5-4917-88ed-cb15470409fb(v=vs.100))</span></span>  
+ [<span data-ttu-id="e7d60-158">DLL 内の関数の識別</span><span class="sxs-lookup"><span data-stu-id="e7d60-158">Identifying Functions in DLLs</span></span>](identifying-functions-in-dlls.md)  
+ [<span data-ttu-id="e7d60-159">DLL 関数を保持するクラスの作成</span><span class="sxs-lookup"><span data-stu-id="e7d60-159">Creating a Class to Hold DLL Functions</span></span>](creating-a-class-to-hold-dll-functions.md)  
+ [<span data-ttu-id="e7d60-160">DLL 関数の呼び出し</span><span class="sxs-lookup"><span data-stu-id="e7d60-160">Calling a DLL Function</span></span>](calling-a-dll-function.md)

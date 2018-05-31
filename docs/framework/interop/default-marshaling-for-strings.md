@@ -1,10 +1,6 @@
 ---
 title: 文字列に対する既定のマーシャリング
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.technology:
-- dotnet-clr
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -14,44 +10,42 @@ helpviewer_keywords:
 ms.assetid: 9baea3ce-27b3-4b4f-af98-9ad0f9467e6f
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 10f2c0e0e61190f571ae5bd4998f54d128448296
-ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
-ms.translationtype: MT
+ms.openlocfilehash: 88604058bd460d80214be6051abef7dc561c7710
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33394908"
 ---
-# <a name="default-marshaling-for-strings"></a><span data-ttu-id="44cd3-102">文字列に対する既定のマーシャリング</span><span class="sxs-lookup"><span data-stu-id="44cd3-102">Default Marshaling for Strings</span></span>
-<span data-ttu-id="44cd3-103"><xref:System.String?displayProperty=nameWithType> と <xref:System.Text.StringBuilder?displayProperty=nameWithType> クラスのマーシャリング動作は類似しています。</span><span class="sxs-lookup"><span data-stu-id="44cd3-103">Both the <xref:System.String?displayProperty=nameWithType> and <xref:System.Text.StringBuilder?displayProperty=nameWithType> classes have similar marshaling behavior.</span></span>  
+# <a name="default-marshaling-for-strings"></a><span data-ttu-id="c6e09-102">文字列に対する既定のマーシャリング</span><span class="sxs-lookup"><span data-stu-id="c6e09-102">Default Marshaling for Strings</span></span>
+<span data-ttu-id="c6e09-103"><xref:System.String?displayProperty=nameWithType> と <xref:System.Text.StringBuilder?displayProperty=nameWithType> クラスのマーシャリング動作は類似しています。</span><span class="sxs-lookup"><span data-stu-id="c6e09-103">Both the <xref:System.String?displayProperty=nameWithType> and <xref:System.Text.StringBuilder?displayProperty=nameWithType> classes have similar marshaling behavior.</span></span>  
   
- <span data-ttu-id="44cd3-104">文字列は、COM スタイル `BSTR` 型または null で終わる文字列 (null 文字で終わる文字配列) としてマーシャリングされます。</span><span class="sxs-lookup"><span data-stu-id="44cd3-104">Strings are marshaled as a COM-style `BSTR` type or as a null-terminated string (a character array that ends with a null character).</span></span> <span data-ttu-id="44cd3-105">文字列内の文字は、Unicode (Windows システムでの既定値) または ANSI としてマーシャリングすることができます。</span><span class="sxs-lookup"><span data-stu-id="44cd3-105">The characters within the string can be marshaled as Unicode (the default on Windows systems) or ANSI.</span></span>  
+ <span data-ttu-id="c6e09-104">文字列は、COM スタイル `BSTR` 型または null で終わる文字列 (null 文字で終わる文字配列) としてマーシャリングされます。</span><span class="sxs-lookup"><span data-stu-id="c6e09-104">Strings are marshaled as a COM-style `BSTR` type or as a null-terminated string (a character array that ends with a null character).</span></span> <span data-ttu-id="c6e09-105">文字列内の文字は、Unicode (Windows システムでの既定値) または ANSI としてマーシャリングすることができます。</span><span class="sxs-lookup"><span data-stu-id="c6e09-105">The characters within the string can be marshaled as Unicode (the default on Windows systems) or ANSI.</span></span>  
   
- <span data-ttu-id="44cd3-106">このトピックでは、文字列型のマーシャリングに関する以下の情報を示します。</span><span class="sxs-lookup"><span data-stu-id="44cd3-106">This topic provides the following information on marshaling string types:</span></span>  
+ <span data-ttu-id="c6e09-106">このトピックでは、文字列型のマーシャリングに関する以下の情報を示します。</span><span class="sxs-lookup"><span data-stu-id="c6e09-106">This topic provides the following information on marshaling string types:</span></span>  
   
--   [<span data-ttu-id="44cd3-107">インターフェイスで使用される文字列</span><span class="sxs-lookup"><span data-stu-id="44cd3-107">Strings Used in Interfaces</span></span>](#cpcondefaultmarshalingforstringsanchor1)  
+-   [<span data-ttu-id="c6e09-107">インターフェイスで使用される文字列</span><span class="sxs-lookup"><span data-stu-id="c6e09-107">Strings Used in Interfaces</span></span>](#cpcondefaultmarshalingforstringsanchor1)  
   
--   [<span data-ttu-id="44cd3-108">プラットフォーム呼び出しで使用される文字列</span><span class="sxs-lookup"><span data-stu-id="44cd3-108">Strings Used in Platform Invoke</span></span>](#cpcondefaultmarshalingforstringsanchor5)  
+-   [<span data-ttu-id="c6e09-108">プラットフォーム呼び出しで使用される文字列</span><span class="sxs-lookup"><span data-stu-id="c6e09-108">Strings Used in Platform Invoke</span></span>](#cpcondefaultmarshalingforstringsanchor5)  
   
--   [<span data-ttu-id="44cd3-109">構造体で使用される文字列</span><span class="sxs-lookup"><span data-stu-id="44cd3-109">Strings Used in Structures</span></span>](#cpcondefaultmarshalingforstringsanchor2)  
+-   [<span data-ttu-id="c6e09-109">構造体で使用される文字列</span><span class="sxs-lookup"><span data-stu-id="c6e09-109">Strings Used in Structures</span></span>](#cpcondefaultmarshalingforstringsanchor2)  
   
--   [<span data-ttu-id="44cd3-110">固定長文字列バッファー</span><span class="sxs-lookup"><span data-stu-id="44cd3-110">Fixed-Length String Buffers</span></span>](#cpcondefaultmarshalingforstringsanchor3)  
+-   [<span data-ttu-id="c6e09-110">固定長文字列バッファー</span><span class="sxs-lookup"><span data-stu-id="c6e09-110">Fixed-Length String Buffers</span></span>](#cpcondefaultmarshalingforstringsanchor3)  
   
 <a name="cpcondefaultmarshalingforstringsanchor1"></a>
 
-## <a name="strings-used-in-interfaces"></a><span data-ttu-id="44cd3-111">インターフェイスで使用される文字列</span><span class="sxs-lookup"><span data-stu-id="44cd3-111">Strings Used in Interfaces</span></span>  
- <span data-ttu-id="44cd3-112">次の表は、アンマネージ コードへのメソッド引数としてマーシャリングするときの、文字列データ型のマーシャリングのオプションを示しています。</span><span class="sxs-lookup"><span data-stu-id="44cd3-112">The following table shows the marshaling options for the string data type when marshaled as a method argument to unmanaged code.</span></span> <span data-ttu-id="44cd3-113"><xref:System.Runtime.InteropServices.MarshalAsAttribute> 属性は、COM インターフェイスへの文字列をマーシャリングする <xref:System.Runtime.InteropServices.UnmanagedType> 列挙値を提供します。</span><span class="sxs-lookup"><span data-stu-id="44cd3-113">The <xref:System.Runtime.InteropServices.MarshalAsAttribute> attribute provides several <xref:System.Runtime.InteropServices.UnmanagedType> enumeration values to marshal strings to COM interfaces.</span></span>  
+## <a name="strings-used-in-interfaces"></a><span data-ttu-id="c6e09-111">インターフェイスで使用される文字列</span><span class="sxs-lookup"><span data-stu-id="c6e09-111">Strings Used in Interfaces</span></span>  
+ <span data-ttu-id="c6e09-112">次の表は、アンマネージ コードへのメソッド引数としてマーシャリングするときの、文字列データ型のマーシャリングのオプションを示しています。</span><span class="sxs-lookup"><span data-stu-id="c6e09-112">The following table shows the marshaling options for the string data type when marshaled as a method argument to unmanaged code.</span></span> <span data-ttu-id="c6e09-113"><xref:System.Runtime.InteropServices.MarshalAsAttribute> 属性は、COM インターフェイスへの文字列をマーシャリングする <xref:System.Runtime.InteropServices.UnmanagedType> 列挙値を提供します。</span><span class="sxs-lookup"><span data-stu-id="c6e09-113">The <xref:System.Runtime.InteropServices.MarshalAsAttribute> attribute provides several <xref:System.Runtime.InteropServices.UnmanagedType> enumeration values to marshal strings to COM interfaces.</span></span>  
   
-|<span data-ttu-id="44cd3-114">列挙型</span><span class="sxs-lookup"><span data-stu-id="44cd3-114">Enumeration type</span></span>|<span data-ttu-id="44cd3-115">アンマネージ形式の説明</span><span class="sxs-lookup"><span data-stu-id="44cd3-115">Description of unmanaged format</span></span>|  
+|<span data-ttu-id="c6e09-114">列挙型</span><span class="sxs-lookup"><span data-stu-id="c6e09-114">Enumeration type</span></span>|<span data-ttu-id="c6e09-115">アンマネージ形式の説明</span><span class="sxs-lookup"><span data-stu-id="c6e09-115">Description of unmanaged format</span></span>|  
 |----------------------|-------------------------------------|  
-|<span data-ttu-id="44cd3-116">`UnmanagedType.BStr` (既定値)</span><span class="sxs-lookup"><span data-stu-id="44cd3-116">`UnmanagedType.BStr` (default)</span></span>|<span data-ttu-id="44cd3-117">長さと Unicode 文字がプレフィックスされた COM スタイル `BSTR`。</span><span class="sxs-lookup"><span data-stu-id="44cd3-117">A COM-style `BSTR` with a prefixed length and Unicode characters.</span></span>|  
-|`UnmanagedType.LPStr`|<span data-ttu-id="44cd3-118">ANSI 文字の null で終わる配列へのポインター。</span><span class="sxs-lookup"><span data-stu-id="44cd3-118">A pointer to a null-terminated array of ANSI characters.</span></span>|  
-|`UnmanagedType.LPWStr`|<span data-ttu-id="44cd3-119">Unicode 文字の null で終わる配列へのポインター。</span><span class="sxs-lookup"><span data-stu-id="44cd3-119">A pointer to a null-terminated array of Unicode characters.</span></span>|  
+|<span data-ttu-id="c6e09-116">`UnmanagedType.BStr` (既定値)</span><span class="sxs-lookup"><span data-stu-id="c6e09-116">`UnmanagedType.BStr` (default)</span></span>|<span data-ttu-id="c6e09-117">長さと Unicode 文字がプレフィックスされた COM スタイル `BSTR`。</span><span class="sxs-lookup"><span data-stu-id="c6e09-117">A COM-style `BSTR` with a prefixed length and Unicode characters.</span></span>|  
+|`UnmanagedType.LPStr`|<span data-ttu-id="c6e09-118">ANSI 文字の null で終わる配列へのポインター。</span><span class="sxs-lookup"><span data-stu-id="c6e09-118">A pointer to a null-terminated array of ANSI characters.</span></span>|  
+|`UnmanagedType.LPWStr`|<span data-ttu-id="c6e09-119">Unicode 文字の null で終わる配列へのポインター。</span><span class="sxs-lookup"><span data-stu-id="c6e09-119">A pointer to a null-terminated array of Unicode characters.</span></span>|  
   
- <span data-ttu-id="44cd3-120">この表は文字列に適用されます。</span><span class="sxs-lookup"><span data-stu-id="44cd3-120">This table applies to strings.</span></span> <span data-ttu-id="44cd3-121">ただし、<xref:System.Text.StringBuilder> の場合、許可される唯一のオプションは `UnmanagedType.LPStr` と `UnmanagedType.LPWStr`です。</span><span class="sxs-lookup"><span data-stu-id="44cd3-121">However, for <xref:System.Text.StringBuilder>, the only options allowed are `UnmanagedType.LPStr` and `UnmanagedType.LPWStr`.</span></span>  
+ <span data-ttu-id="c6e09-120">この表は文字列に適用されます。</span><span class="sxs-lookup"><span data-stu-id="c6e09-120">This table applies to strings.</span></span> <span data-ttu-id="c6e09-121">ただし、<xref:System.Text.StringBuilder> の場合、許可される唯一のオプションは `UnmanagedType.LPStr` と `UnmanagedType.LPWStr`です。</span><span class="sxs-lookup"><span data-stu-id="c6e09-121">However, for <xref:System.Text.StringBuilder>, the only options allowed are `UnmanagedType.LPStr` and `UnmanagedType.LPWStr`.</span></span>  
   
- <span data-ttu-id="44cd3-122">以下の例では、`IStringWorker` インターフェイスで宣言された文字列を示します。</span><span class="sxs-lookup"><span data-stu-id="44cd3-122">The following example shows strings declared in the `IStringWorker` interface.</span></span>  
+ <span data-ttu-id="c6e09-122">以下の例では、`IStringWorker` インターフェイスで宣言された文字列を示します。</span><span class="sxs-lookup"><span data-stu-id="c6e09-122">The following example shows strings declared in the `IStringWorker` interface.</span></span>  
   
 ```cpp  
 public interface IStringWorker {  
@@ -66,7 +60,7 @@ void PassStringRef4([MarshalAs(UnmanagedType.LPWStr)]ref String s);
 );
 ```
 
-<span data-ttu-id="44cd3-123">以下の例では、タイプ ライブラリに記述された対応するインターフェイスを示します。</span><span class="sxs-lookup"><span data-stu-id="44cd3-123">The following example shows the corresponding interface described in a type library.</span></span>
+<span data-ttu-id="c6e09-123">以下の例では、タイプ ライブラリに記述された対応するインターフェイスを示します。</span><span class="sxs-lookup"><span data-stu-id="c6e09-123">The following example shows the corresponding interface described in a type library.</span></span>
 
 ```
 […]  
@@ -84,24 +78,24 @@ HRESULT PassStringRef4([in, out] LPWStr *s);
 
 <a name="cpcondefaultmarshalingforstringsanchor5"></a>
 
-## <a name="strings-used-in-platform-invoke"></a><span data-ttu-id="44cd3-124">プラットフォーム呼び出しで使用される文字列</span><span class="sxs-lookup"><span data-stu-id="44cd3-124">Strings Used in Platform Invoke</span></span>  
- <span data-ttu-id="44cd3-125">プラットフォーム呼び出しは、文字列の引数を、.NET Framework 形式 (Unicode) から、プラットフォーム アンマネージ形式に変換してコピーします。</span><span class="sxs-lookup"><span data-stu-id="44cd3-125">Platform invoke copies string arguments, converting from the .NET Framework format (Unicode) to the platform unmanaged format.</span></span> <span data-ttu-id="44cd3-126">文字列は不変であり、呼び出しが戻るときに、アンマネージ メモリから元のマネージ メモリにコピーされることはありません。</span><span class="sxs-lookup"><span data-stu-id="44cd3-126">Strings are immutable and are not copied back from unmanaged memory to managed memory when the call returns.</span></span>  
+## <a name="strings-used-in-platform-invoke"></a><span data-ttu-id="c6e09-124">プラットフォーム呼び出しで使用される文字列</span><span class="sxs-lookup"><span data-stu-id="c6e09-124">Strings Used in Platform Invoke</span></span>  
+ <span data-ttu-id="c6e09-125">プラットフォーム呼び出しは、文字列の引数を、.NET Framework 形式 (Unicode) から、プラットフォーム アンマネージ形式に変換してコピーします。</span><span class="sxs-lookup"><span data-stu-id="c6e09-125">Platform invoke copies string arguments, converting from the .NET Framework format (Unicode) to the platform unmanaged format.</span></span> <span data-ttu-id="c6e09-126">文字列は不変であり、呼び出しが戻るときに、アンマネージ メモリから元のマネージ メモリにコピーされることはありません。</span><span class="sxs-lookup"><span data-stu-id="c6e09-126">Strings are immutable and are not copied back from unmanaged memory to managed memory when the call returns.</span></span>  
   
- <span data-ttu-id="44cd3-127">次の表は、文字列をプラットフォーム呼び出しのメソッド引数としてマーシャリングする際のマーシャリング オプションをリストしています。</span><span class="sxs-lookup"><span data-stu-id="44cd3-127">The following table lists the marshaling options for strings when marshaled as a method argument of a platform invoke call.</span></span> <span data-ttu-id="44cd3-128"><xref:System.Runtime.InteropServices.MarshalAsAttribute> 属性は、文字列をマーシャリングする <xref:System.Runtime.InteropServices.UnmanagedType> 列挙値を提供します。</span><span class="sxs-lookup"><span data-stu-id="44cd3-128">The <xref:System.Runtime.InteropServices.MarshalAsAttribute> attribute provides several <xref:System.Runtime.InteropServices.UnmanagedType> enumeration values to marshal strings.</span></span>  
+ <span data-ttu-id="c6e09-127">次の表は、文字列をプラットフォーム呼び出しのメソッド引数としてマーシャリングする際のマーシャリング オプションをリストしています。</span><span class="sxs-lookup"><span data-stu-id="c6e09-127">The following table lists the marshaling options for strings when marshaled as a method argument of a platform invoke call.</span></span> <span data-ttu-id="c6e09-128"><xref:System.Runtime.InteropServices.MarshalAsAttribute> 属性は、文字列をマーシャリングする <xref:System.Runtime.InteropServices.UnmanagedType> 列挙値を提供します。</span><span class="sxs-lookup"><span data-stu-id="c6e09-128">The <xref:System.Runtime.InteropServices.MarshalAsAttribute> attribute provides several <xref:System.Runtime.InteropServices.UnmanagedType> enumeration values to marshal strings.</span></span>  
   
-|<span data-ttu-id="44cd3-129">列挙型</span><span class="sxs-lookup"><span data-stu-id="44cd3-129">Enumeration type</span></span>|<span data-ttu-id="44cd3-130">アンマネージ形式の説明</span><span class="sxs-lookup"><span data-stu-id="44cd3-130">Description of unmanaged format</span></span>|  
+|<span data-ttu-id="c6e09-129">列挙型</span><span class="sxs-lookup"><span data-stu-id="c6e09-129">Enumeration type</span></span>|<span data-ttu-id="c6e09-130">アンマネージ形式の説明</span><span class="sxs-lookup"><span data-stu-id="c6e09-130">Description of unmanaged format</span></span>|  
 |----------------------|-------------------------------------|  
-|`UnmanagedType.AnsiBStr`|<span data-ttu-id="44cd3-131">長さと ANSI 文字がプレフィックスされた COM スタイル `BSTR`。</span><span class="sxs-lookup"><span data-stu-id="44cd3-131">A COM-style `BSTR` with a prefixed length and ANSI characters.</span></span>|  
-|`UnmanagedType.BStr`|<span data-ttu-id="44cd3-132">長さと Unicode 文字がプレフィックスされた COM スタイル `BSTR`。</span><span class="sxs-lookup"><span data-stu-id="44cd3-132">A COM-style `BSTR` with a prefixed length and Unicode characters.</span></span>|  
-|`UnmanagedType.LPStr`|<span data-ttu-id="44cd3-133">ANSI 文字の null で終わる配列へのポインター。</span><span class="sxs-lookup"><span data-stu-id="44cd3-133">A pointer to a null-terminated array of ANSI characters.</span></span>|  
-|`UnmanagedType.LPTStr`|<span data-ttu-id="44cd3-134">プラットフォーム依存文字の null で終わる配列へのポインター。</span><span class="sxs-lookup"><span data-stu-id="44cd3-134">A pointer to a null-terminated array of platform-dependent characters.</span></span>|  
-|`UnmanagedType.LPWStr`|<span data-ttu-id="44cd3-135">Unicode 文字の null で終わる配列へのポインター。</span><span class="sxs-lookup"><span data-stu-id="44cd3-135">A pointer to a null-terminated array of Unicode characters.</span></span>|  
-|`UnmanagedType.TBStr`|<span data-ttu-id="44cd3-136">長さとプラットフォーム依存文字がプレフィックスされた COM スタイル `BSTR`。</span><span class="sxs-lookup"><span data-stu-id="44cd3-136">A COM-style `BSTR` with a prefixed length and platform-dependent characters.</span></span>|  
-|`VBByRefStr`|<span data-ttu-id="44cd3-137">Visual Basic .NET で、アンマネージ コードの文字列を変更し、結果をマネージ コードに反映できるようにする値。</span><span class="sxs-lookup"><span data-stu-id="44cd3-137">A value that enables Visual Basic .NET to change a string in unmanaged code, and have the results reflected in managed code.</span></span> <span data-ttu-id="44cd3-138">この値は、プラットフォーム呼び出しでだけサポートされます。</span><span class="sxs-lookup"><span data-stu-id="44cd3-138">This value is supported only for platform invoke.</span></span> <span data-ttu-id="44cd3-139">これが、`ByVal` 文字列の Visual Basic での既定値です。</span><span class="sxs-lookup"><span data-stu-id="44cd3-139">This is default value in Visual Basic for `ByVal` strings.</span></span>|  
+|`UnmanagedType.AnsiBStr`|<span data-ttu-id="c6e09-131">長さと ANSI 文字がプレフィックスされた COM スタイル `BSTR`。</span><span class="sxs-lookup"><span data-stu-id="c6e09-131">A COM-style `BSTR` with a prefixed length and ANSI characters.</span></span>|  
+|`UnmanagedType.BStr`|<span data-ttu-id="c6e09-132">長さと Unicode 文字がプレフィックスされた COM スタイル `BSTR`。</span><span class="sxs-lookup"><span data-stu-id="c6e09-132">A COM-style `BSTR` with a prefixed length and Unicode characters.</span></span>|  
+|`UnmanagedType.LPStr`|<span data-ttu-id="c6e09-133">ANSI 文字の null で終わる配列へのポインター。</span><span class="sxs-lookup"><span data-stu-id="c6e09-133">A pointer to a null-terminated array of ANSI characters.</span></span>|  
+|`UnmanagedType.LPTStr`|<span data-ttu-id="c6e09-134">プラットフォーム依存文字の null で終わる配列へのポインター。</span><span class="sxs-lookup"><span data-stu-id="c6e09-134">A pointer to a null-terminated array of platform-dependent characters.</span></span>|  
+|`UnmanagedType.LPWStr`|<span data-ttu-id="c6e09-135">Unicode 文字の null で終わる配列へのポインター。</span><span class="sxs-lookup"><span data-stu-id="c6e09-135">A pointer to a null-terminated array of Unicode characters.</span></span>|  
+|`UnmanagedType.TBStr`|<span data-ttu-id="c6e09-136">長さとプラットフォーム依存文字がプレフィックスされた COM スタイル `BSTR`。</span><span class="sxs-lookup"><span data-stu-id="c6e09-136">A COM-style `BSTR` with a prefixed length and platform-dependent characters.</span></span>|  
+|`VBByRefStr`|<span data-ttu-id="c6e09-137">Visual Basic .NET で、アンマネージ コードの文字列を変更し、結果をマネージ コードに反映できるようにする値。</span><span class="sxs-lookup"><span data-stu-id="c6e09-137">A value that enables Visual Basic .NET to change a string in unmanaged code, and have the results reflected in managed code.</span></span> <span data-ttu-id="c6e09-138">この値は、プラットフォーム呼び出しでだけサポートされます。</span><span class="sxs-lookup"><span data-stu-id="c6e09-138">This value is supported only for platform invoke.</span></span> <span data-ttu-id="c6e09-139">これが、`ByVal` 文字列の Visual Basic での既定値です。</span><span class="sxs-lookup"><span data-stu-id="c6e09-139">This is default value in Visual Basic for `ByVal` strings.</span></span>|  
   
- <span data-ttu-id="44cd3-140">この表は文字列に適用されます。</span><span class="sxs-lookup"><span data-stu-id="44cd3-140">This table applies to strings.</span></span> <span data-ttu-id="44cd3-141">ただし、<xref:System.Text.StringBuilder> の場合、許可される唯一のオプションは `LPStr`、`LPTStr`、および `LPWStr` です。</span><span class="sxs-lookup"><span data-stu-id="44cd3-141">However, for <xref:System.Text.StringBuilder>, the only options allowed are `LPStr`, `LPTStr`, and `LPWStr`.</span></span>  
+ <span data-ttu-id="c6e09-140">この表は文字列に適用されます。</span><span class="sxs-lookup"><span data-stu-id="c6e09-140">This table applies to strings.</span></span> <span data-ttu-id="c6e09-141">ただし、<xref:System.Text.StringBuilder> の場合、許可される唯一のオプションは `LPStr`、`LPTStr`、および `LPWStr` です。</span><span class="sxs-lookup"><span data-stu-id="c6e09-141">However, for <xref:System.Text.StringBuilder>, the only options allowed are `LPStr`, `LPTStr`, and `LPWStr`.</span></span>  
   
- <span data-ttu-id="44cd3-142">次の型定義は、プラットフォーム呼び出しで `MarshalAsAttribute` を使用するための正しい方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="44cd3-142">The following type definition shows the correct use of `MarshalAsAttribute` for platform invoke calls.</span></span>  
+ <span data-ttu-id="c6e09-142">次の型定義は、プラットフォーム呼び出しで `MarshalAsAttribute` を使用するための正しい方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="c6e09-142">The following type definition shows the correct use of `MarshalAsAttribute` for platform invoke calls.</span></span>  
   
 ```vb  
 Class StringLibAPI      
@@ -144,22 +138,22 @@ String s);
 ```  
   
 <a name="cpcondefaultmarshalingforstringsanchor2"></a>   
-## <a name="strings-used-in-structures"></a><span data-ttu-id="44cd3-143">構造体で使用される文字列</span><span class="sxs-lookup"><span data-stu-id="44cd3-143">Strings Used in Structures</span></span>  
- <span data-ttu-id="44cd3-144">文字列は構造体の有効なメンバーです。ただし、<xref:System.Text.StringBuilder> バッファーは構造体では無効です。</span><span class="sxs-lookup"><span data-stu-id="44cd3-144">Strings are valid members of structures; however, <xref:System.Text.StringBuilder> buffers are invalid in structures.</span></span> <span data-ttu-id="44cd3-145">次の表は、型をフィールドとしてマーシャリングするときの、文字列データ型のマーシャリングのオプションを示しています。</span><span class="sxs-lookup"><span data-stu-id="44cd3-145">The following table shows the marshaling options for the string data type when the type is marshaled as a field.</span></span> <span data-ttu-id="44cd3-146"><xref:System.Runtime.InteropServices.MarshalAsAttribute> 属性は、文字列をフィールドにマーシャリングする <xref:System.Runtime.InteropServices.UnmanagedType> 列挙値を提供します。</span><span class="sxs-lookup"><span data-stu-id="44cd3-146">The <xref:System.Runtime.InteropServices.MarshalAsAttribute> attribute provides several <xref:System.Runtime.InteropServices.UnmanagedType> enumeration values to marshal strings to a field.</span></span>  
+## <a name="strings-used-in-structures"></a><span data-ttu-id="c6e09-143">構造体で使用される文字列</span><span class="sxs-lookup"><span data-stu-id="c6e09-143">Strings Used in Structures</span></span>  
+ <span data-ttu-id="c6e09-144">文字列は構造体の有効なメンバーです。ただし、<xref:System.Text.StringBuilder> バッファーは構造体では無効です。</span><span class="sxs-lookup"><span data-stu-id="c6e09-144">Strings are valid members of structures; however, <xref:System.Text.StringBuilder> buffers are invalid in structures.</span></span> <span data-ttu-id="c6e09-145">次の表は、型をフィールドとしてマーシャリングするときの、文字列データ型のマーシャリングのオプションを示しています。</span><span class="sxs-lookup"><span data-stu-id="c6e09-145">The following table shows the marshaling options for the string data type when the type is marshaled as a field.</span></span> <span data-ttu-id="c6e09-146"><xref:System.Runtime.InteropServices.MarshalAsAttribute> 属性は、文字列をフィールドにマーシャリングする <xref:System.Runtime.InteropServices.UnmanagedType> 列挙値を提供します。</span><span class="sxs-lookup"><span data-stu-id="c6e09-146">The <xref:System.Runtime.InteropServices.MarshalAsAttribute> attribute provides several <xref:System.Runtime.InteropServices.UnmanagedType> enumeration values to marshal strings to a field.</span></span>  
   
-|<span data-ttu-id="44cd3-147">列挙型</span><span class="sxs-lookup"><span data-stu-id="44cd3-147">Enumeration type</span></span>|<span data-ttu-id="44cd3-148">アンマネージ形式の説明</span><span class="sxs-lookup"><span data-stu-id="44cd3-148">Description of unmanaged format</span></span>|  
+|<span data-ttu-id="c6e09-147">列挙型</span><span class="sxs-lookup"><span data-stu-id="c6e09-147">Enumeration type</span></span>|<span data-ttu-id="c6e09-148">アンマネージ形式の説明</span><span class="sxs-lookup"><span data-stu-id="c6e09-148">Description of unmanaged format</span></span>|  
 |----------------------|-------------------------------------|  
-|`UnmanagedType.BStr`|<span data-ttu-id="44cd3-149">長さと Unicode 文字がプレフィックスされた COM スタイル `BSTR`。</span><span class="sxs-lookup"><span data-stu-id="44cd3-149">A COM-style `BSTR` with a prefixed length and Unicode characters.</span></span>|  
-|`UnmanagedType.LPStr`|<span data-ttu-id="44cd3-150">ANSI 文字の null で終わる配列へのポインター。</span><span class="sxs-lookup"><span data-stu-id="44cd3-150">A pointer to a null-terminated array of ANSI characters.</span></span>|  
-|`UnmanagedType.LPTStr`|<span data-ttu-id="44cd3-151">プラットフォーム依存文字の null で終わる配列へのポインター。</span><span class="sxs-lookup"><span data-stu-id="44cd3-151">A pointer to a null-terminated array of platform-dependent characters.</span></span>|  
-|`UnmanagedType.LPWStr`|<span data-ttu-id="44cd3-152">Unicode 文字の null で終わる配列へのポインター。</span><span class="sxs-lookup"><span data-stu-id="44cd3-152">A pointer to a null-terminated array of Unicode characters.</span></span>|  
-|`UnmanagedType.ByValTStr`|<span data-ttu-id="44cd3-153">固定長の文字配列。配列の型は、包含構造体の文字セットによって決まります。</span><span class="sxs-lookup"><span data-stu-id="44cd3-153">A fixed-length array of characters; the array's type is determined by the character set of the containing structure.</span></span>|  
+|`UnmanagedType.BStr`|<span data-ttu-id="c6e09-149">長さと Unicode 文字がプレフィックスされた COM スタイル `BSTR`。</span><span class="sxs-lookup"><span data-stu-id="c6e09-149">A COM-style `BSTR` with a prefixed length and Unicode characters.</span></span>|  
+|`UnmanagedType.LPStr`|<span data-ttu-id="c6e09-150">ANSI 文字の null で終わる配列へのポインター。</span><span class="sxs-lookup"><span data-stu-id="c6e09-150">A pointer to a null-terminated array of ANSI characters.</span></span>|  
+|`UnmanagedType.LPTStr`|<span data-ttu-id="c6e09-151">プラットフォーム依存文字の null で終わる配列へのポインター。</span><span class="sxs-lookup"><span data-stu-id="c6e09-151">A pointer to a null-terminated array of platform-dependent characters.</span></span>|  
+|`UnmanagedType.LPWStr`|<span data-ttu-id="c6e09-152">Unicode 文字の null で終わる配列へのポインター。</span><span class="sxs-lookup"><span data-stu-id="c6e09-152">A pointer to a null-terminated array of Unicode characters.</span></span>|  
+|`UnmanagedType.ByValTStr`|<span data-ttu-id="c6e09-153">固定長の文字配列。配列の型は、包含構造体の文字セットによって決まります。</span><span class="sxs-lookup"><span data-stu-id="c6e09-153">A fixed-length array of characters; the array's type is determined by the character set of the containing structure.</span></span>|  
   
- <span data-ttu-id="44cd3-154">`ByValTStr` 型は、構造体に定義されているインライン固定長文字配列で使用します。</span><span class="sxs-lookup"><span data-stu-id="44cd3-154">The `ByValTStr` type is used for inline, fixed-length character arrays that appear within a structure.</span></span> <span data-ttu-id="44cd3-155">その他の型は、文字列へのポインターを含む構造体に含まれている文字列参照に適用されます。</span><span class="sxs-lookup"><span data-stu-id="44cd3-155">Other types apply to string references contained within structures that contain pointers to strings.</span></span>  
+ <span data-ttu-id="c6e09-154">`ByValTStr` 型は、構造体に定義されているインライン固定長文字配列で使用します。</span><span class="sxs-lookup"><span data-stu-id="c6e09-154">The `ByValTStr` type is used for inline, fixed-length character arrays that appear within a structure.</span></span> <span data-ttu-id="c6e09-155">その他の型は、文字列へのポインターを含む構造体に含まれている文字列参照に適用されます。</span><span class="sxs-lookup"><span data-stu-id="c6e09-155">Other types apply to string references contained within structures that contain pointers to strings.</span></span>  
   
- <span data-ttu-id="44cd3-156">包含構造体に適用される <xref:System.Runtime.InteropServices.StructLayoutAttribute> 属性の `CharSet` 引数によって、構造体内の文字列の文字形式が決まります。</span><span class="sxs-lookup"><span data-stu-id="44cd3-156">The `CharSet` argument of the <xref:System.Runtime.InteropServices.StructLayoutAttribute> attribute that is applied to the containing structure determines the character format of strings in structures.</span></span> <span data-ttu-id="44cd3-157">以下の構造体の例には、文字列参照とインライン文字列、そして ANSI、Unicode、およびプラットフォーム依存文字が含まれています。</span><span class="sxs-lookup"><span data-stu-id="44cd3-157">The following example structures contain string references and inline strings, as well as ANSI, Unicode, and platform-dependent characters.</span></span>  
+ <span data-ttu-id="c6e09-156">包含構造体に適用される <xref:System.Runtime.InteropServices.StructLayoutAttribute> 属性の `CharSet` 引数によって、構造体内の文字列の文字形式が決まります。</span><span class="sxs-lookup"><span data-stu-id="c6e09-156">The `CharSet` argument of the <xref:System.Runtime.InteropServices.StructLayoutAttribute> attribute that is applied to the containing structure determines the character format of strings in structures.</span></span> <span data-ttu-id="c6e09-157">以下の構造体の例には、文字列参照とインライン文字列、そして ANSI、Unicode、およびプラットフォーム依存文字が含まれています。</span><span class="sxs-lookup"><span data-stu-id="c6e09-157">The following example structures contain string references and inline strings, as well as ANSI, Unicode, and platform-dependent characters.</span></span>  
   
-### <a name="type-library-representation"></a><span data-ttu-id="44cd3-158">タイプ ライブラリの表現</span><span class="sxs-lookup"><span data-stu-id="44cd3-158">Type Library Representation</span></span>  
+### <a name="type-library-representation"></a><span data-ttu-id="c6e09-158">タイプ ライブラリの表現</span><span class="sxs-lookup"><span data-stu-id="c6e09-158">Type Library Representation</span></span>  
   
 ```
 struct StringInfoA {  
@@ -177,7 +171,7 @@ struct StringInfoT {
 };  
 ```  
   
- <span data-ttu-id="44cd3-159">次のコード例は、<xref:System.Runtime.InteropServices.MarshalAsAttribute> 属性を使用して、同一の構造体を複数の異なる形式で定義する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="44cd3-159">The following code example shows how to use the <xref:System.Runtime.InteropServices.MarshalAsAttribute> attribute to define the same structure in different formats.</span></span>  
+ <span data-ttu-id="c6e09-159">次のコード例は、<xref:System.Runtime.InteropServices.MarshalAsAttribute> 属性を使用して、同一の構造体を複数の異なる形式で定義する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="c6e09-159">The following code example shows how to use the <xref:System.Runtime.InteropServices.MarshalAsAttribute> attribute to define the same structure in different formats.</span></span>  
   
 ```vb  
 <StructLayout(LayoutKind.Sequential, CharSet := CharSet.Ansi)> _  
@@ -221,12 +215,12 @@ struct StringInfoT {
 ```  
   
 <a name="cpcondefaultmarshalingforstringsanchor3"></a>   
-## <a name="fixed-length-string-buffers"></a><span data-ttu-id="44cd3-160">固定長文字列バッファー</span><span class="sxs-lookup"><span data-stu-id="44cd3-160">Fixed-Length String Buffers</span></span>  
- <span data-ttu-id="44cd3-161">状況によっては、固定長の文字列バッファーを、操作するためにアンマネージ コードに渡す必要があります。</span><span class="sxs-lookup"><span data-stu-id="44cd3-161">In some circumstances, a fixed-length character buffer must be passed into unmanaged code to be manipulated.</span></span> <span data-ttu-id="44cd3-162">この場合、呼び出し先は渡されたバッファーの内容を修正できないので、単に文字列を渡すだけでは不十分です。</span><span class="sxs-lookup"><span data-stu-id="44cd3-162">Simply passing a string does not work in this case because the callee cannot modify the contents of the passed buffer.</span></span> <span data-ttu-id="44cd3-163">文字列が参照によって渡された場合でも、バッファーを特定のサイズに初期化する方法はありません。</span><span class="sxs-lookup"><span data-stu-id="44cd3-163">Even if the string is passed by reference, there is no way to initialize the buffer to a given size.</span></span>  
+## <a name="fixed-length-string-buffers"></a><span data-ttu-id="c6e09-160">固定長文字列バッファー</span><span class="sxs-lookup"><span data-stu-id="c6e09-160">Fixed-Length String Buffers</span></span>  
+ <span data-ttu-id="c6e09-161">状況によっては、固定長の文字列バッファーを、操作するためにアンマネージ コードに渡す必要があります。</span><span class="sxs-lookup"><span data-stu-id="c6e09-161">In some circumstances, a fixed-length character buffer must be passed into unmanaged code to be manipulated.</span></span> <span data-ttu-id="c6e09-162">この場合、呼び出し先は渡されたバッファーの内容を修正できないので、単に文字列を渡すだけでは不十分です。</span><span class="sxs-lookup"><span data-stu-id="c6e09-162">Simply passing a string does not work in this case because the callee cannot modify the contents of the passed buffer.</span></span> <span data-ttu-id="c6e09-163">文字列が参照によって渡された場合でも、バッファーを特定のサイズに初期化する方法はありません。</span><span class="sxs-lookup"><span data-stu-id="c6e09-163">Even if the string is passed by reference, there is no way to initialize the buffer to a given size.</span></span>  
   
- <span data-ttu-id="44cd3-164">この解決策は、<xref:System.Text.StringBuilder> バッファーを文字列ではなく引数として渡すことです。</span><span class="sxs-lookup"><span data-stu-id="44cd3-164">The solution is to pass a <xref:System.Text.StringBuilder> buffer as the argument instead of a string.</span></span> <span data-ttu-id="44cd3-165">呼び出し先は、`StringBuilder` の容量を超えない範囲で、`StringBuilder` を逆参照したり変更したりすることができます。</span><span class="sxs-lookup"><span data-stu-id="44cd3-165">A `StringBuilder` can be dereferenced and modified by the callee, provided it does not exceed the capacity of the `StringBuilder`.</span></span> <span data-ttu-id="44cd3-166">また、固定長に初期化することもできます。</span><span class="sxs-lookup"><span data-stu-id="44cd3-166">It can also be initialized to a fixed length.</span></span> <span data-ttu-id="44cd3-167">たとえば、`StringBuilder` バッファーを初期化してその容量を `N` にする場合、マーシャラーは (`N`+1) 文字のサイズのバッファーを提供します。</span><span class="sxs-lookup"><span data-stu-id="44cd3-167">For example, if you initialize a `StringBuilder` buffer to a capacity of `N`, the marshaler provides a buffer of size (`N`+1) characters.</span></span> <span data-ttu-id="44cd3-168">+1 は、アンマネージ文字列に null 終了文字があることをしめしています。`StringBuilder` にはそれがありません。</span><span class="sxs-lookup"><span data-stu-id="44cd3-168">The +1 accounts for the fact that the unmanaged string has a null terminator while `StringBuilder` does not.</span></span>  
+ <span data-ttu-id="c6e09-164">この解決策は、<xref:System.Text.StringBuilder> バッファーを文字列ではなく引数として渡すことです。</span><span class="sxs-lookup"><span data-stu-id="c6e09-164">The solution is to pass a <xref:System.Text.StringBuilder> buffer as the argument instead of a string.</span></span> <span data-ttu-id="c6e09-165">呼び出し先は、`StringBuilder` の容量を超えない範囲で、`StringBuilder` を逆参照したり変更したりすることができます。</span><span class="sxs-lookup"><span data-stu-id="c6e09-165">A `StringBuilder` can be dereferenced and modified by the callee, provided it does not exceed the capacity of the `StringBuilder`.</span></span> <span data-ttu-id="c6e09-166">また、固定長に初期化することもできます。</span><span class="sxs-lookup"><span data-stu-id="c6e09-166">It can also be initialized to a fixed length.</span></span> <span data-ttu-id="c6e09-167">たとえば、`StringBuilder` バッファーを初期化してその容量を `N` にする場合、マーシャラーは (`N`+1) 文字のサイズのバッファーを提供します。</span><span class="sxs-lookup"><span data-stu-id="c6e09-167">For example, if you initialize a `StringBuilder` buffer to a capacity of `N`, the marshaler provides a buffer of size (`N`+1) characters.</span></span> <span data-ttu-id="c6e09-168">+1 は、アンマネージ文字列に null 終了文字があることをしめしています。`StringBuilder` にはそれがありません。</span><span class="sxs-lookup"><span data-stu-id="c6e09-168">The +1 accounts for the fact that the unmanaged string has a null terminator while `StringBuilder` does not.</span></span>  
   
- <span data-ttu-id="44cd3-169">たとえば、Microsoft Win32 API `GetWindowText` (Windows.h に定義されている) 関数は、固定長の文字バッファーを操作するアンマネージ コードを渡す必要があります。</span><span class="sxs-lookup"><span data-stu-id="44cd3-169">For example, the Microsoft Win32 API `GetWindowText` function (defined in Windows.h) is a fixed-length character buffer that must be passed into unmanaged code to be manipulated.</span></span> <span data-ttu-id="44cd3-170">`LpString` は、呼び出し元が割り当てたサイズ `nMaxCount` のバッファーを示します。</span><span class="sxs-lookup"><span data-stu-id="44cd3-170">`LpString` points to a caller-allocated buffer of size `nMaxCount`.</span></span> <span data-ttu-id="44cd3-171">呼び出し元は、バッファーを割り当てて、`nMaxCount` 引数を割り当てられたバッファーのサイズに設定することが期待されています。</span><span class="sxs-lookup"><span data-stu-id="44cd3-171">The caller is expected to allocate the buffer and set the `nMaxCount` argument to the size of the allocated buffer.</span></span> <span data-ttu-id="44cd3-172">次のコードは、Windows.h で定義されている `GetWindowText` 関数宣言を示しています。</span><span class="sxs-lookup"><span data-stu-id="44cd3-172">The following code shows the `GetWindowText` function declaration as defined in Windows.h.</span></span>  
+ <span data-ttu-id="c6e09-169">たとえば、Microsoft Win32 API `GetWindowText` (Windows.h に定義されている) 関数は、固定長の文字バッファーを操作するアンマネージ コードを渡す必要があります。</span><span class="sxs-lookup"><span data-stu-id="c6e09-169">For example, the Microsoft Win32 API `GetWindowText` function (defined in Windows.h) is a fixed-length character buffer that must be passed into unmanaged code to be manipulated.</span></span> <span data-ttu-id="c6e09-170">`LpString` は、呼び出し元が割り当てたサイズ `nMaxCount` のバッファーを示します。</span><span class="sxs-lookup"><span data-stu-id="c6e09-170">`LpString` points to a caller-allocated buffer of size `nMaxCount`.</span></span> <span data-ttu-id="c6e09-171">呼び出し元は、バッファーを割り当てて、`nMaxCount` 引数を割り当てられたバッファーのサイズに設定することが期待されています。</span><span class="sxs-lookup"><span data-stu-id="c6e09-171">The caller is expected to allocate the buffer and set the `nMaxCount` argument to the size of the allocated buffer.</span></span> <span data-ttu-id="c6e09-172">次のコードは、Windows.h で定義されている `GetWindowText` 関数宣言を示しています。</span><span class="sxs-lookup"><span data-stu-id="c6e09-172">The following code shows the `GetWindowText` function declaration as defined in Windows.h.</span></span>  
   
 ```  
 int GetWindowText(  
@@ -236,7 +230,7 @@ int nMaxCount     // Maximum number of characters to copy.
 );  
 ```  
   
- <span data-ttu-id="44cd3-173">呼び出し先は、`StringBuilder` の容量を超えない範囲で、`StringBuilder` を逆参照したり変更したりすることができます。</span><span class="sxs-lookup"><span data-stu-id="44cd3-173">A `StringBuilder` can be dereferenced and modified by the callee, provided it does not exceed the capacity of the `StringBuilder`.</span></span> <span data-ttu-id="44cd3-174">次のコード例は、`StringBuilder` を固定長に初期化する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="44cd3-174">The following code example demonstrates how `StringBuilder` can be initialized to a fixed length.</span></span>  
+ <span data-ttu-id="c6e09-173">呼び出し先は、`StringBuilder` の容量を超えない範囲で、`StringBuilder` を逆参照したり変更したりすることができます。</span><span class="sxs-lookup"><span data-stu-id="c6e09-173">A `StringBuilder` can be dereferenced and modified by the callee, provided it does not exceed the capacity of the `StringBuilder`.</span></span> <span data-ttu-id="c6e09-174">次のコード例は、`StringBuilder` を固定長に初期化する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="c6e09-174">The following code example demonstrates how `StringBuilder` can be initialized to a fixed length.</span></span>  
   
 ```vb  
 Public Class Win32API  
@@ -269,8 +263,8 @@ public class Window {
 }  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="44cd3-175">関連項目</span><span class="sxs-lookup"><span data-stu-id="44cd3-175">See Also</span></span>  
- [<span data-ttu-id="44cd3-176">既定のマーシャリング動作</span><span class="sxs-lookup"><span data-stu-id="44cd3-176">Default Marshaling Behavior</span></span>](default-marshaling-behavior.md)  
- [<span data-ttu-id="44cd3-177">Blittable 型と非 Blittable 型</span><span class="sxs-lookup"><span data-stu-id="44cd3-177">Blittable and Non-Blittable Types</span></span>](blittable-and-non-blittable-types.md)  
- <span data-ttu-id="44cd3-178">[方向属性](https://msdn.microsoft.com/library/241ac5b5-928e-4969-8f58-1dbc048f9ea2(v=vs.100))</span><span class="sxs-lookup"><span data-stu-id="44cd3-178">[Directional Attributes](https://msdn.microsoft.com/library/241ac5b5-928e-4969-8f58-1dbc048f9ea2(v=vs.100))</span></span>  
- [<span data-ttu-id="44cd3-179">コピーと固定</span><span class="sxs-lookup"><span data-stu-id="44cd3-179">Copying and Pinning</span></span>](copying-and-pinning.md)
+## <a name="see-also"></a><span data-ttu-id="c6e09-175">参照</span><span class="sxs-lookup"><span data-stu-id="c6e09-175">See Also</span></span>  
+ [<span data-ttu-id="c6e09-176">既定のマーシャリング動作</span><span class="sxs-lookup"><span data-stu-id="c6e09-176">Default Marshaling Behavior</span></span>](default-marshaling-behavior.md)  
+ [<span data-ttu-id="c6e09-177">Blittable 型と非 Blittable 型</span><span class="sxs-lookup"><span data-stu-id="c6e09-177">Blittable and Non-Blittable Types</span></span>](blittable-and-non-blittable-types.md)  
+ <span data-ttu-id="c6e09-178">[方向属性](https://msdn.microsoft.com/library/241ac5b5-928e-4969-8f58-1dbc048f9ea2(v=vs.100))</span><span class="sxs-lookup"><span data-stu-id="c6e09-178">[Directional Attributes](https://msdn.microsoft.com/library/241ac5b5-928e-4969-8f58-1dbc048f9ea2(v=vs.100))</span></span>  
+ [<span data-ttu-id="c6e09-179">コピーと固定</span><span class="sxs-lookup"><span data-stu-id="c6e09-179">Copying and Pinning</span></span>](copying-and-pinning.md)
