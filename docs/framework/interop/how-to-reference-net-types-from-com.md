@@ -16,9 +16,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 0333cd73240e685b46917d85afe0876532db3fd1
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33391899"
 ---
 # <a name="how-to-reference-net-types-from-com"></a>方法: COM から .NET 型を参照する
 クライアント アンド サーバー コードの観点からすると、COM と .NET Framework の違いはほとんどわかりません。 Microsoft Visual Basic クライアントでは、オブジェクト ブラウザーを使って .NET オブジェクトを表示できます。オブジェクト ブラウザーには、オブジェクトのメソッドと構文、プロパティ、およびフィールドが、他の COM オブジェクトの場合と同様に公開されます。  
@@ -27,7 +28,7 @@ ms.lasthandoff: 05/04/2018
   
 ### <a name="to-import-a-library"></a>ライブラリをインポートするには  
   
--   **#import** ディレクティブで **raw_interfaces_only** オプションを指定します。 例えば:  
+-   **#import** ディレクティブで **raw_interfaces_only** オプションを指定します。 例:  
   
     ```cpp  
     #import "..\LoanLib\LoanLib.tlb" raw_interfaces_only  
@@ -35,14 +36,14 @@ ms.lasthandoff: 05/04/2018
   
      - または -  
   
--   Mscorlib.tlb の #import ディレクティブを含めます。 例えば:  
+-   Mscorlib.tlb の #import ディレクティブを含めます。 例:  
   
     ```cpp  
     #import "mscorlib.tlb"  
     #import "..\LoanLib\LoanLib.tlb"  
     ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [COM への .NET Framework コンポーネントの公開](exposing-dotnet-components-to-com.md)  
  [COM へのアセンブリの登録](registering-assemblies-with-com.md)  
  [.NET オブジェクトの呼び出し](https://msdn.microsoft.com/library/40c9626c-aea6-4bad-b8f0-c1de462efd33(v=vs.100))  

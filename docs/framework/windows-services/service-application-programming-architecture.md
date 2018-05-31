@@ -18,54 +18,55 @@ author: ghogen
 manager: douge
 ms.openlocfilehash: f0c760d0f9b65fc9b612a8bee8abb68fa5b4ecae
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33516108"
 ---
 # <a name="service-application-programming-architecture"></a>サービス アプリケーションのプログラミング アーキテクチャ
-継承するクラスに基づいて Windows サービス アプリケーション、<xref:System.ServiceProcess.ServiceBase?displayProperty=nameWithType>クラスです。 このクラスからメソッドをオーバーライドして、サービスの動作を決定するそれらの機能を定義します。  
+Windows サービス アプリケーションは、<xref:System.ServiceProcess.ServiceBase?displayProperty=nameWithType> クラスから継承するクラスが基になっています。 このクラスのメソッドをオーバーライドして機能を定義し、サービスの動作を決定します。  
   
  サービスの作成に関連する主要なクラスは次のとおりです。  
   
--   <xref:System.ServiceProcess.ServiceBase?displayProperty=nameWithType> — メソッドをオーバーライドする、<xref:System.ServiceProcess.ServiceBase>クラスのサービスを作成するときに、このサービス関数がクラスを継承する方法を決定するコードを定義します。  
+-   <xref:System.ServiceProcess.ServiceBase?displayProperty=nameWithType> — サービスを作成するときに <xref:System.ServiceProcess.ServiceBase> クラスのメソッドをオーバーライドし、この継承したクラスでサービスがどのように機能するかを決定するコードを定義します。  
   
--   <xref:System.ServiceProcess.ServiceProcessInstaller?displayProperty=nameWithType> <xref:System.ServiceProcess.ServiceInstaller?displayProperty=nameWithType> -これらのクラスを使用してインストールし、サービスをアンインストールします。  
+-   <xref:System.ServiceProcess.ServiceProcessInstaller?displayProperty=nameWithType>、<xref:System.ServiceProcess.ServiceInstaller?displayProperty=nameWithType> — これらのクラスは、サービスのインストールとアンインストールに使います。  
   
- さらに、クラスの名前付き<xref:System.ServiceProcess.ServiceController>サービス自体を操作するために使用できます。 このクラスは、サービスの作成に関連するではありませんを開始し、サービスを停止し、コマンドを渡す、一連の列挙体を返すために使用できます。  
+ さらに、<xref:System.ServiceProcess.ServiceController> という名前のクラスを使って、サービス自体を操作できます。 このクラスは、サービスの作成には含まれませんが、サービスを開始および停止し、サービスにコマンドを渡し、サービスから一連の列挙値を戻すために使用できます。  
   
-## <a name="defining-your-services-behavior"></a>サービスの動作を定義します。  
- サービス クラスでは、サービス コントロール マネージャーで、サービスの状態が変更されたときの動作を決定する基底クラスの関数をオーバーライドします。 <xref:System.ServiceProcess.ServiceBase>クラスは次のメソッドは、カスタム動作を追加するをオーバーライドすることができますを公開します。  
+## <a name="defining-your-services-behavior"></a>サービスの動作の定義  
+ サービス クラスにおいて、サービス コントロール マネージャー内でサービスの状態が変更されたときの動作を決定する基底クラスの関数をオーバーライドします。 <xref:System.ServiceProcess.ServiceBase> クラスで公開されている以下のメソッドをオーバーライドして、カスタム動作を追加できます。  
   
-|メソッド|する上書き|  
+|メソッド|オーバーライドの目的|  
 |------------|-----------------|  
-|<xref:System.ServiceProcess.ServiceBase.OnStart%2A>|サービスが実行を開始するときに、どのようなアクションを実行する必要がありますを指定します。 有効な作業を実行するようにサービスに対してこの手順でコードを記述する必要があります。|  
-|<xref:System.ServiceProcess.ServiceBase.OnPause%2A>|サービスが一時停止したときの動作を示してください。|  
-|<xref:System.ServiceProcess.ServiceBase.OnStop%2A>|サービスの実行が停止したときの動作を示してください。|  
-|<xref:System.ServiceProcess.ServiceBase.OnContinue%2A>|サービスが一時停止された後に正常な機能を再開したときの動作を示してください。|  
-|<xref:System.ServiceProcess.ServiceBase.OnShutdown%2A>|その時点で、サービスが実行されている場合、システムがシャット ダウンする直前の動作を示します。|  
-|<xref:System.ServiceProcess.ServiceBase.OnCustomCommand%2A>|サービスは、カスタム コマンドを受信したときの動作を示してください。 カスタム コマンドの詳細については、オンライン MSDN 参照してください。|  
-|<xref:System.ServiceProcess.ServiceBase.OnPowerEvent%2A>|バッテリ低下や中断された操作など、電源管理イベントを受信したときに、サービスの応答方法を示してください。|  
+|<xref:System.ServiceProcess.ServiceBase.OnStart%2A>|サービスが実行を開始するときに行う必要のあるアクションを示します。 サービスが意味のある処理を実行するには、このプロシージャにコードを記述する必要があります。|  
+|<xref:System.ServiceProcess.ServiceBase.OnPause%2A>|サービスが一時停止されるときに行う必要があることを示します。|  
+|<xref:System.ServiceProcess.ServiceBase.OnStop%2A>|サービスが実行を停止するときに行う必要があることを示します。|  
+|<xref:System.ServiceProcess.ServiceBase.OnContinue%2A>|サービスが一時停止後に正常な機能を再開するときに行う必要があることを示します。|  
+|<xref:System.ServiceProcess.ServiceBase.OnShutdown%2A>|システムがシャットダウンする時点でサービスが実行している場合に、シャットダウンの直前に行う必要があることを示します。|  
+|<xref:System.ServiceProcess.ServiceBase.OnCustomCommand%2A>|サービスがカスタム コマンドを受け取ったときに行う必要があることを示します。 カスタム コマンドについて詳しくは、MSDN オンラインをご覧ください。|  
+|<xref:System.ServiceProcess.ServiceBase.OnPowerEvent%2A>|バッテリ低下や中断操作など、電源管理イベントを受信したときのサービスの応答方法を示します。|  
   
 > [!NOTE]
->  これらのメソッドは、サービスがその有効期間内に通過状態を表しています。サービスは、1 つの状態から、次に遷移します。 応答するサービスを決して取得するなど、<xref:System.ServiceProcess.ServiceBase.OnContinue%2A>する前にコマンド<xref:System.ServiceProcess.ServiceBase.OnStart%2A>呼び出されました。  
+>  これらのメソッドは、サービスがその有効期間内に通過する状態を表しています。サービスは、ある状態から次の状態に遷移します。 たとえば、<xref:System.ServiceProcess.ServiceBase.OnStart%2A> が呼び出される前の <xref:System.ServiceProcess.ServiceBase.OnContinue%2A> コマンドにサービスが応答することはありません。  
   
- その他のいくつかのプロパティと関心のあるメソッドがあります。 次の設定があります。  
+ 他にも、注目する必要のあるプロパティとメソッドがいくつかあります。 次の設定があります。  
   
--   <xref:System.ServiceProcess.ServiceBase.Run%2A>メソッドを<xref:System.ServiceProcess.ServiceBase>クラスです。 これは、サービスのメイン エントリ ポイントです。 アプリケーションのコードが挿入される Windows サービス テンプレートを使用してサービスを作成するときに`Main`メソッドをサービスを実行します。 このコードは、次のようになります。  
+-   <xref:System.ServiceProcess.ServiceBase> クラスの <xref:System.ServiceProcess.ServiceBase.Run%2A> メソッド。 このメソッドは、サービスのメイン エントリ ポイントです。 Windows サービス テンプレートを使ってサービスを作成するときは、アプリケーションの `Main` メソッドに、サービスを実行するコードを挿入します。 このコードは次のようになります。  
   
      [!code-csharp[VbRadconService#6](../../../samples/snippets/csharp/VS_Snippets_VBCSharp/VbRadconService/CS/MyNewService.cs#6)]
      [!code-vb[VbRadconService#6](../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRadconService/VB/MyNewService.vb#6)]  
   
     > [!NOTE]
-    >  これらの例は、型の配列を使用して<xref:System.ServiceProcess.ServiceBase>をアプリケーションに含まれる各サービスを追加することができます、し、すべてのサービスで一緒に実行できます。 1 つのサービスのみを作成する場合は、ただし、こともできましていないを使用して、配列から継承する新しいオブジェクトを単に宣言<xref:System.ServiceProcess.ServiceBase>し、実行します。 例については、次を参照してください。[する方法: プログラムによってサービスを書き込む](../../../docs/framework/windows-services/how-to-write-services-programmatically.md)です。  
+    >  これらの例では、アプリケーションに含まれる各サービスを追加できる <xref:System.ServiceProcess.ServiceBase> 型の配列を使用しており、すべてのサービスを一緒に実行できます。 一方、作成するサービスが 1 つのみの場合は、配列は使わず、<xref:System.ServiceProcess.ServiceBase> から継承する新しいオブジェクトを単純に宣言して、それを実行します。 詳しくは、「[方法: プログラムでサービスを作成する](../../../docs/framework/windows-services/how-to-write-services-programmatically.md)」をご覧ください。  
   
--   一連のプロパティの<xref:System.ServiceProcess.ServiceBase>クラスです。 これらは、どのような方法は、サービスを呼び出すことができますを決定します。 たとえばときに、<xref:System.ServiceProcess.ServiceBase.CanStop%2A>プロパティに設定されている`true`、<xref:System.ServiceProcess.ServiceBase.OnStop%2A>サービスでメソッドを呼び出すことができます。 ときに、<xref:System.ServiceProcess.ServiceBase.CanPauseAndContinue%2A>プロパティに設定されている`true`、<xref:System.ServiceProcess.ServiceBase.OnPause%2A>と<xref:System.ServiceProcess.ServiceBase.OnContinue%2A>メソッドを呼び出すことができます。 これらのプロパティのいずれかを設定すると`true`、しをオーバーライドし、関連するメソッドの処理を定義する必要があります。  
+-   <xref:System.ServiceProcess.ServiceBase> クラスの一連のプロパティ。 これらは、サービスで呼び出すことができるメソッドを決定します。 たとえば、<xref:System.ServiceProcess.ServiceBase.CanStop%2A> プロパティを `true` に設定すると、サービスで <xref:System.ServiceProcess.ServiceBase.OnStop%2A> メソッドを呼び出すことができます。 <xref:System.ServiceProcess.ServiceBase.CanPauseAndContinue%2A> プロパティが `true` に設定されていると、<xref:System.ServiceProcess.ServiceBase.OnPause%2A> および <xref:System.ServiceProcess.ServiceBase.OnContinue%2A> メソッドを呼び出すことができます。 これらのプロパティのいずれかを `true` に設定するときは、関連するメソッドをオーバーライドして処理を定義する必要があります。  
   
     > [!NOTE]
-    >  サービスをオーバーライドする必要がありますには、少なくとも<xref:System.ServiceProcess.ServiceBase.OnStart%2A>と<xref:System.ServiceProcess.ServiceBase.OnStop%2A>を有効にします。  
+    >  サービスが役に立つためには、少なくとも <xref:System.ServiceProcess.ServiceBase.OnStart%2A> と <xref:System.ServiceProcess.ServiceBase.OnStop%2A> をオーバーライドする必要があります。  
   
- 呼ばれるコンポーネントを使用することも、<xref:System.ServiceProcess.ServiceController>と通信して、既存のサービスの動作を制御します。  
+ また、<xref:System.ServiceProcess.ServiceController> コンポーネントを使うと、既存のサービスと通信して、その動作を制御できます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Windows サービス アプリケーションの概要](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)  
  [方法 : Windows サービスを作成する](../../../docs/framework/windows-services/how-to-create-windows-services.md)

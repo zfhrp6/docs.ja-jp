@@ -10,16 +10,17 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 6851ac334d439f2e5c0f6056f5226e3faa1503d5
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33392578"
 ---
 # <a name="composition-analysis-tool-mefx"></a>コンポジション分析ツール (Mefx)
 合成分析ツール (Mefx) は、Managed Extensibility Framework (MEF) のパートが含まれたライブラリ (.dll) ファイルとアプリケーション (.exe) ファイルを分析するコマンド ライン アプリケーションです。 Mefx の主な目的は、開発者が煩雑なトレース コードをアプリケーション自体に追加することなく、MEF アプリケーションの合成エラーを診断できるようにすることです。 また、Mefx は、サード パーティが提供するライブラリのパートについて理解する際にも役立ちます ここでは、Mefx の使用方法について説明し、構文のリファレンスを示します。  
   
 <a name="getting_mefx"></a>   
 ## <a name="getting-mefx"></a>Mefx の入手  
- Mefx は、github で利用可能な[Managed Extensibility Framework](https://github.com/MicrosoftArchive/mef/releases/tag/4.0)です。 ツールをダウンロードして解凍してください。  
+ Mefx は、GitHub の [Managed Extensibility Framework](https://github.com/MicrosoftArchive/mef/releases/tag/4.0) で入手できます。 ツールをダウンロードして解凍してください。  
   
 <a name="basic_syntax"></a>   
 ## <a name="basic-syntax"></a>基本構文  

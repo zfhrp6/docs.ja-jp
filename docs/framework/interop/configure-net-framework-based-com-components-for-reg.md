@@ -12,9 +12,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 744ce1f2810eee025f071cafaa71e473b6ed4c50
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33392854"
 ---
 # <a name="how-to-configure-net-framework-based-com-components-for-registration-free-activation"></a>方法: 登録を必要としないアクティベーション用の .NET Framework ベースの COM コンポーネントを構成する
 .NET Framework ベースのコンポーネントの登録を必要としないアクティベーションは、COM コンポーネントの場合よりも少しだけ複雑です。 セットアップには 2 つのマニフェストが必要です。  
@@ -36,7 +37,7 @@ ms.lasthandoff: 05/04/2018
     <assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">  
     ```  
   
-     マニフェストの要素とその属性については、次を参照してください。[アプリケーション マニフェスト](https://msdn.microsoft.com/library/windows/desktop/aa374191.aspx)です。  
+     マニフェストの要素とその属性については、「[Application Manifests](https://msdn.microsoft.com/library/windows/desktop/aa374191.aspx)」(アプリケーション マニフェスト) をご覧ください。  
   
 3.  マニフェストの所有者を指定します。 次の例では、`myComApp` バージョン 1 がマニフェスト ファイルを所有しています。  
   
@@ -76,7 +77,7 @@ ms.lasthandoff: 05/04/2018
   
 5.  マニフェスト ファイルに名前を付けて保存します。 アプリケーション マニフェストの名前は、アセンブリ実行可能ファイルの名前に拡張子 .manifest が付いたものです。 たとえば、myComApp.exe のアプリケーション マニフェスト ファイル名は myComApp.exe.manifest です。  
   
- アプリケーション マニフェストは、COM アプリケーションと同じディレクトリにインストールできます。 また、アプリケーションの .exe ファイルにリソースとして追加することもできます。 詳細については、詳細については、次を参照してください。[サイド バイ サイド アセンブリに関する](https://msdn.microsoft.com/library/windows/desktop/ff951640.aspx)です。  
+ アプリケーション マニフェストは、COM アプリケーションと同じディレクトリにインストールできます。 また、アプリケーションの .exe ファイルにリソースとして追加することもできます。 詳しくは、「[About Side-by-Side Assemblies](https://msdn.microsoft.com/library/windows/desktop/ff951640.aspx)」(side-by-side アセンブリについて) をご覧ください。  
   
 #### <a name="to-create-a-component-manifest"></a>コンポーネント マニフェストを作成するには  
   
@@ -171,8 +172,8 @@ ms.lasthandoff: 05/04/2018
   
      ここでも、`myresource.res` は埋め込むリソースを含むリソース ファイルの名前です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [登録を必要としない COM 相互運用機能](registration-free-com-interop.md)  
- [登録を必要としない COM 相互運用機能の要件](https://msdn.microsoft.com/library/0c43bc57-eecf-4e6c-8114-490141cce4da(v=vs.100)))  
- [登録を必要としないアクティベーション用の COM コンポーネントを構成する](https://msdn.microsoft.com/library/bfe9b02f-d964-4784-960e-a1f94692fbfe(v=vs.100)))  
+ [登録を必要としない COM 相互運用機能の要件](https://msdn.microsoft.com/library/0c43bc57-eecf-4e6c-8114-490141cce4da(v=vs.100))  
+ [登録を必要としないアクティベーション用の COM コンポーネントの構成](https://msdn.microsoft.com/library/bfe9b02f-d964-4784-960e-a1f94692fbfe(v=vs.100))  
  [.NET ベースのコンポーネントの登録を必要としないアクティベーション: チュートリアル](https://msdn.microsoft.com/library/ms973915.aspx)

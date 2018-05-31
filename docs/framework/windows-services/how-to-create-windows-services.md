@@ -9,12 +9,13 @@ author: ghogen
 manager: douge
 ms.openlocfilehash: 7719af9393bee816665040d6e4ced191419d0855
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33517863"
 ---
 # <a name="how-to-create-windows-services"></a>方法 : Windows サービスを作成する
-サービスを作成するときに、という名前の Visual Studio プロジェクト テンプレートを使用することができます**Windows サービス**です。 このテンプレートを使用すると、作業の多くを自動化できます。この自動化は、適切なクラスと名前空間を参照し、サービスの基底クラスからの継承を設定し、メソッドのいくつかをオーバーライドすることで実現されます。  
+サービスを作成するときには、**Windows サービス**と呼ばれる、Visual Studio プロジェクトのテンプレートを使用できます。 このテンプレートを使用すると、作業の多くを自動化できます。この自動化は、適切なクラスと名前空間を参照し、サービスの基底クラスからの継承を設定し、メソッドのいくつかをオーバーライドすることで実現されます。  
   
 > [!WARNING]
 >  Windows サービスのプロジェクト テンプレートは、Visual Studio の Express Edition では使用できません。  
@@ -29,14 +30,14 @@ ms.lasthandoff: 05/04/2018
   
 ### <a name="to-create-a-windows-service-application"></a>Windows サービス アプリケーションを作成するには  
   
-1.  作成、 **Windows サービス**プロジェクト。  
+1.  **Windows サービス** プロジェクトを作成します。  
   
     > [!NOTE]
-    >  テンプレートを使用せずにサービスを記述する方法については、次を参照してください。[する方法: プログラムによってサービスを書き込む](../../../docs/framework/windows-services/how-to-write-services-programmatically.md)です。  
+    >  テンプレートを使用せずにサービスを記述する方法については、「[方法: プログラムでサービスを作成する](../../../docs/framework/windows-services/how-to-write-services-programmatically.md)」をご覧ください。  
   
-2.  **プロパティ**ウィンドウで、設定、<xref:System.ServiceProcess.ServiceBase.ServiceName%2A>サービスのプロパティです。  
+2.  **[プロパティ]** ウィンドウで、サービスの <xref:System.ServiceProcess.ServiceBase.ServiceName%2A> プロパティを設定します。  
   
-     ![ServiceName プロパティを設定します。] (../../../docs/framework/windows-services/media/windowsservice-servicename.PNG "WindowsService_ServiceName")  
+     ![ServiceName プロパティを設定する。](../../../docs/framework/windows-services/media/windowsservice-servicename.PNG "WindowsService_ServiceName")  
   
     > [!NOTE]
     >  <xref:System.ServiceProcess.ServiceBase.ServiceName%2A> プロパティの値は、各インストーラー クラスに記録されている名前と一致する必要があります。 このプロパティを変更した場合は、インストーラー クラスの <xref:System.ServiceProcess.ServiceBase.ServiceName%2A> プロパティも変更する必要があります。  
@@ -48,26 +49,26 @@ ms.lasthandoff: 05/04/2018
     |<xref:System.ServiceProcess.ServiceBase.CanStop%2A>|サービスが実行停止要求を受け付ける場合は `True` を設定します。サービスの実行を停止しない場合は `false` を設定します。|  
     |<xref:System.ServiceProcess.ServiceBase.CanShutdown%2A>|サービスがコンピューターのシャットダウン時に通知を受けて `True` プロシージャを呼び出す場合は、<xref:System.ServiceProcess.ServiceBase.OnShutdown%2A> を設定します。|  
     |<xref:System.ServiceProcess.ServiceBase.CanPauseAndContinue%2A>|サービスが一時停止要求または再開要求を受け付ける場合は `True` を設定します。サービスを一時停止または再開しない場合は `false` を設定します。|  
-    |<xref:System.ServiceProcess.ServiceBase.CanHandlePowerEvent%2A>|`True` サービスがコンピューターの電源状態の変更の通知を処理できることを示すために`false`をサービスがしてこれらの変更通知を送信するを防ぐためにします。|  
-    |<xref:System.ServiceProcess.ServiceBase.AutoLog%2A>|サービスがアクションを実行したときにアプリケーション イベント ログに情報を入力する場合は `True` を設定します。この機能を無効にする場合は `false` を設定します。 詳細については、次を参照してください。[する方法: サービスに関する情報のログ](../../../docs/framework/windows-services/how-to-log-information-about-services.md)です。 **注:** 既定では、<xref:System.ServiceProcess.ServiceBase.AutoLog%2A>に設定されている`true`です。|  
+    |<xref:System.ServiceProcess.ServiceBase.CanHandlePowerEvent%2A>|コンピューターの電源状態の変化をサービスに通知する場合は `True` を設定します。サービスに電源状態の変化を通知しない場合は、`false` を設定します。|  
+    |<xref:System.ServiceProcess.ServiceBase.AutoLog%2A>|サービスがアクションを実行したときにアプリケーション イベント ログに情報を入力する場合は `True` を設定します。この機能を無効にする場合は `false` を設定します。 詳しくは、「[方法 : サービスに関する情報のログを記録する](../../../docs/framework/windows-services/how-to-log-information-about-services.md)」をご覧ください。 **注:** 既定では、<xref:System.ServiceProcess.ServiceBase.AutoLog%2A> は `true` に設定されています。|  
   
     > [!NOTE]
-    >  ときに<xref:System.ServiceProcess.ServiceBase.CanStop%2A>または<xref:System.ServiceProcess.ServiceBase.CanPauseAndContinue%2A>に設定されている`false`、**サービス コントロール マネージャー**停止、一時停止、またはサービスを続行する、対応するメニュー オプションが無効になります。  
+    >  <xref:System.ServiceProcess.ServiceBase.CanStop%2A> または <xref:System.ServiceProcess.ServiceBase.CanPauseAndContinue%2A> を `false` に設定すると、**サービス コントロール マネージャー**は、対応するメニュー オプション (サービスの停止、一時停止、または継続) を無効にします。  
   
 4.  コード エディターを起動し、<xref:System.ServiceProcess.ServiceBase.OnStart%2A> プロシージャと <xref:System.ServiceProcess.ServiceBase.OnStop%2A> プロシージャの処理を記述します。  
   
 5.  ほかに動作を定義するメソッドがある場合は、それをオーバーライドします。  
   
-6.  サービス アプリケーションの必要なインストーラーを追加します。 詳細については、次を参照してください。[する方法: サービス アプリケーションへのインストーラーの追加](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md)です。  
+6.  サービス アプリケーションの必要なインストーラーを追加します。 詳しくは、「[方法: サービス アプリケーションにインストーラーを追加する](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md)」をご覧ください。  
   
-7.  選択して、プロジェクトをビルド**ソリューションのビルド**から、**ビルド**メニュー。  
+7.  **[ビルド]** メニューの **[ソリューションのビルド]** をクリックして、プロジェクトを作成します。  
   
     > [!NOTE]
     >  F5 キーを押してプロジェクトを実行しないでください。この方法ではサービス プロジェクトを実行できません。  
   
 8.  サービスをインストールします。 詳細については、「 [How to: Install and Uninstall Services](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Windows サービス アプリケーションの概要](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)  
  [方法 : プログラムでサービスを作成する](../../../docs/framework/windows-services/how-to-write-services-programmatically.md)  
  [方法 : サービス アプリケーションにインストーラーを追加する](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md)  

@@ -8,9 +8,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: d0d94223223568efe921af3a340815a966cc6c6f
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33388356"
 ---
 # <a name="marshaling-data-with-com-interop"></a>COM 相互運用機能によるデータのマーシャリング
 COM 相互運用は、マネージ コードから COM オブジェクトを使用すること、およびマネージ オブジェクトを COM に公開することの、両方の操作をサポートします。 COM との間でデータをマーシャリングする操作のサポートは広範で、ほとんどの場合、正しいマーシャリング動作が提供されます。  
@@ -21,21 +22,21 @@ COM 相互運用は、マネージ コードから COM オブジェクトを使�
   
 -   [タイプ ライブラリ エクスポーター (Tlbexp.exe)](../../../docs/framework/tools/tlbexp-exe-type-library-exporter.md)、これは COM タイプ ライブラリをアセンブリから生成して、メソッド呼び出しの際にマーシャリングを実行するラッパーを生成します。  
   
- 次のセクションでは、ことができます (または必要があります) を指定すると追加の型情報では、マーシャラーは、相互運用ラッパーをカスタマイズするためのプロセスを説明するトピックへリンクします。  
+ 以下のセクションは、マーシャラーに追加の型情報を提供できる (またはその必要がある) ときに、相互運用ラッパーをカスタマイズするためのプロセスについて説明するトピックにリンクしています。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
-[方法: 手動でラッパーを作成します。](how-to-create-wrappers-manually.md)   
-マネージ ソース コードで COM ラッパーを手動で作成する方法について説明します。 
+[方法: ラッパを手動で作成する](how-to-create-wrappers-manually.md)   
+マネージド ソース コードにおいて COM ラッパーを手動で作成する方法について説明します。 
  
  [方法: マネージ コード DCOM を WCF に移行する](../../../docs/framework/interop/how-to-migrate-managed-code-dcom-to-wcf.md)  
- 最も安全なソリューションのマネージ DCOM コードを WCF に移行する方法について説明します。  
+ 最も安全なソリューションのために、マネージド DCOM コードを WCF に移行する方法について説明します。  
   
 ## <a name="related-sections"></a>関連項目  
  [COM のデータ型](https://msdn.microsoft.com/library/sak564ww(v=vs.100).aspx)  
  対応するマネージとアンマネージのデータ型を提供します。  
   
  [COM 呼び出し可能ラッパーのカスタマイズ](https://msdn.microsoft.com/library/3bwc828w(v=vs.100).aspx)  
- 使用してデータ型を明示的にマーシャ リングする方法について説明します、<xref:System.Runtime.InteropServices.MarshalAsAttribute>デザイン時の属性です。  
+ デザイン時に <xref:System.Runtime.InteropServices.MarshalAsAttribute> 属性を使用して、データ型を明示的にマーシャリングする方法について説明します。  
   
  [ランタイム呼び出し可能ラッパーのカスタマイズ](https://msdn.microsoft.com/library/e753eftz(v=vs.100).aspx)  
  相互運用アセンブリで型のマーシャリング動作を調整する方法、および COM 型を手動で定義する方法について説明します。  

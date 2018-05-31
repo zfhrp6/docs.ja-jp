@@ -1,6 +1,6 @@
 ---
 title: foreach、in (C# リファレンス)
-ms.date: 10/11/2017
+ms.date: 05/24/2018
 f1_keywords:
 - foreach
 - foreach_CSharpKeyword
@@ -9,61 +9,44 @@ helpviewer_keywords:
 - foreach statement [C#]
 - in keyword [C#]
 ms.assetid: 5a9c5ddc-5fd3-457a-9bb6-9abffcd874ec
-ms.openlocfilehash: c0b1481988a2e3199fc6d06ca30cb5194ab2f44c
-ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
+ms.openlocfilehash: b6b7dc0a4d3970ddfbbb6635ccebbbd5b75671e4
+ms.sourcegitcommit: 54231aa56fca059e9297888a96fbca1d4cf3746c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/18/2018
+ms.lasthandoff: 05/25/2018
+ms.locfileid: "34549383"
 ---
 # <a name="foreach-in-c-reference"></a>foreach、in (C# リファレンス)
 
-`foreach` ステートメントは、<xref:System.Collections.IEnumerable?displayProperty=nameWithType> インターフェイスまたは <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> インターフェイスを実装する配列またはオブジェクト コレクションのそれぞれの要素に対して埋め込みステートメントを繰り返します。 [foreach ステートメント](/dotnet/csharp/language-reference/language-specification/statements#the-foreach-statement)は、コレクションを繰り返し処理して目的の情報を取得するために使用しますが、予期しない副作用を防ぐため、ソース コレクションに対する項目の追加または削除には使用しないでください。 ソース コレクションに対して項目を追加または削除する必要がある場合は、[for](for.md) ループを使います。
-  
- 埋め込みステートメントは、配列またはコレクション内の各要素に対して繰り返し実行されます。 コレクション内の全要素に対する繰り返しが完了すると、制御は、`foreach` ブロックに続く次のステートメントに移動します。
-  
- `foreach` ブロック内の任意の位置で、[break](break.md) キーワードを使ってループから抜けることができます。または、[continue](continue.md) キーワードを使って、ループ内の次の反復処理にスキップできます。
+`foreach` ステートメントは、<xref:System.Collections.IEnumerable?displayProperty=nameWithType> または <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> インターフェイスを実装している型のインスタンス内の要素ごとに、ステートメントまたはステートメントのブロックを実行します。 `foreach` ステートメントはこのような型にのみ限定されるものではありません。次の条件を満たす任意の型のインスタンスに適用できます。
 
- [goto](goto.md) ステートメント、[return](return.md) ステートメント、または [throw](throw.md) ステートメントを使用して `foreach` ループを抜けることもできます。
+- 戻り値の型がクラス、構造体、インターフェイス型のいずれかである、パラメーターなしのパブリック メソッド `GetEnumerator` を持っている。
+- `GetEnumerator` メソッドの戻り値の型が、パブリック プロパティ `Current` と、戻り値の型が <xref:System.Boolean> であるパラメーターなしのパブリック メソッド `MoveNext` を持っている。
 
- `foreach` キーワードとコード例の詳細については、以下のトピックを参照してください。  
+`foreach` ステートメント ブロック内の任意の位置で、[break](break.md) キーワードを使ってループから抜けることができます。または、[continue](continue.md) キーワードを使って、ループ内の次の繰り返しにスキップできます。 また、[goto](goto.md)、[return](return.md)、[throw](throw.md) ステートメントのいずれかを使って `foreach` ループを終了することもできます。
 
- [配列での foreach の使用](../../programming-guide/arrays/using-foreach-with-arrays.md)  
+## <a name="examples"></a>使用例
 
- [方法: foreach を使用してコレクション クラスにアクセスする](../../programming-guide/classes-and-structs/how-to-access-a-collection-class-with-foreach.md)  
+[!INCLUDE[interactive-note](~/includes/csharp-interactive-note.md)]
 
-## <a name="example"></a>例
+次の例では、<xref:System.Collections.Generic.IEnumerable%601> インターフェイスを実装する <xref:System.Collections.Generic.List%601> 型のインスタンスを使用して、`foreach` ステートメントの使用方法を示します。
 
-次のコードは、3 つの例を示しています。
+[!code-csharp-interactive[list example](~/samples/snippets/csharp/keywords/IterationKeywordsExamples.cs#1)]
 
-> [!TIP]
-> 例を変更して構文の実験をしたり、自身のユース ケースにより近い異なる使用方法を試したりできます。 「実行」を押してコードを実行し、編集したら再び「実行」を押します。
+次の例では、何のインターフェイスも実装していない <xref:System.Span%601?displayProperty=nameWithType> 型のインスタンスを使用して、`foreach` ステートメントを使用します。
 
--   整数の配列の内容を表示する一般的な `foreach` ループ
+[!code-csharp-interactive[span example](~/samples/snippets/csharp/keywords/IterationKeywordsExamples.cs#2)]
 
-[!code-csharp-interactive[csrefKeywordsIteration#4](./codesnippet/CSharp/foreach-in_1.cs#L12-L26)]
-
--   同じ処理を行う [for](../../../csharp/language-reference/keywords/for.md) ループ
-
-[!code-csharp-interactive[csrefKeywordsIteration#4](./codesnippet/CSharp/foreach-in_1.cs#L31-L46)]
-
--   配列内の要素数のカウントを保持する `foreach` ループ
-
-[!code-csharp-interactive[csrefKeywordsIteration#4](./codesnippet/CSharp/foreach-in_1.cs#L51-L69)]
- 
 ## <a name="c-language-specification"></a>C# 言語仕様
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目
 
-[foreach ステートメント (C# 言語仕様)](/dotnet/csharp/language-reference/language-specification/statements#the-foreach-statement)
-
-[C# リファレンス](../index.md)
-
-[C# プログラミング ガイド](../../programming-guide/index.md)
-
-[C# のキーワード](index.md)
-
-[繰り返しステートメント](iteration-statements.md)
-
-[for](for.md)
+[foreach ステートメント (C# 言語仕様)](/dotnet/csharp/language-reference/language-specification/statements#the-foreach-statement)  
+[配列での foreach の使用](../../programming-guide/arrays/using-foreach-with-arrays.md)  
+[for](for.md)  
+[繰り返しステートメント](iteration-statements.md)  
+[C# のキーワード](index.md)  
+[C# リファレンス](../index.md)  
+[C# プログラミング ガイド](../../programming-guide/index.md)  

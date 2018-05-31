@@ -12,9 +12,10 @@ author: ghogen
 manager: douge
 ms.openlocfilehash: c33b8badcacd4e228d70f8e770d4bf27144c29eb
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33520514"
 ---
 # <a name="walkthrough-creating-a-windows-service-application-in-the-component-designer"></a>チュートリアル: コンポーネント デザイナーによる Windows サービス アプリケーションの作成
 この記事では、イベント ログにメッセージを書き込む単純な Windows サービス アプリケーションを Visual Studio で作成する方法を示します。 サービスを作成して使用するために実行する基本的な手順は次のとおりです。  
@@ -108,7 +109,7 @@ ms.lasthandoff: 05/04/2018
     AddHandler timer.Elapsed, AddressOf Me.OnTimer  
     timer.Start()  
     ```  
-     クラスにメンバー変数を追加します。 次のイベント ログに記録するイベントの識別子が格納されます。
+     メンバー変数をクラスに追加します。 これには、イベント ログに書き込まれる次のイベントの識別子が格納されます。
 
     ```csharp
     private int eventId = 1;
@@ -270,7 +271,7 @@ ms.lasthandoff: 05/04/2018
 6.  (省略可能) <xref:System.ServiceProcess.ServiceBase.OnStop%2A> メソッドに対してこの手順を繰り返します。  
   
 > [!CAUTION]
->  [サービス コントロール マネージャー](http://msdn.microsoft.com/library/windows/desktop/ms685150.aspx)を使用して、`dwWaitHint`と`dwCheckpoint`のメンバー、 [SERVICE_STATUS 構造](http://msdn.microsoft.com/library/windows/desktop/ms685996.aspx)を Windows サービスが起動またはシャット ダウンするまで待機する時間を決定します。 場合、<xref:System.ServiceProcess.ServiceBase.OnStart%2A>と<xref:System.ServiceProcess.ServiceBase.OnStop%2A>メソッドが長時間実行、サービスが呼び出すことによってより多くの時間を要求できます[SetServiceStatus](http://msdn.microsoft.com/library/windows/desktop/ms686241.aspx)インクリメントした再度`dwCheckPoint`値。  
+>  [サービス コントロール マネージャー](http://msdn.microsoft.com/library/windows/desktop/ms685150.aspx)は、[SERVICE_STATUS 構造体](http://msdn.microsoft.com/library/windows/desktop/ms685996.aspx)の `dwWaitHint` メンバーと `dwCheckpoint` メンバーを使って、Windows サービスの開始やシャットダウンまでの待機時間を判断します。 <xref:System.ServiceProcess.ServiceBase.OnStart%2A> メソッドと <xref:System.ServiceProcess.ServiceBase.OnStop%2A> メソッドが長時間実行している場合、サービスは、インクリメントした `dwCheckPoint` 値で [SetServiceStatus](http://msdn.microsoft.com/library/windows/desktop/ms686241.aspx) をもう一度呼び出すことによって、追加の時間を要求できます。  
   
 <a name="BK_AddInstallers"></a>   
 ## <a name="adding-installers-to-the-service"></a>サービスへのインストーラーの追加  
@@ -429,7 +430,7 @@ End Sub
   
      サービスが正常にインストールされたら、正常に実行されたことが installutil.exe によって報告されます。 InstallUtil.exe が見つからなかった場合は、コンピューター上に存在することを確認します。 このツールは、.NET Framework と共にフォルダー `%WINDIR%\Microsoft.NET\Framework[64]\`*framework_version*にインストールされます。 たとえば、32 ビット版の .NET Framework 4、4.5、4.5.1、および 4.5.2 の既定のパスは、 `C:\Windows\Microsoft.NET\Framework\v4.0.30319\InstallUtil.exe`です。  
   
-     installutil.exe のプロセスでエラーが発生する場合は、インストール ログで理由を確認します。 既定で、ログはサービスの実行可能ファイルと同じフォルダーにあります。 インストールが失敗する場合、<xref:System.ComponentModel.RunInstallerAttribute>クラスは、上に存在することはありません、`ProjectInstaller`クラス、またはそうしないと、属性に設定されていない`true`、さもなければ、`ProjectInstaller`クラスがない`public`です。  
+     installutil.exe のプロセスでエラーが発生する場合は、インストール ログで理由を確認します。 既定で、ログはサービスの実行可能ファイルと同じフォルダーにあります。 <xref:System.ComponentModel.RunInstallerAttribute> クラスが `ProjectInstaller` クラスにない場合、属性が `true` に設定されていない場合、または `ProjectInstaller` クラスが `public` でない場合は、インストールが失敗することがあります。  
   
      詳細については、「 [How to: Install and Uninstall Services](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md)」を参照してください。  
   
@@ -442,7 +443,7 @@ End Sub
   
      **[サービス]** ウィンドウの一覧に **MyNewService** が表示されます。  
   
-     ![[サービス] ウィンドウの MyNewService。] (../../../docs/framework/windows-services/media/windowsservices-serviceswindow.PNG "WindowsServices_ServicesWindow")  
+     ![[サービス] ウィンドウの MyNewService。](../../../docs/framework/windows-services/media/windowsservices-serviceswindow.PNG "WindowsServices_ServicesWindow")  
   
 2.  **[サービス]** ウィンドウで、サービスのショートカット メニューを開き、 **[開始]** を選択します。  
   
@@ -456,7 +457,7 @@ End Sub
   
 2.  **MyNewLog** (または、省略可能な手順を使用してコマンド ライン引数を追加した場合は **MyLogFile1**) の一覧を見つけ、展開します。 サービスが実行した 2 つの操作 (開始および停止) のエントリが表示されます。  
   
-     ![イベント ビューアーを使用して、イベント ログ エントリを参照してください。] (../../../docs/framework/windows-services/media/windowsservices-eventviewer.PNG "WindowsServices_EventViewer")  
+     ![イベント ビューアーを使用してイベント ログ項目を表示する。](../../../docs/framework/windows-services/media/windowsservices-eventviewer.PNG "WindowsServices_EventViewer")  
   
 <a name="BK_Uninstall"></a>   
 ## <a name="uninstalling-a-windows-service"></a>Windows サービスのアンインストール  
@@ -482,7 +483,7 @@ End Sub
   
  インストーラーを使用すると、アプリケーションの実行時にイベント ログを作成する代わりに、アプリケーションのインストール時にイベント ログを作成できます。 さらに、イベント ログは、アプリケーションがアンインストールされたときにインストーラーによって削除されます。 詳細については、 <xref:System.Diagnostics.EventLogInstaller> のリファレンス ページを参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Windows サービス アプリケーション](../../../docs/framework/windows-services/index.md)  
  [Windows サービス アプリケーションの概要](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)  
  [方法 : Windows サービス アプリケーションをデバッグする](../../../docs/framework/windows-services/how-to-debug-windows-service-applications.md)  

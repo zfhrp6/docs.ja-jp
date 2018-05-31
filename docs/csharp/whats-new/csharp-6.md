@@ -3,11 +3,12 @@ title: C# 6 の新機能 - C# ガイド
 description: C# バージョン 6 の新機能について説明します
 ms.date: 09/22/2016
 ms.assetid: 4d879f69-f889-4d3f-a781-75194e143400
-ms.openlocfilehash: 00aeb3ed940acfca748a1a9eb876fd0133baf6c0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d9f5c5ca94c04a873e4e98863f9fea3b8f477c1c
+ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/23/2018
+ms.locfileid: "34458006"
 ---
 # <a name="whats-new-in-c-6"></a>C# 6 の新機能
 
@@ -351,7 +352,7 @@ C# 6 では、<xref:System.Collections.Generic.Dictionary%602> コレクショ�
 
 この機能が加わったことにより、いくつかのバージョンでシーケンス コンテナーに使用されていたものと同様の構文を使用して、連想コンテナーを初期化できるようになりました。
 
-### <a name="extension-add-methods-in-collection-initializers"></a>コレクション初期化子内の拡張 `Add` メソッド
+## <a name="extension-add-methods-in-collection-initializers"></a>コレクション初期化子内の拡張 `Add` メソッド
 
 コレクション初期化を使いやすくするもう 1 つの機能として、 *メソッドの*拡張メソッド`Add`を使用できるようになりました。 この機能は、Visual Basic との同等性を確保するために追加されました。 
 
@@ -370,10 +371,7 @@ C# 6 ではこれが可能になりましたが、`Add` を `Enroll` にマッ�
 
 [!code-csharp[ExtensionAdd](../../../samples/snippets/csharp/new-in-6/classList.cs#ExtensionAdd)]
 
-この機能を使用してできることは、拡張メソッドを作成することによって、コレクションに項目を追加する任意のメソッドを、`Add` という名前のメソッドにマップするということです。 
-
-[!code-csharp[Enrollment](../../../samples/snippets/csharp/new-in-6/enrollment.cs#Enrollment)]
-[!code-csharp[ExtensionAddSample](../../../samples/snippets/csharp/new-in-6/classList.cs#ExtensionAddSample)]
+この機能を使用してできることは、拡張メソッドを作成することによって、コレクションに項目を追加する任意のメソッドを、`Add` という名前のメソッドにマップするということです。
 
 ## <a name="improved-overload-resolution"></a>オーバーロード解決の改善
 

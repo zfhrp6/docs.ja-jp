@@ -4,11 +4,12 @@ description: パッケージ、メタパッケージ、フレームワークの�
 author: richlander
 ms.author: mairaw
 ms.date: 06/20/2016
-ms.openlocfilehash: 915ccadbb4d2cca50fd1caa53d90aa05d83d9378
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f10965a8f5f2848f2b942b92577adf3185d8bd3c
+ms.sourcegitcommit: 77d9a94dac4c05827ed0663d95e0f9ad35d6682e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/24/2018
+ms.locfileid: "34472803"
 ---
 # <a name="packages-metapackages-and-frameworks"></a>パッケージ、メタパッケージ、フレームワーク
 
@@ -96,9 +97,10 @@ ms.lasthandoff: 05/04/2018
 
 リレーションシップの 2 番目の部分は、資産の選択です。 パッケージには、複数のフレームワークの資産を含めることができます。 パッケージ セットおよび/またはメタパッケージ セットへの参照を指定する場合は、選択すべき資産 (たとえば、`net46` または `netstandard1.3`) を決定するためにフレームワークが必要です。 正しい資産を選択することが重要です。 たとえば、`net46` 資産が .NET Framework 4.0 または .NET Core 1.0 と互換性を持たない可能性があります。
 
-![パッケージ ベースのフレームワークのコンポジション](./media/packages/package-framework.png)
 
-このリレーションシップは上図のようになります。 *API* は、*フレームワーク*を対象とし、定義します。 *フレームワーク*は、*資産の選択*で使用されます。 *資産* は、API を提供します。
+このリレーションシップは次の図のようになります。 *API* は、*フレームワーク*を対象とし、定義します。 *フレームワーク*は、*資産の選択*で使用されます。 *資産* は、API を提供します。
+
+![パッケージ ベースのフレームワークのコンポジション](./media/packages/package-framework.png)
 
 .NET Core では、次の 2 つのパッケージ ベースのプライマリ フレームワークが使用されます。
 

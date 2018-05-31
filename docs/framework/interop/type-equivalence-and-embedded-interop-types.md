@@ -11,9 +11,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: e3eeba609349bb9d5b7c68e15e0e0e6ff3f1b7ea
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33390934"
 ---
 # <a name="type-equivalence-and-embedded-interop-types"></a>型の等価性と埋め込まれた相互運用機能型
 
@@ -32,9 +33,9 @@ ms.lasthandoff: 05/04/2018
 
 - 型の ID が同じである (次のセクションに詳細あり)。
 
-- 両方の種類に適した型の等価性」の説明に従って、[型の等価性をマークすることの COM 型](#marking-com-types-for-type-equivalence)セクションです。
+- いずれの型も、型の等価性に適合する (「[型の等価性の資格ありとして COM 型を設定する](#marking-com-types-for-type-equivalence)」セクションに詳細あり)。
 
-### <a name="type-identity"></a>型 id
+### <a name="type-identity"></a>型の ID
 
 範囲と ID が一致するとき、言い換えると、それぞれに <xref:System.Runtime.InteropServices.TypeIdentifierAttribute> 属性が含まれ、2 つの属性の <xref:System.Runtime.InteropServices.TypeIdentifierAttribute.Scope%2A> プロパティと <xref:System.Runtime.InteropServices.TypeIdentifierAttribute.Identifier%2A> プロパティが一致する場合、2 つの型の ID が同じであると判断されます。 <xref:System.Runtime.InteropServices.TypeIdentifierAttribute.Scope%2A> の比較では、大文字と小文字が区別されません。
 
@@ -44,7 +45,7 @@ ms.lasthandoff: 05/04/2018
 
 - 構造、列挙、委任の場合、含んでいるアセンブリの <xref:System.Runtime.InteropServices.GuidAttribute> が <xref:System.Runtime.InteropServices.TypeIdentifierAttribute.Scope%2A> プロパティの代わりに使用されます。<xref:System.Type.FullName%2A?displayProperty=nameWithType> プロパティが <xref:System.Runtime.InteropServices.TypeIdentifierAttribute.Identifier%2A> プロパティの代わりに使用されます。
 
-### <a name="marking-com-types-for-type-equivalence"></a>型の等価性の COM 型をマークします。
+### <a name="marking-com-types-for-type-equivalence"></a>型の等価性に適合するものとして COM 型を設定する
 
  型の等価性に適合するものとして 2 つの方法で型を設定できます。
 
@@ -55,5 +56,5 @@ ms.lasthandoff: 05/04/2018
 ## <a name="see-also"></a>関連項目
 
 <xref:System.Type.IsEquivalentTo%2A>  
-[マネージ コードの COM 型の使用](https://msdn.microsoft.com/library/1a95a8ca-c8b8-4464-90b0-5ee1a1135b66(v=vs.100))  
+[マネージ コードでの COM 型の使用](https://msdn.microsoft.com/library/1a95a8ca-c8b8-4464-90b0-5ee1a1135b66(v=vs.100))  
 [タイプ ライブラリのアセンブリとしてのインポート](importing-a-type-library-as-an-assembly.md)  

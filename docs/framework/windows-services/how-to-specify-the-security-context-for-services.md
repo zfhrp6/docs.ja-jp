@@ -14,37 +14,38 @@ author: ghogen
 manager: douge
 ms.openlocfilehash: e3e5ad7dd44dcaf1593ac80bbe6d0a367964e4e4
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33512477"
 ---
 # <a name="how-to-specify-the-security-context-for-services"></a>方法 : サービスのセキュリティ コンテキストを指定する
-既定では、サービスは、ログイン ユーザーの場合よりも別のセキュリティ コンテキストで実行します。 既定のシステム アカウントのコンテキストで実行するサービスと呼ばれる`LocalSystem`、与えるさまざまなアクセス特権ユーザーのシステム リソースにします。 サービスを実行する別のユーザー アカウントを指定するには、この動作を変更することができます。  
+既定では、サービスはログインしているユーザーのセキュリティ コンテキストとは異なるセキュリティ コンテキストで実行します。 サービスは `LocalSystem` という名前の既定のシステム アカウントのコンテキストで実行し、このコンテキストはサービスに対してユーザーとは異なるシステム リソースへのアクセス特権を付与します。 この動作を変更し、サービスの実行が異なるユーザー アカウントで行われるように指定することができます。  
   
- 操作することで、セキュリティ コンテキストを設定する、<xref:System.ServiceProcess.ServiceProcessInstaller.Account%2A>サービスが実行されるプロセスのプロパティです。 このプロパティでは、次の 4 つのアカウントの種類のいずれかにサービスを設定することができます。  
+ サービスが実行しているプロセスの <xref:System.ServiceProcess.ServiceProcessInstaller.Account%2A> プロパティを操作することで、セキュリティ コンテキストを設定します。 このプロパティでは、次の 4 種類のアカウントのいずれかに、サービスを設定できます。  
   
--   `User`、それが原因で、システム、サービスがインストールされているし、ネットワーク上の 1 人のユーザーによって指定されたアカウントのコンテキストで実行されるとき、有効なユーザー名とパスワードを要求するには  
+-   `User`: システムは、サービスのインストール時に有効なユーザー名とパスワードの指定を要求し、ネットワーク上の 1 人のユーザーによって指定されたアカウントのコンテキストで実行します。  
   
--   `LocalService`、、ローカル コンピューターで非特権ユーザーとして機能し、すべてのリモート サーバーへの匿名の資格情報を表示するアカウントのコンテキストで実行します。  
+-   `LocalService`: ローカル コンピューター上で非特権ユーザーとして機能し、リモート サーバーに匿名の資格情報を提示するアカウントのコンテキストで実行します。  
   
--   `LocalSystem`、広範囲のローカル特権を提供し、すべてのリモート サーバーにコンピューターの資格情報を表示するアカウントのコンテキストで実行します。  
+-   `LocalSystem`: 広範なローカル特権を提供し、リモート サーバーにコンピューターの資格情報を提示するアカウントのコンテキストで実行します。  
   
--   `NetworkService`、、ローカル コンピューターで非特権ユーザーとしては機能し、リモート サーバーにコンピューターの資格情報を提示するアカウントのコンテキストで実行します。  
+-   `NetworkService`: ローカル コンピューター上で非特権ユーザーとして機能し、リモート サーバーにコンピューターの資格情報を提示するアカウントのコンテキストで実行します。  
   
  詳細については、<xref:System.ServiceProcess.ServiceAccount> 列挙型のページをご覧ください。  
   
 ### <a name="to-specify-the-security-context-for-a-service"></a>サービスのセキュリティ コンテキストを指定するには  
   
-1.  サービスの作成後、必要なインストーラーを追加します。 詳細については、次を参照してください。[する方法: サービス アプリケーションへのインストーラーの追加](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md)です。  
+1.  サービスの作成後、必要なインストーラーを追加します。 詳しくは、「[方法 : サービス アプリケーションにインストーラーを追加する](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md)」をご覧ください。  
   
-2.  デザイナーで、アクセス、`ProjectInstaller`クラスを使用しているサービスのサービス プロセスのインストーラーをクリックします。  
+2.  デザイナーで、`ProjectInstaller` クラスにアクセスし、対象となるサービスのサービス プロセス インストーラーをクリックします。  
   
     > [!NOTE]
-    >  少なくとも 2 つのインストール コンポーネントがあるサービス アプリケーションごとに、`ProjectInstaller`クラス: いずれかのプロジェクト、およびアプリケーションを含むサービスごとに 1 つのインストーラーですべてのサービス プロセスをインストールします。 選択すると、このインスタンスで<xref:System.ServiceProcess.ServiceProcessInstaller>です。  
+    >  すべてのサービス アプリケーションについて、`ProjectInstaller` クラスには少なくとも 2 つのインストール コンポーネントがあります。プロジェクト内のすべてのサービスに対するプロセスをインストールするものと、アプリケーションに含まれるサービスごとに 1 つのインストーラーです。 このインスタンスでは、<xref:System.ServiceProcess.ServiceProcessInstaller> を選びます。  
   
-3.  **プロパティ**ウィンドウで、設定、<xref:System.ServiceProcess.ServiceProcessInstaller.Account%2A>適切な値にします。  
+3.  **[プロパティ]** ウィンドウで、<xref:System.ServiceProcess.ServiceProcessInstaller.Account%2A> を適切な値に設定します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Windows サービス アプリケーションの概要](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)  
  [方法 : サービス アプリケーションにインストーラーを追加する](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md)  
  [方法 : Windows サービスを作成する](../../../docs/framework/windows-services/how-to-create-windows-services.md)

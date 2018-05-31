@@ -14,16 +14,17 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 09088d1ac0a8312ee5832a5f3bc0547e6654de93
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33387063"
 ---
 # <a name="creating-a-class-to-hold-dll-functions"></a>DLL 関数を保持するクラスの作成
 マネージ クラス内の頻繁に使用される DLL 関数をラップすることは、プラットフォームの機能をカプセル化するための効果的な方法です。 これはすべてのケースで必須であるわけではありませんが、DLL 関数の定義には手間がかかり、エラーが発生しやすくなるため、クラス ラッパーを用意しておくと便利です。 Visual Basic や C# でプログラミングしている場合は、DLL 関数をクラスまたは Visual Basic モジュール内で宣言する必要があります。  
   
  クラス内では、呼び出す DLL 関数ごとに静的メソッドを定義します。 この定義には、メソッド引数を渡すときに使用される呼び出し規則や文字セットなどの追加情報を含めることができます。この情報を省略すると、既定の設定が選択されます。 宣言のオプションと、既定の設定の完全なリストについては、「[Creating Prototypes in Managed Code](../../../docs/framework/interop/creating-prototypes-in-managed-code.md)」(マネージ コードでのプロトタイプの作成) を参照してください。  
   
- 、ラップされた後、他のクラスの静的メソッドを呼び出すと、クラスのメソッドを呼び出すことができます。 プラットフォーム呼び出しでは、基になるエクスポートされた関数が自動的に処理されます。  
+ ラッピングが完了すると、他のクラスで静的メソッドを呼び出す場合と同じように、クラスでメソッドを呼び出すことができます。 プラットフォーム呼び出しでは、基になるエクスポートされた関数が自動的に処理されます。  
   
  プラットフォーム呼び出しのためにマネージ クラスをデザインする場合は、クラスと DLL 関数との関係を考慮してください。 たとえば、次のように操作できます。  
   
@@ -35,7 +36,7 @@ ms.lasthandoff: 05/04/2018
   
  クラスおよびそのメソッドには、任意の名前を付けることができます。 プラットフォーム呼び出しで使用する .NET ベースの宣言を作成する方法を示す例については、「[プラットフォーム呼び出しによるデータのマーシャリング](../../../docs/framework/interop/marshaling-data-with-platform-invoke.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [アンマネージ DLL 関数の処理](../../../docs/framework/interop/consuming-unmanaged-dll-functions.md)  
  [DLL 内の関数の識別](../../../docs/framework/interop/identifying-functions-in-dlls.md)  
  [マネージ コードでのプロトタイプの作成](../../../docs/framework/interop/creating-prototypes-in-managed-code.md)  

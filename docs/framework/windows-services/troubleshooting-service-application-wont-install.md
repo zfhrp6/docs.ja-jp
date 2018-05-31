@@ -1,5 +1,5 @@
 ---
-title: 'のトラブルシューティング: アプリケーションはサービス&#39;インストールできません。'
+title: 'トラブルシューティング: サービス アプリケーションをインストールできない場合'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - troubleshooting service applications
@@ -13,17 +13,18 @@ author: ghogen
 manager: douge
 ms.openlocfilehash: 1f3e5674f9a52627efdc24d6c70c0ab16dcdbbbd
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33509661"
 ---
-# <a name="troubleshooting-service-application-won39t-install"></a>のトラブルシューティング: アプリケーションはサービス&#39;インストールできません。
-場合は、サービス アプリケーションが正しくインストールされないことを確認する、<xref:System.ServiceProcess.ServiceBase.ServiceName%2A>サービス クラスのプロパティが同じ値にそのサービスのインストーラーが示されています。 値は、サービスを正しくインストールするために両方のインスタンスに同じにする必要があります。  
+# <a name="troubleshooting-service-application-won39t-install"></a>トラブルシューティング: サービス アプリケーションをインストールできない場合
+サービス アプリケーションが正しくインストールされない場合は、サービス クラスの <xref:System.ServiceProcess.ServiceBase.ServiceName%2A> プロパティが、そのサービスのインストーラーで示されているのと同じ値に設定されていることを確認します。 サービスが正しくインストールされるためには、両方のインスタンスで同じ値になっている必要があります。  
   
 > [!NOTE]
->  また、インストール処理に関するフィードバックをインストール ログを確認することができます。  
+>  また、インストール ログを見て、インストール プロセスについてのフィードバックを確認することもできます。  
   
- 既にインストールされている同じ名前の別のサービスがあるかどうかを決定するも確認する必要があります。 サービス名をインストールするのには一意である必要があります。  
+ 同じ名前の別のサービスが既にインストールされているかどうかも確認する必要があります。 インストールが成功するには、サービス名が一意である必要があります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Windows サービス アプリケーションの概要](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)

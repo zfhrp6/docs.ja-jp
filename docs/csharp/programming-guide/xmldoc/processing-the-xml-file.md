@@ -5,11 +5,12 @@ helpviewer_keywords:
 - XML processing [C#]
 - XML [C#], processing
 ms.assetid: 60c71193-9dac-4cd3-98c5-100bd0edcc42
-ms.openlocfilehash: ca70f0c8237a5d9cc4ad9e0bb8c1947c871ce064
-ms.sourcegitcommit: 895c7602386a6dfe7ca4facce3d965b27e5c6e87
+ms.openlocfilehash: 659562864ad323162f15351aa960c2a54164c77d
+ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/19/2018
+ms.lasthandoff: 05/23/2018
+ms.locfileid: "34458061"
 ---
 # <a name="processing-the-xml-file-c-programming-guide"></a>XML ファイルの処理 (C# プログラミング ガイド)
 コンパイラは、ドキュメントを生成するためにタグ付けされたコードのコンストラクトごとに、ID 文字列を生成します。 (コードをタグ付けする方法については、[ドキュメント コメント用の推奨タグ](../../../csharp/programming-guide/xmldoc/recommended-tags-for-documentation-comments.md)に関するページを参照してください。)ID 文字列によって、コンストラクトは一意に識別されます。 XML ファイルを処理するプログラムは、ID 文字列を使用して、対応する .NET Framework のメタデータまたはドキュメントを適用するリフレクション項目を識別できます。  
@@ -40,7 +41,7 @@ ms.lasthandoff: 05/19/2018
   
     -   組み込みの型 (たとえば、ELEMENT_TYPE_I4、ELEMENT_TYPE_OBJECT、ELEMENT_TYPE_STRING、ELEMENT_TYPE_TYPEDBYREF や、 ELEMENT_TYPE_VOID) は、対応する完全な型の完全修飾名として表されます。 たとえば、System.Int32 や System.TypedReference です。  
   
-    -   ELEMENT_TYPE_PTR は、修飾される型に続けて '*' と表されます。  
+    -   ELEMENT_TYPE_PTR は、修飾される型に続けて '\*' と表されます。  
   
     -   ELEMENT_TYPE_BYREF は、修飾される型に続けて '\@' と表されます。  
   
@@ -68,11 +69,11 @@ ms.lasthandoff: 05/19/2018
   
 -   変換演算子 (op_Implicit および op_Explicit) だけは、上記のエンコードと同様に、メソッドの戻り値が ”~” としてエンコードされ、それに続けて戻り値の型が表されます。  
   
--   ジェネリック型では、型の名前の後に、バックチック、ジェネリック型パラメーターの数を示す数値が順に続きます。  たとえば、オブジェクトに適用された  
+-   ジェネリック型では、型の名前の後に、バックチック、ジェネリック型パラメーターの数を示す数値が順に続きます。 例:
   
      ``<member name="T:SampleClass`2">`` は、`public class SampleClass<T, U>` として定義されている型のタグです。  
   
-     パラメーターとしてジェネリック型を受け取るメソッドでは、ジェネリック型パラメーターは、バックチック付きの数値 (\`0、`1 など) として指定されます。  各数値は、型のジェネリック パラメーターに対する、0 から始まる配列表記を表しています。  
+     パラメーターとしてジェネリック型を受け取るメソッドでは、ジェネリック型パラメーターは、バックチック付きの数値 (\`0、\`1 など) として指定されます。 各数値は、型のジェネリック パラメーターに対する、0 から始まる配列表記を表しています。  
   
 ## <a name="examples"></a>使用例  
  次の例は、クラスおよびそのメンバーの ID 文字列を生成する方法を示します。  

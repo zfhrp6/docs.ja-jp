@@ -20,9 +20,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: f2906159c7474b42f81bdf066855072466b6be63
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33392397"
 ---
 # <a name="packaging-an-assembly-for-com"></a>COM 用のアセンブリのパッケージ化
 COM 開発者がアプリケーションに組み込むときに役立つ、マネージ型に関する情報を次に示します。  
@@ -37,7 +38,7 @@ COM 開発者がアプリケーションに組み込むときに役立つ、マ�
   
      クラス インターフェイス (COM 相互運用機能により生成されたインターフェイス) を実装したマネージ クラスには、バージョン管理に関する制約が生じる場合があります。  
   
-     クラス インターフェイスの使用に関するガイドラインについては、次を参照してください。[クラス インターフェイスの概要](com-callable-wrapper.md#introducing-the-class-interface)です。  
+     クラス インターフェイスの使用に関するガイドラインについては、「[クラス インターフェイスの概要](com-callable-wrapper.md#introducing-the-class-interface)」をご覧ください。  
   
 -   配置に関する注意事項  
   
@@ -79,7 +80,7 @@ COM 開発者がアプリケーションに組み込むときに役立つ、マ�
 ## <a name="net-services-installation-tool"></a>.NET サービス インストール ツール  
  [.NET サービス インストール ツール (Regsvcs.exe)](../tools/regsvcs-exe-net-services-installation-tool.md) は、Windows 2000 コンポーネント サービスにマネージ クラスを追加したり、1 つのツール内の複数のタスクを統合したりします。 Regsvcs.exe は、アセンブリの読み込みおよび登録だけでなく、タイプ ライブラリの生成、登録、および既存の COM+ 1.0 アプリケーションへのインストールができます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  <xref:System.Runtime.InteropServices.TypeLibConverter>  
  <xref:System.Runtime.InteropServices.ITypeLibConverter>  
  [COM への .NET Framework コンポーネントの公開](exposing-dotnet-components-to-com.md)  

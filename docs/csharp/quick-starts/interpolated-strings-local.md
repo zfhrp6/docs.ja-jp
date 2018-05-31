@@ -5,11 +5,12 @@ author: rpetrusha
 ms.author: ronpet
 ms.date: 04/14/2018
 ms.custom: mvc
-ms.openlocfilehash: 314626e276f50178e2855b8c8a1edc104546d574
-ms.sourcegitcommit: 88f251b08bf0718ce119f3d7302f514b74895038
+ms.openlocfilehash: 80b7a2c39094f1101e714b47f0e77f0a7c4907f2
+ms.sourcegitcommit: 77d9a94dac4c05827ed0663d95e0f9ad35d6682e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 05/24/2018
+ms.locfileid: "34472764"
 ---
 # <a name="string-interpolation"></a>文字列補間
 
@@ -48,13 +49,13 @@ Console.WriteLine($"Hello, {name}. It's a pleasure to meet you!");
 
 前のセクションでは、文字列補間を使用して、1 つの文字列内に別の文字列を挿入しましたが、 挿入式の結果を任意のデータ型にすることもできます。 挿入文字列にさまざまなデータ型の値を含めてみましょう。
 
-次の例では、`Name` [ プロパティ](../properties.md)と `ToString` メソッドを持つ、ユーザー指定データ型 `Vegetable` を定義します。 クライアント コードは、そのメソッドを使用して、`Vegetable` インスタンスの文字列表現を取得できます。 この例の `Vegetable.ToString` メソッドでは、`Vegetable` コンストラクターで初期化される `Name` プロパティの値を返します。
+次の例では、最初に、`Name` [プロパティ](../properties.md)と `ToString` [メソッド](../methods.md)を持つ[クラス](../programming-guide/classes-and-structs/classes.md) データ型 `Vegetable` を定義します。このメソッドは、<xref:System.Object.ToString?displayProperty=nameWithType> メソッドの動作を[オーバーライド](../language-reference/keywords/override.md)します。 [`public` アクセス修飾子](../language-reference/keywords/public.md)により、そのメソッドは、すべてのクライアント コードで `Vegetable` インスタンスの文字列表現を取得するために使用できるようになります。 この例の `Vegetable.ToString` メソッドでは、`Vegetable` [コンストラクター](../programming-guide/classes-and-structs/constructors.md)で初期化される `Name` プロパティの値を返します。
 
 ```csharp
 public Vegetable(string name) => Name = name;
 ```
 
-`new` キーワードを使用して、コンストラクター `Vegetable` の name パラメーターを指定し、`Vegetable` 型のインスタンスを作成します。
+次に、[`new` キーワード](../language-reference/keywords/new-operator.md)を使用して、コンストラクター `Vegetable` の name パラメーターを指定し、`Vegetable` クラスのインスタンスを作成します。
 
 ```csharp
 var item = new Vegetable("eggplant");
@@ -93,7 +94,7 @@ public class Program
 
 - 挿入式が `null` の場合、空の文字列 (""、または <xref:System.String.Empty?displayProperty=nameWithType>) が使用されます。
 
-- 挿入式が `null` でない場合、通常、結果の型の `ToString` メソッドが呼び出されます。 `Vegetable.ToString` メソッドの実装を更新して、これをテストすることができます。 すべての C# のデータ型にこのメソッドの実装が含まれるため、`ToString` メソッドを実装することはできません。 これをテストするには、例の `Vegetable.ToString` メソッドの定義をコメント アウトします (この操作を行うには、コメント シンボル `//` を前に配置します)。 出力では、"eggplant" という文字列が完全修飾型名 (この例では "Vegetable") に置き換えられます。これは、<xref:System.Object.ToString?displayProperty=nameWithType> メソッドの既定の動作です。 列挙型の `ToString` メソッドの既定の動作は、列挙の定義で使用される値の文字列表現を返すためのものです。
+- 挿入式が `null` でない場合、通常、結果の型の `ToString` メソッドが呼び出されます。 `Vegetable.ToString` メソッドの実装を更新して、これをテストすることができます。 すべての型にこのメソッドの実装が含まれるため、`ToString` メソッドを実装する必要なない場合があります。 これをテストするには、例の `Vegetable.ToString` メソッドの定義をコメント アウトします (この操作を行うには、コメント シンボル `//` を前に配置します)。 出力では、"eggplant" という文字列が完全修飾型名 (この例では "Vegetable") に置き換えられます。これは、<xref:System.Object.ToString?displayProperty=nameWithType> メソッドの既定の動作です。 列挙値の `ToString` メソッドの既定の動作は、値の文字列表現を返すことです。
 
 この例の出力では、日付の精度が高すぎ ("eggplant" の価格は毎秒変更されることはありません)、価格の値は通貨の単位を示していません。 次のセクションでは、式の結果における文字列表現の書式を制御することで、こうした問題を修正する方法について説明します。
 

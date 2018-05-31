@@ -10,9 +10,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 1995c367039591c086054a086f2107e4a88ecefb
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33395370"
 ---
 # <a name="interop-marshaling"></a>相互運用マーシャリング
 <a name="top"></a> 相互運用マーシャリングは、メソッド引数と戻り値によって、呼び出し中にマネージ メモリとアンマネージ メモリの間でデータを渡す方法を制御します。 相互運用マーシャリングは、共通言語ランタイムのマーシャリング サービスによって実行される、ランタイム アクティビティです。  
@@ -101,7 +102,7 @@ ms.lasthandoff: 05/04/2018
   
 <a name="marshaling_remote_calls"></a>   
 ## <a name="marshaling-remote-calls"></a>リモートの呼び出しのマーシャリング  
- アパートメント間のマーシャリングの場合と同様に、COM マーシャリングは、オブジェクトが別個のプロセス内に存在するときには常に、マネージ コードとアンマネージ コード間の各呼び出しに関与します。 次に例を示します。  
+ アパートメント間のマーシャリングの場合と同様に、COM マーシャリングは、オブジェクトが別個のプロセス内に存在するときには常に、マネージ コードとアンマネージ コード間の各呼び出しに関与します。 例:  
   
 -   リモート ホスト上のマネージ サーバーを呼び出す COM クライアントは、分散 COM (DCOM) を使用します。  
   
@@ -135,14 +136,14 @@ ms.lasthandoff: 05/04/2018
  ![SOAP または TcpChannel](./media/interopremotesoap.gif "interopremotesoap")  
 SOAP または TcpChannel クラスを使用するファイアウォールを越えたリモート呼び出し  
   
- アンマネージ呼び出しは、サービス コンポーネントおよび COM 間の呼び出しなど、SOAP を介して伝達できます。  
+ サービス コンポーネントと COM の間の呼び出しなど、一部のアンマネージド呼び出しは SOAP を介して伝達できます。  
   
  [ページのトップへ](#top)  
   
 <a name="related_topics"></a>   
 ## <a name="related-topics"></a>関連トピック  
   
-|タイトル|説明|  
+|Title|説明|  
 |-----------|-----------------|  
 |[既定のマーシャリング動作](default-marshaling-behavior.md)|相互運用マーシャリング サービスがデータのマーシャリングに使用する規則について説明します。|  
 |[プラットフォーム呼び出しによるデータのマーシャリング](marshaling-data-with-platform-invoke.md)|メソッドのパラメーターを宣言してアンマネージ ライブラリによってエクスポートされた関数に引数を渡す方法について説明します。|  

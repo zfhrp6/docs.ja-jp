@@ -4,11 +4,12 @@ description: Linux マシンで .NET Core アプリケーションを開発、�
 author: jralexander
 ms.author: johalex
 ms.date: 05/08/2018
-ms.openlocfilehash: 41656bf8f18c2b66c35f0a65e4af0949db4464f9
-ms.sourcegitcommit: 88f251b08bf0718ce119f3d7302f514b74895038
+ms.openlocfilehash: 4890f682ee2d0b55dc5059d8f1d3091def07a8a5
+ms.sourcegitcommit: b7763f3435635850a76d4cbcf09bdce6c019208a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 05/25/2018
+ms.locfileid: "34483503"
 ---
 # <a name="prerequisites-for-net-core-on-linux"></a>Linux における .NET Core の前提条件
 
@@ -65,29 +66,36 @@ ms.lasthandoff: 05/10/2018
 
 Ubuntu ディストリビューションには、次のライブラリがインストールされている必要があります。
 
-* libunwind8
 * liblttng-ust0
 * libcurl3
 * libssl1.0.0
-* libuuid1
 * libkrb5-3
 * zlib1g
 * libicu52 (14.x 用)
 * libicu55 (16.x 用)
 * libicu57 (17.x 用)
+* libicu60 (18.x 用)
+
+.NET Core 2.1 より前のバージョンには、次の依存関係も必要です。
+
+* libunwind8
+* libuuid1
 
 ### <a name="centos"></a>CentOS
 
 CentOS ディストリビューションには、次のライブラリがインストールされている必要があります。
 
-* libunwind
 * lttng-ust
 * libcurl
 * openssl-libs
-* libuuid
 * krb5-libs
 * libicu
 * zlib
+
+.NET Core 2.1 より前のバージョンには、次の依存関係も必要です。
+
+* libunwind
+* libuuid
 
 依存関係の詳細については、「[Self-contained Linux applications (自己完結型 Linux アプリケーション)](https://github.com/dotnet/core/blob/master/Documentation/self-contained-linux-apps.md)」をご覧ください。
 
