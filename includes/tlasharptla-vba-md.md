@@ -1,1 +1,0 @@
-<span data-ttu-id="e20ca-101">Microsoft Visual Basic for Applications (VBA)</span><span class="sxs-lookup"><span data-stu-id="e20ca-101">Microsoft Visual Basic for Applications (VBA)</span></span>

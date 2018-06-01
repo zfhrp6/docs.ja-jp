@@ -1,1 +1,0 @@
-<span data-ttu-id="d4e4c-101">Microsoft Visual Basic Scripting Edition (VBScript)</span><span class="sxs-lookup"><span data-stu-id="d4e4c-101">Microsoft Visual Basic Scripting Edition (VBScript)</span></span>

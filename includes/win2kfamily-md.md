@@ -1,1 +1,0 @@
-<span data-ttu-id="f6a99-101">Windows 2000</span><span class="sxs-lookup"><span data-stu-id="f6a99-101">Windows 2000</span></span>

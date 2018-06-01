@@ -1,1 +1,0 @@
-<span data-ttu-id="efb58-101">ビットマップ (BMP)</span><span class="sxs-lookup"><span data-stu-id="efb58-101">Bitmap (BMP)</span></span>
