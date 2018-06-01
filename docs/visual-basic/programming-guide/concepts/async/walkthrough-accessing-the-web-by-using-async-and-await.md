@@ -2,11 +2,12 @@
 title: 'チュートリアル: Async と Await を使用した Web へのアクセス (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 84fd047f-fab8-4d89-8ced-104fb7310a91
-ms.openlocfilehash: 7154ea12f2660074e3ad8251b9baaa3eeb3d453c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 535b431fcf8ab5dafa134b8a3c1e2f7eacd6b427
+ms.sourcegitcommit: 3540f614fc94f77ca4ab58df66db2d0f4d52dfee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34696508"
 ---
 # <a name="walkthrough-accessing-the-web-by-using-async-and-await-visual-basic"></a>チュートリアル: Async と Await を使用した Web へのアクセス (Visual Basic)
 async/await 機能を使用することで、非同期プログラムをより簡単かつ直感的に記述できます。 同期コードに似た非同期コードを記述し、通常の非同期コードが必要とする難しいコールバック関数や継続の処理をコンパイラに任せます。  
@@ -15,7 +16,7 @@ async/await 機能を使用することで、非同期プログラムをより�
   
  このチュートリアルは、Web サイトの一覧でのバイト数の合計を計算する同期 Windows Presentation Foundation (WPF) アプリケーションから開始します。 その後、新しい機能を使用して、アプリケーションを非同期ソリューションに変換します。  
   
- 自分でアプリケーションを作成しない場合は、[開発者コード サンプル](http://go.microsoft.com/fwlink/?LinkId=255191)のページから、"Async Sample: Accessing the Web Walkthrough (C# and Visual Basic) (非同期サンプル: Web へのアクセスのチュートリアル (C# および Visual Basic))" をダウンロードできます。  
+ 自分でアプリケーションを作成しない場合は、[開発者コード サンプル](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f)のページから、"Async Sample: Accessing the Web Walkthrough (C# and Visual Basic) (非同期サンプル: Web へのアクセスのチュートリアル (C# および Visual Basic))" をダウンロードできます。  
   
  このチュートリアルでは、次のタスクを行います。  
   
@@ -673,7 +674,7 @@ End Class
 ```  
   
 ## <a name="see-also"></a>関連項目  
- [非同期サンプル: Web へのアクセスのチュートリアル (C# および Visual Basic)](http://go.microsoft.com/fwlink/?LinkId=255191)  
+ [非同期サンプル: Web へのアクセスのチュートリアル (C# および Visual Basic)](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f)  
  [Await 演算子](../../../../visual-basic/language-reference/operators/await-operator.md)  
  [Async](../../../../visual-basic/language-reference/modifiers/async.md)  
  [Async および Await を使用した非同期プログラミング (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)  

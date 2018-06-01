@@ -4,11 +4,12 @@ description: Microsoft プラットフォームとツールでコンテナー化
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
-ms.openlocfilehash: 8db9f37e4fa8df63060982857d457c9e1ce90f60
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4adbdd7099dfc1c5ef13d5bbb4370ae2f14aba1e
+ms.sourcegitcommit: 3540f614fc94f77ca4ab58df66db2d0f4d52dfee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34696781"
 ---
 # <a name="development-environment-for-docker-apps"></a>Docker アプリの開発環境
 
@@ -23,7 +24,7 @@ ms.lasthandoff: 05/04/2018
 > [!NOTE]
 > Visual Studio のコードをダウンロードするには<https://code.visualstudio.com/download>します。
 
-Mac および Windows の Docker をダウンロードするには<http://www.docker.com/products/docker>します。
+Mac および Windows の Docker をダウンロードするには<https://www.docker.com/products/docker>します。
 
 ### <a name="visual-studio-with-docker-tools"></a>Docker ツールと visual Studio
 
@@ -37,15 +38,10 @@ Visual Studio 2015 を使用している場合は、"Docker Tools for Visual Stu
 Docker のアプリケーションと最近のほとんどの言語で Microsoft のツールを開発することができます。 最初の一覧を次に示しますが、これに限定されません。
 
 -   .NET core と ASP.NET Core
-
 -   Node.js
-
 -   Golang
-
 -   Java
-
 -   Ruby
-
 -   Python
 
 基本的には、Linux または Windows で Docker でサポートされている最新の言語を使用することができます。

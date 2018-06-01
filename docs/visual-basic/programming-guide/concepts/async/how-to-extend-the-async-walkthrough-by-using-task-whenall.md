@@ -2,11 +2,12 @@
 title: '方法: Task.WhenAll (Visual Basic) を使用して Asyncwalkthrough を拡張'
 ms.date: 07/20/2015
 ms.assetid: c06d386d-e996-4da9-bf3d-05a3b6c0a258
-ms.openlocfilehash: 918a02eadde367d870df4c51bccadf86c04eeb02
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 12d195caa11cd33b4e450e5a57699da4037ed4a2
+ms.sourcegitcommit: 3540f614fc94f77ca4ab58df66db2d0f4d52dfee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34696352"
 ---
 # <a name="how-to-extend-the-async-walkthrough-by-using-taskwhenall-visual-basic"></a>方法: Task.WhenAll (Visual Basic) を使用して Asyncwalkthrough を拡張
 非同期ソリューションのパフォーマンスを向上できる[チュートリアル: を使用して Async および Await (Visual Basic) で Web にアクセスする](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)を使用して、<xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType>メソッドです。 このメソッドは、タスクのコレクションとして表される、複数の非同期操作を非同期に待機します。  
@@ -16,7 +17,7 @@ ms.lasthandoff: 05/04/2018
  タスクのコレクションに `Task.WhenAll` メソッドを適用します。 `WhenAll` を適用すると、コレクション内のすべてのタスクが完了するまで完了しない 1 つのタスクを返します。 タスクは並列で実行されるように見えますが、追加のスレッドは作成されません。 タスクは任意の順序で完了します。  
   
 > [!IMPORTANT]
->  次の手順で開発された非同期アプリケーションの拡張機能を説明する[チュートリアル: を使用して Async および Await (Visual Basic) で Web へのアクセス](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)です。 チュートリアルを完了するか、[開発者コード サンプル](http://go.microsoft.com/fwlink/?LinkId=255191)からコードをダウンロードして、アプリケーションを開発できます。  
+>  次の手順で開発された非同期アプリケーションの拡張機能を説明する[チュートリアル: を使用して Async および Await (Visual Basic) で Web へのアクセス](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)です。 チュートリアルを完了するか、[開発者コード サンプル](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f)からコードをダウンロードして、アプリケーションを開発できます。  
 >   
 >  例を実行するには、Visual Studio 2012 以降がコンピューターにインストールされている必要があります。  
   
@@ -24,7 +25,7 @@ ms.lasthandoff: 05/04/2018
   
 1.  追加、`ProcessURLAsync`メソッドで開発された最初のアプリケーションを[チュートリアル: を使用して Async および Await (Visual Basic) で Web へのアクセス](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)です。  
   
-    -   コードをダウンロードしている場合[開発者コード サンプル](http://go.microsoft.com/fwlink/?LinkId=255191)AsyncWalkthrough プロジェクトを開き、追加`ProcessURLAsync`MainWindow.xaml.vb ファイルにします。  
+    -   コードをダウンロードしている場合[開発者コード サンプル](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f)AsyncWalkthrough プロジェクトを開き、追加`ProcessURLAsync`MainWindow.xaml.vb ファイルにします。  
   
     -   チュートリアルを実行してコードを開発する場合は、`ProcessURLAsync` メソッドを含むアプリケーションに `GetURLContentsAsync` を追加します。 このアプリケーションの MainWindow.xaml.vb ファイルは、「完全なコードからチュートリアル例」セクション最初の例です。  
   
@@ -97,7 +98,7 @@ ms.lasthandoff: 05/04/2018
   
 1.  次のバージョンの追加`ProcessURLAsync`で開発された 2 つ目のアプリケーションに[チュートリアル: を使用して Async および Await (Visual Basic) で Web へのアクセス](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)です。  
   
-    -   コードをダウンロードしている場合[開発者コード サンプル](http://go.microsoft.com/fwlink/?LinkId=255191)AsyncWalkthrough_HttpClient プロジェクトを開き、追加`ProcessURLAsync`MainWindow.xaml.vb ファイルにします。  
+    -   コードをダウンロードしている場合[開発者コード サンプル](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f)AsyncWalkthrough_HttpClient プロジェクトを開き、追加`ProcessURLAsync`MainWindow.xaml.vb ファイルにします。  
   
     -   チュートリアルを実行してコードを開発する場合は、`ProcessURLAsync` メソッドを使うアプリケーションに `HttpClient.GetByteArrayAsync` を追加します。 このアプリケーションの MainWindow.xaml.vb ファイルは、「完全なコードからチュートリアル例」セクションに 2 番目の例を示します。  
   

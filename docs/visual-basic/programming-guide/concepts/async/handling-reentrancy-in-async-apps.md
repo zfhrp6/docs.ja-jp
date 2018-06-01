@@ -2,11 +2,12 @@
 title: (Visual Basic) の非同期アプリにおける再入の処理
 ms.date: 07/20/2015
 ms.assetid: ef3dc73d-13fb-4c5f-a686-6b84148bbffe
-ms.openlocfilehash: bf4794385019e91a25026b0d2b3c1839fc77869a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4b899a695fef0e626eb9db3d376a74acba17b086
+ms.sourcegitcommit: 3540f614fc94f77ca4ab58df66db2d0f4d52dfee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34697158"
 ---
 # <a name="handling-reentrancy-in-async-apps-visual-basic"></a>(Visual Basic) の非同期アプリにおける再入の処理
 非同期コードをアプリに含める場合は、再入を考慮し、場合によっては回避することをお勧めします。これは、完了前に非同期操作の再入力を参照します。 再入の可能性を特定して処理しないと、予期しない結果が発生する可能性があります。  
@@ -103,7 +104,7 @@ TOTAL bytes returned:  890591
 ###  <a name="BKMK_DisableTheStartButton"></a>[Start] ボタンを無効にする  
  処理の実行中に **[Start]** ボタンを利用できないようにするには、`StartButton_Click` イベント ハンドラーの上部にあるボタンを無効にします。 処理が完了しユーザーが再度アプリを実行できるようになったら、`Finally` ブロック内からこのボタンを再度有効にできます。  
   
- 次のコードはこの変更を示しています。変更の部分にはアスタリスクが付いています。 この変更をこのトピックの最後にあるコードに追加できます。また、完成したアプリを「[Async Samples: Reentrancy in .NET Desktop Apps (非同期の例: .NET デスクトップ アプリでの再入)](http://go.microsoft.com/fwlink/?LinkId=266571)」からダウンロードすることもできます。 プロジェクト名は DisableStartButton です。  
+ 次のコードはこの変更を示しています。変更の部分にはアスタリスクが付いています。 この変更をこのトピックの最後にあるコードに追加できます。また、完成したアプリを「[Async Samples: Reentrancy in .NET Desktop Apps (非同期の例: .NET デスクトップ アプリでの再入)](https://code.msdn.microsoft.com/Async-Sample-Preventing-a8489f06)」からダウンロードすることもできます。 プロジェクト名は DisableStartButton です。  
   
 ```vb  
 Private Async Sub StartButton_Click(sender As Object, e As RoutedEventArgs)  
@@ -133,7 +134,7 @@ End Sub
   
  取り消し処理の詳細については、次を参照してください。[非同期アプリケーションの微調整 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/fine-tuning-your-async-application.md)です。  
   
- このシナリオを設定するには、「[例のアプリをレビューして実行する](http://msdn.microsoft.com/library/5b54de66-6be3-459e-b869-65070b020645)」に用意されている基本コードを次のように変更します。 また、完成したアプリを「[Async Samples: Reentrancy in .NET Desktop Apps (非同期の例: .NET デスクトップ アプリでの再入)](http://go.microsoft.com/fwlink/?LinkId=266571)」からダウンロードすることもできます。 このプロジェクトの名前は CancelAndRestart です。  
+ このシナリオを設定するには、「[例のアプリをレビューして実行する](http://msdn.microsoft.com/library/5b54de66-6be3-459e-b869-65070b020645)」に用意されている基本コードを次のように変更します。 また、完成したアプリを「[Async Samples: Reentrancy in .NET Desktop Apps (非同期の例: .NET デスクトップ アプリでの再入)](https://code.msdn.microsoft.com/Async-Sample-Preventing-a8489f06)」からダウンロードすることもできます。 このプロジェクトの名前は CancelAndRestart です。  
   
 1.  すべてのメソッドのスコープである <xref:System.Threading.CancellationTokenSource> 変数、`cts` を宣言します。  
   
@@ -534,7 +535,7 @@ End Function
   
 ###  <a name="BKMK_DownloadingTheApp"></a>アプリをダウンロードする  
   
-1.  圧縮ファイルを「[Async Samples: Reentrancy in .NET Desktop Apps (非同期の例: .NET デスクトップ アプリでの再入)](http://go.microsoft.com/fwlink/?LinkId=266571)」からダウンロードします。  
+1.  圧縮ファイルを「[Async Samples: Reentrancy in .NET Desktop Apps (非同期の例: .NET デスクトップ アプリでの再入)](https://code.msdn.microsoft.com/Async-Sample-Preventing-a8489f06)」からダウンロードします。  
   
 2.  ダウンロードしたファイルを圧縮解除し、Visual Studio を起動します。  
   
