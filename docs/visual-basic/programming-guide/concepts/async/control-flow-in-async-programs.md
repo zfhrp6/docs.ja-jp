@@ -2,11 +2,12 @@
 title: (Visual Basic) の非同期プログラムにおける制御フロー
 ms.date: 07/20/2015
 ms.assetid: b0443af7-c586-4cb0-b476-742ae4098a96
-ms.openlocfilehash: 2de9c00e5094a1c40e64bdf5215157867372be8c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a6783373f4b556694fd79401546665b09f55919d
+ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/02/2018
+ms.locfileid: "34728506"
 ---
 # <a name="control-flow-in-async-programs-visual-basic"></a>(Visual Basic) の非同期プログラムにおける制御フロー
 `Async` キーワードと `Await` キーワードを使用すると、非同期のプログラムの作成と保守をより簡単に行えます。 ただし、プログラムがどのように動作するかを理解しないと、その結果は予想に反するものになる場合があります。 このトピックでは、簡単な非同期プログラムによる制御フローをトレースして、制御があるメソッドから別のメソッドに移るタイミングと、その都度転送される情報について説明します。  
@@ -97,7 +98,7 @@ Length of the downloaded string: 33946.
 >  例を実行するには、Visual Studio 2012 以降と .NET Framework 4.5 が必要か、以降、コンピューターにインストールします。  
   
 ### <a name="download-the-program"></a>プログラムをダウンロードする  
- このトピックのアプリケーションは、「[非同期のサンプル: 非同期プログラムにおける制御フロー](http://go.microsoft.com/fwlink/?LinkId=255285)」からダウンロードできます。 次の手順でプログラムを開いて実行します。  
+ このトピックのアプリケーションは、「[非同期のサンプル: 非同期プログラムにおける制御フロー](https://code.msdn.microsoft.com/Async-Sample-Control-Flow-5c804fc0)」からダウンロードできます。 次の手順でプログラムを開いて実行します。  
   
 1.  ダウンロードしたファイルを解凍し、Visual Studio を開始します。  
   
@@ -361,4 +362,4 @@ Dim contentLength As Integer = Await getLengthTask
  [Async および Await を使用した非同期プログラミング (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)  
  [非同期の戻り値の型 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/async-return-types.md)  
  [チュートリアル: Async と Await を使用した Web へのアクセス (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)  
- [非同期のサンプル: 非同期プログラムにおける制御フロー (C# と Visual Basic)](http://go.microsoft.com/fwlink/?LinkId=255285)
+ [非同期のサンプル: 非同期プログラムにおける制御フロー (C# と Visual Basic)](https://code.msdn.microsoft.com/Async-Sample-Control-Flow-5c804fc0)

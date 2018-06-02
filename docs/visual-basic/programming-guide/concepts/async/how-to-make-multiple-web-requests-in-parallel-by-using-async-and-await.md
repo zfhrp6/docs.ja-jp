@@ -2,11 +2,12 @@
 title: '方法: 並列で非同期を使用して、複数の Web 要求を実行して、Await (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: a894b99b-7cfd-4a38-adfb-20d24f986730
-ms.openlocfilehash: 1b98a0f29409fa49af1c9c8f7c91f2170981f7cc
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4d4ccda6657dd4d889e8495fa000715c1f7a5ba6
+ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/02/2018
+ms.locfileid: "34728444"
 ---
 # <a name="how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await-visual-basic"></a>方法: 並列で非同期を使用して、複数の Web 要求を実行して、Await (Visual Basic)
 非同期メソッドでは、タスクは作成されると開始されます。 [Await](../../../../visual-basic/language-reference/operators/await-operator.md)演算子は、メソッドのポイントで、タスクが終了するまで処理を続行できない場所で、タスクに適用します。 次の例に示すように、タスクは多くの場合、作成されるとすぐに待機します。  
@@ -39,7 +40,7 @@ Dim result = Await myTask
   
  同時に複数のタスクを起動する別の例では、次を参照してください。[する方法: Task.WhenAll (Visual Basic) にを使用して Asyncwalkthrough を拡張](../../../../visual-basic/programming-guide/concepts/async/how-to-extend-the-async-walkthrough-by-using-task-whenall.md)です。  
   
- この例のコードは、[開発者コード サンプル](http://go.microsoft.com/fwlink/?LinkId=254906)のページからダウンロードできます。  
+ この例のコードは、[開発者コード サンプル](https://code.msdn.microsoft.com/Async-Make-Multiple-Web-49adb82e)のページからダウンロードできます。  
   
 ### <a name="to-set-up-the-project"></a>プロジェクトを設定するには  
   
