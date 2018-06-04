@@ -24,6 +24,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33579731"
 ---
 # <a name="best-practices-for-using-strings-in-net"></a>.NET の文字列を使用するためのベスト プラクティス
 <a name="top"></a> .NET には、ローカライズされたアプリケーションやグローバル化されたアプリケーションを開発するための広範なサポートが用意されており、文字列の並べ替えや表示などの一般的な操作を実行するときに、現在のカルチャの規則や特定のカルチャの規則を簡単に適用できるようになっています。 しかし、文字列の並べ替えや比較の操作は、必ずしもカルチャに依存するとは限りません。 たとえば、アプリケーションが内部で使用する文字列は、通常、すべてのカルチャで同じように処理される必要があります。 XML タグ、HTML タグ、ユーザー名、ファイル パス、システム オブジェクトの名前などのカルチャに依存しない文字列データがカルチャに依存するかのように解釈されると、アプリケーション コードで軽度のバグが発生したり、パフォーマンスが低下したり、場合によってはセキュリティの問題を引き起こしたりする可能性があります。  
@@ -48,9 +49,9 @@ ms.lasthandoff: 05/04/2018
   
 <a name="recommendations_for_string_usage"></a>   
 ## <a name="recommendations-for-string-usage"></a>文字列の使用に関する推奨事項  
- .NET による開発で文字列を使用するときの簡単な推奨事項を次に示します。  
+ .NET による開発で文字列を使用するときには以下の簡単な推奨事項に従ってください。  
   
--   文字列操作に対して文字列比較の規則を明示的に指定するオーバーロードを使用します。 そのためには、通常、 <xref:System.StringComparison>型のパラメーターを持つメソッド オーバーロードを呼び出します。  
+-   文字列操作に対して文字列比較の規則を明示的に指定するオーバーロードを使用します。 そのためには、通常、<xref:System.StringComparison> 型のパラメーターを持つメソッド オーバーロードを呼び出します。  
   
 -   カルチャに依存しない文字列照合の安全な既定の方法として、<xref:System.StringComparison.Ordinal?displayProperty=nameWithType> または <xref:System.StringComparison.OrdinalIgnoreCase?displayProperty=nameWithType> を使用して比較を行います。  
   
@@ -58,9 +59,9 @@ ms.lasthandoff: 05/04/2018
   
 -   ユーザーに出力を表示する場合は、<xref:System.StringComparison.CurrentCulture?displayProperty=nameWithType> に基づく文字列操作を使用します。  
   
--   比較が言語的な意味を持たない場合 (記号としての比較など) は、<xref:System.StringComparison.Ordinal?displayProperty=nameWithType> に基づく文字列操作ではなく、非言語的な <xref:System.StringComparison.OrdinalIgnoreCase?displayProperty=nameWithType> 値または <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> 値を使用します。  
+-   比較が言語的な意味を持たない場合 (記号としての比較など) は、<xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> に基づく文字列操作ではなく、非言語的な <xref:System.StringComparison.Ordinal?displayProperty=nameWithType> 値または <xref:System.StringComparison.OrdinalIgnoreCase?displayProperty=nameWithType> 値を使用します。  
   
--   比較のために文字列を正規化する場合は、<xref:System.String.ToUpperInvariant%2A?displayProperty=nameWithType> メソッドではなく <xref:System.String.ToLowerInvariant%2A?displayProperty=nameWithType> メソッドを使用します。  
+-   比較のために文字列を正規化する場合は <xref:System.String.ToLowerInvariant%2A?displayProperty=nameWithType> メソッドではなく、<xref:System.String.ToUpperInvariant%2A?displayProperty=nameWithType> メソッドを使用します。  
   
 -   2 つの文字列が等価かどうかをテストするには、<xref:System.String.Equals%2A?displayProperty=nameWithType> メソッドのオーバーロードを使用します。  
   
@@ -93,7 +94,7 @@ ms.lasthandoff: 05/04/2018
 |<xref:System.StringComparison.Ordinal>|序数に基づく比較を実行します。|  
 |<xref:System.StringComparison.OrdinalIgnoreCase>|大文字と小文字を区別しない、序数に基づく比較を実行します。|  
   
- たとえば、文字または文字列に一致する <xref:System.String.IndexOf%2A> オブジェクト内の部分文字列のインデックスを返す <xref:System.String> メソッドには、次の 9 つのオーバーロードがあります。  
+ たとえば、文字または文字列に一致する <xref:System.String> オブジェクト内の部分文字列のインデックスを返す <xref:System.String.IndexOf%2A> メソッドには、次の 9 つのオーバーロードがあります。  
   
 -   <xref:System.String.IndexOf%28System.Char%29>、 <xref:System.String.IndexOf%28System.Char%2CSystem.Int32%29>、および <xref:System.String.IndexOf%28System.Char%2CSystem.Int32%2CSystem.Int32%29>。文字列内の文字の序数に基づく (大文字と小文字を区別し、カルチャに依存しない) 検索を既定で実行します。  
   
@@ -105,7 +106,7 @@ ms.lasthandoff: 05/04/2018
   
 -   既定のパラメーターを持つオーバーロードには、序数に基づく比較を実行するもの (文字列インスタンスで <xref:System.Char> を検索するもの) と、カルチャに依存するもの (文字列インスタンスで文字列を検索するもの) があります。 どのメソッドがどの既定値を使用するのかを覚えておくのは容易ではなく、使用するオーバーロードを間違えやすくなります。  
   
--   メソッド呼び出しで既定値に依存するコードは、意図が不明確になります。 既定値に依存する次の例では、2 つの文字列の序数に基づく比較と言語に基づく比較のどちらを開発者が意図しているのかや、 `protocol` と "http" の大文字と小文字が違っていた場合に等価性テストで `false`型のパラメーターを持つメソッド オーバーロードを呼び出します。  
+-   メソッド呼び出しで既定値に依存するコードは、意図が不明確になります。 既定値に依存する次の例では、2 つの文字列の序数に基づく比較と言語に基づく比較のどちらを開発者が意図しているのかや、`protocol` と "http" の大文字と小文字が違っていた場合に等価性テストで `false` を返すかどうかがわかりにくくなっています。  
   
      [!code-csharp[Conceptual.Strings.BestPractices#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.strings.bestpractices/cs/explicitargs1.cs#1)]
      [!code-vb[Conceptual.Strings.BestPractices#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.strings.bestpractices/vb/explicitargs1.vb#1)]  
@@ -136,30 +137,30 @@ ms.lasthandoff: 05/04/2018
   
  現在のカルチャのセマンティクスを使用する比較は、次のメソッドで既定で使用されます。  
   
--   <xref:System.String.Compare%2A?displayProperty=nameWithType> パラメーターを含まない <xref:System.StringComparison> のオーバーロード。  
+-   <xref:System.StringComparison> パラメーターを含まない <xref:System.String.Compare%2A?displayProperty=nameWithType> のオーバーロード。  
   
 -   <xref:System.String.CompareTo%2A?displayProperty=nameWithType> のオーバーロード。  
   
--   既定の <xref:System.String.StartsWith%28System.String%29?displayProperty=nameWithType> メソッドと、<xref:System.String.StartsWith%28System.String%2CSystem.Boolean%2CSystem.Globalization.CultureInfo%29?displayProperty=nameWithType> の `null` パラメーターを持つ <xref:System.Globalization.CultureInfo> メソッド。  
+-   既定の <xref:System.String.StartsWith%28System.String%29?displayProperty=nameWithType> メソッドと、`null`<xref:System.Globalization.CultureInfo> パラメーターを持つ <xref:System.String.StartsWith%28System.String%2CSystem.Boolean%2CSystem.Globalization.CultureInfo%29?displayProperty=nameWithType> メソッド。  
   
--   既定の <xref:System.String.EndsWith%28System.String%29?displayProperty=nameWithType> メソッドと、<xref:System.String.EndsWith%28System.String%2CSystem.Boolean%2CSystem.Globalization.CultureInfo%29?displayProperty=nameWithType> の `null` パラメーターを持つ <xref:System.Globalization.CultureInfo> メソッド。  
+-   既定の <xref:System.String.EndsWith%28System.String%29?displayProperty=nameWithType> メソッドと、`null`<xref:System.Globalization.CultureInfo> パラメーターを持つ <xref:System.String.EndsWith%28System.String%2CSystem.Boolean%2CSystem.Globalization.CultureInfo%29?displayProperty=nameWithType> メソッド。  
   
--   検索パラメーターとして <xref:System.String.IndexOf%2A?displayProperty=nameWithType> を受け取る、<xref:System.String> パラメーターを持たない <xref:System.StringComparison> のオーバーロード。  
+-   検索パラメーターとして <xref:System.String> を受け取る、<xref:System.StringComparison> パラメーターを持たない <xref:System.String.IndexOf%2A?displayProperty=nameWithType> のオーバーロード。  
   
--   検索パラメーターとして <xref:System.String.LastIndexOf%2A?displayProperty=nameWithType> を受け取る、<xref:System.String> パラメーターを持たない <xref:System.StringComparison> のオーバーロード。  
+-   検索パラメーターとして <xref:System.String> を受け取る、<xref:System.StringComparison> パラメーターを持たない <xref:System.String.LastIndexOf%2A?displayProperty=nameWithType> のオーバーロード。  
   
  どのような場合でも、 <xref:System.StringComparison> パラメーターを持つオーバーロードを呼び出して、メソッド呼び出しの意図を明確にすることをお勧めします。  
   
  非言語的な文字列データが言語的に解釈されたり、特定のカルチャの文字列データが別のカルチャの規則で解釈されたりすると、軽度のバグやあまり軽度でないバグが発生する可能性があります。 その典型的な例が、トルコ語の I の問題です。  
   
- 英語 (米国) を含むほぼすべてのラテン アルファベットでは、文字 "i" (\u0069) は "I" (\u0049) の小文字版です。 この大文字と小文字の規則は、このようなカルチャでプログラミングを行う人にとってはすぐに当たり前のことになります。 しかし、トルコ語 ("tr-TR") のアルファベットには、"i" の大文字版である "ドット付きの I" ("İ" (\u0130)) や、 大文字にすると "I" になる小文字の "ドットなしの i" ("ı" (\u0131)) があります。 この動作は、アゼルバイジャン語 ("az") のカルチャでも発生します。  
+ 英語 (米国) を含むほぼすべてのラテン アルファベットでは、文字 "i" (\u0069) は "I" (\u0049) の小文字版です。 この大文字と小文字の規則は、このようなカルチャでプログラミングを行う人にとってはすぐに当たり前のことになります。 しかし、トルコ語 ("tr-TR") のアルファベットには、"i" の大文字版である "ドット付きの I" ("İ" (\u0130)) があります。 大文字にすると "I" になる小文字の "ドットなしの i" ("ı" (\u0131)) もあります。 この動作は、アゼルバイジャン語 ("az") のカルチャでも発生します。  
   
  したがって、"i" を大文字にしたり "I" を小文字にしたりする動作に関する前提は、すべてのカルチャで有効なわけではありません。 文字列比較ルーチンの既定のオーバーロードを使用すると、カルチャ間の差異の影響を受けることになります。 また、非言語的なデータを比較する場合も、既定のオーバーロードを使用すると望ましくない結果が返される可能性があります。たとえば次の例では、文字列 "file" と "FILE" の大文字と小文字を区別しない比較を実行しようとしています。  
   
  [!code-csharp[Conceptual.Strings.BestPractices#11](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.strings.bestpractices/cs/turkish1.cs#11)]
  [!code-vb[Conceptual.Strings.BestPractices#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.strings.bestpractices/vb/turkish1.vb#11)]  
   
- この比較は、セキュリティが重要となる状況でカルチャが不注意に使用されると、重大な問題を引き起こす可能性があります。 `IsFileURI("file:")` などのメソッド呼び出しは、現在のカルチャが英語 (米国) の場合は `true` を返しますが、現在のカルチャがトルコ語の場合は `false` を返します。 したがって、"FILE:" で始まる URI へのアクセスを大文字と小文字の区別なくブロックするセキュリティ対策は、トルコ語のシステムでは攻略される可能性があります。  
+ この比較は、セキュリティが重要となる状況でカルチャが不注意に使用されると、次の例のような重大な問題を引き起こす可能性があります。 `IsFileURI("file:")` などのメソッド呼び出しは、現在のカルチャが英語 (米国) の場合は `true` を返しますが、現在のカルチャがトルコ語の場合は `false` を返します。 したがって、"FILE:" で始まる URI へのアクセスを大文字と小文字の区別なくブロックするセキュリティ対策は、トルコ語のシステムでは攻略される可能性があります。  
   
  [!code-csharp[Conceptual.Strings.BestPractices#12](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.strings.bestpractices/cs/turkish1.cs#12)]
  [!code-vb[Conceptual.Strings.BestPractices#12](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.strings.bestpractices/vb/turkish1.vb#12)]  
@@ -189,7 +190,7 @@ ms.lasthandoff: 05/04/2018
  [!code-csharp[Conceptual.Strings.BestPractices#20](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.strings.bestpractices/cs/embeddednulls2.cs#20)]
  [!code-vb[Conceptual.Strings.BestPractices#20](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.strings.bestpractices/vb/embeddednulls2.vb#20)]  
   
- 序数に基づく比較の次に慎重な方法は、大文字と小文字を区別しない序数に基づく比較です。 この比較では、大文字と小文字の区別のほとんどが無視されます (たとえば、"windows" と "Windows" は一致します)。 ASCII 文字を操作する場合、このポリシーは <xref:System.StringComparison.Ordinal?displayProperty=nameWithType> と同等ですが、通常の ASCII の大文字と小文字の区別が無視されます。 したがって、[A, Z] (\u0041-\u005A) の任意の文字が [a,z] (\u0061-\007A) の対応する文字と一致します。 ASCII の範囲外の大文字と小文字の区別には、インバリアント カルチャのテーブルが使用されます。 次に例を示します。  
+ その次に慎重な方法は、大文字と小文字を区別しない序数に基づく比較です。 この比較では、大文字と小文字の区別のほとんどが無視されます (たとえば、"windows" と "Windows" は一致します)。 ASCII 文字を操作する場合、このポリシーは <xref:System.StringComparison.Ordinal?displayProperty=nameWithType> と同等ですが、通常の ASCII の大文字と小文字の区別が無視されます。 したがって、[A, Z] (\u0041-\u005A) の任意の文字が [a,z] (\u0061-\007A) の対応する文字と一致します。 ASCII の範囲外の大文字と小文字の区別には、インバリアント カルチャのテーブルが使用されます。 次に例を示します。  
   
  [!code-csharp[Conceptual.Strings.BestPractices#4](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.strings.bestpractices/cs/comparison2.cs#4)]
  [!code-vb[Conceptual.Strings.BestPractices#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.strings.bestpractices/vb/comparison2.vb#4)]  
@@ -206,12 +207,12 @@ ms.lasthandoff: 05/04/2018
   
  <xref:System.StringComparison.Ordinal?displayProperty=nameWithType> と <xref:System.StringComparison.OrdinalIgnoreCase?displayProperty=nameWithType> は、どちらもバイナリ値を直接使用するため、照合に最適です。 比較の設定について確信を持てない場合は、この 2 つのいずれかの値を使用してください。 ただし、これらの値を使用するとバイトごとの比較が行われるため、言語的な順序 (英語の辞書のような順序) ではなくバイナリの順序で並べ替えが行われます。 したがって、結果をユーザーに表示すると、ほとんどの場合不自然に見えます。  
   
- 序数に基づくセマンティクスは、<xref:System.String.Equals%2A?displayProperty=nameWithType> 引数を含まない <xref:System.StringComparison> のオーバーロード (等値演算子を含む) で既定で使用されます。 どのような場合でも、 <xref:System.StringComparison> パラメーターを持つオーバーロードを呼び出すことをお勧めします。  
+ 序数に基づくセマンティクスは、<xref:System.StringComparison> 引数を含まない <xref:System.String.Equals%2A?displayProperty=nameWithType> のオーバーロード (等値演算子を含む) で既定で使用されます。 どのような場合でも、 <xref:System.StringComparison> パラメーターを持つオーバーロードを呼び出すことをお勧めします。  
   
 ### <a name="string-operations-that-use-the-invariant-culture"></a>インバリアント カルチャを使用する文字列操作  
- インバリアント カルチャを使用する比較では、静的 <xref:System.Globalization.CultureInfo.CompareInfo%2A> プロパティから返される <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> プロパティが使用されます。 この動作は、すべてのシステムで同じです。範囲外の文字は、等価のインバリアント文字と見なされる文字に変換されます。 このポリシーは、同じ文字列動作のセットを複数のカルチャにわたって保持する場合に便利ですが、予期しない結果になることもよくあります。  
+ インバリアント カルチャを使用する比較では、静的 <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> プロパティから返される <xref:System.Globalization.CultureInfo.CompareInfo%2A> プロパティが使用されます。 この動作は、すべてのシステムで同じです。範囲外の文字は、等価のインバリアント文字と見なされる文字に変換されます。 このポリシーは、同じ文字列動作のセットを複数のカルチャにわたって保持する場合に便利ですが、予期しない結果になることもよくあります。  
   
- インバリアント カルチャを使用する、大文字と小文字を区別しない比較でも、静的 <xref:System.Globalization.CultureInfo.CompareInfo%2A> プロパティから返される静的 <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> プロパティが比較情報として使用されます。 変換後の文字の大文字と小文字の違いは無視されます。  
+ インバリアント カルチャを使用する、大文字と小文字を区別しない比較でも、静的 <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> プロパティから返される静的 <xref:System.Globalization.CultureInfo.CompareInfo%2A> プロパティが比較情報として使用されます。 変換後の文字の大文字と小文字の違いは無視されます。  
   
  <xref:System.StringComparison.InvariantCulture?displayProperty=nameWithType> を使用する比較と <xref:System.StringComparison.Ordinal?displayProperty=nameWithType> を使用する比較は、ASCII 文字列に対して同じように動作します。 ただし、<xref:System.StringComparison.InvariantCulture?displayProperty=nameWithType> では言語的な判断が下されるため、バイト セットとして解釈する必要がある文字列に対しては不適切になることがあります。 `CultureInfo.InvariantCulture.CompareInfo` オブジェクトのために <xref:System.String.Compare%2A> メソッドで特定の文字のセットが等価と解釈されることもあります。 たとえば、次の例が等価になるのは、インバリアント カルチャでは妥当です。  
   
@@ -250,14 +251,14 @@ ms.lasthandoff: 05/04/2018
   
  このメソッドは文字列解釈の中心的な操作となるため、メソッド呼び出しのすべてのインスタンスを調べて、文字列を現在のカルチャに従って解釈するべきか、カルチャから切り離して (記号として) 扱うべきかどうかを確認する必要があります。 ほとんどは後者であるため、その場合は代わりに <xref:System.StringComparison.Ordinal?displayProperty=nameWithType> の比較を使用します。  
   
- <xref:System.Globalization.CompareInfo?displayProperty=nameWithType> プロパティから返される <xref:System.Globalization.CultureInfo.CompareInfo%2A?displayProperty=nameWithType> クラスにも、<xref:System.Globalization.CompareInfo.Compare%2A> フラグ列挙体でさまざまな照合方法 (序数に基づく、空白文字を無視する、カナ型を無視するなど) を指定できる <xref:System.Globalization.CompareOptions> メソッドが含まれています。  
+ <xref:System.Globalization.CultureInfo.CompareInfo%2A?displayProperty=nameWithType> プロパティから返される <xref:System.Globalization.CompareInfo?displayProperty=nameWithType> クラスにも、<xref:System.Globalization.CompareOptions> フラグ列挙体でさまざまな照合方法 (序数に基づく、空白文字を無視する、カナ型を無視するなど) を指定できる <xref:System.Globalization.CompareInfo.Compare%2A> メソッドが含まれています。  
   
 ### <a name="stringcompareto"></a>String.CompareTo  
  既定の解釈: <xref:System.StringComparison.CurrentCulture?displayProperty=nameWithType>  
   
  このメソッドには、現時点では、 <xref:System.StringComparison> 型を指定するオーバーロードはありません。 通常は、このメソッドを推奨される <xref:System.String.Compare%28System.String%2CSystem.String%2CSystem.StringComparison%29?displayProperty=nameWithType> の形式に変換できます。  
   
- このメソッドは、 <xref:System.IComparable> インターフェイスと <xref:System.IComparable%601> インターフェイスを実装する型に実装されます。 このメソッドには <xref:System.StringComparison> パラメーターのオプションがないため、実装する型のコンストラクターで <xref:System.StringComparer> を指定できるようにするのが一般的です。 次の例では、クラス コンストラクターに `FileName` パラメーターを含む <xref:System.StringComparer> クラスを定義しています。 この <xref:System.StringComparer> オブジェクトは、その後、 `FileName.CompareTo` メソッドで使用されています。  
+ このメソッドは、 <xref:System.IComparable> インターフェイスと <xref:System.IComparable%601> インターフェイスを実装する型に実装されます。 このメソッドには <xref:System.StringComparison> パラメーターのオプションがないため、実装する型のコンストラクターで <xref:System.StringComparer> を指定できるようにするのが一般的です。 次の例では、クラス コンストラクターに <xref:System.StringComparer> パラメーターを含む `FileName` クラスを定義しています。 この <xref:System.StringComparer> オブジェクトは、その後、 `FileName.CompareTo` メソッドで使用されています。  
   
  [!code-csharp[Conceptual.Strings.BestPractices#6](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.strings.bestpractices/cs/api1.cs#6)]
  [!code-vb[Conceptual.Strings.BestPractices#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.strings.bestpractices/vb/api1.vb#6)]  
@@ -265,7 +266,7 @@ ms.lasthandoff: 05/04/2018
 ### <a name="stringequals"></a>String.Equals  
  既定の解釈: <xref:System.StringComparison.Ordinal?displayProperty=nameWithType>  
   
- <xref:System.String> クラスで等価性テストを実行するには、 <xref:System.String.Equals%2A> メソッド (静的メソッドまたはインスタンス メソッド) のオーバーロードを呼び出すか、静的等値演算子を使用します。 これらのオーバーロードと演算子では、序数に基づく比較が既定で使用されますが、 序数に基づく比較を実行する場合でも、 <xref:System.StringComparison> 型を明示的に指定するオーバーロードを呼び出すことをお勧めします。これにより、特定の文字列解釈のコードを検索しやすくなります。  
+ <xref:System.String> クラスで等価性テストを実行するには、 <xref:System.String.Equals%2A> メソッド (静的メソッドまたはインスタンス メソッド) のオーバーロードを呼び出すか、静的等値演算子を使用します。 これらのオーバーロードと演算子では、序数に基づく比較が既定で使用されます。 しかし、序数に基づく比較を実行する場合でも、<xref:System.StringComparison> 型を明示的に指定するオーバーロードを呼び出すことをお勧めします。これにより、特定の文字列解釈のコードを検索しやすくなります。  
   
 ### <a name="stringtoupper-and-stringtolower"></a>String.ToUpper と String.ToLower  
  既定の解釈: <xref:System.StringComparison.CurrentCulture?displayProperty=nameWithType>  
@@ -274,7 +275,7 @@ ms.lasthandoff: 05/04/2018
   
  <xref:System.String.ToUpperInvariant%2A?displayProperty=nameWithType> メソッドと <xref:System.String.ToLowerInvariant%2A?displayProperty=nameWithType> メソッドを使用することもできます。 <xref:System.String.ToUpperInvariant%2A> は、大文字と小文字を正規化するための標準的な方法です。 <xref:System.StringComparison.OrdinalIgnoreCase?displayProperty=nameWithType> を使用して行われる比較は、動作の内容を見ると、両方の文字列引数に対して <xref:System.String.ToUpperInvariant%2A> を呼び出し、<xref:System.StringComparison.Ordinal?displayProperty=nameWithType> を使用して比較を行うという、2 つの呼び出しの組み合わせです。  
   
- 特定のカルチャを表す <xref:System.Globalization.CultureInfo> オブジェクトを渡してそのカルチャで大文字および小文字への変換を行うためのオーバーロードもあります。  
+ 特定のカルチャを表す <xref:System.Globalization.CultureInfo> オブジェクトをメソッドに渡して、そのカルチャで大文字および小文字への変換を行うためのオーバーロードもあります。  
   
 ### <a name="chartoupper-and-chartolower"></a>Char.ToUpper と Char.ToLower  
  既定の解釈: <xref:System.StringComparison.CurrentCulture?displayProperty=nameWithType>  
@@ -289,7 +290,7 @@ ms.lasthandoff: 05/04/2018
 ### <a name="stringindexof-and-stringlastindexof"></a>String.IndexOf と String.LastIndexOf  
  既定の解釈: <xref:System.StringComparison.CurrentCulture?displayProperty=nameWithType>  
   
- これらのメソッドの既定のオーバーロードは、比較の実行方法が一貫していません。 <xref:System.String.IndexOf%2A?displayProperty=nameWithType> パラメーターを含むすべての <xref:System.String.LastIndexOf%2A?displayProperty=nameWithType> メソッドと <xref:System.Char> メソッドは、序数に基づく比較を実行します。一方、<xref:System.String.IndexOf%2A?displayProperty=nameWithType> パラメーターを含む既定の <xref:System.String.LastIndexOf%2A?displayProperty=nameWithType> メソッドと <xref:System.String> メソッドは、カルチャに依存した比較を実行します。  
+ これらのメソッドの既定のオーバーロードは、比較の実行方法が一貫していません。 <xref:System.Char> パラメーターを含むすべての <xref:System.String.IndexOf%2A?displayProperty=nameWithType> メソッドと <xref:System.String.LastIndexOf%2A?displayProperty=nameWithType> メソッドは、序数に基づく比較を実行します。一方、<xref:System.String> パラメーターを含む既定の <xref:System.String.IndexOf%2A?displayProperty=nameWithType> メソッドと <xref:System.String.LastIndexOf%2A?displayProperty=nameWithType> メソッドは、カルチャに依存した比較を実行します。  
   
  <xref:System.String.IndexOf%28System.String%29?displayProperty=nameWithType> メソッドまたは <xref:System.String.LastIndexOf%28System.String%29?displayProperty=nameWithType> メソッドを呼び出して、現在のインスタンスで検索する文字列を渡す場合は、<xref:System.StringComparison> 型を明示的に指定するオーバーロードを呼び出すことをお勧めします。 <xref:System.Char> 引数を含むオーバーロードでは、 <xref:System.StringComparison> 型を指定することはできません。  
   
@@ -314,7 +315,7 @@ ms.lasthandoff: 05/04/2018
 ### <a name="arraysort-and-arraybinarysearch"></a>Array.Sort と Array.BinarySearch  
  既定の解釈: <xref:System.StringComparison.CurrentCulture?displayProperty=nameWithType>  
   
- データをコレクションに格納したり、永続化されたデータをファイルやデータベースからコレクションに読み取ったりするときに現在のカルチャを切り替えると、コレクション内のインバリアントが無効になる可能性があります。 <xref:System.Array.BinarySearch%2A?displayProperty=nameWithType> メソッドでは、配列内で検索する要素が既に並べ替えられていると見なされます。 <xref:System.Array.Sort%2A?displayProperty=nameWithType> メソッドは、配列内の文字列要素を並べ替えるために、<xref:System.String.Compare%2A?displayProperty=nameWithType> メソッドを呼び出して個々の要素を順序付けます。 配列の並べ替えが行われてから内容の検索が行われるまでの間にカルチャが変更される場合、カルチャに依存した比較子を使用するのは危険です。 たとえば、次のコードでは、 `Thread.CurrentThread.CurrentCulture` プロパティが使用されます。 `StoreNames` の呼び出しと `DoesNameExist`の呼び出しの間にカルチャが変更されると (この 2 つのメソッドの呼び出しの間に配列の内容が永続化された場合には特に)、バイナリ サーチが失敗する可能性があります。  
+ データをコレクションに格納したり、永続化されたデータをファイルやデータベースからコレクションに読み取ったりするときに現在のカルチャを切り替えると、コレクション内のインバリアントが無効になる可能性があります。 <xref:System.Array.BinarySearch%2A?displayProperty=nameWithType> メソッドでは、配列内で検索する要素が既に並べ替えられていると見なされます。 <xref:System.Array.Sort%2A?displayProperty=nameWithType> メソッドは、配列内の文字列要素を並べ替えるために、<xref:System.String.Compare%2A?displayProperty=nameWithType> メソッドを呼び出して個々の要素を順序付けます。 配列の並べ替えが行われてから内容の検索が行われるまでの間にカルチャが変更される場合、カルチャに依存した比較子を使用するのは危険です。 たとえば、次のコードでは、`Thread.CurrentThread.CurrentCulture` プロパティが暗黙的に指定した比較子で格納と取得の操作が行われます。 `StoreNames` の呼び出しと `DoesNameExist`の呼び出しの間にカルチャが変更されると (この 2 つのメソッドの呼び出しの間に配列の内容が永続化された場合には特に)、バイナリ サーチが失敗する可能性があります。  
   
  [!code-csharp[Conceptual.Strings.BestPractices#7](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.strings.bestpractices/cs/indirect1.cs#7)]
  [!code-vb[Conceptual.Strings.BestPractices#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.strings.bestpractices/vb/indirect1.vb#7)]  
@@ -330,9 +331,9 @@ ms.lasthandoff: 05/04/2018
  [!code-vb[Conceptual.Strings.BestPractices#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.strings.bestpractices/vb/indirect1.vb#9)]  
   
 ### <a name="collections-example-hashtable-constructor"></a>コレクションの例: Hashtable のコンストラクター  
- 文字列のハッシュも、文字列の比較方法の影響を受ける操作の 1 つです。  
+ 文字列の比較方法の影響を受ける操作の 2 例目は文字列のハッシュです。  
   
- 次の例では、<xref:System.Collections.Hashtable> プロパティから返される <xref:System.StringComparer> オブジェクトを渡して <xref:System.StringComparer.OrdinalIgnoreCase%2A?displayProperty=nameWithType> オブジェクトをインスタンス化しています。 <xref:System.StringComparer> から派生するクラス <xref:System.StringComparer> は <xref:System.Collections.IEqualityComparer> インターフェイスを実装するため、その <xref:System.Collections.IEqualityComparer.GetHashCode%2A> メソッドを使用して、ハッシュ テーブルの文字列のハッシュ コードを計算しています。  
+ 次の例では、<xref:System.StringComparer.OrdinalIgnoreCase%2A?displayProperty=nameWithType> プロパティから返される <xref:System.StringComparer> オブジェクトを渡して <xref:System.Collections.Hashtable> オブジェクトをインスタンス化しています。 <xref:System.StringComparer> から派生するクラス <xref:System.StringComparer> は <xref:System.Collections.IEqualityComparer> インターフェイスを実装するため、その <xref:System.Collections.IEqualityComparer.GetHashCode%2A> メソッドを使用して、ハッシュ テーブルの文字列のハッシュ コードを計算しています。  
   
  [!code-csharp[Conceptual.Strings.BestPractices#10](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.strings.bestpractices/cs/indirect2.cs#10)]
  [!code-vb[Conceptual.Strings.BestPractices#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.strings.bestpractices/vb/indirect2.vb#10)]  
@@ -347,11 +348,11 @@ ms.lasthandoff: 05/04/2018
   
 -   カルチャが異なるシステムでデータを取得したり、現在のシステムのユーザーが現在のカルチャを変更してデータを取得しようとしたりすると、そのデータは使用できない可能性があります。  
   
--   特定のコンピューターのカルチャのプロパティは、その標準の値とは異なる場合があります。 常に、ユーザーはカルチャに依存した表示設定をカスタマイズする可能性があります。 このため、ユーザーがカルチャの設定をカスタマイズすると、システムに保存されている書式付きデータが読み取ることができなくなる場合があります。 コンピューター間の書式付きデータの移植性がさらに制限される可能性があります。  
+-   特定のコンピューターのカルチャのプロパティは、その標準の値とは異なる場合があります。 常に、ユーザーはカルチャに依存した表示設定をカスタマイズする可能性があります。 このため、ユーザーがカルチャの設定をカスタマイズすると、システムに保存されている書式付きデータを読み取ることができなくなる場合があります。 コンピューター間の書式付きデータの移植性がさらに制限される可能性があります。  
   
--   数値や日時の書式設定を制御する国際的、地域的、または国内の標準は時間と共に変化するため、これらの変化は Windows オペレーティング システムの更新プログラムに組み込まれています。 書式設定の規則が変わると、以前の規則に従って書式設定されたデータが読み取ることができなくなる場合があります。  
+-   数値や日時の書式設定を制御する国際的、地域的、または国内の標準は時間と共に変化するため、これらの変化は Windows オペレーティング システムの更新プログラムに組み込まれています。 書式設定の規則が変わると、以前の規則に従って書式設定されたデータを読み取ることができなくなる場合があります。  
   
- 次に、カルチャに依存する書式設定を使用してデータを保持すると移植性が制限される例を示します。 この例では、日時の値の配列をファイルに保存します。 これらは、英語 (米国) のカルチャの規則を使用して書式設定されています。 現在のスレッド カルチャがフランス語 (スイス) に変更されると、アプリケーションは現在のカルチャの書式設定規則を使用して保存された値を読み取ることを試みます。 2 つのデータ項目の読み取りを試みると、 <xref:System.FormatException> 例外がスローされます。日付の配列には、 <xref:System.DateTime.MinValue>に等しい 2 つの間違った要素が含まれることになります。  
+ 次に、カルチャに依存する書式設定を使用してデータを保持すると移植性が制限される例を示します。 この例では、日時の値の配列をファイルに保存します。 これらは、英語 (米国) のカルチャの規則を使用して書式設定されています。 現在のスレッド カルチャがフランス語 (スイス) に変更されると、アプリケーションは現在のカルチャの書式設定規則を使用して保存された値を読み取ることを試みます。 2 つのデータ項目の読み取りを試みると、<xref:System.FormatException> 例外がスローされます。日付の配列には、<xref:System.DateTime.MinValue> に等しい 2 つの間違った要素が含まれることになります。  
   
  [!code-csharp[Conceptual.Strings.BestPractices#21](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.strings.bestpractices/cs/persistence.cs#21)]
  [!code-vb[Conceptual.Strings.BestPractices#21](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.strings.bestpractices/vb/persistence.vb#21)]  
