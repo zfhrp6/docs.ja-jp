@@ -15,11 +15,12 @@ helpviewer_keywords:
 ms.assetid: fae2c15b-7adf-4b15-b118-58eb3906994f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9df41a404c091bb76490d762b55580c36cf33f62
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b270559e9e73e18bebb29e36b815268d5426a940
+ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34728681"
 ---
 # <a name="regular-expression-example-scanning-for-hrefs"></a>正規表現の例: HREFS のスキャン
 次の例では、入力文字列を検索して、文字列中のすべての href="…" 値とその場所を表示します。  
@@ -43,9 +44,9 @@ ms.lasthandoff: 05/04/2018
 |`\s*`|0 個以上の空白文字と一致します。|  
 |`=`|等号と一致します。|  
 |`\s*`|0 個以上の空白文字と一致します。|  
-|<code>(?:\["'\](?<1>\[^"'\]*)"&#124;(?<1>\S+))</code>|次のいずれかと一致し、キャプチャ グループに結果を代入しません。<br /> <ul><li><p>- 引用符またはアポストロフィ、引用符またはアポストロフィ以外の任意の文字の 0 回以上の繰り返し、引用符またはアポストロフィの順に続く文字列。 このパターンには `1` という名前のグループが含まれています。</p></li><li><p>- 1 個以上の空白以外の文字。 このパターンには `1` という名前のグループが含まれています。</p></li></ul>|  
+|<code>(?:\["'\](?<1>\[^"'\]*)["']&#124;(?<1>\S+))</code>|次のいずれかと一致し、キャプチャ グループに結果を代入しません。<br /> <ul><li><p>- 引用符またはアポストロフィ、引用符またはアポストロフィ以外の任意の文字の 0 回以上の繰り返し、引用符またはアポストロフィの順に続く文字列。 このパターンには `1` という名前のグループが含まれています。</p></li><li><p>- 1 個以上の空白以外の文字。 このパターンには `1` という名前のグループが含まれています。</p></li></ul>|  
 |`(?<1>[^"']*)`|引用符またはアポストロフィ以外の任意の文字の 0 回以上の繰り返しを `1` という名前のキャプチャ グループに代入します。|  
-|`"(?<1>\S+)`|1 個以上の空白以外の文字を `1` という名前のキャプチャ グループに代入します。|  
+|`(?<1>\S+)`|1 個以上の空白以外の文字を `1` という名前のキャプチャ グループに代入します。|  
   
 ## <a name="match-result-class"></a>Match 結果クラス  
  検索結果は <xref:System.Text.RegularExpressions.Match> クラス内に格納されます。これにより、検索処理によって抽出されたすべての部分文字列にアクセスできます。 このクラスは、検索対象となった文字列や、使用された正規表現も記憶しているため、<xref:System.Text.RegularExpressions.Match.NextMatch%2A?displayProperty=nameWithType> メソッドを呼び出して、最後の検索が終了した位置から別の検索を実行することができます。  
