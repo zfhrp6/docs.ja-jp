@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33655362"
 ---
 # <a name="visual-basic-coding-conventions"></a>Visual Basic のコーディング規則
 Microsoft は、ここで示すガイドラインに従ってサンプルおよびドキュメントを開発しています。 同じコーディング規則に従うと、次のような利点があります。  
@@ -126,7 +127,7 @@ Microsoft は、ここで示すガイドラインに従ってサンプルおよ�
  `On Error Goto` は使用しないでください。  
   
 ### <a name="use-the-isnot-keyword"></a>IsNot キーワードの使用  
- `Not...Is Nothing` の代わりに `IsNot` キーワードを使用します。  
+ `Not...Is Nothing` の代わりに `IsNot` キーワードを使用します。   
   
 ### <a name="new-keyword"></a>New キーワード  
   
