@@ -2,11 +2,12 @@
 title: C# 7.2 の新機能
 description: C# 7.2 の新機能の概要。
 ms.date: 08/16/2017
-ms.openlocfilehash: b813bf5b38ef17986b21e928c9c86e583174c7d1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a74afd7f073daa46328d60149e2dd90207420a80
+ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34566190"
 ---
 # <a name="whats-new-in-c-72"></a>C# 7.2 の新機能
 
@@ -15,7 +16,7 @@ C# 7.2 は、便利な機能が多数追加された、もう 1 つのポイン�
 
 他の機能も、小さくても、あると助かる機能です。
 
-C# 7.2 では[言語バージョンの選択](csharp-7-1.md#language-version-selection)の構成要素を使用して、コンパイラ言語バージョンを選択します。
+C# 7.2 では[言語バージョンの選択](../language-reference/configure-language-version.md)の構成要素を使用して、コンパイラ言語バージョンを選択します。
 
 このリリースの新しい言語機能は次のとおりです。
 

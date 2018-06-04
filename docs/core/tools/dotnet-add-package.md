@@ -3,12 +3,13 @@ title: dotnet add package コマンド - .NET Core CLI
 description: "'dotnet add package' コマンドは、NuGet パッケージ参照をプロジェクトに追加する便利なオプションを提供します。"
 author: mairaw
 ms.author: mairaw
-ms.date: 08/11/2017
-ms.openlocfilehash: fd3704bbb941835421d78e19f196fa52b3767c34
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.date: 05/25/2018
+ms.openlocfilehash: 31dda9dbb101238b3a33d8b0d9a17765744480e0
+ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34696300"
 ---
 # <a name="dotnet-add-package"></a>dotnet add package
 
@@ -20,7 +21,7 @@ ms.lasthandoff: 05/04/2018
 
 ## <a name="synopsis"></a>構文
 
-`dotnet add [<PROJECT>] package <PACKAGE_NAME> [-h|--help] [-v|--version] [-f|--framework] [-n|--no-restore] [-s|--source] [--package-directory]`
+`dotnet add [<PROJECT>] package <PACKAGE_NAME> [-h|--help] [-f|--framework] [-n|--no-restore] [--package-directory] [-s|--source] [-v|--version]`
 
 ## <a name="description"></a>説明
 
@@ -30,7 +31,7 @@ ms.lasthandoff: 05/04/2018
 
 たとえば、`Newtonsoft.Json` を *ToDo.csproj* に追加すると、次のような出力が生成されます。
 
-```
+```console
   Writing C:\Users\mairaw\AppData\Local\Temp\tmp95A8.tmp
 info : Adding PackageReference for package 'Newtonsoft.Json' into project 'C:\projects\ToDo\ToDo.csproj'.
 log  : Restoring packages for C:\projects\ToDo\ToDo.csproj...
@@ -62,10 +63,6 @@ info : PackageReference for package 'Newtonsoft.Json' version '10.0.3' added to 
 
 コマンドの短いヘルプを印刷します。
 
-`-v|--version <VERSION>`
-
-パッケージのバージョン。
-
 `-f|--framework <FRAMEWORK>`
 
 特定の[フレームワーク](../../standard/frameworks.md)を対象にしている場合にのみ、パッケージ参照を追加します。
@@ -74,13 +71,17 @@ info : PackageReference for package 'Newtonsoft.Json' version '10.0.3' added to 
 
 復元のプレビューと互換性チェックを実行せずにパッケージ参照を追加します。
 
+`--package-directory <PACKAGE_DIRECTORY>`
+
+指定したディレクトリにパッケージを復元します。
+
 `-s|--source <SOURCE>`
 
 復元操作の間に特定の NuGet パッケージのソースを使います。
 
-`--package-directory <PACKAGE_DIRECTORY>`
+`-v|--version <VERSION>`
 
-指定したディレクトリにパッケージを復元します。
+パッケージのバージョン。
 
 ## <a name="examples"></a>使用例
 

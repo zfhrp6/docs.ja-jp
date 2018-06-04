@@ -3,12 +3,13 @@ title: dotnet-add 参照コマンド - .NET Core CLI
 description: dotnet add 参照コマンドは、プロジェクト間参照を追加する便利なオプションを提供します。
 author: mairaw
 ms.author: mairaw
-ms.date: 09/19/2017
-ms.openlocfilehash: ee9c058b83238655bd90a4bf5c809a9d0e4c13d6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.date: 05/25/2018
+ms.openlocfilehash: 3398d4dc7bf70eaadcdd92269dbd3b784079c22d
+ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34696963"
 ---
 # <a name="dotnet-add-reference"></a>dotnet-add 参照
 

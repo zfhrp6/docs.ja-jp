@@ -3,13 +3,14 @@ title: .NET API アナライザー
 description: 非推奨の API およびプラットフォームの互換性の問題を検出するのに .NET API アナライザーがどのように役立つかについて説明します。
 author: oliag
 ms.author: mairaw
-ms.date: 01/30/2018
+ms.date: 05/31/2018
 ms.technology: dotnet-standard
-ms.openlocfilehash: ac0e777e1df837ff7e9fbe185c462f56765e47bf
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4394bc77b499db1960d61bad5e828f77f1144c65
+ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34696885"
 ---
 # <a name="net-api-analyzer"></a>.NET API アナライザー
 
@@ -70,11 +71,11 @@ ID をクリックすると、API が非推奨になった理由に関する詳�
 
 ## <a name="discovering-cross-platform-issues"></a>クロスプラットフォームの問題の検出
 
-非推奨の API と同様に、アナライザーはクロスプラットフォームではないすべての API を識別します。 たとえば、<xref:System.Console.WindowWidth?displayProperty=nameWithType> は Windows では動作しますが、Linux や macOS では動作しません。 診断 ID は、**[エラー一覧]** ウィンドウに表示されます。 右クリックして **[クイック アクションとリファクタリング]** を選ぶことで、その警告を抑制することができます。 2 つのオプション (非推奨のメンバーを使い続けて警告を抑制するか、まったく使わない) がある非推奨の場合とは異なり、特定のプラットフォーム用にのみコードを開発している場合は、コードを実行する予定のない他のすべてのプラットフォームですべての警告を抑制できます。 そのために必要なことは、プロジェクト ファイルを編集し、無視するすべてのプラットフォームを列記した `PlatformCompatIgnore` プロパティを追加するだけです。 指定できる値は、`Linux`、`MacOSX`、`Windows` です。
+非推奨の API と同様に、アナライザーはクロスプラットフォームではないすべての API を識別します。 たとえば、<xref:System.Console.WindowWidth?displayProperty=nameWithType> は Windows では動作しますが、Linux や macOS では動作しません。 診断 ID は、**[エラー一覧]** ウィンドウに表示されます。 右クリックして **[クイック アクションとリファクタリング]** を選ぶことで、その警告を抑制することができます。 2 つのオプション (非推奨のメンバーを使い続けて警告を抑制するか、まったく使わない) がある非推奨の場合とは異なり、特定のプラットフォーム用にのみコードを開発している場合は、コードを実行する予定のない他のすべてのプラットフォームですべての警告を抑制できます。 そのために必要なことは、プロジェクト ファイルを編集し、無視するすべてのプラットフォームを列記した `PlatformCompatIgnore` プロパティを追加するだけです。 指定できる値は、`Linux`、`macOS`、`Windows` です。
 
 ```xml
 <PropertyGroup>
-    <PlatformCompatIgnore>Linux;MacOS</PlatformCompatIgnore>
+    <PlatformCompatIgnore>Linux;macOS</PlatformCompatIgnore>
 </PropertyGroup>
 ```
 

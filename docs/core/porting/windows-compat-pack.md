@@ -4,17 +4,18 @@ description: Windows 互換機能パックとそれを使用して既存の .NET
 author: terrajobst
 ms.author: mairaw
 ms.date: 11/13/2017
-ms.openlocfilehash: 6b25a2d5c197a6c9b0a7ead18370870ddc091e1c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 51b96d7828285964c1b0cbb835b8eb5ed92c47d6
+ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34566174"
 ---
 # <a name="using-the-windows-compatibility-pack"></a>Windows 互換機能パックの使用
 
 既存のコードを .NET Core に移植するとき、開発者が直面する最も一般的な問題の 1 つが、.NET Framework にのみ存在する API とテクノロジに対する依存性です。 *Windows 互換機能パック*はそのようなテクノロジを各種提供します。既存コードの実行可能性を上げるような方法で .NET Core アプリケーションと .NET Standard ライブラリをビルドできます。
 
-このパッケージは論理 [.NET Standard 2.0 の拡張](../whats-new/index.md#api-changes-and-library-support)であり、API セットを大幅に増やします。ほとんど変更なしで既存コードがコンパイルされます。 ただし、.NET Standard の約束 ("これはあらゆる .NET 実装の API を集めたものである") を守る目的で、レジストリ、Windows Management Instrumentation (WMI)、リフレクション出力 API など、すべてのプラットフォームで動作しないテクノロジは含まれていません。
+このパッケージは論理 [.NET Standard 2.0 の拡張](../whats-new/dotnet-core-2-0.md#api-changes-and-library-support)であり、API セットを大幅に増やします。ほとんど変更なしで既存コードがコンパイルされます。 ただし、.NET Standard の約束 ("これはあらゆる .NET 実装の API を集めたものである") を守る目的で、レジストリ、Windows Management Instrumentation (WMI)、リフレクション出力 API など、すべてのプラットフォームで動作しないテクノロジは含まれていません。
 
 *Windows 互換機能パック*は .NET Standard を基盤とし、Windows 専用のテクノロジを利用できます。 .NET Core に移行したいが、最初の手順が Windows に留まることである顧客にとって特に便利です。 そのようなシナリオでは、Windows 専用テクノロジを利用できないことが移行における唯一のハードルとなります。アーキテクチャ上の利点がありません。
 

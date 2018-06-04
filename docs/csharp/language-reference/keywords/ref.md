@@ -7,11 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - parameters [C#], ref
 - ref keyword [C#]
-ms.openlocfilehash: 8b36f94e9476b857066c292feb9e77e9c2199b7e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a4d5719bccd240658880cc5c6e549e8c912ca1b9
+ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34696395"
 ---
 # <a name="ref-c-reference"></a>ref (C# リファレンス)
 
@@ -124,9 +125,10 @@ ref VeryLargeStruct reflocal = ref veryLargeStruct;
 ## <a name="c-language-specification"></a>C# 言語仕様  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>参照  
- [C# リファレンス](../../../csharp/language-reference/index.md)  
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
- [パラメーターの引き渡し](../../../csharp/programming-guide/classes-and-structs/passing-parameters.md)  
- [メソッド パラメーター](../../../csharp/language-reference/keywords/method-parameters.md)  
- [C# のキーワード](../../../csharp/language-reference/keywords/index.md)
+## <a name="see-also"></a>関連項目  
+ [値の型による参照セマンティクス](../../reference-semantics-with-value-types.md)  
+ [パラメーターの引き渡し](../../programming-guide/classes-and-structs/passing-parameters.md)  
+ [メソッド パラメーター](method-parameters.md)  
+ [C# リファレンス](../index.md)  
+ [C# プログラミング ガイド](../../programming-guide/index.md)  
+ [C# のキーワード](index.md)

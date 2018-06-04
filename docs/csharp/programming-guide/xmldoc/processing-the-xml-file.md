@@ -6,10 +6,10 @@ helpviewer_keywords:
 - XML [C#], processing
 ms.assetid: 60c71193-9dac-4cd3-98c5-100bd0edcc42
 ms.openlocfilehash: 659562864ad323162f15351aa960c2a54164c77d
-ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
+ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2018
+ms.lasthandoff: 06/04/2018
 ms.locfileid: "34458061"
 ---
 # <a name="processing-the-xml-file-c-programming-guide"></a>XML ファイルの処理 (C# プログラミング ガイド)

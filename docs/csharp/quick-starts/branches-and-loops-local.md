@@ -3,12 +3,12 @@ title: 分岐とループのチュートリアル - C# ローカル クイック
 description: 分岐とループに関するこのクイックスタートでは、C# のコードを記述して、この言語における、ステートメントを繰り返し実行するための条件付き分岐とループに対応している構文について学習します。
 ms.date: 10/31/2017
 ms.custom: mvc
-ms.openlocfilehash: a25ea7f266405a017f6f4576659195b2ac1afbf4
-ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
+ms.openlocfilehash: 4324e8b4704682f128e3122661fb6a0eddfe158b
+ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "34457905"
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34566138"
 ---
 # <a name="branches-and-loops"></a>分岐とループ
 
@@ -29,7 +29,7 @@ if (a + b > 10)
     Console.WriteLine("The answer is greater than 10.");
 ```
 
-コンソール ウィンドウで「`dotnet run`」を入力し、このコードを試します。 "答えは 10 を超えています" というメッセージが コンソールに出力されるはずです。
+コンソール ウィンドウで「`dotnet run`」と入力し、このコードを試します。 "答えは 10 を超えています" というメッセージが コンソールに出力されるはずです。
 
 合計が 10 未満になるように `b` の宣言を変更します。 
 
