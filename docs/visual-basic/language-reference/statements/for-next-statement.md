@@ -28,6 +28,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33605330"
 ---
 # <a name="fornext-statement-visual-basic"></a>For...Next ステートメント (Visual Basic)
 ステートメントのグループを指定した回数だけ繰り返されます。  
@@ -101,7 +102,7 @@ Next [ counter ]
   
 -   A`Try`しています.`Catch`...`Finally`ステートメントは、例外をキャッチします。 使用する場合があります`Exit For`の最後に、`Finally`ブロックします。  
   
--   これは、大規模なまたは無限も可能回数だけ実行できるループ、無限ループがあります。 このような条件を検出した場合を使用できます`Exit For`ループをエスケープするためにします。 詳細については、次を参照してください[操作を行います.。ステートメントをループ](../../../visual-basic/language-reference/statements/do-loop-statement.md)です。  
+-   これは、大規模なまたは無限も可能回数だけ実行できるループ、無限ループがあります。 このような条件を検出した場合を使用できます`Exit For`ループをエスケープするためにします。 詳細については、次を参照してください[操作を行います...ステートメントをループ](../../../visual-basic/language-reference/statements/do-loop-statement.md)です。  
   
 ## <a name="technical-implementation"></a>技術的な実装  
  ときに、`For`しています.`Next`ループが開始、Visual Basic の評価`start`、 `end`、および`step`です。 Visual Basic では、この時間とし、割り当てにのみこれらの値を評価`start`に`counter`です。 ステートメントの前にブロックが実行される Visual Basic 比較`counter`に`end`です。 場合`counter`よりも大きいは既に、`end`値 (より小さい場合、または`step`が負の値)、`For`終了をループし、これに続くステートメントにパスを制御、`Next`ステートメントです。 それ以外の場合、ステートメント ブロックが実行されます。  
