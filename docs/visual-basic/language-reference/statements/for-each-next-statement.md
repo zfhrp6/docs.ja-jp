@@ -27,6 +27,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33605382"
 ---
 # <a name="for-eachnext-statement-visual-basic"></a>For Each...Next ステートメント (Visual Basic)
 コレクションの各要素に対して、ステートメントのグループを繰り返します。  
@@ -95,7 +96,7 @@ Next [ element ]
   
 -   例外がキャッチされました、`Try`しています.`Catch`...`Finally`.使用する場合があります`Exit For`の最後に、`Finally`ブロックします。  
   
--   これは、大規模なまたは無限も可能回数だけ実行できるループ、無限ループがあります。 このような条件を検出した場合を使用できます`Exit For`ループをエスケープするためにします。 詳細については、次を参照してください[操作を行います.。ステートメントをループ](../../../visual-basic/language-reference/statements/do-loop-statement.md)です。  
+-   これは、大規模なまたは無限も可能回数だけ実行できるループ、無限ループがあります。 このような条件を検出した場合を使用できます`Exit For`ループをエスケープするためにします。 詳細については、次を参照してください[操作を行います...ステートメントをループ](../../../visual-basic/language-reference/statements/do-loop-statement.md)です。  
   
 ## <a name="iterators"></a>Iterators  
  使用する、*反復子*コレクションに対するカスタム イテレーションを実行します。 関数は、反復子または`Get`アクセサー。 使用して、`Yield`ステートメントを一度にいずれかのコレクションの各要素を返します。  
