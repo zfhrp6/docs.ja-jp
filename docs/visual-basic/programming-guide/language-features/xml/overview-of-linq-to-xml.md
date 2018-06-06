@@ -5,11 +5,12 @@ helpviewer_keywords:
 - LINQ to XML [Visual Basic], about LINQ to XML
 - LINQ [Visual Basic], LINQ to XML
 ms.assetid: 01c62a79-6d58-468e-84fb-039c05947701
-ms.openlocfilehash: 1ac9c7749cb054857715fd670f1510697c18f0e6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 65df48112834be04dc8d3b62b8b163316b06c4a6
+ms.sourcegitcommit: d8bf4976eafe3289275be3811e7cb721bfff7e1e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34753410"
 ---
 # <a name="overview-of-linq-to-xml-in-visual-basic"></a>Visual Basic における LINQ to XML の概要
 Visual Basic のサポートを提供する[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]XML リテラルと XML 軸プロパティです。 これにより、Visual Basic コードで XML を操作するための使い慣れた、便利な構文を使用することができます。 *XML リテラル*コード内で直接、XML を有効にします。 *XML 軸プロパティ*access ノードが子、子孫ノード、および XML リテラルの属性を有効にします。 詳細については、次を参照してください。 [XML リテラルの概要](../../../../visual-basic/programming-guide/language-features/xml/xml-literals-overview.md)と[Visual Basic における XML のへのアクセス](../../../../visual-basic/programming-guide/language-features/xml/accessing-xml.md)です。  
@@ -19,7 +20,7 @@ Visual Basic のサポートを提供する[!INCLUDE[sqltecxlinq](~/includes/sql
 > [!NOTE]
 >  ASP.NET ページ内の宣言型コードでは、XML リテラルおよび XML 軸プロパティがサポートされていません。 Visual Basic の XML の機能を使用するには、ASP.NET アプリケーションの分離コード ページで、コードを配置します。  
   
- ![ビデオへのリンク](../../../../visual-basic/programming-guide/language-features/xml/media/playvideo.gif "PlayVideo")関連のビデオ デモンストレーションでは、次を参照してください。 [LINQ to XML による開始操作方法?](http://go.microsoft.com/fwlink/?LinkId=143034)と[方法 Excel スプレッドシートを作成する LINQ to XML を使用して?](http://go.microsoft.com/fwlink/?LinkId=143536)です。  
+ ![ビデオへのリンク](../../../../visual-basic/programming-guide/language-features/xml/media/playvideo.gif "PlayVideo")関連のビデオ デモンストレーションでは、次を参照してください。 [LINQ to XML による開始操作方法?](/aspnet/web-forms/videos/data-access/linq-videos-from-the-vb-team/how-do-i-get-started-with-linq-to-xml)と[方法 Excel スプレッドシートを作成する LINQ to XML を使用して?](/aspnet/web-forms/videos/data-access/linq-videos-from-the-vb-team/how-do-i-create-excel-spreadsheets-using-linq-to-xml)です。  
   
 ## <a name="creating-xml"></a>XML を作成します。  
  Visual Basic で XML ツリーを作成する 2 つの方法ができます。 直接コードでは、リテラル XML を宣言することができますか、使用して、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]ツリーを作成するための Api です。 両方のプロセスには、XML ツリーの最終構造を反映するようにコードが有効にします。 たとえば、次のコード例では、XML 要素を作成します。  

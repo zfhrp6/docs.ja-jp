@@ -7,11 +7,12 @@ helpviewer_keywords:
 - Async [Visual Basic]
 - Async keyword [Visual Basic]
 ms.assetid: 1be8b4b5-9689-41b5-bd33-b906bfd53bc5
-ms.openlocfilehash: 829128ff39c0c5e4f6cb140852228a028e39e69c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 244f468d9432e132c93ae8272d51098f86ad439a
+ms.sourcegitcommit: d8bf4976eafe3289275be3811e7cb721bfff7e1e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34753345"
 ---
 # <a name="async-visual-basic"></a>Async (Visual Basic)
 `Async`修飾子には、ことを示します、メソッドまたは[ラムダ式](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)を変更することは非同期です。 このようなメソッドをいいます*非同期メソッド*です。  
@@ -55,7 +56,7 @@ End Function
  使用例を含む詳細については、「[非同期の戻り値の型](../../../visual-basic/programming-guide/concepts/async/async-return-types.md)」をご覧ください。  
   
 ## <a name="example"></a>例  
- 次の例は、非同期のイベント ハンドラー、非同期ラムダ式、および非同期メソッドを示しています。 これらの要素を使用する完全な例を参照してください。[チュートリアル: を使用して Async および Await を Web にアクセスする](../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)です。 チュートリアル コードは、[開発者コード サンプル](http://go.microsoft.com/fwlink/?LinkId=255191)のページからダウンロードできます。  
+ 次の例は、非同期のイベント ハンドラー、非同期ラムダ式、および非同期メソッドを示しています。 これらの要素を使用する完全な例を参照してください。[チュートリアル: を使用して Async および Await を Web にアクセスする](../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)です。 チュートリアル コードは、[開発者コード サンプル](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f)のページからダウンロードできます。  
   
 ```vb  
 ' An event handler must be a Sub procedure.  

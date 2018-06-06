@@ -6,7 +6,7 @@ ms.openlocfilehash: f91fffd9bfcd66833ca3233251914868bf3b84de
 ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/02/2018
+ms.lasthandoff: 06/04/2018
 ms.locfileid: "34728694"
 ---
 # <a name="cancel-async-tasks-after-a-period-of-time-visual-basic"></a>非同期タスクのキャンセル後一定の時間 (Visual Basic)
