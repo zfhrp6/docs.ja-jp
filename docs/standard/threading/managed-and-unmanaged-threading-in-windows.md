@@ -25,7 +25,7 @@ ms.lasthandoff: 05/04/2018
 > [!NOTE]
 >  オペレーティング システム **ThreadId** とマネージ スレッドの間には固定的な関係はありません。これは、アンマネージ ホストがマネージ スレッドとアンマネージ スレッドの間の関係を制御できるためです。 特に、高度なホストはファイバー API を使用して、多数のマネージ スレッドを同一オペレーティング システム スレッドに対してスケジュールしたり、マネージ スレッドを異なるオペレーティング システム スレッド間で移動したりできます。  
   
-## <a name="mapping-from-win32-threading-to-managed-threading"></a>WIn32 スレッド処理とマネージ スレッド処理の対応付け  
+## <a name="mapping-from-win32-threading-to-managed-threading"></a>Win32 スレッド処理とマネージ スレッド処理の対応付け  
  Win32 スレッド処理要素とほぼそれに対応するランタイムの対応付けを次の表に示します。 この対応付けは、同一の機能性を示すものではありません。 たとえば **TerminateThread** は **finally** 句の実行やリソースの解放は行わず、また防止することはできません。 ただし <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> はすべてのロールバック コードを実行し、すべてのリソースを解放します。また、<xref:System.Threading.Thread.ResetAbort%2A> を使用して拒否することができます。 機能について推測する前に、このドキュメントを詳しくお読みください。  
   
 |Win32|共通言語ランタイム|  
