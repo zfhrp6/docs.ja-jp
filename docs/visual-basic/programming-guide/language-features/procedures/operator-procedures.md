@@ -11,11 +11,12 @@ helpviewer_keywords:
 - operator overloading
 - operator procedures
 ms.assetid: 8c513d38-246b-4fb7-8b75-29e1364e555b
-ms.openlocfilehash: 63a16163900f1b4dc7dadef6a227f56b89f4e820
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5b4641ce8509e3111a11ed803d36194d5a301bce
+ms.sourcegitcommit: fc70fcb9c789b6a4aefcdace46f3643fd076450f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34805712"
 ---
 # <a name="operator-procedures-visual-basic"></a>演算子プロシージャ (Visual Basic)
 演算子プロシージャは、一連の標準の演算子の動作を定義する Visual Basic ステートメント (など`*`、 `<>`、または`And`) クラスまたは定義した構造にします。 これとも呼ばれます*演算子のオーバー ロード*です。  
@@ -78,7 +79,7 @@ ms.lasthandoff: 05/04/2018
   
  [!code-vb[VbVbcnProcedures#24](./codesnippet/VisualBasic/operator-procedures_2.vb)]  
   
- 使用例を含む詳細については、「[Visual Basic 2005 での演算子のオーバーロード](http://go.microsoft.com/fwlink/?LinkId=101703)」を参照してください。  
+ 使用例を含む詳細については、「[Visual Basic 2005 での演算子のオーバーロード](https://msdn.microsoft.com/library/ms379613(v=vs.80).aspx)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
  [手順](./index.md)  

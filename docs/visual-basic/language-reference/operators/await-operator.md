@@ -7,11 +7,12 @@ helpviewer_keywords:
 - Await operator [Visual Basic]
 - Await [Visual Basic]
 ms.assetid: 6b1ce283-e92b-4ba7-b081-7be7b3d37af9
-ms.openlocfilehash: b24b637969ced9b30644abda022db086dc91c1e3
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8e1462c7e0097bb2f04c6833a1bb279611b24133
+ms.sourcegitcommit: fc70fcb9c789b6a4aefcdace46f3643fd076450f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34805511"
 ---
 # <a name="await-operator-visual-basic"></a>Await 演算子 (Visual Basic)
 `Await` 演算子は、非同期のメソッドまたはラムダ式のオペランドに適用されて、待機中のタスクが完了するまでメソッドの実行を中断します。 このタスクは、進行中の作業を表します。  
@@ -42,7 +43,7 @@ End Function
 ```  
   
 > [!IMPORTANT]
->  完全な例については、「[チュートリアル: Async と Await を使用した Web へのアクセス](../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)」をご覧ください。 Microsoft Web サイトの[開発者コード サンプル](http://go.microsoft.com/fwlink/?LinkID=255191&clcid=0x409)からサンプルをダウンロードできます。 この例は AsyncWalkthrough_HttpClient プロジェクトにあります。  
+>  完全な例については、「[チュートリアル: Async と Await を使用した Web へのアクセス](../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)」をご覧ください。 Microsoft Web サイトの[開発者コード サンプル](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f)からサンプルをダウンロードできます。 この例は AsyncWalkthrough_HttpClient プロジェクトにあります。  
   
  `Await` を返すメソッド呼び出しの結果に `Task(Of TResult)` が適用されている場合、`Await` 式の型は TResult になります。 `Await` を返すメソッド呼び出しの結果に `Task` が適用されている場合、`Await` 式は値を返しません。 この違いを次の例に示します。  
   

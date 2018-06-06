@@ -13,11 +13,12 @@ helpviewer_keywords:
 - return values [Visual Basic], Operator procedures
 - operator overloading
 ms.assetid: d4b0e253-092a-4e6e-9fe2-01f562140a29
-ms.openlocfilehash: c759ebf38ab0727aeada218d288b5ac01e3ecd03
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1f5a020a710cecdfd8722a9fca0a8b329697eced
+ms.sourcegitcommit: fc70fcb9c789b6a4aefcdace46f3643fd076450f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34805400"
 ---
 # <a name="how-to-define-an-operator-visual-basic"></a>方法: 演算子を定義する (Visual Basic)
 標準の演算子の動作を定義するクラスまたは構造体を定義している場合 (など`*`、 `<>`、または`And`) 1 つまたは両方のオペランドがクラスまたは構造体の型であるときです。  
@@ -35,7 +36,7 @@ ms.lasthandoff: 05/04/2018
   
  [!code-vb[VbVbcnProcedures#26](./codesnippet/VisualBasic/how-to-define-an-operator_2.vb)]  
   
- 使用例を含む詳細については、「[Visual Basic 2005 での演算子のオーバーロード](http://go.microsoft.com/fwlink/?LinkId=101703)」を参照してください。  
+ 使用例を含む詳細については、「[Visual Basic 2005 での演算子のオーバーロード](https://msdn.microsoft.com/library/ms379613(v=vs.80).aspx)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
  [演算子プロシージャ](./operator-procedures.md)  

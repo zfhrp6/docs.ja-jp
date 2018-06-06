@@ -6,11 +6,12 @@ helpviewer_keywords:
 - .NET Framework [Visual Basic], reference
 - .NET Framework class library [Visual Basic], reference information
 ms.assetid: 8b202505-608b-4223-bbd9-2ace3d73e6cd
-ms.openlocfilehash: 969aed5e98c0017f34d57d3999292c10163b4385
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8a949fa6554316ebd2b4abd90e512f4a8496f874
+ms.sourcegitcommit: fc70fcb9c789b6a4aefcdace46f3643fd076450f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34805413"
 ---
 # <a name="net-framework-reference-information-visual-basic"></a>.NET Framework の参照情報 (Visual Basic)
 このトピックを使用する方法に関する情報へのリンクを提供、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]クラス ライブラリです。  
@@ -31,5 +32,5 @@ ms.lasthandoff: 05/04/2018
  [.NET Framework のサンプル](http://msdn.microsoft.com/library/177055f8-4a1f-43e7-aee6-995c196079b1)  
  .NET Framework テクノロジを紹介するサンプル アプリケーションへのリンクを提供します。  
   
- [.NET Framework クラス ライブラリ](http://go.microsoft.com/fwlink/?LinkID=227195)  
+ [.NET API ブラウザー](../../../api/index.md)  
  構文、コード例については、および .NET Framework 名前空間内の各クラスに関連する情報を提供します。
