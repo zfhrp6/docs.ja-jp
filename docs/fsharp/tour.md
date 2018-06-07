@@ -2,11 +2,12 @@
 title: F# のツアー
 description: F# のプログラミング言語のコード サンプルを使ってこのツアーでの主な機能のいくつかを確認します。
 ms.date: 02/28/2018
-ms.openlocfilehash: 2ce251b90d5c202996e0b1673e8f7f378a38af5f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 63c38d59376a148c439482fcf47488fc72b7b8aa
+ms.sourcegitcommit: d8bf4976eafe3289275be3811e7cb721bfff7e1e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34753488"
 ---
 # <a name="tour-of-f"></a>F# のツアー #
 
@@ -54,11 +55,11 @@ F# 4.1、時点で作成することも`struct`組。  これらと相互運用�
 
 ## <a name="pipelines-and-composition"></a>パイプラインおよびコンポジション
 
-パイプ演算子 (`|>`、 `<|`、 `||>`、 `<||`、 `|||>`、 `<|||`) と合成演算子 (`>>`と`<<`) の使用頻度が f# でのデータを処理するときにします。  これらの演算子は、柔軟な方法で「パイプライン」関数を確立するために使用できる関数です。  次の例は、どのようにこれらの演算子のパイプラインを構築する単純な機能の利点がかかる場合があります手順について説明します。
+パイプ演算子のように`|>`f# でのデータを処理するときに広範囲に使用します。 これらの演算子は、柔軟な方法で「パイプライン」関数を確立するために使用できる関数です。 次の例は、どのようにこれらの演算子のパイプラインを構築する単純な機能を利用を行う手順について説明します。
 
-[!code-fsharp[Pipelines](../../samples/snippets/fsharp/tour.fs#L227-L300)]
+[!code-fsharp[Pipelines](../../samples/snippets/fsharp/tour.fs#L227-L282)]
 
-行われた上記のサンプルの f#、リストの処理機能、ファースト クラスの関数を含む多数の機能の使用と[部分適用](language-reference/functions/index.md#partial-application-of-arguments)です。  これらの概念のそれぞれの深い理解がやや高度なことができますになる、ことがありますクリア関数を使用して、パイプラインを構築するときに、データを処理する方法に簡単にします。
+行われた前のサンプルの f#、リストの処理機能、ファースト クラスの関数を含む多数の機能の使用と[部分適用](language-reference/functions/index.md#partial-application-of-arguments)です。 これらの概念のそれぞれの深い理解がやや高度なことができますになる、ことがありますクリア関数を使用して、パイプラインを構築するときに、データを処理する方法に簡単にします。
 
 ## <a name="lists-arrays-and-sequences"></a>リスト、配列、およびシーケンス
 
