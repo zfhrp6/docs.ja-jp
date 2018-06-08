@@ -7,18 +7,19 @@ helpviewer_keywords:
 - stored procedures [LINQ to SQL]
 - queries [LINQ in Visual Basic], how-to topics
 ms.assetid: 6436d384-d1e0-40aa-8afd-451007477260
-ms.openlocfilehash: 47ff6b354ef10de99cb6ad821e8b67b3f4205022
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8aad85ce3369f84e82100072bccf389b03c38221
+ms.sourcegitcommit: d955cb4c681d68cf301d410925d83f25172ece86
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34826920"
 ---
 # <a name="how-to-call-a-stored-procedure-by-using-linq-visual-basic"></a>方法 : LINQ を使用してストアド プロシージャを呼び出す (Visual Basic)
 統合言語クエリ (LINQ) しやすいように格納されているオブジェクトのデータベースの手順を含む、データベースの情報にアクセスします。  
   
  次の例では、SQL Server データベースにストアド プロシージャを呼び出すアプリケーションを作成する方法を示します。 サンプルは、データベースの 2 つの異なるストアド プロシージャを呼び出す方法を示します。 各手順では、クエリの結果を返します。 1 つのプロシージャでは、入力パラメーターは、および他のプロシージャには、パラメーターは取りません。  
   
- このトピックの例では、Northwind サンプル データベースを使用します。 開発用コンピューター上に Northwind サンプル データベースがないことからダウンロードする、 [Microsoft ダウンロード センター](http://go.microsoft.com/fwlink/?LinkID=98088) Web サイトです。 手順については、次を参照してください。[サンプル データベースのダウンロード](../../../../framework/data/adonet/sql/linq/downloading-sample-databases.md)です。  
+ このトピックの例では、Northwind サンプル データベースを使用します。 開発用コンピューターにこのデータベースがいない場合は、Microsoft ダウンロード センターからダウンロードできます。 手順については、次を参照してください。[サンプル データベースのダウンロード](../../../../framework/data/adonet/sql/linq/downloading-sample-databases.md)です。  
   
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
