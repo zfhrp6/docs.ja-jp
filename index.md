@@ -5,11 +5,12 @@ hide_bc: true
 title: .NET ドキュメント
 description: .NET で、C#、Visual Basic、および F# を使用して任意のプラットフォームでさまざまなアプリケーションを作成する方法を説明します。 API リファレンス、サンプル コード、チュートリアルなどを参照します。
 ms.custom: updateeachrelease
-ms.openlocfilehash: 3a2501d4eb0e40930bb119fb27f9cb630bc2a884
-ms.sourcegitcommit: 88f251b08bf0718ce119f3d7302f514b74895038
+ms.openlocfilehash: 25f01910ba6f004cafbe8b981e4a986791044ded
+ms.sourcegitcommit: d955cb4c681d68cf301d410925d83f25172ece86
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34826984"
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -392,13 +393,13 @@ ms.lasthandoff: 05/10/2018
                                         <div class="card">
                                             <div class="cardImageOuter">
                                                 <div class="cardImage bgdAccent1">
-                                                    <img src="/dotnet/images/hub/net-docs-cloud-2.svg" alt="" />
+                                                    <img src="/dotnet/images/hub/net-docs-cloud-4.svg" alt="" />
                                                 </div>
                                             </div>
                                             <div class="cardText">
-                                                <a href="/azure/cloud-services/cloud-services-dotnet-get-started">
-                                                    <h3>Azure Cloud Services と ASP.NET</h3>
-                                                    <p>Azure でのクラウド サービスの構成、監視、およびスケールについて説明します。</p>
+                                                <a href="/azure/storage/">
+                                                    <h3>Azure ストレージ</h3>
+                                                    <p>Azure Storage と、Azure BLOB、テーブル、キュー、ファイルを使用したアプリケーションの作成方法を説明します。</p>
                                                 </a>
                                             </div>
                                         </div>
@@ -418,25 +419,6 @@ ms.lasthandoff: 05/10/2018
                                                 <a href="/dotnet/fsharp/using-fsharp-on-azure">
                                                     <h3>Azure での F# の使用</h3>
                                                     <p>Azure Storage、Cloud Services、Azure Functions などの F# を使用するさまざまな Azure サービスについて説明します。</p>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="cardSize">
-                                    <div class="cardPadding">
-                                        <div class="card">
-                                            <div class="cardImageOuter">
-                                                <div class="cardImage bgdAccent1">
-                                                    <img src="/dotnet/images/hub/net-docs-cloud-4.svg" alt="" />
-                                                </div>
-                                            </div>
-                                            <div class="cardText">
-                                                <a href="/azure/storage/">
-                                                    <h3>Azure ストレージ</h3>
-                                                    <p>Azure Storage と、Azure BLOB、テーブル、キュー、ファイルを使用したアプリケーションの作成方法を説明します。</p>
                                                 </a>
                                             </div>
                                         </div>
