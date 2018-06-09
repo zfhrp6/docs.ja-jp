@@ -2,11 +2,12 @@
 title: F# コードのガイドラインを書式設定
 description: F# コードを書式設定するためのガイドラインを説明します。
 ms.date: 05/14/2018
-ms.openlocfilehash: 1433b6891a6a0ddcdc082c141365ae54fa40c27b
-ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
+ms.openlocfilehash: 6c8e4059fd4bf1e7450118a6df02609217c4f4db
+ms.sourcegitcommit: 2ad7d06f4f469b5d8a5280ac0e0289a81867fc8e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/17/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35231510"
 ---
 # <a name="f-code-formatting-guidelines"></a>F# コードのガイドラインを書式設定
 
@@ -29,6 +30,177 @@ F# で既定では、重要なホワイト スペースを使用します。 次
 **インデントあたり 4 つのスペースはお勧めします。**
 
 ただし、プログラムのインデントは主観的な問題。 バリエーションは、[ok] が最初の規則に従う必要がありますは*インデントの整合性*です。 一般的に受け入れられるインデントのスタイルを選択し、コードベース全体にわたって体系的に使用します。
+
+## <a name="formatting-blank-lines"></a>空白行を書式設定
+
+* 独立した最上位関数やクラスの定義を 2 つの空白行でします。
+* クラスの内部でメソッドの定義は、単一の空白行で区切られます。
+* 余分な空白行は、関連する関数のグループを区切るための (慎重) に使用できます。 空白行は、一連の関連する困らせる (たとえば、一連のダミー実装) の間で省略可能です。
+* 論理的なセクションを示すために、適度関数では、空白行を使用します。
+
+## <a name="formatting-comments"></a>コメントの書式設定
+
+通常、ML スタイル ブロックのコメントを複数のダブル スラッシュ コメントを選びます。
+
+```fsharp
+// Prefer this style of comments when you want
+// to express written ideas on multiple lines.
+
+(*
+    ML-style comments are fine, but not a .NET-ism.
+    They are useful when needing to modify multi-line comments, though.
+*)
+```
+
+インライン コメントは、最初の文字を大文字にする必要があります。
+
+```fsharp
+let f x = x + 1 // Increment by one.
+```
+
+## <a name="naming-conventions"></a>名前付け規則
+
+### <a name="use-camelcase-for-class-bound-expression-bound-and-pattern-bound-values-and-functions"></a>クラス バインド、式バインドおよびバインド パターンの値と関数のキャメル ケースを使用します。
+
+すべての名前をキャメル ケースを使用する許容される f# スタイルには、ローカル変数として、またはにパターン マッチと関数定義がバインドされているし、共通です。
+
+```fsharp
+// OK
+let addIAndJ i j = i + j
+
+// Bad
+let addIAndJ I J = I+J
+
+// Bad
+let AddIAndJ i j = i + j
+```
+
+クラスのローカルにバインドされた関数は、キャメル ケースを使用してもする必要があります。
+
+```fsharp
+type MyClass() =
+
+    let doSomething () =
+
+    let firstResult = ...
+
+    let secondResult = ...
+
+    member x.Result = doSomething()
+```
+
+### <a name="use-camelcase-for-module-bound-public-functions"></a>モジュール バインド パブリック関数のキャメル ケースを使用します。
+
+モジュール バインド関数が、パブリック API の一部では、キャメル ケースを使用する必要があります。
+
+```fsharp
+module MyAPI =
+    let publicFunctionOne param1 param2 param2 = ...
+
+    let publicFunctionTwo param1 param2 param3 = ...
+```
+
+### <a name="use-camelcase-for-internal-and-private-module-bound-values-and-functions"></a>内部およびプライベートのモジュール バインド値や関数のキャメル ケースを使用します。
+
+キャメル ケースを使用して、プライベート モジュール バインド値を次のようにします。
+
+* スクリプトでアドホック関数
+
+* モジュールまたは型の内部実装を構成する値
+
+```fsharp
+let emailMyBossTheLatestResults =
+    ...
+```
+
+### <a name="use-camelcase-for-parameters"></a>パラメーターのキャメル ケースを使用します。
+
+すべてのパラメーターは、.NET の名前付け規則に従ってキャメル ケースを使用してください。
+
+```fsharp
+module MyModule =
+    let myFunction paramOne paramTwo = ...
+
+type MyClass() =
+    member this.MyMethod(paramOne, paramTwo) = ...
+```
+
+### <a name="use-pascalcase-for-modules"></a>PascalCase モジュールを使用します。
+
+(最上位レベル、内部、プライベート、入れ子になった) のすべてのモジュールは PascalCase を使用する必要があります。
+
+```fsharp
+module MyTopLevelModule
+
+module Helpers =
+    module private SuperHelpers =
+        ...
+
+    ...
+```
+
+### <a name="use-pascalcase-for-type-declarations-members-and-labels"></a>型の宣言、メンバー、およびラベルの PascalCase を使用します。
+
+クラス、インターフェイス、構造体、列挙体、デリゲート、レコード、および判別共用体はすべての名前は PascalCase です。 型およびレコード、判別共用体のラベル内のメンバーは、PascalCase を使用してもする必要があります。
+
+```fsharp
+type IMyInterface =
+    abstract Something: int
+
+type MyClass() =
+    member this.MyMethod(x, y) = x + y
+
+type MyRecord = { IntVal: int; StringVal: string }
+
+type SchoolPerson =
+    | Professor
+    | Student
+    | Advisor
+    | Administrator
+```
+
+### <a name="use-pascalcase-for-constructs-intrinsic-to-net"></a>.NET の組み込みのコンス トラクターに対して PascalCase を使用します。
+
+名前空間、例外、イベント、およびプロジェクト/`.dll`名では、PascalCase も使用してください。 だけでなくこれにより、他の .NET 言語から消費にコンシューマーをより自然な感覚も発生する可能性が .NET の名前付け規則と一致します。
+
+### <a name="avoid-underscores-in-names"></a>名前にアンダー スコアを回避します。
+
+従来、一部の f# ライブラリは、名前にアンダー スコアを使用するがします。 ただし、これが不要になった広く受け入れられて、.NET の名前付け規則と衝突するために一部です。 つまり、f# プログラマによってアンダー スコアを使用頻度の高い、および使用して部分的履歴上の理由から、許容範囲は、点が重要です。 ただし、スタイルが多くの場合、それを使用するかどうかを選択する他のユーザーによって我慢しなければならないことに注意してください。
+
+いくつかの例外には、アンダー スコアが非常に一般的であるネイティブなコンポーネントとの相互運用が含まれます。
+
+### <a name="use-standard-f-operators"></a>標準の f# 演算子を使用します。
+
+次の演算子は、f# の標準ライブラリで定義され、対応を定義する代わりに使用する必要があります。 読みやすく理解し慣用コードを作成する傾向がありますが、これらの演算子を使用するをお勧めします。 開発者向けの背景 OCaml またはその他の関数型プログラミング言語では、さまざまな表現方法に慣れて可能性があります。 次の一覧は、推奨の f# 演算子をまとめたものです。
+
+```fsharp
+x |> f // Forward pipeline
+f >> g // Forward composition
+x |> ignore // Discard away a value
+x + y // Overloaded addition (including string concatenation)
+x - y // Overloaded subtraction
+x * y // Overloaded multiplication
+x / y // Overloaded division
+x % y // Overloaded modulus
+x && y // Lazy/short-cut "and"
+x || y // Lazy/short-cut "or"
+x <<< y // Bitwise left shift
+x >>> y // Bitwise right shift
+x ||| y // Bitwise or, also for working with “flags” enumeration
+x &&& y // Bitwise and, also for working with “flags” enumeration
+x ^^^ y // Bitwise xor, also for working with “flags” enumeration
+```
+
+### <a name="use-prefix-syntax-for-generics-foot-in-preference-to-postfix-syntax-t-foo"></a>ジェネリックのプレフィックスの構文を使用します (`Foo<T>`) 後置構文方が優先的 (`T Foo`)
+
+F# でジェネリック型の名前付けの両方、後置 ML スタイルを継承 (など、 `int list`) プレフィックス .NET スタイルだけでなく (たとえば、 `list<int>`)。 4 つの特定の型を除く、.NET のスタイルを使用するには。
+
+1. F# では、一覧の後置形式を使用して:`int list`なく`list<int>`です。
+2. F# オプションは、後置形式を使用して:`int option`なく`option<int>`です。
+3. F# の配列、構文の名前を使用`int[]`なく`int array`または`array<int>`です。
+4. 参照セルを使用して`int ref`なく`ref<int>`または`Ref<int>`です。
+
+他のすべての種類では、前置形式を使用します。
 
 ## <a name="formatting-discriminated-union-declarations"></a>共用体の宣言を判別する書式設定
 
@@ -198,7 +370,7 @@ else e4
 
 ### <a name="pattern-matching-constructs"></a>パターン マッチング
 
-使用して、`|`インデントなしで、一致した文字列の各句。 式が短い場合は、1 行を使用することができます。
+使用して、`|`インデントなしで、一致した文字列の各句。 式が短い場合は、各部分式が単純な場合は 1 行の使用を検討します。
 
 ```fsharp
 // OK
@@ -212,9 +384,6 @@ match l with
     | { him = x; her = "Posh" } :: tail -> _
     | _ :: tail -> findDavid tail
     | [] -> failwith "Couldn't find David"
-
-// OK
-match l with [] -> false | _ :: _ -> true
 ```
 
 パターン マッチングの矢印の右の式が大きすぎる場合、次の行のインデントを設定した 1 つのステップに移動、 `match` /`|`です。
@@ -291,20 +460,23 @@ let printVolumes x =
         (convertVolumeImperialPint x)
 ```
 
-次の行、または、ぶら下がりと匿名関数の引数を指定できます`fun`引数行にします。
+同じガイドラインは、関数の引数としてラムダ式の適用されます。 ラムダ式の本体の本文には、別の行が持つ、1 つのスコープでインデント
 
 ```fsharp
-// OK
 let printListWithOffset a list1 =
-    List.iter (fun elem ->
-        printfn "%d" (a + elem)) list1
+    List.iter
+        (fun elem -> printfn "%d" (a + elem))
+        list1
 
-// OK, but prefer previous
+// OK if lambda body is long enough
 let printListWithOffset a list1 =
-    List.iter (
-        fun elem ->
-            printfn "%d" (a + elem)) list1
+    List.iter
+        (fun elem ->
+            printfn "%d" (a + elem))
+        list1
 ```
+
+ただし、ラムダ式の本体が 1 つ以上の行の場合は、別の関数にファクタリング アウトを検討してくださいではなく、単一の引数として関数に適用される複数行コンス トラクターがあります。
 
 ### <a name="formatting-infix-operators"></a>挿入演算子を書式設定
 
@@ -402,162 +574,3 @@ let makeStreamReader x = new System.IO.StreamReader(path=x)
 // Not OK
 let makeStreamReader x = new System.IO.StreamReader(path = x)
 ```
-
-## <a name="formatting-blank-lines"></a>空白行を書式設定
-
-* 独立した最上位関数やクラスの定義を 2 つの空白行でします。
-* クラスの内部でメソッドの定義は、単一の空白行で区切られます。
-* 余分な空白行は、関連する関数のグループを区切るための (慎重) に使用できます。 空白行は、一連の関連する困らせる (たとえば、一連のダミー実装) の間で省略可能です。
-* 論理的なセクションを示すために、適度関数では、空白行を使用します。
-
-## <a name="formatting-comments"></a>コメントの書式設定
-
-通常、ML スタイル ブロックのコメントを複数のダブル スラッシュ コメントを選びます。
-
-```fsharp
-// Prefer this style of comments when you want
-// to express written ideas on multiple lines.
-
-(*
-    Generally avoid these kinds of comments.
-*)
-```
-
-インライン コメントは、最初の文字を大文字にする必要があります。
-
-```fsharp
-let f x = x + 1 // Increment by one.
-```
-
-## <a name="naming-conventions"></a>名前付け規則
-
-### <a name="use-camelcase-for-class-bound-expression-bound-and-pattern-bound-values-and-functions"></a>クラス バインド、式バインドおよびバインド パターンの値と関数のキャメル ケースを使用します。
-
-すべての名前をキャメル ケースを使用する許容される f# スタイルには、ローカル変数として、またはにパターン マッチと関数定義がバインドされているし、共通です。
-
-```fsharp
-// OK
-let addIAndJ i j = i + j
-
-// Bad
-let addIAndJ I J = I+J
-
-// Bad
-let AddIAndJ i j = i + j
-```
-
-クラスのローカルにバインドされた関数は、キャメル ケースを使用してもする必要があります。
-
-```fsharp
-type MyClass() =
-
-    let doSomething () =
-
-    let firstResult = ...
-
-    let secondResult = ...
-
-    member x.Result = doSomething()
-```
-
-### <a name="use-camelcase-for-internal-and-private-module-bound-values-and-functions"></a>内部およびプライベートのモジュール バインド値や関数のキャメル ケースを使用します。
-
-キャメル ケースを使用して、プライベート モジュール バインド値を次のようにします。
-
-* スクリプトでアドホック関数
-
-* モジュールまたは型の内部実装を構成する値
-
-```fsharp
-let emailMyBossTheLatestResults =
-    ...
-```
-
-### <a name="use-camelcase-for-parameters"></a>パラメーターのキャメル ケースを使用します。
-
-すべてのパラメーターは、.NET の名前付け規則に従ってキャメル ケースを使用してください。
-
-```fsharp
-module MyModule =
-    let myFunction paramOne paramTwo = ...
-
-type MyClass() =
-    member this.MyMethod(paramOne, paramTwo) = ...
-```
-
-### <a name="use-pascalcase-for-modules"></a>PascalCase モジュールを使用します。
-
-(最上位レベル、内部、プライベート、入れ子になった) のすべてのモジュールは PascalCase を使用する必要があります。
-
-```fsharp
-module MyTopLevelModule
-
-module Helpers =
-    module private SuperHelpers =
-        ...
-
-    ...
-```
-
-### <a name="use-pascalcase-for-type-declarations-members-and-labels"></a>型の宣言、メンバー、およびラベルの PascalCase を使用します。
-
-クラス、インターフェイス、構造体、列挙体、デリゲート、レコード、および判別共用体はすべての名前は PascalCase です。 型およびレコード、判別共用体のラベル内のメンバーは、PascalCase を使用してもする必要があります。
-
-```fsharp
-type IMyInterface =
-    abstract Something: int
-
-type MyClass() =
-    member this.MyMethod(x, y) = x + y
-
-type MyRecord = { IntVal: int; StringVal: string }
-
-type SchoolPerson =
-    | Professor
-    | Student
-    | Advisor
-    | Administrator
-```
-
-### <a name="use-pascalcase-for-constructs-intrinsic-to-net"></a>.NET の組み込みのコンス トラクターに対して PascalCase を使用します。
-
-名前空間、例外、イベント、およびプロジェクト/`.dll`名では、PascalCase も使用してください。 だけでなくこれにより、他の .NET 言語から消費にコンシューマーをより自然な感覚も発生する可能性が .NET の名前付け規則と一致します。
-
-### <a name="avoid-underscores-in-names"></a>名前にアンダー スコアを回避します。
-
-従来、一部の f# ライブラリは、名前にアンダー スコアを使用するがします。 ただし、これが不要になった広く受け入れられて、.NET の名前付け規則と衝突するために一部です。 つまり、f# プログラマによってアンダー スコアを使用頻度の高い、および使用して部分的履歴上の理由から、許容範囲は、点が重要です。 ただし、スタイルが多くの場合、それを使用するかどうかを選択する他のユーザーによって我慢しなければならないことに注意してください。
-
-いくつかの例外には、アンダー スコアが非常に一般的であるネイティブなコンポーネントとの相互運用が含まれます。
-
-### <a name="use-standard-f-operators"></a>標準の f# 演算子を使用します。
-
-次の演算子は、f# の標準ライブラリで定義され、対応を定義する代わりに使用する必要があります。 読みやすく理解し慣用コードを作成する傾向がありますが、これらの演算子を使用するをお勧めします。 開発者向けの背景 OCaml またはその他の関数型プログラミング言語では、さまざまな表現方法に慣れて可能性があります。 次の一覧は、推奨の f# 演算子をまとめたものです。
-
-```fsharp
-x |> f // Forward pipeline
-f >> g // Forward composition
-x |> ignore // Throwing away a value
-x + y // Overloaded addition (including string concatenation)
-x - y // Overloaded subtraction
-x * y // Overloaded multiplication
-x / y // Overloaded division
-x % y // Overloaded modulus
-x && y // Lazy/short-cut "and"
-x || y // Lazy/short-cut "or"
-x <<< y // Bitwise left shift
-x >>> y // Bitwise right shift
-x ||| y // Bitwise or, also for working with “flags” enumeration
-x &&& y // Bitwise and, also for working with “flags” enumeration
-x ^^^ y // Bitwise xor, also for working with “flags” enumeration
-```
-
-### <a name="use-prefix-syntax-for-generics-foot-in-preference-to-postfix-syntax-t-foo"></a>ジェネリックのプレフィックスの構文を使用します (`Foo<T>`) 後置構文方が優先的 (`T Foo`)
-
-F# でジェネリック型の名前付けの両方、後置 ML スタイルを継承 (など、 `int list`) プレフィックス .NET スタイルだけでなく (たとえば、 `list<int>`)。 4 つの特定の型を除く、.NET のスタイルを使用するには。
-
-1. F# では、一覧の後置形式を使用して:`int list`なく`list<int>`です。
-2. F# オプションは、後置形式を使用して:`int option`なく`option<int>`です。
-3. F# の配列、構文の名前を使用`int[]`なく`int array`または`array<int>`です。
-4. 参照セルを使用して`int ref`なく`ref<int>`または`Ref<int>`です。
-
-他のすべての種類では、前置形式を使用します。
