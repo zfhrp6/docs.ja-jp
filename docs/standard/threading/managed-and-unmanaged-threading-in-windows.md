@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33591691"
 ---
 # <a name="managed-and-unmanaged-threading-in-windows"></a>Windows でのマネージ スレッド処理とアンマネージ スレッド処理
 共通言語ランタイムにより作成されたスレッド、マネージ環境に入ってコードを実行するランタイム外部で作成されたスレッドなど、すべてのスレッドの管理は、 <xref:System.Threading.Thread> クラスを使用して行われます。 ランタイムは、プロセス内のスレッドのうち、マネージ実行環境内でコードを実行したすべてのスレッドを監視します。 その他のスレッドは追跡しません。 ランタイムがマネージ オブジェクトを COM オブジェクトとしてアンマネージ環境に公開するため、スレッドは COM 相互運用を使用してマネージ実行環境に入ることができます。また、COM [DllGetClassObject](https://msdn.microsoft.com/library/ms680760.aspx) 関数やプラットフォーム呼び出しを介してマネージ実行環境に入ることもできます。  
