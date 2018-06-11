@@ -3,11 +3,12 @@ title: デリゲートの一般的なパターン
 description: コンポーネント間の密接な結合を避けるための、コードでのデリゲートの一般的な使用パターンについて説明します。
 ms.date: 06/20/2016
 ms.assetid: 0ff8fdfd-6a11-4327-b061-0f2526f35b43
-ms.openlocfilehash: b9762841656aa362589d01ed011407aeedfe4a20
-ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
+ms.openlocfilehash: 20d55a1aba345b962c506bbc3f82248a817923ea
+ms.sourcegitcommit: d955cb4c681d68cf301d410925d83f25172ece86
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/17/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34827021"
 ---
 # <a name="common-patterns-for-delegates"></a>デリゲートの一般的なパターン
 
@@ -53,32 +54,15 @@ public static IEnumerable<TSource> Where<TSource> (this IEnumerable<TSource> sou
 
 最初は簡単な機能を実装してみましょう。新しいメッセージを受け取ったら、アタッチされたデリゲートを使ってそれらを出力するものです。 まず、コンソールにメッセージを出力するデリゲートを 1 つ作成します。
 
-```csharp
-public static class Logger
-{
-    public static Action<string> WriteMessage;
-    
-    public static void LogMessage(string msg)
-    {
-        WriteMessage(msg);
-    }
-}
-```
+[!code-csharp[LoggerImplementation](../../samples/csharp/delegates-and-events/Logger.cs#FirstImplementation "A first Logger implementation.")]
 
 上の静的クラスは、ごく簡単なコードですが、きちんと機能します。 メッセージをコンソールに出力するメソッドの機能を 1 つ実装する必要があります。 
 
-```csharp
-public static void LogToConsole(string message)
-{
-    Console.Error.WriteLine(message);
-}
-```
+[!code-csharp[LogToConsole](../../samples/csharp/delegates-and-events/Program.cs#LogToConsole "A Console logger.")]
 
 最後にそのメソッドを、Logger に宣言されている WriteMessage デリゲートにアタッチして接続する必要があります。
 
-```csharp
-Logger.WriteMessage += LogToConsole;
-```
+[!code-csharp[ConnectDelegate](../../samples/csharp/delegates-and-events/Program.cs#ConnectDelegate "Connect to the delegate")]
 
 ## <a name="practices"></a>実践
 
@@ -94,49 +78,13 @@ Logger.WriteMessage += LogToConsole;
 
 まず、より構造化されたメッセージを作成するために、いくつかの引数を `LogMessage()` メソッドに追加します。
 
-```csharp
-// Logger implementation two
-public enum Severity
-{
-    Verbose,
-    Trace,
-    Information,
-    Warning,
-    Error,
-    Critical
-}
-
-public static class Logger
-{
-    public static Action<string> WriteMessage;
-    
-    public static void LogMessage(Severity s, string component, string msg)
-    {
-        var outputMsg = $"{DateTime.Now}\t{s}\t{component}\t{msg}";
-        WriteMessage(outputMsg);
-    }
-}
-```
+[!code-csharp[Severity](../../samples/csharp/delegates-and-events/Logger.cs#Severity "Define severities")]
+[!code-csharp[NextLogger](../../samples/csharp/delegates-and-events/Logger.cs#LoggerTwo "Refine the Logger")]
 
 次に、その `Severity` 引数を利用して、ログ出力に送るメッセージをフィルター選択します。 
 
-```csharp
-public static class Logger
-{
-    public static Action<string> WriteMessage;
-    
-    public static Severity LogLevel {get;set;} = Severity.Warning;
-    
-    public static void LogMessage(Severity s, string component, string msg)
-    {
-        if (s < LogLevel)
-            return;
-            
-        var outputMsg = $"{DateTime.Now}\t{s}\t{component}\t{msg}";
-        WriteMessage(outputMsg);
-    }
-}
-```
+[!code-csharp[FinalLogger](../../samples/csharp/delegates-and-events/Logger.cs#LoggerFinal "Finish the Logger")]
+
 ## <a name="practices"></a>実践
 
 ログのインフラストラクチャに新しい機能を追加しました。 このロガー コンポーネントは、出力メカニズムとの結び付きがきわめて弱いので、このように新しい機能を追加しても、ロガーのデリゲートを実装する側のコードには一切影響が生じません。
@@ -149,41 +97,12 @@ public static class Logger
 
 このファイル ベースのロガーを次に示します。
 
-```csharp
-public class FileLogger
-{
-    private readonly string logPath;
-    public FileLogger(string path)
-    {
-        logPath = path;
-        Logger.WriteMessage += LogMessage;
-    }
-    
-    public void DetachLog() => Logger.WriteMessage -= LogMessage;
+[!code-csharp[FileLogger](../../samples/csharp/delegates-and-events/FileLogger.cs#FileLogger "Log to files")]
 
-    // make sure this can't throw.
-    private void LogMessage(string msg)
-    {
-        try {
-            using (var log = File.AppendText(logPath))
-            {
-                log.WriteLine(msg);
-                log.Flush();
-            }
-        } catch (Exception e)
-        {
-            // Hmm. Not sure what to do.
-            // Logging is failing...
-        }
-    }
-}
-```
 
 このクラスを作成した後、インスタンス化すれば、その LogMessage メソッドを Logger コンポーネントにアタッチすることができます。
 
-```csharp
-var file = new FileLogger("log.txt");
-```
+[!code-csharp[FileLogger](../../samples/csharp/delegates-and-events/Program.cs#FileLogger "Log to files")]
 
 この 2 つは、どちらか一方しか使えないというわけではありません。 両方のログ メソッドをアタッチすれば、コンソールとファイルにメッセージを生成することができます。
 

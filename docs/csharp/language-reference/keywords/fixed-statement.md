@@ -6,11 +6,12 @@ f1_keywords:
 - fixed
 helpviewer_keywords:
 - fixed keyword [C#]
-ms.openlocfilehash: e26e7e7f15dd48cf029d5f67bf5ef0de3e19b7bb
-ms.sourcegitcommit: 895c7602386a6dfe7ca4facce3d965b27e5c6e87
+ms.openlocfilehash: 28c8e9bd078e07a185f541214aa5b5ff79018ff5
+ms.sourcegitcommit: d955cb4c681d68cf301d410925d83f25172ece86
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/19/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34826995"
 ---
 # <a name="fixed-statement-c-reference"></a>fixed ステートメント (C# リファレンス)
 
@@ -24,11 +25,11 @@ ms.lasthandoff: 05/19/2018
 
 [!code-csharp[Initializing fixed size buffers](../../../../samples/snippets/csharp/keywords/FixedKeywordExamples.cs#2)]
 
-C# 7.3 以降では、`fixed` ステートメントは、配列、文字列、固定サイズ バッファー、非マネージ型変数以外の型でも動作します。 `DangerousGetPinnableReference` という名前のメソッドを実装する型はピン留めできます。 `DangerousGetPinnableReference` は `ref` 変数を非マネージ型変数に返す必要があります。 詳しくは、「[ポインター型](../../programming-guide/unsafe-code-pointers/pointer-types.md)」を参照してください。 .NET Core 2.0 で導入された .NET 型 <xref:System.Span%601?displayProperty=nameWithType> と <xref:System.ReadOnlySpan%601?displayProperty=nameWithType> はこのパターンを活用し、ピン留めできます。 以下の例を参照してください。
+C# 7.3 以降では、`fixed` ステートメントは、配列、文字列、固定サイズ バッファー、非マネージ型変数以外の型でも動作します。 `GetPinnableReference` という名前のメソッドを実装する型はピン留めできます。 `GetPinnableReference` は `ref` 変数を非マネージ型変数に返す必要があります。 詳しくは、「[ポインター型](../../programming-guide/unsafe-code-pointers/pointer-types.md)」を参照してください。 .NET Core 2.0 で導入された .NET 型 <xref:System.Span%601?displayProperty=nameWithType> と <xref:System.ReadOnlySpan%601?displayProperty=nameWithType> はこのパターンを活用し、ピン留めできます。 以下の例を参照してください。
 
 [!code-csharp[Accessing fixed memory](../../../../samples/snippets/csharp/keywords/FixedKeywordExamples.cs#FixedSpan)]
 
-このパターンに参加する必要のある型を作成する場合は、パターンの実装の例について、「<xref:System.Span%601.DangerousGetPinnableReference?displayProperty=nameWithType>」を参照してください。
+このパターンに参加する必要のある型を作成する場合は、パターンの実装の例について、「<xref:System.Span%601.GetPinnableReference?displayProperty=nameWithType>」を参照してください。
 
 複数のポインターは、すべて同じ型の場合、1 つのステートメントで初期化できます。
 

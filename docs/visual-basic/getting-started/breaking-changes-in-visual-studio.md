@@ -4,11 +4,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - breaking changes [Visual Basic]
 ms.assetid: 708fb176-35eb-4cbc-a6e7-a04c6e3bdaff
-ms.openlocfilehash: a31e7e69eca369c1fc354fd3a69eaedc12171398
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e7f6791c56019508406448267237cf0d2d261205
+ms.sourcegitcommit: d8bf4976eafe3289275be3811e7cb721bfff7e1e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34753326"
 ---
 # <a name="visual-basic-breaking-changes-in-visual-studio"></a>Visual Studio における Visual Basic の互換性に影響する変更点
 Visual Studio 2017 の最新のドキュメントの詳細については、[Visual Studio 2017 ドキュメント](http://docs.microsoft.com/visualstudio/)をご参照ください。
@@ -21,4 +22,4 @@ Visual Studio 2015 の Visual Basic の変更によって、Visual Studio 2013 �
  [ラムダ式](../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)  
  [For Each...Next ステートメント](../../visual-basic/language-reference/statements/for-each-next-statement.md)  
  [はじめに](../../visual-basic/getting-started/index.md)  
- [互換性に影響のない言語の修正によって互換性の問題が起こる場合](http://go.microsoft.com/fwlink/?LinkId=259542)
+ [互換性に影響のない言語の修正によって互換性の問題が起こる場合](https://blogs.msdn.microsoft.com/lucian/2012/07/19/when-is-a-non-breaking-language-fix-breaking)
