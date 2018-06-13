@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32762323"
 ---
 # <a name="query-results"></a><span data-ttu-id="f2773-102">クエリ結果</span><span class="sxs-lookup"><span data-stu-id="f2773-102">Query Results</span></span>
 <span data-ttu-id="f2773-103">[!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] クエリをコマンド ツリーに変換して実行すると、通常、次のいずれかの形でクエリの結果が返されます。</span><span class="sxs-lookup"><span data-stu-id="f2773-103">After a [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] query is converted to command trees and executed, the query results are usually returned as one of the following:</span></span>  

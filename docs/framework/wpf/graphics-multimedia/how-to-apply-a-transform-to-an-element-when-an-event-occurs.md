@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33558978"
 ---
 # <a name="how-to-apply-a-transform-to-an-element-when-an-event-occurs"></a><span data-ttu-id="ab2bc-102">方法 : イベントの発生時に要素に変換を適用する</span><span class="sxs-lookup"><span data-stu-id="ab2bc-102">How to: Apply a Transform to an Element When an Event Occurs</span></span>
 <span data-ttu-id="ab2bc-103">この例に適用する方法を示しています、<xref:System.Windows.Media.ScaleTransform>イベントが発生します。</span><span class="sxs-lookup"><span data-stu-id="ab2bc-103">This example shows how to apply a <xref:System.Windows.Media.ScaleTransform> when an event occurs.</span></span> <span data-ttu-id="ab2bc-104">ここで示される概念は、他の種類の変換を適用する場合に使用するものと同じです。</span><span class="sxs-lookup"><span data-stu-id="ab2bc-104">The concept that is shown here is the same that you use for applying other types of transformations.</span></span> <span data-ttu-id="ab2bc-105">使用可能な種類の変換の詳細については、次を参照してください。、<xref:System.Windows.Media.Transform>クラスまたは[変換の概要](../../../../docs/framework/wpf/graphics-multimedia/transforms-overview.md)です。</span><span class="sxs-lookup"><span data-stu-id="ab2bc-105">For more information about the available types of transformations, see the <xref:System.Windows.Media.Transform> class or [Transforms Overview](../../../../docs/framework/wpf/graphics-multimedia/transforms-overview.md).</span></span>  

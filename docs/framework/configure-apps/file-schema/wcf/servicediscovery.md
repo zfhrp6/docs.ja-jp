@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32751247"
 ---
 # <a name="ltservicediscoverygt"></a><span data-ttu-id="cf691-102">&lt;serviceDiscovery&gt;</span><span class="sxs-lookup"><span data-stu-id="cf691-102">&lt;serviceDiscovery&gt;</span></span>
 <span data-ttu-id="cf691-103">サービス エンドポイントの探索可能性を指定します。</span><span class="sxs-lookup"><span data-stu-id="cf691-103">Specifies the discoverability of service endpoints.</span></span>  

@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33557625"
 ---
 # <a name="how-to-add-an-animation-output-value-to-an-animation-starting-value"></a><span data-ttu-id="6d79c-102">方法 : アニメーションの出力値をアニメーションの開始値に追加する</span><span class="sxs-lookup"><span data-stu-id="6d79c-102">How to: Add an Animation Output Value to an Animation Starting Value</span></span>
 <span data-ttu-id="6d79c-103">この例では、アニメーションの開始値をアニメーションの出力値を追加する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="6d79c-103">This example shows how to add an animation output value to an animation starting value.</span></span>  

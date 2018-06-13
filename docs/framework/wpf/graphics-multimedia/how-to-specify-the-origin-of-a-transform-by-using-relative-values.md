@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33561408"
 ---
 # <a name="how-to-specify-the-origin-of-a-transform-by-using-relative-values"></a><span data-ttu-id="a4606-102">方法 : 変換の原点を相対値で指定する</span><span class="sxs-lookup"><span data-stu-id="a4606-102">How to: Specify the Origin of a Transform by Using Relative Values</span></span>
 <span data-ttu-id="a4606-103">この例の原点を指定する相対値を使用する方法を示しています、<xref:System.Windows.UIElement.RenderTransform%2A>に適用されている、<xref:System.Windows.FrameworkElement>です。</span><span class="sxs-lookup"><span data-stu-id="a4606-103">This example shows how to use relative values to specify the origin of a <xref:System.Windows.UIElement.RenderTransform%2A> that is applied to a <xref:System.Windows.FrameworkElement>.</span></span>  

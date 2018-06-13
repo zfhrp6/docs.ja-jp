@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33525097"
 ---
 # <a name="metafiles-in-gdi"></a><span data-ttu-id="6e177-102">GDI+ でのメタファイル</span><span class="sxs-lookup"><span data-stu-id="6e177-102">Metafiles in GDI+</span></span>
 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]<span data-ttu-id="6e177-103"> 提供、<xref:System.Drawing.Imaging.Metafile>クラスを記録してメタファイルを表示できるようにします。</span><span class="sxs-lookup"><span data-stu-id="6e177-103"> provides the <xref:System.Drawing.Imaging.Metafile> class so that you can record and display metafiles.</span></span> <span data-ttu-id="6e177-104">ベクター イメージとも呼ばれる、メタファイルは、コマンドと設定の描画のシーケンスとして格納されているイメージです。</span><span class="sxs-lookup"><span data-stu-id="6e177-104">A metafile, also called a vector image, is an image that is stored as a sequence of drawing commands and settings.</span></span> <span data-ttu-id="6e177-105">コマンドと設定に記録、<xref:System.Drawing.Imaging.Metafile>オブジェクトをメモリに格納されているか、ファイルまたはストリームに保存します。</span><span class="sxs-lookup"><span data-stu-id="6e177-105">The commands and settings recorded in a <xref:System.Drawing.Imaging.Metafile> object can be stored in memory or saved to a file or stream.</span></span>  

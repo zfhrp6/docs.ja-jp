@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32757750"
 ---
 # <a name="method-based-query-syntax-examples-projection-linq-to-dataset"></a><span data-ttu-id="f1cac-102">メソッド ベースのクエリ構文例 : 射影 (LINQ to DataSet)</span><span class="sxs-lookup"><span data-stu-id="f1cac-102">Method-Based Query Syntax Examples: Projection (LINQ to DataSet)</span></span>
 <span data-ttu-id="f1cac-103">このトピックでは、<xref:System.Linq.Enumerable.Select%2A> メソッドおよび <xref:System.Linq.Enumerable.SelectMany%2A> メソッドで、メソッド ベースのクエリ構文を使って <xref:System.Data.DataSet> に対するクエリを実行する例を紹介しています。</span><span class="sxs-lookup"><span data-stu-id="f1cac-103">The examples in this topic demonstrate how to use the <xref:System.Linq.Enumerable.Select%2A> and <xref:System.Linq.Enumerable.SelectMany%2A> methods to query a <xref:System.Data.DataSet> using the method-based query syntax.</span></span>  

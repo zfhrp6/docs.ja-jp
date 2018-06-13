@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32761429"
 ---
 # <a name="navigating-datarelations"></a><span data-ttu-id="bb8c1-102">DataRelation の移動</span><span class="sxs-lookup"><span data-stu-id="bb8c1-102">Navigating DataRelations</span></span>
 <span data-ttu-id="bb8c1-103"><xref:System.Data.DataRelation> の主な機能の 1 つは、<xref:System.Data.DataTable> の 1 つの <xref:System.Data.DataSet> から別の  を移動できることです。</span><span class="sxs-lookup"><span data-stu-id="bb8c1-103">One of the primary functions of a <xref:System.Data.DataRelation> is to allow navigation from one <xref:System.Data.DataTable> to another within a <xref:System.Data.DataSet>.</span></span> <span data-ttu-id="bb8c1-104">すべてを取得できます、関連する<xref:System.Data.DataRow>いずれかのオブジェクト**DataTable** 、1 つを指定すると**DataRow**関連から**DataTable**です。</span><span class="sxs-lookup"><span data-stu-id="bb8c1-104">This allows you to retrieve all the related <xref:System.Data.DataRow> objects in one **DataTable** when given a single **DataRow** from a related **DataTable**.</span></span> <span data-ttu-id="bb8c1-105">確立した後など、 **DataRelation**を使用して特定の顧客行のすべての注文行を取得するテーブルと顧客の注文のテーブル、 **GetChildRows**です。</span><span class="sxs-lookup"><span data-stu-id="bb8c1-105">For example, after establishing a **DataRelation** between a table of customers and a table of orders, you can retrieve all the order rows for a particular customer row using **GetChildRows**.</span></span>  

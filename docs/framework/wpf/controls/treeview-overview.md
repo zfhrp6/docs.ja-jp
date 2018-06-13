@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33557785"
 ---
 # <a name="treeview-overview"></a><span data-ttu-id="3480c-102">TreeView の概要</span><span class="sxs-lookup"><span data-stu-id="3480c-102">TreeView Overview</span></span>
 <span data-ttu-id="3480c-103"><xref:System.Windows.Controls.TreeView>コントロールは、折りたたみ可能なノードを使用して、階層構造で情報を表示する方法を提供します。</span><span class="sxs-lookup"><span data-stu-id="3480c-103">The <xref:System.Windows.Controls.TreeView> control provides a way to display information in a hierarchical structure by using collapsible nodes.</span></span> <span data-ttu-id="3480c-104">このトピックでは、<xref:System.Windows.Controls.TreeView>と<xref:System.Windows.Controls.TreeViewItem>コントロール、およびそれらの使用を単純な例を示します。</span><span class="sxs-lookup"><span data-stu-id="3480c-104">This topic introduces the <xref:System.Windows.Controls.TreeView> and <xref:System.Windows.Controls.TreeViewItem> controls, and provides simple examples of their use.</span></span>  

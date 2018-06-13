@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32753607"
 ---
 # <a name="ltcertificategt-of-ltpeergt"></a><span data-ttu-id="15c0e-102">&lt;peer&gt; の &lt;certificate&gt;</span><span class="sxs-lookup"><span data-stu-id="15c0e-102">&lt;certificate&gt; of &lt;peer&gt;</span></span>
 <span data-ttu-id="15c0e-103">ピアで使用される証明書を指定します。</span><span class="sxs-lookup"><span data-stu-id="15c0e-103">Specifies a certificate used by a peer.</span></span>  

@@ -18,6 +18,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32743028"
 ---
 # <a name="ltremovegt-element-for-webrequestmodules-network-settings"></a><span data-ttu-id="a10b5-102">&lt;削除&gt;webRequestModules (ネットワーク設定) の要素</span><span class="sxs-lookup"><span data-stu-id="a10b5-102">&lt;remove&gt; Element for webRequestModules (Network Settings)</span></span>
 <span data-ttu-id="a10b5-103">アプリケーションからカスタム Web 要求のモジュールを削除します。</span><span class="sxs-lookup"><span data-stu-id="a10b5-103">Removes a custom Web request module from the application.</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32766479"
 ---
 # <a name="string-functions"></a><span data-ttu-id="26441-102">文字列関数</span><span class="sxs-lookup"><span data-stu-id="26441-102">String Functions</span></span>
 <span data-ttu-id="26441-103">.NET Framework Data Provider for SQL Server (SqlClient) には、入力された `String` に対して操作を実行し、その結果を `String` または数値として返す `String` 関数が用意されています。</span><span class="sxs-lookup"><span data-stu-id="26441-103">The .NET Framework Data Provider for SQL Server (SqlClient) provides `String` functions that perform operations on an input `String` and return a `String` or numeric value result.</span></span> <span data-ttu-id="26441-104">これらの関数は、SqlClient の SqlServer 名前空間に存在します。</span><span class="sxs-lookup"><span data-stu-id="26441-104">These functions are in the SqlServer namespace, which is available when you use SqlClient.</span></span> <span data-ttu-id="26441-105">Entity Framework は、プロバイダーの名前空間プロパティを使用することにより、型や関数など、特定のコンストラクターに対してこのプロバイダーによってどのプレフィックスが使用されているかを特定できます。</span><span class="sxs-lookup"><span data-stu-id="26441-105">A provider's namespace property allows the Entity Framework to discover which prefix is used by this provider for specific constructs, such as types and functions.</span></span>  

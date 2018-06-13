@@ -15,6 +15,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32758257"
 ---
 # <a name="mapping-algorithm-names-to-cryptography-classes"></a><span data-ttu-id="d5ffc-102">暗号化クラスへのアルゴリズム名の割り当て</span><span class="sxs-lookup"><span data-stu-id="d5ffc-102">Mapping Algorithm Names to Cryptography Classes</span></span>
 <span data-ttu-id="d5ffc-103">次の 4 つの方法を開発者が、暗号化を使用してオブジェクトを作成することができますが、 [!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)]:</span><span class="sxs-lookup"><span data-stu-id="d5ffc-103">There are four ways a developer can create a cryptography object using the [!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)]:</span></span>  

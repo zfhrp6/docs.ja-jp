@@ -8,6 +8,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32757971"
 ---
 # <a name="ltbehaviorgt-of-ltservicebehaviorsgt-of-workflow"></a><span data-ttu-id="18c0f-102">ワークフローの &lt;serviceBehaviors&gt; の &lt;behavior&gt;</span><span class="sxs-lookup"><span data-stu-id="18c0f-102">&lt;behavior&gt; of &lt;serviceBehaviors&gt; of workflow</span></span>
 <span data-ttu-id="18c0f-103">**動作**要素には、サービスの動作の設定のコレクションが含まれています。</span><span class="sxs-lookup"><span data-stu-id="18c0f-103">The **behavior** element contains a collection of settings for the behavior of a service.</span></span> <span data-ttu-id="18c0f-104">各動作のインデックスを作成してその**名前**です。</span><span class="sxs-lookup"><span data-stu-id="18c0f-104">Each behavior is indexed by its **name**.</span></span> <span data-ttu-id="18c0f-105">サービスを使用して、この名前を使用して各動作にリンクできます、 **behaviorConfiguration**の属性、 [\<エンドポイント >](../../../../../docs/framework/configure-apps/file-schema/wcf/endpoint-element.md)要素。</span><span class="sxs-lookup"><span data-stu-id="18c0f-105">Services can link to each behavior through this name using the **behaviorConfiguration**attribute of the [\<endpoint>](../../../../../docs/framework/configure-apps/file-schema/wcf/endpoint-element.md) element.</span></span> <span data-ttu-id="18c0f-106">これにより、設定を再定義することなく、エンドポイント間で共通の動作構成を共有できます。</span><span class="sxs-lookup"><span data-stu-id="18c0f-106">This allows endpoints to share common behavior configurations without redefining the settings.</span></span>  

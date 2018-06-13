@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32757438"
 ---
 # <a name="association-end"></a><span data-ttu-id="e3d90-102">アソシエーション End</span><span class="sxs-lookup"><span data-stu-id="e3d90-102">association end</span></span>
 <span data-ttu-id="e3d90-103">*アソシエーション end*を識別、[エンティティ型](../../../../docs/framework/data/adonet/entity-type.md)の一方の end に、[アソシエーション](../../../../docs/framework/data/adonet/association-type.md)とエンティティの数をアソシエーションの end に存在できるインスタンスを入力します。</span><span class="sxs-lookup"><span data-stu-id="e3d90-103">An *association end* identifies the [entity type](../../../../docs/framework/data/adonet/entity-type.md) on one end of an [association](../../../../docs/framework/data/adonet/association-type.md) and the number of entity type instances that can exist at that end of an association.</span></span> <span data-ttu-id="e3d90-104">アソシエーション End はアソシエーションの一部として定義され、アソシエーションには必ず 2 つのアソシエーション End が必要です。</span><span class="sxs-lookup"><span data-stu-id="e3d90-104">Association ends are defined as part of an association; an association must have exactly two association ends.</span></span> <span data-ttu-id="e3d90-105">[ナビゲーション プロパティ](../../../../docs/framework/data/adonet/navigation-property.md)他の 1 つのアソシエーション end から移動できるようにします。</span><span class="sxs-lookup"><span data-stu-id="e3d90-105">[Navigation properties](../../../../docs/framework/data/adonet/navigation-property.md) allow for navigation from one association end to the other.</span></span>  

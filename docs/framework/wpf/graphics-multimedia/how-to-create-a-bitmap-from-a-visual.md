@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33559767"
 ---
 # <a name="how-to-create-a-bitmap-from-a-visual"></a><span data-ttu-id="eb0ae-102">方法 : ビジュアルからビットマップを作成する</span><span class="sxs-lookup"><span data-stu-id="eb0ae-102">How to: Create a Bitmap from a Visual</span></span>
 <span data-ttu-id="eb0ae-103">この例からビットマップを作成する方法、<xref:System.Windows.Media.Visual>です。</span><span class="sxs-lookup"><span data-stu-id="eb0ae-103">This example shows how you can create a bitmap from a <xref:System.Windows.Media.Visual>.</span></span> <span data-ttu-id="eb0ae-104">A<xref:System.Windows.Media.DrawingVisual>でレンダリングされて<xref:System.Windows.Media.FormattedText>です。</span><span class="sxs-lookup"><span data-stu-id="eb0ae-104">A <xref:System.Windows.Media.DrawingVisual> is rendered with <xref:System.Windows.Media.FormattedText>.</span></span> <span data-ttu-id="eb0ae-105"><xref:System.Windows.Media.Visual>にレンダリングし、<xref:System.Windows.Media.Imaging.RenderTargetBitmap>指定されたテキストのビットマップを作成します。</span><span class="sxs-lookup"><span data-stu-id="eb0ae-105">The <xref:System.Windows.Media.Visual> is then rendered to the <xref:System.Windows.Media.Imaging.RenderTargetBitmap> creating a bitmap of the given text.</span></span>  

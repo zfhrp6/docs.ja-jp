@@ -8,6 +8,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32756775"
 ---
 # <a name="ltstatesgt-of-ltactivitystatequerygt"></a><span data-ttu-id="5f789-102">&lt;activityStateQuery&gt; の &lt;states&gt;</span><span class="sxs-lookup"><span data-stu-id="5f789-102">&lt;states&gt; of &lt;activityStateQuery&gt;</span></span>
 <span data-ttu-id="5f789-103">追跡レコードを生成する必要がある定期受信済みアクティビティの状態を含む構成要素のコレクション。</span><span class="sxs-lookup"><span data-stu-id="5f789-103">A collection of configuration elements that contain the states of the subscribed activity for which a tracking record should be emitted.</span></span>  

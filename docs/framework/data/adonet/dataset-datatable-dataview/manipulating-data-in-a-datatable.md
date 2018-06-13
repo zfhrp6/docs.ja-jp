@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32757643"
 ---
 # <a name="manipulating-data-in-a-datatable"></a><span data-ttu-id="bac3e-102">DataTable 内のデータの操作</span><span class="sxs-lookup"><span data-stu-id="bac3e-102">Manipulating Data in a DataTable</span></span>
 <span data-ttu-id="bac3e-103"><xref:System.Data.DataTable> 内に <xref:System.Data.DataSet> を作成した後で、データベース内のテーブルを使用する場合と同じ操作を実行できます。</span><span class="sxs-lookup"><span data-stu-id="bac3e-103">After creating a <xref:System.Data.DataTable> in a <xref:System.Data.DataSet>, you can perform the same activities that you would when using a table in a database.</span></span> <span data-ttu-id="bac3e-104">テーブル内のデータの追加、表示、編集、および削除を実行したり、エラーとイベントを監視したり、テーブル内のデータを照会したりできます。</span><span class="sxs-lookup"><span data-stu-id="bac3e-104">You can add, view, edit, and delete data in the table; you can monitor errors and events; and you can query the data in the table.</span></span> <span data-ttu-id="bac3e-105">内のデータを変更するときに、 **DataTable**変更が正確し、プログラムによって受け入れるか、変更を拒否するかどうかを決定かどうかを確認することもできます。</span><span class="sxs-lookup"><span data-stu-id="bac3e-105">When modifying data in a **DataTable**, you can also verify whether the changes are accurate, and determine whether to programmatically accept or reject the changes.</span></span>  

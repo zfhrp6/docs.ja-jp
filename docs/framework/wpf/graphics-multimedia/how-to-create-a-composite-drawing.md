@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33561594"
 ---
 # <a name="how-to-create-a-composite-drawing"></a><span data-ttu-id="4fe1e-102">方法 : 複合描画を作成する</span><span class="sxs-lookup"><span data-stu-id="4fe1e-102">How to: Create a Composite Drawing</span></span>
 <span data-ttu-id="4fe1e-103">この例を使用する方法を示しています、<xref:System.Windows.Media.DrawingGroup>複数を組み合わせることで複雑な図面を作成する<xref:System.Windows.Media.Drawing>に 1 つの複合描画オブジェクトです。</span><span class="sxs-lookup"><span data-stu-id="4fe1e-103">This example shows how to use a <xref:System.Windows.Media.DrawingGroup> to create complex drawings by combining multiple <xref:System.Windows.Media.Drawing> objects into a single composite drawing.</span></span>  

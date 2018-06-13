@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33554093"
 ---
 # <a name="richtextbox"></a><span data-ttu-id="56a3c-102">RichTextBox</span><span class="sxs-lookup"><span data-stu-id="56a3c-102">RichTextBox</span></span>
 <span data-ttu-id="56a3c-103"><xref:System.Windows.Controls.RichTextBox>要素は、切り取りと貼り付け、豊富なドキュメントの表示、およびコンテンツの選択などの機能の組み込みサポートを備えた編集中のコントロールを定義します。</span><span class="sxs-lookup"><span data-stu-id="56a3c-103">The <xref:System.Windows.Controls.RichTextBox> element defines an editing control with built-in support for features such as cut and paste, rich document presentation, and content selection.</span></span>  

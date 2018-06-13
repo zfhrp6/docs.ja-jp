@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33560577"
 ---
 # <a name="how-to-create-a-reflection"></a><span data-ttu-id="21769-102">方法 : 反射を作成する</span><span class="sxs-lookup"><span data-stu-id="21769-102">How to: Create a Reflection</span></span>
 <span data-ttu-id="21769-103">この例を使用する方法を示しています、<xref:System.Windows.Media.VisualBrush>反射を作成します。</span><span class="sxs-lookup"><span data-stu-id="21769-103">This example shows how to use a <xref:System.Windows.Media.VisualBrush> to create a reflection.</span></span> <span data-ttu-id="21769-104"><xref:System.Windows.Media.VisualBrush>既存 visual を表示することができます、反射や拡大などの興味深いビジュアル効果を生成するためにこの機能を使用することができます。</span><span class="sxs-lookup"><span data-stu-id="21769-104">Because a <xref:System.Windows.Media.VisualBrush> can display an existing visual, you can use this capability to produce interesting visual effects, such as reflections and magnification.</span></span>  

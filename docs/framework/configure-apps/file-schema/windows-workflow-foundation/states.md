@@ -8,6 +8,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32757279"
 ---
 # <a name="ltstatesgt"></a><span data-ttu-id="4295c-102">&lt;状態&gt;</span><span class="sxs-lookup"><span data-stu-id="4295c-102">&lt;states&gt;</span></span>
 <span data-ttu-id="4295c-103">追跡レコードが作成されたときの追跡ワークフロー インスタンスの定期受信済み状態のコレクションを表します。</span><span class="sxs-lookup"><span data-stu-id="4295c-103">Represents a collection of subscribed states from the tracked workflow instance when the tracking records are created.</span></span>  

@@ -26,6 +26,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33604576"
 ---
 # <a name="selectcase-statement-visual-basic"></a><span data-ttu-id="50bf2-102">Select...Case ステートメント (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="50bf2-102">Select...Case Statement (Visual Basic)</span></span>
 <span data-ttu-id="50bf2-103">式の値に応じて、ステートメントのいくつかのグループのいずれかを実行します。</span><span class="sxs-lookup"><span data-stu-id="50bf2-103">Runs one of several groups of statements, depending on the value of an expression.</span></span>  

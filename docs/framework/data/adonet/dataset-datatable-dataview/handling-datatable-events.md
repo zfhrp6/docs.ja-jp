@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32760230"
 ---
 # <a name="handling-datatable-events"></a><span data-ttu-id="85c55-102">DataTable イベントの処理</span><span class="sxs-lookup"><span data-stu-id="85c55-102">Handling DataTable Events</span></span>
 <span data-ttu-id="85c55-103"><xref:System.Data.DataTable> オブジェクトは、アプリケーションが処理できる一連のイベントを提供します。</span><span class="sxs-lookup"><span data-stu-id="85c55-103">The <xref:System.Data.DataTable> object provides a series of events that can be processed by an application.</span></span> <span data-ttu-id="85c55-104">`DataTable` のイベントを次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="85c55-104">The following table describes `DataTable` events.</span></span>  

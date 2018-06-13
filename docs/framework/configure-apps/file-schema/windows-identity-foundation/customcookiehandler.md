@@ -9,6 +9,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32755605"
 ---
 # <a name="ltcustomcookiehandlergt"></a><span data-ttu-id="0407a-102">&lt;customCookieHandler&gt;</span><span class="sxs-lookup"><span data-stu-id="0407a-102">&lt;customCookieHandler&gt;</span></span>
 <span data-ttu-id="0407a-103">カスタム クッキー ハンドラーの種類を設定します。</span><span class="sxs-lookup"><span data-stu-id="0407a-103">Sets the custom cookie handler type.</span></span> <span data-ttu-id="0407a-104">この要素が存在するのみ場合、`mode`の属性、`<cookieHandler>`要素は、"Custom"です。</span><span class="sxs-lookup"><span data-stu-id="0407a-104">This element may only be present if the `mode` attribute of the `<cookieHandler>` element is "Custom".</span></span> <span data-ttu-id="0407a-105">カスタム型から派生する必要があります、<xref:System.IdentityModel.Services.CookieHandler>クラスです。</span><span class="sxs-lookup"><span data-stu-id="0407a-105">The custom type must be derived from the <xref:System.IdentityModel.Services.CookieHandler> class.</span></span>  

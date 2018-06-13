@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33567303"
 ---
 # <a name="multithreaded-programming-with-the-event-based-asynchronous-pattern"></a><span data-ttu-id="e2f41-102">イベント ベースの非同期パターンを使用したマルチスレッド プログラミング</span><span class="sxs-lookup"><span data-stu-id="e2f41-102">Multithreaded Programming with the Event-based Asynchronous Pattern</span></span>
 <span data-ttu-id="e2f41-103">非同期機能をクライアント コードに公開する方法は数多くあります。</span><span class="sxs-lookup"><span data-stu-id="e2f41-103">There are a number of ways to expose asynchronous features to client code.</span></span> <span data-ttu-id="e2f41-104">イベント ベースの非同期パターンは、非同期動作を示すクラスに対して推奨される方法を規定します。</span><span class="sxs-lookup"><span data-stu-id="e2f41-104">The Event-based Asynchronous Pattern prescribes the recommended way for classes to present asynchronous behavior.</span></span>  

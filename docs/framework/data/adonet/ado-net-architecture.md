@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32759869"
 ---
 # <a name="adonet-architecture"></a><span data-ttu-id="44424-102">ADO.NET のアーキテクチャ</span><span class="sxs-lookup"><span data-stu-id="44424-102">ADO.NET Architecture</span></span>
 <span data-ttu-id="44424-103">従来のデータ処理は、主に接続をベースとした 2 層モデルに基づいていました。</span><span class="sxs-lookup"><span data-stu-id="44424-103">Data processing has traditionally relied primarily on a connection-based, two-tier model.</span></span> <span data-ttu-id="44424-104">近年、データ処理では多層アーキテクチャの採用が増えてきており、アプリケーションのスケーラビリティを高める非接続型アプローチが主流になりつつあります。</span><span class="sxs-lookup"><span data-stu-id="44424-104">As data processing increasingly uses multi-tier architectures, programmers are switching to a disconnected approach to provide better scalability for their applications.</span></span>  

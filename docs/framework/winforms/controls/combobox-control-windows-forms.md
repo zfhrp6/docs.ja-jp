@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33524535"
 ---
 # <a name="combobox-control-windows-forms"></a><span data-ttu-id="aae7b-102">ComboBox コントロール (Windows フォーム)</span><span class="sxs-lookup"><span data-stu-id="aae7b-102">ComboBox Control (Windows Forms)</span></span>
 <span data-ttu-id="aae7b-103">Windows フォーム`ComboBox`ドロップダウン コンボ ボックスにデータを表示するコントロールを使用します。</span><span class="sxs-lookup"><span data-stu-id="aae7b-103">The Windows Forms `ComboBox` control is used to display data in a drop-down combo box.</span></span> <span data-ttu-id="aae7b-104">既定では、`ComboBox`コントロールは、2 つの部分が表示されます。 最上部には、ユーザーがリスト項目を入力できるテキスト ボックス。</span><span class="sxs-lookup"><span data-stu-id="aae7b-104">By default, the `ComboBox` control appears in two parts: the top part is a text box that allows the user to type a list item.</span></span> <span data-ttu-id="aae7b-105">2 番目の部分は、元のユーザーが選択できる 1 つの項目の一覧を表示するリスト ボックスです。</span><span class="sxs-lookup"><span data-stu-id="aae7b-105">The second part is a list box that displays a list of items from which the user can select one.</span></span>  

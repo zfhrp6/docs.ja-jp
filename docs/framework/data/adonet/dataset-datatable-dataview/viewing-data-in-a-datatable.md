@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32761247"
 ---
 # <a name="viewing-data-in-a-datatable"></a><span data-ttu-id="fa7ab-102">DataTable 内のデータの表示</span><span class="sxs-lookup"><span data-stu-id="fa7ab-102">Viewing Data in a DataTable</span></span>
 <span data-ttu-id="fa7ab-103">内容にアクセスすることができます、<xref:System.Data.DataTable>を使用して、**行**と**列**のコレクション、 **DataTable**です。</span><span class="sxs-lookup"><span data-stu-id="fa7ab-103">You can access the contents of a <xref:System.Data.DataTable> by using the **Rows** and **Columns** collections of the **DataTable**.</span></span> <span data-ttu-id="fa7ab-104">使用することも、<xref:System.Data.DataTable.Select%2A>内のデータのサブセットを返すメソッド、 **DataTable**のような検索条件の基準に従って並べ替え順序、および行の状態。</span><span class="sxs-lookup"><span data-stu-id="fa7ab-104">You can also use the <xref:System.Data.DataTable.Select%2A> method to return subsets of the data in a **DataTable** according to criteria including search criteria, sort order, and row state.</span></span> <span data-ttu-id="fa7ab-105">また、使用することができます、<xref:System.Data.DataRowCollection.Find%2A>のメソッド、 **DataRowCollection**主キーの値を使用して特定の行を検索するとき。</span><span class="sxs-lookup"><span data-stu-id="fa7ab-105">Additionally, you can use the <xref:System.Data.DataRowCollection.Find%2A> method of the **DataRowCollection** when searching for a particular row using a primary key value.</span></span>  

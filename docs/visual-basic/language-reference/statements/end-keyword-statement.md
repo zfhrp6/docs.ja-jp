@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33605265"
 ---
 # <a name="end-ltkeywordgt-statement-visual-basic"></a><span data-ttu-id="ca98c-102">終了&lt;キーワード&gt;ステートメント (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="ca98c-102">End &lt;keyword&gt; Statement (Visual Basic)</span></span>
 <span data-ttu-id="ca98c-103">その他のキーワードの後に、そのキーワードによって導入されるステートメント ブロックの定義を終了します。</span><span class="sxs-lookup"><span data-stu-id="ca98c-103">When followed by an additional keyword, terminates the definition of the statement block introduced by that keyword.</span></span>  

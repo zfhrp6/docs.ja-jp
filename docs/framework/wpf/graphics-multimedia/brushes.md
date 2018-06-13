@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33557265"
 ---
 # <a name="brushes"></a><span data-ttu-id="8b497-102">ブラシ</span><span class="sxs-lookup"><span data-stu-id="8b497-102">Brushes</span></span>
 <span data-ttu-id="8b497-103">以下のトピックを使用する方法を説明する[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]「描画」コンテンツを画面にブラシ</span><span class="sxs-lookup"><span data-stu-id="8b497-103">The following topics describe how to use [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] brushes to "paint" content to the screen</span></span>  

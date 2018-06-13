@@ -14,6 +14,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32744656"
 ---
 # <a name="ltnamedcachesgt-element-cache-settings"></a><span data-ttu-id="77dac-102">&lt;namedCaches&gt;要素 (キャッシュの設定)</span><span class="sxs-lookup"><span data-stu-id="77dac-102">&lt;namedCaches&gt; Element (Cache Settings)</span></span>
 <span data-ttu-id="77dac-103">名前付きの構成設定のコレクションを指定<xref:System.Runtime.Caching.MemoryCache>インスタンス。</span><span class="sxs-lookup"><span data-stu-id="77dac-103">Specifies a collection of configuration settings for the named <xref:System.Runtime.Caching.MemoryCache> instances.</span></span> <span data-ttu-id="77dac-104"><xref:System.Runtime.Caching.Configuration.MemoryCacheSection.NamedCaches%2A>プロパティは、1 つ以上の構成設定のコレクションを参照`namedCaches`構成ファイルの要素。</span><span class="sxs-lookup"><span data-stu-id="77dac-104">The <xref:System.Runtime.Caching.Configuration.MemoryCacheSection.NamedCaches%2A> property references the collection of configuration settings from one or more `namedCaches` elements of the configuration file.</span></span>  

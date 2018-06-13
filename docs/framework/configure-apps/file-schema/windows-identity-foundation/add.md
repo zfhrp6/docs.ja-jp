@@ -9,6 +9,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32757854"
 ---
 # <a name="ltaddgt"></a><span data-ttu-id="cc680-102">&lt;add&gt;</span><span class="sxs-lookup"><span data-stu-id="cc680-102">&lt;add&gt;</span></span>
 <span data-ttu-id="cc680-103">トークン ハンドラー コレクションに指定されたセキュリティ トークン ハンドラーを追加します。</span><span class="sxs-lookup"><span data-stu-id="cc680-103">Adds the specified security token handler to the token handler collection.</span></span>  

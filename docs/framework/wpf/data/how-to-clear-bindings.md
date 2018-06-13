@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33555858"
 ---
 # <a name="how-to-clear-bindings"></a><span data-ttu-id="0ea97-102">方法 : バインディングをクリアする</span><span class="sxs-lookup"><span data-stu-id="0ea97-102">How to: Clear Bindings</span></span>
 <span data-ttu-id="0ea97-103">この例では、オブジェクトからバインディングをクリアする方法を示します。</span><span class="sxs-lookup"><span data-stu-id="0ea97-103">This example shows how to clear bindings from an object.</span></span>  

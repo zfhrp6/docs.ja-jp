@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33529793"
 ---
 # <a name="defining-default-values-with-the-shouldserialize-and-reset-methods"></a><span data-ttu-id="cfdf4-102">ShouldSerialize メソッドと Reset メソッドによる既定値の定義</span><span class="sxs-lookup"><span data-stu-id="cfdf4-102">Defining Default Values with the ShouldSerialize and Reset Methods</span></span>
 <span data-ttu-id="cfdf4-103">`ShouldSerialize` `Reset`プロパティ用に指定できるオプションのメソッドは、プロパティがない場合、単純な既定値があります。</span><span class="sxs-lookup"><span data-stu-id="cfdf4-103">`ShouldSerialize` and `Reset` are optional methods that you can provide for a property, if the property does not a have simple default value.</span></span> <span data-ttu-id="cfdf4-104">プロパティの単純な既定値が、適用してください、<xref:System.ComponentModel.DefaultValueAttribute>し、代わりに、属性クラスのコンス トラクターを既定値を指定します。</span><span class="sxs-lookup"><span data-stu-id="cfdf4-104">If the property has a simple default value, you should apply the <xref:System.ComponentModel.DefaultValueAttribute> and supply the default value to the attribute class constructor instead.</span></span> <span data-ttu-id="cfdf4-105">これらのメカニズムのいずれかにより、デザイナーで、次の機能。</span><span class="sxs-lookup"><span data-stu-id="cfdf4-105">Either of these mechanisms enables the following features in the designer:</span></span>  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33554477"
 ---
 # <a name="statusbar"></a><span data-ttu-id="3ba7a-102">StatusBar</span><span class="sxs-lookup"><span data-stu-id="3ba7a-102">StatusBar</span></span>
 <span data-ttu-id="3ba7a-103">A<xref:System.Windows.Controls.Primitives.StatusBar>アプリケーションがステータス情報を表示できるウィンドウの下部にある水平方向の領域です。</span><span class="sxs-lookup"><span data-stu-id="3ba7a-103">A <xref:System.Windows.Controls.Primitives.StatusBar> is a horizontal area at the bottom of a window where an application can display status information.</span></span>  

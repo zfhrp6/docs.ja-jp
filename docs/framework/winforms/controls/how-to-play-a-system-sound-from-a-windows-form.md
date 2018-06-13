@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33532400"
 ---
 # <a name="how-to-play-a-system-sound-from-a-windows-form"></a><span data-ttu-id="75e05-102">方法 : Windows フォームからシステム サウンドを再生する</span><span class="sxs-lookup"><span data-stu-id="75e05-102">How to: Play a System Sound from a Windows Form</span></span>
 <span data-ttu-id="75e05-103">実行時に `Exclamation` システム サウンドを再生するコード例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="75e05-103">The following code example plays the `Exclamation` system sound at run time.</span></span> <span data-ttu-id="75e05-104">システム サウンドの詳細については、次を参照してください。<xref:System.Media.SystemSounds>です。</span><span class="sxs-lookup"><span data-stu-id="75e05-104">For more information about system sounds, see <xref:System.Media.SystemSounds>.</span></span>  

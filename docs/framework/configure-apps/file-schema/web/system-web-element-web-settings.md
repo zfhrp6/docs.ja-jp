@@ -16,6 +16,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32755163"
 ---
 # <a name="ltsystemwebgt-element-web-settings"></a><span data-ttu-id="ef454-102">&lt;system.web&gt;要素 (Web 設定)</span><span class="sxs-lookup"><span data-stu-id="ef454-102">&lt;system.web&gt; Element (Web Settings)</span></span>
 <span data-ttu-id="ef454-103">ASP.NET ホスト層がプロセス全体の動作を管理する方法についてを説明します。</span><span class="sxs-lookup"><span data-stu-id="ef454-103">Contains information about how the ASP.NET hosting layer manages process-wide behavior.</span></span>  

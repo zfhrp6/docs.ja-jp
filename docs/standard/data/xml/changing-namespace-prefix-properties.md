@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33568694"
 ---
 # <a name="changing-namespace-prefix-properties"></a><span data-ttu-id="5b29b-102">名前空間プレフィックス プロパティの変更</span><span class="sxs-lookup"><span data-stu-id="5b29b-102">Changing Namespace Prefix Properties</span></span>
 <span data-ttu-id="5b29b-103">**XmlNode** クラスを使用すると、特定のノードに関連付けられた名前空間プレフィックスを変更できます。</span><span class="sxs-lookup"><span data-stu-id="5b29b-103">The **XmlNode** class allows you to change the namespace prefix associated with a given node.</span></span> <span data-ttu-id="5b29b-104">たとえば、要素のプレフィックスを変更するコードを次に示します。</span><span class="sxs-lookup"><span data-stu-id="5b29b-104">For example, the following code shows the prefix of an element being changed.</span></span>  

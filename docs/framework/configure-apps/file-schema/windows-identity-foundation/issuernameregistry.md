@@ -9,6 +9,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32757529"
 ---
 # <a name="ltissuernameregistrygt"></a><span data-ttu-id="29daf-102">&lt;issuerNameRegistry&gt;</span><span class="sxs-lookup"><span data-stu-id="29daf-102">&lt;issuerNameRegistry&gt;</span></span>
 <span data-ttu-id="29daf-103">トークン ハンドラーはコレクション内のハンドラーによって使用される発行者名レジストリを構成します。</span><span class="sxs-lookup"><span data-stu-id="29daf-103">Configures the issuer name registry that is used by handlers in the token handler collection.</span></span>  

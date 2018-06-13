@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33525061"
 ---
 # <a name="how-to-draw-cardinal-splines"></a><span data-ttu-id="08eda-102">方法 : カーディナル スプラインを描画する</span><span class="sxs-lookup"><span data-stu-id="08eda-102">How to: Draw Cardinal Splines</span></span>
 <span data-ttu-id="08eda-103">カーディナル スプラインとは、指定された一連のポイントをスムーズに通過する曲線です。</span><span class="sxs-lookup"><span data-stu-id="08eda-103">A cardinal spline is a curve that passes smoothly through a given set of points.</span></span> <span data-ttu-id="08eda-104">カーディナル スプラインを描画するには、作成、<xref:System.Drawing.Graphics>オブジェクトおよびへのポインターの配列のアドレスを渡す、<xref:System.Drawing.Graphics.DrawCurve%2A>メソッドです。</span><span class="sxs-lookup"><span data-stu-id="08eda-104">To draw a cardinal spline, create a <xref:System.Drawing.Graphics> object and pass the address of an array of points to the <xref:System.Drawing.Graphics.DrawCurve%2A> method.</span></span>  

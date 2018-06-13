@@ -17,6 +17,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32751975"
 ---
 # <a name="global-assembly-cache"></a><span data-ttu-id="ac054-102">グローバル アセンブリ キャッシュ</span><span class="sxs-lookup"><span data-stu-id="ac054-102">Global Assembly Cache</span></span>
 <span data-ttu-id="ac054-103">共通言語ランタイムがインストールされている各コンピューターには、グローバル アセンブリ キャッシュと呼ばれる、コンピューター全体にわたって使用されるコード キャッシュがあります。</span><span class="sxs-lookup"><span data-stu-id="ac054-103">Each computer where the Common Language Runtime is installed has a machine-wide code cache called the Global Assembly Cache.</span></span> <span data-ttu-id="ac054-104">グローバル アセンブリ キャッシュは、そのコンピューター上の複数のアプリケーションで共有するように特別に指定されたアセンブリを格納します。</span><span class="sxs-lookup"><span data-stu-id="ac054-104">The Global Assembly Cache stores assemblies specifically designated to be shared by several applications on the computer.</span></span>  

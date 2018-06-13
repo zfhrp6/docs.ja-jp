@@ -12,6 +12,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32754289"
 ---
 # <a name="ltforceperformancecounteruniquesharedmemoryreadsgt-element"></a><span data-ttu-id="d32fe-102">&lt;forcePerformanceCounterUniqueSharedMemoryReads&gt;要素</span><span class="sxs-lookup"><span data-stu-id="d32fe-102">&lt;forcePerformanceCounterUniqueSharedMemoryReads&gt; Element</span></span>
 <span data-ttu-id="d32fe-103">PerfCounter.dll が、.NET Framework バージョン 1.1 のアプリケーションの CategoryOptions レジストリ設定を使用してするかどうかを指定して、カテゴリ別の共有メモリとグローバル メモリのどちらからパフォーマンス カウンター データを読み込むかを決定します。</span><span class="sxs-lookup"><span data-stu-id="d32fe-103">Specifies whether PerfCounter.dll uses the CategoryOptions registry setting in a .NET Framework version 1.1 application to determine whether to load performance counter data from category-specific shared memory or global memory.</span></span>  

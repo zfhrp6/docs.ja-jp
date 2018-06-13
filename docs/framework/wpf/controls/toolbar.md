@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33555430"
 ---
 # <a name="toolbar"></a><span data-ttu-id="ebf6c-102">ToolBar</span><span class="sxs-lookup"><span data-stu-id="ebf6c-102">ToolBar</span></span>
 <span data-ttu-id="ebf6c-103"><xref:System.Windows.Controls.ToolBar>コントロールは、コマンドまたは通常、その機能に関連するコントロールのグループのコンテナーです。</span><span class="sxs-lookup"><span data-stu-id="ebf6c-103">The <xref:System.Windows.Controls.ToolBar> control is a container for a group of commands or controls that are typically related in their function.</span></span>  

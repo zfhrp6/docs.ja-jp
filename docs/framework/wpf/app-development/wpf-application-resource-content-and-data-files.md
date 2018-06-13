@@ -22,6 +22,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33558266"
 ---
 # <a name="wpf-application-resource-content-and-data-files"></a><span data-ttu-id="f8d39-102">WPF アプリケーションのリソース ファイル、コンテンツ ファイル、およびデータ ファイル</span><span class="sxs-lookup"><span data-stu-id="f8d39-102">WPF Application Resource, Content, and Data Files</span></span>
 [!INCLUDE[TLA#tla_win](../../../../includes/tlasharptla-win-md.md)]<span data-ttu-id="f8d39-103"> データを含む実行可能でないなどのファイルに多くの場合、依存するアプリケーション[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]イメージ、ビデオ、およびオーディオです。</span><span class="sxs-lookup"><span data-stu-id="f8d39-103"> applications often depend on files that contain non-executable data, such as [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], images, video, and audio.</span></span> <span data-ttu-id="f8d39-104">Windows Presentation Foundation (WPF) は、構成、識別、およびこれらの種類のアプリケーションのデータ ファイルと呼ばれる、データ ファイルを使用して特別なサポートを提供します。</span><span class="sxs-lookup"><span data-stu-id="f8d39-104">Windows Presentation Foundation (WPF) offers special support for configuring, identifying, and using these types of data files, which are called application data files.</span></span> <span data-ttu-id="f8d39-105">このサポートの中心となるのは、次のような特定のアプリケーション データ ファイルの種類のセットです。</span><span class="sxs-lookup"><span data-stu-id="f8d39-105">This support revolves around a specific set of application data file types, including:</span></span>  

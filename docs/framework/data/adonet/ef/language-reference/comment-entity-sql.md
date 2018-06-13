@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32764165"
 ---
 # <a name="---comment-entity-sql"></a><span data-ttu-id="1e1ce-102">-- (コメント) (Entity SQL)</span><span class="sxs-lookup"><span data-stu-id="1e1ce-102">-- (Comment) (Entity SQL)</span></span>
 [!INCLUDE[esql](../../../../../../includes/esql-md.md)]<span data-ttu-id="1e1ce-103"> クエリには、コメントを含めることができます。</span><span class="sxs-lookup"><span data-stu-id="1e1ce-103"> queries can contain comments.</span></span> <span data-ttu-id="1e1ce-104">コメント行の先頭には、2 個のダッシュ (`--`) を付けます。</span><span class="sxs-lookup"><span data-stu-id="1e1ce-104">Two dashes (`--`) start a comment line.</span></span>  

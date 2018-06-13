@@ -9,6 +9,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32758309"
 ---
 # <a name="the-load-method"></a><span data-ttu-id="fecd6-102">Load メソッド</span><span class="sxs-lookup"><span data-stu-id="fecd6-102">The Load Method</span></span>
 <span data-ttu-id="fecd6-103"><xref:System.Data.DataTable.Load%2A> メソッドを使用して、データ ソースの行を <xref:System.Data.DataTable> に読み込むことができます。</span><span class="sxs-lookup"><span data-stu-id="fecd6-103">You can use the <xref:System.Data.DataTable.Load%2A> method to load a <xref:System.Data.DataTable> with rows from a data source.</span></span> <span data-ttu-id="fecd6-104">これは最も単純な形式で、単一のパラメーターを受け取っているオーバー ロードされたメソッド、 **DataReader**です。</span><span class="sxs-lookup"><span data-stu-id="fecd6-104">This is an overloaded method which, in its simplest form, accepts a single parameter, a **DataReader**.</span></span> <span data-ttu-id="fecd6-105">このフォームで、単に読み込む、 **DataTable**行を含むです。</span><span class="sxs-lookup"><span data-stu-id="fecd6-105">In this form, it simply loads the **DataTable** with rows.</span></span> <span data-ttu-id="fecd6-106">必要に応じて、指定することができます、 **LoadOption**にデータを追加する方法を制御するパラメーター、 **DataTable**です。</span><span class="sxs-lookup"><span data-stu-id="fecd6-106">Optionally, you can specify the **LoadOption** parameter to control how data is added to the **DataTable**.</span></span>  

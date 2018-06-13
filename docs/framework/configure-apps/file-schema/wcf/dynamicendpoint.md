@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32746762"
 ---
 # <a name="ltdynamicendpointgt"></a><span data-ttu-id="b75f6-102">&lt;dynamicEndpoint&gt;</span><span class="sxs-lookup"><span data-stu-id="b75f6-102">&lt;dynamicEndpoint&gt;</span></span>
 <span data-ttu-id="b75f6-103">この構成要素は、アプリケーションが、実行時に動的にエンドポイント アドレスを検索するクライアント プログラムとして機能するための情報を格納する標準エンドポイントを定義します。</span><span class="sxs-lookup"><span data-stu-id="b75f6-103">This configuration element defines a standard endpoint that contains information to enable an application to function as a client program that can find the endpoint address dynamically at runtime.</span></span>  

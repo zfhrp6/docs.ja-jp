@@ -9,6 +9,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32755124"
 ---
 # <a name="lttokenreplaycachegt"></a><span data-ttu-id="ad242-102">&lt;tokenReplayCache&gt;</span><span class="sxs-lookup"><span data-stu-id="ad242-102">&lt;tokenReplayCache&gt;</span></span>
 <span data-ttu-id="ad242-103">トークン リプレイ キャッシュ サービスまたはセキュリティ トークン ハンドラー コレクションに登録します。</span><span class="sxs-lookup"><span data-stu-id="ad242-103">Registers a token replay cache with a service or a security token handler collection.</span></span>  

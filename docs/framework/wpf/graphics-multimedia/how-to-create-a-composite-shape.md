@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33559972"
 ---
 # <a name="how-to-create-a-composite-shape"></a><span data-ttu-id="15936-102">方法 : 複合図形を作成する</span><span class="sxs-lookup"><span data-stu-id="15936-102">How to: Create a Composite Shape</span></span>
 <span data-ttu-id="15936-103">この例を使用して複合図形を作成する方法を示します<xref:System.Windows.Media.Geometry>オブジェクトし、それらを表示を使用して、<xref:System.Windows.Shapes.Path>要素。</span><span class="sxs-lookup"><span data-stu-id="15936-103">This example shows how to create composite shapes using <xref:System.Windows.Media.Geometry> objects and display them using a <xref:System.Windows.Shapes.Path> element.</span></span> <span data-ttu-id="15936-104">次の例で、 <xref:System.Windows.Media.LineGeometry>、 <xref:System.Windows.Media.EllipseGeometry>、および<xref:System.Windows.Media.RectangleGeometry>で使用される、<xref:System.Windows.Media.GeometryGroup>複合図形を作成します。</span><span class="sxs-lookup"><span data-stu-id="15936-104">In the following example, a <xref:System.Windows.Media.LineGeometry>, <xref:System.Windows.Media.EllipseGeometry>, and a <xref:System.Windows.Media.RectangleGeometry> are used with a <xref:System.Windows.Media.GeometryGroup> to create a composite shape.</span></span> <span data-ttu-id="15936-105">ジオメトリを使用してを描画し、<xref:System.Windows.Shapes.Path>要素。</span><span class="sxs-lookup"><span data-stu-id="15936-105">The geometries are then drawn using a <xref:System.Windows.Shapes.Path> element.</span></span>  

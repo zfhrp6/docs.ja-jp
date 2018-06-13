@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33557083"
 ---
 # <a name="datagrid"></a><span data-ttu-id="a9a75-102">DataGrid</span><span class="sxs-lookup"><span data-stu-id="a9a75-102">DataGrid</span></span>
 <span data-ttu-id="a9a75-103"><xref:System.Windows.Controls.DataGrid>コントロールでは、表示および SQL データベース、LINQ クエリ、またはその他のバインド可能なデータ ソースからなど、さまざまなソースからデータを編集することができます。</span><span class="sxs-lookup"><span data-stu-id="a9a75-103">The <xref:System.Windows.Controls.DataGrid> control enables you to display and edit data from many different sources, such as from a SQL database, LINQ query, or any other bindable data source.</span></span> <span data-ttu-id="a9a75-104">詳しくは、「[バインディング ソースの概要](../../../../docs/framework/wpf/data/binding-sources-overview.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="a9a75-104">For more information, see [Binding Sources Overview](../../../../docs/framework/wpf/data/binding-sources-overview.md).</span></span>  

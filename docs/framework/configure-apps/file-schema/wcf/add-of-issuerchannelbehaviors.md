@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32752456"
 ---
 # <a name="ltaddgt-of-ltissuerchannelbehaviorsgt"></a><span data-ttu-id="81a28-102">&lt;issuerChannelBehaviors&gt; の &lt;add&gt;</span><span class="sxs-lookup"><span data-stu-id="81a28-102">&lt;add&gt; of &lt;issuerChannelBehaviors&gt;</span></span>
 <span data-ttu-id="81a28-103">STS と通信するときに使用されるエンドポイントの動作を追加します。</span><span class="sxs-lookup"><span data-stu-id="81a28-103">Adds an endpoint behavior to be used when communicating with an STS.</span></span>  

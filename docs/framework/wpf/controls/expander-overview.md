@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33557590"
 ---
 # <a name="expander-overview"></a><span data-ttu-id="dc26e-102">エキスパンダーの概要</span><span class="sxs-lookup"><span data-stu-id="dc26e-102">Expander Overview</span></span>
 <span data-ttu-id="dc26e-103"><xref:System.Windows.Controls.Expander>コントロールがコンテンツをウィンドウのようになり、ヘッダーを含む拡張可能な領域を提供する方法を提供します。</span><span class="sxs-lookup"><span data-stu-id="dc26e-103">An <xref:System.Windows.Controls.Expander> control provides a way to provide content in an expandable area that resembles a window and includes a header.</span></span>  

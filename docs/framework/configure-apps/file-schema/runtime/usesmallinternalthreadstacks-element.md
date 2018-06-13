@@ -12,6 +12,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32745488"
 ---
 # <a name="ltusesmallinternalthreadstacksgt-element"></a><span data-ttu-id="4a02a-102">&lt;UseSmallInternalThreadStacks&gt;要素</span><span class="sxs-lookup"><span data-stu-id="4a02a-102">&lt;UseSmallInternalThreadStacks&gt; Element</span></span>
 <span data-ttu-id="4a02a-103">共通言語ランタイム (CLR) にメモリが減少する要求は、これらのスレッドの既定のスタック サイズを使用する代わりに内部的には、使用して特定のスレッドの作成時に、明示的なスタック サイズを指定することによって使用されます。</span><span class="sxs-lookup"><span data-stu-id="4a02a-103">Requests that the common language runtime (CLR) reduce memory use by specifying explicit stack sizes when it creates certain threads that it uses internally, instead of using the default stack size for those threads.</span></span>  
