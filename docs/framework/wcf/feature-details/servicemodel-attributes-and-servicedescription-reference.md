@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33505971"
 ---
 # <a name="servicemodel-attributes-and-servicedescription-reference"></a>ServiceModel 属性および ServiceDescription 参照
 *説明ツリー*型の階層は、(以降で、<xref:System.ServiceModel.Description.ServiceDescription?displayProperty=nameWithType>クラス)、サービスのすべての側面を同時に記述します。 Windows Communication Foundation (WCF) では、説明ツリーを使用して、Web サービス記述言語 (WSDL)、XML スキーマ定義言語 (XSD)、およびクライアントを使用して、サービスに関するポリシー アサーション (メタデータ) 公開の有効なサービス ランタイムを構築接続し、サービスを使用し、さまざまな構成ファイルを表すコードと、説明ツリーの値を生成します。  

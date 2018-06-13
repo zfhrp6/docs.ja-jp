@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: d8d5f2123608af241095c966901bd227fa6152d3
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33412218"
 ---
 # <a name="icordebugprocessenumerateobjects-method"></a>ICorDebugProcess::EnumerateObjects メソッド
 このメソッドは実装されていません。  

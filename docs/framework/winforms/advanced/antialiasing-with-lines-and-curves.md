@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33520384"
 ---
 # <a name="antialiasing-with-lines-and-curves"></a>直線と曲線のアンチエイリアシング
 使用すると[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]線を描画するには、開始点と、1 行の終了点を提供するが、行に個々 のピクセルに関する情報を指定する必要はありません。 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] どのピクセルはオンにする特定のディスプレイ デバイスで、行の表示を決定するディスプレイ ドライバー ソフトウェアと連携して動作します。  

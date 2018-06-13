@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33505343"
 ---
 # <a name="untyped-requestreply"></a>型指定のない要求/応答
 このサンプルは、Message クラスを使用する操作コントラクトを定義する方法を示します。  

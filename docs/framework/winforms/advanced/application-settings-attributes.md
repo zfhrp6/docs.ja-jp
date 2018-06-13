@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33518350"
 ---
 # <a name="application-settings-attributes"></a>アプリケーション設定の属性
 アプリケーション設定アーキテクチャでは、アプリケーション設定のラッパー クラスまたはその個々 のプロパティに適用できる多くの属性を提供します。 これらの属性は、実行時に示されたカスタム ラッパーのニーズにその動作を調整するためにアプリケーション設定のインフラストラクチャ、具体的には多くの場合、設定プロバイダーをでチェックします。  

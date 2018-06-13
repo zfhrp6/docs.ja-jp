@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33569760"
 ---
 # <a name="resolving-external-resources-during-xslt-processing"></a>XSLT 処理中の外部リソースの解決
 XSLT 変換中には、外部リソースの解決が必要になる場合があります。  

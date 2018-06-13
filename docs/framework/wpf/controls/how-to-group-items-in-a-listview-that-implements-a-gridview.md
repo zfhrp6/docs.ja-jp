@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33551909"
 ---
 # <a name="how-to-group-items-in-a-listview-that-implements-a-gridview"></a>方法 : GridView を実装する ListView の項目をグループ化する
 この例は、グループ内の項目を表示する方法を示します、<xref:System.Windows.Controls.GridView>の表示モード、<xref:System.Windows.Controls.ListView>コントロール。  

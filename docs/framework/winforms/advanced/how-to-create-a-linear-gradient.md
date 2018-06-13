@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33522461"
 ---
 # <a name="how-to-create-a-linear-gradient"></a>方法 : 線形グラデーションを作成する
 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] 水平方向、垂直方向、および対角線方向の線形グラデーションを提供します。 既定では、線形グラデーションの色を一様に変更します。 ただし、色が一様でない方法で変更されるように、線形グラデーションをカスタマイズできます。  

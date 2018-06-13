@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33409907"
 ---
 # <a name="sosdll-sos-debugging-extension"></a>SOS.dll (SOS デバッガー拡張)
 SOS デバッガー拡張 (SOS.dll) を使用して内部の共通言語ランタイム (CLR: Common Language Runtime) 環境に関する情報を渡すことにより、Visual Studio および Windows デバッガー (WinDbg.exe) でマネージ プログラムをデバッグできます。 このツールを使用するには、プロジェクトでアンマネージ デバッグが有効になっている必要があります。 SOS.dll は、.NET Framework と共に自動的にインストールされます。 Visual Studio で SOS.dll を使用するには、[Windows ドライバー開発キット (WDK)](http://msdn.microsoft.com/windows/hardware/hh852362) をインストールします。  

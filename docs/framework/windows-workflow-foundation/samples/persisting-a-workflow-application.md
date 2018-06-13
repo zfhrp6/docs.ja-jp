@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33519188"
 ---
 # <a name="persisting-a-workflow-application"></a>ワークフロー アプリケーションの永続化
 このサンプルでは、<xref:System.Activities.WorkflowApplication> を実行し、アイドル状態になったときにアンロードしてから、再読み込みしてその実行を継続する方法を示します。  

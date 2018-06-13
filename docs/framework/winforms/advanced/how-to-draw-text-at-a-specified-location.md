@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33523173"
 ---
 # <a name="how-to-draw-text-at-a-specified-location"></a>方法 : テキストを指定の位置に描画する
 カスタム描画を実行するときに、指定した点から始まる 1 つの水平方向にテキストを描画できます。 使用して、この方法でテキストを描画することができます、<xref:System.Drawing.Graphics.DrawString%2A>オーバー ロードされたメソッドの<xref:System.Drawing.Graphics>を受け取るクラス、<xref:System.Drawing.Point>または<xref:System.Drawing.PointF>パラメーター。 <xref:System.Drawing.Graphics.DrawString%2A>メソッドも必要です、<xref:System.Drawing.Brush>と <xref:System.Drawing.Font>  

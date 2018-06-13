@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33565851"
 ---
 # <a name="xname-directive"></a>x:Name ディレクティブ
 XAML 名前スコープ内の XAML で定義された要素を一意に識別します。 XAML 名前スコープとその一意性モデルは、フレームワーク Api を提供または実行時に、XAML で作成されたオブジェクト グラフにアクセスする動作を実装するときに、インスタンス化されたオブジェクトに適用できます。  

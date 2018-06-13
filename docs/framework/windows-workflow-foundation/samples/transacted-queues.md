@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33519682"
 ---
 # <a name="transacted-queues"></a>トランザクション キュー
 このサンプルでは、キューおよびトランザクションの Windows Workflow Foundation (WF) 信頼性が高く、スケーラブルなサービスを作成するを統合する方法を示します。 A <!--zz <xref:System.Activities.TransactionScope>--> `System.Activities.TransactionScope`を使用してトランザクション内でキューにメッセージを送信するクライアント ワークフローで使用される、<xref:System.ServiceModel.NetMsmqBinding>です。 <xref:System.ServiceModel.Activities.TransactedReceiveScope> は、キューからメッセージを受信して同じトランザクション内でワークフローの状態を更新するためにサーバーで使用されます。  

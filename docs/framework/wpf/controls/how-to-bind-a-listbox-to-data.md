@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33552832"
 ---
 # <a name="how-to-bind-a-listbox-to-data"></a>方法 : ListBox にデータをバインドする
 アプリケーション開発者が作成できる<xref:System.Windows.Controls.ListBox>コントロールの内容を指定しないで<xref:System.Windows.Controls.ListBoxItem>とは別にします。 データ バインディングを使用すると、個々 の項目にデータをバインドします。  

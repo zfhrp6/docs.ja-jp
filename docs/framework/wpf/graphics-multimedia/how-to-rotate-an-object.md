@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33561951"
 ---
 # <a name="how-to-rotate-an-object"></a>方法 : オブジェクトを回転させる
 次の例では、オブジェクトを回転させる方法を示します。 例では、最初に作成、<xref:System.Windows.Media.RotateTransform>し、その<xref:System.Windows.Media.RotateTransform.Angle%2A>(度単位)。  

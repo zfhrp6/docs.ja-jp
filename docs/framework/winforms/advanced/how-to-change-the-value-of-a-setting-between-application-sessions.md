@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33523411"
 ---
 # <a name="how-to-change-the-value-of-a-setting-between-application-sessions"></a>方法 : アプリケーション セッション間で設定値を変更する
 ときに、アプリケーションをコンパイルして、展開後に、アプリケーション セッション間での設定の値を変更することができます。 たとえば、適切なデータベースの場所を指す接続文字列を変更することができます。 アプリケーションをコンパイルして、展開後にデザイン時ツールが使用できないために、ファイルに手動で設定値を変更する必要があります。  

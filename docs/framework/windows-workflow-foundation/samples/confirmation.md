@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33518847"
 ---
 # <a name="confirmation"></a>確認
 このサンプルでは、<xref:System.Activities.Statements.CompensableActivity> および確認を使用する 4 つの一般的なシナリオを示します。 確認を示すために、4 つのワークフローを実行します。 このサンプルには、宣言型バージョンと命令型バージョンが用意されています。  

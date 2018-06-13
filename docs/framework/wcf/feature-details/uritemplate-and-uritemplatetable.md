@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33508824"
 ---
 # <a name="uritemplate-and-uritemplatetable"></a>UriTemplate と UriTemplateTable
 Web 開発者は、サービスの応答先となる URI の形状とレイアウトを記述できる必要があります。 Windows Communication Foundation (WCF) では、その Uri に制御を開発者に提供する 2 つの新しいクラスを追加します。 <xref:System.UriTemplate> および<xref:System.UriTemplateTable>WCF では、URI ベースのディスパッチ エンジンの基盤を形成します。 これらのクラスは、WCF サービスを実装することがなく、独自のテンプレートと URI を利用する開発者マッピング メカニズムでも使用できます。  

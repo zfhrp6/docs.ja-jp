@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33559463"
 ---
 # <a name="how-to-draw-a-closed-shape-by-using-the-polygon-element"></a>方法 : 多角形要素を使用して、閉じた図形を描画する
 この例を使用して、閉じた図形を描画する方法を示しています、<xref:System.Windows.Shapes.Polygon>要素。 閉じた図形を描画するには、作成、<xref:System.Windows.Shapes.Polygon>要素とを使用してその<xref:System.Windows.Shapes.Polygon.Points%2A>図形の頂点を指定するプロパティです。 行を最初と最後のポイントに接続するには自動的には描画されます。 最後に、指定、 <xref:System.Windows.Shapes.Shape.Fill%2A>、 <xref:System.Windows.Shapes.Shape.Stroke%2A>、またはその両方です。  

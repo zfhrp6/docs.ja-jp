@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33522334"
 ---
 # <a name="how-to-create-standard-windows-forms-print-jobs"></a>方法 : 標準の Windows フォーム印刷ジョブを作成する
 Windows フォームにおける印刷の基盤となるは、<xref:System.Drawing.Printing.PrintDocument>コンポーネント-具体的には、<xref:System.Drawing.Printing.PrintDocument.PrintPage>イベント。 処理するコードを記述して、<xref:System.Drawing.Printing.PrintDocument.PrintPage>イベント、印刷する対象とそれを印刷する方法を指定できます。  

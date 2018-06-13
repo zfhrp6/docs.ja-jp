@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33472835"
 ---
 # <a name="microsofttransactionstransactionbridgeparticipantrecovered"></a>Microsoft.Transactions.TransactionBridge.ParticipantRecovered
 参加要素の登録リストが、トランザクション マネージャー ログから回復されました。  

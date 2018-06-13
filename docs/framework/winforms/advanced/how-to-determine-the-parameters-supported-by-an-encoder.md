@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33521980"
 ---
 # <a name="how-to-determine-the-parameters-supported-by-an-encoder"></a>方法 : エンコーダーがサポートするパラメーターの確認
 イメージなどのパラメーターの品質、および圧縮レベルを調整することができますが、どのパラメーターを指定したイメージ エンコーダーでサポートを特定する必要があります。 <xref:System.Drawing.Image>クラスを提供、<xref:System.Drawing.Image.GetEncoderParameterList%2A>メソッドどのイメージ パラメーターを特定のエンコーダーのサポートを確認できるようにします。 エンコーダーを指定するには、GUID を持つ。 <xref:System.Drawing.Image.GetEncoderParameterList%2A>メソッドの配列を返します<xref:System.Drawing.Imaging.EncoderParameter>オブジェクト。  

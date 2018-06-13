@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33551968"
 ---
 # <a name="expander"></a>Expander
 <xref:System.Windows.Controls.Expander>により、ユーザーは、ヘッダーを表示し、詳細については、さらに参照してください。 または、まで、ヘッダー セクションを折りたたむには、そのヘッダーを展開します。  

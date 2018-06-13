@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33520735"
 ---
 # <a name="how-to-apply-gamma-correction-to-a-gradient"></a>方法 : グラデーションに対してガンマ補正を適用する
 ブラシの設定を線形グラデーション ブラシのガンマ補正を有効にする<xref:System.Drawing.Drawing2D.LinearGradientBrush.GammaCorrection%2A>プロパティを`true`です。 ガンマ補正を無効に設定できます、<xref:System.Drawing.Drawing2D.LinearGradientBrush.GammaCorrection%2A>プロパティを`false`です。 既定では、ガンマ補正が無効です。  

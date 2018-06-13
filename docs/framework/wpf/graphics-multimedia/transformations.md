@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33561915"
 ---
 # <a name="transformations"></a>変換
 変換を使用し、回転、拡大縮小、平行移動、または傾斜<xref:System.Windows.FrameworkElement>オブジェクト。  

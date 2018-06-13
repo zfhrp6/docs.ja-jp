@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33558240"
 ---
 # <a name="panels-overview"></a>パネルの概要
 <xref:System.Windows.Controls.Panel> 要素は要素の描画を制御するコンポーネント、そのサイズとディメンション、それらの位置およびその子コンテンツの配置。 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]は多数の定義済み<xref:System.Windows.Controls.Panel>要素だけでなくカスタムを作成する機能<xref:System.Windows.Controls.Panel>要素。  

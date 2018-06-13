@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33554899"
 ---
 # <a name="how-to-sort-a-gridview-column-when-a-header-is-clicked"></a>方法 : ヘッダーがクリックされたときに GridView 列を並べ替える
 この例を作成する方法を示しています、<xref:System.Windows.Controls.ListView>を実装するコントロール、<xref:System.Windows.Controls.GridView>モードと並べ替え、ユーザーが列見出しをクリックしたときにデータがコンテンツを表示します。  

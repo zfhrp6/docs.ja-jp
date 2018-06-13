@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33522068"
 ---
 # <a name="how-to-add-data-to-the-clipboard"></a>方法 : クリップボードにデータを追加する
 <xref:System.Windows.Forms.Clipboard>クラスは、Windows オペレーティング システムのクリップボード機能との対話に使用できるメソッドを提供します。 多くのアプリケーションでは、データの一時的なレポジトリとしてクリップボードを使用します。 たとえば、ワード プロセッサでは、カット アンド ペースト操作中に、クリップボードを使用します。 クリップボードも別の 1 つのアプリケーションからデータを転送するため便利です。  

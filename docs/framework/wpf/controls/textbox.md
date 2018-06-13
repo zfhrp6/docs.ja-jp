@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33555183"
 ---
 # <a name="textbox"></a>TextBox
 <xref:System.Windows.Controls.TextBox>コントロールは、WPF アプリケーションでの基本的なテキスト入力をサポートします。  

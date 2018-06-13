@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33550759"
 ---
 # <a name="checkbox"></a>CheckBox
 使用することができます、<xref:System.Windows.Controls.CheckBox>で、[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]にアプリケーションをユーザーがオンまたはオフにするオプションを表します。 1 つのチェック ボックスを使用することができますか、2 つ以上のチェック ボックスをグループ化することができます。  

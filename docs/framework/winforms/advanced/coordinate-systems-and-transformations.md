@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33521779"
 ---
 # <a name="coordinate-systems-and-transformations"></a>座標系と変換
 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] ワールド変換とページ変換を提供し、変換できるように (回転、拡大縮小、平行移動、およびなど) を描画する項目。 2 つの変換を使用して、さまざまな座標システムで動作することもできます。  

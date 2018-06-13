@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33562376"
 ---
 # <a name="transformations-how-to-topics"></a>変換に関する方法のトピック
 このセクションのトピックでは、オブジェクトを別の変換を適用する方法について説明します。  

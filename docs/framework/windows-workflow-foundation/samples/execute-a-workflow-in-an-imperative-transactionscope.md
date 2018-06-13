@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33516960"
 ---
 # <a name="execute-a-workflow-in-an-imperative-transactionscope"></a>命令型 TransactionScope でのワークフローの実行
 このサンプルでは、命令型 C# コードから <xref:System.Activities.WorkflowInvoker> で <xref:System.Transactions.Transaction> を使用してワークフローを実行する方法を示します。  

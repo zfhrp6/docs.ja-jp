@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33557993"
 ---
 # <a name="walkthrough-create-a-button-by-using-xaml"></a>チュートリアル : XAML を使用したボタンの作成
 このチュートリアルでは、Windows Presentation Foundation (WPF) アプリケーションで使用するためのアニメーションのボタンを作成する方法について説明します。 このチュートリアルでは、スタイルとテンプレートを使用して、コードの再利用やボタン宣言からボタン ロジックを分離するカスタマイズされたボタンのリソースを作成します。 このチュートリアルが完全に書き込まれる[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]です。  
@@ -68,7 +69,7 @@ ms.lasthandoff: 05/04/2018
   
      リソースのスコープは、定義したリソースによって決まります。 内のリソースを定義する`Application.Resources`app.xaml では、ファイルは、アプリケーションで任意の場所から使用するリソースをことができます。 リソースのスコープの定義の詳細については、次を参照してください。 [XAML リソース](../../../../docs/framework/wpf/advanced/xaml-resources.md)です。  
   
-2.  **スタイルを作成し、それに基本的なプロパティ値を定義します。**に次のマークアップを追加、`Application.Resources`ブロックします。 このマークアップを作成、<xref:System.Windows.Style>設定、アプリケーションのすべてのボタンに適用される、<xref:System.Windows.FrameworkElement.Width%2A>を 90 にボタンのおよび<xref:System.Windows.FrameworkElement.Margin%2A>10。  
+2.  **スタイルを作成し、それに基本的なプロパティ値を定義します。** に次のマークアップを追加、`Application.Resources`ブロックします。 このマークアップを作成、<xref:System.Windows.Style>設定、アプリケーションのすべてのボタンに適用される、<xref:System.Windows.FrameworkElement.Width%2A>を 90 にボタンのおよび<xref:System.Windows.FrameworkElement.Margin%2A>10。  
   
     ```xaml  
     <Application.Resources>  

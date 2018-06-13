@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33551150"
 ---
 # <a name="bulletdecorator"></a>BulletDecorator
 <xref:System.Windows.Controls.Primitives.BulletDecorator> 2 つのコンテンツ プロパティがあります:<xref:System.Windows.Controls.Primitives.BulletDecorator.Bullet%2A>と<xref:System.Windows.Controls.Decorator.Child%2A>です。 <xref:System.Windows.Controls.Primitives.BulletDecorator.Bullet%2A>プロパティを定義、<xref:System.Windows.UIElement>行頭文字として使用します。 <xref:System.Windows.Controls.Decorator.Child%2A>プロパティを定義、<xref:System.Windows.UIElement>を視覚的に行頭文字と整合します。  

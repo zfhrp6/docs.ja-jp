@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33552819"
 ---
 # <a name="gridsplitter-how-to-topics"></a>GridSplitter に関する「方法」トピック
 このセクションのトピックを使用する方法について説明、<xref:System.Windows.Controls.GridSplitter>コントロール。  

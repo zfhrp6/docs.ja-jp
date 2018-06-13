@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33518901"
 ---
 # <a name="policy-activity-in-net-framework-45"></a>.NET Framework 4.5 のポリシー アクティビティ
 Policy4 アクティビティは、Windows Workflow Foundation の[!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)](WF 3.5) <xref:System.Workflow.Activities.Rules.RuleSet> Windows Workflow Foundation に使用されるオブジェクト[!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)](WF 4.5) WF 3.5 に付属しているルール エンジンを使用して直接です。 このアクティビティを使用すると、WF 3.5 <xref:System.Workflow.Activities.Rules.RuleSet> を作成して実行できます。 Windows Workflow Foundation の一部として含まれる WF 3.5 ルール エンジンの詳細については、Windows Workflow Foundation ルール エンジンの概要を参照してください。 移行の詳細についての WF ルール[!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)]をお読みください[移行のガイダンス](../../../../docs/framework/windows-workflow-foundation/migration-guidance.md)です。  
