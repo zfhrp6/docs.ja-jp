@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33542198"
 ---
 # <a name="user-drawn-controls"></a>ユーザー描画コントロール
 .NET Framework では、独自のコントロールを簡単に開発する機能を提供します。 コードによって結合されて標準のコントロールのセットにある、ユーザー コントロールを作成するかを一から独自のコントロールをデザインすることができます。 既存のコントロールから継承されるコントロールを作成し、本質的な機能を追加する継承を使用することもできます。 どのようなアプローチを使用すると、.NET Framework では、任意のコントロールを作成するためのカスタムのグラフィカル インターフェイスを描画する機能を提供します。  
