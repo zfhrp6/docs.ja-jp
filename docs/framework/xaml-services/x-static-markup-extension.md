@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33565579"
 ---
 # <a name="xstatic-markup-extension"></a>x:Static のマークアップ拡張機能
 定義されているすべての静的な値でコードのエンティティを参照して、 [!INCLUDE[TLA#tla_cls](../../../includes/tlasharptla-cls-md.md)]– 準拠した方法です。 参照される静的プロパティは、XAML では、プロパティの値を提供する使用できます。  
