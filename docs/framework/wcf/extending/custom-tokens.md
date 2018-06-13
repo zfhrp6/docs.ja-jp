@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33485366"
 ---
 # <a name="custom-tokens"></a><span data-ttu-id="5aa67-102">カスタム トークン</span><span class="sxs-lookup"><span data-stu-id="5aa67-102">Custom Tokens</span></span>
 <span data-ttu-id="5aa67-103">ネイティブ、Windows Communication Foundation (WCF) は、X.509 証明書、セキュリティ コンテキスト トークン、Kerberos チケット、およびユーザー名トークン資格情報としてサポートしていますは、カスタム資格情報を使用できるようにするのに十分な柔軟性があります。</span><span class="sxs-lookup"><span data-stu-id="5aa67-103">Although Windows Communication Foundation (WCF) natively supports X.509 certificates, Security Context Tokens, Kerberos tickets, and user name tokens as credentials, it is flexible enough to allow you to use your own custom credentials.</span></span>  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33488573"
 ---
 # <a name="authorization-in-wcf"></a><span data-ttu-id="653d1-102">WCF での承認</span><span class="sxs-lookup"><span data-stu-id="653d1-102">Authorization in WCF</span></span>
 <span data-ttu-id="653d1-103">承認は、サービスやファイルなどのリソースへのアクセスと権限を制御するプロセスです。</span><span class="sxs-lookup"><span data-stu-id="653d1-103">Authorization is the process of controlling access and rights to resources, such as services or files.</span></span> <span data-ttu-id="653d1-104">このセクションのトピックで Windows Communication Foundation (WCF) のさまざまな方法でこの基本タスクを実行する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="653d1-104">The topics in this section show you how to perform this basic task in Windows Communication Foundation (WCF) in a variety of ways.</span></span>  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33565488"
 ---
 # <a name="timing-events-overview"></a><span data-ttu-id="82180-102">タイミング イベントの概要</span><span class="sxs-lookup"><span data-stu-id="82180-102">Timing Events Overview</span></span>
 <span data-ttu-id="82180-103">このトピックで使用できる 5 つのタイミング イベントを使用する方法について説明<xref:System.Windows.Media.Animation.Timeline>と<xref:System.Windows.Media.Animation.Clock>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="82180-103">This topic describes how to use the five timing events available on <xref:System.Windows.Media.Animation.Timeline> and <xref:System.Windows.Media.Animation.Clock> objects.</span></span>  

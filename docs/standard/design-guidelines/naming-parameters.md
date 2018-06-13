@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33570488"
 ---
 # <a name="naming-parameters"></a><span data-ttu-id="6d052-102">パラメーターに名前を付ける</span><span class="sxs-lookup"><span data-stu-id="6d052-102">Naming Parameters</span></span>
 <span data-ttu-id="6d052-103">読みやすくするための明確な理由から、以外には、パラメーターは、ドキュメントでは、デザイナーで表示されるビジュアル デ ザイン ツール Intellisense および参照機能クラスを指定するときにためパラメーターの名前に関するガイドラインに従う必要があります。</span><span class="sxs-lookup"><span data-stu-id="6d052-103">Beyond the obvious reason of readability, it is important to follow the guidelines for parameter names because parameters are displayed in documentation and in the designer when visual design tools provide Intellisense and class browsing functionality.</span></span>  

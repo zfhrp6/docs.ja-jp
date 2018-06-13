@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33572789"
 ---
 # <a name="xml-document-creation"></a><span data-ttu-id="2d30d-102">XML ドキュメントの作成</span><span class="sxs-lookup"><span data-stu-id="2d30d-102">XML Document Creation</span></span>
 <span data-ttu-id="2d30d-103">XML ドキュメントは、2 とおりの方法で作成できます。</span><span class="sxs-lookup"><span data-stu-id="2d30d-103">There are two ways to create an XML document.</span></span> <span data-ttu-id="2d30d-104">1 つは、パラメーターを使用せずに **XmlDocument** を作成する方法です。</span><span class="sxs-lookup"><span data-stu-id="2d30d-104">One way is to create an **XmlDocument** with no parameters.</span></span> <span data-ttu-id="2d30d-105">もう 1 つは、**XmlDocument** の作成時に XmlNameTable をパラメーターとして渡す方法です。</span><span class="sxs-lookup"><span data-stu-id="2d30d-105">The other way is to create an **XmlDocument** and pass it an XmlNameTable as a parameter.</span></span> <span data-ttu-id="2d30d-106">パラメーターを使用せず、新しい空の **XmlDocument** を作成する方法を次の例に示します。</span><span class="sxs-lookup"><span data-stu-id="2d30d-106">The following example shows how to create a new, empty **XmlDocument** using no parameters.</span></span>  

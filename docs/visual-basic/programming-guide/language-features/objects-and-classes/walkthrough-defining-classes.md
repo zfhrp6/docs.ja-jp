@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33650642"
 ---
 # <a name="walkthrough-defining-classes-visual-basic"></a><span data-ttu-id="376c0-102">チュートリアル: クラスの定義 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="376c0-102">Walkthrough: Defining Classes (Visual Basic)</span></span>
 

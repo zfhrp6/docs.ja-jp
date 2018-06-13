@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33521719"
 ---
 # <a name="how-to-determine-the-active-mdi-child"></a><span data-ttu-id="08659-102">方法 : アクティブな MDI 子フォームを特定する</span><span class="sxs-lookup"><span data-stu-id="08659-102">How to: Determine the Active MDI Child</span></span>
 <span data-ttu-id="08659-103">場合によっては、現在アクティブな子フォームにフォーカスを持つコントロールが操作するコマンドを提供するされます。</span><span class="sxs-lookup"><span data-stu-id="08659-103">On occasion, you will want to provide a command that operates on the control that has focus on the currently active child form.</span></span> <span data-ttu-id="08659-104">たとえば、子フォームのテキスト ボックスから選択したテキストをクリップボードにコピーするとします。</span><span class="sxs-lookup"><span data-stu-id="08659-104">For example, suppose you want to copy selected text from the child form's text box to the Clipboard.</span></span> <span data-ttu-id="08659-105">クリップボードを使用して、選択したテキストをコピーするプロシージャを作成すると、<xref:System.Windows.Forms.Control.Click>コピー メニュー項目の編集 メニューの標準的なイベントです。</span><span class="sxs-lookup"><span data-stu-id="08659-105">You would create a procedure that copies selected text to the Clipboard using the <xref:System.Windows.Forms.Control.Click> event of the Copy menu item on the standard Edit menu.</span></span>  

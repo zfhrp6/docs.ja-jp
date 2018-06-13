@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33569916"
 ---
 # <a name="memory-management-and-garbage-collection-in-net"></a><span data-ttu-id="f0696-102">.NET のメモリ管理とガベージ コレクション</span><span class="sxs-lookup"><span data-stu-id="f0696-102">Memory Management and Garbage Collection in .NET</span></span>
 <span data-ttu-id="f0696-103">このセクションでは、.NET でのメモリの管理について説明します。</span><span class="sxs-lookup"><span data-stu-id="f0696-103">This section of the documentation provides information about managing memory in .NET.</span></span>  

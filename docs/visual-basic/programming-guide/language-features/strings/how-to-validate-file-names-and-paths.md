@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33647805"
 ---
 # <a name="how-to-validate-file-names-and-paths-in-visual-basic"></a><span data-ttu-id="5c306-102">方法 : Visual Basic でファイル名とパスを検証する</span><span class="sxs-lookup"><span data-stu-id="5c306-102">How to: Validate File Names and Paths in Visual Basic</span></span>
 <span data-ttu-id="5c306-103">この例を返します、`Boolean`文字列が、ファイル名またはパスを表すかどうかを示す値。</span><span class="sxs-lookup"><span data-stu-id="5c306-103">This example returns a `Boolean` value that indicates whether a string represents a file name or path.</span></span> <span data-ttu-id="5c306-104">検証では、名前に、ファイル システムで許可されない文字が含まれるかどうかを確認します。</span><span class="sxs-lookup"><span data-stu-id="5c306-104">The validation checks if the name contains characters that are not allowed by the file system.</span></span>  

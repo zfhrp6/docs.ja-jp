@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 92097cdf735630f3537296f188bd83ea8162add2
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33441139"
 ---
 # <a name="ihostthreadpoolmanager-interface"></a><span data-ttu-id="d68d2-102">IHostThreadPoolManager インターフェイス</span><span class="sxs-lookup"><span data-stu-id="d68d2-102">IHostThreadPoolManager Interface</span></span>
 <span data-ttu-id="d68d2-103">共通言語ランタイム (CLR) をスレッド プールを構成し、スレッド プールに作業項目をキューに登録できるようにするメソッドを提供します。</span><span class="sxs-lookup"><span data-stu-id="d68d2-103">Provides methods that enable the common language runtime (CLR) to configure the thread pool and to queue work items to the thread pool.</span></span>  

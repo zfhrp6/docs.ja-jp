@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33569533"
 ---
 # <a name="entity-references-are-expanded-and-not-preserved"></a><span data-ttu-id="2c3cb-102">保持されずに展開されるエンティティ参照</span><span class="sxs-lookup"><span data-stu-id="2c3cb-102">Entity References are Expanded and Not Preserved</span></span>
 <span data-ttu-id="2c3cb-103">エンティティ参照が展開され、それが表すテキストに置き換えられる場合には、**XmlEntityReference** ノードは作成されません。</span><span class="sxs-lookup"><span data-stu-id="2c3cb-103">When the entity reference is expanded and replaced by the text it represents, the **XmlEntityReference** node is not created.</span></span> <span data-ttu-id="2c3cb-104">この場合はエンティティ宣言が解析され、宣言のコンテンツから作成されたノードが **XmlEntityReference** の代わりにコピーされます。</span><span class="sxs-lookup"><span data-stu-id="2c3cb-104">Instead, the entity declaration is parsed, and nodes created from the content in the declaration are copied in the place of the **XmlEntityReference**.</span></span> <span data-ttu-id="2c3cb-105">したがって、`&publisher;` の例では、`&publisher;` は保存されず、代わりに **XmlText** ノードが作成されます。</span><span class="sxs-lookup"><span data-stu-id="2c3cb-105">Therefore, in the `&publisher;` example, the `&publisher;` is not saved, but instead, an **XmlText** node is created.</span></span>  

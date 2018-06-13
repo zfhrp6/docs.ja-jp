@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33604433"
 ---
 # <a name="end-statement"></a><span data-ttu-id="bb793-102">End ステートメント</span><span class="sxs-lookup"><span data-stu-id="bb793-102">End Statement</span></span>
 <span data-ttu-id="bb793-103">すぐに実行を終了します。</span><span class="sxs-lookup"><span data-stu-id="bb793-103">Terminates execution immediately.</span></span>  

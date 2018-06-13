@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33216513"
 ---
 # <a name="-platform-c-compiler-options"></a><span data-ttu-id="14aa4-102">-platform (C# コンパイラ オプション)</span><span class="sxs-lookup"><span data-stu-id="14aa4-102">-platform (C# Compiler Options)</span></span>
 <span data-ttu-id="14aa4-103">アセンブリを実行できる共通言語ランタイム (CLR) のバージョンを指定します。</span><span class="sxs-lookup"><span data-stu-id="14aa4-103">Specifies which version of the Common Language Runtime (CLR) can run the assembly.</span></span>  

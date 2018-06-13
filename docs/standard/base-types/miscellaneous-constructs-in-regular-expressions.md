@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33571983"
 ---
 # <a name="miscellaneous-constructs-in-regular-expressions"></a><span data-ttu-id="937ab-102">正規表現でのその他の構成体</span><span class="sxs-lookup"><span data-stu-id="937ab-102">Miscellaneous Constructs in Regular Expressions</span></span>
 <span data-ttu-id="937ab-103">.NET の正規表現には、次の 3 つのその他の言語コンストラクトが含まれます。</span><span class="sxs-lookup"><span data-stu-id="937ab-103">Regular expressions in .NET include three miscellaneous language constructs.</span></span> <span data-ttu-id="937ab-104">1 つは、正規表現パターンの途中で特定の一致オプションを有効または無効にすることができます。</span><span class="sxs-lookup"><span data-stu-id="937ab-104">One lets you enable or disable particular matching options in the middle of a regular expression pattern.</span></span> <span data-ttu-id="937ab-105">残りの 2 つは、正規表現にコメントを含めることができます。</span><span class="sxs-lookup"><span data-stu-id="937ab-105">The remaining two let you include comments in a regular expression.</span></span>  

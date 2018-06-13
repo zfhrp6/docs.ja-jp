@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33571252"
 ---
 # <a name="commonly-used-collection-types"></a><span data-ttu-id="47f60-102">一般的に使用されるコレクション型</span><span class="sxs-lookup"><span data-stu-id="47f60-102">Commonly Used Collection Types</span></span>
 <span data-ttu-id="47f60-103">コレクション型は、ハッシュ テーブル、キュー、スタック、バッグ、ディクショナリ、リストなど、一般的な種類のデータ コレクションです。</span><span class="sxs-lookup"><span data-stu-id="47f60-103">Collection types are the common variations of data collections, such as hash tables, queues, stacks, bags, dictionaries, and lists.</span></span>  

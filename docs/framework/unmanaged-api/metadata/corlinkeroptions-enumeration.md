@@ -18,9 +18,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 0d154985e9c1614e6b8f13a55410ead0cb5e861b
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33441056"
 ---
 # <a name="corlinkeroptions-enumeration"></a><span data-ttu-id="daefd-102">CorLinkerOptions 列挙型</span><span class="sxs-lookup"><span data-stu-id="daefd-102">CorLinkerOptions Enumeration</span></span>
 <span data-ttu-id="daefd-103">メタデータ リンカーのオプションを選択するためのフラグを指定します。</span><span class="sxs-lookup"><span data-stu-id="daefd-103">Specifies flags to select options for the metadata linker.</span></span>  

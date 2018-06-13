@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33456389"
 ---
 # <a name="1402---idletimeout"></a><span data-ttu-id="26f8b-102">1402 - IdleTimeout</span><span class="sxs-lookup"><span data-stu-id="26f8b-102">1402 - IdleTimeout</span></span>
 ## <a name="properties"></a><span data-ttu-id="26f8b-103">プロパティ</span><span class="sxs-lookup"><span data-stu-id="26f8b-103">Properties</span></span>  

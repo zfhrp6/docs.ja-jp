@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33572162"
 ---
 # <a name="xmldatadocument-input-to-xsltransform"></a><span data-ttu-id="f34a5-102">XslTransform への XmlDataDocument の入力</span><span class="sxs-lookup"><span data-stu-id="f34a5-102">XmlDataDocument Input to XslTransform</span></span>
 > [!NOTE]

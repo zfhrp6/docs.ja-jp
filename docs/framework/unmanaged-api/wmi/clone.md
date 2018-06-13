@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: c5841c89cf394502f68381dfed42593c9debdcb1
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33457317"
 ---
 # <a name="clone-function"></a><span data-ttu-id="cf4b4-103">複製関数</span><span class="sxs-lookup"><span data-stu-id="cf4b4-103">Clone function</span></span>
 <span data-ttu-id="cf4b4-104">現在のオブジェクトの完全な複製である新しいオブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="cf4b4-104">Returns a new object that is a complete clone of the current object.</span></span>   

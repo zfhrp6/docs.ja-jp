@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33521857"
 ---
 # <a name="how-to-create-figures-from-lines-curves-and-shapes"></a><span data-ttu-id="73633-102">方法 : 直線、曲線、および形状から図形を作成する</span><span class="sxs-lookup"><span data-stu-id="73633-102">How to: Create Figures from Lines, Curves, and Shapes</span></span>
 <span data-ttu-id="73633-103">図を作成するには、構築、<xref:System.Drawing.Drawing2D.GraphicsPath>などのメソッドを呼び出すと<xref:System.Drawing.Drawing2D.GraphicsPath.AddLine%2A>と<xref:System.Drawing.Drawing2D.GraphicsPath.AddCurve%2A>プリミティブをパスに追加します。</span><span class="sxs-lookup"><span data-stu-id="73633-103">To create a figure, construct a <xref:System.Drawing.Drawing2D.GraphicsPath>, and then call methods, such as <xref:System.Drawing.Drawing2D.GraphicsPath.AddLine%2A> and <xref:System.Drawing.Drawing2D.GraphicsPath.AddCurve%2A>, to add primitives to the path.</span></span>  

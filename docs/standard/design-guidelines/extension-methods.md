@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33574518"
 ---
 # <a name="extension-methods"></a><span data-ttu-id="74b24-102">拡張メソッド</span><span class="sxs-lookup"><span data-stu-id="74b24-102">Extension Methods</span></span>
 <span data-ttu-id="74b24-103">拡張メソッドは、言語の機能により、インスタンス メソッドの呼び出し構文を使用して呼び出されるメソッドは静的です。</span><span class="sxs-lookup"><span data-stu-id="74b24-103">Extension methods are a language feature that allows static methods to be called using instance method call syntax.</span></span> <span data-ttu-id="74b24-104">これらのメソッドは、操作するためには、メソッドのインスタンスを表すには、少なくとも 1 つのパラメーターを取得する必要があります。</span><span class="sxs-lookup"><span data-stu-id="74b24-104">These methods must take at least one parameter, which represents the instance the method is to operate on.</span></span>  

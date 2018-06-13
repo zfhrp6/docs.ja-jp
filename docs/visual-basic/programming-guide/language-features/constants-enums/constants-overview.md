@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33648386"
 ---
 # <a name="constants-overview-visual-basic"></a><span data-ttu-id="2e0bd-102">定数の概要 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="2e0bd-102">Constants Overview (Visual Basic)</span></span>
 <span data-ttu-id="2e0bd-103">定数とは、数値または文字列が変化しないの代わりに使用されるわかりやすい名前です。</span><span class="sxs-lookup"><span data-stu-id="2e0bd-103">A constant is a meaningful name that takes the place of a number or string that does not change.</span></span> <span data-ttu-id="2e0bd-104">定数は、同じである、名前が示すように、アプリケーションの実行中の値を格納します。</span><span class="sxs-lookup"><span data-stu-id="2e0bd-104">Constants store values that, as the name implies, remain the same throughout the execution of an application.</span></span> <span data-ttu-id="2e0bd-105">大幅に、コードの読みやすさを向上し、定数を使用して管理しやすくできます。</span><span class="sxs-lookup"><span data-stu-id="2e0bd-105">You can greatly improve the readability of your code and make it easier to maintain by using constants.</span></span> <span data-ttu-id="2e0bd-106">再度表示される値を含むコード内を使用すると、保存または明確な意味がないが困難な特定の番号によって異なります。</span><span class="sxs-lookup"><span data-stu-id="2e0bd-106">Use them in code that contains values that reappear or that depends on certain numbers that are difficult to remember or have no obvious meaning.</span></span>  

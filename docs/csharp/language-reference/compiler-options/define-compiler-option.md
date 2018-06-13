@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33218717"
 ---
 # <a name="-define-c-compiler-options"></a><span data-ttu-id="5e7d0-102">-define (C# コンパイラ オプション)</span><span class="sxs-lookup"><span data-stu-id="5e7d0-102">-define (C# Compiler Options)</span></span>
 <span data-ttu-id="5e7d0-103">**-define** オプションは、`name` をプログラムのすべてのソース コード ファイル内のシンボルとして定義します。</span><span class="sxs-lookup"><span data-stu-id="5e7d0-103">The **-define** option defines `name` as a symbol in all source code files your program.</span></span>  

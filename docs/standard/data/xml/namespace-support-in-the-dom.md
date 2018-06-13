@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33569452"
 ---
 # <a name="namespace-support-in-the-dom"></a><span data-ttu-id="0c51a-102">DOM における名前空間のサポート</span><span class="sxs-lookup"><span data-stu-id="0c51a-102">Namespace Support in the DOM</span></span>
 <span data-ttu-id="0c51a-103">XML ドキュメント オブジェクト モデル (DOM) は名前空間に完全に対応しています。</span><span class="sxs-lookup"><span data-stu-id="0c51a-103">The XML Document Object Model (DOM) is completely namespace-aware.</span></span> <span data-ttu-id="0c51a-104">名前空間に対応している XML ドキュメントだけがサポートされます。</span><span class="sxs-lookup"><span data-stu-id="0c51a-104">Only namespace-aware XML documents are supported.</span></span> <span data-ttu-id="0c51a-105">W3C (World Wide Web Consortium) の仕様によれば、DOM Level 1 を実装する DOM アプリケーションは名前空間に対応していなくてもかまいませんが、DOM Level 2 の機能は名前空間に対応しています。</span><span class="sxs-lookup"><span data-stu-id="0c51a-105">The World Wide Web Consortium (W3C) specifies that DOM applications that implement Level 1 can be non-namespace-aware, and DOM Level 2 features are namespace-aware.</span></span> <span data-ttu-id="0c51a-106">ただし、メソッドが DOM 勧告の Level 1 または Level 2 のどちらに準拠しているかに関係なく、XML DOM のすべての機能は名前空間に対応しています。</span><span class="sxs-lookup"><span data-stu-id="0c51a-106">However, all features in the XML DOM are namespace-aware, regardless if the method is from the Level 1 or Level 2 DOM Recommendation.</span></span>  

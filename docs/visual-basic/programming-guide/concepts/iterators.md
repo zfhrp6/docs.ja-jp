@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33643927"
 ---
 # <a name="iterators-visual-basic"></a><span data-ttu-id="1fcfb-102">反復子 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="1fcfb-102">Iterators (Visual Basic)</span></span>
 <span data-ttu-id="1fcfb-103">*反復子*を使用して、リストや配列などのコレクションをステップ実行することができます。</span><span class="sxs-lookup"><span data-stu-id="1fcfb-103">An *iterator* can be used to step through collections such as lists and arrays.</span></span>  

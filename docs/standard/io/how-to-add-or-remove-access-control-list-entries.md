@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33573424"
 ---
 # <a name="how-to-add-or-remove-access-control-list-entries"></a><span data-ttu-id="e603f-102">方法 : アクセス制御リスト エントリを追加または削除する</span><span class="sxs-lookup"><span data-stu-id="e603f-102">How to: Add or Remove Access Control List Entries</span></span>
 <span data-ttu-id="e603f-103">ファイルでアクセス制御リスト (ACL) エントリを追加または削除するには、<xref:System.Security.AccessControl.FileSecurity> または <xref:System.Security.AccessControl.DirectorySecurity> オブジェクトをファイルまたはディレクトリから取得して変更し、元のファイルまたはディレクトリに適用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="e603f-103">To add or remove Access Control List (ACL) entries to or from a file, the <xref:System.Security.AccessControl.FileSecurity> or <xref:System.Security.AccessControl.DirectorySecurity> object must be obtained from the file or directory, modified, and then applied back to the file or directory.</span></span>  

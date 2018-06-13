@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33522667"
 ---
 # <a name="how-to-extract-the-icon-associated-with-a-file-in-windows-forms"></a><span data-ttu-id="30f8d-102">方法 : Windows フォームでファイルに関連付けられているアイコンを抽出する</span><span class="sxs-lookup"><span data-stu-id="30f8d-102">How to: Extract the Icon Associated with a File in Windows Forms</span></span>
 <span data-ttu-id="30f8d-103">多くのファイルには、関連付けられているファイルの種類の視覚的に表示されるアイコンが埋め込まれています。</span><span class="sxs-lookup"><span data-stu-id="30f8d-103">Many files have embedded icons that provide a visual representation of the associated file type.</span></span> <span data-ttu-id="30f8d-104">たとえば、Microsoft Word ドキュメントには、Word 文書として識別されるアイコンが含まれます。</span><span class="sxs-lookup"><span data-stu-id="30f8d-104">For example, Microsoft Word documents contain an icon that identifies them as Word documents.</span></span> <span data-ttu-id="30f8d-105">ファイルを表示する、テーブル コントロールまたはリスト コントロールで、ときに各ファイル名の横にあるファイルの種類を表すアイコンを表示することがあります。</span><span class="sxs-lookup"><span data-stu-id="30f8d-105">When displaying files in a list control or table control, you may want to display the icon representing the file type next to each file name.</span></span> <span data-ttu-id="30f8d-106">使用して簡単に行うことができます、<xref:System.Drawing.Icon.ExtractAssociatedIcon%2A>メソッドです。</span><span class="sxs-lookup"><span data-stu-id="30f8d-106">You can do this easily by using the <xref:System.Drawing.Icon.ExtractAssociatedIcon%2A> method.</span></span>  

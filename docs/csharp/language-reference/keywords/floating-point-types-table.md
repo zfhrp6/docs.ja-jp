@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33219275"
 ---
 # <a name="floating-point-types-table-c-reference"></a><span data-ttu-id="c80dc-102">浮動小数点型の一覧表 (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="c80dc-102">Floating-Point Types Table (C# Reference)</span></span>
 <span data-ttu-id="c80dc-103">次の表では、浮動小数点型の有効桁数とおおよその範囲を示します。</span><span class="sxs-lookup"><span data-stu-id="c80dc-103">The following table shows the precision and approximate ranges for the floating-point types.</span></span>  

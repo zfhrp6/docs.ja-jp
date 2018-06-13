@@ -18,9 +18,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: ee808ba403a513b897134420b45ebe8cd3537571
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33442247"
 ---
 # <a name="corlocalrefpreservation-enumeration"></a><span data-ttu-id="ab268-102">CorLocalRefPreservation 列挙型</span><span class="sxs-lookup"><span data-stu-id="ab268-102">CorLocalRefPreservation Enumeration</span></span>
 <span data-ttu-id="ab268-103">ローカル参照の処理のためのフラグ値が格納されます。</span><span class="sxs-lookup"><span data-stu-id="ab268-103">Contains flag values for the treatment of local references.</span></span>  

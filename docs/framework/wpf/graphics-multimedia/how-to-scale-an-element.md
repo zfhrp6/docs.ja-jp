@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33562168"
 ---
 # <a name="how-to-scale-an-element"></a><span data-ttu-id="fd4c2-102">方法 : 要素をスケーリングする</span><span class="sxs-lookup"><span data-stu-id="fd4c2-102">How to: Scale an Element</span></span>
 <span data-ttu-id="fd4c2-103">この例を使用する方法を示しています、<xref:System.Windows.Media.ScaleTransform>要素のスケールを設定します。</span><span class="sxs-lookup"><span data-stu-id="fd4c2-103">This example shows how to use a <xref:System.Windows.Media.ScaleTransform> to scale an element.</span></span>  

@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33578331"
 ---
 # <a name="application-domain-resource-monitoring"></a><span data-ttu-id="19b42-102">アプリケーション ドメインのリソース監視</span><span class="sxs-lookup"><span data-stu-id="19b42-102">Application Domain Resource Monitoring</span></span>
 <span data-ttu-id="19b42-103">アプリケーション ドメインのリソース監視 (ARM) を使用して、ホストでアプリケーション ドメインによる CPU とメモリの使用状況を監視できます。</span><span class="sxs-lookup"><span data-stu-id="19b42-103">Application domain resource monitoring (ARM) enables hosts to monitor CPU and memory usage by application domain.</span></span> <span data-ttu-id="19b42-104">これは、実行時間の長いプロセスで多数のアプリケーション ドメインを使用する ASP.NET などのホストに役立ちます。</span><span class="sxs-lookup"><span data-stu-id="19b42-104">This is useful for hosts such as ASP.NET that use many application domains in a long-running process.</span></span> <span data-ttu-id="19b42-105">問題のあるアプリケーションを特定できる場合に限り、ホストは、プロセス全体のパフォーマンスに悪影響を与えるアプリケーションのアプリケーション ドメインをアンロードできます。</span><span class="sxs-lookup"><span data-stu-id="19b42-105">The host can unload the application domain of an application that is adversely affecting the performance of the entire process, but only if it can identify the problematic application.</span></span> <span data-ttu-id="19b42-106">ARM は、このような意思決定を支援するために使用できる情報を提供します。</span><span class="sxs-lookup"><span data-stu-id="19b42-106">ARM provides information that can be used to assist in making such decisions.</span></span>  

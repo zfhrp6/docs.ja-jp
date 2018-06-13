@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33650804"
 ---
 # <a name="how-to-declare-enumerations-visual-basic"></a><span data-ttu-id="3cc26-102">方法: 列挙型を宣言する (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="3cc26-102">How to: Declare Enumerations (Visual Basic)</span></span>
 <span data-ttu-id="3cc26-103">持つ列挙体を作成する、`Enum`クラスまたはモジュールの宣言セクション内のステートメント。</span><span class="sxs-lookup"><span data-stu-id="3cc26-103">You create an enumeration with the `Enum` statement in the declarations section of a class or module.</span></span> <span data-ttu-id="3cc26-104">メソッド内の列挙体を宣言することはできません。</span><span class="sxs-lookup"><span data-stu-id="3cc26-104">You cannot declare an enumeration within a method.</span></span> <span data-ttu-id="3cc26-105">適切なアクセス レベルを指定する`Private`、 `Protected`、 `Friend`、または`Public`です。</span><span class="sxs-lookup"><span data-stu-id="3cc26-105">To specify the appropriate level of access, use `Private`, `Protected`, `Friend`, or `Public`.</span></span>  

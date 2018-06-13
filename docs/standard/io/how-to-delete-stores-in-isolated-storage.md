@@ -22,6 +22,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33572328"
 ---
 # <a name="how-to-delete-stores-in-isolated-storage"></a><span data-ttu-id="b0ebc-102">方法 : 分離ストレージでストアを削除する</span><span class="sxs-lookup"><span data-stu-id="b0ebc-102">How to: Delete Stores in Isolated Storage</span></span>
 <span data-ttu-id="b0ebc-103">分離ストレージ ファイルを削除するため、 <xref:System.IO.IsolatedStorage.IsolatedStorageFile> クラスは 2 つのメソッドを提供します。</span><span class="sxs-lookup"><span data-stu-id="b0ebc-103">The <xref:System.IO.IsolatedStorage.IsolatedStorageFile> class supplies two methods for deleting isolated storage files:</span></span>  

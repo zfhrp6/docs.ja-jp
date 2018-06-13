@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33578067"
 ---
 # <a name="serialization"></a><span data-ttu-id="cb498-102">シリアル化</span><span class="sxs-lookup"><span data-stu-id="cb498-102">Serialization</span></span>
 <span data-ttu-id="cb498-103">シリアル化は、オブジェクトを簡単に永続化または転送できる形式に変換するプロセスです。</span><span class="sxs-lookup"><span data-stu-id="cb498-103">Serialization is the process of converting an object into a format that can be readily persisted or transported.</span></span> <span data-ttu-id="cb498-104">たとえば、オブジェクトをシリアル化、HTTP を使用して、移行先コンピューターで逆シリアル化した、インターネット経由で転送できます。</span><span class="sxs-lookup"><span data-stu-id="cb498-104">For example, you can serialize an object, transport it over the Internet using HTTP, and deserialized it at the destination machine.</span></span>  

@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33572867"
 ---
 # <a name="how-to-handle-multiple-events-using-event-properties"></a><span data-ttu-id="3eb9b-102">方法 : イベント プロパティを使用して複数のイベントを処理する</span><span class="sxs-lookup"><span data-stu-id="3eb9b-102">How to: Handle Multiple Events Using Event Properties</span></span>
 <span data-ttu-id="3eb9b-103">イベント プロパティを使用するには、イベントを発生させるクラスにイベント プロパティを定義し、そのイベントを処理するクラスにイベント プロパティのデリゲートを設定します。</span><span class="sxs-lookup"><span data-stu-id="3eb9b-103">To use event properties, you define the event properties in the class that raises the events, and then set the delegates for the event properties in classes that handle the events.</span></span> <span data-ttu-id="3eb9b-104">1 つのクラスにイベント プロパティを複数実装するには、そのクラス内部に、各イベント用に定義されたデリゲートを格納および保持する必要があります。</span><span class="sxs-lookup"><span data-stu-id="3eb9b-104">To implement multiple event properties in a class, the class must internally store and maintain the delegate defined for each event.</span></span> <span data-ttu-id="3eb9b-105">通常は、イベント キーをインデックスとするデリゲート コレクションを実装することによってこれを実現します。</span><span class="sxs-lookup"><span data-stu-id="3eb9b-105">A typical approach is to implement a delegate collection that is indexed by an event key.</span></span>  

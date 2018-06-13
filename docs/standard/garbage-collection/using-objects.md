@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33576325"
 ---
 # <a name="using-objects-that-implement-idisposable"></a><span data-ttu-id="38614-102">IDisposable を実装するオブジェクトの使用</span><span class="sxs-lookup"><span data-stu-id="38614-102">Using objects that implement IDisposable</span></span>
 

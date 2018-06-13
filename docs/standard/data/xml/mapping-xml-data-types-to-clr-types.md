@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33568546"
 ---
 # <a name="mapping-xml-data-types-to-clr-types"></a><span data-ttu-id="0ee2d-102">XML データ型から CLR 型へのマッピング</span><span class="sxs-lookup"><span data-stu-id="0ee2d-102">Mapping XML Data Types to CLR Types</span></span>
 <span data-ttu-id="0ee2d-103">XML データ型と共通言語ランタイム (CLR) 型の既定のマッピングを次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="0ee2d-103">The following table describes the default mapping between the XML data types and the common language runtime (CLR) types.</span></span>  

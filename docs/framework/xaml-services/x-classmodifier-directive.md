@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33564379"
 ---
 # <a name="xclassmodifier-directive"></a><span data-ttu-id="c2094-102">x:ClassModifier ディレクティブ</span><span class="sxs-lookup"><span data-stu-id="c2094-102">x:ClassModifier Directive</span></span>
 <span data-ttu-id="c2094-103">XAML のコンパイルの動作を変更するときに`x:Class`も用意されています。</span><span class="sxs-lookup"><span data-stu-id="c2094-103">Modifies XAML compilation behavior when `x:Class` is also provided.</span></span> <span data-ttu-id="c2094-104">部分を作成する代わりに、具体的には、`class`を持つ、`Public`アクセス レベル (既定)、指定された`x:Class`で作成された、`NotPublic`アクセス レベル。</span><span class="sxs-lookup"><span data-stu-id="c2094-104">Specifically, instead of creating a partial `class` that has a `Public` access level (the default), the provided `x:Class` is created with a `NotPublic` access level.</span></span> <span data-ttu-id="c2094-105">この動作では、生成されたアセンブリでクラスのアクセス レベルに影響します。</span><span class="sxs-lookup"><span data-stu-id="c2094-105">This behavior affects the access level for the class in the generated assemblies.</span></span>  

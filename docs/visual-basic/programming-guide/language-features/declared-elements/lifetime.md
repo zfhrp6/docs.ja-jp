@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33654230"
 ---
 # <a name="lifetime-in-visual-basic"></a><span data-ttu-id="170e1-102">Visual Basic における有効期間</span><span class="sxs-lookup"><span data-stu-id="170e1-102">Lifetime in Visual Basic</span></span>
 <span data-ttu-id="170e1-103">*有効期間*宣言された要素は、期間その中に、使用可能です。</span><span class="sxs-lookup"><span data-stu-id="170e1-103">The *lifetime* of a declared element is the period of time during which it is available for use.</span></span> <span data-ttu-id="170e1-104">変数は、有効期間がある唯一の要素です。</span><span class="sxs-lookup"><span data-stu-id="170e1-104">Variables are the only elements that have lifetime.</span></span> <span data-ttu-id="170e1-105">この目的のため、コンパイラは、プロシージャのパラメーターを処理し、関数は変数の特殊なケースとして返します。</span><span class="sxs-lookup"><span data-stu-id="170e1-105">For this purpose, the compiler treats procedure parameters and function returns as special cases of variables.</span></span> <span data-ttu-id="170e1-106">変数の有効期間は、値を保持できる時間の期間を表します。</span><span class="sxs-lookup"><span data-stu-id="170e1-106">The lifetime of a variable represents the period of time during which it can hold a value.</span></span> <span data-ttu-id="170e1-107">その有効期間全体でその値を変更することができますが、いくつかの値が常に格納します。</span><span class="sxs-lookup"><span data-stu-id="170e1-107">Its value can change over its lifetime, but it always holds some value.</span></span>  

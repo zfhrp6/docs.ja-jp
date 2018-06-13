@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33643503"
 ---
 # <a name="creating-xml-trees-visual-basic"></a><span data-ttu-id="7d9ba-102">XML ツリー (Visual Basic) を作成します。</span><span class="sxs-lookup"><span data-stu-id="7d9ba-102">Creating XML Trees (Visual Basic)</span></span>
 <span data-ttu-id="7d9ba-103">最も一般的な XML タスクの 1 つは、XML ツリーの構築です。</span><span class="sxs-lookup"><span data-stu-id="7d9ba-103">One of the most common XML tasks is constructing an XML tree.</span></span> <span data-ttu-id="7d9ba-104">ここでは、XML ツリーを作成するいくつかの方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="7d9ba-104">This section describes several ways to create them.</span></span>  

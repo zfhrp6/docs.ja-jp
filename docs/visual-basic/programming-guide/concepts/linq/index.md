@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33645969"
 ---
 # <a name="language-integrated-query-linq-visual-basic"></a><span data-ttu-id="c0fa5-102">統合言語クエリ (LINQ) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="c0fa5-102">Language-Integrated Query (LINQ) (Visual Basic)</span></span>
 <span data-ttu-id="c0fa5-103">LINQ は、強力なクエリ機能を Visual Basic の言語構文に拡張する機能のセットです。</span><span class="sxs-lookup"><span data-stu-id="c0fa5-103">LINQ is a set of features that extends powerful query capabilities to the language syntax of Visual Basic.</span></span> <span data-ttu-id="c0fa5-104">LINQ には、データを照会したり、更新したりするための、容易に覚えることのできる標準的なパターンが採用されており、あらゆる種類のデータ ストアをサポートするようにテクノロジを拡張できます。</span><span class="sxs-lookup"><span data-stu-id="c0fa5-104">LINQ introduces standard, easily-learned patterns for querying and updating data, and the technology can be extended to support potentially any kind of data store.</span></span>  <span data-ttu-id="c0fa5-105">.NET Framework には LINQ プロバイダー アセンブリが含まれているため、.NET Framework コレクション、SQL Server データベース、ADO.NET データセット、および XML ドキュメントで LINQ を使用できます。</span><span class="sxs-lookup"><span data-stu-id="c0fa5-105">The .NET Framework includes LINQ provider assemblies that enable the use of LINQ with .NET Framework collections, SQL Server databases, ADO.NET Datasets, and XML documents.</span></span>  

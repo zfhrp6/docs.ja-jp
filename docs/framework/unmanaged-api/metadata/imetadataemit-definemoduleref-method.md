@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 4503c3c745fde148c77ff30c9ece008dd9d54829
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33445797"
 ---
 # <a name="imetadataemitdefinemoduleref-method"></a><span data-ttu-id="4260f-102">IMetaDataEmit::DefineModuleRef メソッド</span><span class="sxs-lookup"><span data-stu-id="4260f-102">IMetaDataEmit::DefineModuleRef Method</span></span>
 <span data-ttu-id="4260f-103">指定した名前のモジュールのメタデータ署名を作成します。</span><span class="sxs-lookup"><span data-stu-id="4260f-103">Creates the metadata signature for a module with the specified name.</span></span>  

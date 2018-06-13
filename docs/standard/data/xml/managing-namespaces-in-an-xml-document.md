@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33574723"
 ---
 # <a name="managing-namespaces-in-an-xml-document"></a><span data-ttu-id="b3214-102">XML ドキュメントでの名前空間の管理</span><span class="sxs-lookup"><span data-stu-id="b3214-102">Managing Namespaces in an XML Document</span></span>
 <span data-ttu-id="b3214-103">XML 名前空間は、XML ドキュメントの要素名と属性名をカスタムの定義済み URI に関連付けます。</span><span class="sxs-lookup"><span data-stu-id="b3214-103">XML namespaces associate element and attribute names in an XML document with custom and predefined URIs.</span></span> <span data-ttu-id="b3214-104">この関係を作成するには、名前空間 URI のプレフィックスを定義し、そのプレフィックスを使用して XML データ内の要素名と属性名を修飾します。</span><span class="sxs-lookup"><span data-stu-id="b3214-104">To create these associations, you define prefixes for namespace URIs, and use those prefixes to qualify element and attribute names in XML data.</span></span> <span data-ttu-id="b3214-105">名前空間は要素名や属性名の競合を防ぎ、同じ名前の要素や属性を個別に処理および評価できるようにします。</span><span class="sxs-lookup"><span data-stu-id="b3214-105">Namespaces prevent element and attribute name collisions, and enable elements and attributes of the same name to be handled and validated differently.</span></span>  

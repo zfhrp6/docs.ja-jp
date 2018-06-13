@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33647834"
 ---
 # <a name="thread-pooling-visual-basic"></a><span data-ttu-id="cfc86-102">スレッド プール (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="cfc86-102">Thread Pooling (Visual Basic)</span></span>
 <span data-ttu-id="cfc86-103">"*スレッド プール*" とは、複数のタスクをバックグラウンドで実行するときに使用できるスレッドのコレクションです </span><span class="sxs-lookup"><span data-stu-id="cfc86-103">A *thread pool* is a collection of threads that can be used to perform several tasks in the background.</span></span> <span data-ttu-id="cfc86-104">(を参照してください[スレッド処理 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/threading/index.md)背景情報についてはします)。これにより、プライマリ スレッドは他のタスクを非同期的に実行できます。</span><span class="sxs-lookup"><span data-stu-id="cfc86-104">(See [Threading (Visual Basic)](../../../../visual-basic/programming-guide/concepts/threading/index.md) for background information.) This leaves the primary thread free to perform other tasks asynchronously.</span></span>  

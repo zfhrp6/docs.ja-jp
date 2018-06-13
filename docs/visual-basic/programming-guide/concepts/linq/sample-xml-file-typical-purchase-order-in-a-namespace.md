@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33644782"
 ---
 # <a name="sample-xml-file-typical-purchase-order-in-a-namespace"></a><span data-ttu-id="ad2aa-102">サンプル XML ファイル : 名前空間内の一般的な購買発注書</span><span class="sxs-lookup"><span data-stu-id="ad2aa-102">Sample XML File: Typical Purchase Order in a Namespace</span></span>
 <span data-ttu-id="ad2aa-103">次の XML ファイルは、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] ドキュメントのさまざまな例で使用されます。</span><span class="sxs-lookup"><span data-stu-id="ad2aa-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="ad2aa-104">このファイルは、一般的な購買発注書です。</span><span class="sxs-lookup"><span data-stu-id="ad2aa-104">This file is a typical purchase order.</span></span> <span data-ttu-id="ad2aa-105">XML は名前空間に含まれています。</span><span class="sxs-lookup"><span data-stu-id="ad2aa-105">The XML is in a namespace.</span></span>  

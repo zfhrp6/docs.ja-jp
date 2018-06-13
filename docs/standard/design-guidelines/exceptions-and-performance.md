@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33575337"
 ---
 # <a name="exceptions-and-performance"></a><span data-ttu-id="498f6-102">例外とパフォーマンス</span><span class="sxs-lookup"><span data-stu-id="498f6-102">Exceptions and Performance</span></span>
 <span data-ttu-id="498f6-103">例外に関連する 1 つの一般的な問題は、こと日常的に失敗したコードの例外を使用する場合の実装では、パフォーマンスは許容できないです。</span><span class="sxs-lookup"><span data-stu-id="498f6-103">One common concern related to exceptions is that if exceptions are used for code that routinely fails, the performance of the implementation will be unacceptable.</span></span> <span data-ttu-id="498f6-104">これは、有効な問題です。</span><span class="sxs-lookup"><span data-stu-id="498f6-104">This is a valid concern.</span></span> <span data-ttu-id="498f6-105">メンバーは、例外をスローするときに、パフォーマンスが桁違い低速にできます。</span><span class="sxs-lookup"><span data-stu-id="498f6-105">When a member throws an exception, its performance can be orders of magnitude slower.</span></span> <span data-ttu-id="498f6-106">ただし、厳密にエラー コードの使用を許可しない例外のガイドラインに従いながら良好なパフォーマンスを実現することはできます。</span><span class="sxs-lookup"><span data-stu-id="498f6-106">However, it is possible to achieve good performance while strictly adhering to the exception guidelines that disallow using error codes.</span></span> <span data-ttu-id="498f6-107">このセクションで説明した 2 つのパターンは、これを行う方法を提案します。</span><span class="sxs-lookup"><span data-stu-id="498f6-107">Two patterns described in this section suggest ways to do this.</span></span>  

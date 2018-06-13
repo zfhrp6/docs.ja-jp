@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33522537"
 ---
 # <a name="how-to-translate-image-colors"></a><span data-ttu-id="da00c-102">方法 : イメージの色を変換する</span><span class="sxs-lookup"><span data-stu-id="da00c-102">How to: Translate Image Colors</span></span>
 <span data-ttu-id="da00c-103">翻訳は、次の 4 つの色要素の 1 つ以上に値を追加します。</span><span class="sxs-lookup"><span data-stu-id="da00c-103">A translation adds a value to one or more of the four color components.</span></span> <span data-ttu-id="da00c-104">翻訳を表すカラー マトリックス エントリは、次の表で表されます。</span><span class="sxs-lookup"><span data-stu-id="da00c-104">The color matrix entries that represent translations are given in the following table.</span></span>  

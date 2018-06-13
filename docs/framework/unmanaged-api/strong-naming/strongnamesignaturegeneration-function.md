@@ -17,9 +17,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: c0555299779aebc6cc37c3863e8b5504b357b262
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33461494"
 ---
 # <a name="strongnamesignaturegeneration-function"></a><span data-ttu-id="c2614-102">StrongNameSignatureGeneration 関数</span><span class="sxs-lookup"><span data-stu-id="c2614-102">StrongNameSignatureGeneration Function</span></span>
 <span data-ttu-id="c2614-103">指定したアセンブリの厳密な名前の署名を生成します。</span><span class="sxs-lookup"><span data-stu-id="c2614-103">Generates a strong name signature for the specified assembly.</span></span>  

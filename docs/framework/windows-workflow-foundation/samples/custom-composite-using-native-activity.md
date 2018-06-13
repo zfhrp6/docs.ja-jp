@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33519211"
 ---
 # <a name="custom-composite-using-native-activity"></a><span data-ttu-id="0a21b-102">Native Activity を使用したカスタム複合</span><span class="sxs-lookup"><span data-stu-id="0a21b-102">Custom Composite using Native Activity</span></span>
 <span data-ttu-id="0a21b-103">このサンプルでは、他の <xref:System.Activities.NativeActivity> オブジェクトをスケジュールしてワークフローの実行のフローを制御する <xref:System.Activities.Activity> を作成する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="0a21b-103">This sample demonstrates how to write a <xref:System.Activities.NativeActivity> that schedules other <xref:System.Activities.Activity> objects to control the flow of a workflow’s execution.</span></span> <span data-ttu-id="0a21b-104">この方法を示すために、このサンプルでは一般的な制御フローである Sequence と While の 2 つを使用します。</span><span class="sxs-lookup"><span data-stu-id="0a21b-104">This sample uses two common control flows, Sequence and While, to demonstrate how to do this.</span></span>  

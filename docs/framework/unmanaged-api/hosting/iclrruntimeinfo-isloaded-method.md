@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 5ff1723cb481ee946e0c5c433009d3d6d7460cf5
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33434664"
 ---
 # <a name="iclrruntimeinfoisloaded-method"></a><span data-ttu-id="2b11d-102">ICLRRuntimeInfo::IsLoaded メソッド</span><span class="sxs-lookup"><span data-stu-id="2b11d-102">ICLRRuntimeInfo::IsLoaded Method</span></span>
 <span data-ttu-id="2b11d-103">共通言語ランタイム (CLR) に関連付けられているかどうかを示す、 [ICLRRuntimeInfo](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md)インターフェイスが、プロセスに読み込まれます。</span><span class="sxs-lookup"><span data-stu-id="2b11d-103">Indicates whether the common language runtime (CLR) associated with the [ICLRRuntimeInfo](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md) interface is loaded into a process.</span></span> <span data-ttu-id="2b11d-104">開始されないままランタイムを読み込むことができます。</span><span class="sxs-lookup"><span data-stu-id="2b11d-104">A runtime can be loaded without also being started.</span></span>  
