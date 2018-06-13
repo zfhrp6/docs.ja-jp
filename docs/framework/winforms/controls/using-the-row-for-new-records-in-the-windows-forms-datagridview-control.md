@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33540661"
 ---
 # <a name="using-the-row-for-new-records-in-the-windows-forms-datagridview-control"></a>Windows フォーム DataGridView コントロールにおける新規レコード行の使用
 使用すると、<xref:System.Windows.Forms.DataGridView>アプリケーション内のデータを編集するため、多くの場合、データ ストアに新しい行のデータを追加する機能をユーザーに付与します。 <xref:System.Windows.Forms.DataGridView>コントロールは、最後の行として常に表示されている、新しいレコードの行を指定してこの機能をサポートしています。 行のヘッダーにアスタリスク (*) 記号が付きます。 次のセクションでは、新しいレコードの行でプログラムが有効な場合の考慮事項について説明します。  

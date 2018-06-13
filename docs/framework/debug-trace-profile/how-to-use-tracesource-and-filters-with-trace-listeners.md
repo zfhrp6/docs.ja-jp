@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33388343"
 ---
 # <a name="how-to-use-tracesource-and-filters-with-trace-listeners"></a>方法 : TraceSource とフィルターをトレース リスナーと共に使用する
 .NET Framework Version 2.0 の新機能の 1 つは、強化されたトレース システムです。 基本的な前提は変更されていません。トレース メッセージはスイッチ経由でリスナーに送信され、関連付けられている出力メディアに、データを報告します。 バージョン 2.0 の主な違いは、<xref:System.Diagnostics.TraceSource> クラスのインスタンスを介してトレースを開始できることです。 <xref:System.Diagnostics.TraceSource> は、拡張されたトレース システムとして機能することを目的としており、以前の <xref:System.Diagnostics.Trace> トレース クラスと <xref:System.Diagnostics.Debug> トレース クラスの静的メソッドの代わりに使用できます。 使い慣れた <xref:System.Diagnostics.Trace> クラスと <xref:System.Diagnostics.Debug> クラスがまだ存在していますが、推奨される方法は、<xref:System.Diagnostics.TraceSource> クラスを使用したトレースです。  

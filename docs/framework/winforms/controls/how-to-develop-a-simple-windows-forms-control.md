@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33539667"
 ---
 # <a name="how-to-develop-a-simple-windows-forms-control"></a>方法 : シンプルな Windows フォーム コントロールを開発する
 ここでは、カスタム Windows フォーム コントロールの主な作成手順を紹介します。 このチュートリアルで開発された単純なコントロールでの配置は、その<xref:System.Windows.Forms.Control.Text%2A>プロパティを変更します。 イベントを発生させたり処理したりすることはありません。  

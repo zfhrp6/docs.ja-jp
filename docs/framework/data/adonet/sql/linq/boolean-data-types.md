@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33361573"
 ---
 # <a name="boolean-data-types"></a>ブール型
 ブール演算子は、共通言語ランタイム (CLR) で正常に動作しますが、ショートサーキットの動作は変換されません。 たとえば、Visual Basic の `AndAlso` 演算子は `And` 演算子のように動作します。 C# の `&&` 演算子は `&` 演算子のように動作します。  

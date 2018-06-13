@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33540564"
 ---
 # <a name="datetime-xaml-syntax"></a>DateTime XAML 構文
 などのいくつかのコントロール<xref:System.Windows.Controls.Calendar>と<xref:System.Windows.Controls.DatePicker>、使用できるプロパティがあります、<xref:System.DateTime>型です。 これらのコントロールに対する日付または時刻の初期値は、分離コードで実行時に指定するのが一般的です。ただし、日付または時刻の初期値を XAML で指定することもできます。 WPF XAML パーサーの解析を処理する<xref:System.DateTime>組み込み XAML テキスト構文を使用して値をします。 このトピックの詳細を記述する、 <xref:System.DateTime> XAML テキスト構文です。  

@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33540369"
 ---
 # <a name="how-to-navigate-data-in-windows-forms"></a>方法 : Windows フォームでデータ間を移動する
 データ ソースのレコード間を移動する最も簡単な方法は、Windows アプリケーションにバインドする、<xref:System.Windows.Forms.BindingSource>コンポーネント、データ ソースとしへのコントロールのバインドを<xref:System.Windows.Forms.BindingSource>です。 組み込みのナビゲーション メソッドを使用することができますし、<xref:System.Windows.Forms.BindingSource>このような<xref:System.Windows.Forms.BindingSource.MoveNext%2A>、 <xref:System.Windows.Forms.BindingSource.MoveLast%2A>、<xref:System.Windows.Forms.BindingSource.MovePrevious%2A>と<xref:System.Windows.Forms.BindingSource.MoveFirst%2A>です。 これらのメソッドを使用して、調整は、<xref:System.Windows.Forms.BindingSource.Position%2A>と<xref:System.Windows.Forms.BindingSource.Current%2A>のプロパティ、<xref:System.Windows.Forms.BindingSource>適切にします。 項目を検索してそれを設定して、現在のアイテムとして設定することができますも、<xref:System.Windows.Forms.BindingSource.Position%2A>プロパティです。  

@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33494830"
 ---
 # <a name="how-to-configure-a-port-with-an-ssl-certificate"></a>方法 : SSL 証明書を使用してポートを構成する
 自己ホスト型 Windows Communication Foundation (WCF) サービスを作成するときに、<xref:System.ServiceModel.WSHttpBinding>クラスのトランスポート セキュリティを使用する、X.509 証明書でポートを構成することも必要があります。 自己ホスト型サービスを作成するのでなければ、インターネット インフォメーション サービス (IIS) でサービスをホストできます。 詳細については、次を参照してください。 [HTTP トランスポート セキュリティ](../../../../docs/framework/wcf/feature-details/http-transport-security.md)です。  

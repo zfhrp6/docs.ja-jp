@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33536983"
 ---
 # <a name="performance-tuning-in-the-windows-forms-datagridview-control"></a>Windows フォーム DataGridView コントロールでのパフォーマンス チューニング
 大量のデータを使用するときに、`DataGridView`コントロールが大量のオーバーヘッドが、メモリを使用できるは、慎重に使用する場合を除き、します。 メモリの制限とのクライアントではメモリ消費の多い機能を回避することでこのオーバーヘッドの一部を回避できます。 データ メンテナンスの一部またはすべてを管理することもでき、シナリオでは、メモリ使用量をカスタマイズするために仮想モードを使用して自分でタスクを取得します。  

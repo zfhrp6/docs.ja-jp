@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33365853"
 ---
 # <a name="service-operations-wcf-data-services"></a>サービス操作 (WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] では、データ サービスでサービス操作を定義して、サーバーでメソッドを公開できます。 その他のデータ サービス リソースと同様に、サービス操作は URI によってアドレス指定できます。 サービス操作では、データ サービスでビジネス ロジックを公開できます (検証ロジックの実装、ロール ベースのセキュリティの適用、特殊なクエリ機能の公開など)。 サービス操作は、<xref:System.Data.Services.DataService%601> から派生するデータ クラスに追加されるメソッドです。 その他のすべてのデータ サービス リソースと同様に、パラメーターをサービス操作メソッドに指定できます。 たとえば、次のサービス操作の URI (に基づいて、[クイック スタート](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md)データ サービス) は、値を渡します`London`を`city`パラメーター。  

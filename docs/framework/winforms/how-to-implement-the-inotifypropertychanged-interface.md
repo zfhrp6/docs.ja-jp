@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33536413"
 ---
 # <a name="how-to-implement-the-inotifypropertychanged-interface"></a>方法 : INotifyPropertyChanged インターフェイスを実装する
 次のコード例は、実装する方法を示します、<xref:System.ComponentModel.INotifyPropertyChanged>インターフェイスです。 Windows フォーム データ バインディングで使用されているビジネス オブジェクトでは、このインターフェイスを実装します。 実装された場合、インターフェイスは、ビジネス オブジェクトでプロパティの変更をバインドされたコントロールを通信します。  

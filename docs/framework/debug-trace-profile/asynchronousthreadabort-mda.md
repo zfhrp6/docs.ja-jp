@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33364180"
 ---
 # <a name="asynchronousthreadabort-mda"></a>asynchronousThreadAbort MDA
 `asynchronousThreadAbort` マネージ デバッグ アシスタント (MDA) は、スレッドが別のスレッドに非同期の中止処理を適用しようとするとアクティブになります。 同期のスレッド中止では、`asynchronousThreadAbort` MDA はアクティブになりません。

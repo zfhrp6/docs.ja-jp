@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33361285"
 ---
 # <a name="managing-permissions-with-stored-procedures-in-sql-server"></a>SQL Server でのストアド プロシージャを使用した権限の管理
 データベースを多層的に防御する 1 つの方法として、あらゆるデータ アクセスをストアド プロシージャまたはユーザー定義関数を使って実装することが考えられます。 テーブルなど、基になるオブジェクトに対する権限をすべて取り消すか拒否し、ストアド プロシージャに対して EXECUTE 権限を付与するようにします。 こうすることで、データやデータベース オブジェクトの周囲にセキュリティの境界を設けることができます。  

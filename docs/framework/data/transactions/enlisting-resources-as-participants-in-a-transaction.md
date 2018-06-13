@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33365606"
 ---
 # <a name="enlisting-resources-as-participants-in-a-transaction"></a>トランザクションの参加要素としてのリソースの参加
 トランザクションに参加する各リソースは、リソース マネージャーによって管理され、その動作はトランザクション マネージャーによって調整されます。 この調整は、トランザクション マネージャーを介してトランザクションに参加したサブスクライバーへの通知によって行われます。  

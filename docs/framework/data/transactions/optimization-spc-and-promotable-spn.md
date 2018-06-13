@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33363287"
 ---
 # <a name="optimization-using-single-phase-commit-and-promotable-single-phase-notification"></a>単一フェーズ コミットおよび昇格可能単一フェーズ通知を使用した最適化
 ここでは、パフォーマンスを最適化するために <xref:System.Transactions> インフラストラクチャに用意されているメカニズムについて説明します。  

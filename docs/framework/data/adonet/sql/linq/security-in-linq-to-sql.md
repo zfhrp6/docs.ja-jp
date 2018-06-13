@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33364396"
 ---
 # <a name="security-in-linq-to-sql"></a>LINQ to SQL におけるセキュリティ
 データベースに接続するときは、常にセキュリティのリスクがあります。 LINQ to SQL には SQL Server のデータを操作する新しい方法が含まれていますが、セキュリティ メカニズムは追加されていません。  

@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33542081"
 ---
 # <a name="walkthrough-implementing-a-form-that-uses-a-background-operation"></a>チュートリアル : バックグラウンド操作を使用するフォームの実装
 完了するには長い時間がかかる操作があると応答を停止する、ユーザー インターフェイス (UI) を設定したくない、または「ハング」しを使用できる場合、<xref:System.ComponentModel.BackgroundWorker>別のスレッドで操作を実行するクラス。  

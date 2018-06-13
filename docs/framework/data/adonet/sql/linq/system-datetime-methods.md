@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33360762"
 ---
 # <a name="systemdatetime-methods"></a>System.DateTime メソッド
 LINQ to SQL でサポートされている以下のメソッド、演算子、およびプロパティは、LINQ to SQL のクエリで使用できます。 メソッド、演算子、またはプロパティがサポートされていない場合は、LINQ to SQL でメンバーを変換して SQL Server で実行することはできません。 これらのメンバーはコード内で使用できますが、クエリが Transact-SQL に変換される前、またはデータベースから結果が取得された後で評価する必要があります。  

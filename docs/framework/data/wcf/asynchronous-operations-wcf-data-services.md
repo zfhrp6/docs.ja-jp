@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33365918"
 ---
 # <a name="asynchronous-operations-wcf-data-services"></a>非同期操作 (WCF Data Services)
 Web アプリケーションは、内部ネットワーク内で実行するアプリケーションより長い、クライアントとサーバーとの間の待機時間に対応する必要があります。 Web を介して <xref:System.Data.Services.Client.DataServiceContext> サーバーにアクセスする場合、アプリケーションのパフォーマンスとユーザー エクスペリエンスを最適化するために <xref:System.Data.Services.Client.DataServiceQuery%601> クラスおよび [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] クラスの非同期メソッドを使用することをお勧めします。  

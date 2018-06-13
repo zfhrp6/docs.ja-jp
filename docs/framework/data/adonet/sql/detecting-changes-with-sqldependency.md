@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33360191"
 ---
 # <a name="detecting-changes-with-sqldependency"></a>SqlDependency を使用した変更の検出
 クエリ結果が最初に取得されたクエリ結果と異なることを検出するために、<xref:System.Data.SqlClient.SqlDependency> オブジェクトを <xref:System.Data.SqlClient.SqlCommand> に関連付けることができます。 さらに、`OnChange` イベントにデリゲートを割り当てることができます。このイベントは、関連付けられたコマンドの結果が変わったときに発生します。 コマンドを実行する前に、コマンドを <xref:System.Data.SqlClient.SqlDependency> に関連付ける必要があります。 また、`HasChanges` の <xref:System.Data.SqlClient.SqlDependency> プロパティを使用しても、データが最初に取得されて以降にクエリ結果が変化したかどうかを判別できます。  

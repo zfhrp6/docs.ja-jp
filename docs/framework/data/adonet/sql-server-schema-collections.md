@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33361056"
 ---
 # <a name="sql-server-schema-collections"></a>SQL Server スキーマ コレクション
 Microsoft .NET Framework Data Provider for SQL Server は、共通のスキーマ コレクションに加えて追加のスキーマ コレクションをサポートしています。 スキーマ コレクションは、使用している SQL Server のバージョンによって多少異なります。 サポートされるスキーマ コレクションの一覧を確認するのには、呼び出し、 **GetSchema**メソッド引数のない、またはスキーマ コレクション名に"metadatacollections を指定して"います。 これにより、サポートされるスキーマ コレクションの一覧、それぞれがサポートする制限数、および使用する識別子部分の数と共に、<xref:System.Data.DataTable> が返されます。  

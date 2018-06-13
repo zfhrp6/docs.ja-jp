@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33542276"
 ---
 # <a name="how-to-open-files-using-the-openfiledialog-component"></a>方法 : OpenFileDialog コンポーネントを使用してファイルを開く
 <xref:System.Windows.Forms.OpenFileDialog>コンポーネントにより、ユーザーが自分のコンピューターまたはネットワーク上のコンピューターのフォルダーを参照し、1 つまたは複数のファイルを選択します。 このダイアログ ボックスは、ユーザーがダイアログ ボックス内で選択したファイルのパスと名前を返します。  

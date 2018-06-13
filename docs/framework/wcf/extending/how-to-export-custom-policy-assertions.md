@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33488219"
 ---
 # <a name="how-to-export-custom-policy-assertions"></a>方法 : カスタム ポリシー アサーションをエクスポートする
 ポリシー アサーションはサービス エンドポイントの機能と要件を説明します。 サービス アプリケーションは、サービス メタデータに含まれるカスタム ポリシー アサーションを使用して、エンドポイントのバインディングまたはコントラクトのカスタマイズ情報をクライアント アプリケーションに伝達します。 Windows Communication Foundation (WCF) を使用して、エンドポイント、操作、または機能または通信する要件に応じて、メッセージのサブジェクトで WSDL バインディングに結び付けられたポリシー表現のアサーションをエクスポートすることができます。  

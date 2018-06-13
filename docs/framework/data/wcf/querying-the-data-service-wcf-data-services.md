@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33365645"
 ---
 # <a name="querying-the-data-service-wcf-data-services"></a>データ サービスに対するクエリ (WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] クライアント ライブラリを使用すると、言語統合クエリ (LINQ) を含め、使い慣れた [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] プログラミング パターンを使用してデータ サービスに対してクエリを実行できます。 このクライアント ライブラリは、クライアント上で <xref:System.Data.Services.Client.DataServiceQuery%601> クラスのインスタンスとして定義されたクエリを HTTP GET 要求メッセージに変換します。 ライブラリは、応答メッセージを受信し、クライアント データ サービス クラスのインスタンスに変換します。 これらのクラスは、<xref:System.Data.Services.Client.DataServiceContext> が属する <xref:System.Data.Services.Client.DataServiceQuery%601> によって追跡されます。  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33362819"
 ---
 # <a name="committing-a-transaction-in-single-phase-and-multi-phase"></a>単一フェースおよび複数フェーズでのトランザクションのコミット
 トランザクションで使用される各リソースは、リソース マネージャー (RM) によって管理され、その動作はトランザクション マネージャー (TM) によって調整されます。 [リソースをトランザクションの参加者として参加](../../../../docs/framework/data/transactions/enlisting-resources-as-participants-in-a-transaction.md)リソース (または複数のリソース) をトランザクションに参加させる方法について説明します。 ここでは、参加リソース間でトランザクションのコミットメントを調整する方法について説明します。  

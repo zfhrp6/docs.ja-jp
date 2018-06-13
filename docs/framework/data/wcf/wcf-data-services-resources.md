@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33364447"
 ---
 # <a name="wcf-data-services-resources"></a>WCF Data Services リソース
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] の概要に関するトピックは次のとおりです。 これらのトピックの多くには、詳細情報が記載された関連トピックへのリンクも含まれています。  

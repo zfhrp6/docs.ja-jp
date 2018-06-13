@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33364949"
 ---
 # <a name="formulate-projections"></a>射影の作成
 次の例に示す方法、 `select` (C#) ステートメントおよび`Select`Visual Basic でのステートメントは、クエリ射影を作成するには、その他の機能と組み合わせることができます。  

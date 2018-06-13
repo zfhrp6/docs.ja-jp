@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33365515"
 ---
 # <a name="wcf-data-services-client-library"></a>WCF Data Services クライアント ライブラリ
 HTTP 要求を送信し、データ サービスが返す [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] フィードを処理できるのであれば、どのようなアプリケーションでも [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] ベースのデータ サービスと対話できます。 この相互運用性によって、広範な Web 対応アプリケーションから [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] ベースのサービスにアクセスすることが可能になります。 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] 使用する際に、豊富なプログラミングの経験を提供するクライアント ライブラリを含む[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)].NET Framework や Silverlight ベースのアプリケーションからのフィードです。  

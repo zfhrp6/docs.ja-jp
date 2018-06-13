@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: c34d9243e4ed7ed2492784154b157189c7d22cd2
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33440581"
 ---
 # <a name="ihostsecuritymanagerreverttoself-method"></a>IHostSecurityManager::RevertToSelf メソッド
 現在のユーザー id の権限の借用を終了し、元のスレッド トークンを返します。  

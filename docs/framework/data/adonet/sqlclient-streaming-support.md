@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33364737"
 ---
 # <a name="sqlclient-streaming-support"></a>SqlClient ストリーミング サポート
 SQL Server とアプリケーション間のストリーミング サポート (で新しい[!INCLUDE[net_v45](../../../../includes/net-v45-md.md)]) サーバー (ドキュメント、画像、およびメディア ファイル) の非構造化データをサポートしています。 SQL Server データベースはバイナリ ラージ オブジェクト (Blob) を格納できますが、大量のメモリを使用して BLOB を取得することができます。  

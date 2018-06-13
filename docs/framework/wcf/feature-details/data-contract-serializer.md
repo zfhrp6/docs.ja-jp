@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33488983"
 ---
 # <a name="data-contract-serializer"></a>データ コントラクト シリアライザー
 Windows Communication Foundation (WCF) インフラストラクチャを使用して、<xref:System.Runtime.Serialization.DataContractSerializer>クラスとして、既定のシリアライザー。 このセクションの各トピックでは、これをスタンドアロンのシリアライザーとして使用するときの詳細について説明します。  

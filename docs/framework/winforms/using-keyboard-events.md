@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33542263"
 ---
 # <a name="using-keyboard-events"></a>キーボード イベントの使用
 多くの Windows フォーム プログラムは、キーボード イベントを処理することによってキーボード入力を処理します。 ここでは、どのような場合に各キーボード イベントを使用するか、また各イベントがどのようなデータを提供するかについての詳細を含め、キーボード イベントの概要について説明します。  参照してください[イベント ハンドラーの概要 (Windows フォーム)](http://msdn.microsoft.com/library/be6fx1bb\(v=vs.110\))、[イベントの概要 (Windows フォーム)](http://msdn.microsoft.com/library/1h12f09z\(v=vs.110\))です。  

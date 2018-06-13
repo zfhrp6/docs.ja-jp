@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33365697"
 ---
 # <a name="how-to-create-a-data-service-using-an-adonet-entity-framework-data-source-wcf-data-services"></a>方法: ADO.NET Entity Framework データ ソースを使用してデータ サービスを作成する (WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] では、エンティティ データはデータ サービスとして公開されます。 このエンティティのデータがによって提供される、 [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)]データ ソースがリレーショナル データベースの場合。 このトピックは、作成する方法を示します、 [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)]-ベースの既存のデータベースに基づいており、このデータ モデルを使用して新しいデータ サービスを作成する Visual Studio の Web アプリケーションでデータ モデル。  
@@ -34,7 +35,7 @@ ms.lasthandoff: 05/04/2018
   
      **データ接続の選択**データベース接続の設定 ダイアログ ボックスを更新します。  
   
-7.  いることを確認、**エンティティ接続設定を付けて App.Config に保存します。**チェック ボックスをオンします。 その後、 **[次へ]** をクリックします。  
+7.  いることを確認、**エンティティ接続設定を付けて App.Config に保存します。** チェック ボックスをオンします。 その後、 **[次へ]** をクリックします。  
   
 8.  **データベース オブジェクトの選択**ダイアログ ボックスで、すべてのデータベースのオブジェクトがデータ サービスの公開を計画することです。  
   

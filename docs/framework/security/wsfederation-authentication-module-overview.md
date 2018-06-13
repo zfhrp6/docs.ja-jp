@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33409382"
 ---
 # <a name="wsfederation-authentication-module-overview"></a>WSFederation 認証モジュールの概要
 Windows Identity Foundation (WIF) は、WS-Federated Authentication Module (WS-FAM) を通じて ASP.NET アプリケーションでのフェデレーション認証をサポートします。 このトピックは、フェデレーション認証の動作とその使用方法の理解に役立ちます。  

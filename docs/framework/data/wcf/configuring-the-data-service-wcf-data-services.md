@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33365139"
 ---
 # <a name="configuring-the-data-service-wcf-data-services"></a>データ サービスの構成 (WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]、公開するデータ サービスを作成する[!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]フィードします。 これらのフィードには、さまざまなデータ ソースからのデータが含まれることがあります。 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] このようなデータを公開するデータ プロバイダーを使用して、[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]フィードします。 これらのプロバイダーには、[!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] プロバイダー、リフレクション プロバイダー、およびカスタム データ サービス プロバイダー インターフェイスのセットがあります。 プロバイダーの実装は、サービスのデータ モデルを定義します。 詳細については、次を参照してください。[データ サービス プロバイダー](../../../../docs/framework/data/wcf/data-services-providers-wcf-data-services.md)です。  

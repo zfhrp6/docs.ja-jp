@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: d4d007085f74a92d75c6c9aeb704a3349a0efe35
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33444367"
 ---
 # <a name="itypenamebuilder-interface"></a>ITypeNameBuilder インターフェイス
 型名を構築するためのメソッドを提供します。  

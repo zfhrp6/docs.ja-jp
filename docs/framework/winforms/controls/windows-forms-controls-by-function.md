@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33541578"
 ---
 # <a name="windows-forms-controls-by-function"></a>Windows フォーム コントロールの機能別一覧
 Windows フォーム コントロールと多くの機能を実行するコンポーネントを提供します。 次の表には、Windows フォーム コントロールと一般的な機能に合わせてコンポーネントが一覧表示します。 さらに、複数のコントロールが存在する同じ機能を提供、置き換えるコントロールについての注釈を推奨されるコントロールが表示されます。 別の後続のテーブルには、置換対象のコントロールは、対応する推奨と共に一覧表示されます。  

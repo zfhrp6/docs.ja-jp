@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: a7b21179faec0b6f37b8084c9ee8a0bfd327193e
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33443565"
 ---
 # <a name="iceegentruncatesection-method"></a>ICeeGen::TruncateSection メソッド
 指定された長さで指定したコードのセクションを切り捨てます。  

@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33539826"
 ---
 # <a name="using-the-designer-with-the-windows-forms-datagridview-control"></a>Windows フォーム DataGridView コントロールでのデザイナーの使用
 Visual Studio のデザイナーのサポートを提供、`DataGridView`コントロールのコードを記述することがなく多数のセットアップ タスクを実行することができます。 これらのタスクには、データを表示する列の変更、データ ソースにコントロールが使用されるバインディングとコントロールの基本的な動作と外観を調整することが含まれます。  

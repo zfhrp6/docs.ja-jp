@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33537643"
 ---
 # <a name="selection-and-clipboard-use-with-the-windows-forms-datagridview-control"></a>Windows フォーム DataGridView コントロールでの選択およびクリップボードの使用
 `DataGridView`コントロールでは、さまざまなユーザーがセル、行、および列を選択する方法を構成するためのオプションが用意されています。 たとえば、有効にできます 1 つまたは複数選択、行全体またはユーザーがセルをクリックしたときの列の選択または選択行全体または列のユーザーが、ヘッダーをクリックしたときにのみセルの選択もできます。 選択範囲の独自のユーザー インターフェイスを提供する場合は、通常の選択を無効にし、すべての選択項目をプログラムで処理できます。 さらに、選択した値をクリップボードにコピーするユーザーを有効にすることができます。  

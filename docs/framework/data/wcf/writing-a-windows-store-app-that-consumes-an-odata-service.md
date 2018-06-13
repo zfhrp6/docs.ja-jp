@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33365788"
 ---
 # <a name="writing-a-windows-store-app-that-consumes-an-odata-service"></a>OData サービスを利用する Windows ストア アプリの開発
 Windows 8 アプリケーションの新しい型が導入されています。 Windows ストア アプリ。 まったく新しい外観を備え、さまざまなデバイス上で実行される Windows ストア アプリは、Windows ストアで入手できます。 このトピックでは、特に NetFlix のカタログで公開されている OData サービスを中心に、OData サービスを利用する Windows ストア アプリの開発方法を説明します。 Windows ストア アプリの詳細については、「 [Windows ストア アプリの概要](http://msdn.microsoft.com/library/windows/apps/br211386.aspx)です。  

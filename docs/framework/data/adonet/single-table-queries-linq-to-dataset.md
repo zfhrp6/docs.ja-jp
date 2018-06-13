@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33360479"
 ---
 # <a name="single-table-queries-linq-to-dataset"></a>単一テーブルのクエリ (LINQ to DataSet)
 [!INCLUDE[vbteclinqext](../../../../includes/vbteclinqext-md.md)] 実装するデータ ソースに対するクエリは、処理、<xref:System.Collections.Generic.IEnumerable%601>インターフェイスまたは<xref:System.Linq.IQueryable%601>インターフェイスです。 <xref:System.Data.DataTable>クラスがいずれのインターフェイスを実装していないので、呼び出す必要があります、<xref:System.Data.DataTableExtensions.AsEnumerable%2A>メソッドを使用する場合、<xref:System.Data.DataTable>のソースとして、`From`の句、[!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)]クエリ。  

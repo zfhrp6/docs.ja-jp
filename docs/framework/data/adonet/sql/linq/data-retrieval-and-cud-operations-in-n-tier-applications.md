@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33365840"
 ---
 # <a name="data-retrieval-and-cud-operations-in-n-tier-applications-linq-to-sql"></a>N 層アプリケーションでのデータ取得および CUD 操作 (LINQ to SQL)
 Customers または Orders のようなエンティティ オブジェクトをネットワークを介してクライアントにシリアル化すると、これらのエンティティはデータ コンテキストからデタッチされます。 変更内容、および他のオブジェクトとの関連付けはデータ コンテキストによって追跡されなくなります。 クライアントがデータを読み取るだけの場合は、これは問題にはなりません。 また、クライアントが新しい行をデータベースに追加できるようにすることも、ある程度簡単です。 しかし、アプリケーションでクライアントによるデータの更新または削除を可能にする必要がある場合には、<xref:System.Data.Linq.DataContext.SubmitChanges%2A?displayProperty=nameWithType> を呼び出す前に、新しいデータ コンテキストにエンティティをアタッチする必要があります。 さらに、元の値によるオプティミスティック同時実行制御チェックを使用する場合には、何らかの方法で、元のエンティティと変更後のエンティティをデータベースに渡す必要もあります。 エンティティがデタッチされた後に新しいデータ コンテキストにエンティティを入れるために、`Attach` メソッドが用意されています。  

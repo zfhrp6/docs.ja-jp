@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33543011"
 ---
 # <a name="how-to-create-a-rollover-effect-using-events"></a>方法 : イベントを使用してロールオーバー効果を作成する
 この例では、マウス ポインターが要素で占有される領域に出入りとして要素の色を変更する方法を示します。  

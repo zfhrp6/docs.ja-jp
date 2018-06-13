@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33363352"
 ---
 # <a name="protecting-connection-information"></a>接続情報の保護
 アプリケーションのセキュリティを実現するうえで、データ ソースへのアクセスを保護することは、最も重要な目標の 1 つです。 保護されていない接続文字列は脆弱性を招く原因になります。 接続情報をテキスト形式で保存したり、メモリ内に保持したりすると、システム全体のセキュリティが損なわれる可能性があります。 使用して、ソース コードに埋め込まれた接続文字列を読み取ることができます、 [Ildasm.exe (IL 逆アセンブラー)](../../../../docs/framework/tools/ildasm-exe-il-disassembler.md)コンパイルされたアセンブリで Microsoft intermediate language (MSIL) を表示します。  

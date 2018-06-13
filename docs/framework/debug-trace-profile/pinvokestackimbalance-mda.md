@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33388057"
 ---
 # <a name="pinvokestackimbalance-mda"></a>pInvokeStackImbalance MDA
 <xref:System.Runtime.InteropServices.DllImportAttribute> の属性で指定される呼び出し規約、およびマネージ シグネチャ内のパラメーターの宣言が指定されている場合に、プラットフォーム呼び出しが、予想されるスタックの深さに一致しないことを CLR が検出したときに、`pInvokeStackImbalance` マネージ デバッグ アシスタント (MDA) がアクティブ化されます。  

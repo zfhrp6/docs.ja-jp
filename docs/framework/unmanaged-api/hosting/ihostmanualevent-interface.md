@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 53aaf4c23861666962e5567a6cf9eb9fffc6292f
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33438757"
 ---
 # <a name="ihostmanualevent-interface"></a>IHostManualEvent インターフェイス
 手動リセット イベントの形式のホストの実装を提供します。  

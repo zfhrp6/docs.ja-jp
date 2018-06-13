@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33365411"
 ---
 # <a name="sql-server-express-user-instances"></a>SQL Server Express ユーザー インスタンス
 Microsoft SQL Server Express Edition (SQL Server Express) でサポートされる機能に、ユーザー インスタンスがあります。ユーザー インスタンスは、.NET Framework Data Provider for SQL Server (`SqlClient`) を使用している場合にしか利用できません。 ユーザー インスタンスは、親インスタンスによって生成される SQL Server Express データベース エンジンの独立したインスタンスです。 ユーザー インスタンスを使用すると、ローカル コンピューターの管理者以外のユーザーが、SQL Server Express データベースにアタッチして接続できます。 それぞれのインスタンスは、1 ユーザーあたり 1 インスタンスの原則に基づいて、個々のユーザーのセキュリティ コンテキストで実行されます。  

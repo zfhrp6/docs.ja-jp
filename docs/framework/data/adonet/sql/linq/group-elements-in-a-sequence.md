@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33364504"
 ---
 # <a name="group-elements-in-a-sequence"></a>シーケンスの要素のグループ化
 <xref:System.Linq.Enumerable.GroupBy%2A> 演算子はシーケンスの要素をグループ化します。 Northwind データベースを使用する例を次に示します。  

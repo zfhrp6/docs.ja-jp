@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33539573"
 ---
 # <a name="selection-modes-in-the-windows-forms-datagridview-control"></a>Windows フォーム DataGridView コントロールの選択モード
 アプリケーション内のユーザーの選択に基づいて操作を実行することがあります、<xref:System.Windows.Forms.DataGridView>コントロール。 によって、アクション可能な選択の種類を制限します。 たとえば、アプリケーションは、現在選択されているレコードに対してレポートを印刷できます。 ここでは、構成する場合は、<xref:System.Windows.Forms.DataGridView>コントロールに常に、行内でクリックしてできるようには、全体の行を選択し、一度に 1 つだけその行を選択できるようにします。  

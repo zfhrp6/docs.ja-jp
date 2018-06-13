@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33363565"
 ---
 # <a name="exposing-your-data-as-a-service-wcf-data-services"></a>サービスとしてのデータの公開 (WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] 簡単としてデータを公開するサービスを定義するために Visual Studio と統合し、[!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]フィードします。 公開データ サービスを作成する、[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]フィードには、次の基本的な手順が含まれます。  

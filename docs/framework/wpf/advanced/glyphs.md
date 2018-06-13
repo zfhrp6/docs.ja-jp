@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33543067"
 ---
 # <a name="glyphs"></a>グリフ
 グリフは、画面上に描画される文字の低レベルの表現です。 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] インターセプトし、テキストを書式設定後に永続化を希望お客様のグリフに直接アクセスを提供します。  

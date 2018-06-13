@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33360351"
 ---
 # <a name="deferred-versus-immediate-loading"></a>遅延読み込みと即時読み込み
 オブジェクトに対してクエリを実行すると、要求したオブジェクトだけが実際に取得されます。 *関連*オブジェクトは自動的に同時にフェッチされません。 (詳細については、次を参照してください[リレーションシップ間でクエリを実行する](../../../../../../docs/framework/data/adonet/sql/linq/querying-across-relationships.md)。)。ただし、関連オブジェクトにアクセスしようとすると、それらを取得する要求が生成されるため、関連オブジェクトがまだ読み込まれていない状態を識別することはできません。  

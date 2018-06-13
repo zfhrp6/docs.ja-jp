@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33540993"
 ---
 # <a name="webbrowser-control-overview"></a>WebBrowser コントロールの概要
 <xref:System.Windows.Forms.WebBrowser>コントロールは、WebBrowser ActiveX コントロールのマネージ ラッパーを提供します。 マネージ ラッパーを使用して、Windows フォーム クライアント アプリケーションで Web ページを表示できます。 使用することができます、<xref:System.Windows.Forms.WebBrowser>したりするアプリケーションで Internet Explorer Web ブラウズの機能を複製するコントロールが既定の Internet Explorer の機能を無効にしてとして単純な HTML ドキュメント ビューアー コントロールを使用します。 DHTML ベースのユーザー インターフェイス要素をフォームに追加しでホストされているという事実を非表示にする、コントロールを使用することも、<xref:System.Windows.Forms.WebBrowser>コントロール。 この方法では、Web コントロールを 1 つのアプリケーションで Windows フォーム コントロールとシームレスに結合することができます。  

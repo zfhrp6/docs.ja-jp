@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33365528"
 ---
 # <a name="sql-clr-type-mapping"></a>SQL と CLR の型マッピング
 LINQ to SQL では、リレーショナル データベースのデータ モデルが、任意のプログラミング言語で表されるオブジェクト モデルに対応付けられています。 アプリケーションが実行されると、LINQ to SQL は、オブジェクト モデルの統合言語クエリを SQL に変換し、それをデータベースに送信して実行します。 データベースから結果が返されると、LINQ to SQL はその結果をプログラミング言語で操作できるオブジェクトに変換し直します。  

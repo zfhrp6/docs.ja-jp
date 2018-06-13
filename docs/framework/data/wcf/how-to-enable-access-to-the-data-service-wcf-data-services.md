@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33364560"
 ---
 # <a name="how-to-enable-access-to-the-data-service-wcf-data-services"></a>方法: データ サービスへのアクセスを有効にする (WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] では、データ サービスによって公開されているリソースに明示的にアクセス権を付与する必要があります。 つまり、新しいデータ サービスを作成した後も、個々のリソースに対し、エンティティ セットとして明示的にアクセスを許可する必要があります。 このトピックの内容が読み取りを有効にする方法を示していて、完了したときに作成される Northwind データ サービスの 5 つのエンティティへの書き込みアクセスを設定、[クイック スタート](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md)です。 <xref:System.Data.Services.EntitySetRights> 列挙体は <xref:System.FlagsAttribute> を使用して定義されているので、論理和演算子を使用して 1 つのエンティティ セットに複数のアクセス許可を指定できます。  

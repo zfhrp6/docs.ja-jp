@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33316999"
 ---
 # <a name="how-to-calculate-intermediate-values-c"></a>方法: 中間値を計算する (C#)
 この例では、並べ替え、フィルタリング、および選択を実行する際に使用できる中間値を計算する方法について説明します。  

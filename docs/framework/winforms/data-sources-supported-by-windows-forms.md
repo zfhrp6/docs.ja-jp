@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33541178"
 ---
 # <a name="data-sources-supported-by-windows-forms"></a>Windows フォームがサポートするデータ ソース
 従来は、データ バインディングは、データベースに格納されたデータを活用するためにアプリケーション内で使用されています。 Windows フォーム データ バインディングを特定の最小要件を満たしている限り、データベースに他の構造体、配列など、コレクション内のデータからデータにアクセスすることができます。  

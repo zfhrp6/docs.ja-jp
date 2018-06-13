@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33388223"
 ---
 # <a name="exposing-com-components-to-the-net-framework"></a>.NET Framework への COM コンポーネントの公開
 このセクションでは、既存の COM コンポーネントをマネージ コードに公開するために必要なプロセスをまとめています。 .NET Framework と緊密に統合される COM サーバーの詳細については、「[Design Considerations for Interoperation](https://msdn.microsoft.com/library/b59637f6-fe35-40d6-ae72-901e7a707689(v=vs.100))」(相互運用のためのデザインの考慮事項) を参照してください。

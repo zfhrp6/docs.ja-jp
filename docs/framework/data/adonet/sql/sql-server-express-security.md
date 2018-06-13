@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33364373"
 ---
 # <a name="sql-server-express-security"></a>SQL Server Express のセキュリティ
 Microsoft SQL Server Express Edition (SQL Server Express) は Microsoft SQL Server をベースとしており、同データベース エンジンの多くの機能をサポートしています。 必須ではない機能やネットワーク接続は、既定では無効にされています。 これは悪意のあるユーザーに攻撃の隙をできるだけ与えないようにするための配慮です。  
