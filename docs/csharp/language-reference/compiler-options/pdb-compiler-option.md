@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33217429"
 ---
 # <a name="-pdb-c-compiler-options"></a>-pdb (C# コンパイラ オプション)
 **-pdb** コンパイラ オプションは、デバッグ シンボル ファイルの場所と名前を指定します。  

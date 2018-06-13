@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32749320"
 ---
 # <a name="lttrackinggt-of-wcf"></a>WCF の &lt;tracking&gt;
 ワークフロー サービスの追跡設定を定義する構成セクションを表します。  

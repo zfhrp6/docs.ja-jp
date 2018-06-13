@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33289270"
 ---
 # <a name="line-c-reference"></a>#line (C# リファレンス)
 `#line` を使用すると、コンパイラの行番号および (必要に応じて) エラーと警告に出力されるファイル名を変更することができます。 この例では、行番号に関連付けられている 2 つの警告を報告する方法を示します。 `#line 200` ディレクティブは行番号が 200 (既定では 7) になるように強制し、次の #line ディレクティブまでファイル名を "Special" として報告します。 #line default ディレクティブは、行の番号付けをその既定の番号付けに戻します。つまり、前のディレクティブで番号が付け直された行をカウントします。  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32751871"
 ---
 # <a name="programming-with-assemblies"></a>アセンブリを使用したプログラミング
 アセンブリは .NET Framework の構成要素であり、配置、バージョン管理、再利用、アクティブ化のスコープの指定、およびセキュリティ アクセス許可の基本単位となります。 共通言語ランタイムは、型の実装に関して必要な情報をアセンブリから取得します。 アセンブリは、相互に連携して 1 つの論理的な機能単位を形成するように構築された型やリソースの集合です。 共通言語ランタイムにとって、型はアセンブリのコンテキストの外部には存在しません。  
