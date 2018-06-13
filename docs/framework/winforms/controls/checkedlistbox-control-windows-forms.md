@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33525589"
 ---
 # <a name="checkedlistbox-control-windows-forms"></a><span data-ttu-id="d8b73-102">CheckedListBox コントロール (Windows フォーム)</span><span class="sxs-lookup"><span data-stu-id="d8b73-102">CheckedListBox Control (Windows Forms)</span></span>
 <span data-ttu-id="d8b73-103">Windows フォーム`CheckedListBox`コントロールと同様に、項目のリストを表示、<xref:System.Windows.Forms.ListBox>制御、および一覧で項目の横にあるチェック マークを表示できます。</span><span class="sxs-lookup"><span data-stu-id="d8b73-103">The Windows Forms `CheckedListBox` control displays a list of items, like the <xref:System.Windows.Forms.ListBox> control, and also can display a check mark next to items in the list.</span></span>  

@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 881c0b1f755e750efcc74ca61a60bbd97bc5dba7
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33444465"
 ---
 # <a name="imetadataemitdefinememberref-method"></a><span data-ttu-id="fbcfb-102">IMetaDataEmit::DefineMemberRef メソッド</span><span class="sxs-lookup"><span data-stu-id="fbcfb-102">IMetaDataEmit::DefineMemberRef Method</span></span>
 <span data-ttu-id="fbcfb-103">現在のスコープ外にあるモジュールのメンバーへの参照を定義し、その参照定義トークンを取得します。</span><span class="sxs-lookup"><span data-stu-id="fbcfb-103">Defines a reference to a member of a module outside the current scope, and gets a token to that reference definition.</span></span>  

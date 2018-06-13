@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 756b0ff726c31bf096a1c1b70004c3ff82fe9979
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33450038"
 ---
 # <a name="imetadatatables2getmetadatastreaminfo-method"></a><span data-ttu-id="75b3c-102">IMetaDataTables2::GetMetaDataStreamInfo メソッド</span><span class="sxs-lookup"><span data-stu-id="75b3c-102">IMetaDataTables2::GetMetaDataStreamInfo Method</span></span>
 <span data-ttu-id="75b3c-103">名前、サイズ、および指定したインデックス位置にあるメタデータ ストリームの内容を取得します。</span><span class="sxs-lookup"><span data-stu-id="75b3c-103">Gets the name, size, and contents of the metadata stream at the specified index.</span></span>  

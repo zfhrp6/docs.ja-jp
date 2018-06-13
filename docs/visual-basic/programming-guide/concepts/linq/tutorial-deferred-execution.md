@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33645877"
 ---
 # <a name="tutorial-deferred-execution-visual-basic"></a><span data-ttu-id="1d807-102">チュートリアル: 遅延実行 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="1d807-102">Tutorial: Deferred Execution (Visual Basic)</span></span>
 <span data-ttu-id="1d807-103">このチュートリアルでは、クエリを連結する際の処理モデルを紹介します。</span><span class="sxs-lookup"><span data-stu-id="1d807-103">This tutorial illustrates the processing model when you chain queries together.</span></span> <span data-ttu-id="1d807-104">クエリの連結は、関数型変換を記述する際の重要な要素です。</span><span class="sxs-lookup"><span data-stu-id="1d807-104">Chaining queries together is a key part of writing functional transformations.</span></span> <span data-ttu-id="1d807-105">連結されたクエリがどのように動作するのかを正確に把握することが重要です。</span><span class="sxs-lookup"><span data-stu-id="1d807-105">It is important to understand exactly how chained queries work.</span></span>  

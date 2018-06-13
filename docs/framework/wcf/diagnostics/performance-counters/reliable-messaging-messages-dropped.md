@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33470556"
 ---
 # <a name="reliable-messaging-messages-dropped"></a><span data-ttu-id="a824c-102">信頼できるメッセージの破棄されたメッセージ</span><span class="sxs-lookup"><span data-stu-id="a824c-102">Reliable Messaging Messages Dropped</span></span>
 <span data-ttu-id="a824c-103">カウンター名 : 破棄された信頼できるメッセージ。</span><span class="sxs-lookup"><span data-stu-id="a824c-103">Counter Name: Reliable Messaging Sessions Dropped.</span></span>  

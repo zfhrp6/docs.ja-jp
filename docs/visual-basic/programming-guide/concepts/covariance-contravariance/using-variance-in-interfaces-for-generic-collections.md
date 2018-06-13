@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33642689"
 ---
 # <a name="using-variance-in-interfaces-for-generic-collections-visual-basic"></a><span data-ttu-id="29a67-102">(Visual Basic) のジェネリック コレクションに対するインターフェイスの分散の使用</span><span class="sxs-lookup"><span data-stu-id="29a67-102">Using Variance in Interfaces for Generic Collections (Visual Basic)</span></span>
 <span data-ttu-id="29a67-103">共変のインターフェイスのメソッドでは、そのインターフェイスで指定された型よりも強い派生型を返すことができます。</span><span class="sxs-lookup"><span data-stu-id="29a67-103">A covariant interface allows its methods to return more derived types than those specified in the interface.</span></span> <span data-ttu-id="29a67-104">反変のインターフェイスのメソッドでは、そのインターフェイスで指定された型よりも弱い派生型のパラメーターを受け取ることができます。</span><span class="sxs-lookup"><span data-stu-id="29a67-104">A contravariant interface allows its methods to accept parameters of less derived types than those specified in the interface.</span></span>  

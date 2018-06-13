@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33643165"
 ---
 # <a name="how-to-find-descendants-of-a-child-element-xpath-linq-to-xml-visual-basic"></a><span data-ttu-id="71b25-102">方法: 子要素 (XPATH-LINQ to XML) の子孫を検索 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="71b25-102">How to: Find Descendants of a Child Element (XPath-LINQ to XML) (Visual Basic)</span></span>
 <span data-ttu-id="71b25-103">このトピックでは、特定の名前を持つ子要素の子孫要素を取得する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="71b25-103">This topic shows how to get the descendant elements of a child element with a particular name.</span></span>  

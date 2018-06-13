@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 656f5ee20e50ea9ac5c03711adfd0b8264fbcca0
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33444959"
 ---
 # <a name="imetadataemitsavetostream-method"></a><span data-ttu-id="9e588-102">IMetaDataEmit::SaveToStream メソッド</span><span class="sxs-lookup"><span data-stu-id="9e588-102">IMetaDataEmit::SaveToStream Method</span></span>
 <span data-ttu-id="9e588-103">現在のスコープを指定したすべてのメタデータを保存`IStream`です。</span><span class="sxs-lookup"><span data-stu-id="9e588-103">Saves all metadata in the current scope to the specified `IStream`.</span></span>  

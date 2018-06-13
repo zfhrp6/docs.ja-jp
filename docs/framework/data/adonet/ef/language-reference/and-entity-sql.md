@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32763788"
 ---
 # <a name="ampamp-and-entity-sql"></a><span data-ttu-id="e2ee9-102">&amp;&amp; (と)(Entity SQL)</span><span class="sxs-lookup"><span data-stu-id="e2ee9-102">&amp;&amp; (AND) (Entity SQL)</span></span>
 <span data-ttu-id="e2ee9-103">両方の式が `true` の場合は `true`を返します。それ以外の場合は `false` または `NULL`を返します。</span><span class="sxs-lookup"><span data-stu-id="e2ee9-103">Returns `true` if both expressions are `true`; otherwise, `false` or `NULL`.</span></span>  

@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 70fdc548c02015f0950f009abe94652795cba568
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33459797"
 ---
 # <a name="icorprofilerinfo3getfunctionleave3info-method"></a><span data-ttu-id="3835e-102">ICorProfilerInfo3::GetFunctionLeave3Info メソッド</span><span class="sxs-lookup"><span data-stu-id="3835e-102">ICorProfilerInfo3::GetFunctionLeave3Info Method</span></span>
 <span data-ttu-id="3835e-103">スタック フレームとによってプロファイラーに報告される関数の戻り値を提供、 [FunctionLeave3WithInfo 関数](../../../../docs/framework/unmanaged-api/profiling/functionleave3withinfo-function.md)関数。</span><span class="sxs-lookup"><span data-stu-id="3835e-103">Provides the stack frame and return value of the function that is being reported to the profiler by the [FunctionLeave3WithInfo function](../../../../docs/framework/unmanaged-api/profiling/functionleave3withinfo-function.md) function.</span></span> <span data-ttu-id="3835e-104">このメソッドは、`FunctionLeave3WithInfo` コールバック中にのみ呼び出すことができます。</span><span class="sxs-lookup"><span data-stu-id="3835e-104">This method can be called only during the `FunctionLeave3WithInfo` callback.</span></span>  

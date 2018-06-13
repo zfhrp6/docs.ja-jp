@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33648500"
 ---
 # <a name="structure-variables-visual-basic"></a><span data-ttu-id="b4fd1-102">構造体の変数 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="b4fd1-102">Structure Variables (Visual Basic)</span></span>
 <span data-ttu-id="b4fd1-103">構造体を作成した後は、その型としてプロシージャ レベルとモジュール レベル変数を宣言できます。</span><span class="sxs-lookup"><span data-stu-id="b4fd1-103">Once you have created a structure, you can declare procedure-level and module-level variables as that type.</span></span> <span data-ttu-id="b4fd1-104">たとえば、コンピューター システムに関する情報を記録する構造体を作成できます。</span><span class="sxs-lookup"><span data-stu-id="b4fd1-104">For example, you can create a structure that records information about a computer system.</span></span> <span data-ttu-id="b4fd1-105">次に例を示します。</span><span class="sxs-lookup"><span data-stu-id="b4fd1-105">The following example demonstrates this.</span></span>  

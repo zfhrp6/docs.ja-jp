@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33524874"
 ---
 # <a name="how-to-display-more-than-one-month-in-the-windows-forms-monthcalendar-control"></a><span data-ttu-id="5aa52-102">方法 : Windows フォームの MonthCalendar コントロールにおいて複数の月を表示する</span><span class="sxs-lookup"><span data-stu-id="5aa52-102">How to: Display More than One Month in the Windows Forms MonthCalendar Control</span></span>
 <span data-ttu-id="5aa52-103">Windows フォーム<xref:System.Windows.Forms.MonthCalendar>コントロールは、一度に最大 12 か月間を表示することができます。</span><span class="sxs-lookup"><span data-stu-id="5aa52-103">The Windows Forms <xref:System.Windows.Forms.MonthCalendar> control can display up to 12 months at a time.</span></span> <span data-ttu-id="5aa52-104">既定では、コントロールには、1 か月のみが表示されますが、月の数が表示され、コントロール内の配置方法を指定することができます。</span><span class="sxs-lookup"><span data-stu-id="5aa52-104">By default, the control displays only one month, but you can specify how many months are displayed and how they are arranged within the control.</span></span> <span data-ttu-id="5aa52-105">カレンダーの次元を変更すると、コントロールのサイズ変更されるため、必ず新しいディメンションのフォームに十分な空き領域があります。</span><span class="sxs-lookup"><span data-stu-id="5aa52-105">When you change the calendar dimensions, the control is resized, so be sure there is enough room on the form for the new dimensions.</span></span>  

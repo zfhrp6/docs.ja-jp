@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32760532"
 ---
 # <a name="how-to-execute-a-query-that-returns-complex-types"></a><span data-ttu-id="3f4f4-102">複合型を返すクエリの実行方法</span><span class="sxs-lookup"><span data-stu-id="3f4f4-102">How to: Execute a Query that Returns Complex Types</span></span>
 <span data-ttu-id="3f4f4-103">このトピックでは、複合型プロパティを含むエンティティ型オブジェクトを返す [!INCLUDE[esql](../../../../../includes/esql-md.md)] クエリを実行する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="3f4f4-103">This topic shows how to execute an [!INCLUDE[esql](../../../../../includes/esql-md.md)] query that returns entity type objects that contain a property of a complex type.</span></span>  

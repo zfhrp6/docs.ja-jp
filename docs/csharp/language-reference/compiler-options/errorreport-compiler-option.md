@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33218986"
 ---
 # <a name="-errorreport-c-compiler-options"></a><span data-ttu-id="b4086-102">-errorreport (C# コンパイラ オプション)</span><span class="sxs-lookup"><span data-stu-id="b4086-102">-errorreport (C# Compiler Options)</span></span>
 <span data-ttu-id="b4086-103">このオプションは、C# 内部コンパイラ エラーを Microsoft に報告する方法として便利です。</span><span class="sxs-lookup"><span data-stu-id="b4086-103">This option provides a convenient way to report a C# internal compiler error to Microsoft.</span></span>  

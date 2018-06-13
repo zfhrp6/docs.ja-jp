@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 0cb539d5b10c8a027a8c73c68ccc04aa490cb4df
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33443168"
 ---
 # <a name="ihosttaskmanagercreatetask-method"></a><span data-ttu-id="059c5-102">IHostTaskManager::CreateTask メソッド</span><span class="sxs-lookup"><span data-stu-id="059c5-102">IHostTaskManager::CreateTask Method</span></span>
 <span data-ttu-id="059c5-103">要求のホストが新しいタスクを作成することです。</span><span class="sxs-lookup"><span data-stu-id="059c5-103">Requests that the host create a new task.</span></span>  

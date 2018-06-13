@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33647215"
 ---
 # <a name="type-conversions-in-visual-basic"></a><span data-ttu-id="d1e1a-102">Visual Basic における型変換</span><span class="sxs-lookup"><span data-stu-id="d1e1a-102">Type Conversions in Visual Basic</span></span>
 <span data-ttu-id="d1e1a-103">値の 1 つのデータ型から別の型に変更するプロセスが呼び出されると*変換*です。</span><span class="sxs-lookup"><span data-stu-id="d1e1a-103">The process of changing a value from one data type to another type is called *conversion*.</span></span> <span data-ttu-id="d1e1a-104">いずれかの変換は*拡大*または*縮小*関連する型のデータ容量に応じて、します。</span><span class="sxs-lookup"><span data-stu-id="d1e1a-104">Conversions are either *widening* or *narrowing*, depending on the data capacities of the types involved.</span></span> <span data-ttu-id="d1e1a-105">*暗黙的な*または*明示的な*、ソース コード内の構文によって異なります。</span><span class="sxs-lookup"><span data-stu-id="d1e1a-105">They are also *implicit* or *explicit*, depending on the syntax in the source code.</span></span>  

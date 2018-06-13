@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33329561"
 ---
 # <a name="how-to-build-linq-to-xml-examples-c"></a><span data-ttu-id="1d25f-102">方法: LINQ to XML の例をビルドする (C#)</span><span class="sxs-lookup"><span data-stu-id="1d25f-102">How to: Build LINQ to XML Examples (C#)</span></span>
 <span data-ttu-id="1d25f-103">このドキュメントに含まれている各種のスニペットおよびコード例では、さまざまな名前空間のクラスと型が使用されます。</span><span class="sxs-lookup"><span data-stu-id="1d25f-103">The various snippets and examples in this documentation use classes and types from a variety of namespaces.</span></span> <span data-ttu-id="1d25f-104">C# のコードをコンパイルする場合は、適切な `using` ディレクティブを指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="1d25f-104">When compiling C# code, you need to supply appropriate `using` directives.</span></span>  

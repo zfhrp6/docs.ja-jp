@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33327425"
 ---
 # <a name="cancel-remaining-async-tasks-after-one-is-complete-c"></a><span data-ttu-id="13a5b-102">完了後の残りの非同期タスクのキャンセル (C#)</span><span class="sxs-lookup"><span data-stu-id="13a5b-102">Cancel Remaining Async Tasks after One Is Complete (C#)</span></span>
 <span data-ttu-id="13a5b-103"><xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType> メソッドを <xref:System.Threading.CancellationToken> と共に使用すると、1 つのタスクが完了したときに残りのすべてのタスクを取り消しできます。</span><span class="sxs-lookup"><span data-stu-id="13a5b-103">By using the <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType> method together with a <xref:System.Threading.CancellationToken>, you can cancel all remaining tasks when one task is complete.</span></span> <span data-ttu-id="13a5b-104">`WhenAny` メソッドは、タスクのコレクションである引数を受け取ります。</span><span class="sxs-lookup"><span data-stu-id="13a5b-104">The `WhenAny` method takes an argument that’s a collection of tasks.</span></span> <span data-ttu-id="13a5b-105">このメソッドは、すべてのタスクを開始し、単一のタスクを返します。</span><span class="sxs-lookup"><span data-stu-id="13a5b-105">The method starts all the tasks and returns a single task.</span></span> <span data-ttu-id="13a5b-106">単一のタスクは、コレクションのいずれかのタスクが完了すると完了します。</span><span class="sxs-lookup"><span data-stu-id="13a5b-106">The single task is complete when any task in the collection is complete.</span></span>  

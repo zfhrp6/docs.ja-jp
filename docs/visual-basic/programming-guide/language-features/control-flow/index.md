@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33646553"
 ---
 # <a name="control-flow-in-visual-basic"></a><span data-ttu-id="53f59-102">Visual Basic における制御フロー</span><span class="sxs-lookup"><span data-stu-id="53f59-102">Control Flow in Visual Basic</span></span>
 <span data-ttu-id="53f59-103">制御されていないままの場合、プログラムは最初から最後までそのステートメントを使って続行されます。</span><span class="sxs-lookup"><span data-stu-id="53f59-103">Left unregulated, a program proceeds through its statements from beginning to end.</span></span> <span data-ttu-id="53f59-104">この 1 方向のフローのみを使用して、いくつかの単純なプログラムを記述できます。</span><span class="sxs-lookup"><span data-stu-id="53f59-104">Some very simple programs can be written with only this unidirectional flow.</span></span> <span data-ttu-id="53f59-105">ただし、任意のプログラミング言語の能力とユーティリティのほとんどは、制御ステートメントとループで実行する順番を変更する機能からのものです。</span><span class="sxs-lookup"><span data-stu-id="53f59-105">However, much of the power and utility of any programming language comes from the ability to change execution order with control statements and loops.</span></span>  

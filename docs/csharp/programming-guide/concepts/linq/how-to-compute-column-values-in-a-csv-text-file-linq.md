@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33328761"
 ---
 # <a name="how-to-compute-column-values-in-a-csv-text-file-linq-c"></a><span data-ttu-id="d58eb-102">方法: CSV テキスト ファイルの列値を計算する (LINQ) (C#)</span><span class="sxs-lookup"><span data-stu-id="d58eb-102">How to: Compute Column Values in a CSV Text File (LINQ) (C#)</span></span>
 <span data-ttu-id="d58eb-103">この例では、合計、平均、最小、最大などの集計計算を .csv ファイルの列に対して実行する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="d58eb-103">This example shows how to perform aggregate computations such as Sum, Average, Min, and Max on the columns of a .csv file.</span></span> <span data-ttu-id="d58eb-104">ここで説明する例の原則は、他の種類の構造化テキストにも適用できます。</span><span class="sxs-lookup"><span data-stu-id="d58eb-104">The example principles that are shown here can be applied to other types of structured text.</span></span>  

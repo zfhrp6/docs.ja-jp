@@ -25,6 +25,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33655190"
 ---
 # <a name="inheritance-basics-visual-basic"></a><span data-ttu-id="c98bd-102">継承の基本 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="c98bd-102">Inheritance Basics (Visual Basic)</span></span>
 <span data-ttu-id="c98bd-103">`Inherits`という、新しいクラスを宣言するステートメントを使用、*クラスを派生*と呼ばれる、既存のクラスに基づいて、*基底クラス*です。</span><span class="sxs-lookup"><span data-stu-id="c98bd-103">The `Inherits` statement is used to declare a new class, called a *derived class*, based on an existing class, known as a *base class*.</span></span> <span data-ttu-id="c98bd-104">派生クラスでは、継承、プロパティ、メソッド、イベント、フィールド、および、基底クラスで定義されている定数は、拡張できます。</span><span class="sxs-lookup"><span data-stu-id="c98bd-104">Derived classes inherit, and can extend, the properties, methods, events, fields, and constants defined in the base class.</span></span> <span data-ttu-id="c98bd-105">次のセクションでは、継承、に対するルールの一部について説明し、方法クラスを変更するのに使用できる修飾子を継承継承されます。</span><span class="sxs-lookup"><span data-stu-id="c98bd-105">The following section describes some of the rules for inheritance, and the modifiers you can use to change the way classes inherit or are inherited:</span></span>  

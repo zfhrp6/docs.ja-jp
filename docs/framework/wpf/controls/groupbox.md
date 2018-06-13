@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33550840"
 ---
 # <a name="groupbox"></a><span data-ttu-id="0376c-102">GroupBox</span><span class="sxs-lookup"><span data-stu-id="0376c-102">GroupBox</span></span>
 <span data-ttu-id="0376c-103"><xref:System.Windows.Controls.GroupBox>コントロールは、 <xref:System.Windows.Controls.HeaderedContentControl> 」というタイトルのコンテナーを提供する[!INCLUDE[TLA#tla_gui](../../../../includes/tlasharptla-gui-md.md)]コンテンツ。</span><span class="sxs-lookup"><span data-stu-id="0376c-103">The <xref:System.Windows.Controls.GroupBox> control is a <xref:System.Windows.Controls.HeaderedContentControl> that provides a titled container for [!INCLUDE[TLA#tla_gui](../../../../includes/tlasharptla-gui-md.md)] content.</span></span>  

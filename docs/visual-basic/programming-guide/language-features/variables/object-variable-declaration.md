@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33656283"
 ---
 # <a name="object-variable-declaration-visual-basic"></a><span data-ttu-id="8a051-102">オブジェクト変数の宣言 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="8a051-102">Object Variable Declaration (Visual Basic)</span></span>
 <span data-ttu-id="8a051-103">オブジェクト変数を宣言するのにには、通常の宣言ステートメントを使用します。</span><span class="sxs-lookup"><span data-stu-id="8a051-103">You use a normal declaration statement to declare an object variable.</span></span> <span data-ttu-id="8a051-104">どちらか、データ型を指定する`Object`(つまり、[オブジェクト データ型](../../../../visual-basic/language-reference/data-types/object-data-type.md)) または元のオブジェクトを作成する具体的なクラスです。</span><span class="sxs-lookup"><span data-stu-id="8a051-104">For the data type, you specify either `Object` (that is, the [Object Data Type](../../../../visual-basic/language-reference/data-types/object-data-type.md)) or a more specific class from which the object is to be created.</span></span>  

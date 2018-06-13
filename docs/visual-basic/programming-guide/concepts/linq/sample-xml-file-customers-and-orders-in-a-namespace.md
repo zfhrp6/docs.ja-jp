@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33646352"
 ---
 # <a name="sample-xml-file-customers-and-orders-in-a-namespace"></a><span data-ttu-id="04c14-102">サンプル XML ファイル : 名前空間内の顧客と注文</span><span class="sxs-lookup"><span data-stu-id="04c14-102">Sample XML File: Customers and Orders in a Namespace</span></span>
 <span data-ttu-id="04c14-103">次の XML ファイルは、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] ドキュメントのさまざまな例で使用されます。</span><span class="sxs-lookup"><span data-stu-id="04c14-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="04c14-104">このファイルには顧客と注文が含まれています。</span><span class="sxs-lookup"><span data-stu-id="04c14-104">This file contains customers and orders.</span></span> <span data-ttu-id="04c14-105">XML は名前空間に含まれています。</span><span class="sxs-lookup"><span data-stu-id="04c14-105">The XML is in a namespace.</span></span>  

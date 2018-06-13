@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33219246"
 ---
 # <a name="float-c-reference"></a><span data-ttu-id="a972a-102">float (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="a972a-102">float (C# Reference)</span></span>
 <span data-ttu-id="a972a-103">`float` キーワードは、32 ビット浮動小数点値を格納する単純な型を示します。</span><span class="sxs-lookup"><span data-stu-id="a972a-103">The `float` keyword signifies a simple type that stores 32-bit floating-point values.</span></span> <span data-ttu-id="a972a-104">次の表では、`float` 型の有効桁数とおおよその範囲を示します。</span><span class="sxs-lookup"><span data-stu-id="a972a-104">The following table shows the precision and approximate range for the `float` type.</span></span>  

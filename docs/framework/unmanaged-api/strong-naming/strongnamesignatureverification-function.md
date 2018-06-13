@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: c888c32a0b40d2458a919613e35ca9d1d830c4f7
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33459236"
 ---
 # <a name="strongnamesignatureverification-function"></a><span data-ttu-id="63c79-102">StrongNameSignatureVerification 関数</span><span class="sxs-lookup"><span data-stu-id="63c79-102">StrongNameSignatureVerification Function</span></span>
 <span data-ttu-id="63c79-103">指定されたパスにあるアセンブリ マニフェストに指定したフラグに従って検証される厳密な名前の署名が含まれるかどうかを示す値を取得します。</span><span class="sxs-lookup"><span data-stu-id="63c79-103">Gets a value indicating whether the assembly manifest at the supplied path contains a strong name signature, which is verified according to the specified flags.</span></span>  

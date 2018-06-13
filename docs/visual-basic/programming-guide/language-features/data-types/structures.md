@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33647265"
 ---
 # <a name="structures-visual-basic"></a><span data-ttu-id="c677d-102">構造体 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="c677d-102">Structures (Visual Basic)</span></span>
 <span data-ttu-id="c677d-103">A*構造*ユーザー定義型 (UDT) 以前のバージョンの Visual Basic でサポートされるを一般化しました。</span><span class="sxs-lookup"><span data-stu-id="c677d-103">A *structure* is a generalization of the user-defined type (UDT) supported by previous versions of Visual Basic.</span></span> <span data-ttu-id="c677d-104">構造体には、フィールド、だけでなく、プロパティ、メソッド、およびイベントを公開できます。</span><span class="sxs-lookup"><span data-stu-id="c677d-104">In addition to fields, structures can expose properties, methods, and events.</span></span> <span data-ttu-id="c677d-105">構造体が 1 つまたは複数のインターフェイスを実装し、フィールドごとに個別のアクセス レベルを宣言することができます。</span><span class="sxs-lookup"><span data-stu-id="c677d-105">A structure can implement one or more interfaces, and you can declare individual access levels for each field.</span></span>  

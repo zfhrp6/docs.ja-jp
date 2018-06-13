@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33335836"
 ---
 # <a name="threading-c"></a><span data-ttu-id="f50a6-102">スレッド処理 (C#)</span><span class="sxs-lookup"><span data-stu-id="f50a6-102">Threading (C#)</span></span>
 <span data-ttu-id="f50a6-103">スレッド処理により、C# プログラムが同時処理を実行できるようになり、一度に複数の操作を行うことが可能になります。</span><span class="sxs-lookup"><span data-stu-id="f50a6-103">Threading enables your C# program to perform concurrent processing so that you can do more than one operation at a time.</span></span> <span data-ttu-id="f50a6-104">たとえば、スレッド処理を使用してユーザーの入力を監視したり、バックグラウンド タスクを実行したり、入力の同時ストリームを処理したりできます。</span><span class="sxs-lookup"><span data-stu-id="f50a6-104">For example, you can use threading to monitor input from the user, perform background tasks, and handle simultaneous streams of input.</span></span>  

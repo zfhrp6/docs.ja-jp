@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33213210"
 ---
 # <a name="c-compiler-errors"></a><span data-ttu-id="a123b-102">C# コンパイラ エラー</span><span class="sxs-lookup"><span data-stu-id="a123b-102">C# Compiler Errors</span></span>
 <span data-ttu-id="a123b-103">一部の C# コンパイラ エラーには、エラーが生成された理由について説明するトピックがあり、エラーの解決方法が示されていることがあります。</span><span class="sxs-lookup"><span data-stu-id="a123b-103">Some C# compiler errors have corresponding topics that explain why the error is generated, and, in some cases, how to fix the error.</span></span> <span data-ttu-id="a123b-104">次のいずれかの手順に従って、特定のエラー メッセージのヘルプが存在するかどうかを確認してください。</span><span class="sxs-lookup"><span data-stu-id="a123b-104">Use one of the following steps to see whether help is available for a particular error message.</span></span>  

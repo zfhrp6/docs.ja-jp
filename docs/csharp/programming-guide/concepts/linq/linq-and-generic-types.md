@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33327738"
 ---
 # <a name="linq-and-generic-types-c"></a><span data-ttu-id="c2d2e-102">LINQ とジェネリック型 (C#)</span><span class="sxs-lookup"><span data-stu-id="c2d2e-102">LINQ and Generic Types (C#)</span></span>
 [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]<span data-ttu-id="c2d2e-103"> クエリは、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] Version 2.0 で導入されたジェネリック型に基づいています。</span><span class="sxs-lookup"><span data-stu-id="c2d2e-103"> queries are based on generic types, which were introduced in version 2.0 of the [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)].</span></span> <span data-ttu-id="c2d2e-104">クエリを記述するために、ジェネリックについて詳しく知っておく必要ありません。</span><span class="sxs-lookup"><span data-stu-id="c2d2e-104">You do not need an in-depth knowledge of generics before you can start writing queries.</span></span> <span data-ttu-id="c2d2e-105">ただし、次の 2 つの基本的な概念を理解しておくと役立ちます。</span><span class="sxs-lookup"><span data-stu-id="c2d2e-105">However, you may want to understand two basic concepts:</span></span>  

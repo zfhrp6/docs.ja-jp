@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33649114"
 ---
 # <a name="object-variables-in-visual-basic"></a><span data-ttu-id="0c8fa-102">Visual Basic におけるオブジェクト変数</span><span class="sxs-lookup"><span data-stu-id="0c8fa-102">Object Variables in Visual Basic</span></span>
 <span data-ttu-id="0c8fa-103">値を直接格納だけでなく、変数は、オブジェクトを参照できます。</span><span class="sxs-lookup"><span data-stu-id="0c8fa-103">In addition to storing values directly, a variable can refer to an object.</span></span> <span data-ttu-id="0c8fa-104">同じ理由から、変数に任意の値を代入するには、変数にオブジェクトを割り当てます。</span><span class="sxs-lookup"><span data-stu-id="0c8fa-104">You assign an object to a variable for the same reasons you assign any value to a variable:</span></span>  

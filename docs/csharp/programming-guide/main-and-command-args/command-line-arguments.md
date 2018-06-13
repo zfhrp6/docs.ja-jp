@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33335326"
 ---
 # <a name="command-line-arguments-c-programming-guide"></a><span data-ttu-id="97549-102">コマンド ライン引数 (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="97549-102">Command-Line Arguments (C# Programming Guide)</span></span>
 <span data-ttu-id="97549-103">`Main` メソッドに引数を渡すには、次のいずれかの方法でメソッドを定義します。</span><span class="sxs-lookup"><span data-stu-id="97549-103">You can send arguments to the `Main` method by defining the method in one of the following ways:</span></span>  

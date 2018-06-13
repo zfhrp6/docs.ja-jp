@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33525048"
 ---
 # <a name="three-categories-of-graphics-services"></a><span data-ttu-id="b1e7a-102">グラフィックス サービスの 3 つのカテゴリ</span><span class="sxs-lookup"><span data-stu-id="b1e7a-102">Three Categories of Graphics Services</span></span>
 <span data-ttu-id="b1e7a-103">Windows フォームにおけるグラフィックスの提供は、次の 3 つの広範なカテゴリに分類されます。</span><span class="sxs-lookup"><span data-stu-id="b1e7a-103">The graphics offerings in Windows Forms fall into the following three broad categories:</span></span>  

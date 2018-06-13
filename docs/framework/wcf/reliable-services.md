@@ -13,6 +13,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33803755"
 ---
 # <a name="reliable-services"></a><span data-ttu-id="e18b5-102">信頼できるサービス</span><span class="sxs-lookup"><span data-stu-id="e18b5-102">Reliable Services</span></span>
 <span data-ttu-id="e18b5-103">キューと信頼できるセッションは、信頼できるメッセージングを実装する Windows Communication Foundation (WCF) 機能を示します。</span><span class="sxs-lookup"><span data-stu-id="e18b5-103">Queues and reliable sessions are the Windows Communication Foundation (WCF) features that implement reliable messaging.</span></span> <span data-ttu-id="e18b5-104">このトピックでは、WCF の信頼できるメッセージング機能について説明します。</span><span class="sxs-lookup"><span data-stu-id="e18b5-104">This topic explains the reliable messaging features of WCF.</span></span>  

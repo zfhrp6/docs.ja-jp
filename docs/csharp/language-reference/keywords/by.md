@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33213439"
 ---
 # <a name="by-c-reference"></a><span data-ttu-id="9a9eb-102">by (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="9a9eb-102">by (C# Reference)</span></span>
 <span data-ttu-id="9a9eb-103">`by` コンテキスト キーワードは、クエリ式の `group` 句で使用され、返される項目をグループ化する方法を指定します。</span><span class="sxs-lookup"><span data-stu-id="9a9eb-103">The `by` contextual keyword is used in the `group` clause in a query expression to specify how the returned items should be grouped.</span></span> <span data-ttu-id="9a9eb-104">詳しくは、「[group 句](../../../csharp/language-reference/keywords/group-clause.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="9a9eb-104">For more information, see [group clause](../../../csharp/language-reference/keywords/group-clause.md).</span></span>  

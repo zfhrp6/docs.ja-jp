@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33330708"
 ---
 # <a name="how-to-override-the-tostring-method-c-programming-guide"></a><span data-ttu-id="c631c-102">方法: ToString メソッドをオーバーライドする (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="c631c-102">How to: Override the ToString Method (C# Programming Guide)</span></span>
 <span data-ttu-id="c631c-103">C# では、すべてのクラスまたは構造体が、暗黙的に <xref:System.Object> クラスを継承します。</span><span class="sxs-lookup"><span data-stu-id="c631c-103">Every class or struct in C# implicitly inherits the <xref:System.Object> class.</span></span> <span data-ttu-id="c631c-104">そのため、C# のすべてのオブジェクトが <xref:System.Object.ToString%2A> メソッドを取得し、そのオブジェクトの文字列表現を返します。</span><span class="sxs-lookup"><span data-stu-id="c631c-104">Therefore, every object in C# gets the <xref:System.Object.ToString%2A> method, which returns a string representation of that object.</span></span> <span data-ttu-id="c631c-105">たとえば、`int` 型の変数はすべて `ToString` メソッドを持ち、次のようにその変数の内容を文字列として返すことができます。</span><span class="sxs-lookup"><span data-stu-id="c631c-105">For example, all variables of type `int` have a `ToString` method, which enables them to return their contents as a string:</span></span>  

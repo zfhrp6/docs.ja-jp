@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33335450"
 ---
 # <a name="linq-to-xml-security-c"></a><span data-ttu-id="0946b-102">LINQ to XML のセキュリティ (C#)</span><span class="sxs-lookup"><span data-stu-id="0946b-102">LINQ to XML Security (C#)</span></span>
 <span data-ttu-id="0946b-103">ここでは、LINQ to XML に関連するセキュリティの問題について説明し、</span><span class="sxs-lookup"><span data-stu-id="0946b-103">This topic describes security issues associated with LINQ to XML.</span></span> <span data-ttu-id="0946b-104">セキュリティ上の脆弱性を緩和するためのガイドラインを紹介します。</span><span class="sxs-lookup"><span data-stu-id="0946b-104">In addition, it provides some guidance for mitigating security exposure.</span></span>  

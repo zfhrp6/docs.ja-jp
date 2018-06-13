@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33644213"
 ---
 # <a name="caller-information-visual-basic"></a><span data-ttu-id="03bc7-102">呼び出し元情報 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="03bc7-102">Caller Information (Visual Basic)</span></span>
 <span data-ttu-id="03bc7-103">呼び出し元情報の属性を使用すると、メソッドへの呼び出し元に関する情報を取得できます。</span><span class="sxs-lookup"><span data-stu-id="03bc7-103">By using Caller Info attributes, you can obtain information about the caller to a method.</span></span> <span data-ttu-id="03bc7-104">ソース コードのファイル パス、ソース コードの行番号、および呼び出し元のメンバー名を取得できます。</span><span class="sxs-lookup"><span data-stu-id="03bc7-104">You can obtain file path of the source code, the line number in the source code, and the member name of the caller.</span></span> <span data-ttu-id="03bc7-105">この情報は、トレース、デバッグ、および診断ツールの作成に役立ちます。</span><span class="sxs-lookup"><span data-stu-id="03bc7-105">This information is helpful for tracing, debugging, and creating diagnostic tools.</span></span>  

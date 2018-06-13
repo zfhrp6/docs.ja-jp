@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 8f34fee19c796f65d315fcbd26d55e1d5322303a
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33453029"
 ---
 # <a name="icorprofilerinfoisarrayclass-method"></a><span data-ttu-id="82c5b-102">ICorProfilerInfo::IsArrayClass メソッド</span><span class="sxs-lookup"><span data-stu-id="82c5b-102">ICorProfilerInfo::IsArrayClass Method</span></span>
 <span data-ttu-id="82c5b-103">指定したクラスが、配列クラスであるかどうかを判断します。</span><span class="sxs-lookup"><span data-stu-id="82c5b-103">Determines whether the specified class is an array class.</span></span>  

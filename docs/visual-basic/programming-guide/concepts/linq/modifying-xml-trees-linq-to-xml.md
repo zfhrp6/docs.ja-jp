@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33645617"
 ---
 # <a name="modifying-xml-trees-linq-to-xml-visual-basic"></a><span data-ttu-id="32f8c-102">XML ツリー (LINQ to XML) の変更 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="32f8c-102">Modifying XML Trees (LINQ to XML) (Visual Basic)</span></span>
 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]<span data-ttu-id="32f8c-103"> は、XML ツリーのメモリ内ストアです。</span><span class="sxs-lookup"><span data-stu-id="32f8c-103"> is an in-memory store for an XML tree.</span></span> <span data-ttu-id="32f8c-104">ソースから XML ツリーを読み込んだり解析したりした後に、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] を使用してツリーを直接変更することができます。その後、ツリーをシリアル化して、ファイルに保存したり、リモート サーバーに送信したりできます。</span><span class="sxs-lookup"><span data-stu-id="32f8c-104">After you load or parse an XML tree from a source, [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] lets you modify that tree in place, and then serialize the tree, perhaps saving it to a file or sending it to a remote server.</span></span>  

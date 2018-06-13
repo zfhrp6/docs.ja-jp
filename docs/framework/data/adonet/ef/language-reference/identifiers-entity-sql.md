@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32765881"
 ---
 # <a name="identifiers-entity-sql"></a><span data-ttu-id="067ec-102">識別子 (Entity SQL)</span><span class="sxs-lookup"><span data-stu-id="067ec-102">Identifiers (Entity SQL)</span></span>
 <span data-ttu-id="067ec-103">識別子はクエリ式の別名、変数参照、オブジェクトのプロパティ、関数などを表すために [!INCLUDE[esql](../../../../../../includes/esql-md.md)] で使用されます。</span><span class="sxs-lookup"><span data-stu-id="067ec-103">Identifiers are used in [!INCLUDE[esql](../../../../../../includes/esql-md.md)] to represent query expression aliases, variable references, properties of objects, functions, and so on.</span></span> [!INCLUDE[esql](../../../../../../includes/esql-md.md)]<span data-ttu-id="067ec-104"> 識別子の 2 種類の説明: 単純な識別子および引用符で囲まれた識別子です。</span><span class="sxs-lookup"><span data-stu-id="067ec-104"> provides two kinds of identifiers: simple identifiers and quoted identifiers.</span></span>  

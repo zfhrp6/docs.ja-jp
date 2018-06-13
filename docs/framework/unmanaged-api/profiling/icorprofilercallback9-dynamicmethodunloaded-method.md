@@ -12,9 +12,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 16b3334647922f845645e6eb58db3146f4c9b936
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33452404"
 ---
 # <a name="icorprofilercallback9dynamicmethodunloaded-method"></a><span data-ttu-id="2296a-102">ICorProfilerCallback9::DynamicMethodUnloaded メソッド</span><span class="sxs-lookup"><span data-stu-id="2296a-102">ICorProfilerCallback9::DynamicMethodUnloaded Method</span></span>
 <span data-ttu-id="2296a-103">[.NET Framework 4.7.2 およびそれ以降のバージョンでサポート]</span><span class="sxs-lookup"><span data-stu-id="2296a-103">[Supported in the .NET Framework 4.7.2 and later versions]</span></span>  

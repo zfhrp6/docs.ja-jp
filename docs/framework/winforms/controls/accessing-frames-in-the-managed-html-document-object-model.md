@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33525518"
 ---
 # <a name="accessing-frames-in-the-managed-html-document-object-model"></a><span data-ttu-id="dd851-102">マネージ HTML DOM (Document Object Model) へのアクセス</span><span class="sxs-lookup"><span data-stu-id="dd851-102">Accessing Frames in the Managed HTML Document Object Model</span></span>
 <span data-ttu-id="dd851-103">一部の HTML ドキュメントが不在で構成される*フレーム*、または独自の個別の HTML ドキュメントを持つウィンドウです。</span><span class="sxs-lookup"><span data-stu-id="dd851-103">Some HTML documents are composed out of *frames*, or windows that can hold their own distinct HTML documents.</span></span> <span data-ttu-id="dd851-104">フレームを使用すると、ページ内に 1 つ以上の静的な部分 (ナビゲーション バーなど) があり、その他のフレームでは内容が常に変化するような HTML ページを簡単に作成できます。</span><span class="sxs-lookup"><span data-stu-id="dd851-104">Using frames makes it easy to create HTML pages in which one or more pieces of the page remain static, such as a navigation bar, while other frames constantly change their content.</span></span>  

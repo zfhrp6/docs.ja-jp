@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33332203"
 ---
 # <a name="how-to-access-a-member-with-a-pointer-c-programming-guide"></a><span data-ttu-id="2848d-102">方法 : ポインターを使用してメンバーにアクセスする (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="2848d-102">How to: Access a Member with a Pointer (C# Programming Guide)</span></span>
 <span data-ttu-id="2848d-103">安全ではないコンテキストで宣言されている構造体のメンバーにアクセスするには、次の例のように、メンバー アクセス演算子を利用できます。`p` は、メンバー `x` を含む[構造体](../../../csharp/language-reference/keywords/struct.md)を指すポインターです。</span><span class="sxs-lookup"><span data-stu-id="2848d-103">To access a member of a struct that is declared in an unsafe context, you can use the member access operator as shown in the following example in which `p` is a pointer to a [struct](../../../csharp/language-reference/keywords/struct.md) that contains a member `x`.</span></span>  

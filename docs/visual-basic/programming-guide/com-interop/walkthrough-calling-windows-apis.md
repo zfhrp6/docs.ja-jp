@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33644356"
 ---
 # <a name="walkthrough-calling-windows-apis-visual-basic"></a><span data-ttu-id="52083-102">チュートリアル: Windows API の呼び出し (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="52083-102">Walkthrough: Calling Windows APIs (Visual Basic)</span></span>
 <span data-ttu-id="52083-103">Windows Api は、Windows オペレーティング システムの一部であるダイナミック リンク ライブラリ (Dll) です。</span><span class="sxs-lookup"><span data-stu-id="52083-103">Windows APIs are dynamic-link libraries (DLLs) that are part of the Windows operating system.</span></span> <span data-ttu-id="52083-104">それらを使用して、タスクを実行するときは、独自の同等のプロシージャを記述することは困難です。</span><span class="sxs-lookup"><span data-stu-id="52083-104">You use them to perform tasks when it is difficult to write equivalent procedures of your own.</span></span> <span data-ttu-id="52083-105">たとえば、という名前の関数は、Windows`FlashWindowEx`をアプリケーションのタイトル バーを薄いおよび濃い網掛けが交互に行うことができます。</span><span class="sxs-lookup"><span data-stu-id="52083-105">For example, Windows provides a function named `FlashWindowEx` that lets you make the title bar for an application alternate between light and dark shades.</span></span>  

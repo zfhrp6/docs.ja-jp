@@ -1,14 +1,6 @@
 ---
-title: "ICorProfilerInfo::GetClassFromToken メソッド"
-ms.custom: 
+title: ICorProfilerInfo::GetClassFromToken メソッド
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ICorProfilerInfo.GetClassFromToken
 api_location:
@@ -23,22 +15,19 @@ helpviewer_keywords:
 ms.assetid: 0afc1197-2a5b-424f-8b82-9cb59a7e00db
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 9972a9d97f94a6286adc0906416349f92e6bf7ec
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: b4b6b7b7b0dbb36724ff5eee2f3f78a3a7422cb7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33453334"
 ---
-# <a name="icorprofilerinfogetclassfromtoken-method"></a><span data-ttu-id="71793-102">ICorProfilerInfo::GetClassFromToken メソッド</span><span class="sxs-lookup"><span data-stu-id="71793-102">ICorProfilerInfo::GetClassFromToken Method</span></span>
-<span data-ttu-id="71793-103">指定したメタデータ トークン、クラスの ID を取得します。</span><span class="sxs-lookup"><span data-stu-id="71793-103">Gets the ID of the class, given the metadata token.</span></span> <span data-ttu-id="71793-104">このメソッドは、.NET Framework version 2.0 廃止されています。</span><span class="sxs-lookup"><span data-stu-id="71793-104">This method is obsolete in the .NET Framework version 2.0.</span></span> <span data-ttu-id="71793-105">使用して[icorprofilerinfo 2::getclassfromtokenandtypeargs](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getclassfromtokenandtypeargs-method.md)代わりにします。</span><span class="sxs-lookup"><span data-stu-id="71793-105">Use [ICorProfilerInfo2::GetClassFromTokenAndTypeArgs](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getclassfromtokenandtypeargs-method.md) instead.</span></span>  
+# <a name="icorprofilerinfogetclassfromtoken-method"></a><span data-ttu-id="c2d2a-102">ICorProfilerInfo::GetClassFromToken メソッド</span><span class="sxs-lookup"><span data-stu-id="c2d2a-102">ICorProfilerInfo::GetClassFromToken Method</span></span>
+<span data-ttu-id="c2d2a-103">指定したメタデータ トークン、クラスの ID を取得します。</span><span class="sxs-lookup"><span data-stu-id="c2d2a-103">Gets the ID of the class, given the metadata token.</span></span> <span data-ttu-id="c2d2a-104">このメソッドは、.NET Framework version 2.0 廃止されています。</span><span class="sxs-lookup"><span data-stu-id="c2d2a-104">This method is obsolete in the .NET Framework version 2.0.</span></span> <span data-ttu-id="c2d2a-105">使用して[icorprofilerinfo 2::getclassfromtokenandtypeargs](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getclassfromtokenandtypeargs-method.md)代わりにします。</span><span class="sxs-lookup"><span data-stu-id="c2d2a-105">Use [ICorProfilerInfo2::GetClassFromTokenAndTypeArgs](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getclassfromtokenandtypeargs-method.md) instead.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="71793-106">構文</span><span class="sxs-lookup"><span data-stu-id="71793-106">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="c2d2a-106">構文</span><span class="sxs-lookup"><span data-stu-id="c2d2a-106">Syntax</span></span>  
   
 ```  
 HRESULT GetClassFromToken(  
@@ -47,27 +36,27 @@ HRESULT GetClassFromToken(
     [out] ClassID   *pClassId);  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="71793-107">パラメーター</span><span class="sxs-lookup"><span data-stu-id="71793-107">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="c2d2a-107">パラメーター</span><span class="sxs-lookup"><span data-stu-id="c2d2a-107">Parameters</span></span>  
  `moduleID`  
- <span data-ttu-id="71793-108">[in]クラスを含むモジュールの ID。</span><span class="sxs-lookup"><span data-stu-id="71793-108">[in] The ID of the module that contains the class.</span></span>  
+ <span data-ttu-id="c2d2a-108">[in]クラスを含むモジュールの ID。</span><span class="sxs-lookup"><span data-stu-id="c2d2a-108">[in] The ID of the module that contains the class.</span></span>  
   
  `typeDef`  
- <span data-ttu-id="71793-109">[in]`mdTypeDef`クラスを参照するメタデータ トークン。</span><span class="sxs-lookup"><span data-stu-id="71793-109">[in] An `mdTypeDef` metadata token that references the class.</span></span>  
+ <span data-ttu-id="c2d2a-109">[in]`mdTypeDef`クラスを参照するメタデータ トークン。</span><span class="sxs-lookup"><span data-stu-id="c2d2a-109">[in] An `mdTypeDef` metadata token that references the class.</span></span>  
   
  `cTypeArgs`  
- <span data-ttu-id="71793-110">[out]クラスの ID へのポインター</span><span class="sxs-lookup"><span data-stu-id="71793-110">[out] A pointer to the class ID.</span></span>  
+ <span data-ttu-id="c2d2a-110">[out]クラスの ID へのポインター</span><span class="sxs-lookup"><span data-stu-id="c2d2a-110">[out] A pointer to the class ID.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="71793-111">コメント</span><span class="sxs-lookup"><span data-stu-id="71793-111">Remarks</span></span>  
- <span data-ttu-id="71793-112">このメソッドは使用されなくなりました。代わりに、`ICorProfilerInfo2::GetClassFromTokenAndTypeArgs`すべての種類。</span><span class="sxs-lookup"><span data-stu-id="71793-112">This method is obsolete; instead, use `ICorProfilerInfo2::GetClassFromTokenAndTypeArgs` for all types.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="c2d2a-111">コメント</span><span class="sxs-lookup"><span data-stu-id="c2d2a-111">Remarks</span></span>  
+ <span data-ttu-id="c2d2a-112">このメソッドは使用されなくなりました。代わりに、`ICorProfilerInfo2::GetClassFromTokenAndTypeArgs`すべての種類。</span><span class="sxs-lookup"><span data-stu-id="c2d2a-112">This method is obsolete; instead, use `ICorProfilerInfo2::GetClassFromTokenAndTypeArgs` for all types.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="71793-113">必要条件</span><span class="sxs-lookup"><span data-stu-id="71793-113">Requirements</span></span>  
- <span data-ttu-id="71793-114">**プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="71793-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="c2d2a-113">要件</span><span class="sxs-lookup"><span data-stu-id="c2d2a-113">Requirements</span></span>  
+ <span data-ttu-id="c2d2a-114">**プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="c2d2a-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="71793-115">**ヘッダー** : CorProf.idl、CorProf.h</span><span class="sxs-lookup"><span data-stu-id="71793-115">**Header:** CorProf.idl, CorProf.h</span></span>  
+ <span data-ttu-id="c2d2a-115">**ヘッダー** : CorProf.idl、CorProf.h</span><span class="sxs-lookup"><span data-stu-id="c2d2a-115">**Header:** CorProf.idl, CorProf.h</span></span>  
   
- <span data-ttu-id="71793-116">**ライブラリ:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="71793-116">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="c2d2a-116">**ライブラリ:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="c2d2a-116">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="71793-117">**.NET framework のバージョン:** 1.0、1.1</span><span class="sxs-lookup"><span data-stu-id="71793-117">**.NET Framework Versions:** 1.0, 1.1</span></span>  
+ <span data-ttu-id="c2d2a-117">**.NET framework のバージョン:** 1.0、1.1</span><span class="sxs-lookup"><span data-stu-id="c2d2a-117">**.NET Framework Versions:** 1.0, 1.1</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="71793-118">参照</span><span class="sxs-lookup"><span data-stu-id="71793-118">See Also</span></span>  
- [<span data-ttu-id="71793-119">ICorProfilerInfo インターフェイス</span><span class="sxs-lookup"><span data-stu-id="71793-119">ICorProfilerInfo Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
+## <a name="see-also"></a><span data-ttu-id="c2d2a-118">関連項目</span><span class="sxs-lookup"><span data-stu-id="c2d2a-118">See Also</span></span>  
+ [<span data-ttu-id="c2d2a-119">ICorProfilerInfo インターフェイス</span><span class="sxs-lookup"><span data-stu-id="c2d2a-119">ICorProfilerInfo Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)

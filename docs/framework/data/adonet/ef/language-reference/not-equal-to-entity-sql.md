@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32763697"
 ---
 # <a name="-not-equal-to-entity-sql"></a><span data-ttu-id="911a0-102">!= (等しくない) (Entity SQL)</span><span class="sxs-lookup"><span data-stu-id="911a0-102">!= (Not Equal To) (Entity SQL)</span></span>
 <span data-ttu-id="911a0-103">2 つの式を比較して、左の式の値が右の式の値と等しくないかどうかを判別します。</span><span class="sxs-lookup"><span data-stu-id="911a0-103">Compares two expressions to determine whether the left expression is not equal to the right expression.</span></span> <span data-ttu-id="911a0-104">!= (等しくない) 演算子は、機能的には <> 演算子と同じです。</span><span class="sxs-lookup"><span data-stu-id="911a0-104">The != (Not Equal To) operator is functionally equivalent to the <> operator.</span></span>  

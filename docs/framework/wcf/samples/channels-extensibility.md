@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33803369"
 ---
 # <a name="channels-extensibility"></a><span data-ttu-id="98c3d-102">チャネル拡張</span><span class="sxs-lookup"><span data-stu-id="98c3d-102">Channels Extensibility</span></span>
 <span data-ttu-id="98c3d-103">このセクションには、カスタム チャネルを示すサンプルが含まれています。</span><span class="sxs-lookup"><span data-stu-id="98c3d-103">This section contains samples that demonstrate custom channels.</span></span>  

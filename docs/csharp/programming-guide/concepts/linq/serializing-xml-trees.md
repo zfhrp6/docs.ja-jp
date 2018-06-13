@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33338352"
 ---
 # <a name="serializing-xml-trees-c"></a><span data-ttu-id="5caa8-102">XML ツリーのシリアル化 (C#)</span><span class="sxs-lookup"><span data-stu-id="5caa8-102">Serializing XML Trees (C#)</span></span>
 <span data-ttu-id="5caa8-103">XML ツリーのシリアル化とは、XML ツリーから XML を生成することです。</span><span class="sxs-lookup"><span data-stu-id="5caa8-103">Serializing an XML tree means generating XML from the XML tree.</span></span> <span data-ttu-id="5caa8-104">ファイル、<xref:System.IO.TextWriter> クラスの具象実装、または <xref:System.Xml.XmlWriter> クラスの具象実装へのシリアル化を行うことができます。</span><span class="sxs-lookup"><span data-stu-id="5caa8-104">You can serialize to a file, to a concrete implementation of the <xref:System.IO.TextWriter> class, or to a concrete implementation of an <xref:System.Xml.XmlWriter>.</span></span>  

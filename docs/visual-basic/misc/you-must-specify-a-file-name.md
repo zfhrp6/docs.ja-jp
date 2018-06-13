@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33641015"
 ---
 # <a name="you-must-specify-a-file-name"></a><span data-ttu-id="e5914-102">ファイル名を指定する必要があります</span><span class="sxs-lookup"><span data-stu-id="e5914-102">You must specify a file name</span></span>
 <span data-ttu-id="e5914-103">ファイルの移動やファイルのコピーなど、ファイル名を指定する必要がある操作を実行しようとしました。</span><span class="sxs-lookup"><span data-stu-id="e5914-103">You attempted an operation, such as moving or copying a file, which requires supplying a file name.</span></span>  
