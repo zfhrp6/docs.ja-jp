@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32763268"
 ---
 # <a name="synchronizing-a-dataset-with-an-xmldatadocument"></a>DataSet と XmlDataDocument の同期
 このセクションでは、<xref:System.Data.DataSet> と同期され、厳密に型指定された <xref:System.Xml.XmlDataDocument> を使用して、注文書を処理する手順の 1 ステップを例に説明します。 次の例を作成、**データセット**ソース XML ドキュメントの一部だけに一致する最小限のスキーマとします。 例を使用して、 **XmlDataDocument**ソース XML ドキュメントの忠実性を保持するために有効にすると、**データセット**を使用して XML ドキュメントのサブセットを公開します。  

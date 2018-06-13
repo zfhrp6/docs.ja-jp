@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32762846"
 ---
 # <a name="how-to-call-custom-database-functions"></a>カスタム データベース関数を呼び出す方法
 ここでは、データベースで定義されたカスタム関数を LINQ Entities クエリから呼び出す方法について説明します。  
