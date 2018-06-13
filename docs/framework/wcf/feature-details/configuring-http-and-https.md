@@ -9,6 +9,7 @@ ms.sourcegitcommit: 88f251b08bf0718ce119f3d7302f514b74895038
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/10/2018
+ms.locfileid: "33956487"
 ---
 # <a name="configuring-http-and-https"></a><span data-ttu-id="fad2b-102">HTTP および HTTPS の構成</span><span class="sxs-lookup"><span data-stu-id="fad2b-102">Configuring HTTP and HTTPS</span></span>
 <span data-ttu-id="fad2b-103">WCF サービスと WCF クライアントは、HTTP および HTTPS を介して通信できます。</span><span class="sxs-lookup"><span data-stu-id="fad2b-103">WCF services and clients can communicate over HTTP and HTTPS.</span></span> <span data-ttu-id="fad2b-104">HTTP または HTTPS の設定は、インターネット インフォメーション サービス (IIS) またはコマンド ライン ツールを使用して構成します。</span><span class="sxs-lookup"><span data-stu-id="fad2b-104">The HTTP/HTTPS settings are configured by using Internet Information Services (IIS) or through the use of a command-line tool.</span></span> <span data-ttu-id="fad2b-105">WCF サービスが IIS でホストされている場合は、IIS 内で HTTP または HTTPS の設定を構成できます (inetmgr.exe ツールを使用)。</span><span class="sxs-lookup"><span data-stu-id="fad2b-105">When a WCF service is hosted under IIS HTTP or HTTPS settings can be configured within IIS (using the inetmgr.exe tool).</span></span> <span data-ttu-id="fad2b-106">WCF サービスが自己ホスト型の場合は、コマンド ライン ツールを使用して HTTP または HTTPS の設定を構成します。</span><span class="sxs-lookup"><span data-stu-id="fad2b-106">If a WCF service is self-hosted, HTTP or HTTPS settings are configured by using a command-line tool.</span></span>  

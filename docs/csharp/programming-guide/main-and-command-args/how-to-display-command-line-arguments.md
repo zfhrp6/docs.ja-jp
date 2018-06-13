@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33334137"
 ---
 # <a name="how-to-display-command-line-arguments-c-programming-guide"></a><span data-ttu-id="c25be-102">方法: コマンド ライン引数を表示する (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="c25be-102">How to: Display Command Line Arguments (C# Programming Guide)</span></span>
 <span data-ttu-id="c25be-103">実行可能ファイルに対してコマンド ラインで指定した引数には、省略可能なパラメーターを介して `Main` からアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="c25be-103">Arguments provided to an executable on the command-line are accessible through an optional parameter to `Main`.</span></span> <span data-ttu-id="c25be-104">引数は、文字列の配列の形式で指定します。</span><span class="sxs-lookup"><span data-stu-id="c25be-104">The arguments are provided in the form of an array of strings.</span></span> <span data-ttu-id="c25be-105">配列の各要素には、1 つの引数が格納されます。</span><span class="sxs-lookup"><span data-stu-id="c25be-105">Each element of the array contains one argument.</span></span> <span data-ttu-id="c25be-106">引数間の空白は削除されます。</span><span class="sxs-lookup"><span data-stu-id="c25be-106">White-space between arguments is removed.</span></span> <span data-ttu-id="c25be-107">たとえば、架空の実行可能ファイルを呼び出すためのコマンド ラインの例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="c25be-107">For example, consider these command-line invocations of a fictitious executable:</span></span>  
