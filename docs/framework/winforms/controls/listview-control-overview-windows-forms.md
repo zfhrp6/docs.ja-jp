@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33540674"
 ---
 # <a name="listview-control-overview-windows-forms"></a><span data-ttu-id="f55d2-102">ListView コントロールの概要 (Windows フォーム)</span><span class="sxs-lookup"><span data-stu-id="f55d2-102">ListView Control Overview (Windows Forms)</span></span>
 <span data-ttu-id="f55d2-103">Windows フォーム <xref:System.Windows.Forms.ListView> コントロールにはアイコン表示で項目の一覧が表示されます。</span><span class="sxs-lookup"><span data-stu-id="f55d2-103">The Windows Forms <xref:System.Windows.Forms.ListView> control displays a list of items with icons.</span></span> <span data-ttu-id="f55d2-104">リスト ビューを使用すると、Windows エクスプローラーの右側のペインのようなユーザー インターフェイスを作成することができます。</span><span class="sxs-lookup"><span data-stu-id="f55d2-104">You can use a list view to create a user interface like the right pane of Windows Explorer.</span></span> <span data-ttu-id="f55d2-105">コントロールが 4 つの表示モード: LargeIcon、SmallIcon、リスト、および詳細。</span><span class="sxs-lookup"><span data-stu-id="f55d2-105">The control has four view modes: LargeIcon, SmallIcon, List, and Details.</span></span>  

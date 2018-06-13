@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33396260"
 ---
 # <a name="how-to-detect-network-availability-and-address-changes"></a><span data-ttu-id="24144-102">方法: ネットワークの可用性とアドレスの変更を検出する</span><span class="sxs-lookup"><span data-stu-id="24144-102">How to: Detect Network Availability and Address Changes</span></span>
 <span data-ttu-id="24144-103">このサンプルでは、インターフェイスのネットワーク アドレスの変更を検出する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="24144-103">This sample shows how to detect changes in the network address of an interface.</span></span>  

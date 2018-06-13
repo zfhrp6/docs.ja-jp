@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33541782"
 ---
 # <a name="how-to-simulate-mouse-and-keyboard-events-in-code"></a><span data-ttu-id="a02c0-102">方法 : マウス イベントとキーボード イベントをコードでシミュレートする</span><span class="sxs-lookup"><span data-stu-id="a02c0-102">How to: Simulate Mouse and Keyboard Events in Code</span></span>
 <span data-ttu-id="a02c0-103">Windows フォームは、プログラムでマウスおよびキーボード入力をシミュレートするためのいくつかのオプションを提供します。</span><span class="sxs-lookup"><span data-stu-id="a02c0-103">Windows Forms provides several options for programmatically simulating mouse and keyboard input.</span></span> <span data-ttu-id="a02c0-104">ここでは、これらのオプションの概要について説明します。</span><span class="sxs-lookup"><span data-stu-id="a02c0-104">This topic provides an overview of these options.</span></span>  

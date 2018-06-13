@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33540531"
 ---
 # <a name="how-to-save-files-using-the-savefiledialog-component"></a><span data-ttu-id="72bfa-102">方法 : SaveFileDialog コンポーネントを使用してファイルを保存する</span><span class="sxs-lookup"><span data-stu-id="72bfa-102">How to: Save Files Using the SaveFileDialog Component</span></span>
 <span data-ttu-id="72bfa-103"><xref:System.Windows.Forms.SaveFileDialog>コンポーネントにより、ユーザーがファイル システムを参照し、保存するファイルを選択します。</span><span class="sxs-lookup"><span data-stu-id="72bfa-103">The <xref:System.Windows.Forms.SaveFileDialog> component allows users to browse the file system and select files to be saved.</span></span> <span data-ttu-id="72bfa-104">このダイアログ ボックスは、ユーザーがダイアログ ボックス内で選択したファイルのパスと名前を返します。</span><span class="sxs-lookup"><span data-stu-id="72bfa-104">The dialog box returns the path and name of the file the user has selected in the dialog box.</span></span> <span data-ttu-id="72bfa-105">ただし、ファイルを実際にディスクに書き込むためのコードを記述する必要があります。</span><span class="sxs-lookup"><span data-stu-id="72bfa-105">However, you must write the code to actually write the files to disk.</span></span>  

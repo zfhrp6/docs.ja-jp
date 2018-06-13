@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33541487"
 ---
 # <a name="walkthrough-providing-standard-menu-items-to-a-form"></a><span data-ttu-id="513e7-102">チュートリアル : 標準メニュー項目をフォームに用意する</span><span class="sxs-lookup"><span data-stu-id="513e7-102">Walkthrough: Providing Standard Menu Items to a Form</span></span>
 <span data-ttu-id="513e7-103">フォームの標準のメニューを <xref:System.Windows.Forms.MenuStrip> コントロールに提供できます。</span><span class="sxs-lookup"><span data-stu-id="513e7-103">You can provide a standard menu for your forms with the <xref:System.Windows.Forms.MenuStrip> control.</span></span>  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33538966"
 ---
 # <a name="getting-started-with-windows-forms"></a><span data-ttu-id="c6996-102">Windows フォームについて</span><span class="sxs-lookup"><span data-stu-id="c6996-102">Getting Started with Windows Forms</span></span>
 <span data-ttu-id="c6996-103">Windows フォームでは、Windows ベースの強力なアプリケーションを作成できます。</span><span class="sxs-lookup"><span data-stu-id="c6996-103">With Windows Forms, you can create powerful Windows-based applications.</span></span> <span data-ttu-id="c6996-104">次のトピックは、データを表示、ユーザー入力を処理し、強化されたセキュリティを使用して簡単に、アプリケーションの展開の Windows フォームの機能を利用する方法詳細について説明します。</span><span class="sxs-lookup"><span data-stu-id="c6996-104">The following topics describe in-depth how to harness the power of Windows Forms to display data, handle user input, and deploy your applications easily and with enhanced security.</span></span>  

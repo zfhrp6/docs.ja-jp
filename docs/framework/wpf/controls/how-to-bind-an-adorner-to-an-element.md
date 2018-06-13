@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33552553"
 ---
 # <a name="how-to-bind-an-adorner-to-an-element"></a><span data-ttu-id="df657-102">方法 : 要素に装飾をバインドする</span><span class="sxs-lookup"><span data-stu-id="df657-102">How to: Bind an Adorner to an Element</span></span>
 <span data-ttu-id="df657-103">この例は、指定された装飾をプログラムでバインドする方法を示します<xref:System.Windows.UIElement>です。</span><span class="sxs-lookup"><span data-stu-id="df657-103">This example shows how to programmatically bind an adorner to a specified <xref:System.Windows.UIElement>.</span></span>  

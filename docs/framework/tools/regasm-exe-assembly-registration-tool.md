@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33408747"
 ---
 # <a name="regasmexe-assembly-registration-tool"></a><span data-ttu-id="207a5-102">Regasm.exe (アセンブリ登録ツール)</span><span class="sxs-lookup"><span data-stu-id="207a5-102">Regasm.exe (Assembly Registration Tool)</span></span>
 <span data-ttu-id="207a5-103">アセンブリ登録ツールは、1 つのアセンブリに含まれるメタデータを読み込み、必要なエントリをレジストリに追加します。これにより、COM クライアントによって .NET Framework クラスが自動的に作成されます。</span><span class="sxs-lookup"><span data-stu-id="207a5-103">The Assembly Registration tool reads the metadata within an assembly and adds the necessary entries to the registry, which allows COM clients to create .NET Framework classes transparently.</span></span> <span data-ttu-id="207a5-104">クラスが登録されると、どの COM クライアントでも、そのクラスを COM クラスであるかのように使用できます。</span><span class="sxs-lookup"><span data-stu-id="207a5-104">Once a class is registered, any COM client can use it as though the class were a COM class.</span></span> <span data-ttu-id="207a5-105">クラスの登録は、アセンブリのインストール時に 1 回だけ行われます。</span><span class="sxs-lookup"><span data-stu-id="207a5-105">The class is registered only once, when the assembly is installed.</span></span> <span data-ttu-id="207a5-106">実際に登録されるまでは、アセンブリに含まれるクラスのインスタンスを COM から作成することはできません。</span><span class="sxs-lookup"><span data-stu-id="207a5-106">Instances of classes within the assembly cannot be created from COM until they are actually registered.</span></span>  

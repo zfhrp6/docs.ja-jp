@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33556056"
 ---
 # <a name="geometries"></a><span data-ttu-id="07668-102">ジオメトリ</span><span class="sxs-lookup"><span data-stu-id="07668-102">Geometries</span></span>
 <span data-ttu-id="07668-103"><xref:System.Windows.Media.Geometry> 汎用クラスで、表示するために使用される[!INCLUDE[TLA#tla_2d](../../../../includes/tlasharptla-2d-md.md)]グラフィックス、ヒット テスト オブジェクト、およびクリッピング領域を定義します。</span><span class="sxs-lookup"><span data-stu-id="07668-103"><xref:System.Windows.Media.Geometry> is a versatile class, used to render [!INCLUDE[TLA#tla_2d](../../../../includes/tlasharptla-2d-md.md)] graphics, hit-test objects, and define clipping regions</span></span>  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33395454"
 ---
 # <a name="peer-to-peer-networking-scenarios"></a><span data-ttu-id="429cb-102">ピアツーピア ネットワーキング シナリオ</span><span class="sxs-lookup"><span data-stu-id="429cb-102">Peer-to-Peer Networking Scenarios</span></span>
 <span data-ttu-id="429cb-103">ピアツーピア ネットワーキングは次のシナリオを実現または強化します。</span><span class="sxs-lookup"><span data-stu-id="429cb-103">Peer-to-peer networking enables or enhances the following scenarios:</span></span>  

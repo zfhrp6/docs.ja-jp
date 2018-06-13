@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33541886"
 ---
 # <a name="binding-markup-extension"></a><span data-ttu-id="68209-102">バインドのマークアップ拡張機能</span><span class="sxs-lookup"><span data-stu-id="68209-102">Binding Markup Extension</span></span>
 <span data-ttu-id="68209-103">データ バインドされた値、中間式オブジェクトを作成して、要素と実行時にバインディングに適用されるデータ コンテキストを解釈するプロパティの値を延期します。</span><span class="sxs-lookup"><span data-stu-id="68209-103">Defers a property value to be a data-bound value, creating an intermediate expression object and interpreting the data context that applies to the element and its binding at run time.</span></span>  

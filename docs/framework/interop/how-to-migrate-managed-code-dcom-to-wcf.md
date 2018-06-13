@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33392747"
 ---
 # <a name="how-to-migrate-managed-code-dcom-to-wcf"></a><span data-ttu-id="1b6f1-102">方法: マネージ コード DCOM を WCF に移行する</span><span class="sxs-lookup"><span data-stu-id="1b6f1-102">How to: Migrate Managed-Code DCOM to WCF</span></span>
 <span data-ttu-id="1b6f1-103">Windows Communication Foundation (WCF) は、分散コンポーネント オブジェクト モデル (DCOM) と比較して、分散環境でサーバーとクライアントの間でマネージ コードを呼び出すための、推奨されているセキュリティで保護された選択肢です。</span><span class="sxs-lookup"><span data-stu-id="1b6f1-103">Windows Communication Foundation (WCF) is the recommended and secure choice over Distributed Component Object Model (DCOM) for managed code calls between servers and clients in a distributed environment.</span></span> <span data-ttu-id="1b6f1-104">この記事では、以下のシナリオで、DCOM から WCF にコードを移行する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="1b6f1-104">This article shows how you to migrate code from DCOM to WCF for the following scenarios.</span></span>  

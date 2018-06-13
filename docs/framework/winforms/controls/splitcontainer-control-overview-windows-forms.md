@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33539479"
 ---
 # <a name="splitcontainer-control-overview-windows-forms"></a><span data-ttu-id="f4ae7-102">SplitContainer コントロールの概要 (Windows フォーム)</span><span class="sxs-lookup"><span data-stu-id="f4ae7-102">SplitContainer Control Overview (Windows Forms)</span></span>
 <span data-ttu-id="f4ae7-103">Windows フォームの <xref:System.Windows.Forms.SplitContainer> コントロールは複合と考えることができ、移動可能なバーで区切られた 2 つのパネルです。</span><span class="sxs-lookup"><span data-stu-id="f4ae7-103">The Windows Forms <xref:System.Windows.Forms.SplitContainer> control can be thought of as a composite; it is two panels separated by a movable bar.</span></span> <span data-ttu-id="f4ae7-104">マウス ポインターがバーの上に移動すると、ポインターの形が変わり、バーが移動可能であることを示します。</span><span class="sxs-lookup"><span data-stu-id="f4ae7-104">When the mouse pointer is over the bar, the pointer changes shape to show that the bar is movable.</span></span>  

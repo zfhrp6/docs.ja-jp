@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33556254"
 ---
 # <a name="treeview"></a><span data-ttu-id="b22a1-102">TreeView</span><span class="sxs-lookup"><span data-stu-id="b22a1-102">TreeView</span></span>
 <span data-ttu-id="b22a1-103"><xref:System.Windows.Controls.TreeView>コントロールは、折りたたみ可能なノードを使用して、階層構造で情報を表示します。</span><span class="sxs-lookup"><span data-stu-id="b22a1-103">The <xref:System.Windows.Controls.TreeView> control displays information in a hierarchical structure by using collapsible nodes.</span></span>  

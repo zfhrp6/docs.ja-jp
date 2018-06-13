@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33554006"
 ---
 # <a name="image"></a><span data-ttu-id="c48ef-102">イメージ</span><span class="sxs-lookup"><span data-stu-id="c48ef-102">Image</span></span>
 <span data-ttu-id="c48ef-103"><xref:System.Windows.Controls.Image>ビットマップ画像を表示する要素が使用される[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]アプリケーションです。</span><span class="sxs-lookup"><span data-stu-id="c48ef-103">The <xref:System.Windows.Controls.Image> element is used to display bitmap images in [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] applications.</span></span>  
