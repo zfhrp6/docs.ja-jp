@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33326106"
 ---
 # <a name="how-to-transform-the-shape-of-an-xml-tree-c"></a><span data-ttu-id="620dd-102">方法: XML ツリーの構造を変換する (C#)</span><span class="sxs-lookup"><span data-stu-id="620dd-102">How to: Transform the Shape of an XML Tree (C#)</span></span>
 <span data-ttu-id="620dd-103">XML ドキュメントの "*構造*" とは、XML ドキュメントの要素名、属性名、およびその階層の特性を表すものです。</span><span class="sxs-lookup"><span data-stu-id="620dd-103">The *shape* of an XML document refers to its element names, attribute names, and the characteristics of its hierarchy.</span></span>  

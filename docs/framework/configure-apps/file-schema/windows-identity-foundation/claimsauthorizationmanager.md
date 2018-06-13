@@ -9,6 +9,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32757373"
 ---
 # <a name="ltclaimsauthorizationmanagergt"></a><span data-ttu-id="ba873-102">&lt;claimsAuthorizationManager&gt;</span><span class="sxs-lookup"><span data-stu-id="ba873-102">&lt;claimsAuthorizationManager&gt;</span></span>
 <span data-ttu-id="ba873-103">入力方向の要求の要求の承認マネージャーを登録します。</span><span class="sxs-lookup"><span data-stu-id="ba873-103">Registers a claims authorization manager for the incoming claims.</span></span>  

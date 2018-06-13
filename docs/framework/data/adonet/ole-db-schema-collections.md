@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32766934"
 ---
 # <a name="ole-db-schema-collections"></a><span data-ttu-id="01470-102">OLE DB スキーマ コレクション</span><span class="sxs-lookup"><span data-stu-id="01470-102">OLE DB Schema Collections</span></span>
 <span data-ttu-id="01470-103">ここでは、Microsoft SQL Server、Oracle、および Microsoft Jet 用の各 OLE DB プロバイダーでのスキーマ コレクションのサポートについて説明します。</span><span class="sxs-lookup"><span data-stu-id="01470-103">This section discusses schema collection support for the OLE DB providers for Microsoft SQL Server, Oracle, and Microsoft Jet.</span></span>  

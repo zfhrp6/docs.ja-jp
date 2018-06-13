@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32763671"
 ---
 # <a name="merging-dataset-contents"></a><span data-ttu-id="57e4e-102">DataSet の内容のマージ</span><span class="sxs-lookup"><span data-stu-id="57e4e-102">Merging DataSet Contents</span></span>
 <span data-ttu-id="57e4e-103"><xref:System.Data.DataSet.Merge%2A> メソッドを使用して、<xref:System.Data.DataSet>、<xref:System.Data.DataTable>、または <xref:System.Data.DataRow> の配列の内容を既存の `DataSet` にマージできます。</span><span class="sxs-lookup"><span data-stu-id="57e4e-103">You can use the <xref:System.Data.DataSet.Merge%2A> method to merge the contents of a <xref:System.Data.DataSet>, <xref:System.Data.DataTable>, or <xref:System.Data.DataRow> array into an existing `DataSet`.</span></span> <span data-ttu-id="57e4e-104">いくつかの要因とオプションが、新しいデータを既存の `DataSet` にマージする方法に影響します。</span><span class="sxs-lookup"><span data-stu-id="57e4e-104">Several factors and options affect how new data is merged into an existing `DataSet`.</span></span>  

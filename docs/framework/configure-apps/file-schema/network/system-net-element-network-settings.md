@@ -16,6 +16,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32752443"
 ---
 # <a name="ltsystemnetgt-element-network-settings"></a><span data-ttu-id="743a8-102">&lt;system.Net&gt;要素 (ネットワーク設定)</span><span class="sxs-lookup"><span data-stu-id="743a8-102">&lt;system.Net&gt; Element (Network Settings)</span></span>
 <span data-ttu-id="743a8-103">.NET Framework がネットワークに接続する方法を指定するための設定が含まれています。</span><span class="sxs-lookup"><span data-stu-id="743a8-103">Contains settings that specify how the .NET Framework connects to the network.</span></span>  

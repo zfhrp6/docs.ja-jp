@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32762924"
 ---
 # <a name="multiset-entity-sql"></a><span data-ttu-id="b5f50-102">MULTISET (Entity SQL)</span><span class="sxs-lookup"><span data-stu-id="b5f50-102">MULTISET (Entity SQL)</span></span>
 <span data-ttu-id="b5f50-103">値のリストからマルチセットのインスタンスを作成します。</span><span class="sxs-lookup"><span data-stu-id="b5f50-103">Creates an instance of a multiset from a list of values.</span></span> <span data-ttu-id="b5f50-104">MULTISET コンストラクターの値はすべて、互換性のある型 `T`である必要があります。</span><span class="sxs-lookup"><span data-stu-id="b5f50-104">All the values in the MULTISET constructor must be of a compatible type `T`.</span></span> <span data-ttu-id="b5f50-105">空のマルチセット コンストラクターは使用できません。</span><span class="sxs-lookup"><span data-stu-id="b5f50-105">Empty multiset constructors are not allowed.</span></span>  

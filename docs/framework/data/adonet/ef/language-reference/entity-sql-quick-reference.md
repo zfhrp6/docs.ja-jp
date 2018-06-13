@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32765855"
 ---
 # <a name="entity-sql-quick-reference"></a><span data-ttu-id="a9c3e-102">Entity SQL クイック リファレンス</span><span class="sxs-lookup"><span data-stu-id="a9c3e-102">Entity SQL Quick Reference</span></span>
 <span data-ttu-id="a9c3e-103">このトピックでは、[!INCLUDE[esql](../../../../../../includes/esql-md.md)] クエリのクイック リファレンスを提供します。</span><span class="sxs-lookup"><span data-stu-id="a9c3e-103">This topic provides a quick reference to [!INCLUDE[esql](../../../../../../includes/esql-md.md)] queries.</span></span> <span data-ttu-id="a9c3e-104">このトピック内のクエリは、AdventureWorks Sales model に基づいています。</span><span class="sxs-lookup"><span data-stu-id="a9c3e-104">The queries in this topic are based on the AdventureWorks Sales model.</span></span>  

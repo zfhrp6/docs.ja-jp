@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33604901"
 ---
 # <a name="aggregate-clause-visual-basic"></a><span data-ttu-id="da6f6-102">Aggregate 句 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="da6f6-102">Aggregate Clause (Visual Basic)</span></span>
 <span data-ttu-id="da6f6-103">コレクションに 1 つまたは複数の集計関数を適用します。</span><span class="sxs-lookup"><span data-stu-id="da6f6-103">Applies one or more aggregate functions to a collection.</span></span>  

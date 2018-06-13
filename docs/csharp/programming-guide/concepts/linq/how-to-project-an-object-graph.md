@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33321614"
 ---
 # <a name="how-to-project-an-object-graph-c"></a><span data-ttu-id="d78f3-102">方法: オブジェクト グラフを射影する (C#)</span><span class="sxs-lookup"><span data-stu-id="d78f3-102">How to: Project an Object Graph (C#)</span></span>
 <span data-ttu-id="d78f3-103">このトピックでは、XML からオブジェクト グラフを射影 (作成) する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="d78f3-103">This topic illustrates how to project, or populate, an object graph from XML.</span></span>  

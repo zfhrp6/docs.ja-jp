@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33565864"
 ---
 # <a name="type-converters-and-markup-extensions-for-xaml"></a><span data-ttu-id="8f8eb-102">XAML の型コンバーターおよびマークアップ拡張機能</span><span class="sxs-lookup"><span data-stu-id="8f8eb-102">Type Converters and Markup Extensions for XAML</span></span>
 <span data-ttu-id="8f8eb-103">型コンバーターとマークアップ拡張機能は、XAML 型システムと XAML ライターが、オブジェクト グラフ コンポーネントを生成するために使用する 2 つの手法です。</span><span class="sxs-lookup"><span data-stu-id="8f8eb-103">Type converters and markup extensions are two techniques that XAML type systems and XAML writers use to generate object graph components.</span></span> <span data-ttu-id="8f8eb-104">型コンバーターとマークアップ拡張機能は、一部の特性を共有しますが、XAML ノード ストリームでは異なる方法で表現されます。</span><span class="sxs-lookup"><span data-stu-id="8f8eb-104">Although they share some characteristics, type converters and markup extensions are represented differently in a XAML node stream.</span></span> <span data-ttu-id="8f8eb-105">このドキュメント セットでは、型コンバーター、マークアップ拡張機能、およびこれに類似したコンストラクトを、値コンバーターと総称することがあります。</span><span class="sxs-lookup"><span data-stu-id="8f8eb-105">In this documentation set, type converters, markup extensions, and similar constructs are sometimes collectively referred to as value converters.</span></span>  

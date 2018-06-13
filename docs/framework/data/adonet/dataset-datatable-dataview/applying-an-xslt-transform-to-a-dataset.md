@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32756554"
 ---
 # <a name="applying-an-xslt-transform-to-a-dataset"></a><span data-ttu-id="086bc-102">DataSet への XSLT 変換の適用</span><span class="sxs-lookup"><span data-stu-id="086bc-102">Applying an XSLT Transform to a DataSet</span></span>
 <span data-ttu-id="086bc-103">**WriteXml**のメソッド、<xref:System.Data.DataSet>の内容を記述することができます、**データセット**XML データとして。</span><span class="sxs-lookup"><span data-stu-id="086bc-103">The **WriteXml** method of the <xref:System.Data.DataSet> enables you to write the contents of a **DataSet** as XML data.</span></span> <span data-ttu-id="086bc-104">一般的なタスクは、XSLT (XSL Transformation) を使用してこの XML を別の形式へ変換する操作です。</span><span class="sxs-lookup"><span data-stu-id="086bc-104">A common task is to then transform that XML to another format using XSL transformations (XSLT).</span></span> <span data-ttu-id="086bc-105">ただし、同期、**データセット**で、<xref:System.Xml.XmlDataDocument>の内容に XSLT スタイル シートを適用することができます、**データセット**を最初の内容を記述しなくても、 **データセット**を使用して XML データとして**WriteXml**です。</span><span class="sxs-lookup"><span data-stu-id="086bc-105">However, synchronizing a **DataSet** with an <xref:System.Xml.XmlDataDocument> enables you to apply an XSLT stylesheet to the contents of a **DataSet** without having to first write the contents of the **DataSet** as XML data using **WriteXml**.</span></span>  

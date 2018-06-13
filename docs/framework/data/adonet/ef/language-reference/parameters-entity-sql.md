@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32765075"
 ---
 # <a name="parameters-entity-sql"></a><span data-ttu-id="b353e-102">パラメーター (Entity SQL)</span><span class="sxs-lookup"><span data-stu-id="b353e-102">Parameters (Entity SQL)</span></span>
 <span data-ttu-id="b353e-103">パラメーターは、[!INCLUDE[esql](../../../../../../includes/esql-md.md)] の外部で定義される変数です。通常は、ホスト言語で使用されるバインド API を通じて定義されます。</span><span class="sxs-lookup"><span data-stu-id="b353e-103">Parameters are variables that are defined outside [!INCLUDE[esql](../../../../../../includes/esql-md.md)], usually through a binding API that is used by a host language.</span></span> <span data-ttu-id="b353e-104">それぞれのパラメーターには、名前と型があります。</span><span class="sxs-lookup"><span data-stu-id="b353e-104">Each parameter has a name and a type.</span></span> <span data-ttu-id="b353e-105">クエリ式でパラメーター名が定義されているで (@) 記号をプレフィックスとして。</span><span class="sxs-lookup"><span data-stu-id="b353e-105">Parameter names are defined in query expressions with the at (@) symbol as a prefix.</span></span> <span data-ttu-id="b353e-106">これにより、クエリ内で定義されている他の名前 (プロパティ名など) と明確に区別されます。</span><span class="sxs-lookup"><span data-stu-id="b353e-106">This disambiguates them from the names of properties or other names that are defined in the query.</span></span>  

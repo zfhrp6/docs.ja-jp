@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33604056"
 ---
 # <a name="typeof-operator-visual-basic"></a><span data-ttu-id="ea4c6-102">TypeOf 演算子 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="ea4c6-102">TypeOf Operator (Visual Basic)</span></span>
 <span data-ttu-id="ea4c6-103">オブジェクト参照変数をデータ型と比較します。</span><span class="sxs-lookup"><span data-stu-id="ea4c6-103">Compares an object reference variable to a data type.</span></span>  

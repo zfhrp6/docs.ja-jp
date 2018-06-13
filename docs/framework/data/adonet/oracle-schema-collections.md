@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32766856"
 ---
 # <a name="oracle-schema-collections"></a><span data-ttu-id="71863-102">Oracle スキーマ コレクション</span><span class="sxs-lookup"><span data-stu-id="71863-102">Oracle Schema Collections</span></span>
 <span data-ttu-id="71863-103">Microsoft .NET Framework Data Provider for Oracle は、共通のスキーマ コレクションに加えて次のスキーマ コレクションをサポートしています。</span><span class="sxs-lookup"><span data-stu-id="71863-103">The Microsoft .NET Framework Data Provider for Oracle supports the following specific schema collections in addition to the common schema collections:</span></span>  

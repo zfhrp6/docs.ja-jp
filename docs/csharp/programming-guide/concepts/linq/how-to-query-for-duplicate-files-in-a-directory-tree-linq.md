@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33321302"
 ---
 # <a name="how-to-query-for-duplicate-files-in-a-directory-tree-linq-c"></a><span data-ttu-id="17744-102">方法: ディレクトリ ツリーで重複するファイルをクエリする (LINQ) (C#)</span><span class="sxs-lookup"><span data-stu-id="17744-102">How to: Query for Duplicate Files in a Directory Tree (LINQ) (C#)</span></span>
 <span data-ttu-id="17744-103">同じ名前のファイルが複数のフォルダーに存在することがあります。</span><span class="sxs-lookup"><span data-stu-id="17744-103">Sometimes files that have the same name may be located in more than one folder.</span></span> <span data-ttu-id="17744-104">たとえば、Visual Studio インストール フォルダーでは、複数のフォルダーに readme.htm ファイルが含まれています。</span><span class="sxs-lookup"><span data-stu-id="17744-104">For example, under the Visual Studio installation folder, several folders have a readme.htm file.</span></span> <span data-ttu-id="17744-105">次の例は、指定したルート フォルダーの下で、このような重複したファイル名をクエリする方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="17744-105">This example shows how to query for such duplicate file names under a specified root folder.</span></span> <span data-ttu-id="17744-106">また、2 番目の例では、名前のほかにサイズと作成時刻が一致するファイルをクエリする方法を示します。</span><span class="sxs-lookup"><span data-stu-id="17744-106">The second example shows how to query for files whose size and creation times also match.</span></span>  

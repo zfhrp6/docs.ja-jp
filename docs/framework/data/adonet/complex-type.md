@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32756814"
 ---
 # <a name="complex-type"></a><span data-ttu-id="c78a4-102">複合型</span><span class="sxs-lookup"><span data-stu-id="c78a4-102">complex type</span></span>
 <span data-ttu-id="c78a4-103">A*複合型*豊富な構造化されたプロパティを定義するためのテンプレートです[エンティティ型](../../../../docs/framework/data/adonet/entity-type.md)またはその他の複合型。</span><span class="sxs-lookup"><span data-stu-id="c78a4-103">A *complex type* is a template for defining rich, structured properties on [entity types](../../../../docs/framework/data/adonet/entity-type.md) or on other complex types.</span></span> <span data-ttu-id="c78a4-104">各テンプレートには、以下が含まれています。</span><span class="sxs-lookup"><span data-stu-id="c78a4-104">Each template contains the following:</span></span>  

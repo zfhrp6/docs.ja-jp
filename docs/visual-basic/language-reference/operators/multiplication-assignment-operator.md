@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33604160"
 ---
 # <a name="-operator-visual-basic"></a><span data-ttu-id="eb1d3-102">\*= 演算子 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="eb1d3-102">\*= Operator (Visual Basic)</span></span>
 <span data-ttu-id="eb1d3-103">式の値で変数またはプロパティの値を乗算し、結果を変数またはプロパティに代入します。</span><span class="sxs-lookup"><span data-stu-id="eb1d3-103">Multiplies the value of a variable or property by the value of an expression and assigns the result to the variable or property.</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33324162"
 ---
 # <a name="how-to-find-sibling-nodes-xpath-linq-to-xml-c"></a><span data-ttu-id="3d974-102">方法: 兄弟ノードを検索する (XPath-LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="3d974-102">How to: Find Sibling Nodes (XPath-LINQ to XML) (C#)</span></span>
 <span data-ttu-id="3d974-103">特定の名前を持つノードのすべての兄弟を検索する場合があります。</span><span class="sxs-lookup"><span data-stu-id="3d974-103">You might want to find all siblings of a node that have a specific name.</span></span> <span data-ttu-id="3d974-104">コンテキスト ノードも特定の名前を持つ場合は、結果のコレクションにコンテキスト ノードが含まれることがあります。</span><span class="sxs-lookup"><span data-stu-id="3d974-104">The resulting collection might include the context node if the context node also has the specific name.</span></span>  
