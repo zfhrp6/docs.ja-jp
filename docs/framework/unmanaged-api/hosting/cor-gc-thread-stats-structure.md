@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 24a386fe82bbd004954924a573c090af7f58824a
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33431829"
 ---
 # <a name="corgcthreadstats-structure"></a><span data-ttu-id="576ea-102">COR_GC_THREAD_STATS 構造体</span><span class="sxs-lookup"><span data-stu-id="576ea-102">COR_GC_THREAD_STATS Structure</span></span>
 <span data-ttu-id="576ea-103">ガベージ コレクションに関連するスレッドごとの統計情報が含まれています。</span><span class="sxs-lookup"><span data-stu-id="576ea-103">Contains per-thread statistics pertaining to garbage collection.</span></span>  

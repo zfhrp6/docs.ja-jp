@@ -6,9 +6,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 0c69be53a429e2f40741cc1e4c20fef3b7363654
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33422976"
 ---
 # <a name="icordebugsymbolprovider2getgenericdictionaryinfo-method"></a><span data-ttu-id="5afec-102">ICorDebugSymbolProvider2::GetGenericDictionaryInfo メソッド</span><span class="sxs-lookup"><span data-stu-id="5afec-102">ICorDebugSymbolProvider2::GetGenericDictionaryInfo Method</span></span>
 <span data-ttu-id="5afec-103">汎用のディクショナリ マップを取得します。</span><span class="sxs-lookup"><span data-stu-id="5afec-103">Retrieves a generic dictionary map.</span></span>  

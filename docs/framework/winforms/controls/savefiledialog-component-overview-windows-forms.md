@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33537448"
 ---
 # <a name="savefiledialog-component-overview-windows-forms"></a><span data-ttu-id="47784-102">SaveFileDialog コンポーネントの概要 (Windows フォーム)</span><span class="sxs-lookup"><span data-stu-id="47784-102">SaveFileDialog Component Overview (Windows Forms)</span></span>
 <span data-ttu-id="47784-103">Windows フォームの <xref:System.Windows.Forms.SaveFileDialog> コンポーネントは、事前構成済みのダイアログ ボックスです。</span><span class="sxs-lookup"><span data-stu-id="47784-103">The Windows Forms <xref:System.Windows.Forms.SaveFileDialog> component is a pre-configured dialog box.</span></span> <span data-ttu-id="47784-104">標準と同じである**ファイルを保存** ダイアログ ボックスの Windows で使用します。</span><span class="sxs-lookup"><span data-stu-id="47784-104">It is the same as the standard **Save File** dialog box used by Windows.</span></span> <span data-ttu-id="47784-105">これは、<xref:System.Windows.Forms.CommonDialog> クラスを継承しています。</span><span class="sxs-lookup"><span data-stu-id="47784-105">It inherits from the <xref:System.Windows.Forms.CommonDialog> class.</span></span>  

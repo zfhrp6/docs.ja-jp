@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 7d17ac4230296674381c87851377fcb535837ad3
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33416820"
 ---
 # <a name="icordebugnativeframegetip-method"></a><span data-ttu-id="748e1-102">ICorDebugNativeFrame::GetIP メソッド</span><span class="sxs-lookup"><span data-stu-id="748e1-102">ICorDebugNativeFrame::GetIP Method</span></span>
 <span data-ttu-id="748e1-103">取得、ネイティブ コード命令ポインターが現在設定されている位置のオフセット。</span><span class="sxs-lookup"><span data-stu-id="748e1-103">Gets the native code offset location to which the instruction pointer is currently set.</span></span>  

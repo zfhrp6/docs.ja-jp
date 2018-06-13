@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32747074"
 ---
 # <a name="ltpersistabletypegt"></a><span data-ttu-id="578ed-102">&lt;persistableType&gt;</span><span class="sxs-lookup"><span data-stu-id="578ed-102">&lt;persistableType&gt;</span></span>
 <span data-ttu-id="578ed-103">すべての永続型を指定します。</span><span class="sxs-lookup"><span data-stu-id="578ed-103">Specifies all the persistable types.</span></span>  

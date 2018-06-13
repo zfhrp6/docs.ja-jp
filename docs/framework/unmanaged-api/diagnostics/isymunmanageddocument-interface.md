@@ -18,9 +18,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: f75e517890275b90523dc42cdac3a83d871beac7
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33427203"
 ---
 # <a name="isymunmanageddocument-interface"></a><span data-ttu-id="5e5a3-102">ISymUnmanagedDocument インターフェイス</span><span class="sxs-lookup"><span data-stu-id="5e5a3-102">ISymUnmanagedDocument Interface</span></span>
 <span data-ttu-id="5e5a3-103">シンボル ストアによって参照されるドキュメントを表します。</span><span class="sxs-lookup"><span data-stu-id="5e5a3-103">Represents a document referenced by a symbol store.</span></span> <span data-ttu-id="5e5a3-104">ドキュメントは、uniform resource locator (URL) と GUID のドキュメント型によって定義されます。</span><span class="sxs-lookup"><span data-stu-id="5e5a3-104">A document is defined by a uniform resource locator (URL) and a document type GUID.</span></span> <span data-ttu-id="5e5a3-105">URL を使用して格納方法に関係なく、ドキュメントを検索し、ドキュメントの種類の GUID できます。</span><span class="sxs-lookup"><span data-stu-id="5e5a3-105">You can locate the document regardless of how it is stored by using the URL and document type GUID.</span></span> <span data-ttu-id="5e5a3-106">ドキュメントのソースをシンボル ストアに格納でき、このインターフェイスを通じて取得できます。</span><span class="sxs-lookup"><span data-stu-id="5e5a3-106">You can store the document source in the symbol store and retrieve it through this interface.</span></span>  

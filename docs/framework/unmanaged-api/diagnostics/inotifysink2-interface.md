@@ -18,9 +18,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 52246ac531853eea87464e265f731ece0d350e22
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33426037"
 ---
 # <a name="inotifysink2-interface"></a><span data-ttu-id="aa922-102">INotifySink2 インターフェイス</span><span class="sxs-lookup"><span data-stu-id="aa922-102">INotifySink2 Interface</span></span>
 <span data-ttu-id="aa922-103">シンクの通知のためのメソッドを宣言します。</span><span class="sxs-lookup"><span data-stu-id="aa922-103">Declares methods for sink notification.</span></span>  

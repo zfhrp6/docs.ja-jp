@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 06c020b9f6c074be11e3433939ce6898586123cd
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33412608"
 ---
 # <a name="icordebugframegetchain-method"></a><span data-ttu-id="55297-102">ICorDebugFrame::GetChain メソッド</span><span class="sxs-lookup"><span data-stu-id="55297-102">ICorDebugFrame::GetChain Method</span></span>
 <span data-ttu-id="55297-103">このフレームの一部であるチェーンへのポインターを取得します。</span><span class="sxs-lookup"><span data-stu-id="55297-103">Gets a pointer to the chain this frame is a part of.</span></span>  

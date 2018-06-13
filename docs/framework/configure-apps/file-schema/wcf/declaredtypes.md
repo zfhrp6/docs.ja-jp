@@ -13,6 +13,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32747617"
 ---
 # <a name="ltdeclaredtypesgt"></a><span data-ttu-id="31005-102">&lt;declaredTypes&gt;</span><span class="sxs-lookup"><span data-stu-id="31005-102">&lt;declaredTypes&gt;</span></span>
 <span data-ttu-id="31005-103">逆シリアル化時に <xref:System.Runtime.Serialization.DataContractSerializer> が使用する既知の型が含まれています。</span><span class="sxs-lookup"><span data-stu-id="31005-103">Contains the known types that the <xref:System.Runtime.Serialization.DataContractSerializer> uses when deserializing.</span></span>  

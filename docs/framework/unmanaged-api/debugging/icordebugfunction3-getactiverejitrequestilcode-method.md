@@ -16,9 +16,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: af101e8d842c20394816a3408c74709da941bcd4
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33416183"
 ---
 # <a name="icordebugfunction3getactiverejitrequestilcode-method"></a><span data-ttu-id="cc152-102">ICorDebugFunction3::GetActiveReJitRequestILCode メソッド</span><span class="sxs-lookup"><span data-stu-id="cc152-102">ICorDebugFunction3::GetActiveReJitRequestILCode Method</span></span>
 <span data-ttu-id="cc152-103">[.NET Framework 4.5.2 以降のバージョンでのみでサポート]</span><span class="sxs-lookup"><span data-stu-id="cc152-103">[Supported in the .NET Framework 4.5.2 and later versions]</span></span>  

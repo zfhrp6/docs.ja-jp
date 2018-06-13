@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: d088aaaaa80ee3513a37ea0345d720832504c005
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33421149"
 ---
 # <a name="icordebuginternalframe2getframeaddress-method"></a><span data-ttu-id="cdbfc-102">ICorDebugInternalFrame2::GetFrameAddress メソッド</span><span class="sxs-lookup"><span data-stu-id="cdbfc-102">ICorDebugInternalFrame2::GetFrameAddress Method</span></span>
 <span data-ttu-id="cdbfc-103">内部フレームのスタック アドレスを返します。</span><span class="sxs-lookup"><span data-stu-id="cdbfc-103">Returns the stack address of the internal frame.</span></span>  

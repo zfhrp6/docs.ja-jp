@@ -16,6 +16,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32747347"
 ---
 # <a name="ltaddgt-element-for-ltlistenersgt-for-lttracegt"></a><span data-ttu-id="8f885-102">&lt;追加&gt;要素&lt;リスナー&gt;の&lt;トレース&gt;</span><span class="sxs-lookup"><span data-stu-id="8f885-102">&lt;add&gt; Element for &lt;listeners&gt; for &lt;trace&gt;</span></span>
 <span data-ttu-id="8f885-103">リスナーを追加、**リスナー**コレクション。</span><span class="sxs-lookup"><span data-stu-id="8f885-103">Adds a listener to the **Listeners** collection.</span></span>  

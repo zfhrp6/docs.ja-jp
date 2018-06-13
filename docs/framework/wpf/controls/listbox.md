@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33551688"
 ---
 # <a name="listbox"></a><span data-ttu-id="fe2a9-102">ListBox</span><span class="sxs-lookup"><span data-stu-id="fe2a9-102">ListBox</span></span>
 <span data-ttu-id="fe2a9-103">A<xref:System.Windows.Controls.ListBox>コントロールには、選択可能な項目のリストでユーザーが用意されています。</span><span class="sxs-lookup"><span data-stu-id="fe2a9-103">A <xref:System.Windows.Controls.ListBox> control provides users with a list of selectable items.</span></span>  

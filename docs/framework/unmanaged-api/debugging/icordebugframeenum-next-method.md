@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 2f049a7cadf1857495e49b9bdc2fecd1b49103af
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33415484"
 ---
 # <a name="icordebugframeenumnext-method"></a><span data-ttu-id="df2a9-102">ICorDebugFrameEnum::Next メソッド</span><span class="sxs-lookup"><span data-stu-id="df2a9-102">ICorDebugFrameEnum::Next Method</span></span>
 <span data-ttu-id="df2a9-103">ICorDebugFrame インスタンスの現在位置から指定した数を取得します。</span><span class="sxs-lookup"><span data-stu-id="df2a9-103">Gets the specified number of ICorDebugFrame instances, starting at the current position.</span></span>  

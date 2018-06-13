@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 711c85b930617632d69497e4a9cf0a74360d27f7
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33415108"
 ---
 # <a name="icordebugcodeenumnext-method"></a><span data-ttu-id="fbcbf-102">ICorDebugCodeEnum::Next メソッド</span><span class="sxs-lookup"><span data-stu-id="fbcbf-102">ICorDebugCodeEnum::Next Method</span></span>
 <span data-ttu-id="fbcbf-103">列挙体の現在位置から指定数の"ICorDebugCode"のインスタンスを取得します。</span><span class="sxs-lookup"><span data-stu-id="fbcbf-103">Gets the specified number of "ICorDebugCode" instances from the enumeration, starting at the current position.</span></span>  

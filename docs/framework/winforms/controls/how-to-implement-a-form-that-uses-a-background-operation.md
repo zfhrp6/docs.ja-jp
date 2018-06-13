@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33533297"
 ---
 # <a name="how-to-implement-a-form-that-uses-a-background-operation"></a><span data-ttu-id="f1aba-102">方法 : バックグラウンド操作を使用するフォームを実装する</span><span class="sxs-lookup"><span data-stu-id="f1aba-102">How to: Implement a Form That Uses a Background Operation</span></span>
 <span data-ttu-id="f1aba-103">次のサンプル プログラムは、フィボナッチの数列を計算するフォームを作成します。</span><span class="sxs-lookup"><span data-stu-id="f1aba-103">The following example program creates a form that calculates Fibonacci numbers.</span></span> <span data-ttu-id="f1aba-104">計算では、ユーザー インターフェイス スレッドとは別にあるスレッドで実行されるので、ユーザー インターフェイスは引き続き、計算の進行に伴う遅延なしに実行されます。</span><span class="sxs-lookup"><span data-stu-id="f1aba-104">The calculation runs on a thread that is separate from the user interface thread, so the user interface continues to run without delays as the calculation proceeds.</span></span>  

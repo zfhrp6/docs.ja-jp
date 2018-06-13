@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 612e0f84302d5bee6479264ef2dbba4c7152657e
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33422547"
 ---
 # <a name="icordebugstackwalk-interface"></a><span data-ttu-id="bc774-102">ICorDebugStackWalk インターフェイス</span><span class="sxs-lookup"><span data-stu-id="bc774-102">ICorDebugStackWalk Interface</span></span>
 <span data-ttu-id="bc774-103">スレッドのスタック上のマネージ メソッド (フレーム) を取得するメソッドを提供します。</span><span class="sxs-lookup"><span data-stu-id="bc774-103">Provides methods for getting the managed methods, or frames, on a thread’s stack.</span></span>  

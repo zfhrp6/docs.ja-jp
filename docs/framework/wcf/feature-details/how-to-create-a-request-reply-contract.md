@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33489574"
 ---
 # <a name="how-to-create-a-request-reply-contract"></a><span data-ttu-id="78215-102">方法 : 要求/応答コントラクトを作成する</span><span class="sxs-lookup"><span data-stu-id="78215-102">How to: Create a Request-Reply Contract</span></span>
 <span data-ttu-id="78215-103">要求/応答コントラクトは、応答を返すメソッドを指定します。</span><span class="sxs-lookup"><span data-stu-id="78215-103">A request-reply contract specifies a method that returns a reply.</span></span> <span data-ttu-id="78215-104">応答が送信され、このコントラクトの条件の下で要求に関連付けられる必要があります。</span><span class="sxs-lookup"><span data-stu-id="78215-104">The reply must be sent and correlated to the request under the terms of this contract.</span></span> <span data-ttu-id="78215-105">メソッドが応答を返さない場合 (C# の場合は `void` または Visual Basic の場合は `Sub`) でも、インフラストラクチャは、空のメッセージを作成して送信することで、メソッドが返ったことを呼び出し元に示します。</span><span class="sxs-lookup"><span data-stu-id="78215-105">Even if the method returns no reply (`void` in C#, or a `Sub` in Visual Basic), the infrastructure creates and sends an empty message to the caller.</span></span> <span data-ttu-id="78215-106">空の応答メッセージが送信されるのを防ぐには、操作で 1 方向コントラクトを使用します。</span><span class="sxs-lookup"><span data-stu-id="78215-106">To prevent the sending of an empty reply message, use a one-way contract for the operation.</span></span>  

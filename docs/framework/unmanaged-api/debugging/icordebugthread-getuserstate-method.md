@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 06ff8f0f13d7710d2d3d59aac4b5fdcadfe707be
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33418393"
 ---
 # <a name="icordebugthreadgetuserstate-method"></a><span data-ttu-id="6f71d-102">ICorDebugThread::GetUserState メソッド</span><span class="sxs-lookup"><span data-stu-id="6f71d-102">ICorDebugThread::GetUserState Method</span></span>
 <span data-ttu-id="6f71d-103">この ICorDebugThread の現在のユーザー状態を取得します。</span><span class="sxs-lookup"><span data-stu-id="6f71d-103">Gets the current user state of this ICorDebugThread.</span></span>  

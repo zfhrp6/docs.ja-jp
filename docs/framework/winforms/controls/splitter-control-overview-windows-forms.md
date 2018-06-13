@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33534119"
 ---
 # <a name="splitter-control-overview-windows-forms"></a><span data-ttu-id="4d9c2-102">Splitter コントロールの概要 (Windows フォーム)</span><span class="sxs-lookup"><span data-stu-id="4d9c2-102">Splitter Control Overview (Windows Forms)</span></span>
 > [!IMPORTANT]

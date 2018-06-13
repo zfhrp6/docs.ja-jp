@@ -6,9 +6,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: cb07c519743c41a7a31994e42d2fdc5220e5e2ef
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33418212"
 ---
 # <a name="icordebugmutabledatatargetcontinuestatuschanged-method"></a><span data-ttu-id="3271d-102">ICorDebugMutableDataTarget::ContinueStatusChanged メソッド</span><span class="sxs-lookup"><span data-stu-id="3271d-102">ICorDebugMutableDataTarget::ContinueStatusChanged Method</span></span>
 <span data-ttu-id="3271d-103">指定のスレッド上にある未処理のデバッグ イベントの継続状態を変更します。</span><span class="sxs-lookup"><span data-stu-id="3271d-103">Changes the continuation status for the outstanding debug event on the specified thread.</span></span>  

@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: db2f30001e050c1f312613c794388ffaa99d3b17
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33414507"
 ---
 # <a name="icordebugmodulegetfunctionfromrva-method"></a><span data-ttu-id="f3aed-102">ICorDebugModule::GetFunctionFromRVA メソッド</span><span class="sxs-lookup"><span data-stu-id="f3aed-102">ICorDebugModule::GetFunctionFromRVA Method</span></span>
 <span data-ttu-id="f3aed-103">このメソッドは .NET Framework の現在のバージョンで実装されていません。</span><span class="sxs-lookup"><span data-stu-id="f3aed-103">This method has not been implemented in the current version of the .NET Framework.</span></span>  

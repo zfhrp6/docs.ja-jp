@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: d4326c6d8a3ee780cf63652badc8c527f55a075c
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33420818"
 ---
 # <a name="icordebugprocess2setunmanagedbreakpoint-method"></a><span data-ttu-id="ea03e-102">ICorDebugProcess2::SetUnmanagedBreakpoint メソッド</span><span class="sxs-lookup"><span data-stu-id="ea03e-102">ICorDebugProcess2::SetUnmanagedBreakpoint Method</span></span>
 <span data-ttu-id="ea03e-103">ネイティブ イメージを指定したオフセット位置には、アンマネージのブレークポイントを設定します。</span><span class="sxs-lookup"><span data-stu-id="ea03e-103">Sets an unmanaged breakpoint at the specified native image offset.</span></span>  

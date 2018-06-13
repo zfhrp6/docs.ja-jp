@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 5fc4c0560c2aa0d66c1b40d78458a2d44284e232
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33417916"
 ---
 # <a name="icordebugmodule3-interface"></a><span data-ttu-id="97c46-102">ICorDebugModule3 インターフェイス</span><span class="sxs-lookup"><span data-stu-id="97c46-102">ICorDebugModule3 Interface</span></span>
 <span data-ttu-id="97c46-103">動的モジュールのシンボル リーダーを作成します。</span><span class="sxs-lookup"><span data-stu-id="97c46-103">Creates a symbol reader for a dynamic module.</span></span>  

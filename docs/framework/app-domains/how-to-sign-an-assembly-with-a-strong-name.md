@@ -18,6 +18,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32744630"
 ---
 # <a name="how-to-sign-an-assembly-with-a-strong-name"></a><span data-ttu-id="92b6c-102">方法 : 厳密な名前でアセンブリに署名する</span><span class="sxs-lookup"><span data-stu-id="92b6c-102">How to: Sign an Assembly with a Strong Name</span></span>
 <span data-ttu-id="92b6c-103">厳密な名前でアセンブリに署名するには、いくつかの方法があります。</span><span class="sxs-lookup"><span data-stu-id="92b6c-103">There are a number of ways to sign an assembly with a strong name:</span></span>  

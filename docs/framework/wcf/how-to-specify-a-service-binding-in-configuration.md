@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33500000"
 ---
 # <a name="how-to-specify-a-service-binding-in-configuration"></a><span data-ttu-id="097ff-102">方法 : 構成でサービス バインディングを指定する</span><span class="sxs-lookup"><span data-stu-id="097ff-102">How to: Specify a Service Binding in Configuration</span></span>
 <span data-ttu-id="097ff-103">この例では、簡単な電卓サービス用に `ICalculator` コントラクトを定義し、そのサービスを `CalculatorService` クラスで実装し、そのエンドポイントを Web.config ファイルで構成します。このファイルでは、サービスが <xref:System.ServiceModel.BasicHttpBinding> を使用するように指定します。</span><span class="sxs-lookup"><span data-stu-id="097ff-103">In this example, an `ICalculator` contract is defined for a basic calculator service, the service is implemented in the `CalculatorService` class, and then its endpoint is configured in the Web.config file, where it is specified that the service uses the <xref:System.ServiceModel.BasicHttpBinding>.</span></span> <span data-ttu-id="097ff-104">構成ではなくコードを使用してこのサービスを構成する方法については、次を参照してください。[する方法: コード内で、サービス バインドを指定](../../../docs/framework/wcf/how-to-specify-a-service-binding-in-code.md)です。</span><span class="sxs-lookup"><span data-stu-id="097ff-104">For a description of how to configure this service using code instead of a configuration, see [How to: Specify a Service Binding in Code](../../../docs/framework/wcf/how-to-specify-a-service-binding-in-code.md).</span></span>  

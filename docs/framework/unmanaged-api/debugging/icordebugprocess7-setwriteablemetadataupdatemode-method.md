@@ -16,9 +16,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: a67f93a3f3f75b89bc3f0240995471bc0bf44992
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33419758"
 ---
 # <a name="icordebugprocess7setwriteablemetadataupdatemode-method"></a><span data-ttu-id="05015-102">ICorDebugProcess7::SetWriteableMetadataUpdateMode メソッド</span><span class="sxs-lookup"><span data-stu-id="05015-102">ICorDebugProcess7::SetWriteableMetadataUpdateMode Method</span></span>
 <span data-ttu-id="05015-103">[.NET Framework 4.5.2 以降のバージョンでのみでサポート]</span><span class="sxs-lookup"><span data-stu-id="05015-103">[Supported in the .NET Framework 4.5.2 and later versions]</span></span>  

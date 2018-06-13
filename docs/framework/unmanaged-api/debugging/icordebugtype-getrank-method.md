@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 9f112e0d064041a877963939b78029da08bbbed1
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33417655"
 ---
 # <a name="icordebugtypegetrank-method"></a><span data-ttu-id="b038d-102">ICorDebugType::GetRank メソッド</span><span class="sxs-lookup"><span data-stu-id="b038d-102">ICorDebugType::GetRank Method</span></span>
 <span data-ttu-id="b038d-103">配列型の次元数を取得します。</span><span class="sxs-lookup"><span data-stu-id="b038d-103">Gets the number of dimensions in an array type.</span></span>  

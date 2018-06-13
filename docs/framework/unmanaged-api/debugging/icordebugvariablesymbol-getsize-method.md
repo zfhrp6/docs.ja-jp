@@ -6,9 +6,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 01349b6418008db51c432d5c49f8491a44ab60d2
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33419411"
 ---
 # <a name="icordebugvariablesymbolgetsize-method"></a><span data-ttu-id="1caa2-102">ICorDebugVariableSymbol::GetSize メソッド</span><span class="sxs-lookup"><span data-stu-id="1caa2-102">ICorDebugVariableSymbol::GetSize Method</span></span>
 <span data-ttu-id="1caa2-103">変数のサイズ (バイト単位) を取得します。</span><span class="sxs-lookup"><span data-stu-id="1caa2-103">Gets the size of a variable in bytes.</span></span>  

@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: acffd24ae9d5aad5f48058eec036f912ee016289
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33415985"
 ---
 # <a name="icordebugmodulegetfunctionfromtoken-method"></a><span data-ttu-id="2244c-102">ICorDebugModule::GetFunctionFromToken メソッド</span><span class="sxs-lookup"><span data-stu-id="2244c-102">ICorDebugModule::GetFunctionFromToken Method</span></span>
 <span data-ttu-id="2244c-103">メタデータ トークンによって指定された関数を取得します。</span><span class="sxs-lookup"><span data-stu-id="2244c-103">Gets the function that is specified by the metadata token.</span></span>  

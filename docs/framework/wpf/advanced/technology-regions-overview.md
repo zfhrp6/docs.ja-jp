@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33548845"
 ---
 # <a name="technology-regions-overview"></a><span data-ttu-id="f6b01-102">技術領域の概要</span><span class="sxs-lookup"><span data-stu-id="f6b01-102">Technology Regions Overview</span></span>
 <span data-ttu-id="f6b01-103">、WPF、Win32、または DirectX、などのアプリケーションで複数のプレゼンテーション テクノロジが使用されている場合、共通のトップレベル ウィンドウ内の表示領域を共有する必要があります。</span><span class="sxs-lookup"><span data-stu-id="f6b01-103">If multiple presentation technologies are used in an application, such as WPF, Win32, or DirectX, they must share the rendering areas within a common top-level window.</span></span> <span data-ttu-id="f6b01-104">このトピックでは、プレゼンテーション層と、WPF の相互運用アプリケーションへの入力は影響を与える問題について説明します。</span><span class="sxs-lookup"><span data-stu-id="f6b01-104">This topic describes issues that might influence the presentation and input for your WPF interoperation application.</span></span>  

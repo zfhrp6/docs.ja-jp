@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 532f69afd949971fbb4f56a8fdbcc6eab159446f
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33427708"
 ---
 # <a name="isymunmanagedwriterdefinedocument-method"></a><span data-ttu-id="f6faf-102">ISymUnmanagedWriter::DefineDocument メソッド</span><span class="sxs-lookup"><span data-stu-id="f6faf-102">ISymUnmanagedWriter::DefineDocument Method</span></span>
 <span data-ttu-id="f6faf-103">ソース ドキュメントを定義します。</span><span class="sxs-lookup"><span data-stu-id="f6faf-103">Defines a source document.</span></span> <span data-ttu-id="f6faf-104">既知の言語、ベンダー、およびドキュメントの種類の Guid が提供されます。</span><span class="sxs-lookup"><span data-stu-id="f6faf-104">GUIDs are provided for known languages, vendors, and document types.</span></span>  

@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33538568"
 ---
 # <a name="how-to-view-multiple-lines-in-the-windows-forms-textbox-control"></a><span data-ttu-id="71cec-102">方法 : Windows フォーム TextBox コントロールで複数行を表示する</span><span class="sxs-lookup"><span data-stu-id="71cec-102">How to: View Multiple Lines in the Windows Forms TextBox Control</span></span>
 <span data-ttu-id="71cec-103">既定では、Windows フォーム<xref:System.Windows.Forms.TextBox>コントロールは、1 行のテキストを表示し、スクロール バーは表示されません。</span><span class="sxs-lookup"><span data-stu-id="71cec-103">By default, the Windows Forms <xref:System.Windows.Forms.TextBox> control displays a single line of text and does not display scroll bars.</span></span> <span data-ttu-id="71cec-104">テキストは、使用可能な領域よりも長くなりますが、テキストの一部のみが表示されます。</span><span class="sxs-lookup"><span data-stu-id="71cec-104">If the text is longer than the available space, only part of the text is visible.</span></span> <span data-ttu-id="71cec-105">この既定の動作を変更するには設定して、 <xref:System.Windows.Forms.TextBox.Multiline%2A>、<xref:System.Windows.Forms.TextBoxBase.WordWrap%2A>と<xref:System.Windows.Forms.TextBox.ScrollBars%2A>プロパティを適切な値にします。</span><span class="sxs-lookup"><span data-stu-id="71cec-105">You can change this default behavior by setting the <xref:System.Windows.Forms.TextBox.Multiline%2A>, <xref:System.Windows.Forms.TextBoxBase.WordWrap%2A>, and <xref:System.Windows.Forms.TextBox.ScrollBars%2A> properties to appropriate values.</span></span>  

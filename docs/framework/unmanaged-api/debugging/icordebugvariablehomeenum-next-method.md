@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: d5ab18d6c2ae8bbf47a3bcd7cb892530be4f8f4e
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33421585"
 ---
 # <a name="icordebugvariablehomeenumnext-method"></a><span data-ttu-id="08162-102">ICorDebugVariableHomeEnum::Next メソッド</span><span class="sxs-lookup"><span data-stu-id="08162-102">ICorDebugVariableHomeEnum::Next Method</span></span>
 <span data-ttu-id="08162-103">指定した数を取得[ICorDebugVariableHome](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md)ローカル変数と関数の引数に関する情報を格納するインスタンス。</span><span class="sxs-lookup"><span data-stu-id="08162-103">Gets the specified number of [ICorDebugVariableHome](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md) instances that contain information about the local variables and arguments in a function.</span></span>  

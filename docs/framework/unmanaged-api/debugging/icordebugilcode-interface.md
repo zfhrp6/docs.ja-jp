@@ -14,9 +14,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: bac5578caaf5682c12509b41da77b3d7cca76312
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33415234"
 ---
 # <a name="icordebugilcode-interface"></a><span data-ttu-id="3dd5c-102">ICorDebugILCode インターフェイス</span><span class="sxs-lookup"><span data-stu-id="3dd5c-102">ICorDebugILCode Interface</span></span>
 <span data-ttu-id="3dd5c-103">[.NET Framework 4.5.2 以降のバージョンでのみでサポート]</span><span class="sxs-lookup"><span data-stu-id="3dd5c-103">[Supported in the .NET Framework 4.5.2 and later versions]</span></span>  

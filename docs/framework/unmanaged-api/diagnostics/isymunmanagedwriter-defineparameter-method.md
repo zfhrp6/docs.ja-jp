@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: b6b01abc16334dbe091e7586efcce1c3e390a64e
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33426976"
 ---
 # <a name="isymunmanagedwriterdefineparameter-method"></a><span data-ttu-id="b1f57-102">ISymUnmanagedWriter::DefineParameter メソッド</span><span class="sxs-lookup"><span data-stu-id="b1f57-102">ISymUnmanagedWriter::DefineParameter Method</span></span>
 <span data-ttu-id="b1f57-103">現在のメソッドの 1 つのパラメーターを定義します。</span><span class="sxs-lookup"><span data-stu-id="b1f57-103">Defines a single parameter in the current method.</span></span> <span data-ttu-id="b1f57-104">パラメーターの型は、メソッドのシグネチャ内のパラメーターの位置 (シーケンス) から取得されます。</span><span class="sxs-lookup"><span data-stu-id="b1f57-104">The parameter type is taken from the parameter's position (sequence) within the method's signature.</span></span>  

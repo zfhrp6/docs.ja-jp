@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 9e8aa71a79bee45d5a8e1f3448c781e6ba1ec605
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33414139"
 ---
 # <a name="icordebugmanagedcallbackeditandcontinueremap-method"></a><span data-ttu-id="89ef2-102">ICorDebugManagedCallback::EditAndContinueRemap メソッド</span><span class="sxs-lookup"><span data-stu-id="89ef2-102">ICorDebugManagedCallback::EditAndContinueRemap Method</span></span>
 <span data-ttu-id="89ef2-103">このメソッドの使用は非推奨とされました。</span><span class="sxs-lookup"><span data-stu-id="89ef2-103">This method has been deprecated.</span></span> <span data-ttu-id="89ef2-104">統合開発環境 (IDE) に再割り当てイベントが送信されたことに、デバッガーに通知します。</span><span class="sxs-lookup"><span data-stu-id="89ef2-104">It notifies the debugger that a remap event has been sent to the integrated development environment (IDE).</span></span>  

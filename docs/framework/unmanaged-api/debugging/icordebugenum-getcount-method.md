@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 5eddad89c60f25c957a06822d54cc73501b974ee
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33415630"
 ---
 # <a name="icordebugenumgetcount-method"></a><span data-ttu-id="910a7-102">ICorDebugEnum::GetCount メソッド</span><span class="sxs-lookup"><span data-stu-id="910a7-102">ICorDebugEnum::GetCount Method</span></span>
 <span data-ttu-id="910a7-103">列挙に含まれる項目の数を取得します。</span><span class="sxs-lookup"><span data-stu-id="910a7-103">Gets the number of items in the enumeration.</span></span>  

@@ -6,9 +6,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 0c128a7dd832376f492573ded49c499232d2bcff
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33419973"
 ---
 # <a name="icordebugsymbolprovidergetmethodparametersymbols-method"></a><span data-ttu-id="403c2-102">ICorDebugSymbolProvider::GetMethodParameterSymbols メソッド</span><span class="sxs-lookup"><span data-stu-id="403c2-102">ICorDebugSymbolProvider::GetMethodParameterSymbols Method</span></span>
 <span data-ttu-id="403c2-103">メソッドの指定の相対仮想アドレス (RVA) で、そのメソッドのパラメーター シンボルを取得します。</span><span class="sxs-lookup"><span data-stu-id="403c2-103">Gets a method's parameter symbols given the relative virtual address (RVA) of that method.</span></span>  

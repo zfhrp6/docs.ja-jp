@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 3e2edc64cd9067ed89ae0e309c6a5630319ce835
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33420600"
 ---
 # <a name="icordebugruntimeunwindableframe-interface"></a><span data-ttu-id="cf32b-102">ICorDebugRuntimeUnwindableFrame インターフェイス</span><span class="sxs-lookup"><span data-stu-id="cf32b-102">ICorDebugRuntimeUnwindableFrame Interface</span></span>
 <span data-ttu-id="cf32b-103">共通言語ランタイム (CLR: Common Language Runtime) でフレームをアンワインドする必要のあるアンマネージ メソッドに対してサポートを提供します。</span><span class="sxs-lookup"><span data-stu-id="cf32b-103">Provides support for unmanaged methods that require the common language runtime (CLR) to unwind a frame.</span></span>  

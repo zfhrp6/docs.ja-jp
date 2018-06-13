@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33502948"
 ---
 # <a name="custom-binding-reliable-session-over-https"></a><span data-ttu-id="1f63b-102">HTTPS を介したカスタム バインドの信頼できるセッション</span><span class="sxs-lookup"><span data-stu-id="1f63b-102">Custom Binding Reliable Session over HTTPS</span></span>
 <span data-ttu-id="1f63b-103">このサンプルでは、信頼できるセッションを使用した SSL トランスポート セキュリティを示します。</span><span class="sxs-lookup"><span data-stu-id="1f63b-103">This sample demonstrates the use of SSL transport security with Reliable Sessions.</span></span> <span data-ttu-id="1f63b-104">信頼できるセッションは、WS-ReliableMessaging プロトコルを実装しています。</span><span class="sxs-lookup"><span data-stu-id="1f63b-104">Reliable Sessions implements the WS-Reliable Messaging protocol.</span></span> <span data-ttu-id="1f63b-105">信頼できるセッションを介して WS-Security を構築することにより、セキュリティで保護された信頼できるセッションを持つことができます。</span><span class="sxs-lookup"><span data-stu-id="1f63b-105">You can have a secure reliable session by composing WS-Security over Reliable Sessions.</span></span> <span data-ttu-id="1f63b-106">ただし、SSL による HTTP トランスポート セキュリティの使用を選択できる場合もあります。</span><span class="sxs-lookup"><span data-stu-id="1f63b-106">But sometimes, you may choose to instead use HTTP transport security with SSL.</span></span>  

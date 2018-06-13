@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33490105"
 ---
 # <a name="how-to-configure-com-service-settings"></a><span data-ttu-id="83b2e-102">方法 : COM+ サービス設定を構成する</span><span class="sxs-lookup"><span data-stu-id="83b2e-102">How to: Configure COM+ Service Settings</span></span>
 <span data-ttu-id="83b2e-103">COM+ サービス構成ツールを使用してアプリケーション インターフェイスを追加または削除すると、アプリケーション構成ファイル内の Web サービス構成が更新されます。</span><span class="sxs-lookup"><span data-stu-id="83b2e-103">When an application interface is added or removed by using the COM+ Service Configuration tool, the Web service configuration is updated within the application's configuration file.</span></span> <span data-ttu-id="83b2e-104">COM + ホスト モードでは、Application.config ファイルはアプリケーションのルート ディレクトリに配置されます (%PROGRAMFILES%\ComPlus アプリケーション\\%programfiles%\complus は既定値)。</span><span class="sxs-lookup"><span data-stu-id="83b2e-104">In the COM+ hosted mode, the Application.config file is placed in the Application Root Directory (%PROGRAMFILES%\ComPlus Applications\\{appid} is the default).</span></span> <span data-ttu-id="83b2e-105">いずれの Web ホスト モードでも、Web.config ファイルは指定した vroot ディレクトリに配置されます。</span><span class="sxs-lookup"><span data-stu-id="83b2e-105">In either of the Web-hosted modes, the Web.config file is placed in the specified vroot directory.</span></span>  

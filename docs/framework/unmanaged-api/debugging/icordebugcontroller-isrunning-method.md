@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 4605b893169ccfc592aae0d07dc032f455314cc5
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33412733"
 ---
 # <a name="icordebugcontrollerisrunning-method"></a><span data-ttu-id="fe3d4-102">ICorDebugController::IsRunning メソッド</span><span class="sxs-lookup"><span data-stu-id="fe3d4-102">ICorDebugController::IsRunning Method</span></span>
 <span data-ttu-id="fe3d4-103">プロセス内のスレッドが自由に実行中かどうかを示す値を取得します。</span><span class="sxs-lookup"><span data-stu-id="fe3d4-103">Gets a value that indicates whether the threads in the process are currently running freely.</span></span>  

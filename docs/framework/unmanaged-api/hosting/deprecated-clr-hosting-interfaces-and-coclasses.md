@@ -11,9 +11,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 1f6c20a69894c95086dbd813601ac8811ab4f337
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33429225"
 ---
 # <a name="deprecated-clr-hosting-interfaces-and-coclasses"></a><span data-ttu-id="45b6d-102">非推奨の CLR のホスト インターフェイスおよびコクラス</span><span class="sxs-lookup"><span data-stu-id="45b6d-102">Deprecated CLR Hosting Interfaces and Coclasses</span></span>
 <span data-ttu-id="45b6d-103">このセクションの内容がアンマネージ インターフェイスについて説明しますホストを使用して、共通言語ランタイム (CLR) 統合 .NET Framework version 1.0 および 1.1 でのアプリケーションにします。</span><span class="sxs-lookup"><span data-stu-id="45b6d-103">This section describes the interfaces that unmanaged hosts can use to integrate the common language runtime (CLR) in the .NET Framework versions 1.0 and 1.1 into their applications.</span></span> <span data-ttu-id="45b6d-104">これらのインターフェイスは、ホストを構成して、ランタイムをプロセスに読み込むのためのメソッドを提供します。</span><span class="sxs-lookup"><span data-stu-id="45b6d-104">These interfaces provide methods for a host to configure and load the runtime into a process.</span></span>  

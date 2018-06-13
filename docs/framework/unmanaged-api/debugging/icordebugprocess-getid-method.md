@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: d752eb17b956e2367e8b191080a370506a61ff34
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33416668"
 ---
 # <a name="icordebugprocessgetid-method"></a><span data-ttu-id="2f2ea-102">ICorDebugProcess::GetID メソッド</span><span class="sxs-lookup"><span data-stu-id="2f2ea-102">ICorDebugProcess::GetID Method</span></span>
 <span data-ttu-id="2f2ea-103">プロセスのオペレーティング システム (OS) の ID を取得します。</span><span class="sxs-lookup"><span data-stu-id="2f2ea-103">Gets the operating system (OS) ID of the process.</span></span>  

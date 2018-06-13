@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 5419d2e6932e08d05c8336d473cf68bd16058a48
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33417272"
 ---
 # <a name="icordebugnativeframegetlocalmemoryvalue-method"></a><span data-ttu-id="abd66-102">ICorDebugNativeFrame::GetLocalMemoryValue メソッド</span><span class="sxs-lookup"><span data-stu-id="abd66-102">ICorDebugNativeFrame::GetLocalMemoryValue Method</span></span>
 <span data-ttu-id="abd66-103">引数またはこのネイティブ フレームの指定したメモリ位置に格納されているローカル変数の値を取得します。</span><span class="sxs-lookup"><span data-stu-id="abd66-103">Gets the value of an argument or local variable that is stored in the specified memory location for this native frame.</span></span>  

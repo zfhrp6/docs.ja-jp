@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33322131"
 ---
 # <a name="how-to-list-all-nodes-in-a-tree-c"></a><span data-ttu-id="6755f-102">方法: ツリー内のすべてのノードを一覧表示する (C#)</span><span class="sxs-lookup"><span data-stu-id="6755f-102">How to: List All Nodes in a Tree (C#)</span></span>
 <span data-ttu-id="6755f-103">ツリー内のすべてのノードを一覧表示すると便利な場合があります。</span><span class="sxs-lookup"><span data-stu-id="6755f-103">Sometimes it is helpful to list all nodes in a tree.</span></span> <span data-ttu-id="6755f-104">これは、メソッドやプロパティがツリーに及ぼす影響を確認するときに役立ちます。</span><span class="sxs-lookup"><span data-stu-id="6755f-104">This can be useful when learning exactly how a method or property affects the tree.</span></span> <span data-ttu-id="6755f-105">すべてのノードをテキスト形式で一覧表示する方法の 1 つは、ツリー内の任意のノードを正確かつ明確に識別する XPath 式を生成することです。</span><span class="sxs-lookup"><span data-stu-id="6755f-105">One approach to listing all nodes in a textual form is to generate an XPath expression that exactly and specifically identifies any node in the tree.</span></span>  
