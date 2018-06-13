@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: b482f2ca2e2d5c06e69945adb71aa6c0f5d26465
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33462092"
 ---
 # <a name="execquerywmi-function"></a>ExecQueryWmi 関数
 オブジェクトを取得するクエリを実行します。  

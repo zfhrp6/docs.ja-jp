@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 00ee1139b4b8340a73740117b74208a6a1f6b639
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33461592"
 ---
 # <a name="gethashfromfilew-function"></a>GetHashFromFileW 関数
 Unicode 文字列で指定されたファイルの内容のハッシュを生成します。  

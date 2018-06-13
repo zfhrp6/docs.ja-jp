@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33574856"
 ---
 # <a name="how-to-implement-an-observer"></a>方法: オブザーバーを実装する
 オブザーバー デザイン パターンでは、通知を登録するオブザーバーと、データを監視して 1 人以上のオブザーバーに通知を送信するプロバイダーを分ける必要があります。 このトピックでは、オブザーバーを作成する方法について説明します。 プロバイダーの作成方法については、関連トピックの「[方法: プロバイダーを実装する](../../../docs/standard/events/how-to-implement-a-provider.md)」を参照してください。  

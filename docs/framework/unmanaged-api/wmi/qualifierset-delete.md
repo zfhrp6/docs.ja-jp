@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: e0e96ba458edfe7261fd5857b7bcb8486f4a6636
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33460046"
 ---
 # <a name="qualifiersetdelete-function"></a>QualifierSet_Delete 関数
 名前で指定された修飾子を削除します。  

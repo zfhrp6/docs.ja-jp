@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33574367"
 ---
 # <a name="pipe-operations-in-the-net-framework"></a>.NET Framework でのパイプ操作
 パイプは、プロセス間通信の手段となります。 パイプには、2 種類あります。  

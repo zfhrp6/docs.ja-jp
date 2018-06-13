@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33471257"
 ---
 # <a name="endpoint-security-calls-not-authorized"></a>エンドポイント : 承認されていないセキュリティ呼び出し
 カウンター名 : 承認されていないセキュリティ呼び出し。  

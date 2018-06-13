@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33571486"
 ---
 # <a name="xmlschemacollection-schema-compilation"></a>XmlSchemaCollection スキーマのコンパイル
 **XmlSchemaCollection** は、XDR (XML-Data Reduced) スキーマや XML スキーマ定義言語 (XSD) スキーマを格納および検証できるキャッシュ (ライブラリ) です。 **XmlSchemaCollection** は、ファイルや URL からスキーマにアクセスしなくて済むようにスキーマをメモリにキャッシュすることによって、パフォーマンスの向上を図ります。  

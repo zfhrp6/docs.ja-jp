@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33471678"
 ---
 # <a name="core-communications-webhost-support"></a>コア通信 : Webhost サポート
 ここでは、Webhost サポートによって生成されるすべての例外を示します。  

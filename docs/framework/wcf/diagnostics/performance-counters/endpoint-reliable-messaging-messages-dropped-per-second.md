@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33472285"
 ---
 # <a name="endpoint-reliable-messaging-messages-dropped-per-second"></a>エンドポイント: 信頼できるメッセージの 1 秒あたりの破棄されたメッセージ
 カウンター名 : 1 秒あたりに破棄された信頼できるメッセージ セッション  

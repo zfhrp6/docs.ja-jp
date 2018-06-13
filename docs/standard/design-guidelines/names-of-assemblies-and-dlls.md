@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33570431"
 ---
 # <a name="names-of-assemblies-and-dlls"></a>アセンブリと DLL の名前
 アセンブリは、展開とマネージ コード アプリケーションの id の単位です。 アセンブリは、1 つまたは複数のファイルにまたがることができますが通常アセンブリは一対一、DLL にマップされます。 そのため、このセクションでは、のみ DLL の名前付け規則、アセンブリの名前付け規則にマップすることができますがについて説明します。  

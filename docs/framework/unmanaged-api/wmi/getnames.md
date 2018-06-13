@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 108946428cdfadcfb9c653b7e444bf278dfa2782
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33461982"
 ---
 # <a name="getnames-function"></a>GetNames 関数
 一部またはすべてのオブジェクトのプロパティの名前を取得します。 

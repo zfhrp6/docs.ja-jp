@@ -18,9 +18,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 8cec2a622a1a30881949ad5a9f2050077e195015
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33461400"
 ---
 # <a name="icorprofilerinfo2-interface"></a>ICorProfilerInfo2 インターフェイス
 コード プロファイラーが共通言語ランタイム (CLR) イベントの監視の制御と要求情報を通信に使用するメソッドを提供します。 `ICorProfilerInfo2`インターフェイスの拡張機能は、 [ICorProfilerInfo](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)インターフェイスです。 つまり、.NET Framework バージョン 2.0 およびそれ以降のバージョンでサポートされている新しいメソッドを提供します。  

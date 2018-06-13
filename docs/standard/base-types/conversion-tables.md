@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33571125"
 ---
 # <a name="type-conversion-tables-in-net"></a>.NET の型変換の表
 拡大変換は、1 つの型の値が、サイズが同じかそれ以上の別の型に変換されるときに発生します。 縮小変換は、1 つの型の値が、サイズがより小さい別の型の値に変換されるときに発生します。 このトピックの表は、両方の種類の変換の動作を示しています。  

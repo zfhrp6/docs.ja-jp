@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33568798"
 ---
 # <a name="run-composed-and-microservices-based-applications-in-production-environments"></a>実稼働環境で構成される microservices ベースのアプリケーションを実行します。
 

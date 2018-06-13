@@ -31,9 +31,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: b38b64e1c86174bea11086e722ed86b0a0046e2c
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33461914"
 ---
 # <a name="profiling-overview"></a>プロファイリングの概要
 <a name="top"></a> プロファイラーは、別のアプリケーションの実行を監視するツールです。 共通言語ランタイム (CLR: Common Language Runtime) プロファイラーは、プロファイル API を使用して CLR とのメッセージの送受信を行う関数で構成されるダイナミック リンク ライブラリ (DLL: Dynamic Link Library) です。 プロファイラー DLL は、実行時に CLR によって読み込まれます。  

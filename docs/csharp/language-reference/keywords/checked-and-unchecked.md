@@ -14,6 +14,7 @@ ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/18/2018
+ms.locfileid: "34234374"
 ---
 # <a name="checked-and-unchecked-c-reference"></a>Checked と Unchecked (C# リファレンス)
 C# のステートメントは、checked または unchecked のいずれかのコンテキストで実行できます。 checked コンテキストでは、算術オーバーフローにより例外が発生します。 unchecked コンテキストでは、算術オーバーフローが無視され、結果の格納先の型に収まらない上位ビットが破棄されて、結果が切り詰められます。  

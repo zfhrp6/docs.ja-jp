@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33569721"
 ---
 # <a name="reading-an-xml-document-into-the-dom"></a>XML ドキュメントの DOM への読み取り
 XML 情報は、さまざまな形式からメモリに読み取られます。 XML 情報は、文字列、ストリーム、URL、テキスト リーダー、および <xref:System.Xml.XmlReader> から派生したクラスから読み取ることができます。  

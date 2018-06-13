@@ -15,6 +15,7 @@ ms.sourcegitcommit: 77d9a94dac4c05827ed0663d95e0f9ad35d6682e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/24/2018
+ms.locfileid: "34472517"
 ---
 # <a name="c-compiler-options"></a>C# コンパイラ オプション
 コンパイラは、実行可能ファイル (.exe)、ダイナミック リンク ライブラリ (.dll)、またはコード モジュール (.netmodule) を生成します。  

@@ -15,6 +15,7 @@ ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/23/2018
+ms.locfileid: "34457308"
 ---
 # <a name="compiling-apps-with-net-native"></a>.NET ネイティブによるアプリのコンパイル
 [!INCLUDE[net_native](../../../includes/net-native-md.md)] Visual Studio 2015 およびそれ以降のバージョンに含まれているプリコンパイル テクノロジを構築および Windows アプリを展開するためです。 マネージ コード (C# または Visual Basic) で記述された、.NET Framework および Windows 10 を対象とするアプリのリリース バージョンを自動的にネイティブ コードにコンパイルします。  

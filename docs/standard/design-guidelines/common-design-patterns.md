@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33570345"
 ---
 # <a name="common-design-patterns"></a>共通デザイン パターン
 ソフトウェア パターン、パターン言語、およびアドレスのパターンの非常に幅広いサブジェクト antipatterns で多くの書籍があります。 したがって、ガイドラインと非常に限定された一連の .NET Framework Api の設計で頻繁に使用するパターンに関連付けられているディスカッションについても説明します。  

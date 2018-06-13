@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33569331"
 ---
 # <a name="style-sheet-directives-embedded-in-a-document"></a>ドキュメントに埋め込まれたスタイル シート ディレクティブ
 既存の XML に `<?xml:stylesheet?>` というスタイル シート ディレクティブが含まれていることがあります。 Microsoft Internet Explorer は、これを `<?xml-stylesheet?>` 構文に代わるものとして受け入れます。 次のように `<?xml:stylesheet?>` ディレクティブが含まれている XML データを XML ドキュメント オブジェクト モデル (DOM) に読み込もうとすると、例外がスローされます。  

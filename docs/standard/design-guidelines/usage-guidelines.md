@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33571034"
 ---
 # <a name="usage-guidelines"></a>使用方法のガイドライン
 このセクションには、パブリックにアクセスできる Api の一般的な種類の使用に関するガイドラインが含まれています。 組み込みフレームワーク型 (シリアル化属性など) および一般的な演算子をオーバー ロードの直接の使用状況を処理します。  
