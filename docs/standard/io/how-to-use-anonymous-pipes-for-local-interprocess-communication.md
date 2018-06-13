@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33573180"
 ---
 # <a name="how-to-use-anonymous-pipes-for-local-interprocess-communication"></a>方法: ローカルのプロセス間通信で匿名パイプを使用する
 匿名パイプは、ローカル コンピューターでのプロセス間通信を実現します。 名前付きパイプと比較して提供する機能は少なくなりますが、オーバーヘッドも小さくなります。 匿名パイプを使用して、ローカル コンピューター上で容易にプロセス間通信を実行できます。 匿名パイプを使用してネットワーク経由の通信を行うことはできません。  

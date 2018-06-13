@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33494465"
 ---
 # <a name="mixing-trust-protocols-in-federated-scenarios"></a>Trust プロトコルが混在するフェデレーション シナリオ
 シナリオによっては、フェデレーション クライアントが、Trust バージョンの一致しないサービスやセキュリティ トークン サービス (STS: Security Token Service) と通信する場合があります。 たとえば、サービス WSDL に、STS とは異なるバージョンの WS-Trust 要素を持つ `RequestSecurityTokenTemplate` アサーションが含まれることがあります。 このような場合は、Windows Communication Foundation (WCF) クライアントから受け取った Ws-trust 要素に変換します、 `RequestSecurityTokenTemplate` STS trust のバージョンと一致します。 WCF では、標準バインディングでのみ不一致の trust バージョンを処理します。 WCF で認識されるすべての標準アルゴリズム パラメーターは、標準バインディングの一部です。 このトピックでは、さまざまな信頼の設定、サービスと STS との間での WCF 動作について説明します。  

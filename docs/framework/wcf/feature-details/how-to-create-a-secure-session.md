@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33493220"
 ---
 # <a name="how-to-create-a-secure-session"></a>方法 : セキュリティで保護されたセッションを作成する
 例外を除いて、 [ \<basicHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md)バインド、システム指定のバインディングで Windows Communication Foundation (WCF) に自動的にセッションを使用するセキュリティで保護されたメッセージ セキュリティが有効な場合です。  

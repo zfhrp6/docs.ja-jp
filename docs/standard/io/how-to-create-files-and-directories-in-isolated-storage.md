@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33575188"
 ---
 # <a name="how-to-create-files-and-directories-in-isolated-storage"></a>方法 : 分離ストレージでファイルおよびディレクトリを作成する
 分離ストアを取得したら、データを格納するためのファイルとディレクトリを作成することができます。 ストア内では、ファイル名とディレクトリ名は仮想ファイル システムのルートに対して指定されます。  

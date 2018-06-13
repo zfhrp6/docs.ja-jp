@@ -23,6 +23,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33652501"
 ---
 # <a name="procedure-parameters-and-arguments-visual-basic"></a>プロシージャのパラメーターと引数 (Visual Basic)
 ほとんどの場合、プロシージャが呼び出されたときの状況に関する情報を必要とします。 繰り返しまたは共有のタスクを実行する手順は、呼び出しごとに異なる情報を使用します。 この情報は、変数、定数、およびメソッドを呼び出すときに、プロシージャに渡す式で構成されます。  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33650479"
 ---
 # <a name="multithreaded-applications-visual-basic"></a>マルチ スレッド アプリケーション (Visual Basic)
 Visual Basic では、同時に複数のタスクを実行するアプリケーションを作成できます。 他のタスクを止める可能性があるタスクは個別のスレッドで実行できます。これは*マルチスレッド*や*フリー スレッド*と呼ばれているプロセスです。  

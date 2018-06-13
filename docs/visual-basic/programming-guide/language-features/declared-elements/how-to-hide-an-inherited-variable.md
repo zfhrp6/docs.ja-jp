@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33649140"
 ---
 # <a name="how-to-hide-an-inherited-variable-visual-basic"></a>方法: 継承された変数を隠す (Visual Basic)
 派生クラスでは、その基本クラスのすべての定義を継承します。 基本クラスの要素として同じ名前を使用して変数を定義する場合は、非表示にできます、または*シャドウ*、派生クラスで変数を定義するときにその基本クラスの要素。 これを行うと、派生クラス内のコードにアクセスする場合、変数シャドウ機構が明示的にバイパスされる場合を除き、します。  

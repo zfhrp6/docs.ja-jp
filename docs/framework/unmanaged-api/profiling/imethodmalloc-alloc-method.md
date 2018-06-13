@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 6d73fe16720248d541bac64a432bb6f35d6873b6
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33454982"
 ---
 # <a name="imethodmallocalloc-method"></a>IMethodMalloc::Alloc メソッド
 新しい Microsoft intermediate language (MSIL) 関数本体の指定した量のメモリを割り当てようとします。  

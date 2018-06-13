@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 9e888b2359336c68ea6fdf52f798145fda12002e
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33440870"
 ---
 # <a name="stackoverflowtype-enumeration"></a>StackOverflowType 列挙型
 スタック オーバーフローのイベントの根本原因を示す値が含まれています。  

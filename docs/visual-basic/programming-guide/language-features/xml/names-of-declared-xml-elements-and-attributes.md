@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33650427"
 ---
 # <a name="names-of-declared-xml-elements-and-attributes-visual-basic"></a>宣言する XML 要素と属性の名前 (Visual Basic)
 このトピックでは、XML リテラルの XML 要素および属性の名前付けの Visual Basic のガイドラインを提供します。  XML リテラルでは、ローカル名または修飾名を指定できます。 XML 名前空間プレフィックス、コロン、およびローカル名の修飾名で構成されます。 XML 名前空間プレフィックスの詳細については、次を参照してください。 [XML 要素リテラル](../../../../visual-basic/language-reference/xml-literals/xml-element-literal.md)です。  

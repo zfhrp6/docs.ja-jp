@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33521616"
 ---
 # <a name="how-to-draw-a-custom-dashed-line"></a>方法 : カスタム破線を描画する
 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] 記載されているいくつかの破線スタイルを提供、<xref:System.Drawing.Drawing2D.DashStyle>列挙します。 これらの標準の破線スタイルがニーズに適合しないいない場合は、カスタムの破線のパターンを作成できます。  

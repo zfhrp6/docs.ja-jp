@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33496589"
 ---
 # <a name="queues-in-windows-communication-foundation"></a>Windows Communication Foundation のキュー
 このセクションのトピックでは、キューの Windows Communication Foundation (WCF) のサポートについて説明します。 WCF では、利用する Microsoft メッセージ キュー (以前は MSMQ と呼ばれます) をトランスポートとしてによってキューのサポートを提供および、次のシナリオを実現できます。  

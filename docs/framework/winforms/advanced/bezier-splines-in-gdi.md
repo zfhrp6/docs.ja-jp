@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33517574"
 ---
 # <a name="b233zier-splines-in-gdi"></a>B&#233;ベジエ スプライン GDI + で
 ベジエ スプラインは、4 つのポイントで指定された曲線: 次の 2 つの終点 (p1 と p2) と 2 つの制御ポイント (c1 と c2)。 曲線では、p1 で開始され、p2 で終了します。 コントロール ポイントを曲線が通過しませんが、管理ポイントが磁石、特定の方向に曲線をプルし、曲線曲がる方法に影響を与えるとして機能します。 次の図は、およびそのエンドポイントとの制御点のベジエ曲線を示します。  

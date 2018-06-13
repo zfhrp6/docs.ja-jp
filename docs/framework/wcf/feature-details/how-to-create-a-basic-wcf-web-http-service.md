@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33493478"
 ---
 # <a name="how-to-create-a-basic-wcf-web-http-service"></a>方法 : 基本的な WCF Web HTTP サービスを作成する
 Windows Communication Foundation (WCF) では、Web エンドポイントを公開するサービスを作成することができます。 Web エンドポイントは、XML または JSON でデータを送信します。SOAP エンベロープはありません。 ここでは、このようなエンドポイントを公開する方法を示します。  

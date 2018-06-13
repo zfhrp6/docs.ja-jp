@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33524887"
 ---
 # <a name="using-managed-graphics-classes"></a>マネージ グラフィックス クラスの使用
 次のトピックを使用する方法について説明、[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]マネージ クラス フレームワーク内の API です。  

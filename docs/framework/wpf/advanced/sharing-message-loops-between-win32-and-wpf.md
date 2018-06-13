@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33548816"
 ---
 # <a name="sharing-message-loops-between-win32-and-wpf"></a>Win32 と WPF 間でのメッセージ ループの共有
 このトピックとの相互運用のメッセージ ループを実装する方法について説明[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]、既存を使用していずれかのメッセージ ループ危険にさらされる<xref:System.Windows.Threading.Dispatcher>または上に個別のメッセージ ループを作成することで、[!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)]面を相互運用コード。  

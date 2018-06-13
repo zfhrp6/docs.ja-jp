@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33649849"
 ---
 # <a name="constant-and-literal-data-types-visual-basic"></a>定数とリテラルのデータ型 (Visual Basic)
 リテラルは、変数の値または数値 3 または文字列「こんにちは」など、式の結果ではなく自体として表される値です。 定数は、わかりやすい名前を受け取り、リテラルの代わりに値を変更することがあります、変数ではなく、プログラム全体で同じ値を保持します。  

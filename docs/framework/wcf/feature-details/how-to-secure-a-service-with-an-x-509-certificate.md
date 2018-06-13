@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33493043"
 ---
 # <a name="how-to-secure-a-service-with-an-x509-certificate"></a>方法 : X.509 証明書を使用してサービスをセキュリティで保護する
 X.509 証明書によってサービスのセキュリティ保護は、ほとんどのバインドでは、Windows Communication Foundation (WCF) を使用する基本的な手法です。 ここでは、X.509 証明書を使用して自己ホスト サービスを構成する手順を示します。  
