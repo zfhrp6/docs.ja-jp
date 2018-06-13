@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33410391"
 ---
 # <a name="mageexe-manifest-generation-and-editing-tool"></a>Mage.exe (マニフェストの生成および編集ツール)
 マニフェストの生成および編集ツール (Mage.exe) は、アプリケーション マニフェストおよび配置マニフェストの作成と編集をサポートするコマンド ライン ツールです。 コマンド ライン ツールであるため、Mage.exe は、バッチ スクリプトから実行することも、 [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] アプリケーションなど他の Windows ベースのアプリケーションから実行することもできます。  

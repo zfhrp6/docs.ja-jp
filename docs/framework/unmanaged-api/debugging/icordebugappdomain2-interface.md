@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: ff6ffdd733cf6e7b923d88d057d7cd230c8d8541
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33407116"
 ---
 # <a name="icordebugappdomain2-interface1"></a>ICorDebugAppDomain2 Interface1
 配列、ポインター、関数ポインター、および参照型を使用するメソッドを提供します。 このインターフェイスは、ICorDebugAppDomain インターフェイスの拡張機能です。  
