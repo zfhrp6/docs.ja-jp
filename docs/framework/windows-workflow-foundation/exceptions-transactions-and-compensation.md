@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33512211"
 ---
 # <a name="exceptions-transactions-and-compensation"></a><span data-ttu-id="66e7b-102">例外、トランザクション、および補正</span><span class="sxs-lookup"><span data-stu-id="66e7b-102">Exceptions, Transactions, and Compensation</span></span>
 [!INCLUDE[wf1](../../../includes/wf1-md.md)]<span data-ttu-id="66e7b-103"> には、ワークフロー内のランタイム エラー条件を処理するさまざまな機構が用意されています。</span><span class="sxs-lookup"><span data-stu-id="66e7b-103"> provides several different mechanisms for handling run-time error conditions in workflows.</span></span> <span data-ttu-id="66e7b-104">ワークフローでは、例外ハンドラー、トランザクション、キャンセル、および補正の組み合わせを使用して、エラー条件の処理と適切な回復を行えます。</span><span class="sxs-lookup"><span data-stu-id="66e7b-104">Workflows can use a combination of exception handlers, transactions, cancellation, and compensation to handle and recover gracefully from error conditions.</span></span>  

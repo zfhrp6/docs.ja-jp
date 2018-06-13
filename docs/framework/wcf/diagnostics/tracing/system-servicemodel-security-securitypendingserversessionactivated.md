@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33485448"
 ---
 # <a name="systemservicemodelsecuritysecuritypendingserversessionactivated"></a><span data-ttu-id="782c0-102">System.ServiceModel.Security.SecurityPendingServerSessionActivated</span><span class="sxs-lookup"><span data-stu-id="782c0-102">System.ServiceModel.Security.SecurityPendingServerSessionActivated</span></span>
 <span data-ttu-id="782c0-103">System.ServiceModel.Security.SecurityPendingServerSessionActivated</span><span class="sxs-lookup"><span data-stu-id="782c0-103">System.ServiceModel.Security.SecurityPendingServerSessionActivated</span></span>  

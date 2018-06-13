@@ -17,6 +17,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32742511"
 ---
 # <a name="multifile-assemblies"></a><span data-ttu-id="fa34d-102">マルチファイル アセンブリ</span><span class="sxs-lookup"><span data-stu-id="fa34d-102">Multifile Assemblies</span></span>
 <span data-ttu-id="fa34d-103">コマンド ライン コンパイラまたは Visual C++ で [!INCLUDE[vsprvslong](../../../includes/vsprvslong-md.md)] を使って、マルチファイル アセンブリを作成できます。</span><span class="sxs-lookup"><span data-stu-id="fa34d-103">You can create multifile assemblies using command-line compilers or [!INCLUDE[vsprvslong](../../../includes/vsprvslong-md.md)] with Visual C++.</span></span> <span data-ttu-id="fa34d-104">アセンブリ内の 1 つのファイルには、アセンブリ マニフェストが含まれている必要があります。</span><span class="sxs-lookup"><span data-stu-id="fa34d-104">One file in the assembly must contain the assembly manifest.</span></span> <span data-ttu-id="fa34d-105">アプリケーションを起動するアセンブリには、Main メソッドや WinMain メソッドなどのエントリ ポイントも含まれている必要があります。</span><span class="sxs-lookup"><span data-stu-id="fa34d-105">An assembly that starts an application must also contain an entry point, such as a Main or WinMain method.</span></span>  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33544005"
 ---
 # <a name="how-to-find-the-source-element-in-an-event-handler"></a><span data-ttu-id="fd13f-102">方法 : イベント ハンドラーでソース要素を検索する</span><span class="sxs-lookup"><span data-stu-id="fd13f-102">How to: Find the Source Element in an Event Handler</span></span>
 <span data-ttu-id="fd13f-103">この例では、イベント ハンドラーでソース要素を検索する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="fd13f-103">This example shows how to find the source element in an event handler.</span></span>  

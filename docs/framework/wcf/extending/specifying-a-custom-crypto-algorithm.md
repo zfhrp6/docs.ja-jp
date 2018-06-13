@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33489226"
 ---
 # <a name="specifying-a-custom-crypto-algorithm"></a><span data-ttu-id="b2f31-102">カスタム暗号アルゴリズムの指定</span><span class="sxs-lookup"><span data-stu-id="b2f31-102">Specifying a Custom Crypto Algorithm</span></span>
 <span data-ttu-id="b2f31-103">WCF では、データの暗号化やデジタル署名の計算を行う際に使用するカスタム暗号アルゴリズムを指定できます。</span><span class="sxs-lookup"><span data-stu-id="b2f31-103">WCF allows you to specify a custom crypto algorithm to use when encrypting data or computing digital signatures.</span></span> <span data-ttu-id="b2f31-104">そのためには、次の手順に従います。</span><span class="sxs-lookup"><span data-stu-id="b2f31-104">This is done by the following steps:</span></span>  

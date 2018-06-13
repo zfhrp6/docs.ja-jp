@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33525740"
 ---
 # <a name="how-to-add-a-custom-place-to-a-file-dialog-box"></a><span data-ttu-id="709e2-102">方法 : よく使用する場所をファイル ダイアログ ボックスに追加する</span><span class="sxs-lookup"><span data-stu-id="709e2-102">How To: Add a Custom Place to a File Dialog Box</span></span>
 <span data-ttu-id="709e2-103">[!INCLUDE[wiprlhext](../../../../includes/wiprlhext-md.md)] の既定の 開くダイアログ ボックスと 保存ダイアログ ボックスには、左側に **[お気に入りリンク]** というタイトルの領域があります。</span><span class="sxs-lookup"><span data-stu-id="709e2-103">The default open and save dialog boxes on [!INCLUDE[wiprlhext](../../../../includes/wiprlhext-md.md)] have an area on the left side of the dialog box titled **Favorite Links**.</span></span> <span data-ttu-id="709e2-104">この領域にはカスタム プレイスという名称が付いています。</span><span class="sxs-lookup"><span data-stu-id="709e2-104">This area is called custom places.</span></span> <span data-ttu-id="709e2-105"><xref:System.Windows.Forms.OpenFileDialog>と<xref:System.Windows.Forms.SaveFileDialog>クラスを使用すると、フォルダーを追加する、<xref:System.Windows.Forms.FileDialog.CustomPlaces%2A>コレクション。</span><span class="sxs-lookup"><span data-stu-id="709e2-105">The <xref:System.Windows.Forms.OpenFileDialog> and <xref:System.Windows.Forms.SaveFileDialog> classes allow you to add folders to the <xref:System.Windows.Forms.FileDialog.CustomPlaces%2A> collection.</span></span>  

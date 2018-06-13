@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33397937"
 ---
 # <a name="how-to-hook-up-a-delegate-using-reflection"></a><span data-ttu-id="d9cc5-102">方法 : リフレクションを使用してデリゲートをフックする</span><span class="sxs-lookup"><span data-stu-id="d9cc5-102">How to: Hook Up a Delegate Using Reflection</span></span>
 <span data-ttu-id="d9cc5-103">リフレクションを使用して、アセンブリを読み込んで実行する場合、C# の `+=` 演算子や Visual Basic の [AddHandler ステートメント](~/docs/visual-basic/language-reference/statements/addhandler-statement.md)のような言語機能を使用してイベントをフックすることはできません。</span><span class="sxs-lookup"><span data-stu-id="d9cc5-103">When you use reflection to load and run assemblies, you cannot use language features like the C# `+=` operator or the Visual Basic [AddHandler statement](~/docs/visual-basic/language-reference/statements/addhandler-statement.md) to hook up events.</span></span> <span data-ttu-id="d9cc5-104">次の手順では、必要なすべての型をリフレクションによって取得することで、既存のメソッドをイベントにフックする方法と、リフレクション出力を使用して動的メソッドを作成し、それをイベントにフックする方法を示します。</span><span class="sxs-lookup"><span data-stu-id="d9cc5-104">The following procedures show how to hook up an existing method to an event by getting all the necessary types through reflection, and how to create a dynamic method using reflection emit and hook it up to an event.</span></span>  

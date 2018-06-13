@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 98a9fc95d6293924d2b3629cd83a1d1e75544632
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33441966"
 ---
 # <a name="itypenamefactory-interface"></a><span data-ttu-id="54f90-102">ITypeNameFactory インターフェイス</span><span class="sxs-lookup"><span data-stu-id="54f90-102">ITypeNameFactory Interface</span></span>
 <span data-ttu-id="54f90-103">型名を分解するためのメソッドを提供します。</span><span class="sxs-lookup"><span data-stu-id="54f90-103">Provides methods for deconstructing a type name.</span></span>  

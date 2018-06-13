@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33552046"
 ---
 # <a name="frame"></a><span data-ttu-id="adfcc-102">フレーム</span><span class="sxs-lookup"><span data-stu-id="adfcc-102">Frame</span></span>
 <span data-ttu-id="adfcc-103"><xref:System.Windows.Controls.Frame>コントロールがコンテンツ内でコンテンツ ナビゲーションをサポートします。</span><span class="sxs-lookup"><span data-stu-id="adfcc-103">The <xref:System.Windows.Controls.Frame> control supports content navigation within content.</span></span> <span data-ttu-id="adfcc-104"><xref:System.Windows.Controls.Frame> ようにルート要素でホストできます<xref:System.Windows.Window>、 <xref:System.Windows.Navigation.NavigationWindow>、 <xref:System.Windows.Controls.Page>、 <xref:System.Windows.Controls.UserControl>、 <xref:System.Windows.Documents.FlowDocument>、またはルート要素が属しているコンテンツ ツリー内で、アイランドとして。</span><span class="sxs-lookup"><span data-stu-id="adfcc-104"><xref:System.Windows.Controls.Frame> can be hosted by a root element like <xref:System.Windows.Window>, <xref:System.Windows.Navigation.NavigationWindow>, <xref:System.Windows.Controls.Page>, <xref:System.Windows.Controls.UserControl>, <xref:System.Windows.Documents.FlowDocument>, or as an island within a content tree that belongs to a root element.</span></span>  

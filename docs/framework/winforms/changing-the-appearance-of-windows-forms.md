@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33523552"
 ---
 # <a name="changing-the-appearance-of-windows-forms"></a><span data-ttu-id="be9fc-102">Windows フォームの表示形式の変更</span><span class="sxs-lookup"><span data-stu-id="be9fc-102">Changing the Appearance of Windows Forms</span></span>
 <span data-ttu-id="be9fc-103">罫線、不透明度、図形、スタイルの変更、または Windows フォーム アプリケーションの背景画像の設定など、Windows フォーム アプリケーションの外観をさまざまな方法でカスタマイズできます。</span><span class="sxs-lookup"><span data-stu-id="be9fc-103">You can customize the look of your Windows Forms applications in many different ways, such as changing the border, opacity, shape, style, or setting a background image for your Windows Forms application.</span></span>  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33520641"
 ---
 # <a name="how-to-create-a-bitmap-at-run-time"></a><span data-ttu-id="07f30-102">方法 : 実行時にビットマップを作成する</span><span class="sxs-lookup"><span data-stu-id="07f30-102">How to: Create a Bitmap at Run Time</span></span>
 <span data-ttu-id="07f30-103">この例は、作成し描画、<xref:System.Drawing.Bitmap>オブジェクトを既存の Windows フォームに表示<xref:System.Windows.Forms.PictureBox>コントロール。</span><span class="sxs-lookup"><span data-stu-id="07f30-103">This example creates and draws in a <xref:System.Drawing.Bitmap> object and displays it in an existing Windows Forms <xref:System.Windows.Forms.PictureBox> control.</span></span>  

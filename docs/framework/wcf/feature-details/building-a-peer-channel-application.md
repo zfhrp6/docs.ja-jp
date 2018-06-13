@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33488300"
 ---
 # <a name="building-a-peer-channel-application"></a><span data-ttu-id="1d337-102">ピア チャネル アプリケーションの構築</span><span class="sxs-lookup"><span data-stu-id="1d337-102">Building a Peer Channel Application</span></span>
 <span data-ttu-id="1d337-103">次のセクションでは、ピア チャネル アプリケーションの開発に関するガイダンスを示します。</span><span class="sxs-lookup"><span data-stu-id="1d337-103">The following sections provide guidance on developing Peer Channel applications.</span></span>  

@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 8b604e1d7fc3d3c8adf7d95bd95843bc0110dbc9
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33440019"
 ---
 # <a name="ihostassemblystoreprovidemodule-method"></a><span data-ttu-id="ac7cd-102">IHostAssemblyStore::ProvideModule メソッド</span><span class="sxs-lookup"><span data-stu-id="ac7cd-102">IHostAssemblyStore::ProvideModule Method</span></span>
 <span data-ttu-id="ac7cd-103">アセンブリとリンク (ではありません、埋め込み) 内のモジュール リソース ファイルを解決します。</span><span class="sxs-lookup"><span data-stu-id="ac7cd-103">Resolves a module within an assembly or a linked (but not an embedded) resource file.</span></span>  

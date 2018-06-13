@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33516914"
 ---
 # <a name="visual-workflow-tracking"></a><span data-ttu-id="5bd64-102">ビジュアル ワークフロー追跡</span><span class="sxs-lookup"><span data-stu-id="5bd64-102">Visual Workflow Tracking</span></span>
 <span data-ttu-id="5bd64-103">このサンプルでは、[!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)] のデバッグ機能を使用してビジュアル ワークフロー追跡アプリケーションを作成する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="5bd64-103">This sample demonstrates how to write a visual workflow tracking application using the debug functionality available through the [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)].</span></span>  

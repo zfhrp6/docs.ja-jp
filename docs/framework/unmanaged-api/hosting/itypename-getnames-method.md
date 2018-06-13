@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 1d718564f4ed106956aadd2f54212f28e8cfc3de
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33440698"
 ---
 # <a name="itypenamegetnames-method"></a><span data-ttu-id="49b7f-102">ITypeName::GetNames メソッド</span><span class="sxs-lookup"><span data-stu-id="49b7f-102">ITypeName::GetNames Method</span></span>
 <span data-ttu-id="49b7f-103">このメソッドは、.NET Framework インフラストラクチャをサポートします。独自に作成したコードから直接使用するためのものではありません。</span><span class="sxs-lookup"><span data-stu-id="49b7f-103">This method supports the .NET Framework infrastructure and is not intended to be used directly from your code.</span></span>  

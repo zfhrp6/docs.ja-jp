@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33480585"
 ---
 # <a name="systemservicemodelchannelspeermaintaineractivity"></a><span data-ttu-id="39772-102">System.ServiceModel.Channels.PeerMaintainerActivity</span><span class="sxs-lookup"><span data-stu-id="39772-102">System.ServiceModel.Channels.PeerMaintainerActivity</span></span>
 <span data-ttu-id="39772-103">PeerMaintainer モジュールは、特定の操作を実行しています (詳細はトレース メッセージの本文に含まれています)。</span><span class="sxs-lookup"><span data-stu-id="39772-103">The PeerMaintainer module is performing a specific operation (details contained within the trace message body).</span></span>  

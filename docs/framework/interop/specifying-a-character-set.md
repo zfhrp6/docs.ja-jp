@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33398236"
 ---
 # <a name="specifying-a-character-set"></a><span data-ttu-id="365f0-102">文字セットの指定</span><span class="sxs-lookup"><span data-stu-id="365f0-102">Specifying a Character Set</span></span>
 <span data-ttu-id="365f0-103"><xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayProperty=nameWithType> フィールドは文字列のマーシャリングを制御し、DLL の関数名をプラットフォーム呼び出しが見つけるしくみを決定します。</span><span class="sxs-lookup"><span data-stu-id="365f0-103">The <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayProperty=nameWithType> field controls string marshaling and determines how platform invoke finds function names in a DLL.</span></span> <span data-ttu-id="365f0-104">このトピックでは、両方の動作について説明します。</span><span class="sxs-lookup"><span data-stu-id="365f0-104">This topic describes both behaviors.</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33514769"
 ---
 # <a name="properties-vs-arguments"></a><span data-ttu-id="52550-102">プロパティとします。引数</span><span class="sxs-lookup"><span data-stu-id="52550-102">Properties vs. Arguments</span></span>
 <span data-ttu-id="52550-103">データをアクティビティに渡すために使用可能なオプションはいくつかあります。</span><span class="sxs-lookup"><span data-stu-id="52550-103">There are several options available for passing data into an activity.</span></span> <span data-ttu-id="52550-104"><xref:System.Activities.InArgument> を使用する以外に、標準の CLR プロパティまたはパブリック <xref:System.Activities.ActivityAction> プロパティを使用してデータを受け取るアクティビティを開発できます。</span><span class="sxs-lookup"><span data-stu-id="52550-104">In addition to using <xref:System.Activities.InArgument>, activities can also be developed that receive data using either standard CLR Properties or public <xref:System.Activities.ActivityAction> properties.</span></span> <span data-ttu-id="52550-105">このトピックでは適切なメソッド型の選択方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="52550-105">This topic discusses how to select the appropriate method type.</span></span>  

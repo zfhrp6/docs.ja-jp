@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33514596"
 ---
 # <a name="transactions"></a><span data-ttu-id="63c9b-102">トランザクション</span><span class="sxs-lookup"><span data-stu-id="63c9b-102">Transactions</span></span>
 <span data-ttu-id="63c9b-103">このセクションには、ワークフロー トランザクションには、Windows Workflow Foundation (WF) を示すサンプルが含まれています。</span><span class="sxs-lookup"><span data-stu-id="63c9b-103">This section contains samples that demonstrate workflow transactions in Windows Workflow Foundation (WF).</span></span>  

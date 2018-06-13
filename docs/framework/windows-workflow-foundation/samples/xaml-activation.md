@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33517713"
 ---
 # <a name="xaml-activation"></a><span data-ttu-id="1db2c-102">XAML アクティベーション</span><span class="sxs-lookup"><span data-stu-id="1db2c-102">XAML Activation</span></span>
 <span data-ttu-id="1db2c-103">このサンプルでは、宣言型ワークフローを IIS でホストする方法を示します。</span><span class="sxs-lookup"><span data-stu-id="1db2c-103">This sample demonstrates how to host a declarative workflow in IIS.</span></span> <span data-ttu-id="1db2c-104">このサンプルは、1 つの操作を持つ、`EchoService` という名前の基本的なワークフローです。</span><span class="sxs-lookup"><span data-stu-id="1db2c-104">The sample is a basic workflow called `EchoService` that has one operation.</span></span>  

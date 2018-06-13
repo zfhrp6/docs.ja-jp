@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33473495"
 ---
 # <a name="endpoint-calls-failed-per-second"></a><span data-ttu-id="88aa6-102">エンドポイント: 1 秒あたりの失敗した呼び出し</span><span class="sxs-lookup"><span data-stu-id="88aa6-102">Endpoint: Calls Failed Per Second</span></span>
 <span data-ttu-id="88aa6-103">カウンター名 : 1 秒あたりの失敗した呼び出し。</span><span class="sxs-lookup"><span data-stu-id="88aa6-103">Counter Name: Calls Failed Per Second.</span></span>  

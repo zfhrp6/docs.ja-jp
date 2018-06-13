@@ -27,6 +27,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33398223"
 ---
 # <a name="basic-and-digest-authentication"></a><span data-ttu-id="a8015-102">基本認証とダイジェスト認証</span><span class="sxs-lookup"><span data-stu-id="a8015-102">Basic and Digest Authentication</span></span>
 <span data-ttu-id="a8015-103">基本認証とダイジェスト認証の <xref:System.Net> 実装では、RFC2617 – HTTP 認証: 基本認証とダイジェスト認証 (www.w3.org の World Wide Web コンソーシアム Web サイトで使用可能) に従います。</span><span class="sxs-lookup"><span data-stu-id="a8015-103">The <xref:System.Net> implementation of basic and digest authentication complies with RFC2617 – HTTP Authentication: Basic and Digest Authentication (available on the World Wide Web Consortium's Web site at www.w3.org).</span></span>  

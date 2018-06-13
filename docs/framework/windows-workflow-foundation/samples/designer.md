@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33513498"
 ---
 # <a name="designer"></a><span data-ttu-id="61443-102">Designer</span><span class="sxs-lookup"><span data-stu-id="61443-102">Designer</span></span>
 <span data-ttu-id="61443-103">このセクションには、[!INCLUDE[wfd1](../../../../includes/wfd1-md.md)]を使用する方法を示すサンプルが含まれています。</span><span class="sxs-lookup"><span data-stu-id="61443-103">This section contains samples that demonstrate how to use [!INCLUDE[wfd1](../../../../includes/wfd1-md.md)].</span></span>  

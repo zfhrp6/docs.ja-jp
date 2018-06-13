@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33396962"
 ---
 # <a name="interpreting-network-tracing"></a><span data-ttu-id="70522-102">ネットワークのトレースの解釈</span><span class="sxs-lookup"><span data-stu-id="70522-102">Interpreting Network Tracing</span></span>
 <span data-ttu-id="70522-103">ネットワークのトレースを有効にすると、トレースを使用して、アプリケーションからさまざまな <xref:System.Net> クラス メンバーへの呼び出しをキャプチャすることができます。</span><span class="sxs-lookup"><span data-stu-id="70522-103">When network tracing is enabled, you can use tracing to capture calls your application makes to various <xref:System.Net> class members.</span></span> <span data-ttu-id="70522-104">これらの呼び出しからの出力は、次の例のようになる場合があります。</span><span class="sxs-lookup"><span data-stu-id="70522-104">The output from these calls may be similar to the following examples.</span></span>  

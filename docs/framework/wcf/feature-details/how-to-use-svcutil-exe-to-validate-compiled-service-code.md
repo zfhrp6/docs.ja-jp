@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33490462"
 ---
 # <a name="how-to-use-svcutilexe-to-validate-compiled-service-code"></a><span data-ttu-id="27619-102">方法 : Svcutil.exe を使用してコンパイル済みサービス コードを検証する</span><span class="sxs-lookup"><span data-stu-id="27619-102">How to: Use Svcutil.exe to Validate Compiled Service Code</span></span>
 <span data-ttu-id="27619-103">使用することができます、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)にサービスをホストせず、サービスの実装と構成のエラーを検出します。</span><span class="sxs-lookup"><span data-stu-id="27619-103">You can use the [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) to detect errors in service implementations and configurations without hosting the service.</span></span>  

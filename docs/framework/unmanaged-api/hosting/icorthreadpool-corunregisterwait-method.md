@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 1c3c5d4425b4851bbc0dbf1d98a0e3eec40b87a5
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33436859"
 ---
 # <a name="icorthreadpoolcorunregisterwait-method"></a><span data-ttu-id="66e5e-102">ICorThreadpool::CorUnregisterWait メソッド</span><span class="sxs-lookup"><span data-stu-id="66e5e-102">ICorThreadpool::CorUnregisterWait Method</span></span>
 <span data-ttu-id="66e5e-103">このメソッドは、.NET Framework インフラストラクチャをサポートします。独自に作成したコードから直接使用するためのものではありません。</span><span class="sxs-lookup"><span data-stu-id="66e5e-103">This method supports the .NET Framework infrastructure and is not intended to be used directly from your code.</span></span>  

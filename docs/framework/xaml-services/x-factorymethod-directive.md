@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33563416"
 ---
 # <a name="xfactorymethod-directive"></a><span data-ttu-id="adc10-102">x:FactoryMethod ディレクティブ</span><span class="sxs-lookup"><span data-stu-id="adc10-102">x:FactoryMethod Directive</span></span>
 <span data-ttu-id="adc10-103">XAML プロセッサが、バッキング型の解決後、オブジェクトを初期化するために使用するコンス トラクター以外の方法を指定します。</span><span class="sxs-lookup"><span data-stu-id="adc10-103">Specifies a method other than a constructor that a XAML processor should use to initialize an object after resolving its backing type.</span></span>  

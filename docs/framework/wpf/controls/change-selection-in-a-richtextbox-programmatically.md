@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33551004"
 ---
 # <a name="change-selection-in-a-richtextbox-programmatically"></a><span data-ttu-id="85e19-102">プログラムによる RichTextBox での選択の変更</span><span class="sxs-lookup"><span data-stu-id="85e19-102">Change Selection in a RichTextBox Programmatically</span></span>
 <span data-ttu-id="85e19-103">この例は、プログラムでの現在の選択を変更する方法を示します、<xref:System.Windows.Controls.RichTextBox>です。</span><span class="sxs-lookup"><span data-stu-id="85e19-103">This example shows how to programmatically change the current selection in a <xref:System.Windows.Controls.RichTextBox>.</span></span> <span data-ttu-id="85e19-104">この選択は、ユーザーは、ユーザー インターフェイスを使用してコンテンツを選択した場合と同じです。</span><span class="sxs-lookup"><span data-stu-id="85e19-104">This selection is the same as if the user had selected the content by using the user interface.</span></span>  

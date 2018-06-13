@@ -25,6 +25,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33397635"
 ---
 # <a name="using-udp-services"></a><span data-ttu-id="f1ce7-102">UDP サービスの使用</span><span class="sxs-lookup"><span data-stu-id="f1ce7-102">Using UDP Services</span></span>
 <span data-ttu-id="f1ce7-103"><xref:System.Net.Sockets.UdpClient> クラスは、UDP を使用してネットワーク サービスと通信します。</span><span class="sxs-lookup"><span data-stu-id="f1ce7-103">The <xref:System.Net.Sockets.UdpClient> class communicates with network services using UDP.</span></span> <span data-ttu-id="f1ce7-104"><xref:System.Net.Sockets.UdpClient> クラスのプロパティとメソッドは、UDP を使用したデータの要求と受信用に <xref:System.Net.Sockets.Socket> を作成する詳細を抽象化します。</span><span class="sxs-lookup"><span data-stu-id="f1ce7-104">The properties and methods of the <xref:System.Net.Sockets.UdpClient> class abstract the details of creating a <xref:System.Net.Sockets.Socket> for requesting and receiving data using UDP.</span></span>  

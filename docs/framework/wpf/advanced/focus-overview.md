@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33548111"
 ---
 # <a name="focus-overview"></a><span data-ttu-id="464ba-102">フォーカスの概要</span><span class="sxs-lookup"><span data-stu-id="464ba-102">Focus Overview</span></span>
 <span data-ttu-id="464ba-103">[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] には、キーボード フォーカスと論理フォーカスという、フォーカスに関する 2 つの主要な概念があります。</span><span class="sxs-lookup"><span data-stu-id="464ba-103">In [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] there are two main concepts that pertain to focus: keyboard focus and logical focus.</span></span>  <span data-ttu-id="464ba-104">キーボード フォーカスはキーボード入力を受け取る要素を指し、論理フォーカスはフォーカスを持つフォーカス範囲内の要素を指します。</span><span class="sxs-lookup"><span data-stu-id="464ba-104">Keyboard focus refers to the element that receives keyboard input and logical focus refers to the element in a focus scope that has focus.</span></span>  <span data-ttu-id="464ba-105">これらの概念については、この概要で詳しく説明します。</span><span class="sxs-lookup"><span data-stu-id="464ba-105">These concepts are discussed in detail in this overview.</span></span>  <span data-ttu-id="464ba-106">フォーカスを取得可能な領域を複数持つ複雑なアプリケーションを作成する場合は、これらの概念の違いを理解することが重要です。</span><span class="sxs-lookup"><span data-stu-id="464ba-106">Understanding the difference in these concepts is important for creating complex applications that have multiple regions where focus can be obtained.</span></span>  

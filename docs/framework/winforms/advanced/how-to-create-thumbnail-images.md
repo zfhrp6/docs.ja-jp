@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33521486"
 ---
 # <a name="how-to-create-thumbnail-images"></a><span data-ttu-id="aee54-102">方法 : サムネイル イメージを作成する</span><span class="sxs-lookup"><span data-stu-id="aee54-102">How to: Create Thumbnail Images</span></span>
 <span data-ttu-id="aee54-103">サムネイル イメージとは、画像の縮小版です。</span><span class="sxs-lookup"><span data-stu-id="aee54-103">A thumbnail image is a small version of an image.</span></span> <span data-ttu-id="aee54-104">サムネイル イメージを作成するには呼び出すことによって、<xref:System.Drawing.Image.GetThumbnailImage%2A>のメソッド、<xref:System.Drawing.Image>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="aee54-104">You can create a thumbnail image by calling the <xref:System.Drawing.Image.GetThumbnailImage%2A> method of an <xref:System.Drawing.Image> object.</span></span>  

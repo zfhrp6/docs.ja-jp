@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: da6462a320b1f090940473f566ade91d36e74780
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33431702"
 ---
 # <a name="ienumidentityattribute-interface"></a><span data-ttu-id="1b272-102">IEnumIDENTITY_ATTRIBUTE インターフェイス</span><span class="sxs-lookup"><span data-stu-id="1b272-102">IEnumIDENTITY_ATTRIBUTE Interface</span></span>
 <span data-ttu-id="1b272-103">現在のスコープ内のコード オブジェクトの属性の列挙子として機能します。</span><span class="sxs-lookup"><span data-stu-id="1b272-103">Serves as an enumerator for the attributes of the code object in the current scope.</span></span>  

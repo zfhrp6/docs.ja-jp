@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33550967"
 ---
 # <a name="class-library-wpf"></a><span data-ttu-id="490b8-102">クラス ライブラリ (WPF)</span><span class="sxs-lookup"><span data-stu-id="490b8-102">Class Library (WPF)</span></span>
 <span data-ttu-id="490b8-103">次のリンクが含まれている名前空間を参照してください[!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)][!INCLUDE[TLA#tla_api#plural](../../../includes/tlasharptla-apisharpplural-md.md)]です。</span><span class="sxs-lookup"><span data-stu-id="490b8-103">The following links refer to namespaces that contain [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] [!INCLUDE[TLA#tla_api#plural](../../../includes/tlasharptla-apisharpplural-md.md)].</span></span>  

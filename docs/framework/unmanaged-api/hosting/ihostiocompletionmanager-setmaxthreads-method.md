@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: a810f3a25dc90ddb234c70ca3fa5130039350136
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33438822"
 ---
 # <a name="ihostiocompletionmanagersetmaxthreads-method"></a><span data-ttu-id="b84c1-102">IHostIoCompletionManager::SetMaxThreads メソッド</span><span class="sxs-lookup"><span data-stu-id="b84c1-102">IHostIoCompletionManager::SetMaxThreads Method</span></span>
 <span data-ttu-id="b84c1-103">I/O 要求を処理するため、ホストに割り当てるスレッドの最大数を設定します。</span><span class="sxs-lookup"><span data-stu-id="b84c1-103">Sets the maximum number of threads that the host allots to service I/O requests.</span></span>  

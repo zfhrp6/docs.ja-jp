@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33525495"
 ---
 # <a name="basic-column-row-and-cell-features-in-the-windows-forms-datagridview-control"></a><span data-ttu-id="1c1e1-102">Windows フォーム DataGridView コントロールでの列、行、およびセルの基本機能</span><span class="sxs-lookup"><span data-stu-id="1c1e1-102">Basic Column, Row, and Cell Features in the Windows Forms DataGridView Control</span></span>
 <span data-ttu-id="1c1e1-103">多くの基本的な動作の`DataGridView`セル、行、および列は、1 つのプロパティを設定して変更できます。</span><span class="sxs-lookup"><span data-stu-id="1c1e1-103">Many basic behaviors of `DataGridView` cells, rows, and columns can be modified by setting single properties.</span></span> <span data-ttu-id="1c1e1-104">このセクションのトピックでは、いくつかの最も一般的に使用されるこれらの機能について説明します。</span><span class="sxs-lookup"><span data-stu-id="1c1e1-104">The topics in this section describe several of the most commonly used of these features.</span></span>  

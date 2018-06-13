@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33512042"
 ---
 # <a name="windows-workflow-foundation-data-model"></a><span data-ttu-id="34eba-102">Windows Workflow Foundation のデータ モデル</span><span class="sxs-lookup"><span data-stu-id="34eba-102">Windows Workflow Foundation Data Model</span></span>
 <span data-ttu-id="34eba-103">Windows Workflow Foundation のデータ モデルは、変数、引数、式の 3 つの概念で構成されます。</span><span class="sxs-lookup"><span data-stu-id="34eba-103">The Windows Workflow Foundation data model is composed of three concepts: variables, arguments, and expressions.</span></span> <span data-ttu-id="34eba-104">変数はデータ ストレージを表し、引数はアクティビティへのデータ フローを表します。</span><span class="sxs-lookup"><span data-stu-id="34eba-104">Variables represent the storage of data and arguments represent the flow of data into and out of an activity.</span></span> <span data-ttu-id="34eba-105">引数は、変数を参照できる式を使用してバインドされます (値が代入されます)。</span><span class="sxs-lookup"><span data-stu-id="34eba-105">Arguments are bound (assigned a value) using expressions that may reference variables.</span></span>  

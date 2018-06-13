@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33485923"
 ---
 # <a name="tcpconnectionpoolsettings"></a><span data-ttu-id="21c3a-102">TcpConnectionPoolSettings</span><span class="sxs-lookup"><span data-stu-id="21c3a-102">TcpConnectionPoolSettings</span></span>
 <span data-ttu-id="21c3a-103">TcpConnectionPoolSettings</span><span class="sxs-lookup"><span data-stu-id="21c3a-103">TcpConnectionPoolSettings</span></span>  

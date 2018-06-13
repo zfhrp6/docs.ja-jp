@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33520215"
 ---
 # <a name="tracking-events-reference"></a><span data-ttu-id="5df43-102">追跡イベントのリファレンス</span><span class="sxs-lookup"><span data-stu-id="5df43-102">Tracking Events Reference</span></span>
 <span data-ttu-id="5df43-103">[!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] のワークフローが実行中にライフタイムのさまざまなステージを移行するとき、追跡イベントが発生します。</span><span class="sxs-lookup"><span data-stu-id="5df43-103">During execution a workflow in [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] raises tracking events as it moves through various stages in its lifetime.</span></span> <span data-ttu-id="5df43-104">ホストはこれらのイベントに定期受信し、ライフタイム中のワークフローの進行状況について最新の状態に保ちます。</span><span class="sxs-lookup"><span data-stu-id="5df43-104">The host can subscribe to these events and keep updated on the status of the workflow’s progress during its lifetime.</span></span> <span data-ttu-id="5df43-105">ここでは、発生する追跡イベントについて説明します。</span><span class="sxs-lookup"><span data-stu-id="5df43-105">The tracking events raised are discussed in this section.</span></span>  

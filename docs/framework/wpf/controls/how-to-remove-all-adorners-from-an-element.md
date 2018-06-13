@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33551617"
 ---
 # <a name="how-to-remove-all-adorners-from-an-element"></a><span data-ttu-id="76fbd-102">方法 : 要素からすべての装飾を削除する</span><span class="sxs-lookup"><span data-stu-id="76fbd-102">How to: Remove all Adorners from an Element</span></span>
 <span data-ttu-id="76fbd-103">この例は、プログラムから、指定したすべての装飾を削除する方法を示しています。<xref:System.Windows.UIElement>です。</span><span class="sxs-lookup"><span data-stu-id="76fbd-103">This example shows how to programmatically remove all adorners from a specified <xref:System.Windows.UIElement>.</span></span>  
