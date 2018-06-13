@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33551617"
 ---
 # <a name="how-to-remove-all-adorners-from-an-element"></a>方法 : 要素からすべての装飾を削除する
 この例は、プログラムから、指定したすべての装飾を削除する方法を示しています。<xref:System.Windows.UIElement>です。  

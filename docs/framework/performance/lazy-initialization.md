@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33398028"
 ---
 # <a name="lazy-initialization"></a>限定的な初期化
 オブジェクトの*遅延初期化*とは、初めて使用されるまでオブジェクトの作成が延期されることを意味します。 (このトピックでは、*遅延初期化*と*遅延インスタンス化*を同じ意味の言葉として使っています。)遅延初期化は主に、パフォーマンスの改善、無駄な計算処理の回避、プログラムのメモリ要件の縮小を目的として利用されます。 最も一般的なシナリオ:  

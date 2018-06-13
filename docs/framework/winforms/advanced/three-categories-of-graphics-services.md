@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33525048"
 ---
 # <a name="three-categories-of-graphics-services"></a>グラフィックス サービスの 3 つのカテゴリ
 Windows フォームにおけるグラフィックスの提供は、次の 3 つの広範なカテゴリに分類されます。  

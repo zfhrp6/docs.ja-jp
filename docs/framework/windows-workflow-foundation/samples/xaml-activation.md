@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33517713"
 ---
 # <a name="xaml-activation"></a>XAML アクティベーション
 このサンプルでは、宣言型ワークフローを IIS でホストする方法を示します。 このサンプルは、1 つの操作を持つ、`EchoService` という名前の基本的なワークフローです。  

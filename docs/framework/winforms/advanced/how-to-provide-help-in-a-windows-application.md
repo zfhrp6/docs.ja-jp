@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33526531"
 ---
 # <a name="how-to-provide-help-in-a-windows-application"></a>方法 : Windows アプリケーションにヘルプを提供する
 使用することができます、 <xref:System.Windows.Forms.HelpProvider> Windows フォームでの特定のコントロールにヘルプ ファイル内でヘルプ トピックをアタッチするコンポーネントです。 ヘルプ ファイルの形式には、HTML または HTMLHelp 1.x 以上を指定できます。  

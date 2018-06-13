@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33397963"
 ---
 # <a name="sql-server-programming-and-host-protection-attributes"></a>SQL Server プログラミングとホスト保護属性
 SQL Server ホストにマネージ コードを読み込み、実行する機能を利用するには、コード アクセス セキュリティとホスト リソース保護の両方においてホストの要件を満たす必要があります。  コード アクセス セキュリティの要件は、SAFE、EXTERNAL-ACCESS、UNSAFE という 3 つの SQL Server アクセス許可セットのいずれかにより指定されます。 SAFE アクセス許可セット内か EXTERNAL-ACCESS アクセス許可セット内でコードを実行する場合、<xref:System.Security.Permissions.HostProtectionAttribute> 属性が適用されている特定の型またはメンバーを避ける必要があります。 <xref:System.Security.Permissions.HostProtectionAttribute> はセキュリティ アクセス許可ではなく、むしろ信頼性保証であり、ホストが許可しない可能性がある特定のコード コンストラクト (型またはメソッド) を識別します。  <xref:System.Security.Permissions.HostProtectionAttribute> を使用することで、ホストの安定性を保護するプログラミング モデルを適用します。  

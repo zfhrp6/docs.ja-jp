@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33524874"
 ---
 # <a name="how-to-display-more-than-one-month-in-the-windows-forms-monthcalendar-control"></a>方法 : Windows フォームの MonthCalendar コントロールにおいて複数の月を表示する
 Windows フォーム<xref:System.Windows.Forms.MonthCalendar>コントロールは、一度に最大 12 か月間を表示することができます。 既定では、コントロールには、1 か月のみが表示されますが、月の数が表示され、コントロール内の配置方法を指定することができます。 カレンダーの次元を変更すると、コントロールのサイズ変更されるため、必ず新しいディメンションのフォームに十分な空き領域があります。  

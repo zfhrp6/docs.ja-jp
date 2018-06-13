@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33520891"
 ---
 # <a name="how-to-construct-font-families-and-fonts"></a>方法 : フォント ファミリとフォントを作成する
 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] スタイルは異なっても同じ書体を使用するフォントのフォント ファミリにグループ化します。 たとえば、Arial フォント ファミリには、次のフォントが含まれています。  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33549173"
 ---
 # <a name="walkthrough-localizing-a-hybrid-application"></a>チュートリアル : ハイブリッド アプリケーションのローカライズ
 このチュートリアルでは、ローカライズする方法について[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]内の要素、 [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]-ベースのハイブリッド アプリケーションです。  
@@ -63,7 +64,7 @@ ms.lasthandoff: 05/04/2018
   
 5.  F5 キーを押してアプリケーションをビルドし、実行します。  
   
-     両方の`SimpleControl`要素、およびラベル コントロールのテキストを表示**「こんにちは」**です。  
+     両方の`SimpleControl`要素、およびラベル コントロールのテキストを表示 **「こんにちは」** です。  
   
 ## <a name="enabling-localization"></a>ローカリゼーションの有効化  
  Windows フォーム デザイナーは、サテライト アセンブリでのローカライズを有効にするための設定を提供します。  

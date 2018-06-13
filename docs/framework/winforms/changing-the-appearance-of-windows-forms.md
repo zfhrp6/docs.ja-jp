@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33523552"
 ---
 # <a name="changing-the-appearance-of-windows-forms"></a>Windows フォームの表示形式の変更
 罫線、不透明度、図形、スタイルの変更、または Windows フォーム アプリケーションの背景画像の設定など、Windows フォーム アプリケーションの外観をさまざまな方法でカスタマイズできます。  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33522097"
 ---
 # <a name="how-to-use-clipping-with-a-region"></a>方法 : 領域でクリッピングを使用する
 プロパティの 1 つ、<xref:System.Drawing.Graphics>クラスは、のクリップ領域。 すべての描画を行うを指定された<xref:System.Drawing.Graphics>オブジェクトのクリップ領域に制限されて<xref:System.Drawing.Graphics>オブジェクト。 クリップ領域を設定するには、呼び出すことによって、<xref:System.Drawing.Graphics.SetClip%2A>メソッドです。  

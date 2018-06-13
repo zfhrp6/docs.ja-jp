@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33525495"
 ---
 # <a name="basic-column-row-and-cell-features-in-the-windows-forms-datagridview-control"></a>Windows フォーム DataGridView コントロールでの列、行、およびセルの基本機能
 多くの基本的な動作の`DataGridView`セル、行、および列は、1 つのプロパティを設定して変更できます。 このセクションのトピックでは、いくつかの最も一般的に使用されるこれらの機能について説明します。  

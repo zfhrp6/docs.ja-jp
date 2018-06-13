@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: da6462a320b1f090940473f566ade91d36e74780
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33431702"
 ---
 # <a name="ienumidentityattribute-interface"></a>IEnumIDENTITY_ATTRIBUTE インターフェイス
 現在のスコープ内のコード オブジェクトの属性の列挙子として機能します。  

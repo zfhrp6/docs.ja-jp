@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33534252"
 ---
 # <a name="how-to-respond-to-windows-forms-button-clicks"></a>方法 : Windows フォームのボタンのクリックに応答する
 Windows フォームの最も基本的な使用<xref:System.Windows.Forms.Button>コントロールは、ボタンがクリックされたときに、いくつかのコードを実行します。  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33357774"
 ---
 # <a name="comparing-guid-and-uniqueidentifier-values"></a>GUID と uniqueidentifier 値の比較
 SQL Server のグローバル一意識別子 (GUID: Globally Unique Identifier) データ型は、16 バイトのバイナリ値を格納する `uniqueidentifier` データ型で表現されます。 GUID は、2 進数の値です。GUID は主に、多数のコンピューターが多数のサイトに存在するネットワーク内で、一意である必要のある識別子として使用されます。 GUID は、Transact-SQL NEWID 関数を呼び出すことにより生成され、世界中のコンピューターの中で一意であることが保証されています。 詳細については、SQL Server オンライン ブックの「uniqueidentifier データの使用」を参照してください。  

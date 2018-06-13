@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33519939"
 ---
 # <a name="compensation"></a>補正
 補正 Windows Workflow Foundation (WF) 以前で完了した作業したりできる (次のアプリケーションで定義されているロジック) 補正メカニズムは、その後のエラーが発生しました。 ここでは、ワークフローで補正を使用する方法について説明します。  

@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33529809"
 ---
 # <a name="best-practices-for-scaling-the-windows-forms-datagridview-control"></a>Windows フォーム DataGridView コントロールを拡張するための推奨される手順
 <xref:System.Windows.Forms.DataGridView>コントロールが最大限のスケーラビリティを提供するように設計されています。 大量のデータを表示する必要がある場合または大量のメモリを使用して、ユーザー インターフェイス (UI) の応答性を低下させることを回避するには、このトピックで説明されているガイドラインに従ってください。 このトピックでは、次の問題について説明します。  

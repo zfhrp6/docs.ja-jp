@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33530248"
 ---
 # <a name="how-to-change-the-appearance-of-the-windows-forms-colordialog-component"></a>方法 : Windows フォーム ColorDialog コンポーネントの表示形式を変更する
 Windows フォームの外観を構成する<xref:System.Windows.Forms.ColorDialog>コンポーネントはそのプロパティの数。 ダイアログ ボックスには、次の 2 つのセクションでは、基本色とユーザーがカスタム カラーを定義できるいずれかを示す 1 つです。  

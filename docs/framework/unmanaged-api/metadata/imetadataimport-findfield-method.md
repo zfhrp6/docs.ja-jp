@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: ac69bab45ccd39b6a055fe4d2f74950ab47da779
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33447033"
 ---
 # <a name="imetadataimportfindfield-method"></a>IMetaDataImport::FindField メソッド
 ポインターを取得した FieldDef トークンが囲まれているフィールドの指定した<xref:System.Type>指定した名前とメタデータ シグネチャを持つとします。  

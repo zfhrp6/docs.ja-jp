@@ -18,9 +18,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: edb45c9ceefb242e5a72e8602dc93ecd39b2df09
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33447955"
 ---
 # <a name="corpinvokemap-enumeration"></a>CorPinvokeMap 列挙型
 PInvoke 呼び出しのオプションを指定します。  

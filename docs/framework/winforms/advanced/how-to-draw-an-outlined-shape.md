@@ -24,6 +24,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33521916"
 ---
 # <a name="how-to-draw-an-outlined-shape"></a>方法 : 形状のアウトラインを描画する
 この例では、フォームに記載された楕円と四角形を描画します。  

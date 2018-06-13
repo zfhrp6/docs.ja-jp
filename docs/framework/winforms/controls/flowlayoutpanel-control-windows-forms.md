@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33524401"
 ---
 # <a name="flowlayoutpanel-control-windows-forms"></a>FlowLayoutPanel コントロール (Windows フォーム)
 `FlowLayoutPanel` コントロールは、水平または垂直のフローの方向に内容を整列させます。 ある行から次の行、またはある列から次の列に内容をラップすることができます。 また、ラップする代わりにクリップすることもできます。  

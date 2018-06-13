@@ -17,6 +17,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32742511"
 ---
 # <a name="multifile-assemblies"></a>マルチファイル アセンブリ
 コマンド ライン コンパイラまたは Visual C++ で [!INCLUDE[vsprvslong](../../../includes/vsprvslong-md.md)] を使って、マルチファイル アセンブリを作成できます。 アセンブリ内の 1 つのファイルには、アセンブリ マニフェストが含まれている必要があります。 アプリケーションを起動するアセンブリには、Main メソッドや WinMain メソッドなどのエントリ ポイントも含まれている必要があります。  

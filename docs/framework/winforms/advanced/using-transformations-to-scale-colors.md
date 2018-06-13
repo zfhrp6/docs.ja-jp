@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33525968"
 ---
 # <a name="using-transformations-to-scale-colors"></a>変換を使用した色のスケーリング
 拡大縮小変換は、番号で 4 つの色要素の 1 つ以上を乗算します。 拡大/縮小を表すカラー マトリックス エントリは、次の表で表されます。  

@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33512211"
 ---
 # <a name="exceptions-transactions-and-compensation"></a>例外、トランザクション、および補正
 [!INCLUDE[wf1](../../../includes/wf1-md.md)] には、ワークフロー内のランタイム エラー条件を処理するさまざまな機構が用意されています。 ワークフローでは、例外ハンドラー、トランザクション、キャンセル、および補正の組み合わせを使用して、エラー条件の処理と適切な回復を行えます。  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33491131"
 ---
 # <a name="how-to-migrate-aspnet-web-service-client-code-to-the-windows-communication-foundation"></a>方法 : ASP.NET Web サービス クライアント コードを Windows Communication Foundation に移行する
 次の手順では、ASP.NET Web サービス クライアント コードを WCF に移行後にする必要のある大まかな手順について説明します。  

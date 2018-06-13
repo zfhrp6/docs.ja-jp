@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 0d9a8f9aa910054a4541e4ff8c1f7cad63077ba8
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33439951"
 ---
 # <a name="iobjecthandleunwrap-method"></a>IObjectHandle::Unwrap メソッド
 間接参照から値渡しでマーシャ リング オブジェクトがアンラップされます。  

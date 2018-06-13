@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33547028"
 ---
 # <a name="how-to-implement-icommandsource"></a>方法 : ICommandSource を実装する
 この例は、実装することによってコマンド ソースを作成する方法を示します<xref:System.Windows.Input.ICommandSource>です。  コマンド ソースは、コマンドを呼び出す方法を認識しているオブジェクトです。  <xref:System.Windows.Input.ICommandSource>インターフェイスが 3 つのメンバーを公開: <xref:System.Windows.Input.ICommandSource.Command%2A>、 <xref:System.Windows.Input.ICommandSource.CommandParameter%2A>、および<xref:System.Windows.Input.ICommandSource.CommandTarget%2A>です。  <xref:System.Windows.Input.ICommandSource.Command%2A> 呼び出されるコマンドです。 <xref:System.Windows.Input.ICommandSource.CommandParameter%2A>はコマンドのソースから、コマンドを処理するメソッドに渡されるユーザー定義データ型です。 <xref:System.Windows.Input.ICommandSource.CommandTarget%2A>コマンドが実行されているオブジェクトです。  

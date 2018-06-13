@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33544005"
 ---
 # <a name="how-to-find-the-source-element-in-an-event-handler"></a>方法 : イベント ハンドラーでソース要素を検索する
 この例では、イベント ハンドラーでソース要素を検索する方法を示します。  

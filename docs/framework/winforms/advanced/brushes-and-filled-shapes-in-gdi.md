@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33519000"
 ---
 # <a name="brushes-and-filled-shapes-in-gdi"></a>GDI+ でのブラシと塗りつぶされた図形
 四角形や楕円など、閉じた図形は、概要と、内部で構成されます。 ペンを使用して、アウトラインが描画され、内部はブラシと塗りつぶされます。 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] 閉じた図形の内部を塗りつぶすときのいくつかのブラシ クラスを提供します。 <xref:System.Drawing.SolidBrush>、 <xref:System.Drawing.Drawing2D.HatchBrush>、 <xref:System.Drawing.TextureBrush>、 <xref:System.Drawing.Drawing2D.LinearGradientBrush>、および<xref:System.Drawing.Drawing2D.PathGradientBrush>です。 継承するすべてのクラス、<xref:System.Drawing.Brush>クラスです。 次の図は、四角形とソリッド ブラシ、ハッチ ブラシを使用して塗りつぶした楕円を示します。  

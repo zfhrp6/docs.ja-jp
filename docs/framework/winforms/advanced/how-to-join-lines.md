@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33522016"
 ---
 # <a name="how-to-join-lines"></a>方法 : 直線を接合する
 直線の接合部は、2 本の線の端を満たすことや、重ねてによって形成される一般的な領域です。 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] 3 つの結合線を提供します。 つながる、傾斜、およびラウンドです。 直線の接合スタイルのプロパティは、<xref:System.Drawing.Pen>クラスです。 直線の接合スタイルを指定すると、<xref:System.Drawing.Pen>オブジェクトのいずれかで接続されているすべての行への接合スタイルが適用されること<xref:System.Drawing.Drawing2D.GraphicsPath>そのペンを使用して描画オブジェクトです。  

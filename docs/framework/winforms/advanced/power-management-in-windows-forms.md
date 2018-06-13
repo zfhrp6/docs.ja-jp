@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33523492"
 ---
 # <a name="power-management-in-windows-forms"></a>Windows フォームでの電源管理
 Windows フォーム アプリケーションを利用、電源管理機能の Windows オペレーティング システムにできます。 アプリケーションでは、コンピューターの電源の状態を監視でき、状態の変更が発生したときにアクションを実行することができます。 たとえば、アプリがポータブル コンピューターで実行されている場合可能性がある、コンピューターのバッテリ充電量が一定のレベルを下回ったときに、アプリケーションで特定の機能を無効にします。  

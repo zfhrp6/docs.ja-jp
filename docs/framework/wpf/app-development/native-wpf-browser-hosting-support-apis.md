@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33550021"
 ---
 # <a name="native-wpf-browser-hosting-support-apis"></a>WPF のブラウザーのホスト処理をサポートするネイティブ API
 ホスティング[!INCLUDE[TLA#tla_titlewinclient](../../../../includes/tlasharptla-titlewinclient-md.md)]Web ブラウザーでのアプリケーションは、WPF ホストから登録されている Active ドキュメント サーバー (DocObject とも呼ばれます) によって容易になります。 [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] 直接アクティブ化でき、アクティブなドキュメントと統合できます。 Xbap loose XAML 内およびドキュメント Mozilla ブラウザーのホスティング用[!INCLUDE[TLA#tla_titlewinclient](../../../../includes/tlasharptla-titlewinclient-md.md)]に類似したホスティング環境を提供する、NPAPI プラグインを提供、 [!INCLUDE[TLA#tla_titlewinclient](../../../../includes/tlasharptla-titlewinclient-md.md)] Active ドキュメント サーバーとして[!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)]はします。 ただし、Xbap と XAML をホストする最も簡単な実用的な方法が他のブラウザーでドキュメント、Internet Explorer Web ブラウザー コントロールでは、スタンドアロン アプリケーション。 Web ブラウザー コントロールは、複雑な Active ドキュメント サーバー ホスティング環境を提供いない、独自のホストをカスタマイズし、その環境を拡張し、現在のアクティブなドキュメントと直接通信することができます。  

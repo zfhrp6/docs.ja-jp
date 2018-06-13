@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33525215"
 ---
 # <a name="how-to-determine-when-formatting-attributes-change-in-the-windows-forms-richtextbox-control"></a>方法 : Windows フォームの RichTextBox コントロールにおける書式属性の変更を確認する
 Windows フォームの一般的な用途<xref:System.Windows.Forms.RichTextBox>コントロールのフォント オプションなどの段落のスタイル属性を含むテキストは、書式設定します。 アプリケーションは、テキストの多くのワード プロセッシング アプリケーションと同様に、ツールバーを表示するために書式設定の変更を追跡する必要があります。  

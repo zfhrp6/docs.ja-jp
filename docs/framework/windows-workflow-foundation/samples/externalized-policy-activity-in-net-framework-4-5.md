@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33519046"
 ---
 # <a name="externalized-policy-activity-in-net-framework-45"></a>.NET Framework 4.5 の外部化されたポリシー アクティビティ
 このサンプルでは、ExternalizedPolicy4 アクティビティが既存を実行できるようにする方法を示します[!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)]Windows Workflow Foundation (WF 3.5)<xref:System.Workflow.Activities.Rules.RuleSet>オブジェクト[!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)]ルール エンジンを使用して直接 Windows Workflow Foundation (WF 4.5)WF 3.5 に付属しています。 このアクティビティを使用すると、既存の WF 3.5 <xref:System.Workflow.Activities.Rules.RuleSet> を開いて実行できます。 Windows Workflow Foundation の一部として含まれる WF 3.5 ルール エンジンの詳細については、「 [Windows Workflow Foundation ルール エンジンの概要](http://go.microsoft.com/fwlink/?LinkId=166079)です。 移行の詳細についてにルールを[!INCLUDE[wf1](../../../../includes/wf1-md.md)]で[!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)]での移行のガイダンスを参照してください[移行のガイダンス](../../../../docs/framework/windows-workflow-foundation/migration-guidance.md)です。  

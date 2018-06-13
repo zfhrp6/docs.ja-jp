@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33521652"
 ---
 # <a name="drawing-positioning-and-cloning-images-in-gdi"></a>GDI+ でのイメージの描画、配置、およびクローン作成
 使用することができます、<xref:System.Drawing.Bitmap>を読み込んでラスター イメージを表示するクラスが使用することができます、<xref:System.Drawing.Imaging.Metafile>クラスをロードおよびベクター イメージを表示します。 <xref:System.Drawing.Bitmap>と<xref:System.Drawing.Imaging.Metafile>クラスの継承元、<xref:System.Drawing.Image>クラスです。 インスタンスを表示するには、ベクター イメージ必要、<xref:System.Drawing.Graphics>クラスおよび<xref:System.Drawing.Imaging.Metafile>です。 ラスター イメージを表示する必要がありますのインスタンス、<xref:System.Drawing.Graphics>クラスおよび<xref:System.Drawing.Bitmap>です。 インスタンス、<xref:System.Drawing.Graphics>クラスを提供、<xref:System.Drawing.Graphics.DrawImage%2A>を受信するメソッド、<xref:System.Drawing.Imaging.Metafile>または<xref:System.Drawing.Bitmap>を引数として。  

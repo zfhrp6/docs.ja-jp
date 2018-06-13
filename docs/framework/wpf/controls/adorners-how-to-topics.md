@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33550086"
 ---
 # <a name="adorners-how-to-topics"></a>装飾に関する「方法」トピック
 次の例を使用して一般的なタスクを実行する方法を示します、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]装飾フレームワークです。  

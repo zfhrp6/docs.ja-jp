@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33471244"
 ---
 # <a name="percent-of-max-concurrent-calls"></a>同時呼び出しの最大数に対する割合
 カウンター名: 同時呼び出しの最大数に対する割合  

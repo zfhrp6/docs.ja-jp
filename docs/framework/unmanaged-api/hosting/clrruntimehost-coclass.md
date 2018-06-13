@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 59fed7519402b4c3c1b2405ea99f8ba484781e95
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33430744"
 ---
 # <a name="clrruntimehost-coclass"></a>CLRRuntimeHost コクラス
 ランタイムによってコードの実行を管理するためのインターフェイスを提供します。  

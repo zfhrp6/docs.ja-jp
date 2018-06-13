@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33552375"
 ---
 # <a name="how-to-use-the-attached-properties-of-canvas-to-position-child-elements"></a>方法 : Canvas の添付プロパティを使用して子要素を配置する
 この例は、の添付プロパティを使用する方法を示しています。<xref:System.Windows.Controls.Canvas>子要素を配置します。  

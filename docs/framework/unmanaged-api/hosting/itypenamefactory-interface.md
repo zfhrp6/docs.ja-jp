@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 98a9fc95d6293924d2b3629cd83a1d1e75544632
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33441966"
 ---
 # <a name="itypenamefactory-interface"></a>ITypeNameFactory インターフェイス
 型名を分解するためのメソッドを提供します。  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33550954"
 ---
 # <a name="canvas-how-to-topics"></a>キャンバスに関する「方法」トピック
 このセクションのトピックを使用する方法について説明、<xref:System.Windows.Controls.Canvas>絶対に子要素を配置する要素。  

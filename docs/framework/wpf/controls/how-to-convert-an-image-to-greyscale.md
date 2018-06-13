@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33550484"
 ---
 # <a name="how-to-convert-an-image-to-greyscale"></a>方法 : イメージをグレースケールに変換する
 この例では、イメージをグレースケールを使用して変換する<xref:System.Windows.Media.Imaging.FormatConvertedBitmap>です。  

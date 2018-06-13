@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33397092"
 ---
 # <a name="accessing-custom-attributes"></a>カスタム属性へのアクセス
 属性がプログラム要素に関連付けられると、リフレクションを使用して、その存在と値をクエリすることができます。 .NET Framework バージョン 1.0 および 1.1 では、カスタム属性は実行コンテキストで検証されます。 .NET Framework バージョン 2.0 では、新しい読み込みコンテキスト (リフレクションのみのコンテキスト) が提供されます。これを使用して、実行のために読み込むことができないコードを検証できます。  

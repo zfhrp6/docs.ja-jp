@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33358181"
 ---
 # <a name="attribute-based-mapping"></a>属性ベースの対応付け
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] マップを SQL Server データベース、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]属性を適用するか、または外部マッピング ファイルを使用してオブジェクト モデルです。 このトピックでは、属性ベースの方法について説明します。  

@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33534909"
 ---
 # <a name="how-to-move-toolstripmenuitems"></a>方法 : ToolStripMenuItems を移動する
 デザイン時に行うことができますトップレベル メニュー全体とそのメニュー項目を別の場所、<xref:System.Windows.Forms.MenuStrip>です。 トップレベル メニュー間で個々 のメニュー項目を移動したり、メニュー内のメニュー項目の位置を変更できます。  

@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33546742"
 ---
 # <a name="how-to-diagnose-problematic-print-job"></a>方法 : 問題のある印刷ジョブを診断する
 印刷ジョブで印刷を実行できない、印刷速度が遅い、などのユーザーからの苦情に、ネットワーク管理者が対処することはよくあります。 印刷ジョブのプロパティで公開されている豊富なセット、 [!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)] Microsoft .NET Framework の印刷ジョブの迅速なリモート診断を実行するための手段を提供します。  

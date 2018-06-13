@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33527224"
 ---
 # <a name="integrating-user-help-in-windows-forms"></a>Windows フォームでのヘルプの統合
 これは、ユーザーが混乱したときにアシスタンスを有効に、よく見過ごされますに関して重要 Windows ベースのアプリケーションの構築のヘルプ システムです。 Windows フォームでは、次の 2 つの異なる種類のヘルプをサポート、それぞれによって提供される、 [HelpProvider コンポーネント](../../../../docs/framework/winforms/controls/helpprovider-component-windows-forms.md)です。 1 つ目は、HTML または HTML ヘルプ 1 のいずれかのヘルプ ファイルをユーザーを指す必要があります。*x*または大きい値の形式です。 2 番目できますを表示する簡単な"新機能"-個別のコントロールのヘルプを入力これは、ダイアログ ボックスで特に便利です。 ヘルプの両方の種類は、同じフォームで使用できます。  

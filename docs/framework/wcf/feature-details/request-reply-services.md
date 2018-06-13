@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33490946"
 ---
 # <a name="request-reply-services"></a>要求/応答サービス
 要求/応答サービスは、操作コントラクトでは、Windows Communication Foundation (WCF) の既定の種類です。 クライアントはサービス操作を呼び出し、サービスからの応答を待機します。 サービス操作の呼び出しは、同期的または非同期的に実行できます。同期呼び出しでは、応答を受信するか、呼び出しがタイムアウトするまで、クライアントがブロックされます。非同期呼び出しでは、クライアントはサービス操作の呼び出し後、動作を続行し、別のスレッドのサービスからの応答を受信できます。  

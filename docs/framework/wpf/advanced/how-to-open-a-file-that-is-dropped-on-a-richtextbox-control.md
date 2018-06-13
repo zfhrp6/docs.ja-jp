@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33547763"
 ---
 # <a name="how-to-open-a-file-that-is-dropped-on-a-richtextbox-control"></a>方法: RichTextBox コントロール上にドロップしたファイルを開く
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]、 <xref:System.Windows.Controls.TextBox>、 <xref:System.Windows.Controls.RichTextBox>、および<xref:System.Windows.Documents.FlowDocument>組み込みのドラッグ アンド ドロップ機能をすべてのコントロールがあります。 組み込みの機能は、テキスト内と、コントロール間のドラッグ アンド ドロップできます。 ただし、コントロール上のファイルを削除することにより、ファイルを開く、ことはできません。 これらのコントロールは、処理済みとしても、ドラッグ アンド ドロップ イベントをマークします。 その結果、既定では、削除されたファイルを開くための機能を提供する独自のイベント ハンドラーを追加できません。  

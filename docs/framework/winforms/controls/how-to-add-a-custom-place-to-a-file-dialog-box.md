@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33525740"
 ---
 # <a name="how-to-add-a-custom-place-to-a-file-dialog-box"></a>方法 : よく使用する場所をファイル ダイアログ ボックスに追加する
 [!INCLUDE[wiprlhext](../../../../includes/wiprlhext-md.md)] の既定の 開くダイアログ ボックスと 保存ダイアログ ボックスには、左側に **[お気に入りリンク]** というタイトルの領域があります。 この領域にはカスタム プレイスという名称が付いています。 <xref:System.Windows.Forms.OpenFileDialog>と<xref:System.Windows.Forms.SaveFileDialog>クラスを使用すると、フォルダーを追加する、<xref:System.Windows.Forms.FileDialog.CustomPlaces%2A>コレクション。  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33534542"
 ---
 # <a name="toolstripstatuslabel-control-overview"></a>ToolStripStatusLabel コントロールの概要
 <xref:System.Windows.Forms.ToolStripStatusLabel>のラベル、<xref:System.Windows.Forms.StatusStrip>です。 同様に、<xref:System.Windows.Forms.Label>または<xref:System.Windows.Forms.ToolStripLabel>、<xref:System.Windows.Forms.ToolStripStatusLabel>テキストやイメージなどの非クリック可能な表示領域を提供します。 <xref:System.Windows.Forms.ToolStripStatusLabel>によってホストされる、<xref:System.Windows.Forms.StatusStrip>です。  

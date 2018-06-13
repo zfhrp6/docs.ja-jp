@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33512042"
 ---
 # <a name="windows-workflow-foundation-data-model"></a>Windows Workflow Foundation のデータ モデル
 Windows Workflow Foundation のデータ モデルは、変数、引数、式の 3 つの概念で構成されます。 変数はデータ ストレージを表し、引数はアクティビティへのデータ フローを表します。 引数は、変数を参照できる式を使用してバインドされます (値が代入されます)。  

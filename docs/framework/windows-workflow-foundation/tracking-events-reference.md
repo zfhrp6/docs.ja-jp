@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33520215"
 ---
 # <a name="tracking-events-reference"></a>追跡イベントのリファレンス
 [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] のワークフローが実行中にライフタイムのさまざまなステージを移行するとき、追跡イベントが発生します。 ホストはこれらのイベントに定期受信し、ライフタイム中のワークフローの進行状況について最新の状態に保ちます。 ここでは、発生する追跡イベントについて説明します。  

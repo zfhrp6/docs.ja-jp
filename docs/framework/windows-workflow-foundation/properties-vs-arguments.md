@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33514769"
 ---
 # <a name="properties-vs-arguments"></a>プロパティとします。引数
 データをアクティビティに渡すために使用可能なオプションはいくつかあります。 <xref:System.Activities.InArgument> を使用する以外に、標準の CLR プロパティまたはパブリック <xref:System.Activities.ActivityAction> プロパティを使用してデータを受け取るアクティビティを開発できます。 このトピックでは適切なメソッド型の選択方法について説明します。  

@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33525518"
 ---
 # <a name="accessing-frames-in-the-managed-html-document-object-model"></a>マネージ HTML DOM (Document Object Model) へのアクセス
 一部の HTML ドキュメントが不在で構成される*フレーム*、または独自の個別の HTML ドキュメントを持つウィンドウです。 フレームを使用すると、ページ内に 1 つ以上の静的な部分 (ナビゲーション バーなど) があり、その他のフレームでは内容が常に変化するような HTML ページを簡単に作成できます。  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33520641"
 ---
 # <a name="how-to-create-a-bitmap-at-run-time"></a>方法 : 実行時にビットマップを作成する
 この例は、作成し描画、<xref:System.Drawing.Bitmap>オブジェクトを既存の Windows フォームに表示<xref:System.Windows.Forms.PictureBox>コントロール。  

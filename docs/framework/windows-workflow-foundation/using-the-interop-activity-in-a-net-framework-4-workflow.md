@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33520228"
 ---
 # <a name="using-the-interop-activity-in-a-net-framework-4-workflow"></a>.NET Framework 4 ワークフローでの相互運用アクティビティの使用
 [!INCLUDE[vstecwinfx](../../../includes/vstecwinfx-md.md)] または [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] を使用して作成したアクティビティは、[!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] アクティビティを使うことにより <xref:System.Activities.Statements.Interop> ワークフローで使用できます。 ここでは、<xref:System.Activities.Statements.Interop> アクティビティの概要について説明します。  

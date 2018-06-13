@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33563798"
 ---
 # <a name="xshared-attribute"></a>x:Shared 属性
 設定すると`false`、WPF リソース検索の動作を変更して、属性付きのリソースに対して要求が、同じインスタンスのすべての要求を共有することがなく各要求の新しいインスタンスを作成できるようにします。  

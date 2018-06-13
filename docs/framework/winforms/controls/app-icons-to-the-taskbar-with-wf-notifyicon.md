@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33525414"
 ---
 # <a name="how-to-add-application-icons-to-the-taskbar-with-the-windows-forms-notifyicon-component"></a>方法 : Windows フォームの NotifyIcon コンポーネントによってタスクバーにアプリケーション アイコンを追加する
 Windows フォーム<xref:System.Windows.Forms.NotifyIcon>コンポーネントには、タスク バーの状態通知領域に 1 つのアイコンが表示されます。 状態 領域で複数のアイコンを表示するにする必要があります複数<xref:System.Windows.Forms.NotifyIcon>フォーム上のコンポーネントです。 コントロールで表示されるアイコンを設定するには、使用、<xref:System.Windows.Forms.NotifyIcon.Icon%2A>プロパティです。 コードを記述することも、<xref:System.Windows.Forms.NotifyIcon.DoubleClick>のため、その問題が起こった、ユーザーがアイコンをダブルクリックすると、イベント ハンドラー。 たとえば、行うことができるダイアログ ボックスをユーザーがアイコンで表されるバック グラウンド プロセスの構成を表示します。  

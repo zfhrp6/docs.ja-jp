@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 7431e1cb40da93f1e2f67e598d3915265ad7fba4
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33440459"
 ---
 # <a name="ihostmanualeventwait-method"></a>IHostManualEvent::Wait メソッド
 により、現在[IHostManualEvent](../../../../docs/framework/unmanaged-api/hosting/ihostmanualevent-interface.md)所有されているまで待機するインスタンスまたは指定された時間が経過時間。  
