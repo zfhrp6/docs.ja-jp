@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33590122"
 ---
 # <a name="how-to-change-the-appearance-of-a-datarepeater-control-visual-studio"></a>方法 : DataRepeater コントロールの外観を変更する (Visual Studio)
 外観を変更することができます、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>コントロール プロパティの設定によっては、デザイン時または実行時に処理して、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.DrawItem>イベント。  

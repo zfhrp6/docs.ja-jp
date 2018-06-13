@@ -10,6 +10,7 @@ ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/23/2018
+ms.locfileid: "34457494"
 ---
 # <a name="how-to-safely-cast-from-bool-to-bool-c-programming-guide"></a>方法: bool? から bool に安全にキャストする (C# プログラミング ガイド)
 Null 許容 `bool?` 型は、`true`、`false`、`null` の 3 つの異なる値を格納できます。 そのため、`bool?` 型は、`if`、`for`、`while` などの条件文で使用できません。 たとえば、次のコードはコンパイラ エラーになります。  

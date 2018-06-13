@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33596231"
 ---
 # <a name="byref-visual-basic"></a>ByRef (Visual Basic)
 呼び出されたプロシージャが呼び出し元のコードで引数の基になる変数の値を変更できるように引数が渡されることを指定します。  

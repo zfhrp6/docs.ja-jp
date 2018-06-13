@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33579250"
 ---
 # <a name="enum-design"></a>列挙型デザイン
 列挙型は、特殊な値の型です。 列挙型の 2 種類があります。 単純な列挙型、およびフラグ列挙型。  

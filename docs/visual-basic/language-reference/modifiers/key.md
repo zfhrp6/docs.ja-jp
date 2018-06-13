@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33599845"
 ---
 # <a name="key-visual-basic"></a>Key (Visual Basic)
 `Key`キーワードでは、匿名型のプロパティの動作を指定することができます。 匿名型のインスタンス、またはハッシュ コード値の計算の間の等値に関するテストでキー プロパティとしてを指定したプロパティのみです。 キー プロパティの値を変更することはできません。  

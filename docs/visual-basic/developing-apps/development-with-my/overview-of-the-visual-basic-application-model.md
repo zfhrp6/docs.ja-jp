@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33591600"
 ---
 # <a name="overview-of-the-visual-basic-application-model"></a>Visual Basic アプリケーション モデルの概要
 Visual Basic Windows フォーム アプリケーションの動作を制御するための適切に定義されたモデルの提供: Visual Basic アプリケーション モデルです。 このモデルには、アプリケーションのスタートアップ、シャット ダウンとハンドルされない例外のキャッチのイベントを処理するためのイベントが含まれています。 単一インスタンス アプリケーションを開発するためのサポートも提供します。 アプリケーション モデルは、拡張を詳細に制御を必要とする開発者は、オーバーライド可能なメソッドをカスタマイズできます。  

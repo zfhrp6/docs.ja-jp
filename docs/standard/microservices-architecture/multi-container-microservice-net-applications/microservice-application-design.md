@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33592315"
 ---
 # <a name="designing-a-microservice-oriented-application"></a>マイクロサービス指向アプリケーションの設計
 

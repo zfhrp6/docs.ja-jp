@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33598198"
 ---
 # <a name="ltremarksgt-visual-basic"></a>&lt;「解説」&gt; (Visual Basic)
 メンバーの「解説」セクションをを指定します。  

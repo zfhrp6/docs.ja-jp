@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33599978"
 ---
 # <a name="properties-visual-basic"></a>プロパティ (Visual Basic)
 このページには、Visual Basic モジュールのメンバーであるプロパティが一覧表示されます。 Visual Basic の特定のオブジェクトのメンバーであるその他のプロパティの一覧は[オブジェクト](../../visual-basic/language-reference/objects/index.md)です。  

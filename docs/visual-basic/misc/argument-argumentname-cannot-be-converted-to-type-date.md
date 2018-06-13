@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33600676"
 ---
 # <a name="argument-39ltargumentnamegt39-cannot-be-converted-to-type-39date39"></a>引数&#39; &lt;argumentname&gt; &#39;型に変換することはできません&#39;日付&#39;
 変数を型を `Date`に変更する変換が試みられましたが、値が有効な日付として認識されません。  

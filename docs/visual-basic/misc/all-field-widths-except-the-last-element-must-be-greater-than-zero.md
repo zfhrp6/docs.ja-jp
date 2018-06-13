@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33598441"
 ---
 # <a name="all-field-widths-except-the-last-element-must-be-greater-than-zero"></a>最後の要素以外のすべてのフィールド幅は 0 より大きくなければなりません
 最後の要素以外のすべてのフィールド幅は 0 より大きくなければなりません。 最後の要素内の 0 以下のフィールド幅は、最後のフィールドが可変長であることを示しています。  

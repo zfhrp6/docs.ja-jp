@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33597700"
 ---
 # <a name="argument-39life39-cannot-be-zero"></a>引数&#39;ライフ&#39;0 にすることはできません
 `Life`の引数が正しくありません。これは、資産の耐用年数を指定する `Double` である必要があります。  

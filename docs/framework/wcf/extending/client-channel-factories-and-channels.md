@@ -7,6 +7,7 @@ ms.sourcegitcommit: b7763f3435635850a76d4cbcf09bdce6c019208a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/25/2018
+ms.locfileid: "34483555"
 ---
 # <a name="client-channel-factories-and-channels"></a>クライアント : チャネル ファクトリとチャネル
 ここでは、チャネル ファクトリとチャネルの作成について説明します。  

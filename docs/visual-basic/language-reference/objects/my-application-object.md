@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33595226"
 ---
 # <a name="myapplication-object"></a>My.Application オブジェクト
 プロパティ、メソッド、および現在のアプリケーションに関連するイベントを提供します。  

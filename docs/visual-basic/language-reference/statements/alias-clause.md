@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33599175"
 ---
 # <a name="alias-clause-visual-basic"></a>Alias 句 (Visual Basic)
 外部プロシージャが DLL の中で別の名前を持つことを示します。  
