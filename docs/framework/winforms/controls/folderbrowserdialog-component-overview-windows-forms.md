@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33525009"
 ---
 # <a name="folderbrowserdialog-component-overview-windows-forms"></a>FolderBrowserDialog コンポーネントの概要 (Windows フォーム)
 Windows フォーム<xref:System.Windows.Forms.FolderBrowserDialog>コンポーネントは、モーダル ダイアログ ボックスを参照してフォルダーを選択するために使用します。 内から新しいフォルダーを作成することも、<xref:System.Windows.Forms.FolderBrowserDialog>コンポーネントです。  

@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33523043"
 ---
 # <a name="how-to-improve-performance-by-avoiding-automatic-scaling"></a>方法 : 自動スケーリングを解除してパフォーマンスを向上させる
 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] 描画すると、パフォーマンスが低下していましたが、イメージをスケーリング自動的に場合があります。 描画先の四角形の寸法を渡すことによって、イメージのスケーリングを制御する代わりに、<xref:System.Drawing.Graphics.DrawImage%2A>メソッドです。  

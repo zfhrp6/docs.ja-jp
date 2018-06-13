@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33595840"
 ---
 # <a name="modules-visual-basic"></a>モジュール (Visual Basic)
 Visual Basic では、いくつかのモジュールを使用して、使用すると、文字列、数学的な計算をシステム情報を取得する、ファイルおよびディレクトリの操作を実行する実行の操作など、コードの一般的なタスクを簡略化を提供します。 次の表は、Visual Basic で提供されるモジュールを一覧表示します。  

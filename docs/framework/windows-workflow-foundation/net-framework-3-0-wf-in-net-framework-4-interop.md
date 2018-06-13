@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33518412"
 ---
 # <a name="using-net-framework-30-wf-activities-in-net-framework-4-with-the-interop-activity"></a>Interop アクティビティと .NET Framework 4 内の .NET Framework 3.0 WF アクティビティの使用
 <xref:System.Activities.Statements.Interop> アクティビティは、[!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] ワークフロー内に [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] (WF 3.5) アクティビティをラップする [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] (WF 4.5) アクティビティです。 WF 3 アクティビティは、単一のリーフ アクティビティまたはツリー全体のアクティビティです。 [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] アクティビティの実行 (取り消しおよび例外処理を含む) および保持は、実行中の [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] ワークフロー インスタンスのコンテキスト内で発生します。  

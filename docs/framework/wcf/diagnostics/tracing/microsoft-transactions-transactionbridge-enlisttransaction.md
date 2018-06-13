@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33474429"
 ---
 # <a name="microsofttransactionstransactionbridgeenlisttransaction"></a>Microsoft.Transactions.TransactionBridge.EnlistTransaction
 WS-AtomicTransaction プロトコル サービスが、指定された調整コンテキストを使うトランザクションに正常に登録されました。  

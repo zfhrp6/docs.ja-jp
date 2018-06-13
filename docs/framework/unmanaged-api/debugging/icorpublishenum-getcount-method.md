@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: f191c31ec5333fbea52c298f477c8c624beb92b2
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33424509"
 ---
 # <a name="icorpublishenumgetcount-method"></a>ICorPublishEnum::GetCount メソッド
 列挙に含まれる項目の数を取得します。  

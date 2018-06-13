@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33523385"
 ---
 # <a name="networking-in-windows-forms-applications"></a>Windows フォーム アプリケーションにおけるネットワーク
 .NET Framework では、Web ページの表示、Web コンテンツをダウンロードする、ファイル転送プロトコル (FTP) サイトと対話し、容易にネットワーク機能をアプリケーションに組み込む Web サービスの使用のためのクラスを提供します。 次のリソースを .NET Framework と Windows フォームに統合する方法のネットワー キング テクノロジから理解できます。  

@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: bd1a55d4100d74b769b2bc1b8fe33d2042f5e739
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33428302"
 ---
 # <a name="isymunmanagedwritersetsymattribute-method"></a>ISymUnmanagedWriter::SetSymAttribute メソッド
 その名前に基づくカスタム属性を定義します。 これらの属性は、カスタム属性のメタデータとは異なり、シンボル ストアに保持されます。  

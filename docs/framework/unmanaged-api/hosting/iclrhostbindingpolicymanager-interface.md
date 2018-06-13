@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 637803c509935fdff080802f66f9f73ab8cf25e0
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33431989"
 ---
 # <a name="iclrhostbindingpolicymanager-interface"></a>ICLRHostBindingPolicyManager インターフェイス
 ホストを現在のバインディング ポリシーを評価し、指定したアセンブリのポリシーの変更を通信するためのメソッドを提供します。  

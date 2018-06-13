@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33521204"
 ---
 # <a name="how-to-flatten-a-curved-path-into-a-line"></a>方法 : 曲線のパスを直線に平坦化する
 A<xref:System.Drawing.Drawing2D.GraphicsPath>オブジェクトは、一連の行とベジエ スプラインを格納します。 パスをいくつかの種類の曲線 (省略記号ボタン、円弧をカーディナル スプライン) を追加できますが、パスに保存する前に、各曲線がベジエ スプラインに変換されます。 パスのフラット化は、パス内の各ベジエ スプラインを一連の直線に変換するので構成されます。 次の図は前に、と後のフラット化されたパスを示します。  

@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33525871"
 ---
 # <a name="errorprovider-component-windows-forms"></a>ErrorProvider コンポーネント (Windows フォーム)
 Windows フォーム`ErrorProvider`コンポーネントが何か問題が発生した非割り込み型方法でユーザーを表示するために使用します。 通常、フォーム上のユーザー入力の検証またはデータセット内のエラーを表示すると組み合わせて使用されます。  

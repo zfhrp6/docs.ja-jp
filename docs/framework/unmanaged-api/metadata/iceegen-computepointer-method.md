@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: a1239546072192d6ff9497013ad7b7140ea13085
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33443243"
 ---
 # <a name="iceegencomputepointer-method"></a>ICeeGen::ComputePointer メソッド
 指定されたコードのセクションのバッファーを決定します。  

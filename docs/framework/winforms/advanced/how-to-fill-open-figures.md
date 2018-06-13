@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33521161"
 ---
 # <a name="how-to-fill-open-figures"></a>方法 : 開いている図形を塗りつぶす
 渡すことによって、パスを入力することができます、<xref:System.Drawing.Drawing2D.GraphicsPath>オブジェクトを<xref:System.Drawing.Graphics.FillPath%2A>メソッドです。 <xref:System.Drawing.Graphics.FillPath%2A>メソッドが塗りつぶしモード (代替またはワインディング) に従って、パスに設定されているパスを入力します。 パスに任意の開いている図形がある場合、その数値が終了した場合と、パスが塗りつぶされます。 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] 終了位置から開始点に直線を描画して、図を閉じます。  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33521758"
 ---
 # <a name="graphics-overview-windows-forms"></a>グラフィックスの概要 (Windows フォーム)
 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] グラフィックス デバイス インターフェイスにより、プログラマがデバイスに依存しないアプリケーションを作成するためです。 サービス[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]一連のマネージ クラスを介して公開されます。  

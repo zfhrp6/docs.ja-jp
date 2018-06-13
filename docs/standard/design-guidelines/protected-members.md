@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33571086"
 ---
 # <a name="protected-members"></a>プロテクト メンバー
 単独で保護されたメンバーはすべての機能拡張を指定しないがサブクラス化によって拡張機能をより強力な行うことができます。 メインのパブリック インターフェイスを不必要に複雑化せず、高度なカスタマイズ オプションを公開に使用できます。  

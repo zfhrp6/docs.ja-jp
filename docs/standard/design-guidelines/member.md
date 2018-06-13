@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33571398"
 ---
 # <a name="member-design-guidelines"></a>メンバーのデザインのガイドライン
 メソッド、プロパティ、イベント、コンス トラクター、およびフィールドは、メンバーとしてまとめて呼ばれます。 メンバーは、最終的に、フレームワークのエンドユーザーに、フレームワークの機能が公開されている手段です。  
