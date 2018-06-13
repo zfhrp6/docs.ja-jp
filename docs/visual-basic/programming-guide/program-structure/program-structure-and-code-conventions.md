@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33654943"
 ---
 # <a name="program-structure-and-code-conventions-visual-basic"></a><span data-ttu-id="e53e0-102">プログラム構造とコード規則 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="e53e0-102">Program Structure and Code Conventions (Visual Basic)</span></span>
 <span data-ttu-id="e53e0-103">このセクションでは、一般的な Visual Basic プログラムの構造が導入されています、単純な Visual Basic プログラム、「こんにちは, World」を説明し、Visual Basic コード規則について説明します。</span><span class="sxs-lookup"><span data-stu-id="e53e0-103">This section introduces the typical Visual Basic program structure, provides a simple Visual Basic program, "Hello, World", and discusses Visual Basic code conventions.</span></span> <span data-ttu-id="e53e0-104">コード規則は、プログラムのロジックではなくプログラムの物理的な構造と外観に焦点を合わせた提案です。</span><span class="sxs-lookup"><span data-stu-id="e53e0-104">Code conventions are suggestions that focus not on a program's logic but on its physical structure and appearance.</span></span> <span data-ttu-id="e53e0-105">コード規則に従うと、コードの読み取り、理解、保守が簡単になります。</span><span class="sxs-lookup"><span data-stu-id="e53e0-105">Following them makes your code easier to read, understand, and maintain.</span></span> <span data-ttu-id="e53e0-106">コード規則には、以下の内容が含まれます。</span><span class="sxs-lookup"><span data-stu-id="e53e0-106">Code conventions can include, among others:</span></span>  

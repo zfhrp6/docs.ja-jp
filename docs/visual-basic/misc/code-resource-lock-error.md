@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33635607"
 ---
 # <a name="code-resource-lock-error"></a><span data-ttu-id="c5fb1-102">コード リソースのロック エラーです。</span><span class="sxs-lookup"><span data-stu-id="c5fb1-102">Code resource lock error</span></span>
 <span data-ttu-id="c5fb1-103">コード リソース内のプロシージャが呼び出されました。</span><span class="sxs-lookup"><span data-stu-id="c5fb1-103">A call was made to a procedure in a code resource.</span></span> <span data-ttu-id="c5fb1-104">コード リソースが見つかりましたが、使用中の可能性があるリソースをロックしようとしたときに、エラーが発生しました。</span><span class="sxs-lookup"><span data-stu-id="c5fb1-104">The code resource was found, but an error occurred when an attempt was made to lock the resource, perhaps because it is in use.</span></span>  

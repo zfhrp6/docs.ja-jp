@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33655559"
 ---
 # <a name="namespaces-in-visual-basic"></a><span data-ttu-id="9465e-102">Visual Basic における名前空間</span><span class="sxs-lookup"><span data-stu-id="9465e-102">Namespaces in Visual Basic</span></span>
 <span data-ttu-id="9465e-103">アセンブリ内で定義されているオブジェクトは、名前空間によって編成されています。</span><span class="sxs-lookup"><span data-stu-id="9465e-103">Namespaces organize the objects defined in an assembly.</span></span> <span data-ttu-id="9465e-104">アセンブリには複数の名前空間を含めることができます。さらに、名前空間の中に他の名前空間を含めることもできます。</span><span class="sxs-lookup"><span data-stu-id="9465e-104">Assemblies can contain multiple namespaces, which can in turn contain other namespaces.</span></span> <span data-ttu-id="9465e-105">名前空間を使用するとあいまいさがなくなるため、クラス ライブラリを使用する場合など、多数のオブジェクトを使用する場合に参照が簡単になります。</span><span class="sxs-lookup"><span data-stu-id="9465e-105">Namespaces prevent ambiguity and simplify references when using large groups of objects such as class libraries.</span></span>  

@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33654149"
 ---
 # <a name="-debug-visual-basic"></a><span data-ttu-id="d5399-102">デバッグ (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="d5399-102">-debug (Visual Basic)</span></span>
 <span data-ttu-id="d5399-103">コンパイラがデバッグ情報が生成され、出力ファイルに配置します。</span><span class="sxs-lookup"><span data-stu-id="d5399-103">Causes the compiler to generate debugging information and place it in the output file(s).</span></span>  

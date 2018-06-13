@@ -30,6 +30,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33654331"
 ---
 # <a name="considerations-in-overloading-procedures-visual-basic"></a><span data-ttu-id="92b78-102">プロシージャのオーバーロードに関する注意事項 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="92b78-102">Considerations in Overloading Procedures (Visual Basic)</span></span>
 <span data-ttu-id="92b78-103">プロシージャをオーバー ロードするときに使用する必要あります別*署名*オーバー ロードされたバージョンごとにします。</span><span class="sxs-lookup"><span data-stu-id="92b78-103">When you overload a procedure, you must use a different *signature* for each overloaded version.</span></span> <span data-ttu-id="92b78-104">通常、このエラーは、各バージョンは、異なるパラメーター リストを指定する必要があることを意味します。</span><span class="sxs-lookup"><span data-stu-id="92b78-104">This usually means each version must specify a different parameter list.</span></span> <span data-ttu-id="92b78-105">詳細についてを参照してください「異なる署名」[プロシージャのオーバー ロード](./procedure-overloading.md)です。</span><span class="sxs-lookup"><span data-stu-id="92b78-105">For more information, see "Different Signature" in [Procedure Overloading](./procedure-overloading.md).</span></span>  

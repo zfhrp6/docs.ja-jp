@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33650453"
 ---
 # <a name="data-types-in-visual-basic"></a><span data-ttu-id="d8af2-102">Visual Basic におけるデータ型</span><span class="sxs-lookup"><span data-stu-id="d8af2-102">Data Types in Visual Basic</span></span>
 <span data-ttu-id="d8af2-103">プログラミング要素の*データ型*は、保持できるデータの種類やデータの格納方法を示します。</span><span class="sxs-lookup"><span data-stu-id="d8af2-103">The *data type* of a programming element refers to what kind of data it can hold and how it stores that data.</span></span> <span data-ttu-id="d8af2-104">データ型は、コンピューターのメモリに格納できるすべての値に適用され、式の評価にも関与します。</span><span class="sxs-lookup"><span data-stu-id="d8af2-104">Data types apply to all values that can be stored in computer memory or participate in the evaluation of an expression.</span></span> <span data-ttu-id="d8af2-105">変数、リテラル、定数、列挙値、プロパティ、プロシージャのパラメーター、プロシージャの引数、およびプロシージャの戻り値にはすべてデータ型があります。</span><span class="sxs-lookup"><span data-stu-id="d8af2-105">Every variable, literal, constant, enumeration, property, procedure parameter, procedure argument, and procedure return value has a data type.</span></span>  

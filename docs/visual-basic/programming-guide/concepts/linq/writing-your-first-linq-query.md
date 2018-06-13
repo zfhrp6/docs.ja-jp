@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33654890"
 ---
 # <a name="writing-your-first-linq-query-visual-basic"></a><span data-ttu-id="5f96b-102">初めての LINQ クエリの作成 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="5f96b-102">Writing Your First LINQ Query (Visual Basic)</span></span>
 <span data-ttu-id="5f96b-103">"*クエリ*" は、データ ソースからデータを取得する式です。</span><span class="sxs-lookup"><span data-stu-id="5f96b-103">A *query* is an expression that retrieves data from a data source.</span></span> <span data-ttu-id="5f96b-104">クエリは、専用のクエリ言語で表現されます。</span><span class="sxs-lookup"><span data-stu-id="5f96b-104">Queries are expressed in a dedicated query language.</span></span> <span data-ttu-id="5f96b-105">時間の経過と共にさまざまな言語のために開発されたさまざまな種類のデータ ソース、たとえば、リレーショナル データベース用の SQL や XML 用の XQuery です。</span><span class="sxs-lookup"><span data-stu-id="5f96b-105">Over time, different languages have been developed for different types of data sources, for example, SQL for relational databases and XQuery for XML.</span></span> <span data-ttu-id="5f96b-106">これにより、アプリケーション開発者は、データ ソースまたはサポートされているデータ形式の種類ごとに新しいクエリ言語を習得するために必要です。</span><span class="sxs-lookup"><span data-stu-id="5f96b-106">This makes it necessary for the application developer to learn a new query language for each type of data source or data format that is supported.</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33478658"
 ---
 # <a name="systemservicemodelcomintegrationcomintegrationdllhostinitializerstarted"></a><span data-ttu-id="3c8a2-102">System.ServiceModel.ComIntegration.ComIntegrationDllHostInitializerStarted</span><span class="sxs-lookup"><span data-stu-id="3c8a2-102">System.ServiceModel.ComIntegration.ComIntegrationDllHostInitializerStarted</span></span>
 <span data-ttu-id="3c8a2-103">System.ServiceModel.ComIntegration.ComIntegrationDllHostInitializerStarted</span><span class="sxs-lookup"><span data-stu-id="3c8a2-103">System.ServiceModel.ComIntegration.ComIntegrationDllHostInitializerStarted</span></span>  

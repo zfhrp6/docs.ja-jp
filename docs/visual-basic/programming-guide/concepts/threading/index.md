@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33651866"
 ---
 # <a name="threading-visual-basic"></a><span data-ttu-id="c1bf6-102">スレッド処理 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="c1bf6-102">Threading (Visual Basic)</span></span>
 <span data-ttu-id="c1bf6-103">スレッド処理により、Visual Basic プログラムが同時処理を実行できるようになり、一度に複数の操作を行うことが可能になります。</span><span class="sxs-lookup"><span data-stu-id="c1bf6-103">Threading enables your Visual Basic program to perform concurrent processing so that you can do more than one operation at a time.</span></span> <span data-ttu-id="c1bf6-104">たとえば、スレッド処理を使用してユーザーの入力を監視したり、バックグラウンド タスクを実行したり、入力の同時ストリームを処理したりできます。</span><span class="sxs-lookup"><span data-stu-id="c1bf6-104">For example, you can use threading to monitor input from the user, perform background tasks, and handle simultaneous streams of input.</span></span>  

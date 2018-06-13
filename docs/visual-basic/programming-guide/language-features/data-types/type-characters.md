@@ -43,6 +43,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33653508"
 ---
 # <a name="type-characters-visual-basic"></a><span data-ttu-id="297ca-102">文字 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="297ca-102">Type characters (Visual Basic)</span></span>
 

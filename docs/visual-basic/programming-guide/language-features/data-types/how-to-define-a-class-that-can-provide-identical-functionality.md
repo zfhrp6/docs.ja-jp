@@ -31,6 +31,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33650349"
 ---
 # <a name="how-to-define-a-class-that-can-provide-identical-functionality-on-different-data-types-visual-basic"></a><span data-ttu-id="d4eed-102">方法: 複数のデータ型に同一の機能を提供できるクラスを定義する (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="d4eed-102">How to: Define a Class That Can Provide Identical Functionality on Different Data Types (Visual Basic)</span></span>
 <span data-ttu-id="d4eed-103">複数の異なるデータ型に同一の機能を提供するオブジェクトを作成するために使用できるクラスを定義できます。</span><span class="sxs-lookup"><span data-stu-id="d4eed-103">You can define a class from which you can create objects that provide identical functionality on different data types.</span></span> <span data-ttu-id="d4eed-104">これを行うには、1 つ以上の *型パラメーター* を定義内で指定します。</span><span class="sxs-lookup"><span data-stu-id="d4eed-104">To do this, you specify one or more *type parameters* in the definition.</span></span> <span data-ttu-id="d4eed-105">このようなクラスは、さまざまなデータ型を使用するオブジェクトのテンプレートとして使用できます。</span><span class="sxs-lookup"><span data-stu-id="d4eed-105">The class can then serve as a template for objects that use various data types.</span></span> <span data-ttu-id="d4eed-106">この方法で定義したクラスは、 *ジェネリック クラス*と呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="d4eed-106">A class defined in this way is called a *generic class*.</span></span>  

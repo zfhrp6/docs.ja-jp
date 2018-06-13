@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33650895"
 ---
 # <a name="declared-element-characteristics-visual-basic"></a><span data-ttu-id="b02e5-102">宣言された要素の特性 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="b02e5-102">Declared Element Characteristics (Visual Basic)</span></span>
 <span data-ttu-id="b02e5-103">A*特性*宣言された要素のコードとの対話方法に影響する要素の特定の側面がします。</span><span class="sxs-lookup"><span data-stu-id="b02e5-103">A *characteristic* of a declared element is an aspect of that element that affects how code can interact with it.</span></span> <span data-ttu-id="b02e5-104">宣言された各要素には、関連付けられている次の特性の 1 つ以上があります。</span><span class="sxs-lookup"><span data-stu-id="b02e5-104">Every declared element has one or more of the following characteristics associated with it:</span></span>  

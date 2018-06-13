@@ -9,6 +9,7 @@ ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/15/2018
+ms.locfileid: "34172333"
 ---
 # <a name="using-constructors-c-programming-guide"></a><span data-ttu-id="6c962-102">コンストラクターの使用 (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="6c962-102">Using Constructors (C# Programming Guide)</span></span>
 <span data-ttu-id="6c962-103">[クラス](../../../csharp/language-reference/keywords/class.md)または[構造体](../../../csharp/language-reference/keywords/struct.md)を作成する際には、コンストラクターが呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="6c962-103">When a [class](../../../csharp/language-reference/keywords/class.md) or [struct](../../../csharp/language-reference/keywords/struct.md) is created, its constructor is called.</span></span> <span data-ttu-id="6c962-104">コンストラクターの名前はクラスまたは構造体と同じで、通常は、このコンストラクターによって、新しいオブジェクトのデータ メンバーが初期化されます。</span><span class="sxs-lookup"><span data-stu-id="6c962-104">Constructors have the same name as the class or struct, and they usually initialize the data members of the new object.</span></span>  

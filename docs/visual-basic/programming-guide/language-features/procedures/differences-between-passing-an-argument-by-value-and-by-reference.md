@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33651656"
 ---
 # <a name="differences-between-passing-an-argument-by-value-and-by-reference-visual-basic"></a><span data-ttu-id="65e17-102">引数の値渡しと参照渡しの違い (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="65e17-102">Differences Between Passing an Argument By Value and By Reference (Visual Basic)</span></span>
 <span data-ttu-id="65e17-103">プロシージャに 1 つまたは複数の引数を渡す際に、各引数は、基になる呼び出し元のコードでプログラミング要素に対応します。</span><span class="sxs-lookup"><span data-stu-id="65e17-103">When you pass one or more arguments to a procedure, each argument corresponds to an underlying programming element in the calling code.</span></span> <span data-ttu-id="65e17-104">この基になる要素の値かへの参照を渡すことができます。</span><span class="sxs-lookup"><span data-stu-id="65e17-104">You can pass either the value of this underlying element, or a reference to it.</span></span> <span data-ttu-id="65e17-105">これと呼ばれますが、*渡し*です。</span><span class="sxs-lookup"><span data-stu-id="65e17-105">This is known as the *passing mechanism*.</span></span>  

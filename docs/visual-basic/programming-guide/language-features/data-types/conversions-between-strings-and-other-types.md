@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33650570"
 ---
 # <a name="conversions-between-strings-and-other-types-visual-basic"></a><span data-ttu-id="ec4b9-102">文字列とその他の型との変換 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="ec4b9-102">Conversions Between Strings and Other Types (Visual Basic)</span></span>
 <span data-ttu-id="ec4b9-103">数値を変換する`Boolean`、または日付/時刻値を`String`です。</span><span class="sxs-lookup"><span data-stu-id="ec4b9-103">You can convert a numeric, `Boolean`, or date/time value to a `String`.</span></span> <span data-ttu-id="ec4b9-104">逆方向に変換することもできます。-数値、文字列値から`Boolean`、または`Date`— 先のデータ型の有効な値として解釈される場合、文字列の内容。</span><span class="sxs-lookup"><span data-stu-id="ec4b9-104">You can also convert in the reverse direction — from a string value to numeric, `Boolean`, or `Date` — provided the contents of the string can be interpreted as a valid value of the destination data type.</span></span> <span data-ttu-id="ec4b9-105">できない場合は、実行時エラーが発生します。</span><span class="sxs-lookup"><span data-stu-id="ec4b9-105">If they cannot, a run-time error occurs.</span></span>  

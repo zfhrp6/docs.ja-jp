@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33653482"
 ---
 # <a name="-keyfile"></a><span data-ttu-id="c506d-102">-keyfile</span><span class="sxs-lookup"><span data-stu-id="c506d-102">-keyfile</span></span>
 <span data-ttu-id="c506d-103">アセンブリに厳密な名前を付けるキーまたはキー ペアを含むファイルを指定します。</span><span class="sxs-lookup"><span data-stu-id="c506d-103">Specifies a file containing a key or key pair to give an assembly a strong name.</span></span>  

@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33650996"
 ---
 # <a name="how-to-declare-and-call-a-default-property-in-visual-basic"></a><span data-ttu-id="7502e-102">方法: 既定のプロパティを宣言して呼び出す (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="7502e-102">How to: Declare and Call a Default Property in Visual Basic</span></span>
 <span data-ttu-id="7502e-103">A*既定プロパティ*クラスまたは構造体のプロパティで指定することがなく、コードにアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="7502e-103">A *default property* is a class or structure property that your code can access without specifying it.</span></span> <span data-ttu-id="7502e-104">呼び出し元のコードは、クラスまたは構造体がない、プロパティ、およびコンテキスト プロパティへのアクセスを許可、Visual Basic が存在する場合に、そのクラスまたは構造体の既定のプロパティにアクセスを解決します。</span><span class="sxs-lookup"><span data-stu-id="7502e-104">When calling code names a class or structure but not a property, and the context allows access to a property, Visual Basic resolves the access to that class or structure's default property if one exists.</span></span>  

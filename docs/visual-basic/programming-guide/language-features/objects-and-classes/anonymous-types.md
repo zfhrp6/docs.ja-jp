@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33656257"
 ---
 # <a name="anonymous-types-visual-basic"></a><span data-ttu-id="9ce28-102">匿名型 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="9ce28-102">Anonymous Types (Visual Basic)</span></span>
 <span data-ttu-id="9ce28-103">Visual Basic では、匿名型は、使用すると、データ型のクラス定義を記述することがなくオブジェクトの作成をサポートします。</span><span class="sxs-lookup"><span data-stu-id="9ce28-103">Visual Basic supports anonymous types, which enable you to create objects without writing a class definition for the data type.</span></span> <span data-ttu-id="9ce28-104">クラスは、コンパイラによって生成されます。</span><span class="sxs-lookup"><span data-stu-id="9ce28-104">Instead, the compiler generates a class for you.</span></span> <span data-ttu-id="9ce28-105">クラスの使用可能な名前を持たないから直接継承<xref:System.Object>オブジェクトの宣言で指定したプロパティが含まれます。</span><span class="sxs-lookup"><span data-stu-id="9ce28-105">The class has no usable name, inherits directly from <xref:System.Object>, and contains the properties you specify in declaring the object.</span></span> <span data-ttu-id="9ce28-106">データ型の名前が指定されていないため、呼びます、*匿名型*です。</span><span class="sxs-lookup"><span data-stu-id="9ce28-106">Because the name of the data type is not specified, it is referred to as an *anonymous type*.</span></span>  

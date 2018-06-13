@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33653271"
 ---
 # <a name="serialization-visual-basic"></a><span data-ttu-id="aa38d-102">シリアル化 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="aa38d-102">Serialization (Visual Basic)</span></span>
 <span data-ttu-id="aa38d-103">シリアル化は、オブジェクトを格納するか、メモリ、データベース、またはファイルに転送するためにバイト ストリームに変換するプロセスです。</span><span class="sxs-lookup"><span data-stu-id="aa38d-103">Serialization is the process of converting an object into a stream of bytes in order to store the object or transmit it to memory, a database, or a file.</span></span> <span data-ttu-id="aa38d-104">その主な目的は、必要なときに再作成できるように、オブジェクトの状態を保存しておくことです。</span><span class="sxs-lookup"><span data-stu-id="aa38d-104">Its main purpose is to save the state of an object in order to be able to recreate it when needed.</span></span> <span data-ttu-id="aa38d-105">逆のプロセスは、逆シリアル化と呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="aa38d-105">The reverse process is called deserialization.</span></span>  

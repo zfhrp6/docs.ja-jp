@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33653018"
 ---
 # <a name="conditional-compilation-in-visual-basic"></a><span data-ttu-id="77c2c-102">Visual Basic での条件付きコンパイル</span><span class="sxs-lookup"><span data-stu-id="77c2c-102">Conditional Compilation in Visual Basic</span></span>
 <span data-ttu-id="77c2c-103">*条件付きコンパイル*、他のユーザーは無視されます、特定のプログラムではコード ブロックは選択的にコンパイルします。</span><span class="sxs-lookup"><span data-stu-id="77c2c-103">In *conditional compilation*, particular blocks of code in a program are compiled selectively while others are ignored.</span></span>  

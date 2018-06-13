@@ -11,6 +11,7 @@ ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/15/2018
+ms.locfileid: "34172374"
 ---
 # <a name="-operator-c-reference"></a><span data-ttu-id="cfa90-102">^= 演算子 (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="cfa90-102">^= Operator (C# Reference)</span></span>
 <span data-ttu-id="cfa90-103">排他的 OR 代入演算子。</span><span class="sxs-lookup"><span data-stu-id="cfa90-103">The exclusive-OR assignment operator.</span></span>  

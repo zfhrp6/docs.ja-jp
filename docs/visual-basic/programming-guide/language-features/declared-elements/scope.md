@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33656296"
 ---
 # <a name="scope-in-visual-basic"></a><span data-ttu-id="816f4-102">Visual Basic におけるスコープ</span><span class="sxs-lookup"><span data-stu-id="816f4-102">Scope in Visual Basic</span></span>
 <span data-ttu-id="816f4-103">*スコープ*一連の名前に修飾子またはを通じて使用できるようにせずに参照できるすべてのコードは、宣言された要素の[Imports ステートメント (.NET Namespace よぶ型)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)です。</span><span class="sxs-lookup"><span data-stu-id="816f4-103">The *scope* of a declared element is the set of all code that can refer to it without qualifying its name or making it available through an [Imports Statement (.NET Namespace and Type)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md).</span></span> <span data-ttu-id="816f4-104">要素は、次のレベルのいずれかのスコープを持つことができます。</span><span class="sxs-lookup"><span data-stu-id="816f4-104">An element can have scope at one of the following levels:</span></span>  

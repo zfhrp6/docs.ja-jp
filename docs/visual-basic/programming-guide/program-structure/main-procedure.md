@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33652153"
 ---
 # <a name="main-procedure-in-visual-basic"></a><span data-ttu-id="a6eed-102">Visual Basic の Main プロシージャ</span><span class="sxs-lookup"><span data-stu-id="a6eed-102">Main Procedure in Visual Basic</span></span>
 <span data-ttu-id="a6eed-103">すべての Visual Basic アプリケーションが呼び出されるプロシージャを含める必要があります`Main`です。</span><span class="sxs-lookup"><span data-stu-id="a6eed-103">Every Visual Basic application must contain a procedure called `Main`.</span></span> <span data-ttu-id="a6eed-104">このプロシージャは、開始ポイントし、アプリケーションの総合的な制御します。</span><span class="sxs-lookup"><span data-stu-id="a6eed-104">This procedure serves as the starting point and overall control for your application.</span></span> <span data-ttu-id="a6eed-105">.NET Framework の呼び出し、`Main`プロシージャ、アプリケーションが読み込まれたし、制御を渡す準備ができました。</span><span class="sxs-lookup"><span data-stu-id="a6eed-105">The .NET Framework calls your `Main` procedure when it has loaded your application and is ready to pass control to it.</span></span> <span data-ttu-id="a6eed-106">記述する必要があります、Windows フォーム アプリケーションを作成する場合は、しない限り、`Main`が自分で実行されるアプリケーションのプロシージャです。</span><span class="sxs-lookup"><span data-stu-id="a6eed-106">Unless you are creating a Windows Forms application, you must write the `Main` procedure for applications that run on their own.</span></span>  

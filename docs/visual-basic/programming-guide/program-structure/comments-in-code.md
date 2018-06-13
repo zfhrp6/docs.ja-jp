@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33650970"
 ---
 # <a name="comments-in-code-visual-basic"></a><span data-ttu-id="4a893-102">コード内のコメント (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="4a893-102">Comments in Code (Visual Basic)</span></span>
 <span data-ttu-id="4a893-103">コード例にはコメント記号 (`'`) がしばしば見られます。</span><span class="sxs-lookup"><span data-stu-id="4a893-103">As you read the code examples, you often encounter the comment symbol (`'`).</span></span> <span data-ttu-id="4a893-104">このシンボルをそれに続くテキストを無視する Visual Basic コンパイラに指示または*コメント*です。</span><span class="sxs-lookup"><span data-stu-id="4a893-104">This symbol tells the Visual Basic compiler to ignore the text following it, or the *comment*.</span></span> <span data-ttu-id="4a893-105">コメントは、コードを読むユーザーに役立つように追加される簡単な説明です。</span><span class="sxs-lookup"><span data-stu-id="4a893-105">Comments are brief explanatory notes added to code for the benefit of those reading it.</span></span>  

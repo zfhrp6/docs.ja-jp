@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33656088"
 ---
 # <a name="property-procedures-visual-basic"></a><span data-ttu-id="8d360-102">Property プロシージャ (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="8d360-102">Property Procedures (Visual Basic)</span></span>
 <span data-ttu-id="8d360-103">プロパティ プロシージャは、一連のモジュール、クラスまたは構造体のカスタム プロパティを操作する Visual Basic ステートメントです。</span><span class="sxs-lookup"><span data-stu-id="8d360-103">A property procedure is a series of Visual Basic statements that manipulate a custom property on a module, class, or structure.</span></span> <span data-ttu-id="8d360-104">プロパティ プロシージャとも呼ばれます*プロパティ アクセサー*です。</span><span class="sxs-lookup"><span data-stu-id="8d360-104">Property procedures are also known as *property accessors*.</span></span>  

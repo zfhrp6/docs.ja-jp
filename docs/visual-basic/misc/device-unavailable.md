@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33634847"
 ---
 # <a name="device-unavailable"></a><span data-ttu-id="fe8bb-102">デバイスが準備されていません</span><span class="sxs-lookup"><span data-stu-id="fe8bb-102">Device unavailable</span></span>
 <span data-ttu-id="fe8bb-103">ネットワーク接続が失われたか、アクセスしようとしているデバイスがオフラインであるか、または存在しません。</span><span class="sxs-lookup"><span data-stu-id="fe8bb-103">Either you have lost your network connection, or the device that you are trying to access is offline or does not exist.</span></span>  

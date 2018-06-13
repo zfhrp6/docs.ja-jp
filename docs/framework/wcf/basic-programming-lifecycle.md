@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33803693"
 ---
 # <a name="basic-programming-lifecycle"></a><span data-ttu-id="fdc45-102">基本的なプログラミング ライフサイクル</span><span class="sxs-lookup"><span data-stu-id="fdc45-102">Basic Programming Lifecycle</span></span>
 <span data-ttu-id="fdc45-103">Windows Communication Foundation (WCF) では、アプリケーションにいるかどうか、同じコンピューター上または異なるアプリケーション プラットフォーム上、インターネット経由で通信を使用できます。</span><span class="sxs-lookup"><span data-stu-id="fdc45-103">Windows Communication Foundation (WCF) enables applications to communicate whether they are on the same computer, across the Internet, or on different application platforms.</span></span> <span data-ttu-id="fdc45-104">このトピックでは、WCF アプリケーションを構築するために必要なタスクについて説明します。</span><span class="sxs-lookup"><span data-stu-id="fdc45-104">This topic outlines the tasks that are required to build a WCF application.</span></span> <span data-ttu-id="fdc45-105">実際のサンプル アプリケーションでは、次を参照してください。[チュートリアル入門](../../../docs/framework/wcf/getting-started-tutorial.md)です。</span><span class="sxs-lookup"><span data-stu-id="fdc45-105">For a working sample application, see [Getting Started Tutorial](../../../docs/framework/wcf/getting-started-tutorial.md).</span></span>  

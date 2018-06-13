@@ -26,6 +26,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33651019"
 ---
 # <a name="how-to-break-and-combine-statements-in-code-visual-basic"></a><span data-ttu-id="9b31b-102">方法: コード内でステートメントを分割および連結する (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="9b31b-102">How to: Break and Combine Statements in Code (Visual Basic)</span></span>
 <span data-ttu-id="9b31b-103">コードを書くときにも必要になるは、水平方向にスクロール コード エディターでステートメントが長くなりを作成する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="9b31b-103">When writing your code, you might at times create lengthy statements that necessitate horizontal scrolling in the Code Editor.</span></span> <span data-ttu-id="9b31b-104">方法は、これには影響しませんが、コードの実行、困難の作成者やその他のユーザーをモニターに表示されるようにコードを読み取る。</span><span class="sxs-lookup"><span data-stu-id="9b31b-104">Although this doesn't affect the way your code runs, it makes it difficult for you or anyone else to read the code as it appears on the monitor.</span></span> <span data-ttu-id="9b31b-105">このような場合は、単一の長いステートメントを複数の行に分割することを検討してください。</span><span class="sxs-lookup"><span data-stu-id="9b31b-105">In such cases, you should consider breaking the single long statement into several lines.</span></span>  

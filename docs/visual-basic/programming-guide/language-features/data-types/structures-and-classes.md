@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33654123"
 ---
 # <a name="structures-and-classes-visual-basic"></a><span data-ttu-id="1f5ae-102">構造体とクラス (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="1f5ae-102">Structures and Classes (Visual Basic)</span></span>
 <span data-ttu-id="1f5ae-103">Visual Basic では、構造体とクラスは、両方のエンティティに同じ機能のほとんどがサポートされる結果の構文を統一します。</span><span class="sxs-lookup"><span data-stu-id="1f5ae-103">Visual Basic unifies the syntax for structures and classes, with the result that both entities support most of the same features.</span></span> <span data-ttu-id="1f5ae-104">ただし、構造体とクラスの重要な違いもできます。</span><span class="sxs-lookup"><span data-stu-id="1f5ae-104">However, there are also important differences between structures and classes.</span></span>  

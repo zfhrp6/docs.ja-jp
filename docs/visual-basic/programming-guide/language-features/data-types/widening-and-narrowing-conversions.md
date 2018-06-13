@@ -24,6 +24,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33655420"
 ---
 # <a name="widening-and-narrowing-conversions-visual-basic"></a><span data-ttu-id="13748-102">拡大変換と縮小変換 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="13748-102">Widening and Narrowing Conversions (Visual Basic)</span></span>
 <span data-ttu-id="13748-103">型変換で重要な考慮事項は、変換の結果が対象のデータ型の範囲内かどうかです。</span><span class="sxs-lookup"><span data-stu-id="13748-103">An important consideration with a type conversion is whether the result of the conversion is within the range of the destination data type.</span></span>  

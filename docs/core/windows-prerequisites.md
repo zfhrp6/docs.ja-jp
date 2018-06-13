@@ -9,6 +9,7 @@ ms.sourcegitcommit: 895c7602386a6dfe7ca4facce3d965b27e5c6e87
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/19/2018
+ms.locfileid: "34311989"
 ---
 # <a name="prerequisites-for-net-core-on-windows"></a><span data-ttu-id="6d4cc-103">Windows における .NET Core の前提条件</span><span class="sxs-lookup"><span data-stu-id="6d4cc-103">Prerequisites for .NET Core on Windows</span></span>
 

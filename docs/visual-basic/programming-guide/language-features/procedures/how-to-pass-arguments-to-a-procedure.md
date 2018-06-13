@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33650593"
 ---
 # <a name="how-to-pass-arguments-to-a-procedure-visual-basic"></a><span data-ttu-id="b9838-102">方法: プロシージャに引数を渡す (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="b9838-102">How to: Pass Arguments to a Procedure (Visual Basic)</span></span>
 <span data-ttu-id="b9838-103">プロシージャを呼び出すときに、かっこ内に引数リストを持つプロシージャの名前に従います。</span><span class="sxs-lookup"><span data-stu-id="b9838-103">When you call a procedure, you follow the procedure name with an argument list in parentheses.</span></span> <span data-ttu-id="b9838-104">プロシージャに定義されたすべての必須パラメーターに対応する引数を指定して、引数を指定することができます必要に応じて、`Optional`パラメーター。</span><span class="sxs-lookup"><span data-stu-id="b9838-104">You supply an argument corresponding to every required parameter the procedure defines, and you can optionally supply arguments to the `Optional` parameters.</span></span> <span data-ttu-id="b9838-105">指定しない場合、`Optional`呼び出しのパラメーターは、任意の以降の引数を指定している場合、引数リスト内での位置をマークするコンマを含める必要があります。</span><span class="sxs-lookup"><span data-stu-id="b9838-105">If you do not supply an `Optional` parameter in the call, you must include a comma to mark its place in the argument list if you are supplying any subsequent arguments.</span></span>  

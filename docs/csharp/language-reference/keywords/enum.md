@@ -12,6 +12,7 @@ ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/15/2018
+ms.locfileid: "34172229"
 ---
 # <a name="enum-c-reference"></a><span data-ttu-id="8c028-102">enum (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="8c028-102">enum (C# Reference)</span></span>
 <span data-ttu-id="8c028-103">`enum` キーワードは、列挙型を宣言するために使用されます。列挙型は、列挙子リストと呼ばれる名前付き定数の集まりで構成される固有の型です。</span><span class="sxs-lookup"><span data-stu-id="8c028-103">The `enum` keyword is used to declare an enumeration, a distinct type that consists of a set of named constants called the enumerator list.</span></span>  

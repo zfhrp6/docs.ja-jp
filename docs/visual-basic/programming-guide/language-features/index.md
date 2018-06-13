@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33652013"
 ---
 # <a name="visual-basic-language-features"></a><span data-ttu-id="368a9-102">Visual Basic 言語の機能</span><span class="sxs-lookup"><span data-stu-id="368a9-102">Visual Basic Language Features</span></span>
 <span data-ttu-id="368a9-103">次のトピックでは、紹介し、Visual Basic では、オブジェクト指向プログラミング言語の重要なコンポーネントについて説明します。</span><span class="sxs-lookup"><span data-stu-id="368a9-103">The following topics introduce and discuss the essential components of Visual Basic, an object-oriented programming language.</span></span> <span data-ttu-id="368a9-104">フォームとコントロールを使用してアプリケーションのユーザー インターフェイスを作成した後、アプリケーションの動作を定義するコードを作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="368a9-104">After creating the user interface for your application using forms and controls, you need to write the code that defines the application's behavior.</span></span> <span data-ttu-id="368a9-105">最新のプログラミング言語と Visual Basic では、一般的なプログラミング構成要素と言語要素の数がサポートしています。</span><span class="sxs-lookup"><span data-stu-id="368a9-105">As with any modern programming language, Visual Basic supports a number of common programming constructs and language elements.</span></span>  

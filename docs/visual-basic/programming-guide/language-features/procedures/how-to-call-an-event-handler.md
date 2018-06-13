@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33652683"
 ---
 # <a name="how-to-call-an-event-handler-in-visual-basic"></a><span data-ttu-id="586bd-102">方法 : Visual Basic でイベント ハンドラーを呼び出す</span><span class="sxs-lookup"><span data-stu-id="586bd-102">How to: Call an Event Handler in Visual Basic</span></span>
 <span data-ttu-id="586bd-103">*イベント*アクションまたはイベントの発生は、-、マウスなどクリックやクレジットの上限を超えています: 認識によってプログラム コンポーネントによって、コードを記述できます応答します。</span><span class="sxs-lookup"><span data-stu-id="586bd-103">An *event* is an action or occurrence — such as a mouse click or a credit limit exceeded — that is recognized by some program component, and for which you can write code to respond.</span></span> <span data-ttu-id="586bd-104">*イベント ハンドラー*イベントに応答を記述するコードです。</span><span class="sxs-lookup"><span data-stu-id="586bd-104">An *event handler* is the code you write to respond to an event.</span></span>  

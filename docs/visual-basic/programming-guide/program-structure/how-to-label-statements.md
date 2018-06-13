@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33650125"
 ---
 # <a name="how-to-label-statements-visual-basic"></a><span data-ttu-id="9b813-102">方法: ステートメントへのラベル付け (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="9b813-102">How to: Label Statements (Visual Basic)</span></span>
 <span data-ttu-id="9b813-103">ステートメント ブロックは、コロンで区切られたコードの行が構成をされています。</span><span class="sxs-lookup"><span data-stu-id="9b813-103">Statement blocks are made up of lines of code delimited by colons.</span></span> <span data-ttu-id="9b813-104">行の識別文字列または整数に続くコードと呼ばれます*というラベルの付いた*です。</span><span class="sxs-lookup"><span data-stu-id="9b813-104">Lines of code preceded by an identifying string or integer are said to be *labeled*.</span></span> <span data-ttu-id="9b813-105">ステートメント ラベルはなどを識別に使用するステートメントを使用するコードの行をマークするために使用`On Error Goto`です。</span><span class="sxs-lookup"><span data-stu-id="9b813-105">Statement labels are used to mark a line of code to identify it for use with statements such as `On Error Goto`.</span></span>  

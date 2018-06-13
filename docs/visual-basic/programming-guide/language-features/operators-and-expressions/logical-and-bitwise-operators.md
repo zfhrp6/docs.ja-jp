@@ -26,6 +26,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33656153"
 ---
 # <a name="logical-and-bitwise-operators-in-visual-basic"></a><span data-ttu-id="24ca4-102">Visual Basic の論理演算子とビット処理演算子</span><span class="sxs-lookup"><span data-stu-id="24ca4-102">Logical and Bitwise Operators in Visual Basic</span></span>
 <span data-ttu-id="24ca4-103">論理演算子は、比較`Boolean`式と戻り値、`Boolean`結果。</span><span class="sxs-lookup"><span data-stu-id="24ca4-103">Logical operators compare `Boolean` expressions and return a `Boolean` result.</span></span> <span data-ttu-id="24ca4-104">`And`、 `Or`、 `AndAlso`、 `OrElse`、および`Xor`演算子は*バイナリ*中に、2 つのオペランドを受け取るため、`Not`演算子は*単項* 1 つのオペランドを受け取るためです。</span><span class="sxs-lookup"><span data-stu-id="24ca4-104">The `And`, `Or`, `AndAlso`, `OrElse`, and `Xor` operators are *binary* because they take two operands, while the `Not` operator is *unary* because it takes a single operand.</span></span> <span data-ttu-id="24ca4-105">整数値のビットごとの論理演算これらの演算子の一部も行えます。</span><span class="sxs-lookup"><span data-stu-id="24ca4-105">Some of these operators can also perform bitwise logical operations on integral values.</span></span>  

@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33636680"
 ---
 # <a name="39before39-and-39after39-arguments-cannot-be-combined"></a><span data-ttu-id="60773-102">&#39;前に&#39;と&#39;後&#39;引数を組み合わせることはできません</span><span class="sxs-lookup"><span data-stu-id="60773-102">&#39;Before&#39; and &#39;After&#39; arguments cannot be combined</span></span>
 <span data-ttu-id="60773-103">引数リストに、相互に排他的な `Before` および `After` 引数の両方が含まれます。</span><span class="sxs-lookup"><span data-stu-id="60773-103">An argument list includes both the `Before` and `After` arguments, which are mutually exclusive.</span></span>  

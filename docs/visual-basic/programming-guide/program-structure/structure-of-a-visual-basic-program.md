@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33654831"
 ---
 # <a name="structure-of-a-visual-basic-program"></a><span data-ttu-id="ad0fe-102">Visual Basic プログラムの構造</span><span class="sxs-lookup"><span data-stu-id="ad0fe-102">Structure of a Visual Basic Program</span></span>
 <span data-ttu-id="ad0fe-103">Visual Basic プログラムは、標準の構成ブロックから構築します。</span><span class="sxs-lookup"><span data-stu-id="ad0fe-103">A Visual Basic program is built up from standard building blocks.</span></span> <span data-ttu-id="ad0fe-104">A*ソリューション*1 つまたは複数のプロジェクトで構成されます。</span><span class="sxs-lookup"><span data-stu-id="ad0fe-104">A *solution* comprises one or more projects.</span></span> <span data-ttu-id="ad0fe-105">A*プロジェクト*さらに、1 つまたは複数のアセンブリを含めることができます。</span><span class="sxs-lookup"><span data-stu-id="ad0fe-105">A *project* in turn can contain one or more assemblies.</span></span> <span data-ttu-id="ad0fe-106">各*アセンブリ*が 1 つまたは複数のソース ファイルからコンパイルします。</span><span class="sxs-lookup"><span data-stu-id="ad0fe-106">Each *assembly* is compiled from one or more source files.</span></span> <span data-ttu-id="ad0fe-107">A*ソースファイル*定義とクラス、構造体、モジュール、および最終的にすべてのコードが含まれているインターフェイスの実装を提供します。</span><span class="sxs-lookup"><span data-stu-id="ad0fe-107">A *source file* provides the definition and implementation of classes, structures, modules, and interfaces, which ultimately contain all your code.</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33636716"
 ---
 # <a name="one-or-more-folders-in-the-target-path-do-not-exist"></a><span data-ttu-id="a5dc9-102">ターゲット パスに 1 つまたは複数のフォルダーが存在しません</span><span class="sxs-lookup"><span data-stu-id="a5dc9-102">One or more folders in the target path do not exist</span></span>
 <span data-ttu-id="a5dc9-103">指定された 1 つ以上のディレクトリがターゲット パスに存在しません。</span><span class="sxs-lookup"><span data-stu-id="a5dc9-103">One or more of the directories supplied in the target path do not exist.</span></span> <span data-ttu-id="a5dc9-104">これは、特に相対パスを指定する場合など、パスが正しく解析されなかった結果である可能性があります。</span><span class="sxs-lookup"><span data-stu-id="a5dc9-104">This may be a result of an incorrectly parsed path, particularly if supplying a relative path.</span></span>  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33654110"
 ---
 # <a name="other-control-structures-visual-basic"></a><span data-ttu-id="42d89-102">その他の制御構造 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="42d89-102">Other Control Structures (Visual Basic)</span></span>
 <span data-ttu-id="42d89-103">Visual Basic では、リソースを破棄または繰り返しオブジェクト参照に必要な回数の数を削減するのに役立つ制御構造を提供します。</span><span class="sxs-lookup"><span data-stu-id="42d89-103">Visual Basic provides control structures that help you dispose of a resource or reduce the number of times you have to repeat an object reference.</span></span>  

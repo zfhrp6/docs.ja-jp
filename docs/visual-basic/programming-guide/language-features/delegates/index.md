@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33652884"
 ---
 # <a name="delegates-visual-basic"></a><span data-ttu-id="f7a01-102">デリゲート (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="f7a01-102">Delegates (Visual Basic)</span></span>
 <span data-ttu-id="f7a01-103">デリゲートは、メソッドを参照するオブジェクトです。</span><span class="sxs-lookup"><span data-stu-id="f7a01-103">Delegates are objects that refer to methods.</span></span> <span data-ttu-id="f7a01-104">デリゲートは他のプログラミング言語で使用される関数ポインターに似ているため、"*タイプ セーフ関数ポインター*" と説明されることがあります。</span><span class="sxs-lookup"><span data-stu-id="f7a01-104">They are sometimes described as *type-safe function pointers* because they are similar to function pointers used in other programming languages.</span></span> <span data-ttu-id="f7a01-105">Visual Basic のデリゲートは、クラスに基づく参照型、関数ポインターとは異なり、<xref:System.Delegate?displayProperty=nameWithType>です。</span><span class="sxs-lookup"><span data-stu-id="f7a01-105">But unlike function pointers, Visual Basic delegates are a reference type based on the class <xref:System.Delegate?displayProperty=nameWithType>.</span></span> <span data-ttu-id="f7a01-106">デリゲートは、共有メソッド (特定のクラスのインスタンスがなくても呼び出すことのできるメソッド) とインスタンス メソッドの両方を参照できます。</span><span class="sxs-lookup"><span data-stu-id="f7a01-106">Delegates can reference both shared methods — methods that can be called without a specific instance of a class — and instance methods.</span></span>  

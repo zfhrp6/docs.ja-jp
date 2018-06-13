@@ -12,6 +12,7 @@ ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/15/2018
+ms.locfileid: "34172150"
 ---
 # <a name="struct-c-reference"></a><span data-ttu-id="1165c-102">struct (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="1165c-102">struct (C# Reference)</span></span>
 <span data-ttu-id="1165c-103">`struct` 型は、通常、関連する変数 (四角形の座標やインベントリ内の項目の特性など) の小さなグループをカプセル化するのに使用される値型です。</span><span class="sxs-lookup"><span data-stu-id="1165c-103">A `struct` type is a value type that is typically used to encapsulate small groups of related variables, such as the coordinates of a rectangle or the characteristics of an item in an inventory.</span></span> <span data-ttu-id="1165c-104">次の例に単純な構造体の宣言を示します。</span><span class="sxs-lookup"><span data-stu-id="1165c-104">The following example shows a simple struct declaration:</span></span>  

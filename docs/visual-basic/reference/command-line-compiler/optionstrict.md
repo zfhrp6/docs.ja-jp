@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33652910"
 ---
 # <a name="-optionstrict"></a><span data-ttu-id="44f72-102">-optionstrict</span><span class="sxs-lookup"><span data-stu-id="44f72-102">-optionstrict</span></span>
 <span data-ttu-id="44f72-103">暗黙の型変換を制限するための厳密な型のセマンティクスを適用します。</span><span class="sxs-lookup"><span data-stu-id="44f72-103">Enforces strict type semantics to restrict implicit type conversions.</span></span>  

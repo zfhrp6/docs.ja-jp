@@ -35,6 +35,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33654357"
 ---
 # <a name="special-characters-in-code-visual-basic"></a><span data-ttu-id="c904f-102">コード内の特殊文字 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="c904f-102">Special Characters in Code (Visual Basic)</span></span>
 <span data-ttu-id="c904f-103">場合によってアルファベットまたは数字ではない文字がコードでは、特殊文字を使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c904f-103">Sometimes you have to use special characters in your code, that is, characters that are not alphabetical or numeric.</span></span> <span data-ttu-id="c904f-104">区切り記号と Visual Basic の文字セット内の特殊文字は、コンパイラやコンパイル済みプログラムを実行するタスクの定義をプログラム テキストの整理から、さまざまな用途があります。</span><span class="sxs-lookup"><span data-stu-id="c904f-104">The punctuation and special characters in the Visual Basic character set have various uses, from organizing program text to defining the tasks that the compiler or the compiled program performs.</span></span> <span data-ttu-id="c904f-105">実行するオペレーションを指定するのには使用されません。</span><span class="sxs-lookup"><span data-stu-id="c904f-105">They do not specify an operation to be performed.</span></span>  

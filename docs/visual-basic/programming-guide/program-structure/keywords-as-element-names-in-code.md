@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33652579"
 ---
 # <a name="keywords-as-element-names-in-code-visual-basic"></a><span data-ttu-id="09b0e-102">コード内の要素名としてのキーワード (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="09b0e-102">Keywords as Element Names in Code (Visual Basic)</span></span>
 <span data-ttu-id="09b0e-103">すべてのプログラム要素 — 変数、クラス、またはメンバーなど、予約されたキーワードと同じ名前を持つことができます。</span><span class="sxs-lookup"><span data-stu-id="09b0e-103">Any program element — such as a variable, class, or member — can have the same name as a restricted keyword.</span></span> <span data-ttu-id="09b0e-104">たとえば、という名前の変数を作成することができます`Loop`です。</span><span class="sxs-lookup"><span data-stu-id="09b0e-104">For example, you can create a variable named `Loop`.</span></span> <span data-ttu-id="09b0e-105">ただし、そのバージョンを参照する —、制限と同じ名前を持つ`Loop`キーワード — 完全修飾文字列を付けますか、角かっこで囲んでする必要があります (`[ ]`) 次の例に示すように、します。</span><span class="sxs-lookup"><span data-stu-id="09b0e-105">However, to refer to your version of it — which has the same name as the restricted `Loop` keyword — you must either precede it with a full qualification string or enclose it in square brackets (`[ ]`), as the following example shows.</span></span>  

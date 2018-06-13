@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33651506"
 ---
 # <a name="differences-between-properties-and-variables-in-visual-basic"></a><span data-ttu-id="8d132-102">Visual Basic のプロパティと変数の違い</span><span class="sxs-lookup"><span data-stu-id="8d132-102">Differences Between Properties and Variables in Visual Basic</span></span>
 <span data-ttu-id="8d132-103">変数とプロパティは、アクセス可能な値を表します。</span><span class="sxs-lookup"><span data-stu-id="8d132-103">Variables and properties both represent values that you can access.</span></span> <span data-ttu-id="8d132-104">ただし、これには記憶域および実装内の違いがあります。</span><span class="sxs-lookup"><span data-stu-id="8d132-104">However, there are differences in storage and implementation.</span></span>  

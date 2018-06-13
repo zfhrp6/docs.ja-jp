@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33650440"
 ---
 # <a name="composite-data-types-visual-basic"></a><span data-ttu-id="ae894-102">複合データ型 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="ae894-102">Composite Data Types (Visual Basic)</span></span>
 <span data-ttu-id="ae894-103">Visual Basic に用意されている基本データ型だけでなく、作成するさまざまな種類の項目を作成することができますも*複合データ型*構造体、配列、およびクラスなどです。</span><span class="sxs-lookup"><span data-stu-id="ae894-103">In addition to the elementary data types Visual Basic supplies, you can also assemble items of different types to create *composite data types* such as structures, arrays, and classes.</span></span> <span data-ttu-id="ae894-104">その他の複合型および基本型からは、複合データ型を構築できます。</span><span class="sxs-lookup"><span data-stu-id="ae894-104">You can build composite data types from elementary types and from other composite types.</span></span> <span data-ttu-id="ae894-105">たとえば、配列メンバーを持つ構造体の要素の配列または構造体を定義できます。</span><span class="sxs-lookup"><span data-stu-id="ae894-105">For example, you can define an array of structure elements, or a structure with array members.</span></span>  

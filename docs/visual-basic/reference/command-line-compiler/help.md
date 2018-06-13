@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33651454"
 ---
 # <a name="-help---visual-basic"></a><span data-ttu-id="1274f-103">-help, -?</span><span class="sxs-lookup"><span data-stu-id="1274f-103">-help, -?</span></span> <span data-ttu-id="1274f-104">(Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="1274f-104">(Visual Basic)</span></span>
 <span data-ttu-id="1274f-105">コンパイラ オプションを出力します。</span><span class="sxs-lookup"><span data-stu-id="1274f-105">Displays the compiler options.</span></span>  

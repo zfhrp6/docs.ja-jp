@@ -22,6 +22,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33656140"
 ---
 # <a name="variable-declaration-in-visual-basic"></a><span data-ttu-id="e0e5c-102">Visual Basic での変数宣言</span><span class="sxs-lookup"><span data-stu-id="e0e5c-102">Variable Declaration in Visual Basic</span></span>
 <span data-ttu-id="e0e5c-103">名前と特性を指定する変数を宣言するとします。</span><span class="sxs-lookup"><span data-stu-id="e0e5c-103">You declare a variable to specify its name and characteristics.</span></span> <span data-ttu-id="e0e5c-104">変数の宣言ステートメントは、 [Dim ステートメント](../../../../visual-basic/language-reference/statements/dim-statement.md)です。</span><span class="sxs-lookup"><span data-stu-id="e0e5c-104">The declaration statement for variables is the [Dim Statement](../../../../visual-basic/language-reference/statements/dim-statement.md).</span></span> <span data-ttu-id="e0e5c-105">その場所と内容は、変数の特性を決定します。</span><span class="sxs-lookup"><span data-stu-id="e0e5c-105">Its location and contents determine the variable's characteristics.</span></span>  

@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33650284"
 ---
 # <a name="walkthrough-validating-that-passwords-are-complex-visual-basic"></a><span data-ttu-id="14653-102">チュートリアル: パスワードの複雑さの検証 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="14653-102">Walkthrough: Validating That Passwords Are Complex (Visual Basic)</span></span>
 <span data-ttu-id="14653-103">このメソッドは、強力なパスワードのいくつかの特性を確認しが失敗したパスワードをチェックに関する情報を含む文字列パラメーターを更新します。</span><span class="sxs-lookup"><span data-stu-id="14653-103">This method checks for some strong-password characteristics and updates a string parameter with information about which checks the password fails.</span></span>  

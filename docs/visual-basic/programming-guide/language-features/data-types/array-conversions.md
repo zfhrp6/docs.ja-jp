@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33651467"
 ---
 # <a name="array-conversions-visual-basic"></a><span data-ttu-id="af099-102">配列の変換 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="af099-102">Array Conversions (Visual Basic)</span></span>
 <span data-ttu-id="af099-103">別の配列型、配列型を変換するには、次の条件を満たしていれば。</span><span class="sxs-lookup"><span data-stu-id="af099-103">You can convert an array type to a different array type provided you meet the following conditions:</span></span>  

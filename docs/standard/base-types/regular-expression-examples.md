@@ -14,6 +14,7 @@ ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/15/2018
+ms.locfileid: "34172504"
 ---
 # <a name="regular-expression-examples"></a><span data-ttu-id="15d8a-102">正規表現の例</span><span class="sxs-lookup"><span data-stu-id="15d8a-102">Regular Expression Examples</span></span>
 <span data-ttu-id="15d8a-103">このセクションでは、一般的なアプリケーションで正規表現を使用するときのコード例を示します。</span><span class="sxs-lookup"><span data-stu-id="15d8a-103">This section contains code examples that illustrate the use of regular expressions in common applications.</span></span>  

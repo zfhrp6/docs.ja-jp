@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33650606"
 ---
 # <a name="how-to-use-a-class-that-defines-operators-visual-basic"></a><span data-ttu-id="59f73-102">方法: 演算子を定義するクラスを使用する (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="59f73-102">How to: Use a Class that Defines Operators (Visual Basic)</span></span>
 <span data-ttu-id="59f73-103">クラスまたは独自の演算子を定義する構造体を使用している場合は、Visual Basic からこれらの演算子を表示できます。</span><span class="sxs-lookup"><span data-stu-id="59f73-103">If you are using a class or structure that defines its own operators, you can access those operators from Visual Basic.</span></span>  

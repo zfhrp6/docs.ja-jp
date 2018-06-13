@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33651571"
 ---
 # <a name="how-to-initialize-an-array-variable-in-visual-basic"></a><span data-ttu-id="52ded-102">方法: Visual Basic で配列変数を初期化する</span><span class="sxs-lookup"><span data-stu-id="52ded-102">How to: Initialize an Array Variable in Visual Basic</span></span>
 <span data-ttu-id="52ded-103">配列リテラルを `New` 句に含めること、および配列の初期値を指定することで、配列変数を初期化します。</span><span class="sxs-lookup"><span data-stu-id="52ded-103">You initialize an array variable by including an array literal in a `New` clause and specifying the initial values of the array.</span></span> <span data-ttu-id="52ded-104">型を指定するか、配列リテラル内の値から推論することを許可できます。</span><span class="sxs-lookup"><span data-stu-id="52ded-104">You can either specify the type or allow it to be inferred from the values in the array literal.</span></span> <span data-ttu-id="52ded-105">型を推論する方法の詳細についてを参照してください「を設定する、配列に初期値」[配列](../../../../visual-basic/programming-guide/language-features/arrays/index.md)です。</span><span class="sxs-lookup"><span data-stu-id="52ded-105">For more information about how the type is inferred, see "Populating an Array with Initial Values" in [Arrays](../../../../visual-basic/programming-guide/language-features/arrays/index.md).</span></span>  

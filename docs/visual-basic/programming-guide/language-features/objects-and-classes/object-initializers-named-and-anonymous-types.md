@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33655637"
 ---
 # <a name="object-initializers-named-and-anonymous-types-visual-basic"></a><span data-ttu-id="3c3c6-102">オブジェクト初期化子: 名前付きの型と匿名型 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="3c3c6-102">Object Initializers: Named and Anonymous Types (Visual Basic)</span></span>
 <span data-ttu-id="3c3c6-103">オブジェクト初期化子を使用すると、1 つの式を使用して、複雑なオブジェクトのプロパティを指定できます。</span><span class="sxs-lookup"><span data-stu-id="3c3c6-103">Object initializers enable you to specify properties for a complex object by using a single expression.</span></span> <span data-ttu-id="3c3c6-104">名前付きの型と匿名型のインスタンスの作成に使用できます。</span><span class="sxs-lookup"><span data-stu-id="3c3c6-104">They can be used to create instances of named types and of anonymous types.</span></span>  

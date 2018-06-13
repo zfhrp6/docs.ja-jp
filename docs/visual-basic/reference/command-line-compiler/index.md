@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33650908"
 ---
 # <a name="visual-basic-command-line-compiler"></a><span data-ttu-id="79d2b-102">Visual Basic のコマンド ライン コンパイラ</span><span class="sxs-lookup"><span data-stu-id="79d2b-102">Visual Basic command-line compiler</span></span>
 

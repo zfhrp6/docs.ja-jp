@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33652774"
 ---
 # <a name="linq-to-xml-vs-dom-visual-basic"></a><span data-ttu-id="5cd5f-102">LINQ to XML およびDOM (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="5cd5f-102">LINQ to XML vs. DOM (Visual Basic)</span></span>
 <span data-ttu-id="5cd5f-103">このセクションでは、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] と、現在主流の XML プログラミング API である W3C ドキュメント オブジェクト モデル (DOM) との主な違いについて説明します。</span><span class="sxs-lookup"><span data-stu-id="5cd5f-103">This section describes some key differences between [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] and the current predominant XML programming API, the W3C Document Object Model (DOM).</span></span>  

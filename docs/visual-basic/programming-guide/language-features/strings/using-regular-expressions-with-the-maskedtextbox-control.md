@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33655472"
 ---
 # <a name="using-regular-expressions-with-the-maskedtextbox-control-in-visual-basic"></a><span data-ttu-id="6d71b-102">Visual Basic の MaskedTextBox コントロールによる正規表現を使用する</span><span class="sxs-lookup"><span data-stu-id="6d71b-102">Using Regular Expressions with the MaskedTextBox Control in Visual Basic</span></span>
 <span data-ttu-id="6d71b-103">この例で使用する簡単な正規表現に変換する方法、<xref:System.Windows.Forms.MaskedTextBox>コントロール。</span><span class="sxs-lookup"><span data-stu-id="6d71b-103">This example demonstrates how to convert simple regular expressions to work with the <xref:System.Windows.Forms.MaskedTextBox> control.</span></span>  

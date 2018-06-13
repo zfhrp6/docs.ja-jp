@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33654178"
 ---
 # <a name="passing-arguments-by-value-and-by-reference-visual-basic"></a><span data-ttu-id="8cbe2-102">引数の値渡しと参照渡し (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="8cbe2-102">Passing Arguments by Value and by Reference (Visual Basic)</span></span>
 <span data-ttu-id="8cbe2-103">Visual basic では、プロシージャに引数を渡すことができます*値によって*または*参照によって*です。</span><span class="sxs-lookup"><span data-stu-id="8cbe2-103">In Visual Basic, you can pass an argument to a procedure *by value* or *by reference*.</span></span> <span data-ttu-id="8cbe2-104">これと呼ばれますが、*渡し*プロシージャが呼び出し元のコードで引数の基になるプログラミング要素を変更できるかどうかを判定します。</span><span class="sxs-lookup"><span data-stu-id="8cbe2-104">This is known as the *passing mechanism*, and it determines whether the procedure can modify the programming element underlying the argument in the calling code.</span></span> <span data-ttu-id="8cbe2-105">プロシージャ宣言では、各パラメーターの引き渡し方法を決定を指定して、 [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md)または[ByRef](../../../../visual-basic/language-reference/modifiers/byref.md)キーワード。</span><span class="sxs-lookup"><span data-stu-id="8cbe2-105">The procedure declaration determines the passing mechanism for each parameter by specifying the [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) or [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md) keyword.</span></span>  

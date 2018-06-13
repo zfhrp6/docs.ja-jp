@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33636742"
 ---
 # <a name="object-doesn39t-support-named-arguments"></a><span data-ttu-id="f135e-102">オブジェクトは&#39;名前付き引数をサポートしていません</span><span class="sxs-lookup"><span data-stu-id="f135e-102">Object doesn&#39;t support named arguments</span></span>
 <span data-ttu-id="f135e-103">メソッドが、名前付き引数をサポートしていないオブジェクトにアクセスしようとしました。</span><span class="sxs-lookup"><span data-stu-id="f135e-103">You tried to access an object whose methods don't support named arguments.</span></span>  

@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33655799"
 ---
 # <a name="boolean-expressions-visual-basic"></a><span data-ttu-id="9108f-102">Boolean 式 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="9108f-102">Boolean Expressions (Visual Basic)</span></span>
 <span data-ttu-id="9108f-103">A*ブール式*の値に評価される式を指定、[ブールのデータ型](../../../../visual-basic/language-reference/data-types/boolean-data-type.md):`True`または`False`です。</span><span class="sxs-lookup"><span data-stu-id="9108f-103">A *Boolean expression* is an expression that evaluates to a value of the [Boolean Data Type](../../../../visual-basic/language-reference/data-types/boolean-data-type.md): `True` or `False`.</span></span> <span data-ttu-id="9108f-104">`Boolean` 式は、いくつかの形式を取ります。</span><span class="sxs-lookup"><span data-stu-id="9108f-104">`Boolean` expressions can take several forms.</span></span> <span data-ttu-id="9108f-105">単純な形式の値を直接比較、`Boolean`変数を`Boolean`リテラルで、次の例に示すようにします。</span><span class="sxs-lookup"><span data-stu-id="9108f-105">The simplest is the direct comparison of the value of a `Boolean` variable to a `Boolean` literal, as shown in the following example.</span></span>  

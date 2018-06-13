@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33652117"
 ---
 # <a name="object-variable-values-visual-basic"></a><span data-ttu-id="f456b-102">オブジェクト変数の値 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="f456b-102">Object Variable Values (Visual Basic)</span></span>
 <span data-ttu-id="f456b-103">変数、[オブジェクト データ型](../../../../visual-basic/language-reference/data-types/object-data-type.md)できる任意の型のデータを参照してください。</span><span class="sxs-lookup"><span data-stu-id="f456b-103">A variable of the [Object Data Type](../../../../visual-basic/language-reference/data-types/object-data-type.md) can refer to data of any type.</span></span> <span data-ttu-id="f456b-104">格納した値、`Object`変数が保持される他の場所で、メモリ内一方変数自体は、データへのポインターを保持します。</span><span class="sxs-lookup"><span data-stu-id="f456b-104">The value you store in an `Object` variable is kept elsewhere in memory, while the variable itself holds a pointer to the data.</span></span>  

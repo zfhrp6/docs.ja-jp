@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33651114"
 ---
 # <a name="how-to-define-a-parameter-for-a-procedure-visual-basic"></a><span data-ttu-id="84493-102">方法: プロシージャに対してパラメーターを定義する (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="84493-102">How to: Define a Parameter for a Procedure (Visual Basic)</span></span>
 <span data-ttu-id="84493-103">A*パラメーター*に呼び出したときに、プロシージャに値を渡すには、呼び出し元のコードを許可します。</span><span class="sxs-lookup"><span data-stu-id="84493-103">A *parameter* allows the calling code to pass a value to the procedure when it calls it.</span></span> <span data-ttu-id="84493-104">プロシージャの各パラメーターを宣言すると、変数を宣言すると、その名前とデータ型を指定するのと同様にします。</span><span class="sxs-lookup"><span data-stu-id="84493-104">You declare each parameter for a procedure the same way you declare a variable, specifying its name and data type.</span></span> <span data-ttu-id="84493-105">また、渡す方法を指定するパラメーターは省略可能かどうか。</span><span class="sxs-lookup"><span data-stu-id="84493-105">You also specify the passing mechanism, and whether the parameter is optional.</span></span>  
