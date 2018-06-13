@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33542120"
 ---
 # <a name="richtextbox-control-overview-windows-forms"></a>RichTextBox コントロールの概要 (Windows フォーム)
 Windows フォーム<xref:System.Windows.Forms.RichTextBox>コントロールを表示、入力すると、および書式設定を含むテキストを操作するために使用します。 <xref:System.Windows.Forms.RichTextBox>コントロールはすべて、<xref:System.Windows.Forms.TextBox>コントロールは、できますが、ことができますフォント、色、およびリンクの表示以外の場合は、ファイルからテキストと埋め込み画像を読み込む、指定した文字を検索します。 <xref:System.Windows.Forms.RichTextBox>通常、コントロールはテキストの操作を提供し、Microsoft Word などのワード プロセッシング アプリケーションと同様の機能の表示に使用します。 同様に、<xref:System.Windows.Forms.TextBox>コントロール、<xref:System.Windows.Forms.RichTextBox>コントロールがスクロール バーを表示できるとは異なり、<xref:System.Windows.Forms.TextBox>コントロール、その既定値は、必要に応じて、水平線と垂直スクロール バーを表示して、追加のスクロール バーの設定があります。  

@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 184e578efb549a1dc2e9ec1e30a29ff289b68719
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33411704"
 ---
 # <a name="icordebugfunctiongetclass-method"></a>ICorDebugFunction::GetClass メソッド
 この関数のメンバーであるクラスを表す ICorDebugClass オブジェクトを取得します。  

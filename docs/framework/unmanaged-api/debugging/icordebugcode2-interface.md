@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 13803a8cc292da602b1b920a3879120c3e754ca4
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33414559"
 ---
 # <a name="icordebugcode2-interface1"></a>ICorDebugCode2 Interface1
 "ICorDebugCode"の機能を拡張するメソッドを提供します。  

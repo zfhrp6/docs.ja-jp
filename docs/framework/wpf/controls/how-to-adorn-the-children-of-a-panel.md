@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33550220"
 ---
 # <a name="how-to-adorn-the-children-of-a-panel"></a>方法 : パネルの子を装飾する
 この例では、指定した子に装飾をプログラムでバインド<xref:System.Windows.Controls.Panel>です。  

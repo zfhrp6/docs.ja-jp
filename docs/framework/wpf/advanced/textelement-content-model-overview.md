@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33548858"
 ---
 # <a name="textelement-content-model-overview"></a>TextElement コンテンツ モデルの概要
 このコンテンツ モデルの概要で説明するサポートされているコンテンツを<xref:System.Windows.Documents.TextElement>です。 <xref:System.Windows.Documents.Paragraph>クラスは、型の<xref:System.Windows.Documents.TextElement>します。 コンテンツ モデルは、他のオブジェクトや要素に含めることのできるオブジェクトや要素を記述します。 この概要から派生したオブジェクトに使用されるコンテンツ モデルの概要を示します<xref:System.Windows.Documents.TextElement>です。 詳細については、次を参照してください。[フロー ドキュメントの概要](../../../../docs/framework/wpf/advanced/flow-document-overview.md)です。  

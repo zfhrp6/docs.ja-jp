@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: ed7de70c8ea26f46f44abb3e063c6e4c4b115666
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33414491"
 ---
 # <a name="icordebugilframesetip-method"></a>ICorDebugILFrame::SetIP メソッド
 Microsoft intermediate language (MSIL) コード内の指定したオフセット位置に、命令ポインターを設定します。  

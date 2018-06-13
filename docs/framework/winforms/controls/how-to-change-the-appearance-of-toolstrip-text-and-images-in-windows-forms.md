@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33530531"
 ---
 # <a name="how-to-change-the-appearance-of-toolstrip-text-and-images-in-windows-forms"></a>方法 : Windows フォーム内の ToolStrip テキストとイメージの外観を変更する
 テキストとイメージを表示するかどうかを制御することができます、<xref:System.Windows.Forms.ToolStripItem>互いを基準としての配置方法と、<xref:System.Windows.Forms.ToolStrip>です。  

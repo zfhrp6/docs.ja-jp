@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 624db77f0db2fe374e16abae64b6bf6ad290baa5
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33411435"
 ---
 # <a name="icordebugcode4-interface"></a>ICorDebugCode4 インターフェイス
 ローカル変数と関数の引数を列挙するデバッガーを有効にするメソッドを提供します。  

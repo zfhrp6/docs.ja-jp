@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33546085"
 ---
 # <a name="performance"></a>パフォーマンス
 最適なアプリケーションのパフォーマンスを達成するためのベスト プラクティスを理解してアプリケーションの設計で考慮が必要[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]アプリケーションの開発。 このセクションのトピックでは、高パフォーマンスの構築に関する追加情報を提供[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]アプリケーションです。  

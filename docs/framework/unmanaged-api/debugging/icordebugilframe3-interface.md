@@ -14,9 +14,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: be45022701f72e15e83b7ca28cd110ef58c809b0
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33415598"
 ---
 # <a name="icordebugilframe3-interface"></a>ICorDebugILFrame3 インターフェイス
 関数の戻り値をカプセル化するメソッドを提供します。 `ICorDebugILFrame3` ICorDebugILFrame および ICorDebugILFrame2 インターフェイスの論理的な拡張です。  

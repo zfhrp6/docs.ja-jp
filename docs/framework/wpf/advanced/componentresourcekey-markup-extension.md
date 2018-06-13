@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33540411"
 ---
 # <a name="componentresourcekey-markup-extension"></a>ComponentResourceKey マークアップ拡張機能
 定義し、外部アセンブリから読み込まれているリソースのキーを参照します。 これには、アセンブリまたはクラスでは、明示的なリソース ディクショナリではなく、アセンブリのターゲットの種類を指定するリソースの参照が使用できます。  

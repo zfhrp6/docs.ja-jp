@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33542250"
 ---
 # <a name="windows-forms"></a>Windows フォーム
 フォームはアプリケーションの基本単位であるため、機能とデザインにある程度の配慮を与えることが重要です。 フォームは、最終的には開発者がユーザー インターフェイスを作成するコントロールとデータを操作するコードを拡張する白紙状態です。 そのために、Visual Studio は、統合開発環境 (IDE)、コードを作成しやすくだけでなく豊富なコントロールを使用して作成された設定、[!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)]です。 これらのコントロールの機能をコードに補完することにより、必要なソリューションを簡単に素早く開発できます。  

@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33538409"
 ---
 # <a name="mouse-capture-in-windows-forms"></a>Windows フォームにおけるマウスのキャプチャ
 *マウスのキャプチャ*コントロールは、すべてのマウス入力のコマンドを実行する場合を参照します。 コントロールがマウスをキャプチャしていた場合は、ポインターが境界内にあるかどうかを示す、マウス入力を受け取ります。  

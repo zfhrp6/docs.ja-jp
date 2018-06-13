@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33526010"
 ---
 # <a name="how-to-display-a-date-in-a-custom-format-with-the-windows-forms-datetimepicker-control"></a>方法 : Windows フォームの DateTimePicker コントロールを使用してカスタム形式で日付を表示する
 Windows フォーム<xref:System.Windows.Forms.DateTimePicker>コントロール柔軟にコントロールにおける日付と時刻の表示の書式設定します。 <xref:System.Windows.Forms.DateTimePicker.Format%2A>プロパティに表示される定義済みの形式から選択することができます、<xref:System.Windows.Forms.DateTimePickerFormat>です。 用途に合わせて適切ながない場合は、形式指定文字を使用して、独自の書式スタイルを作成できます<xref:System.Windows.Forms.DateTimePicker.CustomFormat%2A>です。  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33549566"
 ---
 # <a name="xaml-resources"></a>XAML リソース
 リソースは、アプリケーションで別の場所で再利用可能なオブジェクトです。 リソースの例には、ブラシとスタイルが含まれます。 この概要は、リソースを使用する方法を説明[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]です。 作成してコードを使用して、またはコードの間で同じ意味でリソースにアクセスし、[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]です。 詳細については、次を参照してください。[リソースやコード](../../../../docs/framework/wpf/advanced/resources-and-code.md)です。  

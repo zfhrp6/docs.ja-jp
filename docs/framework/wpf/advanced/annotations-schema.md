@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33542016"
 ---
 # <a name="annotations-schema"></a>注釈スキーマ
 このトピックでは、Microsoft Annotations Framework でユーザー注釈データの保存と取得に使用される XML スキーマ定義 (XSD) について説明します。  

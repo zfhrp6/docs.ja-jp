@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33546658"
 ---
 # <a name="wpf-unmanaged-api-reference"></a>WPF のアンマネージ API リファレンス
 Windows Presentation Foundation (WPF) ライブラリでは、内部使用のみを目的としているアンマネージ関数の数を公開します。 ユーザー コードから呼び出すことはできません。  

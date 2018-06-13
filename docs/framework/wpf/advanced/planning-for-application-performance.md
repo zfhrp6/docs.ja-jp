@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33546953"
 ---
 # <a name="planning-for-application-performance"></a>アプリケーション パフォーマンスの計画
 パフォーマンスの目標を達成できるは、どの程度する戦略を作成するパフォーマンスによって異なります。 計画は、任意の製品の開発の最初のステージです。 このトピックでは、良好なパフォーマンスの戦略を開発するためのいくつかの非常に単純な規則について説明します。  

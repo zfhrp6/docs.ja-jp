@@ -29,6 +29,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33549530"
 ---
 # <a name="input-overview"></a>入力の概要
 <a name="introduction"></a>[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] サブシステムでは、マウス、キーボード、タッチ、およびスタイラスなど、さまざまなデバイスからの入力を取得するために、強力な [!INCLUDE[TLA#tla_api](../../../../includes/tlasharptla-api-md.md)] を提供しています。 このトピックでは、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] で提供されるサービスと、入力システムのアーキテクチャについて説明します。  
