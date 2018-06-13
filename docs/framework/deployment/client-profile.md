@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33390137"
 ---
 # <a name="net-framework-client-profile"></a>.NET Framework Client Profile
 .NET Client Profile は、.NET Framework のサブセットで、[!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] 以前のバージョンに含まれ、クライアント アプリケーション用に最適化されていました。 .NET Framework は、Windows、Windows Phone、および Microsoft Azure 用の開発プラットフォームであり、マネージ アプリの実行環境と .NET Framework クラス ライブラリを提供します。 [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] 以前のバージョンでは、2 種類の配置オプション (完全な .NET Framework と Client Profile) が用意されていました。 完全な .NET Framework に比べて、Client Profile では、配置の迅速化とアプリ インストール パッケージの小型化が実現されました。  

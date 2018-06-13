@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 9ed65181abab58117d539d23fcfeffe71ac19388
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33430571"
 ---
 # <a name="assemblyinfo-structure"></a>ASSEMBLY_INFO 構造体
 グローバル アセンブリ キャッシュに登録されているアセンブリに関する情報が含まれています。  

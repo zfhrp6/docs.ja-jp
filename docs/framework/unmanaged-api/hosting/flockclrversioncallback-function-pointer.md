@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 5c884d07fa35c053b1a3b65c04426ac0e3712621
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33429674"
 ---
 # <a name="flockclrversioncallback-function-pointer"></a>FLockClrVersionCallback 関数ポインター
 初期化を示すために、共通言語ランタイム (CLR) 呼び出しの開始または完了がいる関数へのポインター。  
