@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33329561"
 ---
 # <a name="how-to-build-linq-to-xml-examples-c"></a>方法: LINQ to XML の例をビルドする (C#)
 このドキュメントに含まれている各種のスニペットおよびコード例では、さまざまな名前空間のクラスと型が使用されます。 C# のコードをコンパイルする場合は、適切な `using` ディレクティブを指定する必要があります。  

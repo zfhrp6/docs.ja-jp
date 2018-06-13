@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33646553"
 ---
 # <a name="control-flow-in-visual-basic"></a>Visual Basic における制御フロー
 制御されていないままの場合、プログラムは最初から最後までそのステートメントを使って続行されます。 この 1 方向のフローのみを使用して、いくつかの単純なプログラムを記述できます。 ただし、任意のプログラミング言語の能力とユーティリティのほとんどは、制御ステートメントとループで実行する順番を変更する機能からのものです。  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32763788"
 ---
 # <a name="ampamp-and-entity-sql"></a>&amp;&amp; (と)(Entity SQL)
 両方の式が `true` の場合は `true`を返します。それ以外の場合は `false` または `NULL`を返します。  

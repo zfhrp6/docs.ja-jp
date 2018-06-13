@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33535234"
 ---
 # <a name="how-to-specify-default-values-for-new-rows-in-the-windows-forms-datagridview-control"></a>方法 : Windows フォーム DataGridView コントロールの新しい行に既定値を指定する
 ことができますデータ エントリ方が便利なアプリケーションがいっぱいになる既定の新しく追加された行の値。 <xref:System.Windows.Forms.DataGridView>クラスを入力することを既定の値を<xref:System.Windows.Forms.DataGridView.DefaultValuesNeeded>イベント。 このイベントは、ユーザーが新しいレコードの行を入力します。 コードでは、このイベントを処理する場合は、独自の値を持つ任意のセルを設定できます。  

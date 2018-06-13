@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33644397"
 ---
 # <a name="introduction-to-com-interop-visual-basic"></a>COM 相互運用の概要 (Visual Basic)
 コンポーネント オブジェクト モデル (COM) は、他のコンポーネントおよびホスト アプリケーションには、その機能を公開するオブジェクトを付与します。 COM オブジェクトは、Windows 長年にわたってプログラミングの基本されていますが、共通言語ランタイム (CLR) 用に設計されたアプリケーションでは、多くの利点が提供しています。  

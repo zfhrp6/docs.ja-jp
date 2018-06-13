@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33327738"
 ---
 # <a name="linq-and-generic-types-c"></a>LINQ とジェネリック型 (C#)
 [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] クエリは、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] Version 2.0 で導入されたジェネリック型に基づいています。 クエリを記述するために、ジェネリックについて詳しく知っておく必要ありません。 ただし、次の 2 つの基本的な概念を理解しておくと役立ちます。  

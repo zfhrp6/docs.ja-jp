@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 832d66eee14680870e70f1e0e8d40987eff3257f
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33457575"
 ---
 # <a name="gethashfromassemblyfilew-function"></a>GetHashFromAssemblyFileW 関数
 指定したハッシュ アルゴリズムを使用して、指定したアセンブリ ファイルのハッシュを取得します。 アセンブリ ファイルへのパスは、Unicode 文字列として指定してください。  

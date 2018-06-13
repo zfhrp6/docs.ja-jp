@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33562025"
 ---
 # <a name="xmllang-handling-in-xaml"></a>XAML における xml:lang の処理
 `xml:lang` 属性は [!INCLUDE[TLA2#tla_xml](../../../includes/tla2sharptla-xml-md.md)]の定義済み属性の 1 つであり、XML の要素の言語およびカルチャ情報を宣言します。 属性の意味は XAML でも同じですが、いくつかの追加の考慮事項が適用されます。  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33649114"
 ---
 # <a name="object-variables-in-visual-basic"></a>Visual Basic におけるオブジェクト変数
 値を直接格納だけでなく、変数は、オブジェクトを参照できます。 同じ理由から、変数に任意の値を代入するには、変数にオブジェクトを割り当てます。  

@@ -18,9 +18,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 6ba2103003e3976e51e82ad6b42315a881582f5a
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33444292"
 ---
 # <a name="corparamattr-enumeration"></a>CorParamAttr 列挙型
 メソッド パラメーターのメタデータを記述する値が格納されます。  

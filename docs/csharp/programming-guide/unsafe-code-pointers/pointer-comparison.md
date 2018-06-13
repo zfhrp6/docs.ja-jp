@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33337705"
 ---
 # <a name="pointer-comparison-c-programming-guide"></a>ポインター比較 (C# プログラミング ガイド)
 次の演算子を適用して、任意の型のポインターを比較できます。  

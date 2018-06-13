@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33644733"
 ---
 # <a name="sample-xml-file-numerical-data-in-a-namespace"></a>サンプル XML ファイル : 名前空間内の数値データ
 次の XML ファイルは、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] ドキュメントのさまざまな例で使用されます。 このファイルには、集計、平均、およびグループ化用の数値データが含まれています。 XML は名前空間に含まれています。  

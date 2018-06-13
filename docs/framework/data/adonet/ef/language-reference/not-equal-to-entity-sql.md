@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32763697"
 ---
 # <a name="-not-equal-to-entity-sql"></a>!= (等しくない) (Entity SQL)
 2 つの式を比較して、左の式の値が右の式の値と等しくないかどうかを判別します。 != (等しくない) 演算子は、機能的には <> 演算子と同じです。  

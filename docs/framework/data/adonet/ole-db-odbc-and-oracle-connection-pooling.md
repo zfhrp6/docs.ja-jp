@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33803125"
 ---
 # <a name="ole-db-odbc-and-oracle-connection-pooling"></a>OLE DB、ODBC、および Oracle 接続プール
 接続をプールすると、アプリケーションのパフォーマンスとスケーラビリティを大幅に改善できます。 このセクションでは、OLE DB、ODBC、および Oracle 用の .NET Framework データ プロバイダーの接続プールについて説明します。  

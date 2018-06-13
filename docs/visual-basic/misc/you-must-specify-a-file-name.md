@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33641015"
 ---
 # <a name="you-must-specify-a-file-name"></a>ファイル名を指定する必要があります
 ファイルの移動やファイルのコピーなど、ファイル名を指定する必要がある操作を実行しようとしました。  

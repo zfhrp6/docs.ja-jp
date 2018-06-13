@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33647215"
 ---
 # <a name="type-conversions-in-visual-basic"></a>Visual Basic における型変換
 値の 1 つのデータ型から別の型に変更するプロセスが呼び出されると*変換*です。 いずれかの変換は*拡大*または*縮小*関連する型のデータ容量に応じて、します。 *暗黙的な*または*明示的な*、ソース コード内の構文によって異なります。  

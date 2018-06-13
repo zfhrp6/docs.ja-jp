@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33214992"
 ---
 # <a name="how-to-set-environment-variables-for-the-visual-studio-command-line"></a>方法 : Visual Studio のコマンドラインのための環境変数を設定する
 

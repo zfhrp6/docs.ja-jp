@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33533557"
 ---
 # <a name="how-to-set-the-selection-mode-of-the-windows-forms-datagridview-control"></a>方法 : Windows フォーム DataGridView コントロールの選択モードを設定する
 次のコード例を構成する方法を示しています、<xref:System.Windows.Forms.DataGridView>コントロールにできるように、場所をクリックし、行に自動的には、全体の行を選択し、一度に 1 つだけその行を選択できるようにします。  

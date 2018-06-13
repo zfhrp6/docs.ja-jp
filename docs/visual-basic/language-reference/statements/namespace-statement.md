@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33604869"
 ---
 # <a name="namespace-statement"></a>Namespace ステートメント
 名前空間の名前を宣言し、ソース コードがその名前空間内でコンパイルするように宣言します。  

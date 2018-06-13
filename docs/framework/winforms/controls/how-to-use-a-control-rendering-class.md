@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33534106"
 ---
 # <a name="how-to-use-a-control-rendering-class"></a>方法 : コントロールの描画クラスを使用する
 この例で使用する方法、<xref:System.Windows.Forms.ComboBoxRenderer>をコンボ ボックスの矢印ボックス コントロールをレンダリングします。 例から成る、<xref:System.Windows.Forms.Control.OnPaint%2A>単純なカスタム コントロールのメソッドです。 <xref:System.Windows.Forms.ComboBoxRenderer.IsSupported%2A?displayProperty=nameWithType>プロパティを使用して、アプリケーション ウィンドウのクライアント領域で visual スタイルが有効かどうかを確認します。 Visual スタイルが、アクティブな場合、<xref:System.Windows.Forms.ComboBoxRenderer.DrawDropDownButton%2A?displayProperty=nameWithType>メソッドは、visual スタイル; で、ドロップダウン矢印をレンダリングするそれ以外の場合、<xref:System.Windows.Forms.ControlPaint.DrawComboButton%2A?displayProperty=nameWithType>メソッドは従来の Windows スタイルでのドロップダウン矢印を表示します。  

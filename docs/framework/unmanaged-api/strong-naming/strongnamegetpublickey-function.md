@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: c3ace4a3103231f776d4e2b034f8e18ce861ee97
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33461014"
 ---
 # <a name="strongnamegetpublickey-function"></a>StrongNameGetPublicKey 関数
 プライベート/パブリック キーのペアから公開キーを取得します。 暗号化サービス プロバイダー (CSP) 内のキー コンテナー名、またはバイトの生のコレクションとして、キーのペアを指定できます。  

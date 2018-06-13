@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32764139"
 ---
 # <a name="entity-set"></a>エンティティ セット
 *エンティティ セット*の論理的なコンテナーは、のインスタンス、[エンティティ型](../../../../docs/framework/data/adonet/entity-type.md)とそのエンティティ型から派生した任意の型のインスタンス。 (派生型については、次を参照してください[Entity Data Model: 継承](../../../../docs/framework/data/adonet/entity-data-model-inheritance.md)。)。エンティティ型とエンティティ セットの関係は、リレーショナル データベースの行とテーブルの関係に似ており、エンティティ型は行のようにデータ構造を表し、エンティティ セットにはテーブルのように構造のインスタンスが格納されます。 エンティティ セットは、データ モデリング構造ではなく、データ構造を表しません。 エンティティ セットは、エンティティ型のインスタンスをグループ化してデータ ストアにマップするための、ホスト環境またはストレージ環境 (共通言語ランタイムや SQL Server データベースなど) の構造を提供します。  

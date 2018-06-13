@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33534746"
 ---
 # <a name="how-to-lock-controls-to-windows-forms"></a>方法 : Windows フォームにコントロールをロックする
 Windows アプリケーションのユーザー インターフェイス (UI) を設計するときは、正しく配置を誤って移動や、その他のプロパティを設定するときのサイズを変更しないように後に、コントロールをロックできます。  

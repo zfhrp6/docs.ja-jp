@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33219246"
 ---
 # <a name="float-c-reference"></a>float (C# リファレンス)
 `float` キーワードは、32 ビット浮動小数点値を格納する単純な型を示します。 次の表では、`float` 型の有効桁数とおおよその範囲を示します。  

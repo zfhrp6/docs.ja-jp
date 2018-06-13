@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33642065"
 ---
 # <a name="the-folder-cannot-be-created-since-a-file-already-exists-with-the-same-path"></a>同じパスのファイルが既に存在するため、フォルダーを作成できません
 ディレクトリを作成しようとしましたが、そのパスを持つファイルが既に存在します。 これは、パスが誤って解析された結果発生することがあります (特に相対パスを使用している場合)。  

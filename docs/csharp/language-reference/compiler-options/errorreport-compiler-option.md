@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33218986"
 ---
 # <a name="-errorreport-c-compiler-options"></a>-errorreport (C# コンパイラ オプション)
 このオプションは、C# 内部コンパイラ エラーを Microsoft に報告する方法として便利です。  

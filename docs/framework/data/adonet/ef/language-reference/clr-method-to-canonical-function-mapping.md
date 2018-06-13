@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32766596"
 ---
 # <a name="clr-method-to-canonical-function-mapping"></a>CLR メソッドと正規関数とのマッピング
 Entity Framework は、文字列操作、数学関数などの多くのデータベース システム間で共通の機能を実装する正規関数のセットを提供します。 この関数により、開発者は広範なデータベース システムをターゲットとして指定することができます。 LINQ to Entities などのクエリ テクノロジから呼び出されると、これらの正規関数は使用されているプロバイダーに対応した正しい格納関数に変換されます。 これにより、関数の呼び出しをデータ ソース間で共通の形式で表すことができ、データ ソース間に一貫した方法でクエリを利用できます。 オペランドが数値型である場合は、ビット単位の AND、OR、NOT、および XOR 演算子も正規関数にマップされます。 ブール型のオペランドの場合、ビット単位の AND、OR、NOT、および XOR 演算子は、それぞれのオペランドの論理 AND、OR、NOT、および XOR 演算を計算します。 詳細については、次を参照してください。[正規関数](../../../../../../docs/framework/data/adonet/ef/language-reference/canonical-functions.md)です。  

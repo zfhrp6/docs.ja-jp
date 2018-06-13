@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33656283"
 ---
 # <a name="object-variable-declaration-visual-basic"></a>オブジェクト変数の宣言 (Visual Basic)
 オブジェクト変数を宣言するのにには、通常の宣言ステートメントを使用します。 どちらか、データ型を指定する`Object`(つまり、[オブジェクト データ型](../../../../visual-basic/language-reference/data-types/object-data-type.md)) または元のオブジェクトを作成する具体的なクラスです。  

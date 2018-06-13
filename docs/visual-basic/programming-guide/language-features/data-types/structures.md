@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33647265"
 ---
 # <a name="structures-visual-basic"></a>構造体 (Visual Basic)
 A*構造*ユーザー定義型 (UDT) 以前のバージョンの Visual Basic でサポートされるを一般化しました。 構造体には、フィールド、だけでなく、プロパティ、メソッド、およびイベントを公開できます。 構造体が 1 つまたは複数のインターフェイスを実装し、フィールドごとに個別のアクセス レベルを宣言することができます。  

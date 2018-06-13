@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33562266"
 ---
 # <a name="how-to-set-a-property-after-animating-it-with-a-storyboard"></a>方法 : ストーリーボードを使用してアニメーション化した後にプロパティを設定する
 場合によっては、アニメーション化された後、プロパティの値を変更することはできません、ことがあります。  

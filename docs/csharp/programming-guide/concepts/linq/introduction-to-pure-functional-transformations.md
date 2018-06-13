@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33329102"
 ---
 # <a name="introduction-to-pure-functional-transformations-c"></a>純粋関数型変換の概要 (C#)
 ここでは、関数型変換の概要について、その基になる概念や、それをサポートする言語構成要素も含めて説明します。 また、オブジェクト指向変換と関数型変換という 2 つのプログラミング方法を対比させて、関数型変換に移行するためのアドバイスを紹介します。 関数型変換はさまざまなプログラミング シナリオで使用できますが、ここでは XML 変換を具体例として取り上げます。  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33643439"
 ---
 # <a name="advanced-linq-to-xml-programming-visual-basic"></a>高度な LINQ to XML プログラミング (Visual Basic)
 ここでは、特定の [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] シナリオにおける上級開発者だけを対象とした情報を紹介します。  

@@ -25,6 +25,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33655190"
 ---
 # <a name="inheritance-basics-visual-basic"></a>継承の基本 (Visual Basic)
 `Inherits`という、新しいクラスを宣言するステートメントを使用、*クラスを派生*と呼ばれる、既存のクラスに基づいて、*基底クラス*です。 派生クラスでは、継承、プロパティ、メソッド、イベント、フィールド、および、基底クラスで定義されている定数は、拡張できます。 次のセクションでは、継承、に対するルールの一部について説明し、方法クラスを変更するのに使用できる修飾子を継承継承されます。  

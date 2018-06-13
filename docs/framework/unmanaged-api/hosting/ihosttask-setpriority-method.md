@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 6888e11038af09e797ebaff5a97107ceb8d662e8
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33444079"
 ---
 # <a name="ihosttasksetpriority-method"></a>IHostTask::SetPriority メソッド
 要求スレッドの優先度を変更するホスト レベルの現在のタスクの[IHostTask](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md)インスタンス。  

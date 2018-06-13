@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33644356"
 ---
 # <a name="walkthrough-calling-windows-apis-visual-basic"></a>チュートリアル: Windows API の呼び出し (Visual Basic)
 Windows Api は、Windows オペレーティング システムの一部であるダイナミック リンク ライブラリ (Dll) です。 それらを使用して、タスクを実行するときは、独自の同等のプロシージャを記述することは困難です。 たとえば、という名前の関数は、Windows`FlashWindowEx`をアプリケーションのタイトル バーを薄いおよび濃い網掛けが交互に行うことができます。  

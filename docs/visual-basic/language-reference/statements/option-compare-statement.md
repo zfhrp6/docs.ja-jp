@@ -23,6 +23,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33605304"
 ---
 # <a name="option-compare-statement"></a>Option Compare ステートメント
 文字列データを比較するときに使用する既定の比較方法を宣言します。  

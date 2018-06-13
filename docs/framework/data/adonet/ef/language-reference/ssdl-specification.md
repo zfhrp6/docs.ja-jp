@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32762768"
 ---
 # <a name="ssdl-specification"></a>SSDL 仕様
 [Msdn.microsoft.com/data/ef](http://msdn.microsoft.com/data/ef)サイトでは、主に Entity Framework に関するコンテンツ。  

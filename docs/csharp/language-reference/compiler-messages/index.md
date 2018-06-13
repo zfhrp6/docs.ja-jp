@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33213210"
 ---
 # <a name="c-compiler-errors"></a>C# コンパイラ エラー
 一部の C# コンパイラ エラーには、エラーが生成された理由について説明するトピックがあり、エラーの解決方法が示されていることがあります。 次のいずれかの手順に従って、特定のエラー メッセージのヘルプが存在するかどうかを確認してください。  

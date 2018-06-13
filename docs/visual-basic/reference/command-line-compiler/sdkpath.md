@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33654766"
 ---
 # <a name="-sdkpath"></a>-sdkpath
 Mscorlib.dll および Microsoft.VisualBasic.dll の位置を指定します。  
