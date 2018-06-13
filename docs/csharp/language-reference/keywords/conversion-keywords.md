@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33213949"
 ---
 # <a name="conversion-keywords-c-reference"></a>変換キーワード (C# リファレンス)
 ここでは、型変換で使用されるキーワードについて説明します。  

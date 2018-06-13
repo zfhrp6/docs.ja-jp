@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33552897"
 ---
 # <a name="progressbar"></a>ProgressBar
 A<xref:System.Windows.Controls.ProgressBar>操作の進行状況を示します。 <xref:System.Windows.Controls.ProgressBar>操作の進行状況に応じて、システムの強調表示色で塗りつぶされているウィンドウのコントロールで構成されます。  

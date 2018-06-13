@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33551753"
 ---
 # <a name="popup"></a>ポップアップ
 <xref:System.Windows.Controls.Primitives.Popup>コントロールは、現在のアプリケーション ウィンドウで別のウィンドウでコンテンツを表示します。  

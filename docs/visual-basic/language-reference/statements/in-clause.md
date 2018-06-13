@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33597397"
 ---
 # <a name="in-clause-visual-basic"></a>In 句 (Visual Basic)
 ループ変数がでスキャンするには、グループを指定します、`For Each`ループ、またはコレクション内のクエリを指定、 `From`、 `Join`、または`Group Join`句。  

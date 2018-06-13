@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33522826"
 ---
 # <a name="getting-started-with-graphics-programming"></a>グラフィックス プログラミングについて
 このセクションを使用して作業を開始する方法を示しています。 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] Windows フォーム アプリケーションでします。 次のトピックをいくつかを完了する方法について説明[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]を描画し、図形やテキストの入力などのタスクです。  

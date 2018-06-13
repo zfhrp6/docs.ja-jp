@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33334757"
 ---
 # <a name="boxing-nullable-types-c-programming-guide"></a>Null 許容型のボックス化 (C# プログラミング ガイド)
 Null 許容型に基づくオブジェクトは、オブジェクトが Null 以外の場合にのみボックス化されます。 <xref:System.Nullable%601.HasValue%2A> が `false` の場合、オブジェクト参照はボックス化ではなく `null` に割り当てられます。 例:  

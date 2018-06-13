@@ -12,6 +12,7 @@ ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/15/2018
+ms.locfileid: "34171942"
 ---
 # <a name="typeof-c-reference"></a>typeof (C# リファレンス)
 型の `System.Type` オブジェクトを取得するために使用されます。 `typeof` 式は次の形式になります。  

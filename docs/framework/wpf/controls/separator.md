@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33551052"
 ---
 # <a name="separator"></a>区切り記号
 A<xref:System.Windows.Controls.Separator>コントロールを描画ライン、横方向またはコントロール内の項目間の垂直など<xref:System.Windows.Controls.ListBox>、 <xref:System.Windows.Controls.Menu>、および<xref:System.Windows.Controls.ToolBar>です。  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33597384"
 ---
 # <a name="xml-comment-exception-must-have-a-39cref39-attribute"></a>XML コメントの例外があります、 &#39;cref&#39;属性
 \<例外 > タグは、メソッドによってスローされる可能性がありますのある例外を文書化する方法を提供します。 必要な`cref`属性は、ドキュメント ジェネレーターによってチェックされているメンバーの名前を指定します。 メンバーが存在する場合は、ドキュメント ファイル内の標準要素名に変換されます。  

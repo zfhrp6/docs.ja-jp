@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33520566"
 ---
 # <a name="control-help-using-tooltips"></a>ツールヒントを使用したコントロールのヘルプ
 使用することができます、<xref:System.Windows.Forms.ToolTip>特化した Windows フォームでの個々 のコントロールのヘルプ メッセージを概要を表示するコンポーネントです。 <xref:System.Windows.Forms.ToolTip>コンポーネントは、フォーム上の各コントロールに表示されるテキストを指定するプロパティを提供します。 操作の詳細については、<xref:System.Windows.Forms.ToolTip>これにより、コンポーネントを参照してください[する方法: デザイン時に Windows フォームのコントロールにツールヒントを設定](../../../../docs/framework/winforms/controls/how-to-set-tooltips-for-controls-on-a-windows-form-at-design-time.md)です。 また、構成することができます、<xref:System.Windows.Forms.ToolTip>コンポーネントの表示前に遅延があるようにします。 詳細については、次を参照してください。[する方法: Windows フォームの ToolTip コンポーネントの遅延時間を変更](../../../../docs/framework/winforms/controls/how-to-change-the-delay-of-the-windows-forms-tooltip-component.md)です。  

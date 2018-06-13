@@ -9,6 +9,7 @@ ms.sourcegitcommit: 895c7602386a6dfe7ca4facce3d965b27e5c6e87
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/19/2018
+ms.locfileid: "34312210"
 ---
 # <a name="object-doesnt-support-this-action-visual-basic"></a>オブジェクトはこの操作をサポートしていません (Visual Basic)
 このオブジェクトでサポートされていないメソッドまたはプロパティを参照しました。  

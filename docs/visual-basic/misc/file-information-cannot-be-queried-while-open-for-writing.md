@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33636372"
 ---
 # <a name="file-information-cannot-be-queried-while-open-for-writing"></a>書き込みのためにファイルが開いている間は、ファイル情報を照会することはできません
 書き込み用に現在開いているファイルに関する情報を取得しようとしました。  

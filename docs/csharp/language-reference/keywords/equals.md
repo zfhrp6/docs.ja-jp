@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33216176"
 ---
 # <a name="equals-c-reference"></a>equals (C# リファレンス)
 `equals` コンテキスト キーワードは、クエリ式の `join` 句で、2 つのシーケンスの要素を比較するときに使用されます。 詳細については、「[join 句](../../../csharp/language-reference/keywords/join-clause.md)」を参照してください。  

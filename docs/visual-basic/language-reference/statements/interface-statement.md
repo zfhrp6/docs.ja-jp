@@ -12,6 +12,7 @@ ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34233913"
 ---
 # <a name="interface-statement-visual-basic"></a>Interface ステートメント (Visual Basic)
 インターフェイスの名前を宣言し、インターフェイスに含まれるメンバーの定義を紹介します。  

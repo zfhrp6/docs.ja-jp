@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33550125"
 ---
 # <a name="contextmenu"></a>ContextMenu
 <xref:System.Windows.Controls.ContextMenu>コントロールが表示できるように、<xref:System.Windows.Controls.Menu>コントロールのコンテキストに固有です。 通常、<xref:System.Windows.Controls.ContextMenu>で公開されている、[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]マウスの右ボタンまたはキーボードのメニュー ボタンを使用します。  
