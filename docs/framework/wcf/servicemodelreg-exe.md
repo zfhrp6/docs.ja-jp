@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33808927"
 ---
 # <a name="servicemodel-registration-tool-servicemodelregexe"></a><span data-ttu-id="aa74a-102">ServiceModel 登録ツール (ServiceModelReg.exe)</span><span class="sxs-lookup"><span data-stu-id="aa74a-102">ServiceModel Registration Tool (ServiceModelReg.exe)</span></span>
 <span data-ttu-id="aa74a-103">このコマンド ライン ツールは、単一コンピューター上で WCF および WF コンポーネントの登録を管理するための機能を提供します。</span><span class="sxs-lookup"><span data-stu-id="aa74a-103">This command-line tool provides the ability to manage the registration of WCF and WF components on a single machine.</span></span> <span data-ttu-id="aa74a-104">WCF および WF コンポーネントはインストール時に構成されるため、通常の状況ではこのツールを使用する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="aa74a-104">Under normal circumstances you should not need to use this tool as WCF and WF components are configured when installed.</span></span> <span data-ttu-id="aa74a-105">しかし、サービスのアクティブ化に関する問題が発生する場合は、このツールを使用してコンポーネントを登録できます。</span><span class="sxs-lookup"><span data-stu-id="aa74a-105">But if you are experiencing problems with service activation, you can try to register the components using this tool.</span></span>  

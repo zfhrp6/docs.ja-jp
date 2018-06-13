@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33643581"
 ---
 # <a name="how-to-project-an-anonymous-type-visual-basic"></a><span data-ttu-id="79828-102">方法: プロジェクトの匿名型 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="79828-102">How to: Project an Anonymous Type (Visual Basic)</span></span>
 <span data-ttu-id="79828-103">短期間しか使用しないことがわかっている新しい型にクエリを射影することが必要になる場合があります。</span><span class="sxs-lookup"><span data-stu-id="79828-103">In some cases you might want to project a query to a new type, even though you know you will only use this type for a short while.</span></span> <span data-ttu-id="79828-104">単に射影で使用するために新しい型を作成するのは大きな負担です。</span><span class="sxs-lookup"><span data-stu-id="79828-104">It is a lot of extra work to create a new type just to use in the projection.</span></span> <span data-ttu-id="79828-105">この場合は、匿名型に射影する方法が効率的です。</span><span class="sxs-lookup"><span data-stu-id="79828-105">A more efficient approach in this case is to project to an anonymous type.</span></span> <span data-ttu-id="79828-106">匿名型を使用すると、クラス名を指定することなくクラスを定義し、そのクラスのオブジェクトを宣言して初期化できます。</span><span class="sxs-lookup"><span data-stu-id="79828-106">Anonymous types allow you to define a class, then declare and initialize an object of that class, without giving the class a name.</span></span>  

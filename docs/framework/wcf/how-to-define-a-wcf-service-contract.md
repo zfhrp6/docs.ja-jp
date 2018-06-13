@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809226"
 ---
 # <a name="how-to-define-a-windows-communication-foundation-service-contract"></a><span data-ttu-id="87f6d-102">方法 : Windows Communication Foundation サービス コントラクトを定義する</span><span class="sxs-lookup"><span data-stu-id="87f6d-102">How to: Define a Windows Communication Foundation Service Contract</span></span>
 <span data-ttu-id="87f6d-103">これは、基本的な Windows Communication Foundation (WCF) アプリケーションを作成するために必要な 6 つのタスクの最初の数値です。</span><span class="sxs-lookup"><span data-stu-id="87f6d-103">This is the first of six tasks required to create a basic Windows Communication Foundation (WCF) application.</span></span> <span data-ttu-id="87f6d-104">タスクの 6 つのすべての概要については、次を参照してください。、[チュートリアル入門](../../../docs/framework/wcf/getting-started-tutorial.md)トピックです。</span><span class="sxs-lookup"><span data-stu-id="87f6d-104">For an overview of all six of the tasks, see the [Getting Started Tutorial](../../../docs/framework/wcf/getting-started-tutorial.md) topic.</span></span>  

@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33633121"
 ---
 # <a name="cannot-calculate-number-of-periods-using-the-arguments-provided"></a><span data-ttu-id="c2bca-102">指定された引数を使って期間を計算することはできません</span><span class="sxs-lookup"><span data-stu-id="c2bca-102">Cannot calculate number of periods using the arguments provided</span></span>
 <span data-ttu-id="c2bca-103">呼び出し、`NPer`関数は、必須の引数のすべては含まれません。</span><span class="sxs-lookup"><span data-stu-id="c2bca-103">A call to the `NPer` function does not contain all of the required arguments.</span></span>  

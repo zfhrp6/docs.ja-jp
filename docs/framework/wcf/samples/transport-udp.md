@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33808417"
 ---
 # <a name="transport-udp"></a><span data-ttu-id="62042-102">トランスポート: UDP</span><span class="sxs-lookup"><span data-stu-id="62042-102">Transport: UDP</span></span>
 <span data-ttu-id="62042-103">UDP トランスポートのサンプルでは、UDP ユニキャストとマルチキャストをカスタムの Windows Communication Foundation (WCF) トランスポートとして実装する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="62042-103">The UDP Transport sample demonstrates how to implement UDP unicast and multicast as a custom Windows Communication Foundation (WCF) transport.</span></span> <span data-ttu-id="62042-104">このサンプルでは、WCF では、WCF のベスト プラクティスに従うと、チャネル フレームワークを使用してカスタム トランスポートを作成するための推奨手順について説明します。</span><span class="sxs-lookup"><span data-stu-id="62042-104">The sample describes the recommended procedure for creating a custom transport in WCF, by using the channel framework and following WCF best practices.</span></span> <span data-ttu-id="62042-105">カスタム トランスポートを作成する手順は、次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="62042-105">The steps to create a custom transport are as follows:</span></span>  
