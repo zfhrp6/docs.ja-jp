@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 0f1b08adfcef20fe6912f94d97d78c50875c2bdb
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33411841"
 ---
 # <a name="icordebugeditandcontinuesnapshotgetmvid-method"></a><span data-ttu-id="4c70e-102">ICorDebugEditAndContinueSnapshot::GetMvid メソッド</span><span class="sxs-lookup"><span data-stu-id="4c70e-102">ICorDebugEditAndContinueSnapshot::GetMvid Method</span></span>
 <span data-ttu-id="4c70e-103">`GetMvid` は互換性のために残されています。</span><span class="sxs-lookup"><span data-stu-id="4c70e-103">`GetMvid` is obsolete.</span></span> <span data-ttu-id="4c70e-104">このメソッドを呼び出さないでください。</span><span class="sxs-lookup"><span data-stu-id="4c70e-104">Do not call this method.</span></span>  

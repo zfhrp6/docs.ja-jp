@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33334757"
 ---
 # <a name="boxing-nullable-types-c-programming-guide"></a><span data-ttu-id="1d1bd-102">Null 許容型のボックス化 (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="1d1bd-102">Boxing Nullable Types (C# Programming Guide)</span></span>
 <span data-ttu-id="1d1bd-103">Null 許容型に基づくオブジェクトは、オブジェクトが Null 以外の場合にのみボックス化されます。</span><span class="sxs-lookup"><span data-stu-id="1d1bd-103">Objects based on nullable types are only boxed if the object is non-null.</span></span> <span data-ttu-id="1d1bd-104"><xref:System.Nullable%601.HasValue%2A> が `false` の場合、オブジェクト参照はボックス化ではなく `null` に割り当てられます。</span><span class="sxs-lookup"><span data-stu-id="1d1bd-104">If <xref:System.Nullable%601.HasValue%2A> is `false`, the object reference is assigned to `null` instead of boxing.</span></span> <span data-ttu-id="1d1bd-105">例:</span><span class="sxs-lookup"><span data-stu-id="1d1bd-105">For example:</span></span>  

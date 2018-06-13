@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33572929"
 ---
 # <a name="xpath-namespace-navigation"></a><span data-ttu-id="c33b8-102">XPath 名前空間のナビゲーション</span><span class="sxs-lookup"><span data-stu-id="c33b8-102">XPath Namespace Navigation</span></span>
 <span data-ttu-id="c33b8-103">XML ドキュメントで XPath クエリを使用するには、XML 名前空間およびそれらの名前空間に含まれる要素を、正しくアドレス指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c33b8-103">To use XPath queries with XML documents, you have to correctly address XML namespaces and the elements contained by namespaces.</span></span> <span data-ttu-id="c33b8-104">名前空間は、名前が複数のコンテキストで使用される場合に生じる可能性がある、あいまいさを防ぎます。たとえば、`ID` という名前は、XML ドキュメントの複数の異なる要素に関連付けられた複数の ID を参照する場合があります。</span><span class="sxs-lookup"><span data-stu-id="c33b8-104">Namespaces prevent ambiguities that can occur when names are used in more than one context; for example, the name `ID` may refer to more than one identifier associated with different elements of an XML document.</span></span> <span data-ttu-id="c33b8-105">名前空間の構文では、XML ドキュメントの各要素を識別する、URI、名前、およびプレフィックスを指定します。</span><span class="sxs-lookup"><span data-stu-id="c33b8-105">Namespace syntax specifies URIs, names, and prefixes that distinguish the elements of an XML document.</span></span>  

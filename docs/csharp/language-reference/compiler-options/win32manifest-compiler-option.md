@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33214959"
 ---
 # <a name="-win32manifest-c-compiler-options"></a><span data-ttu-id="f0210-102">-win32manifest (C# コンパイラ オプション)</span><span class="sxs-lookup"><span data-stu-id="f0210-102">-win32manifest (C# Compiler Options)</span></span>
 <span data-ttu-id="f0210-103">**-win32manifest** オプションは、プロジェクトのポータブル実行可能 (PE) ファイルに埋め込まれる、ユーザー定義の Win32 アプリケーション マニフェスト ファイルを指定するために使用します。</span><span class="sxs-lookup"><span data-stu-id="f0210-103">Use the **-win32manifest** option to specify a user-defined Win32 application manifest file to be embedded into a project's portable executable (PE) file.</span></span>  

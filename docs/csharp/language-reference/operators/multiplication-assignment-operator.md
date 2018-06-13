@@ -12,6 +12,7 @@ ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/15/2018
+ms.locfileid: "34171551"
 ---
 # <a name="-operator-c-reference"></a><span data-ttu-id="cf063-102">\*= 演算子 (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="cf063-102">\*= Operator (C# Reference)</span></span>
 <span data-ttu-id="cf063-103">二項乗算代入演算子です。</span><span class="sxs-lookup"><span data-stu-id="cf063-103">The binary multiplication assignment operator.</span></span>  

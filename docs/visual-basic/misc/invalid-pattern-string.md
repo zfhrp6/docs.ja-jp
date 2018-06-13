@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33635646"
 ---
 # <a name="invalid-pattern-string"></a><span data-ttu-id="286e2-102">正しくないパターン文字列</span><span class="sxs-lookup"><span data-stu-id="286e2-102">Invalid pattern string</span></span>
 <span data-ttu-id="286e2-103">検索の `Like` 演算で指定されているパターン文字列が正しくありません。</span><span class="sxs-lookup"><span data-stu-id="286e2-103">The pattern string specified in the `Like` operation of a search is invalid.</span></span>  

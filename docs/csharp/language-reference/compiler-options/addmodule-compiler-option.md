@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33215772"
 ---
 # <a name="-addmodule-c-compiler-options"></a><span data-ttu-id="6c3c9-102">-addmodule (C# コンパイラ オプション)</span><span class="sxs-lookup"><span data-stu-id="6c3c9-102">-addmodule (C# Compiler Options)</span></span>
 <span data-ttu-id="6c3c9-103">このオプションを使用すると、スイッチで作成されたモジュールが現在のコンパイルに追加されます。</span><span class="sxs-lookup"><span data-stu-id="6c3c9-103">This option adds a module that was created with the target:module switch to the current compilation.</span></span>  

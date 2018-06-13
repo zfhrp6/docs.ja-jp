@@ -12,6 +12,7 @@ ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34233913"
 ---
 # <a name="interface-statement-visual-basic"></a><span data-ttu-id="dc152-102">Interface ステートメント (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="dc152-102">Interface Statement (Visual Basic)</span></span>
 <span data-ttu-id="dc152-103">インターフェイスの名前を宣言し、インターフェイスに含まれるメンバーの定義を紹介します。</span><span class="sxs-lookup"><span data-stu-id="dc152-103">Declares the name of an interface and introduces the definitions of the members that the interface comprises.</span></span>  

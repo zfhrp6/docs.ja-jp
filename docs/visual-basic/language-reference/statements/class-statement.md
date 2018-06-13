@@ -18,6 +18,7 @@ ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34235883"
 ---
 # <a name="class-statement-visual-basic"></a><span data-ttu-id="c4ad1-102">Class ステートメント (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="c4ad1-102">Class Statement (Visual Basic)</span></span>
 <span data-ttu-id="c4ad1-103">クラスの名前を宣言し、変数、プロパティ、イベント、およびクラスを構成するプロシージャの定義が追加されました。</span><span class="sxs-lookup"><span data-stu-id="c4ad1-103">Declares the name of a class and introduces the definition of the variables, properties, events, and procedures that the class comprises.</span></span>  

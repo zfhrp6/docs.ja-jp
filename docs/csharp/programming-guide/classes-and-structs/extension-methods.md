@@ -11,6 +11,7 @@ ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/15/2018
+ms.locfileid: "34172608"
 ---
 # <a name="extension-methods-c-programming-guide"></a><span data-ttu-id="c743e-102">拡張メソッド (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="c743e-102">Extension Methods (C# Programming Guide)</span></span>
 <span data-ttu-id="c743e-103">拡張メソッドを使用すると、新規の派生型の作成、再コンパイル、または元の型の変更を行うことなく既存の型にメソッドを "追加" できます。</span><span class="sxs-lookup"><span data-stu-id="c743e-103">Extension methods enable you to "add" methods to existing types without creating a new derived type, recompiling, or otherwise modifying the original type.</span></span> <span data-ttu-id="c743e-104">拡張メソッドは特別な種類の静的メソッドですが、拡張された型のインスタンス メソッドのように呼び出します。</span><span class="sxs-lookup"><span data-stu-id="c743e-104">Extension methods are a special kind of static method, but they are called as if they were instance methods on the extended type.</span></span> <span data-ttu-id="c743e-105">C#、F#、および Visual Basic で作成されたクライアント コードの場合は、拡張メソッドの呼び出しと、型で実際に定義されたメソッドの呼び出しに明確な違いはありません。</span><span class="sxs-lookup"><span data-stu-id="c743e-105">For client code written in C#, F# and Visual Basic, there is no apparent difference between calling an extension method and the methods that are actually defined in a type.</span></span>  

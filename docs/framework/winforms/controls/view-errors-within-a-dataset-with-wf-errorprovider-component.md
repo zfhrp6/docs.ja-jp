@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33537087"
 ---
 # <a name="how-to-view-errors-within-a-dataset-with-the-windows-forms-errorprovider-component"></a><span data-ttu-id="54652-102">方法 : Windows フォーム ErrorProvider コンポーネントで DataSet 内にエラーを表示する</span><span class="sxs-lookup"><span data-stu-id="54652-102">How to: View Errors Within a DataSet with the Windows Forms ErrorProvider Component</span></span>
 <span data-ttu-id="54652-103">Windows フォームを使用することができます<xref:System.Windows.Forms.ErrorProvider>データセットまたはその他のデータ ソース内で列エラーを表示するコンポーネントです。</span><span class="sxs-lookup"><span data-stu-id="54652-103">You can use the Windows Forms <xref:System.Windows.Forms.ErrorProvider> component to view column errors within a dataset or other data source.</span></span> <span data-ttu-id="54652-104"><xref:System.Windows.Forms.ErrorProvider>フォームのデータのエラーを表示するコンポーネントであるがないコントロールに直接関連付けられています。</span><span class="sxs-lookup"><span data-stu-id="54652-104">For an <xref:System.Windows.Forms.ErrorProvider> component to display data errors on a form, it does not have to be directly associated with a control.</span></span> <span data-ttu-id="54652-105">データ ソースにバインドされていると、同じデータ ソースにバインドされている任意のコントロールの横にエラー アイコンを表示できます。</span><span class="sxs-lookup"><span data-stu-id="54652-105">Once it is bound to a data source, it can display an error icon next to any control that is bound to the same data source.</span></span>  

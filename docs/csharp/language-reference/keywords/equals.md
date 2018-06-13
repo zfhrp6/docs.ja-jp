@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33216176"
 ---
 # <a name="equals-c-reference"></a><span data-ttu-id="553b0-102">equals (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="553b0-102">equals (C# Reference)</span></span>
 <span data-ttu-id="553b0-103">`equals` コンテキスト キーワードは、クエリ式の `join` 句で、2 つのシーケンスの要素を比較するときに使用されます。</span><span class="sxs-lookup"><span data-stu-id="553b0-103">The `equals` contextual keyword is used in a `join` clause in a query expression to compare the elements of two sequences.</span></span> <span data-ttu-id="553b0-104">詳細については、「[join 句](../../../csharp/language-reference/keywords/join-clause.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="553b0-104">For more information, see [join clause](../../../csharp/language-reference/keywords/join-clause.md).</span></span>  

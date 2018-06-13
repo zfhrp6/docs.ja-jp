@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33535429"
 ---
 # <a name="toolstrippanel-control"></a><span data-ttu-id="20473-102">ToolStripPanel コントロール</span><span class="sxs-lookup"><span data-stu-id="20473-102">ToolStripPanel Control</span></span>
 <span data-ttu-id="20473-103">`ToolStripPanel` コントロールは、ドッキングしたときにツールの領域内の水平方向または縦方向のスペースを共有し、<xref:System.Windows.Forms.ToolStripContainer> の 4 つのパネルと中庸のパネルが必要ないときに <xref:System.Windows.Forms.ToolStrip> コントロールを調整することができます。</span><span class="sxs-lookup"><span data-stu-id="20473-103">`ToolStripPanel` control enables the sharing of horizontal or vertical space within the tool area when docked and arranging of <xref:System.Windows.Forms.ToolStrip> controls when you do not need the four panels and central panel of a <xref:System.Windows.Forms.ToolStripContainer>.</span></span>  

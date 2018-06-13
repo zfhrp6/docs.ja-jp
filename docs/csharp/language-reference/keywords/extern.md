@@ -13,6 +13,7 @@ ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/15/2018
+ms.locfileid: "34172294"
 ---
 # <a name="extern-c-reference"></a><span data-ttu-id="cd629-102">extern (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="cd629-102">extern (C# Reference)</span></span>
 <span data-ttu-id="cd629-103">`extern` 修飾子は、外部で実装されるメソッドを宣言するために使用します。</span><span class="sxs-lookup"><span data-stu-id="cd629-103">The `extern` modifier is used to declare a method that is implemented externally.</span></span> <span data-ttu-id="cd629-104">`extern` 修飾子は一般に、相互運用サービスを使用してアンマネージ コードを呼び出すときに、`DllImport` 属性と共に使用します。</span><span class="sxs-lookup"><span data-stu-id="cd629-104">A common use of the `extern` modifier is with the `DllImport` attribute when you are using Interop services to call into unmanaged code.</span></span> <span data-ttu-id="cd629-105">この場合、次の例に示すように、メソッドを `static` として宣言する必要もあります。</span><span class="sxs-lookup"><span data-stu-id="cd629-105">In this case, the method must also be declared as `static`, as shown in the following example:</span></span>  

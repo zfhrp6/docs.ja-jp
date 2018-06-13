@@ -12,6 +12,7 @@ ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/15/2018
+ms.locfileid: "34171942"
 ---
 # <a name="typeof-c-reference"></a><span data-ttu-id="858d0-102">typeof (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="858d0-102">typeof (C# Reference)</span></span>
 <span data-ttu-id="858d0-103">型の `System.Type` オブジェクトを取得するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="858d0-103">Used to obtain the `System.Type` object for a type.</span></span> <span data-ttu-id="858d0-104">`typeof` 式は次の形式になります。</span><span class="sxs-lookup"><span data-stu-id="858d0-104">A `typeof` expression takes the following form:</span></span>  

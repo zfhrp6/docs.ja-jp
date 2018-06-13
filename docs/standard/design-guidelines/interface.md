@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33573040"
 ---
 # <a name="interface-design"></a><span data-ttu-id="3c054-102">インターフェイスのデザイン</span><span class="sxs-lookup"><span data-stu-id="3c054-102">Interface Design</span></span>
 <span data-ttu-id="3c054-103">ほとんどの Api は、クラスと構造体を使用して、最適なモデル化、ある場合、またはインターフェイスがより適切な唯一のオプションします。</span><span class="sxs-lookup"><span data-stu-id="3c054-103">Although most APIs are best modeled using classes and structs, there are cases in which interfaces are more appropriate or are the only option.</span></span>  

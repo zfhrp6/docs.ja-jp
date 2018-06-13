@@ -11,6 +11,7 @@ ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/15/2018
+ms.locfileid: "34172439"
 ---
 # <a name="partial-classes-and-methods-c-programming-guide"></a><span data-ttu-id="e7cff-102">部分クラスと部分メソッド (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="e7cff-102">Partial Classes and Methods (C# Programming Guide)</span></span>
 <span data-ttu-id="e7cff-103">[クラス](../../../csharp/language-reference/keywords/class.md)や[構造体](../../../csharp/language-reference/keywords/struct.md)、[インターフェイス](../../../csharp/language-reference/keywords/interface.md)やメソッドの定義を、複数のソース ファイルに分割できます。</span><span class="sxs-lookup"><span data-stu-id="e7cff-103">It is possible to split the definition of a [class](../../../csharp/language-reference/keywords/class.md) or a [struct](../../../csharp/language-reference/keywords/struct.md), an [interface](../../../csharp/language-reference/keywords/interface.md) or a method over two or more source files.</span></span> <span data-ttu-id="e7cff-104">各ソース ファイルには型やメソッドの定義のセクションが含まれ、分割されたすべての部分はアプリケーションのコンパイル時に結合されます。</span><span class="sxs-lookup"><span data-stu-id="e7cff-104">Each source file contains a section of the type or method definition, and all parts are combined when the application is compiled.</span></span>  

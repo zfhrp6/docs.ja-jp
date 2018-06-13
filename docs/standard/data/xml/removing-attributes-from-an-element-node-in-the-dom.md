@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33570567"
 ---
 # <a name="removing-attributes-from-an-element-node-in-the-dom"></a><span data-ttu-id="53b87-102">DOM の要素ノードからの属性の削除</span><span class="sxs-lookup"><span data-stu-id="53b87-102">Removing Attributes from an Element Node in the DOM</span></span>
 <span data-ttu-id="53b87-103">属性を削除するには、さまざまな方法があります。</span><span class="sxs-lookup"><span data-stu-id="53b87-103">There are many ways to remove attributes.</span></span> <span data-ttu-id="53b87-104">その 1 つとして、属性コレクションから属性を削除する方法があります。</span><span class="sxs-lookup"><span data-stu-id="53b87-104">One technique is to remove them from the attribute collection.</span></span> <span data-ttu-id="53b87-105">属性コレクションから属性を削除するには、次の手順を実行します。</span><span class="sxs-lookup"><span data-stu-id="53b87-105">To do this, the following steps are performed:</span></span>  

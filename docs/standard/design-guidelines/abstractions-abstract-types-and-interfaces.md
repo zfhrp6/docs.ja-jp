@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33573027"
 ---
 # <a name="abstractions-abstract-types-and-interfaces"></a><span data-ttu-id="bc26f-102">抽象化 (抽象型およびインターフェイス)</span><span class="sxs-lookup"><span data-stu-id="bc26f-102">Abstractions (Abstract Types and Interfaces)</span></span>
 <span data-ttu-id="bc26f-103">抽象化では、コントラクトを記述、コントラクトの完全な実装は提供されませんする型です。</span><span class="sxs-lookup"><span data-stu-id="bc26f-103">An abstraction is a type that describes a contract but does not provide a full implementation of the contract.</span></span> <span data-ttu-id="bc26f-104">抽象化は通常インターフェイスまたは抽象クラスとして実装され、適切に定義された一連のコントラクトを実装する型の必要なセマンティクスを説明するリファレンス ドキュメントになります。</span><span class="sxs-lookup"><span data-stu-id="bc26f-104">Abstractions are usually implemented as abstract classes or interfaces, and they come with a well-defined set of reference documentation describing the required semantics of the types implementing the contract.</span></span> <span data-ttu-id="bc26f-105">.NET Framework における最も重要な抽象化のものが<xref:System.IO.Stream>、 <xref:System.Collections.Generic.IEnumerable%601>、および<xref:System.Object>です。</span><span class="sxs-lookup"><span data-stu-id="bc26f-105">Some of the most important abstractions in the .NET Framework include <xref:System.IO.Stream>, <xref:System.Collections.Generic.IEnumerable%601>, and <xref:System.Object>.</span></span>  

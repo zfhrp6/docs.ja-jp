@@ -15,6 +15,7 @@ ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/15/2018
+ms.locfileid: "34172163"
 ---
 # <a name="string-c-reference"></a><span data-ttu-id="0c730-102">string (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="0c730-102">string (C# Reference)</span></span>
 <span data-ttu-id="0c730-103">`string` 型は、0 個以上の Unicode 文字のシーケンスを表します。</span><span class="sxs-lookup"><span data-stu-id="0c730-103">The `string` type represents a sequence of zero or more Unicode characters.</span></span> <span data-ttu-id="0c730-104">`string` は .NET の <xref:System.String> の別名です。</span><span class="sxs-lookup"><span data-stu-id="0c730-104">`string` is an alias for <xref:System.String> in .NET.</span></span>  

@@ -9,6 +9,7 @@ ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/15/2018
+ms.locfileid: "34172660"
 ---
 # <a name="how-to-return-subsets-of-element-properties-in-a-query-c-programming-guide"></a><span data-ttu-id="5ea26-102">方法 : クエリで要素のプロパティのサブセットを返す (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="5ea26-102">How to: Return Subsets of Element Properties in a Query (C# Programming Guide)</span></span>
 <span data-ttu-id="5ea26-103">次の両方の条件に当てはまる場合は、クエリ式に匿名型を使用します。</span><span class="sxs-lookup"><span data-stu-id="5ea26-103">Use an anonymous type in a query expression when both of these conditions apply:</span></span>  

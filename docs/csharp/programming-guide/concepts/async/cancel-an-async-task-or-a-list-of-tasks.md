@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33334806"
 ---
 # <a name="cancel-an-async-task-or-a-list-of-tasks-c"></a><span data-ttu-id="a3a11-102">非同期タスクまたはタスクの一覧のキャンセル (C#)</span><span class="sxs-lookup"><span data-stu-id="a3a11-102">Cancel an Async Task or a List of Tasks (C#)</span></span>
 <span data-ttu-id="a3a11-103">非同期のアプリケーションが終了するまで待機しない場合、それを取り消すために使用できるボタンを設定できます。</span><span class="sxs-lookup"><span data-stu-id="a3a11-103">You can set up a button that you can use to cancel an async application if you don't want to wait for it to finish.</span></span> <span data-ttu-id="a3a11-104">このトピックの例に従うと、1 つの Web サイトのコンテンツまたは Web サイトのリストをダウンロードするアプリケーションにキャンセル ボタンを追加できます。</span><span class="sxs-lookup"><span data-stu-id="a3a11-104">By following the examples in this topic, you can add a cancellation button to an application that downloads the contents of one website or a list of websites.</span></span>  

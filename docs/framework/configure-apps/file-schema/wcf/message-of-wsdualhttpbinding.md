@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33356477"
 ---
 # <a name="ltmessagegt-of-ltwsdualhttpbindinggt"></a><span data-ttu-id="0404b-102">&lt;wsDualHttpBinding&gt; の &lt;message&gt;</span><span class="sxs-lookup"><span data-stu-id="0404b-102">&lt;message&gt; of &lt;wsDualHttpBinding&gt;</span></span>
 <span data-ttu-id="0404b-103">メッセージ レベル セキュリティを定義、 [ \<wsDualHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wsdualhttpbinding.md)です。</span><span class="sxs-lookup"><span data-stu-id="0404b-103">Defines message-level security for the [\<wsDualHttpBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/wsdualhttpbinding.md).</span></span>  

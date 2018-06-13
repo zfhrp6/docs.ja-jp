@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33595314"
 ---
 # <a name="widening-visual-basic"></a><span data-ttu-id="9158f-102">Widening (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="9158f-102">Widening (Visual Basic)</span></span>
 <span data-ttu-id="9158f-103">示します変換演算子 (`CType`) クラスまたは構造体を元のクラスまたは構造体のすべての可能な値を保持できる型に変換します。</span><span class="sxs-lookup"><span data-stu-id="9158f-103">Indicates that a conversion operator (`CType`) converts a class or structure to a type that can hold all possible values of the original class or structure.</span></span>  

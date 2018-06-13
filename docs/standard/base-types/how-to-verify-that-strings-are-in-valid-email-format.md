@@ -25,6 +25,7 @@ ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/15/2018
+ms.locfileid: "34172342"
 ---
 # <a name="how-to-verify-that-strings-are-in-valid-email-format"></a><span data-ttu-id="a2876-102">方法 : 文字列が有効な電子メール形式であるかどうかを検証する</span><span class="sxs-lookup"><span data-stu-id="a2876-102">How to: Verify that Strings Are in Valid Email Format</span></span>
 <span data-ttu-id="a2876-103">正規表現を使用して文字列の形式が有効な電子メール形式であるかどうかを検証する例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="a2876-103">The following example uses a regular expression to verify that a string is in valid email format.</span></span>  

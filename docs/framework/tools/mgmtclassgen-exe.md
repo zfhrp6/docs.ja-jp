@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33409360"
 ---
 # <a name="mgmtclassgenexe-management-strongly-typed-class-generator"></a><span data-ttu-id="f9ea6-102">Mgmtclassgen.exe (厳密型クラス ジェネレーター)</span><span class="sxs-lookup"><span data-stu-id="f9ea6-102">Mgmtclassgen.exe (Management Strongly Typed Class Generator)</span></span>
 <span data-ttu-id="f9ea6-103">厳密型クラス ジェネレーター (Mgmtclassgen.exe) ツールを使用すると、指定した WMI (Windows Management Instrumentation) クラスに対して、事前バインディングされたマネージ クラスをすばやく生成できます。</span><span class="sxs-lookup"><span data-stu-id="f9ea6-103">The Management Strongly Typed Class Generator tool enables you to quickly generate an early-bound managed class for a specified Windows Management Instrumentation (WMI) class.</span></span> <span data-ttu-id="f9ea6-104">生成されたクラスを使用すると、WMI クラスのインスタンスにアクセスするために書く必要のあるコードを簡略化できます。</span><span class="sxs-lookup"><span data-stu-id="f9ea6-104">The generated class simplifies the code you must write to access an instance of the WMI class.</span></span>  
