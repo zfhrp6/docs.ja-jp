@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32761923"
 ---
 # <a name="entity-sql-language-reference"></a>Entity SQL 言語リファレンス
 このセクションでは、[!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)]、[!INCLUDE[esql](../../../../../../includes/esql-md.md)]、および [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)] で使用されるモデリング言語とマッピング言語について詳しく説明します。  

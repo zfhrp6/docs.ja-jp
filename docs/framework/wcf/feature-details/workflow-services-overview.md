@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33502729"
 ---
 # <a name="workflow-services-overview"></a>ワークフロー サービスの概要
 ワークフロー サービスは、ワークフローを使用して実装されている WCF ベースのサービスです。 ワークフロー サービスは、Windows Communication Foundation (WCF) メッセージを送受信するメッセージング アクティビティを使用するワークフローです。 .NET Framework 4.5 では、ワークフロー内からメッセージを送受信できるようにする多数のメッセージ アクティビティが導入されています。 メッセージング アクティビティおよびそれらを使用して異なるメッセージ交換パターンを実装する方法の詳細については、次を参照してください。[メッセージング アクティビティ](../../../../docs/framework/wcf/feature-details/messaging-activities.md)です。  

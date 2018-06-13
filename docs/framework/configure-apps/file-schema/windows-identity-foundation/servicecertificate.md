@@ -9,6 +9,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32766778"
 ---
 # <a name="ltservicecertificategt"></a>&lt;serviceCertificate&gt;
 暗号化し、トークン暗号化解除に使用される X.509 証明書を構成します。  

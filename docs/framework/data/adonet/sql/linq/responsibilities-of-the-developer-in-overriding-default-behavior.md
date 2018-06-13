@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33365255"
 ---
 # <a name="responsibilities-of-the-developer-in-overriding-default-behavior"></a>既定の動作をオーバーライドするときの開発者の責任
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 次の要件を強制しませんが、これらの要件が満たされていない場合の動作が定義されていません。  

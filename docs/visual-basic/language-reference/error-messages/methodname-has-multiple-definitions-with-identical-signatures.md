@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33593731"
 ---
 # <a name="39ltmethodnamegt39-has-multiple-definitions-with-identical-signatures"></a>&#39;&lt;methodname&gt; &#39;同じシグネチャを持つ複数の定義
 A`Function`または`Sub`プロシージャ宣言では、前の宣言と同じプロシージャの名前と引数のリストを使用します。 考えられる原因の 1 つは、元のプロシージャをオーバー ロードする試みです。 オーバー ロードされたプロシージャは、異なる引数リストを持つ必要があります。  

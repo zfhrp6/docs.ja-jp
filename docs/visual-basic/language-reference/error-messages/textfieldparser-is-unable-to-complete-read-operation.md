@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33593114"
 ---
 # <a name="textfieldparser-is-unable-to-complete-the-read-operation-because-maximum-buffer-size-has-been-exceeded"></a>最大バッファーサイズを超えたため、TextFieldParser は読み取り操作を完了できません。
 バッファーの最大サイズ (バイト単位の 10,000, 000) を超過したため、操作を完了できません。  

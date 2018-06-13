@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33474033"
 ---
 # <a name="message-logging"></a>メッセージ ログ
 Windows Communication Foundation (WCF) では、オフラインで使用するための受信および送信メッセージを記録する機能を提供します。 メッセージ ログを使用すると、メッセージとメッセージ本文を確認できます。 この種のログは、どの引数が渡され、XML で表現された引数が受信エンドポイントでどのように表示されるかを知る上で特に役立ちます。 また、受信時にメッセージをログに記録すると、無効なメッセージを診断できるだけでなく、メッセージがどのような経路で到着したかを確認できます。 また、使用されたセキュリティ トークン、暗号化および署名された部分、および元のままの部分を調べることもできます。  

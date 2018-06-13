@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32762612"
 ---
 # <a name="gt-greater-than-entity-sql"></a>&gt; (より大きい) (Entity SQL)
 2 つの式を比較して、左の式の値が右の式の値よりも大きいかどうかを判別します。  

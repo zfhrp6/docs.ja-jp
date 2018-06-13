@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33364978"
 ---
 # <a name="transaction-support"></a>トランザクションのサポート
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 次の 3 つの種類のトランザクション モデルをサポートしています。 チェックが行われる順に、これらのモデルを以下に示します。  

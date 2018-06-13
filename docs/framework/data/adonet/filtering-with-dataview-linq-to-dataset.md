@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32766102"
 ---
 # <a name="filtering-with-dataview-linq-to-dataset"></a>DataView によるフィルター処理 (LINQ to DataSet)
 特定の条件に基づいてデータをフィルター処理し、UI コントロールを介してそのデータをクライアントに提供する機能は、データ バインディングの重要な特徴です。 <xref:System.Data.DataView> は、データにフィルターを適用し、特定のフィルター条件を満たすデータ行のサブセットを返す方法をいくつか提供します。 フィルタ リング機能だけでなく、文字列ベース<xref:System.Data.DataView>を使用する機能も提供[!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)]フィルター処理条件式。 [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] 式を使用する、文字列ベースのフィルター処理よりもはるかに複雑で強力なのフィルター処理します。  

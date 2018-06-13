@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32762482"
 ---
 # <a name="working-with-objects"></a>オブジェクトの使用
 [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] では、エンティティ型のインスタンスである型指定された共通言語ランタイム (CLR) オブジェクトとして表現されたデータに対してクエリ、挿入、更新、削除を実行できます。 エンティティ型とは、概念モデルで定義されたエンティティのことです。 概念モデルで定義されたエンティティとリレーションシップが、[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] によってデータ ソースにマップされます。 [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]以下を実行する機能を提供します。 オブジェクトとしてデータ ソースから返されたデータを具体化以外の場合は、オブジェクトに加えられた変更の追跡です。 同時実行を処理以外の場合はオブジェクトの変更をデータ ソースを反映してオブジェクトをコントロールにバインドします。  

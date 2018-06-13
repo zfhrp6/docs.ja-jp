@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33589448"
 ---
 # <a name="leading-3939-or-3939-can-only-appear-inside-a-39with39-statement"></a>先頭の&#39;です。&#39;または&#39;!&#39;内でのみ表示できます、&#39;で&#39;ステートメント
 ピリオド (.) または感嘆符 (!) 外にある内部、`With`左の式がブロックされます。 メンバー アクセス (`.`) およびディクショナリ メンバー アクセス (`!`) メンバーを含む要素を指定する式が必要です。 またはの対象として、アクセサーの左側にすぐにこの表示する必要があります、`With`メンバー アクセスを含むブロックします。  

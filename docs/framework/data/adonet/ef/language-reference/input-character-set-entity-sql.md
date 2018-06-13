@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32764698"
 ---
 # <a name="input-character-set-entity-sql"></a>入力文字セット (Entity SQL)
 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] は、UTF-16 でエンコードされた UNICODE 文字を受け取ります。  

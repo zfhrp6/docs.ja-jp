@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32762411"
 ---
 # <a name="performing-an-xpath-query-on-a-dataset"></a>DataSet に対する XPath クエリの実行
 同期済みの間のリレーションシップ<xref:System.Data.DataSet>と<xref:System.Xml.XmlDataDocument>XML を使用することができますにアクセスする XML パス言語 (XPath) クエリなどのサービス、 **XmlDataDocument**し、特定の機能を実行することができます簡単にアクセスするよりも、**データセット**直接です。 使用するのではなく、たとえば、**選択**のメソッド、<xref:System.Data.DataTable>で他のテーブルへのリレーションシップを移動する、**データセット**、に対して XPath クエリを実行できる、 **XmlDataDocument**と同期されている、**データセット**の形式で XML 要素の一覧を取得する、<xref:System.Xml.XmlNodeList>です。 内のノード、 **XmlNodeList**としてキャストされた、<xref:System.Xml.XmlElement>ノードに渡すことができます、 **GetRowFromElement**のメソッド、 **XmlDataDocument**を一致を返す<xref:System.Data.DataRow>は同期済みテーブルの行への参照**データセット**です。  

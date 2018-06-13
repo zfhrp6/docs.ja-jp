@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33588107"
 ---
 # <a name="how-to-display-unbound-controls-in-a-datarepeater-control-visual-studio"></a>方法 : DataRepeater コントロールに非バインド コントロールを表示する (Visual Studio)
 だけでなく、バインドされたコントロールを他のコントロールを追加することがあります、 <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>、静的ラベル内の各項目に繰り返し表示されるイメージなど、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>コントロール。  

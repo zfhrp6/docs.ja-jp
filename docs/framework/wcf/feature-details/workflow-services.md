@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33499194"
 ---
 # <a name="workflow-services"></a>ワークフロー サービス
 [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] では、ワークフロー ベースのサービスを XAML で宣言によって記述できます。 サービスを実装するワークフローの定義、およびサービスが公開するエンドポイントの説明を、すべて XAML で実行できます。 このセクションの各トピックでは、宣言によるサービスの記述をサポートするプログラミング モデルについて詳しく説明します。  

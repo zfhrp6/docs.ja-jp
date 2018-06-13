@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33360492"
 ---
 # <a name="how-to-customize-entity-classes-by-using-the-code-editor"></a>方法 : コード エディターを使用してエンティティ クラスをカスタマイズする
 Visual Studio を使用している開発者が使用できる、[!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)]を作成または、そのエンティティ クラスをカスタマイズします。  
