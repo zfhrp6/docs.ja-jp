@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33555965"
 ---
 # <a name="how-to-implement-validation-logic-on-custom-objects"></a>方法 : カスタム オブジェクトに検証ロジックを実装する
 この例では、カスタム オブジェクトに検証ロジックを実装し、それにバインドする方法を示します。  

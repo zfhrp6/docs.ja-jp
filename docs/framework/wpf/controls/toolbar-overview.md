@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33557395"
 ---
 # <a name="toolbar-overview"></a>ToolBar の概要
 <xref:System.Windows.Controls.ToolBar> コントロールは、コマンドまたは通常、その機能に関連するコントロールのグループのコンテナーです。 A<xref:System.Windows.Controls.ToolBar>通常コマンドを呼び出すボタンが含まれます。  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33558656"
 ---
 # <a name="how-to-repeat-media-playback"></a>方法 : メディアの再生を反復する
 この例では、メディアを無制限に再生する (無限ループで再生されるようにメディアを設定する) 方法を示します。  

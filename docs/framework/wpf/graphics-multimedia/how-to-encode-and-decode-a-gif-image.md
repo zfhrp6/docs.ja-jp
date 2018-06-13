@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33558708"
 ---
 # <a name="how-to-encode-and-decode-a-gif-image"></a>方法: GIF イメージをエンコードおよびデコードする
 次の例は、デコードとエンコード方法を示して、 [!INCLUDE[TLA#tla_gif](../../../../includes/tlasharptla-gif-md.md)] 、固有の仕様を使用するイメージ<xref:System.Windows.Media.Imaging.GifBitmapDecoder>と<xref:System.Windows.Media.Imaging.GifBitmapEncoder>オブジェクト。  

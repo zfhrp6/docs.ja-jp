@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 5ca6bf185297cbafb4450271ddcd6093d7e62515
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33415377"
 ---
 # <a name="icordebugeditandcontinueerrorinfogetmodule-method"></a>ICorDebugEditAndContinueErrorInfo::GetModule メソッド
 `GetModule` は互換性のために残されています。 このメソッドを呼び出さないでください。  

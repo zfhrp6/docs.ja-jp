@@ -8,6 +8,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33352490"
 ---
 # <a name="windows-workflow-foundation-configuration-schema"></a>Windows Workflow Foundation の構成スキーマ
 Windows Workflow Foundation (WF) の構成要素を使用すると、ワークフロー アプリケーションを構成できます。 ワークフロー アプリケーションでは、追跡とトレースを構成できます。 追跡とトレースの詳細については、「[ワークフロー追跡とトレース](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)」を参照してください。 ワークフロー サービスでは、Windows Communication Foundation (WCF) 構成要素を使用することもできます。 WCF の詳細については、次を参照してください。 [WCF 構成スキーマ](../../../../../docs/framework/configure-apps/file-schema/wcf/index.md)です。  

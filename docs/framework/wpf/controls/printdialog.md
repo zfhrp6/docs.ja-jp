@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33554769"
 ---
 # <a name="printdialog"></a>PrintDialog
 <xref:System.Windows.Controls.PrintDialog>コントロールを使用すると、自動的に構成される標準の印刷ダイアログ ボックスのインスタンスを作成、<xref:System.Printing.PrintTicket>と<xref:System.Printing.PrintQueue>に従ってユーザー入力します。  

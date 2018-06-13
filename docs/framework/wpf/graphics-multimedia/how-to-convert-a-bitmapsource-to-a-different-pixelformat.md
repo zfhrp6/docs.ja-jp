@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33558801"
 ---
 # <a name="how-to-convert-a-bitmapsource-to-a-different-pixelformat"></a>方法 : BitmapSource を別の PixelFormat に変換する
 この例では、変換、<xref:System.Windows.Media.Imaging.BitmapSource>オブジェクト (<xref:System.Windows.Media.Imaging.BitmapImage>) を別<xref:System.Windows.Media.PixelFormat>を使用して、<xref:System.Windows.Media.Imaging.FormatConvertedBitmap>です。  

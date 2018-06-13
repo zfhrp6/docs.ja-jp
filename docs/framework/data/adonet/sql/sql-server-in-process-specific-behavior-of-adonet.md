@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33356604"
 ---
 # <a name="sql-server-in-process-specific-behavior-of-adonet"></a>SQL Server のインプロセス固有の ADO.NET の動作
 <xref:Microsoft.SqlServer.Server> 名前空間には、インプロセスのみで使用される 4 つの主な ADO.NET の拡張機能として、<xref:Microsoft.SqlServer.Server.SqlContext>、<xref:Microsoft.SqlServer.Server.SqlPipe>、<xref:Microsoft.SqlServer.Server.SqlTriggerContext>、<xref:Microsoft.SqlServer.Server.SqlDataRecord> があります。  

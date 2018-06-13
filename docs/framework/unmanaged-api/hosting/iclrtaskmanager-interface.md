@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 14c2c9b70ac2e57983ea4b16772add6a1dff5ff4
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33438068"
 ---
 # <a name="iclrtaskmanager-interface"></a>ICLRTaskManager インターフェイス
 共通言語ランタイム (CLR) を明示的に要求するホストに許可するメソッドが新しいタスクを作成し、現在実行中のタスクを取得および地理的な言語およびタスクのカルチャを設定を提供します。  

@@ -9,6 +9,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32755215"
 ---
 # <a name="ltcachesgt"></a>&lt;キャッシュ&gt;
 セッション トークンやトークン リプレイ検出のために使用されるキャッシュに登録します。  

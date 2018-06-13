@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33561148"
 ---
 # <a name="how-to-paint-an-area-with-a-system-brush"></a>方法 : システム ブラシで領域を塗りつぶす
 <xref:System.Windows.SystemColors>クラスなどのシステム ブラシおよび色 へのアクセスの提供<xref:System.Windows.SystemColors.ControlBrush%2A>、 <xref:System.Windows.SystemColors.ControlBrushKey%2A>、および<xref:System.Windows.SystemColors.DesktopBrush%2A>です。 システム ブラシ、<xref:System.Windows.Media.SolidColorBrush>指定したシステム カラーを使用して領域を描画するオブジェクト。 システム ブラシは、常に純色の塗りつぶしを生成します。グラデーションを作成するために使用することはできません。  

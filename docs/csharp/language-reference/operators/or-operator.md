@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33265688"
 ---
 # <a name="-operator-c-reference"></a>| 演算子 (C# リファレンス)
 整数型と `bool` には、2 項 `|` 演算子が事前定義されています。 整数型の場合、`|` はそのオペランドのビットごとの OR を計算します。 `bool` オペランドの場合、`|` は、そのオペランドの論理 OR を計算します。つまり、結果は、両方のオペランドが `false` の場合にのみ `false` になります。  

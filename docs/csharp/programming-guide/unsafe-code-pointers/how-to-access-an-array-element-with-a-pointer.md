@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33332040"
 ---
 # <a name="how-to-access-an-array-element-with-a-pointer-c-programming-guide"></a>方法 : ポインターを使用して配列要素にアクセスする (C# プログラミング ガイド)
 安全ではないコンテキストでは、次の例のように、ポインターを利用してメモリ内の要素にアクセスできます。  

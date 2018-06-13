@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33288295"
 ---
 # <a name="try-finally-c-reference"></a>try-finally (C# リファレンス)
 `finally` ブロックを使用すると、[try](../../../csharp/language-reference/keywords/try-catch.md) ブロックで割り当てられたリソースをクリーンアップし、`try` ブロックで例外が発生してもコードを実行することができます。 通常、制御が `finally` ステートメントを離れると、`try` ブロックのステートメントが実行されます。 制御の移動は、`break` ステートメント、`continue` ステートメント、`goto` ステートメント、`return` またはステートメントの正常な実行の結果や、`try` ステートメントで生じた例外の反映の結果として生じます。  

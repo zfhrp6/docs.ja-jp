@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33554795"
 ---
 # <a name="how-to-use-selectedvalue-selectedvaluepath-and-selecteditem"></a>方法 : SelectedValue、SelectedValuePath、および SelectedItem を使用する
 この例を使用する方法を示しています、<xref:System.Windows.Controls.TreeView.SelectedValue%2A>と<xref:System.Windows.Controls.TreeView.SelectedValuePath%2A>プロパティの値を指定する、<xref:System.Windows.Controls.TreeView.SelectedItem%2A>の<xref:System.Windows.Controls.TreeView>です。  

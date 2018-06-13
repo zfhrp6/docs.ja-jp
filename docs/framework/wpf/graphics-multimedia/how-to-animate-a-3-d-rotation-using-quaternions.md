@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33556940"
 ---
 # <a name="how-to-animate-a-3-d-rotation-using-quaternions"></a>方法 : 四元数を使用して 3-D 回転をアニメーション化する
 この例では、四元数を使用して、3-D オブジェクトの回転をアニメーション化する方法を示します。  

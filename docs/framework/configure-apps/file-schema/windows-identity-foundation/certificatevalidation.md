@@ -9,6 +9,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32756060"
 ---
 # <a name="ltcertificatevalidationgt"></a>&lt;certificateValidation&gt;
 トークン ハンドラーを使用して証明書の検証の設定を制御します。 特定のハンドラーが、独自の検証コントロールで構成されている場合、これらの設定は上書きされます。  

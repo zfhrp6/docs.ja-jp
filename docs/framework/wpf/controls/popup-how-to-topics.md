@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33553716"
 ---
 # <a name="popup-how-to-topics"></a>ポップアップに関する「方法」トピック
 このセクションのトピックを使用する方法について説明、<xref:System.Windows.Controls.Primitives.Popup>コントロールに現在のアプリケーション ウィンドウで別のウィンドウでコンテンツを表示します。  
