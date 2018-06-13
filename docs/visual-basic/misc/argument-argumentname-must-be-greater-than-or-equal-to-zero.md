@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33598271"
 ---
 # <a name="argument-39ltargumentnamegt39-must-be-greater-than-or-equal-to-zero"></a><span data-ttu-id="f09a1-102">引数&#39; &lt;argumentname&gt; &#39;より大きいかゼロに等しくなければなりません</span><span class="sxs-lookup"><span data-stu-id="f09a1-102">Argument &#39;&lt;argumentname&gt;&#39; must be greater than or equal to zero</span></span>
 <span data-ttu-id="f09a1-103">引数は 0 未満であるため無効です。</span><span class="sxs-lookup"><span data-stu-id="f09a1-103">An argument is not valid because it is less than zero.</span></span>  

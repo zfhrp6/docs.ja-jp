@@ -10,6 +10,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33810058"
 ---
 # <a name="building-clients"></a><span data-ttu-id="45380-102">クライアントを構築する</span><span class="sxs-lookup"><span data-stu-id="45380-102">Building Clients</span></span>
 <span data-ttu-id="45380-103">このセクションのトピックでは、作成し、Windows Communication Foundation (WCF) クライアントを使用する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="45380-103">The topics in this section demonstrate how to create and use a Windows Communication Foundation (WCF) client.</span></span>  

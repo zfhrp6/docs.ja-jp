@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33585650"
 ---
 # <a name="error-saving-temporary-win32-resource-file-39ltfilenamegt39-lterror-messagegt"></a><span data-ttu-id="df24d-102">一時 Win32 リソース ファイルを保存中にエラー &#39; &lt;filename&gt;&#39;:&lt;エラー メッセージ&gt;</span><span class="sxs-lookup"><span data-stu-id="df24d-102">Error saving temporary Win32 resource file &#39;&lt;filename&gt;&#39;: &lt;error message&gt;</span></span>
 <span data-ttu-id="df24d-103">Visual Basic コンパイラは、マニフェストを伴うアセンブリを生成するアセンブリ リンカー (Al.exe、Alink とも呼ばれます) を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="df24d-103">The Visual Basic compiler calls the Assembly Linker (Al.exe, also known as Alink) to generate an assembly with a manifest.</span></span> <span data-ttu-id="df24d-104">リンカーが、インメモリ リソースの書き込み先となるファイルの名前の取得エラーを報告しています。</span><span class="sxs-lookup"><span data-stu-id="df24d-104">The linker reported an error obtaining a file name for use in writing an in-memory resource.</span></span>  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809928"
 ---
 # <a name="designing-service-contracts"></a><span data-ttu-id="4b235-102">サービス コントラクトの設計</span><span class="sxs-lookup"><span data-stu-id="4b235-102">Designing Service Contracts</span></span>
 <span data-ttu-id="4b235-103">ここでは、サービス コントラクトの概要、定義方法、使用できる操作 (および基になるメッセージ交換の影響)、使用するデータ型、およびシナリオの要件を満たす操作を設計する際に役立つその他の問題について説明します。</span><span class="sxs-lookup"><span data-stu-id="4b235-103">This topic describes what service contracts are, how they are defined, what operations are available (and the implications for the underlying message exchanges), what data types are used, and other issues that help you design operations that satisfy the requirements of your scenario.</span></span>  

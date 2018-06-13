@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33640222"
 ---
 # <a name="equality-operations-visual-basic"></a><span data-ttu-id="f987b-102">等値演算 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="f987b-102">Equality Operations (Visual Basic)</span></span>
 <span data-ttu-id="f987b-103">2 つのシーケンスの対応する要素が等しく、要素数も同じである場合、これらのシーケンスは等しいと見なされます。</span><span class="sxs-lookup"><span data-stu-id="f987b-103">Two sequences whose corresponding elements are equal and which have the same number of elements are considered equal.</span></span>  

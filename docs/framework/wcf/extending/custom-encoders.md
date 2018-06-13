@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809278"
 ---
 # <a name="custom-encoders"></a><span data-ttu-id="40d9a-102">カスタム エンコーダー</span><span class="sxs-lookup"><span data-stu-id="40d9a-102">Custom Encoders</span></span>
 <span data-ttu-id="40d9a-103">このトピックでは、カスタム エンコーダーを作成する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="40d9a-103">This topic discusses how to create custom encoders.</span></span>  

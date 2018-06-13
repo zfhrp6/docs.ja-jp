@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33583813"
 ---
 # <a name="39addressof39-operand-must-be-the-name-of-a-method-without-parentheses"></a><span data-ttu-id="9c6b5-102">&#39;AddressOf&#39;オペランドはかっこは不要メソッドの名前である必要があります</span><span class="sxs-lookup"><span data-stu-id="9c6b5-102">&#39;AddressOf&#39; operand must be the name of a method (without parentheses)</span></span>
 <span data-ttu-id="9c6b5-103">`AddressOf` 演算子は、特定のプロシージャを参照するプロシージャ デリゲート インスタンスを作成します。</span><span class="sxs-lookup"><span data-stu-id="9c6b5-103">The `AddressOf` operator creates a procedure delegate instance that references a specific procedure.</span></span> <span data-ttu-id="9c6b5-104">構文は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="9c6b5-104">The syntax is as follows.</span></span>  

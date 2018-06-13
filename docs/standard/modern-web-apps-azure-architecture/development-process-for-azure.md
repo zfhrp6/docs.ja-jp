@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33585490"
 ---
 # <a name="development-process-for-azure"></a><span data-ttu-id="e24ec-103">Azure の開発プロセス</span><span class="sxs-lookup"><span data-stu-id="e24ec-103">Development process for Azure</span></span>
 

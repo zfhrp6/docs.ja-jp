@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33584210"
 ---
 # <a name="visual-basic-power-packs-controls"></a><span data-ttu-id="77cd6-102">Visual Basic Power Packs コントロール</span><span class="sxs-lookup"><span data-stu-id="77cd6-102">Visual Basic Power Packs Controls</span></span>
 <span data-ttu-id="77cd6-103">Visual Basic Power Packs コントロールは、追加の Windows フォーム コントロールです。</span><span class="sxs-lookup"><span data-stu-id="77cd6-103">Visual Basic Power Packs controls are additional Windows Forms controls.</span></span> <span data-ttu-id="77cd6-104">Visual Studio には含まれません。</span><span class="sxs-lookup"><span data-stu-id="77cd6-104">They are not included in Visual Studio.</span></span>  <span data-ttu-id="77cd6-105">実行できます[ダウンロード](http://go.microsoft.com/fwlink/?LinkId=321343)、として提供されるが、-がサポートされません。</span><span class="sxs-lookup"><span data-stu-id="77cd6-105">You can [download them](http://go.microsoft.com/fwlink/?LinkId=321343), but they are provided as-is, without support.</span></span>  

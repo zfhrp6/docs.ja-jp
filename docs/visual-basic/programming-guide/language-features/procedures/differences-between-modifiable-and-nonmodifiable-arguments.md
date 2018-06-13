@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33649764"
 ---
 # <a name="differences-between-modifiable-and-nonmodifiable-arguments-visual-basic"></a><span data-ttu-id="4e0be-102">変更できる引数と変更できない引数の違い (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="4e0be-102">Differences Between Modifiable and Nonmodifiable Arguments (Visual Basic)</span></span>
 <span data-ttu-id="4e0be-103">プロシージャを呼び出すときに通常を 1 つまたは複数の引数を渡します。</span><span class="sxs-lookup"><span data-stu-id="4e0be-103">When you call a procedure, you typically pass one or more arguments to it.</span></span> <span data-ttu-id="4e0be-104">各引数は、基になるプログラミング要素に対応しています。</span><span class="sxs-lookup"><span data-stu-id="4e0be-104">Each argument corresponds to an underlying programming element.</span></span> <span data-ttu-id="4e0be-105">基になる要素と引数の両方には、変更可能または変更不可能なのかを指定できます。</span><span class="sxs-lookup"><span data-stu-id="4e0be-105">Both the underlying elements and the arguments themselves can be either modifiable or nonmodifiable.</span></span>  

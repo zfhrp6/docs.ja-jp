@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33584619"
 ---
 # <a name="reading-from-and-writing-to-the-registry-visual-basic"></a><span data-ttu-id="c63a8-102">レジストリからの読み取りとレジストリへの書き込み (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="c63a8-102">Reading from and Writing to the Registry (Visual Basic)</span></span>
 <span data-ttu-id="c63a8-103">このトピックでは、レジストリに関連するタスクおよび概念説明のトピックについて説明します。</span><span class="sxs-lookup"><span data-stu-id="c63a8-103">This topic describes task and conceptual topics that are associated with the registry.</span></span>  

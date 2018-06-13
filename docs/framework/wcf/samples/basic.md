@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809451"
 ---
 # <a name="basic"></a><span data-ttu-id="31a2b-102">Basic</span><span class="sxs-lookup"><span data-stu-id="31a2b-102">Basic</span></span>
 <span data-ttu-id="31a2b-103">このセクションには、Windows Communication Foundation (WCF) の基本的な機能を紹介するサンプルのセクションが含まれています。</span><span class="sxs-lookup"><span data-stu-id="31a2b-103">This section includes sections of samples that demonstrate basic Windows Communication Foundation (WCF)functionality.</span></span>  

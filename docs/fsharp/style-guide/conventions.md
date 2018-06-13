@@ -7,6 +7,7 @@ ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/23/2018
+ms.locfileid: "34457983"
 ---
 # <a name="f-coding-conventions"></a><span data-ttu-id="7f663-103">F# でのコーディング規則</span><span class="sxs-lookup"><span data-stu-id="7f663-103">F# coding conventions</span></span>
 

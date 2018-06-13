@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33582676"
 ---
 # <a name="testing-aspnet-core-services-and-web-apps"></a><span data-ttu-id="ca479-103">ASP.NET Core サービスと Web アプリのテスト</span><span class="sxs-lookup"><span data-stu-id="ca479-103">Testing ASP.NET Core services and web apps</span></span>
 
