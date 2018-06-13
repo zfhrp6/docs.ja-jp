@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 130ba2864537f017bd3037412d742d887df1ae68
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33405728"
 ---
 # <a name="iclrdatatargetgettlsvalue-method"></a>ICLRDataTarget::GetTLSValue メソッド
 ターゲット プロセス内の指定されたスレッドのスレッド ローカル ストレージ (TLS) から値を取得します。 このメソッドは、共通言語ランタイム (CLR) データ アクセス サービスによって呼び出されます。  

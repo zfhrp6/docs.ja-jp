@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 9941a9be7d9f68255636b405db29a623be8d37e8
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33406439"
 ---
 # <a name="corpubpublish-coclass"></a>CorpubPublish コクラス
 アプリケーション ドメインとプロセスに関する情報を発行するためのインターフェイスを提供します。  

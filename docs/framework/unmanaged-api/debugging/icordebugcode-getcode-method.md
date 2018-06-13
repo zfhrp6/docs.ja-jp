@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: d09681f97829f88bedf53af229298d5d57d764df
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33402690"
 ---
 # <a name="icordebugcodegetcode-method"></a>ICorDebugCode::GetCode メソッド
 指定した関数のすべてのコードを取得し、逆アセンブリ用に書式設定します。 .NET Framework version 2.0 では、このメソッドは廃止されました。 使用して[icordebugcode 2::getcodechunks](../../../../docs/framework/unmanaged-api/debugging/icordebugcode2-getcodechunks-method.md)代わりにします。  

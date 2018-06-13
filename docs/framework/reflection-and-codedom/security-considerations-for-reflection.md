@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33398705"
 ---
 # <a name="security-considerations-for-reflection"></a>リフレクションに関するセキュリティ上の考慮事項
 リフレクションを使用すると、型とメンバーに関する情報を取得し、メンバーにアクセスできます (つまり、メソッドやコンストラクターの呼び出し、プロパティ値の取得と設定、イベント ハンドラーの追加と削除などを実行できます)。 リフレクションを使用した型とメンバーに関する情報の取得には、制限がありません。 すべてのコードで、次のタスクを実行するためにリフレクションを使用できます。  

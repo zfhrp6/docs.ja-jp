@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: d1c3bcc0ed22fa970d92e2384277d0786016db19
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33402110"
 ---
 # <a name="icordebugassemblygetprocess-method"></a>ICorDebugAssembly::GetProcess メソッド
 この ICorDebugAssembly インスタンスが実行されているプロセスにインターフェイス ポインターを取得します。  

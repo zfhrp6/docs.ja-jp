@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33329882"
 ---
 # <a name="preserving-white-space-while-serializing"></a>シリアル化時の空白の維持
 このトピックでは、XML ツリーをシリアル化するときに空白を制御する方法について説明します。  

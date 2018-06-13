@@ -24,6 +24,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33399595"
 ---
 # <a name="gacutilexe-global-assembly-cache-tool"></a>Gacutil.exe (グローバル アセンブリ キャッシュ ツール)
 グローバル アセンブリ キャッシュ ツールを使用すると、グローバル アセンブリ キャッシュとダウンロード キャッシュの内容を表示および操作できます。  

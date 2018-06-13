@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33356860"
 ---
 # <a name="transaction-management-escalation"></a>トランザクション管理のエスカレーション
 Windows は、トランザクション マネージャーを構成する一連のサービスとモジュールをホストします。 トランザクション管理のエスカレーションとは、トランザクション マネージャーのいずれかのコンポーネントから別のコンポーネントにトランザクションを移行するプロセスを表します。  

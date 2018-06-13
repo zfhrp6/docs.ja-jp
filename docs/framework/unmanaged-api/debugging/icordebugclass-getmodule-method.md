@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: c52795251b5cacebe749b1eedf918f8b20497796
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33402898"
 ---
 # <a name="icordebugclassgetmodule-method"></a>ICorDebugClass::GetModule メソッド
 このクラスを定義するモジュールを取得します。  

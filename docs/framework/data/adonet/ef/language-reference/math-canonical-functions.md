@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32765101"
 ---
 # <a name="math-canonical-functions"></a>数値演算正規関数
 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] には数学正規関数が含まれます。  

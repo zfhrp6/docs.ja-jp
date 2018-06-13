@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33400056"
 ---
 # <a name="wif-how-to39s-index"></a>WIF の「方法」のインデックス
 -   [方法: WIF を使用してクレーム対応 ASP.NET MVC Web アプリケーションをビルドする](../../../docs/framework/security/how-to-build-claims-aware-aspnet-mvc-web-app-using-wif.md)  

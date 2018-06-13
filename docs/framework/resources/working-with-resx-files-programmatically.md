@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33398834"
 ---
 # <a name="working-with-resx-files-programmatically"></a>プログラムによる .resx ファイルの使用
 XML リソース (.resx) ファイルは適切に定義された XML で構成する必要があり、特定のスキーマに従ったヘッダーの後に、名前と値のペアになったデータが続きます。そのため、手動で作成するとエラーが発生しやすくなります。 代わりに、.NET Framework クラス ライブラリの型とメンバーを使って、.resx ファイルをプログラムで作成できます。 また、.resx ファイルに格納されているリソースを取得するために、.NET Framework クラス ライブラリを使うこともできます。 このトピックでは、 <xref:System.Resources> 名前空間の型とメンバーを使って、.resx ファイルを操作する方法を説明します。  

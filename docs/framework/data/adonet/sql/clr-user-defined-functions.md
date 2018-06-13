@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33359713"
 ---
 # <a name="clr-user-defined-functions"></a>CLR ユーザー定義関数
 ユーザー定義関数は、パラメーターを受け取り、計算やその他の動作を実行し、結果を返すルーチンです。 Microsoft Visual Basic .NET や Microsoft Visual C# など、任意の Microsoft .NET Framework プログラミング言語を使用してユーザー定義関数を作成できます。  

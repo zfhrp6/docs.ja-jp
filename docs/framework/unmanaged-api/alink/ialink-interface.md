@@ -10,9 +10,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 1eae19d592dcf5243139e11bb6662953436e45a8
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33408594"
 ---
 # <a name="ialink-interface"></a>IALink インターフェイス
 .NET Framework アセンブリを構築する際に役立ちます。 特に、インターフェイスには、マルチ モジュール アセンブリのアセンブリ マニフェストの作成、厳密な名前によるアセンブリの署名および netmodule の作成を補助するメソッドが含まれています。  

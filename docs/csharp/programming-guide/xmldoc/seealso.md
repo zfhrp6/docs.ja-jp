@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33349136"
 ---
 # <a name="ltseealsogt-c-programming-guide"></a>&lt;seealso&gt; (C# プログラミング ガイド)
 ## <a name="syntax"></a>構文  

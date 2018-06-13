@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 86ab3d3a0f460f1ecdf86147b14df205aaf49635
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33404201"
 ---
 # <a name="coractivefunction-structure"></a>COR_ACTIVE_FUNCTION 構造体
 スレッドのフレームで現在アクティブな機能に関する情報が含まれます。 この構造体を使って、 [icordebugthread 2::getactivefunctions](../../../../docs/framework/unmanaged-api/debugging/icordebugthread2-getactivefunctions-method.md)メソッドです。  

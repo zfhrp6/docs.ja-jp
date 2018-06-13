@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33352865"
 ---
 # <a name="clr-triggers"></a>CLR トリガー
 トリガーは、言語イベントが実行されると自動的に実行される特殊な種類のストアド プロシージャです。 Microsoft SQL Server が .NET Framework 共通言語ランタイム (CLR) と統合されているため、任意の .NET Framework 言語を使用して CLR トリガーを作成できます。  

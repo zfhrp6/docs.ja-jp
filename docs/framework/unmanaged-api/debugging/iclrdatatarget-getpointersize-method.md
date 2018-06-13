@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 749ec14af7bffee87afbe5c0705a6ddf68da5fd8
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33406495"
 ---
 # <a name="iclrdatatargetgetpointersize-method"></a>ICLRDataTarget::GetPointerSize メソッド
 ターゲット プロセスが使用するポインター型のバイト単位のサイズを取得します。 このメソッドは、共通言語ランタイム データ アクセス サービスによって呼び出されます。  

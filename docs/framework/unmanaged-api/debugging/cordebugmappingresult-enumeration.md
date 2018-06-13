@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 7ca3f5a6af6ea19ec81af3f6ac0a028440f80d56
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33407960"
 ---
 # <a name="cordebugmappingresult-enumeration"></a>CorDebugMappingResult 列挙型
 命令ポインター (IP) の値が得られた方法の詳細を提供します。  

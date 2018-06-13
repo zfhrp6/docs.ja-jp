@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33318589"
 ---
 # <a name="creating-xml-trees-c"></a>XML ツリーの作成 (C#)
 最も一般的な XML タスクの 1 つは、XML ツリーの構築です。 ここでは、XML ツリーを作成するいくつかの方法について説明します。  

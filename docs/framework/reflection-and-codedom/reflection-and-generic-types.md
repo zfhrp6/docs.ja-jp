@@ -22,6 +22,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33399705"
 ---
 # <a name="reflection-and-generic-types"></a>リフレクションとジェネリック型
 <a name="top"></a> リフレクションの観点から言えば、ジェネリック型は、それがジェネリック型定義である場合は型パラメーター セットが、構築された型である場合は型引数セットが関連付けられているという点で通常の型と異なります。 ジェネリック メソッドと通常のメソッドの違いも、それと同様です。  

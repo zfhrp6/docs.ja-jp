@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33358613"
 ---
 # <a name="oracle-sequences"></a>Oracle シーケンス
 .NET Framework Data Provider for Oracle では、<xref:System.Data.OracleClient.OracleDataAdapter> を使用して挿入操作を実行した後、サーバーによって生成されたキー値 (Oracle シーケンス) を取得できます。  

@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 91e64bb2e1c8a7b11fe70024eb4a4fa1717c06e5
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33407350"
 ---
 # <a name="corheapobject-structure"></a>COR_HEAPOBJECT 構造体
 マネージ ヒープ上のオブジェクトに関する情報が提供されます。  

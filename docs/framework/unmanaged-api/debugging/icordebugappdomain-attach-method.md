@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: a290ca162e5ab71b4184d166bcd00f1d0217cb94
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33402497"
 ---
 # <a name="icordebugappdomainattach-method"></a>ICorDebugAppDomain::Attach メソッド
 アプリケーション ドメインに、デバッガーをアタッチします。  

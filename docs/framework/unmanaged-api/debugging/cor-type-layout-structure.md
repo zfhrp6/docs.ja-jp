@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: b88a7b0672e15097c60afbe069ce5b78bd5c38d2
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33408144"
 ---
 # <a name="cortypelayout-structure"></a>COR_TYPE_LAYOUT 構造体
 メモリ内のオブジェクトのレイアウトに関する情報が提供されます。  

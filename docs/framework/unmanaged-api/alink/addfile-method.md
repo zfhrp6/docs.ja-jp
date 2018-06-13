@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 57a350fadfa77fdad545ca7ccf2f63d28607c2ba
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33403921"
 ---
 # <a name="addfile-method1"></a>AddFile Method1
 ファイルをアセンブリに追加されます。 非バインド モジュールの作成にも使用できます。  

@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33565835"
 ---
 # <a name="types-migrated-from-wpf-to-systemxaml"></a>WPF から System.Xaml に移行した型
 [!INCLUDE[net_v35_long](../../../includes/net-v35-long-md.md)]と[!INCLUDE[net_v30_long](../../../includes/net-v30-long-md.md)]の両方を[!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)]Windows Workflow Foundation には、XAML 言語の実装が含まれているとします。 WPF XAML 実装に拡張性を与えていたパブリック型の多くは、WindowsBase、PresentationCore、および PresentationFramework アセンブリに存在していました。 同様に、Windows Workflow Foundation の XAML に拡張性を与えているパブリック型は System.Workflow.ComponentModel アセンブリに存在します。 [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)]では、XAML 関連の型の一部が System.Xaml アセンブリに移行されました。 XAML 言語サービスの一般的な .NET Framework 実装では、もともと特定のフレームワークの XAML 実装によって定義されていた XAML 機能拡張のシナリオの多くを、今では全体的な [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] XAML 言語サポートの一部として使用できるようになりました。 このトピックでは、移行された型を紹介し、移行に伴う問題について説明します。  

@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 55b9d185804f25c7431f2696d67753cc3ba02d1f
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33402042"
 ---
 # <a name="emitinternalexportedtypes-method"></a>EmitInternalExportedTypes メソッド
 アセンブリに追加された型を出力します。 既知の内部型が追加された後は、このメソッドを呼び出します。  

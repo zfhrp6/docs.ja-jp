@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32755527"
 ---
 # <a name="connection-pooling"></a>接続プール
 データ ソースへの接続は時間のかかる処理です。 ADO.NET 接続を開くコストを最小限に抑えると呼ばれる最適化の手法を使用して*接続プーリング*、繰り返しタグと終了の接続のコストを最小限に抑えられます。 接続プールは、.NET Framework データ プロバイダーに応じて異なる処理が行われます。  

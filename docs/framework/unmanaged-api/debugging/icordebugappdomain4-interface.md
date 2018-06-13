@@ -6,9 +6,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 7aa4d27e6b68137be88b4837d85fdf7c886a8133
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33405055"
 ---
 # <a name="icordebugappdomain4-interface"></a>ICorDebugAppDomain4 インターフェイス
 COM 呼び出し可能ラッパーからマネージ オブジェクトを取得する ICorDebugAppDomain インターフェイスを論理的に拡張します。  

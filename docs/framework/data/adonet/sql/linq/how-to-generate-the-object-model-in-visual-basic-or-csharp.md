@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33360394"
 ---
 # <a name="how-to-generate-the-object-model-in-visual-basic-or-c"></a>方法 : Visual Basic または C# でオブジェクト モデルを生成する #
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] では、使用しているプログラミング言語のオブジェクト モデルが、リレーショナル データベースに対応付けられています。 2 つのツールは自動的に既存のデータベースのメタデータから Visual Basic または c# のモデルを生成できます。  

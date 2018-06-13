@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33398727"
 ---
 # <a name="how-to-load-assemblies-into-the-reflection-only-context"></a>方法 : リフレクションのみのコンテキストにアセンブリを読み込む
 リフレクションのみの読み込みコンテキストでは、他のプラットフォームや .NET Framework の他のバージョン用にコンパイルされたアセンブリを検査できます。 このコンテキストに読み込まれたコードは検査のみ可能で、実行できません。 つまり、コンストラクターを実行できないので、オブジェクトは作成できません。 また、コードを実行できないため、依存関係は自動的には読み込まれません。 依存関係を検査する必要がある場合は、依存関係を独自に読み込む必要があります。  

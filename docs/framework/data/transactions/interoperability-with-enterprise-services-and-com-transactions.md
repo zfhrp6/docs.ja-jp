@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33362751"
 ---
 # <a name="interoperability-with-enterprise-services-and-com-transactions"></a>Enterprise Services および COM+ トランザクションとの相互運用性
 <xref:System.Transactions> 名前空間は、この名前空間を使用して作成されたトランザクション オブジェクトと COM+ によって作成されたトランザクションとの間の相互運用をサポートします。  

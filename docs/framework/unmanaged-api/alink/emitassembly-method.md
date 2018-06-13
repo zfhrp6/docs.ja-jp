@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 1cd1c077a8f2a5fe3b2b46c2e1da2e92b5a797a6
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33402058"
 ---
 # <a name="emitassembly-method"></a>EmitAssembly メソッド
 アセンブリを作成します。 アセンブリ ファイルを除く他のすべてのファイルが閉じられた後は、このメソッドを呼び出します。 非バインド モジュールを生成するときに、このメソッドを呼び出さないでください。  

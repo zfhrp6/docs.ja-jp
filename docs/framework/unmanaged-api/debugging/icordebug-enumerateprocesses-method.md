@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 53d40c198b53370733009c76fd3d49f14df93e6c
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33402097"
 ---
 # <a name="icordebugenumerateprocesses-method"></a>ICorDebug::EnumerateProcesses メソッド
 デバッグ中のプロセスの列挙子を取得します。  

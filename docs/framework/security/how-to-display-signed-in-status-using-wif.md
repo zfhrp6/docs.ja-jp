@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33398919"
 ---
 # <a name="how-to-display-signed-in-status-using-wif"></a>方法: WIF を使用してサインイン状態を表示する
 ## <a name="applies-to"></a>対象  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33399039"
 ---
 # <a name="json-web-token-handler"></a>JSON Web トークン ハンドラー
 Windows Identity Foundation の JSON Web トークン ハンドラー拡張機能を使用すると、アプリケーションで JSON Web トークン (JWT) を作成して検証できます。 JWT トークン ハンドラーは、他の組み込みセキュリティ トークン ハンドラーのような WIF パイプラインで実行されるように構成できますが、別個に使用して軽量のアプリケーションでトークン検証を実行することもできます。 Microsoft Azure Active Directory での認証など、OAuth 2.0 ベアラー トークン スキームを使用している場合は、JWT トークン ハンドラーが特に役立ちます。  

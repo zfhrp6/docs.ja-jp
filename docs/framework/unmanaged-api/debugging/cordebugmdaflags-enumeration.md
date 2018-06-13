@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: ac4a8a0c13ba6aa0d5c65ec7fa1aa3b771c964eb
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33404860"
 ---
 # <a name="cordebugmdaflags-enumeration"></a>CorDebugMDAFlags 列挙型
 マネージ デバッグ アシスタント (MDA) が生成されるスレッドのステータスを指定します。  

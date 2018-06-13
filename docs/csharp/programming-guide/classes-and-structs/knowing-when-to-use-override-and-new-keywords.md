@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33340269"
 ---
 # <a name="knowing-when-to-use-override-and-new-keywords-c-programming-guide"></a>Override キーワードと New キーワードを使用する場合について (C# プログラミング ガイド)
 C# では、派生クラスのメソッドを基底クラスのメソッドと同じ名前にすることができます。 [new](../../../csharp/language-reference/keywords/new.md) および [override](../../../csharp/language-reference/keywords/override.md) キーワードを使って、メソッドでの処理を指定できます。 `override` 修飾子は基底クラスのメソッドを "*拡張*" し、`new` 修飾子は "*隠ぺい*" します。 このトピックの例ではその違いを示します。  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33333386"
 ---
 # <a name="how-to-catch-parsing-errors-c"></a>方法: 解析エラーをキャッチする (C#)
 このトピックでは、形式が正しくないか無効な XML を検出する方法について説明します。  

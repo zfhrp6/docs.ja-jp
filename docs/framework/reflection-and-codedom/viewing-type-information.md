@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33399744"
 ---
 # <a name="viewing-type-information"></a>型情報の表示
 <xref:System.Type?displayProperty=nameWithType> クラスは、リフレクションの中心です。 共通言語ランタイムは、リフレクションの要求時に読み込まれる型の**型**を作成します。 **型**オブジェクトのメソッド、フィールド、プロパティ、および入れ子になったクラスから、その型に関することがすべてわかります。  

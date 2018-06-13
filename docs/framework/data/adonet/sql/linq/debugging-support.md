@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33361774"
 ---
 # <a name="debugging-support"></a>デバッグのサポート
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 一般的なデバッグ サポートを提供[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]プロジェクト。  参照してください[LINQ のデバッグ](http://msdn.microsoft.com/library/Bb385795\(v=vs.110\))または[LINQ のデバッグ](http://msdn.microsoft.com/library/Bb385795\(v=vs.120\))です。  

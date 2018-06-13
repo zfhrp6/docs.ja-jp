@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33399247"
 ---
 # <a name="wif-configuration-reference"></a>WIF 構成のリファレンス
 構成ファイルに要素を追加する方法で、アプリケーションで Windows Identity Foundation (WIF) を構成できます。 このトピックには、WIF 構成要素に関する参照トピックへのリンクが含まれています。  

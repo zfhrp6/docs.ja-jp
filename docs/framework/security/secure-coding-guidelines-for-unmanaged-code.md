@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33408152"
 ---
 # <a name="secure-coding-guidelines-for-unmanaged-code"></a>アンマネージ コードの安全なコーディングのガイドライン
 一部のライブラリ コードは、アンマネージ コードを呼び出す必要があります (たとえば、Win32 などのネイティブ コード API)。 これは、マネージ コード用のセキュリティの境界の外部に出ることなので、注意が必要です。 セキュリティ的に中立なコードである場合、コードとそのコードを呼び出すコードは、アンマネージ コードのアクセス許可 (<xref:System.Security.Permissions.SecurityPermission> フラグを指定した <xref:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode> ) を持つ必要があります。  

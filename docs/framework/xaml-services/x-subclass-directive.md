@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33566419"
 ---
 # <a name="xsubclass-directive"></a>x:Subclass ディレクティブ
 XAML マークアップのコンパイルの動作を変更してとき`x:Class`も用意されています。 基になっている部分クラスを作成する代わりに`x:Class`、提供されている`x:Class`、中間クラスとして作成された基になる、指定された派生クラスを想定し、`x:Class`です。  

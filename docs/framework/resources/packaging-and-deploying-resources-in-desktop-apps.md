@@ -33,6 +33,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33399692"
 ---
 # <a name="packaging-and-deploying-resources-in-desktop-apps"></a>デスクトップ アプリケーションでのリソースのパッケージ化と配置
 アプリケーションは、<xref:System.Resources.ResourceManager> クラスによって表される .NET Framework リソース マネージャーに依存して、ローカライズされたリソースを取得します。 リソース マネージャーでは、リソースのパッケージ化と配置にハブ アンド スポーク モデルを使うことが想定されています。 ハブは、ローカライズできない実行可能コードと、ニュートラル カルチャまたは既定のカルチャと呼ばれる単一カルチャ用のリソースを含む、メイン アセンブリです。 既定のカルチャはアプリケーション用のフォールバック カルチャです。つまり、ローカライズされたリソースが見つからない場合に使われるリソースのカルチャです。 各スポークは、単一のカルチャ用のリソースを含むがコードは含まないサテライト アセンブリに接続します。  

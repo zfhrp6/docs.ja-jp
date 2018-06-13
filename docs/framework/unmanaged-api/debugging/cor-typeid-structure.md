@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 3d4e07fb3d0988838fde662f4bb7d4719cc2d50f
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33408341"
 ---
 # <a name="cortypeid-structure"></a>COR_TYPEID 構造体
 型識別子が含まれます。  

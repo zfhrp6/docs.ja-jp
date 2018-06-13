@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33408968"
 ---
 # <a name="wif-claims-programming-model"></a>WIF 要求プログラミング モデル
 ASP.NET と Windows Communication Foundation (WCF) の開発者は、通常、IIdentity インターフェイスや IPrincipal インターフェイスを利用し、ユーザーの ID 情報を処理します。 .NET 4.5 では、Windows Identity Foundation (WIF) が統合され、あらゆるプリンシパルに対して常に要求が表示されるようになりました。次の図をご覧ください。  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33314217"
 ---
 # <a name="anonymous-types-c-programming-guide"></a>匿名型 (C# プログラミング ガイド)
 匿名型を使用すると、あらかじめ明示的に型を定義することなく、一連の読み取り専用プロパティを単一のオブジェクトにカプセル化できるので便利です。 型の名前はコンパイラにより生成され、ソース コード レベルでは使用できません。 各プロパティの型はコンパイラにより推測されます。  
