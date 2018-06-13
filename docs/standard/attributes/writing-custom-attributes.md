@@ -23,6 +23,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33574648"
 ---
 # <a name="writing-custom-attributes"></a><span data-ttu-id="0cc5b-102">カスタム属性の記述</span><span class="sxs-lookup"><span data-stu-id="0cc5b-102">Writing Custom Attributes</span></span>
 <span data-ttu-id="0cc5b-103">独自のカスタム属性をデザインするために、多くの新しい概念を習得する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="0cc5b-103">To design your own custom attributes, you do not need to master many new concepts.</span></span> <span data-ttu-id="0cc5b-104">オブジェクト指向プログラミングに精通してクラスをデザインする方法を理解しているなら、必要な知識をほぼすべて持っています。</span><span class="sxs-lookup"><span data-stu-id="0cc5b-104">If you are familiar with object-oriented programming and know how to design classes, you already have most of the knowledge needed.</span></span> <span data-ttu-id="0cc5b-105">カスタム属性は、基本的には、<xref:System.Attribute?displayProperty=nameWithType> から直接的に派生したか間接的に派生した従来のクラスです。</span><span class="sxs-lookup"><span data-stu-id="0cc5b-105">Custom attributes are essentially traditional classes that derive directly or indirectly from <xref:System.Attribute?displayProperty=nameWithType>.</span></span> <span data-ttu-id="0cc5b-106">従来のクラスと同じように、カスタム属性には、データを格納したり取得したりするメソッドが含まれます。</span><span class="sxs-lookup"><span data-stu-id="0cc5b-106">Just like traditional classes, custom attributes contain methods that store and retrieve data.</span></span>  

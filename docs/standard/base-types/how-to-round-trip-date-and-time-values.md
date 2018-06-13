@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33573187"
 ---
 # <a name="how-to-round-trip-date-and-time-values"></a><span data-ttu-id="eac7b-102">方法 : 日付と時刻の値をラウンドトリップさせる</span><span class="sxs-lookup"><span data-stu-id="eac7b-102">How to: Round-trip Date and Time Values</span></span>
 <span data-ttu-id="eac7b-103">ある特定の時点を明確に表すように日付と時刻の値を保つことは、多くのアプリケーションに共通する要件です。</span><span class="sxs-lookup"><span data-stu-id="eac7b-103">In many applications, a date and time value is intended to unambiguously identify a single point in time.</span></span> <span data-ttu-id="eac7b-104">このトピックでは、<xref:System.DateTime> 値、<xref:System.DateTimeOffset> 値、日時値と時間帯の情報を保存し、復元する方法について説明します。復元した値によって、保存した値と同じ時刻が識別されるようにします。</span><span class="sxs-lookup"><span data-stu-id="eac7b-104">This topic shows how to save and restore a <xref:System.DateTime> value, a <xref:System.DateTimeOffset> value, and a date and time value with time zone information so that the restored value identifies the same time as the saved value.</span></span>  

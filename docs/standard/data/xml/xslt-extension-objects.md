@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33570580"
 ---
 # <a name="xslt-extension-objects"></a><span data-ttu-id="9cfe1-102">XSLT 拡張オブジェクト</span><span class="sxs-lookup"><span data-stu-id="9cfe1-102">XSLT Extension Objects</span></span>
 <span data-ttu-id="9cfe1-103">拡張オブジェクトは、スタイル シートの機能を拡張する場合に使用します。</span><span class="sxs-lookup"><span data-stu-id="9cfe1-103">Extension objects are used to extend the functionality of style sheets.</span></span> <span data-ttu-id="9cfe1-104">拡張オブジェクトは、<xref:System.Xml.Xsl.XsltArgumentList> クラスによって維持されます。</span><span class="sxs-lookup"><span data-stu-id="9cfe1-104">Extension objects are maintained by the <xref:System.Xml.Xsl.XsltArgumentList> class.</span></span>  

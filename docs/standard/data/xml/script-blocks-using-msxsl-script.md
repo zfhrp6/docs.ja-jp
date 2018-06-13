@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33577164"
 ---
 # <a name="script-blocks-using-msxslscript"></a><span data-ttu-id="a2250-102">msxsl:script を使用したスクリプト ブロック</span><span class="sxs-lookup"><span data-stu-id="a2250-102">Script Blocks Using msxsl:script</span></span>
 <span data-ttu-id="a2250-103"><xref:System.Xml.Xsl.XslCompiledTransform> クラスは、`msxsl:script` 要素を使用した埋め込みスクリプトをサポートしています。</span><span class="sxs-lookup"><span data-stu-id="a2250-103">The <xref:System.Xml.Xsl.XslCompiledTransform> class supports embedded scripts using the `msxsl:script` element.</span></span> <span data-ttu-id="a2250-104">スタイル シートが読み込まれると、定義されているすべての関数は Code Document Object Model (CodeDOM) によって Microsoft intermediate language (MSIL) にコンパイルされ、実行時に実行されます。</span><span class="sxs-lookup"><span data-stu-id="a2250-104">When the style sheet is loaded, any defined functions are compiled to Microsoft intermediate language (MSIL) by the Code Document Object Model (CodeDOM) and are executed during run time.</span></span> <span data-ttu-id="a2250-105">埋め込みのスクリプト ブロックから生成されたアセンブリは、スタイル シートに対して生成されるアセンブリとは区別されます。</span><span class="sxs-lookup"><span data-stu-id="a2250-105">The assembly generated from the embedded script block is separate than the assembly generated for the style sheet.</span></span>  

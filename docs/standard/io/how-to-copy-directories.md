@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33571236"
 ---
 # <a name="how-to-copy-directories"></a><span data-ttu-id="d19ea-102">方法 : ディレクトリをコピーする</span><span class="sxs-lookup"><span data-stu-id="d19ea-102">How to: Copy Directories</span></span>
 <span data-ttu-id="d19ea-103">この例では、I/O クラスを使用して、別の場所にディレクトリの内容を同期的にコピーする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="d19ea-103">This example demonstrates how to use I/O classes to synchronously copy the contents of a directory to another location.</span></span> <span data-ttu-id="d19ea-104">ユーザーは、サブディレクトリもコピーするかどうかを指定できます。</span><span class="sxs-lookup"><span data-stu-id="d19ea-104">In this example, the user can specify whether to also copy the subdirectories.</span></span> <span data-ttu-id="d19ea-105">サブディレクトリをコピーする場合、この例で使用するメソッドは、コピーするディレクトリがなくなるまで、各サブディレクトリ上で自身を呼び出し、再帰的にコピーを行います。</span><span class="sxs-lookup"><span data-stu-id="d19ea-105">If the subdirectories are copied, the method in this example recursively copies them by calling itself on each subsequent subdirectory until there are no more to copy.</span></span>  

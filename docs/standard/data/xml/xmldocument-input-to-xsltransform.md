@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33570619"
 ---
 # <a name="xmldocument-input-to-xsltransform"></a><span data-ttu-id="a1923-102">XslTransform への XmlDocument の入力</span><span class="sxs-lookup"><span data-stu-id="a1923-102">XmlDocument Input to XslTransform</span></span>
 <span data-ttu-id="a1923-103"><xref:System.Xml.XmlDocument> クラスは、XML ドキュメントの編集機能を持っています。</span><span class="sxs-lookup"><span data-stu-id="a1923-103">The <xref:System.Xml.XmlDocument> class provides editing capabilities for an XML document.</span></span> <span data-ttu-id="a1923-104">XML を <xref:System.Xml.Xsl.XslTransform.Transform%2A> メソッドに送信する前に編集または変更する必要がある場合は、XML を <xref:System.Xml.XmlDocument> に読み込み、編集し、<xref:System.Xml.Xsl.XslTransform> に送信します。</span><span class="sxs-lookup"><span data-stu-id="a1923-104">If the XML needs to be edited or modified before being sent to the <xref:System.Xml.Xsl.XslTransform.Transform%2A> method, load the XML into an <xref:System.Xml.XmlDocument>, edit it, and send it in to the <xref:System.Xml.Xsl.XslTransform>.</span></span>  

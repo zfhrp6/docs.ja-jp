@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33571463"
 ---
 # <a name="xpath-queries-and-namespaces"></a><span data-ttu-id="3488f-102">XPath クエリおよび名前空間</span><span class="sxs-lookup"><span data-stu-id="3488f-102">XPath Queries and Namespaces</span></span>
 <span data-ttu-id="3488f-103">XPath クエリは XML ドキュメント中の名前空間を認識し、名前空間プレフィックスを使用して要素と属性名を修飾することができます。</span><span class="sxs-lookup"><span data-stu-id="3488f-103">XPath queries are aware of namespaces in an XML document and can use namespace prefixes to qualify element and attribute names.</span></span> <span data-ttu-id="3488f-104">名前空間プレフィックスで要素や属性の名前を修飾すると、XPath クエリで返されるノードを特定の名前空間に属するノードだけに限定することができます。</span><span class="sxs-lookup"><span data-stu-id="3488f-104">Qualifying element and attribute names with a namespace prefix limits the nodes returned by an XPath query to only those nodes that belong to a specific namespace.</span></span>  

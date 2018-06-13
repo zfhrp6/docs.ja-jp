@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33575656"
 ---
 # <a name="weak-references"></a><span data-ttu-id="7cf81-102">弱い参照</span><span class="sxs-lookup"><span data-stu-id="7cf81-102">Weak References</span></span>
 <span data-ttu-id="7cf81-103">ガベージ コレクターでは、アプリケーションのコードがオブジェクトにアクセスできる間、そのアプリケーションで使用中のオブジェクトを収集することはできません。</span><span class="sxs-lookup"><span data-stu-id="7cf81-103">The garbage collector cannot collect an object in use by an application while the application's code can reach that object.</span></span> <span data-ttu-id="7cf81-104">アプリケーションには、オブジェクトへの強い参照があると考えられます。</span><span class="sxs-lookup"><span data-stu-id="7cf81-104">The application is said to have a strong reference to the object.</span></span>  

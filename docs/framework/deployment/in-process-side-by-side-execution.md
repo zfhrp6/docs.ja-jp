@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33397456"
 ---
 # <a name="in-process-side-by-side-execution"></a><span data-ttu-id="6e9ad-102">インプロセスの side-by-side 実行</span><span class="sxs-lookup"><span data-stu-id="6e9ad-102">In-Process Side-by-Side Execution</span></span>
 <span data-ttu-id="6e9ad-103">[!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] 以降では、インプロセスの side-by-side ホスティングを使用して、1 つのプロセスで複数のバージョンの共通言語ランタイム (CLR) を実行できます。</span><span class="sxs-lookup"><span data-stu-id="6e9ad-103">Starting with the [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], you can use in-process side-by-side hosting to run multiple versions of the common language runtime (CLR) in a single process.</span></span> <span data-ttu-id="6e9ad-104">既定では、マネージ COM コンポーネントは、プロセスに読み込まれている .NET Framework のバージョンに関係なく、コンポーネントがビルドされた .NET Framework のバージョンで実行されます。</span><span class="sxs-lookup"><span data-stu-id="6e9ad-104">By default, managed COM components run with the .NET Framework version they were built with, regardless of the .NET Framework version that is loaded for the process.</span></span>  

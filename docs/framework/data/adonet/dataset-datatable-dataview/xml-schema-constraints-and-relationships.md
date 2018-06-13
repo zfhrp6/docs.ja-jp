@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32759843"
 ---
 # <a name="xml-schema-constraints-and-relationships"></a><span data-ttu-id="77431-102">XML スキーマ制約およびリレーションシップ</span><span class="sxs-lookup"><span data-stu-id="77431-102">XML Schema Constraints and Relationships</span></span>
 <span data-ttu-id="77431-103">XML スキーマ定義言語 (XSD) スキーマでは、制約を指定することができます (一意キー、およびキー参照制約) とのリレーションシップ (を使用して、 **msdata:Relationship**注釈)。</span><span class="sxs-lookup"><span data-stu-id="77431-103">In an XML Schema definition language (XSD) schema, you can specify constraints (unique, key, and keyref constraints) and relationships (using the **msdata:Relationship** annotation).</span></span> <span data-ttu-id="77431-104">このトピックでは、XML スキーマで指定した制約およびリレーションシップを解釈して <xref:System.Data.DataSet> を生成する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="77431-104">This topic explains how the constraints and relationships specified in an XML Schema are interpreted to generate the <xref:System.Data.DataSet>.</span></span>  

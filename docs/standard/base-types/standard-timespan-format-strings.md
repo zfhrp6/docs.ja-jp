@@ -24,6 +24,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33578308"
 ---
 # <a name="standard-timespan-format-strings"></a><span data-ttu-id="fe3c9-102">標準 TimeSpan 書式指定文字列</span><span class="sxs-lookup"><span data-stu-id="fe3c9-102">Standard TimeSpan Format Strings</span></span>
 <a name="Top"></a> <span data-ttu-id="fe3c9-103">標準の <xref:System.TimeSpan> 書式指定文字列は、単一の書式指定子を使用して、書式設定操作によって生成される <xref:System.TimeSpan> 値のテキスト表現を定義します。</span><span class="sxs-lookup"><span data-stu-id="fe3c9-103">A standard <xref:System.TimeSpan> format string uses a single format specifier to define the text representation of a <xref:System.TimeSpan> value that results from a formatting operation.</span></span> <span data-ttu-id="fe3c9-104">空白を含む複数の文字で構成される書式指定文字列は、カスタムの <xref:System.TimeSpan> 書式指定文字列として解釈されます。</span><span class="sxs-lookup"><span data-stu-id="fe3c9-104">Any format string that contains more than one character, including white space, is interpreted as a custom <xref:System.TimeSpan> format string.</span></span> <span data-ttu-id="fe3c9-105">詳細については、「[カスタム TimeSpan 書式指定文字列](../../../docs/standard/base-types/custom-timespan-format-strings.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="fe3c9-105">For more information, see [Custom TimeSpan Format Strings](../../../docs/standard/base-types/custom-timespan-format-strings.md) .</span></span>  

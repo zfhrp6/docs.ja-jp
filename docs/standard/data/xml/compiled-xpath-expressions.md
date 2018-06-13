@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33573803"
 ---
 # <a name="compiled-xpath-expressions"></a><span data-ttu-id="d0253-102">コンパイルされた XPath 式</span><span class="sxs-lookup"><span data-stu-id="d0253-102">Compiled XPath Expressions</span></span>
 <span data-ttu-id="d0253-103"><xref:System.Xml.XPath.XPathExpression> オブジェクトは、<xref:System.Xml.XPath.XPathExpression.Compile%2A> クラスの静的 <xref:System.Xml.XPath.XPathExpression> メソッドまたは <xref:System.Xml.XPath.XPathNavigator.Compile%2A> クラスの <xref:System.Xml.XPath.XPathNavigator> メソッドから返されるコンパイル済み XPath クエリを表します。</span><span class="sxs-lookup"><span data-stu-id="d0253-103">An <xref:System.Xml.XPath.XPathExpression> object represents a compiled XPath query returned from either the static <xref:System.Xml.XPath.XPathExpression.Compile%2A> method of the <xref:System.Xml.XPath.XPathExpression> class or the <xref:System.Xml.XPath.XPathNavigator.Compile%2A> method of the <xref:System.Xml.XPath.XPathNavigator> class.</span></span>  

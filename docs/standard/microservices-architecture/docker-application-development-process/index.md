@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33574785"
 ---
 # <a name="development-process-for-docker-based-applications"></a><span data-ttu-id="630bf-103">Docker ベースのアプリケーションの開発プロセス</span><span class="sxs-lookup"><span data-stu-id="630bf-103">Development Process for Docker-Based Applications</span></span>
 

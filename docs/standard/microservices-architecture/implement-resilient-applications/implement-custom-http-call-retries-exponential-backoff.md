@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33574947"
 ---
 # <a name="implementing-custom-http-call-retries-with-exponential-backoff"></a><span data-ttu-id="f68f9-103">指数のバックオフを含むカスタムの HTTP 呼び出しの再試行を実装する</span><span class="sxs-lookup"><span data-stu-id="f68f9-103">Implementing custom HTTP call retries with exponential backoff</span></span>
 

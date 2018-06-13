@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33479922"
 ---
 # <a name="systemservicemodelchannelspeerneighbornotaccepted"></a><span data-ttu-id="d01f5-102">System.ServiceModel.Channels.PeerNeighborNotAccepted</span><span class="sxs-lookup"><span data-stu-id="d01f5-102">System.ServiceModel.Channels.PeerNeighborNotAccepted</span></span>
 <span data-ttu-id="d01f5-103">ピアの近隣ノードは受け入れられませんでした。</span><span class="sxs-lookup"><span data-stu-id="d01f5-103">A peer neighbor was not accepted.</span></span>  

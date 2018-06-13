@@ -18,9 +18,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 63f6ea4a348b3035a1f0b1d3e00f61f689915fa2
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33450100"
 ---
 # <a name="corprfgcreason-enumeration"></a><span data-ttu-id="1406e-102">COR_PRF_GC_REASON 列挙型</span><span class="sxs-lookup"><span data-stu-id="1406e-102">COR_PRF_GC_REASON Enumeration</span></span>
 <span data-ttu-id="1406e-103">ガベージ コレクションが発生している理由を示します。</span><span class="sxs-lookup"><span data-stu-id="1406e-103">Indicates the reason that garbage collection is occurring.</span></span>  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33569367"
 ---
 # <a name="conversion-of-xml-data-types"></a><span data-ttu-id="bef07-102">XML データ型の変換</span><span class="sxs-lookup"><span data-stu-id="bef07-102">Conversion of XML Data Types</span></span>
 <span data-ttu-id="bef07-103">**XmlConvert** クラスのメソッドのほとんどは、文字列と厳密に型指定された形式との間のデータ変換に使われます。</span><span class="sxs-lookup"><span data-stu-id="bef07-103">The majority of the methods found in an **XmlConvert** class are used to convert data between strings and strongly-typed formats.</span></span> <span data-ttu-id="bef07-104">これらのメソッドはロケールに依存しません。</span><span class="sxs-lookup"><span data-stu-id="bef07-104">Methods are locale independent.</span></span> <span data-ttu-id="bef07-105">つまり、変換の実行時にはロケールの設定は考慮されません。</span><span class="sxs-lookup"><span data-stu-id="bef07-105">This means that they do not take into account any locale settings when doing conversion.</span></span>  

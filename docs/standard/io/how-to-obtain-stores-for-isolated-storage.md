@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33576683"
 ---
 # <a name="how-to-obtain-stores-for-isolated-storage"></a><span data-ttu-id="76afb-102">方法 : 分離ストレージでストアを取得する</span><span class="sxs-lookup"><span data-stu-id="76afb-102">How to: Obtain Stores for Isolated Storage</span></span>
 <span data-ttu-id="76afb-103">分離ストアでは、データ コンパートメント内の仮想ファイル システムを公開します。</span><span class="sxs-lookup"><span data-stu-id="76afb-103">An isolated store exposes a virtual file system within a data compartment.</span></span> <span data-ttu-id="76afb-104"><xref:System.IO.IsolatedStorage.IsolatedStorageFile> クラスでは、分離ストアと対話するためのいくつかのメソッドが提供されます。</span><span class="sxs-lookup"><span data-stu-id="76afb-104">The <xref:System.IO.IsolatedStorage.IsolatedStorageFile> class supplies a number of methods for interacting with an isolated store.</span></span> <span data-ttu-id="76afb-105">ストアを作成して取得するために、<xref:System.IO.IsolatedStorage.IsolatedStorageFile> では次の 3 つの静的メソッドが提供されます。</span><span class="sxs-lookup"><span data-stu-id="76afb-105">To create and retrieve stores, <xref:System.IO.IsolatedStorage.IsolatedStorageFile> provides three static methods:</span></span>  

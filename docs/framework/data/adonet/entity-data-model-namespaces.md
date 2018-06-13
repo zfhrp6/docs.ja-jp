@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32765231"
 ---
 # <a name="entity-data-model-namespaces"></a><span data-ttu-id="f4d66-102">Entity Data Model: 名前空間</span><span class="sxs-lookup"><span data-stu-id="f4d66-102">Entity Data Model: Namespaces</span></span>
 <span data-ttu-id="f4d66-103">Entity Data Model (EDM) での名前空間がする抽象コンテナーの[エンティティ型](../../../../docs/framework/data/adonet/entity-type.md)、[複合型](../../../../docs/framework/data/adonet/complex-type.md)、および[アソシエーション](../../../../docs/framework/data/adonet/association-type.md)です。</span><span class="sxs-lookup"><span data-stu-id="f4d66-103">A namespace in the Entity Data Model (EDM) is an abstract container for [entity types](../../../../docs/framework/data/adonet/entity-type.md), [complex types](../../../../docs/framework/data/adonet/complex-type.md), and [associations](../../../../docs/framework/data/adonet/association-type.md).</span></span> <span data-ttu-id="f4d66-104">EDM の名前空間はプログラミング言語の名前空間と似ており、その中に含まれるオブジェクトのコンテキストを指定し、同じ名前を持つ (しかし、別の名前空間に含まれる) オブジェクトを明確に区別する手段になります。</span><span class="sxs-lookup"><span data-stu-id="f4d66-104">Namespaces in the EDM are similar to namespaces in a programming language: they provide context for the objects that they contain and they provide a way to disambiguate objects that have the same name (but are contained in different namespaces).</span></span>  

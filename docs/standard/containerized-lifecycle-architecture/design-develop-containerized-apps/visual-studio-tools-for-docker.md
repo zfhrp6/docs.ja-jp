@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33569292"
 ---
 # <a name="using-visual-studio-tools-for-docker-visual-studio-on-windows"></a><span data-ttu-id="cb66c-103">Visual Studio Tools for Docker (Windows 上の Visual Studio) を使用</span><span class="sxs-lookup"><span data-stu-id="cb66c-103">Using Visual Studio Tools for Docker (Visual Studio on Windows)</span></span>
 

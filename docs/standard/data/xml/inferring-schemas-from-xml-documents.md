@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33574821"
 ---
 # <a name="inferring-schemas-from-xml-documents"></a><span data-ttu-id="7e241-102">XML ドキュメントからのスキーマの推論</span><span class="sxs-lookup"><span data-stu-id="7e241-102">Inferring Schemas from XML Documents</span></span>
 <span data-ttu-id="7e241-103">このトピックでは、<xref:System.Xml.Schema.XmlSchemaInference> クラスを使用して、XML ドキュメントの構造から XML スキーマ定義言語 (XSD) スキーマを推論する方法を説明します。</span><span class="sxs-lookup"><span data-stu-id="7e241-103">This topic describes how to use the <xref:System.Xml.Schema.XmlSchemaInference> class to infer an XML Schema definition language (XSD) schema from the structure of an XML document.</span></span>  

@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33575395"
 ---
 # <a name="event-design"></a><span data-ttu-id="314ac-102">イベントのデザイン</span><span class="sxs-lookup"><span data-stu-id="314ac-102">Event Design</span></span>
 <span data-ttu-id="314ac-103">イベントは、コールバック (ユーザー コードを呼び出すために、フレームワークを許可するコンストラクト) の最も一般的に使用される形式です。</span><span class="sxs-lookup"><span data-stu-id="314ac-103">Events are the most commonly used form of callbacks (constructs that allow the framework to call into user code).</span></span> <span data-ttu-id="314ac-104">その他のコールバック機構には、デリゲート、仮想メンバー、およびプラグインのインターフェイス ベースを取得するメンバーが含まれます。ユーザビリティ調査においてからのデータは、開発者の大部分が快適他のコールバック機構を使用するよりもイベントを使用することを示します。</span><span class="sxs-lookup"><span data-stu-id="314ac-104">Other callback mechanisms include members taking delegates, virtual members, and interface-based plug-ins. Data from usability studies indicate that the majority of developers are more comfortable using events than they are using the other callback mechanisms.</span></span> <span data-ttu-id="314ac-105">イベントは、Visual Studio および多くの言語に適切に統合されています。</span><span class="sxs-lookup"><span data-stu-id="314ac-105">Events are nicely integrated with Visual Studio and many languages.</span></span>  

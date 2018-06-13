@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33575454"
 ---
 # <a name="handling-and-throwing-exceptions-in-net"></a><span data-ttu-id="866ef-102">.NET での例外の処理とスロー</span><span class="sxs-lookup"><span data-stu-id="866ef-102">Handling and throwing exceptions in .NET</span></span>
 

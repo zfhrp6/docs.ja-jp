@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33571265"
 ---
 # <a name="handling-com-interop-exceptions"></a><span data-ttu-id="5e233-102">COM 相互運用の例外の処理</span><span class="sxs-lookup"><span data-stu-id="5e233-102">Handling COM Interop Exceptions</span></span>
 <span data-ttu-id="5e233-103">マネージ コードとアンマネージ コードは、例外を処理するために一緒に操作できます。</span><span class="sxs-lookup"><span data-stu-id="5e233-103">Managed and unmanaged code can work together to handle exceptions.</span></span> <span data-ttu-id="5e233-104">マネージ コードでメソッドが例外をスローすると、共通言語ランタイムは、HRESULT を COM オブジェクトに渡すことができます。</span><span class="sxs-lookup"><span data-stu-id="5e233-104">If a method throws an exception in managed code, the common language runtime can pass an HRESULT to a COM object.</span></span> <span data-ttu-id="5e233-105">アンマネージ コードでメソッドが失敗して、失敗を示す HRESULT を返した場合、ランタイムはマネージ コードでキャッチできる例外をスローします。</span><span class="sxs-lookup"><span data-stu-id="5e233-105">If a method fails in unmanaged code by returning a failure HRESULT, the runtime throws an exception that can be caught by managed code.</span></span>  

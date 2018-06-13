@@ -18,9 +18,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 11cf96f5957d41e0647c309a7b0bb08fc9b31c91
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33452105"
 ---
 # <a name="functiontailcall-function"></a><span data-ttu-id="353f8-102">FunctionTailcall 関数</span><span class="sxs-lookup"><span data-stu-id="353f8-102">FunctionTailcall Function</span></span>
 <span data-ttu-id="353f8-103">現在実行中の関数は、別の関数の末尾呼び出しを実行しようとして、プロファイラーに通知します。</span><span class="sxs-lookup"><span data-stu-id="353f8-103">Notifies the profiler that the currently executing function is about to perform a tail call to another function.</span></span>  

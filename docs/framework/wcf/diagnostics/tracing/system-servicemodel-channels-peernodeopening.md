@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33480546"
 ---
 # <a name="systemservicemodelchannelspeernodeopening"></a><span data-ttu-id="8574a-102">System.ServiceModel.Channels.PeerNodeOpening</span><span class="sxs-lookup"><span data-stu-id="8574a-102">System.ServiceModel.Channels.PeerNodeOpening</span></span>
 <span data-ttu-id="8574a-103">PeerNode の初期化が開始されました。</span><span class="sxs-lookup"><span data-stu-id="8574a-103">The PeerNode has begun initializing.</span></span>  

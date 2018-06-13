@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33398521"
 ---
 # <a name="wif-features"></a><span data-ttu-id="118e8-102">WIF の機能</span><span class="sxs-lookup"><span data-stu-id="118e8-102">WIF Features</span></span>
 -   [<span data-ttu-id="118e8-103">Visual Studio 2012 の ID およびアクセス ツール</span><span class="sxs-lookup"><span data-stu-id="118e8-103">Identity and Access Tool for Visual Studio 2012</span></span>](../../../docs/framework/security/identity-and-access-tool-for-vs.md)  

@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33574609"
 ---
 # <a name="backreference-constructs-in-regular-expressions"></a><span data-ttu-id="8f16c-102">正規表現での前方参照構成体</span><span class="sxs-lookup"><span data-stu-id="8f16c-102">Backreference Constructs in Regular Expressions</span></span>
 <span data-ttu-id="8f16c-103">前方参照は、文字列内の繰り返しの文字または部分文字列を識別するために便利な方法を提供します。</span><span class="sxs-lookup"><span data-stu-id="8f16c-103">Backreferences provide a convenient way to identify a repeated character or substring within a string.</span></span> <span data-ttu-id="8f16c-104">たとえば、入力文字列に複数回出現する任意の部分文字列が含まれている場合は、キャプチャ グループを使用して最初の一致を検出し、前方参照を使用して部分文字列の後続の出現箇所を見つけます。</span><span class="sxs-lookup"><span data-stu-id="8f16c-104">For example, if the input string contains multiple occurrences of an arbitrary substring, you can match the first occurrence with a capturing group, and then use a backreference to match subsequent occurrences of the substring.</span></span>  

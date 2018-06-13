@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32760103"
 ---
 # <a name="modifying-dataviews"></a><span data-ttu-id="90802-102">DataView の変更</span><span class="sxs-lookup"><span data-stu-id="90802-102">Modifying DataViews</span></span>
 <span data-ttu-id="90802-103"><xref:System.Data.DataView> を使用して、データ行を基になるテーブルに追加、削除、または変更できます。</span><span class="sxs-lookup"><span data-stu-id="90802-103">You can use the <xref:System.Data.DataView> to add, delete, or modify rows of data in the underlying table.</span></span> <span data-ttu-id="90802-104">使用する機能、 **DataView**基になるテーブル内のデータを変更するのには 3 つのブール型プロパティのいずれかの設定によって制御されます、 **DataView**です。</span><span class="sxs-lookup"><span data-stu-id="90802-104">The ability to use the **DataView** to modify data in the underlying table is controlled by setting one of three Boolean properties of the **DataView**.</span></span> <span data-ttu-id="90802-105">この 3 つのプロパティとは、<xref:System.Data.DataView.AllowNew%2A>、<xref:System.Data.DataView.AllowEdit%2A> および <xref:System.Data.DataView.AllowDelete%2A> です。</span><span class="sxs-lookup"><span data-stu-id="90802-105">These properties are <xref:System.Data.DataView.AllowNew%2A>, <xref:System.Data.DataView.AllowEdit%2A>, and <xref:System.Data.DataView.AllowDelete%2A>.</span></span> <span data-ttu-id="90802-106">設定されている**true**既定です。</span><span class="sxs-lookup"><span data-stu-id="90802-106">They are set to **true** by default.</span></span>  

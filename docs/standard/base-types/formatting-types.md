@@ -32,6 +32,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33579848"
 ---
 # <a name="formatting-types-in-net"></a><span data-ttu-id="f5b7a-102">.NET での型の書式設定</span><span class="sxs-lookup"><span data-stu-id="f5b7a-102">Formatting Types in .NET</span></span>
 <a name="Introduction"></a> <span data-ttu-id="f5b7a-103">書式設定とはクラス、構造体、または列挙値のインスタンスを文字列形式に変換するプロセスのことで、多くの場合、変換した文字列をユーザーに表示したり、逆シリアル化して元のデータ型を復元したりするために行います。</span><span class="sxs-lookup"><span data-stu-id="f5b7a-103">Formatting is the process of converting an instance of a class, structure, or enumeration value to its string representation, often so that the resulting string can be displayed to users or deserialized to restore the original data type.</span></span> <span data-ttu-id="f5b7a-104">この変換には次のような問題がある場合があります。</span><span class="sxs-lookup"><span data-stu-id="f5b7a-104">This conversion can pose a number of challenges:</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32766622"
 ---
 # <a name="security-considerations-entity-framework"></a><span data-ttu-id="349d7-102">セキュリティに関する注意事項 (Entity Framework)</span><span class="sxs-lookup"><span data-stu-id="349d7-102">Security Considerations (Entity Framework)</span></span>
 <span data-ttu-id="349d7-103">このトピックでは、[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] アプリケーションの開発、配置、および実行に特有のセキュリティの注意点について説明します。</span><span class="sxs-lookup"><span data-stu-id="349d7-103">This topic describes security considerations that are specific to developing, deploying, and running [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] applications.</span></span> <span data-ttu-id="349d7-104">このほかに、安全な [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] アプリケーションを作成するための推奨事項にも従うようにしてください。</span><span class="sxs-lookup"><span data-stu-id="349d7-104">You should also follow recommendations for creating secure [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] applications.</span></span> <span data-ttu-id="349d7-105">詳細については、次を参照してください。[セキュリティの概要](../../../../../docs/framework/data/adonet/security-overview.md)です。</span><span class="sxs-lookup"><span data-stu-id="349d7-105">For more information, see [Security Overview](../../../../../docs/framework/data/adonet/security-overview.md).</span></span>  

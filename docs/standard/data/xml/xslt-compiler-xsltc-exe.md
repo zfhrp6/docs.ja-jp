@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33575441"
 ---
 # <a name="xslt-compiler-xsltcexe"></a><span data-ttu-id="fce1e-102">XSLT コンパイラ (xsltc.exe)</span><span class="sxs-lookup"><span data-stu-id="fce1e-102">XSLT Compiler (xsltc.exe)</span></span>
 <span data-ttu-id="fce1e-103">XSLT コンパイラ (xsltc.exe) は、XSLT スタイル シートをコンパイルしてアセンブリを生成します。</span><span class="sxs-lookup"><span data-stu-id="fce1e-103">The XSLT compiler (xsltc.exe) compiles XSLT style sheets and generates an assembly.</span></span> <span data-ttu-id="fce1e-104">コンパイルしたスタイル シートを <xref:System.Xml.Xsl.XslCompiledTransform.Load%28System.Type%29?displayProperty=nameWithType> メソッドに直接渡すことができます。</span><span class="sxs-lookup"><span data-stu-id="fce1e-104">The compiled style sheet can then be passed directly into the <xref:System.Xml.Xsl.XslCompiledTransform.Load%28System.Type%29?displayProperty=nameWithType> method.</span></span> <span data-ttu-id="fce1e-105">xsltc.exe を使用して署名があるアセンブリを生成することはできません。</span><span class="sxs-lookup"><span data-stu-id="fce1e-105">You cannot generate signed assemblies with xsltc.exe.</span></span>  

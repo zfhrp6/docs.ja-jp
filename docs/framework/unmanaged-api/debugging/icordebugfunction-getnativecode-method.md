@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: e1cb073c1f93c6d60d86e5160dcfb0cbdaf1cd33
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33414572"
 ---
 # <a name="icordebugfunctiongetnativecode-method"></a><span data-ttu-id="d9d23-102">ICorDebugFunction::GetNativeCode メソッド</span><span class="sxs-lookup"><span data-stu-id="d9d23-102">ICorDebugFunction::GetNativeCode Method</span></span>
 <span data-ttu-id="d9d23-103">この ICorDebugFunction インスタンスで表される関数のネイティブ コードを取得します。</span><span class="sxs-lookup"><span data-stu-id="d9d23-103">Gets the native code for the function that is represented by this ICorDebugFunction instance.</span></span>  

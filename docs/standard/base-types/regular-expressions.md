@@ -27,6 +27,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33577144"
 ---
 # <a name="net-regular-expressions"></a><span data-ttu-id="229d9-102">.NET の正規表現</span><span class="sxs-lookup"><span data-stu-id="229d9-102">.NET Regular Expressions</span></span>
 <span data-ttu-id="229d9-103">正規表現を使用すると、強力、柔軟、そして効率的な方法でテキストを処理できます。</span><span class="sxs-lookup"><span data-stu-id="229d9-103">Regular expressions provide a powerful, flexible, and efficient method for processing text.</span></span> <span data-ttu-id="229d9-104">正規表現の広範なパターン一致表記法を使用することで、大量のテキストをすばやく解析して特定の文字パターンを検索したり、決められたパターン (メール アドレスなど) と照らしてテキストを検証したりできるほか、テキストの部分文字列を抽出、編集、置換、または削除したり、抽出した文字列をコレクションに追加してレポートを生成したりすることもできます。</span><span class="sxs-lookup"><span data-stu-id="229d9-104">The extensive pattern-matching notation of regular expressions enables you to quickly parse large amounts of text to find specific character patterns; to validate text to ensure that it matches a predefined pattern (such as an email address); to extract, edit, replace, or delete text substrings; and to add the extracted strings to a collection in order to generate a report.</span></span> <span data-ttu-id="229d9-105">文字列処理や大量のテキストを解析する多くのアプリケーションにとって、正規表現は欠くことのできないツールです。</span><span class="sxs-lookup"><span data-stu-id="229d9-105">For many applications that deal with strings or that parse large blocks of text, regular expressions are an indispensable tool.</span></span>  

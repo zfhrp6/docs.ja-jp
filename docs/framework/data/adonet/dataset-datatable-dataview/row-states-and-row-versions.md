@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32759414"
 ---
 # <a name="row-states-and-row-versions"></a><span data-ttu-id="e7c64-102">行の状態とバージョン</span><span class="sxs-lookup"><span data-stu-id="e7c64-102">Row States and Row Versions</span></span>
 <span data-ttu-id="e7c64-103">ADO.NET は、行の状態とバージョンを使用してテーブル内の行を管理します。</span><span class="sxs-lookup"><span data-stu-id="e7c64-103">ADO.NET manages rows in tables using row states and versions.</span></span> <span data-ttu-id="e7c64-104">行状態は、1 つの行のステータスを示します。行バージョンは、1 つの行の値が変更されるときに、変更に応じてその行に格納される現在の値、元の値、既定値などを維持します。</span><span class="sxs-lookup"><span data-stu-id="e7c64-104">A row state indicates the status of a row; row versions maintain the values stored in a row as it is modified, including current, original, and default values.</span></span> <span data-ttu-id="e7c64-105">たとえば、ある行の 1 つの列を変更すると、この行の状態は `Modified` になり、次の 2 つの行バージョンが存在することになります。`Current` には現在の行値が格納され、`Original` にはその列が変更される前の行値が格納されます。</span><span class="sxs-lookup"><span data-stu-id="e7c64-105">For example, after you have made a modification to a column in a row, the row will have a row state of `Modified`, and two row versions: `Current`, which contains the current row values, and `Original`, which contains the row values before the column was modified.</span></span>  

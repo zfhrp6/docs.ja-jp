@@ -6,9 +6,10 @@ ms.author: wiwagn
 ms.date: 09/21/2017
 ms.openlocfilehash: 02bd144f5bfd64ab3a0b0d30aad642c5c3099c7b
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33576244"
 ---
 # <a name="introduction-to-the-microsoft-platform-and-tools-for-containerized-apps"></a><span data-ttu-id="957b6-103">コンテナー化アプリ用の Microsoft プラットフォームとツールの概要</span><span class="sxs-lookup"><span data-stu-id="957b6-103">Introduction to the Microsoft platform and tools for containerized apps</span></span>
 

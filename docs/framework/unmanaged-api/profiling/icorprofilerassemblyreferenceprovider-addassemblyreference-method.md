@@ -16,9 +16,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 33430db8f83f446bab21b1fc86a5c165aecef2af
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33452365"
 ---
 # <a name="icorprofilerassemblyreferenceprovideraddassemblyreference-method"></a><span data-ttu-id="9ec6e-102">ICorProfilerAssemblyReferenceProvider::AddAssemblyReference メソッド</span><span class="sxs-lookup"><span data-stu-id="9ec6e-102">ICorProfilerAssemblyReferenceProvider::AddAssemblyReference Method</span></span>
 <span data-ttu-id="9ec6e-103">[.NET Framework 4.5.2 以降のバージョンでのみでサポート]</span><span class="sxs-lookup"><span data-stu-id="9ec6e-103">[Supported in the .NET Framework 4.5.2 and later versions]</span></span>  

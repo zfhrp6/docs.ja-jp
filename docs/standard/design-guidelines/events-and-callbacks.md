@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33573634"
 ---
 # <a name="events-and-callbacks"></a><span data-ttu-id="2d570-102">イベントとコールバック</span><span class="sxs-lookup"><span data-stu-id="2d570-102">Events and Callbacks</span></span>
 <span data-ttu-id="2d570-103">コールバックでは、フレームワークがデリゲートからのユーザー コードにコールバックする機能拡張ポイントです。</span><span class="sxs-lookup"><span data-stu-id="2d570-103">Callbacks are extensibility points that allow a framework to call back into user code through a delegate.</span></span> <span data-ttu-id="2d570-104">これらのデリゲートは、メソッドのパラメーターを通じて通常フレームワークに渡されます。</span><span class="sxs-lookup"><span data-stu-id="2d570-104">These delegates are usually passed to the framework through a parameter of a method.</span></span>  

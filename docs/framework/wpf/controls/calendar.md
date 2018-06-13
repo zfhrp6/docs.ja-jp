@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33557707"
 ---
 # <a name="calendar"></a><span data-ttu-id="5721e-102">予定表</span><span class="sxs-lookup"><span data-stu-id="5721e-102">Calendar</span></span>
 <span data-ttu-id="5721e-103">カレンダーでは、ビジュアルな予定表を使用して日付を選択するユーザーを使用できます。</span><span class="sxs-lookup"><span data-stu-id="5721e-103">A calendar enables a user to select a date by using a visual calendar display.</span></span>  

@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33579575"
 ---
 # <a name="globalization"></a><span data-ttu-id="c09e5-102">グローバリゼーション</span><span class="sxs-lookup"><span data-stu-id="c09e5-102">Globalization</span></span>
 <span data-ttu-id="c09e5-103">グローバリゼーションとは、さまざまな文化圏 (カルチャ) のユーザー向けに、ローカライズされたインターフェイスと、その地域に合ったデータをサポートするような、国際対応アプリの設計と開発をいいます。</span><span class="sxs-lookup"><span data-stu-id="c09e5-103">Globalization involves designing and developing a world-ready app that supports localized interfaces and regional data for users in multiple cultures.</span></span> <span data-ttu-id="c09e5-104">設計フェーズに着手する前に、アプリでサポートするカルチャを決定してください。</span><span class="sxs-lookup"><span data-stu-id="c09e5-104">Before beginning the design phase, you should determine which cultures your app will support.</span></span> <span data-ttu-id="c09e5-105">アプリは既定値として 1 つのカルチャまたは地域を対象としますが、別のカルチャまたは地域のユーザーに簡単に拡張できるようにアプリを設計および作成できます。</span><span class="sxs-lookup"><span data-stu-id="c09e5-105">Although an app targets a single culture or region as its default, you can design and write it so that it can easily be extended to users in other cultures or regions.</span></span>  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33573595"
 ---
 # <a name="saving-and-writing-a-document"></a><span data-ttu-id="c9627-102">ドキュメントの保存と書き込み</span><span class="sxs-lookup"><span data-stu-id="c9627-102">Saving and Writing a Document</span></span>
 <span data-ttu-id="c9627-103"><xref:System.Xml.XmlDocument> を読み込んで保存した場合、保存されたドキュメントは、元のドキュメントとは次のように異なる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="c9627-103">When you load and save an <xref:System.Xml.XmlDocument>, the saved document may differ from the original in the following ways:</span></span>  

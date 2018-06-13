@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: a51d88af20b3abbbe2f80134473ec1ba1b7a4b17
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33454549"
 ---
 # <a name="icorprofilerinfo3getthreadstaticaddress2-method"></a><span data-ttu-id="36103-102">ICorProfilerInfo3::GetThreadStaticAddress2 メソッド</span><span class="sxs-lookup"><span data-stu-id="36103-102">ICorProfilerInfo3::GetThreadStaticAddress2 Method</span></span>
 <span data-ttu-id="36103-103">指定したスレッドおよびアプリケーション ドメインのスコープ内にある、指定したスレッド内静的フィールドのアドレスを取得します。</span><span class="sxs-lookup"><span data-stu-id="36103-103">Gets the address of the specified thread-static field that is in the scope of the specified thread and application domain.</span></span>  

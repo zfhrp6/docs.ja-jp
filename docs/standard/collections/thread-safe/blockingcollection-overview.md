@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33573621"
 ---
 # <a name="blockingcollection-overview"></a><span data-ttu-id="2f484-102">BlockingCollection の概要</span><span class="sxs-lookup"><span data-stu-id="2f484-102">BlockingCollection Overview</span></span>
 <span data-ttu-id="2f484-103"><xref:System.Collections.Concurrent.BlockingCollection%601> は、次の機能を提供するスレッド セーフなコレクション クラスです。</span><span class="sxs-lookup"><span data-stu-id="2f484-103"><xref:System.Collections.Concurrent.BlockingCollection%601> is a thread-safe collection class that provides the following features:</span></span>  

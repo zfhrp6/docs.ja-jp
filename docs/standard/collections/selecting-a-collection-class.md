@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33574934"
 ---
 # <a name="selecting-a-collection-class"></a><span data-ttu-id="a2ddd-102">コレクション クラスの選択</span><span class="sxs-lookup"><span data-stu-id="a2ddd-102">Selecting a Collection Class</span></span>
 <span data-ttu-id="a2ddd-103">コレクション クラスは慎重に選択してください。</span><span class="sxs-lookup"><span data-stu-id="a2ddd-103">Be sure to choose your collection class carefully.</span></span> <span data-ttu-id="a2ddd-104">間違った型を使用すると、コレクションの使用が制限されることがあります。</span><span class="sxs-lookup"><span data-stu-id="a2ddd-104">Using the wrong type can restrict your use of the collection.</span></span> <span data-ttu-id="a2ddd-105">一般に、.NET Framework バージョン 1.1 を特に対象としている場合を除いて、<xref:System.Collections> 名前空間にある型は使用しないでください。</span><span class="sxs-lookup"><span data-stu-id="a2ddd-105">In general, avoid using the types in the <xref:System.Collections> namespace unless you are specifically targeting .NET Framework version 1.1.</span></span> <span data-ttu-id="a2ddd-106">タイプ セーフの強化や他の改善があるため、コレクションの汎用および同時実行バージョンをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="a2ddd-106">The generic and concurrent versions of the collections are to be preferred because of their greater type safety and other improvements.</span></span>  

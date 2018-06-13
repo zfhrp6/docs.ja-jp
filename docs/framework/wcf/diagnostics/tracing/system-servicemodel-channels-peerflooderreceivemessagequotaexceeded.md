@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33478918"
 ---
 # <a name="systemservicemodelchannelspeerflooderreceivemessagequotaexceeded"></a><span data-ttu-id="cf0fe-102">System.ServiceModel.Channels.PeerFlooderReceiveMessageQuotaExceeded</span><span class="sxs-lookup"><span data-stu-id="cf0fe-102">System.ServiceModel.Channels.PeerFlooderReceiveMessageQuotaExceeded</span></span>
 <span data-ttu-id="cf0fe-103">メッセージの受信速度が速すぎます。</span><span class="sxs-lookup"><span data-stu-id="cf0fe-103">The inbound receive rate of messages is too high.</span></span>  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33572646"
 ---
 # <a name="when-to-use-generic-collections"></a><span data-ttu-id="bdeac-102">ジェネリック コレクションを使用する状況</span><span class="sxs-lookup"><span data-stu-id="bdeac-102">When to Use Generic Collections</span></span>
 <span data-ttu-id="bdeac-103">通常は、ジェネリック コレクションを使用することをお勧めします。これは、基本コレクション型から派生して型固有のメンバーを実装することなく、タイプ セーフの利点を即座に得ることができるためです。</span><span class="sxs-lookup"><span data-stu-id="bdeac-103">Using generic collections is generally recommended, because you gain the immediate benefit of type safety without having to derive from a base collection type and implement type-specific members.</span></span> <span data-ttu-id="bdeac-104">また、ジェネリックでは要素をボックス化する必要がないため、コレクションの要素が値型である場合、一般的に、ジェネリック コレクション型は、対応する非ジェネリック コレクション型 (および、非ジェネリックの基本コレクション型から派生した型) よりもパフォーマンスに優れています。</span><span class="sxs-lookup"><span data-stu-id="bdeac-104">Generic collection types also generally perform better than the corresponding nongeneric collection types (and better than types that are derived from nongeneric base collection types) when the collection elements are value types, because with generics there is no need to box the elements.</span></span>  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33397586"
 ---
 # <a name="peer-names-and-pnrp-ids"></a><span data-ttu-id="dcae7-102">ピア名と PNRP ID</span><span class="sxs-lookup"><span data-stu-id="dcae7-102">Peer Names and PNRP IDs</span></span>
 <span data-ttu-id="dcae7-103">ピア名は通信のエンドポイントを表します。ピア名には、コンピューター、ユーザー、グループ、サービスのほか、ピアに関連付けられていて IPv6 アドレスに変換できるすべてのものを指定できます。</span><span class="sxs-lookup"><span data-stu-id="dcae7-103">A Peer Name represents an endpoint for communication, which can be a computer, a user, a group, a service, or anything associated with a Peer that can be resolved to an IPv6 address.</span></span> <span data-ttu-id="dcae7-104">ピア名解決プロトコル (PNRP) は、クラウド メンバーの識別に使用される PNRP ID を作成するために、統計的に一意なピア名を取得します。</span><span class="sxs-lookup"><span data-stu-id="dcae7-104">The Peer Name Resolution Protocol (PNRP) takes the statistically unique Peer Name for the creation of a PNRP ID, which is used to identify cloud members.</span></span>  

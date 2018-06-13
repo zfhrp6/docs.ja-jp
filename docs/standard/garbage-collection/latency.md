@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33573901"
 ---
 # <a name="latency-modes"></a><span data-ttu-id="9a0f3-102">待機モード</span><span class="sxs-lookup"><span data-stu-id="9a0f3-102">Latency Modes</span></span>
 <span data-ttu-id="9a0f3-103">オブジェクトを再利用するには、ガベージ コレクターはアプリケーションで実行中のすべてのスレッドを停止する必要があります。</span><span class="sxs-lookup"><span data-stu-id="9a0f3-103">To reclaim objects, the garbage collector must stop all the executing threads in an application.</span></span> <span data-ttu-id="9a0f3-104">状況によっては、アプリケーションがデータの取得やコンテンツの表示を行うときなど、重要なときにフル ガベージ コレクションが発生し、パフォーマンスが低下することがあります。</span><span class="sxs-lookup"><span data-stu-id="9a0f3-104">In some situations, such as when an application retrieves data or displays content, a full garbage collection can occur at a critical time and impede performance.</span></span> <span data-ttu-id="9a0f3-105">ガベージ コレクターが作業に悪影響を与える度合いを調整するには、<xref:System.Runtime.GCSettings.LatencyMode%2A?displayProperty=nameWithType> プロパティを <xref:System.Runtime.GCLatencyMode?displayProperty=nameWithType> 値のいずれかに設定することができます。</span><span class="sxs-lookup"><span data-stu-id="9a0f3-105">You can adjust the intrusiveness of the garbage collector by setting the <xref:System.Runtime.GCSettings.LatencyMode%2A?displayProperty=nameWithType> property to one of the <xref:System.Runtime.GCLatencyMode?displayProperty=nameWithType> values.</span></span>  

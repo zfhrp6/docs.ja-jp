@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 1197f066332ee131e4ee18fee6487b78b36e5081
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33452772"
 ---
 # <a name="icorprofilercallbackruntimesuspendstarted-method"></a><span data-ttu-id="2e7ec-102">ICorProfilerCallback::RuntimeSuspendStarted メソッド</span><span class="sxs-lookup"><span data-stu-id="2e7ec-102">ICorProfilerCallback::RuntimeSuspendStarted Method</span></span>
 <span data-ttu-id="2e7ec-103">ランタイムをランタイムのすべてのスレッドを中断することをプロファイラーに通知します。</span><span class="sxs-lookup"><span data-stu-id="2e7ec-103">Notifies the profiler that the runtime is about to suspend all runtime threads.</span></span>  

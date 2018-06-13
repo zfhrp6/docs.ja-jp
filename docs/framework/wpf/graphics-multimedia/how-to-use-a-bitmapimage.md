@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33561502"
 ---
 # <a name="how-to-use-a-bitmapimage"></a><span data-ttu-id="753e0-102">方法: BitmapImage を使用する</span><span class="sxs-lookup"><span data-stu-id="753e0-102">How to: Use a BitmapImage</span></span>
 <span data-ttu-id="753e0-103">この例を使用する方法を示しています、<xref:System.Windows.Media.Imaging.BitmapImage>のソースとして、<xref:System.Windows.Controls.Image>で制御[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]です。</span><span class="sxs-lookup"><span data-stu-id="753e0-103">This example shows how to use a <xref:System.Windows.Media.Imaging.BitmapImage> as the source of an <xref:System.Windows.Controls.Image> control in [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)].</span></span>  

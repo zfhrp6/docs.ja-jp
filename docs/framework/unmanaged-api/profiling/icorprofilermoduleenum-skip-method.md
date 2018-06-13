@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 35256a25ed793ffee6ddc1b26088e0988fea5af2
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33454346"
 ---
 # <a name="icorprofilermoduleenumskip-method"></a><span data-ttu-id="6333d-102">ICorProfilerModuleEnum::Skip メソッド</span><span class="sxs-lookup"><span data-stu-id="6333d-102">ICorProfilerModuleEnum::Skip Method</span></span>
 <span data-ttu-id="6333d-103">指定した数の要素がスキップされるように、この列挙子のカーソルを現在の位置から進めます。</span><span class="sxs-lookup"><span data-stu-id="6333d-103">Advances the enumerator's cursor from its current position so that the specified number of elements are skipped.</span></span>  

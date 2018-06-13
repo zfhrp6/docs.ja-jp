@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33582201"
 ---
 # <a name="getting-information-about-the-computer-visual-basic"></a><span data-ttu-id="2d056-102">方法: コンピューターについての情報の取得 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="2d056-102">Getting Information about the Computer (Visual Basic)</span></span>
 <span data-ttu-id="2d056-103">`My.Computer.Info` オブジェクトは、コンピューターのメモリ、読み込まれたアセンブリ名、オペレーティング システムに関する情報を取得するためのプロパティを提供します。</span><span class="sxs-lookup"><span data-stu-id="2d056-103">The `My.Computer.Info` object provides properties for getting information about the computer's memory, loaded assemblies, name, and operating system.</span></span>  

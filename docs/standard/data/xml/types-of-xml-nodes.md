@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33572211"
 ---
 # <a name="types-of-xml-nodes"></a><span data-ttu-id="a5f2f-102">XML ノードの種類</span><span class="sxs-lookup"><span data-stu-id="a5f2f-102">Types of XML Nodes</span></span>
 <span data-ttu-id="a5f2f-103">XML ドキュメントがノードのツリーとしてメモリに読み込まれると、ノードの作成時にノード型が決まります。</span><span class="sxs-lookup"><span data-stu-id="a5f2f-103">When an XML document is read into memory as a tree of nodes, the node types for the nodes are decided when the nodes are created.</span></span> <span data-ttu-id="a5f2f-104">XML ドキュメント オブジェクト モデル (DOM) では複数のノード型が定義されています。これらのノード型は W3C (World Wide Web Consortium) で規定されているもので、セクション 1.1.1「The DOM Structure Model」に記載されています。</span><span class="sxs-lookup"><span data-stu-id="a5f2f-104">The XML Document Object Model (DOM) has several kinds of node types, determined by the World Wide Web Consortium (W3C) and listed in section 1.1.1 The DOM Structure Model.</span></span> <span data-ttu-id="a5f2f-105">ノード型、ノード型に割り当てられるオブジェクト、およびそれぞれの簡単な説明を次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="a5f2f-105">The following table lists the node types, the object assigned to that node type, and a short description of each.</span></span>  

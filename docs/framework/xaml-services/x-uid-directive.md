@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33561837"
 ---
 # <a name="xuid-directive"></a><span data-ttu-id="aaa2f-102">x:Uid ディレクティブ</span><span class="sxs-lookup"><span data-stu-id="aaa2f-102">x:Uid Directive</span></span>
 <span data-ttu-id="aaa2f-103">マークアップ要素の一意の識別子を提供します。</span><span class="sxs-lookup"><span data-stu-id="aaa2f-103">Provides a unique identifier for markup elements.</span></span> <span data-ttu-id="aaa2f-104">多くのシナリオでは、この一意の識別子を XAML ローカリゼーション プロセスやツールによって使用されます。</span><span class="sxs-lookup"><span data-stu-id="aaa2f-104">In many scenarios, this unique identifier is used by XAML localization processes and tools.</span></span>  

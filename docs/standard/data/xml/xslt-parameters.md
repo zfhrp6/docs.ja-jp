@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33570641"
 ---
 # <a name="xslt-parameters"></a><span data-ttu-id="50904-102">XSLT パラメーター</span><span class="sxs-lookup"><span data-stu-id="50904-102">XSLT Parameters</span></span>
 <span data-ttu-id="50904-103">XSLT パラメーターを <xref:System.Xml.Xsl.XsltArgumentList> に追加するには、<xref:System.Xml.Xsl.XsltArgumentList.AddParam%2A> メソッドを使用します。</span><span class="sxs-lookup"><span data-stu-id="50904-103">XSLT parameters are added to the <xref:System.Xml.Xsl.XsltArgumentList> using the <xref:System.Xml.Xsl.XsltArgumentList.AddParam%2A> method.</span></span> <span data-ttu-id="50904-104">その時点で、修飾名と名前空間 URI がそのパラメーター オブジェクトに関連付けられます。</span><span class="sxs-lookup"><span data-stu-id="50904-104">A qualified name and namespace URI are associated with the parameter object at that time.</span></span>  

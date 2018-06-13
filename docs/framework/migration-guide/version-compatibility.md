@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33398275"
 ---
 # <a name="version-compatibility-in-the-net-framework"></a><span data-ttu-id="cc882-102">.NET Framework のバージョンの互換性</span><span class="sxs-lookup"><span data-stu-id="cc882-102">Version Compatibility in the .NET Framework</span></span>
 <span data-ttu-id="cc882-103">下位互換とは、プラットフォームの特定のバージョンで開発されたアプリが、そのプラットフォームの新しいバージョンでも実行できることを意味します。</span><span class="sxs-lookup"><span data-stu-id="cc882-103">Backward compatibility means that an app that was developed for a particular version of a platform will run on later versions of that platform.</span></span> <span data-ttu-id="cc882-104">.NET Framework では、下位互換性が最大限に高められています。.NET Framework のあるバージョンで記述されたソース コードは、.NET Framework の新しいバージョンでコンパイルでき、.NET Framework のあるバージョンで実行されるバイナリは、新しいバージョンの .NET Framework でも同じように動作します。</span><span class="sxs-lookup"><span data-stu-id="cc882-104">The .NET Framework tries to maximize backward compatibility: Source code written for one version of the .NET Framework should compile on later versions of the .NET Framework, and binaries that run on one version of the .NET Framework should behave identically on later versions of the .NET Framework.</span></span>  

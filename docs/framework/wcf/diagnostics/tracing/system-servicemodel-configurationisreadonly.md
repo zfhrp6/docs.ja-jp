@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33481986"
 ---
 # <a name="systemservicemodelconfigurationisreadonly"></a><span data-ttu-id="f3227-102">System.ServiceModel.ConfigurationIsReadOnly</span><span class="sxs-lookup"><span data-stu-id="f3227-102">System.ServiceModel.ConfigurationIsReadOnly</span></span>
 <span data-ttu-id="f3227-103">System.ServiceModel.ConfigurationIsReadOnly</span><span class="sxs-lookup"><span data-stu-id="f3227-103">System.ServiceModel.ConfigurationIsReadOnly</span></span>  

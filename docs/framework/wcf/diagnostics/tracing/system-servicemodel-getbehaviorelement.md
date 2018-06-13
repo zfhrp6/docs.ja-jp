@@ -1,32 +1,21 @@
 ---
 title: System.ServiceModel.GetBehaviorElement
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: c7332d23-e226-470c-b063-0fb9d919437f
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 98453d96b96f87ff371c46ced866f53f89c96585
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9883ffdb8ee3d2a8b615263866c7627e8f9d0652
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33481320"
 ---
-# <a name="systemservicemodelgetbehaviorelement"></a><span data-ttu-id="c0fc0-102">System.ServiceModel.GetBehaviorElement</span><span class="sxs-lookup"><span data-stu-id="c0fc0-102">System.ServiceModel.GetBehaviorElement</span></span>
-<span data-ttu-id="c0fc0-103">System.ServiceModel.GetBehaviorElement</span><span class="sxs-lookup"><span data-stu-id="c0fc0-103">System.ServiceModel.GetBehaviorElement</span></span>  
+# <a name="systemservicemodelgetbehaviorelement"></a><span data-ttu-id="87dec-102">System.ServiceModel.GetBehaviorElement</span><span class="sxs-lookup"><span data-stu-id="87dec-102">System.ServiceModel.GetBehaviorElement</span></span>
+<span data-ttu-id="87dec-103">System.ServiceModel.GetBehaviorElement</span><span class="sxs-lookup"><span data-stu-id="87dec-103">System.ServiceModel.GetBehaviorElement</span></span>  
   
-## <a name="description"></a><span data-ttu-id="c0fc0-104">説明</span><span class="sxs-lookup"><span data-stu-id="c0fc0-104">Description</span></span>  
- <span data-ttu-id="c0fc0-105">BehaviorElement を取得します。</span><span class="sxs-lookup"><span data-stu-id="c0fc0-105">Get BehaviorElement.</span></span>  
+## <a name="description"></a><span data-ttu-id="87dec-104">説明</span><span class="sxs-lookup"><span data-stu-id="87dec-104">Description</span></span>  
+ <span data-ttu-id="87dec-105">BehaviorElement を取得します。</span><span class="sxs-lookup"><span data-stu-id="87dec-105">Get BehaviorElement.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="c0fc0-106">参照</span><span class="sxs-lookup"><span data-stu-id="c0fc0-106">See Also</span></span>  
- [<span data-ttu-id="c0fc0-107">トレース</span><span class="sxs-lookup"><span data-stu-id="c0fc0-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="c0fc0-108">トレースを使用したアプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="c0fc0-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="c0fc0-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="c0fc0-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="87dec-106">関連項目</span><span class="sxs-lookup"><span data-stu-id="87dec-106">See Also</span></span>  
+ [<span data-ttu-id="87dec-107">トレース</span><span class="sxs-lookup"><span data-stu-id="87dec-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="87dec-108">トレースを使用したアプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="87dec-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="87dec-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="87dec-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

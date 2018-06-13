@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33578204"
 ---
 # <a name="best-practices-for-developing-world-ready-applications"></a><span data-ttu-id="4c01e-102">推奨される国際対応アプリケーション開発手順</span><span class="sxs-lookup"><span data-stu-id="4c01e-102">Best Practices for Developing World-Ready Applications</span></span>
 <span data-ttu-id="4c01e-103">このセクションでは、推奨される国際対応アプリケーション開発手順について説明します。</span><span class="sxs-lookup"><span data-stu-id="4c01e-103">This section describes the best practices to follow when developing world-ready applications.</span></span>  
