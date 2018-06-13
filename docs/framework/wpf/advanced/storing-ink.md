@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33546098"
 ---
 # <a name="storing-ink"></a><span data-ttu-id="b1654-102">インクの格納</span><span class="sxs-lookup"><span data-stu-id="b1654-102">Storing Ink</span></span>
 <span data-ttu-id="b1654-103"><xref:System.Windows.Ink.StrokeCollection.Save%2A>メソッドがインクをシリアル化形式 (ISF) としてインクを格納するためのサポートを提供します。</span><span class="sxs-lookup"><span data-stu-id="b1654-103">The <xref:System.Windows.Ink.StrokeCollection.Save%2A> methods provide support for storing ink as Ink Serialized Format (ISF).</span></span> <span data-ttu-id="b1654-104">コンス トラクター、<xref:System.Windows.Ink.StrokeCollection>クラスは、インクのデータを読み取るためのサポートを提供します。</span><span class="sxs-lookup"><span data-stu-id="b1654-104">Constructors for the <xref:System.Windows.Ink.StrokeCollection> class provide support for reading ink data.</span></span>  

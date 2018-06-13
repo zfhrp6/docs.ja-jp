@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33280092"
 ---
 # <a name="using-directive-c-reference"></a><span data-ttu-id="33e8b-102">using ディレクティブ (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="33e8b-102">using Directive (C# Reference)</span></span>
 <span data-ttu-id="33e8b-103">`using` ディレクティブは、次の 3 つの用途で使用します。</span><span class="sxs-lookup"><span data-stu-id="33e8b-103">The `using` directive has three uses:</span></span>  

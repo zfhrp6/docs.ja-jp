@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33273499"
 ---
 # <a name="gt-operator-c-reference"></a><span data-ttu-id="988ac-102">&gt; 演算子 (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="988ac-102">&gt; Operator (C# Reference)</span></span>
 <span data-ttu-id="988ac-103">すべての数値型と列挙型で "より大きい" 関係演算子 (`>`) が定義されます。これは、最初のオペランドが 2 番目のオペランドより大きい場合に `true` を返し、それ以外の場合、`false` を返します。</span><span class="sxs-lookup"><span data-stu-id="988ac-103">All numeric and enumeration types define a "greater than" relational operator (`>`) that returns `true` if the first operand is greater than the second, `false` otherwise.</span></span>  

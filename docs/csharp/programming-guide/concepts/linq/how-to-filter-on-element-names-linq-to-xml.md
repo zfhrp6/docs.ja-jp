@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33323262"
 ---
 # <a name="how-to-filter-on-element-names-linq-to-xml-c"></a><span data-ttu-id="b3344-102">方法: 要素名をフィルター処理する (LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="b3344-102">How to: Filter on Element Names (LINQ to XML) (C#)</span></span>
 <span data-ttu-id="b3344-103"><xref:System.Collections.Generic.IEnumerable%601> の <xref:System.Xml.Linq.XElement> を返すメソッドのいずれかを呼び出す際に、要素名をフィルター処理できます。</span><span class="sxs-lookup"><span data-stu-id="b3344-103">When you call one of the methods that return <xref:System.Collections.Generic.IEnumerable%601> of <xref:System.Xml.Linq.XElement>, you can filter on the element name.</span></span>  

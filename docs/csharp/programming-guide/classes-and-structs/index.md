@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33327360"
 ---
 # <a name="classes-and-structs-c-programming-guide"></a><span data-ttu-id="841f3-103">クラスと構造体 (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="841f3-103">Classes and Structs (C# Programming Guide)</span></span>
 <span data-ttu-id="841f3-104">クラスと構造体は、.NET Framework の共通型システムの 2 つの基本構成です。</span><span class="sxs-lookup"><span data-stu-id="841f3-104">Classes and structs are two of the basic constructs of the common type system in the .NET Framework.</span></span> <span data-ttu-id="841f3-105">クラスと構造体は、どちらも基本的にはデータと動作のセットを 1 つの論理単位としてカプセル化するデータ構造です。</span><span class="sxs-lookup"><span data-stu-id="841f3-105">Each is essentially a data structure that encapsulates a set of data and behaviors that belong together as a logical unit.</span></span> <span data-ttu-id="841f3-106">データと動作はクラスまたは構造体の "*メンバー*" です。このトピックで後述するように、メソッド、プロパティ、イベントなどが含まれます。</span><span class="sxs-lookup"><span data-stu-id="841f3-106">The data and behaviors are the *members* of the class or struct, and they include its methods, properties, and events, and so on, as listed later in this topic.</span></span>  

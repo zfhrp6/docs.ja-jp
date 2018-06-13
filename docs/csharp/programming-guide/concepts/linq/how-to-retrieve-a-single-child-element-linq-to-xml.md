@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33321338"
 ---
 # <a name="how-to-retrieve-a-single-child-element-linq-to-xml-c"></a><span data-ttu-id="96b7a-102">方法: 単一の子要素を取得する (LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="96b7a-102">How to: Retrieve a Single Child Element (LINQ to XML) (C#)</span></span>
 <span data-ttu-id="96b7a-103">このトピックでは、子要素名を指定して単一の子要素を取得する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="96b7a-103">This topic explains how to retrieve a single child element, given the name of the child element.</span></span> <span data-ttu-id="96b7a-104">子要素の名前が既知であり、この名前を持つ要素が 1 つしか存在しない場合は、コレクションの代わりに 1 つの要素だけを取得する方が便利な場合があります。</span><span class="sxs-lookup"><span data-stu-id="96b7a-104">When you know the name of the child element and that there is only one element that has this name, it can be convenient to retrieve just one element, instead of a collection.</span></span>  

@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33218756"
 ---
 # <a name="if-else-c-reference"></a><span data-ttu-id="a3e18-102">if-else (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="a3e18-102">if-else (C# Reference)</span></span>
 <span data-ttu-id="a3e18-103">`if` ステートメントは、 `Boolean` 式の値に基づいて実行するステートメントを決定します。</span><span class="sxs-lookup"><span data-stu-id="a3e18-103">An `if` statement identifies which statement to run based on the value of a `Boolean` expression.</span></span> <span data-ttu-id="a3e18-104">次の例では、 `Boolean` 変数 `result` を `true` に設定してから、 `if` ステートメントにチェックインします。</span><span class="sxs-lookup"><span data-stu-id="a3e18-104">In the following example, the `Boolean` variable `result` is set to `true` and then checked in the `if` statement.</span></span> <span data-ttu-id="a3e18-105">出力は `The condition is true`になります。</span><span class="sxs-lookup"><span data-stu-id="a3e18-105">The output is `The condition is true`.</span></span>  

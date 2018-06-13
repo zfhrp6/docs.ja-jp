@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33326759"
 ---
 # <a name="variance-in-generic-interfaces-c"></a><span data-ttu-id="1da25-102">ジェネリック インターフェイスの分散 (C#)</span><span class="sxs-lookup"><span data-stu-id="1da25-102">Variance in Generic Interfaces (C#)</span></span>
 <span data-ttu-id="1da25-103">.NET Framework 4 では、既存のいくつかのジェネリック インターフェイスに対して、分散のサポートが導入されています。</span><span class="sxs-lookup"><span data-stu-id="1da25-103">.NET Framework 4 introduced variance support for several existing generic interfaces.</span></span> <span data-ttu-id="1da25-104">分散のサポートにより、これらのインターフェイスを実装するクラスの暗黙的な変換が可能になりました。</span><span class="sxs-lookup"><span data-stu-id="1da25-104">Variance support enables implicit conversion of classes that implement these interfaces.</span></span> <span data-ttu-id="1da25-105">次のインターフェイスは、新たにバリアントになりました。</span><span class="sxs-lookup"><span data-stu-id="1da25-105">The following interfaces are now variant:</span></span>  

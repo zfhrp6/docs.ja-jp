@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33216926"
 ---
 # <a name="-codepage-c-compiler-options"></a><span data-ttu-id="12c54-102">-codepage (C# コンパイラ オプション)</span><span class="sxs-lookup"><span data-stu-id="12c54-102">-codepage (C# Compiler Options)</span></span>
 <span data-ttu-id="12c54-103">このオプションでは、必要とするページが、システムで使用されている現在の既定のコードページでない場合に、コンパイル時に使用するコード ページを指定します。</span><span class="sxs-lookup"><span data-stu-id="12c54-103">This option specifies which codepage to use during compilation if the required page is not the current default codepage for the system.</span></span>  

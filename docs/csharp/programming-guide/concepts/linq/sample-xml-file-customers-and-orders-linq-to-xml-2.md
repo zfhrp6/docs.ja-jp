@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33327780"
 ---
 # <a name="sample-xml-file-customers-and-orders-linq-to-xml"></a><span data-ttu-id="097b3-102">サンプル XML ファイル : 顧客と注文 (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="097b3-102">Sample XML File: Customers and Orders (LINQ to XML)</span></span>
 <span data-ttu-id="097b3-103">次の XML ファイルは、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] ドキュメントのさまざまな例で使用されます。</span><span class="sxs-lookup"><span data-stu-id="097b3-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="097b3-104">このファイルには顧客と注文が含まれています。</span><span class="sxs-lookup"><span data-stu-id="097b3-104">This file contains customers and orders.</span></span>  

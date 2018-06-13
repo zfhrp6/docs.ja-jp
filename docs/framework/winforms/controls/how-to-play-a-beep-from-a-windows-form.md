@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33531223"
 ---
 # <a name="how-to-play-a-beep-from-a-windows-form"></a><span data-ttu-id="df876-102">方法 : Windows フォームからビープ音を再生する</span><span class="sxs-lookup"><span data-stu-id="df876-102">How to: Play a Beep from a Windows Form</span></span>
 <span data-ttu-id="df876-103">実行時にビープ音を再生する例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="df876-103">This example plays a beep at run time.</span></span>  
