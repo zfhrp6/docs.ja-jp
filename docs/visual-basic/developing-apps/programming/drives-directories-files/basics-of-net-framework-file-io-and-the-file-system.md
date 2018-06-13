@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33591782"
 ---
 # <a name="basics-of-net-framework-file-io-and-the-file-system-visual-basic"></a><span data-ttu-id="b1937-102">.NET Framework のファイル I/O とファイル システムの基礎 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="b1937-102">Basics of .NET Framework File I/O and the File System (Visual Basic)</span></span>
 <span data-ttu-id="b1937-103"><xref:System.IO> 名前空間のクラスは、ドライブ、ファイル、ディレクトリの操作に使用されます。</span><span class="sxs-lookup"><span data-stu-id="b1937-103">Classes in the <xref:System.IO> namespace are used to work with drives, files, and directories.</span></span>  

@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33585053"
 ---
 # <a name="can39t-create-necessary-temporary-file"></a><span data-ttu-id="f1351-102">できます&#39;t が必要な一時ファイルを作成します。</span><span class="sxs-lookup"><span data-stu-id="f1351-102">Can&#39;t create necessary temporary file</span></span>
 <span data-ttu-id="f1351-103">いずれかのドライブがいっぱい、TEMP 環境変数で指定されたディレクトリを格納しているか、TEMP 環境変数が無効であるか読み取り専用のドライブまたはディレクトリを指定します。</span><span class="sxs-lookup"><span data-stu-id="f1351-103">Either the drive is full that contains the directory specified by the TEMP environment variable, or the TEMP environment variable specifies an invalid or read-only drive or directory.</span></span>  

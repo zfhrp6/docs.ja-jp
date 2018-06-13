@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33604186"
 ---
 # <a name="xml-value-property-visual-basic"></a><span data-ttu-id="aca12-102">XML Value プロパティ (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="aca12-102">XML Value Property (Visual Basic)</span></span>
 <span data-ttu-id="aca12-103">コレクションの最初の要素の値にアクセスできるように<xref:System.Xml.Linq.XElement>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="aca12-103">Provides access to the value of the first element of a collection of <xref:System.Xml.Linq.XElement> objects.</span></span>  

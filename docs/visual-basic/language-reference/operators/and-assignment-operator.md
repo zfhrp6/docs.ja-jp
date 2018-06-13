@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33601882"
 ---
 # <a name="amp-operator-visual-basic"></a><span data-ttu-id="08cbb-102">&amp;= 演算子 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="08cbb-102">&amp;= Operator (Visual Basic)</span></span>
 <span data-ttu-id="08cbb-103">連結、`String`式を`String`変数またはプロパティと、結果を変数またはプロパティに割り当てます。</span><span class="sxs-lookup"><span data-stu-id="08cbb-103">Concatenates a `String` expression to a `String` variable or property and assigns the result to the variable or property.</span></span>  

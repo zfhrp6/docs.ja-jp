@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33577203"
 ---
 # <a name="mapping-the-object-hierarchy-to-xml-data"></a><span data-ttu-id="25c2f-102">オブジェクト階層の XML データへのマップ</span><span class="sxs-lookup"><span data-stu-id="25c2f-102">Mapping the Object Hierarchy to XML Data</span></span>
 <span data-ttu-id="25c2f-103">メモリに読み込まれた XML ドキュメントは、ツリーという概念で表現されます。</span><span class="sxs-lookup"><span data-stu-id="25c2f-103">When an XML document is in memory, the conceptual representation is a tree.</span></span> <span data-ttu-id="25c2f-104">プログラミングでは、オブジェクト階層を利用してツリーのノードにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="25c2f-104">For programming, you have an object hierarchy to access the nodes of the tree.</span></span> <span data-ttu-id="25c2f-105">XML コンテンツがどのようにノードに変換されるかを次の例に示します。</span><span class="sxs-lookup"><span data-stu-id="25c2f-105">The following example shows you how the XML content becomes nodes.</span></span>  

@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33579185"
 ---
 # <a name="composite-formatting"></a><span data-ttu-id="f487a-102">複合書式指定</span><span class="sxs-lookup"><span data-stu-id="f487a-102">Composite Formatting</span></span>
 <span data-ttu-id="f487a-103">.NET の複合書式指定機能は、オブジェクトのリストおよび複合書式指定文字列を入力として使用します。</span><span class="sxs-lookup"><span data-stu-id="f487a-103">The .NET composite formatting feature takes a list of objects and a composite format string as input.</span></span> <span data-ttu-id="f487a-104">複合書式指定文字列は、固定テキストに、書式指定項目と呼ばれるインデックス化されたプレースホルダーが混合されて構成されます。このプレースホルダーはリスト内のオブジェクトに対応します。</span><span class="sxs-lookup"><span data-stu-id="f487a-104">A composite format string consists of fixed text intermixed with indexed placeholders, called format items, that correspond to the objects in the list.</span></span> <span data-ttu-id="f487a-105">書式設定操作によって生成される結果の文字列は、元の固定テキストに文字列で表されたリスト内のオブジェクトが混合されて構成されます。</span><span class="sxs-lookup"><span data-stu-id="f487a-105">The formatting operation yields a result string that consists of the original fixed text intermixed with the string representation of the objects in the list.</span></span>  

@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33577047"
 ---
 # <a name="applying-simplified-cqrs-and-ddd-patterns-in-a-microservice"></a><span data-ttu-id="c9862-103">マイクロサービスに簡略化された CQRS と DDD パターンを適用する</span><span class="sxs-lookup"><span data-stu-id="c9862-103">Applying simplified CQRS and DDD patterns in a microservice</span></span>
 

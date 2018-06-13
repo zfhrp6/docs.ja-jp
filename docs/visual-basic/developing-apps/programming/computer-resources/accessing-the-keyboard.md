@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33582652"
 ---
 # <a name="accessing-the-keyboard-visual-basic"></a><span data-ttu-id="e2c21-102">キーボードへのアクセス (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="e2c21-102">Accessing the Keyboard (Visual Basic)</span></span>
 <span data-ttu-id="e2c21-103">`My.Computer.Keyboard` オブジェクトは、現在どのキーが押されているかなど、キーボードの現在の状態にアクセスするためのプロパティを提供します。また、キーストロークを作業中のウィンドウに送る方法を提供します。</span><span class="sxs-lookup"><span data-stu-id="e2c21-103">The `My.Computer.Keyboard` object provides properties for accessing the current state of the keyboard, such as what keys are currently pressed, and provides a method to send keystrokes to the active window.</span></span>  

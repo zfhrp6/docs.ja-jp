@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33597153"
 ---
 # <a name="type-of-39ltvariablenamegt39-cannot-be-inferred-because-the-loop-bounds-and-the-step-variable-do-not-widen-to-the-same-type"></a><span data-ttu-id="e6ee0-102">入力&#39; &lt;variablename&gt; &#39;ループの境界とステップ変数が同じ型に変換されないために、推論できません</span><span class="sxs-lookup"><span data-stu-id="e6ee0-102">Type of &#39;&lt;variablename&gt;&#39; cannot be inferred because the loop bounds and the step variable do not widen to the same type</span></span>
 <span data-ttu-id="e6ee0-103">記述した、`For...Next`ループをコンパイラを推論できません for loop コントロール変数のデータ型は次の条件に当てはまるため。</span><span class="sxs-lookup"><span data-stu-id="e6ee0-103">You have written a `For...Next` loop in which the compiler cannot infer a data type for the loop control variable because the following conditions are true:</span></span>  

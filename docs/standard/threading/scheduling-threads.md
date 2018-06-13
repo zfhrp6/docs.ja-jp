@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33582809"
 ---
 # <a name="scheduling-threads"></a><span data-ttu-id="49f16-102">スレッドのスケジューリング</span><span class="sxs-lookup"><span data-stu-id="49f16-102">Scheduling Threads</span></span>
 <span data-ttu-id="49f16-103">すべてのスレッドには、スレッド優先順位が割り当てられます。</span><span class="sxs-lookup"><span data-stu-id="49f16-103">Every thread has a thread priority assigned to it.</span></span> <span data-ttu-id="49f16-104">共通言語ランタイム内で作成されたスレッドには、初期状態で **ThreadPriority.Normal** の優先順位が割り当てられます。</span><span class="sxs-lookup"><span data-stu-id="49f16-104">Threads created within the common language runtime are initially assigned the priority of **ThreadPriority.Normal**.</span></span> <span data-ttu-id="49f16-105">ランタイムの外部で作成されたスレッドは、マネージ環境に入る前に設定されていた優先順位を維持します。</span><span class="sxs-lookup"><span data-stu-id="49f16-105">Threads created outside the runtime retain the priority they had before they entered the managed environment.</span></span> <span data-ttu-id="49f16-106">任意のスレッドの優先順位を取得または設定するには、**Thread.Priority** プロパティを使用します。</span><span class="sxs-lookup"><span data-stu-id="49f16-106">You can get or set the priority of any thread with the **Thread.Priority** property.</span></span>  

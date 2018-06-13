@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33635188"
 ---
 # <a name="cannot-delete-a-registry-hive"></a><span data-ttu-id="29845-102">レジストリ ハイブを削除できません</span><span class="sxs-lookup"><span data-stu-id="29845-102">Cannot delete a registry hive</span></span>
 <span data-ttu-id="29845-103">レジストリ ハイブの削除が試行されました。</span><span class="sxs-lookup"><span data-stu-id="29845-103">An attempt has been made to delete a registry hive.</span></span> <span data-ttu-id="29845-104">ハイブとは、 `HKEY_CURRENT_USER` や `HKEY_LOCAL_MACHINE`などの最上位のレジストリ キーのことです。ハイブは削除できません。</span><span class="sxs-lookup"><span data-stu-id="29845-104">Hives are top-level registry keys, such as `HKEY_CURRENT_USER` and `HKEY_LOCAL_MACHINE`, and cannot be deleted.</span></span>  

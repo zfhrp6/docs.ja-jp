@@ -12,6 +12,7 @@ ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/15/2018
+ms.locfileid: "34171419"
 ---
 # <a name="gtgt-operator-c-reference"></a><span data-ttu-id="f7d7a-102">&gt;&gt;= 演算子 (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="f7d7a-102">&gt;&gt;= Operator (C# Reference)</span></span>
 <span data-ttu-id="f7d7a-103">右シフト代入演算子。</span><span class="sxs-lookup"><span data-stu-id="f7d7a-103">The right-shift assignment operator.</span></span>  

@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33585737"
 ---
 # <a name="how-to-append-to-text-files-in-visual-basic"></a><span data-ttu-id="026b4-102">方法 : Visual Basic でテキスト ファイルに追記する</span><span class="sxs-lookup"><span data-stu-id="026b4-102">How to: Append to Text Files in Visual Basic</span></span>
 <span data-ttu-id="026b4-103">`append` パラメーターが `True` に設定されるように指定して、<xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllText%2A> メソッドを使いテキスト ファイルに追加できます。</span><span class="sxs-lookup"><span data-stu-id="026b4-103">The <xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllText%2A> method can be used to append to a text file by specifying that the `append` parameter is set to `True`.</span></span>  

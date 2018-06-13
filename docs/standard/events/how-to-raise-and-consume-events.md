@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33572724"
 ---
 # <a name="how-to-raise-and-consume-events"></a><span data-ttu-id="0c4c5-102">方法 : イベントを発生させる/処理する</span><span class="sxs-lookup"><span data-stu-id="0c4c5-102">How to: Raise and Consume Events</span></span>
 <span data-ttu-id="0c4c5-103">このトピックの例では、イベントを使用する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="0c4c5-103">The examples in this topic show how to work with events.</span></span> <span data-ttu-id="0c4c5-104">ここでは、<xref:System.EventHandler> デリゲートと <xref:System.EventHandler%601> デリゲート、およびカスタム デリゲートの例を使用して、データを持つイベントと持たないイベントを示します。</span><span class="sxs-lookup"><span data-stu-id="0c4c5-104">They include examples of the <xref:System.EventHandler> delegate, the <xref:System.EventHandler%601> delegate, and a custom delegate, to illustrate events with and without data.</span></span>  

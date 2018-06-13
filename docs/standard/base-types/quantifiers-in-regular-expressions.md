@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33579094"
 ---
 # <a name="quantifiers-in-regular-expressions"></a><span data-ttu-id="9b49f-102">量指定子 (正規表現)</span><span class="sxs-lookup"><span data-stu-id="9b49f-102">Quantifiers in Regular Expressions</span></span>
 <span data-ttu-id="9b49f-103">量指定子は、一致と見なされるために入力中に存在する必要がある文字、グループ、または文字クラスの出現数を指定します。</span><span class="sxs-lookup"><span data-stu-id="9b49f-103">Quantifiers specify how many instances of a character, group, or character class must be present in the input for a match to be found.</span></span>  <span data-ttu-id="9b49f-104">次の表に、.NET でサポートされている量指定子の一覧を示します。</span><span class="sxs-lookup"><span data-stu-id="9b49f-104">The following table lists the quantifiers supported by .NET.</span></span>  

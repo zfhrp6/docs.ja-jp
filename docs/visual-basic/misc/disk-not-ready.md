@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33633679"
 ---
 # <a name="disk-not-ready"></a><span data-ttu-id="640fa-102">ディスクが準備されていません</span><span class="sxs-lookup"><span data-stu-id="640fa-102">Disk not ready</span></span>
 <span data-ttu-id="640fa-103">指定したドライブにはディスクがないか、ドライブのドアが開いています。</span><span class="sxs-lookup"><span data-stu-id="640fa-103">For the specified drive, either there is no disk or the drive door is open.</span></span>  

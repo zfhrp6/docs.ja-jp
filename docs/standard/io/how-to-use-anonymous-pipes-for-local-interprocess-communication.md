@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33573180"
 ---
 # <a name="how-to-use-anonymous-pipes-for-local-interprocess-communication"></a><span data-ttu-id="c4a5c-102">方法: ローカルのプロセス間通信で匿名パイプを使用する</span><span class="sxs-lookup"><span data-stu-id="c4a5c-102">How to: Use Anonymous Pipes for Local Interprocess Communication</span></span>
 <span data-ttu-id="c4a5c-103">匿名パイプは、ローカル コンピューターでのプロセス間通信を実現します。</span><span class="sxs-lookup"><span data-stu-id="c4a5c-103">Anonymous pipes provide interprocess communication on a local computer.</span></span> <span data-ttu-id="c4a5c-104">名前付きパイプと比較して提供する機能は少なくなりますが、オーバーヘッドも小さくなります。</span><span class="sxs-lookup"><span data-stu-id="c4a5c-104">They offer less functionality than named pipes, but also require less overhead.</span></span> <span data-ttu-id="c4a5c-105">匿名パイプを使用して、ローカル コンピューター上で容易にプロセス間通信を実行できます。</span><span class="sxs-lookup"><span data-stu-id="c4a5c-105">You can use anonymous pipes to make interprocess communication on a local computer easier.</span></span> <span data-ttu-id="c4a5c-106">匿名パイプを使用してネットワーク経由の通信を行うことはできません。</span><span class="sxs-lookup"><span data-stu-id="c4a5c-106">You cannot use anonymous pipes for communication over a network.</span></span>  

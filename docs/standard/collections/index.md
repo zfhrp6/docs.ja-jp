@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33577229"
 ---
 # <a name="collections-and-data-structures"></a><span data-ttu-id="af0eb-102">コレクションとデータ構造体</span><span class="sxs-lookup"><span data-stu-id="af0eb-102">Collections and Data Structures</span></span>
 <span data-ttu-id="af0eb-103">多くの場合、類似するデータはコレクションとして格納および操作すると、より効率的に処理できます。</span><span class="sxs-lookup"><span data-stu-id="af0eb-103">Similar data can often be handled more efficiently when stored and manipulated as a collection.</span></span> <span data-ttu-id="af0eb-104"><xref:System.Array?displayProperty=nameWithType> クラスまたは <xref:System.Collections>、<xref:System.Collections.Generic>、<xref:System.Collections.Concurrent>、System.Collections.Immutable の各名前空間のクラスを使用して、コレクションの個々の要素または一定の範囲の要素を追加、削除、および変更することができます。</span><span class="sxs-lookup"><span data-stu-id="af0eb-104">You can use the <xref:System.Array?displayProperty=nameWithType> class or the classes in the <xref:System.Collections>, <xref:System.Collections.Generic>, <xref:System.Collections.Concurrent>, System.Collections.Immutable namespaces to add, remove, and modify either individual elements or a range of elements in a collection.</span></span>  

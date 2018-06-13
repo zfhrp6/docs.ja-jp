@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33584958"
 ---
 # <a name="timers"></a><span data-ttu-id="e85ae-102">タイマー</span><span class="sxs-lookup"><span data-stu-id="e85ae-102">Timers</span></span>
 <span data-ttu-id="e85ae-103">タイマーとは、指定時刻に指定のデリゲートを呼び出す軽量オブジェクトのことです。</span><span class="sxs-lookup"><span data-stu-id="e85ae-103">Timers are lightweight objects that enable you to specify a delegate to be called at a specified time.</span></span> <span data-ttu-id="e85ae-104">スレッド プール内の 1 つのスレッドが、待機操作を実行します。</span><span class="sxs-lookup"><span data-stu-id="e85ae-104">A thread in the thread pool performs the wait operation.</span></span>  

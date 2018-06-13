@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33578354"
 ---
 # <a name="schema-validation-using-xpathnavigator"></a><span data-ttu-id="4f694-102">XPathNavigator を使用したスキーマ検証</span><span class="sxs-lookup"><span data-stu-id="4f694-102">Schema Validation using XPathNavigator</span></span>
 <span data-ttu-id="4f694-103"><xref:System.Xml.XmlDocument> クラスを使用して、<xref:System.Xml.XmlDocument> オブジェクトに含まれる XML コンテンツを 2 つの方法で検証することができます。</span><span class="sxs-lookup"><span data-stu-id="4f694-103">Using the <xref:System.Xml.XmlDocument> class, you can validate the XML content contained in an <xref:System.Xml.XmlDocument> object in two ways.</span></span> <span data-ttu-id="4f694-104">最初の方法は、検証型 <xref:System.Xml.XmlReader> オブジェクトを使用して XML コンテンツを検証する方法で、2 番目の方法は、<xref:System.Xml.XmlDocument.Validate%2A> クラスの <xref:System.Xml.XmlDocument> メソッドを使用する方法です。</span><span class="sxs-lookup"><span data-stu-id="4f694-104">The first way is to validate the XML content using a validating <xref:System.Xml.XmlReader> object and the second way is to use the <xref:System.Xml.XmlDocument.Validate%2A> method of the <xref:System.Xml.XmlDocument> class.</span></span> <span data-ttu-id="4f694-105"><xref:System.Xml.XPath.XPathDocument> クラスを使用して XML コンテンツの読み取り専用の検証を行うこともできます。</span><span class="sxs-lookup"><span data-stu-id="4f694-105">You can also perform read-only validation of XML content using the <xref:System.Xml.XPath.XPathDocument> class.</span></span>  

@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33575363"
 ---
 # <a name="traversing-xml-schemas"></a><span data-ttu-id="b0d00-102">XML スキーマの走査</span><span class="sxs-lookup"><span data-stu-id="b0d00-102">Traversing XML Schemas</span></span>
 <span data-ttu-id="b0d00-103">スキーマ オブジェクト モデル (SOM) API を使用して XML スキーマを走査すると、SOM に格納されている要素、属性、および型にアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="b0d00-103">Traversing an XML schema using the Schema Object Model (SOM) API provides access to the elements, attributes, and types stored in the SOM.</span></span> <span data-ttu-id="b0d00-104">また、SOM API を使用して XML スキーマを編集する際には、最初に SOM に読み込まれた XML スキーマを走査します。</span><span class="sxs-lookup"><span data-stu-id="b0d00-104">Traversing an XML schema loaded into the SOM is also the first step in editing an XML schema using the SOM API.</span></span>  

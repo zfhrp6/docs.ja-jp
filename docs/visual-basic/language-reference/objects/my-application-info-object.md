@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33594596"
 ---
 # <a name="myapplicationinfo-object"></a><span data-ttu-id="d8674-102">My.Application.Info オブジェクト</span><span class="sxs-lookup"><span data-stu-id="d8674-102">My.Application.Info Object</span></span>
 <span data-ttu-id="d8674-103">バージョン番号、説明、読み込まれたアセンブリなど、アプリケーションに関する情報を取得するためには、プロパティを提供します。</span><span class="sxs-lookup"><span data-stu-id="d8674-103">Provides properties for getting the information about the application, such as the version number, description, loaded assemblies, and so on.</span></span>  

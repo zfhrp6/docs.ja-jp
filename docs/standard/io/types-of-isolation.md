@@ -25,6 +25,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33577617"
 ---
 # <a name="types-of-isolation"></a><span data-ttu-id="c25b2-102">分離のタイプ</span><span class="sxs-lookup"><span data-stu-id="c25b2-102">Types of Isolation</span></span>
 <span data-ttu-id="c25b2-103">分離ストレージへのアクセスは、常にそのストレージを作成したユーザーに限定されます。</span><span class="sxs-lookup"><span data-stu-id="c25b2-103">Access to isolated storage is always restricted to the user who created it.</span></span> <span data-ttu-id="c25b2-104">この種の分離を実装するために、共通言語ランタイムは、オペレーティング システムが認識するユーザー ID (ストアを開くときにコードが実行しているプロセスに関連付けられた ID) と同じ概念を使用します。</span><span class="sxs-lookup"><span data-stu-id="c25b2-104">To implement this type of isolation, the common language runtime uses the same notion of user identity that the operating system recognizes, which is the identity associated with the process in which the code is running when the store is opened.</span></span> <span data-ttu-id="c25b2-105">この ID は認証されたユーザーの ID ですが、偽装によって現在のユーザーの ID が動的に変更される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="c25b2-105">This identity is an authenticated user identity, but impersonation can cause the identity of the current user to change dynamically.</span></span>  

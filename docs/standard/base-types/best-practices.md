@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33579835"
 ---
 # <a name="best-practices-for-regular-expressions-in-net"></a><span data-ttu-id="41128-102">.NET の正規表現に関するベスト プラクティス</span><span class="sxs-lookup"><span data-stu-id="41128-102">Best Practices for Regular Expressions in .NET</span></span>
 <a name="top"></a> <span data-ttu-id="41128-103">.NET の正規表現エンジンは、リテラル テキストの比較と照合ではなくパターン一致に基づいてテキストを処理する、完全な機能を備えた強力なツールです。</span><span class="sxs-lookup"><span data-stu-id="41128-103">The regular expression engine in .NET is a powerful, full-featured tool that processes text based on pattern matches rather than on comparing and matching literal text.</span></span> <span data-ttu-id="41128-104">ほとんどの場合は、すばやく効率的にパターン一致が実行されますが、</span><span class="sxs-lookup"><span data-stu-id="41128-104">In most cases, it performs pattern matching rapidly and efficiently.</span></span> <span data-ttu-id="41128-105">処理が非常に遅く見えることもあります。</span><span class="sxs-lookup"><span data-stu-id="41128-105">However, in some cases, the regular expression engine can appear to be very slow.</span></span> <span data-ttu-id="41128-106">極端なケースでは、比較的小さな入力の処理に何時間も何日もかかり、応答しなくなったように見えることさえあります。</span><span class="sxs-lookup"><span data-stu-id="41128-106">In extreme cases, it can even appear to stop responding as it processes a relatively small input over the course of hours or even days.</span></span>  

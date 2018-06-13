@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33586131"
 ---
 # <a name="identifier-expected"></a><span data-ttu-id="1a732-102">識別子が必要です。</span><span class="sxs-lookup"><span data-stu-id="1a732-102">Identifier expected</span></span>
 <span data-ttu-id="1a732-103">プログラミング要素は、認識可能な宣言された要素名には、コンテキストで要素名が必要な場合に発生します。</span><span class="sxs-lookup"><span data-stu-id="1a732-103">A programming element that is not a recognizable declared element name occurs where the context requires an element name.</span></span> <span data-ttu-id="1a732-104">考えられる原因の 1 つは属性が指定されている任意の場所以外のステートメントの先頭にします。</span><span class="sxs-lookup"><span data-stu-id="1a732-104">One possible cause is that an attribute has been specified somewhere other than at the beginning of the statement.</span></span>  

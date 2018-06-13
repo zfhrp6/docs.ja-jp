@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33575188"
 ---
 # <a name="how-to-create-files-and-directories-in-isolated-storage"></a><span data-ttu-id="990e8-102">方法 : 分離ストレージでファイルおよびディレクトリを作成する</span><span class="sxs-lookup"><span data-stu-id="990e8-102">How to: Create Files and Directories in Isolated Storage</span></span>
 <span data-ttu-id="990e8-103">分離ストアを取得したら、データを格納するためのファイルとディレクトリを作成することができます。</span><span class="sxs-lookup"><span data-stu-id="990e8-103">After you have obtained an isolated store, you can create directories and files for storing data.</span></span> <span data-ttu-id="990e8-104">ストア内では、ファイル名とディレクトリ名は仮想ファイル システムのルートに対して指定されます。</span><span class="sxs-lookup"><span data-stu-id="990e8-104">Within a store, file and directory names are specified with respect to the root of the virtual file system.</span></span>  

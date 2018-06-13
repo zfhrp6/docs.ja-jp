@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33638683"
 ---
 # <a name="some-files-and-folders-caused-exceptions-during-the-operation"></a><span data-ttu-id="f5472-102">操作中に、一部のファイルとフォルダーが例外を発生させました</span><span class="sxs-lookup"><span data-stu-id="f5472-102">Some files and folders caused exceptions during the operation</span></span>
 <span data-ttu-id="f5472-103">操作を実行しようとしているものの、ユーザーが必要なアクセス許可を持っていない場合、ディレクトリとファイルが例外を引き起こすことがあります。</span><span class="sxs-lookup"><span data-stu-id="f5472-103">Directories and files may cause exceptions when an operation is attempted but the user lacks necessary permissions.</span></span>  

@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33592029"
 ---
 # <a name="examples-of-xml-serialization"></a><span data-ttu-id="4b4f2-102">XML シリアル化の例</span><span class="sxs-lookup"><span data-stu-id="4b4f2-102">Examples of XML Serialization</span></span>
 <span data-ttu-id="4b4f2-103">XML シリアル化は、単純な形式から複雑な形式に至るまで、さまざまな形で実行できます。</span><span class="sxs-lookup"><span data-stu-id="4b4f2-103">XML serialization can take more than one form, from simple to complex.</span></span> <span data-ttu-id="4b4f2-104">たとえば、「[XML シリアル化の概要](../../../docs/standard/serialization/introducing-xml-serialization.md)」に示すように、パブリック フィールドとパブリック プロパティだけで構成されるクラスをシリアル化できます。</span><span class="sxs-lookup"><span data-stu-id="4b4f2-104">For example, you can serialize a class that simply consists of public fields and properties, as shown in [Introducing XML Serialization](../../../docs/standard/serialization/introducing-xml-serialization.md).</span></span> <span data-ttu-id="4b4f2-105">次の例では、XML シリアル化を使用して特定の XML スキーマ (XSD) ドキュメントに準拠する XML ストリームを生成する方法など、各種の高度なシナリオに対応するコード例を示します。</span><span class="sxs-lookup"><span data-stu-id="4b4f2-105">The following code examples address various advanced scenarios, including how to use XML serialization to generate an XML stream that conforms to a specific XML Schema (XSD) document.</span></span>  

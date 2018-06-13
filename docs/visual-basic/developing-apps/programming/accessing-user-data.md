@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33582845"
 ---
 # <a name="accessing-user-data-visual-basic"></a><span data-ttu-id="358ed-102">ユーザー データへのアクセス (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="358ed-102">Accessing User Data (Visual Basic)</span></span>
 <span data-ttu-id="358ed-103">このセクションには、`My.User` オブジェクトとそれで実行できるタスクに関するトピックが含まれています。</span><span class="sxs-lookup"><span data-stu-id="358ed-103">This section contains topics dealing with the `My.User` object and tasks that you can accomplish with it.</span></span>  

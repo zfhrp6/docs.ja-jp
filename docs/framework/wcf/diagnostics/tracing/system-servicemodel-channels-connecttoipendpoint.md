@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33477741"
 ---
 # <a name="systemservicemodelchannelsconnecttoipendpoint"></a><span data-ttu-id="495e5-102">System.ServiceModel.Channels.ConnectToIPEndpoint</span><span class="sxs-lookup"><span data-stu-id="495e5-102">System.ServiceModel.Channels.ConnectToIPEndpoint</span></span>
 <span data-ttu-id="495e5-103">System.ServiceModel.Channels.ConnectToIPEndpoint</span><span class="sxs-lookup"><span data-stu-id="495e5-103">System.ServiceModel.Channels.ConnectToIPEndpoint</span></span>  

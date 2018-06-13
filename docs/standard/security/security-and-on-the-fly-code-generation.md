@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33583969"
 ---
 # <a name="security-and-on-the-fly-code-generation"></a><span data-ttu-id="686e8-102">セキュリティと実行時のコード生成</span><span class="sxs-lookup"><span data-stu-id="686e8-102">Security and On-the-Fly Code Generation</span></span>
 <span data-ttu-id="686e8-103">ライブラリによっては、コードを生成し、それを実行することによって、呼び出し元のためになんらかの処理を行います。</span><span class="sxs-lookup"><span data-stu-id="686e8-103">Some libraries operate by generating code and running it to perform some operation for the caller.</span></span> <span data-ttu-id="686e8-104">基本的に問題となるのは、より低い信頼度のコードの代わりに生成し、そのコードをより高い信頼度で実行することです。</span><span class="sxs-lookup"><span data-stu-id="686e8-104">The basic problem is generating code on behalf of lesser-trust code and running it at a higher trust.</span></span> <span data-ttu-id="686e8-105">呼び出し側がコードの生成に影響を及ぼすと問題はさらに悪化するため、安全と考えられるコードだけが生成されることを確認してください。</span><span class="sxs-lookup"><span data-stu-id="686e8-105">The problem worsens when the caller can influence code generation, so you must ensure that only code you consider safe is generated.</span></span>  

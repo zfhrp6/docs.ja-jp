@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33576348"
 ---
 # <a name="how-to-implement-a-provider"></a><span data-ttu-id="a3a7d-102">方法: プロバイダーを実装する</span><span class="sxs-lookup"><span data-stu-id="a3a7d-102">How to: Implement a Provider</span></span>
 <span data-ttu-id="a3a7d-103">オブザーバー デザイン パターンでは、データを監視して通知を送信するプロバイダーと、プロバイダーから通知 (コールバック) を受信する 1 つまたは複数のオブザーバーを分ける必要があります。</span><span class="sxs-lookup"><span data-stu-id="a3a7d-103">The observer design pattern requires a division between a provider, which monitors data and sends notifications, and one or more observers, which receive notifications (callbacks) from the provider.</span></span> <span data-ttu-id="a3a7d-104">このトピックでは、プロバイダーを作成する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="a3a7d-104">This topic discusses how to create a provider.</span></span> <span data-ttu-id="a3a7d-105">関連トピックの「[方法: オブザーバーを実装する](../../../docs/standard/events/how-to-implement-an-observer.md)」でオブザーバーの作成方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="a3a7d-105">A related topic, [How to: Implement an Observer](../../../docs/standard/events/how-to-implement-an-observer.md), discusses how to create an observer.</span></span>  

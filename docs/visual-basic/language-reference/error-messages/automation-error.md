@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33583878"
 ---
 # <a name="automation-error"></a><span data-ttu-id="0ac79-102">オートメーション エラーです。</span><span class="sxs-lookup"><span data-stu-id="0ac79-102">Automation error</span></span>
 <span data-ttu-id="0ac79-103">メソッドの実行中、またはオブジェクト変数のプロパティの取得中または設定中にエラーが発生しました。</span><span class="sxs-lookup"><span data-stu-id="0ac79-103">An error occurred while executing a method or getting or setting a property of an object variable.</span></span> <span data-ttu-id="0ac79-104">エラーは、オブジェクトを作成したアプリケーションによって報告されました。</span><span class="sxs-lookup"><span data-stu-id="0ac79-104">The error was reported by the application that created the object.</span></span>  

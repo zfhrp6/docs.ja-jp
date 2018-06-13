@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33588042"
 ---
 # <a name="how-to-find-files-with-a-specific-pattern-in-visual-basic"></a><span data-ttu-id="79519-102">方法: 特定のパターンに一致するファイルを検索する (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="79519-102">How to: Find Files with a Specific Pattern in Visual Basic</span></span>
 <span data-ttu-id="79519-103"><xref:Microsoft.VisualBasic.MyServices.FileSystemProxy.GetFiles%2A> メソッドは、ファイルのパス名を表す文字列の読み取り専用のコレクションを返します。</span><span class="sxs-lookup"><span data-stu-id="79519-103">The <xref:Microsoft.VisualBasic.MyServices.FileSystemProxy.GetFiles%2A> method returns a read-only collection of strings representing the path names for the files.</span></span> <span data-ttu-id="79519-104">`wildCards` パラメーターを使用して、特定のパターンを指定できます。</span><span class="sxs-lookup"><span data-stu-id="79519-104">You can use the `wildCards` parameter to specify a specific pattern.</span></span> <span data-ttu-id="79519-105">サブディレクトリを検索対象に含めるには、`searchType` パラメーターを `SearchOption.SearchAllSubDirectories` に設定します。</span><span class="sxs-lookup"><span data-stu-id="79519-105">If you would like to include subdirectories in the search, set the `searchType` parameter to `SearchOption.SearchAllSubDirectories`.</span></span>  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33584181"
 ---
 # <a name="using-threads-and-threading"></a><span data-ttu-id="90134-102">スレッドの使用とスレッド処理</span><span class="sxs-lookup"><span data-stu-id="90134-102">Using Threads and Threading</span></span>
 <span data-ttu-id="90134-103">このセクションのトピックでは、マネージ スレッドの作成と管理、マネージ スレッドにデータを渡して結果を戻す方法、およびスレッドを破棄して <xref:System.Threading.ThreadAbortException> を処理する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="90134-103">The topics in this section discuss the creation and management of managed threads, how to pass data to managed threads and get results back, and how to destroy threads and handle a <xref:System.Threading.ThreadAbortException>.</span></span>  

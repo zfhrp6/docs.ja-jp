@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33603991"
 ---
 # <a name="nothing-visual-basic"></a><span data-ttu-id="e8369-102">Nothing (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="e8369-102">Nothing (Visual Basic)</span></span>
 <span data-ttu-id="e8369-103">任意のデータ型の既定値を表します。</span><span class="sxs-lookup"><span data-stu-id="e8369-103">Represents the default value of any data type.</span></span> <span data-ttu-id="e8369-104">参照型の場合、既定値は、`null`参照します。</span><span class="sxs-lookup"><span data-stu-id="e8369-104">For reference types, the default value is the `null` reference.</span></span> <span data-ttu-id="e8369-105">値型の場合、既定値は値の型が null 値を許容するかどうかに依存します。</span><span class="sxs-lookup"><span data-stu-id="e8369-105">For value types, the default value depends on whether the value type is nullable.</span></span>  
