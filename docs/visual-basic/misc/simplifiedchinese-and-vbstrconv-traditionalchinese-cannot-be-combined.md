@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33639253"
 ---
 # <a name="simplifiedchinese-and-vbstrconvtraditionalchinese-cannot-be-combined"></a>SimplifiedChinese と VbStrConv.TraditionalChinese を組み合わせることはできません。
 アプリケーションが `VbStrConv` 列挙型メンバー `SimplifiedChinese` と `TraditionalChinese`を結合しようとしていますが、これらは相互に排他的です。  

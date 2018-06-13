@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33651224"
 ---
 # <a name="walkthrough-encrypting-and-decrypting-strings-in-visual-basic"></a>チュートリアル : Visual Basic での文字列の暗号化と複合化
 このチュートリアルで使用する方法、<xref:System.Security.Cryptography.DESCryptoServiceProvider>クラスを暗号化および暗号化サービス プロバイダー (CSP) バージョンのトリプル データ暗号化標準を使用して文字列の暗号化を解除 (<xref:System.Security.Cryptography.TripleDES>) アルゴリズム。 最初の手順では、3 des アルゴリズムをカプセル化して、base 64 エンコード文字列として、暗号化されたデータを格納する単純なラッパー クラスを作成します。 その後、そのラッパーを使用して、パブリックにアクセスできるテキスト ファイルにプライベート ユーザー データを安全に保管します。  

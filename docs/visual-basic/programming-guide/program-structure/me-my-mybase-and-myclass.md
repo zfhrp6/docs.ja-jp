@@ -26,6 +26,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33650528"
 ---
 # <a name="me-my-mybase-and-myclass-in-visual-basic"></a>Visual Basic における Me、My、MyBase、MyClass
 `Me`、 `My`、 `MyBase`、および`MyClass`Visual Basic である類似した名前は、がさまざまな目的です。 このトピックでは、これらを区別するためにこれらのエンティティの各を説明します。  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33636553"
 ---
 # <a name="file-39ltfilenamegt39-is-write-protected"></a>ファイル&#39; &lt;filename&gt; &#39;は書き込み禁止
 書き込もうとしているファイルは書き込み禁止であるため、変更できません。  

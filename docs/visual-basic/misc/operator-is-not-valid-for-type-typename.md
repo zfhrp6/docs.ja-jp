@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33638532"
 ---
 # <a name="operator-is-not-valid-for-type-39lttypenamegt39"></a>演算子は型に対して無効&#39; &lt;typename&gt;&#39;
 演算子は、型に適切ではありません。  

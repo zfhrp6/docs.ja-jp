@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33636133"
 ---
 # <a name="format-not-valid-in-resource-file"></a>形式がリソース ファイルで有効ではありません
 プロジェクト内のリソース ファイルが Windows リソース ファイルの標準ファイル形式に従っていないまたはリソース ファイルと Visual Basic プロジェクトの間の不一致があります。  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33807760"
 ---
 # <a name="stand-alone-diagnostics-feed-sample"></a>スタンドアロン診断フィードのサンプル
 このサンプルは、RSS フィードおよび Atom 配信 Windows Communication Foundation (WCF) でのフィードを作成する方法を示します。 オブジェクト モデルの基本および Windows Communication Foundation (WCF) サービスをセットアップする方法を示す基本的な"Hello World"プログラムすることをお勧めします。  

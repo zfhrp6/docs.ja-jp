@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33654727"
 ---
 # <a name="common-tasks-performed-with-visual-basic-operators"></a>Visual Basic の演算子で実行される一般的なタスク
 演算子と呼ばれる 1 つまたは複数の式に関連する多くの一般的なタスクを実行する*オペランド*です。  

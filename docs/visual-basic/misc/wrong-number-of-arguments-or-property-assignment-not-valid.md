@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33641142"
 ---
 # <a name="wrong-number-of-arguments-or-property-assignment-not-valid"></a>引数の数か、プロパティの割り当てが正しくありません
 正しくない割り当てを行おうとしました。  

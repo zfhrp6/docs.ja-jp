@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33635578"
 ---
 # <a name="disk-full-visual-basic"></a>ディスクの空き容量が不足しています (Visual Basic)
 `Print`、 `Write`、または `FileClose` 操作を完了するか、または必要なファイルを作成するために十分なディスク領域がありません  

@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33641358"
 ---
 # <a name="path-39ltpathnamegt39-not-found"></a>パス&#39; &lt;pathname&gt; &#39;が見つかりません。
 ファイル アクセス操作またはディスク アクセス操作において指定されたパスをオペレーティング システムが見つけることができません。 ファイルへのパスには、対象ファイルを検索するために走査しなければならないドライブ、ディレクトリ、サブディレクトリの指定を含める必要があります。 相対ファイル パスと絶対ファイル パスのどちらでも構いません。  

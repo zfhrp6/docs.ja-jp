@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33640369"
 ---
 # <a name="the-source-folder-does-not-exist"></a>ソース フォルダーが存在しません
 存在しないソース フォルダーを参照する操作を実行しようとしました。 指定したパスが正しくないことが原因となっている可能性があります。  
