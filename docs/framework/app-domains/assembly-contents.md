@@ -14,6 +14,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32741829"
 ---
 # <a name="assembly-contents"></a>アセンブリの内容
 一般に、静的アセンブリは次の 4 つの要素から構成されます。  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33643753"
 ---
 # <a name="converting-data-types-visual-basic"></a>変換する際のデータ型 (Visual Basic)
 変換メソッドは、入力オブジェクトの型を変更します。  
