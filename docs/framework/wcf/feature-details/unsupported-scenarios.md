@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33507715"
 ---
 # <a name="unsupported-scenarios"></a>サポートされていないシナリオ
 さまざまな理由で、Windows Communication Foundation (WCF) では、いくつかの特定のセキュリティ シナリオはサポートされません。 たとえば、 [!INCLUDE[wxp](../../../../includes/wxp-md.md)] Home Edition は SSPI または Kerberos 認証プロトコルを実装していない、したがって WCF サポートしていませんプラットフォーム上の Windows 認証でサービスを実行します。 ユーザー名/パスワードや HTTP/HTTPS 統合認証など、他の認証メカニズムは、Windows XP Home Edition で WCF を実行している場合にサポートされます。  

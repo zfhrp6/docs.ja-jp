@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32744396"
 ---
 # <a name="manipulations-and-inertia-overview"></a>操作と慣性の概要
 "*操作*" では、"*マニピュレーター*" を使用して、ユーザー インターフェイス (UI) 要素の移動、回転、サイズ変更を行えます。 マニピュレーターは、マウス、または (タッチ対応のシナリオの場合) スタイラスや指を意味します。  

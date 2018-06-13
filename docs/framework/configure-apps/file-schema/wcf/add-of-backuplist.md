@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32745553"
 ---
 # <a name="ltaddgt-of-ltbackuplistgt"></a>&lt;backupList&gt; の &lt;add&gt;
 バックアップ エンドポイント要素を定義する構成要素を表します。  

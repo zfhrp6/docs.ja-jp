@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33513312"
 ---
 # <a name="rehosting-the-workflow-designer"></a>ワークフロー デザイナーのホスト変更
 [!INCLUDE[wfd1](../../../includes/wfd1-md.md)]は、ワークフローを作成、変更、および監視する目的で [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] 以外の環境にホストを変更できます。  

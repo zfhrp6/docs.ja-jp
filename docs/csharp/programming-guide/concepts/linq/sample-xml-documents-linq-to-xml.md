@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33333457"
 ---
 # <a name="sample-xml-documents-linq-to-xml"></a>サンプル XML ドキュメント (LINQ to XML)
 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] ドキュメント全体にわたって、コード例とコード スニペットで使用されているサンプル ファイルは次のとおりです。  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33508476"
 ---
 # <a name="selecting-a-credential-type"></a>資格情報の種類の選択
 *資格情報*Windows Communication Foundation (WCF) をクレームされた id または機能のいずれかを確立するために使用されるデータします。 たとえば、パスポートは、政府によって発行される、国籍または地域籍を証明するための資格情報です。 WCF では、資格情報は、ユーザー名トークンや X.509 証明書など、多くの形式を実行できます。 このトピックでは、資格情報、WCF では、その使用方法およびアプリケーションの適切な資格情報を選択する方法について説明します。  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33499572"
 ---
 # <a name="discovery-extensibility"></a>探索の機能拡張
 このセクションのサンプルでは、Windows Communication Foundation (WCF) の検出機能を拡張する方法を示します。  

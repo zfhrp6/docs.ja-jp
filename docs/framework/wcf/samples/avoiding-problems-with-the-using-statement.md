@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33503899"
 ---
 # <a name="avoiding-problems-with-the-using-statement"></a>Using ステートメントに関する問題の回避
 このサンプルでは、型指定のあるクライアントを使用する際に C# の "using" ステートメントを使用せずに、リソースを自動的にクリーンアップする方法を示します。 このサンプルがに基づいて、[作業の開始](../../../../docs/framework/wcf/samples/getting-started-sample.md)電卓サービスを実装します。 この例では、クライアントはコンソール アプリケーション (.exe) であり、サービスはインターネット インフォメーション サービス (IIS) によってホストされます。  

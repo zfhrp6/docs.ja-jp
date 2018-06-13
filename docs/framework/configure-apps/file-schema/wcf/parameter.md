@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32754055"
 ---
 # <a name="ltparametergt"></a>&lt;parameter&gt;
 宣言された型がジェネリック型である場合、ジェネリック パラメーターを指定します。  

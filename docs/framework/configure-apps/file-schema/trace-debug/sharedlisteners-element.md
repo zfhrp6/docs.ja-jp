@@ -19,6 +19,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32745576"
 ---
 # <a name="ltsharedlistenersgt-element"></a>&lt;sharedListeners&gt;要素
 任意の source 要素または trace 要素が参照できるリスナーを含みます。  これらのリスナーは、既定では、トレースを受け取りません、実行時にこれらのリスナーを取得することはできません。 共有リスナーとして識別されたリスナーは、名前でソースまたはカスタム トレースに追加できます。  

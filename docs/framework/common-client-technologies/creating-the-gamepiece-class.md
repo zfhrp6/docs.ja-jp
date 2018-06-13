@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32744513"
 ---
 # <a name="creating-the-gamepiece-class"></a>GamePiece クラスの作成
 **GamePiece** クラスは、Microsoft XNA ゲーム ピースのイメージの読み込み、ゲーム ピースに関係するマウスの状態の追跡、マウスのキャプチャ、操作と慣性の処理の実行、およびゲーム ピースがビュー ポートの限度に達したときの跳ね返り機能の提供に必要な機能をすべてカプセル化します。  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33330692"
 ---
 # <a name="how-to-create-a-document-with-namespaces-c-linq-to-xml"></a>方法 : 名前空間を持つドキュメントを作成する (C#) (LINQ to XML)
 このトピックでは、名前空間を持つドキュメントを作成する方法について説明します。  

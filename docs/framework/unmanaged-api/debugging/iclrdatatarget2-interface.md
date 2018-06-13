@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 6fc26694bded2c7df1a53a96e8743f3be73c93eb
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33408505"
 ---
 # <a name="iclrdatatarget2-interface"></a>ICLRDataTarget2 インターフェイス
 サブクラス[ICLRDataTarget](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget-interface.md)ターゲット プロセスの仮想メモリ領域を操作するデータ アクセス サービス層で使用されます。  

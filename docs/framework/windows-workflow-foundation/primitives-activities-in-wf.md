@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33513375"
 ---
 # <a name="primitives-activities-in-wf"></a>WF 内のプリミティブ アクティビティ
 [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] には、共通のタスクを実行する便利な機構を提供する、システムによって提供されるアクティビティがいくつか用意されています。  

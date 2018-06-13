@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33509048"
 ---
 # <a name="using-the-xmlserializer-class"></a>XmlSerializer クラスの使用
 Windows Communication Foundation (WCF) では、2 つの別のシリアル化テクノロジを使用して、クライアントとサービスには、シリアル化と呼ばれるプロセスの間で送信される XML に、アプリケーションのデータを有効にします。  

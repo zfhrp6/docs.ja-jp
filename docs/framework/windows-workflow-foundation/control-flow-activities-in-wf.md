@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33513000"
 ---
 # <a name="control-flow-activities-in-wf"></a>WF 内の制御フロー アクティビティ
 [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] には、ワークフロー内の実行フローを制御するアクティビティがいくつか用意されています。 これらのアクティビティの一部 (など`Switch`と`If`) Visual c# などの他の環境、プログラミングのようなフロー制御構造を実装する (など`Pick`) 新しいプログラミング構造をモデル化します。  

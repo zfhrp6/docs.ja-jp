@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33505731"
 ---
 # <a name="conditional-get-and-put"></a>条件付きの Get と Put
 このサンプルでは、新しい条件付きの取得 API と更新 API を WCF REST プログラミング モデルで使用する方法を示します。 条件付きの取得と更新プログラムに最も適したためリソース指向の REST サービスでは、このサンプルを拡張し、[基本的なリソース サービス](../../../../docs/framework/wcf/samples/basic-resource-service.md)サンプルです。 このサンプルでは、条件付きの取得と更新のサポートの追加、[基本的なリソース サービス](../../../../docs/framework/wcf/samples/basic-resource-service.md)で導入された新しい Api を使用してサンプル[!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)]です。  

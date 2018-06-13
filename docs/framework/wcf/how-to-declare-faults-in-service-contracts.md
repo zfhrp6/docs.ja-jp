@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33500237"
 ---
 # <a name="how-to-declare-faults-in-service-contracts"></a>方法 : サービス コントラクトでのエラーを宣言する
 マネージ コードでは、エラー条件が発生すると例外がスローされます。 Windows Communication Foundation (WCF) アプリケーションで、ただし、サービス コントラクトを指定、サービス コントラクトの SOAP エラーを宣言することによってどのようなエラー情報がクライアントに返されます。 例外とエラー間のリレーションシップの概要については、次を参照してください。[を指定すると処理のエラー コントラクトおよびサービスの](../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md)します。  

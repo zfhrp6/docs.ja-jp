@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33338797"
 ---
 # <a name="statements-expressions-and-operators-c-programming-guide"></a>ステートメント、式、および演算子 (C# プログラミング ガイド)
 アプリケーションを構成する C# コードは、キーワード、式、演算子から成るステートメントで構成されます。 このセクションには、C# プログラムのこのような基本要素に関する情報が含まれています。  

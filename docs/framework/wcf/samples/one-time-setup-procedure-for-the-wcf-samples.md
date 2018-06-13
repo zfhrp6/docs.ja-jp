@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33506902"
 ---
 # <a name="one-time-setup-procedure-for-the-windows-communication-foundation-samples"></a>Windows Communication Foundation サンプルの 1 回限りのセットアップの手順
 ほとんどの Windows Communication Foundation (WCF) サンプルでは、インターネット インフォメーション サービス (IIS) でホストされているされ、共通の仮想ディレクトリから実行することができます。 この 1 回限りのセットアップの手順では、ディスクにフォルダーを作成します。という名前の iis 仮想ディレクトリも追加**ServiceModelSamples**です。  

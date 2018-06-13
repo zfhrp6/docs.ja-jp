@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33513127"
 ---
 # <a name="guide-to-the-windows-workflow-documentation"></a>Windows Workflow ドキュメントのガイド
 ここでは、Windows Workflow Foundation ドキュメントを使用する方法について説明します。 リンク先のドキュメントは、特定の目的と専門知識のレベルに応じて分類された、推奨される出発点となります。  
