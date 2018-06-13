@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33585581"
 ---
 # <a name="39is39-requires-operands-that-have-reference-types-but-this-operand-has-the-value-type-39lttypenamegt39"></a>&#39;&#39;オペランドを必要と参照型を持つことがこのオペランドの値の型&#39; &lt;typename&gt;&#39;
 `Is`比較演算子は、2 つのオブジェクト変数が、同じインスタンスを参照しているかどうかを判定します。 この比較は、値型に対して定義されていません。  

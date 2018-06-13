@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33582793"
 ---
 # <a name="printing-and-reporting-visual-basic"></a>印刷とレポート (Visual Basic)
 Visual Basic では、印刷とレポートのいくつかのオプションを提供します。 次のトピックでは、概要と印刷とレポートに関連するドキュメントへのリンクを提供します。  

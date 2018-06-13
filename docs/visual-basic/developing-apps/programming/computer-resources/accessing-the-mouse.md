@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33582591"
 ---
 # <a name="accessing-the-mouse-visual-basic"></a>マウスへのアクセス (Visual Basic)
 `My.Computer.Mouse` オブジェクトは、コンピューターのマウスに関する情報 (マウスが存在するか、マウス ボタンの数など) を見つける方法とマウス ホイールに関する詳細を提供します。  

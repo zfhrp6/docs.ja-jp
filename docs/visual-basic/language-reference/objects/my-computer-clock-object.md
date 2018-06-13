@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33595967"
 ---
 # <a name="mycomputerclock-object"></a>My.Computer.Clock オブジェクト
 システム クロックから現在の現地時刻と世界協定時刻 (グリニッジ標準時に相当します) にアクセスするためのプロパティを提供します。  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33583436"
 ---
 # <a name="performing-network-operations-visual-basic"></a>ネットワーク操作の実行 (Visual Basic)
 次の表は、`My.Computer.Network` オブジェクトに関連付けられているタスクの一覧です。  

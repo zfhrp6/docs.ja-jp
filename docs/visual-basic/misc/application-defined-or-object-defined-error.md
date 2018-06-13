@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33597491"
 ---
 # <a name="application-defined-or-object-defined-error"></a>アプリケーション定義またはオブジェクト定義のエラーです。
 アプリケーション定義またはユーザー定義のエラーが発生しました。 エラーを確認します。  

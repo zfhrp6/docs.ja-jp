@@ -26,6 +26,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33596809"
 ---
 # <a name="derived-math-functions-visual-basic"></a>数値演算関数の導出 (Visual Basic)
 次の表はの組み込みの数値演算関数から派生可能な非組み込みの数値演算関数、<xref:System.Math?displayProperty=nameWithType>オブジェクト。 組み込みの数値演算関数は追加することでアクセスできる`Imports System.Math`ファイルまたはプロジェクトにします。  

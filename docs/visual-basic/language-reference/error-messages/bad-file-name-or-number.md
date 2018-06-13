@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33585568"
 ---
 # <a name="bad-file-name-or-number"></a>ファイル名または番号が正しくありません。
 指定したファイルにアクセスしようとしているときにエラーが発生しました。 このエラーの考えられる原因には。  

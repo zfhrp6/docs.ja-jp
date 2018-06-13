@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33581369"
 ---
 # <a name="serialization-how-to-topics"></a>シリアル化に関する「方法」トピック
 概念を説明したドキュメントに用意されている、シリアル化に関する方法を説明したトピックへのリンクの一覧を次に示します。  

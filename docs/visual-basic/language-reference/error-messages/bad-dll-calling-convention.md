@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33583839"
 ---
 # <a name="bad-dll-calling-convention"></a>DLL を正しく呼び出せません。
 ダイナミック リンク ライブラリ (DLL) に渡された引数が、ルーチンによって予測されるを正確に一致する必要があります。 呼び出し規約は、サーバーの数、種類、および引数の順序を使用します。 プログラムが間違った型または引数の数が渡される DLL にルーチンを呼び出している可能性があります。  

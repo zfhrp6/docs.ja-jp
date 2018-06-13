@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33582637"
 ---
 # <a name="parallel-processing-concurrency-and-async-programming-in-net"></a>.NET での並列処理、同時実行、および非同期プログラミング
 .NET で提供されている複数の方法を使用すると、ユーザーに対するアプリケーションの応答性を高くする非同期コードや、複数の実行スレッドを使用してユーザーのコンピューターのパフォーマンスを最大化する並列コードを、記述することができます。  

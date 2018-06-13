@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33585461"
 ---
 # <a name="39dir39-function-must-first-be-called-with-a-39pathname39-argument"></a>&#39;Dir&#39;関数は最初に呼び出されなければなりません、 &#39;PathName&#39;引数
 初めて呼び出したときに、`Dir`関数には含まれません、`PathName`引数。 最初に呼び出す`Dir`含める必要があります、`PathName`が後続の呼び出し`Dir`の次の項目を取得するパラメーターを含める必要はありません。  
