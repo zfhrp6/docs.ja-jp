@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33542198"
 ---
 # <a name="user-drawn-controls"></a><span data-ttu-id="f5b57-102">ユーザー描画コントロール</span><span class="sxs-lookup"><span data-stu-id="f5b57-102">User-Drawn Controls</span></span>
 <span data-ttu-id="f5b57-103">.NET Framework では、独自のコントロールを簡単に開発する機能を提供します。</span><span class="sxs-lookup"><span data-stu-id="f5b57-103">The .NET Framework provides you with the ability to easily develop your own controls.</span></span> <span data-ttu-id="f5b57-104">コードによって結合されて標準のコントロールのセットにある、ユーザー コントロールを作成するかを一から独自のコントロールをデザインすることができます。</span><span class="sxs-lookup"><span data-stu-id="f5b57-104">You can create a user control, which is a set of standard controls bound together by code, or you can design your own control from the ground up.</span></span> <span data-ttu-id="f5b57-105">既存のコントロールから継承されるコントロールを作成し、本質的な機能を追加する継承を使用することもできます。</span><span class="sxs-lookup"><span data-stu-id="f5b57-105">You can even use inheritance to create a control that inherits from an existing control and add to its inherent functionality.</span></span> <span data-ttu-id="f5b57-106">どのようなアプローチを使用すると、.NET Framework では、任意のコントロールを作成するためのカスタムのグラフィカル インターフェイスを描画する機能を提供します。</span><span class="sxs-lookup"><span data-stu-id="f5b57-106">Whatever approach you use, the .NET Framework provides the functionality to draw a custom graphical interface for any control you create.</span></span>  

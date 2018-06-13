@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33488476"
 ---
 # <a name="configuring-workflowservicehost"></a><span data-ttu-id="aafa7-102">WorkflowServiceHost の構成</span><span class="sxs-lookup"><span data-stu-id="aafa7-102">Configuring WorkflowServiceHost</span></span>
 <span data-ttu-id="aafa7-103">このセクションには、一連短い「方法」にはが含まれています。 のさまざまな機能を構成する方法を簡単に説明するトピックを、<xref:System.ServiceModel.Activities.WorkflowServiceHost>構成内のクラスです。</span><span class="sxs-lookup"><span data-stu-id="aafa7-103">This section contains a set of short "how to" topics that briefly describe how to configure different features of the <xref:System.ServiceModel.Activities.WorkflowServiceHost> class in configuration.</span></span> <span data-ttu-id="aafa7-104">以下のトピックは、ワークフロー サービス固有の構成を説明は、他のすべての構成は通常の WCF サービスと同じ方法で行われます。</span><span class="sxs-lookup"><span data-stu-id="aafa7-104">These topics cover workflow service specific configuration, all other configuration is done in the same way as a regular WCF service.</span></span>  

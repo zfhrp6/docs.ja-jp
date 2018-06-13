@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33541951"
 ---
 # <a name="application-startup-time"></a><span data-ttu-id="5cada-102">アプリケーションの起動時間</span><span class="sxs-lookup"><span data-stu-id="5cada-102">Application Startup Time</span></span>
 <span data-ttu-id="5cada-103">WPF アプリケーションの起動に必要な時間には、かなりばらつきがあります。</span><span class="sxs-lookup"><span data-stu-id="5cada-103">The amount of time that is required for a WPF application to start can vary greatly.</span></span> <span data-ttu-id="5cada-104">このトピックでは、Windows Presentation Foundation (WPF) アプリケーションの認識される起動時間と実際の起動時間を短縮する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="5cada-104">This topic describes various techniques for reducing the perceived and actual startup time for a Windows Presentation Foundation (WPF) application.</span></span>  
