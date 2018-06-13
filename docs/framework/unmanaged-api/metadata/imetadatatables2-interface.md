@@ -18,9 +18,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: acd51e06382502fdc2facae939212e02d3675f6a
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33450077"
 ---
 # <a name="imetadatatables2-interface"></a>IMetaDataTables2 インターフェイス
 拡張[IMetaDataTables](../../../../docs/framework/unmanaged-api/metadata/imetadatatables-interface.md)メタデータ ストリームを操作するためのメソッドを含めます。  

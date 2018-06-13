@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33560369"
 ---
 # <a name="how-to-create-a-shape-using-a-streamgeometry"></a>方法 : StreamGeometry を使用して図形を作成する
 <xref:System.Windows.Media.StreamGeometry> 軽量な代替手段は、<xref:System.Windows.Media.PathGeometry>幾何学図形を作成するためです。 使用して、<xref:System.Windows.Media.StreamGeometry>複合ジオメトリを記述する必要がある場合は、サポートするオーバーヘッドのデータ バインディング、アニメーション、または変更しません。 などにより、効率、<xref:System.Windows.Media.StreamGeometry>クラスは、装飾を記述するための適切な選択です。  

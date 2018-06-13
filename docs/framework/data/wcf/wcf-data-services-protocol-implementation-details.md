@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33363722"
 ---
 # <a name="wcf-data-services-protocol-implementation-details"></a>WCF Data Services プロトコル実装の詳細
 ## <a name="odata-protocol-implementation-details"></a>OData プロトコル実装の詳細  

@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33570604"
 ---
 # <a name="design-guidelines-for-exceptions"></a>例外のデザインのガイドライン
 例外処理では、エラーの戻り値ベースのレポートに比べて多くの利点があります。 適切なフレームワークの設計では、例外のメリットを実現アプリケーション開発者は、ことができます。 このセクションでは、例外の利点を説明し、それらを効果的に使用するためのガイドラインを示します。  

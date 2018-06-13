@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33556836"
 ---
 # <a name="how-to-produce-a-value-based-on-a-list-of-bound-items"></a>方法 : バインドされた項目の一覧に基づいて値を生成する
 <xref:System.Windows.Data.MultiBinding> 使用すると、ソースのプロパティの一覧にバインディング ターゲット プロパティをバインドし、指定された入力の値を生成するロジックを適用できます。 この例は、使用する方法を示します<xref:System.Windows.Data.MultiBinding>です。  

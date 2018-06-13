@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33562194"
 ---
 # <a name="shapes"></a>図形
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] 使用して基本図形を描画するためのサポートを提供、<xref:System.Windows.Shapes.Shape>クラスです。 図形オブジェクトから取得<xref:System.Windows.FrameworkElement>とそのため、レイアウト システムに参加しを使用して単に描画できる[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]です。  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33560470"
 ---
 # <a name="how-to-create-a-line-using-a-linegeometry"></a>方法 : LineGeometry を使用して線を作成する
 この例を使用する方法を示しています、<xref:System.Windows.Media.LineGeometry>行を記述するクラス。 A<xref:System.Windows.Media.LineGeometry>の開始と終了点によって定義されます。  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33516553"
 ---
 # <a name="workflow-hosting-options"></a>ワークフロー ホスティングのオプション
 Windows Workflow Foundation (WF) のサンプルのほとんどは、コンソール アプリケーションでホストされるワークフローを使用しますが、実際のワークフローにとって現実的なシナリオはありません。 実際のビジネス アプリケーションのワークフローは、開発者が作成した Windows サービス、[!INCLUDE[iisver](../../../includes/iisver-md.md)] や AppFabric などのサーバー アプリケーションのいずれかの永続的なプロセスでホストされます。 これらの方法の違いを次に示します。  

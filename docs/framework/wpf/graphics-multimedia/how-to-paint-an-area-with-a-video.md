@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33560778"
 ---
 # <a name="how-to-paint-an-area-with-a-video"></a>方法 : ビデオを使用して領域を塗りつぶす
 この例では、メディアを使用して領域を塗りつぶす方法を示します。 メディアを使用して領域を描画する方法の 1 つを使用して、<xref:System.Windows.Controls.MediaElement>と共に、<xref:System.Windows.Media.VisualBrush>です。 使用して、<xref:System.Windows.Controls.MediaElement>ロードし、メディアを再生し、設定を使用する、<xref:System.Windows.Media.VisualBrush.Visual%2A>のプロパティ、<xref:System.Windows.Media.VisualBrush>です。 使用してできます、<xref:System.Windows.Media.VisualBrush>読み込まれたメディアで領域を塗りつぶすにします。  

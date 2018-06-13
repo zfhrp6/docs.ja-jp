@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33557122"
 ---
 # <a name="adorners-overview"></a>装飾の概要
 装飾は、特殊な種類の<xref:System.Windows.FrameworkElement>で視覚的な手掛かりをユーザーに提供するために使用されます。 装飾は、要素への機能ハンドル追加やコントロールに関する状態情報の提供など、さまざまな用途に使用できます。  

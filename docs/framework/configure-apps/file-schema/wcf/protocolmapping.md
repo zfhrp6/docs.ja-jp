@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32748907"
 ---
 # <a name="ltprotocolmappinggt"></a>&lt;protocolMapping&gt;
 トランスポート プロトコル スキーム (など、http、net.tcp、net.pipe など) と WCF バインディング間の既定のプロトコル マッピングのセットを定義する構成セクションを表します。 を実行時に既定のエンドポイントを作成する場合、Windows Communication Foundation (WCF) は構成されたマッピングは確認し、ベース アドレスの特定に使用するバインディングを決定します。  

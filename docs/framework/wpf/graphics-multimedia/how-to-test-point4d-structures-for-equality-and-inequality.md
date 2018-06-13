@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33559815"
 ---
 # <a name="how-to-test-point4d-structures-for-equality-and-inequality"></a>方法 : Point4D 構造体が等価かどうかをテストする
 この例をテストする方法を示しています。<xref:System.Windows.Media.Media3D.Point4D>等値演算子および非等値の構造体。  

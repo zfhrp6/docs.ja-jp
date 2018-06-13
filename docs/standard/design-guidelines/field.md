@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33571118"
 ---
 # <a name="field-design"></a>フィールドのデザイン
 カプセル化の原則が、最も重要な概念のいずれかのオブジェクト指向デザインします。 この原則は、オブジェクト内に格納されているデータはそのオブジェクトにのみアクセスできることを示します。  

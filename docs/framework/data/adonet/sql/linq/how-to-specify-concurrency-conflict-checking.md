@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33362593"
 ---
 # <a name="how-to-specify-concurrency-conflict-checking"></a>方法 : 同時実行の競合のチェックを指定する
 <xref:System.Data.Linq.DataContext.SubmitChanges%2A> を呼び出すときに同時実行の競合をチェックするデータベース列を指定できます。 詳細については、次を参照してください。[する方法: 同時実行の競合があるテストを指定するメンバー](../../../../../../docs/framework/data/adonet/sql/linq/how-to-specify-which-members-are-tested-for-concurrency-conflicts.md)です。  

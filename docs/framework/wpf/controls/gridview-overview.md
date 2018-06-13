@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33557682"
 ---
 # <a name="gridview-overview"></a>GridView の概要
 <xref:System.Windows.Controls.GridView> 表示モードのいずれかのビュー モードは、<xref:System.Windows.Controls.ListView>コントロール。 <xref:System.Windows.Controls.GridView>とユーザーの対話型の列見出しとして通常のボタンを使用するテーブル内の項目コレクションを表示するクラスとそのサポート クラスを有効にします。 このトピックでは、<xref:System.Windows.Controls.GridView>クラスし、その用途について説明します。  

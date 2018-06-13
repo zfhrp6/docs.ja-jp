@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33556914"
 ---
 # <a name="control-styles-and-templates"></a>コントロールのスタイルとテンプレート
 Windows Presentation Foundation (WPF) コントロールがある、<xref:System.Windows.Controls.ControlTemplate>そのコントロールのビジュアル ツリーを格納しています。 変更することにより、構造体とコントロールの外観を変更することができます、<xref:System.Windows.Controls.ControlTemplate>を制御するのです。 コントロールのビジュアル ツリーの一部のみを置換する方法はありません。設定する必要があります、コントロールのビジュアル ツリーを変更する、 <xref:System.Windows.Controls.Control.Template%2A> 、新規および完了するコントロールのプロパティ<xref:System.Windows.Controls.ControlTemplate>です。  

@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 474338ff1780ce9b442208cd06f8b14bc411be5e
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33447750"
 ---
 # <a name="imetadataimportgetuserstring-method"></a>IMetaDataImport::GetUserString メソッド
 指定したメタデータ トークンで表されるリテラル文字列を取得します。  

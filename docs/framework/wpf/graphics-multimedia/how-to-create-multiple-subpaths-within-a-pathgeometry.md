@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33559332"
 ---
 # <a name="how-to-create-multiple-subpaths-within-a-pathgeometry"></a>方法 : PathGeometry 内に複数のサブパスを作成する
 この例は、内の複数のサブパスを作成する方法を示します、<xref:System.Windows.Media.PathGeometry>です。 作成する複数のサブパスを作成するには<xref:System.Windows.Media.PathFigure>各サブ パスにします。  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33362163"
 ---
 # <a name="how-to-validate-dbml-and-external-mapping-files"></a>方法 : DBML ファイルおよび外部マッピング ファイルを検証する
 変更した外部マッピング ファイルや .dbml ファイルは、それぞれのスキーマ定義に対して検証する必要があります。 このトピックでは、検証プロセスを実装する手順を Visual Studio ユーザーを示します。  

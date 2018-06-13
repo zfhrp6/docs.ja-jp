@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33514419"
 ---
 # <a name="how-to-enable-persistence-for-workflows-and-workflow-services"></a>ワークフローとワークフロー サービスの永続化を有効にする方法
 ここでは、ワークフローとワークフロー サービスの永続化を有効にする方法について説明します。  

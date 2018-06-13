@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33561463"
 ---
 # <a name="how-to-control-a-storyboard-after-it-starts"></a>方法 : ストーリーボードを開始後に制御する
 この例では、コントロールにコードを使用して、<xref:System.Windows.Media.Animation.Storyboard>開始後にします。 ストーリー ボードを制御[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]を使用して<xref:System.Windows.Trigger>と<xref:System.Windows.TriggerAction>オブジェクトです。 例については、次を参照してください。[起動を制御、ストーリー ボードの後に、イベント トリガーを使用して](../../../../docs/framework/wpf/graphics-multimedia/how-to-use-event-triggers-to-control-a-storyboard-after-it-starts.md)です。  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33361641"
 ---
 # <a name="customizing-insert-update-and-delete-operations"></a>挿入、更新、および削除の各操作のカスタマイズ
 既定で、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] は、挿入、読み取り、更新、および削除の各操作を実装する動的な SQL を生成します。 ただし、実際の使用では、業務ニーズに合わせてアプリケーションをカスタマイズすることが多くなります。  

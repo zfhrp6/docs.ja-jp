@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33513098"
 ---
 # <a name="windows-workflow-architecture"></a>Windows Workflow のアーキテクチャ
 Windows Workflow Foundation (WF) は、実行時間の長いインタラクティブ アプリケーションを開発するための抽象化レベルを上げます。 作業単位はアクティビティとしてカプセル化されます。 アクティビティが実行される環境には、フロー制御、例外処理、エラー伝達、状態データの永続化、動作中のワークフローのメモリへの読み込みやアンロード、追跡、トランザクション フローに対応する機能が備わっています。  

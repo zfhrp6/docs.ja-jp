@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33559423"
 ---
 # <a name="how-to-write-metadata-to-a-bitmap"></a>方法 : ビットマップにメタデータを書き込む
 この例では、メタデータ クエリ言語を使用してビットマップにメタデータを記述する方法を示します。  

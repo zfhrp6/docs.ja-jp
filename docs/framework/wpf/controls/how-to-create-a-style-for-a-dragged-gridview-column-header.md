@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33554574"
 ---
 # <a name="how-to-create-a-style-for-a-dragged-gridview-column-header"></a>方法 : ドラッグされた GridView 列ヘッダーのスタイルを作成する
 この例は、ドラッグしたの外観を変更する方法を示します<xref:System.Windows.Controls.GridViewColumnHeader>ユーザーが列の位置を変更するときにします。  
