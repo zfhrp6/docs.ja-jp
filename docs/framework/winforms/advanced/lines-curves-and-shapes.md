@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33524704"
 ---
 # <a name="lines-curves-and-shapes"></a><span data-ttu-id="0853e-102">直線、曲線、および図形</span><span class="sxs-lookup"><span data-stu-id="0853e-102">Lines, Curves, and Shapes</span></span>
 <span data-ttu-id="0853e-103">ベクター グラフィックス部分[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]、直線、曲線、および描画とする図形を塗りつぶすために使用します。</span><span class="sxs-lookup"><span data-stu-id="0853e-103">The vector graphics portion of [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] is used to draw lines, draw curves, and to draw and fill shapes.</span></span>  

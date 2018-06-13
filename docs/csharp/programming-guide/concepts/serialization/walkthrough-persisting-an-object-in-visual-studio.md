@@ -6,6 +6,7 @@ ms.sourcegitcommit: 88f251b08bf0718ce119f3d7302f514b74895038
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/10/2018
+ms.locfileid: "33956183"
 ---
 # <a name="walkthrough-persisting-an-object-using-c"></a><span data-ttu-id="df136-102">チュートリアル: C# を使用してオブジェクトを永続化する</span><span class="sxs-lookup"><span data-stu-id="df136-102">Walkthrough: persisting an object using C#</span></span> #
 

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/15/2018
+ms.locfileid: "34171981"
 ---
 # <a name="-gt-operator-c-reference"></a><span data-ttu-id="3f31a-102">-&gt; 演算子 (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="3f31a-102">-&gt; Operator (C# Reference)</span></span>
 <span data-ttu-id="3f31a-103">`->` 演算子は、ポインターの逆参照とメンバー アクセスを組み合わせます。</span><span class="sxs-lookup"><span data-stu-id="3f31a-103">The `->` operator combines pointer dereferencing and member access.</span></span>  

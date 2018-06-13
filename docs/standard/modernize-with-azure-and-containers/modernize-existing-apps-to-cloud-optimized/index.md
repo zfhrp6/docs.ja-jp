@@ -9,6 +9,7 @@ ms.sourcegitcommit: 88f251b08bf0718ce119f3d7302f514b74895038
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/10/2018
+ms.locfileid: "33957922"
 ---
 # <a name="modernize-existing-net-apps-to-cloud-optimized-applications"></a><span data-ttu-id="ee238-103">クラウドに最適化されたアプリケーションへの既存の .NET アプリケーションを最新化します。</span><span class="sxs-lookup"><span data-stu-id="ee238-103">Modernize existing .NET apps to Cloud-Optimized applications</span></span>
 

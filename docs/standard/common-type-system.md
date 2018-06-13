@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33569549"
 ---
 # <a name="common-type-system--common-language-specification"></a><span data-ttu-id="01117-103">共通型システムと共通言語仕様</span><span class="sxs-lookup"><span data-stu-id="01117-103">Common Type System & Common Language Specification</span></span>
 
