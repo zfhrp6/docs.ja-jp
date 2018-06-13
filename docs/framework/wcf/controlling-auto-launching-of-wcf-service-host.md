@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809889"
 ---
 # <a name="controlling-auto-launching-of-wcf-service-host"></a>WCF サービス ホストの自動起動の制御
 複数のプロジェクトを含む同じ Visual Studio ソリューション内の別のプロジェクトをデバッグするときに、WCF サービス ライブラリ プロジェクトの Windows Communication Foundation (WCF) サービス ホスト (WcfSvcHost.exe) の自動起動する機能を制御できます。  

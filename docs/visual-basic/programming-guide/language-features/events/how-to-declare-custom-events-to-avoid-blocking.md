@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33646927"
 ---
 # <a name="how-to-declare-custom-events-to-avoid-blocking-visual-basic"></a>方法: カスタム イベントを宣言してブロックを回避する (Visual Basic)
 いくつかのような場合があるその 1 つのイベント ハンドラーが後続のイベント ハンドラーをブロックしない必要がある場合。 カスタム イベントは、そのイベント ハンドラーを非同期的に呼び出すイベントを許可します。  

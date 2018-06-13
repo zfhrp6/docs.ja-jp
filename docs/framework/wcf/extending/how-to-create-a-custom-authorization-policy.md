@@ -10,6 +10,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33804236"
 ---
 # <a name="how-to-create-a-custom-authorization-policy"></a>方法 : カスタム承認ポリシーを作成する
 Id モデル インフラストラクチャ Windows Communication Foundation (WCF) では、クレーム ベースの承認モデルをサポートします。 クレームは、トークンから抽出され、状況に応じてカスタム承認ポリシーによって処理されてから、承認決定を行う際に確認できる <xref:System.IdentityModel.Policy.AuthorizationContext> に格納されます。 カスタム ポリシーを使用して、入力トークンからのクレームを、アプリケーションが要求するクレームに変換することができます。 この方法では、WCF でサポートされる、さまざまなトークンの種類から提供されるさまざまなクレームの詳細についてはからアプリケーション層を隔離することができます。 このトピックでは、カスタム承認ポリシーの実装方法と、サービスで使用するポリシーのコレクションにカスタム承認ポリシーを追加する方法について説明します。  

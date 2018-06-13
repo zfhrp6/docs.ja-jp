@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33638484"
 ---
 # <a name="file-information-cannot-be-queried-if-the-file-does-not-exist"></a>ファイルが存在しない場合、ファイル情報を照会することはできません
 存在しないファイルの情報に対して、オブジェクトの <xref:System.IO.FileInfo> のクエリが試行されました。 通常これは、ファイル名を指定するときの誤りが原因です。  

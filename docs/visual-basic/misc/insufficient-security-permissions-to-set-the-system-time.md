@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33633808"
 ---
 # <a name="insufficient-security-permissions-to-set-the-system-time"></a>システム時刻を設定するためのセキュリティ アクセス許可が十分ではありません
 システムの時刻を設定するための十分なセキュリティ アクセス許可がありません。  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33648695"
 ---
 # <a name="types-of-string-manipulation-methods-in-visual-basic"></a>Visual Basic における文字列操作メソッドの種類
 いくつかの方法を分析し、文字列の操作があります。 Visual Basic 言語の一部である一部のメソッドと他の人は気にせずに、`String`クラスです。  

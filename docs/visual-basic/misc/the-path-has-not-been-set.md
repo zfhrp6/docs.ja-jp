@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33638331"
 ---
 # <a name="the-path-has-not-been-set"></a>パスが設定されていません
 必要なパスを指定せずに、ファイルの移動やコピーなどのファイル操作をしようとしました。 パスの解析に誤りがある可能性があります。  

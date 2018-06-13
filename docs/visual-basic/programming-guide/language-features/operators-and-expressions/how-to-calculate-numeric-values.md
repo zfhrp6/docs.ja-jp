@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33649787"
 ---
 # <a name="how-to-calculate-numeric-values-visual-basic"></a>方法: 数値を計算する (Visual Basic)
 数値式を使用して数値の値を計算することができます。 A*数値式*リテラル、定数、および数値を表す変数を含む式は、それらの値に対して作用する演算子です。  

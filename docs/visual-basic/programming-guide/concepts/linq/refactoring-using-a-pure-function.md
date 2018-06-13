@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33645016"
 ---
 # <a name="refactoring-using-a-pure-function-visual-basic"></a>純粋関数 (Visual Basic) を使用したリファクタリング
 次の例には、前の例がリファクタリングした[拡張メソッド (Visual Basic) を使用したリファクタリング](../../../../visual-basic/programming-guide/concepts/linq/refactoring-using-an-extension-method.md)、この例では、段落のテキストは、純粋な静的メソッドに移動を検索するコードでは、純粋関数を使用する`ParagraphText`.  

@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33647762"
 ---
 # <a name="efficient-use-of-data-types-visual-basic"></a>データ型の有効な使用方法 (Visual Basic)
 宣言されていない変数とデータ型なしで宣言された変数が割り当てられている、`Object`データ型。 実行速度が低下することができるプログラムを迅速に作成するが容易になります。 可能性がします。  

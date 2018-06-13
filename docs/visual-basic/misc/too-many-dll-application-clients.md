@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33639641"
 ---
 # <a name="too-many-dll-application-clients"></a>DLL のクライアント アプリケーションの数が多すぎます
 Visual basic のダイナミック リンク ライブラリ (DLL) には、限られた数のアプリケーションをホストしてアクセスのみに対応します。 アプリと Visual Basic のホスト (アプリケーションによって一部のアクセス可能性があります) は、他のアプリケーションすべてしようとしています、同時に、Visual Basic の DLL にアクセスします。  

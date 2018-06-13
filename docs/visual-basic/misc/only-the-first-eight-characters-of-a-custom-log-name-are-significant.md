@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33639403"
 ---
 # <a name="only-the-first-eight-characters-of-a-custom-log-name-are-significant"></a>カスタム ログ名の最初の 8 文字が有効です
 イベント ログ名の一意性を調べるときには、最初の 8 文字だけが考慮されます。 最初の 8 文字に同じ文字を使用するイベント ログが複数ある場合は、競合する可能性があります。  

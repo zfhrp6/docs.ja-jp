@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33636618"
 ---
 # <a name="named-arguments-cannot-match-paramarray-parameters"></a>名前付き引数を ParamArray パラメーターと一致させることはできません。
 パラメーター配列は、値で渡される必要があります。  

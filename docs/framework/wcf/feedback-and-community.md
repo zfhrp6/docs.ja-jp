@@ -10,6 +10,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33810162"
 ---
 # <a name="feedback-and-community"></a>フィードバックとコミュニティ
 コメントをお寄せに関する Windows Communication Foundation (WCF) または[!INCLUDE[infocard](../../../includes/infocard-md.md)]ドキュメント。 SDK の各ページの末尾には "このトピックに関するご意見をマイクロソフトまでお寄せください" という記述があります。 リンクをクリックして、全般的なご意見や特定のトピックに関するご提案を書いてお送りください。  

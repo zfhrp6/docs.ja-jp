@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33804171"
 ---
 # <a name="how-to-inspect-or-modify-messages-on-the-client"></a>方法 : クライアントのメッセージを検査または変更する
 検査または実装することで WCF クライアントの受信または送信メッセージを変更することができます、<xref:System.ServiceModel.Dispatcher.IClientMessageInspector?displayProperty=nameWithType>と、クライアント ランタイムに挿入します。 詳細については、次を参照してください。[を拡張するクライアント](../../../../docs/framework/wcf/extending/extending-clients.md)です。 サービスの同等の機能は、<xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector?displayProperty=nameWithType> です。 完全なコード例については、[メッセージ インスペクタ](../../../../docs/framework/wcf/samples/message-inspectors.md)サンプルです。  

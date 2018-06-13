@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33639377"
 ---
 # <a name="39redim39-preserve-operand-cannot-be-nothing"></a>&#39;ReDim&#39; Preserve オペランドには、何もすることはできません
 `ReDim` ステートメントが `Preserve` キーワードを使用して、最後のディメンションではない配列のディメンションを変更しようとしましたが、そのオペランドに対して正しい値を指定していません。  

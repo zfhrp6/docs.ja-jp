@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33641745"
 ---
 # <a name="this-system-does-not-contain-support-for-the-traditional-chinese-locale"></a>このシステムには、繁体字中国語ロケールのサポートは含まれていません
 `VbStrConv.TraditionalChinese` 列挙体メンバーの使用が試行されましたが、システムは繁体字中国語ロケールをサポートしていません。  

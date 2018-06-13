@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33805383"
 ---
 # <a name="extensibility"></a>機能拡張
 このセクションには、カスタム拡張機能と Windows Communication Foundation (WCF) の他の機能を処理するサンプルが含まれています。  

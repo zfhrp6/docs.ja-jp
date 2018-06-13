@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33644012"
 ---
 # <a name="how-to-find-an-element-with-a-specific-child-element-visual-basic"></a>方法: 特定の子要素 (Visual Basic) を持つ要素を検索
 このトピックでは、特定の値を含む子要素を持つ特定の要素を検索する方法について説明します。  

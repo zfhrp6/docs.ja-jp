@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33648542"
 ---
 # <a name="-nologo-visual-basic"></a>-nologo (Visual Basic)
 コンパイル時に著作権画面を表示および情報メッセージの表示を抑制します。  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 77d9a94dac4c05827ed0663d95e0f9ad35d6682e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/24/2018
+ms.locfileid: "34472388"
 ---
 # <a name="authentication-in-sql-server"></a>SQL Server での認証
 SQL Server は、Windows 認証モードと混合モードの 2 つの認証モードをサポートしています。  

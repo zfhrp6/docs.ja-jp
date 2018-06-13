@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33647151"
 ---
 # <a name="retrieving-the-text-of-the-paragraphs-visual-basic"></a>(Visual Basic) の段落のテキストを取得します。
 この例は、前の例に基づいて[段落とそのスタイル (Visual Basic) を取得する](../../../../visual-basic/programming-guide/concepts/linq/retrieving-the-paragraphs-and-their-styles.md)です。 この新しい例では、各段落のテキストを文字列として取得します。  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33804714"
 ---
 # <a name="significant-traces"></a>重要なトレース
 このトピックでは、Windows Communication Foundation (WCF) によって出力される主要なトレースの一部を示します。  

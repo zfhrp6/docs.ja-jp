@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33803395"
 ---
 # <a name="windows-communication-foundation-endpoints"></a>Windows Communication Foundation エンドポイント
 使用して、Windows Communication Foundation (WCF) サービスとすべての通信が行われる、*エンドポイント*サービス。 エンドポイントは、WCF サービスを提供する機能へのアクセスをクライアントに提供します。  
