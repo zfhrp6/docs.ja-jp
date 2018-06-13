@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33410021"
 ---
 # <a name="mpgoexe-managed-profile-guided-optimization-tool"></a>Mpgo.exe (マネージ プロファイル ガイド付き最適化ツール)
 マネージ プロファイル ガイド付き最適化ツール (Mpgo.exe) は、[ネイティブ イメージ ジェネレーター (Ngen.exe)](../../../docs/framework/tools/ngen-exe-native-image-generator.md) によって作成されたネイティブ イメージ アセンブリを最適化するために一般的なエンド ユーザー シナリオを使用するコマンド ライン ツールです。 このツールによって、プロファイル データを生成するトレーニング シナリオを実行できます。 [ネイティブ イメージ ジェネレーター (Ngen.exe)](../../../docs/framework/tools/ngen-exe-native-image-generator.md) は、このデータを使用して、生成されたネイティブ イメージ アプリケーション アセンブリを最適化します。 トレーニングのシナリオでは、アプリケーションで予期される使用について試行します。 Mpgo.exe は、Visual Studio Ultimate 2012 以降のバージョンで使用できます。 また、[!INCLUDE[vs_dev12](../../../includes/vs-dev12-md.md)] から、[!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] アプリを最適化するために、Mpgo.exe を使用できます。  

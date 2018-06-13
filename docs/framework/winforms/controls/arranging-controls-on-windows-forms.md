@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33527314"
 ---
 # <a name="arranging-controls-on-windows-forms"></a>Windows フォームでのコントロールの配置
 さまざまな方法でフォームにコントロールを配置したり、フォームのコントロールを操作したりすることで、ユーザーが直観的に操作できる機能的なユーザー インターフェイスを構築できます。  

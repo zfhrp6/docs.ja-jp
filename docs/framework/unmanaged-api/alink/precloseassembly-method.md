@@ -18,9 +18,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 82421fa83a6f0d24492d70f961e731b679c25728
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33400719"
 ---
 # <a name="precloseassembly-method"></a>PreCloseAssembly メソッド
 アセンブリ ファイルを閉じます。 閉じると、その他のすべてのファイルがアセンブリ ファイルを閉じる前に、このメソッドを呼び出します。 非バインド モジュールのこのメソッドを呼び出さないでください。  

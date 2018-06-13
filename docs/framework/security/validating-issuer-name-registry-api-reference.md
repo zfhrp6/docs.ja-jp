@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33400004"
 ---
 # <a name="validating-issuer-name-registry-api-reference"></a>発行者名レジストリ API リファレンスの検証
 このセクションでは、WIF の Validating Issuer Name Registry 拡張機能の API リファレンスを提供します。

@@ -10,9 +10,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 0ddc2f50b42ba8adf7aa5f4d7fa0dc68469e7344
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33408462"
 ---
 # <a name="ialink2-interface"></a>IALink2 インターフェイス
 補完、 [IALink インターフェイス](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)など新しいメタデータ インターフェイスで操作するメソッドを宣言することによって[IMetaDataEmit2 インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)です。 さらに、IALink2 では、元の IALink インターフェイス経由で追加の使用の柔軟性を提供するメソッドを宣言します。  
