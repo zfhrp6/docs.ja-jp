@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33359450"
 ---
 # <a name="c-walkthroughs"></a>C# チュートリアル
 チュートリアルでは、製品や特定の機能領域について学習を開始するのに適した一般的なシナリオについて詳細な手順を示します。  

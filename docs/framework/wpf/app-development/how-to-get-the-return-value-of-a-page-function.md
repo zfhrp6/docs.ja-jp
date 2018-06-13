@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33545270"
 ---
 # <a name="how-to-get-the-return-value-of-a-page-function"></a>方法 : ページ関数の戻り値を取得する
 この例では、ページ関数によって返される結果を取得する方法を示します。  

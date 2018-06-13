@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33546043"
 ---
 # <a name="how-to-detect-whether-the-net-framework-35-is-installed"></a>方法: .NET Framework 3.5 がインストールされているかどうかを検出
 管理者は対象とするシステム上の Windows Presentation Foundation (WPF) アプリケーションを展開する前に、 [!INCLUDE[net_v35_short](../../../../includes/net-v35-short-md.md)]、する必要がありますまずことを確認したこと、[!INCLUDE[net_v35_short](../../../../includes/net-v35-short-md.md)]ランタイムが存在します。 このトピックで記述されたスクリプトは、HTML または JavaScript を決定する管理者が使用できるのかどうか、[!INCLUDE[net_v35_short](../../../../includes/net-v35-short-md.md)]は、システムに存在します。  

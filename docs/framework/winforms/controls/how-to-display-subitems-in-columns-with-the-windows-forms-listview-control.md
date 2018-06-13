@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33532508"
 ---
 # <a name="how-to-display-subitems-in-columns-with-the-windows-forms-listview-control"></a>方法 : Windows フォーム ListView コントロールの列にサブ項目を表示する
 Windows フォーム<xref:System.Windows.Forms.ListView>コントロールは、追加のテキスト、または詳細ビュー内の各項目のサブ項目を表示できます。 最初の列には、たとえば社員数、項目のテキストが表示されます。 2 番目、3 番目、およびそれ以降の列に、最初は第 2 に、表示し、後続の関連するサブ項目です。  

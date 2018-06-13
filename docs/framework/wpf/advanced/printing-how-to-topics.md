@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33546280"
 ---
 # <a name="printing-how-to-topics"></a>印刷に関する「方法」トピック
 このセクションのトピックでは、印刷を使用する方法を示す、印刷システム管理機能を含む、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]だけでなく、新しい[!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)]印刷パス。  

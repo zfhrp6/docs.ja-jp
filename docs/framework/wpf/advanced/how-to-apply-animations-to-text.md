@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33545439"
 ---
 # <a name="how-to-apply-animations-to-text"></a>方法 : アニメーションをテキストに適用する
 アニメーションを利用すると、アプリケーションのテキストの表示方法や見た目を変えることができます。 次の例では、アニメーションの別の種類を使用して、内のテキストの表示には影響を<xref:System.Windows.Controls.TextBlock>コントロール。  

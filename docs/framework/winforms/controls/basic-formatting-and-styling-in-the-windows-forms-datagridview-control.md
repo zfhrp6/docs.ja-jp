@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33528796"
 ---
 # <a name="basic-formatting-and-styling-in-the-windows-forms-datagridview-control"></a>Windows フォームの DataGridView コントロールの基本的な書式設定およびスタイル設定
 `DataGridView`コントロールでは、簡単にセルの基本の外観およびセルの値の表示形式を定義します。 外観を定義することができ、個々 のセル、行、および特定の列にセルまたはコントロールのすべてのセルのプロパティを設定してスタイルの書式設定、`DataGridViewCellStyle`さまざまなを介してアクセスされるオブジェクト`DataGridView`プロパティを制御します。 さらに、処理することにより、セルの値などの要因に基づいて動的にこれらのスタイルを変更することができます、`CellFormatting`イベント。  

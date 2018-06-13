@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33531015"
 ---
 # <a name="how-to-determine-checked-items-in-the-windows-forms-checkedlistbox-control"></a>方法 : Windows フォーム CheckedListBox コントロールでオンになっている項目を判断する
 Windows フォームでデータを表示する場合、<xref:System.Windows.Forms.CheckedListBox>コントロールすることができますか、コレクションの反復に格納されている、<xref:System.Windows.Forms.CheckedListBox.CheckedItems%2A>プロパティ、または手順を使用して、一覧から、<xref:System.Windows.Forms.CheckedListBox.GetItemChecked%2A>どの項目がチェックを調べます。 <xref:System.Windows.Forms.CheckedListBox.GetItemChecked%2A>メソッドの引数として、項目のインデックス番号を受け取り、返します`true`または`false`です。 期待するとは対照的、<xref:System.Windows.Forms.ListBox.SelectedItems%2A>と<xref:System.Windows.Forms.ListBox.SelectedIndices%2A>プロパティはどの項目がチェックを決定していません。 項目が強調表示を判断します。  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33547589"
 ---
 # <a name="how-to-programmatically-print-xps-files"></a>方法 : XPS ファイルをプログラムにより印刷する
 1 つのオーバー ロードを使用することができます、<xref:System.Printing.PrintQueue.AddJob%2A>を印刷するメソッド[!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)]ファイルを開かず、<xref:System.Windows.Controls.PrintDialog>または原則として、任意[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]まったくです。  

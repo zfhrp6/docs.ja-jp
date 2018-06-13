@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33529702"
 ---
 # <a name="walkthrough-demonstrating-visual-inheritance"></a>チュートリアル : ビジュアル継承のデモンストレーション
 ビジュアル継承により、基本フォームのコントロールを表示して、新しいコントロールを追加できます。 このチュートリアルでは、基本フォームを作成してクラス ライブラリにコンパイルします。 このクラス ライブラリを別のプロジェクトにインポートして、基本フォームから継承する新しいフォームを作成します。 このチュートリアルでは、次の作業を行う方法について説明します。  

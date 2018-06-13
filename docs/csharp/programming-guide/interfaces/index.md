@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33337588"
 ---
 # <a name="interfaces-c-programming-guide"></a>インターフェイス (C# プログラミング ガイド)
 インターフェイスには、[クラス](../../../csharp/language-reference/keywords/class.md)または[構造体](../../../csharp/language-reference/keywords/struct.md)で実装できる関連機能のグループの定義が含まれます。  

@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33338540"
 ---
 # <a name="how-to-get-information-about-files-folders-and-drives--c-programming-guide"></a>方法 : ファイル、フォルダー、およびドライブに関する情報を取得する (C# プログラミング ガイド)
 .NET Framework では、次のクラスを使用して、ファイル システム情報にアクセスできます。  

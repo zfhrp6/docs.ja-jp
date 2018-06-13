@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 0bcb0efab3b61f55bd5fdd3405799c7ac78ee521
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33424652"
 ---
 # <a name="isymunmanagedreadergetdocuments-method"></a>ISymUnmanagedReader::GetDocuments メソッド
 シンボル ストアで定義されているすべてのドキュメントの配列を返します。  

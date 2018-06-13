@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33546531"
 ---
 # <a name="how-to-refresh-a-page"></a>方法: ページを更新
 この例を呼び出す方法を示します、<xref:System.Windows.Navigation.NavigationWindow.Refresh%2A>で現在のコンテンツを更新する方法、<xref:System.Windows.Navigation.NavigationWindow>です。  
