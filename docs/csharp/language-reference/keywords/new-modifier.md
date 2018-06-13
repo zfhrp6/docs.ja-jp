@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33273969"
 ---
 # <a name="new-modifier-c-reference"></a><span data-ttu-id="4f66a-102">new 修飾子 (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="4f66a-102">new Modifier (C# Reference)</span></span>
 <span data-ttu-id="4f66a-103">`new` キーワードを宣言の修飾子として使用すると、基底クラスから継承されたメンバーを明示的に隠ぺいできます。</span><span class="sxs-lookup"><span data-stu-id="4f66a-103">When used as a declaration modifier, the `new` keyword explicitly hides a member that is inherited from a base class.</span></span> <span data-ttu-id="4f66a-104">継承されたメンバーを隠ぺいすると、派生バージョンのメンバーで基底クラスのバージョンが置き換えられます。</span><span class="sxs-lookup"><span data-stu-id="4f66a-104">When you hide an inherited member, the derived version of the member replaces the base class version.</span></span> <span data-ttu-id="4f66a-105">`new` 修飾子を使わずにメンバーを隠ぺいすることもできますが、コンパイラ警告が表示されます。</span><span class="sxs-lookup"><span data-stu-id="4f66a-105">Although you can hide members without using the `new` modifier, you get a compiler warning.</span></span> <span data-ttu-id="4f66a-106">メンバーを明示的に隠ぺいするために `new` を使用する場合は、この警告が抑制されます。</span><span class="sxs-lookup"><span data-stu-id="4f66a-106">If you use `new` to explicitly hide a member, it suppresses this warning.</span></span>  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33529429"
 ---
 # <a name="displaying-data-in-the-windows-forms-datagridview-control"></a><span data-ttu-id="769b5-102">Windows フォーム DataGridView コントロールでのデータの表示</span><span class="sxs-lookup"><span data-stu-id="769b5-102">Displaying Data in the Windows Forms DataGridView Control</span></span>
 <span data-ttu-id="769b5-103">`DataGridView`さまざまな外部データ ソースからデータを表示するコントロールを使用します。</span><span class="sxs-lookup"><span data-stu-id="769b5-103">The `DataGridView` control is used to display data from a variety of external data sources.</span></span> <span data-ttu-id="769b5-104">また、コントロールに行と列を追加し、データを手動で設定できます。</span><span class="sxs-lookup"><span data-stu-id="769b5-104">Alternatively, you can add rows and columns to the control and manually populate it with data.</span></span>  

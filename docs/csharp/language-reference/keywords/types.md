@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33270426"
 ---
 # <a name="types-c-reference"></a><span data-ttu-id="b3d25-102">型 (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="b3d25-102">Types (C# Reference)</span></span>
 <span data-ttu-id="b3d25-103">C# の型指定システムには次のカテゴリがあります。</span><span class="sxs-lookup"><span data-stu-id="b3d25-103">The C# typing system contains the following categories:</span></span>  

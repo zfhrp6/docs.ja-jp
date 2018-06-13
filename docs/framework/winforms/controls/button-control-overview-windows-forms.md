@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33526023"
 ---
 # <a name="button-control-overview-windows-forms"></a><span data-ttu-id="d4da4-102">Button コントロールの概要 (Windows フォーム)</span><span class="sxs-lookup"><span data-stu-id="d4da4-102">Button Control Overview (Windows Forms)</span></span>
 <span data-ttu-id="d4da4-103">Windows フォームの <xref:System.Windows.Forms.Button> コントロールを使用すると、ユーザーはそれをクリックしてアクションを実行できます。</span><span class="sxs-lookup"><span data-stu-id="d4da4-103">The Windows Forms <xref:System.Windows.Forms.Button> control allows the user to click it to perform an action.</span></span> <span data-ttu-id="d4da4-104">ボタンをクリックすると、ボタンを実際に押して離したかのように表示されます。</span><span class="sxs-lookup"><span data-stu-id="d4da4-104">When the button is clicked, it looks as if it is being pushed in and released.</span></span> <span data-ttu-id="d4da4-105">ユーザーがクリックされるたびに、<xref:System.Windows.Forms.Control.Click>イベント ハンドラーが呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="d4da4-105">Whenever the user clicks a button, the <xref:System.Windows.Forms.Control.Click> event handler is invoked.</span></span> <span data-ttu-id="d4da4-106">内のコードを配置する、<xref:System.Windows.Forms.Control.Click>イベント ハンドラーを選択したアクションを実行します。</span><span class="sxs-lookup"><span data-stu-id="d4da4-106">You place code in the <xref:System.Windows.Forms.Control.Click> event handler to perform any action you choose.</span></span>  

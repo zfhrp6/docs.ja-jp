@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33529459"
 ---
 # <a name="walkthrough-performing-a-drag-and-drop-operation-in-windows-forms"></a><span data-ttu-id="e89d7-102">チュートリアル: Windows フォームにおけるドラッグ アンド ドロップ操作の実行</span><span class="sxs-lookup"><span data-stu-id="e89d7-102">Walkthrough: Performing a Drag-and-Drop Operation in Windows Forms</span></span>
 <span data-ttu-id="e89d7-103">Windows ベースのアプリケーション内でドラッグ アンド ドロップ操作を実行する必要がありますを処理する、一連のイベント、特に、 <xref:System.Windows.Forms.Control.DragEnter>、 <xref:System.Windows.Forms.Control.DragLeave>、および<xref:System.Windows.Forms.Control.DragDrop>イベント。</span><span class="sxs-lookup"><span data-stu-id="e89d7-103">To perform drag-and-drop operations within Windows-based applications you must handle a series of events, most notably the <xref:System.Windows.Forms.Control.DragEnter>, <xref:System.Windows.Forms.Control.DragLeave>, and <xref:System.Windows.Forms.Control.DragDrop> events.</span></span> <span data-ttu-id="e89d7-104">情報の操作、使用可能なイベントのこれらのイベントの引数、ドラッグ アンド ドロップ操作を簡単に実現できます。</span><span class="sxs-lookup"><span data-stu-id="e89d7-104">By working with the information available in the event arguments of these events, you can easily facilitate drag-and-drop operations.</span></span>  

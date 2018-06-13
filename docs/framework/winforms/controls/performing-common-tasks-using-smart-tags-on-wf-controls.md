@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33537945"
 ---
 # <a name="walkthrough-performing-common-tasks-using-smart-tags-on-windows-forms-controls"></a><span data-ttu-id="b16a5-102">チュートリアル : Windows フォーム コントロールのスマート タグを使用した共通タスクの実行</span><span class="sxs-lookup"><span data-stu-id="b16a5-102">Walkthrough: Performing Common Tasks Using Smart Tags on Windows Forms Controls</span></span>
 <span data-ttu-id="b16a5-103">Windows フォーム アプリケーションのフォームとコントロールを作成するときに、繰り返し実行する多くのタスクを使用します。</span><span class="sxs-lookup"><span data-stu-id="b16a5-103">As you construct forms and controls for your Windows Forms application, there are many tasks you will perform repeatedly.</span></span> <span data-ttu-id="b16a5-104">これらは、発生する、よく実行されるタスクの一部を示します。</span><span class="sxs-lookup"><span data-stu-id="b16a5-104">These are some of the commonly performed tasks you will encounter:</span></span>  

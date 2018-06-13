@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33269662"
 ---
 # <a name="statement-keywords-c-reference"></a><span data-ttu-id="c3245-102">ステートメントのキーワード (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="c3245-102">Statement Keywords (C# Reference)</span></span>
 <span data-ttu-id="c3245-103">ステートメントは、プログラムの命令です。</span><span class="sxs-lookup"><span data-stu-id="c3245-103">Statements are program instructions.</span></span> <span data-ttu-id="c3245-104">次の表で参照されているトピックで明記されているステートメントを除いて、ステートメントは順番に実行されます。</span><span class="sxs-lookup"><span data-stu-id="c3245-104">Except as described in the topics referenced in the following table, statements are executed in sequence.</span></span> <span data-ttu-id="c3245-105">C# ステートメントのキーワードの一覧を次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="c3245-105">The following table lists the C# statement keywords.</span></span> <span data-ttu-id="c3245-106">いずれかのキーワードで表されないステートメントの詳細については、「[ステートメント](../../../csharp/programming-guide/statements-expressions-operators/statements.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c3245-106">For more information about statements that are not expressed with any keyword, see [Statements](../../../csharp/programming-guide/statements-expressions-operators/statements.md).</span></span>  

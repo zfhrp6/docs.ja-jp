@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33216478"
 ---
 # <a name="explicit-c-reference"></a><span data-ttu-id="dd700-102">explicit (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="dd700-102">explicit (C# Reference)</span></span>
 <span data-ttu-id="dd700-103">`explicit` キーワードは、キャストを使用して呼び出す必要があるユーザー定義型変換演算子を宣言します。</span><span class="sxs-lookup"><span data-stu-id="dd700-103">The `explicit` keyword declares a user-defined type conversion operator that must be invoked with a cast.</span></span> <span data-ttu-id="dd700-104">たとえば、次の演算子は摂氏というクラスを華氏というクラスに変換します。</span><span class="sxs-lookup"><span data-stu-id="dd700-104">For example, this operator converts from a class called Fahrenheit to a class called Celsius:</span></span>  

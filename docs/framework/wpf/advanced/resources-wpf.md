@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33545819"
 ---
 # <a name="resources-wpf"></a><span data-ttu-id="5f3a2-102">リソース (WPF)</span><span class="sxs-lookup"><span data-stu-id="5f3a2-102">Resources (WPF)</span></span>
 <span data-ttu-id="5f3a2-103">リソースは、アプリケーションで別の場所で再利用可能なオブジェクトです。</span><span class="sxs-lookup"><span data-stu-id="5f3a2-103">A resource is an object that can be reused in different places in your application.</span></span> <span data-ttu-id="5f3a2-104">WPF には、異なる種類のリソースがサポートしています。</span><span class="sxs-lookup"><span data-stu-id="5f3a2-104">WPF supports different types of resources.</span></span> <span data-ttu-id="5f3a2-105">これらのリソースは、主に 2 つの種類のリソース: XAML リソースとリソース データ ファイル。</span><span class="sxs-lookup"><span data-stu-id="5f3a2-105">These resources are primarily two types of resources: XAML resources and resource data files.</span></span> <span data-ttu-id="5f3a2-106">XAML リソースには、ブラシ、スタイルなどがあります。</span><span class="sxs-lookup"><span data-stu-id="5f3a2-106">Examples of XAML resources include brushes and styles.</span></span> <span data-ttu-id="5f3a2-107">リソース データ ファイルは、アプリケーションに必要なデータの非実行可能ファイルです。</span><span class="sxs-lookup"><span data-stu-id="5f3a2-107">Resource data files are non-executable data files that an application needs.</span></span>  

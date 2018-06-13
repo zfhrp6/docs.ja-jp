@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33265802"
 ---
 # <a name="try-catch-finally-c-reference"></a><span data-ttu-id="8b06c-102">try-catch-finally (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="8b06c-102">try-catch-finally (C# Reference)</span></span>
 <span data-ttu-id="8b06c-103">通常、`catch` および `finally` は、`try` ブロックのリソースを取得して使用する場合に、対で記述されます。`catch` ブロックで例外的な状況を処理し、`finally` ブロックでリソースを解放します。</span><span class="sxs-lookup"><span data-stu-id="8b06c-103">A common usage of `catch` and `finally` together is to obtain and use resources in a `try` block, deal with exceptional circumstances in a `catch` block, and release the resources in the `finally` block.</span></span>  

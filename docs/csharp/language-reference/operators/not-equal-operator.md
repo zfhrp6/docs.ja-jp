@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33272440"
 ---
 # <a name="-operator-c-reference"></a><span data-ttu-id="c44fd-102">!= 演算子 (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="c44fd-102">!= Operator (C# Reference)</span></span>
 <span data-ttu-id="c44fd-103">非等値演算子 (`!=`) は、そのオペランドが等しい場合には false を返し、それ以外の場合は true を返します。</span><span class="sxs-lookup"><span data-stu-id="c44fd-103">The inequality operator (`!=`) returns false if its operands are equal, true otherwise.</span></span> <span data-ttu-id="c44fd-104">非等値演算子は、文字列とオブジェクトを含むすべての型に対して事前に定義されています。</span><span class="sxs-lookup"><span data-stu-id="c44fd-104">Inequality operators are predefined for all types, including string and object.</span></span> <span data-ttu-id="c44fd-105">ユーザー定義型は `!=` 演算子をオーバーロードできます。</span><span class="sxs-lookup"><span data-stu-id="c44fd-105">User-defined types can overload the `!=` operator.</span></span>  

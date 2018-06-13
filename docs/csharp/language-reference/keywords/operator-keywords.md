@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33273316"
 ---
 # <a name="operator-keywords-c-reference"></a><span data-ttu-id="fc713-102">演算子キーワード (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="fc713-102">Operator Keywords (C# Reference)</span></span>
 <span data-ttu-id="fc713-103">オブジェクトの作成、オブジェクトのランタイム型のチェック、型のサイズの取得といった、さまざまなアクションを実行するために使用します。</span><span class="sxs-lookup"><span data-stu-id="fc713-103">Used to perform miscellaneous actions such as creating objects, checking the run-time type of an object, obtaining the size of a type, and other actions.</span></span> <span data-ttu-id="fc713-104">このセクションでは、次のキーワードについて説明します。</span><span class="sxs-lookup"><span data-stu-id="fc713-104">This section introduces the following keywords:</span></span>  

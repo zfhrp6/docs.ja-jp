@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33216805"
 ---
 # <a name="goto-c-reference"></a><span data-ttu-id="80893-102">goto (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="80893-102">goto (C# Reference)</span></span>
 <span data-ttu-id="80893-103">`goto` ステートメントは、プログラムの制御をラベル付きステートメントに直接移します。</span><span class="sxs-lookup"><span data-stu-id="80893-103">The `goto` statement transfers the program control directly to a labeled statement.</span></span>  

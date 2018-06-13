@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33216042"
 ---
 # <a name="access-keywords-c-reference"></a><span data-ttu-id="661b6-102">アクセス キーワード (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="661b6-102">Access Keywords (C# Reference)</span></span>
 <span data-ttu-id="661b6-103">このセクションでは、以下のアクセス キーワードについて説明します。</span><span class="sxs-lookup"><span data-stu-id="661b6-103">This section introduces the following access keywords:</span></span>  

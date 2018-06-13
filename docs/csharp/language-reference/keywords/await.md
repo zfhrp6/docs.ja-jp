@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33218921"
 ---
 # <a name="await-c-reference"></a><span data-ttu-id="70262-102">await (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="70262-102">await (C# Reference)</span></span>
 <span data-ttu-id="70262-103">`await` 演算子は非同期メソッドのタスクに適用され、中断ポイントを挿入することで、メソッドの実行を、待機中のタスクが完了するまで中断します。</span><span class="sxs-lookup"><span data-stu-id="70262-103">The `await` operator is applied to a task in an asynchronous method to insert a suspension point in the execution of the method until the awaited task completes.</span></span> <span data-ttu-id="70262-104">このタスクは、進行中の作業を表します。</span><span class="sxs-lookup"><span data-stu-id="70262-104">The task represents ongoing work.</span></span>  

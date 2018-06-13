@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33217485"
 ---
 # <a name="group-clause-c-reference"></a><span data-ttu-id="9d272-102">group 句 (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="9d272-102">group clause (C# Reference)</span></span>
 <span data-ttu-id="9d272-103">`group` 句は、グループのキー値に一致する 0 個以上の項目を含む <xref:System.Linq.IGrouping%602> オブジェクトのシーケンスを返します。</span><span class="sxs-lookup"><span data-stu-id="9d272-103">The `group` clause returns a sequence of <xref:System.Linq.IGrouping%602> objects that contain zero or more items that match the key value for the group.</span></span> <span data-ttu-id="9d272-104">たとえば、各文字列の最初の文字に基づいて文字列のシーケンスをグループ化することができます。</span><span class="sxs-lookup"><span data-stu-id="9d272-104">For example, you can group a sequence of strings according to the first letter in each string.</span></span> <span data-ttu-id="9d272-105">この場合、最初の文字がキーで、型は [char](../../../csharp/language-reference/keywords/char.md) であり、各 <xref:System.Linq.IGrouping%602> オブジェクトの `Key` プロパティに格納されています。</span><span class="sxs-lookup"><span data-stu-id="9d272-105">In this case, the first letter is the key and has a type [char](../../../csharp/language-reference/keywords/char.md), and is stored in the `Key` property of each <xref:System.Linq.IGrouping%602> object.</span></span> <span data-ttu-id="9d272-106">コンパイラは、キーの型を推論します。</span><span class="sxs-lookup"><span data-stu-id="9d272-106">The compiler infers the type of the key.</span></span>  

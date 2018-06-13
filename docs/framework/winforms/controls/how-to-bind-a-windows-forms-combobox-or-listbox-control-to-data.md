@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33530134"
 ---
 # <a name="how-to-bind-a-windows-forms-combobox-or-listbox-control-to-data"></a><span data-ttu-id="41993-102">方法 : Windows フォームの ComboBox または ListBox コントロールをデータにバインドする </span><span class="sxs-lookup"><span data-stu-id="41993-102">How to: Bind a Windows Forms ComboBox or ListBox Control to Data</span></span>
 <span data-ttu-id="41993-103">バインドすることができます、<xref:System.Windows.Forms.ComboBox>と<xref:System.Windows.Forms.ListBox>または既存のデータを編集する、データベース内のデータの参照などのタスクを実行するデータを新しいデータを入力します。</span><span class="sxs-lookup"><span data-stu-id="41993-103">You can bind the <xref:System.Windows.Forms.ComboBox> and <xref:System.Windows.Forms.ListBox> to data to perform tasks such as browsing data in a database, entering new data, or editing existing data.</span></span>  

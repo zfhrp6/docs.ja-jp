@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33216939"
 ---
 # <a name="async-c-reference"></a><span data-ttu-id="74b5a-102">async (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="74b5a-102">async (C# Reference)</span></span>
 <span data-ttu-id="74b5a-103">`async` 修飾子を使用して、メソッド、[ラムダ式](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)、または[匿名メソッド](../../../csharp/programming-guide/statements-expressions-operators/anonymous-methods.md)が非同期であることを指定します。</span><span class="sxs-lookup"><span data-stu-id="74b5a-103">Use the `async` modifier to specify that a method, [lambda expression](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md), or [anonymous method](../../../csharp/programming-guide/statements-expressions-operators/anonymous-methods.md) is asynchronous.</span></span> <span data-ttu-id="74b5a-104">この修飾子が使用されているメソッドまたは式を、"*非同期メソッド*" と呼びます。</span><span class="sxs-lookup"><span data-stu-id="74b5a-104">If you use this modifier on a method or expression, it's referred to as an *async method*.</span></span> <span data-ttu-id="74b5a-105">次の例では、`ExampleMethodAsync` という名前の非同期メソッドを定義します。</span><span class="sxs-lookup"><span data-stu-id="74b5a-105">The following example defines an async method named `ExampleMethodAsync`:</span></span> 

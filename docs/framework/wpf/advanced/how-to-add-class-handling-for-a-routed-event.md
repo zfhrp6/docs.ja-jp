@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33545364"
 ---
 # <a name="how-to-add-class-handling-for-a-routed-event"></a><span data-ttu-id="7ddde-102">方法 : ルーティング イベントのクラス処理を追加する</span><span class="sxs-lookup"><span data-stu-id="7ddde-102">How to: Add Class Handling for a Routed Event</span></span>
 <span data-ttu-id="7ddde-103">クラス ハンドラーまたはルート内の特定のノード上のインスタンス ハンドラーによって、ルーティングされたイベントを処理できます。</span><span class="sxs-lookup"><span data-stu-id="7ddde-103">Routed events can be handled either by class handlers or instance handlers on any given node in the route.</span></span> <span data-ttu-id="7ddde-104">クラス ハンドラーは、最初に、呼び出され、インスタンス処理からイベントを抑制するか、基本クラスによって所有されているイベントに関するその他のイベント固有の動作を紹介するクラスの実装で使用できます。</span><span class="sxs-lookup"><span data-stu-id="7ddde-104">Class handlers are invoked first, and can be used by class implementations to suppress events from instance handling or introduce other event specific behaviors on events that are owned by base classes.</span></span> <span data-ttu-id="7ddde-105">この例では、クラス ハンドラーを実装するための 2 つの密接に関連する手法を示します。</span><span class="sxs-lookup"><span data-stu-id="7ddde-105">This example illustrates two closely related techniques for implementing class handlers.</span></span>  

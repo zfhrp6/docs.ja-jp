@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33218259"
 ---
 # <a name="false-operator-c-reference"></a><span data-ttu-id="836f5-102">false 演算子 (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="836f5-102">false Operator (C# Reference)</span></span>
 <span data-ttu-id="836f5-103">オペランドが `false` であることを示す[ブール](../../../csharp/language-reference/keywords/bool.md)値 `true` を返します。それ以外の場合は `false` を返します。</span><span class="sxs-lookup"><span data-stu-id="836f5-103">Returns the [bool](../../../csharp/language-reference/keywords/bool.md) value `true` to indicate that an operand is `false` and returns `false` otherwise.</span></span>  

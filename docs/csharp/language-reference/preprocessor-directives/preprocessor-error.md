@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33269400"
 ---
 # <a name="error-c-reference"></a><span data-ttu-id="8976a-102">#error (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="8976a-102">#error (C# Reference)</span></span>
 <span data-ttu-id="8976a-103">`#error` を使用すると、コード内の特定の場所からエラーを生成できます。</span><span class="sxs-lookup"><span data-stu-id="8976a-103">`#error` lets you generate an error from a specific location in your code.</span></span> <span data-ttu-id="8976a-104">例:</span><span class="sxs-lookup"><span data-stu-id="8976a-104">For example:</span></span>  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33219337"
 ---
 # <a name="decimal-c-reference"></a><span data-ttu-id="eb8b7-102">decimal (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="eb8b7-102">decimal (C# Reference)</span></span>
 <span data-ttu-id="eb8b7-103">`decimal` キーワードは、128 ビットのデータ型を示します。</span><span class="sxs-lookup"><span data-stu-id="eb8b7-103">The `decimal` keyword indicates a 128-bit data type.</span></span> <span data-ttu-id="eb8b7-104">`decimal` 型は、他の浮動小数点型よりも有効桁数が多く、範囲が狭いので、財務や金融の計算に適しています。</span><span class="sxs-lookup"><span data-stu-id="eb8b7-104">Compared to other floating-point types, the `decimal` type has more precision and a smaller range, which makes it appropriate for financial and monetary calculations.</span></span> <span data-ttu-id="eb8b7-105">`decimal` 型の概算の範囲と有効桁数は、次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="eb8b7-105">The approximate range and precision for the `decimal` type are shown in the following table.</span></span>  

@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33528532"
 ---
 # <a name="how-to-display-specific-days-in-bold-with-the-windows-forms-monthcalendar-control"></a><span data-ttu-id="5df8e-102">方法 : Windows フォームの MonthCalendar コントロールを使用して特定の日付を太字で表示する</span><span class="sxs-lookup"><span data-stu-id="5df8e-102">How to: Display Specific Days in Bold with the Windows Forms MonthCalendar Control</span></span>
 <span data-ttu-id="5df8e-103">Windows フォーム<xref:System.Windows.Forms.MonthCalendar>コントロールは、単数形の日付として、または繰り返しごとに、太字での日数を表示できます。</span><span class="sxs-lookup"><span data-stu-id="5df8e-103">The Windows Forms <xref:System.Windows.Forms.MonthCalendar> control can display days in bold type, either as singular dates or on a repeating basis.</span></span> <span data-ttu-id="5df8e-104">休日や週末などの特別な日を目立たせるこれを行う場合があります。</span><span class="sxs-lookup"><span data-stu-id="5df8e-104">You might do this to draw attention to special dates, such as holidays and weekends.</span></span>  

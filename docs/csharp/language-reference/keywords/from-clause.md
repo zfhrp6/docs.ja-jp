@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33218398"
 ---
 # <a name="from-clause-c-reference"></a><span data-ttu-id="e67b5-102">from 句 (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="e67b5-102">from clause (C# Reference)</span></span>
 <span data-ttu-id="e67b5-103">クエリ式は、`from` 句で始める必要があります。</span><span class="sxs-lookup"><span data-stu-id="e67b5-103">A query expression must begin with a `from` clause.</span></span> <span data-ttu-id="e67b5-104">また、クエリ式にはサブクエリを含めることができます。サブクエリも `from` 句で始めます。</span><span class="sxs-lookup"><span data-stu-id="e67b5-104">Additionally, a query expression can contain sub-queries, which also begin with a `from` clause.</span></span> <span data-ttu-id="e67b5-105">`from` 句は次を指定します。</span><span class="sxs-lookup"><span data-stu-id="e67b5-105">The `from` clause specifies the following:</span></span>  

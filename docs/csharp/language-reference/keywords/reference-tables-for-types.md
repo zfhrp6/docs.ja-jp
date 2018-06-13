@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33266812"
 ---
 # <a name="reference-tables-for-types-c-reference"></a><span data-ttu-id="95040-102">型のリファレンス表 (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="95040-102">Reference Tables for Types (C# Reference)</span></span>
 <span data-ttu-id="95040-103">次のリファレンス表に C# の型をまとめて示します。</span><span class="sxs-lookup"><span data-stu-id="95040-103">The following reference tables summarize the C# types:</span></span>  

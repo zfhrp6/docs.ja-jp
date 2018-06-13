@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33274220"
 ---
 # <a name="lock-statement-c-reference"></a><span data-ttu-id="487e4-102">lock ステートメント (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="487e4-102">lock Statement (C# Reference)</span></span>
 <span data-ttu-id="487e4-103">`lock` キーワードは、ステートメント ブロックをクリティカル セクションとして指定します。このためには、特定のオブジェクトの相互排他ロックを取得し、ステートメントを実行して、ロックを解放します。</span><span class="sxs-lookup"><span data-stu-id="487e4-103">The `lock` keyword marks a statement block as a critical section by obtaining the mutual-exclusion lock for a given object, executing a statement, and then releasing the lock.</span></span> <span data-ttu-id="487e4-104">次の例では、`lock` ステートメントが使用されています。</span><span class="sxs-lookup"><span data-stu-id="487e4-104">The following example includes a `lock` statement.</span></span>  

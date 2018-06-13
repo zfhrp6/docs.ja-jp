@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33218846"
 ---
 # <a name="-debug-c-compiler-options"></a><span data-ttu-id="2b422-102">-debug (C# コンパイラ オプション)</span><span class="sxs-lookup"><span data-stu-id="2b422-102">-debug (C# Compiler Options)</span></span>
 <span data-ttu-id="2b422-103">**-debug** オプションを指定すると、コンパイラによってデバッグ情報が生成され、出力ファイルに格納されます。</span><span class="sxs-lookup"><span data-stu-id="2b422-103">The **-debug** option causes the compiler to generate debugging information and place it in the output file or files.</span></span>  

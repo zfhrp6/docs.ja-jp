@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33265471"
 ---
 # <a name="params-c-reference"></a><span data-ttu-id="0831a-102">params (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="0831a-102">params (C# Reference)</span></span>
 <span data-ttu-id="0831a-103">`params` キーワードを使用すると、可変数個の引数を受け取る[メソッド パラメーター](../../../csharp/language-reference/keywords/method-parameters.md)を指定できます。</span><span class="sxs-lookup"><span data-stu-id="0831a-103">By using the `params` keyword, you can specify a [method parameter](../../../csharp/language-reference/keywords/method-parameters.md) that takes a variable number of arguments.</span></span>  
