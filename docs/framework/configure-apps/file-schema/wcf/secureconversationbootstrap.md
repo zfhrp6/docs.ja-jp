@@ -9,6 +9,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32751598"
 ---
 # <a name="ltsecureconversationbootstrapgt"></a><span data-ttu-id="04a5a-102">&lt;secureConversationBootstrap&gt;</span><span class="sxs-lookup"><span data-stu-id="04a5a-102">&lt;secureConversationBootstrap&gt;</span></span>
 <span data-ttu-id="04a5a-103">セキュリティで保護されたメッセージ交換サービスの開始に使用される既定値を指定します。</span><span class="sxs-lookup"><span data-stu-id="04a5a-103">Specifies the default values used for initiating a secure conversation service.</span></span>  

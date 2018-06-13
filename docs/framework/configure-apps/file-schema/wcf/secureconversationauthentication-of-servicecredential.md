@@ -9,6 +9,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32749333"
 ---
 # <a name="ltsecureconversationauthenticationgt-of-ltservicecredentialgt"></a><span data-ttu-id="44858-102">&lt;serviceCredential&gt; の &lt;secureConversationAuthentication&gt;</span><span class="sxs-lookup"><span data-stu-id="44858-102">&lt;secureConversationAuthentication&gt; of &lt;serviceCredential&gt;</span></span>
 <span data-ttu-id="44858-103">安全な会話サービスの設定を指定します。</span><span class="sxs-lookup"><span data-stu-id="44858-103">Specifies the settings for a secure conversation service.</span></span>  

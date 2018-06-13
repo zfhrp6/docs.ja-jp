@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32762424"
 ---
 # <a name="facet"></a><span data-ttu-id="f965f-102">facet</span><span class="sxs-lookup"><span data-stu-id="f965f-102">facet</span></span>
 <span data-ttu-id="f965f-103">A*ファセット*詳細プリミティブ型のプロパティ定義を追加するために使用します。</span><span class="sxs-lookup"><span data-stu-id="f965f-103">A *facet* is used to add detail to a primitive type property definition.</span></span> <span data-ttu-id="f965f-104">A[プロパティ](../../../../docs/framework/data/adonet/property.md)定義には、プロパティの型に関する情報が含まれていますが、多くの場合より詳しい情報が必要です。</span><span class="sxs-lookup"><span data-stu-id="f965f-104">A [property](../../../../docs/framework/data/adonet/property.md) definition contains information about the property type, but often more detail is necessary.</span></span> <span data-ttu-id="f965f-105">たとえば、概念モデルのエンティティ型に、値を null に設定できない `String` 型のプロパティが含まれる場合があります。</span><span class="sxs-lookup"><span data-stu-id="f965f-105">For example, an entity type in a conceptual model might have a property of type `String` whose value cannot be set to null.</span></span> <span data-ttu-id="f965f-106">ファセットにより、このレベルの詳細を指定することができます。</span><span class="sxs-lookup"><span data-stu-id="f965f-106">Facets allow you to specify this level of detail.</span></span>  

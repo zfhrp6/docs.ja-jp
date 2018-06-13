@@ -15,6 +15,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32752664"
 ---
 # <a name="ltdisablecommitthreadstackgt-element"></a><span data-ttu-id="e8629-102">&lt;disableCommitThreadStack&gt;要素</span><span class="sxs-lookup"><span data-stu-id="e8629-102">&lt;disableCommitThreadStack&gt; Element</span></span>
 <span data-ttu-id="e8629-103">スレッドの起動時にスレッド スタック全体をコミットするかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="e8629-103">Specifies whether the full thread stack is committed when a thread is started.</span></span>  

@@ -27,6 +27,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33590947"
 ---
 # <a name="creating-deleting-and-moving-files-and-directories-in-visual-basic"></a><span data-ttu-id="c4629-102">Visual Basic でのファイルおよびディレクトリの作成、削除、および移動</span><span class="sxs-lookup"><span data-stu-id="c4629-102">Creating, Deleting, and Moving Files and Directories in Visual Basic</span></span>
 <span data-ttu-id="c4629-103">このセクションでは、Visual Basic でのファイルとディレクトリの作成、削除、移動、名前変更に関連するタスクを列挙します。</span><span class="sxs-lookup"><span data-stu-id="c4629-103">This section lists tasks associated with creating, deleting, moving, and renaming files and directories in Visual Basic.</span></span>  

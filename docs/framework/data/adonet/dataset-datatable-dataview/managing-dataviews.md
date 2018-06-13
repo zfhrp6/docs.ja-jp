@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32757906"
 ---
 # <a name="managing-dataviews"></a><span data-ttu-id="45c7c-102">DataViews の管理</span><span class="sxs-lookup"><span data-stu-id="45c7c-102">Managing DataViews</span></span>
 <span data-ttu-id="45c7c-103"><xref:System.Data.DataViewManager> のすべてのテーブルのビュー設定を管理するには、<xref:System.Data.DataView> を使用します。</span><span class="sxs-lookup"><span data-stu-id="45c7c-103">You can use a <xref:System.Data.DataViewManager> to manage view settings for all the tables in a <xref:System.Data.DataView>.</span></span> <span data-ttu-id="45c7c-104">グリッドなど、リレーションシップをナビゲートする複数のテーブルにバインドするコントロールがある場合、 **DataViewManager**最適です。</span><span class="sxs-lookup"><span data-stu-id="45c7c-104">If you have a control that you want to bind to multiple tables, such as a grid that navigates relationships, a **DataViewManager** is ideal.</span></span>  

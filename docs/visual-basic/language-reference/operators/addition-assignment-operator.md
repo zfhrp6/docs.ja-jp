@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33604017"
 ---
 # <a name="-operator-visual-basic"></a><span data-ttu-id="3ca82-102">+= 演算子 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="3ca82-102">+= Operator (Visual Basic)</span></span>
 <span data-ttu-id="3ca82-103">数値型の変数またはプロパティの値に数値式の値を追加し、結果を変数またはプロパティに代入します。</span><span class="sxs-lookup"><span data-stu-id="3ca82-103">Adds the value of a numeric expression to the value of a numeric variable or property and assigns the result to the variable or property.</span></span> <span data-ttu-id="3ca82-104">連結するためにも使用する、`String`式、`String`変数やプロパティと、割り当て、その結果を変数またはプロパティ。</span><span class="sxs-lookup"><span data-stu-id="3ca82-104">Can also be used to concatenate a `String` expression to a `String` variable or property and assign the result to the variable or property.</span></span>  

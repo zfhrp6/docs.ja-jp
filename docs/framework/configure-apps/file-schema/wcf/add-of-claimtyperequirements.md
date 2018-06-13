@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32750597"
 ---
 # <a name="ltaddgt-of-ltclaimtyperequirementsgt"></a><span data-ttu-id="635d5-102">&lt;claimTypeRequirements&gt; の &lt;add&gt;</span><span class="sxs-lookup"><span data-stu-id="635d5-102">&lt;add&gt; of &lt;claimTypeRequirements&gt;</span></span>
 <span data-ttu-id="635d5-103">フェデレーション資格情報に表示されると予想される必須のクレームおよび省略可能なクレームの種類を指定します。</span><span class="sxs-lookup"><span data-stu-id="635d5-103">Specifies the types of required and optional claims expected to appear in the federated credential.</span></span> <span data-ttu-id="635d5-104">たとえば、サービスは、クレームの種類の特定のセットを処理する必要がある受信資格情報について要件を記述します。</span><span class="sxs-lookup"><span data-stu-id="635d5-104">For example, services state the requirements on incoming credentials, which must possess a certain set of claim types.</span></span>  

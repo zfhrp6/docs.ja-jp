@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32746268"
 ---
 # <a name="ltbinarymessageencodinggt"></a><span data-ttu-id="631a4-102">&lt;binaryMessageEncoding&gt;</span><span class="sxs-lookup"><span data-stu-id="631a4-102">&lt;binaryMessageEncoding&gt;</span></span>
 <span data-ttu-id="631a4-103">ネットワーク上で Windows Communication Foundation (WCF) メッセージをバイナリにエンコードするバイナリ メッセージ エンコーダーを定義します。</span><span class="sxs-lookup"><span data-stu-id="631a4-103">Defines a binary message encoder that encodes Windows Communication Foundation (WCF) messages in binary on the wire.</span></span>  

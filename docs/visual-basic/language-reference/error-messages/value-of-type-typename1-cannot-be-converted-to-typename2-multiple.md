@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33603692"
 ---
 # <a name="value-of-type-39lttypename1gt39-cannot-be-converted-to-39lttypename2gt39-multiple-file-references"></a><span data-ttu-id="28093-102">型の値&#39; &lt;typename1&gt; &#39;に変換できない&#39; &lt;typename2&gt; &#39; (複数のファイル参照)</span><span class="sxs-lookup"><span data-stu-id="28093-102">Value of type &#39;&lt;typename1&gt;&#39; cannot be converted to &#39;&lt;typename2&gt;&#39; (Multiple file references)</span></span>
 <span data-ttu-id="28093-103">型の値 '\<typename1 >' に変換できません。'\<typename2 >' です。</span><span class="sxs-lookup"><span data-stu-id="28093-103">Value of type '\<typename1>' cannot be converted to '\<typename2>'.</span></span> <span data-ttu-id="28093-104">型の不一致へのファイル参照を混在させる可能性があります '\<filepath1 >' プロジェクトで'\<projectname1 >' へのファイル参照を '\<filepath2 >' プロジェクトで'\<projectname2 >' です。</span><span class="sxs-lookup"><span data-stu-id="28093-104">Type mismatch could be due to mixing a file reference to '\<filepath1>' in project '\<projectname1>' with a file reference to '\<filepath2>' in project '\<projectname2>'.</span></span> <span data-ttu-id="28093-105">両方のアセンブリが同一である場合は、これらの参照を同じ場所から参照するように置き換えてください。</span><span class="sxs-lookup"><span data-stu-id="28093-105">If both assemblies are identical, try replacing these references so both references are from the same location.</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32748712"
 ---
 # <a name="lttransactionflowgt"></a><span data-ttu-id="e0765-102">&lt;トランザクション フロー&gt;</span><span class="sxs-lookup"><span data-stu-id="e0765-102">&lt;transactionFlow&gt;</span></span>
 <span data-ttu-id="e0765-103">カスタム バインドのトランザクション フロー サポートを指定します。</span><span class="sxs-lookup"><span data-stu-id="e0765-103">Specifies transaction flow support for the custom binding.</span></span>  

@@ -15,6 +15,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32748660"
 ---
 # <a name="ltcleargt-element-for-ltlistenersgt-for-lttracegt"></a><span data-ttu-id="395b0-102">&lt;オフ&gt;要素&lt;リスナー&gt;の&lt;トレース&gt;</span><span class="sxs-lookup"><span data-stu-id="395b0-102">&lt;clear&gt; Element for &lt;listeners&gt; for &lt;trace&gt;</span></span>
 <span data-ttu-id="395b0-103">トレースの `Listeners` コレクションを削除します。</span><span class="sxs-lookup"><span data-stu-id="395b0-103">Clears the `Listeners` collection for trace.</span></span>  

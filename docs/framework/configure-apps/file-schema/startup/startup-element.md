@@ -17,6 +17,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32748427"
 ---
 # <a name="ltstartupgt-element"></a><span data-ttu-id="17daf-102">&lt;スタートアップ&gt;要素</span><span class="sxs-lookup"><span data-stu-id="17daf-102">&lt;startup&gt; Element</span></span>
 <span data-ttu-id="17daf-103">共通言語ランタイム スタートアップ情報を指定します。</span><span class="sxs-lookup"><span data-stu-id="17daf-103">Specifies common language runtime startup information.</span></span>  

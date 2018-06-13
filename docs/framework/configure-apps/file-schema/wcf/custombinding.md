@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32751786"
 ---
 # <a name="ltcustombindinggt"></a><span data-ttu-id="dd439-102">&lt;customBinding&gt;</span><span class="sxs-lookup"><span data-stu-id="dd439-102">&lt;customBinding&gt;</span></span>
 <span data-ttu-id="dd439-103">ユーザーのメッセージ スタックを完全に制御できます。</span><span class="sxs-lookup"><span data-stu-id="dd439-103">Provides full control over the messaging stack for the user.</span></span>  

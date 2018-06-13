@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33569747"
 ---
 # <a name="how-to-add-and-remove-items-from-a-concurrentdictionary"></a><span data-ttu-id="31ac8-102">方法: ConcurrentDictionary の項目を追加および削除する</span><span class="sxs-lookup"><span data-stu-id="31ac8-102">How to: Add and Remove Items from a ConcurrentDictionary</span></span>
 <span data-ttu-id="31ac8-103">この例では、<xref:System.Collections.Concurrent.ConcurrentDictionary%602?displayProperty=nameWithType> の項目を追加、取得、更新、削除する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="31ac8-103">This example shows how to add, retrieve, update, and remove items from a <xref:System.Collections.Concurrent.ConcurrentDictionary%602?displayProperty=nameWithType>.</span></span> <span data-ttu-id="31ac8-104">このコレクション クラスは、スレッド セーフな実装です。</span><span class="sxs-lookup"><span data-stu-id="31ac8-104">This collection class is a thread-safe implementation.</span></span> <span data-ttu-id="31ac8-105">同時に複数のスレッドが要素へのアクセスを試みる可能性がある場合は常に、このクラスを使用することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="31ac8-105">We recommend that you use it whenever multiple threads might be attempting to access the elements concurrently.</span></span>  

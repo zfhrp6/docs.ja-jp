@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32751078"
 ---
 # <a name="lttcptransportgt"></a><span data-ttu-id="b821a-102">&lt;tcpTransport&gt;</span><span class="sxs-lookup"><span data-stu-id="b821a-102">&lt;tcpTransport&gt;</span></span>
 <span data-ttu-id="b821a-103">カスタム バインドのメッセージを転送するためにチャネルで使用できる TCP トランスポートを定義します。</span><span class="sxs-lookup"><span data-stu-id="b821a-103">Defines a TCP transport that can be used by a channel to transfers messages for a custom binding.</span></span>  

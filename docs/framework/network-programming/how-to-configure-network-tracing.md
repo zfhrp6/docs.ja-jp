@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33395961"
 ---
 # <a name="how-to-configure-network-tracing"></a><span data-ttu-id="bfbdf-102">方法: ネットワークのトレースを構成する</span><span class="sxs-lookup"><span data-stu-id="bfbdf-102">How to: Configure Network Tracing</span></span>
 <span data-ttu-id="bfbdf-103">アプリケーションまたはコンピューターの構成ファイルには、ネットワークのトレースの形式と内容を決定する設定が保持されます。</span><span class="sxs-lookup"><span data-stu-id="bfbdf-103">The application or computer configuration file holds the settings that determine the format and content of network traces.</span></span> <span data-ttu-id="bfbdf-104">この手順に従う前に、トレースが有効になっていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="bfbdf-104">Before performing this procedure, be sure tracing is enabled.</span></span> <span data-ttu-id="bfbdf-105">トレースの有効化については、「[ネットワークのトレースの有効化](../../../docs/framework/network-programming/enabling-network-tracing.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="bfbdf-105">For information about enabling tracing, see [Enabling Network Tracing](../../../docs/framework/network-programming/enabling-network-tracing.md).</span></span>  

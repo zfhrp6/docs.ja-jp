@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32754146"
 ---
 # <a name="ltaddgt-of-ltbaseaddressesgt"></a><span data-ttu-id="5e789-102">&lt;baseAddresses&gt; の &lt;add&gt;</span><span class="sxs-lookup"><span data-stu-id="5e789-102">&lt;add&gt; of &lt;baseAddresses&gt;</span></span>
 <span data-ttu-id="5e789-103">サービス ホストによって使用されるベース アドレスを指定する構成要素を表します。</span><span class="sxs-lookup"><span data-stu-id="5e789-103">Represents a configuration element that specifies the base addresses used by the service host.</span></span>  

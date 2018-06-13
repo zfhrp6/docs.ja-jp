@@ -8,6 +8,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33272388"
 ---
 # <a name="handle-null-values-in-query-expressions"></a><span data-ttu-id="3e3ee-103">クエリ式の null 値の処理</span><span class="sxs-lookup"><span data-stu-id="3e3ee-103">Handle null values in query expressions</span></span>
 

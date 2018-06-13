@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33566972"
 ---
 # <a name="targeting-older-versions-of-net"></a><span data-ttu-id="debaf-103">以前のバージョンの .NET の対象化</span><span class="sxs-lookup"><span data-stu-id="debaf-103">Targeting Older Versions of .NET</span></span>
 

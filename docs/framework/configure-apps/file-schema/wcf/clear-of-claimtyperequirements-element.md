@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32747126"
 ---
 # <a name="ltcleargt-of-ltclaimtyperequirementsgt-element"></a><span data-ttu-id="1e61c-102">&lt;claimTypeRequirements&gt; 要素の &lt;clear&gt;</span><span class="sxs-lookup"><span data-stu-id="1e61c-102">&lt;clear&gt; of &lt;claimTypeRequirements&gt; element</span></span>
 <span data-ttu-id="1e61c-103">すべてのクレームの種類をフェデレーション資格情報から削除するように指定します。</span><span class="sxs-lookup"><span data-stu-id="1e61c-103">Specifies that all the claim types to be removed in the federated credential.</span></span> <span data-ttu-id="1e61c-104">これにより、コレクションの初期値を確実に空にできます。</span><span class="sxs-lookup"><span data-stu-id="1e61c-104">This ensures that the collection starts empty.</span></span>  

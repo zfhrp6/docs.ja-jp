@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32749388"
 ---
 # <a name="ltissuedtokenparametersgt"></a><span data-ttu-id="dae98-102">&lt;issuedTokenParameters&gt;</span><span class="sxs-lookup"><span data-stu-id="dae98-102">&lt;issuedTokenParameters&gt;</span></span>
 <span data-ttu-id="dae98-103">フェデレーション セキュリティのシナリオで発行されるセキュリティ トークンのパラメーターを指定します。</span><span class="sxs-lookup"><span data-stu-id="dae98-103">Specifies the parameters for a security token issued in a Federated security scenario.</span></span>  

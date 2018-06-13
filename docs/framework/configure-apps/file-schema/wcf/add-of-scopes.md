@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32745800"
 ---
 # <a name="ltaddgt-of-ltscopesgt"></a><span data-ttu-id="dfacb-102">&lt;scopes&gt; の &lt;add&gt;</span><span class="sxs-lookup"><span data-stu-id="dfacb-102">&lt;add&gt; of &lt;scopes&gt;</span></span>
 <span data-ttu-id="dfacb-103">クエリの実行中に、サービス エンドポイントのフィルター処理に使用できるカスタム スコープ URI を追加します。</span><span class="sxs-lookup"><span data-stu-id="dfacb-103">Adds a custom scope Uri that can be used to filter service endpoints during query.</span></span>  

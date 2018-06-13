@@ -15,6 +15,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32746437"
 ---
 # <a name="section-element"></a><span data-ttu-id="6ec1d-102">\<セクション > 要素</span><span class="sxs-lookup"><span data-stu-id="6ec1d-102">\<section> element</span></span>
 

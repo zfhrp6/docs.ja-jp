@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32763775"
 ---
 # <a name="model-defined-function"></a><span data-ttu-id="b3e01-102">モデル定義関数</span><span class="sxs-lookup"><span data-stu-id="b3e01-102">model-defined function</span></span>
 <span data-ttu-id="b3e01-103">A*モデル定義関数*概念モデルで定義されている関数です。</span><span class="sxs-lookup"><span data-stu-id="b3e01-103">A *model-defined function* is a function that is defined in a conceptual model.</span></span> <span data-ttu-id="b3e01-104">モデル定義関数の本体はで表現[Entity SQL](../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-language.md)ルール関数とは無関係に表すことのできる、またはデータ ソースでサポートされている言語。</span><span class="sxs-lookup"><span data-stu-id="b3e01-104">The body of a model-defined function is expressed in [Entity SQL](../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-language.md), which allows for the function to be expressed independently of rules or languages supported in the data source.</span></span>  

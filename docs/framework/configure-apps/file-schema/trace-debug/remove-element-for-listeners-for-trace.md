@@ -15,6 +15,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32746554"
 ---
 # <a name="ltremovegt-element-for-ltlistenersgt-for-lttracegt"></a><span data-ttu-id="eb6fe-102">&lt;削除&gt;要素&lt;リスナー&gt;の&lt;トレース&gt;</span><span class="sxs-lookup"><span data-stu-id="eb6fe-102">&lt;remove&gt; Element for &lt;listeners&gt; for &lt;trace&gt;</span></span>
 <span data-ttu-id="eb6fe-103">リスナーを削除、**リスナー**コレクション。</span><span class="sxs-lookup"><span data-stu-id="eb6fe-103">Removes a listener from the **Listeners** collection.</span></span>  

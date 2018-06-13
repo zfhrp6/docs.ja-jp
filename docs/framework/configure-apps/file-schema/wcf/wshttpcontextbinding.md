@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32759450"
 ---
 # <a name="ltwshttpcontextbindinggt"></a><span data-ttu-id="7bedd-102">&lt;wsHttpContextBinding&gt;</span><span class="sxs-lookup"><span data-stu-id="7bedd-102">&lt;wsHttpContextBinding&gt;</span></span>
 <span data-ttu-id="7bedd-103">保護レベルの署名を要求する <xref:System.ServiceModel.WSHttpBinding> のコンテキストを提供します。</span><span class="sxs-lookup"><span data-stu-id="7bedd-103">Provides a context for the <xref:System.ServiceModel.WSHttpBinding> that requires that the protection level be signed.</span></span>  

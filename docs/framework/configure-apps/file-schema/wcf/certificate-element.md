@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32749791"
 ---
 # <a name="ltcertificategt-element"></a><span data-ttu-id="7d309-102">&lt;certificate&gt; 要素</span><span class="sxs-lookup"><span data-stu-id="7d309-102">&lt;certificate&gt; Element</span></span>
 <span data-ttu-id="7d309-103">ピアツーピア クライアントのメッセージの署名と暗号化に使用する X.509 証明書を指定します。</span><span class="sxs-lookup"><span data-stu-id="7d309-103">Specifies an X.509 certificate to use for signing and encrypting messages for peer-to-peer clients.</span></span>  

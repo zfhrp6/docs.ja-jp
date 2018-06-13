@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32750753"
 ---
 # <a name="ltroutinggt-of-ltservicebehaviorgt"></a><span data-ttu-id="58fbe-102">&lt;serviceBehavior&gt; の &lt;routing&gt;</span><span class="sxs-lookup"><span data-stu-id="58fbe-102">&lt;routing&gt; of &lt;serviceBehavior&gt;</span></span>
 <span data-ttu-id="58fbe-103">ルーティング構成の動的な変更を可能にするルーティング サービスへの実行時アクセスを提供します。</span><span class="sxs-lookup"><span data-stu-id="58fbe-103">Provides run-time access to the routing service to allow dynamic modification of the routing configuration.</span></span>  

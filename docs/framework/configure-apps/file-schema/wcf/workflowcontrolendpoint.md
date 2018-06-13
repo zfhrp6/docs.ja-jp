@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32754786"
 ---
 # <a name="ltworkflowcontrolendpointgt"></a><span data-ttu-id="4323c-102">&lt;workflowControlEndpoint&gt;</span><span class="sxs-lookup"><span data-stu-id="4323c-102">&lt;workflowControlEndpoint&gt;</span></span>
 <span data-ttu-id="4323c-103">この構成要素は、ワークフロー インスタンスの実行の制御 (作成、実行、保留、終了など) に使用する標準エンドポイントを定義します。</span><span class="sxs-lookup"><span data-stu-id="4323c-103">This configuration element defines a standard endpoint for controlling the execution of workflow instances (create, run, suspend, terminate, etc).</span></span>  

@@ -15,6 +15,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32746086"
 ---
 # <a name="ltuserandomizedstringhashalgorithmgt-element"></a><span data-ttu-id="4dbe3-102">&lt;UseRandomizedStringHashAlgorithm&gt;要素</span><span class="sxs-lookup"><span data-stu-id="4dbe3-102">&lt;UseRandomizedStringHashAlgorithm&gt; Element</span></span>
 <span data-ttu-id="4dbe3-103">共通言語ランタイムがアプリケーション ドメインごとに文字列のハッシュ コードを計算するかどうかを判定します。</span><span class="sxs-lookup"><span data-stu-id="4dbe3-103">Determines whether the common language runtime calculates hash codes for strings on a per application domain basis.</span></span>  

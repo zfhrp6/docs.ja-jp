@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32761598"
 ---
 # <a name="compiled-queries--linq-to-entities"></a><span data-ttu-id="22ea3-102">コンパイル済みクエリ (LINQ to Entities)</span><span class="sxs-lookup"><span data-stu-id="22ea3-102">Compiled Queries  (LINQ to Entities)</span></span>
 <span data-ttu-id="22ea3-103">似たような構造のクエリを Entity Framework で何度も実行するアプリケーションがある場合は、クエリを一度コンパイルし、異なるパラメーターを指定して複数回実行することで、パフォーマンスを改善できる場合がよくあります。</span><span class="sxs-lookup"><span data-stu-id="22ea3-103">When you have an application that executes structurally similar queries many times in the Entity Framework, you can frequently increase performance by compiling the query one time and executing it several times with different parameters.</span></span> <span data-ttu-id="22ea3-104">たとえば、アプリケーションで特定の市区町村に住む顧客をすべて取得する必要がある場合は、ユーザーが実行時にフォーム内で市区町村を指定します。</span><span class="sxs-lookup"><span data-stu-id="22ea3-104">For example, an application might have to retrieve all the customers in a particular city; the city is specified at runtime by the user in a form.</span></span> <span data-ttu-id="22ea3-105">LINQ to Entities では、この目的のためにコンパイル済みクエリをサポートしています。</span><span class="sxs-lookup"><span data-stu-id="22ea3-105">LINQ to Entities supports using compiled queries for this purpose.</span></span>  

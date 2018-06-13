@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32762635"
 ---
 # <a name="writing-an-entity-framework-data-provider"></a><span data-ttu-id="38686-102">Entity Framework データ プロバイダーの作成</span><span class="sxs-lookup"><span data-stu-id="38686-102">Writing an Entity Framework Data Provider</span></span>
 <span data-ttu-id="38686-103">このセクションで説明を記述する方法、 [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] SQL Server 以外のデータ ソースをサポートするプロバイダー。</span><span class="sxs-lookup"><span data-stu-id="38686-103">This section discusses how to write an [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] provider to support a data source other than SQL Server.</span></span> <span data-ttu-id="38686-104">[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] SQL Server をサポートするプロバイダーが含まれています。</span><span class="sxs-lookup"><span data-stu-id="38686-104">The [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] includes a provider that supports SQL Server.</span></span>  

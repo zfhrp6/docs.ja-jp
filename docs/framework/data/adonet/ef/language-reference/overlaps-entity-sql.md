@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32762677"
 ---
 # <a name="overlaps-entity-sql"></a><span data-ttu-id="fa9e7-102">OVERLAPS (Entity SQL)</span><span class="sxs-lookup"><span data-stu-id="fa9e7-102">OVERLAPS (Entity SQL)</span></span>
 <span data-ttu-id="fa9e7-103">2 つのコレクションに共通の要素が存在するかどうかを調べます。</span><span class="sxs-lookup"><span data-stu-id="fa9e7-103">Determines whether two collections have common elements.</span></span>  

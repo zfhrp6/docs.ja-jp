@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32758894"
 ---
 # <a name="local-transactions"></a><span data-ttu-id="e348d-102">ローカル トランザクション</span><span class="sxs-lookup"><span data-stu-id="e348d-102">Local Transactions</span></span>
 <span data-ttu-id="e348d-103">[!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] でのトランザクションは、複数のタスクをバインドして単一の作業単位として実行する場合に使用します。</span><span class="sxs-lookup"><span data-stu-id="e348d-103">Transactions in [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] are used when you want to bind multiple tasks together so that they execute as a single unit of work.</span></span> <span data-ttu-id="e348d-104">たとえば、あるアプリケーションが 2 つのタスクを実行するものとします。</span><span class="sxs-lookup"><span data-stu-id="e348d-104">For example, imagine that an application performs two tasks.</span></span> <span data-ttu-id="e348d-105">まず、注文情報に従ってテーブルが更新されます。</span><span class="sxs-lookup"><span data-stu-id="e348d-105">First, it updates a table with order information.</span></span> <span data-ttu-id="e348d-106">次に、在庫情報を含むテーブルが更新され、注文品の金額が借方記入されます。</span><span class="sxs-lookup"><span data-stu-id="e348d-106">Second, it updates a table that contains inventory information, debiting the items ordered.</span></span> <span data-ttu-id="e348d-107">いずれかのタスクが失敗すると両方の更新がロールバックされます。</span><span class="sxs-lookup"><span data-stu-id="e348d-107">If either task fails, then both updates are rolled back.</span></span>  

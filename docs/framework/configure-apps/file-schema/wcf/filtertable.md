@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32747412"
 ---
 # <a name="ltfiltertablegt"></a><span data-ttu-id="5e103-102">&lt;filterTable&gt;</span><span class="sxs-lookup"><span data-stu-id="5e103-102">&lt;filterTable&gt;</span></span>
 <span data-ttu-id="5e103-103">True に評価されると、フィルターに対してメッセージと、クライアント エンドポイントにメッセージをルーティングを評価するフィルターの一覧を含むルーティング テーブルを表します。</span><span class="sxs-lookup"><span data-stu-id="5e103-103">Represents a routing table that contains a list of filters to evaluate messages against and the client endpoint to route messages to if the filter evaluates to true.</span></span>  

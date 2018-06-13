@@ -15,6 +15,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32758127"
 ---
 # <a name="how-to-create-a-publisher-policy"></a><span data-ttu-id="85eca-102">方法: 発行者ポリシーを作成する</span><span class="sxs-lookup"><span data-stu-id="85eca-102">How to: Create a Publisher Policy</span></span>
 <span data-ttu-id="85eca-103">アプリケーションがアップグレード済みのアセンブリに発行者ポリシー ファイルを含めることによって、新しいバージョンのアセンブリを使用するアセンブリの販売元の状態のことができます。</span><span class="sxs-lookup"><span data-stu-id="85eca-103">Vendors of assemblies can state that applications should use a newer version of an assembly by including a publisher policy file with the upgraded assembly.</span></span> <span data-ttu-id="85eca-104">発行者ポリシー ファイルは、アセンブリのリダイレクトやコード ベース設定を指定し、アプリケーション構成ファイルと同じフォーマットを使用します。</span><span class="sxs-lookup"><span data-stu-id="85eca-104">The publisher policy file specifies assembly redirection and code base settings, and uses the same format as an application configuration file.</span></span> <span data-ttu-id="85eca-105">発行者ポリシー ファイルがアセンブリにコンパイルされ、グローバル アセンブリ キャッシュに配置します。</span><span class="sxs-lookup"><span data-stu-id="85eca-105">The publisher policy file is compiled into an assembly and placed in the global assembly cache.</span></span>  

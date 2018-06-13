@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32748361"
 ---
 # <a name="ltcustomgt"></a><span data-ttu-id="3333c-102">&lt;custom&gt;</span><span class="sxs-lookup"><span data-stu-id="3333c-102">&lt;custom&gt;</span></span>
 <span data-ttu-id="3333c-103">ユーザー設定のピア リゾルバー サービスの設定を指定します。</span><span class="sxs-lookup"><span data-stu-id="3333c-103">Specifies settings for a custom peer resolver service.</span></span>  

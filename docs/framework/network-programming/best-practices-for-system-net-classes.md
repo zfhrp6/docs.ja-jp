@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33393946"
 ---
 # <a name="best-practices-for-systemnet-classes"></a><span data-ttu-id="1c2a3-102">System.Net クラスのベスト プラクティス</span><span class="sxs-lookup"><span data-stu-id="1c2a3-102">Best Practices for System.Net Classes</span></span>
 <span data-ttu-id="1c2a3-103">次の推奨事項は、<xref:System.Net> に含まれるクラスを最大限に活用するのに役立ちます。</span><span class="sxs-lookup"><span data-stu-id="1c2a3-103">The following recommendations will help you use the classes contained in <xref:System.Net> to their best advantage:</span></span>  

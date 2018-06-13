@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33569909"
 ---
 # <a name="character-escapes-in-regular-expressions"></a><span data-ttu-id="8baa1-102">正規表現での文字のエスケープ</span><span class="sxs-lookup"><span data-stu-id="8baa1-102">Character Escapes in Regular Expressions</span></span>
 <span data-ttu-id="8baa1-103">正規表現の円記号 (\\) は、次のいずれかを示します。</span><span class="sxs-lookup"><span data-stu-id="8baa1-103">The backslash (\\) in a regular expression indicates one of the following:</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32760035"
 ---
 # <a name="diffgrams"></a><span data-ttu-id="ff96b-102">DiffGrams</span><span class="sxs-lookup"><span data-stu-id="ff96b-102">DiffGrams</span></span>
 <span data-ttu-id="ff96b-103">DiffGram は、データ要素の現在のバージョンと元のバージョンを識別する XML 形式です。</span><span class="sxs-lookup"><span data-stu-id="ff96b-103">A DiffGram is an XML format that identifies current and original versions of data elements.</span></span> <span data-ttu-id="ff96b-104"><xref:System.Data.DataSet> では、 の内容を読み込んで永続化するため、およびネットワーク接続経由で転送する場合にこの内容をシリアル化するために、DiffGram 形式が使用されます。</span><span class="sxs-lookup"><span data-stu-id="ff96b-104">The <xref:System.Data.DataSet> uses the DiffGram format to load and persist its contents, and to serialize its contents for transport across a network connection.</span></span> <span data-ttu-id="ff96b-105">ときに、<xref:System.Data.DataSet>正確を再作成する内容、ただし、スキーマのすべての必要な情報を DiffGram に格納を DiffGram として書き込まれますが、 <xref:System.Data.DataSet>、両方の列の値を含む、**元**と**現在**行のバージョン、行エラー情報、および行の順序。</span><span class="sxs-lookup"><span data-stu-id="ff96b-105">When a <xref:System.Data.DataSet> is written as a DiffGram, it populates the DiffGram with all the necessary information to accurately recreate the contents, though not the schema, of the <xref:System.Data.DataSet>, including column values from both the **Original** and **Current** row versions, row error information, and row order.</span></span>  

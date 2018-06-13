@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32766869"
 ---
 # <a name="architecture-and-design"></a><span data-ttu-id="3ac0d-102">アーキテクチャとデザイン</span><span class="sxs-lookup"><span data-stu-id="3ac0d-102">Architecture and Design</span></span>
 <span data-ttu-id="3ac0d-103">SQL 生成モジュール、[サンプル プロバイダー](http://go.microsoft.com/fwlink/?LinkId=180616)コマンド ツリーを表す式ツリー上のビジターとして実装されます。</span><span class="sxs-lookup"><span data-stu-id="3ac0d-103">The SQL generation module in the [Sample Provider](http://go.microsoft.com/fwlink/?LinkId=180616) is implemented as a visitor on the expression tree that represents the command tree.</span></span> <span data-ttu-id="3ac0d-104">生成は、式ツリーを介した単一のパスで行われます。</span><span class="sxs-lookup"><span data-stu-id="3ac0d-104">The generation is done in a single pass over the expression tree.</span></span>  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32759960"
 ---
 # <a name="how-to-build-an-entityconnection-connection-string"></a><span data-ttu-id="b3a73-102">EntityConnection の接続文字列を作成する方法</span><span class="sxs-lookup"><span data-stu-id="b3a73-102">How to: Build an EntityConnection Connection String</span></span>
 <span data-ttu-id="b3a73-103">このトピックでは、<xref:System.Data.EntityClient.EntityConnection> を作成する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="b3a73-103">This topic provides an example of how to build an <xref:System.Data.EntityClient.EntityConnection>.</span></span>  

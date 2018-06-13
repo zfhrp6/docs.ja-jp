@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32762560"
 ---
 # <a name="handling-dataview-events"></a><span data-ttu-id="a5a9e-102">DataView イベントの処理</span><span class="sxs-lookup"><span data-stu-id="a5a9e-102">Handling DataView Events</span></span>
 <span data-ttu-id="a5a9e-103"><xref:System.Data.DataView.ListChanged> の <xref:System.Data.DataView> イベントを使用して、ビューが更新されているかどうかを確認できます。</span><span class="sxs-lookup"><span data-stu-id="a5a9e-103">You can use the <xref:System.Data.DataView.ListChanged> event of the <xref:System.Data.DataView> to determine if a view has been updated.</span></span> <span data-ttu-id="a5a9e-104">基になるテーブルの行の追加、削除、または変更や、このスキーマの列の追加または削除、親子のリレーションシップの変更など、これらの更新を行うとこのイベントが発生します。</span><span class="sxs-lookup"><span data-stu-id="a5a9e-104">Updates that raise the event include adding, deleting, or modifying a row in the underlying table; adding or deleting a column to the schema of the underlying table; and a change in a parent or child relationship.</span></span> <span data-ttu-id="a5a9e-105">**ListChanged**イベントもユーザーに通知を表示している行のリストが新しい並べ替え順序またはフィルターの適用により大幅に変更します。</span><span class="sxs-lookup"><span data-stu-id="a5a9e-105">The **ListChanged** event also notifies you if the list of rows you are viewing has changed significantly due to the application of a new sort order or a filter.</span></span>  

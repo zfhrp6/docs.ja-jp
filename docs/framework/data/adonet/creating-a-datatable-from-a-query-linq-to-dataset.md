@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32758829"
 ---
 # <a name="creating-a-datatable-from-a-query-linq-to-dataset"></a><span data-ttu-id="0c213-102">クエリによる DataTable の作成 (LINQ to DataSet)</span><span class="sxs-lookup"><span data-stu-id="0c213-102">Creating a DataTable From a Query (LINQ to DataSet)</span></span>
 <span data-ttu-id="0c213-103"><xref:System.Data.DataTable> オブジェクトの一般的な利用法の 1 つが、データ バインドです。</span><span class="sxs-lookup"><span data-stu-id="0c213-103">Data binding is a common use of <xref:System.Data.DataTable> object.</span></span> <span data-ttu-id="0c213-104"><xref:System.Data.DataTableExtensions.CopyToDataTable%2A> メソッドは、クエリの結果を受け取り、そのデータを <xref:System.Data.DataTable> にコピーします。これをデータ バインドに利用できます。</span><span class="sxs-lookup"><span data-stu-id="0c213-104">The <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> method takes the results of a query and copies the data into a <xref:System.Data.DataTable>, which can then be used for data binding.</span></span> <span data-ttu-id="0c213-105">このデータ操作が実行されると、新しい <xref:System.Data.DataTable> が、基となった <xref:System.Data.DataTable> にマージ バックされます。</span><span class="sxs-lookup"><span data-stu-id="0c213-105">When the data operations have been performed, the new <xref:System.Data.DataTable> is merged back into the source <xref:System.Data.DataTable>.</span></span>  

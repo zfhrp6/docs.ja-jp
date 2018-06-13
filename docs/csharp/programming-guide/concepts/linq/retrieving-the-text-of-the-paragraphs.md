@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33327159"
 ---
 # <a name="retrieving-the-text-of-the-paragraphs-c"></a><span data-ttu-id="0e901-102">段落のテキストの取得 (C#)</span><span class="sxs-lookup"><span data-stu-id="0e901-102">Retrieving the Text of the Paragraphs (C#)</span></span>
 <span data-ttu-id="0e901-103">この例は、前の例の「[段落とそのスタイルの取得 (C#)](../../../../csharp/programming-guide/concepts/linq/retrieving-the-paragraphs-and-their-styles.md)」を基にしています。</span><span class="sxs-lookup"><span data-stu-id="0e901-103">This example builds on the previous example, [Retrieving the Paragraphs and Their Styles (C#)](../../../../csharp/programming-guide/concepts/linq/retrieving-the-paragraphs-and-their-styles.md).</span></span> <span data-ttu-id="0e901-104">この新しい例では、各段落のテキストを文字列として取得します。</span><span class="sxs-lookup"><span data-stu-id="0e901-104">This new example retrieves the text of each paragraph as a string.</span></span>  

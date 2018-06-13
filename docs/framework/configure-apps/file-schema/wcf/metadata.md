@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32747854"
 ---
 # <a name="ltmetadatagt"></a><span data-ttu-id="f2a84-102">&lt;メタデータ&gt;</span><span class="sxs-lookup"><span data-stu-id="f2a84-102">&lt;metadata&gt;</span></span>
 <span data-ttu-id="f2a84-103">サービス メタデータを処理する方法を指定します。</span><span class="sxs-lookup"><span data-stu-id="f2a84-103">Specifies how service metadata can be processed.</span></span>  

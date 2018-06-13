@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33330658"
 ---
 # <a name="how-to-find-related-elements-xpath-linq-to-xml-c"></a><span data-ttu-id="61433-102">方法: 関連要素を検索する (XPath-LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="61433-102">How to: Find Related Elements (XPath-LINQ to XML) (C#)</span></span>
 <span data-ttu-id="61433-103">このトピックでは、別の要素の値によって参照される属性に基づいて要素を取得する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="61433-103">This topic shows how to get an element selecting on an attribute that is referred to by the value of another element.</span></span>  

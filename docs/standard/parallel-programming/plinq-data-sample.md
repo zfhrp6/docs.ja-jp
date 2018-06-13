@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33590895"
 ---
 # <a name="plinq-data-sample"></a><span data-ttu-id="c9343-102">PLINQ データのサンプル</span><span class="sxs-lookup"><span data-stu-id="c9343-102">PLINQ Data Sample</span></span>
 <span data-ttu-id="c9343-103">このサンプルには、.csv 形式のデータ例と、データを顧客、製品、注文、その他の詳細のメモリ内コレクションに変換するメソッドが含まれています。</span><span class="sxs-lookup"><span data-stu-id="c9343-103">This sample contains example data in .csv format, together with methods that transform it into in-memory collections of Customers, Products, Orders, and Order Details.</span></span> <span data-ttu-id="c9343-104">PLINQ でさらに試す場合は、他の特定のトピックのコード例をこのトピックのコードに貼り付けて、`Main` メソッドから呼び出すことができます。</span><span class="sxs-lookup"><span data-stu-id="c9343-104">To further experiment with PLINQ, you can paste code examples from certain other topics into the code in this topic and invoke it from the `Main` method.</span></span> <span data-ttu-id="c9343-105">また、独自の PLINQ クエリでこのデータを使用することもできます。</span><span class="sxs-lookup"><span data-stu-id="c9343-105">You can also use this data with your own PLINQ queries.</span></span>  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33590830"
 ---
 # <a name="first-operand-in-a-binary-39if39-expression-must-be-nullable-or-a-reference-type"></a><span data-ttu-id="d7c2c-102">最初のオペランドはバイナリで&#39;場合&#39;式を null 許容にする必要がありますまたは型の参照</span><span class="sxs-lookup"><span data-stu-id="d7c2c-102">First operand in a binary &#39;If&#39; expression must be nullable or a reference type</span></span>
 <span data-ttu-id="d7c2c-103">`If`式が 2 または 3 つの引数を受け取ることができます。</span><span class="sxs-lookup"><span data-stu-id="d7c2c-103">An `If` expression can take either two or three arguments.</span></span> <span data-ttu-id="d7c2c-104">2 つの引数を送信するときに、最初の引数は、参照型または null 許容型にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="d7c2c-104">When you send only two arguments, the first argument must be a reference type or a nullable type.</span></span> <span data-ttu-id="d7c2c-105">最初の引数が以外の何もする評価された場合に`Nothing`、その値が返されます。</span><span class="sxs-lookup"><span data-stu-id="d7c2c-105">If the first argument evaluates to anything other than `Nothing`, its value is returned.</span></span> <span data-ttu-id="d7c2c-106">最初の引数が評価された場合`Nothing`、2 番目の引数が評価され、返されます。</span><span class="sxs-lookup"><span data-stu-id="d7c2c-106">If the first argument evaluates to `Nothing`, the second argument is evaluated and returned.</span></span>  

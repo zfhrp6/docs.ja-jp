@@ -18,6 +18,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32753743"
 ---
 # <a name="ltaddgt-element-for-connectionmanagement-network-settings"></a><span data-ttu-id="cd206-102">&lt;追加&gt;connectionManagement (ネットワーク設定) の要素</span><span class="sxs-lookup"><span data-stu-id="cd206-102">&lt;add&gt; Element for connectionManagement (Network Settings)</span></span>
 <span data-ttu-id="cd206-103">IP アドレスまたは DNS 名を接続管理リストに追加します。</span><span class="sxs-lookup"><span data-stu-id="cd206-103">Adds an IP address or DNS name to the connection management list.</span></span>  

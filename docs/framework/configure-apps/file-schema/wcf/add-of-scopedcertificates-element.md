@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32746645"
 ---
 # <a name="ltaddgt-of-ltscopedcertificatesgt-element"></a><span data-ttu-id="8cc79-102">&lt;scopedCertificates&gt; 要素の &lt;add&gt;</span><span class="sxs-lookup"><span data-stu-id="8cc79-102">&lt;add&gt; of &lt;scopedCertificates&gt; Element</span></span>
 <span data-ttu-id="8cc79-103">範囲指定された証明書のコレクションに X.509 証明書を追加します。</span><span class="sxs-lookup"><span data-stu-id="8cc79-103">Adds an X.509 certificate to the collection of scoped certificates.</span></span>  

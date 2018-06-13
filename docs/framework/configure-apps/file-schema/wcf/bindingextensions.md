@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32750776"
 ---
 # <a name="ltbindingextensionsgt"></a><span data-ttu-id="976b7-102">&lt;bindingExtensions&gt;</span><span class="sxs-lookup"><span data-stu-id="976b7-102">&lt;bindingExtensions&gt;</span></span>
 <span data-ttu-id="976b7-103">このセクションは、コンピューターまたはアプリケーションの構成ファイルからユーザー定義のバインディングを使用できます。</span><span class="sxs-lookup"><span data-stu-id="976b7-103">This section enables the use of a user defined binding from a machine or application configuration file.</span></span> <span data-ttu-id="976b7-104">このコレクションにユーザー定義のバインディングを追加するには、`add` キーワードを使用し、要素の `type` 属性をユーザー定義のバインディングに設定して、`name` 属性をユーザー定義のバインディングの名前に設定します。</span><span class="sxs-lookup"><span data-stu-id="976b7-104">You can add a user defined binding to this collection by using the `add` keyword, and setting the `type` attribute of the element to a user defined binding, as well as the `name` attribute to the name of the user defined binding.</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32747932"
 ---
 # <a name="ltdiagnosticsgt-for-activation"></a><span data-ttu-id="57ee3-102">アクティベーションの &lt;diagnostics&gt;</span><span class="sxs-lookup"><span data-stu-id="57ee3-102">&lt;diagnostics&gt; for Activation</span></span>
 <span data-ttu-id="57ee3-103">Windows Communication Foundation (WCF) リスナーの診断機能を構成します。</span><span class="sxs-lookup"><span data-stu-id="57ee3-103">Configures Windows Communication Foundation (WCF) listener's diagnostics functionalities.</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32760207"
 ---
 # <a name="except-entity-sql"></a><span data-ttu-id="7db96-102">EXCEPT (Entity SQL)</span><span class="sxs-lookup"><span data-stu-id="7db96-102">EXCEPT (Entity SQL)</span></span>
 <span data-ttu-id="7db96-103">EXCEPT オペランドの左辺のクエリ式から返される結果のうち、右辺のクエリ式でも返される結果を除いた、重複しない値のコレクションを返します。</span><span class="sxs-lookup"><span data-stu-id="7db96-103">Returns a collection of any distinct values from the query expression to the left of the EXCEPT operand that are not also returned from the query expression to the right of the EXCEPT operand.</span></span> <span data-ttu-id="7db96-104">すべての式は、 `expression`と同じ型であるか、共通の基本型または派生型である必要があります。</span><span class="sxs-lookup"><span data-stu-id="7db96-104">All expressions must be of the same type or of a common base or derived type as `expression`.</span></span>  

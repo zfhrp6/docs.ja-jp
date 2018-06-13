@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32747750"
 ---
 # <a name="ltbindingelementextensionsgt"></a><span data-ttu-id="bf750-102">&lt;bindingElementExtensions&gt;</span><span class="sxs-lookup"><span data-stu-id="bf750-102">&lt;bindingElementExtensions&gt;</span></span>
 <span data-ttu-id="bf750-103">このセクションは、コンピューターまたはアプリケーションの構成ファイルからカスタム バインド要素を使用できます。</span><span class="sxs-lookup"><span data-stu-id="bf750-103">This section enables the use of a custom binding element from a machine or application configuration file.</span></span> <span data-ttu-id="bf750-104">このコレクションにカスタム バインディング要素を追加するには、`add` キーワードを使用し、要素の `type` 属性をバインディング要素拡張に設定して、`name` 属性をカスタム バインディング要素に設定します。</span><span class="sxs-lookup"><span data-stu-id="bf750-104">You can add a custom binding element to this collection by using the `add` keyword, and setting the `type` attribute of the element to a binding element extension, as well as the `name` attribute to the custom binding element.</span></span>  

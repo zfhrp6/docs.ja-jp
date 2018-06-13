@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32760272"
 ---
 # <a name="summary-of-the-dataset-schema-inference-process"></a><span data-ttu-id="04e56-102">DataSet スキーマの推論プロセスの概要</span><span class="sxs-lookup"><span data-stu-id="04e56-102">Summary of the DataSet Schema Inference Process</span></span>
 <span data-ttu-id="04e56-103">推論プロセスでは、まず、テーブルとして推論する XML ドキュメントの要素を決定します。</span><span class="sxs-lookup"><span data-stu-id="04e56-103">The inference process first determines, from the XML document, which elements will be inferred as tables.</span></span> <span data-ttu-id="04e56-104">XML ドキュメントの残りの要素から、それらのテーブルの列が推論によって決定されます。</span><span class="sxs-lookup"><span data-stu-id="04e56-104">From the remaining XML, the inference process determines the columns for those tables.</span></span> <span data-ttu-id="04e56-105">入れ子状のテーブルの場合は、入れ子になった <xref:System.Data.DataRelation> オブジェクトと <xref:System.Data.ForeignKeyConstraint> オブジェクトが生成されます。</span><span class="sxs-lookup"><span data-stu-id="04e56-105">For nested tables, the inference process generates nested <xref:System.Data.DataRelation> and <xref:System.Data.ForeignKeyConstraint> objects.</span></span>  

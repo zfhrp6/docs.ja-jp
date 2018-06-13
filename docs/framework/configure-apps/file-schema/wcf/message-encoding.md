@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32752495"
 ---
 # <a name="message-encoding"></a><span data-ttu-id="bd67b-102">メッセージ エンコーディング</span><span class="sxs-lookup"><span data-stu-id="bd67b-102">Message Encoding</span></span>
 <span data-ttu-id="bd67b-103">エンコーディングは、Unicode 文字のセットをバイト シーケンスに変換するプロセスです。</span><span class="sxs-lookup"><span data-stu-id="bd67b-103">Encoding is the process of transforming a set of Unicode characters into a sequence of bytes.</span></span> <span data-ttu-id="bd67b-104">デコードは、その逆のプロセスです。</span><span class="sxs-lookup"><span data-stu-id="bd67b-104">Decoding is the reverse process.</span></span> <span data-ttu-id="bd67b-105">WCF (Windows Communication Foundation) には、SOAP メッセージのエンコードとして、テキスト、バイナリ、および MTOM (Message Transmission Optimization Mechanism) の 3 種類があります。</span><span class="sxs-lookup"><span data-stu-id="bd67b-105">Windows Communication Foundation (WCF) includes three types of encoding for SOAP messages: Text, Binary and Message Transmission Optimization Mechanism (MTOM).</span></span>  

@@ -16,6 +16,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32746356"
 ---
 # <a name="ltoidentrygt-element"></a><span data-ttu-id="17843-102">&lt;oidEntry&gt;要素</span><span class="sxs-lookup"><span data-stu-id="17843-102">&lt;oidEntry&gt; Element</span></span>
 <span data-ttu-id="17843-103">ASN.1 オブジェクト識別子 (OID) を表示名にマップします。</span><span class="sxs-lookup"><span data-stu-id="17843-103">Maps an ASN.1 object identifier (OID) to a friendly name.</span></span>  

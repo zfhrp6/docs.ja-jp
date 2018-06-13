@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32762518"
 ---
 # <a name="constant-expressions"></a><span data-ttu-id="ec424-102">定数式</span><span class="sxs-lookup"><span data-stu-id="ec424-102">Constant Expressions</span></span>
 <span data-ttu-id="ec424-103">定数式は、定数値で構成されています。</span><span class="sxs-lookup"><span data-stu-id="ec424-103">A constant expression consists of a constant value.</span></span> <span data-ttu-id="ec424-104">定数値は、クライアント側で変換されることなく、コマンド ツリーの定数式に直接変換されます。</span><span class="sxs-lookup"><span data-stu-id="ec424-104">Constant values are directly converted to constant command tree expressions, without any translation on the client.</span></span> <span data-ttu-id="ec424-105">これには、定数値になる式が含まれます。</span><span class="sxs-lookup"><span data-stu-id="ec424-105">This includes expressions that result in a constant value.</span></span> <span data-ttu-id="ec424-106">したがって、定数にかかわるすべての式でデータ ソースの動作が、予期したとおりになります。</span><span class="sxs-lookup"><span data-stu-id="ec424-106">Therefore, data source behavior should be expected for all expressions involving constants.</span></span> <span data-ttu-id="ec424-107">これは CLR の動作とは異なる結果となります。</span><span class="sxs-lookup"><span data-stu-id="ec424-107">This can result in behavior that differs from CLR behavior.</span></span>  

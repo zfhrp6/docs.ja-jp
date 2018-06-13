@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33566744"
 ---
 # <a name="property-animation-techniques-overview"></a><span data-ttu-id="02b95-102">プロパティ アニメーションの手法の概要</span><span class="sxs-lookup"><span data-stu-id="02b95-102">Property Animation Techniques Overview</span></span>
 <span data-ttu-id="02b95-103">このトピックでは、ストーリーボード、ローカル アニメーション、クロック、フレームごとのアニメーションなど、プロパティをアニメーション化するさまざまなアプローチについて説明します。</span><span class="sxs-lookup"><span data-stu-id="02b95-103">This topic describes the different approaches for animating properties: storyboards, local animations, clocks, and per-frame animations.</span></span>  

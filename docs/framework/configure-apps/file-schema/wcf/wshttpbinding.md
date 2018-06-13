@@ -9,6 +9,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32762261"
 ---
 # <a name="ltwshttpbindinggt"></a><span data-ttu-id="cd137-102">&lt;wsHttpBinding&gt;</span><span class="sxs-lookup"><span data-stu-id="cd137-102">&lt;wsHttpBinding&gt;</span></span>
 <span data-ttu-id="cd137-103">双方向サービス コントラクト以外に適した、安全で信頼のおける相互操作可能なバインディングを定義します。</span><span class="sxs-lookup"><span data-stu-id="cd137-103">Defines a secure, reliable, interoperable binding suitable for non-duplex service contracts.</span></span> <span data-ttu-id="cd137-104">バインディングは、信頼のための WS-ReliableMessaging、およびメッセージのセキュリティと認証のための WS-Security を実装します。</span><span class="sxs-lookup"><span data-stu-id="cd137-104">The binding implements the following specifications: WS-Reliable Messaging for reliability, and WS-Security for message security and authentication.</span></span> <span data-ttu-id="cd137-105">トランスポートは HTTP、メッセージ エンコーディングは Text/XML エンコーディングです。</span><span class="sxs-lookup"><span data-stu-id="cd137-105">The transport is HTTP, and message encoding is Text/XML encoding.</span></span>  

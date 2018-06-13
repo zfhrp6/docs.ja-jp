@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32748021"
 ---
 # <a name="ltclaimtyperequirementsgt-element"></a><span data-ttu-id="75b7c-102">&lt;claimTypeRequirements&gt; 要素</span><span class="sxs-lookup"><span data-stu-id="75b7c-102">&lt;claimTypeRequirements&gt; element</span></span>
 <span data-ttu-id="75b7c-103">必須のクレームの種類のコレクションを指定します。</span><span class="sxs-lookup"><span data-stu-id="75b7c-103">Specifies a collection of required claim types.</span></span>  

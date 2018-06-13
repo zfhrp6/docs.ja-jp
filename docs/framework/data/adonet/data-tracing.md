@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32758504"
 ---
 # <a name="data-tracing-in-adonet"></a><span data-ttu-id="07605-102">ADO.NET のデータ追跡</span><span class="sxs-lookup"><span data-stu-id="07605-102">Data Tracing in ADO.NET</span></span>
 <span data-ttu-id="07605-103">SQL Server、Oracle、OLE DB と ODBC だけでなく、ADO.NET の .NET データ プロバイダーでサポートされている組み込みデータ トレース機能を搭載した ADO.NET <xref:System.Data.DataSet>、および SQL Server のネットワーク プロトコルです。</span><span class="sxs-lookup"><span data-stu-id="07605-103">ADO.NET features built-in data tracing functionality that is supported by the .NET data providers for SQL Server, Oracle, OLE DB and ODBC, as well as the ADO.NET <xref:System.Data.DataSet>, and the SQL Server network protocols.</span></span>  

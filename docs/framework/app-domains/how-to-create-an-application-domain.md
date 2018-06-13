@@ -15,6 +15,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32751779"
 ---
 # <a name="how-to-create-an-application-domain"></a><span data-ttu-id="8b177-102">方法 : アプリケーション ドメインを作成する</span><span class="sxs-lookup"><span data-stu-id="8b177-102">How to: Create an Application Domain</span></span>
 <span data-ttu-id="8b177-103">共通言語ランタイム ホストにより、必要なときに、アプリケーション ドメインが自動的に作成されます。</span><span class="sxs-lookup"><span data-stu-id="8b177-103">A common language runtime host creates application domains automatically when they are needed.</span></span> <span data-ttu-id="8b177-104">ただし、独自のアプリケーション ドメインを作成し、個人的に管理するアセンブリにそれを読み込むことができます。</span><span class="sxs-lookup"><span data-stu-id="8b177-104">However, you can create your own application domains and load into them those assemblies that you want to manage personally.</span></span> <span data-ttu-id="8b177-105">アプリケーション ドメインを作成し、そこからコードを実行することもできます。</span><span class="sxs-lookup"><span data-stu-id="8b177-105">You can also create application domains from which you execute code.</span></span>  

@@ -9,6 +9,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32757471"
 ---
 # <a name="lttrustedissuersgt"></a><span data-ttu-id="32652-102">&lt;trustedIssuers&gt;</span><span class="sxs-lookup"><span data-stu-id="32652-102">&lt;trustedIssuers&gt;</span></span>
 <span data-ttu-id="32652-103">構成ベースの発行者名レジストリによって使用される信頼された発行者の証明書の一覧の構成 (<xref:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry>)。</span><span class="sxs-lookup"><span data-stu-id="32652-103">Configures the list of trusted issuer certificates used by the configuration-based issuer name registry (<xref:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry>).</span></span>  

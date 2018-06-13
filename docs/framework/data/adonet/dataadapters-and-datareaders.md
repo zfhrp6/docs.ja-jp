@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32758101"
 ---
 # <a name="dataadapters-and-datareaders"></a><span data-ttu-id="122ae-102">DataAdapter と DataReader</span><span class="sxs-lookup"><span data-stu-id="122ae-102">DataAdapters and DataReaders</span></span>
 <span data-ttu-id="122ae-103">ADO.NET を使用する**DataReader**をデータベースからデータの読み取り専用、前方参照専用のストリームを取得します。</span><span class="sxs-lookup"><span data-stu-id="122ae-103">You can use the ADO.NET **DataReader** to retrieve a read-only, forward-only stream of data from a database.</span></span> <span data-ttu-id="122ae-104">結果が返されるように、クエリが実行され、それらを要求するまで、クライアントのネットワーク バッファーに格納されますを使用して、**読み取り**のメソッド、 **DataReader**です。</span><span class="sxs-lookup"><span data-stu-id="122ae-104">Results are returned as the query executes, and are stored in the network buffer on the client until you request them using the **Read** method of the **DataReader**.</span></span> <span data-ttu-id="122ae-105">使用して、 **DataReader** 、使用可能になるとすぐにデータを取得して (既定) の両方に、アプリケーションのパフォーマンスを向上できるメモリ、システムのオーバーヘッドを減らすことで、一度に 1 行のみを格納します。</span><span class="sxs-lookup"><span data-stu-id="122ae-105">Using the **DataReader** can increase application performance both by retrieving data as soon as it is available, and (by default) storing only one row at a time in memory, reducing system overhead.</span></span>  

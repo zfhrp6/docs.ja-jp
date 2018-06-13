@@ -23,6 +23,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33592120"
 ---
 # <a name="string-data-type-visual-basic"></a><span data-ttu-id="7de02-102">文字列型 (String) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="7de02-102">String Data Type (Visual Basic)</span></span>
 <span data-ttu-id="7de02-103">0 ~ 65535 の値の符号なし 16 ビット (2 バイト) コード ポイントのシーケンスの範囲を保持します。</span><span class="sxs-lookup"><span data-stu-id="7de02-103">Holds sequences of unsigned 16-bit (2-byte) code points that range in value from 0 through 65535.</span></span> <span data-ttu-id="7de02-104">各*コード ポイントが*、または文字コードを 1 つの Unicode 文字を表します。</span><span class="sxs-lookup"><span data-stu-id="7de02-104">Each *code point*, or character code, represents a single Unicode character.</span></span> <span data-ttu-id="7de02-105">文字列は、0 からおよそ 20億を含めることができます (2 ^31) の Unicode 文字。</span><span class="sxs-lookup"><span data-stu-id="7de02-105">A string can contain from 0 to approximately two billion (2 ^ 31) Unicode characters.</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32750649"
 ---
 # <a name="lttransportgt-of-ltmsmqintegrationbindinggt"></a><span data-ttu-id="7e439-102">&lt;msmqIntegrationBinding&gt; の &lt;transport&gt;</span><span class="sxs-lookup"><span data-stu-id="7e439-102">&lt;transport&gt; of &lt;msmqIntegrationBinding&gt;</span></span>
 <span data-ttu-id="7e439-103">メッセージ キュー統合トランスポートのセキュリティ設定を定義します。</span><span class="sxs-lookup"><span data-stu-id="7e439-103">Defines the security settings for the Message Queuing integration transport.</span></span>  

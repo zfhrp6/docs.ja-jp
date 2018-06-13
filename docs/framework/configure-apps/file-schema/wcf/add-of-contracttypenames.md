@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32750194"
 ---
 # <a name="ltaddgt-of-ltcontracttypenamesgt"></a><span data-ttu-id="8d4d2-102">&lt;contractTypeNames&gt; の &lt;add&gt;</span><span class="sxs-lookup"><span data-stu-id="8d4d2-102">&lt;add&gt; of &lt;contractTypeNames&gt;</span></span>
 <span data-ttu-id="8d4d2-103">検索対象サービスのコントラクト名と、サービスを検索するときに一般的に使用される条件を指定する構成要素。</span><span class="sxs-lookup"><span data-stu-id="8d4d2-103">A configuration element that specifies the contract name of the services being searched for, and the criteria typically used when searching for a service.</span></span> <span data-ttu-id="8d4d2-104">複数のコントラクト名が指定されると、すべてのコントラクトに一致するサービス エンドポイントのみが適用されます。</span><span class="sxs-lookup"><span data-stu-id="8d4d2-104">If more than one contract name is specified, only service endpoints matching ALL contracts will reply.</span></span> <span data-ttu-id="8d4d2-105">Windows Communication Foundation (WCF) では、エンドポイントがのみサポートしている 1 つのコントラクトに注意してください。</span><span class="sxs-lookup"><span data-stu-id="8d4d2-105">Note that in Windows Communication Foundation (WCF), an endpoint can only support one contract.</span></span>  

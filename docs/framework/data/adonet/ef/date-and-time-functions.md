@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32761117"
 ---
 # <a name="date-and-time-functions"></a><span data-ttu-id="246ef-102">日付と時刻関数</span><span class="sxs-lookup"><span data-stu-id="246ef-102">Date and Time Functions</span></span>
 <span data-ttu-id="246ef-103">.NET Framework Data Provider for SQL Server (SqlClient) には、`System.DateTime` 型の入力値に対して操作を実行し、`string`、数値、または `System.DateTime` 値の結果を返す日付と時刻関数が用意されています。</span><span class="sxs-lookup"><span data-stu-id="246ef-103">The .NET Framework Data Provider for SQL Server (SqlClient) provides date and time functions that perform operations on a `System.DateTime` input value and return a `string`, numeric, or `System.DateTime` value result.</span></span> <span data-ttu-id="246ef-104">これらの関数は、SqlClient の SqlServer 名前空間に存在します。</span><span class="sxs-lookup"><span data-stu-id="246ef-104">These functions are in the SqlServer namespace, which is available when you use SqlClient.</span></span> <span data-ttu-id="246ef-105">Entity Framework は、プロバイダーの名前空間プロパティを使用することにより、型や関数など、特定のコンストラクターに対してこのプロバイダーによってどのプレフィックスが使用されているかを特定できます。次の表に、SqlClient の日付と時刻関数を示します。</span><span class="sxs-lookup"><span data-stu-id="246ef-105">A provider's namespace property allows the Entity Framework to discover which prefix is used by this provider for specific constructs, such as types and functions.The following table shows the SqlClient date and time functions.</span></span>  

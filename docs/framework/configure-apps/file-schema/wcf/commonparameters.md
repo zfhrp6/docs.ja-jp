@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32749440"
 ---
 # <a name="ltcommonparametersgt"></a><span data-ttu-id="e591f-102">&lt;commonParameters&gt;</span><span class="sxs-lookup"><span data-stu-id="e591f-102">&lt;commonParameters&gt;</span></span>
 <span data-ttu-id="e591f-103">複数のサービスでグローバルに使用されるパラメーターのコレクションを表します。</span><span class="sxs-lookup"><span data-stu-id="e591f-103">Represents a collection of parameters that are used globally across multiple services.</span></span> <span data-ttu-id="e591f-104">このコレクションには通常、永続性サービスによって共有されるデータベース接続文字列が格納されます。</span><span class="sxs-lookup"><span data-stu-id="e591f-104">This collection will typically include the database connection string that might be shared by durable services.</span></span>  

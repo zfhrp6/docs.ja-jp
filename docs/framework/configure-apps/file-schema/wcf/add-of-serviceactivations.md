@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32745826"
 ---
 # <a name="ltaddgt-of-ltserviceactivationsgt"></a><span data-ttu-id="0b7dc-102">&lt;serviceActivations&gt; の &lt;add&gt;</span><span class="sxs-lookup"><span data-stu-id="0b7dc-102">&lt;add&gt; of &lt;serviceActivations&gt;</span></span>
 <span data-ttu-id="0b7dc-103">Windows Communication Foundation (WCF) サービスの型にマップする仮想サービス アクティベーション設定を定義できる構成要素。</span><span class="sxs-lookup"><span data-stu-id="0b7dc-103">A configuration element that allows you to define virtual service activation settings that map to your Windows Communication Foundation (WCF) service types.</span></span> <span data-ttu-id="0b7dc-104">これにより、.svc ファイルを使用せずに、WAS/IIS でホストされているサービスをアクティブ化できます。</span><span class="sxs-lookup"><span data-stu-id="0b7dc-104">This makes it possible to activate services hosted in WAS/IIS without an .svc file.</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32760987"
 ---
 # <a name="mapping-xml-schema-xsd-constraints-to-dataset-constraints"></a><span data-ttu-id="82989-102">XML スキーマ (XSD) 制約の DataSet 制約への割り当て</span><span class="sxs-lookup"><span data-stu-id="82989-102">Mapping XML Schema (XSD) Constraints to DataSet Constraints</span></span>
 <span data-ttu-id="82989-103">XML スキーマ定義言語 (XSD) を使用すると、定義する要素と属性で制約を指定できます。</span><span class="sxs-lookup"><span data-stu-id="82989-103">The XML Schema definition language (XSD) allows constraints to be specified on the elements and attributes it defines.</span></span> <span data-ttu-id="82989-104">内のリレーショナル スキーマに XML スキーマをマップするとき、 <xref:System.Data.DataSet>、XML スキーマの制約は、テーブルや列内で適切なリレーショナル制約にマップされて、**データセット**です。</span><span class="sxs-lookup"><span data-stu-id="82989-104">When mapping an XML Schema to relational schema in a <xref:System.Data.DataSet>, XML Schema constraints are mapped to appropriate relational constraints on the tables and columns within the **DataSet**.</span></span>  

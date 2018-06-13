@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32751013"
 ---
 # <a name="ltdefaultcertificategt-element"></a><span data-ttu-id="2d07d-102">&lt;defaultCertificate&gt; 要素</span><span class="sxs-lookup"><span data-stu-id="2d07d-102">&lt;defaultCertificate&gt; Element</span></span>
 <span data-ttu-id="2d07d-103">ネゴシエーション プロトコル経由でサービスまたは STS が証明書を提供しないときに使用される X.509 証明書を指定します。</span><span class="sxs-lookup"><span data-stu-id="2d07d-103">Specifies an X.509 certificate to be used when a service or STS does not provide one via a negotiation protocol.</span></span>  

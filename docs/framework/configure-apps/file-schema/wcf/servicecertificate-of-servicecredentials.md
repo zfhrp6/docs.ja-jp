@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32750870"
 ---
 # <a name="ltservicecertificategt-of-ltservicecredentialsgt"></a><span data-ttu-id="c1a24-102">&lt;serviceCredentials&gt; の &lt;serviceCertificate&gt;</span><span class="sxs-lookup"><span data-stu-id="c1a24-102">&lt;serviceCertificate&gt; of &lt;serviceCredentials&gt;</span></span>
 <span data-ttu-id="c1a24-103">メッセージ セキュリティ モードを使用しているクライアントへのサービスの認証に使用する X.509 証明書を指定します。</span><span class="sxs-lookup"><span data-stu-id="c1a24-103">Specify an X.509 certificate that will be used to authenticate the service to clients using Message security mode.</span></span>  

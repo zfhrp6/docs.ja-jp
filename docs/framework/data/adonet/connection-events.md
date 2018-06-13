@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32758160"
 ---
 # <a name="connection-events"></a><span data-ttu-id="81ba4-102">接続イベント</span><span class="sxs-lookup"><span data-stu-id="81ba4-102">Connection Events</span></span>
 <span data-ttu-id="81ba4-103">すべての .NET Framework データ プロバイダーが**接続**データ ソースから情報メッセージを取得するかどうかを判断に使用できる 2 つのイベントを持つオブジェクトの状態、**接続**が変更されました。</span><span class="sxs-lookup"><span data-stu-id="81ba4-103">All of the .NET Framework data providers have **Connection** objects with two events that you can use to retrieve informational messages from a data source or to determine if the state of a **Connection** has changed.</span></span> <span data-ttu-id="81ba4-104">次の表に、イベント、**接続**オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="81ba4-104">The following table describes the events of the **Connection** object.</span></span>  
