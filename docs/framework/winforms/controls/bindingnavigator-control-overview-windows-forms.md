@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33528783"
 ---
 # <a name="bindingnavigator-control-overview-windows-forms"></a><span data-ttu-id="86357-102">BindingNavigator コントロールの概要 (Windows フォーム)</span><span class="sxs-lookup"><span data-stu-id="86357-102">BindingNavigator Control Overview (Windows Forms)</span></span>
 <span data-ttu-id="86357-103"><xref:System.Windows.Forms.BindingNavigator> コントロールを使用して、ユーザーが Windows フォームでデータを検索して変更するための標準化された手段を作成できます。</span><span class="sxs-lookup"><span data-stu-id="86357-103">You can use the <xref:System.Windows.Forms.BindingNavigator> control to create a standardized means for users to search and change data on a Windows Form.</span></span> <span data-ttu-id="86357-104"><xref:System.Windows.Forms.BindingNavigator> を <xref:System.Windows.Forms.BindingSource> コンポーネントと共に頻繁に使用して、ユーザーがフォームのデータ レコードを移動して、レコードと対話できるようにします。</span><span class="sxs-lookup"><span data-stu-id="86357-104">You frequently use <xref:System.Windows.Forms.BindingNavigator> with the <xref:System.Windows.Forms.BindingSource> component to enable users to move through data records on a form and interact with the records.</span></span>  

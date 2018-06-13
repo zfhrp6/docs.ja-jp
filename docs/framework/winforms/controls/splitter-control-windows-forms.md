@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33534639"
 ---
 # <a name="splitter-control-windows-forms"></a><span data-ttu-id="972ad-102">Splitter コントロール (Windows フォーム)</span><span class="sxs-lookup"><span data-stu-id="972ad-102">Splitter Control (Windows Forms)</span></span>
 <span data-ttu-id="972ad-103">Windows フォーム`Splitter`コントロールを使用すると、実行時にドッキングされたコントロールのサイズを変更します。</span><span class="sxs-lookup"><span data-stu-id="972ad-103">Windows Forms `Splitter` controls are used to resize docked controls at run time.</span></span> <span data-ttu-id="972ad-104">`Splitter`コントロールがフォーム上のコントロールを持つデータ ペインには、異なる時刻でさまざまな幅の情報が含まれて、Windows エクスプ ローラーのように、提示するデータのさまざまな長さでよく使用します。</span><span class="sxs-lookup"><span data-stu-id="972ad-104">The `Splitter` control is often used on forms with controls that have varying lengths of data to present, like Windows Explorer, whose data panes contain information of varying widths at different times.</span></span>  

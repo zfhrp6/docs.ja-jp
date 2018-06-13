@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33537042"
 ---
 # <a name="how-to-set-the-input-mask"></a><span data-ttu-id="afa9f-102">方法 : 定型入力を設定する</span><span class="sxs-lookup"><span data-stu-id="afa9f-102">How to: Set the Input Mask</span></span>
 <span data-ttu-id="afa9f-103">マスクされたテキスト ボックス コントロールは、承認または拒否するユーザー入力の宣言の構文をサポートする高度なテキスト ボックス コントロールです。</span><span class="sxs-lookup"><span data-stu-id="afa9f-103">The masked text box control is an enhanced text box control that supports a declarative syntax for accepting or rejecting user input.</span></span> <span data-ttu-id="afa9f-104">マスクのプロパティの設定によって、アプリケーションで任意のカスタム検証ロジックを記述することがなく、許容されるユーザー入力を指定できます。</span><span class="sxs-lookup"><span data-stu-id="afa9f-104">By setting the Mask property, you can specify the allowable user input without writing any custom validation logic in your application.</span></span> <span data-ttu-id="afa9f-105">詳細については、の「解説」セクションを参照してください、<xref:System.Windows.Forms.MaskedTextBox>クラスです。</span><span class="sxs-lookup"><span data-stu-id="afa9f-105">For more information, see the Remarks section of the <xref:System.Windows.Forms.MaskedTextBox> class.</span></span>  

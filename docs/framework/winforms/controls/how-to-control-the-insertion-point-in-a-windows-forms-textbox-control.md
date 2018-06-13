@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33530739"
 ---
 # <a name="how-to-control-the-insertion-point-in-a-windows-forms-textbox-control"></a><span data-ttu-id="fd588-102">方法 : Windows フォーム TextBox コントロールでのカーソル位置を制御する</span><span class="sxs-lookup"><span data-stu-id="fd588-102">How to: Control the Insertion Point in a Windows Forms TextBox Control</span></span>
 <span data-ttu-id="fd588-103">Windows フォーム<xref:System.Windows.Forms.TextBox>コントロールが最初にフォーカスを受け取る、既存のテキストの左側には、テキスト ボックス内の既定のカーソル。</span><span class="sxs-lookup"><span data-stu-id="fd588-103">When a Windows Forms <xref:System.Windows.Forms.TextBox> control first receives the focus, the default insertion within the text box is to the left of any existing text.</span></span> <span data-ttu-id="fd588-104">ユーザーは、キーボードまたはマウスのカーソルを移動できます。</span><span class="sxs-lookup"><span data-stu-id="fd588-104">The user can move the insertion point with the keyboard or the mouse.</span></span> <span data-ttu-id="fd588-105">テキスト ボックスを失い、フォーカスを得た場合、挿入ポイントされます任意の場所、ユーザー最後置かれます。</span><span class="sxs-lookup"><span data-stu-id="fd588-105">If the text box loses and then regains the focus, the insertion point will be wherever the user last placed it.</span></span>  

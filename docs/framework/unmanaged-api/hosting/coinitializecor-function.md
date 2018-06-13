@@ -1,14 +1,6 @@
 ---
-title: "CoInitializeCor 関数"
-ms.custom: 
+title: CoInitializeCor 関数
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - CoInitializeCor
 api_location:
@@ -22,22 +14,19 @@ helpviewer_keywords:
 ms.assetid: 9b9079fb-579e-4141-b3f0-791072dd40dc
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: fe40e7ccbf944310a2afe649dc0bb967c0807bac
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 91315e8af0cc46a3450a7515b885988cffe34927
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33429989"
 ---
-# <a name="coinitializecor-function"></a><span data-ttu-id="84dd0-102">CoInitializeCor 関数</span><span class="sxs-lookup"><span data-stu-id="84dd0-102">CoInitializeCor Function</span></span>
-<span data-ttu-id="84dd0-103">`CoInitializeCor` は互換性のために残されています。</span><span class="sxs-lookup"><span data-stu-id="84dd0-103">`CoInitializeCor` is obsolete.</span></span>  
+# <a name="coinitializecor-function"></a><span data-ttu-id="9b60b-102">CoInitializeCor 関数</span><span class="sxs-lookup"><span data-stu-id="9b60b-102">CoInitializeCor Function</span></span>
+<span data-ttu-id="9b60b-103">`CoInitializeCor` は互換性のために残されています。</span><span class="sxs-lookup"><span data-stu-id="9b60b-103">`CoInitializeCor` is obsolete.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="84dd0-104">構文</span><span class="sxs-lookup"><span data-stu-id="84dd0-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="9b60b-104">構文</span><span class="sxs-lookup"><span data-stu-id="9b60b-104">Syntax</span></span>  
   
 ```  
 STDAPI CoInitializeCor (  
@@ -45,11 +34,11 @@ STDAPI CoInitializeCor (
 );  
 ```  
   
-## <a name="remarks"></a><span data-ttu-id="84dd0-105">コメント</span><span class="sxs-lookup"><span data-stu-id="84dd0-105">Remarks</span></span>  
- <span data-ttu-id="84dd0-106">共通言語ランタイムを初期化するには、いずれかを使用[CorBindToRuntimeEx](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md)または[CorBindToCurrentRuntime](../../../../docs/framework/unmanaged-api/hosting/corbindtocurrentruntime-function.md)です。</span><span class="sxs-lookup"><span data-stu-id="84dd0-106">To initialize the common language runtime, use either [CorBindToRuntimeEx](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md) or [CorBindToCurrentRuntime](../../../../docs/framework/unmanaged-api/hosting/corbindtocurrentruntime-function.md).</span></span>  
+## <a name="remarks"></a><span data-ttu-id="9b60b-105">コメント</span><span class="sxs-lookup"><span data-stu-id="9b60b-105">Remarks</span></span>  
+ <span data-ttu-id="9b60b-106">共通言語ランタイムを初期化するには、いずれかを使用[CorBindToRuntimeEx](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md)または[CorBindToCurrentRuntime](../../../../docs/framework/unmanaged-api/hosting/corbindtocurrentruntime-function.md)です。</span><span class="sxs-lookup"><span data-stu-id="9b60b-106">To initialize the common language runtime, use either [CorBindToRuntimeEx](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md) or [CorBindToCurrentRuntime](../../../../docs/framework/unmanaged-api/hosting/corbindtocurrentruntime-function.md).</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="84dd0-107">必要条件</span><span class="sxs-lookup"><span data-stu-id="84dd0-107">Requirements</span></span>  
- <span data-ttu-id="84dd0-108">**ヘッダー:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="84dd0-108">**Header:** Cor.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="9b60b-107">要件</span><span class="sxs-lookup"><span data-stu-id="9b60b-107">Requirements</span></span>  
+ <span data-ttu-id="9b60b-108">**ヘッダー:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="9b60b-108">**Header:** Cor.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="84dd0-109">参照</span><span class="sxs-lookup"><span data-stu-id="84dd0-109">See Also</span></span>  
- [<span data-ttu-id="84dd0-110">メタデータ グローバル静的関数</span><span class="sxs-lookup"><span data-stu-id="84dd0-110">Metadata Global Static Functions</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-global-static-functions.md)
+## <a name="see-also"></a><span data-ttu-id="9b60b-109">関連項目</span><span class="sxs-lookup"><span data-stu-id="9b60b-109">See Also</span></span>  
+ [<span data-ttu-id="9b60b-110">メタデータ グローバル静的関数</span><span class="sxs-lookup"><span data-stu-id="9b60b-110">Metadata Global Static Functions</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-global-static-functions.md)

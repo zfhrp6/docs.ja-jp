@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33532175"
 ---
 # <a name="how-to-custom-draw-a-toolstrip-control"></a><span data-ttu-id="96316-102">方法 : ToolStrip コントロールをカスタム描画する</span><span class="sxs-lookup"><span data-stu-id="96316-102">How to: Custom Draw a ToolStrip Control</span></span>
 <span data-ttu-id="96316-103"><xref:System.Windows.Forms.ToolStrip> コントロールに、次のレンダリング (描画) クラスが関連付けられています。</span><span class="sxs-lookup"><span data-stu-id="96316-103">The <xref:System.Windows.Forms.ToolStrip> controls have the following associated rendering (painting) classes:</span></span>  

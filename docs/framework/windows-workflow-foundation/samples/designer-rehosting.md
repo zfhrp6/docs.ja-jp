@@ -1,39 +1,29 @@
 ---
-title: "デザイナーのホスト変更"
-ms.custom: 
+title: デザイナーのホスト変更
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: b676ad31-5f64-4d84-9a36-b4d7113a2f4d
-caps.latest.revision: "9"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 44577450bb81e255caf22f306dcd0276821d262c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 3caff782dcb7ce2434960e24c4586877788da653
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33516150"
 ---
-# <a name="designer-rehosting"></a><span data-ttu-id="b2eef-102">デザイナーのホスト変更</span><span class="sxs-lookup"><span data-stu-id="b2eef-102">Designer ReHosting</span></span>
-<span data-ttu-id="b2eef-103">デザイナーのホスト変更は、カスタム アプリケーション内でワークフロー デザイン キャンバスをホストすることを示す一般的なシナリオです。</span><span class="sxs-lookup"><span data-stu-id="b2eef-103">Designer rehosting is a common scenario that refers to hosting the workflow design canvas inside of a custom application.</span></span> <span data-ttu-id="b2eef-104">多くのユーザーにとって、使い慣れたホスト アプリケーションは Visual Studio ですが、アプリケーションでワークフロー デザイナーを表示すると役立つ場合があるシナリオも数多くあります。</span><span class="sxs-lookup"><span data-stu-id="b2eef-104">The hosting application most people are familiar with is Visual Studio, however there are a number of scenarios where showing the workflow designer in an application may be useful:</span></span>  
+# <a name="designer-rehosting"></a><span data-ttu-id="0873d-102">デザイナーのホスト変更</span><span class="sxs-lookup"><span data-stu-id="0873d-102">Designer ReHosting</span></span>
+<span data-ttu-id="0873d-103">デザイナーのホスト変更は、カスタム アプリケーション内でワークフロー デザイン キャンバスをホストすることを示す一般的なシナリオです。</span><span class="sxs-lookup"><span data-stu-id="0873d-103">Designer rehosting is a common scenario that refers to hosting the workflow design canvas inside of a custom application.</span></span> <span data-ttu-id="0873d-104">多くのユーザーにとって、使い慣れたホスト アプリケーションは Visual Studio ですが、アプリケーションでワークフロー デザイナーを表示すると役立つ場合があるシナリオも数多くあります。</span><span class="sxs-lookup"><span data-stu-id="0873d-104">The hosting application most people are familiar with is Visual Studio, however there are a number of scenarios where showing the workflow designer in an application may be useful:</span></span>  
   
--   <span data-ttu-id="b2eef-105">監視アプリケーション (エンド ユーザーがプロセス、およびプロセスに関するランタイム データ (現在アクティブな状態、実行時間の集計データ、ワークフローのインスタンスに関するその他の情報など) を表示できるようにします)。</span><span class="sxs-lookup"><span data-stu-id="b2eef-105">Monitoring applications (allowing an end user to visualize the process, as well as runtime data about the process such as the currently active state, aggregate execution time data, or other information about an instance of the workflow).</span></span>  
+-   <span data-ttu-id="0873d-105">監視アプリケーション (エンド ユーザーがプロセス、およびプロセスに関するランタイム データ (現在アクティブな状態、実行時間の集計データ、ワークフローのインスタンスに関するその他の情報など) を表示できるようにします)。</span><span class="sxs-lookup"><span data-stu-id="0873d-105">Monitoring applications (allowing an end user to visualize the process, as well as runtime data about the process such as the currently active state, aggregate execution time data, or other information about an instance of the workflow).</span></span>  
   
--   <span data-ttu-id="b2eef-106">ユーザーが限られたアクティビティ セットを使用してプロセスをカスタマイズできるようにするアプリケーション。</span><span class="sxs-lookup"><span data-stu-id="b2eef-106">Applications that allow a user to customize the process with a limited set of activities.</span></span>  
+-   <span data-ttu-id="0873d-106">ユーザーが限られたアクティビティ セットを使用してプロセスをカスタマイズできるようにするアプリケーション。</span><span class="sxs-lookup"><span data-stu-id="0873d-106">Applications that allow a user to customize the process with a limited set of activities.</span></span>  
   
- <span data-ttu-id="b2eef-107">このような種類のアプリケーションをサポートするために、ワークフロー デザイナーが .NET Framework に付属しており、WPF アプリケーション内でホストするか、適切な WPF ホスト コードを使用して WinForms アプリケーション内でホストすることができます。</span><span class="sxs-lookup"><span data-stu-id="b2eef-107">To support these types of applications, the workflow designer ships inside the .NET Framework, and can be hosted inside a WPF application, or in a WinForms application with the appropriate WPF hosting code.</span></span> <span data-ttu-id="b2eef-108">このサンプルでは、次の方法を示します。</span><span class="sxs-lookup"><span data-stu-id="b2eef-108">This sample demonstrates:</span></span>  
+ <span data-ttu-id="0873d-107">このような種類のアプリケーションをサポートするために、ワークフロー デザイナーが .NET Framework に付属しており、WPF アプリケーション内でホストするか、適切な WPF ホスト コードを使用して WinForms アプリケーション内でホストすることができます。</span><span class="sxs-lookup"><span data-stu-id="0873d-107">To support these types of applications, the workflow designer ships inside the .NET Framework, and can be hosted inside a WPF application, or in a WinForms application with the appropriate WPF hosting code.</span></span> <span data-ttu-id="0873d-108">このサンプルでは、次の方法を示します。</span><span class="sxs-lookup"><span data-stu-id="0873d-108">This sample demonstrates:</span></span>  
   
--   <span data-ttu-id="b2eef-109">WF デザイナーのホスト変更方法。</span><span class="sxs-lookup"><span data-stu-id="b2eef-109">Rehosting the WF designer.</span></span>  
+-   <span data-ttu-id="0873d-109">WF デザイナーのホスト変更方法。</span><span class="sxs-lookup"><span data-stu-id="0873d-109">Rehosting the WF designer.</span></span>  
   
--   <span data-ttu-id="b2eef-110">再ホストされたツールボックスおよびプロパティ グリッドの使用方法。</span><span class="sxs-lookup"><span data-stu-id="b2eef-110">Using the rehosted toolbox and property grid as well.</span></span>  
+-   <span data-ttu-id="0873d-110">再ホストされたツールボックスおよびプロパティ グリッドの使用方法。</span><span class="sxs-lookup"><span data-stu-id="0873d-110">Using the rehosted toolbox and property grid as well.</span></span>  
   
-## <a name="rehosting-the-designer"></a><span data-ttu-id="b2eef-111">デザイナーのホスト変更</span><span class="sxs-lookup"><span data-stu-id="b2eef-111">Rehosting the designer</span></span>  
- <span data-ttu-id="b2eef-112">このサンプルでは、次のグリッド レイアウトのような、デザイナーを含む WPF レイアウトを作成する方法を示します (スペースを考慮してツールボックス コードは省略しています)。</span><span class="sxs-lookup"><span data-stu-id="b2eef-112">This sample shows how to create the WPF layout to contain the designer, seen in the following grid layout (Toolbox code omitted for space concerns).</span></span> <span data-ttu-id="b2eef-113">デザイナーおよびプロパティ グリッドを含む罫線の名前に注意してください。</span><span class="sxs-lookup"><span data-stu-id="b2eef-113">Note the naming of the borders which contain the designer and property grid.</span></span>  
+## <a name="rehosting-the-designer"></a><span data-ttu-id="0873d-111">デザイナーのホスト変更</span><span class="sxs-lookup"><span data-stu-id="0873d-111">Rehosting the designer</span></span>  
+ <span data-ttu-id="0873d-112">このサンプルでは、次のグリッド レイアウトのような、デザイナーを含む WPF レイアウトを作成する方法を示します (スペースを考慮してツールボックス コードは省略しています)。</span><span class="sxs-lookup"><span data-stu-id="0873d-112">This sample shows how to create the WPF layout to contain the designer, seen in the following grid layout (Toolbox code omitted for space concerns).</span></span> <span data-ttu-id="0873d-113">デザイナーおよびプロパティ グリッドを含む罫線の名前に注意してください。</span><span class="sxs-lookup"><span data-stu-id="0873d-113">Note the naming of the borders which contain the designer and property grid.</span></span>  
   
 ```xaml  
 <Grid>  
@@ -50,7 +40,7 @@ ms.lasthandoff: 12/22/2017
 </Grid>  
 ```  
   
- <span data-ttu-id="b2eef-114">次に、このサンプルではデザイナーを作成し、そのプライマリ <xref:System.Activities.Presentation.WorkflowDesigner.View%2A> および <xref:System.Activities.Presentation.WorkflowDesigner.PropertyInspectorView%2A> をユーザー インターフェイスの適切なコンテナーに関連付けます。</span><span class="sxs-lookup"><span data-stu-id="b2eef-114">Next the sample creates the designer, and associates its primary <xref:System.Activities.Presentation.WorkflowDesigner.View%2A> and <xref:System.Activities.Presentation.WorkflowDesigner.PropertyInspectorView%2A> with the appropriate container in the user interface.</span></span> <span data-ttu-id="b2eef-115">次の例に示すいくつかのコード行について説明します。</span><span class="sxs-lookup"><span data-stu-id="b2eef-115">There are a few additional lines of code in the following example that merit some explanation.</span></span> <span data-ttu-id="b2eef-116"><xref:System.Activities.Core.Presentation.DesignerMetadata.Register%2A> 呼び出しは、[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] に付属しているアクティビティの既定のアクティビティ デザイナーを関連付けるために必要です。</span><span class="sxs-lookup"><span data-stu-id="b2eef-116">The <xref:System.Activities.Core.Presentation.DesignerMetadata.Register%2A> call is required to associate the default activity designers for the activities shipped with [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)].</span></span> <span data-ttu-id="b2eef-117"><xref:System.Activities.Presentation.WorkflowDesigner.Load%2A> は、編集する WF 項目を渡すために呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="b2eef-117"><xref:System.Activities.Presentation.WorkflowDesigner.Load%2A> is called to pass in the WF item to be edited.</span></span> <span data-ttu-id="b2eef-118">最後に、<xref:System.Activities.Presentation.WorkflowDesigner.View%2A> (プライマリ キャンバス) および <xref:System.Activities.Presentation.WorkflowDesigner.PropertyInspectorView%2A> (プロパティ グリッド) がユーザー インターフェイス画面に配置されます。</span><span class="sxs-lookup"><span data-stu-id="b2eef-118">Finally, the <xref:System.Activities.Presentation.WorkflowDesigner.View%2A> (primary canvas) and <xref:System.Activities.Presentation.WorkflowDesigner.PropertyInspectorView%2A> (property grid) are placed onto the user interface surface.</span></span>  
+ <span data-ttu-id="0873d-114">次に、このサンプルではデザイナーを作成し、そのプライマリ <xref:System.Activities.Presentation.WorkflowDesigner.View%2A> および <xref:System.Activities.Presentation.WorkflowDesigner.PropertyInspectorView%2A> をユーザー インターフェイスの適切なコンテナーに関連付けます。</span><span class="sxs-lookup"><span data-stu-id="0873d-114">Next the sample creates the designer, and associates its primary <xref:System.Activities.Presentation.WorkflowDesigner.View%2A> and <xref:System.Activities.Presentation.WorkflowDesigner.PropertyInspectorView%2A> with the appropriate container in the user interface.</span></span> <span data-ttu-id="0873d-115">次の例に示すいくつかのコード行について説明します。</span><span class="sxs-lookup"><span data-stu-id="0873d-115">There are a few additional lines of code in the following example that merit some explanation.</span></span> <span data-ttu-id="0873d-116"><xref:System.Activities.Core.Presentation.DesignerMetadata.Register%2A> 呼び出しは、[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] に付属しているアクティビティの既定のアクティビティ デザイナーを関連付けるために必要です。</span><span class="sxs-lookup"><span data-stu-id="0873d-116">The <xref:System.Activities.Core.Presentation.DesignerMetadata.Register%2A> call is required to associate the default activity designers for the activities shipped with [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)].</span></span> <span data-ttu-id="0873d-117"><xref:System.Activities.Presentation.WorkflowDesigner.Load%2A> は、編集する WF 項目を渡すために呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="0873d-117"><xref:System.Activities.Presentation.WorkflowDesigner.Load%2A> is called to pass in the WF item to be edited.</span></span> <span data-ttu-id="0873d-118">最後に、<xref:System.Activities.Presentation.WorkflowDesigner.View%2A> (プライマリ キャンバス) および <xref:System.Activities.Presentation.WorkflowDesigner.PropertyInspectorView%2A> (プロパティ グリッド) がユーザー インターフェイス画面に配置されます。</span><span class="sxs-lookup"><span data-stu-id="0873d-118">Finally, the <xref:System.Activities.Presentation.WorkflowDesigner.View%2A> (primary canvas) and <xref:System.Activities.Presentation.WorkflowDesigner.PropertyInspectorView%2A> (property grid) are placed onto the user interface surface.</span></span>  
   
 ```csharp  
 protected override void OnInitialized(EventArgs e)  
@@ -67,8 +57,8 @@ protected override void OnInitialized(EventArgs e)
 }  
 ```  
   
-## <a name="using-the-rehosted-toolbox"></a><span data-ttu-id="b2eef-119">再ホストされたツールボックスの使用</span><span class="sxs-lookup"><span data-stu-id="b2eef-119">Using the rehosted toolbox</span></span>  
- <span data-ttu-id="b2eef-120">このサンプルでは、XAML で宣言によって再ホストされたツールボックス コントロールを使用します。</span><span class="sxs-lookup"><span data-stu-id="b2eef-120">This sample uses the rehosted toolbox control declaratively in XAML.</span></span> <span data-ttu-id="b2eef-121">コードで型を <xref:System.Activities.Presentation.Toolbox.ToolboxItemWrapper> コンストラクターに渡すことができることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="b2eef-121">Note that in code, one can pass a type to the <xref:System.Activities.Presentation.Toolbox.ToolboxItemWrapper> constructor.</span></span>  
+## <a name="using-the-rehosted-toolbox"></a><span data-ttu-id="0873d-119">再ホストされたツールボックスの使用</span><span class="sxs-lookup"><span data-stu-id="0873d-119">Using the rehosted toolbox</span></span>  
+ <span data-ttu-id="0873d-120">このサンプルでは、XAML で宣言によって再ホストされたツールボックス コントロールを使用します。</span><span class="sxs-lookup"><span data-stu-id="0873d-120">This sample uses the rehosted toolbox control declaratively in XAML.</span></span> <span data-ttu-id="0873d-121">コードで型を <xref:System.Activities.Presentation.Toolbox.ToolboxItemWrapper> コンストラクターに渡すことができることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="0873d-121">Note that in code, one can pass a type to the <xref:System.Activities.Presentation.Toolbox.ToolboxItemWrapper> constructor.</span></span>  
   
 ```xaml  
 <!-- Copyright (c) Microsoft Corporation. All rights reserved-->  
@@ -122,19 +112,19 @@ protected override void OnInitialized(EventArgs e)
 </Window>  
 ```  
   
-#### <a name="using-the-sample"></a><span data-ttu-id="b2eef-122">サンプルの使用</span><span class="sxs-lookup"><span data-stu-id="b2eef-122">Using the sample</span></span>  
+#### <a name="using-the-sample"></a><span data-ttu-id="0873d-122">サンプルの使用</span><span class="sxs-lookup"><span data-stu-id="0873d-122">Using the sample</span></span>  
   
-1.  <span data-ttu-id="b2eef-123">[!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] で DesignerRehosting.sln ソリューションを開きます。</span><span class="sxs-lookup"><span data-stu-id="b2eef-123">Open the DesignerRehosting.sln solution in [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].</span></span>  
+1.  <span data-ttu-id="0873d-123">[!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] で DesignerRehosting.sln ソリューションを開きます。</span><span class="sxs-lookup"><span data-stu-id="0873d-123">Open the DesignerRehosting.sln solution in [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].</span></span>  
   
-2.  <span data-ttu-id="b2eef-124">F5 キーを押してアプリケーションをコンパイルし、実行します。</span><span class="sxs-lookup"><span data-stu-id="b2eef-124">Press F5 to compile and run the application.</span></span>  
+2.  <span data-ttu-id="0873d-124">F5 キーを押してアプリケーションをコンパイルし、実行します。</span><span class="sxs-lookup"><span data-stu-id="0873d-124">Press F5 to compile and run the application.</span></span>  
   
-3.  <span data-ttu-id="b2eef-125">WPF アプリケーションが再ホストされたデザイナーと共に起動します。</span><span class="sxs-lookup"><span data-stu-id="b2eef-125">A WPF application starts with a rehosted designer.</span></span>  
+3.  <span data-ttu-id="0873d-125">WPF アプリケーションが再ホストされたデザイナーと共に起動します。</span><span class="sxs-lookup"><span data-stu-id="0873d-125">A WPF application starts with a rehosted designer.</span></span>  
   
 > [!IMPORTANT]
->  <span data-ttu-id="b2eef-126">サンプルは、既にコンピューターにインストールされている場合があります。</span><span class="sxs-lookup"><span data-stu-id="b2eef-126">The samples may already be installed on your machine.</span></span> <span data-ttu-id="b2eef-127">続行する前に、次の (既定の) ディレクトリを確認してください。</span><span class="sxs-lookup"><span data-stu-id="b2eef-127">Check for the following (default) directory before continuing.</span></span>  
+>  <span data-ttu-id="0873d-126">サンプルは、既にコンピューターにインストールされている場合があります。</span><span class="sxs-lookup"><span data-stu-id="0873d-126">The samples may already be installed on your machine.</span></span> <span data-ttu-id="0873d-127">続行する前に、次の (既定の) ディレクトリを確認してください。</span><span class="sxs-lookup"><span data-stu-id="0873d-127">Check for the following (default) directory before continuing.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  <span data-ttu-id="b2eef-128">このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。</span><span class="sxs-lookup"><span data-stu-id="b2eef-128">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="b2eef-129">このサンプルは、次のディレクトリに格納されます。</span><span class="sxs-lookup"><span data-stu-id="b2eef-129">This sample is located in the following directory.</span></span>  
+>  <span data-ttu-id="0873d-128">このディレクトリが存在しない場合に、 [Windows Communication Foundation (WCF) および .NET Framework 4 向けの Windows Workflow Foundation (WF) サンプル](http://go.microsoft.com/fwlink/?LinkId=150780)すべて Windows Communication Foundation (WCF) をダウンロードして[!INCLUDE[wf1](../../../../includes/wf1-md.md)]サンプルです。</span><span class="sxs-lookup"><span data-stu-id="0873d-128">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all Windows Communication Foundation (WCF) and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="0873d-129">このサンプルは、次のディレクトリに格納されます。</span><span class="sxs-lookup"><span data-stu-id="0873d-129">This sample is located in the following directory.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\DesignerRehosting\Basic`

@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33534811"
 ---
 # <a name="how-to-group-items-in-a-windows-forms-listview-control"></a><span data-ttu-id="ad342-102">方法 : Windows フォーム ListView コントロールの項目をグループ化する</span><span class="sxs-lookup"><span data-stu-id="ad342-102">How to: Group Items in a Windows Forms ListView Control</span></span>
 <span data-ttu-id="ad342-103">グループ化機能で、<xref:System.Windows.Forms.ListView>コントロール グループに項目の関連する設定を表示できます。</span><span class="sxs-lookup"><span data-stu-id="ad342-103">With the grouping feature of the <xref:System.Windows.Forms.ListView> control, you can display related sets of items in groups.</span></span> <span data-ttu-id="ad342-104">これらのグループは、画面の水平方向のグループを含むヘッダーにグループのタイトルで区切られます。</span><span class="sxs-lookup"><span data-stu-id="ad342-104">These groups are separated on the screen by horizontal group headers that contain the group titles.</span></span> <span data-ttu-id="ad342-105">使用することができます<xref:System.Windows.Forms.ListView>日付、またはその他の論理グループで、アルファベット順に項目をグループ化して簡単に大規模なリストを移動するグループです。</span><span class="sxs-lookup"><span data-stu-id="ad342-105">You can use <xref:System.Windows.Forms.ListView> groups to make navigating large lists easier by grouping items alphabetically, by date, or by any other logical grouping.</span></span> <span data-ttu-id="ad342-106">次の図は、いくつかのグループ化された項目を示します。</span><span class="sxs-lookup"><span data-stu-id="ad342-106">The following image shows some grouped items.</span></span>  

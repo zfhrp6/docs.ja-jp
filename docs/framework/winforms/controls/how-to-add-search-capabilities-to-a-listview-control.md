@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33528283"
 ---
 # <a name="how-to-add-search-capabilities-to-a-listview-control"></a><span data-ttu-id="c55bf-102">方法 : ListView コントロールに検索機能を追加する</span><span class="sxs-lookup"><span data-stu-id="c55bf-102">How to: Add Search Capabilities to a ListView Control</span></span>
 <span data-ttu-id="c55bf-103">内の項目の大規模な一覧を使用する場合に多くの場合、<xref:System.Windows.Forms.ListView>をユーザーに検索機能を提供するコントロール。</span><span class="sxs-lookup"><span data-stu-id="c55bf-103">Oftentimes when working with a large list of items in a <xref:System.Windows.Forms.ListView> control, you want to offer search capabilities to the user.</span></span> <span data-ttu-id="c55bf-104"><xref:System.Windows.Forms.ListView>コントロールは、次の 2 つの異なる方法でこの機能を提供しています。 テキストに一致すると、場所を検索します。</span><span class="sxs-lookup"><span data-stu-id="c55bf-104">The <xref:System.Windows.Forms.ListView> control offers this capability in two different ways: text matching and location searching.</span></span>  

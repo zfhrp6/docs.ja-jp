@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33317448"
 ---
 # <a name="element-operations-c"></a><span data-ttu-id="ee05e-102">要素操作 (C#)</span><span class="sxs-lookup"><span data-stu-id="ee05e-102">Element Operations (C#)</span></span>
 <span data-ttu-id="ee05e-103">要素操作では、シーケンスから単一の特定の要素が返されます。</span><span class="sxs-lookup"><span data-stu-id="ee05e-103">Element operations return a single, specific element from a sequence.</span></span>  

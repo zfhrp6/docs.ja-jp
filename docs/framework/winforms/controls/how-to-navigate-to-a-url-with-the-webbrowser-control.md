@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33531886"
 ---
 # <a name="how-to-navigate-to-a-url-with-the-webbrowser-control"></a><span data-ttu-id="8ee36-102">方法 : WebBrowser コントロールで URL に移動する</span><span class="sxs-lookup"><span data-stu-id="8ee36-102">How to: Navigate to a URL with the WebBrowser Control</span></span>
 <span data-ttu-id="8ee36-103">次のコード例では、移動、<xref:System.Windows.Forms.WebBrowser>特定の URL をコントロールします。</span><span class="sxs-lookup"><span data-stu-id="8ee36-103">The following code example demonstrates how to navigate the <xref:System.Windows.Forms.WebBrowser> control to a specific URL.</span></span>  

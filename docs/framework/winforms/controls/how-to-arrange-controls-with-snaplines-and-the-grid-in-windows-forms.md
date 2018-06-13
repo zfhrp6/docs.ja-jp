@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33528375"
 ---
 # <a name="how-to-arrange-controls-with-snaplines-and-the-grid-in-windows-forms"></a><span data-ttu-id="22f83-102">方法 : コントロールを Windows フォームのスナップ線とグリッドを使用して配置する</span><span class="sxs-lookup"><span data-stu-id="22f83-102">How to: Arrange Controls with Snaplines and the Grid in Windows Forms</span></span>
 <span data-ttu-id="22f83-103">Visual Studio のレイアウト機能を使用すると、フォーム上のコントロールの配置場所を正確に指定できます。</span><span class="sxs-lookup"><span data-stu-id="22f83-103">Using the layout features of Visual Studio, you can precisely direct where controls are placed on a form.</span></span> <span data-ttu-id="22f83-104">行と、Windows フォーム デザイナーのグリッドの列に、コントロールをフォームに追加し、フォームを移動したかを自動的にアラインできます。 またはスナップ線機能を使用してコントロールを揃えることができます。</span><span class="sxs-lookup"><span data-stu-id="22f83-104">Controls added to a form or moved on a form can be automatically aligned to the rows and columns of the Windows Forms Designer's grid, or you can align controls by using the snaplines feature.</span></span>  

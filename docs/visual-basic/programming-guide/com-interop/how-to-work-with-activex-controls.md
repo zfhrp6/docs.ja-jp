@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33640533"
 ---
 # <a name="how-to-work-with-activex-controls-visual-basic"></a><span data-ttu-id="5654e-102">方法: ActiveX コントロールを操作する (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="5654e-102">How to: Work with ActiveX Controls (Visual Basic)</span></span>
 <span data-ttu-id="5654e-103">ActiveX コントロールは、COM コンポーネントまたは Web ページや他のユーザーをプログラムは、パッケージの機能を再利用する他のアプリケーションに挿入できるオブジェクトです。</span><span class="sxs-lookup"><span data-stu-id="5654e-103">ActiveX controls are COM components or objects you can insert into a Web page or other application to reuse packaged functionality someone else has programmed.</span></span> <span data-ttu-id="5654e-104">機能を追加する Visual Basic 6.0 とそれ以前のバージョン用に開発された ActiveX コントロールを使用することができます、**ツールボックス**Visual Studio のです。</span><span class="sxs-lookup"><span data-stu-id="5654e-104">You can use ActiveX controls developed for Visual Basic 6.0 and earlier versions to add features to the **Toolbox** of Visual Studio.</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32760347"
 ---
 # <a name="development-and-deployment-considerations"></a><span data-ttu-id="91d43-102">開発および配置に関する注意事項</span><span class="sxs-lookup"><span data-stu-id="91d43-102">Development and Deployment Considerations</span></span>
 <span data-ttu-id="91d43-103">このセクションのトピックでは、ADO.NET Entity Framework に基づくアプリケーションを開発または配置する際に考慮する必要のある問題について説明します。</span><span class="sxs-lookup"><span data-stu-id="91d43-103">Topics in this section address issues to consider when developing or deploying an application that is based on the ADO.NET Entity Framework.</span></span>  

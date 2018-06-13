@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33521457"
 ---
 # <a name="how-to-change-the-value-of-an-existing-setting-at-design-time"></a><span data-ttu-id="11c8f-102">方法 : 設計時に既存の設定の値を変更する</span><span class="sxs-lookup"><span data-stu-id="11c8f-102">How To: Change the Value of an Existing Setting at Design Time</span></span>
 <span data-ttu-id="11c8f-103">Visual Studio を使用して、プロジェクト内の既存の設定値を編集することができます。</span><span class="sxs-lookup"><span data-stu-id="11c8f-103">You can use Visual Studio to edit the values of existing settings in your project.</span></span>  

@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: eeff8aa0336c0c497e306825c6c77f4f8745ca7c
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33431806"
 ---
 # <a name="eclrunhandledexception-enumeration"></a><span data-ttu-id="289b8-102">EClrUnhandledException 列挙型</span><span class="sxs-lookup"><span data-stu-id="289b8-102">EClrUnhandledException Enumeration</span></span>
 <span data-ttu-id="289b8-103">ユーザー コードで処理されない例外を管理するためのオプションについて説明します。</span><span class="sxs-lookup"><span data-stu-id="289b8-103">Describes the available options for managing exceptions that are unhandled in user code.</span></span>  

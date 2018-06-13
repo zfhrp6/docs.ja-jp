@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33315517"
 ---
 # <a name="passing-arrays-as-arguments-c-programming-guide"></a><span data-ttu-id="cca7e-102">引数としての配列の受け渡し (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="cca7e-102">Passing Arrays as Arguments (C# Programming Guide)</span></span>
 <span data-ttu-id="cca7e-103">配列は、引数としてメソッド パラメーターに渡すことができます。</span><span class="sxs-lookup"><span data-stu-id="cca7e-103">Arrays can be passed as arguments to method parameters.</span></span> <span data-ttu-id="cca7e-104">配列は参照型であるため、メソッドは要素の値を変更できます。</span><span class="sxs-lookup"><span data-stu-id="cca7e-104">Because arrays are reference types, the method can change the value of the elements.</span></span>  

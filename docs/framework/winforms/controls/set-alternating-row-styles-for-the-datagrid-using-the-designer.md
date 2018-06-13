@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33538516"
 ---
 # <a name="how-to-set-alternating-row-styles-for-the-windows-forms-datagridview-control-using-the-designer"></a><span data-ttu-id="6a3eb-102">方法 : デザイナーを使用して Windows フォーム DataGridView コントロールに交互の行のスタイルを設定する</span><span class="sxs-lookup"><span data-stu-id="6a3eb-102">How to: Set Alternating Row Styles for the Windows Forms DataGridView Control Using the Designer</span></span>
 <span data-ttu-id="6a3eb-103">表形式のデータは多くの場合、別の背景色を交互の行がである帳簿のような形式で表示されます。</span><span class="sxs-lookup"><span data-stu-id="6a3eb-103">Tabular data is often presented in a ledger-like format where alternating rows have different background colors.</span></span> <span data-ttu-id="6a3eb-104">この形式を使用すると、多数の列がある幅の広いテーブルで、ユーザーが各行にあるセルを簡単に識別できるようになります。</span><span class="sxs-lookup"><span data-stu-id="6a3eb-104">This format makes it easier for users to tell which cells are in each row, especially with wide tables that have many columns.</span></span>  

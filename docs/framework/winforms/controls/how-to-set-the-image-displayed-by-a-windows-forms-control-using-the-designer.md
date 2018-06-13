@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33532786"
 ---
 # <a name="how-to-set-the-image-displayed-by-a-windows-forms-control-using-the-designer"></a><span data-ttu-id="59b1c-102">方法 : デザイナーを使用して Windows フォーム コントロールによって表示されるイメージを設定する</span><span class="sxs-lookup"><span data-stu-id="59b1c-102">How to: Set the Image Displayed by a Windows Forms Control Using the Designer</span></span>
 <span data-ttu-id="59b1c-103">いくつかの Windows フォーム コントロールは、イメージを表示できます。</span><span class="sxs-lookup"><span data-stu-id="59b1c-103">Several Windows Forms controls can display images.</span></span> <span data-ttu-id="59b1c-104">イメージをボタン上のフロッピー ディスク アイコンなど、コントロールの目的を明確にするアイコンがあります、**保存**コマンド。</span><span class="sxs-lookup"><span data-stu-id="59b1c-104">The image can be an icon that clarifies the purpose of the control, such as a disk icon on a button denoting the **Save** command.</span></span> <span data-ttu-id="59b1c-105">コントロールの外観を与えるように背景画像の代わりに、アイコンもあります。</span><span class="sxs-lookup"><span data-stu-id="59b1c-105">Alternatively, the icon can be a background image to give the control the appearance you want.</span></span>  

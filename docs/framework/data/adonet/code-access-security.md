@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32759323"
 ---
 # <a name="code-access-security-and-adonet"></a><span data-ttu-id="8ad78-102">コード アクセス セキュリティと ADO.NET</span><span class="sxs-lookup"><span data-stu-id="8ad78-102">Code Access Security and ADO.NET</span></span>
 <span data-ttu-id="8ad78-103">.NET Framework はコード アクセス セキュリティ (CAS) に加えてロール ベースのセキュリティを備えています。どちらも、共通言語ランタイム (CLR) が提供する共通のインフラストラクチャを使って実装されています。</span><span class="sxs-lookup"><span data-stu-id="8ad78-103">The .NET Framework offers role-based security as well as code access security (CAS), both of which are implemented using a common infrastructure supplied by the common language runtime (CLR).</span></span> <span data-ttu-id="8ad78-104">アンマネージ コードの場合、ほとんどのアプリケーションはユーザーまたはプリンシパルの権限で実行されます。</span><span class="sxs-lookup"><span data-stu-id="8ad78-104">In the world of unmanaged code, most applications execute with the permissions of the user or principal.</span></span> <span data-ttu-id="8ad78-105">そのため、悪意のあるソフトウェアやエラーを含むソフトウェアが、システム特権を持つユーザーによって実行された場合、コンピューター システムが被害を受けたり、機密データが改ざんされる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="8ad78-105">As a result, computer systems can be damaged and private data compromised when malicious or error-filled software is run by a user with elevated privileges.</span></span>  

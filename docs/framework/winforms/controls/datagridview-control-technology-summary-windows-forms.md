@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33528874"
 ---
 # <a name="datagridview-control-technology-summary-windows-forms"></a><span data-ttu-id="a3708-102">DataGridView コントロール テクノロジの概要 (Windows フォーム)</span><span class="sxs-lookup"><span data-stu-id="a3708-102">DataGridView Control Technology Summary (Windows Forms)</span></span>
 <span data-ttu-id="a3708-103">ここでは、`DataGridView` コントロールおよびその使用をサポートしているクラスの概要について説明します。</span><span class="sxs-lookup"><span data-stu-id="a3708-103">This topic summarizes information about the `DataGridView` control and the classes that support its use.</span></span>  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33536107"
 ---
 # <a name="digital-ink-overviews"></a><span data-ttu-id="e4670-102">デジタル インクの概要</span><span class="sxs-lookup"><span data-stu-id="e4670-102">Digital Ink Overviews</span></span>
 ## <a name="in-this-section"></a><span data-ttu-id="e4670-103">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="e4670-103">In This Section</span></span>  

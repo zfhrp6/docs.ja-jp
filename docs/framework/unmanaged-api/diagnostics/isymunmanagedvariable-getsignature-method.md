@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 4b089540f23659d4f7811d921364adc73fd62803
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33427744"
 ---
 # <a name="isymunmanagedvariablegetsignature-method"></a><span data-ttu-id="778e1-102">ISymUnmanagedVariable::GetSignature メソッド</span><span class="sxs-lookup"><span data-stu-id="778e1-102">ISymUnmanagedVariable::GetSignature Method</span></span>
 <span data-ttu-id="778e1-103">この変数のシグネチャを取得します。</span><span class="sxs-lookup"><span data-stu-id="778e1-103">Gets the signature of this variable.</span></span>  

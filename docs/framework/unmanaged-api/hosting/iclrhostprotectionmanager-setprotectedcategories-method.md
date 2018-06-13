@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: c6c93566d0909f1dbef46862760d47ede478d51a
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33434539"
 ---
 # <a name="iclrhostprotectionmanagersetprotectedcategories-method"></a><span data-ttu-id="19718-102">ICLRHostProtectionManager::SetProtectedCategories メソッド</span><span class="sxs-lookup"><span data-stu-id="19718-102">ICLRHostProtectionManager::SetProtectedCategories Method</span></span>
 <span data-ttu-id="19718-103">部分的に信頼されたコードでの実行を禁止するマネージ型とメンバーのカテゴリを指定します。</span><span class="sxs-lookup"><span data-stu-id="19718-103">Specifies which categories of managed types and members should be blocked from running in partially trusted code.</span></span>  
