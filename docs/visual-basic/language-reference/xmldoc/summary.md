@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33602653"
 ---
 # <a name="ltsummarygt-visual-basic"></a><span data-ttu-id="f8b31-102">&lt;概要&gt;(Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="f8b31-102">&lt;summary&gt; (Visual Basic)</span></span>
 <span data-ttu-id="f8b31-103">メンバーの概要を指定します。</span><span class="sxs-lookup"><span data-stu-id="f8b31-103">Specifies the summary of the member.</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33654292"
 ---
 # <a name="walkthrough-multithreading-with-the-backgroundworker-component-visual-basic"></a><span data-ttu-id="83eb4-102">チュートリアル: BackgroundWorker コンポーネント (Visual Basic) でのマルチ スレッド</span><span class="sxs-lookup"><span data-stu-id="83eb4-102">Walkthrough: Multithreading with the BackgroundWorker Component (Visual Basic)</span></span>
 <span data-ttu-id="83eb4-103">このチュートリアルでは、テキスト ファイルで単語を検索する、マルチスレッドの Windows Forms アプリケーションを作成する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="83eb4-103">This walkthrough demonstrates how to create a multithreaded Windows Forms application that searches a text file for occurrences of a word.</span></span> <span data-ttu-id="83eb4-104">具体的には、次のタスクについて説明します。</span><span class="sxs-lookup"><span data-stu-id="83eb4-104">It demonstrates:</span></span>  

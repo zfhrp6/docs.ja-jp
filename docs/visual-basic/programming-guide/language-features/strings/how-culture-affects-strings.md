@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33654740"
 ---
 # <a name="how-culture-affects-strings-in-visual-basic"></a><span data-ttu-id="ee743-102">Visual Basic においてカルチャが文字列に与える影響</span><span class="sxs-lookup"><span data-stu-id="ee743-102">How Culture Affects Strings in Visual Basic</span></span>
 <span data-ttu-id="ee743-103">このヘルプ ページは、Visual Basic はカルチャ情報を使用して、文字列の変換との比較を実行する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="ee743-103">This Help page discusses how Visual Basic uses culture information to perform string conversions and comparisons.</span></span>  

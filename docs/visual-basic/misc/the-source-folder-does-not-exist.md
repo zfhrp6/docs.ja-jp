@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33640369"
 ---
 # <a name="the-source-folder-does-not-exist"></a><span data-ttu-id="e2ca0-102">ソース フォルダーが存在しません</span><span class="sxs-lookup"><span data-stu-id="e2ca0-102">The source folder does not exist</span></span>
 <span data-ttu-id="e2ca0-103">存在しないソース フォルダーを参照する操作を実行しようとしました。</span><span class="sxs-lookup"><span data-stu-id="e2ca0-103">You attempted an operation that references a source folder that does not exist.</span></span> <span data-ttu-id="e2ca0-104">指定したパスが正しくないことが原因となっている可能性があります。</span><span class="sxs-lookup"><span data-stu-id="e2ca0-104">This may be the result of supplying an incorrect file path.</span></span>  

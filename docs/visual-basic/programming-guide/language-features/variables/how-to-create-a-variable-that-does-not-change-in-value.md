@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33651377"
 ---
 # <a name="how-to-create-a-variable-that-does-not-change-in-value-visual-basic"></a><span data-ttu-id="2d50a-102">方法: 値の変わらない変数を作成する (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="2d50a-102">How to: Create a Variable that Does Not Change in Value (Visual Basic)</span></span>
 <span data-ttu-id="2d50a-103">その値が変化しない変数の概念は、矛盾する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="2d50a-103">The notion of a variable that does not change its value might appear to be contradictory.</span></span> <span data-ttu-id="2d50a-104">定数は実行可能でない場合もありますし、固定値を持つ変数を使用すると便利です。</span><span class="sxs-lookup"><span data-stu-id="2d50a-104">But there are situations when a constant is not feasible and it is useful to have a variable with a fixed value.</span></span> <span data-ttu-id="2d50a-105">このようなケースで付きのメンバー変数を定義することができます、 [ReadOnly](../../../../visual-basic/language-reference/modifiers/readonly.md)キーワード。</span><span class="sxs-lookup"><span data-stu-id="2d50a-105">In such a case you can define a member variable with the [ReadOnly](../../../../visual-basic/language-reference/modifiers/readonly.md) keyword.</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33655092"
 ---
 # <a name="thread-synchronization-visual-basic"></a><span data-ttu-id="a3a5f-102">スレッドの同期 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="a3a5f-102">Thread Synchronization (Visual Basic)</span></span>
 <span data-ttu-id="a3a5f-103">次のセクションでは、マルチスレッド アプリケーションでリソースへのアクセスを同期するために使用できる機能とクラスについて説明します。</span><span class="sxs-lookup"><span data-stu-id="a3a5f-103">The following sections describe features and classes that can be used to synchronize access to resources in multithreaded applications.</span></span>  

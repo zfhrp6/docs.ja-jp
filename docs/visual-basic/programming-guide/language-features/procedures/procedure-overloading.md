@@ -22,6 +22,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33653915"
 ---
 # <a name="procedure-overloading-visual-basic"></a><span data-ttu-id="b011d-102">プロシージャのオーバーロード (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="b011d-102">Procedure Overloading (Visual Basic)</span></span>
 <span data-ttu-id="b011d-103">*オーバー ロード*プロシージャでは、異なるパラメーター リストが同じ名前を使用して、複数のバージョンでそれを定義することを意味します。</span><span class="sxs-lookup"><span data-stu-id="b011d-103">*Overloading* a procedure means defining it in multiple versions, using the same name but different parameter lists.</span></span> <span data-ttu-id="b011d-104">オーバー ロードの目的では、名前で区別することがなく密接に関連するいくつかのバージョンのプロシージャを定義します。</span><span class="sxs-lookup"><span data-stu-id="b011d-104">The purpose of overloading is to define several closely related versions of a procedure without having to differentiate them by name.</span></span> <span data-ttu-id="b011d-105">こうと、パラメーター リストを変更します。</span><span class="sxs-lookup"><span data-stu-id="b011d-105">You do this by varying the parameter list.</span></span>  

@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33638424"
 ---
 # <a name="registry-key-39ltkeynamegt39-could-not-be-created"></a><span data-ttu-id="cdd27-102">レジストリ キー &#39; &lt;keyname&gt; &#39;を作成できませんでした</span><span class="sxs-lookup"><span data-stu-id="cdd27-102">Registry key &#39;&lt;keyname&gt;&#39; could not be created</span></span>
 <span data-ttu-id="cdd27-103">指定されたレジストリ キーを作成できませんでした。セキュリティ アクセス許可が不十分である可能性があります。</span><span class="sxs-lookup"><span data-stu-id="cdd27-103">The specified registry key could not be created, possibly because of insufficient security permissions.</span></span>  

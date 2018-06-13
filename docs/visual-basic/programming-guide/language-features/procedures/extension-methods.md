@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33655285"
 ---
 # <a name="extension-methods-visual-basic"></a><span data-ttu-id="89c72-102">拡張メソッド (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="89c72-102">Extension Methods (Visual Basic)</span></span>
 <span data-ttu-id="89c72-103">拡張メソッドでは、新しい派生型を作成せずに既に定義されているデータ型にカスタム機能を追加する開発者が有効にします。</span><span class="sxs-lookup"><span data-stu-id="89c72-103">Extension methods enable developers to add custom functionality to data types that are already defined without creating a new derived type.</span></span> <span data-ttu-id="89c72-104">拡張メソッドを使用すれば、既存の型のインスタンス メソッドの場合と同様に呼び出すことができるメソッドを記述できます。</span><span class="sxs-lookup"><span data-stu-id="89c72-104">Extension methods make it possible to write a method that can be called as if it were an instance method of the existing type.</span></span>  

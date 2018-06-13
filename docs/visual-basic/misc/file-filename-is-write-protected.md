@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33636553"
 ---
 # <a name="file-39ltfilenamegt39-is-write-protected"></a><span data-ttu-id="71075-102">ファイル&#39; &lt;filename&gt; &#39;は書き込み禁止</span><span class="sxs-lookup"><span data-stu-id="71075-102">File &#39;&lt;filename&gt;&#39; is write protected</span></span>
 <span data-ttu-id="71075-103">書き込もうとしているファイルは書き込み禁止であるため、変更できません。</span><span class="sxs-lookup"><span data-stu-id="71075-103">The file you are attempting to write to is write-protected and therefore cannot be changed.</span></span>  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33649634"
 ---
 # <a name="differences-between-shadowing-and-overriding-visual-basic"></a><span data-ttu-id="eb5f8-102">シャドウとオーバーライドの違い (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="eb5f8-102">Differences Between Shadowing and Overriding (Visual Basic)</span></span>
 <span data-ttu-id="eb5f8-103">基底クラスから継承するクラスを定義するときする場合がありますを再定義する 1 つまたは複数の派生クラスで基底クラス要素。</span><span class="sxs-lookup"><span data-stu-id="eb5f8-103">When you define a class that inherits from a base class, you sometimes want to redefine one or more of the base class elements in the derived class.</span></span> <span data-ttu-id="eb5f8-104">シャドウとオーバーライドは、この目的では両方の使用可能なです。</span><span class="sxs-lookup"><span data-stu-id="eb5f8-104">Shadowing and overriding are both available for this purpose.</span></span>  

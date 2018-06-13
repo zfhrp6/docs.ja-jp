@@ -26,6 +26,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33650528"
 ---
 # <a name="me-my-mybase-and-myclass-in-visual-basic"></a><span data-ttu-id="f052d-102">Visual Basic における Me、My、MyBase、MyClass</span><span class="sxs-lookup"><span data-stu-id="f052d-102">Me, My, MyBase, and MyClass in Visual Basic</span></span>
 <span data-ttu-id="f052d-103">`Me`、 `My`、 `MyBase`、および`MyClass`Visual Basic である類似した名前は、がさまざまな目的です。</span><span class="sxs-lookup"><span data-stu-id="f052d-103">`Me`, `My`, `MyBase`, and `MyClass` in Visual Basic have similar names, but different purposes.</span></span> <span data-ttu-id="f052d-104">このトピックでは、これらを区別するためにこれらのエンティティの各を説明します。</span><span class="sxs-lookup"><span data-stu-id="f052d-104">This topic describes each of these entities in order to distinguish them.</span></span>  

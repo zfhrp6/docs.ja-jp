@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33808768"
 ---
 # <a name="how-to-control-the-type-of-a-projection-c"></a><span data-ttu-id="9824e-102">方法: プロジェクションの型を制御する (C#)</span><span class="sxs-lookup"><span data-stu-id="9824e-102">How to: Control the Type of a Projection (C#)</span></span>
 <span data-ttu-id="9824e-103">射影は、1 つのデータのセットを取得し、フィルター処理し、その形式を変更し、その型も変更するプロセスです。</span><span class="sxs-lookup"><span data-stu-id="9824e-103">Projection is the process of taking one set of data, filtering it, changing its shape, and even changing its type.</span></span> <span data-ttu-id="9824e-104">ほとんどのクエリ式は射影を実行します。</span><span class="sxs-lookup"><span data-stu-id="9824e-104">Most query expressions perform projections.</span></span> <span data-ttu-id="9824e-105">このセクション内のクエリ式は、ほとんどが <xref:System.Collections.Generic.IEnumerable%601> の <xref:System.Xml.Linq.XElement> に評価されますが、射影の型を制御して別の型のコレクションを作成することができます。</span><span class="sxs-lookup"><span data-stu-id="9824e-105">Most of the query expressions shown in this section evaluate to <xref:System.Collections.Generic.IEnumerable%601> of <xref:System.Xml.Linq.XElement>, but you can control the type of the projection to create collections of other types.</span></span> <span data-ttu-id="9824e-106">このトピックでは、その方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="9824e-106">This topic shows how to do this.</span></span>  

@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33650687"
 ---
 # <a name="differences-between-parameters-and-arguments-visual-basic"></a><span data-ttu-id="dc53f-102">パラメーターと引数の違い (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="dc53f-102">Differences Between Parameters and Arguments (Visual Basic)</span></span>
 <span data-ttu-id="dc53f-103">ほとんどの場合、プロシージャが呼び出されたときの状況に関する情報が必要です。</span><span class="sxs-lookup"><span data-stu-id="dc53f-103">In most cases, a procedure must have some information about the circumstances in which it has been called.</span></span> <span data-ttu-id="dc53f-104">繰り返しまたは共有のタスクを実行する手順は、呼び出しごとに異なる情報を使用します。</span><span class="sxs-lookup"><span data-stu-id="dc53f-104">A procedure that performs repeated or shared tasks uses different information for each call.</span></span> <span data-ttu-id="dc53f-105">この情報は、変数、定数、およびメソッドを呼び出すときに、プロシージャに渡す式で構成されます。</span><span class="sxs-lookup"><span data-stu-id="dc53f-105">This information consists of variables, constants, and expressions that you pass to the procedure when you call it.</span></span>  

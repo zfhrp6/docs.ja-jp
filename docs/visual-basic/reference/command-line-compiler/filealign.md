@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33650668"
 ---
 # <a name="-filealign"></a><span data-ttu-id="5277d-102">-filealign</span><span class="sxs-lookup"><span data-stu-id="5277d-102">-filealign</span></span>
 <span data-ttu-id="5277d-103">出力ファイルでセクションをアラインするサイズを指定します。</span><span class="sxs-lookup"><span data-stu-id="5277d-103">Specifies where to align the sections of the output file.</span></span>  

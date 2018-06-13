@@ -12,6 +12,7 @@ ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/15/2018
+ms.locfileid: "34172517"
 ---
 # <a name="double-c-reference"></a><span data-ttu-id="efed4-102">double (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="efed4-102">double (C# Reference)</span></span>
 <span data-ttu-id="efed4-103">`double` キーワードは、64 ビット浮動小数点値を格納する単純な型を示します。</span><span class="sxs-lookup"><span data-stu-id="efed4-103">The `double` keyword signifies a simple type that stores 64-bit floating-point values.</span></span> <span data-ttu-id="efed4-104">次の表では、`double` 型の有効桁数とおおよその範囲を示します。</span><span class="sxs-lookup"><span data-stu-id="efed4-104">The following table shows the precision and approximate range for the `double` type.</span></span>  

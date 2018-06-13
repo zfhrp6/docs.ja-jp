@@ -10,6 +10,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33804477"
 ---
 # <a name="how-to-create-a-custom-client-identity-verifier"></a><span data-ttu-id="af399-102">方法 : カスタム クライアント ID 検証機能を作成する</span><span class="sxs-lookup"><span data-stu-id="af399-102">How to: Create a Custom Client Identity Verifier</span></span>
 <span data-ttu-id="af399-103">*Identity* Windows Communication Foundation (WCF) の機能により、クライアントに事前に予想されるサービスの id を指定します。</span><span class="sxs-lookup"><span data-stu-id="af399-103">The *identity* feature of Windows Communication Foundation (WCF) enables a client to specify in advance the expected identity of the service.</span></span> <span data-ttu-id="af399-104">サーバーがクライアントに対して自身を認証するたびに、ID がこの予想 ID と照合されます</span><span class="sxs-lookup"><span data-stu-id="af399-104">Whenever a server authenticates itself to the client, the identity is checked against the expected identity.</span></span> <span data-ttu-id="af399-105">(Id およびそのしくみの詳細については、次を参照してください[サービス Id と認証](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)。)。</span><span class="sxs-lookup"><span data-stu-id="af399-105">(For an explanation of identity and how it works, see [Service Identity and Authentication](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).)</span></span>  

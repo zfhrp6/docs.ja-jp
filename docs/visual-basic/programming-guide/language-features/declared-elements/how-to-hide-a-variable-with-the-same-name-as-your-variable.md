@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33653119"
 ---
 # <a name="how-to-hide-a-variable-with-the-same-name-as-your-variable-visual-basic"></a><span data-ttu-id="d159b-102">方法: 自分で宣言した変数と同じ名前の変数を隠す (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="d159b-102">How to: Hide a Variable with the Same Name as Your Variable (Visual Basic)</span></span>
 <span data-ttu-id="d159b-103">変数を非表示にすることができます*シャドウ*は、これによって、同じ名前の変数で再定義します。</span><span class="sxs-lookup"><span data-stu-id="d159b-103">You can hide a variable by *shadowing* it, that is, by redefining it with a variable of the same name.</span></span> <span data-ttu-id="d159b-104">2 つの方法で非表示に変数をシャドウすることができます。</span><span class="sxs-lookup"><span data-stu-id="d159b-104">You can shadow the variable you want to hide in two ways:</span></span>  

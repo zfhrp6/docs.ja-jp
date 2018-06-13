@@ -13,6 +13,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33803742"
 ---
 # <a name="basic-wcf-programming"></a><span data-ttu-id="bd9da-102">基本的な WCF プログラミング</span><span class="sxs-lookup"><span data-stu-id="bd9da-102">Basic WCF Programming</span></span>
 <span data-ttu-id="bd9da-103">このセクションでは、Windows Communication Foundation (WCF) アプリケーションを作成するための基礎を表示します。</span><span class="sxs-lookup"><span data-stu-id="bd9da-103">This section presents the fundamentals for creating Windows Communication Foundation (WCF) applications.</span></span>  

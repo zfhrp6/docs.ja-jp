@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33641358"
 ---
 # <a name="path-39ltpathnamegt39-not-found"></a><span data-ttu-id="a5368-102">パス&#39; &lt;pathname&gt; &#39;が見つかりません。</span><span class="sxs-lookup"><span data-stu-id="a5368-102">Path &#39;&lt;pathname&gt;&#39; not found</span></span>
 <span data-ttu-id="a5368-103">ファイル アクセス操作またはディスク アクセス操作において指定されたパスをオペレーティング システムが見つけることができません。</span><span class="sxs-lookup"><span data-stu-id="a5368-103">The operating system is unable to find the path specified path during a file-access or disk-access operation.</span></span> <span data-ttu-id="a5368-104">ファイルへのパスには、対象ファイルを検索するために走査しなければならないドライブ、ディレクトリ、サブディレクトリの指定を含める必要があります。</span><span class="sxs-lookup"><span data-stu-id="a5368-104">The path to a file must include the drive specification and the directories and subdirectories that must be traversed to locate the file.</span></span> <span data-ttu-id="a5368-105">相対ファイル パスと絶対ファイル パスのどちらでも構いません。</span><span class="sxs-lookup"><span data-stu-id="a5368-105">A path can be relative or absolute.</span></span>  

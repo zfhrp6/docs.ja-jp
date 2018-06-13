@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33643654"
 ---
 # <a name="how-to-execute-expression-trees-visual-basic"></a><span data-ttu-id="89171-102">方法: 式ツリー (Visual Basic) を実行</span><span class="sxs-lookup"><span data-stu-id="89171-102">How to: Execute Expression Trees (Visual Basic)</span></span>
 <span data-ttu-id="89171-103">このトピックでは、式ツリーを実行する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="89171-103">This topic shows you how to execute an expression tree.</span></span> <span data-ttu-id="89171-104">式ツリーを実行すると値が返される場合がありますが、メソッドの呼び出しなどの処理が実行されるだけの場合もあります。</span><span class="sxs-lookup"><span data-stu-id="89171-104">Executing an expression tree may return a value, or it may just perform an action such as calling a method.</span></span>  

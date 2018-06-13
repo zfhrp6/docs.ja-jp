@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33803395"
 ---
 # <a name="windows-communication-foundation-endpoints"></a><span data-ttu-id="9b44c-102">Windows Communication Foundation エンドポイント</span><span class="sxs-lookup"><span data-stu-id="9b44c-102">Windows Communication Foundation Endpoints</span></span>
 <span data-ttu-id="9b44c-103">使用して、Windows Communication Foundation (WCF) サービスとすべての通信が行われる、*エンドポイント*サービス。</span><span class="sxs-lookup"><span data-stu-id="9b44c-103">All communication with a Windows Communication Foundation (WCF) service occurs through the *endpoints* of the service.</span></span> <span data-ttu-id="9b44c-104">エンドポイントは、WCF サービスを提供する機能へのアクセスをクライアントに提供します。</span><span class="sxs-lookup"><span data-stu-id="9b44c-104">Endpoints provide clients access to the functionality that a WCF service offers.</span></span>  

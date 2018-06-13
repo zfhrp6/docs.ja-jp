@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33654162"
 ---
 # <a name="how-to-create-a-collection-used-by-a-collection-initializer-visual-basic"></a><span data-ttu-id="435d6-102">方法: コレクション初期化子を使用してコレクションを作成する (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="435d6-102">How to: Create a Collection Used by a Collection Initializer (Visual Basic)</span></span>
 <span data-ttu-id="435d6-103">コレクション初期化子を使用してコレクションを作成するときに、Visual Basic コンパイラはの検索、`Add`対象のコレクション型のメソッドのパラメーター、`Add`メソッド、コレクション初期化子内の値の型に一致します。</span><span class="sxs-lookup"><span data-stu-id="435d6-103">When you use a collection initializer to create a collection, the Visual Basic compiler searches for an `Add` method of the collection type for which the parameters for the `Add` method match the types of the values in the collection initializer.</span></span> <span data-ttu-id="435d6-104">これは、`Add`メソッドを使用して、コレクション初期化子から値を持つコレクションを設定します。</span><span class="sxs-lookup"><span data-stu-id="435d6-104">This `Add` method is used to populate the collection with the values from the collection initializer.</span></span>  

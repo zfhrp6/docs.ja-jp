@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33653313"
 ---
 # <a name="how-to-infer-property-names-and-types-in-anonymous-type-declarations-visual-basic"></a><span data-ttu-id="e57ff-102">方法: 匿名型の宣言におけるプロパティ名と型を推論する (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="e57ff-102">How to: Infer Property Names and Types in Anonymous Type Declarations (Visual Basic)</span></span>
 <span data-ttu-id="e57ff-103">匿名型には、プロパティのデータ型を直接指定する機構はありません。</span><span class="sxs-lookup"><span data-stu-id="e57ff-103">Anonymous types provide no mechanism for directly specifying the data types of properties.</span></span> <span data-ttu-id="e57ff-104">すべてのプロパティの型は、推論されます。</span><span class="sxs-lookup"><span data-stu-id="e57ff-104">Types of all properties are inferred.</span></span> <span data-ttu-id="e57ff-105">次の例では、 `Name` と `Price` の型は、それらを初期化するために使われる値から、直接推論されます。</span><span class="sxs-lookup"><span data-stu-id="e57ff-105">In the following example, the types of `Name` and `Price` are inferred directly from the values that are used to initialize them.</span></span>  

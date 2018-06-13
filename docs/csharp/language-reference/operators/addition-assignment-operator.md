@@ -12,6 +12,7 @@ ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/15/2018
+ms.locfileid: "34171880"
 ---
 # <a name="-operator-c-reference"></a><span data-ttu-id="59ef3-102">+= 演算子 (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="59ef3-102">+= Operator (C# Reference)</span></span>
 <span data-ttu-id="59ef3-103">加算代入演算子です。</span><span class="sxs-lookup"><span data-stu-id="59ef3-103">The addition assignment operator.</span></span>  

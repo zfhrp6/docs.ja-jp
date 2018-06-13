@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33636592"
 ---
 # <a name="myapplicationlog-cannot-determine-the-amount-of-free-disk-space"></a><span data-ttu-id="fca6f-102">My.Application.Log は空きディスク領域の容量を求めることができません</span><span class="sxs-lookup"><span data-stu-id="fca6f-102">My.Application.Log cannot determine the amount of free disk space</span></span>
 <span data-ttu-id="fca6f-103"><xref:Microsoft.VisualBasic.Logging.FileLogTraceListener> クラスが空きディスク領域の容量を求めることができませんでした。</span><span class="sxs-lookup"><span data-stu-id="fca6f-103">The <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener> class could not determine the amount of free disk space.</span></span>  

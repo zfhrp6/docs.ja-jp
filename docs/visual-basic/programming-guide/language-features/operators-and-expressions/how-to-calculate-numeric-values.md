@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33649787"
 ---
 # <a name="how-to-calculate-numeric-values-visual-basic"></a><span data-ttu-id="88682-102">方法: 数値を計算する (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="88682-102">How to: Calculate Numeric Values (Visual Basic)</span></span>
 <span data-ttu-id="88682-103">数値式を使用して数値の値を計算することができます。</span><span class="sxs-lookup"><span data-stu-id="88682-103">You can calculate numeric values through the use of numeric expressions.</span></span> <span data-ttu-id="88682-104">A*数値式*リテラル、定数、および数値を表す変数を含む式は、それらの値に対して作用する演算子です。</span><span class="sxs-lookup"><span data-stu-id="88682-104">A *numeric expression* is an expression that contains literals, constants, and variables representing numeric values, and operators that act on those values.</span></span>  

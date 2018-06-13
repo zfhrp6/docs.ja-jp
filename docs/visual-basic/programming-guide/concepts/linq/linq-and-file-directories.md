@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33646167"
 ---
 # <a name="linq-and-file-directories-visual-basic"></a><span data-ttu-id="01220-102">LINQ とファイルのディレクトリ (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="01220-102">LINQ and File Directories (Visual Basic)</span></span>
 <span data-ttu-id="01220-103">多くのファイル システム操作は基本的にクエリであるため、LINQ での使用に最適です。</span><span class="sxs-lookup"><span data-stu-id="01220-103">Many file system operations are essentially queries and are therefore well-suited to the LINQ approach.</span></span>  
