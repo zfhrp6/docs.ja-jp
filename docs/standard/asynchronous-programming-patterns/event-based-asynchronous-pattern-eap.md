@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33567807"
 ---
 # <a name="event-based-asynchronous-pattern-eap"></a><span data-ttu-id="7a6f6-102">イベント ベースの非同期パターン (EAP)</span><span class="sxs-lookup"><span data-stu-id="7a6f6-102">Event-based Asynchronous Pattern (EAP)</span></span>
 <span data-ttu-id="7a6f6-103">非同期機能をクライアント コードに公開する方法は数多くあります。</span><span class="sxs-lookup"><span data-stu-id="7a6f6-103">There are a number of ways to expose asynchronous features to client code.</span></span> <span data-ttu-id="7a6f6-104">イベント ベースの非同期パターンは、クラスが非同期動作を示す 1 つの方法を規定します。</span><span class="sxs-lookup"><span data-stu-id="7a6f6-104">The Event-based Asynchronous Pattern prescribes one way for classes to present asynchronous behavior.</span></span>  

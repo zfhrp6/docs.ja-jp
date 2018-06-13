@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33567846"
 ---
 # <a name="performing-formatting-operations"></a><span data-ttu-id="fe7cc-102">書式設定操作の実行</span><span class="sxs-lookup"><span data-stu-id="fe7cc-102">Performing Formatting Operations</span></span>
 <span data-ttu-id="fe7cc-103">次のトピックで、特定の書式設定操作を行うための手順を説明します。</span><span class="sxs-lookup"><span data-stu-id="fe7cc-103">The following topics provide step-by-step instructions for performing specific formatting operations.</span></span>  

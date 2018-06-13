@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33561736"
 ---
 # <a name="visual-layer-programming"></a><span data-ttu-id="178be-102">ビジュアル層のプログラミング</span><span class="sxs-lookup"><span data-stu-id="178be-102">Visual Layer Programming</span></span>
 <span data-ttu-id="178be-103"><xref:System.Windows.Media.Visual>オブジェクトは、コア[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]プライマリ ロールがあるレンダリング サポートを提供するオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="178be-103">The <xref:System.Windows.Media.Visual> object is a core [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] object, whose primary role is to provide rendering support.</span></span> <span data-ttu-id="178be-104">などのユーザー インターフェイス コントロール<xref:System.Windows.Controls.Button>と<xref:System.Windows.Controls.TextBox>から派生して、<xref:System.Windows.Media.Visual>クラス、およびその表示データを保持するに使用します。</span><span class="sxs-lookup"><span data-stu-id="178be-104">User interface controls, such as <xref:System.Windows.Controls.Button> and <xref:System.Windows.Controls.TextBox>, derive from the <xref:System.Windows.Media.Visual> class, and use it for persisting their rendering data.</span></span>  
