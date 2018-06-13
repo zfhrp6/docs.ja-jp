@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33650619"
 ---
 # <a name="concatenation-operators-in-visual-basic"></a><span data-ttu-id="bea5d-102">Visual Basic の連結演算子</span><span class="sxs-lookup"><span data-stu-id="bea5d-102">Concatenation Operators in Visual Basic</span></span>
 <span data-ttu-id="bea5d-103">連結演算子は、複数の文字列を結合して 1 つの文字列にします。</span><span class="sxs-lookup"><span data-stu-id="bea5d-103">Concatenation operators join multiple strings into a single string.</span></span> <span data-ttu-id="bea5d-104">連結演算子には、`+` と `&` の 2 つがあります。</span><span class="sxs-lookup"><span data-stu-id="bea5d-104">There are two concatenation operators, `+` and `&`.</span></span> <span data-ttu-id="bea5d-105">どちらの演算子も、次の例に示すように基本的な連結演算を行います。</span><span class="sxs-lookup"><span data-stu-id="bea5d-105">Both carry out the basic concatenation operation, as the following example shows.</span></span>  

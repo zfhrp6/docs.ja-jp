@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33803238"
 ---
 # <a name="propagation"></a><span data-ttu-id="1bf99-102">伝達</span><span class="sxs-lookup"><span data-stu-id="1bf99-102">Propagation</span></span>
 <span data-ttu-id="1bf99-103">このトピックでは、Windows Communication Foundation (WCF) のトレース モデルでのアクティビティ伝達について説明します。</span><span class="sxs-lookup"><span data-stu-id="1bf99-103">This topic describes activity propagation in the Windows Communication Foundation (WCF) tracing model.</span></span>  

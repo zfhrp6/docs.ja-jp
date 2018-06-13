@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33648607"
 ---
 # <a name="query-expression-syntax-for-standard-query-operators-visual-basic"></a><span data-ttu-id="810da-102">標準クエリ演算子 (Visual Basic) のクエリ式の構文</span><span class="sxs-lookup"><span data-stu-id="810da-102">Query Expression Syntax for Standard Query Operators (Visual Basic)</span></span>
 <span data-ttu-id="810da-103">頻繁に使用される標準クエリ演算子が専用の Visual Basic 言語のキーワードの構文には、一部として呼び出されるように、*クエリ式*です。</span><span class="sxs-lookup"><span data-stu-id="810da-103">Some of the more frequently used standard query operators have dedicated Visual Basic language keyword syntax that enables them to be called as part of a *query expression*.</span></span> <span data-ttu-id="810da-104">クエリ式は*メソッド ベース*の方法とは異なり、より読み取りやすいクエリの表現形式です。</span><span class="sxs-lookup"><span data-stu-id="810da-104">A query expression is a different, more readable form of expressing a query than its *method-based*  equivalent.</span></span> <span data-ttu-id="810da-105">クエリ式の句は、コンパイル時にクエリ メソッドへの呼び出しに変換されます。</span><span class="sxs-lookup"><span data-stu-id="810da-105">Query expression clauses are translated into calls to the query methods at compile time.</span></span>  

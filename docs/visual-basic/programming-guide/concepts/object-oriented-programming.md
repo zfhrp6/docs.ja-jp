@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33655968"
 ---
 # <a name="object-oriented-programming-visual-basic"></a><span data-ttu-id="343a6-102">オブジェクト指向プログラミング (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="343a6-102">Object-Oriented Programming (Visual Basic)</span></span>
 <span data-ttu-id="343a6-103">Visual Basic では、カプセル化、継承、ポリモーフィズムなどオブジェクト指向プログラミングを完全にサポートを提供します。</span><span class="sxs-lookup"><span data-stu-id="343a6-103">Visual Basic provides full support for object-oriented programming including encapsulation, inheritance, and polymorphism.</span></span>  

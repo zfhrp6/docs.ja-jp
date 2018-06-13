@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33652897"
 ---
 # <a name="how-to-overload-a-procedure-that-takes-optional-parameters-visual-basic"></a><span data-ttu-id="7bfbf-102">方法: 省略可能なパラメーターを受け取るプロシージャをオーバーロードする (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="7bfbf-102">How to: Overload a Procedure that Takes Optional Parameters (Visual Basic)</span></span>
 <span data-ttu-id="7bfbf-103">プロシージャが 1 つまたは複数場合[オプション](../../../../visual-basic/language-reference/modifiers/optional.md)パラメーター、暗黙的なオーバー ロードのいずれかに一致するオーバー ロード バージョンを定義することはできません。</span><span class="sxs-lookup"><span data-stu-id="7bfbf-103">If a procedure has one or more [Optional](../../../../visual-basic/language-reference/modifiers/optional.md) parameters, you cannot define an overloaded version matching any of its implicit overloads.</span></span> <span data-ttu-id="7bfbf-104">詳細についてを参照してください"暗黙的なオーバー ロードの省略可能なパラメーター"[プロシージャのオーバー ロードでの考慮事項](./considerations-in-overloading-procedures.md)です。</span><span class="sxs-lookup"><span data-stu-id="7bfbf-104">For more information, see "Implicit Overloads for Optional Parameters" in [Considerations in Overloading Procedures](./considerations-in-overloading-procedures.md).</span></span>  

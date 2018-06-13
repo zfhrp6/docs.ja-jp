@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809691"
 ---
 # <a name="service-versioning"></a><span data-ttu-id="984c1-102">サービスのバージョン管理</span><span class="sxs-lookup"><span data-stu-id="984c1-102">Service Versioning</span></span>
 <span data-ttu-id="984c1-103">ビジネス ニーズの変化、情報テクノロジの要件、その他の問題への対処などのさまざまな理由により、サービスの初期導入後と、場合によっては有効期間中に数回、サービス (およびサービスが公開するエンドポイント) を変更することが必要になる場合があります。</span><span class="sxs-lookup"><span data-stu-id="984c1-103">After initial deployment, and potentially several times during their lifetime, services (and the endpoints they expose) may need to be changed for a variety of reasons, such as changing business needs, information technology requirements, or to address other issues.</span></span> <span data-ttu-id="984c1-104">変更が発生するたびに、新しいバージョンのサービスが導入されます。</span><span class="sxs-lookup"><span data-stu-id="984c1-104">Each change introduces a new version of the service.</span></span> <span data-ttu-id="984c1-105">このトピックでは、Windows Communication Foundation (WCF) のバージョン管理を考慮する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="984c1-105">This topic explains how to consider versioning in Windows Communication Foundation (WCF).</span></span>  

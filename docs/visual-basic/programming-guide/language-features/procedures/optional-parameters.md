@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33651610"
 ---
 # <a name="optional-parameters-visual-basic"></a><span data-ttu-id="b750d-102">省略可能なパラメーター (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="b750d-102">Optional Parameters (Visual Basic)</span></span>
 <span data-ttu-id="b750d-103">プロシージャのパラメーターを省略可能にすると、呼び出し時に引数を指定する必要がなくなります。</span><span class="sxs-lookup"><span data-stu-id="b750d-103">You can specify that a procedure parameter is optional and no argument has to be supplied for it when the procedure is called.</span></span> <span data-ttu-id="b750d-104">*省略可能なパラメーター*によって示される、`Optional`プロシージャの定義のキーワードです。</span><span class="sxs-lookup"><span data-stu-id="b750d-104">*Optional parameters* are indicated by the `Optional` keyword in the procedure definition.</span></span> <span data-ttu-id="b750d-105">次の規則が適用されます。</span><span class="sxs-lookup"><span data-stu-id="b750d-105">The following rules apply:</span></span>  

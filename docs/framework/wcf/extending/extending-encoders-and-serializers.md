@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33803541"
 ---
 # <a name="extending-encoders-and-serializers"></a><span data-ttu-id="19843-102">エンコーダーとシリアライザーの拡張</span><span class="sxs-lookup"><span data-stu-id="19843-102">Extending Encoders and Serializers</span></span>
 <span data-ttu-id="19843-103">このセクションのトピックでは、Windows Communication Foundation (WCF) のシリアル化システムを拡張する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="19843-103">The topics in this section describe how to extend the Windows Communication Foundation (WCF) serialization system.</span></span>  

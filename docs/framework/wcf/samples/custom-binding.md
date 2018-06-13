@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33803382"
 ---
 # <a name="custom-binding"></a><span data-ttu-id="decdb-102">カスタム バインド</span><span class="sxs-lookup"><span data-stu-id="decdb-102">Custom Binding</span></span>
 <span data-ttu-id="decdb-103">このセクションには、エンドポイント要素のカスタム バインド属性の使用方法を示すサンプルが含まれています。</span><span class="sxs-lookup"><span data-stu-id="decdb-103">This section contains samples that demonstrate using a custom binding attribute of an endpoint element.</span></span>  

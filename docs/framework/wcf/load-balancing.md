@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33807526"
 ---
 # <a name="load-balancing"></a><span data-ttu-id="512ed-102">負荷分散</span><span class="sxs-lookup"><span data-stu-id="512ed-102">Load Balancing</span></span>
 <span data-ttu-id="512ed-103">Windows Communication Foundation (WCF) アプリケーションの容量を増やす方法の 1 つは負荷分散されたサーバー ファームに配置をスケール アウトすることです。</span><span class="sxs-lookup"><span data-stu-id="512ed-103">One way to increase the capacity of Windows Communication Foundation (WCF) applications is to scale them out by deploying them into a load-balanced server farm.</span></span> <span data-ttu-id="512ed-104">WCF アプリケーションは、標準的な負荷分散の手法を Windows ネットワーク負荷分散などのソフトウェア ロード バランサーを含むだけでなくハードウェア ベースの負荷分散を使用して負荷分散をすることができます。</span><span class="sxs-lookup"><span data-stu-id="512ed-104">WCF applications can be load balanced using standard load balancing techniques, including software load balancers such as Windows Network Load Balancing as well as hardware-based load balancing appliances.</span></span>  

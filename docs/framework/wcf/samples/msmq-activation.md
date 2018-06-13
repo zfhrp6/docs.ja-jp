@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33808131"
 ---
 # <a name="msmq-activation"></a><span data-ttu-id="4ed79-102">MSMQ アクティベーション</span><span class="sxs-lookup"><span data-stu-id="4ed79-102">MSMQ Activation</span></span>
 <span data-ttu-id="4ed79-103">このサンプルでは、メッセージ キューから読み取ったアプリケーションを、Windows プロセス アクティブ化サービス (WAS) でホストする方法を示します。</span><span class="sxs-lookup"><span data-stu-id="4ed79-103">This sample demonstrates how to host applications in Windows Process Activation Service (WAS) that are read from a message queue.</span></span> <span data-ttu-id="4ed79-104">このサンプルでは、`netMsmqBinding`に基づくと、[双方向通信](../../../../docs/framework/wcf/samples/two-way-communication.md)サンプルです。</span><span class="sxs-lookup"><span data-stu-id="4ed79-104">This sample uses the `netMsmqBinding` and is based on the [Two-Way Communication](../../../../docs/framework/wcf/samples/two-way-communication.md) sample.</span></span> <span data-ttu-id="4ed79-105">この場合、サービスは Web ホスト アプリケーションの 1 つであり、クライアントは自己ホスト型です。クライアントはコンソールに出力して、送信された発注書のステータスを確認します。</span><span class="sxs-lookup"><span data-stu-id="4ed79-105">The service in this case is a Web-hosted application and the client is self-hosted and outputs to the console to observe the status of purchase orders submitted.</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33805825"
 ---
 # <a name="expected-exceptions"></a><span data-ttu-id="5e14e-102">予期される例外</span><span class="sxs-lookup"><span data-stu-id="5e14e-102">Expected Exceptions</span></span>
 <span data-ttu-id="5e14e-103">このサンプルでは、型指定のあるクライアントを使用する際に、予期される例外をキャッチする方法を示します。</span><span class="sxs-lookup"><span data-stu-id="5e14e-103">This sample demonstrates how to catch expected exceptions when using a typed client.</span></span> <span data-ttu-id="5e14e-104">このサンプルがに基づいて、[作業の開始](../../../../docs/framework/wcf/samples/getting-started-sample.md)電卓サービスを実装します。</span><span class="sxs-lookup"><span data-stu-id="5e14e-104">This sample is based on the [Getting Started](../../../../docs/framework/wcf/samples/getting-started-sample.md) that implements a calculator service.</span></span> <span data-ttu-id="5e14e-105">この例では、クライアントはコンソール アプリケーション (.exe) であり、サービスはインターネット インフォメーション サービス (IIS) によってホストされます。</span><span class="sxs-lookup"><span data-stu-id="5e14e-105">In this sample, the client is a console application (.exe) and the service is hosted by Internet Information Services (IIS).</span></span>  

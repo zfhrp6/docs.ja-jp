@@ -13,6 +13,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33803454"
 ---
 # <a name="custom-credential-and-credential-validation"></a><span data-ttu-id="eba4e-102">カスタム資格情報と資格情報の検証</span><span class="sxs-lookup"><span data-stu-id="eba4e-102">Custom Credential and Credential Validation</span></span>
 <span data-ttu-id="eba4e-103">Windows Communication Foundation (WCF) でのセキュリティは、サービスとクライアント間で資格情報の交換に基づいています。</span><span class="sxs-lookup"><span data-stu-id="eba4e-103">Security in Windows Communication Foundation (WCF) is based on the exchange of credentials between services and clients.</span></span> <span data-ttu-id="eba4e-104">セキュリティ シナリオの多くは、Windows (Kerberos)、ユーザー名とパスワード、証明書などの共通の資格情報の種類を使用して満たされます。</span><span class="sxs-lookup"><span data-stu-id="eba4e-104">Most security scenarios can be satisfied using common credential types, such as Windows (Kerberos), username and passwords, and certificates.</span></span> <span data-ttu-id="eba4e-105">ただし、新しい種類の資格情報が必要な場合があります。このセクションのこのトピックでは、その新しい種類の処理方法と検証方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="eba4e-105">However, if a new type of credential is required, the topics in this section explain how to handle and validate new types.</span></span>  

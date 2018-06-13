@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809652"
 ---
 # <a name="service-channel-listeners-and-channels"></a><span data-ttu-id="7233d-102">サービス : チャネル リスナーとチャネル</span><span class="sxs-lookup"><span data-stu-id="7233d-102">Service: Channel Listeners and Channels</span></span>
 <span data-ttu-id="7233d-103">チャネル オブジェクトには、チャネル、チャネル リスナー、およびチャネル ファクトリという 3 つのカテゴリがあります。</span><span class="sxs-lookup"><span data-stu-id="7233d-103">There are three categories of channel objects: channels, channel listeners and channel factories.</span></span> <span data-ttu-id="7233d-104">チャネルはアプリケーションおよびチャネル スタックとのインターフェイスです。</span><span class="sxs-lookup"><span data-stu-id="7233d-104">Channels are the interface between the application and the channel stack.</span></span> <span data-ttu-id="7233d-105">チャネル リスナーは受信 (またはリッスン) する側のチャネルを作成する役割を果たします。通常は、新しい受信メッセージまたは接続への応答を行います。</span><span class="sxs-lookup"><span data-stu-id="7233d-105">Channel listeners are responsible for creating channels on the receive (or listen) side, typically in response to a new incoming message or connection.</span></span> <span data-ttu-id="7233d-106">チャネル ファクトリは送信側のチャネルを作成し、エンドポイントとの通信を開始する役割を果たします。</span><span class="sxs-lookup"><span data-stu-id="7233d-106">Channel factories are responsible for creating channels on the send side to initiate communication with an endpoint.</span></span>  

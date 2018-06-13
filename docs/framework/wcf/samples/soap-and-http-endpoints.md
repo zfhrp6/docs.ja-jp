@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809519"
 ---
 # <a name="soap-and-http-endpoints"></a><span data-ttu-id="1ced9-102">SOAP エンドポイントおよび HTTP エンドポイント</span><span class="sxs-lookup"><span data-stu-id="1ced9-102">SOAP and HTTP Endpoints</span></span>
 <span data-ttu-id="1ced9-103">このサンプルでは、RPC ベースのサービスを実装して、SOAP 形式および WCF Web プログラミング モデルを使用して、"Plain Old XML"(POX) 形式で公開する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="1ced9-103">This sample demonstrates how to implement an RPC-based service and expose it in the SOAP format and the "Plain Old XML" (POX) format using the WCF Web Programming model.</span></span> <span data-ttu-id="1ced9-104">参照してください、[基本 HTTP サービス](../../../../docs/framework/wcf/samples/basic-http-service.md)サービス用の HTTP バインドの詳細についてはサンプルです。</span><span class="sxs-lookup"><span data-stu-id="1ced9-104">See the [Basic HTTP Service](../../../../docs/framework/wcf/samples/basic-http-service.md) sample for more details about the HTTP binding for the service.</span></span> <span data-ttu-id="1ced9-105">このサンプルでは、さまざまなバインドを使用して SOAP および HTTP で RPC ベースのサービスを公開する方法について詳しく示します。</span><span class="sxs-lookup"><span data-stu-id="1ced9-105">This sample focuses on the details that pertain to exposing the same service over SOAP and HTTP using different bindings.</span></span>  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33808537"
 ---
 # <a name="best-practices-data-contract-versioning"></a><span data-ttu-id="b06b6-102">ベスト プラクティス : データ コントラクトのバージョン管理</span><span class="sxs-lookup"><span data-stu-id="b06b6-102">Best Practices: Data Contract Versioning</span></span>
 <span data-ttu-id="b06b6-103">このトピックでは、長期的に容易に拡張させることのできるデータ コントラクトを作成するためのベスト プラクティスをいくつか紹介します。</span><span class="sxs-lookup"><span data-stu-id="b06b6-103">This topic lists the best practices for creating data contracts that can evolve easily over time.</span></span> <span data-ttu-id="b06b6-104">データ コントラクトの詳細については、トピックを参照してください。[を使用してデータ コントラクト](../../../docs/framework/wcf/feature-details/using-data-contracts.md)です。</span><span class="sxs-lookup"><span data-stu-id="b06b6-104">For more information about data contracts, see the topics in [Using Data Contracts](../../../docs/framework/wcf/feature-details/using-data-contracts.md).</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33806033"
 ---
 # <a name="custom-stream-upgrades"></a><span data-ttu-id="0f771-102">カスタム ストリームのアップグレード</span><span class="sxs-lookup"><span data-stu-id="0f771-102">Custom Stream Upgrades</span></span>
 <span data-ttu-id="0f771-103">TCP、名前付きパイプなど、ストリーム指向のデータ伝送機構 (トランスポート) が扱うのは、クライアントとサーバーの間を流れる、連続的なバイト ストリームです。</span><span class="sxs-lookup"><span data-stu-id="0f771-103">Stream-oriented transports such as TCP and Named Pipes operate on a continuous stream of bytes between the client and server.</span></span> <span data-ttu-id="0f771-104">このストリームを実際に作り出すのは <xref:System.IO.Stream> オブジェクトです。</span><span class="sxs-lookup"><span data-stu-id="0f771-104">This stream is realized by a  <xref:System.IO.Stream> object.</span></span> <span data-ttu-id="0f771-105">ストリーム アップグレードでは、クライアントは、オプションのプロトコル階層をチャネル スタックに追加する場合に、相手側の通信チャネルにも同じことをするよう要求します。</span><span class="sxs-lookup"><span data-stu-id="0f771-105">In a stream upgrade, the client wants to add an optional protocol layer to the channel stack, and asks the other end of the communication channel to do so.</span></span> <span data-ttu-id="0f771-106">ストリーム アップグレードは、<xref:System.IO.Stream> オブジェクトをアップグレードされたものに置き換える形で実施します。</span><span class="sxs-lookup"><span data-stu-id="0f771-106">The stream upgrade consists in replacing the original <xref:System.IO.Stream> object with an upgraded one.</span></span>  

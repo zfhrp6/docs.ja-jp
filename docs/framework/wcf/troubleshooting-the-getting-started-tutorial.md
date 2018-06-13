@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33807789"
 ---
 # <a name="troubleshooting-the-getting-started-tutorial"></a><span data-ttu-id="aa73d-102">チュートリアル入門のトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="aa73d-102">Troubleshooting the Getting Started Tutorial</span></span>
 <span data-ttu-id="aa73d-103">このトピックでは、チュートリアル入門の作業中に遭遇する最も一般的な問題とその解決方法の一覧を示します。</span><span class="sxs-lookup"><span data-stu-id="aa73d-103">This topic lists the most common problems encountered when working through the Getting Started Tutorial and how to resolve them.</span></span>  

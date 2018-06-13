@@ -13,6 +13,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809782"
 ---
 # <a name="understanding-protection-level"></a><span data-ttu-id="8d57a-102">保護レベルの理解</span><span class="sxs-lookup"><span data-stu-id="8d57a-102">Understanding Protection Level</span></span>
 <span data-ttu-id="8d57a-103">`ProtectionLevel` プロパティは、<xref:System.ServiceModel.ServiceContractAttribute> クラス、<xref:System.ServiceModel.OperationContractAttribute> クラスなど、多くのクラスで使用されています。</span><span class="sxs-lookup"><span data-stu-id="8d57a-103">The `ProtectionLevel` property is found on many different classes, such as the <xref:System.ServiceModel.ServiceContractAttribute> and the <xref:System.ServiceModel.OperationContractAttribute> classes.</span></span> <span data-ttu-id="8d57a-104">このプロパティは、メッセージの一部または全体を保護する方法を制御します。</span><span class="sxs-lookup"><span data-stu-id="8d57a-104">The property controls how a part (or whole) of a message is protected.</span></span> <span data-ttu-id="8d57a-105">このトピックでは、Windows Communication Foundation (WCF) の機能とそのしくみについて説明します。</span><span class="sxs-lookup"><span data-stu-id="8d57a-105">This topic explains the Windows Communication Foundation (WCF) feature and how it works.</span></span>  

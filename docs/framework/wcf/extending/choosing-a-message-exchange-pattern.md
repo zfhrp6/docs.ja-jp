@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33805890"
 ---
 # <a name="choosing-a-message-exchange-pattern"></a><span data-ttu-id="5dc0f-102">メッセージ交換パターンの選択</span><span class="sxs-lookup"><span data-stu-id="5dc0f-102">Choosing a Message Exchange Pattern</span></span>
 <span data-ttu-id="5dc0f-103">カスタム トランスポートを記述する最初の手順は、これを決定する*メッセージ交換パターン*(Mep) を開発するチャネルに必要なです。</span><span class="sxs-lookup"><span data-stu-id="5dc0f-103">The first step in writing a custom transport is to decide which *message exchange patterns* (or MEPs) are required for the channel you are developing.</span></span> <span data-ttu-id="5dc0f-104">ここでは、使用できるオプションとさまざまな要件について説明します。</span><span class="sxs-lookup"><span data-stu-id="5dc0f-104">This topic describes the options available and discusses the various requirements.</span></span> <span data-ttu-id="5dc0f-105">これで説明されているチャネル開発タスクの一覧の最初のタスクは、[開発チャネル](../../../../docs/framework/wcf/extending/developing-channels.md)です。</span><span class="sxs-lookup"><span data-stu-id="5dc0f-105">This is the first task in the channel development task list described in [Developing Channels](../../../../docs/framework/wcf/extending/developing-channels.md).</span></span>  

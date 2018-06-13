@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33808287"
 ---
 # <a name="client-validation"></a><span data-ttu-id="9d10f-102">クライアント検証</span><span class="sxs-lookup"><span data-stu-id="9d10f-102">Client Validation</span></span>
 <span data-ttu-id="9d10f-103">サービスは頻繁にメタデータを公開し、クライアント プロキシの型を自動的に生成して構成できるようにします。</span><span class="sxs-lookup"><span data-stu-id="9d10f-103">Services frequently publish metadata to enable automatic generation and configuration of client proxy types.</span></span> <span data-ttu-id="9d10f-104">サービスが信頼できない場合、クライアント アプリケーションでは、セキュリティ、トランザクション、サービス コントラクトの型などに関して、メタデータがクライアント アプリケーションのポリシーに合致しているかどうか検証する必要があります。</span><span class="sxs-lookup"><span data-stu-id="9d10f-104">When the service is not trusted, client applications should validate that the metadata conforms to the client application's policy regarding security, transactions, the type of service contract and so on.</span></span> <span data-ttu-id="9d10f-105">次のサンプルでは、サービス エンドポイントを検証するクライアント エンドポイントの動作を記述して、サービス エンドポイントを安全に使用できることを確認する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="9d10f-105">The following sample demonstrates how to write a client endpoint behavior that validates the service endpoint to ensure that service endpoint is safe to use.</span></span>  

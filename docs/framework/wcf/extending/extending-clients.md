@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33806657"
 ---
 # <a name="extending-clients"></a><span data-ttu-id="0eff7-102">クライアントの拡張</span><span class="sxs-lookup"><span data-stu-id="0eff7-102">Extending Clients</span></span>
 <span data-ttu-id="0eff7-103">呼び出し側のアプリケーションでは、サービス モデル レイヤーが、アプリケーション コードでのメソッド呼び出しを送信メッセージに変換し、それらを基になるチャネルにプッシュし、結果をアプリケーション コードで戻り値と出力パラメーターに変換して、変換結果を呼び出し側に返します。</span><span class="sxs-lookup"><span data-stu-id="0eff7-103">In a calling application, the service model layer is responsible for translating method invocations in application code into outbound messages, pushing them to the underlying channels, translating results back into return values and out parameters in application code, and returning the results back to the caller.</span></span> <span data-ttu-id="0eff7-104">サービス モデル拡張は、クライアントやディスパッチャーの機能、カスタム動作、メッセージとパラメーターの途中受信、およびその他の拡張機能に関連する実行や通信の動作と機能を変更または実装します。</span><span class="sxs-lookup"><span data-stu-id="0eff7-104">Service model extensions modify or implement execution or communication behavior and features involving client or dispatcher functionality, custom behaviors, message and parameter interception, and other extensibility functionality.</span></span>  

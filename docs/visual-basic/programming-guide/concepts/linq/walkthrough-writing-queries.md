@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33655877"
 ---
 # <a name="walkthrough-writing-queries-in-visual-basic"></a><span data-ttu-id="832ee-102">チュートリアル: Visual Basic でクエリを記述する</span><span class="sxs-lookup"><span data-stu-id="832ee-102">Walkthrough: Writing Queries in Visual Basic</span></span>
 <span data-ttu-id="832ee-103">このチュートリアルでは、書き込みを Visual Basic 言語の機能を使用する方法を示しています[!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)]クエリ式。</span><span class="sxs-lookup"><span data-stu-id="832ee-103">This walkthrough demonstrates how you can use Visual Basic language features to write [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] query expressions.</span></span> <span data-ttu-id="832ee-104">このチュートリアルでは、Student オブジェクトの一覧にクエリを作成する方法、クエリを実行する方法、およびそれらを変更する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="832ee-104">The walkthrough demonstrates how to create queries on a list of Student objects, how to run the queries, and how to modify them.</span></span> <span data-ttu-id="832ee-105">クエリでは、オブジェクト初期化子、ローカル型推論、および匿名型を含むいくつかの機能を組み込みます。</span><span class="sxs-lookup"><span data-stu-id="832ee-105">The queries incorporate several features including object initializers, local type inference, and anonymous types.</span></span>  

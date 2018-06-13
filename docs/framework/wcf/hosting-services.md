@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33807854"
 ---
 # <a name="hosting-services"></a><span data-ttu-id="4f110-102">ホスティング サービス</span><span class="sxs-lookup"><span data-stu-id="4f110-102">Hosting Services</span></span>
 <span data-ttu-id="4f110-103">アクティブにするには、サービスを作成してそのコンテキストと有効期間を制御するランタイム環境内で、サービスをホストする必要があります。</span><span class="sxs-lookup"><span data-stu-id="4f110-103">To become active, a service must be hosted within a run-time environment that creates it and controls its context and lifetime.</span></span> <span data-ttu-id="4f110-104">Windows Communication Foundation (WCF) サービスは、マネージ コードをサポートする任意の Windows プロセスで実行する設計されています。</span><span class="sxs-lookup"><span data-stu-id="4f110-104">Windows Communication Foundation (WCF) services are designed to run in any Windows process that supports managed code.</span></span>  

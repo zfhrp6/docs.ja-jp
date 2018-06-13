@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33636763"
 ---
 # <a name="division-by-zero-visual-basic-error"></a><span data-ttu-id="80e0c-102">0 による除算 (Visual Basic エラー)</span><span class="sxs-lookup"><span data-stu-id="80e0c-102">Division by zero (Visual Basic Error)</span></span>
 <span data-ttu-id="80e0c-103">除数として使用される式の値が 0 です。</span><span class="sxs-lookup"><span data-stu-id="80e0c-103">The value of an expression used as a divisor is zero.</span></span>  

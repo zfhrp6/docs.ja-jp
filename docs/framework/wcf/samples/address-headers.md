@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33803791"
 ---
 # <a name="address-headers"></a><span data-ttu-id="54aec-102">アドレス ヘッダー</span><span class="sxs-lookup"><span data-stu-id="54aec-102">Address Headers</span></span>
 <span data-ttu-id="54aec-103">アドレス ヘッダーのサンプルでは、クライアントが Windows Communication Foundation (WCF) を使用してサービスに参照パラメーターを渡すことができる方法を示します。</span><span class="sxs-lookup"><span data-stu-id="54aec-103">The Address Headers sample demonstrates how clients can pass reference parameters to a service using Windows Communication Foundation (WCF).</span></span>  

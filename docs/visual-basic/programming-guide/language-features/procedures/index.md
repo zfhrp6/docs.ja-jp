@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33655137"
 ---
 # <a name="procedures-in-visual-basic"></a><span data-ttu-id="f1ae8-102">Visual Basic におけるプロシージャ</span><span class="sxs-lookup"><span data-stu-id="f1ae8-102">Procedures in Visual Basic</span></span>
 <span data-ttu-id="f1ae8-103">A*プロシージャ*宣言ステートメントで囲まれている Visual Basic ステートメントのブロックです (`Function`、 `Sub`、 `Operator`、 `Get`、 `Set`) し、対応する`End`宣言します。</span><span class="sxs-lookup"><span data-stu-id="f1ae8-103">A *procedure* is a block of Visual Basic statements enclosed by a declaration statement (`Function`, `Sub`, `Operator`, `Get`, `Set`) and a matching `End` declaration.</span></span> <span data-ttu-id="f1ae8-104">Visual Basic でのすべての実行可能なステートメントは、いくつかの手順でなければなりません。</span><span class="sxs-lookup"><span data-stu-id="f1ae8-104">All executable statements in Visual Basic must be within some procedure.</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33647402"
 ---
 # <a name="working-with-xml-namespaces-visual-basic"></a><span data-ttu-id="80391-102">XML 名前空間 (Visual Basic) の使用</span><span class="sxs-lookup"><span data-stu-id="80391-102">Working with XML Namespaces (Visual Basic)</span></span>
 <span data-ttu-id="80391-103">このセクションのトピックでは、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] で名前空間がどのようにサポートされるかについて説明します。</span><span class="sxs-lookup"><span data-stu-id="80391-103">The topics in this section describe how [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] supports namespaces.</span></span>  

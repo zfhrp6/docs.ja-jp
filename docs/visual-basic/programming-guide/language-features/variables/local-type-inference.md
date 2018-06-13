@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33655324"
 ---
 # <a name="local-type-inference-visual-basic"></a><span data-ttu-id="b1410-102">ローカル型の推論 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="b1410-102">Local Type Inference (Visual Basic)</span></span>
 <span data-ttu-id="b1410-103">Visual Basic コンパイラを使用して*型推論*なしで宣言されたローカル変数のデータ型を決定する、`As`句。</span><span class="sxs-lookup"><span data-stu-id="b1410-103">The Visual Basic compiler uses *type inference* to determine the data types of local variables declared without an `As` clause.</span></span> <span data-ttu-id="b1410-104">コンパイラは、初期化式の型から変数の型を推論します。</span><span class="sxs-lookup"><span data-stu-id="b1410-104">The compiler infers the type of the variable from the type of the initialization expression.</span></span> <span data-ttu-id="b1410-105">これにより、変数を宣言する型を明示的に指定せず、次の例に示すようにできます。</span><span class="sxs-lookup"><span data-stu-id="b1410-105">This enables you to declare variables without explicitly stating a type, as shown in the following example.</span></span> <span data-ttu-id="b1410-106">宣言の結果、両方とも`num1`と`num2`整数値として厳密に型指定します。</span><span class="sxs-lookup"><span data-stu-id="b1410-106">As a result of the declarations, both `num1` and `num2` are strongly typed as integers.</span></span>  

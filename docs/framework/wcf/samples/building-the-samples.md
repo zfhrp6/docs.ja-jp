@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33806956"
 ---
 # <a name="building-the-windows-communication-foundation-samples"></a><span data-ttu-id="0bf02-102">Windows Communication Foundation サンプルのビルド</span><span class="sxs-lookup"><span data-stu-id="0bf02-102">Building the Windows Communication Foundation Samples</span></span>
 <span data-ttu-id="0bf02-103">Visual Studio 2010 を使用してまたはを使用して、Windows Communication Foundation (WCF) サンプルをビルドすることができます、 **msbuild**コマンドラインからコマンド。</span><span class="sxs-lookup"><span data-stu-id="0bf02-103">The Windows Communication Foundation (WCF) samples can be built using Visual Studio 2010 or using the **msbuild** command from the command line.</span></span> <span data-ttu-id="0bf02-104">ここでは、両方の手順について説明します。</span><span class="sxs-lookup"><span data-stu-id="0bf02-104">Both procedures are described in this topic.</span></span>  

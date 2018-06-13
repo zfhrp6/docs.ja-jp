@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33808609"
 ---
 # <a name="durable-instance-context"></a><span data-ttu-id="814ab-102">永続性インスタンス コンテキスト</span><span class="sxs-lookup"><span data-stu-id="814ab-102">Durable Instance Context</span></span>
 <span data-ttu-id="814ab-103">このサンプルでは、永続性インスタンス コンテキストを有効にするには、Windows Communication Foundation (WCF) ランタイムをカスタマイズする方法を示します。</span><span class="sxs-lookup"><span data-stu-id="814ab-103">This sample demonstrates how to customize the Windows Communication Foundation (WCF) runtime to enable durable instance contexts.</span></span> <span data-ttu-id="814ab-104">バッキング ストアとして、SQL Server 2005 (この場合は SQL Server 2005 Express) を使用します。</span><span class="sxs-lookup"><span data-stu-id="814ab-104">It uses SQL Server 2005 as its backing store (SQL Server 2005 Express in this case).</span></span> <span data-ttu-id="814ab-105">ただし、カスタム ストレージ機構にアクセスする方法も示します。</span><span class="sxs-lookup"><span data-stu-id="814ab-105">However, it also provides a way to access custom storage mechanisms.</span></span>  

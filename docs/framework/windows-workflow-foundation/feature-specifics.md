@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809863"
 ---
 # <a name="windows-workflow-foundation-feature-specifics"></a><span data-ttu-id="58f27-102">Windows Workflow Foundation の機能仕様</span><span class="sxs-lookup"><span data-stu-id="58f27-102">Windows Workflow Foundation Feature Specifics</span></span>
 [!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)]<span data-ttu-id="58f27-103"> は、Windows Workflow Foundation にいくつかの機能を追加します。</span><span class="sxs-lookup"><span data-stu-id="58f27-103"> adds a number of features to Windows Workflow Foundation.</span></span> <span data-ttu-id="58f27-104">このドキュメントでは、いくつかの新機能について説明し、役に立つ可能性のあるシナリオの詳細を示します。</span><span class="sxs-lookup"><span data-stu-id="58f27-104">This document describes a number of the new features, and gives details about scenarios in which they may be useful.</span></span>  

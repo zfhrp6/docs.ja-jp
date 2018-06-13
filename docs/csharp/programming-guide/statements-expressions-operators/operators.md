@@ -11,6 +11,7 @@ ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/23/2018
+ms.locfileid: "34457931"
 ---
 # <a name="operators-c-programming-guide"></a><span data-ttu-id="34d7c-102">演算子 (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="34d7c-102">Operators (C# Programming Guide)</span></span>
 <span data-ttu-id="34d7c-103">C# では、 *演算子* は式またはステートメントの中で 1 つ以上の *オペランド* に適用されるプログラム要素です。</span><span class="sxs-lookup"><span data-stu-id="34d7c-103">In C#, an *operator* is a program element that is applied to one or more *operands* in an expression or statement.</span></span> <span data-ttu-id="34d7c-104">インクリメント演算子 (`++`) や `new`など、1 つのオペランドを受け取る演算子を *単項* 演算子と言います。</span><span class="sxs-lookup"><span data-stu-id="34d7c-104">Operators that take one operand, such as the increment operator (`++`) or `new`, are referred to as *unary* operators.</span></span> <span data-ttu-id="34d7c-105">算術演算子 (`+`、`-`、`*`、`/`) など、2 つのオペランドを受け取る演算子を *二項* 演算子と言います。</span><span class="sxs-lookup"><span data-stu-id="34d7c-105">Operators that take two operands, such as arithmetic operators (`+`,`-`,`*`,`/`), are referred to as *binary* operators.</span></span> <span data-ttu-id="34d7c-106">条件演算子 (`?:`) は、3 つのオペランドを受け取る、C# でただ 1 つの三項演算子です。</span><span class="sxs-lookup"><span data-stu-id="34d7c-106">One operator, the conditional operator (`?:`), takes three operands and is the sole ternary operator in C#.</span></span>  

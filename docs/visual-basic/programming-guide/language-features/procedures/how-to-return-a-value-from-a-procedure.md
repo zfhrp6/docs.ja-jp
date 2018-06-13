@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33651835"
 ---
 # <a name="how-to-return-a-value-from-a-procedure-visual-basic"></a><span data-ttu-id="b9fe9-102">方法: プロシージャから値を返す (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="b9fe9-102">How to: Return a Value from a Procedure (Visual Basic)</span></span>
 <span data-ttu-id="b9fe9-103">A`Function`プロシージャに値を返す呼び出し元のコードを実行するか、`Return`ステートメントまたはを戻したり、`Exit Function`または`End Function`ステートメントです。</span><span class="sxs-lookup"><span data-stu-id="b9fe9-103">A `Function` procedure returns a value to the calling code either by executing a `Return` statement or by encountering an `Exit Function` or `End Function` statement.</span></span>  

@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33648919"
 ---
 # <a name="efficient-combination-of-operators-visual-basic"></a><span data-ttu-id="0295a-102">演算子の効率のよい組み合わせ (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="0295a-102">Efficient Combination of Operators (Visual Basic)</span></span>
 <span data-ttu-id="0295a-103">複雑な式には、さまざまな演算子を含めることができます。</span><span class="sxs-lookup"><span data-stu-id="0295a-103">Complex expressions can contain many different operators.</span></span> <span data-ttu-id="0295a-104">次に例を示します。</span><span class="sxs-lookup"><span data-stu-id="0295a-104">The following example illustrates this.</span></span>  

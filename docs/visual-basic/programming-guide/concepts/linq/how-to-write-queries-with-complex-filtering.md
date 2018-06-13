@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33645864"
 ---
 # <a name="how-to-write-queries-with-complex-filtering-visual-basic"></a><span data-ttu-id="62af9-102">方法: クエリを記述複雑なフィルター (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="62af9-102">How to: Write Queries with Complex Filtering (Visual Basic)</span></span>
 <span data-ttu-id="62af9-103">複雑なフィルターを使用して LINQ to XML クエリを記述することが必要になる場合があります。</span><span class="sxs-lookup"><span data-stu-id="62af9-103">Sometimes you want to write LINQ to XML queries with complex filters.</span></span> <span data-ttu-id="62af9-104">たとえば、特定の名前と値を持つ子要素を含む要素をすべて検索しなければならない場合があります。</span><span class="sxs-lookup"><span data-stu-id="62af9-104">For example, you might have to find all elements that have a child element with a particular name and value.</span></span> <span data-ttu-id="62af9-105">このトピックでは、複雑なフィルターを使用してクエリを記述する例について説明します。</span><span class="sxs-lookup"><span data-stu-id="62af9-105">This topic gives an example of writing a query with complex filtering.</span></span>  

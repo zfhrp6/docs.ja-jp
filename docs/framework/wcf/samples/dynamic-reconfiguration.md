@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33810381"
 ---
 # <a name="dynamic-reconfiguration"></a><span data-ttu-id="a44c1-102">動的再構成</span><span class="sxs-lookup"><span data-stu-id="a44c1-102">Dynamic Reconfiguration</span></span>
 <span data-ttu-id="a44c1-103">このサンプルでは、Windows Communication Foundation (WCF) ルーティング サービスを使用します。</span><span class="sxs-lookup"><span data-stu-id="a44c1-103">This sample demonstrates the Windows Communication Foundation (WCF) routing service.</span></span> <span data-ttu-id="a44c1-104">ルーティング サービスは、コンテンツ ベースのルーターをアプリケーションに含めるしやすく WCF コンポーネントです。</span><span class="sxs-lookup"><span data-stu-id="a44c1-104">The routing service is a WCF component that makes it easy to include a content-based router in your application.</span></span> <span data-ttu-id="a44c1-105">このサンプルは、ルーティング サービスを使用して通信するために標準の WCF 電卓のサンプルを適合させます。</span><span class="sxs-lookup"><span data-stu-id="a44c1-105">This sample adapts the standard WCF Calculator Sample to communicate using the routing service.</span></span> <span data-ttu-id="a44c1-106">このサンプルでは、実行時にルーティング サービスを動的に再構成する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="a44c1-106">This sample shows how the routing service can be dynamically reconfigured during runtime.</span></span>  

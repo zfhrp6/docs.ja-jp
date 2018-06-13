@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33806209"
 ---
 # <a name="extending-hosting-using-servicehostfactory"></a><span data-ttu-id="56187-102">ServiceHostFactory を使用したホストの拡張</span><span class="sxs-lookup"><span data-stu-id="56187-102">Extending Hosting Using ServiceHostFactory</span></span>
 <span data-ttu-id="56187-103">標準<xref:System.ServiceModel.ServiceHost>Windows Communication Foundation (WCF) サービスをホストするための API は、WCF のアーキテクチャの機能拡張ポイントです。</span><span class="sxs-lookup"><span data-stu-id="56187-103">The standard <xref:System.ServiceModel.ServiceHost> API for hosting services in Windows Communication Foundation (WCF) is an extensibility point in the WCF architecture.</span></span> <span data-ttu-id="56187-104">ユーザーは、この <xref:System.ServiceModel.ServiceHost> の派生型として独自のホスト クラスを定義できます。通常は、<xref:System.ServiceModel.Channels.CommunicationObject.OnOpening> を使用するために <xref:System.ServiceModel.Description.ServiceDescription> をオーバーライドして、これにより、サービスを開く前に、強制的に既定のエンドポイントを追加したり、動作を変更することができます。</span><span class="sxs-lookup"><span data-stu-id="56187-104">Users can derive their own host classes from <xref:System.ServiceModel.ServiceHost>, usually to override <xref:System.ServiceModel.Channels.CommunicationObject.OnOpening> to use <xref:System.ServiceModel.Description.ServiceDescription> to add default endpoints imperatively or modify behaviors, prior to opening the service.</span></span>  

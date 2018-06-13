@@ -13,6 +13,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33803676"
 ---
 # <a name="guidelines-and-best-practices"></a><span data-ttu-id="e9a7b-102">ガイドラインと最適な使用方法</span><span class="sxs-lookup"><span data-stu-id="e9a7b-102">Guidelines and Best Practices</span></span>
 <span data-ttu-id="e9a7b-103">このセクションには、Windows Communication Foundation (WCF) アプリケーションを作成するためのガイドラインを提供するトピックが含まれています。</span><span class="sxs-lookup"><span data-stu-id="e9a7b-103">This section contains topics that provide guidelines for creating Windows Communication Foundation (WCF) applications.</span></span>  

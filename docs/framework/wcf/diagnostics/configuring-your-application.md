@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33803651"
 ---
 # <a name="configuring-your-application"></a><span data-ttu-id="02c30-102">アプリケーションの構成</span><span class="sxs-lookup"><span data-stu-id="02c30-102">Configuring Your Application</span></span>
 <span data-ttu-id="02c30-103">Windows Communication Foundation (WCF) では、.NET 構成システムを使用し、コンピューターとアプリケーションの両方のスコープでサービスを構成することができます。</span><span class="sxs-lookup"><span data-stu-id="02c30-103">Windows Communication Foundation (WCF) uses the .NET configuration system and allows you to configure services at both the machine and application scope.</span></span>  

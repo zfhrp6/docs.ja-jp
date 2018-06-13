@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33803428"
 ---
 # <a name="ajax"></a><span data-ttu-id="44858-102">AJAX</span><span class="sxs-lookup"><span data-stu-id="44858-102">AJAX</span></span>
 <span data-ttu-id="44858-103">このセクションには、AJAX (Asynchronous JavaScript and XML) の機能を示すサンプルが含まれています。</span><span class="sxs-lookup"><span data-stu-id="44858-103">This section includes samples that demonstrate Asynchronous JavaScript and XML functionality.</span></span>  

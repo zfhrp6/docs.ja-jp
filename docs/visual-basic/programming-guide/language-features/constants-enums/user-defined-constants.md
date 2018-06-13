@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33648776"
 ---
 # <a name="user-defined-constants-visual-basic"></a><span data-ttu-id="665b8-102">ユーザー定義定数 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="665b8-102">User-Defined Constants (Visual Basic)</span></span>
 <span data-ttu-id="665b8-103">定数とは、数値または文字列が変化しないの代わりに使用されるわかりやすい名前です。</span><span class="sxs-lookup"><span data-stu-id="665b8-103">A constant is a meaningful name that takes the place of a number or string that does not change.</span></span> <span data-ttu-id="665b8-104">定数に格納された値は、その名が示すとおり、アプリケーションの実行中に変わることはありません。</span><span class="sxs-lookup"><span data-stu-id="665b8-104">Constants store values that, as the name implies, remain constant throughout the execution of an application.</span></span> <span data-ttu-id="665b8-105">コントロールまたは使用するコンポーネントで定義されている定数を使用するか、独自に作成することができます。</span><span class="sxs-lookup"><span data-stu-id="665b8-105">You can use constants that are defined by the controls or components you work with, or you can create your own.</span></span> <span data-ttu-id="665b8-106">自分で作成した定数は*ユーザー定義*です。</span><span class="sxs-lookup"><span data-stu-id="665b8-106">Constants you create yourself are described as *user-defined*.</span></span>  

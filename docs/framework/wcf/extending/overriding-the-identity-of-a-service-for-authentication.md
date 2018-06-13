@@ -10,6 +10,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33806943"
 ---
 # <a name="overriding-the-identity-of-a-service-for-authentication"></a><span data-ttu-id="b4afa-102">認証のためのサービスの ID のオーバーライド</span><span class="sxs-lookup"><span data-stu-id="b4afa-102">Overriding the Identity of a Service for Authentication</span></span>
 <span data-ttu-id="b4afa-103">クライアント資格情報の種類を選択すると、サービス メタデータで公開される ID の種類が指定されるため、通常、サービスで ID を設定する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="b4afa-103">Typically, you do not have to set the identity on a service because the selection of a client credential type dictates the type of identity exposed in the service metadata.</span></span> <span data-ttu-id="b4afa-104">たとえば、次の構成コードを使用して、 [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)要素とセット、`clientCredentialType`属性を Windows です。</span><span class="sxs-lookup"><span data-stu-id="b4afa-104">For example, the following configuration code uses the [\<wsHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) element and sets the `clientCredentialType` attribute to Windows.</span></span>  

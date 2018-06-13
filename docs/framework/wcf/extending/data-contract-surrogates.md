@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809470"
 ---
 # <a name="data-contract-surrogates"></a><span data-ttu-id="d6781-102">データ コントラクト サロゲート</span><span class="sxs-lookup"><span data-stu-id="d6781-102">Data Contract Surrogates</span></span>
 <span data-ttu-id="d6781-103">データ コントラクト*サロゲート*データ コントラクト モデルに基づいて構築されている高度な機能です。</span><span class="sxs-lookup"><span data-stu-id="d6781-103">The data contract *surrogate* is an advanced feature built upon the Data Contract model.</span></span> <span data-ttu-id="d6781-104">この機能は、型をシリアル化または逆シリアル化する方法や、型をメタデータに投影する方法をユーザーが変更する場合に、型のカスタマイズと置換に使用することを目的としています。</span><span class="sxs-lookup"><span data-stu-id="d6781-104">This feature is designed to be used for type customization and substitution in situations where users want to change how a type is serialized, deserialized or projected into metadata.</span></span> <span data-ttu-id="d6781-105">サロゲートを使用できるのは、型のデータ コントラクトが指定されていない場合、フィールドやプロパティが <xref:System.Runtime.Serialization.DataMemberAttribute> 属性でマークされていない場合、またはユーザーがスキーマのバリエーションを動的に作成することを希望している場合などです。</span><span class="sxs-lookup"><span data-stu-id="d6781-105">Some scenarios where a surrogate may be used is when a data contract has not been specified for the type, fields and properties are not marked with the <xref:System.Runtime.Serialization.DataMemberAttribute> attribute or users wish to dynamically create schema variations.</span></span>  

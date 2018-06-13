@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33808332"
 ---
 # <a name="token-authenticator"></a><span data-ttu-id="c438c-102">トークン認証システム</span><span class="sxs-lookup"><span data-stu-id="c438c-102">Token Authenticator</span></span>
 <span data-ttu-id="c438c-103">このサンプルでは、カスタム トークンの認証システムを実装する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="c438c-103">This sample demonstrates how to implement a custom token authenticator.</span></span> <span data-ttu-id="c438c-104">トークン認証システムの Windows Communication Foundation (WCF) が自己矛盾がないと id の認証トークンに関連付けられていることを確認するメッセージで使用されるトークンの検証に使用されます。</span><span class="sxs-lookup"><span data-stu-id="c438c-104">A token authenticator in Windows Communication Foundation (WCF) is used for validating the token used with the message, verifying that it is self-consistent, and authenticating the identity associated with the token.</span></span>  

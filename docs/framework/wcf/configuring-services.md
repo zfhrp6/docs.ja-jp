@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33803281"
 ---
 # <a name="configuring-services"></a><span data-ttu-id="36f94-102">サービスの構成</span><span class="sxs-lookup"><span data-stu-id="36f94-102">Configuring Services</span></span>
 <span data-ttu-id="36f94-103">サービス コントラクトの設計、実装が終われば、サービスを構成できる状態になります。</span><span class="sxs-lookup"><span data-stu-id="36f94-103">Once you have designed and implemented your service contract, you are ready to configure your service.</span></span> <span data-ttu-id="36f94-104">クライアント側から見たサービスの動作は、ここで定義、カスタマイズします。サービスと通信するためのアドレス、メッセージの送受信に使うトランスポートやエンコーディング、必要なセキュリティ型などを指定できます。</span><span class="sxs-lookup"><span data-stu-id="36f94-104">This is where you define and customize how your service is exposed to clients, including specifying the address where it can be found, the transport and message encoding it uses to send and receive messages, and the type of security it requires.</span></span>  

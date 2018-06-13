@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33806579"
 ---
 # <a name="configuration-channel-factory"></a><span data-ttu-id="91b2f-102">構成チャネル ファクトリ</span><span class="sxs-lookup"><span data-stu-id="91b2f-102">Configuration Channel Factory</span></span>
 <span data-ttu-id="91b2f-103">このサンプルでは、<xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601> の使用方法を示します。</span><span class="sxs-lookup"><span data-stu-id="91b2f-103">This sample covers the usage of the <xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601>.</span></span> <span data-ttu-id="91b2f-104"><xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601> WCF クライアントの構成の一元管理を許可します。</span><span class="sxs-lookup"><span data-stu-id="91b2f-104">The <xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601> allows central management of WCF client configuration.</span></span> <span data-ttu-id="91b2f-105">これは、アプリケーション ドメインによる読み込みの後に構成が選択または変更される場合にも役立ちます。</span><span class="sxs-lookup"><span data-stu-id="91b2f-105">This can also be useful in scenarios in which configuration is selected or changed after the application domain load time.</span></span>  

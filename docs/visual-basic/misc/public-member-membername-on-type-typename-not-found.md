@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33637531"
 ---
 # <a name="public-member-39ltmembernamegt39-on-type-39lttypenamegt39-not-found"></a><span data-ttu-id="acb1d-102">パブリック メンバー &#39; &lt;membername&gt; &#39;型&#39; &lt;typename&gt; &#39;が見つかりません。</span><span class="sxs-lookup"><span data-stu-id="acb1d-102">Public member &#39;&lt;membername&gt;&#39; on type &#39;&lt;typename&gt;&#39; not found</span></span>
 <span data-ttu-id="acb1d-103">アクセスしようとしているメンバーが見つかりません。</span><span class="sxs-lookup"><span data-stu-id="acb1d-103">The member you are trying to access cannot be found.</span></span> <span data-ttu-id="acb1d-104">このエラーは、遅延バインディング オブジェクトの非パブリック メンバーにアクセスするときに発生することがあります。</span><span class="sxs-lookup"><span data-stu-id="acb1d-104">This error can occur when accessing non-public members of late-bound objects.</span></span>  

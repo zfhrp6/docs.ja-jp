@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33652169"
 ---
 # <a name="how-to-control-the-availability-of-a-variable-visual-basic"></a><span data-ttu-id="6e02f-102">方法: 変数の可用性を制御する (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="6e02f-102">How to: Control the Availability of a Variable (Visual Basic)</span></span>
 <span data-ttu-id="6e02f-103">指定して、変数の可用性を制御するその*アクセス レベル*です。</span><span class="sxs-lookup"><span data-stu-id="6e02f-103">You control the availability of a variable by specifying its *access level*.</span></span> <span data-ttu-id="6e02f-104">アクセス レベルは、どのようなコードは、変数に対する読み取りまたは書き込みするアクセス許可を決定します。</span><span class="sxs-lookup"><span data-stu-id="6e02f-104">The access level determines what code has permission to read or write to the variable.</span></span>  

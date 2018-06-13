@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33652923"
 ---
 # <a name="-main"></a><span data-ttu-id="b092a-102">-メイン</span><span class="sxs-lookup"><span data-stu-id="b092a-102">-main</span></span>
 <span data-ttu-id="b092a-103">`Sub Main` プロシージャを格納するクラスまたはモジュールを指定します。</span><span class="sxs-lookup"><span data-stu-id="b092a-103">Specifies the class or module that contains the `Sub Main` procedure.</span></span>  

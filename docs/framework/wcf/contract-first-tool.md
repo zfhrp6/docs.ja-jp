@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33806261"
 ---
 # <a name="contract-first-tool"></a><span data-ttu-id="43ca4-102">コントラクト優先ツール</span><span class="sxs-lookup"><span data-stu-id="43ca4-102">Contract-First Tool</span></span>
 <span data-ttu-id="43ca4-103">サービス コントラクトは、多くの場合、既存のサービスから作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="43ca4-103">Service contracts often need to be created from existing services.</span></span> <span data-ttu-id="43ca4-104">[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] では、コントラクト優先ツールを使用して、データ コントラクト クラスを既存のサービスから自動的に作成できます。</span><span class="sxs-lookup"><span data-stu-id="43ca4-104">In [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], data contract classes can be created automatically from existing services using the contract-first tool.</span></span> <span data-ttu-id="43ca4-105">コントラクト優先ツールを使用するには、XML スキーマ定義ファイル (XSD) をローカルにダウンロードする必要があります。ツールは、HTTP 経由でリモート データ コントラクトをインポートすることはできません。</span><span class="sxs-lookup"><span data-stu-id="43ca4-105">To use the contract-first tool, the XML schema definition file (XSD) must be downloaded locally; the tool cannot import remote data contracts via HTTP.</span></span>  

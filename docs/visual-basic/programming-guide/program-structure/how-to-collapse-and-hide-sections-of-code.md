@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33650856"
 ---
 # <a name="how-to-collapse-and-hide-sections-of-code-visual-basic"></a><span data-ttu-id="cf051-102">方法: コードのセクションを折りたたんで非表示にする (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="cf051-102">How to: Collapse and Hide Sections of Code (Visual Basic)</span></span>
 <span data-ttu-id="cf051-103">`#Region`ディレクティブでは、折りたたむし、Visual Basic ファイルのコードのセクションでは非表示にすることができます。</span><span class="sxs-lookup"><span data-stu-id="cf051-103">The `#Region` directive enables you to collapse and hide sections of code in Visual Basic files.</span></span> <span data-ttu-id="cf051-104">`#Region`ディレクティブでは、Visual Studio code エディターを使用する場合は、拡張可能なコードまたは折りたたみのブロックを指定することができます。</span><span class="sxs-lookup"><span data-stu-id="cf051-104">The `#Region` directive lets you specify a block of code that you can expand or collapse when using the Visual Studio code editor.</span></span> <span data-ttu-id="cf051-105">選択的にコードを非表示にする機能より管理し、読みやすくに、ファイルになります。</span><span class="sxs-lookup"><span data-stu-id="cf051-105">The ability to hide code selectively makes your files more manageable and easier to read.</span></span> <span data-ttu-id="cf051-106">詳細については、「[アウトライン](/visualstudio/ide/outlining)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="cf051-106">For more information, see [Outlining](/visualstudio/ide/outlining).</span></span>  

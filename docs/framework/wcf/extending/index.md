@@ -11,6 +11,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33803706"
 ---
 # <a name="extending-wcf"></a><span data-ttu-id="d2257-102">WCF の拡張</span><span class="sxs-lookup"><span data-stu-id="d2257-102">Extending WCF</span></span>
 <span data-ttu-id="d2257-103">Windows Communication Foundation (WCF) を使用すると、変更、実行時コンポーネントを正確に制御を拡張し、およびサービス ベースのアプリケーションを拡張できます。</span><span class="sxs-lookup"><span data-stu-id="d2257-103">Windows Communication Foundation (WCF) allows you to modify and extend run time components to precisely control and extend service-based applications.</span></span> <span data-ttu-id="d2257-104">このセクションのトピックでは、その拡張アーキテクチャについて詳しく説明します。</span><span class="sxs-lookup"><span data-stu-id="d2257-104">The topics in this section go in depth about the extensibility architecture.</span></span> <span data-ttu-id="d2257-105">基本的なプログラミングの詳細については、次を参照してください。[基本的な WCF プログラミング](../../../../docs/framework/wcf/basic-wcf-programming.md)です。</span><span class="sxs-lookup"><span data-stu-id="d2257-105">For more information about basic programming, see [Basic WCF Programming](../../../../docs/framework/wcf/basic-wcf-programming.md).</span></span>  

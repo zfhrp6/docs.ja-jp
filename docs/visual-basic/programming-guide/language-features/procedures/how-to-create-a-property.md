@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33656244"
 ---
 # <a name="how-to-create-a-property-visual-basic"></a><span data-ttu-id="2419d-102">方法: プロパティを作成する (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="2419d-102">How to: Create a Property (Visual Basic)</span></span>
 <span data-ttu-id="2419d-103">プロパティの定義の間で囲む必要が、`Property`ステートメントおよび`End Property`ステートメントです。</span><span class="sxs-lookup"><span data-stu-id="2419d-103">You enclose a property definition between a `Property` statement and an `End Property` statement.</span></span> <span data-ttu-id="2419d-104">この定義内で定義する、`Get`プロシージャ、`Set`プロシージャ、またはその両方です。</span><span class="sxs-lookup"><span data-stu-id="2419d-104">Within this definition you define a `Get` procedure, a `Set` procedure, or both.</span></span> <span data-ttu-id="2419d-105">すべてのプロパティのコードの範囲内でこれらのプロシージャです。</span><span class="sxs-lookup"><span data-stu-id="2419d-105">All the property's code lies within these procedures.</span></span>  

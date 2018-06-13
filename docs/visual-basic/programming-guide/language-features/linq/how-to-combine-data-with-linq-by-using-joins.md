@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33653456"
 ---
 # <a name="how-to-combine-data-with-linq-by-using-joins-visual-basic"></a><span data-ttu-id="fbf2b-102">方法 : LINQ の結合を使用してデータを結合する (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="fbf2b-102">How to: Combine Data with LINQ by Using Joins (Visual Basic)</span></span>
 <span data-ttu-id="fbf2b-103">Visual Basic では、`Join`と`Group Join`コレクション間で共通の値に基づく複数のコレクションの内容を結合するために句をクエリします。</span><span class="sxs-lookup"><span data-stu-id="fbf2b-103">Visual Basic provides the `Join` and `Group Join` query clauses to enable you to combine the contents of multiple collections based on common values between the collections.</span></span> <span data-ttu-id="fbf2b-104">これらの値と呼ばれる*キー*値。</span><span class="sxs-lookup"><span data-stu-id="fbf2b-104">These values are known as *key* values.</span></span> <span data-ttu-id="fbf2b-105">リレーショナル データベースの概念に慣れている開発者が認識されます、`Join`としては INNER JOIN 句と`Group Join`として、実際には、左外部結合句。</span><span class="sxs-lookup"><span data-stu-id="fbf2b-105">Developers familiar with relational database concepts will recognize the `Join` clause as an INNER JOIN and the `Group Join` clause as, effectively, a LEFT OUTER JOIN.</span></span>  

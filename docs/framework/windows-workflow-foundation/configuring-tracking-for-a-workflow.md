@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809704"
 ---
 # <a name="configuring-tracking-for-a-workflow"></a><span data-ttu-id="e589a-102">ワークフローの追跡の構成</span><span class="sxs-lookup"><span data-stu-id="e589a-102">Configuring Tracking for a Workflow</span></span>
 <span data-ttu-id="e589a-103">ワークフローは、次の 3 つの方法で実行できます。</span><span class="sxs-lookup"><span data-stu-id="e589a-103">A workflow can execute in three ways:</span></span>  

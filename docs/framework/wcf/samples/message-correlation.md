@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33806592"
 ---
 # <a name="message-correlation"></a><span data-ttu-id="e06f5-102">メッセージ相関</span><span class="sxs-lookup"><span data-stu-id="e06f5-102">Message Correlation</span></span>
 <span data-ttu-id="e06f5-103">このサンプルでは、Windows Communication Foundation (WCF) サービスに、メッセージ キュー (MSMQ) アプリケーションが MSMQ メッセージを送信する方法および要求/応答シナリオでは、送信者と受信者のアプリケーション間でメッセージを相関する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="e06f5-103">This sample demonstrates how a Message Queuing (MSMQ) application can send an MSMQ message to a Windows Communication Foundation (WCF) service and how messages can be correlated between sender and receiver applications in a request/response scenario.</span></span> <span data-ttu-id="e06f5-104">このサンプルでは、msmqIntegrationBinding バインディングを使用します。</span><span class="sxs-lookup"><span data-stu-id="e06f5-104">This sample uses the msmqIntegrationBinding binding.</span></span> <span data-ttu-id="e06f5-105">この場合、サービスは自己ホスト型コンソール アプリケーションで、サービスがキュー内のメッセージを受信したかどうかを監視できます。</span><span class="sxs-lookup"><span data-stu-id="e06f5-105">The service in this case is a self-hosted console application to allow you to observe the service that receives queued messages.</span></span> <span data-ttu-id="e06f5-106">k</span><span class="sxs-lookup"><span data-stu-id="e06f5-106">k</span></span>  

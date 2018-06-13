@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33806371"
 ---
 # <a name="windows-communication-foundation-to-message-queuing"></a><span data-ttu-id="32371-102">Windows Communication Foundation でのメッセージ キュー</span><span class="sxs-lookup"><span data-stu-id="32371-102">Windows Communication Foundation to Message Queuing</span></span>
 <span data-ttu-id="32371-103">このサンプルでは、Windows Communication Foundation (WCF) アプリケーションがメッセージ キュー (MSMQ) アプリケーションにメッセージを送信する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="32371-103">This sample demonstrates how a Windows Communication Foundation (WCF) application can send a message to a Message Queuing (MSMQ) application.</span></span> <span data-ttu-id="32371-104">サービスは自己ホスト型コンソール アプリケーションであるので、キューに置かれたメッセージをサービスが受信するようすを観察できます。</span><span class="sxs-lookup"><span data-stu-id="32371-104">The service is a self-hosted console application to enable you to observe the service receiving queued messages.</span></span> <span data-ttu-id="32371-105">サービスとクライアントは同時に実行されていなくてもかまいません。</span><span class="sxs-lookup"><span data-stu-id="32371-105">The service and client do not have to be running at the same time.</span></span>  

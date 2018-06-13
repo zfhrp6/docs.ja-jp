@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33643523"
 ---
 # <a name="how-to-catch-parsing-errors-visual-basic"></a><span data-ttu-id="f51b0-102">方法: 解析エラー (Visual Basic) をキャッチ</span><span class="sxs-lookup"><span data-stu-id="f51b0-102">How to: Catch Parsing Errors (Visual Basic)</span></span>
 <span data-ttu-id="f51b0-103">このトピックでは、形式が正しくないか無効な XML を検出する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="f51b0-103">This topic shows how to detect badly formed or invalid XML.</span></span>  

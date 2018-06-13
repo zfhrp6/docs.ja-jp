@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33806719"
 ---
 # <a name="linq-to-sql-sample"></a><span data-ttu-id="1d315-102">LINQ to SQL のサンプル</span><span class="sxs-lookup"><span data-stu-id="1d315-102">LINQ to SQL Sample</span></span>
 <span data-ttu-id="1d315-103">このサンプルでは、SQL Server データベース内のテーブルの LINQ to SQL クエリ エンティティを使用するアクティビティを作成する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="1d315-103">This sample demonstrates how to create an activity to use LINQ to SQL query entities from tables in SQL Server databases.</span></span>  

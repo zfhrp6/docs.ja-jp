@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33646004"
 ---
 # <a name="querying-an-xdocument-vs-querying-an-xelement-visual-basic"></a><span data-ttu-id="2234d-102">XDocument のクエリと XElement (Visual Basic) のクエリ</span><span class="sxs-lookup"><span data-stu-id="2234d-102">Querying an XDocument vs. Querying an XElement (Visual Basic)</span></span>
 <span data-ttu-id="2234d-103"><xref:System.Xml.Linq.XDocument.Load%2A?displayProperty=nameWithType> によってドキュメントを読み込む場合、<xref:System.Xml.Linq.XElement.Load%2A?displayProperty=nameWithType> によって読み込む場合とは少し異なるクエリを記述する必要があることがわかります。</span><span class="sxs-lookup"><span data-stu-id="2234d-103">When you load a document via <xref:System.Xml.Linq.XDocument.Load%2A?displayProperty=nameWithType>, you will notice that you have to write queries slightly differently than when you load via <xref:System.Xml.Linq.XElement.Load%2A?displayProperty=nameWithType>.</span></span>  

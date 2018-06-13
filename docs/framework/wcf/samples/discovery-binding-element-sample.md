@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33805669"
 ---
 # <a name="discovery-binding-element-sample"></a><span data-ttu-id="6fa41-102">探索バインド要素のサンプル</span><span class="sxs-lookup"><span data-stu-id="6fa41-102">Discovery Binding Element Sample</span></span>
 <span data-ttu-id="6fa41-103">このサンプルでは、探索クライアント バインド要素を使用してサービスを探索する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="6fa41-103">This sample demonstrates how to use the discovery client binding element to discover a service.</span></span> <span data-ttu-id="6fa41-104">この機能を使用すると、開発者は、探索クライアント チャネルを既存のクライアント チャネル スタックに追加することにより、プログラミング モデルをきわめて直感的にすることができます。</span><span class="sxs-lookup"><span data-stu-id="6fa41-104">This feature enables developers to add a discovery client channel to their existing client channel stack, making the programming model very intuitive.</span></span> <span data-ttu-id="6fa41-105">関連付けられたチャネルが開いている場合、サービスのアドレスは探索を使用して解決されます。</span><span class="sxs-lookup"><span data-stu-id="6fa41-105">When the associated channel is opened, the address of the service is resolved using discovery.</span></span> <span data-ttu-id="6fa41-106">このサンプルは、次のプロジェクトで構成されています。</span><span class="sxs-lookup"><span data-stu-id="6fa41-106">This sample consists of the following projects:</span></span>  

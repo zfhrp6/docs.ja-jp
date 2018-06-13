@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33810214"
 ---
 # <a name="cryptographic-agility-in-wcf-security"></a><span data-ttu-id="d11af-102">WCF セキュリティの暗号化方式の指定</span><span class="sxs-lookup"><span data-stu-id="d11af-102">Cryptographic Agility in WCF Security</span></span>
 <span data-ttu-id="d11af-103">このサンプルでは、Windows Communication Foundation (WCF) クライアントとサービスで迅速な暗号化実装を提供する標準またはカスタム アルゴリズムで指定する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="d11af-103">This sample shows how to specify in a standard/custom algorithm to provide a cryptographic agile implementation in a Windows Communication Foundation (WCF) client and service.</span></span> <span data-ttu-id="d11af-104">サンプルは、以下のプロジェクトで構成されます。</span><span class="sxs-lookup"><span data-stu-id="d11af-104">The sample is composed of the following projects:</span></span>  

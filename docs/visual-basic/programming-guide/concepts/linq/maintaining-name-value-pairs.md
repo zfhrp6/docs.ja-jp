@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33646878"
 ---
 # <a name="maintaining-namevalue-pairs-visual-basic"></a><span data-ttu-id="c2603-102">名前/値ペア (Visual Basic) を維持します。</span><span class="sxs-lookup"><span data-stu-id="c2603-102">Maintaining Name/Value Pairs (Visual Basic)</span></span>
 <span data-ttu-id="c2603-103">多くのアプリケーションでは、情報を名前と値のペアとして保持するのが最適な場合があります。</span><span class="sxs-lookup"><span data-stu-id="c2603-103">Many applications have to maintain information that is best kept as name/value pairs.</span></span> <span data-ttu-id="c2603-104">このような情報には、構成情報やグローバル設定などがあります。</span><span class="sxs-lookup"><span data-stu-id="c2603-104">This information might be configuration information or global settings.</span></span> [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]<span data-ttu-id="c2603-105"> には、名前と値のペアのセットを簡単に保持できるようにするメソッドがあります。</span><span class="sxs-lookup"><span data-stu-id="c2603-105"> contains some methods that make it easy to keep a set of name/value pairs.</span></span> <span data-ttu-id="c2603-106">情報を属性として保持することも、子要素のセットとして保持することもできます。</span><span class="sxs-lookup"><span data-stu-id="c2603-106">You can either keep the information as attributes or as a set of child elements.</span></span>  

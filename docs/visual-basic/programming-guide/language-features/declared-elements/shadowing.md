@@ -23,6 +23,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33656072"
 ---
 # <a name="shadowing-in-visual-basic"></a><span data-ttu-id="2d828-102">Visual Basic におけるシャドウ</span><span class="sxs-lookup"><span data-stu-id="2d828-102">Shadowing in Visual Basic</span></span>
 <span data-ttu-id="2d828-103">2 つのプログラミング要素は、同じ名前を共有する場合それらのいずれかの非表示に、または*シャドウ*、もう 1 つです。</span><span class="sxs-lookup"><span data-stu-id="2d828-103">When two programming elements share the same name, one of them can hide, or *shadow*, the other one.</span></span> <span data-ttu-id="2d828-104">このような状況で、シャドウされた要素は参照できません。代わりに、コードでは、要素名を使用する場合、Visual Basic コンパイラに解決されます、シャドウする要素。</span><span class="sxs-lookup"><span data-stu-id="2d828-104">In such a situation, the shadowed element is not available for reference; instead, when your code uses the element name, the Visual Basic compiler resolves it to the shadowing element.</span></span>  

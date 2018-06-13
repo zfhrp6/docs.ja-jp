@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33810084"
 ---
 # <a name="advanced-error-handling"></a><span data-ttu-id="f2c0c-102">高度なエラー処理</span><span class="sxs-lookup"><span data-stu-id="f2c0c-102">Advanced Error Handling</span></span>
 <span data-ttu-id="f2c0c-103">このサンプルでは、Windows Communication Foundation (WCF) ルーティング サービスを使用します。</span><span class="sxs-lookup"><span data-stu-id="f2c0c-103">This sample demonstrates the Windows Communication Foundation (WCF) routing service.</span></span> <span data-ttu-id="f2c0c-104">ルーティング サービスは、コンテンツ ベースのルーターをアプリケーションに含めるしやすく WCF コンポーネントです。</span><span class="sxs-lookup"><span data-stu-id="f2c0c-104">The routing service is a WCF component that makes it easy to include a content-based router in your application.</span></span> <span data-ttu-id="f2c0c-105">このサンプルでは、トランザクションやその他のより複雑なメッセージ概念 (マルチキャストなど) を使用して、ルーティング サービスをエラーから自動的に回復する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="f2c0c-105">This sample shows how the routing service intelligently recovers from errors, using transactions and other more complex messaging concepts such as multicasting.</span></span>  

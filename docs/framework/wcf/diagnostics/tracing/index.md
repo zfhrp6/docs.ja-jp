@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809317"
 ---
 # <a name="tracing"></a><span data-ttu-id="f5ce6-102">トレース</span><span class="sxs-lookup"><span data-stu-id="f5ce6-102">Tracing</span></span>
 <span data-ttu-id="f5ce6-103">Windows Communication Foundation (WCF) は、エラーの監視と分析のアプリケーションのインストルメンテーション データと診断データを提供します。</span><span class="sxs-lookup"><span data-stu-id="f5ce6-103">Windows Communication Foundation (WCF) provides application instrumentation and diagnostic data for fault monitoring and analysis.</span></span> <span data-ttu-id="f5ce6-104">アプリケーションの動作やエラー原因を調べるために、デバッガーの代わりにトレースを使用できます。</span><span class="sxs-lookup"><span data-stu-id="f5ce6-104">You can use tracing instead of a debugger to understand how an application is behaving, or why it faults.</span></span> <span data-ttu-id="f5ce6-105">コンポーネント間でエラーと処理を関連付けて、エンドツーエンドの調査を行うこともできます。</span><span class="sxs-lookup"><span data-stu-id="f5ce6-105">You can also correlate faults and processing across components to provide an end-to-end experience.</span></span>  

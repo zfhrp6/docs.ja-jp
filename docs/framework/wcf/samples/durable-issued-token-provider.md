@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33807552"
 ---
 # <a name="durable-issued-token-provider"></a><span data-ttu-id="be929-102">永続性発行済みトークン プロバイダー</span><span class="sxs-lookup"><span data-stu-id="be929-102">Durable Issued Token Provider</span></span>
 <span data-ttu-id="be929-103">このサンプルでは、カスタム クライアントの発行済みトークン プロバイダーを実装する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="be929-103">This sample demonstrates how to implement a custom client issued token provider.</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33804516"
 ---
 # <a name="syndication"></a><span data-ttu-id="735e2-102">配信</span><span class="sxs-lookup"><span data-stu-id="735e2-102">Syndication</span></span>
 <span data-ttu-id="735e2-103">このセクションには、Windows Communication Foundation (WCF) の配信を示すサンプルが含まれています。</span><span class="sxs-lookup"><span data-stu-id="735e2-103">This section contains samples that demonstrate Windows Communication Foundation (WCF) syndication.</span></span>  

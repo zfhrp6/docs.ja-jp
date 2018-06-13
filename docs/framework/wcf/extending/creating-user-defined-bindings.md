@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33806745"
 ---
 # <a name="creating-user-defined-bindings"></a><span data-ttu-id="b9ae3-102">ユーザー定義バインディングの作成</span><span class="sxs-lookup"><span data-stu-id="b9ae3-102">Creating User-Defined Bindings</span></span>
 <span data-ttu-id="b9ae3-103">システムから提供されないバインディングを作成する方法はいくつかあります。</span><span class="sxs-lookup"><span data-stu-id="b9ae3-103">There are several ways to create bindings not provided by the system:</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33806540"
 ---
 # <a name="how-to-lock-down-endpoints-in-the-enterprise"></a><span data-ttu-id="6c825-102">方法 : 企業内のエンドポイントをロックダウンする</span><span class="sxs-lookup"><span data-stu-id="6c825-102">How to: Lock Down Endpoints in the Enterprise</span></span>
 <span data-ttu-id="6c825-103">大規模な企業では、多くの場合、企業のセキュリティ ポリシーに準拠してアプリケーションを開発する必要があります。</span><span class="sxs-lookup"><span data-stu-id="6c825-103">Large enterprises often require that applications are developed in compliance with enterprise security policies.</span></span> <span data-ttu-id="6c825-104">次のトピックでは、開発およびコンピューターにインストールされているすべての Windows Communication Foundation (WCF) クライアント アプリケーションの検証に使用できるクライアント エンドポイント検証コントロールをインストールする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="6c825-104">The following topic discusses how to develop and install a client endpoint validator that can be used to validate all Windows Communication Foundation (WCF) client applications installed on computers.</span></span>  

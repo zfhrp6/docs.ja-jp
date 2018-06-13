@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33808239"
 ---
 # <a name="extending-dispatchers"></a><span data-ttu-id="95f98-102">ディスパッチャーの拡張</span><span class="sxs-lookup"><span data-stu-id="95f98-102">Extending Dispatchers</span></span>
 <span data-ttu-id="95f98-103">ディスパッチャーには、基になるチャネルから受信メッセージをプルし、そのメッセージをアプリケーション コードでのメソッド呼び出しに変換し、結果を呼び出し元に送信する役割があります。</span><span class="sxs-lookup"><span data-stu-id="95f98-103">Dispatchers are responsible for pulling incoming messages out of the underlying channels, translating them into method invocations in application code, and sending the results back to the caller.</span></span> <span data-ttu-id="95f98-104">ディスパッチャーの拡張を使用することで、この処理を変更できます。</span><span class="sxs-lookup"><span data-stu-id="95f98-104">Dispatcher extensions allow you to modify this processing.</span></span>  <span data-ttu-id="95f98-105">メッセージやパラメーターの内容を検査または変更するメッセージ インスペクターまたはパラメーター インスペクターを実装できます。</span><span class="sxs-lookup"><span data-stu-id="95f98-105">You can implement message or parameter inspectors that inspect or modify the contents of messages or parameters.</span></span>  <span data-ttu-id="95f98-106">また、メッセージが操作にルーティングされる方法を変更することも、他の機能を提供することもできます。</span><span class="sxs-lookup"><span data-stu-id="95f98-106">You can change the way messages are routed to operations or provide some other functionality.</span></span>  

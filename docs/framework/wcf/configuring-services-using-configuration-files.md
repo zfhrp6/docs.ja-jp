@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33807434"
 ---
 # <a name="configuring-services-using-configuration-files"></a><span data-ttu-id="3dd99-102">構成ファイルを使用してサービスを構成する方法</span><span class="sxs-lookup"><span data-stu-id="3dd99-102">Configuring Services Using Configuration Files</span></span>
 <span data-ttu-id="3dd99-103">構成ファイルで Windows Communication Foundation (WCF) サービスを構成する柔軟性がエンドポイントを提供して、サービス動作のデータではなく、配置時にデザイン時です。</span><span class="sxs-lookup"><span data-stu-id="3dd99-103">Configuring a Windows Communication Foundation (WCF) service with a configuration file gives you the flexibility of providing endpoint and service behavior data at the point of deployment instead of at design time.</span></span> <span data-ttu-id="3dd99-104">ここでは使用可能な主要な技術について説明します。</span><span class="sxs-lookup"><span data-stu-id="3dd99-104">This topic outlines the primary techniques available.</span></span>  

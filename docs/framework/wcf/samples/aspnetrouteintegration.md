@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33804405"
 ---
 # <a name="aspnetrouteintegration"></a><span data-ttu-id="95318-102">AspNetRouteIntegration</span><span class="sxs-lookup"><span data-stu-id="95318-102">AspNetRouteIntegration</span></span>
 <span data-ttu-id="95318-103">このサンプルでは、ASP.NET ルートを使用する Windows Communication Foundation (WCF) の REST サービスをホストする方法を示します。</span><span class="sxs-lookup"><span data-stu-id="95318-103">This sample demonstrates how to host a Windows Communication Foundation (WCF) REST service using ASP.NET routes.</span></span> <span data-ttu-id="95318-104">[基本的なリソース サービス](../../../../docs/framework/wcf/samples/basic-resource-service.md)サンプルはこのシナリオの自己ホスト型のバージョンを表示および深さのサービスの実装について説明します。</span><span class="sxs-lookup"><span data-stu-id="95318-104">The [Basic Resource Service](../../../../docs/framework/wcf/samples/basic-resource-service.md) sample shows a self-hosted version of this scenario and discusses the service implementation in depth.</span></span> <span data-ttu-id="95318-105">ここでは、ASP.NET 統合機能について集中的に説明します。</span><span class="sxs-lookup"><span data-stu-id="95318-105">This topic focuses on the ASP.NET integration feature.</span></span> <span data-ttu-id="95318-106">ASP.NET ルーティングの詳細については、次を参照してください。<xref:System.Web.Routing>です。</span><span class="sxs-lookup"><span data-stu-id="95318-106">For more information about ASP.NET Routing, see <xref:System.Web.Routing>.</span></span>  

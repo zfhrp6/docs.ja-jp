@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33804964"
 ---
 # <a name="determining-service-operation-duration"></a><span data-ttu-id="9da8a-102">サービス操作の実行時間の確認</span><span class="sxs-lookup"><span data-stu-id="9da8a-102">Determining service operation duration</span></span>
 <span data-ttu-id="9da8a-103">Windows Communication Foundation (WCF) アプリケーションの分析トレースが有効な場合、サービス操作の実行時間は、イベント ログを確認するには簡単に決定されます。</span><span class="sxs-lookup"><span data-stu-id="9da8a-103">If analytic tracing is enabled in a Windows Communication Foundation (WCF) application, the duration of execution for a service operation can easily be determined by examining the event log.</span></span>  <span data-ttu-id="9da8a-104">ここでは、サービス操作の実行にかかる時間を確認する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="9da8a-104">This topic demonstrates how to determine the amount of time a service operation takes to complete.</span></span>  

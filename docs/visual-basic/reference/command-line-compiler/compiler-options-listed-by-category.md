@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33655825"
 ---
 # <a name="visual-basic-compiler-options-listed-by-category"></a><span data-ttu-id="6b984-102">Visual Basic コンパイラ オプションのカテゴリ別一覧</span><span class="sxs-lookup"><span data-stu-id="6b984-102">Visual Basic compiler options listed by category</span></span>
 <span data-ttu-id="6b984-103">Visual Basic のコマンド ライン コンパイラは、Visual Studio 統合開発環境 (IDE) 内からプログラムをコンパイルする代わりとして提供されます。</span><span class="sxs-lookup"><span data-stu-id="6b984-103">The Visual Basic command-line compiler is provided as an alternative to compiling programs from within the Visual Studio integrated development environment (IDE).</span></span> <span data-ttu-id="6b984-104">機能カテゴリ順に並べ替えて Visual Basic のコマンド ライン コンパイラ オプションの一覧を次に示します。</span><span class="sxs-lookup"><span data-stu-id="6b984-104">The following is a list of the Visual Basic command-line compiler options sorted by functional category.</span></span>  

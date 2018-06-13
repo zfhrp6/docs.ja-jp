@@ -10,6 +10,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33808485"
 ---
 # <a name="walkthrough-creating-custom-client-and-service-credentials"></a><span data-ttu-id="7f8dc-102">チュートリアル: カスタム クライアントおよびサービスの資格情報を作成する</span><span class="sxs-lookup"><span data-stu-id="7f8dc-102">Walkthrough: Creating Custom Client and Service Credentials</span></span>
 <span data-ttu-id="7f8dc-103">このトピックでは、クライアントおよびサービスにカスタム資格情報を実装する方法と、これをアプリケーション コードから使用する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="7f8dc-103">This topic shows how to implement custom client and service credentials and how to use custom credentials from application code.</span></span>  

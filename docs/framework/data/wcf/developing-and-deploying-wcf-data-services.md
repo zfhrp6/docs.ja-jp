@@ -12,6 +12,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33805448"
 ---
 # <a name="developing-and-deploying-wcf-data-services"></a><span data-ttu-id="8232d-102">WCF Data Services の開発と配置</span><span class="sxs-lookup"><span data-stu-id="8232d-102">Developing and Deploying WCF Data Services</span></span>
 <span data-ttu-id="8232d-103">このトピックでは、 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]の開発と配置について説明します。</span><span class="sxs-lookup"><span data-stu-id="8232d-103">This topic provides information about developing and deploying [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)].</span></span> <span data-ttu-id="8232d-104">複数の基本情報については[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]を参照してください[作業の開始](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md)と[概要](../../../../docs/framework/data/wcf/wcf-data-services-overview.md)です。</span><span class="sxs-lookup"><span data-stu-id="8232d-104">For more basic information about [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], see [Getting Started](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md) and [Overview](../../../../docs/framework/data/wcf/wcf-data-services-overview.md).</span></span>  

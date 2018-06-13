@@ -14,6 +14,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809389"
 ---
 # <a name="how-to-create-a-custom-security-token-authenticator"></a><span data-ttu-id="d1f82-102">方法 : カスタム セキュリティ トークン認証システムを作成する</span><span class="sxs-lookup"><span data-stu-id="d1f82-102">How to: Create a Custom Security Token Authenticator</span></span>
 <span data-ttu-id="d1f82-103">ここでは、カスタム セキュリティ トークン認証システムの作成方法と、これをカスタム セキュリティ トークン マネージャーに統合する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="d1f82-103">This topic shows how to create a custom security token authenticator and how to integrate it with a custom security token manager.</span></span> <span data-ttu-id="d1f82-104">セキュリティ トークン認証システムは受信メッセージと共に提出されるセキュリティ トークンの内容を検証します。</span><span class="sxs-lookup"><span data-stu-id="d1f82-104">A security token authenticator validates the content of a security token provided with an incoming message.</span></span> <span data-ttu-id="d1f82-105">検証に成功すると、認証システムは <xref:System.IdentityModel.Policy.IAuthorizationPolicy> インスタンスのコレクションを返します。これが評価されるとクレーム セットが返されます。</span><span class="sxs-lookup"><span data-stu-id="d1f82-105">If the validation succeeds, the authenticator returns a collection of <xref:System.IdentityModel.Policy.IAuthorizationPolicy> instances that, when evaluated, returns a set of claims.</span></span>  

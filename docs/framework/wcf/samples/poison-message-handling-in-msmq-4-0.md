@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809506"
 ---
 # <a name="poison-message-handling-in-msmq-40"></a><span data-ttu-id="0a824-102">MSMQ 4.0 での有害メッセージ処理</span><span class="sxs-lookup"><span data-stu-id="0a824-102">Poison Message Handling in MSMQ 4.0</span></span>
 <span data-ttu-id="0a824-103">このサンプルでは、サービスで有害メッセージの処理を実行する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="0a824-103">This sample demonstrates how to perform poison message handling in a service.</span></span> <span data-ttu-id="0a824-104">このサンプルがに基づいて、[トランザクション MSMQ バインディング](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md)サンプルです。</span><span class="sxs-lookup"><span data-stu-id="0a824-104">This sample is based on the [Transacted MSMQ Binding](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md) sample.</span></span> <span data-ttu-id="0a824-105">このサンプルでは、`netMsmqBinding` を使用しています。</span><span class="sxs-lookup"><span data-stu-id="0a824-105">This sample uses the `netMsmqBinding`.</span></span> <span data-ttu-id="0a824-106">サービスは自己ホスト型コンソール アプリケーションであるので、キューに置かれたメッセージをサービスが受信するようすを観察できます。</span><span class="sxs-lookup"><span data-stu-id="0a824-106">The service is a self-hosted console application to enable you to observe the service receiving queued messages.</span></span>  

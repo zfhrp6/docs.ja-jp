@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33652962"
 ---
 # <a name="how-to-transform-xml-by-using-linq-visual-basic"></a><span data-ttu-id="334b0-102">方法 : LINQ を使用して XML を変換する (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="334b0-102">How to: Transform XML by Using LINQ (Visual Basic)</span></span>
 <span data-ttu-id="334b0-103">[XML リテラル](../../../../visual-basic/language-reference/xml-literals/index.md)簡単に 1 つのソースから XML を読み取るし、新しい XML 形式に変換します。</span><span class="sxs-lookup"><span data-stu-id="334b0-103">[XML Literals](../../../../visual-basic/language-reference/xml-literals/index.md) make it easy to read XML from one source and transform it to a new XML format.</span></span> <span data-ttu-id="334b0-104">変換するには、コンテンツを取得する LINQ クエリを利用したり、既存のドキュメントにコンテンツを新しい XML 形式に変更することができます。</span><span class="sxs-lookup"><span data-stu-id="334b0-104">You can take advantage of LINQ queries to retrieve the content to transform, or change content in an existing document to a new XML format.</span></span>  

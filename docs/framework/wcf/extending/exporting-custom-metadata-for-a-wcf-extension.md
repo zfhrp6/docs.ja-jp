@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33804045"
 ---
 # <a name="exporting-custom-metadata-for-a-wcf-extension"></a><span data-ttu-id="704c9-102">WCF 拡張に対するカスタム メタデータのエクスポート</span><span class="sxs-lookup"><span data-stu-id="704c9-102">Exporting Custom Metadata for a WCF Extension</span></span>
 <span data-ttu-id="704c9-103">Windows Communication Foundation (WCF) では、メタデータのエクスポートは、サービス エンドポイントを記述するそれらを並行してクライアントを使用してサービスを使用する方法を理解する標準化表現のプロセスです。</span><span class="sxs-lookup"><span data-stu-id="704c9-103">In Windows Communication Foundation (WCF), metadata export is the process of describing service endpoints and projecting them into a parallel, standardized representation that clients can use to understand how to use the service.</span></span> <span data-ttu-id="704c9-104">カスタム メタデータは、システム指定のメタデータ エクスポーターでエクスポートできない XML 要素で構成されます。</span><span class="sxs-lookup"><span data-stu-id="704c9-104">Custom metadata consists of XML elements that the system-provided metadata exporters cannot export.</span></span> <span data-ttu-id="704c9-105">通常、これは、ユーザー定義動作のカスタム WSDL 要素とバインド要素、およびバインディングとコントラクトの機能と要件に関するポリシー アサーションを含みます。</span><span class="sxs-lookup"><span data-stu-id="704c9-105">Typically, this includes custom WSDL elements for user-defined behaviors and binding elements and policy assertions about the capabilities and requirements of bindings and contracts.</span></span>  

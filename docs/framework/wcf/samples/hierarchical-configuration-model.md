@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33806631"
 ---
 # <a name="hierarchical-configuration-model"></a><span data-ttu-id="24484-102">階層的な構成モデル</span><span class="sxs-lookup"><span data-stu-id="24484-102">Hierarchical Configuration Model</span></span>
 <span data-ttu-id="24484-103">このサンプルでは、サービスの構成ファイルの階層を実装する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="24484-103">This sample demonstrates how to implement a hierarchy of configuration files for services.</span></span> <span data-ttu-id="24484-104">また、バインド、サービス動作、およびエンドポイント動作を階層の上位レベルから継承する方法も示します。</span><span class="sxs-lookup"><span data-stu-id="24484-104">It also shows how bindings, service behaviors, and endpoint behaviors are inherited from higher levels in the hierarchy.</span></span>  

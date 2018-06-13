@@ -12,6 +12,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33810110"
 ---
 # <a name="accessing-services-using-a-wcf-client"></a><span data-ttu-id="3d93c-102">WCF クライアントを使用したサービスへのアクセス</span><span class="sxs-lookup"><span data-stu-id="3d93c-102">Accessing Services Using a WCF Client</span></span>
 <span data-ttu-id="3d93c-103">サービスを作成した後、次の手順は、WCF クライアント プロキシを作成するは。</span><span class="sxs-lookup"><span data-stu-id="3d93c-103">After you create a service, the next step is to create a WCF client proxy.</span></span> <span data-ttu-id="3d93c-104">クライアント アプリケーションでは、WCF クライアント プロキシを使用して、サービスと通信します。</span><span class="sxs-lookup"><span data-stu-id="3d93c-104">A client application uses the WCF client proxy to communicate with the service.</span></span> <span data-ttu-id="3d93c-105">クライアント アプリケーションは、通常、サービスを呼び出すために使用する WCF クライアント コードを生成するサービスのメタデータをインポートします。</span><span class="sxs-lookup"><span data-stu-id="3d93c-105">Client applications usually import a service's metadata to generate WCF client code that can be used to invoke the service.</span></span>  

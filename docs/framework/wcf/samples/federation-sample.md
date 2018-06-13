@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33806849"
 ---
 # <a name="federation-sample"></a><span data-ttu-id="7588a-102">フェデレーション サンプル</span><span class="sxs-lookup"><span data-stu-id="7588a-102">Federation Sample</span></span>
 <span data-ttu-id="7588a-103">このサンプルではフェデレーション セキュリティを示します。</span><span class="sxs-lookup"><span data-stu-id="7588a-103">This sample demonstrates federated security.</span></span>  

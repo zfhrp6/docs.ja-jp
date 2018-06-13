@@ -12,6 +12,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33808593"
 ---
 # <a name="using-sessions"></a><span data-ttu-id="8b9a6-102">セッションの使用</span><span class="sxs-lookup"><span data-stu-id="8b9a6-102">Using Sessions</span></span>
 <span data-ttu-id="8b9a6-103">Windows Communication Foundation (WCF) アプリケーションで、*セッション*会話にメッセージのグループを関連付けます。</span><span class="sxs-lookup"><span data-stu-id="8b9a6-103">In Windows Communication Foundation (WCF) applications, a *session* correlates a group of messages into a conversation.</span></span> <span data-ttu-id="8b9a6-104">WCF のセッションは、セッション オブジェクトで使用できるとは異なる[!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)]アプリケーション、サポートされる動作は、およびさまざまな方法で制御されます。</span><span class="sxs-lookup"><span data-stu-id="8b9a6-104">WCF sessions are different than the session object available in [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] applications, support different behaviors, and are controlled in different ways.</span></span> <span data-ttu-id="8b9a6-105">このトピックは、WCF でのセッションが有効にする機能を説明アプリケーションとその使用方法です。</span><span class="sxs-lookup"><span data-stu-id="8b9a6-105">This topic describes the features that sessions enable in WCF applications and how to use them.</span></span>  

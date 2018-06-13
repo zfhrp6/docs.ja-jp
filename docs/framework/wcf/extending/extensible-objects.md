@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33805198"
 ---
 # <a name="extensible-objects"></a><span data-ttu-id="81de2-102">拡張可能オブジェクト</span><span class="sxs-lookup"><span data-stu-id="81de2-102">Extensible Objects</span></span>
 <span data-ttu-id="81de2-103">拡張可能オブジェクト パターンは、既存のランタイム クラスに新しい機能を付加して拡張したり、オブジェクトに新しい状態を追加するために使用します。</span><span class="sxs-lookup"><span data-stu-id="81de2-103">The extensible object pattern is used to either extend existing runtime classes with new functionality or to add new state to an object.</span></span> <span data-ttu-id="81de2-104">このようなオブジェクトを実際に拡張することにより、処理の段階に応じて、共通の拡張可能オブジェクトに定義された共有の状態や機能にアクセスすることができます。</span><span class="sxs-lookup"><span data-stu-id="81de2-104">Extensions, attached to one of the extensible objects, enable behaviors at very different stages in processing to access shared state and functionality attached to a common extensible object that they can access.</span></span>  

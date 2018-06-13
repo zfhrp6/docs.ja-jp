@@ -12,6 +12,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809171"
 ---
 # <a name="endpoint-creation-overview"></a><span data-ttu-id="24cb6-102">エンドポイントの作成の概要</span><span class="sxs-lookup"><span data-stu-id="24cb6-102">Endpoint Creation Overview</span></span>
 <span data-ttu-id="24cb6-103">使用して、Windows Communication Foundation (WCF) サービスとすべての通信が行われる、*エンドポイント*サービス。</span><span class="sxs-lookup"><span data-stu-id="24cb6-103">All communication with a Windows Communication Foundation (WCF) service occurs through the *endpoints* of the service.</span></span> <span data-ttu-id="24cb6-104">エンドポイントは、WCF サービスを提供する機能へのアクセスをクライアントに提供します。</span><span class="sxs-lookup"><span data-stu-id="24cb6-104">Endpoints provide the clients access to the functionality that a WCF service offers.</span></span> <span data-ttu-id="24cb6-105">このセクションでは、エンドポイントの構造およびエンドポイントの設定またはコードによる定義の方法の概要を説明します。</span><span class="sxs-lookup"><span data-stu-id="24cb6-105">This section describes the structure of an endpoint and outlines how to define an endpoint in configuration and in code.</span></span>  

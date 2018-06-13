@@ -10,6 +10,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33803673"
 ---
 # <a name="how-to-customize-a-system-provided-binding"></a><span data-ttu-id="811c0-102">方法 : システム指定のバインディングをカスタマイズする</span><span class="sxs-lookup"><span data-stu-id="811c0-102">How to: Customize a System-Provided Binding</span></span>
 <span data-ttu-id="811c0-103">Windows Communication Foundation (WCF) には、すべてのプロパティでは、基になるバインド要素のプロパティの一部を構成することのいくつかのシステム指定のバインディングが含まれています。</span><span class="sxs-lookup"><span data-stu-id="811c0-103">Windows Communication Foundation (WCF) includes several system-provided bindings that allow you to configure some of the properties of the underlying binding elements, but not all of the properties.</span></span> <span data-ttu-id="811c0-104">ここでは、バインド要素のプロパティを設定してカスタム バインドを作成する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="811c0-104">This topic demonstrates how to set properties on the binding elements to create a custom binding.</span></span>  

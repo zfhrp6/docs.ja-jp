@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33802978"
 ---
 # <a name="viewing-message-logs"></a><span data-ttu-id="b3fa4-102">メッセージ ログを参照する</span><span class="sxs-lookup"><span data-stu-id="b3fa4-102">Viewing Message Logs</span></span>
 <span data-ttu-id="b3fa4-103">ここでは、メッセージ ログの表示方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="b3fa4-103">This topic describes how you can view message logs.</span></span>  

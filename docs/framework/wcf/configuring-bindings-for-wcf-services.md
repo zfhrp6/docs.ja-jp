@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33806059"
 ---
 # <a name="configuring-bindings-for-windows-communication-foundation-services"></a><span data-ttu-id="96975-102">Windows Communication Foundation サービスのバインディングの構成</span><span class="sxs-lookup"><span data-stu-id="96975-102">Configuring Bindings for Windows Communication Foundation Services</span></span>
 <span data-ttu-id="96975-103">アプリケーションの作成では、アプリケーションの配置後は各種決定事項を管理者に任せる場合がよくあります。</span><span class="sxs-lookup"><span data-stu-id="96975-103">When creating an application, you often want to defer decisions to the administrator after the deployment of the application.</span></span> <span data-ttu-id="96975-104">たとえば、どのサービス アドレス (URI (Uniform Resource Identifier)) を使用するかなどの情報は、多くの場合、前もって知る方法がありません。</span><span class="sxs-lookup"><span data-stu-id="96975-104">For example, there is often no way of knowing in advance what a service address, or Uniform Resource Identifier (URI), will be.</span></span> <span data-ttu-id="96975-105">アドレスをハードコーディングする代わりに、サービスの作成後に管理者が指定する方が便利です。 </span><span class="sxs-lookup"><span data-stu-id="96975-105">Instead of hard-coding an address, it is preferable to allow an administrator to do so after creating a service.</span></span> <span data-ttu-id="96975-106">構成を活用することで、この柔軟性が得られます。</span><span class="sxs-lookup"><span data-stu-id="96975-106">This flexibility is accomplished through configuration.</span></span>  
