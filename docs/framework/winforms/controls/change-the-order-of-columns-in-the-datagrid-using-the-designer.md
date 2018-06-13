@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33525766"
 ---
 # <a name="how-to-change-the-order-of-columns-in-the-windows-forms-datagridview-control-using-the-designer"></a>方法 : デザイナーを使用して Windows フォーム DataGridView コントロールの列の順序を変更する
 Windows フォームのバインドと<xref:System.Windows.Forms.DataGridView>コントロール、データ ソースを自動的に生成された列の表示順序には、データ ソースによって決まります。 この順序が好ましくない場合は、デザイナーを使用して列の順序を変更することができます。 コントロールにバインドされていない列を追加し、その表示順序を変更することもできます。 プログラムで列の順序を変更する方法については、次を参照してください。[する方法: Windows フォーム DataGridView コントロールで列の順序を変更する](../../../../docs/framework/winforms/controls/how-to-change-the-order-of-columns-in-the-windows-forms-datagridview-control.md)です。  

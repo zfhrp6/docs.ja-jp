@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33272683"
 ---
 # <a name="modifiers-c-reference"></a>修飾子 (C# リファレンス)
 修飾子は、型および型メンバーの宣言を修飾するために使用されます。 ここでは、C# の修飾子について説明します。  

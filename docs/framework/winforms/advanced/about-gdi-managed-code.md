@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33518814"
 ---
 # <a name="about-gdi-managed-code"></a>GDI+ マネージ コードについて
 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] は、2 次元ベクター グラフィックス、イメージング、および文字体裁を提供する Windows オペレーティング システムの部分です。 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] は新機能を追加し、既存の機能を最適化することで、[!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)] (以前のバージョンの Windows に含まれているグラフィックス デバイス インターフェイス) を強化しています。  

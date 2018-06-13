@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33513215"
 ---
 # <a name="creating-custom-flow-control-activities"></a>カスタムのフロー制御アクティビティの作成
 .NET Framework には、抽象化されたプログラミング構造 (<xref:System.Activities.Statements.Flowchart> など) や標準的なプログラミング ステートメント (<xref:System.Activities.Statements.If> など) に対して同様に機能するさまざまなフロー制御アクティビティがあります。 サンプル プロジェクトの 1 つのアーキテクチャについて説明[非ジェネリックの ForEach](../../../docs/framework/windows-workflow-foundation/samples/non-generic-foreach.md)です。  

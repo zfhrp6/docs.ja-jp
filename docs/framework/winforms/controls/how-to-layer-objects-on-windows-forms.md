@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33533687"
 ---
 # <a name="how-to-layer-objects-on-windows-forms"></a>方法 : Windows フォーム上のオブジェクトをレイヤー化する
 複雑なユーザー インターフェイスを作成またはマルチ ドキュメント インターフェイス (MDI) フォームを操作するときに多くの場合のコントロールと複雑なユーザー インターフェイス (UI) を作成する子フォームをレイヤーにします。 移動し、コントロールと windows グループのコンテキスト内での追跡を z オーダーを操作できます。 *Z オーダー* (深度) のフォームの z 軸に沿ってフォーム上のコントロールのビジュアルの重ね順がします。 Z オーダーの上部にあるウィンドウには、他のすべてのウィンドウが重複しています。 その他のすべての windows では、z オーダーの下部にあるウィンドウと重複します。  

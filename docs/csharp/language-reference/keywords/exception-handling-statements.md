@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33213224"
 ---
 # <a name="exception-handling-statements-c-reference"></a>例外処理ステートメント (C# リファレンス)
 C# では、プログラムの実行時に発生する例外と呼ばれる異常事態を処理する組み込みサポートが用意されています。 このような例外は、通常の制御フローの外部にあるコードによって処理されます。  

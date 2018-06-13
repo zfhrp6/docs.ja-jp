@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 7b4c334d82320066bf9459907660fe6b7e2acefd
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33425322"
 ---
 # <a name="isymunmanagedreadergetuserentrypoint-method"></a>ISymUnmanagedReader::GetUserEntryPoint メソッド
 存在する場合は、モジュールのユーザー エントリ ポイントとして指定されたメソッドを返します。 たとえば、このメソッドは、メイン メソッドの前に、コンパイラによって生成されたスタブではなく、ユーザーのメイン メソッド可能性があります。  

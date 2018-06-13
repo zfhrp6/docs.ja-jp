@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33520618"
 ---
 # <a name="constructing-and-drawing-curves"></a>曲線の作成と描画
 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] 曲線のいくつかの種類をサポートします。 省略記号ボタン、円弧をカーディナル スプラインおよびベジエ スプラインです。 楕円がの外接する四角形によって定義されています。円弧は、開始角度および掃引角度がによって定義される楕円の一部です。 ポイントおよびテンション パラメーターの配列を通過するカーディナル スプラインを定義-曲線は、配列内の各ポイントをスムーズに通過し、テンション曲線曲がる方法に影響します。 ベジエ スプラインが 2 つのエンドポイントとの制御点を通過しません曲線 2 つの制御点によって定義されますが、コントロール ポイントの方向に影響を与えるおよび曲線がもう一方の 1 つのエンドポイントから出ると、します。  

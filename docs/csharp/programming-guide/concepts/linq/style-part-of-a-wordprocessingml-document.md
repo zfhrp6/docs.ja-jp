@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33334575"
 ---
 # <a name="style-part-of-a-wordprocessingml-document"></a>WordprocessingML ドキュメントのスタイル パーツ
 このトピックでは、Office Open XML WordprocessingML ドキュメントのスタイル パーツの例について説明します。  

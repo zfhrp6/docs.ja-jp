@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33516440"
 ---
 # <a name="nopersistscope-activity"></a>NoPersistScope アクティビティ
 このサンプルでは、ワークフローでシリアル化不可能で破棄可能な状態を処理する方法を示します。 ワークフローでシリアル化不可能な状態を永続化しないようにし、破棄可能なオブジェクトをワークフローで使用した後にクリーンアップすることが重要です。  

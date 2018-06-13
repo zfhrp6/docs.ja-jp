@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 29267d032f5e38e352592edc50dbded68aaa9f61
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33435943"
 ---
 # <a name="iclrtaskreset-method"></a>ICLRTask::Reset メソッド
 共通言語ランタイム (CLR) を通知ホストが完了するタスクと、現在の再利用する CLR を有効に[ICLRTask](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)を別のタスクを表すインスタンス。  

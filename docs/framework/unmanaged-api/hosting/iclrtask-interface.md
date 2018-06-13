@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 94ba53e4af114773a347d15b7308dc4c3567154e
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33435707"
 ---
 # <a name="iclrtask-interface"></a>ICLRTask インターフェイス
 ホストまたは関連付けられているタスクは、CLR に通知を提供する共通言語ランタイム (CLR) の要求を行うことができるようにするメソッドを提供します。  

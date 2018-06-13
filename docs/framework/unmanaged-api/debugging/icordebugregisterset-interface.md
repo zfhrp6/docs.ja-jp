@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: c4b28d60b3a1da32d2d9db84aa92ca4c9bf769aa
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33423196"
 ---
 # <a name="icordebugregisterset-interface"></a>ICorDebugRegisterSet インターフェイス
 コードが現在実行されているコンピューター上で使用できるレジスタ セットを表します。  

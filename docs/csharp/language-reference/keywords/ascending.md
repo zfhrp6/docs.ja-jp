@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33213498"
 ---
 # <a name="ascending-c-reference"></a>ascending (C# リファレンス)
 `ascending` コンテキスト キーワードは、クエリ式の [orderby 句](../../../csharp/language-reference/keywords/orderby-clause.md)で使用され、並べ替え順序として昇順を指定します。 `ascending` は既定の並べ替え順序であるため、指定する必要はありません。  

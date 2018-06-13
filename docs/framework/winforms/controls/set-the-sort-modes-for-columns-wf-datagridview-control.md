@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33535732"
 ---
 # <a name="how-to-set-the-sort-modes-for-columns-in-the-windows-forms-datagridview-control"></a>方法 : Windows フォーム DataGridView コントロール内の列の並べ替えモードを設定する
 <xref:System.Windows.Forms.DataGridView>他の列の型が自動的に並べ替えられていないときに、既定では、自動並べ替えコントロール、テキスト ボックスの列を使用します。 これらの既定値をオーバーライドする場合があります。 たとえば、テキスト、数値、または列挙型のセルの値の代わりにイメージを表示することができます。 イメージを並べ替えることはできません、中に、それが表す基になる値を並べ替えることができます。  

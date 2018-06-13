@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33522383"
 ---
 # <a name="how-to-set-the-color-of-a-pen"></a>方法 : ペンの色を設定する
 この例は、既存の色を変更<xref:System.Drawing.Pen>オブジェクト  

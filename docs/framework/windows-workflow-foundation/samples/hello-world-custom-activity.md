@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33515844"
 ---
 # <a name="hello-world-custom-activity"></a>Hello World カスタム アクティビティ
 このサンプルでは、いくつかの主要機能の Windows Workflow Foundation (WF)、単純なカスタム アクティビティを作成する方法などを示します。 このサンプルで示す機能では、C# でカスタム アクティビティを作成し、`in` 引数と `out` 引数 (<xref:System.Activities.InArgument> と <xref:System.Activities.OutArgument>) を使用します。  

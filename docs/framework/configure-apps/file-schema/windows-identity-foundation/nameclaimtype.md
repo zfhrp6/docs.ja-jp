@@ -9,6 +9,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32755098"
 ---
 # <a name="ltnameclaimtypegt"></a>&lt;nameClaimType&gt;
 指定するクレームの種類を設定、<xref:System.Security.Principal.IIdentity.Name%2A>プロパティです。 要求の種類がの検索に使用される、<xref:System.Security.Claims.Claim>のコレクションで<xref:System.Security.Claims.ClaimsIdentity>によって返されるオブジェクト、<xref:System.IdentityModel.Tokens.SecurityTokenHandler.ValidateToken%2A>このトークン ハンドラーのメソッドです。 一致する要求の値がの名前として設定し、<xref:System.Security.Principal.IIdentity>このトークン ハンドラーから生成します。  

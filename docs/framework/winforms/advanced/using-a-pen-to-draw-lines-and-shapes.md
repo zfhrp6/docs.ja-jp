@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33524343"
 ---
 # <a name="using-a-pen-to-draw-lines-and-shapes"></a>ペンを使用した直線と図形の描画
 使用して[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]`Pen`線分、曲線、および図形の輪郭を描画するオブジェクト。 このセクションで*行*という意味では直線セグメントのみを指定しない限りは、次のいずれかを参照します。 色、幅、配置、およびそのペンで描画された直線のスタイルを制御するペンのプロパティを設定します。  

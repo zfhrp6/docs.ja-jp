@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33523186"
 ---
 # <a name="how-to-send-data-to-the-active-mdi-child"></a>方法 : アクティブな MDI 子フォームにデータを送信する
 コンテキスト内で多くの場合、[マルチ ドキュメント インターフェイス (MDI) アプリケーション](../../../../docs/framework/winforms/advanced/multiple-document-interface-mdi-applications.md)ユーザーが MDI アプリケーションにクリップボードからデータを貼り付けますときなど、アクティブな子ウィンドウにデータを送信する必要があります。  

@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33544782"
 ---
 # <a name="how-to-create-a-data-object"></a>方法 : データ オブジェクトを作成する
 次の例は、によって提供されるコンス トラクターを使用して、データ オブジェクトを作成するさまざまな方法を示して、<xref:System.Windows.DataObject>クラスです。  

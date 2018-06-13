@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: f3a3cc21dbbcfa99ddcecb534bd2e337da005597
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33431179"
 ---
 # <a name="createhistoryreader-function"></a>CreateHistoryReader 関数
 指定したファイルの履歴のリーダーを作成します。  

@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33523875"
 ---
 # <a name="how-to-display-pop-up-help"></a>方法 : ポップアップ ヘルプを表示する
 Windows フォームでヘルプを表示する 1 つの方法は、使用、**ヘルプ**経由でアクセスできる、タイトル バーの右側にあるボタンをクリック、<xref:System.Windows.Forms.Form.HelpButton%2A>プロパティです。 この種類のヘルプの表示は、ダイアログ ボックスでの使用に適しています。 モーダル形式で表示されるダイアログ ボックス (<xref:System.Windows.Forms.Form.ShowDialog%2A> メソッドを使用) は、別のウィンドウにフォーカスを移動するときはモーダル ダイアログ ボックスを閉じる必要があるため、外部のヘルプ システムを起動する場合は問題が発生します。 さらを使用して、**ヘルプ**ボタンがあることを必要がありますありません**最小化**ボタンまたは**最大化**タイトル バーに表示されるボタンをクリックします。 これは、フォームが通常がある一方の標準のダイアログ ボックスの規約では、**最小化**と**最大化**ボタン。  

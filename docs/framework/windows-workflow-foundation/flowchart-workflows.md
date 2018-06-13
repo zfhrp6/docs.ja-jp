@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33514525"
 ---
 # <a name="flowchart-workflows"></a>Flowchart のワークフロー
 フローチャートは、プログラムを診断するための既知のパラダイムです。 通常、Flowchart アクティビティはシーケンシャル以外のワークフローを実装するために使用されますが、`FlowDecision` ノードが使用されない場合は、シーケンシャル ワークフローにも使用できます。  

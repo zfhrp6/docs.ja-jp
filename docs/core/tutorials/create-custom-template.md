@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33218083"
 ---
 # <a name="create-a-custom-template-for-dotnet-new"></a>dotnet new のカスタム テンプレートを作成する
 

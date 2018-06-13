@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33517158"
 ---
 # <a name="transaction-rollback"></a>トランザクションのロールバック
 このサンプルでは、アンビエント <xref:System.Activities.NativeActivity> にアクセスしてアンビエント トランザクションを取得し、そのトランザクションを明示的にロールバックするカスタム <xref:System.Activities.RuntimeTransactionHandle> を作成する方法を示します。  

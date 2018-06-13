@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33515373"
 ---
 # <a name="using-interop-with-external-data-exchange"></a>External Data Exchange での Interop の使用
 <xref:System.Activities.Statements.Interop>から Windows Workflow Foundation (WF) にアクティビティを実行するアクティビティを使用する[!INCLUDE[vstecwinfx](../../../../includes/vstecwinfx-md.md)]と[!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)](WF3)、および Windows Workflow Foundation の内のワークフロー [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] (WF4)。 このサンプルは、WF4 ワークフロー サービスの <xref:System.Workflow.Activities.ExternalDataExchangeService> アクティビティを使用して、<xref:System.Activities.Statements.Interop> (およびメソッドを呼び出してイベントを処理するための対応するカスタム アクティビティ) を使用する WF3 ワークフローを設定および実行する方法を示します。  

@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33516414"
 ---
 # <a name="adjusting-the-size-and-scale-of-windows-forms"></a>サイズと Windows フォームのスケールを調整します。
 このトピックは、Windows フォームのサイズ変更に関する情報へのリンクを示します。  

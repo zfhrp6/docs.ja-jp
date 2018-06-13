@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33543541"
 ---
 # <a name="how-to-enable-text-trimming"></a>方法 : テキストのトリミングを有効にする
 この例は、使用法とで使用できる値の効果を示しています、<xref:System.Windows.TextTrimming>列挙します。  
