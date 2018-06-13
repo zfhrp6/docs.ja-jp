@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 2c0545440ed63ba914229249080ec9f6be8eb2b3
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33402254"
 ---
 # <a name="icordebugchaingetprevious-method"></a><span data-ttu-id="3d39c-102">ICorDebugChain::GetPrevious メソッド</span><span class="sxs-lookup"><span data-stu-id="3d39c-102">ICorDebugChain::GetPrevious Method</span></span>
 <span data-ttu-id="3d39c-103">スレッドの前のフレーム チェーンを取得します。</span><span class="sxs-lookup"><span data-stu-id="3d39c-103">Gets the previous chain of frames for the thread.</span></span>  

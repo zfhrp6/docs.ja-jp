@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33365990"
 ---
 # <a name="basic-data-types"></a><span data-ttu-id="efbd4-102">基本データ型</span><span class="sxs-lookup"><span data-stu-id="efbd4-102">Basic Data Types</span></span>
 <span data-ttu-id="efbd4-103">LINQ to SQL クエリは、Microsoft SQL Server で実行される前に Transact-SQL に変換されるため、</span><span class="sxs-lookup"><span data-stu-id="efbd4-103">Because LINQ to SQL queries translate to Transact-SQL before they are executed on the Microsoft SQL Server.</span></span> <span data-ttu-id="efbd4-104">LINQ to SQL は、SQL Server が基本データ型に対してサポートするのと同じ組み込み機能の多くをサポートします。</span><span class="sxs-lookup"><span data-stu-id="efbd4-104">LINQ to SQL supports much of the same built-in functionality that SQL Server does for basic data types.</span></span>  

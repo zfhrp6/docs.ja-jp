@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33527314"
 ---
 # <a name="arranging-controls-on-windows-forms"></a><span data-ttu-id="da1ef-102">Windows フォームでのコントロールの配置</span><span class="sxs-lookup"><span data-stu-id="da1ef-102">Arranging Controls on Windows Forms</span></span>
 <span data-ttu-id="da1ef-103">さまざまな方法でフォームにコントロールを配置したり、フォームのコントロールを操作したりすることで、ユーザーが直観的に操作できる機能的なユーザー インターフェイスを構築できます。</span><span class="sxs-lookup"><span data-stu-id="da1ef-103">By placing and manipulating controls on forms in different ways, you can create user interfaces that are both intuitive and functional for users.</span></span>  

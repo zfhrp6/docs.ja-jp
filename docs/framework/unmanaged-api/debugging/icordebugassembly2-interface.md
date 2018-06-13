@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 90ad74a3b9dd26d0a6e390a777e862f4274f86d6
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33403843"
 ---
 # <a name="icordebugassembly2-interface1"></a><span data-ttu-id="a2087-102">ICorDebugAssembly2 Interface1</span><span class="sxs-lookup"><span data-stu-id="a2087-102">ICorDebugAssembly2 Interface1</span></span>
 <span data-ttu-id="a2087-103">アセンブリを表します。</span><span class="sxs-lookup"><span data-stu-id="a2087-103">Represents an assembly.</span></span> <span data-ttu-id="a2087-104">このインターフェイスは、ICorDebugAssembly インターフェイスの拡張機能です。</span><span class="sxs-lookup"><span data-stu-id="a2087-104">This interface is an extension of the ICorDebugAssembly interface.</span></span>  

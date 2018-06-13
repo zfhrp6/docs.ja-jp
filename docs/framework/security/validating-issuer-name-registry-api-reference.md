@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33400004"
 ---
 # <a name="validating-issuer-name-registry-api-reference"></a><span data-ttu-id="f5643-102">発行者名レジストリ API リファレンスの検証</span><span class="sxs-lookup"><span data-stu-id="f5643-102">Validating Issuer Name Registry API Reference</span></span>
 <span data-ttu-id="f5643-103">このセクションでは、WIF の Validating Issuer Name Registry 拡張機能の API リファレンスを提供します。</span><span class="sxs-lookup"><span data-stu-id="f5643-103">This section contains the API Reference for the Validating Issuer Name Registry WIF Extension.</span></span>

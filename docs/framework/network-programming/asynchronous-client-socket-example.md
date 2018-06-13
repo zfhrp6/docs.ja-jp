@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33390300"
 ---
 # <a name="asynchronous-client-socket-example"></a><span data-ttu-id="c90d5-102">非同期クライアント ソケットの例</span><span class="sxs-lookup"><span data-stu-id="c90d5-102">Asynchronous Client Socket Example</span></span>
 <span data-ttu-id="c90d5-103">次のプログラム例では、サーバーに接続するクライアントを作成します。</span><span class="sxs-lookup"><span data-stu-id="c90d5-103">The following example program creates a client that connects to a server.</span></span> <span data-ttu-id="c90d5-104">このクライアントは非同期ソケットで構築されます。そのため、サーバーが応答を返す間にクライアント アプリケーションの実行が中断されることはありません。</span><span class="sxs-lookup"><span data-stu-id="c90d5-104">The client is built with an asynchronous socket, so execution of the client application is not suspended while the server returns a response.</span></span> <span data-ttu-id="c90d5-105">このアプリケーションは文字列をサーバーに送信し、サーバーが返した文字列をコンソールに表示します。</span><span class="sxs-lookup"><span data-stu-id="c90d5-105">The application sends a string to the server and then displays the string returned by the server on the console.</span></span>  

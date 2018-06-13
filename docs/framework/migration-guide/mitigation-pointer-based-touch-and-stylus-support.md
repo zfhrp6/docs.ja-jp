@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33387781"
 ---
 # <a name="mitigation-pointer-based-touch-and-stylus-support"></a><span data-ttu-id="0251e-102">軽減策: ポインター ベースのタッチおよびスタイラスのサポート</span><span class="sxs-lookup"><span data-stu-id="0251e-102">Mitigation: Pointer-based Touch and Stylus Support</span></span>
 

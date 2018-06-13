@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 580c7b4dcd63f83e113a5317c242b7e66cfb3f5a
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33403417"
 ---
 # <a name="icordebugarrayvaluegetelementatposition-method"></a><span data-ttu-id="b7305-102">ICorDebugArrayValue::GetElementAtPosition メソッド</span><span class="sxs-lookup"><span data-stu-id="b7305-102">ICorDebugArrayValue::GetElementAtPosition Method</span></span>
 <span data-ttu-id="b7305-103">0 から始まる 1 次元の配列として、配列を扱う方法の指定された位置に要素を取得します。</span><span class="sxs-lookup"><span data-stu-id="b7305-103">Gets the element at the given position, treating the array as a zero-based, single-dimensional array.</span></span>  
