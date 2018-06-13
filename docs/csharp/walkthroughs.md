@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33359450"
 ---
 # <a name="c-walkthroughs"></a><span data-ttu-id="f1d57-102">C# チュートリアル</span><span class="sxs-lookup"><span data-stu-id="f1d57-102">C# Walkthroughs</span></span>
 <span data-ttu-id="f1d57-103">チュートリアルでは、製品や特定の機能領域について学習を開始するのに適した一般的なシナリオについて詳細な手順を示します。</span><span class="sxs-lookup"><span data-stu-id="f1d57-103">Walkthroughs give step-by-step instructions for common scenarios, which makes them a good place to start learning about the product or a particular feature area.</span></span>  

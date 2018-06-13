@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 9abbfa14777c5a5f5a77fa91db0fbafee095ba9b
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33429238"
 ---
 # <a name="isymunmanagedvariablegetname-method"></a><span data-ttu-id="0fec8-102">ISymUnmanagedVariable::GetName メソッド</span><span class="sxs-lookup"><span data-stu-id="0fec8-102">ISymUnmanagedVariable::GetName Method</span></span>
 <span data-ttu-id="0fec8-103">この変数の名前を取得します。</span><span class="sxs-lookup"><span data-stu-id="0fec8-103">Gets the name of this variable.</span></span>  

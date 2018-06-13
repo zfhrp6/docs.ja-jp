@@ -1,43 +1,30 @@
 ---
 title: '方法: .NET Framework 3.5 がインストールされているかどうかを検出'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-wpf
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - verifying whether.NET Framework 3.5 is installed [WPF]
 - detecting .NET Framework 3.5 installation [WPF]
 - detecting whether.NET Framework 3.5 is installed [WPF]
 - determining whether.NET Framework 3.5 is installed [WPF]
 ms.assetid: 8556a9d2-1eb8-48ef-919c-5baf22a2a9a2
-caps.latest.revision: 7
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: e4999e3e1a9e402cb8848d030ab483f057428486
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 0d0f99dfa88216d0d768895ea751b0f62eccf701
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33546043"
 ---
-# <a name="how-to-detect-whether-the-net-framework-35-is-installed"></a><span data-ttu-id="40989-102">方法: .NET Framework 3.5 がインストールされているかどうかを検出</span><span class="sxs-lookup"><span data-stu-id="40989-102">How to: Detect Whether the .NET Framework 3.5 Is Installed</span></span>
-<span data-ttu-id="40989-103">管理者は対象とするシステム上の Windows Presentation Foundation (WPF) アプリケーションを展開する前に、 [!INCLUDE[net_v35_short](../../../../includes/net-v35-short-md.md)]、する必要がありますまずことを確認したこと、[!INCLUDE[net_v35_short](../../../../includes/net-v35-short-md.md)]ランタイムが存在します。</span><span class="sxs-lookup"><span data-stu-id="40989-103">Before administrators can deploy Windows Presentation Foundation (WPF) applications on a system that targets the [!INCLUDE[net_v35_short](../../../../includes/net-v35-short-md.md)], they must first confirm that the [!INCLUDE[net_v35_short](../../../../includes/net-v35-short-md.md)] runtime is present.</span></span> <span data-ttu-id="40989-104">このトピックで記述されたスクリプトは、HTML または JavaScript を決定する管理者が使用できるのかどうか、[!INCLUDE[net_v35_short](../../../../includes/net-v35-short-md.md)]は、システムに存在します。</span><span class="sxs-lookup"><span data-stu-id="40989-104">This topic provides a script written in HTML/JavaScript that administrators can use to determine whether the [!INCLUDE[net_v35_short](../../../../includes/net-v35-short-md.md)] is present on a system.</span></span>  
+# <a name="how-to-detect-whether-the-net-framework-35-is-installed"></a><span data-ttu-id="5d6b7-102">方法: .NET Framework 3.5 がインストールされているかどうかを検出</span><span class="sxs-lookup"><span data-stu-id="5d6b7-102">How to: Detect Whether the .NET Framework 3.5 Is Installed</span></span>
+<span data-ttu-id="5d6b7-103">管理者は対象とするシステム上の Windows Presentation Foundation (WPF) アプリケーションを展開する前に、 [!INCLUDE[net_v35_short](../../../../includes/net-v35-short-md.md)]、する必要がありますまずことを確認したこと、[!INCLUDE[net_v35_short](../../../../includes/net-v35-short-md.md)]ランタイムが存在します。</span><span class="sxs-lookup"><span data-stu-id="5d6b7-103">Before administrators can deploy Windows Presentation Foundation (WPF) applications on a system that targets the [!INCLUDE[net_v35_short](../../../../includes/net-v35-short-md.md)], they must first confirm that the [!INCLUDE[net_v35_short](../../../../includes/net-v35-short-md.md)] runtime is present.</span></span> <span data-ttu-id="5d6b7-104">このトピックで記述されたスクリプトは、HTML または JavaScript を決定する管理者が使用できるのかどうか、[!INCLUDE[net_v35_short](../../../../includes/net-v35-short-md.md)]は、システムに存在します。</span><span class="sxs-lookup"><span data-stu-id="5d6b7-104">This topic provides a script written in HTML/JavaScript that administrators can use to determine whether the [!INCLUDE[net_v35_short](../../../../includes/net-v35-short-md.md)] is present on a system.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="40989-105">インストール、配置、および検出についての詳細、[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]を参照してください[開発者向け .NET Framework をインストール](../../../../docs/framework/install/guide-for-developers.md)です。</span><span class="sxs-lookup"><span data-stu-id="40989-105">For more detailed information on installing, deploying, and detecting the [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], see [Install the .NET Framework for developers](../../../../docs/framework/install/guide-for-developers.md).</span></span>  
+>  <span data-ttu-id="5d6b7-105">インストール、配置、および検出についての詳細、[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]を参照してください[開発者向け .NET Framework をインストール](../../../../docs/framework/install/guide-for-developers.md)です。</span><span class="sxs-lookup"><span data-stu-id="5d6b7-105">For more detailed information on installing, deploying, and detecting the [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], see [Install the .NET Framework for developers](../../../../docs/framework/install/guide-for-developers.md).</span></span>  
   
-## <a name="example"></a><span data-ttu-id="40989-106">例</span><span class="sxs-lookup"><span data-stu-id="40989-106">Example</span></span>  
- <span data-ttu-id="40989-107">ときに、[!INCLUDE[net_v35_short](../../../../includes/net-v35-short-md.md)]がインストールされている、MSI バージョン番号と".NET CLR"文字列に追加 UserAgent です。</span><span class="sxs-lookup"><span data-stu-id="40989-107">When the [!INCLUDE[net_v35_short](../../../../includes/net-v35-short-md.md)] is installed, the MSI adds ".NET CLR" and the version number to the UserAgent string.</span></span> <span data-ttu-id="40989-108">次の例では、単純な HTML ページに埋め込まれたスクリプトを示します。</span><span class="sxs-lookup"><span data-stu-id="40989-108">The following example shows a script embedded in a simple HTML page.</span></span> <span data-ttu-id="40989-109">スクリプトを決定する UserAgent 文字列を検索するかどうか、[!INCLUDE[net_v35_short](../../../../includes/net-v35-short-md.md)]がインストールされているし、検索の結果のステータス メッセージを表示します。</span><span class="sxs-lookup"><span data-stu-id="40989-109">The script searches the UserAgent string to determine whether the [!INCLUDE[net_v35_short](../../../../includes/net-v35-short-md.md)] is installed, and displays a status message on the results of the search.</span></span>  
+## <a name="example"></a><span data-ttu-id="5d6b7-106">例</span><span class="sxs-lookup"><span data-stu-id="5d6b7-106">Example</span></span>  
+ <span data-ttu-id="5d6b7-107">ときに、[!INCLUDE[net_v35_short](../../../../includes/net-v35-short-md.md)]がインストールされている、MSI バージョン番号と".NET CLR"文字列に追加 UserAgent です。</span><span class="sxs-lookup"><span data-stu-id="5d6b7-107">When the [!INCLUDE[net_v35_short](../../../../includes/net-v35-short-md.md)] is installed, the MSI adds ".NET CLR" and the version number to the UserAgent string.</span></span> <span data-ttu-id="5d6b7-108">次の例では、単純な HTML ページに埋め込まれたスクリプトを示します。</span><span class="sxs-lookup"><span data-stu-id="5d6b7-108">The following example shows a script embedded in a simple HTML page.</span></span> <span data-ttu-id="5d6b7-109">スクリプトを決定する UserAgent 文字列を検索するかどうか、[!INCLUDE[net_v35_short](../../../../includes/net-v35-short-md.md)]がインストールされているし、検索の結果のステータス メッセージを表示します。</span><span class="sxs-lookup"><span data-stu-id="5d6b7-109">The script searches the UserAgent string to determine whether the [!INCLUDE[net_v35_short](../../../../includes/net-v35-short-md.md)] is installed, and displays a status message on the results of the search.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="40989-110">このスクリプトは、Internet Explorer 用に設計されています。</span><span class="sxs-lookup"><span data-stu-id="40989-110">This script is designed for Internet Explorer.</span></span> <span data-ttu-id="40989-111">その他のブラウザーは、User-agent 文字列で .NET CLR の情報を含まない場合があります。</span><span class="sxs-lookup"><span data-stu-id="40989-111">Other browsers may not include .NET CLR information in the UserAgent string.</span></span>  
+>  <span data-ttu-id="5d6b7-110">このスクリプトは、Internet Explorer 用に設計されています。</span><span class="sxs-lookup"><span data-stu-id="5d6b7-110">This script is designed for Internet Explorer.</span></span> <span data-ttu-id="5d6b7-111">その他のブラウザーは、User-agent 文字列で .NET CLR の情報を含まない場合があります。</span><span class="sxs-lookup"><span data-stu-id="5d6b7-111">Other browsers may not include .NET CLR information in the UserAgent string.</span></span>  
   
 ```  
 <HTML>  
@@ -129,17 +116,17 @@ ms.lasthandoff: 04/30/2018
 </HTML>  
 ```  
   
- <span data-ttu-id="40989-112">".NET CLR"バージョンの検索が成功した場合は、次のようなステータス メッセージが表示されます。</span><span class="sxs-lookup"><span data-stu-id="40989-112">If the search for the ".NET CLR " version is successful, the following type of status message appears:</span></span>  
+ <span data-ttu-id="5d6b7-112">".NET CLR"バージョンの検索が成功した場合は、次のようなステータス メッセージが表示されます。</span><span class="sxs-lookup"><span data-stu-id="5d6b7-112">If the search for the ".NET CLR " version is successful, the following type of status message appears:</span></span>  
   
  `This machine has the correct version of the .NET Framework 3.5.`  
   
  `This machine's userAgent string is: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; SLCC1; .NET CLR 2.0.50727; .NET CLR 1.1.4322; InfoPath.2; .NET CLR 3.0.590; .NET CLR 3.5.20726; MS-RTC LM 8).`  
   
- <span data-ttu-id="40989-113">それ以外の場合、次のようなステータス メッセージが表示されます。</span><span class="sxs-lookup"><span data-stu-id="40989-113">Otherwise, the following type of status message appears:</span></span>  
+ <span data-ttu-id="5d6b7-113">それ以外の場合、次のようなステータス メッセージが表示されます。</span><span class="sxs-lookup"><span data-stu-id="5d6b7-113">Otherwise, the following type of status message appears:</span></span>  
   
  `This machine does not have the correct version of the .NET Framework 3.5. The required version is v3.5.0.0.`  
   
  `This machine's userAgent string is: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; SLCC1; .NET CLR 2.0.50727; .NET CLR 1.1.4322; InfoPath.2; .NET CLR 3.0.590; MS-RTC LM 8).`  
   
-## <a name="see-also"></a><span data-ttu-id="40989-114">関連項目</span><span class="sxs-lookup"><span data-stu-id="40989-114">See Also</span></span>  
- [<span data-ttu-id="40989-115">.NET Framework 3.0 がインストールされているかどうかを確認する</span><span class="sxs-lookup"><span data-stu-id="40989-115">Detect Whether the .NET Framework 3.0 Is Installed</span></span>](../../../../docs/framework/wpf/app-development/how-to-detect-whether-the-net-framework-3-0-is-installed.md)
+## <a name="see-also"></a><span data-ttu-id="5d6b7-114">関連項目</span><span class="sxs-lookup"><span data-stu-id="5d6b7-114">See Also</span></span>  
+ [<span data-ttu-id="5d6b7-115">.NET Framework 3.0 がインストールされているかどうかを確認する</span><span class="sxs-lookup"><span data-stu-id="5d6b7-115">Detect Whether the .NET Framework 3.0 Is Installed</span></span>](../../../../docs/framework/wpf/app-development/how-to-detect-whether-the-net-framework-3-0-is-installed.md)

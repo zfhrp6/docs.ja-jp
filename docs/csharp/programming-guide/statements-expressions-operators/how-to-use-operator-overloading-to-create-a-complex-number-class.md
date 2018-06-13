@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33328865"
 ---
 # <a name="how-to-use-operator-overloading-to-create-a-complex-number-class-c-programming-guide"></a><span data-ttu-id="e3877-102">方法 : 演算子のオーバーロードを使用して複素数クラスを作成する (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="e3877-102">How to: Use Operator Overloading to Create a Complex Number Class (C# Programming Guide)</span></span>
 <span data-ttu-id="e3877-103">この例では、演算子のオーバーロードを使用して、複素数の加算を定義する複素数クラス `Complex` を作成する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="e3877-103">This example shows how you can use operator overloading to create a complex number class `Complex` that defines complex addition.</span></span> <span data-ttu-id="e3877-104">プログラムは、`ToString` メソッドのオーバーライドを使用して、数値の虚数部と実数部、および加算結果を表示します。</span><span class="sxs-lookup"><span data-stu-id="e3877-104">The program displays the imaginary and the real parts of the numbers and the addition result using an override of the `ToString` method.</span></span>  

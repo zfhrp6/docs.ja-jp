@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 6c879af682e2d54ed3ae1e9821c0bd85b5cac27d
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33423092"
 ---
 # <a name="icordebugmanagedcallback-interface"></a><span data-ttu-id="9d1c4-102">ICorDebugManagedCallback インターフェイス</span><span class="sxs-lookup"><span data-stu-id="9d1c4-102">ICorDebugManagedCallback Interface</span></span>
 <span data-ttu-id="9d1c4-103">デバッガーのコールバックを処理するメソッドを提供します。</span><span class="sxs-lookup"><span data-stu-id="9d1c4-103">Provides methods to process debugger callbacks.</span></span>  

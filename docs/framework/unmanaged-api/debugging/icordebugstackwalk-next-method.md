@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 367c43dc08722288dc3b32b5133f7770ffc3a27c
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33423105"
 ---
 # <a name="icordebugstackwalknext-method"></a><span data-ttu-id="37307-102">ICorDebugStackWalk::Next メソッド</span><span class="sxs-lookup"><span data-stu-id="37307-102">ICorDebugStackWalk::Next Method</span></span>
 <span data-ttu-id="37307-103">移動、 [ICorDebugStackWalk](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-interface.md)次のフレームにオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="37307-103">Moves the [ICorDebugStackWalk](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-interface.md) object to the next frame.</span></span>  

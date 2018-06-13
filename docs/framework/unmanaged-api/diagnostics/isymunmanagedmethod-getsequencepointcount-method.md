@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: c1a9ef59cfe63ba745e6f5eba3ba2c3f3f983886
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33425393"
 ---
 # <a name="isymunmanagedmethodgetsequencepointcount-method"></a><span data-ttu-id="22b5c-102">ISymUnmanagedMethod::GetSequencePointCount メソッド</span><span class="sxs-lookup"><span data-stu-id="22b5c-102">ISymUnmanagedMethod::GetSequencePointCount Method</span></span>
 <span data-ttu-id="22b5c-103">このメソッド内のシーケンス ポイントの数を取得します。</span><span class="sxs-lookup"><span data-stu-id="22b5c-103">Gets the count of sequence points within this method.</span></span>  

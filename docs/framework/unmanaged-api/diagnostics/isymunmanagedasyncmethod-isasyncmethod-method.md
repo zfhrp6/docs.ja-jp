@@ -6,9 +6,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 3f5bf8252986ffa90ea5380d5342595cb91e5419
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33424942"
 ---
 # <a name="isymunmanagedasyncmethodisasyncmethod-method"></a><span data-ttu-id="d0a2f-102">ISymUnmanagedAsyncMethod::IsAsyncMethod メソッド</span><span class="sxs-lookup"><span data-stu-id="d0a2f-102">ISymUnmanagedAsyncMethod::IsAsyncMethod Method</span></span>
 <span data-ttu-id="d0a2f-103">か、メソッドが非同期の情報を持つかどうかを調べます。</span><span class="sxs-lookup"><span data-stu-id="d0a2f-103">Checks if the method has async information or not.</span></span>  

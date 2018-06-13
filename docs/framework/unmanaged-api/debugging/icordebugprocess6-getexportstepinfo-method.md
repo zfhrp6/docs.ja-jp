@@ -6,9 +6,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 4d0758a8603b7c31844b39c9f3beefea04e0a029
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33422960"
 ---
 # <a name="icordebugprocess6getexportstepinfo-method"></a><span data-ttu-id="7af3e-102">ICorDebugProcess6::GetExportStepInfo メソッド</span><span class="sxs-lookup"><span data-stu-id="7af3e-102">ICorDebugProcess6::GetExportStepInfo Method</span></span>
 <span data-ttu-id="7af3e-103">マネージ コードのステップ実行に役立つランタイム エクスポート関数の情報を提供します。</span><span class="sxs-lookup"><span data-stu-id="7af3e-103">Provides information on runtime exported functions to help step through managed code.</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33335349"
 ---
 # <a name="retrieving-the-paragraphs-and-their-styles-c"></a><span data-ttu-id="280de-102">段落とそのスタイルの取得 (C#)</span><span class="sxs-lookup"><span data-stu-id="280de-102">Retrieving the Paragraphs and Their Styles (C#)</span></span>
 <span data-ttu-id="280de-103">この例では、WordprocessingML ドキュメントから段落ノードを取得するクエリを記述します。</span><span class="sxs-lookup"><span data-stu-id="280de-103">In this example, we write a query that retrieves the paragraph nodes from a WordprocessingML document.</span></span> <span data-ttu-id="280de-104">それぞれの段落のスタイルも特定します。</span><span class="sxs-lookup"><span data-stu-id="280de-104">It also identifies the style of each paragraph.</span></span>  

@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33532508"
 ---
 # <a name="how-to-display-subitems-in-columns-with-the-windows-forms-listview-control"></a><span data-ttu-id="be0d5-102">方法 : Windows フォーム ListView コントロールの列にサブ項目を表示する</span><span class="sxs-lookup"><span data-stu-id="be0d5-102">How to: Display Subitems in Columns with the Windows Forms ListView Control</span></span>
 <span data-ttu-id="be0d5-103">Windows フォーム<xref:System.Windows.Forms.ListView>コントロールは、追加のテキスト、または詳細ビュー内の各項目のサブ項目を表示できます。</span><span class="sxs-lookup"><span data-stu-id="be0d5-103">The Windows Forms <xref:System.Windows.Forms.ListView> control can display additional text, or subitems, for each item in the Details view.</span></span> <span data-ttu-id="be0d5-104">最初の列には、たとえば社員数、項目のテキストが表示されます。</span><span class="sxs-lookup"><span data-stu-id="be0d5-104">The first column displays the item text, for example an employee number.</span></span> <span data-ttu-id="be0d5-105">2 番目、3 番目、およびそれ以降の列に、最初は第 2 に、表示し、後続の関連するサブ項目です。</span><span class="sxs-lookup"><span data-stu-id="be0d5-105">The second, third, and subsequent columns display the first, second, and subsequent associated subitems.</span></span>  

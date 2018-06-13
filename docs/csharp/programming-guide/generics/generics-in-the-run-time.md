@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33334536"
 ---
 # <a name="generics-in-the-run-time-c-programming-guide"></a><span data-ttu-id="81a41-102">ランタイムのジェネリック (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="81a41-102">Generics in the Run Time (C# Programming Guide)</span></span>
 <span data-ttu-id="81a41-103">ジェネリック型またはメソッドが Microsoft 中間言語 (MSIL) にコンパイルされるとき、型パラメーターありとして識別するメタデータが追加されます。</span><span class="sxs-lookup"><span data-stu-id="81a41-103">When a generic type or method is compiled into Microsoft intermediate language (MSIL), it contains metadata that identifies it as having type parameters.</span></span> <span data-ttu-id="81a41-104">ジェネリック型の MSIL の使われ方は、指定した型パラメーターの種類 (値型または参照型) によって異なります。</span><span class="sxs-lookup"><span data-stu-id="81a41-104">How the MSIL for a generic type is used differs based on whether the supplied type parameter is a value type or reference type.</span></span>  
