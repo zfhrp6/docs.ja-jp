@@ -18,9 +18,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 661aeff56955f729a5728f00f563bb2bef971a9f
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33444393"
 ---
 # <a name="imaptoken-interface"></a>IMapToken インターフェイス
 アセンブリ間のマッピング機能を提供します。  

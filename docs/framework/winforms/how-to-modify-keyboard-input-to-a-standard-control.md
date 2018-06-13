@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33540291"
 ---
 # <a name="how-to-modify-keyboard-input-to-a-standard-control"></a>方法 : キーボード入力を標準コントロールに変更する
 Windows フォームは、キーボードの入力を使用して変更する機能を提供します。 キーの使用とは、メッセージ キューのさらに下のその他のメソッドとイベントが、キーの値を受信しないようにメソッドまたはイベント ハンドラー内のキーを処理することを表します。 キーの変更とは、メッセージ キューのさらに下のメソッドとイベント ハンドラーが、異なるキーの値を受け取るようにキーの値を変更することを表します。 このトピックでは、これらのタスクを実行する方法について説明します。  

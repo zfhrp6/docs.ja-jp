@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32758517"
 ---
 # <a name="adonet-datasets"></a>ADO.NET データセット
 <xref:System.Data.DataSet> オブジェクトは、[!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] で非接続型分散データ シナリオをサポートするうえで中心的な役割を果たします。 **データセット**データ ソースに関係なく一貫したリレーショナル プログラミング モデルを提供するデータのメモリ常駐型表現です。 複数の異なるデータ ソースや XML データと組み合わせて使用でき、アプリケーションにとってローカルなデータの管理にも使用できます。 **データセット**関連テーブル、制約、およびテーブル間のリレーションシップを含む、データの完全なセットを表します。 次の図は、**データセット**オブジェクト モデルです。  

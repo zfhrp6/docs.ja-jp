@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: fb6cff796a6a7b866357d51350b7b026b019745e
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33436294"
 ---
 # <a name="iclrgcmanager2-interface"></a>ICLRGCManager2 インターフェイス
 ホストが共通言語ランタイムのガベージ コレクション システムとやり取りできるようにするメソッドを提供します。  

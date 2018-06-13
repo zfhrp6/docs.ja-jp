@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33395162"
 ---
 # <a name="side-by-side-execution-in-the-net-framework"></a>.NET Framework での side-by-side 実行
 side-by-side 実行は、アプリケーションまたはコンポーネントの複数のバージョンを同じコンピューターで実行する機能です。 共通言語ランタイムの複数のバージョン、および 1 つの共通言語ランタイムを使用するアプリケーションとコンポーネントの複数のバージョンを同じコンピューターで同時に実行できます。  

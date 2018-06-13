@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33539541"
 ---
 # <a name="how-to-ensure-multiple-controls-bound-to-the-same-data-source-remain-synchronized"></a>方法 : 複数のコントロールを 1 つのデータ ソースにバインドして同期状態を保つ
 Windows フォームでのデータ バインディングを使用する場合に多くの場合は、複数のコントロールが、同じデータ ソースにバインドされます。 場合によっては、コントロールのバインド プロパティのデータ ソースと他の同期を保つための余分な手順を実行するために必要な場合があります。 次の手順は、2 つの状況で必要があります。  

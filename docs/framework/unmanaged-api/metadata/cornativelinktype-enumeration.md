@@ -18,9 +18,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 2bf8848851dc99c60b8c151ed34cd536fa9a8fed
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33443262"
 ---
 # <a name="cornativelinktype-enumeration"></a>CorNativeLinkType 列挙型
 ネイティブ コード内のリンクの種類を示す値を提供します。  

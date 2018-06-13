@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 19f76a163fae4a1390a2e0fcb85299f8ce78180c
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33435891"
 ---
 # <a name="icorpublishprocess-interface"></a>ICorPublishProcess インターフェイス
 表示するプロセスについての情報にアクセスするメソッドを提供します。  

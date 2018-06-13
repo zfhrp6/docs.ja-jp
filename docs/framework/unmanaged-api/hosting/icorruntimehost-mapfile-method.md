@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 45b88758c339cd77bc7e17e0c29969f8783555f4
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33436625"
 ---
 # <a name="icorruntimehostmapfile-method"></a>ICorRuntimeHost::MapFile メソッド
 メモリに指定されたファイルをマップします。 このメソッドは、互換性のために残されています。  
