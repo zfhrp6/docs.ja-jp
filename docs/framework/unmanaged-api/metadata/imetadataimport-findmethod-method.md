@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 6b68d4e3d51fdb50290319de804a78c1a78a07a4
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33447389"
 ---
 # <a name="imetadataimportfindmethod-method"></a><span data-ttu-id="b9afc-102">IMetaDataImport::FindMethod メソッド</span><span class="sxs-lookup"><span data-stu-id="b9afc-102">IMetaDataImport::FindMethod Method</span></span>
 <span data-ttu-id="b9afc-103">ポインターを取得した MethodDef トークンが囲まれているメソッドに、指定した<xref:System.Type>指定した名前とメタデータ シグネチャを持つとします。</span><span class="sxs-lookup"><span data-stu-id="b9afc-103">Gets a pointer to the MethodDef token for the method that is enclosed by the specified <xref:System.Type> and that has the specified name and metadata signature.</span></span>  

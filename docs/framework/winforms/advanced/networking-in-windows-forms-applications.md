@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33523385"
 ---
 # <a name="networking-in-windows-forms-applications"></a><span data-ttu-id="ec2ef-102">Windows フォーム アプリケーションにおけるネットワーク</span><span class="sxs-lookup"><span data-stu-id="ec2ef-102">Networking in Windows Forms Applications</span></span>
 <span data-ttu-id="ec2ef-103">.NET Framework では、Web ページの表示、Web コンテンツをダウンロードする、ファイル転送プロトコル (FTP) サイトと対話し、容易にネットワーク機能をアプリケーションに組み込む Web サービスの使用のためのクラスを提供します。</span><span class="sxs-lookup"><span data-stu-id="ec2ef-103">The .NET Framework provides classes for displaying Web pages, downloading Web content, interacting with file transfer protocol (FTP) sites, and consuming Web Services, making it easy to build network functionality into your application.</span></span> <span data-ttu-id="ec2ef-104">次のリソースを .NET Framework と Windows フォームに統合する方法のネットワー キング テクノロジから理解できます。</span><span class="sxs-lookup"><span data-stu-id="ec2ef-104">The following resources will help you understand the networking technologies of the .NET Framework and how you can integrate them into Windows Forms.</span></span>  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33595034"
 ---
 # <a name="type-39lttypenamegt39-has-no-constructors"></a><span data-ttu-id="81da2-102">型&#39; &lt;typename&gt; &#39;コンス トラクターがありません</span><span class="sxs-lookup"><span data-stu-id="81da2-102">Type &#39;&lt;typename&gt;&#39; has no constructors</span></span>
 <span data-ttu-id="81da2-103">型が `Sub New()` の呼び出しをサポートしません。</span><span class="sxs-lookup"><span data-stu-id="81da2-103">A type does not support a call to `Sub New()`.</span></span> <span data-ttu-id="81da2-104">コンパイラまたはバイナリ ファイルが破損していることが原因の 1 つとして考えられます。</span><span class="sxs-lookup"><span data-stu-id="81da2-104">One possible cause is a corrupted compiler or binary file.</span></span>  

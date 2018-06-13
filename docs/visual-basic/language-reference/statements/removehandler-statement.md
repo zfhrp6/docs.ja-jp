@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33597989"
 ---
 # <a name="removehandler-statement"></a><span data-ttu-id="e2438-102">RemoveHandler ステートメント</span><span class="sxs-lookup"><span data-stu-id="e2438-102">RemoveHandler Statement</span></span>
 <span data-ttu-id="e2438-103">イベントとイベント ハンドラー間の関連付けを削除します。</span><span class="sxs-lookup"><span data-stu-id="e2438-103">Removes the association between an event and an event handler.</span></span>  

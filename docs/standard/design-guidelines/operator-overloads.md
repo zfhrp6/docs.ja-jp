@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33579315"
 ---
 # <a name="operator-overloads"></a><span data-ttu-id="3db4f-102">演算子のオーバーロード</span><span class="sxs-lookup"><span data-stu-id="3db4f-102">Operator Overloads</span></span>
 <span data-ttu-id="3db4f-103">演算子のオーバー ロードは、framework の型をした組み込みの言語プリミティブを表示を許可します。</span><span class="sxs-lookup"><span data-stu-id="3db4f-103">Operator overloads allow framework types to appear as if they were built-in language primitives.</span></span>  

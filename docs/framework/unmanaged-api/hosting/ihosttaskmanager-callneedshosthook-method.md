@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 983cad5ed87d0666ed71a805a3b3f7a3c7e7c091
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33444305"
 ---
 # <a name="ihosttaskmanagercallneedshosthook-method"></a><span data-ttu-id="cb86d-102">IHostTaskManager::CallNeedsHostHook メソッド</span><span class="sxs-lookup"><span data-stu-id="cb86d-102">IHostTaskManager::CallNeedsHostHook Method</span></span>
 <span data-ttu-id="cb86d-103">共通言語ランタイム (CLR) が指定されたアンマネージ関数呼び出しをインライン展開をできるかどうかを指定するホストを有効にします。</span><span class="sxs-lookup"><span data-stu-id="cb86d-103">Enables the host to specify whether the common language runtime (CLR) can inline the specified call to an unmanaged function.</span></span>  

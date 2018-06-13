@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 1060ca140db0304c8e5667f7fdf9624b3ac2b64a
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33429284"
 ---
 # <a name="callfunctionshim-function"></a><span data-ttu-id="f047f-102">CallFunctionShim 関数</span><span class="sxs-lookup"><span data-stu-id="f047f-102">CallFunctionShim Function</span></span>
 <span data-ttu-id="f047f-103">指定したライブラリ内の関数を、名前とパラメーターを指定して呼び出します。</span><span class="sxs-lookup"><span data-stu-id="f047f-103">Makes a call to the function that has the specified name and parameters in the specified library.</span></span>  

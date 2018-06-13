@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33571522"
 ---
 # <a name="how-to-use-finally-blocks"></a><span data-ttu-id="80d0f-102">finally ブロックを使用する方法</span><span class="sxs-lookup"><span data-stu-id="80d0f-102">How to use finally blocks</span></span>
 

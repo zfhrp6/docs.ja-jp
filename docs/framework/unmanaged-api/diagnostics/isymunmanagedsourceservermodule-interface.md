@@ -18,9 +18,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 0a63700abf77d56134ca30620033c398af735599
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33426740"
 ---
 # <a name="isymunmanagedsourceservermodule-interface"></a><span data-ttu-id="d3836-102">ISymUnmanagedSourceServerModule インターフェイス</span><span class="sxs-lookup"><span data-stu-id="d3836-102">ISymUnmanagedSourceServerModule Interface</span></span>
 <span data-ttu-id="d3836-103">モジュールのソース サーバーのデータを提供します。</span><span class="sxs-lookup"><span data-stu-id="d3836-103">Provides source server data for a module.</span></span> <span data-ttu-id="d3836-104">このインターフェイスを呼び出すことによって取得`QueryInterface`を実装するオブジェクトに対して、 [ISymUnmanagedReader](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md)インターフェイスです。</span><span class="sxs-lookup"><span data-stu-id="d3836-104">Obtain this interface by calling `QueryInterface` on an object that implements the [ISymUnmanagedReader](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md) interface.</span></span>  

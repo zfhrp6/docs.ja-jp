@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33521204"
 ---
 # <a name="how-to-flatten-a-curved-path-into-a-line"></a><span data-ttu-id="6213d-102">方法 : 曲線のパスを直線に平坦化する</span><span class="sxs-lookup"><span data-stu-id="6213d-102">How to: Flatten a Curved Path into a Line</span></span>
 <span data-ttu-id="6213d-103">A<xref:System.Drawing.Drawing2D.GraphicsPath>オブジェクトは、一連の行とベジエ スプラインを格納します。</span><span class="sxs-lookup"><span data-stu-id="6213d-103">A <xref:System.Drawing.Drawing2D.GraphicsPath> object stores a sequence of lines and Bézier splines.</span></span> <span data-ttu-id="6213d-104">パスをいくつかの種類の曲線 (省略記号ボタン、円弧をカーディナル スプライン) を追加できますが、パスに保存する前に、各曲線がベジエ スプラインに変換されます。</span><span class="sxs-lookup"><span data-stu-id="6213d-104">You can add several types of curves (ellipses, arcs, cardinal splines) to a path, but each curve is converted to a Bézier spline before it is stored in the path.</span></span> <span data-ttu-id="6213d-105">パスのフラット化は、パス内の各ベジエ スプラインを一連の直線に変換するので構成されます。</span><span class="sxs-lookup"><span data-stu-id="6213d-105">Flattening a path consists of converting each Bézier spline in the path to a sequence of straight lines.</span></span> <span data-ttu-id="6213d-106">次の図は前に、と後のフラット化されたパスを示します。</span><span class="sxs-lookup"><span data-stu-id="6213d-106">The following illustration shows a path before and after flattening.</span></span>  

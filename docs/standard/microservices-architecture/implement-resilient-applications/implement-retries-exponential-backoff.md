@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33571424"
 ---
 # <a name="implementing-retries-with-exponential-backoff"></a><span data-ttu-id="bfa02-103">指数バックオフを含む再試行を実装する</span><span class="sxs-lookup"><span data-stu-id="bfa02-103">Implementing retries with exponential backoff</span></span>
 

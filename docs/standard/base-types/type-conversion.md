@@ -31,6 +31,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33579484"
 ---
 # <a name="type-conversion-in-the-net-framework"></a><span data-ttu-id="fa78e-102">.NET Framework における型変換</span><span class="sxs-lookup"><span data-stu-id="fa78e-102">Type Conversion in the .NET Framework</span></span>
 <a name="top"></a> <span data-ttu-id="fa78e-103">すべての値には関連付けられた型があり、その値に割り振られる容量、可能な値の範囲、使用できるメンバーなどの属性を定義しています。</span><span class="sxs-lookup"><span data-stu-id="fa78e-103">Every value has an associated type, which defines attributes such as the amount of space allocated to the value, the range of possible values it can have, and the members that it makes available.</span></span> <span data-ttu-id="fa78e-104">多くの値は複数の型として表現できます。</span><span class="sxs-lookup"><span data-stu-id="fa78e-104">Many values can be expressed as more than one type.</span></span> <span data-ttu-id="fa78e-105">たとえば、値 4 は整数または浮動小数点数として表現できます。</span><span class="sxs-lookup"><span data-stu-id="fa78e-105">For example, the value 4 can be expressed as an integer or a floating-point value.</span></span> <span data-ttu-id="fa78e-106">型変換を実行すると、変換元の型の値と等価な値が新しい型で作成されますが、それが元のオブジェクトと同一である (値が正確に一致する) とは限りません。</span><span class="sxs-lookup"><span data-stu-id="fa78e-106">Type conversion creates a value in a new type that is equivalent to the value of an old type, but does not necessarily preserve the identity (or exact value) of the original object.</span></span>  

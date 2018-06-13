@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33595801"
 ---
 # <a name="myapplicationlog-object"></a><span data-ttu-id="5229a-102">My.Application.Log オブジェクト</span><span class="sxs-lookup"><span data-stu-id="5229a-102">My.Application.Log Object</span></span>
 <span data-ttu-id="5229a-103">イベントと例外の情報をアプリケーションのログ リスナーに書き込むためのプロパティとメソッドを提供します。</span><span class="sxs-lookup"><span data-stu-id="5229a-103">Provides a property and methods to write event and exception information to the application's log listeners.</span></span>  
