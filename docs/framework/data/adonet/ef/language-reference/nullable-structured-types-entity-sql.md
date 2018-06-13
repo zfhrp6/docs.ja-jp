@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32762388"
 ---
 # <a name="nullable-structured-types-entity-sql"></a><span data-ttu-id="61c27-102">NULL 値が許容される構造化型 (Entity SQL)</span><span class="sxs-lookup"><span data-stu-id="61c27-102">Nullable Structured Types (Entity SQL)</span></span>
 <span data-ttu-id="61c27-103">構造化型の `null` インスタンスは、存在しないインスタンスです。</span><span class="sxs-lookup"><span data-stu-id="61c27-103">A `null` instance of a structured type is an instance that does not exist.</span></span> <span data-ttu-id="61c27-104">これは、すべてのプロパティの値が `null` であるインスタンスとは異なります。</span><span class="sxs-lookup"><span data-stu-id="61c27-104">This is different from an existing instance in which all properties have `null` values.</span></span>  

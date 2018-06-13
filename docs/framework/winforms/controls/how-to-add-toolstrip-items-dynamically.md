@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33526322"
 ---
 # <a name="how-to-add-toolstrip-items-dynamically"></a><span data-ttu-id="56101-102">方法 : ToolStrip の項目を動的に追加する</span><span class="sxs-lookup"><span data-stu-id="56101-102">How to: Add ToolStrip Items Dynamically</span></span>
 <span data-ttu-id="56101-103">メニューが開くときに <xref:System.Windows.Forms.ToolStrip> コントロールのメニュー項目コレクションを動的に設定できます。</span><span class="sxs-lookup"><span data-stu-id="56101-103">You can dynamically populate the menu item collection of a <xref:System.Windows.Forms.ToolStrip> control when the menu opens.</span></span>  

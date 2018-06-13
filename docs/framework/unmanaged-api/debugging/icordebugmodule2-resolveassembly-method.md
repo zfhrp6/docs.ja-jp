@@ -1,14 +1,6 @@
 ---
-title: "ICorDebugModule2::ResolveAssembly メソッド"
-ms.custom: 
+title: ICorDebugModule2::ResolveAssembly メソッド
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ICorDebugModule2.ResolveAssembly
 api_location:
@@ -23,22 +15,19 @@ helpviewer_keywords:
 ms.assetid: ddf9085c-7161-44bd-9609-cd2732b9009f
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 8e72d2ed69c8d189adb4980c82e07ad71892dc56
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 44a6596807b98e6c8b8624b5df18f78dbf8d0711
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33417779"
 ---
-# <a name="icordebugmodule2resolveassembly-method"></a><span data-ttu-id="8717c-102">ICorDebugModule2::ResolveAssembly メソッド</span><span class="sxs-lookup"><span data-stu-id="8717c-102">ICorDebugModule2::ResolveAssembly Method</span></span>
-<span data-ttu-id="8717c-103">指定したメタデータ トークンによって参照されるアセンブリを解決します。</span><span class="sxs-lookup"><span data-stu-id="8717c-103">Resolves the assembly referenced by the specified metadata token.</span></span>  
+# <a name="icordebugmodule2resolveassembly-method"></a><span data-ttu-id="2cd1d-102">ICorDebugModule2::ResolveAssembly メソッド</span><span class="sxs-lookup"><span data-stu-id="2cd1d-102">ICorDebugModule2::ResolveAssembly Method</span></span>
+<span data-ttu-id="2cd1d-103">指定したメタデータ トークンによって参照されるアセンブリを解決します。</span><span class="sxs-lookup"><span data-stu-id="2cd1d-103">Resolves the assembly referenced by the specified metadata token.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="8717c-104">構文</span><span class="sxs-lookup"><span data-stu-id="8717c-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="2cd1d-104">構文</span><span class="sxs-lookup"><span data-stu-id="2cd1d-104">Syntax</span></span>  
   
 ```  
 HRESULT ResolveAssembly (  
@@ -47,21 +36,21 @@ HRESULT ResolveAssembly (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="8717c-105">パラメーター</span><span class="sxs-lookup"><span data-stu-id="8717c-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="2cd1d-105">パラメーター</span><span class="sxs-lookup"><span data-stu-id="2cd1d-105">Parameters</span></span>  
  `tkAsemblyRef`  
- <span data-ttu-id="8717c-106">[in]`mdToken`アセンブリが参照する値。</span><span class="sxs-lookup"><span data-stu-id="8717c-106">[in] An `mdToken` value that references the assembly.</span></span>  
+ <span data-ttu-id="2cd1d-106">[in]`mdToken`アセンブリが参照する値。</span><span class="sxs-lookup"><span data-stu-id="2cd1d-106">[in] An `mdToken` value that references the assembly.</span></span>  
   
  `ppAssembly`  
- <span data-ttu-id="8717c-107">[out]アセンブリを表す ICorDebugAssembly オブジェクトのアドレスへのポインター。</span><span class="sxs-lookup"><span data-stu-id="8717c-107">[out] A pointer to the address of an ICorDebugAssembly object that represents the assembly.</span></span>  
+ <span data-ttu-id="2cd1d-107">[out]アセンブリを表す ICorDebugAssembly オブジェクトのアドレスへのポインター。</span><span class="sxs-lookup"><span data-stu-id="2cd1d-107">[out] A pointer to the address of an ICorDebugAssembly object that represents the assembly.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="8717c-108">コメント</span><span class="sxs-lookup"><span data-stu-id="8717c-108">Remarks</span></span>  
- <span data-ttu-id="8717c-109">アセンブリは既に読み込まれていない場合場合`ResolveAssembly`が呼び出されると、HRESULT CORDBG_E_CANNOT_RESOLVE_ASSEMBLY の値が返されます。</span><span class="sxs-lookup"><span data-stu-id="8717c-109">If the assembly is not already loaded when `ResolveAssembly` is called, an HRESULT value of CORDBG_E_CANNOT_RESOLVE_ASSEMBLY is returned.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="2cd1d-108">コメント</span><span class="sxs-lookup"><span data-stu-id="2cd1d-108">Remarks</span></span>  
+ <span data-ttu-id="2cd1d-109">アセンブリは既に読み込まれていない場合場合`ResolveAssembly`が呼び出されると、HRESULT CORDBG_E_CANNOT_RESOLVE_ASSEMBLY の値が返されます。</span><span class="sxs-lookup"><span data-stu-id="2cd1d-109">If the assembly is not already loaded when `ResolveAssembly` is called, an HRESULT value of CORDBG_E_CANNOT_RESOLVE_ASSEMBLY is returned.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="8717c-110">必要条件</span><span class="sxs-lookup"><span data-stu-id="8717c-110">Requirements</span></span>  
- <span data-ttu-id="8717c-111">**プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="8717c-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="2cd1d-110">要件</span><span class="sxs-lookup"><span data-stu-id="2cd1d-110">Requirements</span></span>  
+ <span data-ttu-id="2cd1d-111">**プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="2cd1d-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="8717c-112">**ヘッダー:** CorDebug.idl、CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="8717c-112">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="2cd1d-112">**ヘッダー:** CorDebug.idl、CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="2cd1d-112">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="8717c-113">**ライブラリ:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="8717c-113">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="2cd1d-113">**ライブラリ:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="2cd1d-113">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="8717c-114">**.NET framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="8717c-114">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>
+ <span data-ttu-id="2cd1d-114">**.NET framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="2cd1d-114">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>

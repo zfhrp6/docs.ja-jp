@@ -8,6 +8,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32756746"
 ---
 # <a name="ltetwtrackinggt"></a><span data-ttu-id="19f74-102">&lt;etwTracking&gt;</span><span class="sxs-lookup"><span data-stu-id="19f74-102">&lt;etwTracking&gt;</span></span>
 <span data-ttu-id="19f74-103">により、サービスを使用して ETW の追跡を使用するサービスの動作、<xref:System.Activities.Tracking.EtwTrackingParticipant>です。</span><span class="sxs-lookup"><span data-stu-id="19f74-103">A service behavior that allows a service to utilize ETW tracking using an <xref:System.Activities.Tracking.EtwTrackingParticipant>.</span></span>  

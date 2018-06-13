@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32763977"
 ---
 # <a name="treat-entity-sql"></a><span data-ttu-id="f444c-102">TREAT (Entity SQL)</span><span class="sxs-lookup"><span data-stu-id="f444c-102">TREAT (Entity SQL)</span></span>
 <span data-ttu-id="f444c-103">特定の基本データ型のオブジェクトを指定の派生型のオブジェクトとして処理します。</span><span class="sxs-lookup"><span data-stu-id="f444c-103">Treats an object of a particular base type as an object of the specified derived type.</span></span>  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33313223"
 ---
 # <a name="how-to-define-constants-in-c"></a><span data-ttu-id="fe72d-102">方法 : C# で定数を定義する</span><span class="sxs-lookup"><span data-stu-id="fe72d-102">How to: Define Constants in C#</span></span>
 <span data-ttu-id="fe72d-103">定数とは、値がコンパイル時に設定され、変更できないフィールドです。</span><span class="sxs-lookup"><span data-stu-id="fe72d-103">Constants are fields whose values are set at compile time and can never be changed.</span></span> <span data-ttu-id="fe72d-104">定数を使用して、特殊な値の数値リテラル ("マジック ナンバー") の代わりにわかりやすい名前を提供します。</span><span class="sxs-lookup"><span data-stu-id="fe72d-104">Use constants to provide meaningful names instead of numeric literals ("magic numbers") for special values.</span></span>  

@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 624db77f0db2fe374e16abae64b6bf6ad290baa5
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33411435"
 ---
 # <a name="icordebugcode4-interface"></a><span data-ttu-id="91c34-102">ICorDebugCode4 インターフェイス</span><span class="sxs-lookup"><span data-stu-id="91c34-102">ICorDebugCode4 Interface</span></span>
 <span data-ttu-id="91c34-103">ローカル変数と関数の引数を列挙するデバッガーを有効にするメソッドを提供します。</span><span class="sxs-lookup"><span data-stu-id="91c34-103">Provides a method that enables a debugger to enumerate the local variables and arguments in a function.</span></span>  

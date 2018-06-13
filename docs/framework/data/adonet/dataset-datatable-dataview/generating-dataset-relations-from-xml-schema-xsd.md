@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32758439"
 ---
 # <a name="generating-dataset-relations-from-xml-schema-xsd"></a><span data-ttu-id="36150-102">XML スキーマ (XSD) からの DataSet リレーションの生成</span><span class="sxs-lookup"><span data-stu-id="36150-102">Generating DataSet Relations from XML Schema (XSD)</span></span>
 <span data-ttu-id="36150-103"><xref:System.Data.DataSet> では、親子のリレーションを作成することにより、2 つ以上の列間の関連付けを行います。</span><span class="sxs-lookup"><span data-stu-id="36150-103">In a <xref:System.Data.DataSet>, you form an association between two or more columns by creating a parent-child relation.</span></span> <span data-ttu-id="36150-104">3 つの方法を表す、**データセット**XML スキーマ定義言語 (XSD) スキーマ内の関係。</span><span class="sxs-lookup"><span data-stu-id="36150-104">There are three ways to represent a **DataSet** relation within an XML Schema definition language (XSD) schema:</span></span>  

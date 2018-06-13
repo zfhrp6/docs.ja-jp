@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33537474"
 ---
 # <a name="digital-ink"></a><span data-ttu-id="1d876-102">デジタル インク</span><span class="sxs-lookup"><span data-stu-id="1d876-102">Digital Ink</span></span>
 <span data-ttu-id="1d876-103">ここでデジタル インクの使用について説明、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]です。</span><span class="sxs-lookup"><span data-stu-id="1d876-103">This section discusses the use of digital ink in the [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].</span></span> <span data-ttu-id="1d876-104">Tablet PC の SDK でのみ検出従来、デジタル インクは、今すぐコア Windows Presentation Foundation で使用できます。</span><span class="sxs-lookup"><span data-stu-id="1d876-104">Traditionally found only in the Tablet PC SDK, digital ink is now available in the core Windows Presentation Foundation.</span></span> <span data-ttu-id="1d876-105">つまり、Windows Presentation Foundation の電源を使用して Tablet PC の本格的なアプリケーションを開発できます。</span><span class="sxs-lookup"><span data-stu-id="1d876-105">This means you can now develop full-fledged Tablet PC applications by using the power of Windows Presentation Foundation.</span></span>  

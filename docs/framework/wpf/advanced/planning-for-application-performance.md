@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33546953"
 ---
 # <a name="planning-for-application-performance"></a><span data-ttu-id="16ccc-102">アプリケーション パフォーマンスの計画</span><span class="sxs-lookup"><span data-stu-id="16ccc-102">Planning for Application Performance</span></span>
 <span data-ttu-id="16ccc-103">パフォーマンスの目標を達成できるは、どの程度する戦略を作成するパフォーマンスによって異なります。</span><span class="sxs-lookup"><span data-stu-id="16ccc-103">The success of achieving your performance goals depends on how well you develop your performance strategy.</span></span> <span data-ttu-id="16ccc-104">計画は、任意の製品の開発の最初のステージです。</span><span class="sxs-lookup"><span data-stu-id="16ccc-104">Planning is the first stage in developing any product.</span></span> <span data-ttu-id="16ccc-105">このトピックでは、良好なパフォーマンスの戦略を開発するためのいくつかの非常に単純な規則について説明します。</span><span class="sxs-lookup"><span data-stu-id="16ccc-105">This topic describes a few very simple rules for developing a good performance strategy.</span></span>  

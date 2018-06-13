@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 2452f4be0acde300676bf56011416e0a9ef16464
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33411717"
 ---
 # <a name="icordebugframegetcaller-method"></a><span data-ttu-id="cb63e-102">ICorDebugFrame::GetCaller メソッド</span><span class="sxs-lookup"><span data-stu-id="cb63e-102">ICorDebugFrame::GetCaller Method</span></span>
 <span data-ttu-id="cb63e-103">現在のこのフレームを呼び出したチェーン内 ICorDebugFrame オブジェクトへのポインターを取得します。</span><span class="sxs-lookup"><span data-stu-id="cb63e-103">Gets a pointer to the ICorDebugFrame object in the current chain that called this frame.</span></span>  

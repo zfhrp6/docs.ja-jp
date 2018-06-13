@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 7283266857d81b7d97bcacb56862b50f01cd3f0f
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33419944"
 ---
 # <a name="icordebugregistersetsetthreadcontext-method"></a><span data-ttu-id="cc88a-102">ICorDebugRegisterSet::SetThreadContext メソッド</span><span class="sxs-lookup"><span data-stu-id="cc88a-102">ICorDebugRegisterSet::SetThreadContext Method</span></span>
 <span data-ttu-id="cc88a-103">`SetThreadContext` .NET Framework version 2.0 では実装されていません。</span><span class="sxs-lookup"><span data-stu-id="cc88a-103">`SetThreadContext` is not implemented in the .NET Framework version 2.0.</span></span> <span data-ttu-id="cc88a-104">このメソッドを呼び出さないでください。</span><span class="sxs-lookup"><span data-stu-id="cc88a-104">Do not call this method.</span></span>  

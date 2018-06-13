@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33527211"
 ---
 # <a name="dialog-box-controls-and-components-windows-forms"></a><span data-ttu-id="cd9e5-102">ダイアログ ボックス コントロールおよびコンポーネント (Windows フォーム)</span><span class="sxs-lookup"><span data-stu-id="cd9e5-102">Dialog-Box Controls and Components (Windows Forms)</span></span>
 <span data-ttu-id="cd9e5-103">次の Windows フォーム コントロールおよびコンポーネントは、標準のダイアログ ボックスを表示します。</span><span class="sxs-lookup"><span data-stu-id="cd9e5-103">The following Windows Forms controls and components present standard dialog boxes.</span></span> <span data-ttu-id="cd9e5-104">各ダイアログ ボックスで使用できる機能に関する詳細については、リンクに従ってください。</span><span class="sxs-lookup"><span data-stu-id="cd9e5-104">Follow the links for more information about the functions available in each dialog box.</span></span>  

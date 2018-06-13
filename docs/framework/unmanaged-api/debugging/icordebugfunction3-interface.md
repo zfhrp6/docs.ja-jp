@@ -14,9 +14,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: c1945e678dd62f81c698807714d0e71053d6b378
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33414786"
 ---
 # <a name="icordebugfunction3-interface"></a><span data-ttu-id="d8ed4-102">ICorDebugFunction3 インターフェイス</span><span class="sxs-lookup"><span data-stu-id="d8ed4-102">ICorDebugFunction3 Interface</span></span>
 <span data-ttu-id="d8ed4-103">[.NET Framework 4.5.2 以降のバージョンでのみでサポート]</span><span class="sxs-lookup"><span data-stu-id="d8ed4-103">[Supported in the .NET Framework 4.5.2 and later versions]</span></span>  

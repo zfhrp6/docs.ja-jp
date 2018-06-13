@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33538529"
 ---
 # <a name="tablelayoutpanel-control-windows-forms"></a><span data-ttu-id="24df5-102">TableLayoutPanel コントロール (Windows フォーム)</span><span class="sxs-lookup"><span data-stu-id="24df5-102">TableLayoutPanel Control (Windows Forms)</span></span>
 <span data-ttu-id="24df5-103"><xref:System.Windows.Forms.TableLayoutPanel> コントロールは、その内容をグリッド内に配置します。</span><span class="sxs-lookup"><span data-stu-id="24df5-103">The <xref:System.Windows.Forms.TableLayoutPanel> control arranges its contents in a grid.</span></span> <span data-ttu-id="24df5-104">レイアウトはデザイン時と実行時の両方で行われるため、アプリケーション環境の変更に合わせて動的に変更できます。</span><span class="sxs-lookup"><span data-stu-id="24df5-104">Because the layout is performed both at design time and run time, it can change dynamically as the application environment changes.</span></span> <span data-ttu-id="24df5-105">また、パネル内のコントロールが適切にサイズ変更されるため、親コントロールのサイズ変更や、ローカリゼーションに伴うテキスト長の変更に対応できます。</span><span class="sxs-lookup"><span data-stu-id="24df5-105">This gives the controls in the panel the ability to proportionally resize, so it can respond to changes such as the parent control resizing or text length changing due to localization.</span></span>  

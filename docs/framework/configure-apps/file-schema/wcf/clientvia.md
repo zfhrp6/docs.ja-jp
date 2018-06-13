@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32754133"
 ---
 # <a name="ltclientviagt"></a><span data-ttu-id="a858c-102">&lt;clientVia&gt;</span><span class="sxs-lookup"><span data-stu-id="a858c-102">&lt;clientVia&gt;</span></span>
 <span data-ttu-id="a858c-103">トランスポート チャネルの作成対象となる URI を指定します。</span><span class="sxs-lookup"><span data-stu-id="a858c-103">Specifies the URI for which the transport channel should be created.</span></span> <span data-ttu-id="a858c-104">詳細については、「<xref:System.ServiceModel.Description.ClientViaBehavior>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a858c-104">For more information, see <xref:System.ServiceModel.Description.ClientViaBehavior>.</span></span>  
