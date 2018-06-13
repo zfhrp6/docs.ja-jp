@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33636729"
 ---
 # <a name="managed-classes-derived-from-a-com-class-cannot-be-called-late-bound"></a>COM クラスから派生したマネージ クラスは、遅延バインディングされた呼び出しはできません。
 COM クラスから派生したマネージ クラスに対して遅延バインディング呼び出しを実施しようとしましたが、このような呼び出しはサポートされていません。  

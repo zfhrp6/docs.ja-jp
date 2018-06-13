@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33656046"
 ---
 # <a name="how-to-modify-xml-literals-visual-basic"></a>方法 : XML リテラルを変更する (Visual Basic)
 Visual Basic では、XML リテラルを変更する便利な手段を提供します。 追加したり、要素と属性を削除し、新しい XML 要素を持つ既存の要素を置換することもできます。 このトピックでは、既存の XML リテラルを変更する方法の例をいくつかを示します。  

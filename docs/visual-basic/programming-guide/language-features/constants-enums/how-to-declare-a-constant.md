@@ -28,6 +28,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33649738"
 ---
 # <a name="how-to-declare-a-constant-visual-basic"></a>方法: 定数を宣言する (Visual Basic)
 使用する、`Const`定数を宣言し、その値を設定するステートメント。 定数を宣言すると、値にわかりやすい名前を割り当てます。 定数が宣言されると、変更または新しい値を代入することはできません。  

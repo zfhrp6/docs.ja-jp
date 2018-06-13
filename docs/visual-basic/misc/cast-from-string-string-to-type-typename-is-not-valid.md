@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33635713"
 ---
 # <a name="cast-from-string-quotltstringgtquot-to-type-39lttypenamegt39-is-not-valid"></a>文字列からキャスト&quot;&lt;文字列&gt;&quot;入力&#39; &lt;typename&gt; &#39;が正しくありません
 文字列変数を別の型に変換するのは無効です。  

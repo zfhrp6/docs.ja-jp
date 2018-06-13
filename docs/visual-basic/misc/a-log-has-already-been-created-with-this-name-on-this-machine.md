@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33603432"
 ---
 # <a name="a-log-has-already-been-created-with-this-name-on-this-machine"></a>ログは既に、この名前でこのコンピューターに作成されています
 既に使用されている名前でログを作成しようとしました。  

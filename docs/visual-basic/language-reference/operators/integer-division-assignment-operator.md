@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33603562"
 ---
 # <a name="-operator"></a>\\= 演算子
 変数またはプロパティの値式の値で除算し、結果の整数値を変数またはプロパティに代入します。  

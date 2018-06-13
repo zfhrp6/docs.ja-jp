@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33603666"
 ---
 # <a name="q-z-statements"></a>ステートメント Q ～ Z
 次の表には、Visual Basic 言語のステートメントの一覧が含まれています。  

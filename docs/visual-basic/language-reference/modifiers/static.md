@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33602055"
 ---
 # <a name="static-visual-basic"></a>Static (Visual Basic)
 1 つまたは複数の宣言されたローカル変数を引き続き存在し、宣言されているプロシージャの終了後、最新の値を保持するように指定します。  

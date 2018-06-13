@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33655838"
 ---
 # <a name="how-to-change-the-value-of-a-procedure-argument-visual-basic"></a>方法: プロシージャ引数の値を変更する (Visual Basic)
 プロシージャを呼び出すときに指定する各引数はプロシージャで定義されているパラメーターのいずれかに対応します。 場合によっては、プロシージャのコードは、呼び出し元のコードで引数の基になる値を変更できます。 それ以外の場合に、プロシージャは、引数のローカル コピーのみを変更できます。  

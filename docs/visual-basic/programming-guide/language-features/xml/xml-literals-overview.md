@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33655024"
 ---
 # <a name="xml-literals-overview-visual-basic"></a>XML リテラルの概要 (Visual Basic)
 *XML リテラル*XML を Visual Basic のコードに直接組み込むことができます。 XML リテラルの構文を表します[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]オブジェクト、およびそれには、XML 1.0 の構文に似ています。 これにより、簡単に、コードが、最終的な XML と同じ構造を有して XML 要素やドキュメントをプログラムで作成します。  
