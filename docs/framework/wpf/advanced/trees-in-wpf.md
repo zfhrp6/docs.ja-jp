@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33549073"
 ---
 # <a name="trees-in-wpf"></a>WPF のツリー
 多くのテクノロジ要素とコンポーネントは、開発者が直接レンダリングやアプリケーションの動作に影響を与えるツリー内のオブジェクト ノードを操作をツリー構造に編成されています。 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] プログラム要素間のリレーションシップを定義するのにいくつかのツリー構造体要素を使用します。 WPF の開発者の大部分できますコードでアプリケーションを作成またはオブジェクト ツリーの比喩、概念的には検討中に XAML で、アプリケーションの部分を定義するが、特定の API を呼び出すか、いくつかの一般的なのではなく、そのために特定のマークアップを使用します。XML DOM で使用するなどのオブジェクト ツリー操作 API WPF は、ツリーの比喩ビューを提供する 2 つのヘルパー クラスを公開<xref:System.Windows.LogicalTreeHelper>と<xref:System.Windows.Media.VisualTreeHelper>です。 用語のビジュアル ツリーおよび論理ツリーも使われます、WPF ドキュメントのため、これらの同じツリーが特定のキーの WPF 機能の動作を理解するのに便利です。 このトピックは、ビジュアル ツリーおよび論理ツリーを表す新機能を定義し、このようなツリーが、全体的なオブジェクトのツリーの概念に関連する方法について説明しますが導入されています<xref:System.Windows.LogicalTreeHelper>と<xref:System.Windows.Media.VisualTreeHelper>s。  

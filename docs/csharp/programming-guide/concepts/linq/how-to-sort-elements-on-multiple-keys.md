@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33320575"
 ---
 # <a name="how-to-sort-elements-on-multiple-keys-c"></a>方法: 複数のキーに基づいて要素を並べ替える (C#)
 このトピックでは、複数のキーに基づく並べ替えの方法について説明します。  

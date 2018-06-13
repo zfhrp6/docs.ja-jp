@@ -884,9 +884,10 @@ helpviewer_keywords:
 ms.assetid: 48320e4a-6e17-45a6-9966-88c6ec89bd2f
 ms.openlocfilehash: 5e9c0aff2df5c46e707fa9f85506758327b58d80
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33314071"
 ---
 # <a name="sorry-we-don39t-have-specifics-on-this-c-error"></a>申し訳ありません&#39;t この c# エラーに関する詳細があります。
 申し訳ありませんが、このエラーに関する特定の情報はありません。 Web でエラー番号とメッセージ テキストを検索して情報を探すことができます。 または、次のフォーラムのいずれかを使用している他の開発者を依頼することができます。  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33327513"
 ---
 # <a name="how-to-create-hierarchy-using-grouping-c"></a>方法: グループ化を使用して階層を作成する (C#)
 この例では、データをグループ化し、そのグループ化に基づいて XML を生成する方法を示します。  

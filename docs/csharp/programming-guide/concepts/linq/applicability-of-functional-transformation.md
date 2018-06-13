@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33319152"
 ---
 # <a name="applicability-of-functional-transformation-c"></a>関数型変換の適用範囲 (C#)
 純粋関数型変換は、さまざまな状況で適用できます。  

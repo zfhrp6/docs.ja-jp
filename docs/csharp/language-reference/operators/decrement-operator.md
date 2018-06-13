@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33288802"
 ---
 # <a name="---operator-c-reference"></a>-- 演算子 (C# リファレンス)
 デクリメント演算子 (`--`) は、オペランドを 1 ずつデクリメントします。 デクリメント演算子はそのオペランド ( `--variable` および `variable--`) の前後に指定できます。 1 番目の形式は前置デクリメント演算です。 この演算の結果は、デクリメント "後" のオペランドの値になります。 2 番目の形式は後置デクリメント演算です。 この演算の結果は、デクリメント "前" のオペランドの値になります。  

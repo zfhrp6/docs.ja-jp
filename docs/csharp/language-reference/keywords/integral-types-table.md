@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33267910"
 ---
 # <a name="integral-types-table-c-reference"></a>整数型の一覧表 (C# リファレンス)
 次の表は、単純型のサブセットである、整数型のサイズと範囲を示しています。  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33319768"
 ---
 # <a name="how-to-sort-elements-c"></a>方法: 要素を並べ替える (C#)
 この例では、結果を並べ替えるクエリの作成方法を示します。  
