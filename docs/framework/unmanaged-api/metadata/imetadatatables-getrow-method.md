@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 954b4df6b341e18c5a995b57541a72e236278c45
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33449596"
 ---
 # <a name="imetadatatablesgetrow-method"></a>IMetaDataTables::GetRow メソッド
 指定したテーブルのインデックスにある表で、指定した行のインデックス行を取得します。  

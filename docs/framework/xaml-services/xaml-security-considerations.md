@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33562363"
 ---
 # <a name="xaml-security-considerations"></a>XAML セキュリティの考慮事項
 このトピックは、XAML と .NET Framework XAML サービス API を使用するときに、アプリケーションのセキュリティのベスト プラクティスを説明します。  

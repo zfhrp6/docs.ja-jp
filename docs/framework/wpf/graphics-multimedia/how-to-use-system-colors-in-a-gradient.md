@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33562181"
 ---
 # <a name="how-to-use-system-colors-in-a-gradient"></a>方法 : グラデーションでシステム カラーを使用する
 使用するシステムの色のグラデーションを使用するのには *\<SystemColor >* 色と *\<SystemColor >* の静的なプロパティを (ゼロ)、<xref:System.Windows.SystemColors>クラスを取得する、色への参照場所 *\<SystemColor >* 対象のシステム カラーの名前を指定します。 使用して、  *\<SystemColor >*(ゼロ) のプロパティをシステムのテーマの変更として自動的に更新される動的参照を作成するときにします。 それ以外の場合を使用して、  *\<SystemColor >* Color プロパティです。  

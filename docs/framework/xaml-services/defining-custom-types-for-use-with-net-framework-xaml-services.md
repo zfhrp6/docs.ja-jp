@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33566497"
 ---
 # <a name="defining-custom-types-for-use-with-net-framework-xaml-services"></a>.NET Framework XAML サービスで使用するためのカスタム型の定義
 ビジネス オブジェクトは、カスタム型の定義または特定のフレームワークに依存関係がない型は、するときに行うことができる XAML の運用方法があります。 これらのプラクティスに従うと場合、.NET Framework XAML サービスおよびその XAML リーダーと XAML ライターを型の XAML の特性を検出し、XAML 型システムを使用して XAML ノード ストリームで適切な形式。 このトピックでは、型定義、メンバーの定義、および CLR 型またはメンバーの属性の設定のベスト プラクティスについて説明します。  

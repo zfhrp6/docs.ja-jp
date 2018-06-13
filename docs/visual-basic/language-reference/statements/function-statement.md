@@ -33,6 +33,7 @@ ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34234125"
 ---
 # <a name="function-statement-visual-basic"></a>Function ステートメント (Visual Basic)
 宣言名、パラメーター、およびコードを定義する、`Function`プロシージャです。  

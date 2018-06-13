@@ -18,9 +18,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: f7b935b8f59e434c9da364be1986dbed654a1efd
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33445810"
 ---
 # <a name="corregflags-enumeration"></a>CorRegFlags 列挙型
 モジュールまたは複合イメージをインストールするときに、登録に使用されるフラグ値を提供します。  

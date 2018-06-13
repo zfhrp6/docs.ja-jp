@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33476488"
 ---
 # <a name="systemservicemodelactivationwebhostserviceclosefailed"></a>System.ServiceModel.Activation.WebHostServiceCloseFailed
 サービスが正常に閉じられず、中止された場合に発生します。  

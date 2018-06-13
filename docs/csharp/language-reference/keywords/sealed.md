@@ -12,6 +12,7 @@ ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/15/2018
+ms.locfileid: "34172124"
 ---
 # <a name="sealed-c-reference"></a>sealed (C# リファレンス)
 `sealed` 修飾子をクラスに適用すると、それ以外のクラスが、そのクラスから継承できなくなります。 次の例では、`B` クラスは `A` クラスを継承しますが、`B` クラスからはどのクラスも継承できなくなります。  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33494216"
 ---
 # <a name="content-based-correlation"></a>コンテンツ ベースの相関関係。
 ワークフロー サービスがクライアントや他のサービスと通信するときに、交換されるメッセージに、特定のインスタンスに一意に関連付けられたデータが含まれることがよくあります。 コンテンツ ベースの相関関係では、顧客番号や注文 ID などのメッセージ内のデータを使用して、適切なワークフロー インスタンスにメッセージをルーティングします。 このトピックでは、コンテンツ ベースの相関関係をワークフロー内で使用する方法について説明します。  

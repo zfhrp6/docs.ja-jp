@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: f2633bfadaabf208a2b86fda83375c3a136b93b9
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33448173"
 ---
 # <a name="imaptokenmap-method"></a>IMapToken::Map メソッド
 メタデータ署名を使用してアセンブリ間の関係をマップします。  

@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33566861"
 ---
 # <a name="xtypearguments-directive"></a>x:TypeArguments ディレクティブ
 パスの制約は、ジェネリック型のコンス トラクターにジェネリック型の引数を入力します。  

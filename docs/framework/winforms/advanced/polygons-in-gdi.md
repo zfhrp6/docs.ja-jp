@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33525848"
 ---
 # <a name="polygons-in-gdi"></a>GDI+ での多角形
 多角形は、次の 3 つまたは複数の辺に閉じた形状です。 たとえば、三角形は、次の 3 つの辺の多角形、四角形は、4 辺の多角形および五角形は、5 つの辺の多角形です。 次の図は、いくつかの多角形を示します。  

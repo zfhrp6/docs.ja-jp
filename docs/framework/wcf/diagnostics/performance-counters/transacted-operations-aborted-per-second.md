@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33474533"
 ---
 # <a name="transacted-operations-aborted-per-second"></a>1 秒あたりの中止されたトランザクション操作
 カウンター名 : 1 秒あたりの中止されたトランザクション処理数。  

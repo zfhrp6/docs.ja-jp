@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 9e79a69bf71aee035fb1f9a0178879d7c19e62b9
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33448922"
 ---
 # <a name="ivalidator-interface"></a>IValidator インターフェイス
 ポータブル実行可能 (PE) イメージを検証し、検証エラーを報告のメソッドを提供します。  

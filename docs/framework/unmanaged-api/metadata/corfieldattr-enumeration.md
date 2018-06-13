@@ -18,9 +18,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: a57318103fd875d6f2f2fe4ca54c776da86c0e53
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33446621"
 ---
 # <a name="corfieldattr-enumeration"></a>CorFieldAttr 列挙型
 フィールドについてのメタデータを記述する値が格納されます。  

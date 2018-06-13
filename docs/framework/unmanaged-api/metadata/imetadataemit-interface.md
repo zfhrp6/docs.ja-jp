@@ -18,9 +18,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 4c77edfff640f796dd3f345eaeb4728830c5f4c6
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33449145"
 ---
 # <a name="imetadataemit-interface"></a>IMetaDataEmit インターフェイス
 作成、変更、および現在定義されているスコープ内でアセンブリに関するメタデータを保存する方法を提供します。 メタデータをメモリに格納されているまたはディスクに保存できます。  

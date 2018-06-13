@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33489743"
 ---
 # <a name="hosting-in-a-managed-application"></a>マネージ アプリケーションのホスト
 いずれかで Windows Communication Foundation (WCF) サービスをホストできる[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]アプリケーションです。 自己ホスト型サービスは、展開を要するインフラストラクチャが最も少ないので、最も柔軟なホスト オプションです。 ただしも、ホスト オプションは、少なくとも堅牢なマネージ アプリケーションでは、高度なホストおよびインターネット インフォメーション サービス (IIS) や Windows サービスなどの WCF では、ホストの他のオプションの管理機能が提供されないためです。  

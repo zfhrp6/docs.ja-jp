@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33473446"
 ---
 # <a name="queued-rejected-messages-per-second"></a>1 秒あたりのキューに置かれた拒否メッセージ
 カウンター名 : 1 秒あたりに拒否されたキューに置かれたメッセージ。  

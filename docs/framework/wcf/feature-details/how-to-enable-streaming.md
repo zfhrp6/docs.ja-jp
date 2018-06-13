@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33493639"
 ---
 # <a name="how-to-enable-streaming"></a>方法 : ストリーミングを有効にする
 Windows Communication Foundation (WCF) では、バッファリングまたはストリームのいずれかの転送を使用してメッセージを送信できます。 既定のバッファー転送モードでは、受信側がメッセージを読み取る前に、メッセージの送信が完了している必要があります。 ストリーミング転送モードでは、送信が完了していなくても、受信側でメッセージの処理を開始できます。 ストリーミング モードは、渡される情報が長い場合、または連続的に処理する場合に役立ちます。 ストリーミング モードは、メッセージが大きすぎてすべてをバッファーできない場合にも役立ちます。  

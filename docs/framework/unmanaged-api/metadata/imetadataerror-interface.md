@@ -18,9 +18,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 1c264bfd31f8cd31bacf2d194ddbd07338569294
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33447171"
 ---
 # <a name="imetadataerror-interface"></a>IMetaDataError インターフェイス
 メタデータのマージ中にエラーを報告するためのコールバック機構を提供します。  

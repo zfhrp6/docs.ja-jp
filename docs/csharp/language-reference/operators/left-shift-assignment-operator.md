@@ -12,6 +12,7 @@ ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/15/2018
+ms.locfileid: "34171794"
 ---
 # <a name="ltlt-operator-c-reference"></a>&lt;&lt;= 演算子 (C# リファレンス)
 左シフト代入演算子。  

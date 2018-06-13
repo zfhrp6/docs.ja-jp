@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 3ed3501930b94eae59cf38355f8255ecf4165bcc
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33449583"
 ---
 # <a name="imetadatatablesgetstring-method"></a>IMetaDataTables::GetString メソッド
 現在参照スコープ内のテーブル列から、指定したインデックス位置文字列を取得します。  

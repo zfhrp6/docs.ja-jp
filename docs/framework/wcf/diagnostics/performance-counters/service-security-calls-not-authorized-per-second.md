@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33474790"
 ---
 # <a name="service-security-calls-not-authorized-per-second"></a>サービス : 1 秒あたりの承認されていないセキュリティ呼び出し
 カウンター名 : 1 秒あたりの承認されていないセキュリティ呼び出し  

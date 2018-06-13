@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33493608"
 ---
 # <a name="retrieving-metadata"></a>メタデータを取得する
 メタデータの取得は、WS-MetadataExchange (MEX) メタデータ エンドポイントや HTTP/GET メタデータ エンドポイントなどのメタデータ エンドポイントに対してメタデータを要求して取得する処理です。  
