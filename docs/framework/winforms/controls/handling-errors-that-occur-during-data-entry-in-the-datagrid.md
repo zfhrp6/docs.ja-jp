@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33529235"
 ---
 # <a name="walkthrough-handling-errors-that-occur-during-data-entry-in-the-windows-forms-datagridview-control"></a>チュートリアル : Windows フォーム DataGridView コントロールでのデータ入力中に発生したエラーの処理
 データ エントリのアプリケーションに必要な機能は、基になるデータ ストアからのエラーを処理します。 Windows フォーム<xref:System.Windows.Forms.DataGridView>コントロール、これにより、簡単を公開する、<xref:System.Windows.Forms.DataGridView.DataError>データ ストアは、制約違反または破損したビジネス ルールが検出されたときに発生するイベントです。  

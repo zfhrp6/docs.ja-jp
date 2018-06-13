@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33538833"
 ---
 # <a name="how-to-create-a-simple-bound-control-on-a-windows-form"></a>方法 : Windows フォームに単純バインド コントロールを作成する
 *単純バインディング*、コントロールがデータセット テーブルの列の値など、1 つのデータ要素を表示することができます。 できる単純なをバインドするコントロールの任意のプロパティ データ値。  
