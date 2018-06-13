@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 2b1f73e999738fbb59342aeab391132ac454c8dd
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33459112"
 ---
 # <a name="getmethodqualifierset-function"></a>GetMethodQualifierSet 関数
 特定のメソッドの設定、修飾子を取得します。

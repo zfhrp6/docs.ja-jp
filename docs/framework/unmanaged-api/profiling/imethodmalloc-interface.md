@@ -18,9 +18,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: b11cf0fadc9142ee291115cf9f0d84e6429834fb
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33455118"
 ---
 # <a name="imethodmalloc-interface"></a>IMethodMalloc インターフェイス
 新しい Microsoft intermediate language (MSIL) 関数本体にメモリを割り当てる方法を提供します。  

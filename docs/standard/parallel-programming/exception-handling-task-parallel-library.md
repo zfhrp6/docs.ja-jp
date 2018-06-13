@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33591297"
 ---
 # <a name="exception-handling-task-parallel-library"></a>例外処理 (タスク並列ライブラリ)
 タスク内で実行中のユーザー コードによってスローされた、ハンドルされない例外は、呼び出し元のスレッドに反映されます。ただし、このトピックの後半で説明している特定の状況を除きます。 静的な、またはインスタンスの <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType> メソッドまたは <!--zz <xref:System.Threading.Tasks.Task%601.Wait%2A?displayProperty=nameWithType>  --> `Wait` メソッドの 1 つを使用し、その呼び出しを `try`/`catch` ステートメント内に入れて例外を処理すると、例外が反映されます。 タスクが、アタッチされた子タスクの親である場合、または複数のタスクを待機している場合、複数の例外がスローされることがあります。  

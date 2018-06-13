@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33596656"
 ---
 # <a name="unable-to-get-serial-port-names-because-of-an-internal-system-error"></a>内部システム エラーにより、シリアル ポート名を取得できません。
 `My.Computer.Ports.SerialPortNames` プロパティが呼び出されたときに、内部エラーが発生しました。  

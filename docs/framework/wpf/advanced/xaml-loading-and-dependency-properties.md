@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33547727"
 ---
 # <a name="xaml-loading-and-dependency-properties"></a>XAML 読み込みと依存関係プロパティ
 現在[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]の実装、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]プロセッサは、本質的に依存関係プロパティに注意してください。 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]バイナリを読み込むときに、プロセッサが依存関係プロパティのシステムのプロパティのメソッドを使用[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]と依存関係プロパティの属性を処理します。 これにより、プロパティのラッパーが実質的にはスキップします。 この動作を考慮する必要があり、システムのプロパティ メソッド以外のプロパティのラッパーで、他のコードを配置しないでくださいカスタム依存関係プロパティを実装するときに<xref:System.Windows.DependencyObject.GetValue%2A>と<xref:System.Windows.DependencyObject.SetValue%2A>です。  

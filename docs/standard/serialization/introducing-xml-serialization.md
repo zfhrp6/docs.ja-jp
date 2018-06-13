@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33592224"
 ---
 # <a name="introducing-xml-serialization"></a>XML シリアル化の概要
 シリアル化とは、転送できる形式にオブジェクトを変換するプロセスのことです。 たとえば、オブジェクトをシリアル化し、HTTP を使用してインターネット経由でクライアントとサーバー間で転送できます。 一方、逆シリアル化とは、ストリームから元のオブジェクトを再構築する処理です。  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33458108"
 ---
 # <a name="configuring-client-behaviors"></a>クライアントの動作の構成
 Windows Communication Foundation (WCF) では、2 つの方法で動作を構成します--で定義されている動作の構成を参照して、`<behavior>`クライアント アプリケーション構成ファイル – またはプログラムによって呼び出し元のセクション。アプリケーション。 このトピックでは、両方の方法について説明します。  

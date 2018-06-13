@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33588149"
 ---
 # <a name="39elseif39-must-be-preceded-by-a-matching-39if39-or-39elseif39"></a>&#39;#ElseIf&#39;前に、対応する必要がある&#39;#If&#39;または&#39;#ElseIf&#39;
 `#ElseIf` 条件付きコンパイル ディレクティブです。 `#ElseIf`句の前に、対応する必要があります`#If`または`#ElseIf`句。  

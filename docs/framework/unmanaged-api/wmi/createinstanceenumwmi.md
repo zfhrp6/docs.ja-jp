@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 1f9297d34b01c03075db67bd904a81e589bfcc10
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33461377"
 ---
 # <a name="createinstanceenumwmi-function"></a>CreateInstanceEnumWmi 関数
 指定された選択条件を満たす指定したクラスのインスタンスを返す列挙子を返します。 

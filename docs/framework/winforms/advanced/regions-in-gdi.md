@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33524584"
 ---
 # <a name="regions-in-gdi"></a>GDI+ での領域
 領域は、出力デバイスの表示領域の一部です。 領域には、単純な (1 つの四角形) または複合型 (多角形と閉じた曲線の組み合わせ) を指定できます。 次の図は、2 つの領域を示します: 四角形は、1 つ構築され、パスから構築されました。  

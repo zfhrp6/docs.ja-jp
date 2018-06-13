@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 46ee8c62861a62ac044f295f7da082756d87347b
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33447634"
 ---
 # <a name="imetadataimportenummembers-method"></a>IMetaDataImport::EnumMembers メソッド
 指定した型のメンバーを表す MemberDef トークンを列挙します。  

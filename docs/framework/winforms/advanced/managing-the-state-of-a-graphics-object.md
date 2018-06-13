@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33525120"
 ---
 # <a name="managing-the-state-of-a-graphics-object"></a>Graphics オブジェクトの状態の管理
 <xref:System.Drawing.Graphics>クラスは、の中核は[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]します。 取得するものを描画するには<xref:System.Drawing.Graphics>オブジェクト、そのプロパティを設定し、そのメソッドを呼び出す<xref:System.Drawing.Graphics.DrawLine%2A>、 <xref:System.Drawing.Graphics.DrawImage%2A>、<xref:System.Drawing.Graphics.DrawString%2A>など)。  

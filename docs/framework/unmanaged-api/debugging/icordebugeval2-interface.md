@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: da4364e132e2a9d578a761eea77d0dfc8d0b92aa
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33418237"
 ---
 # <a name="icordebugeval2-interface1"></a>ICorDebugEval2 Interface1
 "ICorDebugEval"の拡張のジェネリック型のサポートを提供します。  

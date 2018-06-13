@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33599305"
 ---
 # <a name="optional-visual-basic"></a>Optional (Visual Basic)
 プロシージャが呼び出されたときにプロシージャの引数を省略できますを指定します。  

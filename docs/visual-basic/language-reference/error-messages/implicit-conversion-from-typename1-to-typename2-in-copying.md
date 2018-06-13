@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33590001"
 ---
 # <a name="implicit-conversion-from-39lttypename1gt39-to-39lttypename2gt39-in-copying-the-value-of-39byref39-parameter-39ltparameternamegt39-back-to-the-matching-argument"></a>暗黙的な変換&#39; &lt;typename1&gt; &#39;に&#39; &lt;typename2&gt; &#39;の値をコピー中&#39;ByRef&#39;パラメーター &#39; &lt;parametername&gt; &#39; 、一致する引数にします。
 プロシージャが呼び出される、 [ByRef](../../../visual-basic/language-reference/modifiers/byref.md)対応するパラメーターとは異なる型の引数。  

@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33553898"
 ---
 # <a name="how-to-change-the-horizontal-alignment-of-a-column-in-a-listview"></a>方法 : ListView の列の水平方向の配置を変更する
 既定では、各列のコンテンツ、<xref:System.Windows.Controls.ListViewItem>を左揃えにします。 提供することで各列の配置を変更することができます、<xref:System.Windows.DataTemplate>と設定、<xref:System.Windows.FrameworkElement.HorizontalAlignment%2A>プロパティ内の要素を<xref:System.Windows.DataTemplate>です。 このトピックで説明する方法、<xref:System.Windows.Controls.ListView>を 1 つの列のアラインメントを変更する方法と既定値は、そのコンテンツを揃えます、<xref:System.Windows.Controls.ListView>です。  

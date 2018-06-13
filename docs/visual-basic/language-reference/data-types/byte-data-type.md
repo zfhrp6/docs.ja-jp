@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33590535"
 ---
 # <a name="byte-data-type-visual-basic"></a>Byte データ型 (Visual Basic)
 0 から 255 までの範囲の 8 ビット (1 バイト) の符号なし整数を保持します。

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33587333"
 ---
 # <a name="39lteventnamegt39-is-an-event-and-cannot-be-called-directly"></a>&#39;&lt;eventname&gt; &#39; 、イベントは、直接呼び出すことができません
 ' <`eventname`>' は、イベントで、これは直接呼び出すことができません。 使用して、`RaiseEvent`イベントを発生させるステートメントです。  

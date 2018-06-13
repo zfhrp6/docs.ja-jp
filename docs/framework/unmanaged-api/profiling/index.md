@@ -10,9 +10,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 581f42dc83622712dbb30ef556a481388bafe259
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33455573"
 ---
 # <a name="profiling-unmanaged-api-reference"></a>プロファイル (アンマネージ API リファレンス)
 プロファイル API を使用すると、プロファイラーは、共通言語ランタイム (CLR) によってプログラムの実行を監視します。  

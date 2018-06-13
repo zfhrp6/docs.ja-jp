@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 35e56494d0082db970afce21da8e63a597f0a535
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33458151"
 ---
 # <a name="getmethodorigin-function"></a>GetMethodOrigin 関数
 メソッドが宣言されるクラスを決定します。

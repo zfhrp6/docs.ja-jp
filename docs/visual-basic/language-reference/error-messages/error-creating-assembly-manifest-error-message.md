@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33588302"
 ---
 # <a name="error-creating-assembly-manifest-lterror-messagegt"></a>アセンブリ マニフェストを作成中にエラー:&lt;エラー メッセージ&gt;
 Visual Basic コンパイラは、マニフェストを伴うアセンブリを生成するアセンブリ リンカー (Al.exe、Alink とも呼ばれます) を呼び出します。 リンカーが、アセンブリの生成前の段階でのエラーを報告しています。  

@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: c2d282e27ec5068fa6fe7f58ba95458fdc219972
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33419225"
 ---
 # <a name="icordebugstepperstep-method"></a>ICorDebugStepper::Step メソッド
 Icordebugstepper にその格納スレッドおよび必要に応じて、1 ステップに、スレッド内で呼び出される関数をシングル ステップ実行を続行します。  

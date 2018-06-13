@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 4b5c26ab9c273b134915eea39078a83f569bcd32
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33462417"
 ---
 # <a name="execnotificationquerywmi-function"></a>ExecNotificationQueryWmi 関数
 イベントを受信するクエリを実行します。 呼び出しが、すぐに返され、受信したときに、呼び出し元がイベントの返された列挙子をポーリングすることです。 返された列挙子を解放するには、クエリが取り消されます。  

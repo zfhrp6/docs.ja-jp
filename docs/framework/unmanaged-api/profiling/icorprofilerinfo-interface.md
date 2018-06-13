@@ -18,9 +18,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: da5a041e8a18420b4cf9962e4315683be8857711
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33462271"
 ---
 # <a name="icorprofilerinfo-interface"></a>ICorProfilerInfo インターフェイス
 共通言語ランタイム (CLR) のイベントの監視を制御し、情報を要求に通信するためにコード プロファイラーで使用するためのメソッドを提供します。  

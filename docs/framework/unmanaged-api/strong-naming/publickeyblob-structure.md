@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: d7577a24a023c38370f5ac1f8c471ce31409e75d
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33459340"
 ---
 # <a name="publickeyblob-structure"></a>PublicKeyBlob 構造体
 公開/秘密キーのペアの公開キーをバイナリ形式で表します。  

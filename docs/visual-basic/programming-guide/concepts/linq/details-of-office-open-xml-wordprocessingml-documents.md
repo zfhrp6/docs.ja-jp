@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33641197"
 ---
 # <a name="details-of-office-open-xml-wordprocessingml-documents-visual-basic"></a>Office の詳細は Open XML WordprocessingML ドキュメント (Visual Basic)
 ここでは、Office Open XML WordprocessingML ドキュメントの詳細について説明します。 Open XML ドキュメントのドキュメント パーツとスタイル パーツの例も示します。  

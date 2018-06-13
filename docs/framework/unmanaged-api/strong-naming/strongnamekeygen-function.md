@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 5fce08434cb8864350fd333dcfcaa388a8031c09
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33459167"
 ---
 # <a name="strongnamekeygen-function"></a>StrongNameKeyGen 関数
 厳密な名前に使用するために新しい公開/秘密キー ペアを作成します。  

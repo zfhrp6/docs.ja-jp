@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33587483"
 ---
 # <a name="constants-must-be-of-an-intrinsic-or-enumerated-type-not-a-class-structure-type-parameter-or-array-type"></a>定数は、class、structure、型パラメーター、または array 型ではなく、組み込み型または列挙型でなければなりません。
 クラス、構造体、または配列型、またはそれを含むジェネリック型によって定義された型パラメーターと定数を宣言しようとしました。  

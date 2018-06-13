@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33596851"
 ---
 # <a name="a-delimiter-cannot-be-nothing-or-an-empty-string"></a>区切り記号は Nothing または空の文字列は使用できません
 `TextFieldParser` プロパティが `Delimiters` に設定されているか、または空 `Nothing` ("") であるため、 `String` をファイルから読み取ることができません。  

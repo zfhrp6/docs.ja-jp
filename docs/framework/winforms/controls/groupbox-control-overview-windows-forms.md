@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33525166"
 ---
 # <a name="groupbox-control-overview-windows-forms"></a>GroupBox コントロールの概要 (Windows フォーム)
 Windows フォーム<xref:System.Windows.Forms.GroupBox>コントロールを使用して、その他のコントロールのグループに分けます。 通常、関数によって、フォームを分割するのにグループ ボックスを使用します。 たとえば、注文書を使用するどの宅配業者などの絞り込みメール配信オプションを指定するがあります。 論理視覚上の手掛かりをユーザーに与えますグループ ボックス内のすべてのオプションをグループ化し、デザイン時にすべてのコントロールを簡単に移動することができます — 1 つを移動すると、<xref:System.Windows.Forms.GroupBox>も含まれているコントロールが移動すべてを制御します。  

@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 9699f0cfc4e9fdb989337681b164cc1e703c1e60
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33461261"
 ---
 # <a name="beginenumeration-function"></a>BeginEnumeration 関数
 列挙体の先頭に戻るには、列挙子をリセットします。  
