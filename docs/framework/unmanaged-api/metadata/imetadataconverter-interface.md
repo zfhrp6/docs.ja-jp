@@ -18,9 +18,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 29709a4297d53cc5e40daf732ac89751ead95152
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33449042"
 ---
 # <a name="imetadataconverter-interface"></a><span data-ttu-id="215ab-102">IMetaDataConverter インターフェイス</span><span class="sxs-lookup"><span data-stu-id="215ab-102">IMetaDataConverter Interface</span></span>
 <span data-ttu-id="215ab-103">タイプ ライブラリをそれぞれのメタデータ署名にマップして、一方から他方に変換するメソッドを提供します。</span><span class="sxs-lookup"><span data-stu-id="215ab-103">Provides methods to map type libraries to their metadata signatures, and to convert from one to the other.</span></span>  

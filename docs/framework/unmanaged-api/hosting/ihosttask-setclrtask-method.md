@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 2149293989136e0b006f044c925353efbfd94031
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33442801"
 ---
 # <a name="ihosttasksetclrtask-method"></a><span data-ttu-id="625fa-102">IHostTask::SetCLRTask メソッド</span><span class="sxs-lookup"><span data-stu-id="625fa-102">IHostTask::SetCLRTask Method</span></span>
 <span data-ttu-id="625fa-103">関連付けます、 `ICLRTask` 、現在のインスタンス[IHostTask](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md)インスタンス。</span><span class="sxs-lookup"><span data-stu-id="625fa-103">Associates an `ICLRTask` instance with the current [IHostTask](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md) instance.</span></span>  

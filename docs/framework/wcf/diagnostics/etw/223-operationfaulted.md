@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33459420"
 ---
 # <a name="223---operationfaulted"></a><span data-ttu-id="db145-102">223 - OperationFaulted</span><span class="sxs-lookup"><span data-stu-id="db145-102">223 - OperationFaulted</span></span>
 ## <a name="properties"></a><span data-ttu-id="db145-103">プロパティ</span><span class="sxs-lookup"><span data-stu-id="db145-103">Properties</span></span>  

@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: e945930a9a668d0a1c1e4c26bf3add9cc574c261
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33461429"
 ---
 # <a name="next-function"></a><span data-ttu-id="25774-103">次の関数</span><span class="sxs-lookup"><span data-stu-id="25774-103">Next function</span></span>
 <span data-ttu-id="25774-104">呼び出しで始まる列挙型で次のプロパティを取得[BeginEnumeration](beginenumeration.md)です。</span><span class="sxs-lookup"><span data-stu-id="25774-104">Retrieves the next property in an enumeration that begins with a call to [BeginEnumeration](beginenumeration.md).</span></span>  

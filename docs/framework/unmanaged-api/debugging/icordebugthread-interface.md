@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 404f1bdf5865733648084e34a558b7b20a59b3ee
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33423079"
 ---
 # <a name="icordebugthread-interface1"></a><span data-ttu-id="eea68-102">ICorDebugThread Interface1</span><span class="sxs-lookup"><span data-stu-id="eea68-102">ICorDebugThread Interface1</span></span>
 <span data-ttu-id="eea68-103">プロセス内のスレッドを表します。</span><span class="sxs-lookup"><span data-stu-id="eea68-103">Represents a thread in a process.</span></span> <span data-ttu-id="eea68-104">`ICorDebugThread` インスタンスの有効期間は、それが表しているスレッドの有効期間と同じです。</span><span class="sxs-lookup"><span data-stu-id="eea68-104">The lifetime of an `ICorDebugThread` instance is the same as the lifetime of the thread it represents.</span></span>  

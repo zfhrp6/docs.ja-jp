@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: ee6a6366654c4f1160064c562030f98135521de6
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33428315"
 ---
 # <a name="iassemblyenumclone-method"></a><span data-ttu-id="30f72-102">IAssemblyEnum::Clone メソッド</span><span class="sxs-lookup"><span data-stu-id="30f72-102">IAssemblyEnum::Clone Method</span></span>
 <span data-ttu-id="30f72-103">これのシャロー コピーを作成[IAssemblyEnum](../../../../docs/framework/unmanaged-api/fusion/iassemblyenum-interface.md)オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="30f72-103">Creates a shallow copy of this [IAssemblyEnum](../../../../docs/framework/unmanaged-api/fusion/iassemblyenum-interface.md) object.</span></span>  

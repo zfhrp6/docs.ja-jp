@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33552540"
 ---
 # <a name="how-to-set-focus-in-a-textbox-control"></a><span data-ttu-id="9f5c6-102">方法 : TextBox コントロールにフォーカスを設定する</span><span class="sxs-lookup"><span data-stu-id="9f5c6-102">How to: Set Focus in a TextBox Control</span></span>
 <span data-ttu-id="9f5c6-103">この例を使用する方法を示しています、<xref:System.Windows.UIElement.Focus%2A>フォーカスを設定する方法、<xref:System.Windows.Controls.TextBox>コントロール。</span><span class="sxs-lookup"><span data-stu-id="9f5c6-103">This example shows how to use the <xref:System.Windows.UIElement.Focus%2A> method to set focus on a <xref:System.Windows.Controls.TextBox> control.</span></span>  

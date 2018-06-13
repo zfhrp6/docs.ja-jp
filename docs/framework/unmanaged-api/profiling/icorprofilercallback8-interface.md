@@ -12,9 +12,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: b92120cc5948efca696d922448da215601f9e6b3
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33455284"
 ---
 # <a name="icorprofilercallback8-interface"></a><span data-ttu-id="e082a-102">ICorProfilerCallback8 インターフェイス</span><span class="sxs-lookup"><span data-stu-id="e082a-102">ICorProfilerCallback8 Interface</span></span>
 <span data-ttu-id="e082a-103">[.NET Framework 4.7 以降のバージョンでサポート]</span><span class="sxs-lookup"><span data-stu-id="e082a-103">[Supported in the .NET Framework 4.7 and later versions]</span></span>  

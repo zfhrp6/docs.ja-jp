@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 87a1c1ee44d3b192747bd785f538c0332300ff50
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33461416"
 ---
 # <a name="inheritsfrom-function"></a><span data-ttu-id="7a8ef-103">InheritsFrom 関数</span><span class="sxs-lookup"><span data-stu-id="7a8ef-103">InheritsFrom function</span></span>
 <span data-ttu-id="7a8ef-104">現在のクラスまたはインスタンスが指定された親クラスから派生するかどうかを判断します。</span><span class="sxs-lookup"><span data-stu-id="7a8ef-104">Determines whether the current class or instance derives from a specified parent class.</span></span>

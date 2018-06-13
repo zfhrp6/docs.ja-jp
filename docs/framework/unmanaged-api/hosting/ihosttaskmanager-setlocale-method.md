@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: af9a8939c2ff50eb41b4f5c14097751fdc92ff83
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33443142"
 ---
 # <a name="ihosttaskmanagersetlocale-method"></a><span data-ttu-id="55a54-102">IHostTaskManager::SetLocale メソッド</span><span class="sxs-lookup"><span data-stu-id="55a54-102">IHostTaskManager::SetLocale Method</span></span>
 <span data-ttu-id="55a54-103">共通言語ランタイム (CLR) が、ロケール、または現在実行中のタスク上のカルチャに変更されたことをホストに通知します。</span><span class="sxs-lookup"><span data-stu-id="55a54-103">Notifies the host that the common language runtime (CLR) has changed the locale, or culture, on the currently executing task.</span></span>  

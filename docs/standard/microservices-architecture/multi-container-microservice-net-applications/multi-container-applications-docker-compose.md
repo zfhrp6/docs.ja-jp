@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33592354"
 ---
 # <a name="defining-your-multi-container-application-with-docker-composeyml"></a><span data-ttu-id="63935-103">docker-compose.yml で複数のコンテナー アプリケーションを定義する</span><span class="sxs-lookup"><span data-stu-id="63935-103">Defining your multi-container application with docker-compose.yml</span></span> 
 

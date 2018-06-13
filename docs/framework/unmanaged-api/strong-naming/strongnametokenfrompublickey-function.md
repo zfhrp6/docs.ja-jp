@@ -22,9 +22,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: eb8ff76da288975ef291d226bb1f205e73a64252
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33460289"
 ---
 # <a name="strongnametokenfrompublickey-function"></a><span data-ttu-id="08805-102">StrongNameTokenFromPublicKey 関数</span><span class="sxs-lookup"><span data-stu-id="08805-102">StrongNameTokenFromPublicKey Function</span></span>
 <span data-ttu-id="08805-103">公開キーを表すトークンを取得します。</span><span class="sxs-lookup"><span data-stu-id="08805-103">Gets a token representing a public key.</span></span> <span data-ttu-id="08805-104">厳密な名前のトークンは、公開キーの短縮形です。</span><span class="sxs-lookup"><span data-stu-id="08805-104">A strong name token is the shortened form of a public key.</span></span>  

@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 2b826e9c30fbf7007ac6b0093608ab7d926cc499
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33459154"
 ---
 # <a name="icorprofilerinfo2getclasslayout-method"></a><span data-ttu-id="4f388-102">ICorProfilerInfo2::GetClassLayout メソッド</span><span class="sxs-lookup"><span data-stu-id="4f388-102">ICorProfilerInfo2::GetClassLayout Method</span></span>
 <span data-ttu-id="4f388-103">指定したクラスで定義されるフィールドのメモリ内レイアウトに関する情報を取得します。</span><span class="sxs-lookup"><span data-stu-id="4f388-103">Gets information about the layout, in memory, of the fields defined by the specified class.</span></span> <span data-ttu-id="4f388-104">つまり、このメソッドはクラスのフィールドのオフセットを取得します。</span><span class="sxs-lookup"><span data-stu-id="4f388-104">That is, this method gets the offsets of the class's fields.</span></span>  

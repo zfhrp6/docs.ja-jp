@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33587457"
 ---
 # <a name="net-framework-cryptography-model"></a><span data-ttu-id="ddaa2-102">.NET Framework の暗号モデル</span><span class="sxs-lookup"><span data-stu-id="ddaa2-102">.NET Framework Cryptography Model</span></span>
 <span data-ttu-id="ddaa2-103">.NET Framework は、多くの標準的な暗号化アルゴリズムの実装を提供します。</span><span class="sxs-lookup"><span data-stu-id="ddaa2-103">The .NET Framework provides implementations of many standard cryptographic algorithms.</span></span> <span data-ttu-id="ddaa2-104">これらのアルゴリズムは簡単に使用でき、またできるだけ安全な既定のプロパティを提供しています。</span><span class="sxs-lookup"><span data-stu-id="ddaa2-104">These algorithms are easy to use and have the safest possible default properties.</span></span> <span data-ttu-id="ddaa2-105">さらに、オブジェクトの継承、ストリームの設計、および構成の .NET Framework の暗号モデルは非常に拡張性に優れています。</span><span class="sxs-lookup"><span data-stu-id="ddaa2-105">In addition, the .NET Framework cryptography model of object inheritance, stream design, and configuration is extremely extensible.</span></span>  

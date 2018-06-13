@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 6bf11d71b90f11a5d9a3844ed59a8574b7b76699
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33452573"
 ---
 # <a name="icorprofilercallback2threadnamechanged-method"></a><span data-ttu-id="839bb-102">ICorProfilerCallback2::ThreadNameChanged メソッド</span><span class="sxs-lookup"><span data-stu-id="839bb-102">ICorProfilerCallback2::ThreadNameChanged Method</span></span>
 <span data-ttu-id="839bb-103">スレッドの名前が変更されたことをコード プロファイラーに通知します。</span><span class="sxs-lookup"><span data-stu-id="839bb-103">Notifies the code profiler that the name of a thread has changed.</span></span>  

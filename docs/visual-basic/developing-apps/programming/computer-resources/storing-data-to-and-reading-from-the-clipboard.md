@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33591380"
 ---
 # <a name="storing-data-to-and-reading-from-the-clipboard-visual-basic"></a><span data-ttu-id="9bfa2-102">クリップボードのデータの格納と読み取り (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="9bfa2-102">Storing data to and reading from the Clipboard (Visual Basic)</span></span>
 <span data-ttu-id="9bfa2-103">クリップボードは、テキスト、イメージなどのデータの格納に使用できます。</span><span class="sxs-lookup"><span data-stu-id="9bfa2-103">The Clipboard can be used to store data, such as text and images.</span></span> <span data-ttu-id="9bfa2-104">アクティブなプロセスすべてがこのクリップボードを共有しているため、クリップボードを使ってデータをプロセス間で転送することができます。</span><span class="sxs-lookup"><span data-stu-id="9bfa2-104">Because the Clipboard is shared by all active processes, it can be used to transfer data between them.</span></span> <span data-ttu-id="9bfa2-105">`My.Computer.Clipboard` オブジェクトを使用すると、クリップボードに簡単にアクセスして、読み込みや書き込みを実行できます。</span><span class="sxs-lookup"><span data-stu-id="9bfa2-105">The `My.Computer.Clipboard` object allows you to easily access the Clipboard and to read from and write to it.</span></span>  

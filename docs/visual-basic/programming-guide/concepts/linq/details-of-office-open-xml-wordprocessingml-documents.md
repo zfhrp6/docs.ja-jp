@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33641197"
 ---
 # <a name="details-of-office-open-xml-wordprocessingml-documents-visual-basic"></a><span data-ttu-id="63e82-102">Office の詳細は Open XML WordprocessingML ドキュメント (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="63e82-102">Details of Office Open XML WordprocessingML Documents (Visual Basic)</span></span>
 <span data-ttu-id="63e82-103">ここでは、Office Open XML WordprocessingML ドキュメントの詳細について説明します。</span><span class="sxs-lookup"><span data-stu-id="63e82-103">This section provides information about the details of Office Open XML WordprocessingML documents.</span></span> <span data-ttu-id="63e82-104">Open XML ドキュメントのドキュメント パーツとスタイル パーツの例も示します。</span><span class="sxs-lookup"><span data-stu-id="63e82-104">It shows examples of the document and style parts of an Open XML document.</span></span>  

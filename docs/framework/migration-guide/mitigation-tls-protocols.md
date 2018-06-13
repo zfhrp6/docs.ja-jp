@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33388262"
 ---
 # <a name="mitigation-tls-protocols"></a><span data-ttu-id="7058f-102">軽減策: TLS プロトコル</span><span class="sxs-lookup"><span data-stu-id="7058f-102">Mitigation: TLS Protocols</span></span>
 <span data-ttu-id="7058f-103">.NET Framework 4.6 から、<xref:System.Net.ServicePointManager?displayProperty=nameWithType> および <xref:System.Net.Security.SslStream?displayProperty=nameWithType> クラスで Tls1.0、Tls1.1、または Tls 1.2 の 3 つのプロトコルのいずれかを使用できるようになりました。</span><span class="sxs-lookup"><span data-stu-id="7058f-103">Starting with the .NET Framework 4.6, the <xref:System.Net.ServicePointManager?displayProperty=nameWithType> and <xref:System.Net.Security.SslStream?displayProperty=nameWithType> classes are allowed to use one of the following three protocols: Tls1.0, Tls1.1, or Tls 1.2.</span></span> <span data-ttu-id="7058f-104">SSL3.0 プロトコルと RC4 の暗号化はサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="7058f-104">The SSL3.0 protocol and RC4 cipher are not supported.</span></span>  

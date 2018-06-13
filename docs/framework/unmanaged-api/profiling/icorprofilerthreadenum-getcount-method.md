@@ -1,14 +1,6 @@
 ---
-title: "ICorProfilerThreadEnum::GetCount メソッド"
-ms.custom: 
+title: ICorProfilerThreadEnum::GetCount メソッド
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ICorProfilerThreadEnum.GetCount
 api_location:
@@ -23,41 +15,38 @@ helpviewer_keywords:
 ms.assetid: d6dbdc4a-6115-455d-a3f3-704a81d3646b
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: afbcb71fdaf48d07103d6ca2db48b46095dc3acd
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 2b803c83b905df47b3957e07c0d64e7ce6f6d303
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33455479"
 ---
-# <a name="icorprofilerthreadenumgetcount-method"></a><span data-ttu-id="ccd9b-102">ICorProfilerThreadEnum::GetCount メソッド</span><span class="sxs-lookup"><span data-stu-id="ccd9b-102">ICorProfilerThreadEnum::GetCount Method</span></span>
-<span data-ttu-id="ccd9b-103">アプリケーションで使用されるスレッドの数を取得します。</span><span class="sxs-lookup"><span data-stu-id="ccd9b-103">Gets the number of threads that are used by the application.</span></span>  
+# <a name="icorprofilerthreadenumgetcount-method"></a><span data-ttu-id="504c5-102">ICorProfilerThreadEnum::GetCount メソッド</span><span class="sxs-lookup"><span data-stu-id="504c5-102">ICorProfilerThreadEnum::GetCount Method</span></span>
+<span data-ttu-id="504c5-103">アプリケーションで使用されるスレッドの数を取得します。</span><span class="sxs-lookup"><span data-stu-id="504c5-103">Gets the number of threads that are used by the application.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="ccd9b-104">構文</span><span class="sxs-lookup"><span data-stu-id="ccd9b-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="504c5-104">構文</span><span class="sxs-lookup"><span data-stu-id="504c5-104">Syntax</span></span>  
   
 ```  
 HRESULT GetCount (    [out] ULONG * pcelt  
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="ccd9b-105">パラメーター</span><span class="sxs-lookup"><span data-stu-id="ccd9b-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="504c5-105">パラメーター</span><span class="sxs-lookup"><span data-stu-id="504c5-105">Parameters</span></span>  
  `celt`  
- <span data-ttu-id="ccd9b-106">[out]アプリケーションで使用されるスレッドの数。</span><span class="sxs-lookup"><span data-stu-id="ccd9b-106">[out] The number of threads used by the application.</span></span>  
+ <span data-ttu-id="504c5-106">[out]アプリケーションで使用されるスレッドの数。</span><span class="sxs-lookup"><span data-stu-id="504c5-106">[out] The number of threads used by the application.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="ccd9b-107">必要条件</span><span class="sxs-lookup"><span data-stu-id="ccd9b-107">Requirements</span></span>  
- <span data-ttu-id="ccd9b-108">**プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="ccd9b-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="504c5-107">要件</span><span class="sxs-lookup"><span data-stu-id="504c5-107">Requirements</span></span>  
+ <span data-ttu-id="504c5-108">**プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="504c5-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="ccd9b-109">**ヘッダー** : CorProf.idl、CorProf.h</span><span class="sxs-lookup"><span data-stu-id="ccd9b-109">**Header:** CorProf.idl, CorProf.h</span></span>  
+ <span data-ttu-id="504c5-109">**ヘッダー** : CorProf.idl、CorProf.h</span><span class="sxs-lookup"><span data-stu-id="504c5-109">**Header:** CorProf.idl, CorProf.h</span></span>  
   
- <span data-ttu-id="ccd9b-110">**ライブラリ:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="ccd9b-110">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="504c5-110">**ライブラリ:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="504c5-110">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="ccd9b-111">**.NET framework のバージョン:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="ccd9b-111">**.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span></span>  
+ <span data-ttu-id="504c5-111">**.NET framework のバージョン:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="504c5-111">**.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="ccd9b-112">参照</span><span class="sxs-lookup"><span data-stu-id="ccd9b-112">See Also</span></span>  
- [<span data-ttu-id="ccd9b-113">ICorProfilerThreadEnum インターフェイス</span><span class="sxs-lookup"><span data-stu-id="ccd9b-113">ICorProfilerThreadEnum Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerthreadenum-interface.md)  
- [<span data-ttu-id="ccd9b-114">プロファイリングのインターフェイス</span><span class="sxs-lookup"><span data-stu-id="ccd9b-114">Profiling Interfaces</span></span>](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
+## <a name="see-also"></a><span data-ttu-id="504c5-112">関連項目</span><span class="sxs-lookup"><span data-stu-id="504c5-112">See Also</span></span>  
+ [<span data-ttu-id="504c5-113">ICorProfilerThreadEnum インターフェイス</span><span class="sxs-lookup"><span data-stu-id="504c5-113">ICorProfilerThreadEnum Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerthreadenum-interface.md)  
+ [<span data-ttu-id="504c5-114">プロファイリングのインターフェイス</span><span class="sxs-lookup"><span data-stu-id="504c5-114">Profiling Interfaces</span></span>](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)

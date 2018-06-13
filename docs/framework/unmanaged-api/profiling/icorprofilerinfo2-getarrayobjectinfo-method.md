@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: e6e6f4f6bdfba8deecb3661d88a881759da043ae
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33456308"
 ---
 # <a name="icorprofilerinfo2getarrayobjectinfo-method"></a><span data-ttu-id="d9c6a-102">ICorProfilerInfo2::GetArrayObjectInfo メソッド</span><span class="sxs-lookup"><span data-stu-id="d9c6a-102">ICorProfilerInfo2::GetArrayObjectInfo Method</span></span>
 <span data-ttu-id="d9c6a-103">配列オブジェクトに関する詳細情報を取得します。</span><span class="sxs-lookup"><span data-stu-id="d9c6a-103">Gets detailed information about an array object.</span></span>  

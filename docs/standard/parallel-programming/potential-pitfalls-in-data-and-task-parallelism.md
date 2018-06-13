@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33592393"
 ---
 # <a name="potential-pitfalls-in-data-and-task-parallelism"></a><span data-ttu-id="2129b-102">データとタスクの並列化における注意点</span><span class="sxs-lookup"><span data-stu-id="2129b-102">Potential Pitfalls in Data and Task Parallelism</span></span>
 <span data-ttu-id="2129b-103"><xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> および <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> を使用すると、多くの場合、通常の順次ループよりもパフォーマンスが大幅に向上します。</span><span class="sxs-lookup"><span data-stu-id="2129b-103">In many cases, <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> and <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> can provide significant performance improvements over ordinary sequential loops.</span></span> <span data-ttu-id="2129b-104">ただし、ループを並列化すると複雑になるため、逐次コードでは一般的でない、またはまったく発生しない問題の原因になる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="2129b-104">However, the work of parallelizing the loop introduces complexity that can lead to problems that, in sequential code, are not as common or are not encountered at all.</span></span> <span data-ttu-id="2129b-105">このトピックでは、並列ループを記述するときに回避すべきプラクティスをいくつか説明します。</span><span class="sxs-lookup"><span data-stu-id="2129b-105">This topic lists some practices to avoid when you write parallel loops.</span></span>  

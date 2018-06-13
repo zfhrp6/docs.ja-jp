@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: cfe600b54eb03a07ea01375355c5ff94190e5d9d
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33449469"
 ---
 # <a name="imetadatadispenserexsetoption-method"></a><span data-ttu-id="c96ec-102">IMetaDataDispenserEx::SetOption メソッド</span><span class="sxs-lookup"><span data-stu-id="c96ec-102">IMetaDataDispenserEx::SetOption Method</span></span>
 <span data-ttu-id="c96ec-103">現在のメタデータ スコープに指定された値を指定されたオプションを設定します。</span><span class="sxs-lookup"><span data-stu-id="c96ec-103">Sets the specified option to a given value for the current metadata scope.</span></span> <span data-ttu-id="c96ec-104">オプションは、現在のメタデータ スコープへの呼び出しの処理方法を制御します。</span><span class="sxs-lookup"><span data-stu-id="c96ec-104">The option controls how calls to the current metadata scope are handled.</span></span>  

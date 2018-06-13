@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33458108"
 ---
 # <a name="configuring-client-behaviors"></a><span data-ttu-id="6f2b1-102">クライアントの動作の構成</span><span class="sxs-lookup"><span data-stu-id="6f2b1-102">Configuring Client Behaviors</span></span>
 <span data-ttu-id="6f2b1-103">Windows Communication Foundation (WCF) では、2 つの方法で動作を構成します--で定義されている動作の構成を参照して、`<behavior>`クライアント アプリケーション構成ファイル – またはプログラムによって呼び出し元のセクション。アプリケーション。</span><span class="sxs-lookup"><span data-stu-id="6f2b1-103">Windows Communication Foundation (WCF) configures behaviors in two ways: either by referring to behavior configurations -- which are defined in the `<behavior>` section of a client application configuration file – or programmatically in the calling application.</span></span> <span data-ttu-id="6f2b1-104">このトピックでは、両方の方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="6f2b1-104">This topic describes both approaches.</span></span>  

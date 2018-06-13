@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33389406"
 ---
 # <a name="mitigation-product-versioning"></a><span data-ttu-id="83a72-102">軽減策: 製品のバージョン管理</span><span class="sxs-lookup"><span data-stu-id="83a72-102">Mitigation: Product Versioning</span></span>
 <span data-ttu-id="83a72-103">[!INCLUDE[net_v46](../../../includes/net-v46-md.md)] およびそれ以降のバージョンでは、製品のバージョン管理が .NET Framework の以前のリリース (.NET Framework 4、4.5、4.5.1、および 4.5.2) から変更されました。</span><span class="sxs-lookup"><span data-stu-id="83a72-103">In the [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] and later, product versioning has changed from the previous releases of the .NET Framework (the .NET Framework 4, 4.5, 4.5.1, and 4.5.2).</span></span>  

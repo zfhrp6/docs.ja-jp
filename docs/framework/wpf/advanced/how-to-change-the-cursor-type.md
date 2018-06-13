@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33543394"
 ---
 # <a name="how-to-change-the-cursor-type"></a><span data-ttu-id="c997b-102">方法 : カーソルの種類を変更する</span><span class="sxs-lookup"><span data-stu-id="c997b-102">How to: Change the Cursor Type</span></span>
 <span data-ttu-id="c997b-103">この例を変更する方法を示しています、<xref:System.Windows.Input.Cursor>とアプリケーションの特定の要素にマウス ポインターのです。</span><span class="sxs-lookup"><span data-stu-id="c997b-103">This example shows how to change the <xref:System.Windows.Input.Cursor> of the mouse pointer for a specific element and for the application.</span></span>  

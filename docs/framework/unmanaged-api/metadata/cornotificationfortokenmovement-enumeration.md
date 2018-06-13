@@ -1,14 +1,6 @@
 ---
-title: "CorNotificationForTokenMovement 列挙型"
-ms.custom: 
+title: CorNotificationForTokenMovement 列挙型
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - CorNotificationForTokenMovement
 api_location:
@@ -22,22 +14,19 @@ helpviewer_keywords:
 ms.assetid: 1edd1670-976a-4fc8-bef7-7c41e60ad989
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 8e1d3ad11867dbd06dfe3f43cc31817a44cb96d4
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 96ab659e6ab6cc9601c0e9a1ab511da92905c242
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33448257"
 ---
-# <a name="cornotificationfortokenmovement-enumeration"></a><span data-ttu-id="46791-102">CorNotificationForTokenMovement 列挙型</span><span class="sxs-lookup"><span data-stu-id="46791-102">CorNotificationForTokenMovement Enumeration</span></span>
-<span data-ttu-id="46791-103">トークンの再マップが発生したときに、メタデータ API クライアントに送信される通知を指定します。</span><span class="sxs-lookup"><span data-stu-id="46791-103">Specifies the notifications that will be sent to the metadata API client when a token remap occurs.</span></span>  
+# <a name="cornotificationfortokenmovement-enumeration"></a><span data-ttu-id="31d97-102">CorNotificationForTokenMovement 列挙型</span><span class="sxs-lookup"><span data-stu-id="31d97-102">CorNotificationForTokenMovement Enumeration</span></span>
+<span data-ttu-id="31d97-103">トークンの再マップが発生したときに、メタデータ API クライアントに送信される通知を指定します。</span><span class="sxs-lookup"><span data-stu-id="31d97-103">Specifies the notifications that will be sent to the metadata API client when a token remap occurs.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="46791-104">構文</span><span class="sxs-lookup"><span data-stu-id="46791-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="31d97-104">構文</span><span class="sxs-lookup"><span data-stu-id="31d97-104">Syntax</span></span>  
   
 ```  
 typedef enum CorNotificationForTokenMovement {  
@@ -72,43 +61,43 @@ typedef enum CorNotificationForTokenMovement {
 } CorNotificationForTokenMovement;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="46791-105">メンバー</span><span class="sxs-lookup"><span data-stu-id="46791-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="31d97-105">メンバー</span><span class="sxs-lookup"><span data-stu-id="31d97-105">Members</span></span>  
   
-|<span data-ttu-id="46791-106">メンバー</span><span class="sxs-lookup"><span data-stu-id="46791-106">Member</span></span>|<span data-ttu-id="46791-107">説明</span><span class="sxs-lookup"><span data-stu-id="46791-107">Description</span></span>|  
+|<span data-ttu-id="31d97-106">メンバー</span><span class="sxs-lookup"><span data-stu-id="31d97-106">Member</span></span>|<span data-ttu-id="31d97-107">説明</span><span class="sxs-lookup"><span data-stu-id="31d97-107">Description</span></span>|  
 |------------|-----------------|  
-|`MDNotifyDefault`|<span data-ttu-id="46791-108">通知のタイミング`mdTypeRef`、 `mdMethodDef`、 `mdMemberRef`、または`mdFieldDef`トークン移動します。</span><span class="sxs-lookup"><span data-stu-id="46791-108">Notify when `mdTypeRef`, `mdMethodDef`, `mdMemberRef`, or `mdFieldDef` tokens move.</span></span>|  
-|`MDNotifyAll`|<span data-ttu-id="46791-109">任意のトークンを動かしたときに通知します。</span><span class="sxs-lookup"><span data-stu-id="46791-109">Notify when any token moves.</span></span>|  
-|`MDNotifyNone`|<span data-ttu-id="46791-110">トークンの移動時に通知しません。</span><span class="sxs-lookup"><span data-stu-id="46791-110">Do not notify when tokens move.</span></span>|  
-|`MDNotifyMethodDef`|<span data-ttu-id="46791-111">通知のタイミング、`mdMethodDef`トークンを移動します。</span><span class="sxs-lookup"><span data-stu-id="46791-111">Notify when an `mdMethodDef` token moves.</span></span>|  
-|`MDNotifyMemberRef`|<span data-ttu-id="46791-112">通知のタイミング、`mdMemberRef`トークンを移動します。</span><span class="sxs-lookup"><span data-stu-id="46791-112">Notify when an `mdMemberRef` token moves.</span></span>|  
-|`MDNotifyFieldDef`|<span data-ttu-id="46791-113">通知のタイミング、`mdFieldDef`トークンを移動します。</span><span class="sxs-lookup"><span data-stu-id="46791-113">Notify when an `mdFieldDef` token moves.</span></span>|  
-|`MDNotifyTypeRef`|<span data-ttu-id="46791-114">通知のタイミング、`mdTypeRef`トークンを移動します。</span><span class="sxs-lookup"><span data-stu-id="46791-114">Notify when an `mdTypeRef` token moves.</span></span>|  
-|`MDNotifyTypeDef`|<span data-ttu-id="46791-115">通知のタイミング、`mdTypeDef`トークンを移動します。</span><span class="sxs-lookup"><span data-stu-id="46791-115">Notify when an `mdTypeDef` token moves.</span></span>|  
-|`MDNotifyParamDef`|<span data-ttu-id="46791-116">通知のタイミング、`mdParamDef`トークンを移動します。</span><span class="sxs-lookup"><span data-stu-id="46791-116">Notify when an `mdParamDef` token moves.</span></span>|  
-|`MDNotifyInterfaceImpl`|<span data-ttu-id="46791-117">通知のタイミング、`mdInterfaceImpl`トークンを移動します。</span><span class="sxs-lookup"><span data-stu-id="46791-117">Notify when an `mdInterfaceImpl` token moves.</span></span>|  
-|`MDNotifyProperty`|<span data-ttu-id="46791-118">通知のタイミング、`mdProperty`トークンを移動します。</span><span class="sxs-lookup"><span data-stu-id="46791-118">Notify when an `mdProperty` token moves.</span></span>|  
-|`MDNotifyEvent`|<span data-ttu-id="46791-119">通知のタイミング、`mdEvent`トークンを移動します。</span><span class="sxs-lookup"><span data-stu-id="46791-119">Notify when an `mdEvent` token moves.</span></span>|  
-|`MDNotifySignature`|<span data-ttu-id="46791-120">通知のタイミング、`mdSignature`トークンを移動します。</span><span class="sxs-lookup"><span data-stu-id="46791-120">Notify when an `mdSignature` token moves.</span></span>|  
-|`MDNotifyTypeSpec`|<span data-ttu-id="46791-121">通知のタイミング、`mdTypeSpec`トークンを移動します。</span><span class="sxs-lookup"><span data-stu-id="46791-121">Notify when an `mdTypeSpec` token moves.</span></span>|  
-|`MDNotifyCustomAttribute`|<span data-ttu-id="46791-122">通知のタイミング、`mdCustomAttribute`トークンを移動します。</span><span class="sxs-lookup"><span data-stu-id="46791-122">Notify when an `mdCustomAttribute` token moves.</span></span>|  
-|`MDNotifySecurityValue`|<span data-ttu-id="46791-123">通知のタイミング、`mdSecurityValue`トークンを移動します。</span><span class="sxs-lookup"><span data-stu-id="46791-123">Notify when an `mdSecurityValue` token moves.</span></span>|  
-|`MDNotifyPermission`|<span data-ttu-id="46791-124">通知のタイミング、`mdPermission`トークンを移動します。</span><span class="sxs-lookup"><span data-stu-id="46791-124">Notify when an `mdPermission` token moves.</span></span>|  
-|`MDNotifyModuleRef`|<span data-ttu-id="46791-125">通知のタイミング、`mdModuleRef`トークンを移動します。</span><span class="sxs-lookup"><span data-stu-id="46791-125">Notify when an `mdModuleRef` token moves.</span></span>|  
-|`MDNotifyNameSpace`|<span data-ttu-id="46791-126">通知のタイミング、`mdNameSpace`トークンを移動します。</span><span class="sxs-lookup"><span data-stu-id="46791-126">Notify when an `mdNameSpace` token moves.</span></span>|  
-|`MDNotifyAssemblyRef`|<span data-ttu-id="46791-127">通知のタイミング、`mdAssemblyRef`トークンを移動します。</span><span class="sxs-lookup"><span data-stu-id="46791-127">Notify when an `mdAssemblyRef` token moves.</span></span>|  
-|`MDNotifyFile`|<span data-ttu-id="46791-128">通知のタイミング、`mdFile`トークンを移動します。</span><span class="sxs-lookup"><span data-stu-id="46791-128">Notify when an `mdFile` token moves.</span></span>|  
-|`MDNotifyExportedType`|<span data-ttu-id="46791-129">通知のタイミング、`mdExportedType`トークンを移動します。</span><span class="sxs-lookup"><span data-stu-id="46791-129">Notify when an `mdExportedType` token moves.</span></span>|  
-|`MDNotifyResource`|<span data-ttu-id="46791-130">通知のタイミング、`mdManifestResource`トークンを移動します。</span><span class="sxs-lookup"><span data-stu-id="46791-130">Notify when an `mdManifestResource` token moves.</span></span>|  
+|`MDNotifyDefault`|<span data-ttu-id="31d97-108">通知のタイミング`mdTypeRef`、 `mdMethodDef`、 `mdMemberRef`、または`mdFieldDef`トークン移動します。</span><span class="sxs-lookup"><span data-stu-id="31d97-108">Notify when `mdTypeRef`, `mdMethodDef`, `mdMemberRef`, or `mdFieldDef` tokens move.</span></span>|  
+|`MDNotifyAll`|<span data-ttu-id="31d97-109">任意のトークンを動かしたときに通知します。</span><span class="sxs-lookup"><span data-stu-id="31d97-109">Notify when any token moves.</span></span>|  
+|`MDNotifyNone`|<span data-ttu-id="31d97-110">トークンの移動時に通知しません。</span><span class="sxs-lookup"><span data-stu-id="31d97-110">Do not notify when tokens move.</span></span>|  
+|`MDNotifyMethodDef`|<span data-ttu-id="31d97-111">通知のタイミング、`mdMethodDef`トークンを移動します。</span><span class="sxs-lookup"><span data-stu-id="31d97-111">Notify when an `mdMethodDef` token moves.</span></span>|  
+|`MDNotifyMemberRef`|<span data-ttu-id="31d97-112">通知のタイミング、`mdMemberRef`トークンを移動します。</span><span class="sxs-lookup"><span data-stu-id="31d97-112">Notify when an `mdMemberRef` token moves.</span></span>|  
+|`MDNotifyFieldDef`|<span data-ttu-id="31d97-113">通知のタイミング、`mdFieldDef`トークンを移動します。</span><span class="sxs-lookup"><span data-stu-id="31d97-113">Notify when an `mdFieldDef` token moves.</span></span>|  
+|`MDNotifyTypeRef`|<span data-ttu-id="31d97-114">通知のタイミング、`mdTypeRef`トークンを移動します。</span><span class="sxs-lookup"><span data-stu-id="31d97-114">Notify when an `mdTypeRef` token moves.</span></span>|  
+|`MDNotifyTypeDef`|<span data-ttu-id="31d97-115">通知のタイミング、`mdTypeDef`トークンを移動します。</span><span class="sxs-lookup"><span data-stu-id="31d97-115">Notify when an `mdTypeDef` token moves.</span></span>|  
+|`MDNotifyParamDef`|<span data-ttu-id="31d97-116">通知のタイミング、`mdParamDef`トークンを移動します。</span><span class="sxs-lookup"><span data-stu-id="31d97-116">Notify when an `mdParamDef` token moves.</span></span>|  
+|`MDNotifyInterfaceImpl`|<span data-ttu-id="31d97-117">通知のタイミング、`mdInterfaceImpl`トークンを移動します。</span><span class="sxs-lookup"><span data-stu-id="31d97-117">Notify when an `mdInterfaceImpl` token moves.</span></span>|  
+|`MDNotifyProperty`|<span data-ttu-id="31d97-118">通知のタイミング、`mdProperty`トークンを移動します。</span><span class="sxs-lookup"><span data-stu-id="31d97-118">Notify when an `mdProperty` token moves.</span></span>|  
+|`MDNotifyEvent`|<span data-ttu-id="31d97-119">通知のタイミング、`mdEvent`トークンを移動します。</span><span class="sxs-lookup"><span data-stu-id="31d97-119">Notify when an `mdEvent` token moves.</span></span>|  
+|`MDNotifySignature`|<span data-ttu-id="31d97-120">通知のタイミング、`mdSignature`トークンを移動します。</span><span class="sxs-lookup"><span data-stu-id="31d97-120">Notify when an `mdSignature` token moves.</span></span>|  
+|`MDNotifyTypeSpec`|<span data-ttu-id="31d97-121">通知のタイミング、`mdTypeSpec`トークンを移動します。</span><span class="sxs-lookup"><span data-stu-id="31d97-121">Notify when an `mdTypeSpec` token moves.</span></span>|  
+|`MDNotifyCustomAttribute`|<span data-ttu-id="31d97-122">通知のタイミング、`mdCustomAttribute`トークンを移動します。</span><span class="sxs-lookup"><span data-stu-id="31d97-122">Notify when an `mdCustomAttribute` token moves.</span></span>|  
+|`MDNotifySecurityValue`|<span data-ttu-id="31d97-123">通知のタイミング、`mdSecurityValue`トークンを移動します。</span><span class="sxs-lookup"><span data-stu-id="31d97-123">Notify when an `mdSecurityValue` token moves.</span></span>|  
+|`MDNotifyPermission`|<span data-ttu-id="31d97-124">通知のタイミング、`mdPermission`トークンを移動します。</span><span class="sxs-lookup"><span data-stu-id="31d97-124">Notify when an `mdPermission` token moves.</span></span>|  
+|`MDNotifyModuleRef`|<span data-ttu-id="31d97-125">通知のタイミング、`mdModuleRef`トークンを移動します。</span><span class="sxs-lookup"><span data-stu-id="31d97-125">Notify when an `mdModuleRef` token moves.</span></span>|  
+|`MDNotifyNameSpace`|<span data-ttu-id="31d97-126">通知のタイミング、`mdNameSpace`トークンを移動します。</span><span class="sxs-lookup"><span data-stu-id="31d97-126">Notify when an `mdNameSpace` token moves.</span></span>|  
+|`MDNotifyAssemblyRef`|<span data-ttu-id="31d97-127">通知のタイミング、`mdAssemblyRef`トークンを移動します。</span><span class="sxs-lookup"><span data-stu-id="31d97-127">Notify when an `mdAssemblyRef` token moves.</span></span>|  
+|`MDNotifyFile`|<span data-ttu-id="31d97-128">通知のタイミング、`mdFile`トークンを移動します。</span><span class="sxs-lookup"><span data-stu-id="31d97-128">Notify when an `mdFile` token moves.</span></span>|  
+|`MDNotifyExportedType`|<span data-ttu-id="31d97-129">通知のタイミング、`mdExportedType`トークンを移動します。</span><span class="sxs-lookup"><span data-stu-id="31d97-129">Notify when an `mdExportedType` token moves.</span></span>|  
+|`MDNotifyResource`|<span data-ttu-id="31d97-130">通知のタイミング、`mdManifestResource`トークンを移動します。</span><span class="sxs-lookup"><span data-stu-id="31d97-130">Notify when an `mdManifestResource` token moves.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="46791-131">コメント</span><span class="sxs-lookup"><span data-stu-id="46791-131">Remarks</span></span>  
- <span data-ttu-id="46791-132">トークンが再マップされる (移動) メタデータのマージ中にします。</span><span class="sxs-lookup"><span data-stu-id="46791-132">A token may be re-mapped (that is, moved) during a metadata merge.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="31d97-131">コメント</span><span class="sxs-lookup"><span data-stu-id="31d97-131">Remarks</span></span>  
+ <span data-ttu-id="31d97-132">トークンが再マップされる (移動) メタデータのマージ中にします。</span><span class="sxs-lookup"><span data-stu-id="31d97-132">A token may be re-mapped (that is, moved) during a metadata merge.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="46791-133">必要条件</span><span class="sxs-lookup"><span data-stu-id="46791-133">Requirements</span></span>  
- <span data-ttu-id="46791-134">**プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="46791-134">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="31d97-133">要件</span><span class="sxs-lookup"><span data-stu-id="31d97-133">Requirements</span></span>  
+ <span data-ttu-id="31d97-134">**プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="31d97-134">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="46791-135">**ヘッダー:** CorHdr.h</span><span class="sxs-lookup"><span data-stu-id="46791-135">**Header:** CorHdr.h</span></span>  
+ <span data-ttu-id="31d97-135">**ヘッダー:** CorHdr.h</span><span class="sxs-lookup"><span data-stu-id="31d97-135">**Header:** CorHdr.h</span></span>  
   
- <span data-ttu-id="46791-136">**.NET framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="46791-136">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="31d97-136">**.NET framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="31d97-136">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="46791-137">参照</span><span class="sxs-lookup"><span data-stu-id="46791-137">See Also</span></span>  
- [<span data-ttu-id="46791-138">メタデータ列挙型</span><span class="sxs-lookup"><span data-stu-id="46791-138">Metadata Enumerations</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+## <a name="see-also"></a><span data-ttu-id="31d97-137">関連項目</span><span class="sxs-lookup"><span data-stu-id="31d97-137">See Also</span></span>  
+ [<span data-ttu-id="31d97-138">メタデータ列挙型</span><span class="sxs-lookup"><span data-stu-id="31d97-138">Metadata Enumerations</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 6f35a712472887a928b1732f076b39ac08724c7f
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33456072"
 ---
 # <a name="icorprofilerinfo3enumjitedfunctions-method"></a><span data-ttu-id="ebc6f-102">ICorProfilerInfo3::EnumJITedFunctions メソッド</span><span class="sxs-lookup"><span data-stu-id="ebc6f-102">ICorProfilerInfo3::EnumJITedFunctions Method</span></span>
 <span data-ttu-id="ebc6f-103">以前に JIT でコンパイルされたすべての関数の列挙子を返します。</span><span class="sxs-lookup"><span data-stu-id="ebc6f-103">Returns an enumerator for all functions that were previously JIT-compiled.</span></span>  

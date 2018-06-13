@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33548267"
 ---
 # <a name="relativesource-markupextension"></a><span data-ttu-id="b2672-102">RelativeSource のマークアップ拡張機能</span><span class="sxs-lookup"><span data-stu-id="b2672-102">RelativeSource MarkupExtension</span></span>
 <span data-ttu-id="b2672-103">プロパティを指定します、<xref:System.Windows.Data.RelativeSource>内で使用する、バインド データ ソース、[バインディング マークアップ拡張](../../../../docs/framework/wpf/advanced/binding-markup-extension.md)を設定する場合や、<xref:System.Windows.Data.Binding.RelativeSource%2A>のプロパティ、 <xref:System.Windows.Data.Binding> XAML で確立されている要素です。</span><span class="sxs-lookup"><span data-stu-id="b2672-103">Specifies properties of a <xref:System.Windows.Data.RelativeSource> binding source, to be used within a [Binding Markup Extension](../../../../docs/framework/wpf/advanced/binding-markup-extension.md), or when setting the <xref:System.Windows.Data.Binding.RelativeSource%2A> property of a <xref:System.Windows.Data.Binding> element established in XAML.</span></span>  

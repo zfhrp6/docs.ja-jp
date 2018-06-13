@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33389462"
 ---
 # <a name="mitigation-deserialization-of-objects-across-app-domains"></a><span data-ttu-id="14ce6-102">軽減策: アプリ ドメイン全体でのオブジェクトの逆シリアル化</span><span class="sxs-lookup"><span data-stu-id="14ce6-102">Mitigation: Deserialization of Objects Across App Domains</span></span>
 <span data-ttu-id="14ce6-103">場合によっては、アプリが異なるアプリケーション ベースを持つ複数のアプリ ドメインを使用すると、アプリ ドメイン間で論理呼び出しコンテキストのオブジェクトを逆シリアル化しようとして、例外がスローされます。</span><span class="sxs-lookup"><span data-stu-id="14ce6-103">In some cases, when an app uses two or more app domains with different application bases, the attempt to deserialize objects in the logical call context across app domains throws an exception.</span></span>  

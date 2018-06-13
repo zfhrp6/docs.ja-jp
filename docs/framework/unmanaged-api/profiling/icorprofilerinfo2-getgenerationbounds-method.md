@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 0cfac1304a3d60a418065e4fc2994705548eeac3
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33458439"
 ---
 # <a name="icorprofilerinfo2getgenerationbounds-method"></a><span data-ttu-id="45cd7-102">ICorProfilerInfo2::GetGenerationBounds メソッド</span><span class="sxs-lookup"><span data-stu-id="45cd7-102">ICorProfilerInfo2::GetGenerationBounds Method</span></span>
 <span data-ttu-id="45cd7-103">各種ガベージ コレクション ジェネレーションを構成するメモリ領域 (ヒープのセグメント) を取得します。</span><span class="sxs-lookup"><span data-stu-id="45cd7-103">Gets the memory regions, which are segments of the heap, that make up the various garbage collection generations.</span></span>  
