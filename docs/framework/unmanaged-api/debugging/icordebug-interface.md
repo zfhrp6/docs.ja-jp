@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 74c5036bdc8a4a75e5711c6dc1d34d8f2c21128f
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33408672"
 ---
 # <a name="icordebug-interface"></a><span data-ttu-id="59196-102">ICorDebug インターフェイス</span><span class="sxs-lookup"><span data-stu-id="59196-102">ICorDebug Interface</span></span>
 <span data-ttu-id="59196-103">開発者は、共通言語ランタイム (CLR) 環境でアプリケーションをデバッグできるようにするメソッドを提供します。</span><span class="sxs-lookup"><span data-stu-id="59196-103">Provides methods that allow developers to debug applications in the common language runtime (CLR) environment.</span></span>  
