@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33656020"
 ---
 # <a name="nullable-value-types-visual-basic"></a><span data-ttu-id="109cc-102">null 許容値型 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="109cc-102">Nullable Value Types (Visual Basic)</span></span>
 <span data-ttu-id="109cc-103">特定の状況で定義されている値を持たない値の型と連携することがあります。</span><span class="sxs-lookup"><span data-stu-id="109cc-103">Sometimes you work with a value type that does not have a defined value in certain circumstances.</span></span> <span data-ttu-id="109cc-104">たとえば、データベース内のフィールドは、意味のある割り当てられた値を持つ、割り当てられた値がないとを区別する必要があります。</span><span class="sxs-lookup"><span data-stu-id="109cc-104">For example, a field in a database might have to distinguish between having an assigned value that is meaningful and not having an assigned value.</span></span> <span data-ttu-id="109cc-105">値の型は、通常の値または null 値のいずれかを拡張できます。</span><span class="sxs-lookup"><span data-stu-id="109cc-105">Value types can be extended to take either their normal values or a null value.</span></span> <span data-ttu-id="109cc-106">このような拡張機能が呼び出された、 *null 許容型*です。</span><span class="sxs-lookup"><span data-stu-id="109cc-106">Such an extension is called a *nullable type*.</span></span>  

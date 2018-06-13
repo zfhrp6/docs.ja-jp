@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33531041"
 ---
 # <a name="how-to-change-the-appearance-of-the-windows-forms-tabcontrol"></a><span data-ttu-id="69a65-102">方法 : Windows フォーム TabControl の表示形式を変更する</span><span class="sxs-lookup"><span data-stu-id="69a65-102">How to: Change the Appearance of the Windows Forms TabControl</span></span>
 <span data-ttu-id="69a65-103">プロパティを使用して Windows フォーム内のタブの外観を変更することができます、<xref:System.Windows.Forms.TabControl>と<xref:System.Windows.Forms.TabPage>コントロールの個々 のタブを構成するオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="69a65-103">You can change the appearance of tabs in Windows Forms by using properties of the <xref:System.Windows.Forms.TabControl> and the <xref:System.Windows.Forms.TabPage> objects that make up the individual tabs on the control.</span></span> <span data-ttu-id="69a65-104">これらのプロパティを設定することができますタブ上のイメージを表示、水平方向にではなく垂直方向にタブが表示されます、 タブの複数の行を表示および有効または無効にタブ プログラムで。</span><span class="sxs-lookup"><span data-stu-id="69a65-104">By setting these properties, you can display images on tabs, display tabs vertically instead of horizontally, display multiple rows of tabs, and enable or disable tabs programmatically.</span></span>  

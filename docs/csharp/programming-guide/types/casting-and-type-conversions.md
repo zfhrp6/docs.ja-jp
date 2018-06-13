@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33336558"
 ---
 # <a name="casting-and-type-conversions-c-programming-guide"></a><span data-ttu-id="9c6c1-102">キャストと型変換 (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="9c6c1-102">Casting and Type Conversions (C# Programming Guide)</span></span>
 <span data-ttu-id="9c6c1-103">C# はコンパイル時 (変数が宣言された後) に静的に型指定されるため、その型が変数の型に変換可能でない限り、再宣言したり、別の型の値を格納するために使用することはできません。</span><span class="sxs-lookup"><span data-stu-id="9c6c1-103">Because C# is statically-typed at compile time, after a variable is declared, it cannot be declared again or used to store values of another type unless that type is convertible to the variable's type.</span></span> <span data-ttu-id="9c6c1-104">たとえば、整数から任意の文字列に変換することはできません。</span><span class="sxs-lookup"><span data-stu-id="9c6c1-104">For example, there is no conversion from an integer to any arbitrary string.</span></span> <span data-ttu-id="9c6c1-105">そのため、次のコードに示すように、`i` を整数として宣言した後、"Hello" という文字列を割り当てることはできません。</span><span class="sxs-lookup"><span data-stu-id="9c6c1-105">Therefore, after you declare `i` as an integer, you cannot assign the string "Hello" to it, as is shown in the following code.</span></span>  

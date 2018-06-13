@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33527733"
 ---
 # <a name="change-notification-in-windows-forms-data-binding"></a><span data-ttu-id="35ca1-102">Windows フォーム データ バインディングの変更通知</span><span class="sxs-lookup"><span data-stu-id="35ca1-102">Change Notification in Windows Forms Data Binding</span></span>
 <span data-ttu-id="35ca1-103">Windows フォーム データ バインディングの最も重要な概念の 1 つは*変更通知*です。</span><span class="sxs-lookup"><span data-stu-id="35ca1-103">One of the most important concepts of Windows Forms data binding is *change notification*.</span></span> <span data-ttu-id="35ca1-104">データ ソースとバインドされたコントロール常に最新のデータを入手するには、データ バインディングの変更通知を追加する必要があります。</span><span class="sxs-lookup"><span data-stu-id="35ca1-104">To ensure that your data source and bound controls always have the most recent data, you must add change notification for data binding.</span></span> <span data-ttu-id="35ca1-105">具体的には、バインドされたコントロールが、データ ソースに加えられた変更の通知を受け取ることを保証して、データ ソースは、コントロールのバインド プロパティに対して行われた変更の通知です。</span><span class="sxs-lookup"><span data-stu-id="35ca1-105">Specifically, you want to ensure that bound controls are notified of changes that were made to their data source, and the data source is notified of changes that were made to the bound properties of a control.</span></span>  

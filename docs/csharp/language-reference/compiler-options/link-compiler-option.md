@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33217208"
 ---
 # <a name="-link-c-compiler-options"></a><span data-ttu-id="5ff03-102">-link (C# コンパイラ オプション)</span><span class="sxs-lookup"><span data-stu-id="5ff03-102">-link (C# Compiler Options)</span></span>
 <span data-ttu-id="5ff03-103">指定したアセンブリ内の COM 型情報を、現在のコンパイル対象のプロジェクトで使用できるようにします。</span><span class="sxs-lookup"><span data-stu-id="5ff03-103">Causes the compiler to make COM type information in the specified assemblies available to the project that you are currently compiling.</span></span>  

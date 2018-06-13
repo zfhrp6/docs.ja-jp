@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33529624"
 ---
 # <a name="walkthrough-creating-an-accessible-windows-based-application"></a><span data-ttu-id="57e49-102">チュートリアル : ユーザー補助対応の Windows ベースのアプリケーションの作成</span><span class="sxs-lookup"><span data-stu-id="57e49-102">Walkthrough: Creating an Accessible Windows-based Application</span></span>
 <span data-ttu-id="57e49-103">ユーザー補助に対応するアプリケーションを作成することは、ビジネスに重要な影響を与えます。</span><span class="sxs-lookup"><span data-stu-id="57e49-103">Creating an accessible application has important business implications.</span></span> <span data-ttu-id="57e49-104">多くの政府は、ソフトウェアの購入に関するユーザー補助の規制があります。</span><span class="sxs-lookup"><span data-stu-id="57e49-104">Many governments have accessibility regulations for software purchase.</span></span> <span data-ttu-id="57e49-105">Certified for Windows ロゴには、ユーザー補助に関する要件が含まれています。</span><span class="sxs-lookup"><span data-stu-id="57e49-105">The Certified for Windows logo includes accessibility requirements.</span></span> <span data-ttu-id="57e49-106">米国だけでも 3000 万人 (その多くは潜在的な顧客) が、ソフトウェアのアクセシビリティ機能によって影響を受けると推定されています。</span><span class="sxs-lookup"><span data-stu-id="57e49-106">An estimated 30 million residents of the U.S. alone, many of them potential customers, are affected by the accessibility of software.</span></span>  

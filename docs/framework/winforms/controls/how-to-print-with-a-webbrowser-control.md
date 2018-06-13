@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33532851"
 ---
 # <a name="how-to-print-with-a-webbrowser-control"></a><span data-ttu-id="14688-102">方法 : WebBrowser コントロールを使用して印刷する</span><span class="sxs-lookup"><span data-stu-id="14688-102">How to: Print with a WebBrowser Control</span></span>
 <span data-ttu-id="14688-103">次のコード例で使用方法、<xref:System.Windows.Forms.WebBrowser>表示せず、Web ページを印刷するコントロール。</span><span class="sxs-lookup"><span data-stu-id="14688-103">The following code example demonstrates how use the <xref:System.Windows.Forms.WebBrowser> control to print a Web page without displaying it.</span></span>  

@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33532884"
 ---
 # <a name="how-to-manipulate-columns-in-the-windows-forms-datagridview-control"></a><span data-ttu-id="41361-102">方法 : Windows フォーム DataGridView コントロールの列を操作する</span><span class="sxs-lookup"><span data-stu-id="41361-102">How to: Manipulate Columns in the Windows Forms DataGridView Control</span></span>
 <span data-ttu-id="41361-103"><xref:System.Windows.Forms.DataGridViewColumn> クラスのプロパティを使用して <xref:System.Windows.Forms.DataGridView> の列を操作するさまざまな方法を次のコード例に示します。</span><span class="sxs-lookup"><span data-stu-id="41361-103">The following code example shows the various ways to manipulate <xref:System.Windows.Forms.DataGridView> columns using properties of the <xref:System.Windows.Forms.DataGridViewColumn> class.</span></span>  

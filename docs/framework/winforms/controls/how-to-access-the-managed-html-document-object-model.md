@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33527662"
 ---
 # <a name="how-to-access-the-managed-html-document-object-model"></a><span data-ttu-id="19297-102">方法 : マネージ HTML DOM (Document Object Model) にアクセスする</span><span class="sxs-lookup"><span data-stu-id="19297-102">How to: Access the Managed HTML Document Object Model</span></span>
 <span data-ttu-id="19297-103">マネージ HTML ドキュメント オブジェクト モデル (DOM) には、次の 2 種類のアプリケーションからアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="19297-103">You can access the managed HTML Document Object Model (DOM) from two types of applications:</span></span>  

@@ -8,6 +8,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32757412"
 ---
 # <a name="ltargumentsgt"></a><span data-ttu-id="e9e2b-102">&lt;引数&gt;</span><span class="sxs-lookup"><span data-stu-id="e9e2b-102">&lt;arguments&gt;</span></span>
 <span data-ttu-id="e9e2b-103">アクティビティ状態クエリに関連付けられている引数のコレクションを表します。</span><span class="sxs-lookup"><span data-stu-id="e9e2b-103">Represents a collection of arguments associated with an activity state query.</span></span>  

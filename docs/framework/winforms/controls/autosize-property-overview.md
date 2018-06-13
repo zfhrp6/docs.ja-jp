@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33529991"
 ---
 # <a name="autosize-property-overview"></a><span data-ttu-id="f157b-102">AutoSize プロパティの概要</span><span class="sxs-lookup"><span data-stu-id="f157b-102">AutoSize Property Overview</span></span>
 <span data-ttu-id="f157b-103"><xref:System.Windows.Forms.Control.AutoSize%2A>プロパティで指定された値を実現するために必要な場合は、そのサイズを変更するコントロールを使用して、<xref:System.Windows.Forms.Control.PreferredSize%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="f157b-103">The <xref:System.Windows.Forms.Control.AutoSize%2A> property enables a control to change its size, if necessary, to attain the value specified by the <xref:System.Windows.Forms.Control.PreferredSize%2A> property.</span></span> <span data-ttu-id="f157b-104">設定して特定のコントロールのサイズ変更動作を調整する、`AutoSizeMode`プロパティです。</span><span class="sxs-lookup"><span data-stu-id="f157b-104">You adjust the sizing behavior for specific controls by setting the `AutoSizeMode` property.</span></span>  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32750610"
 ---
 # <a name="ltsystemruntimecachinggt-element-cache-settings"></a><span data-ttu-id="58e0d-102">&lt;system.runtime.caching&gt;要素 (キャッシュの設定)</span><span class="sxs-lookup"><span data-stu-id="58e0d-102">&lt;system.runtime.caching&gt; Element (Cache Settings)</span></span>
 <span data-ttu-id="58e0d-103">構成ファイル内の <xref:System.Runtime.Caching.ObjectCache> エントリを使用して既定のメモリ内の `memoryCache` の実装の構成を提供します。</span><span class="sxs-lookup"><span data-stu-id="58e0d-103">Provides configuration for the default in-memory <xref:System.Runtime.Caching.ObjectCache> implementation through the `memoryCache` entry in the configuration file.</span></span>  

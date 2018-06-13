@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 82bcbf363a4fa682a85adf485596fea713457051
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33409218"
 ---
 # <a name="cordebugregister-enumeration"></a><span data-ttu-id="9eb1d-102">CorDebugRegister 列挙型</span><span class="sxs-lookup"><span data-stu-id="9eb1d-102">CorDebugRegister Enumeration</span></span>
 <span data-ttu-id="9eb1d-103">指定されたプロセッサ アーキテクチャに関連付けられたレジスタを指定します。</span><span class="sxs-lookup"><span data-stu-id="9eb1d-103">Specifies the registers associated with a given processor architecture.</span></span>  

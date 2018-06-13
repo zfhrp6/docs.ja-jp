@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33656059"
 ---
 # <a name="object-variable-assignment-visual-basic"></a><span data-ttu-id="ce42b-102">オブジェクト変数への代入 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="ce42b-102">Object Variable Assignment (Visual Basic)</span></span>
 <span data-ttu-id="ce42b-103">通常の代入ステートメントを使用して、オブジェクト変数にオブジェクトを割り当てます。</span><span class="sxs-lookup"><span data-stu-id="ce42b-103">You use a normal assignment statement to assign an object to an object variable.</span></span> <span data-ttu-id="ce42b-104">オブジェクト式を割り当てることができます、または[Nothing](../../../../visual-basic/language-reference/nothing.md)キーワードとして次の例を示しています。</span><span class="sxs-lookup"><span data-stu-id="ce42b-104">You can assign an object expression or the [Nothing](../../../../visual-basic/language-reference/nothing.md) keyword, as the following example illustrates.</span></span>  

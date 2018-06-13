@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: ff3bd9345825b5e7a4ccb41cd260b447b74cede3
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33437951"
 ---
 # <a name="icorruntimehostswitchoutlogicalthreadstate-method"></a><span data-ttu-id="4d380-102">ICorRuntimeHost::SwitchOutLogicalThreadState メソッド</span><span class="sxs-lookup"><span data-stu-id="4d380-102">ICorRuntimeHost::SwitchOutLogicalThreadState Method</span></span>
 <span data-ttu-id="4d380-103">このメソッドは、.NET Framework インフラストラクチャをサポートします。独自に作成したコードから直接使用するためのものではありません。</span><span class="sxs-lookup"><span data-stu-id="4d380-103">This method supports the .NET Framework infrastructure and is not intended to be used directly from your code.</span></span>  

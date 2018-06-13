@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33499090"
 ---
 # <a name="windows-communication-foundation-security"></a><span data-ttu-id="e694c-102">Windows Communication Foundation セキュリティ</span><span class="sxs-lookup"><span data-stu-id="e694c-102">Windows Communication Foundation Security</span></span>
 <span data-ttu-id="e694c-103">このセクションのトピックでは、Windows Communication Foundation (WCF) のセキュリティ機能とそれらを使用してメッセージをセキュリティで保護する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="e694c-103">The topics in this section describe Windows Communication Foundation (WCF) security features and how to use them to help secure messages.</span></span>  

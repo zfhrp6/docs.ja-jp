@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32750532"
 ---
 # <a name="ltclientcertificategt-of-ltclientcredentialsgt-element"></a><span data-ttu-id="faca6-102">&lt;clientCredentials&gt; 要素の &lt;clientCertificate&gt;</span><span class="sxs-lookup"><span data-stu-id="faca6-102">&lt;clientCertificate&gt; of &lt;clientCredentials&gt; Element</span></span>
 <span data-ttu-id="faca6-103">サービスに対するクライアントの認証に使用する X.509 証明書を定義します。</span><span class="sxs-lookup"><span data-stu-id="faca6-103">Defines an X.509 certificate used to authenticate a client to a service.</span></span>  

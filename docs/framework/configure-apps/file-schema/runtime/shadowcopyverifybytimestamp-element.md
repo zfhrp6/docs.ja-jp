@@ -12,6 +12,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32749726"
 ---
 # <a name="ltshadowcopyverifybytimestampgt-element"></a><span data-ttu-id="0b006-102">&lt;shadowCopyVerifyByTimestamp&gt;要素</span><span class="sxs-lookup"><span data-stu-id="0b006-102">&lt;shadowCopyVerifyByTimestamp&gt; Element</span></span>
 <span data-ttu-id="0b006-103">シャドウ コピーが [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)] で導入された既定の起動の動作を使用するか、.NET Framework の以前のバージョンの起動の動作に戻すかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="0b006-103">Specifies whether shadow copying uses the default startup behavior introduced in the [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)], or reverts to the startup behavior of earlier versions of the .NET Framework.</span></span>  

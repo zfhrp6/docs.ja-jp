@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32760935"
 ---
 # <a name="canonical-functions"></a><span data-ttu-id="b3c57-102">正規関数</span><span class="sxs-lookup"><span data-stu-id="b3c57-102">Canonical Functions</span></span>
 <span data-ttu-id="b3c57-103">このセクションでは、すべてのデータ プロバイダーがサポートし、あらゆるクエリ テクノロジで使用されている正規関数について説明します。</span><span class="sxs-lookup"><span data-stu-id="b3c57-103">This section discusses canonical functions that are supported by all data providers, and can be used by all querying technologies.</span></span> <span data-ttu-id="b3c57-104">正規関数は、プロバイダーが拡張することはできません。</span><span class="sxs-lookup"><span data-stu-id="b3c57-104">Canonical functions cannot be extended by a provider.</span></span>  

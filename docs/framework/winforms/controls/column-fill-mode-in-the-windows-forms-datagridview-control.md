@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33528845"
 ---
 # <a name="column-fill-mode-in-the-windows-forms-datagridview-control"></a><span data-ttu-id="387e3-102">Windows フォーム DataGridView コントロールの列フィル モード</span><span class="sxs-lookup"><span data-stu-id="387e3-102">Column Fill Mode in the Windows Forms DataGridView Control</span></span>
 <span data-ttu-id="387e3-103">列フィル モードでは、<xref:System.Windows.Forms.DataGridView> コントロールの列は、コントロールの表示領域の幅を満たすように自動的にサイズ変更されます。</span><span class="sxs-lookup"><span data-stu-id="387e3-103">In column fill mode, the <xref:System.Windows.Forms.DataGridView> control resizes its columns automatically so that they fill the width of the available display area.</span></span> <span data-ttu-id="387e3-104">すべての列の幅を <xref:System.Windows.Forms.DataGridViewColumn.MinimumWidth%2A> プロパティの値以上にするために水平スクロール バーが必要な場合を除き、コントロールに水平スクロール バーは表示されません。</span><span class="sxs-lookup"><span data-stu-id="387e3-104">The control does not display the horizontal scroll bar except when it is necessary to keep the width of every column equal to or greater than its <xref:System.Windows.Forms.DataGridViewColumn.MinimumWidth%2A> property value.</span></span>  

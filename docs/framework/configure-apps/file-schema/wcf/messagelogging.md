@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32750688"
 ---
 # <a name="ltmessagelogginggt"></a><span data-ttu-id="62072-102">&lt;メッセージ ログ&gt;</span><span class="sxs-lookup"><span data-stu-id="62072-102">&lt;messageLogging&gt;</span></span>
 <span data-ttu-id="62072-103">この要素は Windows Communication Foundation (WCF) のメッセージ ログ機能の設定を定義します。</span><span class="sxs-lookup"><span data-stu-id="62072-103">This element defines the settings for the message-logging capabilities of Windows Communication Foundation (WCF).</span></span>  
