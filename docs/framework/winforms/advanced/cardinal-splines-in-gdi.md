@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33517966"
 ---
 # <a name="cardinal-splines-in-gdi"></a>GDI+ でのカーディナル スプライン
 カーディナル スプラインは、大規模な曲線を形成に参加している個々 の曲線のシーケンスです。 スプラインは、ポイントおよびテンション パラメーターの配列を指定します。 配列内の各ポイントを通過するカーディナル スプラインがスムーズに通過します。ありませんとがった角と曲線のテンションの急激な変化があります。 次の図は、一連のポイントと、セット内の各ポイントを通過するカーディナル スプラインを示します。  

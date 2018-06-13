@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33336639"
 ---
 # <a name="using-type-dynamic-c-programming-guide"></a>dynamic 型の使用 (C# プログラミング ガイド)
 [!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)] では、`dynamic` という新しい型が導入されています。 この型は静的な型ですが、`dynamic` 型のオブジェクトは静的な型チェックをバイパスします。 ほとんどの場合、`object` 型を使用する場合と同様に機能します。 コンパイル時には、`dynamic` として型指定された要素はあらゆる操作をサポートすると見なされます。 したがって、オブジェクトが COM API、IronPython などの動的言語、HTML ドキュメント オブジェクト モデル (DOM)、リフレクション、プログラムの他の場所のいずれから値を取得するのかを考慮する必要はありません。 ただし、コードが無効な場合には、実行時にエラーが検出されます。  

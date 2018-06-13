@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33489112"
 ---
 # <a name="authentication-in-wcf"></a>WCF での認証
 次のトピックでは、たとえば、認証を提供する Windows Communication Foundation (WCF)、Windows 認証、X.509 証明書、およびユーザー名およびパスワードで多くの異なるメカニズムを表示します。  

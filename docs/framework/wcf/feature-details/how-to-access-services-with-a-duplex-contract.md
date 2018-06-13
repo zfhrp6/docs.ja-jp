@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33490153"
 ---
 # <a name="how-to-access-services-with-a-duplex-contract"></a>方法 : 双方向コントラクトを使用してサービスにアクセスする
 Windows Communication Foundation (WCF) の 1 つの機能は、双方向のメッセージング パターンを使用してサービスを作成する機能です。 双方向のメッセージング パターンを使用するサービスは、コールバックを通じてクライアントと通信できます。 このトピックでは、コールバック インターフェイスを実装するクライアント クラスで、WCF クライアントを作成する手順を示します。  

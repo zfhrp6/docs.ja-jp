@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33534502"
 ---
 # <a name="statusstrip-control"></a>StatusStrip コントロール
 Windows フォームの `StatusStrip` コントロールは、フォーム上で領域として使用され、通常はウィンドウの下端に表示されます。アプリケーションは、このコントロールにさまざまな種類のステータス情報を表示できます `StatusStrip` コントロールには、通常は `ToolStripStatusLabel` コントロールを配置し、状態を示すためのテキストまたはアイコンや、処理の完了状態を視覚的に表示するための <xref:System.Windows.Forms.ToolStripProgressBar> を表示します。  

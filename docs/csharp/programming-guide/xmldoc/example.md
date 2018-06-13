@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33338254"
 ---
 # <a name="ltexamplegt-c-programming-guide"></a>&lt;例&gt; (C# プログラミング ガイド)
 ## <a name="syntax"></a>構文  

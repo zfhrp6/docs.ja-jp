@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33544132"
 ---
 # <a name="how-to-use-flow-content-elements"></a>方法: フロー コンテンツ要素を使用する
 次の例では、さまざまなフロー コンテンツ要素および関連付けられた属性の宣言型の使用方法を示します。  例で使用される要素および属性には、次のものが含まれます。  

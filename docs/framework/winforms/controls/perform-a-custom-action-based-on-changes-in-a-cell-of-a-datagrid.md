@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33535146"
 ---
 # <a name="how-to-perform-a-custom-action-based-on-changes-in-a-cell-of-a-windows-forms-datagridview-control"></a>方法 : Windows フォーム DataGridView コントロールのセルの変更に基づいてカスタム動作を実行する
 <xref:System.Windows.Forms.DataGridView>コントロールの状態の変更を検出するために使用できるイベントの数がある<xref:System.Windows.Forms.DataGridView>セル。 2 つの最も一般的に使用されるは、<xref:System.Windows.Forms.DataGridView.CellValueChanged>と<xref:System.Windows.Forms.DataGridView.CellStateChanged>イベント。  

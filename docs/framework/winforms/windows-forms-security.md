@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33542237"
 ---
 # <a name="windows-forms-security"></a>Windows フォームのセキュリティ
 Windows フォームでは、コードに基づく (レベルが設定されたセキュリティ コード、コードを実行しているユーザーに関係なく) であるセキュリティ モデルを備えています。 これは、既にコンピューター システム上の場所に可能性のあるセキュリティのすべてのスキーマだけでなくです。 これらは、ゾーンに基づいたセキュリティ Internet Explorer で使用可能な) など、ブラウザーまたはオペレーティング システム (Windows NT の資格情報に基づいたセキュリティ) などを含めることができます。  

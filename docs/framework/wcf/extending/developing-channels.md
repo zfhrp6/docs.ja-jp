@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33487426"
 ---
 # <a name="developing-channels"></a>チャネルの開発
 Windows Communication Foundation (WCF) で使用できるプロトコルやトランスポート チャネルを開発するには、アプリケーション層には、いくつかの手順が必要です。 このトピックでは、これらの手順について説明し、詳細情報の参照先となる特定のトピックを示します。 チャネル モデルと、このトピックに記載されているさまざまな種類を理解するのを参照してください。[チャネル モデルの概要](../../../../docs/framework/wcf/extending/channel-model-overview.md)です。 完全なトランスポート チャネルのサンプルでは、次を参照してください。[トランスポート: UDP](../../../../docs/framework/wcf/samples/transport-udp.md)です。  

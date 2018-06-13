@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33532634"
 ---
 # <a name="how-to-expose-properties-of-constituent-controls"></a>方法 : 内在コントロールのプロパティを公開する
 複合コントロールを構成するコントロールが呼び出されます*内在コントロール*です。 これらのコントロールは、通常、プライベートとして宣言し、ため、開発者がアクセスできません。 以降のユーザーにこれらのコントロールのプロパティを使用できるようにする場合は、ユーザーに公開する必要があります。 内在コントロールのプロパティは、ユーザー コントロールでプロパティを作成および使用によって公開される、`get`と`set`内在コントロールのプライベート プロパティの変更を有効にするためのプロパティのアクセサー。  

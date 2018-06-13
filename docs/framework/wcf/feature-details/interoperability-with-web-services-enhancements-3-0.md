@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33490920"
 ---
 # <a name="interoperability-with-web-services-enhancements-30"></a>Web サービス拡張 3.0 との相互運用
 Windows Communication Foundation (WCF) クライアントとサービスが、Microsoft .NET (WSE) クライアントとサービスの Web サービス拡張 3.0 とネットワーク レベルで互換性の 2004 年 8 月版を使用して WCF クライアントおよびサービスが構成されている場合、Ws-addressing 仕様です。  

@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33532123"
 ---
 # <a name="how-to-manipulate-rows-in-the-windows-forms-datagridview-control"></a>方法 : Windows フォームの DataGridView コントロールの行を操作する
 <xref:System.Windows.Forms.DataGridViewRow> クラスのプロパティを使用して <xref:System.Windows.Forms.DataGridView> の行を操作するさまざまな方法を次のコード例に示します。  
