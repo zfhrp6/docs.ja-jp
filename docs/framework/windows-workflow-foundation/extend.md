@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33511892"
 ---
 # <a name="extending-windows-workflow-foundation"></a>Windows Workflow Foundation の拡張
 次のセクションでは、外部の再ホストされた環境でカスタム アクティビティとデザイナーを使用して Windows Workflow Foundation (WF) を拡張する方法をについて説明します[!INCLUDE[vs2010](../../../includes/vs2010-md.md)]です。  

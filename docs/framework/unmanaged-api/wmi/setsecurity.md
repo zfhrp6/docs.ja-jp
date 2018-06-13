@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 0fd354e1103832abee7f634eace3dd6defa8b646
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33458752"
 ---
 # <a name="setsecurity-function"></a>SetSecurity 関数
 現在のスレッドに関連付けられている権限借用トークンを取得します。   

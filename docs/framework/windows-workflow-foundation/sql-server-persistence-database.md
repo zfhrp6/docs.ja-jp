@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33514665"
 ---
 # <a name="sql-server-persistence-database"></a>SQL Server 永続性データベース
 このセクションでは、SQL Workflow Instance Store でサポートされるパブリック データベース ビューの詳細について説明し、インスタンスのプリミティブ データ プロパティを逆シリアル化する方法と非永続的インスタンスに対してクエリを実行する方法を示します。  
