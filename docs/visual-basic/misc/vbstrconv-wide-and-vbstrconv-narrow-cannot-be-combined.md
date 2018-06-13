@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33641808"
 ---
 # <a name="vbstrconvwide-and-vbstrconvnarrow-cannot-be-combined"></a>VbStrConv.Wide と VbStrConv.Narrow を組み合わせることはできません
 アプリケーションが `VbStrConv` 列挙型メンバー `Wide` と `Narrow`を結合しようとしていますが、これらは相互に排他的です。  

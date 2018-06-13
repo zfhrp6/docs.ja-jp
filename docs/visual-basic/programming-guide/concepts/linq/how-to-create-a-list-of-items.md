@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33642809"
 ---
 # <a name="how-to-create-a-list-of-items"></a>方法: 項目のリストを作成する
 このトピックのコードでは、`Student` クラスを定義し、クラスのインスタンスのリストを作成します。 リストは、トピックをサポートするために、[チュートリアル: Visual Basic でのクエリを記述](../../../../visual-basic/programming-guide/concepts/linq/walkthrough-writing-queries.md)です。 これは、オブジェクトのリストを必要とする任意のアプリケーションにも使用できます。 このコードでは、オブジェクト初期化子を使用することで、学生のリスト内の各項目を定義します。  

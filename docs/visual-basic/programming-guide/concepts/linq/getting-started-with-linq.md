@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33643492"
 ---
 # <a name="getting-started-with-linq-in-visual-basic"></a>Visual Basic の LINQ の概要
 このセクションには、概要、例、および Visual Basic および統合言語クエリ (LINQ) を使用する際に役立つ背景情報が含まれています。  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33637572"
 ---
 # <a name="the-file-is-currently-open-for-writing"></a>ファイルは現在書き込み用に開かれています
 現在書き込み用に開かれているファイルにアクセスしようとしました。  
