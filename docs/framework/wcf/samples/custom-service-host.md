@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33806797"
 ---
 # <a name="custom-service-host"></a><span data-ttu-id="51c67-102">カスタム サービス ホスト</span><span class="sxs-lookup"><span data-stu-id="51c67-102">Custom Service Host</span></span>
 <span data-ttu-id="51c67-103">このサンプルでは、<xref:System.ServiceModel.ServiceHost> クラスから派生したカスタムのサービス ホストを使用して、サービスの実行時動作を変更する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="51c67-103">This sample demonstrates how to use a custom derivative of the <xref:System.ServiceModel.ServiceHost> class to alter the run-time behavior of a service.</span></span> <span data-ttu-id="51c67-104">この方法は、多数のサービスを共通方式で構成するという方法の代わりに使用でき、再利用可能です。</span><span class="sxs-lookup"><span data-stu-id="51c67-104">This approach provides a reusable alternative to configuring a large number of services in a common way.</span></span> <span data-ttu-id="51c67-105">このサンプルでは、<xref:System.ServiceModel.Activation.ServiceHostFactory> クラスを使用して、カスタムの ServiceHost を、インターネット インフォメーション サービス (IIS) または Windows プロセス アクティブ化サービス (WAS) でホストされる環境で使用する方法も示します。</span><span class="sxs-lookup"><span data-stu-id="51c67-105">The sample also demonstrates how to use the <xref:System.ServiceModel.Activation.ServiceHostFactory> class to use a custom ServiceHost in the Internet Information Services (IIS) or Windows Process Activation Service (WAS) hosting environment.</span></span>  

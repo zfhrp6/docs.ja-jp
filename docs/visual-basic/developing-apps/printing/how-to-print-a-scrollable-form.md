@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33584015"
 ---
 # <a name="how-to-print-a-scrollable-form-visual-basic"></a><span data-ttu-id="c63dc-102">方法: スクロール可能フォームを印刷する (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="c63dc-102">How to: Print a Scrollable Form (Visual Basic)</span></span>
 <span data-ttu-id="c63dc-103"><xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> コンポーネントを使用すると、 <xref:System.Drawing.Printing.PrintDocument> コンポーネントを使わなくてもフォームのイメージをすばやく印刷できます。</span><span class="sxs-lookup"><span data-stu-id="c63dc-103">The <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> component enables you to quickly print an image of a form without using a <xref:System.Drawing.Printing.PrintDocument> component.</span></span> <span data-ttu-id="c63dc-104">既定では、フォームの現在見えている部分だけが印刷されます。ユーザーが実行時にフォームのサイズを変更した場合、イメージは意図されたとおりに印刷されない可能性があります。</span><span class="sxs-lookup"><span data-stu-id="c63dc-104">By default, only the currently visible part of the form is printed; if a user has resized the form at run time, the image may not print as intended.</span></span> <span data-ttu-id="c63dc-105">次の手順は、フォームのサイズが変更された場合でもスクロール可能フォームのクライアント領域全体を印刷する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="c63dc-105">The following procedure shows how to print the complete client area of a scrollable form, even if the form has been resized.</span></span>  

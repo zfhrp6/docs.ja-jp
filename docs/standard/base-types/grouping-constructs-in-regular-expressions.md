@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33579822"
 ---
 # <a name="grouping-constructs-in-regular-expressions"></a><span data-ttu-id="2d688-102">正規表現でのグループ化構成体</span><span class="sxs-lookup"><span data-stu-id="2d688-102">Grouping Constructs in Regular Expressions</span></span>
 <span data-ttu-id="2d688-103">グループ化構成体は、正規表現の部分式を表し、入力文字列の部分文字列をキャプチャします。</span><span class="sxs-lookup"><span data-stu-id="2d688-103">Grouping constructs delineate the subexpressions of a regular expression and capture the substrings of an input string.</span></span> <span data-ttu-id="2d688-104">グループ化構成体を使用して、以下を実行できます。</span><span class="sxs-lookup"><span data-stu-id="2d688-104">You can use grouping constructs to do the following:</span></span>  

@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33579536"
 ---
 # <a name="fundamentals-of-garbage-collection"></a><span data-ttu-id="9b447-102">ガベージ コレクションの基礎</span><span class="sxs-lookup"><span data-stu-id="9b447-102">Fundamentals of Garbage Collection</span></span>
 <a name="top"></a> <span data-ttu-id="9b447-103">共通言語ランタイム (CLR) では、自動メモリ マネージャーとしてガベージ コレクターを使用できます。</span><span class="sxs-lookup"><span data-stu-id="9b447-103">In the common language runtime (CLR), the garbage collector serves as an automatic memory manager.</span></span> <span data-ttu-id="9b447-104">次のような利点があります。</span><span class="sxs-lookup"><span data-stu-id="9b447-104">It provides the following benefits:</span></span>  

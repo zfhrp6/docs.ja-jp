@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33584697"
 ---
 # <a name="deploying-applications-that-reference-the-printform-component-visual-basic"></a><span data-ttu-id="23c86-102">PrintForm コンポーネント (Visual Basic) を参照するアプリケーションの配置</span><span class="sxs-lookup"><span data-stu-id="23c86-102">Deploying applications that reference the PrintForm component (Visual Basic)</span></span>
 <span data-ttu-id="23c86-103"><xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> コンポーネントを参照するアプリケーションを配置する場合は、コンポーネントをターゲット コンピューターにインストールする必要があります。</span><span class="sxs-lookup"><span data-stu-id="23c86-103">If you want to deploy an application that references the <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> component, the component must be installed on the destination computer.</span></span>  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33591587"
 ---
 # <a name="how-to-read-from-text-files-in-visual-basic"></a><span data-ttu-id="cc7b1-102">方法: テキスト ファイルからデータを読み取る (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="cc7b1-102">How to: Read From Text Files in Visual Basic</span></span>
 <span data-ttu-id="cc7b1-103"><xref:Microsoft.VisualBasic.MyServices.FileSystemProxy.ReadAllText%2A> オブジェクトの `My.Computer.FileSystem` メソッドを使用すると、テキスト ファイルを読み取ることができます。</span><span class="sxs-lookup"><span data-stu-id="cc7b1-103">The <xref:Microsoft.VisualBasic.MyServices.FileSystemProxy.ReadAllText%2A> method of the `My.Computer.FileSystem` object allows you to read from a text file.</span></span> <span data-ttu-id="cc7b1-104">ファイルの内容が ASCII や UTF-8 などのエンコーディングを使用している場合、ファイル エンコーディングを指定できます。</span><span class="sxs-lookup"><span data-stu-id="cc7b1-104">The file encoding can be specified if the contents of the file use an encoding such as ASCII or UTF-8.</span></span>  
