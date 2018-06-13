@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33644148"
 ---
 # <a name="comparison-of-xpath-and-linq-to-xml"></a>XPath と LINQ to XML の比較
 XPath と [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] の機能はある程度似ています。 どちらも XML ツリーに対してクエリを実行するために使用され、結果として、要素のコレクション、属性のコレクション、ノードのコレクション、要素や属性の値などを返します。 ただし、相違点もいくつかあります。  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809915"
 ---
 # <a name="configuration-based-activation"></a>構成ベースのアクティブ化
 このサンプルでは、.svc ファイルを必要とせずに Windows Communication Foundation (WCF) サービスをアクティブ化する方法を示します。  

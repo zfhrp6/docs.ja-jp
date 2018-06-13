@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33805799"
 ---
 # <a name="tracking-using-a-text-file"></a>テキスト ファイルを使用した追跡
 このサンプルでは、カスタム追跡参加要素を作成することで、Windows Workflow Foundation (WF) の追跡を拡張する方法を示します。 追跡参加要素は、出力された追跡レコードをランタイムから受け取る .NET Framework クラスです。 追跡参加要素を作成して、シナリオに必要な出力先に追跡イベントを転送することができます。 たとえば、ETW (Event Tracing for Windows) 追跡参加要素は、[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] の一部として提供されています。 このサンプルの追跡参加要素は、レコードを XML 形式でテキスト ファイルに書き込みます。  
