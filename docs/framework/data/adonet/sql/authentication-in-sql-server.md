@@ -7,6 +7,7 @@ ms.sourcegitcommit: 77d9a94dac4c05827ed0663d95e0f9ad35d6682e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/24/2018
+ms.locfileid: "34472388"
 ---
 # <a name="authentication-in-sql-server"></a><span data-ttu-id="03d4d-102">SQL Server での認証</span><span class="sxs-lookup"><span data-stu-id="03d4d-102">Authentication in SQL Server</span></span>
 <span data-ttu-id="03d4d-103">SQL Server は、Windows 認証モードと混合モードの 2 つの認証モードをサポートしています。</span><span class="sxs-lookup"><span data-stu-id="03d4d-103">SQL Server supports two authentication modes, Windows authentication mode and mixed mode.</span></span>  

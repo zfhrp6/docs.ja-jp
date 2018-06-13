@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33644447"
 ---
 # <a name="how-to-combine-and-compare-string-collections-linq-visual-basic"></a><span data-ttu-id="ed9ee-102">方法: 結合および比較文字列のコレクションに (LINQ) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="ed9ee-102">How to: Combine and Compare String Collections (LINQ) (Visual Basic)</span></span>
 <span data-ttu-id="ed9ee-103">この例では、複数行のテキストが含まれるファイルをマージし、結果を並び替える方法を示します。</span><span class="sxs-lookup"><span data-stu-id="ed9ee-103">This example shows how to merge files that contain lines of text and then sort the results.</span></span> <span data-ttu-id="ed9ee-104">具体的には、複数のテキスト行からなる 2 つの集合の単純な連結、和集合、積集合を求める方法を示します。</span><span class="sxs-lookup"><span data-stu-id="ed9ee-104">Specifically, it shows how to perform a simple concatenation, a union, and an intersection on the two sets of text lines.</span></span>  

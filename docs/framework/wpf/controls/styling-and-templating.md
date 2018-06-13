@@ -20,6 +20,7 @@ ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/23/2018
+ms.locfileid: "34457759"
 ---
 # <a name="styling-and-templating"></a><span data-ttu-id="b93b0-102">スタイルとテンプレート</span><span class="sxs-lookup"><span data-stu-id="b93b0-102">Styling and Templating</span></span>
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]<span data-ttu-id="b93b0-103">スタイルとテンプレートは、開発者および設計者が視覚的に説得力のある効果を作成し、製品の一貫した外観を作成できる、一連の機能 (スタイル、テンプレート、トリガー、およびストーリーボード) を表します。</span><span class="sxs-lookup"><span data-stu-id="b93b0-103"> styling and templating refer to a suite of features (styles, templates, triggers, and storyboards) that allow developers and designers to create visually compelling effects and to create a consistent appearance for their product.</span></span> <span data-ttu-id="b93b0-104">開発者や設計者は、アプリケーション単位で広範囲に外観をカスタマイズできますが、アプリケーション内およびアプリケーション間で外観の保守および共有を可能にするには、強力なスタイルとテンプレートのモデルが必要です。</span><span class="sxs-lookup"><span data-stu-id="b93b0-104">Although developers and or designers can customize the appearance extensively on an application-by-application basis, a strong styling and templating model is necessary to allow maintenance and sharing of the appearance within and among applications.</span></span> [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]<span data-ttu-id="b93b0-105"> はそのモデルを提供します。</span><span class="sxs-lookup"><span data-stu-id="b93b0-105"> provides that model.</span></span>  

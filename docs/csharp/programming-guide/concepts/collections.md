@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54231aa56fca059e9297888a96fbca1d4cf3746c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/25/2018
+ms.locfileid: "34549621"
 ---
 # <a name="collections-c"></a><span data-ttu-id="7229f-102">コレクション (C#)</span><span class="sxs-lookup"><span data-stu-id="7229f-102">Collections (C#)</span></span>
 <span data-ttu-id="7229f-103">多くのアプリケーションで、関連するオブジェクトのグループの作成および管理が必要になります。</span><span class="sxs-lookup"><span data-stu-id="7229f-103">For many applications, you want to create and manage groups of related objects.</span></span> <span data-ttu-id="7229f-104">オブジェクトをグループ化するには、オブジェクトの配列を作成する方法と、オブジェクトのコレクションを作成する方法があります。</span><span class="sxs-lookup"><span data-stu-id="7229f-104">There are two ways to group objects: by creating arrays of objects, and by creating collections of objects.</span></span>  

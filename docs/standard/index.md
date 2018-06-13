@@ -11,6 +11,7 @@ ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/23/2018
+ms.locfileid: "34457012"
 ---
 # <a name="net-guide"></a><span data-ttu-id="cebd7-103">.NET のガイド</span><span class="sxs-lookup"><span data-stu-id="cebd7-103">.NET Guide</span></span>
 

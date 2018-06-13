@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33643516"
 ---
 # <a name="how-to-filter-on-an-optional-element-visual-basic"></a><span data-ttu-id="a5952-102">方法: 省略可能な要素 (Visual Basic) でフィルター</span><span class="sxs-lookup"><span data-stu-id="a5952-102">How to: Filter on an Optional Element (Visual Basic)</span></span>
 <span data-ttu-id="a5952-103">要素に対するフィルター処理が、その要素が XML ドキュメント内に存在しているかどうか明確でない場合でも必要になることがあります。</span><span class="sxs-lookup"><span data-stu-id="a5952-103">Sometimes you want to filter for an element even though you are not sure it exists in your XML document.</span></span> <span data-ttu-id="a5952-104">特定の要素が子要素を持たない場合、その要素に対するフィルター処理によって null 参照例外が発生しないように検索を実行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a5952-104">The search should be executed so that if the particular element does not have the child element, you do not trigger a null reference exception by filtering for it.</span></span> <span data-ttu-id="a5952-105">次の例では、`Child5` 要素には `Type` 子要素はありませんが、クエリは正常に実行されます。</span><span class="sxs-lookup"><span data-stu-id="a5952-105">In the following example, the `Child5` element does not have a `Type` child element, but the query still executes correctly.</span></span>  
