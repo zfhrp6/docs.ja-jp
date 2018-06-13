@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33604589"
 ---
 # <a name="visual-basic-runtime-library-members"></a>Visual Basic ランタイム ライブラリのメンバー
 `Microsoft.VisualBasic`名前空間には、クラス、モジュール、定数、および Visual Basic ランタイム ライブラリを構成する列挙体が含まれています。 これらのライブラリのメンバーでは、プロシージャ、プロパティ、およびコードで使用できる定数値を提供します。 各モジュール、クラスは、特定のカテゴリの機能を表します。  

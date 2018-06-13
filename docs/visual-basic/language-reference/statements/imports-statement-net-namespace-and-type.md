@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33604485"
 ---
 # <a name="imports-statement-net-namespace-and-type"></a>Imports ステートメント (.NET 名前空間および型)
 有効では、名前空間修飾なしで参照されるように名前を入力します。  

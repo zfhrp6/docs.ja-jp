@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33604901"
 ---
 # <a name="aggregate-clause-visual-basic"></a>Aggregate 句 (Visual Basic)
 コレクションに 1 つまたは複数の集計関数を適用します。  

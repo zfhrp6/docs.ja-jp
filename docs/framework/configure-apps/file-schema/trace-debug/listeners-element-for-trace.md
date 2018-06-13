@@ -15,6 +15,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32748140"
 ---
 # <a name="ltlistenersgt-element-for-lttracegt"></a>&lt;リスナー&gt;要素&lt;トレース&gt;
 リスナーを収集すると、ストアを指定し、メッセージをルーティングします。 リスナーでは、適切なターゲットのトレースを出力します。  

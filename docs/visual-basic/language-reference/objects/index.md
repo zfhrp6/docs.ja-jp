@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33604251"
 ---
 # <a name="objects-visual-basic"></a>オブジェクト (Visual Basic)
 このトピックでは、Visual Basic ランタイム オブジェクトを示すトピックや、そのメンバー プロシージャ、プロパティ、およびイベントの表を含む、その他のトピックへのリンクを提供します。  

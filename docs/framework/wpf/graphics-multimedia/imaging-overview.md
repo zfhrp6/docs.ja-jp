@@ -26,6 +26,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33566393"
 ---
 # <a name="imaging-overview"></a>イメージングの概要
 このトピックでは、[!INCLUDE[TLA#tla_wic](../../../../includes/tlasharptla-wic-md.md)] の概要を説明します。 開発者は、[!INCLUDE[TLA2#tla_wic](../../../../includes/tla2sharptla-wic-md.md)] を使用して、イメージの表示、変換、および形式設定を実行できます。  
@@ -167,13 +168,13 @@ ms.lasthandoff: 05/04/2018
   
  メタデータにアクセスが提供される、<xref:System.Windows.Media.Imaging.BitmapSource.Metadata%2A>のプロパティ、<xref:System.Windows.Media.Imaging.BitmapSource>オブジェクト。 <xref:System.Windows.Media.Imaging.BitmapSource.Metadata%2A> 返します、<xref:System.Windows.Media.Imaging.BitmapMetadata>をイメージに含まれるすべてのメタデータを含むオブジェクト。 このデータは、1 つのメタデータ スキーマでも、異なるスキーマの組み合わせでもかまいません。 [!INCLUDE[TLA2#tla_wic](../../../../includes/tla2sharptla-wic-md.md)] では、次のメタデータをサポートします。[!INCLUDE[TLA#tla_exif](../../../../includes/tlasharptla-exif-md.md)]EXt (PNG テキスト データ)、[!INCLUDE[TLA#tla_ifd](../../../../includes/tlasharptla-ifd-md.md)][!INCLUDE[TLA#tla_iptc](../../../../includes/tlasharptla-iptc-md.md)]および [!INCLUDE[TLA#tla_xmp](../../../../includes/tlasharptla-xmp-md.md)]。  
   
- メタデータの読み込みのプロセスを簡略化するために<xref:System.Windows.Media.Imaging.BitmapMetadata>など、簡単にアクセスできる名前付きプロパティをいくつか提供<xref:System.Windows.Media.Imaging.BitmapMetadata.Author%2A>、 <xref:System.Windows.Media.Imaging.BitmapMetadata.Title%2A>、および<xref:System.Windows.Media.Imaging.BitmapMetadata.CameraModel%2A>です。 これらの名前付きプロパティの多くは、メタデータを書き込むためにも使用できます。 メタデータを読み取るための追加サポートは、メタデータ クエリ リーダーによって提供されます。 <xref:System.Windows.Media.Imaging.BitmapMetadata.GetQuery%2A>など文字列クエリを提供することにより、メタデータ クエリ リーダーを取得するメソッドが使用される *"/app1 exif/"* です。 次の例では、<xref:System.Windows.Media.Imaging.BitmapMetadata.GetQuery%2A>に格納されているテキストを取得するために使用、 *「テキスト/説明」*場所。  
+ メタデータの読み込みのプロセスを簡略化するために<xref:System.Windows.Media.Imaging.BitmapMetadata>など、簡単にアクセスできる名前付きプロパティをいくつか提供<xref:System.Windows.Media.Imaging.BitmapMetadata.Author%2A>、 <xref:System.Windows.Media.Imaging.BitmapMetadata.Title%2A>、および<xref:System.Windows.Media.Imaging.BitmapMetadata.CameraModel%2A>です。 これらの名前付きプロパティの多くは、メタデータを書き込むためにも使用できます。 メタデータを読み取るための追加サポートは、メタデータ クエリ リーダーによって提供されます。 <xref:System.Windows.Media.Imaging.BitmapMetadata.GetQuery%2A>など文字列クエリを提供することにより、メタデータ クエリ リーダーを取得するメソッドが使用される *"/app1 exif/"* です。 次の例では、<xref:System.Windows.Media.Imaging.BitmapMetadata.GetQuery%2A>に格納されているテキストを取得するために使用、 *「テキスト/説明」* 場所。  
   
  [!code-cpp[BitmapMetadata#GetQuery](../../../../samples/snippets/cpp/VS_Snippets_Wpf/BitMapMetadata/CPP/BitmapMetadata.cpp#getquery)]
  [!code-csharp[BitmapMetadata#GetQuery](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BitMapMetadata/CSharp/BitmapMetadata.cs#getquery)]
  [!code-vb[BitmapMetadata#GetQuery](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/BitMapMetadata/VB/BitmapMetadata.vb#getquery)]  
   
- メタデータを書き込むには、メタデータ クエリ ライターが使用されます。 <xref:System.Windows.Media.Imaging.BitmapMetadata.SetQuery%2A> クエリの記述を取得し、目的の値を設定します。 次の例では、<xref:System.Windows.Media.Imaging.BitmapMetadata.SetQuery%2A>に格納されているテキストの記述に使用される、 *「テキスト/説明」*場所。  
+ メタデータを書き込むには、メタデータ クエリ ライターが使用されます。 <xref:System.Windows.Media.Imaging.BitmapMetadata.SetQuery%2A> クエリの記述を取得し、目的の値を設定します。 次の例では、<xref:System.Windows.Media.Imaging.BitmapMetadata.SetQuery%2A>に格納されているテキストの記述に使用される、 *「テキスト/説明」* 場所。  
   
  [!code-cpp[BitmapMetadata#SetQuery](../../../../samples/snippets/cpp/VS_Snippets_Wpf/BitMapMetadata/CPP/BitmapMetadata.cpp#setquery)]
  [!code-csharp[BitmapMetadata#SetQuery](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BitMapMetadata/CSharp/BitmapMetadata.cs#setquery)]

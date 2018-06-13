@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33565913"
 ---
 # <a name="xamlservices-class-and-basic-xaml-reading-or-writing"></a>XAMLServices クラスおよび基本的な XAML の読み取りまたは書き込み
 <xref:System.Xaml.XamlServices> は、XAML ノード ストリーム、またはこれらのノードから取得された XAML 型システム情報への固有のアクセスを必要としない XAML シナリオに対応するために使用できる、.NET Framework XAML サービスによって提供されるクラスです。 要約すると、<xref:System.Xaml.XamlServices> API は次のように説明できます。 `Load` または `Parse` to suppまたはt a XAML load path, `Save` to suppまたはt a XAML save path, and `Transform` で読み込みパスと保存パスを連結する方法を指定します。 `Transform` は、XAML スキーマを別の XAML スキーマに変更するために使用できます。 このトピックでは、それぞれの API 分類について要約し、特定のメソッド オーバーロード間の相違点について説明します。  

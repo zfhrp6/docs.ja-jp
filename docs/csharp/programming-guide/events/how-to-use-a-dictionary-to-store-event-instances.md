@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33327217"
 ---
 # <a name="how-to-use-a-dictionary-to-store-event-instances-c-programming-guide"></a>方法 : ディクショナリを使用してイベント インスタンスを格納する (C# プログラミング ガイド)
 多数のイベントを公開する場合に `accessor-declarations` を使用すると、各イベントにフィールドを割り当てる代わりにディクショナリを使用してイベント インスタンスを格納できます。 これが便利なのは、多数のイベントがあるものの、それらのほとんどが実装されそうもない場合だけです。  

@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33566809"
 ---
 # <a name="xclass-directive"></a>x:Class ディレクティブ
 部分クラスのマークアップと分離コードの間で結合する XAML マークアップのコンパイルを構成します。 コードの部分クラスが個別のコード ファイル内で定義されている、[!INCLUDE[TLA#tla_cls](../../../includes/tlasharptla-cls-md.md)]言語、マークアップの部分クラスは、通常、XAML のコンパイル時にコード生成によって作成されします。  

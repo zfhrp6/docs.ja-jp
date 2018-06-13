@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32765075"
 ---
 # <a name="parameters-entity-sql"></a>パラメーター (Entity SQL)
 パラメーターは、[!INCLUDE[esql](../../../../../../includes/esql-md.md)] の外部で定義される変数です。通常は、ホスト言語で使用されるバインド API を通じて定義されます。 それぞれのパラメーターには、名前と型があります。 クエリ式でパラメーター名が定義されているで (@) 記号をプレフィックスとして。 これにより、クエリ内で定義されている他の名前 (プロパティ名など) と明確に区別されます。  
