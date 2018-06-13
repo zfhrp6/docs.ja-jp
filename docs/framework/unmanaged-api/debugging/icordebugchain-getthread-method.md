@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 291c8129a790c235ee6e7f163c49c4e1e726cce5
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33402714"
 ---
 # <a name="icordebugchaingetthread-method"></a><span data-ttu-id="57c2b-102">ICorDebugChain::GetThread メソッド</span><span class="sxs-lookup"><span data-stu-id="57c2b-102">ICorDebugChain::GetThread Method</span></span>
 <span data-ttu-id="57c2b-103">この呼び出しチェーンが物理スレッドの一部を取得します。</span><span class="sxs-lookup"><span data-stu-id="57c2b-103">Gets the physical thread this call chain is part of.</span></span>  

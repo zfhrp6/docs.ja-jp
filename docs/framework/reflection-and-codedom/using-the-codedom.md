@@ -27,6 +27,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33399020"
 ---
 # <a name="using-the-codedom"></a><span data-ttu-id="b5bd5-102">CodeDOM の使用方法</span><span class="sxs-lookup"><span data-stu-id="b5bd5-102">Using the CodeDOM</span></span>
 <span data-ttu-id="b5bd5-103">CodeDOM には一般的なさまざま種類のソース コード要素を表す型が用意されています。</span><span class="sxs-lookup"><span data-stu-id="b5bd5-103">The CodeDOM provides types that represent many common types of source code elements.</span></span> <span data-ttu-id="b5bd5-104">オブジェクト グラフをアセンブルする CodeDOM 要素を使用すると、ソース コード モデルを構築するプログラムをデザインできます。</span><span class="sxs-lookup"><span data-stu-id="b5bd5-104">You can design a program that builds a source code model using CodeDOM elements to assemble an object graph.</span></span> <span data-ttu-id="b5bd5-105">このオブジェクト グラフは、サポートされているプログラミング言語用の CodeDOM コード ジェネレーターを使用して、ソース コードとしてレンダリングできます。</span><span class="sxs-lookup"><span data-stu-id="b5bd5-105">This object graph can be rendered as source code using a CodeDOM code generator for a supported programming language.</span></span> <span data-ttu-id="b5bd5-106">また、CodeDOM を使用して、ソース コードをバイナリ アセンブリにコンパイルすることもできます。</span><span class="sxs-lookup"><span data-stu-id="b5bd5-106">The CodeDOM can also be used to compile source code into a binary assembly.</span></span>  

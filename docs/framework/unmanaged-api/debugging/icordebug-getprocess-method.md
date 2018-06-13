@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: fc095b2c9f546e8b75d4330024c8c593f7ada8b4
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33404772"
 ---
 # <a name="icordebuggetprocess-method"></a><span data-ttu-id="eb512-102">ICorDebug::GetProcess メソッド</span><span class="sxs-lookup"><span data-stu-id="eb512-102">ICorDebug::GetProcess Method</span></span>
 <span data-ttu-id="eb512-103">指定されたプロセスの"ICorDebugProcess"のインスタンスへのポインターを取得します。</span><span class="sxs-lookup"><span data-stu-id="eb512-103">Gets a pointer to the "ICorDebugProcess" instance for the specified process.</span></span>  

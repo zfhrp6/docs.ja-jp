@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33399770"
 ---
 # <a name="mdbgexe-net-framework-command-line-debugger"></a><span data-ttu-id="b3934-102">MDbg.exe (.NET Framework コマンド ライン デバッガー)</span><span class="sxs-lookup"><span data-stu-id="b3934-102">MDbg.exe (.NET Framework Command-Line Debugger)</span></span>
 <span data-ttu-id="b3934-103">.NET Framework コマンド ライン デバッガーは、.NET Framework 共通言語ランタイムを対象としたプログラムに含まれるバグの検索と修復について、ツールの販売元とアプリケーション開発者を支援するツールです。</span><span class="sxs-lookup"><span data-stu-id="b3934-103">The NET Framework Command-Line Debugger helps tools vendors and application developers find and fix bugs in programs that target the .NET Framework common language runtime.</span></span> <span data-ttu-id="b3934-104">このツールは、ランタイムのデバッグ API を使用してデバッグ サービスを提供します。</span><span class="sxs-lookup"><span data-stu-id="b3934-104">This tool uses the runtime debugging API to provide debugging services.</span></span> <span data-ttu-id="b3934-105">MDbg.exe を使用してもマネージ コードのデバッグしか実行できません。アンマネージ コードのデバッグはサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="b3934-105">You can use MDbg.exe to debug only managed code; there is no support for debugging unmanaged code.</span></span>  

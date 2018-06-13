@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33409354"
 ---
 # <a name="ui-automation-support-for-the-menuitem-control-type"></a><span data-ttu-id="0f4c9-102">UI オートメーションによる MenuItem コントロール型のサポート</span><span class="sxs-lookup"><span data-stu-id="0f4c9-102">UI Automation Support for the MenuItem Control Type</span></span>
 > [!NOTE]

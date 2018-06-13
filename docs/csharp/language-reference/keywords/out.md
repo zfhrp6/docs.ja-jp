@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33266582"
 ---
 # <a name="out-c-reference"></a><span data-ttu-id="042a7-102">out (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="042a7-102">out (C# Reference)</span></span>
 <span data-ttu-id="042a7-103">`out` キーワードは、次の 2 つのコンテキストで使うことができます。</span><span class="sxs-lookup"><span data-stu-id="042a7-103">You can use the `out` keyword in two contexts:</span></span>

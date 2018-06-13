@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33399566"
 ---
 # <a name="how-to-enable-wif-tracing"></a><span data-ttu-id="c8375-102">方法: WIF トレースの有効化</span><span class="sxs-lookup"><span data-stu-id="c8375-102">How To: Enable WIF Tracing</span></span>
 ## <a name="applies-to"></a><span data-ttu-id="c8375-103">対象</span><span class="sxs-lookup"><span data-stu-id="c8375-103">Applies To</span></span>  

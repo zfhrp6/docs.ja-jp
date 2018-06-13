@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33399978"
 ---
 # <a name="custom-token-handlers"></a><span data-ttu-id="fec30-102">カスタムのトークン ハンドラー</span><span class="sxs-lookup"><span data-stu-id="fec30-102">Custom Token Handlers</span></span>
 <span data-ttu-id="fec30-103">このトピックでは、WIF のトークン ハンドラーと、それらを使用してトークンをどのように処理するかを説明します。</span><span class="sxs-lookup"><span data-stu-id="fec30-103">This topic discusses token handlers in WIF and how they are used to process tokens.</span></span> <span data-ttu-id="fec30-104">また、WIF で既定ではサポートされていないトークンの種類用にカスタム トークン ハンドラーを作成するために必要なことについても説明します。</span><span class="sxs-lookup"><span data-stu-id="fec30-104">The topic also covers what is necessary to create custom token handlers for token types that are not supported by default in WIF.</span></span>  

@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 57a350fadfa77fdad545ca7ccf2f63d28607c2ba
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33403921"
 ---
 # <a name="addfile-method1"></a><span data-ttu-id="affd7-102">AddFile Method1</span><span class="sxs-lookup"><span data-stu-id="affd7-102">AddFile Method1</span></span>
 <span data-ttu-id="affd7-103">ファイルをアセンブリに追加されます。</span><span class="sxs-lookup"><span data-stu-id="affd7-103">Adds files to the assembly.</span></span> <span data-ttu-id="affd7-104">非バインド モジュールの作成にも使用できます。</span><span class="sxs-lookup"><span data-stu-id="affd7-104">Can also be used to create unbound modules.</span></span>  

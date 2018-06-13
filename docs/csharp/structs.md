@@ -8,6 +8,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33349770"
 ---
 # <a name="structs"></a><span data-ttu-id="f21db-103">構造体</span><span class="sxs-lookup"><span data-stu-id="f21db-103">Structs</span></span>
 <span data-ttu-id="f21db-104">"*構造体*" は値の型です。</span><span class="sxs-lookup"><span data-stu-id="f21db-104">A *struct* is a value type.</span></span> <span data-ttu-id="f21db-105">構造体が作成されると、構造体が割り当てられている変数にはその構造体の実際のデータが設定されます。</span><span class="sxs-lookup"><span data-stu-id="f21db-105">When a struct is created, the variable to which the struct is assigned holds the struct's actual data.</span></span> <span data-ttu-id="f21db-106">構造体が新しい変数に割り当てられると、そのデータがコピーされます。</span><span class="sxs-lookup"><span data-stu-id="f21db-106">When the struct is assigned to a new variable, it is copied.</span></span> <span data-ttu-id="f21db-107">したがって、新しい変数と元の変数には、同じデータのコピーが別個に含まれることになります。</span><span class="sxs-lookup"><span data-stu-id="f21db-107">The new variable and the original variable therefore contain two separate copies of the same data.</span></span> <span data-ttu-id="f21db-108">一方のコピーに対して行われた変更は、もう一方のコピーには影響しません。</span><span class="sxs-lookup"><span data-stu-id="f21db-108">Changes made to one copy do not affect the other copy.</span></span>

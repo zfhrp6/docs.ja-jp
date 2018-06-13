@@ -6,9 +6,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: f1089668aa19747f5f694360ebb87098e2df9ad4
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33405552"
 ---
 # <a name="icordebugappdomain4getobjectforccw-method"></a><span data-ttu-id="5273d-102">ICorDebugAppDomain4::GetObjectForCCW メソッド</span><span class="sxs-lookup"><span data-stu-id="5273d-102">ICorDebugAppDomain4::GetObjectForCCW Method</span></span>
 <span data-ttu-id="5273d-103">COM 呼び出し可能ラッパー (CCW: COM Callable Wrapper) ポインターからマネージ オブジェクトを取得します。</span><span class="sxs-lookup"><span data-stu-id="5273d-103">Gets a managed object from a COM callable wrapper (CCW) pointer.</span></span>  

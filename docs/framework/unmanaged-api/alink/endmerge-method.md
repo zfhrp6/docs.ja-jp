@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: e8f9eecd6d6d74717eb7c1e389bfa24e40afc950
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33402575"
 ---
 # <a name="endmerge-method"></a><span data-ttu-id="0a7a0-102">EndMerge メソッド</span><span class="sxs-lookup"><span data-stu-id="0a7a0-102">EndMerge Method</span></span>
 <span data-ttu-id="0a7a0-103">すべてのカスタム属性が生成スコープにマージされていることを示します。</span><span class="sxs-lookup"><span data-stu-id="0a7a0-103">Indicates that all custom attributes have been merged into the emit scope.</span></span>  

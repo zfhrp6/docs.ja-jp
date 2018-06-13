@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33399744"
 ---
 # <a name="viewing-type-information"></a><span data-ttu-id="35e8c-102">型情報の表示</span><span class="sxs-lookup"><span data-stu-id="35e8c-102">Viewing Type Information</span></span>
 <span data-ttu-id="35e8c-103"><xref:System.Type?displayProperty=nameWithType> クラスは、リフレクションの中心です。</span><span class="sxs-lookup"><span data-stu-id="35e8c-103">The <xref:System.Type?displayProperty=nameWithType> class is central to reflection.</span></span> <span data-ttu-id="35e8c-104">共通言語ランタイムは、リフレクションの要求時に読み込まれる型の**型**を作成します。</span><span class="sxs-lookup"><span data-stu-id="35e8c-104">The common language runtime creates the **Type** for a loaded type when reflection requests it.</span></span> <span data-ttu-id="35e8c-105">**型**オブジェクトのメソッド、フィールド、プロパティ、および入れ子になったクラスから、その型に関することがすべてわかります。</span><span class="sxs-lookup"><span data-stu-id="35e8c-105">You can use a **Type** object's methods, fields, properties, and nested classes to find out everything about that type.</span></span>  

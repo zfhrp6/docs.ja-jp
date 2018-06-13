@@ -22,6 +22,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33410034"
 ---
 # <a name="resgenexe-resource-file-generator"></a><span data-ttu-id="184e9-102">Resgen.exe (リソース ファイル ジェネレーター)</span><span class="sxs-lookup"><span data-stu-id="184e9-102">Resgen.exe (Resource File Generator)</span></span>
 <span data-ttu-id="184e9-103">リソース ファイル ジェネレーター (Resgen.exe) は、テキスト (.txt または .restext) ファイルおよび XML ベースのリソース形式 (.resx) ファイルを共通言語ランタイムのバイナリ (.resources) ファイルに変換します。この .resources ファイルは、ランタイム バイナリ実行可能ファイルまたはサテライト アセンブリに埋め込むことができます。</span><span class="sxs-lookup"><span data-stu-id="184e9-103">The Resource File Generator (Resgen.exe) converts text (.txt or .restext) files and XML-based resource format (.resx) files to common language runtime binary (.resources) files that can be embedded in a runtime binary executable or satellite assembly.</span></span> <span data-ttu-id="184e9-104">「[リソース ファイルの作成](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="184e9-104">(See [Creating Resource Files](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md).)</span></span>  

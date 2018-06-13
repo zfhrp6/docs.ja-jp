@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 7fe2fcf10b517f4eb7b1c7e87142afb386821246
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33404115"
 ---
 # <a name="cordebugexceptionunwindcallbacktype-enumeration"></a><span data-ttu-id="32fb1-102">CorDebugExceptionUnwindCallbackType 列挙型</span><span class="sxs-lookup"><span data-stu-id="32fb1-102">CorDebugExceptionUnwindCallbackType Enumeration</span></span>
 <span data-ttu-id="32fb1-103">アンワインド フェーズ中にコールバックによって通知されるイベントを示します。</span><span class="sxs-lookup"><span data-stu-id="32fb1-103">Indicates the event that is being signaled by the callback during the unwind phase.</span></span>  

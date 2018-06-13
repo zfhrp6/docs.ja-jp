@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33358078"
 ---
 # <a name="return-the-set-union-of-two-sequences"></a><span data-ttu-id="a1646-102">2 つのシーケンスの和集合の取得</span><span class="sxs-lookup"><span data-stu-id="a1646-102">Return the Set Union of Two Sequences</span></span>
 <span data-ttu-id="a1646-103">2 つのシーケンスの和集合を返すには、<xref:System.Linq.Queryable.Union%2A> 演算子を使用します。</span><span class="sxs-lookup"><span data-stu-id="a1646-103">Use the <xref:System.Linq.Queryable.Union%2A> operator to return the set union of two sequences.</span></span>  

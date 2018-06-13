@@ -6,9 +6,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 7aa4d27e6b68137be88b4837d85fdf7c886a8133
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33405055"
 ---
 # <a name="icordebugappdomain4-interface"></a><span data-ttu-id="30097-102">ICorDebugAppDomain4 インターフェイス</span><span class="sxs-lookup"><span data-stu-id="30097-102">ICorDebugAppDomain4 Interface</span></span>
 <span data-ttu-id="30097-103">COM 呼び出し可能ラッパーからマネージ オブジェクトを取得する ICorDebugAppDomain インターフェイスを論理的に拡張します。</span><span class="sxs-lookup"><span data-stu-id="30097-103">Logically extends the ICorDebugAppDomain interface to get a managed object from a COM callable wrapper.</span></span>  

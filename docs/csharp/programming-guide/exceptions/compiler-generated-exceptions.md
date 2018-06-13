@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33331442"
 ---
 # <a name="compiler-generated-exceptions-c-programming-guide"></a><span data-ttu-id="f3bb5-102">コンパイラにより生成された例外 (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="f3bb5-102">Compiler-Generated Exceptions (C# Programming Guide)</span></span>
 <span data-ttu-id="f3bb5-103">一部の例外は、基本操作が失敗した場合に .NET Framework の共通言語ランタイム (CLR) によって自動的にスローされます。</span><span class="sxs-lookup"><span data-stu-id="f3bb5-103">Some exceptions are thrown automatically by the .NET Framework's common language runtime (CLR) when basic operations fail.</span></span> <span data-ttu-id="f3bb5-104">次の表には、これらの例外とそのエラー条件が一覧で示されています。</span><span class="sxs-lookup"><span data-stu-id="f3bb5-104">These exceptions and their error conditions are listed in the following table.</span></span>  

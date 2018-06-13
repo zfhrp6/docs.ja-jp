@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33409594"
 ---
 # <a name="aximpexe-windows-forms-activex-control-importer"></a><span data-ttu-id="fb44e-102">Aximp.exe (Windows フォーム ActiveX コントロール インポーター)</span><span class="sxs-lookup"><span data-stu-id="fb44e-102">Aximp.exe (Windows Forms ActiveX Control Importer)</span></span>
 <span data-ttu-id="fb44e-103">ActiveX コントロール インポーターは、ActiveX コントロール用の COM タイプ ライブラリに属する型定義を Windows フォーム コントロールに変換します。</span><span class="sxs-lookup"><span data-stu-id="fb44e-103">The ActiveX Control Importer converts type definitions in a COM type library for an ActiveX control into a Windows Forms control.</span></span>  

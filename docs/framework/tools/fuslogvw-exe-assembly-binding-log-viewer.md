@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33400212"
 ---
 # <a name="fuslogvwexe-assembly-binding-log-viewer"></a><span data-ttu-id="51bca-102">Fuslogvw.exe (アセンブリ バインディング ログ ビューアー)</span><span class="sxs-lookup"><span data-stu-id="51bca-102">Fuslogvw.exe (Assembly Binding Log Viewer)</span></span>
 <span data-ttu-id="51bca-103">アセンブリ バインディング ログ ビューアーは、アセンブリ バインドの詳細を表示します。</span><span class="sxs-lookup"><span data-stu-id="51bca-103">The Assembly Binding Log Viewer displays details for assembly binds.</span></span> <span data-ttu-id="51bca-104">この情報は、.NET Framework が実行時にアセンブリを見つけられない原因を診断する場合に役立ちます。</span><span class="sxs-lookup"><span data-stu-id="51bca-104">This information helps you diagnose why the .NET Framework cannot locate an assembly at run time.</span></span> <span data-ttu-id="51bca-105">通常、このようなエラーは、アセンブリが間違った位置に配置されているか、無効になったネイティブ イメージが存在するか、バージョン番号またはカルチャの不一致が存在する場合に発生します。</span><span class="sxs-lookup"><span data-stu-id="51bca-105">These failures are usually the result of an assembly deployed to the wrong location, a native image that is no longer valid, or a mismatch in version numbers or cultures.</span></span> <span data-ttu-id="51bca-106">通常、共通言語ランタイムによるアセンブリ検出エラーは、アプリケーション内で <xref:System.TypeLoadException> として示されます。</span><span class="sxs-lookup"><span data-stu-id="51bca-106">The common language runtime's failure to locate an assembly typically shows up as a <xref:System.TypeLoadException> in your application.</span></span>  

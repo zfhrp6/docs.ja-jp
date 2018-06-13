@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33400108"
 ---
 # <a name="client-side-ui-automation-provider-implementation"></a><span data-ttu-id="05d87-102">クライアント側 UI オートメーション プロバイダーの実装</span><span class="sxs-lookup"><span data-stu-id="05d87-102">Client-Side UI Automation Provider Implementation</span></span>
 > [!NOTE]

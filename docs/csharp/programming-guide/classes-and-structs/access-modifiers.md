@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33314110"
 ---
 # <a name="access-modifiers-c-programming-guide"></a><span data-ttu-id="42500-102">アクセス修飾子 (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="42500-102">Access Modifiers (C# Programming Guide)</span></span>
 <span data-ttu-id="42500-103">すべての型とそのメンバーには、アクセシビリティ レベルがあります。同じアセンブリ (または他のアセンブリ) にある他のコードからそれらの型やそのメンバーを利用できるかどうかは、アクセシビリティ レベルによって制御されます。</span><span class="sxs-lookup"><span data-stu-id="42500-103">All types and type members have an accessibility level, which controls whether they can be used from other code in your assembly or other assemblies.</span></span> <span data-ttu-id="42500-104">型またはメンバーにはその宣言時に、以下のアクセス修飾子を使ってアクセシビリティを指定できます。</span><span class="sxs-lookup"><span data-stu-id="42500-104">You can use the following access modifiers to specify the accessibility of a type or member when you declare it:</span></span>  

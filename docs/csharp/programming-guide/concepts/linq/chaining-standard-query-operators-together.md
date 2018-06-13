@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33326151"
 ---
 # <a name="chaining-standard-query-operators-together-c"></a><span data-ttu-id="ff075-102">標準クエリ演算子の連結 (C#)</span><span class="sxs-lookup"><span data-stu-id="ff075-102">Chaining Standard Query Operators Together (C#)</span></span>
 <span data-ttu-id="ff075-103">これは「[チュートリアル: クエリの連結 (C#)](../../../../csharp/programming-guide/concepts/linq/tutorial-chaining-queries-together.md)」チュートリアルの最後のトピックです。</span><span class="sxs-lookup"><span data-stu-id="ff075-103">This is the final topic in the [Tutorial: Chaining Queries Together (C#)](../../../../csharp/programming-guide/concepts/linq/tutorial-chaining-queries-together.md) tutorial.</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32757217"
 ---
 # <a name="connection-strings-in-adonet"></a><span data-ttu-id="1c3c3-102">ADO.NET での接続文字列</span><span class="sxs-lookup"><span data-stu-id="1c3c3-102">Connection Strings in ADO.NET</span></span>
 <span data-ttu-id="1c3c3-103">.NET Framework 2.0 では、接続文字列を扱う新しい機能が導入されました。接続文字列ビルダー クラスに追加された新しいキーワードもその 1 つであり、有効な接続文字列を実行時に簡単に作成できるようになっています。</span><span class="sxs-lookup"><span data-stu-id="1c3c3-103">The .NET Framework 2.0 introduced new capabilities for working with connection strings, including the introduction of new keywords to the connection string builder classes, which facilitate creating valid connection strings at run time.</span></span>  

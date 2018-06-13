@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33357314"
 ---
 # <a name="dangerousthreadingapi-mda"></a><span data-ttu-id="635bd-102">dangerousThreadingAPI MDA</span><span class="sxs-lookup"><span data-stu-id="635bd-102">dangerousThreadingAPI MDA</span></span>
 <span data-ttu-id="635bd-103">`dangerousThreadingAPI` マネージ デバッグ アシスタント (MDA) は、現在のスレッド以外のスレッドで <xref:System.Threading.Thread.Suspend%2A?displayProperty=nameWithType> メソッドが呼び出されるとアクティブになります。</span><span class="sxs-lookup"><span data-stu-id="635bd-103">The `dangerousThreadingAPI` managed debugging assistant (MDA) is activated when the <xref:System.Threading.Thread.Suspend%2A?displayProperty=nameWithType> method is called on a thread other than the current thread.</span></span>  

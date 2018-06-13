@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: d5809221f2f31bc725c6a62fa5f8f91822f1c157
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33407235"
 ---
 # <a name="cordebugsteprange-structure"></a><span data-ttu-id="fa0b7-102">COR_DEBUG_STEP_RANGE 構造体</span><span class="sxs-lookup"><span data-stu-id="fa0b7-102">COR_DEBUG_STEP_RANGE Structure</span></span>
 <span data-ttu-id="fa0b7-103">コードの範囲に関するオフセット情報が含まれます。</span><span class="sxs-lookup"><span data-stu-id="fa0b7-103">Contains the offset information for a range of code.</span></span>  

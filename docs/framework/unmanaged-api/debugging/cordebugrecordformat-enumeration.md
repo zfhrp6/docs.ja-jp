@@ -14,9 +14,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: a27c96a7be9b5d868e07da11f1a239b9dd5fe2f3
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33402853"
 ---
 # <a name="cordebugrecordformat-enumeration"></a><span data-ttu-id="b5cb4-102">CorDebugRecordFormat 列挙体</span><span class="sxs-lookup"><span data-stu-id="b5cb4-102">CorDebugRecordFormat Enumeration</span></span>
 <span data-ttu-id="b5cb4-103">ネイティブ例外デバッグ イベントに関する情報を格納するバイト配列内のデータの形式を示します。</span><span class="sxs-lookup"><span data-stu-id="b5cb4-103">Describes the format of the data in a byte array that contains information about a native exception debug event.</span></span>  

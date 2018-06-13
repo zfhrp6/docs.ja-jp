@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33402029"
 ---
 # <a name="developer-command-prompt-for-visual-studio"></a><span data-ttu-id="ab926-102">Visual Studio 用開発者コマンド プロンプト</span><span class="sxs-lookup"><span data-stu-id="ab926-102">Developer Command Prompt for Visual Studio</span></span>
 <span data-ttu-id="ab926-103">Visual Studio の開発者コマンド プロンプトでは、.NET Framework ツールを使いやすくするための環境変数が自動的に設定されます。</span><span class="sxs-lookup"><span data-stu-id="ab926-103">The Developer Command Prompt for Visual Studio automatically sets the environment variables that enable you to easily use .NET Framework tools.</span></span> <span data-ttu-id="ab926-104">開発者コマンド プロンプトは、完全版または Community Edition の Visual Studio でインストールされます。</span><span class="sxs-lookup"><span data-stu-id="ab926-104">The Developer Command Prompt is installed with full or community editions of Visual Studio.</span></span> <span data-ttu-id="ab926-105">Express バージョンの Visual Studio ではインストールされません。</span><span class="sxs-lookup"><span data-stu-id="ab926-105">It is not installed with the Express versions of Visual Studio.</span></span>  

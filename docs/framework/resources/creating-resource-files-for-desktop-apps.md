@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33399822"
 ---
 # <a name="creating-resource-files-for-desktop-apps"></a><span data-ttu-id="260e2-102">デスクトップ アプリケーションに対するリソース ファイルの作成</span><span class="sxs-lookup"><span data-stu-id="260e2-102">Creating Resource Files for Desktop Apps</span></span>
 <span data-ttu-id="260e2-103">リソース ファイルにリソース (文字列、イメージ、オブジェクト データなど) を追加して、アプリケーションで簡単に使用できるようにすることが可能です。</span><span class="sxs-lookup"><span data-stu-id="260e2-103">You can include resources, such as strings, images, or object data, in resources files to make them easily available to your application.</span></span> <span data-ttu-id="260e2-104">.NET Framework では、次の 5 つの方法でリソース ファイルを作成できます。</span><span class="sxs-lookup"><span data-stu-id="260e2-104">The .NET Framework offers five ways to create resources files:</span></span>  

@@ -22,6 +22,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33399705"
 ---
 # <a name="reflection-and-generic-types"></a><span data-ttu-id="b1203-102">リフレクションとジェネリック型</span><span class="sxs-lookup"><span data-stu-id="b1203-102">Reflection and Generic Types</span></span>
 <a name="top"></a> <span data-ttu-id="b1203-103">リフレクションの観点から言えば、ジェネリック型は、それがジェネリック型定義である場合は型パラメーター セットが、構築された型である場合は型引数セットが関連付けられているという点で通常の型と異なります。</span><span class="sxs-lookup"><span data-stu-id="b1203-103">From the point of view of reflection, the difference between a generic type and an ordinary type is that a generic type has associated with it a set of type parameters (if it is a generic type definition) or type arguments (if it is a constructed type).</span></span> <span data-ttu-id="b1203-104">ジェネリック メソッドと通常のメソッドの違いも、それと同様です。</span><span class="sxs-lookup"><span data-stu-id="b1203-104">A generic method differs from an ordinary method in the same way.</span></span>  

@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33398873"
 ---
 # <a name="security-issues-in-reflection-emit"></a><span data-ttu-id="70bba-102">リフレクション出力のセキュリティ関連事項</span><span class="sxs-lookup"><span data-stu-id="70bba-102">Security Issues in Reflection Emit</span></span>
 <span data-ttu-id="70bba-103">[!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] には、Microsoft Intermediate Language (MSIL) を出力する方法が 3 種類ありますが、それぞれに固有のセキュリティ問題があります。</span><span class="sxs-lookup"><span data-stu-id="70bba-103">The [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] provides three ways to emit Microsoft intermediate language (MSIL), each with its own security issues:</span></span>  

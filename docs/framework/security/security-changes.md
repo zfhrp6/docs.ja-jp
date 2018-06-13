@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33400082"
 ---
 # <a name="security-changes-in-the-net-framework"></a><span data-ttu-id="14a3d-102">.NET Framework におけるセキュリティの変更点</span><span class="sxs-lookup"><span data-stu-id="14a3d-102">Security Changes in the .NET Framework</span></span>
 <span data-ttu-id="14a3d-103">[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] のセキュリティにおける最も重要な変更は、厳密な名前付けの変更です。</span><span class="sxs-lookup"><span data-stu-id="14a3d-103">The most important change to security in the [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] is in strong naming.</span></span> <span data-ttu-id="14a3d-104">これらの変更の詳細については、「 [Enhanced Strong Naming](../../../docs/framework/app-domains/enhanced-strong-naming.md) 」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="14a3d-104">See [Enhanced Strong Naming](../../../docs/framework/app-domains/enhanced-strong-naming.md) for a description of those changes.</span></span>  

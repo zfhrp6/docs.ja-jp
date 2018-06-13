@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33318589"
 ---
 # <a name="creating-xml-trees-c"></a><span data-ttu-id="1a87e-102">XML ツリーの作成 (C#)</span><span class="sxs-lookup"><span data-stu-id="1a87e-102">Creating XML Trees (C#)</span></span>
 <span data-ttu-id="1a87e-103">最も一般的な XML タスクの 1 つは、XML ツリーの構築です。</span><span class="sxs-lookup"><span data-stu-id="1a87e-103">One of the most common XML tasks is constructing an XML tree.</span></span> <span data-ttu-id="1a87e-104">ここでは、XML ツリーを作成するいくつかの方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="1a87e-104">This section describes several ways to create them.</span></span>  

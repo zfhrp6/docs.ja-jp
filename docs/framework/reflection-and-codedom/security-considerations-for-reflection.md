@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33398705"
 ---
 # <a name="security-considerations-for-reflection"></a><span data-ttu-id="32ec8-102">リフレクションに関するセキュリティ上の考慮事項</span><span class="sxs-lookup"><span data-stu-id="32ec8-102">Security Considerations for Reflection</span></span>
 <span data-ttu-id="32ec8-103">リフレクションを使用すると、型とメンバーに関する情報を取得し、メンバーにアクセスできます (つまり、メソッドやコンストラクターの呼び出し、プロパティ値の取得と設定、イベント ハンドラーの追加と削除などを実行できます)。</span><span class="sxs-lookup"><span data-stu-id="32ec8-103">Reflection provides the ability to obtain information about types and members, and to access members (that is, to call methods and constructors, to get and set property values, to add and remove event handlers, and so on).</span></span> <span data-ttu-id="32ec8-104">リフレクションを使用した型とメンバーに関する情報の取得には、制限がありません。</span><span class="sxs-lookup"><span data-stu-id="32ec8-104">The use of reflection to obtain information about types and members is not restricted.</span></span> <span data-ttu-id="32ec8-105">すべてのコードで、次のタスクを実行するためにリフレクションを使用できます。</span><span class="sxs-lookup"><span data-stu-id="32ec8-105">All code can use reflection to perform the following tasks:</span></span>  

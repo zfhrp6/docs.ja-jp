@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32764412"
 ---
 # <a name="method-based-query-syntax-examples-filtering"></a><span data-ttu-id="e52bc-102">メソッド ベースのクエリ構文例: フィルター処理</span><span class="sxs-lookup"><span data-stu-id="e52bc-102">Method-Based Query Syntax Examples: Filtering</span></span>
 <span data-ttu-id="e52bc-103">このトピックの例を使用する方法を示します、`Where`と`Where…Contains`を照会する方法、 [AdventureWorks Sales Model](http://msdn.microsoft.com/library/f16cd988-673f-4376-b034-129ca93c7832)メソッド ベースのクエリ構文を使用します。</span><span class="sxs-lookup"><span data-stu-id="e52bc-103">The examples in this topic demonstrate how to use the `Where` and `Where…Contains` methods to query the [AdventureWorks Sales Model](http://msdn.microsoft.com/library/f16cd988-673f-4376-b034-129ca93c7832) using method-based query syntax.</span></span> <span data-ttu-id="e52bc-104">注、位置しています.`Contains`</span><span class="sxs-lookup"><span data-stu-id="e52bc-104">Note, Where…`Contains`</span></span> <span data-ttu-id="e52bc-105">一部として使用することはできません、[コンパイル済みクエリ](../../../../../../docs/framework/data/adonet/ef/language-reference/compiled-queries-linq-to-entities.md)です。</span><span class="sxs-lookup"><span data-stu-id="e52bc-105">cannot be used as a part of a [compiled query](../../../../../../docs/framework/data/adonet/ef/language-reference/compiled-queries-linq-to-entities.md).</span></span>  

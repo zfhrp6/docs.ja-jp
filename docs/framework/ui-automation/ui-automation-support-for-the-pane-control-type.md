@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33409956"
 ---
 # <a name="ui-automation-support-for-the-pane-control-type"></a><span data-ttu-id="7530a-102">UI オートメーションによる Pane コントロール型のサポート</span><span class="sxs-lookup"><span data-stu-id="7530a-102">UI Automation Support for the Pane Control Type</span></span>
 > [!NOTE]

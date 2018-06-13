@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33317088"
 ---
 # <a name="how-to-query-linq-to-xml-using-xpath-c"></a><span data-ttu-id="85fec-102">方法: XPath を使用して LINQ to XML にクエリを実行する (C#)</span><span class="sxs-lookup"><span data-stu-id="85fec-102">How to: Query LINQ to XML Using XPath (C#)</span></span>
 <span data-ttu-id="85fec-103">このトピックでは、XPath を使用して XML ツリーに対してクエリを実行できる拡張メソッドについて説明します。</span><span class="sxs-lookup"><span data-stu-id="85fec-103">This topic introduces the extension methods that enable you to query an XML tree by using XPath.</span></span> <span data-ttu-id="85fec-104">これらの拡張メソッドの使用に関する詳細については、<xref:System.Xml.XPath.Extensions?displayProperty=nameWithType> を参照してください。</span><span class="sxs-lookup"><span data-stu-id="85fec-104">For detailed information about using these extension methods, see <xref:System.Xml.XPath.Extensions?displayProperty=nameWithType>.</span></span>  

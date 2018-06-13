@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: a290ca162e5ab71b4184d166bcd00f1d0217cb94
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33402497"
 ---
 # <a name="icordebugappdomainattach-method"></a><span data-ttu-id="21171-102">ICorDebugAppDomain::Attach メソッド</span><span class="sxs-lookup"><span data-stu-id="21171-102">ICorDebugAppDomain::Attach Method</span></span>
 <span data-ttu-id="21171-103">アプリケーション ドメインに、デバッガーをアタッチします。</span><span class="sxs-lookup"><span data-stu-id="21171-103">Attaches the debugger to the application domain.</span></span>  

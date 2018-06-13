@@ -10,9 +10,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 65925b7dafb9e89433253d68327c488365674963
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33406279"
 ---
 # <a name="constants-unmanaged-api-reference"></a><span data-ttu-id="59f1f-102">定数 (アンマネージ API リファレンス)</span><span class="sxs-lookup"><span data-stu-id="59f1f-102">Constants (Unmanaged API Reference)</span></span>
 <span data-ttu-id="59f1f-103">このトピックでは、言語の種類、言語の販売元、および CorSym.idl で定義されているドキュメント型の定数について説明します。</span><span class="sxs-lookup"><span data-stu-id="59f1f-103">This topic describes the language type, language vendor, and document type constants that are defined in CorSym.idl.</span></span>  

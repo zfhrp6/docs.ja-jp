@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33400758"
 ---
 # <a name="find-a-ui-automation-element-based-on-a-property-condition"></a><span data-ttu-id="1bde3-102">プロパティ条件に基づく UI オートメーション要素の検索</span><span class="sxs-lookup"><span data-stu-id="1bde3-102">Find a UI Automation Element Based on a Property Condition</span></span>
 > [!NOTE]

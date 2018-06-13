@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33333386"
 ---
 # <a name="how-to-catch-parsing-errors-c"></a><span data-ttu-id="c2c21-102">方法: 解析エラーをキャッチする (C#)</span><span class="sxs-lookup"><span data-stu-id="c2c21-102">How to: Catch Parsing Errors (C#)</span></span>
 <span data-ttu-id="c2c21-103">このトピックでは、形式が正しくないか無効な XML を検出する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="c2c21-103">This topic shows how to detect badly formed or invalid XML.</span></span>  
