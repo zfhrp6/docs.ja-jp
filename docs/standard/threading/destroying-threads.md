@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33582938"
 ---
 # <a name="destroying-threads"></a><span data-ttu-id="32d24-102">スレッドの破棄</span><span class="sxs-lookup"><span data-stu-id="32d24-102">Destroying Threads</span></span>
 <span data-ttu-id="32d24-103">マネージ スレッドを完全に停止するには、<xref:System.Threading.Thread.Abort%2A> メソッドを使用します。</span><span class="sxs-lookup"><span data-stu-id="32d24-103">The <xref:System.Threading.Thread.Abort%2A> method is used to stop a managed thread permanently.</span></span> <span data-ttu-id="32d24-104"><xref:System.Threading.Thread.Abort%2A> を呼び出すと、共通言語ランタイムが対象スレッドで <xref:System.Threading.ThreadAbortException> をスローし、対象スレッドはそれをキャッチできます。</span><span class="sxs-lookup"><span data-stu-id="32d24-104">When you call <xref:System.Threading.Thread.Abort%2A>, the common language runtime throws a <xref:System.Threading.ThreadAbortException> in the target thread, which the target thread can catch.</span></span> <span data-ttu-id="32d24-105">詳細については、「<xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="32d24-105">For more information, see <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType>.</span></span>  

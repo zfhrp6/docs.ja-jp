@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33595853"
 ---
 # <a name="39set39-accessor-of-property-39ltpropertynamegt39-is-not-accessible"></a><span data-ttu-id="0e1d2-102">&#39;設定&#39;プロパティのアクセサー &#39; &lt;propertyname&gt; &#39;はアクセスできません</span><span class="sxs-lookup"><span data-stu-id="0e1d2-102">&#39;Set&#39; accessor of property &#39;&lt;propertyname&gt;&#39; is not accessible</span></span>
 <span data-ttu-id="0e1d2-103">ステートメントが、プロパティへのアクセスがあるないときに、プロパティの値を格納しようとしています。`Set`プロシージャです。</span><span class="sxs-lookup"><span data-stu-id="0e1d2-103">A statement attempts to store the value of a property when it does not have access to the property's `Set` procedure.</span></span>  

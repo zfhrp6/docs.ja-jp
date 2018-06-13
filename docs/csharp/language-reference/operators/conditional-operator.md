@@ -14,6 +14,7 @@ ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/23/2018
+ms.locfileid: "34457217"
 ---
 # <a name="-operator-c-reference"></a><span data-ttu-id="98610-102">?: 演算子 (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="98610-102">?: Operator (C# Reference)</span></span>
 <span data-ttu-id="98610-103">一般に三項条件演算子として知られる、条件演算子 (`?:`) では、ブール式の値に応じて 2 つの値のいずれかが返されます。</span><span class="sxs-lookup"><span data-stu-id="98610-103">The conditional operator (`?:`), commonly known as the ternary conditional operator, returns one of two values depending on the value of a Boolean expression.</span></span> <span data-ttu-id="98610-104">条件演算子の構文は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="98610-104">Following is the syntax for the conditional operator.</span></span>  

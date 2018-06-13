@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33589474"
 ---
 # <a name="how-to-create-a-copy-of-a-file-in-a-different-directory-in-visual-basic"></a><span data-ttu-id="37876-102">方法 : Visual Basic でファイルのコピーを別のディレクトリに作成する</span><span class="sxs-lookup"><span data-stu-id="37876-102">How to: Create a Copy of a File in a Different Directory in Visual Basic</span></span>
 <span data-ttu-id="37876-103">`My.Computer.FileSystem.CopyFile` メソッドでは、ファイルをコピーできます。</span><span class="sxs-lookup"><span data-stu-id="37876-103">The `My.Computer.FileSystem.CopyFile` method allows you to copy files.</span></span> <span data-ttu-id="37876-104">このパラメーターでは、既存のファイルの上書き、ファイルの名前変更、操作の進行状況の表示、ユーザーによる操作のキャンセルが可能になります。</span><span class="sxs-lookup"><span data-stu-id="37876-104">Its parameters provide the ability to overwrite existing files, rename the file, show the progress of the operation, and allow the user to cancel the operation.</span></span>  

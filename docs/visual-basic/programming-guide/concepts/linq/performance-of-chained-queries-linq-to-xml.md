@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33645708"
 ---
 # <a name="performance-of-chained-queries-linq-to-xml-visual-basic"></a><span data-ttu-id="fea03-102">連結クエリ (LINQ to XML) のパフォーマンス (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="fea03-102">Performance of Chained Queries (LINQ to XML) (Visual Basic)</span></span>
 <span data-ttu-id="fea03-103">LINQ (および LINQ to XML) の重要な利点の 1 つは、連結クエリが、大きい複雑な単一クエリと同様のパフォーマンスを発揮できるという点です。</span><span class="sxs-lookup"><span data-stu-id="fea03-103">One of the most important benefits of LINQ (and LINQ to XML) is that chained queries can perform as well as a single larger, more complicated query.</span></span>  

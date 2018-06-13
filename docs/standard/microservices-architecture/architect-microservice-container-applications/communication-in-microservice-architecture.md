@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33578925"
 ---
 # <a name="communication-in-a-microservice-architecture"></a><span data-ttu-id="d3dd9-103">マイクロサービス アーキテクチャでの通信</span><span class="sxs-lookup"><span data-stu-id="d3dd9-103">Communication in a microservice architecture</span></span>
 

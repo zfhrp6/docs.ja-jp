@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33582287"
 ---
 # <a name="file-encodings-visual-basic"></a><span data-ttu-id="90066-102">ファイル エンコーディング (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="90066-102">File Encodings (Visual Basic)</span></span>
 <span data-ttu-id="90066-103">ファイル エンコーディングは、文字エンコーディングとも呼ばれ、テキストを処理するときの文字の表現方法を指定します。</span><span class="sxs-lookup"><span data-stu-id="90066-103">File encodings, also known as character encodings, specify how to represent characters when text processing.</span></span> <span data-ttu-id="90066-104">言語で処理できる (または処理できない) 文字という観点から、あるエンコードが他のエンコーディングよりも望ましいということがありますが、一般的には Unicode が好まれます。</span><span class="sxs-lookup"><span data-stu-id="90066-104">One encoding may be preferable over another in terms of which language characters it can or cannot handle, although Unicode is usually preferred.</span></span>  

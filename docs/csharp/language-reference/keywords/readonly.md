@@ -12,6 +12,7 @@ ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/15/2018
+ms.locfileid: "34172634"
 ---
 # <a name="readonly-c-reference"></a><span data-ttu-id="db20e-102">readonly (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="db20e-102">readonly (C# Reference)</span></span>
 <span data-ttu-id="db20e-103">`readonly` キーワードは、フィールドで使用できる修飾子です。</span><span class="sxs-lookup"><span data-stu-id="db20e-103">The `readonly` keyword is a modifier that you can use on fields.</span></span> <span data-ttu-id="db20e-104">フィールド宣言に `readonly` 修飾子が含まれていると、その宣言によって導入されるフィールドへの割り当ては、宣言の一部分として、または同じクラスのコンストラクター内でのみ実行できます。</span><span class="sxs-lookup"><span data-stu-id="db20e-104">When a field declaration includes a `readonly` modifier, assignments to the fields introduced by the declaration can only occur as part of the declaration or in a constructor in the same class.</span></span>  

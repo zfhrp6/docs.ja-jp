@@ -9,6 +9,7 @@ ms.sourcegitcommit: 895c7602386a6dfe7ca4facce3d965b27e5c6e87
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/19/2018
+ms.locfileid: "34311976"
 ---
 # <a name="ltlibrarygt-element-net-native"></a><span data-ttu-id="ff566-102">&lt;Library&gt; 要素 (.NET ネイティブ)</span><span class="sxs-lookup"><span data-stu-id="ff566-102">&lt;Library&gt; Element (.NET Native)</span></span>
 <span data-ttu-id="ff566-103">実行時にリフレクションに使用可能なメタデータを持つ型と型のメンバーを含むアセンブリを定義します。</span><span class="sxs-lookup"><span data-stu-id="ff566-103">Defines the assembly that contains types and type members whose metadata is available for reflection at run time.</span></span>  

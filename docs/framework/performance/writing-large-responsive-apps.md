@@ -9,6 +9,7 @@ ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/23/2018
+ms.locfileid: "34457568"
 ---
 # <a name="writing-large-responsive-net-framework-apps"></a><span data-ttu-id="2c57a-102">規模が大きく、応答性の高い .NET Framework アプリの作成</span><span class="sxs-lookup"><span data-stu-id="2c57a-102">Writing Large, Responsive .NET Framework Apps</span></span>
 <span data-ttu-id="2c57a-103">この記事では、大規模な .NET Framework アプリや、ファイルやデータベースなど大量のデータを処理するアプリのパフォーマンス改善のヒントを説明します。</span><span class="sxs-lookup"><span data-stu-id="2c57a-103">This article provides tips for improving the performance of large .NET Framework apps, or apps that process a large amount of data such as files or databases.</span></span> <span data-ttu-id="2c57a-104">説明するヒントは C# および Visual Basic コンパイラを マネージ コードで作成し直した際に得られたものです。この記事では C# コンパイラでの実際の例をいくつか紹介します。</span><span class="sxs-lookup"><span data-stu-id="2c57a-104">These tips come from rewriting the C# and Visual Basic compilers in managed code, and this article includes several real examples from the C# compiler.</span></span>  

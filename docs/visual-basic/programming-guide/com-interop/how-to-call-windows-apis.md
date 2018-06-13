@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33643641"
 ---
 # <a name="how-to-call-windows-apis-visual-basic"></a><span data-ttu-id="5f73b-102">方法: Windows API を呼び出す (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="5f73b-102">How to: Call Windows APIs (Visual Basic)</span></span>
 <span data-ttu-id="5f73b-103">この例は、定義し、呼び出し、 `MessageBox` user32.dll 内の関数に文字列を渡します。</span><span class="sxs-lookup"><span data-stu-id="5f73b-103">This example defines and calls the `MessageBox` function in user32.dll and then passes a string to it.</span></span>  

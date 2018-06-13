@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33642890"
 ---
 # <a name="creating-custom-attributes-visual-basic"></a><span data-ttu-id="f4839-102">カスタム属性 (Visual Basic) を作成します。</span><span class="sxs-lookup"><span data-stu-id="f4839-102">Creating Custom Attributes (Visual Basic)</span></span>
 <span data-ttu-id="f4839-103">属性クラスを定義することで、独自のカスタム属性を作成できます。属性クラスは、<xref:System.Attribute> の直接的または間接的な派生クラスです。これにより、メタデータの中で属性の定義をすばやく簡単に特定できます。</span><span class="sxs-lookup"><span data-stu-id="f4839-103">You can create your own custom attributes by defining an attribute class, a class that derives directly or indirectly from <xref:System.Attribute>, which makes identifying attribute definitions in metadata fast and easy.</span></span> <span data-ttu-id="f4839-104">型にそれを記述したプログラマーの名前でタグを付けるとします。</span><span class="sxs-lookup"><span data-stu-id="f4839-104">Suppose you want to tag types with the name of the programmer who wrote the type.</span></span> <span data-ttu-id="f4839-105">`Author` というカスタム属性クラスを定義します。</span><span class="sxs-lookup"><span data-stu-id="f4839-105">You might define a custom `Author` attribute class:</span></span>  

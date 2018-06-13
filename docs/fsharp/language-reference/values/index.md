@@ -7,6 +7,7 @@ ms.sourcegitcommit: e5bb395ec86f536e114314184288f40a8c745e2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/12/2018
+ms.locfileid: "34149115"
 ---
 # <a name="values"></a><span data-ttu-id="b0225-103">値</span><span class="sxs-lookup"><span data-stu-id="b0225-103">Values</span></span>
 

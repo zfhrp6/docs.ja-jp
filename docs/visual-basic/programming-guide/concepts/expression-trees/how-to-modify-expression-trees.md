@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33643877"
 ---
 # <a name="how-to-modify-expression-trees-visual-basic"></a><span data-ttu-id="caec7-102">方法: 式ツリー (Visual Basic) を変更</span><span class="sxs-lookup"><span data-stu-id="caec7-102">How to: Modify Expression Trees (Visual Basic)</span></span>
 <span data-ttu-id="caec7-103">このトピックでは、式ツリーを変更する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="caec7-103">This topic shows you how to modify an expression tree.</span></span> <span data-ttu-id="caec7-104">式ツリーは変更不可であるため、直接変更を加えることができません。</span><span class="sxs-lookup"><span data-stu-id="caec7-104">Expression trees are immutable, which means that they cannot be modified directly.</span></span> <span data-ttu-id="caec7-105">式ツリーを変更するには、既存の式ツリーのコピーを作成する必要があります。コピーを作成する際に、必要な変更を加えます。</span><span class="sxs-lookup"><span data-stu-id="caec7-105">To change an expression tree, you must create a copy of an existing expression tree and when you create the copy, make the required changes.</span></span> <span data-ttu-id="caec7-106"><xref:System.Linq.Expressions.ExpressionVisitor> クラスを使用して、既存の式ツリーを走査し、走査した各ノードをコピーすることができます。</span><span class="sxs-lookup"><span data-stu-id="caec7-106">You can use the <xref:System.Linq.Expressions.ExpressionVisitor> class to traverse an existing expression tree and to copy each node that it visits.</span></span>  

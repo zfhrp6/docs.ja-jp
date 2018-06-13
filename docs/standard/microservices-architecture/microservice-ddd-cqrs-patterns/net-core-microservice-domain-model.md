@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33579564"
 ---
 # <a name="implementing-a-microservice-domain-model-with-net-core"></a><span data-ttu-id="85464-103">.NET Core でマイクロサービス ドメイン モデルを実装する</span><span class="sxs-lookup"><span data-stu-id="85464-103">Implementing a microservice domain model with .NET Core</span></span> 
 

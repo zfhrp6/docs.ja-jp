@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33580927"
 ---
 # <a name="using-tpl-with-other-asynchronous-patterns"></a><span data-ttu-id="77c01-102">TPL と他の非同期パターンの使用</span><span class="sxs-lookup"><span data-stu-id="77c01-102">Using TPL with Other Asynchronous Patterns</span></span>
 <span data-ttu-id="77c01-103">タスク並列ライブラリは、さまざまな方法で従来の .NET Framework 非同期プログラミング パターンと併用できます。</span><span class="sxs-lookup"><span data-stu-id="77c01-103">The Task Parallel Library can be used with traditional .NET Framework asynchronous programming patterns in various ways.</span></span>  

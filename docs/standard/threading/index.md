@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33589920"
 ---
 # <a name="managed-threading"></a><span data-ttu-id="3e6cb-102">マネージ スレッド処理</span><span class="sxs-lookup"><span data-stu-id="3e6cb-102">Managed Threading</span></span>
 <span data-ttu-id="3e6cb-103">アプリケーションを開発する場合、対象のコンピューターがプロセッサがシングルまたはマルチのいずれの場合でも、アプリケーションにユーザーとの迅速な対話を提供する必要があります。これはアプリケーションがほかの処理の実行中であっても同じことです。</span><span class="sxs-lookup"><span data-stu-id="3e6cb-103">Whether you are developing for computers with one processor or several, you want your application to provide the most responsive interaction with the user, even if the application is currently doing other work.</span></span> <span data-ttu-id="3e6cb-104">アプリケーションによるユーザーへの迅速な応答を維持すると同時に、ユーザー イベントの合間やその処理中にプロセッサを使用する最も強力な方法は、複数の実行スレッドを使用することです。</span><span class="sxs-lookup"><span data-stu-id="3e6cb-104">Using multiple threads of execution is one of the most powerful ways to keep your application responsive to the user and at the same time make use of the processor in between or even during user events.</span></span> <span data-ttu-id="3e6cb-105">ここでは、スレッド処理の基本概念について、マネージ スレッド処理の概念と使用方法を中心に説明します。</span><span class="sxs-lookup"><span data-stu-id="3e6cb-105">While this section introduces the basic concepts of threading, it focuses on managed threading concepts and using managed threading.</span></span>  

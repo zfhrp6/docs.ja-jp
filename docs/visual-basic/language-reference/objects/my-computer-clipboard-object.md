@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33595161"
 ---
 # <a name="mycomputerclipboard-object"></a><span data-ttu-id="d1170-102">My.Computer.Clipboard オブジェクト</span><span class="sxs-lookup"><span data-stu-id="d1170-102">My.Computer.Clipboard Object</span></span>
 <span data-ttu-id="d1170-103">クリップボードを操作するためのメソッドを提供します。</span><span class="sxs-lookup"><span data-stu-id="d1170-103">Provides methods for manipulating the Clipboard.</span></span>  

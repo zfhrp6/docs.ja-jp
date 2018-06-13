@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33597788"
 ---
 # <a name="addressof-operator-visual-basic"></a><span data-ttu-id="10b24-102">AddressOf 演算子 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="10b24-102">AddressOf Operator (Visual Basic)</span></span>
 <span data-ttu-id="10b24-103">特定のプロシージャを参照するプロシージャ デリゲート インスタンスを作成します。</span><span class="sxs-lookup"><span data-stu-id="10b24-103">Creates a procedure delegate instance that references the specific procedure.</span></span>  

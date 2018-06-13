@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33580433"
 ---
 # <a name="how-to-implement-dynamic-partitions"></a><span data-ttu-id="1cd28-102">方法: 動的パーティションを実装する</span><span class="sxs-lookup"><span data-stu-id="1cd28-102">How to: Implement Dynamic Partitions</span></span>
 <span data-ttu-id="1cd28-103">次の例は、特定のオーバーロード <xref:System.Threading.Tasks.Parallel.ForEach%2A> と PLINQ から動的なパーティション分割を実装するカスタム <xref:System.Collections.Concurrent.OrderablePartitioner%601?displayProperty=nameWithType> を実装する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="1cd28-103">The following example shows how to implement a custom <xref:System.Collections.Concurrent.OrderablePartitioner%601?displayProperty=nameWithType> that implements dynamic partitioning and can be used from certain overloads <xref:System.Threading.Tasks.Parallel.ForEach%2A> and from PLINQ.</span></span>  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33583787"
 ---
 # <a name="how-to-upload-a-file-in-visual-basic"></a><span data-ttu-id="3fae8-102">方法: Visual Basic でファイルをアップロードする</span><span class="sxs-lookup"><span data-stu-id="3fae8-102">How to: Upload a File in Visual Basic</span></span>
 <span data-ttu-id="3fae8-103"><xref:Microsoft.VisualBasic.Devices.Network.UploadFile%2A> メソッドを利用してファイルをアップロードし、離れた場所に格納できます。</span><span class="sxs-lookup"><span data-stu-id="3fae8-103">The <xref:Microsoft.VisualBasic.Devices.Network.UploadFile%2A> method can be used to upload a file and store it to a remote location.</span></span> <span data-ttu-id="3fae8-104">`ShowUI` パラメーターを `True` に設定した場合、アップロードの進行状況を示すダイアログ ボックスが表示され、ユーザーが操作をキャンセルできます。</span><span class="sxs-lookup"><span data-stu-id="3fae8-104">If the `ShowUI` parameter is set to `True`, a dialog box is displayed that shows the progress of the upload and allows users to cancel the operation.</span></span>  

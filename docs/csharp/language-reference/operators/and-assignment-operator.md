@@ -12,6 +12,7 @@ ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/15/2018
+ms.locfileid: "34172049"
 ---
 # <a name="amp-operator-c-reference"></a><span data-ttu-id="09b6f-102">&amp;= 演算子 (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="09b6f-102">&amp;= Operator (C# Reference)</span></span>
 <span data-ttu-id="09b6f-103">AND 代入演算子です。</span><span class="sxs-lookup"><span data-stu-id="09b6f-103">The AND assignment operator.</span></span>  

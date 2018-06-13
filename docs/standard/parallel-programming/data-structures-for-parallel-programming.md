@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33585088"
 ---
 # <a name="data-structures-for-parallel-programming"></a><span data-ttu-id="4f194-102">並列プログラミングのデータ構造</span><span class="sxs-lookup"><span data-stu-id="4f194-102">Data Structures for Parallel Programming</span></span>
 <span data-ttu-id="4f194-103">.NET Framework バージョン 4 では、同時実行コレクション クラスのセット、軽量な同期プリミティブ、遅延初期化用の型など、並列プログラミングに役立つ複数の新しい型が導入されています。</span><span class="sxs-lookup"><span data-stu-id="4f194-103">The .NET Framework version 4 introduces several new types that are useful in parallel programming, including a set of concurrent collection classes, lightweight synchronization primitives, and types for lazy initialization.</span></span> <span data-ttu-id="4f194-104">これらの型は、タスク並列ライブラリや PLINQ などの任意のマルチスレッド アプリケーション コードで使うことができます。</span><span class="sxs-lookup"><span data-stu-id="4f194-104">You can use these types with any multithreaded application code, including the Task Parallel Library and PLINQ.</span></span>  

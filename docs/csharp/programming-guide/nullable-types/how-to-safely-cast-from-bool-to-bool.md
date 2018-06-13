@@ -10,6 +10,7 @@ ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/23/2018
+ms.locfileid: "34457494"
 ---
 # <a name="how-to-safely-cast-from-bool-to-bool-c-programming-guide"></a><span data-ttu-id="d4694-102">方法: bool? から bool に安全にキャストする (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="d4694-102">How to: Safely Cast from bool? to bool (C# Programming Guide)</span></span>
 <span data-ttu-id="d4694-103">Null 許容 `bool?` 型は、`true`、`false`、`null` の 3 つの異なる値を格納できます。</span><span class="sxs-lookup"><span data-stu-id="d4694-103">The `bool?` nullable type can contain three different values: `true`, `false`, and `null`.</span></span> <span data-ttu-id="d4694-104">そのため、`bool?` 型は、`if`、`for`、`while` などの条件文で使用できません。</span><span class="sxs-lookup"><span data-stu-id="d4694-104">Therefore, the `bool?` type cannot be used in conditionals such as with `if`, `for`, or `while`.</span></span> <span data-ttu-id="d4694-105">たとえば、次のコードはコンパイラ エラーになります。</span><span class="sxs-lookup"><span data-stu-id="d4694-105">For example, the following code causes a compiler error.</span></span>  

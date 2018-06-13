@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33598584"
 ---
 # <a name="pathfile-access-error"></a><span data-ttu-id="3b636-102">パス/ファイル アクセス エラー</span><span class="sxs-lookup"><span data-stu-id="3b636-102">Path/File access error</span></span>
 <span data-ttu-id="3b636-103">ファイル アクセスまたはディスク アクセスの操作中に、オペレーティング システムは、パスとファイル名の間の接続を作成できませんでした。</span><span class="sxs-lookup"><span data-stu-id="3b636-103">During a file-access or disk-access operation, the operating system could not make a connection between the path and the file name.</span></span>  

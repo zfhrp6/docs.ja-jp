@@ -12,6 +12,7 @@ ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/15/2018
+ms.locfileid: "34172673"
 ---
 # <a name="internal-c-reference"></a><span data-ttu-id="9b390-102">internal (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="9b390-102">internal (C# Reference)</span></span>
 <span data-ttu-id="9b390-103">`internal` キーワードは、型と型のメンバーを示す[アクセス修飾子](../../../csharp/language-reference/keywords/access-modifiers.md)です。</span><span class="sxs-lookup"><span data-stu-id="9b390-103">The `internal` keyword is an [access modifier](../../../csharp/language-reference/keywords/access-modifiers.md) for types and type members.</span></span> 
