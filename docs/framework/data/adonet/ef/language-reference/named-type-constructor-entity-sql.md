@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32763164"
 ---
 # <a name="named-type-constructor-entity-sql"></a><span data-ttu-id="fe53f-102">名前付きの型コンストラクター (Entity SQL)</span><span class="sxs-lookup"><span data-stu-id="fe53f-102">Named Type Constructor (Entity SQL)</span></span>
 <span data-ttu-id="fe53f-103">エンティティ型や複合型など、概念モデル標準型のインスタンスの作成に使用します。</span><span class="sxs-lookup"><span data-stu-id="fe53f-103">Used to create instances of conceptual model nominal types such as Entity or Complex types.</span></span>  

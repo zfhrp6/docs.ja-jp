@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32763268"
 ---
 # <a name="synchronizing-a-dataset-with-an-xmldatadocument"></a><span data-ttu-id="facee-102">DataSet と XmlDataDocument の同期</span><span class="sxs-lookup"><span data-stu-id="facee-102">Synchronizing a DataSet with an XmlDataDocument</span></span>
 <span data-ttu-id="facee-103">このセクションでは、<xref:System.Data.DataSet> と同期され、厳密に型指定された <xref:System.Xml.XmlDataDocument> を使用して、注文書を処理する手順の 1 ステップを例に説明します。</span><span class="sxs-lookup"><span data-stu-id="facee-103">This section demonstrates one step in the processing of a purchase order, using a strongly typed <xref:System.Data.DataSet> synchronized with an <xref:System.Xml.XmlDataDocument>.</span></span> <span data-ttu-id="facee-104">次の例を作成、**データセット**ソース XML ドキュメントの一部だけに一致する最小限のスキーマとします。</span><span class="sxs-lookup"><span data-stu-id="facee-104">The examples that follow create a **DataSet** with a minimized schema that matches only a portion of the source XML document.</span></span> <span data-ttu-id="facee-105">例を使用して、 **XmlDataDocument**ソース XML ドキュメントの忠実性を保持するために有効にすると、**データセット**を使用して XML ドキュメントのサブセットを公開します。</span><span class="sxs-lookup"><span data-stu-id="facee-105">The examples use an **XmlDataDocument** to preserve the fidelity of the source XML document, enabling the **DataSet** to be used to expose a subset of the XML document.</span></span>  

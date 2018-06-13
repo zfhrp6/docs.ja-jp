@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32763041"
 ---
 # <a name="like-entity-sql"></a><span data-ttu-id="6ecb6-102">LIKE (Entity SQL)</span><span class="sxs-lookup"><span data-stu-id="6ecb6-102">LIKE (Entity SQL)</span></span>
 <span data-ttu-id="6ecb6-103">指定された文字列 `String` が指定されたパターンと一致するかどうかを判断します。</span><span class="sxs-lookup"><span data-stu-id="6ecb6-103">Determines whether a specific character `String` matches a specified pattern.</span></span>  

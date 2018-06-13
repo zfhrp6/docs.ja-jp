@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32761078"
 ---
 # <a name="inferring-columns"></a><span data-ttu-id="88a7d-102">列の推論</span><span class="sxs-lookup"><span data-stu-id="88a7d-102">Inferring Columns</span></span>
 <span data-ttu-id="88a7d-103">ADO.NET は、<xref:System.Data.DataSet> のテーブルとして推論する要素を、XML ドキュメントから決定した後、それらのテーブルの列を推論します。</span><span class="sxs-lookup"><span data-stu-id="88a7d-103">After ADO.NET has determined from an XML document which elements to infer as tables for a <xref:System.Data.DataSet>, it then infers the columns for those tables.</span></span> <span data-ttu-id="88a7d-104">ADO.NET 2.0 導入ごとに厳密に型指定されたデータ型を推測する新しいスキーマ推論エンジン**simpleType**要素。</span><span class="sxs-lookup"><span data-stu-id="88a7d-104">ADO.NET 2.0 introduced a new schema inference engine that infers a strongly typed data type for each **simpleType** element.</span></span> <span data-ttu-id="88a7d-105">以前のバージョンで、データ型、推論された**simpleType**要素が常に**xsd:string**です。</span><span class="sxs-lookup"><span data-stu-id="88a7d-105">In previous versions, the data type of an inferred **simpleType** element was always **xsd:string**.</span></span>  

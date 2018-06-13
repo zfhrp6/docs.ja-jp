@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32763853"
 ---
 # <a name="type-system-entity-sql"></a><span data-ttu-id="8e030-102">型システム (Entity SQL)</span><span class="sxs-lookup"><span data-stu-id="8e030-102">Type System (Entity SQL)</span></span>
 [!INCLUDE[esql](../../../../../../includes/esql-md.md)]<span data-ttu-id="8e030-103"> いくつかの型をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="8e030-103"> supports a number of types:</span></span>  

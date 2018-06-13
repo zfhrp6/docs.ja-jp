@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32762846"
 ---
 # <a name="how-to-call-custom-database-functions"></a><span data-ttu-id="9b287-102">カスタム データベース関数を呼び出す方法</span><span class="sxs-lookup"><span data-stu-id="9b287-102">How to: Call Custom Database Functions</span></span>
 <span data-ttu-id="9b287-103">ここでは、データベースで定義されたカスタム関数を LINQ Entities クエリから呼び出す方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="9b287-103">This topic describes how to call custom functions that are defined in the database from within LINQ to Entities queries.</span></span>  

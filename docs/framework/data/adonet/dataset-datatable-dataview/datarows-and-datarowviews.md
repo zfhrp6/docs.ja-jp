@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32762872"
 ---
 # <a name="datarows-and-datarowviews"></a><span data-ttu-id="671e7-102">DataRow および DataRowView</span><span class="sxs-lookup"><span data-stu-id="671e7-102">DataRows and DataRowViews</span></span>
 <span data-ttu-id="671e7-103"><xref:System.Data.DataView> は、<xref:System.Data.DataRowView> オブジェクトの列挙可能なコレクションを公開します。</span><span class="sxs-lookup"><span data-stu-id="671e7-103">A <xref:System.Data.DataView> exposes an enumerable collection of <xref:System.Data.DataRowView> objects.</span></span> <span data-ttu-id="671e7-104">**DataRowView**オブジェクトは、名前または基になるテーブル内の列の序数参照によってインデックスが作成されるオブジェクトの配列として値を公開します。</span><span class="sxs-lookup"><span data-stu-id="671e7-104">The **DataRowView** objects expose values as object arrays that are indexed by either the name or the ordinal reference of the column in the underlying table.</span></span> <span data-ttu-id="671e7-105">アクセスすることができます、<xref:System.Data.DataRow>公開している、 **DataRowView**を使用して、<xref:System.Data.DataRowView.Row%2A>のプロパティ、 **DataRowView**です。</span><span class="sxs-lookup"><span data-stu-id="671e7-105">You can access the <xref:System.Data.DataRow> that is exposed by the **DataRowView** by using the <xref:System.Data.DataRowView.Row%2A> property of the **DataRowView**.</span></span>  
