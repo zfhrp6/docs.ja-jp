@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33540291"
 ---
 # <a name="how-to-modify-keyboard-input-to-a-standard-control"></a><span data-ttu-id="b04dd-102">方法 : キーボード入力を標準コントロールに変更する</span><span class="sxs-lookup"><span data-stu-id="b04dd-102">How to: Modify Keyboard Input to a Standard Control</span></span>
 <span data-ttu-id="b04dd-103">Windows フォームは、キーボードの入力を使用して変更する機能を提供します。</span><span class="sxs-lookup"><span data-stu-id="b04dd-103">Windows Forms provides the ability to consume and modify keyboard input.</span></span> <span data-ttu-id="b04dd-104">キーの使用とは、メッセージ キューのさらに下のその他のメソッドとイベントが、キーの値を受信しないようにメソッドまたはイベント ハンドラー内のキーを処理することを表します。</span><span class="sxs-lookup"><span data-stu-id="b04dd-104">Consuming a key refers to handling a key within a method or event handler so that other methods and events further down the message queue do not receive the key value.</span></span> <span data-ttu-id="b04dd-105">キーの変更とは、メッセージ キューのさらに下のメソッドとイベント ハンドラーが、異なるキーの値を受け取るようにキーの値を変更することを表します。</span><span class="sxs-lookup"><span data-stu-id="b04dd-105">Modifying a key refers to modifying the value of a key so that methods and event handlers further down the message queue receive a different key value.</span></span> <span data-ttu-id="b04dd-106">このトピックでは、これらのタスクを実行する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="b04dd-106">This topic shows how to accomplish these tasks.</span></span>  

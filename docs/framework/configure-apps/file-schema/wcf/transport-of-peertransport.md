@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32756424"
 ---
 # <a name="lttransportgt-of-ltpeertransportgt"></a><span data-ttu-id="263d3-102">&lt;peerTransport&gt; の &lt;transport&gt;</span><span class="sxs-lookup"><span data-stu-id="263d3-102">&lt;transport&gt; of &lt;peerTransport&gt;</span></span>
 <span data-ttu-id="263d3-103">このバインドで構成されたピアが送信する、セキュリティで保護されたメッセージのトランスポートの型を指定します。</span><span class="sxs-lookup"><span data-stu-id="263d3-103">Specifies the transport type for secured messages sent by peers configured with this binding.</span></span>  

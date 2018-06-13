@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 8bbd25909e70826f8cd29076c1eb62a4da6779cd
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33435402"
 ---
 # <a name="coinitializeee-function"></a><span data-ttu-id="e75c5-102">CoInitializeEE 関数</span><span class="sxs-lookup"><span data-stu-id="e75c5-102">CoInitializeEE Function</span></span>
 <span data-ttu-id="e75c5-103">共通言語ランタイムの実行エンジンがプロセスに読み込まれることになります。</span><span class="sxs-lookup"><span data-stu-id="e75c5-103">Ensures that the common language runtime execution engine is loaded into a process.</span></span> <span data-ttu-id="e75c5-104">この関数は非推奨、[!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)]です。</span><span class="sxs-lookup"><span data-stu-id="e75c5-104">This function is deprecated in the [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].</span></span> <span data-ttu-id="e75c5-105">使用して、 [iclrruntimehost::start](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-start-method.md)メソッド代わりにします。</span><span class="sxs-lookup"><span data-stu-id="e75c5-105">Use the [ICLRRuntimeHost::Start](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-start-method.md) method instead.</span></span>  

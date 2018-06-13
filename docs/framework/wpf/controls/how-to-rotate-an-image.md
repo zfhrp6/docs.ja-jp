@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33551896"
 ---
 # <a name="how-to-rotate-an-image"></a><span data-ttu-id="d1369-102">方法 : イメージを回転させる</span><span class="sxs-lookup"><span data-stu-id="d1369-102">How to: Rotate an Image</span></span>
 <span data-ttu-id="d1369-103">この例を使用してイメージを 90 ° 回転、<xref:System.Windows.Media.Imaging.BitmapImage.Rotation%2A>のプロパティ、<xref:System.Windows.Media.Imaging.BitmapImage>です。</span><span class="sxs-lookup"><span data-stu-id="d1369-103">This example shows how to rotate an image 90 degrees by using a <xref:System.Windows.Media.Imaging.BitmapImage.Rotation%2A> property of a <xref:System.Windows.Media.Imaging.BitmapImage>.</span></span>  

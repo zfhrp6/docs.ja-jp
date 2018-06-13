@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32757945"
 ---
 # <a name="adonet-overview"></a><span data-ttu-id="7414d-102">ADO.NET の概要</span><span class="sxs-lookup"><span data-stu-id="7414d-102">ADO.NET Overview</span></span>
 <span data-ttu-id="7414d-103">ADO.NET は、SQL Server や XML などのデータ ソースや、OLE DB や ODBC 経由で公開されるデータ ソースに対する一貫性を持ったアクセス機能を実現します。</span><span class="sxs-lookup"><span data-stu-id="7414d-103">ADO.NET provides consistent access to data sources such as SQL Server and XML, and to data sources exposed through OLE DB and ODBC.</span></span> <span data-ttu-id="7414d-104">データを共有する消費者向けアプリケーションで ADO.NET を使用することで、そのようなデータ ソースへの接続や、データ ソースに格納されているデータの取得、操作、更新を実行できます。</span><span class="sxs-lookup"><span data-stu-id="7414d-104">Data-sharing consumer applications can use ADO.NET to connect to these data sources and retrieve, handle, and update the data that they contain.</span></span>  

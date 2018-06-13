@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33540191"
 ---
 # <a name="menustrip-control-windows-forms"></a><span data-ttu-id="d73ca-102">MenuStrip コントロール (Windows フォーム)</span><span class="sxs-lookup"><span data-stu-id="d73ca-102">MenuStrip Control (Windows Forms)</span></span>
 <span data-ttu-id="d73ca-103">このコントロールは、アプリケーション コマンドをグループ化して簡単にアクセスできるようにします。</span><span class="sxs-lookup"><span data-stu-id="d73ca-103">This control groups application commands and makes them easily accessible.</span></span>  

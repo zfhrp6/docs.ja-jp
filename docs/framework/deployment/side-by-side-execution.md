@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33395162"
 ---
 # <a name="side-by-side-execution-in-the-net-framework"></a><span data-ttu-id="f5aa7-102">.NET Framework での side-by-side 実行</span><span class="sxs-lookup"><span data-stu-id="f5aa7-102">Side-by-Side Execution in the .NET Framework</span></span>
 <span data-ttu-id="f5aa7-103">side-by-side 実行は、アプリケーションまたはコンポーネントの複数のバージョンを同じコンピューターで実行する機能です。</span><span class="sxs-lookup"><span data-stu-id="f5aa7-103">Side-by-side execution is the ability to run multiple versions of an application or component on the same computer.</span></span> <span data-ttu-id="f5aa7-104">共通言語ランタイムの複数のバージョン、および 1 つの共通言語ランタイムを使用するアプリケーションとコンポーネントの複数のバージョンを同じコンピューターで同時に実行できます。</span><span class="sxs-lookup"><span data-stu-id="f5aa7-104">You can have multiple versions of the common language runtime, and multiple versions of applications and components that use a version of the runtime, on the same computer at the same time.</span></span>  

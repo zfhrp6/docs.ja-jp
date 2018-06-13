@@ -34,6 +34,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33394837"
 ---
 # <a name="ipv6-addressing"></a><span data-ttu-id="e81d4-102">IPv6 アドレス指定</span><span class="sxs-lookup"><span data-stu-id="e81d4-102">IPv6 Addressing</span></span>
 <span data-ttu-id="e81d4-103">インターネット プロトコル バージョン 6 (IPv6) では、アドレスの長さは 128 ビットです。</span><span class="sxs-lookup"><span data-stu-id="e81d4-103">In the Internet Protocol version 6 (IPv6), addresses are 128 bits long.</span></span> <span data-ttu-id="e81d4-104">このような大きいアドレス空間の 1 つの理由は、インターネットのトポロジを反映したルーティング ドメインの階層構造に利用可能なアドレスを細分化するためです。</span><span class="sxs-lookup"><span data-stu-id="e81d4-104">One reason for such a large address space is to subdivide the available addresses into a hierarchy of routing domains that reflect the Internet's topology.</span></span> <span data-ttu-id="e81d4-105">別の理由は、ネットワークにデバイスを接続するネットワーク アダプター (インターフェイス) のアドレスをマップするためです。</span><span class="sxs-lookup"><span data-stu-id="e81d4-105">Another reason is to map the addresses of network adapters (or interfaces) that connect devices to the network.</span></span> <span data-ttu-id="e81d4-106">IPv6 は、ネットワーク インターフェイス レベルである最下位レベルでアドレスを解決する固有の機能、および自動構成機能を備えています。</span><span class="sxs-lookup"><span data-stu-id="e81d4-106">IPv6 features an inherent capability to resolve addresses at their lowest level, which is at the network interface level, and also has auto-configuration capabilities.</span></span>  

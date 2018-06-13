@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33267289"
 ---
 # <a name="void-c-reference"></a><span data-ttu-id="cc32b-102">void (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="cc32b-102">void (C# Reference)</span></span>
 <span data-ttu-id="cc32b-103">メソッドの戻り値の型として使用した場合、`void` はメソッドが値を返さないことを指定します。</span><span class="sxs-lookup"><span data-stu-id="cc32b-103">When used as the return type for a method, `void` specifies that the method doesn't return a value.</span></span>

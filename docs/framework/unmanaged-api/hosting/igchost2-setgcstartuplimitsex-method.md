@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: f92667191cad163998d233e1110365de65c0340c
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33437691"
 ---
 # <a name="igchost2setgcstartuplimitsex-method"></a><span data-ttu-id="45c5f-102">IGCHost2::SetGCStartupLimitsEx メソッド</span><span class="sxs-lookup"><span data-stu-id="45c5f-102">IGCHost2::SetGCStartupLimitsEx Method</span></span>
 <span data-ttu-id="45c5f-103">ジェネレーション 0 のセグメントのサイズと最大サイズを設定します。</span><span class="sxs-lookup"><span data-stu-id="45c5f-103">Sets the segment size and the maximum size for generation 0.</span></span>  
