@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33468333"
 ---
 # <a name="core-communications-named-pipe-transport-channels"></a>コア通信 : 名前付きパイプ トランスポート チャネル
 ここでは、名前付きパイプ トランスポート チャネルによって生成されるすべての例外を示します。  

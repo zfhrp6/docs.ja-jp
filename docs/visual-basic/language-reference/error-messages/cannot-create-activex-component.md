@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33585958"
 ---
 # <a name="cannot-create-activex-component"></a>ActiveX コンポーネントを作成できません。
 デザイン時に ActiveX コントロールをフォームに配置しようとしたか、ActiveX コントロールが配置されているプロジェクトにフォームを追加しようとしましたが、レジストリ内に関連情報が見つかりませんでした。  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33590810"
 ---
 # <a name="how-to-disable-adding-and-deleting-datarepeater-items-visual-studio"></a>方法 : DataRepeater の項目の追加と削除を無効にする (Visual Studio)
 既定では、ユーザーは追加し、項目の削除、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>コントロール。 ユーザーは、CTRL キーを押しながら N キーを押して、新しい項目を追加できるときに、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeaterItemEventArgs.DataRepeaterItem%2A>にフォーカスがあるかをクリックして、 **AddNewItem**のボタンでは、<xref:System.Windows.Forms.BindingNavigator>コントロール。 ユーザーがキーを押して、項目を削除できるときに削除、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeaterItemEventArgs.DataRepeaterItem%2A>にフォーカスがあるかをクリックして、 **DeleteItem**のボタンでは、<xref:System.Windows.Forms.BindingNavigator>コントロール。  

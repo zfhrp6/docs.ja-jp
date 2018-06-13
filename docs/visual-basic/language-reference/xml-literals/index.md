@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33600767"
 ---
 # <a name="xml-literals-visual-basic"></a>XML リテラル (Visual Basic)
 このセクションのトピックでは、Visual Basic で XML リテラルの構文を文書化します。 XML リテラルの構文を使用すると、コード内に直接 XML を組み込むことができます。  

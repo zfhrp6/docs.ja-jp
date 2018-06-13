@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33474897"
 ---
 # <a name="microsofttransactionstransactionbridgeenlistmentidentitycheckfailed"></a>Microsoft.Transactions.TransactionBridge.EnlistmentIdentityCheckFailed
 受信メッセージの送信者の ID が登録リストのエンドポイント参照から派生した ID と一致しませんでした。  

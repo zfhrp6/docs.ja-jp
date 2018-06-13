@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: c2bc4dc831e87d72c6147e0f42ae3c4d1c79e113
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33414165"
 ---
 # <a name="icordebugeditandcontinuesnapshotgetrwdatarva-method"></a>ICorDebugEditAndContinueSnapshot::GetRwDataRVA メソッド
 `GetRwDataRVA` は互換性のために残されています。 このメソッドを呼び出さないでください。  

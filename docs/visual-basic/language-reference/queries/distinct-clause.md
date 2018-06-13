@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33603978"
 ---
 # <a name="distinct-clause-visual-basic"></a>Distinct 句 (Visual Basic)
 次のクエリ句で、重複を回避するのには、現在の範囲変数の値を制限します。  

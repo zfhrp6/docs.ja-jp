@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33590843"
 ---
 # <a name="how-to-change-the-layout-of-a-datarepeater-control-visual-studio"></a>方法 : DataRepeater コントロールのレイアウトを変更する (Visual Studio)
 <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>コントロールを垂直方向 (垂直方向にスクロールを項目) または水平方向 (水平方向にスクロールを項目) のいずれかで表示されることができますの向きです。 デザイン時または実行時に印刷の向きを変更するには変更することによって、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.LayoutStyle%2A>プロパティです。 変更した場合、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.LayoutStyle%2A>実行時にプロパティをすることもサイズを変更する、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemTemplate%2A>および子コントロールを再配置します。  

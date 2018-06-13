@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33602737"
 ---
 # <a name="ltincludegt-visual-basic"></a>&lt;含める&gt;(Visual Basic)
 型と、ソース コード内のメンバーを表す別のファイルを参照します。  

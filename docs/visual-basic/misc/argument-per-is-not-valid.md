@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33603926"
 ---
 # <a name="argument-39per39-is-not-valid"></a>引数&#39;あたり&#39;が正しくありません
 `Per`に指定された引数は、1 ～ `Double` の範囲で支払い期間を指定する `NPer`である必要があるため、使用できません。  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33593221"
 ---
 # <a name="no-accessible-39main39-method-with-an-appropriate-signature-was-found-in-39ltnamegt39"></a>ない&#39;Main&#39;で適切なシグネチャを持つメソッドが見つかりました&#39;&lt;名&gt;&#39;
 コマンド ライン アプリケーションが必要な`Sub Main`定義します。 `Main` として宣言する必要があります`Public Shared`クラスでは、またはとして定義されている場合`Public`モジュールで定義されている場合。  

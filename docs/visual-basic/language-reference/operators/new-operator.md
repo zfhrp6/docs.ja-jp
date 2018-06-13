@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33603640"
 ---
 # <a name="new-operator-visual-basic"></a>New 演算子 (Visual Basic)
 導入されています、`New`句を新しいオブジェクト インスタンスを作成する型パラメーターにコンス トラクター制約を指定または識別、`Sub`クラス コンス トラクターと手順。  

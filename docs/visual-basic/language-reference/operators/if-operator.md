@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33603965"
 ---
 # <a name="if-operator-visual-basic"></a>If 演算子 (Visual Basic)
 ショート サーキット評価を条件に応じて 2 つの値を返しますを使用します。 `If`演算子は、3 つの引数、または 2 つの引数を指定して呼び出すことができます。  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33595187"
 ---
 # <a name="type-39lttypenamegt39-is-not-defined"></a>型&#39; &lt;typename&gt; &#39;が定義されていません
 ステートメントには、定義されていない型への参照が行われます。 などの宣言ステートメントで型を定義できます`Enum`、 `Structure`、 `Class`、または`Interface`です。  

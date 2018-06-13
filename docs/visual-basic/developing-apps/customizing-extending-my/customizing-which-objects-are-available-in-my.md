@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33592159"
 ---
 # <a name="customizing-which-objects-are-available-in-my-visual-basic"></a>My で利用可能なオブジェクトのカスタマイズ (Visual Basic)
 このトピックでは、これを制御する方法について説明`My`するには、プロジェクトのオブジェクトが有効になって`_MYTYPE`条件付きコンパイル定数。 Visual Studio 統合開発環境 (IDE) の保持、`_MYTYPE`プロジェクトとプロジェクトの種類の同期の条件付きコンパイル定数。  

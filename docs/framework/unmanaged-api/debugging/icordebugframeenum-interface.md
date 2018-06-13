@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 2c7b539ce01f7e25dba12a78b95097eebae175bc
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33414659"
 ---
 # <a name="icordebugframeenum-interface1"></a>ICorDebugFrameEnum Interface1
 ICorDebugEnum メソッドを実装して、ICorDebugFrame 配列を列挙します。  

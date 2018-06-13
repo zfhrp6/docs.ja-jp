@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33590856"
 ---
 # <a name="default-property-access-is-ambiguous-between-the-inherited-interface-members-39ltdefaultpropertynamegt39-of-interface-39ltinterfacename1gt39-and-39ltdefaultpropertynamegt39-of-interface-39ltinterfacename2gt39"></a>Default プロパティ アクセスは、継承インターフェイス メンバーの間にあいまいな&#39; &lt;defaultpropertyname&gt; &#39;インターフェイスの&#39; &lt;interfacename1&gt; &#39;と&#39; &lt;defaultpropertyname&gt; &#39;インターフェイスの&#39; &lt;interfacename2&gt;&#39;
 インターフェイスは、同じ名前の既定のプロパティを宣言の 2 つのインターフェイスから継承します。 コンパイラは、この既定のプロパティを修飾せずに、アクセスを解決できません。 次に例を示します。  

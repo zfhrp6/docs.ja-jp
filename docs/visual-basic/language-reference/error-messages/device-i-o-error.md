@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33585529"
 ---
 # <a name="device-io-error"></a>デバイス I/O エラーです。
 プログラムは、プリンターやディスク ドライブなどのデバイスを使用していたときに、入力または出力エラーが発生しました。  

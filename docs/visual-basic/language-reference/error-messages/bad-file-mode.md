@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33587385"
 ---
 # <a name="bad-file-mode"></a>ファイル モードが正しくありません。
 ファイルの内容を操作するときに使用するステートメントは、ファイルが開かれたモードに対応する必要があります。 以下の原因が考えられます。  

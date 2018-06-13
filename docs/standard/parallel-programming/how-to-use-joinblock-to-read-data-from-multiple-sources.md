@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33581587"
 ---
 # <a name="how-to-use-joinblock-to-read-data-from-multiple-sources"></a>方法: JoinBlock を使用して複数のソースからデータを読み込む
 このドキュメントでは、複数のソースからデータを使用できるときに <xref:System.Threading.Tasks.Dataflow.JoinBlock%602> クラスを使用して操作を実行する方法について説明します。 また、最短一致モードを使い、複数の結合ブロックを有効にして、データ ソースをより効率的に共有する方法についても説明します。

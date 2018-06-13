@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33594284"
 ---
 # <a name="the-type-for-variable-39ltvariablenamegt39-will-not-be-inferred-because-it-is-bound-to-a-field-in-an-enclosing-scope"></a>変数の型&#39; &lt;variablename&gt; &#39;は、外側のスコープ内のフィールドにバインドされているので、推論できません。
 変数の型 '\<variablename >' は、外側のスコープ内のフィールドにバインドされているので、推論できません。 名前を変更するか '\<variablename >'、または完全修飾名 (たとえば、Me.variablename"や"MyBase.variablename") を使用します。  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33588844"
 ---
 # <a name="expression-recursively-calls-the-containing-property-39ltpropertynamegt39"></a>式を再帰的には、包含するプロパティを呼び出して&#39; &lt;propertyname&gt;&#39;
 内のステートメント、`Set`プロパティ定義のプロシージャは、プロパティの名前に、値を格納します。  

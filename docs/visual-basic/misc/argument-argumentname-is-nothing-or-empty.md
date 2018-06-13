@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33599620"
 ---
 # <a name="argument-39ltargumentnamegt39-is-nothing-or-empty"></a>引数&#39; &lt;argumentname&gt; &#39;は Nothing または空にします。
 引数名は、 `Nothing` に初期化されるか空であるため、無効です。 引数には、特定のデータ型と有効な名前を設定する必要があります。  

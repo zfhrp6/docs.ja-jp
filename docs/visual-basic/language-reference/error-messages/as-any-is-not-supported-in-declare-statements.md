@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33588227"
 ---
 # <a name="39as-any39-is-not-supported-in-39declare39-statements"></a>&#39;いずれかとして&#39;でサポートされていない&#39;Declare&#39;ステートメント
 `Any`データ型と共に使用されました`Declare`任意のデータ型を含む可能性のある引数の使用を許可するには、Visual Basic 6.0 とそれ以前のバージョン内のステートメント。 オーバー ロード、ただし、Visual Basic サポートされため、`Any`古いデータを入力します。  

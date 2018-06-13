@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33592237"
 ---
 # <a name="virtual-mode-in-the-datarepeater-control-visual-studio"></a>DataRepeater コントロールの仮想モード (Visual Studio)
 大量の表形式データを表示する場合、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>コントロールを設定してパフォーマンスを向上させることができます、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.VirtualMode%2A>プロパティを`True`と明示的にそのデータ ソース コントロールの相互作用を管理します。 <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>コントロールは、データ ソースと対話し、実行時に、必要に応じてデータの表示を処理できるいくつかのイベントを提供します。  

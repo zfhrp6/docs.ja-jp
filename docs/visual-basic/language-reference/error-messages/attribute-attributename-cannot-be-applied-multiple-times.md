@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33584860"
 ---
 # <a name="attribute-39ltattributenamegt39-cannot-be-applied-multiple-times"></a>属性&#39; &lt;attributename&gt; &#39;複数回適用できません
 属性は、1 回のみ適用できます。 `AttributeUsage`属性は属性を複数回適用できるかどうかを決定します。  

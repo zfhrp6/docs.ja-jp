@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33522474"
 ---
 # <a name="how-to-use-a-color-remap-table"></a>方法 : カラー リマップ テーブルを使用する
 再マップは、カラー リマップ テーブルに従ってイメージの色を変換するプロセスです。 カラー リマップ テーブルの配列は、<xref:System.Drawing.Imaging.ColorMap>オブジェクト。 各<xref:System.Drawing.Imaging.ColorMap>配列内のオブジェクトは、<xref:System.Drawing.Imaging.ColorMap.OldColor%2A>プロパティおよび<xref:System.Drawing.Imaging.ColorMap.NewColor%2A>プロパティです。  

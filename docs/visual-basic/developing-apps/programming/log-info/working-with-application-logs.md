@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33592042"
 ---
 # <a name="working-with-application-logs-in-visual-basic"></a>Visual Basic でのアプリケーション ログの使用
 `My.Applicaton.Log` オブジェクトと `My.Log` オブジェクトを使用すると、ログおよびトレース情報をログに簡単に書き込むことができます。  

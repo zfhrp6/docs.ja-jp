@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33596838"
 ---
 # <a name="argument-39conversion39-is-not-valid"></a>引数&#39;変換&#39;が正しくありません
 `VbStrConv` の列挙値は 0 未満のため、有効でない可能性があります。 列挙値は 0 以上である必要があります。  

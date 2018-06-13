@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33594768"
 ---
 # <a name="statement-is-not-valid-in-a-namespace"></a>名前空間のステートメントが無効です。
 ステートメントは、名前空間のレベルに表示できません。 名前空間レベルで許可されている唯一の宣言は、モジュール、インターフェイス、クラス、デリゲート、列挙、および構造体の宣言にです。  

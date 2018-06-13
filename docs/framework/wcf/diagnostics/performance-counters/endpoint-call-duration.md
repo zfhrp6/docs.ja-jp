@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33467794"
 ---
 # <a name="endpoint-call-duration"></a>エンドポイント : 呼び出す期間
 このエンドポイントの呼び出しの平均期間です。  平均期間は、(N1-N0)/(D1-D0) という数式に基づいて計算されます。  

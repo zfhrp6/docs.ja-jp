@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33603497"
 ---
 # <a name="-operator-visual-basic"></a>^= 演算子 (Visual Basic)
 変数または式のプロパティの値を生成し、結果を変数またはプロパティに代入します。  

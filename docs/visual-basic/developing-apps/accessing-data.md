@@ -7,9 +7,10 @@ helpviewer_keywords:
 ms.assetid: 3086ab38-3be5-4b22-9385-7d0e16b04f6a
 ms.openlocfilehash: 2e6cfc3d6d8752b12fa20a357dedfeb1b3346dce
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33585828"
 ---
 # <a name="accessing-data-in-visual-basic-applications"></a>Visual Basic アプリケーションにおけるデータ アクセス
 Visual Basic には、データにアクセスするアプリケーションを開発する際に役立ついくつかの新機能が用意されています。 Windows アプリケーションのデータ バインド フォームは、[[データ ソース]](/visualstudio/data-tools/add-new-data-sources) ウィンドウからフォームに項目をドラッグすることにより作成できます。 データをコントロールにバインドするには、**[データ ソース]** ウィンドウから既存のコントロールに項目をドラッグします。  

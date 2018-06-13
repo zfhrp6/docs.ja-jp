@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33604836"
 ---
 # <a name="set-statement-visual-basic"></a>Set ステートメント (Visual Basic)
 宣言、`Set`プロパティ プロシージャのプロパティに値を代入するために使用します。  

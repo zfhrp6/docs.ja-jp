@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33471283"
 ---
 # <a name="endpoint-transactions-flowed-per-second"></a>エンドポイント : 1 秒あたりのトランザクション フロー
 カウンター名 : 1 秒あたりのトランザクション フロー。  

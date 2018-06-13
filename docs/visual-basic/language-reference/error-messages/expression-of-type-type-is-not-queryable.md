@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33589010"
 ---
 # <a name="expression-of-type-lttypegt-is-not-queryable"></a>型の式&lt;型&gt;はクエリ不可能
 型の式\<型 > はクエリ不可能です。 LINQ プロバイダーに対してアセンブリ参照や名前空間インポートが不足していないを確認してください。  

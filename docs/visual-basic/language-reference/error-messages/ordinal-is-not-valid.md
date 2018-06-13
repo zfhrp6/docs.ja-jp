@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33593604"
 ---
 # <a name="ordinal-is-not-valid"></a>序数が有効ではありません。
 プロシージャ名の代わりに、番号を使用してに示されているダイナミック リンク ライブラリ (DLL) への呼び出しを使用して、`#num`構文です。 このエラーには、次の考えられる原因があります。  

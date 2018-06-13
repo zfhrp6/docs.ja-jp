@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33474858"
 ---
 # <a name="activity-tracing-in-message-security"></a>メッセージ セキュリティにおけるアクティビティ トレース
 ここでは、次の 3 つの段階で発生するセキュリティ処理のアクティビティ トレースについて説明します。  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33585302"
 ---
 # <a name="39ltmembernamegt39-is-ambiguous-across-the-inherited-interfaces-39ltinterfacename1gt39-and-39ltinterfacename2gt39"></a>&#39;&lt;membername&gt; &#39; 、継承インターフェイス間であいまいな&#39; &lt;interfacename1&gt; &#39;と&#39; &lt;interfacename2&gt;&#39;
 インターフェイスは、同じ名前の 2 つ以上のメンバーを複数のインターフェイスから継承します。  

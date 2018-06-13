@@ -42,6 +42,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33591795"
 ---
 # <a name="data-type-summary-visual-basic"></a>データ型の概要 (Visual Basic)
 次の表は、Visual Basic データ型、サポートする共通言語ランタイムの型、その公称記憶域割り当て、およびその値の範囲を示します。  

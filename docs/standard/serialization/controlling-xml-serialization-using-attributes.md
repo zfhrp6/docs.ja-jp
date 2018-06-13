@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33592003"
 ---
 # <a name="controlling-xml-serialization-using-attributes"></a>属性を使用した XML シリアル化の制御
 属性を使用すると、オブジェクトの XML シリアル化を制御したり、同じ一連のクラスから代替 XML ストリームを作成したりできます。 代替 XML ストリームの作成の詳細については、「[方法 : XML ストリームの代替要素名を指定する](../../../docs/standard/serialization/how-to-specify-an-alternate-element-name-for-an-xml-stream.md)」を参照してください。  
