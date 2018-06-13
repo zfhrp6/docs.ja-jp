@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33586491"
 ---
 # <a name="class-39ltclassnamegt39-cannot-be-found"></a>クラス&#39; &lt;classname&gt; &#39;が見つかりません
 クラスの\<classname >' が見つかりません。 このエラーは通常、'Microsoft.VisualBasic.dll' が適切でない場合に発生します。  

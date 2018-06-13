@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33585770"
 ---
 # <a name="constant-expression-not-representable-in-type-39lttypenamegt39"></a>型で表現できない定数式&#39; &lt;typename&gt;&#39;
 対象の型に適合しない定数を評価しようとする通常の範囲をオーバーフローしていることが原因です。  

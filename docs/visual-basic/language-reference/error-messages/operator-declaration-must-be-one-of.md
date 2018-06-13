@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33595021"
 ---
 # <a name="operator-declaration-must-be-one-of----amp-like-mod-and-or-xor-not-ltlt-gtgt"></a>演算子の宣言は、のいずれかを指定する必要があります: +、-、*、\,/、^、 &amp;、Like、Mod、および、Or、Xor、Not、 &lt; &lt;、 &gt;&gt;しています.
 オーバー ロードできるは、演算子のみを宣言することができます。 次の表には、宣言できる演算子が一覧表示します。  

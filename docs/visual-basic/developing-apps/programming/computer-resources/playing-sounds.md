@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33588459"
 ---
 # <a name="playing-sounds-visual-basic"></a>サウンドの再生 (Visual Basic)
 `My.Computer.Audio` オブジェクトには、サウンドを再生するためのメソッドが用意されています。  

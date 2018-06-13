@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33588120"
 ---
 # <a name="writing-to-files-in-visual-basic"></a>Visual Basic でのファイルへの書き込み
 このセクションでは、ファイルへの書き込みを伴うタスクを実行する方法について説明します。  

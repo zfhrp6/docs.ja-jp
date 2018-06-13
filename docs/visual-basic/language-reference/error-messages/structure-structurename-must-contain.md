@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33594500"
 ---
 # <a name="structure-39ltstructurenamegt39-must-contain-at-least-one-instance-member-variable-or-at-least-one-instance-event-declaration-not-marked-39custom39"></a>構造体&#39; &lt;structurename&gt; &#39;に少なくとも 1 つのインスタンス メンバー変数またはマークされていない 1 つ以上のインスタンス イベントの宣言を含める必要があります&#39;カスタム&#39;
 構造体の定義は、すべての非共有変数または非共有のカスタム イベントには含まれません。  

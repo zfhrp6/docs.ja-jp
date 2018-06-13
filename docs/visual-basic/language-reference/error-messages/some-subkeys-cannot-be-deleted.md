@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33594794"
 ---
 # <a name="some-subkeys-cannot-be-deleted"></a>一部のサブキーが削除できません
 レジストリ キーの削除が試行されましたが、一部のサブキーを削除できないために、操作が失敗しました。 通常これは、アクセス許可がないのためです。  

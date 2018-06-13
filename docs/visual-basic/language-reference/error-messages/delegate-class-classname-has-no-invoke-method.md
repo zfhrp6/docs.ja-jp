@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33588831"
 ---
 # <a name="delegate-class-39ltclassnamegt39-has-no-invoke-method-so-an-expression-of-this-type-cannot-be-the-target-of-a-method-call"></a>デリゲート クラス&#39; &lt;classname&gt; &#39;この型の式はメソッドの呼び出しのターゲットにすることはできませんので Invoke メソッドがありません
 呼び出し`Invoke`がデリゲートから失敗しました。`Invoke`デリゲート クラスで実装されていません。  

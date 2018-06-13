@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33586742"
 ---
 # <a name="input-past-end-of-file"></a>ファイルにこれ以上データがありません。
 いずれか、`Input`ステートメントは、空であるファイルまたはすべてのデータを使用すると、またはを使用して 1 つから読み取っている、`EOF`ファイルを使用して関数がバイナリ用に開かれています。  

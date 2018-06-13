@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33586387"
 ---
 # <a name="initializer-expected"></a>初期化子が必要です
 初期化リストが空で、次の例で示すように、オブジェクト初期化子を使用して、クラスのインスタンスを宣言しようとしました。  

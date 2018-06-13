@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33593127"
 ---
 # <a name="range-variable-ltvariablegt-hides-a-variable-in-an-enclosing-block-a-previously-defined-range-variable-or-an-implicitly-declared-variable-in-a-query-expression"></a>範囲変数&lt;変数&gt;外側のブロックを以前に定義された範囲変数、またはクエリ式内で暗黙的に宣言された変数内の変数を非表示になります
 指定された範囲変数の名前、 `Select`、 `From`、 `Aggregate`、または`Let`句が既に指定されている、クエリまたはクエリで暗黙的に宣言されている変数の名前で、範囲変数の名前に重複などのフィールド名または集計関数の名前。  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33593578"
 ---
 # <a name="39sub-main39-was-not-found-in-39ltnamegt39"></a>&#39;Sub Main&#39;に見つからなかった&#39;&lt;名&gt;&#39;
 `Sub Main` が存在しないか、間違った場所が指定されています。  

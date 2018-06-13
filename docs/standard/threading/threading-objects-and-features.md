@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33591328"
 ---
 # <a name="threading-objects-and-features"></a>スレッド処理オブジェクトと機能
 .NET Framework には、マルチスレッド アプリケーションの作成と管理に役立つ多くのオブジェクトが用意されています。 マネージ スレッドは、<xref:System.Threading.Thread> クラスによって表されます。 <xref:System.Threading.ThreadPool> クラスを使用すると、マルチスレッドのバックグラウンド タスクを簡単に作成し、管理できます。 <xref:System.ComponentModel.BackgroundWorker> クラスは、ユーザー インターフェイスと対話するタスクについてそれと同じことを実現します。 <xref:System.Threading.Timer> クラスは、指定された間隔でバックグラウンド タスクを実行します。  

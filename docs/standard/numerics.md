@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33588698"
 ---
 # <a name="numerics-in-the-net-framework"></a>.NET Framework における数値
 .NET Framework は、標準の数値整数と浮動小数点型のプリミティブをサポートしています。さらに、理論上の上限や下限のない整数型の <xref:System.Numerics.BigInteger>、複素数を表す型の <xref:System.Numerics.Complex>、<xref:System.Numerics> 名前空間の SIMD が有効なベクター型のセットもサポートしています。  

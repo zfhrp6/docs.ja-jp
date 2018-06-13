@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33590206"
 ---
 # <a name="39get39-accessor-of-property-39ltpropertynamegt39-is-not-accessible"></a>&#39;取得&#39;プロパティのアクセサー &#39; &lt;propertyname&gt; &#39;はアクセスできません
 ステートメントが、プロパティへのアクセスがあるないときに、プロパティの値を取得しようとしています。`Get`プロシージャです。  

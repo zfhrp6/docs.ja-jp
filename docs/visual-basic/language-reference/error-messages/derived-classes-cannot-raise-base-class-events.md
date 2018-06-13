@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33586400"
 ---
 # <a name="derived-classes-cannot-raise-base-class-events"></a>派生クラスで基本クラスのイベントを発生させることはできません。
 宣言されている宣言領域からのみイベントを発生させることができます。 そのため、クラスは、その他のクラス、1 つでも派生元からイベントを発生させることはできません。  
