@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: b3536184fa7798ac8eabe851221ec692c126460b
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33424015"
 ---
 # <a name="icorpublishenum-interface"></a>ICorPublishEnum インターフェイス
 プロセスとアプリケーション ドメインに関する情報の発行で使用される列挙子の抽象基本インターフェイスとして機能します。  

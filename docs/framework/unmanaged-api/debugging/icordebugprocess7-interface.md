@@ -14,9 +14,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 1a684a5daa0619b0614ca074b7b1e3b9d0b25882
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33421439"
 ---
 # <a name="icordebugprocess7-interface"></a>ICorDebugProcess7 インターフェイス
 [.NET Framework 4.5.2 以降のバージョンでのみでサポート]  

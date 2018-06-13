@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: f1bc57ab45a0452d9e3a50f0ab2de786ad73204a
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33458648"
 ---
 # <a name="qualifiersetget-function"></a>QualifierSet_Get 関数
 指定した名前付き修飾子を取得します。  
