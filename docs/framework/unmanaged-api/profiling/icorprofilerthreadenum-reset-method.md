@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 4687bb5b359f2020f1c3cff56b5f17f4abb64f81
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33454728"
 ---
 # <a name="icorprofilerthreadenumreset-method"></a><span data-ttu-id="9b6c2-102">ICorProfilerThreadEnum::Reset メソッド</span><span class="sxs-lookup"><span data-stu-id="9b6c2-102">ICorProfilerThreadEnum::Reset Method</span></span>
 <span data-ttu-id="9b6c2-103">列挙子のカーソルをシーケンスの開始位置に移動します。</span><span class="sxs-lookup"><span data-stu-id="9b6c2-103">Moves the enumerator's cursor to the starting position of the sequence.</span></span>  

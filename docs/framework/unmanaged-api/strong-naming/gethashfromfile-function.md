@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: f98f888280090bfa613acf6ae37bc60ab63c371e
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33456515"
 ---
 # <a name="gethashfromfile-function"></a><span data-ttu-id="de4d9-102">GetHashFromFile 関数</span><span class="sxs-lookup"><span data-stu-id="de4d9-102">GetHashFromFile Function</span></span>
 <span data-ttu-id="de4d9-103">指定されたファイルの内容のハッシュを生成します。</span><span class="sxs-lookup"><span data-stu-id="de4d9-103">Generates a hash over the contents of the specified file.</span></span>  

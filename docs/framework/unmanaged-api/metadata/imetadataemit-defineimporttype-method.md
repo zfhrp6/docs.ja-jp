@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 68e6f7599db55ed9429f159b380a8a9f8ae3f034
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33447487"
 ---
 # <a name="imetadataemitdefineimporttype-method"></a><span data-ttu-id="1441c-102">IMetaDataEmit::DefineImportType メソッド</span><span class="sxs-lookup"><span data-stu-id="1441c-102">IMetaDataEmit::DefineImportType Method</span></span>
 <span data-ttu-id="1441c-103">現在のスコープ外に定義され、その参照のトークンを定義する指定された型への参照を作成します。</span><span class="sxs-lookup"><span data-stu-id="1441c-103">Creates a reference to the specified type that is defined outside the current scope, and defines a token for that reference.</span></span>  

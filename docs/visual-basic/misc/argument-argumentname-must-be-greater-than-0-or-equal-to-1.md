@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33597592"
 ---
 # <a name="argument-39ltargumentnamegt39-must-be-greater-than-0-or-equal-to--1"></a><span data-ttu-id="84c39-102">引数&#39; &lt;argumentname&gt; &#39; 0 より大きいか-1 に等しくなければなりません</span><span class="sxs-lookup"><span data-stu-id="84c39-102">Argument &#39;&lt;argumentname&gt;&#39; must be greater than 0 or equal to -1</span></span>
 <span data-ttu-id="84c39-103">引数の値が 0 未満ですが、-1 に等しくありません。</span><span class="sxs-lookup"><span data-stu-id="84c39-103">An argument's value is less than 0 but not equal to -1.</span></span>  

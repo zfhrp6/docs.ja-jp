@@ -9,6 +9,7 @@ ms.sourcegitcommit: 88f251b08bf0718ce119f3d7302f514b74895038
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/10/2018
+ms.locfileid: "33957992"
 ---
 # <a name="what-about-cloud-native-applications"></a><span data-ttu-id="232fe-103">クラウド ネイティブ アプリケーションについて説明します。</span><span class="sxs-lookup"><span data-stu-id="232fe-103">What about Cloud-Native applications?</span></span>
 

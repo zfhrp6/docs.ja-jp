@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33598015"
 ---
 # <a name="lttypeparamgt-visual-basic"></a><span data-ttu-id="e06f0-102">&lt;typeparam&gt; (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="e06f0-102">&lt;typeparam&gt; (Visual Basic)</span></span>
 <span data-ttu-id="e06f0-103">型パラメーターの名前と説明を定義します。</span><span class="sxs-lookup"><span data-stu-id="e06f0-103">Defines a type parameter name and description.</span></span>  

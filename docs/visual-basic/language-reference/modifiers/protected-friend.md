@@ -9,6 +9,7 @@ ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/18/2018
+ms.locfileid: "34306543"
 ---
 # <a name="protected-friend-visual-basic"></a><span data-ttu-id="1d12c-102">保護されたフレンド (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="1d12c-102">Protected Friend (Visual Basic)</span></span>
 

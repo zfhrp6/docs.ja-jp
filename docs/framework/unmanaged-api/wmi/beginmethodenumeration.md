@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: d87627b8bb3414860d994273396dbb4e64acdea7
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33459877"
 ---
 # <a name="beginenumeration-function"></a><span data-ttu-id="4ec9a-103">BeginEnumeration 関数</span><span class="sxs-lookup"><span data-stu-id="4ec9a-103">BeginEnumeration function</span></span>
 <span data-ttu-id="4ec9a-104">オブジェクトの使用可能なメソッドの列挙を開始します。</span><span class="sxs-lookup"><span data-stu-id="4ec9a-104">Begins an enumeration of the methods available for the object.</span></span>  

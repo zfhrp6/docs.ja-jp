@@ -16,6 +16,7 @@ ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34235991"
 ---
 # <a name="property-statement"></a><span data-ttu-id="19a47-102">Property Statement</span><span class="sxs-lookup"><span data-stu-id="19a47-102">Property Statement</span></span>
 <span data-ttu-id="19a47-103">プロパティ、および格納およびプロパティの値を取得するためのプロパティ プロシージャの名前を宣言します。</span><span class="sxs-lookup"><span data-stu-id="19a47-103">Declares the name of a property, and the property procedures used to store and retrieve the value of the property.</span></span>  

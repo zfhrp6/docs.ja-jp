@@ -13,6 +13,7 @@ ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/15/2018
+ms.locfileid: "34172213"
 ---
 # <a name="value-types-c-reference"></a><span data-ttu-id="b945b-102">値型 (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="b945b-102">Value Types (C# Reference)</span></span>
 <span data-ttu-id="b945b-103">値型は、次の 2 つの主要なカテゴリで構成されます。</span><span class="sxs-lookup"><span data-stu-id="b945b-103">The value types consist of two main categories:</span></span>  

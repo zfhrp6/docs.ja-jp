@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: b848c30e824d45f6f619cfdb3d00a2d3cdc4573e
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33448714"
 ---
 # <a name="imetadataimportenumparams-method"></a><span data-ttu-id="6d836-102">IMetaDataImport::EnumParams メソッド</span><span class="sxs-lookup"><span data-stu-id="6d836-102">IMetaDataImport::EnumParams Method</span></span>
 <span data-ttu-id="6d836-103">指定した MethodDef トークンによって参照されるメソッドのパラメーターを表す ParamDef トークンを列挙します。</span><span class="sxs-lookup"><span data-stu-id="6d836-103">Enumerates ParamDef tokens representing the parameters of the method referenced by the specified MethodDef token.</span></span>  

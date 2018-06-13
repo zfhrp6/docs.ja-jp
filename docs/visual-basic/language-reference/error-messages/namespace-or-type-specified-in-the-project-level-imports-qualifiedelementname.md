@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33595814"
 ---
 # <a name="namespace-or-type-specified-in-the-project-level-imports-39ltqualifiedelementnamegt39-doesn39t-contain-any-public-member-or-cannot-be-found"></a><span data-ttu-id="1ac72-102">プロジェクト レベル インポートで指定された Namespace または型&#39; &lt;qualifiedelementname&gt; &#39;しません&#39;t がすべてのパブリック メンバーを含めるか、または見つかりません</span><span class="sxs-lookup"><span data-stu-id="1ac72-102">Namespace or type specified in the project-level Imports &#39;&lt;qualifiedelementname&gt;&#39; doesn&#39;t contain any public member or cannot be found</span></span>
 <span data-ttu-id="1ac72-103">プロジェクト レベル インポートで指定された Namespace または型\<qualifiedelementname >'、パブリック メンバーが含まれていないか、または見つかりません。</span><span class="sxs-lookup"><span data-stu-id="1ac72-103">Namespace or type specified in the project-level Imports '\<qualifiedelementname>' doesn't contain any public member or cannot be found.</span></span> <span data-ttu-id="1ac72-104">確認してください、名前空間または型が定義されている少なくとも 1 つのパブリック メンバーが含まれています。</span><span class="sxs-lookup"><span data-stu-id="1ac72-104">Make sure the namespace or the type is defined and contains at least one public member.</span></span> <span data-ttu-id="1ac72-105">エイリアス名には他のエイリアスが含まれていないことを確認してください。</span><span class="sxs-lookup"><span data-stu-id="1ac72-105">Make sure the alias name doesn't contain other aliases.</span></span>  

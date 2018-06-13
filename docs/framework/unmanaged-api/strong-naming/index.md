@@ -10,9 +10,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 6c397a325edb49e3f10a46b242888b8d138957af
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33462378"
 ---
 # <a name="strong-naming-unmanaged-api-reference"></a><span data-ttu-id="34ef1-102">厳密な名前付け (アンマネージ API リファレンス)</span><span class="sxs-lookup"><span data-stu-id="34ef1-102">Strong Naming (Unmanaged API Reference)</span></span>
 <span data-ttu-id="34ef1-103">厳密な名前付け API では、クライアントが厳密な名前のアセンブリの署名を管理できるようにします。</span><span class="sxs-lookup"><span data-stu-id="34ef1-103">The strong naming API enables a client to administer strong name signing for assemblies.</span></span>  

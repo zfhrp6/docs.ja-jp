@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33641230"
 ---
 # <a name="textfieldparser-does-not-support-comment-tokens-that-contain-whitespace"></a><span data-ttu-id="dd73b-102">TextFieldParser は空白を含むコメント トークンをサポートしていません</span><span class="sxs-lookup"><span data-stu-id="dd73b-102">TextFieldParser does not support comment tokens that contain whitespace</span></span>
 <span data-ttu-id="dd73b-103">空白を含むコメント トークンが指定されています。</span><span class="sxs-lookup"><span data-stu-id="dd73b-103">A comment token that contains white space has been supplied.</span></span> <span data-ttu-id="dd73b-104">トークンの先頭に空白がある場合を除き、 `TextFieldParser` は空白を含むコメント トークンをサポートしません。</span><span class="sxs-lookup"><span data-stu-id="dd73b-104">The `TextFieldParser` does not support comment tokens that contain white space unless the white space occurs at the beginning of the token.</span></span> <span data-ttu-id="dd73b-105">トークンの先頭にある空白は無視されます。</span><span class="sxs-lookup"><span data-stu-id="dd73b-105">White space occurring at the beginning of a token is ignored.</span></span>  

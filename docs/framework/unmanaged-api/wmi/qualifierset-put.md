@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 7ccb0aef0e998ffccd7526f9f0554bceb892001b
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33462190"
 ---
 # <a name="qualifiersetput-function"></a><span data-ttu-id="2fd54-103">QualifierSet_Put 関数</span><span class="sxs-lookup"><span data-stu-id="2fd54-103">QualifierSet_Put function</span></span>
 <span data-ttu-id="2fd54-104">名前付きの修飾子と値を書き込みます。</span><span class="sxs-lookup"><span data-stu-id="2fd54-104">Writes the named qualifier and value.</span></span> <span data-ttu-id="2fd54-105">新しい修飾子には、同じ名前の前の値が上書きされます。</span><span class="sxs-lookup"><span data-stu-id="2fd54-105">The new qualifier overwrites the previous value of the same name.</span></span> <span data-ttu-id="2fd54-106">修飾子が存在しない場合は作成されます。</span><span class="sxs-lookup"><span data-stu-id="2fd54-106">If the qualifier does not exist, it is created.</span></span> 

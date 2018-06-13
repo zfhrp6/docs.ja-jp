@@ -7,6 +7,7 @@ ms.sourcegitcommit: 77d9a94dac4c05827ed0663d95e0f9ad35d6682e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/24/2018
+ms.locfileid: "34472751"
 ---
 # <a name="connection-string-syntax"></a><span data-ttu-id="582d4-102">接続文字列の構文</span><span class="sxs-lookup"><span data-stu-id="582d4-102">Connection String Syntax</span></span>
 <span data-ttu-id="582d4-103">すべての .NET Framework データ プロバイダーは、`Connection` を継承する <xref:System.Data.Common.DbConnection> オブジェクトに加え、プロバイダー固有の <xref:System.Data.Common.DbConnection.ConnectionString%2A> プロパティを持ちます。</span><span class="sxs-lookup"><span data-stu-id="582d4-103">Each .NET Framework data provider has a `Connection` object that inherits from <xref:System.Data.Common.DbConnection> as well as a provider-specific <xref:System.Data.Common.DbConnection.ConnectionString%2A> property.</span></span> <span data-ttu-id="582d4-104">それぞれのプロバイダーに固有の接続文字列の構文は、対応する `ConnectionString` プロパティのトピックで説明されています。</span><span class="sxs-lookup"><span data-stu-id="582d4-104">The specific connection string syntax for each provider is documented in its `ConnectionString` property.</span></span> <span data-ttu-id="582d4-105">次の表は、.NET Framework に含まれている 4 つのデータ プロバイダーを一覧にしたものです。</span><span class="sxs-lookup"><span data-stu-id="582d4-105">The following table lists the four data providers that are included in the .NET Framework.</span></span>  
