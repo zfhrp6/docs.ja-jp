@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33526579"
 ---
 # <a name="how-to-read-image-metadata"></a><span data-ttu-id="f1047-102">方法 : イメージ メタデータを読み取る</span><span class="sxs-lookup"><span data-stu-id="f1047-102">How to: Read Image Metadata</span></span>
 <span data-ttu-id="f1047-103">一部のイメージ ファイルには、イメージの機能を決定するために読み取ることができますメタデータが含まれます。</span><span class="sxs-lookup"><span data-stu-id="f1047-103">Some image files contain metadata that you can read to determine features of the image.</span></span> <span data-ttu-id="f1047-104">たとえば、デジタル写真には、make とイメージをキャプチャするために使用する、カメラのモデルを決定するために読み取ることができますメタデータが含まれます可能性があります。</span><span class="sxs-lookup"><span data-stu-id="f1047-104">For example, a digital photograph might contain metadata that you can read to determine the make and model of the camera used to capture the image.</span></span> <span data-ttu-id="f1047-105">[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]既存のメタデータを読み取ることができます、およびイメージ ファイルに新しいメタデータを記述することもできます。</span><span class="sxs-lookup"><span data-stu-id="f1047-105">With [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)], you can read existing metadata, and you can also write new metadata to image files.</span></span>  

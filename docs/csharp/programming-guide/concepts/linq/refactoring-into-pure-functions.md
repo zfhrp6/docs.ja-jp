@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33339554"
 ---
 # <a name="refactoring-into-pure-functions-c"></a><span data-ttu-id="cffad-102">純粋関数へのリファクタリング (C#)</span><span class="sxs-lookup"><span data-stu-id="cffad-102">Refactoring Into Pure Functions (C#)</span></span>
 

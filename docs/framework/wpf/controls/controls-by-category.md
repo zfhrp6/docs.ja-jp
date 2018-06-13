@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33552000"
 ---
 # <a name="controls-by-category"></a><span data-ttu-id="e3426-102">カテゴリ別のコントロール</span><span class="sxs-lookup"><span data-stu-id="e3426-102">Controls by Category</span></span>
 <span data-ttu-id="e3426-103">複数のカテゴリに、Windows Presentation Foundation (WPF) コントロールを論理的にグループ化できます。</span><span class="sxs-lookup"><span data-stu-id="e3426-103">Windows Presentation Foundation (WPF) controls can be logically grouped into several categories.</span></span> <span data-ttu-id="e3426-104">これらのカテゴリを使用すると、類似の使用パターンや機能を持つコントロールを見つけやすくなり、シナリオに適したコントロールを選択できます。</span><span class="sxs-lookup"><span data-stu-id="e3426-104">These categories can be used to select the appropriate control for your scenario by helping you see which controls have similar usage patterns or functionality.</span></span>  

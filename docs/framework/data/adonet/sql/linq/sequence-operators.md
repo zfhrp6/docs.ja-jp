@@ -1,35 +1,24 @@
 ---
-title: "シーケンス演算子"
-ms.custom: 
+title: シーケンス演算子
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 4d332d32-3806-4451-b7af-25af269194ae
-caps.latest.revision: "2"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: d5e18a0c0ae959f83192ca6b50c16234eccb0629
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 01807e48c06bce1d451961bb6204d1f8e49d53f6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33360288"
 ---
-# <a name="sequence-operators"></a><span data-ttu-id="ad98a-102">シーケンス演算子</span><span class="sxs-lookup"><span data-stu-id="ad98a-102">Sequence Operators</span></span>
-<span data-ttu-id="ad98a-103">一般的には、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] では、次のいずれかの性質を持つシーケンス演算子はサポートされません。</span><span class="sxs-lookup"><span data-stu-id="ad98a-103">Generally speaking, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] does not support sequence operators that have one or more of the following qualities:</span></span>  
+# <a name="sequence-operators"></a><span data-ttu-id="1843c-102">シーケンス演算子</span><span class="sxs-lookup"><span data-stu-id="1843c-102">Sequence Operators</span></span>
+<span data-ttu-id="1843c-103">一般的には、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] では、次のいずれかの性質を持つシーケンス演算子はサポートされません。</span><span class="sxs-lookup"><span data-stu-id="1843c-103">Generally speaking, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] does not support sequence operators that have one or more of the following qualities:</span></span>  
   
--   <span data-ttu-id="ad98a-104">ラムダとインデックス パラメーターを使用する。</span><span class="sxs-lookup"><span data-stu-id="ad98a-104">Take a lambda with an index parameter.</span></span>  
+-   <span data-ttu-id="1843c-104">ラムダとインデックス パラメーターを使用する。</span><span class="sxs-lookup"><span data-stu-id="1843c-104">Take a lambda with an index parameter.</span></span>  
   
--   <span data-ttu-id="ad98a-105">シーケンス行のプロパティに依存する (<xref:System.Linq.Queryable.TakeWhile%2A> など)。</span><span class="sxs-lookup"><span data-stu-id="ad98a-105">Rely on the properties of sequential rows, such as <xref:System.Linq.Queryable.TakeWhile%2A>.</span></span>  
+-   <span data-ttu-id="1843c-105">シーケンス行のプロパティに依存する (<xref:System.Linq.Queryable.TakeWhile%2A> など)。</span><span class="sxs-lookup"><span data-stu-id="1843c-105">Rely on the properties of sequential rows, such as <xref:System.Linq.Queryable.TakeWhile%2A>.</span></span>  
   
--   <span data-ttu-id="ad98a-106">任意の CLR 実装に依存する (<xref:System.Collections.Generic.IComparer%601> など)。</span><span class="sxs-lookup"><span data-stu-id="ad98a-106">Rely on an arbitrary CLR implementation, such as <xref:System.Collections.Generic.IComparer%601>.</span></span>  
+-   <span data-ttu-id="1843c-106">任意の CLR 実装に依存する (<xref:System.Collections.Generic.IComparer%601> など)。</span><span class="sxs-lookup"><span data-stu-id="1843c-106">Rely on an arbitrary CLR implementation, such as <xref:System.Collections.Generic.IComparer%601>.</span></span>  
   
-|<span data-ttu-id="ad98a-107">サポートされない例</span><span class="sxs-lookup"><span data-stu-id="ad98a-107">Examples of Unsupported</span></span>|  
+|<span data-ttu-id="1843c-107">サポートされない例</span><span class="sxs-lookup"><span data-stu-id="1843c-107">Examples of Unsupported</span></span>|  
 |-----------------------------|  
 |<xref:System.Linq.Enumerable.Where%60%601%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2CSystem.Int32%2CSystem.Boolean%7D%29?displayProperty=nameWithType>|  
 |<xref:System.Linq.Enumerable.Select%60%602%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2C%60%601%7D%29?displayProperty=nameWithType>|  
@@ -53,8 +42,8 @@ ms.lasthandoff: 01/17/2018
 |<xref:System.Linq.Enumerable.Aggregate%60%603%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2C%60%601%2CSystem.Func%7B%60%601%2C%60%600%2C%60%601%7D%2CSystem.Func%7B%60%601%2C%60%602%7D%29?displayProperty=nameWithType>|  
 |<xref:System.Linq.Enumerable.SequenceEqual%2A?displayProperty=nameWithType>|  
   
-## <a name="differences-from-net"></a><span data-ttu-id="ad98a-108">.NET との相違</span><span class="sxs-lookup"><span data-stu-id="ad98a-108">Differences from .NET</span></span>  
- <span data-ttu-id="ad98a-109">サポートされるすべてのシーケンス演算子は、`Average` を除いて、共通言語ランタイム (CLR) で正常に動作します。</span><span class="sxs-lookup"><span data-stu-id="ad98a-109">All supported sequence operators work as expected in the common language runtime (CLR) except for `Average`.</span></span> <span data-ttu-id="ad98a-110">`Average` は、平均化される型と同じ型の値を返しますが、CLR での `Average` は、常に <xref:System.Double> または <xref:System.Decimal> を返します。</span><span class="sxs-lookup"><span data-stu-id="ad98a-110">`Average` returns a value of the same type as the type being averaged, whereas in the CLR `Average` always returns either a <xref:System.Double> or a <xref:System.Decimal>.</span></span> <span data-ttu-id="ad98a-111">ソース引数が明示的に double / decimal にキャストされている場合、または、セレクターが double / decimal にキャストする場合、作成される SQL でもこのような変換が行われるため、結果に問題はありません。</span><span class="sxs-lookup"><span data-stu-id="ad98a-111">If the source argument is explicitly cast to double / decimal or the selector casts to double / decimal, the resulting SQL will also have such a conversion and the result will be as expected.</span></span>  
+## <a name="differences-from-net"></a><span data-ttu-id="1843c-108">.NET との相違</span><span class="sxs-lookup"><span data-stu-id="1843c-108">Differences from .NET</span></span>  
+ <span data-ttu-id="1843c-109">サポートされるすべてのシーケンス演算子は、`Average` を除いて、共通言語ランタイム (CLR) で正常に動作します。</span><span class="sxs-lookup"><span data-stu-id="1843c-109">All supported sequence operators work as expected in the common language runtime (CLR) except for `Average`.</span></span> <span data-ttu-id="1843c-110">`Average` は、平均化される型と同じ型の値を返しますが、CLR での `Average` は、常に <xref:System.Double> または <xref:System.Decimal> を返します。</span><span class="sxs-lookup"><span data-stu-id="1843c-110">`Average` returns a value of the same type as the type being averaged, whereas in the CLR `Average` always returns either a <xref:System.Double> or a <xref:System.Decimal>.</span></span> <span data-ttu-id="1843c-111">ソース引数が明示的に double / decimal にキャストされている場合、または、セレクターが double / decimal にキャストする場合、作成される SQL でもこのような変換が行われるため、結果に問題はありません。</span><span class="sxs-lookup"><span data-stu-id="1843c-111">If the source argument is explicitly cast to double / decimal or the selector casts to double / decimal, the resulting SQL will also have such a conversion and the result will be as expected.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="ad98a-112">参照</span><span class="sxs-lookup"><span data-stu-id="ad98a-112">See Also</span></span>  
- [<span data-ttu-id="ad98a-113">データ型と関数</span><span class="sxs-lookup"><span data-stu-id="ad98a-113">Data Types and Functions</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md)
+## <a name="see-also"></a><span data-ttu-id="1843c-112">関連項目</span><span class="sxs-lookup"><span data-stu-id="1843c-112">See Also</span></span>  
+ [<span data-ttu-id="1843c-113">データ型と関数</span><span class="sxs-lookup"><span data-stu-id="1843c-113">Data Types and Functions</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md)

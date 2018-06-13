@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33325943"
 ---
 # <a name="how-to-retrieve-the-shallow-value-of-an-element-c"></a><span data-ttu-id="178e1-102">方法: 要素の浅い値を取得する (C#)</span><span class="sxs-lookup"><span data-stu-id="178e1-102">How to: Retrieve the Shallow Value of an Element (C#)</span></span>
 <span data-ttu-id="178e1-103">このトピックでは、要素の浅い値を取得する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="178e1-103">This topic shows how to get the shallow value of an element.</span></span> <span data-ttu-id="178e1-104">浅い値は、特定の要素のみの値のことです。これに対し、深い値とは、すべての子孫要素の値が単一の文字列として連結された値をいいます。</span><span class="sxs-lookup"><span data-stu-id="178e1-104">The shallow value is the value of the specific element only, as opposed to the deep value, which includes the values of all descendent elements concatenated into a single string.</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33340659"
 ---
 # <a name="how-to-create-signed-friend-assemblies-c"></a><span data-ttu-id="e0bec-102">方法: 署名されたフレンド アセンブリを作成する (C#)</span><span class="sxs-lookup"><span data-stu-id="e0bec-102">How to: Create Signed Friend Assemblies (C#)</span></span>
 <span data-ttu-id="e0bec-103">この例では、厳密な名前を持つアセンブリと共にフレンド アセンブリを使用する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="e0bec-103">This example shows how to use friend assemblies with assemblies that have strong names.</span></span> <span data-ttu-id="e0bec-104">両方のアセンブリに厳密な名前が付けられている必要があります。</span><span class="sxs-lookup"><span data-stu-id="e0bec-104">Both assemblies must be strong named.</span></span> <span data-ttu-id="e0bec-105">この例のアセンブリは両方とも同じキーを使用していますが、2 つのアセンブリそれぞれが別々のキーを使用することもできます。</span><span class="sxs-lookup"><span data-stu-id="e0bec-105">Although both assemblies in this example use the same keys, you could use different keys for two assemblies.</span></span>  

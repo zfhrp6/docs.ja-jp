@@ -1,36 +1,25 @@
 ---
-title: "方法 : スカラー値のユーザー定義関数を使用する"
-ms.custom: 
+title: '方法 : スカラー値のユーザー定義関数を使用する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 714e252f-c053-4bbb-b1f3-924111cd4d97
-caps.latest.revision: "2"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 0788e70230fa78281d65be9eb6e0f45e58f25806
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 3748f7b865de22353c8c0a91aaf52e672455ed38
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33355380"
 ---
-# <a name="how-to-use-scalar-valued-user-defined-functions"></a><span data-ttu-id="6aee6-102">方法 : スカラー値のユーザー定義関数を使用する</span><span class="sxs-lookup"><span data-stu-id="6aee6-102">How to: Use Scalar-Valued User-Defined Functions</span></span>
-<span data-ttu-id="6aee6-103"><xref:System.Data.Linq.Mapping.FunctionAttribute> 属性を使用することによって、クラスで定義されているクライアント メソッドを、ユーザー定義関数に対応付けることができます。</span><span class="sxs-lookup"><span data-stu-id="6aee6-103">You can map a client method defined on a class to a user-defined function by using the <xref:System.Data.Linq.Mapping.FunctionAttribute> attribute.</span></span> <span data-ttu-id="6aee6-104">メソッドの本体は、メソッド呼び出しの目的を反映する式を構築し、変換および実行のためにその式を <xref:System.Data.Linq.DataContext> に渡します。</span><span class="sxs-lookup"><span data-stu-id="6aee6-104">Note that the body of the method constructs an expression that captures the intent of the method call, and passes that expression to the <xref:System.Data.Linq.DataContext> for translation and execution.</span></span>  
+# <a name="how-to-use-scalar-valued-user-defined-functions"></a><span data-ttu-id="5a319-102">方法 : スカラー値のユーザー定義関数を使用する</span><span class="sxs-lookup"><span data-stu-id="5a319-102">How to: Use Scalar-Valued User-Defined Functions</span></span>
+<span data-ttu-id="5a319-103"><xref:System.Data.Linq.Mapping.FunctionAttribute> 属性を使用することによって、クラスで定義されているクライアント メソッドを、ユーザー定義関数に対応付けることができます。</span><span class="sxs-lookup"><span data-stu-id="5a319-103">You can map a client method defined on a class to a user-defined function by using the <xref:System.Data.Linq.Mapping.FunctionAttribute> attribute.</span></span> <span data-ttu-id="5a319-104">メソッドの本体は、メソッド呼び出しの目的を反映する式を構築し、変換および実行のためにその式を <xref:System.Data.Linq.DataContext> に渡します。</span><span class="sxs-lookup"><span data-stu-id="5a319-104">Note that the body of the method constructs an expression that captures the intent of the method call, and passes that expression to the <xref:System.Data.Linq.DataContext> for translation and execution.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="6aee6-105">直接実行は、関数がクエリの外部で呼び出される場合のみ発生します。</span><span class="sxs-lookup"><span data-stu-id="6aee6-105">Direct execution occurs only if the function is called outside a query.</span></span> <span data-ttu-id="6aee6-106">詳細については、次を参照してください。[する方法: Call User-Defined 関数をインライン](../../../../../../docs/framework/data/adonet/sql/linq/how-to-call-user-defined-functions-inline.md)です。</span><span class="sxs-lookup"><span data-stu-id="6aee6-106">For more information, see [How to: Call User-Defined Functions Inline](../../../../../../docs/framework/data/adonet/sql/linq/how-to-call-user-defined-functions-inline.md).</span></span>  
+>  <span data-ttu-id="5a319-105">直接実行は、関数がクエリの外部で呼び出される場合のみ発生します。</span><span class="sxs-lookup"><span data-stu-id="5a319-105">Direct execution occurs only if the function is called outside a query.</span></span> <span data-ttu-id="5a319-106">詳細については、次を参照してください。[する方法: Call User-Defined 関数をインライン](../../../../../../docs/framework/data/adonet/sql/linq/how-to-call-user-defined-functions-inline.md)です。</span><span class="sxs-lookup"><span data-stu-id="5a319-106">For more information, see [How to: Call User-Defined Functions Inline](../../../../../../docs/framework/data/adonet/sql/linq/how-to-call-user-defined-functions-inline.md).</span></span>  
   
-## <a name="example"></a><span data-ttu-id="6aee6-107">例</span><span class="sxs-lookup"><span data-stu-id="6aee6-107">Example</span></span>  
- <span data-ttu-id="6aee6-108">次の SQL コードは、スカラー値のユーザー定義関数 `ReverseCustName()` を示しています。</span><span class="sxs-lookup"><span data-stu-id="6aee6-108">The following SQL code presents a scalar-valued user-defined function `ReverseCustName()`.</span></span>  
+## <a name="example"></a><span data-ttu-id="5a319-107">例</span><span class="sxs-lookup"><span data-stu-id="5a319-107">Example</span></span>  
+ <span data-ttu-id="5a319-108">次の SQL コードは、スカラー値のユーザー定義関数 `ReverseCustName()` を示しています。</span><span class="sxs-lookup"><span data-stu-id="5a319-108">The following SQL code presents a scalar-valued user-defined function `ReverseCustName()`.</span></span>  
   
 ```  
 CREATE FUNCTION ReverseCustName(@string varchar(100))  
@@ -43,10 +32,10 @@ BEGIN
 END  
 ```  
   
- <span data-ttu-id="6aee6-109">このコードで、次のようなクライアント メソッドを対応付けます。</span><span class="sxs-lookup"><span data-stu-id="6aee6-109">You would map a client method such as the following for this code:</span></span>  
+ <span data-ttu-id="5a319-109">このコードで、次のようなクライアント メソッドを対応付けます。</span><span class="sxs-lookup"><span data-stu-id="5a319-109">You would map a client method such as the following for this code:</span></span>  
   
  [!code-csharp[DLinqUDFS#3](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqUDFS/cs/northwind-tfunc.cs#3)]
  [!code-vb[DLinqUDFS#3](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqUDFS/vb/northwind-tfunc.vb#3)]  
   
-## <a name="see-also"></a><span data-ttu-id="6aee6-110">参照</span><span class="sxs-lookup"><span data-stu-id="6aee6-110">See Also</span></span>  
- [<span data-ttu-id="6aee6-111">ユーザー定義関数</span><span class="sxs-lookup"><span data-stu-id="6aee6-111">User-Defined Functions</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/user-defined-functions.md)
+## <a name="see-also"></a><span data-ttu-id="5a319-110">関連項目</span><span class="sxs-lookup"><span data-stu-id="5a319-110">See Also</span></span>  
+ [<span data-ttu-id="5a319-111">ユーザー定義関数</span><span class="sxs-lookup"><span data-stu-id="5a319-111">User-Defined Functions</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/user-defined-functions.md)

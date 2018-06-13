@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33340152"
 ---
 # <a name="preserving-white-space-while-loading-or-parsing-xml"></a><span data-ttu-id="79c4d-102">XML の読み込み時または解析時の空白の維持</span><span class="sxs-lookup"><span data-stu-id="79c4d-102">Preserving White Space while Loading or Parsing XML</span></span>
 <span data-ttu-id="79c4d-103">このトピックでは、空白に対する [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] の動作を制御する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="79c4d-103">This topic describes how to control the white-space behavior of [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33327693"
 ---
 # <a name="chaining-queries-example-c"></a><span data-ttu-id="5cc07-102">クエリの連結の例 (C#)</span><span class="sxs-lookup"><span data-stu-id="5cc07-102">Chaining Queries Example (C#)</span></span>
 <span data-ttu-id="5cc07-103">この例は前の例に基づいており、2 つのクエリ (どちらのクエリも遅延実行とレイジー評価を使用している) を連結した場合の結果について説明します。</span><span class="sxs-lookup"><span data-stu-id="5cc07-103">This example builds on the previous example and shows what happens when you chain together two queries that both use deferred execution and lazy evaluation.</span></span>  

@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33325683"
 ---
 # <a name="delimiters-for-documentation-tags-c-programming-guide"></a><span data-ttu-id="b2f6a-102">ドキュメント タグの区切り記号 (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="b2f6a-102">Delimiters for Documentation Tags (C# Programming Guide)</span></span>
 <span data-ttu-id="b2f6a-103">XML ドキュメント コメントでは区切り記号を使用し、ドキュメント コメントの開始位置と終了位置をコンパイラに示す必要があります。</span><span class="sxs-lookup"><span data-stu-id="b2f6a-103">The use of XML doc comments requires delimiters, which indicate to the compiler where a documentation comment begins and ends.</span></span> <span data-ttu-id="b2f6a-104">XML ドキュメント タグでは、次の種類の区切り記号を使用できます。</span><span class="sxs-lookup"><span data-stu-id="b2f6a-104">You can use the following kinds of delimiters with the XML documentation tags:</span></span>  
