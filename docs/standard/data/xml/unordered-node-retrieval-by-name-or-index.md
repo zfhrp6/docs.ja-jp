@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33572942"
 ---
 # <a name="unordered-node-retrieval-by-name-or-index"></a><span data-ttu-id="ba70b-102">名前またはインデックスによる順序付けられていないノードの取得</span><span class="sxs-lookup"><span data-stu-id="ba70b-102">Unordered Node Retrieval by Name or Index</span></span>
 <span data-ttu-id="ba70b-103">W3C (World Wide Web Consortium) 仕様で NamedNodeMap として定義されている **XmlNamedNodeMap** は、名前またはインデックスでノードを参照する機能を持っており、順序付けられていないノード セットを処理する必要があります。</span><span class="sxs-lookup"><span data-stu-id="ba70b-103">The **XmlNamedNodeMap** is described in the World Wide Web Consortium (W3C) specification as the NamedNodeMap and is required to handle an unordered set of nodes with the ability to reference nodes by their name or index.</span></span> <span data-ttu-id="ba70b-104">**XmlNamedNodeMap** にアクセスできるのは、メソッドまたはプロパティから **XmlNamedNodeMap** が返されたときだけです。</span><span class="sxs-lookup"><span data-stu-id="ba70b-104">The only way you have access to an **XmlNamedNodeMap** is when an **XmlNamedNodeMap** is returned through a method or property.</span></span> <span data-ttu-id="ba70b-105">**XmlNamedNodeMap** を返すメソッドやプロパティには、次の 3 つがあります。</span><span class="sxs-lookup"><span data-stu-id="ba70b-105">There are three methods or properties that return an **XmlNamedNodeMap**:</span></span>  

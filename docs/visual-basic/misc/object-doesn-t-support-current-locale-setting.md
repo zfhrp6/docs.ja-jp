@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33636803"
 ---
 # <a name="object-doesn39t-support-current-locale-setting-visual-basic"></a><span data-ttu-id="1d3bc-102">オブジェクトは&#39;t サポート現在のロケール設定 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="1d3bc-102">Object doesn&#39;t support current locale setting (Visual Basic)</span></span>
 <span data-ttu-id="1d3bc-103">アクセスしようとしたオブジェクトは、現在のプロジェクトのロケール設定をサポートしていません。</span><span class="sxs-lookup"><span data-stu-id="1d3bc-103">You tried to access an object that does not support the locale setting for the current project.</span></span>  

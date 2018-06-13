@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33474299"
 ---
 # <a name="activity-id-propagation"></a><span data-ttu-id="7670c-102">アクティビティ ID の伝達</span><span class="sxs-lookup"><span data-stu-id="7670c-102">Activity ID Propagation</span></span>
 <span data-ttu-id="7670c-103">伝達は、ServiceModel アクティビティ トレースが有効な場合 (ServiceModel 伝達) または無効な場合 (ユーザーからユーザーへのアクティビティ伝達) に実行されます。</span><span class="sxs-lookup"><span data-stu-id="7670c-103">Propagation happens when ServiceModel activity tracing is enabled (ServiceModel propagation) or disabled (User-to-User activity propagation).</span></span>  

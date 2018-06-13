@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33493266"
 ---
 # <a name="how-to-audit-windows-communication-foundation-security-events"></a><span data-ttu-id="10a36-102">方法 : Windows Communication Foundation セキュリティ イベントを監査する</span><span class="sxs-lookup"><span data-stu-id="10a36-102">How to: Audit Windows Communication Foundation Security Events</span></span>
 <span data-ttu-id="10a36-103">Windows Communication Foundation (WCF) では、Windows イベント ビューアーを使用して表示する Windows イベント ログにセキュリティ イベント ログに記録することができます。</span><span class="sxs-lookup"><span data-stu-id="10a36-103">Windows Communication Foundation (WCF) allows you to log security events to the Windows event log, which can be viewed using the Windows Event Viewer.</span></span> <span data-ttu-id="10a36-104">このトピックでは、セキュリティ イベントをログ出力するようにアプリケーションを設定する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="10a36-104">This topic explains how to set up an application so that it logs security events.</span></span> <span data-ttu-id="10a36-105">WCF の監査の詳細については、次を参照してください。[監査](../../../../docs/framework/wcf/feature-details/auditing-security-events.md)です。</span><span class="sxs-lookup"><span data-stu-id="10a36-105">For more information about WCF auditing, see [Auditing](../../../../docs/framework/wcf/feature-details/auditing-security-events.md).</span></span>  

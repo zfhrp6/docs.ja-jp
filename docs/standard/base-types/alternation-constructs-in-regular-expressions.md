@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33574736"
 ---
 # <a name="alternation-constructs-in-regular-expressions"></a><span data-ttu-id="c4b16-102">正規表現での代替構成体</span><span class="sxs-lookup"><span data-stu-id="c4b16-102">Alternation Constructs in Regular Expressions</span></span>
 <a name="top"></a> <span data-ttu-id="c4b16-103">代替構成体は、択一条件または条件一致を有効にするように正規表現を変更します。</span><span class="sxs-lookup"><span data-stu-id="c4b16-103">Alternation constructs modify a regular expression to enable either/or or conditional matching.</span></span> <span data-ttu-id="c4b16-104">.NET では、次の 3 つの代替構成体がサポートされています。</span><span class="sxs-lookup"><span data-stu-id="c4b16-104">.NET supports three alternation constructs:</span></span>  

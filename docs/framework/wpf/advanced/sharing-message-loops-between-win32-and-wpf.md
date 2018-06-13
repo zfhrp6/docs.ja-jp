@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33548816"
 ---
 # <a name="sharing-message-loops-between-win32-and-wpf"></a><span data-ttu-id="cfa97-102">Win32 と WPF 間でのメッセージ ループの共有</span><span class="sxs-lookup"><span data-stu-id="cfa97-102">Sharing Message Loops Between Win32 and WPF</span></span>
 <span data-ttu-id="cfa97-103">このトピックとの相互運用のメッセージ ループを実装する方法について説明[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]、既存を使用していずれかのメッセージ ループ危険にさらされる<xref:System.Windows.Threading.Dispatcher>または上に個別のメッセージ ループを作成することで、[!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)]面を相互運用コード。</span><span class="sxs-lookup"><span data-stu-id="cfa97-103">This topic describes how to implement a message loop for interoperation with [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)], either by using existing message loop exposure in <xref:System.Windows.Threading.Dispatcher> or by creating a separate message loop on the [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] side of your interoperation code.</span></span>  

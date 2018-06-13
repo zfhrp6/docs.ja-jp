@@ -18,9 +18,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 1328e40c74c17c55cc476bba761c1c3be9af034e
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33449339"
 ---
 # <a name="imetadataimport2-interface"></a><span data-ttu-id="05ed2-102">IMetaDataImport2 インターフェイス</span><span class="sxs-lookup"><span data-stu-id="05ed2-102">IMetaDataImport2 Interface</span></span>
 <span data-ttu-id="05ed2-103">拡張、 [IMetaDataImport](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)ジェネリック型の使用の機能を提供するインターフェイスです。</span><span class="sxs-lookup"><span data-stu-id="05ed2-103">Extends the [IMetaDataImport](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md) interface to provide the capability of working with generic types.</span></span>  

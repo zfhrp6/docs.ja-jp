@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33585926"
 ---
 # <a name="file-is-too-large-to-read-into-a-byte-array"></a><span data-ttu-id="bb23c-102">バイト配列に読み取るにはファイルが大きすぎます。</span><span class="sxs-lookup"><span data-stu-id="bb23c-102">File is too large to read into a byte array</span></span>
 <span data-ttu-id="bb23c-103">バイト配列に読み取るしようとしているファイルのサイズは 4 GB を超えています。</span><span class="sxs-lookup"><span data-stu-id="bb23c-103">The size of the file you are attempting to read into a byte array exceeds 4 GB.</span></span> <span data-ttu-id="bb23c-104">`My.Computer.FileSystem.ReadAllBytes`メソッドは、このサイズを超えるファイルを読み取ることができません。</span><span class="sxs-lookup"><span data-stu-id="bb23c-104">The `My.Computer.FileSystem.ReadAllBytes` method cannot read a file that exceeds this size.</span></span>  

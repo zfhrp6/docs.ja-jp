@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33570539"
 ---
 # <a name="changing-case-in-net"></a><span data-ttu-id="c7eed-102">.NET の大文字と小文字の変更</span><span class="sxs-lookup"><span data-stu-id="c7eed-102">Changing Case in .NET</span></span>
 <span data-ttu-id="c7eed-103">ユーザーからの入力を受け付けるアプリケーションを記述する場合、ユーザーがデータ入力に使用するケースを正確に予測することはできません。</span><span class="sxs-lookup"><span data-stu-id="c7eed-103">If you write an application that accepts input from a user, you can never be sure what case he or she will use to enter the data.</span></span> <span data-ttu-id="c7eed-104">多くの場合、特にユーザー インターフェイスにそれを表示する場合には、文字列に一貫性のあるケースを使用することが求められます。</span><span class="sxs-lookup"><span data-stu-id="c7eed-104">Often, you want strings to be cased consistently, particularly if you are displaying them in the user interface.</span></span> <span data-ttu-id="c7eed-105">次の表は、3 つのケース変更方式を示しています。</span><span class="sxs-lookup"><span data-stu-id="c7eed-105">The following table describes three case-changing methods.</span></span> <span data-ttu-id="c7eed-106">最初の 2 つの方式は、カルチャを受け入れるオーバーロードを提供します。</span><span class="sxs-lookup"><span data-stu-id="c7eed-106">The first two methods provide an overload that accepts a culture.</span></span>  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33572123"
 ---
 # <a name="select-xml-data-using-xpathnavigator"></a><span data-ttu-id="a8791-102">XPathNavigator を使用した XML データの選択</span><span class="sxs-lookup"><span data-stu-id="a8791-102">Select XML Data Using XPathNavigator</span></span>
 <span data-ttu-id="a8791-103"><xref:System.Xml.XPath.XPathNavigator> クラスは、<xref:System.Xml.XPath.XPathDocument> オブジェクトまたは <xref:System.Xml.XmlDocument> オブジェクト内で XPath 式を使用してノード セットを選択するための一連のメソッドを提供します。</span><span class="sxs-lookup"><span data-stu-id="a8791-103">The <xref:System.Xml.XPath.XPathNavigator> class provides a set of methods used to select a set of nodes in an <xref:System.Xml.XPath.XPathDocument> or <xref:System.Xml.XmlDocument> object using an XPath expression.</span></span> <span data-ttu-id="a8791-104">選択した後、選択されたノード セットに対して反復して処理を行うことができます。</span><span class="sxs-lookup"><span data-stu-id="a8791-104">Once selected, you can iterate over the selected set of nodes.</span></span>  

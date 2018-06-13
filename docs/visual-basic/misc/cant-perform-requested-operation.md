@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33636849"
 ---
 # <a name="can39t-perform-requested-operation-visual-basic"></a><span data-ttu-id="3ffec-102">できます&#39;要求された操作 (Visual Basic) を実行しません。</span><span class="sxs-lookup"><span data-stu-id="3ffec-102">Can&#39;t perform requested operation (Visual Basic)</span></span>
 <span data-ttu-id="3ffec-103">プロジェクトの現在の状態が無効になるため、操作を実行できません。</span><span class="sxs-lookup"><span data-stu-id="3ffec-103">An operation cannot be carried out because it would invalidate the current state of the project.</span></span> <span data-ttu-id="3ffec-104">たとえば、実行中のコードをプログラムで変更しようとした可能性があります。</span><span class="sxs-lookup"><span data-stu-id="3ffec-104">For example, you may have tried to programmatically modify code that is running.</span></span>  

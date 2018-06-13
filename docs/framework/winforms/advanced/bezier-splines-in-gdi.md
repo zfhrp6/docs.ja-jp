@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33517574"
 ---
 # <a name="b233zier-splines-in-gdi"></a><span data-ttu-id="fa959-102">B&#233;ベジエ スプライン GDI + で</span><span class="sxs-lookup"><span data-stu-id="fa959-102">B&#233;zier Splines in GDI+</span></span>
 <span data-ttu-id="fa959-103">ベジエ スプラインは、4 つのポイントで指定された曲線: 次の 2 つの終点 (p1 と p2) と 2 つの制御ポイント (c1 と c2)。</span><span class="sxs-lookup"><span data-stu-id="fa959-103">A Bézier spline is a curve specified by four points: two end points (p1 and p2) and two control points (c1 and c2).</span></span> <span data-ttu-id="fa959-104">曲線では、p1 で開始され、p2 で終了します。</span><span class="sxs-lookup"><span data-stu-id="fa959-104">The curve begins at p1 and ends at p2.</span></span> <span data-ttu-id="fa959-105">コントロール ポイントを曲線が通過しませんが、管理ポイントが磁石、特定の方向に曲線をプルし、曲線曲がる方法に影響を与えるとして機能します。</span><span class="sxs-lookup"><span data-stu-id="fa959-105">The curve does not pass through the control points, but the control points act as magnets, pulling the curve in certain directions and influencing the way the curve bends.</span></span> <span data-ttu-id="fa959-106">次の図は、およびそのエンドポイントとの制御点のベジエ曲線を示します。</span><span class="sxs-lookup"><span data-stu-id="fa959-106">The following illustration shows a Bézier curve along with its endpoints and control points.</span></span>  

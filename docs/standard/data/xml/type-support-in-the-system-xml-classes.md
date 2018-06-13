@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33569695"
 ---
 # <a name="type-support-in-the-systemxml-classes"></a><span data-ttu-id="58405-102">System.Xml クラスでの型のサポート</span><span class="sxs-lookup"><span data-stu-id="58405-102">Type Support in the System.Xml Classes</span></span>
 <span data-ttu-id="58405-103">.NET Framework Version 2.0 では、コアの XML クラスが強化され、型サポート機能が追加されています。</span><span class="sxs-lookup"><span data-stu-id="58405-103">In the .NET Framework version 2.0, the core XML classes have been enhanced to include type support features.</span></span> <span data-ttu-id="58405-104"><xref:System.Xml.XmlReader>、<xref:System.Xml.XmlWriter>、および <xref:System.Xml.XPath.XPathNavigator> クラスには、XML スキーマ型と共通言語ランタイム (CLR) 型の間の変換機能を含む型サポート機能が含まれています。</span><span class="sxs-lookup"><span data-stu-id="58405-104">The <xref:System.Xml.XmlReader>, <xref:System.Xml.XmlWriter>, and <xref:System.Xml.XPath.XPathNavigator> classes include type support features including the ability to convert between XML Schema types and common language runtime (CLR) types.</span></span>  

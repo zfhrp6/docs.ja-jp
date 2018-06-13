@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33572035"
 ---
 # <a name="how-to-write-characters-to-a-string"></a><span data-ttu-id="f80b8-102">方法 : 文字列に文字を書き込む</span><span class="sxs-lookup"><span data-stu-id="f80b8-102">How to: Write Characters to a String</span></span>
 <span data-ttu-id="f80b8-103">次のコード例では、文字列の配列から同期および非同期的に文字が書き込まれます。</span><span class="sxs-lookup"><span data-stu-id="f80b8-103">The following code examples write characters synchronously and asynchronously from a character array into a string.</span></span>  

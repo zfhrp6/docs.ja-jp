@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33634930"
 ---
 # <a name="no-files-found-matching-39ltfilenamegt39"></a><span data-ttu-id="5fe26-102">一致するファイルが見つかりません&#39;&lt;ファイル名&gt;&#39;</span><span class="sxs-lookup"><span data-stu-id="5fe26-102">No files found matching &#39;&lt;filename&gt;&#39;</span></span>
 <span data-ttu-id="5fe26-103">ファイル名が正しくないか、またはファイルが存在しません。</span><span class="sxs-lookup"><span data-stu-id="5fe26-103">The file name is incorrect, or the file does not exist.</span></span>  

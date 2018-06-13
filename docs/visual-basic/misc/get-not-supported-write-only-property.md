@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33636762"
 ---
 # <a name="get-not-supported-write-only-property"></a><span data-ttu-id="e2b82-102">Get はサポートされません。書き込み専用のプロパティです</span><span class="sxs-lookup"><span data-stu-id="e2b82-102">Get not supported (write-only property)</span></span>
 <span data-ttu-id="e2b82-103">書き込み専用であるために、プロパティを読み取ることができません。</span><span class="sxs-lookup"><span data-stu-id="e2b82-103">A property cannot be read because it is write only.</span></span>  

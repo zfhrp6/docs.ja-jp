@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33567820"
 ---
 # <a name="creating-new-strings-in-net"></a><span data-ttu-id="831c6-102">.NET で新しい文字列を作成する</span><span class="sxs-lookup"><span data-stu-id="831c6-102">Creating New Strings in .NET</span></span>
 <span data-ttu-id="831c6-103">[!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] は、単純な割り当てを使用した文字列の作成をサポートしています。また、多数の異なるパラメーターを使用した文字列の作成をサポートするために、クラス コンストラクターをオーバーロードします。</span><span class="sxs-lookup"><span data-stu-id="831c6-103">The [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] allows strings to be created using simple assignment, and also overloads a class constructor to support string creation using a number of different parameters.</span></span> <span data-ttu-id="831c6-104">また、[!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] は、複数の文字列、文字列の配列、またはオブジェクトを組み合わせて新しい文字列オブジェクトを作成する、<xref:System.String?displayProperty=nameWithType> クラスの複数のメソッドを提供します。</span><span class="sxs-lookup"><span data-stu-id="831c6-104">The [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] also provides several methods in the <xref:System.String?displayProperty=nameWithType> class that create new string objects by combining several strings, arrays of strings, or objects.</span></span>  

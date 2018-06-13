@@ -22,6 +22,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33569890"
 ---
 # <a name="trimming-and-removing-characters-from-strings-in-net"></a><span data-ttu-id="89369-102">.NET の文字列からの文字のトリムと削除</span><span class="sxs-lookup"><span data-stu-id="89369-102">Trimming and Removing Characters from Strings in .NET</span></span>
 <span data-ttu-id="89369-103">文章を個々の単語に分割すると、単語の先頭または末尾に空白が残る場合があります。</span><span class="sxs-lookup"><span data-stu-id="89369-103">If you are parsing a sentence into individual words, you might end up with words that have blank spaces (also called white spaces) on either end of the word.</span></span> <span data-ttu-id="89369-104">そのような場合は、**System.String** クラスのトリム メソッドのいずれかを使用して、文字列内の指定した位置から任意の数の空白またはその他の文字を削除できます。</span><span class="sxs-lookup"><span data-stu-id="89369-104">In this situation, you can use one of the trim methods in the **System.String** class to remove any number of spaces or other characters from a specified position in the string.</span></span> <span data-ttu-id="89369-105">使用できるトリム メソッドとその説明を次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="89369-105">The following table describes the available trim methods.</span></span>  

@@ -18,9 +18,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: c1a11c0b697a32b184a2c4a60c2f2c88a4b47aaf
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33451537"
 ---
 # <a name="imetadatatables-interface"></a><span data-ttu-id="0c8d6-102">IMetaDataTables インターフェイス</span><span class="sxs-lookup"><span data-stu-id="0c8d6-102">IMetaDataTables Interface</span></span>
 <span data-ttu-id="0c8d6-103">テーブル内のメタデータ情報の格納と取得のためのメソッドを提供します。</span><span class="sxs-lookup"><span data-stu-id="0c8d6-103">Provides methods for the storage and retrieval of metadata information in tables.</span></span>  

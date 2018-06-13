@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: fef23f2b128b1e5393c5104b6e33758882b34882
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33420883"
 ---
 # <a name="icordebugmodulegetmetadatainterface-method"></a><span data-ttu-id="d8fd6-102">ICorDebugModule::GetMetaDataInterface メソッド</span><span class="sxs-lookup"><span data-stu-id="d8fd6-102">ICorDebugModule::GetMetaDataInterface Method</span></span>
 <span data-ttu-id="d8fd6-103">モジュールのメタデータの検査に使用できるメタデータ インターフェイス オブジェクトを取得します。</span><span class="sxs-lookup"><span data-stu-id="d8fd6-103">Gets a metadata interface object that can be used to examine the metadata for the module.</span></span>  

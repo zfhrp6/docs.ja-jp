@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 47654d7ad1803e57f5db846ea0370d1f736deaa5
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33452274"
 ---
 # <a name="icorprofilercallback2handlecreated-method"></a><span data-ttu-id="0402e-102">ICorProfilerCallback2::HandleCreated メソッド</span><span class="sxs-lookup"><span data-stu-id="0402e-102">ICorProfilerCallback2::HandleCreated Method</span></span>
 <span data-ttu-id="0402e-103">ガベージ コレクション ハンドルが作成されているコード プロファイラーに通知します。</span><span class="sxs-lookup"><span data-stu-id="0402e-103">Notifies the code profiler that a garbage collection handle has been created.</span></span>  

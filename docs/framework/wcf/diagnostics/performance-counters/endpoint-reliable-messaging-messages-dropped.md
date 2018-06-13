@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33469324"
 ---
 # <a name="endpoint-reliable-messaging-messages-dropped"></a><span data-ttu-id="065e5-102">エンドポイント: 信頼できるメッセージの破棄されたメッセージ</span><span class="sxs-lookup"><span data-stu-id="065e5-102">Endpoint: Reliable Messaging Messages Dropped</span></span>
 <span data-ttu-id="065e5-103">カウンター名 : 破棄された信頼できるメッセージ。</span><span class="sxs-lookup"><span data-stu-id="065e5-103">Counter Name: Reliable Messaging Sessions Dropped.</span></span>  

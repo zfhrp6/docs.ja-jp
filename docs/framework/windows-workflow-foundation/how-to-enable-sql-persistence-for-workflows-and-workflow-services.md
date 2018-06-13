@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33519435"
 ---
 # <a name="how-to-enable-sql-persistence-for-workflows-and-workflow-services"></a><span data-ttu-id="38471-102">ワークフローとワークフロー サービスの SQL 永続性を有効にする方法</span><span class="sxs-lookup"><span data-stu-id="38471-102">How to: Enable SQL Persistence for Workflows and Workflow Services</span></span>
 <span data-ttu-id="38471-103">このトピックでは、ワークフローとワークフロー サービスの永続性をプログラムと構成ファイルの両方から使用して有効にできるように、SQL Workflow Instance Store の機能を構成する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="38471-103">This topic describes how to configure the SQL Workflow Instance Store feature to enable persistence for your workflows and workflow services both programmatically and by using a configuration file.</span></span>  

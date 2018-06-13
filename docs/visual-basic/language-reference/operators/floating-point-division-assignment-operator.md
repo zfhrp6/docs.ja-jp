@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33604095"
 ---
 # <a name="-operator-visual-basic"></a><span data-ttu-id="18875-102">/= 演算子 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="18875-102">/= Operator (Visual Basic)</span></span>
 <span data-ttu-id="18875-103">変数またはプロパティの値式の値で除算し、浮動小数点の結果を変数またはプロパティに代入します。</span><span class="sxs-lookup"><span data-stu-id="18875-103">Divides the value of a variable or property by the value of an expression and assigns the floating-point result to the variable or property.</span></span>  

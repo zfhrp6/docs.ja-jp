@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33603640"
 ---
 # <a name="new-operator-visual-basic"></a><span data-ttu-id="e00c2-102">New 演算子 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="e00c2-102">New Operator (Visual Basic)</span></span>
 <span data-ttu-id="e00c2-103">導入されています、`New`句を新しいオブジェクト インスタンスを作成する型パラメーターにコンス トラクター制約を指定または識別、`Sub`クラス コンス トラクターと手順。</span><span class="sxs-lookup"><span data-stu-id="e00c2-103">Introduces a `New` clause to create a new object instance, specifies a constructor constraint on a type parameter, or identifies a `Sub` procedure as a class constructor.</span></span>  

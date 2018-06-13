@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33570979"
 ---
 # <a name="deciding-when-to-implement-the-event-based-asynchronous-pattern"></a><span data-ttu-id="93565-102">イベントベースの非同期パターンをいつ実装するかの決定</span><span class="sxs-lookup"><span data-stu-id="93565-102">Deciding When to Implement the Event-based Asynchronous Pattern</span></span>
 <span data-ttu-id="93565-103">イベント ベースの非同期パターンは、クラスの非同期動作を公開します。</span><span class="sxs-lookup"><span data-stu-id="93565-103">The Event-based Asynchronous Pattern provides a pattern for exposing the asynchronous behavior of a class.</span></span> <span data-ttu-id="93565-104">このパターンを導入すると、[!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] では、非同期動作を公開する 2 つのパターンが定義されます。<xref:System.IAsyncResult?displayProperty=nameWithType> インターフェイスに基づく非同期パターンとイベント ベースのパターンです。</span><span class="sxs-lookup"><span data-stu-id="93565-104">With the introduction of this pattern, the [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] defines two patterns for exposing asynchronous behavior: the Asynchronous Pattern based on the <xref:System.IAsyncResult?displayProperty=nameWithType> interface, and the event-based pattern.</span></span> <span data-ttu-id="93565-105">このトピックでは、両方のパターンをどのような状況で実装するべきか説明します。</span><span class="sxs-lookup"><span data-stu-id="93565-105">This topic describes when it is appropriate for you to implement both patterns.</span></span>  

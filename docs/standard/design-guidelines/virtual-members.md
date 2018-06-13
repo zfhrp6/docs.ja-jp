@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33573092"
 ---
 # <a name="virtual-members"></a><span data-ttu-id="f3314-102">仮想メンバー</span><span class="sxs-lookup"><span data-stu-id="f3314-102">Virtual Members</span></span>
 <span data-ttu-id="f3314-103">したがって、サブクラスの動作を変更する、仮想メンバーをオーバーライドできます。</span><span class="sxs-lookup"><span data-stu-id="f3314-103">Virtual members can be overridden, thus changing the behavior of the subclass.</span></span> <span data-ttu-id="f3314-104">それらは、拡張性の観点からのコールバックを非常に似ていますが、実行のパフォーマンスとメモリ消費量の観点から優れています。</span><span class="sxs-lookup"><span data-stu-id="f3314-104">They are quite similar to callbacks in terms of the extensibility they provide, but they are better in terms of execution performance and memory consumption.</span></span> <span data-ttu-id="f3314-105">また、仮想メンバーは、特殊な既存の型 (特殊化) の種類を作成する必要があるシナリオで複数な操作です。</span><span class="sxs-lookup"><span data-stu-id="f3314-105">Also, virtual members feel more natural in scenarios that require creating a special kind of an existing type (specialization).</span></span>  

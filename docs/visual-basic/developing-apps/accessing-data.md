@@ -7,9 +7,10 @@ helpviewer_keywords:
 ms.assetid: 3086ab38-3be5-4b22-9385-7d0e16b04f6a
 ms.openlocfilehash: 2e6cfc3d6d8752b12fa20a357dedfeb1b3346dce
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33585828"
 ---
 # <a name="accessing-data-in-visual-basic-applications"></a><span data-ttu-id="6c71c-102">Visual Basic アプリケーションにおけるデータ アクセス</span><span class="sxs-lookup"><span data-stu-id="6c71c-102">Accessing data in Visual Basic applications</span></span>
 <span data-ttu-id="6c71c-103">Visual Basic には、データにアクセスするアプリケーションを開発する際に役立ついくつかの新機能が用意されています。</span><span class="sxs-lookup"><span data-stu-id="6c71c-103">Visual Basic includes several new features to assist in developing applications that access data.</span></span> <span data-ttu-id="6c71c-104">Windows アプリケーションのデータ バインド フォームは、[[データ ソース]](/visualstudio/data-tools/add-new-data-sources) ウィンドウからフォームに項目をドラッグすることにより作成できます。</span><span class="sxs-lookup"><span data-stu-id="6c71c-104">Data-bound forms for Windows applications are created by dragging items from the [Data Sources Window](/visualstudio/data-tools/add-new-data-sources) onto the form.</span></span> <span data-ttu-id="6c71c-105">データをコントロールにバインドするには、**[データ ソース]** ウィンドウから既存のコントロールに項目をドラッグします。</span><span class="sxs-lookup"><span data-stu-id="6c71c-105">You bind controls to data by dragging items from the **Data Sources Window** onto existing controls.</span></span>  

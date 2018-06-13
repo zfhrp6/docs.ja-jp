@@ -1,14 +1,6 @@
 ---
-title: "ICorProfilerInfo::GetHandleFromThread メソッド"
-ms.custom: 
+title: ICorProfilerInfo::GetHandleFromThread メソッド
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ICorProfilerInfo.GetHandleFromThread
 api_location:
@@ -23,22 +15,19 @@ helpviewer_keywords:
 ms.assetid: 36cdc9f5-7579-4cd2-aa36-fc05c741584c
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 465fb61d17269873b3a2aa2f323086f209cab946
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 9658ad8a1963d3747fb7c23dce84790a30b17db3
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33453223"
 ---
-# <a name="icorprofilerinfogethandlefromthread-method"></a><span data-ttu-id="a3c2f-102">ICorProfilerInfo::GetHandleFromThread メソッド</span><span class="sxs-lookup"><span data-stu-id="a3c2f-102">ICorProfilerInfo::GetHandleFromThread Method</span></span>
-<span data-ttu-id="a3c2f-103">Win32 スレッド ハンドルをスレッドの ID を割り当てます。</span><span class="sxs-lookup"><span data-stu-id="a3c2f-103">Maps the ID of a thread to a Win32 thread handle.</span></span>  
+# <a name="icorprofilerinfogethandlefromthread-method"></a><span data-ttu-id="ed60c-102">ICorProfilerInfo::GetHandleFromThread メソッド</span><span class="sxs-lookup"><span data-stu-id="ed60c-102">ICorProfilerInfo::GetHandleFromThread Method</span></span>
+<span data-ttu-id="ed60c-103">Win32 スレッド ハンドルをスレッドの ID を割り当てます。</span><span class="sxs-lookup"><span data-stu-id="ed60c-103">Maps the ID of a thread to a Win32 thread handle.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="a3c2f-104">構文</span><span class="sxs-lookup"><span data-stu-id="a3c2f-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="ed60c-104">構文</span><span class="sxs-lookup"><span data-stu-id="ed60c-104">Syntax</span></span>  
   
 ```  
 HRESULT GetHandleFromThread(  
@@ -46,24 +35,24 @@ HRESULT GetHandleFromThread(
     [out] HANDLE  *phThread);  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="a3c2f-105">パラメーター</span><span class="sxs-lookup"><span data-stu-id="a3c2f-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="ed60c-105">パラメーター</span><span class="sxs-lookup"><span data-stu-id="ed60c-105">Parameters</span></span>  
  `threadId`  
- <span data-ttu-id="a3c2f-106">[in]マップするスレッドの ID です。</span><span class="sxs-lookup"><span data-stu-id="a3c2f-106">[in] The thread ID to be mapped.</span></span>  
+ <span data-ttu-id="ed60c-106">[in]マップするスレッドの ID です。</span><span class="sxs-lookup"><span data-stu-id="ed60c-106">[in] The thread ID to be mapped.</span></span>  
   
  `phThread`  
- <span data-ttu-id="a3c2f-107">[out]Win32 スレッド ハンドルへのポインター。</span><span class="sxs-lookup"><span data-stu-id="a3c2f-107">[out] A pointer to a Win32 thread handle.</span></span>  
+ <span data-ttu-id="ed60c-107">[out]Win32 スレッド ハンドルへのポインター。</span><span class="sxs-lookup"><span data-stu-id="ed60c-107">[out] A pointer to a Win32 thread handle.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="a3c2f-108">コメント</span><span class="sxs-lookup"><span data-stu-id="a3c2f-108">Remarks</span></span>  
- <span data-ttu-id="a3c2f-109">プロファイラーは、Win32 を呼び出す必要があります`DuplicateHandle`関数を使用する前に、ハンドル。</span><span class="sxs-lookup"><span data-stu-id="a3c2f-109">The profiler must call the Win32 `DuplicateHandle` function on the handle before using it.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="ed60c-108">コメント</span><span class="sxs-lookup"><span data-stu-id="ed60c-108">Remarks</span></span>  
+ <span data-ttu-id="ed60c-109">プロファイラーは、Win32 を呼び出す必要があります`DuplicateHandle`関数を使用する前に、ハンドル。</span><span class="sxs-lookup"><span data-stu-id="ed60c-109">The profiler must call the Win32 `DuplicateHandle` function on the handle before using it.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="a3c2f-110">必要条件</span><span class="sxs-lookup"><span data-stu-id="a3c2f-110">Requirements</span></span>  
- <span data-ttu-id="a3c2f-111">**プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="a3c2f-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="ed60c-110">要件</span><span class="sxs-lookup"><span data-stu-id="ed60c-110">Requirements</span></span>  
+ <span data-ttu-id="ed60c-111">**プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="ed60c-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="a3c2f-112">**ヘッダー** : CorProf.idl、CorProf.h</span><span class="sxs-lookup"><span data-stu-id="a3c2f-112">**Header:** CorProf.idl, CorProf.h</span></span>  
+ <span data-ttu-id="ed60c-112">**ヘッダー** : CorProf.idl、CorProf.h</span><span class="sxs-lookup"><span data-stu-id="ed60c-112">**Header:** CorProf.idl, CorProf.h</span></span>  
   
- <span data-ttu-id="a3c2f-113">**ライブラリ:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="a3c2f-113">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="ed60c-113">**ライブラリ:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="ed60c-113">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="a3c2f-114">**.NET framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="a3c2f-114">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="ed60c-114">**.NET framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="ed60c-114">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="a3c2f-115">参照</span><span class="sxs-lookup"><span data-stu-id="a3c2f-115">See Also</span></span>  
- [<span data-ttu-id="a3c2f-116">ICorProfilerInfo インターフェイス</span><span class="sxs-lookup"><span data-stu-id="a3c2f-116">ICorProfilerInfo Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
+## <a name="see-also"></a><span data-ttu-id="ed60c-115">関連項目</span><span class="sxs-lookup"><span data-stu-id="ed60c-115">See Also</span></span>  
+ [<span data-ttu-id="ed60c-116">ICorProfilerInfo インターフェイス</span><span class="sxs-lookup"><span data-stu-id="ed60c-116">ICorProfilerInfo Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)

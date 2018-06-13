@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 6da4c282c7f969a406a657d1e30dd6120a32b4e3
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33420909"
 ---
 # <a name="icordebugprocesswritememory-method"></a><span data-ttu-id="4790b-102">ICorDebugProcess::WriteMemory メソッド</span><span class="sxs-lookup"><span data-stu-id="4790b-102">ICorDebugProcess::WriteMemory Method</span></span>
 <span data-ttu-id="4790b-103">このプロセスでメモリの領域にデータを書き込みます。</span><span class="sxs-lookup"><span data-stu-id="4790b-103">Writes data to an area of memory in this process.</span></span>  

@@ -42,6 +42,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33579861"
 ---
 # <a name="the-regular-expression-object-model"></a><span data-ttu-id="151c8-102">正規表現のオブジェクト モデル</span><span class="sxs-lookup"><span data-stu-id="151c8-102">The Regular Expression Object Model</span></span>
 <a name="introduction"></a> <span data-ttu-id="151c8-103">ここでは、.NET の正規表現を扱うときに使用するオブジェクト モデルについて説明します。</span><span class="sxs-lookup"><span data-stu-id="151c8-103">This topic describes the object model used in working with .NET regular expressions.</span></span> <span data-ttu-id="151c8-104">このチュートリアルは、次のセクションで構成されています。</span><span class="sxs-lookup"><span data-stu-id="151c8-104">It contains the following sections:</span></span>  
