@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: eb1fc266c8451953c8b6a9c686f4a1c1951966e3
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33405399"
 ---
 # <a name="embedresource-method"></a>EmbedResource メソッド
 埋め込みリソースを宣言します。 このメソッドには、リソースが実際には埋め込まれません。  

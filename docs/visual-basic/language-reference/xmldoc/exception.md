@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33601154"
 ---
 # <a name="ltexceptiongt-visual-basic"></a>&lt;例外&gt;(Visual Basic)
 どの例外がスローされる可能性を指定します。  

@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33544923"
 ---
 # <a name="how-to-apply-transforms-to-text"></a>方法 : テキストに変換を適用する
 変換を利用すると、アプリケーションのテキストの表示を変えることができます。 次の例は、内のテキストの表示には影響を描画変換のさまざまな種類を使用して、<xref:System.Windows.Controls.TextBlock>コントロール。  

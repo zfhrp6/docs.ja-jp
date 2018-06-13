@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33522270"
 ---
 # <a name="how-to-print-a-windows-form"></a>方法 : Windows フォームを印刷する
 開発プロセスの一環として、通常はする、Windows フォームのコピーを印刷します。 次のコード例を使用して現在のフォームのコピーを印刷する方法を示しています、<xref:System.Drawing.Graphics.CopyFromScreen%2A>メソッドです。  
