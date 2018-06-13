@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33594384"
 ---
 # <a name="lttype1gt39lttypenamegt39-must-implement-39ltmethodnamegt39-for-interface-39ltinterfacenamegt39"></a><span data-ttu-id="bd4fb-102">&lt;type1&gt;&#39;&lt;typename&gt; &#39;実装する必要があります&#39; &lt;methodname&gt; &#39;インターフェイスの&#39; &lt;interfacename&gt;&#39;</span><span class="sxs-lookup"><span data-stu-id="bd4fb-102">&lt;type1&gt;&#39;&lt;typename&gt;&#39; must implement &#39;&lt;methodname&gt;&#39; for interface &#39;&lt;interfacename&gt;&#39;</span></span>
 <span data-ttu-id="bd4fb-103">クラスまたは構造体、インターフェイスを実装する要求が、インターフェイスによって定義されたプロシージャは実装されません。</span><span class="sxs-lookup"><span data-stu-id="bd4fb-103">A class or structure claims to implement an interface but does not implement a procedure defined by the interface.</span></span> <span data-ttu-id="bd4fb-104">インターフェイスのすべてのメンバーを実装する必要があります。</span><span class="sxs-lookup"><span data-stu-id="bd4fb-104">Every member of the interface must be implemented.</span></span>  

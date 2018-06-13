@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33467401"
 ---
 # <a name="4035---pendingsessionqueueratio"></a><span data-ttu-id="85a35-102">4035 - PendingSessionQueueRatio</span><span class="sxs-lookup"><span data-stu-id="85a35-102">4035 - PendingSessionQueueRatio</span></span>
 ## <a name="properties"></a><span data-ttu-id="85a35-103">プロパティ</span><span class="sxs-lookup"><span data-stu-id="85a35-103">Properties</span></span>  

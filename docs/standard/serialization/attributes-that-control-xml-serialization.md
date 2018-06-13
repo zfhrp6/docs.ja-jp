@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33585040"
 ---
 # <a name="attributes-that-control-xml-serialization"></a><span data-ttu-id="4d302-102">XML シリアル化を制御する属性</span><span class="sxs-lookup"><span data-stu-id="4d302-102">Attributes That Control XML Serialization</span></span>
 <span data-ttu-id="4d302-103">次の表に示す属性をクラスおよびクラス メンバーに適用すると、<xref:System.Xml.Serialization.XmlSerializer> がそのクラスのインスタンスをシリアル化または逆シリアル化する方法を制御できます。</span><span class="sxs-lookup"><span data-stu-id="4d302-103">You can apply the attributes in the following table to classes and class members to control the way in which the <xref:System.Xml.Serialization.XmlSerializer> serializes or deserializes an instance of the class.</span></span> <span data-ttu-id="4d302-104">これらの属性で XML シリアル化を制御する方法については、「[属性を使用した XML シリアル化の制御](../../../docs/standard/serialization/controlling-xml-serialization-using-attributes.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="4d302-104">To understand how these attributes control XML serialization, see [Controlling XML Serialization Using Attributes](../../../docs/standard/serialization/controlling-xml-serialization-using-attributes.md).</span></span>  

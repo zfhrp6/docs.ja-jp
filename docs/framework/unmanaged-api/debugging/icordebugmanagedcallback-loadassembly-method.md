@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: f1d05914004d3c1fcc5ff109e854d01661367835
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33413120"
 ---
 # <a name="icordebugmanagedcallbackloadassembly-method"></a><span data-ttu-id="b694d-102">ICorDebugManagedCallback::LoadAssembly メソッド</span><span class="sxs-lookup"><span data-stu-id="b694d-102">ICorDebugManagedCallback::LoadAssembly Method</span></span>
 <span data-ttu-id="b694d-103">共通言語ランタイム (CLR) アセンブリが正常に読み込まれたことをデバッガーに通知します。</span><span class="sxs-lookup"><span data-stu-id="b694d-103">Notifies the debugger that a common language runtime (CLR) assembly has been successfully loaded.</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33474195"
 ---
 # <a name="reliable-messaging-messages-dropped-per-second"></a><span data-ttu-id="23c45-102">信頼できるメッセージの 1 秒あたりの破棄されたメッセージ</span><span class="sxs-lookup"><span data-stu-id="23c45-102">Reliable Messaging Messages Dropped Per Second</span></span>
 <span data-ttu-id="23c45-103">カウンター名 : 1 秒あたりに破棄された信頼できるメッセージ セッション</span><span class="sxs-lookup"><span data-stu-id="23c45-103">Counter Name: Reliable Messaging Sessions Dropped Per Second.</span></span>  

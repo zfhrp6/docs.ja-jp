@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33592276"
 ---
 # <a name="how-to-draw-shapes-with-the-ovalshape-and-rectangleshape-controls-visual-studio"></a><span data-ttu-id="9cf19-102">方法 : OvalShape コントロールおよび RectangleShape コントロールを使用して図形を描画する (Visual Studio)</span><span class="sxs-lookup"><span data-stu-id="9cf19-102">How to: Draw Shapes with the OvalShape and RectangleShape Controls (Visual Studio)</span></span>
 <span data-ttu-id="9cf19-103">デザイン時にも実行時にも、<xref:Microsoft.VisualBasic.PowerPacks.OvalShape> コントロールを使用して、フォームまたはコンテナーに円または楕円を描画できます。</span><span class="sxs-lookup"><span data-stu-id="9cf19-103">You can use the <xref:Microsoft.VisualBasic.PowerPacks.OvalShape> control to draw circles or ovals on a form or container, both at design time and at run time.</span></span> <span data-ttu-id="9cf19-104"><xref:Microsoft.VisualBasic.PowerPacks.RectangleShape> コントロールを使用して、フォームまたはコンテナーに正方形、長方形、または角の丸い四角形を描画できます。</span><span class="sxs-lookup"><span data-stu-id="9cf19-104">You can use the <xref:Microsoft.VisualBasic.PowerPacks.RectangleShape> control to draw squares, rectangles, or rectangles with rounded corners on a form or container.</span></span> <span data-ttu-id="9cf19-105">デザイン時にも実行時にも、このコントロールを使用して、図形を描画することもできます。</span><span class="sxs-lookup"><span data-stu-id="9cf19-105">You can also use this control to draw shapes both at design time and at run time.</span></span>  

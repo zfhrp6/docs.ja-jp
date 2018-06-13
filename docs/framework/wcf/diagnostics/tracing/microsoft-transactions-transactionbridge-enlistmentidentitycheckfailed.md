@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33474897"
 ---
 # <a name="microsofttransactionstransactionbridgeenlistmentidentitycheckfailed"></a><span data-ttu-id="6ff12-102">Microsoft.Transactions.TransactionBridge.EnlistmentIdentityCheckFailed</span><span class="sxs-lookup"><span data-stu-id="6ff12-102">Microsoft.Transactions.TransactionBridge.EnlistmentIdentityCheckFailed</span></span>
 <span data-ttu-id="6ff12-103">受信メッセージの送信者の ID が登録リストのエンドポイント参照から派生した ID と一致しませんでした。</span><span class="sxs-lookup"><span data-stu-id="6ff12-103">The identity of the incoming message sender did not match the identity derived from the enlistment's endpoint reference.</span></span>  

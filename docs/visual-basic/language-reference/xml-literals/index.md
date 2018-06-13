@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33600767"
 ---
 # <a name="xml-literals-visual-basic"></a><span data-ttu-id="430e9-102">XML リテラル (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="430e9-102">XML Literals (Visual Basic)</span></span>
 <span data-ttu-id="430e9-103">このセクションのトピックでは、Visual Basic で XML リテラルの構文を文書化します。</span><span class="sxs-lookup"><span data-stu-id="430e9-103">The topics in this section document the syntax of XML literals in Visual Basic.</span></span> <span data-ttu-id="430e9-104">XML リテラルの構文を使用すると、コード内に直接 XML を組み込むことができます。</span><span class="sxs-lookup"><span data-stu-id="430e9-104">The XML literal syntax enables you to incorporate XML directly in your code.</span></span>  

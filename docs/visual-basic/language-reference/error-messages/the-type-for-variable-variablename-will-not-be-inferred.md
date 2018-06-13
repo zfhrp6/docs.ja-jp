@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33594284"
 ---
 # <a name="the-type-for-variable-39ltvariablenamegt39-will-not-be-inferred-because-it-is-bound-to-a-field-in-an-enclosing-scope"></a><span data-ttu-id="62b58-102">変数の型&#39; &lt;variablename&gt; &#39;は、外側のスコープ内のフィールドにバインドされているので、推論できません。</span><span class="sxs-lookup"><span data-stu-id="62b58-102">The type for variable &#39;&lt;variablename&gt;&#39; will not be inferred because it is bound to a field in an enclosing scope</span></span>
 <span data-ttu-id="62b58-103">変数の型 '\<variablename >' は、外側のスコープ内のフィールドにバインドされているので、推論できません。</span><span class="sxs-lookup"><span data-stu-id="62b58-103">The type for variable '\<variablename>' will not be inferred because it is bound to a field in an enclosing scope.</span></span> <span data-ttu-id="62b58-104">名前を変更するか '\<variablename >'、または完全修飾名 (たとえば、Me.variablename"や"MyBase.variablename") を使用します。</span><span class="sxs-lookup"><span data-stu-id="62b58-104">Either change the name of '\<variablename>', or use the fully qualified name (for example, 'Me.variablename' or 'MyBase.variablename').</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33478743"
 ---
 # <a name="systemservicemodelchannelspeerfloodedmessagenotmatched"></a><span data-ttu-id="8f13f-102">System.ServiceModel.Channels.PeerFloodedMessageNotMatched</span><span class="sxs-lookup"><span data-stu-id="8f13f-102">System.ServiceModel.Channels.PeerFloodedMessageNotMatched</span></span>
 <span data-ttu-id="8f13f-103">PeerNode は、どのローカル チャネルとも一致しないメッセージを受信しました。</span><span class="sxs-lookup"><span data-stu-id="8f13f-103">A PeerNode received a message that did not match any local channels.</span></span>  

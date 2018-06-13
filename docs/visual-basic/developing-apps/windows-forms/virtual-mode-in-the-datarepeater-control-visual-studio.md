@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33592237"
 ---
 # <a name="virtual-mode-in-the-datarepeater-control-visual-studio"></a><span data-ttu-id="39490-102">DataRepeater コントロールの仮想モード (Visual Studio)</span><span class="sxs-lookup"><span data-stu-id="39490-102">Virtual Mode in the DataRepeater Control (Visual Studio)</span></span>
 <span data-ttu-id="39490-103">大量の表形式データを表示する場合、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>コントロールを設定してパフォーマンスを向上させることができます、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.VirtualMode%2A>プロパティを`True`と明示的にそのデータ ソース コントロールの相互作用を管理します。</span><span class="sxs-lookup"><span data-stu-id="39490-103">When you want to display large quantities of tabular data in a <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> control, you can improve performance by setting the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.VirtualMode%2A> property to `True` and explicitly managing the control's interaction with its data source.</span></span> <span data-ttu-id="39490-104"><xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>コントロールは、データ ソースと対話し、実行時に、必要に応じてデータの表示を処理できるいくつかのイベントを提供します。</span><span class="sxs-lookup"><span data-stu-id="39490-104">The <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> control provides several events that you can handle to interact with your data source and display the data as needed at run time.</span></span>  

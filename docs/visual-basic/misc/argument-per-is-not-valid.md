@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33603926"
 ---
 # <a name="argument-39per39-is-not-valid"></a><span data-ttu-id="12873-102">引数&#39;あたり&#39;が正しくありません</span><span class="sxs-lookup"><span data-stu-id="12873-102">Argument &#39;Per&#39; is not valid</span></span>
 <span data-ttu-id="12873-103">`Per`に指定された引数は、1 ～ `Double` の範囲で支払い期間を指定する `NPer`である必要があるため、使用できません。</span><span class="sxs-lookup"><span data-stu-id="12873-103">An argument supplied for `Per`, which must be a `Double` specifying payment period in the range 1 through `NPer`, is not valid.</span></span>  

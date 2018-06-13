@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33590730"
 ---
 # <a name="how-to-download-a-file-in-visual-basic"></a><span data-ttu-id="366cb-102">方法 : Visual Basic でファイルをダウンロードする</span><span class="sxs-lookup"><span data-stu-id="366cb-102">How to: Download a File in Visual Basic</span></span>
 <span data-ttu-id="366cb-103"><xref:Microsoft.VisualBasic.Devices.Network.DownloadFile%2A> メソッドを使用すると、リモート ファイルをダウンロードして、指定した場所へ保存できます。</span><span class="sxs-lookup"><span data-stu-id="366cb-103">The <xref:Microsoft.VisualBasic.Devices.Network.DownloadFile%2A> method can be used to download a remote file and store it to a specific location.</span></span> <span data-ttu-id="366cb-104">`ShowUI` パラメーターを `True` に設定した場合、ダウンロードの進行状況を示すダイアログ ボックスが表示されます。ユーザーは、このダイアログ ボックスで操作をキャンセルすることもできます。</span><span class="sxs-lookup"><span data-stu-id="366cb-104">If the `ShowUI` parameter is set to `True`, a dialog box is displayed showing the progress of the download and allowing users to cancel the operation.</span></span> <span data-ttu-id="366cb-105">既定では、同じ名前を持つ既存のファイルは上書きされません。既存のファイルを上書きするには、`overwrite` パラメーターを `True` に設定します。</span><span class="sxs-lookup"><span data-stu-id="366cb-105">By default, existing files having the same name are not overwritten; if you want to overwrite existing files, set the `overwrite` parameter to `True`.</span></span>  

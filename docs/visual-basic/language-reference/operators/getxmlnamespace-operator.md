@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33603484"
 ---
 # <a name="getxmlnamespace-operator-visual-basic"></a><span data-ttu-id="194fc-102">GetXmlNamespace 演算子 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="194fc-102">GetXmlNamespace Operator (Visual Basic)</span></span>
 <span data-ttu-id="194fc-103">取得、<xref:System.Xml.Linq.XNamespace>指定された XML 名前空間プレフィックスに対応するオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="194fc-103">Gets the <xref:System.Xml.Linq.XNamespace> object that corresponds to the specified XML namespace prefix.</span></span>  

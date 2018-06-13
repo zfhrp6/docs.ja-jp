@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33478720"
 ---
 # <a name="systemservicemodelchannelspeerneighborstatechangefailed"></a><span data-ttu-id="adc68-102">System.ServiceModel.Channels.PeerNeighborStateChangeFailed</span><span class="sxs-lookup"><span data-stu-id="adc68-102">System.ServiceModel.Channels.PeerNeighborStateChangeFailed</span></span>
 <span data-ttu-id="adc68-103">近隣ノードの状態が破損しています。</span><span class="sxs-lookup"><span data-stu-id="adc68-103">A neighbor's state was corrupted.</span></span>  

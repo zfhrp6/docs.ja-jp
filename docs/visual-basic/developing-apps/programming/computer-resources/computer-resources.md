@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33586245"
 ---
 # <a name="accessing-computer-resources-visual-basic"></a><span data-ttu-id="09145-102">コンピューター リソースへのアクセス (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="09145-102">Accessing computer resources (Visual Basic)</span></span>
 

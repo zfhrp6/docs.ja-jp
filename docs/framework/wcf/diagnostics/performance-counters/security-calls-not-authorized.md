@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33472574"
 ---
 # <a name="security-calls-not-authorized"></a><span data-ttu-id="949d1-102">承認されていないセキュリティ呼び出し</span><span class="sxs-lookup"><span data-stu-id="949d1-102">Security Calls Not Authorized</span></span>
 <span data-ttu-id="949d1-103">カウンター名 : 承認されていないセキュリティ呼び出し。</span><span class="sxs-lookup"><span data-stu-id="949d1-103">Counter Name: Security Calls Not Authorized.</span></span>  

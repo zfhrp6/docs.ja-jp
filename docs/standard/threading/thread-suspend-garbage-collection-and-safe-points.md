@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33582162"
 ---
 # <a name="threadsuspend-garbage-collection-and-safe-points"></a><span data-ttu-id="78f71-102">Thread.Suspend、ガベージ コレクション、およびセーフ ポイント</span><span class="sxs-lookup"><span data-stu-id="78f71-102">Thread.Suspend, Garbage Collection, and Safe Points</span></span>
 <span data-ttu-id="78f71-103">スレッドで <xref:System.Threading.Thread.Suspend%2A?displayProperty=nameWithType> を呼び出すと、システムはスレッドの中断が要求されたことを示し、スレッドを実際に中断する前にセーフ ポイントに到達するまでスレッドを実行することができます。</span><span class="sxs-lookup"><span data-stu-id="78f71-103">When you call <xref:System.Threading.Thread.Suspend%2A?displayProperty=nameWithType> on a thread, the system notes that a thread suspension has been requested and allows the thread to execute until it has reached a safe point before actually suspending the thread.</span></span> <span data-ttu-id="78f71-104">スレッドのセーフ ポイントは、ガベージ コレクションを実行できる実行ポイントです。</span><span class="sxs-lookup"><span data-stu-id="78f71-104">A safe point for a thread is a point in its execution at which garbage collection can be performed.</span></span>  

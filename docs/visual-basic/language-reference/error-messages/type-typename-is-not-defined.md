@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33595187"
 ---
 # <a name="type-39lttypenamegt39-is-not-defined"></a><span data-ttu-id="92623-102">型&#39; &lt;typename&gt; &#39;が定義されていません</span><span class="sxs-lookup"><span data-stu-id="92623-102">Type &#39;&lt;typename&gt;&#39; is not defined</span></span>
 <span data-ttu-id="92623-103">ステートメントには、定義されていない型への参照が行われます。</span><span class="sxs-lookup"><span data-stu-id="92623-103">The statement has made reference to a type that has not been defined.</span></span> <span data-ttu-id="92623-104">などの宣言ステートメントで型を定義できます`Enum`、 `Structure`、 `Class`、または`Interface`です。</span><span class="sxs-lookup"><span data-stu-id="92623-104">You can define a type in a declaration statement such as `Enum`, `Structure`, `Class`, or `Interface`.</span></span>  

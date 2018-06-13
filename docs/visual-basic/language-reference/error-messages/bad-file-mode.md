@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33587385"
 ---
 # <a name="bad-file-mode"></a><span data-ttu-id="6ef00-102">ファイル モードが正しくありません。</span><span class="sxs-lookup"><span data-stu-id="6ef00-102">Bad file mode</span></span>
 <span data-ttu-id="6ef00-103">ファイルの内容を操作するときに使用するステートメントは、ファイルが開かれたモードに対応する必要があります。</span><span class="sxs-lookup"><span data-stu-id="6ef00-103">Statements used in manipulating file contents must be appropriate to the mode in which the file was opened.</span></span> <span data-ttu-id="6ef00-104">以下の原因が考えられます。</span><span class="sxs-lookup"><span data-stu-id="6ef00-104">Possible causes include:</span></span>  

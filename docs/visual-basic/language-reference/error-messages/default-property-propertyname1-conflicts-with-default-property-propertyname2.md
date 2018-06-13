@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33586625"
 ---
 # <a name="default-property-39ltpropertyname1gt39-conflicts-with-default-property-39ltpropertyname2gt39-in-39ltclassnamegt39-and-so-should-be-declared-39shadows39"></a><span data-ttu-id="e553a-102">既定のプロパティ&#39; &lt;propertyname1&gt; &#39;既定のプロパティと競合しています&#39; &lt;propertyname2&gt; &#39;で&#39; &lt;classname&gt; &#39;ため、宣言する必要があります&#39;シャドウ&#39;</span><span class="sxs-lookup"><span data-stu-id="e553a-102">Default property &#39;&lt;propertyname1&gt;&#39; conflicts with default property &#39;&lt;propertyname2&gt;&#39; in &#39;&lt;classname&gt;&#39; and so should be declared &#39;Shadows&#39;</span></span>
 <span data-ttu-id="e553a-103">プロパティは、基本クラスで定義されたプロパティと同じ名前で宣言されます。</span><span class="sxs-lookup"><span data-stu-id="e553a-103">A property is declared with the same name as a property defined in the base class.</span></span> <span data-ttu-id="e553a-104">このような状況は、このクラスのプロパティは、基底クラスのプロパティをシャドウする必要があります。</span><span class="sxs-lookup"><span data-stu-id="e553a-104">In this situation, the property in this class should shadow the base class property.</span></span>  

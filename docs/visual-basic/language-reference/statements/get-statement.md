@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33605109"
 ---
 # <a name="get-statement"></a><span data-ttu-id="e6e90-102">Get ステートメント</span><span class="sxs-lookup"><span data-stu-id="e6e90-102">Get Statement</span></span>
 <span data-ttu-id="e6e90-103">宣言、`Get`プロパティ プロシージャのプロパティの値を取得するために使用します。</span><span class="sxs-lookup"><span data-stu-id="e6e90-103">Declares a `Get` property procedure used to retrieve the value of a property.</span></span>  

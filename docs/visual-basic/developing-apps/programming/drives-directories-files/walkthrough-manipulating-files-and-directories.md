@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33592510"
 ---
 # <a name="walkthrough-manipulating-files-and-directories-in-visual-basic"></a><span data-ttu-id="12f48-102">チュートリアル : Visual Basic によるファイルとディレクトリの操作</span><span class="sxs-lookup"><span data-stu-id="12f48-102">Walkthrough: Manipulating Files and Directories in Visual Basic</span></span>
 <span data-ttu-id="12f48-103">このチュートリアルでは、Visual Basic でのファイル I/O の基礎について概説します。</span><span class="sxs-lookup"><span data-stu-id="12f48-103">This walkthrough provides an introduction to the fundamentals of file I/O in Visual Basic.</span></span> <span data-ttu-id="12f48-104">具体的には、ディレクトリ内のテキスト ファイルをリストして調査する小さなアプリケーションを作成する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="12f48-104">It describes how to create a small application that lists and examines text files in a directory.</span></span> <span data-ttu-id="12f48-105">このアプリケーションは、選択された各テキスト ファイルについて、ファイルの属性とコンテンツの最初の行を取得します。</span><span class="sxs-lookup"><span data-stu-id="12f48-105">For each selected text file, the application provides file attributes and the first line of content.</span></span> <span data-ttu-id="12f48-106">ログ ファイルに情報を書き込むオプションもあります。</span><span class="sxs-lookup"><span data-stu-id="12f48-106">There is an option to write information to a log file.</span></span>  
