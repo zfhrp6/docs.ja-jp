@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33500832"
 ---
 # <a name="servicemodel-transaction-attributes"></a><span data-ttu-id="101b2-102">ServiceModel トランザクションの属性</span><span class="sxs-lookup"><span data-stu-id="101b2-102">ServiceModel Transaction Attributes</span></span>
 <span data-ttu-id="101b2-103">Windows Communication Foundation (WCF) の 3 つの標準的なプロパティを提供<xref:System.ServiceModel>を WCF サービスのトランザクションの動作を構成できるようにする属性。</span><span class="sxs-lookup"><span data-stu-id="101b2-103">Windows Communication Foundation (WCF) provides properties on three standard <xref:System.ServiceModel> attributes that enable you to configure the behavior of transactions for a WCF service:</span></span>  

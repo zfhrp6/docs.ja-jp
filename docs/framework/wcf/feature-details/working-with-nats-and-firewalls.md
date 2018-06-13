@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33508104"
 ---
 # <a name="working-with-nats-and-firewalls"></a><span data-ttu-id="baedc-102">NAT とファイアウォールの使用</span><span class="sxs-lookup"><span data-stu-id="baedc-102">Working with NATs and Firewalls</span></span>
 <span data-ttu-id="baedc-103">ネットワーク接続のクライアントとサーバーには、直接開いている通信用のパスが存在しないことがよくあります。</span><span class="sxs-lookup"><span data-stu-id="baedc-103">The client and server of a network connection frequently do not have a direct and open path for communication.</span></span> <span data-ttu-id="baedc-104">パケットは、エンドポイント コンピューター上だけでなく、ネットワーク上の中間コンピューターによってもフィルター処理、ルーティング、分析、および変換されます。</span><span class="sxs-lookup"><span data-stu-id="baedc-104">Packets are filtered, routed, analyzed, and transformed both on the endpoint machines and by intermediate machines on the network.</span></span> <span data-ttu-id="baedc-105">ネットワーク アドレス変換 (NAT: Network Address Translation) とファイアウォールは、ネットワーク通信に参加できる中間アプリケーションの一般的な例です。</span><span class="sxs-lookup"><span data-stu-id="baedc-105">Network address translations (NATs) and firewalls are common examples of intermediate applications that can participate in network communication.</span></span>  

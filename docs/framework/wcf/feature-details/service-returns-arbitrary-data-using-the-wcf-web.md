@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33498109"
 ---
 # <a name="how-to-create-a-service-that-returns-arbitrary-data-using-the-wcf-web-http-programming-model"></a><span data-ttu-id="8efdf-102">方法 : WCF Web HTTP プログラミング モデルを使用して任意のデータを返すサービスを作成する</span><span class="sxs-lookup"><span data-stu-id="8efdf-102">How to: Create a Service That Returns Arbitrary Data Using The WCF Web HTTP Programming Model</span></span>
 <span data-ttu-id="8efdf-103">開発者は、データがサービス操作から返される流れを完全に制御する必要が生じることがあります。</span><span class="sxs-lookup"><span data-stu-id="8efdf-103">Sometimes developers must have full control of how data is returned from a service operation.</span></span> <span data-ttu-id="8efdf-104">これは、サービス操作は、WCF によってサポートされていない形式でデータを返す必要がある場合です。</span><span class="sxs-lookup"><span data-stu-id="8efdf-104">This is the case when a service operation must return data in a format not supported by WCF.</span></span> <span data-ttu-id="8efdf-105">このトピックでは、WCF WEB HTTP プログラミング モデルを使用して、このようなサービスを作成するについて説明します。</span><span class="sxs-lookup"><span data-stu-id="8efdf-105">This topic discusses using the WCF WEB HTTP Programming Model to create such a service.</span></span> <span data-ttu-id="8efdf-106">ストリームを返す操作を 1 つ持つサービスを例に取ります。</span><span class="sxs-lookup"><span data-stu-id="8efdf-106">This service has one operation that returns a stream.</span></span>  
