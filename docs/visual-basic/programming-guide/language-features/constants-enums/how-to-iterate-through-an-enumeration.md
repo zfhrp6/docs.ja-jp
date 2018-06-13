@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33646579"
 ---
 # <a name="how-to-iterate-through-an-enumeration-in-visual-basic"></a>方法 : Visual Basic で列挙型を反復処理する
 一連の関連する定数を操作する場合や、定数値に名前を関連付ける場合は、列挙型を使うと便利です。 列挙体を反復処理に移動できますが使用して、配列、<xref:System.Enum.GetValues%2A>メソッドです。 使用して、列挙型を反復処理することも、`For...Each`ステートメントを使用して、<xref:System.Enum.GetNames%2A>または<xref:System.Enum.GetValues%2A>文字列または数値の値を抽出する方法です。  

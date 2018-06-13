@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33643901"
 ---
 # <a name="visual-basic-features-that-support-linq"></a>LINQ をサポートする Visual Basic の機能
 名前[!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)]をサポートしているクエリの構文と他の言語が言語内で直接構築 Visual Basic でのテクノロジを指します。 [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]、外部データ ソースに対してクエリを新しい言語を習得する必要はありません。 Visual Basic を使用して、リレーショナル データベース、XML ストア、またはオブジェクト内のデータのクエリを行うことができます。 この統合言語クエリ機能の有効に構文エラーとタイプ セーフのコンパイル時にチェックします。 この統合は、Visual Basic で豊富な多様なクエリを書き込むために知っておく必要があるのほとんどを既に把握しているようにもなります。  

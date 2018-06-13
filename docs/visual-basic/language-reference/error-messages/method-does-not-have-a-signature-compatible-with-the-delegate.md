@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33593250"
 ---
 # <a name="method-does-not-have-a-signature-compatible-with-the-delegate"></a>メソッドに、デリゲートと互換性のあるシグネチャがありません。
 メソッドのシグネチャと使用しようとしているデリゲートの間の非互換性があります。 `Delegate` ステートメントでは、デリゲート クラスのパラメーターの型と戻り値の型を定義します。 互換性のある型パラメーターに一致する戻りをこのデリゲート型のインスタンスを作成する型を使用できるプロシージャです。  

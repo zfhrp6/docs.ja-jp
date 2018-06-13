@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33586452"
 ---
 # <a name="identifier-is-too-long"></a>識別子が長すぎます。
 名前、またはすべてのプログラミング要素の識別子は、1023 文字に制限されます。 さらに、完全修飾名が 1023 文字を超えることはできません。 つまり、全体の識別子の文字列 (`<namespace>.<...>.<namespace>.<class>.<element>`) 1023 を上回る文字で、メンバー アクセス演算子を含むことはできません (`.`) 文字です。  

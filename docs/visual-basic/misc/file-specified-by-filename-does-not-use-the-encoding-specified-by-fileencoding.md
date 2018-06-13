@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33637448"
 ---
 # <a name="file-specified-by-filename-does-not-use-the-encoding-specified-by-fileencoding"></a>FileName で指定されたファイルは FileEncoding で指定されたエンコーディングを使用していません
 ファイルからの読み取りが試行されましたが、ファイルは指定したエンコーディングを使用していません。  

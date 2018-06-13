@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33586658"
 ---
 # <a name="expression-does-not-produce-a-value"></a>式は値を生成しません。
 呼び出しなどの値生成のコンテキストで値を生成しない式を使用しようとした、`Sub`コンテキストで場所、`Function`が必要です。  

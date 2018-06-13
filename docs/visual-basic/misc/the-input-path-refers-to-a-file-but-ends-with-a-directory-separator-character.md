@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33638784"
 ---
 # <a name="the-input-path-refers-to-a-file-but-ends-with-a-directory-separator-character"></a>ファイルを参照している入力パスが、ディレクトリの区切り記号で終わっています
 ファイル名を指定する必要がある操作をしようとしましたが、指定された名前はディレクトリの区切り記号 (`\`) で終わっています。 正しく解析されなかったファイル パスが原因の可能性があります。  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33639449"
 ---
 # <a name="specified-registry-key-is-not-valid-because-it-contains-two-or-more-consecutive-backslashes"></a>指定されたレジストリ キーは、2 つ以上の連続する円記号が含まれているため無効です
 パスで指定されているレジストリ キーに、2 つ以上の連続する円記号が含まれています。 これは、複数の文字列を組み合わせてパスを構成したときに、誤って円記号を多く含めすぎた結果である可能性があります。  

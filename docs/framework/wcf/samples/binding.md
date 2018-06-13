@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33803567"
 ---
 # <a name="binding"></a>バインド
 このセクションには、エンドポイント要素のバインディング属性の使用方法を示すサンプルが含まれています。  

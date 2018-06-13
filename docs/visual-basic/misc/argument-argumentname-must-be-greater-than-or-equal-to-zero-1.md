@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33596208"
 ---
 # <a name="argument-ltargumentnamegt-must-be-greater-than-or-equal-to-zero"></a>引数&lt;argumentname&gt;より大きいかゼロに等しくなければなりません
 引数の値が 0 未満です。 引数の値は、0 以上である必要があります。  

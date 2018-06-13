@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33593205"
 ---
 # <a name="object-or-class-does-not-support-the-set-of-events"></a>オブジェクトまたはクラスがこのイベント セットをサポートしていません。
 使用して、`WithEvents`できない動作するように指定された一連のイベントのイベント ソース コンポーネントを含む変数。 オブジェクトのイベントをシンク、別のオブジェクトを作成したいなど`Implements`最初のオブジェクト。 実装済みのオブジェクトからイベントをシンクすると思うかもしれませんが、これが一致しない場合です。 `Implements` メソッドとプロパティのインターフェイスを実装するだけです。 `WithEvents` プライベートはサポートされていません`UserControls`発生する種類の情報が必要なため、`ObjectEvent`実行時に使用できません。  

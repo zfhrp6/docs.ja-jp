@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33637375"
 ---
 # <a name="file-format-not-valid"></a>ファイル形式が有効ではありません
 ファイルをコンポーネントに読み込もうとしましたが、ファイル内のデータ形式がコンポーネントと互換性がありませんでした。または、コンポーネント データをファイルに保存しようとしましたが、データ形式がファイル形式と互換性がありませんでした。  

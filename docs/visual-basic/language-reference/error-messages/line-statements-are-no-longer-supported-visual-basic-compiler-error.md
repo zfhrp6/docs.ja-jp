@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33587880"
 ---
 # <a name="39line39-statements-are-no-longer-supported-visual-basic-compiler-error"></a>&#39;行&#39;ステートメントは不要になった (Visual Basic コンパイラ エラー) のサポート
 行のステートメントがサポートされていません。 ファイル I/O 機能として利用可能な`Microsoft.VisualBasic.FileSystem.LineInput`グラフィックス機能として使用`System.Drawing.Graphics.DrawLine`です。  

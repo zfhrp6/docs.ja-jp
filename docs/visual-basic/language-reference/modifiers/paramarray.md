@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33597361"
 ---
 # <a name="paramarray-visual-basic"></a>ParamArray (Visual Basic)
 プロシージャのパラメーターが、指定した型の要素のオプション配列を受け取ることを指定します。 `ParamArray` パラメーター リストの最後のパラメーターでのみ使用できます。  

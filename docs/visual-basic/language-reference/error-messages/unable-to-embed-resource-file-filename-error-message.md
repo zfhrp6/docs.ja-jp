@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33596643"
 ---
 # <a name="unable-to-embed-resource-file-39ltfilenamegt39-lterror-messagegt"></a>リソース ファイルを埋め込めません&#39; &lt;filename&gt;&#39;:&lt;エラー メッセージ&gt;
 Visual Basic コンパイラは、マニフェストを伴うアセンブリを生成するアセンブリ リンカー (Al.exe、Alink とも呼ばれます) を呼び出します。 リンカーが、ネイティブな COM+ リソース ファイルをアセンブリに直接埋め込むときにエラーが発生したことを報告しています。  

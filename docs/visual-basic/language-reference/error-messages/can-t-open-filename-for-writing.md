@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33586537"
 ---
 # <a name="can39t-open-39ltfilenamegt39-for-writing"></a>できます&#39;t はオープン&#39; &lt;filename&gt; &#39;の書き込み
 作成するため、おそらく既に開かれているために、指定したファイルを開くことができません。  

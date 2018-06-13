@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33803729"
 ---
 # <a name="basic-resource-service"></a>基本的なリソース サービス
 このサンプルでは、取得をサポートする顧客のコレクションを公開する Windows Communication Foundation (WCF) REST プログラミング モデルを使用して HTTP ベースのサービスを実装して、追加、削除、および置換操作する方法を示します。 このサンプルでは、自己ホスト型 WCF HTTP サービス (Service.cs) とサービスを作成し、それを呼び出すコンソール アプリケーション (program.cs) 2 つのコンポーネントで構成されます。  

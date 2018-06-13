@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33642780"
 ---
 # <a name="how-to-generate-text-files-from-xml-visual-basic"></a>方法: テキスト ファイルを XML から生成する (Visual Basic)
 この例では、XML ファイルからコンマ区切り (CSV) ファイルを生成する方法について説明します。  

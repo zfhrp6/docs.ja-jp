@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33642796"
 ---
 # <a name="unable-to-sink-events-of-object-because-the-object-is-already-firing-events-to-the-maximum-number-of-event-receivers-it-supports"></a>オブジェクトはサポートされているイベント受信最大数のイベントを既に発生しているので、オブジェクトのイベントを受け取ることができません
 オブジェクトでサポートされているイベント レシーバーの最大数を超えています。  

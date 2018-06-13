@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33637613"
 ---
 # <a name="expression-39ltnamegt39-is-not-a-procedure-but-occurs-as-the-target-of-a-procedure-call"></a>式&#39;&lt;名前&gt;&#39;は、プロシージャはありませんが、プロシージャ呼び出しのターゲットとして発生します。
 プロシージャではない式に対してプロシージャ呼び出しを行いました。  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33597322"
 ---
 # <a name="my-reference-visual-basic"></a>My の参照 (Visual Basic)
 `My`機能により、プログラミング迅速かつ容易に一般的に使用されるメソッド、プロパティ、およびイベントへの直感的なアクセスを付与します。 次の表に含まれるオブジェクト`My`、および各に実行できるアクション。  

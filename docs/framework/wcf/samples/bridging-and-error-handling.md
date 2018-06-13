@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33804392"
 ---
 # <a name="bridging-and-error-handling"></a>ブリッジとエラー処理
 このサンプルでは、クライアントと異なるバインディングを使用するサービスの間の通信をブリッジの Windows Communication Foundation (WCF) ルーティング サービスを使用する方法を示します。 また、バックアップ サービスを使用してフェールオーバーのシナリオに対処する方法も示します。 ルーティング サービスは、コンテンツ ベースのルーターをアプリケーションに含めるしやすく WCF コンポーネントです。 このサンプルは、ルーティング サービスを使用して通信するために標準の WCF 電卓のサンプルを適合させます。  

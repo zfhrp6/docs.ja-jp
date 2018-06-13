@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33604870"
 ---
 # <a name="yield-statement-visual-basic"></a>Yield ステートメント (Visual Basic)
 コレクションの次の要素を送信、`For Each...Next`ステートメントです。  

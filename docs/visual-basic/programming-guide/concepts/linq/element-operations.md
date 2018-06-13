@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33643444"
 ---
 # <a name="element-operations-visual-basic"></a>要素の操作 (Visual Basic)
 要素操作では、シーケンスから単一の特定の要素が返されます。  

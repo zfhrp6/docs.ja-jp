@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33637676"
 ---
 # <a name="numberofchars-must-be-greater-than-zero"></a>NumberOfChars は 0 より大きくなければなりません。
 `PeekChars` オブジェクトの `TextFieldParser` メソッドを使用する場合、 `NumberOfChars` よりも大きい `0`値を指定する必要があります。  

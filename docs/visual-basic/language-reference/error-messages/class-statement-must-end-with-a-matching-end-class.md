@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33585516"
 ---
 # <a name="39class39-statement-must-end-with-a-matching-39end-class39"></a>&#39;クラス&#39;、対応するステートメントが終了する必要があります&#39;End クラス&#39;
 `Class` 使用を開始、`Class`ブロックです。 したがってだけ記述できますが、一致する、ブロックの先頭に`End Class`ステートメント ブロックを終了します。 あるか、冗長`Class`ステートメント、またはするが終了していない、`Class`ブロックを`End Class`です。  

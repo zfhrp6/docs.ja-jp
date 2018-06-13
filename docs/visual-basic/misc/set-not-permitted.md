@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33641476"
 ---
 # <a name="set-not-permitted"></a>Set は使用できません
 設定値を実行時に設定できないか、特定の状況でのみ設定できるプロパティを変更しようとしました。 たとえば、しましたを変更する、 `Appearance`、 `ControlBox`、`MinButton`、または`MaxButton`を設定するか、実行時にフォームのプロパティの設定を試みた可能性があります、`Visible`プロパティを`False`最後の残りの親メニューのサブメニューを表示します。  

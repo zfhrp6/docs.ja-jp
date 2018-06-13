@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33604745"
 ---
 # <a name="goto-statement"></a>GoTo ステートメント
 プロシージャ内の指定した行に無条件に分岐します。  
