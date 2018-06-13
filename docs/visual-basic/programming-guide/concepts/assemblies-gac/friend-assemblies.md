@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33644382"
 ---
 # <a name="friend-assemblies-visual-basic"></a><span data-ttu-id="99234-102">フレンド アセンブリ (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="99234-102">Friend Assemblies (Visual Basic)</span></span>
 <span data-ttu-id="99234-103">A*フレンド アセンブリ*別のアセンブリにアクセスできるアセンブリ[フレンド](../../../../visual-basic/language-reference/modifiers/friend.md)型およびメンバー。</span><span class="sxs-lookup"><span data-stu-id="99234-103">A *friend assembly* is an assembly that can access another assembly's [Friend](../../../../visual-basic/language-reference/modifiers/friend.md) types and members.</span></span> <span data-ttu-id="99234-104">フレンド アセンブリとして指定した場合、public として宣言されていないその型とメンバーに、他のアセンブリからアクセスできるようになります。</span><span class="sxs-lookup"><span data-stu-id="99234-104">If you identify an assembly as a friend assembly, you no longer have to mark types and members as public in order for them to be accessed by other assemblies.</span></span> <span data-ttu-id="99234-105">この方法は、特に次の状況で利便性を発揮します。</span><span class="sxs-lookup"><span data-stu-id="99234-105">This is especially convenient in the following scenarios:</span></span>  

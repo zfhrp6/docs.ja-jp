@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33643125"
 ---
 # <a name="deferred-execution-and-lazy-evaluation-in-linq-to-xml-visual-basic"></a><span data-ttu-id="18093-102">遅延実行とレイジー評価で LINQ to XML (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="18093-102">Deferred Execution and Lazy Evaluation in LINQ to XML (Visual Basic)</span></span>
 <span data-ttu-id="18093-103">クエリと軸の操作は、多くの場合、遅延実行を使用するように実装されています。</span><span class="sxs-lookup"><span data-stu-id="18093-103">Query and axis operations are often implemented to use deferred execution.</span></span> <span data-ttu-id="18093-104">このトピックでは、遅延実行の要件と利点、および実装に関する注意点について説明します。</span><span class="sxs-lookup"><span data-stu-id="18093-104">This topic explains the requirements and advantages of deferred execution, and some implementation considerations.</span></span>  

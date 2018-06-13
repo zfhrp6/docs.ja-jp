@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33642117"
 ---
 # <a name="how-to-query-for-characters-in-a-string-linq-visual-basic"></a><span data-ttu-id="4dc9f-102">方法: 文字列 (LINQ) (Visual Basic) 内の文字に対するクエリ</span><span class="sxs-lookup"><span data-stu-id="4dc9f-102">How to: Query for Characters in a String (LINQ) (Visual Basic)</span></span>
 <span data-ttu-id="4dc9f-103"><xref:System.String> クラスはジェネリック <xref:System.Collections.Generic.IEnumerable%601> インターフェイスを実装しているため、任意の文字列を文字のシーケンスとしてクエリできます。</span><span class="sxs-lookup"><span data-stu-id="4dc9f-103">Because the <xref:System.String> class implements the generic <xref:System.Collections.Generic.IEnumerable%601> interface, any string can be queried as a sequence of characters.</span></span> <span data-ttu-id="4dc9f-104">ただし、これは LINQ の一般的な使用方法ではありません。</span><span class="sxs-lookup"><span data-stu-id="4dc9f-104">However, this is not a common use of LINQ.</span></span> <span data-ttu-id="4dc9f-105">複雑なパターン一致操作には、<xref:System.Text.RegularExpressions.Regex> クラスを使用してください。</span><span class="sxs-lookup"><span data-stu-id="4dc9f-105">For complex pattern matching operations, use the <xref:System.Text.RegularExpressions.Regex> class.</span></span>  

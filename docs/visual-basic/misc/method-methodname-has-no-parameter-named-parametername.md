@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33638318"
 ---
 # <a name="method-39ltmethodnamegt39-has-no-parameter-named-39ltparameternamegt39"></a><span data-ttu-id="95005-102">メソッド&#39; &lt;methodname&gt; &#39;という名前のパラメーターを持たない&#39; &lt;parametername&gt;&#39;</span><span class="sxs-lookup"><span data-stu-id="95005-102">Method &#39;&lt;methodname&gt;&#39; has no parameter named &#39;&lt;parametername&gt;&#39;</span></span>
 <span data-ttu-id="95005-103">指定された名前付き引数が対象メソッドの引数のいずれにも一致しません。</span><span class="sxs-lookup"><span data-stu-id="95005-103">A supplied named argument does not match any of the arguments of the target method.</span></span>  

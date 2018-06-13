@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33643406"
 ---
 # <a name="attributeusage-visual-basic"></a><span data-ttu-id="ae7d2-102">AttributeUsage (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="ae7d2-102">AttributeUsage (Visual Basic)</span></span>
 <span data-ttu-id="ae7d2-103">カスタム属性クラスの使用方法を決定します。</span><span class="sxs-lookup"><span data-stu-id="ae7d2-103">Determines how a custom attribute class can be used.</span></span> <span data-ttu-id="ae7d2-104">`AttributeUsage` は、カスタム属性の定義に適用して新しい属性の適用方法を制御できる属性です。</span><span class="sxs-lookup"><span data-stu-id="ae7d2-104">`AttributeUsage` is an attribute that can be applied to custom attribute definitions to control how the new attribute can be applied.</span></span> <span data-ttu-id="ae7d2-105">明示的に適用するときの既定の設定は次のようになります。</span><span class="sxs-lookup"><span data-stu-id="ae7d2-105">The default settings look like this when applied explicitly:</span></span>  

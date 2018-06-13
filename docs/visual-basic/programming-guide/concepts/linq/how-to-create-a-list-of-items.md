@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33642809"
 ---
 # <a name="how-to-create-a-list-of-items"></a><span data-ttu-id="8f57a-102">方法: 項目のリストを作成する</span><span class="sxs-lookup"><span data-stu-id="8f57a-102">How to: Create a List of Items</span></span>
 <span data-ttu-id="8f57a-103">このトピックのコードでは、`Student` クラスを定義し、クラスのインスタンスのリストを作成します。</span><span class="sxs-lookup"><span data-stu-id="8f57a-103">The code in this topic defines a `Student` class and creates a list of instances of the class.</span></span> <span data-ttu-id="8f57a-104">リストは、トピックをサポートするために、[チュートリアル: Visual Basic でのクエリを記述](../../../../visual-basic/programming-guide/concepts/linq/walkthrough-writing-queries.md)です。</span><span class="sxs-lookup"><span data-stu-id="8f57a-104">The list is designed to support the topic [Walkthrough: Writing Queries in Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/walkthrough-writing-queries.md).</span></span> <span data-ttu-id="8f57a-105">これは、オブジェクトのリストを必要とする任意のアプリケーションにも使用できます。</span><span class="sxs-lookup"><span data-stu-id="8f57a-105">It also can be used for any application that requires a list of objects.</span></span> <span data-ttu-id="8f57a-106">このコードでは、オブジェクト初期化子を使用することで、学生のリスト内の各項目を定義します。</span><span class="sxs-lookup"><span data-stu-id="8f57a-106">The code defines the items in the list of students by using object initializers.</span></span>  
