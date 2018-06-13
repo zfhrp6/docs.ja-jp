@@ -8,6 +8,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33218164"
 ---
 # <a name="executing-expression-trees"></a><span data-ttu-id="967eb-103">式ツリーの実行</span><span class="sxs-lookup"><span data-stu-id="967eb-103">Executing Expression Trees</span></span>
 

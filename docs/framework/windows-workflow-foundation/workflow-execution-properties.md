@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33518645"
 ---
 # <a name="workflow-execution-properties"></a><span data-ttu-id="1246c-102">ワークフロー実行プロパティ</span><span class="sxs-lookup"><span data-stu-id="1246c-102">Workflow Execution Properties</span></span>
 <span data-ttu-id="1246c-103">CLR は、スレッド ローカル ストレージ (TLS) を介して各スレッドの実行コンテキストを維持します。</span><span class="sxs-lookup"><span data-stu-id="1246c-103">Through thread local storage (TLS), the CLR maintains an execution context for each thread.</span></span> <span data-ttu-id="1246c-104">この実行コンテキストは、スレッド ID、アンビエント トランザクション、現在のアクセス許可セットなど、既知のスレッド プロパティに加えて、名前付きスロットのようなユーザー定義のスレッド プロパティを制御します。</span><span class="sxs-lookup"><span data-stu-id="1246c-104">This execution context governs well-known thread properties such as the thread identity, the ambient transaction, and the current permission set in addition to user-defined thread properties like named slots.</span></span>  

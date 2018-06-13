@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33551766"
 ---
 # <a name="adorners"></a><span data-ttu-id="ee570-102">Adorners</span><span class="sxs-lookup"><span data-stu-id="ee570-102">Adorners</span></span>
 <span data-ttu-id="ee570-103">このセクションでは、装飾に関する情報を提供し、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]装飾フレームワークです。</span><span class="sxs-lookup"><span data-stu-id="ee570-103">This section provides information about Adorners and the [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] Adorner framework.</span></span>  

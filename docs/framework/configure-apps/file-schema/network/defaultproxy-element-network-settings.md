@@ -16,6 +16,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32742719"
 ---
 # <a name="ltdefaultproxygt-element-network-settings"></a><span data-ttu-id="ed883-102">&lt;defaultProxy&gt;要素 (ネットワーク設定)</span><span class="sxs-lookup"><span data-stu-id="ed883-102">&lt;defaultProxy&gt; Element (Network Settings)</span></span>
 <span data-ttu-id="ed883-103">ハイパーテキスト転送プロトコル (HTTP: Hypertext Transfer Protocol) プロキシ サーバーを構成します。</span><span class="sxs-lookup"><span data-stu-id="ed883-103">Configures the Hypertext Transfer Protocol (HTTP) proxy server.</span></span>  

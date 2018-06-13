@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33551792"
 ---
 # <a name="how-to-wrap-a-border-around-the-content-of-a-canvas"></a><span data-ttu-id="65070-102">方法 : Canvas のコンテンツを Border で囲む</span><span class="sxs-lookup"><span data-stu-id="65070-102">How to: Wrap a Border Around the Content of a Canvas</span></span>
 <span data-ttu-id="65070-103">この例をラップする方法を示しています、<xref:System.Windows.Controls.Canvas>を持つ要素を<xref:System.Windows.Controls.Border>です。</span><span class="sxs-lookup"><span data-stu-id="65070-103">This example shows how to wrap a <xref:System.Windows.Controls.Canvas> element with a <xref:System.Windows.Controls.Border>.</span></span>  

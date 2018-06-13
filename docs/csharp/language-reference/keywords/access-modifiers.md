@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33217169"
 ---
 # <a name="access-modifiers-c-reference"></a><span data-ttu-id="825cf-102">アクセス修飾子 (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="825cf-102">Access Modifiers (C# Reference)</span></span>
 <span data-ttu-id="825cf-103">アクセス修飾子は、メンバーまたは型の宣言されたアクセシビリティを指定するときに使用されるキーワードです。</span><span class="sxs-lookup"><span data-stu-id="825cf-103">Access modifiers are keywords used to specify the declared accessibility of a member or a type.</span></span> <span data-ttu-id="825cf-104">ここでは、4 つのアクセス修飾子について説明します。</span><span class="sxs-lookup"><span data-stu-id="825cf-104">This section introduces the four access modifiers:</span></span>  
