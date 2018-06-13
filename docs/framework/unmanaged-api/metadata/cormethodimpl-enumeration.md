@@ -18,9 +18,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 4bb91423b2eaeda7d945cf14553609fd33ce9b0c
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33443490"
 ---
 # <a name="cormethodimpl-enumeration"></a><span data-ttu-id="38c7a-102">CorMethodImpl 列挙型</span><span class="sxs-lookup"><span data-stu-id="38c7a-102">CorMethodImpl Enumeration</span></span>
 <span data-ttu-id="38c7a-103">メソッド実装の機能を記述する値が格納されます。</span><span class="sxs-lookup"><span data-stu-id="38c7a-103">Contains values that describe method implementation features.</span></span>  

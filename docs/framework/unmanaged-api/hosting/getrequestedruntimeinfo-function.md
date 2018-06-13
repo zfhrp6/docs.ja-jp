@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 9f37be8e3d2e92147e9f13954ab64396062ade2d
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33434982"
 ---
 # <a name="getrequestedruntimeinfo-function"></a><span data-ttu-id="ee990-102">GetRequestedRuntimeInfo 関数</span><span class="sxs-lookup"><span data-stu-id="ee990-102">GetRequestedRuntimeInfo Function</span></span>
 <span data-ttu-id="ee990-103">アプリケーションによって要求された共通言語ランタイム (CLR) のバージョンとのディレクトリ情報を取得します。</span><span class="sxs-lookup"><span data-stu-id="ee990-103">Gets version and directory information about the common language runtime (CLR) requested by an application.</span></span>  

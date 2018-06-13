@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33266690"
 ---
 # <a name="partial-type-c-reference"></a><span data-ttu-id="cb09c-102">partial (型) (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="cb09c-102">partial (Type) (C# Reference)</span></span>
 <span data-ttu-id="cb09c-103">部分型定義では、クラス、構造体、またはインターフェイスの定義を複数のファイルに分割することができます。</span><span class="sxs-lookup"><span data-stu-id="cb09c-103">Partial type definitions allow for the definition of a class, struct, or interface to be split into multiple files.</span></span>  

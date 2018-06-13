@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33268984"
 ---
 # <a name="true-literal-c-reference"></a><span data-ttu-id="f2bbd-102">true リテラル (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="f2bbd-102">true Literal (C# Reference)</span></span>
 <span data-ttu-id="f2bbd-103">ブール値 true を表します。</span><span class="sxs-lookup"><span data-stu-id="f2bbd-103">Represents the boolean value true.</span></span>  

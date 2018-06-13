@@ -1,14 +1,6 @@
 ---
-title: "CorThreadSafetyOptions 列挙型"
-ms.custom: 
+title: CorThreadSafetyOptions 列挙型
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - CorThreadSafetyOptions
 api_location:
@@ -22,22 +14,19 @@ helpviewer_keywords:
 ms.assetid: dae07d9b-df51-488c-b17e-52d6e48217bd
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: e017732882841e1cb2b5f00b1c51e22bba11ae73
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 3407fcac420b8129dd39eabf84aec84b58651944
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33442843"
 ---
-# <a name="corthreadsafetyoptions-enumeration"></a><span data-ttu-id="dd683-102">CorThreadSafetyOptions 列挙型</span><span class="sxs-lookup"><span data-stu-id="dd683-102">CorThreadSafetyOptions Enumeration</span></span>
-<span data-ttu-id="dd683-103">スレッド セーフのオプションを選択するためのフラグを指定します。</span><span class="sxs-lookup"><span data-stu-id="dd683-103">Specifies flags to select options for thread safety.</span></span>  
+# <a name="corthreadsafetyoptions-enumeration"></a><span data-ttu-id="f7cd8-102">CorThreadSafetyOptions 列挙型</span><span class="sxs-lookup"><span data-stu-id="f7cd8-102">CorThreadSafetyOptions Enumeration</span></span>
+<span data-ttu-id="f7cd8-103">スレッド セーフのオプションを選択するためのフラグを指定します。</span><span class="sxs-lookup"><span data-stu-id="f7cd8-103">Specifies flags to select options for thread safety.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="dd683-104">構文</span><span class="sxs-lookup"><span data-stu-id="dd683-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="f7cd8-104">構文</span><span class="sxs-lookup"><span data-stu-id="f7cd8-104">Syntax</span></span>  
   
 ```  
 typedef enum CorThreadSafetyOptions {  
@@ -47,20 +36,20 @@ typedef enum CorThreadSafetyOptions {
 } CorThreadSafetyOptions;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="dd683-105">メンバー</span><span class="sxs-lookup"><span data-stu-id="dd683-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="f7cd8-105">メンバー</span><span class="sxs-lookup"><span data-stu-id="f7cd8-105">Members</span></span>  
   
-|<span data-ttu-id="dd683-106">メンバー</span><span class="sxs-lookup"><span data-stu-id="dd683-106">Member</span></span>|<span data-ttu-id="dd683-107">説明</span><span class="sxs-lookup"><span data-stu-id="dd683-107">Description</span></span>|  
+|<span data-ttu-id="f7cd8-106">メンバー</span><span class="sxs-lookup"><span data-stu-id="f7cd8-106">Member</span></span>|<span data-ttu-id="f7cd8-107">説明</span><span class="sxs-lookup"><span data-stu-id="f7cd8-107">Description</span></span>|  
 |------------|-----------------|  
-|`MDThreadSatetyDefault`|<span data-ttu-id="dd683-108">既定値です。</span><span class="sxs-lookup"><span data-stu-id="dd683-108">Default value.</span></span> <span data-ttu-id="dd683-109">`MDThreadSatetyOff` と同じ。</span><span class="sxs-lookup"><span data-stu-id="dd683-109">Same as `MDThreadSatetyOff`.</span></span>|  
-|`MDThreadSatetyOff`|<span data-ttu-id="dd683-110">リーダー/ライター ロックを設定できないことを示します。</span><span class="sxs-lookup"><span data-stu-id="dd683-110">Indicates that a reader/writer lock cannot be set.</span></span>|  
-|`MDThreadSatetyOn`|<span data-ttu-id="dd683-111">リーダー/ライター ロックを設定できることを示します。</span><span class="sxs-lookup"><span data-stu-id="dd683-111">Indicates that a reader/writer lock can be set.</span></span>|  
+|`MDThreadSatetyDefault`|<span data-ttu-id="f7cd8-108">既定値です。</span><span class="sxs-lookup"><span data-stu-id="f7cd8-108">Default value.</span></span> <span data-ttu-id="f7cd8-109">`MDThreadSatetyOff` と同じ。</span><span class="sxs-lookup"><span data-stu-id="f7cd8-109">Same as `MDThreadSatetyOff`.</span></span>|  
+|`MDThreadSatetyOff`|<span data-ttu-id="f7cd8-110">リーダー/ライター ロックを設定できないことを示します。</span><span class="sxs-lookup"><span data-stu-id="f7cd8-110">Indicates that a reader/writer lock cannot be set.</span></span>|  
+|`MDThreadSatetyOn`|<span data-ttu-id="f7cd8-111">リーダー/ライター ロックを設定できることを示します。</span><span class="sxs-lookup"><span data-stu-id="f7cd8-111">Indicates that a reader/writer lock can be set.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="dd683-112">必要条件</span><span class="sxs-lookup"><span data-stu-id="dd683-112">Requirements</span></span>  
- <span data-ttu-id="dd683-113">**プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="dd683-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="f7cd8-112">要件</span><span class="sxs-lookup"><span data-stu-id="f7cd8-112">Requirements</span></span>  
+ <span data-ttu-id="f7cd8-113">**プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="f7cd8-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="dd683-114">**ヘッダー:** CorHdr.h</span><span class="sxs-lookup"><span data-stu-id="dd683-114">**Header:** CorHdr.h</span></span>  
+ <span data-ttu-id="f7cd8-114">**ヘッダー:** CorHdr.h</span><span class="sxs-lookup"><span data-stu-id="f7cd8-114">**Header:** CorHdr.h</span></span>  
   
- <span data-ttu-id="dd683-115">**.NET framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="dd683-115">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="f7cd8-115">**.NET framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="f7cd8-115">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="dd683-116">参照</span><span class="sxs-lookup"><span data-stu-id="dd683-116">See Also</span></span>  
- [<span data-ttu-id="dd683-117">メタデータ列挙型</span><span class="sxs-lookup"><span data-stu-id="dd683-117">Metadata Enumerations</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+## <a name="see-also"></a><span data-ttu-id="f7cd8-116">関連項目</span><span class="sxs-lookup"><span data-stu-id="f7cd8-116">See Also</span></span>  
+ [<span data-ttu-id="f7cd8-117">メタデータ列挙型</span><span class="sxs-lookup"><span data-stu-id="f7cd8-117">Metadata Enumerations</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

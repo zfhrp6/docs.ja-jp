@@ -1,14 +1,6 @@
 ---
-title: "ICLRAssemblyIdentityManager::IsStronglyNamed メソッド"
-ms.custom: 
+title: ICLRAssemblyIdentityManager::IsStronglyNamed メソッド
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ICLRAssemblyIdentityManager.IsStronglyNamed
 api_location:
@@ -23,22 +15,19 @@ helpviewer_keywords:
 ms.assetid: 954bd386-2076-4d00-9d46-38c728aa9cab
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 1cb727d9144fc3364a04cd5b9064527c55f5ee79
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
-ms.translationtype: MT
+ms.openlocfilehash: 735ff725bc06c14da9821055a6a143f857548c30
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33434468"
 ---
-# <a name="iclrassemblyidentitymanagerisstronglynamed-method"></a><span data-ttu-id="8c461-102">ICLRAssemblyIdentityManager::IsStronglyNamed メソッド</span><span class="sxs-lookup"><span data-stu-id="8c461-102">ICLRAssemblyIdentityManager::IsStronglyNamed Method</span></span>
-<span data-ttu-id="8c461-103">指定したアセンブリは厳密な名前かどうかを示す値を取得します。</span><span class="sxs-lookup"><span data-stu-id="8c461-103">Gets a value that indicates whether the specified assembly is strongly named.</span></span>  
+# <a name="iclrassemblyidentitymanagerisstronglynamed-method"></a><span data-ttu-id="a3f75-102">ICLRAssemblyIdentityManager::IsStronglyNamed メソッド</span><span class="sxs-lookup"><span data-stu-id="a3f75-102">ICLRAssemblyIdentityManager::IsStronglyNamed Method</span></span>
+<span data-ttu-id="a3f75-103">指定したアセンブリは厳密な名前かどうかを示す値を取得します。</span><span class="sxs-lookup"><span data-stu-id="a3f75-103">Gets a value that indicates whether the specified assembly is strongly named.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="8c461-104">構文</span><span class="sxs-lookup"><span data-stu-id="8c461-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="a3f75-104">構文</span><span class="sxs-lookup"><span data-stu-id="a3f75-104">Syntax</span></span>  
   
 ```  
 RESULT IsStronglyNamed (  
@@ -47,32 +36,32 @@ RESULT IsStronglyNamed (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="8c461-105">パラメーター</span><span class="sxs-lookup"><span data-stu-id="8c461-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="a3f75-105">パラメーター</span><span class="sxs-lookup"><span data-stu-id="a3f75-105">Parameters</span></span>  
  `pwzAssemblyIdentity`  
- <span data-ttu-id="8c461-106">[in]評価するアセンブリの非透過の標準アセンブリの id データ。</span><span class="sxs-lookup"><span data-stu-id="8c461-106">[in] The opaque canonical assembly identity data of the assembly to be evaluated.</span></span>  
+ <span data-ttu-id="a3f75-106">[in]評価するアセンブリの非透過の標準アセンブリの id データ。</span><span class="sxs-lookup"><span data-stu-id="a3f75-106">[in] The opaque canonical assembly identity data of the assembly to be evaluated.</span></span>  
   
  `pbIsStronglyNamed`  
- <span data-ttu-id="8c461-107">[out]`true`によってアセンブリが参照されている場合は、`pwzAssemblyIdentity`パラメーターが強く、それ以外の名前付き`false`します。</span><span class="sxs-lookup"><span data-stu-id="8c461-107">[out] `true`, if the assembly referenced by the `pwzAssemblyIdentity` parameter is strongly named; otherwise, `false`.</span></span>  
+ <span data-ttu-id="a3f75-107">[out]`true`によってアセンブリが参照されている場合は、`pwzAssemblyIdentity`パラメーターが強く、それ以外の名前付き`false`します。</span><span class="sxs-lookup"><span data-stu-id="a3f75-107">[out] `true`, if the assembly referenced by the `pwzAssemblyIdentity` parameter is strongly named; otherwise, `false`.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="8c461-108">戻り値</span><span class="sxs-lookup"><span data-stu-id="8c461-108">Return Value</span></span>  
+## <a name="return-value"></a><span data-ttu-id="a3f75-108">戻り値</span><span class="sxs-lookup"><span data-stu-id="a3f75-108">Return Value</span></span>  
   
-|<span data-ttu-id="8c461-109">HRESULT</span><span class="sxs-lookup"><span data-stu-id="8c461-109">HRESULT</span></span>|<span data-ttu-id="8c461-110">説明</span><span class="sxs-lookup"><span data-stu-id="8c461-110">Description</span></span>|  
+|<span data-ttu-id="a3f75-109">HRESULT</span><span class="sxs-lookup"><span data-stu-id="a3f75-109">HRESULT</span></span>|<span data-ttu-id="a3f75-110">説明</span><span class="sxs-lookup"><span data-stu-id="a3f75-110">Description</span></span>|  
 |-------------|-----------------|  
-|<span data-ttu-id="8c461-111">S_OK</span><span class="sxs-lookup"><span data-stu-id="8c461-111">S_OK</span></span>|<span data-ttu-id="8c461-112">メソッドが正常に返されます。</span><span class="sxs-lookup"><span data-stu-id="8c461-112">The method returned successfully.</span></span>|  
-|<span data-ttu-id="8c461-113">HOST_E_CLRNOTAVAILABLE</span><span class="sxs-lookup"><span data-stu-id="8c461-113">HOST_E_CLRNOTAVAILABLE</span></span>|<span data-ttu-id="8c461-114">共通言語ランタイム (CLR) が、プロセスに読み込まれていませんまたは CLR は、状態をマネージ コードを実行またはできないの呼び出しは正常に処理します。</span><span class="sxs-lookup"><span data-stu-id="8c461-114">The common language runtime (CLR) has not been loaded into a process, or the CLR is in a state in which it cannot run managed code or process the call successfully.</span></span>|  
-|<span data-ttu-id="8c461-115">HOST_E_TIMEOUT</span><span class="sxs-lookup"><span data-stu-id="8c461-115">HOST_E_TIMEOUT</span></span>|<span data-ttu-id="8c461-116">呼び出しがタイムアウトしました。</span><span class="sxs-lookup"><span data-stu-id="8c461-116">The call timed out.</span></span>|  
-|<span data-ttu-id="8c461-117">HOST_E_NOT_OWNER</span><span class="sxs-lookup"><span data-stu-id="8c461-117">HOST_E_NOT_OWNER</span></span>|<span data-ttu-id="8c461-118">呼び出し元は、ロックを所有していません。</span><span class="sxs-lookup"><span data-stu-id="8c461-118">The caller does not own the lock.</span></span>|  
-|<span data-ttu-id="8c461-119">HOST_E_ABANDONED</span><span class="sxs-lookup"><span data-stu-id="8c461-119">HOST_E_ABANDONED</span></span>|<span data-ttu-id="8c461-120">イベントがキャンセルされましたブロックされたスレッドまたはファイバーが待機しています。</span><span class="sxs-lookup"><span data-stu-id="8c461-120">An event was canceled while a blocked thread or fiber was waiting on it.</span></span>|  
-|<span data-ttu-id="8c461-121">E_FAIL</span><span class="sxs-lookup"><span data-stu-id="8c461-121">E_FAIL</span></span>|<span data-ttu-id="8c461-122">不明な致命的なエラーが発生しました。</span><span class="sxs-lookup"><span data-stu-id="8c461-122">An unknown catastrophic failure occurred.</span></span> <span data-ttu-id="8c461-123">メソッドには、E_FAIL が返された場合、CLR は、プロセス内で使用可能ではなくなりました。</span><span class="sxs-lookup"><span data-stu-id="8c461-123">If a method returns E_FAIL, the CLR is no longer usable within the process.</span></span> <span data-ttu-id="8c461-124">メソッドのホストに以降の呼び出しでは、HOST_E_CLRNOTAVAILABLE を返します。</span><span class="sxs-lookup"><span data-stu-id="8c461-124">Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.</span></span>|  
+|<span data-ttu-id="a3f75-111">S_OK</span><span class="sxs-lookup"><span data-stu-id="a3f75-111">S_OK</span></span>|<span data-ttu-id="a3f75-112">メソッドが正常に返されます。</span><span class="sxs-lookup"><span data-stu-id="a3f75-112">The method returned successfully.</span></span>|  
+|<span data-ttu-id="a3f75-113">HOST_E_CLRNOTAVAILABLE</span><span class="sxs-lookup"><span data-stu-id="a3f75-113">HOST_E_CLRNOTAVAILABLE</span></span>|<span data-ttu-id="a3f75-114">共通言語ランタイム (CLR) が、プロセスに読み込まれていませんまたは CLR は、状態をマネージ コードを実行またはできないの呼び出しは正常に処理します。</span><span class="sxs-lookup"><span data-stu-id="a3f75-114">The common language runtime (CLR) has not been loaded into a process, or the CLR is in a state in which it cannot run managed code or process the call successfully.</span></span>|  
+|<span data-ttu-id="a3f75-115">HOST_E_TIMEOUT</span><span class="sxs-lookup"><span data-stu-id="a3f75-115">HOST_E_TIMEOUT</span></span>|<span data-ttu-id="a3f75-116">呼び出しがタイムアウトしました。</span><span class="sxs-lookup"><span data-stu-id="a3f75-116">The call timed out.</span></span>|  
+|<span data-ttu-id="a3f75-117">HOST_E_NOT_OWNER</span><span class="sxs-lookup"><span data-stu-id="a3f75-117">HOST_E_NOT_OWNER</span></span>|<span data-ttu-id="a3f75-118">呼び出し元は、ロックを所有していません。</span><span class="sxs-lookup"><span data-stu-id="a3f75-118">The caller does not own the lock.</span></span>|  
+|<span data-ttu-id="a3f75-119">HOST_E_ABANDONED</span><span class="sxs-lookup"><span data-stu-id="a3f75-119">HOST_E_ABANDONED</span></span>|<span data-ttu-id="a3f75-120">イベントがキャンセルされましたブロックされたスレッドまたはファイバーが待機しています。</span><span class="sxs-lookup"><span data-stu-id="a3f75-120">An event was canceled while a blocked thread or fiber was waiting on it.</span></span>|  
+|<span data-ttu-id="a3f75-121">E_FAIL</span><span class="sxs-lookup"><span data-stu-id="a3f75-121">E_FAIL</span></span>|<span data-ttu-id="a3f75-122">不明な致命的なエラーが発生しました。</span><span class="sxs-lookup"><span data-stu-id="a3f75-122">An unknown catastrophic failure occurred.</span></span> <span data-ttu-id="a3f75-123">メソッドには、E_FAIL が返された場合、CLR は、プロセス内で使用可能ではなくなりました。</span><span class="sxs-lookup"><span data-stu-id="a3f75-123">If a method returns E_FAIL, the CLR is no longer usable within the process.</span></span> <span data-ttu-id="a3f75-124">メソッドのホストに以降の呼び出しでは、HOST_E_CLRNOTAVAILABLE を返します。</span><span class="sxs-lookup"><span data-stu-id="a3f75-124">Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="8c461-125">必要条件</span><span class="sxs-lookup"><span data-stu-id="8c461-125">Requirements</span></span>  
- <span data-ttu-id="8c461-126">**プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="8c461-126">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="a3f75-125">要件</span><span class="sxs-lookup"><span data-stu-id="a3f75-125">Requirements</span></span>  
+ <span data-ttu-id="a3f75-126">**プラットフォーム:** を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。</span><span class="sxs-lookup"><span data-stu-id="a3f75-126">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="8c461-127">**ヘッダー:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="8c461-127">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="a3f75-127">**ヘッダー:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="a3f75-127">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="8c461-128">**ライブラリ:** MSCorEE.dll にリソースとして含まれています。</span><span class="sxs-lookup"><span data-stu-id="8c461-128">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="a3f75-128">**ライブラリ:** MSCorEE.dll にリソースとして含まれています。</span><span class="sxs-lookup"><span data-stu-id="a3f75-128">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="8c461-129">**.NET framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="8c461-129">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="a3f75-129">**.NET framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="a3f75-129">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="8c461-130">参照</span><span class="sxs-lookup"><span data-stu-id="8c461-130">See Also</span></span>  
- [<span data-ttu-id="8c461-131">ICLRAssemblyIdentityManager インターフェイス</span><span class="sxs-lookup"><span data-stu-id="8c461-131">ICLRAssemblyIdentityManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyidentitymanager-interface.md)
+## <a name="see-also"></a><span data-ttu-id="a3f75-130">関連項目</span><span class="sxs-lookup"><span data-stu-id="a3f75-130">See Also</span></span>  
+ [<span data-ttu-id="a3f75-131">ICLRAssemblyIdentityManager インターフェイス</span><span class="sxs-lookup"><span data-stu-id="a3f75-131">ICLRAssemblyIdentityManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyidentitymanager-interface.md)

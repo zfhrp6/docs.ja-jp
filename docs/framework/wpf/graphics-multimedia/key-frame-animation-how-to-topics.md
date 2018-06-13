@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33561964"
 ---
 # <a name="key-frame-animation-how-to-topics"></a><span data-ttu-id="830a7-102">キー フレーム アニメーションに関する「方法」トピック</span><span class="sxs-lookup"><span data-stu-id="830a7-102">Key-Frame Animation How-to Topics</span></span>
 <span data-ttu-id="830a7-103">このセクションのトピックでは、キー フレーム アニメーションを使用して、2 つのプロパティの値、コントロールの補間よりも多くのアニメーション化する方法を説明します。</span><span class="sxs-lookup"><span data-stu-id="830a7-103">The topics in this section demonstrate how to use key frame animations to animate more than two property values and control interpolation.</span></span>  

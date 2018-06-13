@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32755966"
 ---
 # <a name="creating-a-dataset"></a><span data-ttu-id="c446b-102">DataSet の作成</span><span class="sxs-lookup"><span data-stu-id="c446b-102">Creating a DataSet</span></span>
 <span data-ttu-id="c446b-103"><xref:System.Data.DataSet> のインスタンスを作成するには、<xref:System.Data.DataSet> のコンストラクターを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="c446b-103">You create an instance of a <xref:System.Data.DataSet> by calling the <xref:System.Data.DataSet> constructor.</span></span> <span data-ttu-id="c446b-104">必要に応じて、引数 name を指定します。</span><span class="sxs-lookup"><span data-stu-id="c446b-104">Optionally specify a name argument.</span></span> <span data-ttu-id="c446b-105">名前を指定しない場合、<xref:System.Data.DataSet> の名前は "NewDataSet" に設定されます。</span><span class="sxs-lookup"><span data-stu-id="c446b-105">If you do not specify a name for the <xref:System.Data.DataSet>, the name is set to "NewDataSet".</span></span>  

@@ -8,6 +8,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32756905"
 ---
 # <a name="ltworkflowidlegt"></a><span data-ttu-id="cbeec-102">&lt;workflowIdle&gt;</span><span class="sxs-lookup"><span data-stu-id="cbeec-102">&lt;workflowIdle&gt;</span></span>
 <span data-ttu-id="cbeec-103">アイドル状態のワークフロー インスタンスのアンロードおよび永続化のタイミングを制御するサービス動作。</span><span class="sxs-lookup"><span data-stu-id="cbeec-103">A service behavior that controls when idle workflow instances are unloaded and persisted.</span></span>  

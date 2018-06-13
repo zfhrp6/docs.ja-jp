@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33563494"
 ---
 # <a name="exceptions-the-tryfinally-expression"></a><span data-ttu-id="86290-103">例外: try...finally 式</span><span class="sxs-lookup"><span data-stu-id="86290-103">Exceptions: The try...finally Expression</span></span>
 

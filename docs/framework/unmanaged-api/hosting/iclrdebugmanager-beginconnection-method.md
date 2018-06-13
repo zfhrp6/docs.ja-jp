@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 3c1a285fca381195191def7612aef41c4bf72f83
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33435512"
 ---
 # <a name="iclrdebugmanagerbeginconnection-method"></a><span data-ttu-id="4b752-102">ICLRDebugManager::BeginConnection メソッド</span><span class="sxs-lookup"><span data-stu-id="4b752-102">ICLRDebugManager::BeginConnection Method</span></span>
 <span data-ttu-id="4b752-103">識別子とフレンドリ名を持つタスクの一覧を関連付けるには、ホストとデバッガーの間の新しい接続を確立します。</span><span class="sxs-lookup"><span data-stu-id="4b752-103">Establishes a new connection between the host and the debugger to associate a list of tasks with an identifier and a friendly name.</span></span>  
