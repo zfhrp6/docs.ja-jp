@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33324175"
 ---
 # <a name="how-to-initialize-a-dictionary-with-a-collection-initializer-c-programming-guide"></a>方法 : コレクション初期化子を使用してディクショナリを初期化する (C# プログラミング ガイド)
 <xref:System.Collections.Generic.Dictionary`2> にはキーと値のペアのコレクションが含まれています。 その <xref:System.Collections.Generic.Dictionary`2.Add*> メソッドは、それぞれキーと値に対する 2 つのパラメーターを受け取ります。 `Add` メソッドが複数のパラメーターを受け取る <xref:System.Collections.Generic.Dictionary`2> またはコレクションを初期化するには、次の例に示すように、各パラメーターのセットを中かっこで囲みます。  

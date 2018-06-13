@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33566900"
 ---
 # <a name="storyboards-overview"></a>ストーリーボードの概要
 このトピックは、使用する方法を示します<xref:System.Windows.Media.Animation.Storyboard>を整理し、アニメーションを適用するオブジェクト。 対話的に操作する方法を説明<xref:System.Windows.Media.Animation.Storyboard>オブジェクトおよび構文を対象とする間接的なプロパティについて説明します。  

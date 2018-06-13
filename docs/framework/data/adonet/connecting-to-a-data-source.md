@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32757113"
 ---
 # <a name="connecting-to-a-data-source-in-adonet"></a>ADO.NET でのデータ ソースへの接続
 ADO.NET で使用して、**接続**接続文字列に必要な認証情報を入力して、特定のデータ ソースに接続するオブジェクト。 **接続**オブジェクトを使用するデータ ソースの種類によって異なります。  

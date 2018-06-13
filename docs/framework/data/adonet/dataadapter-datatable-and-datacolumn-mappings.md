@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32759024"
 ---
 # <a name="dataadapter-datatable-and-datacolumn-mappings"></a>DataAdapter DataTable と DataColumn のマップ
 A **DataAdapter** 0 個以上のコレクションを含んでいます<xref:System.Data.Common.DataTableMapping>内のオブジェクトの**TableMappings**プロパティです。 A **DataTableMapping** 、データ ソースに対するクエリから返されるデータの間のマスター マッピングを提供し、<xref:System.Data.DataTable>です。 **DataTableMapping**の代わりに名前を渡すことができます、 **DataTable**名、**塗りつぶし**のメソッド、 **DataAdapter**です。 次の例を作成、 **DataTableMapping**という**AuthorsMapping**の**作成者**テーブル。  
@@ -77,7 +78,7 @@ adapter.Fill(custDS, "Customers");
 ```  
   
 > [!NOTE]
->  列マップにソースの列名を指定しなかった場合、またはテーブル マップにソース テーブル名を指定しなかった場合は、自動的に既定の名前が生成されます。 列マッピングがの増分の既定の名前を指定した場合は、列マッピングの基になる列が指定されていません、 **SourceColumn** *N、*で始まる**SourceColumn1**です。 テーブル マップにソース テーブル名を指定しない場合、テーブルのマッピングが指定されたのインクリメンタル既定名**SourceTable** *N*以降で、 **SourceTable1**です。  
+>  列マップにソースの列名を指定しなかった場合、またはテーブル マップにソース テーブル名を指定しなかった場合は、自動的に既定の名前が生成されます。 列マッピングがの増分の既定の名前を指定した場合は、列マッピングの基になる列が指定されていません、 **SourceColumn** *N、* で始まる**SourceColumn1**です。 テーブル マップにソース テーブル名を指定しない場合、テーブルのマッピングが指定されたのインクリメンタル既定名**SourceTable** *N*以降で、 **SourceTable1**です。  
   
 > [!NOTE]
 >  名前付け規則を回避することをお勧め**SourceColumn** *N*列マッピングの場合、または**SourceTable** *N*テーブル指定した名前の既存の既定の列マップ名の競合する場合もあるため、マッピング、 **ColumnMappingCollection**またはテーブル マップ名に、 **DataTableMappingCollection**. 指定した名前が既に存在する場合は、例外がスローされます。  

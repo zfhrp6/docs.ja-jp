@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32746723"
 ---
 # <a name="ltonewaygt"></a>&lt;一方向&gt;
 カスタム バインドのパケット ルーティングを有効にし、一方向メソッドを使用できるようにします。  

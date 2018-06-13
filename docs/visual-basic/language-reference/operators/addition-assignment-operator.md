@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33604017"
 ---
 # <a name="-operator-visual-basic"></a>+= 演算子 (Visual Basic)
 数値型の変数またはプロパティの値に数値式の値を追加し、結果を変数またはプロパティに代入します。 連結するためにも使用する、`String`式、`String`変数やプロパティと、割り当て、その結果を変数またはプロパティ。  

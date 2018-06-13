@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33590830"
 ---
 # <a name="first-operand-in-a-binary-39if39-expression-must-be-nullable-or-a-reference-type"></a>最初のオペランドはバイナリで&#39;場合&#39;式を null 許容にする必要がありますまたは型の参照
 `If`式が 2 または 3 つの引数を受け取ることができます。 2 つの引数を送信するときに、最初の引数は、参照型または null 許容型にする必要があります。 最初の引数が以外の何もする評価された場合に`Nothing`、その値が返されます。 最初の引数が評価された場合`Nothing`、2 番目の引数が評価され、返されます。  

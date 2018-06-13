@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32760194"
 ---
 # <a name="generating-sql-from-command-trees---best-practices"></a>コマンド ツリーからの SQL の生成: ベスト プラクティス
 出力クエリ コマンド ツリーは、SQL で表現できるクエリに厳密に従って作成されます。 ただし、出力コマンド ツリーから SQL を生成する際にプロバイダーの作成者が直面する、一般的な問題がいくつかあります。 このトピックでは、これらの問題について説明します。 これらの問題への対処方法については、次のトピックでサンプル プロバイダーを介して紹介します。  

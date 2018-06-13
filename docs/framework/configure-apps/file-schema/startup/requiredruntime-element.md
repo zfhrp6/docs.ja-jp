@@ -17,6 +17,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32749983"
 ---
 # <a name="ltrequiredruntimegt-element"></a>&lt;requiredRuntime&gt;要素
 バージョン 1.0 の共通言語ランタイムのみがアプリケーションでサポートされることを指定します。 この要素は推奨されておらず、使用できなくする必要があります。 [ `supportedRuntime` ](supportedruntime-element.md)要素を使用してください。

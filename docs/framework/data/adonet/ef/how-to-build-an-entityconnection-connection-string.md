@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32759960"
 ---
 # <a name="how-to-build-an-entityconnection-connection-string"></a>EntityConnection の接続文字列を作成する方法
 このトピックでは、<xref:System.Data.EntityClient.EntityConnection> を作成する方法について説明します。  

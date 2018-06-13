@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33566484"
 ---
 # <a name="xaml-related-clr-attributes-for-custom-types-and-libraries"></a>カスタム型およびライブラリの XAML 関連の CLR 属性
 このトピックでは、.NET Framework XAML サービスによって定義されている共通言語ランタイム (CLR) の属性について説明します。 その他の CLR 属性、.NET Framework で定義されているアセンブリまたは型へのアプリケーションの XAML 関連のシナリオがあることについても説明します。 これらの CLR 属性を持つアセンブリ、型、またはメンバーの属性の型に関連する XAML 型システム情報を提供します。 情報は、直接、XAML ノード ストリームを処理するため、または専用の XAML リーダーと XAML ライターで、.NET Framework XAML サービスを使用する任意の XAML コンシューマーに提供されます。  

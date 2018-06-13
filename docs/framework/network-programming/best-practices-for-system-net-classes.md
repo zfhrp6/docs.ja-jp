@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33393946"
 ---
 # <a name="best-practices-for-systemnet-classes"></a>System.Net クラスのベスト プラクティス
 次の推奨事項は、<xref:System.Net> に含まれるクラスを最大限に活用するのに役立ちます。  
