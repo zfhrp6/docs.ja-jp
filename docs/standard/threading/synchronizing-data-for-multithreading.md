@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33591532"
 ---
 # <a name="synchronizing-data-for-multithreading"></a>マルチスレッド処理のためのデータの同期
 複数のスレッドが同じオブジェクトのプロパティとメソッドを呼び出す場合は、これらの呼び出しを同期することが重要です。 同期しないと、1 つのスレッドが行っていることを別のスレッドが中断し、オブジェクトが無効な状態になってしまう可能性があります。 メンバーがこのように中断されないように保護されているクラスを、スレッドセーフと呼びます。  

@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33599594"
 ---
 # <a name="argument-39ltargumentnamegt39-cannot-be-a-multidimensional-array"></a>引数&#39; &lt;argumentname&gt; &#39;多次元配列にすることはできません
 配列引数のランクが 1 を超えていますが、この配列には 1 次元配列のみを指定できます。  

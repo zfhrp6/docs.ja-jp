@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33574596"
 ---
 # <a name="using-standard-exception-types"></a>標準例外型の使用
 このセクションでは、フレームワークとその使用方法の詳細によって提供される標準の例外について説明します。 一覧は完全ではではありません。 その他のフレームワークの例外の種類の使用率の .NET Framework リファレンス ドキュメントを参照してください。  

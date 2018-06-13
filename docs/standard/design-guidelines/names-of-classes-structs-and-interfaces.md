@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33576143"
 ---
 # <a name="names-of-classes-structs-and-interfaces"></a>クラス、構造体、およびインターフェイスの名前
 次の名前付けのガイドラインは、一般的な種類の名前付けに適用されます。  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33589894"
 ---
 # <a name="first-statement-of-this-39sub-new39-must-be-an-explicit-call-to-39mybasenew39-or-39myclassnew39-because-the-39ltconstructornamegt39-in-the-base-class-39ltbaseclassnamegt39-of-39ltderivedclassnamegt39-is-marked-obsolete-39lterrormessagegt39"></a>この最初のステートメント&#39;Sub New&#39;を明示的に呼び出す必要があります&#39;トラクター&#39;または&#39;'mybase.new'&#39;ため、 &#39;&lt;古い形式&gt;&#39; 、基底クラスで&#39;&lt;baseclassname&gt; &#39;の&#39; &lt;derivedclassname&gt; &#39;旧式とマークされて: &#39; &lt;errormessage&gt;&#39;
 クラス コンストラクターが基底クラスのコンストラクターを明示的に呼び出さず、暗黙的な基底クラスのコンストラクターが <xref:System.ObsoleteAttribute> 属性およびエラーとして扱うことを示すディレクティブでマークされています。  

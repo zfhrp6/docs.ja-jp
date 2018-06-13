@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: db4431da90842f4f96a0f09a2f28dc473d956ee3
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33460409"
 ---
 # <a name="compareto-function"></a>CompareTo 関数
 別の Windows 管理オブジェクトにオブジェクトを比較します。  

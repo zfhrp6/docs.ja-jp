@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33595262"
 ---
 # <a name="unable-to-find-required-file-39ltfilenamegt39"></a>必要なファイルが見つかりません&#39;&lt;ファイル名&gt;&#39;
 Visual Studio で必要とされるファイルがないか、破損しています。  

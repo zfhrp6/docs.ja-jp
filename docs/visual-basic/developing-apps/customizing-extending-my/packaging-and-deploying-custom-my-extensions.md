@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33591860"
 ---
 # <a name="packaging-and-deploying-custom-my-extensions-visual-basic"></a>パッケージ化と配置カスタム My 拡張機能 (Visual Basic)
 Visual Basic では、ユーザー設定を展開するための簡単な方法`My`Visual Studio テンプレートを使用して名前空間の拡張機能です。 対象のプロジェクト テンプレートを作成する場合、`My`拡張機能は、新しいプロジェクトの種類の不可欠なカスタムを含めることができますのみ`My`プロジェクト テンプレートをエクスポートするときに拡張機能のコード。 プロジェクト テンプレートのエクスポートの詳細については、次を参照してください。[する方法: プロジェクト テンプレートを作成する](/visualstudio/ide/how-to-create-project-templates)です。  

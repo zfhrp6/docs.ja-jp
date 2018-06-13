@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33590278"
 ---
 # <a name="boolean-data-type-visual-basic"></a>ブール型 (Boolean) (Visual Basic)
 値を保持できるのみ`True`または`False`です。 キーワード`True`と`False`の 2 つの状態に対応している`Boolean`変数。  

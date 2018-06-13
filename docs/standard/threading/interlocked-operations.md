@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33589972"
 ---
 # <a name="interlocked-operations"></a>インタロックされた操作
 <xref:System.Threading.Interlocked> クラスでは、複数のスレッドによって共有されている変数へのアクセスを同期するメソッドが提供されます。 この変数が共有メモリにある場合、さまざまなプロセスのスレッドがこのメカニズムを使用できます。 インタロックされた操作はアトミックです。つまり、その操作全体が 1 つの単位のため、同じ変数の別のインタロックされた操作によって中断されることはありません。 これは、メモリ アドレスから値を読み込んだ後、変更して格納できるようになる前にスレッドを中断できるプリエンプティブ マルチスレッドのオペレーティング システムで重要です。  

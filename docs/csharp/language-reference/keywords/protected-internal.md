@@ -7,6 +7,7 @@ ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/15/2018
+ms.locfileid: "34172242"
 ---
 # <a name="protected-internal-c-reference"></a>protected internal (C# リファレンス)
 キーワード組み合わせ `protected internal` はメンバー アクセス修飾子です。 protected internal メンバーには、現在のアセンブリから、または包含クラスから派生した型からアクセスできます。 `protected internal` と他のアクセス修飾子の比較については、「[アクセシビリティ レベル](../../../csharp/language-reference/keywords/accessibility-levels.md)」を参照してください。 

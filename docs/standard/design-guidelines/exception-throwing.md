@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33573722"
 ---
 # <a name="exception-throwing"></a>例外のスロー
 このセクションで説明されている例外スローのガイドラインでは、実行エラーの意味を適切な定義が必要です。 メンバーが実行できないときに実行エラーが発生する (新機能、メンバー名のとおり) を実行するように設計します。 たとえば場合、`OpenFile`メソッドは、呼び出し元に、開いているファイル ハンドルを返すことはできません、実行エラーと見なされるとします。  

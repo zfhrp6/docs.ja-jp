@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33588997"
 ---
 # <a name="constructor-39ltnamegt39-cannot-call-itself"></a>コンス トラクター &#39;&lt;名前&gt;&#39;自体を呼び出すことはできません
 A`Sub New`クラスまたは構造体でプロシージャを呼び出します。  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33807968"
 ---
 # <a name="windows-service-host"></a>Windows サービス ホスト
 このサンプルでは、マネージ Windows サービスでホストされる Windows Communication Foundation (WCF) サービスを使用します。 サービス アプレットを使用して Windows サービスが制御される**コントロール パネルの **システムの再起動後に自動的に開始するように構成できます。 このサンプルは、クライアント プログラムと Windows サービス プログラムで構成されています。 サービスは .exe プログラムとして実装され、独自のホスティング コードが指定されます。 Windows プロセス アクティブ化サービス (WAS) やインターネット インフォメーション サービス (IIS) などの他のホスト環境では、ホスティング コードを記述する必要はありません。  

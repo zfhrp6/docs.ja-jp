@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33595174"
 ---
 # <a name="unable-to-emit-assembly-lterror-messagegt"></a>アセンブリを作成できません:&lt;エラー メッセージ&gt;
 Visual Basic コンパイラでは、リンカー、アセンブリを作成する出力段階でエラーが報告アセンブリ リンカー (Al.exe、Alink とも呼ばれます)、マニフェストを伴うアセンブリを生成するを呼び出します。  
