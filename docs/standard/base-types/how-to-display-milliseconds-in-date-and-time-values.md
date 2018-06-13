@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33568005"
 ---
 # <a name="how-to-display-milliseconds-in-date-and-time-values"></a><span data-ttu-id="3d217-102">方法: 日付および時刻の値のミリ秒部分を表示する</span><span class="sxs-lookup"><span data-stu-id="3d217-102">How to: Display Milliseconds in Date and Time Values</span></span>
 <span data-ttu-id="3d217-103"><xref:System.DateTime.ToString?displayProperty=nameWithType> などの既定の日付および時刻書式指定メソッドは時刻値の時間、分、秒を含めますが、ミリ秒の部分は含めません。</span><span class="sxs-lookup"><span data-stu-id="3d217-103">The default date and time formatting methods, such as <xref:System.DateTime.ToString?displayProperty=nameWithType>, include the hours, minutes, and seconds of a time value but exclude its milliseconds component.</span></span> <span data-ttu-id="3d217-104">ここでは、書式設定された日付および時刻文字列の中にミリ秒部分を含める方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="3d217-104">This topic shows how to include a date and time's millisecond component in formatted date and time strings.</span></span>  

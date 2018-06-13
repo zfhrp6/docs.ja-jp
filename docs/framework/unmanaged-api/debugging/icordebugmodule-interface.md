@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: db4a980929a644d2862a382f147505644313da7b
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33422238"
 ---
 # <a name="icordebugmodule-interface1"></a><span data-ttu-id="77b42-102">ICorDebugModule Interface1</span><span class="sxs-lookup"><span data-stu-id="77b42-102">ICorDebugModule Interface1</span></span>
 <span data-ttu-id="77b42-103">共通言語ランタイム (CLR) モジュールは、実行可能ファイルかダイナミック リンク ライブラリ (DLL) を表します。</span><span class="sxs-lookup"><span data-stu-id="77b42-103">Represents a common language runtime (CLR) module, which is either an executable file or a dynamic-link library (DLL).</span></span>  

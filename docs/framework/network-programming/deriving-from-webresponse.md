@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33395815"
 ---
 # <a name="deriving-from-webresponse"></a><span data-ttu-id="88c00-102">WebResponse からの派生</span><span class="sxs-lookup"><span data-stu-id="88c00-102">Deriving from WebResponse</span></span>
 <span data-ttu-id="88c00-103"><xref:System.Net.WebResponse> クラスは、.NET Framework プラグ可能なプロトコル モデルに適合するプロトコル固有の応答を作成するための基本メソッドとプロパティを提供する抽象基底クラスです。</span><span class="sxs-lookup"><span data-stu-id="88c00-103">The <xref:System.Net.WebResponse> class is an abstract base class that provides the basic methods and properties for creating a protocol-specific response that fits the .NET Framework pluggable protocol model.</span></span> <span data-ttu-id="88c00-104"><xref:System.Net.WebRequest> クラスを使用してリソースからデータを要求するアプリケーションは、**WebResponse** で応答を受信します。</span><span class="sxs-lookup"><span data-stu-id="88c00-104">Applications that use the <xref:System.Net.WebRequest> class to request data from resources receive the responses in a **WebResponse**.</span></span> <span data-ttu-id="88c00-105">プロトコル固有の **WebResponse**の子孫は、**WebResponse** クラスの抽象メンバーを実装する必要があります。</span><span class="sxs-lookup"><span data-stu-id="88c00-105">Protocol-specific **WebResponse** descendants must implement the abstract members of the **WebResponse** class.</span></span>  

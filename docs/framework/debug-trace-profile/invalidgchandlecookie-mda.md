@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33392906"
 ---
 # <a name="invalidgchandlecookie-mda"></a><span data-ttu-id="fa837-102">invalidGCHandleCookie MDA</span><span class="sxs-lookup"><span data-stu-id="fa837-102">invalidGCHandleCookie MDA</span></span>
 <span data-ttu-id="fa837-103">`invalidGCHandleCookie` マネージ デバッグ アシスタント (MDA) は、無効な <xref:System.IntPtr> Cookie から <xref:System.Runtime.InteropServices.GCHandle> への変換が試行されたときにアクティブ化されます。</span><span class="sxs-lookup"><span data-stu-id="fa837-103">The `invalidGCHandleCookie` managed debugging assistant (MDA) is activated when a conversion from an invalid <xref:System.IntPtr> cookie to a <xref:System.Runtime.InteropServices.GCHandle> is attempted.</span></span>  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33392449"
 ---
 # <a name="changes-to-the-systemuri-namespace-in-version-20"></a><span data-ttu-id="f3c89-102">バージョン 2.0 での System.Uri 名前空間の変更</span><span class="sxs-lookup"><span data-stu-id="f3c89-102">Changes to the System.Uri namespace in Version 2.0</span></span>
 <span data-ttu-id="f3c89-103"><xref:System.Uri?displayProperty=nameWithType> クラスには、いくつかの変更が加えられました。</span><span class="sxs-lookup"><span data-stu-id="f3c89-103">Several changes were made to the <xref:System.Uri?displayProperty=nameWithType> class.</span></span> <span data-ttu-id="f3c89-104">これらの変更は、不適切な動作を修正し、利便性とセキュリティを強化するものです。</span><span class="sxs-lookup"><span data-stu-id="f3c89-104">These changes fixed incorrect behavior, enhanced usability, and enhanced security.</span></span>  

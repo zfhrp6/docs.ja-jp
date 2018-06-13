@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33391652"
 ---
 # <a name="deploying-net-framework-applications"></a><span data-ttu-id="9642b-102">.NET Framework アプリケーションの配置</span><span class="sxs-lookup"><span data-stu-id="9642b-102">Deploying .NET Framework Applications</span></span>
 <span data-ttu-id="9642b-103">.NET Framework ドキュメントの本セクションでは、アセンブリの読み込み、アセンブリ参照の解決、およびネイティブ イメージの生成を使用したアプリケーションのパフォーマンス向上のためのガイドラインなど、.NET Framework アプリケーションを配置するための重要な情報を提供します。</span><span class="sxs-lookup"><span data-stu-id="9642b-103">This section of the .NET Framework documentation provides essential information for deploying .NET Framework applications, including guidelines for loading assemblies, resolving assembly references, and improving the performance of your application through native image generation.</span></span>  

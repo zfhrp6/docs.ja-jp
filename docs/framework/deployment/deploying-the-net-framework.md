@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33391408"
 ---
 # <a name="deploying-the-net-framework"></a><span data-ttu-id="f503e-102">.NET Framework の配置</span><span class="sxs-lookup"><span data-stu-id="f503e-102">Deploying the .NET Framework</span></span>
 <span data-ttu-id="f503e-103">.NET Framework ドキュメントのこのセクションでは、アプリケーションとともに .NET Framework をインストールする開発者、およびネットワーク上で .NET Framework を展開する管理者に対して情報を提供します。</span><span class="sxs-lookup"><span data-stu-id="f503e-103">This section of the .NET Framework documentation provides information for developers who want to install the .NET Framework with their applications, and administrators who want to deploy the .NET Framework across a network.</span></span> <span data-ttu-id="f503e-104">また、アクティベーション、配置に伴う再起動の問題、.NET Framework のインストールの進捗を監視する方法についても説明します。</span><span class="sxs-lookup"><span data-stu-id="f503e-104">It also discusses activation and restart issues associated with deployment, and how to monitor the progress of your .NET Framework installation.</span></span>  

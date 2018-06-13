@@ -30,6 +30,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33396391"
 ---
 # <a name="introducing-pluggable-protocols"></a><span data-ttu-id="a2dc0-102">プラグ可能なプロトコルの概要</span><span class="sxs-lookup"><span data-stu-id="a2dc0-102">Introducing Pluggable Protocols</span></span>
 <span data-ttu-id="a2dc0-103">Microsoft .NET Framework は、アプリケーションにすばやく簡単に統合できる、複数層の拡張可能なインターネット サービスのマネージ実装を提供します。</span><span class="sxs-lookup"><span data-stu-id="a2dc0-103">The Microsoft .NET Framework provides a layered, extensible, and managed implementation of Internet services that can be integrated quickly and easily into your applications.</span></span> <span data-ttu-id="a2dc0-104"><xref:System.Net> および <xref:System.Net.Sockets> の名前空間内のインターネット アクセス クラスは、Web ベース アプリケーションとインターネット ベース アプリケーションの両方を実装するために使用できます。</span><span class="sxs-lookup"><span data-stu-id="a2dc0-104">The Internet access classes in the <xref:System.Net> and <xref:System.Net.Sockets> namespaces can be used to implement both Web-based and Internet-based applications.</span></span>  

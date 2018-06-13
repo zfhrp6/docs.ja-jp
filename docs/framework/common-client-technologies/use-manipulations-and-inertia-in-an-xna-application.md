@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32741673"
 ---
 # <a name="using-manipulations-and-inertia-in-an-xna-application"></a><span data-ttu-id="635ba-102">XNA アプリケーションでの操作と慣性の使用</span><span class="sxs-lookup"><span data-stu-id="635ba-102">Using Manipulations and Inertia in an XNA Application</span></span>
 <span data-ttu-id="635ba-103">この記事では、操作と慣性の処理を Microsoft XNA アプリケーションで使用して、ゲーム ピースの動きを制御する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="635ba-103">This article describes how you can use manipulations and inertia processing in a Microsoft XNA application to control the movement of game pieces.</span></span> <span data-ttu-id="635ba-104">この記事をお読みになる前に、「[操作と慣性の概要](../../../docs/framework/common-client-technologies/manipulations-and-inertia-overview.md)」トピックの内容、および基本的な XNA のプログラミングの概念についてよく理解してください。</span><span class="sxs-lookup"><span data-stu-id="635ba-104">Before you read this article, you should be familiar with the [Manipulations and Inertia Overview](../../../docs/framework/common-client-technologies/manipulations-and-inertia-overview.md) topic, and be familiar with basic XNA programming concepts.</span></span>  

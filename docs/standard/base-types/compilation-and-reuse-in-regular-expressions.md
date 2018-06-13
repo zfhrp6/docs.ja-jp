@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33568759"
 ---
 # <a name="compilation-and-reuse-in-regular-expressions"></a><span data-ttu-id="e0985-102">正規表現におけるコンパイルと再利用</span><span class="sxs-lookup"><span data-stu-id="e0985-102">Compilation and Reuse in Regular Expressions</span></span>
 <span data-ttu-id="e0985-103">正規表現エンジンが式をどのようにコンパイルするか、および正規表現がどのようにキャッシュされるかを理解することで、正規表現を幅広く使用するアプリケーションのパフォーマンスを最適化できます。</span><span class="sxs-lookup"><span data-stu-id="e0985-103">You can optimize the performance of applications that make extensive use of regular expressions by understanding how the regular expression engine compiles expressions and by understanding how regular expressions are cached.</span></span> <span data-ttu-id="e0985-104">このトピックでは、コンパイルとキャッシュの両方について説明します。</span><span class="sxs-lookup"><span data-stu-id="e0985-104">This topic discusses both compilation and caching.</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33639537"
 ---
 # <a name="the-file-is-currently-closed"></a><span data-ttu-id="7741f-102">ファイルは現在閉じられています。</span><span class="sxs-lookup"><span data-stu-id="7741f-102">The file is currently closed</span></span>
 <span data-ttu-id="7741f-103">ファイルが開いているときにのみ実行できる操作を実行しようとしますが、現在、ファイルは閉じられています。</span><span class="sxs-lookup"><span data-stu-id="7741f-103">An attempt has been made to perform an operation that can only be performed on an open file, but the file is currently closed.</span></span>  

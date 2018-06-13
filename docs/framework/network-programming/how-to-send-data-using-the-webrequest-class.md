@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33394658"
 ---
 # <a name="how-to-send-data-using-the-webrequest-class"></a><span data-ttu-id="14f2e-102">方法: WebRequest クラスを使用してデータを送信する</span><span class="sxs-lookup"><span data-stu-id="14f2e-102">How to: Send Data Using the WebRequest Class</span></span>
 <span data-ttu-id="14f2e-103">次の手順では、サーバーにデータを送信するための手順について説明します。</span><span class="sxs-lookup"><span data-stu-id="14f2e-103">The following procedure describes the steps used to send data to a server.</span></span> <span data-ttu-id="14f2e-104">この手順は、通常、Web ページへのデータをポストするときに使用されます。</span><span class="sxs-lookup"><span data-stu-id="14f2e-104">This procedure is commonly used to post data to a Web page.</span></span>  

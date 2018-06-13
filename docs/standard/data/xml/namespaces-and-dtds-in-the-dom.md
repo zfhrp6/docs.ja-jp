@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33568681"
 ---
 # <a name="namespaces-and-dtds-in-the-dom"></a><span data-ttu-id="8c4c5-102">DOM における名前空間と DTD</span><span class="sxs-lookup"><span data-stu-id="8c4c5-102">Namespaces and DTDs in the DOM</span></span>
 <span data-ttu-id="8c4c5-103">ドキュメント型定義 (DTD) によって名前空間のサポートは複雑になります。</span><span class="sxs-lookup"><span data-stu-id="8c4c5-103">Document type definitions (DTDs) complicate namespace support.</span></span> <span data-ttu-id="8c4c5-104">たとえば、次の XML では、既定の属性の名前にコロンが含まれています。</span><span class="sxs-lookup"><span data-stu-id="8c4c5-104">For example, the following XML contains default attributes containing colons in their names.</span></span>  

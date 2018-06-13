@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33390875"
 ---
 # <a name="invalidfunctionpointerindelegate-mda"></a><span data-ttu-id="b0c04-102">invalidFunctionPointerInDelegate MDA</span><span class="sxs-lookup"><span data-stu-id="b0c04-102">invalidFunctionPointerInDelegate MDA</span></span>
 <span data-ttu-id="b0c04-103">ネイティブ関数ポインターに対するデリゲートを作成するときに、無効な関数ポインターが渡されると、`invalidFunctionPointerInDelegate` マネージ デバッグ アシスタント (MDA) がアクティブ化されます。</span><span class="sxs-lookup"><span data-stu-id="b0c04-103">The `invalidFunctionPointerInDelegate` managed debugging assistant (MDA) is activated when an invalid function pointer is passed in to construct a delegate over a native function pointer.</span></span>  

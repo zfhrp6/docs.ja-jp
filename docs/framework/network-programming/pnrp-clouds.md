@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33393843"
 ---
 # <a name="pnrp-clouds"></a><span data-ttu-id="91531-102">PNRP クラウド</span><span class="sxs-lookup"><span data-stu-id="91531-102">PNRP Clouds</span></span>
 <span data-ttu-id="91531-103">PNRP "クラウド" は、ネットワーク経由で相互に通信できるノードのセットを表します。</span><span class="sxs-lookup"><span data-stu-id="91531-103">A PNRP "cloud" represents a set of nodes that can communicate with each other through the network.</span></span> <span data-ttu-id="91531-104">"クラウド" という用語は、"ピア メッシュ" や "ピアツーピア グラフ" と同義です。</span><span class="sxs-lookup"><span data-stu-id="91531-104">The term "cloud" is synonymous with "peer mesh" and "peer-to-peer graph".</span></span>  

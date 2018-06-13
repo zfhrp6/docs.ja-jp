@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33392191"
 ---
 # <a name="net-framework-deployment-guide-for-developers"></a><span data-ttu-id="49a7a-102">.NET Framework 配置ガイド (開発者向け)</span><span class="sxs-lookup"><span data-stu-id="49a7a-102">.NET Framework deployment guide for developers</span></span>
 <span data-ttu-id="49a7a-103">このトピックでは、.NET Framework 4.5 から [!INCLUDE[net_current](../../../includes/net-current-version.md)] までの任意のバージョンの .NET Framework を、それぞれのアプリと共にインストールする開発者向けの情報を提供します。</span><span class="sxs-lookup"><span data-stu-id="49a7a-103">This topic provides information for developers who want to install any version of the .NET Framework from the .NET Framework 4.5 to the [!INCLUDE[net_current](../../../includes/net-current-version.md)] with their apps.</span></span>

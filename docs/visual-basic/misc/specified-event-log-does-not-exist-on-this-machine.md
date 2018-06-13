@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33638704"
 ---
 # <a name="specified-event-log-does-not-exist-on-this-machine"></a><span data-ttu-id="4f8cc-102">指定したイベント ログは、このコンピューター上に存在しません</span><span class="sxs-lookup"><span data-stu-id="4f8cc-102">Specified event log does not exist on this machine</span></span>
 <span data-ttu-id="4f8cc-103">このコンピューター上に存在しないイベント ログにアクセスしようとしました。</span><span class="sxs-lookup"><span data-stu-id="4f8cc-103">An attempt has been made to access an event log that does not exist on this machine.</span></span>  

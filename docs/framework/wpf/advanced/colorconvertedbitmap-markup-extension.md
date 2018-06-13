@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33538911"
 ---
 # <a name="colorconvertedbitmap-markup-extension"></a><span data-ttu-id="62777-102">ColorConvertedBitmap のマークアップ拡張機能</span><span class="sxs-lookup"><span data-stu-id="62777-102">ColorConvertedBitmap Markup Extension</span></span>
 <span data-ttu-id="62777-103">埋め込みのプロファイルがないビットマップ ソースを指定する方法を提供します。</span><span class="sxs-lookup"><span data-stu-id="62777-103">Provides a way to specify a bitmap source that does not have an embedded profile.</span></span> <span data-ttu-id="62777-104">カラー コンテキスト プロファイルが指定/[!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)]がイメージ ソースとして、[!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)]です。</span><span class="sxs-lookup"><span data-stu-id="62777-104">Color contexts / profiles are specified by [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)], as is the image source [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)].</span></span>  

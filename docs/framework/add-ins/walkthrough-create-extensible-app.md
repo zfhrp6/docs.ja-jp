@@ -18,6 +18,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32744825"
 ---
 # <a name="walkthrough-creating-an-extensible-application"></a><span data-ttu-id="93f63-102">チュートリアル : 拡張性のあるアプリケーションの作成</span><span class="sxs-lookup"><span data-stu-id="93f63-102">Walkthrough: Creating an Extensible Application</span></span>
 <span data-ttu-id="93f63-103">このチュートリアルでは、簡単な電卓の機能を実行するアドイン用のパイプラインを作成する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="93f63-103">This walkthrough describes how to create a pipeline for an add-in that performs simple calculator functions.</span></span> <span data-ttu-id="93f63-104">実際のシナリオでは; は示しません代わりに、パイプラインとどのように追加のサービスを提供できるホストの基本機能を示します。</span><span class="sxs-lookup"><span data-stu-id="93f63-104">It does not demonstrate a real-world scenario; rather, it demonstrates the basic functionality of a pipeline and how an add-in can provide services for a host.</span></span>  

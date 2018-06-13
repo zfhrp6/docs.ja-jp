@@ -6,9 +6,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 2904fe91f223b528450684d8de2f70dba48fc792
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33425065"
 ---
 # <a name="isymunmanagedasyncmethodgetasyncstepinfocount-method"></a><span data-ttu-id="db3af-102">ISymUnmanagedAsyncMethod::GetAsyncStepInfoCount メソッド</span><span class="sxs-lookup"><span data-stu-id="db3af-102">ISymUnmanagedAsyncMethod::GetAsyncStepInfoCount Method</span></span>
 <span data-ttu-id="db3af-103">参照してください[DefineAsyncStepInfo メソッド](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedasyncmethodpropertieswriter-defineasyncstepinfo-method.md)です。</span><span class="sxs-lookup"><span data-stu-id="db3af-103">See [DefineAsyncStepInfo Method](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedasyncmethodpropertieswriter-defineasyncstepinfo-method.md).</span></span>  

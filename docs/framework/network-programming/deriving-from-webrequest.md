@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33396819"
 ---
 # <a name="deriving-from-webrequest"></a><span data-ttu-id="cc8ac-102">WebRequest からの派生</span><span class="sxs-lookup"><span data-stu-id="cc8ac-102">Deriving from WebRequest</span></span>
 <span data-ttu-id="cc8ac-103"><xref:System.Net.WebRequest> クラスは、.NET Framework プラグ可能なプロトコル モデルに適合するプロトコル固有の要求ハンドラーを作成するための基本メソッドとプロパティを提供する抽象基底クラスです。</span><span class="sxs-lookup"><span data-stu-id="cc8ac-103">The <xref:System.Net.WebRequest> class is an abstract base class that provides the basic methods and properties for creating a protocol-specific request handler that fits the .NET Framework pluggable protocol model.</span></span> <span data-ttu-id="cc8ac-104">**WebRequest** クラスを使用するアプリケーションは、使用されるプロトコルを指定することなく、サポートされている任意のプロトコルを使用してデータを要求できます。</span><span class="sxs-lookup"><span data-stu-id="cc8ac-104">Applications that use the **WebRequest** class can request data using any supported protocol without needing to specify the protocol used.</span></span>  

@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33396530"
 ---
 # <a name="deploying-the-net-framework-and-applications"></a><span data-ttu-id="8decc-102">.NET Framework およびアプリケーションの配置</span><span class="sxs-lookup"><span data-stu-id="8decc-102">Deploying the .NET Framework and Applications</span></span>
 <span data-ttu-id="8decc-103">ここでは、アプリケーションと共に .NET Framework を配置する方法についての概要を示します。</span><span class="sxs-lookup"><span data-stu-id="8decc-103">This article helps you get started deploying the .NET Framework with your application.</span></span> <span data-ttu-id="8decc-104">情報のほとんどは、開発者、OEM、およびエンタープライズ管理者を対象としています。</span><span class="sxs-lookup"><span data-stu-id="8decc-104">Most of the information is intended for developers, OEMs, and enterprise administrators.</span></span> <span data-ttu-id="8decc-105">コンピュータに .NET Framework をインストールするユーザーは、「[.NET Framework のインストール](~/docs/framework/install/index.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="8decc-105">Users who want to install the .NET Framework on their computers should read [Installing the .NET Framework](~/docs/framework/install/index.md).</span></span>  

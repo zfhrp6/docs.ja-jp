@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33395428"
 ---
 # <a name="how-to-set-cache-policy-for-a-request"></a><span data-ttu-id="1dc8c-102">方法: 要求のキャッシュ ポリシーを設定する</span><span class="sxs-lookup"><span data-stu-id="1dc8c-102">How to: Set Cache Policy for a Request</span></span>
 <span data-ttu-id="1dc8c-103">次の例では、要求のキャッシュ ポリシーの設定方法を示します。</span><span class="sxs-lookup"><span data-stu-id="1dc8c-103">The following example demonstrates setting a cache policy for a request.</span></span> <span data-ttu-id="1dc8c-104">入力の例は、http://www.contoso.com/ などの URI です。</span><span class="sxs-lookup"><span data-stu-id="1dc8c-104">The example input is a URI such as http://www.contoso.com/.</span></span>  

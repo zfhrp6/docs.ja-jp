@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 7996d5800e99d8e6161e24f34604aff3e4e906bd
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33422004"
 ---
 # <a name="icordebugnativeframe-interface1"></a><span data-ttu-id="eecf1-102">ICorDebugNativeFrame Interface1</span><span class="sxs-lookup"><span data-stu-id="eecf1-102">ICorDebugNativeFrame Interface1</span></span>
 <span data-ttu-id="eecf1-103">ネイティブ フレームで使用される ICorDebugFrame の特殊な実装です。</span><span class="sxs-lookup"><span data-stu-id="eecf1-103">A specialized implementation of ICorDebugFrame used for native frames.</span></span>  

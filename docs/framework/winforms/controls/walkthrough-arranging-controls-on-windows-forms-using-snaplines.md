@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33541591"
 ---
 # <a name="walkthrough-arranging-controls-on-windows-forms-using-snaplines"></a><span data-ttu-id="203a1-102">チュートリアル : スナップ線を使用した Windows フォーム上のコントロールの配置</span><span class="sxs-lookup"><span data-stu-id="203a1-102">Walkthrough: Arranging Controls on Windows Forms Using Snaplines</span></span>
 <span data-ttu-id="203a1-103">フォーム上のコントロールを正確に配置することは、多くのアプリケーションで優先度の高い作業です。</span><span class="sxs-lookup"><span data-stu-id="203a1-103">Precise placement of controls on your form is a high priority for many applications.</span></span> <span data-ttu-id="203a1-104">Windows フォーム デザイナーでは、これを実現するさまざまなレイアウト ツールを提供します。</span><span class="sxs-lookup"><span data-stu-id="203a1-104">The Windows Forms Designer gives you many layout tools to accomplish this.</span></span> <span data-ttu-id="203a1-105">最も重要な 1 つは、<xref:System.Windows.Forms.Design.Behavior.SnapLine>機能します。</span><span class="sxs-lookup"><span data-stu-id="203a1-105">One of the most important is the <xref:System.Windows.Forms.Design.Behavior.SnapLine> feature.</span></span>  

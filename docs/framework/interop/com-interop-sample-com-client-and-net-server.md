@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33389556"
 ---
 # <a name="com-interop-sample-com-client-and-net-server"></a><span data-ttu-id="9697a-102">COM 相互運用機能のサンプル: COM クライアントおよび .NET サーバー</span><span class="sxs-lookup"><span data-stu-id="9697a-102">COM Interop Sample: COM Client and .NET Server</span></span>
 <span data-ttu-id="9697a-103">[COM クライアント](#cpconcominteropsamplecomclientnetserveranchor1)と [.NET サーバー](#cpconcominteropsamplecomclientnetserveranchor2)を相互運用して、住宅ローンの計算を行うサンプルを次に示します。</span><span class="sxs-lookup"><span data-stu-id="9697a-103">This sample demonstrates the interoperation of a [COM Client](#cpconcominteropsamplecomclientnetserveranchor1) and a [.NET Server](#cpconcominteropsamplecomclientnetserveranchor2) that performs mortgage calculations.</span></span> <span data-ttu-id="9697a-104">この例では、クライアントはマネージ `Loan` クラスのインスタンスを作成して呼び出し、4 つの引数 (そのうち 1 つは 0) をこのインスタンスに渡し、計算結果を表示します。</span><span class="sxs-lookup"><span data-stu-id="9697a-104">In this example, the client creates and calls an instance of the managed `Loan` class, passes four arguments (one of those four being equal to zero) to the instance, and displays the computations.</span></span> <span data-ttu-id="9697a-105">このセクション全体で、このサンプルのコード例を使用します。</span><span class="sxs-lookup"><span data-stu-id="9697a-105">Code examples from this sample appear throughout this section.</span></span>  

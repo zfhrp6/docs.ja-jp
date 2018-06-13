@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32757581"
 ---
 # <a name="defining-primary-keys"></a><span data-ttu-id="bd467-102">主キーの定義</span><span class="sxs-lookup"><span data-stu-id="bd467-102">Defining Primary Keys</span></span>
 <span data-ttu-id="bd467-103">通常、データベース テーブルには、テーブル内の各行を一意に識別する単一の列または複数の列があります。</span><span class="sxs-lookup"><span data-stu-id="bd467-103">A database table commonly has a column or group of columns that uniquely identifies each row in the table.</span></span> <span data-ttu-id="bd467-104">行を識別するこのような列を、主キーと呼びます。</span><span class="sxs-lookup"><span data-stu-id="bd467-104">This identifying column or group of columns is called the primary key.</span></span>  

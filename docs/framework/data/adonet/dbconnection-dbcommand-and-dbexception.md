@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32757126"
 ---
 # <a name="dbconnection-dbcommand-and-dbexception"></a><span data-ttu-id="1d788-102">DbConnection、DbCommand、および DbException</span><span class="sxs-lookup"><span data-stu-id="1d788-102">DbConnection, DbCommand and DbException</span></span>
 <span data-ttu-id="1d788-103"><xref:System.Data.Common.DbProviderFactory> および <xref:System.Data.Common.DbConnection> を作成すると、コマンドおよびデータ リーダーを使用してデータ ソースからデータを取得できます。</span><span class="sxs-lookup"><span data-stu-id="1d788-103">Once you have created a <xref:System.Data.Common.DbProviderFactory> and a <xref:System.Data.Common.DbConnection>, you can then work with commands and data readers to retrieve data from the data source.</span></span>  

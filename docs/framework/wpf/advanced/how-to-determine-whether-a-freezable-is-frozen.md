@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33542754"
 ---
 # <a name="how-to-determine-whether-a-freezable-is-frozen"></a><span data-ttu-id="3b9e2-102">方法 : Freezable が固定されているかどうかを判別する</span><span class="sxs-lookup"><span data-stu-id="3b9e2-102">How to: Determine Whether a Freezable Is Frozen</span></span>
 <span data-ttu-id="3b9e2-103">この例を決める方法を説明するかどうか、<xref:System.Windows.Freezable>オブジェクトが固定されています。</span><span class="sxs-lookup"><span data-stu-id="3b9e2-103">This example shows how to determine whether a <xref:System.Windows.Freezable> object is frozen.</span></span> <span data-ttu-id="3b9e2-104">固定された変更を行う場合<xref:System.Windows.Freezable>オブジェクトをスロー、<xref:System.InvalidOperationException>です。</span><span class="sxs-lookup"><span data-stu-id="3b9e2-104">If you try to modify a frozen <xref:System.Windows.Freezable> object, it throws an <xref:System.InvalidOperationException>.</span></span> <span data-ttu-id="3b9e2-105">この例外がスローされることを避けるためを使用して、<xref:System.Windows.Freezable.IsFrozen%2A>のプロパティ、<xref:System.Windows.Freezable>が固定されているかどうかを決定するオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="3b9e2-105">To avoid throwing this exception, use the <xref:System.Windows.Freezable.IsFrozen%2A> property of the <xref:System.Windows.Freezable> object to determine whether it is frozen.</span></span>  

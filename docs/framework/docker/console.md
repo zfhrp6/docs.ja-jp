@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33392685"
 ---
 # <a name="running-console-applications-in-windows-containers"></a><span data-ttu-id="4589b-103">Windows コンテナーでのコンソール アプリケーションの実行</span><span class="sxs-lookup"><span data-stu-id="4589b-103">Running console applications in Windows containers</span></span>
 

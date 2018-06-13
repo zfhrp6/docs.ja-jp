@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33393550"
 ---
 # <a name="how-to-map-hresults-and-exceptions"></a><span data-ttu-id="7d6ac-102">方法: HRESULT に例外を割り当てる</span><span class="sxs-lookup"><span data-stu-id="7d6ac-102">How to: Map HRESULTs and Exceptions</span></span>
 <span data-ttu-id="7d6ac-103">COM メソッドでは、HRESULT を返してエラーを報告します。 .NET メソッドでは、例外をスローしてエラーを報告します。</span><span class="sxs-lookup"><span data-stu-id="7d6ac-103">COM methods report errors by returning HRESULTs; .NET methods report them by throwing exceptions.</span></span> <span data-ttu-id="7d6ac-104">ランタイムは、この 2 つの間の遷移を処理します。</span><span class="sxs-lookup"><span data-stu-id="7d6ac-104">The runtime handles the transition between the two.</span></span> <span data-ttu-id="7d6ac-105">.NET Framework の例外クラスはそれぞれ HRESULT に割り当てられます。</span><span class="sxs-lookup"><span data-stu-id="7d6ac-105">Each exception class in the .NET Framework maps to an HRESULT.</span></span>  

@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33391317"
 ---
 # <a name="marshaling-data-with-platform-invoke"></a><span data-ttu-id="434c0-102">プラットフォーム呼び出しによるデータのマーシャリング</span><span class="sxs-lookup"><span data-stu-id="434c0-102">Marshaling Data with Platform Invoke</span></span>
 <span data-ttu-id="434c0-103">アンマネージ ライブラリからエクスポートされた関数を呼び出すには、.NET Framework アプリケーションで、マネージ コード内にアンマネージ関数を表す関数プロトタイプが必要です。</span><span class="sxs-lookup"><span data-stu-id="434c0-103">To call functions exported from an unmanaged library, a .NET Framework application requires a function prototype in managed code that represents the unmanaged function.</span></span> <span data-ttu-id="434c0-104">プラットフォーム呼び出しがデータを正しくマーシャリングできるようにするプロトタイプを作成するには、次のことを実行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="434c0-104">To create a prototype that enables platform invoke to marshal data correctly, you must do the following:</span></span>  

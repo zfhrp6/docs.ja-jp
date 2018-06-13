@@ -16,6 +16,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32742758"
 ---
 # <a name="ltcryptoclassgt-element"></a><span data-ttu-id="ca0f0-102">&lt;cryptoClass&gt;要素</span><span class="sxs-lookup"><span data-stu-id="ca0f0-102">&lt;cryptoClass&gt; Element</span></span>
 <span data-ttu-id="ca0f0-103">[\<nameEntry>](../../../../../docs/framework/configure-apps/file-schema/cryptography/nameentry-element.md) 要素内の表示名へのマッピングを持つ暗号化クラスを含みます。</span><span class="sxs-lookup"><span data-stu-id="ca0f0-103">Contains a cryptography class that has a mapping to a friendly name in the [\<nameEntry>](../../../../../docs/framework/configure-apps/file-schema/cryptography/nameentry-element.md) element.</span></span>  

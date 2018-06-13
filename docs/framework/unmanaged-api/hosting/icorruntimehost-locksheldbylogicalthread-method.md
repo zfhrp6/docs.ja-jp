@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: d46881b76685fd04f8bc5e3a67830e58f85cd774
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33436677"
 ---
 # <a name="icorruntimehostlocksheldbylogicalthread-method"></a><span data-ttu-id="909cd-102">ICorRuntimeHost::LocksHeldByLogicalThread メソッド</span><span class="sxs-lookup"><span data-stu-id="909cd-102">ICorRuntimeHost::LocksHeldByLogicalThread Method</span></span>
 <span data-ttu-id="909cd-103">現在のスレッドを保持するロックの数を取得します。</span><span class="sxs-lookup"><span data-stu-id="909cd-103">Retrieves the number of locks that current thread holds.</span></span>  

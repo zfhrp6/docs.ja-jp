@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33392292"
 ---
 # <a name="blittable-and-non-blittable-types"></a><span data-ttu-id="3cfcf-102">Blittable 型と非 Blittable 型</span><span class="sxs-lookup"><span data-stu-id="3cfcf-102">Blittable and Non-Blittable Types</span></span>
 <span data-ttu-id="3cfcf-103">ほとんどのデータ型の表現はマネージ メモリとアンマネージ メモリの両方で共通しているため、相互運用マーシャラーによる特別な処理は必要ありません。</span><span class="sxs-lookup"><span data-stu-id="3cfcf-103">Most data types have a common representation in both managed and unmanaged memory and do not require special handling by the interop marshaler.</span></span> <span data-ttu-id="3cfcf-104">これらの型は、マネージ コードとアンマネージ コード間での受け渡しの際に変換が必要でないため、*blittable 型*と呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="3cfcf-104">These types are called *blittable types* because they do not require conversion when they are passed between managed and unmanaged code.</span></span>  

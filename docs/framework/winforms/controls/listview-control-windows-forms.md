@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33539690"
 ---
 # <a name="listview-control-windows-forms"></a><span data-ttu-id="cdfb8-102">ListView コントロール (Windows フォーム)</span><span class="sxs-lookup"><span data-stu-id="cdfb8-102">ListView Control (Windows Forms)</span></span>
 <span data-ttu-id="cdfb8-103">Windows フォーム `ListView` コントロールにはアイコン表示で項目の一覧が表示されます。</span><span class="sxs-lookup"><span data-stu-id="cdfb8-103">The Windows Forms `ListView` control displays a list of items with icons.</span></span> <span data-ttu-id="cdfb8-104">リスト ビューを使用すると、Windows エクスプローラーの右側のペインのようなユーザー インターフェイスを作成することができます。</span><span class="sxs-lookup"><span data-stu-id="cdfb8-104">You can use a list view to create a user interface like the right pane of Windows Explorer.</span></span>  

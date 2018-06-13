@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33393118"
 ---
 # <a name="synchronous-client-socket-example"></a><span data-ttu-id="6e28b-102">同期クライアント ソケットの例</span><span class="sxs-lookup"><span data-stu-id="6e28b-102">Synchronous Client Socket Example</span></span>
 <span data-ttu-id="6e28b-103">次のプログラム例では、サーバーに接続するクライアントを作成します。</span><span class="sxs-lookup"><span data-stu-id="6e28b-103">The following example program creates a client that connects to a server.</span></span> <span data-ttu-id="6e28b-104">このクライアントは同期ソケットで構築されます。そのため、クライアント アプリケーションの実行は、サーバーが応答を返すまで一時停止となります。</span><span class="sxs-lookup"><span data-stu-id="6e28b-104">The client is built with a synchronous socket, so execution of the client application is suspended until the server returns a response.</span></span> <span data-ttu-id="6e28b-105">このアプリケーションは文字列をサーバーに送信し、サーバーが返した文字列をコンソールに表示します。</span><span class="sxs-lookup"><span data-stu-id="6e28b-105">The application sends a string to the server and then displays the string returned by the server on the console.</span></span>  

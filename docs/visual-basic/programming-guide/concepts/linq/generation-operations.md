@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33641810"
 ---
 # <a name="generation-operations-visual-basic"></a><span data-ttu-id="8df0d-102">生成操作 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="8df0d-102">Generation Operations (Visual Basic)</span></span>
 <span data-ttu-id="8df0d-103">生成とは、値のシーケンスを新しく作成することを意味します。</span><span class="sxs-lookup"><span data-stu-id="8df0d-103">Generation refers to creating a new sequence of values.</span></span>  

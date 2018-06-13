@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33393589"
 ---
 # <a name="example-handling-exceptions-when-binding-data"></a><span data-ttu-id="8f680-102">例: データ バインディング時の例外の処理</span><span class="sxs-lookup"><span data-stu-id="8f680-102">Example: Handling Exceptions When Binding Data</span></span>
 > [!NOTE]

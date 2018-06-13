@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33396322"
 ---
 # <a name="networkinformation"></a><span data-ttu-id="0fd08-102">NetworkInformation</span><span class="sxs-lookup"><span data-stu-id="0fd08-102">NetworkInformation</span></span>
 <span data-ttu-id="0fd08-103"><xref:System.Net.NetworkInformation> 名前空間を使用すると、ネットワーク イベント、変更、統計、プロパティについての情報を収集できます。</span><span class="sxs-lookup"><span data-stu-id="0fd08-103">The <xref:System.Net.NetworkInformation> namespace enables you to gather information about network events, changes, statistics, and properties.</span></span> <span data-ttu-id="0fd08-104">また、<xref:System.Net.NetworkInformation.Ping?displayProperty=nameWithType> クラスを使用して、リモート ホストに到達可能かどうかを確認することもできます。</span><span class="sxs-lookup"><span data-stu-id="0fd08-104">You can also determine whether a remote host is reachable by using the <xref:System.Net.NetworkInformation.Ping?displayProperty=nameWithType> class.</span></span>  

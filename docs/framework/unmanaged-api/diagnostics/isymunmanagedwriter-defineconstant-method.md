@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 0c7cf800dafa9f3e213a012f49c73d51c78e7074
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33427406"
 ---
 # <a name="isymunmanagedwriterdefineconstant-method"></a><span data-ttu-id="20e80-102">ISymUnmanagedWriter::DefineConstant メソッド</span><span class="sxs-lookup"><span data-stu-id="20e80-102">ISymUnmanagedWriter::DefineConstant Method</span></span>
 <span data-ttu-id="20e80-103">定数値の名前を定義します。</span><span class="sxs-lookup"><span data-stu-id="20e80-103">Defines a name for a constant value.</span></span>  

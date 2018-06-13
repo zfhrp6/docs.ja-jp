@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32741855"
 ---
 # <a name="ltaddgt-element-for-schemesettings-uri-settings"></a><span data-ttu-id="83994-102">&lt;追加&gt;schemeSettings (Uri 設定) の要素</span><span class="sxs-lookup"><span data-stu-id="83994-102">&lt;add&gt; Element for schemeSettings (Uri Settings)</span></span>
 <span data-ttu-id="83994-103">スキーム名にスキームの設定を追加します。</span><span class="sxs-lookup"><span data-stu-id="83994-103">Adds a scheme setting for a scheme name.</span></span>  

@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33392565"
 ---
 # <a name="applying-interop-attributes"></a><span data-ttu-id="be2fc-102">相互運用固有の属性の適用</span><span class="sxs-lookup"><span data-stu-id="be2fc-102">Applying Interop Attributes</span></span>
 <span data-ttu-id="be2fc-103"><xref:System.Runtime.InteropServices> 名前空間では、デザイン時にユーザーが適用する属性、変換処理中に COM 相互運用ツールおよび API によって適用される属性、ユーザーまたは COM 相互運用機能によって適用される属性という 3 つのカテゴリの相互運用固有の属性が提供されます。</span><span class="sxs-lookup"><span data-stu-id="be2fc-103">The <xref:System.Runtime.InteropServices> namespace provides three categories of interop-specific attributes: those applied by you at design time, those applied by COM interop tools and APIs during the conversion process, and those applied either by you or COM interop.</span></span>  

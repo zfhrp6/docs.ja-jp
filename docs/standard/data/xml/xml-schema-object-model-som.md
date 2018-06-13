@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33570126"
 ---
 # <a name="xml-schema-object-model-som"></a><span data-ttu-id="bf38b-102">XML スキーマ オブジェクト モデル (SOM)</span><span class="sxs-lookup"><span data-stu-id="bf38b-102">XML Schema Object Model (SOM)</span></span>
 <span data-ttu-id="bf38b-103">XML スキーマは、XML ドキュメント準拠の構造を作成し検証する、強力な複合ツールです。</span><span class="sxs-lookup"><span data-stu-id="bf38b-103">An XML schema is a powerful and complex tool for creating and validating structure in compliant XML documents.</span></span> <span data-ttu-id="bf38b-104">リレーショナル データベースのデータ モデリングと同様に、スキーマでは XML ドキュメントの構造を定義する方法を提供しています。これは、ドキュメントで使用する要素と、これらの要素に固有のスキーマを有効にするために準拠する構造や型を指定することによって実現します。</span><span class="sxs-lookup"><span data-stu-id="bf38b-104">Similar to data modeling in a relational database, a schema provides a way to define the structure of XML documents, by specifying the elements that can be used in the documents, as well as the structure and types that these elements must follow in order to be valid for that specific schema.</span></span>  

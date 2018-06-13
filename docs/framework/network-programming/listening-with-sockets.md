@@ -23,6 +23,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33395779"
 ---
 # <a name="listening-with-sockets"></a><span data-ttu-id="64093-102">リッスン (ソケットで)</span><span class="sxs-lookup"><span data-stu-id="64093-102">Listening with Sockets</span></span>
 <span data-ttu-id="64093-103">リスナーまたはサーバー ソケットは、ネットワーク上のポートを開き、クライアントがそのポートに接続するまで待機します。</span><span class="sxs-lookup"><span data-stu-id="64093-103">Listener or server sockets open a port on the network and then wait for a client to connect to that port.</span></span> <span data-ttu-id="64093-104">他のネットワーク アドレス ファミリとプロトコルもありますが、この例では、TCP/IP ネットワーク用のリモート サービスを作成する方法を説明します。</span><span class="sxs-lookup"><span data-stu-id="64093-104">Although other network address families and protocols exist, this example shows how to create remote service for a TCP/IP network.</span></span>  

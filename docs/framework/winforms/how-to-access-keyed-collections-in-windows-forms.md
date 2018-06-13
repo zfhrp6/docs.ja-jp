@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33538729"
 ---
 # <a name="how-to-access-keyed-collections-in-windows-forms"></a><span data-ttu-id="4a922-102">方法: Windows フォームのコレクションにアクセス キーを指定する</span><span class="sxs-lookup"><span data-stu-id="4a922-102">How to: Access Keyed Collections in Windows Forms</span></span>
 -   <span data-ttu-id="4a922-103">個々 のコレクション アイテムは、キーにアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="4a922-103">You can access individual collection items by key.</span></span> <span data-ttu-id="4a922-104">この機能が Windows フォーム アプリケーションでよく使用される多くのコレクション クラスに追加されました。</span><span class="sxs-lookup"><span data-stu-id="4a922-104">This functionality has been added to many collection classes that are typically used by Windows Forms applications.</span></span> <span data-ttu-id="4a922-105">キー付きコレクションがアクセス可能なコレクション クラスの一部を次に示します。</span><span class="sxs-lookup"><span data-stu-id="4a922-105">The following list shows some of the collection classes that have accessible keyed collections:</span></span>  

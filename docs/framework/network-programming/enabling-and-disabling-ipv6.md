@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33393933"
 ---
 # <a name="enabling-and-disabling-ipv6"></a><span data-ttu-id="167bb-102">IPv6 の有効化と無効化</span><span class="sxs-lookup"><span data-stu-id="167bb-102">Enabling and Disabling IPv6</span></span>
 <span data-ttu-id="167bb-103">IPv6 プロトコルを使用するには、IPv6 をサポートしているオペレーティング システムのバージョンを実行していることを確認し、オペレーティング システムとネットワーク クラスが正しく構成されていることを確認してください。</span><span class="sxs-lookup"><span data-stu-id="167bb-103">To use the IPv6 protocol, ensure that you are running a version of the operating system that supports IPv6 and ensure that the operating system and the networking classes are configured properly.</span></span>  

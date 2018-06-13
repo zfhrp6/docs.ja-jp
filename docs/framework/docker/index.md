@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33393763"
 ---
 # <a name="deploying-net-framework-applications-with-docker"></a><span data-ttu-id="f7299-103">Docker を使用した .NET Framework アプリケーションの展開</span><span class="sxs-lookup"><span data-stu-id="f7299-103">Deploying .NET Framework applications with Docker</span></span>
 

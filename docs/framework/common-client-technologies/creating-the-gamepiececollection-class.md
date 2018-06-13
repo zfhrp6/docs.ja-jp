@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32742141"
 ---
 # <a name="creating-the-gamepiececollection-class"></a><span data-ttu-id="3bc27-102">GamePieceCollection クラスの作成</span><span class="sxs-lookup"><span data-stu-id="3bc27-102">Creating the GamePieceCollection Class</span></span>
 <span data-ttu-id="3bc27-103">**GamePieceCollection** クラスは、汎用の List クラスから派生し、複数の **GamePiece** オブジェクトをより簡単に管理するメソッドを導入します。</span><span class="sxs-lookup"><span data-stu-id="3bc27-103">The **GamePieceCollection** class derives from the generic List class, and introduces methods to more easily manage multiple **GamePiece** objects.</span></span>  

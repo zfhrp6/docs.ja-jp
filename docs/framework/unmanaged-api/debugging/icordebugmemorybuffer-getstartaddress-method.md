@@ -6,9 +6,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 1aa816ea9e6185791e09bcdb0e47c50761a5ebc6
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33422934"
 ---
 # <a name="icordebugmemorybuffergetstartaddress-method"></a><span data-ttu-id="2d782-102">ICorDebugMemoryBuffer::GetStartAddress メソッド</span><span class="sxs-lookup"><span data-stu-id="2d782-102">ICorDebugMemoryBuffer::GetStartAddress Method</span></span>
 <span data-ttu-id="2d782-103">メモリ バッファーの開始アドレスを取得します。</span><span class="sxs-lookup"><span data-stu-id="2d782-103">Gets the starting address of the memory buffer.</span></span>  

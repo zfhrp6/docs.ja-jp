@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: f31dad53f42fdd8f7ac3a0cb995b507ecc3590d5
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33424444"
 ---
 # <a name="isymunmanageddocumentfindclosestline-method"></a><span data-ttu-id="a63c0-102">ISymUnmanagedDocument::FindClosestLine メソッド</span><span class="sxs-lookup"><span data-stu-id="a63c0-102">ISymUnmanagedDocument::FindClosestLine Method</span></span>
 <span data-ttu-id="a63c0-103">行を指定した場合も、シーケンス ポイントができない可能性があります、このドキュメントでは、シーケンス ポイントである最も近い行を返します。</span><span class="sxs-lookup"><span data-stu-id="a63c0-103">Returns the closest line that is a sequence point, given a line in this document that may or may not be a sequence point.</span></span>  

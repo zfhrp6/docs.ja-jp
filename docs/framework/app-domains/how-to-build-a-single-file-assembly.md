@@ -20,6 +20,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32744318"
 ---
 # <a name="how-to-build-a-single-file-assembly"></a><span data-ttu-id="b13fb-102">方法: シングルファイル アセンブリをビルドする</span><span class="sxs-lookup"><span data-stu-id="b13fb-102">How to: Build a Single-File Assembly</span></span>
 <span data-ttu-id="b13fb-103">アセンブリの最も単純な形式であるシングルファイル アセンブリには、型の情報、実装、[アセンブリ マニフェスト](../../../docs/framework/app-domains/assembly-manifest.md)が含まれています。</span><span class="sxs-lookup"><span data-stu-id="b13fb-103">A single-file assembly, which is the simplest type of assembly, contains type information and implementation, as well as the [assembly manifest](../../../docs/framework/app-domains/assembly-manifest.md).</span></span> <span data-ttu-id="b13fb-104">コマンド ライン コンパイラや [!INCLUDE[vsprvslong](../../../includes/vsprvslong-md.md)] を利用し、シングルファイル アセンブリを作成できます。</span><span class="sxs-lookup"><span data-stu-id="b13fb-104">You can use command-line compilers or [!INCLUDE[vsprvslong](../../../includes/vsprvslong-md.md)] to create a single-file assembly.</span></span> <span data-ttu-id="b13fb-105">既定では、コンパイラは .exe 拡張子でアセンブリ ファイルを作成します。</span><span class="sxs-lookup"><span data-stu-id="b13fb-105">By default, the compiler creates an assembly file with an .exe extension.</span></span>  

@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33390287"
 ---
 # <a name="the-net-framework-and-out-of-band-releases"></a><span data-ttu-id="77102-102">.NET Framework および特別なリリース</span><span class="sxs-lookup"><span data-stu-id="77102-102">The .NET Framework and Out-of-Band Releases</span></span>
 <span data-ttu-id="77102-103">.NET Framework は、従来のデスクトップ アプリや Web アプリに加えて、Windows Phone や Windows ストア アプリなど、さまざまなプラットフォームに対応し、コードを最大限に再利用できるように発展しています。</span><span class="sxs-lookup"><span data-stu-id="77102-103">The .NET Framework is evolving to accommodate different platforms such as Windows Phone and Windows Store apps as well as traditional desktop and web apps, and to maximize code reuse.</span></span> <span data-ttu-id="77102-104">通常の .NET Framework のリリースに加えて、クロスプラットフォームでの開発の強化や新機能の導入を目的として、新しい機能をアウトオブバンド (OOB) リリースによって提供しています。</span><span class="sxs-lookup"><span data-stu-id="77102-104">In addition to our regular .NET Framework releases, we release new features out of band (OOB) to improve cross-platform development or to introduce new functionality.</span></span> <span data-ttu-id="77102-105">ここでは、.NET Framework および OOB リリースの将来の方向性について説明します。</span><span class="sxs-lookup"><span data-stu-id="77102-105">This topic discusses the future direction of the .NET Framework and its OOB releases.</span></span>  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32757295"
 ---
 # <a name="copying-dataset-contents"></a><span data-ttu-id="20459-102">DataSet の内容のコピー</span><span class="sxs-lookup"><span data-stu-id="20459-102">Copying DataSet Contents</span></span>
 <span data-ttu-id="20459-103">コピーを作成することができます、 <xref:System.Data.DataSet> 、元のデータに影響を与えずにデータを操作したり、作業できるようにからのデータのサブセットを**データセット**です。</span><span class="sxs-lookup"><span data-stu-id="20459-103">You can create a copy of a <xref:System.Data.DataSet> so that you can work with data without affecting the original data, or work with a subset of the data from a **DataSet**.</span></span> <span data-ttu-id="20459-104">コピーするときに、**データセット**、することができます。</span><span class="sxs-lookup"><span data-stu-id="20459-104">When copying a **DataSet**, you can:</span></span>  

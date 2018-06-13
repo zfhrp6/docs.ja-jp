@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33394154"
 ---
 # <a name="best-practices-for-assembly-loading"></a><span data-ttu-id="84101-102">アセンブリの読み込みのベスト プラクティス</span><span class="sxs-lookup"><span data-stu-id="84101-102">Best Practices for Assembly Loading</span></span>
 <span data-ttu-id="84101-103">ここでは、<xref:System.InvalidCastException>、<xref:System.MissingMethodException>、およびその他のエラーの原因となることがある型 ID の問題を回避する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="84101-103">This article discusses ways to avoid problems of type identity that can lead to <xref:System.InvalidCastException>, <xref:System.MissingMethodException>, and other errors.</span></span> <span data-ttu-id="84101-104">また、次の推奨事項について説明します。</span><span class="sxs-lookup"><span data-stu-id="84101-104">The article discusses the following recommendations:</span></span>  

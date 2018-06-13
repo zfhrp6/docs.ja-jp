@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33639574"
 ---
 # <a name="root-folder-cannot-be-renamed"></a><span data-ttu-id="9c733-102">ルート フォルダーの名前は変更できません。</span><span class="sxs-lookup"><span data-stu-id="9c733-102">Root folder cannot be renamed</span></span>
 <span data-ttu-id="9c733-103">ルート ディレクトリの名前を変更しようとしました。</span><span class="sxs-lookup"><span data-stu-id="9c733-103">An attempt has been made to rename the root directory.</span></span> <span data-ttu-id="9c733-104">正しく解析されなかったファイル パスが原因の可能性があります。</span><span class="sxs-lookup"><span data-stu-id="9c733-104">This may be a result of an improperly parsed file path.</span></span>  

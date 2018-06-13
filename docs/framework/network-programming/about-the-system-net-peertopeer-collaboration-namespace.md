@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33394044"
 ---
 # <a name="about-the-systemnetpeertopeercollaboration-namespace"></a><span data-ttu-id="c5b3f-102">System.Net.PeerToPeer.Collaboration 名前空間について</span><span class="sxs-lookup"><span data-stu-id="c5b3f-102">About the System.Net.PeerToPeer.Collaboration Namespace</span></span>
 <span data-ttu-id="c5b3f-103"><xref:System.Net.PeerToPeer.Collaboration> 名前空間は、ピア ツー ピア共同作業インフラストラクチャを使用してピア共同作業アクティビティを実装するために使用されるクラスと API を提供します。</span><span class="sxs-lookup"><span data-stu-id="c5b3f-103">The <xref:System.Net.PeerToPeer.Collaboration> namespace provides classes and APIs that are used to implement peer collaboration activities using the Peer-to-Peer Collaboration Infrastructure.</span></span>  

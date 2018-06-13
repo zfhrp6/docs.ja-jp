@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33641961"
 ---
 # <a name="vbstrconvwide-and-vbstrconvnarrow-are-not-applicable-to-the-locale-specified"></a><span data-ttu-id="7926f-102">VbStrConv.Wide および VbStrConv.Narrow は、指定されたロケールに適用できません</span><span class="sxs-lookup"><span data-stu-id="7926f-102">VbStrConv.Wide and VbStrConv.Narrow are not applicable to the locale specified</span></span>
 <span data-ttu-id="7926f-103">アプリケーションは `VbStrConv` 列挙型のメンバー `Wide` または `Narrow`を使おうとしていますが、これらのメンバーは指定されたロケールには適用できません。</span><span class="sxs-lookup"><span data-stu-id="7926f-103">The application is attempting to use the `VbStrConv` enumeration members `Wide` or `Narrow`, which are not applicable to the specified locale.</span></span>  

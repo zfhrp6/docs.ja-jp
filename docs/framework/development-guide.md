@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33391099"
 ---
 # <a name="net-framework-development-guide"></a><span data-ttu-id="2defb-102">.NET Framework の開発ガイド</span><span class="sxs-lookup"><span data-stu-id="2defb-102">.NET Framework Development Guide</span></span>
 <span data-ttu-id="2defb-103">ここでは、.NET Framework アプリの作成、構成、デバッグ、保護、および配置を行う方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="2defb-103">This section explains how to create, configure, debug, secure, and deploy your .NET Framework apps.</span></span> <span data-ttu-id="2defb-104">また、動的プログラミング、相互運用性、拡張性、メモリ管理、スレッド処理などの技術領域に関する情報も提供します。</span><span class="sxs-lookup"><span data-stu-id="2defb-104">The section also provides information about technology areas such as dynamic programming, interoperability, extensibility, memory management, and threading.</span></span>  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33535842"
 ---
 # <a name="layout-in-windows-forms-controls"></a><span data-ttu-id="15f30-102">Windows フォーム コントロールのレイアウト</span><span class="sxs-lookup"><span data-stu-id="15f30-102">Layout in Windows Forms Controls</span></span>
 <span data-ttu-id="15f30-103">フォーム上のコントロールを正確に配置することは、多くのアプリケーションで優先度の高い作業です。</span><span class="sxs-lookup"><span data-stu-id="15f30-103">Precise placement of controls on your form is a high priority for many applications.</span></span> <span data-ttu-id="15f30-104"><xref:System.Windows.Forms?displayProperty=nameWithType>名前空間は、これを実現するさまざまなレイアウト ツールを提供します。</span><span class="sxs-lookup"><span data-stu-id="15f30-104">The <xref:System.Windows.Forms?displayProperty=nameWithType> namespace gives you many layout tools to accomplish this.</span></span>  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33542588"
 ---
 # <a name="events-wpf"></a><span data-ttu-id="aae37-102">イベント (WPF)</span><span class="sxs-lookup"><span data-stu-id="aae37-102">Events (WPF)</span></span>
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]<span data-ttu-id="aae37-103"> では、アプリケーションの要素ツリー内のさまざまなリスナー上に存在するハンドラーを呼び出すことができるルーティング イベントが導入されています。</span><span class="sxs-lookup"><span data-stu-id="aae37-103"> introduces routed events that can invoke handlers that exist on various listeners in the element tree of an application.</span></span>  

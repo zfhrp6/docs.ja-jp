@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33641028"
 ---
 # <a name="how-to-find-elements-in-a-namespace-xpath-linq-to-xml-visual-basic"></a><span data-ttu-id="d79cd-102">方法: Namespace (XPATH-LINQ to XML) 内の要素を検索 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="d79cd-102">How to: Find Elements in a Namespace (XPath-LINQ to XML) (Visual Basic)</span></span>
 <span data-ttu-id="d79cd-103">XPath 式を使用すると、特定の名前空間内のノードを検索できます。</span><span class="sxs-lookup"><span data-stu-id="d79cd-103">XPath expressions can find nodes in a particular namespace.</span></span> <span data-ttu-id="d79cd-104">XPath 式では、名前空間を指定する名前空間プレフィックスを使用します。</span><span class="sxs-lookup"><span data-stu-id="d79cd-104">XPath expressions use namespace prefixes for specifying namespaces.</span></span> <span data-ttu-id="d79cd-105">名前空間プレフィックスを含む XPath 式を解析するには、<xref:System.Xml.IXmlNamespaceResolver> を実装する XPath メソッドにオブジェクトを渡す必要があります。</span><span class="sxs-lookup"><span data-stu-id="d79cd-105">To parse an XPath expression that contains namespace prefixes, you must pass an object to the XPath methods that implements <xref:System.Xml.IXmlNamespaceResolver>.</span></span> <span data-ttu-id="d79cd-106">この例では <xref:System.Xml.XmlNamespaceManager> を使用します。</span><span class="sxs-lookup"><span data-stu-id="d79cd-106">This example uses <xref:System.Xml.XmlNamespaceManager>.</span></span>  
