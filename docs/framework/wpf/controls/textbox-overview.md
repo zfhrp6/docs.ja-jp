@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33557772"
 ---
 # <a name="textbox-overview"></a>TextBox の概要
 <xref:System.Windows.Controls.TextBox>クラスを使用する書式設定されていないテキストを表示または編集します。 一般的な用途、<xref:System.Windows.Controls.TextBox>形式で書式設定されていないテキストを編集します。 たとえば、ユーザーの名前、電話番号の入力を求めるフォームなど使用<xref:System.Windows.Controls.TextBox>のテキスト入力コントロール。 このトピックでは、<xref:System.Windows.Controls.TextBox>クラスし、両方で使用する方法の例を示します[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]と C# の場合。  

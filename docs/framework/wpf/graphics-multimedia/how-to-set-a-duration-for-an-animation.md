@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33561376"
 ---
 # <a name="how-to-set-a-duration-for-an-animation"></a>方法 : アニメーションの継続時間を設定する
 A<xref:System.Windows.Media.Animation.Timeline>を表す時間のセグメントとそのセグメントの長さは、タイムラインのによって決まります<xref:System.Windows.Duration>です。 ときに、<xref:System.Windows.Media.Animation.Timeline>が最後に達するとその継続時間の再生は停止します。 場合、<xref:System.Windows.Media.Animation.Timeline>が子タイムラインも再生を停止します。 アニメーションの場合、<xref:System.Windows.Duration>アニメーションにかかる時間の遷移の終了値をその開始値からを指定します。  

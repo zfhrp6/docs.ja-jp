@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33556719"
 ---
 # <a name="how-to-create-and-bind-to-an-observablecollection"></a>方法 : ObservableCollection を作成およびバインドする
 この例から派生したコレクションを作成してバインドする方法を示しています、<xref:System.Collections.ObjectModel.ObservableCollection%601>クラスは、項目が追加または削除されたときに通知を提供するコレクション クラスです。  

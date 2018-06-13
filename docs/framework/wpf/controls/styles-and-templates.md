@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33553369"
 ---
 # <a name="styles-and-templates"></a>スタイルおよびテンプレート
 Windows Presentation Foundation (WPF) スタイルとテンプレートは、アプリケーション、ドキュメント、またはユーザー インターフェイス (UI) のデザイナーを視覚的に説得力のあるアプリケーションを作成する機能 (スタイル、テンプレート、トリガー、およびストーリー ボード) のスイートを参照してください。製品の特定の外観を標準化します。  

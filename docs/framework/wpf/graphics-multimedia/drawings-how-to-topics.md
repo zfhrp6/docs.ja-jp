@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33556667"
 ---
 # <a name="drawings-how-to-topics"></a>描画に関する「方法」トピック
 このセクションのトピックを使用する方法について説明<xref:System.Windows.Media.Drawing>図形、画像、またはテキストを描画するオブジェクト。  

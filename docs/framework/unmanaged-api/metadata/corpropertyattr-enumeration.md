@@ -18,9 +18,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 263981708af2e40bd3690a3cd344156488eed0dd
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33442680"
 ---
 # <a name="corpropertyattr-enumeration"></a>CorPropertyAttr 列挙型
 プロパティのメタデータを記述する値が格納されます。  

@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33552920"
 ---
 # <a name="how-to-save-load-and-print-richtextbox-content"></a>方法 : RichTextBox コンテンツを保存、読み込み、および印刷する
 次の例の内容を保存する方法を示しています、<xref:System.Windows.Controls.RichTextBox>をファイルにそのコンテンツの状態に戻してを読み込み、 <xref:System.Windows.Controls.RichTextBox>、および内容を印刷します。  

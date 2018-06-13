@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33395259"
 ---
 # <a name="configuring-caching-in-network-applications"></a>ネットワーク アプリケーションでのキャッシュの構成
 キャッシュを構成するには、アプリケーションまたは <xref:System.Net.WebRequest> レベルでキャッシュ ポリシーを指定する必要があります。 以下のトピックでは、キャッシュを使用するようにアプリケーションと要求を構成するコード例が提供されています。  

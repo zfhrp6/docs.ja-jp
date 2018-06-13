@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33556004"
 ---
 # <a name="scrollbar"></a>ScrollBar
 A<xref:System.Windows.Controls.Primitives.ScrollBar>スライドは現在の表示領域外の内容を表示することができます、<xref:System.Windows.Controls.Primitives.Thumb>コンテンツを表示します。  

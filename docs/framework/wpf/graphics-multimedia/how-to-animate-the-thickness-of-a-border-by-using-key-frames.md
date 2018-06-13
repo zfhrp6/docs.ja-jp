@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33560803"
 ---
 # <a name="how-to-animate-the-thickness-of-a-border-by-using-key-frames"></a>方法 : キー フレームを使用して境界線の太さをアニメーション化する
 この例は、アニメーション化する方法を示しています、<xref:System.Windows.Controls.Control.BorderThickness%2A>のプロパティ、<xref:System.Windows.Controls.Border>です。  

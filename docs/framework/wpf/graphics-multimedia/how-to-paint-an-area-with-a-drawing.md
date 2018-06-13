@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33560904"
 ---
 # <a name="how-to-paint-an-area-with-a-drawing"></a>方法 : 描画を使用して領域を塗りつぶす
 この例では、描画を使用して領域を塗りつぶす方法を示します。 描画を使用して領域を塗りつぶすには、使用する、<xref:System.Windows.Media.DrawingBrush>と 1 つまたは複数<xref:System.Windows.Media.Drawing>オブジェクト。   次の例では、 <xref:System.Windows.Media.DrawingBrush> 2 つの楕円の描画を使用してオブジェクトの描画にします。  

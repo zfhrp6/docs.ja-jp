@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33558019"
 ---
 # <a name="walkthrough-create-a-button-by-using-microsoft-expression-blend"></a>チュートリアル : Microsoft Expression Blend を使用してボタンを作成する
 このチュートリアルの作成プロセス、 [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] Microsoft Expression Blend を使用してカスタマイズされたボタンをクリックします。  
@@ -53,11 +54,11 @@ ms.lasthandoff: 05/04/2018
   
      ![四角形の角を丸く方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-roundcorners.png "custom_button_blend_RoundCorners")  
   
-4.  **ボタンの四角形に変換します。**四角形を選択します。 **ツール** メニューのをクリックして**ボタンの作成**です。  
+4.  **ボタンの四角形に変換します。** 四角形を選択します。 **ツール** メニューのをクリックして**ボタンの作成**です。  
   
      ![ボタンに図形を作成する方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-makebutton.png "custom_button_blend_MakeButton")  
   
-5.  **スタイルまたはテンプレートのスコープを指定します。**次が表示されるように、ダイアログ ボックス。  
+5.  **スタイルまたはテンプレートのスコープを指定します。** 次が表示されるように、ダイアログ ボックス。  
   
      !["スタイル リソースの作成 ダイアログ ボックス](../../../../docs/framework/wpf/controls/media/custom-button-blend-makebutton2.gif "custom_button_blend_MakeButton2")  
   
@@ -184,7 +185,7 @@ ms.lasthandoff: 05/04/2018
   
      ![MouseEnter イベント トリガーを作成する方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-mouseovereventtrigger.png "custom_button_blend_MouseOverEventTrigger")  
   
-2.  **アニメーション タイムラインを作成します。**次に、アニメーション タイムラインを関連付ける、<xref:System.Windows.UIElement.MouseEnter>イベント。  
+2.  **アニメーション タイムラインを作成します。** 次に、アニメーション タイムラインを関連付ける、<xref:System.Windows.UIElement.MouseEnter>イベント。  
   
      ![アニメーション タイムラインをイベントに追加する方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-mouseovereventtrigger2.png "custom_button_blend_MouseOverEventTrigger2")  
   

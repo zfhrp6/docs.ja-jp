@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33560852"
 ---
 # <a name="how-to-convert-a-bitmapsource-to-an-indexed-pixel-format"></a>方法 : BitmapSource をインデックス付きピクセル形式に変換する
 この例では、変換、<xref:System.Windows.Media.Imaging.BitmapSource>インデックス付きピクセル形式。  

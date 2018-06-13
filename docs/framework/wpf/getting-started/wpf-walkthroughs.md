@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33557889"
 ---
 # <a name="wpf-walkthroughs"></a>WPF のチュートリアル
 チュートリアルでは、一般的なシナリオの手順を説明します。 このため、製品や特定の機能領域について知るための最初のステップとして適しています。  

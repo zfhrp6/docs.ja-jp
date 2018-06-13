@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33560920"
 ---
 # <a name="how-to-hit-test-geometry-in-a-visual"></a>方法 : ビジュアル内のジオメトリのヒット テストを実行する
 この例は、1 つまたは複数を構成している visual オブジェクトに対してヒット テストを実行する方法を示しています。<xref:System.Windows.Media.Geometry>オブジェクト。  

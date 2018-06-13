@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 5e2d99d85a6e6b09558e5941d08a7f522aaf66cb
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33421818"
 ---
 # <a name="icordebugthreadcreateeval-method"></a>ICorDebugThread::CreateEval メソッド
 収集し、この ICorDebugThread の機能を公開する ICorDebugEval オブジェクトを作成します。  

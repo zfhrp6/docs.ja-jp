@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32760298"
 ---
 # <a name="functions-entity-sql"></a>関数 (Entity SQL)
 Entity SQL では、ユーザー定義関数、正規の関数、およびプロバイダー固有の関数がサポートされています。 ユーザー定義関数は、概念モデルまたはクエリでインラインで指定されます。 詳細については、次を参照してください。[ユーザー定義関数](../../../../../../docs/framework/data/adonet/ef/language-reference/user-defined-functions-entity-sql.md)です。  

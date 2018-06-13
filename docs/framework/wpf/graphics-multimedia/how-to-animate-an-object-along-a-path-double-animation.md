@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33559906"
 ---
 # <a name="how-to-animate-an-object-along-a-path-double-animation"></a>方法 : パスに沿ってオブジェクトをアニメーション化する (ダブル アニメーション)
 この例を使用する方法を示しています、<xref:System.Windows.Media.Animation.DoubleAnimationUsingPath>クラスによって定義されるパスに沿ってオブジェクトを移動する、<xref:System.Windows.Media.PathGeometry>です。  

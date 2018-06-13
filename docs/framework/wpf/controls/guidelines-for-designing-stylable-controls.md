@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33558222"
 ---
 # <a name="guidelines-for-designing-stylable-controls"></a>スタイルの設定が可能なコントロールを設計するためのガイドライン
 このドキュメントは、スタイルの設定とテンプレートの作成を簡単に行うためのコントロールを設計する際に考慮すべき一連のベスト プラクティスをまとめたものです。 組み込みの [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] コントロール セットのテーマのコントロールのスタイルの操作で試行錯誤を繰り返した結果、この一連のベスト プラクティスにたどり着きました。 スタイリングの成功の鍵は、スタイルそのものであると同様に、適切に設計されたオブジェクト モデルの機能であることが分かりました。 このドキュメントの対象読者は、スタイルの作成者ではなく、コントロールの作成者です。  

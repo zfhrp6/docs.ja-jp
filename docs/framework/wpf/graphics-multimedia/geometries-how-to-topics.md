@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33557161"
 ---
 # <a name="geometries-how-to-topics"></a>ジオメトリに関する「方法」トピック
 このセクションのトピックでは、使用する方法をデモンストレーション<xref:System.Windows.Media.Geometry>アプリケーションのオブジェクト。  

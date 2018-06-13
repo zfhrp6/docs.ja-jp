@@ -18,9 +18,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 468ad1acf55c4d1b4fc2b53730f16ee8630cf19b
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33444016"
 ---
 # <a name="corcallingconvention-enumeration"></a>CorCallingConvention 列挙型
 マネージ コードで作成される呼び出し規則のタイプを記述する値が格納されます。  

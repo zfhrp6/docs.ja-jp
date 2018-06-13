@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33557850"
 ---
 # <a name="sizing-options-in-the-datagrid-control"></a>DataGrid コントロールのサイズ変更方法
 さまざまなオプションは、コントロールを使用する方法、<xref:System.Windows.Controls.DataGrid>自体のサイズを設定します。 <xref:System.Windows.Controls.DataGrid>、および個々 の行と列、<xref:System.Windows.Controls.DataGrid>その内容を自動的にサイズに設定することができます、または特定の値に設定することができます。 既定では、<xref:System.Windows.Controls.DataGrid>拡大およびその内容のサイズに合わせて縮小されます。  

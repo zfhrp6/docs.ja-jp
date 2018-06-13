@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33558188"
 ---
 # <a name="drawing-objects-overview"></a>Drawing オブジェクトの概要
 このトピックで紹介<xref:System.Windows.Media.Drawing>オブジェクトし、図形、ビットマップ、文字列、およびメディアを効率的に描画に使用する方法について説明します。 使用して<xref:System.Windows.Media.Drawing>で描画します。 オブジェクト クリップアートを作成するときに、 <xref:System.Windows.Media.DrawingBrush>、使用または<xref:System.Windows.Media.Visual>オブジェクト。  

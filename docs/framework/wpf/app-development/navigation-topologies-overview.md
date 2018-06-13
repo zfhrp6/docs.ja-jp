@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33557551"
 ---
 # <a name="navigation-topologies-overview"></a>ナビゲーション トポロジの概要
 <a name="introduction"></a> この概要でナビゲーション トポロジの概要については、[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]です。 3 つの一般的なナビゲーション トポロジをサンプルと共に説明します。  

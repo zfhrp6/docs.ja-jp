@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33561674"
 ---
 # <a name="how-to-simplify-animations-by-using-child-timelines"></a>方法 : 子タイムラインを使用してアニメーションを簡素化する
 この例は、子を使用して、アニメーションを簡略化する方法を示しています。<xref:System.Windows.Media.Animation.ParallelTimeline>オブジェクト。 A<xref:System.Windows.Media.Animation.Storyboard>の種類は、<xref:System.Windows.Media.Animation.Timeline>が含まれているタイムラインの対象とする情報を提供します。 使用して、<xref:System.Windows.Media.Animation.Storyboard>オブジェクトとプロパティの情報などの情報を対象とするタイムラインを提供します。  

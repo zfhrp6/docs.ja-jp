@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33554968"
 ---
 # <a name="introduction-to-wpf-in-visual-studio"></a>Visual Studio での WPF の概要
 Visual Studio で Windows Presentation Foundation (WPF) は、Windows 上の基幹業務デスクトップ アプリケーションを構築するための統一されたプログラミング モデルを開発者を提供します。  
