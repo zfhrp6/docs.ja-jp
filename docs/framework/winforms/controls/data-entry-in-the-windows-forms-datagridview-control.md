@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33526821"
 ---
 # <a name="data-entry-in-the-windows-forms-datagridview-control"></a>Windows フォーム DataGridView コントロールでのデータ入力
 `DataGridView`コントロールはユーザーが追加またはコントロール内のデータを変更する方法を変更することができますいくつかの機能を提供します。 たとえば、することができますデータ エントリ効率的と新しい行の既定値を提供することによってエラーが発生したとき、ユーザーに警告します。  

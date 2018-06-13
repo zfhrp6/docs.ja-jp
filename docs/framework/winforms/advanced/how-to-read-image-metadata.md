@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33526579"
 ---
 # <a name="how-to-read-image-metadata"></a>方法 : イメージ メタデータを読み取る
 一部のイメージ ファイルには、イメージの機能を決定するために読み取ることができますメタデータが含まれます。 たとえば、デジタル写真には、make とイメージをキャプチャするために使用する、カメラのモデルを決定するために読み取ることができますメタデータが含まれます可能性があります。 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]既存のメタデータを読み取ることができます、およびイメージ ファイルに新しいメタデータを記述することもできます。  

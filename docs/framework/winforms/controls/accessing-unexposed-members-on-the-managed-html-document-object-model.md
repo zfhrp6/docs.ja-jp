@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33526434"
 ---
 # <a name="accessing-unexposed-members-on-the-managed-html-document-object-model"></a>マネージ HTML DOM (Document Object Model) の非公開メンバーへのアクセス
 マネージ HTML ドキュメント オブジェクト モデル (DOM) と呼ばれるクラスが含まれています<xref:System.Windows.Forms.HtmlElement>プロパティ、メソッド、およびすべての HTML 要素に共通するイベントを公開します。 場合によっては、ただし、する必要があります、マネージ インターフェイスを直接公開しないメンバーにアクセスします。 このトピックは、非公開メンバーにアクセスするための 2 つの方法を調べて[!INCLUDE[jsprjscript](../../../../includes/jsprjscript-md.md)]と Web ページ内で定義されている VBScript 関数。  

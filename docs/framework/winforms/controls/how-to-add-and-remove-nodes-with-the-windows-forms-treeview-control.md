@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33525939"
 ---
 # <a name="how-to-add-and-remove-nodes-with-the-windows-forms-treeview-control"></a>方法 : Windows フォーム TreeView コントロールでノードを追加および削除する
 Windows フォーム<xref:System.Windows.Forms.TreeView>コントロールは、最上位のノードを保存します。 その<xref:System.Windows.Forms.TreeView.Nodes%2A>コレクション。 各<xref:System.Windows.Forms.TreeNode>も独自<xref:System.Windows.Forms.TreeNode.Nodes%2A>をその子ノードを格納するコレクション。 型の両方のコレクション プロパティは、 <xref:System.Windows.Forms.TreeNodeCollection>、標準コレクション メンバーを追加、削除、およびノード階層の 1 つのレベルのノードを再配置を提供します。  

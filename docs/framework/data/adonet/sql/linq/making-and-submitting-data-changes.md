@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33360794"
 ---
 # <a name="making-and-submitting-data-changes"></a>データの変更と変更の送信
 このセクションのトピックでは、データベースを変更し、その変更を送信する方法と、オプティミスティック同時実行の競合を処理する方法について説明します。  

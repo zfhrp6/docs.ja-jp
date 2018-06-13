@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33365567"
 ---
 # <a name="binding-data-to-controls-wcf-data-services"></a>コントロールへのデータのバインド (WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] では、`ComboBox` や `ListView` などのコントロールを <xref:System.Data.Services.Client.DataServiceCollection%601> クラスのインスタンスにバインドすることができます。 このコレクションは <xref:System.Collections.ObjectModel.ObservableCollection%601> クラスから継承され、[!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] フィードのデータが含まれます。 このクラスは、項目が追加または削除されたときに通知を行う動的なデータ コレクションを表します。 インスタンスを使用すると<xref:System.Data.Services.Client.DataServiceCollection%601>、データ バインディングの[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]クライアント ライブラリによって追跡されるオブジェクトにこれらのイベントを処理する、<xref:System.Data.Services.Client.DataServiceContext>常にバインドされている UI 要素内のデータを同期します。  

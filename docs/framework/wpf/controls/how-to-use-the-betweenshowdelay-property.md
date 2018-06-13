@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33552715"
 ---
 # <a name="how-to-use-the-betweenshowdelay-property"></a>方法 : BetweenShowDelay プロパティを使用する
 使用するこの例に示します、<xref:System.Windows.Controls.ToolTipService.BetweenShowDelay%2A>ツールヒントが簡単に表示されるように時刻プロパティ — がほとんどまたはまったくない遅れて — ときに、ユーザー、マウスのポインター 1 つのツールヒントから直接別に移動します。  

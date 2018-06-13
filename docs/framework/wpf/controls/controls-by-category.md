@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33552000"
 ---
 # <a name="controls-by-category"></a>カテゴリ別のコントロール
 複数のカテゴリに、Windows Presentation Foundation (WPF) コントロールを論理的にグループ化できます。 これらのカテゴリを使用すると、類似の使用パターンや機能を持つコントロールを見つけやすくなり、シナリオに適したコントロールを選択できます。  

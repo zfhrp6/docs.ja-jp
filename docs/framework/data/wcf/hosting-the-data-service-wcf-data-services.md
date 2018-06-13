@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33362851"
 ---
 # <a name="hosting-the-data-service-wcf-data-services"></a>データ サービスのホスティング (WCF Data Services)
 使用して[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]、としてデータを公開するサービスを作成することができます、[!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]フィードします。 このデータ サービスは、<xref:System.Data.Services.DataService%601> から継承されたクラスとして定義されます。 このクラスは、要求メッセージを処理、データ ソースに対する更新を実行に必要なの応答メッセージの生成に必要な機能を提供[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]です。 ただし、データ サービスにバインドできず着信 HTTP 要求のネットワーク ソケットでリッスンします。 この機能要件のため、データ サービスはホスティング コンポーネントに依存します。  
