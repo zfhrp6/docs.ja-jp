@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33640544"
 ---
 # <a name="the-connectiontimeout-must-be-greater-than-0"></a>ConnectionTimeout は 0 より大きくなければなりません。
 アップロードとダウンロード ファイルが、 [My.Computer.Network](xref:Microsoft.VisualBasic.Devices.Network)を指定する必要があります、`connectionTimeout`より大きい`0`です。  

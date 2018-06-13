@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33495321"
 ---
 # <a name="discovery-find-and-findcriteria"></a>探索検索と FindCriteria
 探索検索操作は、1 つ以上のサービスを探索するためにクライアントによって開始される操作であり、探索における主要なアクションの 1 つです。 検索を実行すると、WS-Discovery Probe メッセージがネットワークを介して送信されます。 指定された条件に一致するサービスは、WS-Discovery ProbeMatch メッセージを使用して応答します。 探索メッセージの詳細については、次を参照してください。、 [Ws-discovery 仕様](http://go.microsoft.com/fwlink/?LinkID=122347)です。  

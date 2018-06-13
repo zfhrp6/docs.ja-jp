@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33518104"
 ---
 # <a name="dynamicactivity-creation"></a>DynamicActivity の作成
 このサンプルでは、<xref:System.Activities.DynamicActivity> アクティビティを使用して実行時にアクティビティを作成する 2 つの異なる方法を示します。  

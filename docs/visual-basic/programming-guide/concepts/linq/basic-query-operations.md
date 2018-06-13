@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33644122"
 ---
 # <a name="basic-query-operations-visual-basic"></a>基本的なクエリ操作 (Visual Basic)
 このトピックでは、簡単な概要を[!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)]Visual Basic、および一般的な種類のクエリで実行する操作の一部に式。 詳細については、次のトピックを参照してください。  

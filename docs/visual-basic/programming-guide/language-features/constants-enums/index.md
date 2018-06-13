@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33646393"
 ---
 # <a name="constants-and-enumerations-in-visual-basic"></a>Visual Basic の定数と列挙体
 定数は、変化しない値の代わりにわかりやすい名前を使用するための方法です。 定数に格納された値は、その名が示すとおり、アプリケーションの実行中に変わることはありません。 定数を使用すると、数値の代わりにわかりやすい名前を指定できるので、コードが読みやすくなります。  

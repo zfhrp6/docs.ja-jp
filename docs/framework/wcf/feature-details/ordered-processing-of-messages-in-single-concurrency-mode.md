@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33493921"
 ---
 # <a name="ordered-processing-of-messages-in-single-concurrency-mode"></a>Single 同時実行モードでメッセージを順番に処理する
 基になるチャネルがセッションフルでない限り、WCF は、メッセージが処理される順序に関する保証はありません。  インスタンスの順序でメッセージを処理する、セッションの多いチャネルではない MsmqInputChannel を使用する WCF サービスは失敗します。 状況によっては、開発者可能性があります順番に処理動作をしますが、セッションを使用するには。 このトピックでは、サービスが Single 同時実行モードで実行されている場合にこの動作を構成する方法について説明します。  

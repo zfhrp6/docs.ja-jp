@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33488687"
 ---
 # <a name="differences-between-service-certificate-validation-done-by-internet-explorer-and-wcf"></a>Internet Explorer と WCF で実行されるサービス証明書の検証の相違点
 Internet Explorer と Windows Communication Foundation (WCF) HTTP が使用されるときにサービス証明書の検証方法の違いにより、Internet Explorer はしないように、ヘルプ ページまたは Web サービス記述言語にアクセスできること(WSDL)、サービスの WCF クライアントが正常にできる場合でもメッセージ、サービス エンドポイントに送信します。 これは、Internet Explorer のチェックがあるため、サービス証明書があるかどうか、 `ServerAuthentication` WCF がこのような制約を適用していないはオブジェクト識別子 (OID) の拡張使用法フラグ。 Internet Explorer がサービス ヘルプ ページまたはサービスの WSDL にアクセスできる場合を使用して、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)サービス メタデータにアクセスします。  

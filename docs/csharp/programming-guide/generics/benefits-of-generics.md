@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33336831"
 ---
 # <a name="benefits-of-generics-c-programming-guide"></a>ジェネリックの利点 (C# プログラミング ガイド)
 ジェネリックを使用することによって、汎用基本データ型 <xref:System.Object> との値で型をキャストして一般化を行う、共通言語ランタイムや C# 言語の以前のバージョンの制限を解決できます。 ジェネリック クラスを作成すると、コンパイル時にタイプ セーフなコレクションを作成できます。  

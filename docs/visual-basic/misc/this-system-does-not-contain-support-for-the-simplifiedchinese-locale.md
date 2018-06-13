@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33639234"
 ---
 # <a name="this-system-does-not-contain-support-for-the-simplifiedchinese-locale"></a>このシステムには、簡体字中国語ロケールのサポートは含まれていません。
 `VbStrConv.SimplifiedChinese` 列挙型メンバーを使用しようとしましたが、システムは簡体字中国語ロケールをサポートしていません。  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33604030"
 ---
 # <a name="take-clause-visual-basic"></a>Take 句 (Visual Basic)
 コレクションの先頭から、指定された数の連続する要素を返します。  

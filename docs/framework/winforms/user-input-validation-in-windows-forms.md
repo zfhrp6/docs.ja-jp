@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33541808"
 ---
 # <a name="user-input-validation-in-windows-forms"></a>Windows フォームでのユーザー入力の検証
 ユーザーがアプリケーションにデータを入力する場合、アプリケーションがそれを使用する前に、データが有効であることを確認します。 特定のテキスト フィールドにならないこと長さがゼロでフィールドが、電話番号などの適切な形式のデータの型として書式設定されること、または文字列がデータベースのセキュリティを侵害するために使用できる任意の安全でない文字を含まないことを要求することがあります。 Windows フォームでは、アプリケーションで入力を検証するためのいくつかの方法を提供します。  

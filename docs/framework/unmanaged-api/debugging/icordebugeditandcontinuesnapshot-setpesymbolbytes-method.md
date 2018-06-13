@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: d6d18288fcd86df5b858e51878cb63f83160f099
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33411815"
 ---
 # <a name="icordebugeditandcontinuesnapshotsetpesymbolbytes-method"></a>ICorDebugEditAndContinueSnapshot::SetPESymbolBytes メソッド
 `SetPESymbolBytes` は互換性のために残されています。 このメソッドを呼び出さないでください。  

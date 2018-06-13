@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33524067"
 ---
 # <a name="double-buffered-graphics"></a>ダブル バッファリングされたグラフィックス
 グラフィックスをプログラミングするときは、ちらつきが一般的な問題になります。 複数の複雑な描画操作を必要とするグラフィックス操作を実行すると、描画されたイメージがちらつきなどによって適切に表示されないことがあります。 このような問題に対処するために、.NET Framework では、ダブル バッファリングを利用できます。  

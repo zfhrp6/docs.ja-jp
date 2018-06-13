@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33337406"
 ---
 # <a name="using-delegates-c-programming-guide"></a>デリゲートの使用 (C# プログラミング ガイド)
 [デリゲート](../../../csharp/language-reference/keywords/delegate.md)は、C および C++ の関数ポインターのようなメソッドを安全にカプセル化する型です。 ただし、C 関数ポインターとは異なり、デリゲートはオブジェクト指向で、タイプ セーフで、安全です。 デリゲートの型は、デリゲートの名前によって定義されます。 次の例では、引数として[文字列](../../../csharp/language-reference/keywords/string.md)を受け取り、[void](../../../csharp/language-reference/keywords/void.md) を返すメソッドをカプセル化できる `Del` という名前のデリゲートを宣言しています。  

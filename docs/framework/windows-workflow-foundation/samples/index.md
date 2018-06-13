@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33517359"
 ---
 # <a name="windows-workflow-wf-samples"></a>Windows Workflow (WF) のサンプル
 これらのサンプルでは、に関するさまざまな Windows Workflow Foundation (WF) の命令を提供します。  

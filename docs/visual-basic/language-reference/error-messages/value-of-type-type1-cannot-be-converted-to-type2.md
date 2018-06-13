@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33602763"
 ---
 # <a name="value-of-type-39type139-cannot-be-converted-to-39type239"></a>型の値&#39;type1&#39;に変換できない&#39;type2&#39;
 型 'type1' の値は、'type2' へ変換できません。 最初の要素の文字列値を取得する、'Value' プロパティを使用することができます '\<parentElement >' です。  

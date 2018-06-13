@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33641423"
 ---
 # <a name="how-to-find-a-list-of-child-elements-xpath-linq-to-xml-visual-basic"></a>方法: 子要素 (XPATH-LINQ to XML) の一覧を検索 (Visual Basic)
 このトピックでは、XPath の子要素軸と [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] <xref:System.Xml.Linq.XContainer.Elements%2A> 軸を比較します。  

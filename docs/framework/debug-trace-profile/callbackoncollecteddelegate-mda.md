@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33356357"
 ---
 # <a name="callbackoncollecteddelegate-mda"></a>callbackOnCollectedDelegate MDA
 `callbackOnCollectedDelegate` マネージ デバッグ アシスタント (MDA) は、デリゲートがマネージ コードからアンマネージ コードに関数ポインターとしてマーシャリングされ、デリゲートがガベージ コレクトされた後にその関数ポインター上にコールバックが配置された場合にアクティブ化されます。  

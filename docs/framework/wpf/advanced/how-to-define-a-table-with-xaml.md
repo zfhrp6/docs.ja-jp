@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33543102"
 ---
 # <a name="how-to-define-a-table-with-xaml"></a>方法 : XAML を使用してテーブルを定義する
 次の例は、定義する方法を示します、<xref:System.Windows.Documents.Table>を使用して[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]です。  このテーブルには 4 つの列 (によって表される<xref:System.Windows.Documents.TableColumn>要素) といくつかの行 (によって表される<xref:System.Windows.Documents.TableRow>要素) を含むデータもとしてタイトル、ヘッダーおよびフッター情報。  内の行を含める必要があります、<xref:System.Windows.Documents.TableRowGroup>要素。  テーブル内の各行は 1 つまたは複数のセルで構成されます (によって表される<xref:System.Windows.Documents.TableCell>要素)。  テーブル セル内のコンテンツに含まれる必要があります、<xref:System.Windows.Documents.Block>要素です。 ここでは<xref:System.Windows.Documents.Paragraph>要素が使用されます。  テーブルはハイパーリンクもホスト (によって表される、<xref:System.Windows.Documents.Hyperlink>要素) フッター行にします。  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33335467"
 ---
 # <a name="creating-xml-trees-in-c-linq-to-xml"></a>C# での XML ツリーの作成 (LINQ to XML)
 ここでは、C# での XML ツリーの作成について説明します。  

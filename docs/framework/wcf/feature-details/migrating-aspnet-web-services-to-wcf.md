@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33494563"
 ---
 # <a name="migrating-aspnet-web-services-to-wcf"></a>ASP.NET Web サービスを WCF に移行する
 ASP.NET には Web サービスを構築するための .NET Framework クラス ライブラリとツールが用意されています。また、インターネット インフォメーション サービス (IIS) 内でサービスをホストする機能も用意されています。 Windows Communication Foundation (WCF) では、.NET Framework クラス ライブラリ、ツール、および Web サービスで使用されるものを含む、任意のプロトコルを使用して通信するソフトウェア エンティティを有効にするためのホスティング機能を提供します。  WCF に移行する ASP.NET Web サービスは、新しい機能と WCF に固有の機能強化を活用するために、アプリケーションを許可します。  

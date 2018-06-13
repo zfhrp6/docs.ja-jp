@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33604426"
 ---
 # <a name="recommended-xml-tags-for-documentation-comments-visual-basic"></a>ドキュメント コメントとして推奨される XML タグ (Visual Basic)
 Visual Basic コンパイラでは、XML ファイルにコードでドキュメントのコメントを処理できます。 その他のツールを使用して、ドキュメントを XML ファイルに変換することができます。  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33603848"
 ---
 # <a name="gettype-operator-visual-basic"></a>GetType 演算子 (Visual Basic)
 返します、<xref:System.Type>指定した型のオブジェクト。 <xref:System.Type>オブジェクトなど、そのプロパティ、メソッド、およびイベントの種類に関する情報を提供します。  

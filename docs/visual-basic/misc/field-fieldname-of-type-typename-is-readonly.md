@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33638568"
 ---
 # <a name="field-39ltfieldnamegt39-of-type-39lttypenamegt39-is-39readonly39"></a>フィールド&#39; &lt;fieldname&gt; &#39;型の&#39; &lt;typename&gt; &#39;は&#39;読み取り専用&#39;
 `ReadOnly`に宣言されているフィールドに書き込もうとしました。  

@@ -86,6 +86,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33605083"
 ---
 # <a name="type-conversion-functions-visual-basic"></a>データ型変換関数 (Visual Basic)
 これらの関数は、コンパイルされたインラインで、変換コードは、式を評価するコードの一部を意味します。 場合によってパフォーマンスを向上させると、変換を行うプロシージャへの呼び出しはありません。 各関数は、式を特定のデータ型を変換します。  

@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33543219"
 ---
 # <a name="fonts-how-to-topics"></a>フォントに関する「方法」トピック
 このセクションのトピックに含まれているフォント機能を使用する方法をデモンストレーション[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]です。  

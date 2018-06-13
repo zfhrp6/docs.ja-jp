@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33489132"
 ---
 # <a name="adopting-windows-communication-foundation"></a>Windows Communication Foundation の採用
 ASP.NET を使用して既存のアプリケーションのメンテナンスを続行開発中に、新しい開発では、Windows Communication Foundation (WCF) を使用するメッセージが表示できます。 WCF は、どのようなシナリオでの .NET Framework でビルドされたアプリケーションとの通信を促進するための最適な選択をするものでは、ためとして機能できるさまざまな方法でソフトウェア通信の問題を解決するための標準ツールを ASP.NETできません。  

@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33494942"
 ---
 # <a name="routing"></a>ルーティング
 このセクションのトピックでは、ルーティング サービスについて説明します。 ルーティング サービスは、構成可能な汎用の SOAP 中継局です。ルーティング サービスを使用すると、コンテンツ ベースのルーティングの構成、プロトコル ブリッジの設定、通信エラーの処理、および実行時のルーティング ロジックの動的な更新が可能となります。  

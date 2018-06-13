@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33603913"
 ---
 # <a name="join-clause-visual-basic"></a>Join 句 (Visual Basic)
 2 つのコレクションを単一のコレクションに結合します。 結合操作を一致するキーに基づいて、使用、`Equals`演算子。  

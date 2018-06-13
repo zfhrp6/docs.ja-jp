@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33395305"
 ---
 # <a name="etw-events-in-the-net-framework"></a>.NET Framework の ETW イベント
 Windows イベント トレーシング (ETW) は、Windows オペレーティング システムによって提供される高パフォーマンスで低オーバーヘッドかつスケーラブルなトレース システムです。 .NET Framework で提供されるプロファイリングとデバッグのサポートを補完し、さまざまなシナリオのトラブルシューティングに使用できます。  
