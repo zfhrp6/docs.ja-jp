@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33532324"
 ---
 # <a name="how-to-dock-controls-on-windows-forms"></a>方法 : Windows フォーム上のコントロールをドッキングする
 コントロールをフォームの端にドッキングするか、またはコントロールのコンテナー (フォームまたはコンテナー コントロール) を挿入したりします。 Windows エクスプ ローラーのドッキングなど、その<xref:System.Windows.Forms.TreeView>ウィンドウの左側にあるコントロールとその<xref:System.Windows.Forms.ListView>ウィンドウの右側にあるコントロールです。 使用して、<xref:System.Windows.Forms.Control.Dock%2A>すべて表示されている Windows フォームのコントロールのドッキングのモードを定義するプロパティです。  

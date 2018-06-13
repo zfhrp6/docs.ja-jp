@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 008f945b5301894261ce1529cbd915dd614b919d
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33418956"
 ---
 # <a name="icordebugprocessgetthread-method"></a>ICorDebugProcess::GetThread メソッド
 指定したオペレーティング システム (OS) のスレッド ID を持つこのプロセスのスレッドを取得します。  

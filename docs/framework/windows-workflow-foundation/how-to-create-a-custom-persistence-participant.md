@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33517242"
 ---
 # <a name="how-to-create-a-custom-persistence-participant"></a>カスタム永続参加要素を作成する方法
 次の手順では、永続参加要素を作成します。 参照してください、[永続化に参加している](http://go.microsoft.com/fwlink/?LinkID=177735)サンプルと[ストア拡張](../../../docs/framework/windows-workflow-foundation/store-extensibility.md)永続参加要素のサンプルの実装に関するトピック。  

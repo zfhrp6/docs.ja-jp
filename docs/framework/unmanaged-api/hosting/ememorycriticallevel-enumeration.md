@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: acf4f3f582e417c5e7b814622986427f996796ce
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33432529"
 ---
 # <a name="ememorycriticallevel-enumeration"></a>EMemoryCriticalLevel 列挙型
 特定のメモリ割り当てが要求されましたが満足することはできません、エラーの影響を示す値が含まれています。  

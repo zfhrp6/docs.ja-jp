@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33529062"
 ---
 # <a name="using-nested-graphics-containers"></a>入れ子になっているグラフィックス コンテナーの使用
 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] 置換またはで状態の一部を強化を一時的に使用できるコンテナーを提供する<xref:System.Drawing.Graphics>オブジェクト。 呼び出して、コンテナーを作成した、<xref:System.Drawing.Graphics.BeginContainer%2A>のメソッド、<xref:System.Drawing.Graphics>オブジェクト。 呼び出すことができます<xref:System.Drawing.Graphics.BeginContainer%2A>繰り返しを入れ子になったコンテナーを形成します。 各呼び出し<xref:System.Drawing.Graphics.BeginContainer%2A>への呼び出しと組み合わせる必要がある<xref:System.Drawing.Graphics.EndContainer%2A>です。  

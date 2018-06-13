@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33529166"
 ---
 # <a name="how-to-create-a-path-gradient"></a>方法 : パス グラデーションを作成する
 <xref:System.Drawing.Drawing2D.PathGradientBrush>クラスでは、徐々 に変化する色に図形を塗りつぶす方法をカスタマイズすることができます。 たとえば、パスの中央の 1 つの色とパスの境界に別の色を指定できます。 別の色は、各パスの境界上にある点も指定できます。  

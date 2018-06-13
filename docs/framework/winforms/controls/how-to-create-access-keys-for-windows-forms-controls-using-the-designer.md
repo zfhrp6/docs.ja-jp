@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33532552"
 ---
 # <a name="how-to-create-access-keys-for-windows-forms-controls-using-the-designer"></a>方法 : デザイナーを使用して Windows フォーム コントロールのアクセス キーを作成する
 *アクセス キー*メニューのメニュー項目、または、ボタンなどのコントロールのラベルのテキストに下線付きの文字がします。 "ボタンをクリック"、キーを押すと、ALT の組み合わせで定義済みのアクセス キーを持つユーザーができるようにします。 たとえば、フォームを印刷する手順を実行するボタンおよびその`Text`"P"と、文字に下線を付けるには、"P"、ボタンのテキストの実行時に文字の前に「印刷」アンパサンドを追加する (&)、プロパティを設定します。 ユーザーは、ALT キーを押しながら P キーを押して、ボタンに関連付けられているコマンドを実行できます。 フォーカスを受け取ることができないコントロールのアクセス キーを持つことはできません。  

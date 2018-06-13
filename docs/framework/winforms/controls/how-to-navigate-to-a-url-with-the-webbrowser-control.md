@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33531886"
 ---
 # <a name="how-to-navigate-to-a-url-with-the-webbrowser-control"></a>方法 : WebBrowser コントロールで URL に移動する
 次のコード例では、移動、<xref:System.Windows.Forms.WebBrowser>特定の URL をコントロールします。  

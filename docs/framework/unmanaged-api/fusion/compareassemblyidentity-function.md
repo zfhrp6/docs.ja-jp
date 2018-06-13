@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 1b48adcb8e9de49a312af77c8a9b80a07455ebfe
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33432987"
 ---
 # <a name="compareassemblyidentity-function"></a>CompareAssemblyIdentity 関数
 それらが等しいかどうかを決定する 2 つのアセンブリ id を比較します。  

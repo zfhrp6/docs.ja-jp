@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33529689"
 ---
 # <a name="column-sort-modes-in-the-windows-forms-datagridview-control"></a>Windows フォーム DataGridView コントロール内の列の並べ替えモード
 <xref:System.Windows.Forms.DataGridView> 列では、次の 3 つの並べ替えモードがあります。 各列の並べ替えモードを指定、 <xref:System.Windows.Forms.DataGridViewColumn.SortMode%2A> 、次のいずれかに設定することができる列のプロパティ<xref:System.Windows.Forms.DataGridViewColumnSortMode>列挙値。  

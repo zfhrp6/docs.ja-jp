@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33534268"
 ---
 # <a name="how-to-disable-tab-pages"></a>方法 : タブ ページを無効化する
 状況によっては、Windows フォーム アプリケーション内で使用可能なデータへのアクセスを制限するされます。 タブ コントロールのタブ ページに表示されるデータがある場合、一例があります。guest アカウントや下位レベルのユーザーを制限するタブ ページ上の情報を保持できたは、管理者。  

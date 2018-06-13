@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33531863"
 ---
 # <a name="how-to-handle-the-contextmenustrip-opening-event"></a>方法 : ContextMenuStrip のオープン イベントを処理する
 動作をカスタマイズすることができます、<xref:System.Windows.Forms.ContextMenuStrip>処理によって制御、<xref:System.Windows.Forms.ToolStripDropDown.Opening>イベント。  

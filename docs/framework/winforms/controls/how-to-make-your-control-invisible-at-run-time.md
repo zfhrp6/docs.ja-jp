@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33532413"
 ---
 # <a name="how-to-make-your-control-invisible-at-run-time"></a>方法 : 実行時にコントロールを非表示にする
 実行時に表示されているユーザー コントロールを作成する場合もあります。 たとえば、アラーム クロックであるコントロールはアラームが鳴っている場合を除く表示でない可能性があります。 設定これを簡単に行う、<xref:System.Windows.Forms.Control.Visible%2A>プロパティです。 場合、<xref:System.Windows.Forms.Control.Visible%2A>プロパティは`true`コントロールを通常どおりに表示されます。 場合`false`コントロールは表示されません。 コントロール内のコードは、非表示のとき実行可能性がありますも、ユーザー インターフェイスを使用するコントロールと対話することはできません。 ユーザー (マウス クリックなど) の入力にも応答を非表示のコントロールを作成する場合は、透明なコントロールを作成する必要があります。 詳細については、次を参照してください。[制御を透明な背景に与える](../../../../docs/framework/winforms/controls/how-to-give-your-control-a-transparent-background.md)です。  

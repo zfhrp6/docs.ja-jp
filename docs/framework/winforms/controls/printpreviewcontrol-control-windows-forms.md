@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33534314"
 ---
 # <a name="printpreviewcontrol-control-windows-forms"></a>PrintPreviewControl コントロール (Windows フォーム)
 Windows フォーム `PrintPreviewControl` は、印刷するときに表示されるドキュメントを表示するために使用されます。 このコントロールには、ボタンやその他のユーザー インターフェイスの要素がないため、通常は、独自の印刷プレビューのユーザー インターフェイスを作成する場合にのみ `PrintPreviewControl` を使用します。 標準のユーザー インターフェイスが必要な場合は、<xref:System.Windows.Forms.PrintPreviewDialog> コントロールを使用します。  

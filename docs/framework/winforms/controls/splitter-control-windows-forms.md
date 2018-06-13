@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33534639"
 ---
 # <a name="splitter-control-windows-forms"></a>Splitter コントロール (Windows フォーム)
 Windows フォーム`Splitter`コントロールを使用すると、実行時にドッキングされたコントロールのサイズを変更します。 `Splitter`コントロールがフォーム上のコントロールを持つデータ ペインには、異なる時刻でさまざまな幅の情報が含まれて、Windows エクスプ ローラーのように、提示するデータのさまざまな長さでよく使用します。  

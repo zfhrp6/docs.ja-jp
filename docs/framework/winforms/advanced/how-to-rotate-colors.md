@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33522396"
 ---
 # <a name="how-to-rotate-colors"></a>方法 : 色を回転させる
 4 次元の色領域の回転は、視覚化するが困難です。 おやすくをいずれかの色要素を固定に同意することにより回転を視覚化します。 たとえば、アルファ コンポーネントを 1 に固定の (完全に不透明) を保持することに同意します。 次の図に示すように赤、緑、および青の軸を持つ 3 次元のカラー スペースを視覚化できます。  

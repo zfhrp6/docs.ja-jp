@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33537734"
 ---
 # <a name="user-input-in-windows-forms"></a>Windows フォームでのユーザー入力
 Windows フォームには、関連する Windows メッセージの処理中に発生するイベントに基づくユーザーの入力モデルが含まれています。 特定のタスクを実行する方法を示すコード例を含む、マウスとキーボードのユーザー入力については、このセクションのトピックで説明します。  

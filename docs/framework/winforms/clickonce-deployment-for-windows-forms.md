@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33529539"
 ---
 # <a name="clickonce-deployment-for-windows-forms"></a>Windows フォームの ClickOnce 配置
 次のトピックでは、Windows フォーム アプリケーションをクライアント コンピューターに簡単に配置するために使用されるテクノロジである [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] について説明します。  

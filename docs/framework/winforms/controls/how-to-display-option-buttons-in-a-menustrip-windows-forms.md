@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33538029"
 ---
 # <a name="how-to-display-option-buttons-in-a-menustrip-windows-forms"></a>方法 : MenuStrip にオプション ボタンを表示する (Windows フォーム)
 オプション ボタン、オプション ボタンとも呼ばれるは、ユーザーが一度に 1 つだけを選択する点を除いて、チェック ボックスに似ています。 既定では、<xref:System.Windows.Forms.ToolStripMenuItem>クラスは、オプション ボタンの動作を提供していない、このクラスのメニュー項目にオプション ボタンの動作を実装するカスタマイズ可能なチェック ボックスの動作を提供する<xref:System.Windows.Forms.MenuStrip>コントロール。  

@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33535270"
 ---
 # <a name="notifyicon-component-windows-forms"></a>NotifyIcon コンポーネント (Windows フォーム)
 Windows フォーム`NotifyIcon`のプロセスをバック グラウンドで実行し、それ以外の場合ではありませんがあるユーザー インターフェイス コンポーネントに、タスク バーの状態通知領域にアイコンが表示されます。 たとえば、タスクバーの状態通知領域のアイコンをクリックしてアクセス可能なウイルス対策プログラムなどです。  

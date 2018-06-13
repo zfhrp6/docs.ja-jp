@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33536255"
 ---
 # <a name="textbox-control-windows-forms"></a>TextBox コントロール (Windows フォーム)
 Windows フォームのテキスト ボックスは、ユーザーからの入力を取得またはテキストの表示に使用されます。 `TextBox`コントロールもにできる読み取り専用ですが、一般に編集可能なテキストは、使用できます。 テキスト ボックスでは、複数の行を表示、コントロールのサイズにテキストを折り返す、および基本的な書式を追加することができます。 `TextBox`コントロールはテキスト コントロールに表示または入力の 1 つの形式を使用します。  

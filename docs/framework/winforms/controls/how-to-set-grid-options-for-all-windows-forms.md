@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33535026"
 ---
 # <a name="how-to-set-grid-options-for-all-windows-forms"></a>方法 : すべての Windows フォームにグリッド オプションを設定する
 Visual Studio 開発環境での作業に使用したになる Windows フォーム デザイナーで、すべてのフォームおよびプロジェクトを操作するための基本設定を設定できます。  

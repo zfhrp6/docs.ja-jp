@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33534402"
 ---
 # <a name="picturebox-control-overview-windows-forms"></a>PictureBox コントロールの概要 (Windows フォーム)
 Windows フォーム<xref:System.Windows.Forms.PictureBox>ビットマップ、GIF、JPEG、メタファイル、またはアイコンの形式で画像を表示するコントロールを使用します。  

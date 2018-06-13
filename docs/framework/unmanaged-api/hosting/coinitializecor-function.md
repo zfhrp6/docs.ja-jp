@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 91315e8af0cc46a3450a7515b885988cffe34927
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33429989"
 ---
 # <a name="coinitializecor-function"></a>CoInitializeCor 関数
 `CoInitializeCor` は互換性のために残されています。  

@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: bcfb584fc2380a7ae1567d3d4d6203b537676220
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33429700"
 ---
 # <a name="iassemblynamesetproperty-method"></a>IAssemblyName::SetProperty メソッド
 指定したプロパティの識別子によって参照されるプロパティの値を設定します。  

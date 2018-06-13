@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33536303"
 ---
 # <a name="label-control-overview-windows-forms"></a>Label コントロールの概要 (Windows フォーム)
 Windows フォーム<xref:System.Windows.Forms.Label>テキストや、ユーザーが編集できないイメージを表示するコントロールを使用します。 フォーム上のオブジェクトの識別に使用されます: どのような特定のコントロールの説明をクリックした場合などを提供するか、実行時イベントまたはアプリケーションのプロセスへの応答に情報を表示します。 たとえば、ラベルを使用して、テキスト ボックス、リスト ボックス、コンボ ボックス、およびようにわかりやすいキャプションを追加することができます。 実行時にイベントに応答のラベルで表示されるテキストを変更するコードを記述することもできます。 たとえば、アプリケーションは、変更を処理するまで数分かかる、ラベルに処理ステータス メッセージを表示できます。  

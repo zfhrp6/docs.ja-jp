@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33532387"
 ---
 # <a name="how-to-create-a-windows-explorerstyle-interface-on-a-windows-form"></a>方法 : Windows フォームで Windows エクスプローラー スタイルのインターフェイスを作成する
 Windows エクスプ ローラーは、準備ができて、使いやすさのためのアプリケーションの一般的なユーザー インターフェイス選択です。  

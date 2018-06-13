@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33532786"
 ---
 # <a name="how-to-set-the-image-displayed-by-a-windows-forms-control-using-the-designer"></a>方法 : デザイナーを使用して Windows フォーム コントロールによって表示されるイメージを設定する
 いくつかの Windows フォーム コントロールは、イメージを表示できます。 イメージをボタン上のフロッピー ディスク アイコンなど、コントロールの目的を明確にするアイコンがあります、**保存**コマンド。 コントロールの外観を与えるように背景画像の代わりに、アイコンもあります。  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33537782"
 ---
 # <a name="creating-a-new-windows-form"></a>新しい Windows フォームの作成
 このトピックでは、初めての Windows フォーム アプリケーションを作成する方法について説明したトピックへのリンクを示します。 また、このセクションのトピックでは、Windows フォーム アプリケーションを作成する際に理解しておくべき基本的な用語とガイドラインもいくつか紹介します。 Windows フォーム アプリケーションに関する詳細についてに、イベントとイベントの処理、および、ユーザーからの入力を処理する方法で使用できるコントロールは、関連するトピックの一覧を参照してください。  

@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33537522"
 ---
 # <a name="how-to-provide-a-toolbox-bitmap-for-a-control"></a>方法 : コントロールにツールボックス ビットマップを指定する
 コントロールの特別なアイコンが表示する場合、**ツールボックス**を使用して特定のイメージを指定することができます、<xref:System.Drawing.ToolboxBitmapAttribute>です。 このクラスは "*属性*" であり、他のクラスに追加できる特殊なクラスです。 属性の詳細については、次を参照してください。[ビルド内にありません: Visual Basic での属性の概要](http://msdn.microsoft.com/library/0d0cff64-892d-4f57-83bd-bef388553d4f)Visual basic の場合と[属性](http://msdn.microsoft.com/library/ae334cee-d96c-4243-a5e3-06dd7fcaf205)Visual c# の場合。  

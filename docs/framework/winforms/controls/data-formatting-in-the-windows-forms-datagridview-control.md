@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33527775"
 ---
 # <a name="data-formatting-in-the-windows-forms-datagridview-control"></a>Windows フォーム DataGridView コントロールでのデータの書式設定
 <xref:System.Windows.Forms.DataGridView>コントロールがセルの値と、親列を表示するデータ型の間の自動変換を提供します。 テキスト ボックスの列はたとえば、日付、時刻、数、および列挙値の文字列形式を表示し、ユーザーが入力した文字列値をデータ ストアで必要な型に変換します。  

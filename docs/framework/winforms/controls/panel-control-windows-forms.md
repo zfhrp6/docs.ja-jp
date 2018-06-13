@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33536723"
 ---
 # <a name="panel-control-windows-forms"></a>Panel コントロール (Windows フォーム)
 Windows フォーム`Panel`コントロールを使用して、その他のコントロールのグループに分けます。 通常、関数によって、フォームを分割するのにパネルを使用します。 `Panel`コントロールに似ていますが、<xref:System.Windows.Forms.GroupBox>コントロール。 ただし、のみ、`Panel`コントロールがスクロール バーを持つことができますのみと、<xref:System.Windows.Forms.GroupBox>コントロールは、キャプションを表示します。  

@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33528445"
 ---
 # <a name="how-to-anchor-controls-on-windows-forms"></a>方法 : Windows フォームにコントロールを固定する
 実行時にサイズを変更できるユーザーをフォームをデザインする場合、フォーム上のコントロールがサイズし、位置を正しくです。 使用することができますが、フォームを動的にコントロールのサイズを変更するには、 <xref:System.Windows.Forms.Control.Anchor%2A> Windows フォーム コントロールのプロパティです。 <xref:System.Windows.Forms.Control.Anchor%2A>プロパティがコントロールの固定位置を定義します。 フォームにコントロールを固定すると、フォームのサイズが、コントロールは、コントロールと、アンカー位置の間の距離を保持します。 ある場合など、<xref:System.Windows.Forms.TextBox>フォームのサイズを変更、左、右、およびフォームの下端が固定されるコントロール、<xref:System.Windows.Forms.TextBox>フォームの横の右側と左側からの距離が維持されるため、水平方向にサイズ変更を制御します。 さらに、コントロール配置自体垂直方向にその場所は、フォームの下部エッジからの距離では常にできるようにします。 コントロールが固定されていないと、フォームのサイズが、フォームの端を基準としたコントロールの位置が変更されました。  

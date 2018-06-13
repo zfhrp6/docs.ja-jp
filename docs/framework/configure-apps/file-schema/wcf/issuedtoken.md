@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32750234"
 ---
 # <a name="ltissuedtokengt"></a>&lt;issuedToken&gt;
 サービスに対するクライアントの認証に使用されるカスタム トークンを指定します。  

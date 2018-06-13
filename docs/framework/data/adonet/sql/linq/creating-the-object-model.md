@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33359934"
 ---
 # <a name="creating-the-object-model"></a>オブジェクト モデルの作成
 既存のデータベースからオブジェクト モデルを作成し、このオブジェクト モデルを既定の状態で使用できます。 オブジェクト モデルの多くの側面と動作をカスタマイズできます。  

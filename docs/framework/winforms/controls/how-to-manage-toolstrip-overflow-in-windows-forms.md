@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33534893"
 ---
 # <a name="how-to-manage-toolstrip-overflow-in-windows-forms"></a>方法 : Windows フォームの ToolStrip オーバーフローを管理する
 ときのすべての項目、<xref:System.Windows.Forms.ToolStrip>コントロールが割り当てられた領域に収まらないでオーバーフロー機能を有効にすることができます、<xref:System.Windows.Forms.ToolStrip>固有の仕様のオーバーフロー動作を決定し、 <xref:System.Windows.Forms.ToolStripItem>s。  

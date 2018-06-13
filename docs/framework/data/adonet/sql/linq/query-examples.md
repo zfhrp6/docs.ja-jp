@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33362628"
 ---
 # <a name="query-examples"></a>クエリの例
 このセクションでは、一般的な Visual Basic および c# の例を示します[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]クエリ。 Visual Studio を使用している開発者は、サンプルのセクションで、使用可能なサンプル ソリューションでより多くの例を参照できます。 詳細については、次を参照してください。[サンプル](../../../../../../docs/framework/data/adonet/sql/linq/samples.md)です。  

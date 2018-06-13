@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 6c297c2476cb35fef861cda77f4f6f536fd85557
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33428192"
 ---
 # <a name="iassemblynamegetproperty-method"></a>IAssemblyName::GetProperty メソッド
 指定したプロパティの識別子によって参照されるプロパティへのポインターを取得します。  

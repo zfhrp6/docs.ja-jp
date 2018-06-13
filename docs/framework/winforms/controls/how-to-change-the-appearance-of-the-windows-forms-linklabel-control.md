@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33531487"
 ---
 # <a name="how-to-change-the-appearance-of-the-windows-forms-linklabel-control"></a>方法 : Windows フォーム LinkLabel コントロールの表示形式を変更する
 によって表示されるテキストを変更することができます、<xref:System.Windows.Forms.LinkLabel>さまざまな目的に合わせてコントロール。 たとえば、下線付きで特定の色で表示するテキストを設定してテキストをクリックすることができます、ユーザーに示すためによくあることを勧めします。 ユーザーは、テキストをクリックすると、異なる色に色を変更します。 この動作を制御するには、5 つの異なるプロパティを設定することができます。 <xref:System.Windows.Forms.LinkLabel.LinkBehavior%2A>、 <xref:System.Windows.Forms.LinkLabel.LinkArea%2A>、 <xref:System.Windows.Forms.LinkLabel.LinkColor%2A>、 <xref:System.Windows.Forms.LinkLabel.VisitedLinkColor%2A>、および<xref:System.Windows.Forms.LinkLabel.LinkVisited%2A>プロパティです。  

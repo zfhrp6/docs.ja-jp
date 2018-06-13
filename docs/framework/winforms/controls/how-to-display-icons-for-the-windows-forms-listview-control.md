@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33533605"
 ---
 # <a name="how-to-display-icons-for-the-windows-forms-listview-control"></a>方法 : Windows フォーム ListView コントロールのアイコンを表示する
 Windows フォーム<xref:System.Windows.Forms.ListView>コントロールは、次の 3 つのイメージ リストのアイコンを表示できます。 リスト、詳細、および SmallIcon ビューで指定されたイメージ リストのイメージを表示する、<xref:System.Windows.Forms.ListView.SmallImageList%2A>プロパティです。 LargeIcon ビューで指定されたイメージ リストのイメージを表示する、<xref:System.Windows.Forms.ListView.LargeImageList%2A>プロパティです。 リスト ビューでは、追加で設定アイコンのセットを表示できますも、<xref:System.Windows.Forms.ListView.StateImageList%2A>プロパティを大きいアイコンまたは小さいアイコンの横にあります。 イメージ リストの詳細については、次を参照してください。 [ImageList コンポーネント](../../../../docs/framework/winforms/controls/imagelist-component-windows-forms.md)と[する方法: 追加または削除する Windows フォームの ImageList コンポーネントにイメージを](../../../../docs/framework/winforms/controls/how-to-add-or-remove-images-with-the-windows-forms-imagelist-component.md)です。  
