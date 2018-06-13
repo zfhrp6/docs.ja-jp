@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33540081"
 ---
 # <a name="radiobutton-control-overview-windows-forms"></a>RadioButton コントロールの概要 (Windows フォーム)
 Windows フォーム<xref:System.Windows.Forms.RadioButton>コントロールがユーザーに 2 つ以上の相互に排他的な選択肢を表示します。 重要な違いがあるオプション ボタンおよびチェック ボックスは、類似した機能に見える場合があります、にもかかわらず: ユーザーは、オプション ボタンを選択するときは、同じグループ内の他のオプション ボタンをも選択することはできません。 これに対し、任意の数のチェック ボックスを選択することができます。 ラジオ ボタン グループの定義は、「ここでは 1 つだけを選択できる選択肢のセットです」  

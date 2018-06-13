@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33551818"
 ---
 # <a name="how-to-style-controls-on-a-toolbar"></a>方法 : ToolBar のコントロールのスタイルを指定する
 <xref:System.Windows.Controls.ToolBar>定義<xref:System.Windows.ResourceKey>内のコントロールのスタイルを指定するオブジェクト、<xref:System.Windows.Controls.ToolBar>です。  内のコントロールのスタイルを設定する、 <xref:System.Windows.Controls.ToolBar>、設定、`x:key`するスタイルの属性、<xref:System.Windows.ResourceKey>で定義されている<xref:System.Windows.Controls.ToolBar>です。  

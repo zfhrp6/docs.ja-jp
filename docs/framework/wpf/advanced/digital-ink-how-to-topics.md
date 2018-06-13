@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33538875"
 ---
 # <a name="digital-ink-how-to-topics"></a>デジタル インクに関する「方法」トピック
 ## <a name="in-this-section"></a>このセクションの内容  

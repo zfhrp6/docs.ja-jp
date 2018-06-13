@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33552728"
 ---
 # <a name="how-to-get-a-listboxitem"></a>方法 : ListBoxItem を取得する
 固有の仕様を取得する必要がある場合<xref:System.Windows.Controls.ListBoxItem>で特定のインデックス、 <xref:System.Windows.Controls.ListBox>、使用することができます、<xref:System.Windows.Controls.ItemContainerGenerator>です。  

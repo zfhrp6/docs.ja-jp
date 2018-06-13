@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33541058"
 ---
 # <a name="creating-an-ink-input-control"></a>インク入力コントロールの作成
 カスタム コントロールを動的に作成し、インクを静的に描画します。 つまり、ユーザーは、タブレット ペンをからには、「フロー」、それ以降後のインクの表示を追加するコントロールにタブレット ペンを使用して、クリップボードから貼り付けるか、ファイルから読み込まれたを表示するインク ストロークを描画インクをレンダリングします。 インクを動的に表示するには、するために、コントロールを使用する必要があります、<xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>です。 静的にインクをレンダリングするには、スタイラス イベント メソッドをオーバーライドする必要があります (<xref:System.Windows.UIElement.OnStylusDown%2A>、 <xref:System.Windows.UIElement.OnStylusMove%2A>、および<xref:System.Windows.UIElement.OnStylusUp%2A>) を収集する<xref:System.Windows.Input.StylusPoint>データ、ストロークの作成に追加して、 <xref:System.Windows.Controls.InkPresenter> (がコントロール上のインクをレンダリング)。  

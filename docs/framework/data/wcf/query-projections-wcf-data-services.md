@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33365723"
 ---
 # <a name="query-projections-wcf-data-services"></a>クエリ射影 (WCF Data Services)
 プロジェクション内のメカニズムを提供する、[!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]応答で返されるエンティティの特定のプロパティのみを指定することで、クエリによって返されるフィード内のデータの量を削減します。 詳細については、次を参照してください。 [OData: Select システム クエリ オプション ($select)](http://go.microsoft.com/fwlink/?LinkId=186076)です。  

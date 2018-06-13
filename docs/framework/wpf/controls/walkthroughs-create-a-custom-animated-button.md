@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33557109"
 ---
 # <a name="walkthroughs-create-a-custom-animated-button"></a>チュートリアル : カスタム アニメーション ボタンの作成
 その名前からわかるように、Windows Presentation Foundation (WPF) は顧客の経験の豊富なプレゼンテーションを行うための優れたです。 これらのチュートリアルでは、(アニメーションを含む) ボタンの動作と外観をカスタマイズする方法を示します。 このカスタマイズを行う、スタイルとテンプレートを使用すると、このカスタム ボタンをアプリケーションで他のボタンに簡単に適用できます。 次の図を作成する場合、カスタマイズされたボタンを示しています。  

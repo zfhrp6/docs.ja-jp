@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33551935"
 ---
 # <a name="how-to-choose-between-stackpanel-and-dockpanel"></a>方法 : StackPanel または DockPanel を選択する
 この例の使用を選択する方法を示しています、<xref:System.Windows.Controls.StackPanel>または<xref:System.Windows.Controls.DockPanel>内のコンテンツをスタックする場合、<xref:System.Windows.Controls.Panel>です。  

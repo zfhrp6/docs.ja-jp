@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33555401"
 ---
 # <a name="treeview-how-to-topics"></a>TreeView に関する「方法」トピック
 このセクションのトピックを使用する方法について説明、<xref:System.Windows.Controls.TreeView>階層構造の情報を表示するコントロール。  

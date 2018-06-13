@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33540707"
 ---
 # <a name="toolstrip-control-windows-forms"></a>ToolStrip コントロール (Windows フォーム)
 <xref:System.Windows.Forms.ToolStrip> コントロールは、Windows フォーム アプリケーションでメニュー、コントロール、およびユーザー コントロールをホストするツール バーです。  

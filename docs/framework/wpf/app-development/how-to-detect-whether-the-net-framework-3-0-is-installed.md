@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33546492"
 ---
 # <a name="how-to-detect-whether-the-net-framework-30-is-installed"></a>方法: .NET Framework 3.0 がインストールされているかどうかを確認する
 管理者は、システム上の Microsoft .NET Framework アプリケーションを展開したりする前にする必要がありますまずことを確認した .NET Framework ランタイムが存在します。 このトピックで HTML または JavaScript で記述されたスクリプトは、.NET Framework は、システムに存在するかどうかを決定する管理者を使用できることです。  

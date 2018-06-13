@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33538862"
 ---
 # <a name="how-to-format-data-in-the-windows-forms-datagridview-control"></a>方法 : Windows フォーム DataGridView コントロールのデータの書式を設定する
 次の手順の説明を使用してセル値の基本的な書式設定、<xref:System.Windows.Forms.DataGridView.DefaultCellStyle%2A>のプロパティ、<xref:System.Windows.Forms.DataGridView>コントロールとコントロールの特定の列です。 高度なデータの書式設定方法の詳細については、次を参照してください。[する方法: Windows フォーム DataGridView コントロールでデータの書式をカスタマイズする](../../../../docs/framework/winforms/controls/how-to-customize-data-formatting-in-the-windows-forms-datagridview-control.md)です。  

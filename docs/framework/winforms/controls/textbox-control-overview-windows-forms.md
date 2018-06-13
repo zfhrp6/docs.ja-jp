@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33539868"
 ---
 # <a name="textbox-control-overview-windows-forms"></a>TextBox コントロールの概要 (Windows フォーム)
 Windows フォームのテキスト ボックスは、ユーザーからの入力を取得またはテキストの表示に使用されます。 <xref:System.Windows.Forms.TextBox>コントロールもにできる読み取り専用ですが、一般に編集可能なテキストは、使用できます。 テキスト ボックスでは、複数の行を表示、コントロールのサイズにテキストを折り返す、および基本的な書式を追加することができます。 <xref:System.Windows.Forms.TextBox>コントロールが表示またはコントロールに入力されたテキストに対して単一の書式スタイルを提供します。 表示するには複数の書式設定されたテキストの種類を使用して、<xref:System.Windows.Forms.RichTextBox>コントロール。 詳細については、次を参照してください。 [RichTextBox コントロールの概要](../../../../docs/framework/winforms/controls/richtextbox-control-overview-windows-forms.md)です。  

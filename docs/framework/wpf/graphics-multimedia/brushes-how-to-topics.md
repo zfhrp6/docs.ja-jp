@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33557538"
 ---
 # <a name="brushes-how-to-topics"></a>ブラシに関する「方法」トピック
 次のトピックを使用する方法をデモンストレーションする[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]ブラシを画面のコンテンツを描画するためにします。  

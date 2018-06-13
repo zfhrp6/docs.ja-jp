@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33538966"
 ---
 # <a name="getting-started-with-windows-forms"></a>Windows フォームについて
 Windows フォームでは、Windows ベースの強力なアプリケーションを作成できます。 次のトピックは、データを表示、ユーザー入力を処理し、強化されたセキュリティを使用して簡単に、アプリケーションの展開の Windows フォームの機能を利用する方法詳細について説明します。  
