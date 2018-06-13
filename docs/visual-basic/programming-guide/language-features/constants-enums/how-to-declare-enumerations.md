@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33650804"
 ---
 # <a name="how-to-declare-enumerations-visual-basic"></a>方法: 列挙型を宣言する (Visual Basic)
 持つ列挙体を作成する、`Enum`クラスまたはモジュールの宣言セクション内のステートメント。 メソッド内の列挙体を宣言することはできません。 適切なアクセス レベルを指定する`Private`、 `Protected`、 `Friend`、または`Public`です。  

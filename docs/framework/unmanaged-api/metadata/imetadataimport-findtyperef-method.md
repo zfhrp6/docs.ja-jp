@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 375dbaf03384b4d05a7815a11612814d8b427170
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33444442"
 ---
 # <a name="imetadataimportfindtyperef-method"></a>IMetaDataImport::FindTypeRef メソッド
 トークンは TypeRef にポインターを取得、<xref:System.Type>指定されたスコープ内にあるし、指定した名前を持つ参照します。  

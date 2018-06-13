@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33573066"
 ---
 # <a name="including-or-importing-xml-schemas"></a>XML スキーマのインクルードまたはインポート
 XML スキーマには、`<xs:import />` 要素、`<xs:include />` 要素、および `<xs:redefine />` 要素を含めることができます。 これらのスキーマ要素は、インクルードまたはインポートするスキーマの構造を補足するために使用できる他の XML スキーマを参照します。 <xref:System.Xml.Schema.XmlSchemaImport> クラス、<xref:System.Xml.Schema.XmlSchemaInclude> クラス、および <xref:System.Xml.Schema.XmlSchemaRedefine> クラスは、スキーマ オブジェクト モデル (SOM) API でこれらの要素にマップされます。  

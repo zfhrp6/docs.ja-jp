@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33520462"
 ---
 # <a name="application-settings-overview"></a>アプリケーション設定の概要
 このトピックでは、アプリケーションとユーザーのために設定のデータを作成して格納する方法について説明します。  

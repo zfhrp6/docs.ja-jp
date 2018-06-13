@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: d3edae4cb112f46643734c5f1612d9df36ad47e9
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33441333"
 ---
 # <a name="ihostmemorymanager-interface"></a>IHostMemoryManager インターフェイス
 標準の Win32 仮想メモリ関数を使用する代わりに、共通言語ランタイム (CLR) はホストを介して仮想メモリの要求を行うことができるようにするメソッドを提供します。  

@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33605356"
 ---
 # <a name="option-strict-statement"></a>Option Strict Statement
 暗黙的なデータ型の変換のみ拡大変換を制限、遅延バインディングは許可されていません、および結果となる暗黙の型指定は許可されていません、`Object`型です。  

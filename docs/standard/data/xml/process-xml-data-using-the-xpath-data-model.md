@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33569957"
 ---
 # <a name="process-xml-data-using-the-xpath-data-model"></a>XPath データ モデルを使用した XML データの処理
 <xref:System.Xml?displayProperty=nameWithType> 名前空間は、<xref:System.Xml.XmlDocument> または <xref:System.Xml.XPath.XPathDocument> クラスを使用して、メモリ内の XML ドキュメント、フラグメント、ノード、またはノードセットのプログラム表現を提供します。  

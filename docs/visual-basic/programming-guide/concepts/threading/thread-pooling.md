@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33647834"
 ---
 # <a name="thread-pooling-visual-basic"></a>スレッド プール (Visual Basic)
 "*スレッド プール*" とは、複数のタスクをバックグラウンドで実行するときに使用できるスレッドのコレクションです  (を参照してください[スレッド処理 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/threading/index.md)背景情報についてはします)。これにより、プライマリ スレッドは他のタスクを非同期的に実行できます。  

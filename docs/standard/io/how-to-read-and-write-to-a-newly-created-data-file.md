@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33572698"
 ---
 # <a name="how-to-read-and-write-to-a-newly-created-data-file"></a>方法 : 新しく作成されたデータ ファイルに対して読み書きする
 <xref:System.IO.BinaryWriter> クラスおよび <xref:System.IO.BinaryReader?displayProperty=nameWithType> クラスは、文字列ではない形式でデータを書き込んだり読み取ったりするために使用します。 `Test.data` と呼ばれる新しい空のファイル ストリームに対するデータの書き込みと読み取りを実行するコードの例を次に示します。 現在のディレクトリにデータ ファイルを作成した後、そのファイルに関連付けた <xref:System.IO.BinaryWriter> オブジェクトと <xref:System.IO.BinaryReader> オブジェクトを作成し、<xref:System.IO.BinaryWriter> オブジェクトを使用して整数 0 ～ 10 を `Test.data` に書き込みます。ファイル ポインターはファイルの末尾に残っています。 <xref:System.IO.BinaryReader> オブジェクトはファイル ポインターを起点に戻してから、指定された内容を読み出します。  

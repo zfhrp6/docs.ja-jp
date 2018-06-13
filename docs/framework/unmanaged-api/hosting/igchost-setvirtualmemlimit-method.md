@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: d1d61c8aeaf458d8cbbd2976fa83aaa0eeb0f834
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33437740"
 ---
 # <a name="igchostsetvirtualmemlimit-method"></a>IGCHost::SetVirtualMemLimit メソッド
 ランタイムの仮想メモリの最大サイズを設定します。  

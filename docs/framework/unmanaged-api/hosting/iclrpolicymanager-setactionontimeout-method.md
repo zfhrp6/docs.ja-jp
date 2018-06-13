@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: cc1d16a2d57fea27c1c26fc55fbbfa9b74c25495
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33435839"
 ---
 # <a name="iclrpolicymanagersetactionontimeout-method"></a>ICLRPolicyManager::SetActionOnTimeout メソッド
 指定された操作がタイムアウトしたときに、共通言語ランタイム (CLR) で実行する必要がありますポリシー操作を指定します。  

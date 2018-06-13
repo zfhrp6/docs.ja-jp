@@ -44,6 +44,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33577307"
 ---
 # <a name="net-class-library-overview"></a>.NET クラス ライブラリの概要
 .NET 実装には、開発プロセスを高速化および最適化し、システム機能へのアクセスを提供する、クラス、インターフェイス、デリゲート、および値の型が含まれます。 言語間での相互運用性を確保するために、.NET のほとんどの型は CLS (共通言語仕様) に準拠しています。そのため、コンパイラが CLS に準拠しているすべてのプログラミング言語でこれらの型を使用できます。  

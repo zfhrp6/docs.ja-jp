@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33569058"
 ---
 # <a name="node-sets-in-transformations"></a>変換におけるノード セット
 ノード セットは、XPath (XML Path Language) 式が返す 4 つの基本データ型のうちの 1 つです。 ノード セットは、ドキュメントの順番で作成された、重複がなくソートされていないノードのコレクションであり、スタイル シートの変数に割り当てることができます。  

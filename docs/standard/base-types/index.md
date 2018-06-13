@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33567640"
 ---
 # <a name="working-with-base-types-in-net"></a>.NET における基本型の操作
 このセクションでは、書式設定、変換、および一般的な操作を含む、.NET 基本型の操作について説明します。  

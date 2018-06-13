@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33647310"
 ---
 # <a name="when-to-use-an-enumeration-visual-basic"></a>列挙型を使用する状況 (Visual Basic)
 列挙体は、関連する定数のセットを操作する簡単な方法を提供します。 列挙をまたは`Enum`一連の値のシンボリック名を指定します。 列挙体は、データ型として扱われ、それらを使用して、変数とプロパティを使用する定数のセットを作成することができます。  

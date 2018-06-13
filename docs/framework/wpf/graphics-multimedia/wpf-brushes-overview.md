@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33566601"
 ---
 # <a name="wpf-brushes-overview"></a>WPF のブラシの概要
 画面に表示できるものは、ブラシによって描画されているために表示されます。 たとえば、ブラシを使用して、ボタン、テキストの前景色、図形の塗りつぶしの背景について説明します。 このトピックでの描画の概念を説明する[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]ブラシし、例について説明します。 ブラシを使用すると、[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] オブジェクトを単色で塗りつぶすことも、パターンとイメージの複雑な組み合わせで塗りつぶすこともできます。  

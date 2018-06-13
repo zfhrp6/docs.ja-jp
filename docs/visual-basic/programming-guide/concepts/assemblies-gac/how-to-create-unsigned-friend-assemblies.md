@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33643066"
 ---
 # <a name="how-to-create-unsigned-friend-assemblies-visual-basic"></a>方法: 署名のないフレンド アセンブリ (Visual Basic) を作成します。
 この例では、署名のないアセンブリと共にフレンド アセンブリを使用する方法を示します。  

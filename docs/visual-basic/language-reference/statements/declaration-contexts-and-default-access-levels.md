@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33605447"
 ---
 # <a name="declaration-contexts-and-default-access-levels-visual-basic"></a>宣言コンテキストと既定のアクセス レベル (Visual Basic)
 このトピックでは、どのデータ型内でどの Visual Basic の型を宣言することができ、どのようなこれらのアクセス レベルを既定値も指定しない場合について説明します。  

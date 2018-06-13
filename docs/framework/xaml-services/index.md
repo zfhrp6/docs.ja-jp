@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33566835"
 ---
 # <a name="xaml-services"></a>XAML サービス
 このトピックでは、サービスの .NET Framework XAML と呼ばれるテクノロジ一連の機能について説明します。 導入されたアセンブリである System.Xaml アセンブリに、ほとんどのサービスおよび説明する Api がある、 [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] .NET core アセンブリのセット。 サービスには、リーダーとライター、スキーマのクラスおよびスキーマのサポートは、ファクトリ クラス、XAML 言語の組み込みサポート、およびその他の XAML 言語機能の属性です。  

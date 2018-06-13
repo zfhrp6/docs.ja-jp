@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33523124"
 ---
 # <a name="how-to-tile-a-shape-with-an-image"></a>方法 : イメージを並べたパターンによって図形を塗りつぶす
 並べてフロアをカバーするタイルを配置すると同様、塗りつぶし (タイル) 図形を四角形のイメージを互いの横にある配置できます。 図形の内部を並べて表示するには、テクスチャ ブラシを使用します。 構築する場合、<xref:System.Drawing.TextureBrush>オブジェクトのコンス トラクターに渡す引数の 1 つは、<xref:System.Drawing.Image>オブジェクト。 図形の内部を描画するテクスチャ ブラシを使用する場合は、このイメージの繰り返しコピーで、図形が塗りつぶされます。  

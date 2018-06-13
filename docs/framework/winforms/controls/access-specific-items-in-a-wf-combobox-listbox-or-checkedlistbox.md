@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33523570"
 ---
 # <a name="how-to-access-specific-items-in-a-windows-forms-combobox-listbox-or-checkedlistbox-control"></a>方法 : Windows フォーム ComboBox、ListBox、または CheckedListBox コントロールの特定の項目にアクセスする
 Windows フォームのコンボ ボックス、リスト ボックスで、またはチェックされたリスト ボックス内の特定のアイテムへのアクセスは、重要なタスクです。 所定の位置に、一覧にあるプログラムで確認することができます。  

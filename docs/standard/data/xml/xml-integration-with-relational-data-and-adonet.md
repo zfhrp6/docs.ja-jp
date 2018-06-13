@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33575702"
 ---
 # <a name="xml-integration-with-relational-data-and-adonet"></a>XML とリレーショナル データおよび ADO.NET との統合
 **XmlDocument** の派生クラスである **XmlDataDocument** クラスには XML データが格納されます。 **XmlDataDocument** の利点は、リレーショナル データと階層データとを仲介できることです。 **DataSet** に連結できるのは **XmlDocument** であり、どちらのクラスも、それぞれが格納しているデータが変更されたときに、変更内容の同期をとることができます。 **DataSet** に連結した **XmlDocument** では XML をリレーショナル データと統合できるため、データ表現は XML でもリレーショナル形式でもかまいません。 両方の処理ができ、一方のデータ表現だけに制限されることもありません。  

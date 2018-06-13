@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33486043"
 ---
 # <a name="trace-type-summary"></a>トレースの種類の概要
 [Sourcelevels](http://go.microsoft.com/fwlink/?LinkID=94943)さまざまなトレース レベルを定義します。 重大なエラー、警告、情報、および Verbose も同様の説明、`ActivityTracing`の出力を切り替えるかをフラグは、境界とアクティビティ転送イベントをトレースします。  

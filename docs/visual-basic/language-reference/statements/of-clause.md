@@ -22,6 +22,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33603952"
 ---
 # <a name="of-clause-visual-basic"></a>Of 句 (Visual Basic)
 導入されています、`Of`句であることを識別、*パラメーター入力*上、*ジェネリック*クラス、構造体、インターフェイス、デリゲート、またはプロシージャ。 ジェネリック型については、次を参照してください。 [Visual Basic におけるジェネリック型](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)です。  

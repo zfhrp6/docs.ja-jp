@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33643927"
 ---
 # <a name="iterators-visual-basic"></a>反復子 (Visual Basic)
 *反復子*を使用して、リストや配列などのコレクションをステップ実行することができます。  

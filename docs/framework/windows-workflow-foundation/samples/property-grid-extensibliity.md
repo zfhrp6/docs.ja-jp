@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33519595"
 ---
 # <a name="property-grid-extensibliity"></a>プロパティ グリッドの拡張
 開発者は、デザイナー内で特定のアクティビティを選択したときに表示されるプロパティ グリッドをカスタマイズできます。 これにより、高度な編集操作の作成が可能になります。 このサンプルでは、その方法を示します。  

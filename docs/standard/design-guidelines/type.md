@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33572890"
 ---
 # <a name="type-design-guidelines"></a>型のデザインのガイドライン
 CLR の観点からは、型の 2 つのカテゴリがあります: 参照型と値の型: フレームワーク デザインの詳細については、するためにお種類以上の論理グループ分け、それぞれ独自の特定のデザイン規則には。  

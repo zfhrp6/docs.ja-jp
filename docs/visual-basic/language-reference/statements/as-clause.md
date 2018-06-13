@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33604264"
 ---
 # <a name="as-clause-visual-basic"></a>As 句 (Visual Basic)
 導入されています、`As`句は、宣言ステートメントまたはジェネリック型パラメーターの制約リストでのデータ型を識別します。  

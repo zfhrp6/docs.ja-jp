@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33578067"
 ---
 # <a name="serialization"></a>シリアル化
 シリアル化は、オブジェクトを簡単に永続化または転送できる形式に変換するプロセスです。 たとえば、オブジェクトをシリアル化、HTTP を使用して、移行先コンピューターで逆シリアル化した、インターネット経由で転送できます。  

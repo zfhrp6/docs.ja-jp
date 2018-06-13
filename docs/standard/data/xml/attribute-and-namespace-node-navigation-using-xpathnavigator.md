@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33577021"
 ---
 # <a name="attribute-and-namespace-node-navigation-using-xpathnavigator"></a>XPathNavigator を使用する属性と名前空間のナビゲーション
 <xref:System.Xml.XPath.XPathNavigator> クラスは、2 セットの移動メソッドを提供します。「[XPathNavigator を使用するノード セットのナビゲーション](../../../../docs/standard/data/xml/node-set-navigation-using-xpathnavigator.md)」に記載されている最初のセットは <xref:System.Xml.XPath.XPathDocument> または <xref:System.Xml.XmlDocument> オブジェクト内の*ノード セット*の移動に使用されます。 ここに記載されている 2 つ目のセットは、<xref:System.Xml.XPath.XPathDocument> または <xref:System.Xml.XmlDocument> オブジェクト内の*属性ノードと名前空間ノード*の移動に使用されます。  

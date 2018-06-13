@@ -9,6 +9,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32767428"
 ---
 # <a name="ltclaimtypegt"></a>&lt;ClaimType&gt;
 受信セキュリティ トークンの 1 つの省略可能または必須のクレームを指定します。  

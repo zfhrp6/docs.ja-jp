@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 1c77f946b14fcb5ddc786488ab42e37eb868fbc9
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33448280"
 ---
 # <a name="imetadataimportgetnestedclassprops-method"></a>IMetaDataImport::GetNestedClassProps メソッド
 親の TypeDef トークンを取得<xref:System.Type>入れ子にされた型の指定しました。  

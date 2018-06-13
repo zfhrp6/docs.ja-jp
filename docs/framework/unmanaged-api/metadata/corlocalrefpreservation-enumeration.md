@@ -18,9 +18,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: ee808ba403a513b897134420b45ebe8cd3537571
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33442247"
 ---
 # <a name="corlocalrefpreservation-enumeration"></a>CorLocalRefPreservation 列挙型
 ローカル参照の処理のためのフラグ値が格納されます。  

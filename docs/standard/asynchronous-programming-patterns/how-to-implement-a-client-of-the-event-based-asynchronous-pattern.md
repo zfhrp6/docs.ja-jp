@@ -23,6 +23,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33567277"
 ---
 # <a name="how-to-implement-a-client-of-the-event-based-asynchronous-pattern"></a>方法 : イベントベースの非同期パターンのクライアントを実装する
 次のコード例では、[イベント ベースの非同期パターンの概要](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md)ページに記載されている方法でコンポーネントを使用しています。 この例のフォームでは、「[方法 : イベントベースの非同期パターンをサポートするコンポーネントを実装する](../../../docs/standard/asynchronous-programming-patterns/component-that-supports-the-event-based-asynchronous-pattern.md)」に説明がある `PrimeNumberCalculator` コンポーネントが使用されています。  

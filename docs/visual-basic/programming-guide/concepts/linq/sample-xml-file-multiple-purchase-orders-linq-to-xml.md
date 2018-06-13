@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33645942"
 ---
 # <a name="sample-xml-file-multiple-purchase-orders-linq-to-xml"></a>サンプル XML ファイル : 複数の購買発注書 (LINQ to XML)
 次の XML ファイルは、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] ドキュメントのさまざまな例で使用されます。 このファイルには、複数の購買発注書が含まれています。  

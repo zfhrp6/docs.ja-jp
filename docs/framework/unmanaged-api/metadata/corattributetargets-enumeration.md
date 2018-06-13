@@ -18,9 +18,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 54d239c3091b29424b26fbab4cb4eb9152ff9ad9
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33442167"
 ---
 # <a name="corattributetargets-enumeration"></a>CorAttributeTargets 列挙型
 属性を適用できるアプリケーション要素を指定します。  

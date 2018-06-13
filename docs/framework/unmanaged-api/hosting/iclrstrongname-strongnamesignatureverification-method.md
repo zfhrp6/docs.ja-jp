@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 5e43f42d01bf61e8ab15fd45fa43329d71ba3b26
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33435326"
 ---
 # <a name="iclrstrongnamestrongnamesignatureverification-method"></a>ICLRStrongName::StrongNameSignatureVerification メソッド
 指定されたパスにあるアセンブリ マニフェストが指定したフラグに従って検証される厳密な名前の署名を含むかどうかを示す値を取得します。  

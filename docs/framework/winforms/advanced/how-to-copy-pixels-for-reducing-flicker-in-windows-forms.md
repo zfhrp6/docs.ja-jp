@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33522045"
 ---
 # <a name="how-to-copy-pixels-for-reducing-flicker-in-windows-forms"></a>方法 :ピクセルをコピーして Windows フォームのちらつきを低減する
 単純なグラフィックをアニメーション化するときにユーザーことができる場合もありますが発生ちらつき、またはその他の望ましくない視覚効果。 この問題を制限する 1 つの方法は、プロセスを使用して、"bitblt"画像の上です。 Bitblt は、「ビット ブロック転送」色データの元の四角形にはピクセルからピクセルの四角形に。  

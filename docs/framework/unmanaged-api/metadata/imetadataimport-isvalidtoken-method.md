@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: d752d6dbe8a6b7a23faae498f9118c8d89e92929
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33447698"
 ---
 # <a name="imetadataimportisvalidtoken-method"></a>IMetaDataImport::IsValidToken メソッド
 指定したトークンが、コード オブジェクトへの有効な参照を保持しているかどうかを示す値を取得します。  

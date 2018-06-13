@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 9e4db5f3c7deb300a9666182cb6b712eacf42cfa
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33436229"
 ---
 # <a name="iclrmetahost-interface"></a>ICLRMetaHost インターフェイス
 そのバージョン番号に基づいた、共通言語ランタイム (CLR) の特定のバージョンを返す、インストールされている Clr のすべてを一覧表示、指定されたプロセスに読み込まれるすべてのランタイムの一覧で、アセンブリをコンパイル、プロセスを終了するために使用する CLR バージョンを検出するメソッドを提供します。クリーン ランタイムがシャット ダウン、および従来の API バインドをクエリします。  

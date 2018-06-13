@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33571983"
 ---
 # <a name="miscellaneous-constructs-in-regular-expressions"></a>正規表現でのその他の構成体
 .NET の正規表現には、次の 3 つのその他の言語コンストラクトが含まれます。 1 つは、正規表現パターンの途中で特定の一致オプションを有効または無効にすることができます。 残りの 2 つは、正規表現にコメントを含めることができます。  

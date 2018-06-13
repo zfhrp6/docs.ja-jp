@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33572867"
 ---
 # <a name="how-to-handle-multiple-events-using-event-properties"></a>方法 : イベント プロパティを使用して複数のイベントを処理する
 イベント プロパティを使用するには、イベントを発生させるクラスにイベント プロパティを定義し、そのイベントを処理するクラスにイベント プロパティのデリゲートを設定します。 1 つのクラスにイベント プロパティを複数実装するには、そのクラス内部に、各イベント用に定義されたデリゲートを格納および保持する必要があります。 通常は、イベント キーをインデックスとするデリゲート コレクションを実装することによってこれを実現します。  

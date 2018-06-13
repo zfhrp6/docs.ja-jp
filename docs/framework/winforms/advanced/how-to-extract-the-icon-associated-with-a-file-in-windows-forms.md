@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33522667"
 ---
 # <a name="how-to-extract-the-icon-associated-with-a-file-in-windows-forms"></a>方法 : Windows フォームでファイルに関連付けられているアイコンを抽出する
 多くのファイルには、関連付けられているファイルの種類の視覚的に表示されるアイコンが埋め込まれています。 たとえば、Microsoft Word ドキュメントには、Word 文書として識別されるアイコンが含まれます。 ファイルを表示する、テーブル コントロールまたはリスト コントロールで、ときに各ファイル名の横にあるファイルの種類を表すアイコンを表示することがあります。 使用して簡単に行うことができます、<xref:System.Drawing.Icon.ExtractAssociatedIcon%2A>メソッドです。  

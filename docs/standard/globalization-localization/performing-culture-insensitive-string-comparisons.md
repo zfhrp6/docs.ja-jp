@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33573608"
 ---
 # <a name="performing-culture-insensitive-string-comparisons"></a>カルチャを認識しない文字列比較の実行
 既定では、<xref:System.String.Compare%2A?displayProperty=nameWithType> メソッドはカルチャを認識し、大文字と小文字を区別する比較を実行します。 また、このメソッドには、使用するカルチャを `culture` パラメーターで指定し、使用する比較規則を `comparisonType` パラメーターで指定できる、複数のオーバーロードが含まれています。 既定のオーバーロードの代わりにこれらのメソッドを呼び出すと、特定のメソッド呼び出しで使用する規則に関するあいまいさが解消され、特定の比較がカルチャに依存するかどうかが明確になります。  

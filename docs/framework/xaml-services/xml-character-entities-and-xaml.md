@@ -25,6 +25,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33564769"
 ---
 # <a name="xml-character-entities-and-xaml"></a>XML 文字エンティティと XAML
 XAML は、特殊文字に、XML で定義される文字エンティティを使用します。 ここでは、いくつかの特定の文字エンティティ、および XAML における他の XML の概念に関する一般的な考慮事項について説明します。  

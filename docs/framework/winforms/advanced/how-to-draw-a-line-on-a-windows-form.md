@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33523343"
 ---
 # <a name="how-to-draw-a-line-on-a-windows-form"></a>方法 : Windows フォームに直線を描画する
 この例では、フォームに直線を描画します。 通常、フォームに描画するときに処理するフォームの<xref:System.Windows.Forms.Control.Paint>イベント描画を使用して実行し、<xref:System.Windows.Forms.PaintEventArgs.Graphics%2A>のプロパティ、<xref:System.Windows.Forms.PaintEventArgs>この例で示すように、  

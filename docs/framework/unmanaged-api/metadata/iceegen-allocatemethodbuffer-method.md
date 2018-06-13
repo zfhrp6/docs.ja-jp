@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: f56376d4400f4e24aefe2d1e5d4ad504b1d281cf
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33446005"
 ---
 # <a name="iceegenallocatemethodbuffer-method"></a>ICeeGen::AllocateMethodBuffer メソッド
 メソッドで指定されたサイズのバッファーを作成し、メソッドの相対仮想アドレスを取得します。  

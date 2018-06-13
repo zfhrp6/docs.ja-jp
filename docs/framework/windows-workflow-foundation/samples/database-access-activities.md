@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33520410"
 ---
 # <a name="database-access-activities"></a>データベース アクセス アクティビティ
 データベース アクセス アクティビティを使用すると、ワークフロー内でデータベースにアクセスできます。 これらのアクティビティを取得または情報を変更し、使用するデータベースへのアクセスを許可する[ADO.NET](http://go.microsoft.com/fwlink/?LinkId=166081)データベースにアクセスします。  

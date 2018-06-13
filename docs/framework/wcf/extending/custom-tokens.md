@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33485366"
 ---
 # <a name="custom-tokens"></a>カスタム トークン
 ネイティブ、Windows Communication Foundation (WCF) は、X.509 証明書、セキュリティ コンテキスト トークン、Kerberos チケット、およびユーザー名トークン資格情報としてサポートしていますは、カスタム資格情報を使用できるようにするのに十分な柔軟性があります。  

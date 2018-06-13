@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33570471"
 ---
 # <a name="user-defined-functions-and-variables"></a>ユーザー定義の関数と変数
 <xref:System.Xml.XPath.XPathNavigator> クラスは、<xref:System.Xml.XPath.XPathDocument> データの操作に使用されるメソッドのセットを提供します。 XPath クエリ式で使用する拡張関数および変数を実装することで、標準の XPath 関数を補完できます。 <xref:System.Xml.XPath.XPathExpression.SetContext%2A> メソッドは、<xref:System.Xml.Xsl.XsltContext> から派生した、ユーザー定義のコンテキストを受け取ることができます。 ユーザー定義の関数は、カスタム コンテキストで解決されます。  

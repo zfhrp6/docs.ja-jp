@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33219275"
 ---
 # <a name="floating-point-types-table-c-reference"></a>浮動小数点型の一覧表 (C# リファレンス)
 次の表では、浮動小数点型の有効桁数とおおよその範囲を示します。  

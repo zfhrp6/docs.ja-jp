@@ -22,6 +22,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33574661"
 ---
 # <a name="performing-culture-insensitive-case-changes"></a>カルチャを認識しない大文字と小文字の変更の実行
 <xref:System.String.ToUpper%2A?displayProperty=nameWithType>、<xref:System.String.ToLower%2A?displayProperty=nameWithType>、<xref:System.Char.ToUpper%2A?displayProperty=nameWithType>、<xref:System.Char.ToLower%2A?displayProperty=nameWithType> の各メソッドには、パラメーターを受け取らないオーバーロードが用意されています。 既定では、パラメーターを使用しないこれらのオーバーロードは、<xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> の値に基づいて大文字と小文字の変更を実行します。 このため、大文字と小文字を区別する結果がカルチャによって異なる場合があります。 大文字と小文字の変更がカルチャに依存するかどうかを明確にするには、`culture` パラメーターを明示的に指定する必要があるこれらのメソッドのオーバーロードを使用する必要があります。 大文字と小文字の変更がカルチャに依存する場合は、`CultureInfo.CurrentCulture` パラメーターとして `culture` を指定します。 大文字と小文字の変更がカルチャに依存しない場合は、`CultureInfo.InvariantCulture` パラメーターとして `culture` を指定します。  

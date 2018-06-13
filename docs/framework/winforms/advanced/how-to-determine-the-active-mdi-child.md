@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33521719"
 ---
 # <a name="how-to-determine-the-active-mdi-child"></a>方法 : アクティブな MDI 子フォームを特定する
 場合によっては、現在アクティブな子フォームにフォーカスを持つコントロールが操作するコマンドを提供するされます。 たとえば、子フォームのテキスト ボックスから選択したテキストをクリップボードにコピーするとします。 クリップボードを使用して、選択したテキストをコピーするプロシージャを作成すると、<xref:System.Windows.Forms.Control.Click>コピー メニュー項目の編集 メニューの標準的なイベントです。  

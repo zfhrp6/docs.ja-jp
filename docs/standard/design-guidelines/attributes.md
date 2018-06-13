@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33574635"
 ---
 # <a name="attributes"></a>属性
 <xref:System.Attribute?displayProperty=nameWithType> カスタム属性を定義するために使用する基本クラスです。  

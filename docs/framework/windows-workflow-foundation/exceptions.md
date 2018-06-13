@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33520160"
 ---
 # <a name="exceptions"></a>例外
 ワークフローは、<xref:System.Activities.Statements.TryCatch> アクティビティを使用して、ワークフローの実行中に発生した例外を処理することができます。 これらの例外は、処理することも可能ですが、<xref:System.Activities.Statements.Rethrow> アクティビティを使用して再スローすることもできます。 <xref:System.Activities.Statements.TryCatch.Finally%2A> セクションのアクティビティは、<xref:System.Activities.Statements.TryCatch.Try%2A> セクションまたは <xref:System.Activities.Statements.TryCatch.Catches%2A> セクションが完了したときに実行されます。 によってホストされるワークフロー、<xref:System.Activities.WorkflowApplication>インスタンスでも使用できます、<xref:System.Activities.WorkflowApplication.OnUnhandledException%2A>で処理されない例外を処理するイベント ハンドラー、<xref:System.Activities.Statements.TryCatch>アクティビティ。  

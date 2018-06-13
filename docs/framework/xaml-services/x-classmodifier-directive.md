@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33564379"
 ---
 # <a name="xclassmodifier-directive"></a>x:ClassModifier ディレクティブ
 XAML のコンパイルの動作を変更するときに`x:Class`も用意されています。 部分を作成する代わりに、具体的には、`class`を持つ、`Public`アクセス レベル (既定)、指定された`x:Class`で作成された、`NotPublic`アクセス レベル。 この動作では、生成されたアセンブリでクラスのアクセス レベルに影響します。  

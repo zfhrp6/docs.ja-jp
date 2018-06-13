@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33654230"
 ---
 # <a name="lifetime-in-visual-basic"></a>Visual Basic における有効期間
 *有効期間*宣言された要素は、期間その中に、使用可能です。 変数は、有効期間がある唯一の要素です。 この目的のため、コンパイラは、プロシージャのパラメーターを処理し、関数は変数の特殊なケースとして返します。 変数の有効期間は、値を保持できる時間の期間を表します。 その有効期間全体でその値を変更することができますが、いくつかの値が常に格納します。  

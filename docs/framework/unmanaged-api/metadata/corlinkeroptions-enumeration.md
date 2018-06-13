@@ -18,9 +18,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 0d154985e9c1614e6b8f13a55410ead0cb5e861b
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33441056"
 ---
 # <a name="corlinkeroptions-enumeration"></a>CorLinkerOptions 列挙型
 メタデータ リンカーのオプションを選択するためのフラグを指定します。  

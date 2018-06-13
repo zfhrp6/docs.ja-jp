@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33572789"
 ---
 # <a name="xml-document-creation"></a>XML ドキュメントの作成
 XML ドキュメントは、2 とおりの方法で作成できます。 1 つは、パラメーターを使用せずに **XmlDocument** を作成する方法です。 もう 1 つは、**XmlDocument** の作成時に XmlNameTable をパラメーターとして渡す方法です。 パラメーターを使用せず、新しい空の **XmlDocument** を作成する方法を次の例に示します。  

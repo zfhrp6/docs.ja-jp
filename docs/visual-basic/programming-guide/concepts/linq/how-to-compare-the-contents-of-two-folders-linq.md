@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33643914"
 ---
 # <a name="how-to-compare-the-contents-of-two-folders-linq-visual-basic"></a>方法: 2 つのフォルダー (LINQ) (Visual Basic) の内容の比較
 この例では、2 つのファイル リストを比較する 3 つの方法を示します。  

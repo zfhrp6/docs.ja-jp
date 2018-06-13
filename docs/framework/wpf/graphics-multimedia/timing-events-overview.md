@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33565488"
 ---
 # <a name="timing-events-overview"></a>タイミング イベントの概要
 このトピックで使用できる 5 つのタイミング イベントを使用する方法について説明<xref:System.Windows.Media.Animation.Timeline>と<xref:System.Windows.Media.Animation.Clock>オブジェクト。  

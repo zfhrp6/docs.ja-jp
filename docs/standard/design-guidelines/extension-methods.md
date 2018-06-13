@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33574518"
 ---
 # <a name="extension-methods"></a>拡張メソッド
 拡張メソッドは、言語の機能により、インスタンス メソッドの呼び出し構文を使用して呼び出されるメソッドは静的です。 これらのメソッドは、操作するためには、メソッドのインスタンスを表すには、少なくとも 1 つのパラメーターを取得する必要があります。  

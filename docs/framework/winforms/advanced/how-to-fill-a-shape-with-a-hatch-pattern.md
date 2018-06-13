@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33521743"
 ---
 # <a name="how-to-fill-a-shape-with-a-hatch-pattern"></a>方法 : ハッチ パターンで図形を塗りつぶす
 2 つの色からハッチ パターンが行われます: バック グラウンドとバック グラウンド上、パターンを形成する、行のいずれかのいずれか。 ハッチ パターンで、閉じた図形の塗りつぶし を使用して、<xref:System.Drawing.Drawing2D.HatchBrush>オブジェクト。 次の例では、ハッチ パターンで楕円を塗りつぶす方法を示します。  

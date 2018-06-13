@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 751794746e26bd8f0ec2cd6db2f62876e78674e5
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33460276"
 ---
 # <a name="loadtypelibwithresolver-function"></a>LoadTypeLibWithResolver 関数
 タイプ ライブラリの読み込みを使用して、指定された[ITypeLibResolver インターフェイス](../../../../docs/framework/unmanaged-api/tlbexp/itypelibresolver-interface.md)内部的に参照されるタイプ ライブラリを解決するのには。  

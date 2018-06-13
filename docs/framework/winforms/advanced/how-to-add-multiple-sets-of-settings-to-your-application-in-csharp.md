@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33520810"
 ---
 # <a name="how-to-add-multiple-sets-of-settings-to-your-application-in-c"></a>方法 : C# のアプリケーションに複数の設定セットを追加する #
 場合によってで、アプリケーションに複数セットの設定があることができます。 たとえばを開発しているアプリケーションの設定の特定のグループが頻繁に変更すると思われる場合だと考えられますファイルを置換できる、されるように 1 つのファイルに分離してその他の設定は変わりません。 Visual Studio では、複数のセットの設定をプロジェクトに追加することができます。 設定の追加セットは、Properties.Settings オブジェクト経由でアクセスできます。  

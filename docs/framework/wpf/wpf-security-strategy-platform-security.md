@@ -22,6 +22,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33566679"
 ---
 # <a name="wpf-security-strategy---platform-security"></a>WPF のセキュリティ方針 - プラットフォーム セキュリティ
 Windows Presentation Foundation (WPF) は、さまざまなセキュリティ サービスを提供するときに、活用することも、オペレーティング システムが含まれている、基になるプラットフォームのセキュリティ機能、 [!INCLUDE[TLA2#tla_clr](../../../includes/tla2sharptla-clr-md.md)]、および[!INCLUDE[TLA2#tla_ie](../../../includes/tla2sharptla-ie-md.md)]です。 これらの層を組み合わせることで、[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] に強力な多重防御のセキュリティ モデルが提供されます。このセキュリティ モデルでは、次の図に示すように、単一障害点の回避を試みます。  
