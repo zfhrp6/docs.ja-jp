@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32748842"
 ---
 # <a name="ltsystemservicemodelactivationgt"></a>&lt;system.serviceModel.activation&gt;
 この構成セクションは、SMSvcHost.exe ツールの構成設定を表します。 構成要素は、SMSvcHost.exe.config ファイルで構成できます。 特にここには、構成される必要があるコンピューター全体のすべての設定が含まれます。  

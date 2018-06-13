@@ -12,6 +12,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32746892"
 ---
 # <a name="enhanced-strong-naming"></a>拡張された厳密な名前付け
 厳密な名前の署名は、アセンブリを識別するための .NET Framework の識別機構です。 これは通常、発行元 (署名者) から受取人 (検証者) に対して渡されるデータの整合性を検証するために使用される、公開キーによるデジタル署名です。 この署名はアセンブリに対する一意の ID として使用され、これによりアセンブリへの参照のあいまいさをなくします。 アセンブリはビルド プロセスの一部として署名され、読み込まれるときに検証されます。  

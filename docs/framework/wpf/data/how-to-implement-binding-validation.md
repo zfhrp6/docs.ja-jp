@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33556966"
 ---
 # <a name="how-to-implement-binding-validation"></a>方法 : バインディングの検証の実装
 この例を使用する方法を示しています、<xref:System.Windows.Controls.Validation.ErrorTemplate%2A>に無効な値が入力されると、ユーザーに通知する視覚的なフィードバックを提供するスタイルのトリガーのカスタム検証規則に基づいてとします。  

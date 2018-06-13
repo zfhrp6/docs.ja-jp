@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33555952"
 ---
 # <a name="how-to-add-row-details-to-a-datagrid-control"></a>方法: DataGrid コントロールに行の詳細を追加する
 使用する場合、<xref:System.Windows.Controls.DataGrid>コントロール、行の詳細セクションを追加することによってデータの表示をカスタマイズすることができます。 行の詳細セクションを追加するには、必要に応じて表示されるか、折りたたまれる、テンプレート内のデータをグループ化することができます。 行の詳細を追加するなど、<xref:System.Windows.Controls.DataGrid>内の各行のデータの概要のみを表示する、<xref:System.Windows.Controls.DataGrid>が、ユーザーが行を選択したときに、他のデータ フィールドを表示します。 行の詳細セクション内のテンプレートを定義する、<xref:System.Windows.Controls.DataGrid.RowDetailsTemplate%2A>プロパティです。 次の図は、行の詳細セクションの例を示します。  

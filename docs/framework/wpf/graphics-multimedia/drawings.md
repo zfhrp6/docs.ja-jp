@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33556038"
 ---
 # <a name="drawings"></a>描画
 <xref:System.Windows.Media.Drawing> オブジェクトは、効率的に図形、画像、またはテキストの描画に使用されます。 描画するときに図面が使用される、<xref:System.Windows.Media.DrawingBrush>とプログラミングまたは<xref:System.Windows.Media.Visual>オブジェクト。  

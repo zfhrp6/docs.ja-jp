@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33557759"
 ---
 # <a name="how-to-implement-prioritybinding"></a>方法 : PriorityBinding を実装する
 <xref:System.Windows.Data.PriorityBinding> [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]のバインドの一覧を指定することによって動作します。 バインディングのリストの順序は、最高の優先度から最も低い優先順位。 最高の優先度のバインドが値を返す場合が正常に処理される際はありませんリスト内の他のバインディングを処理する必要。 最高の優先度のバインドに評価される時間がかかる場合がある可能性があります、優先順位の高いバインドが正常に値を返すまで、正常に値を返す次の最も優先度が使用されます。  

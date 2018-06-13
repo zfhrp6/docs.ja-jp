@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32749583"
 ---
 # <a name="ltbehaviorextensionsgt"></a>&lt;behaviorExtensions&gt;
 動作の拡張により、ユーザーはユーザー定義の動作要素を作成できます。 これらの要素は、標準の Windows Communication Foundation (WCF) 動作要素と共に使用できます。 `behaviorExtensions` セクションでは、構成で使用できるように要素を定義します。 次の例は、一般的な動作拡張を示します。  

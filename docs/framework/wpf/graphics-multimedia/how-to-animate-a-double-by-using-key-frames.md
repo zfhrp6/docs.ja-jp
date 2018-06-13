@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33557434"
 ---
 # <a name="how-to-animate-a-double-by-using-key-frames"></a>方法 : キー フレームを使用して Double 値をアニメーション化する
 この例を受け取るプロパティの値をアニメーション化する方法を示しています、<xref:System.Double>キー フレームを使用しています。  
