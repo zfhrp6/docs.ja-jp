@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33531252"
 ---
 # <a name="how-to-change-styles-on-an-element-in-the-managed-html-document-object-model"></a><span data-ttu-id="364e6-102">方法 : マネージ HTML DOM (Document Object Model) の要素のスタイルを変更する</span><span class="sxs-lookup"><span data-stu-id="364e6-102">How to: Change Styles on an Element in the Managed HTML Document Object Model</span></span>
 <span data-ttu-id="364e6-103">Html 形式でスタイルを使用すると、ドキュメントとその要素の外観を制御します。</span><span class="sxs-lookup"><span data-stu-id="364e6-103">You can use styles in HTML to control the appearance of a document and its elements.</span></span> <span data-ttu-id="364e6-104"><xref:System.Windows.Forms.HtmlDocument> および<xref:System.Windows.Forms.HtmlElement>サポート<xref:System.Windows.Forms.HtmlElement.Style%2A>次の形式のスタイルの文字列を使用するプロパティ。</span><span class="sxs-lookup"><span data-stu-id="364e6-104"><xref:System.Windows.Forms.HtmlDocument> and <xref:System.Windows.Forms.HtmlElement> support <xref:System.Windows.Forms.HtmlElement.Style%2A> properties that take style strings of the following format:</span></span>  

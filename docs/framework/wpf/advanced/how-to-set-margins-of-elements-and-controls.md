@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33543651"
 ---
 # <a name="how-to-set-margins-of-elements-and-controls"></a><span data-ttu-id="bc4b9-102">方法 : 要素およびコントロールのマージンを設定する</span><span class="sxs-lookup"><span data-stu-id="bc4b9-102">How to: Set Margins of Elements and Controls</span></span>
 <span data-ttu-id="bc4b9-103">この例を設定する方法について説明、<xref:System.Windows.FrameworkElement.Margin%2A>分離コードで余白の幅を既存のプロパティ値を変更することで、プロパティです。</span><span class="sxs-lookup"><span data-stu-id="bc4b9-103">This example describes how to set the <xref:System.Windows.FrameworkElement.Margin%2A> property, by changing any existing property value for the margin in code-behind.</span></span> <span data-ttu-id="bc4b9-104"><xref:System.Windows.FrameworkElement.Margin%2A>プロパティは、プロパティの<xref:System.Windows.FrameworkElement>基本要素、およびさまざまなコントロールとその他の要素によって継承されるためです。</span><span class="sxs-lookup"><span data-stu-id="bc4b9-104">The <xref:System.Windows.FrameworkElement.Margin%2A> property is a property of the <xref:System.Windows.FrameworkElement> base element, and is thus inherited by a variety of controls and other elements.</span></span>  

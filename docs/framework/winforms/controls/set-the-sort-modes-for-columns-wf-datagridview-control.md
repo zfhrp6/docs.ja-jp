@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33535732"
 ---
 # <a name="how-to-set-the-sort-modes-for-columns-in-the-windows-forms-datagridview-control"></a><span data-ttu-id="77dc8-102">方法 : Windows フォーム DataGridView コントロール内の列の並べ替えモードを設定する</span><span class="sxs-lookup"><span data-stu-id="77dc8-102">How to: Set the Sort Modes for Columns in the Windows Forms DataGridView Control</span></span>
 <span data-ttu-id="77dc8-103"><xref:System.Windows.Forms.DataGridView>他の列の型が自動的に並べ替えられていないときに、既定では、自動並べ替えコントロール、テキスト ボックスの列を使用します。</span><span class="sxs-lookup"><span data-stu-id="77dc8-103">In the <xref:System.Windows.Forms.DataGridView> control, text box columns use automatic sorting by default, while other column types are not sorted automatically.</span></span> <span data-ttu-id="77dc8-104">これらの既定値をオーバーライドする場合があります。</span><span class="sxs-lookup"><span data-stu-id="77dc8-104">Sometimes you will want to override these defaults.</span></span> <span data-ttu-id="77dc8-105">たとえば、テキスト、数値、または列挙型のセルの値の代わりにイメージを表示することができます。</span><span class="sxs-lookup"><span data-stu-id="77dc8-105">For example, you can display images in place of text, numbers, or enumeration cell values.</span></span> <span data-ttu-id="77dc8-106">イメージを並べ替えることはできません、中に、それが表す基になる値を並べ替えることができます。</span><span class="sxs-lookup"><span data-stu-id="77dc8-106">While the images cannot be sorted, the underlying values that they represent can be sorted.</span></span>  

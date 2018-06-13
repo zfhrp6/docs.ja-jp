@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33515637"
 ---
 # <a name="basic"></a><span data-ttu-id="04052-102">Basic</span><span class="sxs-lookup"><span data-stu-id="04052-102">Basic</span></span>
 <span data-ttu-id="04052-103">このセクションでは、基本的な Windows Workflow Foundation (WF) 機能を示すサンプルを提供します。</span><span class="sxs-lookup"><span data-stu-id="04052-103">This section provides samples that demonstrate basic Windows Workflow Foundation (WF) functionality.</span></span>  

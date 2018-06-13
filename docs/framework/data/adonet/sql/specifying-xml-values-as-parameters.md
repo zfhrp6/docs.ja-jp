@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33355299"
 ---
 # <a name="specifying-xml-values-as-parameters"></a><span data-ttu-id="1369b-102">パラメーターとしての XML 値の指定</span><span class="sxs-lookup"><span data-stu-id="1369b-102">Specifying XML Values as Parameters</span></span>
 <span data-ttu-id="1369b-103">開発者がのインスタンスを使用してその値を指定できますクエリには、その値は、XML 文字列パラメーターが必要とする場合、 **SqlXml**データ型。</span><span class="sxs-lookup"><span data-stu-id="1369b-103">If a query requires a parameter whose value is an XML string, developers can supply that value using an instance of the **SqlXml** data type.</span></span> <span data-ttu-id="1369b-104">実際にはありませんテクニックです。SQL Server の XML 列では、他のデータ型とまったく同じ方法でパラメーター値をそのまま使用します。</span><span class="sxs-lookup"><span data-stu-id="1369b-104">There really are no tricks; XML columns in SQL Server accept parameter values in exactly the same way as other data types.</span></span>  

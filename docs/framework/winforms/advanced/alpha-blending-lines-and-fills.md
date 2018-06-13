@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33517687"
 ---
 # <a name="alpha-blending-lines-and-fills"></a><span data-ttu-id="6289f-102">アルファ ブレンドの直線と塗りつぶし</span><span class="sxs-lookup"><span data-stu-id="6289f-102">Alpha Blending Lines and Fills</span></span>
 <span data-ttu-id="6289f-103">[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]色がそれぞれ 8 ビットでアルファ、赤、緑、および青の 32 ビット値。</span><span class="sxs-lookup"><span data-stu-id="6289f-103">In [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)], a color is a 32-bit value with 8 bits each for alpha, red, green, and blue.</span></span> <span data-ttu-id="6289f-104">アルファ値は、色の透明度を示します: 範囲の色から背景色とブレンドされます。</span><span class="sxs-lookup"><span data-stu-id="6289f-104">The alpha value indicates the transparency of the color — the extent to which the color is blended with the background color.</span></span> <span data-ttu-id="6289f-105">アルファ値の範囲は 0 ~ 255, 0 が完全に透明色を表すおよび 255 は、完全に不透明な色を表します。</span><span class="sxs-lookup"><span data-stu-id="6289f-105">Alpha values range from 0 through 255, where 0 represents a fully transparent color, and 255 represents a fully opaque color.</span></span>  

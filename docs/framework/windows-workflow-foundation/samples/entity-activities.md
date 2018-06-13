@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33519137"
 ---
 # <a name="entity-activities"></a><span data-ttu-id="225a3-102">エンティティ アクティビティ</span><span class="sxs-lookup"><span data-stu-id="225a3-102">Entity Activities</span></span>
 <span data-ttu-id="225a3-103">このサンプルでは、Windows Workflow Foundation と ADO.NET Entity Framework を使用して、データ アクセスを簡素化する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="225a3-103">This sample shows how to use the ADO.NET Entity Framework with Windows Workflow Foundation to simplify data access.</span></span>  

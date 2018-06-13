@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33358969"
 ---
 # <a name="paging-through-a-query-result"></a><span data-ttu-id="af83f-102">クエリ結果のページング</span><span class="sxs-lookup"><span data-stu-id="af83f-102">Paging Through a Query Result</span></span>
 <span data-ttu-id="af83f-103">クエリ結果のページングとは、クエリ結果をデータの小さなサブセット、つまりページに分けて返すプロセスです。</span><span class="sxs-lookup"><span data-stu-id="af83f-103">Paging through a query result is the process of returning the results of a query in smaller subsets of data, or pages.</span></span> <span data-ttu-id="af83f-104">クエリ結果のページングは、結果を管理しやすい小さな単位でユーザーに表示するために行われる一般的な処理です。</span><span class="sxs-lookup"><span data-stu-id="af83f-104">This is a common practice for displaying results to a user in small, easy-to-manage chunks.</span></span>  

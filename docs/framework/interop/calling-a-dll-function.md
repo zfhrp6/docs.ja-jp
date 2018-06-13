@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33387134"
 ---
 # <a name="calling-a-dll-function"></a><span data-ttu-id="1bbf3-102">DLL 関数の呼び出し</span><span class="sxs-lookup"><span data-stu-id="1bbf3-102">Calling a DLL Function</span></span>
 <span data-ttu-id="1bbf3-103">アンマネージ DLL 関数の呼び出しは、他のマネージ コードの呼び出しとほとんど同じですが、最初のうちは DLL 関数がわかりづらいと感じる違いがあります。</span><span class="sxs-lookup"><span data-stu-id="1bbf3-103">Although calling unmanaged DLL functions is nearly identical to calling other managed code, there are differences that can make DLL functions seem confusing at first.</span></span> <span data-ttu-id="1bbf3-104">ここでは、通常とは異なる呼び出しに関連するいくつかの問題について説明しているトピックを紹介します。</span><span class="sxs-lookup"><span data-stu-id="1bbf3-104">This section introduces topics that describe some of the unusual calling-related issues.</span></span>  

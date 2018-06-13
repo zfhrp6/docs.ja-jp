@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33515689"
 ---
 # <a name="windows-workflow-foundation-programming"></a><span data-ttu-id="bdb36-102">Windows Workflow Foundation プログラミングの新機能</span><span class="sxs-lookup"><span data-stu-id="bdb36-102">Windows Workflow Foundation Programming</span></span>
 <span data-ttu-id="bdb36-103">このセクションには、一連入門トピックに習熟して Windows Workflow Foundation (WF) プログラマになることを理解しておく必要にはが含まれています。</span><span class="sxs-lookup"><span data-stu-id="bdb36-103">This section contains a set of primer topics that you should understand to become a proficient Windows Workflow Foundation (WF) programmer.</span></span>  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33398132"
 ---
 # <a name="integrated-windows-authentication-with-extended-protection"></a><span data-ttu-id="de5c5-102">統合 Windows 認証と拡張保護</span><span class="sxs-lookup"><span data-stu-id="de5c5-102">Integrated Windows Authentication with Extended Protection</span></span>
 <span data-ttu-id="de5c5-103"><xref:System.Net> 名前空間および関連名前空間の <xref:System.Net.HttpWebRequest>、<xref:System.Net.HttpListener>、<xref:System.Net.Mail.SmtpClient>、<xref:System.Net.Security.SslStream>、<xref:System.Net.Security.NegotiateStream>、および関連クラスによる統合 Windows 認証の処理方法に影響を与える、機能強化が行われました。</span><span class="sxs-lookup"><span data-stu-id="de5c5-103">Enhancements were made that affect how integrated Windows authentication is handled by the <xref:System.Net.HttpWebRequest>, <xref:System.Net.HttpListener>, <xref:System.Net.Mail.SmtpClient>, <xref:System.Net.Security.SslStream>, <xref:System.Net.Security.NegotiateStream>, and related classes in the <xref:System.Net> and related namespaces.</span></span> <span data-ttu-id="de5c5-104">セキュリティ強化のため、拡張保護のサポートが追加されました。</span><span class="sxs-lookup"><span data-stu-id="de5c5-104">Support was added for extended protection to enhance security.</span></span>  

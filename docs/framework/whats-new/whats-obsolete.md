@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33514451"
 ---
 # <a name="what39s-obsolete-in-the-net-framework-class-library"></a><span data-ttu-id="32978-102">.NET Framework クラス ライブラリの互換性のために残されている機能</span><span class="sxs-lookup"><span data-stu-id="32978-102">What&#39;s Obsolete in the .NET Framework Class Library</span></span>
 <span data-ttu-id="32978-103">.NET Framework は進化しています。</span><span class="sxs-lookup"><span data-stu-id="32978-103">The .NET Framework changes over time.</span></span> <span data-ttu-id="32978-104">バージョンが新しくなるたびに、新しい機能を提供する新しい型と新しいメンバーが追加されています。</span><span class="sxs-lookup"><span data-stu-id="32978-104">Each new version adds new types and type members that provide new functionality.</span></span> <span data-ttu-id="32978-105">既存の型とそのメンバーも変更されています。</span><span class="sxs-lookup"><span data-stu-id="32978-105">Existing types and their members also change over time.</span></span> <span data-ttu-id="32978-106">たとえば、一部の型は、その型がサポートするテクノロジが新しいテクノロジに置き換えられることで重要度が下がり、一部のメソッドは、より便利な新しいメソッドまたはより多くの機能を備えた新しいメソッドに置き換えられています。</span><span class="sxs-lookup"><span data-stu-id="32978-106">For example, some types become less important as the technology they support is replaced by a new technology, and some methods are superseded by newer methods that are either more convenient or more full-featured.</span></span>  

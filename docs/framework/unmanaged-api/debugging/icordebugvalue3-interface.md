@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: d70a6f5c1df771c514f5f91770b4c53c55fec364
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33420670"
 ---
 # <a name="icordebugvalue3-interface"></a><span data-ttu-id="15476-102">ICorDebugValue3 インターフェイス</span><span class="sxs-lookup"><span data-stu-id="15476-102">ICorDebugValue3 Interface</span></span>
 <span data-ttu-id="15476-103">2 GB よりも大きな配列をサポートする"ICorDebugValue"および"ICorDebugValue2"インターフェイスを拡張します。</span><span class="sxs-lookup"><span data-stu-id="15476-103">Extends the "ICorDebugValue" and "ICorDebugValue2" interfaces to provide support for arrays that are larger than 2 GB.</span></span>  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33397820"
 ---
 # <a name="peer-to-peer-collaboration"></a><span data-ttu-id="30cd7-102">ピアツーピア コラボレーション</span><span class="sxs-lookup"><span data-stu-id="30cd7-102">Peer-to-Peer Collaboration</span></span>
 <span data-ttu-id="30cd7-103">ピアツーピア ネットワーキングは、インターネットのエッジに存在する比較的処理能力の高いコンピューター (パーソナル コンピューター) を、単なるクライアントベースのコンピューティング以上のタスクに利用する方法です。</span><span class="sxs-lookup"><span data-stu-id="30cd7-103">Peer-to-peer networking is the utilization of the relatively powerful computers (personal computers) that exist at the edge of the Internet for more than just client-based computing tasks.</span></span> <span data-ttu-id="30cd7-104">最新のパーソナル コンピューター (PC) は、非常に高速なプロセッサに大容量のメモリとハード ディスクを備えています。しかし、メールや Web 閲覧などの一般的なコンピューティング タスクを実行するとき、それらはいずれも最大活用されていません。</span><span class="sxs-lookup"><span data-stu-id="30cd7-104">The modern personal computer (PC) has a very fast processor, vast memory, and a large hard disk, none of which are being fully utilized when performing common computing tasks such as email and Web browsing.</span></span> <span data-ttu-id="30cd7-105">最新の PC は、さまざまな種類のアプリケーションでクライアントとサーバーの両方 (ピア) として簡単に機能できます。</span><span class="sxs-lookup"><span data-stu-id="30cd7-105">The modern PC can easily act as both a client and server (a peer) for many types of applications.</span></span>  

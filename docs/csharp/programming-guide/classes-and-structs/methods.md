@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33336399"
 ---
 # <a name="methods-c-programming-guide"></a><span data-ttu-id="06636-102">メソッド (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="06636-102">Methods (C# Programming Guide)</span></span>
 <span data-ttu-id="06636-103">メソッドは、一連のステートメントが含まれているコード ブロックです。</span><span class="sxs-lookup"><span data-stu-id="06636-103">A method is a code block that contains a series of statements.</span></span> <span data-ttu-id="06636-104">必要なメソッド引数を指定してプログラムからメソッドを呼び出すと、メソッド内のステートメントが実行されます。</span><span class="sxs-lookup"><span data-stu-id="06636-104">A program causes the statements to be executed by calling the method and specifying any required method arguments.</span></span> <span data-ttu-id="06636-105">C# では、実行されるすべての命令がメソッドのコンテキストで実行されます。</span><span class="sxs-lookup"><span data-stu-id="06636-105">In C#, every executed instruction is performed in the context of a method.</span></span> <span data-ttu-id="06636-106">Main メソッドは、すべての C# アプリケーションのエントリ ポイントです。プログラムが開始されると、このメソッドが共通言語ランタイム (CLR) によって呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="06636-106">The Main method is the entry point for every C# application and it is called by the common language runtime (CLR) when the program is started.</span></span>  

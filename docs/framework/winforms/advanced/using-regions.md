@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33522610"
 ---
 # <a name="using-regions"></a><span data-ttu-id="38235-102">領域の使用</span><span class="sxs-lookup"><span data-stu-id="38235-102">Using Regions</span></span>
 <span data-ttu-id="38235-103">[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] <xref:System.Drawing.Region>クラスでは、カスタムの形状を定義することができます。</span><span class="sxs-lookup"><span data-stu-id="38235-103">The [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] <xref:System.Drawing.Region> class allows you to define a custom shape.</span></span> <span data-ttu-id="38235-104">図形は、線、多角形、および曲線の構成できます。</span><span class="sxs-lookup"><span data-stu-id="38235-104">The shape can be made up of lines, polygons, and curves.</span></span>  

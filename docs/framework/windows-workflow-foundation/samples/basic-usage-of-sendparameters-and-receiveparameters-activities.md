@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33515399"
 ---
 # <a name="basic-usage-of-sendparameters-and-receiveparameters-activities"></a><span data-ttu-id="66ea8-102">SendParameters および ReceiveParameters アクティビティの基本的な使用方法</span><span class="sxs-lookup"><span data-stu-id="66ea8-102">Basic Usage of SendParameters and ReceiveParameters Activities</span></span>
 <span data-ttu-id="66ea8-103">このサンプルでは、<xref:System.ServiceModel.Activities.SendParametersContent> アクティビティと <xref:System.ServiceModel.Activities.ReceiveParametersContent> アクティビティの使用方法を示します。</span><span class="sxs-lookup"><span data-stu-id="66ea8-103">This sample shows the use of <xref:System.ServiceModel.Activities.SendParametersContent> and <xref:System.ServiceModel.Activities.ReceiveParametersContent> activities.</span></span> <span data-ttu-id="66ea8-104">このサービスは、文字列引数を取得して、クライアントに入力を再度エコーするという 1 つの操作を公開します。</span><span class="sxs-lookup"><span data-stu-id="66ea8-104">The service exposes one operation that takes a string argument and echoes the input back to the client.</span></span> <span data-ttu-id="66ea8-105">このサンプルで示すのは、これらのメッセージング アクティビティのパラメーターを設定する方法です。</span><span class="sxs-lookup"><span data-stu-id="66ea8-105">The sample shows how to set up the parameters for these messaging activities.</span></span>  

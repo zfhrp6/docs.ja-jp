@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33516127"
 ---
 # <a name="sending-and-handling-faults"></a><span data-ttu-id="a4ad1-102">エラーの送信と処理</span><span class="sxs-lookup"><span data-stu-id="a4ad1-102">Sending and Handling Faults</span></span>
 <span data-ttu-id="a4ad1-103">このサンプルでは、<xref:System.ServiceModel.Activities.SendReply> および <xref:System.ServiceModel.Activities.ReceiveReply> メッセージング アクティビティを使用して、予期したエラーと予期しないエラーを送受信する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="a4ad1-103">This sample demonstrates how to use the <xref:System.ServiceModel.Activities.SendReply> and <xref:System.ServiceModel.Activities.ReceiveReply> messaging activities to send and receive expected and unexpected faults.</span></span> <span data-ttu-id="a4ad1-104">このシナリオでは、最初のクライアント要求で、その <xref:System.ServiceModel.Activities.Send.KnownTypes%2A> コレクションに含まれている予期したエラーが発生します。</span><span class="sxs-lookup"><span data-stu-id="a4ad1-104">In this scenario, the first client request results in an expected fault that has been included in its <xref:System.ServiceModel.Activities.Send.KnownTypes%2A> collection.</span></span> <span data-ttu-id="a4ad1-105">次のいくつかのクライアント要求によって、予期しないエラーを受信してから、最後の要求が成功します。</span><span class="sxs-lookup"><span data-stu-id="a4ad1-105">The next few client requests result in receiving unexpected faults, before the final request succeeds.</span></span>  

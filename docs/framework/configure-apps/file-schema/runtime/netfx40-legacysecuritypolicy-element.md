@@ -12,6 +12,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32753984"
 ---
 # <a name="ltnetfx40legacysecuritypolicygt-element"></a><span data-ttu-id="a069c-102">&lt;NetFx40_LegacySecurityPolicy&gt;要素</span><span class="sxs-lookup"><span data-stu-id="a069c-102">&lt;NetFx40_LegacySecurityPolicy&gt; Element</span></span>
 <span data-ttu-id="a069c-103">ランタイムがレガシ コード アクセス セキュリティ (CAS) ポリシーを使用するかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="a069c-103">Specifies whether the runtime uses legacy code access security (CAS) policy.</span></span>  

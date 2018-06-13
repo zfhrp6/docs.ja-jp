@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33534074"
 ---
 # <a name="how-to-use-tooltips-in-toolstrip-controls"></a><span data-ttu-id="7ed5d-102">方法 : ToolStrip コントロールにツールヒントを使用する</span><span class="sxs-lookup"><span data-stu-id="7ed5d-102">How to: Use ToolTips in ToolStrip Controls</span></span>
 <span data-ttu-id="7ed5d-103">表示することができます、<xref:System.Windows.Forms.ToolTip>の<xref:System.Windows.Forms.ToolStrip>コントロールの設定で目的のコントロール<xref:System.Windows.Forms.ToolStrip.ShowItemToolTips%2A>プロパティを`true`です。</span><span class="sxs-lookup"><span data-stu-id="7ed5d-103">You can display a <xref:System.Windows.Forms.ToolTip> for the <xref:System.Windows.Forms.ToolStrip> control you want by setting the control's <xref:System.Windows.Forms.ToolStrip.ShowItemToolTips%2A> property to `true`.</span></span>  

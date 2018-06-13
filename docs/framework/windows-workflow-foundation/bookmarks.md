@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33515569"
 ---
 # <a name="bookmarks"></a><span data-ttu-id="5a550-102">ブックマーク</span><span class="sxs-lookup"><span data-stu-id="5a550-102">Bookmarks</span></span>
 <span data-ttu-id="5a550-103">ブックマークは、ワークフローのスレッド上に保持することなく、アクティビティが受動的に入力を待機できるようにする機構です。</span><span class="sxs-lookup"><span data-stu-id="5a550-103">Bookmarks are the mechanism that enables an activity to passively wait for input without holding onto a workflow thread.</span></span> <span data-ttu-id="5a550-104">アクティビティが働きかけを待機していることを示すときは、ブックマークを作成できます。</span><span class="sxs-lookup"><span data-stu-id="5a550-104">When an activity signals that it is waiting for stimulus, it can create a bookmark.</span></span> <span data-ttu-id="5a550-105">これは、現在実行中の (<xref:System.Activities.Bookmark> を作成した) メソッドから返された場合でも、アクティビティの実行が完了していると見なさないことをランタイムに対して示します。</span><span class="sxs-lookup"><span data-stu-id="5a550-105">This indicates to the runtime that the activity’s execution should not be considered complete even when the currently executing method (which created the <xref:System.Activities.Bookmark>) returns.</span></span>  

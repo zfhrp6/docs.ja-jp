@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33335420"
 ---
 # <a name="programming-with-nodes-c"></a><span data-ttu-id="e1759-102">ノードでのプログラミング (C#)</span><span class="sxs-lookup"><span data-stu-id="e1759-102">Programming with Nodes (C#)</span></span>
 <span data-ttu-id="e1759-103">XML エディター、変換システム、レポート作成プログラムなどのプログラムを作成する [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] の開発者は、要素や属性よりも細かい粒度レベルで動作するプログラムを作成しなければならないことがよくあります。</span><span class="sxs-lookup"><span data-stu-id="e1759-103">[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] developers who need to write programs such as an XML editor, a transform system, or a report writer often need to write programs that work at a finer level of granularity than elements and attributes.</span></span> <span data-ttu-id="e1759-104">また場合によっては、ノード レベルで、テキスト ノード、処理命令、およびコメントを操作する必要があります。</span><span class="sxs-lookup"><span data-stu-id="e1759-104">They often need to work at the node level, manipulating text nodes, processing instructions, and comments.</span></span> <span data-ttu-id="e1759-105">このトピックでは、ノード レベルでのプログラミングについて詳しく説明します。</span><span class="sxs-lookup"><span data-stu-id="e1759-105">This topic provides some details about programming at the node level.</span></span>  

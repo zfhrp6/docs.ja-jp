@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33335640"
 ---
 # <a name="programming-concepts-c"></a><span data-ttu-id="bd4ba-102">プログラミングの概念 (C#)</span><span class="sxs-lookup"><span data-stu-id="bd4ba-102">Programming Concepts (C#)</span></span>
 <span data-ttu-id="bd4ba-103">このセクションでは、C# 言語でのプログラミングの概念について説明します。</span><span class="sxs-lookup"><span data-stu-id="bd4ba-103">This section explains programming concepts in the C# language.</span></span>  

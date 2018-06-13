@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33516440"
 ---
 # <a name="nopersistscope-activity"></a><span data-ttu-id="6e795-102">NoPersistScope アクティビティ</span><span class="sxs-lookup"><span data-stu-id="6e795-102">NoPersistScope Activity</span></span>
 <span data-ttu-id="6e795-103">このサンプルでは、ワークフローでシリアル化不可能で破棄可能な状態を処理する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="6e795-103">This sample shows how to manipulate a non-serializable and disposable state within a workflow.</span></span> <span data-ttu-id="6e795-104">ワークフローでシリアル化不可能な状態を永続化しないようにし、破棄可能なオブジェクトをワークフローで使用した後にクリーンアップすることが重要です。</span><span class="sxs-lookup"><span data-stu-id="6e795-104">It is important that workflows do not attempt to persist non-serializable state and it is also important for disposable objects to be cleaned up after they are used in workflow.</span></span>  

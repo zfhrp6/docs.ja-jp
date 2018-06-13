@@ -9,6 +9,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32755078"
 ---
 # <a name="ltremovegt"></a><span data-ttu-id="27d08-102">&lt;remove&gt;</span><span class="sxs-lookup"><span data-stu-id="27d08-102">&lt;remove&gt;</span></span>
 <span data-ttu-id="27d08-103">トークン ハンドラー コレクションから指定したセキュリティ トークン ハンドラーを削除します。</span><span class="sxs-lookup"><span data-stu-id="27d08-103">Removes the specified security token handler from the token handler collection.</span></span>  

@@ -9,6 +9,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32755098"
 ---
 # <a name="ltnameclaimtypegt"></a><span data-ttu-id="e3c2c-102">&lt;nameClaimType&gt;</span><span class="sxs-lookup"><span data-stu-id="e3c2c-102">&lt;nameClaimType&gt;</span></span>
 <span data-ttu-id="e3c2c-103">指定するクレームの種類を設定、<xref:System.Security.Principal.IIdentity.Name%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="e3c2c-103">Sets the claim type that specifies the <xref:System.Security.Principal.IIdentity.Name%2A> property.</span></span> <span data-ttu-id="e3c2c-104">要求の種類がの検索に使用される、<xref:System.Security.Claims.Claim>のコレクションで<xref:System.Security.Claims.ClaimsIdentity>によって返されるオブジェクト、<xref:System.IdentityModel.Tokens.SecurityTokenHandler.ValidateToken%2A>このトークン ハンドラーのメソッドです。</span><span class="sxs-lookup"><span data-stu-id="e3c2c-104">The claim type is used to search for a <xref:System.Security.Claims.Claim> in the collection of <xref:System.Security.Claims.ClaimsIdentity> objects returned by the <xref:System.IdentityModel.Tokens.SecurityTokenHandler.ValidateToken%2A> method of this token handler.</span></span> <span data-ttu-id="e3c2c-105">一致する要求の値がの名前として設定し、<xref:System.Security.Principal.IIdentity>このトークン ハンドラーから生成します。</span><span class="sxs-lookup"><span data-stu-id="e3c2c-105">The value of the matching claim is then set as the name of the <xref:System.Security.Principal.IIdentity> generated from this token handler.</span></span>  

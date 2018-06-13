@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33518578"
 ---
 # <a name="using-a-custom-expression-editor"></a><span data-ttu-id="656bd-102">カスタム式エディターの使用</span><span class="sxs-lookup"><span data-stu-id="656bd-102">Using a Custom Expression Editor</span></span>
 <span data-ttu-id="656bd-103">カスタム式エディターを実装して、式の編集を多機能化したり単純化したりすることができます。</span><span class="sxs-lookup"><span data-stu-id="656bd-103">A custom expression editor can be implemented to provide a richer or simpler expression editing experience.</span></span> <span data-ttu-id="656bd-104">たとえば、次のような場合にカスタム式エディターを使用できます。</span><span class="sxs-lookup"><span data-stu-id="656bd-104">There are several scenarios in which you might want to use a custom expression editor:</span></span>  

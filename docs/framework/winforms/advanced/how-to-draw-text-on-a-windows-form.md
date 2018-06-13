@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33524785"
 ---
 # <a name="how-to-draw-text-on-a-windows-form"></a><span data-ttu-id="f15d2-102">方法 : Windows フォームにテキストを描画する</span><span class="sxs-lookup"><span data-stu-id="f15d2-102">How to: Draw Text on a Windows Form</span></span>
 <span data-ttu-id="f15d2-103">次のコード例を使用する方法を示しています、<xref:System.Drawing.Graphics.DrawString%2A>のメソッド、<xref:System.Drawing.Graphics>フォームにテキストを描画します。</span><span class="sxs-lookup"><span data-stu-id="f15d2-103">The following code example shows how to use the <xref:System.Drawing.Graphics.DrawString%2A> method of the <xref:System.Drawing.Graphics> to draw text on a form.</span></span> <span data-ttu-id="f15d2-104">また、使用することができます<xref:System.Windows.Forms.TextRenderer>フォームでテキストを描画するためです。</span><span class="sxs-lookup"><span data-stu-id="f15d2-104">Alternatively, you can use <xref:System.Windows.Forms.TextRenderer> for drawing text on a form.</span></span> <span data-ttu-id="f15d2-105">詳細については、次を参照してください。[する方法: GDI でテキストを描画](../../../../docs/framework/winforms/advanced/how-to-draw-text-with-gdi.md)です。</span><span class="sxs-lookup"><span data-stu-id="f15d2-105">For more information, see [How to: Draw Text with GDI](../../../../docs/framework/winforms/advanced/how-to-draw-text-with-gdi.md).</span></span>  

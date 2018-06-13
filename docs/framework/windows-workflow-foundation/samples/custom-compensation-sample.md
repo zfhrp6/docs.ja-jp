@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33514325"
 ---
 # <a name="custom-compensation-sample"></a><span data-ttu-id="12cbc-102">カスタム補正のサンプル</span><span class="sxs-lookup"><span data-stu-id="12cbc-102">Custom Compensation Sample</span></span>
 <span data-ttu-id="12cbc-103">このサンプルでは、<xref:System.Activities.Statements.CompensableActivity> とその補正ハンドラーを使用してカスタム補正ロジックを定義する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="12cbc-103">This sample shows how to use <xref:System.Activities.Statements.CompensableActivity> and its compensation handler to define custom compensation logic.</span></span> <span data-ttu-id="12cbc-104">このサンプルでは、トラック レンタル会社のシナリオをモデル化しています。</span><span class="sxs-lookup"><span data-stu-id="12cbc-104">The scenario modeled in this sample is a Truck Rental Agency.</span></span>  

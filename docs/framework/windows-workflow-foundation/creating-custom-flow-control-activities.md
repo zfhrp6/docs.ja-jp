@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33513215"
 ---
 # <a name="creating-custom-flow-control-activities"></a><span data-ttu-id="267dc-102">カスタムのフロー制御アクティビティの作成</span><span class="sxs-lookup"><span data-stu-id="267dc-102">Creating custom flow control activities</span></span>
 <span data-ttu-id="267dc-103">.NET Framework には、抽象化されたプログラミング構造 (<xref:System.Activities.Statements.Flowchart> など) や標準的なプログラミング ステートメント (<xref:System.Activities.Statements.If> など) に対して同様に機能するさまざまなフロー制御アクティビティがあります。</span><span class="sxs-lookup"><span data-stu-id="267dc-103">The .Net Framework contains a variety of flow-control activities that function similarly to abstract programming structures (such as <xref:System.Activities.Statements.Flowchart>)   or to standard programming statements (such as <xref:System.Activities.Statements.If>).</span></span> <span data-ttu-id="267dc-104">サンプル プロジェクトの 1 つのアーキテクチャについて説明[非ジェネリックの ForEach](../../../docs/framework/windows-workflow-foundation/samples/non-generic-foreach.md)です。</span><span class="sxs-lookup"><span data-stu-id="267dc-104">This topic discusses the architecture of one of the sample projects, [Non-Generic ForEach](../../../docs/framework/windows-workflow-foundation/samples/non-generic-foreach.md).</span></span>  

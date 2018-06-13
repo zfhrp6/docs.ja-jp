@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33518503"
 ---
 # <a name="activity-definition-scoping-and-visibility"></a><span data-ttu-id="6b389-102">アクティビティ定義のスコープ設定と表示</span><span class="sxs-lookup"><span data-stu-id="6b389-102">Activity Definition Scoping and Visibility</span></span>
 <span data-ttu-id="6b389-103">アクティビティ定義のスコープと可視性は、オブジェクトのスコープと可視性と同様に、他のオブジェクトまたはアクティビティがアクティビティのメンバーにアクセスするために必要な機能です。</span><span class="sxs-lookup"><span data-stu-id="6b389-103">Activity definition scoping and visibility, just like scoping and visibility of an object, is the ability of other objects or activities to access members of the activity.</span></span> <span data-ttu-id="6b389-104">アクティビティ定義は次の実装によって実行されます。</span><span class="sxs-lookup"><span data-stu-id="6b389-104">Activity definition is performed by the following implementations:</span></span>  

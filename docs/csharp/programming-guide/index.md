@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33333272"
 ---
 # <a name="c-programming-guide"></a><span data-ttu-id="a6839-102">C# プログラミング ガイド</span><span class="sxs-lookup"><span data-stu-id="a6839-102">C# programming guide</span></span>
 <span data-ttu-id="a6839-103">このセクションでは、C# 言語の重要な機能に関する詳細と、.NET Framework 経由でアクセスできる C# の機能について説明します。</span><span class="sxs-lookup"><span data-stu-id="a6839-103">This section provides detailed information on key C# language features and features accessible to C# through the .NET Framework.</span></span>  

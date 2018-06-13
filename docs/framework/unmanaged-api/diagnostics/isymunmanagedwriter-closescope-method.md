@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: a11f689f1fa93e1122ffcc78187c4287db7ea534
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33427025"
 ---
 # <a name="isymunmanagedwriterclosescope-method"></a><span data-ttu-id="4b7e3-102">ISymUnmanagedWriter::CloseScope メソッド</span><span class="sxs-lookup"><span data-stu-id="4b7e3-102">ISymUnmanagedWriter::CloseScope Method</span></span>
 <span data-ttu-id="4b7e3-103">現在の構文のスコープを閉じます。</span><span class="sxs-lookup"><span data-stu-id="4b7e3-103">Closes the current lexical scope.</span></span>  

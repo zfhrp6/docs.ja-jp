@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33513085"
 ---
 # <a name="custom-activities"></a><span data-ttu-id="491e5-102">カスタム アクティビティ</span><span class="sxs-lookup"><span data-stu-id="491e5-102">Custom Activities</span></span>
 <span data-ttu-id="491e5-103">このセクションには、Windows Workflow Foundation (WF) でカスタム アクティビティを作成する方法を示すサンプルが含まれています。</span><span class="sxs-lookup"><span data-stu-id="491e5-103">This section contains samples that demonstrate how to create custom activities in Windows Workflow Foundation (WF).</span></span>  

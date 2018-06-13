@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33516306"
 ---
 # <a name="durable-delay-in-xamlx"></a><span data-ttu-id="5dfb3-102">XAMLX における永続的な遅延</span><span class="sxs-lookup"><span data-stu-id="5dfb3-102">Durable Delay in XAMLX</span></span>
 <span data-ttu-id="5dfb3-103">このサンプルでは、永続的な遅延を使用する方法を示します。これは、遅延の間、ワークフローを永続的なデバイスに永続化する遅延のことです。</span><span class="sxs-lookup"><span data-stu-id="5dfb3-103">This sample demonstrates how to use a durable delay, which is a delay that persists the workflow to a durable device during the delay.</span></span>  

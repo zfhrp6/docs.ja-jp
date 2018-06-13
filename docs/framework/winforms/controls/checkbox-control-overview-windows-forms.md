@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33524145"
 ---
 # <a name="checkbox-control-overview-windows-forms"></a><span data-ttu-id="bfccd-102">CheckBox コントロールの概要 (Windows フォーム)</span><span class="sxs-lookup"><span data-stu-id="bfccd-102">CheckBox Control Overview (Windows Forms)</span></span>
 <span data-ttu-id="bfccd-103">Windows フォーム <xref:System.Windows.Forms.CheckBox> コントロールは、特定の条件がオンかオフかを示します。</span><span class="sxs-lookup"><span data-stu-id="bfccd-103">The Windows Forms <xref:System.Windows.Forms.CheckBox> control indicates whether a particular condition is on or off.</span></span> <span data-ttu-id="bfccd-104">一般的に、はい/いいえ、または True/False の選択肢をユーザーに提示するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="bfccd-104">It is commonly used to present a Yes/No or True/False selection to the user.</span></span> <span data-ttu-id="bfccd-105">ユーザーが 1 つ以上選択可能な複数の選択肢を表示するために、チェック ボックス コントロールをグループの中で使用できます。</span><span class="sxs-lookup"><span data-stu-id="bfccd-105">You can use check box controls in groups to display multiple choices from which the user can select one or more.</span></span>  
