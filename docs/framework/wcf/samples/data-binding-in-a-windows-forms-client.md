@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33804379"
 ---
 # <a name="data-binding-in-a-windows-forms-client"></a>Windows フォーム クライアントのデータ バインディング
 このサンプルでは、Windows フォーム アプリケーションで Windows Communication Foundation (WCF) サービスによって返されるデータにバインドする方法を示します。  

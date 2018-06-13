@@ -11,6 +11,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809265"
 ---
 # <a name="analytic-tracing-with-etw"></a>ETW を使用した分析トレース
 Windows Communication Foundation (WCF) の分析トレースは、WCF サービスの実行中に診断情報をキャプチャする手段を提供します。 WCF 分析トレース イベントは、運用環境で WCF サービスのトラブルシューティングが可能に WCF スタック内のキー_ポイントで出力されます。 WCF サービスの分析トレースは最小限に影響を及ぼします製品のサーバーのパフォーマンスをホストする[!INCLUDE[netfx_current_long](../../../../../includes/netfx-current-long-md.md)]WCF サービスのようにこれらのイベントはイベント トレース for Windows (ETW) セッションに非常に効率よく生成されます。  

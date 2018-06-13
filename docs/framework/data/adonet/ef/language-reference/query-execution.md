@@ -10,6 +10,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33804821"
 ---
 # <a name="query-execution"></a>クエリの実行
 ユーザーによって作成された LINQ クエリは、コマンド ツリーに変換されます。 コマンド ツリーは、Entity Framework と互換性のあるクエリの表現です。 コマンド ツリーは、その後データ ソースに対して実行されます。 クエリの実行時には、すべてのクエリ式 (つまりクエリの全コンポーネント) が評価されます。これには結果の具体化で使用される式も含まれます。  

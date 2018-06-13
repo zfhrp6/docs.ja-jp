@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33649595"
 ---
 # <a name="accessing-xml-in-visual-basic"></a>Visual Basic での XML へのアクセス
 Visual Basic XML 軸のプロパティにアクセスして移動するために用意[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]構造体。 これらのプロパティは、XML の名前を指定する要素と属性にアクセスするために、特別な構文を使用します。  

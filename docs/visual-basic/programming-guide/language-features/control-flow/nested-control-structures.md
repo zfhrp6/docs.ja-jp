@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33648073"
 ---
 # <a name="nested-control-structures-visual-basic"></a>入れ子になった制御構造 (Visual Basic)
 たとえば他のコントロール ステートメント内のコントロール ステートメントを配置することができます、`If...Then...Else`ブロック内で、`For...Next`ループします。 制御ステートメントの中に別のコントロール ステートメントの配置と呼ばれます*入れ子になった*です。  

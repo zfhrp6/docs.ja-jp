@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33652566"
 ---
 # <a name="sub-procedures-visual-basic"></a>Sub プロシージャ (Visual Basic)
 A`Sub`プロシージャは、一連の Visual Basic ステートメントで囲まれた、`Sub`と`End Sub`ステートメントです。 `Sub`呼び出しコードに値を返さないが、プロシージャは、タスクを実行し、呼び出し元のコードにコントロールを返します。  

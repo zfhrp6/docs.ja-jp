@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33654818"
 ---
 # <a name="how-to-call-a-property-procedure-visual-basic"></a>方法: プロパティ プロシージャを呼び出す (Visual Basic)
 プロパティ プロシージャを呼び出すには、「プロパティ値を格納するか値を取得します。 プロパティは、変数にアクセスする同じ方法でアクセスします。  

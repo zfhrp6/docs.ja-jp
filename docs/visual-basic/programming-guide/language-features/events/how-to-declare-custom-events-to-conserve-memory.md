@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33647203"
 ---
 # <a name="how-to-declare-custom-events-to-conserve-memory-visual-basic"></a>方法: カスタム イベントを宣言してメモリを節約する (Visual Basic)
 いくつかのような場合があること、アプリケーションのメモリ使用量を低く抑える必要がある場合。 カスタム イベントでは、アプリケーションが、処理するイベントに対してだけメモリを使用できるようにします。  

@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33647931"
 ---
 # <a name="how-to-assign-one-array-to-another-array-visual-basic"></a>方法: 配列を別の配列に代入する (Visual Basic)
 配列がオブジェクトであるため、他のオブジェクト型のような代入ステートメントで使用することができます。 配列変数、配列要素と、ランクと長さの情報を構成するデータへのポインターを保持し、割り当ては、このポインターだけをコピーします。  

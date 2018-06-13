@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33640493"
 ---
 # <a name="source-folder-and-target-folder-are-the-same"></a>ソース フォルダーとターゲット フォルダーが同じです
 ファイルをコピーまたは移動しようとしましたが、指定したソース ディレクトリとターゲット ディレクトリが同じです。 ファイル パスの解析に誤りがある可能性があります。  

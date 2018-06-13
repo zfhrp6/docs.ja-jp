@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33648799"
 ---
 # <a name="how-to-declare-and-use-xml-namespace-prefixes-visual-basic"></a>方法: XML 名前空間プレフィックスを宣言して使用する (Visual Basic)
 この例は、XML 名前空間プレフィックスをインポートする方法を示しています。`ns`し、XML リテラルおよび XML 軸のプロパティで使用します。  

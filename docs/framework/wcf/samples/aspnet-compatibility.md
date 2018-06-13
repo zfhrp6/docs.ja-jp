@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33806222"
 ---
 # <a name="aspnet-compatibility"></a>ASP.NET 互換性
 このサンプルは、有効にする方法を示します。[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)]互換モードでは、Windows Communication Foundation (WCF)。 [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] 互換性モードで実行されるサービスは [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] アプリケーション パイプラインに完全に組み込まれるので、ファイルや URL の承認、セッション状態、[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] クラスなどの <xref:System.Web.HttpContext> の機能を使用できるようになります。 <xref:System.Web.HttpContext> クラスを使用すると、クッキー、セッション、およびその他の [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] 機能にアクセスできます。 このモードでは、バインディングは HTTP トランスポートを使用し、サービス自体は IIS でホストされる必要があります。  

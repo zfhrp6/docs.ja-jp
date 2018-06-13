@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33803768"
 ---
 # <a name="monitoring-service-operation-failures"></a>サービス操作エラーの監視
 アプリケーションに対して分析トレースが有効になっている場合、サービス エラーはイベント ビューアーで簡単に監視できます。  ここでは、サービス操作が失敗したことを確認する方法、およびエラーの原因を特定する方法を示します。  

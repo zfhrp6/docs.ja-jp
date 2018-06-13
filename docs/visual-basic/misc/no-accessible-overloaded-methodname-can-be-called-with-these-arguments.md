@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33636184"
 ---
 # <a name="no-accessible-overloaded-39ltmethodnamegt39-can-be-called-with-these-arguments-without-a-narrowing-conversion"></a>ないオーバー ロードされた&#39; &lt;methodname&gt; &#39;縮小変換しないで、これらの引数で呼び出すことができます
 オーバーロードされたメソッドが呼び出されましたが、縮小変換せずに指定された引数のリストと一致するメソッドはありませんでした。  

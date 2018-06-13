@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33635019"
 ---
 # <a name="databits-must-be-greater-than-0"></a>データビットは 0 より大きくなければなりません
 `DataBits` メソッドに指定された `My.Computer.Ports.OpenSerialPort` 引数は、0 より大きくなければなりません。  

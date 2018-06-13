@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33652378"
 ---
 # <a name="parameter-arrays-visual-basic"></a>パラメーター配列 (Visual Basic)
 通常、プロシージャ宣言で指定より引数を持つプロシージャを呼び出すことはできません。 不特定多数の引数が必要なときを宣言できます、*パラメーター配列*、これにより、プロシージャ パラメーターの値の配列を受け入れるようにします。 プロシージャを定義するときに、パラメーター配列内の要素の数を把握する必要はありません。 配列のサイズは、プロシージャ呼び出しごとに個別に決定されます。  

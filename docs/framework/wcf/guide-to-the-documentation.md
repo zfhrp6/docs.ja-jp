@@ -10,6 +10,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33805539"
 ---
 # <a name="guide-to-the-documentation"></a>ドキュメントのガイド
 ここでは、Windows Communication Foundation (WCF) ドキュメントに関するガイダンスです。 リンク先のドキュメントは、特定の目的と専門知識のレベルに応じて分類された、推奨される出発点となります。  

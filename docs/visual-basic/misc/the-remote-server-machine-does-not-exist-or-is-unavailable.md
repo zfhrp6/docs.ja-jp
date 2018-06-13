@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33639259"
 ---
 # <a name="the-remote-server-machine-does-not-exist-or-is-unavailable-visual-basic"></a>リモート サーバー コンピューターが存在しないか、利用できません (Visual Basic)。
 使用できないか、存在しないリモート サーバーに接続しようとしています。 このエラーは、ネットワーク接続が失われていることが原因である場合があります。  

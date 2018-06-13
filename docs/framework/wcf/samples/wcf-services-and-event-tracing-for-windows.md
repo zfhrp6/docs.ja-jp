@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809834"
 ---
 # <a name="wcf-services-and-event-tracing-for-windows"></a>WCF サービスと Event Tracing for Windows
 このサンプルでイベント トレース for Windows (ETW) イベントを出力する Windows Communication Foundation (WCF) での分析トレースを使用する方法を示します。 分析トレースは、実稼働環境で WCF サービスのトラブルシューティングが可能で、WCF スタック キー_ポイントで出力されるイベントです。  

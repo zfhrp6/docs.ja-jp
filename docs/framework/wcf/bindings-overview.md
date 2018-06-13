@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33805695"
 ---
 # <a name="windows-communication-foundation-bindings-overview"></a>Windows Communication Foundation のバインディングの概要
 バインディングは、Windows Communication Foundation (WCF) サービスのエンドポイントに接続するために必要な通信の詳細を指定するために使用するオブジェクトです。 WCF サービス内の各エンドポイントには、バインディングを適切に指定する必要があります。 このトピックでは、通信の詳細、バインドを定義する、バインディング、WCF では、どのようなバインドが含まれているし、エンドポイントのバインディングを指定する方法の要素の種類について説明します。  

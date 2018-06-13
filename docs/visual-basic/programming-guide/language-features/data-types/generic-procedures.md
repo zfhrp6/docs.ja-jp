@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33649397"
 ---
 # <a name="generic-procedures-in-visual-basic"></a>Visual Basic におけるジェネリック プロシージャ
 A*ジェネリック プロシージャ*もという、*ジェネリック メソッド*、少なくとも 1 つの型パラメーターで定義されているプロシージャは、します。 これにより、呼び出し元のコードをプロシージャが呼び出されるたびに、その要求をデータ型を調整できます。  

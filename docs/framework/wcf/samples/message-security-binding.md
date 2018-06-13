@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33805042"
 ---
 # <a name="message-security-binding"></a>メッセージ セキュリティ バインディング
 このセクションには、WCF での Windows サービスのメッセージ セキュリティ バインディングを示すサンプルが含まれています。  

@@ -25,6 +25,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33656166"
 ---
 # <a name="implicit-and-explicit-conversions-visual-basic"></a>暗黙の型変換と明示的な型変換 (Visual Basic)
 *暗黙的な変換*特別な構文のソース コードでは必要ありません。 次の例では、Visual Basic に暗黙的の値を変換`k`単精度浮動小数点値を割り当てる前に`q`です。  

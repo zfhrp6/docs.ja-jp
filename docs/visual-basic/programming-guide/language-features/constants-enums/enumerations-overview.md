@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33647580"
 ---
 # <a name="enumerations-overview-visual-basic"></a>列挙型の概要 (Visual Basic)
 列挙体は、関連する定数のセットを使用して、定数値の名前に関連付ける便利な方法を提供します。 たとえば、一連の整数型の定数を曜日に関連付けて列挙型として宣言すると、コードで整数値ではなく曜日名を使用することができます。  

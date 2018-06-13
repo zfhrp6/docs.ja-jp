@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33655272"
 ---
 # <a name="events-visual-basic"></a>イベント (Visual Basic)
 ほとんどのプログラムを実際には、シーケンスで実行するプロシージャの系列として、Visual Studio プロジェクトを視覚化することがありますはイベント ドリブン: 実行のフローの意味と呼ばれる外部の発生によって決定されます*イベント*です。  

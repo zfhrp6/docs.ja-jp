@@ -13,6 +13,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33808840"
 ---
 # <a name="securing-services"></a>サービスのセキュリティ保護
 Windows Communication Foundation (WCF) サービスのセキュリティは、次の 2 つの主要要件で構成されます。 転送セキュリティと承認します。 (3 番目の要件は、「セキュリティ イベントの監査[監査](../../../docs/framework/wcf/feature-details/auditing-security-events.md)。)簡単に説明すると、転送セキュリティは、認証 (サーバーとクライアント両方の ID の検証)、機密性 (メッセージの暗号化)、および整合性 (改ざんを検出するためのデジタル署名) で構成されます。 承認は、たとえば、特権のあるユーザーだけがファイルを読み取ることができるなど、リソースへのアクセスを制御することです。 WCF の機能を使用して、2 つの主要要件を簡単に実装します。  

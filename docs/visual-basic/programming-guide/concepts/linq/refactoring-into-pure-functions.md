@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33654262"
 ---
 # <a name="refactoring-into-pure-functions-visual-basic"></a>純粋関数 (Visual Basic) へのリファクタリング
 純粋関数型変換で重要なのは、純粋関数を使用してコードをリファクターする方法を理解することです。  

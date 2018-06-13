@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33649228"
 ---
 # <a name="calling-a-property-or-method-using-a-string-name-visual-basic"></a>文字列名によるプロパティまたはメソッドの呼び出し (Visual Basic)
 ほとんどの場合は、デザイン時に、プロパティとオブジェクトのメソッドを検出し、それらを処理するコードを記述できます。 ただし、場合によっては、知らない可能性オブジェクトのプロパティとメソッドを事前にもプロパティを指定するか、実行時にメソッドを実行するエンドユーザーの有効化の柔軟性をするだけです。  

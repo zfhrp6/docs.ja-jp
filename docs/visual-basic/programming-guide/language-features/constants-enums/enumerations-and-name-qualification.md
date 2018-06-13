@@ -22,6 +22,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33648581"
 ---
 # <a name="enumerations-and-name-qualification-visual-basic"></a>列挙型と名前修飾 (Visual Basic)
 通常、列挙体のメンバーを指す場合は、列挙型の名前でメンバー名を修飾する必要があります。 例についてを参照する、`Sunday`のメンバー、`Days`列挙型では、次の構文を使用します。  

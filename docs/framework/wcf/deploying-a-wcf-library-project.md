@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33803024"
 ---
 # <a name="deploying-a-wcf-library-project"></a>WCF ライブラリ プロジェクトの配置
 このトピックでは、Windows Communication Foundation (WCF) サービス ライブラリ プロジェクトを配置する方法について説明します。  

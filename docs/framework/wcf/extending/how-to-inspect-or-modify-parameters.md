@@ -10,6 +10,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809954"
 ---
 # <a name="how-to-inspect-or-modify-parameters"></a>方法 : パラメーターを検査または変更する
 検査または実装することによって、Windows Communication Foundation (WCF) クライアント オブジェクトまたは WCF サービスの単一操作による受信または送信メッセージを変更することができます、<xref:System.ServiceModel.Dispatcher.IParameterInspector?displayProperty=nameWithType>インターフェイスと、クライアントまたはサービス ランタイムに挿入します。 通常、操作の動作は、1 回の操作に対してパラメーター インスペクターを追加するために使用します。他の動作は、広い範囲でランタイムへの簡単なアクセスを提供するために使用できます。 詳細については、次を参照してください。[を拡張するクライアント](../../../../docs/framework/wcf/extending/extending-clients.md)と[ディスパッチャーの拡張](../../../../docs/framework/wcf/extending/extending-dispatchers.md)です。  

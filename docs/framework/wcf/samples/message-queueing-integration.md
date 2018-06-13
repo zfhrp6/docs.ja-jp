@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33804834"
 ---
 # <a name="message-queueing-integration"></a>メッセージ キュー統合
 このセクションには、メッセージ キューと Windows Communication Foundation (WCF) の間の統合を示すサンプルが含まれています。  

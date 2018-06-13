@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33649930"
 ---
 # <a name="visual-basic-limitations"></a>Visual Basic の制限事項
 以前のバージョンの Visual Basic では、変数名、モジュール、およびモジュールのサイズで許可される変数の数の長さなどのコード内の境界が適用されます。 Visual Basic .net では、これらの制限が緩和されました、記述と、コードの配置をより自由が提供します。  

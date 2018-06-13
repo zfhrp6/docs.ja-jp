@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33641974"
 ---
 # <a name="advanced-query-techniques-linq-to-xml-visual-basic"></a>詳細クエリ手法 (LINQ to XML) (Visual Basic)
 ここでは、高度な [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] クエリ手法の例について説明します。  

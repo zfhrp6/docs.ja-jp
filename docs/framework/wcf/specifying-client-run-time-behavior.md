@@ -12,6 +12,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33805357"
 ---
 # <a name="specifying-client-run-time-behavior"></a>クライアントのランタイム動作の指定
 クライアント アプリケーションに合わせて実行時の動作を変更するのには、Windows Communication Foundation (WCF) サービスと同様に、Windows Communication Foundation (WCF) クライアントを構成できます。 クライアントのランタイム動作を指定する際には、3 つの属性を使用できます。 双方向クライアント コールバック オブジェクトは、<xref:System.ServiceModel.CallbackBehaviorAttribute> 属性と <xref:System.ServiceModel.Description.CallbackDebugBehavior> 属性を使用して、そのランタイム動作を変更できます。 もう 1 つの属性 <xref:System.ServiceModel.Description.ClientViaBehavior> は、論理送信先を直接のネットワーク送信先と区別するために使用できます。 さらに、双方向クライアントのコールバック型では、サービス側の動作の一部を使用できます。 詳細については、次を参照してください。[サービスの実行時の動作を指定する](../../../docs/framework/wcf/specifying-service-run-time-behavior.md)です。  

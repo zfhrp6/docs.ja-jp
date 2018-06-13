@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33803596"
 ---
 # <a name="windows-communication-foundation-bindings"></a>Windows Communication Foundation バインディング
 バインディングは、Windows Communication Foundation (WCF) サービス エンドポイントが他のエンドポイントと通信する方法を指定します。 バインディングでは、まず、使用するトランスポート (HTTP や TCP など) を指定する必要があります。 セキュリティやトランザクションのサポートなど、その他の特性もバインディングによって設定できます。  

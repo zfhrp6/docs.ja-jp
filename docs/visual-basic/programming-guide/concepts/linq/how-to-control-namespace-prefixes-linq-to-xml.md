@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33641681"
 ---
 # <a name="how-to-control-namespace-prefixes-visual-basic-linq-to-xml"></a>方法 : 名前空間プレフィックスを制御する (Visual Basic) (LINQ to XML)
 このトピックでは、名前空間プレフィックスを制御する方法について説明します。  

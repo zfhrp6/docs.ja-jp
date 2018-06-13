@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33648669"
 ---
 # <a name="visual-basic-language-specification"></a>Visual Basic 言語仕様
 Visual Basic 言語仕様は、Visual Basic の文法と構文に関するすべての質問に対する回答の権限を持つソースです。 Visual Basic リファレンス ドキュメントで取り上げられていない、言語に関する詳細情報が含まれています。  

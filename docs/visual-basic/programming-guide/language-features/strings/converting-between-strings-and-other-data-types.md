@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33648282"
 ---
 # <a name="converting-between-strings-and-other-data-types-in-visual-basic"></a>Visual Basic で、文字列型とその他のデータ型との変換を行う
 このセクションでは、文字列を他のデータ型に変換する方法について説明します。  

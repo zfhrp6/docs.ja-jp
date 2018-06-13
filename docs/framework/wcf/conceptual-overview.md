@@ -10,6 +10,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33804980"
 ---
 # <a name="conceptual-overview"></a>概念
 このトピックは、情報は、Windows Communication Foundation (WCF) メッセージング システムおよびその使用をサポートするクラスをまとめたものです。  

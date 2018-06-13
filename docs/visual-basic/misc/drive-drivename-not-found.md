@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33637518"
 ---
 # <a name="drive-39ltdrivenamegt39-not-found"></a>ドライブ&#39; &lt;drivename&gt; &#39;が見つかりません。
 ドライブが見つかりません。 ネットワーク接続が失われたか、アクセスしようとしているドライブがオフラインであるか、または存在しません。  

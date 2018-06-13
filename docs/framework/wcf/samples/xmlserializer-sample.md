@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33805019"
 ---
 # <a name="xmlserializer-sample"></a>XMLSerializer サンプル
 このサンプルでは、<xref:System.Xml.Serialization.XmlSerializer> と互換性のある型をシリアル化および逆シリアル化する方法を示します。 既定の Windows Communication Foundation (WCF) フォーマッタは、<xref:System.Runtime.Serialization.DataContractSerializer>クラスです。 <xref:System.Xml.Serialization.XmlSerializer> クラスを使用すると、<xref:System.Runtime.Serialization.DataContractSerializer> クラスを使用できない場合に、型をシリアル化および逆シリアル化できます。 これは、XML を厳密に制御する必要がある場合、たとえば、データの一部が XML 属性であるが XML 要素ではない、などと制御する必要がある場合に多く該当します。 また、<xref:System.Xml.Serialization.XmlSerializer>多くの場合、自動的に選択されます WCF 以外のサービス用のクライアントを作成するときにします。  
