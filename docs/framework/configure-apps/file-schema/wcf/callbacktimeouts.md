@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32749567"
 ---
 # <a name="ltcallbacktimeoutsgt"></a><span data-ttu-id="22a64-102">&lt;callbackTimeouts&gt;</span><span class="sxs-lookup"><span data-stu-id="22a64-102">&lt;callbackTimeouts&gt;</span></span>
 <span data-ttu-id="22a64-103">双方向コールバック コントラクト シナリオでトランザクションをサーバーからクライアントに転送する際のタイムアウト値を指定します。</span><span class="sxs-lookup"><span data-stu-id="22a64-103">Specifies the timeout value when flowing transactions from server to client.in a duplex callback contract scenario.</span></span>  

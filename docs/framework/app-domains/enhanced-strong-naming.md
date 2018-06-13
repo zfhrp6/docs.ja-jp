@@ -12,6 +12,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32746892"
 ---
 # <a name="enhanced-strong-naming"></a><span data-ttu-id="99d5a-102">拡張された厳密な名前付け</span><span class="sxs-lookup"><span data-stu-id="99d5a-102">Enhanced Strong Naming</span></span>
 <span data-ttu-id="99d5a-103">厳密な名前の署名は、アセンブリを識別するための .NET Framework の識別機構です。</span><span class="sxs-lookup"><span data-stu-id="99d5a-103">A strong name signature is an identity mechanism in the .NET Framework for identifying assemblies.</span></span> <span data-ttu-id="99d5a-104">これは通常、発行元 (署名者) から受取人 (検証者) に対して渡されるデータの整合性を検証するために使用される、公開キーによるデジタル署名です。</span><span class="sxs-lookup"><span data-stu-id="99d5a-104">It is a public-key digital signature that is typically used to verify the integrity of data being passed from an originator (signer) to a recipient (verifier).</span></span> <span data-ttu-id="99d5a-105">この署名はアセンブリに対する一意の ID として使用され、これによりアセンブリへの参照のあいまいさをなくします。</span><span class="sxs-lookup"><span data-stu-id="99d5a-105">This signature is used as a unique identity for an assembly and ensures that references to the assembly are not ambiguous.</span></span> <span data-ttu-id="99d5a-106">アセンブリはビルド プロセスの一部として署名され、読み込まれるときに検証されます。</span><span class="sxs-lookup"><span data-stu-id="99d5a-106">The assembly is signed as part of the build process and then verified when it is loaded.</span></span>  

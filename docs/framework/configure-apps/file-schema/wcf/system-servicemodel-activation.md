@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32748842"
 ---
 # <a name="ltsystemservicemodelactivationgt"></a><span data-ttu-id="47fb7-102">&lt;system.serviceModel.activation&gt;</span><span class="sxs-lookup"><span data-stu-id="47fb7-102">&lt;system.serviceModel.activation&gt;</span></span>
 <span data-ttu-id="47fb7-103">この構成セクションは、SMSvcHost.exe ツールの構成設定を表します。</span><span class="sxs-lookup"><span data-stu-id="47fb7-103">This configuration section represents the configuration settings for the SMSvcHost.exe tool.</span></span> <span data-ttu-id="47fb7-104">構成要素は、SMSvcHost.exe.config ファイルで構成できます。</span><span class="sxs-lookup"><span data-stu-id="47fb7-104">The configuration elements can be configured in the SMSvcHost.exe.config file.</span></span> <span data-ttu-id="47fb7-105">特にここには、構成される必要があるコンピューター全体のすべての設定が含まれます。</span><span class="sxs-lookup"><span data-stu-id="47fb7-105">Specifically, it includes all machine-wide settings that must be configured.</span></span>  

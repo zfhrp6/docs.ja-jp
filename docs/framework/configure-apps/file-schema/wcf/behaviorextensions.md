@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32749583"
 ---
 # <a name="ltbehaviorextensionsgt"></a><span data-ttu-id="3e3ea-102">&lt;behaviorExtensions&gt;</span><span class="sxs-lookup"><span data-stu-id="3e3ea-102">&lt;behaviorExtensions&gt;</span></span>
 <span data-ttu-id="3e3ea-103">動作の拡張により、ユーザーはユーザー定義の動作要素を作成できます。</span><span class="sxs-lookup"><span data-stu-id="3e3ea-103">Behavior extensions enable the user to create user-defined behavior elements.</span></span> <span data-ttu-id="3e3ea-104">これらの要素は、標準の Windows Communication Foundation (WCF) 動作要素と共に使用できます。</span><span class="sxs-lookup"><span data-stu-id="3e3ea-104">These elements can be used alongside the standard Windows Communication Foundation (WCF) behavior elements.</span></span> <span data-ttu-id="3e3ea-105">`behaviorExtensions` セクションでは、構成で使用できるように要素を定義します。</span><span class="sxs-lookup"><span data-stu-id="3e3ea-105">The `behaviorExtensions` section defines the element such that it can be used in configuration.</span></span> <span data-ttu-id="3e3ea-106">次の例は、一般的な動作拡張を示します。</span><span class="sxs-lookup"><span data-stu-id="3e3ea-106">Here is an example of a typical behavior extension.</span></span>  

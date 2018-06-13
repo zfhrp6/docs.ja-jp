@@ -19,6 +19,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32743990"
 ---
 # <a name="delay-signing-an-assembly"></a><span data-ttu-id="4166c-102">アセンブリへの遅延署名</span><span class="sxs-lookup"><span data-stu-id="4166c-102">Delay Signing an Assembly</span></span>
 <span data-ttu-id="4166c-103">組織には、開発者が日常的にアクセスしない厳重に保護されたキーのペアがある場合があります。</span><span class="sxs-lookup"><span data-stu-id="4166c-103">An organization can have a closely guarded key pair that developers do not have access to on a daily basis.</span></span> <span data-ttu-id="4166c-104">公開キーは広く使用可能ですが、秘密キーへのアクセスは少数のユーザーに限定されます。</span><span class="sxs-lookup"><span data-stu-id="4166c-104">The public key is often available, but access to the private key is restricted to only a few individuals.</span></span> <span data-ttu-id="4166c-105">厳密な名前のアセンブリを開発すると、厳密な名前のターゲット アセンブリを参照する各アセンブリに、そのターゲット アセンブリに厳密な名前を指定するために使用する公開キーのトークンが含まれています。</span><span class="sxs-lookup"><span data-stu-id="4166c-105">When developing assemblies with strong names, each assembly that references the strong-named target assembly contains the token of the public key used to give the target assembly a strong name.</span></span> <span data-ttu-id="4166c-106">この場合、開発プロセスで、公開キーを使用できる必要があります。</span><span class="sxs-lookup"><span data-stu-id="4166c-106">This requires that the public key be available during the development process.</span></span>  
