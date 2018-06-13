@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33507614"
 ---
 # <a name="strongly-typed-extensions-sample"></a><span data-ttu-id="97064-102">厳密に型指定された拡張のサンプル</span><span class="sxs-lookup"><span data-stu-id="97064-102">Strongly-Typed Extensions Sample</span></span>
 <span data-ttu-id="97064-103">このサンプルでは、例を示す目的で <xref:System.ServiceModel.Syndication.SyndicationFeed> クラスを使用します。</span><span class="sxs-lookup"><span data-stu-id="97064-103">The sample uses the <xref:System.ServiceModel.Syndication.SyndicationFeed> class for the purposes of the example.</span></span> <span data-ttu-id="97064-104">ただし、このサンプルで示すパターンは、拡張データをサポートするすべての配信クラスで使用できます。</span><span class="sxs-lookup"><span data-stu-id="97064-104">However, the patterns demonstrated in this sample can be used with all of the Syndication classes that support extension data.</span></span>  

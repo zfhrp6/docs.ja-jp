@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33506758"
 ---
 # <a name="firewall-instructions"></a><span data-ttu-id="f52fe-102">ファイアウォール手順</span><span class="sxs-lookup"><span data-stu-id="f52fe-102">Firewall Instructions</span></span>
 <span data-ttu-id="f52fe-103">Windows Communication Foundation (WCF) サンプルが機能できるように複数のポートやファイアウォールのプログラムを有効にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="f52fe-103">You must enable several ports or programs in the firewall so that the Windows Communication Foundation (WCF) samples can function.</span></span> <span data-ttu-id="f52fe-104">サンプルの多くは、通信する際に 8000 ～ 8003 の範囲のポートと 9000 のポートを使用します。</span><span class="sxs-lookup"><span data-stu-id="f52fe-104">Many of the samples communicate by using ports in the range 8000-8003, and port 9000.</span></span> <span data-ttu-id="f52fe-105">既定ではファイアウォールが有効なので、こうしたポートにはアクセスできません。</span><span class="sxs-lookup"><span data-stu-id="f52fe-105">The firewall is turned on by default and prevents access to these ports.</span></span> <span data-ttu-id="f52fe-106">サンプル用にファイアウォールを有効にするには、要件とセキュリティ環境に応じて次のいずれかの手順を完了する必要があります。</span><span class="sxs-lookup"><span data-stu-id="f52fe-106">To enable the firewall for the samples, complete one of the following procedures, depending on your requirements and security environment:</span></span>  

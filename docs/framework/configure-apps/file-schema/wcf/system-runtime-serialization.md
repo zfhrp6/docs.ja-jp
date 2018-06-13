@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32748501"
 ---
 # <a name="ltsystemruntimeserializationgt"></a><span data-ttu-id="c8560-102">&lt;system.runtime.serialization&gt;</span><span class="sxs-lookup"><span data-stu-id="c8560-102">&lt;system.runtime.serialization&gt;</span></span>
 <span data-ttu-id="c8560-103"><xref:System.Runtime.Serialization> 名前空間セクションのルート要素を表し、<xref:System.Runtime.Serialization.DataContractSerializer> のオプションを設定するための要素を含みます。</span><span class="sxs-lookup"><span data-stu-id="c8560-103">Represents the root element for the <xref:System.Runtime.Serialization> namespace section and contains elements for setting options of the <xref:System.Runtime.Serialization.DataContractSerializer>.</span></span>  

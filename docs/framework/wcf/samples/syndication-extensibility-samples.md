@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33501250"
 ---
 # <a name="syndication-extensibility-samples"></a><span data-ttu-id="55a53-102">配信の拡張のサンプル</span><span class="sxs-lookup"><span data-stu-id="55a53-102">Syndication Extensibility Samples</span></span>
 <span data-ttu-id="55a53-103">このセクションには、カスタムの配信では、Windows Communication Foundation (WCF) を示すサンプルが含まれています。</span><span class="sxs-lookup"><span data-stu-id="55a53-103">This section contains samples that demonstrate custom syndication in Windows Communication Foundation (WCF).</span></span>  

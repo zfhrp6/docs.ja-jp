@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33496762"
 ---
 # <a name="bindings-and-security"></a><span data-ttu-id="e3285-102">バインディングとセキュリティ</span><span class="sxs-lookup"><span data-stu-id="e3285-102">Bindings and Security</span></span>
 <span data-ttu-id="e3285-103">Windows Communication Foundation (WCF) に含まれているシステム指定のバインディングは、WCF アプリケーションのプログラミングする簡単な方法を提供します。</span><span class="sxs-lookup"><span data-stu-id="e3285-103">The system-provided bindings included with Windows Communication Foundation (WCF) offer a quick way to program WCF applications.</span></span> <span data-ttu-id="e3285-104">1 つの例外を除き、すべてのバインディングにはセキュリティ スキームが含まれており、既定で有効になっています。</span><span class="sxs-lookup"><span data-stu-id="e3285-104">With one exception, all the bindings have a default security scheme enabled.</span></span> <span data-ttu-id="e3285-105">ここでは、セキュリティ ニーズに適した正しいバインディングの選択方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="e3285-105">This topic helps you select the right binding for your security needs.</span></span>  

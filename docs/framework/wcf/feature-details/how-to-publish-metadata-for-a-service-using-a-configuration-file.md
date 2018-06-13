@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33495695"
 ---
 # <a name="how-to-publish-metadata-for-a-service-using-a-configuration-file"></a><span data-ttu-id="670d7-102">方法: 構成ファイルを使用してサービスのメタデータを公開する</span><span class="sxs-lookup"><span data-stu-id="670d7-102">How to: Publish Metadata for a Service Using a Configuration File</span></span>
 <span data-ttu-id="670d7-103">これは、Windows Communication Foundation (WCF) サービスのメタデータを公開に示す 2 つの操作方法に関するトピックのいずれかです。</span><span class="sxs-lookup"><span data-stu-id="670d7-103">This is one of two how-to topics that demonstrate publishing metadata for a Windows Communication Foundation (WCF) service.</span></span> <span data-ttu-id="670d7-104">構成ファイルとコードを使用して、サービスがメタデータを公開する手段を指定する方法は 2 つあります。</span><span class="sxs-lookup"><span data-stu-id="670d7-104">There are two ways to specify how a service should publish metadata, using a configuration file and using code.</span></span> <span data-ttu-id="670d7-105">このトピックでは、構成ファイルを使用してサービスのメタデータを公開する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="670d7-105">This topic shows how to publish metadata for a service using a configuration file.</span></span>  

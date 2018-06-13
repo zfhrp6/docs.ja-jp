@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33508385"
 ---
 # <a name="troubleshooting-correlation"></a><span data-ttu-id="0fd13-102">相関関係のトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="0fd13-102">Troubleshooting Correlation</span></span>
 <span data-ttu-id="0fd13-103">相関関係は、ワークフロー サービス メッセージを互いに関連付けたり、正しいワークフロー インスタンスに関連付けたりするために使用されますが、正しく構成されていないと、メッセージが受信されず、アプリケーションが正しく機能しなくなります。</span><span class="sxs-lookup"><span data-stu-id="0fd13-103">Correlation is used to relate workflow service messages to each other and to the correct workflow instance, but if it is not configured correctly, messages will not be received and applications will not work correctly.</span></span> <span data-ttu-id="0fd13-104">ここでは、相関関係のトラブルシューティングのいくつかの方法の概要と、相関関係を使用するときに発生する一般的な問題について説明します。</span><span class="sxs-lookup"><span data-stu-id="0fd13-104">This topic provides an overview of several methods for troubleshooting correlation issues, and also lists some common issues that can occur when you use correlation.</span></span>  

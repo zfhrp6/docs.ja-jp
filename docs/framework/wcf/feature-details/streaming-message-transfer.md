@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33499142"
 ---
 # <a name="streaming-message-transfer"></a><span data-ttu-id="f3739-102">メッセージ転送ストリーミング</span><span class="sxs-lookup"><span data-stu-id="f3739-102">Streaming Message Transfer</span></span>
 <span data-ttu-id="f3739-103">Windows Communication Foundation (WCF) トランスポートでは、メッセージを転送するため次の 2 つのモードをサポートします。</span><span class="sxs-lookup"><span data-stu-id="f3739-103">Windows Communication Foundation (WCF) transports support two modes for transferring messages:</span></span>  

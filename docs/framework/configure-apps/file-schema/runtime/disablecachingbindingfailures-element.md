@@ -17,6 +17,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32745680"
 ---
 # <a name="ltdisablecachingbindingfailuresgt-element"></a><span data-ttu-id="5fe09-102">&lt;disableCachingBindingFailures&gt;要素</span><span class="sxs-lookup"><span data-stu-id="5fe09-102">&lt;disableCachingBindingFailures&gt; Element</span></span>
 <span data-ttu-id="5fe09-103">バインディングを調査して、アセンブリが見つからなかったために発生するエラーのキャッシュを無効にするかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="5fe09-103">Specifies whether to disable the caching of binding failures that occur because the assembly was not found by probing.</span></span>  

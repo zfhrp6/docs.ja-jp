@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33499477"
 ---
 # <a name="how-to-examine-the-security-context"></a><span data-ttu-id="d29ee-102">方法 : セキュリティ コンテキストを調べる</span><span class="sxs-lookup"><span data-stu-id="d29ee-102">How to: Examine the Security Context</span></span>
 <span data-ttu-id="d29ee-103">Windows Communication Foundation (WCF) サービスをプログラムするときにサービスのセキュリティ コンテキストでは、クライアントの資格情報とサービスで認証するために使用するクレームの詳細を確認することができます。</span><span class="sxs-lookup"><span data-stu-id="d29ee-103">When programming Windows Communication Foundation (WCF) services, the service security context enables you to determine details about the client credentials and claims used to authenticate with the service.</span></span> <span data-ttu-id="d29ee-104">これは、<xref:System.ServiceModel.ServiceSecurityContext> クラスのプロパティを使用することで可能になります。</span><span class="sxs-lookup"><span data-stu-id="d29ee-104">This is done by using the properties of the <xref:System.ServiceModel.ServiceSecurityContext> class.</span></span>  

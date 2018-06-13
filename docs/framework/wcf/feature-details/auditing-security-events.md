@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33496026"
 ---
 # <a name="auditing-security-events"></a><span data-ttu-id="02749-102">セキュリティ イベントの監査</span><span class="sxs-lookup"><span data-stu-id="02749-102">Auditing Security Events</span></span>
 <span data-ttu-id="02749-103">Windows Communication Foundation (WCF) を作成するアプリケーション ログに記録できます (か、成功、失敗、または両方) のセキュリティ イベント監査機能を使用します。</span><span class="sxs-lookup"><span data-stu-id="02749-103">Applications created with Windows Communication Foundation (WCF) can log security events (either success, failure, or both) with the auditing feature.</span></span> <span data-ttu-id="02749-104">これらのイベントは Windows システム イベント ログに書き込まれ、イベント ビューアーを使用して確認できます。</span><span class="sxs-lookup"><span data-stu-id="02749-104">The events are written to the Windows system event log and can be examined using the Event Viewer.</span></span>  

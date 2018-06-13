@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33504359"
 ---
 # <a name="extended-protection-policy"></a><span data-ttu-id="49e70-102">拡張保護ポリシー</span><span class="sxs-lookup"><span data-stu-id="49e70-102">Extended Protection Policy</span></span>
 <span data-ttu-id="49e70-103">拡張保護は、man-in-the-middle (MITM) 攻撃に対するセキュリティ イニシアチブです。</span><span class="sxs-lookup"><span data-stu-id="49e70-103">Extended Protection is a security initiative for protecting against man-in-the-middle (MITM) attacks.</span></span> <span data-ttu-id="49e70-104">MITM 攻撃はセキュリティの脅威です。MITM は、クライアントの資格情報を取得し、その資格情報をサーバーに転送します。</span><span class="sxs-lookup"><span data-stu-id="49e70-104">A MITM attack is a security threat in which a MITM takes a client’s credentials and forwards it to a server.</span></span>  

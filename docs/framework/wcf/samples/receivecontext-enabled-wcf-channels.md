@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33502935"
 ---
 # <a name="receivecontext-enabled-wcf-channels"></a><span data-ttu-id="f6677-102">ReceiveContext が有効な WCF チャネル</span><span class="sxs-lookup"><span data-stu-id="f6677-102">ReceiveContext-Enabled WCF Channels</span></span>
 <span data-ttu-id="f6677-103">このサンプルでは、<xref:System.ServiceModel.Channels.ReceiveContext> を有効にした WCF チャネルの有用性を示します。</span><span class="sxs-lookup"><span data-stu-id="f6677-103">This sample demonstrates the usefulness of <xref:System.ServiceModel.Channels.ReceiveContext>-enabled WCF channels.</span></span> <span data-ttu-id="f6677-104">このサンプルでは、NetMSMQ チャネルを使用して 2 つの数値の積を見つけるサービスを実装します。</span><span class="sxs-lookup"><span data-stu-id="f6677-104">The sample implements a service to find the product of two numbers using a NetMSMQ channel.</span></span>  

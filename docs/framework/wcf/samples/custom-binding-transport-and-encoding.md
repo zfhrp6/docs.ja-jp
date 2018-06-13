@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33500907"
 ---
 # <a name="custom-binding-transport-and-encoding"></a><span data-ttu-id="cd5f5-102">カスタム バインドのトランスポートとエンコード</span><span class="sxs-lookup"><span data-stu-id="cd5f5-102">Custom Binding Transport and Encoding</span></span>
 <span data-ttu-id="cd5f5-103">カスタム バインドは、個々のバインド要素の順序付きリストとして定義されます。</span><span class="sxs-lookup"><span data-stu-id="cd5f5-103">A custom binding is defined by an ordered list of discrete binding elements.</span></span> <span data-ttu-id="cd5f5-104">このサンプルでは、さまざまなトランスポートとメッセージ エンコーディング要素を使用してカスタム バインドを構成する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="cd5f5-104">This sample demonstrates how to configure a custom binding with various transport and message encoding elements.</span></span>  

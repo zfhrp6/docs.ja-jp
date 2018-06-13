@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33535516"
 ---
 # <a name="labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them"></a><span data-ttu-id="c98ed-102">各 Windows フォーム コントロールのラベル設定とショートカットの作成</span><span class="sxs-lookup"><span data-stu-id="c98ed-102">Labeling Individual Windows Forms Controls and Providing Shortcuts to Them</span></span>
 <span data-ttu-id="c98ed-103">Windows フォームに追加されたコントロールには、ユーザー操作をさらに特殊化するために使用されるプロパティとメソッドがあります。</span><span class="sxs-lookup"><span data-stu-id="c98ed-103">Controls added to Windows Forms have properties and methods that are used to further specialize the user experience.</span></span> <span data-ttu-id="c98ed-104">ユーザーのニーズに合わせてユーザー インターフェイスをカスタマイズすることは、適切に設計された Windows アプリケーションにおいて非常に重要です。</span><span class="sxs-lookup"><span data-stu-id="c98ed-104">Customizing your user interface to suit the needs of the user is extremely important for well-designed Windows applications.</span></span>  

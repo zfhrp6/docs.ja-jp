@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33507982"
 ---
 # <a name="dead-letter-queues"></a><span data-ttu-id="ad574-102">配信不能キュー</span><span class="sxs-lookup"><span data-stu-id="ad574-102">Dead Letter Queues</span></span>
 <span data-ttu-id="ad574-103">このサンプルでは、配信できなかったメッセージの処理方法を示します。</span><span class="sxs-lookup"><span data-stu-id="ad574-103">This sample demonstrates how to handle and process messages that have failed delivery.</span></span> <span data-ttu-id="ad574-104">基にして、[トランザクション MSMQ バインディング](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md)サンプルです。</span><span class="sxs-lookup"><span data-stu-id="ad574-104">It is based on the [Transacted MSMQ Binding](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md) sample.</span></span> <span data-ttu-id="ad574-105">このサンプルでは、`netMsmqBinding` バインディングを使用します。</span><span class="sxs-lookup"><span data-stu-id="ad574-105">This sample uses the `netMsmqBinding` binding.</span></span> <span data-ttu-id="ad574-106">サービスは自己ホスト型コンソール アプリケーションであるので、キューに置かれたメッセージをサービスが受信するようすを観察できます。</span><span class="sxs-lookup"><span data-stu-id="ad574-106">The service is a self-hosted console application to enable you to observe the service receiving queued messages.</span></span>  

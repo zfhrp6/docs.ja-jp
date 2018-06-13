@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33541860"
 ---
 # <a name="how-to-make-thread-safe-calls-to-windows-forms-controls"></a><span data-ttu-id="e75d6-102">方法 : Windows フォーム コントロールのスレッド セーフな呼び出しを行う</span><span class="sxs-lookup"><span data-stu-id="e75d6-102">How to: Make Thread-Safe Calls to Windows Forms Controls</span></span>
 <span data-ttu-id="e75d6-103">マルチスレッドを使用して Windows フォーム アプリケーションのパフォーマンスを向上させる場合は、必ずスレッド セーフな方法でコントロールを呼び出してください。</span><span class="sxs-lookup"><span data-stu-id="e75d6-103">If you use multithreading to improve the performance of your Windows Forms applications, you must make sure that you make calls to your controls in a thread-safe way.</span></span>  

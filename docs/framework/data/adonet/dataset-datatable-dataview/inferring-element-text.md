@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32762716"
 ---
 # <a name="inferring-element-text"></a><span data-ttu-id="b5391-102">要素のテキストの推論</span><span class="sxs-lookup"><span data-stu-id="b5391-102">Inferring Element Text</span></span>
 <span data-ttu-id="b5391-103">要素のテキストが含まれています (要素の属性を持つ) や、繰り返される要素など、名前の新しい列をテーブルとして推論される子要素が存在しない場合**TableName_Text**要素に対して推論されるテーブルに追加されます。</span><span class="sxs-lookup"><span data-stu-id="b5391-103">If an element contains text and has no child elements to be inferred as tables (such as elements with attributes or repeated elements), a new column with the name **TableName_Text** will be added to the table that is inferred for the element.</span></span> <span data-ttu-id="b5391-104">要素に含まれているテキストはテーブルの行に追加され、新しい列に格納されます。</span><span class="sxs-lookup"><span data-stu-id="b5391-104">The text contained in the element will be added to a row in the table and stored in the new column.</span></span> <span data-ttu-id="b5391-105">**ColumnMapping**新しい列のプロパティが設定されます**MappingType.SimpleContent**です。</span><span class="sxs-lookup"><span data-stu-id="b5391-105">The **ColumnMapping** property of the new column will be set to **MappingType.SimpleContent**.</span></span>  

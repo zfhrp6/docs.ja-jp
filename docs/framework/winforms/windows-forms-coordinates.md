@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33537877"
 ---
 # <a name="windows-forms-coordinates"></a><span data-ttu-id="cc163-102">Windows フォームの座標</span><span class="sxs-lookup"><span data-stu-id="cc163-102">Windows Forms Coordinates</span></span>
 <span data-ttu-id="cc163-103">Windows フォームの座標システムは、デバイスの座標に基づいており、Windows フォームで描画するときに、メジャーの基本単位は、デバイス単位 (通常は、ピクセル)。</span><span class="sxs-lookup"><span data-stu-id="cc163-103">The coordinate system for a Windows Form is based on device coordinates, and the basic unit of measure when drawing in Windows Forms is the device unit (typically, the pixel).</span></span> <span data-ttu-id="cc163-104">画面上の点は増加権限、および y 座標が上から下に増加する x 座標を使用して、x 座標と y 座標ペアで説明します。</span><span class="sxs-lookup"><span data-stu-id="cc163-104">Points on the screen are described by x- and y-coordinate pairs, with the x-coordinates increasing to the right and the y-coordinates increasing from top to bottom.</span></span> <span data-ttu-id="cc163-105">画面の基準とした、元の場所は、画面、またはクライアント座標を指定するかどうかによって異なります。</span><span class="sxs-lookup"><span data-stu-id="cc163-105">The location of the origin, relative to the screen, will vary depending on whether you are specifying screen or client coordinates.</span></span>  

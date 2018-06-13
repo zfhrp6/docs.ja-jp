@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33497946"
 ---
 # <a name="using-metadata"></a><span data-ttu-id="49568-102">メタデータを使用する</span><span class="sxs-lookup"><span data-stu-id="49568-102">Using Metadata</span></span>
 <span data-ttu-id="49568-103">サービス メタデータには、コンピューターが読み取ることのできる、サービスに関する説明が含まれます。</span><span class="sxs-lookup"><span data-stu-id="49568-103">Service metadata contains a machine-readable description of the service.</span></span> <span data-ttu-id="49568-104">サービス メタデータには、サービス エンドポイント、バインディング、コントラクト、操作、およびメッセージに関する説明が含まれます。</span><span class="sxs-lookup"><span data-stu-id="49568-104">Service metadata includes descriptions of the service endpoints, bindings, contracts, operations, and messages.</span></span> <span data-ttu-id="49568-105">サービス メタデータは、サービスを利用するクライアントの自動生成、サービスに関する説明の実装、クライアントに対するバインディングの動的な更新など、さまざまな目的で使用できます。</span><span class="sxs-lookup"><span data-stu-id="49568-105">You can use service metadata for a variety of purposes, including automatically generating a client for consuming the service, implementing the service description, and dynamically updating the binding for a client.</span></span>  

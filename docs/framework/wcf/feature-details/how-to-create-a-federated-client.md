@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33496972"
 ---
 # <a name="how-to-create-a-federated-client"></a><span data-ttu-id="80e21-102">方法 : フェデレーション クライアントを作成する</span><span class="sxs-lookup"><span data-stu-id="80e21-102">How to: Create a Federated Client</span></span>
 <span data-ttu-id="80e21-103">Windows Communication Foundation (WCF) でのクライアントの作成、*フェデレーション サービス*3 つの主要な手順で構成されます。</span><span class="sxs-lookup"><span data-stu-id="80e21-103">In Windows Communication Foundation (WCF), creating a client for a *federated service* consists of three main steps:</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33506507"
 ---
 # <a name="multiple-endpoints-at-a-single-listenuri"></a><span data-ttu-id="4ec46-102">単一 ListenUri に対する複数のエンドポイント</span><span class="sxs-lookup"><span data-stu-id="4ec46-102">Multiple Endpoints at a Single ListenUri</span></span>
 <span data-ttu-id="4ec46-103">このサンプルでは、単一 `ListenUri` で複数のエンドポイントをホストするサービスを示します。</span><span class="sxs-lookup"><span data-stu-id="4ec46-103">This sample demonstrates a service that hosts multiple endpoints at a single `ListenUri`.</span></span> <span data-ttu-id="4ec46-104">このサンプルがに基づいて、[作業の開始](../../../../docs/framework/wcf/samples/getting-started-sample.md)電卓サービスを実装します。</span><span class="sxs-lookup"><span data-stu-id="4ec46-104">This sample is based on the [Getting Started](../../../../docs/framework/wcf/samples/getting-started-sample.md) that implements a calculator service.</span></span>  

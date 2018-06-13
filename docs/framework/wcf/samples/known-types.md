@@ -1,32 +1,21 @@
 ---
-title: "既知の型"
-ms.custom: 
+title: 既知の型
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 88d83720-ca38-4b2c-86a6-f149ed1d89ec
-caps.latest.revision: "20"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e0359e3094b86e3433cebee7c835c7eecec16fe0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 003f2e39804bb393c9d8c54a6fc208fdd1b22e97
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33503820"
 ---
-# <a name="known-types"></a><span data-ttu-id="e130d-102">既知の型</span><span class="sxs-lookup"><span data-stu-id="e130d-102">Known Types</span></span>
-<span data-ttu-id="e130d-103">このサンプルでは、データ コントラクト内の派生型に関する情報を指定する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="e130d-103">This sample demonstrates how to specify information about derived types in a data contract.</span></span> <span data-ttu-id="e130d-104">データ コントラクトを使用すると、サービスと構造化データをやり取りできます。</span><span class="sxs-lookup"><span data-stu-id="e130d-104">Data contracts allow you to pass structured data to and from services.</span></span> <span data-ttu-id="e130d-105">オブジェクト指向プログラミングでは、別の型から継承される型を元の型の代わりに使用できます。</span><span class="sxs-lookup"><span data-stu-id="e130d-105">In object-oriented programming, a type that inherits from another type can be used in place of the original type.</span></span> <span data-ttu-id="e130d-106">サービス指向プログラミングでは、型ではなくスキーマが伝達されるので、型と型との関係は保持されません。</span><span class="sxs-lookup"><span data-stu-id="e130d-106">In service-oriented programming, schemas rather than types are communicated and therefore, the relationship between types is not preserved.</span></span> <span data-ttu-id="e130d-107"><xref:System.Runtime.Serialization.KnownTypeAttribute> 属性を使用すると、派生型に関する情報をデータ コントラクトに含めることができます。</span><span class="sxs-lookup"><span data-stu-id="e130d-107">The <xref:System.Runtime.Serialization.KnownTypeAttribute> attribute allows information about derived types to be included in the data contract.</span></span> <span data-ttu-id="e130d-108">この機構を使用しない場合は、基本型が予期される箇所では派生型を送受信できません。</span><span class="sxs-lookup"><span data-stu-id="e130d-108">If this mechanism is not used, a derived type cannot be sent or received where a base type is expected.</span></span>  
+# <a name="known-types"></a><span data-ttu-id="9ad2b-102">既知の型</span><span class="sxs-lookup"><span data-stu-id="9ad2b-102">Known Types</span></span>
+<span data-ttu-id="9ad2b-103">このサンプルでは、データ コントラクト内の派生型に関する情報を指定する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="9ad2b-103">This sample demonstrates how to specify information about derived types in a data contract.</span></span> <span data-ttu-id="9ad2b-104">データ コントラクトを使用すると、サービスと構造化データをやり取りできます。</span><span class="sxs-lookup"><span data-stu-id="9ad2b-104">Data contracts allow you to pass structured data to and from services.</span></span> <span data-ttu-id="9ad2b-105">オブジェクト指向プログラミングでは、別の型から継承される型を元の型の代わりに使用できます。</span><span class="sxs-lookup"><span data-stu-id="9ad2b-105">In object-oriented programming, a type that inherits from another type can be used in place of the original type.</span></span> <span data-ttu-id="9ad2b-106">サービス指向プログラミングでは、型ではなくスキーマが伝達されるので、型と型との関係は保持されません。</span><span class="sxs-lookup"><span data-stu-id="9ad2b-106">In service-oriented programming, schemas rather than types are communicated and therefore, the relationship between types is not preserved.</span></span> <span data-ttu-id="9ad2b-107"><xref:System.Runtime.Serialization.KnownTypeAttribute> 属性を使用すると、派生型に関する情報をデータ コントラクトに含めることができます。</span><span class="sxs-lookup"><span data-stu-id="9ad2b-107">The <xref:System.Runtime.Serialization.KnownTypeAttribute> attribute allows information about derived types to be included in the data contract.</span></span> <span data-ttu-id="9ad2b-108">この機構を使用しない場合は、基本型が予期される箇所では派生型を送受信できません。</span><span class="sxs-lookup"><span data-stu-id="9ad2b-108">If this mechanism is not used, a derived type cannot be sent or received where a base type is expected.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="e130d-109">このサンプルのセットアップ手順とビルド手順については、このトピックの最後を参照してください。</span><span class="sxs-lookup"><span data-stu-id="e130d-109">The setup procedure and build instructions for this sample are located at the end of this topic.</span></span>  
+>  <span data-ttu-id="9ad2b-109">このサンプルのセットアップ手順とビルド手順については、このトピックの最後を参照してください。</span><span class="sxs-lookup"><span data-stu-id="9ad2b-109">The setup procedure and build instructions for this sample are located at the end of this topic.</span></span>  
   
- <span data-ttu-id="e130d-110">サービスのサービス コントラクトでは複素数を使用します。次のサンプル コードを参照してください。</span><span class="sxs-lookup"><span data-stu-id="e130d-110">The service contract for the service uses complex numbers, as shown in the following sample code.</span></span>  
+ <span data-ttu-id="9ad2b-110">サービスのサービス コントラクトでは複素数を使用します。次のサンプル コードを参照してください。</span><span class="sxs-lookup"><span data-stu-id="9ad2b-110">The service contract for the service uses complex numbers, as shown in the following sample code.</span></span>  
   
 ```  
 // Define a service contract.  
@@ -44,7 +33,7 @@ public interface ICalculator
 }  
 ```  
   
- <span data-ttu-id="e130d-111"><xref:System.Runtime.Serialization.DataContractAttribute> と <xref:System.Runtime.Serialization.DataMemberAttribute> は `ComplexNumber` クラスに適用され、クライアントとサービスの間で渡されるクラスのフィールドを示します。</span><span class="sxs-lookup"><span data-stu-id="e130d-111">The <xref:System.Runtime.Serialization.DataContractAttribute> and <xref:System.Runtime.Serialization.DataMemberAttribute> is applied to the `ComplexNumber` class to indicate which fields of the class can be passed between the client and the service.</span></span> <span data-ttu-id="e130d-112">`ComplexNumberWithMagnitude` 派生クラスは、`ComplexNumber` の代わりに使用できます。</span><span class="sxs-lookup"><span data-stu-id="e130d-112">The derived `ComplexNumberWithMagnitude` class can be used in place of `ComplexNumber`.</span></span> <span data-ttu-id="e130d-113">これは、<xref:System.Runtime.Serialization.KnownTypeAttribute> 型の `ComplexNumber` 属性で指定します。</span><span class="sxs-lookup"><span data-stu-id="e130d-113">The <xref:System.Runtime.Serialization.KnownTypeAttribute> attribute on the `ComplexNumber` type indicates this.</span></span>  
+ <span data-ttu-id="9ad2b-111"><xref:System.Runtime.Serialization.DataContractAttribute> と <xref:System.Runtime.Serialization.DataMemberAttribute> は `ComplexNumber` クラスに適用され、クライアントとサービスの間で渡されるクラスのフィールドを示します。</span><span class="sxs-lookup"><span data-stu-id="9ad2b-111">The <xref:System.Runtime.Serialization.DataContractAttribute> and <xref:System.Runtime.Serialization.DataMemberAttribute> is applied to the `ComplexNumber` class to indicate which fields of the class can be passed between the client and the service.</span></span> <span data-ttu-id="9ad2b-112">`ComplexNumberWithMagnitude` 派生クラスは、`ComplexNumber` の代わりに使用できます。</span><span class="sxs-lookup"><span data-stu-id="9ad2b-112">The derived `ComplexNumberWithMagnitude` class can be used in place of `ComplexNumber`.</span></span> <span data-ttu-id="9ad2b-113">これは、<xref:System.Runtime.Serialization.KnownTypeAttribute> 型の `ComplexNumber` 属性で指定します。</span><span class="sxs-lookup"><span data-stu-id="9ad2b-113">The <xref:System.Runtime.Serialization.KnownTypeAttribute> attribute on the `ComplexNumber` type indicates this.</span></span>  
   
 ```  
 [DataContract(Namespace="http://Microsoft.ServiceModel.Samples")]  
@@ -64,7 +53,7 @@ public class ComplexNumber
 }  
 ```  
   
- <span data-ttu-id="e130d-114">`ComplexNumberWithMagnitude` 型は `ComplexNumber` から派生しますが、追加のデータ メンバ `Magnitude` が追加されます。</span><span class="sxs-lookup"><span data-stu-id="e130d-114">The `ComplexNumberWithMagnitude` type derives from `ComplexNumber` but adds an additional data member, `Magnitude`.</span></span>  
+ <span data-ttu-id="9ad2b-114">`ComplexNumberWithMagnitude` 型は `ComplexNumber` から派生しますが、追加のデータ メンバ `Magnitude` が追加されます。</span><span class="sxs-lookup"><span data-stu-id="9ad2b-114">The `ComplexNumberWithMagnitude` type derives from `ComplexNumber` but adds an additional data member, `Magnitude`.</span></span>  
   
 ```  
 [DataContract(Namespace="http://Microsoft.ServiceModel.Samples")]  
@@ -82,7 +71,7 @@ public class ComplexNumberWithMagnitude : ComplexNumber
 }  
 ```  
   
- <span data-ttu-id="e130d-115">既知の型の機能を示すためには、サービスが実装されて返される方法、`ComplexNumberWithMagnitude`加算と減算に対してのみです。</span><span class="sxs-lookup"><span data-stu-id="e130d-115">To demonstrate the known types feature, the service is implemented in such a way that it returns a `ComplexNumberWithMagnitude` only for addition and subtraction.</span></span> <span data-ttu-id="e130d-116">(コントラクトで `ComplexNumber` を指定している場合でも、コントラクトの `KnownTypeAttribute` 属性によりこの実装は許可されます)。</span><span class="sxs-lookup"><span data-stu-id="e130d-116">(Even though the contract specifies `ComplexNumber`, this is allowed because of the `KnownTypeAttribute` attribute).</span></span> <span data-ttu-id="e130d-117">返す、ベースがまだ乗算と除算`ComplexNumber`型です。</span><span class="sxs-lookup"><span data-stu-id="e130d-117">Multiplication and division still return the base `ComplexNumber` type.</span></span>  
+ <span data-ttu-id="9ad2b-115">既知の型の機能を示すためには、サービスが実装されて返される方法、`ComplexNumberWithMagnitude`加算と減算に対してのみです。</span><span class="sxs-lookup"><span data-stu-id="9ad2b-115">To demonstrate the known types feature, the service is implemented in such a way that it returns a `ComplexNumberWithMagnitude` only for addition and subtraction.</span></span> <span data-ttu-id="9ad2b-116">(コントラクトで `ComplexNumber` を指定している場合でも、コントラクトの `KnownTypeAttribute` 属性によりこの実装は許可されます)。</span><span class="sxs-lookup"><span data-stu-id="9ad2b-116">(Even though the contract specifies `ComplexNumber`, this is allowed because of the `KnownTypeAttribute` attribute).</span></span> <span data-ttu-id="9ad2b-117">返す、ベースがまだ乗算と除算`ComplexNumber`型です。</span><span class="sxs-lookup"><span data-stu-id="9ad2b-117">Multiplication and division still return the base `ComplexNumber` type.</span></span>  
   
 ```  
 public class DataContractCalculatorService : IDataContractCalculator  
@@ -125,7 +114,7 @@ public class DataContractCalculatorService : IDataContractCalculator
 }  
 ```  
   
- <span data-ttu-id="e130d-118">クライアントでは、サービス コントラクトとデータ コントラクトの両方がによって生成されるソース ファイル generatedClient.cs で定義されて、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)サービス メタデータからです。</span><span class="sxs-lookup"><span data-stu-id="e130d-118">On the client, both the service contract and the data contract are defined in the source file generatedClient.cs, which is generated by the [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) from service metadata.</span></span> <span data-ttu-id="e130d-119"><xref:System.Runtime.Serialization.KnownTypeAttribute> 属性はサービスのデータ コントラクト内で指定されるので、クライアントはサービスを使用する際に `ComplexNumber` クラスと `ComplexNumberWithMagnitude` クラスの両方を受け取ることができます。</span><span class="sxs-lookup"><span data-stu-id="e130d-119">Because the <xref:System.Runtime.Serialization.KnownTypeAttribute> attribute is specified in the service's data contract, the client is able to receive both the `ComplexNumber` and `ComplexNumberWithMagnitude` classes when using the service.</span></span> <span data-ttu-id="e130d-120">クライアントは、`ComplexNumberWithMagnitude` を取得したかどうかを検出し、適切な出力を生成します。</span><span class="sxs-lookup"><span data-stu-id="e130d-120">The client detects whether it got a `ComplexNumberWithMagnitude` and generate the appropriate output:</span></span>  
+ <span data-ttu-id="9ad2b-118">クライアントでは、サービス コントラクトとデータ コントラクトの両方がによって生成されるソース ファイル generatedClient.cs で定義されて、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)サービス メタデータからです。</span><span class="sxs-lookup"><span data-stu-id="9ad2b-118">On the client, both the service contract and the data contract are defined in the source file generatedClient.cs, which is generated by the [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) from service metadata.</span></span> <span data-ttu-id="9ad2b-119"><xref:System.Runtime.Serialization.KnownTypeAttribute> 属性はサービスのデータ コントラクト内で指定されるので、クライアントはサービスを使用する際に `ComplexNumber` クラスと `ComplexNumberWithMagnitude` クラスの両方を受け取ることができます。</span><span class="sxs-lookup"><span data-stu-id="9ad2b-119">Because the <xref:System.Runtime.Serialization.KnownTypeAttribute> attribute is specified in the service's data contract, the client is able to receive both the `ComplexNumber` and `ComplexNumberWithMagnitude` classes when using the service.</span></span> <span data-ttu-id="9ad2b-120">クライアントは、`ComplexNumberWithMagnitude` を取得したかどうかを検出し、適切な出力を生成します。</span><span class="sxs-lookup"><span data-stu-id="9ad2b-120">The client detects whether it got a `ComplexNumberWithMagnitude` and generate the appropriate output:</span></span>  
   
 ```  
 // Create a client  
@@ -150,7 +139,7 @@ else
 }  
 ```  
   
- <span data-ttu-id="e130d-121">このサンプルを実行する場合は、操作の要求や応答はクライアントのコンソール ウィンドウに表示されます。</span><span class="sxs-lookup"><span data-stu-id="e130d-121">When you run the sample, the requests and responses of the operation are displayed in the client console window.</span></span> <span data-ttu-id="e130d-122">サービスの実装方法により、加算と減算に対しては大きさが出力されますが、乗算と除算に対しては出力されません。</span><span class="sxs-lookup"><span data-stu-id="e130d-122">Note that a magnitude is printed for addition and subtraction but not for multiplication and division because of the way the service was implemented.</span></span> <span data-ttu-id="e130d-123">クライアントをシャットダウンするには、クライアント ウィンドウで Enter キーを押します。</span><span class="sxs-lookup"><span data-stu-id="e130d-123">Press ENTER in the client window to shut down the client.</span></span>  
+ <span data-ttu-id="9ad2b-121">このサンプルを実行する場合は、操作の要求や応答はクライアントのコンソール ウィンドウに表示されます。</span><span class="sxs-lookup"><span data-stu-id="9ad2b-121">When you run the sample, the requests and responses of the operation are displayed in the client console window.</span></span> <span data-ttu-id="9ad2b-122">サービスの実装方法により、加算と減算に対しては大きさが出力されますが、乗算と除算に対しては出力されません。</span><span class="sxs-lookup"><span data-stu-id="9ad2b-122">Note that a magnitude is printed for addition and subtraction but not for multiplication and division because of the way the service was implemented.</span></span> <span data-ttu-id="9ad2b-123">クライアントをシャットダウンするには、クライアント ウィンドウで Enter キーを押します。</span><span class="sxs-lookup"><span data-stu-id="9ad2b-123">Press ENTER in the client window to shut down the client.</span></span>  
   
 ```  
 Add(1 + 2i, 3 + 4i) = 4 + 6i  
@@ -165,21 +154,21 @@ No magnitude was sent from the service
     Press <ENTER> to terminate client.  
 ```  
   
-### <a name="to-set-up-build-and-run-the-sample"></a><span data-ttu-id="e130d-124">サンプルをセットアップ、ビルド、および実行するには</span><span class="sxs-lookup"><span data-stu-id="e130d-124">To set up, build, and run the sample</span></span>  
+### <a name="to-set-up-build-and-run-the-sample"></a><span data-ttu-id="9ad2b-124">サンプルをセットアップ、ビルド、および実行するには</span><span class="sxs-lookup"><span data-stu-id="9ad2b-124">To set up, build, and run the sample</span></span>  
   
-1.  <span data-ttu-id="e130d-125">実行したことを確認してください、 [Windows Communication Foundation サンプルの 1 回限りのセットアップ手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)です。</span><span class="sxs-lookup"><span data-stu-id="e130d-125">Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span></span>  
+1.  <span data-ttu-id="9ad2b-125">実行したことを確認してください、 [Windows Communication Foundation サンプルの 1 回限りのセットアップ手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)です。</span><span class="sxs-lookup"><span data-stu-id="9ad2b-125">Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span></span>  
   
-2.  <span data-ttu-id="e130d-126">ソリューションの C# 版または Visual Basic .NET 版をビルドするには、「 [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md)」の手順に従います。</span><span class="sxs-lookup"><span data-stu-id="e130d-126">To build the C# or Visual Basic .NET edition of the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span></span>  
+2.  <span data-ttu-id="9ad2b-126">ソリューションの C# 版または Visual Basic .NET 版をビルドするには、「 [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md)」の手順に従います。</span><span class="sxs-lookup"><span data-stu-id="9ad2b-126">To build the C# or Visual Basic .NET edition of the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span></span>  
   
-3.  <span data-ttu-id="e130d-127">1 つまたは複数コンピューター構成でサンプルを実行する手順についてで[Windows Communication Foundation サンプルの実行](../../../../docs/framework/wcf/samples/running-the-samples.md)です。</span><span class="sxs-lookup"><span data-stu-id="e130d-127">To run the sample in a single- or cross-machine configuration, follow the instructions in [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).</span></span>  
+3.  <span data-ttu-id="9ad2b-127">1 つまたは複数コンピューター構成でサンプルを実行する手順についてで[Windows Communication Foundation サンプルの実行](../../../../docs/framework/wcf/samples/running-the-samples.md)です。</span><span class="sxs-lookup"><span data-stu-id="9ad2b-127">To run the sample in a single- or cross-machine configuration, follow the instructions in [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).</span></span>  
   
 > [!IMPORTANT]
->  <span data-ttu-id="e130d-128">サンプルは、既にコンピューターにインストールされている場合があります。</span><span class="sxs-lookup"><span data-stu-id="e130d-128">The samples may already be installed on your machine.</span></span> <span data-ttu-id="e130d-129">続行する前に、次の (既定の) ディレクトリを確認してください。</span><span class="sxs-lookup"><span data-stu-id="e130d-129">Check for the following (default) directory before continuing.</span></span>  
+>  <span data-ttu-id="9ad2b-128">サンプルは、既にコンピューターにインストールされている場合があります。</span><span class="sxs-lookup"><span data-stu-id="9ad2b-128">The samples may already be installed on your machine.</span></span> <span data-ttu-id="9ad2b-129">続行する前に、次の (既定の) ディレクトリを確認してください。</span><span class="sxs-lookup"><span data-stu-id="9ad2b-129">Check for the following (default) directory before continuing.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  <span data-ttu-id="e130d-130">このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。</span><span class="sxs-lookup"><span data-stu-id="e130d-130">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="e130d-131">このサンプルは、次のディレクトリに格納されます。</span><span class="sxs-lookup"><span data-stu-id="e130d-131">This sample is located in the following directory.</span></span>  
+>  <span data-ttu-id="9ad2b-130">このディレクトリが存在しない場合に、 [Windows Communication Foundation (WCF) および .NET Framework 4 向けの Windows Workflow Foundation (WF) サンプル](http://go.microsoft.com/fwlink/?LinkId=150780)すべて Windows Communication Foundation (WCF) をダウンロードして[!INCLUDE[wf1](../../../../includes/wf1-md.md)]サンプルです。</span><span class="sxs-lookup"><span data-stu-id="9ad2b-130">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all Windows Communication Foundation (WCF) and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="9ad2b-131">このサンプルは、次のディレクトリに格納されます。</span><span class="sxs-lookup"><span data-stu-id="9ad2b-131">This sample is located in the following directory.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Data\KnownTypes`  
   
-## <a name="see-also"></a><span data-ttu-id="e130d-132">参照</span><span class="sxs-lookup"><span data-stu-id="e130d-132">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="9ad2b-132">関連項目</span><span class="sxs-lookup"><span data-stu-id="9ad2b-132">See Also</span></span>

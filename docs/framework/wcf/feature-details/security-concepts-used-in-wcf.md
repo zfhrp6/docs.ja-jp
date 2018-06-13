@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33497634"
 ---
 # <a name="security-concepts-used-in-wcf"></a><span data-ttu-id="13645-102">WCF で使用されるセキュリティの概要</span><span class="sxs-lookup"><span data-stu-id="13645-102">Security Concepts Used in WCF</span></span>
 <span data-ttu-id="13645-103">Windows Communication Foundation (WCF) のセキュリティが既に使用されている概念に基づいて構築されているし、各種のセキュリティ インフラストラクチャに展開します。</span><span class="sxs-lookup"><span data-stu-id="13645-103">Windows Communication Foundation (WCF) security is built upon concepts already in use and deployed in various security infrastructures.</span></span>  

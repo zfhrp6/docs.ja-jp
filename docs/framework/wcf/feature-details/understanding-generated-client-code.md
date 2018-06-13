@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33501357"
 ---
 # <a name="understanding-generated-client-code"></a><span data-ttu-id="77439-102">生成されたクライアント コードの理解</span><span class="sxs-lookup"><span data-stu-id="77439-102">Understanding Generated Client Code</span></span>
 <span data-ttu-id="77439-103">[ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) は、クライアント アプリケーションの構築時に使用するクライアント コードとクライアント アプリケーション構成ファイルを生成します。</span><span class="sxs-lookup"><span data-stu-id="77439-103">The [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) generates client code and a client application configuration file for use in building client applications.</span></span> <span data-ttu-id="77439-104">このトピックでは、標準サービス コントラクトのシナリオ向けに生成されたコード例について説明します。</span><span class="sxs-lookup"><span data-stu-id="77439-104">This topic provides a tour of generated code examples for standard service contract scenarios.</span></span> <span data-ttu-id="77439-105">生成されたコードを使用してクライアント アプリケーションの作成の詳細については、次を参照してください。 [WCF クライアントの概要](../../../../docs/framework/wcf/wcf-client-overview.md)です。</span><span class="sxs-lookup"><span data-stu-id="77439-105">For more information about building a client application using the generated code, see [WCF Client Overview](../../../../docs/framework/wcf/wcf-client-overview.md).</span></span>  

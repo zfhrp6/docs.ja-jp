@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33497959"
 ---
 # <a name="wcf-discovery"></a><span data-ttu-id="2e7f1-102">WCF Discovery</span><span class="sxs-lookup"><span data-stu-id="2e7f1-102">WCF Discovery</span></span>
 <span data-ttu-id="2e7f1-103">Windows Communication Foundation (WCF) では、WS 探索プロトコルを使用して、相互運用可能な方法で実行時に検出するサービスを有効にするのには、サポートを提供します。</span><span class="sxs-lookup"><span data-stu-id="2e7f1-103">Windows Communication Foundation (WCF) provides support to enable services to be discoverable at runtime in an interoperable way using the WS-Discovery protocol.</span></span> <span data-ttu-id="2e7f1-104">WCF サービスは、マルチキャスト メッセージを使用してネットワークまたは探索プロキシ サーバーには、その可用性をアナウンスできます。</span><span class="sxs-lookup"><span data-stu-id="2e7f1-104">WCF services can announce their availability to the network using a multicast message or to a discovery proxy server.</span></span> <span data-ttu-id="2e7f1-105">クライアント アプリケーションは、ネットワークまたは探索プロキシ サーバーを検索して、一連の基準を満たすサービスを見つけることができます。</span><span class="sxs-lookup"><span data-stu-id="2e7f1-105">Client applications can search the network or a discovery proxy server to find services that meet a set of criteria.</span></span> <span data-ttu-id="2e7f1-106">このセクションのトピックでは、この機能の概要を示し、そのプログラミング モデルについて説明します。</span><span class="sxs-lookup"><span data-stu-id="2e7f1-106">The topics in this section provide an overview and describe the programming model for this feature in detail.</span></span>  

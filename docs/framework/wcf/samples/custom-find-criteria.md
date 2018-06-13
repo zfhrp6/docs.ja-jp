@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33503211"
 ---
 # <a name="custom-find-criteria"></a><span data-ttu-id="24d20-102">カスタム検索基準</span><span class="sxs-lookup"><span data-stu-id="24d20-102">Custom Find Criteria</span></span>
 <span data-ttu-id="24d20-103">このサンプルでは、ロジックを使用するカスタム スコープ一致の作成方法とカスタム探索サービスの実装方法を示します。</span><span class="sxs-lookup"><span data-stu-id="24d20-103">This sample demonstrates how to create a custom scope match using logic and how to implement a custom discovery service.</span></span> <span data-ttu-id="24d20-104">クライアントは、カスタム スコープ一致機能を使用して、システムによって提供される WCF Discovery の検索機能を改良および拡張します。</span><span class="sxs-lookup"><span data-stu-id="24d20-104">Clients use custom scope matching functionality to refine and further build on top of the system-provided find functionality of WCF Discovery.</span></span> <span data-ttu-id="24d20-105">このサンプルでは次のシナリオを扱います。</span><span class="sxs-lookup"><span data-stu-id="24d20-105">The scenario this sample covers is as follows:</span></span>  

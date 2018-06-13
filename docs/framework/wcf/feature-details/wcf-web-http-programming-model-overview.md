@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33507114"
 ---
 # <a name="wcf-web-http-programming-model-overview"></a><span data-ttu-id="b1af8-102">WCF Web HTTP プログラミング モデルの概要</span><span class="sxs-lookup"><span data-stu-id="b1af8-102">WCF Web HTTP Programming Model Overview</span></span>
 <span data-ttu-id="b1af8-103">Windows Communication Foundation (WCF) WEB HTTP プログラミング モデルでは、wcf WEB HTTP サービスを構築するために必要な基本的な要素を提供します。</span><span class="sxs-lookup"><span data-stu-id="b1af8-103">The Windows Communication Foundation (WCF) WEB HTTP programming model provides the basic elements required to build WEB HTTP services with WCF.</span></span> <span data-ttu-id="b1af8-104">WCF WEB HTTP サービスは、最も広範な Web ブラウザーも含めて、クライアントがアクセスするよう設計されていて、次の固有の要件があります。</span><span class="sxs-lookup"><span data-stu-id="b1af8-104">WCF WEB HTTP services are designed to be accessed by the widest range of possible clients, including Web browsers and have the following unique requirements:</span></span>  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33507098"
 ---
 # <a name="transport-security-overview"></a><span data-ttu-id="2622d-102">トランスポート セキュリティの概要</span><span class="sxs-lookup"><span data-stu-id="2622d-102">Transport Security Overview</span></span>
 <span data-ttu-id="2622d-103">トランスポート セキュリティ機構では、Windows Communication Foundation (WCF) は、バインドと使用されているトランスポートによって異なります。</span><span class="sxs-lookup"><span data-stu-id="2622d-103">Transport security mechanisms in Windows Communication Foundation (WCF) depend on the binding and transport being used.</span></span> <span data-ttu-id="2622d-104">たとえば、<xref:System.ServiceModel.WSHttpBinding> クラスを使用する場合、トランスポートは HTTP であり、トランスポートをセキュリティで保護するための主要機構は SSL (Secure Sockets Layer) over HTTP (一般に HTTPS と呼ばれます) です。</span><span class="sxs-lookup"><span data-stu-id="2622d-104">For example, when using the <xref:System.ServiceModel.WSHttpBinding> class, the transport is HTTP, and the primary mechanism for securing the transport is Secure Sockets Layer (SSL) over HTTP, commonly called HTTPS.</span></span> <span data-ttu-id="2622d-105">このトピックでは、WCF のシステム指定のバインディングで使用する主要なトランスポート セキュリティ機構について説明します。</span><span class="sxs-lookup"><span data-stu-id="2622d-105">This topic discusses the major transport security mechanisms used in the WCF system-provided bindings.</span></span>  

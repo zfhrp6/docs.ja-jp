@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33536814"
 ---
 # <a name="notifyicon-component-overview-windows-forms"></a><span data-ttu-id="bfd36-102">NotifyIcon コンポーネントの概要 (Windows フォーム)</span><span class="sxs-lookup"><span data-stu-id="bfd36-102">NotifyIcon Component Overview (Windows Forms)</span></span>
 <span data-ttu-id="bfd36-103">Windows フォームの <xref:System.Windows.Forms.NotifyIcon> コンポーネントは、通常、バックグラウンドで動作し、ユーザー インターフェイスに長時間表示されないプロセスのアイコンを表示する場合に使用されます。</span><span class="sxs-lookup"><span data-stu-id="bfd36-103">The Windows Forms <xref:System.Windows.Forms.NotifyIcon> component is typically used to display icons for processes that run in the background and do not show a user interface much of the time.</span></span> <span data-ttu-id="bfd36-104">たとえば、タスク バーの状態通知領域のアイコンをクリックしてアクセス可能なウイルス対策プログラムなどです。</span><span class="sxs-lookup"><span data-stu-id="bfd36-104">An example would be a virus protection program that can be accessed by clicking an icon in the status notification area of the taskbar.</span></span>  

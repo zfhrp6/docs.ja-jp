@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33496813"
 ---
 # <a name="how-to-use-a-custom-user-name-and-password-validator"></a><span data-ttu-id="ff2bf-102">方法 : カスタム ユーザー名およびパスワード検証を使用する</span><span class="sxs-lookup"><span data-stu-id="ff2bf-102">How to: Use a Custom User Name and Password Validator</span></span>
 <span data-ttu-id="ff2bf-103">既定では、使用すると、ユーザー名とパスワード認証では、Windows Communication Foundation (WCF) を使用して Windows ユーザー名とパスワードを検証します。</span><span class="sxs-lookup"><span data-stu-id="ff2bf-103">By default, when a user name and password is used for authentication, Windows Communication Foundation (WCF) uses Windows to validate the user name and password.</span></span> <span data-ttu-id="ff2bf-104">ただし、WCF では、カスタム ユーザー名とパスワードの認証スキームとも呼ばれる*バリデーター*です。</span><span class="sxs-lookup"><span data-stu-id="ff2bf-104">However, WCF allows for custom user name and password authentication schemes, also known as *validators*.</span></span> <span data-ttu-id="ff2bf-105">ユーザー名およびパスワードのカスタム検証を組み込むには、<xref:System.IdentityModel.Selectors.UserNamePasswordValidator> から派生するクラスを作成して構成します。</span><span class="sxs-lookup"><span data-stu-id="ff2bf-105">To incorporate a custom user name and password validator, create a class that derives from <xref:System.IdentityModel.Selectors.UserNamePasswordValidator> and then configure it.</span></span>  

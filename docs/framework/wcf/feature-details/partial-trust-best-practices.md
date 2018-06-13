@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33497270"
 ---
 # <a name="partial-trust-best-practices"></a><span data-ttu-id="be335-102">部分信頼のベスト プラクティス</span><span class="sxs-lookup"><span data-stu-id="be335-102">Partial Trust Best Practices</span></span>
 <span data-ttu-id="be335-103">このトピックでは、部分信頼環境で Windows Communication Foundation (WCF) を実行する場合のベスト プラクティスについて説明します。</span><span class="sxs-lookup"><span data-stu-id="be335-103">This topic describes best practices when running Windows Communication Foundation (WCF) in a partial trust environment.</span></span>  

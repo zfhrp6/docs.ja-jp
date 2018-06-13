@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33495740"
 ---
 # <a name="programming-wcf-security"></a><span data-ttu-id="4644d-102">WCF セキュリティのプログラミング</span><span class="sxs-lookup"><span data-stu-id="4644d-102">Programming WCF Security</span></span>
 <span data-ttu-id="4644d-103">このトピックでは、セキュリティで保護された Windows Communication Foundation (WCF) アプリケーションを作成するために使用する基本的なプログラミング タスクについて説明します。</span><span class="sxs-lookup"><span data-stu-id="4644d-103">This topic describes the fundamental programming tasks used to create a secure Windows Communication Foundation (WCF) application.</span></span> <span data-ttu-id="4644d-104">このトピックの内容のみ認証、機密性、整合性と総称*転送セキュリティ*です。</span><span class="sxs-lookup"><span data-stu-id="4644d-104">This topic covers only authentication, confidentiality, and integrity, collectively known as *transfer security*.</span></span> <span data-ttu-id="4644d-105">このトピックには、承認 (リソースやサービスへのアクセスの制御); は取り上げません。承認方法については、次を参照してください。[承認](../../../../docs/framework/wcf/feature-details/authorization-in-wcf.md)です。</span><span class="sxs-lookup"><span data-stu-id="4644d-105">This topic does not cover authorization (the control of access to resources or services); for information on authorization, see [Authorization](../../../../docs/framework/wcf/feature-details/authorization-in-wcf.md).</span></span>  

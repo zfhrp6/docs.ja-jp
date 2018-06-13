@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33543622"
 ---
 # <a name="how-to-obtain-a-writable-copy-of-a-read-only-freezable"></a><span data-ttu-id="65461-102">方法 : 読み取り専用の Freezable の書き込み可能なコピーを取得する</span><span class="sxs-lookup"><span data-stu-id="65461-102">How to: Obtain a Writable Copy of a Read-Only Freezable</span></span>
 <span data-ttu-id="65461-103">この例を使用する方法を示しています、<xref:System.Windows.Freezable.Clone%2A>読み取り専用の書き込み可能なコピーを作成するメソッド<xref:System.Windows.Freezable>です。</span><span class="sxs-lookup"><span data-stu-id="65461-103">This example shows how to use the <xref:System.Windows.Freezable.Clone%2A> method to create a writable copy of a read-only <xref:System.Windows.Freezable>.</span></span>  

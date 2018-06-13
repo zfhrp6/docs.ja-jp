@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33544551"
 ---
 # <a name="how-to-manipulate-flow-content-elements-through-the-blocks-property"></a><span data-ttu-id="5633c-102">方法 : Blocks プロパティを介してフロー コンテンツ要素を操作する</span><span class="sxs-lookup"><span data-stu-id="5633c-102">How to: Manipulate Flow Content Elements through the Blocks Property</span></span>
 <span data-ttu-id="5633c-103">これらの例では、を介してフロー コンテンツ要素に対して実行できる一般的な操作の点を示しています、**ブロック**プロパティです。</span><span class="sxs-lookup"><span data-stu-id="5633c-103">These examples demonstrate some of the more common operations that can be performed on flow content elements through the **Blocks** property.</span></span> <span data-ttu-id="5633c-104">このプロパティを使用してアイテムの追加し、削除を<xref:System.Windows.Documents.BlockCollection>です。</span><span class="sxs-lookup"><span data-stu-id="5633c-104">This property is used to add and remove items from <xref:System.Windows.Documents.BlockCollection>.</span></span> <span data-ttu-id="5633c-105">フロー コンテンツ要素で、その機能、**ブロック**プロパティが含まれます。</span><span class="sxs-lookup"><span data-stu-id="5633c-105">Flow content elements that feature a **Blocks** property include:</span></span>  

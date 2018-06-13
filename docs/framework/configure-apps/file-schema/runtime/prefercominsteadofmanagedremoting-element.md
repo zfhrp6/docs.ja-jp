@@ -12,6 +12,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32745475"
 ---
 # <a name="ltprefercominsteadofmanagedremotinggt-element"></a><span data-ttu-id="414e6-102">&lt;PreferComInsteadOfManagedRemoting&gt;要素</span><span class="sxs-lookup"><span data-stu-id="414e6-102">&lt;PreferComInsteadOfManagedRemoting&gt; Element</span></span>
 <span data-ttu-id="414e6-103">かどうか、ランタイムを使用して COM 相互運用機能リモート処理ではなく呼び出しは、すべてのアプリケーション ドメインの境界を越えてを指定します。</span><span class="sxs-lookup"><span data-stu-id="414e6-103">Specifies whether the runtime will use COM interop instead of remoting for all calls across application domain boundaries.</span></span>  

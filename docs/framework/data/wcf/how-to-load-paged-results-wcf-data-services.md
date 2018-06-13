@@ -1,13 +1,6 @@
 ---
-title: "方法: ページングされた結果を読み込む (WCF Data Services)"
-ms.custom: 
+title: '方法: ページングされた結果を読み込む (WCF Data Services)'
 ms.date: 03/30/2017
-ms.prod: .net-framework-oob
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,34 +8,30 @@ helpviewer_keywords:
 - WCF Data Services, deferred content
 - WCF Data Services, loading data
 ms.assetid: bb786ea4-f3ef-4ad3-9a41-3a0b7feb6a1f
-caps.latest.revision: "2"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 405bea18b03ba695dcb952d10a193decc124841d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6706ad2eb6821c2c30b5d2482f709ba849b59f32
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33356591"
 ---
-# <a name="how-to-load-paged-results-wcf-data-services"></a><span data-ttu-id="9a29e-102">方法: ページングされた結果を読み込む (WCF Data Services)</span><span class="sxs-lookup"><span data-stu-id="9a29e-102">How to: Load Paged Results (WCF Data Services)</span></span>
-[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]<span data-ttu-id="9a29e-103"> では、1 つの応答フィードで返されるエンティティの数をデータ サービスで制限できます。</span><span class="sxs-lookup"><span data-stu-id="9a29e-103"> enables the data service to limit the number of entities that are returned in a single response feed.</span></span> <span data-ttu-id="9a29e-104">この処理を行うと、フィードの最終的なエントリには、データの次のページへのリンクが含まれます。</span><span class="sxs-lookup"><span data-stu-id="9a29e-104">When this happens, the final entry in the feed contains a link to the next page of data.</span></span> <span data-ttu-id="9a29e-105">データの次のページへの URI は、<xref:System.Data.Services.Client.QueryOperationResponse%601.GetContinuation%2A> が実行されたときに返される <xref:System.Data.Services.Client.QueryOperationResponse%601> の <xref:System.Data.Services.Client.DataServiceQuery%601> メソッドを呼び出すことによって取得されます。</span><span class="sxs-lookup"><span data-stu-id="9a29e-105">The URI for the next page of data is obtained by calling the <xref:System.Data.Services.Client.QueryOperationResponse%601.GetContinuation%2A> method of the <xref:System.Data.Services.Client.QueryOperationResponse%601>, which is returned when the <xref:System.Data.Services.Client.DataServiceQuery%601> is executed.</span></span> <span data-ttu-id="9a29e-106">このオブジェクトによって表される URI は、結果の次のページを読み込むために使用されます。</span><span class="sxs-lookup"><span data-stu-id="9a29e-106">The URI represented by this object is then used to load the next page of results.</span></span> <span data-ttu-id="9a29e-107">詳細については、次を参照してください。[遅延コンテンツを読み込んで](../../../../docs/framework/data/wcf/loading-deferred-content-wcf-data-services.md)です。</span><span class="sxs-lookup"><span data-stu-id="9a29e-107">For more information, see [Loading Deferred Content](../../../../docs/framework/data/wcf/loading-deferred-content-wcf-data-services.md).</span></span>  
+# <a name="how-to-load-paged-results-wcf-data-services"></a><span data-ttu-id="1b9d0-102">方法: ページングされた結果を読み込む (WCF Data Services)</span><span class="sxs-lookup"><span data-stu-id="1b9d0-102">How to: Load Paged Results (WCF Data Services)</span></span>
+[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]<span data-ttu-id="1b9d0-103"> では、1 つの応答フィードで返されるエンティティの数をデータ サービスで制限できます。</span><span class="sxs-lookup"><span data-stu-id="1b9d0-103"> enables the data service to limit the number of entities that are returned in a single response feed.</span></span> <span data-ttu-id="1b9d0-104">この処理を行うと、フィードの最終的なエントリには、データの次のページへのリンクが含まれます。</span><span class="sxs-lookup"><span data-stu-id="1b9d0-104">When this happens, the final entry in the feed contains a link to the next page of data.</span></span> <span data-ttu-id="1b9d0-105">データの次のページへの URI は、<xref:System.Data.Services.Client.QueryOperationResponse%601.GetContinuation%2A> が実行されたときに返される <xref:System.Data.Services.Client.QueryOperationResponse%601> の <xref:System.Data.Services.Client.DataServiceQuery%601> メソッドを呼び出すことによって取得されます。</span><span class="sxs-lookup"><span data-stu-id="1b9d0-105">The URI for the next page of data is obtained by calling the <xref:System.Data.Services.Client.QueryOperationResponse%601.GetContinuation%2A> method of the <xref:System.Data.Services.Client.QueryOperationResponse%601>, which is returned when the <xref:System.Data.Services.Client.DataServiceQuery%601> is executed.</span></span> <span data-ttu-id="1b9d0-106">このオブジェクトによって表される URI は、結果の次のページを読み込むために使用されます。</span><span class="sxs-lookup"><span data-stu-id="1b9d0-106">The URI represented by this object is then used to load the next page of results.</span></span> <span data-ttu-id="1b9d0-107">詳細については、次を参照してください。[遅延コンテンツを読み込んで](../../../../docs/framework/data/wcf/loading-deferred-content-wcf-data-services.md)です。</span><span class="sxs-lookup"><span data-stu-id="1b9d0-107">For more information, see [Loading Deferred Content](../../../../docs/framework/data/wcf/loading-deferred-content-wcf-data-services.md).</span></span>  
   
- <span data-ttu-id="9a29e-108">このトピックの例では、Northwind サンプル データ サービスおよび自動生成されたクライアント データ サービス クラスを使用します。</span><span class="sxs-lookup"><span data-stu-id="9a29e-108">The example in this topic uses the Northwind sample data service and autogenerated client data service classes.</span></span> <span data-ttu-id="9a29e-109">完了したときにこのサービスおよびクライアント データ クラスが作成された、 [WCF Data Services クイック スタート](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md)です。</span><span class="sxs-lookup"><span data-stu-id="9a29e-109">This service and the client data classes are created when you complete the [WCF Data Services quickstart](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md).</span></span>  
+ <span data-ttu-id="1b9d0-108">このトピックの例では、Northwind サンプル データ サービスおよび自動生成されたクライアント データ サービス クラスを使用します。</span><span class="sxs-lookup"><span data-stu-id="1b9d0-108">The example in this topic uses the Northwind sample data service and autogenerated client data service classes.</span></span> <span data-ttu-id="1b9d0-109">完了したときにこのサービスおよびクライアント データ クラスが作成された、 [WCF Data Services クイック スタート](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md)です。</span><span class="sxs-lookup"><span data-stu-id="1b9d0-109">This service and the client data classes are created when you complete the [WCF Data Services quickstart](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md).</span></span>  
   
-## <a name="example"></a><span data-ttu-id="9a29e-110">例</span><span class="sxs-lookup"><span data-stu-id="9a29e-110">Example</span></span>  
- <span data-ttu-id="9a29e-111">次の例は、`do…while` ループを使用して、データ サービスからのページングされた結果の `Customers` エンティティを読み込みます。</span><span class="sxs-lookup"><span data-stu-id="9a29e-111">This example uses a `do…while` loop to load `Customers` entities from a paged results from the data service.</span></span>  
+## <a name="example"></a><span data-ttu-id="1b9d0-110">例</span><span class="sxs-lookup"><span data-stu-id="1b9d0-110">Example</span></span>  
+ <span data-ttu-id="1b9d0-111">次の例は、`do…while` ループを使用して、データ サービスからのページングされた結果の `Customers` エンティティを読み込みます。</span><span class="sxs-lookup"><span data-stu-id="1b9d0-111">This example uses a `do…while` loop to load `Customers` entities from a paged results from the data service.</span></span>  
   
  [!code-csharp[Astoria Northwind Client#GetCustomersPaged](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#getcustomerspaged)]
  [!code-vb[Astoria Northwind Client#GetCustomersPaged](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#getcustomerspaged)]  
   
-## <a name="example"></a><span data-ttu-id="9a29e-112">例</span><span class="sxs-lookup"><span data-stu-id="9a29e-112">Example</span></span>  
- <span data-ttu-id="9a29e-113">次の例は、関連する `Orders` エンティティと各 `Customers` エンティティを返し、`do…while` ループを使用して `Customers` エンティティ ページおよび入れ子になった `while` ループを読み込んで、データ サービスから関連する `Orders` エンティティのページを読み込みます。</span><span class="sxs-lookup"><span data-stu-id="9a29e-113">This example returns related `Orders` entities with each `Customers` entity and uses a `do…while` loop to load `Customers` entities pages and a nested `while` loop to load pages of related `Orders` entities from the data service.</span></span>  
+## <a name="example"></a><span data-ttu-id="1b9d0-112">例</span><span class="sxs-lookup"><span data-stu-id="1b9d0-112">Example</span></span>  
+ <span data-ttu-id="1b9d0-113">次の例は、関連する `Orders` エンティティと各 `Customers` エンティティを返し、`do…while` ループを使用して `Customers` エンティティ ページおよび入れ子になった `while` ループを読み込んで、データ サービスから関連する `Orders` エンティティのページを読み込みます。</span><span class="sxs-lookup"><span data-stu-id="1b9d0-113">This example returns related `Orders` entities with each `Customers` entity and uses a `do…while` loop to load `Customers` entities pages and a nested `while` loop to load pages of related `Orders` entities from the data service.</span></span>  
   
  [!code-csharp[Astoria Northwind Client#GetCustomersPagedNested](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#getcustomerspagednested)]
  [!code-vb[Astoria Northwind Client#GetCustomersPagedNested](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#getcustomerspagednested)]  
   
-## <a name="see-also"></a><span data-ttu-id="9a29e-114">参照</span><span class="sxs-lookup"><span data-stu-id="9a29e-114">See Also</span></span>  
- [<span data-ttu-id="9a29e-115">遅延コンテンツの読み込み</span><span class="sxs-lookup"><span data-stu-id="9a29e-115">Loading Deferred Content</span></span>](../../../../docs/framework/data/wcf/loading-deferred-content-wcf-data-services.md)  
- [<span data-ttu-id="9a29e-116">方法: 関連エンティティを読み込む</span><span class="sxs-lookup"><span data-stu-id="9a29e-116">How to: Load Related Entities</span></span>](../../../../docs/framework/data/wcf/how-to-load-related-entities-wcf-data-services.md)
+## <a name="see-also"></a><span data-ttu-id="1b9d0-114">関連項目</span><span class="sxs-lookup"><span data-stu-id="1b9d0-114">See Also</span></span>  
+ [<span data-ttu-id="1b9d0-115">遅延コンテンツの読み込み</span><span class="sxs-lookup"><span data-stu-id="1b9d0-115">Loading Deferred Content</span></span>](../../../../docs/framework/data/wcf/loading-deferred-content-wcf-data-services.md)  
+ [<span data-ttu-id="1b9d0-116">方法: 関連エンティティを読み込む</span><span class="sxs-lookup"><span data-stu-id="1b9d0-116">How to: Load Related Entities</span></span>](../../../../docs/framework/data/wcf/how-to-load-related-entities-wcf-data-services.md)

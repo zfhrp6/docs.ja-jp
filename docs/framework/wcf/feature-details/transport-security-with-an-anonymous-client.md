@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33499181"
 ---
 # <a name="transport-security-with-an-anonymous-client"></a><span data-ttu-id="28060-102">トランスポート セキュリティと匿名クライアント</span><span class="sxs-lookup"><span data-stu-id="28060-102">Transport Security with an Anonymous Client</span></span>
 <span data-ttu-id="28060-103">この Windows Communication Foundation (WCF) シナリオでは、トランスポート セキュリティ (HTTPS) を使用して、機密性と整合性を確認してください。</span><span class="sxs-lookup"><span data-stu-id="28060-103">This Windows Communication Foundation (WCF) scenario uses transport security (HTTPS) to ensure confidentiality and integrity.</span></span> <span data-ttu-id="28060-104">サーバーは SSL (Secure Sockets Layer) 証明書で認証される必要があり、クライアントはサーバーの証明書を信頼する必要があります。</span><span class="sxs-lookup"><span data-stu-id="28060-104">The server must be authenticated with a Secure Sockets Layer (SSL) certificate, and the clients must trust the server's certificate.</span></span> <span data-ttu-id="28060-105">クライアントを認証する機構はないため、匿名となります。</span><span class="sxs-lookup"><span data-stu-id="28060-105">The client is not authenticated by any mechanism and is, therefore, anonymous.</span></span>  

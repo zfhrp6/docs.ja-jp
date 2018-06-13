@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33496651"
 ---
 # <a name="comparing-aspnet-web-services-to-wcf-based-on-development"></a><span data-ttu-id="04cf2-102">開発者の視点から見た ASP.NET Web サービスと WCF との比較</span><span class="sxs-lookup"><span data-stu-id="04cf2-102">Comparing ASP.NET Web Services to WCF Based on Development</span></span>
 <span data-ttu-id="04cf2-103">Windows Communication Foundation (WCF) では、WCF アプリケーションをプログラミングおよび ASP.NET Web サービスのように構成を有効にして、その動作を模倣する ASP.NET 互換モード オプションがあります。</span><span class="sxs-lookup"><span data-stu-id="04cf2-103">Windows Communication Foundation (WCF) has an ASP.NET compatibility mode option to enable WCF applications to be programmed and configured like ASP.NET Web services, and mimic their behavior.</span></span> <span data-ttu-id="04cf2-104">次のセクションでは、ASP.NET Web サービスを比較し、WCF が両方のテクノロジを使用してアプリケーションを開発するための要件に基づいています。</span><span class="sxs-lookup"><span data-stu-id="04cf2-104">The following sections compare ASP.NET Web services and WCF based on what is required to develop applications using both technologies.</span></span>  

@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33496114"
 ---
 # <a name="denial-of-service"></a><span data-ttu-id="73ac0-102">サービス拒否</span><span class="sxs-lookup"><span data-stu-id="73ac0-102">Denial of Service</span></span>
 <span data-ttu-id="73ac0-103">サービス拒否は、メッセージを処理できなくしたり、メッセージ処理を大幅に遅延させたりするなど、システムに過大な負荷が生じた場合に発生します。</span><span class="sxs-lookup"><span data-stu-id="73ac0-103">Denial of service occurs when a system is overwhelmed in such a way that messages cannot be processed, or they are processed extremely slowly.</span></span>  

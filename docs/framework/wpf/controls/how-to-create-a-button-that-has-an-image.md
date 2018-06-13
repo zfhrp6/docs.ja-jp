@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33550941"
 ---
 # <a name="how-to-create-a-button-that-has-an-image"></a><span data-ttu-id="292ad-102">方法 : イメージを持つ Button を作成する</span><span class="sxs-lookup"><span data-stu-id="292ad-102">How to: Create a Button That Has an Image</span></span>
 <span data-ttu-id="292ad-103">この例では、画像を含める、<xref:System.Windows.Controls.Button>です。</span><span class="sxs-lookup"><span data-stu-id="292ad-103">This example shows how to include an image on a <xref:System.Windows.Controls.Button>.</span></span>  

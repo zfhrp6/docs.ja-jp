@@ -12,6 +12,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32759661"
 ---
 # <a name="windows-forms-add-configuration-element"></a><span data-ttu-id="27b42-102">Windows フォームの構成要素を追加します。</span><span class="sxs-lookup"><span data-stu-id="27b42-102">Windows Forms Add Configuration Element</span></span>
 

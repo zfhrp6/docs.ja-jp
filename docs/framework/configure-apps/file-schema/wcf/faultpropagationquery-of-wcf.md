@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32747360"
 ---
 # <a name="ltfaultpropagationquerygt-of-wcf"></a><span data-ttu-id="766b3-102">WCF の &lt;faultPropagationQuery&gt;</span><span class="sxs-lookup"><span data-stu-id="766b3-102">&lt;faultPropagationQuery&gt; of WCF</span></span>
 <span data-ttu-id="766b3-103">1 つのアクティビティ内で発生するエラーの処理を追跡するために使用するクエリを表します。</span><span class="sxs-lookup"><span data-stu-id="766b3-103">Represents a query that is used to track the handling of faults that occur within an activity.</span></span>  <span data-ttu-id="766b3-104">このイベントは、FaultHandler がエラーを処理するたびに発生します。</span><span class="sxs-lookup"><span data-stu-id="766b3-104">This event occurs each time a FaultHandler processes a fault.</span></span> <span data-ttu-id="766b3-105">1 つのアクティビティ内で発生したエラーの処理は、このようなクエリを使用して追跡する必要があります。</span><span class="sxs-lookup"><span data-stu-id="766b3-105">You should use such query to track the handling of faults that occur within an activity.</span></span> <span data-ttu-id="766b3-106">追跡参加要素がエラー伝達レコードを定期受信するには、このクエリが必要です。</span><span class="sxs-lookup"><span data-stu-id="766b3-106">The query is necessary for a  tracking participant to subscribe to fault propagation records.</span></span>  

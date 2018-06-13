@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33501534"
 ---
 # <a name="how-to-set-the-protectionlevel-property"></a><span data-ttu-id="524d7-102">方法 : ProtectionLevel プロパティを設定する</span><span class="sxs-lookup"><span data-stu-id="524d7-102">How to: Set the ProtectionLevel Property</span></span>
 <span data-ttu-id="524d7-103">適切な属性を適用してプロパティを設定することで、保護レベルを設定できます。</span><span class="sxs-lookup"><span data-stu-id="524d7-103">You can set the protection level by applying an appropriate attribute and setting the property.</span></span> <span data-ttu-id="524d7-104">サービス レベルですべてのメッセージのすべての部分に影響する保護を設定したり、メソッドからメッセージ部分まで、段階的にきめ細かなレベルで保護を設定したりすることができます。</span><span class="sxs-lookup"><span data-stu-id="524d7-104">You can set protection at the service level to affect all parts of every message, or you can set protection at increasingly granular levels, from methods to message parts.</span></span> <span data-ttu-id="524d7-105">詳細については、`ProtectionLevel`プロパティを参照してください[について保護レベル](../../../docs/framework/wcf/understanding-protection-level.md)です。</span><span class="sxs-lookup"><span data-stu-id="524d7-105">For more information about the `ProtectionLevel` property, see [Understanding Protection Level](../../../docs/framework/wcf/understanding-protection-level.md).</span></span>  

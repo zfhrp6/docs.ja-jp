@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33498281"
 ---
 # <a name="serializable-types"></a><span data-ttu-id="2c721-102">シリアル化可能な型</span><span class="sxs-lookup"><span data-stu-id="2c721-102">Serializable Types</span></span>
 <span data-ttu-id="2c721-103">既定では、<xref:System.Runtime.Serialization.DataContractSerializer> は公開されている型をすべてシリアル化します。</span><span class="sxs-lookup"><span data-stu-id="2c721-103">By default, the <xref:System.Runtime.Serialization.DataContractSerializer> serializes all publicly visible types.</span></span> <span data-ttu-id="2c721-104">その型の読み書き可能なパブリック プロパティおよびパブリック フィールドは、すべてシリアル化されます。</span><span class="sxs-lookup"><span data-stu-id="2c721-104">All public read/write properties and fields of the type are serialized.</span></span>  

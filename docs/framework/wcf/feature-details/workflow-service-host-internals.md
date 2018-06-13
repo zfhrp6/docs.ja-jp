@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33505506"
 ---
 # <a name="workflow-service-host-internals"></a><span data-ttu-id="e8194-102">ワークフロー サービス ホストの内部</span><span class="sxs-lookup"><span data-stu-id="e8194-102">Workflow Service Host Internals</span></span>
 <span data-ttu-id="e8194-103"><xref:System.ServiceModel.WorkflowServiceHost> では、ワークフロー サービスのホストが提供されます。</span><span class="sxs-lookup"><span data-stu-id="e8194-103"><xref:System.ServiceModel.WorkflowServiceHost> provides a host for workflow services.</span></span> <span data-ttu-id="e8194-104">これにより、受信メッセージをリッスンして、該当するワークフロー サービス インスタンスにルーティングし、アイドル状態のワークフローのアンロードおよび永続化を制御できます。</span><span class="sxs-lookup"><span data-stu-id="e8194-104">It is responsible for listening for incoming messages and routing them to the appropriate workflow service instance, it controls unloading and persisting of idle workflows, and more.</span></span> <span data-ttu-id="e8194-105">このトピックでは、WorkflowServiceHost がどのように受信メッセージを処理するかについて説明します。</span><span class="sxs-lookup"><span data-stu-id="e8194-105">This topic describes how WorkflowServiceHost processes incoming messages.</span></span>  

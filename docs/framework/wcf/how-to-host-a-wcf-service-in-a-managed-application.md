@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33505232"
 ---
 # <a name="how-to-host-a-wcf-service-in-a-managed-application"></a><span data-ttu-id="b0852-102">方法 : マネージ アプリケーションで WCF サービスをホストする</span><span class="sxs-lookup"><span data-stu-id="b0852-102">How to: Host a WCF Service in a Managed Application</span></span>
 <span data-ttu-id="b0852-103">マネージ アプリケーションでサービスをホストするには、マネージ アプリケーション コード内にサービスのコードを埋め込み、サービスのエンドポイントをコードで強制的に定義するか、構成を使用して宣言により定義してから、または既定のエンドポイントを使用して、<xref:System.ServiceModel.ServiceHost> のインスタンスを作成します。</span><span class="sxs-lookup"><span data-stu-id="b0852-103">To host a service inside a managed application, embed the code for the service inside the managed application code, define an endpoint for the service either imperatively in code, declaratively through configuration, or using default endpoints, and then create an instance of <xref:System.ServiceModel.ServiceHost>.</span></span>  

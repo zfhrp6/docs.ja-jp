@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33496381"
 ---
 # <a name="deploying-an-internet-information-services-hosted-wcf-service"></a><span data-ttu-id="68d2e-102">インターネット インフォメーション サービスでホストされる WCF サービスの配置</span><span class="sxs-lookup"><span data-stu-id="68d2e-102">Deploying an Internet Information Services-Hosted WCF Service</span></span>
 <span data-ttu-id="68d2e-103">インターネット インフォメーション サービス (IIS) でホストされている Windows Communication Foundation (WCF) サービスの展開の開発と、次のタスクで構成されます。</span><span class="sxs-lookup"><span data-stu-id="68d2e-103">Developing and deploying a Windows Communication Foundation (WCF) service that is hosted in Internet Information Services (IIS) consists of the following tasks:</span></span>  

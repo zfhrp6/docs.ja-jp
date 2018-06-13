@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33549332"
 ---
 # <a name="how-to-localize-an-application"></a><span data-ttu-id="fcfb0-102">方法 : アプリケーションをローカライズする</span><span class="sxs-lookup"><span data-stu-id="fcfb0-102">How to: Localize an Application</span></span>
 <span data-ttu-id="fcfb0-103">このチュートリアルでは、LocBaml ツールを使用して、ローカライズされたアプリケーションを作成する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="fcfb0-103">This tutorial explains how to create a localized application by using the LocBaml tool.</span></span>  

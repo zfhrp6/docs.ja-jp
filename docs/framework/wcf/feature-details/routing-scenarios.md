@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33496153"
 ---
 # <a name="routing-scenarios"></a><span data-ttu-id="cf919-102">ルーティング シナリオ</span><span class="sxs-lookup"><span data-stu-id="cf919-102">Routing Scenarios</span></span>
 <span data-ttu-id="cf919-103">ルーティング サービスは自由にカスタマイズできますが、まったく新しい構成を作成するときは、効率的なルーティング ロジックを設計するのが困難である場合があります。</span><span class="sxs-lookup"><span data-stu-id="cf919-103">While the Routing Service is highly customizable, it can be a challenge to design efficient routing logic when creating a new configuration from scratch.</span></span>  <span data-ttu-id="cf919-104">しかし、ほとんどのルーティング サービスの構成で想定されている一般的なシナリオがいくつかあります。</span><span class="sxs-lookup"><span data-stu-id="cf919-104">However, there are several common scenarios that most Routing Service configurations follow.</span></span> <span data-ttu-id="cf919-105">これらのシナリオは、特定の構成に直接、適用できない場合もありますが、これらのシナリオに対応するルーティング サービスの構成方法を理解しておくことは、ルーティング サービスを理解する助けとなります。</span><span class="sxs-lookup"><span data-stu-id="cf919-105">While these scenarios may not apply directly to your specific configuration, understanding how the Routing Service can be configured to handle these scenarios will aid you in understanding the Routing Service.</span></span>  

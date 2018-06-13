@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32743304"
 ---
 # <a name="ltiriparsinggt-element-uri-settings"></a><span data-ttu-id="63c15-102">&lt;iriParsing&gt;要素 (Uri 設定)</span><span class="sxs-lookup"><span data-stu-id="63c15-102">&lt;iriParsing&gt; Element (Uri Settings)</span></span>
 <span data-ttu-id="63c15-103">International Resource Identifier (IRI) 解析が、<xref:System.Uri> に適用されるかどうか、および IRI の解析規則が適用されるどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="63c15-103">Specifies if International Resource Identifier (IRI) parsing is applied to a <xref:System.Uri> and whether IRI parsing rules should be applied.</span></span>  

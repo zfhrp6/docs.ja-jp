@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32746658"
 ---
 # <a name="ltpersistenceprovidergt"></a><span data-ttu-id="73ff4-102">&lt;persistenceProvider&gt;</span><span class="sxs-lookup"><span data-stu-id="73ff4-102">&lt;persistenceProvider&gt;</span></span>
 <span data-ttu-id="73ff4-103">使用する永続化プロバイダーの実装の型と、永続化操作に使用するタイムアウトを指定します。</span><span class="sxs-lookup"><span data-stu-id="73ff4-103">Specifies the type of the persistence provider implementation to use, as well as the time-out to use for persistence operations.</span></span>  

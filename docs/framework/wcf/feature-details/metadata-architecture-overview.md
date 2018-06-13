@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33496894"
 ---
 # <a name="metadata-architecture-overview"></a><span data-ttu-id="6819e-102">メタデータ アーキテクチャの概要</span><span class="sxs-lookup"><span data-stu-id="6819e-102">Metadata Architecture Overview</span></span>
 <span data-ttu-id="6819e-103">Windows Communication Foundation (WCF) では、エクスポート、公開、取得、およびサービスのメタデータをインポートするための豊富なインフラストラクチャを提供します。</span><span class="sxs-lookup"><span data-stu-id="6819e-103">Windows Communication Foundation (WCF) provides a rich infrastructure for exporting, publishing, retrieving, and importing service metadata.</span></span> <span data-ttu-id="6819e-104">WCF サービスでは、メタデータを使用して、Svcutil.exe などのツールは、サービスにアクセスするためのクライアント コードを自動的に生成できるように、サービスのエンドポイントと対話する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="6819e-104">WCF services use metadata to describe how to interact with the service's endpoints so that tools, such as Svcutil.exe, can automatically generate client code for accessing the service.</span></span>  

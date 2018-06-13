@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33542338"
 ---
 # <a name="flow-content"></a><span data-ttu-id="a342d-102">フロー コンテンツ</span><span class="sxs-lookup"><span data-stu-id="a342d-102">Flow Content</span></span>
 <span data-ttu-id="a342d-103">フロー コンテンツ要素でホストするのに適したフロー コンテンツを作成する構成要素を提供する、<xref:System.Windows.Documents.FlowDocument>です。</span><span class="sxs-lookup"><span data-stu-id="a342d-103">Flow content elements provide the building blocks for creating flow content suitable for hosting in a <xref:System.Windows.Documents.FlowDocument>.</span></span>  

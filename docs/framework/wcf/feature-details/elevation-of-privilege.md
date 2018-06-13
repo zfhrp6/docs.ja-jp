@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33496195"
 ---
 # <a name="elevation-of-privilege"></a><span data-ttu-id="ee78d-102">権限の昇格</span><span class="sxs-lookup"><span data-stu-id="ee78d-102">Elevation of Privilege</span></span>
 <span data-ttu-id="ee78d-103">*特権の昇格*攻撃者承認本来付与されたもの以外のアクセス許可を与えた結果します。</span><span class="sxs-lookup"><span data-stu-id="ee78d-103">*Elevation of privilege* results from giving an attacker authorization permissions beyond those initially granted.</span></span> <span data-ttu-id="ee78d-104">たとえば、"読み取り専用" アクセス許可の権限セットを持つ攻撃者が、何らかの方法で権限セットを "読み取り/書き込み" アクセス許可を含むものに昇格させます。</span><span class="sxs-lookup"><span data-stu-id="ee78d-104">For example, an attacker with a privilege set of "read only" permissions somehow elevates the set to include "read and write."</span></span>  

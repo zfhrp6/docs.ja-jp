@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33509080"
 ---
 # <a name="security-considerations-for-data"></a><span data-ttu-id="ecdc5-102">セキュリティに関するデータの考慮事項</span><span class="sxs-lookup"><span data-stu-id="ecdc5-102">Security Considerations for Data</span></span>
 <span data-ttu-id="ecdc5-103">Windows Communication Foundation (WCF) でのデータを扱う場合、脅威の分類の数を検討する必要があります。</span><span class="sxs-lookup"><span data-stu-id="ecdc5-103">When dealing with data in Windows Communication Foundation (WCF), you must consider a number of threat categories.</span></span> <span data-ttu-id="ecdc5-104">データ処理に関連する最も重要な脅威の種類を次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="ecdc5-104">The following table lists the most important threat classes that relate to data processing.</span></span> <span data-ttu-id="ecdc5-105">WCF には、これらの脅威を軽減するためのツールが用意されています。</span><span class="sxs-lookup"><span data-stu-id="ecdc5-105">WCF provides tools to mitigate these threats.</span></span>  

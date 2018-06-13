@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33562977"
 ---
 # <a name="collections-and-collection-types-for-xaml"></a><span data-ttu-id="bb1d9-102">XAML のコレクションおよびコレクション型</span><span class="sxs-lookup"><span data-stu-id="bb1d9-102">Collections and Collection Types for XAML</span></span>
 <span data-ttu-id="bb1d9-103">このトピックでは、コレクションをサポートして、親オブジェクトの要素またはプロパティ要素の子要素としてコレクション アイテムをインスタンス化するため、XAML 構文をサポートするためには、型のプロパティを定義する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="bb1d9-103">This topic describes how to define properties of types that are intended to support a collection, and to support the XAML syntax for instantiating collection items as element children of a parent object element or property element.</span></span>  

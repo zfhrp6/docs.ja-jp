@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33340464"
 ---
 # <a name="using-variance-in-interfaces-for-generic-collections-c"></a><span data-ttu-id="34615-102">ジェネリック コレクションに対するインターフェイスでの分散の使用 (C#)</span><span class="sxs-lookup"><span data-stu-id="34615-102">Using Variance in Interfaces for Generic Collections (C#)</span></span>
 <span data-ttu-id="34615-103">共変のインターフェイスのメソッドでは、そのインターフェイスで指定された型よりも強い派生型を返すことができます。</span><span class="sxs-lookup"><span data-stu-id="34615-103">A covariant interface allows its methods to return more derived types than those specified in the interface.</span></span> <span data-ttu-id="34615-104">反変のインターフェイスのメソッドでは、そのインターフェイスで指定された型よりも弱い派生型のパラメーターを受け取ることができます。</span><span class="sxs-lookup"><span data-stu-id="34615-104">A contravariant interface allows its methods to accept parameters of less derived types than those specified in the interface.</span></span>  

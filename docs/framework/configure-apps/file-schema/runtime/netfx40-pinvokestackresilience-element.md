@@ -12,6 +12,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32748998"
 ---
 # <a name="ltnetfx40pinvokestackresiliencegt-element"></a><span data-ttu-id="e1529-102">&lt;NetFx40_PInvokeStackResilience&gt;要素</span><span class="sxs-lookup"><span data-stu-id="e1529-102">&lt;NetFx40_PInvokeStackResilience&gt; Element</span></span>
 <span data-ttu-id="e1529-103">ランタイムが実行時の不適切なプラットフォーム呼び出し宣言を自動的に修正するかどうかを指定します。これにより、マネージ コードとアンマネージ コード間の遷移が遅くなります。</span><span class="sxs-lookup"><span data-stu-id="e1529-103">Specifies whether the runtime automatically fixes incorrect platform invoke declarations at run time, at the cost of slower transitions between managed and unmanaged code.</span></span>  
