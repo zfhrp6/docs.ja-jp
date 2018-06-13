@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33511892"
 ---
 # <a name="extending-windows-workflow-foundation"></a><span data-ttu-id="ce7c5-102">Windows Workflow Foundation の拡張</span><span class="sxs-lookup"><span data-stu-id="ce7c5-102">Extending Windows Workflow Foundation</span></span>
 <span data-ttu-id="ce7c5-103">次のセクションでは、外部の再ホストされた環境でカスタム アクティビティとデザイナーを使用して Windows Workflow Foundation (WF) を拡張する方法をについて説明します[!INCLUDE[vs2010](../../../includes/vs2010-md.md)]です。</span><span class="sxs-lookup"><span data-stu-id="ce7c5-103">The following section describes how to extend Windows Workflow Foundation (WF) with custom activities and designers in rehosted environments outside [!INCLUDE[vs2010](../../../includes/vs2010-md.md)].</span></span>  

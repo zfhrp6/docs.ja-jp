@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 6b195d3a512c537ca409bd2039add9e69abaf4df
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33456363"
 ---
 # <a name="getdemultiplexedstub-function"></a><span data-ttu-id="0d251-103">GetDemultiplexedStub 関数</span><span class="sxs-lookup"><span data-stu-id="0d251-103">GetDemultiplexedStub function</span></span>
 <span data-ttu-id="0d251-104">Windows の管理から非同期呼び出しの受信をクライアントを支援するためには、オブジェクト転送シンクを作成します。</span><span class="sxs-lookup"><span data-stu-id="0d251-104">Creates an object forwarder sink to assist a client in receiving asynchronous calls from Windows Management.</span></span>

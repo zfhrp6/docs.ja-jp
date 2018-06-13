@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33474221"
 ---
 # <a name="end-to-end-tracing"></a><span data-ttu-id="357dc-102">エンドツーエンドのトレース</span><span class="sxs-lookup"><span data-stu-id="357dc-102">End-to-End Tracing</span></span>
 <span data-ttu-id="357dc-103">エンド ツー エンド (e2e) のトレースでは、開発者は、コード パスが失敗した原因を調査するために、またはキャパシティ プランニングやパフォーマンス分析の詳細なトレースを提供する、Windows Communication Foundation (WCF) インフラストラクチャでのコードの実行ができます。</span><span class="sxs-lookup"><span data-stu-id="357dc-103">End to End (e2e) Tracing allows developers to follow the execution of code in the Windows Communication Foundation (WCF) infrastructure to investigate why a code path has failed, or to provide detailed tracing for capacity planning and performance analysis.</span></span> <span data-ttu-id="357dc-104">Windows Communication Foundation (WCF) には、エラーの原因を診断に役立つ 3 つの相関機構が用意されています。 アクティビティ、転送、および伝達します。</span><span class="sxs-lookup"><span data-stu-id="357dc-104">Windows Communication Foundation (WCF) provides three correlation mechanisms to help diagnose the cause of an error: activities, transfers, and propagation.</span></span>  

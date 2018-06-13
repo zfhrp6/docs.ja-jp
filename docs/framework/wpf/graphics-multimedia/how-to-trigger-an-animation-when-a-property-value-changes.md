@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33561318"
 ---
 # <a name="how-to-trigger-an-animation-when-a-property-value-changes"></a><span data-ttu-id="54db3-102">方法 : プロパティ値が変化したときにアニメーションをトリガーする</span><span class="sxs-lookup"><span data-stu-id="54db3-102">How to: Trigger an Animation When a Property Value Changes</span></span>
 <span data-ttu-id="54db3-103">この例を使用する方法を示しています、<xref:System.Windows.Trigger>を開始する、<xref:System.Windows.Media.Animation.Storyboard>プロパティの値が変更されたとき。</span><span class="sxs-lookup"><span data-stu-id="54db3-103">This example shows how to use a <xref:System.Windows.Trigger> to start a <xref:System.Windows.Media.Animation.Storyboard> when a property value changes.</span></span> <span data-ttu-id="54db3-104">使用することができます、<xref:System.Windows.Trigger>内、 <xref:System.Windows.Style>、 <xref:System.Windows.Controls.ControlTemplate>、または<xref:System.Windows.DataTemplate>です。</span><span class="sxs-lookup"><span data-stu-id="54db3-104">You can use a <xref:System.Windows.Trigger> inside a <xref:System.Windows.Style>, <xref:System.Windows.Controls.ControlTemplate>, or <xref:System.Windows.DataTemplate>.</span></span>  

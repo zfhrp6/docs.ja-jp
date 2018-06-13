@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33515109"
 ---
 # <a name="activity-relationships-validation"></a><span data-ttu-id="674a3-102">アクティビティの関係の検証</span><span class="sxs-lookup"><span data-stu-id="674a3-102">Activity Relationships Validation</span></span>
 <span data-ttu-id="674a3-103">このサンプルには 3 つのアクティビティ `CreateCity`、`CreateState`、および `CreateCountry` が含まれます。</span><span class="sxs-lookup"><span data-stu-id="674a3-103">This sample consists of three activities, `CreateCity`, `CreateState`, and `CreateCountry`.</span></span> <span data-ttu-id="674a3-104">`CreateCity` は `CreateState` アクティビティ内にあり、`CreateState` は `CreateCountry` アクティビティ内にある必要があります。</span><span class="sxs-lookup"><span data-stu-id="674a3-104">`CreateCity` must be inside a `CreateState` activity, and `CreateState` must be inside a `CreateCountry` activity.</span></span> <span data-ttu-id="674a3-105">このサンプルの目的から、検証ロジックは、`CreateState` アクティビティについてはコードで記述され、`CreateCity` アクティビティについては XAML で記述されます。</span><span class="sxs-lookup"><span data-stu-id="674a3-105">For the purpose of this sample, the validation logic is in code for the `CreateState` activity, and in XAML for the `CreateCity` activity.</span></span> <span data-ttu-id="674a3-106">制約の動作は両方とも同じです。</span><span class="sxs-lookup"><span data-stu-id="674a3-106">Both constraints have the same behavior.</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33514665"
 ---
 # <a name="sql-server-persistence-database"></a><span data-ttu-id="5ec4a-102">SQL Server 永続性データベース</span><span class="sxs-lookup"><span data-stu-id="5ec4a-102">SQL Server Persistence Database</span></span>
 <span data-ttu-id="5ec4a-103">このセクションでは、SQL Workflow Instance Store でサポートされるパブリック データベース ビューの詳細について説明し、インスタンスのプリミティブ データ プロパティを逆シリアル化する方法と非永続的インスタンスに対してクエリを実行する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="5ec4a-103">This section provides details about public database views supported by the SQL Workflow Instance Store and shows how to de-serialize primitive instance data properties and how to query for non-persisted instances.</span></span>  

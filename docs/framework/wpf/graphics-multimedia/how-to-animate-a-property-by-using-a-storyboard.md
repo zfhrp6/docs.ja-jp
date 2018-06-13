@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33561073"
 ---
 # <a name="how-to-animate-a-property-by-using-a-storyboard"></a><span data-ttu-id="c7998-102">方法 : ストーリーボードを使ってプロパティをアニメーション化する</span><span class="sxs-lookup"><span data-stu-id="c7998-102">How to: Animate a Property by Using a Storyboard</span></span>
 <span data-ttu-id="c7998-103">この例を使用する方法を示しています、<xref:System.Windows.Media.Animation.Storyboard>プロパティをアニメーション化します。</span><span class="sxs-lookup"><span data-stu-id="c7998-103">This example shows how to use a <xref:System.Windows.Media.Animation.Storyboard> to animate properties.</span></span> <span data-ttu-id="c7998-104">使用してプロパティをアニメーション化する、 <xref:System.Windows.Media.Animation.Storyboard>、アニメーション化しも作成する各プロパティのアニメーションを作成、<xref:System.Windows.Media.Animation.Storyboard>アニメーションを格納します。</span><span class="sxs-lookup"><span data-stu-id="c7998-104">To animate a property by using a <xref:System.Windows.Media.Animation.Storyboard>, create an animation for each property that you want to animate and also create a <xref:System.Windows.Media.Animation.Storyboard> to contain the animations.</span></span>  
