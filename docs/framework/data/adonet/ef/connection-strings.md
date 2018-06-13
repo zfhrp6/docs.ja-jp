@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32766986"
 ---
 # <a name="connection-strings"></a><span data-ttu-id="1370a-102">接続文字列</span><span class="sxs-lookup"><span data-stu-id="1370a-102">Connection Strings</span></span>
 <span data-ttu-id="1370a-103">接続文字列には、データ プロバイダーからデータ ソースにパラメーターとして渡す初期化情報が含まれています。</span><span class="sxs-lookup"><span data-stu-id="1370a-103">A connection string contains initialization information that is passed as a parameter from a data provider to a data source.</span></span> <span data-ttu-id="1370a-104">接続文字列は接続を開くときに解析され、その構文はデータ プロバイダーによって異なります。</span><span class="sxs-lookup"><span data-stu-id="1370a-104">The syntax depends on the data provider, and the connection string is parsed during the attempt to open a connection.</span></span> <span data-ttu-id="1370a-105">Entity Framework で使用される接続文字列には、Entity Framework のサポート基盤である ADO.NET データ プロバイダーへの接続に使用される情報が含まれています。</span><span class="sxs-lookup"><span data-stu-id="1370a-105">Connection strings used by the Entity Framework contain information used to connect to the underlying ADO.NET data provider that supports the Entity Framework.</span></span> <span data-ttu-id="1370a-106">また、必要なモデル ファイルおよびマッピング ファイルに関する情報も含まれています。</span><span class="sxs-lookup"><span data-stu-id="1370a-106">They also contain information about the required model and mapping files.</span></span>  

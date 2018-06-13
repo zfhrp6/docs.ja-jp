@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32766037"
 ---
 # <a name="the-shape-of-the-command-trees"></a><span data-ttu-id="32741-102">コマンド ツリーの構造</span><span class="sxs-lookup"><span data-stu-id="32741-102">The Shape of the Command Trees</span></span>
 <span data-ttu-id="32741-103">SQL 生成モジュールは、指定された入力クエリ コマンド ツリー式に基づいてバックエンドに固有の SQL クエリを生成します。</span><span class="sxs-lookup"><span data-stu-id="32741-103">The SQL generation module is responsible for generating a backend specific SQL query based on a given input query command tree expression.</span></span> <span data-ttu-id="32741-104">ここでは、クエリ コマンド ツリーの特性、プロパティ、および構造について説明します。</span><span class="sxs-lookup"><span data-stu-id="32741-104">This section discusses the characteristics, properties, and structure of the query command trees.</span></span>  

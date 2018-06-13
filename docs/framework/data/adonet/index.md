@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32765439"
 ---
 # <a name="adonet"></a><span data-ttu-id="76a81-102">ADO.NET</span><span class="sxs-lookup"><span data-stu-id="76a81-102">ADO.NET</span></span>
 <span data-ttu-id="76a81-103">ADO.NET は、.NET Framework のプログラミングでデータ アクセス サービスを使用できるようにするためのクラスの集合です。</span><span class="sxs-lookup"><span data-stu-id="76a81-103">ADO.NET is a set of classes that expose data access services for .NET Framework programmers.</span></span> <span data-ttu-id="76a81-104">ADO.NET は、分散型データ共有アプリケーションを作成する、さまざまなコンポーネントのセットを提供します。</span><span class="sxs-lookup"><span data-stu-id="76a81-104">ADO.NET provides a rich set of components for creating distributed, data-sharing applications.</span></span> <span data-ttu-id="76a81-105">ADO.NET は .NET Framework の不可欠な部分であり、リレーショナル データ、XML データ、およびアプリケーション データへのアクセス機能を提供します。</span><span class="sxs-lookup"><span data-stu-id="76a81-105">It is an integral part of the .NET Framework, providing access to relational, XML, and application data.</span></span> <span data-ttu-id="76a81-106">ADO.NET は、アプリケーション、ツール、言語、またはインターネット ブラウザーが使用するフロントエンド データベース クライアントや中間層ビジネス オブジェクトの作成を含む、各種の開発ニーズをサポートします。</span><span class="sxs-lookup"><span data-stu-id="76a81-106">ADO.NET supports a variety of development needs, including the creation of front-end database clients and middle-tier business objects used by applications, tools, languages, or Internet browsers.</span></span>  

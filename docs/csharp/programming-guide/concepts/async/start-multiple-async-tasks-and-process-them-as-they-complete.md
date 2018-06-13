@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33333724"
 ---
 # <a name="start-multiple-async-tasks-and-process-them-as-they-complete-c"></a><span data-ttu-id="1a27a-102">完了時での複数の非同期タスクとプロセスの実行 (C#)</span><span class="sxs-lookup"><span data-stu-id="1a27a-102">Start Multiple Async Tasks and Process Them As They Complete (C#)</span></span>
 <span data-ttu-id="1a27a-103"><xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType> を使用すると、複数のタスクを、開始された順番に処理するのでなく、同時に開始して完了するごとに 1 つずつ処理できます。</span><span class="sxs-lookup"><span data-stu-id="1a27a-103">By using <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType>, you can start multiple tasks at the same time and process them one by one as they’re completed rather than process them in the order in which they're started.</span></span>  

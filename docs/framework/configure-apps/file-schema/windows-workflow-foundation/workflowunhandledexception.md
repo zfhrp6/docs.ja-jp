@@ -8,6 +8,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32755137"
 ---
 # <a name="ltworkflowunhandledexceptiongt"></a><span data-ttu-id="159ce-102">&lt;workflowUnhandledException&gt;</span><span class="sxs-lookup"><span data-stu-id="159ce-102">&lt;workflowUnhandledException&gt;</span></span>
 <span data-ttu-id="159ce-103">ワークフロー サービス内で未処理の例外が発生した場合のアクションを指定するためのサービス動作。</span><span class="sxs-lookup"><span data-stu-id="159ce-103">A service behavior that enables you to specify the action to take when an unhandled exception occurs within a workflow service.</span></span>  

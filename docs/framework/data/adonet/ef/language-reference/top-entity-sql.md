@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32764659"
 ---
 # <a name="top-entity-sql"></a><span data-ttu-id="f5778-102">TOP (Entity SQL)</span><span class="sxs-lookup"><span data-stu-id="f5778-102">TOP (Entity SQL)</span></span>
 <span data-ttu-id="f5778-103">SELECT 句には、オプションの ALL/DISTINCT 修飾子に続けてオプションの TOP サブ句を指定できます。</span><span class="sxs-lookup"><span data-stu-id="f5778-103">The SELECT clause can have an optional TOP sub-clause following the optional ALL/DISTINCT modifier.</span></span> <span data-ttu-id="f5778-104">TOP サブ句は、クエリ結果の先頭から指定した行セットだけを返すよう指定します。</span><span class="sxs-lookup"><span data-stu-id="f5778-104">The TOP sub-clause specifies that only the first set of rows will be returned from the query result.</span></span>  

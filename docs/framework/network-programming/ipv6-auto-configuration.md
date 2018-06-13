@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33393430"
 ---
 # <a name="ipv6-auto-configuration"></a><span data-ttu-id="456bd-102">IPv6 の自動構成</span><span class="sxs-lookup"><span data-stu-id="456bd-102">IPv6 Auto-Configuration</span></span>
 <span data-ttu-id="456bd-103">IPv6 用の 1 つの重要な目標は、ノードのプラグ アンド プレイをサポートすることです。</span><span class="sxs-lookup"><span data-stu-id="456bd-103">One important goal for IPv6 is to support node Plug and Play.</span></span> <span data-ttu-id="456bd-104">つまり、IPv6 ネットワークにノードを接続して、それを人間の操作なしに自動的に構成できる必要があります。</span><span class="sxs-lookup"><span data-stu-id="456bd-104">That is, it should be possible to plug a node into an IPv6 network and have it automatically configured without any human intervention.</span></span>  

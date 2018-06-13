@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33393618"
 ---
 # <a name="invalidcercall-mda"></a><span data-ttu-id="811a7-102">invalidCERCall MDA</span><span class="sxs-lookup"><span data-stu-id="811a7-102">invalidCERCall MDA</span></span>
 <span data-ttu-id="811a7-103">`invalidCERCall` マネージ デバッグ アシスタント (MDA) は、制約された実行領域 (CER) グラフ内で信頼契約がないかまたは過度に脆弱な契約を持つメソッドの呼び出しがある場合に、アクティブ化されます。</span><span class="sxs-lookup"><span data-stu-id="811a7-103">The `invalidCERCall` managed debugging assistant (MDA) is activated when there is a call within the constrained execution region (CER) graph to a method that has no reliability contract or an excessively weak contract.</span></span> <span data-ttu-id="811a7-104">脆弱な契約とは、最悪のケースの状態の破損が、呼び出しに渡されるインスタンスよりも大きい範囲であることを宣言する契約です。つまり、<xref:System.AppDomain> またはプロセスの状態が破損するか、または CER 内で呼び出されたときにその結果を常に確定的に計算できるとは限りません。</span><span class="sxs-lookup"><span data-stu-id="811a7-104">A weak contract is a contract that declares that the worst case state corruption is of greater scope than the instance passed to the call, that is, the <xref:System.AppDomain> or process state may become corrupted or that its result is not always deterministically computable when called within a CER.</span></span>  

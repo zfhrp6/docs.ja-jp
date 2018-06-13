@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33393985"
 ---
 # <a name="cache-policy"></a><span data-ttu-id="97304-102">キャッシュ ポリシー</span><span class="sxs-lookup"><span data-stu-id="97304-102">Cache Policy</span></span>
 <span data-ttu-id="97304-103">キャッシュ ポリシーには、要求されたリソースのキャッシュ コピーを使用して要求を満たすことができるかどうかを決定するルールを定義します。</span><span class="sxs-lookup"><span data-stu-id="97304-103">A cache policy defines rules that are used to determine whether a request can be satisfied using a cached copy of the requested resource.</span></span> <span data-ttu-id="97304-104">アプリケーションは、更新のクライアント キャッシュ要件を指定しますが、実質的なキャッシュ ポリシーは、クライアントのキャッシュ要件、サーバーのコンテンツ有効期限要件、およびサーバーの再検証要件によって決まります。</span><span class="sxs-lookup"><span data-stu-id="97304-104">Applications specify client cache requirements for freshness, but the effective cache policy is determined by the client cache requirements, the server's content expiration requirements, and the server's revalidation requirements.</span></span> <span data-ttu-id="97304-105">最新のコンテンツをクライアント アプリケーションに確実に返すために、クライアントのキャッシュ ポリシーとサーバーの要件の相互作用によって、常に最も保守的なキャッシュ ポリシーが適用されます。</span><span class="sxs-lookup"><span data-stu-id="97304-105">The interaction of client cache policy and server requirements always results in the most conservative cache policy, to help ensure that the freshest content is returned to the client application.</span></span>  

@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33329869"
 ---
 # <a name="generic-methods-c-programming-guide"></a><span data-ttu-id="7533c-102">ジェネリック メソッド (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="7533c-102">Generic Methods (C# Programming Guide)</span></span>
 <span data-ttu-id="7533c-103">ジェネリック メソッドは、次のように型パラメーターで宣言されるメソッドです。</span><span class="sxs-lookup"><span data-stu-id="7533c-103">A generic method is a method that is declared with type parameters, as follows:</span></span>  

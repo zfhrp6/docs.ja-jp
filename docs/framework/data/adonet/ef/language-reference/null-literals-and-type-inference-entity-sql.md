@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32764217"
 ---
 # <a name="null-literals-and-type-inference-entity-sql"></a><span data-ttu-id="a939b-102">NULL リテラルと型推論 (Entity SQL)</span><span class="sxs-lookup"><span data-stu-id="a939b-102">Null Literals and Type Inference (Entity SQL)</span></span>
 <span data-ttu-id="a939b-103">NULL リテラルは、[!INCLUDE[esql](../../../../../../includes/esql-md.md)] 型システムのすべての型と互換性があります。</span><span class="sxs-lookup"><span data-stu-id="a939b-103">Null literals are compatible with any type in the [!INCLUDE[esql](../../../../../../includes/esql-md.md)] type system.</span></span> <span data-ttu-id="a939b-104">ただし、正しく、推論される null リテラルの型の[!INCLUDE[esql](../../../../../../includes/esql-md.md)]null リテラルを使用できる場所で特定の制約が適用されます。</span><span class="sxs-lookup"><span data-stu-id="a939b-104">However, for the type of a null literal to be inferred correctly, [!INCLUDE[esql](../../../../../../includes/esql-md.md)] imposes certain constraints on where a null literal can be used.</span></span>  

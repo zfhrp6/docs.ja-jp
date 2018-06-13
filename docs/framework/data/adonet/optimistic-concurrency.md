@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32766229"
 ---
 # <a name="optimistic-concurrency"></a><span data-ttu-id="a9c4d-102">オプティミスティック同時実行制御</span><span class="sxs-lookup"><span data-stu-id="a9c4d-102">Optimistic Concurrency</span></span>
 <span data-ttu-id="a9c4d-103">マルチユーザー環境には、データベースのデータを更新するための 2 つのモデルがあります。オプティミスティック同時実行制御とペシミスティック同時実行制御です。</span><span class="sxs-lookup"><span data-stu-id="a9c4d-103">In a multiuser environment, there are two models for updating data in a database: optimistic concurrency and pessimistic concurrency.</span></span> <span data-ttu-id="a9c4d-104"><xref:System.Data.DataSet> オブジェクトは、データをリモート処理するときや、データと対話するときのように長時間にわたる利用状況では、オプティミスティック同時実行制御の使用を奨励するように設計されています。</span><span class="sxs-lookup"><span data-stu-id="a9c4d-104">The <xref:System.Data.DataSet> object is designed to encourage the use of optimistic concurrency for long-running activities, such as remoting data and interacting with data.</span></span>  

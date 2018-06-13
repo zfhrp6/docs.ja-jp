@@ -9,6 +9,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32751702"
 ---
 # <a name="ltbasichttpbindinggt"></a><span data-ttu-id="5300b-102">&lt;basicHttpBinding&gt;</span><span class="sxs-lookup"><span data-stu-id="5300b-102">&lt;basicHttpBinding&gt;</span></span>
 <span data-ttu-id="5300b-103">ASMX ベースの Web サービスやクライアント、および WS-I Basic Profile 1.1 に準拠するその他のサービスとの通信が可能なエンドポイントを構成および公開するために、Windows Communication Foundation (WCF) サービスが使用できるバインドを表します。</span><span class="sxs-lookup"><span data-stu-id="5300b-103">Represents a binding that a Windows Communication Foundation (WCF) service can use to configure and expose endpoints that are able to communicate with ASMX-based Web services and clients and other services that conform to the WS-I Basic Profile 1.1.</span></span>  

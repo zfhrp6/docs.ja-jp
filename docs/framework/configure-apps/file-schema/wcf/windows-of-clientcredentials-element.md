@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32767064"
 ---
 # <a name="ltwindowsgt-of-ltclientcredentialsgt-element"></a><span data-ttu-id="b1099-102">&lt;clientCredentials&gt; 要素の &lt;windows&gt;</span><span class="sxs-lookup"><span data-stu-id="b1099-102">&lt;windows&gt; of &lt;clientCredentials&gt; Element</span></span>
 <span data-ttu-id="b1099-103">クライアントを表すために使用される Windows 資格情報の設定を指定します。</span><span class="sxs-lookup"><span data-stu-id="b1099-103">Specifies the settings for a Windows credential to be used to represent the client.</span></span>  

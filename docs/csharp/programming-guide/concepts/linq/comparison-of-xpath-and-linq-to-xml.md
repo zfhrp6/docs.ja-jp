@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33326434"
 ---
 # <a name="comparison-of-xpath-and-linq-to-xml"></a><span data-ttu-id="ebdab-102">XPath と LINQ to XML の比較</span><span class="sxs-lookup"><span data-stu-id="ebdab-102">Comparison of XPath and LINQ to XML</span></span>
 <span data-ttu-id="ebdab-103">XPath と [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] の機能はある程度似ています。</span><span class="sxs-lookup"><span data-stu-id="ebdab-103">XPath and [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] offer some similar functionality.</span></span> <span data-ttu-id="ebdab-104">どちらも XML ツリーに対してクエリを実行するために使用され、結果として、要素のコレクション、属性のコレクション、ノードのコレクション、要素や属性の値などを返します。</span><span class="sxs-lookup"><span data-stu-id="ebdab-104">Both can be used to query an XML tree, returning such results as a collection of elements, a collection of attributes, a collection of nodes, or the value of an element or attribute.</span></span> <span data-ttu-id="ebdab-105">ただし、相違点もいくつかあります。</span><span class="sxs-lookup"><span data-stu-id="ebdab-105">However, there are also some differences.</span></span>  

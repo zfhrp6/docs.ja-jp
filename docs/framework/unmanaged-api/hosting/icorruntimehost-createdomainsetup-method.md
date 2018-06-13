@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: bf3aff2c3c4d10c4ee805a6110561d6fdcd63a55
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33437987"
 ---
 # <a name="icorruntimehostcreatedomainsetup-method"></a><span data-ttu-id="2aaa2-102">ICorRuntimeHost::CreateDomainSetup メソッド</span><span class="sxs-lookup"><span data-stu-id="2aaa2-102">ICorRuntimeHost::CreateDomainSetup Method</span></span>
 <span data-ttu-id="2aaa2-103">インターフェイス ポインターの型を IAppDomainSetup を取得、<xref:System.AppDomainSetup?displayProperty=nameWithType>インスタンス。</span><span class="sxs-lookup"><span data-stu-id="2aaa2-103">Gets an interface pointer of type IAppDomainSetup to an <xref:System.AppDomainSetup?displayProperty=nameWithType> instance.</span></span> <span data-ttu-id="2aaa2-104">`IAppDomainSetup` 作成する前に、アプリケーション ドメインの側面を構成する方法を提供します。</span><span class="sxs-lookup"><span data-stu-id="2aaa2-104">`IAppDomainSetup` provides methods to configure aspects of an application domain before it is created.</span></span>  

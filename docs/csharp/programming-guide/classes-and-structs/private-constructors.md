@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33315790"
 ---
 # <a name="private-constructors-c-programming-guide"></a><span data-ttu-id="efc17-102">プライベート コンストラクター (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="efc17-102">Private Constructors (C# Programming Guide)</span></span>
 <span data-ttu-id="efc17-103">プライベート コンストラクターは、特別なインスタンス コンストラクターです。</span><span class="sxs-lookup"><span data-stu-id="efc17-103">A private constructor is a special instance constructor.</span></span> <span data-ttu-id="efc17-104">通常は、静的メンバーだけを含むクラスで使用されます。</span><span class="sxs-lookup"><span data-stu-id="efc17-104">It is generally used in classes that contain static members only.</span></span> <span data-ttu-id="efc17-105">クラスに 1 つ以上のプライベート コンストラクターがあり、パブリック コンストラクターがない場合、他のクラス (入れ子になったクラスを除く) は、このクラスのインスタンスを作成できません。</span><span class="sxs-lookup"><span data-stu-id="efc17-105">If a class has one or more private constructors and no public constructors, other classes (except nested classes) cannot create instances of this class.</span></span> <span data-ttu-id="efc17-106">例:</span><span class="sxs-lookup"><span data-stu-id="efc17-106">For example:</span></span>  

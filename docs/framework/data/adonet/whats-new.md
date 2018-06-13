@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33366035"
 ---
 # <a name="what39s-new-in-adonet"></a><span data-ttu-id="06942-102">どのような&#39;ADO.NET の</span><span class="sxs-lookup"><span data-stu-id="06942-102">What&#39;s New in ADO.NET</span></span>
 <span data-ttu-id="06942-103">[!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] の [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)] では、次の機能が追加されています。</span><span class="sxs-lookup"><span data-stu-id="06942-103">The following features are new in [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] in the [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].</span></span>  

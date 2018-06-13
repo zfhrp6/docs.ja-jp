@@ -9,6 +9,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32755761"
 ---
 # <a name="ltservicetokenresolvergt"></a><span data-ttu-id="0eef2-102">&lt;serviceTokenResolver&gt;</span><span class="sxs-lookup"><span data-stu-id="0eef2-102">&lt;serviceTokenResolver&gt;</span></span>
 <span data-ttu-id="0eef2-103">トークン ハンドラーはコレクション内のハンドラーによって使用されるサービスのトークン リゾルバーを登録します。</span><span class="sxs-lookup"><span data-stu-id="0eef2-103">Registers the service token resolver that is used by handlers in the token handler collection.</span></span> <span data-ttu-id="0eef2-104">サービスのトークン リゾルバーを使用して、入力方向のトークンとメッセージの暗号化トークンを解決します。</span><span class="sxs-lookup"><span data-stu-id="0eef2-104">The service token resolver is used to resolve the encryption token on incoming tokens and messages.</span></span>  

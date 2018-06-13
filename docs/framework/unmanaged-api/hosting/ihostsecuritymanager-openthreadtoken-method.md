@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 35a41badd7ade016619d940880a3ace80ccf5693
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33439515"
 ---
 # <a name="ihostsecuritymanageropenthreadtoken-method"></a><span data-ttu-id="99084-102">IHostSecurityManager::OpenThreadToken メソッド</span><span class="sxs-lookup"><span data-stu-id="99084-102">IHostSecurityManager::OpenThreadToken Method</span></span>
 <span data-ttu-id="99084-103">現在実行中のスレッドに関連付けられている随意アクセス トークンを開きます。</span><span class="sxs-lookup"><span data-stu-id="99084-103">Opens the discretionary access token associated with the currently executing thread.</span></span>  

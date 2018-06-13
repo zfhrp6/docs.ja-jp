@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32764555"
 ---
 # <a name="-string-concatenation-entity-sql"></a><span data-ttu-id="d2ca3-102">+ (文字列連結) (Entity SQL)</span><span class="sxs-lookup"><span data-stu-id="d2ca3-102">+ (String Concatenation) (Entity SQL)</span></span>
 <span data-ttu-id="d2ca3-103">2 つの文字列を連結します。</span><span class="sxs-lookup"><span data-stu-id="d2ca3-103">Concatenates two strings.</span></span>  

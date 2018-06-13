@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33339970"
 ---
 # <a name="removing-elements-attributes-and-nodes-from-an-xml-tree-c"></a><span data-ttu-id="11aaf-102">XML ツリーからの要素、属性、およびノードの削除 (C#)</span><span class="sxs-lookup"><span data-stu-id="11aaf-102">Removing Elements, Attributes, and Nodes from an XML Tree (C#)</span></span>
 <span data-ttu-id="11aaf-103">要素、属性、およびその他の種類のノードを削除して、XML ツリーを変更できます。</span><span class="sxs-lookup"><span data-stu-id="11aaf-103">You can modify an XML tree, removing elements, attributes, and other types of nodes.</span></span>  

@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33210978"
 ---
 # <a name="-help---c-compiler-options"></a><span data-ttu-id="db285-103">-help, -?</span><span class="sxs-lookup"><span data-stu-id="db285-103">-help, -?</span></span> <span data-ttu-id="db285-104">(C# コンパイラ オプション)</span><span class="sxs-lookup"><span data-stu-id="db285-104">(C# Compiler Options)</span></span>
 <span data-ttu-id="db285-105">このオプションはコンパイラ オプションのリストと各オプションの簡単な説明を stdout に送信します。</span><span class="sxs-lookup"><span data-stu-id="db285-105">This option sends a listing of compiler options, and a brief description of each option, to stdout.</span></span>  

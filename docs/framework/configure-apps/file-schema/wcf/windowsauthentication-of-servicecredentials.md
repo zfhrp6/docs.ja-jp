@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32767545"
 ---
 # <a name="ltwindowsauthenticationgt-of-ltservicecredentialsgt"></a><span data-ttu-id="4998d-102">&lt;serviceCredentials&gt; の &lt;windowsAuthentication&gt;</span><span class="sxs-lookup"><span data-stu-id="4998d-102">&lt;windowsAuthentication&gt; of &lt;serviceCredentials&gt;</span></span>
 <span data-ttu-id="4998d-103">Windows サービス資格情報の設定を指定します。</span><span class="sxs-lookup"><span data-stu-id="4998d-103">Specifies the settings of a Windows service credential.</span></span>  

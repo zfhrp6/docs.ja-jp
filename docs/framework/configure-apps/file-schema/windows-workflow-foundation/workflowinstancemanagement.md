@@ -8,6 +8,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32767103"
 ---
 # <a name="ltworkflowinstancemanagementgt"></a><span data-ttu-id="b0ec3-102">&lt;workflowInstanceManagement&gt;</span><span class="sxs-lookup"><span data-stu-id="b0ec3-102">&lt;workflowInstanceManagement&gt;</span></span>
 <span data-ttu-id="b0ec3-103">ワークフロー インスタンスの実行方法を制御する設定を指定するためのサービス動作。これには、永続する未処理の例外動作やアイドル状態の動作が含まれます。</span><span class="sxs-lookup"><span data-stu-id="b0ec3-103">A service behavior that enables you to specify settings that control how workflow instances are run, including persistence, unhandled Exception behavior and idle behavior.</span></span>  

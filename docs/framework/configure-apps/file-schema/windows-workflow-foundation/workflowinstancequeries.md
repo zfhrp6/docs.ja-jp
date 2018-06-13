@@ -8,6 +8,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32755592"
 ---
 # <a name="ltworkflowinstancequeriesgt"></a><span data-ttu-id="c291b-102">&lt;workflowInstanceQueries&gt;</span><span class="sxs-lookup"><span data-stu-id="c291b-102">&lt;workflowInstanceQueries&gt;</span></span>
 <span data-ttu-id="c291b-103">開始したイベントや完了したイベントなど、ワークフロー インスタンスのライフサイクルの変化を追跡する構成要素のコレクションを表します。</span><span class="sxs-lookup"><span data-stu-id="c291b-103">Represents a collection of configuration elements that track workflow instance life cycle changes such as a started or completed event.</span></span>  

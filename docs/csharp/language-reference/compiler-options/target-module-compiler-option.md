@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33214255"
 ---
 # <a name="-targetmodule-c-compiler-options"></a><span data-ttu-id="26bff-102">-target:module (C# コンパイラ オプション)</span><span class="sxs-lookup"><span data-stu-id="26bff-102">-target:module (C# Compiler Options)</span></span>
 <span data-ttu-id="26bff-103">このオプションでは、コンパイラはアセンブリ マニフェストを生成しません。</span><span class="sxs-lookup"><span data-stu-id="26bff-103">This option causes the compiler to not generate an assembly manifest.</span></span>  

@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33331215"
 ---
 # <a name="general-structure-of-a-c-program-c-programming-guide"></a><span data-ttu-id="42068-102">C# プログラムの一般構造 (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="42068-102">General Structure of a C# Program (C# Programming Guide)</span></span>
 <span data-ttu-id="42068-103">C# プログラムは、1 つ以上のファイルで構成できます。</span><span class="sxs-lookup"><span data-stu-id="42068-103">C# programs can consist of one or more files.</span></span> <span data-ttu-id="42068-104">各ファイルには、0 個以上の名前空間を含めることができます。</span><span class="sxs-lookup"><span data-stu-id="42068-104">Each file can contain zero or more namespaces.</span></span> <span data-ttu-id="42068-105">名前空間には、その他の名前空間以外に、クラス、構造体、インターフェイス、列挙型、デリゲートなどの型を含めることができます。</span><span class="sxs-lookup"><span data-stu-id="42068-105">A namespace can contain types such as classes, structs, interfaces, enumerations, and delegates, in addition to other namespaces.</span></span> <span data-ttu-id="42068-106">次に示すのは、これら要素をすべて含む C# プログラムのスケルトンです。</span><span class="sxs-lookup"><span data-stu-id="42068-106">The following is the skeleton of a C# program that contains all of these elements.</span></span>  
