@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33539350"
 ---
 # <a name="panel-control-overview-windows-forms"></a>Panel コントロールの概要 (Windows フォーム)
 Windows フォーム<xref:System.Windows.Forms.Panel>コントロールを使用して、その他のコントロールのグループに分けます。 通常、関数によって、フォームを分割するのにパネルを使用します。 たとえば、注文書を使用するどの宅配業者などの絞り込みメール配信オプションを指定するがあります。 パネルのすべてのオプションをグループ化と、ユーザーが論理を視覚的に。 デザイン時にすべてのコントロールを簡単に移動できます — を移動するとき、<xref:System.Windows.Forms.Panel>も含まれているコントロールが移動すべてを制御します。 経由でアクセスできる、コントロール パネルにグループ化されているその<xref:System.Windows.Forms.Control.Controls%2A>プロパティです。 このプロパティのコレクションを返します<xref:System.Windows.Forms.Control>ので、コントロールをキャストする必要が通常のインスタンスがその特定の型には、この方法を取得します。  

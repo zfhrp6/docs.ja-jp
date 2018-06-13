@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33210978"
 ---
 # <a name="-help---c-compiler-options"></a>-help, -? (C# コンパイラ オプション)
 このオプションはコンパイラ オプションのリストと各オプションの簡単な説明を stdout に送信します。  

@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 7921f0361d7369cddf14dd1ab477529d1bbac481
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33439362"
 ---
 # <a name="ihostautoeventwait-method"></a>IHostAutoEvent::Wait メソッド
 現在の原因[IHostAutoEvent](../../../../docs/framework/unmanaged-api/hosting/ihostautoevent-interface.md)が所有するまで待機するインスタンスまたは指定された時間が経過時間。  

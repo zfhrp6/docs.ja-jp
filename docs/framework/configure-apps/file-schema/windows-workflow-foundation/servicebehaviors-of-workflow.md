@@ -8,6 +8,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32766908"
 ---
 # <a name="ltservicebehaviorsgt-of-workflow"></a>ワークフローの &lt;serviceBehaviors&gt;
 この構成セクションは、特定のサービスに対して定義されたすべての動作を表します。  

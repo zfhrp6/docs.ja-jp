@@ -18,9 +18,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: e67a71c25c0ae8ee7c54fae2e38d1116a5d92eff
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33402590"
 ---
 # <a name="getresolutionscope-method"></a>GetResolutionScope メソッド
 指定した型のスコープを取得します。  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32765608"
 ---
 # <a name="row-entity-sql"></a>ROW (Entity SQL)
 1 つまたは複数の値から構造的に型付けされた匿名レコードを構築します。  

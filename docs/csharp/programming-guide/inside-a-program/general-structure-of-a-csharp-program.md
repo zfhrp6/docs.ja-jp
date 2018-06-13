@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33331215"
 ---
 # <a name="general-structure-of-a-c-program-c-programming-guide"></a>C# プログラムの一般構造 (C# プログラミング ガイド)
 C# プログラムは、1 つ以上のファイルで構成できます。 各ファイルには、0 個以上の名前空間を含めることができます。 名前空間には、その他の名前空間以外に、クラス、構造体、インターフェイス、列挙型、デリゲートなどの型を含めることができます。 次に示すのは、これら要素をすべて含む C# プログラムのスケルトンです。  

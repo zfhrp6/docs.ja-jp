@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32766037"
 ---
 # <a name="the-shape-of-the-command-trees"></a>コマンド ツリーの構造
 SQL 生成モジュールは、指定された入力クエリ コマンド ツリー式に基づいてバックエンドに固有の SQL クエリを生成します。 ここでは、クエリ コマンド ツリーの特性、プロパティ、および構造について説明します。  

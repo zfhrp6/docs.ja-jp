@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: cd4f27b958aa4b25c2662d8a5e9da6bcdc73d5d3
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33404457"
 ---
 # <a name="icordebugchainenumnext-method"></a>ICorDebugChainEnum::Next メソッド
 列挙体の現在位置から ICorDebugChain インスタンスの指定した数を取得します。  

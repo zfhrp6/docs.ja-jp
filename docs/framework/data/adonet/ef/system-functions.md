@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32765725"
 ---
 # <a name="system-functions"></a>システム関数
 .NET Framework Data Provider for SQL Server (SqlClient) には、次のシステム関数が用意されています。  

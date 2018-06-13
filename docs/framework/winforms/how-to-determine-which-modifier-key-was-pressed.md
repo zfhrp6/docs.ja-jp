@@ -29,6 +29,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33540018"
 ---
 # <a name="how-to-determine-which-modifier-key-was-pressed"></a>方法 : どの修飾子キーが押されたかを判断する
 ユーザーのキー入力を受け付けるアプリケーションを作成するときの SHIFT、alt キーを押し、CTRL キーなどの修飾子キーの監視にすることもできます。 修飾子キーが押されると組み合わせて、その他のキーを持つか、マウスのクリックで、アプリケーションが適切に応答できます。 たとえば、s が押された場合、画面に表示する"s"があるだけけれども、ctrl キーを押しながら S キーを押すと、現在のドキュメントが保存されます。 処理する場合、<xref:System.Windows.Forms.Control.KeyDown>イベント、<xref:System.Windows.Forms.KeyEventArgs.Modifiers%2A>のプロパティ、<xref:System.Windows.Forms.KeyEventArgs>受信イベントにハンドラーを指定しますどの修飾子キーが押されました。 または、<xref:System.Windows.Forms.KeyEventArgs.KeyData%2A>プロパティ<xref:System.Windows.Forms.KeyEventArgs>同様のビットごとの OR と組み合わせると修飾子キーが押された文字を指定します。 ただし、処理している場合、<xref:System.Windows.Forms.Control.KeyPress>イベントまたは、マウス イベント、イベント ハンドラーがこの情報を受け取りません。 この場合、使用する必要があります、<xref:System.Windows.Forms.Control.ModifierKeys%2A>のプロパティ、<xref:System.Windows.Forms.Control>クラスです。 どちらの場合は、適切なビットごとの AND を実行する必要があります<xref:System.Windows.Forms.Keys>値とをテストする値。 <xref:System.Windows.Forms.Keys>列挙には、演算を実行することが重要であるため、各修飾子キーの値が正しいとのバリエーションが提供しています。 たとえば、SHIFT キーがで表される<xref:System.Windows.Forms.Keys.Shift>、 <xref:System.Windows.Forms.Keys.ShiftKey>、<xref:System.Windows.Forms.Keys.RShiftKey>と<xref:System.Windows.Forms.Keys.LShiftKey>修飾子キーと shift キーを押しをテストする正しい値<xref:System.Windows.Forms.Keys.Shift>です。 同様に、する修飾子として ctlr 番号と alt キーをテストする必要がありますを使用して、<xref:System.Windows.Forms.Keys.Control>と<xref:System.Windows.Forms.Keys.Alt>それぞれ値します。  
