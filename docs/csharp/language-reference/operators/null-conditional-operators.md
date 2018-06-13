@@ -17,6 +17,7 @@ ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/23/2018
+ms.locfileid: "34457801"
 ---
 # <a name="-and--null-conditional-operators-c-and-visual-basic"></a><span data-ttu-id="51549-102">?.</span><span class="sxs-lookup"><span data-stu-id="51549-102">?.</span></span> <span data-ttu-id="51549-103">および ?[] Null 条件演算子 (C# および Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="51549-103">and ?[] null-conditional Operators (C# and Visual Basic)</span></span>
 <span data-ttu-id="51549-104">メンバー アクセス (`?.`) またはインデックス (`?[]`) 操作を実行する前に、左の演算子の値を null に対してテストします。左側のオペランドが `null` に評価される場合、`null` が返されます。</span><span class="sxs-lookup"><span data-stu-id="51549-104">Tests the value of the left-hand operand for null before performing a member access (`?.`) or index (`?[]`) operation; returns `null` if the left-hand operand evaluates to `null`.</span></span> 

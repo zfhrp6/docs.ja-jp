@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33649264"
 ---
 # <a name="how-to-create-a-procedure-visual-basic"></a><span data-ttu-id="88362-102">方法: プロシージャを作成する (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="88362-102">How to: Create a Procedure (Visual Basic)</span></span>
 <span data-ttu-id="88362-103">開始宣言ステートメントの間のプロシージャを囲みます (`Sub`または`Function`) と終了の宣言ステートメント (`End Sub`または`End Function`)。</span><span class="sxs-lookup"><span data-stu-id="88362-103">You enclose a procedure between a starting declaration statement (`Sub` or `Function`) and an ending declaration statement (`End Sub` or `End Function`).</span></span> <span data-ttu-id="88362-104">これらのステートメント、プロシージャのすべてのコードの範囲です。</span><span class="sxs-lookup"><span data-stu-id="88362-104">All the procedure's code lies between these statements.</span></span>  

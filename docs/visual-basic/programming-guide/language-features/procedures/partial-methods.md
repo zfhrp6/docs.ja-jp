@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33651597"
 ---
 # <a name="partial-methods-visual-basic"></a><span data-ttu-id="bb8f7-102">部分メソッド (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="bb8f7-102">Partial Methods (Visual Basic)</span></span>
 <span data-ttu-id="bb8f7-103">部分メソッドでは、開発者はカスタム ロジックをコードに挿入を有効にします。</span><span class="sxs-lookup"><span data-stu-id="bb8f7-103">Partial methods enable developers to insert custom logic into code.</span></span> <span data-ttu-id="bb8f7-104">通常、コードは、デザイナーで生成されたクラスの一部です。</span><span class="sxs-lookup"><span data-stu-id="bb8f7-104">Typically, the code is part of a designer-generated class.</span></span> <span data-ttu-id="bb8f7-105">部分メソッドはコード ジェネレーターによって作成される部分クラスで定義され、何かが変更されたことを通知によく使用されます。</span><span class="sxs-lookup"><span data-stu-id="bb8f7-105">Partial methods are defined in a partial class that is created by a code generator, and they are commonly used to provide notification that something has been changed.</span></span> <span data-ttu-id="bb8f7-106">開発者は、変更に応じて、カスタム動作を指定できます。</span><span class="sxs-lookup"><span data-stu-id="bb8f7-106">They enable the developer to specify custom behavior in response to the change.</span></span>  
