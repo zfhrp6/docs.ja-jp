@@ -10,9 +10,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 5063a2169e8ae8c3328df220ebc5e6d464aae0a6
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33440857"
 ---
 # <a name="hosting-unmanaged-api-reference"></a><span data-ttu-id="69339-102">ホスト (アンマネージ API リファレンス)</span><span class="sxs-lookup"><span data-stu-id="69339-102">Hosting (Unmanaged API Reference)</span></span>
 <span data-ttu-id="69339-103">ホスト API を使用すると、アンマネージ ホストのアプリケーションに共通言語ランタイム (CLR: Common Language Runtime) を統合できます。</span><span class="sxs-lookup"><span data-stu-id="69339-103">The hosting API enables unmanaged hosts to integrate the common language runtime (CLR) into their applications.</span></span>  

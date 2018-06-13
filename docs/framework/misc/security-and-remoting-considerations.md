@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33398171"
 ---
 # <a name="security-and-remoting-considerations"></a><span data-ttu-id="83097-102">セキュリティとリモート処理の考慮事項</span><span class="sxs-lookup"><span data-stu-id="83097-102">Security and Remoting Considerations</span></span>
 <span data-ttu-id="83097-103">リモート処理を使用すると、アプリケーション ドメイン、プロセス、コンピューターの間で透過的な呼び出しを設定できます。</span><span class="sxs-lookup"><span data-stu-id="83097-103">Remoting allows you to set up transparent calling between application domains, processes, or computers.</span></span> <span data-ttu-id="83097-104">ただし、コード アクセス セキュリティのスタック ウォークがプロセスやコンピューターの境界を超えることはできません (これは、同一プロセスのアプリケーション ドメイン間に当てはまります)。</span><span class="sxs-lookup"><span data-stu-id="83097-104">However, the code access security stack walk cannot cross process or machine boundaries (it does apply between application domains of the same process).</span></span>  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33398119"
 ---
 # <a name="nat-traversal-using-ipv6-and-teredo"></a><span data-ttu-id="40865-102">IPv6 および Teredo を使用した NAT トラバーサル</span><span class="sxs-lookup"><span data-stu-id="40865-102">NAT Traversal using IPv6 and Teredo</span></span>
 <span data-ttu-id="40865-103">ネットワーク アドレス変換 (NAT) トラバーサルをサポートする機能強化が行われました。</span><span class="sxs-lookup"><span data-stu-id="40865-103">Enhancements were made that provide support for Network Address Translation (NAT) traversal.</span></span> <span data-ttu-id="40865-104">これらの変更は、IPv6 および Teredo での使用を想定して設計されていますが、他の IP トンネリング テクノロジにも適用されます。</span><span class="sxs-lookup"><span data-stu-id="40865-104">These changes are designed for use with IPv6 and Teredo, but they are also applicable to other IP tunneling technologies.</span></span> <span data-ttu-id="40865-105">これらの拡張機能は、<xref:System.Net> および関連する名前空間のクラスに影響します。</span><span class="sxs-lookup"><span data-stu-id="40865-105">These enhancements affect classes in the <xref:System.Net> and related namespaces.</span></span>  

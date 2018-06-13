@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33561047"
 ---
 # <a name="how-to-draw-a-rectangle"></a><span data-ttu-id="cc823-102">方法 : 四角形を描画する</span><span class="sxs-lookup"><span data-stu-id="cc823-102">How to: Draw a Rectangle</span></span>
 <span data-ttu-id="cc823-103">この例を使用して、四角形を描画する方法を示しています、<xref:System.Windows.Shapes.Rectangle>要素。</span><span class="sxs-lookup"><span data-stu-id="cc823-103">This example shows how to draw a rectangle by using the <xref:System.Windows.Shapes.Rectangle> element.</span></span>  

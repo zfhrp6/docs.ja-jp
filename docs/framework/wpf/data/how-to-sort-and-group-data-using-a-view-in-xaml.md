@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33555831"
 ---
 # <a name="how-to-sort-and-group-data-using-a-view-in-xaml"></a><span data-ttu-id="76d38-102">方法 : XAML でビューを使用してデータの並べ替えおよびグループ化を行う</span><span class="sxs-lookup"><span data-stu-id="76d38-102">How to: Sort and Group Data Using a View in XAML</span></span>
 <span data-ttu-id="76d38-103">この例は、内のデータ コレクションのビューを作成する方法を示しています。[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]です。</span><span class="sxs-lookup"><span data-stu-id="76d38-103">This example shows how to create a view of a data collection in [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)].</span></span> <span data-ttu-id="76d38-104">ビューを使用するグループ化、並べ替え、フィルター、の機能および現在のアイテムの概念です。</span><span class="sxs-lookup"><span data-stu-id="76d38-104">Views allow for the functionalities of grouping, sorting, filtering, and the notion of a current item.</span></span>  

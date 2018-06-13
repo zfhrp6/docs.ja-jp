@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33397742"
 ---
 # <a name="measuring-startup-improvement-with-net-native"></a><span data-ttu-id="315ac-102">.NET ネイティブによる起動時間の改善の測定</span><span class="sxs-lookup"><span data-stu-id="315ac-102">Measuring Startup Improvement with .NET Native</span></span>
 [!INCLUDE[net_native](../../../includes/net-native-md.md)]<span data-ttu-id="315ac-103">によって、アプリの起動時間が大幅に改善されます。</span><span class="sxs-lookup"><span data-stu-id="315ac-103"> significantly improves the launch time of apps.</span></span> <span data-ttu-id="315ac-104">この改善は、ポータブルの低電力デバイスや複雑なアプリで特に顕著です。</span><span class="sxs-lookup"><span data-stu-id="315ac-104">This improvement is particularly noticeable on portable, low-powered devices and with complex apps.</span></span> <span data-ttu-id="315ac-105">このトピックでは、この起動時間の改善を測定するために必要となる基本的なインストルメンテーションの概要を示します。</span><span class="sxs-lookup"><span data-stu-id="315ac-105">This topic helps you get started with the basic instrumentation needed to measure this startup improvement.</span></span>  

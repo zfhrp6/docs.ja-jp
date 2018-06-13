@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33397287"
 ---
 # <a name="dynamic-language-runtime-overview"></a><span data-ttu-id="ff179-102">動的言語ランタイムの概要</span><span class="sxs-lookup"><span data-stu-id="ff179-102">Dynamic Language Runtime Overview</span></span>
 <span data-ttu-id="ff179-103">*動的言語ランタイム* (DLR) とは、動的言語の一連のサービスを共通言語ランタイム (CLR) に追加するランタイム環境です。</span><span class="sxs-lookup"><span data-stu-id="ff179-103">The *dynamic language runtime* (DLR) is a runtime environment that adds a set of services for dynamic languages to the common language runtime (CLR).</span></span> <span data-ttu-id="ff179-104">DLR により、.NET Framework 上で実行される動的言語の開発や、静的に型指定された言語への動的機能の追加が簡単になります。</span><span class="sxs-lookup"><span data-stu-id="ff179-104">The DLR makes it easier to develop dynamic languages to run on the .NET Framework and to add dynamic features to statically typed languages.</span></span>  

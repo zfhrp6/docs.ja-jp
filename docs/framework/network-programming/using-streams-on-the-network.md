@@ -25,6 +25,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33397547"
 ---
 # <a name="using-streams-on-the-network"></a><span data-ttu-id="44649-102">ネットワーク上でストリームを使用する</span><span class="sxs-lookup"><span data-stu-id="44649-102">Using Streams on the Network</span></span>
 <span data-ttu-id="44649-103">.NET Framework では、ネットワーク リソースはストリームとして表されます。</span><span class="sxs-lookup"><span data-stu-id="44649-103">Network resources are represented in the .NET Framework as streams.</span></span> <span data-ttu-id="44649-104">.NET Framework は、ストリームを汎用的に扱うことで、次の機能を提供しています。</span><span class="sxs-lookup"><span data-stu-id="44649-104">By treating streams generically, the .NET Framework offers the following capabilities:</span></span>  

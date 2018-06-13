@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33559283"
 ---
 # <a name="how-to-animate-a-rectangle-geometry-by-using-key-frames"></a><span data-ttu-id="f18eb-102">方法 : キー フレームを使用して四角形のジオメトリをアニメーション化する</span><span class="sxs-lookup"><span data-stu-id="f18eb-102">How to: Animate a Rectangle Geometry by Using Key Frames</span></span>
 <span data-ttu-id="f18eb-103">この例は、アニメーション化する方法を示しています。、<xref:System.Windows.Media.RectangleGeometry.Rect%2A>のプロパティ、<xref:System.Windows.Media.RectangleGeometry>キー フレームを使用しています。</span><span class="sxs-lookup"><span data-stu-id="f18eb-103">This example shows how to animate the <xref:System.Windows.Media.RectangleGeometry.Rect%2A> property of a <xref:System.Windows.Media.RectangleGeometry> by using key frames.</span></span>  

@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33545852"
 ---
 # <a name="how-to-determine-the-installed-version-of-wpf"></a><span data-ttu-id="08cc4-102">方法: インストールされている WPF のバージョンを確認する</span><span class="sxs-lookup"><span data-stu-id="08cc4-102">How to: Determine the Installed Version of WPF</span></span>
 <span data-ttu-id="08cc4-103">現在インストールされているバージョンのバージョン番号[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]内にある、**レジストリ**です。</span><span class="sxs-lookup"><span data-stu-id="08cc4-103">The version number for the current installed version of [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] is located in the **Registry**.</span></span>  

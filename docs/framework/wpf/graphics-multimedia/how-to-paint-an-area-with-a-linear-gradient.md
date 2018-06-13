@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33560878"
 ---
 # <a name="how-to-paint-an-area-with-a-linear-gradient"></a><span data-ttu-id="91cb9-102">方法 : 線形グラデーションを使用して領域を塗りつぶす</span><span class="sxs-lookup"><span data-stu-id="91cb9-102">How to: Paint an Area with a Linear Gradient</span></span>
 <span data-ttu-id="91cb9-103">この例を使用する方法を示しています、<xref:System.Windows.Media.LinearGradientBrush>線形グラデーションで領域を塗りつぶすクラス。</span><span class="sxs-lookup"><span data-stu-id="91cb9-103">This example shows how to use the <xref:System.Windows.Media.LinearGradientBrush> class to paint an area with a linear gradient.</span></span> <span data-ttu-id="91cb9-104">次の例で、<xref:System.Windows.Shapes.Shape.Fill%2A>の<xref:System.Windows.Shapes.Rectangle>赤青の淡い緑から黄色から遷移対角線方向の線形グラデーションで塗りつぶされます。</span><span class="sxs-lookup"><span data-stu-id="91cb9-104">In the following example, the <xref:System.Windows.Shapes.Shape.Fill%2A> of a <xref:System.Windows.Shapes.Rectangle> is painted with a diagonal linear gradient that transitions from yellow to red to blue to lime green.</span></span>  

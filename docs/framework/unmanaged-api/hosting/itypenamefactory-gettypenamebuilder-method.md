@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: efef377147d98ce4570adc6d4b2f03a02205e33c
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33442508"
 ---
 # <a name="itypenamefactorygettypenamebuilder-method"></a><span data-ttu-id="4d7ee-102">ITypeNameFactory::GetTypeNameBuilder メソッド</span><span class="sxs-lookup"><span data-stu-id="4d7ee-102">ITypeNameFactory::GetTypeNameBuilder Method</span></span>
 <span data-ttu-id="4d7ee-103">このメソッドは、.NET Framework インフラストラクチャをサポートします。独自に作成したコードから直接使用するためのものではありません。</span><span class="sxs-lookup"><span data-stu-id="4d7ee-103">This method supports the .NET Framework infrastructure and is not intended to be used directly from your code.</span></span>  

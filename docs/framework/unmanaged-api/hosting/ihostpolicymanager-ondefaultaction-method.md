@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 17a14b09de14f32e2ae3646f7847d44307ab3b53
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33439063"
 ---
 # <a name="ihostpolicymanagerondefaultaction-method"></a><span data-ttu-id="9c164-102">IHostPolicyManager::OnDefaultAction メソッド</span><span class="sxs-lookup"><span data-stu-id="9c164-102">IHostPolicyManager::OnDefaultAction Method</span></span>
 <span data-ttu-id="9c164-103">共通言語ランタイム (CLR) がへの呼び出しによって設定された既定のアクションを実行しようとしていますが、ホストに通知、 [iclrpolicymanager::setdefaultaction](../../../../docs/framework/unmanaged-api/hosting/iclrpolicymanager-setdefaultaction-method.md)スレッドの中止への応答でメソッドまたは<xref:System.AppDomain>をアンロードします。</span><span class="sxs-lookup"><span data-stu-id="9c164-103">Notifies the host that the common language runtime (CLR) is about to take the default action that was set by a call to the [ICLRPolicyManager::SetDefaultAction](../../../../docs/framework/unmanaged-api/hosting/iclrpolicymanager-setdefaultaction-method.md) method in response to a thread abort or <xref:System.AppDomain> unload.</span></span>  

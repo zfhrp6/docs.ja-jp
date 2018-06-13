@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33560369"
 ---
 # <a name="how-to-create-a-shape-using-a-streamgeometry"></a><span data-ttu-id="725b8-102">方法 : StreamGeometry を使用して図形を作成する</span><span class="sxs-lookup"><span data-stu-id="725b8-102">How to: Create a Shape Using a StreamGeometry</span></span>
 <span data-ttu-id="725b8-103"><xref:System.Windows.Media.StreamGeometry> 軽量な代替手段は、<xref:System.Windows.Media.PathGeometry>幾何学図形を作成するためです。</span><span class="sxs-lookup"><span data-stu-id="725b8-103"><xref:System.Windows.Media.StreamGeometry> is light-weight alternative to <xref:System.Windows.Media.PathGeometry> for creating geometric shapes.</span></span> <span data-ttu-id="725b8-104">使用して、<xref:System.Windows.Media.StreamGeometry>複合ジオメトリを記述する必要がある場合は、サポートするオーバーヘッドのデータ バインディング、アニメーション、または変更しません。</span><span class="sxs-lookup"><span data-stu-id="725b8-104">Use a <xref:System.Windows.Media.StreamGeometry> when you need to describe a complex geometry but do not want the overhead of supporting data binding, animation, or modification.</span></span> <span data-ttu-id="725b8-105">などにより、効率、<xref:System.Windows.Media.StreamGeometry>クラスは、装飾を記述するための適切な選択です。</span><span class="sxs-lookup"><span data-stu-id="725b8-105">For example, because of its efficiency, the <xref:System.Windows.Media.StreamGeometry> class is a good choice for describing adorners.</span></span>  

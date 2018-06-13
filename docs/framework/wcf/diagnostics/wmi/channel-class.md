@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33485808"
 ---
 # <a name="channel-class"></a><span data-ttu-id="ab8c9-102">チャネル クラス</span><span class="sxs-lookup"><span data-stu-id="ab8c9-102">Channel class</span></span>
 <span data-ttu-id="ab8c9-103">チャネル</span><span class="sxs-lookup"><span data-stu-id="ab8c9-103">Channel</span></span>  

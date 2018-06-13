@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33555900"
 ---
 # <a name="textblock"></a><span data-ttu-id="2a83c-102">TextBlock</span><span class="sxs-lookup"><span data-stu-id="2a83c-102">TextBlock</span></span>
 <span data-ttu-id="2a83c-103"><xref:System.Windows.Controls.TextBlock>コントロールがテキストの柔軟なサポートを提供[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]アプリケーションです。</span><span class="sxs-lookup"><span data-stu-id="2a83c-103">The <xref:System.Windows.Controls.TextBlock> control provides flexible text support for [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] applications.</span></span> <span data-ttu-id="2a83c-104">この要素は、主として、複数段落のテキストを必要としない、基本的な [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] シナリオを対象にしています。</span><span class="sxs-lookup"><span data-stu-id="2a83c-104">The element is targeted primarily toward basic [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] scenarios that do not require more than one paragraph of text.</span></span>  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33557889"
 ---
 # <a name="wpf-walkthroughs"></a><span data-ttu-id="d5ca0-102">WPF のチュートリアル</span><span class="sxs-lookup"><span data-stu-id="d5ca0-102">WPF Walkthroughs</span></span>
 <span data-ttu-id="d5ca0-103">チュートリアルでは、一般的なシナリオの手順を説明します。</span><span class="sxs-lookup"><span data-stu-id="d5ca0-103">Walkthroughs give step-by-step instructions for common scenarios.</span></span> <span data-ttu-id="d5ca0-104">このため、製品や特定の機能領域について知るための最初のステップとして適しています。</span><span class="sxs-lookup"><span data-stu-id="d5ca0-104">This makes them a good place to start learning about the product or a particular feature area.</span></span>  

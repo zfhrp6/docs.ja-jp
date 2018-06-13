@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 933b8385a336a087f7af5245024af209582120cb
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33436443"
 ---
 # <a name="iclrstrongnamestrongnamesignatureverificationex-method"></a><span data-ttu-id="daed7-102">ICLRStrongName::StrongNameSignatureVerificationEx メソッド</span><span class="sxs-lookup"><span data-stu-id="daed7-102">ICLRStrongName::StrongNameSignatureVerificationEx Method</span></span>
 <span data-ttu-id="daed7-103">指定されたパスにあるアセンブリ マニフェストが厳密な名前の署名を含むかどうかを示す値を取得します。</span><span class="sxs-lookup"><span data-stu-id="daed7-103">Gets a value that indicates whether the assembly manifest at the supplied path contains a strong name signature.</span></span>  

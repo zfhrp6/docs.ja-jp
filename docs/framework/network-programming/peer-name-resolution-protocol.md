@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33397001"
 ---
 # <a name="peer-name-resolution-protocol"></a><span data-ttu-id="8a5e8-102">Peer Name Resolution Protocol</span><span class="sxs-lookup"><span data-stu-id="8a5e8-102">Peer Name Resolution Protocol</span></span>
 <span data-ttu-id="8a5e8-103">ピアツーピア環境において、ピアは特定の名前解決システムを使用して、互いのネットワーク上の場所 (アドレス、プロトコル、およびポート) をその名前や他の識別子から解決します。</span><span class="sxs-lookup"><span data-stu-id="8a5e8-103">In peer-to-peer environments, peers use specific name resolution systems to resolve each other's network locations (addresses, protocols, and ports) from names or other types of identifiers.</span></span> <span data-ttu-id="8a5e8-104">これまで、ドメイン ネーム システム (DNS) でのピア名の解決は、本質的に一時的な接続やその他の不具合によって複雑化していました。</span><span class="sxs-lookup"><span data-stu-id="8a5e8-104">In the past, peer name resolution has been complicated by the inherently transient connectivity as well as other shortcomings within the Domain Name System (DNS).</span></span>  

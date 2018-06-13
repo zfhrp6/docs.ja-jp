@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33561392"
 ---
 # <a name="how-to-control-a-mediaelement-play-pause-stop-volume-and-speed"></a><span data-ttu-id="dfe15-102">方法 : MediaElement (再生、一時停止、停止、ボリューム、および速度) を制御する</span><span class="sxs-lookup"><span data-stu-id="dfe15-102">How to: Control a MediaElement (Play, Pause, Stop, Volume, and Speed)</span></span>
 <span data-ttu-id="dfe15-103">次の例を使用してメディアの再生を制御する方法を示しています、<xref:System.Windows.Controls.MediaElement>です。</span><span class="sxs-lookup"><span data-stu-id="dfe15-103">The following example shows how to control playback of media using a <xref:System.Windows.Controls.MediaElement>.</span></span> <span data-ttu-id="dfe15-104">この例を使用すると、再生、一時停止、停止、メディアで前後にスキップし、ボリュームと速度比を調整する簡単なメディア プレーヤーを作成します。</span><span class="sxs-lookup"><span data-stu-id="dfe15-104">The example creates a simple media player that allows you to play, pause, stop, and skip back and forth in the media as well as adjust the volume and speed ratio.</span></span>  

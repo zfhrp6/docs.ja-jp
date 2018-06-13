@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33554886"
 ---
 # <a name="how-to-resize-rows-with-a-gridsplitter"></a><span data-ttu-id="49ed6-102">方法 : GridSplitter を使用して行のサイズを変更する</span><span class="sxs-lookup"><span data-stu-id="49ed6-102">How to: Resize Rows with a GridSplitter</span></span>
 <span data-ttu-id="49ed6-103">この例は、水平方向の使用方法を示しています。<xref:System.Windows.Controls.GridSplitter>の 2 つの行の間の領域を再配布する、<xref:System.Windows.Controls.Grid>の寸法を変更することなく、<xref:System.Windows.Controls.Grid>です。</span><span class="sxs-lookup"><span data-stu-id="49ed6-103">This example shows how to use a horizontal <xref:System.Windows.Controls.GridSplitter> to redistribute the space between two rows in a <xref:System.Windows.Controls.Grid> without changing the dimensions of the <xref:System.Windows.Controls.Grid>.</span></span>  

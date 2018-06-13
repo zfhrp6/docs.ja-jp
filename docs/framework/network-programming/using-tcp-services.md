@@ -24,6 +24,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33397170"
 ---
 # <a name="using-tcp-services"></a><span data-ttu-id="36a86-102">TCP サービスの使用</span><span class="sxs-lookup"><span data-stu-id="36a86-102">Using TCP Services</span></span>
 <span data-ttu-id="36a86-103"><xref:System.Net.Sockets.TcpClient> クラスは、TCP を使用してインターネット リソースのデータを要求します。</span><span class="sxs-lookup"><span data-stu-id="36a86-103">The <xref:System.Net.Sockets.TcpClient> class requests data from an Internet resource using TCP.</span></span> <span data-ttu-id="36a86-104">**TcpClient** のメソッドとプロパティは、TCP を使用したデータの要求と受信用に <xref:System.Net.Sockets.Socket> を作成する詳細を抽象化します。</span><span class="sxs-lookup"><span data-stu-id="36a86-104">The methods and properties of **TcpClient** abstract the details for creating a <xref:System.Net.Sockets.Socket> for requesting and receiving data using TCP.</span></span> <span data-ttu-id="36a86-105">リモート デバイスへの接続はストリームとして表されるため、.NET Framework のストリーム処理技術を使用してデータの読み取りと書き込みを行うことができます。</span><span class="sxs-lookup"><span data-stu-id="36a86-105">Because the connection to the remote device is represented as a stream, data can be read and written with .NET Framework stream-handling techniques.</span></span>  

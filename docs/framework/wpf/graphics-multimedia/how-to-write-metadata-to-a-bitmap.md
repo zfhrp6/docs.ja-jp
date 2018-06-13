@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33559423"
 ---
 # <a name="how-to-write-metadata-to-a-bitmap"></a><span data-ttu-id="dd99a-102">方法 : ビットマップにメタデータを書き込む</span><span class="sxs-lookup"><span data-stu-id="dd99a-102">How to: Write Metadata to a Bitmap</span></span>
 <span data-ttu-id="dd99a-103">この例では、メタデータ クエリ言語を使用してビットマップにメタデータを記述する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="dd99a-103">This example shows how to write metadata to a bitmap using the metadata query language.</span></span>  

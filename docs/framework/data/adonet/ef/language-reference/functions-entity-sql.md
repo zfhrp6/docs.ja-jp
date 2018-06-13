@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32760298"
 ---
 # <a name="functions-entity-sql"></a><span data-ttu-id="2b929-102">関数 (Entity SQL)</span><span class="sxs-lookup"><span data-stu-id="2b929-102">Functions (Entity SQL)</span></span>
 <span data-ttu-id="2b929-103">Entity SQL では、ユーザー定義関数、正規の関数、およびプロバイダー固有の関数がサポートされています。</span><span class="sxs-lookup"><span data-stu-id="2b929-103">Entity SQL supports user-defined functions, canonical functions, and provider-specific functions.</span></span> <span data-ttu-id="2b929-104">ユーザー定義関数は、概念モデルまたはクエリでインラインで指定されます。</span><span class="sxs-lookup"><span data-stu-id="2b929-104">User-defined functions are specified in the conceptual model or inline in the query.</span></span> <span data-ttu-id="2b929-105">詳細については、次を参照してください。[ユーザー定義関数](../../../../../../docs/framework/data/adonet/ef/language-reference/user-defined-functions-entity-sql.md)です。</span><span class="sxs-lookup"><span data-stu-id="2b929-105">For more information, see [User-Defined Functions](../../../../../../docs/framework/data/adonet/ef/language-reference/user-defined-functions-entity-sql.md).</span></span>  

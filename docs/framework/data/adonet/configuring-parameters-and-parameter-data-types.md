@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32759544"
 ---
 # <a name="configuring-parameters-and-parameter-data-types"></a><span data-ttu-id="1e720-102">パラメーターおよびパラメーター データ型の構成</span><span class="sxs-lookup"><span data-stu-id="1e720-102">Configuring Parameters and Parameter Data Types</span></span>
 <span data-ttu-id="1e720-103">コマンド オブジェクトは、パラメーターを使用して SQL ステートメントまたはストアド プロシージャに値を渡すことによって、型チェックと検証の機能を実現します。</span><span class="sxs-lookup"><span data-stu-id="1e720-103">Command objects use parameters to pass values to SQL statements or stored procedures, providing type checking and validation.</span></span> <span data-ttu-id="1e720-104">コマンド テキストとは異なり、パラメーターの入力は実行可能なコードとしてではなく、リテラル値として扱われます。</span><span class="sxs-lookup"><span data-stu-id="1e720-104">Unlike command text, parameter input is treated as a literal value, not as executable code.</span></span> <span data-ttu-id="1e720-105">これにより、攻撃者がサーバーのセキュリティを侵害するコマンドを SQL ステートメントに "注入" する SQL インジェクション攻撃を防ぐことができます。</span><span class="sxs-lookup"><span data-stu-id="1e720-105">This helps guard against "SQL injection" attacks, in which an attacker inserts a command that compromises security on the server into an SQL statement.</span></span>  

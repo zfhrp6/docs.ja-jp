@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33558692"
 ---
 # <a name="how-to-apply-multiple-transformations-to-a-3-d-model"></a><span data-ttu-id="46e4a-102">方法 : 複数の変換を 3-D モデルに適用する</span><span class="sxs-lookup"><span data-stu-id="46e4a-102">How to: Apply Multiple Transformations to a 3-D Model</span></span>
 <span data-ttu-id="46e4a-103">このサンプルを使用する方法を示します、<xref:System.Windows.Media.Media3D.RotateTransform3D>と<xref:System.Windows.Media.Media3D.ScaleTransform3D>回転して 3-D モデルのスケールを変更します。</span><span class="sxs-lookup"><span data-stu-id="46e4a-103">This sample shows how to use a <xref:System.Windows.Media.Media3D.RotateTransform3D> and a <xref:System.Windows.Media.Media3D.ScaleTransform3D> to rotate and change the scale of a 3-D model.</span></span> <span data-ttu-id="46e4a-104">次のコードに変換を適用する方法を示しています、<xref:System.Windows.Media.Media3D.Model3D.Transform%2A>のプロパティ、 <xref:System.Windows.Media.Media3D.GeometryModel3D> XAML でします。</span><span class="sxs-lookup"><span data-stu-id="46e4a-104">The code below shows how to apply these transforms to the <xref:System.Windows.Media.Media3D.Model3D.Transform%2A> property of a <xref:System.Windows.Media.Media3D.GeometryModel3D> in XAML.</span></span>  

@@ -18,9 +18,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 3e09bf424a41445f7e36397775d1578cdf4e7e75
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33442788"
 ---
 # <a name="corsetenc-enumeration"></a><span data-ttu-id="b4350-102">CorSetENC 列挙型</span><span class="sxs-lookup"><span data-stu-id="b4350-102">CorSetENC Enumeration</span></span>
 <span data-ttu-id="b4350-103">メタデータの生成中の動作を決定する値が格納されます。</span><span class="sxs-lookup"><span data-stu-id="b4350-103">Contains values used to influence behavior during the generation of metadata.</span></span>  

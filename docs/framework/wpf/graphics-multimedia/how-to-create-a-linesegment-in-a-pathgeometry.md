@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33559682"
 ---
 # <a name="how-to-create-a-linesegment-in-a-pathgeometry"></a><span data-ttu-id="bfa71-102">方法 : PathGeometry で LineSegment を作成する</span><span class="sxs-lookup"><span data-stu-id="bfa71-102">How to: Create a LineSegment in a PathGeometry</span></span>
 <span data-ttu-id="bfa71-103">この例では、線分を作成する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="bfa71-103">This example shows how to create a line segment.</span></span> <span data-ttu-id="bfa71-104">直線セグメントを作成するには、使用、 <xref:System.Windows.Media.PathGeometry>、 <xref:System.Windows.Media.PathFigure>、および<xref:System.Windows.Media.LineSegment>クラスです。</span><span class="sxs-lookup"><span data-stu-id="bfa71-104">To create a line segment, use the <xref:System.Windows.Media.PathGeometry>, <xref:System.Windows.Media.PathFigure>, and <xref:System.Windows.Media.LineSegment> classes.</span></span>  

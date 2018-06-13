@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33397716"
 ---
 # <a name="how-to-request-data-using-the-webrequest-class"></a><span data-ttu-id="31b72-102">方法: WebRequest クラスを使用してデータを要求する</span><span class="sxs-lookup"><span data-stu-id="31b72-102">How to: Request Data Using the WebRequest Class</span></span>
 <span data-ttu-id="31b72-103">次の手順では、たとえば、Web ページやファイルなどのリソースをサーバーから要求するための手順について説明します。</span><span class="sxs-lookup"><span data-stu-id="31b72-103">The following procedure describes the steps used to request a resource from a server, for example, a Web page or file.</span></span> <span data-ttu-id="31b72-104">リソースは URI で識別される必要があります。</span><span class="sxs-lookup"><span data-stu-id="31b72-104">The resource must be identified by a URI.</span></span>  

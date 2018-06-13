@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33556667"
 ---
 # <a name="drawings-how-to-topics"></a><span data-ttu-id="1d582-102">描画に関する「方法」トピック</span><span class="sxs-lookup"><span data-stu-id="1d582-102">Drawings How-to Topics</span></span>
 <span data-ttu-id="1d582-103">このセクションのトピックを使用する方法について説明<xref:System.Windows.Media.Drawing>図形、画像、またはテキストを描画するオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="1d582-103">The topics in this section describe how to use <xref:System.Windows.Media.Drawing> objects to draw shapes, images, or text.</span></span>  

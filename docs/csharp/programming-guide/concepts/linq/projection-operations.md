@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33335391"
 ---
 # <a name="projection-operations-c"></a><span data-ttu-id="0e65b-102">射影操作 (C#)</span><span class="sxs-lookup"><span data-stu-id="0e65b-102">Projection Operations (C#)</span></span>
 <span data-ttu-id="0e65b-103">射影とは、オブジェクトを、必要なプロパティだけで構成された別の形式に変換する操作のことをいいます。</span><span class="sxs-lookup"><span data-stu-id="0e65b-103">Projection refers to the operation of transforming an object into a new form that often consists only of those properties that will be subsequently used.</span></span> <span data-ttu-id="0e65b-104">射影を使用することにより、個々のオブジェクトから構築された新しい型を作成できます。</span><span class="sxs-lookup"><span data-stu-id="0e65b-104">By using projection, you can construct a new type that is built from each object.</span></span> <span data-ttu-id="0e65b-105">プロパティを投影し、それに対して数値演算関数を実行できます。</span><span class="sxs-lookup"><span data-stu-id="0e65b-105">You can project a property and perform a mathematical function on it.</span></span> <span data-ttu-id="0e65b-106">また、元のオブジェクトを変更せずに射影することもできます。</span><span class="sxs-lookup"><span data-stu-id="0e65b-106">You can also project the original object without changing it.</span></span>  

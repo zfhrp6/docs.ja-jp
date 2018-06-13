@@ -24,6 +24,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33395948"
 ---
 # <a name="using-client-sockets"></a><span data-ttu-id="78d82-102">クライアント ソケットの使用</span><span class="sxs-lookup"><span data-stu-id="78d82-102">Using Client Sockets</span></span>
 <span data-ttu-id="78d82-103"><xref:System.Net.Sockets.Socket> を使用して会話を開始するには、まずアプリケーションとリモート デバイス間にデータ パイプを作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="78d82-103">Before you can initiate a conversation through a <xref:System.Net.Sockets.Socket>, you must create a data pipe between your application and the remote device.</span></span> <span data-ttu-id="78d82-104">他のネットワーク アドレス ファミリとプロトコルもありますが、この例では、リモート サービスとの TCP/IP 接続を作成する方法を説明します。</span><span class="sxs-lookup"><span data-stu-id="78d82-104">Although other network address families and protocols exist, this example shows how to create a TCP/IP connection to a remote service.</span></span>  

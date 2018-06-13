@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33336044"
 ---
 # <a name="multithreaded-applications-c"></a><span data-ttu-id="6e51f-102">マルチスレッド アプリケーション (C#)</span><span class="sxs-lookup"><span data-stu-id="6e51f-102">Multithreaded Applications (C#)</span></span>
 <span data-ttu-id="6e51f-103">C# では、複数のタスクを同時に実行するアプリケーションを記述できます。</span><span class="sxs-lookup"><span data-stu-id="6e51f-103">With C#, you can write applications that perform multiple tasks at the same time.</span></span> <span data-ttu-id="6e51f-104">他のタスクを止める可能性があるタスクは個別のスレッドで実行できます。これは*マルチスレッド*や*フリー スレッド*と呼ばれているプロセスです。</span><span class="sxs-lookup"><span data-stu-id="6e51f-104">Tasks with the potential of holding up other tasks can execute on separate threads, a process known as *multithreading* or *free threading*.</span></span>  

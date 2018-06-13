@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33557174"
 ---
 # <a name="how-to-get-the-default-view-of-a-data-collection"></a><span data-ttu-id="8d4d8-102">方法 : データ コレクションの既定のビューを取得する</span><span class="sxs-lookup"><span data-stu-id="8d4d8-102">How to: Get the Default View of a Data Collection</span></span>
 <span data-ttu-id="8d4d8-103">ビューでは、並べ替え、フィルター処理、または条件をグループ化に応じて、さまざまな方法で表示する同じデータ収集を許可します。</span><span class="sxs-lookup"><span data-stu-id="8d4d8-103">Views allow the same data collection to be viewed in different ways, depending on sorting, filtering, or grouping criteria.</span></span> <span data-ttu-id="8d4d8-104">すべてのコレクションには、バインディング ソースとしてコレクションを指定するときに、実際のバインド ソースとして使用される 1 つの共有の既定ビューがあります。</span><span class="sxs-lookup"><span data-stu-id="8d4d8-104">Every collection has one shared default view, which is used as the actual binding source when a binding specifies a collection as its source.</span></span> <span data-ttu-id="8d4d8-105">この例では、コレクションの既定のビューを取得する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="8d4d8-105">This example shows how to get the default view of a collection.</span></span>  

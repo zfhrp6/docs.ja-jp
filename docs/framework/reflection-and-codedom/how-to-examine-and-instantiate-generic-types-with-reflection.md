@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33397573"
 ---
 # <a name="how-to-examine-and-instantiate-generic-types-with-reflection"></a><span data-ttu-id="df404-102">方法 : リフレクションを使用してジェネリック型をチェックおよびインスタンス化する</span><span class="sxs-lookup"><span data-stu-id="df404-102">How to: Examine and Instantiate Generic Types with Reflection</span></span>
 <span data-ttu-id="df404-103">ジェネリック型の情報は、他の型の情報と同じ方法で取得します。つまり、ジェネリック型を表す <xref:System.Type> オブジェクトをチェックすることによって取得します。</span><span class="sxs-lookup"><span data-stu-id="df404-103">Information about generic types is obtained in the same way as information about other types: by examining a <xref:System.Type> object that represents the generic type.</span></span> <span data-ttu-id="df404-104">根本的な違いとして、ジェネリック型には、そのジェネリック型パラメーターを表す <xref:System.Type> オブジェクトの一覧が含まれています。</span><span class="sxs-lookup"><span data-stu-id="df404-104">The principle difference is that a generic type has a list of <xref:System.Type> objects representing its generic type parameters.</span></span> <span data-ttu-id="df404-105">このセクションでは、まず、ジェネリック型をチェックする手順を示します。</span><span class="sxs-lookup"><span data-stu-id="df404-105">The first procedure in this section examines generic types.</span></span>  

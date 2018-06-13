@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33289153"
 ---
 # <a name="c-keywords"></a><span data-ttu-id="413db-102">C# のキーワード</span><span class="sxs-lookup"><span data-stu-id="413db-102">C# Keywords</span></span>
 <span data-ttu-id="413db-103">キーワードは、コンパイラで特別な意味を持つ、事前に定義されている予約済みの識別子です。</span><span class="sxs-lookup"><span data-stu-id="413db-103">Keywords are predefined, reserved identifiers that have special meanings to the compiler.</span></span> <span data-ttu-id="413db-104">キーワードは、プレフィックスとして `@` を含めない限り、プログラムで識別子として使用できません。</span><span class="sxs-lookup"><span data-stu-id="413db-104">They cannot be used as identifiers in your program unless they include `@` as a prefix.</span></span> <span data-ttu-id="413db-105">たとえば、`@if` は有効な識別子ですが、`if` は違います。これは、`if` がキーワードだからです。</span><span class="sxs-lookup"><span data-stu-id="413db-105">For example, `@if` is a valid identifier, but `if` is not because `if` is a keyword.</span></span>  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33557967"
 ---
 # <a name="animation-and-timing-system-overview"></a><span data-ttu-id="a60f4-102">アニメーションとタイミング システムの概要</span><span class="sxs-lookup"><span data-stu-id="a60f4-102">Animation and Timing System Overview</span></span>
 <span data-ttu-id="a60f4-103">このトピックでは、タイミング システムが、アニメーションを使用する方法について説明<xref:System.Windows.Media.Animation.Timeline>、および<xref:System.Windows.Media.Animation.Clock>プロパティをアニメーション化するクラス。</span><span class="sxs-lookup"><span data-stu-id="a60f4-103">This topic describes how the timing system uses the animation, <xref:System.Windows.Media.Animation.Timeline>, and <xref:System.Windows.Media.Animation.Clock> classes to animate properties.</span></span>  

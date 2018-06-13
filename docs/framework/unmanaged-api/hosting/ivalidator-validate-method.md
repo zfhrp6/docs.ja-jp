@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: cf2c343db459879ca95372e104aee68b22dee6b0
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33440618"
 ---
 # <a name="ivalidatorvalidate-method"></a><span data-ttu-id="5d685-102">IValidator::Validate メソッド</span><span class="sxs-lookup"><span data-stu-id="5d685-102">IValidator::Validate Method</span></span>
 <span data-ttu-id="5d685-103">指定したポータブル実行可能 (PE) または Microsoft intermediate language (MSIL) ファイルを検証します。</span><span class="sxs-lookup"><span data-stu-id="5d685-103">Validates the specified portable executable (PE) or Microsoft intermediate language (MSIL) file.</span></span>  

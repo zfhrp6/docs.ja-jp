@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33396142"
 ---
 # <a name="peer-name-publication-and-resolution"></a><span data-ttu-id="aa9fd-102">ピア名の公開と解決</span><span class="sxs-lookup"><span data-stu-id="aa9fd-102">Peer Name Publication and Resolution</span></span>
 ## <a name="publishing-a-peer-name"></a><span data-ttu-id="aa9fd-103">ピア名の公開</span><span class="sxs-lookup"><span data-stu-id="aa9fd-103">Publishing a Peer Name</span></span>  

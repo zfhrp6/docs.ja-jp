@@ -23,6 +23,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33396247"
 ---
 # <a name="using-secure-sockets-layer"></a><span data-ttu-id="ca3c3-102">Secure Sockets Layerの使用</span><span class="sxs-lookup"><span data-stu-id="ca3c3-102">Using Secure Sockets Layer</span></span>
 <span data-ttu-id="ca3c3-103"><xref:System.Net> クラスは、Secure Sockets Layer (SSL) を使用して、複数のネットワーク プロトコルの接続を暗号化します。</span><span class="sxs-lookup"><span data-stu-id="ca3c3-103">The <xref:System.Net> classes use the Secure Sockets Layer (SSL) to encrypt the connection for several network protocols.</span></span>  

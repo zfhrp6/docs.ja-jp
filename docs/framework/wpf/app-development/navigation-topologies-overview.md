@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33557551"
 ---
 # <a name="navigation-topologies-overview"></a><span data-ttu-id="b84ea-102">ナビゲーション トポロジの概要</span><span class="sxs-lookup"><span data-stu-id="b84ea-102">Navigation Topologies Overview</span></span>
 <a name="introduction"></a> <span data-ttu-id="b84ea-103">この概要でナビゲーション トポロジの概要については、[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]です。</span><span class="sxs-lookup"><span data-stu-id="b84ea-103">This overview provides an introduction to navigation topologies in [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)].</span></span> <span data-ttu-id="b84ea-104">3 つの一般的なナビゲーション トポロジをサンプルと共に説明します。</span><span class="sxs-lookup"><span data-stu-id="b84ea-104">Three common navigation topologies, with samples, are subsequently discussed.</span></span>  

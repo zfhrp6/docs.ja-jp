@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33556836"
 ---
 # <a name="how-to-produce-a-value-based-on-a-list-of-bound-items"></a><span data-ttu-id="f593b-102">方法 : バインドされた項目の一覧に基づいて値を生成する</span><span class="sxs-lookup"><span data-stu-id="f593b-102">How to: Produce a Value Based on a List of Bound Items</span></span>
 <span data-ttu-id="f593b-103"><xref:System.Windows.Data.MultiBinding> 使用すると、ソースのプロパティの一覧にバインディング ターゲット プロパティをバインドし、指定された入力の値を生成するロジックを適用できます。</span><span class="sxs-lookup"><span data-stu-id="f593b-103"><xref:System.Windows.Data.MultiBinding> allows you to bind a binding target property to a list of source properties and then apply logic to produce a value with the given inputs.</span></span> <span data-ttu-id="f593b-104">この例は、使用する方法を示します<xref:System.Windows.Data.MultiBinding>です。</span><span class="sxs-lookup"><span data-stu-id="f593b-104">This example demonstrates how to use <xref:System.Windows.Data.MultiBinding>.</span></span>  

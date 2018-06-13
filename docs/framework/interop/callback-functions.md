@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33397391"
 ---
 # <a name="callback-functions"></a><span data-ttu-id="85514-102">コールバック関数</span><span class="sxs-lookup"><span data-stu-id="85514-102">Callback Functions</span></span>
 <span data-ttu-id="85514-103">コールバック関数は、アンマネージ DLL 関数がタスクを完了できるように支援するマネージ アプリケーション内のコードです。</span><span class="sxs-lookup"><span data-stu-id="85514-103">A callback function is code within a managed application that helps an unmanaged DLL function complete a task.</span></span> <span data-ttu-id="85514-104">コールバック関数の呼び出しは、マネージ アプリケーションから、DLL 関数を介して、マネージ実装へと間接的に渡されます。</span><span class="sxs-lookup"><span data-stu-id="85514-104">Calls to a callback function pass indirectly from a managed application, through a DLL function, and back to the managed implementation.</span></span> <span data-ttu-id="85514-105">多数ある DLL 関数の一部はプラットフォーム呼び出しと呼ばれ、正常に実行されるには、マネージ コード内にコールバック関数が必要です。</span><span class="sxs-lookup"><span data-stu-id="85514-105">Some of the many DLL functions called with platform invoke require a callback function in managed code to run properly.</span></span>  

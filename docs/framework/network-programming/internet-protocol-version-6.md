@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33397118"
 ---
 # <a name="internet-protocol-version-6"></a><span data-ttu-id="f2c5b-102">インターネット プロトコル バージョン 6</span><span class="sxs-lookup"><span data-stu-id="f2c5b-102">Internet Protocol Version 6</span></span>
 <span data-ttu-id="f2c5b-103">インターネット プロトコル バージョン 6 (IPv6) は、インターネットのネットワーク層の標準プロトコルの新しいスイートです。</span><span class="sxs-lookup"><span data-stu-id="f2c5b-103">The Internet Protocol version 6 (IPv6) is a new suite of standard protocols for the network layer of the Internet.</span></span> <span data-ttu-id="f2c5b-104">IPv6 は、アドレスの不足、セキュリティ、自動構成、拡張性などに関して、インターネット プロトコル スイートの現在のバージョン (IPv4) が抱える多くの問題を解決するために設計されています。</span><span class="sxs-lookup"><span data-stu-id="f2c5b-104">IPv6 is designed to solve many of the problems of the current version of the Internet Protocol suite (known as IPv4) with regard to address depletion, security, auto-configuration, extensibility, and so on.</span></span> <span data-ttu-id="f2c5b-105">IPv6 は、インターネットの機能を拡張して、ピア ツー ピア アプリケーションやモバイル アプリケーションなどの新しい種類のアプリケーションを有効にします。</span><span class="sxs-lookup"><span data-stu-id="f2c5b-105">IPv6 expands the capabilities of the Internet to enable new kinds of applications, including peer-to-peer and mobile applications.</span></span> <span data-ttu-id="f2c5b-106">現在の IPv4 プロトコルの主な問題を次に示します。</span><span class="sxs-lookup"><span data-stu-id="f2c5b-106">The following are the main issues of the current IPv4 protocol:</span></span>  

@@ -10,9 +10,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 019a17b38eb1cfccab4537d5f27b7625fdef1268
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33441469"
 ---
 # <a name="net-framework-4-hosting-global-static-functions"></a><span data-ttu-id="ca34d-102">.NET Framework 4 ホスト グローバル静的関数</span><span class="sxs-lookup"><span data-stu-id="ca34d-102">.NET Framework 4 Hosting Global Static Functions</span></span>
 <span data-ttu-id="ca34d-103">[!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)] MSCorEE.dll に 1 つの新しいエクスポート方法が導入されました。 [CLRCreateIntstance](../../../../docs/framework/unmanaged-api/hosting/clrcreateinstance-function.md)です。</span><span class="sxs-lookup"><span data-stu-id="ca34d-103">The [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)] introduces one new exported method in MSCorEE.dll: [CLRCreateIntstance](../../../../docs/framework/unmanaged-api/hosting/clrcreateinstance-function.md).</span></span>  

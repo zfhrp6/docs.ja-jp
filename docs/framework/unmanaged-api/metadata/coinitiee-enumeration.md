@@ -18,9 +18,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: b4d0ad0c8651fe10bd2a1c72a8a995846cc80a55
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33440779"
 ---
 # <a name="coinitiee-enumeration"></a><span data-ttu-id="a7b3a-102">COINITIEE 列挙型</span><span class="sxs-lookup"><span data-stu-id="a7b3a-102">COINITIEE Enumeration</span></span>
 <span data-ttu-id="a7b3a-103">によって使用される定数を指定[CoInitializeEE](../../../../docs/framework/unmanaged-api/hosting/coinitializeee-function.md)共通言語ランタイムを初期化するときにします。</span><span class="sxs-lookup"><span data-stu-id="a7b3a-103">Specifies constants used by [CoInitializeEE](../../../../docs/framework/unmanaged-api/hosting/coinitializeee-function.md) when initializing the common language runtime.</span></span>  
