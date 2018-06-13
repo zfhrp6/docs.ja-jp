@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33582652"
 ---
 # <a name="accessing-the-keyboard-visual-basic"></a>キーボードへのアクセス (Visual Basic)
 `My.Computer.Keyboard` オブジェクトは、現在どのキーが押されているかなど、キーボードの現在の状態にアクセスするためのプロパティを提供します。また、キーストロークを作業中のウィンドウに送る方法を提供します。  

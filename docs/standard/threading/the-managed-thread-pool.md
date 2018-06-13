@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33592419"
 ---
 # <a name="the-managed-thread-pool"></a>マネージ スレッド プール
 <xref:System.Threading.ThreadPool> クラスを使用すると、システムによって管理されるワーカー スレッドのプールがアプリケーションに提供されます。これを利用すると、開発者は、スレッド管理ではなくアプリケーション タスクに注意を集中できるようになります。 バックグラウンド処理が必要な短いタスクがある場合、マネージ スレッド プールを使用すると、複数のスレッドを簡単に利用できます。 たとえば、[!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] 以降では、スレッド プールのスレッドで非同期タスクを実行する <xref:System.Threading.Tasks.Task> オブジェクトと <xref:System.Threading.Tasks.Task%601> オブジェクトを作成できます。  

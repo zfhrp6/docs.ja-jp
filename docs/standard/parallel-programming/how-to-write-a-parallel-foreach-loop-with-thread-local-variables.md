@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33582738"
 ---
 # <a name="how-to-write-a-parallelforeach-loop-with-thread-local-variables"></a>方法: スレッド ローカル変数を使用する Parallel.ForEach ループを記述する
 スレッド ローカル変数を持つ <xref:System.Threading.Tasks.Parallel.ForEach%2A> メソッドを記述する方法を次の例に示します。 <xref:System.Threading.Tasks.Parallel.ForEach%2A> ループが実行されると、そのソース コレクションが複数のパーティションに分割されます。 各パーティションには、"スレッド ローカル" 変数が個別にコピーされます  ("スレッド ローカル" という用語は少し不正確です。1 つのスレッド上で 2 つのパーティションが実行されることがあるからです)。  

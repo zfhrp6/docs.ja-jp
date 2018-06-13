@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33577203"
 ---
 # <a name="mapping-the-object-hierarchy-to-xml-data"></a>オブジェクト階層の XML データへのマップ
 メモリに読み込まれた XML ドキュメントは、ツリーという概念で表現されます。 プログラミングでは、オブジェクト階層を利用してツリーのノードにアクセスします。 XML コンテンツがどのようにノードに変換されるかを次の例に示します。  

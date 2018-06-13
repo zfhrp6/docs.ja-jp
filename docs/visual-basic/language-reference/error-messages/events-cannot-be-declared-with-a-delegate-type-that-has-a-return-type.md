@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33586465"
 ---
 # <a name="events-cannot-be-declared-with-a-delegate-type-that-has-a-return-type"></a>イベントを、戻り値の型を持つデリゲート型で宣言することはできません。
 デリゲートは、function プロシージャに指定されました。  

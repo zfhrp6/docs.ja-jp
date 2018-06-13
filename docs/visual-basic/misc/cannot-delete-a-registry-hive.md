@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33635188"
 ---
 # <a name="cannot-delete-a-registry-hive"></a>レジストリ ハイブを削除できません
 レジストリ ハイブの削除が試行されました。 ハイブとは、 `HKEY_CURRENT_USER` や `HKEY_LOCAL_MACHINE`などの最上位のレジストリ キーのことです。ハイブは削除できません。  

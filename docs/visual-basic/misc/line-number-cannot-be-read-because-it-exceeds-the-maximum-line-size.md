@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33635160"
 ---
 # <a name="line-ltnumbergt-cannot-be-read-because-it-exceeds-the-maximum-line-size"></a>行&lt;数&gt;最大行サイズを超えているために読み取ることができません。
 最大行サイズを超えているため、行を解析できません。 通常、これはファイルに始まりの引用符がありますが、閉じの引用符がないことを意味します。  

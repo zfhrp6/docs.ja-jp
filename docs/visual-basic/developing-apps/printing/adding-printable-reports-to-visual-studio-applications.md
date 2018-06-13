@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33592055"
 ---
 # <a name="adding-printable-reports-to-visual-studio-applications"></a>Visual Studio アプリケーションへの印刷可能なレポートの追加
 Visual Studio では、さまざまな豊富なデータを Visual Basic アプリケーションにレポートを追加するためのレポート ソリューションをサポートしています。 作成し、ReportViewer コントロール、Crystal Reports、または SQL Server Reporting Services を使用してレポートを追加できます。  

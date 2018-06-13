@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33593640"
 ---
 # <a name="39ltname1gt39-is-ambiguous-imported-from-the-namespaces-or-types-39ltname2gt39"></a>&#39;&lt;name1&gt; &#39;があいまい、名前空間または型からインポートされた&#39; &lt;name2&gt;&#39;
 あいまいな名前を指定したため、別の名前と競合しています。 Visual Basic コンパイラが、競合解決規則です。名は、自分で明確する必要があります。  

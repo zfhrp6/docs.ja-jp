@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33583891"
 ---
 # <a name="declaration-expected"></a>宣言が必要です。
 Loop ステートメント、または割り当てなどの代入ステートメントは、プロシージャの外に発生します。 外部のプロシージャ宣言のみが許可されます。  

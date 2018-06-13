@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33637865"
 ---
 # <a name="no-mouse-is-present"></a>マウスが存在しません
 `My.Computer.Mouse` オブジェクトのいずれかのプロパティが呼び出されましたが、コンピューターにマウスが接続されていないか、マウス ポートが取り付けられていません。  

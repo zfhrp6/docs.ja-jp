@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33593991"
 ---
 # <a name="type-mismatch-visual-basic"></a>型が一致しません。(Visual Basic)
 値が無効な形で別の型に変換しようとしました。  

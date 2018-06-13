@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33595047"
 ---
 # <a name="unable-to-create-strong-named-assembly-from-key-file-39ltfilenamegt39-lterrorgt"></a>キー ファイルから厳密な名前付きのアセンブリを作成できません&#39; &lt;filename&gt;&#39;:&lt;エラー。&gt;
 指定されたキー ファイルから、厳密な名前のアセンブリを作成できませんでした。  

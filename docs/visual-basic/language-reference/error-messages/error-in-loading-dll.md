@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33584684"
 ---
 # <a name="error-in-loading-dll-visual-basic"></a>DLL 読み込み時のエラーです。(Visual Basic)
 ダイナミック リンク ライブラリ (DLL) で指定したライブラリは、`Lib`の句、`Declare`ステートメントです。 このエラーの考えられる原因は次のとおりです。  

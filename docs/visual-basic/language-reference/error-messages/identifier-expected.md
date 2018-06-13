@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33586131"
 ---
 # <a name="identifier-expected"></a>識別子が必要です。
 プログラミング要素は、認識可能な宣言された要素名には、コンテキストで要素名が必要な場合に発生します。 考えられる原因の 1 つは属性が指定されている任意の場所以外のステートメントの先頭にします。  

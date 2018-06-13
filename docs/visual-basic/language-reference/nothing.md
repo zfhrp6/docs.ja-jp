@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33603991"
 ---
 # <a name="nothing-visual-basic"></a>Nothing (Visual Basic)
 任意のデータ型の既定値を表します。 参照型の場合、既定値は、`null`参照します。 値型の場合、既定値は値の型が null 値を許容するかどうかに依存します。  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33587597"
 ---
 # <a name="39isnot39-operand-of-type-39typename39-can-only-be-compared-to-39nothing39-because-39typename39-is-a-nullable-type"></a>&#39;IsNot&#39;型のオペランド&#39;typename&#39;のみと比較できます&#39;Nothing&#39;ので、 &#39;typename&#39; null 許容型は、
 式に null 許容型として宣言された変数が以外の場合に比較`Nothing`を使用して、`IsNot`演算子。  

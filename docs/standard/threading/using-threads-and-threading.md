@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33584181"
 ---
 # <a name="using-threads-and-threading"></a>スレッドの使用とスレッド処理
 このセクションのトピックでは、マネージ スレッドの作成と管理、マネージ スレッドにデータを渡して結果を戻す方法、およびスレッドを破棄して <xref:System.Threading.ThreadAbortException> を処理する方法について説明します。  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33582809"
 ---
 # <a name="scheduling-threads"></a>スレッドのスケジューリング
 すべてのスレッドには、スレッド優先順位が割り当てられます。 共通言語ランタイム内で作成されたスレッドには、初期状態で **ThreadPriority.Normal** の優先順位が割り当てられます。 ランタイムの外部で作成されたスレッドは、マネージ環境に入る前に設定されていた優先順位を維持します。 任意のスレッドの優先順位を取得または設定するには、**Thread.Priority** プロパティを使用します。  

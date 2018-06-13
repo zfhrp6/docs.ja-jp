@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33596920"
 ---
 # <a name="variable-39ltvariablenamegt39-is-used-before-it-has-been-assigned-a-value"></a>変数&#39; &lt;variablename&gt; &#39;は、値が割り当てられる前に使用
 変数 '\<variablename >' は、値が割り当てられる前に使用します。 結果として、実行時に null 参照の例外が発生する可能性があります。  

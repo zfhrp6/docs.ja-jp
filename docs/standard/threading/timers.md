@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33584958"
 ---
 # <a name="timers"></a>タイマー
 タイマーとは、指定時刻に指定のデリゲートを呼び出す軽量オブジェクトのことです。 スレッド プール内の 1 つのスレッドが、待機操作を実行します。  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33595827"
 ---
 # <a name="xml-entity-references-are-not-supported"></a>XML エンティティの参照はサポートされていません
 エンティティ参照 (たとえば、 `©`) が定義されていない XML 1.0 の仕様は、XML リテラルの値として含まれています。 のみ`&`、 `"`、 `<`、 `>`、および`'`XML エンティティ参照は、XML リテラルでサポートされています。  
