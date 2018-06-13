@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33513127"
 ---
 # <a name="guide-to-the-windows-workflow-documentation"></a><span data-ttu-id="8f913-102">Windows Workflow ドキュメントのガイド</span><span class="sxs-lookup"><span data-stu-id="8f913-102">Guide to the Windows Workflow Documentation</span></span>
 <span data-ttu-id="8f913-103">ここでは、Windows Workflow Foundation ドキュメントを使用する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="8f913-103">This topic contains information about how to use the Windows Workflow Foundation documentation.</span></span> <span data-ttu-id="8f913-104">リンク先のドキュメントは、特定の目的と専門知識のレベルに応じて分類された、推奨される出発点となります。</span><span class="sxs-lookup"><span data-stu-id="8f913-104">The linked documents are recommended starting points grouped according to specific interests and levels of expertise.</span></span>  

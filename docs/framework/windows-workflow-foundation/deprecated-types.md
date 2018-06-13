@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33512428"
 ---
 # <a name="deprecated-types-in-windows-workflow-foundation"></a><span data-ttu-id="ac098-102">Windows Workflow Foundation で非推奨の型</span><span class="sxs-lookup"><span data-stu-id="ac098-102">Deprecated types in Windows Workflow Foundation</span></span>
 <span data-ttu-id="ac098-103">.NET 4 の段階で、ワークフロー チームは、<xref:System.Activities> 名前空間のまったく新しいワークフロー エンジンをリリースしました。</span><span class="sxs-lookup"><span data-stu-id="ac098-103">In .NET 4 the Workflow Team released an all new Workflow engine in the <xref:System.Activities> namespace.</span></span> <span data-ttu-id="ac098-104">.NET 4.5 ベータ版のリリースでは、"WF 3"で型の大部分のマークを付けるおは<xref:System.Workflow.Activities>、 <xref:System.Workflow.ComponentModel>、および<xref:System.Workflow.Runtime>不使用と名前空間。</span><span class="sxs-lookup"><span data-stu-id="ac098-104">With the release of .NET 4.5 Beta we are marking most of the types in the "WF 3" <xref:System.Workflow.Activities>, <xref:System.Workflow.ComponentModel>, and  <xref:System.Workflow.Runtime> namespaces as obsolete.</span></span>  

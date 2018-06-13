@@ -16,6 +16,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32754507"
 ---
 # <a name="ltwebproxyscriptgt-element-network-settings"></a><span data-ttu-id="07c8f-102">&lt;webProxyScript&gt;要素 (ネットワーク設定)</span><span class="sxs-lookup"><span data-stu-id="07c8f-102">&lt;webProxyScript&gt; Element (Network Settings)</span></span>
 <span data-ttu-id="07c8f-103">Web プロキシを検出するためのスクリプトの特性を構成します。</span><span class="sxs-lookup"><span data-stu-id="07c8f-103">Configures the characteristics of the script used to discover Web proxies.</span></span>  

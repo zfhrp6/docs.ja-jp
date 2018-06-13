@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33498125"
 ---
 # <a name="transports-in-windows-communication-foundation"></a><span data-ttu-id="6f0a6-102">Windows Communication Foundation のトランスポート</span><span class="sxs-lookup"><span data-stu-id="6f0a6-102">Transports in Windows Communication Foundation</span></span>
 <span data-ttu-id="6f0a6-103">トランスポート層は、チャネル スタックの最も低いレベルにあります。</span><span class="sxs-lookup"><span data-stu-id="6f0a6-103">The transport layer is at the lowest level of the channel stack.</span></span> <span data-ttu-id="6f0a6-104">Windows Communication Foundation (WCF) を使用する主なトランスポートは、HTTP、HTTPS、TCP、および名前付きパイプです。</span><span class="sxs-lookup"><span data-stu-id="6f0a6-104">The main transports used in Windows Communication Foundation (WCF) are HTTP, HTTPS, TCP, and named pipes.</span></span> <span data-ttu-id="6f0a6-105">このセクションのトピックでは、このようなトランスポートの選択、トランスポートの構成、およびチューニング プロパティの設定について説明します。</span><span class="sxs-lookup"><span data-stu-id="6f0a6-105">The topics in this section discuss choosing among these transports, configuring the transport, and setting tuning properties.</span></span>  

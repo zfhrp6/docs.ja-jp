@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33513319"
 ---
 # <a name="getting-started-writing-a-custom-activity"></a><span data-ttu-id="523f7-102">カスタム アクティビティの記述について</span><span class="sxs-lookup"><span data-stu-id="523f7-102">Getting Started Writing a Custom Activity</span></span>
 <span data-ttu-id="523f7-103">このサンプルでは、XAML で単純なカスタム アクティビティを定義する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="523f7-103">This sample demonstrates how to define a simple custom activity in XAML.</span></span> <span data-ttu-id="523f7-104">このアクティビティの名前は `Rhyme` で、ロジックは 3 つの連続する <xref:System.Activities.Statements.WriteLine> アクティビティです。</span><span class="sxs-lookup"><span data-stu-id="523f7-104">The activity is given the name `Rhyme`, and its logic is a sequence of three <xref:System.Activities.Statements.WriteLine> activities.</span></span>  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32756281"
 ---
 # <a name="comparing-datarows-linq-to-dataset"></a><span data-ttu-id="8f4d0-102">DataRow の比較 (LINQ to DataSet)</span><span class="sxs-lookup"><span data-stu-id="8f4d0-102">Comparing DataRows (LINQ to DataSet)</span></span>
 [!INCLUDE[vbteclinqext](../../../../includes/vbteclinqext-md.md)]<span data-ttu-id="8f4d0-103"> では、ソース要素を比較し、両者が等しいかどうかを調べるための各種の集合演算子が定義されています。</span><span class="sxs-lookup"><span data-stu-id="8f4d0-103"> defines various set operators to compare source elements to see if they are equal.</span></span> [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)]<span data-ttu-id="8f4d0-104"> が提供している集合演算子は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="8f4d0-104"> provides the following set operators:</span></span>  

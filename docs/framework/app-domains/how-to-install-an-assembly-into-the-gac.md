@@ -15,6 +15,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32744383"
 ---
 # <a name="how-to-install-an-assembly-into-the-global-assembly-cache"></a><span data-ttu-id="934b9-102">方法 : グローバル アセンブリ キャッシュにアセンブリをインストールする</span><span class="sxs-lookup"><span data-stu-id="934b9-102">How to: Install an Assembly into the Global Assembly Cache</span></span>
 <span data-ttu-id="934b9-103">厳密な名前付きのアセンブリをグローバル アセンブリ キャッシュ (GAC) にインストールには、次の 2 つの方法があります。</span><span class="sxs-lookup"><span data-stu-id="934b9-103">There are two ways to install a strong-named assembly into the global assembly cache (GAC):</span></span>  

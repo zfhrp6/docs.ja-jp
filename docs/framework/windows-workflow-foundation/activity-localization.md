@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33512464"
 ---
 # <a name="activity-localization"></a><span data-ttu-id="fc333-102">アクティビティのローカライズ</span><span class="sxs-lookup"><span data-stu-id="fc333-102">Activity Localization</span></span>
 <span data-ttu-id="fc333-103">ワークフロー アプリケーションとコンポーネントが他のカルチャおよび言語にローカライズされる可能性がある場合は、再コンパイルせずにローカライズできるようにリソース文字列を使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="fc333-103">When workflow applications and components have the potential to be localized into other cultures and languages, resource strings should be used so that they can be localized without recompiling.</span></span>  

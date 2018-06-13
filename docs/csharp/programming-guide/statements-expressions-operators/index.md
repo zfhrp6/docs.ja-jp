@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33338797"
 ---
 # <a name="statements-expressions-and-operators-c-programming-guide"></a><span data-ttu-id="89afa-102">ステートメント、式、および演算子 (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="89afa-102">Statements, Expressions, and Operators (C# Programming Guide)</span></span>
 <span data-ttu-id="89afa-103">アプリケーションを構成する C# コードは、キーワード、式、演算子から成るステートメントで構成されます。</span><span class="sxs-lookup"><span data-stu-id="89afa-103">The C# code that comprises an application consists of statements made up of keywords, expressions and operators.</span></span> <span data-ttu-id="89afa-104">このセクションには、C# プログラムのこのような基本要素に関する情報が含まれています。</span><span class="sxs-lookup"><span data-stu-id="89afa-104">This section contains information regarding these fundamental elements of a C# program.</span></span>  

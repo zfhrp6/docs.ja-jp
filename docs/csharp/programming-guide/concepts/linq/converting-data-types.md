@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33335823"
 ---
 # <a name="converting-data-types-c"></a><span data-ttu-id="71e77-102">データ型の変換 (C#)</span><span class="sxs-lookup"><span data-stu-id="71e77-102">Converting Data Types (C#)</span></span>
 <span data-ttu-id="71e77-103">変換メソッドは、入力オブジェクトの型を変更します。</span><span class="sxs-lookup"><span data-stu-id="71e77-103">Conversion methods change the type of input objects.</span></span>  

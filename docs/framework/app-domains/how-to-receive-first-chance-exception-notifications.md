@@ -15,6 +15,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32744370"
 ---
 # <a name="how-to-receive-first-chance-exception-notifications"></a><span data-ttu-id="03711-102">方法: 初回例外通知を受け取る</span><span class="sxs-lookup"><span data-stu-id="03711-102">How to: Receive First-Chance Exception Notifications</span></span>
 <span data-ttu-id="03711-103"><xref:System.AppDomain> クラスの <xref:System.AppDomain.FirstChanceException>イベントを使用すると、共通言語ランタイムが例外ハンドラーの検索を開始する前に、例外がスローされたことを知らせる通知を受け取ることができます。</span><span class="sxs-lookup"><span data-stu-id="03711-103">The <xref:System.AppDomain.FirstChanceException> event of the <xref:System.AppDomain> class lets you receive a notification that an exception has been thrown, before the common language runtime has begun searching for exception handlers.</span></span>  

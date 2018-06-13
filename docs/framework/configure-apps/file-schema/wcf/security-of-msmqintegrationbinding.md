@@ -9,6 +9,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32750571"
 ---
 # <a name="ltsecuritygt-of-ltmsmqintegrationbindinggt"></a><span data-ttu-id="f051a-102">&lt;msmqIntegrationBinding&gt; の &lt;security&gt;</span><span class="sxs-lookup"><span data-stu-id="f051a-102">&lt;security&gt; of &lt;msmqIntegrationBinding&gt;</span></span>
 <span data-ttu-id="f051a-103">メッセージ キュー (MSMQ) 統合チャネルのトランスポート セキュリティ設定を定義します。</span><span class="sxs-lookup"><span data-stu-id="f051a-103">Defines the transport security settings for the Message Queuing (MSMQ) integration channel.</span></span>  

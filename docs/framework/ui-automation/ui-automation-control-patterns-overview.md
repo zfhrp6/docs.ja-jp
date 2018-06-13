@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33409027"
 ---
 # <a name="ui-automation-control-patterns-overview"></a><span data-ttu-id="2002d-102">UI オートメーション コントロール パターンの概要</span><span class="sxs-lookup"><span data-stu-id="2002d-102">UI Automation Control Patterns Overview</span></span>
 > [!NOTE]

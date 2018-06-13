@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32747487"
 ---
 # <a name="ltbaseaddressesgt"></a><span data-ttu-id="b60b8-102">&lt;baseAddresses&gt;</span><span class="sxs-lookup"><span data-stu-id="b60b8-102">&lt;baseAddresses&gt;</span></span>
 <span data-ttu-id="b60b8-103">自己ホスト環境でのサービス ホストのベース アドレスである `baseAddress` 要素のコレクションを表します。</span><span class="sxs-lookup"><span data-stu-id="b60b8-103">Represents a collection of `baseAddress` elements, which are base addresses for a service host in a self-hosted environment.</span></span> <span data-ttu-id="b60b8-104">ベース アドレスが存在すると、そのベース アドレスに関連したアドレスを使用してエンドポイントを構成できます。</span><span class="sxs-lookup"><span data-stu-id="b60b8-104">If a base address is present, endpoints can be configured with addresses relative to the base address.</span></span>  

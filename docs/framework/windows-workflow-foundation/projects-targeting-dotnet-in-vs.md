@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33513828"
 ---
 # <a name="writing-projects-targeting-the-net-framework-30-and-35-in-visual-studio-2010"></a><span data-ttu-id="80f80-102">Visual Studio 2010 での .NET Framework 3.0 および 3.5 を対象とするプロジェクトの作成</span><span class="sxs-lookup"><span data-stu-id="80f80-102">Writing Projects Targeting the .NET Framework 3.0 and 3.5 in Visual Studio 2010</span></span>
 <span data-ttu-id="80f80-103">[!INCLUDE[vs2010](../../../includes/vs2010-md.md)] を使用して、[!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] Version 3.0 または 3.5 を対象とするプロジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="80f80-103">You can use [!INCLUDE[vs2010](../../../includes/vs2010-md.md)] to create projects that target the [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] version 3.0 or 3.5.</span></span> <span data-ttu-id="80f80-104">このトピックでは、この実行方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="80f80-104">This topic describes how to do this.</span></span>  

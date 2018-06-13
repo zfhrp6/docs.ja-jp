@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33334900"
 ---
 # <a name="functional-programming-vs-imperative-programming-c"></a><span data-ttu-id="2b7e9-102">関数型プログラミングと命令型プログラミング (C#)</span><span class="sxs-lookup"><span data-stu-id="2b7e9-102">Functional Programming vs. Imperative Programming (C#)</span></span>
 <span data-ttu-id="2b7e9-103">このトピックでは、関数型プログラミングを従来の命令型 (手続き型) プログラミングと比較対照します。</span><span class="sxs-lookup"><span data-stu-id="2b7e9-103">This topic compares and contrasts functional programming with more traditional imperative (procedural) programming.</span></span>  

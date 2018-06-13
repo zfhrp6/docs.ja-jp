@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33327438"
 ---
 # <a name="grouping-data-c"></a><span data-ttu-id="fd0cf-102">データのグループ化 (C#)</span><span class="sxs-lookup"><span data-stu-id="fd0cf-102">Grouping Data (C#)</span></span>
 <span data-ttu-id="fd0cf-103">グループ化とは、各グループの要素が共通の属性を持つようにデータをグループに分ける操作を指します。</span><span class="sxs-lookup"><span data-stu-id="fd0cf-103">Grouping refers to the operation of putting data into groups so that the elements in each group share a common attribute.</span></span>  

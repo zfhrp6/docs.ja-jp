@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32751923"
 ---
 # <a name="ltnethttpbindinggt"></a><span data-ttu-id="a7b42-102">&lt;netHttpBinding&gt;</span><span class="sxs-lookup"><span data-stu-id="a7b42-102">&lt;netHttpBinding&gt;</span></span>
 <span data-ttu-id="a7b42-103">Windows Communication Foundation (WCF) サービスが構成および HTTP で通信できるエンドポイントを公開に使用できるバインディングを表します。</span><span class="sxs-lookup"><span data-stu-id="a7b42-103">Represents a binding that a Windows Communication Foundation (WCF) service can use to configure and expose endpoints that are able to communicate over HTTP.</span></span> <span data-ttu-id="a7b42-104">双方向コントラクトで使用すると、Web ソケットが使用されます。それ以外の場合は、HTTP が使用されます。</span><span class="sxs-lookup"><span data-stu-id="a7b42-104">When used with a duplex contract, Web Sockets will be used, otherwise HTTP will be used.</span></span>  

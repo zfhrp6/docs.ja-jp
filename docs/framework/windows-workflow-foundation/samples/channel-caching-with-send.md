@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33514040"
 ---
 # <a name="channel-caching-with-send"></a><span data-ttu-id="47631-102">Send によるチャネル キャッシュ</span><span class="sxs-lookup"><span data-stu-id="47631-102">Channel Caching with Send</span></span>
 <span data-ttu-id="47631-103"><xref:System.ServiceModel.Activities.SendMessageChannelCache> を使用すると、ユーザーは <xref:System.ServiceModel.Activities.Send> および <xref:System.ServiceModel.Activities.SendParametersContent> アクティビティでさまざまなレベルのチャネル キャッシュを利用できます。</span><span class="sxs-lookup"><span data-stu-id="47631-103">The <xref:System.ServiceModel.Activities.SendMessageChannelCache> enables users to have different levels of channel caching with <xref:System.ServiceModel.Activities.Send> and <xref:System.ServiceModel.Activities.SendParametersContent> activities.</span></span> <span data-ttu-id="47631-104">既定では、インスタンス レベルのキャッシュが有効になっています。このサンプルでは、次の機能を示します。</span><span class="sxs-lookup"><span data-stu-id="47631-104">Instance-level caching is enabled by default and this sample demonstrates the following features:</span></span>  

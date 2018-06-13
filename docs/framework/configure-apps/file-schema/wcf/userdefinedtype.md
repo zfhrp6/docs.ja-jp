@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32755280"
 ---
 # <a name="ltuserdefinedtypegt"></a><span data-ttu-id="cdf14-102">&lt;userDefinedType&gt;</span><span class="sxs-lookup"><span data-stu-id="cdf14-102">&lt;userDefinedType&gt;</span></span>
 <span data-ttu-id="cdf14-103">サービス コントラクトに含まれるユーザー定義型 (UDT) を表します。</span><span class="sxs-lookup"><span data-stu-id="cdf14-103">Represents a User Defined Type (UDT) that is to be included in the service contract.</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33513375"
 ---
 # <a name="primitives-activities-in-wf"></a><span data-ttu-id="c6cc2-102">WF 内のプリミティブ アクティビティ</span><span class="sxs-lookup"><span data-stu-id="c6cc2-102">Primitives Activities in WF</span></span>
 [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)]<span data-ttu-id="c6cc2-103"> には、共通のタスクを実行する便利な機構を提供する、システムによって提供されるアクティビティがいくつか用意されています。</span><span class="sxs-lookup"><span data-stu-id="c6cc2-103"> provides several system-provided activities that provide a convenient mechanism for performing common tasks.</span></span>  

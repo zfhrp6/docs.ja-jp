@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33511336"
 ---
 # <a name="custom-tracking-records"></a><span data-ttu-id="e8a92-102">カスタム追跡レコード</span><span class="sxs-lookup"><span data-stu-id="e8a92-102">Custom Tracking Records</span></span>
 <span data-ttu-id="e8a92-103">このトピックではカスタム追跡レコードを作成し、出力されたデータをレコードと一緒に読み込む方法を示します。</span><span class="sxs-lookup"><span data-stu-id="e8a92-103">This topic demonstrates how to create custom tracking records and populate them with data to be emitted along with the records.</span></span>  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33499338"
 ---
 # <a name="how-to-specify-the-client-credential-type"></a><span data-ttu-id="374ae-102">方法 : クライアントの資格情報の種類を指定する</span><span class="sxs-lookup"><span data-stu-id="374ae-102">How to: Specify the Client Credential Type</span></span>
 <span data-ttu-id="374ae-103">セキュリティ モード (トランスポートまたはメッセージ) を設定してから、クライアント資格情報の種類を指定することができます。</span><span class="sxs-lookup"><span data-stu-id="374ae-103">After setting a security mode (either transport or message), you have the option of setting the client credential type.</span></span> <span data-ttu-id="374ae-104">このプロパティでは、クライアントが認証時にサービスに提供する必要のある資格情報の種類を指定します。</span><span class="sxs-lookup"><span data-stu-id="374ae-104">This property specifies what type of credential the client must provide to the service for authentication.</span></span> <span data-ttu-id="374ae-105">セキュリティ モード (クライアントの資格情報の種類を設定する前に必要な手順) の設定の詳細については、次を参照してください。[する方法: セキュリティ モードを設定](../../../docs/framework/wcf/how-to-set-the-security-mode.md)です。</span><span class="sxs-lookup"><span data-stu-id="374ae-105">For more information about setting the security mode (a necessary step before setting the client credential type), see [How to: Set the Security Mode](../../../docs/framework/wcf/how-to-set-the-security-mode.md).</span></span>  

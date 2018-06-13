@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33512269"
 ---
 # <a name="developing-windows-service-applications"></a><span data-ttu-id="44a1d-102">Windows サービス アプリケーションの開発</span><span class="sxs-lookup"><span data-stu-id="44a1d-102">Developing Windows Service Applications</span></span>
 <span data-ttu-id="44a1d-103">Microsoft Visual Studio または Microsoft [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] SDK を使用すると、サービスとしてインストールするアプリケーションを作成することで簡単に作成できます。</span><span class="sxs-lookup"><span data-stu-id="44a1d-103">Using Microsoft Visual Studio or the Microsoft [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] SDK, you can easily create services by creating an application that is installed as a service.</span></span> <span data-ttu-id="44a1d-104">この種類のアプリケーションは、Windows サービスと呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="44a1d-104">This type of application is called a Windows service.</span></span> <span data-ttu-id="44a1d-105">フレームワーク機能を使用することで、サービスを作成、インストール、開始、停止したり、動作を制御したりできます。</span><span class="sxs-lookup"><span data-stu-id="44a1d-105">With framework features, you can create services, install them, and start, stop, and otherwise control their behavior.</span></span>  

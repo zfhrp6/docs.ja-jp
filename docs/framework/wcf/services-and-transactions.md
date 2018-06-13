@@ -1,37 +1,24 @@
 ---
 title: サービスとトランザクション
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - service contracts [WCF], designing services and transactions
 ms.assetid: 864813ff-2709-4376-912d-f5c8d318c460
-caps.latest.revision: 10
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: c39c9f6e56dc4c2bf2feb5340d7d1bb1b96f5ab6
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 85792584660bd742ad3d313bf04ef1ce88bddcc2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33504320"
 ---
-# <a name="services-and-transactions"></a><span data-ttu-id="698ca-102">サービスとトランザクション</span><span class="sxs-lookup"><span data-stu-id="698ca-102">Services and Transactions</span></span>
-[!INCLUDE[indigo1](../../../includes/indigo1-md.md)]<span data-ttu-id="698ca-103"> アプリケーションでは、クライアントからトランザクションを開始し、そのトランザクションをサービス操作内で調整できます。</span><span class="sxs-lookup"><span data-stu-id="698ca-103"> applications can initiate a transaction from within a client and coordinate the transaction within the service operation.</span></span> <span data-ttu-id="698ca-104">クライアントはトランザクションを開始し、複数のサービス操作を呼び出す可能性があります。サービス操作が、1 つの単位としてコミットまたはロールバックされます。</span><span class="sxs-lookup"><span data-stu-id="698ca-104">Clients can initiate a transaction and invoke several service operations and ensure that the service operations are either committed or rolled back as a single unit.</span></span>  
+# <a name="services-and-transactions"></a><span data-ttu-id="b9a01-102">サービスとトランザクション</span><span class="sxs-lookup"><span data-stu-id="b9a01-102">Services and Transactions</span></span>
+<span data-ttu-id="b9a01-103">Windows Communication Foundation (WCF) アプリケーションでは、クライアントからトランザクションを開始でき、サービス操作内でトランザクションを調整することができます。</span><span class="sxs-lookup"><span data-stu-id="b9a01-103">Windows Communication Foundation (WCF) applications can initiate a transaction from within a client and coordinate the transaction within the service operation.</span></span> <span data-ttu-id="b9a01-104">クライアントはトランザクションを開始し、複数のサービス操作を呼び出す可能性があります。サービス操作が、1 つの単位としてコミットまたはロールバックされます。</span><span class="sxs-lookup"><span data-stu-id="b9a01-104">Clients can initiate a transaction and invoke several service operations and ensure that the service operations are either committed or rolled back as a single unit.</span></span>  
   
- <span data-ttu-id="698ca-105">サービス コントラクトでトランザクション動作を有効にするには、<xref:System.ServiceModel.ServiceBehaviorAttribute> を指定し、クライアント トランザクションを必要とするサービス操作について <xref:System.ServiceModel.ServiceBehaviorAttribute.TransactionIsolationLevel%2A> プロパティと <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired%2A> プロパティを設定します。</span><span class="sxs-lookup"><span data-stu-id="698ca-105">You can enable the transaction behavior in the service contract by specifying a <xref:System.ServiceModel.ServiceBehaviorAttribute> and setting its <xref:System.ServiceModel.ServiceBehaviorAttribute.TransactionIsolationLevel%2A> and <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired%2A> properties for service operations that require client transactions.</span></span> <span data-ttu-id="698ca-106"><xref:System.ServiceModel.OperationBehaviorAttribute.TransactionAutoComplete%2A> パラメーターは、未処理の例外がスローされなかった場合に、メソッドが実行されているトランザクションが自動的に完了されるかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="698ca-106">The <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionAutoComplete%2A> parameter specifies whether the transaction in which the method executes is automatically completed if no unhandled exceptions are thrown.</span></span> <span data-ttu-id="698ca-107">これらの属性の詳細については、次を参照してください。 [ServiceModel トランザクションの属性](../../../docs/framework/wcf/feature-details/servicemodel-transaction-attributes.md)です。</span><span class="sxs-lookup"><span data-stu-id="698ca-107">For more information about these attributes, see [ServiceModel Transaction Attributes](../../../docs/framework/wcf/feature-details/servicemodel-transaction-attributes.md).</span></span>  
+ <span data-ttu-id="b9a01-105">サービス コントラクトでトランザクション動作を有効にするには、<xref:System.ServiceModel.ServiceBehaviorAttribute> を指定し、クライアント トランザクションを必要とするサービス操作について <xref:System.ServiceModel.ServiceBehaviorAttribute.TransactionIsolationLevel%2A> プロパティと <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired%2A> プロパティを設定します。</span><span class="sxs-lookup"><span data-stu-id="b9a01-105">You can enable the transaction behavior in the service contract by specifying a <xref:System.ServiceModel.ServiceBehaviorAttribute> and setting its <xref:System.ServiceModel.ServiceBehaviorAttribute.TransactionIsolationLevel%2A> and <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired%2A> properties for service operations that require client transactions.</span></span> <span data-ttu-id="b9a01-106"><xref:System.ServiceModel.OperationBehaviorAttribute.TransactionAutoComplete%2A> パラメーターは、未処理の例外がスローされなかった場合に、メソッドが実行されているトランザクションが自動的に完了されるかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="b9a01-106">The <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionAutoComplete%2A> parameter specifies whether the transaction in which the method executes is automatically completed if no unhandled exceptions are thrown.</span></span> <span data-ttu-id="b9a01-107">これらの属性の詳細については、次を参照してください。 [ServiceModel トランザクションの属性](../../../docs/framework/wcf/feature-details/servicemodel-transaction-attributes.md)です。</span><span class="sxs-lookup"><span data-stu-id="b9a01-107">For more information about these attributes, see [ServiceModel Transaction Attributes](../../../docs/framework/wcf/feature-details/servicemodel-transaction-attributes.md).</span></span>  
   
- <span data-ttu-id="698ca-108">データベース更新の記録など、サービス操作で実行され、リソース マネージャーで管理される作業は、クライアント トランザクションの一部です。</span><span class="sxs-lookup"><span data-stu-id="698ca-108">The work that is performed in the service operations and managed by a resource manager, such as logging database updates, is part of the client’s transaction.</span></span>  
+ <span data-ttu-id="b9a01-108">データベース更新の記録など、サービス操作で実行され、リソース マネージャーで管理される作業は、クライアント トランザクションの一部です。</span><span class="sxs-lookup"><span data-stu-id="b9a01-108">The work that is performed in the service operations and managed by a resource manager, such as logging database updates, is part of the client’s transaction.</span></span>  
   
- <span data-ttu-id="698ca-109"><xref:System.ServiceModel.ServiceBehaviorAttribute> 属性と <xref:System.ServiceModel.OperationBehaviorAttribute> 属性を使用して、サービス側のトランザクション動作を制御する方法を次の例に示します。</span><span class="sxs-lookup"><span data-stu-id="698ca-109">The following sample demonstrates usage of the <xref:System.ServiceModel.ServiceBehaviorAttribute> and <xref:System.ServiceModel.OperationBehaviorAttribute> attributes to control service-side transaction behavior.</span></span>  
+ <span data-ttu-id="b9a01-109"><xref:System.ServiceModel.ServiceBehaviorAttribute> 属性と <xref:System.ServiceModel.OperationBehaviorAttribute> 属性を使用して、サービス側のトランザクション動作を制御する方法を次の例に示します。</span><span class="sxs-lookup"><span data-stu-id="b9a01-109">The following sample demonstrates usage of the <xref:System.ServiceModel.ServiceBehaviorAttribute> and <xref:System.ServiceModel.OperationBehaviorAttribute> attributes to control service-side transaction behavior.</span></span>  
   
 ```  
 [ServiceBehavior(TransactionIsolationLevel = System.Transactions.IsolationLevel.Serializable)]  
@@ -72,7 +59,7 @@ public class CalculatorService: ICalculatorLog
 }  
 ```  
   
- <span data-ttu-id="698ca-110">トランザクションを有効にすることができ、トランザクションのクライアントを構成することによってフローしサービス バインド、Ws-atomictransaction プロトコルを使用して設定、 [ \<transactionFlow >](../../../docs/framework/configure-apps/file-schema/wcf/transactionflow.md)要素を`true`ように、次のサンプル構成します。</span><span class="sxs-lookup"><span data-stu-id="698ca-110">You can enable transactions and transaction flow by configuring the client and service bindings to use the WS-AtomicTransaction protocol, and setting the [\<transactionFlow>](../../../docs/framework/configure-apps/file-schema/wcf/transactionflow.md) element to `true`, as shown in the following sample configuration.</span></span>  
+ <span data-ttu-id="b9a01-110">トランザクションを有効にすることができ、トランザクションのクライアントを構成することによってフローしサービス バインド、Ws-atomictransaction プロトコルを使用して設定、 [ \<transactionFlow >](../../../docs/framework/configure-apps/file-schema/wcf/transactionflow.md)要素を`true`ように、次のサンプル構成します。</span><span class="sxs-lookup"><span data-stu-id="b9a01-110">You can enable transactions and transaction flow by configuring the client and service bindings to use the WS-AtomicTransaction protocol, and setting the [\<transactionFlow>](../../../docs/framework/configure-apps/file-schema/wcf/transactionflow.md) element to `true`, as shown in the following sample configuration.</span></span>  
   
 ```xml  
 <client>  
@@ -91,7 +78,7 @@ public class CalculatorService: ICalculatorLog
 </bindings>  
 ```  
   
- <span data-ttu-id="698ca-111">クライアントは、<xref:System.Transactions.TransactionScope> を作成し、トランザクションのスコープ内でサービス操作を呼び出すことにより、トランザクションを開始できます。</span><span class="sxs-lookup"><span data-stu-id="698ca-111">Clients can begin a transaction by creating a <xref:System.Transactions.TransactionScope> and invoking service operations within the scope of the transaction.</span></span>  
+ <span data-ttu-id="b9a01-111">クライアントは、<xref:System.Transactions.TransactionScope> を作成し、トランザクションのスコープ内でサービス操作を呼び出すことにより、トランザクションを開始できます。</span><span class="sxs-lookup"><span data-stu-id="b9a01-111">Clients can begin a transaction by creating a <xref:System.Transactions.TransactionScope> and invoking service operations within the scope of the transaction.</span></span>  
   
 ```  
 using (TransactionScope ts = new TransactionScope(TransactionScopeOption.RequiresNew))  
@@ -101,7 +88,7 @@ using (TransactionScope ts = new TransactionScope(TransactionScopeOption.Require
 }  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="698ca-112">関連項目</span><span class="sxs-lookup"><span data-stu-id="698ca-112">See Also</span></span>  
- [<span data-ttu-id="698ca-113">System.ServiceModel でのトランザクション サポート</span><span class="sxs-lookup"><span data-stu-id="698ca-113">Transactional Support in System.ServiceModel</span></span>](../../../docs/framework/wcf/feature-details/transactional-support-in-system-servicemodel.md)  
- [<span data-ttu-id="698ca-114">トランザクション モデル</span><span class="sxs-lookup"><span data-stu-id="698ca-114">Transaction Models</span></span>](../../../docs/framework/wcf/feature-details/transaction-models.md)  
- [<span data-ttu-id="698ca-115">WS トランザクション フロー</span><span class="sxs-lookup"><span data-stu-id="698ca-115">WS Transaction Flow</span></span>](../../../docs/framework/wcf/samples/ws-transaction-flow.md)
+## <a name="see-also"></a><span data-ttu-id="b9a01-112">関連項目</span><span class="sxs-lookup"><span data-stu-id="b9a01-112">See Also</span></span>  
+ [<span data-ttu-id="b9a01-113">System.ServiceModel でのトランザクション サポート</span><span class="sxs-lookup"><span data-stu-id="b9a01-113">Transactional Support in System.ServiceModel</span></span>](../../../docs/framework/wcf/feature-details/transactional-support-in-system-servicemodel.md)  
+ [<span data-ttu-id="b9a01-114">トランザクション モデル</span><span class="sxs-lookup"><span data-stu-id="b9a01-114">Transaction Models</span></span>](../../../docs/framework/wcf/feature-details/transaction-models.md)  
+ [<span data-ttu-id="b9a01-115">WS トランザクション フロー</span><span class="sxs-lookup"><span data-stu-id="b9a01-115">WS Transaction Flow</span></span>](../../../docs/framework/wcf/samples/ws-transaction-flow.md)

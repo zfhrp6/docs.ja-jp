@@ -19,6 +19,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32745618"
 ---
 # <a name="resolving-assembly-loads"></a><span data-ttu-id="5102a-102">解決 (アセンブリ読み込みを)</span><span class="sxs-lookup"><span data-stu-id="5102a-102">Resolving Assembly Loads</span></span>
 <span data-ttu-id="5102a-103">.NET Framework では、アセンブリの読み込みをより細かく制御する必要があるアプリケーションのために、<xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> イベントが用意されています。</span><span class="sxs-lookup"><span data-stu-id="5102a-103">The .NET Framework provides the <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> event for applications that require greater control over assembly loading.</span></span> <span data-ttu-id="5102a-104">アプリケーションでこのイベントを処理することにより、通常のプローブ パスの外部から読み込みコンテキストにアセンブリを読み込んだり、アセンブリの複数のバージョンから読み込むものを選んだり、動的アセンブリを生成してそれを返したりすることができます。</span><span class="sxs-lookup"><span data-stu-id="5102a-104">By handling this event, your application can load an assembly into the load context from outside the normal probing paths, select which of several assembly versions to load, emit a dynamic assembly and return it, and so on.</span></span> <span data-ttu-id="5102a-105">ここでは、<xref:System.AppDomain.AssemblyResolve> イベントの処理について説明します。</span><span class="sxs-lookup"><span data-stu-id="5102a-105">This topic provides guidance for handling the <xref:System.AppDomain.AssemblyResolve> event.</span></span>  

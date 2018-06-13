@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33499464"
 ---
 # <a name="securing-messages-using-transport-security"></a><span data-ttu-id="75f7d-102">トランスポート セキュリティを使用したメッセージのセキュリティ保護</span><span class="sxs-lookup"><span data-stu-id="75f7d-102">Securing Messages Using Transport Security</span></span>
 <span data-ttu-id="75f7d-103">ここでは、キューに送信されるメッセージをセキュリティで保護するために使用できるメッセージ キュー (MSMQ) トランスポート セキュリティについて説明します。</span><span class="sxs-lookup"><span data-stu-id="75f7d-103">This section discusses Message Queuing (MSMQ) transport security that you can use to secure messages sent to a queue.</span></span>  

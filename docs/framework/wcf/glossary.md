@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33507659"
 ---
 # <a name="windows-communication-foundation-glossary-for-net-framework-45"></a><span data-ttu-id="5f750-102">.NET Framework 4.5 の Windows Communication Foundation 用語集</span><span class="sxs-lookup"><span data-stu-id="5f750-102">Windows Communication Foundation Glossary for .NET Framework 4.5</span></span>
 <span data-ttu-id="5f750-103">次の表に、Windows Communication Foundation のドキュメントで使用する用語の定義を示します。</span><span class="sxs-lookup"><span data-stu-id="5f750-103">The following terms are defined for Windows Communication Foundation documentation.</span></span>  

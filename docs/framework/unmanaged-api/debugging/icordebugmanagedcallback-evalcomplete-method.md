@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 688c5a4b5a18cea444ebf1d63f3ea012a5d815c1
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33415211"
 ---
 # <a name="icordebugmanagedcallbackevalcomplete-method"></a><span data-ttu-id="e6e17-102">ICorDebugManagedCallback::EvalComplete メソッド</span><span class="sxs-lookup"><span data-stu-id="e6e17-102">ICorDebugManagedCallback::EvalComplete Method</span></span>
 <span data-ttu-id="e6e17-103">評価が完了したことをデバッガーに通知します。</span><span class="sxs-lookup"><span data-stu-id="e6e17-103">Notifies the debugger that an evaluation has been completed.</span></span>  

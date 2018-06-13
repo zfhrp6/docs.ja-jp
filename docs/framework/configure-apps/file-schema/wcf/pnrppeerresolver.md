@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32747981"
 ---
 # <a name="ltpnrppeerresolvergt"></a><span data-ttu-id="3034a-102">&lt;pnrpPeerResolver&gt;</span><span class="sxs-lookup"><span data-stu-id="3034a-102">&lt;pnrpPeerResolver&gt;</span></span>
 <span data-ttu-id="3034a-103">リゾルバーとして PNRP (Peer Name Resolution Protocol) リゾルバーを使用することを指定します。</span><span class="sxs-lookup"><span data-stu-id="3034a-103">Specifies that the PNRP (Peer Name Resolution Protocol) resolver is to be used as a resolver.</span></span> <span data-ttu-id="3034a-104">PNRP は既定のリゾルバーであるため、この要素は省略可能です。</span><span class="sxs-lookup"><span data-stu-id="3034a-104">This element is optional because PNRP is the default resolver.</span></span>  

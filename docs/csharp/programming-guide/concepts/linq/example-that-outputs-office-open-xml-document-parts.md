@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33325371"
 ---
 # <a name="example-that-outputs-office-open-xml-document-parts-c"></a><span data-ttu-id="644d1-102">Office Open XML ドキュメント パーツを出力する例 (C#)</span><span class="sxs-lookup"><span data-stu-id="644d1-102">Example that Outputs Office Open XML Document Parts (C#)</span></span>
 <span data-ttu-id="644d1-103">このトピックでは、Office Open XML ドキュメントを開き、ドキュメント内のパーツにアクセスする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="644d1-103">This topic shows how to open an Office Open XML document and access parts within it.</span></span>  

@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33339580"
 ---
 # <a name="type-relationships-in-linq-query-operations-c"></a><span data-ttu-id="1ec25-102">LINQ クエリ操作での型の関係 (C#)</span><span class="sxs-lookup"><span data-stu-id="1ec25-102">Type Relationships in LINQ Query Operations (C#)</span></span>
 <span data-ttu-id="1ec25-103">クエリを効果的に記述するには、クエリ操作全体における変数の型の相互関係を理解する必要があります。</span><span class="sxs-lookup"><span data-stu-id="1ec25-103">To write queries effectively, you should understand how types of the variables in a complete query operation all relate to each other.</span></span> <span data-ttu-id="1ec25-104">これらの関係を理解しておくと、このドキュメント内の [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] のサンプルやコード例を理解しやすくなります。</span><span class="sxs-lookup"><span data-stu-id="1ec25-104">If you understand these relationships you will more easily comprehend the [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] samples and code examples in the documentation.</span></span> <span data-ttu-id="1ec25-105">また、`var` を使用して変数を暗黙的に型指定した場合に、背後でどのような処理が行われるかを理解することもできます。</span><span class="sxs-lookup"><span data-stu-id="1ec25-105">Furthermore, you will understand what occurs behind the scenes when variables are implicitly typed by using `var`.</span></span>  

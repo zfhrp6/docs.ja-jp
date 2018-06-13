@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33340308"
 ---
 # <a name="how-to-implement-and-call-a-custom-extension-method-c-programming-guide"></a><span data-ttu-id="24b98-102">方法 : カスタム拡張メソッドを実装して呼び出す (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="24b98-102">How to: Implement and Call a Custom Extension Method (C# Programming Guide)</span></span>
 <span data-ttu-id="24b98-103">このトピックでは、あらゆる .NET 型を対象に独自の拡張メソッドを実装する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="24b98-103">This topic shows how to implement your own extension methods for any .NET type.</span></span> <span data-ttu-id="24b98-104">クライアント コードで拡張メソッドを使用するには、拡張メソッドが格納されている DLL への参照を追加し、拡張メソッドが定義されている名前空間を指定する [using](../../../csharp/language-reference/keywords/using-directive.md) ディレクティブを追加します。</span><span class="sxs-lookup"><span data-stu-id="24b98-104">Client code can use your extension methods by adding a reference to the DLL that contains them, and adding a [using](../../../csharp/language-reference/keywords/using-directive.md) directive that specifies the namespace in which the extension methods are defined.</span></span>  
