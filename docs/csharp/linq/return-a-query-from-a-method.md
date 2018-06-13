@@ -8,6 +8,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33274951"
 ---
 # <a name="how-to-return-a-query-from-a-method-c-programming-guide"></a><span data-ttu-id="b30df-103">方法 : メソッドからクエリを返す (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="b30df-103">How to: Return a Query from a Method (C# Programming Guide)</span></span>
 <span data-ttu-id="b30df-104">この例では、メソッドから、クエリを戻り値として返す方法と `out` パラメーターとして返す方法を示します。</span><span class="sxs-lookup"><span data-stu-id="b30df-104">This example shows how to return a query from a method as the return value and as an `out` parameter.</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33340477"
 ---
 # <a name="how-to-use-a-thread-pool-c"></a><span data-ttu-id="86577-102">方法: スレッド プールを使用する (C#)</span><span class="sxs-lookup"><span data-stu-id="86577-102">How to: Use a Thread Pool (C#)</span></span>
 <span data-ttu-id="86577-103">"*スレッド プール*" はマルチスレッドの 1 つの形式であり、タスクはキューに追加されて、スレッドが作成されると自動的に開始されます。</span><span class="sxs-lookup"><span data-stu-id="86577-103">*Thread pooling* is a form of multithreading in which tasks are added to a queue and automatically started when threads are created.</span></span> <span data-ttu-id="86577-104">詳しくは、「[スレッド プール (C#)](../../../../csharp/programming-guide/concepts/threading/thread-pooling.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="86577-104">For more information, see [Thread Pooling (C#)](../../../../csharp/programming-guide/concepts/threading/thread-pooling.md).</span></span>  

@@ -8,6 +8,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33269701"
 ---
 # <a name="order-the-results-of-a-join-clause"></a><span data-ttu-id="b10c7-103">join 句の結果の順序指定</span><span class="sxs-lookup"><span data-stu-id="b10c7-103">Order the results of a join clause</span></span>
 <span data-ttu-id="b10c7-104">この例では、結合操作の結果の順序を指定する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="b10c7-104">This example shows how to order the results of a join operation.</span></span> <span data-ttu-id="b10c7-105">順序付けは結合後に実行されることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="b10c7-105">Note that the ordering is performed after the join.</span></span> <span data-ttu-id="b10c7-106">結合の前に 1 つ以上のソース シーケンスを指定した `orderby` 句を使用することもできますが、一般にこの方法は推奨されません。</span><span class="sxs-lookup"><span data-stu-id="b10c7-106">Although you can use an `orderby` clause with one or more of the source sequences before the join, generally we do not recommend it.</span></span> <span data-ttu-id="b10c7-107">LINQ プロバイダーによっては、結合後にその順序付けを維持しない場合があります。</span><span class="sxs-lookup"><span data-stu-id="b10c7-107">Some LINQ providers might not preserve that ordering after the join.</span></span>  

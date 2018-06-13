@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33557694"
 ---
 # <a name="data-binding-how-to-topics"></a><span data-ttu-id="53fd8-102">データ バインドに関する「方法」トピック</span><span class="sxs-lookup"><span data-stu-id="53fd8-102">Data Binding How-to Topics</span></span>
 <span data-ttu-id="53fd8-103">このセクションのトピックでは、データ バインディングを使用して要素をさまざまな共通言語ランタイム (CLR) オブジェクトと XML の形式でデータ ソースからデータにバインドする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="53fd8-103">The topics in this section describe how to use data binding to bind elements to data from a variety of data sources in the form of common language runtime (CLR) objects and XML.</span></span>  

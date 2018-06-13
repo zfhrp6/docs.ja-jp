@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33526628"
 ---
 # <a name="default-functionality-in-the-windows-forms-datagridview-control"></a><span data-ttu-id="ff648-102">Windows フォーム DataGridView コントロールの既定の機能</span><span class="sxs-lookup"><span data-stu-id="ff648-102">Default Functionality in the Windows Forms DataGridView Control</span></span>
 <span data-ttu-id="ff648-103">Windows フォーム<xref:System.Windows.Forms.DataGridView>コントロールは多くの既定の機能をユーザーに提供します。</span><span class="sxs-lookup"><span data-stu-id="ff648-103">The Windows Forms <xref:System.Windows.Forms.DataGridView> control provides users with a significant amount of default functionality.</span></span>  

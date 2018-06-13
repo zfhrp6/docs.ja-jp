@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33528620"
 ---
 # <a name="helpprovider-component-overview-windows-forms"></a><span data-ttu-id="78764-102">HelpProvider コンポーネントの概要 (Windows フォーム)</span><span class="sxs-lookup"><span data-stu-id="78764-102">HelpProvider Component Overview (Windows Forms)</span></span>
 <span data-ttu-id="78764-103">Windows フォーム[HelpProvider](../../../../docs/framework/winforms/controls/helpprovider-component-windows-forms.md)に HTML ヘルプ 1.x のヘルプ ファイル (HTML Help Workshop で生成された .chm ファイル、または .htm ファイル) を Windows アプリケーションに関連付けるコンポーネントを使用します。</span><span class="sxs-lookup"><span data-stu-id="78764-103">The Windows Forms [HelpProvider](../../../../docs/framework/winforms/controls/helpprovider-component-windows-forms.md) component is used to associate an HTML Help 1.x Help file (either a .chm file, produced with the HTML Help Workshop, or an .htm file) with your Windows application.</span></span> <span data-ttu-id="78764-104">さまざまな方法でヘルプを提供することができます。</span><span class="sxs-lookup"><span data-stu-id="78764-104">You can provide help in a variety of ways:</span></span>  

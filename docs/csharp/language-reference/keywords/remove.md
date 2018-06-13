@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33269120"
 ---
 # <a name="remove-c-reference"></a><span data-ttu-id="91875-102">remove (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="91875-102">remove (C# Reference)</span></span>
 <span data-ttu-id="91875-103">`remove` コンテキスト キーワードは、カスタム イベント アクセサーを定義するときに使用されます。このアクセサーは、クライアント コードが[イベント](../../../csharp/language-reference/keywords/event.md)から登録を解除するときに呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="91875-103">The `remove` contextual keyword is used to define a custom event accessor that is invoked when client code unsubscribes from your [event](../../../csharp/language-reference/keywords/event.md).</span></span> <span data-ttu-id="91875-104">カスタムの `remove` アクセサーを指定するときは、[add](../../../csharp/language-reference/keywords/add.md) アクセサーも指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="91875-104">If you supply a custom `remove` accessor, you must also supply an [add](../../../csharp/language-reference/keywords/add.md) accessor.</span></span>  

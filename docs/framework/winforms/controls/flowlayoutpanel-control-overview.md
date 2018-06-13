@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33526726"
 ---
 # <a name="flowlayoutpanel-control-overview"></a><span data-ttu-id="c61b8-102">FlowLayoutPanel コントロールの概要</span><span class="sxs-lookup"><span data-stu-id="c61b8-102">FlowLayoutPanel Control Overview</span></span>
 <span data-ttu-id="c61b8-103"><xref:System.Windows.Forms.FlowLayoutPanel> コントロールは、水平または垂直のフローの方向に内容を整列させます。</span><span class="sxs-lookup"><span data-stu-id="c61b8-103">The <xref:System.Windows.Forms.FlowLayoutPanel> control arranges its contents in a horizontal or vertical flow direction.</span></span> <span data-ttu-id="c61b8-104">コントロールの内容をある行から次の行、またはある列から次の列にラップすることができます。</span><span class="sxs-lookup"><span data-stu-id="c61b8-104">You can wrap the control's contents from one row to the next, or from one column to the next.</span></span> <span data-ttu-id="c61b8-105">また、内容をラップする代わりにクリップすることができます。</span><span class="sxs-lookup"><span data-stu-id="c61b8-105">Alternately, you can clip instead of wrap its contents.</span></span>  

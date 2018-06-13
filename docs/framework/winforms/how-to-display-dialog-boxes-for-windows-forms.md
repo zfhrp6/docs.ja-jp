@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33537425"
 ---
 # <a name="how-to-display-dialog-boxes-for-windows-forms"></a><span data-ttu-id="4e607-102">方法 : Windows フォームのダイアログ ボックスを表示する</span><span class="sxs-lookup"><span data-stu-id="4e607-102">How to: Display Dialog Boxes for Windows Forms</span></span>
 <span data-ttu-id="4e607-103">アプリケーションでその他の形式を表示する同じ方法では、ダイアログ ボックスを表示します。</span><span class="sxs-lookup"><span data-stu-id="4e607-103">You display a dialog box in the same way you display any other form in an application.</span></span> <span data-ttu-id="4e607-104">スタートアップ フォームは、アプリケーションの実行時に自動的に読み込みます。</span><span class="sxs-lookup"><span data-stu-id="4e607-104">The startup form loads automatically when the application is run.</span></span> <span data-ttu-id="4e607-105">2 番目のフォームまたはダイアログ ボックスをアプリケーションで表示するには、するには、読み込み、表示するコードを記述します。</span><span class="sxs-lookup"><span data-stu-id="4e607-105">To make a second form or dialog box appear in the application, write code to load and display it.</span></span> <span data-ttu-id="4e607-106">同様に、フォームまたはダイアログ ボックスを非アンロードしたり非表示にコードを記述します。</span><span class="sxs-lookup"><span data-stu-id="4e607-106">Similarly, to make the form or dialog box disappear, write code to unload or hide it.</span></span>  

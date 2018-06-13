@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33556654"
 ---
 # <a name="how-to-filter-data-in-a-view"></a><span data-ttu-id="1fe6d-102">方法 : ビュー内のデータをフィルター処理する</span><span class="sxs-lookup"><span data-stu-id="1fe6d-102">How to: Filter Data in a View</span></span>
 <span data-ttu-id="1fe6d-103">この例では、ビュー内のデータをフィルター処理する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="1fe6d-103">This example shows how to filter data in a view.</span></span>  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33339658"
 ---
 # <a name="expressions-c-programming-guide"></a><span data-ttu-id="88b7f-102">式 (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="88b7f-102">Expressions (C# Programming Guide)</span></span>
 <span data-ttu-id="88b7f-103">*式*とは、1 つの値、オブジェクト、メソッド、または名前空間に評価できる、1 つ以上のオペランドと 0 個以上の演算子のシーケンスです。</span><span class="sxs-lookup"><span data-stu-id="88b7f-103">An *expression* is a sequence of one or more operands and zero or more operators that can be evaluated to a single value, object, method, or namespace.</span></span> <span data-ttu-id="88b7f-104">式には、リテラル値、メソッドの呼び出し、演算子とそのオペランド、または*簡易名*を含めることができます。</span><span class="sxs-lookup"><span data-stu-id="88b7f-104">Expressions can consist of a literal value, a method invocation, an operator and its operands, or a *simple name*.</span></span> <span data-ttu-id="88b7f-105">単純な名前には、変数、型メンバー、メソッド パラメーター、名前空間、または型の名前を指定できます。</span><span class="sxs-lookup"><span data-stu-id="88b7f-105">Simple names can be the name of a variable, type member, method parameter, namespace or type.</span></span>  

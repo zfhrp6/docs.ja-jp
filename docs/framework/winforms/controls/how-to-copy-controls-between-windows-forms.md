@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33530274"
 ---
 # <a name="how-to-copy-controls-between-windows-forms"></a><span data-ttu-id="bcabc-102">方法 : Windows フォーム間でコントロールをコピーする</span><span class="sxs-lookup"><span data-stu-id="bcabc-102">How to: Copy Controls Between Windows Forms</span></span>
 <span data-ttu-id="bcabc-103">コントロールは、同じフォーム、プロジェクト内で別の形式、またはその他のソリューションで使用するため、クリップボードにコピー可能性があります。</span><span class="sxs-lookup"><span data-stu-id="bcabc-103">A control may be copied onto the same form, onto another form within the project, or onto the Clipboard for use in other solutions.</span></span>  

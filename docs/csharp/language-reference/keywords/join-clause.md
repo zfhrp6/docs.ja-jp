@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33289400"
 ---
 # <a name="join-clause-c-reference"></a><span data-ttu-id="6494a-102">join 句 (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="6494a-102">join clause (C# Reference)</span></span>
 <span data-ttu-id="6494a-103">`join` 句は、オブジェクト モデル内での直接リレーションシップがない、さまざまなソース シーケンスの要素を関連付ける際に役立ちます。</span><span class="sxs-lookup"><span data-stu-id="6494a-103">The `join` clause is useful for associating elements from different source sequences that have no direct relationship in the object model.</span></span> <span data-ttu-id="6494a-104">唯一の要件は、等価性を比較できるいくつかの値が各ソース内の要素間で共有されていることです。</span><span class="sxs-lookup"><span data-stu-id="6494a-104">The only requirement is that the elements in each source share some value that can be compared for equality.</span></span> <span data-ttu-id="6494a-105">たとえば、食品販売会社には特定の商品についての供給元のリストと購入者のリストがあります。</span><span class="sxs-lookup"><span data-stu-id="6494a-105">For example, a food distributor might have a list of suppliers of a certain product, and a list of buyers.</span></span> <span data-ttu-id="6494a-106">`join` 句は、たとえば指定された地域のすべての供給元および購入者のリストを作成するために使用できます。</span><span class="sxs-lookup"><span data-stu-id="6494a-106">A `join` clause can be used, for example, to create a list of the suppliers and buyers of that product who are all in the same specified region.</span></span>  

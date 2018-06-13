@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33339840"
 ---
 # <a name="query-expression-syntax-for-standard-query-operators-c"></a><span data-ttu-id="dda7a-102">標準クエリ演算子のクエリ式構文 (C#)</span><span class="sxs-lookup"><span data-stu-id="dda7a-102">Query Expression Syntax for Standard Query Operators (C#)</span></span>
 <span data-ttu-id="dda7a-103">頻繁に使用される標準クエリ演算子の中には、C# 言語専用のキーワード構文が使用されているものがあります。こうした構文では、標準クエリ演算子を、"*クエリ式*" の一部として呼び出すことができます。</span><span class="sxs-lookup"><span data-stu-id="dda7a-103">Some of the more frequently used standard query operators have dedicated C# language keyword syntax that enables them to be called as part of a *query expression*.</span></span> <span data-ttu-id="dda7a-104">クエリ式は*メソッド ベース*の方法とは異なり、より読み取りやすいクエリの表現形式です。</span><span class="sxs-lookup"><span data-stu-id="dda7a-104">A query expression is a different, more readable form of expressing a query than its *method-based*  equivalent.</span></span> <span data-ttu-id="dda7a-105">クエリ式の句は、コンパイル時にクエリ メソッドへの呼び出しに変換されます。</span><span class="sxs-lookup"><span data-stu-id="dda7a-105">Query expression clauses are translated into calls to the query methods at compile time.</span></span>  

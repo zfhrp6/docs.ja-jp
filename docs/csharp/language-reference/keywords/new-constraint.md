@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33268997"
 ---
 # <a name="new-constraint-c-reference"></a><span data-ttu-id="18ab8-102">new 制約 (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="18ab8-102">new Constraint (C# Reference)</span></span>
 <span data-ttu-id="18ab8-103">`new` 制約は、ジェネリック クラス宣言内のすべての型引数に、パブリックでパラメーターなしのコンストラクターが必要であることを指定します。</span><span class="sxs-lookup"><span data-stu-id="18ab8-103">The `new` constraint specifies that any type argument in a generic class declaration must have a public parameterless constructor.</span></span> <span data-ttu-id="18ab8-104">new 制約を使用する場合、型を抽象型にすることはできません。</span><span class="sxs-lookup"><span data-stu-id="18ab8-104">To use the new constraint, the type cannot be abstract.</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33352878"
 ---
 # <a name="ltallowaccountsgt"></a><span data-ttu-id="6b0ec-102">&lt;allowAccounts&gt;</span><span class="sxs-lookup"><span data-stu-id="6b0ec-102">&lt;allowAccounts&gt;</span></span>
 <span data-ttu-id="6b0ec-103">ユーザーがプロセスのアカウントをホストする Windows Communication Foundation (WCF) サービスと、共有サービスへの接続アクセスが許可を指定する構成要素のコレクションを含みます。</span><span class="sxs-lookup"><span data-stu-id="6b0ec-103">Contains a collection of configuration elements that specify user accounts for processes that host Windows Communication Foundation (WCF) services, and are granted connection access to the sharing service.</span></span>  

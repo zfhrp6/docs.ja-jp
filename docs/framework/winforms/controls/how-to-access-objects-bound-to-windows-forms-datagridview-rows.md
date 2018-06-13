@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33529676"
 ---
 # <a name="how-to-access-objects-bound-to-windows-forms-datagridview-rows"></a><span data-ttu-id="acf97-102">方法 : Windows フォームの DataGridView 行にバインドされたオブジェクトにアクセスする</span><span class="sxs-lookup"><span data-stu-id="acf97-102">How to: Access Objects Bound to Windows Forms DataGridView Rows</span></span>
 <span data-ttu-id="acf97-103">場合によっては、ビジネス オブジェクトのコレクションに格納されている情報のテーブルを表示すると便利です。</span><span class="sxs-lookup"><span data-stu-id="acf97-103">Sometimes it is useful to display a table of information stored in a collection of business objects.</span></span> <span data-ttu-id="acf97-104"><xref:System.Windows.Forms.DataGridView> コントロールをそのようなコレクションにバインドすると、<xref:System.ComponentModel.BrowsableAttribute> によって参照不可にマークされない限り、各パブリック プロパティが独自の列に表示されます。</span><span class="sxs-lookup"><span data-stu-id="acf97-104">When you bind a <xref:System.Windows.Forms.DataGridView> control to such a collection, each public property is displayed in its own column unless the property has been marked non-browsable with a <xref:System.ComponentModel.BrowsableAttribute>.</span></span> <span data-ttu-id="acf97-105">たとえば、`Customer` オブジェクトのコレクションに**名前**や**アドレス**などの列が含まれるようになります。</span><span class="sxs-lookup"><span data-stu-id="acf97-105">For example, a collection of `Customer` objects would have columns such as **Name** and **Address**.</span></span>  

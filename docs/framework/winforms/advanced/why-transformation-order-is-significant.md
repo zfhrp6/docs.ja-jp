@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33526078"
 ---
 # <a name="why-transformation-order-is-significant"></a><span data-ttu-id="ab365-102">変換順序が重要となる理由</span><span class="sxs-lookup"><span data-stu-id="ab365-102">Why Transformation Order Is Significant</span></span>
 <span data-ttu-id="ab365-103">1 つ<xref:System.Drawing.Drawing2D.Matrix>オブジェクトは、単一の変換または変換のシーケンスを格納できます。</span><span class="sxs-lookup"><span data-stu-id="ab365-103">A single <xref:System.Drawing.Drawing2D.Matrix> object can store a single transformation or a sequence of transformations.</span></span> <span data-ttu-id="ab365-104">後者を複合変換と呼びます。</span><span class="sxs-lookup"><span data-stu-id="ab365-104">The latter is called a composite transformation.</span></span> <span data-ttu-id="ab365-105">複合変換のマトリックスは、個々 の変換行列を乗算することによって取得されます。</span><span class="sxs-lookup"><span data-stu-id="ab365-105">The matrix of a composite transformation is obtained by multiplying the matrices of individual transformations.</span></span>  

@@ -1,55 +1,44 @@
 ---
-title: "方法: Entity Framework プロバイダーでフィードをカスタマイズする (WCF Data Services)"
-ms.custom: 
+title: '方法: Entity Framework プロバイダーでフィードをカスタマイズする (WCF Data Services)'
 ms.date: 03/30/2017
-ms.prod: .net-framework-oob
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - WCF Data Services, customizing
 - WCF Data Services, customizing feeds
 ms.assetid: fd16272e-36f2-415e-850e-8a81f2b17525
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 276aea81716f58ed4a0d6ba8e1f8e2bcdbedb908
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: bd29f6154297c2410294af14952d3d79201966ca
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33359479"
 ---
-# <a name="how-to-customize-feeds-with-the-entity-framework-provider-wcf-data-services"></a><span data-ttu-id="95f88-102">方法: Entity Framework プロバイダーでフィードをカスタマイズする (WCF Data Services)</span><span class="sxs-lookup"><span data-stu-id="95f88-102">How to: Customize Feeds with the Entity Framework Provider (WCF Data Services)</span></span>
-[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]<span data-ttu-id="95f88-103"> では、データ サービス応答の Atom シリアル化をカスタマイズして、AtomPub プロトコルで定義されている未使用の要素にエンティティのプロパティをマップできます。</span><span class="sxs-lookup"><span data-stu-id="95f88-103"> enables you to customize the Atom serialization in a data service response so that properties of an entity may be mapped to unused elements that are defined in the AtomPub protocol.</span></span> <span data-ttu-id="95f88-104">このトピックでは、Entity Framework を使用して、.edmx ファイルで定義されているデータ モデルのエンティティ型のマッピング属性を定義する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="95f88-104">This topic shows how to define mapping attributes for the entity types in a data model that is defined in an .edmx file by using the Entity Framework provider.</span></span> <span data-ttu-id="95f88-105">詳細については、次を参照してください。[フィードのカスタマイズ](../../../../docs/framework/data/wcf/feed-customization-wcf-data-services.md)です。</span><span class="sxs-lookup"><span data-stu-id="95f88-105">For more information, see [Feed Customization](../../../../docs/framework/data/wcf/feed-customization-wcf-data-services.md).</span></span>  
+# <a name="how-to-customize-feeds-with-the-entity-framework-provider-wcf-data-services"></a><span data-ttu-id="ba179-102">方法: Entity Framework プロバイダーでフィードをカスタマイズする (WCF Data Services)</span><span class="sxs-lookup"><span data-stu-id="ba179-102">How to: Customize Feeds with the Entity Framework Provider (WCF Data Services)</span></span>
+[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]<span data-ttu-id="ba179-103"> では、データ サービス応答の Atom シリアル化をカスタマイズして、AtomPub プロトコルで定義されている未使用の要素にエンティティのプロパティをマップできます。</span><span class="sxs-lookup"><span data-stu-id="ba179-103"> enables you to customize the Atom serialization in a data service response so that properties of an entity may be mapped to unused elements that are defined in the AtomPub protocol.</span></span> <span data-ttu-id="ba179-104">このトピックでは、Entity Framework を使用して、.edmx ファイルで定義されているデータ モデルのエンティティ型のマッピング属性を定義する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="ba179-104">This topic shows how to define mapping attributes for the entity types in a data model that is defined in an .edmx file by using the Entity Framework provider.</span></span> <span data-ttu-id="ba179-105">詳細については、次を参照してください。[フィードのカスタマイズ](../../../../docs/framework/data/wcf/feed-customization-wcf-data-services.md)です。</span><span class="sxs-lookup"><span data-stu-id="ba179-105">For more information, see [Feed Customization](../../../../docs/framework/data/wcf/feed-customization-wcf-data-services.md).</span></span>  
   
- <span data-ttu-id="95f88-106">このトピックでは、ツールによって生成された .edmx file ファイルを手動で変更します (このファイルには、データ モデルが含まれます)。</span><span class="sxs-lookup"><span data-stu-id="95f88-106">In this topic you will manually modify the tool-generated .edmx file that contains the data model.</span></span> <span data-ttu-id="95f88-107">エンティティ デザイナーではデータ モデルへの拡張がサポートされていないので、このファイルは手動で変更する必要があります。</span><span class="sxs-lookup"><span data-stu-id="95f88-107">You must manually modify the file because extensions to the data model are not supported by the Entity Designer.</span></span> <span data-ttu-id="95f88-108">Entity Data Model ツールを生成する .edmx ファイルの詳細については、次を参照してください。 [.edmx ファイルの概要](http://msdn.microsoft.com/library/f4c8e7ce-1db6-417e-9759-15f8b55155d4)です。</span><span class="sxs-lookup"><span data-stu-id="95f88-108">For more information about the .edmx file that the Entity Data Model tools generate, see [.edmx File Overview](http://msdn.microsoft.com/library/f4c8e7ce-1db6-417e-9759-15f8b55155d4).</span></span> <span data-ttu-id="95f88-109">このトピックの例では、Northwind サンプル データ サービスおよび自動生成されたクライアント データ サービス クラスを使用します。</span><span class="sxs-lookup"><span data-stu-id="95f88-109">The example in this topic uses the Northwind sample data service and autogenerated client data service classes.</span></span> <span data-ttu-id="95f88-110">完了したときにこのサービスおよびクライアント データ クラスが作成された、 [WCF Data Services クイック スタート](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md)です。</span><span class="sxs-lookup"><span data-stu-id="95f88-110">This service and the client data classes are created when you complete the [WCF Data Services quickstart](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md).</span></span>  
+ <span data-ttu-id="ba179-106">このトピックでは、ツールによって生成された .edmx file ファイルを手動で変更します (このファイルには、データ モデルが含まれます)。</span><span class="sxs-lookup"><span data-stu-id="ba179-106">In this topic you will manually modify the tool-generated .edmx file that contains the data model.</span></span> <span data-ttu-id="ba179-107">エンティティ デザイナーではデータ モデルへの拡張がサポートされていないので、このファイルは手動で変更する必要があります。</span><span class="sxs-lookup"><span data-stu-id="ba179-107">You must manually modify the file because extensions to the data model are not supported by the Entity Designer.</span></span> <span data-ttu-id="ba179-108">Entity Data Model ツールを生成する .edmx ファイルの詳細については、次を参照してください。 [.edmx ファイルの概要](http://msdn.microsoft.com/library/f4c8e7ce-1db6-417e-9759-15f8b55155d4)です。</span><span class="sxs-lookup"><span data-stu-id="ba179-108">For more information about the .edmx file that the Entity Data Model tools generate, see [.edmx File Overview](http://msdn.microsoft.com/library/f4c8e7ce-1db6-417e-9759-15f8b55155d4).</span></span> <span data-ttu-id="ba179-109">このトピックの例では、Northwind サンプル データ サービスおよび自動生成されたクライアント データ サービス クラスを使用します。</span><span class="sxs-lookup"><span data-stu-id="ba179-109">The example in this topic uses the Northwind sample data service and autogenerated client data service classes.</span></span> <span data-ttu-id="ba179-110">完了したときにこのサービスおよびクライアント データ クラスが作成された、 [WCF Data Services クイック スタート](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md)です。</span><span class="sxs-lookup"><span data-stu-id="ba179-110">This service and the client data classes are created when you complete the [WCF Data Services quickstart](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md).</span></span>  
   
-### <a name="to-manually-modify-the-northwindedmx-file-to-add-feed-customization-attributes"></a><span data-ttu-id="95f88-111">Northwind.edmx ファイルを手動で変更してフィードのカスタマイズ属性を追加するには</span><span class="sxs-lookup"><span data-stu-id="95f88-111">To manually modify the Northwind.edmx file to add feed customization attributes</span></span>  
+### <a name="to-manually-modify-the-northwindedmx-file-to-add-feed-customization-attributes"></a><span data-ttu-id="ba179-111">Northwind.edmx ファイルを手動で変更してフィードのカスタマイズ属性を追加するには</span><span class="sxs-lookup"><span data-stu-id="ba179-111">To manually modify the Northwind.edmx file to add feed customization attributes</span></span>  
   
-1.  <span data-ttu-id="95f88-112">**ソリューション エクスプ ローラー**を右クリックし、`Northwind.edmx`ファイルを開き、をクリックして**で開く**です。</span><span class="sxs-lookup"><span data-stu-id="95f88-112">In **Solution Explorer**, right-click the `Northwind.edmx` file, and then click **Open with**.</span></span>  
+1.  <span data-ttu-id="ba179-112">**ソリューション エクスプ ローラー**を右クリックし、`Northwind.edmx`ファイルを開き、をクリックして**で開く**です。</span><span class="sxs-lookup"><span data-stu-id="ba179-112">In **Solution Explorer**, right-click the `Northwind.edmx` file, and then click **Open with**.</span></span>  
   
-2.  <span data-ttu-id="95f88-113">**ファイルを開く - Northwind.edmx**ダイアログ ボックスで、 **XML エディター**、順にクリック**OK**です。</span><span class="sxs-lookup"><span data-stu-id="95f88-113">In the **Open With - Northwind.edmx** dialog box, select **XML Editor**, and then click **OK**.</span></span>  
+2.  <span data-ttu-id="ba179-113">**ファイルを開く - Northwind.edmx**ダイアログ ボックスで、 **XML エディター**、順にクリック**OK**です。</span><span class="sxs-lookup"><span data-stu-id="ba179-113">In the **Open With - Northwind.edmx** dialog box, select **XML Editor**, and then click **OK**.</span></span>  
   
-3.  <span data-ttu-id="95f88-114">`ConceptualModels` 要素を見つけて、フィードのカスタマイズ マッピング属性を含む次の要素で既存の `Customers` エンティティ型を置き換えます。</span><span class="sxs-lookup"><span data-stu-id="95f88-114">Locate the `ConceptualModels` element and replace the existing `Customers` entity type with the following element that contains feed customization mapping attributes:</span></span>  
+3.  <span data-ttu-id="ba179-114">`ConceptualModels` 要素を見つけて、フィードのカスタマイズ マッピング属性を含む次の要素で既存の `Customers` エンティティ型を置き換えます。</span><span class="sxs-lookup"><span data-stu-id="ba179-114">Locate the `ConceptualModels` element and replace the existing `Customers` entity type with the following element that contains feed customization mapping attributes:</span></span>  
   
      [!code-xml[Astoria Custom Feeds#EdmFeedCustomers](../../../../samples/snippets/xml/VS_Snippets_Misc/astoria custom feeds/xml/northwind.csdl#edmfeedcustomers)]  
   
-4.  <span data-ttu-id="95f88-115">変更を保存して Northwind.edmx ファイルを閉じます。</span><span class="sxs-lookup"><span data-stu-id="95f88-115">Save changes and close the Northwind.edmx file.</span></span>  
+4.  <span data-ttu-id="ba179-115">変更を保存して Northwind.edmx ファイルを閉じます。</span><span class="sxs-lookup"><span data-stu-id="ba179-115">Save changes and close the Northwind.edmx file.</span></span>  
   
-5.  <span data-ttu-id="95f88-116">(省略可能)Northwind.edmx ファイルを右クリックし、をクリックして**カスタム ツールの実行**です。</span><span class="sxs-lookup"><span data-stu-id="95f88-116">(Optional) Right-click the Northwind.edmx file and then click **Run Custom Tool**.</span></span>  
+5.  <span data-ttu-id="ba179-116">(省略可能)Northwind.edmx ファイルを右クリックし、をクリックして**カスタム ツールの実行**です。</span><span class="sxs-lookup"><span data-stu-id="ba179-116">(Optional) Right-click the Northwind.edmx file and then click **Run Custom Tool**.</span></span>  
   
-     <span data-ttu-id="95f88-117">オブジェクト レイヤー ファイルが再生成されます。このファイルが必要になる場合があります。</span><span class="sxs-lookup"><span data-stu-id="95f88-117">This regenerates the object layer file, which may be required.</span></span>  
+     <span data-ttu-id="ba179-117">オブジェクト レイヤー ファイルが再生成されます。このファイルが必要になる場合があります。</span><span class="sxs-lookup"><span data-stu-id="ba179-117">This regenerates the object layer file, which may be required.</span></span>  
   
-6.  <span data-ttu-id="95f88-118">プロジェクトを再コンパイルします。</span><span class="sxs-lookup"><span data-stu-id="95f88-118">Recompile the project.</span></span>  
+6.  <span data-ttu-id="ba179-118">プロジェクトを再コンパイルします。</span><span class="sxs-lookup"><span data-stu-id="ba179-118">Recompile the project.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="95f88-119">例</span><span class="sxs-lookup"><span data-stu-id="95f88-119">Example</span></span>  
- <span data-ttu-id="95f88-120">前の例では、URI `http://myservice/``Northwind.svc/Customers('ALFKI')` に次の結果が返されます。</span><span class="sxs-lookup"><span data-stu-id="95f88-120">The previous example returns the following result for the URI `http://myservice/``Northwind.svc/Customers('ALFKI')`.</span></span>  
+## <a name="example"></a><span data-ttu-id="ba179-119">例</span><span class="sxs-lookup"><span data-stu-id="ba179-119">Example</span></span>  
+ <span data-ttu-id="ba179-120">前の例では、URI `http://myservice/``Northwind.svc/Customers('ALFKI')` に次の結果が返されます。</span><span class="sxs-lookup"><span data-stu-id="ba179-120">The previous example returns the following result for the URI `http://myservice/``Northwind.svc/Customers('ALFKI')`.</span></span>  
   
  [!code-xml[Astoria Custom Feeds#EdmFeedResult](../../../../samples/snippets/xml/VS_Snippets_Misc/astoria custom feeds/xml/edmfeedresult.xml#edmfeedresult)]  
   
-## <a name="see-also"></a><span data-ttu-id="95f88-121">参照</span><span class="sxs-lookup"><span data-stu-id="95f88-121">See Also</span></span>  
- [<span data-ttu-id="95f88-122">Entity Framework プロバイダー</span><span class="sxs-lookup"><span data-stu-id="95f88-122">Entity Framework Provider</span></span>](../../../../docs/framework/data/wcf/entity-framework-provider-wcf-data-services.md)
+## <a name="see-also"></a><span data-ttu-id="ba179-121">関連項目</span><span class="sxs-lookup"><span data-stu-id="ba179-121">See Also</span></span>  
+ [<span data-ttu-id="ba179-122">Entity Framework プロバイダー</span><span class="sxs-lookup"><span data-stu-id="ba179-122">Entity Framework Provider</span></span>](../../../../docs/framework/data/wcf/entity-framework-provider-wcf-data-services.md)

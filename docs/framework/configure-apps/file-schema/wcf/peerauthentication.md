@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33352455"
 ---
 # <a name="ltpeerauthenticationgt"></a><span data-ttu-id="7c01d-102">&lt;peerAuthentication&gt;</span><span class="sxs-lookup"><span data-stu-id="7c01d-102">&lt;peerAuthentication&gt;</span></span>
 <span data-ttu-id="7c01d-103">ピア ノードで使用されるピア証明書の認証設定を指定します。</span><span class="sxs-lookup"><span data-stu-id="7c01d-103">Specifies authentication settings for a peer certificate used by a peer node.</span></span>  

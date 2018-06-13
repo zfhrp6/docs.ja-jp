@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33526489"
 ---
 # <a name="how-to-create-graphics-objects-for-drawing"></a><span data-ttu-id="826e0-102">方法 : 描画する Graphics オブジェクトを作成する</span><span class="sxs-lookup"><span data-stu-id="826e0-102">How to: Create Graphics Objects for Drawing</span></span>
 <span data-ttu-id="826e0-103">線と形状を描画することができます、前に、テキストのレンダリングまたは表示し、操作を使用してイメージ[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]、作成する必要があります、<xref:System.Drawing.Graphics>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="826e0-103">Before you can draw lines and shapes, render text, or display and manipulate images with [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)], you need to create a <xref:System.Drawing.Graphics> object.</span></span> <span data-ttu-id="826e0-104"><xref:System.Drawing.Graphics>オブジェクトが表す、[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]画面を描画し、グラフィカル イメージを作成するために使用するオブジェクトです。</span><span class="sxs-lookup"><span data-stu-id="826e0-104">The <xref:System.Drawing.Graphics> object represents a [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] drawing surface, and is the object that is used to create graphical images.</span></span>  

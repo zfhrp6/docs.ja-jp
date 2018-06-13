@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33554808"
 ---
 # <a name="clocks-how-to-topics"></a><span data-ttu-id="2a7b8-102">クロックに関する「方法」トピック</span><span class="sxs-lookup"><span data-stu-id="2a7b8-102">Clocks How-to Topics</span></span>
 <span data-ttu-id="2a7b8-103">次のトピックを使用する方法について説明、<xref:System.Windows.Media.Animation.Clock>のタイミング状態情報を維持するためにオブジェクト、<xref:System.Windows.Media.Animation.Timeline>です。</span><span class="sxs-lookup"><span data-stu-id="2a7b8-103">The following topics describe how to use a <xref:System.Windows.Media.Animation.Clock> object to maintain timing state information for a <xref:System.Windows.Media.Animation.Timeline>.</span></span>  

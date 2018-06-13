@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33340412"
 ---
 # <a name="walkthrough-writing-queries-in-c-linq"></a><span data-ttu-id="12f99-102">チュートリアル: C# でのクエリの作成 (LINQ)</span><span class="sxs-lookup"><span data-stu-id="12f99-102">Walkthrough: Writing Queries in C# (LINQ)</span></span>
 <span data-ttu-id="12f99-103">このチュートリアルでは、LINQ クエリ式の記述に使用される C# 言語機能について説明します。</span><span class="sxs-lookup"><span data-stu-id="12f99-103">This walkthrough demonstrates the C# language features that are used to write LINQ query expressions.</span></span>  

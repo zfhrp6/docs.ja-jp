@@ -8,6 +8,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33279634"
 ---
 # <a name="store-the-results-of-a-query-in-memory"></a><span data-ttu-id="016ef-103">クエリ結果をメモリに格納する</span><span class="sxs-lookup"><span data-stu-id="016ef-103">Store the results of a query in memory</span></span>
 

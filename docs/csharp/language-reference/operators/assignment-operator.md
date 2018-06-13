@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33269281"
 ---
 # <a name="-operator-c-reference"></a><span data-ttu-id="35ae0-102">= 演算子 (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="35ae0-102">= Operator (C# Reference)</span></span>
 <span data-ttu-id="35ae0-103">代入演算子 (`=`) では、右辺のオペランドの値が、左辺のオペランドで示された格納場所、プロパティ、またはインデクサーに格納され、その値が結果として返されます。</span><span class="sxs-lookup"><span data-stu-id="35ae0-103">The assignment operator (`=`) stores the value of its right-hand operand in the storage location, property, or indexer denoted by its left-hand operand and returns the value as its result.</span></span> <span data-ttu-id="35ae0-104">両側のオペランドは、同じ型である必要があります (または、右辺のオペランドが、左辺のオペランドの型に暗黙に変換できる必要があります)。</span><span class="sxs-lookup"><span data-stu-id="35ae0-104">The operands must be of the same type (or the right-hand operand must be implicitly convertible to the type of the left-hand operand).</span></span>  

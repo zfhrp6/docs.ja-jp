@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33532608"
 ---
 # <a name="how-to-display-web-style-links-with-the-windows-forms-richtextbox-control"></a><span data-ttu-id="e3768-102">方法 : Windows フォームの RichTextBox コントロールを使用して Web スタイルのリンクを表示する</span><span class="sxs-lookup"><span data-stu-id="e3768-102">How to: Display Web-Style Links with the Windows Forms RichTextBox Control</span></span>
 <span data-ttu-id="e3768-103">Windows フォーム<xref:System.Windows.Forms.RichTextBox>コントロールは、カラーや下線が引かれたとしての Web リンクを表示できます。</span><span class="sxs-lookup"><span data-stu-id="e3768-103">The Windows Forms <xref:System.Windows.Forms.RichTextBox> control can display Web links as colored and underlined.</span></span> <span data-ttu-id="e3768-104">ウィンドウを開いてブラウザー表示のリンクがクリックされたときに、このリンク テキストで指定された Web サイト コードを記述することができます。</span><span class="sxs-lookup"><span data-stu-id="e3768-104">You can write code that opens a browser window showing the Web site specified in the link text when the link is clicked.</span></span>  
