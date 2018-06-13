@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: f375afde247c3a9b95e1220df747d3f2b95e2840
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33436430"
 ---
 # <a name="iclrcontrolgetclrmanager-method"></a><span data-ttu-id="5596b-102">ICLRControl::GetCLRManager メソッド</span><span class="sxs-lookup"><span data-stu-id="5596b-102">ICLRControl::GetCLRManager Method</span></span>
 <span data-ttu-id="5596b-103">ホストが共通言語ランタイム (CLR) の構成に使用できる、マネージャーの種類のいずれかのインスタンスへのインターフェイス ポインターを取得します。</span><span class="sxs-lookup"><span data-stu-id="5596b-103">Gets an interface pointer to an instance of any of the manager types the host can use to configure the common language runtime (CLR).</span></span>  

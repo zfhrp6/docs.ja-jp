@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33389994"
 ---
 # <a name="how-to-generate-primary-interop-assemblies-using-tlbimpexe"></a><span data-ttu-id="627e4-102">方法: Tlbimp.exe を使用してプライマリ相互運用機能アセンブリを生成する</span><span class="sxs-lookup"><span data-stu-id="627e4-102">How to: Generate Primary Interop Assemblies Using Tlbimp.exe</span></span>
 <span data-ttu-id="627e4-103">プライマリ相互運用機能アセンブリを生成するには、次の 2 つの方法があります。</span><span class="sxs-lookup"><span data-stu-id="627e4-103">There are two ways to generate a primary interop assembly:</span></span>  

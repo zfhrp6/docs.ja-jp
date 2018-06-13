@@ -20,9 +20,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: e35654b03f68a306329ef488289cfecd6f012484
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33431575"
 ---
 # <a name="createinstallreferenceenum-function"></a><span data-ttu-id="f983b-102">CreateInstallReferenceEnum 関数</span><span class="sxs-lookup"><span data-stu-id="f983b-102">CreateInstallReferenceEnum Function</span></span>
 <span data-ttu-id="f983b-103">ポインターを取得、 [IInstallReferenceEnum](../../../../docs/framework/unmanaged-api/fusion/iinstallreferenceenum-interface.md)を指定したアセンブリへのアプリケーションの参照の一覧を表すインスタンス。</span><span class="sxs-lookup"><span data-stu-id="f983b-103">Gets a pointer to an [IInstallReferenceEnum](../../../../docs/framework/unmanaged-api/fusion/iinstallreferenceenum-interface.md) instance that represents a list of an application's references to the specified assembly.</span></span>  

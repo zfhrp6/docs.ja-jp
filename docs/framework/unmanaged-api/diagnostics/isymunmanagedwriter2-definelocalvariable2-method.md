@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 53f02499bbc64f1502951ff9fbf16a848e77f0ca
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33430809"
 ---
 # <a name="isymunmanagedwriter2definelocalvariable2-method"></a><span data-ttu-id="43b15-102">ISymUnmanagedWriter2::DefineLocalVariable2 メソッド</span><span class="sxs-lookup"><span data-stu-id="43b15-102">ISymUnmanagedWriter2::DefineLocalVariable2 Method</span></span>
 <span data-ttu-id="43b15-103">現在の構文のスコープの変数を 1 つ定義します。</span><span class="sxs-lookup"><span data-stu-id="43b15-103">Defines a single variable in the current lexical scope.</span></span> <span data-ttu-id="43b15-104">このメソッドをスコープ全体で複数のホームを持つものと同じ名前の変数に対して複数回呼び出すことができます。</span><span class="sxs-lookup"><span data-stu-id="43b15-104">This method can be called multiple times for a variable of the same name that has multiple homes throughout a scope.</span></span> <span data-ttu-id="43b15-105">ここでは、ただしの値、`startOffset`と`endOffset`パラメーターと重なってはなりません。</span><span class="sxs-lookup"><span data-stu-id="43b15-105">In this case, however, the values of the `startOffset` and `endOffset` parameters must not overlap.</span></span>  

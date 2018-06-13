@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: fce759877ad5e3c9041344647781da07ad19a45a
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33430895"
 ---
 # <a name="hosttype-enumeration"></a><span data-ttu-id="a6252-102">HOST_TYPE 列挙型</span><span class="sxs-lookup"><span data-stu-id="a6252-102">HOST_TYPE Enumeration</span></span>
 <span data-ttu-id="a6252-103">アプリケーションを起動するホストの種類を指定する値が含まれています。</span><span class="sxs-lookup"><span data-stu-id="a6252-103">Contains values that specify the type of host that is launching an application.</span></span>  
