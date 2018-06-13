@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33516960"
 ---
 # <a name="execute-a-workflow-in-an-imperative-transactionscope"></a><span data-ttu-id="af3be-102">命令型 TransactionScope でのワークフローの実行</span><span class="sxs-lookup"><span data-stu-id="af3be-102">Execute a Workflow in an Imperative TransactionScope</span></span>
 <span data-ttu-id="af3be-103">このサンプルでは、命令型 C# コードから <xref:System.Activities.WorkflowInvoker> で <xref:System.Transactions.Transaction> を使用してワークフローを実行する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="af3be-103">This sample shows how to execute a workflow using <xref:System.Activities.WorkflowInvoker> under a <xref:System.Transactions.Transaction> from imperative C# code.</span></span>  

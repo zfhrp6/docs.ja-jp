@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33521028"
 ---
 # <a name="how-to-arrange-mdi-child-forms"></a><span data-ttu-id="27652-102">方法 : MDI 子フォームを配置する</span><span class="sxs-lookup"><span data-stu-id="27652-102">How to: Arrange MDI Child Forms</span></span>
 <span data-ttu-id="27652-103">多くの場合、アプリケーションには、並べて表示、重ねて表示、整列など、開いている MDI 子フォームのレイアウトを制御するメニュー コマンドがあります。</span><span class="sxs-lookup"><span data-stu-id="27652-103">Often, applications will have menu commands for actions such as Tile, Cascade, and Arrange, which control the layout of the open MDI child forms.</span></span> <span data-ttu-id="27652-104"><xref:System.Windows.Forms.Form.LayoutMdi%2A> メソッドと <xref:System.Windows.Forms.MdiLayout> 列挙値のいずれかを使用して、MDI 親フォーム内の子フォームを再配置することができます。</span><span class="sxs-lookup"><span data-stu-id="27652-104">You can use the <xref:System.Windows.Forms.Form.LayoutMdi%2A> method with one of the <xref:System.Windows.Forms.MdiLayout> enumeration values to rearrange the child forms in an MDI parent form.</span></span>  

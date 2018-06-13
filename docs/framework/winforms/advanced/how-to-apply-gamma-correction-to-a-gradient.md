@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33520735"
 ---
 # <a name="how-to-apply-gamma-correction-to-a-gradient"></a><span data-ttu-id="8e5e3-102">方法 : グラデーションに対してガンマ補正を適用する</span><span class="sxs-lookup"><span data-stu-id="8e5e3-102">How to: Apply Gamma Correction to a Gradient</span></span>
 <span data-ttu-id="8e5e3-103">ブラシの設定を線形グラデーション ブラシのガンマ補正を有効にする<xref:System.Drawing.Drawing2D.LinearGradientBrush.GammaCorrection%2A>プロパティを`true`です。</span><span class="sxs-lookup"><span data-stu-id="8e5e3-103">You can enable gamma correction for a linear gradient brush by setting the brush's <xref:System.Drawing.Drawing2D.LinearGradientBrush.GammaCorrection%2A> property to `true`.</span></span> <span data-ttu-id="8e5e3-104">ガンマ補正を無効に設定できます、<xref:System.Drawing.Drawing2D.LinearGradientBrush.GammaCorrection%2A>プロパティを`false`です。</span><span class="sxs-lookup"><span data-stu-id="8e5e3-104">You can disable gamma correction by setting the <xref:System.Drawing.Drawing2D.LinearGradientBrush.GammaCorrection%2A> property to `false`.</span></span> <span data-ttu-id="8e5e3-105">既定では、ガンマ補正が無効です。</span><span class="sxs-lookup"><span data-stu-id="8e5e3-105">Gamma correction is disabled by default.</span></span>  

@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 8ab9773a5056dbfba422a9a53c7cd877e4c29abe
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33404600"
 ---
 # <a name="icordebugappdomaingetmodulefrommetadatainterface-method"></a><span data-ttu-id="9cad1-102">ICorDebugAppDomain::GetModuleFromMetaDataInterface メソッド</span><span class="sxs-lookup"><span data-stu-id="9cad1-102">ICorDebugAppDomain::GetModuleFromMetaDataInterface Method</span></span>
 <span data-ttu-id="9cad1-103">指定したメタデータ インターフェイスに対応するモジュールを取得します。</span><span class="sxs-lookup"><span data-stu-id="9cad1-103">Gets the module that corresponds to the given metadata interface.</span></span>  

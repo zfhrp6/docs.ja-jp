@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33520397"
 ---
 # <a name="external-ruleset-toolkit"></a><span data-ttu-id="caefb-102">External RuleSet Toolkit</span><span class="sxs-lookup"><span data-stu-id="caefb-102">External Ruleset Toolkit</span></span>
 <span data-ttu-id="caefb-103">通常、ワークフロー アプリケーション内でルールが使用される場合は、そのルールはアセンブリの一部です。</span><span class="sxs-lookup"><span data-stu-id="caefb-103">Normally when rules are used within a workflow application, the rules are part of the assembly.</span></span> <span data-ttu-id="caefb-104">場合によっては、ワークフロー アセンブリのリビルドや配置を行わずに RuleSet を更新できるように、RuleSet をアセンブリとは別に管理することもあります。</span><span class="sxs-lookup"><span data-stu-id="caefb-104">In some scenarios, you may want to maintain the RuleSets separately from the assembly so that they can be updated without rebuilding and deploying the workflow assembly.</span></span> <span data-ttu-id="caefb-105">このサンプルでは、RuleSet をデータベース内で管理および編集し、実行時にそれらの RuleSet にワークフローからアクセスできるようにしています。</span><span class="sxs-lookup"><span data-stu-id="caefb-105">This sample allows you to manage and edit RuleSets in a database and access those RuleSets from a workflow at runtime.</span></span> <span data-ttu-id="caefb-106">その結果、実行中のワークフロー インスタンスに、RuleSet への変更を自動的に組み込むことができます。</span><span class="sxs-lookup"><span data-stu-id="caefb-106">This enables running workflow instances to automatically incorporate RuleSet changes.</span></span>  

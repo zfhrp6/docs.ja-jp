@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 5835da6ee20673c2662f1166d304a45ca3e9daeb
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33405321"
 ---
 # <a name="cordebugjitcompilerflags-enumeration"></a><span data-ttu-id="cadec-102">CorDebugJITCompilerFlags 列挙型</span><span class="sxs-lookup"><span data-stu-id="cadec-102">CorDebugJITCompilerFlags Enumeration</span></span>
 <span data-ttu-id="cadec-103">マネージ Just-In-Time (JIT) コンパイラの動作に影響を与える値が含まれます。</span><span class="sxs-lookup"><span data-stu-id="cadec-103">Contains values that influence the behavior of the managed just-in-time (JIT) compiler.</span></span>  

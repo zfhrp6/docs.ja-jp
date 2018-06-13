@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33563976"
 ---
 # <a name="wpf-samples"></a><span data-ttu-id="101a9-102">WPF のサンプル</span><span class="sxs-lookup"><span data-stu-id="101a9-102">WPF Samples</span></span>
 <span data-ttu-id="101a9-103">示すサンプルの一覧については[!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)]を参照してください[WPF のドキュメントのサンプル](http://go.microsoft.com/fwlink/?LinkID=159044)MSDN コード ギャラリーにします。</span><span class="sxs-lookup"><span data-stu-id="101a9-103">For a list of samples that demonstrate [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)], see [WPF Documentation Samples](http://go.microsoft.com/fwlink/?LinkID=159044) on MSDN Code Gallery.</span></span>

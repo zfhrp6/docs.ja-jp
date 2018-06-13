@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33211785"
 ---
 # <a name="reducing-package-dependencies-with-projectjson"></a><span data-ttu-id="09e88-103">project.json によるパッケージ依存関係の縮小</span><span class="sxs-lookup"><span data-stu-id="09e88-103">Reducing Package Dependencies with project.json</span></span>
 

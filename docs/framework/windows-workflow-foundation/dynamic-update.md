@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33520358"
 ---
 # <a name="dynamic-update"></a><span data-ttu-id="308e3-102">動的な更新</span><span class="sxs-lookup"><span data-stu-id="308e3-102">Dynamic Update</span></span>
 <span data-ttu-id="308e3-103">動的更新は、ワークフロー アプリケーションの開発者が永続化されたワークフロー インスタンスのワークフロー定義を更新するためのメカニズムを提供します。</span><span class="sxs-lookup"><span data-stu-id="308e3-103">Dynamic update provides a mechanism for workflow application developers to update the workflow definition of a persisted workflow instance.</span></span> <span data-ttu-id="308e3-104">これには、バグ修正の実装、新しい要件の実装、または予期しない変更への対応があります。</span><span class="sxs-lookup"><span data-stu-id="308e3-104">This can be to implement a bug fix, new requirements, or to accommodate unexpected changes.</span></span> <span data-ttu-id="308e3-105">このトピックでは、[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] で導入された動的更新機能の概要について説明します。</span><span class="sxs-lookup"><span data-stu-id="308e3-105">This topic provides an overview of the dynamic update functionality introduced in [!INCLUDE[net_v45](../../../includes/net-v45-md.md)].</span></span>  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33525268"
 ---
 # <a name="how-to-add-and-remove-tabs-with-the-windows-forms-tabcontrol-using-the-designer"></a><span data-ttu-id="252f0-102">方法 : デザイナーで Windows フォーム TabControl を使ってタブを追加および削除する</span><span class="sxs-lookup"><span data-stu-id="252f0-102">How to: Add and Remove Tabs with the Windows Forms TabControl Using the Designer</span></span>
 <span data-ttu-id="252f0-103">配置するとき、<xref:System.Windows.Forms.TabControl>コントロール フォームで、既定では 2 つのタブがあります。</span><span class="sxs-lookup"><span data-stu-id="252f0-103">When you place a <xref:System.Windows.Forms.TabControl> control on your form, it contains two tabs by default.</span></span> <span data-ttu-id="252f0-104">追加するか、デザイナーを使用してタブを削除します。</span><span class="sxs-lookup"><span data-stu-id="252f0-104">You can add or remove tabs using the designer.</span></span>  

@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 857462c380ce51994e13dab5cfe3c28bba0f38be
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33443340"
 ---
 # <a name="iceegengetsectioncreate-method"></a><span data-ttu-id="39166-102">ICeeGen::GetSectionCreate メソッド</span><span class="sxs-lookup"><span data-stu-id="39166-102">ICeeGen::GetSectionCreate Method</span></span>
 <span data-ttu-id="39166-103">生成し、指定した名前とフラグの値を使用してコード セクションを取得します。</span><span class="sxs-lookup"><span data-stu-id="39166-103">Generates and gets a code section using the specified name and flag values.</span></span>  

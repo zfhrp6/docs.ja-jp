@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33519874"
 ---
 # <a name="extract-wf-data-using-tracking"></a><span data-ttu-id="885e4-102">追跡を使用した WF データの抽出</span><span class="sxs-lookup"><span data-stu-id="885e4-102">Extract WF Data using Tracking</span></span>
 <span data-ttu-id="885e4-103">このサンプルでは、ワークフロー追跡を使用して、アクティビティからワークフロー変数と引数を抽出する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="885e4-103">This sample demonstrates how to use workflow tracking to extract workflow variables and arguments from activities.</span></span> <span data-ttu-id="885e4-104">また、追跡レコードへの注釈の追加、およびカスタム追跡レコード内のデータ ペイロードの抽出の例も示します。</span><span class="sxs-lookup"><span data-stu-id="885e4-104">It also shows the addition of annotations to tracking records and the extraction of data payload within custom tracking records.</span></span> <span data-ttu-id="885e4-105">このサンプルでは、ワークフローからデータを抽出するために Event Tracing for Windows (ETW) 追跡参加要素を使用します。</span><span class="sxs-lookup"><span data-stu-id="885e4-105">The sample uses the Event Tracing for Windows (ETW) tracking participant to extract data from the workflow.</span></span>  

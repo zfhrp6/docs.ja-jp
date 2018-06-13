@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33568824"
 ---
 # <a name="extending-xslt-style-sheets"></a><span data-ttu-id="3e834-102">XSLT スタイル シートの拡張</span><span class="sxs-lookup"><span data-stu-id="3e834-102">Extending XSLT Style Sheets</span></span>
 <span data-ttu-id="3e834-103">このセクションでは、XSLT の機能を拡張するさまざまな方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="3e834-103">This section describes the different methods of extending the XSLT functionality.</span></span> <span data-ttu-id="3e834-104">拡張オブジェクトまたはパラメーターは、<xref:System.Xml.Xsl.XsltArgumentList> クラスを使用して追加できます。</span><span class="sxs-lookup"><span data-stu-id="3e834-104">You can add extension objects or parameters using the <xref:System.Xml.Xsl.XsltArgumentList> class.</span></span> <span data-ttu-id="3e834-105">その後、スタイル シートから拡張オブジェクトまたはパラメーターを呼び出すことができます。</span><span class="sxs-lookup"><span data-stu-id="3e834-105">The extension objects or parameters can then be called from the style sheet.</span></span> <span data-ttu-id="3e834-106">また、`msxsl:script` 要素を使用すると、スタイル シートにスクリプト ブロックを埋め込むことができます。</span><span class="sxs-lookup"><span data-stu-id="3e834-106">In addition, you can also embed script blocks into the style sheet by using the `msxsl:script` element.</span></span>  

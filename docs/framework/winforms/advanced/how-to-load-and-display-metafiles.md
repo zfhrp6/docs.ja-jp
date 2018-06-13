@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33522771"
 ---
 # <a name="how-to-load-and-display-metafiles"></a><span data-ttu-id="1800a-102">方法 : メタファイルを読み込んで表示する</span><span class="sxs-lookup"><span data-stu-id="1800a-102">How to: Load and Display Metafiles</span></span>
 <span data-ttu-id="1800a-103"><xref:System.Drawing.Imaging.Metafile>から継承されるクラスが、<xref:System.Drawing.Image>クラス、記録、表示、およびベクター イメージを検証するメソッドを提供します。</span><span class="sxs-lookup"><span data-stu-id="1800a-103">The <xref:System.Drawing.Imaging.Metafile> class, which inherits from the <xref:System.Drawing.Image> class, provides methods for recording, displaying, and examining vector images.</span></span>  

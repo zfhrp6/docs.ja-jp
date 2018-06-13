@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33520108"
 ---
 # <a name="variables-and-arguments"></a><span data-ttu-id="21504-102">変数と引数</span><span class="sxs-lookup"><span data-stu-id="21504-102">Variables and Arguments</span></span>
 <span data-ttu-id="21504-103">Windows Workflow Foundation (WF) では、変数のデータのストレージを表し、引数はアクティビティに出入りするデータのフローを表します</span><span class="sxs-lookup"><span data-stu-id="21504-103">In Windows Workflow Foundation (WF), variables represent the storage of data and arguments represent the flow of data into and out of an activity.</span></span> <span data-ttu-id="21504-104">アクティビティには一連の引数があり、その引数はアクティビティの署名を構成します。</span><span class="sxs-lookup"><span data-stu-id="21504-104">An activity has a set of arguments and they make up the signature of the activity.</span></span> <span data-ttu-id="21504-105">また、アクティビティは開発者がワークフローの設計時に変数を追加または削除できる変数のリストを保持しています。</span><span class="sxs-lookup"><span data-stu-id="21504-105">Additionally, an activity can maintain a list of variables to which a developer can add or remove variables during the design of a workflow.</span></span> <span data-ttu-id="21504-106">引数は、値を返す式を使用してバインドされます。</span><span class="sxs-lookup"><span data-stu-id="21504-106">An argument is bound using an expression that returns a value.</span></span>  

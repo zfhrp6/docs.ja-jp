@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 07237794ca45b16b1ae1ca95b1d62889f095350f
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33448160"
 ---
 # <a name="imetadataassemblyimportgetmanifestresourceprops-method"></a><span data-ttu-id="5f19d-102">IMetaDataAssemblyImport::GetManifestResourceProps メソッド</span><span class="sxs-lookup"><span data-stu-id="5f19d-102">IMetaDataAssemblyImport::GetManifestResourceProps Method</span></span>
 <span data-ttu-id="5f19d-103">指定されたメタデータ署名を持つマニフェスト リソースのプロパティのセットを取得します。</span><span class="sxs-lookup"><span data-stu-id="5f19d-103">Gets the set of properties of the manifest resource with the specified metadata signature.</span></span>  

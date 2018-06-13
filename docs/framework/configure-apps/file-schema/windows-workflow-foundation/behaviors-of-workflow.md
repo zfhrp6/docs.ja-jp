@@ -8,6 +8,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32767311"
 ---
 # <a name="ltbehaviorsgt-of-workflow"></a><span data-ttu-id="6d9f0-102">ワークフローの &lt;behaviors&gt;</span><span class="sxs-lookup"><span data-stu-id="6d9f0-102">&lt;behaviors&gt; of workflow</span></span>
 <span data-ttu-id="6d9f0-103">この要素が含まれています、 **serviceBehaviors**コレクション。</span><span class="sxs-lookup"><span data-stu-id="6d9f0-103">This element contains the **serviceBehaviors** collection.</span></span>  <span data-ttu-id="6d9f0-104">コレクション内の各要素は、ワークフロー サービスによって使用されるそれぞれの動作要素を定義します。</span><span class="sxs-lookup"><span data-stu-id="6d9f0-104">Each element in the collection defines behavior elements consumed by workflow services.</span></span> <span data-ttu-id="6d9f0-105">各動作要素は、独自のによって識別される**名前**属性。</span><span class="sxs-lookup"><span data-stu-id="6d9f0-105">Each behavior element is identified by its unique **name** attribute.</span></span>  

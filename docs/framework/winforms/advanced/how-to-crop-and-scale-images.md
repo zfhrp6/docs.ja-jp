@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33521639"
 ---
 # <a name="how-to-crop-and-scale-images"></a><span data-ttu-id="4f33c-102">方法 : イメージをトリミングおよびスケーリングする</span><span class="sxs-lookup"><span data-stu-id="4f33c-102">How to: Crop and Scale Images</span></span>
 <span data-ttu-id="4f33c-103"><xref:System.Drawing.Graphics>クラスには、いくつか用意されて<xref:System.Drawing.Graphics.DrawImage%2A>トリミングおよびスケール イメージに使用できる元とコピー先の四角形のパラメーターを持つこれらのいくつかの方法です。</span><span class="sxs-lookup"><span data-stu-id="4f33c-103">The <xref:System.Drawing.Graphics> class provides several <xref:System.Drawing.Graphics.DrawImage%2A> methods, some of which have source and destination rectangle parameters that you can use to crop and scale images.</span></span>  

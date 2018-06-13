@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33519188"
 ---
 # <a name="persisting-a-workflow-application"></a><span data-ttu-id="a4504-102">ワークフロー アプリケーションの永続化</span><span class="sxs-lookup"><span data-stu-id="a4504-102">Persisting a Workflow Application</span></span>
 <span data-ttu-id="a4504-103">このサンプルでは、<xref:System.Activities.WorkflowApplication> を実行し、アイドル状態になったときにアンロードしてから、再読み込みしてその実行を継続する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="a4504-103">This sample demonstrates how to run a <xref:System.Activities.WorkflowApplication>, unload it when it goes idle, and then reload it to continue its execution.</span></span>  

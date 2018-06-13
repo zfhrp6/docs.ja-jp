@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: e28aef4916d06218953236e3b29e19c68822bd6b
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33451189"
 ---
 # <a name="icorprofilercallbackfunctionunloadstarted-method"></a><span data-ttu-id="815d5-102">ICorProfilerCallback::FunctionUnloadStarted メソッド</span><span class="sxs-lookup"><span data-stu-id="815d5-102">ICorProfilerCallback::FunctionUnloadStarted Method</span></span>
 <span data-ttu-id="815d5-103">関数のアンロードをランタイムが開始されたことをプロファイラーに通知します。</span><span class="sxs-lookup"><span data-stu-id="815d5-103">Notifies the profiler that the runtime has started to unload a function.</span></span>  

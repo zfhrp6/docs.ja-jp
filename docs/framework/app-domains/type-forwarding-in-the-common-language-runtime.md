@@ -15,6 +15,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32742245"
 ---
 # <a name="type-forwarding-in-the-common-language-runtime"></a><span data-ttu-id="b91e0-102">共通言語ランタイムでの型の転送</span><span class="sxs-lookup"><span data-stu-id="b91e0-102">Type Forwarding in the Common Language Runtime</span></span>
 <span data-ttu-id="b91e0-103">型の転送を使用すると、別のアセンブリに型を移動する際に、元のアセンブリを使用するアプリケーションを再コンパイルする必要がありません。</span><span class="sxs-lookup"><span data-stu-id="b91e0-103">Type forwarding allows you to move a type to another assembly without having to recompile applications that use the original assembly.</span></span>  

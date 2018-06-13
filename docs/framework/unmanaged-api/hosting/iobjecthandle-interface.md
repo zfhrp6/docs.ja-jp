@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: fa16b67f11e5d4f44ef88daf27e0014ae8690769
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33443097"
 ---
 # <a name="iobjecthandle-interface"></a><span data-ttu-id="4e120-102">IObjectHandle インターフェイス</span><span class="sxs-lookup"><span data-stu-id="4e120-102">IObjectHandle Interface</span></span>
 <span data-ttu-id="4e120-103">メソッドをラップ解除の値渡しでマーシャ リング オブジェクトの間接参照を提供します。</span><span class="sxs-lookup"><span data-stu-id="4e120-103">Provides a method for unwrapping marshal-by-value objects from indirection.</span></span>  

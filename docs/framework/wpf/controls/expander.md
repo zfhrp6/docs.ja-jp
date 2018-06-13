@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33551968"
 ---
 # <a name="expander"></a><span data-ttu-id="40c37-102">Expander</span><span class="sxs-lookup"><span data-stu-id="40c37-102">Expander</span></span>
 <span data-ttu-id="40c37-103"><xref:System.Windows.Controls.Expander>により、ユーザーは、ヘッダーを表示し、詳細については、さらに参照してください。 または、まで、ヘッダー セクションを折りたたむには、そのヘッダーを展開します。</span><span class="sxs-lookup"><span data-stu-id="40c37-103">An <xref:System.Windows.Controls.Expander> allows a user to view a header and expand that header to see further details, or to collapse a section up to a header.</span></span>  

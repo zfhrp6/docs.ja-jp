@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33563374"
 ---
 # <a name="imaging-how-to-topics"></a><span data-ttu-id="caa1f-102">イメージングに関する「方法」トピック</span><span class="sxs-lookup"><span data-stu-id="caa1f-102">Imaging How-to Topics</span></span>
 <span data-ttu-id="caa1f-103">このセクションのトピックでは、使用する方法をデモンストレーション[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]を表示またはビットマップ イメージを変更するためにします。</span><span class="sxs-lookup"><span data-stu-id="caa1f-103">The topics in this section demonstrate how to use [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] in order to display or alter bitmap images.</span></span>  

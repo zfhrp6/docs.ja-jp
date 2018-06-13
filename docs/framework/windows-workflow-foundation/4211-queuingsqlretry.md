@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33514570"
 ---
 # <a name="4211---queuingsqlretry"></a><span data-ttu-id="e6db2-102">4211 - QueuingSqlRetry</span><span class="sxs-lookup"><span data-stu-id="e6db2-102">4211 - QueuingSqlRetry</span></span>
 ## <a name="properties"></a><span data-ttu-id="e6db2-103">プロパティ</span><span class="sxs-lookup"><span data-stu-id="e6db2-103">Properties</span></span>  

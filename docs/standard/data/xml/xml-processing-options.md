@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33572224"
 ---
 # <a name="xml-processing-options"></a><span data-ttu-id="2e7d6-102">XML の処理オプション</span><span class="sxs-lookup"><span data-stu-id="2e7d6-102">XML Processing Options</span></span>
 <span data-ttu-id="2e7d6-103">XML データの処理に使用できる Microsoft テクノロジの一覧については、次の表を参照してください。</span><span class="sxs-lookup"><span data-stu-id="2e7d6-103">See the following tables for a list of Microsoft technologies you can use to process XML data.</span></span>  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33522068"
 ---
 # <a name="how-to-add-data-to-the-clipboard"></a><span data-ttu-id="8e08a-102">方法 : クリップボードにデータを追加する</span><span class="sxs-lookup"><span data-stu-id="8e08a-102">How to: Add Data to the Clipboard</span></span>
 <span data-ttu-id="8e08a-103"><xref:System.Windows.Forms.Clipboard>クラスは、Windows オペレーティング システムのクリップボード機能との対話に使用できるメソッドを提供します。</span><span class="sxs-lookup"><span data-stu-id="8e08a-103">The <xref:System.Windows.Forms.Clipboard> class provides methods that you can use to interact with the Windows operating system Clipboard feature.</span></span> <span data-ttu-id="8e08a-104">多くのアプリケーションでは、データの一時的なレポジトリとしてクリップボードを使用します。</span><span class="sxs-lookup"><span data-stu-id="8e08a-104">Many applications use the Clipboard as a temporary repository for data.</span></span> <span data-ttu-id="8e08a-105">たとえば、ワード プロセッサでは、カット アンド ペースト操作中に、クリップボードを使用します。</span><span class="sxs-lookup"><span data-stu-id="8e08a-105">For example, word processors use the Clipboard during cut-and-paste operations.</span></span> <span data-ttu-id="8e08a-106">クリップボードも別の 1 つのアプリケーションからデータを転送するため便利です。</span><span class="sxs-lookup"><span data-stu-id="8e08a-106">The Clipboard is also useful for transferring data from one application to another.</span></span>  

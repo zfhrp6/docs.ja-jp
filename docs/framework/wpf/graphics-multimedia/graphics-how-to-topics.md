@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33557187"
 ---
 # <a name="graphics-how-to-topics"></a><span data-ttu-id="8a040-102">グラフィックスに関する「方法」トピック</span><span class="sxs-lookup"><span data-stu-id="8a040-102">Graphics How-to Topics</span></span>
 <span data-ttu-id="8a040-103">次のトピックでは、グラフィックの機能を使用する方法、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]です。</span><span class="sxs-lookup"><span data-stu-id="8a040-103">The following topics demonstrate how to use the graphic capabilities of the [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].</span></span>  
