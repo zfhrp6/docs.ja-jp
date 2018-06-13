@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33655024"
 ---
 # <a name="xml-literals-overview-visual-basic"></a><span data-ttu-id="5460a-102">XML リテラルの概要 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="5460a-102">XML Literals Overview (Visual Basic)</span></span>
 <span data-ttu-id="5460a-103">*XML リテラル*XML を Visual Basic のコードに直接組み込むことができます。</span><span class="sxs-lookup"><span data-stu-id="5460a-103">An *XML literal* allows you to incorporate XML directly into your Visual Basic code.</span></span> <span data-ttu-id="5460a-104">XML リテラルの構文を表します[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]オブジェクト、およびそれには、XML 1.0 の構文に似ています。</span><span class="sxs-lookup"><span data-stu-id="5460a-104">The XML literal syntax represents [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] objects, and it is the similar to the XML 1.0 syntax.</span></span> <span data-ttu-id="5460a-105">これにより、簡単に、コードが、最終的な XML と同じ構造を有して XML 要素やドキュメントをプログラムで作成します。</span><span class="sxs-lookup"><span data-stu-id="5460a-105">This makes it easier to create XML elements and documents programmatically because your code has the same structure as the final XML.</span></span>  

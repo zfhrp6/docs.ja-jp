@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33604075"
 ---
 # <a name="attribute-list-visual-basic"></a><span data-ttu-id="1f65f-102">属性リスト (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="1f65f-102">Attribute List (Visual Basic)</span></span>
 <span data-ttu-id="1f65f-103">宣言されたプログラミング要素に適用される属性を指定します。</span><span class="sxs-lookup"><span data-stu-id="1f65f-103">Specifies the attributes to be applied to a declared programming element.</span></span> <span data-ttu-id="1f65f-104">複数の属性を指定するときは、コンマで区切ります。</span><span class="sxs-lookup"><span data-stu-id="1f65f-104">Multiple attributes are separated by commas.</span></span> <span data-ttu-id="1f65f-105">1 つの属性の構文を次に示します。</span><span class="sxs-lookup"><span data-stu-id="1f65f-105">Following is the syntax for one attribute.</span></span>  

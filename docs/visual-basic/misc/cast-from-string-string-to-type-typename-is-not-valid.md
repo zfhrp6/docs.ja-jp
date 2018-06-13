@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33635713"
 ---
 # <a name="cast-from-string-quotltstringgtquot-to-type-39lttypenamegt39-is-not-valid"></a><span data-ttu-id="a5f99-102">文字列からキャスト&quot;&lt;文字列&gt;&quot;入力&#39; &lt;typename&gt; &#39;が正しくありません</span><span class="sxs-lookup"><span data-stu-id="a5f99-102">Cast from string &quot;&lt;string&gt;&quot; to type &#39;&lt;typename&gt;&#39; is not valid</span></span>
 <span data-ttu-id="a5f99-103">文字列変数を別の型に変換するのは無効です。</span><span class="sxs-lookup"><span data-stu-id="a5f99-103">An attempt to convert a string variable to another type is not valid.</span></span>  

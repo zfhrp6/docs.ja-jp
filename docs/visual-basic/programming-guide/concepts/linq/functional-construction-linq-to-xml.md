@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33644291"
 ---
 # <a name="functional-construction-linq-to-xml-visual-basic"></a><span data-ttu-id="a72ad-102">関数型構築 (LINQ to XML) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="a72ad-102">Functional Construction (LINQ to XML) (Visual Basic)</span></span>
 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]<span data-ttu-id="a72ad-103"> には、"*関数型構築*" と呼ばれる強力な XML 要素作成機能があります。</span><span class="sxs-lookup"><span data-stu-id="a72ad-103"> provides a powerful way to create XML elements called *functional construction*.</span></span> <span data-ttu-id="a72ad-104">関数型構築は、単一のステートメントで XML ツリーを作成するための機能です。</span><span class="sxs-lookup"><span data-stu-id="a72ad-104">Functional construction is the ability to create an XML tree in a single statement.</span></span>  

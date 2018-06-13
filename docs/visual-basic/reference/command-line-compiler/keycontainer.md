@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33655311"
 ---
 # <a name="-keycontainer"></a><span data-ttu-id="1040e-102">-keycontainer</span><span class="sxs-lookup"><span data-stu-id="1040e-102">-keycontainer</span></span>
 <span data-ttu-id="1040e-103">アセンブリに厳密な名前を付けるキー ペアのキー コンテナー名を指定します。</span><span class="sxs-lookup"><span data-stu-id="1040e-103">Specifies a key container name for a key pair to give an assembly a strong name.</span></span>  

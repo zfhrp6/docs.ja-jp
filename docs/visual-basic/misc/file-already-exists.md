@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33636654"
 ---
 # <a name="file-already-exists"></a><span data-ttu-id="a11ad-102">ファイルは既に存在します</span><span class="sxs-lookup"><span data-stu-id="a11ad-102">File already exists</span></span>
 <span data-ttu-id="a11ad-103">このエラーは、新しいファイルに既存のファイルの名前を付けたか、または **[名前を付けて保存]** コマンドを使用して、現在読み込まれているプロジェクトを既に存在する名前で保存した結果として発生します。</span><span class="sxs-lookup"><span data-stu-id="a11ad-103">This error occurs as a result of either naming a new file with the name of an existing file or using the **Save As** command to save a currently loaded project with a name that already exists.</span></span>  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33654087"
 ---
 # <a name="-win32manifest-visual-basic"></a><span data-ttu-id="d611f-102">-win32manifest (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="d611f-102">-win32manifest (Visual Basic)</span></span>
 <span data-ttu-id="d611f-103">プロジェクトのポータブル実行可能 (PE) ファイルに埋め込まれる、ユーザー定義の Win32 アプリケーション マニフェスト ファイルを識別します。</span><span class="sxs-lookup"><span data-stu-id="d611f-103">Identifies a user-defined Win32 application manifest file to be embedded into a project's portable executable (PE) file.</span></span>  

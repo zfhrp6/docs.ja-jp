@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33647697"
 ---
 # <a name="declared-elements-in-visual-basic"></a><span data-ttu-id="e848f-102">Visual Basic における宣言された要素</span><span class="sxs-lookup"><span data-stu-id="e848f-102">Declared Elements in Visual Basic</span></span>
 <span data-ttu-id="e848f-103">*宣言された要素*は、宣言ステートメントで定義されているプログラミング要素です。</span><span class="sxs-lookup"><span data-stu-id="e848f-103">A *declared element* is a programming element that is defined in a declaration statement.</span></span> <span data-ttu-id="e848f-104">宣言された要素には、変数、定数、列挙型、クラス、構造体、モジュール、インターフェイス、プロシージャ、プロシージャ パラメーター、関数の戻り値、外部プロシージャの参照、演算子、プロパティ、イベント、およびデリゲートが含まれます。</span><span class="sxs-lookup"><span data-stu-id="e848f-104">Declared elements include variables, constants, enumerations, classes, structures, modules, interfaces, procedures, procedure parameters, function returns, external procedure references, operators, properties, events, and delegates.</span></span>  

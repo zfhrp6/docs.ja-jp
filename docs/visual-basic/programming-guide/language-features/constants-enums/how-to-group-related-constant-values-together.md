@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33646405"
 ---
 # <a name="how-to-group-related-constant-values-together-visual-basic"></a><span data-ttu-id="3e6d0-102">方法: 関連する定数値をまとめてグループ化する (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="3e6d0-102">How to: Group Related Constant Values Together (Visual Basic)</span></span>
 <span data-ttu-id="3e6d0-103">列挙型は、関連する定数をグループ化する最善の方法です。</span><span class="sxs-lookup"><span data-stu-id="3e6d0-103">An enumeration is the best way to group related constants together.</span></span> <span data-ttu-id="3e6d0-104">持つ列挙体を作成する、`Enum`クラスまたはモジュールの宣言セクション内のステートメント。</span><span class="sxs-lookup"><span data-stu-id="3e6d0-104">You create an enumeration with the `Enum` statement in the declarations section of a class or a module.</span></span> <span data-ttu-id="3e6d0-105">詳細については、次を参照してください。[する方法: 列挙型を宣言](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-declare-enumerations.md)です。</span><span class="sxs-lookup"><span data-stu-id="3e6d0-105">For more information, see [How to: Declare an Enumeration](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-declare-enumerations.md).</span></span>  

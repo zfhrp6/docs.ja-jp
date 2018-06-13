@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33604643"
 ---
 # <a name="and-operator-visual-basic"></a><span data-ttu-id="c6325-102">And 演算子 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="c6325-102">And Operator (Visual Basic)</span></span>
 <span data-ttu-id="c6325-103">2 つの論理積`Boolean`式、または 2 つの数値式に対してビットごとの積。</span><span class="sxs-lookup"><span data-stu-id="c6325-103">Performs a logical conjunction on two `Boolean` expressions, or a bitwise conjunction on two numeric expressions.</span></span>  

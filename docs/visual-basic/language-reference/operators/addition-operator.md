@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33605226"
 ---
 # <a name="-operator-visual-basic"></a><span data-ttu-id="4417b-102">+ 演算子 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="4417b-102">+ Operator (Visual Basic)</span></span>
 <span data-ttu-id="4417b-103">2 つの数値を加算または数値式の正の値を取得します。</span><span class="sxs-lookup"><span data-stu-id="4417b-103">Adds two numbers or returns the positive value of a numeric expression.</span></span> <span data-ttu-id="4417b-104">2 つの文字列式を連結するも使用できます。</span><span class="sxs-lookup"><span data-stu-id="4417b-104">Can also be used to concatenate two string expressions.</span></span>  

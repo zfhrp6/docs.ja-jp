@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33644304"
 ---
 # <a name="walkthrough-implementing-inheritance-with-com-objects-visual-basic"></a><span data-ttu-id="f2b6e-102">チュートリアル: COM オブジェクトによる継承の実装 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="f2b6e-102">Walkthrough: Implementing Inheritance with COM Objects (Visual Basic)</span></span>
 <span data-ttu-id="f2b6e-103">Visual Basic クラスを派生させることができます`Public`も以前のバージョンの Visual Basic で作成された COM オブジェクトのクラスです。</span><span class="sxs-lookup"><span data-stu-id="f2b6e-103">You can derive Visual Basic classes from `Public` classes in COM objects, even those created in earlier versions of Visual Basic.</span></span> <span data-ttu-id="f2b6e-104">プロパティと COM オブジェクトから継承されたクラスのメソッドをオーバーライドまたはプロパティと同様にオーバー ロード、およびその他の任意の基本クラスのメソッドをオーバーライドまたはオーバー ロードできます。</span><span class="sxs-lookup"><span data-stu-id="f2b6e-104">The properties and methods of classes inherited from COM objects can be overridden or overloaded just as properties and methods of any other base class can be overridden or overloaded.</span></span> <span data-ttu-id="f2b6e-105">COM オブジェクトからの継承は、再コンパイルしたくない既存のクラス ライブラリがある場合に便利です。</span><span class="sxs-lookup"><span data-stu-id="f2b6e-105">Inheritance from COM objects is useful when you have an existing class library that you do not want to recompile.</span></span>  

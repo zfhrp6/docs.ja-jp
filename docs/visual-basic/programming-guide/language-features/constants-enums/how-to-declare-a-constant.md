@@ -28,6 +28,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33649738"
 ---
 # <a name="how-to-declare-a-constant-visual-basic"></a><span data-ttu-id="5696a-102">方法: 定数を宣言する (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="5696a-102">How to: Declare A Constant (Visual Basic)</span></span>
 <span data-ttu-id="5696a-103">使用する、`Const`定数を宣言し、その値を設定するステートメント。</span><span class="sxs-lookup"><span data-stu-id="5696a-103">You use the `Const` statement to declare a constant and set its value.</span></span> <span data-ttu-id="5696a-104">定数を宣言すると、値にわかりやすい名前を割り当てます。</span><span class="sxs-lookup"><span data-stu-id="5696a-104">By declaring a constant, you assign a meaningful name to a value.</span></span> <span data-ttu-id="5696a-105">定数が宣言されると、変更または新しい値を代入することはできません。</span><span class="sxs-lookup"><span data-stu-id="5696a-105">Once a constant is declared, it cannot be modified or assigned a new value.</span></span>  

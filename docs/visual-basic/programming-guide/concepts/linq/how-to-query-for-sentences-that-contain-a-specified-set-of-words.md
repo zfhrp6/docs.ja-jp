@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33643194"
 ---
 # <a name="how-to-query-for-sentences-that-contain-a-specified-set-of-words-linq-visual-basic"></a><span data-ttu-id="84644-102">方法 : 指定された単語のセットを含む文章を照会する (LINQ) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="84644-102">How to: Query for Sentences that Contain a Specified Set of Words (LINQ) (Visual Basic)</span></span>
 <span data-ttu-id="84644-103">この例は、指定された一連の単語と一致する文言を含む文をテキスト ファイルから検索する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="84644-103">This example shows how to find sentences in a text file that contain matches for each of a specified set of words.</span></span> <span data-ttu-id="84644-104">この例では検索語句の配列をハードコーディングしていますが、実行時に動的に設定することもできます。</span><span class="sxs-lookup"><span data-stu-id="84644-104">Although the array of search terms is hard-coded in this example, it could also be populated dynamically at runtime.</span></span> <span data-ttu-id="84644-105">この例のクエリを実行すると、"Historically"、"data"、"integrated" という単語をすべて含んだ文が返されます。</span><span class="sxs-lookup"><span data-stu-id="84644-105">In this example, the query returns the sentences that contain the words "Historically," "data," and "integrated."</span></span>  

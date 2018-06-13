@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33647239"
 ---
 # <a name="how-to-pass-procedures-to-another-procedure-in-visual-basic"></a><span data-ttu-id="cf559-102">方法 : Visual Basic でプロシージャを別のプロシージャに渡す</span><span class="sxs-lookup"><span data-stu-id="cf559-102">How to: Pass Procedures to Another Procedure in Visual Basic</span></span>
 <span data-ttu-id="cf559-103">この例では、デリゲートを使用してプロシージャを別のプロシージャに渡す方法を示します。</span><span class="sxs-lookup"><span data-stu-id="cf559-103">This example shows how to use delegates to pass a procedure to another procedure.</span></span>  

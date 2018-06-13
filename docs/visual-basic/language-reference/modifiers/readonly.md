@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33599913"
 ---
 # <a name="readonly-visual-basic"></a><span data-ttu-id="b7fa5-102">ReadOnly (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="b7fa5-102">ReadOnly (Visual Basic)</span></span>
 <span data-ttu-id="b7fa5-103">変数またはプロパティを読み取るがある書き込まれませんを指定します。</span><span class="sxs-lookup"><span data-stu-id="b7fa5-103">Specifies that a variable or property can be read but not written.</span></span>  

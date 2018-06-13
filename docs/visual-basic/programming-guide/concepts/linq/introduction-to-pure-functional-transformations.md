@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33645284"
 ---
 # <a name="introduction-to-pure-functional-transformations-visual-basic"></a><span data-ttu-id="ca1d3-102">純粋関数型変換 (Visual Basic) の概要</span><span class="sxs-lookup"><span data-stu-id="ca1d3-102">Introduction to Pure Functional Transformations (Visual Basic)</span></span>
 <span data-ttu-id="ca1d3-103">ここでは、関数型変換の概要について、その基になる概念や、それをサポートする言語構成要素も含めて説明します。</span><span class="sxs-lookup"><span data-stu-id="ca1d3-103">This section introduces functional transformations, including the underlying concepts and supporting language constructs.</span></span> <span data-ttu-id="ca1d3-104">また、オブジェクト指向変換と関数型変換という 2 つのプログラミング方法を対比させて、関数型変換に移行するためのアドバイスを紹介します。</span><span class="sxs-lookup"><span data-stu-id="ca1d3-104">It contrasts the object-oriented and functional transformation approaches to programming, including advice on how to transition to the latter.</span></span> <span data-ttu-id="ca1d3-105">関数型変換はさまざまなプログラミング シナリオで使用できますが、ここでは XML 変換を具体例として取り上げます。</span><span class="sxs-lookup"><span data-stu-id="ca1d3-105">Although functional transformations can be used in many programming scenarios, XML transformation is used here as a concrete example.</span></span>  

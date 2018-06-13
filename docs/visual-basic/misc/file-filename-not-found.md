@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33636579"
 ---
 # <a name="file-39ltfilenamegt39-not-found"></a><span data-ttu-id="c887e-102">ファイル&#39; &lt;filename&gt; &#39;が見つかりません。</span><span class="sxs-lookup"><span data-stu-id="c887e-102">File &#39;&lt;filename&gt;&#39; not found</span></span>
 <span data-ttu-id="c887e-103">ファイル名が正しくないか、またはファイルが存在しません。</span><span class="sxs-lookup"><span data-stu-id="c887e-103">A file name is incorrect or the file does not exist.</span></span>  

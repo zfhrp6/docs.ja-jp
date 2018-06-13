@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33656046"
 ---
 # <a name="how-to-modify-xml-literals-visual-basic"></a><span data-ttu-id="91760-102">方法 : XML リテラルを変更する (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="91760-102">How to: Modify XML Literals (Visual Basic)</span></span>
 <span data-ttu-id="91760-103">Visual Basic では、XML リテラルを変更する便利な手段を提供します。</span><span class="sxs-lookup"><span data-stu-id="91760-103">Visual Basic provides convenient ways to modify XML literals.</span></span> <span data-ttu-id="91760-104">追加したり、要素と属性を削除し、新しい XML 要素を持つ既存の要素を置換することもできます。</span><span class="sxs-lookup"><span data-stu-id="91760-104">You can add or delete elements and attributes, and you can also replace an existing element with a new XML element.</span></span> <span data-ttu-id="91760-105">このトピックでは、既存の XML リテラルを変更する方法の例をいくつかを示します。</span><span class="sxs-lookup"><span data-stu-id="91760-105">This topic provides several examples of how to modify an existing XML literal.</span></span>  

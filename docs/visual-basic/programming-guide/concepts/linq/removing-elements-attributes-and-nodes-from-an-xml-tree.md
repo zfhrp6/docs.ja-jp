@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33645931"
 ---
 # <a name="removing-elements-attributes-and-nodes-from-an-xml-tree-visual-basic"></a><span data-ttu-id="bce2d-102">(Visual Basic) の XML ツリーから要素、属性、およびノードの削除</span><span class="sxs-lookup"><span data-stu-id="bce2d-102">Removing Elements, Attributes, and Nodes from an XML Tree (Visual Basic)</span></span>
 <span data-ttu-id="bce2d-103">要素、属性、およびその他の種類のノードを削除して、XML ツリーを変更できます。</span><span class="sxs-lookup"><span data-stu-id="bce2d-103">You can modify an XML tree, removing elements, attributes, and other types of nodes.</span></span>  
