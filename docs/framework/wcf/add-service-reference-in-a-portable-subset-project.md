@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33460490"
 ---
 # <a name="add-service-reference-in-a-portable-subset-project"></a><span data-ttu-id="d1d48-102">ポータブル サブセット プロジェクトでサービス参照を追加する</span><span class="sxs-lookup"><span data-stu-id="d1d48-102">Add Service Reference in a Portable Subset Project</span></span>
 <span data-ttu-id="d1d48-103">ポータブル サブセット プロジェクトは、.NET アセンブリ プログラマは 1 つのソース ツリーを保持し、複数の .NET 実装 (デスクトップ、Silverlight、Windows Phone、および XBOX) をサポートしながらビルド システムを有効にします。</span><span class="sxs-lookup"><span data-stu-id="d1d48-103">Portable subset projects enable .NET assembly programmers to maintain a single source tree and build system while still supporting multiple .NET implementations (desktop, Silverlight, Windows Phone, and XBOX).</span></span> <span data-ttu-id="d1d48-104">ポータブル サブセット プロジェクトは、任意の .NET 実装で使用できる .NET framework アセンブリである .NET ポータブル ライブラリのみを参照します。</span><span class="sxs-lookup"><span data-stu-id="d1d48-104">Portable subset projects only reference .NET portable libraries which are a .NET framework assembly that can be used on any .NET implementation.</span></span>  

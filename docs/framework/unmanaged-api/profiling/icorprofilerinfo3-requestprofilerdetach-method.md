@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: e69a15d70b8f1b9e271571be92f1f6717a9f196c
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33461517"
 ---
 # <a name="icorprofilerinfo3requestprofilerdetach-method"></a><span data-ttu-id="d3f59-102">ICorProfilerInfo3::RequestProfilerDetach メソッド</span><span class="sxs-lookup"><span data-stu-id="d3f59-102">ICorProfilerInfo3::RequestProfilerDetach Method</span></span>
 <span data-ttu-id="d3f59-103">プロファイラーをデタッチするようにランタイムに指示します。</span><span class="sxs-lookup"><span data-stu-id="d3f59-103">Instructs the runtime to detach the profiler.</span></span>  

@@ -24,6 +24,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32744084"
 ---
 # <a name="how-to-build-a-multifile-assembly"></a><span data-ttu-id="dca6e-102">方法 : マルチファイル アセンブリをビルドする</span><span class="sxs-lookup"><span data-stu-id="dca6e-102">How to: Build a Multifile Assembly</span></span>
 <span data-ttu-id="dca6e-103">この記事では、マルチファイル アセンブリを作成する方法を説明し、プロシージャの各手順を示すコードを提供します。</span><span class="sxs-lookup"><span data-stu-id="dca6e-103">This article explains how to create a multifile assembly and provides code that illustrates each step in the procedure.</span></span>  

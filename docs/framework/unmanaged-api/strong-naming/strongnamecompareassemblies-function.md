@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 4bd1d098f21a3d5ba43b6251c87c36df4347a924
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33457562"
 ---
 # <a name="strongnamecompareassemblies-function"></a><span data-ttu-id="a8860-102">StrongNameCompareAssemblies 関数</span><span class="sxs-lookup"><span data-stu-id="a8860-102">StrongNameCompareAssemblies Function</span></span>
 <span data-ttu-id="a8860-103">2 つのアセンブリが厳密な名前の署名によってのみが異なるかどうかを判断します。</span><span class="sxs-lookup"><span data-stu-id="a8860-103">Determines whether two assemblies differ only by their strong name signatures.</span></span>  

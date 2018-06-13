@@ -14,6 +14,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32746216"
 ---
 # <a name="ltenforcefipspolicygt-element"></a><span data-ttu-id="b93d5-102">&lt;enforceFIPSPolicy&gt;要素</span><span class="sxs-lookup"><span data-stu-id="b93d5-102">&lt;enforceFIPSPolicy&gt; Element</span></span>
 <span data-ttu-id="b93d5-103">暗号化アルゴリズムが連邦情報処理規格 (FIPS: Federal Information Processing Standard) に準拠する必要があるコンピューターの構成要件を強制するかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="b93d5-103">Specifies whether to enforce a computer configuration requirement that cryptographic algorithms must comply with the Federal Information Processing Standards (FIPS).</span></span>  

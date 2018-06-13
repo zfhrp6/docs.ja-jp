@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33338287"
 ---
 # <a name="generic-classes-c-programming-guide"></a><span data-ttu-id="142a1-102">ジェネリック クラス (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="142a1-102">Generic Classes (C# Programming Guide)</span></span>
 <span data-ttu-id="142a1-103">ジェネリック クラスは、特定のデータ型に固有ではない操作をカプセル化します。</span><span class="sxs-lookup"><span data-stu-id="142a1-103">Generic classes encapsulate operations that are not specific to a particular data type.</span></span> <span data-ttu-id="142a1-104">ジェネリック クラスは最も一般的に、リンク リスト、ハッシュ テーブル、スタック、キュー、ツリーなどのコレクションと共に使用されます。</span><span class="sxs-lookup"><span data-stu-id="142a1-104">The most common use for generic classes is with collections like linked lists, hash tables, stacks, queues, trees, and so on.</span></span> <span data-ttu-id="142a1-105">コレクションの項目を追加または削除するなどの操作は、保存されているデータの型に関係なく、基本的に同じように実行されます。</span><span class="sxs-lookup"><span data-stu-id="142a1-105">Operations such as adding and removing items from the collection are performed in basically the same way regardless of the type of data being stored.</span></span>  

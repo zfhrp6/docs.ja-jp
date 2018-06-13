@@ -12,6 +12,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32743486"
 ---
 # <a name="ltappdomainmanagertypegt-element"></a><span data-ttu-id="9c362-102">&lt;appDomainManagerType&gt;要素</span><span class="sxs-lookup"><span data-stu-id="9c362-102">&lt;appDomainManagerType&gt; Element</span></span>
 <span data-ttu-id="9c362-103">既定のアプリケーション ドメインのアプリケーション ドメイン マネージャーの役割を果たす種類を指定します。</span><span class="sxs-lookup"><span data-stu-id="9c362-103">Specifies the type that serves as the application domain manager for the default application domain.</span></span>  

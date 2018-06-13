@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33387105"
 ---
 # <a name="com-interop-sample-net-client-and-com-server"></a><span data-ttu-id="15394-102">COM 相互運用機能のサンプル: .NET クライアントおよび COM サーバー</span><span class="sxs-lookup"><span data-stu-id="15394-102">COM Interop Sample: .NET Client and COM Server</span></span>
 <span data-ttu-id="15394-103">このサンプルでは、[COM サーバー](#cpconcominteropsamplenetclientcomserveranchor2)にアクセスするように作成された [.NET クライアント](#cpconcominteropsamplenetclientcomserveranchor1)で、COM コクラスのインスタンスを作成し、クラスのメンバーを呼び出して住宅ローンの計算を行う方法を示します。</span><span class="sxs-lookup"><span data-stu-id="15394-103">This sample demonstrates how a [.NET client](#cpconcominteropsamplenetclientcomserveranchor1), built to access a [COM server](#cpconcominteropsamplenetclientcomserveranchor2), creates an instance of a COM coclass and calls class members to perform mortgage calculations.</span></span>  

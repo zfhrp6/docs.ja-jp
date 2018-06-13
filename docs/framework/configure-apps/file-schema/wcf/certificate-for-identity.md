@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32749284"
 ---
 # <a name="ltcertificategt-for-ltidentitygt"></a><span data-ttu-id="f153e-102">&lt;identity&gt; の &lt;certificate&gt;</span><span class="sxs-lookup"><span data-stu-id="f153e-102">&lt;certificate&gt; for &lt;identity&gt;</span></span>
 <span data-ttu-id="f153e-103">クライアントに対するサービスの検証に使用される X.509 証明書を指定します。</span><span class="sxs-lookup"><span data-stu-id="f153e-103">Specifies an X.509 certificate used to validate a server to a client.</span></span>  

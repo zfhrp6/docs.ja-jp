@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: e0f11614c6fa15034ef5fa3d68e41a936a9ff764
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33427858"
 ---
 # <a name="isymunmanagedvariablegetendoffset-method"></a><span data-ttu-id="bf079-102">ISymUnmanagedVariable::GetEndOffset メソッド</span><span class="sxs-lookup"><span data-stu-id="bf079-102">ISymUnmanagedVariable::GetEndOffset Method</span></span>
 <span data-ttu-id="bf079-103">この変数内では、親の終了オフセットを取得します。</span><span class="sxs-lookup"><span data-stu-id="bf079-103">Gets the end offset of this variable within its parent.</span></span> <span data-ttu-id="bf079-104">場合、ローカル変数のスコープ内では、終了オフセットはスコープに対して定義されたオフセット内で分類されます。</span><span class="sxs-lookup"><span data-stu-id="bf079-104">If this is a local variable within a scope, the end offset will fall within the offsets defined for the scope.</span></span>  

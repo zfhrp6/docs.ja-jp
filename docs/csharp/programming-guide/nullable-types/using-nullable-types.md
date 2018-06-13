@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33336922"
 ---
 # <a name="using-nullable-types-c-programming-guide"></a><span data-ttu-id="f398c-102">Null 許容型の使用 (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="f398c-102">Using Nullable Types (C# Programming Guide)</span></span>
 <span data-ttu-id="f398c-103">Null 許容型は、基底の型のすべての値と、追加の [null](../../../csharp/language-reference/keywords/null.md) 値を表すことができます。</span><span class="sxs-lookup"><span data-stu-id="f398c-103">Nullable types can represent all the values of an underlying type, and an additional [null](../../../csharp/language-reference/keywords/null.md) value.</span></span> <span data-ttu-id="f398c-104">Null 許容型は、次のいずれかの形式で宣言します。</span><span class="sxs-lookup"><span data-stu-id="f398c-104">Nullable types are declared in one of two ways:</span></span>  

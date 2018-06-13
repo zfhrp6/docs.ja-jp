@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33330441"
 ---
 # <a name="how-to-compare-the-contents-of-two-folders-linq-c"></a><span data-ttu-id="291c1-102">方法: 2 つのフォルダーの内容を比較する (LINQ) (C#)</span><span class="sxs-lookup"><span data-stu-id="291c1-102">How to: Compare the Contents of Two Folders (LINQ) (C#)</span></span>
 <span data-ttu-id="291c1-103">この例では、2 つのファイル リストを比較する 3 つの方法を示します。</span><span class="sxs-lookup"><span data-stu-id="291c1-103">This example demonstrates three ways to compare two file listings:</span></span>  

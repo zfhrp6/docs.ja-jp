@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33500371"
 ---
 # <a name="trusted-subsystem"></a><span data-ttu-id="2c151-102">信頼できるサブシステム</span><span class="sxs-lookup"><span data-stu-id="2c151-102">Trusted Subsystem</span></span>
 <span data-ttu-id="2c151-103">クライアントは、ネットワーク全体に分散している 1 つ以上の Web サービスにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="2c151-103">A client accesses one or more Web services that are distributed across a network.</span></span> <span data-ttu-id="2c151-104">Web サービスは、追加のリソース (データベースや他の Web サービスなど) に対するアクセスが、Web サービスのビジネス ロジック内にカプセル化されるように設計されています。</span><span class="sxs-lookup"><span data-stu-id="2c151-104">The Web services are designed so that access to additional resources (such as databases or other Web services) is encapsulated in the business logic of the Web service.</span></span> <span data-ttu-id="2c151-105">これらのリソースは、非承認のアクセスに対して保護する必要があります。</span><span class="sxs-lookup"><span data-stu-id="2c151-105">These resources must be protected against unauthorized access.</span></span> <span data-ttu-id="2c151-106">信頼できるサブシステムの処理を次の図に示します。</span><span class="sxs-lookup"><span data-stu-id="2c151-106">The following illustration depicts a trusted subsystem process.</span></span>  

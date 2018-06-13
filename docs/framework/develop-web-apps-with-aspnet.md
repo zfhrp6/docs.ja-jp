@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33386949"
 ---
 # <a name="developing-web-applications-with-aspnet"></a><span data-ttu-id="623a4-102">ASP.NET での Web アプリケーションの開発</span><span class="sxs-lookup"><span data-stu-id="623a4-102">Developing Web Applications with ASP.NET</span></span>
 <span data-ttu-id="623a4-103">ASP.NET は、Web アプリを作成するための .NET Framework テクノロジです。</span><span class="sxs-lookup"><span data-stu-id="623a4-103">ASP.NET is a .NET Framework technology for creating web apps.</span></span> <span data-ttu-id="623a4-104">参照用の関連リンクを以下に示します。</span><span class="sxs-lookup"><span data-stu-id="623a4-104">The following links are provided for your convenience:</span></span>  

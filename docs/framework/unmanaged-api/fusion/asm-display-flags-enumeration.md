@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 9607aa99e1f1dbe0af3a868a32c70cd83d5e66a5
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33429531"
 ---
 # <a name="asmdisplayflags-enumeration"></a><span data-ttu-id="fef4b-102">ASM_DISPLAY_FLAGS 列挙型</span><span class="sxs-lookup"><span data-stu-id="fef4b-102">ASM_DISPLAY_FLAGS Enumeration</span></span>
 <span data-ttu-id="fef4b-103">バージョン、ビルド、カルチャ、署名、およびでの表示名が取得されますアセンブリを示す、 [iassemblyname::getdisplayname](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-getdisplayname-method.md)メソッドです。</span><span class="sxs-lookup"><span data-stu-id="fef4b-103">Indicates the version, build, culture, signature, and so on, of the assembly whose display name will be retrieved by the [IAssemblyName::GetDisplayName](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-getdisplayname-method.md) method.</span></span>  

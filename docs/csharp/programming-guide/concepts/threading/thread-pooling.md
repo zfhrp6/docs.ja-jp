@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33334198"
 ---
 # <a name="thread-pooling-c"></a><span data-ttu-id="99c32-102">スレッド プール (C#)</span><span class="sxs-lookup"><span data-stu-id="99c32-102">Thread Pooling (C#)</span></span>
 <span data-ttu-id="99c32-103">"*スレッド プール*" とは、複数のタスクをバックグラウンドで実行するときに使用できるスレッドのコレクションです </span><span class="sxs-lookup"><span data-stu-id="99c32-103">A *thread pool* is a collection of threads that can be used to perform several tasks in the background.</span></span> <span data-ttu-id="99c32-104">(詳細については、「[スレッド処理 (C#)](../../../../csharp/programming-guide/concepts/threading/index.md)」を参照してください)。これにより、プライマリ スレッドは他のタスクを非同期的に実行できます。</span><span class="sxs-lookup"><span data-stu-id="99c32-104">(See [Threading (C#)](../../../../csharp/programming-guide/concepts/threading/index.md) for background information.) This leaves the primary thread free to perform other tasks asynchronously.</span></span>  

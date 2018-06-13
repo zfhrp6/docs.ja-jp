@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32748244"
 ---
 # <a name="ltknowncertificatesgt"></a><span data-ttu-id="17158-102">&lt;knownCertificates&gt;</span><span class="sxs-lookup"><span data-stu-id="17158-102">&lt;knownCertificates&gt;</span></span>
 <span data-ttu-id="17158-103">セキュリティ トークン サービス (STS) から発行されるセキュリティ資格情報を認証するために提供される X.509 証明書のコレクションを表します。</span><span class="sxs-lookup"><span data-stu-id="17158-103">Represents a collection of X.509 certificates that are provided to authenticate security credentials issued from a Security Token Service (STS).</span></span>  

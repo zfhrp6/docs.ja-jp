@@ -19,6 +19,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32744331"
 ---
 # <a name="assemblies-in-the-common-language-runtime"></a><span data-ttu-id="27d85-102">共通言語ランタイムのアセンブリ</span><span class="sxs-lookup"><span data-stu-id="27d85-102">Assemblies in the Common Language Runtime</span></span>
 <span data-ttu-id="27d85-103">アセンブリは .NET Framework アプリケーションのビルド ブロックであり、配置、バージョン管理、再利用、アクティブ化のスコープの指定、およびセキュリティ アクセス許可の基本単位となります。</span><span class="sxs-lookup"><span data-stu-id="27d85-103">Assemblies are the building blocks of .NET Framework applications; they form the fundamental unit of deployment, version control, reuse, activation scoping, and security permissions.</span></span> <span data-ttu-id="27d85-104">アセンブリは、相互に連携して 1 つの論理的な機能単位を形成するように構築された型やリソースの集合です。</span><span class="sxs-lookup"><span data-stu-id="27d85-104">An assembly is a collection of types and resources that are built to work together and form a logical unit of functionality.</span></span> <span data-ttu-id="27d85-105">共通言語ランタイムは、型の実装に関して必要な情報をアセンブリから取得します。</span><span class="sxs-lookup"><span data-stu-id="27d85-105">An assembly provides the common language runtime with the information it needs to be aware of type implementations.</span></span> <span data-ttu-id="27d85-106">共通言語ランタイムにとって、型はアセンブリのコンテキストの外部には存在しません。</span><span class="sxs-lookup"><span data-stu-id="27d85-106">To the runtime, a type does not exist outside the context of an assembly.</span></span>  

@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: a6761ff204d299bc2db84e2e80d988306125a110
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33430822"
 ---
 # <a name="iappdomainbinding-interface"></a><span data-ttu-id="a05ac-102">IAppDomainBinding インターフェイス</span><span class="sxs-lookup"><span data-stu-id="a05ac-102">IAppDomainBinding Interface</span></span>
 <span data-ttu-id="a05ac-103">共通言語ランタイム (CLR) にホスト アプリケーションにアプリケーション ドメインが作成されていることを通知で呼び出されるメソッドを提供します。</span><span class="sxs-lookup"><span data-stu-id="a05ac-103">Provides a method that is called by the common language runtime (CLR) to notify the host application that an application domain has been created.</span></span>  

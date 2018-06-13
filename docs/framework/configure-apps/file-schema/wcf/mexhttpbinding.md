@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32748813"
 ---
 # <a name="ltmexhttpbindinggt"></a><span data-ttu-id="5f1e1-102">&lt;mexHttpBinding&gt;</span><span class="sxs-lookup"><span data-stu-id="5f1e1-102">&lt;mexHttpBinding&gt;</span></span>
 <span data-ttu-id="5f1e1-103">HTTP 経由の WS-MetadataExchange (WS-MEX) メッセージ交換に使用されるバインディングの設定を指定します。</span><span class="sxs-lookup"><span data-stu-id="5f1e1-103">Specifies the settings for a binding used for the WS-MetadataExchange (WS-MEX) message exchange over HTTP.</span></span>  

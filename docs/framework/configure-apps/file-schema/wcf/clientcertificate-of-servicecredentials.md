@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32748920"
 ---
 # <a name="ltclientcertificategt-of-ltservicecredentialsgt"></a><span data-ttu-id="a2a00-102">&lt;serviceCredentials&gt; の &lt;clientCertificate&gt;</span><span class="sxs-lookup"><span data-stu-id="a2a00-102">&lt;clientCertificate&gt; of &lt;serviceCredentials&gt;</span></span>
 <span data-ttu-id="a2a00-103">双方向通信パターンでサービスからクライアントへのメッセージの署名および暗号化に使用される X.509 証明書を定義します。</span><span class="sxs-lookup"><span data-stu-id="a2a00-103">Defines an X.509 certificate used to sign and encrypt messages to a client form a service in a duplex communication pattern.</span></span>  

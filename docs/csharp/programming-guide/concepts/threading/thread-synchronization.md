@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33338612"
 ---
 # <a name="thread-synchronization-c"></a><span data-ttu-id="1b906-102">スレッドの同期 (C#)</span><span class="sxs-lookup"><span data-stu-id="1b906-102">Thread Synchronization (C#)</span></span>
 <span data-ttu-id="1b906-103">次のセクションでは、マルチスレッド アプリケーションでリソースへのアクセスを同期するために使用できる機能とクラスについて説明します。</span><span class="sxs-lookup"><span data-stu-id="1b906-103">The following sections describe features and classes that can be used to synchronize access to resources in multithreaded applications.</span></span>  

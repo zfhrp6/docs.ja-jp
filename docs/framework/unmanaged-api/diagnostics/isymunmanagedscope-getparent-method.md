@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 7ddf13eb87bd046a2ae7aad39f23112e3ae80c97
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33427960"
 ---
 # <a name="isymunmanagedscopegetparent-method"></a><span data-ttu-id="93689-102">ISymUnmanagedScope::GetParent メソッド</span><span class="sxs-lookup"><span data-stu-id="93689-102">ISymUnmanagedScope::GetParent Method</span></span>
 <span data-ttu-id="93689-103">このスコープの親スコープを取得します。</span><span class="sxs-lookup"><span data-stu-id="93689-103">Gets the parent scope of this scope.</span></span>  

@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: dc3a986326f9b47194558ca86bcbeabb61dbaeb3
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33425540"
 ---
 # <a name="isymencunmanagedmethodgetsourceextentindocument-method"></a><span data-ttu-id="6edd4-102">ISymENCUnmanagedMethod::GetSourceExtentInDocument メソッド</span><span class="sxs-lookup"><span data-stu-id="6edd4-102">ISymENCUnmanagedMethod::GetSourceExtentInDocument Method</span></span>
 <span data-ttu-id="6edd4-103">取得では、特定のドキュメントに行と、メソッドの末尾行を最大を最小を開始します。</span><span class="sxs-lookup"><span data-stu-id="6edd4-103">Gets the smallest start line and largest end line for the method in a specific document.</span></span>  

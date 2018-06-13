@@ -13,6 +13,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32743265"
 ---
 # <a name="assembly-binding-redirection-security-permission"></a><span data-ttu-id="f9381-102">アセンブリ バインディング リダイレクトのセキュリティ アクセス許可</span><span class="sxs-lookup"><span data-stu-id="f9381-102">Assembly Binding Redirection Security Permission</span></span>
 <span data-ttu-id="f9381-103">アプリケーション構成ファイルで明示的にアセンブリ バインディングをリダイレクトするには、セキュリティ アクセス許可が必要です。</span><span class="sxs-lookup"><span data-stu-id="f9381-103">Explicit assembly binding redirection in an application configuration file requires a security permission.</span></span> <span data-ttu-id="f9381-104">これは、.NET Framework アセンブリおよびサードパーティ製アセンブリに適用されます。</span><span class="sxs-lookup"><span data-stu-id="f9381-104">This applies to redirection of .NET Framework assemblies and assemblies from third parties.</span></span> <span data-ttu-id="f9381-105">許可を設定して、<xref:System.Security.Permissions.SecurityPermissionFlag>フラグを<xref:System.Security.Permissions.SecurityPermission>です。</span><span class="sxs-lookup"><span data-stu-id="f9381-105">The permission is granted by setting the <xref:System.Security.Permissions.SecurityPermissionFlag> flag on the <xref:System.Security.Permissions.SecurityPermission>.</span></span> <span data-ttu-id="f9381-106">マネージ アセンブリは、既定ではアクセス許可を持っていません。</span><span class="sxs-lookup"><span data-stu-id="f9381-106">Managed assemblies have no permissions by default.</span></span>  

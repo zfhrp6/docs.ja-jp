@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33500143"
 ---
 # <a name="understanding-http-authentication"></a><span data-ttu-id="f9ed4-102">HTTP 認証の理解</span><span class="sxs-lookup"><span data-stu-id="f9ed4-102">Understanding HTTP Authentication</span></span>
 <span data-ttu-id="f9ed4-103">認証は、リソースにアクセスする権限をクライアントが持つかどうかを確認するプロセスです。</span><span class="sxs-lookup"><span data-stu-id="f9ed4-103">Authentication is the process of identifying whether a client is eligible to access a resource.</span></span> <span data-ttu-id="f9ed4-104">HTTP プロトコルは、セキュリティで保護されたリソースへのアクセスをネゴシエートする手段として、認証をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="f9ed4-104">The HTTP protocol supports authentication as a means of negotiating access to a secure resource.</span></span>  

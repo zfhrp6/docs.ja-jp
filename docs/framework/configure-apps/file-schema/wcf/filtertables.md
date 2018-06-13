@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32753415"
 ---
 # <a name="ltfiltertablesgt"></a><span data-ttu-id="b52d3-102">&lt;filterTables&gt;</span><span class="sxs-lookup"><span data-stu-id="b52d3-102">&lt;filterTables&gt;</span></span>
 <span data-ttu-id="b52d3-103">ルーティング フィルターとターゲット エンドポイントとのマッピングを格納するルーティング テーブルを定義する構成セクションを表します。フィルターが一致したときにメッセージを送信するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="b52d3-103">Represents a configuration section for defining routing tables that contain mappings between the routing filters and the target endpoints to send messages to when the filter matches.</span></span>  

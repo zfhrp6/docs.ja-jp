@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 6aad2df19ec5563d8d48b0c286ab888a727c21ac
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33428161"
 ---
 # <a name="isymunmanagedwriteropenscope-method"></a><span data-ttu-id="57c6d-102">ISymUnmanagedWriter::OpenScope メソッド</span><span class="sxs-lookup"><span data-stu-id="57c6d-102">ISymUnmanagedWriter::OpenScope Method</span></span>
 <span data-ttu-id="57c6d-103">現在のメソッドの構文の新しいスコープを開きます。</span><span class="sxs-lookup"><span data-stu-id="57c6d-103">Opens a new lexical scope in the current method.</span></span> <span data-ttu-id="57c6d-104">スコープは、新しい現在のスコープをなり、スコープのスタックにプッシュされます。</span><span class="sxs-lookup"><span data-stu-id="57c6d-104">The scope becomes the new current scope and is pushed onto a stack of scopes.</span></span> <span data-ttu-id="57c6d-105">スコープは、階層を形成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="57c6d-105">Scopes must form a hierarchy.</span></span> <span data-ttu-id="57c6d-106">兄弟は、重複は許可されません。</span><span class="sxs-lookup"><span data-stu-id="57c6d-106">Siblings are not allowed to overlap.</span></span>  

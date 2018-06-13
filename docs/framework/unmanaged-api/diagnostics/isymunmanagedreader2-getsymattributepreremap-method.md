@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 326f970f53293b74bbf8c5e77830f3f6ce1b73ab
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33427038"
 ---
 # <a name="isymunmanagedreader2getsymattributepreremap-method"></a><span data-ttu-id="6f211-102">ISymUnmanagedReader2::GetSymAttributePreRemap メソッド</span><span class="sxs-lookup"><span data-stu-id="6f211-102">ISymUnmanagedReader2::GetSymAttributePreRemap Method</span></span>
 <span data-ttu-id="6f211-103">その名前に基づくカスタム属性を取得します。</span><span class="sxs-lookup"><span data-stu-id="6f211-103">Gets a custom attribute based upon its name.</span></span> <span data-ttu-id="6f211-104">メタデータのカスタム属性とは異なり、これらの属性は、シンボル ストアに保持されます。</span><span class="sxs-lookup"><span data-stu-id="6f211-104">Unlike metadata custom attributes, these attributes are held in the symbol store.</span></span>  

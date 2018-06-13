@@ -6,9 +6,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 96410466f17bf6b4e8fff235d434f470cabd9249
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33422885"
 ---
 # <a name="icordebugvirtualunwindergetcontext-method"></a><span data-ttu-id="7e0c1-102">ICorDebugVirtualUnwinder::GetContext メソッド</span><span class="sxs-lookup"><span data-stu-id="7e0c1-102">ICorDebugVirtualUnwinder::GetContext Method</span></span>
 <span data-ttu-id="7e0c1-103">このアンワインダーの現在のコンテキストを取得します。</span><span class="sxs-lookup"><span data-stu-id="7e0c1-103">Gets the current context of this unwinder.</span></span>  

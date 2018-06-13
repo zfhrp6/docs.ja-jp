@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33362515"
 ---
 # <a name="how-to-develop-a-wcf-data-service-running-on-iis"></a><span data-ttu-id="03d64-102">方法: IIS 上で実行する WCF Data Service を開発する</span><span class="sxs-lookup"><span data-stu-id="03d64-102">How to: Develop a WCF Data Service Running on IIS</span></span>
 <span data-ttu-id="03d64-103">このトピックは、使用する方法を示します[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]でインターネット インフォメーション サービス (IIS) を実行している ASP.NET Web アプリケーションによってホストされる Northwind サンプル データベースに基づくデータ サービスを作成します。</span><span class="sxs-lookup"><span data-stu-id="03d64-103">This topic shows how to use [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] to create a data service that is based on the Northwind sample database that is hosted by an ASP.NET Web application that is running on Internet Information Services (IIS).</span></span> <span data-ttu-id="03d64-104">ASP.NET 開発サーバーで実行されている ASP.NET Web アプリケーションとして同じ Northwind データ サービスを作成する方法の例は、次を参照してください。、 [WCF Data Services クイック スタート](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md)です。</span><span class="sxs-lookup"><span data-stu-id="03d64-104">For an example of how to create the same Northwind data service as an ASP.NET Web application that runs on the ASP.NET Development Server, see the [WCF Data Services quickstart](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md).</span></span>  

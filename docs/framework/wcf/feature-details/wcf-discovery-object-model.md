@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33509035"
 ---
 # <a name="wcf-discovery-object-model"></a><span data-ttu-id="d632c-102">WCF Discovery オブジェクト モデル</span><span class="sxs-lookup"><span data-stu-id="d632c-102">WCF Discovery Object Model</span></span>
 <span data-ttu-id="d632c-103">WCF Discovery は、実行時に探索可能なサービスと、これらのサービスを検索して使用するクライアントの作成を可能にする統合プログラミング モデルを提供する型のセットで構成されています。</span><span class="sxs-lookup"><span data-stu-id="d632c-103">WCF Discovery consists of a set of types that provide a unified programming model that allows you to write services that are discoverable at runtime and clients that find and use these services.</span></span>  

@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33576296"
 ---
 # <a name="generic-delegates-for-manipulating-arrays-and-lists"></a><span data-ttu-id="4f7e9-102">配列とリストの操作に使用する汎用デリゲート</span><span class="sxs-lookup"><span data-stu-id="4f7e9-102">Generic Delegates for Manipulating Arrays and Lists</span></span>
 <span data-ttu-id="4f7e9-103">ここでは、配列またはコレクションの要素に対して実行される変換、検索述語、およびアクションの汎用デリゲートの概要について説明します。</span><span class="sxs-lookup"><span data-stu-id="4f7e9-103">This topic provides an overview of generic delegates for conversions, search predicates, and actions to be taken on elements of an array or collection.</span></span>  

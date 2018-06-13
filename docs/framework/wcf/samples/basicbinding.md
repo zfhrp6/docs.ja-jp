@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33500195"
 ---
 # <a name="basicbinding"></a><span data-ttu-id="1a0f0-102">BasicBinding</span><span class="sxs-lookup"><span data-stu-id="1a0f0-102">BasicBinding</span></span>
 <span data-ttu-id="1a0f0-103">このサンプルでは、第 1 世代と第 2 世代の Web サービスで HTTP 通信と最大限の相互運用性を実現する、`basicHttpBinding` の使用方法を示します。</span><span class="sxs-lookup"><span data-stu-id="1a0f0-103">This sample demonstrates the use of `basicHttpBinding` that provides HTTP communication and maximum interoperability with first- and second-generation Web services.</span></span>  

@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33213641"
 ---
 # <a name="-nologo-c-compiler-options"></a><span data-ttu-id="9d884-102">-nologo (C# コンパイラ オプション)</span><span class="sxs-lookup"><span data-stu-id="9d884-102">-nologo (C# Compiler Options)</span></span>
 <span data-ttu-id="9d884-103">**-nologo** オプションは、コンパイラの開始時のサインオン バナーの表示と、コンパイル時の情報メッセージの表示を抑制します。</span><span class="sxs-lookup"><span data-stu-id="9d884-103">The **-nologo** option suppresses display of the sign-on banner when the compiler starts up and display of informational messages during compiling.</span></span>  

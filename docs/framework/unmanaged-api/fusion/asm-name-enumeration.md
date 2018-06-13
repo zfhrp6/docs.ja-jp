@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: b9902b96a6f9ca56435430b6120a34dfb6cfadd7
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33431218"
 ---
 # <a name="asmname-enumeration"></a><span data-ttu-id="354d8-102">ASM_NAME 列挙型</span><span class="sxs-lookup"><span data-stu-id="354d8-102">ASM_NAME Enumeration</span></span>
 <span data-ttu-id="354d8-103">バージョン、ビルド、カルチャ、署名、およびそのプロパティを取得または設定は、アセンブリのことを示します[IAssemblyName](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md)メソッドです。</span><span class="sxs-lookup"><span data-stu-id="354d8-103">Indicates the version, build, culture, signature, and so on, of the assembly whose properties will be retrieved or set by [IAssemblyName](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md) methods.</span></span>  

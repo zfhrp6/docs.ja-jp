@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32749167"
 ---
 # <a name="ltidentitygt"></a><span data-ttu-id="bb512-102">&lt;identity&gt;</span><span class="sxs-lookup"><span data-stu-id="bb512-102">&lt;identity&gt;</span></span>
 <span data-ttu-id="bb512-103">ID 要素を使用すると、クライアント開発者は予想されるサービスの ID をデザイン時に指定できます。</span><span class="sxs-lookup"><span data-stu-id="bb512-103">The identity element allows a client developer to specify at design time the expected identity of the service.</span></span> <span data-ttu-id="bb512-104">クライアントとサービス間のハンドシェイク プロセスで Windows Communication Foundation (WCF) インフラストラクチャは期待したサービスがこの要素の値を一致する項目の id を保証して、認証できるためです。</span><span class="sxs-lookup"><span data-stu-id="bb512-104">In the handshake process between the client and service, the Windows Communication Foundation (WCF) infrastructure will ensure that the identity of the expected service matches the values of this element, and thus can be authenticated.</span></span> <span data-ttu-id="bb512-105">詳細については、次を参照してください。[サービス Id と認証](../../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)です。</span><span class="sxs-lookup"><span data-stu-id="bb512-105">For more information, see [Service Identity and Authentication](../../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).</span></span>  

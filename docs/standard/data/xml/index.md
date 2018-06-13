@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33576091"
 ---
 # <a name="xml-documents-and-data"></a><span data-ttu-id="2bfb7-102">XML ドキュメントと XML データ</span><span class="sxs-lookup"><span data-stu-id="2bfb7-102">XML Documents and Data</span></span>
 <span data-ttu-id="2bfb7-103">.NET Framework には、XML 対応アプリを容易に構築するための、包括的で統合された一連のクラスが用意されています。</span><span class="sxs-lookup"><span data-stu-id="2bfb7-103">The .NET Framework provides a comprehensive and integrated set of classes that enable you to build XML-aware apps easily.</span></span> <span data-ttu-id="2bfb7-104">次の名前空間のクラスでは、XML の解析と書き込み、メモリ内での XML データの編集、データの検証、および XSLT 変換がサポートされます。</span><span class="sxs-lookup"><span data-stu-id="2bfb7-104">The classes in the following namespaces support parsing and writing XML, editing XML data in memory, data validation, and XSLT transformation.</span></span>  

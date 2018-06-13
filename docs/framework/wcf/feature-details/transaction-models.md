@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33499025"
 ---
 # <a name="transaction-models"></a><span data-ttu-id="d17c9-102">トランザクション モデル</span><span class="sxs-lookup"><span data-stu-id="d17c9-102">Transaction Models</span></span>
 <span data-ttu-id="d17c9-103">ここでは、トランザクション プログラミング モデルと、マイクロソフトが提供するインフラストラクチャ コンポーネントとの関係を説明します。</span><span class="sxs-lookup"><span data-stu-id="d17c9-103">This topic describes the relationship between the transaction programming models and the infrastructure components Microsoft provides.</span></span>  

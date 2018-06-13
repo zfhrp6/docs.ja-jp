@@ -15,6 +15,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32745709"
 ---
 # <a name="ltcompatsortnlsversiongt-element"></a><span data-ttu-id="c41f5-102">&lt;CompatSortNLSVersion&gt;要素</span><span class="sxs-lookup"><span data-stu-id="c41f5-102">&lt;CompatSortNLSVersion&gt; Element</span></span>
 <span data-ttu-id="c41f5-103">文字列比較の実行時に、ランタイムがレガシ並べ替え順序を使用するように指定します。</span><span class="sxs-lookup"><span data-stu-id="c41f5-103">Specifies that the runtime should use legacy sort orders when performing string comparisons.</span></span>  

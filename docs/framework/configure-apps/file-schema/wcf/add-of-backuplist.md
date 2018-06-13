@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32745553"
 ---
 # <a name="ltaddgt-of-ltbackuplistgt"></a><span data-ttu-id="e45ee-102">&lt;backupList&gt; の &lt;add&gt;</span><span class="sxs-lookup"><span data-stu-id="e45ee-102">&lt;add&gt; of &lt;backupList&gt;</span></span>
 <span data-ttu-id="e45ee-103">バックアップ エンドポイント要素を定義する構成要素を表します。</span><span class="sxs-lookup"><span data-stu-id="e45ee-103">Represents a configuration element that defines a backup endpoint element.</span></span>  

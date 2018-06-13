@@ -15,6 +15,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32746840"
 ---
 # <a name="ltlistenersgt-element-for-ltsourcegt"></a><span data-ttu-id="4ac37-102">&lt;リスナー&gt;要素&lt;ソース&gt;</span><span class="sxs-lookup"><span data-stu-id="4ac37-102">&lt;listeners&gt; Element for &lt;source&gt;</span></span>
 <span data-ttu-id="4ac37-103">追加または内のリスナーを削除、<xref:System.Diagnostics.TraceSource.Listeners%2A>のコレクション、<xref:System.Diagnostics.TraceSource>です。</span><span class="sxs-lookup"><span data-stu-id="4ac37-103">Adds or removes listeners in the <xref:System.Diagnostics.TraceSource.Listeners%2A> collection for a <xref:System.Diagnostics.TraceSource>.</span></span> <span data-ttu-id="4ac37-104">リスナーは、ログ、ウィンドウ、またはテキスト ファイルなどの適切なターゲットにトレース出力を出力します。</span><span class="sxs-lookup"><span data-stu-id="4ac37-104">A listener directs the tracing output to an appropriate target, such as a log, window, or text file.</span></span>  

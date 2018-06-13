@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 3ae532b20ec3486fe56e2dff340a5ad89941a8df
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33424376"
 ---
 # <a name="isymunmanagedconstantgetname-method"></a><span data-ttu-id="8ede2-102">ISymUnmanagedConstant::GetName メソッド</span><span class="sxs-lookup"><span data-stu-id="8ede2-102">ISymUnmanagedConstant::GetName Method</span></span>
 <span data-ttu-id="8ede2-103">定数の名前を取得します。</span><span class="sxs-lookup"><span data-stu-id="8ede2-103">Gets the name of the constant.</span></span>  

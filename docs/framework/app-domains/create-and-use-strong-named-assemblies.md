@@ -19,6 +19,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32744643"
 ---
 # <a name="creating-and-using-strong-named-assemblies"></a><span data-ttu-id="7497c-102">厳密な名前付きアセンブリの作成と使用</span><span class="sxs-lookup"><span data-stu-id="7497c-102">Creating and Using Strong-Named Assemblies</span></span>
 <a name="top"></a> <span data-ttu-id="7497c-103">厳密な名前は、単純テキスト名、バージョン番号、カルチャ情報 (設定されている場合) から成るアセンブリの識別子と、公開キーおよびデジタル署名で構成されます。</span><span class="sxs-lookup"><span data-stu-id="7497c-103">A strong name consists of the assembly's identity—its simple text name, version number, and culture information (if provided)—plus a public key and a digital signature.</span></span> <span data-ttu-id="7497c-104">このデジタル署名は、対応する秘密キーを使用してアセンブリ ファイルから生成されます。</span><span class="sxs-lookup"><span data-stu-id="7497c-104">It is generated from an assembly file using the corresponding private key.</span></span> <span data-ttu-id="7497c-105">(アセンブリ ファイルにはアセンブリ マニフェストが格納されており、そこに、アセンブリを構成するすべてのファイルの名前とハッシュが含まれます。)</span><span class="sxs-lookup"><span data-stu-id="7497c-105">(The assembly file contains the assembly manifest, which contains the names and hashes of all the files that make up the assembly.)</span></span>  

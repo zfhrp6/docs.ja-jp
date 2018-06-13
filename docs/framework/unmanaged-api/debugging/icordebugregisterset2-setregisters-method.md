@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 35d91f13cedfbf49d48318630760cf1525d16340
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33422391"
 ---
 # <a name="icordebugregisterset2setregisters-method"></a><span data-ttu-id="3ca7d-102">ICorDebugRegisterSet2::SetRegisters メソッド</span><span class="sxs-lookup"><span data-stu-id="3ca7d-102">ICorDebugRegisterSet2::SetRegisters Method</span></span>
 <span data-ttu-id="3ca7d-103">`SetRegisters` .NET Framework version 2.0 では実装されていません。</span><span class="sxs-lookup"><span data-stu-id="3ca7d-103">`SetRegisters` is not implemented in the .NET Framework version 2.0.</span></span> <span data-ttu-id="3ca7d-104">このメソッドを呼び出さないでください。</span><span class="sxs-lookup"><span data-stu-id="3ca7d-104">Do not call this method.</span></span>  

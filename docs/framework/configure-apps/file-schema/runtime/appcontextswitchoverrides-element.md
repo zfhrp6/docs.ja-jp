@@ -15,6 +15,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32747526"
 ---
 # <a name="ltappcontextswitchoverridesgt-element"></a><span data-ttu-id="813df-102">&lt;AppContextSwitchOverrides&gt;要素</span><span class="sxs-lookup"><span data-stu-id="813df-102">&lt;AppContextSwitchOverrides&gt; Element</span></span>
 <span data-ttu-id="813df-103"><xref:System.AppContext> クラスで使用される、新機能に対するオプトアウト メカニズムを指定するスイッチを 1 つまたは複数定義します。</span><span class="sxs-lookup"><span data-stu-id="813df-103">Defines one or more switches used by the <xref:System.AppContext> class to provide an opt-out mechanism for new functionality.</span></span>  

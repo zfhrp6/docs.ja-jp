@@ -16,6 +16,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32743902"
 ---
 # <a name="ltbypasslistgt-element-network-settings"></a><span data-ttu-id="48e9a-102">&lt;bypasslist&gt;要素 (ネットワーク設定)</span><span class="sxs-lookup"><span data-stu-id="48e9a-102">&lt;bypasslist&gt; Element (Network Settings)</span></span>
 <span data-ttu-id="48e9a-103">プロキシを使用しないアドレスを記述する正規表現のセットを提供します。</span><span class="sxs-lookup"><span data-stu-id="48e9a-103">Provides a set of regular expressions that describe addresses that do not use a proxy.</span></span>  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33388834"
 ---
 # <a name="specifying-an-entry-point"></a><span data-ttu-id="54149-102">エントリ ポイントの指定</span><span class="sxs-lookup"><span data-stu-id="54149-102">Specifying an Entry Point</span></span>
 <span data-ttu-id="54149-103">エントリ ポイントは、DLL 内の関数の位置を識別します。</span><span class="sxs-lookup"><span data-stu-id="54149-103">An entry point identifies the location of a function in a DLL.</span></span> <span data-ttu-id="54149-104">マネージ プロジェクト内では、対象となる関数の元の名前または序数エントリ ポイントによって、その関数が相互運用の境界にまたがって識別されます。</span><span class="sxs-lookup"><span data-stu-id="54149-104">Within a managed project, the original name or ordinal entry point of a target function identifies that function across the interoperation boundary.</span></span> <span data-ttu-id="54149-105">また、エントリ ポイントを別の名前に割り当てて、関数の名前を事実上変更できます。</span><span class="sxs-lookup"><span data-stu-id="54149-105">Further, you can map the entry point to a different name, effectively renaming the function.</span></span>  

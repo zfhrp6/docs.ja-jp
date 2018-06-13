@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: faefff879142d66c4c596f1b30a25e349a4014b9
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33421802"
 ---
 # <a name="icordebugmanagedcallback2exception-method"></a><span data-ttu-id="d99f2-102">ICorDebugManagedCallback2::Exception メソッド</span><span class="sxs-lookup"><span data-stu-id="d99f2-102">ICorDebugManagedCallback2::Exception Method</span></span>
 <span data-ttu-id="d99f2-103">例外ハンドラーの検索が開始されたことをデバッガーに通知します。</span><span class="sxs-lookup"><span data-stu-id="d99f2-103">Notifies the debugger that a search for an exception handler has started.</span></span>  

@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 3ceda938798ba03a9f178776c4cd9439456182c0
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33423037"
 ---
 # <a name="icordebugeval-interface1"></a><span data-ttu-id="1317c-102">ICorDebugEval Interface1</span><span class="sxs-lookup"><span data-stu-id="1317c-102">ICorDebugEval Interface1</span></span>
 <span data-ttu-id="1317c-103">デバッガーが、デバッグ中のコードのコンテキスト内でコードを実行できるメソッドを提供します。</span><span class="sxs-lookup"><span data-stu-id="1317c-103">Provides methods to enable the debugger to execute code within the context of the code being debugged.</span></span>  

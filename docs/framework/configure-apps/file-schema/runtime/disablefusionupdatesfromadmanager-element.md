@@ -12,6 +12,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32745891"
 ---
 # <a name="ltdisablefusionupdatesfromadmanagergt-element"></a><span data-ttu-id="7f74b-102">&lt;disableFusionUpdatesFromADManager&gt;要素</span><span class="sxs-lookup"><span data-stu-id="7f74b-102">&lt;disableFusionUpdatesFromADManager&gt; Element</span></span>
 <span data-ttu-id="7f74b-103">アプリケーション ドメインの構成設定をランタイム ホストが上書きする既定の動作を無効化するかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="7f74b-103">Specifies whether the default behavior, which is to allow the runtime host to override configuration settings for an application domain, is disabled.</span></span>  
