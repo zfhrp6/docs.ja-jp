@@ -8,6 +8,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32755891"
 ---
 # <a name="ltcustomtrackingqueriesgt"></a>&lt;customTrackingQueries&gt;
 コード アクティビティで定義するイベントを追跡するために使用する、クエリのコレクションを表します。 追跡参加要素がカスタム追跡レコードを定期受信するには、このクエリが必要です。  

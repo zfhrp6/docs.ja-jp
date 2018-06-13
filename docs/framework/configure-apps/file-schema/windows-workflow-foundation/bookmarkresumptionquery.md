@@ -8,6 +8,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32756187"
 ---
 # <a name="ltbookmarkresumptionquerygt"></a>&lt;bookmarkResumptionQuery&gt;
 ワークフロー インスタンス内のブックマークの再開を追跡するために使用されるクエリを表します。 追跡参加要素がブックマーク再開レコードを定期受信するには、このクエリが必要です。  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33265234"
 ---
 # <a name="on-c-reference"></a>on (C# リファレンス)
 `on` コンテキスト キーワードは、結合条件を指定するためにクエリ式の [join 句](../../../csharp/language-reference/keywords/join-clause.md)で使用されます。  

@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33268184"
 ---
 # <a name="warning-c-reference"></a>#warning (C# リファレンス)
 `#warning` を使用すると、コード内の特定の場所からレベル 1 の警告を生成できます。 例:  

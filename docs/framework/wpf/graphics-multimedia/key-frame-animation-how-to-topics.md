@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33561964"
 ---
 # <a name="key-frame-animation-how-to-topics"></a>キー フレーム アニメーションに関する「方法」トピック
 このセクションのトピックでは、キー フレーム アニメーションを使用して、2 つのプロパティの値、コントロールの補間よりも多くのアニメーション化する方法を説明します。  

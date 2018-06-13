@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33266690"
 ---
 # <a name="partial-type-c-reference"></a>partial (型) (C# リファレンス)
 部分型定義では、クラス、構造体、またはインターフェイスの定義を複数のファイルに分割することができます。  
