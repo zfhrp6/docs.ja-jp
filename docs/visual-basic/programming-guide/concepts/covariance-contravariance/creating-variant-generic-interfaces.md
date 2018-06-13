@@ -1,38 +1,29 @@
 ---
-title: "バリアント ジェネリック インターフェイス (Visual Basic) の作成"
-ms.custom: 
+title: バリアント ジェネリック インターフェイス (Visual Basic) の作成
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: d4037dd2-dfe9-4811-9150-93d4e8b20113
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 380af3b29172b1fa13d42d33e574201607cb804b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 9e79183cd75e3e222cfa82c6b8ca651eb99ffc02
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33643888"
 ---
-# <a name="creating-variant-generic-interfaces-visual-basic"></a><span data-ttu-id="32c1c-102">バリアント ジェネリック インターフェイス (Visual Basic) の作成</span><span class="sxs-lookup"><span data-stu-id="32c1c-102">Creating Variant Generic Interfaces (Visual Basic)</span></span>
-<span data-ttu-id="32c1c-103">インターフェイスのジェネリック型パラメーターは、共変または反変として宣言できます。</span><span class="sxs-lookup"><span data-stu-id="32c1c-103">You can declare generic type parameters in interfaces as covariant or contravariant.</span></span> <span data-ttu-id="32c1c-104">"*共変性*" により、インターフェイス メソッドの戻り値の型の派生を、ジェネリック型パラメーターで定義されている型よりも強くすることができます。</span><span class="sxs-lookup"><span data-stu-id="32c1c-104">*Covariance* allows interface methods to have more derived return types than that defined by the generic type parameters.</span></span> <span data-ttu-id="32c1c-105">"*反変性*" により、インターフェイス メソッドの引数の型の派生を、ジェネリック パラメーターで指定されている型よりも弱くすることができます。</span><span class="sxs-lookup"><span data-stu-id="32c1c-105">*Contravariance* allows interface methods to have argument types that are less derived than that specified by the generic parameters.</span></span> <span data-ttu-id="32c1c-106">共変または反変のジェネリック型パラメーターを持つジェネリック インターフェイスは、"*バリアント*" と呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="32c1c-106">A generic interface that has covariant or contravariant generic type parameters is called *variant*.</span></span>  
+# <a name="creating-variant-generic-interfaces-visual-basic"></a><span data-ttu-id="94078-102">バリアント ジェネリック インターフェイス (Visual Basic) の作成</span><span class="sxs-lookup"><span data-stu-id="94078-102">Creating Variant Generic Interfaces (Visual Basic)</span></span>
+<span data-ttu-id="94078-103">インターフェイスのジェネリック型パラメーターは、共変または反変として宣言できます。</span><span class="sxs-lookup"><span data-stu-id="94078-103">You can declare generic type parameters in interfaces as covariant or contravariant.</span></span> <span data-ttu-id="94078-104">"*共変性*" により、インターフェイス メソッドの戻り値の型の派生を、ジェネリック型パラメーターで定義されている型よりも強くすることができます。</span><span class="sxs-lookup"><span data-stu-id="94078-104">*Covariance* allows interface methods to have more derived return types than that defined by the generic type parameters.</span></span> <span data-ttu-id="94078-105">"*反変性*" により、インターフェイス メソッドの引数の型の派生を、ジェネリック パラメーターで指定されている型よりも弱くすることができます。</span><span class="sxs-lookup"><span data-stu-id="94078-105">*Contravariance* allows interface methods to have argument types that are less derived than that specified by the generic parameters.</span></span> <span data-ttu-id="94078-106">共変または反変のジェネリック型パラメーターを持つジェネリック インターフェイスは、"*バリアント*" と呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="94078-106">A generic interface that has covariant or contravariant generic type parameters is called *variant*.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="32c1c-107">.NET Framework 4 では、既存のいくつかのジェネリック インターフェイスに対して、分散のサポートが導入されています。</span><span class="sxs-lookup"><span data-stu-id="32c1c-107">.NET Framework 4 introduced variance support for several existing generic interfaces.</span></span> <span data-ttu-id="32c1c-108">.NET Framework のバリアントのインターフェイスの一覧で、次を参照してください。[ジェネリック インターフェイス (Visual Basic) の分散](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md)です。</span><span class="sxs-lookup"><span data-stu-id="32c1c-108">For the list of the variant interfaces in the .NET Framework, see [Variance in Generic Interfaces (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md).</span></span>  
+>  <span data-ttu-id="94078-107">.NET Framework 4 では、既存のいくつかのジェネリック インターフェイスに対して、分散のサポートが導入されています。</span><span class="sxs-lookup"><span data-stu-id="94078-107">.NET Framework 4 introduced variance support for several existing generic interfaces.</span></span> <span data-ttu-id="94078-108">.NET Framework のバリアントのインターフェイスの一覧で、次を参照してください。[ジェネリック インターフェイス (Visual Basic) の分散](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md)です。</span><span class="sxs-lookup"><span data-stu-id="94078-108">For the list of the variant interfaces in the .NET Framework, see [Variance in Generic Interfaces (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md).</span></span>  
   
-## <a name="declaring-variant-generic-interfaces"></a><span data-ttu-id="32c1c-109">バリアント ジェネリック インターフェイスの宣言</span><span class="sxs-lookup"><span data-stu-id="32c1c-109">Declaring Variant Generic Interfaces</span></span>  
- <span data-ttu-id="32c1c-110">バリアント ジェネリック インターフェイスは、ジェネリック型パラメーターの `in` キーワードと `out` キーワードを使用して宣言できます。</span><span class="sxs-lookup"><span data-stu-id="32c1c-110">You can declare variant generic interfaces by using the `in` and `out` keywords for generic type parameters.</span></span>  
+## <a name="declaring-variant-generic-interfaces"></a><span data-ttu-id="94078-109">バリアント ジェネリック インターフェイスの宣言</span><span class="sxs-lookup"><span data-stu-id="94078-109">Declaring Variant Generic Interfaces</span></span>  
+ <span data-ttu-id="94078-110">バリアント ジェネリック インターフェイスは、ジェネリック型パラメーターの `in` キーワードと `out` キーワードを使用して宣言できます。</span><span class="sxs-lookup"><span data-stu-id="94078-110">You can declare variant generic interfaces by using the `in` and `out` keywords for generic type parameters.</span></span>  
   
 > [!IMPORTANT]
->  <span data-ttu-id="32c1c-111">`ByRef`Visual Basic でのパラメーターは、バリアント型にすることはできません。</span><span class="sxs-lookup"><span data-stu-id="32c1c-111">`ByRef` parameters in Visual Basic cannot be variant.</span></span> <span data-ttu-id="32c1c-112">また、値の型も変性をサポートしていません。</span><span class="sxs-lookup"><span data-stu-id="32c1c-112">Value types also do not support variance.</span></span>  
+>  <span data-ttu-id="94078-111">`ByRef` Visual Basic でのパラメーターは、バリアント型にすることはできません。</span><span class="sxs-lookup"><span data-stu-id="94078-111">`ByRef` parameters in Visual Basic cannot be variant.</span></span> <span data-ttu-id="94078-112">また、値の型も変性をサポートしていません。</span><span class="sxs-lookup"><span data-stu-id="94078-112">Value types also do not support variance.</span></span>  
   
- <span data-ttu-id="32c1c-113">ジェネリック型パラメーターを共変として宣言するには、`out` キーワードを使用します。</span><span class="sxs-lookup"><span data-stu-id="32c1c-113">You can declare a generic type parameter covariant by using the `out` keyword.</span></span> <span data-ttu-id="32c1c-114">共変の型は、次の条件を満たす必要があります。</span><span class="sxs-lookup"><span data-stu-id="32c1c-114">The covariant type must satisfy the following conditions:</span></span>  
+ <span data-ttu-id="94078-113">ジェネリック型パラメーターを共変として宣言するには、`out` キーワードを使用します。</span><span class="sxs-lookup"><span data-stu-id="94078-113">You can declare a generic type parameter covariant by using the `out` keyword.</span></span> <span data-ttu-id="94078-114">共変の型は、次の条件を満たす必要があります。</span><span class="sxs-lookup"><span data-stu-id="94078-114">The covariant type must satisfy the following conditions:</span></span>  
   
--   <span data-ttu-id="32c1c-115">型がインターフェイス メソッドの戻り値の型としてのみ使用され、メソッド引数の型として使用されない。</span><span class="sxs-lookup"><span data-stu-id="32c1c-115">The type is used only as a return type of interface methods and not used as a type of method arguments.</span></span> <span data-ttu-id="32c1c-116">この例を以下に示します。ここでは、型 `R` が共変として宣言されています。</span><span class="sxs-lookup"><span data-stu-id="32c1c-116">This is illustrated in the following example, in which the type `R` is declared covariant.</span></span>  
+-   <span data-ttu-id="94078-115">型がインターフェイス メソッドの戻り値の型としてのみ使用され、メソッド引数の型として使用されない。</span><span class="sxs-lookup"><span data-stu-id="94078-115">The type is used only as a return type of interface methods and not used as a type of method arguments.</span></span> <span data-ttu-id="94078-116">この例を以下に示します。ここでは、型 `R` が共変として宣言されています。</span><span class="sxs-lookup"><span data-stu-id="94078-116">This is illustrated in the following example, in which the type `R` is declared covariant.</span></span>  
   
     ```vb  
     Interface ICovariant(Of Out R)  
@@ -42,7 +33,7 @@ ms.lasthandoff: 11/21/2017
     End Interface  
     ```  
   
-     <span data-ttu-id="32c1c-117">この規則には例外が 1 つあります。</span><span class="sxs-lookup"><span data-stu-id="32c1c-117">There is one exception to this rule.</span></span> <span data-ttu-id="32c1c-118">反変の汎用デリゲートをメソッド パラメーターとして使用する場合は、型をデリゲートのジェネリック型パラメーターとして使用できます。</span><span class="sxs-lookup"><span data-stu-id="32c1c-118">If you have a contravariant generic delegate as a method parameter, you can use the type as a generic type parameter for the delegate.</span></span> <span data-ttu-id="32c1c-119">次の例では、型 `R` によって示します。</span><span class="sxs-lookup"><span data-stu-id="32c1c-119">This is illustrated by the type `R` in the following example.</span></span> <span data-ttu-id="32c1c-120">詳細については、次を参照してください。[デリゲート (Visual Basic) の分散](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-delegates.md)と[Func および Action 汎用デリゲート (Visual Basic) を使用して分散](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md)です。</span><span class="sxs-lookup"><span data-stu-id="32c1c-120">For more information, see [Variance in Delegates (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-delegates.md) and [Using Variance for Func and Action Generic Delegates (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md).</span></span>  
+     <span data-ttu-id="94078-117">この規則には例外が 1 つあります。</span><span class="sxs-lookup"><span data-stu-id="94078-117">There is one exception to this rule.</span></span> <span data-ttu-id="94078-118">反変の汎用デリゲートをメソッド パラメーターとして使用する場合は、型をデリゲートのジェネリック型パラメーターとして使用できます。</span><span class="sxs-lookup"><span data-stu-id="94078-118">If you have a contravariant generic delegate as a method parameter, you can use the type as a generic type parameter for the delegate.</span></span> <span data-ttu-id="94078-119">次の例では、型 `R` によって示します。</span><span class="sxs-lookup"><span data-stu-id="94078-119">This is illustrated by the type `R` in the following example.</span></span> <span data-ttu-id="94078-120">詳細については、次を参照してください。[デリゲート (Visual Basic) の分散](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-delegates.md)と[Func および Action 汎用デリゲート (Visual Basic) を使用して分散](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md)です。</span><span class="sxs-lookup"><span data-stu-id="94078-120">For more information, see [Variance in Delegates (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-delegates.md) and [Using Variance for Func and Action Generic Delegates (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md).</span></span>  
   
     ```vb  
     Interface ICovariant(Of Out R)  
@@ -50,7 +41,7 @@ ms.lasthandoff: 11/21/2017
     End Interface  
     ```  
   
--   <span data-ttu-id="32c1c-121">型がインターフェイス メソッドのジェネリック制約として使用されない。</span><span class="sxs-lookup"><span data-stu-id="32c1c-121">The type is not used as a generic constraint for the interface methods.</span></span> <span data-ttu-id="32c1c-122">これを次のコードに示します。</span><span class="sxs-lookup"><span data-stu-id="32c1c-122">This is illustrated in the following code.</span></span>  
+-   <span data-ttu-id="94078-121">型がインターフェイス メソッドのジェネリック制約として使用されない。</span><span class="sxs-lookup"><span data-stu-id="94078-121">The type is not used as a generic constraint for the interface methods.</span></span> <span data-ttu-id="94078-122">これを次のコードに示します。</span><span class="sxs-lookup"><span data-stu-id="94078-122">This is illustrated in the following code.</span></span>  
   
     ```vb  
     Interface ICovariant(Of Out R)  
@@ -61,7 +52,7 @@ ms.lasthandoff: 11/21/2017
     End Interface  
     ```  
   
- <span data-ttu-id="32c1c-123">ジェネリック型パラメーターを反変として宣言するには、`in` キーワードを使用します。</span><span class="sxs-lookup"><span data-stu-id="32c1c-123">You can declare a generic type parameter contravariant by using the `in` keyword.</span></span> <span data-ttu-id="32c1c-124">反変の型は、メソッド引数の型としてのみ使用でき、インターフェイス メソッドの戻り値の型として使用できません。</span><span class="sxs-lookup"><span data-stu-id="32c1c-124">The contravariant type can be used only as a type of method arguments and not as a return type of interface methods.</span></span> <span data-ttu-id="32c1c-125">また、反変の型はジェネリック制約にも使用できます。</span><span class="sxs-lookup"><span data-stu-id="32c1c-125">The contravariant type can also be used for generic constraints.</span></span> <span data-ttu-id="32c1c-126">次のコードでは、反変のインターフェイスを宣言し、そのメソッドの 1 つにジェネリック制約を使用する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="32c1c-126">The following code shows how to declare a contravariant interface and use a generic constraint for one of its methods.</span></span>  
+ <span data-ttu-id="94078-123">ジェネリック型パラメーターを反変として宣言するには、`in` キーワードを使用します。</span><span class="sxs-lookup"><span data-stu-id="94078-123">You can declare a generic type parameter contravariant by using the `in` keyword.</span></span> <span data-ttu-id="94078-124">反変の型は、メソッド引数の型としてのみ使用でき、インターフェイス メソッドの戻り値の型として使用できません。</span><span class="sxs-lookup"><span data-stu-id="94078-124">The contravariant type can be used only as a type of method arguments and not as a return type of interface methods.</span></span> <span data-ttu-id="94078-125">また、反変の型はジェネリック制約にも使用できます。</span><span class="sxs-lookup"><span data-stu-id="94078-125">The contravariant type can also be used for generic constraints.</span></span> <span data-ttu-id="94078-126">次のコードでは、反変のインターフェイスを宣言し、そのメソッドの 1 つにジェネリック制約を使用する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="94078-126">The following code shows how to declare a contravariant interface and use a generic constraint for one of its methods.</span></span>  
   
 ```vb  
 Interface IContravariant(Of In A)  
@@ -72,7 +63,7 @@ Interface IContravariant(Of In A)
 End Interface  
 ```  
   
- <span data-ttu-id="32c1c-127">次のコード例に示すように、同一インターフェイス内の異なる型パラメーターで、共変性と反変性の両方をサポートすることもできます。</span><span class="sxs-lookup"><span data-stu-id="32c1c-127">It is also possible to support both covariance and contravariance in the same interface, but for different type parameters, as shown in the following code example.</span></span>  
+ <span data-ttu-id="94078-127">次のコード例に示すように、同一インターフェイス内の異なる型パラメーターで、共変性と反変性の両方をサポートすることもできます。</span><span class="sxs-lookup"><span data-stu-id="94078-127">It is also possible to support both covariance and contravariance in the same interface, but for different type parameters, as shown in the following code example.</span></span>  
   
 ```vb  
 Interface IVariant(Of Out R, In A)  
@@ -82,7 +73,7 @@ Interface IVariant(Of Out R, In A)
 End Interface  
 ```  
   
- <span data-ttu-id="32c1c-128">Visual basic では、デリゲート型を指定せずバリアント インターフェイスのイベントを宣言できません。</span><span class="sxs-lookup"><span data-stu-id="32c1c-128">In Visual Basic, you can't declare events in variant interfaces without specifying the delegate type.</span></span> <span data-ttu-id="32c1c-129">また、バリアント インターフェイスは、クラス、列挙型、または構造体、入れ子ことはできませんが、インターフェイスが入れ子にしたことができます。</span><span class="sxs-lookup"><span data-stu-id="32c1c-129">Also, a variant interface can't have nested classes, enums, or structures, but it can have nested interfaces.</span></span> <span data-ttu-id="32c1c-130">これを次のコードに示します。</span><span class="sxs-lookup"><span data-stu-id="32c1c-130">This is illustrated in the following code.</span></span>  
+ <span data-ttu-id="94078-128">Visual basic では、デリゲート型を指定せずバリアント インターフェイスのイベントを宣言できません。</span><span class="sxs-lookup"><span data-stu-id="94078-128">In Visual Basic, you can't declare events in variant interfaces without specifying the delegate type.</span></span> <span data-ttu-id="94078-129">また、バリアント インターフェイスは、クラス、列挙型、または構造体、入れ子ことはできませんが、インターフェイスが入れ子にしたことができます。</span><span class="sxs-lookup"><span data-stu-id="94078-129">Also, a variant interface can't have nested classes, enums, or structures, but it can have nested interfaces.</span></span> <span data-ttu-id="94078-130">これを次のコードに示します。</span><span class="sxs-lookup"><span data-stu-id="94078-130">This is illustrated in the following code.</span></span>  
   
 ```vb  
 Interface ICovariant(Of Out R)  
@@ -105,8 +96,8 @@ Interface ICovariant(Of Out R)
 End Interface  
 ```  
   
-## <a name="implementing-variant-generic-interfaces"></a><span data-ttu-id="32c1c-131">バリアント ジェネリック インターフェイスの実装</span><span class="sxs-lookup"><span data-stu-id="32c1c-131">Implementing Variant Generic Interfaces</span></span>  
- <span data-ttu-id="32c1c-132">バリアント ジェネリック インターフェイスをクラスに実装する場合は、インバリアント インターフェイスに使用するのと同じ構文を使用します。</span><span class="sxs-lookup"><span data-stu-id="32c1c-132">You implement variant generic interfaces in classes by using the same syntax that is used for invariant interfaces.</span></span> <span data-ttu-id="32c1c-133">次のコード例では、共変のインターフェイスをジェネリック クラスに実装する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="32c1c-133">The following code example shows how to implement a covariant interface in a generic class.</span></span>  
+## <a name="implementing-variant-generic-interfaces"></a><span data-ttu-id="94078-131">バリアント ジェネリック インターフェイスの実装</span><span class="sxs-lookup"><span data-stu-id="94078-131">Implementing Variant Generic Interfaces</span></span>  
+ <span data-ttu-id="94078-132">バリアント ジェネリック インターフェイスをクラスに実装する場合は、インバリアント インターフェイスに使用するのと同じ構文を使用します。</span><span class="sxs-lookup"><span data-stu-id="94078-132">You implement variant generic interfaces in classes by using the same syntax that is used for invariant interfaces.</span></span> <span data-ttu-id="94078-133">次のコード例では、共変のインターフェイスをジェネリック クラスに実装する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="94078-133">The following code example shows how to implement a covariant interface in a generic class.</span></span>  
   
 ```vb  
 Interface ICovariant(Of Out R)  
@@ -122,7 +113,7 @@ Class SampleImplementation(Of R)
 End Class  
 ```  
   
- <span data-ttu-id="32c1c-134">バリアント インターフェイスを実装するクラスは不変です。</span><span class="sxs-lookup"><span data-stu-id="32c1c-134">Classes that implement variant interfaces are invariant.</span></span> <span data-ttu-id="32c1c-135">次に例を示します。</span><span class="sxs-lookup"><span data-stu-id="32c1c-135">For example, consider the following code.</span></span>  
+ <span data-ttu-id="94078-134">バリアント インターフェイスを実装するクラスは不変です。</span><span class="sxs-lookup"><span data-stu-id="94078-134">Classes that implement variant interfaces are invariant.</span></span> <span data-ttu-id="94078-135">次に例を示します。</span><span class="sxs-lookup"><span data-stu-id="94078-135">For example, consider the following code.</span></span>  
   
 ```vb  
  The interface is covariant.  
@@ -138,8 +129,8 @@ Dim button As SampleImplementation(Of Button) =
 ' Dim obj As SampleImplementation(Of Object) = button  
 ```  
   
-## <a name="extending-variant-generic-interfaces"></a><span data-ttu-id="32c1c-136">バリアント ジェネリック インターフェイスの拡張</span><span class="sxs-lookup"><span data-stu-id="32c1c-136">Extending Variant Generic Interfaces</span></span>  
- <span data-ttu-id="32c1c-137">バリアント ジェネリック インターフェイスを拡張するときは、`in` キーワードと `out` キーワードを使用して、派生インターフェイスで変性をサポートするかどうかを明示的に指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="32c1c-137">When you extend a variant generic interface, you have to use the `in` and `out` keywords to explicitly specify whether the derived interface supports variance.</span></span> <span data-ttu-id="32c1c-138">コンパイラでは、拡張されているインターフェイスからの変性の推論は行われません。</span><span class="sxs-lookup"><span data-stu-id="32c1c-138">The compiler does not infer the variance from the interface that is being extended.</span></span> <span data-ttu-id="32c1c-139">たとえば、次のようなインターフェイスがあるとします。</span><span class="sxs-lookup"><span data-stu-id="32c1c-139">For example, consider the following interfaces.</span></span>  
+## <a name="extending-variant-generic-interfaces"></a><span data-ttu-id="94078-136">バリアント ジェネリック インターフェイスの拡張</span><span class="sxs-lookup"><span data-stu-id="94078-136">Extending Variant Generic Interfaces</span></span>  
+ <span data-ttu-id="94078-137">バリアント ジェネリック インターフェイスを拡張するときは、`in` キーワードと `out` キーワードを使用して、派生インターフェイスで変性をサポートするかどうかを明示的に指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="94078-137">When you extend a variant generic interface, you have to use the `in` and `out` keywords to explicitly specify whether the derived interface supports variance.</span></span> <span data-ttu-id="94078-138">コンパイラでは、拡張されているインターフェイスからの変性の推論は行われません。</span><span class="sxs-lookup"><span data-stu-id="94078-138">The compiler does not infer the variance from the interface that is being extended.</span></span> <span data-ttu-id="94078-139">たとえば、次のようなインターフェイスがあるとします。</span><span class="sxs-lookup"><span data-stu-id="94078-139">For example, consider the following interfaces.</span></span>  
   
 ```vb  
 Interface ICovariant(Of Out T)  
@@ -154,9 +145,9 @@ Interface IExtCovariant(Of Out T)
 End Interface  
 ```  
   
- <span data-ttu-id="32c1c-140">`Invariant(Of T)`インターフェイス、ジェネリック型パラメーター`T`バリアントではない一方で`IExtCovariant (Of Out T)`型パラメーターが共変で両方のインターフェイスは、同じインターフェイスを拡張します。</span><span class="sxs-lookup"><span data-stu-id="32c1c-140">In the `Invariant(Of T)` interface, the generic type parameter `T` is invariant, whereas in `IExtCovariant (Of Out T)`the type parameter is covariant, although both interfaces extend the same interface.</span></span> <span data-ttu-id="32c1c-141">これと同じ規則が、反変のジェネリック型パラメーターにも当てはまります。</span><span class="sxs-lookup"><span data-stu-id="32c1c-141">The same rule is applied to contravariant generic type parameters.</span></span>  
+ <span data-ttu-id="94078-140">`Invariant(Of T)`インターフェイス、ジェネリック型パラメーター`T`バリアントではない一方で`IExtCovariant (Of Out T)`型パラメーターが共変で両方のインターフェイスは、同じインターフェイスを拡張します。</span><span class="sxs-lookup"><span data-stu-id="94078-140">In the `Invariant(Of T)` interface, the generic type parameter `T` is invariant, whereas in `IExtCovariant (Of Out T)`the type parameter is covariant, although both interfaces extend the same interface.</span></span> <span data-ttu-id="94078-141">これと同じ規則が、反変のジェネリック型パラメーターにも当てはまります。</span><span class="sxs-lookup"><span data-stu-id="94078-141">The same rule is applied to contravariant generic type parameters.</span></span>  
   
- <span data-ttu-id="32c1c-142">拡張インターフェイスのジェネリック型パラメーター `T` が不変であれば、ジェネリック型パラメーター `T` が共変のインターフェイスと反変のインターフェイスの両方を拡張する 1 つのインターフェイスを作成できます。</span><span class="sxs-lookup"><span data-stu-id="32c1c-142">You can create an interface that extends both the interface where the generic type parameter `T` is covariant and the interface where it is contravariant if in the extending interface the generic type parameter `T` is invariant.</span></span> <span data-ttu-id="32c1c-143">これを次のコード例に示します。</span><span class="sxs-lookup"><span data-stu-id="32c1c-143">This is illustrated in the following code example.</span></span>  
+ <span data-ttu-id="94078-142">拡張インターフェイスのジェネリック型パラメーター `T` が不変であれば、ジェネリック型パラメーター `T` が共変のインターフェイスと反変のインターフェイスの両方を拡張する 1 つのインターフェイスを作成できます。</span><span class="sxs-lookup"><span data-stu-id="94078-142">You can create an interface that extends both the interface where the generic type parameter `T` is covariant and the interface where it is contravariant if in the extending interface the generic type parameter `T` is invariant.</span></span> <span data-ttu-id="94078-143">これを次のコード例に示します。</span><span class="sxs-lookup"><span data-stu-id="94078-143">This is illustrated in the following code example.</span></span>  
   
 ```vb  
 Interface ICovariant(Of Out T)  
@@ -170,7 +161,7 @@ Interface IInvariant(Of T)
 End Interface  
 ```  
   
- <span data-ttu-id="32c1c-144">ただし、一方のインターフェイスでジェネリック型パラメーター `T` が共変として宣言されている場合は、それを拡張インターフェイスで反変として宣言することはできません。その逆についても同様です。</span><span class="sxs-lookup"><span data-stu-id="32c1c-144">However, if a generic type parameter `T` is declared covariant in one interface, you cannot declare it contravariant in the extending interface, or vice versa.</span></span> <span data-ttu-id="32c1c-145">これを次のコード例に示します。</span><span class="sxs-lookup"><span data-stu-id="32c1c-145">This is illustrated in the following code example.</span></span>  
+ <span data-ttu-id="94078-144">ただし、一方のインターフェイスでジェネリック型パラメーター `T` が共変として宣言されている場合は、それを拡張インターフェイスで反変として宣言することはできません。その逆についても同様です。</span><span class="sxs-lookup"><span data-stu-id="94078-144">However, if a generic type parameter `T` is declared covariant in one interface, you cannot declare it contravariant in the extending interface, or vice versa.</span></span> <span data-ttu-id="94078-145">これを次のコード例に示します。</span><span class="sxs-lookup"><span data-stu-id="94078-145">This is illustrated in the following code example.</span></span>  
   
 ```vb  
 Interface ICovariant(Of Out T)  
@@ -182,13 +173,13 @@ End Interface
 ' End Interface  
 ```  
   
-### <a name="avoiding-ambiguity"></a><span data-ttu-id="32c1c-146">あいまいさの回避</span><span class="sxs-lookup"><span data-stu-id="32c1c-146">Avoiding Ambiguity</span></span>  
- <span data-ttu-id="32c1c-147">バリアント ジェネリック インターフェイスの実装時には、変性によってあいまいさが発生することがあります。</span><span class="sxs-lookup"><span data-stu-id="32c1c-147">When you implement variant generic interfaces, variance can sometimes lead to ambiguity.</span></span> <span data-ttu-id="32c1c-148">このような状況は回避する必要があります。</span><span class="sxs-lookup"><span data-stu-id="32c1c-148">This should be avoided.</span></span>  
+### <a name="avoiding-ambiguity"></a><span data-ttu-id="94078-146">あいまいさの回避</span><span class="sxs-lookup"><span data-stu-id="94078-146">Avoiding Ambiguity</span></span>  
+ <span data-ttu-id="94078-147">バリアント ジェネリック インターフェイスの実装時には、変性によってあいまいさが発生することがあります。</span><span class="sxs-lookup"><span data-stu-id="94078-147">When you implement variant generic interfaces, variance can sometimes lead to ambiguity.</span></span> <span data-ttu-id="94078-148">このような状況は回避する必要があります。</span><span class="sxs-lookup"><span data-stu-id="94078-148">This should be avoided.</span></span>  
   
- <span data-ttu-id="32c1c-149">たとえば、同一のバリアント ジェネリック インターフェイスを、異なるジェネリック型パラメーターを使用して 1 つのクラスに明示的に実装すると、あいまいさが発生する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="32c1c-149">For example, if you explicitly implement the same variant generic interface with different generic type parameters in one class, it can create ambiguity.</span></span> <span data-ttu-id="32c1c-150">この場合、コンパイラでエラーは生成されませんが、実行時にどのインターフェイスの実装が選択されるかは明確ではありません。</span><span class="sxs-lookup"><span data-stu-id="32c1c-150">The compiler does not produce an error in this case, but it is not specified which interface implementation will be chosen at runtime.</span></span> <span data-ttu-id="32c1c-151">これにより、コードで特定しにくいバグが発生する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="32c1c-151">This could lead to subtle bugs in your code.</span></span> <span data-ttu-id="32c1c-152">次のコード例について考えます。</span><span class="sxs-lookup"><span data-stu-id="32c1c-152">Consider the following code example.</span></span>  
+ <span data-ttu-id="94078-149">たとえば、同一のバリアント ジェネリック インターフェイスを、異なるジェネリック型パラメーターを使用して 1 つのクラスに明示的に実装すると、あいまいさが発生する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="94078-149">For example, if you explicitly implement the same variant generic interface with different generic type parameters in one class, it can create ambiguity.</span></span> <span data-ttu-id="94078-150">この場合、コンパイラでエラーは生成されませんが、実行時にどのインターフェイスの実装が選択されるかは明確ではありません。</span><span class="sxs-lookup"><span data-stu-id="94078-150">The compiler does not produce an error in this case, but it is not specified which interface implementation will be chosen at runtime.</span></span> <span data-ttu-id="94078-151">これにより、コードで特定しにくいバグが発生する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="94078-151">This could lead to subtle bugs in your code.</span></span> <span data-ttu-id="94078-152">次のコード例について考えます。</span><span class="sxs-lookup"><span data-stu-id="94078-152">Consider the following code example.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="32c1c-153">`Option Strict Off`、Visual Basic では、あいまいなインターフェイスの実装がある場合に、コンパイラの警告が生成されます。</span><span class="sxs-lookup"><span data-stu-id="32c1c-153">With `Option Strict Off`, Visual Basic generates a compiler warning when there is an ambiguous interface implementation.</span></span> <span data-ttu-id="32c1c-154">`Option Strict On`、Visual Basic コンパイラ エラーが生成されます。</span><span class="sxs-lookup"><span data-stu-id="32c1c-154">With `Option Strict On`, Visual Basic generates a compiler error.</span></span>  
+>  <span data-ttu-id="94078-153">`Option Strict Off`、Visual Basic では、あいまいなインターフェイスの実装がある場合に、コンパイラの警告が生成されます。</span><span class="sxs-lookup"><span data-stu-id="94078-153">With `Option Strict Off`, Visual Basic generates a compiler warning when there is an ambiguous interface implementation.</span></span> <span data-ttu-id="94078-154">`Option Strict On`、Visual Basic コンパイラ エラーが生成されます。</span><span class="sxs-lookup"><span data-stu-id="94078-154">With `Option Strict On`, Visual Basic generates a compiler error.</span></span>  
   
 ```vb  
 ' Simple class hierarchy.  
@@ -232,8 +223,8 @@ Sub Main()
 End Sub  
 ```  
   
- <span data-ttu-id="32c1c-155">この例では、`pets.GetEnumerator` メソッドで `Cat` と `Dog` がどのように選択されるかが明らかではありません。</span><span class="sxs-lookup"><span data-stu-id="32c1c-155">In this example, it is unspecified how the `pets.GetEnumerator` method chooses between `Cat` and `Dog`.</span></span> <span data-ttu-id="32c1c-156">そのため、コードで問題が発生する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="32c1c-156">This could cause problems in your code.</span></span>  
+ <span data-ttu-id="94078-155">この例では、`pets.GetEnumerator` メソッドで `Cat` と `Dog` がどのように選択されるかが明らかではありません。</span><span class="sxs-lookup"><span data-stu-id="94078-155">In this example, it is unspecified how the `pets.GetEnumerator` method chooses between `Cat` and `Dog`.</span></span> <span data-ttu-id="94078-156">そのため、コードで問題が発生する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="94078-156">This could cause problems in your code.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="32c1c-157">関連項目</span><span class="sxs-lookup"><span data-stu-id="32c1c-157">See Also</span></span>  
- [<span data-ttu-id="32c1c-158">ジェネリック インターフェイスの分散 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="32c1c-158">Variance in Generic Interfaces (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md)  
- [<span data-ttu-id="32c1c-159">Func および Action 汎用デリゲートでの分散の使用 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="32c1c-159">Using Variance for Func and Action Generic Delegates (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md)
+## <a name="see-also"></a><span data-ttu-id="94078-157">関連項目</span><span class="sxs-lookup"><span data-stu-id="94078-157">See Also</span></span>  
+ [<span data-ttu-id="94078-158">ジェネリック インターフェイスの分散 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="94078-158">Variance in Generic Interfaces (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md)  
+ [<span data-ttu-id="94078-159">Func および Action 汎用デリゲートでの分散の使用 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="94078-159">Using Variance for Func and Action Generic Delegates (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md)

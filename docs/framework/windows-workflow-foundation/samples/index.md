@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33517359"
 ---
 # <a name="windows-workflow-wf-samples"></a><span data-ttu-id="855c8-102">Windows Workflow (WF) のサンプル</span><span class="sxs-lookup"><span data-stu-id="855c8-102">Windows Workflow (WF) Samples</span></span>
 <span data-ttu-id="855c8-103">これらのサンプルでは、に関するさまざまな Windows Workflow Foundation (WF) の命令を提供します。</span><span class="sxs-lookup"><span data-stu-id="855c8-103">These samples provide instruction on various aspects of Windows Workflow Foundation (WF).</span></span>  

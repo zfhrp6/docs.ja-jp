@@ -86,6 +86,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33605083"
 ---
 # <a name="type-conversion-functions-visual-basic"></a><span data-ttu-id="b6904-102">データ型変換関数 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="b6904-102">Type Conversion Functions (Visual Basic)</span></span>
 <span data-ttu-id="b6904-103">これらの関数は、コンパイルされたインラインで、変換コードは、式を評価するコードの一部を意味します。</span><span class="sxs-lookup"><span data-stu-id="b6904-103">These functions are compiled inline, meaning the conversion code is part of the code that evaluates the expression.</span></span> <span data-ttu-id="b6904-104">場合によってパフォーマンスを向上させると、変換を行うプロシージャへの呼び出しはありません。</span><span class="sxs-lookup"><span data-stu-id="b6904-104">Sometimes there is no call to a procedure to accomplish the conversion, which improves performance.</span></span> <span data-ttu-id="b6904-105">各関数は、式を特定のデータ型を変換します。</span><span class="sxs-lookup"><span data-stu-id="b6904-105">Each function coerces an expression to a specific data type.</span></span>  

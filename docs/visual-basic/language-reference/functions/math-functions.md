@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33604537"
 ---
 # <a name="math-functions-visual-basic"></a><span data-ttu-id="6f33a-102">数値演算関数 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="6f33a-102">Math Functions (Visual Basic)</span></span>
 <span data-ttu-id="6f33a-103">メソッド、<xref:System.Math?displayProperty=nameWithType>クラスは、三角関数演算、対数演算、およびその他の一般的な数学関数を提供します。</span><span class="sxs-lookup"><span data-stu-id="6f33a-103">The methods of the <xref:System.Math?displayProperty=nameWithType> class provide trigonometric, logarithmic, and other common mathematical functions.</span></span>  

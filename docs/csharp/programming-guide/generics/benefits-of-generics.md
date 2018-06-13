@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33336831"
 ---
 # <a name="benefits-of-generics-c-programming-guide"></a><span data-ttu-id="67c35-102">ジェネリックの利点 (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="67c35-102">Benefits of Generics (C# Programming Guide)</span></span>
 <span data-ttu-id="67c35-103">ジェネリックを使用することによって、汎用基本データ型 <xref:System.Object> との値で型をキャストして一般化を行う、共通言語ランタイムや C# 言語の以前のバージョンの制限を解決できます。</span><span class="sxs-lookup"><span data-stu-id="67c35-103">Generics provide the solution to a limitation in earlier versions of the common language runtime and the C# language in which generalization is accomplished by casting types to and from the universal base type <xref:System.Object>.</span></span> <span data-ttu-id="67c35-104">ジェネリック クラスを作成すると、コンパイル時にタイプ セーフなコレクションを作成できます。</span><span class="sxs-lookup"><span data-stu-id="67c35-104">By creating a generic class, you can create a collection that is type-safe at compile-time.</span></span>  

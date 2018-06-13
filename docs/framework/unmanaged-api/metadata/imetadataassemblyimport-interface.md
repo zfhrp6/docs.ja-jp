@@ -18,9 +18,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: da75f98edb54080658dc86f48d4ebb458d72f20d
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33449313"
 ---
 # <a name="imetadataassemblyimport-interface"></a><span data-ttu-id="928ff-102">IMetaDataAssemblyImport インターフェイス</span><span class="sxs-lookup"><span data-stu-id="928ff-102">IMetaDataAssemblyImport Interface</span></span>
 <span data-ttu-id="928ff-103">アセンブリ マニフェストの内容にアクセスして確認するメソッドを提供します。</span><span class="sxs-lookup"><span data-stu-id="928ff-103">Provides methods to access and examine the contents of an assembly manifest.</span></span>  

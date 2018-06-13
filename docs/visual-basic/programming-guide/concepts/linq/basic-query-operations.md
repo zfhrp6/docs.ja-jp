@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33644122"
 ---
 # <a name="basic-query-operations-visual-basic"></a><span data-ttu-id="56b15-102">基本的なクエリ操作 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="56b15-102">Basic Query Operations (Visual Basic)</span></span>
 <span data-ttu-id="56b15-103">このトピックでは、簡単な概要を[!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)]Visual Basic、および一般的な種類のクエリで実行する操作の一部に式。</span><span class="sxs-lookup"><span data-stu-id="56b15-103">This topic provides a brief introduction to [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] expressions in Visual Basic, and to some of the typical kinds of operations that you perform in a query.</span></span> <span data-ttu-id="56b15-104">詳細については、次のトピックを参照してください。</span><span class="sxs-lookup"><span data-stu-id="56b15-104">For more information, see the following topics:</span></span>  

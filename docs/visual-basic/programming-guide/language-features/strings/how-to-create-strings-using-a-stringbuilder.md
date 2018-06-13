@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33647733"
 ---
 # <a name="how-to-create-strings-using-a-stringbuilder-in-visual-basic"></a><span data-ttu-id="dcfe7-102">方法 : Visual Basic の StringBuilder を使用して文字列を作成する</span><span class="sxs-lookup"><span data-stu-id="dcfe7-102">How to: Create Strings Using a StringBuilder in Visual Basic</span></span>
 <span data-ttu-id="dcfe7-103">この例を使用して多数の小さな文字列から長い文字列を構築する、<xref:System.Text.StringBuilder>クラスです。</span><span class="sxs-lookup"><span data-stu-id="dcfe7-103">This example constructs a long string from many smaller strings using the <xref:System.Text.StringBuilder> class.</span></span> <span data-ttu-id="dcfe7-104"><xref:System.Text.StringBuilder>クラスより効率的、`&=`演算子を多数の文字列を連結する場合。</span><span class="sxs-lookup"><span data-stu-id="dcfe7-104">The <xref:System.Text.StringBuilder> class is more efficient than the `&=` operator for concatenating many strings.</span></span>  

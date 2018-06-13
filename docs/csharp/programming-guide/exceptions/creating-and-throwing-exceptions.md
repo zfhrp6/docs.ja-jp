@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33336057"
 ---
 # <a name="creating-and-throwing-exceptions-c-programming-guide"></a><span data-ttu-id="87885-102">例外の作成とスロー (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="87885-102">Creating and Throwing Exceptions (C# Programming Guide)</span></span>
 <span data-ttu-id="87885-103">例外は、プログラムの実行中にエラーが発生したことを示すために使われます。</span><span class="sxs-lookup"><span data-stu-id="87885-103">Exceptions are used to indicate that an error has occurred while running the program.</span></span> <span data-ttu-id="87885-104">エラーを説明する例外オブジェクトが作成された後、[throw](../../../csharp/language-reference/keywords/throw.md) キーワードで "*スロー*" されます。</span><span class="sxs-lookup"><span data-stu-id="87885-104">Exception objects that describe an error are created and then *thrown* with the [throw](../../../csharp/language-reference/keywords/throw.md) keyword.</span></span> <span data-ttu-id="87885-105">そのとき、ランタイムは最も互換性のある例外ハンドラーを検索します。</span><span class="sxs-lookup"><span data-stu-id="87885-105">The runtime then searches for the most compatible exception handler.</span></span>  

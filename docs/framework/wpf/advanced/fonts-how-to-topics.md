@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33543219"
 ---
 # <a name="fonts-how-to-topics"></a><span data-ttu-id="6764d-102">フォントに関する「方法」トピック</span><span class="sxs-lookup"><span data-stu-id="6764d-102">Fonts How-to Topics</span></span>
 <span data-ttu-id="6764d-103">このセクションのトピックに含まれているフォント機能を使用する方法をデモンストレーション[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]です。</span><span class="sxs-lookup"><span data-stu-id="6764d-103">The topics in this section demonstrate how to use the font features included with [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].</span></span>  

@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 15b102be5a792f982edeb320199576bdddbd859a
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33412361"
 ---
 # <a name="icordebugfunction2setjmcstatus-method"></a><span data-ttu-id="78c0f-102">ICorDebugFunction2::SetJMCStatus メソッド</span><span class="sxs-lookup"><span data-stu-id="78c0f-102">ICorDebugFunction2::SetJMCStatus Method</span></span>
 <span data-ttu-id="78c0f-103">関数をマイ コードのみをこの ICorDebugFunction2 によって表されるマークのステップ インします。</span><span class="sxs-lookup"><span data-stu-id="78c0f-103">Marks the function represented by this ICorDebugFunction2 for Just My Code stepping.</span></span>  

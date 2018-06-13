@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 22e35f06cfe5175ef3666dd5466d79384b17f2f2
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33411659"
 ---
 # <a name="icordebugeditandcontinuesnapshotsetilmap-method"></a><span data-ttu-id="42297-102">ICorDebugEditAndContinueSnapshot::SetILMap メソッド</span><span class="sxs-lookup"><span data-stu-id="42297-102">ICorDebugEditAndContinueSnapshot::SetILMap Method</span></span>
 <span data-ttu-id="42297-103">`SetILMap` は互換性のために残されています。</span><span class="sxs-lookup"><span data-stu-id="42297-103">`SetILMap` is obsolete.</span></span> <span data-ttu-id="42297-104">このメソッドを呼び出さないでください。</span><span class="sxs-lookup"><span data-stu-id="42297-104">Do not call this method.</span></span>  

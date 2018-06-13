@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33600728"
 ---
 # <a name="ltlt-operator-visual-basic"></a><span data-ttu-id="26990-102">&lt;&lt;= 演算子 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="26990-102">&lt;&lt;= Operator (Visual Basic)</span></span>
 <span data-ttu-id="26990-103">変数またはプロパティの値に対して算術左シフトを実行し、結果を変数またはプロパティに代入します。</span><span class="sxs-lookup"><span data-stu-id="26990-103">Performs an arithmetic left shift on the value of a variable or property and assigns the result back to the variable or property.</span></span>  

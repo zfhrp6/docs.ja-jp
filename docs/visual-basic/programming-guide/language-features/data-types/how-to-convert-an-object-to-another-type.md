@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33647619"
 ---
 # <a name="how-to-convert-an-object-to-another-type-in-visual-basic"></a><span data-ttu-id="d28db-102">方法: Visual Basic でオブジェクトを別の型に変換する</span><span class="sxs-lookup"><span data-stu-id="d28db-102">How to: Convert an Object to Another Type in Visual Basic</span></span>
 <span data-ttu-id="d28db-103">変換する、`Object`変数などの変換キーワードを使用して、別のデータ型を[CType 関数](../../../../visual-basic/language-reference/functions/ctype-function.md)です。</span><span class="sxs-lookup"><span data-stu-id="d28db-103">You convert an `Object` variable to another data type by using a conversion keyword such as [CType Function](../../../../visual-basic/language-reference/functions/ctype-function.md).</span></span>  

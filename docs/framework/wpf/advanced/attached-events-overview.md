@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33541740"
 ---
 # <a name="attached-events-overview"></a><span data-ttu-id="aaa82-102">添付イベントの概要</span><span class="sxs-lookup"><span data-stu-id="aaa82-102">Attached Events Overview</span></span>
 [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]<span data-ttu-id="aaa82-103"> は言語コンポーネントと*添付イベント*と呼ばれている種類のイベントを定義します。</span><span class="sxs-lookup"><span data-stu-id="aaa82-103"> defines a language component and type of event called an *attached event*.</span></span> <span data-ttu-id="aaa82-104">添付イベントという概念を利用すると、イベントを実際に定義または継承する要素にではなく、任意の要素に特定のイベントのハンドラーを追加できます。</span><span class="sxs-lookup"><span data-stu-id="aaa82-104">The concept of an attached event enables you to add a handler for a particular event to an arbitrary element rather than to an element that actually defines or inherits the event.</span></span> <span data-ttu-id="aaa82-105">この場合、イベントを発生させる可能性があるオブジェクトとターゲット処理インスタンスのいずれもイベントを定義せず、"所有" しません。</span><span class="sxs-lookup"><span data-stu-id="aaa82-105">In this case, neither the object potentially raising the event nor the destination handling instance defines or otherwise "owns" the event.</span></span>  

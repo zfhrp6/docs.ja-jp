@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33602763"
 ---
 # <a name="value-of-type-39type139-cannot-be-converted-to-39type239"></a><span data-ttu-id="679d5-102">型の値&#39;type1&#39;に変換できない&#39;type2&#39;</span><span class="sxs-lookup"><span data-stu-id="679d5-102">Value of type &#39;type1&#39; cannot be converted to &#39;type2&#39;</span></span>
 <span data-ttu-id="679d5-103">型 'type1' の値は、'type2' へ変換できません。</span><span class="sxs-lookup"><span data-stu-id="679d5-103">Value of type 'type1' cannot be converted to 'type2'.</span></span> <span data-ttu-id="679d5-104">最初の要素の文字列値を取得する、'Value' プロパティを使用することができます '\<parentElement >' です。</span><span class="sxs-lookup"><span data-stu-id="679d5-104">You can use the 'Value' property to get the string value of the first element of '\<parentElement>'.</span></span>  

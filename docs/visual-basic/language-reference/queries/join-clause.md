@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33603913"
 ---
 # <a name="join-clause-visual-basic"></a><span data-ttu-id="4d63c-102">Join 句 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="4d63c-102">Join Clause (Visual Basic)</span></span>
 <span data-ttu-id="4d63c-103">2 つのコレクションを単一のコレクションに結合します。</span><span class="sxs-lookup"><span data-stu-id="4d63c-103">Combines two collections into a single collection.</span></span> <span data-ttu-id="4d63c-104">結合操作を一致するキーに基づいて、使用、`Equals`演算子。</span><span class="sxs-lookup"><span data-stu-id="4d63c-104">The join operation is based on matching keys and uses the `Equals` operator.</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33488944"
 ---
 # <a name="configuration-based-activation-in-iis-and-was"></a><span data-ttu-id="89ee7-102">IIS と WAS における構成ベースのアクティブ化</span><span class="sxs-lookup"><span data-stu-id="89ee7-102">Configuration-Based Activation in IIS and WAS</span></span>
 <span data-ttu-id="89ee7-103">通常インターネット インフォメーション サービス (IIS) または Windows プロセス アクティブ化サービス (WAS) で Windows Communication Foundation (WCF) サービスをホストする場合は、.svc ファイルを提供する必要があります。</span><span class="sxs-lookup"><span data-stu-id="89ee7-103">Normally when hosting a Windows Communication Foundation (WCF) service under Internet Information Services (IIS) or Windows Process Activation Service (WAS), you must provide a .svc file.</span></span> <span data-ttu-id="89ee7-104">.svc ファイルには、サービスの名前と、オプションのカスタム サービス ホスト ファクトリが含まれています。</span><span class="sxs-lookup"><span data-stu-id="89ee7-104">The .svc file contains the name of the service and an optional custom service host factory.</span></span> <span data-ttu-id="89ee7-105">この追加ファイルによって、管理のオーバーヘッドが増加します。</span><span class="sxs-lookup"><span data-stu-id="89ee7-105">This additional file adds manageability overhead.</span></span> <span data-ttu-id="89ee7-106">構成ベースのアクティブ化機能により、.svc ファイルを用意する必要がなくなり、関連するオーバーヘッドも発生しません。</span><span class="sxs-lookup"><span data-stu-id="89ee7-106">The configuration-based activation feature removes the requirement to have a .svc file and therefore the associated overhead.</span></span>  

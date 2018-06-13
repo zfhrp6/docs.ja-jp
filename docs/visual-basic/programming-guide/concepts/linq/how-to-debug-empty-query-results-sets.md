@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33642975"
 ---
 # <a name="how-to-debug-empty-query-results-sets-visual-basic"></a><span data-ttu-id="c7b24-102">方法: 空のクエリの結果セット (Visual Basic) のデバッグ</span><span class="sxs-lookup"><span data-stu-id="c7b24-102">How to: Debug Empty Query Results Sets (Visual Basic)</span></span>
 <span data-ttu-id="c7b24-103">XML ツリーのクエリにおける最も一般的な問題の 1 つは、XML ツリーに既定の名前空間がある場合に、XML が名前空間に含まれていないものとして開発者がクエリを記述してしまうことです。</span><span class="sxs-lookup"><span data-stu-id="c7b24-103">One of the most common problems when querying XML trees is that if the XML tree has a default namespace, the developer sometimes writes the query as though the XML were not in a namespace.</span></span>  

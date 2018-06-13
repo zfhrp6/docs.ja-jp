@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33516192"
 ---
 # <a name="toolbox-service"></a><span data-ttu-id="31d3a-102">ツールボックス サービス</span><span class="sxs-lookup"><span data-stu-id="31d3a-102">Toolbox Service</span></span>
 <span data-ttu-id="31d3a-103">このサンプルでは、ワークフローのコンテキストに基づいて [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] ツールボックス アクティビティを更新する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="31d3a-103">This sample demonstrates how to update the [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] Toolbox activities based on the context of the workflow.</span></span> <span data-ttu-id="31d3a-104">このサンプルには、カスタム アクティビティが選択されているかどうかに基づいてツールボックスの内容を変更するワークフローが含まれています。</span><span class="sxs-lookup"><span data-stu-id="31d3a-104">The sample contains a workflow that changes the toolbox contents based on whether a custom activity is selected.</span></span>  

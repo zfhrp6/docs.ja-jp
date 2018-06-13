@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33338014"
 ---
 # <a name="ltparamgt-c-programming-guide"></a><span data-ttu-id="fa61b-102">&lt;param&gt; (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="fa61b-102">&lt;param&gt; (C# Programming Guide)</span></span>
 ## <a name="syntax"></a><span data-ttu-id="fa61b-103">構文</span><span class="sxs-lookup"><span data-stu-id="fa61b-103">Syntax</span></span>  

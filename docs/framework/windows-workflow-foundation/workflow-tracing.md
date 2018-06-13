@@ -1,41 +1,31 @@
 ---
-title: "ワークフロー トレース"
-ms.custom: 
+title: ワークフロー トレース
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 18737989-0502-4367-b5f6-617ebfb77c96
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b07dda940e35746a4d57c0cd300375692c6ab2f1
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f4ce25efae0e42fa7c95ce5dffe8da8e31db05a6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33518178"
 ---
-# <a name="workflow-tracing"></a><span data-ttu-id="7c2be-102">ワークフロー トレース</span><span class="sxs-lookup"><span data-stu-id="7c2be-102">Workflow Tracing</span></span>
-<span data-ttu-id="7c2be-103">ワークフロー トレースでは、.NET Framework のトレース リスナーを使用して診断情報を取得できます。</span><span class="sxs-lookup"><span data-stu-id="7c2be-103">Workflow tracing offers a way to capture diagnostic information using .NET Framework trace listeners.</span></span> <span data-ttu-id="7c2be-104">トレースは、アプリケーションで問題が検出された場合に有効にし、その問題が解決されたら、再度無効にすることが可能です。</span><span class="sxs-lookup"><span data-stu-id="7c2be-104">Tracing can be enabled if a problem is detected with the application and then disabled again once the problem is resolved.</span></span> <span data-ttu-id="7c2be-105">ワークフローのデバッグ トレースを有効にする方法は 2 つあります。</span><span class="sxs-lookup"><span data-stu-id="7c2be-105">There are two ways you could enable debug tracing for workflows.</span></span> <span data-ttu-id="7c2be-106">また、イベント トレース ビューアーを使用してトレースを構成したり、<xref:System.Diagnostics> を使用してトレース イベントをファイルに送信したりすることができます。</span><span class="sxs-lookup"><span data-stu-id="7c2be-106">You can configure it using the Event Trace viewer or you can use <xref:System.Diagnostics> to send trace events to a file.</span></span>  
+# <a name="workflow-tracing"></a><span data-ttu-id="5136b-102">ワークフロー トレース</span><span class="sxs-lookup"><span data-stu-id="5136b-102">Workflow Tracing</span></span>
+<span data-ttu-id="5136b-103">ワークフロー トレースでは、.NET Framework のトレース リスナーを使用して診断情報を取得できます。</span><span class="sxs-lookup"><span data-stu-id="5136b-103">Workflow tracing offers a way to capture diagnostic information using .NET Framework trace listeners.</span></span> <span data-ttu-id="5136b-104">トレースは、アプリケーションで問題が検出された場合に有効にし、その問題が解決されたら、再度無効にすることが可能です。</span><span class="sxs-lookup"><span data-stu-id="5136b-104">Tracing can be enabled if a problem is detected with the application and then disabled again once the problem is resolved.</span></span> <span data-ttu-id="5136b-105">ワークフローのデバッグ トレースを有効にする方法は 2 つあります。</span><span class="sxs-lookup"><span data-stu-id="5136b-105">There are two ways you could enable debug tracing for workflows.</span></span> <span data-ttu-id="5136b-106">また、イベント トレース ビューアーを使用してトレースを構成したり、<xref:System.Diagnostics> を使用してトレース イベントをファイルに送信したりすることができます。</span><span class="sxs-lookup"><span data-stu-id="5136b-106">You can configure it using the Event Trace viewer or you can use <xref:System.Diagnostics> to send trace events to a file.</span></span>  
   
-## <a name="enabling-debug-tracing-in-etw"></a><span data-ttu-id="7c2be-107">ETW でのデバッグ トレースの有効化</span><span class="sxs-lookup"><span data-stu-id="7c2be-107">Enabling Debug Tracing in ETW</span></span>  
- <span data-ttu-id="7c2be-108">ETW を使用してトレースを有効化するには、次の手順に従ってイベント ビューアーでデバッグ チャネルを有効化します。</span><span class="sxs-lookup"><span data-stu-id="7c2be-108">To enable tracing using ETW, enable the Debug channel in Event Viewer:</span></span>  
+## <a name="enabling-debug-tracing-in-etw"></a><span data-ttu-id="5136b-107">ETW でのデバッグ トレースの有効化</span><span class="sxs-lookup"><span data-stu-id="5136b-107">Enabling Debug Tracing in ETW</span></span>  
+ <span data-ttu-id="5136b-108">ETW を使用してトレースを有効化するには、次の手順に従ってイベント ビューアーでデバッグ チャネルを有効化します。</span><span class="sxs-lookup"><span data-stu-id="5136b-108">To enable tracing using ETW, enable the Debug channel in Event Viewer:</span></span>  
   
-1.  <span data-ttu-id="7c2be-109">イベント ビューアーで分析ログおよびデバッグ ログのノードに移動します。</span><span class="sxs-lookup"><span data-stu-id="7c2be-109">Navigate to analytic and debug logs node in Event Viewer.</span></span>  
+1.  <span data-ttu-id="5136b-109">イベント ビューアーで分析ログおよびデバッグ ログのノードに移動します。</span><span class="sxs-lookup"><span data-stu-id="5136b-109">Navigate to analytic and debug logs node in Event Viewer.</span></span>  
   
-2.  <span data-ttu-id="7c2be-110">イベント ビューアーのツリー ビューに移動**イベント ビューアー] の [アプリケーションとサービス ログ] の [Microsoft]-> [Windows アプリケーション サーバー-アプリケーション]-> [**です。</span><span class="sxs-lookup"><span data-stu-id="7c2be-110">In the tree view in Event Viewer, navigate to **Event Viewer->Applications and Services Logs->Microsoft->Windows->Application Server-Applications**.</span></span> <span data-ttu-id="7c2be-111">右クリック**アプリケーション サーバー-アプリケーション**選択**ビューでは、分析およびデバッグ ログ->** です。</span><span class="sxs-lookup"><span data-stu-id="7c2be-111">Right-click **Application Server-Applications** and select **View->Show Analytic and Debug Logs**.</span></span> <span data-ttu-id="7c2be-112">右クリック**デバッグ**選択**ログの有効化**です。</span><span class="sxs-lookup"><span data-stu-id="7c2be-112">Right-click **Debug** and select **Enable Log**.</span></span>  
+2.  <span data-ttu-id="5136b-110">イベント ビューアーのツリー ビューに移動**イベント ビューアー] の [アプリケーションとサービス ログ] の [Microsoft]-> [Windows アプリケーション サーバー-アプリケーション]-> [** です。</span><span class="sxs-lookup"><span data-stu-id="5136b-110">In the tree view in Event Viewer, navigate to **Event Viewer->Applications and Services Logs->Microsoft->Windows->Application Server-Applications**.</span></span> <span data-ttu-id="5136b-111">右クリック**アプリケーション サーバー-アプリケーション**選択**ビューでは、分析およびデバッグ ログ-> **です。</span><span class="sxs-lookup"><span data-stu-id="5136b-111">Right-click **Application Server-Applications** and select **View->Show Analytic and Debug Logs**.</span></span> <span data-ttu-id="5136b-112">右クリック**デバッグ**選択**ログの有効化**です。</span><span class="sxs-lookup"><span data-stu-id="5136b-112">Right-click **Debug** and select **Enable Log**.</span></span>  
   
-3.  <span data-ttu-id="7c2be-113">ワークフローがデバッグを実行し、トレースが ETW デバッグ チャネルに出力されると、トレースをイベント ビューアーで参照できます。</span><span class="sxs-lookup"><span data-stu-id="7c2be-113">When a workflow runs the debug and traces are emitted to ETW debug channel, they can be viewed in the Event Viewer.</span></span> <span data-ttu-id="7c2be-114">移動**イベント ビューアー] の [アプリケーションとサービス ログ] の [Microsoft]-> [Windows アプリケーション サーバー-アプリケーション]-> [**です。</span><span class="sxs-lookup"><span data-stu-id="7c2be-114">Navigate to **Event Viewer->Applications and Services Logs->Microsoft->Windows->Application Server-Applications**.</span></span> <span data-ttu-id="7c2be-115">右クリック**デバッグ**選択**更新**です。</span><span class="sxs-lookup"><span data-stu-id="7c2be-115">Right-click **Debug** and select **Refresh**.</span></span>  
+3.  <span data-ttu-id="5136b-113">ワークフローがデバッグを実行し、トレースが ETW デバッグ チャネルに出力されると、トレースをイベント ビューアーで参照できます。</span><span class="sxs-lookup"><span data-stu-id="5136b-113">When a workflow runs the debug and traces are emitted to ETW debug channel, they can be viewed in the Event Viewer.</span></span> <span data-ttu-id="5136b-114">移動**イベント ビューアー] の [アプリケーションとサービス ログ] の [Microsoft]-> [Windows アプリケーション サーバー-アプリケーション]-> [** です。</span><span class="sxs-lookup"><span data-stu-id="5136b-114">Navigate to **Event Viewer->Applications and Services Logs->Microsoft->Windows->Application Server-Applications**.</span></span> <span data-ttu-id="5136b-115">右クリック**デバッグ**選択**更新**です。</span><span class="sxs-lookup"><span data-stu-id="5136b-115">Right-click **Debug** and select **Refresh**.</span></span>  
   
-4.  <span data-ttu-id="7c2be-116">既定の分析トレースのバッファー サイズは 4 KB ですが、このサイズを 32 KB に増やすことをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="7c2be-116">The default analytic trace buffer size is only 4 kilobytes (KB); it is recommended to increase the size to 32 KB.</span></span> <span data-ttu-id="7c2be-117">これを行うには、次の手順を実行します。</span><span class="sxs-lookup"><span data-stu-id="7c2be-117">To do this, perform the following steps.</span></span>  
+4.  <span data-ttu-id="5136b-116">既定の分析トレースのバッファー サイズは 4 KB ですが、このサイズを 32 KB に増やすことをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="5136b-116">The default analytic trace buffer size is only 4 kilobytes (KB); it is recommended to increase the size to 32 KB.</span></span> <span data-ttu-id="5136b-117">これを行うには、次の手順を実行します。</span><span class="sxs-lookup"><span data-stu-id="5136b-117">To do this, perform the following steps.</span></span>  
   
-    1.  <span data-ttu-id="7c2be-118">現在のフレームワークのディレクトリ (C:\Windows\Microsoft.NET\Framework\v4.0.21203 など) で、次のコマンドを実行します。`wevtutil um Microsoft.Windows.ApplicationServer.Applications.man`</span><span class="sxs-lookup"><span data-stu-id="7c2be-118">Execute the following command in the current framework directory (for example, C:\Windows\Microsoft.NET\Framework\v4.0.21203): `wevtutil um Microsoft.Windows.ApplicationServer.Applications.man`</span></span>  
+    1.  <span data-ttu-id="5136b-118">現在のフレームワークのディレクトリ (C:\Windows\Microsoft.NET\Framework\v4.0.21203 など) で、次のコマンドを実行します。`wevtutil um Microsoft.Windows.ApplicationServer.Applications.man`</span><span class="sxs-lookup"><span data-stu-id="5136b-118">Execute the following command in the current framework directory (for example, C:\Windows\Microsoft.NET\Framework\v4.0.21203): `wevtutil um Microsoft.Windows.ApplicationServer.Applications.man`</span></span>  
   
-    2.  <span data-ttu-id="7c2be-119">変更、 \<bufferSize > 32 Windows.ApplicationServer.Applications.man ファイル内の値。</span><span class="sxs-lookup"><span data-stu-id="7c2be-119">Change the \<bufferSize> value in the Windows.ApplicationServer.Applications.man file to 32.</span></span>  
+    2.  <span data-ttu-id="5136b-119">変更、 \<bufferSize > 32 Windows.ApplicationServer.Applications.man ファイル内の値。</span><span class="sxs-lookup"><span data-stu-id="5136b-119">Change the \<bufferSize> value in the Windows.ApplicationServer.Applications.man file to 32.</span></span>  
   
         ```xml  
         <channel name="Microsoft-Windows-Application Server-Applications/Analytic" chid="ANALYTIC_CHANNEL" symbol="ANALYTIC_CHANNEL" type="Analytic" enabled="false" isolation="Application" message="$(string.MICROSOFT_WINDOWS_APPLICATIONSERVER_APPLICATIONS.channel.ANALYTIC_CHANNEL.message)" >  
@@ -45,13 +35,13 @@ ms.lasthandoff: 12/22/2017
                   </channel>  
         ```  
   
-    3.  <span data-ttu-id="7c2be-120">現在のフレームワークのディレクトリ (C:\Windows\Microsoft.NET\Framework\v4.0.21203 など) で、次のコマンドを実行します。`wevtutil im Microsoft.Windows.ApplicationServer.Applications.man`</span><span class="sxs-lookup"><span data-stu-id="7c2be-120">Execute the following command in the current framework directory (for example, C:\Windows\Microsoft.NET\Framework\v4.0.21203): `wevtutil im Microsoft.Windows.ApplicationServer.Applications.man`</span></span>  
+    3.  <span data-ttu-id="5136b-120">現在のフレームワークのディレクトリ (C:\Windows\Microsoft.NET\Framework\v4.0.21203 など) で、次のコマンドを実行します。`wevtutil im Microsoft.Windows.ApplicationServer.Applications.man`</span><span class="sxs-lookup"><span data-stu-id="5136b-120">Execute the following command in the current framework directory (for example, C:\Windows\Microsoft.NET\Framework\v4.0.21203): `wevtutil im Microsoft.Windows.ApplicationServer.Applications.man`</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="7c2be-121">.NET Framework 4 Client Profile を使用している場合は、.NET Framework 4 ディレクトリから次のコマンドを実行して ETW マニフェストを登録する必要がありますまず。`ServiceModelReg.exe –i –c:etw`</span><span class="sxs-lookup"><span data-stu-id="7c2be-121">If you are using the .NET Framework 4 Client Profile, you must first register the ETW manifest by running the following command from the .NET Framework 4 directory: `ServiceModelReg.exe –i –c:etw`</span></span>  
+>  <span data-ttu-id="5136b-121">.NET Framework 4 Client Profile を使用している場合は、.NET Framework 4 ディレクトリから次のコマンドを実行して ETW マニフェストを登録する必要がありますまず。 `ServiceModelReg.exe –i –c:etw`</span><span class="sxs-lookup"><span data-stu-id="5136b-121">If you are using the .NET Framework 4 Client Profile, you must first register the ETW manifest by running the following command from the .NET Framework 4 directory: `ServiceModelReg.exe –i –c:etw`</span></span>  
   
-## <a name="enabling-debug-tracing-using-systemdiagnostics"></a><span data-ttu-id="7c2be-122">System.Diagnostics によるデバッグ トレースの有効化</span><span class="sxs-lookup"><span data-stu-id="7c2be-122">Enabling Debug Tracing using System.Diagnostics</span></span>  
- <span data-ttu-id="7c2be-123">これらのリスナーは、ワークフロー アプリケーションの App.config ファイルまたはワークフロー サービスの Web.config ファイルで構成します。</span><span class="sxs-lookup"><span data-stu-id="7c2be-123">These listeners can be configured in the App.config file of the workflow application, or the Web.config for a workflow service.</span></span> <span data-ttu-id="7c2be-124">この例では、 [TextWriterTraceListener](http://go.microsoft.com/fwlink/?LinkId=165424)現在のディレクトリで MyTraceLog.txt ファイルにトレース情報を保存するように構成します。</span><span class="sxs-lookup"><span data-stu-id="7c2be-124">In this example, a [TextWriterTraceListener](http://go.microsoft.com/fwlink/?LinkId=165424) is configured to save tracing information to the MyTraceLog.txt file in the current directory.</span></span>  
+## <a name="enabling-debug-tracing-using-systemdiagnostics"></a><span data-ttu-id="5136b-122">System.Diagnostics によるデバッグ トレースの有効化</span><span class="sxs-lookup"><span data-stu-id="5136b-122">Enabling Debug Tracing using System.Diagnostics</span></span>  
+ <span data-ttu-id="5136b-123">これらのリスナーは、ワークフロー アプリケーションの App.config ファイルまたはワークフロー サービスの Web.config ファイルで構成します。</span><span class="sxs-lookup"><span data-stu-id="5136b-123">These listeners can be configured in the App.config file of the workflow application, or the Web.config for a workflow service.</span></span> <span data-ttu-id="5136b-124">この例では、 [TextWriterTraceListener](http://go.microsoft.com/fwlink/?LinkId=165424)現在のディレクトリで MyTraceLog.txt ファイルにトレース情報を保存するように構成します。</span><span class="sxs-lookup"><span data-stu-id="5136b-124">In this example, a [TextWriterTraceListener](http://go.microsoft.com/fwlink/?LinkId=165424) is configured to save tracing information to the MyTraceLog.txt file in the current directory.</span></span>  
   
 ```xml  
 <configuration>  
@@ -79,6 +69,6 @@ ms.lasthandoff: 12/22/2017
 </configuration>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="7c2be-125">参照</span><span class="sxs-lookup"><span data-stu-id="7c2be-125">See Also</span></span>  
- [<span data-ttu-id="7c2be-126">Windows Server App Fabric の監視</span><span class="sxs-lookup"><span data-stu-id="7c2be-126">Windows Server App Fabric Monitoring</span></span>](http://go.microsoft.com/fwlink/?LinkId=201273)  
- [<span data-ttu-id="7c2be-127">アプリケーション App Fabric の監視</span><span class="sxs-lookup"><span data-stu-id="7c2be-127">Monitoring Applications with App Fabric</span></span>](http://go.microsoft.com/fwlink/?LinkId=201275)
+## <a name="see-also"></a><span data-ttu-id="5136b-125">関連項目</span><span class="sxs-lookup"><span data-stu-id="5136b-125">See Also</span></span>  
+ [<span data-ttu-id="5136b-126">Windows Server App Fabric の監視</span><span class="sxs-lookup"><span data-stu-id="5136b-126">Windows Server App Fabric Monitoring</span></span>](http://go.microsoft.com/fwlink/?LinkId=201273)  
+ [<span data-ttu-id="5136b-127">アプリケーション App Fabric の監視</span><span class="sxs-lookup"><span data-stu-id="5136b-127">Monitoring Applications with App Fabric</span></span>](http://go.microsoft.com/fwlink/?LinkId=201275)

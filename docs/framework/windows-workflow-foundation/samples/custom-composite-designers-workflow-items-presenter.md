@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33516524"
 ---
 # <a name="custom-composite-designers---workflow-items-presenter"></a><span data-ttu-id="f2dc9-102">カスタム複合デザイナー - Workflow Items Presenter</span><span class="sxs-lookup"><span data-stu-id="f2dc9-102">Custom Composite Designers - Workflow Items Presenter</span></span>
 <span data-ttu-id="f2dc9-103"><xref:System.Activities.Presentation.WorkflowItemsPresenter?displayProperty=nameWithType> は、格納されている要素のコレクションを編集できる、WF デザイナー プログラミング モデル内の主要な型です。</span><span class="sxs-lookup"><span data-stu-id="f2dc9-103">The <xref:System.Activities.Presentation.WorkflowItemsPresenter?displayProperty=nameWithType> is a key type in the WF designer programming model that allows for the editing of a collection of contained elements.</span></span> <span data-ttu-id="f2dc9-104">このサンプルでは、このような編集可能なコレクションを表示するアクティビティ デザイナーの構築方法を示します。</span><span class="sxs-lookup"><span data-stu-id="f2dc9-104">This sample shows how to build an activity designer that surfaces such an editable collection.</span></span>  

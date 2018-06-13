@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33542039"
 ---
 # <a name="walkthrough-debugging-custom-windows-forms-controls-at-design-time"></a><span data-ttu-id="f4e76-102">チュートリアル : カスタム Windows フォーム コントロールのデザイン時のデバッグ</span><span class="sxs-lookup"><span data-stu-id="f4e76-102">Walkthrough: Debugging Custom Windows Forms Controls at Design Time</span></span>
 <span data-ttu-id="f4e76-103">カスタム コントロールを作成するときに、多くの場合、必要な場合が、デザイン時の動作をデバッグします。</span><span class="sxs-lookup"><span data-stu-id="f4e76-103">When you create a custom control, you will often find it necessary to debug its design-time behavior.</span></span> <span data-ttu-id="f4e76-104">これは、カスタム コントロールのカスタム デザイナーを作成している場合に特に当てはまります。</span><span class="sxs-lookup"><span data-stu-id="f4e76-104">This is especially true if you are authoring a custom designer for your custom control.</span></span> <span data-ttu-id="f4e76-105">詳細については、「[チュートリアル:、Windows フォーム コントロール利用の Visual Studio デザイン時の機能を作成する](../../../../docs/framework/winforms/controls/creating-a-wf-control-design-time-features.md)です。</span><span class="sxs-lookup"><span data-stu-id="f4e76-105">For details, see [Walkthrough: Creating a Windows Forms Control That Takes Advantage of Visual Studio Design-Time Features](../../../../docs/framework/winforms/controls/creating-a-wf-control-design-time-features.md).</span></span>  
