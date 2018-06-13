@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33365710"
 ---
 # <a name="sqlclient-support-for-high-availability-disaster-recovery"></a><span data-ttu-id="cad64-102">高可用性障害復旧のための SqlClient サポート</span><span class="sxs-lookup"><span data-stu-id="cad64-102">SqlClient Support for High Availability, Disaster Recovery</span></span>
 <span data-ttu-id="cad64-103">このトピックでは、高可用性、ディザスター リカバリーのための SqlClient サポート ([!INCLUDE[net_v45](../../../../../includes/net-v45-md.md)] に追加) である AlwaysOn 可用性グループについて説明します。</span><span class="sxs-lookup"><span data-stu-id="cad64-103">This topic discusses SqlClient support (added in [!INCLUDE[net_v45](../../../../../includes/net-v45-md.md)]) for high-availability, disaster recovery -- AlwaysOn Availability Groups.</span></span>  <span data-ttu-id="cad64-104">AlwaysOn 可用性グループ機能は、SQL Server 2012 に追加されました。</span><span class="sxs-lookup"><span data-stu-id="cad64-104">AlwaysOn Availability Groups feature was added to SQL Server 2012.</span></span> <span data-ttu-id="cad64-105">AlwaysOn 可用性グループの詳細については、SQL Server オンライン ブックを参照してください。</span><span class="sxs-lookup"><span data-stu-id="cad64-105">For more information about AlwaysOn Availability Groups, see SQL Server Books Online.</span></span>  

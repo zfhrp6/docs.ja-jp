@@ -1,38 +1,27 @@
 ---
-title: "操作のカスタマイズの概要"
-ms.custom: 
+title: 操作のカスタマイズの概要
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: a3546296-1443-4b88-aa6e-d41011041ba7
-caps.latest.revision: "2"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: 6d3491ccd183224063c435f6b377f60b175d5383
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: d495632faf2f57df21d07e0be85244d7ba9d9da7
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33359598"
 ---
-# <a name="customizing-operations-overview"></a><span data-ttu-id="6bd72-102">操作のカスタマイズの概要</span><span class="sxs-lookup"><span data-stu-id="6bd72-102">Customizing Operations: Overview</span></span>
-<span data-ttu-id="6bd72-103">既定では、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] は、対応付けに基づいて、挿入、更新、および削除の各操作のための動的な SQL を生成します。</span><span class="sxs-lookup"><span data-stu-id="6bd72-103">By default, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] generates dynamic SQL for insert, update, and delete operations based on mapping.</span></span> <span data-ttu-id="6bd72-104">しかし実際には、セキュリティや検証などを目的とした独自のビジネス ロジックを追加することが必要になる場合がよくあります。</span><span class="sxs-lookup"><span data-stu-id="6bd72-104">However, in practice you typically want to add your own business logic to provide for security, validation, and so forth.</span></span>  
+# <a name="customizing-operations-overview"></a><span data-ttu-id="8037c-102">操作のカスタマイズの概要</span><span class="sxs-lookup"><span data-stu-id="8037c-102">Customizing Operations: Overview</span></span>
+<span data-ttu-id="8037c-103">既定では、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] は、対応付けに基づいて、挿入、更新、および削除の各操作のための動的な SQL を生成します。</span><span class="sxs-lookup"><span data-stu-id="8037c-103">By default, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] generates dynamic SQL for insert, update, and delete operations based on mapping.</span></span> <span data-ttu-id="8037c-104">しかし実際には、セキュリティや検証などを目的とした独自のビジネス ロジックを追加することが必要になる場合がよくあります。</span><span class="sxs-lookup"><span data-stu-id="8037c-104">However, in practice you typically want to add your own business logic to provide for security, validation, and so forth.</span></span>  
   
- [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]<span data-ttu-id="6bd72-105">これらの操作をカスタマイズするための手法には、次の項目が含まれます。</span><span class="sxs-lookup"><span data-stu-id="6bd72-105"> techniques for customizing these operations include the following.</span></span>  
+ [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]<span data-ttu-id="8037c-105"> これらの操作をカスタマイズするための手法には、次の項目が含まれます。</span><span class="sxs-lookup"><span data-stu-id="8037c-105"> techniques for customizing these operations include the following.</span></span>  
   
-## <a name="loading-options"></a><span data-ttu-id="6bd72-106">読み込みオプション</span><span class="sxs-lookup"><span data-stu-id="6bd72-106">Loading Options</span></span>  
- <span data-ttu-id="6bd72-107">クエリで、データベースに接続するときに、メイン ターゲットに関係するデータをどれだけ取得するかを制御できます。</span><span class="sxs-lookup"><span data-stu-id="6bd72-107">In your queries, you can control how much data related to your main target is retrieved when you connect to the database.</span></span> <span data-ttu-id="6bd72-108">この機能は主に、<xref:System.Data.Linq.DataLoadOptions> を使用して実装します。</span><span class="sxs-lookup"><span data-stu-id="6bd72-108">This functionality is implemented largely by using <xref:System.Data.Linq.DataLoadOptions>.</span></span> <span data-ttu-id="6bd72-109">詳細については、次を参照してください。[遅延実行と即時読み込み](../../../../../../docs/framework/data/adonet/sql/linq/deferred-versus-immediate-loading.md)です。</span><span class="sxs-lookup"><span data-stu-id="6bd72-109">For more information, see [Deferred versus Immediate Loading](../../../../../../docs/framework/data/adonet/sql/linq/deferred-versus-immediate-loading.md).</span></span>  
+## <a name="loading-options"></a><span data-ttu-id="8037c-106">読み込みオプション</span><span class="sxs-lookup"><span data-stu-id="8037c-106">Loading Options</span></span>  
+ <span data-ttu-id="8037c-107">クエリで、データベースに接続するときに、メイン ターゲットに関係するデータをどれだけ取得するかを制御できます。</span><span class="sxs-lookup"><span data-stu-id="8037c-107">In your queries, you can control how much data related to your main target is retrieved when you connect to the database.</span></span> <span data-ttu-id="8037c-108">この機能は主に、<xref:System.Data.Linq.DataLoadOptions> を使用して実装します。</span><span class="sxs-lookup"><span data-stu-id="8037c-108">This functionality is implemented largely by using <xref:System.Data.Linq.DataLoadOptions>.</span></span> <span data-ttu-id="8037c-109">詳細については、次を参照してください。[遅延実行と即時読み込み](../../../../../../docs/framework/data/adonet/sql/linq/deferred-versus-immediate-loading.md)です。</span><span class="sxs-lookup"><span data-stu-id="8037c-109">For more information, see [Deferred versus Immediate Loading](../../../../../../docs/framework/data/adonet/sql/linq/deferred-versus-immediate-loading.md).</span></span>  
   
-## <a name="partial-methods"></a><span data-ttu-id="6bd72-110">部分メソッド</span><span class="sxs-lookup"><span data-stu-id="6bd72-110">Partial Methods</span></span>  
- <span data-ttu-id="6bd72-111">[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] による既定の対応付けでは、ビジネス ロジックの実装に使用できる部分メソッドが提供されます。</span><span class="sxs-lookup"><span data-stu-id="6bd72-111">In its default mapping, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] provides partial methods to help you implement your business logic.</span></span> <span data-ttu-id="6bd72-112">詳細については、次を参照してください。[を追加するビジネス ロジックでメソッドを使用して部分](../../../../../../docs/framework/data/adonet/sql/linq/adding-business-logic-by-using-partial-methods.md)です。</span><span class="sxs-lookup"><span data-stu-id="6bd72-112">For more information, see [Adding Business Logic By Using Partial Methods](../../../../../../docs/framework/data/adonet/sql/linq/adding-business-logic-by-using-partial-methods.md).</span></span>  
+## <a name="partial-methods"></a><span data-ttu-id="8037c-110">部分メソッド</span><span class="sxs-lookup"><span data-stu-id="8037c-110">Partial Methods</span></span>  
+ <span data-ttu-id="8037c-111">[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] による既定の対応付けでは、ビジネス ロジックの実装に使用できる部分メソッドが提供されます。</span><span class="sxs-lookup"><span data-stu-id="8037c-111">In its default mapping, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] provides partial methods to help you implement your business logic.</span></span> <span data-ttu-id="8037c-112">詳細については、次を参照してください。[を追加するビジネス ロジックでメソッドを使用して部分](../../../../../../docs/framework/data/adonet/sql/linq/adding-business-logic-by-using-partial-methods.md)です。</span><span class="sxs-lookup"><span data-stu-id="8037c-112">For more information, see [Adding Business Logic By Using Partial Methods](../../../../../../docs/framework/data/adonet/sql/linq/adding-business-logic-by-using-partial-methods.md).</span></span>  
   
-## <a name="stored-procedures-and-user-defined-functions"></a><span data-ttu-id="6bd72-113">ストアド プロシージャおよびユーザー定義関数</span><span class="sxs-lookup"><span data-stu-id="6bd72-113">Stored Procedures and User-Defined Functions</span></span>  
- [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]<span data-ttu-id="6bd72-114">ストアド プロシージャおよびユーザー定義関数の使用をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="6bd72-114"> supports the use of stored procedures and user-defined functions.</span></span> <span data-ttu-id="6bd72-115">ストアド プロシージャは、操作のカスタマイズによく使用されます。</span><span class="sxs-lookup"><span data-stu-id="6bd72-115">Stored procedures are frequently used to customize operations.</span></span> <span data-ttu-id="6bd72-116">詳細については、「[ストアド プロシージャ](../../../../../../docs/framework/data/adonet/sql/linq/stored-procedures.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="6bd72-116">For more information, see [Stored Procedures](../../../../../../docs/framework/data/adonet/sql/linq/stored-procedures.md).</span></span>  
+## <a name="stored-procedures-and-user-defined-functions"></a><span data-ttu-id="8037c-113">ストアド プロシージャおよびユーザー定義関数</span><span class="sxs-lookup"><span data-stu-id="8037c-113">Stored Procedures and User-Defined Functions</span></span>  
+ [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]<span data-ttu-id="8037c-114"> ストアド プロシージャおよびユーザー定義関数の使用をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="8037c-114"> supports the use of stored procedures and user-defined functions.</span></span> <span data-ttu-id="8037c-115">ストアド プロシージャは、操作のカスタマイズによく使用されます。</span><span class="sxs-lookup"><span data-stu-id="8037c-115">Stored procedures are frequently used to customize operations.</span></span> <span data-ttu-id="8037c-116">詳細については、「[ストアド プロシージャ](../../../../../../docs/framework/data/adonet/sql/linq/stored-procedures.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="8037c-116">For more information, see [Stored Procedures](../../../../../../docs/framework/data/adonet/sql/linq/stored-procedures.md).</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="6bd72-117">参照</span><span class="sxs-lookup"><span data-stu-id="6bd72-117">See Also</span></span>  
- [<span data-ttu-id="6bd72-118">挿入、更新、および削除の各操作のカスタマイズ</span><span class="sxs-lookup"><span data-stu-id="6bd72-118">Customizing Insert, Update, and Delete Operations</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/customizing-insert-update-and-delete-operations.md)
+## <a name="see-also"></a><span data-ttu-id="8037c-117">関連項目</span><span class="sxs-lookup"><span data-stu-id="8037c-117">See Also</span></span>  
+ [<span data-ttu-id="8037c-118">挿入、更新、および削除の各操作のカスタマイズ</span><span class="sxs-lookup"><span data-stu-id="8037c-118">Customizing Insert, Update, and Delete Operations</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/customizing-insert-update-and-delete-operations.md)

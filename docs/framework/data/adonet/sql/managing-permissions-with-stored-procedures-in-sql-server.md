@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33361285"
 ---
 # <a name="managing-permissions-with-stored-procedures-in-sql-server"></a><span data-ttu-id="d69e6-102">SQL Server でのストアド プロシージャを使用した権限の管理</span><span class="sxs-lookup"><span data-stu-id="d69e6-102">Managing Permissions with Stored Procedures in SQL Server</span></span>
 <span data-ttu-id="d69e6-103">データベースを多層的に防御する 1 つの方法として、あらゆるデータ アクセスをストアド プロシージャまたはユーザー定義関数を使って実装することが考えられます。</span><span class="sxs-lookup"><span data-stu-id="d69e6-103">One method of creating multiple lines of defense around your database is to implement all data access using stored procedures or user-defined functions.</span></span> <span data-ttu-id="d69e6-104">テーブルなど、基になるオブジェクトに対する権限をすべて取り消すか拒否し、ストアド プロシージャに対して EXECUTE 権限を付与するようにします。</span><span class="sxs-lookup"><span data-stu-id="d69e6-104">You revoke or deny all permissions to underlying objects, such as tables, and grant EXECUTE permissions on stored procedures.</span></span> <span data-ttu-id="d69e6-105">こうすることで、データやデータベース オブジェクトの周囲にセキュリティの境界を設けることができます。</span><span class="sxs-lookup"><span data-stu-id="d69e6-105">This effectively creates a security perimeter around your data and database objects.</span></span>  

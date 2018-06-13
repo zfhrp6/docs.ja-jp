@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33386965"
 ---
 # <a name="repair-the-net-framework"></a><span data-ttu-id="a1d0e-103">.NET Framework を修復する</span><span class="sxs-lookup"><span data-stu-id="a1d0e-103">Repair the .NET Framework</span></span>
 

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33388223"
 ---
 # <a name="exposing-com-components-to-the-net-framework"></a><span data-ttu-id="7162f-102">.NET Framework への COM コンポーネントの公開</span><span class="sxs-lookup"><span data-stu-id="7162f-102">Exposing COM Components to the .NET Framework</span></span>
 <span data-ttu-id="7162f-103">このセクションでは、既存の COM コンポーネントをマネージ コードに公開するために必要なプロセスをまとめています。</span><span class="sxs-lookup"><span data-stu-id="7162f-103">This section summarizes the process needed to expose an existing COM component to managed code.</span></span> <span data-ttu-id="7162f-104">.NET Framework と緊密に統合される COM サーバーの詳細については、「[Design Considerations for Interoperation](https://msdn.microsoft.com/library/b59637f6-fe35-40d6-ae72-901e7a707689(v=vs.100))」(相互運用のためのデザインの考慮事項) を参照してください。</span><span class="sxs-lookup"><span data-stu-id="7162f-104">For details about writing COM servers that tightly integrate with the .NET Framework, see [Design Considerations for Interoperation](https://msdn.microsoft.com/library/b59637f6-fe35-40d6-ae72-901e7a707689(v=vs.100)).</span></span>

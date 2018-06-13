@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33638555"
 ---
 # <a name="the-value-of-ltargumentnamegt-must-be-a-positive-number"></a><span data-ttu-id="d02b1-102">値&lt;argumentname&gt;正数である必要があります</span><span class="sxs-lookup"><span data-stu-id="d02b1-102">The value of &lt;argumentname&gt; must be a positive number</span></span>
 <span data-ttu-id="d02b1-103"><xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.ReserveDiskSpace%2A> プロパティの値は 0 より大きい必要があります。</span><span class="sxs-lookup"><span data-stu-id="d02b1-103">The value of the <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.ReserveDiskSpace%2A> property must be greater than zero.</span></span>  

@@ -17,6 +17,7 @@ ms.sourcegitcommit: 88f251b08bf0718ce119f3d7302f514b74895038
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/10/2018
+ms.locfileid: "33955954"
 ---
 # <a name="synchronous-server-socket-example"></a><span data-ttu-id="edf34-102">同期サーバー ソケットの例</span><span class="sxs-lookup"><span data-stu-id="edf34-102">Synchronous Server Socket Example</span></span>
 <span data-ttu-id="edf34-103">次のプログラム例では、クライアントからの接続要求を受け取るサーバーを作成します。</span><span class="sxs-lookup"><span data-stu-id="edf34-103">The following example program creates a server that receives connection requests from clients.</span></span> <span data-ttu-id="edf34-104">このサーバーは同期ソケットで構築されます。そのため、サーバー アプリケーションの実行は、クライアントからの接続を待っている間、一時停止となります。</span><span class="sxs-lookup"><span data-stu-id="edf34-104">The server is built with a synchronous socket, so execution of the server application is suspended while it waits for a connection from a client.</span></span> <span data-ttu-id="edf34-105">このアプリケーションはクライアントから文字列を受信し、それをコンソールに表示し、クライアントにエコー バックします。</span><span class="sxs-lookup"><span data-stu-id="edf34-105">The application receives a string from the client, displays the string on the console, and then echoes the string back to the client.</span></span> <span data-ttu-id="edf34-106">クライアントからの文字列には、文字列 "\<EOF>" が含まれている必要があります。これは、メッセージの終わりを伝えるためのものです。</span><span class="sxs-lookup"><span data-stu-id="edf34-106">The string from the client must contain the string "\<EOF>" to signal the end of the message.</span></span>  

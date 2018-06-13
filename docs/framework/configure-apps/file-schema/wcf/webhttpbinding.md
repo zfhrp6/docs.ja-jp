@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33365541"
 ---
 # <a name="ltwebhttpbindinggt"></a><span data-ttu-id="7d468-102">&lt;webHttpBinding&gt;</span><span class="sxs-lookup"><span data-stu-id="7d468-102">&lt;webHttpBinding&gt;</span></span>
 <span data-ttu-id="7d468-103">SOAP メッセージに代わって HTTP 要求に応答する Windows Communication Foundation (WCF) Web サービスのエンドポイントを構成するために使用するバインド要素を定義します。</span><span class="sxs-lookup"><span data-stu-id="7d468-103">Defines a binding element that is used to configure endpoints for Windows Communication Foundation (WCF) Web services that respond to HTTP requests instead of SOAP messages.</span></span>  

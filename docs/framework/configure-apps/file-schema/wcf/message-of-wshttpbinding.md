@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33364626"
 ---
 # <a name="ltmessagegt-of-ltwshttpbindinggt"></a><span data-ttu-id="bb97f-102">&lt;wsHttpBinding&gt; の &lt;message&gt;</span><span class="sxs-lookup"><span data-stu-id="bb97f-102">&lt;message&gt; of &lt;wsHttpBinding&gt;</span></span>
 <span data-ttu-id="bb97f-103">メッセージ レベルのセキュリティの設定を定義、 [ \<wsHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)です。</span><span class="sxs-lookup"><span data-stu-id="bb97f-103">Defines settings for message-level security of the [\<wsHttpBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md).</span></span>  

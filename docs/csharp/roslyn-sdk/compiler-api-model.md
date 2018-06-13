@@ -8,6 +8,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33363689"
 ---
 # <a name="understand-the-net-compiler-platform-sdk-model"></a><span data-ttu-id="9384b-104">.NET Compiler Platform SDK モデルについて</span><span class="sxs-lookup"><span data-stu-id="9384b-104">Understand the .NET Compiler Platform SDK model</span></span>
 

@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33364180"
 ---
 # <a name="asynchronousthreadabort-mda"></a><span data-ttu-id="495b8-102">asynchronousThreadAbort MDA</span><span class="sxs-lookup"><span data-stu-id="495b8-102">asynchronousThreadAbort MDA</span></span>
 <span data-ttu-id="495b8-103">`asynchronousThreadAbort` マネージ デバッグ アシスタント (MDA) は、スレッドが別のスレッドに非同期の中止処理を適用しようとするとアクティブになります。</span><span class="sxs-lookup"><span data-stu-id="495b8-103">The `asynchronousThreadAbort` managed debugging assistant (MDA) is activated when a thread attempts to introduce an asynchronous abort into another thread.</span></span> <span data-ttu-id="495b8-104">同期のスレッド中止では、`asynchronousThreadAbort` MDA はアクティブになりません。</span><span class="sxs-lookup"><span data-stu-id="495b8-104">Synchronous thread aborts do not activate the `asynchronousThreadAbort` MDA.</span></span>

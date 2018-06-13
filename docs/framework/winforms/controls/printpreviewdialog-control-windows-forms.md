@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33538380"
 ---
 # <a name="printpreviewdialog-control-windows-forms"></a><span data-ttu-id="7c176-102">PrintPreviewDialog コントロール (Windows フォーム)</span><span class="sxs-lookup"><span data-stu-id="7c176-102">PrintPreviewDialog Control (Windows Forms)</span></span>
 <span data-ttu-id="7c176-103">Windows フォームの `PrintPreviewDialog` コントロールは、ドキュメントを印刷時の状態で表示するために使用される事前構成済みダイアログ ボックスです。</span><span class="sxs-lookup"><span data-stu-id="7c176-103">The Windows Forms `PrintPreviewDialog` control is a pre-configured dialog box used to display how a document will appear when printed.</span></span> <span data-ttu-id="7c176-104">このコントロールは、独自のダイアログ ボックスを使用しない簡易ソリューションとして、Windows ベースのアプリケーションの中で使用します。</span><span class="sxs-lookup"><span data-stu-id="7c176-104">Use it within your Windows-based application as a simple solution in lieu of configuring your own dialog box.</span></span> <span data-ttu-id="7c176-105">このコントロールには、印刷を開始するボタン、ズーム イン用のボタン、1 ページまたは複数ページを表示するボタン、およびダイアログ ボックスを閉じるためのボタンが含まれています。</span><span class="sxs-lookup"><span data-stu-id="7c176-105">The control contains buttons for printing, zooming in, displaying one or multiple pages, and closing the dialog box.</span></span>  

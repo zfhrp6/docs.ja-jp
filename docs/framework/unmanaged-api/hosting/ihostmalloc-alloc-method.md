@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 7d67704aae80113bd41df5ea38acf2a794aacbac
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33439047"
 ---
 # <a name="ihostmallocalloc-method"></a><span data-ttu-id="eaeb1-102">IHostMAlloc::Alloc メソッド</span><span class="sxs-lookup"><span data-stu-id="eaeb1-102">IHostMAlloc::Alloc Method</span></span>
 <span data-ttu-id="eaeb1-103">要求のホストが、ヒープから指定されたメモリ量を割り当てることです。</span><span class="sxs-lookup"><span data-stu-id="eaeb1-103">Requests that the host allocate the specified amount of memory from the heap.</span></span>  

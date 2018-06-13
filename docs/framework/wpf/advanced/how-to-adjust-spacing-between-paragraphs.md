@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33542949"
 ---
 # <a name="how-to-adjust-spacing-between-paragraphs"></a><span data-ttu-id="13f88-102">方法 : 段落間の間隔を調整する</span><span class="sxs-lookup"><span data-stu-id="13f88-102">How to: Adjust Spacing Between Paragraphs</span></span>
 <span data-ttu-id="13f88-103">この例では、調整またはフロー コンテンツ内の段落の間隔を排除する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="13f88-103">This example shows how to adjust or eliminate spacing between paragraphs in flow content.</span></span>  

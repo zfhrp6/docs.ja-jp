@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33361079"
 ---
 # <a name="signing-stored-procedures-in-sql-server"></a><span data-ttu-id="86e02-102">SQL Server でのストアド プロシージャの署名</span><span class="sxs-lookup"><span data-stu-id="86e02-102">Signing Stored Procedures in SQL Server</span></span>
  <span data-ttu-id="86e02-103">デジタル署名は、署名者の秘密キーで暗号化されたデータ ダイジェストです。</span><span class="sxs-lookup"><span data-stu-id="86e02-103">A digital signature is a data digest encrypted with the private key of the signer.</span></span> <span data-ttu-id="86e02-104">秘密キーにより、デジタル署名がその保持者または所有者に固有であることが保証されます。</span><span class="sxs-lookup"><span data-stu-id="86e02-104">The private key ensures that the digital signature is unique to its bearer or owner.</span></span> <span data-ttu-id="86e02-105">ストアド プロシージャ、関数 (インライン テーブル値関数) を除く、トリガー、およびアセンブリを署名することができます。</span><span class="sxs-lookup"><span data-stu-id="86e02-105">You can sign stored procedures, functions (except for inline table-valued functions), triggers, and assemblies.</span></span>  

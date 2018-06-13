@@ -13,6 +13,7 @@ ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/15/2018
+ms.locfileid: "34172020"
 ---
 # <a name="as-c-reference"></a><span data-ttu-id="95c26-102">as (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="95c26-102">as (C# Reference)</span></span>
 <span data-ttu-id="95c26-103">`as` 演算子を使用して、互換性のある参照型または [null 許容型](../../../csharp/programming-guide/nullable-types/index.md)間で特定の型変換を実行できます。</span><span class="sxs-lookup"><span data-stu-id="95c26-103">You can use the `as` operator to perform certain types of conversions between compatible reference types or [nullable types](../../../csharp/programming-guide/nullable-types/index.md).</span></span> <span data-ttu-id="95c26-104">次のコードは一例を示しています。</span><span class="sxs-lookup"><span data-stu-id="95c26-104">The following code shows an example.</span></span>  

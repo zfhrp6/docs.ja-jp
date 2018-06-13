@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33539667"
 ---
 # <a name="how-to-develop-a-simple-windows-forms-control"></a><span data-ttu-id="533e1-102">方法 : シンプルな Windows フォーム コントロールを開発する</span><span class="sxs-lookup"><span data-stu-id="533e1-102">How to: Develop a Simple Windows Forms Control</span></span>
 <span data-ttu-id="533e1-103">ここでは、カスタム Windows フォーム コントロールの主な作成手順を紹介します。</span><span class="sxs-lookup"><span data-stu-id="533e1-103">This section walks you through the key steps for authoring a custom Windows Forms control.</span></span> <span data-ttu-id="533e1-104">このチュートリアルで開発された単純なコントロールでの配置は、その<xref:System.Windows.Forms.Control.Text%2A>プロパティを変更します。</span><span class="sxs-lookup"><span data-stu-id="533e1-104">The simple control developed in this walkthrough allows the alignment of its <xref:System.Windows.Forms.Control.Text%2A> property to be changed.</span></span> <span data-ttu-id="533e1-105">イベントを発生させたり処理したりすることはありません。</span><span class="sxs-lookup"><span data-stu-id="533e1-105">It does not raise or handle events.</span></span>  

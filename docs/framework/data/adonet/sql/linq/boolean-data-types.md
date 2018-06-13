@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33361573"
 ---
 # <a name="boolean-data-types"></a><span data-ttu-id="297b9-102">ブール型</span><span class="sxs-lookup"><span data-stu-id="297b9-102">Boolean Data Types</span></span>
 <span data-ttu-id="297b9-103">ブール演算子は、共通言語ランタイム (CLR) で正常に動作しますが、ショートサーキットの動作は変換されません。</span><span class="sxs-lookup"><span data-stu-id="297b9-103">Boolean operators work as expected in the common language runtime (CLR), except that short-circuiting behavior is not translated.</span></span> <span data-ttu-id="297b9-104">たとえば、Visual Basic の `AndAlso` 演算子は `And` 演算子のように動作します。</span><span class="sxs-lookup"><span data-stu-id="297b9-104">For example, the Visual Basic `AndAlso` operator behaves like the `And` operator.</span></span> <span data-ttu-id="297b9-105">C# の `&&` 演算子は `&` 演算子のように動作します。</span><span class="sxs-lookup"><span data-stu-id="297b9-105">The C# `&&` operator behaves like the `&` operator.</span></span>  

@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 1dccb2a3a3f3aaf0f209c8f3543056ab81c562dd
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33443900"
 ---
 # <a name="iceegenemitstring-method"></a><span data-ttu-id="33d8f-102">ICeeGen::EmitString メソッド</span><span class="sxs-lookup"><span data-stu-id="33d8f-102">ICeeGen::EmitString Method</span></span>
 <span data-ttu-id="33d8f-103">コード ベースに、指定した文字列を出力します。</span><span class="sxs-lookup"><span data-stu-id="33d8f-103">Emits the specified string into the code base.</span></span>  

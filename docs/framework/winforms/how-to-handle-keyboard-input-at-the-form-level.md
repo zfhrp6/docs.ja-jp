@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33541097"
 ---
 # <a name="how-to-handle-keyboard-input-at-the-form-level"></a><span data-ttu-id="6ddcf-102">方法 : キーボード入力をフォーム レベルで処理する</span><span class="sxs-lookup"><span data-stu-id="6ddcf-102">How to: Handle Keyboard Input at the Form Level</span></span>
 <span data-ttu-id="6ddcf-103">Windows フォームでは、キーボード メッセージがコントロールに到達する前に、それらのメッセージをフォーム レベルで処理できます。</span><span class="sxs-lookup"><span data-stu-id="6ddcf-103">Windows Forms provides the ability to handle keyboard messages at the form level, before the messages reach a control.</span></span> <span data-ttu-id="6ddcf-104">ここでは、このタスクを実行する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="6ddcf-104">This topic shows how to accomplish this task.</span></span>  

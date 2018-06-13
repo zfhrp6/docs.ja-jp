@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: d447bd9712fc925cd738bd0c530d8329f510a5f3
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33437379"
 ---
 # <a name="iclrtaskmanagergetcurrenttask-method"></a><span data-ttu-id="51ca9-102">ICLRTaskManager::GetCurrentTask メソッド</span><span class="sxs-lookup"><span data-stu-id="51ca9-102">ICLRTaskManager::GetCurrentTask Method</span></span>
 <span data-ttu-id="51ca9-103">取得、 [ICLRTask](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)メソッドの呼び出しの発生元となるオペレーティング システムのスレッドで現在実行されているインスタンス。</span><span class="sxs-lookup"><span data-stu-id="51ca9-103">Gets the [ICLRTask](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md) instance that is currently running on the operating system thread from which the method call originated.</span></span>  

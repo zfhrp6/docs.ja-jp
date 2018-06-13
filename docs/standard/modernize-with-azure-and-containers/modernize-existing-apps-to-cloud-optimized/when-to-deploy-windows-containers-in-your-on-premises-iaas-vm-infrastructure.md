@@ -9,6 +9,7 @@ ms.sourcegitcommit: 88f251b08bf0718ce119f3d7302f514b74895038
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/10/2018
+ms.locfileid: "33958162"
 ---
 # <a name="when-to-deploy-windows-containers-in-your-on-premises-iaas-vm-infrastructure"></a><span data-ttu-id="3ef9d-103">オンプレミスで Windows コンテナーを展開するときに IaaS VM インフラストラクチャ</span><span class="sxs-lookup"><span data-stu-id="3ef9d-103">When to deploy Windows Containers in your on-premises IaaS VM infrastructure</span></span>
 

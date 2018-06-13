@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33541938"
 ---
 # <a name="dependency-property-value-precedence"></a><span data-ttu-id="6bd0d-102">依存関係プロパティ値の優先順位</span><span class="sxs-lookup"><span data-stu-id="6bd0d-102">Dependency Property Value Precedence</span></span>
 <a name="introduction"></a><span data-ttu-id="6bd0d-103">このトピックでは、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] プロパティ システムの動作が依存関係プロパティの値に与える影響と、システムのさまざまな部分がプロパティの有効な値に適用する優先順位について説明します。</span><span class="sxs-lookup"><span data-stu-id="6bd0d-103">This topic explains how the workings of the [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] property system can affect the value of a dependency property, and describes the precedence by which aspects of the property system apply to the effective value of a property.</span></span>  

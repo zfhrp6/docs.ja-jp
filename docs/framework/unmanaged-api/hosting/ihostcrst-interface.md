@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 88f2ef8299911905d651ad5c3076dc9c74f397f8
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33438920"
 ---
 # <a name="ihostcrst-interface"></a><span data-ttu-id="610cc-102">IHostCrst インターフェイス</span><span class="sxs-lookup"><span data-stu-id="610cc-102">IHostCrst Interface</span></span>
 <span data-ttu-id="610cc-103">スレッド処理の重要なセクションのホストの表現として機能します。</span><span class="sxs-lookup"><span data-stu-id="610cc-103">Serves as the host's representation of a critical section for threading.</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33363191"
 ---
 # <a name="ltmessagegt-of-ltws2007httpbindinggt"></a><span data-ttu-id="d3fcd-102">&lt;ws2007HttpBinding&gt; の &lt;message&gt;</span><span class="sxs-lookup"><span data-stu-id="d3fcd-102">&lt;message&gt; of &lt;ws2007HttpBinding&gt;</span></span>
 <span data-ttu-id="d3fcd-103">メッセージ レベルのセキュリティの設定を定義、 [ \<ws2007HttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/ws2007httpbinding.md)要素。</span><span class="sxs-lookup"><span data-stu-id="d3fcd-103">Defines settings for message-level security of the [\<ws2007HttpBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/ws2007httpbinding.md) element.</span></span>  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33364478"
 ---
 # <a name="sql-server-connection-pooling-adonet"></a><span data-ttu-id="fe60f-102">SQL Server の接続プール (ADO.NET)</span><span class="sxs-lookup"><span data-stu-id="fe60f-102">SQL Server Connection Pooling (ADO.NET)</span></span>
 <span data-ttu-id="fe60f-103">通常、データベース サーバーへの接続は、時間のかかるいくつかの手順で構成されています。</span><span class="sxs-lookup"><span data-stu-id="fe60f-103">Connecting to a database server typically consists of several time-consuming steps.</span></span> <span data-ttu-id="fe60f-104">ソケットまたは名前付きパイプなどの物理チャネルの確立、サーバーとの最初のハンドシェイクの実行、接続文字列の情報の解析、サーバーによる接続の認証、現在のトランザクションへ参加するための検証などの手順を行う必要があります。</span><span class="sxs-lookup"><span data-stu-id="fe60f-104">A physical channel such as a socket or a named pipe must be established, the initial handshake with the server must occur, the connection string information must be parsed, the connection must be authenticated by the server, checks must be run for enlisting in the current transaction, and so on.</span></span>  

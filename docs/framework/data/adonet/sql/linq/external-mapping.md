@@ -1,54 +1,41 @@
 ---
 title: 外部マップ
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-ado
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 076606b8-d889-4ba0-b5da-ae577b146f23
-caps.latest.revision: 2
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload:
-- dotnet
-ms.openlocfilehash: 99b5a37778299f541a59707708edba244ab2f806
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 640dff5555ab346782825c44ded758a681226648
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33365216"
 ---
-# <a name="external-mapping"></a><span data-ttu-id="e87ea-102">外部マップ</span><span class="sxs-lookup"><span data-stu-id="e87ea-102">External Mapping</span></span>
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]<span data-ttu-id="e87ea-103"> サポートしている*外部マッピング*、これによって、データベースのデータ モデルと、オブジェクト モデルの間のマッピングを指定する別の XML ファイルを使用するプロセスです。</span><span class="sxs-lookup"><span data-stu-id="e87ea-103"> supports *external mapping*, a process by which you use a separate XML file to specify mapping between the data model of the database and your object model.</span></span> <span data-ttu-id="e87ea-104">外部マッピング ファイルを使用すると、次のような利点があります。</span><span class="sxs-lookup"><span data-stu-id="e87ea-104">Advantages of using an external mapping file include the following:</span></span>  
+# <a name="external-mapping"></a><span data-ttu-id="3a592-102">外部マップ</span><span class="sxs-lookup"><span data-stu-id="3a592-102">External Mapping</span></span>
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]<span data-ttu-id="3a592-103"> サポートしている*外部マッピング*、これによって、データベースのデータ モデルと、オブジェクト モデルの間のマッピングを指定する別の XML ファイルを使用するプロセスです。</span><span class="sxs-lookup"><span data-stu-id="3a592-103"> supports *external mapping*, a process by which you use a separate XML file to specify mapping between the data model of the database and your object model.</span></span> <span data-ttu-id="3a592-104">外部マッピング ファイルを使用すると、次のような利点があります。</span><span class="sxs-lookup"><span data-stu-id="3a592-104">Advantages of using an external mapping file include the following:</span></span>  
   
--   <span data-ttu-id="e87ea-105">マッピング コードをアプリケーション コードから分離できます。</span><span class="sxs-lookup"><span data-stu-id="e87ea-105">You can keep your mapping code out of your application code.</span></span> <span data-ttu-id="e87ea-106">この方法により、アプリケーション コードの煩雑さが軽減されます。</span><span class="sxs-lookup"><span data-stu-id="e87ea-106">This approach reduces clutter in your application code.</span></span>  
+-   <span data-ttu-id="3a592-105">マッピング コードをアプリケーション コードから分離できます。</span><span class="sxs-lookup"><span data-stu-id="3a592-105">You can keep your mapping code out of your application code.</span></span> <span data-ttu-id="3a592-106">この方法により、アプリケーション コードの煩雑さが軽減されます。</span><span class="sxs-lookup"><span data-stu-id="3a592-106">This approach reduces clutter in your application code.</span></span>  
   
--   <span data-ttu-id="e87ea-107">外部マッピング ファイルは、構成ファイルのような方法で扱うことができます。</span><span class="sxs-lookup"><span data-stu-id="e87ea-107">You can treat an external mapping file something like a configuration file.</span></span> <span data-ttu-id="e87ea-108">たとえば、バイナリを配布した後、外部マッピング ファイルを交換するだけでアプリケーションの動作を更新できます。</span><span class="sxs-lookup"><span data-stu-id="e87ea-108">For example, you can update how your application behaves after shipping the binaries by just swapping out the external mapping file.</span></span>  
+-   <span data-ttu-id="3a592-107">外部マッピング ファイルは、構成ファイルのような方法で扱うことができます。</span><span class="sxs-lookup"><span data-stu-id="3a592-107">You can treat an external mapping file something like a configuration file.</span></span> <span data-ttu-id="3a592-108">たとえば、バイナリを配布した後、外部マッピング ファイルを交換するだけでアプリケーションの動作を更新できます。</span><span class="sxs-lookup"><span data-stu-id="3a592-108">For example, you can update how your application behaves after shipping the binaries by just swapping out the external mapping file.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="e87ea-109">要件</span><span class="sxs-lookup"><span data-stu-id="e87ea-109">Requirements</span></span>  
- <span data-ttu-id="e87ea-110">マッピング ファイルは、XML ファイルである必要があり、ファイルが検証のため、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]スキーマ定義 (.xsd) ファイル。</span><span class="sxs-lookup"><span data-stu-id="e87ea-110">The mapping file must be an XML file, and the file must validate against a [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] schema definition (.xsd) file.</span></span>  
+## <a name="requirements"></a><span data-ttu-id="3a592-109">要件</span><span class="sxs-lookup"><span data-stu-id="3a592-109">Requirements</span></span>  
+ <span data-ttu-id="3a592-110">マッピング ファイルは、XML ファイルである必要があり、ファイルが検証のため、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]スキーマ定義 (.xsd) ファイル。</span><span class="sxs-lookup"><span data-stu-id="3a592-110">The mapping file must be an XML file, and the file must validate against a [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] schema definition (.xsd) file.</span></span>  
   
- <span data-ttu-id="e87ea-111">次の規則が適用されます。</span><span class="sxs-lookup"><span data-stu-id="e87ea-111">The following rules apply:</span></span>  
+ <span data-ttu-id="3a592-111">次の規則が適用されます。</span><span class="sxs-lookup"><span data-stu-id="3a592-111">The following rules apply:</span></span>  
   
--   <span data-ttu-id="e87ea-112">マッピング ファイルは XML ファイルである必要があります。</span><span class="sxs-lookup"><span data-stu-id="e87ea-112">The mapping file must be an XML file.</span></span>  
+-   <span data-ttu-id="3a592-112">マッピング ファイルは XML ファイルである必要があります。</span><span class="sxs-lookup"><span data-stu-id="3a592-112">The mapping file must be an XML file.</span></span>  
   
--   <span data-ttu-id="e87ea-113">XML マッピング ファイルは、XML スキーマ定義ファイルに対して有効である必要があります。</span><span class="sxs-lookup"><span data-stu-id="e87ea-113">The XML mapping file must be valid against the XML schema definition file.</span></span> <span data-ttu-id="e87ea-114">詳細については、次を参照してください。[する方法: 検証の DBML ファイルおよび外部マッピング ファイル](../../../../../../docs/framework/data/adonet/sql/linq/how-to-validate-dbml-and-external-mapping-files.md)です。</span><span class="sxs-lookup"><span data-stu-id="e87ea-114">For more information, see [How to: Validate DBML and External Mapping Files](../../../../../../docs/framework/data/adonet/sql/linq/how-to-validate-dbml-and-external-mapping-files.md).</span></span>  
+-   <span data-ttu-id="3a592-113">XML マッピング ファイルは、XML スキーマ定義ファイルに対して有効である必要があります。</span><span class="sxs-lookup"><span data-stu-id="3a592-113">The XML mapping file must be valid against the XML schema definition file.</span></span> <span data-ttu-id="3a592-114">詳細については、次を参照してください。[する方法: 検証の DBML ファイルおよび外部マッピング ファイル](../../../../../../docs/framework/data/adonet/sql/linq/how-to-validate-dbml-and-external-mapping-files.md)です。</span><span class="sxs-lookup"><span data-stu-id="3a592-114">For more information, see [How to: Validate DBML and External Mapping Files](../../../../../../docs/framework/data/adonet/sql/linq/how-to-validate-dbml-and-external-mapping-files.md).</span></span>  
   
--   <span data-ttu-id="e87ea-115">外部マッピングは、属性ベースのマッピングをオーバーライドします。</span><span class="sxs-lookup"><span data-stu-id="e87ea-115">External mapping overrides attribute-based mapping.</span></span> <span data-ttu-id="e87ea-116">言い換えると、外部マッピング ソースを使って <xref:System.Data.Linq.DataContext> を作成した場合、<xref:System.Data.Linq.DataContext> はクラスに作成したすべてのマッピング属性を無視します。</span><span class="sxs-lookup"><span data-stu-id="e87ea-116">In other words, when you use an external mapping source to create a <xref:System.Data.Linq.DataContext>, the <xref:System.Data.Linq.DataContext> ignores all mapping attributes you have created on classes.</span></span> <span data-ttu-id="e87ea-117">この動作は、クラスが外部マッピング ファイルに含まれるかどうかにかかわらず適用されます。</span><span class="sxs-lookup"><span data-stu-id="e87ea-117">This behavior is true whether the class is included in the external mapping file.</span></span>  
+-   <span data-ttu-id="3a592-115">外部マッピングは、属性ベースのマッピングをオーバーライドします。</span><span class="sxs-lookup"><span data-stu-id="3a592-115">External mapping overrides attribute-based mapping.</span></span> <span data-ttu-id="3a592-116">言い換えると、外部マッピング ソースを使って <xref:System.Data.Linq.DataContext> を作成した場合、<xref:System.Data.Linq.DataContext> はクラスに作成したすべてのマッピング属性を無視します。</span><span class="sxs-lookup"><span data-stu-id="3a592-116">In other words, when you use an external mapping source to create a <xref:System.Data.Linq.DataContext>, the <xref:System.Data.Linq.DataContext> ignores all mapping attributes you have created on classes.</span></span> <span data-ttu-id="3a592-117">この動作は、クラスが外部マッピング ファイルに含まれるかどうかにかかわらず適用されます。</span><span class="sxs-lookup"><span data-stu-id="3a592-117">This behavior is true whether the class is included in the external mapping file.</span></span>  
   
--   [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]<span data-ttu-id="e87ea-118"> では、2 つのマッピング方法 (属性ベースと外部) を組み合わせて使用することはできません。</span><span class="sxs-lookup"><span data-stu-id="e87ea-118"> does not support the hybrid use of the two mapping approaches (attribute-based and external).</span></span>  
+-   [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]<span data-ttu-id="3a592-118"> では、2 つのマッピング方法 (属性ベースと外部) を組み合わせて使用することはできません。</span><span class="sxs-lookup"><span data-stu-id="3a592-118"> does not support the hybrid use of the two mapping approaches (attribute-based and external).</span></span>  
   
-## <a name="xml-schema-definition-file"></a><span data-ttu-id="e87ea-119">XML スキーマ定義ファイル</span><span class="sxs-lookup"><span data-stu-id="e87ea-119">XML Schema Definition File</span></span>  
- <span data-ttu-id="e87ea-120">[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] の外部マッピングは、以下のような XML スキーマ定義に対して有効である必要があります。</span><span class="sxs-lookup"><span data-stu-id="e87ea-120">External mapping in [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] must be valid against the following XML schema definition.</span></span>  
+## <a name="xml-schema-definition-file"></a><span data-ttu-id="3a592-119">XML スキーマ定義ファイル</span><span class="sxs-lookup"><span data-stu-id="3a592-119">XML Schema Definition File</span></span>  
+ <span data-ttu-id="3a592-120">[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] の外部マッピングは、以下のような XML スキーマ定義に対して有効である必要があります。</span><span class="sxs-lookup"><span data-stu-id="3a592-120">External mapping in [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] must be valid against the following XML schema definition.</span></span>  
   
- <span data-ttu-id="e87ea-121">このスキーマ定義ファイルを、DBML ファイルの検証に使われるスキーマ定義ファイルと区別してください。</span><span class="sxs-lookup"><span data-stu-id="e87ea-121">Distinguish this schema definition file from the schema definition file that is used to validate a DBML file.</span></span> <span data-ttu-id="e87ea-122">詳細については、次を参照してください。 [LINQ to SQL でのコード生成](../../../../../../docs/framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md))。</span><span class="sxs-lookup"><span data-stu-id="e87ea-122">For more information, see [Code Generation in LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md)).</span></span>  
+ <span data-ttu-id="3a592-121">このスキーマ定義ファイルを、DBML ファイルの検証に使われるスキーマ定義ファイルと区別してください。</span><span class="sxs-lookup"><span data-stu-id="3a592-121">Distinguish this schema definition file from the schema definition file that is used to validate a DBML file.</span></span> <span data-ttu-id="3a592-122">詳細については、次を参照してください。 [LINQ to SQL でのコード生成](../../../../../../docs/framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md))。</span><span class="sxs-lookup"><span data-stu-id="3a592-122">For more information, see [Code Generation in LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md)).</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="e87ea-123">Visual Studio ユーザーも紹介この XSD ファイルの XML スキーマ ダイアログ ボックスで「LinqToSqlMapping.xsd」としてします。</span><span class="sxs-lookup"><span data-stu-id="e87ea-123">Visual Studio users will also find this XSD file in the XML Schemas dialog box as "LinqToSqlMapping.xsd".</span></span> <span data-ttu-id="e87ea-124">このファイルを使用して、正しく外部マッピング ファイルを検証するためを参照してください[する方法: 検証の DBML ファイルおよび外部マッピング ファイル](../../../../../../docs/framework/data/adonet/sql/linq/how-to-validate-dbml-and-external-mapping-files.md)です。</span><span class="sxs-lookup"><span data-stu-id="e87ea-124">To use this file correctly for validating an external mapping file, see [How to: Validate DBML and External Mapping Files](../../../../../../docs/framework/data/adonet/sql/linq/how-to-validate-dbml-and-external-mapping-files.md).</span></span>  
+>  <span data-ttu-id="3a592-123">Visual Studio ユーザーも紹介この XSD ファイルの XML スキーマ ダイアログ ボックスで「LinqToSqlMapping.xsd」としてします。</span><span class="sxs-lookup"><span data-stu-id="3a592-123">Visual Studio users will also find this XSD file in the XML Schemas dialog box as "LinqToSqlMapping.xsd".</span></span> <span data-ttu-id="3a592-124">このファイルを使用して、正しく外部マッピング ファイルを検証するためを参照してください[する方法: 検証の DBML ファイルおよび外部マッピング ファイル](../../../../../../docs/framework/data/adonet/sql/linq/how-to-validate-dbml-and-external-mapping-files.md)です。</span><span class="sxs-lookup"><span data-stu-id="3a592-124">To use this file correctly for validating an external mapping file, see [How to: Validate DBML and External Mapping Files](../../../../../../docs/framework/data/adonet/sql/linq/how-to-validate-dbml-and-external-mapping-files.md).</span></span>  
   
 ```  
 ?<?xml version="1.0" encoding="utf-16"?>  
@@ -154,7 +141,7 @@ elementFormDefault="qualified" >
 </xs:schema>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="e87ea-125">関連項目</span><span class="sxs-lookup"><span data-stu-id="e87ea-125">See Also</span></span>  
- [<span data-ttu-id="e87ea-126">LINQ to SQL でのコード生成</span><span class="sxs-lookup"><span data-stu-id="e87ea-126">Code Generation in LINQ to SQL</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md)  
- [<span data-ttu-id="e87ea-127">参照</span><span class="sxs-lookup"><span data-stu-id="e87ea-127">Reference</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/reference.md)  
- [<span data-ttu-id="e87ea-128">方法 : オブジェクト モデルを外部ファイルとして生成する</span><span class="sxs-lookup"><span data-stu-id="e87ea-128">How to: Generate the Object Model as an External File</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-as-an-external-file.md)
+## <a name="see-also"></a><span data-ttu-id="3a592-125">関連項目</span><span class="sxs-lookup"><span data-stu-id="3a592-125">See Also</span></span>  
+ [<span data-ttu-id="3a592-126">LINQ to SQL でのコード生成</span><span class="sxs-lookup"><span data-stu-id="3a592-126">Code Generation in LINQ to SQL</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md)  
+ [<span data-ttu-id="3a592-127">参照</span><span class="sxs-lookup"><span data-stu-id="3a592-127">Reference</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/reference.md)  
+ [<span data-ttu-id="3a592-128">方法 : オブジェクト モデルを外部ファイルとして生成する</span><span class="sxs-lookup"><span data-stu-id="3a592-128">How to: Generate the Object Model as an External File</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-as-an-external-file.md)

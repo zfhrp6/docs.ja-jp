@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 6a94797e6279a1f1d419b977c22d73ca41bbafc9
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33443376"
 ---
 # <a name="ihosttaskmanagerbeginthreadaffinity-method"></a><span data-ttu-id="5d1d2-102">IHostTaskManager::BeginThreadAffinity メソッド</span><span class="sxs-lookup"><span data-stu-id="5d1d2-102">IHostTaskManager::BeginThreadAffinity Method</span></span>
 <span data-ttu-id="5d1d2-103">マネージ コードをホストが、現在のタスクを別のオペレーティング システム スレッドに移動できない期間を入力することを通知します。</span><span class="sxs-lookup"><span data-stu-id="5d1d2-103">Notifies the host that managed code is entering a period in which the current task must not be moved to another operating system thread.</span></span>  
