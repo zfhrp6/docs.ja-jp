@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33634484"
 ---
 # <a name="error-number-must-be-within-the-range-0-and-65535"></a>エラー番号は 0 から 65535 の範囲でなければなりません
 エラー番号が 0 から 65535 までの使用可能な範囲の外側にあります。  

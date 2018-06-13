@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33647905"
 ---
 # <a name="refactoring-using-an-extension-method-visual-basic"></a>拡張メソッド (Visual Basic) を使用したリファクタリング
 この例は、前の例に基づいて[(Visual Basic)、段落のテキストを取得して](../../../../visual-basic/programming-guide/concepts/linq/retrieving-the-text-of-the-paragraphs.md)、拡張メソッドとして実装される純粋関数を使用して文字列の連結をリファクターします。  

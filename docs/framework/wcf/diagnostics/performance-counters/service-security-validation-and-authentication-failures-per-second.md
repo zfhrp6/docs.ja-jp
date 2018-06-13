@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33474819"
 ---
 # <a name="service-security-validation-and-authentication-failures-per-second"></a>サービス : 1 秒あたりのセキュリティ検証と認証エラー
 カウンター名 : 1 秒あたりのセキュリティ検証と認証エラー  

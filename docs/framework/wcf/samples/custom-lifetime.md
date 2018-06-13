@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809304"
 ---
 # <a name="custom-lifetime"></a>カスタム有効期間
 このサンプルでは、WCF サービスの共有インスタンス用のカスタムの有効期間サービスを提供する Windows Communication Foundation (WCF) 拡張機能を記述する方法を示します。  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33478681"
 ---
 # <a name="systemservicemodelchannelspeerneighbornotfound"></a>System.ServiceModel.Channels.PeerNeighborNotFound
 近隣ノードに対する操作は、その近隣ノードが近隣ノード一覧になかったので実行できませんでした。  
