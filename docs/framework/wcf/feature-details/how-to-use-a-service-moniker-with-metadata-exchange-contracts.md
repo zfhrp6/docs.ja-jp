@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33491251"
 ---
 # <a name="how-to-use-a-service-moniker-with-metadata-exchange-contracts"></a>方法 : Metadata Exchange コントラクトと共にサービス モニカーを使用する
 新しい WCF サービスを開発した後にスクリプトまたは Visual Basic 6.0 アプリケーションからこれらのサービスを呼び出せるようにすることもできます。 1 つのメソッドは、WCF クライアント アセンブリを生成、COM にアセンブリを登録、アセンブリを GAC にインストール、および Visual Basic コードから COM の型を参照することです。 アプリケーションを配布するときに、WCF クライアント アセンブリもを配布する必要があります。 次にユーザーは COM を使用して WCF クライアント アセンブリを登録し、それを GAC に配置する必要があります。 WCF の COM 相互運用機能を使用すると、WCF クライアント アセンブリに依存せず、同じサービス呼び出しを行うこともできます。 WCF モニカーでは、metadata exchange (Mex) エンドポイント サービス モニカーを使用して型を抽出する URI を指定することで任意の COM 互換言語 (Visual Basic、VBScript、Visual Basic for Applications (VBA) やなど) からすべての WCF サービスを呼び出すことができます。サービスに関する情報。 このトピックでは、Mex エンドポイントを指定する WCF モニカーを使用して WCF の入門サンプルを呼び出す方法について説明します。  

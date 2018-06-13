@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33505646"
 ---
 # <a name="xmlserializer-faults"></a>XmlSerializer エラー
 <xref:System.Xml.Serialization.XmlSerializer> のエラー コントラクトのサンプルでは、<xref:System.Xml.Serialization.XmlSerializer> を使用して、エラー情報をサービスからクライアントに通信する方法を示します。 サンプルがに基づいて、[作業の開始](../../../../docs/framework/wcf/samples/getting-started-sample.md)に追加のコードは内部例外をエラーに変換するサービスに追加します。 クライアントは 0 による除算を試行し、サービスを強制的にエラー状態にします。  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33518438"
 ---
 # <a name="what39s-new-in-windows-workflow-foundation"></a>どのような&#39;Windows Workflow Foundation の新機能として s
 Windows Workflow Foundation (WF) で[!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)]以前のバージョンから開発パラダイムを変更します。 ワークフローでは、新しい機能のホストの作成、実行、保守、実装が簡単になっています。 最新バージョンを使用する .NET 3.0、および .NET 3.5 ワークフロー アプリケーションの移行の詳細については、次を参照してください。[移行ガイダンス](../../../docs/framework/windows-workflow-foundation/migration-guidance.md)です。  

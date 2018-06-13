@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33495110"
 ---
 # <a name="how-to-configure-wcf-services-to-interoperate-with-wse-30-clients"></a>方法 : WCF サービスと WSE 3.0 クライアントを相互運用するために構成する
 Windows Communication Foundation (WCF) サービスは、Ws-addressing 仕様の 2004 年 8 月版を使用して WCF サービスが構成されている場合、Microsoft .NET (WSE) クライアント Web サービス拡張 3.0 とネットワーク レベルで互換性です。  

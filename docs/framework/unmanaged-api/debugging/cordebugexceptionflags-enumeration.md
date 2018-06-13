@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: d963a478ee7ae42159a0eb8a4b41cf20ae663aa5
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33405454"
 ---
 # <a name="cordebugexceptionflags-enumeration"></a>CorDebugExceptionFlags 列挙型
 例外に関する追加情報を提供します。  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33495584"
 ---
 # <a name="best-practices-for-queued-communication"></a>キューに置かれた通信のベスト プラクティス
 このトピックでは、キューに置かれた通信では、Windows Communication Foundation (WCF) の推奨されるベスト プラクティスを説明します。 以下の各セクションでは、シナリオの観点から推奨されるベスト プラクティスについて説明します。  

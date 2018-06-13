@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33493397"
 ---
 # <a name="integrating-with-com-applications-overview"></a>COM アプリケーションとの統合の概要
 Windows Communication Foundation (WCF) では、マネージ コードを開発者に接続されているアプリケーションを作成するための有用な環境を提供します。 ただし、アンマネージの COM ベースのコードにかなりの投資があるして移行したくない場合も統合できます WCF Web サービス、既存のコードに直接 WCF サービス モニカーを使用しています。 サービス モニカーは Office VBA、Visual Basic 6.0、または Visual C++ 6.0 などの幅広い COM ベースの開発環境で使用可能です。  

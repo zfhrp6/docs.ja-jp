@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33496166"
 ---
 # <a name="distributed-application-security"></a>分散アプリケーションのセキュリティ
 Windows Communication Foundation (WCF) のセキュリティは、次の 3 つの主要な機能領域に分割します。 セキュリティ、アクセス制御、および監査を転送します。 転送セキュリティは、整合性、機密性、および認証を実現します。 転送セキュリティは、トランスポート セキュリティ、メッセージ セキュリティ、または `TransportWithMessageCredential` のいずれかによって提供されます。  

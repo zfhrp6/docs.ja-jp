@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33489483"
 ---
 # <a name="encoding-binary-objects-with-bytestream-encoder"></a>バイトストリーム エンコーダーを使用したバイナリ オブジェクトのエンコーディング
 Windows Communication Foundation (WCF) の生のバイナリ データを送受信するを使用して、構成<xref:System.ServiceModel.Channels.ByteStreamMessageEncodingBindingElement>です。  

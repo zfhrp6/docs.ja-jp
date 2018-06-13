@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33494201"
 ---
 # <a name="interoperability-with-pox-applications"></a>POX アプリケーションとの相互運用性
 "Plain Old XML"(POX) アプリケーションは、SOAP エンベロープで囲まれていない XML アプリケーション データのみを含んだ生の HTTP メッセージを交換して通信します。 Windows Communication Foundation (WCF) には、サービスと POX メッセージを使用するクライアントの両方を指定できます。 サービスでは、Web ブラウザーなどのクライアントに対してエンドポイントを公開するサービスおよび POX メッセージを送受信するためのスクリプト言語の実装に WCF を使用できます。 クライアントでは、POX ベースのサービスと通信するクライアントを実装する、WCF プログラミング モデルを使用できます。  

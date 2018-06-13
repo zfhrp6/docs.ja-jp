@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33579341"
 ---
 # <a name="details-of-regular-expression-behavior"></a>正規表現の動作の詳細
 .NET Framework の正規表現エンジンはバックトラッキング型の正規表現マッチャーであり、Perl、Python、Emacs、および Tcl で使われているのと同じ従来型の非決定性有限オートマトン (NFA) エンジンを採用しています。 このエンジンは、awk、egrep、または lex に見られるような、より高速であるが制限が多い、純粋な正規表現決定性有限オートマトン (DFA) エンジンとは異なります。 また、標準化されているが低速な POSIX NFA とも異なります。 次のセクションでは、これら 3 種類の正規表現エンジンについて説明し、.NET Framework の正規表現が従来型 NFA エンジンを使って実装されている理由について説明します。  

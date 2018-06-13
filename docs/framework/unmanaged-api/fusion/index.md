@@ -10,9 +10,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 7bc6c9079b6f233946fa38979800e28097e849f8
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33428590"
 ---
 # <a name="fusion-unmanaged-api-reference"></a>fusion (アンマネージ API リファレンス)
 Fusion API では、ランタイム ホストが、アプリケーションのリソースの正しいバージョンを見つけるために、アプリケーションのリソースのプロパティにアクセスできるようにします。  

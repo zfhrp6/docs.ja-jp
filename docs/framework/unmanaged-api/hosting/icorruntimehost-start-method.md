@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 96e8d80e2dff88aa5a589f864278b4a4e9cc76ef
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33437015"
 ---
 # <a name="icorruntimehoststart-method"></a>ICorRuntimeHost::Start メソッド
 共通言語ランタイム (CLR) を開始します。  

@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33490069"
 ---
 # <a name="how-to-create-a-basic-data-contract-for-a-class-or-structure"></a>方法 : クラスまたは構造体に基本的なデータ コントラクトを作成する
 このトピックでは、クラスまたは構造体を使用してデータ コントラクトを作成する基本的な手順を示します。 データ コントラクトとその使用方法の詳細については、次を参照してください。[を使用してデータ コントラクト](../../../../docs/framework/wcf/feature-details/using-data-contracts.md)です。  

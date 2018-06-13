@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33492906"
 ---
 # <a name="federation-and-trust"></a>フェデレーションと信頼
 このトピックでは、フェデレーション アプリケーション、信頼の境界と構成、および発行されたトークンでは、Windows Communication Foundation (WCF) の使用に関連するさまざまな側面について説明します。  

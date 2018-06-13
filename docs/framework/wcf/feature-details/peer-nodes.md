@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33491533"
 ---
 # <a name="peer-nodes"></a>ピア ノード
 PeerNode はピア チャネル メッシュ内の単一エンドポイントです。 アプリケーションは、複数のピア ノードを使用して、異なるメッシュに参加できます。 たとえば、1 つのピアツーピア チャット アプリケーションを、高校生時代の友人とのチャット用のメッシュと、会社の同僚とのチャット用のメッシュという 2 つの独立したメッシュの一部とすることができます。  

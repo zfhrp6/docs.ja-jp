@@ -23,6 +23,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33579237"
 ---
 # <a name="custom-numeric-format-strings"></a>カスタム数値書式指定文字列
 1 つ以上のカスタム数値指定子で構成されるカスタム数値書式指定文字列を作成して、数値データの書式設定方法を定義できます。 カスタム数値書式指定文字列は、 [標準の数値書式指定文字列](../../../docs/standard/base-types/standard-numeric-format-strings.md)ではない任意の書式指定文字列です。  

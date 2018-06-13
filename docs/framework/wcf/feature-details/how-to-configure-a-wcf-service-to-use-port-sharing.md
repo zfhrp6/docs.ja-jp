@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33495243"
 ---
 # <a name="how-to-configure-a-windows-communication-foundation-service-to-use-port-sharing"></a>方法 : ポート共有を使用するように Windows Communication Foundation サービスを構成する
 Windows Communication Foundation (WCF) アプリケーションで net.tcp:// ポート共有を使用する最も簡単な方法を使用してサービスを公開する、<xref:System.ServiceModel.NetTcpBinding>です。  

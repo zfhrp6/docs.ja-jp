@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33495081"
 ---
 # <a name="readme-for-extended-protection-authentication-sample"></a>拡張保護認証のサンプルの ReadMe
 拡張保護を攻撃者 (、「- 内の中間」) がクライアントの資格情報をインターセプトし、クライアントの目的のサーバーのセキュリティで保護されたリソースにアクセスするために使用、中間の (MITM) 攻撃を防ぐためにセキュリティ イニシアチブです。  

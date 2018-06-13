@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33496713"
 ---
 # <a name="how-to-implement-a-discovery-proxy"></a>探索プロキシを実装する方法
 このトピックでは、探索プロキシの実装方法について説明します。 Windows Communication Foundation (WCF) での探索機能の詳細については、次を参照してください。 [WCF Discovery の概要](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md)です。 探索プロキシを実装するには、抽象クラス <xref:System.ServiceModel.Discovery.DiscoveryProxy> を拡張するクラスを作成します。 このサンプルでは、他の多くのサポート クラスも定義され、使用されています。 `OnResolveAsyncResult`、`OnFindAsyncResult`、および `AsyncResult`。 これらのクラスは、<xref:System.IAsyncResult> インターフェイスを実装します。 詳細については<xref:System.IAsyncResult>を参照してください[System.IAsyncResult インターフェイス](xref:System.IAsyncResult)です。

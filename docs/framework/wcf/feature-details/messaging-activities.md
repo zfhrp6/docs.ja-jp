@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33496687"
 ---
 # <a name="messaging-activities"></a>メッセージング アクティビティ
 アクティビティを管理することで、ワークフローが WCF メッセージを送受信できるようになります。 メッセージング アクティビティをワークフローに追加することで、任意に複雑なメッセージ交換パターン (MEP) をモデル化できます。  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33491476"
 ---
 # <a name="internet-unsecured-client-and-service"></a>セキュリティで保護されていないインターネット環境のクライアントとサービス
 次の図は、公開、セキュリティ保護されていない Windows Communication Foundation (WCF) クライアントとサービスの例を示します。  

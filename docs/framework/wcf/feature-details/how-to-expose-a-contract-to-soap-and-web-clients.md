@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33494151"
 ---
 # <a name="how-to-expose-a-contract-to-soap-and-web-clients"></a>方法 : コントラクトを SOAP クライアントおよび Web クライアントに公開する
 既定では、Windows Communication Foundation (WCF) を使用可能エンドポイント SOAP クライアントにのみです。 [する方法: 基本的な WCF Web HTTP サービスを作成する](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-wcf-web-http-service.md)エンドポイントが SOAP 以外のクライアントを使用できます。 状況によっては、同じコントラクトを Web エンドポイントと SOAP エンドポイントのどちらとしても利用できることが望ましい場合があります。 ここでは、これを実現する方法の例について示します。  

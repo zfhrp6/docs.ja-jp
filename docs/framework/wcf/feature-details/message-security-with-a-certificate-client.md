@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33494694"
 ---
 # <a name="message-security-with-a-certificate-client"></a>メッセージ セキュリティと証明書クライアント
 次のシナリオでは、Windows Communication Foundation (WCF) クライアントとメッセージ セキュリティ モードを使用してセキュリティ保護サービスを示します。 クライアントとサービスは、どちらも証明書を使用して認証されます。 詳細については、次を参照してください。[分散アプリケーションのセキュリティ](../../../../docs/framework/wcf/feature-details/distributed-application-security.md)です。  

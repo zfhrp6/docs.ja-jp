@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33490498"
 ---
 # <a name="integrating-with-com-applications"></a>COM+ アプリケーションとの統合
 Windows Communication Foundation (WCF) では、分散アプリケーションを作成するための有用な環境を提供します。 COM + でホストされるコンポーネント ベースのアプリケーション ロジックにかなりの投資があれば、WCF を使用して、既存のロジックを修正することがなく拡張することができます。 このセクション内のトピックでは、WCF と COM + を使用する方法について説明します。  

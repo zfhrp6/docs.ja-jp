@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33491931"
 ---
 # <a name="how-to-create-a-duplex-contract"></a>方法 : 双方向コントラクトを作成する
 ここでは、双方向コントラクトを使用するメソッドを作成するための基本手順を示します。 双方向コントラクトでは、クライアントとサーバーが互いに独立して通信できるため、どちらからでも相手の呼び出しを開始できます。 双方向コントラクトでは、Windows Communication Foundation (WCF) サービスに使用できる 3 つのメッセージ パターンの 1 つです。 他の 2 つのメッセージ パターンは、一方向および要求/応答です。 双方向コントラクトは、クライアントとサーバー間の 2 つの一方向コントラクトで構成され、メソッドの呼び出しが相互に関連付けられている必要はありません。 サービスでクライアントに詳細を照会したり、クライアントで明示的にイベントを発生させたりする必要がある場合は、この種のコントラクトを使用します。 双方向コントラクト用のクライアント アプリケーションの作成の詳細については、次を参照してください。[する方法: 双方向コントラクトでサービスをアクセス](../../../../docs/framework/wcf/feature-details/how-to-access-services-with-a-duplex-contract.md)です。 作業用サンプルについては、次を参照してください。、[双方向](../../../../docs/framework/wcf/samples/duplex.md)サンプルです。  

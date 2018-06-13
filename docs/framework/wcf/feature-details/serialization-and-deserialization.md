@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33508613"
 ---
 # <a name="serialization-and-deserialization"></a>シリアル化と逆シリアル化
 Windows Communication Foundation (WCF) には新しいシリアル化エンジンが含まれています、<xref:System.Runtime.Serialization.DataContractSerializer>です。 <xref:System.Runtime.Serialization.DataContractSerializer> は、 [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] オブジェクトと XML を双方向で変換します。 ここでは、シリアライザーのしくみについて説明します。  

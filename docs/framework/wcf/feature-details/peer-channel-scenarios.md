@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33492985"
 ---
 # <a name="peer-channel-scenarios"></a>ピア チャネルのシナリオ
 ピア チャネル API は、次の開発シナリオをサポートします。  

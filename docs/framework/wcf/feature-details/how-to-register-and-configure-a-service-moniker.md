@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33493322"
 ---
 # <a name="how-to-register-and-configure-a-service-moniker"></a>方法 : サービス モニカーを登録および構成する
 型付きコントラクトで、Windows Communication Foundation (WCF) サービス モニカーを COM アプリケーションを使用する前を COM に必要な属性型を登録して必要なバインドと、COM アプリケーションとモニカーを構成する必要があります。構成します。  

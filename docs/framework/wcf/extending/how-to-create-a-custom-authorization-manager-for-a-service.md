@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33490444"
 ---
 # <a name="how-to-create-a-custom-authorization-manager-for-a-service"></a>方法 : サービスで使用するカスタム承認マネージャーを作成する
 Id モデル インフラストラクチャ Windows Communication Foundation (WCF) では、拡張可能なクレーム ベースの承認モデルをサポートします。 クレームはトークンから抽出され、状況に応じてカスタム承認ポリシーによって処理されてから、<xref:System.IdentityModel.Policy.AuthorizationContext> に格納されます。 承認マネージャーは、<xref:System.IdentityModel.Policy.AuthorizationContext> 内のクレームを検査して承認に関する決定を行います。  

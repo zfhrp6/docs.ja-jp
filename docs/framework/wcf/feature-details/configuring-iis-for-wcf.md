@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33491717"
 ---
 # <a name="configuring-internet-information-services-70-for-windows-communication-foundation"></a>Windows Communication Foundation での Internet Information Services 7.0 の構成
 Internet Information Services (IIS) 7.0 はモジュール設計になっており、必要なコンポーネントを選択してインストールできます。 この設計は、[!INCLUDE[wv](../../../../includes/wv-md.md)] で新しく導入されたマニフェスト ドリブンのコンポーネント テクノロジに基づいています。 [!INCLUDE[iisver](../../../../includes/iisver-md.md)] には、40 以上のスタンドアロン機能コンポーネントがあり、個別にインストールできます。 これにより、IT プロフェッショナルは必要に応じてインストールをカスタマイズできます。 このトピックで構成する方法について説明します[!INCLUDE[iisver](../../../../includes/iisver-md.md)]の Windows Communication Foundation (WCF) を使用し、必要なコンポーネントを決定します。  

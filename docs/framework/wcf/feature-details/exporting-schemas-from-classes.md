@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33494543"
 ---
 # <a name="exporting-schemas-from-classes"></a>クラスからのスキーマのエクスポート
 データ コントラクト モデルで使用されているクラスから XML スキーマ定義言語 (XSD) スキーマを生成するには、 <xref:System.Runtime.Serialization.XsdDataContractExporter> クラスを使います。 このトピックでは、スキーマの作成手順を説明します。  

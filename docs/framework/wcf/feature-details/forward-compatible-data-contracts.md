@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33492207"
 ---
 # <a name="forward-compatible-data-contracts"></a>上位互換性のあるデータ コントラクト
 機能の Windows Communication Foundation (WCF) は、データ コントラクト システム コントラクトは、互換性に影響しない方法で時間の経過と共に展開できます。 つまり、古いバージョンのデータ コントラクトを使用するクライアントが同じデータ コントラクトの新しいバージョンのサービスと通信したり、新しいバージョンのデータ コントラクトを使用するクライアントが同じデータ コントラクトの古いバージョンと通信したりできます。 詳細については、次を参照してください。[ベスト プラクティス: データ コントラクトのバージョン管理](../../../../docs/framework/wcf/best-practices-data-contract-versioning.md)です。  

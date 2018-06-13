@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33494710"
 ---
 # <a name="wcf-feature-details"></a>WCF 機能の詳細
 Windows Communication Foundation (WCF) では、アプリケーションのメッセージング機能の広範な制御をできます。 このセクションの各トピックでは、使用できる機能について詳しく説明します。 基本的なプログラミングの詳細については、次を参照してください。[基本的な WCF プログラミング](../../../../docs/framework/wcf/basic-wcf-programming.md)です。  

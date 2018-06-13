@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33491508"
 ---
 # <a name="how-to-obtain-a-certificate-wcf"></a>方法 : 証明書 (WCF) を取得する
 Windows Communication Foundation (WCF) のいずれかを使用するには、その機能は、X.509 証明書を使用して、最初に証明書を取得します。  

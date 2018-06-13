@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33518565"
 ---
 # <a name="application-settings-for-custom-controls"></a>カスタム コントロールのアプリケーション設定
 カスタム コントロールのコントロールがサード パーティ製のアプリケーションでホストされているときに、アプリケーションの設定を保存する機能を提供する特定のタスクを完了する必要があります。  

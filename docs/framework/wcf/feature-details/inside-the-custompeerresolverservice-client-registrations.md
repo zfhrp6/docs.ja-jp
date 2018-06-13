@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33494057"
 ---
 # <a name="inside-the-custompeerresolverservice-client-registrations"></a>CustomPeerResolverService 内部 : クライアント登録
 メッシュ内の各ノードは、`Register` 関数を介してエンドポイント情報をリゾルバー サービスに公開します。 リゾルバー サービスは、登録レコードとしてこの情報を保存します。 このレコードには、ノードの一意の識別子 (RegistrationID) およびエンドポイント情報 `(PeerNodeAddress) が格納されます。  

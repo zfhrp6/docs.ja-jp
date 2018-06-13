@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33494375"
 ---
 # <a name="one-way-services"></a>一方向サービス
 サービス操作の既定の動作は、要求/応答パターンです。 要求/応答パターンでは、サービス操作がコードで `void` 型のメソッドとして表される場合であっても、クライアントは応答メッセージを待機します。 一方向操作では、メッセージが 1 つ送信されるだけです。 受信者は応答メッセージを送信せず、送信者もこれを待機しません。  

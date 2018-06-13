@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33492025"
 ---
 # <a name="differences-in-queuing-features-in-windows-vista-windows-server-2003-and-windows-xp"></a>Windows Vista、Windows Server 2003、および Windows XP におけるキュー機能の相違点
 このトピックは、Windows Communication Foundation (WCF) キューの機能との間での違いを示して[!INCLUDE[wv](../../../../includes/wv-md.md)]、 [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)]、および[!INCLUDE[wxp](../../../../includes/wxp-md.md)]です。  

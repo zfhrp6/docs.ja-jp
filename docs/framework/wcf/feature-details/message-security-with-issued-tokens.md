@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33491187"
 ---
 # <a name="message-security-with-issued-tokens"></a>発行済みトークンを使用したメッセージ セキュリティ
 発行済みトークン クライアントは、フェデレーション セキュリティのシナリオでは、Windows Communication Foundation (WCF) を使用します。  

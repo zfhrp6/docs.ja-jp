@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: ad2dd4cded6800ce016d821f8e3ffe01dcb6264b
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33418260"
 ---
 # <a name="icordebugthreadgetobject-method"></a>ICorDebugThread::GetObject メソッド
 共通言語ランタイム (CLR) のスレッドにインターフェイス ポインターを取得します。  

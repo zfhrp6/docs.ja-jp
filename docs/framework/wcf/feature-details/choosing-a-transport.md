@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33495536"
 ---
 # <a name="choosing-a-transport"></a>トランスポートの選択
 このトピックでの Windows Communication Foundation (WCF) が含まれている 3 つの主なトランスポートを選択するための条件について説明します。 HTTP、TCP、および名前付きパイプです。 WCF も含まれています、トランスポート、メッセージ キュー (MSMQ とも呼ばれます) が、このドキュメントは、メッセージ キューをカバーしていません。  

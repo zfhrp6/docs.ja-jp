@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33494323"
 ---
 # <a name="how-to-access-wcf-services-with-one-way-and-request-reply-contracts"></a>方法 : 一方向コントラクトと要求/応答コントラクトを使用して WCF サービスにアクセスする
 次の手順では、一方向コントラクトと要求/応答コントラクトを定義する Windows Communication Foundation (WCF) サービスにアクセスして、双方向通信パターンを使用しない方法について説明します。  

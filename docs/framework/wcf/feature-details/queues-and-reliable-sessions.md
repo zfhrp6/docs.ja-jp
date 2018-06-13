@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33494671"
 ---
 # <a name="queues-and-reliable-sessions"></a>キューと信頼できるセッション
 キューと信頼できるセッションは、信頼できるメッセージングを実装する Windows Communication Foundation (WCF) 機能を示します。 このセクションに含まれるトピックでは、WCF の信頼できるメッセージング機能について説明します。  

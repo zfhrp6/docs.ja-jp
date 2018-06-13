@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33489470"
 ---
 # <a name="certificate-validation-differences-between-https-ssl-over-tcp-and-soap-security"></a>HTTPS、SSL Over TCP、SOAP セキュリティ間における証明書検証方法の相違点
 使用できますの証明書 Windows Communication Foundation (WCF) でトランスポート層セキュリティ (TLS) だけでなく、メッセージ層 (SOAP) セキュリティ over HTTP (HTTPS) または TCP です。 ここでは、このような証明書の検証方法の違いについて説明します。  

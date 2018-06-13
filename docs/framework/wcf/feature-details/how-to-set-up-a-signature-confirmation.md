@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33491990"
 ---
 # <a name="how-to-set-up-a-signature-confirmation"></a>方法 : 署名確認を設定する
 *署名確認*は、メッセージのイニシエーター応答を受信しましたが、送信者の元のメッセージへの応答で生成されたことを確認するためのメカニズムです。 署名確認は、WS-Security 1.1 仕様で定義されています。 エンドポイントが WS-Security 1.0 をサポートしている場合は、署名確認を使用できません。  

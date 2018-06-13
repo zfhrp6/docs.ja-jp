@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33493603"
 ---
 # <a name="how-to-error-handling"></a>エラーを処理する方法
 ここでは、エラー処理を使用するルーティング構成の作成に必要な基本的な手順について説明します。 この例では、メッセージは送信先エンドポイントにルーティングされます。 ネットワークまたは通信関係の障害 (<xref:System.ServiceModel.CommunicationException>) のために、メッセージを配信できない場合、そのメッセージは代替エンドポイントに再送信されます。  

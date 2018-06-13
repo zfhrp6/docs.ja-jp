@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33578977"
 ---
 # <a name="managed-execution-process"></a>マネージ実行プロセス
 <a name="introduction"></a> マネージ実行プロセスで実行される主な手順を次に示します。詳細については、後で説明します。  

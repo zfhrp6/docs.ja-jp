@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33489756"
 ---
 # <a name="custom-filters"></a>カスタム フィルター
 カスタム フィルターを使用すると、システムが提供するメッセージ フィルターを使用して実現できない一致ロジックを定義できます。 たとえば、特定のメッセージ要素をハッシュし、その値を検証してフィルターが true または false のどちらを返すかを決定するカスタム フィルターを作成できます。  

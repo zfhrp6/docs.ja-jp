@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33490836"
 ---
 # <a name="performance-considerations"></a>パフォーマンスに関する考慮事項
 アプリケーションを構築する際には、パフォーマンスについて常に考慮することが重要です。 このセクションには、パフォーマンスとセキュリティに関連するトピックが含まれています。  

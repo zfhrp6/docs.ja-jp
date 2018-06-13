@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33491080"
 ---
 # <a name="how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications"></a>方法 : WCF エンドポイントとメッセージ キュー アプリケーションを使用してメッセージを交換する
 Windows Communication Foundation (WCF) アプリケーションと既存のメッセージ キュー (MSMQ) アプリケーションを統合するには、MSMQ 統合バインディングを使用して WCF メッセージを送受信する、MSMQ メッセージを変換します。 これにより、WCF クライアントから MSMQ の受信側アプリケーションへの呼び出しと MSMQ の送信元アプリケーションから WCF サービスを呼び出すことができます。  

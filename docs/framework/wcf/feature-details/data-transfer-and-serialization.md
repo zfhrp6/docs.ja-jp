@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33489207"
 ---
 # <a name="data-transfer-and-serialization"></a>データ転送とシリアル化
 接続されたシステムでは、サービスとクライアントのタスクの実行は、データの交換に依存します。 サービスまたはクライアントの開発者は、効率的で簡単に維持するアプリケーションを作成するために、Windows Communication Foundation (WCF) がデータとデータのシリアル化を処理する方法も理解する必要があります。  

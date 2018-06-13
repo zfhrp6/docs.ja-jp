@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33494466"
 ---
 # <a name="discoveryclient-and-dynamicendpoint"></a>DiscoveryClient と DynamicEndpoint
 <xref:System.ServiceModel.Discovery.DiscoveryClient> および <xref:System.ServiceModel.Discovery.DynamicEndpoint> の 2 つは、サービスの検索にクライアント側で使用されるクラスです。 <xref:System.ServiceModel.Discovery.DiscoveryClient> は、特定の条件に一致するサービスの一覧を表示し、サービスに接続できるようにします。 <xref:System.ServiceModel.Discovery.DynamicEndpoint> は同じ操作を実行するだけでなく、見つかったサービスの 1 つに自動的に接続します。 <xref:System.ServiceModel.Discovery.DynamicEndpoint> には任意のエンドポイントを指定でき、構成に検索条件も追加できます。このため、ソリューションに探索機能が必要だが、クライアント ロジックを変更したくないという場合は、<xref:System.ServiceModel.Discovery.DynamicEndpoint> を使用すると、エンドポイントを変更するだけで済み、便利です。 これに対して、<xref:System.ServiceModel.Discovery.DiscoveryClient> は、検索操作を詳細に制御する場合に使用できます。 次に、それぞれのクラスの用途と利点について詳しく説明します。  

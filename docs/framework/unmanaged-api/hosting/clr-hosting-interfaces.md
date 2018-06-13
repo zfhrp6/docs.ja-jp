@@ -10,9 +10,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 03839a2c6e52f9d2dcdd2e0941ff4fdbeb8a3a17
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33435642"
 ---
 # <a name="clr-hosting-interfaces"></a>CLR ホスト インターフェイス
 このセクションの内容がアンマネージ インターフェイスについて説明しますホストを使用して、共通言語ランタイム (CLR) をアプリケーションに統合します。 情報は、.NET Framework バージョン 2.0 およびそれ以降のバージョンに関連します。 これらのインターフェイスは、ランタイムは、バージョン 1.0 および 1.1 よりも多くの面を制御するホストを有効にし、CLR とホストの実行モデルの間でより緊密に統合を提供します。  

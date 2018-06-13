@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33493132"
 ---
 # <a name="client-configuration"></a>クライアント構成
 Windows Communication Foundation (WCF) クライアントの構成を使用するには、アドレス、バインディング、動作、およびコントラクト、サービス エンドポイントに接続するクライアントを使用して、クライアント エンドポイントの"ABC"プロパティを指定します。 [\<クライアント >](../../../../docs/framework/configure-apps/file-schema/wcf/client.md)要素には、 [\<エンドポイント >](http://msdn.microsoft.com/library/13aa23b7-2f08-4add-8dbf-a99f8127c017)要素の属性を持つエンドポイントの abc プロパティの構成に使用します。 これらの属性については、このトピックの「エンドポイントの構成」で説明します。  

@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: ef4e12015adc3d6e67ad9c8ba8b152cd775b85e2
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33431930"
 ---
 # <a name="eclrfailure-enumeration"></a>EClrFailure 列挙型
 ホストがポリシーのアクションを設定できるエラーのセットについて説明します。  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33489597"
 ---
 # <a name="anticipating-adopting-the-windows-communication-foundation-easing-future-integration"></a>Windows Communication Foundation 導入の準備: 将来的な統合の容易化
 現在 ASP.NET を使用して WCF を使用して、将来を予測して、このトピック指針を WCF アプリケーションと共に、新しい ASP.NET Web サービスが動作することを確認します。  

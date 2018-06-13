@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33489181"
 ---
 # <a name="discovery-versioning"></a>探索機能のバージョン指定
 ここでは、新しい探索機能の実装の概要について簡単に説明します。 使用する探索バージョンを選択する方法の概要も示します。  

@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33492301"
 ---
 # <a name="metadata"></a>メタデータ
 Windows Communication Foundation (WCF) では、エクスポート、公開、取得、およびサービスのメタデータをインポートするためのインフラストラクチャを提供します。 WCF サービスでは、メタデータを使用して、Svcutil.exe などのツールは、サービスにアクセスするためのクライアント コードを自動的に生成できるように、サービスのエンドポイントと対話する方法について説明します。  

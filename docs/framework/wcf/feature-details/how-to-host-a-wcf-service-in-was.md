@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33492669"
 ---
 # <a name="how-to-host-a-wcf-service-in-was"></a>方法 : WAS で WCF サービスをホストする
 このトピックのアウトラインを Windows プロセス アクティブ化サービス (WAS とも呼ばれます) を作成するために必要な基本的な手順は、Windows Communication Foundation (WCF) サービスをホストします。 WAS は、HTTP 以外のトランスポート プロトコルで動作するインターネット インフォメーション サービス (IIS) 機能を一般化した新しいプロセス アクティブ化サービスです。 WCF では、リスナー アダプター インターフェイスを使用して、TCP、名前付きパイプ、およびメッセージ キューなど、WCF によってサポートされる非 HTTP プロトコルを介して受信されるアクティブ化要求を通信します。  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33492946"
 ---
 # <a name="out-of-order-message-processing"></a>順番を無視したメッセージの処理
 ワークフロー サービスは、特定の順序で送信されるメッセージに依存する場合があります。 ワークフロー サービスには 1 つ以上の <xref:System.ServiceModel.Activities.Receive> アクティビティが含まれ、それぞれの <xref:System.ServiceModel.Activities.Receive> アクティビティは特定のメッセージに対応しています。 特定のトランスポート配信保証がないと、クライアントから送信されるメッセージに遅延が生じ、それによって、ワークフロー サービスが予期しない順序でメッセージが配信されることがあります。 特定の順序でメッセージが送信されることを必要としないワークフローは、通常、Parallel アクティビティを使用して実装されます。 アプリケーション プロトコルがより複雑な場合は、ワークフローがすぐに複雑になります。  機能では、Windows Communication Foundation (WCF) の処理順序不定なメッセージでは、入れ子になった並列アクティビティの複雑さの all を指定せずにこのようなワークフローを作成することができます。 順序不定なメッセージの処理がサポートするチャネルでのみサポートされて<xref:System.ServiceModel.Channels.ReceiveContext>WCF MSMQ バインディングなどです。  

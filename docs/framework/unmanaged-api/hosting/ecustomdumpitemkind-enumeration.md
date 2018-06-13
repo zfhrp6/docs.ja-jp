@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 777fa850fcab1d1a6191c605ecb2f2a181fddcc0
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33429920"
 ---
 # <a name="ecustomdumpitemkind-enumeration"></a>ECustomDumpItemKind 列挙型
 将来の拡張機能用に予約されて、 [CustomDumpItem](../../../../docs/framework/unmanaged-api/hosting/customdumpitem-structure.md)構造体。  

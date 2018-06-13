@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33489698"
 ---
 # <a name="how-to-implement-a-client-application-that-uses-the-discovery-proxy-to-find-a-service"></a>探索プロキシを使用してサービスを検索するクライアント アプリケーションの実装方法
 これは、探索プロキシの実装方法に関する 3 つのトピックのうちの、3 番目のトピックです。 前のトピックで[する方法: 探索プロキシで登録される探索可能なサービスを実装する](../../../../docs/framework/wcf/feature-details/discoverable-service-that-registers-with-the-discovery-proxy.md)、探索プロキシに自らを登録する WCF サービスを実装しています。 このトピックでは、WCF サービスを検索、探索プロキシを使用する WCF クライアントを作成します。  

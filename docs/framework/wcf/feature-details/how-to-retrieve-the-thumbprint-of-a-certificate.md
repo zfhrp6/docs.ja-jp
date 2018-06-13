@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33492435"
 ---
 # <a name="how-to-retrieve-the-thumbprint-of-a-certificate"></a>方法 : 証明書のサムプリントを取得する
 認証に X.509 証明書を使用する Windows Communication Foundation (WCF) アプリケーションを作成する場合、証明書については、信頼性情報を指定する必要があります。 たとえば、 <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindByThumbprint> メソッドで <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A> 列挙体を使用する場合は、拇印クレームを指定する必要があります。 クレーム値を検索するには 2 つの手順を実行する必要があります。 まず、証明書用の Microsoft 管理コンソール (MMC) スナップインを開きます (「 [How to: View Certificates with the MMC Snap-in](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md)」を参照)。次に、ここで説明されているとおりに適切な証明書を検索してその拇印 (または他のクレーム値) をコピーします。  

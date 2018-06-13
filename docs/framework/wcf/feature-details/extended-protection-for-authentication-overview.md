@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33489984"
 ---
 # <a name="extended-protection-for-authentication-overview"></a>認証の拡張保護の概要
 認証時の拡張保護によって、攻撃者がクライアントの資格情報をインターセプトして特定のサーバーに転送する man-in-the-middle (MITM) 攻撃を防ぐことができます。  

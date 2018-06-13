@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 009f1482de6e1daea21766300b4fb6a3ab0ffc8c
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33432289"
 ---
 # <a name="corgcstats-structure"></a>COR_GC_STATS 構造体
 共通言語ランタイム (CLR) のガベージ コレクションのメカニズムについての統計情報を提供します。  

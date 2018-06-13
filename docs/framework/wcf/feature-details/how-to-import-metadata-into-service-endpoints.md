@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33492545"
 ---
 # <a name="how-to-import-metadata-into-service-endpoints"></a>方法 : メタデータをサービス エンドポイントにインポートする
 このトピックで定義されているサービスを使用してサービス エンドポイントのコレクションにメタデータをインポートする方法について説明、[作業の開始](../../../../docs/framework/wcf/samples/getting-started-sample.md)です。 また、サービスからメタデータをインポートし、次にそのサービスに対して `Add` メソッドを呼び出すクライアント アプリケーションを作成する方法についても説明します。  

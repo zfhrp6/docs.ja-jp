@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: fd3c19bbbcb5b1a5f0e89b9df86f87beca32cd00
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33431352"
 ---
 # <a name="iinstallreferenceitem-interface"></a>IInstallReferenceItem インターフェイス
 グローバル アセンブリ キャッシュにインストールされている項目を表します。  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33297369"
 ---
 # <a name="jagged-arrays-c-programming-guide"></a>ジャグ配列 (C# プログラミング ガイド)
 ジャグ配列とは、その要素も配列である配列です。 ジャグ配列の要素には、異なるディメンションとサイズを指定できます。 ジャグ配列は、"配列の配列" と呼ばれることがあります。 次の例では、ジャグ配列の宣言、初期化、およびアクセスの方法について説明します。  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33494271"
 ---
 # <a name="data-contract-names"></a>データ コントラクト名
 クライアントとサービスが同じ型を共有しないことがあります。 このような場合でも、双方のデータ コントラクトが等価であれば、相互にデータを受け渡すことができます。 [データ コントラクトの等価性](../../../../docs/framework/wcf/feature-details/data-contract-equivalence.md)はデータ コントラクトとデータ メンバー名に依存し、それらの名前に、型およびメンバーをマップするメカニズムを提供するためです。 このトピックでは、名前を作成するときに、Windows Communication Foundation (WCF) インフラストラクチャの既定の動作と同様にデータ コントラクトの名前付け規則について説明します。  

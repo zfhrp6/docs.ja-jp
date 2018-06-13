@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33492526"
 ---
 # <a name="how-to-access-a-wse-30-service-with-a-wcf-client"></a>方法 : WCF クライアントで WSE 3.0 サービスにアクセスする
 Windows Communication Foundation (WCF) クライアントは、WCF クライアントが Ws-addressing 仕様の 2004 年 8 月版を使用して構成されている場合、Microsoft .NET サービス用のワイヤレベルの互換性のある Web サービス拡張 (WSE) 3.0 がします。 ただし、WSE 3.0 サービス プロトコルをサポートしない、メタデータ交換 (MEX)、これを使用する場合、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)を WCF クライアント クラスを作成するには、セキュリティ設定は適用されませんを生成されました。WCF クライアントです。 そのため、セキュリティの設定を指定する必要があります、WCF クライアントが生成された後に、WSE 3.0 サービスが必要であります。  

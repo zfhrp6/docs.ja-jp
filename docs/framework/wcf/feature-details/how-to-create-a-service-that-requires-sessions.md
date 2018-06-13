@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33492724"
 ---
 # <a name="how-to-create-a-service-that-requires-sessions"></a>方法 : セッションを必要とするサービスを作成する
 セッションでは、複数のエンドポイント間で共有される状態が作成されます。これにより、クライアントとサービス インスタンス間でのコールバック、マルチホップ セキュリティ、関連付けなどの便利な機能を使用できるようになります。 Windows Communication Foundation (WCF) アプリケーションでセッションの詳細については、次を参照してください。[セッションを使用した](../../../../docs/framework/wcf/using-sessions.md)です。  

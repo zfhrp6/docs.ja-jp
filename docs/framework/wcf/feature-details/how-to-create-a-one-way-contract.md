@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33490774"
 ---
 # <a name="how-to-create-a-one-way-contract"></a>方法 : 一方向コントラクトを作成する
 ここでは、一方向コントラクトを使用するメソッドを作成するための基本手順を示します。 このようなメソッドは、クライアントからの Windows Communication Foundation (WCF) サービスに対する操作を呼び出すが、応答を想定していません。 この種のコントラクトは、たとえば、多数のサブスクライバーに対して通知を発行するために使用できます。 一方向コントラクトは、二重のコントラクトを作成する場合にも使用できます。その場合は、クライアントとサーバーが互いに独立して通信できるため、どちらからでも相手の呼び出しを開始できます。 これにより、特にサーバーは、クライアントがイベントとして処理できる一方向の呼び出しをクライアントに対して実行できます。 一方向メソッドの指定の詳細については、<xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> プロパティおよび <xref:System.ServiceModel.OperationContractAttribute> クラスのトピックを参照してください。  

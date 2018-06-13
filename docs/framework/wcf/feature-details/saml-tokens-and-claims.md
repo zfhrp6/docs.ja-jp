@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33494733"
 ---
 # <a name="saml-tokens-and-claims"></a>SAML トークンとクレーム
 Security Assertions Markup Language (SAML)*トークン*はクレームの XML 表現。 フェデレーション セキュリティ シナリオで Windows Communication Foundation (WCF) を使用して SAML トークンは、既定では、*発行済みトークン*です。  

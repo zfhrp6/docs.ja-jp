@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33490377"
 ---
 # <a name="how-to-configure-wcf-service-to-interoperate-with-aspnet-web-service-clients"></a>方法 : WCF サービスおよび ASP.NET Web サービス クライアントを相互運用するために構成する
 相互運用できるようにする Windows Communication Foundation (WCF) サービス エンドポイントを構成する[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)]Web サービス クライアントを使用して、<xref:System.ServiceModel.BasicHttpBinding?displayProperty=nameWithType>型として使用するサービス エンドポイントのバインディングの種類。  

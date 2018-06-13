@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33271030"
 ---
 # <a name="-operator-c-reference"></a>である必要があります。 演算子 (C# リファレンス)
 ドット演算子 (`.`) は、メンバー アクセスに使用されます。 ドット演算子は、型または名前空間のメンバーを指定します。 たとえば、ドット演算子は、.NET Framework クラス ライブラリ内の特定のメソッドにアクセスするために使用されます。  

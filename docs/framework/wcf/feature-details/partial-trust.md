@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33492012"
 ---
 # <a name="partial-trust"></a>部分信頼
 [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)] 以降では、部分的に信頼された呼び出し元は、<xref:System.ServiceModel>、<xref:System.Runtime.Serialization>、および <xref:System.ServiceModel.Web> に実装されたパブリック型とパブリック メソッドにアクセスできます。 このセクションがコード アクセス セキュリティ (CAS) で実行されているアプリケーションで使用可能な WCF 機能の限定サブセットと同様に、部分的に信頼されたアプリケーション内で Windows Communication Foundation (WCF) を使用するためのサポートされるシナリオについて説明しますアクセス許可です。  

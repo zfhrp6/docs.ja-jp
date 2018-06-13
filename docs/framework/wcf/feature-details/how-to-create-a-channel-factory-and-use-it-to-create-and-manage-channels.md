@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33489971"
 ---
 # <a name="how-to-create-a-channel-factory-and-use-it-to-create-and-manage-channels"></a>方法 : チャネル ファクトリを作成および使用して、チャネルを作成および管理する
 <xref:System.ServiceModel.DuplexChannelFactory%601> クラスは、クライアントがサービス エンドポイントとの間でメッセージを送受信するために使用する、さまざまな種類の双方向チャネルを作成したり、管理したりする手段を提供します。  
