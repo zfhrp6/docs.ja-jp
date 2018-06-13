@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33640281"
 ---
 # <a name="this-operation-can-only-be-done-when-the-file-is-closed"></a>この操作は、ファイルが閉じられているときにのみ実行することができます
 ファイルが開いている場合は、ファイルが閉じられているときにのみ実行できる操作を実行しようとします。  

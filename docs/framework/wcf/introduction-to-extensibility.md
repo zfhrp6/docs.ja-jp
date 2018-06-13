@@ -11,6 +11,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33804434"
 ---
 # <a name="introduction-to-extensibility"></a>拡張機能の概要
 Windows Communication Foundation (WCF) アプリケーション モデルは、分散アプリケーションの通信要件の大部分を解決するために設計されています。 ただし、既定のアプリケーション モデルとシステム提供の実装でサポートされないシナリオが必ず存在します。 WCF 機能拡張モデルはアプリケーション モデル全体を置き換えるに至るまでのすべてのレベルでのシステム動作を変更できるようにすることによってカスタム シナリオをサポートするために対象としています。 ここでは、拡張のさまざまな領域を提示し、各領域の詳細について説明します。  

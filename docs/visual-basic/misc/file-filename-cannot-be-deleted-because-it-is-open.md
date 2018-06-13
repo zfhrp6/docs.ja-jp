@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33638657"
 ---
 # <a name="file-39ltfilenamegt39-cannot-be-deleted-because-it-is-open"></a>ファイル&#39; &lt;filename&gt; &#39;が開いているために、削除できません
 開いているファイルを削除しようとしました。  

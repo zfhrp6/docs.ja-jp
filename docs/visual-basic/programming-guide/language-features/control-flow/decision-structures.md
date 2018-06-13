@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33648198"
 ---
 # <a name="decision-structures-visual-basic"></a>条件判断構造 (Visual Basic)
 Visual Basic では、条件をテストし、そのテストの結果に応じてさまざまな操作を実行することができます。 True または false の場合、さまざまな値の式、または一連のステートメントを実行するときに生成された例外のさまざまな条件をテストできます。  

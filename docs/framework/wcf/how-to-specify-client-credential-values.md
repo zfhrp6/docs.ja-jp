@@ -10,6 +10,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33806650"
 ---
 # <a name="how-to-specify-client-credential-values"></a>方法 : クライアントの資格情報の値を指定する
 クライアントの認証方法、サービスに Windows Communication Foundation (WCF) を使用して、サービスを指定できます。 たとえば、証明書を使用してクライアントを認証するように指定できます。  

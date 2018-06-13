@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33807662"
 ---
 # <a name="trusted-facade-service"></a>信頼されたファサード サービス
 このシナリオのサンプルは、Windows Communication Foundation (WCF) を使用して 1 つのサービスからの呼び出し元の id 情報フローする方法を示しますセキュリティ インフラストラクチャです。  

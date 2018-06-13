@@ -12,6 +12,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33808593"
 ---
 # <a name="using-sessions"></a>セッションの使用
 Windows Communication Foundation (WCF) アプリケーションで、*セッション*会話にメッセージのグループを関連付けます。 WCF のセッションは、セッション オブジェクトで使用できるとは異なる[!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)]アプリケーション、サポートされる動作は、およびさまざまな方法で制御されます。 このトピックは、WCF でのセッションが有効にする機能を説明アプリケーションとその使用方法です。  

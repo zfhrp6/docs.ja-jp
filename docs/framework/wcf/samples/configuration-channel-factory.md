@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33806579"
 ---
 # <a name="configuration-channel-factory"></a>構成チャネル ファクトリ
 このサンプルでは、<xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601> の使用方法を示します。 <xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601> WCF クライアントの構成の一元管理を許可します。 これは、アプリケーション ドメインによる読み込みの後に構成が選択または変更される場合にも役立ちます。  

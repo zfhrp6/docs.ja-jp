@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809746"
 ---
 # <a name="wcf-test-client-wcftestclientexe"></a>WCF のテスト用クライアント (WcfTestClient.exe)
 Windows Communication Foundation (WCF) をテスト クライアント (WcfTestClient.exe) は、ユーザーがテスト パラメーターを入力し、その入力をサービスを有効にし、サービスを返信する応答を表示する GUI ツールです。 テストできるように WCF サービス ホストと組み合わせると、シームレスにサービスを提供します。  

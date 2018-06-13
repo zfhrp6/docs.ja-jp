@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33806209"
 ---
 # <a name="extending-hosting-using-servicehostfactory"></a>ServiceHostFactory を使用したホストの拡張
 標準<xref:System.ServiceModel.ServiceHost>Windows Communication Foundation (WCF) サービスをホストするための API は、WCF のアーキテクチャの機能拡張ポイントです。 ユーザーは、この <xref:System.ServiceModel.ServiceHost> の派生型として独自のホスト クラスを定義できます。通常は、<xref:System.ServiceModel.Channels.CommunicationObject.OnOpening> を使用するために <xref:System.ServiceModel.Description.ServiceDescription> をオーバーライドして、これにより、サービスを開く前に、強制的に既定のエンドポイントを追加したり、動作を変更することができます。  

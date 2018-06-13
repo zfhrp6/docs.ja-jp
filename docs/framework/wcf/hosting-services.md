@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33807854"
 ---
 # <a name="hosting-services"></a>ホスティング サービス
 アクティブにするには、サービスを作成してそのコンテキストと有効期間を制御するランタイム環境内で、サービスをホストする必要があります。 Windows Communication Foundation (WCF) サービスは、マネージ コードをサポートする任意の Windows プロセスで実行する設計されています。  

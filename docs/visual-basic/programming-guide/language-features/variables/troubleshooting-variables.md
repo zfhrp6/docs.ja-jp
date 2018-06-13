@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33655696"
 ---
 # <a name="troubleshooting-variables-in-visual-basic"></a>Visual Basic における変数のトラブルシューティング
 このページには、Visual Basic における変数を操作するときに発生する可能性がある一般的な問題が一覧表示されます。  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33808053"
 ---
 # <a name="fundamental-windows-communication-foundation-concepts"></a>Windows Communication Foundation の基本概念
 このドキュメントでは、Windows Communication Foundation (WCF) アーキテクチャの概要を表示します。 ここでは、主要概念およびこれらの概念がどのように組み合わされているかについて説明します。 WCF サービスとクライアントの最も単純なバージョンを作成する方法のチュートリアルを参照してください。[チュートリアル入門](../../../docs/framework/wcf/getting-started-tutorial.md)です。 WCF プログラミングについては、次を参照してください。[基本的な WCF プログラミング](../../../docs/framework/wcf/basic-wcf-programming.md)です。  

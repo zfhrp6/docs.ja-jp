@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33805890"
 ---
 # <a name="choosing-a-message-exchange-pattern"></a>メッセージ交換パターンの選択
 カスタム トランスポートを記述する最初の手順は、これを決定する*メッセージ交換パターン*(Mep) を開発するチャネルに必要なです。 ここでは、使用できるオプションとさまざまな要件について説明します。 これで説明されているチャネル開発タスクの一覧の最初のタスクは、[開発チャネル](../../../../docs/framework/wcf/extending/developing-channels.md)です。  

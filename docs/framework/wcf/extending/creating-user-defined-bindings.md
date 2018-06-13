@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33806745"
 ---
 # <a name="creating-user-defined-bindings"></a>ユーザー定義バインディングの作成
 システムから提供されないバインディングを作成する方法はいくつかあります。  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33804405"
 ---
 # <a name="aspnetrouteintegration"></a>AspNetRouteIntegration
 このサンプルでは、ASP.NET ルートを使用する Windows Communication Foundation (WCF) の REST サービスをホストする方法を示します。 [基本的なリソース サービス](../../../../docs/framework/wcf/samples/basic-resource-service.md)サンプルはこのシナリオの自己ホスト型のバージョンを表示および深さのサービスの実装について説明します。 ここでは、ASP.NET 統合機能について集中的に説明します。 ASP.NET ルーティングの詳細については、次を参照してください。<xref:System.Web.Routing>です。  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33803441"
 ---
 # <a name="client-interoperability"></a>クライアント相互運用性
 このセクションには、Windows Communication Foundation (WCF) およびその他のテクノロジとの間の相互運用性を示すサンプルが含まれています。  

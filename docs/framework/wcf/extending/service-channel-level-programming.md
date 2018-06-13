@@ -10,6 +10,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33805861"
 ---
 # <a name="service-channel-level-programming"></a>サービス チャネル レベルのプログラミング
 このトピックを使用せずに Windows Communication Foundation (WCF) サービス アプリケーションを記述する方法について説明、<xref:System.ServiceModel.ServiceHost?displayProperty=nameWithType>とその関連付けられたオブジェクト モデルです。  

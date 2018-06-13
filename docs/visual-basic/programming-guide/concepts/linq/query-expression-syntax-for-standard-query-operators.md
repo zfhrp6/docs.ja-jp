@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33648607"
 ---
 # <a name="query-expression-syntax-for-standard-query-operators-visual-basic"></a>標準クエリ演算子 (Visual Basic) のクエリ式の構文
 頻繁に使用される標準クエリ演算子が専用の Visual Basic 言語のキーワードの構文には、一部として呼び出されるように、*クエリ式*です。 クエリ式は*メソッド ベース*の方法とは異なり、より読み取りやすいクエリの表現形式です。 クエリ式の句は、コンパイル時にクエリ メソッドへの呼び出しに変換されます。  

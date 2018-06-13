@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33807190"
 ---
 # <a name="creating-a-bindingelement"></a>BindingElement の作成
 バインディングとバインド要素 (を拡張したオブジェクト<xref:System.ServiceModel.Channels.Binding?displayProperty=nameWithType>と<xref:System.ServiceModel.Channels.BindingElement?displayProperty=nameWithType>、それぞれ) は、Windows Communication Foundation (WCF) アプリケーションのモデルがチャネル ファクトリとチャネル リスナーに関連付けられている場所です。 結合がないカスタム チャネルを使用する必要がありますチャネル レベルでのプログラミング」の説明に従って[サービス チャネル レベルのプログラミング](../../../../docs/framework/wcf/extending/service-channel-level-programming.md)と[クライアント チャネル レベルのプログラミング](../../../../docs/framework/wcf/extending/client-channel-level-programming.md)です。 Wcf での開発、チャネルを使用して有効にする最小要件について説明、<xref:System.ServiceModel.Channels.BindingElement>チャネル、および手順 4 の説明に従って、アプリケーションから使用を有効にする の[開発チャネル](../../../../docs/framework/wcf/extending/developing-channels.md)です。  

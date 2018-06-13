@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33655324"
 ---
 # <a name="local-type-inference-visual-basic"></a>ローカル型の推論 (Visual Basic)
 Visual Basic コンパイラを使用して*型推論*なしで宣言されたローカル変数のデータ型を決定する、`As`句。 コンパイラは、初期化式の型から変数の型を推論します。 これにより、変数を宣言する型を明示的に指定せず、次の例に示すようにできます。 宣言の結果、両方とも`num1`と`num2`整数値として厳密に型指定します。  

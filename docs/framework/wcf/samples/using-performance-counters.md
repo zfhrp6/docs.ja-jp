@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33807320"
 ---
 # <a name="using-performance-counters"></a>パフォーマンス カウンターの使用
 このサンプルでは、ユーザー定義のパフォーマンス カウンターを作成する方法と Windows Communication Foundation (WCF) パフォーマンス カウンターにアクセスする方法を示します。 このサンプルがに基づいて、[作業の開始](../../../../docs/framework/wcf/samples/getting-started-sample.md)です。  
@@ -40,7 +41,7 @@ ms.lasthandoff: 05/07/2018
   
 ### <a name="to-view-performance-data"></a>パフォーマンス データを表示するには  
   
-1.  ツールを起動、パフォーマンス モニター をクリックして**開始**、**を実行しています.**、入力`perfmon` をクリック**ok、**またはコントロール パネルから選択**管理ツール** をダブルクリック**パフォーマンス**です。  
+1.  ツールを起動、パフォーマンス モニター をクリックして**開始**、**を実行しています.**、入力`perfmon` をクリック**ok、** またはコントロール パネルから選択**管理ツール** をダブルクリック**パフォーマンス**です。  
   
     > [!NOTE]
     >  サンプル コードが実行されるまでは、カウンタを追加することはできません。  

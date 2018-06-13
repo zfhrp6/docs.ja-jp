@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33646383"
 ---
 # <a name="elementary-data-types-visual-basic"></a>基本データ型 (Visual Basic)
 Visual Basic では、多くのプログラミング要素に使用できる定義済みのデータ型のセットを提供します。 このセクションでは、これらの型とその使用方法について説明します。  

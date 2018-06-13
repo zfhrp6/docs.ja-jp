@@ -14,6 +14,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33806183"
 ---
 # <a name="how-to-use-separate-x509-certificates-for-signing-and-encryption"></a>方法 : 署名および暗号化に個別の X.509 証明書を使用する
 このトピックでは、メッセージの署名とクライアントとサービスの両方で暗号化を別々 の証明書を使用するように、Windows Communication Foundation (WCF) を構成する方法を示します。  

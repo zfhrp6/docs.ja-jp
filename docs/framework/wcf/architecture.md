@@ -11,6 +11,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33804223"
 ---
 # <a name="windows-communication-foundation-architecture"></a>Windows Communication Foundation のアーキテクチャ
 次の図は、Windows Communication Foundation (WCF) アーキテクチャの主要なレイヤーを示しています。  

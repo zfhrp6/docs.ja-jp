@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33806670"
 ---
 # <a name="securing-workflow-services"></a>ワークフロー サービスのセキュリティ保護
 セキュリティで保護されたワークフロー サービス サンプルでは、次の手順を示します。  

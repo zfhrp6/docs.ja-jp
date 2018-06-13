@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33640184"
 ---
 # <a name="unable-to-read-delimited-fields-because-delimiters-is-nothing-or-empty"></a>区切り記号がないか、または空であるため、区切り記号で分けられたフィールドを読み取れません
 `TextFieldParser` プロパティが `Delimiters` に設定されているか、または空であるため、 `Nothing` をファイルから読み取ることができません。  

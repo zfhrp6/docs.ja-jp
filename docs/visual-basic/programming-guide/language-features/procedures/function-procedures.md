@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33655536"
 ---
 # <a name="function-procedures-visual-basic"></a>Function プロシージャ (Visual Basic)
 A`Function`プロシージャは、一連の Visual Basic ステートメントで囲まれた、`Function`と`End Function`ステートメントです。 `Function`手順がタスクを実行し、呼び出し元のコードにコントロールを返します。 コントロールが返されたときにも、呼び出し元のコードに値を返します。  

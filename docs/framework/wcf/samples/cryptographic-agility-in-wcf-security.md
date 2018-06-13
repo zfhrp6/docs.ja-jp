@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33810214"
 ---
 # <a name="cryptographic-agility-in-wcf-security"></a>WCF セキュリティの暗号化方式の指定
 このサンプルでは、Windows Communication Foundation (WCF) クライアントとサービスで迅速な暗号化実装を提供する標準またはカスタム アルゴリズムで指定する方法を示します。 サンプルは、以下のプロジェクトで構成されます。  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33806914"
 ---
 # <a name="virtual-directory-setup-instructions"></a>仮想ディレクトリのセットアップ手順
 Windows Communication Foundation (WCF) サンプルは %SystemDrive%\inetpub\wwwroot\servicemodelsamples フォルダーにマップされている servicemodelsamples という仮想ディレクトリを共有します。  
@@ -48,7 +49,7 @@ Windows Communication Foundation (WCF) サンプルは %SystemDrive%\inetpub\www
   
 2.  左側のウィンドウで、コンピューターの名前を持つノードを展開し、展開、 **Websites**ノード。  
   
-3.  右クリック**既定の Web サイト**選択**、新しい仮想ディレクトリ**仮想ディレクトリの作成ウィザードを開きます。  
+3.  右クリック**既定の Web サイト**選択 **、新しい仮想ディレクトリ**仮想ディレクトリの作成ウィザードを開きます。  
   
 4.  ウィザードで、次のように入力します。`servicemodelsamples`として作成している仮想ディレクトリのエイリアスです。  
   

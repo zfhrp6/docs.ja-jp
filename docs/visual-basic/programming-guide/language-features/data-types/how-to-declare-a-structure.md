@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33650028"
 ---
 # <a name="how-to-declare-a-structure-visual-basic"></a>方法: 構造体を宣言する (Visual Basic)
 ある構造体の宣言を開始する、 [Structure ステートメント](../../../../visual-basic/language-reference/statements/structure-statement.md)で終了して、 `End` `Structure`ステートメントです。 これら 2 つのステートメントの間で、少なくとも 1 つを宣言する必要があります*要素*です。 任意のデータ型の要素を指定できますが、非共有変数または非共有、非カスタム イベントのいずれかにするには、少なくとも 1 つ必要があります。  

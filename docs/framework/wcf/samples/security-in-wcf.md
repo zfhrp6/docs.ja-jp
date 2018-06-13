@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33803872"
 ---
 # <a name="security-in-wcf"></a>WCF でのセキュリティ
 このセクションには、Windows Communication Foundation (WCF) のセキュリティに関連するサンプルが含まれています。  

@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33655585"
 ---
 # <a name="arithmetic-operators-in-visual-basic"></a>Visual Basic における算術演算子
 算術演算子は、多くのリテラル、変数、その他の式、関数とプロパティの呼び出し、および定数で表される数値の計算を含む一般的な算術演算の実行に使用されます。 オペランドのビットごとのレベルで動作し、ビット パターンを左または右にシフトするビット シフト演算子は、算術演算子を含む分類もします。  

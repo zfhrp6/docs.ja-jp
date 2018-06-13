@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809317"
 ---
 # <a name="tracing"></a>トレース
 Windows Communication Foundation (WCF) は、エラーの監視と分析のアプリケーションのインストルメンテーション データと診断データを提供します。 アプリケーションの動作やエラー原因を調べるために、デバッガーの代わりにトレースを使用できます。 コンポーネント間でエラーと処理を関連付けて、エンドツーエンドの調査を行うこともできます。  

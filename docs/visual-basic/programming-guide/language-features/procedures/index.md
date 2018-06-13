@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33655137"
 ---
 # <a name="procedures-in-visual-basic"></a>Visual Basic におけるプロシージャ
 A*プロシージャ*宣言ステートメントで囲まれている Visual Basic ステートメントのブロックです (`Function`、 `Sub`、 `Operator`、 `Get`、 `Set`) し、対応する`End`宣言します。 Visual Basic でのすべての実行可能なステートメントは、いくつかの手順でなければなりません。  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809519"
 ---
 # <a name="soap-and-http-endpoints"></a>SOAP エンドポイントおよび HTTP エンドポイント
 このサンプルでは、RPC ベースのサービスを実装して、SOAP 形式および WCF Web プログラミング モデルを使用して、"Plain Old XML"(POX) 形式で公開する方法を示します。 参照してください、[基本 HTTP サービス](../../../../docs/framework/wcf/samples/basic-http-service.md)サービス用の HTTP バインドの詳細についてはサンプルです。 このサンプルでは、さまざまなバインドを使用して SOAP および HTTP で RPC ベースのサービスを公開する方法について詳しく示します。  

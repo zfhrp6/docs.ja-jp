@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33806462"
 ---
 # <a name="wcf-service-publishing"></a>WCF サービス発行
 実際にテスト目的で実稼働環境へのアプリケーションを配置する WCF サービス ホストおよび WCF テスト クライアントによって提供される初期の開発環境からの Windows Communication Foundation (WCF) サービスの公開、使用できます。 最終的な配置計画を確定する前に、Windows Communication Foundation (WCF) サービスの公開を使用して、WCF サービスが正しく動作し、発行する準備ができていることを確認します。 テストのさまざまなターゲットの場所に、WCF サービス ライブラリを展開することもできます。  

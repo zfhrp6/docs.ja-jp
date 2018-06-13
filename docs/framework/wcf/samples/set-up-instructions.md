@@ -10,6 +10,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809106"
 ---
 # <a name="set-up-instructions"></a>セットアップ手順
 この一連のトピックでは、Windows Communication Foundation (WCF) サービスを実行するために必要なサービスを設定する方法について説明します。  

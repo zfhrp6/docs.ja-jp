@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33649426"
 ---
 # <a name="type-promotion-visual-basic"></a>型の上位変換 (Visual Basic)
 モジュール内のプログラミング要素を宣言する場合、Visual Basic は、モジュールを含む名前空間には、そのスコープを昇格します。 これは呼ば*プロモーションを入力*です。  

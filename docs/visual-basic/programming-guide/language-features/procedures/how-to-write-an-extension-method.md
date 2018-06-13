@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33648734"
 ---
 # <a name="how-to-write-an-extension-method-visual-basic"></a>方法: 拡張メソッドを作成する (Visual Basic)
 拡張メソッドを使用すると、既存のクラスにメソッドを追加できます。 そのクラスのインスタンスの場合と同様、拡張メソッドを呼び出すことができます。  

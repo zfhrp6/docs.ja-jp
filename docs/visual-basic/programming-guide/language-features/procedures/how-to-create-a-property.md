@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33656244"
 ---
 # <a name="how-to-create-a-property-visual-basic"></a>方法: プロパティを作成する (Visual Basic)
 プロパティの定義の間で囲む必要が、`Property`ステートメントおよび`End Property`ステートメントです。 この定義内で定義する、`Get`プロシージャ、`Set`プロシージャ、またはその両方です。 すべてのプロパティのコードの範囲内でこれらのプロシージャです。  

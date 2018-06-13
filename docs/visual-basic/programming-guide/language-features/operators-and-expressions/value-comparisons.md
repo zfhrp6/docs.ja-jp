@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33649608"
 ---
 # <a name="value-comparisons-visual-basic"></a>値の比較 (Visual Basic)
 比較演算子は、数値変数の値を比較する式を構築するために使用できます。 これらの式を返す、`Boolean`値かどうかに基づいて、比較は true または false です。 このような式の例は次のとおりです。  

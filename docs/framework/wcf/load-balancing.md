@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33807526"
 ---
 # <a name="load-balancing"></a>負荷分散
 Windows Communication Foundation (WCF) アプリケーションの容量を増やす方法の 1 つは負荷分散されたサーバー ファームに配置をスケール アウトすることです。 WCF アプリケーションは、標準的な負荷分散の手法を Windows ネットワーク負荷分散などのソフトウェア ロード バランサーを含むだけでなくハードウェア ベースの負荷分散を使用して負荷分散をすることができます。  

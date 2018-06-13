@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33645269"
 ---
 # <a name="language-integrated-axes-in-visual-basic-linq-to-xml"></a>Visual Basic の統合言語軸 (LINQ to XML)
 このセクションでは、XML にアクセスするが簡単に、Visual Basic 言語に直接組み込まれている機能について説明します。 例では、LINQ to XML のドキュメントの多くは、Visual Basic の統合軸を使用します。  

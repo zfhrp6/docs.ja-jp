@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33803238"
 ---
 # <a name="propagation"></a>伝達
 このトピックでは、Windows Communication Foundation (WCF) のトレース モデルでのアクティビティ伝達について説明します。  

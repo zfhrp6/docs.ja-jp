@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33637531"
 ---
 # <a name="public-member-39ltmembernamegt39-on-type-39lttypenamegt39-not-found"></a>パブリック メンバー &#39; &lt;membername&gt; &#39;型&#39; &lt;typename&gt; &#39;が見つかりません。
 アクセスしようとしているメンバーが見つかりません。 このエラーは、遅延バインディング オブジェクトの非パブリック メンバーにアクセスするときに発生することがあります。  

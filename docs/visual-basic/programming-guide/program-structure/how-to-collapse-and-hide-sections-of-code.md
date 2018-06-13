@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33650856"
 ---
 # <a name="how-to-collapse-and-hide-sections-of-code-visual-basic"></a>方法: コードのセクションを折りたたんで非表示にする (Visual Basic)
 `#Region`ディレクティブでは、折りたたむし、Visual Basic ファイルのコードのセクションでは非表示にすることができます。 `#Region`ディレクティブでは、Visual Studio code エディターを使用する場合は、拡張可能なコードまたは折りたたみのブロックを指定することができます。 選択的にコードを非表示にする機能より管理し、読みやすくに、ファイルになります。 詳細については、「[アウトライン](/visualstudio/ide/outlining)」を参照してください。  

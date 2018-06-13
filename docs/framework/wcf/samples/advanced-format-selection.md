@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33805591"
 ---
 # <a name="advanced-format-selection"></a>高度な形式選択
 このサンプルでは、新しい送信応答形式をサポートするために Windows Communication Foundation (WCF) の REST プログラミング モデルを拡張する方法を示します。 また、このサンプルでは T4 テンプレートを使用して応答を XHTML ページとして返し、ビュースタイル プログラミング モデルの実装方法も示します。  

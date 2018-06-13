@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33646540"
 ---
 # <a name="visual-basic-programming-guide"></a>Visual Basic のプログラミング ガイド
 Visual Basic は、最新のプログラミング言語と同様に、多くの一般的なプログラミング構成要素と言語要素をサポートします。 このガイドでは、Visual Basic でのプログラミングのすべての主要な要素について説明します。  

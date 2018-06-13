@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33806631"
 ---
 # <a name="hierarchical-configuration-model"></a>階層的な構成モデル
 このサンプルでは、サービスの構成ファイルの階層を実装する方法を示します。 また、バインド、サービス動作、およびエンドポイント動作を階層の上位レベルから継承する方法も示します。  

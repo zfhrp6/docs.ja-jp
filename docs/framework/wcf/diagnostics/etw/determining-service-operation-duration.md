@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33804964"
 ---
 # <a name="determining-service-operation-duration"></a>サービス操作の実行時間の確認
 Windows Communication Foundation (WCF) アプリケーションの分析トレースが有効な場合、サービス操作の実行時間は、イベント ログを確認するには簡単に決定されます。  ここでは、サービス操作の実行にかかる時間を確認する方法を示します。  
