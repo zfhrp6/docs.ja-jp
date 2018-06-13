@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33653258"
 ---
 # <a name="linq-to-xml-for-xpath-users-visual-basic"></a><span data-ttu-id="bd733-102">LINQ to XML を XPath ユーザー (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="bd733-102">LINQ to XML for XPath Users (Visual Basic)</span></span>
 

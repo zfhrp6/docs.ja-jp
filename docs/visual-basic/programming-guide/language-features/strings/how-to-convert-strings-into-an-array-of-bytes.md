@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33647954"
 ---
 # <a name="how-to-convert-strings-into-an-array-of-bytes-in-visual-basic"></a><span data-ttu-id="b6c71-102">方法 : Visual Basic で文字列をバイトの配列に変換する</span><span class="sxs-lookup"><span data-stu-id="b6c71-102">How to: Convert Strings into an Array of Bytes in Visual Basic</span></span>
 <span data-ttu-id="b6c71-103">このトピックでは、文字列をバイト配列に変換する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="b6c71-103">This topic shows how to convert a string into an array of bytes.</span></span>  

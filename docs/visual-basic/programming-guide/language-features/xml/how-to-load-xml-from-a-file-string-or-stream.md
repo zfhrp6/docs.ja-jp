@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33647632"
 ---
 # <a name="how-to-load-xml-from-a-file-string-or-stream-visual-basic"></a><span data-ttu-id="a0552-102">方法 : ファイル、文字列、またはストリームから XML を読み込む (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="a0552-102">How to: Load XML from a File, String, or Stream (Visual Basic)</span></span>
 <span data-ttu-id="a0552-103">作成することができます[XML リテラル](../../../../visual-basic/language-reference/xml-literals/index.md)し、ファイル、文字列またはストリームなど、外部ソースの内容といくつかのメソッドを使用して設定します。</span><span class="sxs-lookup"><span data-stu-id="a0552-103">You can create [XML Literals](../../../../visual-basic/language-reference/xml-literals/index.md) and populate them with the contents from an external source such as a file, a string, or a stream by using several methods.</span></span> <span data-ttu-id="a0552-104">これらのメソッドは、次の例に示します。</span><span class="sxs-lookup"><span data-stu-id="a0552-104">These methods are shown in the following examples.</span></span>  

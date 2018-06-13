@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33803001"
 ---
 # <a name="transfer"></a><span data-ttu-id="b4ac7-102">転送</span><span class="sxs-lookup"><span data-stu-id="b4ac7-102">Transfer</span></span>
 <span data-ttu-id="b4ac7-103">このトピックでは、Windows Communication Foundation (WCF) のアクティビティ トレース モデルで使用される転送について説明します。</span><span class="sxs-lookup"><span data-stu-id="b4ac7-103">This topic describes transfer in the Windows Communication Foundation (WCF) activity tracing model.</span></span>  

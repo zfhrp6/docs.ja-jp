@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33640493"
 ---
 # <a name="source-folder-and-target-folder-are-the-same"></a><span data-ttu-id="1fa6f-102">ソース フォルダーとターゲット フォルダーが同じです</span><span class="sxs-lookup"><span data-stu-id="1fa6f-102">Source folder and target folder are the same</span></span>
 <span data-ttu-id="1fa6f-103">ファイルをコピーまたは移動しようとしましたが、指定したソース ディレクトリとターゲット ディレクトリが同じです。</span><span class="sxs-lookup"><span data-stu-id="1fa6f-103">An attempt has been made to copy or move a file, but the specified source directory and target directory are the same.</span></span> <span data-ttu-id="1fa6f-104">ファイル パスの解析に誤りがある可能性があります。</span><span class="sxs-lookup"><span data-stu-id="1fa6f-104">This may be a result of incorrectly parsing a file path.</span></span>  

@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33649192"
 ---
 # <a name="how-to-control-the-scope-of-a-variable-visual-basic"></a><span data-ttu-id="0dd4e-102">方法: 変数のスコープを制御する (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="0dd4e-102">How to: Control the Scope of a Variable (Visual Basic)</span></span>
 <span data-ttu-id="0dd4e-103">変数が、通常、*スコープ*、リファレンスについては、それを宣言する領域全体で表示します。</span><span class="sxs-lookup"><span data-stu-id="0dd4e-103">Normally, a variable is in *scope*, or visible for reference, throughout the region in which you declare it.</span></span> <span data-ttu-id="0dd4e-104">場合によっては、変数の*アクセス レベル*そのスコープに影響を与えることができます。</span><span class="sxs-lookup"><span data-stu-id="0dd4e-104">In some cases, the variable's *access level* can influence its scope.</span></span>  

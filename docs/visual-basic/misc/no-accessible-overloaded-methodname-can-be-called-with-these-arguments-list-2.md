@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33636540"
 ---
 # <a name="no-accessible-overloaded-39ltmethodnamegt39-can-be-called-with-these-arguments-without-a-narrowing-conversion-ltlistgt"></a><span data-ttu-id="c9b7e-102">ないオーバー ロードされた&#39; &lt;methodname&gt; &#39;縮小変換しないで、これらの引数と共に呼び出せる:&lt;一覧&gt;</span><span class="sxs-lookup"><span data-stu-id="c9b7e-102">No accessible overloaded &#39;&lt;methodname&gt;&#39; can be called with these arguments without a narrowing conversion: &lt;list&gt;</span></span>
 <span data-ttu-id="c9b7e-103">オーバーロードされたメソッドが呼び出されましたが、メソッドは縮小変換せずに指定された引数のリストと一致しません。</span><span class="sxs-lookup"><span data-stu-id="c9b7e-103">An overloaded method was called, but the method cannot be matched with the list of provided arguments without a narrowing conversion.</span></span>  

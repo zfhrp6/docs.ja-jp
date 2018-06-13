@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33652378"
 ---
 # <a name="parameter-arrays-visual-basic"></a><span data-ttu-id="be54f-102">パラメーター配列 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="be54f-102">Parameter Arrays (Visual Basic)</span></span>
 <span data-ttu-id="be54f-103">通常、プロシージャ宣言で指定より引数を持つプロシージャを呼び出すことはできません。</span><span class="sxs-lookup"><span data-stu-id="be54f-103">Usually, you cannot call a procedure with more arguments than the procedure declaration specifies.</span></span> <span data-ttu-id="be54f-104">不特定多数の引数が必要なときを宣言できます、*パラメーター配列*、これにより、プロシージャ パラメーターの値の配列を受け入れるようにします。</span><span class="sxs-lookup"><span data-stu-id="be54f-104">When you need an indefinite number of arguments, you can declare a *parameter array*, which allows a procedure to accept an array of values for a parameter.</span></span> <span data-ttu-id="be54f-105">プロシージャを定義するときに、パラメーター配列内の要素の数を把握する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="be54f-105">You do not have to know the number of elements in the parameter array when you define the procedure.</span></span> <span data-ttu-id="be54f-106">配列のサイズは、プロシージャ呼び出しごとに個別に決定されます。</span><span class="sxs-lookup"><span data-stu-id="be54f-106">The array size is determined individually by each call to the procedure.</span></span>  

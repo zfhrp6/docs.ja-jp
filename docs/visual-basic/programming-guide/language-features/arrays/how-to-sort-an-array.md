@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33646311"
 ---
 # <a name="how-to-sort-an-array-in-visual-basic"></a><span data-ttu-id="c4cd1-102">方法: 配列を並べ替える (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="c4cd1-102">How to: Sort An Array in Visual Basic</span></span>
 <span data-ttu-id="c4cd1-103">この例の配列を宣言する`String`という名前のオブジェクト`zooAnimals`、設定、および、アルファベット順に並べ替えます。</span><span class="sxs-lookup"><span data-stu-id="c4cd1-103">This example declares an array of `String` objects named `zooAnimals`, populates it, and then sorts it alphabetically.</span></span>  

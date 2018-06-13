@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33649813"
 ---
 # <a name="how-to-define-multiple-versions-of-a-procedure-visual-basic"></a><span data-ttu-id="0d4b7-102">方法: プロシージャの複数のバージョンを定義する (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="0d4b7-102">How to: Define Multiple Versions of a Procedure (Visual Basic)</span></span>
 <span data-ttu-id="0d4b7-103">によって複数のバージョンのプロシージャを定義できます*オーバー ロード*バージョンごとに異なるパラメーター リストは、同じ名前を使用しています。</span><span class="sxs-lookup"><span data-stu-id="0d4b7-103">You can define a procedure in multiple versions by *overloading* it, using the same name but a different parameter list for each version.</span></span> <span data-ttu-id="0d4b7-104">オーバー ロードの目的では、名前で区別することがなく密接に関連するいくつかのバージョンのプロシージャを定義します。</span><span class="sxs-lookup"><span data-stu-id="0d4b7-104">The purpose of overloading is to define several closely related versions of a procedure without having to differentiate them by name.</span></span>  

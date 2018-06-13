@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33806147"
 ---
 # <a name="transport-custom-transactions-over-udp-sample"></a><span data-ttu-id="82e8a-102">トランスポート : UDP 経由のカスタム トランザクションのサンプル</span><span class="sxs-lookup"><span data-stu-id="82e8a-102">Transport: Custom Transactions over UDP Sample</span></span>
 <span data-ttu-id="82e8a-103">このサンプルがに基づいて、[トランスポート: UDP](../../../../docs/framework/wcf/samples/transport-udp.md)サンプル Windows Communication Foundation (WCF) で[トランスポート拡張](../../../../docs/framework/wcf/samples/transport-extensibility.md)です。</span><span class="sxs-lookup"><span data-stu-id="82e8a-103">This sample is based on the [Transport: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) sample in the Windows Communication Foundation (WCF)[Transport Extensibility](../../../../docs/framework/wcf/samples/transport-extensibility.md).</span></span> <span data-ttu-id="82e8a-104">ここでは、カスタム トランザクション フローをサポートするように UDP トランスポートのサンプルを拡張し、<xref:System.ServiceModel.Channels.TransactionMessageProperty> プロパティの使用方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="82e8a-104">It extends the UDP Transport sample to support custom transaction flow and demonstrates the use of the <xref:System.ServiceModel.Channels.TransactionMessageProperty> property.</span></span>  

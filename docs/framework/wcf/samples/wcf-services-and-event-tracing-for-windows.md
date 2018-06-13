@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809834"
 ---
 # <a name="wcf-services-and-event-tracing-for-windows"></a><span data-ttu-id="f23a1-102">WCF サービスと Event Tracing for Windows</span><span class="sxs-lookup"><span data-stu-id="f23a1-102">WCF Services and Event Tracing for Windows</span></span>
 <span data-ttu-id="f23a1-103">このサンプルでイベント トレース for Windows (ETW) イベントを出力する Windows Communication Foundation (WCF) での分析トレースを使用する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="f23a1-103">This sample demonstrates how to use the analytic tracing in Windows Communication Foundation (WCF) to emit events in Event Tracing for Windows (ETW).</span></span> <span data-ttu-id="f23a1-104">分析トレースは、実稼働環境で WCF サービスのトラブルシューティングが可能で、WCF スタック キー_ポイントで出力されるイベントです。</span><span class="sxs-lookup"><span data-stu-id="f23a1-104">The analytic traces are events emitted at key points in the WCF stack that allow troubleshooting of WCF services in production environment.</span></span>  

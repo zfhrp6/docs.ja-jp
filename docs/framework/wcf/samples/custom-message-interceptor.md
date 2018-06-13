@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33806319"
 ---
 # <a name="custom-message-interceptor"></a><span data-ttu-id="50c39-102">カスタム メッセージ インターセプター</span><span class="sxs-lookup"><span data-stu-id="50c39-102">Custom Message Interceptor</span></span>
 <span data-ttu-id="50c39-103">このサンプルでは、チャネル拡張モデルの使用方法を示します。</span><span class="sxs-lookup"><span data-stu-id="50c39-103">This sample demonstrates the use of the channel extensibility model.</span></span> <span data-ttu-id="50c39-104">特に、チャネル ファクトリとチャネル リスナーを作成するカスタム バインド要素を実装して、ランタイム スタックの特定のポイントですべての送受信メッセージを中断する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="50c39-104">In particular, it shows how to implement a custom binding element that creates channel factories and channel listeners to intercept all incoming and outgoing messages at a particular point in the run-time stack.</span></span> <span data-ttu-id="50c39-105">また、このサンプルには、こうしたカスタム ファクトリの使用方法を示すクライアントとサーバーも含まれます。</span><span class="sxs-lookup"><span data-stu-id="50c39-105">The sample also includes a client and server that demonstrate the use of these custom factories.</span></span>  

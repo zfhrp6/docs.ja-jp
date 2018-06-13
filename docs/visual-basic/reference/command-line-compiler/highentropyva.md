@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33656328"
 ---
 # <a name="-highentropyva-visual-basic"></a><span data-ttu-id="e066c-102">-highentropyva (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="e066c-102">-highentropyva (Visual Basic)</span></span>
 <span data-ttu-id="e066c-103">示す、64 ビット実行可能ファイルまたは実行可能ファイルでマークされているかどうか、 [/platform:anycpu](../../../visual-basic/reference/command-line-compiler/platform.md)コンパイラ オプションで高エントロピ ASLR Address Space レイアウトのランダム化 () をサポートします。</span><span class="sxs-lookup"><span data-stu-id="e066c-103">Indicates whether a 64-bit executable or an executable that's marked by the [/platform:anycpu](../../../visual-basic/reference/command-line-compiler/platform.md) compiler option supports high entropy Address Space Layout Randomization (ASLR).</span></span>  

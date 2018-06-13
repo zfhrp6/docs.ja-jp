@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33804304"
 ---
 # <a name="scenario"></a><span data-ttu-id="e9bf3-102">シナリオ</span><span class="sxs-lookup"><span data-stu-id="e9bf3-102">Scenario</span></span>
 <span data-ttu-id="e9bf3-103">このセクションには、Windows Communication Foundation (WCF) シナリオを示すサンプルが含まれています。</span><span class="sxs-lookup"><span data-stu-id="e9bf3-103">This section contains samples that demonstrate Windows Communication Foundation (WCF) scenarios.</span></span>  

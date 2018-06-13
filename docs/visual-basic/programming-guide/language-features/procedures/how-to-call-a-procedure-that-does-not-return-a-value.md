@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33649049"
 ---
 # <a name="how-to-call-a-procedure-that-does-not-return-a-value-visual-basic"></a><span data-ttu-id="379ef-102">方法: 値を返さないプロシージャを呼び出す (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="379ef-102">How to: Call a Procedure that Does Not Return a Value (Visual Basic)</span></span>
 <span data-ttu-id="379ef-103">A`Sub`プロシージャが呼び出し元のコードに値を返しません。</span><span class="sxs-lookup"><span data-stu-id="379ef-103">A `Sub` procedure does not return a value to the calling code.</span></span> <span data-ttu-id="379ef-104">これを明示的に呼び出すスタンドアロンの呼び出し元ステートメントを使用します。</span><span class="sxs-lookup"><span data-stu-id="379ef-104">You call it explicitly with a stand-alone calling statement.</span></span> <span data-ttu-id="379ef-105">単に式の中で名前を使用して呼び出すことはできません。</span><span class="sxs-lookup"><span data-stu-id="379ef-105">You cannot call it by simply using its name within an expression.</span></span>  

@@ -25,6 +25,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33656166"
 ---
 # <a name="implicit-and-explicit-conversions-visual-basic"></a><span data-ttu-id="ec5fa-102">暗黙の型変換と明示的な型変換 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="ec5fa-102">Implicit and Explicit Conversions (Visual Basic)</span></span>
 <span data-ttu-id="ec5fa-103">*暗黙的な変換*特別な構文のソース コードでは必要ありません。</span><span class="sxs-lookup"><span data-stu-id="ec5fa-103">An *implicit conversion* does not require any special syntax in the source code.</span></span> <span data-ttu-id="ec5fa-104">次の例では、Visual Basic に暗黙的の値を変換`k`単精度浮動小数点値を割り当てる前に`q`です。</span><span class="sxs-lookup"><span data-stu-id="ec5fa-104">In the following example, Visual Basic implicitly converts the value of `k` to a single-precision floating-point value before assigning it to `q`.</span></span>  

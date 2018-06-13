@@ -10,6 +10,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33804980"
 ---
 # <a name="conceptual-overview"></a><span data-ttu-id="e8b33-102">概念</span><span class="sxs-lookup"><span data-stu-id="e8b33-102">Conceptual Overview</span></span>
 <span data-ttu-id="e8b33-103">このトピックは、情報は、Windows Communication Foundation (WCF) メッセージング システムおよびその使用をサポートするクラスをまとめたものです。</span><span class="sxs-lookup"><span data-stu-id="e8b33-103">This topic summarizes information about the Windows Communication Foundation (WCF) messaging system and the classes that support its use.</span></span>  

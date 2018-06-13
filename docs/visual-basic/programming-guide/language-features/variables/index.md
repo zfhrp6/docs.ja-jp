@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33654474"
 ---
 # <a name="variables-in-visual-basic"></a><span data-ttu-id="a962a-102">Visual Basic における変数</span><span class="sxs-lookup"><span data-stu-id="a962a-102">Variables in Visual Basic</span></span>
 <span data-ttu-id="a962a-103">多くの場合、Visual Basic を使用して計算を実行するときに、値を格納する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a962a-103">You often have to store values when you perform calculations with Visual Basic.</span></span> <span data-ttu-id="a962a-104">たとえば、いくつかの値を計算し、比較し、比較の結果に応じて、さまざまな操作を実行する必要があるとします。</span><span class="sxs-lookup"><span data-stu-id="a962a-104">For example, you might want to calculate several values, compare them, and perform different operations on them, depending on the result of the comparison.</span></span> <span data-ttu-id="a962a-105">比較する場合には、その値を保持する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a962a-105">You have to retain the values if you want to compare them.</span></span>  

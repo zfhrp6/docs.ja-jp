@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33648048"
 ---
 # <a name="how-to-access-a-variable-hidden-by-a-derived-class-visual-basic"></a><span data-ttu-id="4e5d3-102">方法: 派生クラスによって非表示になっている変数にアクセスする (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="4e5d3-102">How to: Access a Variable Hidden by a Derived Class (Visual Basic)</span></span>
 <span data-ttu-id="4e5d3-103">派生クラス内のコードは、変数にアクセスするときに、コンパイラ通常参照が解決を最も近いアクセス可能なバージョンにアクセス可能なバージョンは、少ない継承旧バージョンとのステップにアクセスするクラス。</span><span class="sxs-lookup"><span data-stu-id="4e5d3-103">When code in a derived class accesses a variable, the compiler normally resolves the reference to the closest accessible version, that is, the accessible version the fewest derivational steps backward from the accessing class.</span></span> <span data-ttu-id="4e5d3-104">変数が派生クラスで定義されている場合、コードでその定義が正常にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="4e5d3-104">If the variable is defined in the derived class, the code normally accesses that definition.</span></span>  

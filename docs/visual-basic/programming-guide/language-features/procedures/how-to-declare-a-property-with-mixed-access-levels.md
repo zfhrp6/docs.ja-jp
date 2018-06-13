@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33651412"
 ---
 # <a name="how-to-declare-a-property-with-mixed-access-levels-visual-basic"></a><span data-ttu-id="e8baa-102">方法: 複数のアクセス レベルを持つプロパティを宣言する (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="e8baa-102">How to: Declare a Property with Mixed Access Levels (Visual Basic)</span></span>
 <span data-ttu-id="e8baa-103">場合は、`Get`と`Set`手順異なるアクセス レベルを設定するプロパティについてでさらに小さくレベルを使用することができます、`Property`ステートメントといずれかより制限の厳しいレベル、`Get`または`Set`ステートメント。</span><span class="sxs-lookup"><span data-stu-id="e8baa-103">If you want the `Get` and `Set` procedures on a property to have different access levels, you can use the more permissive level in the `Property` statement and the more restrictive level in either the `Get` or `Set` statement.</span></span> <span data-ttu-id="e8baa-104">プロパティの値を取得することができるコードの特定の部分と値を変更することができるコードの他の特定部分したい場合は、プロパティに混合アクセス レベルを使用します。</span><span class="sxs-lookup"><span data-stu-id="e8baa-104">You use mixed access levels on a property when you want certain parts of the code to be able to get the property's value, and certain other parts of the code to be able to change the value.</span></span>  

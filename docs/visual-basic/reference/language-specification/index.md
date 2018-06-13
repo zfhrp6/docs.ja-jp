@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33648669"
 ---
 # <a name="visual-basic-language-specification"></a><span data-ttu-id="b626e-102">Visual Basic 言語仕様</span><span class="sxs-lookup"><span data-stu-id="b626e-102">Visual Basic Language Specification</span></span>
 <span data-ttu-id="b626e-103">Visual Basic 言語仕様は、Visual Basic の文法と構文に関するすべての質問に対する回答の権限を持つソースです。</span><span class="sxs-lookup"><span data-stu-id="b626e-103">The Visual Basic Language Specification is the authoritative source for answers to all questions about Visual Basic grammar and syntax.</span></span> <span data-ttu-id="b626e-104">Visual Basic リファレンス ドキュメントで取り上げられていない、言語に関する詳細情報が含まれています。</span><span class="sxs-lookup"><span data-stu-id="b626e-104">It contains detailed information about the language, including many points not covered in the Visual Basic reference documentation.</span></span>  

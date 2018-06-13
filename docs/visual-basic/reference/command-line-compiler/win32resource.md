@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33649875"
 ---
 # <a name="-win32resource"></a><span data-ttu-id="9fbf3-102">-win32resource</span><span class="sxs-lookup"><span data-stu-id="9fbf3-102">-win32resource</span></span>
 <span data-ttu-id="9fbf3-103">出力ファイルには、Win32 リソース ファイルを挿入します。</span><span class="sxs-lookup"><span data-stu-id="9fbf3-103">Inserts a Win32 resource file in the output file.</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33644434"
 ---
 # <a name="functional-transformation-of-xml-visual-basic"></a><span data-ttu-id="359ab-102">XML (Visual Basic) の関数型変換</span><span class="sxs-lookup"><span data-stu-id="359ab-102">Functional Transformation of XML (Visual Basic)</span></span>
 <span data-ttu-id="359ab-103">このトピックでは、XML ドキュメントを変更するための純粋関数型変換の方法について説明し、手続き型の方法と比較します。</span><span class="sxs-lookup"><span data-stu-id="359ab-103">This topic discusses the pure functional transformation approach to modifying XML documents, and contrasts it with a procedural approach.</span></span>  

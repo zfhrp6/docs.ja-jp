@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33653664"
 ---
 # <a name="sample-compilation-command-lines-visual-basic"></a><span data-ttu-id="0c352-102">コンパイル コマンドラインのサンプル (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="0c352-102">Sample compilation command lines (Visual Basic)</span></span>
 <span data-ttu-id="0c352-103">Visual Studio 内から Visual Basic プログラムをコンパイルする代わりに、実行可能 (.exe) ファイルまたはダイナミック リンク ライブラリ (.dll) ファイルを生成するためにコマンドラインからコンパイルすることができます。</span><span class="sxs-lookup"><span data-stu-id="0c352-103">As an alternative to compiling Visual Basic programs from within Visual Studio, you can compile from the command line to produce executable (.exe) files or dynamic-link library (.dll) files.</span></span>  

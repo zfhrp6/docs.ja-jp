@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33653404"
 ---
 # <a name="-optioncompare"></a><span data-ttu-id="4790f-102">-optioncompare</span><span class="sxs-lookup"><span data-stu-id="4790f-102">-optioncompare</span></span>
 <span data-ttu-id="4790f-103">文字列比較の方法を指定します。</span><span class="sxs-lookup"><span data-stu-id="4790f-103">Specifies how string comparisons are made.</span></span>  

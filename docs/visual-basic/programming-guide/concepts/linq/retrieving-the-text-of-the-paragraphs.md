@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33647151"
 ---
 # <a name="retrieving-the-text-of-the-paragraphs-visual-basic"></a><span data-ttu-id="bad88-102">(Visual Basic) の段落のテキストを取得します。</span><span class="sxs-lookup"><span data-stu-id="bad88-102">Retrieving the Text of the Paragraphs (Visual Basic)</span></span>
 <span data-ttu-id="bad88-103">この例は、前の例に基づいて[段落とそのスタイル (Visual Basic) を取得する](../../../../visual-basic/programming-guide/concepts/linq/retrieving-the-paragraphs-and-their-styles.md)です。</span><span class="sxs-lookup"><span data-stu-id="bad88-103">This example builds on the previous example, [Retrieving the Paragraphs and Their Styles (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/retrieving-the-paragraphs-and-their-styles.md).</span></span> <span data-ttu-id="bad88-104">この新しい例では、各段落のテキストを文字列として取得します。</span><span class="sxs-lookup"><span data-stu-id="bad88-104">This new example retrieves the text of each paragraph as a string.</span></span>  

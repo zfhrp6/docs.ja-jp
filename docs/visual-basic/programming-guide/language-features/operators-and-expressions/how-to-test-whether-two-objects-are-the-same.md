@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33647606"
 ---
 # <a name="how-to-test-whether-two-objects-are-the-same-visual-basic"></a><span data-ttu-id="1518a-102">方法: 2 つのオブジェクトが等しいかどうかをテストする (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="1518a-102">How to: Test Whether Two Objects Are the Same (Visual Basic)</span></span>
 <span data-ttu-id="1518a-103">オブジェクトを参照する 2 つの変数があれば、いずれかを使用できる、`Is`または`IsNot`演算子、またはその両方を同じインスタンスを参照しているかどうかを判断します。</span><span class="sxs-lookup"><span data-stu-id="1518a-103">If you have two variables that refer to objects, you can use either the `Is` or `IsNot` operator, or both, to determine whether they refer to the same instance.</span></span>  

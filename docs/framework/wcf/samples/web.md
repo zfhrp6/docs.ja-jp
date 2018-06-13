@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33805114"
 ---
 # <a name="web"></a><span data-ttu-id="2f5ba-102">Web</span><span class="sxs-lookup"><span data-stu-id="2f5ba-102">Web</span></span>
 <span data-ttu-id="2f5ba-103">このセクションには、Web ホストのサンプルが含まれています。</span><span class="sxs-lookup"><span data-stu-id="2f5ba-103">This section contains Web-hosted samples.</span></span>  

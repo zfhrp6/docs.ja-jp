@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33650502"
 ---
 # <a name="documenting-your-code-with-xml-visual-basic"></a><span data-ttu-id="43b6c-102">XML の使用によるコードのドキュメントの作成 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="43b6c-102">Documenting Your Code with XML (Visual Basic)</span></span>
 <span data-ttu-id="43b6c-103">Visual basic では XML を使用してコードを文書化することができます。</span><span class="sxs-lookup"><span data-stu-id="43b6c-103">In Visual Basic, you can document your code using XML</span></span>  

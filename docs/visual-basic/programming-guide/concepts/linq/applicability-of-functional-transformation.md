@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33643575"
 ---
 # <a name="applicability-of-functional-transformation-visual-basic"></a><span data-ttu-id="a59f7-102">関数型変換 (Visual Basic) の適用性</span><span class="sxs-lookup"><span data-stu-id="a59f7-102">Applicability of Functional Transformation (Visual Basic)</span></span>
 <span data-ttu-id="a59f7-103">純粋関数型変換は、さまざまな状況で適用できます。</span><span class="sxs-lookup"><span data-stu-id="a59f7-103">Pure functional transformations are applicable in a wide variety of situations.</span></span>  

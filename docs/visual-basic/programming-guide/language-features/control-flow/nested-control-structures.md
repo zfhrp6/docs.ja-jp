@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33648073"
 ---
 # <a name="nested-control-structures-visual-basic"></a><span data-ttu-id="47f00-102">入れ子になった制御構造 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="47f00-102">Nested Control Structures (Visual Basic)</span></span>
 <span data-ttu-id="47f00-103">たとえば他のコントロール ステートメント内のコントロール ステートメントを配置することができます、`If...Then...Else`ブロック内で、`For...Next`ループします。</span><span class="sxs-lookup"><span data-stu-id="47f00-103">You can place control statements inside other control statements, for example an `If...Then...Else` block within a `For...Next` loop.</span></span> <span data-ttu-id="47f00-104">制御ステートメントの中に別のコントロール ステートメントの配置と呼ばれます*入れ子になった*です。</span><span class="sxs-lookup"><span data-stu-id="47f00-104">A control statement placed inside another control statement is said to be *nested*.</span></span>  

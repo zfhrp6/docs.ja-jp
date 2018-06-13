@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33656270"
 ---
 # <a name="-link-visual-basic"></a><span data-ttu-id="1072a-102">-リンク (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="1072a-102">-link (Visual Basic)</span></span>
 <span data-ttu-id="1072a-103">指定したアセンブリ内の COM 型情報を、現在のコンパイル対象のプロジェクトで使用できるようにします。</span><span class="sxs-lookup"><span data-stu-id="1072a-103">Causes the compiler to make COM type information in the specified assemblies available to the project that you are currently compiling.</span></span>  

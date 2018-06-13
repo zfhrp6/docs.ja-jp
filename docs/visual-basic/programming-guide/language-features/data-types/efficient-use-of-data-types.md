@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33647762"
 ---
 # <a name="efficient-use-of-data-types-visual-basic"></a><span data-ttu-id="d9aeb-102">データ型の有効な使用方法 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="d9aeb-102">Efficient Use of Data Types (Visual Basic)</span></span>
 <span data-ttu-id="d9aeb-103">宣言されていない変数とデータ型なしで宣言された変数が割り当てられている、`Object`データ型。</span><span class="sxs-lookup"><span data-stu-id="d9aeb-103">Undeclared variables and variables declared without a data type are assigned the `Object` data type.</span></span> <span data-ttu-id="d9aeb-104">実行速度が低下することができるプログラムを迅速に作成するが容易になります。 可能性がします。</span><span class="sxs-lookup"><span data-stu-id="d9aeb-104">This makes it easy to write programs quickly, but it can cause them to execute more slowly.</span></span>  

@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33805695"
 ---
 # <a name="windows-communication-foundation-bindings-overview"></a><span data-ttu-id="f7bab-102">Windows Communication Foundation のバインディングの概要</span><span class="sxs-lookup"><span data-stu-id="f7bab-102">Windows Communication Foundation Bindings Overview</span></span>
 <span data-ttu-id="f7bab-103">バインディングは、Windows Communication Foundation (WCF) サービスのエンドポイントに接続するために必要な通信の詳細を指定するために使用するオブジェクトです。</span><span class="sxs-lookup"><span data-stu-id="f7bab-103">Bindings are objects that are used to specify the communication details that are required to connect to the endpoint of a Windows Communication Foundation (WCF) service.</span></span> <span data-ttu-id="f7bab-104">WCF サービス内の各エンドポイントには、バインディングを適切に指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="f7bab-104">Each endpoint in a WCF service requires a binding to be well-specified.</span></span> <span data-ttu-id="f7bab-105">このトピックでは、通信の詳細、バインドを定義する、バインディング、WCF では、どのようなバインドが含まれているし、エンドポイントのバインディングを指定する方法の要素の種類について説明します。</span><span class="sxs-lookup"><span data-stu-id="f7bab-105">This topic outlines the types of communication details that the bindings define, the elements of a binding, what bindings are included in WCF, and how a binding can be specified for an endpoint.</span></span>  

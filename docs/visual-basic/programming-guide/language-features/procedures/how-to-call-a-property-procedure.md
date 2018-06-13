@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33654818"
 ---
 # <a name="how-to-call-a-property-procedure-visual-basic"></a><span data-ttu-id="08a76-102">方法: プロパティ プロシージャを呼び出す (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="08a76-102">How to: Call a Property Procedure (Visual Basic)</span></span>
 <span data-ttu-id="08a76-103">プロパティ プロシージャを呼び出すには、「プロパティ値を格納するか値を取得します。</span><span class="sxs-lookup"><span data-stu-id="08a76-103">You call a property procedure by storing a value in the property or retrieving its value.</span></span> <span data-ttu-id="08a76-104">プロパティは、変数にアクセスする同じ方法でアクセスします。</span><span class="sxs-lookup"><span data-stu-id="08a76-104">You access a property the same way you access a variable.</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/23/2018
+ms.locfileid: "34456641"
 ---
 # <a name="methods"></a><span data-ttu-id="c8350-103">メソッド</span><span class="sxs-lookup"><span data-stu-id="c8350-103">Methods</span></span>
 

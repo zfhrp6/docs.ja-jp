@@ -10,6 +10,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33804821"
 ---
 # <a name="query-execution"></a><span data-ttu-id="3a7b6-102">クエリの実行</span><span class="sxs-lookup"><span data-stu-id="3a7b6-102">Query Execution</span></span>
 <span data-ttu-id="3a7b6-103">ユーザーによって作成された LINQ クエリは、コマンド ツリーに変換されます。</span><span class="sxs-lookup"><span data-stu-id="3a7b6-103">After a LINQ query is created by a user, it is converted to a command tree.</span></span> <span data-ttu-id="3a7b6-104">コマンド ツリーは、Entity Framework と互換性のあるクエリの表現です。</span><span class="sxs-lookup"><span data-stu-id="3a7b6-104">A command tree is a representation of a query that is compatible with the Entity Framework.</span></span> <span data-ttu-id="3a7b6-105">コマンド ツリーは、その後データ ソースに対して実行されます。</span><span class="sxs-lookup"><span data-stu-id="3a7b6-105">The command tree is then executed against the data source.</span></span> <span data-ttu-id="3a7b6-106">クエリの実行時には、すべてのクエリ式 (つまりクエリの全コンポーネント) が評価されます。これには結果の具体化で使用される式も含まれます。</span><span class="sxs-lookup"><span data-stu-id="3a7b6-106">At query execution time, all query expressions (that is, all components of the query) are evaluated, including those expressions that are used in result materialization.</span></span>  

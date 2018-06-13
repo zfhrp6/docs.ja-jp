@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33804626"
 ---
 # <a name="bindings-and-binding-elements"></a><span data-ttu-id="dd8a1-102">バインディングとバインド要素</span><span class="sxs-lookup"><span data-stu-id="dd8a1-102">Bindings and Binding Elements</span></span>
 <span data-ttu-id="dd8a1-103">バインディングと呼ばれる特別な構成要素のコレクションとは*バインド要素*されるたびに、クライアントは、サービス ランタイムによって評価されますが、またはサービス エンドポイントが構築されます。</span><span class="sxs-lookup"><span data-stu-id="dd8a1-103">Bindings are collections of special configuration elements, called *binding elements*, which are evaluated by the service runtime whenever a client or service endpoint is being constructed.</span></span> <span data-ttu-id="dd8a1-104">バインディング内のバインド要素の型と順序に基づいて、エンドポイントのチャネル スタック内のプロトコル チャネルとトランスポート チャネルが選択され、スタック順が決定されます。</span><span class="sxs-lookup"><span data-stu-id="dd8a1-104">The type and order of the binding elements within a binding determines the selection and stacking order of the protocol and transport channels in an endpoint's channel stack.</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33639403"
 ---
 # <a name="only-the-first-eight-characters-of-a-custom-log-name-are-significant"></a><span data-ttu-id="22d34-102">カスタム ログ名の最初の 8 文字が有効です</span><span class="sxs-lookup"><span data-stu-id="22d34-102">Only the first eight characters of a custom log name are significant</span></span>
 <span data-ttu-id="22d34-103">イベント ログ名の一意性を調べるときには、最初の 8 文字だけが考慮されます。</span><span class="sxs-lookup"><span data-stu-id="22d34-103">When checking event log names for uniqueness, only the first eight characters are considered.</span></span> <span data-ttu-id="22d34-104">最初の 8 文字に同じ文字を使用するイベント ログが複数ある場合は、競合する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="22d34-104">A conflict may result from event logs that share their first eight characters.</span></span>  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33649930"
 ---
 # <a name="visual-basic-limitations"></a><span data-ttu-id="9f849-102">Visual Basic の制限事項</span><span class="sxs-lookup"><span data-stu-id="9f849-102">Visual Basic Limitations</span></span>
 <span data-ttu-id="9f849-103">以前のバージョンの Visual Basic では、変数名、モジュール、およびモジュールのサイズで許可される変数の数の長さなどのコード内の境界が適用されます。</span><span class="sxs-lookup"><span data-stu-id="9f849-103">Earlier versions of Visual Basic enforced boundaries in code, such as the length of variable names, the number of variables allowed in modules, and module size.</span></span> <span data-ttu-id="9f849-104">Visual Basic .net では、これらの制限が緩和されました、記述と、コードの配置をより自由が提供します。</span><span class="sxs-lookup"><span data-stu-id="9f849-104">In Visual Basic .NET, these restrictions have been relaxed, giving you greater freedom in writing and arranging your code.</span></span>  

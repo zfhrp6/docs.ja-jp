@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33656179"
 ---
 # <a name="-platform-visual-basic"></a><span data-ttu-id="ea61e-102">-プラットフォーム (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="ea61e-102">-platform (Visual Basic)</span></span>
 <span data-ttu-id="ea61e-103">出力ファイルをどのプラットフォーム用の共通言語ランタイム (CLR) で実行するかを指定します。</span><span class="sxs-lookup"><span data-stu-id="ea61e-103">Specifies which platform version of common language runtime (CLR) can run the output file.</span></span>  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33808433"
 ---
 # <a name="wcf-client-overview"></a><span data-ttu-id="2f14e-102">WCF クライアントの概要</span><span class="sxs-lookup"><span data-stu-id="2f14e-102">WCF Client Overview</span></span>
 <span data-ttu-id="2f14e-103">このセクションでは、クライアント アプリケーションの処理、構成、作成、および Windows Communication Foundation (WCF) クライアントを使用する方法、およびクライアント アプリケーションをセキュリティで保護する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="2f14e-103">This section describes what client applications do, how to configure, create, and use a Windows Communication Foundation (WCF) client, and how to secure client applications.</span></span>  

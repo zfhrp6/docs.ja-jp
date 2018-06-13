@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33649101"
 ---
 # <a name="zero-based-vs-one-based-string-access-in-visual-basic"></a><span data-ttu-id="3a05f-102">0 から始まる vs です。Visual Basic で文字列の 1 つに基づいたアクセス</span><span class="sxs-lookup"><span data-stu-id="3a05f-102">Zero-based vs. One-based String Access in Visual Basic</span></span>
 <span data-ttu-id="3a05f-103">このトピックでどの Visual Basic を比較し、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]文字列の文字へのアクセスを提供します。</span><span class="sxs-lookup"><span data-stu-id="3a05f-103">This topic compares how Visual Basic and the [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] provide access to the characters in a string.</span></span> <span data-ttu-id="3a05f-104">[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]常に、文字列の文字に 0 から始まるアクセスを提供し、Visual Basic は、関数によって、0 から始まると 1 つベースのアクセスを提供します。</span><span class="sxs-lookup"><span data-stu-id="3a05f-104">The [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] always provides zero-based access to the characters in a string, whereas Visual Basic provides zero-based and one-based access, depending on the function.</span></span>  

@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33807841"
 ---
 # <a name="configuring-message-logging"></a><span data-ttu-id="ea6b5-102">メッセージ ログの構成</span><span class="sxs-lookup"><span data-stu-id="ea6b5-102">Configuring Message Logging</span></span>
 <span data-ttu-id="ea6b5-103">ここでは、さまざまなシナリオでのメッセージ ログの構成方法を示します。</span><span class="sxs-lookup"><span data-stu-id="ea6b5-103">This topic describes how you can configure message logging for different scenarios.</span></span>  

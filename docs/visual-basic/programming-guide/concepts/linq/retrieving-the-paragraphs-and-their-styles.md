@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33648308"
 ---
 # <a name="retrieving-the-paragraphs-and-their-styles-visual-basic"></a><span data-ttu-id="843f9-102">段落とそのスタイル (Visual Basic) を取得します。</span><span class="sxs-lookup"><span data-stu-id="843f9-102">Retrieving the Paragraphs and Their Styles (Visual Basic)</span></span>
 <span data-ttu-id="843f9-103">この例では、WordprocessingML ドキュメントから段落ノードを取得するクエリを記述します。</span><span class="sxs-lookup"><span data-stu-id="843f9-103">In this example, we write a query that retrieves the paragraph nodes from a WordprocessingML document.</span></span> <span data-ttu-id="843f9-104">それぞれの段落のスタイルも特定します。</span><span class="sxs-lookup"><span data-stu-id="843f9-104">It also identifies the style of each paragraph.</span></span>  

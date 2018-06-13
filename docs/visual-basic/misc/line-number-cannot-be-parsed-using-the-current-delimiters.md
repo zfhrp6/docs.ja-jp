@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33639137"
 ---
 # <a name="line-ltnumbergt-cannot-be-parsed-using-the-current-delimiters"></a><span data-ttu-id="8ecd4-102">行&lt;数&gt;現在の区切り記号を使用して解析できません</span><span class="sxs-lookup"><span data-stu-id="8ecd4-102">Line &lt;number&gt; cannot be parsed using the current Delimiters</span></span>
 <span data-ttu-id="8ecd4-103">指定したもの以外の区切り記号を使用しているために、指定した行を解析できません。</span><span class="sxs-lookup"><span data-stu-id="8ecd4-103">The specified line cannot be parsed because it uses delimiters other than those specified.</span></span>  

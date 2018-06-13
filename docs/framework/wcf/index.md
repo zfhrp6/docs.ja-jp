@@ -10,6 +10,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33804272"
 ---
 # <a name="developing-service-oriented-applications-with-wcf"></a><span data-ttu-id="55e91-102">WCF でのサービス指向アプリケーションの開発</span><span class="sxs-lookup"><span data-stu-id="55e91-102">Developing Service-Oriented Applications with WCF</span></span>
 <span data-ttu-id="55e91-103">このセクションでは、サービス指向アプリケーションを構築するための統一プログラミング モデルを提供する Windows Communication Foundation (WCF) について説明します。</span><span class="sxs-lookup"><span data-stu-id="55e91-103">This section of the documentation provides information about Windows Communication Foundation (WCF), which is a unified programming model for building service-oriented applications.</span></span> <span data-ttu-id="55e91-104">これを使用して開発者は、プラットフォーム間を統合し、既存のコンポーネントと相互運用する、セキュリティで保護された信頼性の高いトランザクション型のソリューションを構築できます。</span><span class="sxs-lookup"><span data-stu-id="55e91-104">It enables developers to build secure, reliable, transacted solutions that integrate across platforms and interoperate with existing investments.</span></span>

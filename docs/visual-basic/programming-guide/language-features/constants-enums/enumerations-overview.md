@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33647580"
 ---
 # <a name="enumerations-overview-visual-basic"></a><span data-ttu-id="2cf27-102">列挙型の概要 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="2cf27-102">Enumerations Overview (Visual Basic)</span></span>
 <span data-ttu-id="2cf27-103">列挙体は、関連する定数のセットを使用して、定数値の名前に関連付ける便利な方法を提供します。</span><span class="sxs-lookup"><span data-stu-id="2cf27-103">Enumerations provide a convenient way to work with sets of related constants and to associate constant values with names.</span></span> <span data-ttu-id="2cf27-104">たとえば、一連の整数型の定数を曜日に関連付けて列挙型として宣言すると、コードで整数値ではなく曜日名を使用することができます。</span><span class="sxs-lookup"><span data-stu-id="2cf27-104">For example, you can declare an enumeration for a set of integer constants associated with the days of the week, and then use the names of the days rather than their integer values in your code.</span></span>  

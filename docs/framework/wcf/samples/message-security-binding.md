@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33805042"
 ---
 # <a name="message-security-binding"></a><span data-ttu-id="e7e9e-102">メッセージ セキュリティ バインディング</span><span class="sxs-lookup"><span data-stu-id="e7e9e-102">Message Security Binding</span></span>
 <span data-ttu-id="e7e9e-103">このセクションには、WCF での Windows サービスのメッセージ セキュリティ バインディングを示すサンプルが含まれています。</span><span class="sxs-lookup"><span data-stu-id="e7e9e-103">This section contains samples that demonstrate message security binding in Windows Services in WCF.</span></span>  

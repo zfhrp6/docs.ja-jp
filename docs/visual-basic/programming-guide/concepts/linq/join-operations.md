@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33645604"
 ---
 # <a name="join-operations-visual-basic"></a><span data-ttu-id="aec54-102">結合操作 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="aec54-102">Join Operations (Visual Basic)</span></span>
 <span data-ttu-id="aec54-103">2 つのデータ ソースの "*結合*" とは、あるデータ ソースのオブジェクトを、共通の属性を共有する別のデータ ソースのオブジェクトと関連付けることです。</span><span class="sxs-lookup"><span data-stu-id="aec54-103">A *join* of two data sources is the association of objects in one data source with objects that share a common attribute in another data source.</span></span>  

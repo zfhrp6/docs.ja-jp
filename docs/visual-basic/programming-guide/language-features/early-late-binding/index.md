@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33647254"
 ---
 # <a name="early-and-late-binding-visual-basic"></a><span data-ttu-id="93b45-102">事前バインディングと遅延バインディング (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="93b45-102">Early and Late Binding (Visual Basic)</span></span>
 <span data-ttu-id="93b45-103">Visual Basic コンパイラの実行と呼ばれるプロセス`binding`オブジェクトが、オブジェクト変数に割り当てられている場合。</span><span class="sxs-lookup"><span data-stu-id="93b45-103">The Visual Basic compiler performs a process called `binding` when an object is assigned to an object variable.</span></span> <span data-ttu-id="93b45-104">オブジェクトが特定のオブジェクト型として宣言された変数に代入される場合、オブジェクトは*事前バインディング*されます。</span><span class="sxs-lookup"><span data-stu-id="93b45-104">An object is *early bound* when it is assigned to a variable declared to be of a specific object type.</span></span> <span data-ttu-id="93b45-105">事前バインディングされたオブジェクトを使用すると、コンパイラは、アプリケーションを実行する前に、メモリの割り当てとその他の最適化を実行することができます。</span><span class="sxs-lookup"><span data-stu-id="93b45-105">Early bound objects allow the compiler to allocate memory and perform other optimizations before an application executes.</span></span> <span data-ttu-id="93b45-106">たとえば、次のコードは、<xref:System.IO.FileStream> 型の変数を宣言します。</span><span class="sxs-lookup"><span data-stu-id="93b45-106">For example, the following code fragment declares a variable to be of type <xref:System.IO.FileStream>:</span></span>  

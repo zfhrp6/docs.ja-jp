@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33655272"
 ---
 # <a name="events-visual-basic"></a><span data-ttu-id="8c0dc-102">イベント (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="8c0dc-102">Events (Visual Basic)</span></span>
 <span data-ttu-id="8c0dc-103">ほとんどのプログラムを実際には、シーケンスで実行するプロシージャの系列として、Visual Studio プロジェクトを視覚化することがありますはイベント ドリブン: 実行のフローの意味と呼ばれる外部の発生によって決定されます*イベント*です。</span><span class="sxs-lookup"><span data-stu-id="8c0dc-103">While you might visualize a Visual Studio project as a series of procedures that execute in a sequence, in reality, most programs are event driven—meaning the flow of execution is determined by external occurrences called *events*.</span></span>  

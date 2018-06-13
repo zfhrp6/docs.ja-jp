@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33804187"
 ---
 # <a name="wcf-system-requirements"></a><span data-ttu-id="1c40e-102">WCF システム要件</span><span class="sxs-lookup"><span data-stu-id="1c40e-102">WCF System Requirements</span></span>
 <span data-ttu-id="1c40e-103">Windows Communication Foundation (WCF) は、分散アプリケーションの作成に使用される通信インフラストラクチャです。</span><span class="sxs-lookup"><span data-stu-id="1c40e-103">Windows Communication Foundation (WCF) is a communication infrastructure that is used to create distributed applications.</span></span> <span data-ttu-id="1c40e-104">実行する WCF を有効にする要件を次に示します。</span><span class="sxs-lookup"><span data-stu-id="1c40e-104">The following lists the requirements that enable WCF to run.</span></span>  

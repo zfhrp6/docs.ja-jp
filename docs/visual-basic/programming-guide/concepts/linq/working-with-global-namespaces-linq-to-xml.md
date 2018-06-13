@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33648906"
 ---
 # <a name="working-with-global-namespaces-visual-basic-linq-to-xml"></a><span data-ttu-id="0bbe6-102">グローバル名前空間の使用 (Visual Basic) (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="0bbe6-102">Working with Global Namespaces (Visual Basic) (LINQ to XML)</span></span>
 <span data-ttu-id="0bbe6-103">Visual Basic で XML リテラルの重要な機能の 1 つを使用して XML 名前空間を宣言する機能、`Imports`ステートメントです。</span><span class="sxs-lookup"><span data-stu-id="0bbe6-103">One of the key features of XML literals in Visual Basic is the capability to declare XML namespaces by using the `Imports` statement.</span></span> <span data-ttu-id="0bbe6-104">この機能を使用することで、プレフィックスを使用する XML 名前空間または既定の XML 名前空間を宣言できます。</span><span class="sxs-lookup"><span data-stu-id="0bbe6-104">Using this feature, you can declare an XML namespace that uses a prefix, or you can declare a default XML namespace.</span></span>  

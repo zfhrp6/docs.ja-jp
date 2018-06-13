@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33647931"
 ---
 # <a name="how-to-assign-one-array-to-another-array-visual-basic"></a><span data-ttu-id="a2e3c-102">方法: 配列を別の配列に代入する (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="a2e3c-102">How to: Assign One Array to Another Array (Visual Basic)</span></span>
 <span data-ttu-id="a2e3c-103">配列がオブジェクトであるため、他のオブジェクト型のような代入ステートメントで使用することができます。</span><span class="sxs-lookup"><span data-stu-id="a2e3c-103">Because arrays are objects, you can use them in assignment statements like other object types.</span></span> <span data-ttu-id="a2e3c-104">配列変数、配列要素と、ランクと長さの情報を構成するデータへのポインターを保持し、割り当ては、このポインターだけをコピーします。</span><span class="sxs-lookup"><span data-stu-id="a2e3c-104">An array variable holds a pointer to the data constituting the array elements and the rank and length information, and an assignment copies only this pointer.</span></span>  

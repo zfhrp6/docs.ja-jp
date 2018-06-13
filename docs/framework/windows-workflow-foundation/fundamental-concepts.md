@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33805994"
 ---
 # <a name="fundamental-windows-workflow-concepts"></a><span data-ttu-id="1c938-102">Windows Workflow の基本概念</span><span class="sxs-lookup"><span data-stu-id="1c938-102">Fundamental Windows Workflow Concepts</span></span>
 <span data-ttu-id="1c938-103">[!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] のワークフロー開発で使用される概念は、一部の開発者には不慣れなことも考えられます。</span><span class="sxs-lookup"><span data-stu-id="1c938-103">Workflow development in the [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] uses concepts that may be new to some developers.</span></span> <span data-ttu-id="1c938-104">ここでは、そのいくつかの概念について、内容と実装方法を説明します。</span><span class="sxs-lookup"><span data-stu-id="1c938-104">This topic describes some of the concepts and how they are implemented.</span></span>  

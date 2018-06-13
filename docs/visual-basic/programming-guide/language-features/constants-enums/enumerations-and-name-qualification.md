@@ -22,6 +22,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33648581"
 ---
 # <a name="enumerations-and-name-qualification-visual-basic"></a><span data-ttu-id="ae532-102">列挙型と名前修飾 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="ae532-102">Enumerations and Name Qualification (Visual Basic)</span></span>
 <span data-ttu-id="ae532-103">通常、列挙体のメンバーを指す場合は、列挙型の名前でメンバー名を修飾する必要があります。</span><span class="sxs-lookup"><span data-stu-id="ae532-103">Normally, when referring to a member of an enumeration, you must qualify the member name with the enumeration name.</span></span> <span data-ttu-id="ae532-104">例についてを参照する、`Sunday`のメンバー、`Days`列挙型では、次の構文を使用します。</span><span class="sxs-lookup"><span data-stu-id="ae532-104">For example, to refer to the `Sunday` member of your `Days` enumeration, you would use the following syntax:</span></span>  

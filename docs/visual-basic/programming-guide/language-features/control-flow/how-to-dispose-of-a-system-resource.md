@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33647232"
 ---
 # <a name="how-to-dispose-of-a-system-resource-visual-basic"></a><span data-ttu-id="b4710-102">方法: システム リソースを破棄する (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="b4710-102">How to: Dispose of a System Resource (Visual Basic)</span></span>
 <span data-ttu-id="b4710-103">使用することができます、`Using`システムは、コード ブロックを終了するときに、リソースの破棄を保証するためにブロックします。</span><span class="sxs-lookup"><span data-stu-id="b4710-103">You can use a `Using` block to guarantee that the system disposes of a resource when your code exits the block.</span></span> <span data-ttu-id="b4710-104">これは、大量のメモリを消費する、またはその他のコンポーネントが使用する必要も、システム リソースを使用している場合に便利です。</span><span class="sxs-lookup"><span data-stu-id="b4710-104">This is useful if you are using a system resource that consumes a large amount of memory, or that other components also want to use.</span></span>  

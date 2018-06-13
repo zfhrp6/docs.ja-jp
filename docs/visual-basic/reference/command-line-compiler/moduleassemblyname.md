@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33650791"
 ---
 # <a name="-moduleassemblyname"></a><span data-ttu-id="ff76d-102">-moduleassemblyname</span><span class="sxs-lookup"><span data-stu-id="ff76d-102">-moduleassemblyname</span></span>
 <span data-ttu-id="ff76d-103">このモジュールが一部となるアセンブリの名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="ff76d-103">Specifies the name of the assembly that this module will be a part of.</span></span>  

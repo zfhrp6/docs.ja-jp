@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33649127"
 ---
 # <a name="how-to-call-an-overloaded-procedure-visual-basic"></a><span data-ttu-id="8a2a5-102">方法: オーバーロードされたプロシージャを呼び出す (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="8a2a5-102">How to: Call an Overloaded Procedure (Visual Basic)</span></span>
 <span data-ttu-id="8a2a5-103">プロシージャのオーバー ロードの利点は、呼び出しの柔軟性にです。</span><span class="sxs-lookup"><span data-stu-id="8a2a5-103">The advantage of overloading a procedure is in the flexibility of the call.</span></span> <span data-ttu-id="8a2a5-104">呼び出し元のコードは、プロシージャに渡すし、どのような引数が渡されるに関係なく、1 つのプロシージャの名前を呼び出す必要がある情報を取得できます。</span><span class="sxs-lookup"><span data-stu-id="8a2a5-104">The calling code can obtain the information it needs to pass to the procedure and then call a single procedure name, no matter what arguments it is passing.</span></span>  

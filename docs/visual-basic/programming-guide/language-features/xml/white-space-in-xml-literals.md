@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33649751"
 ---
 # <a name="white-space-in-xml-literals-visual-basic"></a><span data-ttu-id="79031-102">XML リテラルでの空白文字 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="79031-102">White Space in XML Literals (Visual Basic)</span></span>
 <span data-ttu-id="79031-103">作成時に、Visual Basic コンパイラは、XML リテラルの有意の空白文字だけが組み込まれて、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="79031-103">The Visual Basic compiler incorporates only the significant white space characters from an XML literal when it creates a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] object.</span></span> <span data-ttu-id="79031-104">意味のない空白文字は組み込まれません。</span><span class="sxs-lookup"><span data-stu-id="79031-104">The insignificant white space characters are not incorporated.</span></span>  

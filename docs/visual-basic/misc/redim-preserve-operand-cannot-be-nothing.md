@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33639377"
 ---
 # <a name="39redim39-preserve-operand-cannot-be-nothing"></a><span data-ttu-id="c9d84-102">&#39;ReDim&#39; Preserve オペランドには、何もすることはできません</span><span class="sxs-lookup"><span data-stu-id="c9d84-102">&#39;ReDim&#39; Preserve operand cannot be Nothing</span></span>
 <span data-ttu-id="c9d84-103">`ReDim` ステートメントが `Preserve` キーワードを使用して、最後のディメンションではない配列のディメンションを変更しようとしましたが、そのオペランドに対して正しい値を指定していません。</span><span class="sxs-lookup"><span data-stu-id="c9d84-103">A `ReDim` statement attempts to use the `Preserve` keyword to change a dimension of an array that is not the last dimension, but does not supply a valid value for its operand.</span></span>  

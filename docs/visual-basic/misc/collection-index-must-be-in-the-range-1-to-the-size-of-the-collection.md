@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33637010"
 ---
 # <a name="collection-index-must-be-in-the-range-1-to-the-size-of-the-collection"></a><span data-ttu-id="8aba9-102">コレクション インデックスのサイズは、1 以上かつコレクションのサイズ以下の範囲でなければなりません</span><span class="sxs-lookup"><span data-stu-id="8aba9-102">Collection index must be in the range 1 to the size of the collection</span></span>
 <span data-ttu-id="8aba9-103">指定されたインデックス値は有効な範囲、つまり 1 以上コレクションのサイズ以下に含まれません。</span><span class="sxs-lookup"><span data-stu-id="8aba9-103">The supplied index value falls outside the valid range, which is 1 to the size of the collection.</span></span>  

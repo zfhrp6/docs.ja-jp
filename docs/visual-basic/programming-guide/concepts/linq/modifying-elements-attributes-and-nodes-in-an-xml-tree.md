@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33645214"
 ---
 # <a name="modifying-elements-attributes-and-nodes-in-an-xml-tree"></a><span data-ttu-id="ef764-102">XML ツリー内の要素、属性、およびノードの変更</span><span class="sxs-lookup"><span data-stu-id="ef764-102">Modifying Elements, Attributes, and Nodes in an XML Tree</span></span>
 <span data-ttu-id="ef764-103">次の表は、要素、その子要素、またはその属性の変更に使用できるメソッドとプロパティについてまとめたものです。</span><span class="sxs-lookup"><span data-stu-id="ef764-103">The following table summarizes the methods and properties that you can use to modify an element, its child elements, or its attributes.</span></span>  

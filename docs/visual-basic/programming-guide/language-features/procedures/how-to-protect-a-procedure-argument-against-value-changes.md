@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33651519"
 ---
 # <a name="how-to-protect-a-procedure-argument-against-value-changes-visual-basic"></a><span data-ttu-id="5bdea-102">方法: プロシージャ引数の値が変化しないようにする (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="5bdea-102">How to: Protect a Procedure Argument Against Value Changes (Visual Basic)</span></span>
 <span data-ttu-id="5bdea-103">プロシージャがパラメーターとしてを宣言する場合[ByRef](../../../../visual-basic/language-reference/modifiers/byref.md)、Visual Basic は、プロシージャ コード、呼び出し元のコードで引数の基になるこのプログラミング要素への直接参照します。</span><span class="sxs-lookup"><span data-stu-id="5bdea-103">If a procedure declares a parameter as [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md), Visual Basic gives the procedure code a direct reference to the programming element underlying the argument in the calling code.</span></span> <span data-ttu-id="5bdea-104">これにより、プロシージャが呼び出し元のコードで引数の基になる値を変更します。</span><span class="sxs-lookup"><span data-stu-id="5bdea-104">This permits the procedure to change the value underlying the argument in the calling code.</span></span> <span data-ttu-id="5bdea-105">場合によっては呼び出し元のコードは、このような変更を防ぐためにする可能性があります。</span><span class="sxs-lookup"><span data-stu-id="5bdea-105">In some cases the calling code might want to protect against such a change.</span></span>  

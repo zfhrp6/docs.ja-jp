@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33650258"
 ---
 # <a name="how-to-use-annotations-to-transform-linq-to-xml-trees-in-an-xslt-style-visual-basic"></a><span data-ttu-id="c8aa7-102">方法: 注釈を使用して、LINQ to XML ツリーを XSLT スタイル (Visual Basic) を変換するには</span><span class="sxs-lookup"><span data-stu-id="c8aa7-102">How to: Use Annotations to Transform LINQ to XML Trees in an XSLT Style (Visual Basic)</span></span>
 <span data-ttu-id="c8aa7-103">注釈を使用することで、XML ツリーの変換が容易になります。</span><span class="sxs-lookup"><span data-stu-id="c8aa7-103">Annotations can be used to facilitate transforms of an XML tree.</span></span>  

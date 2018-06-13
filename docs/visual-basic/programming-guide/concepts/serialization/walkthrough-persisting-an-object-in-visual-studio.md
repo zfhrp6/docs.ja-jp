@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33655611"
 ---
 # <a name="walkthrough-persisting-an-object-in-visual-studio-visual-basic"></a><span data-ttu-id="c9c44-102">チュートリアル: Visual Studio でのオブジェクトの永続化 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="c9c44-102">Walkthrough: Persisting an Object in Visual Studio (Visual Basic)</span></span>
 <span data-ttu-id="c9c44-103">オブジェクトのプロパティはデザイン時に既定値に設定できますが、そのオブジェクトが破棄されると、実行時に入力した値はすべて失われます。</span><span class="sxs-lookup"><span data-stu-id="c9c44-103">Although you can set an object's properties to default values at design time, any values entered at run time are lost when the object is destroyed.</span></span> <span data-ttu-id="c9c44-104">シリアル化によってインスタンス間でオブジェクトのデータを永続化すると、値を保存しておき、次にそのオブジェクトをインスタンス化するときに、その値を取得することができます。</span><span class="sxs-lookup"><span data-stu-id="c9c44-104">You can use serialization to persist an object's data between instances, which enables you to store values and retrieve them the next time that the object is instantiated.</span></span>  

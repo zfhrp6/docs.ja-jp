@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33655864"
 ---
 # <a name="objects-and-classes-in-visual-basic"></a><span data-ttu-id="384eb-102">Visual Basic のオブジェクトとクラス</span><span class="sxs-lookup"><span data-stu-id="384eb-102">Objects and classes in Visual Basic</span></span>
 <span data-ttu-id="384eb-103">"*オブジェクト*" は、1 つの単位として扱うことができるコードとデータの組み合わせです。</span><span class="sxs-lookup"><span data-stu-id="384eb-103">An *object* is a combination of code and data that can be treated as a unit.</span></span> <span data-ttu-id="384eb-104">オブジェクトは、コントロールやフォームのように、アプリケーションの一部になることができます。</span><span class="sxs-lookup"><span data-stu-id="384eb-104">An object can be a piece of an application, like a control or a form.</span></span> <span data-ttu-id="384eb-105">アプリケーション全体も、オブジェクトになることができます。</span><span class="sxs-lookup"><span data-stu-id="384eb-105">An entire application can also be an object.</span></span>

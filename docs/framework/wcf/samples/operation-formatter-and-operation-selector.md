@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33808661"
 ---
 # <a name="operation-formatter-and-operation-selector"></a><span data-ttu-id="9ef1a-102">操作フォーマッタと操作セレクター</span><span class="sxs-lookup"><span data-stu-id="9ef1a-102">Operation Formatter and Operation Selector</span></span>
 <span data-ttu-id="9ef1a-103">このサンプルでは、Windows Communication Foundation (WCF) の機能拡張ポイントを使用して、WCF で期待から別の形式でメッセージ データを許可する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="9ef1a-103">This sample demonstrates how Windows Communication Foundation (WCF) extensibility points can be used to allow message data in a different format from what WCF expects.</span></span> <span data-ttu-id="9ef1a-104">WCF のフォーマッタを既定では、含まれるメソッドのパラメーターを想定して、`soap:body`要素。</span><span class="sxs-lookup"><span data-stu-id="9ef1a-104">By default, WCF formatters expect method parameters to be included under the `soap:body` element.</span></span> <span data-ttu-id="9ef1a-105">このサンプルでは、代わりに HTTP GET クエリ文字列のパラメータ データを解析するカスタム操作フォーマッタを実装し、そのデータを使用してメソッドを呼び出す方法を示します。</span><span class="sxs-lookup"><span data-stu-id="9ef1a-105">The sample shows how to implement a custom operation formatter that parses parameter data from an HTTP GET query string instead and invokes methods using that data.</span></span>  

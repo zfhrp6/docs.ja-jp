@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33649228"
 ---
 # <a name="calling-a-property-or-method-using-a-string-name-visual-basic"></a><span data-ttu-id="5cbe3-102">文字列名によるプロパティまたはメソッドの呼び出し (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="5cbe3-102">Calling a Property or Method Using a String Name (Visual Basic)</span></span>
 <span data-ttu-id="5cbe3-103">ほとんどの場合は、デザイン時に、プロパティとオブジェクトのメソッドを検出し、それらを処理するコードを記述できます。</span><span class="sxs-lookup"><span data-stu-id="5cbe3-103">In most cases, you can discover the properties and methods of an object at design time, and write code to handle them.</span></span> <span data-ttu-id="5cbe3-104">ただし、場合によっては、知らない可能性オブジェクトのプロパティとメソッドを事前にもプロパティを指定するか、実行時にメソッドを実行するエンドユーザーの有効化の柔軟性をするだけです。</span><span class="sxs-lookup"><span data-stu-id="5cbe3-104">However, in some cases you may not know about an object's properties and methods in advance, or you may just want the flexibility of enabling an end user to specify properties or execute methods at run time.</span></span>  

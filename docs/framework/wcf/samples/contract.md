@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809366"
 ---
 # <a name="contract"></a><span data-ttu-id="21f43-102">コントラクト</span><span class="sxs-lookup"><span data-stu-id="21f43-102">Contract</span></span>
 <span data-ttu-id="21f43-103">このセクションには、コントラクトでは、Windows Communication Foundation (WCF) を示すサンプルが含まれています。</span><span class="sxs-lookup"><span data-stu-id="21f43-103">This section contains samples that demonstrate contracts in Windows Communication Foundation (WCF).</span></span>  

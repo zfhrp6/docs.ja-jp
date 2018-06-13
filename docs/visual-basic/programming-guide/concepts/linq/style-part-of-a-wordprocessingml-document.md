@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33645955"
 ---
 # <a name="style-part-of-a-wordprocessingml-document"></a><span data-ttu-id="c6ae5-102">WordprocessingML ドキュメントのスタイル パーツ</span><span class="sxs-lookup"><span data-stu-id="c6ae5-102">Style Part of a WordprocessingML Document</span></span>
 <span data-ttu-id="c6ae5-103">このトピックでは、Office Open XML WordprocessingML ドキュメントのスタイル パーツの例について説明します。</span><span class="sxs-lookup"><span data-stu-id="c6ae5-103">This topic shows an example of the style part of the Office Open XML WordprocessingML document.</span></span>  

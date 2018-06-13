@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33803768"
 ---
 # <a name="monitoring-service-operation-failures"></a><span data-ttu-id="e501c-102">サービス操作エラーの監視</span><span class="sxs-lookup"><span data-stu-id="e501c-102">Monitoring Service Operation Failures</span></span>
 <span data-ttu-id="e501c-103">アプリケーションに対して分析トレースが有効になっている場合、サービス エラーはイベント ビューアーで簡単に監視できます。</span><span class="sxs-lookup"><span data-stu-id="e501c-103">If analytic tracing is enabled for an application, service failures can easily be monitored in the event viewer.</span></span>  <span data-ttu-id="e501c-104">ここでは、サービス操作が失敗したことを確認する方法、およびエラーの原因を特定する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="e501c-104">This topic demonstrates how to determine when a service operation fails, and how to determine what caused the failure.</span></span>  

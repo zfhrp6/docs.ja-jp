@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33647863"
 ---
 # <a name="how-to-validate-strings-that-represent-dates-or-times-visual-basic"></a><span data-ttu-id="41234-102">方法: 日付または時刻を表す文字列を検証する (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="41234-102">How to: Validate Strings That Represent Dates or Times (Visual Basic)</span></span>
 <span data-ttu-id="41234-103">次のコード例のセット、`Boolean`文字列が有効な日付または時刻を表しているかどうかを示す値。</span><span class="sxs-lookup"><span data-stu-id="41234-103">The following code example sets a `Boolean` value that indicates whether a string represents a valid date or time.</span></span>  

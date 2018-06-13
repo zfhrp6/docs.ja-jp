@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33649969"
 ---
 # <a name="how-to-call-an-operator-procedure-visual-basic"></a><span data-ttu-id="081e1-102">方法: 演算子プロシージャを呼び出す (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="081e1-102">How to: Call an Operator Procedure (Visual Basic)</span></span>
 <span data-ttu-id="081e1-103">演算子プロシージャを呼び出すには、式で演算子のシンボルを使用します。</span><span class="sxs-lookup"><span data-stu-id="081e1-103">You call an operator procedure by using the operator symbol in an expression.</span></span> <span data-ttu-id="081e1-104">場合は、変換演算子を呼び出す、 [CType 関数](../../../../visual-basic/language-reference/functions/ctype-function.md)に値を別の 1 つのデータ型に変換します。</span><span class="sxs-lookup"><span data-stu-id="081e1-104">In the case of a conversion operator, you call the [CType Function](../../../../visual-basic/language-reference/functions/ctype-function.md) to convert a value from one data type to another.</span></span>  

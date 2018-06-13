@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33643579"
 ---
 # <a name="com-interop-visual-basic"></a><span data-ttu-id="fb933-102">COM 相互運用 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="fb933-102">COM Interop (Visual Basic)</span></span>
 <span data-ttu-id="fb933-103">コンポーネント オブジェクト モデル (COM) では、オブジェクトがその機能を他のコンポーネントに公開し、アプリケーションをホストすることを許可します。</span><span class="sxs-lookup"><span data-stu-id="fb933-103">The Component Object Model (COM) allows an object to expose its functionality to other components and to host applications.</span></span> <span data-ttu-id="fb933-104">今日のソフトウェアのほとんどに、COM オブジェクトが含まれています。</span><span class="sxs-lookup"><span data-stu-id="fb933-104">Most of today's software includes COM objects.</span></span> <span data-ttu-id="fb933-105">.NET アセンブリは新しいアプリケーションに最適ですが、時には COM オブジェクトを使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="fb933-105">Although .NET assemblies are the best choice for new applications, you may at times need to employ COM objects.</span></span> <span data-ttu-id="fb933-106">このセクションを作成して、Visual Basic で COM オブジェクトの使用に関連した問題について説明します。</span><span class="sxs-lookup"><span data-stu-id="fb933-106">This section covers some of the issues associated with creating and using COM objects with Visual Basic.</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33807923"
 ---
 # <a name="instancing-initialization"></a><span data-ttu-id="71222-102">初期化のインスタンス化</span><span class="sxs-lookup"><span data-stu-id="71222-102">Instancing Initialization</span></span>
 <span data-ttu-id="71222-103">このサンプルを拡張、[プーリング](../../../../docs/framework/wcf/samples/pooling.md)インターフェイスを定義することでサンプル`IObjectControl`でのアクティブ化と非アクティブ化するオブジェクトの初期化をカスタマイズします。</span><span class="sxs-lookup"><span data-stu-id="71222-103">This sample extends the [Pooling](../../../../docs/framework/wcf/samples/pooling.md) sample by defining an interface, `IObjectControl`, which customizes the initialization of an object by activating and deactivating it.</span></span> <span data-ttu-id="71222-104">クライアントは、オブジェクトをプールに返すメソッドや、プールに返さないメソッドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="71222-104">The client invokes methods that return the object to the pool and that do not return the object to the pool.</span></span>  

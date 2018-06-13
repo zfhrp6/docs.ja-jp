@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33645682"
 ---
 # <a name="how-to-write-a-query-that-finds-elements-based-on-context-visual-basic"></a><span data-ttu-id="9dfca-102">方法: クエリを記述する (Visual Basic) のコンテキストに基づいて要素を検索します。</span><span class="sxs-lookup"><span data-stu-id="9dfca-102">How to: Write a Query that Finds Elements Based on Context (Visual Basic)</span></span>
 <span data-ttu-id="9dfca-103">コンテキストに基づいて要素を選択するクエリの記述が必要になる場合があります。</span><span class="sxs-lookup"><span data-stu-id="9dfca-103">Sometimes you might have to write a query that selects elements based on their context.</span></span> <span data-ttu-id="9dfca-104">つまり、前の兄弟要素や次の兄弟要素に基づいてフィルターしたり、</span><span class="sxs-lookup"><span data-stu-id="9dfca-104">You might want to filter based on preceding or following sibling elements.</span></span> <span data-ttu-id="9dfca-105">子要素や祖先要素に基づいてフィルターすることが必要になる場合が考えられます。</span><span class="sxs-lookup"><span data-stu-id="9dfca-105">You might want to filter based on child or ancestor elements.</span></span>  
