@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 4a97704e00278e19181df569f108f428cb1ec90f
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33417746"
 ---
 # <a name="icordebugilframe-interface1"></a>ICorDebugILFrame Interface1
 Microsoft intermediate language (MSIL) コードのスタック フレームを表します。 このインターフェイスは、ICorDebugFrame インターフェイスのサブクラスです。  

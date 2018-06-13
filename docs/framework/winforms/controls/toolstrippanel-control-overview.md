@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33538491"
 ---
 # <a name="toolstrippanel-control-overview"></a>ToolStripPanel コントロールの概要
 A<xref:System.Windows.Forms.ToolStripPanel>では、1 つの領域の配置とラフティング<xref:System.Windows.Forms.ToolStrip>、 <xref:System.Windows.Forms.MenuStrip>、および<xref:System.Windows.Forms.StatusStrip>コントロール。 複数<xref:System.Windows.Forms.ToolStrip>コントロールに応じて垂直または水平方向のスタック、<xref:System.Windows.Forms.ToolStripPanelRow.Orientation%2A>の<xref:System.Windows.Forms.ToolStripPanel>です。  

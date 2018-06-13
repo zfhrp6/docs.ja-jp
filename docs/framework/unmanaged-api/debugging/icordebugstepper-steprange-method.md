@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 838f2df06f8875037edbe39d2db0411f31abe01f
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33421364"
 ---
 # <a name="icordebugsteppersteprange-method"></a>ICorDebugStepper::StepRange メソッド
 Icordebugstepper をシングル ステップ実行し、指定された範囲の最後以外のコードに達したときに返されるその格納スレッドを表示します。  

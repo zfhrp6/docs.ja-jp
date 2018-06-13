@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33497530"
 ---
 # <a name="security-considerations-in-wcf"></a>WCF でのセキュリティの考慮事項
 このセクションのトピックでは、Windows Communication Foundation (WCF) アプリケーションの設計時に考慮するさまざまなセキュリティに関連する項目を一覧表示します。  

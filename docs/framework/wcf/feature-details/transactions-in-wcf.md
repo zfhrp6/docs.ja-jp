@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33498171"
 ---
 # <a name="transactions-in-wcf"></a>WCF でのトランザクション
 Windows Communication Foundation (WCF) のトランザクション機能により、いくつかのコンポーネントが同時に、データの操作に参加します。 このセクションのトピックでは、この機能について詳しく説明します。  

@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33537961"
 ---
 # <a name="toolstripstatuslabel-control"></a>ToolStripStatusLabel コントロール
 <xref:System.Windows.Forms.ToolStripStatusLabel>により、表示領域、<xref:System.Windows.Forms.StatusStrip>テキスト、画像、またはその両方です。  

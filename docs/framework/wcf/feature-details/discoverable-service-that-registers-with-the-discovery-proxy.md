@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33490598"
 ---
 # <a name="how-to-implement-a-discoverable-service-that-registers-with-the-discovery-proxy"></a>探索プロキシで登録される探索可能なサービスの実装方法
 これは、探索プロキシの実装方法に関する 4 つのトピックのうちの 2 番目のトピックです。 前のトピックで[する方法: 探索プロキシの実装](../../../../docs/framework/wcf/feature-details/how-to-implement-a-discovery-proxy.md)、探索プロキシを実装します。 このトピックでは、アナウンス メッセージを送信する WCF サービスを作成 (`Hello`と`Bye`) から、探索プロキシになった原因を登録し、探索プロキシから登録解除します。  

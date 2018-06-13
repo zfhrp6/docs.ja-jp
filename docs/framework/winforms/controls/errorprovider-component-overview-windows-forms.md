@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33528887"
 ---
 # <a name="errorprovider-component-overview-windows-forms"></a>ErrorProvider コンポーネントの概要 (Windows フォーム)
 Windows フォーム[ErrorProvider](../../../../docs/framework/winforms/controls/errorprovider-component-windows-forms.md)コンポーネントは、フォームまたはコントロールのユーザー入力の検証に使用します。 通常、フォーム上のユーザー入力の検証またはデータセット内のエラーを表示すると組み合わせて使用されます。 エラー プロバイダーでは、エラー メッセージを表示するメッセージ ボックスより優れた選択肢をメッセージ ボックスが閉じられた後は、エラー メッセージが表示されないためです。 <xref:System.Windows.Forms.ErrorProvider>コンポーネントには、エラー アイコンが表示されます (![ErrorProvider アイコン](../../../../docs/framework/winforms/controls/media/vberrorprovidericon.gif "vbErrorProviderIcon"))、テキスト ボックスは、ユーザーが上にマウス ポインターを置いたときなど、関連するコントロールの横に、エラー アイコン、ツールヒントが表示されます、エラー メッセージ文字列を表示します。  

@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: b6b01abc16334dbe091e7586efcce1c3e390a64e
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33426976"
 ---
 # <a name="isymunmanagedwriterdefineparameter-method"></a>ISymUnmanagedWriter::DefineParameter メソッド
 現在のメソッドの 1 つのパラメーターを定義します。 パラメーターの型は、メソッドのシグネチャ内のパラメーターの位置 (シーケンス) から取得されます。  

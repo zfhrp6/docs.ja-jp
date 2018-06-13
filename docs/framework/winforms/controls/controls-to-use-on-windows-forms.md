@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33529726"
 ---
 # <a name="controls-to-use-on-windows-forms"></a>Windows フォームで使用するコントロール
 Windows フォームで使うことができるコントロールとコンポーネントのアルファベット順の一覧を次に示します。 このセクションで説明する Windows フォーム コントロールに加えて、ActiveX コントロールとカスタム コントロールを Windows フォームに追加できます。 必要なコントロールがここで見つからない場合は、独自に作成することもできます。 詳しくは、「[デザイン時の Windows フォーム コントロールの開発](../../../../docs/framework/winforms/controls/developing-windows-forms-controls-at-design-time.md)」をご覧ください。 必要なコントロールの選択について詳しくは、「[Windows フォーム コントロールの機能別一覧](../../../../docs/framework/winforms/controls/windows-forms-controls-by-function.md)」をご覧ください。  

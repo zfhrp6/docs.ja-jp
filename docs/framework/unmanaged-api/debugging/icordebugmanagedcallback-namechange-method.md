@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 5a7ef478fed697f4152a6348931ddf3b4b4b2885
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33415010"
 ---
 # <a name="icordebugmanagedcallbacknamechange-method"></a>ICorDebugManagedCallback::NameChange メソッド
 アプリケーション ドメインまたはスレッドのいずれかの名前が変更されたことをデバッガーに通知します。  

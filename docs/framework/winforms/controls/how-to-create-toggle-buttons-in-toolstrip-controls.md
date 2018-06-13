@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33530382"
 ---
 # <a name="how-to-create-toggle-buttons-in-toolstrip-controls"></a>方法 : ToolStrip コントロールにトグル ボタンを作成する
 トグル ボタンをクリックすると、くぼみ表示され、ユーザーがボタンをもう一度クリックするまで、くぼみの外観を保持します。  

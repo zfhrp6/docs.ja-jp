@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33549264"
 ---
 # <a name="optimizing-performance-controls"></a>パフォーマンスの最適化 : コントロール
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] には、大半の Windows アプリケーションで使用される一般的なユーザー インターフェイス (UI: User Interface) コンポーネントが多数含まれています。 このトピックでは、UI のパフォーマンスを向上させる方法について説明します。  
@@ -39,7 +40,7 @@ ms.lasthandoff: 05/04/2018
   
 <a name="Container"></a>   
 ## <a name="container-recycling"></a>コンテナーのリサイクル  
- UI 仮想化コントロールから継承するは、.NET Framework 3.5 SP1 で追加するよう最適化<xref:System.Windows.Controls.ItemsControl>は*コンテナーのリサイクル、*でもスクロールのパフォーマンスが向上することができます。  ときに、<xref:System.Windows.Controls.ItemsControl>を使用して UI 仮想化が設定されると、表示されるまでスクロールし、スクロール ビューから外れている各項目の項目コンテナーを破棄する各アイテムについて、項目コンテナーが作成されます。 *コンテナー リサイクル*コントロールが項目コンテナーがない常に作成され、ユーザーがスクロール破棄できるように、別のデータ項目の既存の項目コンテナーを再利用できるように、<xref:System.Windows.Controls.ItemsControl>です。 項目を設定してリサイクルを有効にすることができます、<xref:System.Windows.Controls.VirtualizingPanel.VirtualizationMode%2A>添付プロパティ<xref:System.Windows.Controls.VirtualizationMode.Recycling>です。  
+ UI 仮想化コントロールから継承するは、.NET Framework 3.5 SP1 で追加するよう最適化<xref:System.Windows.Controls.ItemsControl>は*コンテナーのリサイクル、* でもスクロールのパフォーマンスが向上することができます。  ときに、<xref:System.Windows.Controls.ItemsControl>を使用して UI 仮想化が設定されると、表示されるまでスクロールし、スクロール ビューから外れている各項目の項目コンテナーを破棄する各アイテムについて、項目コンテナーが作成されます。 *コンテナー リサイクル*コントロールが項目コンテナーがない常に作成され、ユーザーがスクロール破棄できるように、別のデータ項目の既存の項目コンテナーを再利用できるように、<xref:System.Windows.Controls.ItemsControl>です。 項目を設定してリサイクルを有効にすることができます、<xref:System.Windows.Controls.VirtualizingPanel.VirtualizationMode%2A>添付プロパティ<xref:System.Windows.Controls.VirtualizationMode.Recycling>です。  
   
  どの<xref:System.Windows.Controls.ItemsControl>をサポートする仮想化は、コンテナーのリサイクルを使用できます。  [リサイクル] コンテナーを有効にする方法の例については、<xref:System.Windows.Controls.ListBox>を参照してください[ListBox のスクロールのパフォーマンスを向上させる](../../../../docs/framework/wpf/controls/how-to-improve-the-scrolling-performance-of-a-listbox.md)です。  
   

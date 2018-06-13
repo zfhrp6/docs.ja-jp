@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33504069"
 ---
 # <a name="workflow-service-host-extensibility"></a>ワークフロー サービス ホストの拡張機能
 [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] には、ワークフロー サービスをホストするための <xref:System.ServiceModel.Activities.WorkflowServiceHost> クラスがあります。 このクラスは、マネージ アプリケーションまたは Windows サービスで、ワークフロー サービスを自己ホストするときに使用します。 また、このクラスは、インターネット インフォメーション サービス (IIS) または Windows プロセス アクティブ化サービス (WAS) を使用してワークフロー サービスをホストするときにも使用します。 <xref:System.ServiceModel.Activities.WorkflowServiceHost> クラスは、カスタムの拡張機能の追加、アイドル動作の変更、およびサービス以外のワークフロー (メッセージング アクティビティを使用しないワークフロー) のホストを可能にする拡張ポイントを提供します。  

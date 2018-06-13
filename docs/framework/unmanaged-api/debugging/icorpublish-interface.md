@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 65daa8d783210426136860d95dd5782e21de33a4
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33421533"
 ---
 # <a name="icorpublish-interface"></a>ICorPublish インターフェイス
 これらのプロセスでアプリケーション ドメインに関する情報とプロセスに関する情報を公開するための一般的なインターフェイスとして機能します。  

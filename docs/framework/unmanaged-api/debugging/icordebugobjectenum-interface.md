@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 3674643d5590c320bddd5a0e6f1f95814e07ecf1
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33420205"
 ---
 # <a name="icordebugobjectenum-interface1"></a>ICorDebugObjectEnum Interface1
 ICorDebugEnum メソッドを実装して、相対仮想アドレス (Rva) でオブジェクトの配列を列挙します。  

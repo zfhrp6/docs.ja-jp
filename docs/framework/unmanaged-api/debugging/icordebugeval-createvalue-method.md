@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 6d67784daee055106f104d74d098b9926c6de2ec
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33417113"
 ---
 # <a name="icordebugevalcreatevalue-method"></a>ICorDebugEval::CreateValue メソッド
 0 または null の初期値を指定した型の値を作成します。  

@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33533960"
 ---
 # <a name="how-to-set-the-format-for-the-windows-forms-numericupdown-control"></a>方法 : Windows フォームの NumericUpDown コントロールの書式を設定する
 Windows フォームでの値を表示する方法を構成する<xref:System.Windows.Forms.NumericUpDown>コントロール。 <xref:System.Windows.Forms.NumericUpDown.DecimalPlaces%2A>プロパティ、小数点の後に表示される番号の数が以外の場合は、既定値は 0 です。 <xref:System.Windows.Forms.NumericUpDown.ThousandsSeparator%2A>プロパティは、3 桁ごと、区切り記号を挿入するかどうかを決定以外の場合は、既定値は`false`します。 コントロールは、場合に、10 進数の形式ではなく 16 進数の値を表示できます、<xref:System.Windows.Forms.NumericUpDown.Hexadecimal%2A>プロパティに設定されている`true`; 既定値は`false`します。  

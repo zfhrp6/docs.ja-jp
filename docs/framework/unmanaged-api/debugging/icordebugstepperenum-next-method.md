@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 8bd62e4c5476aacf736f2ddfea008790861d931c
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33419618"
 ---
 # <a name="icordebugstepperenumnext-method"></a>ICorDebugStepperEnum::Next メソッド
 列挙体の現在位置から指定数の ICorDebugStepper インスタンスを取得します。  

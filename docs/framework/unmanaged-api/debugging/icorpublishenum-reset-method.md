@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: fb0e70bffe5bf895fedbfde559674e161757ee48
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33423690"
 ---
 # <a name="icorpublishenumreset-method"></a>ICorPublishEnum::Reset メソッド
 列挙体の先頭へのカーソルを移動します。  

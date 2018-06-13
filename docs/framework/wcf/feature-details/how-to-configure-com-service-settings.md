@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33490105"
 ---
 # <a name="how-to-configure-com-service-settings"></a>方法 : COM+ サービス設定を構成する
 COM+ サービス構成ツールを使用してアプリケーション インターフェイスを追加または削除すると、アプリケーション構成ファイル内の Web サービス構成が更新されます。 COM + ホスト モードでは、Application.config ファイルはアプリケーションのルート ディレクトリに配置されます (%PROGRAMFILES%\ComPlus アプリケーション\\%programfiles%\complus は既定値)。 いずれの Web ホスト モードでも、Web.config ファイルは指定した vroot ディレクトリに配置されます。  

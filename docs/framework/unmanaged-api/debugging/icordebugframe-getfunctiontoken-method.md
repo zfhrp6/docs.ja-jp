@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 3bb4331b1c55cbda818866c5ff08f9bacd3ebae0
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33413986"
 ---
 # <a name="icordebugframegetfunctiontoken-method"></a>ICorDebugFrame::GetFunctionToken メソッド
 このスタック フレームに関連付けられているコードを含む関数のメタデータ トークンを取得します。  

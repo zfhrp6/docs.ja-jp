@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 591b3e43712832156283baf16e3d65b09172fe14
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33428495"
 ---
 # <a name="ehostapplicationpolicy-enumeration"></a>EHostApplicationPolicy 列挙型
 変更する方法を示す、 [IHostAssemblyManager](../../../../docs/framework/unmanaged-api/hosting/ihostassemblymanager-interface.md)インターフェイス オブジェクト。 この列挙体は廃止されました。  

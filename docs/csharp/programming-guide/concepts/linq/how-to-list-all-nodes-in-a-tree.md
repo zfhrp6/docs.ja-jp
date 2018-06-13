@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33322131"
 ---
 # <a name="how-to-list-all-nodes-in-a-tree-c"></a>方法: ツリー内のすべてのノードを一覧表示する (C#)
 ツリー内のすべてのノードを一覧表示すると便利な場合があります。 これは、メソッドやプロパティがツリーに及ぼす影響を確認するときに役立ちます。 すべてのノードをテキスト形式で一覧表示する方法の 1 つは、ツリー内の任意のノードを正確かつ明確に識別する XPath 式を生成することです。  

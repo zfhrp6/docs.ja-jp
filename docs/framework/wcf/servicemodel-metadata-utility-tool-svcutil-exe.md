@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33509152"
 ---
 # <a name="servicemodel-metadata-utility-tool-svcutilexe"></a>ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)
 ServiceModel メタデータ ユーティリティ ツールを使用して、メタデータ ドキュメントからサービス モデル コードを生成したり、サービス モデル コードからメタデータ ドキュメントを生成します。  

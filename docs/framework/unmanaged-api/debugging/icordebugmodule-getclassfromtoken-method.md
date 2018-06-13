@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 195cea23313d88b636479147faa512889ca94b17
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33413973"
 ---
 # <a name="icordebugmodulegetclassfromtoken-method"></a>ICorDebugModule::GetClassFromToken メソッド
 メタデータ トークンによって指定されたクラスを取得します。  

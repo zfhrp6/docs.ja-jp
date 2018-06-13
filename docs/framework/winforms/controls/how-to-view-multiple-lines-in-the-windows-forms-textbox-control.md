@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33538568"
 ---
 # <a name="how-to-view-multiple-lines-in-the-windows-forms-textbox-control"></a>方法 : Windows フォーム TextBox コントロールで複数行を表示する
 既定では、Windows フォーム<xref:System.Windows.Forms.TextBox>コントロールは、1 行のテキストを表示し、スクロール バーは表示されません。 テキストは、使用可能な領域よりも長くなりますが、テキストの一部のみが表示されます。 この既定の動作を変更するには設定して、 <xref:System.Windows.Forms.TextBox.Multiline%2A>、<xref:System.Windows.Forms.TextBoxBase.WordWrap%2A>と<xref:System.Windows.Forms.TextBox.ScrollBars%2A>プロパティを適切な値にします。  

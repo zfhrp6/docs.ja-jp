@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 385ccc7a63fb5eb27ae7bdda5bdcf13c750eb667
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33436148"
 ---
 # <a name="assemblybindinfo-structure"></a>AssemblyBindInfo 構造体
 参照アセンブリに関する詳細情報を提供します。  

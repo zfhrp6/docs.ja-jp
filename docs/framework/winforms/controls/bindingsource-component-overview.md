@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33529605"
 ---
 # <a name="bindingsource-component-overview"></a>BindingSource コンポーネントの概要
 <xref:System.Windows.Forms.BindingSource> コンポーネントは、基になるデータ ソースにコントロールをバインドするプロセスを簡略化するように設計されています。 <xref:System.Windows.Forms.BindingSource> コンポーネントは、他のコントロールのバインド先となるパイプおよびデータ ソースの両方の働きをします。 このコンポーネントは、フォームのデータ接続を抽象化し、基になるデータ リストにコマンドを渡します。 また、コンポーネントに直接データを追加することにより、コンポーネント自体がデータ ソースとして機能するようにすることができます。  

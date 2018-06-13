@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33500000"
 ---
 # <a name="how-to-specify-a-service-binding-in-configuration"></a>方法 : 構成でサービス バインディングを指定する
 この例では、簡単な電卓サービス用に `ICalculator` コントラクトを定義し、そのサービスを `CalculatorService` クラスで実装し、そのエンドポイントを Web.config ファイルで構成します。このファイルでは、サービスが <xref:System.ServiceModel.BasicHttpBinding> を使用するように指定します。 構成ではなくコードを使用してこのサービスを構成する方法については、次を参照してください。[する方法: コード内で、サービス バインドを指定](../../../docs/framework/wcf/how-to-specify-a-service-binding-in-code.md)です。  

@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 612e0f84302d5bee6479264ef2dbba4c7152657e
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33422547"
 ---
 # <a name="icordebugstackwalk-interface"></a>ICorDebugStackWalk インターフェイス
 スレッドのスタック上のマネージ メソッド (フレーム) を取得するメソッドを提供します。  

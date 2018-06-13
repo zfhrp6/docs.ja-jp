@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33550908"
 ---
 # <a name="documentviewer"></a>DocumentViewer
 <xref:System.Windows.Controls.DocumentViewer>コントロールを使用して、表示<xref:System.Windows.Documents.FixedDocument>コンテンツ (など[!INCLUDE[TLA#tla_metro](../../../../includes/tlasharptla-metro-md.md)]ドキュメント)、改ページ調整された形式でします。  

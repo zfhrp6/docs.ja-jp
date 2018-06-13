@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33537162"
 ---
 # <a name="numericupdown-control-overview-windows-forms"></a>NumericUpDown コントロールの概要 (Windows フォーム)
 <xref:System.Windows.Forms.NumericUpDown>コントロールはテキスト ボックスの組み合わせと、値を調整するユーザーがクリックする矢印のペアのようになります。 コントロールは、表示し、固定の数値の選択肢の一覧から 1 つの数値を設定します。 ユーザーは大きくなり、上下の矢印キーを押すか、テキスト ボックス コントロールの一部に数値を入力と下向きの矢印をクリックして、番号が低下します。 上矢印キーをクリックすると、数値が最大値です。 方向を移動します。数値、最小値の方向に移動、下方向キーをクリックします。  

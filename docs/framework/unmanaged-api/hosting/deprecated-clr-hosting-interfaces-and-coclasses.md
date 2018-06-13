@@ -11,9 +11,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 1f6c20a69894c95086dbd813601ac8811ab4f337
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33429225"
 ---
 # <a name="deprecated-clr-hosting-interfaces-and-coclasses"></a>非推奨の CLR のホスト インターフェイスおよびコクラス
 このセクションの内容がアンマネージ インターフェイスについて説明しますホストを使用して、共通言語ランタイム (CLR) 統合 .NET Framework version 1.0 および 1.1 でのアプリケーションにします。 これらのインターフェイスは、ホストを構成して、ランタイムをプロセスに読み込むのためのメソッドを提供します。  

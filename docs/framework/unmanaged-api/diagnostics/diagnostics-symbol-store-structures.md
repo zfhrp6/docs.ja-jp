@@ -11,9 +11,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 2e7bd0fabcd4838990ae8704de4f83e9677dbc08
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33426238"
 ---
 # <a name="diagnostics-symbol-store-structures"></a>シンボル ストア診断構造体
 このトピックでは、シンボル ストア診断 API を使用するアンマネージ構造体について説明します。  

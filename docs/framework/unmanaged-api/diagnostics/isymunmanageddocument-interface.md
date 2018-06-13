@@ -18,9 +18,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: f75e517890275b90523dc42cdac3a83d871beac7
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33427203"
 ---
 # <a name="isymunmanageddocument-interface"></a>ISymUnmanagedDocument インターフェイス
 シンボル ストアによって参照されるドキュメントを表します。 ドキュメントは、uniform resource locator (URL) と GUID のドキュメント型によって定義されます。 URL を使用して格納方法に関係なく、ドキュメントを検索し、ドキュメントの種類の GUID できます。 ドキュメントのソースをシンボル ストアに格納でき、このインターフェイスを通じて取得できます。  

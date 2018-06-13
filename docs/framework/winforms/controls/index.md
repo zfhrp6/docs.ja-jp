@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33537604"
 ---
 # <a name="windows-forms-controls"></a>Windows フォーム コントロール
 Windows フォーム アプリケーションのユーザー インターフェイスを設計および変更するときは、コントロールを追加、整列、配置する必要があります。 コントロールは、フォーム オブジェクトに含まれるオブジェクトです。 コントロールの各種類には、そのコントロールを特定の目的に適したものにする固有のプロパティ、メソッド、イベントのセットがあります。 デザイナーでコントロールを操作し、実行時にコントロールを動的に追加するコードを記述できます。  
