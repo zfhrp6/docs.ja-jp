@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33531067"
 ---
 # <a name="how-to-create-an-unbound-windows-forms-datagridview-control"></a>方法 : 連結されていない Windows フォーム DataGridView コントロールを作成する
 <xref:System.Windows.Forms.DataGridView> コントロールをデータ ソースにバインドせずに、プログラムでデータを設定する方法を次のコード例に示します。 これは、少量のデータを表形式で表示する必要がある場合に便利です。  

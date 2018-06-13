@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33327360"
 ---
 # <a name="classes-and-structs-c-programming-guide"></a>クラスと構造体 (C# プログラミング ガイド)
 クラスと構造体は、.NET Framework の共通型システムの 2 つの基本構成です。 クラスと構造体は、どちらも基本的にはデータと動作のセットを 1 つの論理単位としてカプセル化するデータ構造です。 データと動作はクラスまたは構造体の "*メンバー*" です。このトピックで後述するように、メソッド、プロパティ、イベントなどが含まれます。  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33533154"
 ---
 # <a name="hscrollbar-and-vscrollbar-controls-windows-forms"></a>HScrollBar コントロールおよび VScrollBar コントロール (Windows フォーム)
 Windows フォームのスクロール バー コントロールを使用すると、アプリケーションまたはコントロール内で水平または垂直にスクロールすることにより、項目の長い一覧や大量の情報を簡単にナビゲートできるようになります。 スクロール バーは、Windows インターフェイスの一般的な要素です。  

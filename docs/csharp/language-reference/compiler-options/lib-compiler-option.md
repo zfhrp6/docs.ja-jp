@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33216857"
 ---
 # <a name="-lib-c-compiler-options"></a>-lib (C# コンパイラ オプション)
 **-lib** オプションは、[-reference (C# コンパイラ オプション)](../../../csharp/language-reference/compiler-options/reference-compiler-option.md) オプションによって参照されるアセンブリの場所を指定します。  

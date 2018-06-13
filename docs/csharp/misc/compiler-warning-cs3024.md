@@ -8,9 +8,10 @@ helpviewer_keywords:
 ms.assetid: fef9db31-9a7f-42d5-ad37-3e7faf661f95
 ms.openlocfilehash: c4c2f915d6172e3c30fc32c5c57fe9921c3f915d
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33280346"
 ---
 # <a name="compiler-warning-cs3024"></a>コンパイラの警告 CS3024
 制約型 'type' が CLS に準拠していません。  

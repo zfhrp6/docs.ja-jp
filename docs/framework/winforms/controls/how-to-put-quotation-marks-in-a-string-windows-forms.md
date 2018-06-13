@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33534834"
 ---
 # <a name="how-to-put-quotation-marks-in-a-string-windows-forms"></a>方法 : 文字列に引用符を挿入する (Windows フォーム)
 テキストの文字列に引用符 (" ") を挿入することが必要な場合があります。 例えば:  

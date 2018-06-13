@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33325099"
 ---
 # <a name="how-to-safely-cast-by-using-as-and-is-operators-c-programming-guide"></a>方法: as 演算子と is 演算子を使用して安全にキャストする (C# プログラミング ガイド)
 オブジェクトはポリモーフィックであるため、基本クラス型の変数で派生型を保持できます。 派生型のメソッドにアクセスするには、値をキャストして派生型に戻す必要があります。 このような場合に単純にキャストを実行すると、<xref:System.InvalidCastException> がスローされるリスクが生じます。 このため、C# には、[is](../../../csharp/language-reference/keywords/is.md) 演算子と [as](../../../csharp/language-reference/keywords/as.md) 演算子が用意されています。 これらの演算子を使用すると、例外がスローされることなくキャストが成功するかどうかをテストできます。 通常は、`as` 演算子の方が、キャストが正しく実行できる場合はキャスト値を実際に返すため、より効率的です。 `is` 演算子はブール値のみを返します。 したがって、オブジェクトの型の確認のみ行い、キャストは行う必要がない場合に使用できます。  

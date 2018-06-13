@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33531587"
 ---
 # <a name="how-to-position-a-toolstripitem-on-a-toolstrip"></a>方法 : ToolStrip に ToolStripItem を配置する
 移動または追加することができます、<xref:System.Windows.Forms.ToolStripItem>左側または右側にあるに、<xref:System.Windows.Forms.ToolStrip>です。  

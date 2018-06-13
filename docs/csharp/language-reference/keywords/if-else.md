@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33218756"
 ---
 # <a name="if-else-c-reference"></a>if-else (C# リファレンス)
 `if` ステートメントは、 `Boolean` 式の値に基づいて実行するステートメントを決定します。 次の例では、 `Boolean` 変数 `result` を `true` に設定してから、 `if` ステートメントにチェックインします。 出力は `The condition is true`になります。  

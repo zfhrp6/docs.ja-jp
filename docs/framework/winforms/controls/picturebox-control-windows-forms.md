@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33535211"
 ---
 # <a name="picturebox-control-windows-forms"></a>PictureBox コントロール (Windows フォーム)
 Windows フォーム`PictureBox`ビットマップ、GIF、JPEG、メタファイル、またはアイコンの形式で画像を表示するコントロールを使用します。  

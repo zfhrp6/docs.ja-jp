@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33216149"
 ---
 # <a name="-doc-c-compiler-options"></a>-doc (C# コンパイラ オプション)
 **-doc** オプションを使用すると、XML ファイル内にドキュメント コメントを含めることができます。  
