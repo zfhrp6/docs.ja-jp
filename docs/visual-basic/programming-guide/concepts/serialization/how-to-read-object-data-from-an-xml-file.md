@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33646059"
 ---
 # <a name="how-to-read-object-data-from-an-xml-file-visual-basic"></a><span data-ttu-id="d67be-102">方法: XML ファイル (Visual Basic) からオブジェクト データを読み込む</span><span class="sxs-lookup"><span data-stu-id="d67be-102">How to: Read Object Data from an XML File (Visual Basic)</span></span>
 <span data-ttu-id="d67be-103">次の例では、<xref:System.Xml.Serialization.XmlSerializer> クラスを使用して、XML ファイルに以前に書き込まれたオブジェクト データを読み込みます。</span><span class="sxs-lookup"><span data-stu-id="d67be-103">This example reads object data that was previously written to an XML file using the <xref:System.Xml.Serialization.XmlSerializer> class.</span></span>  

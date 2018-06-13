@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33604719"
 ---
 # <a name="from-clause-visual-basic"></a><span data-ttu-id="e4076-102">From 句 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="e4076-102">From Clause (Visual Basic)</span></span>
 <span data-ttu-id="e4076-103">1 つまたは複数の範囲変数およびコレクションのクエリを指定します。</span><span class="sxs-lookup"><span data-stu-id="e4076-103">Specifies one or more range variables and a collection to query.</span></span>  

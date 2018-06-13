@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33804392"
 ---
 # <a name="bridging-and-error-handling"></a><span data-ttu-id="916e8-102">ブリッジとエラー処理</span><span class="sxs-lookup"><span data-stu-id="916e8-102">Bridging and Error Handling</span></span>
 <span data-ttu-id="916e8-103">このサンプルでは、クライアントと異なるバインディングを使用するサービスの間の通信をブリッジの Windows Communication Foundation (WCF) ルーティング サービスを使用する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="916e8-103">This sample demonstrates how the Windows Communication Foundation (WCF) routing service is used for bridging communication between a client and a service that use different bindings.</span></span> <span data-ttu-id="916e8-104">また、バックアップ サービスを使用してフェールオーバーのシナリオに対処する方法も示します。</span><span class="sxs-lookup"><span data-stu-id="916e8-104">This sample also shows how to use a back-up service for failover scenarios.</span></span> <span data-ttu-id="916e8-105">ルーティング サービスは、コンテンツ ベースのルーターをアプリケーションに含めるしやすく WCF コンポーネントです。</span><span class="sxs-lookup"><span data-stu-id="916e8-105">The routing service is a WCF component that makes it easy to include a content-based router in your application.</span></span> <span data-ttu-id="916e8-106">このサンプルは、ルーティング サービスを使用して通信するために標準の WCF 電卓のサンプルを適合させます。</span><span class="sxs-lookup"><span data-stu-id="916e8-106">This sample adapts the standard WCF Calculator Sample to communicate using the routing service.</span></span>  

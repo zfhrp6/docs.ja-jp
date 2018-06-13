@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33648992"
 ---
 # <a name="linq-in-visual-basic"></a><span data-ttu-id="e8a7f-102">LINQ (Visual Basic における)</span><span class="sxs-lookup"><span data-stu-id="e8a7f-102">LINQ in Visual Basic</span></span>
 <span data-ttu-id="e8a7f-103">このセクションでは、Visual Basic と [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] を理解して使用するのに役立つ概要、例、および背景情報を示します。</span><span class="sxs-lookup"><span data-stu-id="e8a7f-103">This section contains overviews, examples, and background information that will help you understand and use Visual Basic and [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)].</span></span>  

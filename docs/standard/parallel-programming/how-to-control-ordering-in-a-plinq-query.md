@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33580212"
 ---
 # <a name="how-to-control-ordering-in-a-plinq-query"></a><span data-ttu-id="e7b42-102">方法: PLINQ クエリの順序を制御する</span><span class="sxs-lookup"><span data-stu-id="e7b42-102">How to: Control Ordering in a PLINQ Query</span></span>
 <span data-ttu-id="e7b42-103">以下の例では、<xref:System.Linq.ParallelEnumerable.AsOrdered%2A> 拡張メソッドを使用して PLINQ クエリの順序を制御する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="e7b42-103">These examples show how to control the ordering in a PLINQ query by using the <xref:System.Linq.ParallelEnumerable.AsOrdered%2A> extension method.</span></span>  

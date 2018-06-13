@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33646579"
 ---
 # <a name="how-to-iterate-through-an-enumeration-in-visual-basic"></a><span data-ttu-id="fa6e4-102">方法 : Visual Basic で列挙型を反復処理する</span><span class="sxs-lookup"><span data-stu-id="fa6e4-102">How to: Iterate Through An Enumeration in Visual Basic</span></span>
 <span data-ttu-id="fa6e4-103">一連の関連する定数を操作する場合や、定数値に名前を関連付ける場合は、列挙型を使うと便利です。</span><span class="sxs-lookup"><span data-stu-id="fa6e4-103">Enumerations provide a convenient way to work with sets of related constants, and to associate constant values with names.</span></span> <span data-ttu-id="fa6e4-104">列挙体を反復処理に移動できますが使用して、配列、<xref:System.Enum.GetValues%2A>メソッドです。</span><span class="sxs-lookup"><span data-stu-id="fa6e4-104">To iterate through an enumeration, you can move it into an array using the <xref:System.Enum.GetValues%2A> method.</span></span> <span data-ttu-id="fa6e4-105">使用して、列挙型を反復処理することも、`For...Each`ステートメントを使用して、<xref:System.Enum.GetNames%2A>または<xref:System.Enum.GetValues%2A>文字列または数値の値を抽出する方法です。</span><span class="sxs-lookup"><span data-stu-id="fa6e4-105">You could also iterate through an enumeration using a `For...Each` statement, using the <xref:System.Enum.GetNames%2A> or <xref:System.Enum.GetValues%2A> method to extract the string or numeric value.</span></span>  

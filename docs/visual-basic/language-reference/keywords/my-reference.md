@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33597322"
 ---
 # <a name="my-reference-visual-basic"></a><span data-ttu-id="06b7c-102">My の参照 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="06b7c-102">My Reference (Visual Basic)</span></span>
 <span data-ttu-id="06b7c-103">`My`機能により、プログラミング迅速かつ容易に一般的に使用されるメソッド、プロパティ、およびイベントへの直感的なアクセスを付与します。</span><span class="sxs-lookup"><span data-stu-id="06b7c-103">The `My` feature makes programming faster and easier by giving you intuitive access to commonly used methods, properties, and events.</span></span> <span data-ttu-id="06b7c-104">次の表に含まれるオブジェクト`My`、および各に実行できるアクション。</span><span class="sxs-lookup"><span data-stu-id="06b7c-104">This table lists the objects contained in `My`, and the actions that can be performed with each.</span></span>  

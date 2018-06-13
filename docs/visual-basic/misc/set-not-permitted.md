@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33641476"
 ---
 # <a name="set-not-permitted"></a><span data-ttu-id="98ecb-102">Set は使用できません</span><span class="sxs-lookup"><span data-stu-id="98ecb-102">Set not permitted</span></span>
 <span data-ttu-id="98ecb-103">設定値を実行時に設定できないか、特定の状況でのみ設定できるプロパティを変更しようとしました。</span><span class="sxs-lookup"><span data-stu-id="98ecb-103">You attempted to change a property whose settings either cannot be set at run time or else can only be set under certain conditions.</span></span> <span data-ttu-id="98ecb-104">たとえば、しましたを変更する、 `Appearance`、 `ControlBox`、`MinButton`、または`MaxButton`を設定するか、実行時にフォームのプロパティの設定を試みた可能性があります、`Visible`プロパティを`False`最後の残りの親メニューのサブメニューを表示します。</span><span class="sxs-lookup"><span data-stu-id="98ecb-104">For example, you may have tried to change the `Appearance`, `ControlBox`,`MinButton`, or `MaxButton` property settings for the form at run time, or you may have tried to set the `Visible` property to `False` for the last remaining visible submenu on a parent menu.</span></span>  

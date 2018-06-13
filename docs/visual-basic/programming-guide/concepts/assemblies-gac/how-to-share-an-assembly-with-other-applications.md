@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33642870"
 ---
 # <a name="how-to-share-an-assembly-with-other-applications-visual-basic"></a><span data-ttu-id="b26be-102">方法: アセンブリ共有する他のアプリケーション (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="b26be-102">How to: Share an Assembly with Other Applications (Visual Basic)</span></span>
 <span data-ttu-id="b26be-103">アセンブリはプライベートまたは共有にすることができます。既定では、ほとんどの単純なプログラムは、他のアプリケーションによって使われることを意図されていないので、プライベート アセンブリで構成されます。</span><span class="sxs-lookup"><span data-stu-id="b26be-103">Assemblies can be private or shared: by default, most simple programs consist of a private assembly because they are not intended to be used by other applications.</span></span>  

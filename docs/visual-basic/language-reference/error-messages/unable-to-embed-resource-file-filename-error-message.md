@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33596643"
 ---
 # <a name="unable-to-embed-resource-file-39ltfilenamegt39-lterror-messagegt"></a><span data-ttu-id="a1990-102">リソース ファイルを埋め込めません&#39; &lt;filename&gt;&#39;:&lt;エラー メッセージ&gt;</span><span class="sxs-lookup"><span data-stu-id="a1990-102">Unable to embed resource file &#39;&lt;filename&gt;&#39;: &lt;error message&gt;</span></span>
 <span data-ttu-id="a1990-103">Visual Basic コンパイラは、マニフェストを伴うアセンブリを生成するアセンブリ リンカー (Al.exe、Alink とも呼ばれます) を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="a1990-103">The Visual Basic compiler calls the Assembly Linker (Al.exe, also known as Alink) to generate an assembly with a manifest.</span></span> <span data-ttu-id="a1990-104">リンカーが、ネイティブな COM+ リソース ファイルをアセンブリに直接埋め込むときにエラーが発生したことを報告しています。</span><span class="sxs-lookup"><span data-stu-id="a1990-104">The linker has reported an error embedding a native COM+ resource file directly into the assembly.</span></span>  

@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33638386"
 ---
 # <a name="class-not-registered-on-local-machine"></a><span data-ttu-id="d33a3-102">クラスがローカル コンピューターに登録されていません</span><span class="sxs-lookup"><span data-stu-id="d33a3-102">Class not registered on local machine</span></span>
 <span data-ttu-id="d33a3-103">このエラーは通常、ファイルが破損している場合に発生します。</span><span class="sxs-lookup"><span data-stu-id="d33a3-103">This error is usually encountered as a result of a corrupted file.</span></span> <span data-ttu-id="d33a3-104">Visual Studio を再インストールする必要があります。</span><span class="sxs-lookup"><span data-stu-id="d33a3-104">You may need to reinstall Visual Studio.</span></span>  

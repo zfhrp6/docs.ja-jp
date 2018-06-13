@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33639390"
 ---
 # <a name="printer-error"></a><span data-ttu-id="4e3d4-102">プリンター エラーです</span><span class="sxs-lookup"><span data-stu-id="4e3d4-102">Printer error</span></span>
 <span data-ttu-id="4e3d4-103">プリンターで、エラーが発生しましたが、ファイルを送信したコンピューターにその他の情報は返されませんでした。</span><span class="sxs-lookup"><span data-stu-id="4e3d4-103">An error occurred at the printer, but no other information was returned to the computer that sent the file.</span></span>  

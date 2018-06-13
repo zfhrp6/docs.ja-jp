@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33597433"
 ---
 # <a name="in-generic-modifier-visual-basic"></a><span data-ttu-id="85c70-102">In (ジェネリック修飾子) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="85c70-102">In (Generic Modifier) (Visual Basic)</span></span>
 <span data-ttu-id="85c70-103">ジェネリック型パラメーターの `In` キーワードは、型パラメーターが反変であることを指定します。</span><span class="sxs-lookup"><span data-stu-id="85c70-103">For generic type parameters, the `In` keyword specifies that the type parameter is contravariant.</span></span>  

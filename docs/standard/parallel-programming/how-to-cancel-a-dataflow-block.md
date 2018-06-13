@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33584906"
 ---
 # <a name="how-to-cancel-a-dataflow-block"></a><span data-ttu-id="d3106-102">方法: データフロー ブロックをキャンセルする</span><span class="sxs-lookup"><span data-stu-id="d3106-102">How to: Cancel a Dataflow Block</span></span>
 <span data-ttu-id="d3106-103">このドキュメントでは、アプリケーションでキャンセルを有効にする方法を示します。</span><span class="sxs-lookup"><span data-stu-id="d3106-103">This document demonstrates how to enable cancellation in your application.</span></span> <span data-ttu-id="d3106-104">この例では、Windows フォームを使用して、データフロー パイプラインで作業項目がアクティブである場所と、キャンセルの影響を示します。</span><span class="sxs-lookup"><span data-stu-id="d3106-104">This example uses Windows Forms to show where work items are active in a dataflow pipeline and also the effects of cancellation.</span></span>  

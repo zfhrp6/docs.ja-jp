@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33639664"
 ---
 # <a name="you-must-specify-a-name"></a><span data-ttu-id="aafa8-102">名前を指定する必要があります</span><span class="sxs-lookup"><span data-stu-id="aafa8-102">You must specify a name</span></span>
 <span data-ttu-id="aafa8-103">ファイル名の変更などのファイル操作を実行するときは、名前を指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="aafa8-103">When performing file operations such as renaming a file, you must specify the name.</span></span>  

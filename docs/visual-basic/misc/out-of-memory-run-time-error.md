@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33637479"
 ---
 # <a name="out-of-memory-visual-basic-run-time-error"></a><span data-ttu-id="e027a-102">メモリが不足しています。(Visual Basic ランタイム エラー)</span><span class="sxs-lookup"><span data-stu-id="e027a-102">Out of memory (Visual Basic Run-Time Error)</span></span>
 <span data-ttu-id="e027a-103">必要なメモリが使用可能なメモリを超えました。</span><span class="sxs-lookup"><span data-stu-id="e027a-103">More memory was required than is available.</span></span>  

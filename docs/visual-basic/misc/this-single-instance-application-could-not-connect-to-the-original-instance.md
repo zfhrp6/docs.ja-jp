@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33640255"
 ---
 # <a name="this-single-instance-application-could-not-connect-to-the-original-instance"></a><span data-ttu-id="a579d-102">この単一インスタンス アプリケーションは元のインスタンスに接続できませんでした</span><span class="sxs-lookup"><span data-stu-id="a579d-102">This single-instance application could not connect to the original instance</span></span>
 <span data-ttu-id="a579d-103">この単一インスタンス アプリケーションは元のインスタンスに接続できませんでした。</span><span class="sxs-lookup"><span data-stu-id="a579d-103">This single-instance application could not connect to the original instance.</span></span> <span data-ttu-id="a579d-104">この問題の考えられる原因の一部は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="a579d-104">Some of the possible causes for this problem are as follows:</span></span>  

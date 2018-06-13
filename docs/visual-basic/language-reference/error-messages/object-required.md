@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33593715"
 ---
 # <a name="object-required-visual-basic"></a><span data-ttu-id="4e427-102">オブジェクトが必要です。(Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="4e427-102">Object required (Visual Basic)</span></span>
 <span data-ttu-id="4e427-103">プロパティおよびメソッドへの参照オブジェクトの明示的な修飾子が必要です。</span><span class="sxs-lookup"><span data-stu-id="4e427-103">References to properties and methods often require an explicit object qualifier.</span></span> <span data-ttu-id="4e427-104">これは、このようなケースです。</span><span class="sxs-lookup"><span data-stu-id="4e427-104">This is such a case.</span></span>  

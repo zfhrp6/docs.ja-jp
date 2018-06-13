@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33637448"
 ---
 # <a name="file-specified-by-filename-does-not-use-the-encoding-specified-by-fileencoding"></a><span data-ttu-id="48ae9-102">FileName で指定されたファイルは FileEncoding で指定されたエンコーディングを使用していません</span><span class="sxs-lookup"><span data-stu-id="48ae9-102">File specified by FileName does not use the encoding specified by FileEncoding</span></span>
 <span data-ttu-id="48ae9-103">ファイルからの読み取りが試行されましたが、ファイルは指定したエンコーディングを使用していません。</span><span class="sxs-lookup"><span data-stu-id="48ae9-103">An attempt has been made to read from a file, but the specified encoding is not used by the file.</span></span>  

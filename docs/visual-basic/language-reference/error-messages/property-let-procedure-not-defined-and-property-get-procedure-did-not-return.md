@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33596607"
 ---
 # <a name="property-let-procedure-not-defined-and-property-get-procedure-did-not-return-an-object"></a><span data-ttu-id="5f85b-102">Property Let プロシージャが定義されておらず、Property Get プロシージャからオブジェクトが返されませんでした。</span><span class="sxs-lookup"><span data-stu-id="5f85b-102">Property let procedure not defined and property get procedure did not return an object</span></span>
 <span data-ttu-id="5f85b-103">特定のプロパティ、メソッド、および操作に適用できますのみ`Collection`オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="5f85b-103">Certain properties, methods, and operations can only apply to `Collection` objects.</span></span> <span data-ttu-id="5f85b-104">操作またはコレクションに排他であるプロパティを指定しましたが、オブジェクトがコレクションではありません。</span><span class="sxs-lookup"><span data-stu-id="5f85b-104">You specified an operation or property that is exclusive to collections, but the object is not a collection.</span></span>  

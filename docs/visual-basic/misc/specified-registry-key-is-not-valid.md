@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33639449"
 ---
 # <a name="specified-registry-key-is-not-valid-because-it-contains-two-or-more-consecutive-backslashes"></a><span data-ttu-id="eaed6-102">指定されたレジストリ キーは、2 つ以上の連続する円記号が含まれているため無効です</span><span class="sxs-lookup"><span data-stu-id="eaed6-102">Specified registry key is not valid because it contains two or more consecutive backslashes</span></span>
 <span data-ttu-id="eaed6-103">パスで指定されているレジストリ キーに、2 つ以上の連続する円記号が含まれています。</span><span class="sxs-lookup"><span data-stu-id="eaed6-103">A registry key specified with a path contains two or more consecutive backslashes.</span></span> <span data-ttu-id="eaed6-104">これは、複数の文字列を組み合わせてパスを構成したときに、誤って円記号を多く含めすぎた結果である可能性があります。</span><span class="sxs-lookup"><span data-stu-id="eaed6-104">This may be a result of combining several strings to form the path and inadvertently including too many backslashes.</span></span>  

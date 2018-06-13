@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33644343"
 ---
 # <a name="filtering-data-visual-basic"></a><span data-ttu-id="48a2f-102">データのフィルター処理 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="48a2f-102">Filtering Data (Visual Basic)</span></span>
 <span data-ttu-id="48a2f-103">フィルター処理とは、特定の条件を満たす要素のみが含まれるように結果セットを限定する操作のことです。</span><span class="sxs-lookup"><span data-stu-id="48a2f-103">Filtering refers to the operation of restricting the result set to contain only those elements that satisfy a specified condition.</span></span> <span data-ttu-id="48a2f-104">選択とも呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="48a2f-104">It is also known as selection.</span></span>  

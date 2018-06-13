@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33637401"
 ---
 # <a name="no-mouse-wheel-is-present"></a><span data-ttu-id="2668a-102">マウスのホイールが存在しません</span><span class="sxs-lookup"><span data-stu-id="2668a-102">No mouse wheel is present</span></span>
 <span data-ttu-id="2668a-103">`My.Computer.Mouse.WheelScrollLines` プロパティが呼び出されましたが、マウスにスクロール ホイールがありません。</span><span class="sxs-lookup"><span data-stu-id="2668a-103">The `My.Computer.Mouse.WheelScrollLines` property was called, but the mouse has no scroll wheel.</span></span>  

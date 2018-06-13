@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33638500"
 ---
 # <a name="cannot-calculate-rate-using-the-arguments-provided"></a><span data-ttu-id="c6ec3-102">指定された引数を使って割合を計算することはできません</span><span class="sxs-lookup"><span data-stu-id="c6ec3-102">Cannot calculate rate using the arguments provided</span></span>
 <span data-ttu-id="c6ec3-103">割合の計算に必要な引数が含まれていません。</span><span class="sxs-lookup"><span data-stu-id="c6ec3-103">The rate calculation does not contain the required arguments.</span></span>  

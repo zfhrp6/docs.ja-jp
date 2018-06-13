@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33643706"
 ---
 # <a name="troubleshooting-interoperability-visual-basic"></a><span data-ttu-id="a2e56-102">相互運用性のトラブルシューティング (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="a2e56-102">Troubleshooting Interoperability (Visual Basic)</span></span>
 <span data-ttu-id="a2e56-103">マネージ コードと COM の相互運用するときに、 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]、1 つ以上の次の一般的な問題が発生する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="a2e56-103">When you interoperate between COM and the managed code of the [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)], you may encounter one or more of the following common issues.</span></span>  

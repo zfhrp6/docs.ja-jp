@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33643303"
 ---
 # <a name="how-to-chain-axis-method-calls-linq-to-xml-visual-basic"></a><span data-ttu-id="241a6-102">方法: チェーンの軸メソッドの呼び出し (LINQ to XML) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="241a6-102">How to: Chain Axis Method Calls (LINQ to XML) (Visual Basic)</span></span>
 <span data-ttu-id="241a6-103">コードで使用する一般的なパターンでは、軸メソッドを呼び出してから、拡張メソッド軸のいずれかを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="241a6-103">A common pattern that you will use in your code is to call an axis method, then call one of the extension method axes.</span></span>  
