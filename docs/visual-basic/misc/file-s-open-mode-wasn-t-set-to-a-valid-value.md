@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33635907"
 ---
 # <a name="file39s-open-mode-wasn39t-set-to-a-valid-value"></a>ファイル&#39;s を開くモードされなかった&#39;t が有効な値に設定
 ファイルのオープン モードに指定された値が無効でした。 次の表に、 <xref:Microsoft.VisualBasic.OpenMode> 列挙型の有効な値を示します。  

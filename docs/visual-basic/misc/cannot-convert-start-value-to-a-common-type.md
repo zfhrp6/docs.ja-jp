@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33634151"
 ---
 # <a name="cannot-convert-start-value-of-type-39lttype1gt39-limit-value-of-39lttype2gt39-and-step-value-of-39lttype3gt39-to-a-common-type"></a>型の開始値に変換できません&#39; &lt;type1&gt;&#39;の値を制限する&#39; &lt;type2&gt; &#39;ステップの値と&#39; &lt;type3&gt; &#39;には共通の型
 指定された `For...Next` コントロールの値は、異なる型であるため、共通の型に変換できないので無効です。  

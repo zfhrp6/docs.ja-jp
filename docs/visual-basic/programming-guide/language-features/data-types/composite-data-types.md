@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33650440"
 ---
 # <a name="composite-data-types-visual-basic"></a>複合データ型 (Visual Basic)
 Visual Basic に用意されている基本データ型だけでなく、作成するさまざまな種類の項目を作成することができますも*複合データ型*構造体、配列、およびクラスなどです。 その他の複合型および基本型からは、複合データ型を構築できます。 たとえば、配列メンバーを持つ構造体の要素の配列または構造体を定義できます。  

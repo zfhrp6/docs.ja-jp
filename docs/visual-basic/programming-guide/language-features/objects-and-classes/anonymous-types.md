@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33656257"
 ---
 # <a name="anonymous-types-visual-basic"></a>匿名型 (Visual Basic)
 Visual Basic では、匿名型は、使用すると、データ型のクラス定義を記述することがなくオブジェクトの作成をサポートします。 クラスは、コンパイラによって生成されます。 クラスの使用可能な名前を持たないから直接継承<xref:System.Object>オブジェクトの宣言で指定したプロパティが含まれます。 データ型の名前が指定されていないため、呼びます、*匿名型*です。  

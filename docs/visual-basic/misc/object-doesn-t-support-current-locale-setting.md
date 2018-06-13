@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33636803"
 ---
 # <a name="object-doesn39t-support-current-locale-setting-visual-basic"></a>オブジェクトは&#39;t サポート現在のロケール設定 (Visual Basic)
 アクセスしようとしたオブジェクトは、現在のプロジェクトのロケール設定をサポートしていません。  

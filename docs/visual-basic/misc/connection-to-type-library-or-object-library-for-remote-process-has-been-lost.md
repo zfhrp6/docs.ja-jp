@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33635685"
 ---
 # <a name="connection-to-type-library-or-object-library-for-remote-process-has-been-lost"></a>リモート プロセス用のタイプ ライブラリまたはオブジェクト ライブラリへの接続が失われました
 リモート プロセスのオブジェクト ライブラリまたはタイプ ライブラリへの接続が失われました。  

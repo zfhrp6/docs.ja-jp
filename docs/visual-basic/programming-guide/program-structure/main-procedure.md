@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33652153"
 ---
 # <a name="main-procedure-in-visual-basic"></a>Visual Basic の Main プロシージャ
 すべての Visual Basic アプリケーションが呼び出されるプロシージャを含める必要があります`Main`です。 このプロシージャは、開始ポイントし、アプリケーションの総合的な制御します。 .NET Framework の呼び出し、`Main`プロシージャ、アプリケーションが読み込まれたし、制御を渡す準備ができました。 記述する必要があります、Windows フォーム アプリケーションを作成する場合は、しない限り、`Main`が自分で実行されるアプリケーションのプロシージャです。  

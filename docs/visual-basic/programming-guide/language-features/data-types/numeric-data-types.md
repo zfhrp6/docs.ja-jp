@@ -28,6 +28,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33654204"
 ---
 # <a name="numeric-data-types-visual-basic"></a>数値データ型 (Visual Basic)
 Visual Basic では、いくつかを指定*数値データ型*さまざまな表現で数値を処理するためです。 *整数*型を表す整数のみ (正、負の値、および 0)、および*非整数*型は整数と小数部の両方で数値を表します。  

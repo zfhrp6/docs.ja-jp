@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33653599"
 ---
 # <a name="-optionexplicit"></a>-optionexplicit
 変数が使用されるように宣言されていない場合は、コンパイラがエラーを報告します。  

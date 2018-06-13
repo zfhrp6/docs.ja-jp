@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33656296"
 ---
 # <a name="scope-in-visual-basic"></a>Visual Basic におけるスコープ
 *スコープ*一連の名前に修飾子またはを通じて使用できるようにせずに参照できるすべてのコードは、宣言された要素の[Imports ステートメント (.NET Namespace よぶ型)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)です。 要素は、次のレベルのいずれかのスコープを持つことができます。  

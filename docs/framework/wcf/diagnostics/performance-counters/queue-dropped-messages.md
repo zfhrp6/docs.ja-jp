@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33473072"
 ---
 # <a name="queue-dropped-messages"></a>破棄されたメッセージのキュー
 カウンター名: キューに置かれ破棄されたメッセージ。  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33651114"
 ---
 # <a name="how-to-define-a-parameter-for-a-procedure-visual-basic"></a>方法: プロシージャに対してパラメーターを定義する (Visual Basic)
 A*パラメーター*に呼び出したときに、プロシージャに値を渡すには、呼び出し元のコードを許可します。 プロシージャの各パラメーターを宣言すると、変数を宣言すると、その名前とデータ型を指定するのと同様にします。 また、渡す方法を指定するパラメーターは省略可能かどうか。  

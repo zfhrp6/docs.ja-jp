@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33651185"
 ---
 # <a name="xdocument-class-overview-visual-basic"></a>XDocument クラスの概要 (Visual Basic)
 このトピックでは、<xref:System.Xml.Linq.XDocument> クラスについて説明します。  

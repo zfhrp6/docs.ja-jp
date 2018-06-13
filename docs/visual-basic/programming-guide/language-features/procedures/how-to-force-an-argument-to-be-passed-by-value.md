@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33651078"
 ---
 # <a name="how-to-force-an-argument-to-be-passed-by-value-visual-basic"></a>方法: 引数の値渡しを強制する (Visual Basic)
 プロシージャ宣言では、引き渡し方法を決定します。 パラメーターが宣言されている場合[ByRef](../../../../visual-basic/language-reference/modifiers/byref.md)、参照によって、対応する引数を渡す Visual Basic が必要です。 これにより、呼び出し元のコードで引数の基になるプログラミング要素の値を変更する手順です。 このような変更を基になる要素を保護する場合は、オーバーライドできます、`ByRef`引き渡し方法の手順では引数の名前をかっこで囲んだ呼び出します。 このかっこは、呼び出しで引数リストを囲むかっこだけでなく、します。  

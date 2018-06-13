@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33653625"
 ---
 # <a name="-specify-response-file-visual-basic"></a>@ (応答ファイルの指定) (Visual Basic)
 コンパイラ オプションを含むファイルをコンパイルするソース コード ファイルを指定します。  

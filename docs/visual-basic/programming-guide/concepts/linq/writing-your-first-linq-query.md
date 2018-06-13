@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33654890"
 ---
 # <a name="writing-your-first-linq-query-visual-basic"></a>初めての LINQ クエリの作成 (Visual Basic)
 "*クエリ*" は、データ ソースからデータを取得する式です。 クエリは、専用のクエリ言語で表現されます。 時間の経過と共にさまざまな言語のために開発されたさまざまな種類のデータ ソース、たとえば、リレーショナル データベース用の SQL や XML 用の XQuery です。 これにより、アプリケーション開発者は、データ ソースまたはサポートされているデータ形式の種類ごとに新しいクエリ言語を習得するために必要です。  

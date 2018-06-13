@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33634834"
 ---
 # <a name="replacements-too-long"></a>置換後の文字列が長すぎます
 許容される長さを超える置換文字列を指定しました。  

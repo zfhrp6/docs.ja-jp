@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33655142"
 ---
 # <a name="comparison-operators-in-visual-basic"></a>Visual Basic における比較演算子
 比較演算子は 2 つの式を比較し、`Boolean`これらの値のリレーションシップを表す値です。 数値、文字列、比較演算子とオブジェクトの比較演算子を比較するための演算子があります。 すべての 3 種類の演算子は、ここで説明します。  

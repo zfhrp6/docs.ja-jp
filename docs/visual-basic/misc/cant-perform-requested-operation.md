@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33636849"
 ---
 # <a name="can39t-perform-requested-operation-visual-basic"></a>できます&#39;要求された操作 (Visual Basic) を実行しません。
 プロジェクトの現在の状態が無効になるため、操作を実行できません。 たとえば、実行中のコードをプログラムで変更しようとした可能性があります。  

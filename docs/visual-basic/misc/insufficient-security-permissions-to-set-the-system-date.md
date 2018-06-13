@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33633700"
 ---
 # <a name="insufficient-security-permissions-to-set-the-system-date"></a>システムの日付を設定するためのセキュリティ アクセス許可が十分ではありません
 システムの日付を設定するにはセキュリティ アクセス許可が不十分です。  

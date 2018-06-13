@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33634944"
 ---
 # <a name="file-io-of-a-structure-with-field-39ltfieldnamegt39-of-type-39lttypenamegt39-is-not-valid"></a>ファイルのフィールドを持つ構造体の I/O &#39; &lt;fieldname&gt; &#39;型の&#39; &lt;typename&gt; &#39;が正しくありません
 ファイルへの書き込みを試行している構造体には、サポートされていない型が含まれています。  

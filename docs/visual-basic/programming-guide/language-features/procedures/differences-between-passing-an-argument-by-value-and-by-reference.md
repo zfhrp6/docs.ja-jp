@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33651656"
 ---
 # <a name="differences-between-passing-an-argument-by-value-and-by-reference-visual-basic"></a>引数の値渡しと参照渡しの違い (Visual Basic)
 プロシージャに 1 つまたは複数の引数を渡す際に、各引数は、基になる呼び出し元のコードでプログラミング要素に対応します。 この基になる要素の値かへの参照を渡すことができます。 これと呼ばれますが、*渡し*です。  

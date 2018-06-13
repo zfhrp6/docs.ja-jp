@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33652013"
 ---
 # <a name="visual-basic-language-features"></a>Visual Basic 言語の機能
 次のトピックでは、紹介し、Visual Basic では、オブジェクト指向プログラミング言語の重要なコンポーネントについて説明します。 フォームとコントロールを使用してアプリケーションのユーザー インターフェイスを作成した後、アプリケーションの動作を定義するコードを作成する必要があります。 最新のプログラミング言語と Visual Basic では、一般的なプログラミング構成要素と言語要素の数がサポートしています。  

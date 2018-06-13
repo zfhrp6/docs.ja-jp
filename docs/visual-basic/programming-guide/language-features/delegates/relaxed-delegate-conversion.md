@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33650830"
 ---
 # <a name="relaxed-delegate-conversion-visual-basic"></a>厳密でないデリゲート変換 (Visual Basic)
 厳密でないデリゲート変換を使用すると、サブと関数は、それぞれの署名が同一ではない場合でも、ハンドラーまたはデリゲートを割り当てることができます。 そのため、デリゲートへのバインディングは、メソッドの呼び出しを既に許可されているバインディングで一貫性のあるになります。  

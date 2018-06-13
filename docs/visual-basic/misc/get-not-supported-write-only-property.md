@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33636762"
 ---
 # <a name="get-not-supported-write-only-property"></a>Get はサポートされません。書き込み専用のプロパティです
 書き込み専用であるために、プロパティを読み取ることができません。  

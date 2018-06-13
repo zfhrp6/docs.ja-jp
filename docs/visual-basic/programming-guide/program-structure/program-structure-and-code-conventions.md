@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33654943"
 ---
 # <a name="program-structure-and-code-conventions-visual-basic"></a>プログラム構造とコード規則 (Visual Basic)
 このセクションでは、一般的な Visual Basic プログラムの構造が導入されています、単純な Visual Basic プログラム、「こんにちは, World」を説明し、Visual Basic コード規則について説明します。 コード規則は、プログラムのロジックではなくプログラムの物理的な構造と外観に焦点を合わせた提案です。 コード規則に従うと、コードの読み取り、理解、保守が簡単になります。 コード規則には、以下の内容が含まれます。  

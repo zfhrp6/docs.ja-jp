@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33650414"
 ---
 # <a name="manipulating-xml-in-visual-basic"></a>Visual Basic での XML の操作
 使用することができます*XML リテラル*文字列、ファイル、またはストリームなど、外部ソースから XML を読み込めません。 使用してできます[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]、XML を操作して[!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)]XML に対してクエリをします。  

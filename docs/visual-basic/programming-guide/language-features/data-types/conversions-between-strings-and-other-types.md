@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33650570"
 ---
 # <a name="conversions-between-strings-and-other-types-visual-basic"></a>文字列とその他の型との変換 (Visual Basic)
 数値を変換する`Boolean`、または日付/時刻値を`String`です。 逆方向に変換することもできます。-数値、文字列値から`Boolean`、または`Date`— 先のデータ型の有効な値として解釈される場合、文字列の内容。 できない場合は、実行時エラーが発生します。  

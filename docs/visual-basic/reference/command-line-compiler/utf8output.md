@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33653586"
 ---
 # <a name="-utf8output-visual-basic"></a>-utf8output (Visual Basic)
 UTF-8 エンコードを使用してコンパイラ出力を表示します。  

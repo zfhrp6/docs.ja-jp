@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33651757"
 ---
 # <a name="array-dimensions-in-visual-basic"></a>Visual Basic における配列の次元
 A*ディメンション*は、方向、配列の要素の仕様を変更できます。 月の日付ごとの売上を合計を保持する配列には、1 つのディメンション (月の日) があります。 月の日付ごとに、売り上げ高を部門によって合計を保持する配列には、2 つのディメンション (部署番号と月の日) があります。 配列がディメンションの数が呼び出されますその*ランク*です。  

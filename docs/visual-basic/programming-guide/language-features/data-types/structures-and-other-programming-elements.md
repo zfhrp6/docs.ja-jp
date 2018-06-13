@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33652026"
 ---
 # <a name="structures-and-other-programming-elements-visual-basic"></a>構造体およびその他のプログラミング要素 (Visual Basic)
 構造体は、配列、オブジェクト、およびプロシージャ、相互に組み合わせて使用できます。 これらの要素が個別に使用すると、相互作用は同じ構文を使用します。  

@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33654123"
 ---
 # <a name="structures-and-classes-visual-basic"></a>構造体とクラス (Visual Basic)
 Visual Basic では、構造体とクラスは、両方のエンティティに同じ機能のほとんどがサポートされる結果の構文を統一します。 ただし、構造体とクラスの重要な違いもできます。  

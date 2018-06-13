@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33635607"
 ---
 # <a name="code-resource-lock-error"></a>コード リソースのロック エラーです。
 コード リソース内のプロシージャが呼び出されました。 コード リソースが見つかりましたが、使用中の可能性があるリソースをロックしようとしたときに、エラーが発生しました。  
