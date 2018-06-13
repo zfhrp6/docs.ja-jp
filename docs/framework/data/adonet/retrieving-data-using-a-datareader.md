@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33353261"
 ---
 # <a name="retrieving-data-using-a-datareader"></a>DataReader によるデータの取得
 使用してデータの取得、 **DataReader**のインスタンスを作成、**コマンド**オブジェクト作成し、作成、 **DataReader**を呼び出して**Command.ExecuteReader**データ ソースから行を取得します。 使用して次の例を示しています、 **DataReader**場所`reader`は有効な datareader および`command`有効なコマンド オブジェクトを表します。  

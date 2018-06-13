@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33360210"
 ---
 # <a name="customizing-operations-by-using-stored-procedures"></a>ストアド プロシージャによる操作のカスタマイズ
 ストアド プロシージャは、既定の動作をオーバーライドする方法として一般的に使用されます。 このトピックでは、ストアド プロシージャ用に生成されたメソッド ラッパーを使用する方法、およびストアド プロシージャを直接呼び出す方法の例を示します。  

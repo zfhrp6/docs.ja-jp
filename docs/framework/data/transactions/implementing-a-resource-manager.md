@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33363264"
 ---
 # <a name="implementing-a-resource-manager"></a>リソース マネージャーの実装
 トランザクションで使用される各リソースはリソース マネージャーによって管理され、その動作はトランザクション マネージャーによって調整されます。 リソース マネージャーは、トランザクション マネージャーと連携してアプリケーションに原子性と分離を保証します。 Microsoft SQL Server、永続的なメッセージ キュー、メモリ内ハッシュ テーブルはすべて、リソース マネージャーの例です。  

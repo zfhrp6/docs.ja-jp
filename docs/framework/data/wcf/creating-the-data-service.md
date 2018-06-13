@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33362838"
 ---
 # <a name="creating-the-data-service"></a>データ サービスの作成
 このタスクを使用するサンプル データ サービスを作成する[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]を公開する、 [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] Northwind サンプル データベースに基づいているフィード。 このタスクに必要な基本手順は次のとおりです。  

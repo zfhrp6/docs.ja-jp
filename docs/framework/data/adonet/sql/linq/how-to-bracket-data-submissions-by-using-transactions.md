@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33361528"
 ---
 # <a name="how-to-bracket-data-submissions-by-using-transactions"></a>方法 : データ送信をトランザクションで囲む
 データベースへの送信を <xref:System.Transactions.TransactionScope> で囲むことができます。 詳細については、次を参照してください。[トランザクション サポート](../../../../../../docs/framework/data/adonet/sql/linq/transaction-support.md)です。  

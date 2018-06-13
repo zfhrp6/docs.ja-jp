@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33354573"
 ---
 # <a name="how-to-generate-customized-code-by-modifying-a-dbml-file"></a>方法 : DBML ファイルを変更してカスタマイズ コードを生成する
 データベース マークアップ言語 (.dbml) メタデータ ファイルから、Visual Basic または c# のソース コードを生成できます。 この方法を使用すると、アプリケーション マッピング コードを生成する前に、既定の .dbml ファイルをカスタマイズできます。 これは高度な機能です。  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32767077"
 ---
 # <a name="ltudptransportsettingsgt-of-ltudpannouncementendpointgt"></a>&lt;udpAnnouncementEndpoint&gt; の &lt;udpTransportSettings&gt;
 この構成要素の UDP トランスポート設定を公開する[ \<udpAnnoucementEndpoint >](../../../../../docs/framework/configure-apps/file-schema/wcf/udpannoucementendpoint.md)です。  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33527405"
 ---
 # <a name="how-to-use-a-color-matrix-to-transform-a-single-color"></a>方法 : カラー行列を使用して単一色を変換する
 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] 提供、<xref:System.Drawing.Image>と<xref:System.Drawing.Bitmap>を格納して、画像を操作するためのクラスです。 <xref:System.Drawing.Image> および<xref:System.Drawing.Bitmap>オブジェクトに格納する 32 ビット数値として各ピクセルの色: 赤、緑、青、および alpha にそれぞれ 8 ビットです。 4 つのコンポーネントのそれぞれは、0 ~ 255 の輝度がないと 255 は最大の輝度を表す、0 から番号です。 アルファ コンポーネントは、色の透明度を指定します。 0 は完全に透過的であり、255 は完全に不透明です。  

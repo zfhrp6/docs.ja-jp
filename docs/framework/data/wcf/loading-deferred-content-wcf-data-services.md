@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33365203"
 ---
 # <a name="loading-deferred-content-wcf-data-services"></a>遅延コンテンツの読み込み (WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] の既定では、クエリが返すデータの量が制限されます。 その一方で、関連エンティティ、ページングされた応答データ、およびバイナリ データ ストリームを含む追加データをデータ サービスから必要に応じて明示的に読み込むことができます。 このトピックでは、このような遅延コンテンツをアプリケーションに読み込む方法について説明します。  

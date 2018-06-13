@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32765257"
 ---
 # <a name="constructing-types-entity-sql"></a>コンストラクター (Entity SQL)
 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] 次の 3 つの種類のコンス トラクターを提供します。 行コンス トラクター、名前付きの型のコンス トラクター、およびコレクション コンス トラクターです。  

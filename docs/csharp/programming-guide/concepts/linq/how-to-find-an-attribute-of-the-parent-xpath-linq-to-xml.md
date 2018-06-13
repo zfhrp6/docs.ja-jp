@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33318800"
 ---
 # <a name="how-to-find-an-attribute-of-the-parent-xpath-linq-to-xml-c"></a>方法: 親の属性を検索する (XPath-LINQ to XML) (C#)
 このトピックでは、親要素に移動してその属性を検索する方法を示します。  

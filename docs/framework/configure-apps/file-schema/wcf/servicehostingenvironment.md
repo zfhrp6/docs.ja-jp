@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33354321"
 ---
 # <a name="ltservicehostingenvironmentgt"></a>&lt;serviceHostingEnvironment&gt;
 この要素は、環境をホストするサービスがインスタンス化する特定のトランスポートの型を定義します。 この要素が空の場合は、既定の型が使用されます。 この要素は、アプリケーション レベルまたはコンピューター レベルの構成ファイルでのみ使用できます。  

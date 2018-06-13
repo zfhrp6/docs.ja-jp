@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32765361"
 ---
 # <a name="method-based-query-syntax-examples-ordering-linq-to-dataset"></a>メソッド ベースのクエリ構文例 : 並べ替え (LINQ to DataSet)
 このトピックでは、<xref:System.Linq.Enumerable.OrderBy%2A> に対し、<xref:System.Linq.Enumerable.Reverse%2A>、<xref:System.Linq.Enumerable.ThenBy%2A>、<xref:System.Data.DataSet> の各メソッドを使ってクエリを実行し、その結果をメソッドのクエリ構文を使って並べ替える例を紹介しています。  

@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33604394"
 ---
 # <a name="not-operator-visual-basic"></a>Not 演算子 (Visual Basic)
 論理否定を実行、`Boolean`式、または数値式のビットごとの否定。  

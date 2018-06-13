@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33339678"
 ---
 # <a name="manipulating-pointers-c-programming-guide"></a>ポインターの操作 (C# プログラミング ガイド)
 ここでは、次のポインター操作について説明します。  

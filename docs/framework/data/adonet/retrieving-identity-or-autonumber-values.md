@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33357152"
 ---
 # <a name="retrieving-identity-or-autonumber-values"></a>ID 値および Autonumber 値の取得
 リレーショナル データベースの主キーとは、常に一意の値を含んだ列または列の組み合わせをいいます。 主キー値がわかっていれば、それが格納されている行を特定できます。 SQL Server、Oracle、Microsoft Access/Jet などのリレーショナル データベース エンジンは、主キーとして指定可能な自動インクリメント列の作成をサポートしています。 これらの値はテーブルに行を追加するとサーバーによって自動的に生成されます。 SQL Server では列の Identity プロパティを設定し、Oracle では Sequence を作成します。また、Microsoft Access では、AutoNumber 列を作成します。  

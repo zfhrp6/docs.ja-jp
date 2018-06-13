@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33354240"
 ---
 # <a name="how-to-handle-composite-keys-in-queries"></a>方法 : クエリで複合キーを処理する
 演算子によっては、引数を 1 つしか受け取らないものがあります。 1 つの演算子にデータベースの複数の列を含めるには、その組み合わせを表す匿名型を作成する必要があります。  

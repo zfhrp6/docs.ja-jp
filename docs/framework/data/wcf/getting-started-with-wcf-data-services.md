@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33359492"
 ---
 # <a name="getting-started-with-wcf-data-services"></a>WCF Data Services を使用した作業の開始
 このセクションのトピックで簡単に理解できるように[!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]と使用方法[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]公開および使用する[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]フィードを基になるテクノロジについて説明します。 このセクションには、両方の概念的なコンテンツが含まれています。 および[クイック スタート](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md)チュートリアルです。  

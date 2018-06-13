@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33527548"
 ---
 # <a name="how-to-get-and-set-the-current-cell-in-the-windows-forms-datagridview-control"></a>方法 : Windows フォーム DataGridView コントロールの現在のセルを取得および設定する
 対話、<xref:System.Windows.Forms.DataGridView>多くの場合、ことをプログラムによって検出されるセルが現在アクティブなが必要です。 また、現在のセルを変更する必要があります。 これらのタスクを行うことができます、<xref:System.Windows.Forms.DataGridView.CurrentCell%2A>プロパティです。  

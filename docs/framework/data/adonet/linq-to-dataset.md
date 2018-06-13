@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32764854"
 ---
 # <a name="linq-to-dataset"></a>LINQ to DataSet
 [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] は、<xref:System.Data.DataSet> オブジェクトにキャッシュされたデータに対するクエリをより簡単に、より高速にします。 具体的には、[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]を個別のクエリ言語を使用して、クエリの代わりにプログラミング言語そのものを記述する開発者を有効にしてクエリを簡素化します。 これは、Visual Studio 開発者も、利用できるよう、コンパイル時の構文チェック、静的な型指定、および IntelliSense サポートがクエリで Visual Studio によって提供されるに特に便利です。  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32764815"
 ---
 # <a name="method-based-query-syntax-examples-set-operators-linq-to-dataset"></a>メソッド ベースのクエリ構文例 : 集合演算子 (LINQ to DataSet)
 このトピックの例を使用する方法を示します、 <xref:System.Linq.Enumerable.Distinct%2A>、 <xref:System.Linq.Enumerable.Except%2A>、 <xref:System.Linq.Enumerable.Intersect%2A>、および<xref:System.Linq.Enumerable.Union%2A>演算子をデータ行の集合に対する値ベースの比較操作を実行します[。データセットにデータを読み込んで](../../../../docs/framework/data/adonet/loading-data-into-a-dataset.md)を参照してください[Datarow の比較](../../../../docs/framework/data/adonet/comparing-datarows-linq-to-dataset.md)について<xref:System.Data.DataRowComparer>です。  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32765582"
 ---
 # <a name="aggregate-functions-entity-sql"></a>集計関数 (Entity SQL)
 集計は、コレクションをグループ操作の一部としてスカラーに圧縮する言語構成要素です。 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] 集計には次の 2 つの形式があります。  

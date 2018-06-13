@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33313034"
 ---
 # <a name="how-to-create-a-new-method-for-an-enumeration-c-programming-guide"></a>方法 : 列挙型対応の新しいメソッドを作成する (C# プログラミング ガイド)
 拡張メソッドを使用して、特定の列挙型に固有の機能を追加することができます。  

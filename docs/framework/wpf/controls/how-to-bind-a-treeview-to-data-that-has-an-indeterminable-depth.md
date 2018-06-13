@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33554378"
 ---
 # <a name="how-to-bind-a-treeview-to-data-that-has-an-indeterminable-depth"></a>方法 : 深度がわからないデータに TreeView をバインドする
 バインドする場合がある可能性があります、<xref:System.Windows.Controls.TreeView>の深さがわかっているいないデータ ソースにします。  これは、データが再帰的な場所のフォルダーには、フォルダーを含めることができます、ファイル システムや企業の組織の構造など、本質的に直属の部下として他の従業員の従業員のある場合に発生します。  

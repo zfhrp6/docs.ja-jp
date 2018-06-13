@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33353287"
 ---
 # <a name="programming-guide-linq-to-dataset"></a>プログラミング ガイド (LINQ to DataSet)
 ここでは、[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] を使用したプログラミングに関する概要情報と例を提供します。  

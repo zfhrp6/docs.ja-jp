@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33313571"
 ---
 # <a name="passing-arrays-using-ref-and-out-c-programming-guide"></a>ref と out を使用した配列の引き渡し (C# プログラミング ガイド)
 すべての [out](../../../csharp/language-reference/keywords/out-parameter-modifier.md) パラメーターと同じように、配列型の `out` パラメーターも使用する前に代入される必要があります。つまり、呼び出される側で代入する必要があります。 例:  

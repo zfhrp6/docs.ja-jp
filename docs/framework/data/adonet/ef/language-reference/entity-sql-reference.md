@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32766736"
 ---
 # <a name="entity-sql-reference"></a>Entity SQL リファレンス
 このセクションには、[!INCLUDE[esql](../../../../../../includes/esql-md.md)] 参照に関するトピックがあります。 このトピックでは、カテゴリ別に [!INCLUDE[esql](../../../../../../includes/esql-md.md)] 演算子をグループ化し、その概要を説明します。  

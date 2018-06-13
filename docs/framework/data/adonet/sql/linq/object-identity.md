@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33358470"
 ---
 # <a name="object-identity"></a>オブジェクト ID
 実行時のオブジェクトは、一意の ID を持ちます。 2 つの変数が同じオブジェクトを参照している場合、実際それらの変数は、そのオブジェクトの同じインスタンスを参照しています。 したがって、一方の変数から加えた変更は、もう一方の変数から直ちに参照できます。  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33340425"
 ---
 # <a name="projecting-xml-in-a-different-shape-c"></a>異なる構造の XML の射影 (C#)
 このトピックでは、ソース XML とは異なる構造の XML を射影する例について説明します。  

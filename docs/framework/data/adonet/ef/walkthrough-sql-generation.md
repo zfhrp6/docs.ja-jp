@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32766323"
 ---
 # <a name="walkthrough-sql-generation"></a>チュートリアル: SQL 生成
 このトピックでの SQL 生成の実行方法について説明します、[サンプル プロバイダー](http://go.microsoft.com/fwlink/?LinkId=180616)です。 次の Entity SQL クエリでは、サンプル プロバイダーに含まれているモデルを使用します。  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33364140"
 ---
 # <a name="how-to-customize-data-binding-behaviors-wcf-data-services"></a>方法: データ バインディングの動作をカスタマイズする (WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] では、バインディング コレクションにオブジェクトを追加したとき、バインディング コレクションからオブジェクトを削除したとき、またはプロパティ変更が検出されたときに、<xref:System.Data.Services.Client.DataServiceCollection%601> によって呼び出されるカスタム ロジックを指定できます。 このカスタム ロジックとして参照されているメソッドとして提供される<xref:System.Func%602>の値を返すデリゲート`false`ときに既定の動作を引き続き実行するカスタム メソッドの完了時に、`true`後続の処理時に、イベントを停止する必要があります。  
