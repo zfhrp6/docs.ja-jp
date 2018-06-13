@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33551701"
 ---
 # <a name="button"></a>ボタン
 A<xref:System.Windows.Controls.Button>コントロールがマウス、キーボード、スタイラス、またはその他の入力デバイスおよびを発生させますからユーザーの入力に反応する<xref:System.Windows.Controls.Primitives.ButtonBase.Click>イベント。 A<xref:System.Windows.Controls.Button>は、基本的な[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]コンポーネントをテキストなどの単純なコンテンツを含めることができ、画像などの複雑なコンテンツを含めることもでき、<xref:System.Windows.Controls.Panel>コントロール。  

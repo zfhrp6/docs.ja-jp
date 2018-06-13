@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33546570"
 ---
 # <a name="markup-compatibility-mc-language-features"></a>マークアップの互換性 (mc:) 言語機能
 ## <a name="in-this-section"></a>このセクションの内容  

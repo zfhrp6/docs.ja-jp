@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33547421"
 ---
 # <a name="printing-and-print-system-management"></a>印刷および印刷システムの管理
 [!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)] Microsoft .NET Framework は、新しい印刷パスを紹介し、: の代わりに[!INCLUDE[TLA#tla_gdi](../../../../includes/tlasharptla-gdi-md.md)]印刷 — と大幅に拡張された一連の印刷システム管理[!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)]です。  

@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33544204"
 ---
 # <a name="how-to-clone-a-printer"></a>方法 : プリンターを複製する
 ほとんどの企業が、ある時点で、購入、同じモデルの複数のプリンターです。 通常、これらはすべてほぼ同一の構成の設定でインストールします。 各プリンターのインストールとできる時間がかかる場合、エラーが発生します。 <xref:System.Printing.IndexedProperties?displayProperty=nameWithType>名前空間および<xref:System.Printing.PrintServer.InstallPrintQueue%2A>Microsoft .NET Framework で公開されているクラスでは、既存の印刷キューから複製されたその他の印刷キューの任意の数を即座にインストールすることです。  

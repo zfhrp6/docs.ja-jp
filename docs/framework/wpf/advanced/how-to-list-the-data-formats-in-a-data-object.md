@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33543482"
 ---
 # <a name="how-to-list-the-data-formats-in-a-data-object"></a>方法 : データ オブジェクト内のデータ形式の一覧を表示する
 次の例を使用する方法を示して、<xref:System.Windows.DataObject.GetFormats%2A>メソッドのオーバー ロードは、各データ オブジェクトで使用可能なデータ形式を示す文字列の配列を取得します。  

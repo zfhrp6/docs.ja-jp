@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33531194"
 ---
 # <a name="how-to-display-images-in-cells-of-the-windows-forms-datagridview-control"></a>方法 : Windows フォーム DataGridView コントロールのセルにイメージを表示する
 画像やグラフィックはデータの行で表示できる値のいずれかです。 多くの場合、これらのグラフィックスは、従業員の写真や会社のロゴの形をとります。  

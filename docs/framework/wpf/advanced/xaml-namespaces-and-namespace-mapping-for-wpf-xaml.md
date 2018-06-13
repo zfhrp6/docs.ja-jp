@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33549397"
 ---
 # <a name="xaml-namespaces-and-namespace-mapping-for-wpf-xaml"></a>XAML 名前空間および WPF XAML の名前空間の割り当て
 さらに、このトピックでは、存在と WPF XAML ファイルのルート タグにある多くの場合、2 つの XAML 名前空間のマッピングの目的について説明します。 独自のコード内や個別のアセンブリ内で定義されている要素を使用するためのようなマッピングを生成する方法についても説明します。  

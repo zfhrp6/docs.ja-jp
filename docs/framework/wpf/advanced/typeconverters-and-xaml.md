@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33549683"
 ---
 # <a name="typeconverters-and-xaml"></a>TypeConverters および XAML
 このトピックでは、一般的な XAML 言語機能として、文字列からの型変換の目的について説明します。 .NET Framework で、<xref:System.ComponentModel.TypeConverter>クラスは、特定の目的を XAML 属性の使用方法のプロパティ値として使用できる管理対象のカスタム クラスの実装の一部として機能します。 場合は、カスタム クラスを記述する、XAML 設定可能な属性値として使用できるようにするのには、クラスのインスタンスは、適用する必要があります、 <xref:System.ComponentModel.TypeConverterAttribute> 、クラスに記述するカスタム<xref:System.ComponentModel.TypeConverter>クラス、またはその両方です。  

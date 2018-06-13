@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33524308"
 ---
 # <a name="checkedlistbox-control-overview-windows-forms"></a>CheckedListBox コントロールの概要 (Windows フォーム)
 Windows フォーム<xref:System.Windows.Forms.CheckedListBox>コントロールを拡張、<xref:System.Windows.Forms.ListBox>コントロール。 それは、ほとんどのリスト ボックスし、一覧で項目の横にあるチェック マークを表示できます。 その他の 2 つのコントロールの違いは、リスト ボックスのサポートのみをチェックする<xref:System.Windows.Forms.DrawMode.Normal?displayProperty=nameWithType>;、リスト ボックスには、1 つの項目が持てるまたはいずれも選択を確認します。 選択した項目がフォームに強調表示されているし、チェックされた項目と同じではありませんに注意してください。  

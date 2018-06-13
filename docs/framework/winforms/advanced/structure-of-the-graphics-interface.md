@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33525903"
 ---
 # <a name="structure-of-the-graphics-interface"></a>グラフィックス インターフェイスの構造体
 マネージ クラスのインターフェイスに[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]60 個のクラス、50 の列挙型、および 8 構造体が含まれています。 <xref:System.Drawing.Graphics>の中心にあるクラスは、[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]機能です。 これは実際には直線、曲線、図形、画像、およびテキストを描画するクラスです。  

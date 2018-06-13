@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33547824"
 ---
 # <a name="visual-basic-and-wpf-event-handling"></a>Visual Basic と WPF のイベント処理
 Microsoft Visual Basic .NET 言語具体的には、使用できます、言語固有`Handles`にイベント ハンドラーを関連付けるインスタンスの属性を持つイベント ハンドラーのアタッチまたはを使用する代わりに、キーワード、<xref:System.Windows.UIElement.AddHandler%2A>メソッドです。 ただし、`Handles`ために、ハンドラーのインスタンスにアタッチする方法はいくつかの制限には、`Handles`構文は、の特定のルーティング イベント機能の一部をサポートできない、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]イベント システムです。  

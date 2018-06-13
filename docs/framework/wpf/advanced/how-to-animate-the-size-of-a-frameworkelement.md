@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33543986"
 ---
 # <a name="how-to-animate-the-size-of-a-frameworkelement"></a>方法 : FrameworkElement のサイズをアニメーション化する
 サイズをアニメーション化する、 <xref:System.Windows.FrameworkElement>、アニメーション化することができますか、その<xref:System.Windows.FrameworkElement.Width%2A>と<xref:System.Windows.FrameworkElement.Height%2A>プロパティまたはを使用して、アニメーション<xref:System.Windows.Media.ScaleTransform>です。  

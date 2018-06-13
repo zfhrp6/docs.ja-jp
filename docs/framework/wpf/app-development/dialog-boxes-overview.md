@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33549157"
 ---
 # <a name="dialog-boxes-overview"></a>ダイアログ ボックスの概要
 スタンドアロン アプリケーションは通常、メイン ウィンドウが対象で、アプリケーションが動作して、を介してそのデータを処理する機能を公開、メイン データをある[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]メカニズムは、メニュー バー、ツールバー、およびステータス バーと同様にします。 重要なアプリケーションは、次のようなことをするための追加のウィンドウを表示することもあります。  

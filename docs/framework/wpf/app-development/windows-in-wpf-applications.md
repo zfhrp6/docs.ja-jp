@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33550778"
 ---
 # <a name="windows-in-wpf-applications"></a>WPF アプリケーションのウィンドウ
 ユーザーは、windows 経由でアプリケーションと対話します。 ウィンドウの基本的な目的をホストし、コンテンツを表示します。 ウィンドウがホストに依存するデータの種類、アプリケーションが動作する、メディア、Extensible Application Markup Language (XAML) ページ、Web ページ、ドキュメント、データベース テーブルとレコード、およびシステム情報が含まれてコンテンツの種類。  

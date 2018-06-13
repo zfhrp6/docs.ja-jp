@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33548988"
 ---
 # <a name="propertypath-xaml-syntax"></a>PropertyPath の XAML 構文
 <xref:System.Windows.PropertyPath>オブジェクトは、複雑なインラインをサポートしている[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]をさまざまなプロパティを設定するための構文、<xref:System.Windows.PropertyPath>それらの値としての型。 このトピックのドキュメント、<xref:System.Windows.PropertyPath>構文バインドおよびアニメーションの構文に適用されるとします。  

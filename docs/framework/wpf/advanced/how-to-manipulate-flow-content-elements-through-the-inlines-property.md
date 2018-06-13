@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33545572"
 ---
 # <a name="how-to-manipulate-flow-content-elements-through-the-inlines-property"></a>方法 : Inlines プロパティを介してフロー コンテンツ要素を操作する
 これらの例では、インライン フロー コンテンツ要素に対して実行できる一般的な操作の点を示しています (とそのような要素のコンテナーなど<xref:System.Windows.Controls.TextBlock>) を介して、**インライン**プロパティです。 このプロパティを使用してアイテムの追加し、削除を<xref:System.Windows.Documents.InlineCollection>です。 フロー コンテンツ要素で、その機能、**インライン**プロパティが含まれます。  

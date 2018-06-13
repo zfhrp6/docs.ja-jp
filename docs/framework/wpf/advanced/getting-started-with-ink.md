@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33546238"
 ---
 # <a name="getting-started-with-ink"></a>インクの概要
 デジタル インクを組み込むことをアプリケーションには、これまでよりも簡単です。 インクのプログラミングに完全な統合を実現するための COM および Windows フォームのメソッドへの推論の進化に伴い、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]です。 個別の Sdk またはランタイム ライブラリをインストールする必要はありません。  

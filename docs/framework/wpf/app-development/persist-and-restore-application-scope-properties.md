@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33550099"
 ---
 # <a name="how-to-persist-and-restore-application-scope-properties-across-application-sessions"></a>方法 : アプリケーション セッション全体でアプリケーション スコープのプロパティを永続化および復元する
 この例では、アプリケーション スコープのプロパティをアプリケーションが [次へ] を起動して復元する方法と、アプリケーションが終了したときに、アプリケーション スコープのプロパティを永続化する方法を示します。  

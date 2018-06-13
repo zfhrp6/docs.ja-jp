@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33544636"
 ---
 # <a name="how-to-use-systemparameters"></a>方法: SystemParameters を使用する
 この例は、アクセスしのプロパティを使用する方法を示しています。<xref:System.Windows.SystemParameters>スタイルまたはボタンをカスタマイズするためにします。  

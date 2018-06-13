@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33529316"
 ---
 # <a name="datagridview-control-code-directory-windows-forms"></a>DataGridView コントロールのコード ディレクトリ (Windows フォーム)
 このトピックにリンクを提供<xref:System.Windows.Forms.DataGridView>-関連するコード例については、マニュアルを参照します。  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33544396"
 ---
 # <a name="how-to-flip-a-uielement-horizontally-or-vertically"></a>方法 : UIElement を左右または上下に反転させる
 この例を使用する方法を示しています、<xref:System.Windows.Media.ScaleTransform>反転するのには、<xref:System.Windows.UIElement>水平方向または垂直方向にします。 この例では、<xref:System.Windows.Controls.Button>コントロール (の型<xref:System.Windows.UIElement>) を適用して反転、<xref:System.Windows.Media.ScaleTransform>にその<xref:System.Windows.UIElement.RenderTransform%2A>プロパティです。  

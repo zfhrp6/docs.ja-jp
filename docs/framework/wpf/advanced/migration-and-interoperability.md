@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33544854"
 ---
 # <a name="migration-and-interoperability"></a>移行と相互運用性
 このページには、間の相互運用を実装する方法を説明するドキュメントへのリンクが含まれています。[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]アプリケーションと他の種類の[!INCLUDE[TLA#tla_win](../../../../includes/tlasharptla-win-md.md)]アプリケーションです。  

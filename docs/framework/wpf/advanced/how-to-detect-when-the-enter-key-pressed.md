@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33544746"
 ---
 # <a name="how-to-detect-when-the-enter-key-pressed"></a>方法 : Enter キーが押されたことを検出する
 この例では、ときに検出、<xref:System.Windows.Input.Key.Enter>キーボードのキーが押されます。  

@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33548369"
 ---
 # <a name="how-to-select-ink-from-a-custom-control"></a>方法 : カスタム コントロールからインクを選択する
 追加することによって、 <xref:System.Windows.Ink.IncrementalLassoHitTester> 、カスタム コントロールを有効にできますコントロールと同じように、選択ツールを使用してインクをユーザーが選択できるように、<xref:System.Windows.Controls.InkCanvas>なげなわを使用してインクを選択します。  

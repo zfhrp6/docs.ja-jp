@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33529741"
 ---
 # <a name="walkthrough-creating-a-windows-forms-control-that-takes-advantage-of-visual-studio-design-time-features"></a>チュートリアル : Visual Studio のデザイン時機能を活用した Windows フォーム コントロールの作成
 関連付けられているカスタム デザイナーを作成して、カスタム コントロールのデザイン時機能を拡張できます。  

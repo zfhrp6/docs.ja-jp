@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33270579"
 ---
 # <a name="sizeof-c-reference"></a>sizeof (C# リファレンス)
 アンマネージ型のサイズ (バイト単位) を取得するときに使用します。 アンマネージ型には、以下の表に示す組み込み型のほか、次の型も含まれます。  

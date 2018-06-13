@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33550187"
 ---
 # <a name="how-to-enable-tab-characters-in-a-textbox-control"></a>方法 : TextBox コントロールでタブ文字を有効にする
 この例で通常の入力として、タブ文字の受け入れを有効にする方法を示しています、<xref:System.Windows.Controls.TextBox>コントロール。  

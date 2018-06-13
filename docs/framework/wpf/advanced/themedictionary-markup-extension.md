@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33547408"
 ---
 # <a name="themedictionary-markup-extension"></a>ThemeDictionary のマークアップ拡張機能
 カスタム コントロールの作成者やサード パーティ製コントロールをコントロールのスタイル設定に使用するテーマ固有のリソース ディクショナリを読み込めませんを統合するアプリケーションの手段を提供します。  

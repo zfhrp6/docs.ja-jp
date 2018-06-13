@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33550655"
 ---
 # <a name="dockpanel-how-to-topics"></a>DockPanel に関する「方法」トピック
 このセクションのトピックを使用する方法について説明、<xref:System.Windows.Controls.DockPanel>レイアウト コンテナーの端にある子要素を配置する要素。  

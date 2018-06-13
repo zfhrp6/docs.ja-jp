@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33551061"
 ---
 # <a name="listview-overviews"></a>ListView の概要
 このセクションのトピックでは、使用する方法を表示、<xref:System.Windows.Controls.ListView>コントロール。  

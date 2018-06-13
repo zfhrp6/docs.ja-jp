@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33546124"
 ---
 # <a name="typography"></a>タイポグラフィ
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] テキスト コンテンツの豊富なプレゼンテーションのサポートが含まれます。 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] のテキストは、テキストのわかりやすさと読みやすさを高める [!INCLUDE[TLA#tla_ct](../../../../includes/tlasharptla-ct-md.md)] を使用して描画されます。 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] サポートしています[!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)]によって定義されたもの以外の他の機能を提供する、フォント、[!INCLUDE[TLA#tla_truetype](../../../../includes/tlasharptla-truetype-md.md)]形式です。  

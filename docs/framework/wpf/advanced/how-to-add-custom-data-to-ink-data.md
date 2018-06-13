@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33544512"
 ---
 # <a name="how-to-add-custom-data-to-ink-data"></a>方法 : インク データにカスタム データを追加する
 カスタム データは、インクがシリアル化するインク形式 (ISF) として保存されるときに保存されるインクを追加することができます。  カスタム データを保存することができます、 <xref:System.Windows.Ink.DrawingAttributes>、 <xref:System.Windows.Ink.StrokeCollection>、または<xref:System.Windows.Ink.Stroke>です。  3 つのオブジェクトのカスタム データを保存できることと、データを保存する最適な場所を決定する機能を提供します。  3 つすべてのクラスでは、同様のメソッドを使用して格納し、カスタム データにアクセスします。  

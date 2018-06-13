@@ -34,6 +34,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33549478"
 ---
 # <a name="xaml-syntax-in-detail"></a>XAML 構文の詳細
 このトピックでは、XAML 構文の要素の記述に使用する用語を定義します。 これらの条項は、具体的には、XAML や、XAML 言語レベルのサポート、System.Xaml で有効になっている基本的な XAML の概念を使用する他のフレームワークの WPF のドキュメントのどちらも、このドキュメントの残りの部分全体でよく使用されます。 このトピックのトピックで導入された基本的な用語を詳述[XAML の概要 (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)です。  

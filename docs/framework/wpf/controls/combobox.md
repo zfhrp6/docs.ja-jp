@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33551192"
 ---
 # <a name="combobox"></a>ComboBox
 <xref:System.Windows.Controls.ComboBox>コントロール オプションの一覧をユーザーに対して表示します。 一覧が表示され、コントロールの展開または折りたたむと非表示になります。 既定の状態で一覧が折りたたまれている、のみ 1 つの選択肢を表示します。 オプションの完全な一覧を表示するボタンをクリックします。  

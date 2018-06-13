@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33546056"
 ---
 # <a name="how-to-set-the-height-of-a-window-from-a-page"></a>方法: ページから、ウィンドウの高さを設定
 この例から、ウィンドウの高さを設定する方法を示しています、<xref:System.Windows.Controls.Page>です。  
