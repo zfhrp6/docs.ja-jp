@@ -12,6 +12,7 @@ ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/15/2018
+ms.locfileid: "34172124"
 ---
 # <a name="sealed-c-reference"></a><span data-ttu-id="fef42-102">sealed (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="fef42-102">sealed (C# Reference)</span></span>
 <span data-ttu-id="fef42-103">`sealed` 修飾子をクラスに適用すると、それ以外のクラスが、そのクラスから継承できなくなります。</span><span class="sxs-lookup"><span data-stu-id="fef42-103">When applied to a class, the `sealed` modifier prevents other classes from inheriting from it.</span></span> <span data-ttu-id="fef42-104">次の例では、`B` クラスは `A` クラスを継承しますが、`B` クラスからはどのクラスも継承できなくなります。</span><span class="sxs-lookup"><span data-stu-id="fef42-104">In the following example, class `B` inherits from class `A`, but no class can inherit from class `B`.</span></span>  

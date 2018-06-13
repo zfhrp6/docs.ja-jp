@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 7a12f3ffb14de9dcacdb4873d1c03ad1d096d7cd
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33462117"
 ---
 # <a name="corprfmonitor-enumeration"></a><span data-ttu-id="2fc72-102">COR_PRF_MONITOR 列挙型</span><span class="sxs-lookup"><span data-stu-id="2fc72-102">COR_PRF_MONITOR Enumeration</span></span>
 <span data-ttu-id="2fc72-103">プロファイラーがサブスクライブしようとする動作、機能、またはイベントの指定で使用する値を含めます。</span><span class="sxs-lookup"><span data-stu-id="2fc72-103">Contains values that are used to specify behavior, capabilities, or events to which the profiler wishes to subscribe.</span></span>  

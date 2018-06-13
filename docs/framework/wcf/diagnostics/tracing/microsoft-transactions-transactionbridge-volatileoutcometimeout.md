@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33475632"
 ---
 # <a name="microsofttransactionstransactionbridgevolatileoutcometimeout"></a><span data-ttu-id="b5fdb-102">Microsoft.Transactions.TransactionBridge.VolatileOutcomeTimeout</span><span class="sxs-lookup"><span data-stu-id="b5fdb-102">Microsoft.Transactions.TransactionBridge.VolatileOutcomeTimeout</span></span>
 <span data-ttu-id="b5fdb-103">不安定な参加要素からの結果メッセージに対する応答を受信するのを待機しているときに WS-AT プロトコル サービスがタイムアウトしました。</span><span class="sxs-lookup"><span data-stu-id="b5fdb-103">The WS-AT protocol service timed out waiting for a response to an outcome message from a volatile participant.</span></span> <span data-ttu-id="b5fdb-104">受信者が応答した場合、トランザクションの結果が不明である場合があります。</span><span class="sxs-lookup"><span data-stu-id="b5fdb-104">The transaction outcome may be in doubt if the participant returns.</span></span>  

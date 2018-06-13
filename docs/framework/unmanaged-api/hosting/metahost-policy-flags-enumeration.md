@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: f980fb1336adaf43091e41b9e42ea008b00c033f
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33447285"
 ---
 # <a name="metahostpolicyflags-enumeration"></a><span data-ttu-id="b6fd0-102">METAHOST_POLICY_FLAGS 列挙体</span><span class="sxs-lookup"><span data-stu-id="b6fd0-102">METAHOST_POLICY_FLAGS Enumeration</span></span>
 <span data-ttu-id="b6fd0-103">ほとんどのランタイム ホストに共通するバインディング ポリシーを提供します。</span><span class="sxs-lookup"><span data-stu-id="b6fd0-103">Provides binding policies that are common to most runtime hosts.</span></span> <span data-ttu-id="b6fd0-104">この列挙体を使って、 [iclrmetahostpolicy::getrequestedruntime](../../../../docs/framework/unmanaged-api/hosting/iclrmetahostpolicy-getrequestedruntime-method.md)メソッドです。</span><span class="sxs-lookup"><span data-stu-id="b6fd0-104">This enumeration is used by the [ICLRMetaHostPolicy::GetRequestedRuntime](../../../../docs/framework/unmanaged-api/hosting/iclrmetahostpolicy-getrequestedruntime-method.md) method.</span></span>  

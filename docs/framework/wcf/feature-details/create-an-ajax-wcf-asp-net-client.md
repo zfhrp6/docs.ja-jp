@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33490631"
 ---
 # <a name="how-to-create-an-ajax-enabled-wcf-service-and-an-aspnet-client-that-accesses-the-service"></a><span data-ttu-id="c8733-102">方法 : AJAX 対応 WCF サービスとこのサービスにアクセスする ASP.NET クライアントを作成する</span><span class="sxs-lookup"><span data-stu-id="c8733-102">How to: Create an AJAX-Enabled WCF Service and an ASP.NET Client that Accesses the Service</span></span>
 <span data-ttu-id="c8733-103">このトピックでは、Visual Studio 2008 を使用して、AJAX 対応の Windows Communication Foundation (WCF) サービスとサービスにアクセスする ASP.NET クライアントを作成する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="c8733-103">This topic shows how to use Visual Studio 2008 to create an AJAX-enabled Windows Communication Foundation (WCF) service and an ASP.NET client that accesses the service.</span></span> <span data-ttu-id="c8733-104">これらを作成するための手順を示した後、「使用例」のセクションにサービスおよびクライアント用のコードを示します。</span><span class="sxs-lookup"><span data-stu-id="c8733-104">The code for the service and for the client are provided in the Example section after the steps for creating them are described in the Procedures section.</span></span>  

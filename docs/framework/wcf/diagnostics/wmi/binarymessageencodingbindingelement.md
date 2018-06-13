@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33486564"
 ---
 # <a name="binarymessageencodingbindingelement"></a><span data-ttu-id="ef837-102">BinaryMessageEncodingBindingElement</span><span class="sxs-lookup"><span data-stu-id="ef837-102">BinaryMessageEncodingBindingElement</span></span>
 <span data-ttu-id="ef837-103">BinaryMessageEncodingBindingElement</span><span class="sxs-lookup"><span data-stu-id="ef837-103">BinaryMessageEncodingBindingElement</span></span>  

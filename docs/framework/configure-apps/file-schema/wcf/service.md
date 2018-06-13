@@ -7,6 +7,7 @@ ms.sourcegitcommit: ff1d40507b3eb6e2185478e37c66c66be6de46f1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/11/2018
+ms.locfileid: "34059031"
 ---
 # <a name="ltservicegt"></a><span data-ttu-id="185ea-102">&lt;サービス&gt;</span><span class="sxs-lookup"><span data-stu-id="185ea-102">&lt;service&gt;</span></span>
 <span data-ttu-id="185ea-103">`service` 要素には Windows Communication Foundation (WCF) サービスの設定が含まれます。</span><span class="sxs-lookup"><span data-stu-id="185ea-103">The `service` element contains the settings for a Windows Communication Foundation (WCF) service.</span></span> <span data-ttu-id="185ea-104">また、サービスを公開するエンドポイントも含まれます。</span><span class="sxs-lookup"><span data-stu-id="185ea-104">It also contains endpoints that expose the service.</span></span>  

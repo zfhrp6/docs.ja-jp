@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 66b2b9d6fb3f6379abb92fe081f36b487f9df234
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33446455"
 ---
 # <a name="imetadataemit2definegenericparam-method"></a><span data-ttu-id="aea6a-102">IMetaDataEmit2::DefineGenericParam メソッド</span><span class="sxs-lookup"><span data-stu-id="aea6a-102">IMetaDataEmit2::DefineGenericParam Method</span></span>
 <span data-ttu-id="aea6a-103">ジェネリック型パラメーターの定義を作成し、そのジェネリック型パラメーターにトークンを取得します。</span><span class="sxs-lookup"><span data-stu-id="aea6a-103">Creates a definition for a generic type parameter, and gets a token to that generic type parameter.</span></span>  

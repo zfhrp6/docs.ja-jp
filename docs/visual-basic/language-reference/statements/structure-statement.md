@@ -17,6 +17,7 @@ ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34234466"
 ---
 # <a name="structure-statement"></a><span data-ttu-id="3ab8b-102">Structure ステートメント</span><span class="sxs-lookup"><span data-stu-id="3ab8b-102">Structure Statement</span></span>
 <span data-ttu-id="3ab8b-103">構造体の名前を宣言し、構造体を構成する変数、プロパティ、イベント、およびプロシージャの定義を提供します。</span><span class="sxs-lookup"><span data-stu-id="3ab8b-103">Declares the name of a structure and introduces the definition of the variables, properties, events, and procedures that the structure comprises.</span></span>  

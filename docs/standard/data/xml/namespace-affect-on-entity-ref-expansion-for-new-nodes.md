@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33568902"
 ---
 # <a name="namespace-affect-on-entity-reference-expansion-for-new-nodes-containing-elements-and-attributes"></a><span data-ttu-id="86dd3-102">要素と属性を含む新しいノードでのエンティティ参照の展開に対する名前空間の影響</span><span class="sxs-lookup"><span data-stu-id="86dd3-102">Namespace Affect on Entity Reference Expansion for New Nodes Containing Elements and Attributes</span></span>
 <span data-ttu-id="86dd3-103">エンティティ宣言には、原則として任意のコンテンツを含めることができるため、`<!ENTITY aname "<elem>test</elem>">` のような要素が含まれている可能性もあります。</span><span class="sxs-lookup"><span data-stu-id="86dd3-103">Because the content of an entity declaration can contain almost anything, there is a possibility that the content could contain an element like `<!ENTITY aname "<elem>test</elem>">`.</span></span>  

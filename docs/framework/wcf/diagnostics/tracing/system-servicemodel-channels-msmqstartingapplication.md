@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33477358"
 ---
 # <a name="systemservicemodelchannelsmsmqstartingapplication"></a><span data-ttu-id="2bb19-102">System.ServiceModel.Channels.MsmqStartingApplication</span><span class="sxs-lookup"><span data-stu-id="2bb19-102">System.ServiceModel.Channels.MsmqStartingApplication</span></span>
 <span data-ttu-id="2bb19-103">System.ServiceModel.Channels.MsmqStartingApplication</span><span class="sxs-lookup"><span data-stu-id="2bb19-103">System.ServiceModel.Channels.MsmqStartingApplication</span></span>  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/15/2018
+ms.locfileid: "34172267"
 ---
 # <a name="built-in-types-table-c-reference"></a><span data-ttu-id="eadd9-102">組み込み型の一覧表 (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="eadd9-102">Built-In Types Table (C# Reference)</span></span>
 <span data-ttu-id="eadd9-103">次の表は、C# の組み込み型のキーワードを示しています。これは、<xref:System> 名前空間の定義済み型の別名です。</span><span class="sxs-lookup"><span data-stu-id="eadd9-103">The following table shows the keywords for built-in C# types, which are aliases of predefined types in the <xref:System> namespace.</span></span>  

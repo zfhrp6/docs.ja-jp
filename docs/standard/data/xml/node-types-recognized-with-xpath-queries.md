@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33569380"
 ---
 # <a name="node-types-recognized-with-xpath-queries"></a><span data-ttu-id="c860a-102">XPath クエリで認識されるノード型</span><span class="sxs-lookup"><span data-stu-id="c860a-102">Node Types Recognized with XPath Queries</span></span>
 <span data-ttu-id="c860a-103">XPath クエリで認識されるノードの型は、ドキュメント オブジェクト モデル (DOM) のノード型と同じではありません。</span><span class="sxs-lookup"><span data-stu-id="c860a-103">The types of nodes recognized in an XPath query are not the same node types found in the Document Object Model (DOM).</span></span>  

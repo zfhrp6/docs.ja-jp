@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33476851"
 ---
 # <a name="systemidentitymodelselectorsstorecommittransaction"></a><span data-ttu-id="312bb-102">System.IdentityModel.Selectors.StoreCommitTransaction</span><span class="sxs-lookup"><span data-stu-id="312bb-102">System.IdentityModel.Selectors.StoreCommitTransaction</span></span>
 <span data-ttu-id="312bb-103">System.IdentityModel.Selectors.StoreCommitTransaction</span><span class="sxs-lookup"><span data-stu-id="312bb-103">System.IdentityModel.Selectors.StoreCommitTransaction</span></span>  

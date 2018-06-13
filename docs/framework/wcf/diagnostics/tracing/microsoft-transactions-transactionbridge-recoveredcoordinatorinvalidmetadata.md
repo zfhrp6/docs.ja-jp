@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33473647"
 ---
 # <a name="microsofttransactionstransactionbridgerecoveredcoordinatorinvalidmetadata"></a><span data-ttu-id="ddd6d-102">Microsoft.Transactions.TransactionBridge.RecoveredCoordinatorInvalidMetadata</span><span class="sxs-lookup"><span data-stu-id="ddd6d-102">Microsoft.Transactions.TransactionBridge.RecoveredCoordinatorInvalidMetadata</span></span>
 <span data-ttu-id="ddd6d-103">コーディネーターの回復ログ エントリで見つかったエンドポイント参照は、無効または互換性のないメタデータを含んでいます。</span><span class="sxs-lookup"><span data-stu-id="ddd6d-103">The endpoint reference found in a coordinator recovery log entry contained invalid or incompatible metadata.</span></span>  

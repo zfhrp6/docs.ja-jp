@@ -10,6 +10,7 @@ ms.sourcegitcommit: 88f251b08bf0718ce119f3d7302f514b74895038
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/10/2018
+ms.locfileid: "34037364"
 ---
 # <a name="duplex-services"></a><span data-ttu-id="e53b1-102">双方向サービス</span><span class="sxs-lookup"><span data-stu-id="e53b1-102">Duplex Services</span></span>
 <span data-ttu-id="e53b1-103">双方向サービス コントラクトは、両方のエンドポイントが互いに独立してメッセージを送信できるメッセージ交換パターンです。</span><span class="sxs-lookup"><span data-stu-id="e53b1-103">A duplex service contract is a message exchange pattern in which both endpoints can send messages to the other independently.</span></span> <span data-ttu-id="e53b1-104">双方向サービスでは、クライアントのエンドポイントにメッセージを返信できるため、イベントのような動作を実現できます。</span><span class="sxs-lookup"><span data-stu-id="e53b1-104">A duplex service, therefore, can send messages back to the client endpoint, providing event-like behavior.</span></span> <span data-ttu-id="e53b1-105">双方向通信は、クライアントがサービスに接続し、サービスからクライアントにメッセージを返信できるチャネルがサービスに提供されると発生します。</span><span class="sxs-lookup"><span data-stu-id="e53b1-105">Duplex communication occurs when a client connects to a service and provides the service with a channel on which the service can send messages back to the client.</span></span> <span data-ttu-id="e53b1-106">双方向サービスにおけるイベントのような動作は、セッション内でのみ機能することに注意してください。</span><span class="sxs-lookup"><span data-stu-id="e53b1-106">Note that the event-like behavior of duplex services only works within a session.</span></span>  

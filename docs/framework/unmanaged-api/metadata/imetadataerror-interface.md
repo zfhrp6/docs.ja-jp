@@ -18,9 +18,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 1c264bfd31f8cd31bacf2d194ddbd07338569294
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33447171"
 ---
 # <a name="imetadataerror-interface"></a><span data-ttu-id="eb2d6-102">IMetaDataError インターフェイス</span><span class="sxs-lookup"><span data-stu-id="eb2d6-102">IMetaDataError Interface</span></span>
 <span data-ttu-id="eb2d6-103">メタデータのマージ中にエラーを報告するためのコールバック機構を提供します。</span><span class="sxs-lookup"><span data-stu-id="eb2d6-103">Provides a callback mechanism for reporting errors during the metadata merge.</span></span>  

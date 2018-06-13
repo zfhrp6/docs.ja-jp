@@ -13,6 +13,7 @@ ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34235919"
 ---
 # <a name="public-visual-basic"></a><span data-ttu-id="b7228-102">Public (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="b7228-102">Public (Visual Basic)</span></span>
 <span data-ttu-id="b7228-103">1 つまたは複数の宣言されたプログラミング要素にアクセス制限がありますいないことを指定します。</span><span class="sxs-lookup"><span data-stu-id="b7228-103">Specifies that one or more declared programming elements have no access restrictions.</span></span>  

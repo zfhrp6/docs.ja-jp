@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 7312cbd31a04365801b0380d5914966f36679560
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33449456"
 ---
 # <a name="imetadataimportgetpropertyprops-method"></a><span data-ttu-id="cdb4a-102">IMetaDataImport::GetPropertyProps メソッド</span><span class="sxs-lookup"><span data-stu-id="cdb4a-102">IMetaDataImport::GetPropertyProps Method</span></span>
 <span data-ttu-id="cdb4a-103">指定したトークンによって表されるプロパティのメタデータを取得します。</span><span class="sxs-lookup"><span data-stu-id="cdb4a-103">Gets the metadata for the property represented by the specified token.</span></span>  

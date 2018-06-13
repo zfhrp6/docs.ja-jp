@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 95850448504fd863f2726a7fb7574436476a6dc5
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33449326"
 ---
 # <a name="imetadataimportgetparamprops-method"></a><span data-ttu-id="e9c33-102">IMetaDataImport::GetParamProps メソッド</span><span class="sxs-lookup"><span data-stu-id="e9c33-102">IMetaDataImport::GetParamProps Method</span></span>
 <span data-ttu-id="e9c33-103">指定した ParamDef トークンによって参照されるパラメーターのメタデータ値を取得します。</span><span class="sxs-lookup"><span data-stu-id="e9c33-103">Gets metadata values for the parameter referenced by the specified ParamDef token.</span></span>  

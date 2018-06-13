@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33473446"
 ---
 # <a name="queued-rejected-messages-per-second"></a><span data-ttu-id="ada5b-102">1 秒あたりのキューに置かれた拒否メッセージ</span><span class="sxs-lookup"><span data-stu-id="ada5b-102">Queued Rejected Messages Per Second</span></span>
 <span data-ttu-id="ada5b-103">カウンター名 : 1 秒あたりに拒否されたキューに置かれたメッセージ。</span><span class="sxs-lookup"><span data-stu-id="ada5b-103">Counter Name: Queued Messages Rejected Per Second.</span></span>  

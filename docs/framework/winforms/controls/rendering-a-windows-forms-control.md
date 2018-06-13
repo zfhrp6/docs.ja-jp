@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33541389"
 ---
 # <a name="rendering-a-windows-forms-control"></a><span data-ttu-id="766cb-102">Windows フォーム コントロールのレンダリング</span><span class="sxs-lookup"><span data-stu-id="766cb-102">Rendering a Windows Forms Control</span></span>
 <span data-ttu-id="766cb-103">レンダリングは、ユーザーの画面上を示すビジュアル表現を作成するプロセスを指します。</span><span class="sxs-lookup"><span data-stu-id="766cb-103">Rendering refers to the process of creating a visual representation on a user's screen.</span></span> <span data-ttu-id="766cb-104">Windows フォームを使用して[!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)](新しい Windows グラフィックス ライブラリ) を表示します。</span><span class="sxs-lookup"><span data-stu-id="766cb-104">Windows Forms uses [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)] (the new Windows graphics library) for rendering.</span></span> <span data-ttu-id="766cb-105">アクセスを提供するマネージ クラス[!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)]では、<xref:System.Drawing?displayProperty=nameWithType>名前空間とその下位名前空間。</span><span class="sxs-lookup"><span data-stu-id="766cb-105">The managed classes that provide access to [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)] are in the <xref:System.Drawing?displayProperty=nameWithType> namespace and its subnamespaces.</span></span>  

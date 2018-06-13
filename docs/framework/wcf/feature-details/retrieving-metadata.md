@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33493608"
 ---
 # <a name="retrieving-metadata"></a><span data-ttu-id="436c4-102">メタデータを取得する</span><span class="sxs-lookup"><span data-stu-id="436c4-102">Retrieving Metadata</span></span>
 <span data-ttu-id="436c4-103">メタデータの取得は、WS-MetadataExchange (MEX) メタデータ エンドポイントや HTTP/GET メタデータ エンドポイントなどのメタデータ エンドポイントに対してメタデータを要求して取得する処理です。</span><span class="sxs-lookup"><span data-stu-id="436c4-103">Metadata retrieval is the process of requesting and retrieving metadata from a metadata endpoint, such as a WS-MetadataExchange (MEX) metadata endpoint or an HTTP/GET metadata endpoint.</span></span>  

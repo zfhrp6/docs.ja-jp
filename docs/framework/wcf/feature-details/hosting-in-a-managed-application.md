@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33489743"
 ---
 # <a name="hosting-in-a-managed-application"></a><span data-ttu-id="bdfed-102">マネージ アプリケーションのホスト</span><span class="sxs-lookup"><span data-stu-id="bdfed-102">Hosting in a Managed Application</span></span>
 <span data-ttu-id="bdfed-103">いずれかで Windows Communication Foundation (WCF) サービスをホストできる[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]アプリケーションです。</span><span class="sxs-lookup"><span data-stu-id="bdfed-103">Windows Communication Foundation (WCF) services can be hosted in any [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] application.</span></span> <span data-ttu-id="bdfed-104">自己ホスト型サービスは、展開を要するインフラストラクチャが最も少ないので、最も柔軟なホスト オプションです。</span><span class="sxs-lookup"><span data-stu-id="bdfed-104">Self-hosting services is the most flexible hosting option because it requires the least infrastructure to deploy.</span></span> <span data-ttu-id="bdfed-105">ただしも、ホスト オプションは、少なくとも堅牢なマネージ アプリケーションでは、高度なホストおよびインターネット インフォメーション サービス (IIS) や Windows サービスなどの WCF では、ホストの他のオプションの管理機能が提供されないためです。</span><span class="sxs-lookup"><span data-stu-id="bdfed-105">However, it is also the least robust hosting option, because managed applications do not provide the advanced hosting and management features of other hosting options in WCF, such as Internet Information Services (IIS) and Windows services.</span></span>  
