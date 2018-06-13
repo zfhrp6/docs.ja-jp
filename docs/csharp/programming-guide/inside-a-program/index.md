@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33339395"
 ---
 # <a name="inside-a-c-program"></a><span data-ttu-id="b7b05-102">インサイド C# プログラム</span><span class="sxs-lookup"><span data-stu-id="b7b05-102">Inside a C# Program</span></span>
 <span data-ttu-id="b7b05-103">このセクションでは C# プログラムの一般的な構造について説明し、標準的な "Hello, World!" の</span><span class="sxs-lookup"><span data-stu-id="b7b05-103">The section discusses the general structure of a C# program, and includes the standard "Hello, World!"</span></span> <span data-ttu-id="b7b05-104">例を示します。</span><span class="sxs-lookup"><span data-stu-id="b7b05-104">example.</span></span>  

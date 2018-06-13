@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33558801"
 ---
 # <a name="how-to-convert-a-bitmapsource-to-a-different-pixelformat"></a><span data-ttu-id="76ecf-102">方法 : BitmapSource を別の PixelFormat に変換する</span><span class="sxs-lookup"><span data-stu-id="76ecf-102">How to: Convert a BitmapSource to a Different PixelFormat</span></span>
 <span data-ttu-id="76ecf-103">この例では、変換、<xref:System.Windows.Media.Imaging.BitmapSource>オブジェクト (<xref:System.Windows.Media.Imaging.BitmapImage>) を別<xref:System.Windows.Media.PixelFormat>を使用して、<xref:System.Windows.Media.Imaging.FormatConvertedBitmap>です。</span><span class="sxs-lookup"><span data-stu-id="76ecf-103">This example demonstrates how to convert a <xref:System.Windows.Media.Imaging.BitmapSource> object (<xref:System.Windows.Media.Imaging.BitmapImage>) to a different <xref:System.Windows.Media.PixelFormat> using a <xref:System.Windows.Media.Imaging.FormatConvertedBitmap>.</span></span>  

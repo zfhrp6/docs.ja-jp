@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32760389"
 ---
 # <a name="entity-framework-data-providers"></a><span data-ttu-id="cf4d3-102">Entity Framework データ プロバイダー</span><span class="sxs-lookup"><span data-stu-id="cf4d3-102">Entity Framework Data Providers</span></span>
 <span data-ttu-id="cf4d3-103">ここでは、[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] をサポートするデータ プロバイダーについて説明します。</span><span class="sxs-lookup"><span data-stu-id="cf4d3-103">This section provides information on data providers that support the [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)].</span></span>  

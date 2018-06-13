@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32746710"
 ---
 # <a name="ltentriesgt"></a><span data-ttu-id="af3e1-102">&lt;エントリ&gt;</span><span class="sxs-lookup"><span data-stu-id="af3e1-102">&lt;entries&gt;</span></span>
 <span data-ttu-id="af3e1-103">ルーティング フィルターとターゲット エンドポイントとのマッピングを格納するルーティング エントリ。フィルターが一致したときにメッセージを送信するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="af3e1-103">A routing entry that contain mappings between the routing filters and the target endpoints to send messages to when the filter matches.</span></span>  

@@ -22,6 +22,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32743226"
 ---
 # <a name="client-application-services"></a><span data-ttu-id="1f416-102">クライアント アプリケーション サービス</span><span class="sxs-lookup"><span data-stu-id="1f416-102">Client Application Services</span></span>
 <span data-ttu-id="1f416-103">クライアント アプリケーション サービスにより、Microsoft ASP.NET 2.0 AJAX Extensions に含まれる [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] のログイン、ロール、およびプロファイル アプリケーション サービスを使用する Windows ベースのアプリケーションを簡単に作成できます。</span><span class="sxs-lookup"><span data-stu-id="1f416-103">Client application services make it easy for you to create Windows-based applications that use the [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] login, roles, and profile application services included in the Microsoft ASP.NET 2.0 AJAX Extensions.</span></span> <span data-ttu-id="1f416-104">これらのサービスにより、複数の Web ベースおよび Windows ベースのアプリケーションで、単一のサーバーから提供されるユーザー情報とユーザー管理機能を共有できます。</span><span class="sxs-lookup"><span data-stu-id="1f416-104">These services enable multiple Web and Windows-based applications to share user information and user-management functionality from a single server.</span></span> <span data-ttu-id="1f416-105">たとえば、これらのサービスを使用して、次のタスクを実行できます。</span><span class="sxs-lookup"><span data-stu-id="1f416-105">For example, you can use these services to perform the following tasks:</span></span>  

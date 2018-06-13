@@ -15,6 +15,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32747455"
 ---
 # <a name="ltaddgt-element-for-ltswitchesgt"></a><span data-ttu-id="8cc6e-102">&lt;追加&gt;要素&lt;スイッチ&gt;</span><span class="sxs-lookup"><span data-stu-id="8cc6e-102">&lt;add&gt; Element for &lt;switches&gt;</span></span>
 <span data-ttu-id="8cc6e-103">トレース スイッチを設定するレベルを指定します。</span><span class="sxs-lookup"><span data-stu-id="8cc6e-103">Specifies the level where a trace switch is set.</span></span>  

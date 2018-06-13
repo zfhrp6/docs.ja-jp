@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33332040"
 ---
 # <a name="how-to-access-an-array-element-with-a-pointer-c-programming-guide"></a><span data-ttu-id="28418-102">方法 : ポインターを使用して配列要素にアクセスする (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="28418-102">How to: Access an Array Element with a Pointer (C# Programming Guide)</span></span>
 <span data-ttu-id="28418-103">安全ではないコンテキストでは、次の例のように、ポインターを利用してメモリ内の要素にアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="28418-103">In an unsafe context, you can access an element in memory by using pointer element access, as shown in the following example:</span></span>  

@@ -16,6 +16,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32743054"
 ---
 # <a name="ltnameentrygt-element"></a><span data-ttu-id="08c71-102">&lt;nameEntry&gt;要素</span><span class="sxs-lookup"><span data-stu-id="08c71-102">&lt;nameEntry&gt; Element</span></span>
 <span data-ttu-id="08c71-103">アルゴリズムの表示名にクラス名をマップして、1 つのクラスが多くの表示名を持つことを許可します。</span><span class="sxs-lookup"><span data-stu-id="08c71-103">Maps a class name to a friendly algorithm name, which allows one class to have many friendly names.</span></span>  

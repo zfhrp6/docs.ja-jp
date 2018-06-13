@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32755384"
 ---
 # <a name="childviews-and-relations"></a><span data-ttu-id="5e64d-102">ChildView とリレーション</span><span class="sxs-lookup"><span data-stu-id="5e64d-102">ChildViews and Relations</span></span>
 <span data-ttu-id="5e64d-103"><xref:System.Data.DataSet> 内のテーブル間にリレーションシップが存在する場合は、このリレーションシップの子テーブルの行が含まれている <xref:System.Data.DataView> を作成できます。このような DataView を作成するには、親テーブルの行に対して <xref:System.Data.DataRowView.CreateChildView%2A> の <xref:System.Data.DataRowView> メソッドを使用します。</span><span class="sxs-lookup"><span data-stu-id="5e64d-103">If a relationship exists between tables in a <xref:System.Data.DataSet>, you can create a <xref:System.Data.DataView> containing rows from the related child table by using the <xref:System.Data.DataRowView.CreateChildView%2A> method of the <xref:System.Data.DataRowView> for the rows in the parent table.</span></span> <span data-ttu-id="5e64d-104">たとえば、次のコードが表示されます**カテゴリ**およびその関連**製品**順に並べ替えてアルファベット順に**CategoryName**と**ProductName**.</span><span class="sxs-lookup"><span data-stu-id="5e64d-104">For example, the following code displays **Categories** and their related **Products** in alphabetical order sorted by **CategoryName** and **ProductName**.</span></span>  

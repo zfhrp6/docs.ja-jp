@@ -12,6 +12,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32745228"
 ---
 # <a name="ltgcallowverylargeobjectsgt-element"></a><span data-ttu-id="38627-102">&lt;gcAllowVeryLargeObjects&gt;要素</span><span class="sxs-lookup"><span data-stu-id="38627-102">&lt;gcAllowVeryLargeObjects&gt; Element</span></span>
 <span data-ttu-id="38627-103">64 ビット プラットフォームで、合計サイズが 2 GB (ギガバイト) を超える配列を有効にします。</span><span class="sxs-lookup"><span data-stu-id="38627-103">On 64-bit platforms, enables arrays that are greater than 2 gigabytes (GB) in total size.</span></span>  

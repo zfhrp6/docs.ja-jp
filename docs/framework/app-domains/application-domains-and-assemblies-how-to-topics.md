@@ -12,6 +12,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32743096"
 ---
 # <a name="application-domains-and-assemblies-how-to-topics"></a><span data-ttu-id="e0907-102">アプリケーション ドメインとアセンブリに関する方法のトピック</span><span class="sxs-lookup"><span data-stu-id="e0907-102">Application Domains and Assemblies How-to Topics</span></span>
 <span data-ttu-id="e0907-103">次のセクションには、アプリケーション ドメインとアセンブリを使用したプログラミングの概念に関するドキュメントに用意されているすべての方法トピックへのリンクが含まれています。</span><span class="sxs-lookup"><span data-stu-id="e0907-103">The following sections contain links to all How-to topics found in the conceptual documentation for programming with application domains and assemblies.</span></span>  

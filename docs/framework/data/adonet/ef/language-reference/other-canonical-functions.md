@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32761208"
 ---
 # <a name="other-canonical-functions"></a><span data-ttu-id="9a925-102">その他の正規関数</span><span class="sxs-lookup"><span data-stu-id="9a925-102">Other Canonical Functions</span></span>
 [!INCLUDE[esql](../../../../../../includes/esql-md.md)]<span data-ttu-id="9a925-103"> には、ビット単位、集計、数学、日付/時刻、または文字列に分類されない正規関数があります。</span><span class="sxs-lookup"><span data-stu-id="9a925-103"> includes canonical functions not classified as bitwise, aggregate, math, date/time, or string.</span></span>  

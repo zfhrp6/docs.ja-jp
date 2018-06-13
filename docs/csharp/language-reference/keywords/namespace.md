@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33276020"
 ---
 # <a name="namespace-c-reference"></a><span data-ttu-id="4c906-102">namespace (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="4c906-102">namespace (C# Reference)</span></span>
 <span data-ttu-id="4c906-103">`namespace` キーワードは、関連する一連のオブジェクトを含む範囲を宣言するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="4c906-103">The `namespace` keyword is used to declare a scope that contains a set of related objects.</span></span> <span data-ttu-id="4c906-104">名前空間を利用し、コード要素を整理したり、グローバルに一意の型を作成したりできます。</span><span class="sxs-lookup"><span data-stu-id="4c906-104">You can use a namespace to organize code elements and to create globally unique types.</span></span>  

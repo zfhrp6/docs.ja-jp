@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 355d2e259adb13da44b09e19872337c17ac20ade
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33439323"
 ---
 # <a name="ihostcontrolgethostmanager-method"></a><span data-ttu-id="e97b2-102">IHostControl::GetHostManager メソッド</span><span class="sxs-lookup"><span data-stu-id="e97b2-102">IHostControl::GetHostManager Method</span></span>
 <span data-ttu-id="e97b2-103">指定したホストのインターフェイスの実装へのインターフェイス ポインターを取得`IID`です。</span><span class="sxs-lookup"><span data-stu-id="e97b2-103">Gets an interface pointer to the host's implementation of the interface with the specified `IID`.</span></span>  

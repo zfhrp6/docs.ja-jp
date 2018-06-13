@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33557980"
 ---
 # <a name="3-d-transformations-overview"></a><span data-ttu-id="5a29e-102">3-D 変換の概要</span><span class="sxs-lookup"><span data-stu-id="5a29e-102">3-D Transformations Overview</span></span>
 <span data-ttu-id="5a29e-103">このトピックでは、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] グラフィックス システムで 3-D モデルに変換を適用する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="5a29e-103">This topic describes how to apply transformations to 3-D models in the [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] graphics system.</span></span> <span data-ttu-id="5a29e-104">変換を使うと、モデルを定義する基本の値を変更することなく、モデルの位置、サイズ、向きを変更できます。</span><span class="sxs-lookup"><span data-stu-id="5a29e-104">Transformations allow the developer to reposition, resize, and reorient models without changing the base values that define them.</span></span>  

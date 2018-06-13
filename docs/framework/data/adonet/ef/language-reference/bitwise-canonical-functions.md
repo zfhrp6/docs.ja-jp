@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32761195"
 ---
 # <a name="bitwise-canonical-functions"></a><span data-ttu-id="40da3-102">ビット単位の正規関数</span><span class="sxs-lookup"><span data-stu-id="40da3-102">Bitwise Canonical Functions</span></span>
 [!INCLUDE[esql](../../../../../../includes/esql-md.md)]<span data-ttu-id="40da3-103"> にはビット単位の正規関数があります。</span><span class="sxs-lookup"><span data-stu-id="40da3-103"> includes bitwise canonical functions.</span></span>  

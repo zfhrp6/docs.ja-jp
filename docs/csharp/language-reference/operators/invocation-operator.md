@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33275026"
 ---
 # <a name="-operator-c-reference"></a><span data-ttu-id="29f98-102">() 演算子 (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="29f98-102">() Operator (C# Reference)</span></span>
 <span data-ttu-id="29f98-103">かっこは式内での演算の順序を指定することに加え、以下のタスクを実行するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="29f98-103">In addition to being used to specify the order of operations in an expression, parentheses are used to perform the following tasks:</span></span>  

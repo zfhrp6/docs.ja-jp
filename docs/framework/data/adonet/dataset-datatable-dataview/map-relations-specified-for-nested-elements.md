@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32756697"
 ---
 # <a name="map-relations-specified-for-nested-elements"></a><span data-ttu-id="96176-102">入れ子になっている要素に指定したリレーションシップの割り当て</span><span class="sxs-lookup"><span data-stu-id="96176-102">Map Relations Specified for Nested Elements</span></span>
 <span data-ttu-id="96176-103">スキーマを含めることができます、 **msdata:Relationship**注釈をスキーマ内にある 2 つの要素間のマッピングを明示的に指定します。</span><span class="sxs-lookup"><span data-stu-id="96176-103">A schema can include an **msdata:Relationship** annotation to explicitly specify the mapping between any two elements in the schema.</span></span> <span data-ttu-id="96176-104">2 つの要素で指定された**msdata:Relationship**スキーマでは、入れ子にすることができますが、する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="96176-104">The two elements specified in **msdata:Relationship** can be nested in the schema, but do not have to be.</span></span> <span data-ttu-id="96176-105">マッピング プロセスを使用して**msdata:Relationship**を 2 つの列の間で主キー/外部キーのリレーションシップを生成するスキーマです。</span><span class="sxs-lookup"><span data-stu-id="96176-105">The mapping process uses **msdata:Relationship** in the schema to generate the primary key/foreign key relationship between the two columns.</span></span>  

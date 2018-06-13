@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 0b7eeadd532e5a53c693cc1cde59150777d7edc2
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33433868"
 ---
 # <a name="iclrassemblyreferencelistisassemblyreferenceinlist-method"></a><span data-ttu-id="c9dfe-102">ICLRAssemblyReferenceList::IsAssemblyReferenceInList メソッド</span><span class="sxs-lookup"><span data-stu-id="c9dfe-102">ICLRAssemblyReferenceList::IsAssemblyReferenceInList Method</span></span>
 <span data-ttu-id="c9dfe-103">指定されたポインターが一覧にアセンブリを参照しているかどうかを示す値を取得します。</span><span class="sxs-lookup"><span data-stu-id="c9dfe-103">Gets a value that indicates whether the supplied pointer refers to an assembly in the list.</span></span>  

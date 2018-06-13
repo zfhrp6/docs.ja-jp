@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33265260"
 ---
 # <a name="true-c-reference"></a><span data-ttu-id="50a6f-102">true (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="50a6f-102">true (C# Reference)</span></span>
 <span data-ttu-id="50a6f-103">オーバーロードされた演算子またはリテラルとして使用:</span><span class="sxs-lookup"><span data-stu-id="50a6f-103">Used as an overloaded operator or as a literal:</span></span>  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33273924"
 ---
 # <a name="-operator-c-reference"></a><span data-ttu-id="e6fab-103">!</span><span class="sxs-lookup"><span data-stu-id="e6fab-103">!</span></span> <span data-ttu-id="e6fab-104">演算子 (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="e6fab-104">Operator (C# Reference)</span></span>
 <span data-ttu-id="e6fab-105">論理否定演算子 (`!`) は、オペランドを否定する単項演算子です。</span><span class="sxs-lookup"><span data-stu-id="e6fab-105">The logical negation operator (`!`) is a unary operator that negates its operand.</span></span> <span data-ttu-id="e6fab-106">この演算子は `bool` として定義され、オペランドが `false` の場合にのみ、`true` を返します。</span><span class="sxs-lookup"><span data-stu-id="e6fab-106">It is defined for `bool` and returns `true` if and only if its operand is `false`.</span></span>  

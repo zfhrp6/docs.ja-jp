@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33557395"
 ---
 # <a name="toolbar-overview"></a><span data-ttu-id="6f8bd-102">ToolBar の概要</span><span class="sxs-lookup"><span data-stu-id="6f8bd-102">ToolBar Overview</span></span>
 <span data-ttu-id="6f8bd-103"><xref:System.Windows.Controls.ToolBar> コントロールは、コマンドまたは通常、その機能に関連するコントロールのグループのコンテナーです。</span><span class="sxs-lookup"><span data-stu-id="6f8bd-103"><xref:System.Windows.Controls.ToolBar> controls are containers for a group of commands or controls which are typically related in their function.</span></span> <span data-ttu-id="6f8bd-104">A<xref:System.Windows.Controls.ToolBar>通常コマンドを呼び出すボタンが含まれます。</span><span class="sxs-lookup"><span data-stu-id="6f8bd-104">A <xref:System.Windows.Controls.ToolBar> usually contains buttons which invoke commands.</span></span>  

@@ -18,6 +18,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32745056"
 ---
 # <a name="ltfiltergt-element-for-ltaddgt-for-ltsharedlistenersgt"></a><span data-ttu-id="1f891-102">&lt;フィルター&gt;要素&lt;追加&gt;の&lt;sharedListeners&gt;</span><span class="sxs-lookup"><span data-stu-id="1f891-102">&lt;filter&gt; Element for &lt;add&gt; for &lt;sharedListeners&gt;</span></span>
 <span data-ttu-id="1f891-103">`sharedListeners` コレクションのリスナーにフィルターを追加します。</span><span class="sxs-lookup"><span data-stu-id="1f891-103">Adds a filter to a listener in the `sharedListeners` collection.</span></span>  

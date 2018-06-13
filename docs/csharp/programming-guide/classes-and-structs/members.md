@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33318225"
 ---
 # <a name="members-c-programming-guide"></a><span data-ttu-id="018f4-102">メンバー (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="018f4-102">Members (C# Programming Guide)</span></span>
 <span data-ttu-id="018f4-103">クラスと構造体には、そのデータおよび動作を表すメンバーがあります。</span><span class="sxs-lookup"><span data-stu-id="018f4-103">Classes and structs have members that represent their data and behavior.</span></span> <span data-ttu-id="018f4-104">クラスのメンバーには、クラスで宣言されているすべてのメンバーと、継承の階層構造のすべてのクラスで宣言されているメンバー (コンストラクターとファイナライザーを除く) が含まれます。</span><span class="sxs-lookup"><span data-stu-id="018f4-104">A class's members include all the members declared in the class, along with all members (except constructors and finalizers) declared in all classes in its inheritance hierarchy.</span></span> <span data-ttu-id="018f4-105">基底クラスのプライベート メンバーは継承されますが、派生クラスからはアクセスできません。</span><span class="sxs-lookup"><span data-stu-id="018f4-105">Private members in base classes are inherited but are not accessible from derived classes.</span></span>  

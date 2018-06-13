@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33275842"
 ---
 # <a name="-operator-c-reference"></a><span data-ttu-id="9a16f-102">\* 演算子 (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="9a16f-102">\* Operator (C# Reference)</span></span>
 <span data-ttu-id="9a16f-103">乗算演算子 (`*`) は、そのオペランドの積を計算します。</span><span class="sxs-lookup"><span data-stu-id="9a16f-103">The multiplication operator (`*`) computes the product of its operands.</span></span> <span data-ttu-id="9a16f-104">すべての数値型には定義済みの乗算演算子があります。</span><span class="sxs-lookup"><span data-stu-id="9a16f-104">All numeric types have predefined multiplication operators.</span></span>  

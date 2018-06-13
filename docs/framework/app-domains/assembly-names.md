@@ -12,6 +12,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32744136"
 ---
 # <a name="assembly-names"></a><span data-ttu-id="1c75b-102">アセンブリ名</span><span class="sxs-lookup"><span data-stu-id="1c75b-102">Assembly Names</span></span>
 <span data-ttu-id="1c75b-103">アセンブリの名前は、メタデータに保存され、アセンブリのスコープに重大な影響があり、アプリケーションによって使用されます。</span><span class="sxs-lookup"><span data-stu-id="1c75b-103">An assembly's name is stored in metadata and has a significant impact on the assembly's scope and use by an application.</span></span> <span data-ttu-id="1c75b-104">厳密な名前のアセンブリには、アセンブリの名前、カルチャ、公開キー、バージョン番号を含む、完全修飾名があります。</span><span class="sxs-lookup"><span data-stu-id="1c75b-104">A strong-named assembly has a fully qualified name that includes the assembly's name, culture, public key, and version number.</span></span> <span data-ttu-id="1c75b-105">これは、表示名として、また、<xref:System.Reflection.Assembly.FullName%2A> プロパティを使用して取得できる読み込まれたアセンブリに対して、頻繁に参照されます。</span><span class="sxs-lookup"><span data-stu-id="1c75b-105">This is frequently referred to as the display name, and for loaded assemblies can be obtained by using the <xref:System.Reflection.Assembly.FullName%2A> property.</span></span>  

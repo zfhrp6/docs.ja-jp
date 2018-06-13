@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33265688"
 ---
 # <a name="-operator-c-reference"></a><span data-ttu-id="83196-102">| 演算子 (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="83196-102">| Operator (C# Reference)</span></span>
 <span data-ttu-id="83196-103">整数型と `bool` には、2 項 `|` 演算子が事前定義されています。</span><span class="sxs-lookup"><span data-stu-id="83196-103">Binary `|` operators are predefined for the integral types and `bool`.</span></span> <span data-ttu-id="83196-104">整数型の場合、`|` はそのオペランドのビットごとの OR を計算します。</span><span class="sxs-lookup"><span data-stu-id="83196-104">For integral types, `|` computes the bitwise OR of its operands.</span></span> <span data-ttu-id="83196-105">`bool` オペランドの場合、`|` は、そのオペランドの論理 OR を計算します。つまり、結果は、両方のオペランドが `false` の場合にのみ `false` になります。</span><span class="sxs-lookup"><span data-stu-id="83196-105">For `bool` operands, `|` computes the logical OR of its operands; that is, the result is `false` if and only if both its operands are `false`.</span></span>  

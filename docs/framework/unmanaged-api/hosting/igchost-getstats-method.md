@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: c3e0d6f68ffa5280d4616d4fa4ac60b4cb86f6a4
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33437766"
 ---
 # <a name="igchostgetstats-method"></a><span data-ttu-id="9691c-102">IGCHost::GetStats メソッド</span><span class="sxs-lookup"><span data-stu-id="9691c-102">IGCHost::GetStats Method</span></span>
 <span data-ttu-id="9691c-103">ガベージ コレクション システムの現在の状態の統計情報を取得します。</span><span class="sxs-lookup"><span data-stu-id="9691c-103">Gets the statistics for the current state of the garbage collection system.</span></span>  

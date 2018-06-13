@@ -9,6 +9,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32756060"
 ---
 # <a name="ltcertificatevalidationgt"></a><span data-ttu-id="bb945-102">&lt;certificateValidation&gt;</span><span class="sxs-lookup"><span data-stu-id="bb945-102">&lt;certificateValidation&gt;</span></span>
 <span data-ttu-id="bb945-103">トークン ハンドラーを使用して証明書の検証の設定を制御します。</span><span class="sxs-lookup"><span data-stu-id="bb945-103">Controls the settings that token handlers use to validate certificates.</span></span> <span data-ttu-id="bb945-104">特定のハンドラーが、独自の検証コントロールで構成されている場合、これらの設定は上書きされます。</span><span class="sxs-lookup"><span data-stu-id="bb945-104">These settings are overridden if a specific handler is configured with its own validator.</span></span>  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33561642"
 ---
 # <a name="how-to-round-the-corners-of-a-rectanglegeometry"></a><span data-ttu-id="3650f-102">方法 : RectangleGeometry の角に丸みを付ける</span><span class="sxs-lookup"><span data-stu-id="3650f-102">How to: Round the Corners of a RectangleGeometry</span></span>
 <span data-ttu-id="3650f-103">角を丸める、<xref:System.Windows.Media.RectangleGeometry>設定、その<xref:System.Windows.Media.RectangleGeometry.RadiusX%2A>と<xref:System.Windows.Media.RectangleGeometry.RadiusY%2A>に 0 より大きい値をプロパティです。</span><span class="sxs-lookup"><span data-stu-id="3650f-103">To round the corners of a <xref:System.Windows.Media.RectangleGeometry>, set its <xref:System.Windows.Media.RectangleGeometry.RadiusX%2A> and <xref:System.Windows.Media.RectangleGeometry.RadiusY%2A> properties to a value greater than zero.</span></span> <span data-ttu-id="3650f-104">値が大きいほどが丸くなります、四角形の角。</span><span class="sxs-lookup"><span data-stu-id="3650f-104">The larger the values, the rounder the rectangle's corners.</span></span>  

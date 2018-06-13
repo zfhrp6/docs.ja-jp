@@ -15,6 +15,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32744357"
 ---
 # <a name="assembly-versioning"></a><span data-ttu-id="8879e-102">アセンブリのバージョン管理</span><span class="sxs-lookup"><span data-stu-id="8879e-102">Assembly Versioning</span></span>
 <span data-ttu-id="8879e-103">共通言語ランタイムを使用するアセンブリのバージョン管理は、すべてアセンブリ レベルで行われます。</span><span class="sxs-lookup"><span data-stu-id="8879e-103">All versioning of assemblies that use the common language runtime is done at the assembly level.</span></span> <span data-ttu-id="8879e-104">アセンブリの特定のバージョン、および依存する各アセンブリのバージョンは、アセンブリのマニフェストに記録されます。</span><span class="sxs-lookup"><span data-stu-id="8879e-104">The specific version of an assembly and the versions of dependent assemblies are recorded in the assembly's manifest.</span></span> <span data-ttu-id="8879e-105">ランタイムの既定のバージョン ポリシーは、構成ファイル (アプリケーション構成ファイル、発行者ポリシー ファイル、コンピューター管理者の構成ファイル) に指定した明示的なバージョン ポリシーでオーバーライドされない限り、アプリケーションが作成およびテストされた時点のバージョンの場合にだけそのアプリケーションを実行します。</span><span class="sxs-lookup"><span data-stu-id="8879e-105">The default version policy for the runtime is that applications run only with the versions they were built and tested with, unless overridden by explicit version policy in configuration files (the application configuration file, the publisher policy file, and the computer's administrator configuration file).</span></span>  

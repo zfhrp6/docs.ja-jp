@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33561256"
 ---
 # <a name="how-to-hit-test-using-geometry-as-a-parameter"></a><span data-ttu-id="45e24-102">方法 : パラメーターとしてジオメトリを使用してヒット テストを実行する</span><span class="sxs-lookup"><span data-stu-id="45e24-102">How to: Hit Test Using Geometry as a Parameter</span></span>
 <span data-ttu-id="45e24-103">この例を使用してビジュアル オブジェクトに対してヒット テストを実行する方法を示しています、<xref:System.Windows.Media.Geometry>ヒットとしてパラメーターをテストします。</span><span class="sxs-lookup"><span data-stu-id="45e24-103">This example shows how to perform a hit test on a visual object using a <xref:System.Windows.Media.Geometry> as a hit test parameter.</span></span>  

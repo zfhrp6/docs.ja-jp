@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 2c2500f013584ef4722ceaaaee91d5db54991639
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33439300"
 ---
 # <a name="ihostsecuritycontext-interface"></a><span data-ttu-id="12b3b-102">IHostSecurityContext インターフェイス</span><span class="sxs-lookup"><span data-stu-id="12b3b-102">IHostSecurityContext Interface</span></span>
 <span data-ttu-id="12b3b-103">により、共通言語ランタイム (CLR) にホストによって実装されているセキュリティ コンテキスト情報を維持できます。</span><span class="sxs-lookup"><span data-stu-id="12b3b-103">Allows the common language runtime (CLR) to maintain security context information implemented by the host.</span></span>  

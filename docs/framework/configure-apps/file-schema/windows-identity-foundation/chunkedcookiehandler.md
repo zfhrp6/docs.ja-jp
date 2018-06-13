@@ -9,6 +9,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32758374"
 ---
 # <a name="ltchunkedcookiehandlergt"></a><span data-ttu-id="8eb57-102">&lt;chunkedCookieHandler&gt;</span><span class="sxs-lookup"><span data-stu-id="8eb57-102">&lt;chunkedCookieHandler&gt;</span></span>
 <span data-ttu-id="8eb57-103">構成、<xref:System.IdentityModel.Services.ChunkedCookieHandler>です。</span><span class="sxs-lookup"><span data-stu-id="8eb57-103">Configures the <xref:System.IdentityModel.Services.ChunkedCookieHandler>.</span></span> <span data-ttu-id="8eb57-104">この要素が存在するのみ場合、`mode`の属性、`<cookieHandler>`要素が"Default"または「チャンク」です。</span><span class="sxs-lookup"><span data-stu-id="8eb57-104">This element may only be present if the `mode` attribute of the `<cookieHandler>` element is "Default" or "Chunked".</span></span>  

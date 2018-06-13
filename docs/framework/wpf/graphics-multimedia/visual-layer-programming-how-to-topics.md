@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33561977"
 ---
 # <a name="visual-layer-programming-how-to-topics"></a><span data-ttu-id="3646b-102">ビジュアル層プログラミングに関する「方法」トピック</span><span class="sxs-lookup"><span data-stu-id="3646b-102">Visual Layer Programming How-to Topics</span></span>
 <span data-ttu-id="3646b-103">このセクションのトピックでは、ヒット テストと低レベルの構成のビジュアルの層を使用する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="3646b-103">The topics in this section demonstrate how to use the visual layer for hit-testing and low-level composition.</span></span>  
