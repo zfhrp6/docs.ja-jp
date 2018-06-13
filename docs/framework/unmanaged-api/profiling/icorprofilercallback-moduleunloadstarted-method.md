@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: c509606995a0ddb00a8b586ce8b8cd54b7694cd1
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33452511"
 ---
 # <a name="icorprofilercallbackmoduleunloadstarted-method"></a><span data-ttu-id="7aed4-102">ICorProfilerCallback::ModuleUnloadStarted メソッド</span><span class="sxs-lookup"><span data-stu-id="7aed4-102">ICorProfilerCallback::ModuleUnloadStarted Method</span></span>
 <span data-ttu-id="7aed4-103">モジュールがアンロードされることをプロファイラーに通知します。</span><span class="sxs-lookup"><span data-stu-id="7aed4-103">Notifies the profiler that a module is being unloaded.</span></span>  

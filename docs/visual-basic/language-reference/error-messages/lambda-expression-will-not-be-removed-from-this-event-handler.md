@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33590168"
 ---
 # <a name="lambda-expression-will-not-be-removed-from-this-event-handler"></a><span data-ttu-id="6079a-102">ラムダ式はこのイベント ハンドラーから削除されません</span><span class="sxs-lookup"><span data-stu-id="6079a-102">Lambda expression will not be removed from this event handler</span></span>
 <span data-ttu-id="6079a-103">ラムダ式は、このイベント ハンドラーから削除されません。</span><span class="sxs-lookup"><span data-stu-id="6079a-103">Lambda expression will not be removed from this event handler.</span></span> <span data-ttu-id="6079a-104">変数をラムダ式を割り当てる、変数を使用して追加およびイベントを削除します。</span><span class="sxs-lookup"><span data-stu-id="6079a-104">Assign the lambda expression to a variable and use the variable to add and remove the event.</span></span>  

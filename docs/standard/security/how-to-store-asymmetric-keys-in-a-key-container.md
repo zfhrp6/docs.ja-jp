@@ -1,13 +1,7 @@
 ---
 title: '方法 : キー コンテナーに非対称キーを格納する'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -21,42 +15,38 @@ helpviewer_keywords:
 - encryption [.NET Framework], asymmetric keys
 - decryption keys
 ms.assetid: 0dbcbd8d-0dcf-40e9-9f0c-e3f162d35ccc
-caps.latest.revision: 20
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: eece5dbcab1e81d9f9a2a5dd9e6ed42da108b09c
-ms.sourcegitcommit: 2e8acae16ae802f2d6d04e3ce0a6dbf04e476513
+ms.openlocfilehash: 3db4afb00367f719391193ebce4053cc5da16164
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33588857"
 ---
-# <a name="how-to-store-asymmetric-keys-in-a-key-container"></a><span data-ttu-id="1e47b-102">方法 : キー コンテナーに非対称キーを格納する</span><span class="sxs-lookup"><span data-stu-id="1e47b-102">How to: Store Asymmetric Keys in a Key Container</span></span>
-<span data-ttu-id="1e47b-103">非対称秘密キーは、ローカル コンピューターにそのまま平文として保存しないでください。</span><span class="sxs-lookup"><span data-stu-id="1e47b-103">Asymmetric private keys should never be stored verbatim or in plain text on the local computer.</span></span> <span data-ttu-id="1e47b-104">秘密キーを格納する必要がある場合は、キー コンテナーを使用することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="1e47b-104">If you need to store a private key, you should use a key container.</span></span> <span data-ttu-id="1e47b-105">キー コンテナーの詳細については、「[コンピューター レベルおよびユーザー レベルの RSA キー コンテナーについて](https://msdn.microsoft.com/library/9a179f38-8fb7-4442-964c-fb7b9f39f5b9)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="1e47b-105">For more information on key containers, see [Understanding Machine-Level and User-Level RSA Key Containers](https://msdn.microsoft.com/library/9a179f38-8fb7-4442-964c-fb7b9f39f5b9).</span></span>  
+# <a name="how-to-store-asymmetric-keys-in-a-key-container"></a><span data-ttu-id="3f9cc-102">方法 : キー コンテナーに非対称キーを格納する</span><span class="sxs-lookup"><span data-stu-id="3f9cc-102">How to: Store Asymmetric Keys in a Key Container</span></span>
+<span data-ttu-id="3f9cc-103">非対称秘密キーは、ローカル コンピューターにそのまま平文として保存しないでください。</span><span class="sxs-lookup"><span data-stu-id="3f9cc-103">Asymmetric private keys should never be stored verbatim or in plain text on the local computer.</span></span> <span data-ttu-id="3f9cc-104">秘密キーを格納する必要がある場合は、キー コンテナーを使用することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="3f9cc-104">If you need to store a private key, you should use a key container.</span></span> <span data-ttu-id="3f9cc-105">キー コンテナーの詳細については、「[コンピューター レベルおよびユーザー レベルの RSA キー コンテナーについて](https://msdn.microsoft.com/library/9a179f38-8fb7-4442-964c-fb7b9f39f5b9)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="3f9cc-105">For more information on key containers, see [Understanding Machine-Level and User-Level RSA Key Containers](https://msdn.microsoft.com/library/9a179f38-8fb7-4442-964c-fb7b9f39f5b9).</span></span>  
   
-### <a name="to-create-an-asymmetric-key-and-save-it-in-a-key-container"></a><span data-ttu-id="1e47b-106">非対称キーを作成し、キー コンテナーに格納するには</span><span class="sxs-lookup"><span data-stu-id="1e47b-106">To create an asymmetric key and save it in a key container</span></span>  
+### <a name="to-create-an-asymmetric-key-and-save-it-in-a-key-container"></a><span data-ttu-id="3f9cc-106">非対称キーを作成し、キー コンテナーに格納するには</span><span class="sxs-lookup"><span data-stu-id="3f9cc-106">To create an asymmetric key and save it in a key container</span></span>  
   
-1.  <span data-ttu-id="1e47b-107">新しいインスタンスを作成、<xref:System.Security.Cryptography.CspParameters>クラスし、キー コンテナーを呼び出したい名前を渡す、<xref:System.Security.Cryptography.CspParameters.KeyContainerName?displayProperty=nameWithType>フィールドです。</span><span class="sxs-lookup"><span data-stu-id="1e47b-107">Create a new instance of a <xref:System.Security.Cryptography.CspParameters> class and pass the name that you want to call the key container to the <xref:System.Security.Cryptography.CspParameters.KeyContainerName?displayProperty=nameWithType> field.</span></span>  
+1.  <span data-ttu-id="3f9cc-107">新しいインスタンスを作成、<xref:System.Security.Cryptography.CspParameters>クラスし、キー コンテナーを呼び出したい名前を渡す、<xref:System.Security.Cryptography.CspParameters.KeyContainerName?displayProperty=nameWithType>フィールドです。</span><span class="sxs-lookup"><span data-stu-id="3f9cc-107">Create a new instance of a <xref:System.Security.Cryptography.CspParameters> class and pass the name that you want to call the key container to the <xref:System.Security.Cryptography.CspParameters.KeyContainerName?displayProperty=nameWithType> field.</span></span>  
   
-2.  <span data-ttu-id="1e47b-108">派生したクラスの新しいインスタンスを作成、<xref:System.Security.Cryptography.AsymmetricAlgorithm>クラス (通常**RSACryptoServiceProvider**または**DSACryptoServiceProvider**) を渡す前に作成した**CspParameters**オブジェクト コンス トラクターをします。</span><span class="sxs-lookup"><span data-stu-id="1e47b-108">Create a new instance of a class that derives from the <xref:System.Security.Cryptography.AsymmetricAlgorithm> class (usually **RSACryptoServiceProvider** or **DSACryptoServiceProvider**) and pass the previously created **CspParameters** object to its constructor.</span></span>  
+2.  <span data-ttu-id="3f9cc-108">派生したクラスの新しいインスタンスを作成、<xref:System.Security.Cryptography.AsymmetricAlgorithm>クラス (通常**RSACryptoServiceProvider**または**DSACryptoServiceProvider**) を渡す前に作成した**CspParameters**オブジェクト コンス トラクターをします。</span><span class="sxs-lookup"><span data-stu-id="3f9cc-108">Create a new instance of a class that derives from the <xref:System.Security.Cryptography.AsymmetricAlgorithm> class (usually **RSACryptoServiceProvider** or **DSACryptoServiceProvider**) and pass the previously created **CspParameters** object to its constructor.</span></span>  
   
-### <a name="to-delete-the-key-from-a-key-container"></a><span data-ttu-id="1e47b-109">キー コンテナーからキーを削除するには</span><span class="sxs-lookup"><span data-stu-id="1e47b-109">To delete the key from a key container</span></span>  
+### <a name="to-delete-the-key-from-a-key-container"></a><span data-ttu-id="3f9cc-109">キー コンテナーからキーを削除するには</span><span class="sxs-lookup"><span data-stu-id="3f9cc-109">To delete the key from a key container</span></span>  
   
-1.  <span data-ttu-id="1e47b-110">**CspParameters** クラスの新しいインスタンスを作成し、キー コンテナーを呼び出すときに使用する名前を **CspParameters.KeyContainerName** フィールドに渡します。</span><span class="sxs-lookup"><span data-stu-id="1e47b-110">Create a new instance of a **CspParameters** class and pass the name that you want to call the key container to the **CspParameters.KeyContainerName** field.</span></span>  
+1.  <span data-ttu-id="3f9cc-110">**CspParameters** クラスの新しいインスタンスを作成し、キー コンテナーを呼び出すときに使用する名前を **CspParameters.KeyContainerName** フィールドに渡します。</span><span class="sxs-lookup"><span data-stu-id="3f9cc-110">Create a new instance of a **CspParameters** class and pass the name that you want to call the key container to the **CspParameters.KeyContainerName** field.</span></span>  
   
-2.  <span data-ttu-id="1e47b-111">**AsymmetricAlgorithm** クラスから派生したクラス (通常は **RSACryptoServiceProvider** または **DSACryptoServiceProvider**) の新しいインスタンスを作成し、前に作成した **CspParameters** オブジェクトをそのコンストラクターに渡します。</span><span class="sxs-lookup"><span data-stu-id="1e47b-111">Create a new instance of a class that derives from the **AsymmetricAlgorithm** class (usually **RSACryptoServiceProvider** or **DSACryptoServiceProvider**) and pass the previously created **CspParameters** object to its constructor.</span></span>  
+2.  <span data-ttu-id="3f9cc-111">**AsymmetricAlgorithm** クラスから派生したクラス (通常は **RSACryptoServiceProvider** または **DSACryptoServiceProvider**) の新しいインスタンスを作成し、前に作成した **CspParameters** オブジェクトをそのコンストラクターに渡します。</span><span class="sxs-lookup"><span data-stu-id="3f9cc-111">Create a new instance of a class that derives from the **AsymmetricAlgorithm** class (usually **RSACryptoServiceProvider** or **DSACryptoServiceProvider**) and pass the previously created **CspParameters** object to its constructor.</span></span>  
   
-3.  <span data-ttu-id="1e47b-112">**AsymmetricAlgorithm** から派生したクラスの **PersistKeyInCSP** プロパティを **false** (Visual Basic では **False**) に設定します。</span><span class="sxs-lookup"><span data-stu-id="1e47b-112">Set the **PersistKeyInCSP** property of the class that derives from **AsymmetricAlgorithm** to **false** (**False** in Visual Basic).</span></span>  
+3.  <span data-ttu-id="3f9cc-112">**AsymmetricAlgorithm** から派生したクラスの **PersistKeyInCSP** プロパティを **false** (Visual Basic では **False**) に設定します。</span><span class="sxs-lookup"><span data-stu-id="3f9cc-112">Set the **PersistKeyInCSP** property of the class that derives from **AsymmetricAlgorithm** to **false** (**False** in Visual Basic).</span></span>  
   
-4.  <span data-ttu-id="1e47b-113">**AsymmetricAlgorithm** から派生したクラスの **Clear** メソッドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="1e47b-113">Call the **Clear** method of the class that derives from **AsymmetricAlgorithm**.</span></span> <span data-ttu-id="1e47b-114">このメソッドは、クラスのすべてのリソースを解放し、キー コンテナーを消去します。 </span><span class="sxs-lookup"><span data-stu-id="1e47b-114">This method releases all resources of the class and clears the key container.</span></span>  
+4.  <span data-ttu-id="3f9cc-113">**AsymmetricAlgorithm** から派生したクラスの **Clear** メソッドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="3f9cc-113">Call the **Clear** method of the class that derives from **AsymmetricAlgorithm**.</span></span> <span data-ttu-id="3f9cc-114">このメソッドは、クラスのすべてのリソースを解放し、キー コンテナーを消去します。 </span><span class="sxs-lookup"><span data-stu-id="3f9cc-114">This method releases all resources of the class and clears the key container.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="1e47b-115">例</span><span class="sxs-lookup"><span data-stu-id="1e47b-115">Example</span></span>  
- <span data-ttu-id="1e47b-116">非対称キーを作成し、それをキー コンテナーへ格納し、後でキーを取得し、最後にキー コンテナーからキーを削除する方法の例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="1e47b-116">The following example demonstrates how to create an asymmetric key, save it in a key container, retrieve the key at a later time, and delete the key from the container.</span></span>  
+## <a name="example"></a><span data-ttu-id="3f9cc-115">例</span><span class="sxs-lookup"><span data-stu-id="3f9cc-115">Example</span></span>  
+ <span data-ttu-id="3f9cc-116">非対称キーを作成し、それをキー コンテナーへ格納し、後でキーを取得し、最後にキー コンテナーからキーを削除する方法の例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="3f9cc-116">The following example demonstrates how to create an asymmetric key, save it in a key container, retrieve the key at a later time, and delete the key from the container.</span></span>  
   
- <span data-ttu-id="1e47b-117">`GenKey_SaveInContainer` メソッドと `GetKeyFromContainer` メソッドのコードは類似していることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="1e47b-117">Notice that code in the `GenKey_SaveInContainer` method and the `GetKeyFromContainer` method is similar.</span></span>  <span data-ttu-id="1e47b-118"><xref:System.Security.Cryptography.CspParameters> オブジェクトのキー コンテナー名を指定した場合、<xref:System.Security.Cryptography.AsymmetricAlgorithm> プロパティまたは <xref:System.Security.Cryptography.RSACryptoServiceProvider.PersistKeyInCsp%2A> プロパティを true に設定して、指定したキー コンテナーを <xref:System.Security.Cryptography.DSACryptoServiceProvider.PersistKeyInCsp%2A> オブジェクトに渡すと、次のような処理が行われます。</span><span class="sxs-lookup"><span data-stu-id="1e47b-118">When you specify a key container name for a <xref:System.Security.Cryptography.CspParameters> object and pass it to an <xref:System.Security.Cryptography.AsymmetricAlgorithm> object with the <xref:System.Security.Cryptography.RSACryptoServiceProvider.PersistKeyInCsp%2A> property or <xref:System.Security.Cryptography.DSACryptoServiceProvider.PersistKeyInCsp%2A> property set to true, the following occurs.</span></span>  <span data-ttu-id="1e47b-119">指定した名前のキー コンテナーが存在しない場合、コンテナーが作成されてキーが保持されます。</span><span class="sxs-lookup"><span data-stu-id="1e47b-119">If a key container with the specified name does not exist, then one is created and the key is persisted.</span></span>  <span data-ttu-id="1e47b-120">指定した名前のキー コンテナーが存在する場合、そのコンテナー内のキーが現在の <xref:System.Security.Cryptography.AsymmetricAlgorithm> オブジェクトに自動的に読み込まれます。</span><span class="sxs-lookup"><span data-stu-id="1e47b-120">If a key container with the specified name does exist, then the key in the container is automatically loaded into the current <xref:System.Security.Cryptography.AsymmetricAlgorithm> object.</span></span>  <span data-ttu-id="1e47b-121">つまり、最初に実行される `GenKey_SaveInContainer` メソッドのコードはこのキーを保持し、2 番目に実行される `GetKeyFromContainer` メソッドのコードはこのキーを読み込みます。</span><span class="sxs-lookup"><span data-stu-id="1e47b-121">Therefore, the code in the `GenKey_SaveInContainer` method persists the key because it is run first, while the code in the `GetKeyFromContainer` method loads the key because it is run second.</span></span>  
+ <span data-ttu-id="3f9cc-117">`GenKey_SaveInContainer` メソッドと `GetKeyFromContainer` メソッドのコードは類似していることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="3f9cc-117">Notice that code in the `GenKey_SaveInContainer` method and the `GetKeyFromContainer` method is similar.</span></span>  <span data-ttu-id="3f9cc-118"><xref:System.Security.Cryptography.CspParameters> オブジェクトのキー コンテナー名を指定した場合、<xref:System.Security.Cryptography.AsymmetricAlgorithm> プロパティまたは <xref:System.Security.Cryptography.RSACryptoServiceProvider.PersistKeyInCsp%2A> プロパティを true に設定して、指定したキー コンテナーを <xref:System.Security.Cryptography.DSACryptoServiceProvider.PersistKeyInCsp%2A> オブジェクトに渡すと、次のような処理が行われます。</span><span class="sxs-lookup"><span data-stu-id="3f9cc-118">When you specify a key container name for a <xref:System.Security.Cryptography.CspParameters> object and pass it to an <xref:System.Security.Cryptography.AsymmetricAlgorithm> object with the <xref:System.Security.Cryptography.RSACryptoServiceProvider.PersistKeyInCsp%2A> property or <xref:System.Security.Cryptography.DSACryptoServiceProvider.PersistKeyInCsp%2A> property set to true, the following occurs.</span></span>  <span data-ttu-id="3f9cc-119">指定した名前のキー コンテナーが存在しない場合、コンテナーが作成されてキーが保持されます。</span><span class="sxs-lookup"><span data-stu-id="3f9cc-119">If a key container with the specified name does not exist, then one is created and the key is persisted.</span></span>  <span data-ttu-id="3f9cc-120">指定した名前のキー コンテナーが存在する場合、そのコンテナー内のキーが現在の <xref:System.Security.Cryptography.AsymmetricAlgorithm> オブジェクトに自動的に読み込まれます。</span><span class="sxs-lookup"><span data-stu-id="3f9cc-120">If a key container with the specified name does exist, then the key in the container is automatically loaded into the current <xref:System.Security.Cryptography.AsymmetricAlgorithm> object.</span></span>  <span data-ttu-id="3f9cc-121">つまり、最初に実行される `GenKey_SaveInContainer` メソッドのコードはこのキーを保持し、2 番目に実行される `GetKeyFromContainer` メソッドのコードはこのキーを読み込みます。</span><span class="sxs-lookup"><span data-stu-id="3f9cc-121">Therefore, the code in the `GenKey_SaveInContainer` method persists the key because it is run first, while the code in the `GetKeyFromContainer` method loads the key because it is run second.</span></span>  
   
 ```vb  
 Imports System  
@@ -233,8 +223,8 @@ Key added to container:
 Key deleted.  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="1e47b-122">関連項目</span><span class="sxs-lookup"><span data-stu-id="1e47b-122">See Also</span></span>  
- [<span data-ttu-id="1e47b-123">暗号化と復号化のためのキーの生成</span><span class="sxs-lookup"><span data-stu-id="1e47b-123">Generating Keys for Encryption and Decryption</span></span>](../../../docs/standard/security/generating-keys-for-encryption-and-decryption.md)  
- [<span data-ttu-id="1e47b-124">データの暗号化</span><span class="sxs-lookup"><span data-stu-id="1e47b-124">Encrypting Data</span></span>](../../../docs/standard/security/encrypting-data.md)  
- [<span data-ttu-id="1e47b-125">データの復号化</span><span class="sxs-lookup"><span data-stu-id="1e47b-125">Decrypting Data</span></span>](../../../docs/standard/security/decrypting-data.md)  
- [<span data-ttu-id="1e47b-126">Cryptographic Services</span><span class="sxs-lookup"><span data-stu-id="1e47b-126">Cryptographic Services</span></span>](../../../docs/standard/security/cryptographic-services.md)
+## <a name="see-also"></a><span data-ttu-id="3f9cc-122">関連項目</span><span class="sxs-lookup"><span data-stu-id="3f9cc-122">See Also</span></span>  
+ [<span data-ttu-id="3f9cc-123">暗号化と復号化のためのキーの生成</span><span class="sxs-lookup"><span data-stu-id="3f9cc-123">Generating Keys for Encryption and Decryption</span></span>](../../../docs/standard/security/generating-keys-for-encryption-and-decryption.md)  
+ [<span data-ttu-id="3f9cc-124">データの暗号化</span><span class="sxs-lookup"><span data-stu-id="3f9cc-124">Encrypting Data</span></span>](../../../docs/standard/security/encrypting-data.md)  
+ [<span data-ttu-id="3f9cc-125">データの復号化</span><span class="sxs-lookup"><span data-stu-id="3f9cc-125">Decrypting Data</span></span>](../../../docs/standard/security/decrypting-data.md)  
+ [<span data-ttu-id="3f9cc-126">Cryptographic Services</span><span class="sxs-lookup"><span data-stu-id="3f9cc-126">Cryptographic Services</span></span>](../../../docs/standard/security/cryptographic-services.md)

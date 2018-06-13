@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33591938"
 ---
 # <a name="chaining-tasks-by-using-continuation-tasks"></a><span data-ttu-id="2f1fc-102">継続タスクを使用したタスクの連結</span><span class="sxs-lookup"><span data-stu-id="2f1fc-102">Chaining Tasks by Using Continuation Tasks</span></span>
 <span data-ttu-id="2f1fc-103">非同期プログラミングでは、非同期操作で完了時に 2 番目の操作を呼び出してデータを渡すのが一般的です。</span><span class="sxs-lookup"><span data-stu-id="2f1fc-103">In asynchronous programming, it is very common for one asynchronous operation, on completion, to invoke a second operation and pass data to it.</span></span> <span data-ttu-id="2f1fc-104">これまで、この処理はコールバック メソッドを使用して行っていました。</span><span class="sxs-lookup"><span data-stu-id="2f1fc-104">Traditionally, this has been done by using callback methods.</span></span> <span data-ttu-id="2f1fc-105">タスク並列ライブラリでは、 *継続タスク*に同じ機能が用意されています。</span><span class="sxs-lookup"><span data-stu-id="2f1fc-105">In the Task Parallel Library, the same functionality is provided by *continuation tasks*.</span></span> <span data-ttu-id="2f1fc-106">継続タスク (単に "継続" とも呼ばれます) とは、別のタスク (" *継続元*" と呼ばれます) が終了したときにそのタスクによって呼び出される非同期タスクのことです。</span><span class="sxs-lookup"><span data-stu-id="2f1fc-106">A continuation task (also known just as a continuation) is an asynchronous task that is invoked by another task, which is known as the *antecedent*, when the antecedent finishes.</span></span>  
