@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33553768"
 ---
 # <a name="how-to-use-spell-checking-with-a-context-menu"></a>方法 : コンテキスト メニューでスペル チェックを使用する
 既定では、編集コントロールでスペル チェックを有効にする場合と同様に<xref:System.Windows.Controls.TextBox>または<xref:System.Windows.Controls.RichTextBox>、コンテキスト メニューでスペル チェックの選択肢を取得します。 たとえば、ユーザーは、スペル ミスの単語を右クリックし、ときに取得した一連のスペル修正候補またはオプション**すべて無視**です。 ただし、独自のカスタムのコンテキスト メニューで、既定のコンテキスト メニューをオーバーライドするときにこの機能は失われ、コンテキスト メニューの スペル チェック機能を再度有効にするコードを記述する必要があります。 次の例で有効にする方法を示しています、<xref:System.Windows.Controls.TextBox>です。  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33502679"
 ---
 # <a name="self-host"></a>自己ホスト
 このサンプルでは、自己ホスト型サービスをコンソール アプリケーションに実装する方法を示します。 このサンプルがに基づいて、[作業の開始](../../../../docs/framework/wcf/samples/getting-started-sample.md)です。 サービス構成ファイルは、名前が Web.config から App.config に変更され、ホストが使用するベース アドレスを構成するように変更されました。 サービス ソース コードは、構成されたベース アドレスを提供するサービス ホストを作成して開く、静的な `Main` 関数を実装するように変更されました。 サービス実装は、操作ごとにコンソールに出力を書き込むように変更されました。 クライアントは、サービスのエンドポイント アドレスが正しく構成されたことを除き、変更されていません。  

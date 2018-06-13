@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33502278"
 ---
 # <a name="default-nettcpbinding"></a>既定の NetTcpBinding
 このサンプルは、<xref:System.ServiceModel.NetTcpBinding> バインディングの使用方法を示します。 このサンプルがに基づいて、[作業の開始](../../../../docs/framework/wcf/samples/getting-started-sample.md)電卓サービスを実装します。 このサンプルでは、サービスは自己ホスト型です。 クライアントとサービスは両方ともコンソール アプリケーションです。  

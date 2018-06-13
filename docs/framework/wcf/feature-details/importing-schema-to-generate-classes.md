@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33497040"
 ---
 # <a name="importing-schema-to-generate-classes"></a>クラスを作成するためのスキーマのインポート
 Windows Communication Foundation (WCF) で使用可能なスキーマからクラスを生成するには、使用、<xref:System.Runtime.Serialization.XsdDataContractImporter>クラスです。 ここでは、生成時に指定できる各種のオプションについて解説します。  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33501096"
 ---
 # <a name="wsdl-and-policy"></a>WSDL とポリシー
 このトピックでは、Windows Communication Foundation (WCF) WSDL 1.1、Ws-policy、および Ws-policyattachment の実装の詳細および追加の Ws-policy アサーションと WCF で導入された WSDL 1.1 拡張について説明します。  

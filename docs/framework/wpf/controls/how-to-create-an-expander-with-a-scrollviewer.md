@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33553063"
 ---
 # <a name="how-to-create-an-expander-with-a-scrollviewer"></a>方法 : ScrollViewer を持つエキスパンダーを作成する
 この例を作成する方法を示しています、<xref:System.Windows.Controls.Expander>イメージやテキストなどの複雑なコンテンツを格納するコントロール。 この例ものコンテンツを囲む、<xref:System.Windows.Controls.Expander>で、<xref:System.Windows.Controls.ScrollViewer>コントロール。  

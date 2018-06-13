@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33498544"
 ---
 # <a name="security-considerations-with-metadata"></a>メタデータを使用する場合のセキュリティ上の考慮事項
 Windows Communication Foundation (WCF) をメタデータの機能を使用する場合は、公開、取得、およびサービスのメタデータを使用してセキュリティに与える影響を検討してください。  
