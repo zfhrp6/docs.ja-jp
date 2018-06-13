@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33575864"
 ---
 # <a name="induced-collections"></a><span data-ttu-id="ecc10-102">発生したコレクション</span><span class="sxs-lookup"><span data-stu-id="ecc10-102">Induced Collections</span></span>
 <span data-ttu-id="ecc10-103">ほとんどの場合、コレクションの実行に最適なタイミングはガベージ コレクターが判断できるので、ガベージ コレクターに任せるのが良い方法です。</span><span class="sxs-lookup"><span data-stu-id="ecc10-103">In most cases, the garbage collector can determine the best time to perform a collection, and you should let it run independently.</span></span> <span data-ttu-id="ecc10-104">ただし、ごくまれに、強制的にコレクションを実行するとアプリケーションのパフォーマンスが向上する場合があります。</span><span class="sxs-lookup"><span data-stu-id="ecc10-104">There are rare situations when a forced collection might improve your application's performance.</span></span> <span data-ttu-id="ecc10-105">このような場合は、<xref:System.GC.Collect%2A?displayProperty=nameWithType> メソッドを使用してガベージ コレクションを強制的に実行できます。</span><span class="sxs-lookup"><span data-stu-id="ecc10-105">In these cases, you can induce garbage collection by using the <xref:System.GC.Collect%2A?displayProperty=nameWithType> method to force a garbage collection.</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32764698"
 ---
 # <a name="input-character-set-entity-sql"></a><span data-ttu-id="53b6c-102">入力文字セット (Entity SQL)</span><span class="sxs-lookup"><span data-stu-id="53b6c-102">Input Character Set (Entity SQL)</span></span>
 [!INCLUDE[esql](../../../../../../includes/esql-md.md)]<span data-ttu-id="53b6c-103"> は、UTF-16 でエンコードされた UNICODE 文字を受け取ります。</span><span class="sxs-lookup"><span data-stu-id="53b6c-103"> accepts UNICODE characters encoded in UTF-16.</span></span>  

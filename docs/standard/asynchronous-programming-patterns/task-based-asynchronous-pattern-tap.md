@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33579016"
 ---
 # <a name="task-based-asynchronous-pattern-tap"></a><span data-ttu-id="fa652-102">タスク ベースの非同期パターン (TAP)</span><span class="sxs-lookup"><span data-stu-id="fa652-102">Task-based Asynchronous Pattern (TAP)</span></span>
 <span data-ttu-id="fa652-103">タスク ベースの非同期パターン (TAP) は、任意の非同期操作を表すために使用される <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> 名前空間の <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType> 型および <xref:System.Threading.Tasks?displayProperty=nameWithType> 型に基づいています。</span><span class="sxs-lookup"><span data-stu-id="fa652-103">The Task-based Asynchronous Pattern (TAP) is based on the <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> and <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType> types in the <xref:System.Threading.Tasks?displayProperty=nameWithType> namespace, which are used to represent arbitrary asynchronous operations.</span></span> <span data-ttu-id="fa652-104">TAP は、新規開発に推奨の非同期デザイン パターンです。</span><span class="sxs-lookup"><span data-stu-id="fa652-104">TAP is the recommended asynchronous design pattern for new development.</span></span>  

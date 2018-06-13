@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32765816"
 ---
 # <a name="from-entity-sql"></a><span data-ttu-id="28ade-102">FROM (Entity SQL)</span><span class="sxs-lookup"><span data-stu-id="28ade-102">FROM (Entity SQL)</span></span>
 <span data-ttu-id="28ade-103">使用するコレクションを指定[選択](../../../../../../docs/framework/data/adonet/ef/language-reference/select-entity-sql.md)ステートメントです。</span><span class="sxs-lookup"><span data-stu-id="28ade-103">Specifies the collection used in [SELECT](../../../../../../docs/framework/data/adonet/ef/language-reference/select-entity-sql.md) statements.</span></span>  

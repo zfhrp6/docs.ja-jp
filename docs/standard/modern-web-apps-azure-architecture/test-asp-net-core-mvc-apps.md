@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33592562"
 ---
 # <a name="test-aspnet-core-mvc-apps"></a><span data-ttu-id="d0aaa-103">ASP.NET Core MVC アプリのテスト</span><span class="sxs-lookup"><span data-stu-id="d0aaa-103">Test ASP.NET Core MVC Apps</span></span>
 

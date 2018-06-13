@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33590239"
 ---
 # <a name="expression-is-a-value-and-therefore-cannot-be-the-target-of-an-assignment"></a><span data-ttu-id="74af3-102">Expression は値であるため、代入式のターゲットにすることはできません。</span><span class="sxs-lookup"><span data-stu-id="74af3-102">Expression is a value and therefore cannot be the target of an assignment</span></span>
 <span data-ttu-id="74af3-103">ステートメントでは、式に値を代入しようとしています。</span><span class="sxs-lookup"><span data-stu-id="74af3-103">A statement attempts to assign a value to an expression.</span></span> <span data-ttu-id="74af3-104">実行時に、書き込み可能な変数、プロパティ、または配列要素にのみ値を割り当てることができます。</span><span class="sxs-lookup"><span data-stu-id="74af3-104">You can assign a value only to a writable variable, property, or array element at run time.</span></span> <span data-ttu-id="74af3-105">次の例では、このエラーが発生する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="74af3-105">The following example illustrates how this error can occur.</span></span>  

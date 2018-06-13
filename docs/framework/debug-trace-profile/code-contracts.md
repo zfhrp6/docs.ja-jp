@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33365879"
 ---
 # <a name="code-contracts"></a><span data-ttu-id="6ae09-102">コード コントラクト</span><span class="sxs-lookup"><span data-stu-id="6ae09-102">Code Contracts</span></span>
 <span data-ttu-id="6ae09-103">コード コントラクトを使用すると、事前条件、事後条件、およびオブジェクト不変条件をコードで指定できます。</span><span class="sxs-lookup"><span data-stu-id="6ae09-103">Code contracts provide a way to specify preconditions, postconditions, and object invariants in your code.</span></span> <span data-ttu-id="6ae09-104">事前条件とは、メソッドやプロパティに入るときに満たされている必要がある要件です。</span><span class="sxs-lookup"><span data-stu-id="6ae09-104">Preconditions are requirements that must be met when entering a method or property.</span></span> <span data-ttu-id="6ae09-105">事後条件は、メソッドやプロパティのコードが終了するときの予測を表します。</span><span class="sxs-lookup"><span data-stu-id="6ae09-105">Postconditions describe expectations at the time the method or property code exits.</span></span> <span data-ttu-id="6ae09-106">オブジェクト不変条件は、正しい状態のクラスに対して予期される状態を表します。</span><span class="sxs-lookup"><span data-stu-id="6ae09-106">Object invariants describe the expected state for a class that is in a good state.</span></span>  

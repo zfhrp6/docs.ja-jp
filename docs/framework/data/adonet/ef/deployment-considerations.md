@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32761260"
 ---
 # <a name="deployment-considerations-entity-framework"></a><span data-ttu-id="59d9f-102">配置に関する注意事項 (Entity Framework)</span><span class="sxs-lookup"><span data-stu-id="59d9f-102">Deployment Considerations (Entity Framework)</span></span>
 <span data-ttu-id="59d9f-103">このトピックでは、データ アクセスに ADO.NET Entity Framework を使用するアプリケーションの配置について説明します。</span><span class="sxs-lookup"><span data-stu-id="59d9f-103">This topic provides information about deploying applications that use the ADO.NET Entity Framework for data access.</span></span> <span data-ttu-id="59d9f-104">詳細については Entity Framework は、次を参照してください。[作業の開始](../../../../../docs/framework/data/adonet/ef/getting-started.md)です。</span><span class="sxs-lookup"><span data-stu-id="59d9f-104">For more information about the Entity Framework, see [Getting Started](../../../../../docs/framework/data/adonet/ef/getting-started.md).</span></span>  

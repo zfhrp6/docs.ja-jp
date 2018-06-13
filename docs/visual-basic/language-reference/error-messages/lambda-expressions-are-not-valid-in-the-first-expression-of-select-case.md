@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33588922"
 ---
 # <a name="lambda-expressions-are-not-valid-in-the-first-expression-of-a-39select-case39-statement"></a><span data-ttu-id="ba175-102">ラムダ式での最初の式では有効ではありません、 &#39;Select Case&#39;ステートメント</span><span class="sxs-lookup"><span data-stu-id="ba175-102">Lambda expressions are not valid in the first expression of a &#39;Select Case&#39; statement</span></span>
 <span data-ttu-id="ba175-103">テスト式でのラムダ式を使用することはできません、`Select Case`ステートメントです。</span><span class="sxs-lookup"><span data-stu-id="ba175-103">You cannot use a lambda expression for the test expression in a `Select Case` statement.</span></span> <span data-ttu-id="ba175-104">ラムダ式の定義を返す関数、およびのテスト式、`Select Case`ステートメントは、基本データ型である必要があります。</span><span class="sxs-lookup"><span data-stu-id="ba175-104">Lambda expression definitions return functions, and the test expression of a `Select Case` statement must be an elementary data type.</span></span>  

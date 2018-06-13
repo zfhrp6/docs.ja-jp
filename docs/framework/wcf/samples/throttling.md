@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33503483"
 ---
 # <a name="throttling"></a><span data-ttu-id="b5b8b-102">調整</span><span class="sxs-lookup"><span data-stu-id="b5b8b-102">Throttling</span></span>
 <span data-ttu-id="b5b8b-103">調整のサンプルでは、調整コントロールの使用方法を示します。</span><span class="sxs-lookup"><span data-stu-id="b5b8b-103">The Throttling sample demonstrates the use of throttling controls.</span></span> <span data-ttu-id="b5b8b-104">調整コントロールは、同時呼び出し、同時インスタンス、または同時セッションの数を制限して、リソースの過剰消費を防ぎます。</span><span class="sxs-lookup"><span data-stu-id="b5b8b-104">Throttling controls place limits on the number of concurrent calls, instances, or sessions to prevent over-consumption of resources.</span></span> <span data-ttu-id="b5b8b-105">調整の動作は、サービス構成ファイルの設定で指定されます。</span><span class="sxs-lookup"><span data-stu-id="b5b8b-105">Throttling behavior is specified in service configuration file settings.</span></span> <span data-ttu-id="b5b8b-106">このサンプルがに基づいて、[作業の開始](../../../../docs/framework/wcf/samples/getting-started-sample.md)電卓サービスを実装します。</span><span class="sxs-lookup"><span data-stu-id="b5b8b-106">This sample is based on the [Getting Started](../../../../docs/framework/wcf/samples/getting-started-sample.md) that implements a calculator service.</span></span>  

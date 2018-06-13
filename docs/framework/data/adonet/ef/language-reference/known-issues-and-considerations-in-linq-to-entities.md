@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32765465"
 ---
 # <a name="known-issues-and-considerations-in-linq-to-entities"></a><span data-ttu-id="d3361-102">LINQ to Entities の既知の問題および注意点</span><span class="sxs-lookup"><span data-stu-id="d3361-102">Known Issues and Considerations in LINQ to Entities</span></span>
 <span data-ttu-id="d3361-103">ここでは、[!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] クエリの既知の問題について説明します。</span><span class="sxs-lookup"><span data-stu-id="d3361-103">This section provides information about known issues with [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] queries.</span></span>  

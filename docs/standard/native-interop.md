@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33591925"
 ---
 # <a name="native-interoperability"></a><span data-ttu-id="a5256-103">ネイティブ相互運用性</span><span class="sxs-lookup"><span data-stu-id="a5256-103">Native Interoperability</span></span>
 

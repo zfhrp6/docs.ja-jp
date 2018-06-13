@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33593731"
 ---
 # <a name="39ltmethodnamegt39-has-multiple-definitions-with-identical-signatures"></a><span data-ttu-id="4f1f1-102">&#39;&lt;methodname&gt; &#39;同じシグネチャを持つ複数の定義</span><span class="sxs-lookup"><span data-stu-id="4f1f1-102">&#39;&lt;methodname&gt;&#39; has multiple definitions with identical signatures</span></span>
 <span data-ttu-id="4f1f1-103">A`Function`または`Sub`プロシージャ宣言では、前の宣言と同じプロシージャの名前と引数のリストを使用します。</span><span class="sxs-lookup"><span data-stu-id="4f1f1-103">A `Function` or `Sub` procedure declaration uses the identical procedure name and argument list as a previous declaration.</span></span> <span data-ttu-id="4f1f1-104">考えられる原因の 1 つは、元のプロシージャをオーバー ロードする試みです。</span><span class="sxs-lookup"><span data-stu-id="4f1f1-104">One possible cause is an attempt to overload the original procedure.</span></span> <span data-ttu-id="4f1f1-105">オーバー ロードされたプロシージャは、異なる引数リストを持つ必要があります。</span><span class="sxs-lookup"><span data-stu-id="4f1f1-105">Overloaded procedures must have different argument lists.</span></span>  

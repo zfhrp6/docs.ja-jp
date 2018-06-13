@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 0b50befa4346e17048598afd3d018dbde2fe8572
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33458563"
 ---
 # <a name="getqualifierset-function"></a><span data-ttu-id="080b3-103">GetQualifierSet 関数</span><span class="sxs-lookup"><span data-stu-id="080b3-103">GetQualifierSet function</span></span>
 <span data-ttu-id="080b3-104">クラスのインスタンスまたはクラス定義の設定、修飾子を取得します。</span><span class="sxs-lookup"><span data-stu-id="080b3-104">Retrieves the qualifier set for a class instance or a class definition.</span></span>

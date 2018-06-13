@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32764633"
 ---
 # <a name="-member-access-entity-sql"></a><span data-ttu-id="d9d91-103">である必要があります。</span><span class="sxs-lookup"><span data-stu-id="d9d91-103">.</span></span> <span data-ttu-id="d9d91-104">(メンバー アクセス) (Entity SQL)</span><span class="sxs-lookup"><span data-stu-id="d9d91-104">(Member Access) (Entity SQL)</span></span>
 <span data-ttu-id="d9d91-105">ドット演算子 (.) は、[!INCLUDE[esql](../../../../../../includes/esql-md.md)]メンバー アクセス演算子です。</span><span class="sxs-lookup"><span data-stu-id="d9d91-105">The dot operator (.) is the [!INCLUDE[esql](../../../../../../includes/esql-md.md)] member access operator.</span></span> <span data-ttu-id="d9d91-106">メンバー アクセス演算子を使用すると、構造型概念モデル型のインスタンスのプロパティ値またはフィールド値を生成できます。</span><span class="sxs-lookup"><span data-stu-id="d9d91-106">You use the member access operator to yield the value of a property or field of an instance of structural conceptual model type.</span></span>  

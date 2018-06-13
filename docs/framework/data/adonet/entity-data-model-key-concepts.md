@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32765634"
 ---
 # <a name="entity-data-model-key-concepts"></a><span data-ttu-id="02ba5-102">Entity Data Model キーの概念</span><span class="sxs-lookup"><span data-stu-id="02ba5-102">Entity Data Model Key Concepts</span></span>
 <span data-ttu-id="02ba5-103">Entity Data Model (EDM) では、次の 3 つの主要な概念を使用して、データの構造を記述する:*エンティティ型*、*アソシエーション型*、および*プロパティ*です。</span><span class="sxs-lookup"><span data-stu-id="02ba5-103">The Entity Data Model (EDM) uses three key concepts to describe the structure of data: *entity type*, *association type*, and *property*.</span></span> <span data-ttu-id="02ba5-104">これらは、EDM の実装においてデータ構造を記述する上で最も重要な概念です。</span><span class="sxs-lookup"><span data-stu-id="02ba5-104">These are the most important concepts in describing the structure of data in any implementation of the EDM.</span></span>  

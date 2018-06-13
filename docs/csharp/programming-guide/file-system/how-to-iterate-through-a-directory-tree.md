@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33327474"
 ---
 # <a name="how-to-iterate-through-a-directory-tree-c-programming-guide"></a><span data-ttu-id="664c1-102">方法 : ディレクトリ ツリーを反復処理する (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="664c1-102">How to: Iterate Through a Directory Tree (C# Programming Guide)</span></span>
 <span data-ttu-id="664c1-103">"ディレクトリ ツリーを反復処理する" とは、指定したルート フォルダー以下の入れ子になっている各サブディレクトリ内の各ファイルにアクセスすることです。</span><span class="sxs-lookup"><span data-stu-id="664c1-103">The phrase "iterate a directory tree" means to access each file in each nested subdirectory under a specified root folder, to any depth.</span></span> <span data-ttu-id="664c1-104">必ずしもファイルを 1 つ 1 つ開く必要はありません。</span><span class="sxs-lookup"><span data-stu-id="664c1-104">You do not necessarily have to open each file.</span></span> <span data-ttu-id="664c1-105">ファイルまたはサブディレクトリの名前だけを `string` として取得することも、その他の情報を <xref:System.IO.FileInfo?displayProperty=nameWithType> または <xref:System.IO.DirectoryInfo?displayProperty=nameWithType> オブジェクトの形式で取得することもできます。</span><span class="sxs-lookup"><span data-stu-id="664c1-105">You can just retrieve the name of the file or subdirectory as a `string`, or you can retrieve additional information in the form of a <xref:System.IO.FileInfo?displayProperty=nameWithType> or <xref:System.IO.DirectoryInfo?displayProperty=nameWithType> object.</span></span>  

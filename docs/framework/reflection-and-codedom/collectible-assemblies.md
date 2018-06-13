@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33398262"
 ---
 # <a name="collectible-assemblies-for-dynamic-type-generation"></a><span data-ttu-id="21619-102">動的な型生成のための収集可能なアセンブリ</span><span class="sxs-lookup"><span data-stu-id="21619-102">Collectible assemblies for dynamic type generation</span></span>
 

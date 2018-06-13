@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33396793"
 ---
 # <a name="certificate-selection-and-validation"></a><span data-ttu-id="8a6f4-102">証明書の選択と検証</span><span class="sxs-lookup"><span data-stu-id="8a6f4-102">Certificate Selection and Validation</span></span>
 <span data-ttu-id="8a6f4-103"><xref:System.Net> クラスは、Secure Socket Layer (SSL) 接続の <xref:System.Security.Cryptography.X509Certificates> を選択および検証する方法を複数サポートしています。</span><span class="sxs-lookup"><span data-stu-id="8a6f4-103">The <xref:System.Net> classes support several ways to select and validate <xref:System.Security.Cryptography.X509Certificates> for Secure Socket Layer (SSL) connections.</span></span> <span data-ttu-id="8a6f4-104">クライアントは、サーバーに対する認証に 1 つまたは複数の証明書を選択できます。</span><span class="sxs-lookup"><span data-stu-id="8a6f4-104">A client can select one or more certificates to authenticate itself to a server.</span></span> <span data-ttu-id="8a6f4-105">サーバーは、クライアント証明書の認証に固有の属性が 1 つまたは複数あることを必須にすることができます。</span><span class="sxs-lookup"><span data-stu-id="8a6f4-105">A server can require that a client certificate have one or more specific attributes for authentication.</span></span>  

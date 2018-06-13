@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33591886"
 ---
 # <a name="walkthrough-filtering-myapplicationlog-output-visual-basic"></a><span data-ttu-id="80e62-102">チュートリアル: My.Application.Log の出力のフィルター処理 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="80e62-102">Walkthrough: Filtering My.Application.Log Output (Visual Basic)</span></span>
 <span data-ttu-id="80e62-103">このチュートリアルでは、`My.Application.Log` オブジェクトの既定のログ フィルター処理を変更して、`Log` オブジェクトからリスナーに渡される情報や、リスナーによって記述される情報を制御する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="80e62-103">This walkthrough demonstrates how to change the default log filtering for the `My.Application.Log` object, to control what information is passed from the `Log` object to the listeners and what information is written by the listeners.</span></span> <span data-ttu-id="80e62-104">構成情報はアプリケーションの構成ファイルに保存されるため、ロギングの動作はアプリケーションをビルドした後でも変更できます。</span><span class="sxs-lookup"><span data-stu-id="80e62-104">You can change the logging behavior even after building the application, because the configuration information is stored in the application's configuration file.</span></span>  

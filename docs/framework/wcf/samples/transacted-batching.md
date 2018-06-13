@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33508879"
 ---
 # <a name="transacted-batching"></a><span data-ttu-id="c83a7-102">トランザクション バッチ</span><span class="sxs-lookup"><span data-stu-id="c83a7-102">Transacted Batching</span></span>
 <span data-ttu-id="c83a7-103">このサンプルでは、メッセージ キュー (MSMQ) を使用して、トランザクション読み取りをバッチ処理する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="c83a7-103">This sample demonstrates how to batch transacted reads by using Message Queuing (MSMQ).</span></span> <span data-ttu-id="c83a7-104">トランザクション バッチは、キューを使用する通信でトランザクション読み取りのパフォーマンスを最適化するための機能です。</span><span class="sxs-lookup"><span data-stu-id="c83a7-104">Transacted Batching is a performance optimization feature for transacted reads in queued communication.</span></span>  

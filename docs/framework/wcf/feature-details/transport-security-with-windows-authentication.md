@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33498603"
 ---
 # <a name="transport-security-with-windows-authentication"></a><span data-ttu-id="3c68c-102">トランスポート セキュリティと Windows 認証</span><span class="sxs-lookup"><span data-stu-id="3c68c-102">Transport Security with Windows Authentication</span></span>
 <span data-ttu-id="3c68c-103">次のシナリオでは、Windows Communication Foundation (WCF) クライアントと Windows セキュリティによって保護されたサービスを示します。</span><span class="sxs-lookup"><span data-stu-id="3c68c-103">The following scenario shows a Windows Communication Foundation (WCF) client and service secured by Windows security.</span></span> <span data-ttu-id="3c68c-104">プログラミングの詳細については、次を参照してください。[する方法: Windows 資格情報でサービスをセキュリティで保護された](../../../../docs/framework/wcf/how-to-secure-a-service-with-windows-credentials.md)です。</span><span class="sxs-lookup"><span data-stu-id="3c68c-104">For more information about programming, see [How to: Secure a Service with Windows Credentials](../../../../docs/framework/wcf/how-to-secure-a-service-with-windows-credentials.md).</span></span>  

@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33591574"
 ---
 # <a name="exceptions-in-managed-threads"></a><span data-ttu-id="1b152-102">マネージ スレッドの例外</span><span class="sxs-lookup"><span data-stu-id="1b152-102">Exceptions in Managed Threads</span></span>
 <span data-ttu-id="1b152-103">.NET Framework バージョン 2.0 以降では、共通言語ランタイムはスレッド内のほとんどのハンドルされない例外をそのまま続行させます。</span><span class="sxs-lookup"><span data-stu-id="1b152-103">Starting with the .NET Framework version 2.0, the common language runtime allows most unhandled exceptions in threads to proceed naturally.</span></span> <span data-ttu-id="1b152-104">ほとんどの場合、これはハンドルされない例外によってアプリケーションが終了することを意味します。</span><span class="sxs-lookup"><span data-stu-id="1b152-104">In most cases this means that the unhandled exception causes the application to terminate.</span></span>  

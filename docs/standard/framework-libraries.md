@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33576283"
 ---
 # <a name="framework-libraries"></a><span data-ttu-id="dbe0d-103">フレームワーク ライブラリ</span><span class="sxs-lookup"><span data-stu-id="dbe0d-103">Framework Libraries</span></span>
 

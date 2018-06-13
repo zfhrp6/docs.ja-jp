@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33389601"
 ---
 # <a name="how-to-determine-which-net-framework-security-updates-and-hotfixes-are-installed"></a><span data-ttu-id="cfece-103">方法: インストールされている NET Framework セキュリティ更新プログラムおよび修正プログラムを確認する</span><span class="sxs-lookup"><span data-stu-id="cfece-103">How to: Determine which .NET Framework security updates and hotfixes are installed</span></span>
 

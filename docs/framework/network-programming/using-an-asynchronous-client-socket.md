@@ -25,6 +25,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33393684"
 ---
 # <a name="using-an-asynchronous-client-socket"></a><span data-ttu-id="e60a7-102">非同期クライアント ソケットの使用</span><span class="sxs-lookup"><span data-stu-id="e60a7-102">Using an Asynchronous Client Socket</span></span>
 <span data-ttu-id="e60a7-103">ネットワーク操作が完了するまで待機している間、非同期クライアント ソケットはアプリケーションを一時停止しません。</span><span class="sxs-lookup"><span data-stu-id="e60a7-103">An asynchronous client socket does not suspend the application while waiting for network operations to complete.</span></span> <span data-ttu-id="e60a7-104">標準の .NET Framework 非同期プログラミング モデルを使用して、1 つのスレッドでネットワーク接続を処理しながら、アプリケーションは元のスレッドで実行を継続します。</span><span class="sxs-lookup"><span data-stu-id="e60a7-104">Instead, it uses the standard .NET Framework asynchronous programming model to process the network connection on one thread while the application continues to run on the original thread.</span></span> <span data-ttu-id="e60a7-105">ネットワークの使用量が多いアプリケーションや、ネットワーク操作が完了するのを待機してから完了することができないアプリケーションの場合、非同期ソケットが適しています。</span><span class="sxs-lookup"><span data-stu-id="e60a7-105">Asynchronous sockets are appropriate for applications that make heavy use of the network or that cannot wait for network operations to complete before continuing.</span></span>  

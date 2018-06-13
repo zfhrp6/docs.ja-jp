@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33506468"
 ---
 # <a name="nettcp-port-sharing-sample"></a><span data-ttu-id="3cca1-102">Net.TCP ポート共有のサンプル</span><span class="sxs-lookup"><span data-stu-id="3cca1-102">Net.TCP Port Sharing Sample</span></span>
 <span data-ttu-id="3cca1-103">TCP/IP プロトコルはポートと呼ばれる 16 ビットの番号を使用して、同じコンピュータ上で実行されている複数のネットワーク アプリケーションへの接続を区別します。</span><span class="sxs-lookup"><span data-stu-id="3cca1-103">The TCP/IP protocol uses a 16-bit number, called a port, to differentiate connections to multiple network applications running on the same machine.</span></span> <span data-ttu-id="3cca1-104">アプリケーションがポートをリッスンすると、そのポートのすべての TCP トラフィックがそのアプリケーションに送られます。</span><span class="sxs-lookup"><span data-stu-id="3cca1-104">If an application is listening on a port, then all TCP traffic for that port goes to that application.</span></span> <span data-ttu-id="3cca1-105">他のアプリケーションは、そのポートを同時にリッスンできません。</span><span class="sxs-lookup"><span data-stu-id="3cca1-105">Other applications cannot listen on that port at the same time.</span></span>  

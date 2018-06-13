@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33592081"
 ---
 # <a name="how-my-depends-on-project-type-visual-basic"></a><span data-ttu-id="deabb-102">プロジェクトの種類に応じた My の機能 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="deabb-102">How My Depends on Project Type (Visual Basic)</span></span>
 <span data-ttu-id="deabb-103">`My` 特定のプロジェクトの種類で必要なオブジェクトのみを公開します。</span><span class="sxs-lookup"><span data-stu-id="deabb-103">`My` exposes only those objects required by a particular project type.</span></span> <span data-ttu-id="deabb-104">たとえば、`My.Forms`オブジェクトは、Windows フォーム アプリケーションで使用できますが、コンソール アプリケーションでは使用できません。</span><span class="sxs-lookup"><span data-stu-id="deabb-104">For example, the `My.Forms` object is available in a Windows Forms application but not available in a console application.</span></span> <span data-ttu-id="deabb-105">このトピックの内容を説明する`My`オブジェクトは、異なる種類のプロジェクトで使用できます。</span><span class="sxs-lookup"><span data-stu-id="deabb-105">This topic describes which `My` objects are available in different project types.</span></span>  

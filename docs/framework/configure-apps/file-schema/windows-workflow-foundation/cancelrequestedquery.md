@@ -8,6 +8,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32767038"
 ---
 # <a name="ltcancelrequestedquerygt"></a><span data-ttu-id="99cf4-102">&lt;cancelRequestedQuery&gt;</span><span class="sxs-lookup"><span data-stu-id="99cf4-102">&lt;cancelRequestedQuery&gt;</span></span>
 <span data-ttu-id="99cf4-103">親アクティビティが子アクティビティを取り消すための要求を追跡するのに使用するクエリを表します。</span><span class="sxs-lookup"><span data-stu-id="99cf4-103">Represents a query that is used to track requests to cancel a child activity by the parent activity.</span></span> <span data-ttu-id="99cf4-104">追跡参加要素がキャンセル要求レコード オブジェクトを定期受信するには、このクエリが必要です。</span><span class="sxs-lookup"><span data-stu-id="99cf4-104">The query is necessary for a tracking participant to subscribe to cancel request record objects.</span></span>  

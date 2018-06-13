@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33394980"
 ---
 # <a name="accessing-the-internet-through-a-proxy"></a><span data-ttu-id="13146-102">プロキシを介したインターネットへのアクセス</span><span class="sxs-lookup"><span data-stu-id="13146-102">Accessing the Internet Through a Proxy</span></span>
 <span data-ttu-id="13146-103">サイトでプロキシを使用してインターネットへのアクセスを提供する場合、アプリケーションが Web プロキシと通信できるようにプロキシ インスタンスを構成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="13146-103">If your site uses a proxy to provide access to the Internet, you must configure a proxy instance to enable your application to communicate with the Web proxy.</span></span>  

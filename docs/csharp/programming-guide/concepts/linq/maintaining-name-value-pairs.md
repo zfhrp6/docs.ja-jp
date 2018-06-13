@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33325579"
 ---
 # <a name="maintaining-namevalue-pairs-c"></a><span data-ttu-id="e6f97-102">名前と値のペアの保持 (C#)</span><span class="sxs-lookup"><span data-stu-id="e6f97-102">Maintaining Name/Value Pairs (C#)</span></span>
 <span data-ttu-id="e6f97-103">多くのアプリケーションでは、情報を名前と値のペアとして保持するのが最適な場合があります。</span><span class="sxs-lookup"><span data-stu-id="e6f97-103">Many applications have to maintain information that is best kept as name/value pairs.</span></span> <span data-ttu-id="e6f97-104">このような情報には、構成情報やグローバル設定などがあります。</span><span class="sxs-lookup"><span data-stu-id="e6f97-104">This information might be configuration information or global settings.</span></span> [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]<span data-ttu-id="e6f97-105"> には、名前と値のペアのセットを簡単に保持できるようにするメソッドがあります。</span><span class="sxs-lookup"><span data-stu-id="e6f97-105"> contains some methods that make it easy to keep a set of name/value pairs.</span></span> <span data-ttu-id="e6f97-106">情報を属性として保持することも、子要素のセットとして保持することもできます。</span><span class="sxs-lookup"><span data-stu-id="e6f97-106">You can either keep the information as attributes or as a set of child elements.</span></span>  

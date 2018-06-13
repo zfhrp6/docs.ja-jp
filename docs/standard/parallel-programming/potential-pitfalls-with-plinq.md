@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33591717"
 ---
 # <a name="potential-pitfalls-with-plinq"></a><span data-ttu-id="44f11-102">PLINQ の非利便性</span><span class="sxs-lookup"><span data-stu-id="44f11-102">Potential Pitfalls with PLINQ</span></span>
 <span data-ttu-id="44f11-103">PLINQ を使用すると、多くの場合、連続した LINQ to Objects クエリのパフォーマンスが大幅に向上します。</span><span class="sxs-lookup"><span data-stu-id="44f11-103">In many cases, PLINQ can provide significant performance improvements over sequential LINQ to Objects queries.</span></span> <span data-ttu-id="44f11-104">ただし、クエリの実行を並列化すると、複雑性が増すため、シーケンシャルなコードにおいて一般的でない問題、またはめったにない問題を引き起こす場合があります。</span><span class="sxs-lookup"><span data-stu-id="44f11-104">However, the work of parallelizing the query execution introduces complexity that can lead to problems that, in sequential code, are not as common or are not encountered at all.</span></span> <span data-ttu-id="44f11-105">このトピックでは、PLINQ クエリを記述するときに回避すべき点について示します。</span><span class="sxs-lookup"><span data-stu-id="44f11-105">This topic lists some practices to avoid when you write PLINQ queries.</span></span>  

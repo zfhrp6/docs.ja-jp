@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33591756"
 ---
 # <a name="tpl-and-traditional-net-framework-asynchronous-programming"></a><span data-ttu-id="d73ad-102">TPL と従来の .NET Framework 非同期プログラミング</span><span class="sxs-lookup"><span data-stu-id="d73ad-102">TPL and Traditional .NET Framework Asynchronous Programming</span></span>
 <span data-ttu-id="d73ad-103">.NET Framework の I/O バインドの非同期操作および計算主体の非同期操作には、次の 2 つの標準パターンがあります。</span><span class="sxs-lookup"><span data-stu-id="d73ad-103">The .NET Framework provides the following two standard patterns for performing I/O-bound and compute-bound asynchronous operations:</span></span>  

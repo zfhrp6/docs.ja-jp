@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33590934"
 ---
 # <a name="walkthrough-determining-where-myapplicationlog-writes-information-visual-basic"></a><span data-ttu-id="34414-102">チュートリアル: My.Application.Log による情報の書き込み先の確認 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="34414-102">Walkthrough: Determining Where My.Application.Log Writes Information (Visual Basic)</span></span>
 <span data-ttu-id="34414-103">`My.Application.Log` オブジェクトは、複数のログ リスナーに情報を書き込むことができます。</span><span class="sxs-lookup"><span data-stu-id="34414-103">The `My.Application.Log` object can write information to several log listeners.</span></span> <span data-ttu-id="34414-104">ログ リスナーは、コンピューターの構成ファイルで設定し、アプリケーションの構成ファイルでオーバーライドできます。</span><span class="sxs-lookup"><span data-stu-id="34414-104">The log listeners are configured by the computer's configuration file and can be overridden by an application's configuration file.</span></span> <span data-ttu-id="34414-105">このトピックでは、既定の設定について、およびアプリケーションの設定を確認する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="34414-105">This topic describes the default settings and how to determine the settings for your application.</span></span>  

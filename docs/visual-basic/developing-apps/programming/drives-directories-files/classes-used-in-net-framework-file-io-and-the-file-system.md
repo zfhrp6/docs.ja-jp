@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33590700"
 ---
 # <a name="classes-used-in-net-framework-file-io-and-the-file-system-visual-basic"></a><span data-ttu-id="80e42-102">.NET Framework のファイル I/O とファイル システムで使用するクラス (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="80e42-102">Classes Used in .NET Framework File I/O and the File System (Visual Basic)</span></span>
 <span data-ttu-id="80e42-103">以下の表は、.NET Framework のファイル I/O で一般的に使用するクラスの一覧です。ファイル I/O クラス、ストリームの作成に使用するクラス、ストリームの読み取りと書き込みに使用するクラスに分類されています。</span><span class="sxs-lookup"><span data-stu-id="80e42-103">The following tables list the classes commonly used for .NET Framework file I/O, categorized into file I/O classes, classes used for creating streams, and classes used to read and write to streams.</span></span>  

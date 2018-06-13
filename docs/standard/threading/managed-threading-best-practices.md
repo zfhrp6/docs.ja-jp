@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33592471"
 ---
 # <a name="managed-threading-best-practices"></a><span data-ttu-id="3d9fb-102">マネージ スレッド処理の実施</span><span class="sxs-lookup"><span data-stu-id="3d9fb-102">Managed Threading Best Practices</span></span>
 <span data-ttu-id="3d9fb-103">マルチスレッドには慎重なプログラミングが必要です。</span><span class="sxs-lookup"><span data-stu-id="3d9fb-103">Multithreading requires careful programming.</span></span> <span data-ttu-id="3d9fb-104">ほとんどのタスクでは、スレッド プールのスレッドを使って実行の要求をキューに置くことによって、処理の複雑さを軽減できます。</span><span class="sxs-lookup"><span data-stu-id="3d9fb-104">For most tasks, you can reduce complexity by queuing requests for execution by thread pool threads.</span></span> <span data-ttu-id="3d9fb-105">このトピックでは、マルチ スレッド動作の調整や、ブロックするスレッドの処理など、より難しい状況について説明します。</span><span class="sxs-lookup"><span data-stu-id="3d9fb-105">This topic addresses more difficult situations, such as coordinating the work of multiple threads, or handling threads that block.</span></span>  

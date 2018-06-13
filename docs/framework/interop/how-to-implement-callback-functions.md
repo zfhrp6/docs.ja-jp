@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33389276"
 ---
 # <a name="how-to-implement-callback-functions"></a><span data-ttu-id="cc11e-102">方法: コールバック関数を実装する</span><span class="sxs-lookup"><span data-stu-id="cc11e-102">How to: Implement Callback Functions</span></span>
 <span data-ttu-id="cc11e-103">次の手順と例は、マネージ アプリケーションがプラットフォーム呼び出しを使用して、ローカル コンピューター上の各ウィンドウのハンドル値を出力する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="cc11e-103">The following procedure and example demonstrate how a managed application, using platform invoke, can print the handle value for each window on the local computer.</span></span> <span data-ttu-id="cc11e-104">具体的には、この手順と例では **EnumWindows** 関数を使用してウィンドウのリストをステップスルーし、(CallBack という名前の) マネージ コールバック関数を使用してウィンドウ ハンドルの値を出力します。</span><span class="sxs-lookup"><span data-stu-id="cc11e-104">Specifically, the procedure and example use the **EnumWindows** function to step through the list of windows and a managed callback function (named CallBack) to print the value of the window handle.</span></span>  

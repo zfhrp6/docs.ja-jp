@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33499194"
 ---
 # <a name="workflow-services"></a><span data-ttu-id="12dbd-102">ワークフロー サービス</span><span class="sxs-lookup"><span data-stu-id="12dbd-102">Workflow Services</span></span>
 [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)]<span data-ttu-id="12dbd-103"> では、ワークフロー ベースのサービスを XAML で宣言によって記述できます。</span><span class="sxs-lookup"><span data-stu-id="12dbd-103"> allows you to fully describe a workflow-based service declaratively in XAML.</span></span> <span data-ttu-id="12dbd-104">サービスを実装するワークフローの定義、およびサービスが公開するエンドポイントの説明を、すべて XAML で実行できます。</span><span class="sxs-lookup"><span data-stu-id="12dbd-104">You can define a workflow that implements your service and describe endpoints the service exposes, all entirely in XAML.</span></span> <span data-ttu-id="12dbd-105">このセクションの各トピックでは、宣言によるサービスの記述をサポートするプログラミング モデルについて詳しく説明します。</span><span class="sxs-lookup"><span data-stu-id="12dbd-105">The topics in this section describe, in detail, the programming model that supports writing services declaratively.</span></span>  

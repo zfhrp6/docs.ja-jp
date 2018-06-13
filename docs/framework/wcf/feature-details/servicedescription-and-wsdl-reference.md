@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33507363"
 ---
 # <a name="servicedescription-and-wsdl-reference"></a><span data-ttu-id="d14ce-102">ServiceDescription と WSDL 参照</span><span class="sxs-lookup"><span data-stu-id="d14ce-102">ServiceDescription and WSDL Reference</span></span>
 <span data-ttu-id="d14ce-103">このトピックとの間に、Windows Communication Foundation (WCF) が Web サービス記述言語 (WSDL) ドキュメントをマップする方法について説明<xref:System.ServiceModel.Description.ServiceDescription>インスタンス。</span><span class="sxs-lookup"><span data-stu-id="d14ce-103">This topic describes how Windows Communication Foundation (WCF) maps Web Services Description Language (WSDL) documents to and from <xref:System.ServiceModel.Description.ServiceDescription> instances.</span></span>  

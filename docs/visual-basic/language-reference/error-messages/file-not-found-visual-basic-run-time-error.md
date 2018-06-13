@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33587747"
 ---
 # <a name="file-not-found-visual-basic-run-time-error"></a><span data-ttu-id="1fdbc-102">ファイルが見つかりません。(Visual Basic ランタイム エラー)</span><span class="sxs-lookup"><span data-stu-id="1fdbc-102">File not found (Visual Basic Run-Time Error)</span></span>
 <span data-ttu-id="1fdbc-103">指定された場所に、ファイルが見つかりませんでした。</span><span class="sxs-lookup"><span data-stu-id="1fdbc-103">The file was not found where specified.</span></span> <span data-ttu-id="1fdbc-104">このエラーでは、次の考えられる原因。</span><span class="sxs-lookup"><span data-stu-id="1fdbc-104">The error has the following possible causes:</span></span>  

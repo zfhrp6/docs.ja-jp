@@ -23,6 +23,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33396141"
 ---
 # <a name="programming-pluggable-protocols"></a><span data-ttu-id="3c2e9-102">プラグ可能なプロトコルのプログラミング</span><span class="sxs-lookup"><span data-stu-id="3c2e9-102">Programming Pluggable Protocols</span></span>
 <span data-ttu-id="3c2e9-103">抽象クラスの <xref:System.Net.WebRequest> と <xref:System.Net.WebResponse> は、プラグ可能なプロトコルの基礎を提供します。</span><span class="sxs-lookup"><span data-stu-id="3c2e9-103">The abstract <xref:System.Net.WebRequest> and <xref:System.Net.WebResponse> classes provide the base for pluggable protocols.</span></span> <span data-ttu-id="3c2e9-104">アプリケーションでは、<xref:System.Net.WebRequest> と <xref:System.Net.WebResponse> からプロトコル固有のクラスを派生することにより、使うプロトコルを指定しなくても、インターネット リソースにデータを要求して応答を読み取ることができます。</span><span class="sxs-lookup"><span data-stu-id="3c2e9-104">By deriving protocol-specific classes from <xref:System.Net.WebRequest> and <xref:System.Net.WebResponse>, an application can request data from an Internet resource and read the response without specifying the protocol being used.</span></span>  

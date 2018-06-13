@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33591821"
 ---
 # <a name="date-data-type-visual-basic"></a><span data-ttu-id="0dfe9-102">日付型 (Date) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="0dfe9-102">Date Data Type (Visual Basic)</span></span>
 <span data-ttu-id="0dfe9-103">IEEE 64 ビット (8 バイト) の値として格納され、西暦 0001 年 1 月 1 日から西暦 9999 年 12 月 31 日までの日付と、午前 12:00:00 (深夜) から午後 11:59:59.9999999 までの時刻を表します。</span><span class="sxs-lookup"><span data-stu-id="0dfe9-103">Holds IEEE 64-bit (8-byte) values that represent dates ranging from January 1 of the year 0001 through December 31 of the year 9999, and times from 12:00:00 AM (midnight) through 11:59:59.9999999 PM.</span></span> <span data-ttu-id="0dfe9-104">各インクリメントはグレゴリオ暦の西暦 1 年 1 月 1 日からの経過時間を 100 ナノ秒で表します。</span><span class="sxs-lookup"><span data-stu-id="0dfe9-104">Each increment represents 100 nanoseconds of elapsed time since the beginning of January 1 of the year 1 in the Gregorian calendar.</span></span> <span data-ttu-id="0dfe9-105">最大値は、西暦 10000 年 1 月 1 日の 100 ナノ秒前です。</span><span class="sxs-lookup"><span data-stu-id="0dfe9-105">The maximum value represents 100 nanoseconds before the beginning of January 1 of the year 10000.</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33322784"
 ---
 # <a name="how-to-write-a-linq-to-xml-axis-method-c"></a><span data-ttu-id="f05d7-102">方法: LINQ to XML 軸メソッドを記述する (C#)</span><span class="sxs-lookup"><span data-stu-id="f05d7-102">How to: Write a LINQ to XML Axis Method (C#)</span></span>
 <span data-ttu-id="f05d7-103">XML ツリーからコレクションを取得する独自の軸メソッドを記述できます。</span><span class="sxs-lookup"><span data-stu-id="f05d7-103">You can write your own axis methods to retrieve collections from an XML tree.</span></span> <span data-ttu-id="f05d7-104">これを行うための最適な方法の 1 つは、要素または属性のコレクションを返す拡張メソッドを記述することです。</span><span class="sxs-lookup"><span data-stu-id="f05d7-104">One of the best ways to do this is to write an extension method that returns a collection of elements or attributes.</span></span> <span data-ttu-id="f05d7-105">アプリケーションの要件に基づいて、要素または属性の特定のサブセットを返す拡張メソッドを記述できます。</span><span class="sxs-lookup"><span data-stu-id="f05d7-105">You can write your extension method to return specific subsets of elements or attributes, based on the requirements of your application.</span></span>  

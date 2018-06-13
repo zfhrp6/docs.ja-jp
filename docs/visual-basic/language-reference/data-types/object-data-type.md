@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33591627"
 ---
 # <a name="object-data-type"></a><span data-ttu-id="6f5b0-102">Object Data Type</span><span class="sxs-lookup"><span data-stu-id="6f5b0-102">Object Data Type</span></span>
 <span data-ttu-id="6f5b0-103">オブジェクトを参照するアドレスを保持します。</span><span class="sxs-lookup"><span data-stu-id="6f5b0-103">Holds addresses that refer to objects.</span></span> <span data-ttu-id="6f5b0-104">任意の参照型 (文字列、配列、クラス、またはインターフェイス) を割り当てることができます、`Object`変数。</span><span class="sxs-lookup"><span data-stu-id="6f5b0-104">You can assign any reference type (string, array, class, or interface) to an `Object` variable.</span></span> <span data-ttu-id="6f5b0-105">`Object`変数は、任意の値型のデータを指すことも (numeric、 `Boolean`、 `Char`、 `Date`、構造体、または列挙型)。</span><span class="sxs-lookup"><span data-stu-id="6f5b0-105">An `Object` variable can also refer to data of any value type (numeric, `Boolean`, `Char`, `Date`, structure, or enumeration).</span></span>  

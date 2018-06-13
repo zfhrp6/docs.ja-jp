@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33575851"
 ---
 # <a name="how-to-enumerate-directories-and-files"></a><span data-ttu-id="a1d89-102">方法: ディレクトリとファイルを列挙する</span><span class="sxs-lookup"><span data-stu-id="a1d89-102">How to: Enumerate Directories and Files</span></span>
 <span data-ttu-id="a1d89-103">名前の文字列の列挙可能なコレクションを返すメソッドを使用して、ディレクトリとファイルを列挙することができます。</span><span class="sxs-lookup"><span data-stu-id="a1d89-103">You can enumerate directories and files by using methods that return an enumerable collection of strings of their names.</span></span> <span data-ttu-id="a1d89-104"><xref:System.IO.DirectoryInfo>、<xref:System.IO.FileInfo>、または <xref:System.IO.FileSystemInfo> オブジェクトの列挙可能なコレクションを返すメソッドを使用することもできます。</span><span class="sxs-lookup"><span data-stu-id="a1d89-104">You can also use methods that return an enumerable collection of <xref:System.IO.DirectoryInfo>, <xref:System.IO.FileInfo>, or <xref:System.IO.FileSystemInfo> objects.</span></span> <span data-ttu-id="a1d89-105">列挙可能なコレクションでは、ディレクトリとファイルの大きなコレクションを操作する際に配列よりも優れたパフォーマンスが得られます。</span><span class="sxs-lookup"><span data-stu-id="a1d89-105">Enumerable collections provide better performance than arrays when you work with large collections of directories and files.</span></span>  

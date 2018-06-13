@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33387381"
 ---
 # <a name="mitigation-path-colon-checks"></a><span data-ttu-id="00e7b-102">軽減策: パスのコロン チェック</span><span class="sxs-lookup"><span data-stu-id="00e7b-102">Mitigation: Path Colon Checks</span></span>
 <span data-ttu-id="00e7b-103">[!INCLUDE[net_v462](../../../includes/net-v462-md.md)] を対象とするアプリ以降では、以前はサポートされていなかったパスをサポートするために (長さと形式の両方について) 数多くの変更が加えられました。</span><span class="sxs-lookup"><span data-stu-id="00e7b-103">Starting with apps that target the [!INCLUDE[net_v462](../../../includes/net-v462-md.md)], a number of changes were made to support previously unsupported paths (both in terms of length and format).</span></span> <span data-ttu-id="00e7b-104">具体的には、適切なドライブの区切り構文 (コロン) のチェックがより正しく行われるようになりました。</span><span class="sxs-lookup"><span data-stu-id="00e7b-104">In particular, checks for the proper drive separator syntax (the colon) were made more correct.</span></span>  

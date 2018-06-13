@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33508580"
 ---
 # <a name="using-message-contracts"></a><span data-ttu-id="072f8-102">メッセージ コントラクトの使用</span><span class="sxs-lookup"><span data-stu-id="072f8-102">Using Message Contracts</span></span>
 <span data-ttu-id="072f8-103">通常 Windows Communication Foundation (WCF) アプリケーションを構築するときに、データ構造とシリアル化の問題に注目して開発者や、データが持ち込まれるメッセージの構造を意識する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="072f8-103">Typically when building Windows Communication Foundation (WCF) applications, developers pay close attention to the data structures and serialization issues and do not need to concern themselves with the structure of the messages in which the data is carried.</span></span> <span data-ttu-id="072f8-104">このようなアプリケーションでは、パラメーターまたは戻り値用にデータ コントラクトを作成するのは簡単です </span><span class="sxs-lookup"><span data-stu-id="072f8-104">For these applications, creating data contracts for the parameters or return values is straightforward.</span></span> <span data-ttu-id="072f8-105">(詳細については、次を参照してください[サービス コントラクトのデータ転送を指定する](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md)。)。</span><span class="sxs-lookup"><span data-stu-id="072f8-105">(For more information, see [Specifying Data Transfer in Service Contracts](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md).)</span></span>  

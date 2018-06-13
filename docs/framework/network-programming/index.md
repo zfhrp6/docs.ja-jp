@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33397898"
 ---
 # <a name="network-programming-in-the-net-framework"></a><span data-ttu-id="f06f6-102">.NET Framework のネットワーク プログラミング</span><span class="sxs-lookup"><span data-stu-id="f06f6-102">Network Programming in the .NET Framework</span></span>
 <span data-ttu-id="f06f6-103">Microsoft .NET Framework は、アプリケーションにすばやく簡単に統合できる、複数層の拡張可能なインターネット サービスのマネージ実装を提供します。</span><span class="sxs-lookup"><span data-stu-id="f06f6-103">The Microsoft .NET Framework provides a layered, extensible, and managed implementation of Internet services that can be quickly and easily integrated into your applications.</span></span> <span data-ttu-id="f06f6-104">ネットワーク アプリケーションは、プラグ可能なプロトコルを基に自動的に新しいインターネット プロトコルを使用するように作成することも、ソケット レベルでネットワークを使用できるように Windows ソケット インターフェイスのマネージ実装を使用することもできます。</span><span class="sxs-lookup"><span data-stu-id="f06f6-104">Your network applications can build on pluggable protocols to automatically take advantage of new Internet protocols, or they can use a managed implementation of the Windows socket interface to work with the network on the socket level.</span></span>  

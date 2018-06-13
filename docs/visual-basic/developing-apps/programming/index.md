@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33587411"
 ---
 # <a name="programming-in-visual-basic"></a><span data-ttu-id="943bc-102">Visual Basic でのプログラミング</span><span class="sxs-lookup"><span data-stu-id="943bc-102">Programming in Visual Basic</span></span>
 <span data-ttu-id="943bc-103">このセクションでは、Visual Basic アプリケーションを作成するときに知っておきたいプログラミング タスクについて説明します。</span><span class="sxs-lookup"><span data-stu-id="943bc-103">This section discusses programming tasks that you may want to learn more about as you create your Visual Basic application.</span></span>  
