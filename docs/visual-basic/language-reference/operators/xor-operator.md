@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33604797"
 ---
 # <a name="xor-operator-visual-basic"></a><span data-ttu-id="4d08f-102">Xor 演算子 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="4d08f-102">Xor Operator (Visual Basic)</span></span>
 <span data-ttu-id="4d08f-103">2 つの論理和を求めます`Boolean`式、または 2 つの数値式の和を求めます。</span><span class="sxs-lookup"><span data-stu-id="4d08f-103">Performs a logical exclusion on two `Boolean` expressions, or a bitwise exclusion on two numeric expressions.</span></span>  

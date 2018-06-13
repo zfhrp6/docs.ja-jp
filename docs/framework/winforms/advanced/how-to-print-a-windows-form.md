@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33522270"
 ---
 # <a name="how-to-print-a-windows-form"></a><span data-ttu-id="3c775-102">方法 : Windows フォームを印刷する</span><span class="sxs-lookup"><span data-stu-id="3c775-102">How to: Print a Windows Form</span></span>
 <span data-ttu-id="3c775-103">開発プロセスの一環として、通常はする、Windows フォームのコピーを印刷します。</span><span class="sxs-lookup"><span data-stu-id="3c775-103">As part of the development process, you typically will want to print a copy of your Windows Form.</span></span> <span data-ttu-id="3c775-104">次のコード例を使用して現在のフォームのコピーを印刷する方法を示しています、<xref:System.Drawing.Graphics.CopyFromScreen%2A>メソッドです。</span><span class="sxs-lookup"><span data-stu-id="3c775-104">The following code example shows how to print a copy of the current form by using the <xref:System.Drawing.Graphics.CopyFromScreen%2A> method.</span></span>  

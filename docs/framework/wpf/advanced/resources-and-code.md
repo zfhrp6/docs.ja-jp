@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33547548"
 ---
 # <a name="resources-and-code"></a><span data-ttu-id="40efc-102">リソースとコード</span><span class="sxs-lookup"><span data-stu-id="40efc-102">Resources and Code</span></span>
 <span data-ttu-id="40efc-103">この概要では、[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] 構文ではなく、コードを使用して [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] リソースにアクセスする方法、またはこのリソースを作成する方法に重点を置いて説明します。</span><span class="sxs-lookup"><span data-stu-id="40efc-103">This overview concentrates on how [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] resources can be accessed or created using  code rather than [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] syntax.</span></span> <span data-ttu-id="40efc-104">一般的なリソースの使用法と [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] 構文の観点から見たリソースの詳細については、「[XAML リソース](../../../../docs/framework/wpf/advanced/xaml-resources.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="40efc-104">For more information on general resource usage and resources from a [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] syntax perspective, see [XAML Resources](../../../../docs/framework/wpf/advanced/xaml-resources.md).</span></span>  

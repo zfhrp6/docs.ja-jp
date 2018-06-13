@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: e55bc18c7a41e235d1ba6274067c45c26dc7262a
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33405458"
 ---
 # <a name="iclrdatatargetwritevirtual-method"></a><span data-ttu-id="aa69f-102">ICLRDataTarget::WriteVirtual メソッド</span><span class="sxs-lookup"><span data-stu-id="aa69f-102">ICLRDataTarget::WriteVirtual Method</span></span>
 <span data-ttu-id="aa69f-103">指定された仮想メモリ アドレスに指定されたバッファーからデータを書き込みます。</span><span class="sxs-lookup"><span data-stu-id="aa69f-103">Writes data from the specified buffer to the specified virtual memory address.</span></span>  

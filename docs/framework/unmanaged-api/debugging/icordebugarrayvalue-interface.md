@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: a96f2b21e524f03ea3290be268244eaceeb5c7f7
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33408178"
 ---
 # <a name="icordebugarrayvalue-interface1"></a><span data-ttu-id="f004b-102">ICorDebugArrayValue Interface1</span><span class="sxs-lookup"><span data-stu-id="f004b-102">ICorDebugArrayValue Interface1</span></span>
 <span data-ttu-id="f004b-103">1 次元または多次元配列を表す ICorDebugHeapValue のサブクラスです。</span><span class="sxs-lookup"><span data-stu-id="f004b-103">A subclass of ICorDebugHeapValue that represents a single-dimensional or multi-dimensional array.</span></span>  

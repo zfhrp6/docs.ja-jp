@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33601154"
 ---
 # <a name="ltexceptiongt-visual-basic"></a><span data-ttu-id="f42e7-102">&lt;例外&gt;(Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="f42e7-102">&lt;exception&gt; (Visual Basic)</span></span>
 <span data-ttu-id="f42e7-103">どの例外がスローされる可能性を指定します。</span><span class="sxs-lookup"><span data-stu-id="f42e7-103">Specifies which exceptions can be thrown.</span></span>  

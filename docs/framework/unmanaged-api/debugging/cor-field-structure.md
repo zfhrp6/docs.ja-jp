@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 0898936665b3b337f2fd4e4d53bcc9f6071469b2
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33405360"
 ---
 # <a name="corfield-structure"></a><span data-ttu-id="99865-102">COR_FIELD 構造体</span><span class="sxs-lookup"><span data-stu-id="99865-102">COR_FIELD Structure</span></span>
 <span data-ttu-id="99865-103">オブジェクトのフィールドに関する情報が提供されます。</span><span class="sxs-lookup"><span data-stu-id="99865-103">Provides information about a field in an object.</span></span>  

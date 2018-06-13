@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33600806"
 ---
 # <a name="bad-record-number"></a><span data-ttu-id="63c4e-102">レコード番号が正しくありません</span><span class="sxs-lookup"><span data-stu-id="63c4e-102">Bad record number</span></span>
 <span data-ttu-id="63c4e-103">`a FileGet`、 `FilePut`、 `FileGetObject`、または `FilePutObject` ステートメント内のレコード番号が 0 以下です。</span><span class="sxs-lookup"><span data-stu-id="63c4e-103">The record number in `a FileGet`, `FilePut`, `FileGetObject`, or `FilePutObject` statement is less than or equal to zero.</span></span>  
