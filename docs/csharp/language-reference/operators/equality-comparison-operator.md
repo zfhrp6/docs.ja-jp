@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33273388"
 ---
 # <a name="-operator-c-reference"></a><span data-ttu-id="a224c-102">== 演算子 (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="a224c-102">== Operator (C# Reference)</span></span>
 <span data-ttu-id="a224c-103">組み込みの値型の場合、等値演算子 (`==`) ではオペランドの値が等しい場合に true が返され、それ以外の場合は `false` が返されます。</span><span class="sxs-lookup"><span data-stu-id="a224c-103">For predefined value types, the equality operator (`==`) returns true if the values of its operands are equal, `false` otherwise.</span></span> <span data-ttu-id="a224c-104">[string](../../../csharp/language-reference/keywords/string.md) 以外の参照型の場合、`==` では 2 つのオペランドが同じオブジェクトを参照する場合に `true` が返されます。</span><span class="sxs-lookup"><span data-stu-id="a224c-104">For reference types other than [string](../../../csharp/language-reference/keywords/string.md), `==` returns `true` if its two operands refer to the same object.</span></span> <span data-ttu-id="a224c-105">`string` 型の場合は、`==` は文字列の値を比較します。</span><span class="sxs-lookup"><span data-stu-id="a224c-105">For the `string` type, `==` compares the values of the strings.</span></span>  

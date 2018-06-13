@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33278810"
 ---
 # <a name="pragma-c-reference"></a><span data-ttu-id="994ca-102">#pragma (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="994ca-102">#pragma (C# Reference)</span></span>
 <span data-ttu-id="994ca-103">`#pragma` は、ファイル内に指定され、そのファイルのコンパイルについての特別な命令をコンパイラに指示します。</span><span class="sxs-lookup"><span data-stu-id="994ca-103">`#pragma` gives the compiler special instructions for the compilation of the file in which it appears.</span></span> <span data-ttu-id="994ca-104">命令はコンパイラによってサポートされている必要があります。</span><span class="sxs-lookup"><span data-stu-id="994ca-104">The instructions must be supported by the compiler.</span></span> <span data-ttu-id="994ca-105">つまり、`#pragma` を使用してカスタムの前処理命令を作成することはできません。</span><span class="sxs-lookup"><span data-stu-id="994ca-105">In other words, you cannot use `#pragma` to create custom preprocessing instructions.</span></span> <span data-ttu-id="994ca-106">Microsoft C# コンパイラは、次の 2 つの `#pragma` 命令をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="994ca-106">The Microsoft C# compiler supports the following two `#pragma` instructions:</span></span>  

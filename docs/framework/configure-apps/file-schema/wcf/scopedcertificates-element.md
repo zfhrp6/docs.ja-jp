@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32748865"
 ---
 # <a name="ltscopedcertificatesgt-element"></a><span data-ttu-id="275f1-102">&lt;scopedCertificates&gt; 要素</span><span class="sxs-lookup"><span data-stu-id="275f1-102">&lt;scopedCertificates&gt; Element</span></span>
 <span data-ttu-id="275f1-103">認証用の (範囲指定された) 特定のサービスにより提供される X.509 証明書のコレクションを表します。</span><span class="sxs-lookup"><span data-stu-id="275f1-103">Represents a collection of X.509 certificates provided by specific services (scoped) for authentication.</span></span> <span data-ttu-id="275f1-104">このコレクションは一般に、フェデレーション シナリオでセキュリティ トークン サービスのサービス証明書を指定するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="275f1-104">This collection is typically used to specify the service certificates for Security Token Services in a federated scenario.</span></span>  

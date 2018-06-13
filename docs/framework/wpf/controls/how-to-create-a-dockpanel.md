@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33550151"
 ---
 # <a name="how-to-create-a-dockpanel"></a><span data-ttu-id="cf5ce-102">方法 : DockPanel を作成する</span><span class="sxs-lookup"><span data-stu-id="cf5ce-102">How to: Create a DockPanel</span></span>
 ## <a name="example"></a><span data-ttu-id="cf5ce-103">例</span><span class="sxs-lookup"><span data-stu-id="cf5ce-103">Example</span></span>  

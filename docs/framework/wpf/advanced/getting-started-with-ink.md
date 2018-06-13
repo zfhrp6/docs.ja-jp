@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33546238"
 ---
 # <a name="getting-started-with-ink"></a><span data-ttu-id="44414-102">インクの概要</span><span class="sxs-lookup"><span data-stu-id="44414-102">Getting Started with Ink</span></span>
 <span data-ttu-id="44414-103">デジタル インクを組み込むことをアプリケーションには、これまでよりも簡単です。</span><span class="sxs-lookup"><span data-stu-id="44414-103">Incorporating digital ink into your applications is easier than ever.</span></span> <span data-ttu-id="44414-104">インクのプログラミングに完全な統合を実現するための COM および Windows フォームのメソッドへの推論の進化に伴い、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]です。</span><span class="sxs-lookup"><span data-stu-id="44414-104">Ink has evolved from being a corollary to the COM and Windows Forms method of programming to achieving full integration into the [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].</span></span> <span data-ttu-id="44414-105">個別の Sdk またはランタイム ライブラリをインストールする必要はありません。</span><span class="sxs-lookup"><span data-stu-id="44414-105">You do not need to install separate SDKs or runtime libraries.</span></span>  

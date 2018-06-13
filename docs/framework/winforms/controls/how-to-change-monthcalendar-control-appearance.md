@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33531327"
 ---
 # <a name="how-to-change-the-windows-forms-monthcalendar-control39s-appearance"></a><span data-ttu-id="82c68-102">方法: Windows フォームの MonthCalendar コントロールを変更する&#39;s 外観</span><span class="sxs-lookup"><span data-stu-id="82c68-102">How to: Change the Windows Forms MonthCalendar Control&#39;s Appearance</span></span>
 <span data-ttu-id="82c68-103">Windows フォーム<xref:System.Windows.Forms.MonthCalendar>コントロールでは、さまざまな方法で、カレンダーの外観をカスタマイズすることができます。</span><span class="sxs-lookup"><span data-stu-id="82c68-103">The Windows Forms <xref:System.Windows.Forms.MonthCalendar> control allows you to customize the calendar's appearance in many ways.</span></span> <span data-ttu-id="82c68-104">たとえば、配色を設定でき、または週の数と現在の日付を非表示に選択できます。</span><span class="sxs-lookup"><span data-stu-id="82c68-104">For example, you can set the color scheme and choose to display or hide week numbers and the current date.</span></span>  

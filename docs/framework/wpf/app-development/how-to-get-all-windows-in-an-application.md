@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33545492"
 ---
 # <a name="how-to-get-all-windows-in-an-application"></a><span data-ttu-id="0d94b-102">方法: アプリケーションのすべてのウィンドウの取得</span><span class="sxs-lookup"><span data-stu-id="0d94b-102">How to: Get all Windows in an Application</span></span>
 <span data-ttu-id="0d94b-103">この例は、すべてを取得する方法を示しています。<xref:System.Windows.Window>アプリケーション内のオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="0d94b-103">This example shows how to get all <xref:System.Windows.Window> objects in an application.</span></span>  

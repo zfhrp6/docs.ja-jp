@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33532809"
 ---
 # <a name="how-to-display-print-preview-in-windows-forms-applications"></a><span data-ttu-id="ffbfd-102">方法 : Windows フォーム アプリケーションに印刷プレビューを表示する</span><span class="sxs-lookup"><span data-stu-id="ffbfd-102">How to: Display Print Preview in Windows Forms Applications</span></span>
 <span data-ttu-id="ffbfd-103">使用することができます、<xref:System.Windows.Forms.PrintPreviewDialog>を印刷する前に多くの場合、ドキュメントを表示するユーザーを有効にするコントロール。</span><span class="sxs-lookup"><span data-stu-id="ffbfd-103">You can use the <xref:System.Windows.Forms.PrintPreviewDialog> control to enable users to display a document, often before it is to be printed.</span></span>  

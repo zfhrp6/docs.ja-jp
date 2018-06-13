@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33543694"
 ---
 # <a name="how-to-recognize-application-gestures"></a><span data-ttu-id="61746-102">方法 : アプリケーション ジェスチャを認識する</span><span class="sxs-lookup"><span data-stu-id="61746-102">How To: Recognize Application Gestures</span></span>
 <span data-ttu-id="61746-103">次の例は、ユーザーが、インクを消去する方法を示します、<xref:System.Windows.Ink.ApplicationGesture.ScratchOut>にジェスチャ、<xref:System.Windows.Controls.InkCanvas>です。</span><span class="sxs-lookup"><span data-stu-id="61746-103">The following example demonstrates how to erase ink when a user makes a <xref:System.Windows.Ink.ApplicationGesture.ScratchOut> gesture on an <xref:System.Windows.Controls.InkCanvas>.</span></span> <span data-ttu-id="61746-104">この例では、<xref:System.Windows.Controls.InkCanvas>という`inkCanvas1`、XAML ファイルで宣言されています。</span><span class="sxs-lookup"><span data-stu-id="61746-104">This example assumes an <xref:System.Windows.Controls.InkCanvas>, called `inkCanvas1`, is declared in the XAML file.</span></span>  

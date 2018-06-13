@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33544233"
 ---
 # <a name="input-wpf"></a><span data-ttu-id="44d57-102">入力 (WPF)</span><span class="sxs-lookup"><span data-stu-id="44d57-102">Input (WPF)</span></span>
 <span data-ttu-id="44d57-103">Windows Presentation Foundation (WPF) には、いくつかの種類の入力のサポートが含まれています。</span><span class="sxs-lookup"><span data-stu-id="44d57-103">Windows Presentation Foundation (WPF) includes support for several types of input.</span></span> <span data-ttu-id="44d57-104">この入力には、テキスト、タッチ、マウス、コマンド、フォーカス、タッチ、ドラッグ アンド ドロップ、およびデジタル インクが含まれています。</span><span class="sxs-lookup"><span data-stu-id="44d57-104">This input includes text, touch, mouse, commands, focus, touch, drag-and-drop, and digital ink.</span></span> <span data-ttu-id="44d57-105">このセクションでは、WPF では入力に関連するトピックについて説明します。</span><span class="sxs-lookup"><span data-stu-id="44d57-105">This section describes topics related to input in WPF.</span></span>  

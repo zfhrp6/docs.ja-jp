@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33551192"
 ---
 # <a name="combobox"></a><span data-ttu-id="87e36-102">ComboBox</span><span class="sxs-lookup"><span data-stu-id="87e36-102">ComboBox</span></span>
 <span data-ttu-id="87e36-103"><xref:System.Windows.Controls.ComboBox>コントロール オプションの一覧をユーザーに対して表示します。</span><span class="sxs-lookup"><span data-stu-id="87e36-103">The <xref:System.Windows.Controls.ComboBox> control presents users with a list of options.</span></span> <span data-ttu-id="87e36-104">一覧が表示され、コントロールの展開または折りたたむと非表示になります。</span><span class="sxs-lookup"><span data-stu-id="87e36-104">The list is shown and hidden as the control expands and collapses.</span></span> <span data-ttu-id="87e36-105">既定の状態で一覧が折りたたまれている、のみ 1 つの選択肢を表示します。</span><span class="sxs-lookup"><span data-stu-id="87e36-105">In its default state, the list is collapsed, displaying only one choice.</span></span> <span data-ttu-id="87e36-106">オプションの完全な一覧を表示するボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="87e36-106">The user clicks a button to see the complete list of options.</span></span>  

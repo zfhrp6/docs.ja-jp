@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33549348"
 ---
 # <a name="weak-event-patterns"></a><span data-ttu-id="524ac-102">弱いイベント パターン</span><span class="sxs-lookup"><span data-stu-id="524ac-102">Weak Event Patterns</span></span>
 <span data-ttu-id="524ac-103">アプリケーションでは、可能であれば、イベント ソースに接続されているハンドラーは破棄されません、ハンドラーをソースに接続されているリスナー オブジェクトと連携します。</span><span class="sxs-lookup"><span data-stu-id="524ac-103">In applications, it is possible that handlers that are attached to event sources will not be destroyed in coordination with the listener object that attached the handler to the source.</span></span> <span data-ttu-id="524ac-104">このような状況は、メモリ リークが発生する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="524ac-104">This situation can lead to memory leaks.</span></span> [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]<span data-ttu-id="524ac-105"> この問題に対処、特定のイベントの専用マネージャー クラスを提供して、そのイベントのリスナーにインターフェイスを実装して使用できるデザイン パターンについて説明します。</span><span class="sxs-lookup"><span data-stu-id="524ac-105"> introduces a design pattern that can be used to address this issue, by providing a dedicated manager class for particular events and implementing an interface on listeners for that event.</span></span> <span data-ttu-id="524ac-106">この設計パターンと呼ばれる、*弱いイベント パターン*です。</span><span class="sxs-lookup"><span data-stu-id="524ac-106">This design pattern is known as the *weak event pattern*.</span></span>  

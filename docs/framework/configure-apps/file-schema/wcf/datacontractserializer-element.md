@@ -12,6 +12,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32752768"
 ---
 # <a name="ltdatacontractserializergt"></a><span data-ttu-id="f6f92-102">&lt;DataContractSerializer&gt;</span><span class="sxs-lookup"><span data-stu-id="f6f92-102">&lt;dataContractSerializer&gt;</span></span>
 <span data-ttu-id="f6f92-103"><xref:System.Runtime.Serialization.DataContractSerializer> 用の設定データが含まれています。</span><span class="sxs-lookup"><span data-stu-id="f6f92-103">Contains configuration data for the <xref:System.Runtime.Serialization.DataContractSerializer>.</span></span> <span data-ttu-id="f6f92-104">この要素は、2 つの異なる階層で使用されます。</span><span class="sxs-lookup"><span data-stu-id="f6f92-104">This element occurs in two different hierarchies.</span></span> <span data-ttu-id="f6f92-105">1 つは以下の「スキーマの階層」に示したもので、もう 1 つは「解説」に記載しています。</span><span class="sxs-lookup"><span data-stu-id="f6f92-105">One is listed the following Schema Hierarchy section and the other is listed in the Remarks section.</span></span>  

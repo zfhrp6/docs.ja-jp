@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33550866"
 ---
 # <a name="how-to-share-sizing-properties-between-grids"></a><span data-ttu-id="90ecb-102">方法 : グリッド間でサイズ設定プロパティを共有する</span><span class="sxs-lookup"><span data-stu-id="90ecb-102">How to: Share Sizing Properties Between Grids</span></span>
 <span data-ttu-id="90ecb-103">この例は、列のサイズ変更データを共有する方法について説明し、間で行<xref:System.Windows.Controls.Grid>一貫性のあるサイズ変更を保持するために要素。</span><span class="sxs-lookup"><span data-stu-id="90ecb-103">This example shows how to share the sizing data of columns and rows between <xref:System.Windows.Controls.Grid> elements in order to keep sizing consistent.</span></span>  

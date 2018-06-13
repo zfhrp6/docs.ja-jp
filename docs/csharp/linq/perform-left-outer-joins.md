@@ -8,6 +8,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33284278"
 ---
 # <a name="perform-left-outer-joins"></a><span data-ttu-id="50eeb-103">左外部結合の実行</span><span class="sxs-lookup"><span data-stu-id="50eeb-103">Perform left outer joins</span></span>
 <span data-ttu-id="50eeb-104">左外部結合は、最初のコレクションの各要素を、2 つ目のコレクション内にある要素との相関関係の有無にかかわらず返す結合です。</span><span class="sxs-lookup"><span data-stu-id="50eeb-104">A left outer join is a join in which each element of the first collection is returned, regardless of whether it has any correlated elements in the second collection.</span></span> <span data-ttu-id="50eeb-105">LINQ を使用すると、グループ結合の結果に対して <xref:System.Linq.Enumerable.DefaultIfEmpty%2A> メソッドを呼び出すことで、左外部結合を実行できます。</span><span class="sxs-lookup"><span data-stu-id="50eeb-105">You can use LINQ to perform a left outer join by calling the <xref:System.Linq.Enumerable.DefaultIfEmpty%2A> method on the results of a group join.</span></span>  

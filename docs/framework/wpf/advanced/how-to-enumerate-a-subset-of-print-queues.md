@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33543590"
 ---
 # <a name="how-to-enumerate-a-subset-of-print-queues"></a><span data-ttu-id="9ba2d-102">方法 : 印刷キューのサブセットを列挙する</span><span class="sxs-lookup"><span data-stu-id="9ba2d-102">How to: Enumerate a Subset of Print Queues</span></span>
 <span data-ttu-id="9ba2d-103">プリンターの全社的なセットを管理する情報技術 (IT) プロフェッショナルが直面している一般的な状況では、特定の特性を持つプリンターの一覧を生成します。</span><span class="sxs-lookup"><span data-stu-id="9ba2d-103">A common situation faced by information technology (IT) professionals managing a company-wide set of printers is to generate a list of printers having certain characteristics.</span></span> <span data-ttu-id="9ba2d-104">この機能が用意されて、<xref:System.Printing.PrintServer.GetPrintQueues%2A>のメソッド、<xref:System.Printing.PrintServer>オブジェクトおよび<xref:System.Printing.EnumeratedPrintQueueTypes>列挙します。</span><span class="sxs-lookup"><span data-stu-id="9ba2d-104">This functionality is provided by the <xref:System.Printing.PrintServer.GetPrintQueues%2A> method of a <xref:System.Printing.PrintServer> object and the <xref:System.Printing.EnumeratedPrintQueueTypes> enumeration.</span></span>  

@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33524974"
 ---
 # <a name="how-to-draw-wrapped-text-in-a-rectangle"></a><span data-ttu-id="b2eea-102">方法 : 四角形内にテキストを折り返して描画する</span><span class="sxs-lookup"><span data-stu-id="b2eea-102">How to: Draw Wrapped Text in a Rectangle</span></span>
 <span data-ttu-id="b2eea-103">四角形で囲まれたテキストを描画するにを使用して、<xref:System.Drawing.Graphics.DrawString%2A>オーバー ロードされたメソッドの<xref:System.Drawing.Graphics>を受け取るクラス、<xref:System.Drawing.Rectangle>または<xref:System.Drawing.RectangleF>パラメーター。</span><span class="sxs-lookup"><span data-stu-id="b2eea-103">You can draw wrapped text in a rectangle by using the <xref:System.Drawing.Graphics.DrawString%2A> overloaded method of the <xref:System.Drawing.Graphics> class that takes a <xref:System.Drawing.Rectangle> or <xref:System.Drawing.RectangleF> parameter.</span></span> <span data-ttu-id="b2eea-104">また、使用、<xref:System.Drawing.Brush>と<xref:System.Drawing.Font>です。</span><span class="sxs-lookup"><span data-stu-id="b2eea-104">You will also use a <xref:System.Drawing.Brush> and a <xref:System.Drawing.Font>.</span></span>  

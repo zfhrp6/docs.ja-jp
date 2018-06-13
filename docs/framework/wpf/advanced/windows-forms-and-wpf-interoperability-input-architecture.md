@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33549060"
 ---
 # <a name="windows-forms-and-wpf-interoperability-input-architecture"></a><span data-ttu-id="f6504-102">Windows フォームと WPF の相互運用性入力アーキテクチャ</span><span class="sxs-lookup"><span data-stu-id="f6504-102">Windows Forms and WPF Interoperability Input Architecture</span></span>
 <span data-ttu-id="f6504-103">間で相互運用、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]と[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]両方のテクノロジは、適切なキーボード入力の処理である必要があります。</span><span class="sxs-lookup"><span data-stu-id="f6504-103">Interoperation between the [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] and [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] requires that both technologies have the appropriate keyboard input processing.</span></span> <span data-ttu-id="f6504-104">このトピックでは、これらのテクノロジで、キーボードとメッセージをハイブリッド アプリケーションでスムーズな相互運用を有効にする処理がどのように実装する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="f6504-104">This topic describes how these technologies implement keyboard and message processing to enable smooth interoperation in hybrid applications.</span></span>  

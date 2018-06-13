@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33545546"
 ---
 # <a name="how-to-stop-a-page-from-loading"></a><span data-ttu-id="48870-102">方法: ページの読み込みの停止</span><span class="sxs-lookup"><span data-stu-id="48870-102">How to: Stop a Page from Loading</span></span>
 <span data-ttu-id="48870-103">この例を呼び出す方法を示します、<xref:System.Windows.Navigation.NavigationWindow.StopLoading%2A>ダウンロードが完了する前に、コンテンツへの移動を中断します。</span><span class="sxs-lookup"><span data-stu-id="48870-103">This example shows how to call the <xref:System.Windows.Navigation.NavigationWindow.StopLoading%2A> method to stop navigation to content before it has finished being downloaded.</span></span>  

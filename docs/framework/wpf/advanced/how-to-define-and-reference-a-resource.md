@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33543495"
 ---
 # <a name="how-to-define-and-reference-a-resource"></a><span data-ttu-id="c48b9-102">方法 : リソースを定義および参照する</span><span class="sxs-lookup"><span data-stu-id="c48b9-102">How to: Define and Reference a Resource</span></span>
 <span data-ttu-id="c48b9-103">この例は、内の属性を使用して、参照およびリソースを定義する方法を示しています。[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]です。</span><span class="sxs-lookup"><span data-stu-id="c48b9-103">This example shows how to define a resource and reference it by using an attribute in [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)].</span></span>  

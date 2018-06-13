@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33525903"
 ---
 # <a name="structure-of-the-graphics-interface"></a><span data-ttu-id="e9cd4-102">グラフィックス インターフェイスの構造体</span><span class="sxs-lookup"><span data-stu-id="e9cd4-102">Structure of the Graphics Interface</span></span>
 <span data-ttu-id="e9cd4-103">マネージ クラスのインターフェイスに[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]60 個のクラス、50 の列挙型、および 8 構造体が含まれています。</span><span class="sxs-lookup"><span data-stu-id="e9cd4-103">The managed class interface to [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] contains about 60 classes, 50 enumerations, and 8 structures.</span></span> <span data-ttu-id="e9cd4-104"><xref:System.Drawing.Graphics>の中心にあるクラスは、[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]機能です。 これは実際には直線、曲線、図形、画像、およびテキストを描画するクラスです。</span><span class="sxs-lookup"><span data-stu-id="e9cd4-104">The <xref:System.Drawing.Graphics> class is at the core of [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] functionality; it is the class that actually draws lines, curves, figures, images, and text.</span></span>  

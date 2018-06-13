@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33550853"
 ---
 # <a name="passwordbox"></a><span data-ttu-id="57b9e-102">PasswordBox</span><span class="sxs-lookup"><span data-stu-id="57b9e-102">PasswordBox</span></span>
 <span data-ttu-id="57b9e-103"><xref:System.Windows.Controls.PasswordBox>コントロールを使用して、機密情報や秘密情報を入力します。</span><span class="sxs-lookup"><span data-stu-id="57b9e-103">The <xref:System.Windows.Controls.PasswordBox> control is used to input sensitive or private information.</span></span>  

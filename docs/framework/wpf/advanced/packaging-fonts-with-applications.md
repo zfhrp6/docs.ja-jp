@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33548221"
 ---
 # <a name="packaging-fonts-with-applications"></a><span data-ttu-id="92205-102">アプリケーションでのフォントのパッケージング</span><span class="sxs-lookup"><span data-stu-id="92205-102">Packaging Fonts with Applications</span></span>
 <span data-ttu-id="92205-103">このトピックでは、パッケージで使用するフォントの方法の概要、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]アプリケーションです。</span><span class="sxs-lookup"><span data-stu-id="92205-103">This topic provides an overview of how to package fonts with your [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] application.</span></span>  

@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33548352"
 ---
 # <a name="walkthrough-creating-your-first-touch-application"></a><span data-ttu-id="7e3e5-102">チュートリアル: 初めてのタッチ アプリケーションの作成</span><span class="sxs-lookup"><span data-stu-id="7e3e5-102">Walkthrough: Creating Your First Touch Application</span></span>
 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]<span data-ttu-id="7e3e5-103"> タッチに応答するアプリケーションを有効にします。</span><span class="sxs-lookup"><span data-stu-id="7e3e5-103"> enables applications to respond to touch.</span></span> <span data-ttu-id="7e3e5-104">たとえば、1 つを使用して、アプリケーションと対話できます。 または多くを指でタッチ スクリーンがこのチュートリアルにより、ユーザーに移動するアプリケーションを作成するなどのタッチ依存型デバイスのサイズ変更、またはタッチを使用して、1 つのオブジェクトを回転します。</span><span class="sxs-lookup"><span data-stu-id="7e3e5-104">For example, you can interact with an application by using one or more fingers on a touch-sensitive device, such as a touchscreen This walkthrough creates an application that enables the user to move, resize, or rotate a single object by using touch.</span></span>  

@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33545572"
 ---
 # <a name="how-to-manipulate-flow-content-elements-through-the-inlines-property"></a><span data-ttu-id="b2e43-102">方法 : Inlines プロパティを介してフロー コンテンツ要素を操作する</span><span class="sxs-lookup"><span data-stu-id="b2e43-102">How to: Manipulate Flow Content Elements through the Inlines Property</span></span>
 <span data-ttu-id="b2e43-103">これらの例では、インライン フロー コンテンツ要素に対して実行できる一般的な操作の点を示しています (とそのような要素のコンテナーなど<xref:System.Windows.Controls.TextBlock>) を介して、**インライン**プロパティです。</span><span class="sxs-lookup"><span data-stu-id="b2e43-103">These examples demonstrate some of the more common operations that can be performed on inline flow content elements (and containers of such elements, such as <xref:System.Windows.Controls.TextBlock>) through the **Inlines** property.</span></span> <span data-ttu-id="b2e43-104">このプロパティを使用してアイテムの追加し、削除を<xref:System.Windows.Documents.InlineCollection>です。</span><span class="sxs-lookup"><span data-stu-id="b2e43-104">This property is used to add and remove items from <xref:System.Windows.Documents.InlineCollection>.</span></span> <span data-ttu-id="b2e43-105">フロー コンテンツ要素で、その機能、**インライン**プロパティが含まれます。</span><span class="sxs-lookup"><span data-stu-id="b2e43-105">Flow content elements that feature an **Inlines** property include:</span></span>  

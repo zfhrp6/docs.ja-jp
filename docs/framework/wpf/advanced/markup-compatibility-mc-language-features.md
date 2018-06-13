@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33546570"
 ---
 # <a name="markup-compatibility-mc-language-features"></a><span data-ttu-id="6506c-102">マークアップの互換性 (mc:) 言語機能</span><span class="sxs-lookup"><span data-stu-id="6506c-102">Markup Compatibility (mc:) Language Features</span></span>
 ## <a name="in-this-section"></a><span data-ttu-id="6506c-103">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="6506c-103">In This Section</span></span>  
