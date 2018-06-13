@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33322693"
 ---
 # <a name="pointer-conversions-c-programming-guide"></a><span data-ttu-id="fdb16-102">ポインター変換 (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="fdb16-102">Pointer Conversions (C# Programming Guide)</span></span>
 <span data-ttu-id="fdb16-103">定義済みの暗黙的なポインター変換を次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="fdb16-103">The following table shows the predefined implicit pointer conversions.</span></span> <span data-ttu-id="fdb16-104">暗黙的な変換は、メソッドの呼び出しや代入ステートメントなど、多くの状況で発生することがあります。</span><span class="sxs-lookup"><span data-stu-id="fdb16-104">Implicit conversions might occur in many situations, including method invoking and assignment statements.</span></span>  

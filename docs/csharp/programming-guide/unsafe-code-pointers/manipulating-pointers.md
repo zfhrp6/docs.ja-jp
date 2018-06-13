@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33339678"
 ---
 # <a name="manipulating-pointers-c-programming-guide"></a><span data-ttu-id="12009-102">ポインターの操作 (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="12009-102">Manipulating Pointers (C# Programming Guide)</span></span>
 <span data-ttu-id="12009-103">ここでは、次のポインター操作について説明します。</span><span class="sxs-lookup"><span data-stu-id="12009-103">This section includes the following pointer operations:</span></span>  

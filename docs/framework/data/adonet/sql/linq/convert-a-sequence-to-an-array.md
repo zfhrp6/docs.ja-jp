@@ -1,36 +1,25 @@
 ---
-title: "方法 : シーケンスを配列に変換する"
-ms.custom: 
+title: '方法 : シーケンスを配列に変換する'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-ado
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: bf0af444-890d-43e2-aeca-98589dd74ddf
-caps.latest.revision: "2"
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload: dotnet
-ms.openlocfilehash: c4846a45b0a49de102cab05857a69476680198a0
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: b668a010ee5839b195d4bc9d18c3886c0152f5df
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33357947"
 ---
-# <a name="convert-a-sequence-to-an-array"></a><span data-ttu-id="8fa43-102">方法 : シーケンスを配列に変換する</span><span class="sxs-lookup"><span data-stu-id="8fa43-102">Convert a Sequence to an Array</span></span>
-<span data-ttu-id="8fa43-103">シーケンスから配列を作成するには、<xref:System.Linq.Enumerable.ToArray%2A> を使用します。</span><span class="sxs-lookup"><span data-stu-id="8fa43-103">Use <xref:System.Linq.Enumerable.ToArray%2A> to create an array from a sequence.</span></span>  
+# <a name="convert-a-sequence-to-an-array"></a><span data-ttu-id="886d8-102">方法 : シーケンスを配列に変換する</span><span class="sxs-lookup"><span data-stu-id="886d8-102">Convert a Sequence to an Array</span></span>
+<span data-ttu-id="886d8-103">シーケンスから配列を作成するには、<xref:System.Linq.Enumerable.ToArray%2A> を使用します。</span><span class="sxs-lookup"><span data-stu-id="886d8-103">Use <xref:System.Linq.Enumerable.ToArray%2A> to create an array from a sequence.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="8fa43-104">例</span><span class="sxs-lookup"><span data-stu-id="8fa43-104">Example</span></span>  
- <span data-ttu-id="8fa43-105">次の例では、<xref:System.Linq.Enumerable.ToArray%2A> を使用して、クエリを直ちに配列に評価し、3 番目の要素を取得します。</span><span class="sxs-lookup"><span data-stu-id="8fa43-105">The following example uses <xref:System.Linq.Enumerable.ToArray%2A> to immediately evaluate a query into an array and to get the third element.</span></span>  
+## <a name="example"></a><span data-ttu-id="886d8-104">例</span><span class="sxs-lookup"><span data-stu-id="886d8-104">Example</span></span>  
+ <span data-ttu-id="886d8-105">次の例では、<xref:System.Linq.Enumerable.ToArray%2A> を使用して、クエリを直ちに配列に評価し、3 番目の要素を取得します。</span><span class="sxs-lookup"><span data-stu-id="886d8-105">The following example uses <xref:System.Linq.Enumerable.ToArray%2A> to immediately evaluate a query into an array and to get the third element.</span></span>  
   
  [!code-csharp[DLinqQueryExamples#44](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#44)]
  [!code-vb[DLinqQueryExamples#44](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#44)]  
   
-## <a name="see-also"></a><span data-ttu-id="8fa43-106">参照</span><span class="sxs-lookup"><span data-stu-id="8fa43-106">See Also</span></span>  
- [<span data-ttu-id="8fa43-107">クエリの例</span><span class="sxs-lookup"><span data-stu-id="8fa43-107">Query Examples</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/query-examples.md)
+## <a name="see-also"></a><span data-ttu-id="886d8-106">関連項目</span><span class="sxs-lookup"><span data-stu-id="886d8-106">See Also</span></span>  
+ [<span data-ttu-id="886d8-107">クエリの例</span><span class="sxs-lookup"><span data-stu-id="886d8-107">Query Examples</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/query-examples.md)

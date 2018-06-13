@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33213247"
 ---
 # <a name="how-to-concatenate-multiple-strings-c-guide"></a><span data-ttu-id="ad3b2-104">方法: 複数の文字列を連結する (C# ガイド)</span><span class="sxs-lookup"><span data-stu-id="ad3b2-104">How to: Concatenate Multiple Strings (C# Guide)</span></span>
 

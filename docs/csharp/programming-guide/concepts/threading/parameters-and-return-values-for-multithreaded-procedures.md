@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33340217"
 ---
 # <a name="parameters-and-return-values-for-multithreaded-procedures-c"></a><span data-ttu-id="1572f-102">マルチスレッド プロシージャのパラメーターと戻り値 (C#)</span><span class="sxs-lookup"><span data-stu-id="1572f-102">Parameters and Return Values for Multithreaded Procedures (C#)</span></span>
 <span data-ttu-id="1572f-103">マルチスレッド アプリケーションでの値の受け渡しは複雑です。それは、引数を受け取らず値を返さないプロシージャへの参照をスレッド クラスのコンストラクターに渡す必要があるためです。</span><span class="sxs-lookup"><span data-stu-id="1572f-103">Supplying and returning values in a multithreaded application is complicated because the constructor for the thread class must be passed a reference to a procedure that takes no arguments and returns no value.</span></span> <span data-ttu-id="1572f-104">以下のセクションでは、異なるスレッドのプロシージャからパラメーターを指定して値を返す単純な方法を示します。</span><span class="sxs-lookup"><span data-stu-id="1572f-104">The following sections show some simple ways to supply parameters and return values from procedures on separate threads.</span></span>  

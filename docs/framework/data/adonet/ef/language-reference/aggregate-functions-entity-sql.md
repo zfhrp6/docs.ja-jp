@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32765582"
 ---
 # <a name="aggregate-functions-entity-sql"></a><span data-ttu-id="72403-102">集計関数 (Entity SQL)</span><span class="sxs-lookup"><span data-stu-id="72403-102">Aggregate Functions (Entity SQL)</span></span>
 <span data-ttu-id="72403-103">集計は、コレクションをグループ操作の一部としてスカラーに圧縮する言語構成要素です。</span><span class="sxs-lookup"><span data-stu-id="72403-103">An aggregate is a language construct that condenses a collection into a scalar as a part of a group operation.</span></span> [!INCLUDE[esql](../../../../../../includes/esql-md.md)]<span data-ttu-id="72403-104"> 集計には次の 2 つの形式があります。</span><span class="sxs-lookup"><span data-stu-id="72403-104"> aggregates come in two forms:</span></span>  

@@ -8,6 +8,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33357343"
 ---
 # <a name="classes-and-objects"></a><span data-ttu-id="d3a49-104">クラスとオブジェクト</span><span class="sxs-lookup"><span data-stu-id="d3a49-104">Classes and objects</span></span>
 

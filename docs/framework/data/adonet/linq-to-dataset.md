@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32764854"
 ---
 # <a name="linq-to-dataset"></a><span data-ttu-id="8fc0f-102">LINQ to DataSet</span><span class="sxs-lookup"><span data-stu-id="8fc0f-102">LINQ to DataSet</span></span>
 [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]<span data-ttu-id="8fc0f-103"> は、<xref:System.Data.DataSet> オブジェクトにキャッシュされたデータに対するクエリをより簡単に、より高速にします。</span><span class="sxs-lookup"><span data-stu-id="8fc0f-103"> makes it easier and faster to query over data cached in a <xref:System.Data.DataSet> object.</span></span> <span data-ttu-id="8fc0f-104">具体的には、[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]を個別のクエリ言語を使用して、クエリの代わりにプログラミング言語そのものを記述する開発者を有効にしてクエリを簡素化します。</span><span class="sxs-lookup"><span data-stu-id="8fc0f-104">Specifically, [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] simplifies querying by enabling developers to write queries from the programming language itself, instead of by using a separate query language.</span></span> <span data-ttu-id="8fc0f-105">これは、Visual Studio 開発者も、利用できるよう、コンパイル時の構文チェック、静的な型指定、および IntelliSense サポートがクエリで Visual Studio によって提供されるに特に便利です。</span><span class="sxs-lookup"><span data-stu-id="8fc0f-105">This is especially useful for Visual Studio developers, who can now take advantage of the compile-time syntax checking, static typing, and IntelliSense support provided by the Visual Studio in their queries.</span></span>  

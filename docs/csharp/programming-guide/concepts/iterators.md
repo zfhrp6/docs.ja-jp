@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33338872"
 ---
 # <a name="iterators-c"></a><span data-ttu-id="e7c62-102">反復子 (C#)</span><span class="sxs-lookup"><span data-stu-id="e7c62-102">Iterators (C#)</span></span>
 <span data-ttu-id="e7c62-103">*反復子*を使用して、リストや配列などのコレクションをステップ実行することができます。</span><span class="sxs-lookup"><span data-stu-id="e7c62-103">An *iterator* can be used to step through collections such as lists and arrays.</span></span>  

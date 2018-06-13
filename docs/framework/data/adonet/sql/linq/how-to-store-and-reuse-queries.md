@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33360139"
 ---
 # <a name="how-to-store-and-reuse-queries"></a><span data-ttu-id="62c0c-102">方法 : クエリを格納および再利用する</span><span class="sxs-lookup"><span data-stu-id="62c0c-102">How to: Store and Reuse Queries</span></span>
 <span data-ttu-id="62c0c-103">同じ構造のクエリを何回も実行するアプリケーションでは、1 回コンパイルしたクエリを、パラメーターを変えて何回も実行する方が、多くの場合にパフォーマンスを向上できます。</span><span class="sxs-lookup"><span data-stu-id="62c0c-103">When you have an application that executes structurally similar queries many times, you can often increase performance by compiling the query one time and executing it several times with different parameters.</span></span> <span data-ttu-id="62c0c-104">たとえば、特定の市に住むすべての顧客を取得するアプリケーションで、ユーザーが、対象の市を実行時にフォームで指定するとします。</span><span class="sxs-lookup"><span data-stu-id="62c0c-104">For example, an application might have to retrieve all the customers who are in a particular city, where the city is specified at runtime by the user in a form.</span></span> [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]<span data-ttu-id="62c0c-105"> はこの目的のために *コンパイル済みクエリ* の使用をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="62c0c-105"> supports the use of *compiled queries* for this purpose.</span></span>  

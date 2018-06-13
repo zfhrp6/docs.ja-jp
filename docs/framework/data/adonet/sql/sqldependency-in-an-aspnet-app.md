@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33363365"
 ---
 # <a name="sqldependency-in-an-aspnet-application"></a><span data-ttu-id="6fce6-102">ASP.NET アプリケーションでの SqlDependency</span><span class="sxs-lookup"><span data-stu-id="6fce6-102">SqlDependency in an ASP.NET Application</span></span>
 <span data-ttu-id="6fce6-103">ここでは、ASP.NET の <xref:System.Data.SqlClient.SqlDependency> オブジェクトを使用して、<xref:System.Web.Caching.SqlCacheDependency> を間接的に使用する方法の例を示します。</span><span class="sxs-lookup"><span data-stu-id="6fce6-103">The example in this section shows how to use <xref:System.Data.SqlClient.SqlDependency> indirectly by leveraging the ASP.NET <xref:System.Web.Caching.SqlCacheDependency> object.</span></span> <span data-ttu-id="6fce6-104"><xref:System.Web.Caching.SqlCacheDependency> オブジェクトでは <xref:System.Data.SqlClient.SqlDependency> を使用して通知をリッスンし、キャッシュを適切に更新します。</span><span class="sxs-lookup"><span data-stu-id="6fce6-104">The <xref:System.Web.Caching.SqlCacheDependency> object uses a <xref:System.Data.SqlClient.SqlDependency> to listen for notifications and correctly update the cache.</span></span>  

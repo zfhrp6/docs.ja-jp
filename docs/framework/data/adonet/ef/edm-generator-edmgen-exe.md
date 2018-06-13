@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32766271"
 ---
 # <a name="edm-generator-edmgenexe"></a><span data-ttu-id="4274f-102">EDM ジェネレーター (EdmGen.exe)</span><span class="sxs-lookup"><span data-stu-id="4274f-102">EDM Generator (EdmGen.exe)</span></span>
 <span data-ttu-id="4274f-103">EdmGen.exe は、[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] モデルとマッピング ファイルを操作するためのコマンドライン ツールです。</span><span class="sxs-lookup"><span data-stu-id="4274f-103">EdmGen.exe is a command-line tool used for working with [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] model and mapping files.</span></span> <span data-ttu-id="4274f-104">EdmGen.exe ツールを使用すると、次の操作を行うことができます。</span><span class="sxs-lookup"><span data-stu-id="4274f-104">You can use the EdmGen.exe tool to do the following:</span></span>  

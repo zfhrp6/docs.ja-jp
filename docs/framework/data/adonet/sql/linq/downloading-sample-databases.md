@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33359677"
 ---
 # <a name="downloading-sample-databases"></a><span data-ttu-id="cdba3-102">サンプル データベースのダウンロード</span><span class="sxs-lookup"><span data-stu-id="cdba3-102">Downloading Sample Databases</span></span>
 <span data-ttu-id="cdba3-103">[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] のドキュメントに収録されている多数のサンプルとチュートリアルでは、Northwind サンプル データベースと SQL Server Express Edition が使用されています。</span><span class="sxs-lookup"><span data-stu-id="cdba3-103">A number of samples and walkthroughs in the [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] documentation use the Northwind sample database and SQL Server Express Edition.</span></span> <span data-ttu-id="cdba3-104">これらの製品は、Microsoft のダウンロード サイトから無料でダウンロードできます。</span><span class="sxs-lookup"><span data-stu-id="cdba3-104">You can download these products free of charge from the Microsoft download site.</span></span>  

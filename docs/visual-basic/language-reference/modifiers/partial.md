@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33604615"
 ---
 # <a name="partial-visual-basic"></a><span data-ttu-id="2f00b-102">Partial (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="2f00b-102">Partial (Visual Basic)</span></span>
 <span data-ttu-id="2f00b-103">型宣言が、型の部分定義であることを示します。</span><span class="sxs-lookup"><span data-stu-id="2f00b-103">Indicates that a type declaration is a partial definition of the type.</span></span>  

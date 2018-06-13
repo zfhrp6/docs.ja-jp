@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33355176"
 ---
 # <a name="systemobject-methods"></a><span data-ttu-id="12440-102">System.Object メソッド</span><span class="sxs-lookup"><span data-stu-id="12440-102">System.Object Methods</span></span>
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]<span data-ttu-id="12440-103"> 次のサポート<xref:System.Object>メソッドです。</span><span class="sxs-lookup"><span data-stu-id="12440-103"> supports the following <xref:System.Object> methods.</span></span>  

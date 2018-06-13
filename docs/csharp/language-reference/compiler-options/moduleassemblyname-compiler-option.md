@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33217231"
 ---
 # <a name="-moduleassemblyname-c-compiler-option"></a><span data-ttu-id="19963-102">-moduleassemblyname (C# コンパイラ オプション)</span><span class="sxs-lookup"><span data-stu-id="19963-102">-moduleassemblyname (C# Compiler Option)</span></span>
 <span data-ttu-id="19963-103">.netmodule がアクセスできる非パブリック型のアセンブリを指定します。</span><span class="sxs-lookup"><span data-stu-id="19963-103">Specifies an assembly whose non-public types a .netmodule can access.</span></span>  

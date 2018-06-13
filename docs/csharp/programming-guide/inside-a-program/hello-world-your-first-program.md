@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33339171"
 ---
 # <a name="hello-world----your-first-program-c-programming-guide"></a><span data-ttu-id="bb3d8-102">Hello World -- 最初のプログラム (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="bb3d8-102">Hello World -- Your First Program (C# Programming Guide)</span></span>
 <span data-ttu-id="bb3d8-103">次の手順では、従来の "Hello World!" プログラムの C# バージョンを</span><span class="sxs-lookup"><span data-stu-id="bb3d8-103">The following procedure creates a C# version of the traditional "Hello World!"</span></span> <span data-ttu-id="bb3d8-104">作成します。</span><span class="sxs-lookup"><span data-stu-id="bb3d8-104">program.</span></span> <span data-ttu-id="bb3d8-105">このプログラムでは `Hello World!` という文字列を表示します。</span><span class="sxs-lookup"><span data-stu-id="bb3d8-105">The program displays the string `Hello World!`</span></span>  

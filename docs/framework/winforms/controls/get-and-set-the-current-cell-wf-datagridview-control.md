@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33527548"
 ---
 # <a name="how-to-get-and-set-the-current-cell-in-the-windows-forms-datagridview-control"></a><span data-ttu-id="b76e9-102">方法 : Windows フォーム DataGridView コントロールの現在のセルを取得および設定する</span><span class="sxs-lookup"><span data-stu-id="b76e9-102">How to: Get and Set the Current Cell in the Windows Forms DataGridView Control</span></span>
 <span data-ttu-id="b76e9-103">対話、<xref:System.Windows.Forms.DataGridView>多くの場合、ことをプログラムによって検出されるセルが現在アクティブなが必要です。</span><span class="sxs-lookup"><span data-stu-id="b76e9-103">Interaction with the <xref:System.Windows.Forms.DataGridView> often requires that you programmatically discover which cell is currently active.</span></span> <span data-ttu-id="b76e9-104">また、現在のセルを変更する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b76e9-104">You may also need to change the current cell.</span></span> <span data-ttu-id="b76e9-105">これらのタスクを行うことができます、<xref:System.Windows.Forms.DataGridView.CurrentCell%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="b76e9-105">You can perform these tasks with the <xref:System.Windows.Forms.DataGridView.CurrentCell%2A> property.</span></span>  

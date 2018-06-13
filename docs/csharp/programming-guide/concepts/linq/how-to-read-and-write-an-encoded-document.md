@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33317159"
 ---
 # <a name="how-to-read-and-write-an-encoded-document-c"></a><span data-ttu-id="7c923-102">方法: エンコードされたドキュメントを読み書きする (C#)</span><span class="sxs-lookup"><span data-stu-id="7c923-102">How to: Read and Write an Encoded Document (C#)</span></span>
 <span data-ttu-id="7c923-103">エンコードされた XML ドキュメントを作成するには、<xref:System.Xml.Linq.XDeclaration> を XML ツリーに追加し、エンコーディングを目的のコード ページ名に設定します。</span><span class="sxs-lookup"><span data-stu-id="7c923-103">To create an encoded XML document, you add an <xref:System.Xml.Linq.XDeclaration> to the XML tree, setting the encoding to the desired code page name.</span></span>  

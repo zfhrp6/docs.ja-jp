@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33339424"
 ---
 # <a name="sample-xml-file-typical-purchase-order-linq-to-xml"></a><span data-ttu-id="fa196-102">サンプル XML ファイル : 一般的な購買発注書 (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="fa196-102">Sample XML File: Typical Purchase Order (LINQ to XML)</span></span>
 <span data-ttu-id="fa196-103">次の XML ファイルは、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] ドキュメントのさまざまな例で使用されます。</span><span class="sxs-lookup"><span data-stu-id="fa196-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="fa196-104">このファイルは、一般的な購買発注書です。</span><span class="sxs-lookup"><span data-stu-id="fa196-104">This file is a typical purchase order.</span></span>  

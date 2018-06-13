@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32764620"
 ---
 # <a name="-or-entity-sql"></a><span data-ttu-id="67390-102">|| (OR) (Entity SQL)</span><span class="sxs-lookup"><span data-stu-id="67390-102">|| (OR) (Entity SQL)</span></span>
 <span data-ttu-id="67390-103">2 つの `Boolean` 式を結合します。</span><span class="sxs-lookup"><span data-stu-id="67390-103">Combines two `Boolean` expressions.</span></span>  

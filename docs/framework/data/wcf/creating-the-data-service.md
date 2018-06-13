@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33362838"
 ---
 # <a name="creating-the-data-service"></a><span data-ttu-id="fe17e-102">データ サービスの作成</span><span class="sxs-lookup"><span data-stu-id="fe17e-102">Creating the Data Service</span></span>
 <span data-ttu-id="fe17e-103">このタスクを使用するサンプル データ サービスを作成する[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]を公開する、 [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] Northwind サンプル データベースに基づいているフィード。</span><span class="sxs-lookup"><span data-stu-id="fe17e-103">In this task, you will create a sample data service that uses [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] to expose an [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] feed that is based on the Northwind sample database.</span></span> <span data-ttu-id="fe17e-104">このタスクに必要な基本手順は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="fe17e-104">The task involves the following basic steps:</span></span>  

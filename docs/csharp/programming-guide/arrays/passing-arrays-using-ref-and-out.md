@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33313571"
 ---
 # <a name="passing-arrays-using-ref-and-out-c-programming-guide"></a><span data-ttu-id="6c982-102">ref と out を使用した配列の引き渡し (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="6c982-102">Passing Arrays Using ref and out (C# Programming Guide)</span></span>
 <span data-ttu-id="6c982-103">すべての [out](../../../csharp/language-reference/keywords/out-parameter-modifier.md) パラメーターと同じように、配列型の `out` パラメーターも使用する前に代入される必要があります。つまり、呼び出される側で代入する必要があります。</span><span class="sxs-lookup"><span data-stu-id="6c982-103">Like all [out](../../../csharp/language-reference/keywords/out-parameter-modifier.md) parameters, an `out` parameter of an array type must be assigned before it is used; that is, it must be assigned by the callee.</span></span> <span data-ttu-id="6c982-104">例:</span><span class="sxs-lookup"><span data-stu-id="6c982-104">For example:</span></span>  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33339528"
 ---
 # <a name="statements-c-programming-guide"></a><span data-ttu-id="b7641-102">ステートメント (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="b7641-102">Statements (C# Programming Guide)</span></span>
 <span data-ttu-id="b7641-103">プログラムが実行する処理は、ステートメントとして表されます。</span><span class="sxs-lookup"><span data-stu-id="b7641-103">The actions that a program takes are expressed in statements.</span></span> <span data-ttu-id="b7641-104">一般的な処理には、変数の宣言、値の代入、メソッドの呼び出し、コレクションに対するループ処理、条件に応じたコード ブロックへの分岐などがあります。</span><span class="sxs-lookup"><span data-stu-id="b7641-104">Common actions include declaring variables, assigning values, calling methods, looping through collections, and branching to one or another block of code, depending on a given condition.</span></span> <span data-ttu-id="b7641-105">プログラム内でステートメントが実行される順序は、制御フローまたは実行フローと呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="b7641-105">The order in which statements are executed in a program is called the flow of control or flow of execution.</span></span> <span data-ttu-id="b7641-106">制御フローは、実行時に渡された入力に対するプログラムの応答に応じて、プログラムを実行するたびに変わる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="b7641-106">The flow of control may vary every time that a program is run, depending on how the program reacts to input that it receives at run time.</span></span>  

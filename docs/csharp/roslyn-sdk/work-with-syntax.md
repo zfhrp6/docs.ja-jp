@@ -8,6 +8,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33353300"
 ---
 # <a name="work-with-syntax"></a><span data-ttu-id="9fed5-103">構文の使用</span><span class="sxs-lookup"><span data-stu-id="9fed5-103">Work with syntax</span></span>
 
