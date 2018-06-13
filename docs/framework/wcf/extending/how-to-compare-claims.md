@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33489084"
 ---
 # <a name="how-to-compare-claims"></a>方法 : クレームを比較する
 Id モデル インフラストラクチャでは、Windows Communication Foundation (WCF) を使用して、承認の確認を実行できます。 この場合、一般的なタスクとして、承認コンテキスト内のクレームが、要求されたアクションの実行や要求されたリソースへのアクセスに必要なクレームと比較されます。 このトピックでは、組み込みとカスタム クレームの型を含め、クレームの比較方法について説明します。 Id モデル インフラストラクチャの詳細については、次を参照してください。[管理クレームと Id モデル承認](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md)です。  

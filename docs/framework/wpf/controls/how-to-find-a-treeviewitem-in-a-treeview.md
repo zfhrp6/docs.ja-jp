@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33554756"
 ---
 # <a name="how-to-find-a-treeviewitem-in-a-treeview"></a>方法: TreeView で TreeViewItem を検索する
 <xref:System.Windows.Controls.TreeView>コントロールには、階層データを表示する便利な手段が用意されています。 場合、<xref:System.Windows.Controls.TreeView>は、データ ソースにバインドされて、<xref:System.Windows.Controls.TreeView.SelectedItem%2A>プロパティは、選択したデータ オブジェクトを迅速に取得するための便利な方法を提供します。 通常、基になるデータ オブジェクトを使用する最適な場合がありますがする必要しますが、ありますプログラムで操作を含むデータの<xref:System.Windows.Controls.TreeViewItem>します。 たとえば、プログラムを展開する必要があります、 <xref:System.Windows.Controls.TreeViewItem>、またはで別の項目を選択、<xref:System.Windows.Controls.TreeView>です。  

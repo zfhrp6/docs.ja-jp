@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33520189"
 ---
 # <a name="persistence-best-practices"></a>永続化のベスト プラクティス
 このドキュメントでは、ワークフローの永続化に関するワークフローのデザインと構成のベスト プラクティスについて説明します。  

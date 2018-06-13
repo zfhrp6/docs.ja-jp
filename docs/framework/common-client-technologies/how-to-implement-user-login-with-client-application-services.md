@@ -14,6 +14,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32743811"
 ---
 # <a name="how-to-implement-user-login-with-client-application-services"></a>方法: クライアント アプリケーション サービスでユーザーのログインを実装する
 クライアント アプリケーション サービスを使用して、既存の [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] プロファイル サービスを介してユーザーを検証できます。 [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] プロファイル サービスをセットアップする方法については、「[ASP.NET AJAX でのフォーム認証の使用](http://msdn.microsoft.com/library/c50f7dc5-323c-4c63-b4f3-96edfc1e815e)」を参照してください。  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33486506"
 ---
 # <a name="client-channel-level-programming"></a>クライアントのチャネル レベルのプログラミング
 このトピックを使用せずに Windows Communication Foundation (WCF) クライアント アプリケーションを記述する方法について説明、<xref:System.ServiceModel.ClientBase%601?displayProperty=nameWithType>クラスとその関連付けられたオブジェクト モデルです。  

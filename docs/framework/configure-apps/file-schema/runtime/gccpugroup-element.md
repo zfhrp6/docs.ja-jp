@@ -12,6 +12,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32744019"
 ---
 # <a name="ltgccpugroupgt-element"></a>&lt;GCCpuGroup&gt;要素
 ガベージ コレクションが複数の CPU グループをサポートするかどうかを指定します。  

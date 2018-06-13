@@ -18,6 +18,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32742901"
 ---
 # <a name="ltaddgt-element-for-authenticationmodules-network-settings"></a>&lt;追加&gt;authenticationModules (ネットワーク設定) の要素
 アプリケーションに認証モジュールを追加します。  
