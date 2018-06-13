@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33595093"
 ---
 # <a name="variable-39ltvariablenamegt39-hides-a-variable-in-an-enclosing-block"></a>変数&#39; &lt;variablename&gt; &#39;それを囲むブロック内の変数を非表示になります
 ブロックで囲まれた変数では、別のローカル変数と同じ名前を持っています。  

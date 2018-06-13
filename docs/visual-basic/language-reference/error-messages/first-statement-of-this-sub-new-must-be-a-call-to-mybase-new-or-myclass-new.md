@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33589461"
 ---
 # <a name="first-statement-of-this-39sub-new39-must-be-a-call-to-39mybasenew39-or-39myclassnew39-no-accessible-constructor-without-parameters"></a>この最初のステートメント&#39;Sub New&#39;への呼び出しをする必要があります&#39;トラクター&#39;または&#39;'mybase.new'&#39; (No アクセス可能なコンス トラクター パラメーターのない)
 この 'Sub New' の最初のステートメントが指定されて 'mybase.new' または 'myclass.new' への呼び出しをする必要があります基底クラス\<ベース名 >' の'\<derivedname >' は引数なしで呼び出せるアクセス可能な ' Sub New' がありません。  

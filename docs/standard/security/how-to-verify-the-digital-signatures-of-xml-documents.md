@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33590651"
 ---
 # <a name="how-to-verify-the-digital-signatures-of-xml-documents"></a>方法 : XML ドキュメントのデジタル署名を検証する
 <xref:System.Security.Cryptography.Xml> 名前空間にあるクラスを使用すると、デジタル署名で署名された XML データを検証できます。  XML デジタル署名 (XMLDSIG) を使用すると、データが署名後に変更されなかったことを確認できます。  XMLDSIG 標準の詳細についてにある World Wide Web Consortium (W3C) 仕様を参照してhttp://www.w3.org/TR/xmldsig-core/です。  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33586361"
 ---
 # <a name="39ltkeywordgt39-is-valid-only-within-an-instance-method"></a>&#39;&lt;キーワード&gt;&#39;はインスタンス メソッド内でのみ有効です
 `Me`、 `MyClass`、および`MyBase`キーワードは、特定のクラスのインスタンスを参照してください。 共有内には使用できません`Function`または`Sub`プロシージャです。  

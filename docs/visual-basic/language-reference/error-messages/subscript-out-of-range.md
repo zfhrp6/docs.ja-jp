@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33594268"
 ---
 # <a name="subscript-out-of-range-visual-basic"></a>インデックスが有効範囲にありません。 (Visual Basic)
 許容範囲外になるために、配列の添字が正しくありません。 ディメンションの添字の最小値は常に 0、および最上位の添字の値がによって返される、`GetUpperBound`そのディメンションのメソッドです。  

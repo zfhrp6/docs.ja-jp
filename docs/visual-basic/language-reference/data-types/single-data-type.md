@@ -25,6 +25,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33590786"
 ---
 # <a name="single-data-type-visual-basic"></a>単精度浮動小数点型 (Single) (Visual Basic)
 IEEE 32 ビット (4 バイト) の単精度浮動小数点数が 3.4028235 e + 38 までの値の範囲の符号付き - 1.401298E を通じて-1.401298E と負の値の 45-から 3.4028235 e + 38 正の値の 45。 単精度の数値は、実数の概算値を格納します。  

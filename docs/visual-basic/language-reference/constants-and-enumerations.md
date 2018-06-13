@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33591743"
 ---
 # <a name="constants-and-enumerations-visual-basic"></a>定数と列挙型 (Visual Basic)
 Visual Basic では、定義済みの定数と開発者の列挙体の数を指定します。 定数は、アプリケーションの実行全体で一定の値を格納します。 一連の関連する定数を操作する場合や、定数値に名前を関連付ける場合は、列挙型を使うと便利です。  

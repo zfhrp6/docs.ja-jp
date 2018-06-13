@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33592140"
 ---
 # <a name="how-to-display-item-headers-in-a-datarepeater-control-visual-studio"></a>方法 : DataRepeater コントロールに項目ヘッダーを表示する (Visual Studio)
 項目のヘッダー、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>コントロールに視覚インジケーターが用意されて ときに、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeaterItem>が選択されています。 ときに、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.LayoutStyle%2A>プロパティに設定されている<xref:Microsoft.VisualBasic.PowerPacks.DataRepeaterLayoutStyles.Vertical>(既定)、各項目の左側に項目ヘッダーが表示されます。 ときに、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.LayoutStyle%2A>プロパティに設定されている<xref:Microsoft.VisualBasic.PowerPacks.DataRepeaterLayoutStyles.Horizontal>、各項目の上部にある項目ヘッダーが表示されます。  
