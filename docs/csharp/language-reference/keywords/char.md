@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33219220"
 ---
 # <a name="char-c-reference"></a><span data-ttu-id="b76cb-102">char (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="b76cb-102">char (C# Reference)</span></span>
 <span data-ttu-id="b76cb-103">`char` キーワードは、Unicode 文字を表すために .NET Framework によって使用される <xref:System.Char?displayProperty=nameWithType> 構造体のインスタンスを宣言するときに使用されます。</span><span class="sxs-lookup"><span data-stu-id="b76cb-103">The `char` keyword is used to declare an instance of the <xref:System.Char?displayProperty=nameWithType> structure that the .NET Framework uses to represent a Unicode character.</span></span> <span data-ttu-id="b76cb-104">`Char` オブジェクトの値は、16 ビット数 (序数) 値です。</span><span class="sxs-lookup"><span data-stu-id="b76cb-104">The value of a `Char` object is a 16-bit numeric (ordinal) value.</span></span>  

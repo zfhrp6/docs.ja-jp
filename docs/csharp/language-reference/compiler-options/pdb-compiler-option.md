@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33217429"
 ---
 # <a name="-pdb-c-compiler-options"></a><span data-ttu-id="10e5d-102">-pdb (C# コンパイラ オプション)</span><span class="sxs-lookup"><span data-stu-id="10e5d-102">-pdb (C# Compiler Options)</span></span>
 <span data-ttu-id="10e5d-103">**-pdb** コンパイラ オプションは、デバッグ シンボル ファイルの場所と名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="10e5d-103">The **-pdb** compiler option specifies the name and location of the debug symbols file.</span></span>  

@@ -15,6 +15,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32752274"
 ---
 # <a name="ltalwaysflowimpersonationpolicygt-element"></a><span data-ttu-id="e077c-102">&lt;alwaysFlowImpersonationPolicy&gt;要素</span><span class="sxs-lookup"><span data-stu-id="e077c-102">&lt;alwaysFlowImpersonationPolicy&gt; Element</span></span>
 <span data-ttu-id="e077c-103">偽装の実行方法に関係なく、Windows ID が常に非同期ポイント間でフローすることを指定します。</span><span class="sxs-lookup"><span data-stu-id="e077c-103">Specifies that the Windows identity always flows across asynchronous points, regardless of how impersonation was performed.</span></span>  

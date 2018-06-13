@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33217644"
 ---
 # <a name="organizing-and-testing-projects-with-the-net-core-command-line"></a><span data-ttu-id="4521d-103">.NET Core コマンド ラインを使用したプロジェクトの整理およびテスト</span><span class="sxs-lookup"><span data-stu-id="4521d-103">Organizing and testing projects with the .NET Core command line</span></span>
 

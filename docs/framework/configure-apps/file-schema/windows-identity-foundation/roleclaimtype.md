@@ -9,6 +9,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32755189"
 ---
 # <a name="ltroleclaimtypegt"></a><span data-ttu-id="d644f-102">&lt;roleClaimType&gt;</span><span class="sxs-lookup"><span data-stu-id="d644f-102">&lt;roleClaimType&gt;</span></span>
 <span data-ttu-id="d644f-103">クレームを定義する、ロールの種類のコレクション内の要求の種類を指定<xref:System.Security.Claims.ClaimsIdentity>によって返されるオブジェクト、<xref:System.IdentityModel.Tokens.SecurityTokenHandler.ValidateToken%2A>トークン ハンドラーのメソッドです。</span><span class="sxs-lookup"><span data-stu-id="d644f-103">Specifies the claim type that defines the role type claims in the collection of <xref:System.Security.Claims.ClaimsIdentity> objects returned by the <xref:System.IdentityModel.Tokens.SecurityTokenHandler.ValidateToken%2A> method of the token handler.</span></span>  
