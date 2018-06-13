@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33539634"
 ---
 # <a name="how-to-link-to-an-object-or-web-page-with-the-windows-forms-linklabel-control"></a>方法 : Windows フォーム LinkLabel コントロールでオブジェクトまたは Web ページにリンクする
 Windows フォーム<xref:System.Windows.Forms.LinkLabel>コントロールでは、フォーム上で Web スタイルのリンクを作成することができます。 リンクがクリックされたときに、リンクが参照されたを示すためにその色を変更できます。 色の変更の詳細については、次を参照してください。[する方法: Windows フォーム LinkLabel コントロールの外観を変更](../../../../docs/framework/winforms/controls/how-to-change-the-appearance-of-the-windows-forms-linklabel-control.md)です。  

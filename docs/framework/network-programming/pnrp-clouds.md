@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33393843"
 ---
 # <a name="pnrp-clouds"></a>PNRP クラウド
 PNRP "クラウド" は、ネットワーク経由で相互に通信できるノードのセットを表します。 "クラウド" という用語は、"ピア メッシュ" や "ピアツーピア グラフ" と同義です。  

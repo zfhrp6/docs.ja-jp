@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33542754"
 ---
 # <a name="how-to-determine-whether-a-freezable-is-frozen"></a>方法 : Freezable が固定されているかどうかを判別する
 この例を決める方法を説明するかどうか、<xref:System.Windows.Freezable>オブジェクトが固定されています。 固定された変更を行う場合<xref:System.Windows.Freezable>オブジェクトをスロー、<xref:System.InvalidOperationException>です。 この例外がスローされることを避けるためを使用して、<xref:System.Windows.Freezable.IsFrozen%2A>のプロパティ、<xref:System.Windows.Freezable>が固定されているかどうかを決定するオブジェクト。  

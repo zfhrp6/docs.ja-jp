@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33394421"
 ---
 # <a name="performance-counters-in-the-net-framework"></a>.NET Framework のパフォーマンス カウンター
 このトピックでは、[パフォーマンス モニター](http://technet.microsoft.com/library/cc749249.aspx)で参照できるパフォーマンス カウンターの一覧を示します。  

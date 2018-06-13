@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33364006"
 ---
 # <a name="accessing-the-service-from-a-web-browser-wcf-data-services-quickstart"></a>Web ブラウザーからサービスへのアクセス (WCF Data Services クイックスタート)
 このタスクでは、Visual Studio から [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] を開始し、必要に応じて Web ブラウザーでのフィード読み取りを無効にします。 サービス定義ドキュメントを取得するだけでなく公開されているリソースを Web ブラウザーから HTTP GET 要求を送信することでデータ サービス リソースにアクセスします。  

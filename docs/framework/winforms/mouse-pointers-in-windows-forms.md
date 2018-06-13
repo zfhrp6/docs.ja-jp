@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33539518"
 ---
 # <a name="mouse-pointers-in-windows-forms"></a>Windows フォームにおけるマウス ポインター
 マウス*ポインター*マウスを使用してユーザー入力を画面のフォーカス ポイントを指定するビットマップは、そのカーソルと呼ばします。 このトピックでは、Windows フォームにおけるマウス ポインターの概要を説明し、変更およびマウス ポインターを制御する方法をいくつかについて説明します。  

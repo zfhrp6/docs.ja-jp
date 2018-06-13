@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33362186"
 ---
 # <a name="data-types-and-functions"></a>データ型と関数
 次の表の各トピックでは、共通言語ランタイム (CLR) のメンバー、コンストラクト、およびキャストに対する LINQ to SQL でのサポートについて説明します。 サポートされているメンバーおよびコンストラクトは、LINQ to SQL クエリで使用できます。  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33640558"
 ---
 # <a name="specified-registry-path-does-not-start-with-a-valid-hive-name"></a>指定されたレジストリ パスには、先頭に有効なハイブ名がありません
 指定されたレジストリ パスには、先頭に正しいハイブ名がありません。 正しいハイブ名は、以下のとおりです。  

@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33393725"
 ---
 # <a name="releasehandlefailed-mda"></a>releaseHandleFailed MDA
 `releaseHandleFailed` マネージ デバッグ アシスタント (MDA) は、<xref:System.Runtime.InteropServices.SafeHandle> または <xref:System.Runtime.InteropServices.CriticalHandle> から派生するクラスの <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> メソッドが `false` を返すときに、開発者に通知するためにアクティブ化されます。  

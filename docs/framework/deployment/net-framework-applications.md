@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33391652"
 ---
 # <a name="deploying-net-framework-applications"></a>.NET Framework アプリケーションの配置
 .NET Framework ドキュメントの本セクションでは、アセンブリの読み込み、アセンブリ参照の解決、およびネイティブ イメージの生成を使用したアプリケーションのパフォーマンス向上のためのガイドラインなど、.NET Framework アプリケーションを配置するための重要な情報を提供します。  

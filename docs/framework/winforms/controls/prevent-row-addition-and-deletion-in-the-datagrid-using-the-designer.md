@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33536665"
 ---
 # <a name="how-to-prevent-row-addition-and-deletion-in-the-windows-forms-datagridview-control-using-the-designer"></a>方法 : デザイナーを使用して Windows フォーム DataGridView コントロールで行が追加および削除されないようにする
 場合によっては、ユーザーが <xref:System.Windows.Forms.DataGridView> コントロールに新しいデータ行を入力したり、既存の行を削除したりできないようにする必要があります。 コントロールの下部にある新しいレコード用には、特別な行に新しい行を入力します。 行の追加を無効にすると、新しいレコードの行は表示されません。 ことができますし、コントロール完全に読み取り専用の行の削除、およびセルの編集を無効にするとします。  

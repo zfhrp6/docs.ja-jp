@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33638704"
 ---
 # <a name="specified-event-log-does-not-exist-on-this-machine"></a>指定したイベント ログは、このコンピューター上に存在しません
 このコンピューター上に存在しないイベント ログにアクセスしようとしました。  

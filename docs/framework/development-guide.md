@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33391099"
 ---
 # <a name="net-framework-development-guide"></a>.NET Framework の開発ガイド
 ここでは、.NET Framework アプリの作成、構成、デバッグ、保護、および配置を行う方法について説明します。 また、動的プログラミング、相互運用性、拡張性、メモリ管理、スレッド処理などの技術領域に関する情報も提供します。  

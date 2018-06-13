@@ -12,6 +12,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32742420"
 ---
 # <a name="how-to-disable-the-strong-name-bypass-feature"></a>方法 : 厳密な名前のバイパス機能を無効にする
 .NET Framework Version 3.5 Service Pack 1 (SP1) 以降、アセンブリが完全信頼の <xref:System.AppDomain> オブジェクト (`MyComputer` ゾーンに既定の <xref:System.AppDomain> など) に読み込まれている場合は、厳密な名前の署名の検証が行われなくなりました。 これは厳密な名前のバイパス機能と呼ばれます。 完全に信頼された環境では、<xref:System.Security.Permissions.StrongNameIdentityPermission> に対する完全に信頼された署名済みアセンブリの要求は、その署名に関係なく、常に成功します。 ゾーンは完全に信頼されているため、唯一の制限として、アセンブリは完全に信頼されている必要があります。 このような状況では厳密な名前は決定要因ではないため、これを検証する理由はありません。 厳密な名前の署名の検証をバイパスすることで、パフォーマンスが大幅に向上します。  

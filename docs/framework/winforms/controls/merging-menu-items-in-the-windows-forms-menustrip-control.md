@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33539790"
 ---
 # <a name="merging-menu-items-in-the-windows-forms-menustrip-control"></a>Windows フォームの MenuStrip コントロールへのメニュー項目のマージ
 マルチ ドキュメント インターフェイス (MDI) アプリケーションがある場合は、親フォームのメニューにメニュー項目や子フォーム全体のメニューをマージできます。  

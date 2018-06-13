@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33542862"
 ---
 # <a name="element-tree-and-serialization"></a>要素のツリーおよびシリアル化
 WPF プログラミングの各要素は、多くの場合、ある種の相互ツリー リレーションシップにあります。 たとえば、XAML で作成するアプリケーション UI は、オブジェクト ツリーとして概念化できます。 要素のツリーはさらに、論理ツリーとビジュアル ツリーという 2 つのツリーに分割できます。これらのツリーは異なるものですが、同時に並列関係である場合もありまます。 WPF でのシリアル化には、これら 2 つのツリーの状態およびアプリケーション状態の保存と、ファイル (通常は XAML) へのその書き込みが含まれます。  

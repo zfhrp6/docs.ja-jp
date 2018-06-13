@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33541873"
 ---
 # <a name="advanced-text-formatting"></a>テキストの高度な書式設定
 Windows Presentation Foundation (WPF) は、堅牢な一連の[!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)]アプリケーションにテキストを含めるためです。 レイアウトと[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)][!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)]など<xref:System.Windows.Controls.TextBlock>一般のテキスト表現の要素の使用を最も一般的な提供します。 描画[!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)]など<xref:System.Windows.Media.GlyphRunDrawing>と<xref:System.Windows.Media.FormattedText>図面に書式付きテキストを含めるための手段を提供します。 高度なレベルでは、一番[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]形式設定エンジンは、テキスト ストアの管理、実行テキスト書式管理、および埋め込みオブジェクトの管理などのテキストのプレゼンテーションのすべての側面を制御する、拡張可能なテキストを提供します。  

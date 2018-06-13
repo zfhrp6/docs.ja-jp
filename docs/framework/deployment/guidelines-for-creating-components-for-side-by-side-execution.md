@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33391034"
 ---
 # <a name="guidelines-for-creating-components-for-side-by-side-execution"></a>side-by-side 実行用のコンポーネントを作成するためのガイドライン
 side-by-side 実行用にデザインしたマネージ アプリケーションまたはマネージ コンポーネントを作成するときのガイドラインを次に示します。  

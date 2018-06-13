@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33391408"
 ---
 # <a name="deploying-the-net-framework"></a>.NET Framework の配置
 .NET Framework ドキュメントのこのセクションでは、アプリケーションとともに .NET Framework をインストールする開発者、およびネットワーク上で .NET Framework を展開する管理者に対して情報を提供します。 また、アクティベーション、配置に伴う再起動の問題、.NET Framework のインストールの進捗を監視する方法についても説明します。  

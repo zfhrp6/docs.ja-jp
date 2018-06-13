@@ -30,6 +30,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33396391"
 ---
 # <a name="introducing-pluggable-protocols"></a>プラグ可能なプロトコルの概要
 Microsoft .NET Framework は、アプリケーションにすばやく簡単に統合できる、複数層の拡張可能なインターネット サービスのマネージ実装を提供します。 <xref:System.Net> および <xref:System.Net.Sockets> の名前空間内のインターネット アクセス クラスは、Web ベース アプリケーションとインターネット ベース アプリケーションの両方を実装するために使用できます。  

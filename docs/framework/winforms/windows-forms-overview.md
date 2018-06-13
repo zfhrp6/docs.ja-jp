@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33541727"
 ---
 # <a name="windows-forms-overview"></a>Windows フォームの概要
 次の概要では、スマート クライアント アプリケーションの利点、Windows フォームのプログラミングの主な機能について説明し、Windows フォームを使用して今日の企業とエンドユーザーのニーズを満たすスマート クライアントを構築する方法を示します。  

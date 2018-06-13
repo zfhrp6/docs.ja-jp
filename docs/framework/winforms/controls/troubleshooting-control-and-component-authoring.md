@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33540980"
 ---
 # <a name="troubleshooting-control-and-component-authoring"></a>コントロールとコンポーネントの作成時のトラブルシューティング
 このトピックでは、コンポーネントとコントロールの開発時に発生する次の一般的な問題について説明します。 詳細については、「[コンポーネントによるプログラミング](http://msdn.microsoft.com/library/d4d4fcb4-e0b8-46b3-b679-7ee0026eb9e3)」を参照してください。  

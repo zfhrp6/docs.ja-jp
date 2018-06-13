@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33571509"
 ---
 # <a name="base-classes-for-implementing-abstractions"></a>抽象化の実装用の基本クラス
 厳密には、別のクラスがそこから派生したときに、クラスは、基本クラスになります。 このセクションの目的で、基本クラスが主に、共通の抽象化を指定するか、一部を再利用する他のクラスの既定の実装が継承に設計されたクラスです。 基本クラスは、通常、階層のルートに抽象化と下部にいくつかのカスタム実装の間の継承階層の途中で配置できます。  

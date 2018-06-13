@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33535842"
 ---
 # <a name="layout-in-windows-forms-controls"></a>Windows フォーム コントロールのレイアウト
 フォーム上のコントロールを正確に配置することは、多くのアプリケーションで優先度の高い作業です。 <xref:System.Windows.Forms?displayProperty=nameWithType>名前空間は、これを実現するさまざまなレイアウト ツールを提供します。  

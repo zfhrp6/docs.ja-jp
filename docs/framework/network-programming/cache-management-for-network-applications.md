@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33391678"
 ---
 # <a name="cache-management-for-network-applications"></a>ネットワーク アプリケーションのキャッシュ管理
 このトピックと関連するサブトピックでは、<xref:System.Net.WebClient>、<xref:System.Net.WebRequest>、<xref:System.Net.HttpWebRequest>、および <xref:System.Net.FtpWebRequest> クラスを使用して取得したリソースのキャッシュ処理について説明します。  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33395087"
 ---
 # <a name="how-to-get-interface-and-protocol-information"></a>方法: インターフェイス情報とプロトコル情報を取得する
 このサンプルでは、ネットワーク インターフェイスの TCP 統計情報を読み取る方法を示します。  

@@ -18,6 +18,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32742193"
 ---
 # <a name="ltcleargt-element-for-bypasslist-network-settings"></a>&lt;オフ&gt;bypasslist (ネットワーク設定) の要素
 プロキシ バイ パスの一覧をクリアします。  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33392292"
 ---
 # <a name="blittable-and-non-blittable-types"></a>Blittable 型と非 Blittable 型
 ほとんどのデータ型の表現はマネージ メモリとアンマネージ メモリの両方で共通しているため、相互運用マーシャラーによる特別な処理は必要ありません。 これらの型は、マネージ コードとアンマネージ コード間での受け渡しの際に変換が必要でないため、*blittable 型*と呼ばれます。  

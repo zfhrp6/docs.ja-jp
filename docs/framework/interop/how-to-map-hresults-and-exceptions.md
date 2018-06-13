@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33393550"
 ---
 # <a name="how-to-map-hresults-and-exceptions"></a>方法: HRESULT に例外を割り当てる
 COM メソッドでは、HRESULT を返してエラーを報告します。 .NET メソッドでは、例外をスローしてエラーを報告します。 ランタイムは、この 2 つの間の遷移を処理します。 .NET Framework の例外クラスはそれぞれ HRESULT に割り当てられます。  

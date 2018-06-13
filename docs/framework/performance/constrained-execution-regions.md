@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33394684"
 ---
 # <a name="constrained-execution-regions"></a>制約された実行領域
 制約された実行領域 (CER) は、信頼性のあるマネージ コードを作成するための機構の一部です。 CER は、領域内のコードが領域全体で実行されるのを防ぐ帯域外の例外を、共通言語ランタイム (CLR) がスローすることが制約された領域を定義します。 その領域内では、ユーザー コードは、帯域外の例外がスローされることになるコードの実行を制約されます。 <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A> メソッドは `try` ブロックの直前にある必要があります。このメソッドによって、`catch`、`finally`、`fault` の各ブロックが制約された実行領域としてマークされます。 制約された領域としてマークされると、コードは信頼性の高いコントラクトでのみ他のコードを呼び出す必要があります。また、コードは、エラーを処理する準備ができている場合を除き、準備されていないメソッドや信頼性のないメソッドの割り当てや仮想呼び出しを行うことはできません。 CLR は、CER で実行されるコードのスレッドの中止を遅らせます。  

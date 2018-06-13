@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33392945"
 ---
 # <a name="moduloobjecthashcode-mda"></a>moduloObjectHashcode MDA
 `moduloObjectHashcode` マネージ デバッグ アシスタント (MDA) は、<xref:System.Object.GetHashCode%2A> メソッドによって返されるハッシュ コードに対してモジュロ演算を実行するように、<xref:System.Object> クラスの動作を変更します。 この MDA の既定の係数は 1 であり、これにより <xref:System.Object.GetHashCode%2A> はすべてのオブジェクトに対して 0 を返すようになります。  

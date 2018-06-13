@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33390875"
 ---
 # <a name="invalidfunctionpointerindelegate-mda"></a>invalidFunctionPointerInDelegate MDA
 ネイティブ関数ポインターに対するデリゲートを作成するときに、無効な関数ポインターが渡されると、`invalidFunctionPointerInDelegate` マネージ デバッグ アシスタント (MDA) がアクティブ化されます。  

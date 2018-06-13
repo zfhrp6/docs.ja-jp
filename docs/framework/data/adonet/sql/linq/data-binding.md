@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33365171"
 ---
 # <a name="data-binding"></a>データ バインディング
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] グリッド コントロールなどのコモン コントロールにバインドをサポートします。 具体的には、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]データ グリッドへのバインドの表示と更新の両方に関して、マスター/詳細バインディングを処理するための基本的なパターンを定義します。  

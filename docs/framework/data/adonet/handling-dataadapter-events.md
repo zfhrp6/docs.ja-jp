@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32759154"
 ---
 # <a name="handling-dataadapter-events"></a>DataAdapter のイベント処理
 ADO.NET <xref:System.Data.Common.DataAdapter> は、データ ソースのデータに対して行われた変更に応答するときに使用できる 3 つのイベントを公開します。 `DataAdapter` のイベントを次の表に示します。  

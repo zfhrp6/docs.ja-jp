@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33395428"
 ---
 # <a name="how-to-set-cache-policy-for-a-request"></a>方法: 要求のキャッシュ ポリシーを設定する
 次の例では、要求のキャッシュ ポリシーの設定方法を示します。 入力の例は、http://www.contoso.com/ などの URI です。  

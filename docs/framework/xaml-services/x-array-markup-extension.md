@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33565014"
 ---
 # <a name="xarray-markup-extension"></a>x:Array のマークアップ拡張機能
 マークアップ拡張機能によって、XAML でのオブジェクトの配列には、一般的なサポートを提供します。 これに対応して、 `x:ArrayExtension` [MS-XAML] の XAML の型。  

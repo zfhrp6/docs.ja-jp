@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33639537"
 ---
 # <a name="the-file-is-currently-closed"></a>ファイルは現在閉じられています。
 ファイルが開いているときにのみ実行できる操作を実行しようとしますが、現在、ファイルは閉じられています。  

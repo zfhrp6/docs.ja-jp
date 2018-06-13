@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33391509"
 ---
 # <a name="passing-structures"></a>構造体の受け渡し
 多くのアンマネージ関数では、構造体のメンバー (Visual Basic ではユーザー定義型) またはマネージ コードで定義されたクラスのメンバーがパラメーターとして渡されることを期待しています。 プラットフォーム呼び出しを使って構造体またはクラスをアンマネージ コードに渡す場合は、元のレイアウトやアラインメントを保持するための追加情報を提供する必要があります。 このトピックでは、フォーマットされた型を定義するために使用する <xref:System.Runtime.InteropServices.StructLayoutAttribute> 属性について説明します。 マネージ構造体やマネージ クラスの場合は、**LayoutKind** 列挙型によって提供される想定されたレイアウト動作から選択できます。  

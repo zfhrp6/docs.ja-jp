@@ -18,9 +18,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: d0d9b8a9a1014d98c51f1471f8203be07f7ff49c
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33440958"
 ---
 # <a name="cornativelink-structure"></a>COR_NATIVE_LINK 構造体
 ネイティブ コードのリンクに使用される情報が含まれます。  

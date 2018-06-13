@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33393082"
 ---
 # <a name="loadfromcontext-mda"></a>loadFromContext MDA
 アセンブリが `LoadFrom` コンテキストに読み込まれると、`loadFromContext` マネージ デバッグ アシスタント (MDA) がアクティブになります。 このような状況は、<xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType> または他の同様のメソッドを呼び出した結果として発生する可能性があります。  

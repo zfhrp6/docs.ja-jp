@@ -16,6 +16,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32743902"
 ---
 # <a name="ltbypasslistgt-element-network-settings"></a>&lt;bypasslist&gt;要素 (ネットワーク設定)
 プロキシを使用しないアドレスを記述する正規表現のセットを提供します。  

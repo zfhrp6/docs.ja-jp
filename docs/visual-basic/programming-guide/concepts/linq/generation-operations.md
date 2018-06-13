@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33641810"
 ---
 # <a name="generation-operations-visual-basic"></a>生成操作 (Visual Basic)
 生成とは、値のシーケンスを新しく作成することを意味します。  

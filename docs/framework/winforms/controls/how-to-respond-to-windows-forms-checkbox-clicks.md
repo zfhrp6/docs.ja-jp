@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33539738"
 ---
 # <a name="how-to-respond-to-windows-forms-checkbox-clicks"></a>方法 : Windows フォーム CheckBox のクリックに応答する
 ユーザーが Windows フォームをクリックするたびに<xref:System.Windows.Forms.CheckBox>コントロール、<xref:System.Windows.Forms.Control.Click>イベントが発生します。 チェック ボックスの状態に応じていくつかの操作を実行するアプリケーションをプログラミングできます。  

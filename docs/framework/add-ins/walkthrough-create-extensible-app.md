@@ -18,6 +18,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32744825"
 ---
 # <a name="walkthrough-creating-an-extensible-application"></a>チュートリアル : 拡張性のあるアプリケーションの作成
 このチュートリアルでは、簡単な電卓の機能を実行するアドイン用のパイプラインを作成する方法について説明します。 実際のシナリオでは; は示しません代わりに、パイプラインとどのように追加のサービスを提供できるホストの基本機能を示します。  

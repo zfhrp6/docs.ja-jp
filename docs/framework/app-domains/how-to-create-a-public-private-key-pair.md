@@ -22,6 +22,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32741751"
 ---
 # <a name="how-to-create-a-public-private-key-pair"></a>方法: 公開キーと秘密キーのキー ペアを作成する
 アセンブリに厳密な名前で署名するには、公開/秘密キーの組み合わせが必要です。 このような公開キーと秘密キーからなる暗号鍵の組み合わせがコンパイル時に利用され、厳密な名前が付いたアセンブリが作成されます。 キーの組み合わせは[厳密名ツール (Sn.exe)](../../../docs/framework/tools/sn-exe-strong-name-tool.md) を利用して作成できます。 キー ペア ファイルには通常、.snk 拡張子が与えられます。  

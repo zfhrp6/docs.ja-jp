@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33389556"
 ---
 # <a name="com-interop-sample-com-client-and-net-server"></a>COM 相互運用機能のサンプル: COM クライアントおよび .NET サーバー
 [COM クライアント](#cpconcominteropsamplecomclientnetserveranchor1)と [.NET サーバー](#cpconcominteropsamplecomclientnetserveranchor2)を相互運用して、住宅ローンの計算を行うサンプルを次に示します。 この例では、クライアントはマネージ `Loan` クラスのインスタンスを作成して呼び出し、4 つの引数 (そのうち 1 つは 0) をこのインスタンスに渡し、計算結果を表示します。 このセクション全体で、このサンプルのコード例を使用します。  

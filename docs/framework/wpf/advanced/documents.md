@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33542965"
 ---
 # <a name="documents"></a>ドキュメント
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] には、多彩なアプリケーション開発コンポーネントが用意されており、開発者は、こうしたコンポーネントを使って、高度なドキュメント機能を備えた読みやすいアプリケーションを構築できます。 また、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] は、機能と品質の向上を実現するだけでなく、ドキュメントのパッケージ化、セキュリティ、および保存を対象としたシンプルな管理サービスも提供します。  

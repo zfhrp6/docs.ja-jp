@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33393186"
 ---
 # <a name="managed-extensibility-framework-mef"></a>MEF (Managed Extensibility Framework)
 ここでは、.NET Framework 4 で導入された Managed Extensibility Framework の概要を説明します。  

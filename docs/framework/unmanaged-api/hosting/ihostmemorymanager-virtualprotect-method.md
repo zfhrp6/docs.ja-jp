@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: bada01e910397adcf0fe59286d90774a0ab24ffa
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33439877"
 ---
 # <a name="ihostmemorymanagervirtualprotect-method"></a>IHostMemoryManager::VirtualProtect メソッド
 対応する Win32 関数の論理ラッパーとして機能します。 Win32 実装`VirtualProtect`呼び出しプロセスの仮想アドレス空間でコミットされたページの領域に保護を変更します。  

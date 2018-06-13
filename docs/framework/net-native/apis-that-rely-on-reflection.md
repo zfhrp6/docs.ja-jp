@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33392214"
 ---
 # <a name="apis-that-rely-on-reflection"></a>リフレクションに依存する API
 コード内でのリフレクションの使用は明確ではない場合があるため、[!INCLUDE[net_native](../../../includes/net-native-md.md)] ツール チェーンでは、実行時に必要なメタデータを保存しません。 このトピックでは、リフレクション API の一部であるとは見なされないが、正常に実行するためにリフレクションを必要とする、一般的な API と一般的なプログラミング パターンについて説明します。 これらをソース コードで使用している場合、これらに関する情報をランタイム ディレクティブ (.rd.xml) ファイルに追加して、これらの API を呼び出しても [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) 例外やその他の例外が実行時にスローされないようにできます。  

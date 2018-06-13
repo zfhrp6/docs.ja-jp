@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33541142"
 ---
 # <a name="windows-forms-control-development-basics"></a>Windows フォーム コントロール開発の基本概念
 Windows フォーム コントロールから直接または間接的に派生したクラスは、<xref:System.Windows.Forms.Control?displayProperty=nameWithType>です。 次の一覧には、Windows フォーム コントロールを開発するための一般的なシナリオについて説明します。  

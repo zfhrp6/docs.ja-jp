@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33392087"
 ---
 # <a name="memberinfocachecreation-mda"></a>memberInfoCacheCreation MDA
 `memberInfoCacheCreation` マネージ デバッグ アシスタント (MDA) は、<xref:System.Reflection.MemberInfo> キャッシュが作成されるとアクティブになります。 これは、リソースに大きな負荷のかかるリフレクション機能をプログラムが使っていることを明確に示すものです。  

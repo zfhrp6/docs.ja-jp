@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33396530"
 ---
 # <a name="deploying-the-net-framework-and-applications"></a>.NET Framework およびアプリケーションの配置
 ここでは、アプリケーションと共に .NET Framework を配置する方法についての概要を示します。 情報のほとんどは、開発者、OEM、およびエンタープライズ管理者を対象としています。 コンピュータに .NET Framework をインストールするユーザーは、「[.NET Framework のインストール](~/docs/framework/install/index.md)」をご覧ください。  

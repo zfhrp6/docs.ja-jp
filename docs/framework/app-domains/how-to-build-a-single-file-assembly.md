@@ -20,6 +20,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32744318"
 ---
 # <a name="how-to-build-a-single-file-assembly"></a>方法: シングルファイル アセンブリをビルドする
 アセンブリの最も単純な形式であるシングルファイル アセンブリには、型の情報、実装、[アセンブリ マニフェスト](../../../docs/framework/app-domains/assembly-manifest.md)が含まれています。 コマンド ライン コンパイラや [!INCLUDE[vsprvslong](../../../includes/vsprvslong-md.md)] を利用し、シングルファイル アセンブリを作成できます。 既定では、コンパイラは .exe 拡張子でアセンブリ ファイルを作成します。  

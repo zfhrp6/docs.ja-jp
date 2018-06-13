@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33395513"
 ---
 # <a name="security-etw-events"></a>セキュリティ ETW イベント
 <a name="top"></a> セキュリティ イベントは、厳密な名前の検証時と Authenticode の検証時に発生します。  

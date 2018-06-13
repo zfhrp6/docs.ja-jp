@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32742024"
 ---
 # <a name="full-code-listings"></a>完全なコードの一覧
 このトピックには、[操作と慣性](../../../docs/framework/common-client-technologies/manipulations-and-inertia.md)プロセッサを使用するアプリケーション用の全コードが含まれています。  

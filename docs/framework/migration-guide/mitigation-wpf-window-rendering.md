@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33389569"
 ---
 # <a name="mitigation-wpf-window-rendering"></a>軽減策: WPF ウィンドウのレンダリング
 Windows 8 以上で実行している [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] では、マルチ モニターのシナリオで 1 つのディスプレイの外部にウィンドウを拡張すると、ウィンドウ全体がクリッピングなしでレンダリングされます。  

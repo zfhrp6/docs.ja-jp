@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33394580"
 ---
 # <a name="how-to-list-directory-contents-with-ftp"></a>方法: FTP でディレクトリの内容を一覧表示する
 このサンプルでは、FTP サーバーのディレクトリの内容を一覧表示する方法を示します。  

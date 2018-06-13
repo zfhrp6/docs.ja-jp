@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33391047"
 ---
 # <a name="making-an-image-easier-to-debug"></a>イメージのデバッグの簡略化
 アンマネージ コードをコンパイルするときは、IDE スイッチまたはコマンド ライン オプションを使用して、デバッグ用の実行可能イメージを構成できます。 たとえば、Visual C++ で /**Zi** コマンド ライン オプションを使用すると、デバッグ シンボル ファイル (拡張子 .pdb) が生成されます。 同様に、/**Od** コマンド ライン オプションを使用すると、コンパイラは最適化処理を無効にします。 出力されるコードの処理速度は低下しますが、デバッグは簡単になるため、デバッグ時にはこれらのオプションを指定することをお勧めします。  

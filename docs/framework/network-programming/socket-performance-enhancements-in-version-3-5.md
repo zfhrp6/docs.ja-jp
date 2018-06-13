@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33395880"
 ---
 # <a name="socket-performance-enhancements-in-version-35"></a>バージョン 3.5 のソケット パフォーマンスの強化
 非同期ネットワーク I/O を利用して最高のパフォーマンスを達成するために、バージョン 3.5 で、<xref:System.Net.Sockets.Socket?displayProperty=nameWithType> クラスが機能強化されました。 <xref:System.Net.Sockets.Socket> クラスの機能強化の一環として、一連の新しいクラスが追加されました。これが提供する代替非同期パターンは、目的に特化した高パフォーマンスのソケット アプリケーションで利用できます。 この機能強化は、高いパフォーマンスを必要とするネットワーク サーバー アプリケーションのために設計されたものです。 あるアプリケーションで、機能強化された非同期パターンを排他的に、言い換えると、アプリケーションの高負荷領域 (大量のデータを受け取るときなど) のみで使用できます。  

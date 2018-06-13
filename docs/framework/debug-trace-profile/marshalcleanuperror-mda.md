@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33392032"
 ---
 # <a name="marshalcleanuperror-mda"></a>marshalCleanupError MDA
 共通言語ランタイム (CLR) が、ネイティブ コードとマネージ コードの境界間でのデータ型のマーシャリングに使用した一時的な構造体とメモリをクリーンアップしようとしたときにエラーが発生すると、`marshalCleanupError` マネージ デバッグ アシスタント (MDA) がアクティブ化されます。  

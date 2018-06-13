@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33394044"
 ---
 # <a name="about-the-systemnetpeertopeercollaboration-namespace"></a>System.Net.PeerToPeer.Collaboration 名前空間について
 <xref:System.Net.PeerToPeer.Collaboration> 名前空間は、ピア ツー ピア共同作業インフラストラクチャを使用してピア共同作業アクティビティを実装するために使用されるクラスと API を提供します。  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33395815"
 ---
 # <a name="deriving-from-webresponse"></a>WebResponse からの派生
 <xref:System.Net.WebResponse> クラスは、.NET Framework プラグ可能なプロトコル モデルに適合するプロトコル固有の応答を作成するための基本メソッドとプロパティを提供する抽象基底クラスです。 <xref:System.Net.WebRequest> クラスを使用してリソースからデータを要求するアプリケーションは、**WebResponse** で応答を受信します。 プロトコル固有の **WebResponse**の子孫は、**WebResponse** クラスの抽象メンバーを実装する必要があります。  

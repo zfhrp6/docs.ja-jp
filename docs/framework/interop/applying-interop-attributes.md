@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33392565"
 ---
 # <a name="applying-interop-attributes"></a>相互運用固有の属性の適用
 <xref:System.Runtime.InteropServices> 名前空間では、デザイン時にユーザーが適用する属性、変換処理中に COM 相互運用ツールおよび API によって適用される属性、ユーザーまたは COM 相互運用機能によって適用される属性という 3 つのカテゴリの相互運用固有の属性が提供されます。  

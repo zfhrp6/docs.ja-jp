@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33218385"
 ---
 # <a name="explicit-numeric-conversions-table-c-reference"></a>明示的な数値変換の一覧表 (C# リファレンス)
 明示的な数値変換は、暗黙的変換がないときに、キャスト式を利用し、任意の数値型を他の数値型に変換するために利用します。 次の表はこの変換についてまとめたものです。  

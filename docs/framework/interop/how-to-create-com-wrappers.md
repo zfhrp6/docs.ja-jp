@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33391226"
 ---
 # <a name="how-to-create-com-wrappers"></a>方法: COM ラッパーを作成する
 [!INCLUDE[vsprvsext](../../../includes/vsprvsext-md.md)] の機能または .NET Framework のツールである Tlbimp.exe と Regasm.exe を使用して、COM (コンポーネント オブジェクト モデル) ラッパーを作成することができます。 どちらの方法でも以下の 2 種類の COM ラッパーが作成されます。  

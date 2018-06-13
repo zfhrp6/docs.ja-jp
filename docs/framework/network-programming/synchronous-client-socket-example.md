@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33393118"
 ---
 # <a name="synchronous-client-socket-example"></a>同期クライアント ソケットの例
 次のプログラム例では、サーバーに接続するクライアントを作成します。 このクライアントは同期ソケットで構築されます。そのため、クライアント アプリケーションの実行は、サーバーが応答を返すまで一時停止となります。 このアプリケーションは文字列をサーバーに送信し、サーバーが返した文字列をコンソールに表示します。  

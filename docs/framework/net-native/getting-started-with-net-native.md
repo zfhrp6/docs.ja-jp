@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33395467"
 ---
 # <a name="getting-started-with-net-native"></a>.NET ネイティブの概要
 Windows 10 用に新しい Windows アプリを作成する場合も、既存の Windows ストア アプリを移行する場合も、次に示す同じ手順を実行することになります。 [!INCLUDE[net_native](../../../includes/net-native-md.md)] アプリを作成するには、次の手順を実行します。  
