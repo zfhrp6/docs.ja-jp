@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33578125"
 ---
 # <a name="observer-design-pattern"></a>オブサーバー デザイン パターン
 オブザーバー デザイン パターンでは、プロバイダーにサブスクライバーを登録して通知を受信することができます。 このデザイン パターンは、プッシュ ベースの通知を必要とするあらゆるシナリオに適しています。 このパターンでは、1 つの*プロバイダー* (*サブジェクト*または*観察可能なオブジェクト*とも呼ばれます) と、0 個以上の*オブザーバー*を定義します。 プロバイダーにオブザーバーを登録すると、あらかじめ定義した条件、イベント、または状態変化が発生するたびに、プロバイダーのいずれかのメソッドが呼び出されて自動的にすべてのオブザーバーに通知されます。 このメソッド呼び出しで、プロバイダーからオブザーバーに現在の状態の情報を提供することもできます。 .NET Framework でオブザーバー デザイン パターンを適用するには、ジェネリック インターフェイスの <xref:System.IObservable%601?displayProperty=nameWithType> および <xref:System.IObserver%601?displayProperty=nameWithType> を実装します。 ジェネリック型パラメーターは、通知情報を提供する型を表します。  

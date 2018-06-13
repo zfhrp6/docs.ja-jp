@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33557707"
 ---
 # <a name="calendar"></a>予定表
 カレンダーでは、ビジュアルな予定表を使用して日付を選択するユーザーを使用できます。  

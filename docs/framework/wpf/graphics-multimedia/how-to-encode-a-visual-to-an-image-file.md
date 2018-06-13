@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33560164"
 ---
 # <a name="how-to-encode-a-visual-to-an-image-file"></a>方法 : ビジュアルをイメージ ファイルにエンコードする
 エンコードする方法を示します、<xref:System.Windows.Media.Visual>にイメージ ファイルを使用して、オブジェクト、<xref:System.Windows.Media.Imaging.RenderTargetBitmap>と<xref:System.Windows.Media.Imaging.PngBitmapEncoder>です。  

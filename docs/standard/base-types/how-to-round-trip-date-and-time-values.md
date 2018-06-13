@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33573187"
 ---
 # <a name="how-to-round-trip-date-and-time-values"></a>方法 : 日付と時刻の値をラウンドトリップさせる
 ある特定の時点を明確に表すように日付と時刻の値を保つことは、多くのアプリケーションに共通する要件です。 このトピックでは、<xref:System.DateTime> 値、<xref:System.DateTimeOffset> 値、日時値と時間帯の情報を保存し、復元する方法について説明します。復元した値によって、保存した値と同じ時刻が識別されるようにします。  

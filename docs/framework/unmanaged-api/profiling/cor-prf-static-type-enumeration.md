@@ -18,9 +18,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: fc610f4cc34b256867396a3390d5ccd0822f6454
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33450389"
 ---
 # <a name="corprfstatictype-enumeration"></a>COR_PRF_STATIC_TYPE 列挙型
 フィールドが静的であるかどうかを示し、静的な場合は、フィールドに適用される静的なクオリティを示します。 これらの値は、フィールドを複数持つことを示すために、ビットごとの OR 演算を使用して結合できます異なる静的品質。  

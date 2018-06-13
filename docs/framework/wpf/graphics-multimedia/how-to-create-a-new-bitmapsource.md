@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33559475"
 ---
 # <a name="how-to-create-a-new-bitmapsource"></a>方法 : 新しい BitmapSource を作成する
 この例を使用する方法を示しています、<xref:System.Windows.Media.Imaging.BitmapSource.Create%2A>メソッドの<xref:System.Windows.Media.Imaging.BitmapSource>を新規作成する<xref:System.Windows.Media.Imaging.BitmapSource>オブジェクト。  

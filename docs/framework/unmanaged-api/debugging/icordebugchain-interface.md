@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 32889a8e8867fc42b48413463095dda423f26b85
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33409842"
 ---
 # <a name="icordebugchain-interface1"></a>ICorDebugChain Interface1
 物理呼び出し履歴または論理呼び出し履歴のセグメントを表します。  

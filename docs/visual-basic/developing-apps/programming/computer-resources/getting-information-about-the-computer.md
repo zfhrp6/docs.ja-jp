@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33582201"
 ---
 # <a name="getting-information-about-the-computer-visual-basic"></a>方法: コンピューターについての情報の取得 (Visual Basic)
 `My.Computer.Info` オブジェクトは、コンピューターのメモリ、読み込まれたアセンブリ名、オペレーティング システムに関する情報を取得するためのプロパティを提供します。  

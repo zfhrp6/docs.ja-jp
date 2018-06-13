@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33572776"
 ---
 # <a name="how-to-read-characters-from-a-string"></a>方法 : 文字列から文字を読み取る
 次のコード例は、文字列から同期で文字を読み取る方法と非同期で文字を読み取る方法を示しています。  

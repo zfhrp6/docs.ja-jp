@@ -18,9 +18,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: d79249a2540adbd7f1b7e9bf36c899ba94d71e2e
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33452391"
 ---
 # <a name="functionenter2-function"></a>FunctionEnter2 関数
 コントロールが関数に渡されると、フレームと関数の引数の履歴に関する情報を提供をプロファイラーに通知します。 この関数は、 [FunctionEnter](../../../../docs/framework/unmanaged-api/profiling/functionenter-function.md)関数。  

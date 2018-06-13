@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33577102"
 ---
 # <a name="property-design"></a>プロパティのデザイン
 プロパティはメソッドに技術的には非常に似ていますは、使用シナリオの観点からはまったく異なります。 これらは、スマート フィールドと考える必要があります。 フィールドの呼び出し構文とメソッドの柔軟性があります。  

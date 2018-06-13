@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33582136"
 ---
 # <a name="security-and-race-conditions"></a>セキュリティと競合状態
 問題の別の領域は、競合状態によって生じるセキュリティ ホールが発生する可能性です。 これが発生するいくつかの方法はあります。 次のサブトピックをアウトラインの主要な落とし穴を開発者が回避する必要があります。  

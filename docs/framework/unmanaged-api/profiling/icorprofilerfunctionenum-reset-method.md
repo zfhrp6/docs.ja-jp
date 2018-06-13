@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: b0bf1bb990f8a4fb798c88db0552bd4583cb5905
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33454005"
 ---
 # <a name="icorprofilerfunctionenumreset-method"></a>ICorProfilerFunctionEnum::Reset メソッド
 列挙子のカーソルをシーケンスの開始位置に移動します。  

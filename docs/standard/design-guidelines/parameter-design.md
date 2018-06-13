@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33578275"
 ---
 # <a name="parameter-design"></a>パラメーターのデザイン
 このセクションでは、引数をチェックするためのガイドラインにセクションを含むパラメーターのデザインの大まかなガイドラインを示します。 さらを参照してくださいで解説するガイドライン[パラメーターの名前付け](../../../docs/standard/design-guidelines/naming-parameters.md)です。  

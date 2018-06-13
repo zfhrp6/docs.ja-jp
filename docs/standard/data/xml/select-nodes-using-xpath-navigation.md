@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33572711"
 ---
 # <a name="select-nodes-using-xpath-navigation"></a>XPath ナビゲーションによるノードの選択
 XML ドキュメント オブジェクト モデル (DOM) には、DOM 内の情報を照会するための XPath (XML Path Language) ナビゲーションに使用できるメソッドが含まれています。 XPath を使用すると、特定の単一ノードを見つけたり、条件に一致するすべてのノードを検索したりできます。  

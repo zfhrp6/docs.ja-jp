@@ -22,9 +22,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: db818f638898da6379ce4dadfada8eccc3adeb12
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33455420"
 ---
 # <a name="strongnameerrorinfo-function"></a>StrongNameErrorInfo 関数
 厳密な名前の関数のいずれかによって発生した最後のエラー コードを取得します。  

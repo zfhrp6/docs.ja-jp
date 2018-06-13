@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33571411"
 ---
 # <a name="xml-type-support-implementation-notes"></a>XML 型サポートの実装に関するメモ
 このトピックでは、認識しておく必要があるいくつかの実装上の詳細について説明します。  

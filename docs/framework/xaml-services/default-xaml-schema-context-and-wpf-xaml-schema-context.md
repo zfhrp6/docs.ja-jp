@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33566029"
 ---
 # <a name="default-xaml-schema-context-and-wpf-xaml-schema-context"></a>既定の XAML スキーマ コンテキストと WPF XAML スキーマ コンテキスト
 XAML スキーマ コンテキストが特定の XAML ボキャブラリを使用する XAML の運用環境が、オブジェクトの型マッピングが解決する方法、アセンブリが読み込まれているか、特定のリーダーとライターをなどの動作を記述とやり取りする方法を修飾するエンティティの概念設定が解釈されます。 このトピックでは、.NET Framework XAML サービスと関連付けられている既定の XAML スキーマ コンテキスト、CLR の型システムに基づくの機能について説明します。 このトピックでは、WPF に使用される、XAML スキーマ コンテキストも説明します。  

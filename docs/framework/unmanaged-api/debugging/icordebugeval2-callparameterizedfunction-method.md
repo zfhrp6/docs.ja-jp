@@ -19,9 +19,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 77d9ec0cf1cbca63382e7f29de85c2f9566dc2bb
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33416167"
 ---
 # <a name="icordebugeval2callparameterizedfunction-method"></a>ICorDebugEval2::CallParameterizedFunction メソッド
 コンス トラクターは、クラス内で入れ子にできる指定の ICorDebugFunction への呼び出しを設定<xref:System.Type>パラメーター、またはそれ自体がとれる<xref:System.Type>パラメーター。  

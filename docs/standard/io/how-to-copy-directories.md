@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33571236"
 ---
 # <a name="how-to-copy-directories"></a>方法 : ディレクトリをコピーする
 この例では、I/O クラスを使用して、別の場所にディレクトリの内容を同期的にコピーする方法について説明します。 ユーザーは、サブディレクトリもコピーするかどうかを指定できます。 サブディレクトリをコピーする場合、この例で使用するメソッドは、コピーするディレクトリがなくなるまで、各サブディレクトリ上で自身を呼び出し、再帰的にコピーを行います。  

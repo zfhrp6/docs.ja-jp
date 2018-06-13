@@ -18,9 +18,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 11cf96f5957d41e0647c309a7b0bb08fc9b31c91
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33452105"
 ---
 # <a name="functiontailcall-function"></a>FunctionTailcall 関数
 現在実行中の関数は、別の関数の末尾呼び出しを実行しようとして、プロファイラーに通知します。  

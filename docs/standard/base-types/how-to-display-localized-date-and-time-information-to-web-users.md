@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33578158"
 ---
 # <a name="how-to-display-localized-date-and-time-information-to-web-users"></a>方法 : ローカライズされた日付/時刻情報を Web ユーザーに表示する
 Web ページは世界中で表示されるため、ユーザーとの通信時の日時値の解析処理は、(通常は Web サーバーのローカル カルチャの形式である) 既定の形式には依存しないようにする必要があります。 代わりに、ユーザーが入力する日時文字列を処理する Web フォームで、ユーザーの優先カルチャで文字列が解析されるようにする必要があります。 同様に、日時データは、ユーザーのカルチャに準拠する形式でユーザーに表示されるようにする必要があります。 このトピックでは、その方法について説明します。  

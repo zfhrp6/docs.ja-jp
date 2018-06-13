@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33570404"
 ---
 # <a name="arrays"></a>配列
 **✓ しないで**パブリック Api で配列にコレクションの使用を優先します。 [コレクション](../../../docs/standard/design-guidelines/guidelines-for-collections.md)コレクションと配列から選択する方法の詳細についても説明します。  

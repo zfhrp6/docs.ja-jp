@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33571892"
 ---
 # <a name="using-user-filtered-exception-handlers"></a>ユーザー フィルター例外ハンドラーの使用
 現在 Visual Basic では、ユーザー フィルター例外をサポートしています。 ユーザー フィルター例外ハンドラーは、ユーザーが例外に対して定義した要件に基づいて、例外をキャッチして処理します。 これらのハンドラーでは、**Catch** ステートメントを **When** キーワードと一緒に使用します。  

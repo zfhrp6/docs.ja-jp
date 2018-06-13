@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33575350"
 ---
 # <a name="names-of-type-members"></a>型のメンバーの名前
 メンバーの種類がされています: メソッド、プロパティ、イベント、コンス トラクター、およびフィールドです。 次のセクションでは、型のメンバーの名前付けのガイドラインについて説明します。  

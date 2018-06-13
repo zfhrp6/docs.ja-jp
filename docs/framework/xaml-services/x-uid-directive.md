@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33561837"
 ---
 # <a name="xuid-directive"></a>x:Uid ディレクティブ
 マークアップ要素の一意の識別子を提供します。 多くのシナリオでは、この一意の識別子を XAML ローカリゼーション プロセスやツールによって使用されます。  

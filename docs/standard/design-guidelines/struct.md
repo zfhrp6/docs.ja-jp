@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33572737"
 ---
 # <a name="struct-design"></a>構造体のデザイン
 ほとんどの場合に、汎用的な値の型を構造体、その c# キーワードと呼びます。 このセクションでは、一般的な構造体のデザインのガイドラインを示します。  

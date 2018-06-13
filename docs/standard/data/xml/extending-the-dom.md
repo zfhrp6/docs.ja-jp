@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33572253"
 ---
 # <a name="extending-the-dom"></a>DOM の拡張
 Microsoft .NET Framework は、XML ドキュメント オブジェクト モデル (DOM) の実装を提供するクラスの基本セットを備えています。 <xref:System.Xml.XmlNode> およびその派生クラスのメソッドとプロパティを利用して、XML ドキュメントの内容および構造の中で移動し、それらに対してクエリを実行し、それらを変更することができます。  

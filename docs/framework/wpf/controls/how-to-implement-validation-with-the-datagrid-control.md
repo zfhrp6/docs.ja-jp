@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33557876"
 ---
 # <a name="how-to-implement-validation-with-the-datagrid-control"></a>方法: DataGrid コントロールを使用して検証を実装する
 <xref:System.Windows.Controls.DataGrid>コントロールでは、セルと行の両方のレベルに検証を実行することができます。 セル レベルの検証、ユーザーが値を更新したときに、バインドされたデータ オブジェクトの個々 のプロパティを検証します。 行レベルの検証、ユーザーが行に変更をコミット時に、データ オブジェクト全体を検証します。 検証エラーのカスタマイズされた視覚的なフィードバックを提供したり、既定の視覚的フィードバックを使用する、<xref:System.Windows.Controls.DataGrid>コントロールを提供します。  

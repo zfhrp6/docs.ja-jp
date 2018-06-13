@@ -18,9 +18,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 77de59de8fcf3797237245ce42c7f0eaa96d3d24
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33451783"
 ---
 # <a name="functionenter-function"></a>FunctionEnter 関数
 コントロールが関数に渡されることをプロファイラーに通知します。  
