@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33520069"
 ---
 # <a name="creating-asynchronous-activities-in-wf"></a><span data-ttu-id="ee894-102">WF 内での非同期アクティビティの作成</span><span class="sxs-lookup"><span data-stu-id="ee894-102">Creating Asynchronous Activities in WF</span></span>
 <span data-ttu-id="ee894-103"><xref:System.Activities.AsyncCodeActivity> は使用する基本クラスをアクティビティ作成者に提供します。その結果、派生アクティビティが非同期実行ロジックを実装できるようになります。</span><span class="sxs-lookup"><span data-stu-id="ee894-103"><xref:System.Activities.AsyncCodeActivity> provides activity authors a base class to use that enables derived activities to implement asynchronous execution logic.</span></span> <span data-ttu-id="ee894-104">これは、ワークフローのスケジューラ スレッドを保持したり、並行して実行される可能性があるすべてのアクティビティをブロックしたりすることなく、非同期作業を実行する必要があるカスタム アクティビティに役立ちます。</span><span class="sxs-lookup"><span data-stu-id="ee894-104">This is useful for custom activities that must perform asynchronous work without holding the workflow scheduler thread and blocking any activities that may be able to run in parallel.</span></span> <span data-ttu-id="ee894-105">ここでは、<xref:System.Activities.AsyncCodeActivity> を使用してカスタムの非同期アクティビティを作成する方法の概要を説明します。</span><span class="sxs-lookup"><span data-stu-id="ee894-105">This topic provides an overview of how to create custom asynchronous activities using <xref:System.Activities.AsyncCodeActivity>.</span></span>  

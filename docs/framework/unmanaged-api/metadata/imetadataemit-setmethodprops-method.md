@@ -19,9 +19,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 5ef6771ec3f458c20701cc330a5730367b3c5b89
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33445927"
 ---
 # <a name="imetadataemitsetmethodprops-method"></a><span data-ttu-id="a9a31-102">IMetaDataEmit::SetMethodProps メソッド</span><span class="sxs-lookup"><span data-stu-id="a9a31-102">IMetaDataEmit::SetMethodProps Method</span></span>
 <span data-ttu-id="a9a31-103">設定または、指定の相対仮想アドレス、前回の呼び出しによって定義されたメソッドに格納されている、この機能を更新[imetadataemit::definemethod](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definemethod-method.md)です。</span><span class="sxs-lookup"><span data-stu-id="a9a31-103">Sets or updates the feature, stored at the specified relative virtual address, of a method defined by a prior call to [IMetaDataEmit::DefineMethod](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definemethod-method.md).</span></span>  

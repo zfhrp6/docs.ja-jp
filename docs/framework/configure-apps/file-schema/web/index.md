@@ -17,6 +17,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32767480"
 ---
 # <a name="web-settings-schema"></a><span data-ttu-id="4c913-102">Web 設定スキーマ</span><span class="sxs-lookup"><span data-stu-id="4c913-102">Web Settings Schema</span></span>
 <span data-ttu-id="4c913-103">Web 設定は、CPU と、ASP.NET ホスト層によって管理されているプロセス全体の動作に適用される CPU および ASP.NET 設定の実行レベルを指定します。</span><span class="sxs-lookup"><span data-stu-id="4c913-103">Web settings specify CPU and execution-level ASP.NET settings that apply to process-wide behavior managed by the ASP.NET hosting layer.</span></span> <span data-ttu-id="4c913-104">これらの設定は、ASP.NET アプリケーションの Web.config ファイルで指定されているアプリケーション ドメインの種類の設定とは異なります。</span><span class="sxs-lookup"><span data-stu-id="4c913-104">These settings differ from application domain-type settings that are specified in the Web.config file of an ASP.NET application.</span></span>  

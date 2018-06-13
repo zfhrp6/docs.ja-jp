@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33486287"
 ---
 # <a name="namedpipeconnectionpoolsettings"></a><span data-ttu-id="b5ad0-102">NamedPipeConnectionPoolSettings</span><span class="sxs-lookup"><span data-stu-id="b5ad0-102">NamedPipeConnectionPoolSettings</span></span>
 <span data-ttu-id="b5ad0-103">NamedPipeConnectionPoolSettings</span><span class="sxs-lookup"><span data-stu-id="b5ad0-103">NamedPipeConnectionPoolSettings</span></span>  

@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33548767"
 ---
 # <a name="drawing-formatted-text"></a><span data-ttu-id="4ee27-102">書式設定されたテキストの描画</span><span class="sxs-lookup"><span data-stu-id="4ee27-102">Drawing Formatted Text</span></span>
 <span data-ttu-id="4ee27-103">このトピックの機能の概要を示します、<xref:System.Windows.Media.FormattedText>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="4ee27-103">This topic provides an overview of the features of the <xref:System.Windows.Media.FormattedText> object.</span></span> <span data-ttu-id="4ee27-104">このオブジェクトは、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] アプリケーションでのテキストの描画に対する低レベルの制御を提供します。</span><span class="sxs-lookup"><span data-stu-id="4ee27-104">This object provides low-level control for drawing text in [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] applications.</span></span>  

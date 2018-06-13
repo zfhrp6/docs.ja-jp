@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33210835"
 ---
 # <a name="running-selective-unit-tests"></a><span data-ttu-id="0998b-103">選択的単体テストの実行</span><span class="sxs-lookup"><span data-stu-id="0998b-103">Running selective unit tests</span></span>
 

@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33542237"
 ---
 # <a name="windows-forms-security"></a><span data-ttu-id="c89a3-102">Windows フォームのセキュリティ</span><span class="sxs-lookup"><span data-stu-id="c89a3-102">Windows Forms Security</span></span>
 <span data-ttu-id="c89a3-103">Windows フォームでは、コードに基づく (レベルが設定されたセキュリティ コード、コードを実行しているユーザーに関係なく) であるセキュリティ モデルを備えています。</span><span class="sxs-lookup"><span data-stu-id="c89a3-103">Windows Forms features a security model that is code-based (security levels are set for code, regardless of the user running the code).</span></span> <span data-ttu-id="c89a3-104">これは、既にコンピューター システム上の場所に可能性のあるセキュリティのすべてのスキーマだけでなくです。</span><span class="sxs-lookup"><span data-stu-id="c89a3-104">This is in addition to any security schemas that may be in place already on your computer system.</span></span> <span data-ttu-id="c89a3-105">これらは、ゾーンに基づいたセキュリティ Internet Explorer で使用可能な) など、ブラウザーまたはオペレーティング システム (Windows NT の資格情報に基づいたセキュリティ) などを含めることができます。</span><span class="sxs-lookup"><span data-stu-id="c89a3-105">These can include those in the browser (such as the zone-based security available in Internet Explorer) or the operating system (such as the credential-based security of Windows NT).</span></span>  

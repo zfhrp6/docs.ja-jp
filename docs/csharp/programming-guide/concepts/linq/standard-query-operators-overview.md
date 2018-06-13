@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33337325"
 ---
 # <a name="standard-query-operators-overview-c"></a><span data-ttu-id="f3f7c-102">標準クエリ演算子の概要 (C#)</span><span class="sxs-lookup"><span data-stu-id="f3f7c-102">Standard Query Operators Overview (C#)</span></span>
 <span data-ttu-id="f3f7c-103">"*標準クエリ演算子*" は、LINQ パターンを形成するメソッドです。</span><span class="sxs-lookup"><span data-stu-id="f3f7c-103">The *standard query operators* are the methods that form the LINQ pattern.</span></span> <span data-ttu-id="f3f7c-104">これらのメソッドの大部分はシーケンスに対して機能します。ここでシーケンスとは、<xref:System.Collections.Generic.IEnumerable%601> インターフェイスまたは <xref:System.Linq.IQueryable%601> インターフェイスを実装している型のオブジェクトのことです。</span><span class="sxs-lookup"><span data-stu-id="f3f7c-104">Most of these methods operate on sequences, where a sequence is an object whose type implements the <xref:System.Collections.Generic.IEnumerable%601> interface or the <xref:System.Linq.IQueryable%601> interface.</span></span> <span data-ttu-id="f3f7c-105">標準クエリ演算子には、フィルター処理、プロジェクション、集計、並べ替えなどのクエリ機能が用意されています。</span><span class="sxs-lookup"><span data-stu-id="f3f7c-105">The standard query operators provide query capabilities including filtering, projection, aggregation, sorting and more.</span></span>  

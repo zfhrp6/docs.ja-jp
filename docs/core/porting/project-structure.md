@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33211440"
 ---
 # <a name="organizing-your-project-to-support-net-framework-and-net-core"></a><span data-ttu-id="189f6-103">プロジェクトを整理し、.NET Framework と .NET Core をサポートする</span><span class="sxs-lookup"><span data-stu-id="189f6-103">Organizing your project to support .NET Framework and .NET Core</span></span>
 

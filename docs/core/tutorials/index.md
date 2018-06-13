@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33210147"
 ---
 # <a name="net-core-tutorials"></a><span data-ttu-id="1e7da-103">.NET Core チュートリアル</span><span class="sxs-lookup"><span data-stu-id="1e7da-103">.NET Core Tutorials</span></span>
 

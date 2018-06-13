@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33334835"
 ---
 # <a name="how-to-create-a-file-or-folder-c-programming-guide"></a><span data-ttu-id="82067-102">方法: ファイルまたはフォルダーを作成する (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="82067-102">How to: Create a File or Folder (C# Programming Guide)</span></span>
 <span data-ttu-id="82067-103">プログラムによって、コンピューター上でのフォルダーの作成、サブフォルダーの作成、サブフォルダー内でのファイルの作成、およびファイルへのデータの記述を行うことができます。</span><span class="sxs-lookup"><span data-stu-id="82067-103">You can programmatically create a folder on your computer, create a subfolder, create a file in the subfolder, and write data to the file.</span></span>  

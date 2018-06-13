@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33338436"
 ---
 # <a name="sample-xml-file-multiple-purchase-orders-in-a-namespace"></a><span data-ttu-id="cbf22-102">サンプル XML ファイル : 名前空間内の複数の購買発注書</span><span class="sxs-lookup"><span data-stu-id="cbf22-102">Sample XML File: Multiple Purchase Orders in a Namespace</span></span>
 <span data-ttu-id="cbf22-103">次の XML ファイルは、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] ドキュメントのさまざまな例で使用されます。</span><span class="sxs-lookup"><span data-stu-id="cbf22-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="cbf22-104">このファイルには、複数の購買発注書が含まれています。</span><span class="sxs-lookup"><span data-stu-id="cbf22-104">This file contains several purchase orders.</span></span> <span data-ttu-id="cbf22-105">XML は名前空間に含まれています。</span><span class="sxs-lookup"><span data-stu-id="cbf22-105">The XML is in a namespace.</span></span>  

@@ -9,6 +9,7 @@ ms.sourcegitcommit: 88f251b08bf0718ce119f3d7302f514b74895038
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/10/2018
+ms.locfileid: "33958172"
 ---
 # <a name="when-to-deploy-windows-containers-to-azure-container-service-that-is-kubernetes"></a><span data-ttu-id="1ee6f-103">Azure コンテナー サービス (つまり、Kubernetes) に Windows コンテナーを展開するタイミング</span><span class="sxs-lookup"><span data-stu-id="1ee6f-103">When to deploy Windows Containers to Azure Container Service (that is, Kubernetes)</span></span>
 

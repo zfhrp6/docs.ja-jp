@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33337757"
 ---
 # <a name="how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await-c"></a><span data-ttu-id="096a4-102">方法: Async と Await を使用して複数の Web 要求を並列実行する (C#)</span><span class="sxs-lookup"><span data-stu-id="096a4-102">How to: Make Multiple Web Requests in Parallel by Using async and await (C#)</span></span>
 <span data-ttu-id="096a4-103">非同期メソッドでは、タスクは作成されると開始されます。</span><span class="sxs-lookup"><span data-stu-id="096a4-103">In an async method, tasks are started when they’re created.</span></span> <span data-ttu-id="096a4-104">[await](../../../../csharp/language-reference/keywords/await.md) 演算子は、メソッド内でタスクが終了するまで処理が続行できなくなった時点で、タスクに適用されます。</span><span class="sxs-lookup"><span data-stu-id="096a4-104">The [await](../../../../csharp/language-reference/keywords/await.md) operator is applied to the task at the point in the method where processing can’t continue until the task finishes.</span></span> <span data-ttu-id="096a4-105">次の例に示すように、タスクは多くの場合、作成されるとすぐに待機します。</span><span class="sxs-lookup"><span data-stu-id="096a4-105">Often a task is awaited as soon as it’s created, as the following example shows.</span></span>  

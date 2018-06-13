@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33338638"
 ---
 # <a name="walkthrough-office-programming-c-and-visual-basic"></a><span data-ttu-id="6d74b-102">チュートリアル: Office のプログラミング (C# および Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="6d74b-102">Walkthrough: Office Programming (C# and Visual Basic)</span></span>
 <span data-ttu-id="6d74b-103">Visual Studio には、Microsoft Office のプログラミングを改善する C# および Visual Basic の新機能が導入されています。</span><span class="sxs-lookup"><span data-stu-id="6d74b-103">Visual Studio offers features in C# and Visual Basic that improve Microsoft Office programming.</span></span> <span data-ttu-id="6d74b-104">便利な C# の機能には、名前付き引数、省略可能な引数、型 `dynamic` の戻り値があります。</span><span class="sxs-lookup"><span data-stu-id="6d74b-104">Helpful C# features include named and optional arguments and return values of type `dynamic`.</span></span> <span data-ttu-id="6d74b-105">COM プログラミングでは、`ref` キーワードを省略し、インデックス付きプロパティにアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="6d74b-105">In COM programming, you can omit the `ref` keyword and gain access to indexed properties.</span></span> <span data-ttu-id="6d74b-106">Visual Basic の機能には、自動実装プロパティ、ラムダ式内のステートメント、コレクション初期化子などがあります。</span><span class="sxs-lookup"><span data-stu-id="6d74b-106">Features in Visual Basic include auto-implemented properties, statements in lambda expressions, and collection initializers.</span></span>
