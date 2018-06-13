@@ -10,9 +10,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 8bb5d93c91de857ebbee63009cad73fba7e1d284
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33461836"
 ---
 # <a name="profiling-global-static-functions"></a>グローバル静的関数のプロファイル
 このセクションでは、プロファイル API で使用されるアンマネージ API 関数について説明します。  

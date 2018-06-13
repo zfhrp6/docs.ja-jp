@@ -13,6 +13,7 @@ ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/15/2018
+ms.locfileid: "34172213"
 ---
 # <a name="value-types-c-reference"></a>値型 (C# リファレンス)
 値型は、次の 2 つの主要なカテゴリで構成されます。  

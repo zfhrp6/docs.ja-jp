@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33600306"
 ---
 # <a name="argument-39access39-is-not-valid-valid-values-for-input-mode-are-39openaccessread39-and-39openaccessdefault39"></a>引数&#39;アクセス&#39;が無効です。 Input モードの有効な値は&#39;'openaccess.read'&#39;と&#39;です&#39;
 `Input` モードでは Access 値は使用できません。  

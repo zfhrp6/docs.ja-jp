@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33597410"
 ---
 # <a name="39lttypenamegt39-is-a-type-and-cannot-be-used-as-an-expression"></a>&#39;&lt;typename&gt; &#39;は型であり、式として使用することはできません
 式が必要な個所で、型名が出現しています。 式は、変数、定数、リテラル、プロパティ、および `Function` プロシージャ呼び出しを適宜組み合わせて構成する必要があります。  

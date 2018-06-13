@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 0db08ef4938a88ee657e2d65dda70edac09df8ef
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33462161"
 ---
 # <a name="putinstancewmi-function"></a>PutInstanceWmi 関数
 作成するか、既存のクラスのインスタンスを更新します。 インスタンスは、WMI リポジトリに書き込まれます。 

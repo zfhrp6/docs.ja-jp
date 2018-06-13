@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 7ccb0aef0e998ffccd7526f9f0554bceb892001b
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33462190"
 ---
 # <a name="qualifiersetput-function"></a>QualifierSet_Put 関数
 名前付きの修飾子と値を書き込みます。 新しい修飾子には、同じ名前の前の値が上書きされます。 修飾子が存在しない場合は作成されます。 

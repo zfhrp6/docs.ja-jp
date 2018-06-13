@@ -18,9 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: d2951733211737f06cd737b20bd1537277be1be1
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33461478"
 ---
 # <a name="getpropertyqualifierset-function"></a>GetPropertyQualifierSet 関数
 特定のプロパティの設定、修飾子を取得します。

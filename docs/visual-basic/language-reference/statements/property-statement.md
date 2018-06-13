@@ -16,6 +16,7 @@ ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34235991"
 ---
 # <a name="property-statement"></a>Property Statement
 プロパティ、および格納およびプロパティの値を取得するためのプロパティ プロシージャの名前を宣言します。  

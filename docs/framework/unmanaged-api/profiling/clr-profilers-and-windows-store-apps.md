@@ -16,9 +16,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 20a1ed9b6b613b1e4d3e5363ab9995cc81295091
 ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33462287"
 ---
 # <a name="clr-profilers-and-windows-store-apps"></a>CLR プロファイラーと Windows ストア アプリ
 このトピックでは、分析する診断ツールの書き込みが Windows ストア アプリ内で実行されているコードを管理する場合について検討する必要がありますについて説明します。  また、Windows ストア アプリに対して実行する、操作を続行するために、既存の開発ツールを変更するガイドラインを示します。  この情報を理解するのには、ツールを変更するスクリプトは Windows デスクトップ アプリケーション、およびするに対して正しく実行、対象となるようになりましたこと診断ツールで、この API を既に使用している場合は、共通言語ランタイム プロファイリング API に慣れている、最適ですWindows ストア アプリに対して正しく実行します。  
