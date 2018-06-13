@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33266156"
 ---
 # <a name="namespace-keywords-c-reference"></a>名前空間キーワード (C# リファレンス)
 このセクションでは、名前空間の利用に関連するキーワードと演算子について説明します。  

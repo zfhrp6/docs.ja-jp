@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33272440"
 ---
 # <a name="-operator-c-reference"></a>!= 演算子 (C# リファレンス)
 非等値演算子 (`!=`) は、そのオペランドが等しい場合には false を返し、それ以外の場合は true を返します。 非等値演算子は、文字列とオブジェクトを含むすべての型に対して事前に定義されています。 ユーザー定義型は `!=` 演算子をオーバーロードできます。  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33218398"
 ---
 # <a name="from-clause-c-reference"></a>from 句 (C# リファレンス)
 クエリ式は、`from` 句で始める必要があります。 また、クエリ式にはサブクエリを含めることができます。サブクエリも `from` 句で始めます。 `from` 句は次を指定します。  

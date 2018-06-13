@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33269400"
 ---
 # <a name="error-c-reference"></a>#error (C# リファレンス)
 `#error` を使用すると、コード内の特定の場所からエラーを生成できます。 例:  

@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33526296"
 ---
 # <a name="how-to-validate-application-settings"></a>方法 : アプリケーション設定を検証する
 このトピックでは、アプリケーション設定を永続化する前に検証する方法について説明します。  

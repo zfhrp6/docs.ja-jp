@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33527701"
 ---
 # <a name="how-to-add-tooltips-to-individual-cells-in-a-windows-forms-datagridview-control"></a>方法 : Windows フォーム DataGridView コントロールの各セルにツールヒントを追加する
 既定では、ツールヒントを使用しての値を表示する<xref:System.Windows.Forms.DataGridView>セルが全体の内容を表示するには小さすぎることです。 ただし、この動作をオーバーライドする個々 のセルのツールヒントのテキスト値を設定します。 これは、セルに関する追加情報をユーザーに表示するか、セルの内容の他の説明をユーザーに提供するには便利です。 たとえば、状態アイコンを表示する行がある場合は、場合、ツールヒントを使用して説明を提供します。  

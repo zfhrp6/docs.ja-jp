@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33216478"
 ---
 # <a name="explicit-c-reference"></a>explicit (C# リファレンス)
 `explicit` キーワードは、キャストを使用して呼び出す必要があるユーザー定義型変換演算子を宣言します。 たとえば、次の演算子は摂氏というクラスを華氏というクラスに変換します。  

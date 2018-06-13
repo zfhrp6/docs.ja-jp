@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33216136"
 ---
 # <a name="-nostdlib-c-compiler-options"></a>-nostdlib (C# コンパイラ オプション)
 **-nostdlib** は、System 名前空間の全体を定義する mscorlib.dll がインポートされないようにします。  

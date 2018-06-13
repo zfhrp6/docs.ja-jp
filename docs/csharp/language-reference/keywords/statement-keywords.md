@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33269662"
 ---
 # <a name="statement-keywords-c-reference"></a>ステートメントのキーワード (C# リファレンス)
 ステートメントは、プログラムの命令です。 次の表で参照されているトピックで明記されているステートメントを除いて、ステートメントは順番に実行されます。 C# ステートメントのキーワードの一覧を次の表に示します。 いずれかのキーワードで表されないステートメントの詳細については、「[ステートメント](../../../csharp/programming-guide/statements-expressions-operators/statements.md)」を参照してください。  

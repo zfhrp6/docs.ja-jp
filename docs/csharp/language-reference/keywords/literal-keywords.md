@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33265763"
 ---
 # <a name="literal-keywords-c-reference"></a>リテラル キーワード (C# リファレンス)
 C# には、次のリテラル キーワードがあります。  

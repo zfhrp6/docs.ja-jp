@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33529754"
 ---
 # <a name="types-of-coordinate-systems"></a>座標系の種類
 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] 次の 3 つの座標空間を使用して: world、ページ、およびデバイス。 ワールド座標特定グラフィック世界をモデル化するために使用する座標、.NET Framework のメソッドに渡す座標。 ページ座標は、フォームやコントロールなどの描画サーフェイスで使用される座標系を参照してください。 デバイスの座標は、画面や枚の用紙など、描画されている物理デバイスで使用される座標です。 呼び出しを行うとき`myGraphics.DrawLine(myPen, 0, 0, 160, 80)`、渡された点、<xref:System.Drawing.Graphics.DrawLine%2A>メソッド —`(0, 0)`と`(160, 80)`— 世界の座標空間にします。 前に[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]画面に線を描画することができます、座標は、変換のシーケンスを通過します。 ワールド変換と呼ばれる 1 つの変換は、ページ座標にワールド座標を変換し、ページ変換と呼ばれる別の変換は、ページ座標をデバイス座標に変換します。  

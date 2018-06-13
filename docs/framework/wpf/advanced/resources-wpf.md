@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33545819"
 ---
 # <a name="resources-wpf"></a>リソース (WPF)
 リソースは、アプリケーションで別の場所で再利用可能なオブジェクトです。 WPF には、異なる種類のリソースがサポートしています。 これらのリソースは、主に 2 つの種類のリソース: XAML リソースとリソース データ ファイル。 XAML リソースには、ブラシ、スタイルなどがあります。 リソース データ ファイルは、アプリケーションに必要なデータの非実行可能ファイルです。  

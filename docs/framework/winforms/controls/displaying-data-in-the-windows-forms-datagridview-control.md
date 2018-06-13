@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33529429"
 ---
 # <a name="displaying-data-in-the-windows-forms-datagridview-control"></a>Windows フォーム DataGridView コントロールでのデータの表示
 `DataGridView`さまざまな外部データ ソースからデータを表示するコントロールを使用します。 また、コントロールに行と列を追加し、データを手動で設定できます。  

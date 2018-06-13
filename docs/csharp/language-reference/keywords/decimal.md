@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33219337"
 ---
 # <a name="decimal-c-reference"></a>decimal (C# リファレンス)
 `decimal` キーワードは、128 ビットのデータ型を示します。 `decimal` 型は、他の浮動小数点型よりも有効桁数が多く、範囲が狭いので、財務や金融の計算に適しています。 `decimal` 型の概算の範囲と有効桁数は、次のとおりです。  

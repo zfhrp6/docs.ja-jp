@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33217485"
 ---
 # <a name="group-clause-c-reference"></a>group 句 (C# リファレンス)
 `group` 句は、グループのキー値に一致する 0 個以上の項目を含む <xref:System.Linq.IGrouping%602> オブジェクトのシーケンスを返します。 たとえば、各文字列の最初の文字に基づいて文字列のシーケンスをグループ化することができます。 この場合、最初の文字がキーで、型は [char](../../../csharp/language-reference/keywords/char.md) であり、各 <xref:System.Linq.IGrouping%602> オブジェクトの `Key` プロパティに格納されています。 コンパイラは、キーの型を推論します。  

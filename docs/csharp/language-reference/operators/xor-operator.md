@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33271251"
 ---
 # <a name="-operator-c-reference"></a>^ 演算子 (C# リファレンス)
 整数型と `bool` には、2 項 `^` 演算子が事前定義されています。 整数型の場合、`^` はそのオペランドのビット演算排他的 OR を計算します。 `bool` オペランドの場合、`^` はそのオペランドの論理排他的 OR を計算します。つまり、そのオペランドの厳密に 1 つが `true` の場合およびその場合に限って、結果が `true` になります。  

@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33273658"
 ---
 # <a name="pragma-warning-c-reference"></a>#pragma 警告 (C# リファレンス)
 `#pragma warning` を使用すると、特定の警告を有効または無効にすることができます。  

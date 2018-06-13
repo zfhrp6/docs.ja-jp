@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33273316"
 ---
 # <a name="operator-keywords-c-reference"></a>演算子キーワード (C# リファレンス)
 オブジェクトの作成、オブジェクトのランタイム型のチェック、型のサイズの取得といった、さまざまなアクションを実行するために使用します。 このセクションでは、次のキーワードについて説明します。  
